@@ -1,8 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/cn6/str_cn6&n35.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {["str_cn6&n35_hard_level_lock_tips"] = "過關{1}後解鎖", ["str_cn6&n35_day"] = "{1}天", ["str_cn6&n35_hour"] = "{1}小時", ["str_cn6&n35_minus"] = "{1}分鐘", ["str_cn6&n35_less_one_minus"] = "<1分鐘", ["str_cn6&n35_activity_end"] = "活動已結束", ["str_cn6&n35_activity_remain_time"] = "距離活動結束還有：{1}", ["str_cn6&n35_activity_exchange_remain_time"] = "距離兌換結束尚有：{1}", ["str_cn6&n35_activity_line_mission_remain_time"] = "活動剩餘時間：{1}", ["str_cn6&n35_activity_line_mission_lock_time_tips"] = "解鎖時間：{1}", ["str_cn6&n35_activity_login_btn"] = "考察日記", ["str_cn6&n35_activity_event_btn"] = "特別事件簿", ["str_cn6&n35_activity_normal_level_remain_time"] = "活動剩餘時間：{1}", ["str_cn6&n35_activity_normal_level_lock_time_tips"] = "解鎖時間：{1}", ["str_cn6&n35_activity_hard_level_remain_time"] = "活動剩餘時間：{1}", ["str_cn6&n35_activity_hard_level_lock_mission_tips"] = "請先完成【切雪尋跡】 ", ["str_cn6&n35_activity_hard_level_lock_time_tips"] = "解鎖時間：{1}", ["str_cn6&n35_activity_shop_remain_time"] = "活動剩餘時間：{1}", ["str_cn6&n35_activity_shop_lock_time_tips"] = "解鎖時間：{1}", ["str_cn6&n35_activity_game_remain_time"] = "活動剩餘時間：{1}", ["str_cn6&n35_activity_game_lock_time_tips"] = "解鎖時間：{1}", ["str_cn6&n35_level_firstpass_ward"] = "首通獎勵", ["str_cn6&n35_level_3star_award"] = "三星獎勵", ["str_cn6&n35_shop_close_time_tips"] = "活動剩餘時間：{1}", ["str_cn6&n35_diff_unlock_tips"] = "完成前置路點任意關卡後解鎖", ["str_cn6&n35_intro_title"] = "【冰封之隙的追問者】活動說明", ["str_cn6&n35_intro_head_1"] = "<size=28><color=#334662> 【遺蹟碎片】取得方式：</color></size>", ["str_cn6&n35_intro_body_1"] = "1.活動期間，完成消耗稜鏡的主線或資源整備關卡，即可獲得【遺蹟碎片】。\n2.活動結束前三天，上述關卡不再掉落【遺蹟碎片】。", ["str_cn6&n35_intro_head_2"] = "<size=28><color=#334662> 【遺蹟碎片】道具使用：</color></size>", ["str_cn6&n35_intro_body_2"] = "1.活動期間，可在【遺蹟穹廬】商店中，消耗【遺蹟碎片】購買道具。\n2.【遺蹟碎片】停止掉落後，【遺蹟穹廬】還會開放3天，請盡速使用剩餘的【遺蹟碎片】。\n3.【遺蹟穹廬】關閉後，未使用的【遺蹟碎片】將按照1:10的比例轉換成白夜幣。", ["str_cn6&n35_intro_head_3"] = "<size=28><color=#334662> 【札莉雅的綺繡衣櫥】玩法說明：</color></size>", ["str_cn6&n35_intro_body_3"] = "1.活動期間，新玩法「札莉雅的綺繡衣櫥」將會開放。點選玩法入口，探索新的玩法內容吧！\n2.更多詳細說明，可以前往對應玩法說明介面查看。", ["str_cn6&n35__main_entry_tips1"] = "遺蹟穹廬已開放", ["str_cn6&n35__main_entry_tips2"] = "峻嶺行殆已開放", ["str_cn6&n35__main_entry_tips3"] = "險峰已開放", ["str_cn6&n35_activity_normal_level_open_time"] = "GMT:09/27-10/16", ["str_cn6&n35_activity_hardl_level_open_time"] = "GMT:10/04-10/16", ["str_cn6&n35_activity_shop_open_time"] = "GMT:09/27-10/18", ["str_cn6&n35_activity_game_open_time"] = "GMT:10/09-10/18", ["str_cn6&n35_item_remain_title"] = "剩餘：", ["str_cn6&n35_activity_end_tips"] = "已結束", ["str_cn6&n35_remain_time_in_activity"] = "活動剩餘時間：<color=#FEF272>{1}</color>", ["str_cn6&n35_shop_npc_name_1"] = "三十三號", ["str_cn6&n35_shop_npc_word_1"] = "三十三號，為您服務！|三十三號：正在搜索您會感興趣的商品。| 經過篩選，以下商品較為匹配您的需求，歡迎您對本次服務進行評分與反饋。", ["str_cn6&n35_hard_cdtime"] = "解鎖時間：", ["str_cn6&n35_hard_level_unopen"] = "完成緩境難度全部關卡後解鎖", ["str_cn6&n35_hard_title"] = "緩境", ["str_cn6&n35_diff_title"] = "險峰", ["str_cn6&n35_item_empty_title"] = "已兌換", ["str_cn6&n35_item_remain_title2"] = "剩餘", ["str_cn6&n35_hard_level_time_lock"] = "到達解鎖時間後解鎖"}
+local config = {
+  ["str_cn6&n35_hard_level_lock_tips"] = "過關{1}後解鎖",
+  ["str_cn6&n35_day"] = "{1}天",
+  ["str_cn6&n35_hour"] = "{1}小時",
+  ["str_cn6&n35_minus"] = "{1}分鐘",
+  ["str_cn6&n35_less_one_minus"] = "<1分鐘",
+  ["str_cn6&n35_activity_end"] = "活動已結束",
+  ["str_cn6&n35_activity_remain_time"] = "距離活動結束還有：{1}",
+  ["str_cn6&n35_activity_exchange_remain_time"] = "距離兌換結束尚有：{1}",
+  ["str_cn6&n35_activity_line_mission_remain_time"] = "活動剩餘時間：{1}",
+  ["str_cn6&n35_activity_line_mission_lock_time_tips"] = "解鎖時間：{1}",
+  ["str_cn6&n35_activity_login_btn"] = "考察日記",
+  ["str_cn6&n35_activity_event_btn"] = "特別事件簿",
+  ["str_cn6&n35_activity_normal_level_remain_time"] = "活動剩餘時間：{1}",
+  ["str_cn6&n35_activity_normal_level_lock_time_tips"] = "解鎖時間：{1}",
+  ["str_cn6&n35_activity_hard_level_remain_time"] = "活動剩餘時間：{1}",
+  ["str_cn6&n35_activity_hard_level_lock_mission_tips"] = "請先完成【切雪尋跡】 ",
+  ["str_cn6&n35_activity_hard_level_lock_time_tips"] = "解鎖時間：{1}",
+  ["str_cn6&n35_activity_shop_remain_time"] = "活動剩餘時間：{1}",
+  ["str_cn6&n35_activity_shop_lock_time_tips"] = "解鎖時間：{1}",
+  ["str_cn6&n35_activity_game_remain_time"] = "活動剩餘時間：{1}",
+  ["str_cn6&n35_activity_game_lock_time_tips"] = "解鎖時間：{1}",
+  ["str_cn6&n35_level_firstpass_ward"] = "首通獎勵",
+  ["str_cn6&n35_level_3star_award"] = "三星獎勵",
+  ["str_cn6&n35_shop_close_time_tips"] = "活動剩餘時間：{1}",
+  ["str_cn6&n35_diff_unlock_tips"] = "完成前置路點任意關卡後解鎖",
+  ["str_cn6&n35_intro_title"] = "【冰封之隙的追問者】活動說明",
+  ["str_cn6&n35_intro_head_1"] = "<size=28><color=#334662> 【遺蹟碎片】取得方式：</color></size>",
+  ["str_cn6&n35_intro_body_1"] = "1.活動期間，完成消耗稜鏡的主線或資源整備關卡，即可獲得【遺蹟碎片】。\n2.活動結束前三天，上述關卡不再掉落【遺蹟碎片】。",
+  ["str_cn6&n35_intro_head_2"] = "<size=28><color=#334662> 【遺蹟碎片】道具使用：</color></size>",
+  ["str_cn6&n35_intro_body_2"] = "1.活動期間，可在【遺蹟穹廬】商店中，消耗【遺蹟碎片】購買道具。\n2.【遺蹟碎片】停止掉落後，【遺蹟穹廬】還會開放3天，請盡速使用剩餘的【遺蹟碎片】。\n3.【遺蹟穹廬】關閉後，未使用的【遺蹟碎片】將按照1:10的比例轉換成白夜幣。",
+  ["str_cn6&n35_intro_head_3"] = "<size=28><color=#334662> 【札莉雅的綺繡衣櫥】玩法說明：</color></size>",
+  ["str_cn6&n35_intro_body_3"] = "1.活動期間，新玩法「札莉雅的綺繡衣櫥」將會開放。點選玩法入口，探索新的玩法內容吧！\n2.更多詳細說明，可以前往對應玩法說明介面查看。",
+  ["str_cn6&n35__main_entry_tips1"] = "遺蹟穹廬已開放",
+  ["str_cn6&n35__main_entry_tips2"] = "峻嶺行殆已開放",
+  ["str_cn6&n35__main_entry_tips3"] = "險峰已開放",
+  ["str_cn6&n35_activity_normal_level_open_time"] = "GMT:09/27-10/16",
+  ["str_cn6&n35_activity_hardl_level_open_time"] = "GMT:10/04-10/16",
+  ["str_cn6&n35_activity_shop_open_time"] = "GMT:09/27-10/18",
+  ["str_cn6&n35_activity_game_open_time"] = "GMT:10/09-10/18",
+  ["str_cn6&n35_item_remain_title"] = "剩餘：",
+  ["str_cn6&n35_activity_end_tips"] = "已結束",
+  ["str_cn6&n35_remain_time_in_activity"] = "活動剩餘時間：<color=#FEF272>{1}</color>",
+  ["str_cn6&n35_shop_npc_name_1"] = "三十三號",
+  ["str_cn6&n35_shop_npc_word_1"] = "三十三號，為您服務！|三十三號：正在搜索您會感興趣的商品。| 經過篩選，以下商品較為匹配您的需求，歡迎您對本次服務進行評分與反饋。",
+  ["str_cn6&n35_hard_cdtime"] = "解鎖時間：",
+  ["str_cn6&n35_hard_level_unopen"] = "完成緩境難度全部關卡後解鎖",
+  ["str_cn6&n35_hard_title"] = "緩境",
+  ["str_cn6&n35_diff_title"] = "險峰",
+  ["str_cn6&n35_item_empty_title"] = "已兌換",
+  ["str_cn6&n35_item_remain_title2"] = "剩餘",
+  ["str_cn6&n35_hard_level_time_lock"] = "到達解鎖時間後解鎖"
+}
 return config
-

@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_chain_across_select_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetChainAcrossSelectMonster", BuffLogicBase)
 BuffLogicSetChainAcrossSelectMonster = BuffLogicSetChainAcrossSelectMonster
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetChainAcrossSelectMonster.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetChainAcrossSelectMonster:Constructor(buffInstance, logicParam)
   self._remove = logicParam.remove or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetChainAcrossSelectMonster.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function BuffLogicSetChainAcrossSelectMonster:DoLogic()
+  local e = self._buffInstance:Entity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   logicChainPathCmpt:SetChainAcrossSelectMonster(self._remove == 1, e:GetID())
   local buffResult = BuffResultSetChainAcrossSelectMonster:New(self._remove == 1, e:GetID())
-  do return buffResult end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return buffResult
 end
-
-

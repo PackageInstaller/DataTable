@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/game_block/main/ui_s4_trade_game_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeGameMainController", UIController)
 UIS4TradeGameMainController = UIS4TradeGameMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeGameMainController.Constructor = function(self)
-  -- function num : 0_0
+function UIS4TradeGameMainController:Constructor()
   self._stageIndex = 1
   self._optionItem = nil
   self._optionChooseTb = {}
@@ -18,13 +11,10 @@ UIS4TradeGameMainController.Constructor = function(self)
   self._spineOutTime = 3500
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIS4TradeGameMainController:OnShow(uiParams)
   self._tradeData = uiParams[1]
   self._harborID = uiParams[2]
-  local comp = (self._tradeData):GetBusinessComp()
+  local comp = self._tradeData:GetBusinessComp()
   self._eventIDs = comp:GetHarborEvent(self._harborID)
   self:_GetComponents()
   self:_InitComponents()
@@ -32,10 +22,7 @@ UIS4TradeGameMainController.OnShow = function(self, uiParams)
   self:PlayInAnimation()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController._GetComponents = function(self)
-  -- function num : 0_2
+function UIS4TradeGameMainController:_GetComponents()
   self._eventIcon = self:GetUIComponent("RawImageLoader", "eventIcon")
   self._eventName = self:GetUIComponent("UILocalizationText", "eventName")
   self._eventIntro = self:GetUIComponent("UILocalizationText", "eventIntro")
@@ -49,138 +36,97 @@ UIS4TradeGameMainController._GetComponents = function(self)
   self._percentMask3Obj = self:GetGameObject("percentMask3")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController._InitComponents = function(self)
-  -- function num : 0_3
-  self._crewWidget = (self._crewWidgetSpawner):SpawnObject("UIS4TradeGameMainCrewWidget")
-  ;
-  (self._crewWidget):SetData(self._tradeData, self._harborID)
-  ;
-  (self._spine):LoadSpine(self._spineName)
+function UIS4TradeGameMainController:_InitComponents()
+  self._crewWidget = self._crewWidgetSpawner:SpawnObject("UIS4TradeGameMainCrewWidget")
+  self._crewWidget:SetData(self._tradeData, self._harborID)
+  self._spine:LoadSpine(self._spineName)
   self:SetChoiceStage(self._stageIndex)
   self:SetShipInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController._AttachEvents = function(self)
-  -- function num : 0_4
+function UIS4TradeGameMainController:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController._Close = function(self)
-  -- function num : 0_5
+function UIS4TradeGameMainController:_Close()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.SetChoiceStage = function(self, stage)
-  -- function num : 0_6
-  (self._percentMask1Obj):SetActive(stage >= 1)
-  ;
-  (self._percentMask2Obj):SetActive(stage >= 2)
-  ;
-  (self._percentMask3Obj):SetActive(stage >= 3)
+function UIS4TradeGameMainController:SetChoiceStage(stage)
+  self._percentMask1Obj:SetActive(1 <= stage)
+  self._percentMask2Obj:SetActive(2 <= stage)
+  self._percentMask3Obj:SetActive(3 <= stage)
   self:SetEeventInfo(stage)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.SetEeventInfo = function(self, stage)
-  -- function num : 0_7 , upvalues : _ENV
-  local eventID = (self._eventIDs)[self._stageIndex]
-  local eventCfg = (Cfg.cfg_component_business_event)[eventID]
+function UIS4TradeGameMainController:SetEeventInfo(stage)
+  local eventID = self._eventIDs[self._stageIndex]
+  local eventCfg = Cfg.cfg_component_business_event[eventID]
   local options = eventCfg.OptionPool
-  ;
-  (self._eventIcon):LoadImage(eventCfg.EventIcon)
-  ;
-  (self._eventName):SetText((StringTable.Get)(eventCfg.EventName))
-  ;
-  (self._eventIntro):SetText((StringTable.Get)(eventCfg.EventIntro))
+  self._eventIcon:LoadImage(eventCfg.EventIcon)
+  self._eventName:SetText(StringTable.Get(eventCfg.EventName))
+  self._eventIntro:SetText(StringTable.Get(eventCfg.EventIntro))
   local optionGroup = {}
-  for _,optionID in pairs(options) do
-    local optionCfg = (Cfg.cfg_component_business_option)[optionID]
+  for _, optionID in pairs(options) do
+    local optionCfg = Cfg.cfg_component_business_option[optionID]
     if not optionGroup[optionCfg.GroupID] then
       optionGroup[optionCfg.GroupID] = {}
     end
-    local optionData = (UIS4TradeHelper.GetTradeOptionData)(optionID, stage)
-    ;
-    (table.insert)(optionGroup[optionCfg.GroupID], optionData)
+    local optionData = UIS4TradeHelper.GetTradeOptionData(optionID, stage)
+    table.insert(optionGroup[optionCfg.GroupID], optionData)
   end
-  if (table.count)(optionGroup) < 3 then
-    (Log.fatal)("该事件的选项配置少于3，请检查！！:", eventID)
+  if table.count(optionGroup) < 3 then
+    Log.fatal("该事件的选项配置少于3，请检查！！:", eventID)
   end
-  self._choices = (self._choiceSpawner):SpawnObjects("UIS4TradeGameMainChoiceItem", (table.count)(optionGroup))
+  self._choices = self._choiceSpawner:SpawnObjects("UIS4TradeGameMainChoiceItem", table.count(optionGroup))
   local index = 1
-  for _,group in pairs(optionGroup) do
-    local choice = (self._choices)[index]
+  for _, group in pairs(optionGroup) do
+    local choice = self._choices[index]
     choice:SetData(self._tradeData, group, function(item)
-    -- function num : 0_7_0 , upvalues : self
-    self:SelectOptionCB(item)
-  end
-)
+      self:SelectOptionCB(item)
+    end)
     choice:SetSelect(false)
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.SetShipInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIS4TradeGameMainController:SetShipInfo()
   local optionValue = self:CreateOptionValue()
-  local comp = (self._tradeData):GetBusinessComp()
+  local comp = self._tradeData:GetBusinessComp()
   local boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue = comp:GetFinalPro(self._harborID, optionValue[1], optionValue[2], optionValue[3], optionValue[4])
-  ;
-  (self._statueValue):SetText((math.floor)(incomeRate * 100) .. "%")
-  ;
-  (self._crewWidget):OptionRefresh(optionValue)
+  self._statueValue:SetText(math.floor(incomeRate * 100) .. "%")
+  self._crewWidget:OptionRefresh(optionValue)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.SelectOptionCB = function(self, item)
-  -- function num : 0_9
+function UIS4TradeGameMainController:SelectOptionCB(item)
   if self._optionItem and item == self._optionItem then
-    return 
+    return
   end
   if self._optionItem then
-    (self._optionItem):SetSelect(false)
+    self._optionItem:SetSelect(false)
   end
   self._optionItem = item
-  ;
-  (self._optionItem):SetSelect(true)
+  self._optionItem:SetSelect(true)
   local curoptionValue = self:CreateCurOptionValue()
   local optionValue = self:CreateOptionValue()
-  local comp = (self._tradeData):GetBusinessComp()
+  local comp = self._tradeData:GetBusinessComp()
   local boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue = comp:GetFinalPro(self._harborID, optionValue[1], optionValue[2], optionValue[3], optionValue[4])
-  ;
-  (self._crewWidget):OptionRefresh(optionValue, curoptionValue)
+  self._crewWidget:OptionRefresh(optionValue, curoptionValue)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.CheckBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIS4TradeGameMainController:CheckBtnOnClick()
   if not self._optionItem then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_s4_trade_game_choice_tip1"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_s4_trade_game_choice_tip1"))
+    return
   end
-  local optionDataTb = (self._optionItem):GetOptionDataTb()
-  optionDataTb = (UIS4TradeHelper.ChooseOption)(optionDataTb)
+  local optionDataTb = self._optionItem:GetOptionDataTb()
+  optionDataTb = UIS4TradeHelper.ChooseOption(optionDataTb)
   local tb = {}
-  for _,option in pairs(optionDataTb) do
-    (table.insert)(self._optionChooseTb, option)
+  for _, option in pairs(optionDataTb) do
+    table.insert(self._optionChooseTb, option)
     tb[option.optionID] = option.isSuccess
   end
-  ;
-  (table.insert)(self._optionResMap, tb)
+  table.insert(self._optionResMap, tb)
   self:ShowDialog("UIS4TradeGameChoiceController", optionDataTb, function()
-    -- function num : 0_10_0 , upvalues : self
     self._optionItem = nil
     self._stageIndex = self._stageIndex + 1
     self:SetShipInfo()
@@ -189,101 +135,73 @@ UIS4TradeGameMainController.CheckBtnOnClick = function(self)
     else
       self:SetChoiceStage(self._stageIndex)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.PlayInAnimation = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIS4TradeGameMainController:PlayInAnimation()
   self:Lock("UIS4TradeGameMainController:PlayInAnimation")
-  ;
-  (self._spine):SetAnimation(0, "idle", false)
+  self._spine:SetAnimation(0, "idle", false)
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : _ENV, self
     YIELD(TT, self._spineInTime - 100)
     self:UnLock("UIS4TradeGameMainController:PlayInAnimation")
-    ;
-    (self._anim):Play("uieff_UIS4TradeGameMainController_in")
+    self._anim:Play("uieff_UIS4TradeGameMainController_in")
     YIELD(TT, 100)
-    ;
-    ((self._spine).gameObject):SetActive(false)
-  end
-)
+    self._spine.gameObject:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.CheckGameResult = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local comp = (self._tradeData):GetBusinessComp()
+function UIS4TradeGameMainController:CheckGameResult()
+  local comp = self._tradeData:GetBusinessComp()
   local optionValue = self:CreateOptionValue()
   local boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue = comp:GetFinalPro(self._harborID, optionValue[1], optionValue[2], optionValue[3], optionValue[4])
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : _ENV, comp, self, income, cdValue, incomeRate
     local res = AsyncRequestRes:New()
     local respone = comp:HandleBusinessSailingReq(TT, res, self._harborID, self._eventIDs, self._optionResMap, income, cdValue)
     if res:GetSucc() then
       self:ShowDialog("UIS4TradeGameResultController", self._tradeData, self._optionChooseTb, respone.income, incomeRate, self._harborID, function()
-      -- function num : 0_12_0_0 , upvalues : self
-      self:PlayOutAnimation()
-    end
-)
+        self:PlayOutAnimation()
+      end)
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_season_s4_trade_result_err", res:GetResult()))
+      ToastManager.ShowToast(StringTable.Get("str_season_s4_trade_result_err", res:GetResult()))
       self:CloseDialog()
-      ;
-      (Log.fatal)("航海结算错误！:", res:GetResult(), self._harborID, income, cdValue)
-      ;
-      (Log.fatal)("事件ID：")
-      for key,id in pairs(self._eventIDs) do
-        (Log.fatal)(id)
+      Log.fatal("航海结算错误！:", res:GetResult(), self._harborID, income, cdValue)
+      Log.fatal("事件ID：")
+      for key, id in pairs(self._eventIDs) do
+        Log.fatal(id)
       end
-      ;
-      (Log.fatal)("选项map：")
-      for index,value in pairs(self._optionResMap) do
-        (Log.fatal)("index:", index)
-        for k,v in pairs(value) do
+      Log.fatal("选项map：")
+      for index, value in pairs(self._optionResMap) do
+        Log.fatal("index:", index)
+        for k, v in pairs(value) do
           local vv = v and "true" or "false"
-          ;
-          (Log.fatal)("key:" .. k .. " v:" .. vv)
+          Log.fatal("key:" .. k .. " v:" .. vv)
         end
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.PlayOutAnimation = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIS4TradeGameMainController:PlayOutAnimation()
   self:Lock("UIS4TradeGameMainController:PlayOutAnimation")
-  ;
-  ((self._spine).gameObject):SetActive(true)
-  ;
-  (self._spine):SetAnimation(0, "idle2", false)
+  self._spine.gameObject:SetActive(true)
+  self._spine:SetAnimation(0, "idle2", false)
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : _ENV, self
     YIELD(TT, self._spineOutTime)
-    ;
-    ((self._spine).gameObject):SetActive(false)
+    self._spine.gameObject:SetActive(false)
     self:UnLock("UIS4TradeGameMainController:PlayOutAnimation")
     self:CloseDialog()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnS4HarborShipLevelUP, self._harborID)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnS4HarborShipLevelUP, self._harborID)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.CreateOptionValue = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local optionValue = {0, 0, 0, 0}
-  for _,option in pairs(self._optionChooseTb) do
+function UIS4TradeGameMainController:CreateOptionValue()
+  local optionValue = {
+    0,
+    0,
+    0,
+    0
+  }
+  for _, option in pairs(self._optionChooseTb) do
     if option.isSuccess then
       optionValue[option.valueType] = optionValue[option.valueType] + option.value
     end
@@ -291,28 +209,26 @@ UIS4TradeGameMainController.CreateOptionValue = function(self)
   return optionValue
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainController.CreateCurOptionValue = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local optionValue = {0, 0, 0, 0}
+function UIS4TradeGameMainController:CreateCurOptionValue()
+  local optionValue = {
+    0,
+    0,
+    0,
+    0
+  }
   if self._optionItem then
-    local optionDataTb = (self._optionItem):GetOptionDataTb()
-    for _,v in pairs(optionDataTb) do
+    local optionDataTb = self._optionItem:GetOptionDataTb()
+    for _, v in pairs(optionDataTb) do
       optionValue[v.valueType] = optionValue[v.valueType] + v.value
     end
   end
-  do
-    return optionValue
-  end
+  return optionValue
 end
 
 _class("TradeOptionData", Object)
 TradeOptionData = TradeOptionData
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-TradeOptionData.Constructor = function(self, optionID, valueType, value, percent, index)
-  -- function num : 0_16
+function TradeOptionData:Constructor(optionID, valueType, value, percent, index)
   self.optionID = optionID
   self.isSuccess = false
   self.valueType = valueType
@@ -320,5 +236,3 @@ TradeOptionData.Constructor = function(self, optionID, valueType, value, percent
   self.percent = percent
   self.index = index
 end
-
-

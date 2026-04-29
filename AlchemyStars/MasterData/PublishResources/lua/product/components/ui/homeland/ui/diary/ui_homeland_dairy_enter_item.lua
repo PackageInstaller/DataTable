@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/diary/ui_homeland_dairy_enter_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeLandDiaryEnterItem", UICustomWidget)
 UIHomeLandDiaryEnterItem = UIHomeLandDiaryEnterItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeLandDiaryEnterItem.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomeLandDiaryEnterItem:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem._InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeLandDiaryEnterItem:_InitWidget()
   self._titleText = self:GetUIComponent("UILocalizationText", "titleText")
   self._contentText = self:GetUIComponent("UILocalizationText", "contentText")
   self._tipText = self:GetUIComponent("UILocalizationText", "tipText")
@@ -28,224 +18,151 @@ UIHomeLandDiaryEnterItem._InitWidget = function(self)
   self._titleRaw = self:GetUIComponent("RawImage", "titleImg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.Flush = function(self, type, data, helper, callback)
-  -- function num : 0_2
+function UIHomeLandDiaryEnterItem:Flush(type, data, helper, callback)
   self._type = type
   self._callBack = callback
   self._localData = helper
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomeLandDiaryEnterItem:OnShow(uiParams)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self:_InitWidget()
   self:SetCustomTimeStr_Common()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.Refresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local unlock = (self._homelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_STORY_TASK)
-  ;
-  (self._luckImg):SetActive(false)
-  ;
-  (self._newGo):SetActive(false)
-  ;
-  (self._numGo):SetActive(false)
+function UIHomeLandDiaryEnterItem:Refresh()
+  local unlock = self._homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_STORY_TASK)
+  self._luckImg:SetActive(false)
+  self._newGo:SetActive(false)
+  self._numGo:SetActive(false)
   if self._type == DiaryOpenType.Diary then
-    (self._titleText):SetText((StringTable.Get)("str_homeland_diaryenter"))
-    ;
-    (self._contentText):SetText((StringTable.Get)("str_homeland_diaryenter"))
-    ;
-    (self._bgRawImg):LoadImage("n19csj_rukou_di02")
-    ;
-    (self._titleRawImg):LoadImage("n19csj_rukou_di04")
-  else
-    if self._type == DiaryOpenType.Story then
-      self:TimeEvent()
-      ;
-      (self._luckImg):SetActive(self._timeUnlock and not unlock)
-      ;
-      (self._titleText):SetText((StringTable.Get)("str_homeland_storytaskenter"))
-      ;
-      (self._contentText):SetText((StringTable.Get)("str_homeland_storytaskenter"))
-      ;
-      (self._bgRawImg):LoadImage("n19csj_rukou_di03")
-      ;
-      (self._titleRawImg):LoadImage("n19csj_rukou_di05")
-      local colorlock = Color(0.28235294117647, 0.28235294117647, 0.28235294117647)
-      local colorunlock = Color(1, 1, 1)
-      -- DECOMPILER ERROR at PC103: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._bgRaw).color = unlock and self._timeUnlock and colorunlock or colorlock
-      -- DECOMPILER ERROR at PC113: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._titleRaw).color = unlock and self._timeUnlock and colorunlock or colorlock
-    end
+    self._titleText:SetText(StringTable.Get("str_homeland_diaryenter"))
+    self._contentText:SetText(StringTable.Get("str_homeland_diaryenter"))
+    self._bgRawImg:LoadImage("n19csj_rukou_di02")
+    self._titleRawImg:LoadImage("n19csj_rukou_di04")
+  elseif self._type == DiaryOpenType.Story then
+    self:TimeEvent()
+    self._luckImg:SetActive(not self._timeUnlock or not unlock)
+    self._titleText:SetText(StringTable.Get("str_homeland_storytaskenter"))
+    self._contentText:SetText(StringTable.Get("str_homeland_storytaskenter"))
+    self._bgRawImg:LoadImage("n19csj_rukou_di03")
+    self._titleRawImg:LoadImage("n19csj_rukou_di05")
+    local colorlock = Color(0.2823529411764706, 0.2823529411764706, 0.2823529411764706)
+    local colorunlock = Color(1, 1, 1)
+    self._bgRaw.color = unlock and self._timeUnlock and colorunlock or colorlock
+    self._titleRaw.color = unlock and self._timeUnlock and colorunlock or colorlock
   end
   self:SetNewAndNum()
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.SetNewAndNum = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomeLandDiaryEnterItem:SetNewAndNum()
   if self._type == DiaryOpenType.Diary then
-    local count = (self._localData):GetDairyEventCount()
-    ;
-    (self._numText):SetText(count)
-    ;
-    (self._numGo):SetActive(count > 0)
+    local count = self._localData:GetDairyEventCount()
+    self._numText:SetText(count)
+    self._numGo:SetActive(0 < count)
   elseif self._type == DiaryOpenType.Story then
-    (self._newGo):SetActive((self._localData):CheckNew())
+    self._newGo:SetActive(self._localData:CheckNew())
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomeLandDiaryEnterItem:OnHide()
   if self.teActivity then
-    self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
     self.teActivity = nil
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem._AttachEvents = function(self)
-  -- function num : 0_7
+function UIHomeLandDiaryEnterItem:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem._DetachEvents = function(self)
-  -- function num : 0_8
+function UIHomeLandDiaryEnterItem:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.BtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomeLandDiaryEnterItem:BtnOnClick()
   if self._type == DiaryOpenType.Story then
-    if not ((self._localData).HasUnLockPrefs)() then
-      ((self._localData).SetUnLockPrefs)()
+    if not self._localData.HasUnLockPrefs() then
+      self._localData.SetUnLockPrefs()
     end
-    local unlock = (self._homelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_STORY_TASK)
+    local unlock = self._homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_STORY_TASK)
     if not unlock then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_storytask_btnclick_close"))
-      return 
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_storytask_btnclick_close"))
+      return
     end
     if not self._timeUnlock then
-      local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-      local servertime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-      local beginTime = (HelperProxy:GetInstance()):FormatDateTime(self._globalCfgTime)
-      local set = ((Cfg.cfg_homeland_global).StoryTaskMenuTime).IntValue
-      if set ~= 0 or not Enum_DateTimeZoneType.E_ZoneType_GMT then
-        local type = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
-      end
-      local loginModule = (GameGlobal.GetModule)(LoginModule)
+      local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+      local servertime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+      local beginTime = HelperProxy:GetInstance():FormatDateTime(self._globalCfgTime)
+      local set = Cfg.cfg_homeland_global.StoryTaskMenuTime.IntValue
+      local type = set == 0 and Enum_DateTimeZoneType.E_ZoneType_GMT or Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
+      local loginModule = GameGlobal.GetModule(LoginModule)
       local time = loginModule:GetTimeStampByTimeStr(self._globalCfgTime, type)
-      local timeStr = (UIActivityHelper.GetFormatTimerStr)(time - servertime, self._customStr)
-      ;
-      (ToastManager.ShowHomeToast)((string.format)((StringTable.Get)("str_homeland_storytask_time_unlock", timeStr)))
-      return 
+      local timeStr = UIActivityHelper.GetFormatTimerStr(time - servertime, self._customStr)
+      ToastManager.ShowHomeToast(string.format(StringTable.Get("str_homeland_storytask_time_unlock", timeStr)))
+      return
     end
   end
-  do
-    if self._callBack then
-      (self._callBack)(self, self._type)
-    end
+  if self._callBack then
+    self._callBack(self, self._type)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.TimeEvent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomeLandDiaryEnterItem:TimeEvent()
   self._timeUnlock = false
-  self._globalCfgTime = ((Cfg.cfg_homeland_global).StoryTaskMenuTime).StrValue
+  self._globalCfgTime = Cfg.cfg_homeland_global.StoryTaskMenuTime.StrValue
   if self:CheckOpen(self._globalCfgTime) then
     self._timeUnlock = true
   end
   if not self._timeUnlock then
     if self.teActivity then
-      self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
+      self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
       self.teActivity = nil
     end
-    self.teActivity = (UIActivityHelper.StartTimerEvent)(self.teActivity, function()
-    -- function num : 0_10_0 , upvalues : self
-    self:FlushTaskCD()
-  end
-, 1000)
-    return 
+    self.teActivity = UIActivityHelper.StartTimerEvent(self.teActivity, function()
+      self:FlushTaskCD()
+    end, 1000)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.CheckOpen = function(self, beginTime, timetype)
-  -- function num : 0_11 , upvalues : _ENV
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  if not timetype then
-    timetype = 0
-  end
-  if timetype ~= 0 or not Enum_DateTimeZoneType.E_ZoneType_GMT then
-    local type = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
-  end
+function UIHomeLandDiaryEnterItem:CheckOpen(beginTime, timetype)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  timetype = timetype or 0
+  local type = timetype == 0 and Enum_DateTimeZoneType.E_ZoneType_GMT or Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, type)
-  if beginTime <= curTime then
+  if curTime >= beginTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.FlushTaskCD = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomeLandDiaryEnterItem:FlushTaskCD()
   if not self:CheckOpen(self._globalCfgTime) then
-    local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-    local beginTime = (HelperProxy:GetInstance()):FormatDateTime(self._globalCfgTime)
+    local nowTimestamp = UICommonHelper.GetNowTimestamp()
+    local beginTime = HelperProxy:GetInstance():FormatDateTime(self._globalCfgTime)
     beginTime = beginTime - nowTimestamp
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(beginTime, self._customStr)
-    ;
-    (self._tipText):SetText(timeStr)
+    local timeStr = UIActivityHelper.GetFormatTimerStr(beginTime, self._customStr)
+    self._tipText:SetText(timeStr)
   else
-    do
-      self:Refresh()
-      ;
-      (self._tipText):SetText("")
-      self.teActivity = (UIActivityHelper.CancelTimerEvent)(self.teActivity)
-      self.teActivity = nil
-    end
+    self:Refresh()
+    self._tipText:SetText("")
+    self.teActivity = UIActivityHelper.CancelTimerEvent(self.teActivity)
+    self.teActivity = nil
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.SetCustomTimeStr_Common = function(self)
-  -- function num : 0_13
-  self:SetCustomTimeStr({day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_common_less_minute"})
+function UIHomeLandDiaryEnterItem:SetCustomTimeStr_Common()
+  self:SetCustomTimeStr({
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_common_less_minute"
+  })
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryEnterItem.SetCustomTimeStr = function(self, customStr)
-  -- function num : 0_14
+function UIHomeLandDiaryEnterItem:SetCustomTimeStr(customStr)
   self._customStr = customStr
 end
-
-

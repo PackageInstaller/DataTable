@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/dimension_flag_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DimensionFlagComponent", Object)
 DimensionFlagComponent = DimensionFlagComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DimensionFlagComponent.Constructor = function(self)
-  -- function num : 0_0
+function DimensionFlagComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.DimensionFlag = function(self)
-  -- function num : 0_1
-  return self:GetComponent((self.WEComponentsEnum).DimensionFlag)
+function Entity:DimensionFlag()
+  return self:GetComponent(self.WEComponentsEnum.DimensionFlag)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasDimensionFlag = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).DimensionFlag)
+function Entity:HasDimensionFlag()
+  return self:HasComponent(self.WEComponentsEnum.DimensionFlag)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddDimensionFlag = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).DimensionFlag
+function Entity:AddDimensionFlag()
+  local index = self.WEComponentsEnum.DimensionFlag
   local component = DimensionFlagComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveDimensionFlag = function(self)
-  -- function num : 0_4
+function Entity:RemoveDimensionFlag()
   if self:HasDimensionFlag() then
-    self:RemoveComponent((self.WEComponentsEnum).DimensionFlag)
+    self:RemoveComponent(self.WEComponentsEnum.DimensionFlag)
   end
 end
-
-

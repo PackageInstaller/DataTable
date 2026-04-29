@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_double_chain_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetDoubleChain", BuffViewBase)
 BuffViewSetDoubleChain = BuffViewSetDoubleChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetDoubleChain.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0
+function BuffViewSetDoubleChain:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSetDoubleChain.PlayView = function(self, TT)
-  -- function num : 0_1
+function BuffViewSetDoubleChain:PlayView(TT)
   local buffResult = self:GetBuffResult()
   local chainSkillCount = buffResult:GetChainSkillCount()
   local rate = buffResult:GetRate()
@@ -27,17 +17,12 @@ end
 
 _class("BuffViewResetDoubleChain", BuffViewBase)
 BuffViewResetDoubleChain = BuffViewResetDoubleChain
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewResetDoubleChain.IsNotifyMatch = function(self, notify)
-  -- function num : 0_2
+function BuffViewResetDoubleChain:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewResetDoubleChain.PlayView = function(self, TT)
-  -- function num : 0_3
+function BuffViewResetDoubleChain:PlayView(TT)
   local buffResult = self:GetBuffResult()
   local chainSkillCount = buffResult:GetChainSkillCount()
   local rate = buffResult:GetRate()
@@ -46,5 +31,3 @@ BuffViewResetDoubleChain.PlayView = function(self, TT)
   buffView:SetBuffValue("ChainSkillCount", chainSkillCount)
   buffView:SetBuffValue("DoubleChainRate", rate)
 end
-
-

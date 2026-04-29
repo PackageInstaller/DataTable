@@ -1,204 +1,145 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/challenge_mission_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChallengeMissionComponent", ICampaignComponent)
 ChallengeMissionComponent = ChallengeMissionComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChallengeMissionComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ChallengeMissionComponent:Constructor()
   self.m_component_info = ChallengeMissionComponentInfo:New()
   self.m_score = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ChallengeMissionComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = ChallengeMissionComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function ChallengeMissionComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ChallengeMissionComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_CHALL_MISSION
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  self.login_mod = ((GameGlobal.GameLogic)()):GetModule(LoginModule)
-  self.role_mod = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
-  self.cam_mod = ((GameGlobal.GameLogic)()):GetModule(CampaignModule)
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function ChallengeMissionComponent:InitComponentInfo(a_load_info)
+  self.login_mod = GameGlobal.GameLogic():GetModule(LoginModule)
+  self.role_mod = GameGlobal.GameLogic():GetModule(RoleModule)
+  self.cam_mod = GameGlobal.GameLogic():GetModule(CampaignModule)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.SetScore = function(self, LeveIndex, value)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.m_score)[LeveIndex] = value
+function ChallengeMissionComponent:SetScore(LeveIndex, value)
+  self.m_score[LeveIndex] = value
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.GetScore = function(self, LeveIndex)
-  -- function num : 0_6
-  return (self.m_score)[LeveIndex]
+function ChallengeMissionComponent:GetScore(LeveIndex)
+  return self.m_score[LeveIndex]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.IsPassMission = function(self, misssId)
-  -- function num : 0_7
-  return ((self.m_component_info).m_pass_mission_info)[misssId]
+function ChallengeMissionComponent:IsPassMission(misssId)
+  return self.m_component_info.m_pass_mission_info[misssId]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ChallengeMissionComponent:GetCampaignMissionComponentId()
   return ECampaignMissionComponentId.ECampaignMissionComponentId_ChallengeMission
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ChallengeMissionComponent:GetCampaignMissionParamKeyMap()
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId
+  }
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.HaveRedPoint = function(self)
-  -- function num : 0_10
+function ChallengeMissionComponent:HaveRedPoint()
   return true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.CloseTodayRedPoint = function(self)
-  -- function num : 0_11
+function ChallengeMissionComponent:CloseTodayRedPoint()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.GetCfgMap = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function ChallengeMissionComponent:GetCfgMap()
   local ComponentInfo = self:ComponentInfo()
   if ComponentInfo == nil then
     return nil
   end
   local componentId = self:GetComponentCfgId()
-  local cfgMap = (Cfg.cfg_component_challenge_mission)({ComponentID = componentId})
+  local cfgMap = Cfg.cfg_component_challenge_mission({ComponentID = componentId})
   return cfgMap
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.CloseLoginRed = function(self, capName, funcName)
-  -- function num : 0_13 , upvalues : _ENV
-  local lrt = (self.role_mod):GetLoginTme()
-  ;
-  (self.cam_mod):SetDB(lrt, capName, funcName)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, l_component_info.m_campaign_id, nil, nil)
+function ChallengeMissionComponent:CloseLoginRed(capName, funcName)
+  local lrt = self.role_mod:GetLoginTme()
+  self.cam_mod:SetDB(lrt, capName, funcName)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, l_component_info.m_campaign_id, nil, nil)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.SetMissionId = function(self, id, capName, funcName)
-  -- function num : 0_14
-  (self.cam_mod):SetDB(id, capName, funcName)
+function ChallengeMissionComponent:SetMissionId(id, capName, funcName)
+  self.cam_mod:SetDB(id, capName, funcName)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.HaveRed = function(self, capName, funcName)
-  -- function num : 0_15 , upvalues : _ENV
-  local lrt = (self.role_mod):GetLoginTme()
-  if (self.cam_mod):GetDB(lrt, capName, funcName) == 1 then
+function ChallengeMissionComponent:HaveRed(capName, funcName)
+  local lrt = self.role_mod:GetLoginTme()
+  if self.cam_mod:GetDB(lrt, capName, funcName) == 1 then
     return 0
   end
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   if not time_mod then
     return 0
   end
-  local tmNowTime = (math.modf)(time_mod:GetServerTime() / 1000)
+  local tmNowTime = math.modf(time_mod:GetServerTime() / 1000)
   local num = 0
-  for key,value in pairs((self.m_component_info).m_challenge_unlock_time) do
-    if value <= tmNowTime and (self.cam_mod):GetDB(key, capName, funcName) == 0 then
+  for key, value in pairs(self.m_component_info.m_challenge_unlock_time) do
+    if value <= tmNowTime and self.cam_mod:GetDB(key, capName, funcName) == 0 then
       num = num + 1
     end
   end
   return num
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.HaveNewIds = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function ChallengeMissionComponent:HaveNewIds()
   local cfgMap = self:GetCfgMap()
   if cfgMap == nil then
     return nil
   end
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   if not time_mod then
     return nil
   end
-  local tmNowTime = (math.modf)(time_mod:GetServerTime() / 1000)
-  local loginModule = ((GameGlobal.GameLogic)()):GetModule(LoginModule)
-  local cb = function(cfgChallenge)
-    -- function num : 0_16_0 , upvalues : loginModule, _ENV, tmNowTime, self
+  local tmNowTime = math.modf(time_mod:GetServerTime() / 1000)
+  local loginModule = GameGlobal.GameLogic():GetModule(LoginModule)
+  
+  local function cb(cfgChallenge)
     if cfgChallenge.NewTip == 0 then
       return false
     end
-    do
-      if cfgChallenge.UnlockNeedTime ~= "" then
-        local timer = loginModule:GetTimeStampByTimeStr(cfgChallenge.UnlockNeedTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-        if tmNowTime < timer then
-          return false
-        end
-      end
-      for k,v in pairs((self.m_component_info).new_look_ids) do
-        if v == cfgChallenge.CampaignMissionId then
-          return false
-        end
-      end
-      if cfgChallenge.UnlockMissionId > 0 and ((self.m_component_info).m_pass_mission_info)[cfgChallenge.UnlockMissionId] == nil then
+    if cfgChallenge.UnlockNeedTime ~= "" then
+      local timer = loginModule:GetTimeStampByTimeStr(cfgChallenge.UnlockNeedTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+      if timer > tmNowTime then
         return false
       end
-      if cfgChallenge.UnlockScore > 0 and ((self.m_component_info).m_max_score)[cfgChallenge.LeveIndex] < cfgChallenge.UnlockScore then
-        return false
-      end
-      if ((self.m_component_info).m_pass_mission_info)[cfgChallenge.CampaignMissionId] ~= nil then
-        return false
-      end
-      return true
     end
+    for k, v in pairs(self.m_component_info.new_look_ids) do
+      if v == cfgChallenge.CampaignMissionId then
+        return false
+      end
+    end
+    if 0 < cfgChallenge.UnlockMissionId and self.m_component_info.m_pass_mission_info[cfgChallenge.UnlockMissionId] == nil then
+      return false
+    end
+    if 0 < cfgChallenge.UnlockScore and cfgChallenge.UnlockScore > self.m_component_info.m_max_score[cfgChallenge.LeveIndex] then
+      return false
+    end
+    if self.m_component_info.m_pass_mission_info[cfgChallenge.CampaignMissionId] ~= nil then
+      return false
+    end
+    return true
   end
-
+  
   local ids = {}
-  for key,value in pairs(cfgMap) do
+  for key, value in pairs(cfgMap) do
     if cb(value) == true then
       ids[value.ID] = true
     end
@@ -206,129 +147,82 @@ ChallengeMissionComponent.HaveNewIds = function(self)
   return ids
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.HandleClearAffix = function(self, TT, asyncRes, nChallengeMissionId)
-  -- function num : 0_17 , upvalues : _ENV
+function ChallengeMissionComponent:HandleClearAffix(TT, asyncRes, nChallengeMissionId)
   local request = ChallengeClearAffixReq:New()
   request.nChallengeMissionId = nChallengeMissionId
   local response = ChallengeClearAffixRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][ChallengeMissionComponent] HandleClearAffix ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][ChallengeMissionComponent] HandleClearAffix ret:", asyncRes.m_result)
   else
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self.m_component_info).m_select_affix)[nChallengeMissionId] = {}
+    self.m_component_info.m_select_affix[nChallengeMissionId] = {}
   end
   return asyncRes, response
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.HandleSelectAffix = function(self, TT, asyncRes, nChallengeMissionId, nAffixList)
-  -- function num : 0_18 , upvalues : _ENV
+function ChallengeMissionComponent:HandleSelectAffix(TT, asyncRes, nChallengeMissionId, nAffixList)
   local request = ChallengeSelectAffixReq:New()
   request.nCampaignMissionId = nChallengeMissionId
   request.selectAffixIdArray = nAffixList
   local response = ChallengeSelectAffixRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][ChallengeMissionComponent] HandleSelectAffix ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][ChallengeMissionComponent] HandleSelectAffix ret:", asyncRes.m_result)
   else
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R8 in 'UnsetPending'
-
-    if ((self.m_component_info).m_select_affix)[nChallengeMissionId] == nil then
-      ((self.m_component_info).m_select_affix)[nChallengeMissionId] = {}
+    if self.m_component_info.m_select_affix[nChallengeMissionId] == nil then
+      self.m_component_info.m_select_affix[nChallengeMissionId] = {}
     end
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((self.m_component_info).m_select_affix)[nChallengeMissionId] = nAffixList
+    self.m_component_info.m_select_affix[nChallengeMissionId] = nAffixList
   end
   return asyncRes, response
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_19 , upvalues : _ENV
+function ChallengeMissionComponent:CampaignComponentPushNotify(notify_data)
   local ev = NotifyChallengeMissionScoreChanged:New()
   if ChallengeComponentNotifyType.ChallengeComponentNotifyType_ScoreChange == notify_data.m_notify_type then
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
-      if ev.m_last_score < ev.m_total_score then
-        ((self.m_component_info).m_max_score)[ev.m_group_id] = ev.m_total_score
+      if ev.m_total_score > ev.m_last_score then
+        self.m_component_info.m_max_score[ev.m_group_id] = ev.m_total_score
       end
       self:SetScore(ev.m_group_id, ev.m_total_score)
-      for key,value in pairs(ev.m_missions) do
-        -- DECOMPILER ERROR at PC35: Confused about usage of register: R9 in 'UnsetPending'
-
-        ((self.m_component_info).m_pass_mission_info)[value.mission_id] = value
+      for key, value in pairs(ev.m_missions) do
+        self.m_component_info.m_pass_mission_info[value.mission_id] = value
       end
     else
-      do
-        ;
-        (Log.error)("[CampaignCom][ChallengeMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
-      end
+      Log.error("[CampaignCom][ChallengeMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.HandleChallengeChangeFormationReq = function(self, TT, asyncRes, teamInfo)
-  -- function num : 0_20 , upvalues : _ENV
+function ChallengeMissionComponent:HandleChallengeChangeFormationReq(TT, asyncRes, teamInfo)
   local request = ChallengeChangeFormationReq:New()
   request.info = teamInfo
   local response = ChallengeChangeFormationReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][ChallengeMissionComponent] HandleChallengeChangeFormationReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][ChallengeMissionComponent] HandleChallengeChangeFormationReq ret:", asyncRes.m_result)
   else
     local fid = teamInfo.id
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((ComponentInfo.formation_list)[fid]).id = teamInfo.id
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((ComponentInfo.formation_list)[fid]).name = teamInfo.name
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((ComponentInfo.formation_list)[fid]).pet_list = teamInfo.pet_list
+    ComponentInfo.formation_list[fid].id = teamInfo.id
+    ComponentInfo.formation_list[fid].name = teamInfo.name
+    ComponentInfo.formation_list[fid].pet_list = teamInfo.pet_list
   end
-  do
-    return asyncRes, response
-  end
+  return asyncRes, response
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ChallengeMissionComponent.HandleChallengeClearNewReq = function(self, TT, asyncRes, levelIds)
-  -- function num : 0_21 , upvalues : _ENV
+function ChallengeMissionComponent:HandleChallengeClearNewReq(TT, asyncRes, levelIds)
   local request = ChallengeClearNewReq:New()
   local response = ChallengeClearNewRep:New()
   request.look_ids = levelIds
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][ChallengeMissionComponent] HandleChallengeClearNewReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][ChallengeMissionComponent] HandleChallengeClearNewReq ret:", asyncRes.m_result)
   end
   ComponentInfo.new_look_ids = response.new_look_ids
   return asyncRes, response
 end
-
-

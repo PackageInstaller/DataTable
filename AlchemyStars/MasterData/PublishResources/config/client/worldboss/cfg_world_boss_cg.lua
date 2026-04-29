@@ -1,13 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/worldboss/cfg_world_boss_cg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, scale = 2, offset = 3}
-local config = {
-[2901004] = {2901004, 1, 
-{0, 0}
+local key = {
+  ID = 1,
+  scale = 2,
+  offset = 3
 }
+local config = {
+  [2901004] = {
+    2901004,
+    1,
+    {0, 0}
+  }
 }
 return config, "ID", key
-

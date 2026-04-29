@@ -1,8 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/story/charastory/str_charastory_ailuma.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31350401_1_dialog_content = "PlayerName, ¡Necesito trabajar!", ui_story_31350401_2_dialog_content = "R-¿En serio? No sabía que alguien pudiera disfrutar tanto del trabajo...", ui_story_31350401_3_dialog_content = "¡No puedo quedarme aquí sin ganarme la vida! Va en contra del orden común!", ui_story_31350401_4_dialog_content = "(Casi lo olvido, Elma pertenece a la facción de Armonía, así que le da mucha importancia a las reglas y al orden.)", ui_story_31350401_5_dialog_content = "Bien, entonces vamos a echar un vistazo a Soroz.", ui_story_31350401_6_dialog_content = "¡Guau, es este el bar?!", ui_story_31350401_7_dialog_content = "Si buscas trabajo, ¿por qué no trabajar aquí? La parte más importante del trabajo también es mantener el orden.", ui_story_31350401_8_dialog_content = "¡Entendido! ¡Déjamelo a mí!", ui_story_31350401_9_dialog_content = "¡Oye, tú allí! Este no es lugar para niños.", ui_story_31350401_10_dialog_content = "¿Eh? Pero alcancé la mayoría de edad hace mucho tiempo...", ui_story_31350401_11_dialog_content = "Entonces, ¿cuántos años tienes?", ui_story_31350401_12_dialog_content = "¿Qué tan viejo, eh...? ¡Demasiado viejo para recordarlo, sinceramente!", ui_story_31350401_13_dialog_content = "Realmente es lo suficientemente mayor para estar aquí, Elma.", ui_story_31350401_14_dialog_content = "¡Debes ser el amigo de PlayerName de otro mundo! ¡Ven a tomar algo conmigo!", ui_story_31350401_15_dialog_content = "D-¿Sabe bien?", ui_story_31350401_16_dialog_content = "¡Por supuesto! Es una especialidad de Northland: un vino dulce hecho con nieve derretida directamente de las cimas de las montañas.", ui_story_31350401_17_dialog_content = "¡Guau, no estabas bromeando! ¡Sabe increíble!", ui_story_31350401_18_dialog_content = "Espera, ¡esto no está bien! Se supone que debo vigilar este lugar. P-Pero... ¡simplemente no puedo parar!", ui_story_31350401_19_dialog_content = "Q-Quizás podamos echar un vistazo a otros trabajos?", ui_story_31350401_20_dialog_content = "Esta es la Red Lumina. Todo lo que necesitas hacer es llevarte bien con las Luciérnagas para administrar esta área.", ui_story_31350401_21_dialog_content = "...", ui_story_31350401_22_dialog_content = "(Este trabajo es realmente sencillo, no habrá ningún problema en absoluto.)", ui_story_31350401_23_dialog_content = "Amenaza grave detectada. Activando protocolos de escape.", ui_story_31350401_24_dialog_content = "No te acerques a nosotros. No nos agregues a tus bebidas. No somos comida.", ui_story_31350401_25_dialog_content = "Eh, ¿qué está pasando? ¡Las luciérnagas están huyendo de su lugar favorito en el Colossus!", ui_story_31350401_26_dialog_content = "Ah... creo que es porque una vez los confundí con pequeñas bolitas flotantes de miel y traté de agregarlas a mi bebida...", ui_story_31350401_27_dialog_content = "Si ese es el caso, no estoy seguro de si hay algún otro trabajo adecuado para ti aquí...", ui_story_31350401_28_dialog_content = "Boo-hoo... N-no puedo hacer nada bien aquí! Soy una vergüenza para toda la facción de Harmony!", ui_story_31350401_29_dialog_content = "¡No digas eso! ¡Eres una persona increíble!", ui_story_31350401_30_dialog_content = "P-Pero... A este ritmo—", ui_story_31350401_31_dialog_content = "¡No podré pagar ese pastel súper cargado de la tienda de dulces de Umbraton! ¡Básicamente he gastado todo mi salario de la Federación Illumina!", ui_story_31350401_32_dialog_content = "Debí saberlo.", ui_story_31350401_33_dialog_content = "Realmente estaba deseando ese pastel...", ui_story_31350401_34_option_content = "Te lo compraré la próxima vez.", ui_story_31350401_35_dialog_content = "¡Guau, en serio?! P-Pero no puedo simplemente tomarlo sin ganármelo.", ui_story_31350401_36_dialog_content = "Está bien. Además, nos ayudaste a eliminar a esos Eclipsites antes, ¿verdad? Piensa en el pastel como mi forma de devolverte el favor.", ui_story_31350401_37_option_content = "Te haré uno en un rato.", ui_story_31350401_38_dialog_content = "¿T-Tú realmente sabes cómo hacer pasteles?!", ui_story_31350401_39_dialog_content = "Un poco.", ui_story_31350401_40_dialog_content = "¿De verdad voy a probar uno de los pasteles hechos a mano de PlayerName? ¡No puedo creer la suerte que tengo!", ui_story_31350401_41_dialog_content = "En cuanto al pastel de Umbraton, simplemente te acompañaré y lo compraré para ti la próxima vez.", ui_story_31350401_42_dialog_content = "¡Guau, en serio?! P-Pero no puedo simplemente tomarlo sin ganármelo.", ui_story_31350401_43_dialog_content = "Está bien. Además, nos ayudaste a eliminar a esos Eclipsites antes, ¿no es cierto? Considera el pastel como mi forma de devolverte el favor.", ui_story_31350401_44_dialog_content = "Entonces, ¿cuánto cuesta ese pastel en Umbraton?", ui_story_31350401_45_dialog_content = "<size=45>30,000 Nightium</size>, si mal no recuerdo.", ui_story_31350401_46_dialog_content = "Urgh—!", ui_story_31350401_47_dialog_content = "¿Qué pasa? ¿Te sientes bien?!", ui_story_31350401_48_dialog_content = "E-Estoy bien... Es solo todo mi dinero ganado con esfuerzo, pero lo haré solo por ti, Elma."}
+local config = {
+  ui_story_31350401_1_dialog_content = "PlayerName, ¡Necesito trabajar!",
+  ui_story_31350401_2_dialog_content = "R-¿En serio? No sabía que alguien pudiera disfrutar tanto del trabajo...",
+  ui_story_31350401_3_dialog_content = "¡No puedo quedarme aquí sin ganarme la vida! Va en contra del orden común!",
+  ui_story_31350401_4_dialog_content = "(Casi lo olvido, Elma pertenece a la facción de Armonía, así que le da mucha importancia a las reglas y al orden.)",
+  ui_story_31350401_5_dialog_content = "Bien, entonces vamos a echar un vistazo a Soroz.",
+  ui_story_31350401_6_dialog_content = "¡Guau, es este el bar?!",
+  ui_story_31350401_7_dialog_content = "Si buscas trabajo, ¿por qué no trabajar aquí? La parte más importante del trabajo también es mantener el orden.",
+  ui_story_31350401_8_dialog_content = "¡Entendido! ¡Déjamelo a mí!",
+  ui_story_31350401_9_dialog_content = "¡Oye, tú allí! Este no es lugar para niños.",
+  ui_story_31350401_10_dialog_content = "¿Eh? Pero alcancé la mayoría de edad hace mucho tiempo...",
+  ui_story_31350401_11_dialog_content = "Entonces, ¿cuántos años tienes?",
+  ui_story_31350401_12_dialog_content = "¿Qué tan viejo, eh...? ¡Demasiado viejo para recordarlo, sinceramente!",
+  ui_story_31350401_13_dialog_content = "Realmente es lo suficientemente mayor para estar aquí, Elma.",
+  ui_story_31350401_14_dialog_content = "¡Debes ser el amigo de PlayerName de otro mundo! ¡Ven a tomar algo conmigo!",
+  ui_story_31350401_15_dialog_content = "D-¿Sabe bien?",
+  ui_story_31350401_16_dialog_content = "¡Por supuesto! Es una especialidad de Northland: un vino dulce hecho con nieve derretida directamente de las cimas de las montañas.",
+  ui_story_31350401_17_dialog_content = "¡Guau, no estabas bromeando! ¡Sabe increíble!",
+  ui_story_31350401_18_dialog_content = "Espera, ¡esto no está bien! Se supone que debo vigilar este lugar. P-Pero... ¡simplemente no puedo parar!",
+  ui_story_31350401_19_dialog_content = "Q-Quizás podamos echar un vistazo a otros trabajos?",
+  ui_story_31350401_20_dialog_content = "Esta es la Red Lumina. Todo lo que necesitas hacer es llevarte bien con las Luciérnagas para administrar esta área.",
+  ui_story_31350401_21_dialog_content = "...",
+  ui_story_31350401_22_dialog_content = "(Este trabajo es realmente sencillo, no habrá ningún problema en absoluto.)",
+  ui_story_31350401_23_dialog_content = "Amenaza grave detectada. Activando protocolos de escape.",
+  ui_story_31350401_24_dialog_content = "No te acerques a nosotros. No nos agregues a tus bebidas. No somos comida.",
+  ui_story_31350401_25_dialog_content = "Eh, ¿qué está pasando? ¡Las luciérnagas están huyendo de su lugar favorito en el Colossus!",
+  ui_story_31350401_26_dialog_content = "Ah... creo que es porque una vez los confundí con pequeñas bolitas flotantes de miel y traté de agregarlas a mi bebida...",
+  ui_story_31350401_27_dialog_content = "Si ese es el caso, no estoy seguro de si hay algún otro trabajo adecuado para ti aquí...",
+  ui_story_31350401_28_dialog_content = "Boo-hoo... N-no puedo hacer nada bien aquí! Soy una vergüenza para toda la facción de Harmony!",
+  ui_story_31350401_29_dialog_content = "¡No digas eso! ¡Eres una persona increíble!",
+  ui_story_31350401_30_dialog_content = "P-Pero... A este ritmo—",
+  ui_story_31350401_31_dialog_content = "¡No podré pagar ese pastel súper cargado de la tienda de dulces de Umbraton! ¡Básicamente he gastado todo mi salario de la Federación Illumina!",
+  ui_story_31350401_32_dialog_content = "Debí saberlo.",
+  ui_story_31350401_33_dialog_content = "Realmente estaba deseando ese pastel...",
+  ui_story_31350401_34_option_content = "Te lo compraré la próxima vez.",
+  ui_story_31350401_35_dialog_content = "¡Guau, en serio?! P-Pero no puedo simplemente tomarlo sin ganármelo.",
+  ui_story_31350401_36_dialog_content = "Está bien. Además, nos ayudaste a eliminar a esos Eclipsites antes, ¿verdad? Piensa en el pastel como mi forma de devolverte el favor.",
+  ui_story_31350401_37_option_content = "Te haré uno en un rato.",
+  ui_story_31350401_38_dialog_content = "¿T-Tú realmente sabes cómo hacer pasteles?!",
+  ui_story_31350401_39_dialog_content = "Un poco.",
+  ui_story_31350401_40_dialog_content = "¿De verdad voy a probar uno de los pasteles hechos a mano de PlayerName? ¡No puedo creer la suerte que tengo!",
+  ui_story_31350401_41_dialog_content = "En cuanto al pastel de Umbraton, simplemente te acompañaré y lo compraré para ti la próxima vez.",
+  ui_story_31350401_42_dialog_content = "¡Guau, en serio?! P-Pero no puedo simplemente tomarlo sin ganármelo.",
+  ui_story_31350401_43_dialog_content = "Está bien. Además, nos ayudaste a eliminar a esos Eclipsites antes, ¿no es cierto? Considera el pastel como mi forma de devolverte el favor.",
+  ui_story_31350401_44_dialog_content = "Entonces, ¿cuánto cuesta ese pastel en Umbraton?",
+  ui_story_31350401_45_dialog_content = "<size=45>30,000 Nightium</size>, si mal no recuerdo.",
+  ui_story_31350401_46_dialog_content = "Urgh—!",
+  ui_story_31350401_47_dialog_content = "¿Qué pasa? ¿Te sientes bien?!",
+  ui_story_31350401_48_dialog_content = "E-Estoy bien... Es solo todo mi dinero ganado con esfuerzo, pero lo haré solo por ti, Elma."
+}
 return config
-

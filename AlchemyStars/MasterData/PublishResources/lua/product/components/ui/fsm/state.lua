@@ -1,76 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/fsm/state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("State", Object)
 State = State
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-State.Constructor = function(self, enumValue)
-  -- function num : 0_0
+function State:Constructor(enumValue)
   self.EnumValue = enumValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-State.OnEnter = function(self, TT, ...)
-  -- function num : 0_1
+function State:OnEnter(TT, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-State.OnExit = function(self, TT)
-  -- function num : 0_2
+function State:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-State.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3
+function State:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-State.Destroy = function(self)
-  -- function num : 0_4
+function State:Destroy()
   self.fsm = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-State.CreateInstance = function(className, enum)
-  -- function num : 0_5 , upvalues : _ENV
+function State.CreateInstance(className, enum)
   local cls = _G[className]
   if not cls then
-    (Log.error)("### no class : ", className)
+    Log.error("### no class : ", className)
   end
   if not cls.New then
-    (Log.error)("### no New in class : ", className)
+    Log.error("### no New in class : ", className)
   end
   local s = cls:New(enum)
   return s
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-State.SetFsm = function(self, fsm)
-  -- function num : 0_6
+function State:SetFsm(fsm)
   self.fsm = fsm
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-State.GetFsm = function(self)
-  -- function num : 0_7
+function State:GetFsm()
   return self.fsm
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-State.ChangeState = function(self, enumValue, ...)
-  -- function num : 0_8
-  (self.fsm):ChangeState(enumValue, ...)
+function State:ChangeState(enumValue, ...)
+  self.fsm:ChangeState(enumValue, ...)
 end
-
-

@@ -1,96 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_summon_meantime_limit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultSummonMeantimeLimit", SkillEffectResultBase)
 SkillEffectResultSummonMeantimeLimit = SkillEffectResultSummonMeantimeLimit
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultSummonMeantimeLimit.Constructor = function(self, trapID, summonPosList)
-  -- function num : 0_0
+function SkillEffectResultSummonMeantimeLimit:Constructor(trapID, summonPosList)
   self._trapID = trapID
   self._summonPosList = summonPosList
   self._destroyEntityID = {}
   self._replaceAttr = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultSummonMeantimeLimit:GetEffectType()
   return SkillEffectType.SummonMeantimeLimit
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectResultSummonMeantimeLimit:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.GetSummonPosList = function(self)
-  -- function num : 0_3
+function SkillEffectResultSummonMeantimeLimit:GetSummonPosList()
   return self._summonPosList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.SetReplaceAttr = function(self, replaceAttr)
-  -- function num : 0_4
+function SkillEffectResultSummonMeantimeLimit:SetReplaceAttr(replaceAttr)
   self._replaceAttr = replaceAttr
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.GetReplaceAttr = function(self)
-  -- function num : 0_5
+function SkillEffectResultSummonMeantimeLimit:GetReplaceAttr()
   return self._replaceAttr
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.GetDestroyEntityID = function(self)
-  -- function num : 0_6
+function SkillEffectResultSummonMeantimeLimit:GetDestroyEntityID()
   return self._destroyEntityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.SetDestroyEntityID = function(self, destroyEntityID)
-  -- function num : 0_7
+function SkillEffectResultSummonMeantimeLimit:SetDestroyEntityID(destroyEntityID)
   self._destroyEntityID = destroyEntityID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.SetTrapIDList = function(self, trapIDList)
-  -- function num : 0_8
+function SkillEffectResultSummonMeantimeLimit:SetTrapIDList(trapIDList)
   self._trapIDList = trapIDList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.GetTrapIDList = function(self)
-  -- function num : 0_9
+function SkillEffectResultSummonMeantimeLimit:GetTrapIDList()
   return self._trapIDList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.SetTrapDieSkillResult = function(self, trapDieSkillResult)
-  -- function num : 0_10
+function SkillEffectResultSummonMeantimeLimit:SetTrapDieSkillResult(trapDieSkillResult)
   self._trapDieSkillResult = trapDieSkillResult
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonMeantimeLimit.GetTrapDieSkillResult = function(self)
-  -- function num : 0_11
+function SkillEffectResultSummonMeantimeLimit:GetTrapDieSkillResult()
   return self._trapDieSkillResult
 end
-
-

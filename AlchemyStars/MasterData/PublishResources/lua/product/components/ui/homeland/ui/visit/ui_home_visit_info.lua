@@ -1,39 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_visit_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeVisitInfo", Object)
 UIHomeVisitInfo = UIHomeVisitInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeVisitInfo.Constructor = function(self, data)
-  -- function num : 0_0
+function UIHomeVisitInfo:Constructor(data)
   self._data = data
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitInfo.Data = function(self)
-  -- function num : 0_1
+function UIHomeVisitInfo:Data()
   return self._data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitInfo.HasGift = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local gifts = (self._data).item_list
+function UIHomeVisitInfo:HasGift()
+  local gifts = self._data.item_list
   if next(gifts) then
-    for key,gift in pairs(gifts) do
+    for key, gift in pairs(gifts) do
       if gift.count > 0 then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
-
-

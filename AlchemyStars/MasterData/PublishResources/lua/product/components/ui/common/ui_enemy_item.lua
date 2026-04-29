@@ -1,67 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_enemy_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEnemyItem", UICustomWidget)
 UIEnemyItem = UIEnemyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEnemyItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIEnemyItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIEnemyItem:InitWidget()
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self.iconLoader = self:GetUIComponent("RawImageLoader", "UIEnemyItem")
   self.bossGo = self:GetGameObject("bossGo")
   self.eliteGo = self:GetGameObject("eliteGo")
   self.element = self:GetUIComponent("Image", "element")
-  self.elementIcons = {[1] = "bing_color", [2] = "huo_color", [3] = "sen_color", [4] = "lei_color"}
+  self.elementIcons = {
+    [1] = "bing_color",
+    [2] = "huo_color",
+    [3] = "sen_color",
+    [4] = "lei_color"
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyItem.SetData = function(self, monsterID, idx, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEnemyItem:SetData(monsterID, idx, onClick)
   self._id = monsterID
   self._idx = idx
   self._onClick = onClick
-  local cfg = (Cfg.cfg_monster)[monsterID]
+  local cfg = Cfg.cfg_monster[monsterID]
   if cfg then
-    local cfgClass = (Cfg.cfg_monster_class)[cfg.ClassID]
+    local cfgClass = Cfg.cfg_monster_class[cfg.ClassID]
     if cfgClass.EnemyStaticBody then
-      (self.iconLoader):LoadImage(cfgClass.EnemyStaticBody)
+      self.iconLoader:LoadImage(cfgClass.EnemyStaticBody)
     end
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.element).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((self.elementIcons)[cfg.ElementType]))
+    self.element.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self.elementIcons[cfg.ElementType]))
     local isElite = false
-    if cfg.EliteID and (table.count)(cfg.EliteID) > 0 then
+    if cfg.EliteID and table.count(cfg.EliteID) > 0 then
       isElite = true
     end
-    ;
-    (self.eliteGo):SetActive(isElite)
-    ;
-    (self.bossGo):SetActive(cfgClass.MonsterType == MonsterType.Boss)
+    self.eliteGo:SetActive(isElite)
+    self.bossGo:SetActive(cfgClass.MonsterType == MonsterType.Boss)
   else
-    (Log.fatal)("###cfg is nil ! monster id  is ", monsterID)
+    Log.fatal("###cfg is nil ! monster id  is ", monsterID)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyItem.clickAreaOnClick = function(self, go)
-  -- function num : 0_3
+function UIEnemyItem:clickAreaOnClick(go)
   if self._onClick then
-    (self._onClick)(self._idx)
+    self._onClick(self._idx)
   end
 end
-
-

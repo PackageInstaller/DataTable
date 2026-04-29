@@ -1,112 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_bubble.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN17N46FishingGameBubble", Object)
 UICN17N46FishingGameBubble = UICN17N46FishingGameBubble
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingGameBubble.Constructor = function(self, parentTrans)
-  -- function num : 0_0 , upvalues : _ENV
-  self._bubbleReq = (ResourceManager:GetInstance()):SyncLoadAsset("UICN17N46FishingGameBubble.prefab", LoadType.GameObject)
-  self._bubbleObj = (self._bubbleReq).Obj
-  ;
-  ((self._bubbleObj).transform):SetParent(parentTrans, false)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._bubbleObj).transform).localPosition = Vector3.zero
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._bubbleObj).transform).localEulerAngles = Vector3.zero
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._bubbleObj).transform).localScale = Vector3.one
-  self._errorObj = (((self._bubbleObj).transform):GetChild(0)).gameObject
-  self._rightObj = (((self._bubbleObj).transform):GetChild(1)).gameObject
-  self._scoreText = (((self._rightObj).transform):GetChild(0)):GetComponent("UILocalizationText")
-  ;
-  (self._bubbleObj):SetActive(false)
+function UICN17N46FishingGameBubble:Constructor(parentTrans)
+  self._bubbleReq = ResourceManager:GetInstance():SyncLoadAsset("UICN17N46FishingGameBubble.prefab", LoadType.GameObject)
+  self._bubbleObj = self._bubbleReq.Obj
+  self._bubbleObj.transform:SetParent(parentTrans, false)
+  self._bubbleObj.transform.localPosition = Vector3.zero
+  self._bubbleObj.transform.localEulerAngles = Vector3.zero
+  self._bubbleObj.transform.localScale = Vector3.one
+  self._errorObj = self._bubbleObj.transform:GetChild(0).gameObject
+  self._rightObj = self._bubbleObj.transform:GetChild(1).gameObject
+  self._scoreText = self._rightObj.transform:GetChild(0):GetComponent("UILocalizationText")
+  self._bubbleObj:SetActive(false)
   self._isUsing = false
   self._timerHolder = UITimerHolder:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameBubble.Hide = function(self)
-  -- function num : 0_1
+function UICN17N46FishingGameBubble:Hide()
   if self._bubbleObj ~= nil then
-    (self._bubbleObj):SetActive(false)
+    self._bubbleObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameBubble.Show = function(self, score, isRightFish, targetPos, offset)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._bubbleObj):SetActive(true)
+function UICN17N46FishingGameBubble:Show(score, isRightFish, targetPos, offset)
+  self._bubbleObj:SetActive(true)
   self._isUsing = true
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._bubbleObj).transform).position = targetPos
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._bubbleObj).transform).localPosition = ((self._bubbleObj).transform).localPosition + Vector3.up * 200
-  do
-    if offset then
-      local tmp = Vector2((((self._bubbleObj).transform).localPosition).x + offset.x, (((self._bubbleObj).transform).localPosition).y + offset.y)
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      ((self._bubbleObj).transform).localPosition = tmp
-    end
-    if isRightFish then
-      (self._scoreText):SetText("+" .. score)
-      ;
-      (self._rightObj):SetActive(true)
-      ;
-      (self._errorObj):SetActive(false)
-    else
-      ;
-      (self._rightObj):SetActive(false)
-      ;
-      (self._errorObj):SetActive(true)
-    end
-    ;
-    (self._timerHolder):StartTimer("WaitForAnim", 1000, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._bubbleObj.transform.position = targetPos
+  self._bubbleObj.transform.localPosition = self._bubbleObj.transform.localPosition + Vector3.up * 200
+  if offset then
+    local tmp = Vector2(self._bubbleObj.transform.localPosition.x + offset.x, self._bubbleObj.transform.localPosition.y + offset.y)
+    self._bubbleObj.transform.localPosition = tmp
+  end
+  if isRightFish then
+    self._scoreText:SetText("+" .. score)
+    self._rightObj:SetActive(true)
+    self._errorObj:SetActive(false)
+  else
+    self._rightObj:SetActive(false)
+    self._errorObj:SetActive(true)
+  end
+  self._timerHolder:StartTimer("WaitForAnim", 1000, function()
     self:Hide()
     self._isUsing = false
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameBubble.CheckUsing = function(self)
-  -- function num : 0_3
+function UICN17N46FishingGameBubble:CheckUsing()
   return self._isUsing
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameBubble.Dispose = function(self)
-  -- function num : 0_4
+function UICN17N46FishingGameBubble:Dispose()
   if self._bubbleReq then
-    (self._bubbleReq):Dispose()
+    self._bubbleReq:Dispose()
   end
-  ;
-  (self._timerHolder):Dispose()
+  self._timerHolder:Dispose()
   self._bubbleReq = nil
   self._errorImg = nil
   self._scoreText = nil
   self._bubbleObj = nil
 end
-
-

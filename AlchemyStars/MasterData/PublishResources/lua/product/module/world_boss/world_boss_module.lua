@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/world_boss/world_boss_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("WorldBossModule", GameModule)
 WorldBossModule = WorldBossModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-WorldBossModule.Constructor = function(self)
-  -- function num : 0_0
+function WorldBossModule:Constructor()
   self.m_world_boss_data = nil
   self.m_dan_info = nil
   self.m_cur_team_index = 1
@@ -18,81 +11,49 @@ WorldBossModule.Constructor = function(self)
   self.m_last_rank_topN = nil
   self.m_rank_stamp = {boss_mission_id = 0, time_stamp = 0}
   self._uiRecordDan = {}
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._uiRecordDan).oldDan = -1
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._uiRecordDan).oldRank = -1
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._uiRecordDan).oldMissionId = -1
+  self._uiRecordDan.oldDan = -1
+  self._uiRecordDan.oldRank = -1
+  self._uiRecordDan.oldMissionId = -1
   self._bossLevelDifficultyIndex = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.SetBossLevelDifficultyIndex = function(self, index)
-  -- function num : 0_1
+function WorldBossModule:SetBossLevelDifficultyIndex(index)
   self._bossLevelDifficultyIndex = index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.GetBossLevelDifficultyIndex = function(self)
-  -- function num : 0_2
+function WorldBossModule:GetBossLevelDifficultyIndex()
   return self._bossLevelDifficultyIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.Init = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventMobilePushWorldBossRefresh, self.HandleWorldBossRefresh, self)
+function WorldBossModule:Init()
+  self.caller:RegisterPushHandler(CEventMobilePushWorldBossRefresh, self.HandleWorldBossRefresh, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.SetCurSelectTeamIndex = function(self, index)
-  -- function num : 0_4
+function WorldBossModule:SetCurSelectTeamIndex(index)
   self.m_cur_team_index = index
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.GetCurSelectTeamIndex = function(self)
-  -- function num : 0_5
+function WorldBossModule:GetCurSelectTeamIndex()
   return self.m_cur_team_index
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.GetRecordByTeamIndex = function(self, index)
-  -- function num : 0_6 , upvalues : _ENV
+function WorldBossModule:GetRecordByTeamIndex(index)
   if not self.m_world_boss_data then
     return nil
   end
-  if #((self.m_world_boss_data).formation_info).formation_list > 0 then
-    for key,value in pairs(((self.m_world_boss_data).formation_info).formation_list) do
+  if #self.m_world_boss_data.formation_info.formation_list > 0 then
+    for key, value in pairs(self.m_world_boss_data.formation_info.formation_list) do
       if index == value.id then
         return value
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.ReqWorldBossData = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function WorldBossModule:ReqWorldBossData(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyWorldBossInfoReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyWorldBossInfoReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(WorldBossErrorType.E_WORLDBOSS_ERROR_UNLOCK)
@@ -108,25 +69,17 @@ WorldBossModule.ReqWorldBossData = function(self, TT)
   return AsyncRes, replyEvent.Data
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.SetPlayerWorldBossFormationInfo = function(self, pet_list)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self.m_world_boss_data).formation_info).pet_list = pet_list
+function WorldBossModule:SetPlayerWorldBossFormationInfo(pet_list)
+  self.m_world_boss_data.formation_info.pet_list = pet_list
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.ReqWorldBossChangeFormationInfo = function(self, TT, formation_pet_list)
-  -- function num : 0_9 , upvalues : _ENV
+function WorldBossModule:ReqWorldBossChangeFormationInfo(TT, formation_pet_list)
   local AsyncRes = AsyncRequestRes:New()
   if formation_pet_list == nil then
     AsyncRes:SetResult(WorldBossErrorType.E_WORLDBOSS_FORMATION_DATA_INVALID)
     return AsyncRes
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyChangeWorldBossFormationReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyChangeWorldBossFormationReq)
   request.nId = self.m_cur_team_index
   request.formation_pet_list = formation_pet_list
   local reply = self:Call(TT, request)
@@ -144,12 +97,9 @@ WorldBossModule.ReqWorldBossChangeFormationInfo = function(self, TT, formation_p
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.ReqResetRecord = function(self, TT, nId)
-  -- function num : 0_10 , upvalues : _ENV
+function WorldBossModule:ReqResetRecord(TT, nId)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventResetRecordReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventResetRecordReq)
   request.nId = nId
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -159,27 +109,23 @@ WorldBossModule.ReqResetRecord = function(self, TT, nId)
   local replyEvent = reply.msg
   if replyEvent.nRet == WorldBossErrorType.E_WORLDBOSS_ERROR_TYPE_SUCCESS then
     self:SetPlayerWorldBossFormationInfo(nil)
-    for i = 1, #((self.m_world_boss_data).formation_info).formation_list do
-      local formation_list = ((self.m_world_boss_data).formation_info).formation_list
-      if formation_list[i] and (formation_list[i]).id == nId then
-        (table.remove)(formation_list, i)
+    for i = 1, #self.m_world_boss_data.formation_info.formation_list do
+      local formation_list = self.m_world_boss_data.formation_info.formation_list
+      if formation_list[i] and formation_list[i].id == nId then
+        table.remove(formation_list, i)
         break
       end
     end
-    do
-      AsyncRes:SetSucc(true)
-      AsyncRes:SetResult(replyEvent.nRet)
-      return AsyncRes
-    end
+    AsyncRes:SetSucc(true)
+  else
+    AsyncRes:SetResult(replyEvent.nRet)
   end
+  return AsyncRes
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.ReqGetDanInfo = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function WorldBossModule:ReqGetDanInfo(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventGetDanInfoReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventGetDanInfoReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(WorldBossErrorType.E_WORLDBOSS_DAN_INVALID)
@@ -195,12 +141,9 @@ WorldBossModule.ReqGetDanInfo = function(self, TT)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.ReqChoseRecord = function(self, TT, bSelectNew, nId, damage)
-  -- function num : 0_12 , upvalues : _ENV
+function WorldBossModule:ReqChoseRecord(TT, bSelectNew, nId, damage)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChoseRecordReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChoseRecordReq)
   request.select_new = bSelectNew
   request.nId = nId
   local reply = self:Call(TT, request)
@@ -211,135 +154,103 @@ WorldBossModule.ReqChoseRecord = function(self, TT, bSelectNew, nId, damage)
   local replyEvent = reply.msg
   if replyEvent.nRet == WorldBossErrorType.E_WORLDBOSS_ERROR_TYPE_SUCCESS then
     if bSelectNew then
-      for key,value in pairs(((self.m_world_boss_data).formation_info).formation_list) do
-        -- DECOMPILER ERROR at PC49: Confused about usage of register: R14 in 'UnsetPending'
-
+      for key, value in pairs(self.m_world_boss_data.formation_info.formation_list) do
         if nId == value.id then
-          ((((self.m_world_boss_data).formation_info).formation_list)[key]).pet_list = ((self.m_world_boss_data).formation_info).pet_list
+          self.m_world_boss_data.formation_info.formation_list[key].pet_list = self.m_world_boss_data.formation_info.pet_list
         end
       end
     end
-    do
-      AsyncRes:SetSucc(true)
-      AsyncRes:SetResult(replyEvent.nRet)
-      return AsyncRes
-    end
+    AsyncRes:SetSucc(true)
+  else
+    AsyncRes:SetResult(replyEvent.nRet)
   end
+  return AsyncRes
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.Module_ConvertMatchResult = function(self, recvResult)
-  -- function num : 0_13 , upvalues : _ENV
+function WorldBossModule:Module_ConvertMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_WorldBoss
   uiMatchResult.m_nID = recvResult.mission_id
   uiMatchResult.m_damage = recvResult.total_damage
-  local cfg = (Cfg.cfg_world_boss_mission)[recvResult.mission_id]
+  local cfg = Cfg.cfg_world_boss_mission[recvResult.mission_id]
   if cfg then
-    uiMatchResult.m_stShowName = (StringTable.Get)(cfg.MissionName)
+    uiMatchResult.m_stShowName = StringTable.Get(cfg.MissionName)
   end
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.TeamMemberChange = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function WorldBossModule:TeamMemberChange()
   local missionModule = self:GetModule(MissionModule)
   local teamsContext = missionModule:TeamCtx()
-  local newTeam = (teamsContext:Teams()):Get(teamsContext:GetCurrTeamId())
+  local newTeam = teamsContext:Teams():Get(teamsContext:GetCurrTeamId())
   local record = self:GetRecordByTeamIndex(self:GetCurSelectTeamIndex())
   local pets = {}
   if record then
     for i = 1, 5 do
-      if (newTeam.pets)[i] and (newTeam.pets)[i] > 0 then
-        if not pets[(newTeam.pets)[i]] then
-          pets[(newTeam.pets)[i]] = 1
+      if newTeam.pets[i] and newTeam.pets[i] > 0 then
+        if not pets[newTeam.pets[i]] then
+          pets[newTeam.pets[i]] = 1
         else
-          pets[(newTeam.pets)[i]] = 2
+          pets[newTeam.pets[i]] = 2
         end
       end
-      if (record.pet_list)[i] and (record.pet_list)[i] > 0 then
-        if not pets[(record.pet_list)[i]] then
-          pets[(record.pet_list)[i]] = 1
+      if record.pet_list[i] and 0 < record.pet_list[i] then
+        if not pets[record.pet_list[i]] then
+          pets[record.pet_list[i]] = 1
         else
-          pets[(record.pet_list)[i]] = 2
+          pets[record.pet_list[i]] = 2
         end
       end
     end
-    for key,value in pairs(pets) do
+    for key, value in pairs(pets) do
       if value < 2 then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.HandleWorldBossRefresh = function(self, msg)
-  -- function num : 0_15 , upvalues : _ENV
+function WorldBossModule:HandleWorldBossRefresh(msg)
   self.m_cur_rank_topN = nil
   self.m_last_rank_topN = nil
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WorldBossDanResult)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.WorldBossDanResult)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.CheckPetInRecordTeam = function(self, pstid)
-  -- function num : 0_16 , upvalues : _ENV
+function WorldBossModule:CheckPetInRecordTeam(pstid)
   local inRecord = false
   if pstid <= 0 then
     return inRecord
   end
-  if #((self.m_world_boss_data).formation_info).formation_list > 0 then
-    for key,value in pairs(((self.m_world_boss_data).formation_info).formation_list) do
-      if self.m_cur_team_index ~= value.id and (table.icontains)(value.pet_list, pstid) then
+  if 0 < #self.m_world_boss_data.formation_info.formation_list then
+    for key, value in pairs(self.m_world_boss_data.formation_info.formation_list) do
+      if self.m_cur_team_index ~= value.id and table.icontains(value.pet_list, pstid) then
         inRecord = true
         break
       end
     end
   end
-  do
-    return inRecord
-  end
+  return inRecord
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.CurSeasonEnd = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  do
-    if self.m_world_boss_data then
-      local svrTimeModule = self:GetModule(SvrTimeModule)
-      return (self.m_world_boss_data).end_time - svrTimeModule:GetServerTime() * 0.001 <= 0
-    end
-    do return true end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function WorldBossModule:CurSeasonEnd()
+  if self.m_world_boss_data then
+    local svrTimeModule = self:GetModule(SvrTimeModule)
+    return self.m_world_boss_data.end_time - svrTimeModule:GetServerTime() * 0.001 <= 0
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.GetWorldBossRedPoint = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function WorldBossModule:GetWorldBossRedPoint()
   if not self._worldBossRedPoint then
     self._worldBossRedPoint = UIWorldBossRedPoint:New()
   end
   return self._worldBossRedPoint
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.GetWorldBossRankDamageList = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function WorldBossModule:GetWorldBossRankDamageList(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventGetRankDamageListReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventGetRankDamageListReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(WorldBossErrorType.E_WORLDBOSS_ERROR_TYPE_FAILURE)
@@ -357,20 +268,15 @@ WorldBossModule.GetWorldBossRankDamageList = function(self, TT)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.CheckGetWorldBossRankDamageList = function(self, TT)
-  -- function num : 0_20 , upvalues : _ENV
+function WorldBossModule:CheckGetWorldBossRankDamageList(TT)
   local sendDeltaTimeMs = 60000
   local svrTimeModule = self:GetModule(SvrTimeModule)
   local curTime = svrTimeModule:GetServerTime()
   local bSendMsg = false
   if not self._getRankDamageListTime then
     bSendMsg = true
-  else
-    if sendDeltaTimeMs < (math.abs)(curTime - self._getRankDamageListTime) then
-      bSendMsg = true
-    end
+  elseif sendDeltaTimeMs < math.abs(curTime - self._getRankDamageListTime) then
+    bSendMsg = true
   end
   if bSendMsg then
     local getListRes = self:GetWorldBossRankDamageList(TT)
@@ -379,80 +285,48 @@ WorldBossModule.CheckGetWorldBossRankDamageList = function(self, TT)
     end
     return getListRes
   else
-    do
-      local AsyncRes = AsyncRequestRes:New()
-      AsyncRes:SetSucc(true)
-      do return AsyncRes end
-    end
+    local AsyncRes = AsyncRequestRes:New()
+    AsyncRes:SetSucc(true)
+    return AsyncRes
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.SetUiOldDan = function(self, dan, rank, missionId)
-  -- function num : 0_21
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._uiRecordDan).oldDan = dan
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._uiRecordDan).oldRank = rank
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._uiRecordDan).oldMissionId = missionId
+function WorldBossModule:SetUiOldDan(dan, rank, missionId)
+  self._uiRecordDan.oldDan = dan
+  self._uiRecordDan.oldRank = rank
+  self._uiRecordDan.oldMissionId = missionId
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.GetUiOldDan = function(self, curMissionId)
-  -- function num : 0_22
-  if curMissionId == (self._uiRecordDan).oldMissionId then
-    return (self._uiRecordDan).oldDan, (self._uiRecordDan).oldRank
+function WorldBossModule:GetUiOldDan(curMissionId)
+  if curMissionId == self._uiRecordDan.oldMissionId then
+    return self._uiRecordDan.oldDan, self._uiRecordDan.oldRank
   else
     return -1, -1
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.AwardMultiOpen = function(self)
-  -- function num : 0_23
-  do return (self:GetAwardMultiple() > 1 and not self:CurSeasonEnd()) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function WorldBossModule:AwardMultiOpen()
+  return self:GetAwardMultiple() > 1 and not self:CurSeasonEnd()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.GetAwardMultiple = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  if not self.m_world_boss_data or (self.m_world_boss_data).boss_mission_id <= 0 then
+function WorldBossModule:GetAwardMultiple()
+  if not self.m_world_boss_data or self.m_world_boss_data.boss_mission_id <= 0 then
     return 0
   end
-  local cfg = (Cfg.cfg_world_boss_mission)[(self.m_world_boss_data).boss_mission_id]
+  local cfg = Cfg.cfg_world_boss_mission[self.m_world_boss_data.boss_mission_id]
   if cfg then
     return cfg.AwardMulti
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.GetWorldBossRankTopN = function(self, TT, is_cur_rank)
-  -- function num : 0_25 , upvalues : _ENV
-  local timeMod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+function WorldBossModule:GetWorldBossRankTopN(TT, is_cur_rank)
+  local timeMod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   local tmNowTime = timeMod:GetServerTime()
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_rank_stamp).boss_mission_id = (self.m_world_boss_data).boss_mission_id
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_rank_stamp).time_stamp = tmNowTime
+  self.m_rank_stamp.boss_mission_id = self.m_world_boss_data.boss_mission_id
+  self.m_rank_stamp.time_stamp = tmNowTime
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventGetRankTopNReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventGetRankTopNReq)
   request.is_cur_rank = is_cur_rank
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -473,12 +347,9 @@ WorldBossModule.GetWorldBossRankTopN = function(self, TT, is_cur_rank)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.GetRankOneDetail = function(self, TT, pstid)
-  -- function num : 0_26 , upvalues : _ENV
+function WorldBossModule:GetRankOneDetail(TT, pstid)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRankOneDetailReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRankOneDetailReq)
   request.pstid = pstid
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -494,42 +365,35 @@ WorldBossModule.GetRankOneDetail = function(self, TT, pstid)
   return AsyncRes, replyEvent.detail_info
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.NeedRequestRank = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function WorldBossModule:NeedRequestRank()
   if self.m_world_boss_data == nil then
     return true, true
   end
-  if (self.m_world_boss_data).boss_mission_id ~= (self.m_rank_stamp).boss_mission_id then
+  if self.m_world_boss_data.boss_mission_id ~= self.m_rank_stamp.boss_mission_id then
     return true, true
   end
-  local timeMod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+  local timeMod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   local tmNowTime = timeMod:GetServerTime()
-  if self.m_last_rank_topN ~= nil then
-    do return true, tmNowTime - (self.m_rank_stamp).time_stamp < 59000 end
-    do return self.m_cur_rank_topN == nil, self.m_last_rank_topN == nil end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if tmNowTime - self.m_rank_stamp.time_stamp >= 59000 then
+    return true, self.m_last_rank_topN == nil
   end
+  return self.m_cur_rank_topN == nil, self.m_last_rank_topN == nil
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldBossModule.QuestHaveRedPoint = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function WorldBossModule:QuestHaveRedPoint()
   local haveRedPoint = false
-  local idMission = (self.m_world_boss_data).boss_mission_id
-  local cfg_mission = (Cfg.cfg_world_boss_mission)[idMission]
-  local QuestList = nil
+  local idMission = self.m_world_boss_data.boss_mission_id
+  local cfg_mission = Cfg.cfg_world_boss_mission[idMission]
+  local QuestList
   if cfg_mission ~= nil and cfg_mission.QuestList ~= nil then
     QuestList = cfg_mission.QuestList
   else
     QuestList = {}
   end
   local questModule = self:GetModule(QuestModule)
-  for k,v in pairs(QuestList) do
-    local quest = (questModule:GetQuest(v))
-    local qinfo = nil
+  for k, v in pairs(QuestList) do
+    local quest = questModule:GetQuest(v)
+    local qinfo
     if quest ~= nil then
       qinfo = quest:QuestInfo()
     end
@@ -538,9 +402,5 @@ WorldBossModule.QuestHaveRedPoint = function(self)
       break
     end
   end
-  do
-    return haveRedPoint
-  end
+  return haveRedPoint
 end
-
-

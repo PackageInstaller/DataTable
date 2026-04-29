@@ -1,36 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatController", UIController)
 UIChatController = UIChatController
-local UIChatPanelType = {RecentFriend = 1, FriendList = 2, AddFirend = 3}
+local UIChatPanelType = {
+  RecentFriend = 1,
+  FriendList = 2,
+  AddFirend = 3
+}
 _enum("UIChatPanelType", UIChatPanelType)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIChatController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChatController:LoadDataOnEnter(TT, res, uiParams)
   self._chatFriendManager = ChatFriendManager:New()
-  self._socialModule = (GameGlobal.GetModule)(SocialModule)
-  ;
-  (self._socialModule):EnterChatFriendModule(TT)
-  ;
-  (self._chatFriendManager):RequestFriendList(TT)
-  ;
-  (self._chatFriendManager):RequestBlackListData(TT)
-  ;
-  (self._chatFriendManager):GetAllChatDatas()
+  self._socialModule = GameGlobal.GetModule(SocialModule)
+  self._socialModule:EnterChatFriendModule(TT)
+  self._chatFriendManager:RequestFriendList(TT)
+  self._chatFriendManager:RequestBlackListData(TT)
+  self._chatFriendManager:GetAllChatDatas()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChatController:OnShow(uiParams)
   self:AttachEvent(GameEventType.UpdateUnReadMessageStatus, self._UpdateUnReadMessageStatus)
   self:AttachEvent(GameEventType.InModuleFriendNotifyNewMsg, self._ReceiveNewMessage)
   self:AttachEvent(GameEventType.UpdateFriendInvitation, self._UpdateHaveNewFriendRequestStatus)
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   if socialModule.chatInputCache then
     self.chatInputCache = socialModule.chatInputCache
   else
@@ -43,10 +33,7 @@ UIChatController.OnShow = function(self, uiParams)
   self.closeCb = uiParams[1]
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChatController:_GetComponents()
   self._recentListUnReadMessageGo = self:GetGameObject("RecentListUnReadMessage")
   self._friendListUnReadMessageGo = self:GetGameObject("FriendListUnReadMessage")
   self._haveNewFriendRequestGo = self:GetGameObject("HaveNewFriendRequest")
@@ -57,25 +44,15 @@ UIChatController._GetComponents = function(self)
   self._friendBtnSelectedGo = self:GetGameObject("FriendBtnSelected")
   self._addFriendBtnSelectedGo = self:GetGameObject("AddFriendBtnSelected")
   self._transition = self:GetUIComponent("ATransitionComponent", "TransitionComponent")
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._transition).enabled = true
+  self._transition.enabled = true
   local backBtns = self:GetUIComponent("UISelectObjectPath", "BackBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:_Close()
-  end
-, nil, function()
-    -- function num : 0_2_1 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._transition).enabled = false
+  end, nil, function()
+    self._transition.enabled = false
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
   local recentFriendPanel = self:GetUIComponent("UISelectObjectPath", "RecentFriendPanel")
   self._recentFriendPanel = recentFriendPanel:SpawnObject("UIChatRecentFriendListPanel")
   local friendListPanel = self:GetUIComponent("UISelectObjectPath", "FriendListPanel")
@@ -84,186 +61,110 @@ UIChatController._GetComponents = function(self)
   self._addFriendPanel = addFriendPanel:SpawnObject("UIChatAddFriendPanel")
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController._UpdateUnReadMessageStatus = function(self)
-  -- function num : 0_3
-  local hasUnReadMessage = (self._chatFriendManager):HasUnReadMessage()
-  ;
-  (self._recentListUnReadMessageGo):SetActive(hasUnReadMessage)
-  ;
-  (self._friendListUnReadMessageGo):SetActive(false)
+function UIChatController:_UpdateUnReadMessageStatus()
+  local hasUnReadMessage = self._chatFriendManager:HasUnReadMessage()
+  self._recentListUnReadMessageGo:SetActive(hasUnReadMessage)
+  self._friendListUnReadMessageGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController._ReceiveNewMessage = function(self)
-  -- function num : 0_4 , upvalues : UIChatPanelType
+function UIChatController:_ReceiveNewMessage()
   if self._currentPanelType == UIChatPanelType.RecentFriend then
-    local hasUnReadMessage = (self._chatFriendManager):HasUnReadMessage()
-    ;
-    (self._recentListUnReadMessageGo):SetActive(hasUnReadMessage)
-    ;
-    (self._friendListUnReadMessageGo):SetActive(false)
+    local hasUnReadMessage = self._chatFriendManager:HasUnReadMessage()
+    self._recentListUnReadMessageGo:SetActive(hasUnReadMessage)
+    self._friendListUnReadMessageGo:SetActive(false)
   else
-    do
-      ;
-      (self._recentListUnReadMessageGo):SetActive(true)
-      ;
-      (self._friendListUnReadMessageGo):SetActive(false)
-    end
+    self._recentListUnReadMessageGo:SetActive(true)
+    self._friendListUnReadMessageGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController._UpdateHaveNewFriendRequestStatus = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
-  ;
-  (self._haveNewFriendRequestGo):SetActive(socialModule:HaveNewInvitation())
+function UIChatController:_UpdateHaveNewFriendRequestStatus()
+  local socialModule = GameGlobal.GetModule(SocialModule)
+  self._haveNewFriendRequestGo:SetActive(socialModule:HaveNewInvitation())
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController._Init = function(self)
-  -- function num : 0_6 , upvalues : UIChatPanelType
+function UIChatController:_Init()
   self._currentPanelType = nil
   self:_SwitchPanel(UIChatPanelType.RecentFriend)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController._SwitchPanel = function(self, panelType)
-  -- function num : 0_7 , upvalues : _ENV
+function UIChatController:_SwitchPanel(panelType)
   if self._currentPanelType == panelType then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SwitchPanelCoro, self, panelType)
+  GameGlobal.TaskManager():StartTask(self._SwitchPanelCoro, self, panelType)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController._SwitchPanelCoro = function(self, TT, panelType)
-  -- function num : 0_8 , upvalues : UIChatPanelType
-  (self._chatFriendManager):CancelSelectRecentFriend(TT)
-  ;
-  (self._recentFriendPanelGo):SetActive(false)
-  ;
-  (self._friendListPanelGo):SetActive(false)
-  ;
-  (self._addFriendPanelGo):SetActive(false)
-  ;
-  (self._recentBtnSelectedGo):SetActive(false)
-  ;
-  (self._friendBtnSelectedGo):SetActive(false)
-  ;
-  (self._addFriendBtnSelectedGo):SetActive(false)
+function UIChatController:_SwitchPanelCoro(TT, panelType)
+  self._chatFriendManager:CancelSelectRecentFriend(TT)
+  self._recentFriendPanelGo:SetActive(false)
+  self._friendListPanelGo:SetActive(false)
+  self._addFriendPanelGo:SetActive(false)
+  self._recentBtnSelectedGo:SetActive(false)
+  self._friendBtnSelectedGo:SetActive(false)
+  self._addFriendBtnSelectedGo:SetActive(false)
   if self._currentPanelType then
     if self._currentPanelType == UIChatPanelType.RecentFriend then
-      (self._recentFriendPanel):Exist()
-    else
-      if self._currentPanelType == UIChatPanelType.FriendList then
-        (self._friendListPanel):Exist()
-      end
+      self._recentFriendPanel:Exist()
+    elseif self._currentPanelType == UIChatPanelType.FriendList then
+      self._friendListPanel:Exist()
     end
   end
   self._currentPanelType = panelType
   if panelType == UIChatPanelType.RecentFriend then
-    (self._recentFriendPanelGo):SetActive(true)
-    ;
-    (self._recentBtnSelectedGo):SetActive(true)
-    ;
-    (self._recentFriendPanel):Init(self)
-  else
-    if panelType == UIChatPanelType.FriendList then
-      (self._friendListPanelGo):SetActive(true)
-      ;
-      (self._friendBtnSelectedGo):SetActive(true)
-      ;
-      (self._friendListPanel):Init(self)
-      ;
-      (self._chatFriendManager):ClearCacheCurrentSelectRecentFriend()
-    else
-      if panelType == UIChatPanelType.AddFirend then
-        (self._addFriendPanelGo):SetActive(true)
-        ;
-        (self._addFriendBtnSelectedGo):SetActive(true)
-        ;
-        (self._addFriendPanel):Init(self)
-        ;
-        (self._chatFriendManager):ClearCacheCurrentSelectRecentFriend()
-      end
-    end
+    self._recentFriendPanelGo:SetActive(true)
+    self._recentBtnSelectedGo:SetActive(true)
+    self._recentFriendPanel:Init(self)
+  elseif panelType == UIChatPanelType.FriendList then
+    self._friendListPanelGo:SetActive(true)
+    self._friendBtnSelectedGo:SetActive(true)
+    self._friendListPanel:Init(self)
+    self._chatFriendManager:ClearCacheCurrentSelectRecentFriend()
+  elseif panelType == UIChatPanelType.AddFirend then
+    self._addFriendPanelGo:SetActive(true)
+    self._addFriendBtnSelectedGo:SetActive(true)
+    self._addFriendPanel:Init(self)
+    self._chatFriendManager:ClearCacheCurrentSelectRecentFriend()
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController.GetChatFriendManager = function(self)
-  -- function num : 0_9
+function UIChatController:GetChatFriendManager()
   return self._chatFriendManager
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController.GetCurrentPanelType = function(self)
-  -- function num : 0_10
+function UIChatController:GetCurrentPanelType()
   return self._currentPanelType
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController._Close = function(self)
-  -- function num : 0_11
+function UIChatController:_Close()
   if self.closeCb then
-    (self.closeCb)()
+    self.closeCb()
     self.closeCb = nil
     self.SkipTransitionAmin = true
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController.OnHide = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIChatController:OnHide()
   self:DetachEvent(GameEventType.UpdateUnReadMessageStatus, self._UpdateUnReadMessageStatus)
   self:DetachEvent(GameEventType.InModuleFriendNotifyNewMsg, self._ReceiveNewMessage)
   self:DetachEvent(GameEventType.UpdateFriendInvitation, self._UpdateHaveNewFriendRequestStatus)
-  ;
-  (self._chatFriendManager):SaveAllChatDatas()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SendLeaveChatFriend, self)
+  self._chatFriendManager:SaveAllChatDatas()
+  GameGlobal.TaskManager():StartTask(self._SendLeaveChatFriend, self)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController._SendLeaveChatFriend = function(self, TT)
-  -- function num : 0_13
-  local res = (self._socialModule):LeaveChatFriendModule(TT)
+function UIChatController:_SendLeaveChatFriend(TT)
+  local res = self._socialModule:LeaveChatFriendModule(TT)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController.RecentBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : UIChatPanelType
+function UIChatController:RecentBtnOnClick(go)
   self:_SwitchPanel(UIChatPanelType.RecentFriend)
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController.FriendBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : UIChatPanelType
+function UIChatController:FriendBtnOnClick(go)
   self:_SwitchPanel(UIChatPanelType.FriendList)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIChatController.AddFriendBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : UIChatPanelType
+function UIChatController:AddFriendBtnOnClick(go)
   self:_SwitchPanel(UIChatPanelType.AddFirend)
 end
-
-

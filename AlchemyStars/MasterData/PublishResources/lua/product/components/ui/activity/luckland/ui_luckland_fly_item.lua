@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_fly_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandFlyItem", UICustomWidget)
 UILuckLandFlyItem = UILuckLandFlyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandFlyItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandFlyItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandFlyItem.InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandFlyItem:InitWidget()
   self.resDataText = self:GetUIComponent("UILocalizationText", "ResDataText")
   self.rootRectTf = self:GetUIComponent("RectTransform", "Root")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandFlyItem.SetData = function(self, value)
-  -- function num : 0_2
-  (self.resDataText):SetText(value)
+function UILuckLandFlyItem:SetData(value)
+  self.resDataText:SetText(value)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandFlyItem.FlyPos = function(self, pos)
-  -- function num : 0_3
-  (self.rootRectTf):DOAnchorPos(pos, 0.25, true)
+function UILuckLandFlyItem:FlyPos(pos)
+  self.rootRectTf:DOAnchorPos(pos, 0.25, true)
 end
-
-

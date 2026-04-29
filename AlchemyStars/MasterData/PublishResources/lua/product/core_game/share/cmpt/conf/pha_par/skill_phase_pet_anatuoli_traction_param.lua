@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_pet_anatuoli_traction_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhasePetANaTuoLiTractionParam", SkillPhaseParamBase)
 SkillPhasePetANaTuoLiTractionParam = SkillPhasePetANaTuoLiTractionParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhasePetANaTuoLiTractionParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhasePetANaTuoLiTractionParam:Constructor(t)
   self.casterAction = t.casterAction
   self.casterEffectID = tonumber(t.casterEffectID)
   self.playTractionDelayMs = tonumber(t.playTractionDelayMs)
@@ -29,159 +22,121 @@ SkillPhasePetANaTuoLiTractionParam.Constructor = function(self, t)
   self.beHitEffectID = tonumber(t.beHitEffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhasePetANaTuoLiTractionParam:GetPhaseType()
   return SkillViewPhaseType.PetANaTuoLiTraction
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetCacheTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhasePetANaTuoLiTractionParam:GetCacheTable()
   local t = {}
   if self.tractionTargetEffectID and self.tractionTargetEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.tractionTargetEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.tractionTargetEffectID].ResPath,
+      1
+    })
   end
   if self.casterEffectID and self.casterEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.casterEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.casterEffectID].ResPath,
+      1
+    })
   end
   if self.tractionCenterEffectID and self.tractionCenterEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.tractionCenterEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.tractionCenterEffectID].ResPath,
+      1
+    })
   end
   if self.tractionChaseEffectID and self.tractionChaseEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.tractionChaseEffectID]).ResPath, 2})
+    table.insert(t, {
+      Cfg.cfg_effect[self.tractionChaseEffectID].ResPath,
+      2
+    })
   end
   if self.tractionPushEffectID and self.tractionPushEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.tractionPushEffectID]).ResPath, 2})
+    table.insert(t, {
+      Cfg.cfg_effect[self.tractionPushEffectID].ResPath,
+      2
+    })
   end
   if self.tractionBoomEffectID and self.tractionBoomEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.tractionBoomEffectID]).ResPath, 2})
+    table.insert(t, {
+      Cfg.cfg_effect[self.tractionBoomEffectID].ResPath,
+      2
+    })
   end
   if self.beHitEffectID and self.beHitEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.beHitEffectID]).ResPath, 2})
+    table.insert(t, {
+      Cfg.cfg_effect[self.beHitEffectID].ResPath,
+      2
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetCasterAction = function(self)
-  -- function num : 0_3
+function SkillPhasePetANaTuoLiTractionParam:GetCasterAction()
   return self.casterAction
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetCasterEffectID = function(self)
-  -- function num : 0_4
+function SkillPhasePetANaTuoLiTractionParam:GetCasterEffectID()
   return self.casterEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetPlayTractionDelayMs = function(self)
-  -- function num : 0_5
+function SkillPhasePetANaTuoLiTractionParam:GetPlayTractionDelayMs()
   return self.playTractionDelayMs
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionCenterEffectDelayMs = function(self)
-  -- function num : 0_6
+function SkillPhasePetANaTuoLiTractionParam:GetTractionCenterEffectDelayMs()
   return self.tractionCenterEffectDelayMs
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionCenterEffectID = function(self)
-  -- function num : 0_7
+function SkillPhasePetANaTuoLiTractionParam:GetTractionCenterEffectID()
   return self.tractionCenterEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionChaseEffectID = function(self)
-  -- function num : 0_8
+function SkillPhasePetANaTuoLiTractionParam:GetTractionChaseEffectID()
   return self.tractionChaseEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionChaseEffectTimeMs = function(self)
-  -- function num : 0_9
+function SkillPhasePetANaTuoLiTractionParam:GetTractionChaseEffectTimeMs()
   return self.tractionChaseEffectTimeMs
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionPushEffectID = function(self)
-  -- function num : 0_10
+function SkillPhasePetANaTuoLiTractionParam:GetTractionPushEffectID()
   return self.tractionPushEffectID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionPushEffectHoldTimeMs = function(self)
-  -- function num : 0_11
+function SkillPhasePetANaTuoLiTractionParam:GetTractionPushEffectHoldTimeMs()
   return self.tractionPushEffectHoldTimeMs
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionPushEffectMoveTimeMs = function(self)
-  -- function num : 0_12
+function SkillPhasePetANaTuoLiTractionParam:GetTractionPushEffectMoveTimeMs()
   return self.tractionPushEffectMoveTimeMs
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionBoomEffectID = function(self)
-  -- function num : 0_13
+function SkillPhasePetANaTuoLiTractionParam:GetTractionBoomEffectID()
   return self.tractionBoomEffectID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionTargetEffectID = function(self)
-  -- function num : 0_14
+function SkillPhasePetANaTuoLiTractionParam:GetTractionTargetEffectID()
   return self.tractionTargetEffectID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionMoveTimeMs = function(self)
-  -- function num : 0_15
+function SkillPhasePetANaTuoLiTractionParam:GetTractionMoveTimeMs()
   return self.tractionMoveTimeMs
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetTractionMoveAction = function(self)
-  -- function num : 0_16
+function SkillPhasePetANaTuoLiTractionParam:GetTractionMoveAction()
   return self.tractionMoveAction
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetFinalWaitTimeMs = function(self)
-  -- function num : 0_17
+function SkillPhasePetANaTuoLiTractionParam:GetFinalWaitTimeMs()
   return self.finalWaitTimeMs
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetBeHitAnimation = function(self)
-  -- function num : 0_18
+function SkillPhasePetANaTuoLiTractionParam:GetBeHitAnimation()
   return self.beHitAnimation
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePetANaTuoLiTractionParam.GetBeHitEffectID = function(self)
-  -- function num : 0_19
+function SkillPhasePetANaTuoLiTractionParam:GetBeHitEffectID()
   return self.beHitEffectID
 end
-
-

@@ -1,25 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_achieve_details.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolAchieveDetails", UICustomWidget)
 UIN25IdolAchieveDetails = UIN25IdolAchieveDetails
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolAchieveDetails.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25IdolAchieveDetails:Constructor()
   self._parent = nil
   self._cfg = nil
   self._reddotl = nil
-  self._urlIcon = {[0] = "n25_ychsj_icon11", [4] = "n25_ychsj_icon04", [5] = "n25_ychsj_icon05", [6] = "n25_ychsj_icon06"}
+  self._urlIcon = {
+    [0] = "n25_ychsj_icon11",
+    [4] = "n25_ychsj_icon04",
+    [5] = "n25_ychsj_icon05",
+    [6] = "n25_ychsj_icon06"
+  }
   self._nameColor = UIN25IdolAchieveTitle:GetNameColor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveDetails.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolAchieveDetails:OnShow(uiParams)
   self._imgIcon = self:GetUIComponent("Image", "imgIcon")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtCondition = self:GetUIComponent("UILocalizationText", "txtCondition")
@@ -28,143 +23,85 @@ UIN25IdolAchieveDetails.OnShow = function(self, uiParams)
   self._stateReceive = self:GetUIComponent("RectTransform", "stateReceive")
   self._stateReceived = self:GetUIComponent("RectTransform", "stateReceived")
   self._stateLocked = self:GetUIComponent("RectTransform", "stateLocked")
-  self._redDot = (self:View()):GetUIComponent("UISelectObjectPath", "redDot")
+  self._redDot = self:View():GetUIComponent("UISelectObjectPath", "redDot")
   self._redDotSpawn = nil
-  self._redDotReward = (self:View()):GetUIComponent("UISelectObjectPath", "redDotReward")
+  self._redDotReward = self:View():GetUIComponent("UISelectObjectPath", "redDotReward")
   self._redDotRewardSpawn = nil
   self._arContentPool = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveDetails.OnHide = function(self)
-  -- function num : 0_2
+function UIN25IdolAchieveDetails:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveDetails.BtnReceiveOnClick = function(self, go)
-  -- function num : 0_3
-  (self._parent):OnAchieveDetails(self._cfg)
+function UIN25IdolAchieveDetails:BtnReceiveOnClick(go)
+  self._parent:OnAchieveDetails(self._cfg)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveDetails.SetRedDot = function(self, showRedDot)
-  -- function num : 0_4
-  ((self._redDot).gameObject):SetActive(showRedDot)
+function UIN25IdolAchieveDetails:SetRedDot(showRedDot)
+  self._redDot.gameObject:SetActive(showRedDot)
   if showRedDot and self._redDotSpawn == nil then
-    self._redDotSpawn = (self._redDot):SpawnOneObject("ManualLoad0")
+    self._redDotSpawn = self._redDot:SpawnOneObject("ManualLoad0")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveDetails.SetRewardRedDot = function(self, showRedDot)
-  -- function num : 0_5
-  ((self._redDotReward).gameObject):SetActive(showRedDot)
+function UIN25IdolAchieveDetails:SetRewardRedDot(showRedDot)
+  self._redDotReward.gameObject:SetActive(showRedDot)
   if showRedDot and self._redDotRewardSpawn == nil then
-    self._redDotRewardSpawn = (self._redDotReward):SpawnOneObject("ManualLoad0")
+    self._redDotRewardSpawn = self._redDotReward:SpawnOneObject("ManualLoad0")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveDetails.ID = function(self)
-  -- function num : 0_6
-  return (self._cfg).ID
+function UIN25IdolAchieveDetails:ID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveDetails.SetData = function(self, parent, cfg)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25IdolAchieveDetails:SetData(parent, cfg)
   self._parent = parent
   self._cfg = cfg
   self._reddot = parent:GetRedDot()
-  ;
-  (self._txtName):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._txtCondition):SetText((StringTable.Get)(cfg.ConditionTxt))
-  ;
-  (self._txtDescription):SetText((StringTable.Get)(cfg.DescriptionTxt))
-  local url = (self._urlIcon)[cfg.StateIcon]
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
+  self._txtName:SetText(StringTable.Get(cfg.Name))
+  self._txtCondition:SetText(StringTable.Get(cfg.ConditionTxt))
+  self._txtDescription:SetText(StringTable.Get(cfg.DescriptionTxt))
+  local url = self._urlIcon[cfg.StateIcon]
   if url ~= nil then
-    (self._imgIcon).enabled = true
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._imgIcon).sprite = ((self._parent):GetAtlas()):GetSprite(url)
+    self._imgIcon.enabled = true
+    self._imgIcon.sprite = self._parent:GetAtlas():GetSprite(url)
   else
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._imgIcon).enabled = false
+    self._imgIcon.enabled = false
   end
   local countReward = 0
   local cfgRewardList = cfg.RewardList
   if cfgRewardList ~= nil then
     countReward = #cfgRewardList
   end
-  self._arContentPool = (self._rewardContent):SpawnObjects("UIN25IdolAchieveReward", countReward)
+  self._arContentPool = self._rewardContent:SpawnObjects("UIN25IdolAchieveReward", countReward)
   for i = 1, countReward do
-    local ui = (self._arContentPool)[i]
+    local ui = self._arContentPool[i]
     local data = cfgRewardList[i]
     ui:SetData(self._parent, data)
   end
-  ;
-  ((self._imgIcon).gameObject):SetActive(false)
-  ;
-  ((self._stateReceive).gameObject):SetActive(false)
-  ;
-  ((self._stateReceived).gameObject):SetActive(false)
-  ;
-  ((self._stateLocked).gameObject):SetActive(false)
-  ;
-  ((self._txtDescription).gameObject):SetActive(false)
-  local unlocked = (self._reddot):GetAchieveUnlocked()
+  self._imgIcon.gameObject:SetActive(false)
+  self._stateReceive.gameObject:SetActive(false)
+  self._stateReceived.gameObject:SetActive(false)
+  self._stateLocked.gameObject:SetActive(false)
+  self._txtDescription.gameObject:SetActive(false)
+  local unlocked = self._reddot:GetAchieveUnlocked()
   local achieveState = unlocked[cfg.ID]
-  -- DECOMPILER ERROR at PC102: Confused about usage of register: R8 in 'UnsetPending'
-
   if achieveState == nil then
-    (self._txtName).color = (self._nameColor)[0]
-    ;
-    (self._txtName):SetText((StringTable.Get)("str_n25_idol_y_coll_locked"))
-    ;
-    ((self._imgIcon).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC123: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._imgIcon).sprite = ((self._parent):GetAtlas()):GetSprite((self._urlIcon)[0])
-    ;
-    ((self._stateLocked).gameObject):SetActive(true)
-  else
-    -- DECOMPILER ERROR at PC138: Confused about usage of register: R8 in 'UnsetPending'
-
-    if achieveState == IdolAchieveState.IdolAchieveState_CanRecv then
-      (self._txtName).color = (self._nameColor)[cfg.StateIcon]
-      ;
-      ((self._imgIcon).gameObject):SetActive(true)
-      ;
-      ((self._stateReceive).gameObject):SetActive(true)
-      ;
-      ((self._txtDescription).gameObject):SetActive(true)
-    else
-      -- DECOMPILER ERROR at PC163: Confused about usage of register: R8 in 'UnsetPending'
-
-      if achieveState == IdolAchieveState.IdolAchieveState_Recved then
-        (self._txtName).color = (self._nameColor)[cfg.StateIcon]
-        ;
-        ((self._imgIcon).gameObject):SetActive(true)
-        ;
-        ((self._stateReceived).gameObject):SetActive(true)
-        ;
-        ((self._txtDescription).gameObject):SetActive(true)
-      end
-    end
+    self._txtName.color = self._nameColor[0]
+    self._txtName:SetText(StringTable.Get("str_n25_idol_y_coll_locked"))
+    self._imgIcon.gameObject:SetActive(true)
+    self._imgIcon.sprite = self._parent:GetAtlas():GetSprite(self._urlIcon[0])
+    self._stateLocked.gameObject:SetActive(true)
+  elseif achieveState == IdolAchieveState.IdolAchieveState_CanRecv then
+    self._txtName.color = self._nameColor[cfg.StateIcon]
+    self._imgIcon.gameObject:SetActive(true)
+    self._stateReceive.gameObject:SetActive(true)
+    self._txtDescription.gameObject:SetActive(true)
+  elseif achieveState == IdolAchieveState.IdolAchieveState_Recved then
+    self._txtName.color = self._nameColor[cfg.StateIcon]
+    self._imgIcon.gameObject:SetActive(true)
+    self._stateReceived.gameObject:SetActive(true)
+    self._txtDescription.gameObject:SetActive(true)
   end
 end
-
-

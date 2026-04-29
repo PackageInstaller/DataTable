@@ -1,149 +1,112 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_items_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIItemsWidget", UICustomWidget)
 UIItemsWidget = UIItemsWidget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIItemsWidget.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIItemsWidget:OnShow()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self._root = self:GetUIComponent("RectTransform", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base)
+  self.uiItem:SetClickCallBack(function(go)
     self:UIItemsWidgetOnClick(go)
-  end
-)
+  end)
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
   self.clickCallBack = nil
   self.matID = -1
   self.enough = false
-  self._waitTime = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000
-  self._shakeX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10
-  self._shakeY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10
+  self._waitTime = Cfg.cfg_global.shakeWaitTime.IntValue or 2000
+  self._shakeX = Cfg.cfg_global.shakeOffsetX.IntValue or 10
+  self._shakeY = Cfg.cfg_global.shakeOffsetY.IntValue or 10
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidget.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIItemsWidget:OnHide()
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
   if self.shakeTweener then
-    (self.shakeTweener):Kill()
+    self.shakeTweener:Kill()
     self.shakeTweener = nil
   end
   if self.highLightTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self.highLightTimer)
+    GameGlobal.Timer():CancelEvent(self.highLightTimer)
     self.highLightTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidget.SetData = function(self, _id, _needCount, _clickCallback, _singleValue)
-  -- function num : 0_2 , upvalues : _ENV
+function UIItemsWidget:SetData(_id, _needCount, _clickCallback, _singleValue)
   self.matID = _id
   self.needCount = _needCount
   self.clickCallBack = _clickCallback
   self.singleValue = _singleValue
-  self.cfgData = (Cfg.cfg_item)[_id]
-  self.roleModule = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
-  self.icon = (self.cfgData).Icon
-  self.quality = (self.cfgData).Color
+  self.cfgData = Cfg.cfg_item[_id]
+  self.roleModule = GameGlobal.GameLogic():GetModule(RoleModule)
+  self.icon = self.cfgData.Icon
+  self.quality = self.cfgData.Color
   self:RefreshCount()
   if self.matID == RoleAssetID.RoleAssetFirefly then
     self:AttachEvent(GameEventType.AircraftOnFireFlyChanged, self.RefreshCount)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidget.RefreshCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local _hadCount = (math.floor)((self.roleModule):GetAssetCount(self.matID))
+function UIItemsWidget:RefreshCount()
+  local _hadCount = math.floor(self.roleModule:GetAssetCount(self.matID))
   self._text = nil
   if self.singleValue then
     self._text = self.needCount
   else
-    local enough = self.needCount <= _hadCount
+    local enough = _hadCount >= self.needCount
     self.enough = enough
     local cuStr = self.needCount
     local chStr = _hadCount
-    if _hadCount > 9999 then
+    if 9999 < _hadCount then
       chStr = "9999+"
     end
     self.chStr = chStr
-    local showStr = nil
-    if self.needCount <= _hadCount then
+    local showStr
+    if _hadCount >= self.needCount then
       showStr = "<color=#ffd300>" .. chStr .. "</color><color=#ffffff>/</color><color=#ffd300>" .. cuStr .. "</color>"
     else
       showStr = "<color=#ff0000>" .. chStr .. "</color><color=#ffffff>/</color><color=#ffffff>" .. cuStr .. "</color>"
     end
     self._text = showStr
   end
-  ;
-  (self.uiItem):SetData({icon = self.icon, quality = self.quality, text1 = self._text, itemId = self.matID})
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  self.uiItem:SetData({
+    icon = self.icon,
+    quality = self.quality,
+    text1 = self._text,
+    itemId = self.matID
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidget.ShakeAndHighlight = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUIMaterialNotEnough)
+function UIItemsWidget:ShakeAndHighlight()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUIMaterialNotEnough)
   if self.shakeTweener then
-    (self.shakeTweener):Kill()
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._root).anchoredPosition = Vector2(0, 0)
+    self.shakeTweener:Kill()
+    self._root.anchoredPosition = Vector2(0, 0)
   end
   if self.highLightTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self.highLightTimer)
+    GameGlobal.Timer():CancelEvent(self.highLightTimer)
   end
   local head = self.chStr
   local tail = self.needCount
   local text1 = "<color=#ff0000>" .. head .. "/" .. tail .. "</color>"
-  ;
-  (self.uiItem):SetData({text1 = text1})
-  self.shakeTweener = ((self._root):DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0))):OnComplete(function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    self.highLightTimer = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-      -- function num : 0_4_0_0 , upvalues : self
-      (self.uiItem):SetData({text1 = self._text})
-    end
-)
-  end
-)
+  self.uiItem:SetData({text1 = text1})
+  self.shakeTweener = self._root:DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0)):OnComplete(function()
+    self.highLightTimer = GameGlobal.Timer():AddEvent(self._waitTime, function()
+      self.uiItem:SetData({
+        text1 = self._text
+      })
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidget.IsMatEnough = function(self)
-  -- function num : 0_5
+function UIItemsWidget:IsMatEnough()
   return self.enough
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidget.UIItemsWidgetOnClick = function(self, go)
-  -- function num : 0_6
+function UIItemsWidget:UIItemsWidgetOnClick(go)
   if self.clickCallBack then
-    (self.clickCallBack)(self.matID, (go.transform).position)
+    self.clickCallBack(self.matID, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemsWidget.OnItemCountChanged = function(self)
-  -- function num : 0_7
+function UIItemsWidget:OnItemCountChanged()
   self:RefreshCount()
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/services/resource/resources_pool_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResCacheInfo", Object)
 ResCacheInfo = ResCacheInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ResCacheInfo.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ResCacheInfo:Constructor()
   self.reslist = ArrayList:New()
   self.resName = ""
   self.CacheCount = 0
@@ -17,68 +10,51 @@ ResCacheInfo.Constructor = function(self)
   self.EnableCache = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ResCacheInfo.Use = function(self)
-  -- function num : 0_1
+function ResCacheInfo:Use()
   self.CurUseCount = self.CurUseCount + 1
   if self.MaxUsedCount < self.CurUseCount then
     self.MaxUsedCount = self.CurUseCount
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ResCacheInfo.UnUse = function(self)
-  -- function num : 0_2
+function ResCacheInfo:UnUse()
   self.CurUseCount = self.CurUseCount - 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ResCacheInfo.SetEnableCache = function(self, enable)
-  -- function num : 0_3
+function ResCacheInfo:SetEnableCache(enable)
   self.EnableCache = enable
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ResCacheInfo.IsEnable = function(self)
-  -- function num : 0_4
+function ResCacheInfo:IsEnable()
   return self.EnableCache
 end
 
 _class("ResourcesPoolService", Object)
 ResourcesPoolService = ResourcesPoolService
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-ResourcesPoolService.Constructor = function(self, world)
-  -- function num : 0_5 , upvalues : _ENV
+function ResourcesPoolService:Constructor(world)
   self._world = world
   self._cacheTable = {}
   self._assetTable = {}
   self._materialTable = {}
   self._loadTimeTable = {}
-  self._donotDestroyRes = (GameGlobal:GetInstance()).donotDestroyRes
+  self._donotDestroyRes = GameGlobal:GetInstance().donotDestroyRes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.LoadGameObject = function(self, resName)
-  -- function num : 0_6 , upvalues : _ENV
-  local resCacheInfo = (self._cacheTable)[resName]
+function ResourcesPoolService:LoadGameObject(resName)
+  local resCacheInfo = self._cacheTable[resName]
   if resCacheInfo == nil then
-    (Log.notice)("[respool] lua LoadGameObject not cache", resName)
-    return (((self._world).BW_Services).Resource):LoadGameObject(resName)
+    Log.notice("[respool] lua LoadGameObject not cache", resName)
+    return self._world.BW_Services.Resource:LoadGameObject(resName)
   else
     resCacheInfo:Use()
-    if (resCacheInfo.reslist):Size() <= 0 then
-      return (((self._world).BW_Services).Resource):LoadGameObject(resName)
+    if resCacheInfo.reslist:Size() <= 0 then
+      return self._world.BW_Services.Resource:LoadGameObject(resName)
     else
-      local res = (resCacheInfo.reslist):PopBack()
+      local res = resCacheInfo.reslist:PopBack()
       if res == nil or res.Obj == nil then
-        (Log.error)("[respool]ResourcesPoolService:LoadGameObject res == nil or res.Obj == nil", resName)
-        return (((self._world).BW_Services).Resource):LoadGameObject(resName)
+        Log.error("[respool]ResourcesPoolService:LoadGameObject res == nil or res.Obj == nil", resName)
+        return self._world.BW_Services.Resource:LoadGameObject(resName)
       else
         local u3dGo = res.Obj
         local transWork = u3dGo.transform
@@ -90,139 +66,101 @@ ResourcesPoolService.LoadGameObject = function(self, resName)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.LoadAsset = function(self, assetName)
-  -- function num : 0_7 , upvalues : _ENV
-  local resCacheInfo = (self._assetTable)[assetName]
+function ResourcesPoolService:LoadAsset(assetName)
+  local resCacheInfo = self._assetTable[assetName]
   if resCacheInfo == nil then
-    (Log.notice)("[respool] lua Asset not cache", assetName)
+    Log.notice("[respool] lua Asset not cache", assetName)
+    return nil
+  elseif resCacheInfo.reslist:Size() <= 0 then
+    Log.notice("[respool] lua Asset cache count == 0", assetName)
     return nil
   else
-    if (resCacheInfo.reslist):Size() <= 0 then
-      (Log.notice)("[respool] lua Asset cache count == 0", assetName)
+    local res = resCacheInfo.reslist:GetAt(1)
+    if res == nil or res.Obj == nil then
+      Log.error("[respool]ResourcesPoolService:Asset res == nil or res.Obj == nil", assetName)
       return nil
     else
-      local res = (resCacheInfo.reslist):GetAt(1)
-      if res == nil or res.Obj == nil then
-        (Log.error)("[respool]ResourcesPoolService:Asset res == nil or res.Obj == nil", assetName)
-        return nil
-      else
-        return res
-      end
+      return res
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.LoadMaterial = function(self, assetName)
-  -- function num : 0_8 , upvalues : _ENV
-  local resCacheInfo = (self._materialTable)[assetName]
+function ResourcesPoolService:LoadMaterial(assetName)
+  local resCacheInfo = self._materialTable[assetName]
   if resCacheInfo == nil then
-    (Log.notice)("[respool] lua Asset not cache", assetName)
+    Log.notice("[respool] lua Asset not cache", assetName)
+    return nil
+  elseif resCacheInfo.reslist:Size() <= 0 then
+    Log.notice("[respool] lua Asset cache count == 0", assetName)
     return nil
   else
-    if (resCacheInfo.reslist):Size() <= 0 then
-      (Log.notice)("[respool] lua Asset cache count == 0", assetName)
+    local res = resCacheInfo.reslist:GetAt(1)
+    if res == nil or res.Obj == nil then
+      Log.error("[respool]ResourcesPoolService:Asset res == nil or res.Obj == nil", assetName)
       return nil
     else
-      local res = (resCacheInfo.reslist):GetAt(1)
-      if res == nil or res.Obj == nil then
-        (Log.error)("[respool]ResourcesPoolService:Asset res == nil or res.Obj == nil", assetName)
-        return nil
-      else
-        return res
-      end
+      return res
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.DestroyView = function(self, view, noCache)
-  -- function num : 0_9 , upvalues : _ENV
+function ResourcesPoolService:DestroyView(view, noCache)
   local viewType = view.ViewType
   if viewType == "UnitySimple" then
     local _view = view
-    self:UnLoad((_view.ResRequest).m_Name, _view.ResRequest, _view.ViewType, noCache)
+    self:UnLoad(_view.ResRequest.m_Name, _view.ResRequest, _view.ViewType, noCache)
     _view.ResRequest = nil
     _view.Transform = nil
-  else
-    do
-      if viewType == "GridView" then
-        local _view = view
-        self:UnLoad((_view.ResRequest).m_Name, _view.ResRequest, _view.ViewType, noCache)
-        _view.ResRequest = nil
-        _view.Transform = nil
-      else
-        do
-          if viewType == "UnityPet" then
-            local _view = view
-            if _view.ResRequests then
-              for _,res in ipairs(_view.ResRequests) do
-                self:UnLoad(res.m_Name, res, view.ViewType, noCache)
-              end
-              _view.ResRequests = nil
-              _view.Transform = nil
-              _view.GameObject = nil
-            end
-          else
-            do
-              ;
-              (Log.fatal)("[ResourcesPool] 未识别的ViewWrapper对象：", view.ViewType)
-            end
-          end
-        end
+  elseif viewType == "GridView" then
+    local _view = view
+    self:UnLoad(_view.ResRequest.m_Name, _view.ResRequest, _view.ViewType, noCache)
+    _view.ResRequest = nil
+    _view.Transform = nil
+  elseif viewType == "UnityPet" then
+    local _view = view
+    if _view.ResRequests then
+      for _, res in ipairs(_view.ResRequests) do
+        self:UnLoad(res.m_Name, res, view.ViewType, noCache)
       end
+      _view.ResRequests = nil
+      _view.Transform = nil
+      _view.GameObject = nil
     end
+  else
+    Log.fatal("[ResourcesPool] 未识别的ViewWrapper对象：", view.ViewType)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.UnLoad = function(self, resName, res, viewType, noCache)
-  -- function num : 0_10 , upvalues : _ENV
+function ResourcesPoolService:UnLoad(resName, res, viewType, noCache)
   if res == nil or res.Obj == nil then
-    (Log.error)("ResourcesPoolService:UnLoad res == nil or res.Obj == nil ", resName)
-    return 
+    Log.error("ResourcesPoolService:UnLoad res == nil or res.Obj == nil ", resName)
+    return
   end
   local u3dGo = res.Obj
   if viewType == "GridView" then
-    local curPos = (u3dGo.transform).position
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (u3dGo.transform).position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
+    local curPos = u3dGo.transform.position
+    u3dGo.transform.position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
   else
-    do
-      u3dGo:SetActive(false)
-      local resCacheInfo = (self._cacheTable)[resName]
-      if resCacheInfo ~= nil and resCacheInfo:IsEnable() and not noCache then
-        resCacheInfo:UnUse()
-        ;
-        (resCacheInfo.reslist):PushBack(res)
-      else
-        res:Dispose()
-      end
-    end
+    u3dGo:SetActive(false)
+  end
+  local resCacheInfo = self._cacheTable[resName]
+  if resCacheInfo ~= nil and resCacheInfo:IsEnable() and not noCache then
+    resCacheInfo:UnUse()
+    resCacheInfo.reslist:PushBack(res)
+  else
+    res:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService._Cache = function(self, dicInfo, resName, nCount, eLoadType)
-  -- function num : 0_11 , upvalues : _ENV
+function ResourcesPoolService:_Cache(dicInfo, resName, nCount, eLoadType)
   local resCacheInfo = dicInfo[resName]
-  if not resCacheInfo then
-    resCacheInfo = ResCacheInfo:New()
-  end
-  local t1 = (os.clock)()
+  resCacheInfo = resCacheInfo or ResCacheInfo:New()
+  local t1 = os.clock()
   local originalCnt = nCount
-  local t = (self._donotDestroyRes):GetRes(resName)
+  local t = self._donotDestroyRes:GetRes(resName)
   if t then
-    for i,res in ipairs(t) do
-      (resCacheInfo.reslist):PushBack(res)
+    for i, res in ipairs(t) do
+      resCacheInfo.reslist:PushBack(res)
     end
     nCount = nCount - #t
     if nCount < 0 then
@@ -230,14 +168,17 @@ ResourcesPoolService._Cache = function(self, dicInfo, resName, nCount, eLoadType
     end
   end
   for i = 1, nCount do
-    local res = (ResourceManager:GetInstance()):SyncLoadAsset(resName, eLoadType)
-    ;
-    (resCacheInfo.reslist):PushBack(res)
+    local res = ResourceManager:GetInstance():SyncLoadAsset(resName, eLoadType)
+    resCacheInfo.reslist:PushBack(res)
   end
-  local tick = (os.clock)() - t1
-  ;
-  (table.insert)(self._loadTimeTable, {useTime = tick * 1000, resName = resName, resCount = originalCnt, resType = eLoadType})
-  resCacheInfo.CacheCount = (resCacheInfo.reslist):Size()
+  local tick = os.clock() - t1
+  table.insert(self._loadTimeTable, {
+    useTime = tick * 1000,
+    resName = resName,
+    resCount = originalCnt,
+    resType = eLoadType
+  })
+  resCacheInfo.CacheCount = resCacheInfo.reslist:Size()
   resCacheInfo.resName = resName
   local cachelist = dicInfo[resName]
   if not cachelist then
@@ -245,42 +186,45 @@ ResourcesPoolService._Cache = function(self, dicInfo, resName, nCount, eLoadType
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.PrintLoadTime = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.sort)(self._loadTimeTable, function(a, b)
-    -- function num : 0_12_0
-    if a.resCount >= b.resCount then
-      do return a.useTime ~= b.useTime end
-      do return b.useTime < a.useTime end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function ResourcesPoolService:PrintLoadTime()
+  table.sort(self._loadTimeTable, function(a, b)
+    if a.useTime == b.useTime then
+      return a.resCount < b.resCount
     end
-  end
-)
-  for i,t in ipairs(self._loadTimeTable) do
-    (Log.prof)("[respool] loading idx,", i, ",loadTime,", t.useTime, ",resType,", t.resType, ",resName,", t.resName, ",resCount,", t.resCount)
+    return a.useTime > b.useTime
+  end)
+  for i, t in ipairs(self._loadTimeTable) do
+    Log.prof("[respool] loading idx,", i, ",loadTime,", t.useTime, ",resType,", t.resType, ",resName,", t.resName, ",resCount,", t.resCount)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.PrintCurrentUseage = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function ResourcesPoolService:PrintCurrentUseage()
   local resTable = {}
-  for k,v in pairs(self._cacheTable) do
-    resTable[v.resName] = {resName = v.resName, resUsedCount = v.MaxUsedCount, resCacheCount = v.CacheCount}
+  for k, v in pairs(self._cacheTable) do
+    resTable[v.resName] = {
+      resName = v.resName,
+      resUsedCount = v.MaxUsedCount,
+      resCacheCount = v.CacheCount
+    }
   end
-  for k,v in pairs(self._assetTable) do
-    resTable[v.resName] = {resName = v.resName, resUsedCount = v.MaxUsedCount, resCacheCount = v.CacheCount}
+  for k, v in pairs(self._assetTable) do
+    resTable[v.resName] = {
+      resName = v.resName,
+      resUsedCount = v.MaxUsedCount,
+      resCacheCount = v.CacheCount
+    }
   end
-  for k,v in pairs(self._materialTable) do
-    resTable[v.resName] = {resName = v.resName, resUsedCount = v.MaxUsedCount, resCacheCount = v.CacheCount}
+  for k, v in pairs(self._materialTable) do
+    resTable[v.resName] = {
+      resName = v.resName,
+      resUsedCount = v.MaxUsedCount,
+      resCacheCount = v.CacheCount
+    }
   end
-  for i,v in ipairs(self._loadTimeTable) do
+  for i, v in ipairs(self._loadTimeTable) do
     local t = resTable[v.resName]
     if not t then
-      (Log.error)("cache resName", v.resName, "not in loading table!")
+      Log.error("cache resName", v.resName, "not in loading table!")
     else
       t.loadTime = (t.loadTime or 0) + v.useTime
       t.loadCount = (t.loadCount or 0) + v.resCount
@@ -288,102 +232,74 @@ ResourcesPoolService.PrintCurrentUseage = function(self)
     end
   end
   local outTable = {}
-  for k,v in pairs(resTable) do
-    (table.insert)(outTable, v)
+  for k, v in pairs(resTable) do
+    table.insert(outTable, v)
   end
-  ;
-  (table.sort)(outTable, function(a, b)
-    -- function num : 0_13_0
-    if b.loadCount >= a.loadCount then
-      do return a.loadTime ~= b.loadTime end
-      do return b.loadTime < a.loadTime end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(outTable, function(a, b)
+    if a.loadTime == b.loadTime then
+      return a.loadCount > b.loadCount
     end
-  end
-)
-  for i,v in ipairs(outTable) do
-    (Log.prof)("[respool] idx,", i, ",loadTime,", v.loadTime, ",resType,", v.resType, ",resName,", v.resName, ",loadCount,", v.loadCount, ",cacheCount,", v.resCacheCount, ",usedCount,", v.resUsedCount)
+    return a.loadTime > b.loadTime
+  end)
+  for i, v in ipairs(outTable) do
+    Log.prof("[respool] idx,", i, ",loadTime,", v.loadTime, ",resType,", v.resType, ",resName,", v.resName, ",loadCount,", v.loadCount, ",cacheCount,", v.resCacheCount, ",usedCount,", v.resUsedCount)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.Cache = function(self, resName, nCount)
-  -- function num : 0_14 , upvalues : _ENV
+function ResourcesPoolService:Cache(resName, nCount)
   self:_Cache(self._cacheTable, resName, nCount, LoadType.GameObject)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.CacheAsset = function(self, resName, nCount)
-  -- function num : 0_15 , upvalues : _ENV
+function ResourcesPoolService:CacheAsset(resName, nCount)
   self:_Cache(self._assetTable, resName, nCount, LoadType.Asset)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.CacheMaterial = function(self, resName, nCount)
-  -- function num : 0_16 , upvalues : _ENV
+function ResourcesPoolService:CacheMaterial(resName, nCount)
   self:_Cache(self._materialTable, resName, nCount, LoadType.Mat)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.Dispose = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  (Log.prof)("============================================================================")
+function ResourcesPoolService:Dispose()
+  Log.prof("============================================================================")
   self:PrintCurrentUseage()
-  ;
-  (Log.prof)("============================================================================")
+  Log.prof("============================================================================")
   self:_DisposeTable(self._cacheTable)
   self:_DisposeTable(self._assetTable)
   self:_DisposeTable(self._materialTable)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService._DisposeTable = function(self, t)
-  -- function num : 0_18 , upvalues : _ENV
-  for k,v in pairs(t) do
-    local cnt = (self._donotDestroyRes):GetResCount(v.resName)
+function ResourcesPoolService:_DisposeTable(t)
+  for k, v in pairs(t) do
+    local cnt = self._donotDestroyRes:GetResCount(v.resName)
     for i = 1, cnt do
-      local res = (v.reslist):PopBack()
-      ;
-      (self._donotDestroyRes):PutRes(v.resName, res)
+      local res = v.reslist:PopBack()
+      self._donotDestroyRes:PutRes(v.resName, res)
     end
     self:_DisposeArrayList(v)
   end
-  ;
-  (table.clear)(t)
+  table.clear(t)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService._DisposeArrayList = function(self, res)
-  -- function num : 0_19
+function ResourcesPoolService:_DisposeArrayList(res)
   local arrayList = res.reslist
   local nCount = arrayList:Size()
   if nCount == 0 then
-    return 
+    return
   end
   for i = 1, nCount do
-    (arrayList:GetAt(i)):Dispose()
+    arrayList:GetAt(i):Dispose()
   end
   arrayList:Clear()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourcesPoolService.DestroyCache = function(self, resName)
-  -- function num : 0_20
-  local resCacheInfo = (self._cacheTable)[resName]
+function ResourcesPoolService:DestroyCache(resName)
+  local resCacheInfo = self._cacheTable[resName]
   if resCacheInfo == nil then
-    return 
+    return
   end
   resCacheInfo:SetEnableCache(false)
   local resList = resCacheInfo.reslist
   if resList:Size() == 0 then
-    return 
+    return
   end
   for idx = 1, resList:Size() do
     local res = resList:GetAt(idx)
@@ -391,5 +307,3 @@ ResourcesPoolService.DestroyCache = function(self, resName)
   end
   resList:Clear()
 end
-
-

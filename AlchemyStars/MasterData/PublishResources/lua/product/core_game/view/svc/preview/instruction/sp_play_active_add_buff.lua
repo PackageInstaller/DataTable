@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_active_add_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayActiveSkillAddBuffInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayActiveSkillAddBuffInstruction = SkillPreviewPlayActiveSkillAddBuffInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayActiveSkillAddBuffInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayActiveSkillAddBuffInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayActiveSkillAddBuffInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayActiveSkillAddBuffInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local targetIDList = previewContext:GetTargetEntityIDList()
-  targetIDList = (table.unique)(targetIDList)
+  targetIDList = table.unique(targetIDList)
   local eids = {}
-  for _,id in pairs(targetIDList) do
+  for _, id in pairs(targetIDList) do
     local e = world:GetEntityByID(id)
     local cPstId = e:PetPstID()
     local pstId = cPstId:GetPstID()
-    ;
-    (table.insert)(eids, pstId)
+    table.insert(eids, pstId)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetShowPreviewArrow, eids)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetShowPreviewArrow, eids)
 end
-
-

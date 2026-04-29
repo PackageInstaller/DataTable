@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_boss2904001_teleport_preview.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_Boss2904001TeleportPreview", SkillScopeCalculator_Base)
 SkillScopeCalculator_Boss2904001TeleportPreview = SkillScopeCalculator_Boss2904001TeleportPreview
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_Boss2904001TeleportPreview.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_Boss2904001TeleportPreview:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local distance = scopeParam[1]
   local attackRange = {}
   local wholeRange = {}
-  for _,v2Body in ipairs(bodyArea) do
+  for _, v2Body in ipairs(bodyArea) do
     local v2AbsBody = v2Body + casterPos
     for offsetX = -distance, distance do
       for offsetY = -distance, distance do
-        local v2 = (Vector2.New)(v2AbsBody.x + offsetX, v2AbsBody.y + offsetY)
-        if (Vector2.Distance)(v2, v2AbsBody) <= distance then
+        local v2 = Vector2.New(v2AbsBody.x + offsetX, v2AbsBody.y + offsetY)
+        if distance >= Vector2.Distance(v2, v2AbsBody) then
           self:_InsertTargetGrid(attackRange, v2, wholeRange)
         end
       end
@@ -26,5 +19,3 @@ SkillScopeCalculator_Boss2904001TeleportPreview.CalcRange = function(self, scope
   end
   return SkillScopeResult:New(SkillScopeType.Boss2904001TeleportPreview, casterPos, attackRange, wholeRange)
 end
-
-

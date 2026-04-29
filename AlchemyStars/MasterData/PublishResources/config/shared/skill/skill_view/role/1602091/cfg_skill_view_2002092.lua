@@ -1,17 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1602091/cfg_skill_view_2002092.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayAudio,audioID = 2683,audioType=1; PlayCasterBindEffect,effectID=160209107; PlayCasterBindEffect,effectID=160209108; "}
-}
-, 
-{2, 2, 109, 1, 1, 0, 
-{animatorTriggerName = "AtkChain", highJumpEffectDelay = 500, highJumpEffectID = 160209112, diveDelay = 1100, diveTrajectoryEffectID = 160209109, diveEffectFlyTime = 150, groundHitEffectID = 160209111, hitDelay = 50, disappearDelay = 1200, disappearEffectID = 160209113, appearEffectDelay = 500, appearEffectID = 160209114, appearDelay = 20}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID = 2683,audioType=1; PlayCasterBindEffect,effectID=160209107; PlayCasterBindEffect,effectID=160209108; "
+    }
+  },
+  {
+    2,
+    2,
+    109,
+    1,
+    1,
+    0,
+    {
+      animatorTriggerName = "AtkChain",
+      highJumpEffectDelay = 500,
+      highJumpEffectID = 160209112,
+      diveDelay = 1100,
+      diveTrajectoryEffectID = 160209109,
+      diveEffectFlyTime = 150,
+      groundHitEffectID = 160209111,
+      hitDelay = 50,
+      disappearDelay = 1200,
+      disappearEffectID = 160209113,
+      appearEffectDelay = 500,
+      appearEffectID = 160209114,
+      appearDelay = 20
+    }
+  }
 }
 return config, "ID", key
-

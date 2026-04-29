@@ -1,74 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_directive_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedDirectiveItem", UICustomWidget)
 UIHomelandBreedDirectiveItem = UIHomelandBreedDirectiveItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedDirectiveItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandBreedDirectiveItem:Constructor()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._itemWidget = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirectiveItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedDirectiveItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirectiveItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedDirectiveItem:_GetComponents()
   self._item = self:GetUIComponent("UISelectObjectPath", "Item")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._got = self:GetGameObject("Got")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirectiveItem.SetData = function(self, data, index, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandBreedDirectiveItem:SetData(data, index, callBack)
   self._data = data
   self._index = index
   self._callback = callBack
-  self._itemWidget = (self._item):SpawnObject("UIHomelandBreedItem")
-  local cfg = (Cfg.cfg_item)[(self._data).ID]
-  ;
-  (self._itemWidget):SetData(cfg)
-  ;
-  (self._name):SetText(cfg.Name)
-  ;
-  (self._got):SetActive(not self:_Got((self._data).ID))
+  self._itemWidget = self._item:SpawnObject("UIHomelandBreedItem")
+  local cfg = Cfg.cfg_item[self._data.ID]
+  self._itemWidget:SetData(cfg)
+  self._name:SetText(cfg.Name)
+  self._got:SetActive(not self:_Got(self._data.ID))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirectiveItem.ClickBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandBreedDirectiveItem:ClickBtnOnClick(go)
   if self._callback then
-    (self._callback)((self._data).ID, self._index)
+    self._callback(self._data.ID, self._index)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedDirectiveItem._Got = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local ids = (((self._homelandModule):GetHomelandInfo()).cultivation_info).already_cultivation_list
-  if not ids or (table.count)(ids) <= 0 then
+function UIHomelandBreedDirectiveItem:_Got(id)
+  local ids = self._homelandModule:GetHomelandInfo().cultivation_info.already_cultivation_list
+  if not ids or table.count(ids) <= 0 then
     return false
   end
-  for _,_id in pairs(ids) do
+  for _, _id in pairs(ids) do
     if _id == id then
       return true
     end
   end
   return false
 end
-
-

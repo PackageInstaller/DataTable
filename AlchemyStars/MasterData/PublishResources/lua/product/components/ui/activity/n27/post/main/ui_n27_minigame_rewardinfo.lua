@@ -1,32 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/main/ui_n27_minigame_rewardinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27MiniGameRewardInfo", UICustomWidget)
 UIN27MiniGameRewardInfo = UIN27MiniGameRewardInfo
-local RewardState = {HadReceive = 1, NotReceive = 2, NotReach = 3}
+local RewardState = {
+  HadReceive = 1,
+  NotReceive = 2,
+  NotReach = 3
+}
 _enum("RewardState", RewardState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN27MiniGameRewardInfo.Constructor = function(self)
-  -- function num : 0_0
+function UIN27MiniGameRewardInfo:Constructor()
   self._rewards = nil
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27MiniGameRewardInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._bgState = {[1] = "n27_yz_xxg_btndi05", [2] = "n27_yz_xxg_btndi04", [3] = "n27_yz_xxg_btndi03"}
-  self.stringColor = {[1] = Color(0.30588235294118, 0.28235294117647, 0.27450980392157), [2] = Color(0.98039215686275, 0.69803921568627, 0.21176470588235)}
+function UIN27MiniGameRewardInfo:OnShow(uiParams)
+  self._bgState = {
+    [1] = "n27_yz_xxg_btndi05",
+    [2] = "n27_yz_xxg_btndi04",
+    [3] = "n27_yz_xxg_btndi03"
+  }
+  self.stringColor = {
+    [1] = Color(0.3058823529411765, 0.2823529411764706, 0.27450980392156865),
+    [2] = Color(0.9803921568627451, 0.6980392156862745, 0.21176470588235294)
+  }
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27MiniGameRewardInfo.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN27MiniGameRewardInfo:InitWidget()
   self._info = self:GetUIComponent("UILocalizationText", "info")
   self._num = self:GetUIComponent("UILocalizationText", "num")
   self._stateBg = self:GetUIComponent("Image", "bg")
@@ -38,108 +36,72 @@ UIN27MiniGameRewardInfo.InitWidget = function(self)
   self._anima = self:GetGameObject("anim")
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27MiniGameRewardInfo.PlayAni = function(self)
-  -- function num : 0_3
+function UIN27MiniGameRewardInfo:PlayAni()
   local aniIn = "uieff_UIN27MiniGameRewardInfo_in"
-  ;
-  (self._anima):SetActive(true)
-  ;
-  (self._animation):Play(aniIn)
+  self._anima:SetActive(true)
+  self._animation:Play(aniIn)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27MiniGameRewardInfo.ReceiveBtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : RewardState, _ENV
+function UIN27MiniGameRewardInfo:ReceiveBtnOnClick()
   if self.rewardState == RewardState.NotReceive then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN27MinigameRewardItemReceived, self._targetId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN27MinigameRewardItemReceived, self._targetId)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27MiniGameRewardInfo.SetData = function(self, targetId, mission_info, cfg)
-  -- function num : 0_5 , upvalues : _ENV
-  local rewards = nil
+function UIN27MiniGameRewardInfo:SetData(targetId, mission_info, cfg)
+  local rewards
   self._targetId = targetId
-  local targetcfg = (Cfg.cfg_component_post_station_game_mission_target)({ID = targetId})
-  rewards = (targetcfg[1]).Rewards
-  local count = (table.count)(rewards)
-  if count > 0 then
-    (self._reward):SpawnObjects("UIN27MiniGameRewardItem", count)
-    self._rewards = (self._reward):GetAllSpawnList()
+  local targetcfg = Cfg.cfg_component_post_station_game_mission_target({ID = targetId})
+  rewards = targetcfg[1].Rewards
+  local count = table.count(rewards)
+  if 0 < count then
+    self._reward:SpawnObjects("UIN27MiniGameRewardItem", count)
+    self._rewards = self._reward:GetAllSpawnList()
     for i = 1, #self._rewards do
-      ((self._rewards)[i]):SetData(rewards[i], mission_info)
+      self._rewards[i]:SetData(rewards[i], mission_info)
     end
   end
-  do
-    ;
-    (self._info):SetText((StringTable.Get)((targetcfg[1]).Desc))
-    self:_ReceiveRewardBtnState(mission_info)
-  end
+  self._info:SetText(StringTable.Get(targetcfg[1].Desc))
+  self:_ReceiveRewardBtnState(mission_info)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27MiniGameRewardInfo._ReceiveRewardBtnState = function(self, mission_info)
-  -- function num : 0_6 , upvalues : RewardState, _ENV
-  (self._redPoint):SetActive(false)
+function UIN27MiniGameRewardInfo:_ReceiveRewardBtnState(mission_info)
+  self._redPoint:SetActive(false)
   self.rewardState = self:_CheckRewardState(mission_info)
-  ;
-  (self._mask):SetActive(self.rewardState == RewardState.HadReceive)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._stateBg).sprite = (self._atlas):GetSprite((self._bgState)[self.rewardState])
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
+  self._mask:SetActive(self.rewardState == RewardState.HadReceive)
+  self._stateBg.sprite = self._atlas:GetSprite(self._bgState[self.rewardState])
   if self.rewardState == RewardState.NotReach then
-    (self._info).color = (Color.New)(0.30588235294118, 0.28235294117647, 0.27450980392157, 1)
+    self._info.color = Color.New(0.3058823529411765, 0.2823529411764706, 0.27450980392156865, 1.0)
   end
   if self.rewardState == RewardState.NotReceive then
-    (self._redPoint):SetActive(true)
+    self._redPoint:SetActive(true)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27MiniGameRewardInfo._ShowRewardTips = function(self, id, pos)
-  -- function num : 0_7
-  (self._tips):SetData(id, pos)
+function UIN27MiniGameRewardInfo:_ShowRewardTips(id, pos)
+  self._tips:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN27MiniGameRewardInfo._CheckRewardState = function(self, missionInfo)
-  -- function num : 0_8 , upvalues : RewardState, _ENV
+function UIN27MiniGameRewardInfo:_CheckRewardState(missionInfo)
   self.rewardState = RewardState.NotReach
   if not missionInfo then
     return self.rewardState
   end
   if missionInfo.can_get_target_list then
-    for key,value in pairs(missionInfo.can_get_target_list) do
+    for key, value in pairs(missionInfo.can_get_target_list) do
       if value == self._targetId then
         self.rewardState = RewardState.NotReceive
         break
       end
     end
   end
-  do
-    if missionInfo.already_get_target_list then
-      for key,value in pairs(missionInfo.already_get_target_list) do
-        if value == self._targetId then
-          self.rewardState = RewardState.HadReceive
-          break
-        end
+  if missionInfo.already_get_target_list then
+    for key, value in pairs(missionInfo.already_get_target_list) do
+      if value == self._targetId then
+        self.rewardState = RewardState.HadReceive
+        break
       end
     end
-    do
-      return self.rewardState
-    end
   end
+  return self.rewardState
 end
-
-

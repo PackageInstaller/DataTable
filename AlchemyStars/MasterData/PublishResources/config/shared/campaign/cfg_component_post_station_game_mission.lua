@@ -1,98 +1,428 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_post_station_game_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, Target = 3, OrderList = 4, OrderNum = 5, StoryID = 6, StoryActiveType = 7, Bg = 8, BgSelect = 9, BgLock = 10, Time = 11, MapPosX = 12, MapPosY = 13, UnlockTime = 14, Title = 15, Description = 16, FailMessage = 17}
-local common = {"n27_yz_xxg_qhead03", "n27_yz_xxg_qheadon03", "n27_yz_xxg_qheadoff03", "str_n27_poststation_mission_title_1", "str_n27_poststation_mission_desc_1", "str_n27_poststation_mission_failmessage_1", "n27_yz_xxg_qhead05", "n27_yz_xxg_qheadon05", "n27_yz_xxg_qheadoff05", "str_n27_poststation_mission_title_2", "str_n27_poststation_mission_desc_2", "str_n27_poststation_mission_failmessage_2", "n27_yz_xxg_qhead06", "n27_yz_xxg_qheadon06", "n27_yz_xxg_qheadoff06", "str_n27_poststation_mission_title_3", "str_n27_poststation_mission_desc_3", "str_n27_poststation_mission_failmessage_3", "n27_yz_xxg_qhead01", "n27_yz_xxg_qheadon01", "n27_yz_xxg_qheadoff01", "str_n27_poststation_mission_title_4", "str_n27_poststation_mission_desc_4", "str_n27_poststation_mission_failmessage_4", "n27_yz_xxg_qhead08", "n27_yz_xxg_qheadon08", "n27_yz_xxg_qheadoff08", "str_n27_poststation_mission_title_5", "str_n27_poststation_mission_desc_5", "str_n27_poststation_mission_failmessage_5", "n27_yz_xxg_qhead07", "n27_yz_xxg_qheadon07", "n27_yz_xxg_qheadoff07", "str_n27_poststation_mission_title_6", "str_n27_poststation_mission_desc_6", "str_n27_poststation_mission_failmessage_6", 
-{50420101}
-, 
-{1}
-, 
-{50420201}
-, 
-{50420301}
-, 
-{50420401}
-, 
-{50420501}
-, 
-{50420601, 50420602}
-, 
-{1, 2}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  Target = 3,
+  OrderList = 4,
+  OrderNum = 5,
+  StoryID = 6,
+  StoryActiveType = 7,
+  Bg = 8,
+  BgSelect = 9,
+  BgLock = 10,
+  Time = 11,
+  MapPosX = 12,
+  MapPosY = 13,
+  UnlockTime = 14,
+  Title = 15,
+  Description = 16,
+  FailMessage = 17
+}
+local common = {
+  "n27_yz_xxg_qhead03",
+  "n27_yz_xxg_qheadon03",
+  "n27_yz_xxg_qheadoff03",
+  "str_n27_poststation_mission_title_1",
+  "str_n27_poststation_mission_desc_1",
+  "str_n27_poststation_mission_failmessage_1",
+  "n27_yz_xxg_qhead05",
+  "n27_yz_xxg_qheadon05",
+  "n27_yz_xxg_qheadoff05",
+  "str_n27_poststation_mission_title_2",
+  "str_n27_poststation_mission_desc_2",
+  "str_n27_poststation_mission_failmessage_2",
+  "n27_yz_xxg_qhead06",
+  "n27_yz_xxg_qheadon06",
+  "n27_yz_xxg_qheadoff06",
+  "str_n27_poststation_mission_title_3",
+  "str_n27_poststation_mission_desc_3",
+  "str_n27_poststation_mission_failmessage_3",
+  "n27_yz_xxg_qhead01",
+  "n27_yz_xxg_qheadon01",
+  "n27_yz_xxg_qheadoff01",
+  "str_n27_poststation_mission_title_4",
+  "str_n27_poststation_mission_desc_4",
+  "str_n27_poststation_mission_failmessage_4",
+  "n27_yz_xxg_qhead08",
+  "n27_yz_xxg_qheadon08",
+  "n27_yz_xxg_qheadoff08",
+  "str_n27_poststation_mission_title_5",
+  "str_n27_poststation_mission_desc_5",
+  "str_n27_poststation_mission_failmessage_5",
+  "n27_yz_xxg_qhead07",
+  "n27_yz_xxg_qheadon07",
+  "n27_yz_xxg_qheadoff07",
+  "str_n27_poststation_mission_title_6",
+  "str_n27_poststation_mission_desc_6",
+  "str_n27_poststation_mission_failmessage_6",
+  {50420101},
+  {1},
+  {50420201},
+  {50420301},
+  {50420401},
+  {50420501},
+  {50420601, 50420602},
+  {1, 2}
 }
 local config = {
-{1, 108111008, 
-{1, 2, 3}
-, 
-{1, 2, 3, 4, 5}
-, 3, common[37], common[38], common[1], common[2], common[3], 180, 300, 70, "2023-2-23 09:00:00", common[4], common[5], common[6]}
-, 
-{2, 108111008, 
-{4, 5, 6}
-, 
-{6, 7, 8, 9, 10}
-, 3, common[39], common[38], common[7], common[8], common[9], 180, 750, -160, "2023-2-24 09:00:00", common[10], common[11], common[12]}
-, 
-{3, 108111008, 
-{7, 8, 9}
-, 
-{11, 12, 13, 14, 15, 16}
-, 4, common[40], common[38], common[13], common[14], common[15], 210, 1150, 100, "2023-2-25 09:00:00", common[16], common[17], common[18]}
-, 
-{4, 108111008, 
-{10, 11, 12}
-, 
-{17, 18, 19, 20, 21, 22}
-, 4, common[41], common[38], common[19], common[20], common[21], 210, 1500, -120, "2023-2-26 09:00:00", common[22], common[23], common[24]}
-, 
-{5, 108111008, 
-{13, 14, 15}
-, 
-{23, 24, 25, 26, 27, 28, 29}
-, 5, common[42], common[38], common[25], common[26], common[27], 240, 2000, 50, "2023-2-27 09:00:00", common[28], common[29], common[30]}
-, 
-{6, 108111008, 
-{16, 17, 18}
-, 
-{30, 31, 32, 33, 34, 35, 36}
-, 5, common[43], common[44], common[31], common[32], common[33], 240, 2400, -180, "2023-2-28 09:00:00", common[34], common[35], common[36]}
-; 
-[101] = {101, 114411008, 
-{101, 102, 103}
-, 
-{101, 102, 103, 104, 105}
-, 3, common[37], common[38], common[1], common[2], common[3], 180, 300, 30, "2024-03-13 09:00:00", common[4], common[5], common[6]}
-, 
-[102] = {102, 114411008, 
-{104, 105, 106}
-, 
-{106, 107, 108, 109, 110}
-, 3, common[39], common[38], common[7], common[8], common[9], 180, 750, -125, "2024-03-14 09:00:00", common[10], common[11], common[12]}
-, 
-[103] = {103, 114411008, 
-{107, 108, 109}
-, 
-{111, 112, 113, 114, 115, 116}
-, 4, common[40], common[38], common[13], common[14], common[15], 210, 1150, 40, "2024-03-15 09:00:00", common[16], common[17], common[18]}
-, 
-[104] = {104, 114411008, 
-{110, 111, 112}
-, 
-{117, 118, 119, 120, 121, 122}
-, 4, common[41], common[38], common[19], common[20], common[21], 210, 1600, -120, "2024-03-16 09:00:00", common[22], common[23], common[24]}
-, 
-[105] = {105, 114411008, 
-{113, 114, 115}
-, 
-{123, 124, 125, 126, 127, 128, 129}
-, 5, common[42], common[38], common[25], common[26], common[27], 240, 2000, 40, "2024-03-17 09:00:00", common[28], common[29], common[30]}
-, 
-[106] = {106, 114411008, 
-{116, 117, 118}
-, 
-{130, 131, 132, 133, 134, 135, 136}
-, 5, common[43], common[44], common[31], common[32], common[33], 240, 2450, -100, "2024-03-18 09:00:00", common[34], common[35], common[36]}
+  {
+    1,
+    108111008,
+    {
+      1,
+      2,
+      3
+    },
+    {
+      1,
+      2,
+      3,
+      4,
+      5
+    },
+    3,
+    common[37],
+    common[38],
+    common[1],
+    common[2],
+    common[3],
+    180,
+    300,
+    70,
+    "2023-2-23 09:00:00",
+    common[4],
+    common[5],
+    common[6]
+  },
+  {
+    2,
+    108111008,
+    {
+      4,
+      5,
+      6
+    },
+    {
+      6,
+      7,
+      8,
+      9,
+      10
+    },
+    3,
+    common[39],
+    common[38],
+    common[7],
+    common[8],
+    common[9],
+    180,
+    750,
+    -160,
+    "2023-2-24 09:00:00",
+    common[10],
+    common[11],
+    common[12]
+  },
+  {
+    3,
+    108111008,
+    {
+      7,
+      8,
+      9
+    },
+    {
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    },
+    4,
+    common[40],
+    common[38],
+    common[13],
+    common[14],
+    common[15],
+    210,
+    1150,
+    100,
+    "2023-2-25 09:00:00",
+    common[16],
+    common[17],
+    common[18]
+  },
+  {
+    4,
+    108111008,
+    {
+      10,
+      11,
+      12
+    },
+    {
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    },
+    4,
+    common[41],
+    common[38],
+    common[19],
+    common[20],
+    common[21],
+    210,
+    1500,
+    -120,
+    "2023-2-26 09:00:00",
+    common[22],
+    common[23],
+    common[24]
+  },
+  {
+    5,
+    108111008,
+    {
+      13,
+      14,
+      15
+    },
+    {
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    },
+    5,
+    common[42],
+    common[38],
+    common[25],
+    common[26],
+    common[27],
+    240,
+    2000,
+    50,
+    "2023-2-27 09:00:00",
+    common[28],
+    common[29],
+    common[30]
+  },
+  {
+    6,
+    108111008,
+    {
+      16,
+      17,
+      18
+    },
+    {
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    },
+    5,
+    common[43],
+    common[44],
+    common[31],
+    common[32],
+    common[33],
+    240,
+    2400,
+    -180,
+    "2023-2-28 09:00:00",
+    common[34],
+    common[35],
+    common[36]
+  },
+  [101] = {
+    101,
+    114411008,
+    {
+      101,
+      102,
+      103
+    },
+    {
+      101,
+      102,
+      103,
+      104,
+      105
+    },
+    3,
+    common[37],
+    common[38],
+    common[1],
+    common[2],
+    common[3],
+    180,
+    300,
+    30,
+    "2024-03-13 09:00:00",
+    common[4],
+    common[5],
+    common[6]
+  },
+  [102] = {
+    102,
+    114411008,
+    {
+      104,
+      105,
+      106
+    },
+    {
+      106,
+      107,
+      108,
+      109,
+      110
+    },
+    3,
+    common[39],
+    common[38],
+    common[7],
+    common[8],
+    common[9],
+    180,
+    750,
+    -125,
+    "2024-03-14 09:00:00",
+    common[10],
+    common[11],
+    common[12]
+  },
+  [103] = {
+    103,
+    114411008,
+    {
+      107,
+      108,
+      109
+    },
+    {
+      111,
+      112,
+      113,
+      114,
+      115,
+      116
+    },
+    4,
+    common[40],
+    common[38],
+    common[13],
+    common[14],
+    common[15],
+    210,
+    1150,
+    40,
+    "2024-03-15 09:00:00",
+    common[16],
+    common[17],
+    common[18]
+  },
+  [104] = {
+    104,
+    114411008,
+    {
+      110,
+      111,
+      112
+    },
+    {
+      117,
+      118,
+      119,
+      120,
+      121,
+      122
+    },
+    4,
+    common[41],
+    common[38],
+    common[19],
+    common[20],
+    common[21],
+    210,
+    1600,
+    -120,
+    "2024-03-16 09:00:00",
+    common[22],
+    common[23],
+    common[24]
+  },
+  [105] = {
+    105,
+    114411008,
+    {
+      113,
+      114,
+      115
+    },
+    {
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129
+    },
+    5,
+    common[42],
+    common[38],
+    common[25],
+    common[26],
+    common[27],
+    240,
+    2000,
+    40,
+    "2024-03-17 09:00:00",
+    common[28],
+    common[29],
+    common[30]
+  },
+  [106] = {
+    106,
+    114411008,
+    {
+      116,
+      117,
+      118
+    },
+    {
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136
+    },
+    5,
+    common[43],
+    common[44],
+    common[31],
+    common[32],
+    common[33],
+    240,
+    2450,
+    -100,
+    "2024-03-18 09:00:00",
+    common[34],
+    common[35],
+    common[36]
+  }
 }
 return config, "ID", key
-

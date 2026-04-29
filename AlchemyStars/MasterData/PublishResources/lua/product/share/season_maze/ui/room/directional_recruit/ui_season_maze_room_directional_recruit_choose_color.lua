@@ -1,31 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/directional_recruit/ui_season_maze_room_directional_recruit_choose_color.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoom_DirectionalRecruitChooseColor", UICustomWidget)
 UISeasonMazeRoom_DirectionalRecruitChooseColor = UISeasonMazeRoom_DirectionalRecruitChooseColor
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoom_DirectionalRecruitChooseColor.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:InitWidget()
   self._grid = self:GetUIComponent("UISelectObjectPath", "Grid")
-  self._colors = {ElementType.ElementType_Blue, ElementType.ElementType_Red, ElementType.ElementType_Green, ElementType.ElementType_Yellow}
+  self._colors = {
+    ElementType.ElementType_Blue,
+    ElementType.ElementType_Red,
+    ElementType.ElementType_Green,
+    ElementType.ElementType_Yellow
+  }
   self._curIndex = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.SetData = function(self, backCb, chooseCb, exitCb)
-  -- function num : 0_2 , upvalues : _ENV
-  local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:SetData(backCb, chooseCb, exitCb)
+  local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
   local seasonMazeObj = seasonMazeModule:CurSeasonObj()
   self._com = seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
   self._backCb = backCb
@@ -35,100 +27,68 @@ UISeasonMazeRoom_DirectionalRecruitChooseColor.SetData = function(self, backCb, 
   self:PlayChooseCardsShowInAnim()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.OnHide = function(self)
-  -- function num : 0_3
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.BackBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:BackBtnOnClick(go)
   if self._backCb then
-    (self._backCb)()
+    self._backCb()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:ConfirmBtnOnClick(go)
   if self._curIndex ~= 0 and self._chooseCb then
-    (self._chooseCb)(self._curIndex)
+    self._chooseCb(self._curIndex)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.InitCells = function(self)
-  -- function num : 0_6
-  (self._grid):SpawnObjects("UISeasonMazeRoom_DirectionalRecruitColorCell", #self._colors)
-  local pools = (self._grid):GetAllSpawnList()
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:InitCells()
+  self._grid:SpawnObjects("UISeasonMazeRoom_DirectionalRecruitColorCell", #self._colors)
+  local pools = self._grid:GetAllSpawnList()
   self._cellWidgets = pools
   for i = 1, #self._colors do
-    local color = (self._colors)[i]
+    local color = self._colors[i]
     local widget = pools[i]
     widget:SetData(i, color, function(idx)
-    -- function num : 0_6_0 , upvalues : self
-    self:OnCellClick(idx)
-  end
-)
+      self:OnCellClick(idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.OnCellClick = function(self, idx)
-  -- function num : 0_7
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:OnCellClick(idx)
   self._curIndex = idx
   for i = 1, #self._cellWidgets do
-    local widget = (self._cellWidgets)[i]
+    local widget = self._cellWidgets[i]
     widget:Select(self._curIndex)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.BagBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:BagBtnOnClick(go)
   self:ShowDialog("UISeasonMazeBackPackController", 1)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.ExitBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:ExitBtnOnClick(go)
   if self._exitCb then
-    (self._exitCb)()
+    self._exitCb()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitChooseColor.PlayChooseCardsShowInAnim = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMazeRoom_DirectionalRecruitChooseColor:PlayChooseCardsShowInAnim()
   local lockName = "UISeasonMazeRoom_DirectionalRecruitChooseColor:PlayChooseCardsShowInAnim"
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
     local eachDelay = 100
     local lockTime = 900
     local maxDelayMs = 0
     if self._cellWidgets then
-      for index,widget in ipairs(self._cellWidgets) do
+      for index, widget in ipairs(self._cellWidgets) do
         local delayMs = (index - 1) * eachDelay
         widget:PlayShowInAnim(delayMs)
         maxDelayMs = delayMs
       end
     end
-    do
-      lockTime = lockTime + maxDelayMs
-      YIELD(TT, lockTime)
-      self:UnLock(lockName)
-    end
-  end
-)
+    lockTime = lockTime + maxDelayMs
+    YIELD(TT, lockTime)
+    self:UnLock(lockName)
+  end)
 end
-
-

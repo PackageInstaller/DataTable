@@ -1,45 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_destroy_monster_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDestroyMonsterInstruction", BaseInstruction)
 PlayDestroyMonsterInstruction = PlayDestroyMonsterInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDestroyMonsterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayDestroyMonsterInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDestroyMonsterInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDestroyMonsterInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playDamageService = world:GetService("PlayDamage")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DestroyMonster)
   if not resultArray then
-    return 
+    return
   end
   local index = phaseContext:GetCurResultIndexByType(SkillEffectType.DestroyMonster)
   local result = resultArray[index]
   if not result then
-    return 
+    return
   end
   local eID = result:GetEntityID()
   local eMonster = world:GetEntityByID(eID)
   if not eMonster then
-    return 
+    return
   end
   local svc = world:GetService("MonsterShowRender")
-  ;
-  (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : svc, eMonster
+  TaskManager:GetInstance():CoreGameStartTask(function(TT)
     svc:_DoOneMonsterDead(TT, eMonster)
-  end
-)
+  end)
 end
-
-

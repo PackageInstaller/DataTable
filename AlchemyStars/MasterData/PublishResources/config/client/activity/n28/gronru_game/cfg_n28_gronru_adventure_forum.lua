@@ -1,37 +1,168 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n28/gronru_game/cfg_n28_gronru_adventure_forum.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Name = 2, CommentType = 3, GameDuration = 4, Publisher = 5, Desc = 6, LayoutType = 7, Head = 8, TimePublish = 9}
+local key = {
+  ID = 1,
+  Name = 2,
+  CommentType = 3,
+  GameDuration = 4,
+  Publisher = 5,
+  Desc = 6,
+  LayoutType = 7,
+  Head = 8,
+  TimePublish = 9
+}
 local config = {
-{1, "str_n28_gronru_adventure_forum_name_01", 1, "str_n28_gronru_adventure_forum_time_01", "str_n28_gronru_adventure_forum_publisher_01", "str_n28_gronru_adventure_forum_desc_01", 1, "N28_yrj_zjm_tx07", "str_n28_gronru_adventure_forum_timepublish_01"}
-, 
-{2, "str_n28_gronru_adventure_forum_name_02", 1, "str_n28_gronru_adventure_forum_time_02", "str_n28_gronru_adventure_forum_publisher_02", "str_n28_gronru_adventure_forum_desc_02", 1, "N28_yrj_zjm_tx08", "str_n28_gronru_adventure_forum_timepublish_02"}
-, 
-{3, "str_n28_gronru_adventure_forum_name_03", 2, "str_n28_gronru_adventure_forum_time_03", "str_n28_gronru_adventure_forum_publisher_03", "str_n28_gronru_adventure_forum_desc_03", 1, "N28_yrj_zjm_tx09", "str_n28_gronru_adventure_forum_timepublish_03"}
-, 
-{4, "str_n28_gronru_adventure_forum_name_04", 2, "str_n28_gronru_adventure_forum_time_04", "str_n28_gronru_adventure_forum_publisher_04", "str_n28_gronru_adventure_forum_desc_04", 1, "N28_yrj_zjm_tx10", "str_n28_gronru_adventure_forum_timepublish_04"}
-, 
-{5, "str_n28_gronru_adventure_forum_name_05", 2, "str_n28_gronru_adventure_forum_time_05", "str_n28_gronru_adventure_forum_publisher_05", "str_n28_gronru_adventure_forum_desc_05", 2, "N28_yrj_zjm_tx11", "str_n28_gronru_adventure_forum_timepublish_05"}
-, 
-{6, "str_n28_gronru_adventure_forum_name_06", 1, "str_n28_gronru_adventure_forum_time_06", "str_n28_gronru_adventure_forum_publisher_06", "str_n28_gronru_adventure_forum_desc_06", 2, "N28_yrj_zjm_tx12", "str_n28_gronru_adventure_forum_timepublish_06"}
-, 
-{7, "str_n28_gronru_adventure_forum_name_07", 1, "str_n28_gronru_adventure_forum_time_07", "str_n28_gronru_adventure_forum_publisher_07", "str_n28_gronru_adventure_forum_desc_07", 1, "N28_yrj_zjm_tx13", "str_n28_gronru_adventure_forum_timepublish_07"}
-, 
-{8, "str_n28_gronru_adventure_forum_name_08", 1, "str_n28_gronru_adventure_forum_time_08", "str_n28_gronru_adventure_forum_publisher_08", "str_n28_gronru_adventure_forum_desc_08", 1, "N28_yrj_zjm_tx14", "str_n28_gronru_adventure_forum_timepublish_08"}
-, 
-{9, "str_n28_gronru_adventure_forum_name_09", 1, "str_n28_gronru_adventure_forum_time_09", "str_n28_gronru_adventure_forum_publisher_09", "str_n28_gronru_adventure_forum_desc_09", 1, "N28_yrj_zjm_tx15", "str_n28_gronru_adventure_forum_timepublish_09"}
-, 
-{10, "str_n28_gronru_adventure_forum_name_10", 2, "str_n28_gronru_adventure_forum_time_10", "str_n28_gronru_adventure_forum_publisher_10", "str_n28_gronru_adventure_forum_desc_10", 1, "N28_yrj_zjm_tx16", "str_n28_gronru_adventure_forum_timepublish_10"}
-, 
-{11, "str_n28_gronru_adventure_forum_name_11", 1, "str_n28_gronru_adventure_forum_time_11", "str_n28_gronru_adventure_forum_publisher_11", "str_n28_gronru_adventure_forum_desc_11", 1, "N28_yrj_zjm_tx17", "str_n28_gronru_adventure_forum_timepublish_11"}
-, 
-{12, "str_n28_gronru_adventure_forum_name_12", 2, "str_n28_gronru_adventure_forum_time_12", "str_n28_gronru_adventure_forum_publisher_12", "str_n28_gronru_adventure_forum_desc_12", 2, "N28_yrj_zjm_tx18", "str_n28_gronru_adventure_forum_timepublish_12"}
-, 
-{13, "str_n28_gronru_adventure_forum_name_13", 1, "str_n28_gronru_adventure_forum_time_13", "str_n28_gronru_adventure_forum_publisher_13", "str_n28_gronru_adventure_forum_desc_13", 1, "N28_yrj_zjm_tx19", "str_n28_gronru_adventure_forum_timepublish_13"}
-, 
-{14, "str_n28_gronru_adventure_forum_name_14", 2, "str_n28_gronru_adventure_forum_time_14", "str_n28_gronru_adventure_forum_publisher_14", "str_n28_gronru_adventure_forum_desc_14", 2, "N28_yrj_zjm_tx20", "str_n28_gronru_adventure_forum_timepublish_14"}
+  {
+    1,
+    "str_n28_gronru_adventure_forum_name_01",
+    1,
+    "str_n28_gronru_adventure_forum_time_01",
+    "str_n28_gronru_adventure_forum_publisher_01",
+    "str_n28_gronru_adventure_forum_desc_01",
+    1,
+    "N28_yrj_zjm_tx07",
+    "str_n28_gronru_adventure_forum_timepublish_01"
+  },
+  {
+    2,
+    "str_n28_gronru_adventure_forum_name_02",
+    1,
+    "str_n28_gronru_adventure_forum_time_02",
+    "str_n28_gronru_adventure_forum_publisher_02",
+    "str_n28_gronru_adventure_forum_desc_02",
+    1,
+    "N28_yrj_zjm_tx08",
+    "str_n28_gronru_adventure_forum_timepublish_02"
+  },
+  {
+    3,
+    "str_n28_gronru_adventure_forum_name_03",
+    2,
+    "str_n28_gronru_adventure_forum_time_03",
+    "str_n28_gronru_adventure_forum_publisher_03",
+    "str_n28_gronru_adventure_forum_desc_03",
+    1,
+    "N28_yrj_zjm_tx09",
+    "str_n28_gronru_adventure_forum_timepublish_03"
+  },
+  {
+    4,
+    "str_n28_gronru_adventure_forum_name_04",
+    2,
+    "str_n28_gronru_adventure_forum_time_04",
+    "str_n28_gronru_adventure_forum_publisher_04",
+    "str_n28_gronru_adventure_forum_desc_04",
+    1,
+    "N28_yrj_zjm_tx10",
+    "str_n28_gronru_adventure_forum_timepublish_04"
+  },
+  {
+    5,
+    "str_n28_gronru_adventure_forum_name_05",
+    2,
+    "str_n28_gronru_adventure_forum_time_05",
+    "str_n28_gronru_adventure_forum_publisher_05",
+    "str_n28_gronru_adventure_forum_desc_05",
+    2,
+    "N28_yrj_zjm_tx11",
+    "str_n28_gronru_adventure_forum_timepublish_05"
+  },
+  {
+    6,
+    "str_n28_gronru_adventure_forum_name_06",
+    1,
+    "str_n28_gronru_adventure_forum_time_06",
+    "str_n28_gronru_adventure_forum_publisher_06",
+    "str_n28_gronru_adventure_forum_desc_06",
+    2,
+    "N28_yrj_zjm_tx12",
+    "str_n28_gronru_adventure_forum_timepublish_06"
+  },
+  {
+    7,
+    "str_n28_gronru_adventure_forum_name_07",
+    1,
+    "str_n28_gronru_adventure_forum_time_07",
+    "str_n28_gronru_adventure_forum_publisher_07",
+    "str_n28_gronru_adventure_forum_desc_07",
+    1,
+    "N28_yrj_zjm_tx13",
+    "str_n28_gronru_adventure_forum_timepublish_07"
+  },
+  {
+    8,
+    "str_n28_gronru_adventure_forum_name_08",
+    1,
+    "str_n28_gronru_adventure_forum_time_08",
+    "str_n28_gronru_adventure_forum_publisher_08",
+    "str_n28_gronru_adventure_forum_desc_08",
+    1,
+    "N28_yrj_zjm_tx14",
+    "str_n28_gronru_adventure_forum_timepublish_08"
+  },
+  {
+    9,
+    "str_n28_gronru_adventure_forum_name_09",
+    1,
+    "str_n28_gronru_adventure_forum_time_09",
+    "str_n28_gronru_adventure_forum_publisher_09",
+    "str_n28_gronru_adventure_forum_desc_09",
+    1,
+    "N28_yrj_zjm_tx15",
+    "str_n28_gronru_adventure_forum_timepublish_09"
+  },
+  {
+    10,
+    "str_n28_gronru_adventure_forum_name_10",
+    2,
+    "str_n28_gronru_adventure_forum_time_10",
+    "str_n28_gronru_adventure_forum_publisher_10",
+    "str_n28_gronru_adventure_forum_desc_10",
+    1,
+    "N28_yrj_zjm_tx16",
+    "str_n28_gronru_adventure_forum_timepublish_10"
+  },
+  {
+    11,
+    "str_n28_gronru_adventure_forum_name_11",
+    1,
+    "str_n28_gronru_adventure_forum_time_11",
+    "str_n28_gronru_adventure_forum_publisher_11",
+    "str_n28_gronru_adventure_forum_desc_11",
+    1,
+    "N28_yrj_zjm_tx17",
+    "str_n28_gronru_adventure_forum_timepublish_11"
+  },
+  {
+    12,
+    "str_n28_gronru_adventure_forum_name_12",
+    2,
+    "str_n28_gronru_adventure_forum_time_12",
+    "str_n28_gronru_adventure_forum_publisher_12",
+    "str_n28_gronru_adventure_forum_desc_12",
+    2,
+    "N28_yrj_zjm_tx18",
+    "str_n28_gronru_adventure_forum_timepublish_12"
+  },
+  {
+    13,
+    "str_n28_gronru_adventure_forum_name_13",
+    1,
+    "str_n28_gronru_adventure_forum_time_13",
+    "str_n28_gronru_adventure_forum_publisher_13",
+    "str_n28_gronru_adventure_forum_desc_13",
+    1,
+    "N28_yrj_zjm_tx19",
+    "str_n28_gronru_adventure_forum_timepublish_13"
+  },
+  {
+    14,
+    "str_n28_gronru_adventure_forum_name_14",
+    2,
+    "str_n28_gronru_adventure_forum_time_14",
+    "str_n28_gronru_adventure_forum_publisher_14",
+    "str_n28_gronru_adventure_forum_desc_14",
+    2,
+    "N28_yrj_zjm_tx20",
+    "str_n28_gronru_adventure_forum_timepublish_14"
+  }
 }
 return config, "ID", key
-

@@ -1,241 +1,178 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/AnniversaryLogin/ui_activity_anniversary_login_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityAnniversaryLoginController", UIController)
 UIActivityAnniversaryLoginController = UIActivityAnniversaryLoginController
-local UIActivityAnniversaryLoginState = {TabMain = 1, TabPre = 2, TabReward = 3}
+local UIActivityAnniversaryLoginState = {
+  TabMain = 1,
+  TabPre = 2,
+  TabReward = 3
+}
 _enum("UIActivityAnniversaryLoginState", UIActivityAnniversaryLoginState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityAnniversaryLoginController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityAnniversaryLoginController:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_ANNIVERSARY
   self._componentId_1 = ECampaignAnniversaryComponentID.ECAMPAIGN_ANNIVERSARY
   self._componentId_2 = ECampaignAnniversaryComponentID.ECAMPAIGN_RESOURCE_BOX
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, self._componentId_1, self._componentId_2)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, self._componentId_1, self._componentId_2)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  ;
-  (self._campaign):ClearCampaignNew(TT)
-  self._component_1 = (self._campaign):GetComponent(self._componentId_1)
-  self._component_2 = (self._campaign):GetComponent(self._componentId_2)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ClearCampaignNew(TT)
+  self._component_1 = self._campaign:GetComponent(self._componentId_1)
+  self._component_2 = self._campaign:GetComponent(self._componentId_2)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityAnniversaryLoginController:OnShow(uiParams)
   self:_AttachEvents()
   self:_Refresh()
-  self._matReq = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "_title", "AnniversaryLogin_Material.mat", self._matReq)
+  self._matReq = UIWidgetHelper.SetLocalizedTMPMaterial(self, "_title", "AnniversaryLogin_Material.mat", self._matReq)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityAnniversaryLoginController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._matReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq)
+function UIActivityAnniversaryLoginController:Destroy()
+  self._matReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._Start_ReloadAndRefresh = function(self, index)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityAnniversaryLoginController:_Start_ReloadAndRefresh(index)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self, index
     local res = AsyncRequestRes:New()
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     self:_Refresh(index)
+  end)
+end
+
+function UIActivityAnniversaryLoginController:_Refresh(index)
+  if not self._tabIndex then
+    local state = self._component_2:GetTimeRewardState(1)
+    index = state == ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV and 2 or 1
   end
-)
+  self._tabIndex = index or self._tabIndex
+  self:_SetState(self._tabIndex)
+  self:_SetTabPage(self._tabIndex)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._Refresh = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
-  do
-    if not self._tabIndex then
-      local state = (self._component_2):GetTimeRewardState(1)
-      index = state == ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV and 2 or 1
-    end
-    if not index then
-      self._tabIndex = self._tabIndex
-      self:_SetState(self._tabIndex)
-      self:_SetTabPage(self._tabIndex)
-    end
-  end
+function UIActivityAnniversaryLoginController:_SetState(index)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "_tabMain",
+      "_titleGroup"
+    },
+    {
+      "_tabPre",
+      "_titleGroup"
+    },
+    {"_tabReward"}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, index)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._SetState = function(self, index)
-  -- function num : 0_6 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_tabMain", "_titleGroup"}
-, 
-{"_tabPre", "_titleGroup"}
-, 
-{"_tabReward"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, index)
-end
-
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._InitTabPage = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityAnniversaryLoginController:_InitTabPage()
   self._objs = {}
-  local widgetNames = {"_tabMain", "_tabPre", "_tabReward"}
-  local classNames = {"UIActivityAnniversaryLoginTabMain", "UIActivityAnniversaryLoginTabPre", "UIActivityAnniversaryLoginTabReward"}
+  local widgetNames = {
+    "_tabMain",
+    "_tabPre",
+    "_tabReward"
+  }
+  local classNames = {
+    "UIActivityAnniversaryLoginTabMain",
+    "UIActivityAnniversaryLoginTabPre",
+    "UIActivityAnniversaryLoginTabReward"
+  }
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._objs)[i] = (UIWidgetHelper.SpawnObject)(self, widgetNames[index], classNames[index])
+    self._objs[i] = UIWidgetHelper.SpawnObject(self, widgetNames[index], classNames[index])
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._SetTabPage = function(self, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityAnniversaryLoginController:_SetTabPage(index)
   if not self._objs then
     self._objs = {}
-    local components = {self._component_1, self._component_2, self._component_2}
-    local widgetNames = {"_tabMain", "_tabPre", "_tabReward"}
-    local classNames = {"UIActivityAnniversaryLoginTabMain", "UIActivityAnniversaryLoginTabPre", "UIActivityAnniversaryLoginTabReward"}
+    local components = {
+      self._component_1,
+      self._component_2,
+      self._component_2
+    }
+    local widgetNames = {
+      "_tabMain",
+      "_tabPre",
+      "_tabReward"
+    }
+    local classNames = {
+      "UIActivityAnniversaryLoginTabMain",
+      "UIActivityAnniversaryLoginTabPre",
+      "UIActivityAnniversaryLoginTabReward"
+    }
     for i = 1, 3 do
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R9 in 'UnsetPending'
-
-      (self._objs)[i] = (UIWidgetHelper.SpawnObject)(self, widgetNames[i], classNames[i])
-      ;
-      ((self._objs)[i]):SetData(self._campaign, components[i], function(idx, reload)
-    -- function num : 0_8_0 , upvalues : self
-    if reload then
-      self:_Start_ReloadAndRefresh(idx)
-    else
-      self:_Refresh(idx)
+      self._objs[i] = UIWidgetHelper.SpawnObject(self, widgetNames[i], classNames[i])
+      self._objs[i]:SetData(self._campaign, components[i], function(idx, reload)
+        if reload then
+          self:_Start_ReloadAndRefresh(idx)
+        else
+          self:_Refresh(idx)
+        end
+      end, function()
+        self:CloseDialog()
+      end, function(matid, pos)
+        UIWidgetHelper.SetAwardItemTips(self, "_itemTipsPool", matid, pos)
+      end, function(component, rewardID)
+        self:_OnTakeBtnClick(component, rewardID)
+      end)
     end
   end
-, function()
-    -- function num : 0_8_1 , upvalues : self
-    self:CloseDialog()
-  end
-, function(matid, pos)
-    -- function num : 0_8_2 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_itemTipsPool", matid, pos)
-  end
-, function(component, rewardID)
-    -- function num : 0_8_3 , upvalues : self
-    self:_OnTakeBtnClick(component, rewardID)
-  end
-)
-    end
-  end
-  do
-    ;
-    ((self._objs)[index]):Refresh()
-  end
+  self._objs[index]:Refresh()
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController.BgBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIActivityAnniversaryLoginController:BgBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIActivityAnniversaryLoginController:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._OnTakeBtnClick = function(self, component, rewardID)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityAnniversaryLoginController:_OnTakeBtnClick(component, rewardID)
   component:Start_HandleTakeTimeRewardReward(rewardID, function(res, rewards)
-    -- function num : 0_11_0 , upvalues : _ENV, self
     if rewards == nil then
-      (Log.error)("UIActivityAnniversaryLoginController:_OnTakeBtnClick() rewards = nil")
+      Log.error("UIActivityAnniversaryLoginController:_OnTakeBtnClick() rewards = nil")
     end
     self:_OnReceiveRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityAnniversaryLoginController:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_12_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_12_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:_Refresh()
+    end, function()
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._AttachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityAnniversaryLoginController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._DetachEvents = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityAnniversaryLoginController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController._CheckActivityClose = function(self, id)
-  -- function num : 0_15
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityAnniversaryLoginController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityAnniversaryLoginController.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_16 , upvalues : UIActivityAnniversaryLoginState
+function UIActivityAnniversaryLoginController:OnUIGetItemCloseInQuest(type)
   self:_Refresh(UIActivityAnniversaryLoginState.TabMain)
 end
-
-

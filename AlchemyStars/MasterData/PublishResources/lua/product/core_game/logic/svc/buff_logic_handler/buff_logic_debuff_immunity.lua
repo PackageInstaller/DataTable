@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_debuff_immunity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDebuffImmunity", BuffLogicBase)
 BuffLogicDebuffImmunity = BuffLogicDebuffImmunity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDebuffImmunity.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDebuffImmunity:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDebuffImmunity.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicDebuffImmunity:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:SetSimpleAttribute("DebuffImmunity", 1)
 end
 
 _class("BuffLogicRemoveDebuffImmunity", BuffLogicBase)
 BuffLogicRemoveDebuffImmunity = BuffLogicRemoveDebuffImmunity
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveDebuffImmunity.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveDebuffImmunity:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveDebuffImmunity.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicRemoveDebuffImmunity:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:RemoveSimpleAttribute("DebuffImmunity")
 end
-
-

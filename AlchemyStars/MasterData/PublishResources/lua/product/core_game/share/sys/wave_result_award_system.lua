@@ -1,76 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/wave_result_award_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("WaveResultAwardSystem", MainStateSystem)
 WaveResultAwardSystem = WaveResultAwardSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WaveResultAwardSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function WaveResultAwardSystem:_GetMainStateID()
   return GameStateID.WaveResultAward
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local choosePartnerFun, choosePartners, choseRelics = nil, nil, nil
-  local talentSvc = (self._world):GetService("Talent")
+function WaveResultAwardSystem:_OnMainStateEnter(TT)
+  local choosePartnerFun, choosePartners, choseRelics
+  local talentSvc = self._world:GetService("Talent")
   local openingChoose = talentSvc:NeedChooseOpeningRelic()
   if openingChoose then
     local groupID, count = talentSvc:GetChooseRelicParam()
     choseRelics = self:_DoLogicRandomRelic(groupID, count)
   else
-    do
-      choosePartners = self:_DoLogicCalcChoosePartner()
-      choseRelics = self:_DoLogicRandomRelic()
-      if choosePartners then
-        choosePartnerFun = function(choosenRelicID)
-    -- function num : 0_1_0 , upvalues : self, TT, choosePartners
-    self:_DoRenderShowChoosePartner(TT, choosePartners, choosenRelicID)
+    choosePartners = self:_DoLogicCalcChoosePartner()
+    choseRelics = self:_DoLogicRandomRelic()
   end
-
-      end
-      if choseRelics then
-        self:_DoRenderShowChooseRelic(TT, choseRelics, choosePartnerFun, openingChoose)
-      else
-        if choosePartnerFun then
-          choosePartnerFun(0)
-        end
-      end
+  if choosePartners then
+    function choosePartnerFun(choosenRelicID)
+      self:_DoRenderShowChoosePartner(TT, choosePartners, choosenRelicID)
+    end
+  end
+  if choseRelics then
+    self:_DoRenderShowChooseRelic(TT, choseRelics, choosePartnerFun, openingChoose)
+  else
+    if choosePartnerFun then
+      choosePartnerFun(0)
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardSystem._DoLogicCalcChoosePartner = function(self)
-  -- function num : 0_2
-  local partnerService = (self._world):GetService("PartnerLogic")
+function WaveResultAwardSystem:_DoLogicCalcChoosePartner()
+  local partnerService = self._world:GetService("PartnerLogic")
   return partnerService:_CalcChoosePartner()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardSystem._DoLogicRandomRelic = function(self, groupID, count)
-  -- function num : 0_3
-  local battleSvc = (self._world):GetService("Battle")
+function WaveResultAwardSystem:_DoLogicRandomRelic(groupID, count)
+  local battleSvc = self._world:GetService("Battle")
   return battleSvc:CalcRandomRelic(groupID, count)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardSystem._DoRenderShowChoosePartner = function(self, TT, choosePartners, choosenRelicID)
-  -- function num : 0_4
+function WaveResultAwardSystem:_DoRenderShowChoosePartner(TT, choosePartners, choosenRelicID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WaveResultAwardSystem._DoRenderShowChooseRelic = function(self, TT, chooseRelics, openingChoose)
-  -- function num : 0_5
+function WaveResultAwardSystem:_DoRenderShowChooseRelic(TT, chooseRelics, openingChoose)
 end
-
-

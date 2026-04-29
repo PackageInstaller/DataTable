@@ -1,60 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_trigger_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamTriggerTrap", SkillEffectParamBase)
 SkillEffectParamTriggerTrap = SkillEffectParamTriggerTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamTriggerTrap.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamTriggerTrap:Constructor(t)
   self._trapID = {}
   if t.trapID then
-    for _,id in ipairs(t.trapID) do
-      -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-      (self._trapID)[id] = true
+    for _, id in ipairs(t.trapID) do
+      self._trapID[id] = true
     end
   end
-  do
-    self._trapType = t.trapType
-    if not t.triggerType then
-      self._triggerType = SkillEffectTriggerTrapType.Range
-    end
-  end
+  self._trapType = t.trapType
+  self._triggerType = t.triggerType or SkillEffectTriggerTrapType.Range
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTriggerTrap.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamTriggerTrap:GetEffectType()
   return SkillEffectType.TriggerTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTriggerTrap.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectParamTriggerTrap:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTriggerTrap.IsTriggerTrap = function(self, trapID, trapType)
-  -- function num : 0_3
-  do return (self._trapID)[trapID] or trapType == self._trapType end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillEffectParamTriggerTrap:IsTriggerTrap(trapID, trapType)
+  return self._trapID[trapID] or trapType == self._trapType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTriggerTrap.GetTriggerType = function(self)
-  -- function num : 0_4
+function SkillEffectParamTriggerTrap:GetTriggerType()
   return self._triggerType
 end
 
-local SkillEffectTriggerTrapType = {Self = 1, Range = 2, ChainPath = 3}
+local SkillEffectTriggerTrapType = {
+  Self = 1,
+  Range = 2,
+  ChainPath = 3
+}
 _enum("SkillEffectTriggerTrapType", SkillEffectTriggerTrapType)
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_at_range_math_center_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectAtRangeMathCenterInstruction", BaseInstruction)
 PlayEffectAtRangeMathCenterInstruction = PlayEffectAtRangeMathCenterInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectAtRangeMathCenterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectAtRangeMathCenterInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._pickUpIndex = tonumber(paramList.pickUpIndex)
   self._dirX = 0
@@ -21,14 +14,10 @@ PlayEffectAtRangeMathCenterInstruction.Constructor = function(self, paramList)
     self._dirY = tonumber(paramList.dirY)
   end
   self._dirOnPickup = tonumber(paramList.dirOnPickup) == 0
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtRangeMathCenterInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayEffectAtRangeMathCenterInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local gridDataArray = scopeResult:GetAttackRange()
@@ -36,35 +25,33 @@ PlayEffectAtRangeMathCenterInstruction.DoInstruction = function(self, TT, caster
   local minY = 9
   local maxX = 0
   local maxY = 0
-  for _,v2 in ipairs(gridDataArray) do
-    if v2.x < minX then
+  for _, v2 in ipairs(gridDataArray) do
+    if minX > v2.x then
       minX = v2.x
     end
     if maxX < v2.x then
       maxX = v2.x
     end
-    if v2.y < minY then
+    if minY > v2.y then
       minY = v2.y
     end
     if maxY < v2.y then
       maxY = v2.y
     end
   end
-  local v2Center = (Vector2.New)(0.5 * (minX + maxX), 0.5 * (minY + maxY))
+  local v2Center = Vector2.New(0.5 * (minX + maxX), 0.5 * (minY + maxY))
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   effectService:CreateWorldPositionEffect(self._effectID, v2Center)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtRangeMathCenterInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectAtRangeMathCenterInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

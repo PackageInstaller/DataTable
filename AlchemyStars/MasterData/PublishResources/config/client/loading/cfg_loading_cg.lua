@@ -1,13 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/loading/cfg_loading_cg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, StartTime = 2, EndTime = 3, TimeType = 4, Active = 5, Cg = 6}
+local key = {
+  ID = 1,
+  StartTime = 2,
+  EndTime = 3,
+  TimeType = 4,
+  Active = 5,
+  Cg = 6
+}
 local config = {
-{1, "2022-03-31 15:00:00", "2022-04-01 15:00:00", 0, true, 202}
-, 
-{2, "2024-04-01 05:00:00", "2024-04-02 05:00:00", 1, true, 20026}
+  {
+    1,
+    "2022-03-31 15:00:00",
+    "2022-04-01 15:00:00",
+    0,
+    true,
+    202
+  },
+  {
+    2,
+    "2024-04-01 05:00:00",
+    "2024-04-02 05:00:00",
+    1,
+    true,
+    20026
+  }
 }
 return config, "ID", key
-

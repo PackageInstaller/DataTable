@@ -1,39 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass/common/ui_activity_battlepass_icon_text.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassIconText", UICustomWidget)
 UIActivityBattlePassIconText = UIActivityBattlePassIconText
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassIconText._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityBattlePassIconText:_GetComponents()
   self._iconImg = self:GetUIComponent("RawImageLoader", "icon")
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassIconText.SetData = function(self, index, url, titleId)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassIconText:SetData(index, url, titleId)
   self:_GetComponents()
-  ;
-  (self._iconImg):LoadImage(url)
-  ;
-  (self._txtTitle):SetText((StringTable.Get)(titleId))
+  self._iconImg:LoadImage(url)
+  self._txtTitle:SetText(StringTable.Get(titleId))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassIconText.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIActivityBattlePassIconText:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassIconText.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityBattlePassIconText:OnHide()
 end
-
-

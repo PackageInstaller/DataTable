@@ -1,82 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_convert_and_damage_by_link_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectConvertAndDamageByLinkLineResult", SkillEffectResultBase)
 SkillEffectConvertAndDamageByLinkLineResult = SkillEffectConvertAndDamageByLinkLineResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectConvertAndDamageByLinkLineResult.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectConvertAndDamageByLinkLineResult:Constructor()
   self._chainPath = {}
   self._teleportResult = nil
   self._convertResult = nil
   self._damageResult = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectConvertAndDamageByLinkLineResult:GetEffectType()
   return SkillEffectType.ConvertAndDamageByLinkLine
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineResult.SetChainPath = function(self, chainPath)
-  -- function num : 0_2
+function SkillEffectConvertAndDamageByLinkLineResult:SetChainPath(chainPath)
   self._chainPath = chainPath
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineResult.SetTeleportResult = function(self, teleportRes)
-  -- function num : 0_3
+function SkillEffectConvertAndDamageByLinkLineResult:SetTeleportResult(teleportRes)
   self._teleportResult = teleportRes
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineResult.SetConvertResult = function(self, convertResult)
-  -- function num : 0_4
+function SkillEffectConvertAndDamageByLinkLineResult:SetConvertResult(convertResult)
   self._convertResult = convertResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineResult.SetDamageResult = function(self, damageResult)
-  -- function num : 0_5
+function SkillEffectConvertAndDamageByLinkLineResult:SetDamageResult(damageResult)
   self._damageResult = damageResult
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineResult.GetChainPath = function(self)
-  -- function num : 0_6
+function SkillEffectConvertAndDamageByLinkLineResult:GetChainPath()
   return self._chainPath
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineResult.GetTeleportResult = function(self)
-  -- function num : 0_7
+function SkillEffectConvertAndDamageByLinkLineResult:GetTeleportResult()
   return self._teleportResult
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineResult.GetConvertResult = function(self)
-  -- function num : 0_8
+function SkillEffectConvertAndDamageByLinkLineResult:GetConvertResult()
   return self._convertResult
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectConvertAndDamageByLinkLineResult.GetDamageResult = function(self)
-  -- function num : 0_9
+function SkillEffectConvertAndDamageByLinkLineResult:GetDamageResult()
   return self._damageResult
 end
-
-

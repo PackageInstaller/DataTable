@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_add_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_summon_everything")
 _class("SkillPhaseParam_AddBlood", SkillPhaseParam_SummonEverything)
 SkillPhaseParam_AddBlood = SkillPhaseParam_AddBlood
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParam_AddBlood.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParam_AddBlood:Constructor(t)
   self._playerStepTime = t.playerStepTime or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_AddBlood.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseParam_AddBlood:GetPhaseType()
   return SkillViewPhaseType.AddBlood
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParam_AddBlood.GetPlayerStepTime = function(self)
-  -- function num : 0_2
+function SkillPhaseParam_AddBlood:GetPlayerStepTime()
   return self._playerStepTime
 end
-
-

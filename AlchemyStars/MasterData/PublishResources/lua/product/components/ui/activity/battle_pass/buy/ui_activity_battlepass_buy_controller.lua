@@ -1,114 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass/buy/ui_activity_battlepass_buy_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassBuyController", UIController)
 UIActivityBattlePassBuyController = UIActivityBattlePassBuyController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassBuyController._GetLVRewardComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityBattlePassBuyController:_GetLVRewardComponent()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController._GetLVRewardComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassBuyController:_GetLVRewardComponentInfo()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController._GetBuyGiftComponent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityBattlePassBuyController:_GetBuyGiftComponent()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController._GetBuyGiftComponentInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityBattlePassBuyController:_GetBuyGiftComponentInfo()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController._GetComponents = function(self)
-  -- function num : 0_4
+function UIActivityBattlePassBuyController:_GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._backBtns:SetData(function()
     if self.callback then
-      (self.callback)()
+      self.callback()
     end
     self:CloseDialog()
-  end
-)
+  end)
   local eliteBoardPool = self:GetUIComponent("UISelectObjectPath", "eliteBoardPool")
   self._eliteBoard = eliteBoardPool:SpawnObject("UIActivityBattlePassBoard")
   local deluxeBoardPool = self:GetUIComponent("UISelectObjectPath", "deluxeBoardPool")
   self._deluxeBoard = deluxeBoardPool:SpawnObject("UIActivityBattlePassBoard")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityBattlePassBuyController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController.OnShow = function(self, uiParams)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityBattlePassBuyController:OnShow(uiParams)
   self:_AttachEvents()
   self._isOpen = true
   if uiParams then
     self.callback = uiParams[1]
   end
   self:_GetComponents()
-  ;
-  (UIActivityBattlePassHelper.SetSpecialImg)(self._campaign, self:GetGameObject("imgRoot"), self:GetUIComponent("RawImageLoader", "img"), self:GetName())
+  UIActivityBattlePassHelper.SetSpecialImg(self._campaign, self:GetGameObject("imgRoot"), self:GetUIComponent("RawImageLoader", "img"), self:GetName())
   self:_SetBoard()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController.OnHide = function(self)
-  -- function num : 0_7
+function UIActivityBattlePassBuyController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController._SetBoard = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityBattlePassBuyController:_SetBoard()
   local component = self:_GetBuyGiftComponent()
   local componentInfo = self:_GetBuyGiftComponentInfo()
   local type = CampaignGiftType.ECGT_ADVANCED
   local giftId = component:GetFirstGiftIDByType(type)
   local price = component:GetGiftPriceForShowById(giftId)
-  ;
-  (self._eliteBoard):SetData(self._campaign, type, price, function(type)
-    -- function num : 0_8_0 , upvalues : self
+  self._eliteBoard:SetData(self._campaign, type, price, function(type)
     self:BuyBtnOnClick(type)
-  end
-)
+  end)
   type = CampaignGiftType.ECGT_LUXURY
   local buyState = componentInfo.m_buy_state
   if buyState == BuyGiftStateType.EBGST_ADVANCED then
@@ -116,78 +77,50 @@ UIActivityBattlePassBuyController._SetBoard = function(self)
   end
   giftId = component:GetFirstGiftIDByType(type)
   price = component:GetGiftPriceForShowById(giftId)
-  ;
-  (self._deluxeBoard):SetData(self._campaign, type, price, function(type)
-    -- function num : 0_8_1 , upvalues : self
+  self._deluxeBoard:SetData(self._campaign, type, price, function(type)
     self:BuyBtnOnClick(type)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController.BuyBtnOnClick = function(self, type)
-  -- function num : 0_9
+function UIActivityBattlePassBuyController:BuyBtnOnClick(type)
   local component = self:_GetBuyGiftComponent()
   local giftId = component:GetFirstGiftIDByType(type)
   component:BuyGift(giftId, 1, type)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController._AttachEvents = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityBattlePassBuyController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ActivityCurrencyBuySuccess, self._OnCurrencyBuySuccess)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController._DetachEvents = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityBattlePassBuyController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.ActivityCurrencyBuySuccess, self._OnCurrencyBuySuccess)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController._CheckActivityClose = function(self, id)
-  -- function num : 0_12 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityBattlePassBuyController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassBuyController._OnCurrencyBuySuccess = function(self, id)
-  -- function num : 0_13 , upvalues : _ENV
-  local component = (self:_GetBuyGiftComponent())
-  -- DECOMPILER ERROR at PC2: Overwrote pending register: R3 in 'AssignReg'
-
-  local type = .end
+function UIActivityBattlePassBuyController:_OnCurrencyBuySuccess(id)
+  local component = self:_GetBuyGiftComponent()
+  local type
   for t = CampaignGiftType.ECGT_ADVANCED, CampaignGiftType.ECGT_ADDITIONALBUY do
     if component:GetFirstGiftIDByType(t) == id then
       type = t
       break
     end
   end
-  do
-    if type then
-      self:ShowDialog("UIActivityBattlePassAwardController", type, function()
-    -- function num : 0_13_0 , upvalues : self, type, _ENV
-    if type ~= CampaignGiftType.ECGT_LUXURY and type ~= CampaignGiftType.ECGT_ADDITIONALBUY then
-      (self.callback)(not self.callback)
+  if type then
+    self:ShowDialog("UIActivityBattlePassAwardController", type, function()
+      if self.callback then
+        self.callback(type == CampaignGiftType.ECGT_LUXURY or type == CampaignGiftType.ECGT_ADDITIONALBUY)
+      end
       self:CloseDialog()
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
-    end
-  end
-)
-    else
-      ;
-      (Log.fatal)("UIActivityBattlePassBuyController:_OnCurrencyBuySuccess(id) CampaignGiftType Wrong! id = ", id)
-    end
+    end)
+  else
+    Log.fatal("UIActivityBattlePassBuyController:_OnCurrencyBuySuccess(id) CampaignGiftType Wrong! id = ", id)
   end
 end
-
-

@@ -1,61 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/level/ui_luckland_level_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandLevelLine", UICustomWidget)
 UILuckLandLevelLine = UILuckLandLevelLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandLevelLine.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandLevelLine:OnShow(uiParams)
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelLine._InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandLevelLine:_InitWidget()
   self._right = self:GetGameObject("Right")
   self._left = self:GetGameObject("Left")
   self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelLine.SetData = function(self, index, isShow, play)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandLevelLine:SetData(index, isShow, play)
   self._index = index
   local show = self._index % 2 == 1
-  ;
-  (self._right):SetActive(show)
-  ;
-  (self._left):SetActive(not show)
-  ;
-  ((self.view):GetGameObject()):SetActive(isShow)
+  self._right:SetActive(show)
+  self._left:SetActive(not show)
+  self.view:GetGameObject():SetActive(isShow)
   if play then
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, index, self
-    YIELD(TT, index * 100)
-    self:PlayAnimation(true)
+      YIELD(TT, index * 100)
+      self:PlayAnimation(true)
+    end, self)
   end
-, self)
-  end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevelLine.PlayAnimation = function(self, isIn)
-  -- function num : 0_3
+function UILuckLandLevelLine:PlayAnimation(isIn)
   if self._animation then
     if isIn then
-      (self._animation):Play("uieff_UILuckLandLevelLine_in")
+      self._animation:Play("uieff_UILuckLandLevelLine_in")
     else
-      ;
-      (self._animation):Play("uieff_UILuckLandLevelLine_out")
+      self._animation:Play("uieff_UILuckLandLevelLine_out")
     end
   end
 end
-
-

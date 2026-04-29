@@ -1,98 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/play_animation_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayAnimationSystem_Render", ReactiveSystem)
 PlayAnimationSystem_Render = PlayAnimationSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAnimationSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PlayAnimationSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAnimationSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).LegacyAnimation)
+function PlayAnimationSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.LegacyAnimation)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAnimationSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
-  if entity:HasLegacyAnimation() and entity:HasView() then
-    return not entity:HasPiece()
-  end
+function PlayAnimationSystem_Render:Filter(entity)
+  return entity:HasLegacyAnimation() and entity:HasView() and not entity:HasPiece()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAnimationSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function PlayAnimationSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     local e = entities[i]
     self:HandleEntity(e)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAnimationSystem_Render.HandleEntity = function(self, e)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayAnimationSystem_Render:HandleEntity(e)
   local animCtrl = e:LegacyAnimation()
-  local gridGameObj = ((e:View()).ViewWrapper).GameObject
+  local gridGameObj = e:View().ViewWrapper.GameObject
   local u3dAnimCmpt = gridGameObj:GetComponentInChildren(typeof(UnityEngine.Animation))
   if not u3dAnimCmpt then
-    (Log.fatal)("Can not find animation component")
-    return 
+    Log.fatal("Can not find animation component")
+    return
   end
   local clipCount = u3dAnimCmpt:GetClipCount()
   if clipCount <= 0 then
-    return 
+    return
   end
   local animList = animCtrl:GetLegacyAnimationList()
   if animList == nil then
-    return 
+    return
   end
   if #animList <= 0 then
-    return 
+    return
   end
-  if #animList > 1 then
-    for _,v in ipairs(animList) do
-      u3dAnimCmpt:PlayQueued(v, (UnityEngine.QueueMode).CompleteOthers)
+  if 1 < #animList then
+    for _, v in ipairs(animList) do
+      u3dAnimCmpt:PlayQueued(v, UnityEngine.QueueMode.CompleteOthers)
       self:_LogGridAnim(e, v)
     end
   else
-    do
-      local curAnim = animList[1]
-      u3dAnimCmpt:Play(curAnim)
-      self:_LogGridAnim(e, curAnim)
-    end
+    local curAnim = animList[1]
+    u3dAnimCmpt:Play(curAnim)
+    self:_LogGridAnim(e, curAnim)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAnimationSystem_Render._LogGridAnim = function(self, e, anim)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayAnimationSystem_Render:_LogGridAnim(e, anim)
   if EDITOR then
-    local gridGameObj = ((e:View()).ViewWrapper).GameObject
-    local gridPos = (e:GridLocation()).Position
-    if ((gridGameObj.transform).position).y == BattleConst.CacheHeight then
-      (Log.fatal)("PlayAnimationSystem_Render:", anim, ";高度:" .. ((gridGameObj.transform).position).y, (Log.traceback)())
+    local gridGameObj = e:View().ViewWrapper.GameObject
+    local gridPos = e:GridLocation().Position
+    if gridGameObj.transform.position.y == BattleConst.CacheHeight then
+      Log.fatal("PlayAnimationSystem_Render:", anim, ";高度:" .. gridGameObj.transform.position.y, Log.traceback())
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAnimationSystem_Render._CacheAnimObj = function(self)
-  -- function num : 0_6
+function PlayAnimationSystem_Render:_CacheAnimObj()
 end
-
-

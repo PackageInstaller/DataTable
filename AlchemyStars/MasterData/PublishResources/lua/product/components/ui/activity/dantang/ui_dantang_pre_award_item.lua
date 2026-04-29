@@ -1,46 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/dantang/ui_dantang_pre_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDanTangPreAwardsItem", UICustomWidget)
 UIDanTangPreAwardsItem = UIDanTangPreAwardsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDanTangPreAwardsItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIDanTangPreAwardsItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDanTangPreAwardsItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIDanTangPreAwardsItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.count = self:GetUIComponent("UILocalizationText", "count")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDanTangPreAwardsItem.SetData = function(self, asset, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDanTangPreAwardsItem:SetData(asset, onClick)
   self._itemID = asset.assetid
-  local cfg = (Cfg.cfg_item)[self._itemID]
+  local cfg = Cfg.cfg_item[self._itemID]
   if not cfg then
-    (Log.exception)("cfg_item 中缺少物品", self._itemID)
+    Log.exception("cfg_item 中缺少物品", self._itemID)
   end
-  ;
-  (self.icon):LoadImage(cfg.Icon)
-  ;
-  (self.count):SetText(asset.count)
+  self.icon:LoadImage(cfg.Icon)
+  self.count:SetText(asset.count)
   self._onClick = onClick
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDanTangPreAwardsItem.RootOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onClick)(self._itemID, go)
+function UIDanTangPreAwardsItem:RootOnClick(go)
+  self._onClick(self._itemID, go)
 end
-
-

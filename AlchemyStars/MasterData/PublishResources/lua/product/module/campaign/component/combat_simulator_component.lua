@@ -1,177 +1,118 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/combat_simulator_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CombatSimulatorComponent", ICampaignComponent)
 CombatSimulatorComponent = CombatSimulatorComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CombatSimulatorComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CombatSimulatorComponent:Constructor()
   self.m_component_info = CCombatSimulatorComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CombatSimulatorComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = CCombatSimulatorComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function CombatSimulatorComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CombatSimulatorComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_CombatSimulator
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function CombatSimulatorComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.GetCampaignMissionComponentId = function(self, select_cartridge_pstid)
-  -- function num : 0_5 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function CombatSimulatorComponent:GetCampaignMissionComponentId(select_cartridge_pstid)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local item = itemModule:FindItem(select_cartridge_pstid)
   local cartridge_tpl_id = item:GetTemplateID()
-  local match_com_id = ((Cfg.cfg_item_cartridge)[cartridge_tpl_id]).MatchComId
+  local match_com_id = Cfg.cfg_item_cartridge[cartridge_tpl_id].MatchComId
   return match_com_id
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.GetCampaignMissionParamKeyMap = function(self, select_hard_id, select_cartridge_pstid)
-  -- function num : 0_6 , upvalues : _ENV
+function CombatSimulatorComponent:GetCampaignMissionParamKeyMap(select_hard_id, select_cartridge_pstid)
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  local l_paramKeyMap = {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId, [ECampaignMissionParamKey.ECampaignMissionParamKey_CSHardId] = select_hard_id, [ECampaignMissionParamKey.ECampaignMissionParamKey_CartridgePstId] = select_cartridge_pstid}
+  local l_paramKeyMap = {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId,
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_CSHardId] = select_hard_id,
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_CartridgePstId] = select_cartridge_pstid
+  }
   return l_paramKeyMap
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.GetCartridgeItemList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local pItemModule = (GameGlobal.GetModule)(ItemModule)
+function CombatSimulatorComponent:GetCartridgeItemList()
+  local pItemModule = GameGlobal.GetModule(ItemModule)
   local l_item_list = pItemModule:GetItemListBySubType(ItemSubType.ItemSubType_Cam_Cartridge)
   return l_item_list
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.GetCartridgeGiftCount = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local pItemModule = (GameGlobal.GetModule)(ItemModule)
+function CombatSimulatorComponent:GetCartridgeGiftCount()
+  local pItemModule = GameGlobal.GetModule(ItemModule)
   local l_component_info = self:GetComponentInfo()
   local gift_count = pItemModule:GetItemCount(l_component_info.cartridge_gift_template_id)
   return gift_count
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.HandleCombatSimulatorComponentRefresh = function(self, TT, asyncRes)
-  -- function num : 0_9 , upvalues : _ENV
+function CombatSimulatorComponent:HandleCombatSimulatorComponentRefresh(TT, asyncRes)
   local request = CombatSimulatorComponentRefreshReq:New()
   local response = CombatSimulatorComponentRefreshRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CombatSimulatorComponent] HandleCombatSimulatorComponentRefresh ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CombatSimulatorComponent] HandleCombatSimulatorComponentRefresh ret:", asyncRes.m_result)
   end
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).next_gift_time = response.next_gift_time
+  self.m_component_info.next_gift_time = response.next_gift_time
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.HandleCombatSimulatorComponentDelCartridge = function(self, TT, asyncRes, item_pstid)
-  -- function num : 0_10 , upvalues : _ENV
+function CombatSimulatorComponent:HandleCombatSimulatorComponentDelCartridge(TT, asyncRes, item_pstid)
   local request = CombatSimulatorComponentDelCartridgeReq:New()
   local response = CombatSimulatorComponentDelCartridgeRep:New()
   request.cartridge_pst_id = item_pstid
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CombatSimulatorComponent] HandleCombatSimulatorComponentDelCartridge ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CombatSimulatorComponent] HandleCombatSimulatorComponentDelCartridge ret:", asyncRes.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.HandleCombatSimulatorComponentOpenGift = function(self, TT, asyncRes)
-  -- function num : 0_11 , upvalues : _ENV
+function CombatSimulatorComponent:HandleCombatSimulatorComponentOpenGift(TT, asyncRes)
   local request = CombatSimulatorComponentOpenGiftReq:New()
   local response = CombatSimulatorComponentOpenGiftRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CombatSimulatorComponent] HandleCompleteStoryTreeMission ret:", asyncRes.m_result)
-    return 
+    Log.error("[CampaignCom][CombatSimulatorComponent] HandleCompleteStoryTreeMission ret:", asyncRes.m_result)
+    return
   end
   return response.item_template_id
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.GetCartridgeCeiling = function(self)
-  -- function num : 0_12
-  return (self:GetComponentInfo()).max_cartridge_num
+function CombatSimulatorComponent:GetCartridgeCeiling()
+  return self:GetComponentInfo().max_cartridge_num
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.GetCartridgeNextGiftTime = function(self)
-  -- function num : 0_13
-  return (self:GetComponentInfo()).next_gift_time
+function CombatSimulatorComponent:GetCartridgeNextGiftTime()
+  return self:GetComponentInfo().next_gift_time
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.GetCartridgeNexTickSec = function(self)
-  -- function num : 0_14
-  return (self:GetComponentInfo()).create_cartridge_tick_sec
+function CombatSimulatorComponent:GetCartridgeNexTickSec()
+  return self:GetComponentInfo().create_cartridge_tick_sec
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CombatSimulatorComponent.SortCartridgeItemList = function(self, list)
-  -- function num : 0_15 , upvalues : _ENV
-  (table.sort)(list, function(a, b)
-    -- function num : 0_15_0 , upvalues : _ENV
-    local cfga = (Cfg.cfg_item_cartridge)[a:GetTemplateID()]
-    local cfgb = (Cfg.cfg_item_cartridge)[b:GetTemplateID()]
-    if cfga.SortID >= cfgb.SortID then
-      do return cfga.SortID == cfgb.SortID end
-      if a:IsNewOverlay() ~= b:IsNewOverlay() then
-        return a:IsNewOverlay()
-      end
-      do return b:GetGainTime() < a:GetGainTime() end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function CombatSimulatorComponent:SortCartridgeItemList(list)
+  table.sort(list, function(a, b)
+    local cfga = Cfg.cfg_item_cartridge[a:GetTemplateID()]
+    local cfgb = Cfg.cfg_item_cartridge[b:GetTemplateID()]
+    if cfga.SortID ~= cfgb.SortID then
+      return cfga.SortID < cfgb.SortID
     end
-  end
-)
+    if a:IsNewOverlay() ~= b:IsNewOverlay() then
+      return a:IsNewOverlay()
+    end
+    return a:GetGainTime() > b:GetGainTime()
+  end)
 end
-
-

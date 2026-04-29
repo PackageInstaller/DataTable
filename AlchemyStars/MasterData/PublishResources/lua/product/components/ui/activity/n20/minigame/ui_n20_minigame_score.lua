@@ -1,58 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/minigame/ui_n20_minigame_score.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20MiniGameScore", UICustomWidget)
 UIN20MiniGameScore = UIN20MiniGameScore
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20MiniGameScore.Constructor = function(self)
-  -- function num : 0_0
+function UIN20MiniGameScore:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameScore.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN20MiniGameScore:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameScore._GetComponents = function(self)
-  -- function num : 0_2
+function UIN20MiniGameScore:_GetComponents()
   self.scoreOutline = self:GetUIComponent("UILocalizationText", "ScoreOutline")
   self.score = self:GetUIComponent("UILocalizationText", "Score")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameScore.SetData = function(self, score)
-  -- function num : 0_3
-  (self.scoreOutline):SetText("+" .. score)
-  ;
-  (self.score):SetText("+" .. score)
+function UIN20MiniGameScore:SetData(score)
+  self.scoreOutline:SetText("+" .. score)
+  self.score:SetText("+" .. score)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameScore.SetPosition = function(self, position, offset)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self.view).transform).position = position
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self.view).transform).localPosition = ((self.view).transform).localPosition + offset
+function UIN20MiniGameScore:SetPosition(position, offset)
+  self.view.transform.position = position
+  self.view.transform.localPosition = self.view.transform.localPosition + offset
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameScore.SetActive = function(self, active)
-  -- function num : 0_5
-  ((self.view).gameObject):SetActive(active)
+function UIN20MiniGameScore:SetActive(active)
+  self.view.gameObject:SetActive(active)
 end
-
-

@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_trap_power.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeTrapPower", BuffLogicBase)
 BuffLogicChangeTrapPower = BuffLogicChangeTrapPower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeTrapPower.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeTrapPower:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
   self._limitZero = logicParam.limitZero or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeTrapPower.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local trapEntity = (self._buffInstance):Entity()
+function BuffLogicChangeTrapPower:DoLogic()
+  local trapEntity = self._buffInstance:Entity()
   if not trapEntity then
-    return 
+    return
   end
   local curAttributeCmpt = trapEntity:Attributes()
   local curPower = curAttributeCmpt:GetAttribute("TrapPower")
@@ -35,5 +25,3 @@ BuffLogicChangeTrapPower.DoLogic = function(self)
   local buffResult = BuffResultChangeTrapPower:New(trapEntity:GetID(), newPower)
   return buffResult
 end
-
-

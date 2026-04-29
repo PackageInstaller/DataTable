@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/lottery/ui_n17_lottery_award_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17LotteryAwardCell", UICustomWidget)
 UIN17LotteryAwardCell = UIN17LotteryAwardCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17LotteryAwardCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN17LotteryAwardCell:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell._GetComponents = function(self)
-  -- function num : 0_1
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+function UIN17LotteryAwardCell:_GetComponents()
+  self._animation = self.view.gameObject:GetComponent("Animation")
   self.itemIcon = self:GetUIComponent("RawImageLoader", "ItemIcon")
   self.itemIconRawImg = self:GetUIComponent("RawImage", "ItemIcon")
   self.itemNumText = self:GetUIComponent("UILocalizationText", "ItemNumText")
@@ -27,125 +17,89 @@ UIN17LotteryAwardCell._GetComponents = function(self)
   self._itemNumBgImg = self:GetUIComponent("Image", "ItemNumBg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell.InitData = function(self, data, itemInfoCallback, showBlackMask, delayTime)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN17LotteryAwardCell:InitData(data, itemInfoCallback, showBlackMask, delayTime)
   self._data = data
-  self._itemId = (self._data):GetItemId()
-  self._itemCount = (self._data):GetTotalNum()
-  self._itemRestCount = (self._data):GetRestNum()
+  self._itemId = self._data:GetItemId()
+  self._itemCount = self._data:GetTotalNum()
+  self._itemRestCount = self._data:GetRestNum()
   self._itemInfoCallback = itemInfoCallback
   self._showBlackMask = showBlackMask
   self:_fillUi()
-  if delayTime > 0 then
+  if 0 < delayTime then
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, delayTime, self
-    YIELD(TT, delayTime * 33)
-    ;
-    (self._animation):Play("uieff_ShopCell")
-  end
-)
+      YIELD(TT, delayTime * 33)
+      self._animation:Play("uieff_ShopCell")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell._fillUi = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[self._itemId]
+function UIN17LotteryAwardCell:_fillUi()
+  local itemCfg = Cfg.cfg_item[self._itemId]
   if itemCfg then
     local res = itemCfg.Icon
-    ;
-    (self.itemIcon):LoadImage(res)
-    local itemCount = (self._data):GetItemCount()
-    if itemCount > 1 then
-      (self.itemNumArea):SetActive(true)
-      ;
-      (self.itemNumText):SetText(itemCount)
+    self.itemIcon:LoadImage(res)
+    local itemCount = self._data:GetItemCount()
+    if 1 < itemCount then
+      self.itemNumArea:SetActive(true)
+      self.itemNumText:SetText(itemCount)
     else
-      ;
-      (self.itemNumArea):SetActive(false)
+      self.itemNumArea:SetActive(false)
     end
     self:_SetState()
     self:_SetRestNumText()
-    ;
-    (self.blackMask):SetActive((self._itemRestCount <= 0 and self._showBlackMask))
+    self.blackMask:SetActive(self._itemRestCount <= 0 and self._showBlackMask)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell.OnHide = function(self)
-  -- function num : 0_4
+function UIN17LotteryAwardCell:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell._SetState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._bigRewardObjs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"NormalBg", "ItemNumBg_Normal"}
-, 
-{"SpecialBg", "ItemNumBg_Special"}
-}, self._bigRewardObjs)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._bigRewardObjs, (self._data):IsBigReward() and 2 or 1)
+function UIN17LotteryAwardCell:_SetState()
+  self._bigRewardObjs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "NormalBg",
+      "ItemNumBg_Normal"
+    },
+    {
+      "SpecialBg",
+      "ItemNumBg_Special"
+    }
+  }, self._bigRewardObjs)
+  UIWidgetHelper.SetObjGroupShow(self._bigRewardObjs, self._data:IsBigReward() and 2 or 1)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell._SetRestNumText = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN17LotteryAwardCell:_SetRestNumText()
   local color_big = "#3a3a3a"
   local color_normal = "#666666"
   local color_zero = "#e95959"
-  local c1 = (self._itemRestCount == 0 and color_zero) or ((self._data):IsBigReward() and color_big) or color_normal
-  local c2 = (self._data):IsBigReward() and color_big or color_normal
+  local c1 = self._itemRestCount == 0 and color_zero or self._data:IsBigReward() and color_big or color_normal
+  local c2 = self._data:IsBigReward() and color_big or color_normal
   local s1 = self._itemRestCount
   local s2 = "/" .. self._itemCount
-  local str = (UIActivityHelper.GetColorText)(c1, s1, c2, s2)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "RestNumText", str)
+  local str = UIActivityHelper.GetColorText(c1, s1, c2, s2)
+  UIWidgetHelper.SetLocalizationText(self, "RestNumText", str)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell.ItemIconOnClick = function(self, go)
-  -- function num : 0_7
+function UIN17LotteryAwardCell:ItemIconOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)(self._data)
+    self._itemInfoCallback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell.NormalBgOnClick = function(self, go)
-  -- function num : 0_8
+function UIN17LotteryAwardCell:NormalBgOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)(self._data)
+    self._itemInfoCallback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell.SpecialBgOnClick = function(self, go)
-  -- function num : 0_9
+function UIN17LotteryAwardCell:SpecialBgOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)(self._data)
+    self._itemInfoCallback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17LotteryAwardCell.SetStencil = function(self)
-  -- function num : 0_10
-  ((self.itemIconRawImg).material):SetFloat("_Stencil", 18)
-  ;
-  ((self.itemIconRawImg).material):SetFloat("_StencilComp", 4)
-  ;
-  ((self.itemIconRawImg).material):SetFloat("_StencilOp", 0)
+function UIN17LotteryAwardCell:SetStencil()
+  self.itemIconRawImg.material:SetFloat("_Stencil", 18)
+  self.itemIconRawImg.material:SetFloat("_StencilComp", 4)
+  self.itemIconRawImg.material:SetFloat("_StencilOp", 0)
 end
-
-

@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_create_auras_trap_by_pick_up.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillCreateAurasTrapByPickUpEffectParam", SkillEffectParamBase)
 SkillCreateAurasTrapByPickUpEffectParam = SkillCreateAurasTrapByPickUpEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillCreateAurasTrapByPickUpEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillCreateAurasTrapByPickUpEffectParam:Constructor(t)
   self._trapID = t.trapID
   self._squareRingNum = t.squareRingNum or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillCreateAurasTrapByPickUpEffectParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillCreateAurasTrapByPickUpEffectParam:GetEffectType()
   return SkillEffectType.CreateAurasTrapByPickUp
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillCreateAurasTrapByPickUpEffectParam.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillCreateAurasTrapByPickUpEffectParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillCreateAurasTrapByPickUpEffectParam.GetSquareRingNum = function(self)
-  -- function num : 0_3
+function SkillCreateAurasTrapByPickUpEffectParam:GetSquareRingNum()
   return self._squareRingNum
 end
-
-

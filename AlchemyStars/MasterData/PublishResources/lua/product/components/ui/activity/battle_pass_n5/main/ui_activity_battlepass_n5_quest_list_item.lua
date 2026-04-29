@@ -1,22 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/main/ui_activity_battlepass_n5_quest_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5QuestListItem", UICustomWidget)
 UIActivityBattlePassN5QuestListItem = UIActivityBattlePassN5QuestListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5QuestListItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityBattlePassN5QuestListItem:_GetComponents()
   self._anim = self:GetUIComponent("Animation", "animation")
   self._root = self:GetGameObject("root")
   self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
   self._desTex = self:GetUIComponent("UILocalizationText", "desTex")
   self._progressValueTex = self:GetUIComponent("UILocalizationText", "progressValueTex")
   self._progressSilder = self:GetUIComponent("Slider", "progress")
-  self._stateObj = {self:GetGameObject("state_NotStart"), self:GetGameObject("state_Accepted"), self:GetGameObject("state_Completed"), self:GetGameObject("state_Taken"), self:GetGameObject("state_Over")}
-  self._stateTxt = {self:GetUIComponent("UILocalizationText", "state_NotStartTxt"), self:GetUIComponent("UILocalizationText", "state_AcceptedTxt"), self:GetUIComponent("UILocalizationText", "state_CompletedTxt"), self:GetUIComponent("UILocalizationText", "state_TakenTxt"), self:GetUIComponent("UILocalizationText", "state_OverTxt")}
+  self._stateObj = {
+    self:GetGameObject("state_NotStart"),
+    self:GetGameObject("state_Accepted"),
+    self:GetGameObject("state_Completed"),
+    self:GetGameObject("state_Taken"),
+    self:GetGameObject("state_Over")
+  }
+  self._stateTxt = {
+    self:GetUIComponent("UILocalizationText", "state_NotStartTxt"),
+    self:GetUIComponent("UILocalizationText", "state_AcceptedTxt"),
+    self:GetUIComponent("UILocalizationText", "state_CompletedTxt"),
+    self:GetUIComponent("UILocalizationText", "state_TakenTxt"),
+    self:GetUIComponent("UILocalizationText", "state_OverTxt")
+  }
   self._line1 = self:GetGameObject("line1")
   self._taskTipParent = self:GetGameObject("taskTipParent")
   self._taskTipColor = self:GetUIComponent("Image", "taskTipParent")
@@ -31,51 +36,36 @@ UIActivityBattlePassN5QuestListItem._GetComponents = function(self)
   self._taskTip_extra = self:GetUIComponent("UILocalizationText", "taskTip_extra")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassN5QuestListItem:OnShow(uiParams)
   self:_GetComponents()
-  self._module = (GameGlobal.GetModule)(QuestModule)
+  self._module = GameGlobal.GetModule(QuestModule)
   if self._module == nil then
-    (Log.fatal)("[quest] erro --> module is nil !")
-    return 
+    Log.fatal("[quest] erro --> module is nil !")
+    return
   end
   self._atlas = self:GetAsset("UIBattlePassN5.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem.SetData = function(self, index, campaign, quest, status, info, callback, itemCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityBattlePassN5QuestListItem:SetData(index, campaign, quest, status, info, callback, itemCallback)
   self._index = index
   self._campaign = campaign
   self._quest = quest:QuestInfo()
-  if not status then
-    self._state = CampaignQuestStatus.CQS_Over
-    self._info = info
-    self._callback = callback
-    self._itemCallback = itemCallback
-    self:_Refresh()
-    local trans = self:GetUIComponent("RectTransform", "root")
-    trans.anchoredPosition = Vector2(0, (trans.anchoredPosition).y)
-    local layouts = (self._line1):GetComponentsInChildren(typeof((UnityEngine.UI).HorizontalOrVerticalLayoutGroup), true)
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)((self._line1):GetComponent("RectTransform"))
-  end
+  self._state = status or CampaignQuestStatus.CQS_Over
+  self._info = info
+  self._callback = callback
+  self._itemCallback = itemCallback
+  self:_Refresh()
+  local trans = self:GetUIComponent("RectTransform", "root")
+  trans.anchoredPosition = Vector2(0, trans.anchoredPosition.y)
+  local layouts = self._line1:GetComponentsInChildren(typeof(UnityEngine.UI.HorizontalOrVerticalLayoutGroup), true)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._line1:GetComponent("RectTransform"))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem.OnHide = function(self, stamp)
-  -- function num : 0_3
+function UIActivityBattlePassN5QuestListItem:OnHide(stamp)
   self._root = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._Refresh = function(self)
-  -- function num : 0_4
+function UIActivityBattlePassN5QuestListItem:_Refresh()
   self:_SetTitle()
   self:_SetProgress()
   self:_SetState(self._state)
@@ -83,156 +73,106 @@ UIActivityBattlePassN5QuestListItem._Refresh = function(self)
   self:_SetDynamicList()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityBattlePassN5QuestListItem:PlayAnimationInSequence(index)
   if not self._anim then
-    return 
+    return
   end
   local stamp = index * 30
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, index, _ENV, stamp
     local lockName = self:GetName() .. "_PlayAnimationInSequence(" .. index .. ")"
     self:Lock(lockName)
     self:_ResetAnimation()
-    ;
-    (self._root):SetActive(false)
+    self._root:SetActive(false)
     YIELD(TT, stamp)
     if self._root then
-      (self._root):SetActive(true)
-      ;
-      (self._anim):Play("UIeff_UIActivityBattlePassN5QuestListItem_in")
+      self._root:SetActive(true)
+      self._anim:Play("UIeff_UIActivityBattlePassN5QuestListItem_in")
       YIELD(TT, 500)
     end
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._ResetAnimation = function(self)
-  -- function num : 0_6
+function UIActivityBattlePassN5QuestListItem:_ResetAnimation()
   if not self._anim then
-    return 
+    return
   end
-  local state = (self._anim):get_Item("UIeff_UIActivityBattlePassN5QuestListItem_in")
+  local state = self._anim:get_Item("UIeff_UIActivityBattlePassN5QuestListItem_in")
   state.normalizedTime = 0
-  ;
-  (self._anim):Stop()
+  self._anim:Stop()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._SetTitle = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._desTex):SetText((StringTable.Get)((self._quest).CondDesc))
-  local questId = (self._quest).quest_id
-  local timeInfo = ((self._info).m_quest_time_param_map)[questId]
+function UIActivityBattlePassN5QuestListItem:_SetTitle()
+  self._desTex:SetText(StringTable.Get(self._quest.CondDesc))
+  local questId = self._quest.quest_id
+  local timeInfo = self._info.m_quest_time_param_map[questId]
   if self._state == CampaignQuestStatus.CQS_NotStart then
-    (self._taskTip_extra):SetText((StringTable.Get)("str_activity_battlepass_n5_task_start_time"))
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._taskTipColor_extra).color = Color(0.74509803921569, 0.74509803921569, 0.74509803921569)
-    ;
-    (self._taskTipParent_extra):SetActive(true)
-    ;
-    (self._line1):SetActive(false)
-    ;
-    (self._line1_extra):SetActive(true)
-  else
-    if timeInfo.m_need_daily_reset then
-      if self._state == CampaignQuestStatus.CQS_Taken then
-        (self._taskTip_extra):SetText((StringTable.Get)("str_activity_battlepass_n5_task_refresh_time"))
-        -- DECOMPILER ERROR at PC66: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._taskTipColor_extra).color = Color(1, 0.86274509803922, 0.2156862745098)
-        ;
-        (self._taskTipParent_extra):SetActive(true)
-        ;
-        (self._line1):SetActive(false)
-        ;
-        (self._line1_extra):SetActive(true)
-      else
-        ;
-        (self._taskTip):SetText((StringTable.Get)("str_activity_battlepass_n5_daily_task"))
-        -- DECOMPILER ERROR at PC93: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._taskTipColor).color = Color(1, 0.8, 0.1843137254902)
-        ;
-        (self._line1):SetActive(true)
-        ;
-        (self._line1_extra):SetActive(false)
-      end
-      ;
-      (self._taskTipParent):SetActive(true)
-      ;
-      (self._obj1):SetActive(false)
+    self._taskTip_extra:SetText(StringTable.Get("str_activity_battlepass_n5_task_start_time"))
+    self._taskTipColor_extra.color = Color(0.7450980392156863, 0.7450980392156863, 0.7450980392156863)
+    self._taskTipParent_extra:SetActive(true)
+    self._line1:SetActive(false)
+    self._line1_extra:SetActive(true)
+  elseif timeInfo.m_need_daily_reset then
+    if self._state == CampaignQuestStatus.CQS_Taken then
+      self._taskTip_extra:SetText(StringTable.Get("str_activity_battlepass_n5_task_refresh_time"))
+      self._taskTipColor_extra.color = Color(1, 0.8627450980392157, 0.21568627450980393)
+      self._taskTipParent_extra:SetActive(true)
+      self._line1:SetActive(false)
+      self._line1_extra:SetActive(true)
     else
-      ;
-      (self._taskTipParent):SetActive(false)
-      ;
-      (self._obj1):SetActive(true)
-      ;
-      (self._line1):SetActive(true)
-      ;
-      (self._line1_extra):SetActive(false)
+      self._taskTip:SetText(StringTable.Get("str_activity_battlepass_n5_daily_task"))
+      self._taskTipColor.color = Color(1, 0.8, 0.1843137254901961)
+      self._line1:SetActive(true)
+      self._line1_extra:SetActive(false)
     end
+    self._taskTipParent:SetActive(true)
+    self._obj1:SetActive(false)
+  else
+    self._taskTipParent:SetActive(false)
+    self._obj1:SetActive(true)
+    self._line1:SetActive(true)
+    self._line1_extra:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._SetProgress = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityBattlePassN5QuestListItem:_SetProgress()
   local progress = ""
-  if (self._quest).ShowType == 1 then
-    local c, d = (math.modf)((self._quest).cur_progress * 100 / (self._quest).total_progress)
-    if c < 1 and d > 0 then
+  if self._quest.ShowType == 1 then
+    local c, d = math.modf(self._quest.cur_progress * 100 / self._quest.total_progress)
+    if c < 1 and 0 < d then
       c = 1
     end
     progress = c .. "%"
   else
-    do
-      progress = (string.format)("%s<color=#ff0000>/</color><size=30>%s</size>", (self._quest).cur_progress, (self._quest).total_progress)
-      ;
-      (self._progressValueTex):SetText(progress)
-      local rate = (self._quest).cur_progress / (self._quest).total_progress
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._progressSilder).value = rate
-    end
+    progress = string.format("%s<color=#ff0000>/</color><size=30>%s</size>", self._quest.cur_progress, self._quest.total_progress)
   end
+  self._progressValueTex:SetText(progress)
+  local rate = self._quest.cur_progress / self._quest.total_progress
+  self._progressSilder.value = rate
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._SetRemainingTime = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local questId = (self._quest).quest_id
-  local timeInfo = ((self._info).m_quest_time_param_map)[questId]
-  local remainingTimeObj = nil
+function UIActivityBattlePassN5QuestListItem:_SetRemainingTime()
+  local questId = self._quest.quest_id
+  local timeInfo = self._info.m_quest_time_param_map[questId]
+  local remainingTimeObj
   if self._state == CampaignQuestStatus.CQS_NotStart then
     remainingTimeObj = self:GetGameObject("RemainingTimePool_extra")
-  else
-    if timeInfo.m_need_daily_reset then
-      if self._state == CampaignQuestStatus.CQS_Taken then
-        remainingTimeObj = self:GetGameObject("RemainingTimePool_extra")
-      else
-        remainingTimeObj = self:GetGameObject("remainingTimePool")
-      end
+  elseif timeInfo.m_need_daily_reset then
+    if self._state == CampaignQuestStatus.CQS_Taken then
+      remainingTimeObj = self:GetGameObject("RemainingTimePool_extra")
     else
       remainingTimeObj = self:GetGameObject("remainingTimePool")
     end
+  else
+    remainingTimeObj = self:GetGameObject("remainingTimePool")
   end
-  local questId = (self._quest).quest_id
-  local timeInfo = ((self._info).m_quest_time_param_map)[questId]
-  local state2time = {[CampaignQuestStatus.CQS_NotStart] = timeInfo.m_open_time, [CampaignQuestStatus.CQS_Accepted] = timeInfo.m_end_time, [CampaignQuestStatus.CQS_Completed] = timeInfo.m_end_time}
+  local questId = self._quest.quest_id
+  local timeInfo = self._info.m_quest_time_param_map[questId]
+  local state2time = {
+    [CampaignQuestStatus.CQS_NotStart] = timeInfo.m_open_time,
+    [CampaignQuestStatus.CQS_Accepted] = timeInfo.m_end_time,
+    [CampaignQuestStatus.CQS_Completed] = timeInfo.m_end_time
+  }
   if timeInfo.m_need_daily_reset then
     state2time[CampaignQuestStatus.CQS_Taken] = timeInfo.m_end_time
   end
@@ -241,89 +181,80 @@ UIActivityBattlePassN5QuestListItem._SetRemainingTime = function(self)
     remainingTimeObj:SetActive(true)
   else
     remainingTimeObj:SetActive(false)
-    return 
+    return
   end
-  local iconSprite = (self._atlas):GetSprite("pass_task_icon_time")
+  local iconSprite = self._atlas:GetSprite("pass_task_icon_time")
   local remainingTimePool = self:GetUIComponentDynamic("UISelectObjectPath", remainingTimeObj)
   self._remainingTime = remainingTimePool:SpawnObject("UIActivityCommonRemainingTime")
-  ;
-  (self._remainingTime):SetCustomTimeStr({day = "str_activity_battlepass_day", hour = "str_activity_battlepass_hour", min = "str_activity_battlepass_minute", zero = "str_activity_battlepass_less_minute", over = "str_activity_battlepass_less_minute"})
-  ;
-  (self._remainingTime):SetExtraSprite("icon", iconSprite)
-  ;
-  (self._remainingTime):SetData(endTime, nil, nil)
+  self._remainingTime:SetCustomTimeStr({
+    day = "str_activity_battlepass_day",
+    hour = "str_activity_battlepass_hour",
+    min = "str_activity_battlepass_minute",
+    zero = "str_activity_battlepass_less_minute",
+    over = "str_activity_battlepass_less_minute"
+  })
+  self._remainingTime:SetExtraSprite("icon", iconSprite)
+  self._remainingTime:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._SetState = function(self, state)
-  -- function num : 0_10 , upvalues : _ENV
-  for i,v in ipairs(self._stateObj) do
+function UIActivityBattlePassN5QuestListItem:_SetState(state)
+  for i, v in ipairs(self._stateObj) do
     v:SetActive(i == state)
   end
-  local state2id = {"str_activity_battlepass_tab_quest_notstart", "str_activity_battlepass_tab_quest_accepted", "str_activity_battlepass_tab_quest_completed", "str_activity_battlepass_tab_guest_taken", "str_activity_battlepass_tab_quest_over"}
-  ;
-  ((self._stateTxt)[state]):SetText((StringTable.Get)(state2id[state]))
-  local bg = {"pass_task_list_bg1", "pass_task_list_bg", "pass_task_list_bg", "pass_task_list_bg1", "pass_task_list_bg1"}
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._bg).sprite = (self._atlas):GetSprite(bg[state])
-  ;
-  (self._mask):SetActive(self._state == CampaignQuestStatus.CQS_NotStart or self._state == CampaignQuestStatus.CQS_Taken or self._state == CampaignQuestStatus.CQS_Over)
-  local alpha = {0.5, 1, 1, 0.5, 0.5}
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = alpha[self._state]
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local state2id = {
+    "str_activity_battlepass_tab_quest_notstart",
+    "str_activity_battlepass_tab_quest_accepted",
+    "str_activity_battlepass_tab_quest_completed",
+    "str_activity_battlepass_tab_guest_taken",
+    "str_activity_battlepass_tab_quest_over"
+  }
+  self._stateTxt[state]:SetText(StringTable.Get(state2id[state]))
+  local bg = {
+    "pass_task_list_bg1",
+    "pass_task_list_bg",
+    "pass_task_list_bg",
+    "pass_task_list_bg1",
+    "pass_task_list_bg1"
+  }
+  self._bg.sprite = self._atlas:GetSprite(bg[state])
+  self._mask:SetActive(self._state == CampaignQuestStatus.CQS_NotStart or self._state == CampaignQuestStatus.CQS_Taken or self._state == CampaignQuestStatus.CQS_Over)
+  local alpha = {
+    0.5,
+    1,
+    1,
+    0.5,
+    0.5
+  }
+  self._canvasGroup.alpha = alpha[self._state]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._SetDynamicListData = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._dynamicListInfo = (self._quest).rewards
+function UIActivityBattlePassN5QuestListItem:_SetDynamicListData()
+  self._dynamicListInfo = self._quest.rewards
   self._itemCountPerRow = 1
-  self._dynamicListSize = (math.floor)(((table.count)(self._dynamicListInfo) - 1) / self._itemCountPerRow + 1)
+  self._dynamicListSize = math.floor((table.count(self._dynamicListInfo) - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._SetDynamicList = function(self)
-  -- function num : 0_12
+function UIActivityBattlePassN5QuestListItem:_SetDynamicList()
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListSize, function(scrollView, index)
-    -- function num : 0_12_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListSize, self._dynamicList)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._RefreshList = function(self, count, list)
-  -- function num : 0_13
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityBattlePassN5QuestListItem:_RefreshList(count, list)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_14
+function UIActivityBattlePassN5QuestListItem:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -337,52 +268,39 @@ UIActivityBattlePassN5QuestListItem._SpawnListItem = function(self, scrollView, 
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem._SetListItemData = function(self, listItem, index)
-  -- function num : 0_15
-  local info = (self._dynamicListInfo)[index]
+function UIActivityBattlePassN5QuestListItem:_SetListItemData(listItem, index)
+  local info = self._dynamicListInfo[index]
   listItem:SetData(index, info, self._itemCallback)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem.state_AcceptedOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(QuestModule)
-  local jumpModule = (self._module).uiModule
+function UIActivityBattlePassN5QuestListItem:state_AcceptedOnClick()
+  self._module = GameGlobal.GetModule(QuestModule)
+  local jumpModule = self._module.uiModule
   if jumpModule == nil then
-    (Log.fatal)("[quest] error --> uiModule is nil ! --> jumpModule")
-    return 
+    Log.fatal("[quest] error --> uiModule is nil ! --> jumpModule")
+    return
   end
   local fromParam = {}
-  ;
-  (table.insert)(fromParam, QuestType.QT_Daily)
+  table.insert(fromParam, QuestType.QT_Daily)
   jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
-  local jumpType = (self._quest).JumpID
-  local jumpParams = (self._quest).JumpParam
+  local jumpType = self._quest.JumpID
+  local jumpParams = self._quest.JumpParam
   jumpModule:SetJumpUIData(jumpType, jumpParams)
   jumpModule:Jump()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5QuestListItem.state_CompletedOnClick = function(self)
-  -- function num : 0_17
+function UIActivityBattlePassN5QuestListItem:state_CompletedOnClick()
   if self._callback then
-    (self._callback)(self._quest)
+    self._callback(self._quest)
   end
 end
-
-

@@ -1,323 +1,232 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_summon_everything.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local SkillEffectEnum_SummonBehavior = {START = 0, Nonrandom = 1, Random = 2, OutOfGridRange = 3, Cage = 4, RandomDifferent = 8, MirrorImage = 9, END = 10}
+local SkillEffectEnum_SummonBehavior = {
+  START = 0,
+  Nonrandom = 1,
+  Random = 2,
+  OutOfGridRange = 3,
+  Cage = 4,
+  RandomDifferent = 8,
+  MirrorImage = 9,
+  END = 10
+}
 _enum("SkillEffectEnum_SummonBehavior", SkillEffectEnum_SummonBehavior)
-local SkillEffectEnum_SummonExceptionType = {None = 0, Around4 = 1, Ring9 = 2, Around4AndNearToFar = 3, Around4AndNearToFarNoRandom = 4}
+local SkillEffectEnum_SummonExceptionType = {
+  None = 0,
+  Around4 = 1,
+  Ring9 = 2,
+  Around4AndNearToFar = 3,
+  Around4AndNearToFarNoRandom = 4
+}
 _enum("SkillEffectEnum_SummonExceptionType", SkillEffectEnum_SummonExceptionType)
-local SkillEffectEnum_SummonUseAttributeType = {MonsterCfg = 0, CasterBaseAttribute = 1, CasterAttribute = 2, WorldBossCurStageCfg = 3}
+local SkillEffectEnum_SummonUseAttributeType = {
+  MonsterCfg = 0,
+  CasterBaseAttribute = 1,
+  CasterAttribute = 2,
+  WorldBossCurStageCfg = 3
+}
 _enum("SkillEffectEnum_SummonUseAttributeType", SkillEffectEnum_SummonUseAttributeType)
 _class("SkillEffectParam_SummonEverything", SkillEffectParamBase)
 SkillEffectParam_SummonEverything = SkillEffectParam_SummonEverything
--- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
 
-SkillEffectParam_SummonEverything.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : SkillEffectEnum_SummonBehavior, _ENV, SkillEffectEnum_SummonExceptionType
+function SkillEffectParam_SummonEverything:Constructor(t)
   self.m_nSummonType = t.summonType
   self.m_nSummonBehavior = SkillEffectEnum_SummonBehavior.Nonrandom
-  if t.SummonBehavior ~= nil and SkillEffectEnum_SummonBehavior.START < t.SummonBehavior and t.SummonBehavior < SkillEffectEnum_SummonBehavior.END then
+  if t.SummonBehavior ~= nil and t.SummonBehavior > SkillEffectEnum_SummonBehavior.START and t.SummonBehavior < SkillEffectEnum_SummonBehavior.END then
     self.m_nSummonBehavior = t.SummonBehavior
   end
   self.m_nNumber = 1
-  if t.Number ~= nil and type(t.Number) == "number" and t.Number > 1 then
+  if t.Number ~= nil and type(t.Number) == "number" and 1 < t.Number then
     self.m_nNumber = t.Number
   end
   if t.NumberRange ~= nil and type(t.NumberRange) == "table" then
-    local min = (t.NumberRange)[1]
-    local max = (t.NumberRange)[2]
+    local min = t.NumberRange[1]
+    local max = t.NumberRange[2]
     self.m_nNumberRange = {}
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.m_nNumberRange).min = min
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.m_nNumberRange).max = max
+    self.m_nNumberRange.min = min
+    self.m_nNumberRange.max = max
   end
-  do
-    self.m_InheritAttribute = {}
-    if t.InheritAttribute ~= nil and type(t.InheritAttribute) == "table" then
-      self.m_InheritAttribute = t.InheritAttribute
-    end
-    self.m_listSummonID = {}
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-    if type(t.summonID) == "number" then
-      (self.m_listSummonID)[#self.m_listSummonID + 1] = t.summonID
-    else
-      if type(t.summonID) == "table" then
-        self.m_listSummonID = t.summonID
-      end
-    end
-    self.m_recordCasterCfgID = false
-    if t.RecordCasterCfgID then
-      self.m_recordCasterCfgID = true
-    end
-    self.m_useRecordIDAsSummonID = false
-    if t.UseRecordIDAsSummonID then
-      self.m_useRecordIDAsSummonID = true
-    end
-    self._force = t.force or false
-    self.m_monsterLimitCount = t.monsterLimitCount or 0
-    self.m_limitCheckID = {}
-    -- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-    if t.limitCheckID then
-      if type(t.limitCheckID) == "number" then
-        (self.m_limitCheckID)[#self.m_limitCheckID + 1] = t.limitCheckID
-      else
-        if type(t.limitCheckID) == "table" then
-          self.m_limitCheckID = t.limitCheckID
-        end
-      end
-    end
-    self._useAttribute = t.useAttribute or 0
-    self._inheritCheckSuperEntity = false
-    if t.inheritCheckSuperEntity ~= 1 then
-      self._inheritCheckSuperEntity = not t.inheritCheckSuperEntity
-      if t.direction and (t.direction)[1] and (t.direction)[2] then
-        self._direction = Vector2((t.direction)[1], (t.direction)[2])
-      else
-        self._direction = Vector2(0, 1)
-        if self.m_nSummonType == SkillEffectEnum_SummonType.Monster then
-          self._direction = nil
-        end
-      end
-      if t.useRandomDirection ~= 1 then
-        self._useRandomDirection = not t.useRandomDirection
-        self._ignoreBlock = false
-        if t.ignoreBlock ~= 1 then
-          self._ignoreBlock = not t.ignoreBlock
-          self._exceptionType = t.exceptionType or SkillEffectEnum_SummonExceptionType.None
-          self._summonUseCasterDir = t.summonUseCasterDir or 0
-          self._inheritElement = t.inheritElement or false
-          self._initCasterBornBuff = t.initCasterBornBuff or 0
-          self._summonCheckIgnoreBodyArea = false
-          if t.summonCheckIgnoreBodyArea ~= 1 then
-            self._summonCheckIgnoreBodyArea = not t.summonCheckIgnoreBodyArea
-            self._modifyMonsterBodyAreaByDir = false
-            if t.modifyMonsterBodyAreaByDir ~= 1 then
-              self._modifyMonsterBodyAreaByDir = not t.modifyMonsterBodyAreaByDir
-              if t.cageSumOffPosList then
-                self._cageSumOffPosList = {}
-                for index,value in ipairs(t.cageSumOffPosList) do
-                  local offPos = Vector2(value[1], value[2])
-                  ;
-                  (table.insert)(self._cageSumOffPosList, offPos)
-                end
-              end
-              self._useBuffLayerAsTimes = t.useBuffLayerAsTimes
-              self._summonTimesForEachID = t.summonTimesForEachID
-              self._trapID = t.trapID
-              -- DECOMPILER ERROR: 18 unprocessed JMP targets
-            end
-          end
-        end
-      end
+  self.m_InheritAttribute = {}
+  if t.InheritAttribute ~= nil and type(t.InheritAttribute) == "table" then
+    self.m_InheritAttribute = t.InheritAttribute
+  end
+  self.m_listSummonID = {}
+  if type(t.summonID) == "number" then
+    self.m_listSummonID[#self.m_listSummonID + 1] = t.summonID
+  elseif type(t.summonID) == "table" then
+    self.m_listSummonID = t.summonID
+  end
+  self.m_recordCasterCfgID = false
+  if t.RecordCasterCfgID then
+    self.m_recordCasterCfgID = true
+  end
+  self.m_useRecordIDAsSummonID = false
+  if t.UseRecordIDAsSummonID then
+    self.m_useRecordIDAsSummonID = true
+  end
+  self._force = t.force or false
+  self.m_monsterLimitCount = t.monsterLimitCount or 0
+  self.m_limitCheckID = {}
+  if t.limitCheckID then
+    if type(t.limitCheckID) == "number" then
+      self.m_limitCheckID[#self.m_limitCheckID + 1] = t.limitCheckID
+    elseif type(t.limitCheckID) == "table" then
+      self.m_limitCheckID = t.limitCheckID
     end
   end
+  self._useAttribute = t.useAttribute or 0
+  self._inheritCheckSuperEntity = false
+  if t.inheritCheckSuperEntity then
+    self._inheritCheckSuperEntity = t.inheritCheckSuperEntity == 1
+  end
+  if t.direction and t.direction[1] and t.direction[2] then
+    self._direction = Vector2(t.direction[1], t.direction[2])
+  else
+    self._direction = Vector2(0, 1)
+    if self.m_nSummonType == SkillEffectEnum_SummonType.Monster then
+      self._direction = nil
+    end
+  end
+  if t.useRandomDirection then
+    self._useRandomDirection = t.useRandomDirection == 1
+  end
+  self._ignoreBlock = false
+  if t.ignoreBlock then
+    self._ignoreBlock = t.ignoreBlock == 1
+  end
+  self._exceptionType = t.exceptionType or SkillEffectEnum_SummonExceptionType.None
+  self._summonUseCasterDir = t.summonUseCasterDir or 0
+  self._inheritElement = t.inheritElement or false
+  self._initCasterBornBuff = t.initCasterBornBuff or 0
+  self._summonCheckIgnoreBodyArea = false
+  if t.summonCheckIgnoreBodyArea then
+    self._summonCheckIgnoreBodyArea = t.summonCheckIgnoreBodyArea == 1
+  end
+  self._modifyMonsterBodyAreaByDir = false
+  if t.modifyMonsterBodyAreaByDir then
+    self._modifyMonsterBodyAreaByDir = t.modifyMonsterBodyAreaByDir == 1
+  end
+  if t.cageSumOffPosList then
+    self._cageSumOffPosList = {}
+    for index, value in ipairs(t.cageSumOffPosList) do
+      local offPos = Vector2(value[1], value[2])
+      table.insert(self._cageSumOffPosList, offPos)
+    end
+  end
+  self._useBuffLayerAsTimes = t.useBuffLayerAsTimes
+  self._summonTimesForEachID = t.summonTimesForEachID
+  self._trapID = t.trapID
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_SummonEverything:GetEffectType()
   return SkillEffectType.SummonEverything
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonType = function(self)
-  -- function num : 0_2
+function SkillEffectParam_SummonEverything:GetSummonType()
   return self.m_nSummonType
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonList = function(self)
-  -- function num : 0_3
+function SkillEffectParam_SummonEverything:GetSummonList()
   return self.m_listSummonID
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.IsRecordCasterCfgID = function(self)
-  -- function num : 0_4
+function SkillEffectParam_SummonEverything:IsRecordCasterCfgID()
   return self.m_recordCasterCfgID
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.IsUseRecordIDAsSummonID = function(self)
-  -- function num : 0_5
+function SkillEffectParam_SummonEverything:IsUseRecordIDAsSummonID()
   return self.m_useRecordIDAsSummonID
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetLimitCheckID = function(self)
-  -- function num : 0_6
+function SkillEffectParam_SummonEverything:GetLimitCheckID()
   return self.m_limitCheckID
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetCpSummonList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillEffectParam_SummonEverything:GetCpSummonList()
   local retSummonId = {}
-  for key,value in pairs(self.m_listSummonID) do
+  for key, value in pairs(self.m_listSummonID) do
     retSummonId[key] = value
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetForce = function(self)
-  -- function num : 0_8
+function SkillEffectParam_SummonEverything:GetForce()
   return self._force
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonBehavior = function(self)
-  -- function num : 0_9
+function SkillEffectParam_SummonEverything:GetSummonBehavior()
   return self.m_nSummonBehavior
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonNumber = function(self)
-  -- function num : 0_10
+function SkillEffectParam_SummonEverything:GetSummonNumber()
   return self.m_nNumber
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonNumberRange = function(self)
-  -- function num : 0_11
+function SkillEffectParam_SummonEverything:GetSummonNumberRange()
   return self.m_nNumberRange
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetInheritAttribute = function(self)
-  -- function num : 0_12
+function SkillEffectParam_SummonEverything:GetInheritAttribute()
   return self.m_InheritAttribute
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonMonsterLimitCount = function(self)
-  -- function num : 0_13
+function SkillEffectParam_SummonEverything:GetSummonMonsterLimitCount()
   return self.m_monsterLimitCount
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetUseAttribute = function(self)
-  -- function num : 0_14
+function SkillEffectParam_SummonEverything:GetUseAttribute()
   return self._useAttribute
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetInheritCheckSuperEntity = function(self)
-  -- function num : 0_15
+function SkillEffectParam_SummonEverything:GetInheritCheckSuperEntity()
   return self._inheritCheckSuperEntity
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetDirection = function(self)
-  -- function num : 0_16
+function SkillEffectParam_SummonEverything:GetDirection()
   return self._direction
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetUseRandomDirection = function(self)
-  -- function num : 0_17
+function SkillEffectParam_SummonEverything:GetUseRandomDirection()
   return self._useRandomDirection
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.IsIgnoreBlock = function(self)
-  -- function num : 0_18
+function SkillEffectParam_SummonEverything:IsIgnoreBlock()
   return self._ignoreBlock
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonExceptionType = function(self)
-  -- function num : 0_19
+function SkillEffectParam_SummonEverything:GetSummonExceptionType()
   return self._exceptionType
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonUseCasterDir = function(self)
-  -- function num : 0_20
+function SkillEffectParam_SummonEverything:GetSummonUseCasterDir()
   return self._summonUseCasterDir
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetInheritElement = function(self)
-  -- function num : 0_21
+function SkillEffectParam_SummonEverything:GetInheritElement()
   return self._inheritElement
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetInitCasterBornBuff = function(self)
-  -- function num : 0_22
+function SkillEffectParam_SummonEverything:GetInitCasterBornBuff()
   return self._initCasterBornBuff
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetModifyMonsterBodyAreaByDir = function(self)
-  -- function num : 0_23
+function SkillEffectParam_SummonEverything:GetModifyMonsterBodyAreaByDir()
   return self._modifyMonsterBodyAreaByDir
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonCheckIgnoreBodyArea = function(self)
-  -- function num : 0_24
+function SkillEffectParam_SummonEverything:GetSummonCheckIgnoreBodyArea()
   return self._summonCheckIgnoreBodyArea
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetCageSumOffPosList = function(self)
-  -- function num : 0_25
+function SkillEffectParam_SummonEverything:GetCageSumOffPosList()
   return self._cageSumOffPosList
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetUseBuffLayerAsTimes = function(self)
-  -- function num : 0_26
+function SkillEffectParam_SummonEverything:GetUseBuffLayerAsTimes()
   return self._useBuffLayerAsTimes
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetSummonTimesForEachID = function(self)
-  -- function num : 0_27
+function SkillEffectParam_SummonEverything:GetSummonTimesForEachID()
   return self._summonTimesForEachID
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillEffectParam_SummonEverything.GetTrapID = function(self)
-  -- function num : 0_28
+function SkillEffectParam_SummonEverything:GetTrapID()
   return self._trapID
 end
-
-

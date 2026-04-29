@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_ecs/world/world.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("world_creation_context")
 require("entity")
 require("matcher")
 require("group")
 _class("World", Object)
 World = World
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-World.Constructor = function(self, contextInfo)
-  -- function num : 0_0 , upvalues : _ENV
+function World:Constructor(contextInfo)
   self._contextInfo = contextInfo
   self._totalComponents = contextInfo:WCC_EntityTotalComponents()
   self._entityCreationIndex = contextInfo.WCC_StartCreationIndex
@@ -24,9 +17,7 @@ World.Constructor = function(self, contextInfo)
   self._groups = {}
   self._groupsForIndex = {}
   for i = 1, self._totalComponents do
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._groupsForIndex)[i] = false
+    self._groupsForIndex[i] = false
   end
   self.Ev_OnEntityCreated = DelegateEvent:New()
   self.Ev_OnEntityWillBeDestroyed = DelegateEvent:New()
@@ -35,10 +26,7 @@ World.Constructor = function(self, contextInfo)
   self.Ev_OnGroupCleared = DelegateEvent:New()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-World.Dispose = function(self)
-  -- function num : 0_1
+function World:Dispose()
   self.Ev_OnEntityCreated = nil
   self.Ev_OnEntityWillBeDestroyed = nil
   self.Ev_OnEntityDestroyed = nil
@@ -46,44 +34,34 @@ World.Dispose = function(self)
   self.Ev_OnGroupCleared = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-World.CreateEntity = function(self)
-  -- function num : 0_2
-  local entity = (self._entityCreationProto):New()
+function World:CreateEntity()
+  local entity = self._entityCreationProto:New()
   local creationIndex = self._entityCreationIndex
   self._entityCreationIndex = creationIndex + 1
   entity:Initialize(creationIndex, self._contextInfo)
   entity:Retain(self)
-  ;
-  (entity.Ev_OnComponentAdded):AddEvent(self, self.updateGroupsComponentAddedOrRemoved)
-  ;
-  (entity.Ev_OnComponentRemoved):AddEvent(self, self.updateGroupsComponentAddedOrRemoved)
-  ;
-  (entity.Ev_OnComponentReplaced):AddEvent(self, self.updateGroupsComponentReplaced)
-  ;
-  (entity.Ev_OnEntityReleased):AddEvent(self, self.onEntityReleased)
+  entity.Ev_OnComponentAdded:AddEvent(self, self.updateGroupsComponentAddedOrRemoved)
+  entity.Ev_OnComponentRemoved:AddEvent(self, self.updateGroupsComponentAddedOrRemoved)
+  entity.Ev_OnComponentReplaced:AddEvent(self, self.updateGroupsComponentReplaced)
+  entity.Ev_OnEntityReleased:AddEvent(self, self.onEntityReleased)
   if self.Ev_OnEntityCreated then
-    (self.Ev_OnEntityCreated)(self, entity)
+    self.Ev_OnEntityCreated(self, entity)
   end
   entity:SetOwnerWorld(self)
   return entity
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-World.DestroyEntity = function(self, entity)
-  -- function num : 0_3
-  (self._entities):Remove(entity:GetID())
+function World:DestroyEntity(entity)
+  self._entities:Remove(entity:GetID())
   if self.Ev_OnEntityWillBeDestroyed ~= nil then
-    (self.Ev_OnEntityWillBeDestroyed)(self, entity)
+    self.Ev_OnEntityWillBeDestroyed(self, entity)
   end
   entity:Destroy()
   if self.Ev_OnEntityDestroyed ~= nil then
-    (self.Ev_OnEntityDestroyed)(self, entity)
+    self.Ev_OnEntityDestroyed(self, entity)
   end
   if entity._retainCount == 1 then
-    (entity.Ev_OnEntityReleased):RemoveEvent(self, self.onEntityReleased)
+    entity.Ev_OnEntityReleased:RemoveEvent(self, self.onEntityReleased)
     entity:Release(self)
     entity:RemoveAllOnEntityReleasedHandlers()
   else
@@ -91,67 +69,43 @@ World.DestroyEntity = function(self, entity)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-World.GetGroupEntities = function(self, matcher)
-  -- function num : 0_4
+function World:GetGroupEntities(matcher)
   local group = self:GetGroup(matcher)
   if group then
     return group:GetEntities()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-World.GetGroup = function(self, matcher)
-  -- function num : 0_5 , upvalues : _ENV
+function World:GetGroup(matcher)
   if matcher == nil then
-    (Log.fatal)("World:GetGroup matcher == nil")
+    Log.fatal("World:GetGroup matcher == nil")
     return nil
   end
-  local group = (self._groups)[matcher]
+  local group = self._groups[matcher]
   if not group then
     group = Group:New(matcher)
-    for i = 1, (self._entities):Size() do
-      local e = (self._entities):GetAt(i)
+    for i = 1, self._entities:Size() do
+      local e = self._entities:GetAt(i)
       group:HandleEntity(e)
     end
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._groups)[matcher] = group
+    self._groups[matcher] = group
     local indices = matcher.indices
-    for index,_ in pairs(indices) do
-      do
-        do
-          if not (self._groupsForIndex)[index] then
-            local list = ArrayList:New()
-            -- DECOMPILER ERROR at PC46: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            (self._groupsForIndex)[index] = list
-          end
-          ;
-          ((self._groupsForIndex)[index]):PushBack(group)
-          -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+    for index, _ in pairs(indices) do
+      if not self._groupsForIndex[index] then
+        local list = ArrayList:New()
+        self._groupsForIndex[index] = list
       end
+      self._groupsForIndex[index]:PushBack(group)
     end
     if self.Ev_OnGroupCreated then
-      (self.Ev_OnGroupCreated)(self, group)
+      self.Ev_OnGroupCreated(self, group)
     end
   end
-  do
-    return group
-  end
+  return group
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-World.updateGroupsComponentAddedOrRemoved = function(self, entity, index, component)
-  -- function num : 0_6
-  local groups = (self._groupsForIndex)[index]
+function World:updateGroupsComponentAddedOrRemoved(entity, index, component)
+  local groups = self._groupsForIndex[index]
   if groups then
     local events = {}
     for i = 1, groups:Size() do
@@ -167,11 +121,8 @@ World.updateGroupsComponentAddedOrRemoved = function(self, entity, index, compon
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-World.updateGroupsComponentReplaced = function(self, entity, index, previousComponent, newComponent)
-  -- function num : 0_7
-  local groups = (self._groupsForIndex)[index]
+function World:updateGroupsComponentReplaced(entity, index, previousComponent, newComponent)
+  local groups = self._groupsForIndex[index]
   if groups then
     for i = 1, groups:Size() do
       local g = groups:GetAt(i)
@@ -180,19 +131,13 @@ World.updateGroupsComponentReplaced = function(self, entity, index, previousComp
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-World.onEntityReleased = function(self, entity)
-  -- function num : 0_8
-  (entity.RemoveAllOnEntityReleasedHandlers)()
+function World:onEntityReleased(entity)
+  entity.RemoveAllOnEntityReleasedHandlers()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-World.SetEntityIdByEntityConfigId = function(self, entity, entityConfigId)
-  -- function num : 0_9 , upvalues : _ENV
+function World:SetEntityIdByEntityConfigId(entity, entityConfigId)
   local id = 0
-  if EntityConfigIDConstLength < entityConfigId then
+  if entityConfigId > EntityConfigIDConstLength then
     id = self._startEntityIdRender + self._entityIdThreshold
     self._startEntityIdRender = self._startEntityIdRender + 1
   else
@@ -200,8 +145,5 @@ World.SetEntityIdByEntityConfigId = function(self, entity, entityConfigId)
     self._startEntityIdLogic = self._startEntityIdLogic + 1
   end
   entity:SetID(id)
-  ;
-  (self._entities):Insert(id, entity)
+  self._entities:Insert(id, entity)
 end
-
-

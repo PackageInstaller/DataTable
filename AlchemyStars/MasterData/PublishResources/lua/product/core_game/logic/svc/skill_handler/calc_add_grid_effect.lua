@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_add_grid_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_AddGridEffect", Object)
 SkillEffectCalc_AddGridEffect = SkillEffectCalc_AddGridEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AddGridEffect.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_AddGridEffect:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AddGridEffect.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_AddGridEffect:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillGridEffectParam = skillEffectCalcParam.skillEffectParam
   local gridEffectType = skillGridEffectParam:GetTargetGridEffectType()
   local gridConvertType = skillGridEffectParam:GetGridConvertType()
@@ -25,107 +15,81 @@ SkillEffectCalc_AddGridEffect.DoSkillEffectCalculator = function(self, skillEffe
   local count = skillGridEffectParam:GetCount()
   local gridList = skillEffectCalcParam.skillRange
   local casterEntityID = skillEffectCalcParam.casterEntityID
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
-  local boardServiceL = (self._world):GetService("BoardLogic")
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
-  local board = ((self._world):GetBoardEntity()):Board()
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
+  local boardServiceL = self._world:GetService("BoardLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local board = self._world:GetBoardEntity():Board()
   local tConvertInfo = {}
-  local posList = (table.cloneconf)(gridList)
-  local utilData = (self._world):GetService("UtilData")
-  for _,pos in ipairs(posList) do
+  local posList = table.cloneconf(gridList)
+  local utilData = self._world:GetService("UtilData")
+  for _, pos in ipairs(posList) do
     local samePosTraps = utilData:GetTrapsAtPos(pos)
-    if #samePosTraps > 0 then
-      for _,e in ipairs(samePosTraps) do
+    if 0 < #samePosTraps then
+      for _, e in ipairs(samePosTraps) do
         local trapCmpt = e:Trap()
         if trapCmpt:GetTrapType() == TrapType.GapTileTrap then
-          (table.removev)(gridList, pos)
+          table.removev(gridList, pos)
         end
       end
     end
   end
   if #gridList == 0 then
-    return 
+    return
   end
-  do
-    if count and count < #gridList then
-      local newPosList = {}
-      for i = 1, count do
-        (table.insert)(newPosList, gridList[i])
-      end
-      gridList = newPosList
+  if count and count < #gridList then
+    local newPosList = {}
+    for i = 1, count do
+      table.insert(newPosList, gridList[i])
     end
-    if gridConvertType then
-      for _,pos in ipairs(gridList) do
-        local nOldColor = utilData:FindPieceElement(pos)
-        if (not ignoreConvertForAny or not self:IsForbidConvertAndTypeAny(pos) or ignoreConvertForBlock) and self:IsForbidConvertByBlock(pos) then
-          do
-            local convertInfo = NTGridConvert_ConvertInfo:New(pos, nOldColor, gridConvertType)
-            ;
-            (table.insert)(tConvertInfo, convertInfo)
-            -- DECOMPILER ERROR at PC129: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC129: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-    end
-    local traps = {}
-    local gridConvertTypes = {}
-    for i = 1, #gridList do
-      local gridPos = gridList[i]
-      local pt = board:GetPieceType(gridPos)
-      if gridConvertType and gridConvertType ~= pt then
-        if (not ignoreConvertForAny or not self:IsForbidConvertAndTypeAny(gridPos) or ignoreConvertForBlock) and self:IsForbidConvertByBlock(gridPos) then
-          boardServiceL:SetPieceTypeLogic(gridConvertType, gridPos)
-          gridConvertTypes[(Vector2.Pos2Index)(gridPos)] = gridConvertType
-          do
-            if summonTrap and summonTrap ~= 0 then
-              local eTrap = trapServiceLogic:CreateTrap(summonTrap, gridPos, Vector2(0, 1), false, nil, casterEntity)
-              if eTrap then
-                traps[(Vector2.Pos2Index)(gridPos)] = eTrap:GetID()
-              end
-            end
-            -- DECOMPILER ERROR at PC194: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC194: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC194: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC194: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-    end
-    local nt = NTGridConvert:New(casterEntity, tConvertInfo)
-    nt:SetConvertEffectType(SkillEffectType.AddGridEffect)
-    nt:SetSkillType(skillGridEffectParam:GetSkillType())
-    local triggerService = (self._world):GetService("Trigger")
-    triggerService:Notify(nt)
-    local skillConvertEffectResult = SkillAddGridEffectResult:New(gridList, gridConvertTypes, traps)
-    return skillConvertEffectResult
+    gridList = newPosList
   end
+  if gridConvertType then
+    for _, pos in ipairs(gridList) do
+      local nOldColor = utilData:FindPieceElement(pos)
+      if ignoreConvertForAny and self:IsForbidConvertAndTypeAny(pos) then
+      elseif ignoreConvertForBlock and self:IsForbidConvertByBlock(pos) then
+      else
+        local convertInfo = NTGridConvert_ConvertInfo:New(pos, nOldColor, gridConvertType)
+        table.insert(tConvertInfo, convertInfo)
+      end
+    end
+  end
+  local traps = {}
+  local gridConvertTypes = {}
+  for i = 1, #gridList do
+    local gridPos = gridList[i]
+    local pt = board:GetPieceType(gridPos)
+    if not gridConvertType or gridConvertType == pt or ignoreConvertForAny and self:IsForbidConvertAndTypeAny(gridPos) then
+    elseif ignoreConvertForBlock and self:IsForbidConvertByBlock(gridPos) then
+    else
+      boardServiceL:SetPieceTypeLogic(gridConvertType, gridPos)
+      gridConvertTypes[Vector2.Pos2Index(gridPos)] = gridConvertType
+    end
+    if summonTrap and summonTrap ~= 0 then
+      local eTrap = trapServiceLogic:CreateTrap(summonTrap, gridPos, Vector2(0, 1), false, nil, casterEntity)
+      if eTrap then
+        traps[Vector2.Pos2Index(gridPos)] = eTrap:GetID()
+      end
+    end
+  end
+  local nt = NTGridConvert:New(casterEntity, tConvertInfo)
+  nt:SetConvertEffectType(SkillEffectType.AddGridEffect)
+  nt:SetSkillType(skillGridEffectParam:GetSkillType())
+  local triggerService = self._world:GetService("Trigger")
+  triggerService:Notify(nt)
+  local skillConvertEffectResult = SkillAddGridEffectResult:New(gridList, gridConvertTypes, traps)
+  return skillConvertEffectResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AddGridEffect.IsForbidConvertAndTypeAny = function(self, gridPos)
-  -- function num : 0_2 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SkillEffectCalc_AddGridEffect:IsForbidConvertAndTypeAny(gridPos)
+  local utilDataSvc = self._world:GetService("UtilData")
   local isAnyPiece = utilDataSvc:GetPieceType(gridPos) == PieceType.Any
   local isBlock = utilDataSvc:IsPosBlock(gridPos, BlockFlag.ChangeElement)
-  do return not isAnyPiece or isBlock end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return isAnyPiece and isBlock
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AddGridEffect.IsForbidConvertByBlock = function(self, gridPos)
-  -- function num : 0_3 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function SkillEffectCalc_AddGridEffect:IsForbidConvertByBlock(gridPos)
+  local utilDataSvc = self._world:GetService("UtilData")
   local isBlock = utilDataSvc:IsPosBlock(gridPos, BlockFlag.ChangeElement)
   return isBlock
 end
-
-

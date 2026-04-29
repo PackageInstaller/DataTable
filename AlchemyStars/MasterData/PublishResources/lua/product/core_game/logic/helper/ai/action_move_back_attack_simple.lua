@@ -1,70 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_back_attack_simple.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveBackAttackSimple", ActionMoveBase)
 ActionMoveBackAttackSimple = ActionMoveBackAttackSimple
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveBackAttackSimple.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionMoveBackAttackSimple:Constructor()
   self.m_posListFarTarget = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByFar)
-  ;
-  (self.m_posListFarTarget):AllowDuplicate()
+  self.m_posListFarTarget:AllowDuplicate()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackAttackSimple.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveBackAttackSimple.super).Reset)(self)
-  ;
-  (self.m_posListFarTarget):Clear()
+function ActionMoveBackAttackSimple:Reset()
+  ActionMoveBackAttackSimple.super.Reset(self)
+  self.m_posListFarTarget:Clear()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackAttackSimple.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_2 , upvalues : _ENV
-  local posSelf = ((self.m_entityOwn):GridLocation()).Position
+function ActionMoveBackAttackSimple:InitTargetPosList(listPosTarget)
+  local posSelf = self.m_entityOwn:GridLocation().Position
   local nSkillID = self:GetLogicData(1)
-  local bodyArea = ((self.m_entityOwn):BodyArea()):GetArea()
+  local bodyArea = self.m_entityOwn:BodyArea():GetArea()
   if nSkillID == 0 then
-    return 
+    return
   end
-  ;
-  (self.m_posListFarTarget):Clear()
-  for _,targetPos in ipairs(listPosTarget) do
+  self.m_posListFarTarget:Clear()
+  for _, targetPos in ipairs(listPosTarget) do
     local dir = posSelf - targetPos
     local skillRange = self:_ComputeSkillRange(nSkillID, targetPos, bodyArea, dir)
     for i = 1, #skillRange do
       local posSkill = skillRange[i]
       if self:IsPosAccessible(posSkill) and self:IsPosConnected(targetPos, posSkill) then
-        (AINewNode.InsertSortedArray)(self.m_posListFarTarget, targetPos, posSkill, i)
+        AINewNode.InsertSortedArray(self.m_posListFarTarget, targetPos, posSkill, i)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackAttackSimple.FindNewTargetPos = function(self)
-  -- function num : 0_3
-  local aiComponent = (self.m_entityOwn):AI()
+function ActionMoveBackAttackSimple:FindNewTargetPos()
+  local aiComponent = self.m_entityOwn:AI()
   local posTarget = aiComponent:GetTargetPos()
-  local posSelf = ((self.m_entityOwn):GridLocation()).Position
+  local posSelf = self.m_entityOwn:GridLocation().Position
   if not self:_IsPosInSortedArray(posSelf, self.m_posListFarTarget) then
     return posSelf
   end
   return self:FindPosValidAndConnected(self.m_posListFarTarget, posTarget, posSelf)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackAttackSimple._IsPosInSortedArray = function(self, posWork, posList)
-  -- function num : 0_4
+function ActionMoveBackAttackSimple:_IsPosInSortedArray(posWork, posList)
   local nListCount = posList:Size()
   for i = 1, nListCount do
     local actionData = posList:GetAt(i)
@@ -74,5 +52,3 @@ ActionMoveBackAttackSimple._IsPosInSortedArray = function(self, posWork, posList
   end
   return false
 end
-
-

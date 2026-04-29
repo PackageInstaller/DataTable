@@ -1,8 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/entity/logic_entity_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local EntityConfigIDConst = {"Board", "Team", "Pet", "PetShadow", "SkillHolder", "Monster", "Trap", "ChessPet", "Network", "PersonaSkillHolder", "AutoBeadSkillHolder"}
+local EntityConfigIDConst = {
+  "Board",
+  "Team",
+  "Pet",
+  "PetShadow",
+  "SkillHolder",
+  "Monster",
+  "Trap",
+  "ChessPet",
+  "Network",
+  "PersonaSkillHolder",
+  "AutoBeadSkillHolder"
+}
 _autoEnum("EntityConfigIDConst", EntityConfigIDConst)
-

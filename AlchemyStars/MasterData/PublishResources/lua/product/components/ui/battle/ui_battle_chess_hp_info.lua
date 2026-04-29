@@ -1,107 +1,234 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_chess_hp_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleChessHPInfo", UICustomWidget)
 UIBattleChessHPInfo = UIBattleChessHPInfo
--- DECOMPILER ERROR at PC189: Confused about usage of register: R0 in 'UnsetPending'
-
 UIBattleChessHPInfo.UIComponentsRegistry = {
-{Type = "UILocalizationText", ViewName = "txtBoss", CodeName = "_txtBoss"}
-, 
-{Type = "UILocalizationText", ViewName = "txtBossName", CodeName = "_txtBossName"}
-, 
-{Type = "RectTransform", ViewName = "txtBoss", CodeName = "_rtRect"}
-, 
-{Type = "RevolvingTextWithDynamicScroll", ViewName = "RevolvingText", CodeName = "_revolvingText"}
-, 
-{Type = "GameObject", ViewName = "RevolvingText", CodeName = "_revolvingTextGo"}
-, 
-{Type = "Slider", ViewName = "sldWhiteHp", CodeName = "_sldWhiteHp"}
-, 
-{Type = "Slider", ViewName = "sldRedHp", CodeName = "_sldRedHp"}
-, 
-{Type = "Slider", ViewName = "sldRedHp2", CodeName = "_sldRedHp2"}
-, 
-{Type = "Slider", ViewName = "sldGreenHp1", CodeName = "_sldGreenHp1"}
-, 
-{Type = "Slider", ViewName = "sldGreenHp2", CodeName = "_sldGreenHp2"}
-, 
-{Type = "Slider", ViewName = "sldWhiteHpForRed2", CodeName = "_sldWhiteHpForRed2"}
-, 
-{Type = "Slider", ViewName = "sldWhiteHpForGreen", CodeName = "_sldWhiteHpForGreen"}
-, 
-{Type = "Slider", ViewName = "sldWhiteHpForGreen2", CodeName = "_sldWhiteHpForGreen2"}
-, 
-{Type = "RectTransform", ViewName = "sldRedHp", CodeName = "_sldRedHpRectTransform"}
-, 
-{Type = "Image", ViewName = "imgFillRed", CodeName = "_imgFillRed"}
-, 
-{Type = "UILocalizationText", ViewName = "txtHpPercent", CodeName = "_txtHpPercent"}
-, 
-{Type = "Image", ViewName = "imgElement", CodeName = "_imgElement"}
-, 
-{Type = "RawImageLoader", ViewName = "head", CodeName = "_imgIcon"}
-, 
-{Type = "RawImage", ViewName = "head", CodeName = "_rawImage"}
-, 
-{Type = "Image", ViewName = "monsterType", CodeName = "_monsterType"}
-, 
-{Type = "GameObject", ViewName = "BossLayoutGroup", CodeName = "_bossLayoutGroup"}
-, 
-{Type = "RectTransform", ViewName = "BossLayoutGroup", CodeName = "_bossLayoutGroupRectTransform"}
-, 
-{Type = "Button", ViewName = "buttonOpenBuff", CodeName = "buttonOpenBuff"}
-, 
-{Type = "Graphic", ViewName = "buttonOpenBuff", CodeName = "_buttonImage"}
-, 
-{Type = "GameObject", ViewName = "buffWindowRoot", CodeName = "buffWindowRoot"}
-, 
-{Type = "UISelectObjectPath", ViewName = "buffWindowRoot", CodeName = "buffWindowRootPath"}
-, 
-{Type = "GameObject", ViewName = "harmReductionRoot", CodeName = "_harmReductionRoot"}
-, 
-{Type = "UISelectObjectPath", ViewName = "harmReductionRoot", CodeName = "_harmReductionRootPath"}
-, 
-{Type = "Image", ViewName = "shield", CodeName = "_shieldImg"}
-, 
-{Type = "GameObject", ViewName = "WorldBoss", CodeName = "worldBossGO"}
-, 
-{Type = "GameObject", ViewName = "sldYellowHp", CodeName = "sldYellowHpGO"}
-, 
-{Type = "Image", ViewName = "WhiteBackground", CodeName = "_imageWhiteBackground"}
-, 
-{Type = "Image", ViewName = "RedBackground", CodeName = "_imageRedBackground"}
-, 
-{Type = "UILocalizationText", ViewName = "totalDamageNumText", CodeName = "_txtTotalDamageNum"}
-, 
-{Type = "UILocalizationText", ViewName = "totalDamageNumTextGray", CodeName = "_txtTotalDamageNumGray"}
-, 
-{Type = "UILocalizationText", ViewName = "curStageNumText", CodeName = "_txtCurStageNum"}
-, 
-{Type = "Image", ViewName = "imgFillWhite", CodeName = "_imgFillWhite"}
-, 
-{Type = "Image", ViewName = "imgFillYellow", CodeName = "_imgFillYellow"}
-, 
-{Type = "Slider", ViewName = "sldYellowHp", CodeName = "_sldYellowHp"}
-, 
-{Type = "GameObject", ViewName = "sldWhiteHp", CodeName = "sldWhiteHpGO"}
-, 
-{Type = "UISelectObjectPath", ViewName = "ScaleRulerGreen1", CodeName = "_scaleRulerGreen1"}
-, 
-{Type = "UISelectObjectPath", ViewName = "ScaleRulerGreen2", CodeName = "_scaleRulerGreen2"}
-, 
-{Type = "UISelectObjectPath", ViewName = "ScaleRulerGreen1", CodeName = "scaleRulerGreen1"}
-, 
-{Type = "UISelectObjectPath", ViewName = "ScaleRulerRed1", CodeName = "_scaleRulerRed1"}
-, 
-{Type = "UISelectObjectPath", ViewName = "ScaleRulerRed2", CodeName = "_scaleRulerRed2"}
+  {
+    Type = "UILocalizationText",
+    ViewName = "txtBoss",
+    CodeName = "_txtBoss"
+  },
+  {
+    Type = "UILocalizationText",
+    ViewName = "txtBossName",
+    CodeName = "_txtBossName"
+  },
+  {
+    Type = "RectTransform",
+    ViewName = "txtBoss",
+    CodeName = "_rtRect"
+  },
+  {
+    Type = "RevolvingTextWithDynamicScroll",
+    ViewName = "RevolvingText",
+    CodeName = "_revolvingText"
+  },
+  {
+    Type = "GameObject",
+    ViewName = "RevolvingText",
+    CodeName = "_revolvingTextGo"
+  },
+  {
+    Type = "Slider",
+    ViewName = "sldWhiteHp",
+    CodeName = "_sldWhiteHp"
+  },
+  {
+    Type = "Slider",
+    ViewName = "sldRedHp",
+    CodeName = "_sldRedHp"
+  },
+  {
+    Type = "Slider",
+    ViewName = "sldRedHp2",
+    CodeName = "_sldRedHp2"
+  },
+  {
+    Type = "Slider",
+    ViewName = "sldGreenHp1",
+    CodeName = "_sldGreenHp1"
+  },
+  {
+    Type = "Slider",
+    ViewName = "sldGreenHp2",
+    CodeName = "_sldGreenHp2"
+  },
+  {
+    Type = "Slider",
+    ViewName = "sldWhiteHpForRed2",
+    CodeName = "_sldWhiteHpForRed2"
+  },
+  {
+    Type = "Slider",
+    ViewName = "sldWhiteHpForGreen",
+    CodeName = "_sldWhiteHpForGreen"
+  },
+  {
+    Type = "Slider",
+    ViewName = "sldWhiteHpForGreen2",
+    CodeName = "_sldWhiteHpForGreen2"
+  },
+  {
+    Type = "RectTransform",
+    ViewName = "sldRedHp",
+    CodeName = "_sldRedHpRectTransform"
+  },
+  {
+    Type = "Image",
+    ViewName = "imgFillRed",
+    CodeName = "_imgFillRed"
+  },
+  {
+    Type = "UILocalizationText",
+    ViewName = "txtHpPercent",
+    CodeName = "_txtHpPercent"
+  },
+  {
+    Type = "Image",
+    ViewName = "imgElement",
+    CodeName = "_imgElement"
+  },
+  {
+    Type = "RawImageLoader",
+    ViewName = "head",
+    CodeName = "_imgIcon"
+  },
+  {
+    Type = "RawImage",
+    ViewName = "head",
+    CodeName = "_rawImage"
+  },
+  {
+    Type = "Image",
+    ViewName = "monsterType",
+    CodeName = "_monsterType"
+  },
+  {
+    Type = "GameObject",
+    ViewName = "BossLayoutGroup",
+    CodeName = "_bossLayoutGroup"
+  },
+  {
+    Type = "RectTransform",
+    ViewName = "BossLayoutGroup",
+    CodeName = "_bossLayoutGroupRectTransform"
+  },
+  {
+    Type = "Button",
+    ViewName = "buttonOpenBuff",
+    CodeName = "buttonOpenBuff"
+  },
+  {
+    Type = "Graphic",
+    ViewName = "buttonOpenBuff",
+    CodeName = "_buttonImage"
+  },
+  {
+    Type = "GameObject",
+    ViewName = "buffWindowRoot",
+    CodeName = "buffWindowRoot"
+  },
+  {
+    Type = "UISelectObjectPath",
+    ViewName = "buffWindowRoot",
+    CodeName = "buffWindowRootPath"
+  },
+  {
+    Type = "GameObject",
+    ViewName = "harmReductionRoot",
+    CodeName = "_harmReductionRoot"
+  },
+  {
+    Type = "UISelectObjectPath",
+    ViewName = "harmReductionRoot",
+    CodeName = "_harmReductionRootPath"
+  },
+  {
+    Type = "Image",
+    ViewName = "shield",
+    CodeName = "_shieldImg"
+  },
+  {
+    Type = "GameObject",
+    ViewName = "WorldBoss",
+    CodeName = "worldBossGO"
+  },
+  {
+    Type = "GameObject",
+    ViewName = "sldYellowHp",
+    CodeName = "sldYellowHpGO"
+  },
+  {
+    Type = "Image",
+    ViewName = "WhiteBackground",
+    CodeName = "_imageWhiteBackground"
+  },
+  {
+    Type = "Image",
+    ViewName = "RedBackground",
+    CodeName = "_imageRedBackground"
+  },
+  {
+    Type = "UILocalizationText",
+    ViewName = "totalDamageNumText",
+    CodeName = "_txtTotalDamageNum"
+  },
+  {
+    Type = "UILocalizationText",
+    ViewName = "totalDamageNumTextGray",
+    CodeName = "_txtTotalDamageNumGray"
+  },
+  {
+    Type = "UILocalizationText",
+    ViewName = "curStageNumText",
+    CodeName = "_txtCurStageNum"
+  },
+  {
+    Type = "Image",
+    ViewName = "imgFillWhite",
+    CodeName = "_imgFillWhite"
+  },
+  {
+    Type = "Image",
+    ViewName = "imgFillYellow",
+    CodeName = "_imgFillYellow"
+  },
+  {
+    Type = "Slider",
+    ViewName = "sldYellowHp",
+    CodeName = "_sldYellowHp"
+  },
+  {
+    Type = "GameObject",
+    ViewName = "sldWhiteHp",
+    CodeName = "sldWhiteHpGO"
+  },
+  {
+    Type = "UISelectObjectPath",
+    ViewName = "ScaleRulerGreen1",
+    CodeName = "_scaleRulerGreen1"
+  },
+  {
+    Type = "UISelectObjectPath",
+    ViewName = "ScaleRulerGreen2",
+    CodeName = "_scaleRulerGreen2"
+  },
+  {
+    Type = "UISelectObjectPath",
+    ViewName = "ScaleRulerGreen1",
+    CodeName = "scaleRulerGreen1"
+  },
+  {
+    Type = "UISelectObjectPath",
+    ViewName = "ScaleRulerRed1",
+    CodeName = "_scaleRulerRed1"
+  },
+  {
+    Type = "UISelectObjectPath",
+    ViewName = "ScaleRulerRed2",
+    CodeName = "_scaleRulerRed2"
+  }
 }
--- DECOMPILER ERROR at PC192: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleChessHPInfo.Constructor = function(self)
-  -- function num : 0_0
+function UIBattleChessHPInfo:Constructor()
   self._pstId = 0
   self._tplId = 0
   self._go = nil
@@ -111,51 +238,34 @@ UIBattleChessHPInfo.Constructor = function(self)
   self._components = {}
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleChessHPInfo.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattleChessHPInfo:OnShow()
   self._go = self:GetGameObject()
   self:FetchUIComponents()
   self._uiBattleAtlas = self:GetAsset("InnerUI.spriteatlas", LoadType.SpriteAtlas)
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
-  ;
-  (self.buffWindowRootPath):SpawnObjects("UIBossBuffInfo", 1)
-  self._uiBossHPBuffInfo = (self:GetUIComponent("UISelectObjectPath", "buffRoot")):SpawnObject("UIHPBuffInfo")
-  self._uIBossHPEliteInfo = (self:GetUIComponent("UISelectObjectPath", "eliteRoot")):SpawnObject("UIBossHPEliteInfo")
+  self.buffWindowRootPath:SpawnObjects("UIBossBuffInfo", 1)
+  self._uiBossHPBuffInfo = self:GetUIComponent("UISelectObjectPath", "buffRoot"):SpawnObject("UIHPBuffInfo")
+  self._uIBossHPEliteInfo = self:GetUIComponent("UISelectObjectPath", "eliteRoot"):SpawnObject("UIBossHPEliteInfo")
   self._harmReductionRootPath = self:GetUIComponent("UISelectObjectPath", "harmReductionRoot")
-  ;
-  (self._harmReductionRootPath):SpawnObject("UIBossHarmReductionInfo")
-  ;
-  (self.worldBossGO):SetActive(false)
-  ;
-  (self.sldYellowHpGO):SetActive(false)
+  self._harmReductionRootPath:SpawnObject("UIBossHarmReductionInfo")
+  self.worldBossGO:SetActive(false)
+  self.sldYellowHpGO:SetActive(false)
   self._totalDamageNum = 0
-  ;
-  (self._txtTotalDamageNum):SetText("0")
-  ;
-  (self._txtTotalDamageNumGray):SetText((UIActivityHelper.AddZeroFrontNum)(8, self._totalDamageNum))
-  ;
-  (self._txtCurStageNum):SetText("x1")
+  self._txtTotalDamageNum:SetText("0")
+  self._txtTotalDamageNumGray:SetText(UIActivityHelper.AddZeroFrontNum(8, self._totalDamageNum))
+  self._txtCurStageNum:SetText("x1")
   self._uiAtlas = self:GetAsset("UIBattle.spriteatlas", LoadType.SpriteAtlas)
   self:SetActive(false)
   self:AttachUIEvents()
 end
 
-local mtIndex = function(t, k)
-  -- function num : 0_2 , upvalues : _ENV
-  if not rawget(UIBattleChessHPInfo, k) then
-    return rawget(t._components, k)
-  end
+local function mtIndex(t, k)
+  return rawget(UIBattleChessHPInfo, k) or rawget(t._components, k)
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R1 in 'UnsetPending'
-
 UIBattleChessHPInfo.__index = mtIndex
--- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
 
-UIBattleChessHPInfo.AttachUIEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBattleChessHPInfo:AttachUIEvents()
   self:AttachEvent(GameEventType.UpdateBossRedHp, self.UpdateBossRedHp)
   self:AttachEvent(GameEventType.UpdateBossWhiteHp, self.UpdateBossWhiteHp)
   self:AttachEvent(GameEventType.UpdateBossShield, self.UpdateBossShield)
@@ -171,54 +281,37 @@ UIBattleChessHPInfo.AttachUIEvents = function(self)
   self:AttachEvent(GameEventType.RevokePreviewMonsterReplaceHPBar, self.RevokePreviewMonsterReplaceHPBar)
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.OnEventUpdateBossRedHp = function(self, entityID, redHpPercent, hpVal, maxHP)
-  -- function num : 0_4
+function UIBattleChessHPInfo:OnEventUpdateBossRedHp(entityID, redHpPercent, hpVal, maxHP)
   if entityID ~= self._pstId then
-    return 
+    return
   end
   self:UpdateBossRedHp(redHpPercent, hpVal, maxHP)
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.OnEventUpdateBossWhiteHp = function(self, entityID, whiteHpPercent, whiteHpVal, maxHP)
-  -- function num : 0_5
+function UIBattleChessHPInfo:OnEventUpdateBossWhiteHp(entityID, whiteHpPercent, whiteHpVal, maxHP)
   if entityID ~= self._pstId then
-    return 
+    return
   end
   self:UpdateBossWhiteHp(whiteHpPercent, whiteHpVal, maxHP, false)
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.FetchUIComponents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  for _,registryItem in ipairs(UIBattleChessHPInfo.UIComponentsRegistry) do
+function UIBattleChessHPInfo:FetchUIComponents()
+  for _, registryItem in ipairs(UIBattleChessHPInfo.UIComponentsRegistry) do
     local t = registryItem.Type
     local vname = registryItem.ViewName
     local cname = registryItem.CodeName
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R9 in 'UnsetPending'
-
     if t == "GameObject" then
-      (self._components)[cname] = self:GetGameObject(vname)
+      self._components[cname] = self:GetGameObject(vname)
     else
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._components)[cname] = self:GetUIComponent(t, vname)
+      self._components[cname] = self:GetUIComponent(t, vname)
     end
   end
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.ShowBossHp = function(self, bossIds, isWorldBoss)
-  -- function num : 0_7
+function UIBattleChessHPInfo:ShowBossHp(bossIds, isWorldBoss)
   local info = bossIds:GetAt(1)
   if self._bossEntityID == info.pstId then
-    return 
+    return
   end
   self._bossEntityID = info.pstId
   self._haveBoss = true
@@ -228,33 +321,24 @@ UIBattleChessHPInfo.ShowBossHp = function(self, bossIds, isWorldBoss)
   self:Flush(bossIds:GetAt(1), isWorldBoss)
 end
 
--- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.HideBossHp = function(self, entityID)
-  -- function num : 0_8
+function UIBattleChessHPInfo:HideBossHp(entityID)
   if entityID ~= self._bossEntityID then
-    return 
+    return
   end
   self:ShowHideBossHp2(false)
 end
 
--- DECOMPILER ERROR at PC219: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.ShowHideBossHp2 = function(self, isShow)
-  -- function num : 0_9
+function UIBattleChessHPInfo:ShowHideBossHp2(isShow)
   if self._haveBoss then
     self._isBossLive = false
     self:SetActive(isShow)
   end
 end
 
--- DECOMPILER ERROR at PC222: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.ShowPreviewMonsterReplaceHPBar = function(self, info)
-  -- function num : 0_10
+function UIBattleChessHPInfo:ShowPreviewMonsterReplaceHPBar(info)
   if self._haveBoss then
     if info.pstId == self._bossEntityID and self._isCurrentBoss then
-      return 
+      return
     end
     self._isCurrentBoss = false
     self:SetActive(false)
@@ -264,10 +348,7 @@ UIBattleChessHPInfo.ShowPreviewMonsterReplaceHPBar = function(self, info)
   self:Flush(info)
 end
 
--- DECOMPILER ERROR at PC225: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.RevokePreviewMonsterReplaceHPBar = function(self)
-  -- function num : 0_11
+function UIBattleChessHPInfo:RevokePreviewMonsterReplaceHPBar()
   if self._haveBoss then
     self._isCurrentBoss = true
     self:SetActive(self._isBossLive)
@@ -276,22 +357,15 @@ UIBattleChessHPInfo.RevokePreviewMonsterReplaceHPBar = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.SetActive = function(self, state)
-  -- function num : 0_12
-  (self._go):SetActive(state)
+function UIBattleChessHPInfo:SetActive(state)
+  self._go:SetActive(state)
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.Flush = function(self, t, isWorldBoss)
-  -- function num : 0_13
+function UIBattleChessHPInfo:Flush(t, isWorldBoss)
   self._pstId = t.pstId
   self._tplId = t.tplId
   self._hpBarType = t.HPBarType
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self:UpdateBossNameAndElement(t.tplId, t.HPBarType, self._pstId, t.matchPet, t.curElement)
   local percent = t.percent or 1
   self._hp = t.HP
@@ -303,118 +377,81 @@ UIBattleChessHPInfo.Flush = function(self, t, isWorldBoss)
   self:UpdateBossShield(self._pstId, t.shieldValue, t.HP, t.maxHP)
   self:GenerateHPLockSep(t.sepHPList)
   if self._uiBossHPBuffInfo and t.pstId then
-    (self._uiBossHPBuffInfo):SetBossData(t.pstId)
+    self._uiBossHPBuffInfo:SetBossData(t.pstId)
   end
   if isWorldBoss then
     self:InitWorldBossHP(t)
   end
 end
 
--- DECOMPILER ERROR at PC234: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.GenerateHPLockSep = function(self, hpLockSepList)
-  -- function num : 0_14 , upvalues : _ENV
+function UIBattleChessHPInfo:GenerateHPLockSep(hpLockSepList)
   if not hpLockSepList then
-    return 
+    return
   end
-  local hpMaxWidth = (((self:GetGameObject("Fill Area")).transform).rect).width
+  local hpMaxWidth = self:GetGameObject("Fill Area").transform.rect.width
   self._lockList = self:GetUIComponent("UISelectObjectPath", "lockList")
-  ;
-  (self._lockList):SpawnObjects("UICustomWidget", #hpLockSepList)
-  local lockGOList = (self._lockList):GetAllSpawnList()
+  self._lockList:SpawnObjects("UICustomWidget", #hpLockSepList)
+  local lockGOList = self._lockList:GetAllSpawnList()
   for i = 1, #hpLockSepList do
     local sepPer = hpLockSepList[i]
     local offsetX = 0
-    if sepPer >= 50 then
+    if 50 <= sepPer then
       offsetX = (sepPer - 50) * hpMaxWidth / 100
     else
       offsetX = (50 - sepPer) * hpMaxWidth / 100 * -1
     end
-    local go = (lockGOList[i]):GetGameObject()
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (go.transform).localPosition = Vector3(offsetX, 0, 0)
+    local go = lockGOList[i]:GetGameObject()
+    go.transform.localPosition = Vector3(offsetX, 0, 0)
     local uiview = go:GetComponent("UIView")
-    ;
-    (uiview:GetGameObject("Lock")):SetActive(true)
-    ;
-    (uiview:GetGameObject("UnLock")):SetActive(false)
+    uiview:GetGameObject("Lock"):SetActive(true)
+    uiview:GetGameObject("UnLock"):SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC237: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.ChangeBossHpLock = function(self, index, state)
-  -- function num : 0_15
+function UIBattleChessHPInfo:ChangeBossHpLock(index, state)
   if self._lockList then
-    local lockGOList = (self._lockList):GetAllSpawnList()
+    local lockGOList = self._lockList:GetAllSpawnList()
     if lockGOList == nil or lockGOList[index] == nil then
-      return 
+      return
     end
-    local uiview = ((lockGOList[index]):GetGameObject()):GetComponent("UIView")
-    ;
-    (uiview:GetGameObject("Lock")):SetActive(state)
-    ;
-    (uiview:GetGameObject("UnLock")):SetActive(not state)
+    local uiview = lockGOList[index]:GetGameObject():GetComponent("UIView")
+    uiview:GetGameObject("Lock"):SetActive(state)
+    uiview:GetGameObject("UnLock"):SetActive(not state)
   end
 end
 
--- DECOMPILER ERROR at PC240: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.UpdateBossRedHp = function(self, redHpPercent, hpVal, maxHP)
-  -- function num : 0_16 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
+function UIBattleChessHPInfo:UpdateBossRedHp(redHpPercent, hpVal, maxHP)
   if maxHP <= BattleConst.HUDUI_ChessHPSecondBarThreshold then
-    ((self._hpBarGroup).sliderHP1).value = redHpPercent
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._hpBarGroup).sliderHP2).value = 0
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._hpBarGroup).sliderWhiteHP2).value = 0
+    self._hpBarGroup.sliderHP1.value = redHpPercent
+    self._hpBarGroup.sliderHP2.value = 0
+    self._hpBarGroup.sliderWhiteHP2.value = 0
   else
-    local value1 = (math.max)(0, (math.min)(BattleConst.HUDUI_ChessHPSecondBarThreshold, hpVal) / BattleConst.HUDUI_ChessHPSecondBarThreshold)
-    local value2 = (math.max)(0, (hpVal - BattleConst.HUDUI_ChessHPSecondBarThreshold) / BattleConst.HUDUI_ChessHPSecondBarThreshold)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._hpBarGroup).sliderHP1).value = value1
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._hpBarGroup).sliderHP2).value = value2
+    local value1 = math.max(0, math.min(BattleConst.HUDUI_ChessHPSecondBarThreshold, hpVal) / BattleConst.HUDUI_ChessHPSecondBarThreshold)
+    local value2 = math.max(0, (hpVal - BattleConst.HUDUI_ChessHPSecondBarThreshold) / BattleConst.HUDUI_ChessHPSecondBarThreshold)
+    self._hpBarGroup.sliderHP1.value = value1
+    self._hpBarGroup.sliderHP2.value = value2
   end
-  do
-    self:ShowChessHPScale(maxHP)
-  end
+  self:ShowChessHPScale(maxHP)
 end
 
--- DECOMPILER ERROR at PC243: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.UpdateBossShield = function(self, entityID, shieldValue, redhp, maxhp)
-  -- function num : 0_17 , upvalues : _ENV
+function UIBattleChessHPInfo:UpdateBossShield(entityID, shieldValue, redhp, maxhp)
   if not self._shieldImg then
-    return 
+    return
   end
   if entityID ~= self._pstId then
-    return 
+    return
   end
   if shieldValue == nil or shieldValue <= 0 then
-    ((self._shieldImg).gameObject):SetActive(false)
-    return 
+    self._shieldImg.gameObject:SetActive(false)
+    return
   end
-  ;
-  ((self._shieldImg).gameObject):SetActive(true)
-  local shieldRectTransform = (self._shieldImg).rectTransform
+  self._shieldImg.gameObject:SetActive(true)
+  local shieldRectTransform = self._shieldImg.rectTransform
   local greenRectTransform = self._sldRedHpRectTransform
-  local hpMaxWidth = ((self._sldRedHpRectTransform).rect).width
-  local hpMaxHeight = (shieldRectTransform.rect).height
+  local hpMaxWidth = self._sldRedHpRectTransform.rect.width
+  local hpMaxHeight = shieldRectTransform.rect.height
   local shieldPercent = shieldValue / maxhp
-  if shieldPercent > 1 then
+  if 1 < shieldPercent then
     shieldPercent = 1
   end
   local shieldWidth = shieldPercent * hpMaxWidth
@@ -422,324 +459,217 @@ UIBattleChessHPInfo.UpdateBossShield = function(self, entityID, shieldValue, red
   local hpPercent = redhp / maxhp
   local hpWidth = hpPercent * hpMaxWidth
   local hpAndShield = redhp + shieldValue
-  if hpAndShield < maxhp then
+  if maxhp > hpAndShield then
     local posX = -hpMaxWidth / 2 + hpWidth
     shieldRectTransform.localPosition = Vector3(posX, 0, 0)
   else
-    do
-      local posX = -hpMaxWidth / 2 + (hpMaxWidth - shieldWidth)
-      shieldRectTransform.localPosition = Vector3(posX, 0, 0)
-    end
+    local posX = -hpMaxWidth / 2 + (hpMaxWidth - shieldWidth)
+    shieldRectTransform.localPosition = Vector3(posX, 0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.UpdateBossElement = function(self, element, entityID)
-  -- function num : 0_18 , upvalues : _ENV
+function UIBattleChessHPInfo:UpdateBossElement(element, entityID)
   if entityID ~= self._pstId then
-    return 
+    return
   end
-  if not (Cfg.cfg_pet_element)[element] then
-    (Log.fatal)("元素属性不存在:  ", tostring(element), "entityID=", tostring(entityID))
-    return 
+  if not Cfg.cfg_pet_element[element] then
+    Log.fatal("元素属性不存在:  ", tostring(element), "entityID=", tostring(entityID))
+    return
   end
-  local spriteStr = ((Cfg.cfg_pet_element)[element]).Icon
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
+  local spriteStr = Cfg.cfg_pet_element[element].Icon
   if spriteStr then
-    (self._imgElement).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(spriteStr .. "_battle"))
-    ;
-    ((self._imgElement).gameObject):SetActive(true)
+    self._imgElement.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(spriteStr .. "_battle"))
+    self._imgElement.gameObject:SetActive(true)
   else
-    ;
-    ((self._imgElement).gameObject):SetActive(false)
+    self._imgElement.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC249: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.UpdateBossNameAndElement = function(self, tplId, hpBarType, entityID, matchPet, curElement)
-  -- function num : 0_19 , upvalues : _ENV
+function UIBattleChessHPInfo:UpdateBossNameAndElement(tplId, hpBarType, entityID, matchPet, curElement)
   if entityID ~= self._pstId then
-    return 
+    return
   end
   local name, elementType, icon = self:GetNameAndElement(tplId, hpBarType, matchPet)
   if curElement then
     elementType = curElement
   end
   local bossElement = 0
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._txtBossName).text = (StringTable.Get)(name)
-  local width = (self._txtBossName).preferredWidth
+  self._txtBossName.text = StringTable.Get(name)
+  local width = self._txtBossName.preferredWidth
   local rootWdth = 254
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._rtRect).sizeDelta = Vector2(width, 50)
-  ;
-  (self._revolvingText):OnRefreshRevolving()
+  self._rtRect.sizeDelta = Vector2(width, 50)
+  self._revolvingText:OnRefreshRevolving()
   self:UpdateBossElement(elementType, entityID)
-  ;
-  (self._imgIcon):LoadImage(icon)
+  self._imgIcon:LoadImage(icon)
   if self._uiBossHPBuffInfo and self._pstId then
-    (self._uiBossHPBuffInfo):SetBossData(self._pstId)
+    self._uiBossHPBuffInfo:SetBossData(self._pstId)
   end
-  ;
-  (self._uIBossHPEliteInfo):OnHide()
-  do
-    if self._uIBossHPEliteInfo and (hpBarType == HPBarType.EliteBoss or hpBarType == HPBarType.EliteMonster) then
-      local eliteIDArray = (BattleStatHelper.GetEliteIDArray)(entityID, tplId)
-      ;
-      (self._uIBossHPEliteInfo):OnSetData(eliteIDArray)
-    end
-    local harmReductionInstance = (InnerGameHelperRender.GetSingleBuffByBuffEffect)(self._pstId, BuffEffectType.HarmReduction)
-    ;
-    ((self._harmReductionRoot).gameObject):SetActive(harmReductionInstance ~= nil)
-    if self._bossLayoutGroup then
-      (UIHelper.RefreshLayout)((self._bossLayoutGroup):GetComponent("RectTransform"))
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._uIBossHPEliteInfo:OnHide()
+  if self._uIBossHPEliteInfo and (hpBarType == HPBarType.EliteBoss or hpBarType == HPBarType.EliteMonster) then
+    local eliteIDArray = BattleStatHelper.GetEliteIDArray(entityID, tplId)
+    self._uIBossHPEliteInfo:OnSetData(eliteIDArray)
+  end
+  local harmReductionInstance = InnerGameHelperRender.GetSingleBuffByBuffEffect(self._pstId, BuffEffectType.HarmReduction)
+  self._harmReductionRoot.gameObject:SetActive(harmReductionInstance ~= nil)
+  if self._bossLayoutGroup then
+    UIHelper.RefreshLayout(self._bossLayoutGroup:GetComponent("RectTransform"))
   end
 end
 
--- DECOMPILER ERROR at PC252: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.UpdateBossWhiteHp = function(self, whiteHpPercent, whiteHpVal, maxHP, isInit)
-  -- function num : 0_20 , upvalues : _ENV
+function UIBattleChessHPInfo:UpdateBossWhiteHp(whiteHpPercent, whiteHpVal, maxHP, isInit)
   if self._sequenceWhiteHP then
-    (self._sequenceWhiteHP):Complete()
+    self._sequenceWhiteHP:Complete()
     self._sequenceWhiteHP = nil
   end
   if maxHP <= BattleConst.HUDUI_ChessHPSecondBarThreshold then
-    local sliderWhite = (self._hpBarGroup).sliderWhiteHP1
-    if whiteHpPercent > 0 and whiteHpPercent < 0.01 then
+    local sliderWhite = self._hpBarGroup.sliderWhiteHP1
+    if 0 < whiteHpPercent and whiteHpPercent < 0.01 then
       whiteHpPercent = 0.01
     end
     if isInit then
       sliderWhite.value = whiteHpPercent
     else
-      ;
-      (self._sequenceWhiteHP):Append(((self._hpBarGroup).SliderWhiteHP1):DOValue(whiteHpPercent, 0.3))
+      self._sequenceWhiteHP:Append(self._hpBarGroup.SliderWhiteHP1:DOValue(whiteHpPercent, 0.3))
     end
   else
-    do
-      local value1 = (math.max)(0, (math.min)(BattleConst.HUDUI_ChessHPSecondBarThreshold, whiteHpVal) / BattleConst.HUDUI_ChessHPSecondBarThreshold)
-      do
-        local value2 = (math.max)(0, (whiteHpVal - BattleConst.HUDUI_ChessHPSecondBarThreshold) / BattleConst.HUDUI_ChessHPSecondBarThreshold)
-        -- DECOMPILER ERROR at PC59: Confused about usage of register: R7 in 'UnsetPending'
-
-        if isInit then
-          ((self._hpBarGroup).sliderWhiteHP1).value = value1
-          -- DECOMPILER ERROR at PC62: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          ((self._hpBarGroup).sliderWhiteHP2).value = value2
-        else
-          self._sequenceWhiteHP = (((DG.Tweening).DOTween).Sequence)()
-          ;
-          (self._sequenceWhiteHP):Append(((self._hpBarGroup).SliderWhiteHP2):DOValue(value2, 0.15))
-          ;
-          (self._sequenceWhiteHP):Append(((self._hpBarGroup).SliderWhiteHP1):DOValue(value1, 0.15))
-        end
-        self.whiteHpPercent = (math.floor)(whiteHpPercent * 100)
-        self:GreyName(whiteHpPercent)
-      end
+    local value1 = math.max(0, math.min(BattleConst.HUDUI_ChessHPSecondBarThreshold, whiteHpVal) / BattleConst.HUDUI_ChessHPSecondBarThreshold)
+    local value2 = math.max(0, (whiteHpVal - BattleConst.HUDUI_ChessHPSecondBarThreshold) / BattleConst.HUDUI_ChessHPSecondBarThreshold)
+    if isInit then
+      self._hpBarGroup.sliderWhiteHP1.value = value1
+      self._hpBarGroup.sliderWhiteHP2.value = value2
+    else
+      self._sequenceWhiteHP = DG.Tweening.DOTween.Sequence()
+      self._sequenceWhiteHP:Append(self._hpBarGroup.SliderWhiteHP2:DOValue(value2, 0.15))
+      self._sequenceWhiteHP:Append(self._hpBarGroup.SliderWhiteHP1:DOValue(value1, 0.15))
     end
   end
+  self.whiteHpPercent = math.floor(whiteHpPercent * 100)
+  self:GreyName(whiteHpPercent)
 end
 
--- DECOMPILER ERROR at PC255: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.UpdateBossHpPercent = function(self, entityID, percent, hp, maxHp, attack)
-  -- function num : 0_21 , upvalues : _ENV
+function UIBattleChessHPInfo:UpdateBossHpPercent(entityID, percent, hp, maxHp, attack)
   if entityID ~= self._pstId then
-    return 
+    return
   end
-  local match = (GameGlobal.GetModule)(MatchModule)
+  local match = GameGlobal.GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
-  ;
-  (self:GetGameObject("txtHpPercent")):SetActive(false)
+  self:GetGameObject("txtHpPercent"):SetActive(false)
   local chessGroup = self:GetGameObject("chessHPGroup")
   chessGroup:SetActive(true)
   local chessHPText = self:GetUIComponent("UILocalizationText", "chessHPText")
-  chessHPText:SetText((table.concat)({hp, " / ", maxHp}))
+  chessHPText:SetText(table.concat({
+    hp,
+    " / ",
+    maxHp
+  }))
   local chessAtkText = self:GetUIComponent("UILocalizationText", "chessAtkText")
   chessAtkText:SetText(attack)
 end
 
--- DECOMPILER ERROR at PC258: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.GetWhiteHpPercent = function(self)
-  -- function num : 0_22
+function UIBattleChessHPInfo:GetWhiteHpPercent()
   return self.whiteHpPercent
 end
 
--- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.GreyName = function(self, hpPercent)
-  -- function num : 0_23
+function UIBattleChessHPInfo:GreyName(hpPercent)
   if self._rawImage then
     if hpPercent <= 0 then
-      ((self._rawImage).material):SetFloat("_LuminosityAmount", 1)
+      self._rawImage.material:SetFloat("_LuminosityAmount", 1)
     else
-      ;
-      ((self._rawImage).material):SetFloat("_LuminosityAmount", 0)
+      self._rawImage.material:SetFloat("_LuminosityAmount", 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC264: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.buttonOpenBuffOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBattleChessHPInfo", input = "buttonOpenBuffOnClick", 
-args = {}
-})
-  local lst = (self.buffWindowRootPath):GetAllSpawnList()
-  if lst and (table.count)(lst) > 0 then
-    (lst[1]):Init(self._pstId, self._tplId, self._hpBarType)
+function UIBattleChessHPInfo:buttonOpenBuffOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBattleChessHPInfo",
+    input = "buttonOpenBuffOnClick",
+    args = {}
+  })
+  local lst = self.buffWindowRootPath:GetAllSpawnList()
+  if lst and table.count(lst) > 0 then
+    lst[1]:Init(self._pstId, self._tplId, self._hpBarType)
   end
 end
 
--- DECOMPILER ERROR at PC267: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.ChangeBossHPBuffButtonRayCast = function(self, state)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._buttonImage).raycastTarget = state
+function UIBattleChessHPInfo:ChangeBossHPBuffButtonRayCast(state)
+  self._buttonImage.raycastTarget = state
 end
 
--- DECOMPILER ERROR at PC270: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.SetRedHPImage = function(self, imageName)
-  -- function num : 0_26
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._imgFillRed).sprite = (self._uiAtlas):GetSprite(imageName)
+function UIBattleChessHPInfo:SetRedHPImage(imageName)
+  self._imgFillRed.sprite = self._uiAtlas:GetSprite(imageName)
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.SetYellowHPImage = function(self, imageName)
-  -- function num : 0_27
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._imgFillYellow).sprite = (self._uiAtlas):GetSprite(imageName)
+function UIBattleChessHPInfo:SetYellowHPImage(imageName)
+  self._imgFillYellow.sprite = self._uiAtlas:GetSprite(imageName)
 end
 
--- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.GetImageName = function(self, imageID)
-  -- function num : 0_28 , upvalues : _ENV
-  local cfg = (Cfg.cfg_world_boss_hp_image)[imageID]
+function UIBattleChessHPInfo:GetImageName(imageID)
+  local cfg = Cfg.cfg_world_boss_hp_image[imageID]
   if not cfg then
-    (Log.fatal)("ImageID :", imageID, "invalid not in cfg_world_boss_hp_image")
+    Log.fatal("ImageID :", imageID, "invalid not in cfg_world_boss_hp_image")
   end
   return cfg.ImageName
 end
 
--- DECOMPILER ERROR at PC279: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.InitWorldBossHP = function(self, t)
-  -- function num : 0_29
+function UIBattleChessHPInfo:InitWorldBossHP(t)
   local redHPImageID = t.worldBossCurImageID
   local yellowHPImageID = t.worldBossPreImageID
   local redImageName = self:GetImageName(redHPImageID)
   local yellowImageID = self:GetImageName(yellowHPImageID)
   self:SetRedHPImage(redImageName)
   self:SetYellowHPImage(yellowImageID)
-  ;
-  (self.sldYellowHpGO):SetActive(true)
-  ;
-  (self.worldBossGO):SetActive(true)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._sldYellowHp).value = 1
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._sldRedHp).value = 0
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._txtHpPercent).text = "0%"
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._sldWhiteHp).value = 0
-  ;
-  (self.sldWhiteHpGO):SetActive(false)
+  self.sldYellowHpGO:SetActive(true)
+  self.worldBossGO:SetActive(true)
+  self._sldYellowHp.value = 1
+  self._sldRedHp.value = 0
+  self._txtHpPercent.text = "0%"
+  self._sldWhiteHp.value = 0
+  self.sldWhiteHpGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC282: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.SwitchWorldBossHPStage = function(self, newRedImageID, newYellowImageID)
-  -- function num : 0_30 , upvalues : _ENV
+function UIBattleChessHPInfo:SwitchWorldBossHPStage(newRedImageID, newYellowImageID)
   local redImageName = self:GetImageName(newRedImageID)
   local yellowImageID = self:GetImageName(newYellowImageID)
-  ;
-  (Log.fatal)("RedImage:", redImageName, " YellowImage:", yellowImageID)
+  Log.fatal("RedImage:", redImageName, " YellowImage:", yellowImageID)
   self:SetRedHPImage(redImageName)
   self:SetYellowHPImage(yellowImageID)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._sldWhiteHp).value = 0
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._sldRedHp).value = 0
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._txtHpPercent).text = "0%"
+  self._sldWhiteHp.value = 0
+  self._sldRedHp.value = 0
+  self._txtHpPercent.text = "0%"
 end
 
--- DECOMPILER ERROR at PC285: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleChessHPInfo.UpdateWorldBossHP = function(self, pstID, changeInfoList, damage, stage)
-  -- function num : 0_31 , upvalues : _ENV
+function UIBattleChessHPInfo:UpdateWorldBossHP(pstID, changeInfoList, damage, stage)
   if pstID ~= self._pstId then
-    return 
+    return
   end
   self._totalDamageNum = self._totalDamageNum + damage
-  ;
-  (self._txtTotalDamageNum):SetText(tostring(self._totalDamageNum))
-  ;
-  (self._txtTotalDamageNumGray):SetText((UIActivityHelper.AddZeroFrontNum)(8, self._totalDamageNum))
-  ;
-  (self._txtCurStageNum):SetText("x" .. tostring(stage))
-  for index,info in ipairs(changeInfoList) do
+  self._txtTotalDamageNum:SetText(tostring(self._totalDamageNum))
+  self._txtTotalDamageNumGray:SetText(UIActivityHelper.AddZeroFrontNum(8, self._totalDamageNum))
+  self._txtCurStageNum:SetText("x" .. tostring(stage))
+  for index, info in ipairs(changeInfoList) do
     if info.redHP > 0 and info.redHP < 0.01 then
       info.redHP = 0.01
     end
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._sldRedHp).value = info.redHP
-    local percent = (math.floor)(info.redHP * 100)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._txtHpPercent).text = percent .. "%"
+    self._sldRedHp.value = info.redHP
+    local percent = math.floor(info.redHP * 100)
+    self._txtHpPercent.text = percent .. "%"
     if info.changeStage then
       self:SwitchWorldBossHPStage(info.redImageID, info.yellowImageID)
     end
   end
 end
 
-local enemyHPBarType = {[HPBarType.EliteMonster] = true, [HPBarType.NormalMonster] = true, [HPBarType.Boss] = true, [HPBarType.EliteBoss] = true}
--- DECOMPILER ERROR at PC301: Confused about usage of register: R2 in 'UnsetPending'
+local enemyHPBarType = {
+  [HPBarType.EliteMonster] = true,
+  [HPBarType.NormalMonster] = true,
+  [HPBarType.Boss] = true,
+  [HPBarType.EliteBoss] = true
+}
 
-UIBattleChessHPInfo.GetNameAndElement = function(self, tplId, type, matchPet, elementType)
-  -- function num : 0_32 , upvalues : enemyHPBarType, _ENV
+function UIBattleChessHPInfo:GetNameAndElement(tplId, type, matchPet, elementType)
   if enemyHPBarType[type] then
-    local monsterConfigData = (ConfigServiceHelper.GetMonsterConfigData)()
+    local monsterConfigData = ConfigServiceHelper.GetMonsterConfigData()
     local cfgMonsterObject = monsterConfigData:GetMonsterObject(tplId)
     local cfgMonsterClass = monsterConfigData:GetMonsterClass(tplId)
     if cfgMonsterObject then
@@ -748,26 +678,19 @@ UIBattleChessHPInfo.GetNameAndElement = function(self, tplId, type, matchPet, el
       local icon = cfgMonsterClass.HeadIcon
       return name, element, icon
     end
-  else
-    do
-      if type == HPBarType.ChessPet then
-        local cfgChessPet = (Cfg.cfg_chesspet)[tplId]
-        local element = cfgChessPet.ElementType
-        local cfgChessPetClass = (Cfg.cfg_chesspet_class)[cfgChessPet.ClassID]
-        local icon = cfgChessPetClass.HeadIcon
-        local name = cfgChessPetClass.Name
-        return name, element, icon
-      end
-    end
+  elseif type == HPBarType.ChessPet then
+    local cfgChessPet = Cfg.cfg_chesspet[tplId]
+    local element = cfgChessPet.ElementType
+    local cfgChessPetClass = Cfg.cfg_chesspet_class[cfgChessPet.ClassID]
+    local icon = cfgChessPetClass.HeadIcon
+    local name = cfgChessPetClass.Name
+    return name, element, icon
   end
 end
 
--- DECOMPILER ERROR at PC304: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBattleChessHPInfo.UpdateTeamHPChange = function(self, args)
-  -- function num : 0_33
+function UIBattleChessHPInfo:UpdateTeamHPChange(args)
   if args.isLocalTeam then
-    return 
+    return
   end
   local maxHP = args.maxHP
   local redHP = args.currentHP / maxHP
@@ -782,47 +705,34 @@ UIBattleChessHPInfo.UpdateTeamHPChange = function(self, args)
   self:UpdateBossShield(entityID, shieldValue, args.currentHP, maxHP)
 end
 
--- DECOMPILER ERROR at PC307: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBattleChessHPInfo.ShowChessHPScale = function(self, maxHP)
-  -- function num : 0_34
-  local scaleRuler1 = (self._hpBarGroup).scaleHP1
-  local scaleRuler2 = (self._hpBarGroup).scaleHP2
-  local hpMaxWidth = (((self:GetGameObject("Fill Area")).transform).rect).width
+function UIBattleChessHPInfo:ShowChessHPScale(maxHP)
+  local scaleRuler1 = self._hpBarGroup.scaleHP1
+  local scaleRuler2 = self._hpBarGroup.scaleHP2
+  local hpMaxWidth = self:GetGameObject("Fill Area").transform.rect.width
   if maxHP <= 50 then
     local tScaleMark1 = scaleRuler1:SpawnObjects("UICustomWidget", maxHP - 1)
     self:_FixScaleMarkers(tScaleMark1, hpMaxWidth, maxHP)
   else
-    do
-      local tScaleMark1 = scaleRuler1:SpawnObjects("UICustomWidget", 49)
-      self:_FixScaleMarkers(tScaleMark1, hpMaxWidth, 50)
-      local tScaleMark2 = scaleRuler2:SpawnObjects("UICustomWidget", 49)
-      self:_FixScaleMarkers(tScaleMark2, hpMaxWidth, 50)
-    end
+    local tScaleMark1 = scaleRuler1:SpawnObjects("UICustomWidget", 49)
+    self:_FixScaleMarkers(tScaleMark1, hpMaxWidth, 50)
+    local tScaleMark2 = scaleRuler2:SpawnObjects("UICustomWidget", 49)
+    self:_FixScaleMarkers(tScaleMark2, hpMaxWidth, 50)
   end
 end
 
-local fixScaleMarkers = function(self, tScaleMark, maxWidth, maxHP)
-  -- function num : 0_35 , upvalues : _ENV
+local function fixScaleMarkers(self, tScaleMark, maxWidth, maxHP)
   local halfHPMaxWidth = 0.5 * maxWidth
   local offset = maxWidth / maxHP
   for i = 1, #tScaleMark do
     local offsetX = i * offset - halfHPMaxWidth
-    local go = (tScaleMark[i]):GetGameObject()
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (go.transform).localPosition = Vector3(offsetX, 0, 0)
+    local go = tScaleMark[i]:GetGameObject()
+    go.transform.localPosition = Vector3(offsetX, 0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC310: Confused about usage of register: R3 in 'UnsetPending'
-
 UIBattleChessHPInfo._FixScaleMarkers = fixScaleMarkers
--- DECOMPILER ERROR at PC313: Confused about usage of register: R3 in 'UnsetPending'
 
-UIBattleChessHPInfo.InitializeHPBarGroup = function(self, hpBarType)
-  -- function num : 0_36 , upvalues : _ENV
+function UIBattleChessHPInfo:InitializeHPBarGroup(hpBarType)
   local t = {}
   if hpBarType == HPBarType.ChessPet then
     t.sliderHP1 = self._sldGreenHp1
@@ -843,44 +753,24 @@ UIBattleChessHPInfo.InitializeHPBarGroup = function(self, hpBarType)
   return t
 end
 
--- DECOMPILER ERROR at PC316: Confused about usage of register: R3 in 'UnsetPending'
-
-UIBattleChessHPInfo.SetHPBarActive = function(self, hpBarType)
-  -- function num : 0_37 , upvalues : _ENV
+function UIBattleChessHPInfo:SetHPBarActive(hpBarType)
   if hpBarType == HPBarType.ChessPet then
-    ((self._sldGreenHp1).gameObject):SetActive(true)
-    ;
-    ((self._sldGreenHp2).gameObject):SetActive(true)
-    ;
-    ((self._sldWhiteHpForGreen).gameObject):SetActive(true)
-    ;
-    ((self._sldWhiteHpForGreen2).gameObject):SetActive(true)
-    ;
-    ((self._sldRedHp).gameObject):SetActive(false)
-    ;
-    ((self._sldRedHp2).gameObject):SetActive(false)
-    ;
-    ((self._sldWhiteHp).gameObject):SetActive(false)
-    ;
-    ((self._sldWhiteHpForRed2).gameObject):SetActive(false)
+    self._sldGreenHp1.gameObject:SetActive(true)
+    self._sldGreenHp2.gameObject:SetActive(true)
+    self._sldWhiteHpForGreen.gameObject:SetActive(true)
+    self._sldWhiteHpForGreen2.gameObject:SetActive(true)
+    self._sldRedHp.gameObject:SetActive(false)
+    self._sldRedHp2.gameObject:SetActive(false)
+    self._sldWhiteHp.gameObject:SetActive(false)
+    self._sldWhiteHpForRed2.gameObject:SetActive(false)
   else
-    ;
-    ((self._sldGreenHp1).gameObject):SetActive(false)
-    ;
-    ((self._sldGreenHp2).gameObject):SetActive(false)
-    ;
-    ((self._sldWhiteHpForGreen).gameObject):SetActive(false)
-    ;
-    ((self._sldWhiteHpForGreen2).gameObject):SetActive(false)
-    ;
-    ((self._sldRedHp).gameObject):SetActive(true)
-    ;
-    ((self._sldRedHp2).gameObject):SetActive(true)
-    ;
-    ((self._sldWhiteHp).gameObject):SetActive(true)
-    ;
-    ((self._sldWhiteHpForRed2).gameObject):SetActive(true)
+    self._sldGreenHp1.gameObject:SetActive(false)
+    self._sldGreenHp2.gameObject:SetActive(false)
+    self._sldWhiteHpForGreen.gameObject:SetActive(false)
+    self._sldWhiteHpForGreen2.gameObject:SetActive(false)
+    self._sldRedHp.gameObject:SetActive(true)
+    self._sldRedHp2.gameObject:SetActive(true)
+    self._sldWhiteHp.gameObject:SetActive(true)
+    self._sldWhiteHpForRed2.gameObject:SetActive(true)
   end
 end
-
-

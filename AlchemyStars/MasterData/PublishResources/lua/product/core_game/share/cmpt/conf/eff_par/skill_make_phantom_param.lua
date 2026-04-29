@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_make_phantom_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillMakePhantomParam", SkillEffectParamBase)
 SkillMakePhantomParam = SkillMakePhantomParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillMakePhantomParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillMakePhantomParam:Constructor(t)
   self._atkPercent = t.atk
   self._targetID = t.targetID
   self._hpPercent = t.hp or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillMakePhantomParam:GetEffectType()
   return SkillEffectType.MakePhantom
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomParam.GetHPPercent = function(self)
-  -- function num : 0_2
+function SkillMakePhantomParam:GetHPPercent()
   return self._hpPercent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillMakePhantomParam.GetTargetID = function(self)
-  -- function num : 0_3
+function SkillMakePhantomParam:GetTargetID()
   return self._targetID
 end
-
-

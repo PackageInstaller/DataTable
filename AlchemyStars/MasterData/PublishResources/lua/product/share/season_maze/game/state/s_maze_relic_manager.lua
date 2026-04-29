@@ -1,57 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/state/s_maze_relic_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeRelicManager", Object)
 SMazeRelicManager = SMazeRelicManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeRelicManager.Constructor = function(self, mn)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeRelicManager:Constructor(mn)
   self._manager = mn
   self._relicList = {}
-  self._module = (GameGlobal.GetModule)(SeasonMazeModule)
+  self._module = GameGlobal.GetModule(SeasonMazeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeRelicManager.Init = function(self, mazeID)
-  -- function num : 0_1
+function SMazeRelicManager:Init(mazeID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeRelicManager.Dispose = function(self)
-  -- function num : 0_2
+function SMazeRelicManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeRelicManager.CheckRelicEft = function(self, attId, reason, oldValue, newValue)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Unhandled construct in 'MakeBoolean' P1
-
-  if attId == SeasonMazeAttrType.SMAT_Gold_Round_Add and oldValue < newValue then
-    local efts = (self._module):GetAttrsByReason(SeasonMazeRewardReason.SMRR_GAINUPADDGOLD)
-    if efts then
-      for key,value in pairs(efts) do
-        local eft = SeasonMazeEffect:New()
-        eft.type = SeasonMazeEffectType.SMET_Pro
-        eft.id = key
-        eft.value_min = value
-        eft.value_max = value
-        ;
-        ((self._manager):GetCurState()):AddRelicEft(eft)
-        ;
-        (Log.info)("[SMazeClient] 收货值提高获得了金币:", value)
+function SMazeRelicManager:CheckRelicEft(attId, reason, oldValue, newValue)
+  if attId == SeasonMazeAttrType.SMAT_Gold_Round_Add then
+    if oldValue < newValue then
+      local efts = self._module:GetAttrsByReason(SeasonMazeRewardReason.SMRR_GAINUPADDGOLD)
+      if efts then
+        for key, value in pairs(efts) do
+          local eft = SeasonMazeEffect:New()
+          eft.type = SeasonMazeEffectType.SMET_Pro
+          eft.id = key
+          eft.value_min = value
+          eft.value_max = value
+          self._manager:GetCurState():AddRelicEft(eft)
+          Log.info("[SMazeClient] 收货值提高获得了金币:", value)
+        end
       end
     end
-  end
-  do
-    if reason == SeasonMazeRewardReason.SMRR_UpLv then
-    end
+  elseif reason == SeasonMazeRewardReason.SMRR_UpLv then
   end
 end
-
-

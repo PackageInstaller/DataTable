@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_enter_build/ui_aircraft_pet_work_skill_prefab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftPetWorkSkillPrefab", UICustomWidget)
 UIAircraftPetWorkSkillPrefab = UIAircraftPetWorkSkillPrefab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftPetWorkSkillPrefab.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAircraftPetWorkSkillPrefab:OnShow(uiParams)
   self._icon = self:GetUIComponent("RawImageLoader", "RawImage")
   self._mask = self:GetGameObject("mask")
   self._lock = self:GetGameObject("lock")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftPetWorkSkillPrefab.SetData = function(self, index, skillCls, roomType)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg_work_skill = (Cfg.cfg_work_skill)[skillCls.ID]
+function UIAircraftPetWorkSkillPrefab:SetData(index, skillCls, roomType)
+  local cfg_work_skill = Cfg.cfg_work_skill[skillCls.ID]
   if cfg_work_skill then
-    (self._icon):LoadImage(cfg_work_skill.Icon)
-    ;
-    (self._mask):SetActive(cfg_work_skill.RoomType ~= roomType)
-    ;
-    (self._lock):SetActive(skillCls.isLock)
+    self._icon:LoadImage(cfg_work_skill.Icon)
+    self._mask:SetActive(cfg_work_skill.RoomType ~= roomType)
+    self._lock:SetActive(skillCls.isLock)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

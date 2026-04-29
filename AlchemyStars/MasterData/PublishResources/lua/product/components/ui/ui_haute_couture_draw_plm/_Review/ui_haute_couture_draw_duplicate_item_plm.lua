@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/_Review/ui_haute_couture_draw_duplicate_item_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDuplicateItemPLM", UIHauteCoutureDuplicateItem)
 UIHauteCoutureDuplicateItemPLM = UIHauteCoutureDuplicateItemPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDuplicateItemPLM.SetBg = function(self, cfg)
-  -- function num : 0_0
+function UIHauteCoutureDuplicateItemPLM:SetBg(cfg)
   if cfg.UIType == 1 then
-    (self.bg):LoadImage("plmsenior_rule_di03")
+    self.bg:LoadImage("plmsenior_rule_di03")
+  elseif cfg.UIType == 2 or cfg.UIType == 3 then
+    self.bg:LoadImage("plmsenior_rule_di07")
   else
-    if cfg.UIType == 2 or cfg.UIType == 3 then
-      (self.bg):LoadImage("plmsenior_rule_di07")
-    else
-      ;
-      (self.bg):LoadImage("plmsenior_rule_di04")
-    end
+    self.bg:LoadImage("plmsenior_rule_di04")
   end
 end
-
-

@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_play_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPlayEffect", BuffLogicBase)
 BuffLogicPlayEffect = BuffLogicPlayEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPlayEffect.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPlayEffect:Constructor(buffInstance, logicParam)
   self._effectID = logicParam.effectID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPlayEffect.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicPlayEffect:DoLogic()
   local buffResult = BuffResultPlayEffect:New(self._effectID)
   return buffResult
 end
-
-

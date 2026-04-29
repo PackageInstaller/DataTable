@@ -1,88 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_setting_language_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISettingLanguageItem", UICustomWidget)
 UISettingLanguageItem = UISettingLanguageItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISettingLanguageItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISettingLanguageItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISettingLanguageItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISettingLanguageItem:InitWidget()
   self.image = self:GetUIComponent("Image", "Image")
   self.btn = self:GetUIComponent("Button", "btn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISettingLanguageItem.SetData = function(self, cfg, languageType, sprite)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self.image).sprite = sprite
+function UISettingLanguageItem:SetData(cfg, languageType, sprite)
+  self.image.sprite = sprite
   self._type = languageType
   self._cfg = cfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISettingLanguageItem.Refresh = function(self, curLanguage)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function UISettingLanguageItem:Refresh(curLanguage)
   if self._type == curLanguage then
-    (self.btn).interactable = false
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.image).color = Color.black
+    self.btn.interactable = false
+    self.image.color = Color.black
     self._isCur = true
   else
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.btn).interactable = true
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.image).color = Color.white
+    self.btn.interactable = true
+    self.image.color = Color.white
     self._isCur = false
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISettingLanguageItem.itemOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISettingLanguageItem:itemOnClick(go)
   if self._isCur then
-    return 
+    return
   end
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_set_change_language_to", (StringTable.Get)((self._cfg).Text)), function(param)
-    -- function num : 0_4_0 , upvalues : self, _ENV
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_set_change_language_to", StringTable.Get(self._cfg.Text)), function(param)
     self:Lock("切换语言后锁定UI,不允许解锁")
-    ;
-    (Localization.SetLocalLanguage)(self._type)
-    ;
-    (Log.debug)("切换语言为:", (self._cfg).ID)
+    Localization.SetLocalLanguage(self._type)
+    Log.debug("切换语言为:", self._cfg.ID)
     if EDITOR then
-      (ToastManager.ShowToast)("编辑器中需要手动重启游戏")
+      ToastManager.ShowToast("编辑器中需要手动重启游戏")
     else
-      ;
-      ((UnityEngine.Application).Quit)()
+      UnityEngine.Application.Quit()
     end
-  end
-, nil, function(param)
-    -- function num : 0_4_1
-  end
-, nil)
+  end, nil, function(param)
+  end, nil)
 end
-
-

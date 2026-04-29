@@ -1,107 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/loading_manager/loading_net_event_proxy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local LoadingTargetResult = {None = 0, Success = 1, Fail = 2}
+local LoadingTargetResult = {
+  None = 0,
+  Success = 1,
+  Fail = 2
+}
 _enum("LoadingTargetResult", LoadingTargetResult)
 _class("LoadingNetEventProxy", Object)
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-LoadingNetEventProxy.Constructor = function(self)
-  -- function num : 0_0 , upvalues : LoadingTargetResult, _ENV
+function LoadingNetEventProxy:Constructor()
   self.loadingTargetResult = LoadingTargetResult.None
   self.matchStart = false
-  ;
-  (Log.debug)("LoadingNetEventProxy:Constructor ")
-  self.autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
-  ;
-  (self.autoBinder):BindEvent(GameEventType.MatchStart, self, self.HandleMatchStartMsg)
-  ;
-  (self.autoBinder):BindEvent(GameEventType.LoadingProgressChanged, self, self.HandleLoadingProgressChanged)
+  Log.debug("LoadingNetEventProxy:Constructor ")
+  self.autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
+  self.autoBinder:BindEvent(GameEventType.MatchStart, self, self.HandleMatchStartMsg)
+  self.autoBinder:BindEvent(GameEventType.LoadingProgressChanged, self, self.HandleLoadingProgressChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-LoadingNetEventProxy.Remove = function(self)
-  -- function num : 0_1 , upvalues : LoadingTargetResult, _ENV
+function LoadingNetEventProxy:Remove()
   self.loadingTargetResult = LoadingTargetResult.None
   self.matchStart = false
-  ;
-  (Log.debug)("LoadingNetEventProxy:Remove RemoveCallbackListener")
-  ;
-  (self.autoBinder):UnBindAllEvents()
+  Log.debug("LoadingNetEventProxy:Remove RemoveCallbackListener")
+  self.autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-LoadingNetEventProxy.GetLoadingTargetResult = function(self)
-  -- function num : 0_2
+function LoadingNetEventProxy:GetLoadingTargetResult()
   return self.loadingTargetResult
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-LoadingNetEventProxy.IsMatchStart = function(self)
-  -- function num : 0_3
+function LoadingNetEventProxy:IsMatchStart()
   return self.matchStart
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-LoadingNetEventProxy.StartEnterMatch = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function LoadingNetEventProxy:StartEnterMatch()
   self:StartTask(LoadingNetEventProxy.StartEnterMatchTask, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-LoadingNetEventProxy.StartEnterMatchTask = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV, LoadingTargetResult
+function LoadingNetEventProxy:StartEnterMatchTask(TT)
   local loginModule = self:GetModule(LoginModule)
   local gameMatchModule = self:GetModule(GameMatchModule)
   local matchModule = self:GetModule(MatchModule)
   local res = matchModule:EnterMatch(TT, loginModule.PstID, gameMatchModule.match_token)
   if not res:GetSucc() then
-    (Log.fatal)("LoadingNetEventProxy:StartEnterMatchTask 进入对局失败，错误码 ", res:GetResult())
+    Log.fatal("LoadingNetEventProxy:StartEnterMatchTask 进入对局失败，错误码 ", res:GetResult())
     self.loadingTargetResult = LoadingTargetResult.Fail
-    return 
+    return
   end
-  ;
-  (Log.debug)("LoadingNetEventProxy:StartEnterMatchTask 进入对局成功")
+  Log.debug("LoadingNetEventProxy:StartEnterMatchTask 进入对局成功")
   self.loadingTargetResult = LoadingTargetResult.Success
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-LoadingNetEventProxy.HandleMatchStartMsg = function(self)
-  -- function num : 0_6
+function LoadingNetEventProxy:HandleMatchStartMsg()
   self.matchStart = true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-LoadingNetEventProxy.HandleLoadingProgressChanged = function(self, progress)
-  -- function num : 0_7 , upvalues : _ENV
+function LoadingNetEventProxy:HandleLoadingProgressChanged(progress)
   if progress == nil then
-    return 
+    return
   end
   local matchModule = self:GetModule(MatchModule)
   matchModule:Loading(progress)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-LoadingNetEventProxy.StartTask = function(self, func, ...)
-  -- function num : 0_8 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(func, ...)
+function LoadingNetEventProxy:StartTask(func, ...)
+  TaskManager:GetInstance():StartTask(func, ...)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-LoadingNetEventProxy.GetModule = function(self, gameModuleProto)
-  -- function num : 0_9 , upvalues : _ENV
-  return (GameGlobal.GetModule)(gameModuleProto)
+function LoadingNetEventProxy:GetModule(gameModuleProto)
+  return GameGlobal.GetModule(gameModuleProto)
 end
-
-

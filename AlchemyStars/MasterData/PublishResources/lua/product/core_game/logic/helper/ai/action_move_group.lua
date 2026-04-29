@@ -1,35 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveGroup", ActionMoveBase)
 ActionMoveGroup = ActionMoveGroup
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveGroup.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionMoveGroup:Constructor()
   self.m_nextPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
-  ;
-  (self.m_nextPosList):AllowDuplicate()
+  self.m_nextPosList:AllowDuplicate()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroup.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveGroup.super).Reset)(self)
-  ;
-  (self.m_nextPosList):Clear()
+function ActionMoveGroup:Reset()
+  ActionMoveGroup.super.Reset(self)
+  self.m_nextPosList:Clear()
   self:GetAllGroupMonster()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroup.CheckCanMove = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,monster in ipairs(self._sameGroupMonsterList) do
+function ActionMoveGroup:CheckCanMove()
+  for _, monster in ipairs(self._sameGroupMonsterList) do
     local aiCmpt = monster:AI()
     if not aiCmpt:CanMove() then
       return false
@@ -38,17 +23,14 @@ ActionMoveGroup.CheckCanMove = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroup.FindGroupMoveEntity = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local maxGroupMoveMonsterEntity = nil
+function ActionMoveGroup:FindGroupMoveEntity()
+  local maxGroupMoveMonsterEntity
   local maxGroupMoveCount = 0
-  local aiRecorderCmpt = ((self._world):GetBoardEntity()):AIRecorder()
+  local aiRecorderCmpt = self._world:GetBoardEntity():AIRecorder()
   local isSameStep = true
   local firstStep = -1
   local noMoveCount = 0
-  for _,monster in ipairs(self._sameGroupMonsterList) do
+  for _, monster in ipairs(self._sameGroupMonsterList) do
     local collection = aiRecorderCmpt:FindWalkResultByCasterID(monster:GetID())
     if collection then
       if maxGroupMoveCount < #collection:GetWalkResultList() then
@@ -57,113 +39,92 @@ ActionMoveGroup.FindGroupMoveEntity = function(self)
       end
       if firstStep == -1 then
         firstStep = #collection:GetWalkResultList()
-      else
-        if firstStep ~= #collection:GetWalkResultList() then
-          (Log.fatal)("全都动过,有一个多走一格")
-          isSameStep = false
-        end
+      elseif firstStep ~= #collection:GetWalkResultList() then
+        Log.fatal("全都动过,有一个多走一格")
+        isSameStep = false
       end
     else
       noMoveCount = noMoveCount + 1
     end
   end
   if isSameStep and noMoveCount ~= 0 and noMoveCount ~= #self._sameGroupMonsterList then
-    (Log.fatal)("有动过有没动")
+    Log.fatal("有动过有没动")
     isSameStep = false
   end
   if isSameStep then
-    return 
+    return
   end
   return maxGroupMoveMonsterEntity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroup.BeforeCalcMovePos = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local sBoard = (self._world):GetService("BoardLogic")
-  for _,monster in ipairs(self._sameGroupMonsterList) do
-    if monster:GetID() ~= (self.m_entityOwn):GetID() then
+function ActionMoveGroup:BeforeCalcMovePos()
+  local sBoard = self._world:GetService("BoardLogic")
+  for _, monster in ipairs(self._sameGroupMonsterList) do
+    if monster:GetID() ~= self.m_entityOwn:GetID() then
       sBoard:RemoveEntityBlockFlag(monster, monster:GetGridPosition())
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroup.AfterCalcMovePos = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local sBoard = (self._world):GetService("BoardLogic")
-  for _,monster in ipairs(self._sameGroupMonsterList) do
-    if monster:GetID() ~= (self.m_entityOwn):GetID() then
+function ActionMoveGroup:AfterCalcMovePos()
+  local sBoard = self._world:GetService("BoardLogic")
+  for _, monster in ipairs(self._sameGroupMonsterList) do
+    if monster:GetID() ~= self.m_entityOwn:GetID() then
       sBoard:SetEntityBlockFlag(monster, monster:GetGridPosition())
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroup.GetFakeBodyArea = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local bodyArea = {Vector2(0, 0)}
-  local posSelf = ((self.m_entityOwn):GridLocation()).Position
-  for i,monster in ipairs(self._sameGroupMonsterList) do
-    if monster:GetID() ~= (self.m_entityOwn):GetID() then
+function ActionMoveGroup:GetFakeBodyArea()
+  local bodyArea = {
+    Vector2(0, 0)
+  }
+  local posSelf = self.m_entityOwn:GridLocation().Position
+  for i, monster in ipairs(self._sameGroupMonsterList) do
+    if monster:GetID() ~= self.m_entityOwn:GetID() then
       local offset = monster:GetGridPosition() - posSelf
-      ;
-      (table.insert)(bodyArea, offset)
+      table.insert(bodyArea, offset)
     end
   end
   return bodyArea
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroup.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_7 , upvalues : _ENV
+function ActionMoveGroup:InitTargetPosList(listPosTarget)
   self:BeforeCalcMovePos()
-  local posSelf = (self.m_entityOwn):GetGridPosition()
+  local posSelf = self.m_entityOwn:GetGridPosition()
   local nSkillID = self:GetLogicData(1)
   local cSkillID = self:GetLogicData(-1)
   if cSkillID then
     nSkillID = cSkillID
   end
-  local selfBodyArea = ((self.m_entityOwn):BodyArea()):GetArea()
+  local selfBodyArea = self.m_entityOwn:BodyArea():GetArea()
   if nSkillID <= 0 then
-    return 
+    return
   end
   local range = {}
-  ;
-  (self.m_nextPosList):Clear()
-  for _,targetPos in ipairs(listPosTarget) do
+  self.m_nextPosList:Clear()
+  for _, targetPos in ipairs(listPosTarget) do
     local walkRange = self:_ComputeSkillRange(nSkillID, targetPos, selfBodyArea)
     for i = 1, #walkRange do
       local posWork = walkRange[i]
       if self:IsPosAccessible(posWork) then
-        range[#range + 1] = (Vector2.Pos2Index)(posWork)
-        ;
-        (AINewNode.InsertSortedArray)(self.m_nextPosList, posSelf, posWork, i)
+        range[#range + 1] = Vector2.Pos2Index(posWork)
+        AINewNode.InsertSortedArray(self.m_nextPosList, posSelf, posWork, i)
       end
     end
   end
   self:AfterCalcMovePos()
-  self:PrintDebugLog("MoveRange=", (table.concat)(range, " "))
+  self:PrintDebugLog("MoveRange=", table.concat(range, " "))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroup.FindNewTargetPos = function(self)
-  -- function num : 0_8
-  local posDefault = ((self.m_entityOwn):AI()):GetTargetPos()
+function ActionMoveGroup:FindNewTargetPos()
+  local posDefault = self.m_entityOwn:AI():GetTargetPos()
   return self:FindPosValid(self.m_nextPosList, posDefault)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveGroup._CalcMovePos = function(self, entityWork)
-  -- function num : 0_9 , upvalues : _ENV
+function ActionMoveGroup:_CalcMovePos(entityWork)
   local aiComponent = entityWork:AI()
-  local posSelf = (entityWork:GridLocation()).Position
+  local posSelf = entityWork:GridLocation().Position
   local sameGroupMoveEntity = self:FindGroupMoveEntity()
   if sameGroupMoveEntity then
     local groupMoveEntityAICmpt = sameGroupMoveEntity:AI()
@@ -173,36 +134,28 @@ ActionMoveGroup._CalcMovePos = function(self, entityWork)
     local posWalk = groupMoveEntityCurPos - offset
     self:PrintLog("同组怪物移动过 Pos=", self:_MakePosString(groupMoveEntityCurPos), "Offset:", self:_MakePosString(offset), "  ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
     self:PrintDebugLog("同组怪物移动过 Pos=", self:_MakePosString(groupMoveEntityCurPos), "Offset:", self:_MakePosString(offset), "  ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
-    ;
-    (Log.fatal)("MonsterID:", entityWork:GetID(), " GroupID:", self:GetMonsterGroupID(), "同组怪物移动过 Pos=", self:_MakePosString(groupMoveEntityCurPos), "Offset:", self:_MakePosString(offset), "  ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
+    Log.fatal("MonsterID:", entityWork:GetID(), " GroupID:", self:GetMonsterGroupID(), "同组怪物移动过 Pos=", self:_MakePosString(groupMoveEntityCurPos), "Offset:", self:_MakePosString(offset), "  ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
     return posWalk
   else
-    do
-      local posTarget = self:FindNewTargetPos()
-      self.m_posTarget = posTarget
-      if posSelf == posTarget then
-        self:PrintLog("不需要移动，当前就是目标坐标", self:_MakePosString(posSelf))
-        self:PrintDebugLog("不需要移动，当前就是目标坐标", self:_MakePosString(posSelf))
-        ;
-        (Log.fatal)("MonsterID:", entityWork:GetID(), " GroupID:", self:GetMonsterGroupID(), "不需要移动，当前就是目标坐标", self:_MakePosString(posSelf))
-        return nil
-      end
-      local nWalkTotal = aiComponent:GetMobilityValid()
-      local posWalkList = self:ComputeWalkRange(posSelf, nWalkTotal, true)
-      local posWalk = self:FindNewWalkPos(posWalkList, posTarget, posSelf)
-      if posWalk and posWalk == posSelf then
-        self:PrintLog("不需要移动 ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
-        self:PrintDebugLog("不需要移动 ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
-        ;
-        (Log.fatal)("MonsterID:", entityWork:GetID(), " GroupID:", self:GetMonsterGroupID(), "不需要移动 ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
-        return nil
-      end
-      self:PrintDebugLog("移动到", self:_MakePosString(posWalk))
-      ;
-      (Log.fatal)("MonsterID:", entityWork:GetID(), " GroupID:", self:GetMonsterGroupID(), "移动到", self:_MakePosString(posWalk))
-      do return posWalk end
+    local posTarget = self:FindNewTargetPos()
+    self.m_posTarget = posTarget
+    if posSelf == posTarget then
+      self:PrintLog("不需要移动，当前就是目标坐标", self:_MakePosString(posSelf))
+      self:PrintDebugLog("不需要移动，当前就是目标坐标", self:_MakePosString(posSelf))
+      Log.fatal("MonsterID:", entityWork:GetID(), " GroupID:", self:GetMonsterGroupID(), "不需要移动，当前就是目标坐标", self:_MakePosString(posSelf))
+      return nil
     end
+    local nWalkTotal = aiComponent:GetMobilityValid()
+    local posWalkList = self:ComputeWalkRange(posSelf, nWalkTotal, true)
+    local posWalk = self:FindNewWalkPos(posWalkList, posTarget, posSelf)
+    if posWalk and posWalk == posSelf then
+      self:PrintLog("不需要移动 ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
+      self:PrintDebugLog("不需要移动 ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
+      Log.fatal("MonsterID:", entityWork:GetID(), " GroupID:", self:GetMonsterGroupID(), "不需要移动 ", self:_MakePosString(posSelf), ">===>", self:_MakePosString(posWalk))
+      return nil
+    end
+    self:PrintDebugLog("移动到", self:_MakePosString(posWalk))
+    Log.fatal("MonsterID:", entityWork:GetID(), " GroupID:", self:GetMonsterGroupID(), "移动到", self:_MakePosString(posWalk))
+    return posWalk
   end
 end
-
-

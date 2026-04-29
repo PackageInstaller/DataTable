@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_stage_score_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN17N46FishingScoreItem", UICustomWidget)
 UICN17N46FishingScoreItem = UICN17N46FishingScoreItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingScoreItem.Constructor = function(self)
-  -- function num : 0_0
+function UICN17N46FishingScoreItem:Constructor()
   self._rewards = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingScoreItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN17N46FishingScoreItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingScoreItem.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN17N46FishingScoreItem:InitWidget()
   self.score = self:GetUIComponent("UILocalizationText", "score")
   self._receiveBtn = self:GetUIComponent("Image", "receiveBtn")
   self._reward = self:GetUIComponent("UISelectObjectPath", "Reward")
@@ -33,126 +20,64 @@ UICN17N46FishingScoreItem.InitWidget = function(self)
   self._receiveBtnGo = self:GetGameObject("uieff_receiveBtn")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingScoreItem.ReceiveBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN17N46FishingScoreItem:ReceiveBtnOnClick()
   if self.rewardState == FishingGameRewardState.NotReceive then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN14FishingGameRewardItemReceived, self.socreType)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN14FishingGameRewardItemReceived, self.socreType)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingScoreItem.RefreshRewards = function(self, scoretype, mission_info, cfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN17N46FishingScoreItem:RefreshRewards(scoretype, mission_info, cfg)
   self.socreType = scoretype
-  local rewards = nil
+  local rewards
   self._current_stage_cfg = cfg
   if scoretype == ScoreType.B then
-    rewards = (self._current_stage_cfg).ScoreBReward
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.score).text = (cfg.Score)[1]
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._scoreTypeText).text = "B"
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._scoreOutLine).effectColor = Color(0.23921568627451, 0.86666666666667, 1)
-  else
-    if scoretype == ScoreType.A then
-      rewards = (self._current_stage_cfg).ScoreAReward
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self.score).text = (cfg.Score)[2]
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._scoreTypeText).text = "A"
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._scoreOutLine).effectColor = Color(1, 0.49019607843137, 0.23921568627451)
-    else
-      if scoretype == ScoreType.S then
-        rewards = (self._current_stage_cfg).ScoreSReward
-        -- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self.score).text = (cfg.Score)[3]
-        -- DECOMPILER ERROR at PC54: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._scoreTypeText).text = "S"
-        -- DECOMPILER ERROR at PC61: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._scoreOutLine).effectColor = Color(1, 1, 0.23921568627451)
-      end
-    end
+    rewards = self._current_stage_cfg.ScoreBReward
+    self.score.text = cfg.Score[1]
+    self._scoreTypeText.text = "B"
+    self._scoreOutLine.effectColor = Color(0.23921568627450981, 0.8666666666666667, 1.0)
+  elseif scoretype == ScoreType.A then
+    rewards = self._current_stage_cfg.ScoreAReward
+    self.score.text = cfg.Score[2]
+    self._scoreTypeText.text = "A"
+    self._scoreOutLine.effectColor = Color(1.0, 0.49019607843137253, 0.23921568627450981)
+  elseif scoretype == ScoreType.S then
+    rewards = self._current_stage_cfg.ScoreSReward
+    self.score.text = cfg.Score[3]
+    self._scoreTypeText.text = "S"
+    self._scoreOutLine.effectColor = Color(1.0, 1.0, 0.23921568627450981)
   end
-  local count = (table.count)(rewards)
-  if count > 0 then
-    (self._reward):SpawnObjects("UICN17N46FishingGameRewardItem", count)
-    self._rewards = (self._reward):GetAllSpawnList()
+  local count = table.count(rewards)
+  if 0 < count then
+    self._reward:SpawnObjects("UICN17N46FishingGameRewardItem", count)
+    self._rewards = self._reward:GetAllSpawnList()
     for i = 1, #self._rewards do
-      ((self._rewards)[i]):SetData(rewards[i], scoretype, mission_info)
+      self._rewards[i]:SetData(rewards[i], scoretype, mission_info)
     end
   end
-  do
-    self:_ReceiveRewardBtnState(mission_info, scoretype)
-  end
+  self:_ReceiveRewardBtnState(mission_info, scoretype)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingScoreItem._ReceiveRewardBtnState = function(self, mission_info, scoretype)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._redPoint):SetActive(false)
+function UICN17N46FishingScoreItem:_ReceiveRewardBtnState(mission_info, scoretype)
+  self._redPoint:SetActive(false)
   self.rewardState = FishingGameRewardState.NotReach
-  if mission_info.mission_grade < scoretype then
+  if scoretype > mission_info.mission_grade then
     self.rewardState = FishingGameRewardState.NotReach
+  elseif mission_info.reward_mask & scoretype == 0 then
+    self.rewardState = FishingGameRewardState.NotReceive
   else
-    if mission_info.reward_mask & scoretype == 0 then
-      self.rewardState = FishingGameRewardState.NotReceive
-    else
-      self.rewardState = FishingGameRewardState.HasReceive
-    end
+    self.rewardState = FishingGameRewardState.HasReceive
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
   if self.rewardState == FishingGameRewardState.NotReach then
-    (self._receiveBtn).sprite = (self._atlas):GetSprite("n14_fish_btn_receive1")
-  else
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-    if self.rewardState == FishingGameRewardState.HasReceive then
-      (self._receiveBtn).sprite = (self._atlas):GetSprite("pass_jiangli_icon3")
-    else
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-      if self.rewardState == FishingGameRewardState.NotReceive then
-        (self._receiveBtn).sprite = (self._atlas):GetSprite("n14_fish_btn_receive2")
-        ;
-        (self._redPoint):SetActive(true)
-      end
-    end
+    self._receiveBtn.sprite = self._atlas:GetSprite("n14_fish_btn_receive1")
+  elseif self.rewardState == FishingGameRewardState.HasReceive then
+    self._receiveBtn.sprite = self._atlas:GetSprite("pass_jiangli_icon3")
+  elseif self.rewardState == FishingGameRewardState.NotReceive then
+    self._receiveBtn.sprite = self._atlas:GetSprite("n14_fish_btn_receive2")
+    self._redPoint:SetActive(true)
   end
-  ;
-  (self._receiveBtnGo):SetActive(self.rewardState == FishingGameRewardState.NotReceive)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._receiveBtnGo:SetActive(self.rewardState == FishingGameRewardState.NotReceive)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingScoreItem._ShowRewardTips = function(self, id, pos)
-  -- function num : 0_6
-  (self._tips):SetData(id, pos)
+function UICN17N46FishingScoreItem:_ShowRewardTips(id, pos)
+  self._tips:SetData(id, pos)
 end
-
-

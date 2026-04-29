@@ -1,170 +1,125 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/event_trailer_side_enter/ui_event_trailer_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIEventTrailerContent", UISideEnterCenterContentBase)
 UIEventTrailerContent = UIEventTrailerContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEventTrailerContent.DoInit = function(self, params)
-  -- function num : 0_0
+function UIEventTrailerContent:DoInit(params)
   self._mainCfgKey = params.main_cfg
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self:InitCampaignList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerContent.DoShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnShowEliminateWorldBoss)
-  local events = (self._content):GetAllSpawnList()
-  for i,event in pairs(events) do
+function UIEventTrailerContent:DoShow()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnShowEliminateWorldBoss)
+  local events = self._content:GetAllSpawnList()
+  for i, event in pairs(events) do
     event:PlayInAnim(i)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerContent.DoHide = function(self)
-  -- function num : 0_2
+function UIEventTrailerContent:DoHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerContent.DoDestroy = function(self)
-  -- function num : 0_3
+function UIEventTrailerContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEventTrailerContent.InitCampaignList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local list = ((Cfg.cfg_event_trailer_main)[self._mainCfgKey]).CampaignGroup
+function UIEventTrailerContent:InitCampaignList()
+  local list = Cfg.cfg_event_trailer_main[self._mainCfgKey].CampaignGroup
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV, list
     local campaignModule = self:GetModule(CampaignModule)
     local res = AsyncRequestRes:New()
     local lList = {}
-    for _,v in pairs(list) do
-      local cfg = (Cfg.cfg_event_trailer_campaign)[v]
+    for _, v in pairs(list) do
+      local cfg = Cfg.cfg_event_trailer_campaign[v]
       local campaignSample = campaignModule:GetReviewCampaignSampleByCampaignId(cfg.CampaignID)
-      if not (table.icontains)(lList, cfg.CampaignID) and campaignSample and campaignSample.is_open then
-        (table.insert)(lList, cfg.CampaignID)
+      if not table.icontains(lList, cfg.CampaignID) and campaignSample and campaignSample.is_open then
+        table.insert(lList, cfg.CampaignID)
       end
     end
     campaignModule:CampaignListComProtoLoadInfo(TT, res, lList)
     if res:GetSucc() then
       self._dataGroup = {}
-      for _,v in pairs(list) do
-        local cfg = (Cfg.cfg_event_trailer_campaign)[v]
+      for _, v in pairs(list) do
+        local cfg = Cfg.cfg_event_trailer_campaign[v]
         if cfg then
           local data = UIEventTrailerData:New()
-          local statue, startTime, endTime = (UIEventTrailerContent.GetEventStatue)(cfg)
+          local statue, startTime, endTime = UIEventTrailerContent.GetEventStatue(cfg)
           data.cfg = cfg
           data.statue = statue
           data.startTime = startTime
           data.endTime = endTime
-          ;
-          (table.insert)(self._dataGroup, data)
+          table.insert(self._dataGroup, data)
         end
       end
-      ;
-      (table.sort)(self._dataGroup, function(a, b)
-      -- function num : 0_4_0_0 , upvalues : _ENV
-      if a == nil or b == nil or a == b then
-        return false
-      end
-      if a.statue == EEventTrailerBtnStatue.Go and b.statue ~= EEventTrailerBtnStatue.Go then
-        return true
-      else
-        if a.statue ~= EEventTrailerBtnStatue.Go and b.statue == EEventTrailerBtnStatue.Go then
+      table.sort(self._dataGroup, function(a, b)
+        if a == nil or b == nil or a == b then
           return false
-        else
-          if (a.cfg).OpenOrder >= (b.cfg).OpenOrder then
-            do return a.statue ~= EEventTrailerBtnStatue.Go or b.statue ~= EEventTrailerBtnStatue.Go end
-            do return (a.cfg).Order < (b.cfg).Order end
-            -- DECOMPILER ERROR: 4 unprocessed JMP targets
-          end
         end
-      end
-    end
-)
-      local events = (self._content):SpawnObjects("UIEventTrailerItem", (table.count)(list))
-      for i,event in pairs(events) do
-        event:SetData((self._dataGroup)[i])
+        if a.statue == EEventTrailerBtnStatue.Go and b.statue ~= EEventTrailerBtnStatue.Go then
+          return true
+        elseif a.statue ~= EEventTrailerBtnStatue.Go and b.statue == EEventTrailerBtnStatue.Go then
+          return false
+        elseif a.statue == EEventTrailerBtnStatue.Go and b.statue == EEventTrailerBtnStatue.Go then
+          return a.cfg.OpenOrder < b.cfg.OpenOrder
+        else
+          return a.cfg.Order < b.cfg.Order
+        end
+      end)
+      local events = self._content:SpawnObjects("UIEventTrailerItem", table.count(list))
+      for i, event in pairs(events) do
+        event:SetData(self._dataGroup[i])
         event:ClearNew()
-        event:PlayInAnim(R12_PC100)
+        event:PlayInAnim(i)
       end
     else
-      do
-        ;
-        (Log.fatal)("拉取活动数据错误！", res:GetResult())
-      end
+      Log.fatal("拉取活动数据错误！", res:GetResult())
     end
-  end
-)
+  end)
 end
 
 local EEventTrailerType = {Campaign = 1, NormalEvent = 2}
 _enum("EEventTrailerType", EEventTrailerType)
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
 
-UIEventTrailerContent.GetEventStatue = function(cfg)
-  -- function num : 0_5 , upvalues : _ENV, EEventTrailerType
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function UIEventTrailerContent.GetEventStatue(cfg)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local startTime = 0
   local endTime = 0
   local statue = EEventTrailerBtnStatue.End
   if cfg.CampaignType == EEventTrailerType.Campaign then
-    local compCfg = (Cfg.cfg_campaign_component)[cfg.ComponentID]
+    local compCfg = Cfg.cfg_campaign_component[cfg.ComponentID]
     if not compCfg then
-      (Log.error)("cfg_campaign_component can\'t find ", cfg.ComponentID)
-      return 
+      Log.error("cfg_campaign_component can't find ", cfg.ComponentID)
+      return
     end
     startTime = loginModule:GetTimeStampByTimeStr(compCfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     endTime = loginModule:GetTimeStampByTimeStr(compCfg.CloseTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  elseif cfg.CampaignType == EEventTrailerType.NormalEvent then
+    startTime = loginModule:GetTimeStampByTimeStr(cfg.StartTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    endTime = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   else
-    do
-      if cfg.CampaignType == EEventTrailerType.NormalEvent then
-        startTime = loginModule:GetTimeStampByTimeStr(cfg.StartTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-        endTime = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      else
-        ;
-        (Log.fatal)("活动预告类型配置错误！！！", cfg.ID)
-      end
-      if endTime < curTime then
-        statue = EEventTrailerBtnStatue.End
-      else
-        if curTime < startTime then
-          if cfg.HasIntro then
-            statue = EEventTrailerBtnStatue.Watch
-          else
-            statue = EEventTrailerBtnStatue.NoWatch
-          end
-        else
-          statue = EEventTrailerBtnStatue.Go
-        end
-      end
-      return statue, startTime, endTime
-    end
+    Log.fatal("活动预告类型配置错误！！！", cfg.ID)
   end
+  if curTime > endTime then
+    statue = EEventTrailerBtnStatue.End
+  elseif curTime < startTime then
+    if cfg.HasIntro then
+      statue = EEventTrailerBtnStatue.Watch
+    else
+      statue = EEventTrailerBtnStatue.NoWatch
+    end
+  else
+    statue = EEventTrailerBtnStatue.Go
+  end
+  return statue, startTime, endTime
 end
 
 _class("UIEventTrailerData", Object)
 UIEventTrailerData = UIEventTrailerData
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
 
-UIEventTrailerData.Constructor = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIEventTrailerData:Constructor()
   self.cfg = nil
   self.statue = EEventTrailerBtnStatue.NoWatch
   self.startTime = 0
   self.endTime = 0
 end
-
-

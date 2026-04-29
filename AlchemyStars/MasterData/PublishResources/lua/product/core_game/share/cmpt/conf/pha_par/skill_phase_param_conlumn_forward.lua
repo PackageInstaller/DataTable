@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_conlumn_forward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseParamColumnForward", SkillPhaseParamBase)
 SkillPhaseParamColumnForward = SkillPhaseParamColumnForward
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParamColumnForward.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParamColumnForward:Constructor(t)
   self._gridDelayTime = t.gridDelayTime
   self._gridEffectID = t.gridEffectID
   self._hitEffectID = t.hitEffectID
@@ -20,79 +13,47 @@ SkillPhaseParamColumnForward.Constructor = function(self, t)
   self._finishDelayTime = t.finishDelayTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseParamColumnForward:GetPhaseType()
   return SkillViewPhaseType.ColumnForward
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.GetGridEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseParamColumnForward:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.GetEffectIntervalTime = function(self)
-  -- function num : 0_3
+function SkillPhaseParamColumnForward:GetEffectIntervalTime()
   return self._intervalTime
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.GetHitEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseParamColumnForward:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.GetHitAnimationName = function(self)
-  -- function num : 0_5
+function SkillPhaseParamColumnForward:GetHitAnimationName()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.GetGridDelayTime = function(self)
-  -- function num : 0_6
+function SkillPhaseParamColumnForward:GetGridDelayTime()
   return self._gridDelayTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.GetHitPointDelay = function(self)
-  -- function num : 0_7
+function SkillPhaseParamColumnForward:GetHitPointDelay()
   return self._hitPointDelay
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.GetFinishDelayTime = function(self)
-  -- function num : 0_8
+function SkillPhaseParamColumnForward:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.HasDamage = function(self)
-  -- function num : 0_9
-  if self._hasDamage ~= 1 then
-    do return not self._hasDamage end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SkillPhaseParamColumnForward:HasDamage()
+  if self._hasDamage then
+    return self._hasDamage == 1
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamColumnForward.GetCacheTable = function(self)
-  -- function num : 0_10
+function SkillPhaseParamColumnForward:GetCacheTable()
   local t = {}
   return t
 end
-
-

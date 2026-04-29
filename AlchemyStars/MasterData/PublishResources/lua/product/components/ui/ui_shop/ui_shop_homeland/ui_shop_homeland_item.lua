@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopHomelandItem", UICustomWidget)
 UIShopHomelandItem = UIShopHomelandItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopHomelandItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopHomelandItem:OnShow(uiParams)
   self:_GetComponents()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIShopHomelandItem:_GetComponents()
   self._imgIcon = self:GetUIComponent("RawImageLoader", "ImgIcon")
   self._salesPromotionBg = self:GetGameObject("SalesPromotionBg")
   self._salesPromotion = self:GetUIComponent("UILocalizationText", "SalesPromotion")
@@ -28,90 +18,55 @@ UIShopHomelandItem._GetComponents = function(self)
   self._newObj = self:GetGameObject("New")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandItem.SetData = function(self, data)
-  -- function num : 0_2
+function UIShopHomelandItem:SetData(data)
   self._data = data
   self:_RefreshUIInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandItem._RefreshUIInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._salesPromotionBg):SetActive(((self._data).cfg).IsPromotion == true)
-  ;
-  (self._name):SetText((StringTable.Get)(((self._data).cfg).Name))
-  ;
-  (self._nameShadow):SetText((StringTable.Get)(((self._data).cfg).Name))
-  if (self._data).shopType == FurnitureShopType.FRN_Set then
-    local totalCount = (self._data):GetAllGoodsCount()
-    local selledCount = (self._data):GetSelledCount()
-    ;
-    (self._countValue):SetText((StringTable.Get)("str_shop_homeland_gotcount", selledCount, totalCount))
-    ;
-    (self._gotoText):SetText((StringTable.Get)("str_shop_homeland_goto_buy"))
-    local show = (self:GetModule(ShopModule)):GetHomelandShopLocalRecord((self._data).shopID, 0)
-    ;
-    (self._newObj):SetActive(show <= 0)
-    if (self._data):IsDiscount() then
-      (self._imgIcon):LoadImage(((self._data).cfg).GroupBigIcon)
+function UIShopHomelandItem:_RefreshUIInfo()
+  self._salesPromotionBg:SetActive(self._data.cfg.IsPromotion == true)
+  self._name:SetText(StringTable.Get(self._data.cfg.Name))
+  self._nameShadow:SetText(StringTable.Get(self._data.cfg.Name))
+  if self._data.shopType == FurnitureShopType.FRN_Set then
+    local totalCount = self._data:GetAllGoodsCount()
+    local selledCount = self._data:GetSelledCount()
+    self._countValue:SetText(StringTable.Get("str_shop_homeland_gotcount", selledCount, totalCount))
+    self._gotoText:SetText(StringTable.Get("str_shop_homeland_goto_buy"))
+    local show = self:GetModule(ShopModule):GetHomelandShopLocalRecord(self._data.shopID, 0)
+    self._newObj:SetActive(show <= 0)
+    if self._data:IsDiscount() then
+      self._imgIcon:LoadImage(self._data.cfg.GroupBigIcon)
     else
-      (self._imgIcon):LoadImage(((self._data).cfg).GroupIcon)
+      self._imgIcon:LoadImage(self._data.cfg.GroupIcon)
     end
   else
-    (self._imgIcon):LoadImage(((self._data).cfg).GroupIcon)
-    ;
-    (self._gotoText):SetText((StringTable.Get)("str_shop_homeland_goto_exchange"))
-    ;
-    (self._newObj):SetActive(false)
+    self._imgIcon:LoadImage(self._data.cfg.GroupIcon)
+    self._gotoText:SetText(StringTable.Get("str_shop_homeland_goto_exchange"))
+    self._newObj:SetActive(false)
   end
-  ;
-  (self._countObj):SetActive((self._data).shopType == FurnitureShopType.FRN_Set)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  self._countObj:SetActive(self._data.shopType == FurnitureShopType.FRN_Set)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandItem.GotoBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIShopHomelandItem:GotoBtnOnClick(go)
   self:OpenDetailUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandItem.ImgIconOnClick = function(self, go)
-  -- function num : 0_5
+function UIShopHomelandItem:ImgIconOnClick(go)
   self:OpenDetailUI()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandItem.OpenDetailUI = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._data).shopType == FurnitureShopType.FRN_Set then
+function UIShopHomelandItem:OpenDetailUI()
+  if self._data.shopType == FurnitureShopType.FRN_Set then
     self:ShowDialog("UIShopHomelandSet", self._data)
-    ;
-    (self:GetModule(ShopModule)):SetHomelandShopLocalRecord((self._data).shopID, 1)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopNew)
-  else
-    if (self._data).shopType == FurnitureShopType.FRN_Components then
-      self:ShowDialog("UIShopHomelandParts", self._data)
-    else
-      if (self._data).shopType == FurnitureShopType.FRN_Precious then
-        self:ShowDialog("UIShopHomelandPrecious", self._data)
-      end
-    end
+    self:GetModule(ShopModule):SetHomelandShopLocalRecord(self._data.shopID, 1)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopNew)
+  elseif self._data.shopType == FurnitureShopType.FRN_Components then
+    self:ShowDialog("UIShopHomelandParts", self._data)
+  elseif self._data.shopType == FurnitureShopType.FRN_Precious then
+    self:ShowDialog("UIShopHomelandPrecious", self._data)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandItem._AfterUILayerChanged = function(self)
-  -- function num : 0_7
+function UIShopHomelandItem:_AfterUILayerChanged()
   self:_RefreshUIInfo()
 end
-
-

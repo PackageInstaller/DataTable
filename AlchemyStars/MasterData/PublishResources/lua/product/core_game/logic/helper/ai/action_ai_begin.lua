@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_ai_begin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionAiBegin", AINewNode)
 ActionAiBegin = ActionAiBegin
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionAiBegin.Constructor = function(self)
-  -- function num : 0_0
+function ActionAiBegin:Constructor()
   self.m_bStartLogic = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionAiBegin.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local aiComponent = (self.m_entityOwn):AI()
+function ActionAiBegin:OnUpdate()
+  local aiComponent = self.m_entityOwn:AI()
   local posTarget = aiComponent:GetTargetPos()
   local posSelf = self:GetSelfPos()
-  local stLogPosition = ", 自己坐标" .. (GameHelper.MakePosString)(posSelf)
+  local stLogPosition = ", 自己坐标" .. GameHelper.MakePosString(posSelf)
   if posTarget then
-    stLogPosition = stLogPosition .. "，目标坐标" .. (GameHelper.MakePosString)(posTarget)
+    stLogPosition = stLogPosition .. "，目标坐标" .. GameHelper.MakePosString(posTarget)
   end
   local stBeginReason = ""
   local bEnableStart = false
@@ -32,38 +22,32 @@ ActionAiBegin.OnUpdate = function(self)
       stBeginReason = "AI逻辑<禁止进入>, 行动力 = " .. nMobilityTotal
       break
     end
-    local bMineDead = (AINewNode.IsEntityDead)(self.m_entityOwn)
+    local bMineDead = AINewNode.IsEntityDead(self.m_entityOwn)
     if bMineDead then
       stBeginReason = "AI逻辑<禁止进入>, 行动力 = " .. nMobilityTotal .. ", 自己挂了"
       break
     end
-    local bPlayerDead = (AINewNode.IsEntityDead)(aiComponent:GetTargetEntity())
+    local bPlayerDead = AINewNode.IsEntityDead(aiComponent:GetTargetEntity())
     if bPlayerDead then
       stBeginReason = "AI逻辑<禁止进入>, 行动力 = " .. nMobilityTotal .. ", 目标挂了"
       break
     end
-    local buffCmpt = (self.m_entityOwn):BuffComponent()
-    do
-      if buffCmpt then
-        local isStun = buffCmpt:HasFlag(BuffFlags.SkipTurn)
-        if isStun then
-          stBeginReason = "AI逻辑<禁止进入>: Monster is stun 被击晕"
-          break
-        end
-      end
-      do
-        local isRoundEnd = aiComponent:IsAIRoundEnd()
-        if isRoundEnd then
-          stBeginReason = "AI逻辑<回合已经结束>"
-          break
-        end
-        stBeginReason = "AI逻辑<允许进入>, 行动力 = " .. nMobilityTotal
-        bEnableStart = true
-        do break end
-        -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out DO_STMT
-
+    local buffCmpt = self.m_entityOwn:BuffComponent()
+    if buffCmpt then
+      local isStun = buffCmpt:HasFlag(BuffFlags.SkipTurn)
+      if isStun then
+        stBeginReason = "AI逻辑<禁止进入>: Monster is stun 被击晕"
+        break
       end
     end
+    local isRoundEnd = aiComponent:IsAIRoundEnd()
+    if isRoundEnd then
+      stBeginReason = "AI逻辑<回合已经结束>"
+      break
+    end
+    stBeginReason = "AI逻辑<允许进入>, 行动力 = " .. nMobilityTotal
+    bEnableStart = true
+    break
   end
   self.m_bStartLogic = bEnableStart
   if aiComponent:CanMove() == false then
@@ -77,5 +61,3 @@ ActionAiBegin.OnUpdate = function(self)
     return AINewNodeStatus.Failure
   end
 end
-
-

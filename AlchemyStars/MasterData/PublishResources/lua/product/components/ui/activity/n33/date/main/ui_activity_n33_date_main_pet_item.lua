@@ -1,60 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/main/ui_activity_n33_date_main_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateMainPetItem", UICustomWidget)
 UIActivityN33DateMainPetItem = UIActivityN33DateMainPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33DateMainPetItem.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN33DateMainPetItem:Constructor()
   self._canClick = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityN33DateMainPetItem:OnShow()
   self:AddEventListener()
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem.AddEventListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN33DateMainPetItem:AddEventListener()
   self:AttachEvent(GameEventType.OnN33FindPet, self.OnN33FindPet)
   self:AttachEvent(GameEventType.OnDateFilterClick, self.OnDateFilterClick)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem._GetComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN33DateMainPetItem:_GetComponent()
   self._petIcon = self:GetUIComponent("RawImageLoader", "petIcon")
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._anim = self:GetUIComponent("Animation", "rect")
   self._inviteIconObj = self:GetGameObject("inviteIcon")
   self._filterMaskObj = self:GetGameObject("filterMask")
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(119, 137)
+  self._rect.anchorMax = Vector2(0.5, 0.5)
+  self._rect.anchorMin = Vector2(0.5, 0.5)
+  self._rect.sizeDelta = Vector2(119, 137)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem.OnDateFilterClick = function(self, type)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN33DateMainPetItem:OnDateFilterClick(type)
   if type == UIActivityN33DateMainFilterType.Build then
     self._canClick = false
   else
@@ -62,88 +34,58 @@ UIActivityN33DateMainPetItem.OnDateFilterClick = function(self, type)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem.OnN33FindPet = function(self, petID)
-  -- function num : 0_5
-  if petID == (self._cfg).PetId then
+function UIActivityN33DateMainPetItem:OnN33FindPet(petID)
+  if petID == self._cfg.PetId then
     self:PetIconOnClick()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem.CheckID = function(self, petID)
-  -- function num : 0_6
-  if petID == (self._cfg).PetId then
+function UIActivityN33DateMainPetItem:CheckID(petID)
+  if petID == self._cfg.PetId then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem.SetData = function(self, cfg, data, callback)
-  -- function num : 0_7
+function UIActivityN33DateMainPetItem:SetData(cfg, data, callback)
   self._cfg = cfg
   self._activityConst = data
   self._callback = callback
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem._Init = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._petIcon):LoadImage((self._cfg).MapIcon)
-  local pos = Vector2(((self._cfg).Position)[1] / 100, ((self._cfg).Position)[2] / 100)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = pos
-  if (self._cfg).PreCondition then
-    local isOver = (self._activityConst):CheckStoryConditionIsOver((self._cfg).ID)
-    ;
-    (self._inviteIconObj):SetActive(isOver)
+function UIActivityN33DateMainPetItem:_Init()
+  self._petIcon:LoadImage(self._cfg.MapIcon)
+  local pos = Vector2(self._cfg.Position[1] / 100, self._cfg.Position[2] / 100)
+  self._rect.anchoredPosition = pos
+  if self._cfg.PreCondition then
+    local isOver = self._activityConst:CheckStoryConditionIsOver(self._cfg.ID)
+    self._inviteIconObj:SetActive(isOver)
   else
-    do
-      ;
-      (self._inviteIconObj):SetActive(false)
-    end
+    self._inviteIconObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem.GetConfig = function(self)
-  -- function num : 0_9
+function UIActivityN33DateMainPetItem:GetConfig()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateMainPetItem.PetIconOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33DateMainPetItem:PetIconOnClick()
+  if self._activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   if not self._canClick then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, _ENV
     self:Lock("uieffanim_UIActivityN33DateMainPetItem_click")
-    ;
-    (self._anim):Play("uieffanim_UIActivityN33DateMainPetItem_click")
+    self._anim:Play("uieffanim_UIActivityN33DateMainPetItem_click")
     YIELD(TT, 777)
     self:UnLock("uieffanim_UIActivityN33DateMainPetItem_click")
     if self._callback then
-      (self._callback)(self)
+      self._callback(self)
     end
-  end
-, self)
+  end, self)
 end
-
-

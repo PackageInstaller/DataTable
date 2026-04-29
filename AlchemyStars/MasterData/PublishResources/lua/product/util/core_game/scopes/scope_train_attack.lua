@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_train_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_TrainAttack", SkillScopeCalculator_Base)
 SkillScopeCalculator_TrainAttack = SkillScopeCalculator_TrainAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_TrainAttack.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_TrainAttack:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   if not scopeParam then
-    (Log.error)(self._className, "Parameter not found. Take {3, 19} here. ")
+    Log.error(self._className, "Parameter not found. Take {3, 19} here. ")
     scopeParam = {3, 19}
   end
   local row = scopeParam[1]
@@ -19,64 +12,44 @@ SkillScopeCalculator_TrainAttack.CalcRange = function(self, scopeType, scopePara
   local needSort = scopeParam[3]
   local type = self:GetDirection(centerPos, casterPos)
   local attackGridPosList = {}
-  local skillNRowsMColumnsScopeParam = nil
+  local skillNRowsMColumnsScopeParam
   if type == HitBackDirectionType.Down or type == HitBackDirectionType.Up then
     skillNRowsMColumnsScopeParam = SkillNRowsMColumnsScopeParam:New(column, row)
   else
     skillNRowsMColumnsScopeParam = SkillNRowsMColumnsScopeParam:New(row, column)
   end
-  attackGridPosList = ((self._hub):ComputeScopeRange(SkillScopeType.NRowsMColumns, skillNRowsMColumnsScopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)):GetAttackRange()
+  attackGridPosList = self._hub:ComputeScopeRange(SkillScopeType.NRowsMColumns, skillNRowsMColumnsScopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos):GetAttackRange()
   if needSort == 1 then
-    if centerPos.x - casterPos.x >= 1 then
-      (table.sort)(attackGridPosList, function(a, b)
-    -- function num : 0_0_0
-    if a.y >= b.y then
-      do return a.x ~= b.x end
-      do return a.x < b.x end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
-    else
-      if centerPos.x - casterPos.x <= -1 then
-        (table.sort)(attackGridPosList, function(a, b)
-    -- function num : 0_0_1
-    if b.y >= a.y then
-      do return a.x ~= b.x end
-      do return b.x < a.x end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
-      else
-        if centerPos.y - casterPos.y >= 1 then
-          (table.sort)(attackGridPosList, function(a, b)
-    -- function num : 0_0_2
-    if a.x >= b.x then
-      do return a.y ~= b.y end
-      do return a.y < b.y end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
-        else
-          if centerPos.y - casterPos.y <= -1 then
-            (table.sort)(attackGridPosList, function(a, b)
-    -- function num : 0_0_3
-    if b.x >= a.x then
-      do return a.y ~= b.y end
-      do return b.y < a.y end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
-          end
+    if 1 <= centerPos.x - casterPos.x then
+      table.sort(attackGridPosList, function(a, b)
+        if a.x == b.x then
+          return a.y < b.y
         end
-      end
+        return a.x < b.x
+      end)
+    elseif centerPos.x - casterPos.x <= -1 then
+      table.sort(attackGridPosList, function(a, b)
+        if a.x == b.x then
+          return a.y > b.y
+        end
+        return a.x > b.x
+      end)
+    elseif 1 <= centerPos.y - casterPos.y then
+      table.sort(attackGridPosList, function(a, b)
+        if a.y == b.y then
+          return a.x < b.x
+        end
+        return a.y < b.y
+      end)
+    elseif -1 >= centerPos.y - casterPos.y then
+      table.sort(attackGridPosList, function(a, b)
+        if a.y == b.y then
+          return a.x > b.x
+        end
+        return a.y > b.y
+      end)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.TrainAttackScope, centerPos, attackGridPosList, attackGridPosList)
   return result
 end
-
-

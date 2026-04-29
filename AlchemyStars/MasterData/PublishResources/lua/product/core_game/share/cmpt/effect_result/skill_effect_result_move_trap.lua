@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_move_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultMoveTrap", SkillEffectResultBase)
 SkillEffectResultMoveTrap = SkillEffectResultMoveTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultMoveTrap.Constructor = function(self, entityID, posOld, posNew, replaceTrapEntityID)
-  -- function num : 0_0
+function SkillEffectResultMoveTrap:Constructor(entityID, posOld, posNew, replaceTrapEntityID)
   self._entityID = entityID
   self._posOld = posOld
   self._posNew = posNew
   self._replaceTrapEntityID = replaceTrapEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveTrap.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultMoveTrap:GetEffectType()
   return SkillEffectType.MoveTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveTrap.GetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultMoveTrap:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveTrap.GetPosOld = function(self)
-  -- function num : 0_3
+function SkillEffectResultMoveTrap:GetPosOld()
   return self._posOld
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveTrap.GetPosNew = function(self)
-  -- function num : 0_4
+function SkillEffectResultMoveTrap:GetPosNew()
   return self._posNew
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultMoveTrap.GetReplaceTrapEntityID = function(self)
-  -- function num : 0_5
+function SkillEffectResultMoveTrap:GetReplaceTrapEntityID()
   return self._replaceTrapEntityID
 end
-
-

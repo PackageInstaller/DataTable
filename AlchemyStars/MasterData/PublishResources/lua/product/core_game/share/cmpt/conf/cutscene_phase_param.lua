@@ -1,58 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/cutscene_phase_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local CutsceneDelayType = {AfterStart = 1, AfterEnd = 2}
 _enum("CutsceneDelayType", CutsceneDelayType)
 _class("CutscenePhaseTime", Object)
 CutscenePhaseTime = CutscenePhaseTime
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-CutscenePhaseTime.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.StartTick = (GameGlobal:GetInstance()):GetCurrentTime()
+function CutscenePhaseTime:Constructor()
+  self.StartTick = GameGlobal:GetInstance():GetCurrentTime()
   self.EndTick = 0
 end
 
 _class("CutscenePhaseParam", Object)
 CutscenePhaseParam = CutscenePhaseParam
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
 
-CutscenePhaseParam.Constructor = function(self, delaytype, delayphase, delayms, phaseParam)
-  -- function num : 0_1
+function CutscenePhaseParam:Constructor(delaytype, delayphase, delayms, phaseParam)
   self._phaseParam = phaseParam
   self._delayType = delaytype
   self._delayMS = delayms
   self._delayFromPhase = delayphase
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-CutscenePhaseParam.GetPhaseParam = function(self)
-  -- function num : 0_2
+function CutscenePhaseParam:GetPhaseParam()
   return self._phaseParam
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-CutscenePhaseParam.GetDelayType = function(self)
-  -- function num : 0_3
+function CutscenePhaseParam:GetDelayType()
   return self._delayType
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-CutscenePhaseParam.GetDelayMS = function(self)
-  -- function num : 0_4
+function CutscenePhaseParam:GetDelayMS()
   return self._delayMS
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-CutscenePhaseParam.GetDelayFromPhase = function(self)
-  -- function num : 0_5
+function CutscenePhaseParam:GetDelayFromPhase()
   return self._delayFromPhase
 end
-
-

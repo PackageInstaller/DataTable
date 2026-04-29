@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/event/ui_n30_entrust_event_tkrecv.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local e = require("ui_n30_entrust_event")
 e:Class("N30EntrustEventTkRecv", N30EntrustEvent, EntrustEventType.EntrustEventType_MissionOccupy)
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
 
-N30EntrustEventTkRecv.Constructor = function(self)
-  -- function num : 0_0
+function N30EntrustEventTkRecv:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventTkRecv.DebugName = function(self)
-  -- function num : 0_1
+function N30EntrustEventTkRecv:DebugName()
   return "TkRecv"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventTkRecv.GetIconName = function(self)
-  -- function num : 0_2
+function N30EntrustEventTkRecv:GetIconName()
   if self._isPass then
     return "n30_wt_ld_icon14"
   else
@@ -29,125 +16,87 @@ N30EntrustEventTkRecv.GetIconName = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventTkRecv.GetWidgetName = function(self)
-  -- function num : 0_3
+function N30EntrustEventTkRecv:GetWidgetName()
   return "UIN30EntrustEventTkRecv"
 end
 
 _class("UIN30EntrustEventTkRecv", UIN30EntrustEventWidget)
 UIN30EntrustEventTkRecv = UIN30EntrustEventTkRecv
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN30EntrustEventTkRecv.Constructor = function(self)
-  -- function num : 0_4
+function UIN30EntrustEventTkRecv:Constructor()
   self._finishEvent = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventTkRecv.OnShow = function(self, uiParams)
-  -- function num : 0_5
+function UIN30EntrustEventTkRecv:OnShow(uiParams)
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self._txtConfirm = self:GetUIComponent("UILocalizationText", "txtConfirm")
   self._btnConfirm = self:GetUIComponent("Button", "btnConfirm")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventTkRecv.OnHide = function(self)
-  -- function num : 0_6
-  if (self._event):IsPass() and self._finishEvent then
-    self:CallUIMethod("UIN30EntrustLine", "OnEventFinish", {(self._event):ID()})
+function UIN30EntrustEventTkRecv:OnHide()
+  if self._event:IsPass() and self._finishEvent then
+    self:CallUIMethod("UIN30EntrustLine", "OnEventFinish", {
+      self._event:ID()
+    })
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventTkRecv.BtnConfirmOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._event):IsPass() then
-    return 
+function UIN30EntrustEventTkRecv:BtnConfirmOnClick(go)
+  if self._event:IsPass() then
+    return
   end
-  self:CallUIMethod("UIN30EntrustLine", "CompleteEvent", (self._event):ID(), function()
-    -- function num : 0_7_0 , upvalues : self, _ENV
-    local itemName = nil
+  self:CallUIMethod("UIN30EntrustLine", "CompleteEvent", self._event:ID(), function()
+    local itemName
     local cfgItem = self:GetRewardCfg()
     if cfgItem == nil then
       itemName = ""
     else
-      itemName = (StringTable.Get)(cfgItem.Name)
+      itemName = StringTable.Get(cfgItem.Name)
     end
-    local txtPopup = (StringTable.Get)("str_n30_entrust_event_tk_recv_popup", itemName)
-    ;
-    (ToastManager.ShowToast)(txtPopup)
+    local txtPopup = StringTable.Get("str_n30_entrust_event_tk_recv_popup", itemName)
+    ToastManager.ShowToast(txtPopup)
     self._finishEvent = true
-    ;
-    (self:RootUIOwner()):Refresh()
-  end
-)
+    self:RootUIOwner():Refresh()
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventTkRecv.GetIcon = function(self)
-  -- function num : 0_8
-  return (self._event):ParamHead()
+function UIN30EntrustEventTkRecv:GetIcon()
+  return self._event:ParamHead()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventTkRecv.Refresh = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local descValue = (self._event):ParamDesc()
+function UIN30EntrustEventTkRecv:Refresh()
+  local descValue = self._event:ParamDesc()
   if descValue == nil then
     descValue = ""
   else
-    descValue = (StringTable.Get)(descValue)
+    descValue = StringTable.Get(descValue)
   end
-  ;
-  (self._txtDesc):SetText(descValue)
+  self._txtDesc:SetText(descValue)
   local cfgItem = self:GetRewardCfg()
   if cfgItem == nil then
-    ((self._btnConfirm).gameObject):SetActive(false)
+    self._btnConfirm.gameObject:SetActive(false)
   else
-    local itemName = (StringTable.Get)(cfgItem.Name)
-    local txtValue = (StringTable.Get)("str_n30_entrust_event_tk_recv_btn", itemName)
-    ;
-    (self._txtConfirm):SetText(txtValue)
+    local itemName = StringTable.Get(cfgItem.Name)
+    local txtValue = StringTable.Get("str_n30_entrust_event_tk_recv_btn", itemName)
+    self._txtConfirm:SetText(txtValue)
   end
-  do
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._btnConfirm).interactable = not (self._event):IsPass()
-  end
+  self._btnConfirm.interactable = not self._event:IsPass()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventTkRecv.GetRewardCfg = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg = (self._event):Cfg()
-  local entrustData = ((self._event):EntrustData())
-  -- DECOMPILER ERROR at PC6: Overwrote pending register: R3 in 'AssignReg'
-
-  local reward = .end
+function UIN30EntrustEventTkRecv:GetRewardCfg()
+  local cfg = self._event:Cfg()
+  local entrustData = self._event:EntrustData()
+  local reward
   local rewardFinish = entrustData:EventRewardList(cfg)
-  for k,v in pairs(rewardFinish) do
+  for k, v in pairs(rewardFinish) do
     reward = v
-    do break end
+    break
   end
-  do
-    local cfgItem = nil
-    if reward ~= nil then
-      cfgItem = (Cfg.cfg_item)[reward.assetid]
-      return cfgItem, reward
-    else
-      return cfgItem
-    end
+  local cfgItem
+  if reward ~= nil then
+    cfgItem = Cfg.cfg_item[reward.assetid]
+    return cfgItem, reward
+  else
+    return cfgItem
   end
 end
-
-

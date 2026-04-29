@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_exchange_grid_color.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalcExchangeGridColor", SkillEffectCalc_Base)
 SkillEffectCalcExchangeGridColor = SkillEffectCalcExchangeGridColor
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcExchangeGridColor.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalcExchangeGridColor:DoSkillEffectCalculator(skillEffectCalcParam)
   local effectParam = skillEffectCalcParam.skillEffectParam
   local scopeResult = skillEffectCalcParam:GetSkillRange()
   local summonTrapList = {}
   local newGridList = {}
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   if #scopeResult ~= 2 then
-    (Log.exception)("Effect ExchangeGridColor scope Invalid,skillID:", skillEffectCalcParam:GetSkillID())
+    Log.exception("Effect ExchangeGridColor scope Invalid,skillID:", skillEffectCalcParam:GetSkillID())
     return nil
   end
   local gridType1 = boardServiceLogic:GetPieceType(scopeResult[1])
@@ -26,17 +19,13 @@ SkillEffectCalcExchangeGridColor.DoSkillEffectCalculator = function(self, skillE
   if effectParam:GetTrapID() then
     local gridTypeList = effectParam:GetSummonTrapGridTypeList()
     local trapID = effectParam:GetTrapID()
-    if (table.icontains)(gridTypeList, gridType1) then
+    if table.icontains(gridTypeList, gridType1) then
       summonTrapList[scopeResult[2]] = trapID
     end
-    if (table.icontains)(gridTypeList, gridType2) then
+    if table.icontains(gridTypeList, gridType2) then
       summonTrapList[scopeResult[1]] = trapID
     end
   end
-  do
-    local result = SkillEffectExchangeGridColorResult:New(newGridList, summonTrapList)
-    return result
-  end
+  local result = SkillEffectExchangeGridColorResult:New(newGridList, summonTrapList)
+  return result
 end
-
-

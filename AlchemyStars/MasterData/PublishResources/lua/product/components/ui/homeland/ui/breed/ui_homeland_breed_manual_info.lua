@@ -1,47 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_manual_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedManualInfo", UIController)
 UIHomelandBreedManualInfo = UIHomelandBreedManualInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedManualInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandBreedManualInfo:OnShow(uiParams)
   self._name = uiParams[1]
   self._data = uiParams[2]
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualInfo._GetComponents = function(self)
-  -- function num : 0_1
+function UIHomelandBreedManualInfo:_GetComponents()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualInfo.CloseBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIHomelandBreedManualInfo:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualInfo._OnValue = function(self)
-  -- function num : 0_3
-  (self._title):SetText(self._name)
+function UIHomelandBreedManualInfo:_OnValue()
+  self._title:SetText(self._name)
   local count = #self._data
-  ;
-  (self._content):SpawnObjects("UIHomelandBreedManualInfoItem", count)
-  self._infoItemWidgets = (self._content):GetAllSpawnList()
+  self._content:SpawnObjects("UIHomelandBreedManualInfoItem", count)
+  self._infoItemWidgets = self._content:GetAllSpawnList()
   for i = 1, count do
-    ((self._infoItemWidgets)[i]):SetData((self._data)[i])
+    self._infoItemWidgets[i]:SetData(self._data[i])
   end
 end
-
-

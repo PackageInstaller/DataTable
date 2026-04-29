@@ -1,171 +1,104 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/sorted_dictionary.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SortedDictionary", Object)
 SortedDictionary = SortedDictionary
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SortedDictionary.Constructor = function(self, compare_method, less_comparer)
-  -- function num : 0_0 , upvalues : _ENV
+function SortedDictionary:Constructor(compare_method, less_comparer)
   self.sorted_key = SortedArray:New(compare_method, less_comparer)
   self.dictionary = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.Empty = function(self)
-  -- function num : 0_1
-  return (self.sorted_key):Empty()
+function SortedDictionary:Empty()
+  return self.sorted_key:Empty()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.Insert = function(self, key, value)
-  -- function num : 0_2
+function SortedDictionary:Insert(key, value)
   if not key or not value then
-    return 
+    return
   end
-  ;
-  (self.sorted_key):Insert(key)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.dictionary)[key] = value
+  self.sorted_key:Insert(key)
+  self.dictionary[key] = value
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.Remove = function(self, key)
-  -- function num : 0_3
-  if (self.sorted_key):Remove(key) then
-    local value = (self.dictionary)[key]
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.dictionary)[key] = nil
+function SortedDictionary:Remove(key)
+  if self.sorted_key:Remove(key) then
+    local value = self.dictionary[key]
+    self.dictionary[key] = nil
     return value
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.RemoveByIndex = function(self, index)
-  -- function num : 0_4
-  local key = (self.sorted_key):RemoveByIndex(index)
+function SortedDictionary:RemoveByIndex(index)
+  local key = self.sorted_key:RemoveByIndex(index)
   if key then
-    local value = (self.dictionary)[key]
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.dictionary)[key] = nil
+    local value = self.dictionary[key]
+    self.dictionary[key] = nil
     return value
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.Clear = function(self)
-  -- function num : 0_5
-  local cnt = (self.sorted_key):Size()
+function SortedDictionary:Clear()
+  local cnt = self.sorted_key:Size()
   if cnt == 0 then
-    return 
+    return
   end
-  local key = nil
+  local key
   for i = 1, cnt do
-    key = (self.sorted_key):GetAt(i)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.dictionary)[key] = nil
+    key = self.sorted_key:GetAt(i)
+    self.dictionary[key] = nil
   end
-  ;
-  (self.sorted_key):Clear()
+  self.sorted_key:Clear()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.Find = function(self, key)
-  -- function num : 0_6
-  return (self.dictionary)[key]
+function SortedDictionary:Find(key)
+  return self.dictionary[key]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.FindIndex = function(self, key)
-  -- function num : 0_7
-  return (self.sorted_key):Find(key)
+function SortedDictionary:FindIndex(key)
+  return self.sorted_key:Find(key)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.Modify = function(self, key, value)
-  -- function num : 0_8
+function SortedDictionary:Modify(key, value)
   if not key or not value then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self.sorted_key):Contains(key) then
-    (self.dictionary)[key] = value
+  if self.sorted_key:Contains(key) then
+    self.dictionary[key] = value
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.ContainsKey = function(self, key)
-  -- function num : 0_9
-  return (self.sorted_key):Contains(key)
+function SortedDictionary:ContainsKey(key)
+  return self.sorted_key:Contains(key)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.Size = function(self)
-  -- function num : 0_10
-  return (self.sorted_key):Size()
+function SortedDictionary:Size()
+  return self.sorted_key:Size()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.GetAt = function(self, index)
-  -- function num : 0_11
-  local key = (self.sorted_key):GetAt(index)
+function SortedDictionary:GetAt(index)
+  local key = self.sorted_key:GetAt(index)
   if not key then
     return nil
   end
-  return (self.dictionary)[key], key
+  return self.dictionary[key], key
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.GetKeyAt = function(self, index)
-  -- function num : 0_12
-  local key = (self.sorted_key):GetAt(index)
+function SortedDictionary:GetKeyAt(index)
+  local key = self.sorted_key:GetAt(index)
   return key
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.GetPairAt = function(self, index)
-  -- function num : 0_13
-  local key = (self.sorted_key):GetAt(index)
+function SortedDictionary:GetPairAt(index)
+  local key = self.sorted_key:GetAt(index)
   if not key then
     return nil
   end
-  return key, (self.dictionary)[key]
+  return key, self.dictionary[key]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SortedDictionary.Copy = function(self, src)
-  -- function num : 0_14
+function SortedDictionary:Copy(src)
   if src == nil then
-    return 
+    return
   end
   for i = 1, src:Size() do
     self:Insert(src:GetKeyAt(i), src:GetAt(i))
   end
 end
-
-

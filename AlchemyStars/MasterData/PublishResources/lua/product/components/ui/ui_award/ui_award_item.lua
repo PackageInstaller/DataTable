@@ -1,33 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_award/ui_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAwardItem", UICustomWidget)
 UIAwardItem = UIAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAwardItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAwardItem:OnShow()
   self._trans = self:GetGameObject()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Stage, UIItemScale.Level3)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Stage, UIItemScale.Level3)
+  self.uiItem:SetClickCallBack(function()
     self:bgOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAwardItem.Flush = function(self, v)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAwardItem:Flush(v)
   if not v then
-    return 
+    return
   end
   self._v = v
   local icon = v.icon
@@ -39,34 +25,30 @@ UIAwardItem.Flush = function(self, v)
   local itemId = v.id
   if awardType == StageAwardType.First then
     strKey = "str_discovery_first_award"
+  elseif awardType == StageAwardType.Star then
+    strKey = "str_discovery_3star_award"
+  elseif awardType == StageAwardType.Activity then
+    strKey = "str_discovery_activity_award"
+    activityText = "str_item_xianshi"
+  elseif awardType == StageAwardType.HasGen then
+    strKey = "str_discovery_already_collect"
   else
-    if awardType == StageAwardType.Star then
-      strKey = "str_discovery_3star_award"
-    else
-      if awardType == StageAwardType.Activity then
-        strKey = "str_discovery_activity_award"
-        activityText = "str_item_xianshi"
-      else
-        if awardType == StageAwardType.HasGen then
-          strKey = "str_discovery_already_collect"
-        else
-          strKey = "str_discovery_normal_award"
-        end
-      end
-    end
+    strKey = "str_discovery_normal_award"
   end
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, awardText = (StringTable.Get)(strKey), itemId = itemId, topText = (UIEnum.ItemRandomStr)(v.randomType), activityText = (StringTable.Get)(activityText)})
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    awardText = StringTable.Get(strKey),
+    itemId = itemId,
+    topText = UIEnum.ItemRandomStr(v.randomType),
+    activityText = StringTable.Get(activityText)
+  })
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAwardItem.bgOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIAwardItem:bgOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if self._v then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, (self._v).id, ((self._trans).transform).position)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, self._v.id, self._trans.transform.position)
   end
 end
-
-

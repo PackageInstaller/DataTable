@@ -1,40 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_home_pet_affinity_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetAffinityItem", UICustomWidget)
 UIHomePetAffinityItem = UIHomePetAffinityItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetAffinityItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomePetAffinityItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetAffinityItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomePetAffinityItem:InitWidget()
   self.slider = self:GetUIComponent("Slider", "Slider")
   self.percent = self:GetUIComponent("Image", "percent")
   self.level = self:GetUIComponent("UILocalizationText", "level")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetAffinityItem.SetData = function(self, pet)
-  -- function num : 0_2
-  (self.level):SetText(pet:GetPetAffinityLevel())
+function UIHomePetAffinityItem:SetData(pet)
+  self.level:SetText(pet:GetPetAffinityLevel())
   local percent = pet:GetPetAffinityLevelUpPercent()
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.slider).value = percent
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.percent).fillAmount = percent
+  self.slider.value = percent
+  self.percent.fillAmount = percent
 end
-
-

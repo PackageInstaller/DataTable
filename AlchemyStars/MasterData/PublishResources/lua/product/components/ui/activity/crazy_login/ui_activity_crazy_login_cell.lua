@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/crazy_login/ui_activity_crazy_login_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCrazyLoginCell", UICustomWidget)
 UIActivityCrazyLoginCell = UIActivityCrazyLoginCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCrazyLoginCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityCrazyLoginCell:OnShow(uiParams)
   self._dayNum = 1
   self:SetSelected(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityCrazyLoginCell:OnHide()
   if self._resF then
-    (self._resF):Dispose()
+    self._resF:Dispose()
     self._resF = nil
   end
   if self._resB then
-    (self._resB):Dispose()
+    self._resB:Dispose()
     self._resB = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell.SetData = function(self, idx, data, cfg_data, selectCallback, getCallback, tipCallback, lastDay)
-  -- function num : 0_2
+function UIActivityCrazyLoginCell:SetData(idx, data, cfg_data, selectCallback, getCallback, tipCallback, lastDay)
   self._idx = idx
   self._data = data
   self._cfg_data = cfg_data
@@ -39,192 +26,138 @@ UIActivityCrazyLoginCell.SetData = function(self, idx, data, cfg_data, selectCal
   self._tipCallback = tipCallback
   self._lastDay = lastDay and lastDay or false
   self:_SetItems()
-  self:_SetDayText((self._data)._dayNum)
-  self:_SetState((self._data)._state)
+  self:_SetDayText(self._data._dayNum)
+  self:_SetState(self._data._state)
   self:_FillUIByCfg(cfg_data)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell._SetItems = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local itemData = (self._data)._items
-  self._items = (UIWidgetHelper.SpawnObjects)(self, "ItemArea", "UIActivityCrazyLoginItem", #itemData)
-  for i,v in ipairs(self._items) do
+function UIActivityCrazyLoginCell:_SetItems()
+  local itemData = self._data._items
+  self._items = UIWidgetHelper.SpawnObjects(self, "ItemArea", "UIActivityCrazyLoginItem", #itemData)
+  for i, v in ipairs(self._items) do
     v:SetData(itemData[i], self._tipCallback)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell._FillUIByCfg = function(self, cfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityCrazyLoginCell:_FillUIByCfg(cfg)
   if not cfg then
-    (Log.error)("UIActivityCrazyLoginCell:_FillUIByCfg() cfg is nil !")
-    return 
+    Log.error("UIActivityCrazyLoginCell:_FillUIByCfg() cfg is nil !")
+    return
   end
-  if not (self._data)._isSpecial or not cfg.SpecialTextColor then
-    local color = cfg.NormalTextColor
-  end
+  local color = self._data._isSpecial and cfg.SpecialTextColor or cfg.NormalTextColor
   self:_SetTextColorByCfg("DayText", color)
-  do
-    if not self._setSpecBg then
-      if not (self._data)._isSpecial or not cfg.SpecialBg then
-        local bg = cfg.NormalBg
-      end
-      ;
-      (UIWidgetHelper.SetRawImage)(self, "Bg", bg)
-    end
-    local lastFrame = cfg.LastDataImg
-    if lastFrame then
-      (UIWidgetHelper.SetRawImage)(self, "lastFrame", lastFrame)
-    end
-    self._resF = self:_SetEffByCfg("eff_front", cfg.AwardParticecleF, self._resF)
-    self._resB = self:_SetEffByCfg("eff_back", cfg.AwardParticecleB, self._resB)
+  if not self._setSpecBg then
+    local bg = self._data._isSpecial and cfg.SpecialBg or cfg.NormalBg
+    UIWidgetHelper.SetRawImage(self, "Bg", bg)
   end
+  local lastFrame = cfg.LastDataImg
+  if lastFrame then
+    UIWidgetHelper.SetRawImage(self, "lastFrame", lastFrame)
+  end
+  self._resF = self:_SetEffByCfg("eff_front", cfg.AwardParticecleF, self._resF)
+  self._resB = self:_SetEffByCfg("eff_back", cfg.AwardParticecleB, self._resB)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell._SetTextColorByCfg = function(self, widgetName, cfg)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityCrazyLoginCell:_SetTextColorByCfg(widgetName, cfg)
   if not cfg or #cfg ~= 3 then
-    return 
+    return
   end
   local r, g, b = cfg[1], cfg[2], cfg[3]
   local obj = self:GetUIComponent("UILocalizationText", widgetName)
-  obj.color = Color(r / 255, g / 255, b / 255, (obj.color).a)
+  obj.color = Color(r / 255, g / 255, b / 255, obj.color.a)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell._SetEffByCfg = function(self, widgetName, cfg, res)
-  -- function num : 0_6 , upvalues : _ENV
-  if not res then
-    res = (ResourceManager:GetInstance()):SyncLoadAsset(cfg, LoadType.GameObject)
-  end
+function UIActivityCrazyLoginCell:_SetEffByCfg(widgetName, cfg, res)
+  res = res or ResourceManager:GetInstance():SyncLoadAsset(cfg, LoadType.GameObject)
   if res then
     local go = res.Obj
     local eff = self:GetGameObject(widgetName)
-    ;
-    (go.transform):SetParent(eff.transform)
+    go.transform:SetParent(eff.transform)
     local rect = go:GetComponent("RectTransform")
     rect.anchoredPosition = Vector2(0, 0)
     rect.localScale = Vector3(1, 1, 1)
     go:SetActive(true)
   else
-    do
-      ;
-      (Log.error)("UIActivityCrazyLoginCell:_SetEffByCfg() res is nil ! resName = " .. cfg)
-      return res
-    end
+    Log.error("UIActivityCrazyLoginCell:_SetEffByCfg() res is nil ! resName = " .. cfg)
   end
+  return res
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell._SetAlpha = function(self, value)
-  -- function num : 0_7
+function UIActivityCrazyLoginCell:_SetAlpha(value)
   local cg = self:GetUIComponent("CanvasGroup", "SetAlphaArea")
   cg.alpha = value
   local cg2 = self:GetUIComponent("CanvasGroup", "StateArea")
   cg2.alpha = value
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell.SetSelected = function(self, show)
-  -- function num : 0_8
-  (self:GetGameObject("SelectStateArea")):SetActive(show)
+function UIActivityCrazyLoginCell:SetSelected(show)
+  self:GetGameObject("SelectStateArea"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell._SetLastFrame = function(self, show)
-  -- function num : 0_9
-  (self:GetGameObject("lastFrame")):SetActive(show)
+function UIActivityCrazyLoginCell:_SetLastFrame(show)
+  self:GetGameObject("lastFrame"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell._SetDayText = function(self, day)
-  -- function num : 0_10 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "DayText", (StringTable.Get)("str_temp_sign_in_day_text", day))
+function UIActivityCrazyLoginCell:_SetDayText(day)
+  UIWidgetHelper.SetLocalizationText(self, "DayText", StringTable.Get("str_temp_sign_in_day_text", day))
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell._SetState = function(self, state, forEffect)
-  -- function num : 0_11 , upvalues : _ENV
-  local tb_check = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_UNKNOW] = true, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_Expired] = true}
-  if not tb_check[state] or not ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK then
-    local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"StateCanGet"}
-, 
-{"StateGot"}
-, 
-{"StateLocked"}
-})
-    ;
-    (UIWidgetHelper.SetObjGroupShow)(objs, state)
-    if forEffect then
-      return 
+function UIActivityCrazyLoginCell:_SetState(state, forEffect)
+  local tb_check = {
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_UNKNOW] = true,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_Expired] = true
+  }
+  state = tb_check[state] and ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK or state
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "StateCanGet"
+    },
+    {"StateGot"},
+    {
+      "StateLocked"
+    }
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
+  if forEffect then
+    return
+  end
+  local isLastDay = self._lastDay
+  self:_SetLastFrame(isLastDay)
+  local isGot = state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
+  local value = isGot and 0.5 or 1
+  self:_SetAlpha(value)
+  local effShow = self._data._isSpecial and not isGot
+  self:GetGameObject("eff_front"):SetActive(effShow)
+  self:GetGameObject("eff_back"):SetActive(effShow)
+  self._setSpecBg = false
+  local riLoader = self:GetUIComponent("RawImageLoader", "Bg")
+  if riLoader then
+    if isGot and self._cfg_data.GetOverBg then
+      riLoader:LoadImage(self._cfg_data.GetOverBg)
+      self._setSpecBg = true
     end
-    local isLastDay = self._lastDay
-    self:_SetLastFrame(isLastDay)
-    local isGot = state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
-    local value = isGot and 0.5 or 1
-    self:_SetAlpha(value)
-    if (self._data)._isSpecial then
-      local effShow = not isGot
+    if state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV and self._cfg_data.CanGetBg then
+      riLoader:LoadImage(self._cfg_data.CanGetBg)
+      self._setSpecBg = true
     end
-    ;
-    (self:GetGameObject("eff_front")):SetActive(effShow)
-    ;
-    (self:GetGameObject("eff_back")):SetActive(effShow)
-    self._setSpecBg = false
-    local riLoader = self:GetUIComponent("RawImageLoader", "Bg")
-    if riLoader then
-      if isGot and (self._cfg_data).GetOverBg then
-        riLoader:LoadImage((self._cfg_data).GetOverBg)
-        self._setSpecBg = true
-      end
-      if state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV and (self._cfg_data).CanGetBg then
-        riLoader:LoadImage((self._cfg_data).CanGetBg)
-        self._setSpecBg = true
-      end
-    end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell.OnAwardGot = function(self, rewards)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityCrazyLoginCell:OnAwardGot(rewards)
   self:_SetState(ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED, true)
   local animName = "uieff_UIActivityCrazyLoginContent_Cell_Get"
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, 333, function()
-    -- function num : 0_12_0 , upvalues : _ENV, rewards
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
-  end
-)
+  UIWidgetHelper.PlayAnimation(self, "_anim", animName, 333, function()
+    UIActivityHelper.ShowUIGetRewards(rewards)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCrazyLoginCell.BgBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityCrazyLoginCell:BgBtnOnClick(go)
   local idx = self._idx
   if self._selectCallback then
-    (self._selectCallback)(idx)
+    self._selectCallback(idx)
   end
-  local canGet = (self._data)._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV
+  local canGet = self._data._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV
   if canGet and self._getCallback then
-    (self._getCallback)(idx)
+    self._getCallback(idx)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

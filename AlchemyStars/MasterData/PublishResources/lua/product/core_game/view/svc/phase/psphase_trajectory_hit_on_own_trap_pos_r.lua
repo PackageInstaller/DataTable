@@ -1,85 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/psphase_trajectory_hit_on_own_trap_pos_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillTrajectoryHitOnOwnTrapPosPhase", PlaySkillPhaseBase)
 PlaySkillTrajectoryHitOnOwnTrapPosPhase = PlaySkillTrajectoryHitOnOwnTrapPosPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillTrajectoryHitOnOwnTrapPosPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillTrajectoryHitOnOwnTrapPosPhase:PlayFlight(TT, casterEntity, phaseParam)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local result = routineComponent:GetEffectResultByArray(SkillEffectType.Damage)
   if not result then
-    return 
+    return
   end
-  local boardServiceRender = ((self._world):GetService("BoardRender"))
-  local ownTrapEntity = nil
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
-    if e:HasSummoner() and (e:Summoner()):GetSummonerEntityID() == casterEntity:GetID() then
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local ownTrapEntity
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
+    if e:HasSummoner() and e:Summoner():GetSummonerEntityID() == casterEntity:GetID() then
       ownTrapEntity = e
       break
+    else
     end
   end
-  do
-    if not ownTrapEntity then
-      return 
-    end
-    local targetEntityID = result:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
-    if not targetEntity then
-      return 
-    end
-    local casterGO = (casterEntity:View()):GetGameObject()
-    local oldCasterPos = casterEntity:GetGridPosition()
-    local oldCasterPosition = (casterGO.transform).position
-    local oldForward = (casterGO.transform).forward
-    local trapEntityPos = ownTrapEntity:GetGridPosition()
-    local trapRenderPos = boardServiceRender:GridPos2RenderPos(trapEntityPos)
-    local targetEntityPos = targetEntity:GetGridPosition()
-    local attackDir = targetEntityPos - trapEntityPos
-    local effectService = (self._world):GetService("Effect")
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R20 in 'UnsetPending'
-
-    ;
-    (casterGO.transform).position = trapRenderPos
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R20 in 'UnsetPending'
-
-    ;
-    (casterGO.transform).forward = Vector3(attackDir.x, 0, attackDir.y)
-    local waitTaskIDs = {}
-    local monsterAnimTask = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoMonsterAnim, self, casterEntity, ownTrapEntity, phaseParam)
-    ;
-    (table.insert)(waitTaskIDs, monsterAnimTask)
-    local bulletTask = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoBullet, self, casterEntity, targetEntity, phaseParam)
-    ;
-    (table.insert)(waitTaskIDs, bulletTask)
-    local beHitTask = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoBeHit, self, casterEntity, phaseParam)
-    ;
-    (table.insert)(waitTaskIDs, beHitTask)
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(waitTaskIDs) do
-      YIELD(TT)
-    end
-    -- DECOMPILER ERROR at PC145: Confused about usage of register: R24 in 'UnsetPending'
-
-    ;
-    (casterGO.transform).position = oldCasterPosition
-    -- DECOMPILER ERROR at PC147: Confused about usage of register: R24 in 'UnsetPending'
-
-    ;
-    (casterGO.transform).forward = oldForward
+  if not ownTrapEntity then
+    return
   end
+  local targetEntityID = result:GetTargetID()
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
+  if not targetEntity then
+    return
+  end
+  local casterGO = casterEntity:View():GetGameObject()
+  local oldCasterPos = casterEntity:GetGridPosition()
+  local oldCasterPosition = casterGO.transform.position
+  local oldForward = casterGO.transform.forward
+  local trapEntityPos = ownTrapEntity:GetGridPosition()
+  local trapRenderPos = boardServiceRender:GridPos2RenderPos(trapEntityPos)
+  local targetEntityPos = targetEntity:GetGridPosition()
+  local attackDir = targetEntityPos - trapEntityPos
+  local effectService = self._world:GetService("Effect")
+  casterGO.transform.position = trapRenderPos
+  casterGO.transform.forward = Vector3(attackDir.x, 0, attackDir.y)
+  local waitTaskIDs = {}
+  local monsterAnimTask = GameGlobal.TaskManager():CoreGameStartTask(self._DoMonsterAnim, self, casterEntity, ownTrapEntity, phaseParam)
+  table.insert(waitTaskIDs, monsterAnimTask)
+  local bulletTask = GameGlobal.TaskManager():CoreGameStartTask(self._DoBullet, self, casterEntity, targetEntity, phaseParam)
+  table.insert(waitTaskIDs, bulletTask)
+  local beHitTask = GameGlobal.TaskManager():CoreGameStartTask(self._DoBeHit, self, casterEntity, phaseParam)
+  table.insert(waitTaskIDs, beHitTask)
+  while not TaskHelper:GetInstance():IsAllTaskFinished(waitTaskIDs) do
+    YIELD(TT)
+  end
+  casterGO.transform.position = oldCasterPosition
+  casterGO.transform.forward = oldForward
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTrajectoryHitOnOwnTrapPosPhase._DoMonsterAnim = function(self, TT, casterEntity, ownTrapEntity, phaseParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
-  casterEntity:SetAnimatorControllerTriggers({phaseParam:GetCasterAnim()})
+function PlaySkillTrajectoryHitOnOwnTrapPosPhase:_DoMonsterAnim(TT, casterEntity, ownTrapEntity, phaseParam)
+  local effectService = self._world:GetService("Effect")
+  casterEntity:SetAnimatorControllerTriggers({
+    phaseParam:GetCasterAnim()
+  })
   local casterEffectID = phaseParam:GetCasterEffectID()
   if casterEffectID then
     effectService:CreateEffect(phaseParam:GetCasterEffectID(), casterEntity)
@@ -87,12 +63,9 @@ PlaySkillTrajectoryHitOnOwnTrapPosPhase._DoMonsterAnim = function(self, TT, cast
   YIELD(TT, phaseParam:GetTotalTime())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTrajectoryHitOnOwnTrapPosPhase._DoBullet = function(self, TT, casterEntity, targetEntity, phaseParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function PlaySkillTrajectoryHitOnOwnTrapPosPhase:_DoBullet(TT, casterEntity, targetEntity, phaseParam)
+  local effectService = self._world:GetService("Effect")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local playSkillService = self:SkillService()
   local bulletDelayTime = phaseParam:GetBulletStartDelay()
   YIELD(TT, bulletDelayTime)
@@ -107,23 +80,18 @@ PlaySkillTrajectoryHitOnOwnTrapPosPhase._DoBullet = function(self, TT, casterEnt
   local effectViewCmpt = bowlderEffectEntity:View()
   if effectViewCmpt then
     local effectObject = effectViewCmpt:GetGameObject()
-    local posEffect = (effectObject.transform).position
+    local posEffect = effectObject.transform.position
     local transWork = effectObject.transform
     transWork:DOMove(targetPos, bulletFlyTime / 1000, false)
   end
-  do
-    YIELD(TT, bulletFlyTime)
-  end
+  YIELD(TT, bulletFlyTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillTrajectoryHitOnOwnTrapPosPhase._DoBeHit = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_3 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillTrajectoryHitOnOwnTrapPosPhase:_DoBeHit(TT, casterEntity, phaseParam)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local result = routineComponent:GetEffectResultByArray(SkillEffectType.Damage)
   if not result then
-    return 
+    return
   end
   local delayTime = phaseParam:GetHitDelayTime()
   YIELD(TT, delayTime)
@@ -134,13 +102,11 @@ PlaySkillTrajectoryHitOnOwnTrapPosPhase._DoBeHit = function(self, TT, casterEnti
   local skillID = routineComponent:GetSkillID()
   local damageResult = result
   local targetEntityID = damageResult:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   local damageInfoArray = damageResult:GetDamageInfoArray()
   local posTarget = self:_GetEntityBasePos(targetEntity)
-  for __,damageInfo in ipairs(damageInfoArray) do
-    local beHitParam = (((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitFxID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(posTarget)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(isFinalHit)):SetHandleBeHitParam_SkillID(skillID)
+  for __, damageInfo in ipairs(damageInfoArray) do
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitFxID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(posTarget):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(isFinalHit):SetHandleBeHitParam_SkillID(skillID)
     skillService:HandleBeHit(TT, beHitParam)
   end
 end
-
-

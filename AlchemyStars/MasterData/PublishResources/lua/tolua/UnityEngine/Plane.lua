@@ -1,78 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/Plane.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local setmetatable = setmetatable
-local Mathf = Mathf
-local Vector3 = Vector3
+local setmetatable = _ENV.setmetatable
+local Mathf = _ENV.Mathf
+local Vector3 = _ENV.Vector3
 local Plane = {}
-Plane.__index = function(t, k)
-  -- function num : 0_0 , upvalues : _ENV, Plane
+
+function Plane.__index(t, k)
   return rawget(Plane, k)
 end
 
-Plane.__call = function(t, v)
-  -- function num : 0_1 , upvalues : Plane
-  return (Plane.New)(v)
+function Plane.__call(t, v)
+  return Plane.New(v)
 end
 
-Plane.New = function(normal, d)
-  -- function num : 0_2 , upvalues : setmetatable, Plane
-  return setmetatable({normal = normal:Normalize(), distance = d}, Plane)
+function Plane.New(normal, d)
+  return setmetatable({
+    normal = normal:Normalize(),
+    distance = d
+  }, Plane)
 end
 
-Plane.Get = function(self)
-  -- function num : 0_3
+function Plane:Get()
   return self.normal, self.distance
 end
 
-Plane.Raycast = function(self, ray)
-  -- function num : 0_4 , upvalues : Vector3, Mathf
-  local a = (Vector3.Dot)(ray.direction, self.normal)
-  local num2 = -(Vector3.Dot)(ray.origin, self.normal) - self.distance
-  if (Mathf.Approximately)(a, 0) then
+function Plane:Raycast(ray)
+  local a = Vector3.Dot(ray.direction, self.normal)
+  local num2 = -Vector3.Dot(ray.origin, self.normal) - self.distance
+  if Mathf.Approximately(a, 0) then
     return false, 0
   end
   local enter = num2 / a
-  do return enter > 0, enter end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < enter, enter
 end
 
-Plane.SetNormalAndPosition = function(self, inNormal, inPoint)
-  -- function num : 0_5 , upvalues : Vector3
+function Plane:SetNormalAndPosition(inNormal, inPoint)
   self.normal = inNormal:Normalize()
-  self.distance = -(Vector3.Dot)(inNormal, inPoint)
+  self.distance = -Vector3.Dot(inNormal, inPoint)
 end
 
-Plane.Set3Points = function(self, a, b, c)
-  -- function num : 0_6 , upvalues : Vector3
-  self.normal = (Vector3.Normalize)((Vector3.Cross)(b - a, c - a))
-  self.distance = -(Vector3.Dot)(self.normal, a)
+function Plane:Set3Points(a, b, c)
+  self.normal = Vector3.Normalize(Vector3.Cross(b - a, c - a))
+  self.distance = -Vector3.Dot(self.normal, a)
 end
 
-Plane.GetDistanceToPoint = function(self, inPt)
-  -- function num : 0_7 , upvalues : Vector3
-  return (Vector3.Dot)(self.normal, inPt) + self.distance
+function Plane:GetDistanceToPoint(inPt)
+  return Vector3.Dot(self.normal, inPt) + self.distance
 end
 
-Plane.GetSide = function(self, inPt)
-  -- function num : 0_8 , upvalues : Vector3
-  do return (Vector3.Dot)(self.normal, inPt) + self.distance > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Plane:GetSide(inPt)
+  return Vector3.Dot(self.normal, inPt) + self.distance > 0
 end
 
-Plane.SameSide = function(self, inPt0, inPt1)
-  -- function num : 0_9
+function Plane:SameSide(inPt0, inPt1)
   local distanceToPoint = self:GetDistanceToPoint(inPt0)
   local num2 = self:GetDistanceToPoint(inPt1)
-  do return (distanceToPoint > 0 and num2 > 0) or (distanceToPoint <= 0 and num2 <= 0) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < distanceToPoint and 0 < num2 or distanceToPoint <= 0 and num2 <= 0
 end
-
--- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
 
 UnityEngine.Plane = Plane
 setmetatable(Plane, Plane)
 return Plane
-

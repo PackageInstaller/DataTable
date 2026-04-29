@@ -1,33 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/treasure/ui_treasure_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITreasureBoard", UIController)
 UITreasureBoard = UITreasureBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITreasureBoard.Constructor = function(self)
-  -- function num : 0_0
+function UITreasureBoard:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITreasureBoard.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UITreasureBoard:OnShow(uiParams)
   local tipsid = uiParams[1]
-  local cfg = (Cfg.cfg_homeland_treasure_board_tips)[tipsid]
-  local txt = (StringTable.Get)(cfg.Text)
+  local cfg = Cfg.cfg_homeland_treasure_board_tips[tipsid]
+  local txt = StringTable.Get(cfg.Text)
   self._txtInfo = self:GetUIComponent("UILocalizationText", "info")
-  ;
-  (self._txtInfo):SetText(txt)
+  self._txtInfo:SetText(txt)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITreasureBoard.CloseOnClick = function(self)
-  -- function num : 0_2
+function UITreasureBoard:CloseOnClick()
   self:CloseDialog()
 end
-
-

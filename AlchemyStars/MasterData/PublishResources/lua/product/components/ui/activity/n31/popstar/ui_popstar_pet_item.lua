@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarPetItem", UICustomWidget)
 UIPopStarPetItem = UIPopStarPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarPetItem.OnShow = function(self)
-  -- function num : 0_0
+function UIPopStarPetItem:OnShow()
   self._go = self:GetGameObject()
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._elementLoader = self:GetUIComponent("RawImageLoader", "Element")
@@ -19,72 +12,43 @@ UIPopStarPetItem.OnShow = function(self)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarPetItem.SetData = function(self, id, scale, callback, animationName)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPopStarPetItem:SetData(id, scale, callback, animationName)
   self._id = id
   self._callback = callback
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._go).transform).localScale = Vector3(scale, scale, scale)
+  self._go.transform.localScale = Vector3(scale, scale, scale)
   if self._id > 0 then
     if not animationName then
-      (self._empty):SetActive(false)
+      self._empty:SetActive(false)
     end
-    ;
-    (self._icon):SetActive(true)
-    ;
-    (self._element):SetActive(true)
-    local cfg = (Cfg.cfg_popstar_pet_list)[self._id]
-    ;
-    (self._iconLoader):LoadImage(cfg.Icon)
-    ;
-    (self._elementLoader):LoadImage(cfg.Element)
+    self._icon:SetActive(true)
+    self._element:SetActive(true)
+    local cfg = Cfg.cfg_popstar_pet_list[self._id]
+    self._iconLoader:LoadImage(cfg.Icon)
+    self._elementLoader:LoadImage(cfg.Element)
     if animationName then
-      (self._anim):Play(animationName)
+      self._anim:Play(animationName)
     end
   else
-    do
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._emptyCanvas).alpha = 1
-      ;
-      (self._empty):SetActive(true)
-      ;
-      (self._icon):SetActive(false)
-      ;
-      (self._element):SetActive(false)
-    end
+    self._emptyCanvas.alpha = 1
+    self._empty:SetActive(true)
+    self._icon:SetActive(false)
+    self._element:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarPetItem.SetEmptyActive = function(self, status)
-  -- function num : 0_2
-  (self._empty):SetActive(status)
+function UIPopStarPetItem:SetEmptyActive(status)
+  self._empty:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarPetItem.SetActive = function(self, status)
-  -- function num : 0_3
-  (self._go):SetActive(status)
+function UIPopStarPetItem:SetActive(status)
+  self._go:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarPetItem.BtnOnClick = function(self)
-  -- function num : 0_4
+function UIPopStarPetItem:BtnOnClick()
   if self._id <= 0 then
-    return 
+    return
   end
   if self._callback then
-    (self._callback)(self._id, ((self._go).transform).position)
+    self._callback(self._id, self._go.transform.position)
   end
 end
-
-

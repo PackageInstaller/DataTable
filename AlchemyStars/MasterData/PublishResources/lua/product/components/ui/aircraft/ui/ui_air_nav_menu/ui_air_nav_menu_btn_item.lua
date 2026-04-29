@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_air_nav_menu/ui_air_nav_menu_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAirNavMenuBtnItem", UICustomWidget)
 UIAirNavMenuBtnItem = UIAirNavMenuBtnItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAirNavMenuBtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAirNavMenuBtnItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuBtnItem.OnHide = function(self)
-  -- function num : 0_1
+function UIAirNavMenuBtnItem:OnHide()
   self._idx = nil
   self._state = nil
   self._count = nil
@@ -23,10 +13,7 @@ UIAirNavMenuBtnItem.OnHide = function(self)
   self._cb = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuBtnItem.SetData = function(self, idx, state, currState, count, icon, name, pos, cb)
-  -- function num : 0_2
+function UIAirNavMenuBtnItem:SetData(idx, state, currState, count, icon, name, pos, cb)
   self:GetComponents()
   self._idx = idx
   self._state = state
@@ -39,27 +26,14 @@ UIAirNavMenuBtnItem.SetData = function(self, idx, state, currState, count, icon,
   self:RefreshBtnState(currState)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuBtnItem.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = self._pos
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._iconImg).sprite = self._icon
-  ;
-  (self._countTex):SetText(self._count)
-  ;
-  (self._nameTex):SetText((StringTable.Get)(self._name))
+function UIAirNavMenuBtnItem:OnValue()
+  self._rect.anchoredPosition = self._pos
+  self._iconImg.sprite = self._icon
+  self._countTex:SetText(self._count)
+  self._nameTex:SetText(StringTable.Get(self._name))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuBtnItem.GetComponents = function(self)
-  -- function num : 0_4
+function UIAirNavMenuBtnItem:GetComponents()
   self._iconImg = self:GetUIComponent("Image", "icon")
   self._countTex = self:GetUIComponent("UILocalizationText", "count")
   self._showBtn = self:GetGameObject("showBtn")
@@ -69,36 +43,19 @@ UIAirNavMenuBtnItem.GetComponents = function(self)
   self._anim = self:GetUIComponent("RectTransform", "anim")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuBtnItem.RefreshBtnState = function(self, state)
-  -- function num : 0_5
-  (self._showBtn):SetActive(state == self._state)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIAirNavMenuBtnItem:RefreshBtnState(state)
+  self._showBtn:SetActive(state == self._state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuBtnItem.PlayAnim_In = function(self, yieldTime)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._anim).anchoredPosition = Vector2(350, 0)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_6_0 , upvalues : self
-    (self._rectAnim):Play()
-  end
-)
+function UIAirNavMenuBtnItem:PlayAnim_In(yieldTime)
+  self._anim.anchoredPosition = Vector2(350, 0)
+  GameGlobal.Timer():AddEvent(yieldTime, function()
+    self._rectAnim:Play()
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuBtnItem.btnOnClick = function(self)
-  -- function num : 0_7
+function UIAirNavMenuBtnItem:btnOnClick()
   if self._cb then
-    (self._cb)(self._state)
+    self._cb(self._state)
   end
 end
-
-

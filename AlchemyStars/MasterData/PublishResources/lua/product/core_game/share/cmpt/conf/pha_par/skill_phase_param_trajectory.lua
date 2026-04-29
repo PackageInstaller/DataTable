@@ -1,19 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_trajectory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
-local SkillPhaseParam_TrajectoryType = {Line = 1, Parabola = 2, Laser = 3}
+local SkillPhaseParam_TrajectoryType = {
+  Line = 1,
+  Parabola = 2,
+  Laser = 3
+}
 _enum("SkillPhaseParam_TrajectoryType", SkillPhaseParam_TrajectoryType)
-local SkillPhaseParam_PointType = {UserParam = 0, CasterPos = 1, CasterX = 2, CasterY = 3, TargetPos = 11, TargetX = 12, TargetY = 13}
+local SkillPhaseParam_PointType = {
+  UserParam = 0,
+  CasterPos = 1,
+  CasterX = 2,
+  CasterY = 3,
+  TargetPos = 11,
+  TargetX = 12,
+  TargetY = 13
+}
 _enum("SkillPhaseParam_PointType", SkillPhaseParam_PointType)
 _class("SkillPhaseParam_Trajectory", SkillPhaseParamBase)
 SkillPhaseParam_Trajectory = SkillPhaseParam_Trajectory
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
 
-SkillPhaseParam_Trajectory.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParam_Trajectory:Constructor(t)
   self._trajectoryType = t.trajectoryType
   self._trajectoryEffectID = t.trajectoryEffectID
   self._trajectoryEffectOffset = t.trajectoryEffectOffset
@@ -34,10 +39,7 @@ SkillPhaseParam_Trajectory.Constructor = function(self, t)
   self._finishDelayTime = t.finishDelayTime
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseParam_Trajectory:GetCacheTable()
   local listID = {}
   self:AddEffectIDToListID(listID, self._trajectoryEffectID)
   self:AddEffectIDToListID(listID, self._targetEffectID)
@@ -45,140 +47,81 @@ SkillPhaseParam_Trajectory.GetCacheTable = function(self)
   return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParam_Trajectory:GetPhaseType()
   return SkillViewPhaseType.Trajectory
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTrajectoryType = function(self)
-  -- function num : 0_3
+function SkillPhaseParam_Trajectory:GetTrajectoryType()
   return self._trajectoryType
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTrajectoryEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseParam_Trajectory:GetTrajectoryEffectID()
   return self._trajectoryEffectID
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTrajectoryEffectOffset = function(self)
-  -- function num : 0_5
+function SkillPhaseParam_Trajectory:GetTrajectoryEffectOffset()
   return self._trajectoryEffectOffset
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTrajectoryTime = function(self)
-  -- function num : 0_6
+function SkillPhaseParam_Trajectory:GetTrajectoryTime()
   return self._trajectoryTime
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTotalTime = function(self)
-  -- function num : 0_7
+function SkillPhaseParam_Trajectory:GetTotalTime()
   return self._totalTime
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetCasterType = function(self)
-  -- function num : 0_8
+function SkillPhaseParam_Trajectory:GetCasterType()
   return self._casterType
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetCasterParam = function(self)
-  -- function num : 0_9
+function SkillPhaseParam_Trajectory:GetCasterParam()
   return self._casterParam
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTargetType = function(self)
-  -- function num : 0_10
+function SkillPhaseParam_Trajectory:GetTargetType()
   return self._targetType
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTargetParam = function(self)
-  -- function num : 0_11
+function SkillPhaseParam_Trajectory:GetTargetParam()
   return self._targetParam
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTargetWaitTime = function(self)
-  -- function num : 0_12
+function SkillPhaseParam_Trajectory:GetTargetWaitTime()
   return self._targetWaitTime
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTargetEffectID = function(self)
-  -- function num : 0_13
+function SkillPhaseParam_Trajectory:GetTargetEffectID()
   return self._targetEffectID
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetTargetDelayTime = function(self)
-  -- function num : 0_14
+function SkillPhaseParam_Trajectory:GetTargetDelayTime()
   return self._targetDelayTime
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetHitAnimation = function(self)
-  -- function num : 0_15
+function SkillPhaseParam_Trajectory:GetHitAnimation()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetHitEffectID = function(self)
-  -- function num : 0_16
+function SkillPhaseParam_Trajectory:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetHitEffectTime = function(self)
-  -- function num : 0_17
+function SkillPhaseParam_Trajectory:GetHitEffectTime()
   return self._hitEffectTime
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetDamageIndex = function(self)
-  -- function num : 0_18
+function SkillPhaseParam_Trajectory:GetDamageIndex()
   return self._damageIndex
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.IsClearBodyNow = function(self)
-  -- function num : 0_19
+function SkillPhaseParam_Trajectory:IsClearBodyNow()
   if self._clearBodyNow and self._clearBodyNow > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillPhaseParam_Trajectory.GetFinishDelayTime = function(self)
-  -- function num : 0_20
+function SkillPhaseParam_Trajectory:GetFinishDelayTime()
   return self._finishDelayTime
 end
-
-

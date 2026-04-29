@@ -1,45 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/fsm/state_bounce_player_acc_down.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("state_bounce_player_base")
 _class("StateBouncePlayerAccDown", StateBouncePlayerBase)
 StateBouncePlayerAccDown = StateBouncePlayerAccDown
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBouncePlayerAccDown.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateBouncePlayerAccDown:OnEnter(TT, ...)
   self:Init()
   self:PlayAnim()
   if BounceDebug.ShowObjRect then
     self:ShowDebugRect()
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneAccDown)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneAccDown)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerAccDown.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateBouncePlayerAccDown:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerAccDown.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.player):HandleMove(deltaTimeMS, true)
-  if ((self.player).playerData).curSpeed > 0 then
-    (Log.error)("[bounce] StateBouncePlayerAccDown curSpeed = " .. ((self.player).playerData).curSpeed)
+function StateBouncePlayerAccDown:OnUpdate(deltaTimeMS)
+  self.player:HandleMove(deltaTimeMS, true)
+  if self.player.playerData.curSpeed > 0 then
+    Log.error("[bounce] StateBouncePlayerAccDown curSpeed = " .. self.player.playerData.curSpeed)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerAccDown.GetStateType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function StateBouncePlayerAccDown:GetStateType()
   return StateBouncePlayer.AccDown
 end
-
-

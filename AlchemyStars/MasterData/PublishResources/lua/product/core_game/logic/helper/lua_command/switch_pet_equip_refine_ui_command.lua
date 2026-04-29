@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/switch_pet_equip_refine_ui_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SwitchPetEquipRefineUICommand", IEntityCommand)
 SwitchPetEquipRefineUICommand = SwitchPetEquipRefineUICommand
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 SwitchPetEquipRefineUICommand.CommandType = "SwitchPetEquipRefineUI"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-SwitchPetEquipRefineUICommand.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SwitchPetEquipRefineUICommand:Constructor()
   self._uiState = EquipRefineUIStateType.On
   self._casterPstID = -1
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommand.GetCommandType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SwitchPetEquipRefineUICommand:GetCommandType()
   return SwitchPetEquipRefineUICommand.CommandType
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2 , upvalues : _ENV
+function SwitchPetEquipRefineUICommand:GetExecStateID(runAtClient)
   if runAtClient then
     return GameStateID.PreviewActiveSkill
   else
@@ -34,45 +19,27 @@ SwitchPetEquipRefineUICommand.GetExecStateID = function(self, runAtClient)
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommand.DependRoundCount = function(self)
-  -- function num : 0_3
+function SwitchPetEquipRefineUICommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommand.GetCmdRefineUIState = function(self)
-  -- function num : 0_4
+function SwitchPetEquipRefineUICommand:GetCmdRefineUIState()
   return self._uiState
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommand.GetCmdCasterPstID = function(self)
-  -- function num : 0_5
+function SwitchPetEquipRefineUICommand:GetCmdCasterPstID()
   return self._casterPstID
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommand.SetCmdRefineUIState = function(self, uiState)
-  -- function num : 0_6
+function SwitchPetEquipRefineUICommand:SetCmdRefineUIState(uiState)
   self._uiState = uiState
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommand.SetCmdCasterPstID = function(self, pstID)
-  -- function num : 0_7
+function SwitchPetEquipRefineUICommand:SetCmdCasterPstID(pstID)
   self._casterPstID = pstID
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommand.ToNetMessage = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SwitchPetEquipRefineUICommand:ToNetMessage()
   local msg = CEventSwitchPetEquipRefineUICommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -84,10 +51,7 @@ SwitchPetEquipRefineUICommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-SwitchPetEquipRefineUICommand.FromNetMessage = function(self, msg)
-  -- function num : 0_9
+function SwitchPetEquipRefineUICommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -96,5 +60,3 @@ SwitchPetEquipRefineUICommand.FromNetMessage = function(self, msg)
   self._uiState = msg.UIState
   self._casterPstID = msg.CasterPstID
 end
-
-

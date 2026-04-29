@@ -1,97 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/ui_season_maze_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeModule", UIModule)
 UISeasonMazeModule = UISeasonMazeModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeModule.Enter = function(self, battleExitState)
-  -- function num : 0_0 , upvalues : _ENV
-  local mazeID = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonMazeID()
+function UISeasonMazeModule:Enter(battleExitState)
+  local mazeID = GameGlobal.GetModule(SeasonMazeModule):CurSeasonMazeID()
   if not mazeID or mazeID <= 0 then
-    (Log.exception)("获取不到当前开放的赛季秘境 不能进入")
-    return 
+    Log.exception("获取不到当前开放的赛季秘境 不能进入")
+    return
   end
-  self._seasonID = ((Cfg.cfg_season_maze_client)[mazeID]).SeasonID
-  local cfg = (Cfg.cfg_season_map)[self._seasonID]
-  if cfg then
-    local mapRes = cfg.MapRes
-  end
-  if not battleExitState then
-    self._battleExitState = SMazeBattleExitState.None
-    self._isBossBattle = nil
-    ;
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.SeasonMaze_Enter, mapRes)
-  end
+  self._seasonID = Cfg.cfg_season_maze_client[mazeID].SeasonID
+  local cfg = Cfg.cfg_season_map[self._seasonID]
+  local mapRes = cfg and cfg.MapRes
+  self._battleExitState = battleExitState or SMazeBattleExitState.None
+  self._isBossBattle = nil
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.SeasonMaze_Enter, mapRes)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.Run = function(self, mazeID)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeModule:Run(mazeID)
   self._manager = SeasonMazeManager:New(mazeID)
-  ;
-  (self._manager):Init()
+  self._manager:Init()
   self._running = true
   self:AttachEvent(GameEventType.OnBattleStartLoading, self.OnBattleLoading)
   self:AttachEvent(GameEventType.BeforeRelogin, self.DisposeLogic)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetAndClearBattleExitState = function(self)
-  -- function num : 0_2
+function UISeasonMazeModule:GetAndClearBattleExitState()
   local tmp = self._battleExitState
   self._battleExitState = nil
   return tmp
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.Update = function(self, dt)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeModule:Update(dt)
   if self._running then
-    (self._manager):Update((GameGlobal:GetInstance()):GetDeltaTime())
+    self._manager:Update(GameGlobal:GetInstance():GetDeltaTime())
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.ExitTo = function(self, uistate)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.SeasonMaze_Exit, "UI", uistate)
+function UISeasonMazeModule:ExitTo(uistate)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.SeasonMaze_Exit, "UI", uistate)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.OnBattleLoading = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cmp = (((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()):GetMazeComponent()
+function UISeasonMazeModule:OnBattleLoading()
+  local cmp = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj():GetMazeComponent()
   self._isBossBattle = cmp:CurOperate() == SeasonMazeActionState.SMAS_BossBattle
   if self._isBossBattle then
     self._goldBeforeBossBattle = cmp:GetAttrValue(SeasonMazeAttrType.SMAT_Gold)
   end
   self:DisposeLogic()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule._GetAndClearGoldBeforeBossBattle = function(self)
-  -- function num : 0_6
+function UISeasonMazeModule:_GetAndClearGoldBeforeBossBattle()
   local tmp = self._goldBeforeBossBattle
   self._goldBeforeBossBattle = nil
   return tmp
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.DisposeLogic = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeModule:DisposeLogic()
   if self._manager then
-    (self._manager):Dispose()
+    self._manager:Dispose()
   end
   self._manager = nil
   self._running = false
@@ -101,115 +66,77 @@ UISeasonMazeModule.DisposeLogic = function(self)
   self:DetachEvent(GameEventType.BeforeRelogin)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.IsRunning = function(self)
-  -- function num : 0_8
+function UISeasonMazeModule:IsRunning()
   return self._running
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetSeasonID = function(self)
-  -- function num : 0_9
+function UISeasonMazeModule:GetSeasonID()
   return self._seasonID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.SeasonMazeManager = function(self)
-  -- function num : 0_10
+function UISeasonMazeModule:SeasonMazeManager()
   return self._manager
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.PopMsgBox = function(title, desc, uiType, okCb, okCbParams, cancelCb, cancelCbParams, afterShowCb)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonMazeMsgBox", title, desc, uiType, okCb, okCbParams, cancelCb, cancelCbParams, afterShowCb)
+function UISeasonMazeModule.PopMsgBox(title, desc, uiType, okCb, okCbParams, cancelCb, cancelCbParams, afterShowCb)
+  GameGlobal.UIStateManager():ShowDialog("UISeasonMazeMsgBox", title, desc, uiType, okCb, okCbParams, cancelCb, cancelCbParams, afterShowCb)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.TryExitBattle = function(self, matchEnterData, isWin)
-  -- function num : 0_12 , upvalues : _ENV
-  do
-    if matchEnterData:GetMatchType() == MatchType.MT_SeasonMaze then
-      local state = nil
-      if self._isBossBattle and isWin then
-        state = SMazeBattleExitState.BossBattleSuccess
-      else
-        if self._isBossBattle and not isWin then
-          state = SMazeBattleExitState.BossBattleFailed
-        else
-          if not self._isBossBattle and isWin then
-            state = SMazeBattleExitState.RoomBattleSuccess
-          else
-            if not self._isBossBattle and not isWin then
-              state = SMazeBattleExitState.RoomBattleFailed
-            end
-          end
-        end
-      end
-      self:Enter(state)
-      return true
+function UISeasonMazeModule:TryExitBattle(matchEnterData, isWin)
+  if matchEnterData:GetMatchType() == MatchType.MT_SeasonMaze then
+    local state
+    if self._isBossBattle and isWin then
+      state = SMazeBattleExitState.BossBattleSuccess
+    elseif self._isBossBattle and not isWin then
+      state = SMazeBattleExitState.BossBattleFailed
+    elseif not self._isBossBattle and isWin then
+      state = SMazeBattleExitState.RoomBattleSuccess
+    elseif not self._isBossBattle and not isWin then
+      state = SMazeBattleExitState.RoomBattleFailed
     end
-    return false
+    self:Enter(state)
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.OpenHelpUI = function(tabIdx, pageIdx)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISMazeS1HelperController", tabIdx, pageIdx)
+function UISeasonMazeModule.OpenHelpUI(tabIdx, pageIdx)
+  GameGlobal.UIStateManager():ShowDialog("UISMazeS1HelperController", tabIdx, pageIdx)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetSeasonMazePets = function(self, condition)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonMazeModule:GetSeasonMazePets(condition)
   local pets = {}
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local com = obj:GetMazeComponent()
   local comInfo = com:GetComponentInfo()
   local bagInfo = comInfo.m_bag_info
   local seasonMazePets = bagInfo.pet_list
-  for id,info in pairs(seasonMazePets) do
-    do
-      if condition and condition(info) then
+  for id, info in pairs(seasonMazePets) do
+    if condition then
+      if condition(info) then
         local matchPet = self:CreateMatchPet(info)
         pets[id] = matchPet
       end
-      do
-        local matchPet = self:CreateMatchPet(info)
-        pets[id] = matchPet
-        -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    else
+      local matchPet = self:CreateMatchPet(info)
+      pets[id] = matchPet
     end
   end
   return pets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetSeasonMazeTablePets = function(self, condition)
-  -- function num : 0_15 , upvalues : _ENV
+function UISeasonMazeModule:GetSeasonMazeTablePets(condition)
   local tablePets = {}
   local pets = self:GetSeasonMazePets(condition)
-  for key,value in pairs(pets) do
+  for key, value in pairs(pets) do
     tablePets[#tablePets + 1] = value
   end
   return tablePets
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetSeasonMazeRelics = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonMazeModule:GetSeasonMazeRelics()
   local relics = {}
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local com = obj:GetMazeComponent()
   local comInfo = com:GetComponentInfo()
   local bagInfo = comInfo.m_bag_info
@@ -217,23 +144,17 @@ UISeasonMazeModule.GetSeasonMazeRelics = function(self)
   return seasonMazeRelics
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetSeasonMazeRelicCanUseCount = function(self, id)
-  -- function num : 0_17
+function UISeasonMazeModule:GetSeasonMazeRelicCanUseCount(id)
   local relics = self:GetSeasonMazeRelics()
   if relics[id] ~= nil then
-    return (relics[id]).residueCnt
+    return relics[id].residueCnt
   end
   return 1
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetSeasonMazeActionCards = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UISeasonMazeModule:GetSeasonMazeActionCards()
   local relics = {}
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local com = obj:GetMazeComponent()
   local comInfo = com:GetComponentInfo()
   local wait_hands = comInfo.wait_hands
@@ -250,37 +171,33 @@ UISeasonMazeModule.GetSeasonMazeActionCards = function(self)
   return seasonActionCards
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.CreateMatchPet = function(self, SeasonMazePetInfo)
-  -- function num : 0_19 , upvalues : _ENV
+function UISeasonMazeModule:CreateMatchPet(SeasonMazePetInfo)
   local tid = SeasonMazePetInfo.petID
   local MatchPetInfo = MatchPetInfo:New()
   MatchPetInfo.pet_pstid = tid
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local havePet = petModule:GetPetByTemplateId(tid)
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local com = obj:GetMazeComponent()
   local comInfo = com:GetComponentInfo()
   local cfgid = com:GetComponentCfgId()
   local curLv = com:GetAttrValue(SeasonMazeAttrType.SMAT_Lv)
-  local cfg_lvs = ((Cfg.cfg_component_season_maze_lv)({ComponentID = cfgid, Lv = curLv}))
-  local cfg_lv = nil
+  local cfg_lvs = Cfg.cfg_component_season_maze_lv({ComponentID = cfgid, Lv = curLv})
+  local cfg_lv
   if cfg_lvs and next(cfg_lvs) then
     cfg_lv = cfg_lvs[1]
   else
-    ;
-    (Log.error)("###[UISeasonMazeModule] cfg_lvs is nil ! comcfgid:", cfgid)
+    Log.error("###[UISeasonMazeModule] cfg_lvs is nil ! comcfgid:", cfgid)
   end
   local petBreak = SeasonMazePetInfo.break_though_lv
-  local currSkin = nil
+  local currSkin
   if havePet then
     currSkin = havePet:GetSkinId()
   else
     currSkin = 0
   end
   MatchPetInfo.awakening = petBreak
-  MatchPetInfo.grade = self:GetPetGradeLv(tid, cfg_lv.PetGrade, cfg_lv.PetLv)
+  MatchPetInfo.grade, MatchPetInfo.level = self:GetPetGradeLv(tid, cfg_lv.PetGrade, cfg_lv.PetLv)
   MatchPetInfo.equip_lv = cfg_lv.PetEquip
   MatchPetInfo.current_skin = currSkin
   MatchPetInfo.template_id = tid
@@ -288,109 +205,98 @@ UISeasonMazeModule.CreateMatchPet = function(self, SeasonMazePetInfo)
   return matchPet
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.CreateMatchPetByID = function(self, tid, mazeLv, maxAwaken)
-  -- function num : 0_20 , upvalues : _ENV
+function UISeasonMazeModule:CreateMatchPetByID(tid, mazeLv, maxAwaken)
   if not tid or tid <= 0 then
     return nil
   end
   local MatchPetInfo = MatchPetInfo:New()
   MatchPetInfo.pet_pstid = tid
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local havePet = petModule:GetPetByTemplateId(tid)
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local com = obj:GetMazeComponent()
   local comInfo = com:GetComponentInfo()
-  local cfgid = (com:GetComponentCfgId())
-  local get_cfg_by_lv = nil
+  local cfgid = com:GetComponentCfgId()
+  local get_cfg_by_lv
   if mazeLv then
     get_cfg_by_lv = mazeLv
   else
     local curLv = com:GetAttrValue(SeasonMazeAttrType.SMAT_Lv)
     get_cfg_by_lv = curLv
   end
-  do
-    local cfg_lvs = ((Cfg.cfg_component_season_maze_lv)({ComponentID = cfgid, Lv = get_cfg_by_lv}))
-    local cfg_lv = nil
-    if cfg_lvs and next(cfg_lvs) then
-      cfg_lv = cfg_lvs[1]
-    else
-      ;
-      (Log.error)("###[UISeasonMazeModule] cfg_lvs is nil ! comcfgid:", cfgid, get_cfg_by_lv)
-    end
-    local petBreak, currSkin = nil, nil
-    if havePet then
-      if maxAwaken then
-        petBreak = self:GetPetMaxAwaken(tid)
-      else
-        local tmpBreak = havePet:GetPetAwakening()
-        local cfgBreak = cfg_lv.PetAwake
-        petBreak = (math.max)(tmpBreak, cfgBreak)
-      end
-      do
-        currSkin = havePet:GetSkinId()
-        if maxAwaken then
-          petBreak = self:GetPetMaxAwaken(tid)
-        else
-          petBreak = self:GetPetAwake(tid, cfg_lv.PetAwake)
-        end
-        currSkin = 0
-        MatchPetInfo.awakening = petBreak
-        MatchPetInfo.grade = self:GetPetGradeLv(tid, cfg_lv.PetGrade, cfg_lv.PetLv)
-        MatchPetInfo.equip_lv = cfg_lv.PetEquip
-        local hp = 0
-        local cfg_pet_level = ((Cfg["cfg_pet_level_" .. tid .. "_" .. MatchPetInfo.grade])({Level = MatchPetInfo.level}))[1]
-        hp = cfg_pet_level.Health
-        local cfg_pet_grade = ((Cfg.cfg_pet_grade)({PetID = tid, Grade = MatchPetInfo.grade}))[1]
-        hp = hp + cfg_pet_grade.Health
-        do
-          if petBreak and petBreak > 0 then
-            local cfg_pet_awakening = ((Cfg.cfg_pet_awakening)({PetID = tid, Awakening = petBreak}))[1]
-            hp = hp + cfg_pet_awakening.Health
-          end
-          do
-            if cfg_lv.PetEquip and cfg_lv.PetEquip > 0 then
-              local cfg_pet_equip = ((Cfg.cfg_pet_equip)({PetID = tid, Level = cfg_lv.PetEquip}))[1]
-              hp = hp + cfg_pet_equip.Health
-            end
-            MatchPetInfo.max_hp = hp
-            MatchPetInfo.current_skin = currSkin
-            MatchPetInfo.template_id = tid
-            local matchPet = Pet:New(MatchPetInfo)
-            return matchPet
-          end
-        end
-      end
-    end
+  local cfg_lvs = Cfg.cfg_component_season_maze_lv({ComponentID = cfgid, Lv = get_cfg_by_lv})
+  local cfg_lv
+  if cfg_lvs and next(cfg_lvs) then
+    cfg_lv = cfg_lvs[1]
+  else
+    Log.error("###[UISeasonMazeModule] cfg_lvs is nil ! comcfgid:", cfgid, get_cfg_by_lv)
   end
+  local petBreak, currSkin
+  if havePet then
+    if maxAwaken then
+      petBreak = self:GetPetMaxAwaken(tid)
+    else
+      local tmpBreak = havePet:GetPetAwakening()
+      local cfgBreak = cfg_lv.PetAwake
+      petBreak = math.max(tmpBreak, cfgBreak)
+    end
+    currSkin = havePet:GetSkinId()
+  else
+    if maxAwaken then
+      petBreak = self:GetPetMaxAwaken(tid)
+    else
+      petBreak = self:GetPetAwake(tid, cfg_lv.PetAwake)
+    end
+    currSkin = 0
+  end
+  MatchPetInfo.awakening = petBreak
+  MatchPetInfo.grade, MatchPetInfo.level = self:GetPetGradeLv(tid, cfg_lv.PetGrade, cfg_lv.PetLv)
+  MatchPetInfo.equip_lv = cfg_lv.PetEquip
+  local hp = 0
+  local cfg_pet_level = Cfg["cfg_pet_level_" .. tid .. "_" .. MatchPetInfo.grade]({
+    Level = MatchPetInfo.level
+  })[1]
+  hp = cfg_pet_level.Health
+  local cfg_pet_grade = Cfg.cfg_pet_grade({
+    PetID = tid,
+    Grade = MatchPetInfo.grade
+  })[1]
+  hp = hp + cfg_pet_grade.Health
+  if petBreak and 0 < petBreak then
+    local cfg_pet_awakening = Cfg.cfg_pet_awakening({PetID = tid, Awakening = petBreak})[1]
+    hp = hp + cfg_pet_awakening.Health
+  end
+  if cfg_lv.PetEquip and 0 < cfg_lv.PetEquip then
+    local cfg_pet_equip = Cfg.cfg_pet_equip({
+      PetID = tid,
+      Level = cfg_lv.PetEquip
+    })[1]
+    hp = hp + cfg_pet_equip.Health
+  end
+  MatchPetInfo.max_hp = hp
+  MatchPetInfo.current_skin = currSkin
+  MatchPetInfo.template_id = tid
+  local matchPet = Pet:New(MatchPetInfo)
+  return matchPet
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetPetMaxAwaken = function(self, tid)
-  -- function num : 0_21 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_awakening)({PetID = tid})
+function UISeasonMazeModule:GetPetMaxAwaken(tid)
+  local cfgs = Cfg.cfg_pet_awakening({PetID = tid})
   local max = 0
   if cfgs ~= nil then
-    for _,c in ipairs(cfgs) do
+    for _, c in ipairs(cfgs) do
       if max < c.Awakening then
         max = c.Awakening
       end
     end
   end
-  do
-    return max
-  end
+  return max
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule._CalcPetMaxLevel = function(self, templateId, grade)
-  -- function num : 0_22 , upvalues : _ENV
-  local cfgs = (Cfg["cfg_pet_level_" .. templateId .. "_" .. grade])()
+function UISeasonMazeModule:_CalcPetMaxLevel(templateId, grade)
+  local cfgs = Cfg["cfg_pet_level_" .. templateId .. "_" .. grade]()
   local max = 1
-  for _,c in pairs(cfgs) do
+  for _, c in pairs(cfgs) do
     if max < c.Level then
       max = c.Level
     end
@@ -398,56 +304,45 @@ UISeasonMazeModule._CalcPetMaxLevel = function(self, templateId, grade)
   return max
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetPetGradeLv = function(self, tid, grade, lv)
-  -- function num : 0_23 , upvalues : _ENV
+function UISeasonMazeModule:GetPetGradeLv(tid, grade, lv)
   local tmpGrade = grade
   local tmpLv = lv
-  local cfgs = (Cfg.cfg_pet_grade)({PetID = tid})
+  local cfgs = Cfg.cfg_pet_grade({PetID = tid})
   if not cfgs then
-    (Log.fatal)("UISeasonMazeModule cfg_pet_grade can\'t find PetID ", tid)
+    Log.fatal("UISeasonMazeModule cfg_pet_grade can't find PetID ", tid)
   end
   local max = 0
-  for _,c in ipairs(cfgs) do
+  for _, c in ipairs(cfgs) do
     if max < c.Grade then
       max = c.Grade
     end
   end
-  if max < grade then
+  if grade > max then
     tmpGrade = max
     tmpLv = self:_CalcPetMaxLevel(tid, tmpGrade)
   end
   return tmpGrade, tmpLv
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetPetAwake = function(self, tid, awake)
-  -- function num : 0_24 , upvalues : _ENV
+function UISeasonMazeModule:GetPetAwake(tid, awake)
   local tmpAwake = awake
-  local cfgs = (Cfg.cfg_pet_awakening)({PetID = tid})
+  local cfgs = Cfg.cfg_pet_awakening({PetID = tid})
   local max = 0
   if cfgs ~= nil then
-    for _,c in ipairs(cfgs) do
+    for _, c in ipairs(cfgs) do
       if max < c.Awakening then
         max = c.Awakening
       end
     end
   end
-  do
-    if max < awake then
-      tmpAwake = max
-    end
-    return tmpAwake
+  if awake > max then
+    tmpAwake = max
   end
+  return tmpAwake
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetPetPower = function(self, tid, pet)
-  -- function num : 0_25 , upvalues : _ENV
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+function UISeasonMazeModule:GetPetPower(tid, pet)
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local com = obj:GetMazeComponent()
   local comInfo = com:GetComponentInfo()
   local bagInfo = comInfo.m_bag_info
@@ -455,31 +350,24 @@ UISeasonMazeModule.GetPetPower = function(self, tid, pet)
   local Pet = seasonMazePets[tid]
   if Pet then
     local power = Pet.pow
-  end
-  if power < 0 then
-    do
-      do return power end
-      local activeSkillID = pet:GetPetActiveSkill()
-      local cfg = BattleSkillCfg(activeSkillID)
-      return cfg.TriggerParam
+    if power < 0 then
+    else
+      return power
     end
   end
+  local activeSkillID = pet:GetPetActiveSkill()
+  local cfg = BattleSkillCfg(activeSkillID)
+  return cfg.TriggerParam
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetPetState = function(self, petid, type)
-  -- function num : 0_26 , upvalues : _ENV
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+function UISeasonMazeModule:GetPetState(petid, type)
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local com = obj:GetMazeComponent()
   return com:GetPetState(petid, type)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetPetHP = function(self, tid, pet)
-  -- function num : 0_27 , upvalues : _ENV
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
+function UISeasonMazeModule:GetPetHP(tid, pet)
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
   local com = obj:GetMazeComponent()
   local comInfo = com:GetComponentInfo()
   local bagInfo = comInfo.m_bag_info
@@ -490,86 +378,61 @@ UISeasonMazeModule.GetPetHP = function(self, tid, pet)
   end
   local hpPrcent = Pet.cur_blood_prcent
   local maxHp = Pet.max_hp
-  local curHp = (math.ceil)(maxHp * hpPrcent)
+  local curHp = math.ceil(maxHp * hpPrcent)
   return curHp, maxHp
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetSeasonMazeCfgPets = function(self, useMazeLv, awaken)
-  -- function num : 0_28 , upvalues : _ENV
+function UISeasonMazeModule:GetSeasonMazeCfgPets(useMazeLv, awaken)
   local pets = {}
-  local mlv = nil
+  local mlv
   if not useMazeLv then
     mlv = 1
   end
   local cfgs = self:SeasonMazeCfgPets()
-  for key,value in pairs(cfgs) do
+  for key, value in pairs(cfgs) do
     local matchPet = self:CreateMatchPetByID(key, mlv, awaken)
     pets[key] = matchPet
   end
   return pets
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.SeasonMazeCfgPets = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UISeasonMazeModule:SeasonMazeCfgPets()
   local pets = {}
-  local cfgs = (Cfg.cfg_season_maze_pet)({})
-  for key,value in pairs(cfgs) do
+  local cfgs = Cfg.cfg_season_maze_pet({})
+  for key, value in pairs(cfgs) do
     pets[value.ID] = value.ID
   end
   return pets
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.SeasonMazeCfgBanPetList = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UISeasonMazeModule:SeasonMazeCfgBanPetList()
   local pets = {}
-  local banCfgs = (Cfg.cfg_season_maze_pet)({Ban = 1})
+  local banCfgs = Cfg.cfg_season_maze_pet({Ban = 1})
   if banCfgs then
-    for index,value in ipairs(banCfgs) do
-      (table.insert)(pets, value.ID)
+    for index, value in ipairs(banCfgs) do
+      table.insert(pets, value.ID)
     end
   end
-  do
-    return pets
-  end
+  return pets
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.SetTempRoom = function(self, uiname)
-  -- function num : 0_31
+function UISeasonMazeModule:SetTempRoom(uiname)
   self._tempRoomUI = uiname
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.GetTempRoom = function(self)
-  -- function num : 0_32
+function UISeasonMazeModule:GetTempRoom()
   return self._tempRoomUI
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.ReturnTempRoom = function(self, uiparams)
-  -- function num : 0_33 , upvalues : _ENV
+function UISeasonMazeModule:ReturnTempRoom(uiparams)
   if self._tempRoomUI then
-    ((GameGlobal.UIStateManager)()):ShowDialog(self._tempRoomUI, uiparams)
+    GameGlobal.UIStateManager():ShowDialog(self._tempRoomUI, uiparams)
   end
   self._tempRoomUI = nil
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeModule.OnAttrChanged = function(self, attId, reason, oldValue, newValue)
-  -- function num : 0_34
+function UISeasonMazeModule:OnAttrChanged(attId, reason, oldValue, newValue)
   if self._running then
-    ((self._manager):RelicManager()):CheckRelicEft(attId, reason, oldValue, newValue)
+    self._manager:RelicManager():CheckRelicEft(attId, reason, oldValue, newValue)
   end
 end
-
-

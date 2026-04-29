@@ -1,119 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/mirage_end_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("MirageEndSystem", MainStateSystem)
 MirageEndSystem = MirageEndSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageEndSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MirageEndSystem:_GetMainStateID()
   return GameStateID.MirageEnd
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
+function MirageEndSystem:_OnMainStateEnter(TT)
   local battleResult = self:_IsBattleEnd()
   if battleResult then
     self:_DoLogicSwitchMainFsmState()
-    return 
+    return
   end
   self:_DoRenderMirageEndUI(TT)
   self:_DoRenderMirageClearWarningArea(TT)
   local isForceEnd = self:_IsMirageForceEnd()
-  do
-    if isForceEnd then
-      local eTraps = self:_DoLogicForceCastTrapSkill()
-      self:_DoRenderForceCastTrapSkill(TT, eTraps)
-    end
-    local battleResult = self:_IsBattleEnd()
-    if battleResult then
-      self:_DoLogicSwitchMainFsmState()
-      return 
-    end
-    local eTraps = self:_DoLogicMirageCastTrapDieSkill()
-    self:_DoRenderMiragePlayTrapDieSkill(TT, eTraps)
-    local bossEntity = self:_DoLogicMirageBossReturn()
-    self:_DoRenderMirageBossReturn(TT, bossEntity)
-    self:_DoLogicSwitchMainFsmState()
+  if isForceEnd then
+    local eTraps = self:_DoLogicForceCastTrapSkill()
+    self:_DoRenderForceCastTrapSkill(TT, eTraps)
   end
+  local battleResult = self:_IsBattleEnd()
+  if battleResult then
+    self:_DoLogicSwitchMainFsmState()
+    return
+  end
+  local eTraps = self:_DoLogicMirageCastTrapDieSkill()
+  self:_DoRenderMiragePlayTrapDieSkill(TT, eTraps)
+  local bossEntity = self:_DoLogicMirageBossReturn()
+  self:_DoRenderMirageBossReturn(TT, bossEntity)
+  self:_DoLogicSwitchMainFsmState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._IsMirageForceEnd = function(self)
-  -- function num : 0_2
-  local mirageSvc = (self._world):GetService("MirageLogic")
+function MirageEndSystem:_IsMirageForceEnd()
+  local mirageSvc = self._world:GetService("MirageLogic")
   return mirageSvc:IsMirageForceClose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._DoLogicForceCastTrapSkill = function(self)
-  -- function num : 0_3
-  local mirageSvc = (self._world):GetService("MirageLogic")
+function MirageEndSystem:_DoLogicForceCastTrapSkill()
+  local mirageSvc = self._world:GetService("MirageLogic")
   return mirageSvc:DoMirageCastTrapSkill()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._DoLogicSwitchMainFsmState = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.BanAutoFightBtn, false)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.MirageEndFinish, 1)
-  local mirageSvc = (self._world):GetService("MirageLogic")
+function MirageEndSystem:_DoLogicSwitchMainFsmState()
+  self._world:EventDispatcher():Dispatch(GameEventType.BanAutoFightBtn, false)
+  self._world:EventDispatcher():Dispatch(GameEventType.MirageEndFinish, 1)
+  local mirageSvc = self._world:GetService("MirageLogic")
   mirageSvc:SetMirageOver()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._DoLogicMirageCastTrapDieSkill = function(self)
-  -- function num : 0_5
-  local mirageSvc = (self._world):GetService("MirageLogic")
+function MirageEndSystem:_DoLogicMirageCastTrapDieSkill()
+  local mirageSvc = self._world:GetService("MirageLogic")
   return mirageSvc:DoMirageCastTrapDieSkill()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._DoLogicMirageBossReturn = function(self)
-  -- function num : 0_6
-  local mirageSvc = (self._world):GetService("MirageLogic")
+function MirageEndSystem:_DoLogicMirageBossReturn()
+  local mirageSvc = self._world:GetService("MirageLogic")
   return mirageSvc:DoMirageBossReturn()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._DoRenderMirageClearWarningArea = function(self, TT)
-  -- function num : 0_7
+function MirageEndSystem:_DoRenderMirageClearWarningArea(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._DoRenderForceCastTrapSkill = function(self, TT, eTraps)
-  -- function num : 0_8
+function MirageEndSystem:_DoRenderForceCastTrapSkill(TT, eTraps)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._DoRenderMiragePlayTrapDieSkill = function(self, TT, eTraps)
-  -- function num : 0_9
+function MirageEndSystem:_DoRenderMiragePlayTrapDieSkill(TT, eTraps)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._DoRenderMirageBossReturn = function(self, TT, bossEntity)
-  -- function num : 0_10
+function MirageEndSystem:_DoRenderMirageBossReturn(TT, bossEntity)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageEndSystem._DoRenderMirageEndUI = function(self, TT)
-  -- function num : 0_11
+function MirageEndSystem:_DoRenderMirageEndUI(TT)
 end
-
-

@@ -1,70 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_hp_by_san_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddHPBySanChange", BuffLogicBase)
 BuffLogicAddHPBySanChange = BuffLogicAddHPBySanChange
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddHPBySanChange.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicAddHPBySanChange:Constructor(buffInstance, logicParam)
   self._reduceRatePerSan = tonumber(logicParam.reduceRatePerSan)
   self._maxAddHPPercent = tonumber(logicParam.maxAddHPPercent) or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddHPBySanChange.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddHPBySanChange:DoLogic(notify)
   if not NTSanValueChange:IsInstanceOfType(notify) then
-    return 
+    return
   end
-  if (self._entity):HasDeadMark() or (self._entity):HasPetDeadMark() then
-    return 
+  if self._entity:HasDeadMark() or self._entity:HasPetDeadMark() then
+    return
   end
-  local teamEntity = nil
-  if (self._entity):HasTeam() then
+  local teamEntity
+  if self._entity:HasTeam() then
     teamEntity = self._entity
-  else
-    if (self._entity):HasPetPstID() then
-      teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-    end
+  elseif self._entity:HasPetPstID() then
+    teamEntity = self._entity:Pet():GetOwnerTeamEntity()
   end
-  if teamEntity and (teamEntity:Attributes()):GetAttribute("BuffForbidCure") then
-    return 
+  if teamEntity and teamEntity:Attributes():GetAttribute("BuffForbidCure") then
+    return
   end
-  local baseAtk = ((self._entity):Attributes()):GetAttack()
-  local val = baseAtk * (math.abs)(notify:GetCurValue() - notify:GetOldValue()) * self._reduceRatePerSan
+  local baseAtk = self._entity:Attributes():GetAttack()
+  local val = baseAtk * math.abs(notify:GetCurValue() - notify:GetOldValue()) * self._reduceRatePerSan
   local lossSanRate = 0
-  if self._maxAddHPPercent > 0 then
-    local lsvcFeature = (self._world):GetService("FeatureLogic")
+  if 0 < self._maxAddHPPercent then
+    local lsvcFeature = self._world:GetService("FeatureLogic")
     local sanVal = lsvcFeature:GetSanValue()
     local maxSanValue = lsvcFeature:GetSanMaxValue()
     if maxSanValue <= 0 then
-      return 
+      return
     end
     lossSanRate = 1 - sanVal / maxSanValue
-    val = val * (1 + self._maxAddHPPercent * (lossSanRate))
+    val = val * (1 + self._maxAddHPPercent * lossSanRate)
   end
-  do
-    local rate = ((self._entity):Attributes()):GetAttribute("AddBloodRate") or 0
-    val = val * (1 + rate)
-    local eAddHPTarget = self._entity
-    if (self._entity):HasPet() then
-      eAddHPTarget = ((self._entity):Pet()):GetOwnerTeamEntity()
-    end
-    local calcDamage = (self._world):GetService("CalcDamage")
-    local damageInfo = DamageInfo:New(val, DamageType.Recover)
-    calcDamage:AddTargetHP(eAddHPTarget:GetID(), damageInfo)
-    ;
-    ((self._world):GetMatchLogger()):BeginBuff((self._entity):GetID(), (self._buffInstance):BuffID())
-    local logger = (self._world):GetMatchLogger()
-    logger:AddBloodLog((self._entity):GetID(), {key = "CalcAddBlood", desc = "BUFF加血 攻击者[attacker] 被击者[defender] 加血量[blood] 回血系数[rate]", attacker = (self._entity):GetID(), defender = (self._entity):GetID(), blood = val, rate = lossSanRate})
-    ;
-    ((self._world):GetMatchLogger()):EndBuff((self._entity):GetID())
-    return BuffResultAddHPBySanChange:New(damageInfo, notify)
+  local rate = self._entity:Attributes():GetAttribute("AddBloodRate") or 0
+  val = val * (1 + rate)
+  local eAddHPTarget = self._entity
+  if self._entity:HasPet() then
+    eAddHPTarget = self._entity:Pet():GetOwnerTeamEntity()
   end
+  local calcDamage = self._world:GetService("CalcDamage")
+  local damageInfo = DamageInfo:New(val, DamageType.Recover)
+  calcDamage:AddTargetHP(eAddHPTarget:GetID(), damageInfo)
+  self._world:GetMatchLogger():BeginBuff(self._entity:GetID(), self._buffInstance:BuffID())
+  local logger = self._world:GetMatchLogger()
+  logger:AddBloodLog(self._entity:GetID(), {
+    key = "CalcAddBlood",
+    desc = "BUFF加血 攻击者[attacker] 被击者[defender] 加血量[blood] 回血系数[rate]",
+    attacker = self._entity:GetID(),
+    defender = self._entity:GetID(),
+    blood = val,
+    rate = lossSanRate
+  })
+  self._world:GetMatchLogger():EndBuff(self._entity:GetID())
+  return BuffResultAddHPBySanChange:New(damageInfo, notify)
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/collection/ui_season_rare_collection_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonRareCollectionController", UIController)
 UISeasonRareCollectionController = UISeasonRareCollectionController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonRareCollectionController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonRareCollectionController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonRareCollectionController:OnShow(uiParams)
   self.closeCb = uiParams[1]
   self._itemCountPerRow = 1
   self.itemModule = self:GetModule(ItemModule)
@@ -23,21 +13,15 @@ UISeasonRareCollectionController.OnShow = function(self, uiParams)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionController.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonRareCollectionController:InitWidget()
   local topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtns = topBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
     if self.closeCb then
-      (self.closeCb)()
+      self.closeCb()
     end
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self.txtCollectionCount = self:GetUIComponent("UILocalizationText", "txtCollectionCount")
   self.imgHd = self:GetUIComponent("RawImageLoader", "imgHd")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -51,40 +35,27 @@ UISeasonRareCollectionController.InitWidget = function(self)
   self.emptyTipGo = self:GetGameObject("emptyTip")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionController.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._items = (UISeasonExploreHelper.GetSeasonRareItems)()
+function UISeasonRareCollectionController:OnValue()
+  self._items = UISeasonExploreHelper.GetSeasonRareItems()
   local count = #self._items
-  ;
-  (self.emptyTipGo):SetActive(count == 0)
-  if count > 0 then
-    (self.txtCollectionCount):SetText(count)
+  self.emptyTipGo:SetActive(count == 0)
+  if 0 < count then
+    self.txtCollectionCount:SetText(count)
     self.selectIndex = 1
     self._collectionCount = count
-    self._listShowItemCount = (math.ceil)(self._collectionCount / self._itemCountPerRow)
+    self._listShowItemCount = math.ceil(self._collectionCount / self._itemCountPerRow)
     self:_InitSrollView()
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionController._InitSrollView = function(self)
-  -- function num : 0_4
-  (self._scrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_4_0 , upvalues : self
+function UISeasonRareCollectionController:_InitSrollView()
+  self._scrollView:InitListView(self._listShowItemCount, function(scrollView, index)
     return self:InitCellList(scrollView, index)
-  end
-)
+  end)
   self._inited = true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionController.InitCellList = function(self, scrollView, index)
-  -- function num : 0_5
+function UISeasonRareCollectionController:InitCellList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -98,8 +69,8 @@ UISeasonRareCollectionController.InitCellList = function(self, scrollView, index
   for i = 1, self._itemCountPerRow do
     local cellItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._collectionCount < itemIndex then
-      (cellItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._collectionCount then
+      cellItem:GetGameObject():SetActive(false)
     else
       self:ShowCellItem(cellItem, itemIndex)
     end
@@ -107,56 +78,41 @@ UISeasonRareCollectionController.InitCellList = function(self, scrollView, index
   return item
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionController.ShowCellItem = function(self, cellItem, index)
-  -- function num : 0_6
-  (cellItem:GetGameObject()):SetActive(true)
-  local itemInfo = (self._items)[index]
+function UISeasonRareCollectionController:ShowCellItem(cellItem, index)
+  cellItem:GetGameObject():SetActive(true)
+  local itemInfo = self._items[index]
   if itemInfo ~= nil then
     cellItem:SetData(itemInfo, index, self.selectIndex, function(cell)
-    -- function num : 0_6_0 , upvalues : self
-    if cell.index == self.selectIndex then
-      return 
-    end
-    self:OnClickCell(cell)
-  end
-)
+      if cell.index == self.selectIndex then
+        return
+      end
+      self:OnClickCell(cell)
+    end)
     if self.selectIndex == index then
       self:OnClickCell(cellItem)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonRareCollectionController.OnClickCell = function(self, cell)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonRareCollectionController:OnClickCell(cell)
   if self.curCell then
-    (self.curCell):SetSelect(false)
+    self.curCell:SetSelect(false)
   end
   self.curCell = cell
   self.selectIndex = cell.index
-  ;
-  (self.curCell):SetSelect(true)
-  local itemInfo = (self._items)[self.selectIndex]
+  self.curCell:SetSelect(true)
+  local itemInfo = self._items[self.selectIndex]
   if not itemInfo then
-    return 
+    return
   end
   local itemCfg = itemInfo:GetTemplate()
-  ;
-  (self.txtName):SetText((StringTable.Get)(itemCfg.Name))
-  ;
-  (self.txtInfo):SetText((StringTable.Get)(itemCfg.Intro))
-  local cfg = (Cfg.cfg_item_season_collection)[itemCfg.ID]
+  self.txtName:SetText(StringTable.Get(itemCfg.Name))
+  self.txtInfo:SetText(StringTable.Get(itemCfg.Intro))
+  local cfg = Cfg.cfg_item_season_collection[itemCfg.ID]
   if cfg then
-    (self.txtRequireDesc):SetText(cfg.RequireDesc)
-    ;
-    (self.imgHd):LoadImage(cfg.HdImage)
+    self.txtRequireDesc:SetText(cfg.RequireDesc)
+    self.imgHd:LoadImage(cfg.HdImage)
   end
-  local strGainTime = (StringTable.Get)("str_season_require_time", TimeToDate(itemInfo:GetGainTime()))
-  ;
-  (self.txtGetTime):SetText(strGainTime)
+  local strGainTime = StringTable.Get("str_season_require_time", TimeToDate(itemInfo:GetGainTime()))
+  self.txtGetTime:SetText(strGainTime)
 end
-
-

@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_sailing_plan/ui_shop_sailing_plan_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSailingPlanItem", UICustomWidget)
 UIShopSailingPlanItem = UIShopSailingPlanItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSailingPlanItem.Constructor = function(self)
-  -- function num : 0_0
+function UIShopSailingPlanItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanItem.SetData = function(self, idx, roleAsset, callback, haveState, status, buystate, animTime, skinTag1, skinTag2, itemScale)
-  -- function num : 0_1
+function UIShopSailingPlanItem:SetData(idx, roleAsset, callback, haveState, status, buystate, animTime, skinTag1, skinTag2, itemScale)
   self._callback = callback
   self._id = roleAsset.assetid
   self._count = roleAsset.count
@@ -29,53 +19,34 @@ UIShopSailingPlanItem.SetData = function(self, idx, roleAsset, callback, haveSta
   self:PlayAnim(animTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopSailingPlanItem:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanItem.PlayAnim = function(self, animTime)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIShopSailingPlanItem:PlayAnim(animTime)
   if animTime then
-    (self._rootAlpha).alpha = 0
+    self._rootAlpha.alpha = 0
     if animTime == 0 then
-      (self._anim):Play()
+      self._anim:Play()
     else
       if self._event then
-        ((GameGlobal.Timer)()):CancelEvent(self._event)
+        GameGlobal.Timer():CancelEvent(self._event)
         self._event = nil
       end
-      self._event = ((GameGlobal.Timer)()):AddEvent(animTime, function()
-    -- function num : 0_3_0 , upvalues : self
-    (self._anim):Play()
-  end
-)
+      self._event = GameGlobal.Timer():AddEvent(animTime, function()
+        self._anim:Play()
+      end)
     end
   else
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rootTr).anchoredPosition = Vector2(0, 0)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rootAlpha).alpha = 1
+    self._rootTr.anchoredPosition = Vector2(0, 0)
+    self._rootAlpha.alpha = 1
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanItem.GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopSailingPlanItem:GetComponents()
   self._anim = self:GetUIComponent("Animation", "anim")
   self._rootTr = self:GetUIComponent("RectTransform", "Root")
   self._rootAlpha = self:GetUIComponent("CanvasGroup", "Root")
@@ -96,70 +67,42 @@ UIShopSailingPlanItem.GetComponents = function(self)
   self._tagPos21 = self:GetGameObject("tagPos21")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanItem.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg_item = (Cfg.cfg_item)[self._id]
+function UIShopSailingPlanItem:OnValue()
+  local cfg_item = Cfg.cfg_item[self._id]
   if not cfg_item then
-    (Log.error)("###[UIShopSailingPlanItem] cfg_item is nil ! id : ", self._id)
+    Log.error("###[UIShopSailingPlanItem] cfg_item is nil ! id : ", self._id)
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._scale then
-    (self._uiitem).localScale = Vector3(self._scale, self._scale, self._scale)
+    self._uiitem.localScale = Vector3(self._scale, self._scale, self._scale)
   end
-  ;
-  (self._icon):LoadImage(cfg_item.Icon)
-  ;
-  (self._txt1):SetText(self._count)
-  local qualityName = (UIEnum.ItemColorFrame)(cfg_item.Color)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._quality).sprite = (self._uiCommonAtlas):GetSprite(qualityName)
+  self._icon:LoadImage(cfg_item.Icon)
+  self._txt1:SetText(self._count)
+  local qualityName = UIEnum.ItemColorFrame(cfg_item.Color)
+  self._quality.sprite = self._uiCommonAtlas:GetSprite(qualityName)
   if not self._haveState then
-    (self._statusGo):SetActive(false)
+    self._statusGo:SetActive(false)
+  elseif self._buystate then
+    local buy = self._buystate ~= BuyGiftStateType.EBGST_INIT
+    self._not:SetActive(not buy)
+    self._com:SetActive(buy and self._status == QuestStatus.QUEST_Completed)
+    self._got:SetActive(buy and self._status == QuestStatus.QUEST_Taken)
   else
-    if self._buystate == BuyGiftStateType.EBGST_INIT then
-      do
-        local buy = not self._buystate
-        ;
-        (self._not):SetActive(not buy)
-        ;
-        (self._com):SetActive(not buy or self._status == QuestStatus.QUEST_Completed)
-        ;
-        (self._got):SetActive(not buy or self._status == QuestStatus.QUEST_Taken)
-        ;
-        (self._not):SetActive(false)
-        ;
-        (self._com):SetActive(self._status == QuestStatus.QUEST_Completed)
-        ;
-        (self._got):SetActive(self._status == QuestStatus.QUEST_Taken)
-        local idx = (string.find)(tostring(self._id), "40")
-        local isSkin = not idx or idx == 1
-        ;
-        (self._isSkin):SetActive(isSkin)
-        if isSkin then
-          (self._tagPos21):SetActive(self.skinTag2)
-          ;
-          (self._tagPos11):SetActive(self.skinTag1)
-          ;
-          (self._tagPos12):SetActive(self.skinTag1)
-        end
-        -- DECOMPILER ERROR: 12 unprocessed JMP targets
-      end
-    end
+    self._not:SetActive(false)
+    self._com:SetActive(self._status == QuestStatus.QUEST_Completed)
+    self._got:SetActive(self._status == QuestStatus.QUEST_Taken)
+  end
+  local idx = string.find(tostring(self._id), "40")
+  local isSkin = idx and idx == 1
+  self._isSkin:SetActive(isSkin)
+  if isSkin then
+    self._tagPos21:SetActive(self.skinTag2)
+    self._tagPos11:SetActive(self.skinTag1)
+    self._tagPos12:SetActive(self.skinTag1)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanItem.BtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIShopSailingPlanItem:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._id, (go.transform).position)
+    self._callback(self._id, go.transform.position)
   end
 end
-
-

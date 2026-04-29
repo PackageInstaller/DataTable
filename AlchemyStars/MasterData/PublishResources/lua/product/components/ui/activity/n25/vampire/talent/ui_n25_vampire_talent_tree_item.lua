@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/talent/ui_n25_vampire_talent_tree_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireTalentTreeItem", UICustomWidget)
 UIN25VampireTalentTreeItem = UIN25VampireTalentTreeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireTalentTreeItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireTalentTreeItem:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
+  self.data = self.mCampaign:GetN25Data()
   self.selectSkillId = 0
   self.animName = "uieffanim_UIN25VampireTalentTreeItem_in"
   self.unlockAnimName = "uieffanim_UIN25VampireTalentTreeItem_out"
   self.isLocked = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25VampireTalentTreeItem:OnShow(uiParams)
   self.anim = self:GetUIComponent("Animation", "UIN25VampireTalentTreeItem")
-  self.rt = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
+  self.rt = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
   self.goCost = self:GetGameObject("cost")
   self.poolCost = self:GetUIComponent("UISelectObjectPath", "cost")
   self.imgCostBg = self:GetUIComponent("Image", "imgCostBg")
@@ -36,107 +26,71 @@ UIN25VampireTalentTreeItem.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.N25VampireSelectTalentSkill, self.N25VampireSelectTalentSkill)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25VampireTalentTreeItem:OnHide()
   self:DetachEvent(GameEventType.N25VampireSelectTalentSkill, self.N25VampireSelectTalentSkill)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.Flush = function(self, id, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25VampireTalentTreeItem:Flush(id, callback)
   self.id = id
   self.callback = callback
-  local tier = (self.data):GetTierById(id)
+  local tier = self.data:GetTierById(id)
   if tier.unlockTalent > 0 then
-    (self.goCost):SetActive(true)
-    local uiTextCost = (self.poolCost):SpawnObject("UIN25VampireTalentText")
+    self.goCost:SetActive(true)
+    local uiTextCost = self.poolCost:SpawnObject("UIN25VampireTalentText")
     uiTextCost:Flush(tier.unlockTalent, "num_point")
-    ;
-    (self.imgCostBg):CrossFadeAlpha(0.4, 0, false)
+    self.imgCostBg:CrossFadeAlpha(0.4, 0, false)
   else
-    do
-      ;
-      (self.goCost):SetActive(false)
-      ;
-      (self.imgCostBg):CrossFadeAlpha(1, 0, false)
-      local len = (table.count)(tier.skills)
-      ;
-      (self.skill):SpawnObjects("UIN25VampireTalentSkillItem", len)
-      local uis = (self.skill):GetAllSpawnList()
-      do
-        for i,skill in pairs(tier.skills) do
-          local ui = uis[i]
-          ui:Flush(skill, function()
-    -- function num : 0_3_0 , upvalues : self, tier, _ENV, skill
-    self:Move2Center(tier.id)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N25VampireSelectTalentSkill, self.id, skill.skillId)
-    self:ShowDialog("UIN25VampireTalentSkillTips", skill.skillId)
+    self.goCost:SetActive(false)
+    self.imgCostBg:CrossFadeAlpha(1, 0, false)
   end
-)
-        end
-      end
-      do
-        if tier.relic then
-          local uiRelic = (self.relic):SpawnObject("UIN25VampireTalentRelicItem")
-          uiRelic:Flush(tier.relic, function()
-    -- function num : 0_3_1 , upvalues : self, tier
-    self:Move2Center(tier.id)
-    self:ShowDialog("UIN25VampireTalentItemTips", tier.relic)
+  local len = table.count(tier.skills)
+  self.skill:SpawnObjects("UIN25VampireTalentSkillItem", len)
+  local uis = self.skill:GetAllSpawnList()
+  for i, skill in pairs(tier.skills) do
+    local ui = uis[i]
+    ui:Flush(skill, function()
+      self:Move2Center(tier.id)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.N25VampireSelectTalentSkill, self.id, skill.skillId)
+      self:ShowDialog("UIN25VampireTalentSkillTips", skill.skillId)
+    end)
   end
-)
-        end
-        if self.isLocked == nil then
-          self.isLocked = tier:IsLock()
-          ;
-          (self.lock):SetActive(self.isLocked)
-          ;
-          (self.eff):SetActive(not self.isLocked)
-        else
-          local toState = tier:IsLock()
-          if self.isLocked and not toState then
-            self.isLocked = toState
-            ;
-            (self.lock):SetActive(true)
-            ;
-            (self.anim):Play(self.unlockAnimName)
-            ;
-            (self.eff):SetActive(true)
-          else
-            if not self.isLocked and toState then
-              self.isLocked = toState
-              ;
-              (self.lock):SetActive(true)
-              self:ResetUnlockAnimation()
-              ;
-              (self.eff):SetActive(false)
-            end
-          end
-        end
-      end
+  if tier.relic then
+    local uiRelic = self.relic:SpawnObject("UIN25VampireTalentRelicItem")
+    uiRelic:Flush(tier.relic, function()
+      self:Move2Center(tier.id)
+      self:ShowDialog("UIN25VampireTalentItemTips", tier.relic)
+    end)
+  end
+  if self.isLocked == nil then
+    self.isLocked = tier:IsLock()
+    self.lock:SetActive(self.isLocked)
+    self.eff:SetActive(not self.isLocked)
+  else
+    local toState = tier:IsLock()
+    if self.isLocked and not toState then
+      self.isLocked = toState
+      self.lock:SetActive(true)
+      self.anim:Play(self.unlockAnimName)
+      self.eff:SetActive(true)
+    elseif not self.isLocked and toState then
+      self.isLocked = toState
+      self.lock:SetActive(true)
+      self:ResetUnlockAnimation()
+      self.eff:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.Move2Center = function(self, tierId)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25VampireTalentTreeItem:Move2Center(tierId)
   local uiName = "UIN25VampireTalentTree"
-  if ((GameGlobal.UIStateManager)()):IsShow(uiName) then
-    ((GameGlobal.UIStateManager)()):CallUIMethod(uiName, "Move2Center", tierId)
+  if GameGlobal.UIStateManager():IsShow(uiName) then
+    GameGlobal.UIStateManager():CallUIMethod(uiName, "Move2Center", tierId)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.N25VampireSelectTalentSkill = function(self, tierId, skillId)
-  -- function num : 0_5 , upvalues : _ENV
-  local uis = (self.skill):GetAllSpawnList()
-  for _,uiv in ipairs(uis) do
+function UIN25VampireTalentTreeItem:N25VampireSelectTalentSkill(tierId, skillId)
+  local uis = self.skill:GetAllSpawnList()
+  for _, uiv in ipairs(uis) do
     if tierId == self.id then
       if skillId == uiv:SkillId() then
         uiv:Select(true)
@@ -149,51 +103,31 @@ UIN25VampireTalentTreeItem.N25VampireSelectTalentSkill = function(self, tierId, 
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.Id = function(self)
-  -- function num : 0_6
+function UIN25VampireTalentTreeItem:Id()
   return self.id
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.RectTransform = function(self)
-  -- function num : 0_7
+function UIN25VampireTalentTreeItem:RectTransform()
   return self.rt
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.RootOnClick = function(self, go)
-  -- function num : 0_8
+function UIN25VampireTalentTreeItem:RootOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.PlayAnimation = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.anim):Play(self.animName)
-  local uis = (self.skill):GetAllSpawnList()
-  for _,uiv in ipairs(uis) do
+function UIN25VampireTalentTreeItem:PlayAnimation()
+  self.anim:Play(self.animName)
+  local uis = self.skill:GetAllSpawnList()
+  for _, uiv in ipairs(uis) do
     uiv:FlushTier()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentTreeItem.ResetUnlockAnimation = function(self)
-  -- function num : 0_10
-  (self.anim):Play(self.unlockAnimName)
-  ;
-  (self.anim):Rewind()
-  ;
-  (self.anim):Sample()
-  ;
-  (self.anim):Stop()
+function UIN25VampireTalentTreeItem:ResetUnlockAnimation()
+  self.anim:Play(self.unlockAnimName)
+  self.anim:Rewind()
+  self.anim:Sample()
+  self.anim:Stop()
 end
-
-

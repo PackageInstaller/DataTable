@@ -1,85 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/ui_season_maze_collage_content_card_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCollageContentCardItem", UICustomWidget)
 UISeasonMazeCollageContentCardItem = UISeasonMazeCollageContentCardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCollageContentCardItem.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonMazeCollageContentCardItem:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentCardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeCollageContentCardItem:InitWidget()
   self.lockGo = self:GetGameObject("lock")
   self.redGo = self:GetGameObject("red")
   local cardPool = self:GetUIComponent("UISelectObjectPath", "cardItem")
   self._cardItem = cardPool:SpawnObject("UISeasonMazeCardItem")
   self._txtLock = self:GetUIComponent("UILocalizationText", "txtLock")
-  self._tipPosTrans = (self:GetGameObject("tipPos")).transform
+  self._tipPosTrans = self:GetGameObject("tipPos").transform
   self._gameObject = self:GetGameObject()
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentCardItem.SetData = function(self, d, rowIndex, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._gameObject):SetActive(false)
+function UISeasonMazeCollageContentCardItem:SetData(d, rowIndex, clickCb)
+  self._gameObject:SetActive(false)
   self._data = d
-  self._itemId = (self._data):GetCfgId()
+  self._itemId = self._data:GetCfgId()
   self._clickCb = clickCb
-  ;
-  (self._cardItem):SetData(0, self._itemId, function(p)
-    -- function num : 0_2_0 , upvalues : self
+  self._cardItem:SetData(0, self._itemId, function(p)
     self:OnItemClicked()
-  end
-)
-  local bLock = not (self._data):GetUnlock()
-  ;
-  (self.lockGo):SetActive(bLock)
+  end)
+  local bLock = not self._data:GetUnlock()
+  self.lockGo:SetActive(bLock)
   if bLock then
-    (self._txtLock):SetText((StringTable.Get)("str_season_maze_enter_handbook_cond_desc", (self._data):GetUnLockLv()))
+    self._txtLock:SetText(StringTable.Get("str_season_maze_enter_handbook_cond_desc", self._data:GetUnLockLv()))
   end
-  ;
-  (self.redGo):SetActive((self._data):GetNew())
+  self.redGo:SetActive(self._data:GetNew())
   if rowIndex and rowIndex < 3 then
     local delta = rowIndex * 70
     if delta == 0 then
-      (self._gameObject):SetActive(true)
+      self._gameObject:SetActive(true)
     else
-      local timerEvent = ((GameGlobal.Timer)()):AddEventTimes(delta, TimerTriggerCount.Once, function()
-    -- function num : 0_2_1 , upvalues : self
-    (self._gameObject):SetActive(true)
-  end
-)
+      local timerEvent = GameGlobal.Timer():AddEventTimes(delta, TimerTriggerCount.Once, function()
+        self._gameObject:SetActive(true)
+      end)
     end
   else
-    do
-      ;
-      (self._gameObject):SetActive(true)
-    end
+    self._gameObject:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageContentCardItem.OnItemClicked = function(self)
-  -- function num : 0_3
-  if (self._data):GetNew() then
-    (self._data):SetNewAsRead()
-    ;
-    (self.redGo):SetActive(false)
+function UISeasonMazeCollageContentCardItem:OnItemClicked()
+  if self._data:GetNew() then
+    self._data:SetNewAsRead()
+    self.redGo:SetActive(false)
   end
   if self._clickCb then
-    (self._clickCb)(self._itemId, (self._tipPosTrans).position)
+    self._clickCb(self._itemId, self._tipPosTrans.position)
   end
 end
-
-

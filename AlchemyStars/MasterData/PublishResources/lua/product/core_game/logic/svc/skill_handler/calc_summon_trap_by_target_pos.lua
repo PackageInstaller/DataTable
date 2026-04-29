@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_trap_by_target_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonTrapByTargetPos", Object)
 SkillEffectCalc_SummonTrapByTargetPos = SkillEffectCalc_SummonTrapByTargetPos
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonTrapByTargetPos.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SummonTrapByTargetPos:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrapByTargetPos.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+function SkillEffectCalc_SummonTrapByTargetPos:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local skillResultArray = self:_GetSkillResultByEffectType(casterEntity, SkillEffectType.DynamicCenterDamage)
   if not skillResultArray then
     return {}
@@ -24,22 +14,19 @@ SkillEffectCalc_SummonTrapByTargetPos.DoSkillEffectCalculator = function(self, s
   local skillEffectParamSummon = skillEffectCalcParam.skillEffectParam
   local trapID = skillEffectParamSummon:GetTrapID()
   local results = {}
-  for _,_result in pairs(skillResultArray) do
-    (table.insert)(results, SkillSummonTrapEffectResult:New(trapID, _result:GetFinalCenter()))
+  for _, _result in pairs(skillResultArray) do
+    table.insert(results, SkillSummonTrapEffectResult:New(trapID, _result:GetFinalCenter()))
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonTrapByTargetPos._GetSkillResultByEffectType = function(self, casterEntity, effectType)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_SummonTrapByTargetPos:_GetSkillResultByEffectType(casterEntity, effectType)
   local petAttackData = casterEntity:SkillPetAttackData()
   if petAttackData then
     local chainAttackDataList = petAttackData:GetMultiStageChainAttackDataList()
     if chainAttackDataList then
-      for _,chainAttackData in pairs(chainAttackDataList) do
-        for _,skillChainAttackData in pairs(chainAttackData) do
+      for _, chainAttackData in pairs(chainAttackDataList) do
+        for _, skillChainAttackData in pairs(chainAttackData) do
           local skillEffectResult = skillChainAttackData:GetEffectResultsAsArray(effectType)
           if skillEffectResult then
             return skillEffectResult
@@ -48,9 +35,5 @@ SkillEffectCalc_SummonTrapByTargetPos._GetSkillResultByEffectType = function(sel
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
-
-

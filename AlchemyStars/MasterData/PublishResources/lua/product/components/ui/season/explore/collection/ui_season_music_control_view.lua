@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/collection/ui_season_music_control_view.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMusicControlView", UICustomWidget)
 UISeasonMusicControlView = UISeasonMusicControlView
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMusicControlView.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMusicControlView:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMusicControlView:InitWidget()
   self.cover = self:GetUIComponent("RawImageLoader", "cover")
   self.nameText = self:GetUIComponent("RollingText", "nameText")
   self.authorText = self:GetUIComponent("RollingText", "authorText")
@@ -24,131 +14,83 @@ UISeasonMusicControlView.InitWidget = function(self)
   self.resumeBtnGo = self:GetGameObject("resumeBtn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.GetCfg = function(self)
-  -- function num : 0_2
+function UISeasonMusicControlView:GetCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.Pause = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMusicControlView:Pause()
   self._playState = UISeasonExploreHelper.playingStatePause
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.Resume = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMusicControlView:Resume()
   self._playState = UISeasonExploreHelper.playingStatePlaying
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.SetMainMusicName = function(self, txt)
-  -- function num : 0_5
-  (self.mainMusicText):RefreshText(txt)
+function UISeasonMusicControlView:SetMainMusicName(txt)
+  self.mainMusicText:RefreshText(txt)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.SetData = function(self, preClickCb, nextClickCb, pauseClickCb, resumeClickCb, setMainClickCb)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMusicControlView:SetData(preClickCb, nextClickCb, pauseClickCb, resumeClickCb, setMainClickCb)
   self._preClickCb = preClickCb
   self._nextClickCb = nextClickCb
   self._pauseClickCb = pauseClickCb
   self._resumeClickCb = resumeClickCb
   self._setMainClickCb = setMainClickCb
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.Play = function(self, index, cfg)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMusicControlView:Play(index, cfg)
   self._index = index
   self._cfg = cfg
   self._playState = UISeasonExploreHelper.playingStatePlaying
   self:RefreshUI()
-  ;
-  (self._roleModule):UI_MusicOnclick((Cfg.cfg_role_music)[(self._cfg).ID])
+  self._roleModule:UI_MusicOnclick(Cfg.cfg_role_music[self._cfg.ID])
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.RefreshUI = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self.cover):LoadImage((self._cfg).Icon)
-  ;
-  (self.nameText):RefreshText((StringTable.Get)((self._cfg).Name))
-  ;
-  (self.authorText):RefreshText((StringTable.Get)((self._cfg).Author))
+function UISeasonMusicControlView:RefreshUI()
+  self.cover:LoadImage(self._cfg.Icon)
+  self.nameText:RefreshText(StringTable.Get(self._cfg.Name))
+  self.authorText:RefreshText(StringTable.Get(self._cfg.Author))
   self:RefreshPlayState()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.RefreshPlayState = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.pauseBtnGo):SetActive(self._playState ~= UISeasonExploreHelper.playingStatePause)
-  ;
-  (self.resumeBtnGo):SetActive(self._playState == UISeasonExploreHelper.playingStatePause)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonMusicControlView:RefreshPlayState()
+  self.pauseBtnGo:SetActive(self._playState ~= UISeasonExploreHelper.playingStatePause)
+  self.resumeBtnGo:SetActive(self._playState == UISeasonExploreHelper.playingStatePause)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.PauseBtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMusicControlView:PauseBtnOnClick(go)
   self._playState = UISeasonExploreHelper.playingStatePause
-  ;
-  (AudioHelperController.PauseBGM)()
+  AudioHelperController.PauseBGM()
   self:RefreshPlayState()
   if self._pauseClickCb then
-    (self._pauseClickCb)(self._index, self._cfg)
+    self._pauseClickCb(self._index, self._cfg)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.ResumeBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMusicControlView:ResumeBtnOnClick(go)
   self._playState = UISeasonExploreHelper.playingStatePlaying
-  ;
-  (AudioHelperController.UnpauseBGM)()
+  AudioHelperController.UnpauseBGM()
   self:RefreshPlayState()
   if self._resumeClickCb then
-    (self._resumeClickCb)(self._index, self._cfg)
+    self._resumeClickCb(self._index, self._cfg)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.LastBtnOnClick = function(self, go)
-  -- function num : 0_12
+function UISeasonMusicControlView:LastBtnOnClick(go)
   if self._preClickCb then
-    (self._preClickCb)(self._index, self._cfg)
+    self._preClickCb(self._index, self._cfg)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.NextBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UISeasonMusicControlView:NextBtnOnClick(go)
   if self._nextClickCb then
-    (self._nextClickCb)(self._index, self._cfg)
+    self._nextClickCb(self._index, self._cfg)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicControlView.SetMainOnClick = function(self, go)
-  -- function num : 0_14
+function UISeasonMusicControlView:SetMainOnClick(go)
   if self._setMainClickCb then
-    (self._setMainClickCb)(self._index, self._cfg)
+    self._setMainClickCb(self._index, self._cfg)
   end
 end
-
-

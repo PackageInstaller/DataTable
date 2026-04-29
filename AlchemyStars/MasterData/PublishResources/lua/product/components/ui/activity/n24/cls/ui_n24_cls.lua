@@ -1,129 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n24/cls/ui_n24_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N24Data", CampaignDataBase)
 N24Data = N24Data
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N24Data.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function N24Data:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
   self.componentIdLottery = ECampaignN24ComponentID.ECAMPAIGN_N24_LOTTERY
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.Init = function(self)
-  -- function num : 0_1
+function N24Data:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.CheckCode = function(res)
-  -- function num : 0_2 , upvalues : _ENV
+function N24Data.CheckCode(res)
   local result = res:GetResult()
   if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
     return true
   end
-  local msg = (StringTable.Get)("str_activity_error_" .. result)
-  ;
-  (ToastManager.ShowToast)(msg)
+  local msg = StringTable.Get("str_activity_error_" .. result)
+  ToastManager.ShowToast(msg)
   if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED or result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN then
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.CheckRedShop = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function N24Data:CheckRedShop()
   local state = self:GetStateShop()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetLocalProcess()
-    local redFixTeam = (self.mCampaign):CheckComponentRed(lp, self.componentIdLottery)
+    local redFixTeam = self.mCampaign:CheckComponentRed(lp, self.componentIdLottery)
     return redFixTeam
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetComponentShop = function(self)
-  -- function num : 0_4
-  local c = (self.activityCampaign):GetComponent(self.componentIdLottery)
+function N24Data:GetComponentShop()
+  local c = self.activityCampaign:GetComponent(self.componentIdLottery)
   return c
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetComponentInfoShop = function(self)
-  -- function num : 0_5
-  local cInfo = (self.activityCampaign):GetComponentInfo(self.componentIdLottery)
+function N24Data:GetComponentInfoShop()
+  local cInfo = self.activityCampaign:GetComponentInfo(self.componentIdLottery)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetState = function(self, cInfo)
-  -- function num : 0_6 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function N24Data:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetStateShop = function(self)
-  -- function num : 0_7
-  local c = (self.activityCampaign):GetComponentInfo(self.componentIdLottery)
+function N24Data:GetStateShop()
+  local c = self.activityCampaign:GetComponentInfo(self.componentIdLottery)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetPools = function(self)
-  -- function num : 0_8
+function N24Data:GetPools()
   local cInfoLottery = self:GetComponentInfoShop()
   return cInfoLottery.m_jackpots
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetPoolAwards = function(self, index)
-  -- function num : 0_9
+function N24Data:GetPoolAwards(index)
   local pools = self:GetPools()
   local awards = pools[index]
   return awards
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.IsPoolUnlock = function(self, index)
-  -- function num : 0_10
+function N24Data:IsPoolUnlock(index)
   local cLottery = self:GetComponentShop()
   if cLottery then
     return cLottery:IsLotteryJackpotUnlock(index)
@@ -131,10 +87,7 @@ N24Data.IsPoolUnlock = function(self, index)
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.IsPoolEmpty = function(self, index)
-  -- function num : 0_11
+function N24Data:IsPoolEmpty(index)
   local cLottery = self:GetComponentShop()
   if cLottery then
     return cLottery:IsLotteryJeckpotEmpty(index)
@@ -142,48 +95,34 @@ N24Data.IsPoolEmpty = function(self, index)
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetPoolLeftDrawCount = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
+function N24Data:GetPoolLeftDrawCount(index)
   local canDrawCardCount = 0
   local awards = self:GetPoolAwards(index)
-  for index,award in ipairs(awards) do
-    if award.m_lottery_count and award.m_lottery_count > 0 then
+  for index, award in ipairs(awards) do
+    if award.m_lottery_count and 0 < award.m_lottery_count then
       canDrawCardCount = canDrawCardCount + award.m_lottery_count
     end
   end
-  do return canDrawCardCount, canDrawCardCount <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return canDrawCardCount, canDrawCardCount <= 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetCostCount = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function N24Data:GetCostCount()
   local cInfoLottery = self:GetComponentInfoShop()
-  local totalNum = (ClientCampaignDrawShop.GetMoney)(cInfoLottery.m_cost_item_id)
+  local totalNum = ClientCampaignDrawShop.GetMoney(cInfoLottery.m_cost_item_id)
   return totalNum
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.IsCostEnough = function(self, drawCount)
-  -- function num : 0_14
+function N24Data:IsCostEnough(drawCount)
   local totalNum = self:GetCostCount()
   local cInfoLottery = self:GetComponentInfoShop()
-  local isEnough = cInfoLottery.m_cost_count * drawCount <= totalNum
-  do return isEnough end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local isEnough = totalNum >= cInfoLottery.m_cost_count * drawCount
+  return isEnough
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GotAllBigAward = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function N24Data:GotAllBigAward()
   local pools = self:GetPools()
-  for key,pool in pairs(pools) do
-    for key,award in pairs(pool) do
+  for key, pool in pairs(pools) do
+    for key, award in pairs(pool) do
       if award.m_is_big_reward and award.m_lottery_count > 0 then
         return false
       end
@@ -192,62 +131,36 @@ N24Data.GotAllBigAward = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetPstId = function()
-  -- function num : 0_16 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function N24Data.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetPrefsKey = function(str)
-  -- function num : 0_17 , upvalues : _ENV
-  local playerPrefsKey = (N24Data.GetPstId)() .. str
+function N24Data.GetPrefsKey(str)
+  local playerPrefsKey = N24Data.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetPrefsKeyMain = function()
-  -- function num : 0_18 , upvalues : _ENV
-  return (N24Data.GetPrefsKey)("UIN23DataPrefsKeyMain")
+function N24Data.GetPrefsKeyMain()
+  return N24Data.GetPrefsKey("UIN23DataPrefsKeyMain")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.GetPrefsKeyShop = function()
-  -- function num : 0_19 , upvalues : _ENV
-  return (N24Data.GetPrefsKey)("UIN23DataPrefsKeyShop")
+function N24Data.GetPrefsKeyShop()
+  return N24Data.GetPrefsKey("UIN23DataPrefsKeyShop")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.HasPrefsMain = function()
-  -- function num : 0_20 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N24Data.GetPrefsKeyMain)())
+function N24Data.HasPrefsMain()
+  return UnityEngine.PlayerPrefs.HasKey(N24Data.GetPrefsKeyMain())
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.SetPrefsMain = function()
-  -- function num : 0_21 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N24Data.GetPrefsKeyMain)(), 1)
+function N24Data.SetPrefsMain()
+  UnityEngine.PlayerPrefs.SetInt(N24Data.GetPrefsKeyMain(), 1)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.HasPrefsShop = function()
-  -- function num : 0_22 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N24Data.GetPrefsKeyShop)())
+function N24Data.HasPrefsShop()
+  return UnityEngine.PlayerPrefs.HasKey(N24Data.GetPrefsKeyShop())
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-N24Data.SetPrefsShop = function()
-  -- function num : 0_23 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N24Data.GetPrefsKeyShop)(), 1)
+function N24Data.SetPrefsShop()
+  UnityEngine.PlayerPrefs.SetInt(N24Data.GetPrefsKeyShop(), 1)
 end
-
-

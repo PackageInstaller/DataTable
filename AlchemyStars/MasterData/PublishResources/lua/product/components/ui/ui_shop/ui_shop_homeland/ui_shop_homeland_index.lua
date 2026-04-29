@@ -1,39 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_index.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopHomelandIndex", UICustomWidget)
 UIShopHomelandIndex = UIShopHomelandIndex
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopHomelandIndex.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopHomelandIndex:OnShow(uiParams)
   self._atlas = self:GetAsset("UIShop.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandIndex._GetComponents = function(self)
-  -- function num : 0_1
+function UIShopHomelandIndex:_GetComponents()
   self._image = self:GetUIComponent("Image", "Image")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandIndex.SetData = function(self, selected)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIShopHomelandIndex:SetData(selected)
   if selected then
-    (self._image).sprite = (self._atlas):GetSprite("base_shop_di19")
+    self._image.sprite = self._atlas:GetSprite("base_shop_di19")
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._image).sprite = (self._atlas):GetSprite("base_shop_di18")
+    self._image.sprite = self._atlas:GetSprite("base_shop_di18")
   end
 end
-
-

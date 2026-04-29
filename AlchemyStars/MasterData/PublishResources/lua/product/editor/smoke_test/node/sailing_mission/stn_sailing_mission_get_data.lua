@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/sailing_mission/stn_sailing_mission_get_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("SailingMission_GetData", Common_AsyncBase)
 SailingMission_GetData = SailingMission_GetData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SailingMission_GetData.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local sailingModule = (GameGlobal.GetModule)(SailingMissionModule)
+function SailingMission_GetData:TaskFunc(TT, status)
+  local sailingModule = GameGlobal.GetModule(SailingMissionModule)
   for i = 1, 3 do
     local asyncRes = sailingModule:HandleGetSailingMissionData(TT)
     local replyResult = asyncRes:GetResult()
     if replyResult == SailingMissionErrorType.E_SAILINGMISSION_ERROR_TYPE_SUCCESS then
       status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-      return 
+      return
     end
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-  ;
-  (self._manager):Exception_DeclareExceptionThrew("获取大航海基础信息失败")
+  self._manager:Exception_DeclareExceptionThrew("获取大航海基础信息失败")
 end
-
-

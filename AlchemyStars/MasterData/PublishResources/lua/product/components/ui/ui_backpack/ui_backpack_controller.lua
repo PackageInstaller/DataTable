@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_backpack_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBackPackController", UIController)
 UIBackPackController = UIBackPackController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBackPackController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBackPackController:OnShow(uiParams)
   self._AsyncLoadFlagMap = {}
   self._TaskList = {}
   self._backCallback = uiParams[1]
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._backBtns:SetData(function()
     if self._backCallback then
-      (self._backCallback)()
+      self._backCallback()
     else
       self:CloseDialog()
     end
-  end
-)
+  end)
   self._allStateOn = self:GetGameObject("allStateOn")
   self._allStateOff = self:GetGameObject("allStateOff")
   self._clStateOn = self:GetGameObject("clStateOn")
@@ -32,15 +22,15 @@ UIBackPackController.OnShow = function(self, uiParams)
   self._xhStateOff = self:GetGameObject("xhStateOff")
   self._currentType = ItemType.ItemType_None
   self:ChangeState(self._currentType)
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self._itemCountPerRow = 4
   self._itemList = self:GetNotHomelandItems(ItemType.ItemType_None)
   self.pst2red = {}
   self.clearRed = false
   self:ClearItemsRedPoint()
-  self._listItemTotalCount = (table.count)(self._itemList)
+  self._listItemTotalCount = table.count(self._itemList)
   self._countClone = self._listItemTotalCount
   self._lastIndex = 1
   self._showRow = 8
@@ -62,244 +52,161 @@ UIBackPackController.OnShow = function(self, uiParams)
   self._content = self:GetUIComponent("RectTransform", "Content")
   self.btn_item_from = self:GetGameObject("btn_item_from")
   self._alphaImg = self:GetGameObject("alphaImg")
-  ;
-  (self._alphaImg):SetActive(false)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.btn_item_from), UIEvent.Press, function(go)
-    -- function num : 0_0_1 , upvalues : self
-    (self._alphaImg):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.btn_item_from), UIEvent.Release, function(go)
-    -- function num : 0_0_2 , upvalues : self
-    (self._alphaImg):SetActive(false)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self.btn_item_from), UIEvent.Click, function(go)
-    -- function num : 0_0_3 , upvalues : self
+  self._alphaImg:SetActive(false)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.btn_item_from), UIEvent.Press, function(go)
+    self._alphaImg:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.btn_item_from), UIEvent.Release, function(go)
+    self._alphaImg:SetActive(false)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self.btn_item_from), UIEvent.Click, function(go)
     self:btnItemFromClick()
-  end
-)
+  end)
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
   self:AttachEvent(GameEventType.OpenGiftReward, self.OnOpenGift)
   self:_InitBackPack()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.GetSaveItemRed = function(self, pstid)
-  -- function num : 0_1
-  return (self.pst2red)[pstid] or false
+function UIBackPackController:GetSaveItemRed(pstid)
+  return self.pst2red[pstid] or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.RemoveSaveItemRed = function(self, pstid)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self.pst2red)[pstid] then
-    (self.pst2red)[pstid] = nil
+function UIBackPackController:RemoveSaveItemRed(pstid)
+  if self.pst2red[pstid] then
+    self.pst2red[pstid] = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.ClearItemsRedPoint = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBackPackController:ClearItemsRedPoint()
   if self._itemList and #self._itemList > 0 then
     local sendList = {}
-    for key,item_data in pairs(self._itemList) do
+    for key, item_data in pairs(self._itemList) do
       if item_data:IsNew() then
         self.clearRed = true
         local pstid = item_data:GetID()
-        ;
-        (table.insert)(sendList, pstid)
-        -- DECOMPILER ERROR at PC25: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self.pst2red)[pstid] = true
+        table.insert(sendList, pstid)
+        self.pst2red[pstid] = true
       end
     end
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.ClearItemsRedPointReq, self, sendList)
+    GameGlobal.TaskManager():StartTask(self.ClearItemsRedPointReq, self, sendList)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.ClearItemsRedPointReq = function(self, TT, sendList)
-  -- function num : 0_4
-  (self._itemModule):SetItemListUnnew(TT, sendList)
+function UIBackPackController:ClearItemsRedPointReq(TT, sendList)
+  self._itemModule:SetItemListUnnew(TT, sendList)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.allOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBackPackController:allOnClick()
   self:_PlaySwitchSound()
   local type = ItemType.ItemType_None
   if self._currentType == type then
-    return 
+    return
   end
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIBackPackControllerClick", {"qb"}, true)
+  GameGlobal.UAReportForceGuideEvent("UIBackPackControllerClick", {"qb"}, true)
   self._currentType = type
   self:ChangeState(type)
   self:OnChangeCurrentType(type)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.xhOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBackPackController:xhOnClick()
   self:_PlaySwitchSound()
   local type = ItemType.ItemType_Use
   if self._currentType == type then
-    return 
+    return
   end
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIBackPackControllerClick", {"xh"}, true)
+  GameGlobal.UAReportForceGuideEvent("UIBackPackControllerClick", {"xh"}, true)
   self._currentType = type
   self:ChangeState(type)
   self:OnChangeCurrentType(type)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.clOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBackPackController:clOnClick()
   self:_PlaySwitchSound()
   local type = ItemType.ItemType_Material
   if self._currentType == type then
-    return 
+    return
   end
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIBackPackControllerClick", {"cl"}, true)
+  GameGlobal.UAReportForceGuideEvent("UIBackPackControllerClick", {"cl"}, true)
   self._currentType = type
   self:ChangeState(type)
   self:OnChangeCurrentType(type)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController._PlaySwitchSound = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIBackPackController:_PlaySwitchSound()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.ChangeState = function(self, type)
-  -- function num : 0_9 , upvalues : _ENV
+function UIBackPackController:ChangeState(type)
   if type == ItemType.ItemType_None then
     self:ChangeAllType(true)
     self:ChangeCLType(false)
     self:ChangeXHType(false)
-  else
-    if type == ItemType.ItemType_Use then
-      self:ChangeAllType(false)
-      self:ChangeCLType(false)
-      self:ChangeXHType(true)
-    else
-      if type == ItemType.ItemType_Material then
-        self:ChangeAllType(false)
-        self:ChangeCLType(true)
-        self:ChangeXHType(false)
-      end
-    end
+  elseif type == ItemType.ItemType_Use then
+    self:ChangeAllType(false)
+    self:ChangeCLType(false)
+    self:ChangeXHType(true)
+  elseif type == ItemType.ItemType_Material then
+    self:ChangeAllType(false)
+    self:ChangeCLType(true)
+    self:ChangeXHType(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.ChangeAllType = function(self, isOn)
-  -- function num : 0_10
+function UIBackPackController:ChangeAllType(isOn)
   if isOn then
-    (self._allStateOn):SetActive(true)
-    ;
-    (self._allStateOff):SetActive(false)
+    self._allStateOn:SetActive(true)
+    self._allStateOff:SetActive(false)
   else
-    ;
-    (self._allStateOn):SetActive(false)
-    ;
-    (self._allStateOff):SetActive(true)
+    self._allStateOn:SetActive(false)
+    self._allStateOff:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.ChangeCLType = function(self, isOn)
-  -- function num : 0_11
+function UIBackPackController:ChangeCLType(isOn)
   if isOn then
-    (self._clStateOn):SetActive(true)
-    ;
-    (self._clStateOff):SetActive(false)
+    self._clStateOn:SetActive(true)
+    self._clStateOff:SetActive(false)
   else
-    ;
-    (self._clStateOn):SetActive(false)
-    ;
-    (self._clStateOff):SetActive(true)
+    self._clStateOn:SetActive(false)
+    self._clStateOff:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.ChangeXHType = function(self, isOn)
-  -- function num : 0_12
+function UIBackPackController:ChangeXHType(isOn)
   if isOn then
-    (self._xhStateOn):SetActive(true)
-    ;
-    (self._xhStateOff):SetActive(false)
+    self._xhStateOn:SetActive(true)
+    self._xhStateOff:SetActive(false)
   else
-    ;
-    (self._xhStateOn):SetActive(false)
-    ;
-    (self._xhStateOff):SetActive(true)
+    self._xhStateOn:SetActive(false)
+    self._xhStateOff:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController._InitBackPack = function(self)
-  -- function num : 0_13
+function UIBackPackController:_InitBackPack()
   self:_InitSrollView()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.ShowFirstItem = function(self)
-  -- function num : 0_14
+function UIBackPackController:ShowFirstItem()
   self:OnItemSelect(1)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController._InitSrollView = function(self)
-  -- function num : 0_15
+function UIBackPackController:_InitSrollView()
   self:CalcCount()
   if self._scrollView then
-    (self._scrollView):InitListView(self:_CalcTotalRow(self._listItemTotalCount), function(scrollView, index)
-    -- function num : 0_15_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-, self:GetParamItem())
+    self._scrollView:InitListView(self:_CalcTotalRow(self._listItemTotalCount), function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end, self:GetParamItem())
   end
   self:ShowFirstItem()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.GetParamItem = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIBackPackController:GetParamItem()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 180
   return param
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.CalcCount = function(self)
-  -- function num : 0_17
+function UIBackPackController:CalcCount()
   if self._listItemTotalCount < self._itemCountPerRow * self._listItemTotalRow then
     self._baseCount = self._itemCountPerRow * self._listItemTotalRow
   else
@@ -307,11 +214,8 @@ UIBackPackController.CalcCount = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.GetHasItemAsyncLoading = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  for _,v in pairs(self._AsyncLoadFlagMap) do
+function UIBackPackController:GetHasItemAsyncLoading()
+  for _, v in pairs(self._AsyncLoadFlagMap) do
     if v == 1 then
       return true
     end
@@ -319,11 +223,8 @@ UIBackPackController.GetHasItemAsyncLoading = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.GetHasLowIndexItemAsyncLoading = function(self, index)
-  -- function num : 0_19 , upvalues : _ENV
-  for idx,v in pairs(self._AsyncLoadFlagMap) do
+function UIBackPackController:GetHasLowIndexItemAsyncLoading(index)
+  for idx, v in pairs(self._AsyncLoadFlagMap) do
     if v == 1 and idx < index and index < 8 then
       return true
     end
@@ -331,10 +232,7 @@ UIBackPackController.GetHasLowIndexItemAsyncLoading = function(self, index)
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController._InitListView = function(self, scrollView, index)
-  -- function num : 0_20 , upvalues : _ENV
+function UIBackPackController:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -343,61 +241,39 @@ UIBackPackController._InitListView = function(self, scrollView, index)
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
     self:Lock("UIBackPackController_InitListView" .. index)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._TaskList)[item] = self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : index, self, _ENV, item, rowPool
-    while index > 0 and self:GetHasItemAsyncLoading() do
+    self._TaskList[item] = self:StartTask(function(TT)
+      if 0 < index then
+        while self:GetHasItemAsyncLoading() do
+          YIELD(TT)
+        end
+      end
+      self._AsyncLoadFlagMap[item] = 1
+      rowPool:AsyncSpawnObjects(TT, "UIBackPackItem", self._itemCountPerRow)
+      self:SpawnRawItem(index, rowPool, true)
       YIELD(TT)
-    end
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._AsyncLoadFlagMap)[item] = 1
-    rowPool:AsyncSpawnObjects(TT, "UIBackPackItem", self._itemCountPerRow)
-    self:SpawnRawItem(index, rowPool, true)
-    YIELD(TT)
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._AsyncLoadFlagMap)[item] = 2
-    self:UnLock("UIBackPackController_InitListView" .. index)
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._TaskList)[item] = nil
-  end
-)
+      self._AsyncLoadFlagMap[item] = 2
+      self:UnLock("UIBackPackController_InitListView" .. index)
+      self._TaskList[item] = nil
+    end)
+  elseif self._TaskList[item] then
+    self:StartTask(function()
+      while self._TaskList[item] do
+        YIELD(TT)
+      end
+      self:SpawnRawItem(index, rowPool, true)
+    end)
   else
-    if (self._TaskList)[item] then
-      self:StartTask(function()
-    -- function num : 0_20_1 , upvalues : self, item, _ENV, index, rowPool
-    while (self._TaskList)[item] do
-      YIELD(TT)
-    end
-    self:SpawnRawItem(index, rowPool, true)
-  end
-)
-    else
-      self:SpawnRawItem(index, rowPool, false)
-    end
+    self:SpawnRawItem(index, rowPool, false)
   end
   return item
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController.SpawnRawItem = function(self, index, rowPool, anim)
-  -- function num : 0_21
+function UIBackPackController:SpawnRawItem(index, rowPool, anim)
   local rowList = rowPool:GetAllSpawnList()
   for i = 1, self._itemCountPerRow do
     local backPackItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._itemTable)[itemIndex] = backPackItem
+    self._itemTable[itemIndex] = backPackItem
     if self._selectItemIndex == itemIndex then
       if self._selectItemIndex <= self._listItemTotalCount then
         backPackItem:SelectImg(true, true)
@@ -407,7 +283,7 @@ UIBackPackController.SpawnRawItem = function(self, index, rowPool, anim)
     else
       backPackItem:SelectImg(false)
     end
-    if self._baseCount < itemIndex then
+    if itemIndex > self._baseCount then
       self:_ShowBackPackItem(backPackItem, itemIndex, anim)
     else
       self:_ShowBackPackItem(backPackItem, itemIndex, anim)
@@ -415,10 +291,7 @@ UIBackPackController.SpawnRawItem = function(self, index, rowPool, anim)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackController._ShowBackPackItem = function(self, backPackItem, index, anim)
-  -- function num : 0_22 , upvalues : _ENV
+function UIBackPackController:_ShowBackPackItem(backPackItem, index, anim)
   local item_data = self:_GetItemData(index)
   if anim then
     backPackItem:PlayFadeInAnim()
@@ -427,21 +300,14 @@ UIBackPackController._ShowBackPackItem = function(self, backPackItem, index, ani
   end
   if item_data then
     backPackItem:SetData(item_data, index, function(index)
-    -- function num : 0_22_0 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
-    self:OnItemSelect(index)
-  end
-, function(pstid)
-    -- function num : 0_22_1 , upvalues : self
-    return self:GetSaveItemRed(pstid)
-  end
-, function(pstid)
-    -- function num : 0_22_2 , upvalues : self
-    self:RemoveSaveItemRed(pstid)
-  end
-)
-    ;
-    (backPackItem:GetGameObject()):SetActive(true)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+      self:OnItemSelect(index)
+    end, function(pstid)
+      return self:GetSaveItemRed(pstid)
+    end, function(pstid)
+      self:RemoveSaveItemRed(pstid)
+    end)
+    backPackItem:GetGameObject():SetActive(true)
   else
     backPackItem:ResetData()
     backPackItem:HideCount()
@@ -449,463 +315,347 @@ UIBackPackController._ShowBackPackItem = function(self, backPackItem, index, ani
 end
 
 local random = math.random
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
 
-UIBackPackController._GetItemData = function(self, index)
-  -- function num : 0_23 , upvalues : _ENV
-  if index <= (table.count)(self._itemList) then
-    return (self._itemList)[index]
+function UIBackPackController:_GetItemData(index)
+  if index <= table.count(self._itemList) then
+    return self._itemList[index]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.OnHide = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  for _,v in pairs(self._TaskList) do
+function UIBackPackController:OnHide()
+  for _, v in pairs(self._TaskList) do
     if v then
-      ((GameGlobal.TaskManager)()):KillTask(v)
+      GameGlobal.TaskManager():KillTask(v)
       v = nil
     end
   end
   self._backBtns = nil
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NoticeBackPackRed)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NoticeBackPackRed)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.Dispose = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIBackPackController:Dispose()
   self:DetachEvent(GameEventType.OpenGiftReward, self.OnOpenGift)
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.Constructor = function(self)
-  -- function num : 0_26
+function UIBackPackController:Constructor()
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.btnItemFromClick = function(self)
-  -- function num : 0_27
-  self:ShowDialog("UIItemGetPathController", (self:_GetSelectItemData()):GetTemplateID())
+function UIBackPackController:btnItemFromClick()
+  self:ShowDialog("UIItemGetPathController", self:_GetSelectItemData():GetTemplateID())
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.CheckLessTime = function(self, id)
-  -- function num : 0_28 , upvalues : _ENV
-  local cfg_item = (Cfg.cfg_item)[id]
+function UIBackPackController:CheckLessTime(id)
+  local cfg_item = Cfg.cfg_item[id]
   if not cfg_item then
-    (Log.error)("###[UIBackPackItem] cfg is nil ! id --> ", id)
+    Log.error("###[UIBackPackItem] cfg is nil ! id --> ", id)
   end
   local deadTime1 = math.maxinteger
-  if not (string.isnullorempty)(cfg_item.CompulsiveDeadTime) then
-    deadTime1 = (math.floor)((self._loginModule):GetTimeStampByTimeStr(cfg_item.CompulsiveDeadTime, Enum_DateTimeZoneType.E_ZoneType_GMT))
+  if not string.isnullorempty(cfg_item.CompulsiveDeadTime) then
+    deadTime1 = math.floor(self._loginModule:GetTimeStampByTimeStr(cfg_item.CompulsiveDeadTime, Enum_DateTimeZoneType.E_ZoneType_GMT))
   end
   local deadTime2 = math.maxinteger
-  do
-    if not (string.isnullorempty)(cfg_item.DeadTime) then
-      local timeType = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
-      if cfg_item.TimeTransform and cfg_item.TimeTransform == 0 then
-        timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
-      end
-      deadTime2 = (math.floor)((self._loginModule):GetTimeStampByTimeStr(cfg_item.DeadTime, timeType))
+  if not string.isnullorempty(cfg_item.DeadTime) then
+    local timeType = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
+    if cfg_item.TimeTransform and cfg_item.TimeTransform == 0 then
+      timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
     end
-    local lessTime = (math.min)(deadTime1, deadTime2)
-    if lessTime == math.maxinteger then
-      return true
-    end
-    local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-    local gapTime = lessTime - nowTime
-    if gapTime <= 0 then
-      return false
-    end
+    deadTime2 = math.floor(self._loginModule:GetTimeStampByTimeStr(cfg_item.DeadTime, timeType))
+  end
+  local lessTime = math.min(deadTime1, deadTime2)
+  if lessTime == math.maxinteger then
     return true
   end
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local gapTime = lessTime - nowTime
+  if gapTime <= 0 then
+    return false
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.btnuseOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
+function UIBackPackController:btnuseOnClick(go)
   local item_data = self:_GetSelectItemData()
   local templateData = item_data:GetTemplate()
   local _itemid = templateData.ID
   if not self:CheckLessTime(_itemid) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_item_public_time_out"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_item_public_time_out"))
+    return
   end
   if templateData.UseType == ItemUseType.ItemUseType_ManualUse then
     if templateData.ItemSubType == ItemSubType.ItemSubType_Base then
       if item_data:IsAwakeDirectlyItem() then
         self:ShowDialog("UIAwakeDirectly", item_data, function(data, petID)
-    -- function num : 0_29_0 , upvalues : self
-    self:StartTaskUseItem(data, 1, false, petID)
-  end
-)
+          self:StartTaskUseItem(data, 1, false, petID)
+        end)
+      elseif item_data:GetCount() == 1 then
+        self:StartTaskUseItem(item_data, 1, false)
       else
-        if item_data:GetCount() == 1 then
-          self:StartTaskUseItem(item_data, 1, false)
-        else
-          self:ShowDialog("UIItemSaleAndUseWithCountController", item_data, EnumItemSaleAndUseState.Use, function(item_data, count)
-    -- function num : 0_29_1 , upvalues : self
-    self:StartTaskUseItem(item_data, count, false)
-  end
-)
-        end
+        self:ShowDialog("UIItemSaleAndUseWithCountController", item_data, EnumItemSaleAndUseState.Use, function(item_data, count)
+          self:StartTaskUseItem(item_data, count, false)
+        end)
       end
     else
-      local giftType = (self._itemModule):GetItemGiftType(item_data:GetTemplateID())
+      local giftType = self._itemModule:GetItemGiftType(item_data:GetTemplateID())
       if giftType ~= ItemGiftType.ItemGiftType_Choose then
         if item_data:GetCount() == 1 then
           self:StartTaskUseItem(item_data, 1, true)
         else
           self:ShowDialog("UIItemSaleAndUseWithCountController", item_data, EnumItemSaleAndUseState.Use, function(item_data, count)
-    -- function num : 0_29_2 , upvalues : self
-    self:StartTaskUseItem(item_data, count, true)
-  end
-)
+            self:StartTaskUseItem(item_data, count, true)
+          end)
         end
+      elseif self._itemModule:IsChoosePetGift(item_data:GetTemplateID()) then
+        self:ShowDialog("UIPetBackPackBox", item_data)
       else
-        if (self._itemModule):IsChoosePetGift(item_data:GetTemplateID()) then
-          self:ShowDialog("UIPetBackPackBox", item_data)
+        local cfgItemGift = Cfg.cfg_item_gift[item_data:GetTemplateID()]
+        if cfgItemGift and cfgItemGift.SpecialOpenType ~= nil then
+          self:ShowDialog("UIBackPackUseBox", item_data)
+        elseif item_data:GetCount() == 1 then
+          self:ShowDialog("UIBackPackBox", item_data, 1)
         else
-          local cfgItemGift = (Cfg.cfg_item_gift)[item_data:GetTemplateID()]
-          if cfgItemGift and cfgItemGift.SpecialOpenType ~= nil then
-            self:ShowDialog("UIBackPackUseBox", item_data)
-          else
-            if item_data:GetCount() == 1 then
-              self:ShowDialog("UIBackPackBox", item_data, 1)
-            else
-              self:ShowDialog("UIItemSaleAndUseWithCountController", item_data, EnumItemSaleAndUseState.Use, function(item_data, count)
-    -- function num : 0_29_3 , upvalues : self
-    self:ShowDialog("UIBackPackBox", item_data, count)
-  end
-)
-            end
-          end
+          self:ShowDialog("UIItemSaleAndUseWithCountController", item_data, EnumItemSaleAndUseState.Use, function(item_data, count)
+            self:ShowDialog("UIBackPackBox", item_data, count)
+          end)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.StartTaskUseItem = function(self, item_Data, count, isGift, param1, param2, param3)
-  -- function num : 0_30 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIBackPackController:StartTaskUseItem(item_Data, count, isGift, param1, param2, param3)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self._lastIndex = self._selectItemIndex
   self:Lock("UIBackPackController:StartTaskUseItem")
   local templateData = item_Data:GetTemplate()
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIBackPackControllerUseItem", {templateData.ID or 0}, true)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.UseItem, self, item_Data, count, isGift, param1, param2, param3)
+  GameGlobal.UAReportForceGuideEvent("UIBackPackControllerUseItem", {
+    templateData.ID or 0
+  }, true)
+  GameGlobal.TaskManager():StartTask(self.UseItem, self, item_Data, count, isGift, param1, param2, param3)
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.UseItem = function(self, TT, itemData, count, isGift, param1, param2, param3)
-  -- function num : 0_31 , upvalues : _ENV
-  local res, msg = (self._itemModule):RequestUseItemByPstID(TT, itemData:GetID(), count, param1, param2, param3)
+function UIBackPackController:UseItem(TT, itemData, count, isGift, param1, param2, param3)
+  local res, msg = self._itemModule:RequestUseItemByPstID(TT, itemData:GetID(), count, param1, param2, param3)
   self:UnLock("UIBackPackController:StartTaskUseItem")
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.m_reward_list
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      do
-        if #tempPets > 0 then
-          self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_31_0 , upvalues : _ENV, self, msg
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", msg.m_reward_list)
-  end
-)
-        else
-          if msg.m_reward_list and next(msg.m_reward_list) then
-            self:ShowDialog("UIGetItemController", msg.m_reward_list)
-          end
-        end
-        do
-          if (itemData.m_template_data).UseEffect == "PhyGift" then
-            local stMsg = nil
-            if res:GetResult() == ITEM_RESULT_CODE.ITEM_NOT_EXIST then
-              stMsg = (self._itemModule):GetErrorMsg(res:GetResult())
-            else
-              stMsg = (StringTable.Get)("str_physicalpower_error_phy_add_full")
-            end
-            ;
-            (ToastManager.ShowToast)(stMsg)
-          end
-          ;
-          (Log.fatal)("[item] ### UseItem failed :" .. res.m_result)
-        end
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        self:ShowDialog("UIGetItemController", msg.m_reward_list)
+      end)
+    elseif msg.m_reward_list and next(msg.m_reward_list) then
+      self:ShowDialog("UIGetItemController", msg.m_reward_list)
     end
+  else
+    if itemData.m_template_data.UseEffect == "PhyGift" then
+      local stMsg
+      if res:GetResult() == ITEM_RESULT_CODE.ITEM_NOT_EXIST then
+        stMsg = self._itemModule:GetErrorMsg(res:GetResult())
+      else
+        stMsg = StringTable.Get("str_physicalpower_error_phy_add_full")
+      end
+      ToastManager.ShowToast(stMsg)
+    end
+    Log.fatal("[item] ### UseItem failed :" .. res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.OnChangeCurrentType = function(self)
-  -- function num : 0_32
+function UIBackPackController:OnChangeCurrentType()
   self._selectItemIndex = -1
   self:_RefreshItemInfo()
   self:ShowFirstItem()
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.OnItemCountChange = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIBackPackController:OnItemCountChange()
   if self._content == nil then
-    (Log.error)("when ItemCountChange self._content == nil")
-    return 
+    Log.error("when ItemCountChange self._content == nil")
+    return
   end
-  local contentPos = (self._content).anchoredPosition
+  local contentPos = self._content.anchoredPosition
   self:_RefreshItemInfo()
-  local itemID = (self._itemData):GetID()
-  local itemdata = (self._itemModule):FindItem(itemID)
+  local itemID = self._itemData:GetID()
+  local itemdata = self._itemModule:FindItem(itemID)
   if itemdata then
     self:_SetSelectItem(itemdata)
     local idx = self:GetIndexFromList(itemdata)
     if idx == -1 then
-      (Log.debug)("[item] ### 有這個物品，但是沒找到下標")
+      Log.debug("[item] ### 有這個物品，但是沒找到下標")
     end
-    if self._selectItemIndex ~= -1 and (self._itemTable)[self._selectItemIndex] then
-      ((self._itemTable)[self._selectItemIndex]):SelectImg(false)
+    if self._selectItemIndex ~= -1 and self._itemTable[self._selectItemIndex] then
+      self._itemTable[self._selectItemIndex]:SelectImg(false)
     end
     self._selectItemIndex = idx
-    if (self._itemTable)[self._selectItemIndex] then
-      ((self._itemTable)[self._selectItemIndex]):SelectImg(true, true)
+    if self._itemTable[self._selectItemIndex] then
+      self._itemTable[self._selectItemIndex]:SelectImg(true, true)
     end
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._content).anchoredPosition = contentPos
+    self._content.anchoredPosition = contentPos
+  elseif self._lastIndex <= self._listItemTotalCount then
+    self:OnItemSelect(self._lastIndex)
+    self._content.anchoredPosition = contentPos
   else
-    do
-      if self._lastIndex <= self._listItemTotalCount then
-        self:OnItemSelect(self._lastIndex)
-        -- DECOMPILER ERROR at PC71: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._content).anchoredPosition = contentPos
-      else
-        self._selectItemIndex = -1
-        self:ShowFirstItem()
-      end
-      self._countClone = self._listItemTotalCount
-    end
+    self._selectItemIndex = -1
+    self:ShowFirstItem()
   end
+  self._countClone = self._listItemTotalCount
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.GetIndexFromList = function(self, itemdata)
-  -- function num : 0_34
+function UIBackPackController:GetIndexFromList(itemdata)
   for i = 1, #self._itemList do
-    if itemdata == (self._itemList)[i] then
+    if itemdata == self._itemList[i] then
       return i
     end
   end
   return -1
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController._RefreshItemInfo = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function UIBackPackController:_RefreshItemInfo()
   if self.clearRed then
     self.clearRed = false
-    return 
+    return
   end
-  if (self._itemTable)[self._selectItemIndex] then
-    ((self._itemTable)[self._selectItemIndex]):SelectImg(false)
+  if self._itemTable[self._selectItemIndex] then
+    self._itemTable[self._selectItemIndex]:SelectImg(false)
   end
   self._itemTable = {}
   self._itemList = self:GetNotHomelandItems(self._currentType)
-  self._listItemTotalCount = (table.count)(self._itemList)
+  self._listItemTotalCount = table.count(self._itemList)
   self:CalcCount()
-  ;
-  (self._scrollView):SetListItemCount(self:_CalcTotalRow(self._listItemTotalCount))
-  ;
-  (self._scrollView):MovePanelToItemIndex(0, 0)
+  self._scrollView:SetListItemCount(self:_CalcTotalRow(self._listItemTotalCount))
+  self._scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController._SetSelectItem = function(self, itemData)
-  -- function num : 0_36 , upvalues : _ENV
+function UIBackPackController:_SetSelectItem(itemData)
   self._itemData = itemData
   self._itemDetailIsOpen = true
-  ;
-  (self._itemDetail):SetActive(true)
-  local templteItemData = (self._itemData):GetTemplate()
-  ;
-  (self._txtItemName):SetText((StringTable.Get)(templteItemData.Name))
-  ;
-  (self._imageItemIcon):LoadImage(templteItemData.Icon)
-  local c = (self._itemData):GetCount()
-  ;
-  (self._txtItemNum):SetText("<size=30>" .. (StringTable.Get)("str_item_public_owned") .. "</size>" .. c)
-  if (string.len)(templteItemData.RpIntro) ~= 0 then
-    (self._txtDetailDesc):SetText((StringTable.Get)(templteItemData.RpIntro))
+  self._itemDetail:SetActive(true)
+  local templteItemData = self._itemData:GetTemplate()
+  self._txtItemName:SetText(StringTable.Get(templteItemData.Name))
+  self._imageItemIcon:LoadImage(templteItemData.Icon)
+  local c = self._itemData:GetCount()
+  self._txtItemNum:SetText("<size=30>" .. StringTable.Get("str_item_public_owned") .. "</size>" .. c)
+  if string.len(templteItemData.RpIntro) ~= 0 then
+    self._txtDetailDesc:SetText(StringTable.Get(templteItemData.RpIntro))
   else
-    ;
-    (self._txtDetailDesc):SetText("")
+    self._txtDetailDesc:SetText("")
   end
   if templteItemData.UseType == ItemUseType.ItemUseType_ManualUse then
-    (self._use):SetActive(true)
+    self._use:SetActive(true)
   else
-    ;
-    (self._use):SetActive(false)
+    self._use:SetActive(false)
   end
   self:InitTimeLess()
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.InitTimeLess = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  local itemId = ((self._itemData):GetTemplate()).ID
-  local cfg_item = (Cfg.cfg_item)[itemId]
+function UIBackPackController:InitTimeLess()
+  local itemId = self._itemData:GetTemplate().ID
+  local cfg_item = Cfg.cfg_item[itemId]
   if not cfg_item then
-    (Log.error)("###[UIBackPackItem] cfg is nil ! id --> ", itemId)
+    Log.error("###[UIBackPackItem] cfg is nil ! id --> ", itemId)
   end
   self._lessTimeStr = cfg_item.DeadTime
-  if (string.isnullorempty)(self._lessTimeStr) then
+  if string.isnullorempty(self._lessTimeStr) then
     self._lessTimeStr = cfg_item.CompulsiveDeadTime
   end
   self._isTimeItem = true
-  if (string.isnullorempty)(self._lessTimeStr) then
+  if string.isnullorempty(self._lessTimeStr) then
     self._isTimeItem = false
   end
-  ;
-  (self._lessTimeGo):SetActive(self._isTimeItem)
-  ;
-  (self._timeDownGo):SetActive(false)
-  ;
-  (self._timeTexRoot):SetActive(false)
+  self._lessTimeGo:SetActive(self._isTimeItem)
+  self._timeDownGo:SetActive(false)
+  self._timeTexRoot:SetActive(false)
   self._timeDown = false
   if self._isTimeItem then
     self._timeType = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
     if cfg_item.TimeTransform and cfg_item.TimeTransform == 0 then
       self._timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
     end
-    local lessTime = (math.floor)((self._loginModule):GetTimeStampByTimeStr(self._lessTimeStr, self._timeType))
-    local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+    local lessTime = math.floor(self._loginModule:GetTimeStampByTimeStr(self._lessTimeStr, self._timeType))
+    local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
     local gapTime = lessTime - nowTime
     if gapTime <= 0 then
       if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
+        GameGlobal.Timer():CancelEvent(self._timer)
         self._timer = nil
       end
-      ;
-      (self._timeDownGo):SetActive(true)
+      self._timeDownGo:SetActive(true)
       self._timeDown = true
     else
       self:ShowTimeLess()
-      ;
-      (self._timeTexRoot):SetActive(true)
+      self._timeTexRoot:SetActive(true)
       if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
+        GameGlobal.Timer():CancelEvent(self._timer)
         self._timer = nil
       end
-      self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_37_0 , upvalues : self
-    self:ShowTimeLess()
-  end
-)
+      self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+        self:ShowTimeLess()
+      end)
     end
-  else
-    do
-      if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
-        self._timer = nil
-      end
-    end
+  elseif self._timer then
+    GameGlobal.Timer():CancelEvent(self._timer)
+    self._timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.ShowTimeLess = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  local lessTime = (math.floor)((self._loginModule):GetTimeStampByTimeStr(self._lessTimeStr, self._timeType))
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIBackPackController:ShowTimeLess()
+  local lessTime = math.floor(self._loginModule:GetTimeStampByTimeStr(self._lessTimeStr, self._timeType))
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local gapTime = lessTime - nowTime
-  if gapTime > 0 then
-    local timeTex = (HelperProxy:GetInstance()):Time2Tex(gapTime)
-    ;
-    (self._timeTex):SetText(timeTex)
+  if 0 < gapTime then
+    local timeTex = HelperProxy:GetInstance():Time2Tex(gapTime)
+    self._timeTex:SetText(timeTex)
   else
-    do
-      if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
-        self._timer = nil
-      end
-      ;
-      (self._timeDownGo):SetActive(true)
-      self._timeDown = true
-      ;
-      (self._timeTexRoot):SetActive(false)
+    if self._timer then
+      GameGlobal.Timer():CancelEvent(self._timer)
+      self._timer = nil
     end
+    self._timeDownGo:SetActive(true)
+    self._timeDown = true
+    self._timeTexRoot:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBackPackController.OnItemSelect = function(self, index)
-  -- function num : 0_39 , upvalues : _ENV
+function UIBackPackController:OnItemSelect(index)
   local itemdata = self:_GetItemData(index)
   if not itemdata then
-    (self._itemDetailEmpty):SetActive(true)
-    ;
-    (self._itemDetail):SetActive(false)
-    return 
+    self._itemDetailEmpty:SetActive(true)
+    self._itemDetail:SetActive(false)
+    return
   else
-    ;
-    (self._itemDetailEmpty):SetActive(false)
-    ;
-    (self._itemDetail):SetActive(true)
+    self._itemDetailEmpty:SetActive(false)
+    self._itemDetail:SetActive(true)
   end
   self:_SetSelectItem(itemdata)
   local templateData = itemdata:GetTemplate()
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIBackPackControllerClickItem", {templateData.ID or 0}, true)
-  if self._selectItemIndex ~= -1 and (self._itemTable)[self._selectItemIndex] then
-    ((self._itemTable)[self._selectItemIndex]):SelectImg(false)
+  GameGlobal.UAReportForceGuideEvent("UIBackPackControllerClickItem", {
+    templateData.ID or 0
+  }, true)
+  if self._selectItemIndex ~= -1 and self._itemTable[self._selectItemIndex] then
+    self._itemTable[self._selectItemIndex]:SelectImg(false)
   end
   self._selectItemIndex = index
-  if (self._itemTable)[self._selectItemIndex] then
-    ((self._itemTable)[self._selectItemIndex]):SelectImg(true)
+  if self._itemTable[self._selectItemIndex] then
+    self._itemTable[self._selectItemIndex]:SelectImg(true)
   end
 end
 
 local modf = math.modf
--- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
 
-UIBackPackController._CalcTotalRow = function(self, itemTotalCount)
-  -- function num : 0_40 , upvalues : modf
+function UIBackPackController:_CalcTotalRow(itemTotalCount)
   local row, mod = modf(itemTotalCount / self._itemCountPerRow)
   if mod ~= 0 then
     row = row + 1
@@ -917,48 +667,31 @@ UIBackPackController._CalcTotalRow = function(self, itemTotalCount)
   return self._listItemTotalRow
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBackPackController.GetFirstItemIndex = function(self)
-  -- function num : 0_41
+function UIBackPackController:GetFirstItemIndex()
   return 1
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBackPackController._FormatItemCount = function(self, itemCount)
-  -- function num : 0_42 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIBackPackController:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBackPackController._GetSelectItemData = function(self)
-  -- function num : 0_43
+function UIBackPackController:_GetSelectItemData()
   return self:_GetItemData(self._selectItemIndex)
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBackPackController.OnOpenGift = function(self, giftID, rewadrd_list)
-  -- function num : 0_44
+function UIBackPackController:OnOpenGift(giftID, rewadrd_list)
   self:ShowDialog("UIGetItemController", rewadrd_list)
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R2 in 'UnsetPending'
-
-UIBackPackController.GetNotHomelandItems = function(self, itemType)
-  -- function num : 0_45 , upvalues : _ENV
+function UIBackPackController:GetNotHomelandItems(itemType)
   local items = {}
-  local allItems = (self._itemModule):GetInBagItemInfosByType(itemType)
-  for _,item in ipairs(allItems) do
+  local allItems = self._itemModule:GetInBagItemInfosByType(itemType)
+  for _, item in ipairs(allItems) do
     local tpl = item:GetTemplate()
     local showType = tpl.ShowType or 1
     if showType & 1 == 1 then
-      (table.insert)(items, item)
+      table.insert(items, item)
     end
   end
   return items
 end
-
-

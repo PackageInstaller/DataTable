@@ -1,21 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/level/ui_sailing_word_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingWordTips", UIController)
 UISailingWordTips = UISailingWordTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingWordTips.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISailingWordTips:OnShow(uiParams)
   self._offset = self:GetUIComponent("RectTransform", "offset")
   self._Content = self:GetUIComponent("UISelectObjectPath", "Content")
   local data = uiParams[1]
   local count = #data
-  ;
-  (self._Content):SpawnObjects("UIStageWordItem", count)
-  local pools = (self._Content):GetAllSpawnList()
+  self._Content:SpawnObjects("UIStageWordItem", count)
+  local pools = self._Content:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
     local tex = data[i]
@@ -23,11 +15,6 @@ UISailingWordTips.OnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingWordTips.BgOnClick = function(self)
-  -- function num : 0_1
+function UISailingWordTips:BgOnClick()
   self:CloseDialog()
 end
-
-

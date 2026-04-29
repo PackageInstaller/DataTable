@@ -1,48 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_outline_by_transport_dir_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayOutlineByTransportDirInstruction", BaseInstruction)
 PlayOutlineByTransportDirInstruction = PlayOutlineByTransportDirInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayOutlineByTransportDirInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayOutlineByTransportDirInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._radius = tonumber(paramList.radius) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayOutlineByTransportDirInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayOutlineByTransportDirInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local effectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.TransportByRange)
   if effectResult == nil then
-    return 
+    return
   end
   local pieceDataList = effectResult:GetPieceDataList()
   local edgeBegin, edgeEnd = effectResult:GetEdge()
   local dirType = effectResult:GetTransportDir()
   local posList = {}
-  for i,data in ipairs(pieceDataList) do
+  for i, data in ipairs(pieceDataList) do
     local pos = data:GetPiecePos()
-    ;
-    (table.insert)(posList, pos)
+    table.insert(posList, pos)
   end
   local outlineEntityList = self:CreateAreaOutlineEntity(casterEntity, edgeBegin, edgeEnd, dirType)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayOutlineByTransportDirInstruction._CreateOutlineEntity = function(self, roundPos, pos)
-  -- function num : 0_2 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local effectService = (self._world):GetService("Effect")
-  local renderEntityService = (self._world):GetService("RenderEntity")
+function PlayOutlineByTransportDirInstruction:_CreateOutlineEntity(roundPos, pos)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local effectService = self._world:GetService("Effect")
+  local renderEntityService = self._world:GetService("RenderEntity")
   local outlineEntity = effectService:CreatePositionEffect(self._effectID, Vector3(0, 1000, 0))
   local gridOutlineHeight = 0
   local outlineDir = roundPos - pos
@@ -52,53 +38,38 @@ PlayOutlineByTransportDirInstruction._CreateOutlineEntity = function(self, round
   return outlineEntity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayOutlineByTransportDirInstruction.CreateAreaOutlineEntity = function(self, casterEntity, edgeBegin, edgeEnd, dirType)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayOutlineByTransportDirInstruction:CreateAreaOutlineEntity(casterEntity, edgeBegin, edgeEnd, dirType)
   local effectCpmt = casterEntity:EffectHolder()
   if not effectCpmt then
     casterEntity:AddEffectHolder()
     effectCpmt = casterEntity:EffectHolder()
   end
   local outlineEntityList = {}
-  for i,pos in ipairs(edgeBegin) do
-    local roundPos = nil
+  for i, pos in ipairs(edgeBegin) do
+    local roundPos
     if dirType == DirectionType.Left then
       roundPos = Vector2(pos.x + 1, pos.y)
-    else
-      if dirType == DirectionType.Right then
-        roundPos = Vector2(pos.x - 1, pos.y)
-      else
-        if dirType == DirectionType.Up then
-          roundPos = Vector2(pos.x, pos.y - 1)
-        else
-          if dirType == DirectionType.Down then
-            roundPos = Vector2(pos.x, pos.y + 1)
-          end
-        end
-      end
+    elseif dirType == DirectionType.Right then
+      roundPos = Vector2(pos.x - 1, pos.y)
+    elseif dirType == DirectionType.Up then
+      roundPos = Vector2(pos.x, pos.y - 1)
+    elseif dirType == DirectionType.Down then
+      roundPos = Vector2(pos.x, pos.y + 1)
     end
     local outlineEntity = self:_CreateOutlineEntity(roundPos, pos)
     effectCpmt:AttachIdleEffect(outlineEntity:GetID())
     outlineEntityList[#outlineEntityList + 1] = outlineEntity
   end
-  for i,pos in ipairs(edgeEnd) do
-    local roundPos = nil
+  for i, pos in ipairs(edgeEnd) do
+    local roundPos
     if dirType == DirectionType.Left then
       roundPos = Vector2(pos.x - 1, pos.y)
-    else
-      if dirType == DirectionType.Right then
-        roundPos = Vector2(pos.x + 1, pos.y)
-      else
-        if dirType == DirectionType.Up then
-          roundPos = Vector2(pos.x, pos.y + 1)
-        else
-          if dirType == DirectionType.Down then
-            roundPos = Vector2(pos.x, pos.y - 1)
-          end
-        end
-      end
+    elseif dirType == DirectionType.Right then
+      roundPos = Vector2(pos.x + 1, pos.y)
+    elseif dirType == DirectionType.Up then
+      roundPos = Vector2(pos.x, pos.y + 1)
+    elseif dirType == DirectionType.Down then
+      roundPos = Vector2(pos.x, pos.y - 1)
     end
     local outlineEntity = self:_CreateOutlineEntity(roundPos, pos)
     effectCpmt:AttachIdleEffect(outlineEntity:GetID())
@@ -107,15 +78,13 @@ PlayOutlineByTransportDirInstruction.CreateAreaOutlineEntity = function(self, ca
   return outlineEntityList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayOutlineByTransportDirInstruction.GetCacheResource = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayOutlineByTransportDirInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/state/s_maze_state_round_begin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_state_base")
 _class("SMazeState_RoundBegin", SMazeStateBase)
 SMazeState_RoundBegin = SMazeState_RoundBegin
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeState_RoundBegin.OnEnter = function(self)
-  -- function num : 0_0
+function SMazeState_RoundBegin:OnEnter()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoundBegin.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._machine):ChangeStateTo(SMazeState_PlayCard, (self._machine):GetCurNode(), true)
+function SMazeState_RoundBegin:OnUpdate()
+  self._machine:ChangeStateTo(SMazeState_PlayCard, self._machine:GetCurNode(), true)
 end
-
-

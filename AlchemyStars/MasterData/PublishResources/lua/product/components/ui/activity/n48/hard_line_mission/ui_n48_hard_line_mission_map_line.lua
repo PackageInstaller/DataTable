@@ -1,111 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n48/hard_line_mission/ui_n48_hard_line_mission_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN48HardLine", Object)
 UIN48HardLine = UIN48HardLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN48HardLine.Constructor = function(self, uiView)
-  -- function num : 0_0
+function UIN48HardLine:Constructor(uiView)
   self._uiView = uiView
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardLine.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,countdownTimer in pairs(self._countdownTimer) do
-    countdownTimer = (UIActivityHelper.CancelTimerEvent)(countdownTimer)
+function UIN48HardLine:Destroy()
+  for _, countdownTimer in pairs(self._countdownTimer) do
+    countdownTimer = UIActivityHelper.CancelTimerEvent(countdownTimer)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardLine.SetData = function(self, campaign, component)
-  -- function num : 0_2
+function UIN48HardLine:SetData(campaign, component)
   self._campaign = campaign
   self._line_component = component
   self._countdownTimer = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardLine.SetActive = function(self, status, playAnim)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.ClearWidgets)(self._uiView, "_nodes_Line")
-  ;
-  ((self._uiView):GetGameObject("_nodes_Line")):SetActive(status)
+function UIN48HardLine:SetActive(status, playAnim)
+  UIWidgetHelper.ClearWidgets(self._uiView, "_nodes_Line")
+  self._uiView:GetGameObject("_nodes_Line"):SetActive(status)
   if status then
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardLine._Refresh = function(self, noPlayAnim)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfgs = (UIActivityHardLineHelper.GetLineMissionCfgs)(self._line_component)
-  local passInfo = ((self._line_component):GetComponentInfo()).m_pass_mission_info
-  local nodes = (UIWidgetHelper.SpawnObjects)(self._uiView, "_nodes_Line", "UIN48HardLineNode", #cfgs)
+function UIN48HardLine:_Refresh(noPlayAnim)
+  local cfgs = UIActivityHardLineHelper.GetLineMissionCfgs(self._line_component)
+  local passInfo = self._line_component:GetComponentInfo().m_pass_mission_info
+  local nodes = UIWidgetHelper.SpawnObjects(self._uiView, "_nodes_Line", "UIN48HardLineNode", #cfgs)
   self.nodes = nodes
   local index = 1
-  for _,cfg in pairs(cfgs) do
-    do
-      local uiNode = nodes[index]
-      index = index + 1
-      uiNode:SetData(cfg, passInfo, function(stageId, isStory)
-    -- function num : 0_4_0 , upvalues : self
-    self:_OnNodeClick(stageId, isStory)
-  end
-)
-      ;
-      ((uiNode.view):GetGameObject()):SetActive(false)
-    end
+  for _, cfg in pairs(cfgs) do
+    local uiNode = nodes[index]
+    index = index + 1
+    uiNode:SetData(cfg, passInfo, function(stageId, isStory)
+      self:_OnNodeClick(stageId, isStory)
+    end)
+    uiNode.view:GetGameObject():SetActive(false)
   end
   for i = #nodes, 1, -1 do
     local node = nodes[i]
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._countdownTimer)[i] = ((GameGlobal.Timer)()):AddEvent(33, function()
-    -- function num : 0_4_1 , upvalues : node, noPlayAnim
-    ((node.view):GetGameObject()):SetActive(true)
-    if not noPlayAnim then
-      node:PlayAnime_In()
-    end
-  end
-)
+    self._countdownTimer[i] = GameGlobal.Timer():AddEvent(33, function()
+      node.view:GetGameObject():SetActive(true)
+      if not noPlayAnim then
+        node:PlayAnime_In()
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardLine._HideAnim = function(self, playAnim)
-  -- function num : 0_5
+function UIN48HardLine:_HideAnim(playAnim)
   if not self.nodes then
-    return 
+    return
   end
   for i = #self.nodes, 1, -1 do
-    local node = (self.nodes)[i]
+    local node = self.nodes[i]
     node:PlayAnime_Out()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN48HardLine._OnNodeClick = function(self, stageId, isStory)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN48HardLine:_OnNodeClick(stageId, isStory)
   if isStory then
-    (UIActivityLineMissionHelper.EnterStage_Story)(self._campaign, self._line_component, stageId, function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UICN12N41HardController)
-  end
-)
+    UIActivityLineMissionHelper.EnterStage_Story(self._campaign, self._line_component, stageId, function()
+      self:SwitchState(UIStateType.UICN12N41HardController)
+    end)
   else
-    ;
-    (UIActivityLineMissionHelper.EnterStage_Battle)(self._campaign, self._line_component, stageId, true, true)
+    UIActivityLineMissionHelper.EnterStage_Battle(self._campaign, self._line_component, stageId, true, true)
   end
 end
-
-

@@ -1,31 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/_review/ui_activity_evesinsa_level_a_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaLevelAController_Review", UIController)
 UIActivityEveSinsaLevelAController_Review = UIActivityEveSinsaLevelAController_Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaLevelAController_Review._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:_GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityEveSinsaMainController_Review, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-, nil)
+  self._backBtns:SetData(function()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityEveSinsaMainController_Review, UIStateType.UIMain, nil, self._campaign._id)
+  end, nil)
   local secondTitle = self:GetUIComponent("UISelectObjectPath", "_secondTitle")
   self._secondTitle = secondTitle:SpawnObject("UIActivityEveSinsaSecondTitle_Review")
-  ;
-  (self._secondTitle):SetData(self._campaign, 0)
+  self._secondTitle:SetData(self._campaign, 0)
   local petTryBtn = self:GetUIComponent("UISelectObjectPath", "PetTryBtn")
   self._petTryBtn = petTryBtn:SpawnObject("UIActivityEveSinsaPetTryBtn")
-  ;
-  (self._petTryBtn):SetData(self._campaign)
+  self._petTryBtn:SetData(self._campaign)
   self._scrollRect = self:GetUIComponent("ScrollRect", "MapContent")
   self._mapContentRect = self:GetUIComponent("RectTransform", "MapContent")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
@@ -36,329 +24,236 @@ UIActivityEveSinsaLevelAController_Review._GetComponents = function(self)
   self._slevelNodesPool = self:GetUIComponent("UISelectObjectPath", "SLevelNodes")
   self._slevelNodes2Pool = self:GetUIComponent("UISelectObjectPath", "SLevelNodes2")
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
-  self._safeWidth = (((self:GetUIComponent("RectTransform", "SafeArea")).rect).size).x
+  self._safeWidth = self:GetUIComponent("RectTransform", "SafeArea").rect.size.x
   self._pointCount = self:GetUIComponent("UILocalizationText", "pointCount")
   self._pointCountdown = self:GetUIComponent("UILocalizationText", "pointCountdown")
   self._pointMax = self:GetGameObject("pointMax")
   self._pointTitle = self:GetGameObject("pointTitle")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:Constructor()
   self._missionModule = self:GetModule(MissionModule)
   self._lineMissionManager = UIActivityLineMissionManager:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:Dispose()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
     self._shot = nil
   end
-  ;
-  (UIActivityEveSinsaLevelAController_Review.super):Dispose()
+  UIActivityEveSinsaLevelAController_Review.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
-  self._reviewData = (uiModule:GetReviewData()):GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N1)
-  ;
-  (self._reviewData):ReqDetailInfo(TT, res)
-  self._campaign = (self._reviewData):GetDetailInfo()
+function UIActivityEveSinsaLevelAController_Review:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  local uiModule = GameGlobal.GetUIModule(CampaignModule)
+  self._reviewData = uiModule:GetReviewData():GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N1)
+  self._reviewData:ReqDetailInfo(TT, res)
+  self._campaign = self._reviewData:GetDetailInfo()
   if res and res:GetSucc() then
-    self._line_component = (self._campaign):GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_LINE_MISSION)
-    self._line_info = (self._line_component):GetComponentInfo()
-    self._phase = (UIActivityEveSinsaHelper_Review.CheckTimePhase)(self._campaign)
-    if self._phase ~= EActivityEveSinsaTimePhase.EPhase_Over and not (self._campaign):CheckComponentOpen(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_LINE_MISSION) then
+    self._line_component = self._campaign:GetComponent(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_LINE_MISSION)
+    self._line_info = self._line_component:GetComponentInfo()
+    self._phase = UIActivityEveSinsaHelper_Review.CheckTimePhase(self._campaign)
+    if self._phase ~= EActivityEveSinsaTimePhase.EPhase_Over and not self._campaign:CheckComponentOpen(ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_LINE_MISSION) then
       res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK
       campaignModule:ShowErrorToast(res.m_result, true)
-      return 
+      return
     end
   end
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review._ReLoadData = function(self, TT, res)
-  -- function num : 0_4
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+function UIActivityEveSinsaLevelAController_Review:_ReLoadData(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.OnShow = function(self, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:OnShow(uiParams)
   self:AttachEvents()
   self:_GetComponents()
-  local componentCfgId = (self._line_component):GetComponentCfgId()
-  ;
-  (self._lineMissionManager):Init(self._line_info, componentCfgId)
-  local isShow, missionId = (UIActivityEveSinsaHelper_Review.CheckSpecialMissionShow)(self._campaign)
-  ;
-  (self._lineMissionManager):Update_Evesinsa(isShow, missionId)
+  local componentCfgId = self._line_component:GetComponentCfgId()
+  self._lineMissionManager:Init(self._line_info, componentCfgId)
+  local isShow, missionId = UIActivityEveSinsaHelper_Review.CheckSpecialMissionShow(self._campaign)
+  self._lineMissionManager:Update_Evesinsa(isShow, missionId)
   self:Flush()
   self._enterLockName = "UIActivityEveSinsaLevelAController_Review_OnShow"
-  self._enterLockTimeEvent = (UIActivityHelper.StartLockEvent)(self._enterLockName, self._enterLockTimeEvent, nil)
+  self._enterLockTimeEvent = UIActivityHelper.StartLockEvent(self._enterLockName, self._enterLockTimeEvent, nil)
   self._isOpen = true
   self:_OpenUIRecord()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review._OpenUIRecord = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:_OpenUIRecord()
   local loginModule = self:GetModule(LoginModule)
-  local data = (self._reviewData):GetRedAndNewData()
-  if data:P1SStageUnLock() and (LocalDB.GetInt)("ACTIVITY_EVE_SINA_P1S_NEWFLAG_REVIEW" .. loginModule:GetRoleShowID(), 0) <= 0 then
-    (LocalDB.SetInt)("ACTIVITY_EVE_SINA_P1S_NEWFLAG_REVIEW" .. loginModule:GetRoleShowID(), 1)
+  local data = self._reviewData:GetRedAndNewData()
+  if data:P1SStageUnLock() and LocalDB.GetInt("ACTIVITY_EVE_SINA_P1S_NEWFLAG_REVIEW" .. loginModule:GetRoleShowID(), 0) <= 0 then
+    LocalDB.SetInt("ACTIVITY_EVE_SINA_P1S_NEWFLAG_REVIEW" .. loginModule:GetRoleShowID(), 1)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:OnHide()
   self._isOpen = false
-  ;
-  (UIActivityHelper.CancelLockEvent)(self._enterLockName, self._enterLockTimeEvent)
-  ;
-  (UIActivityHelper.CancelLockEvent)(self._moveLockName, self._moveLockTimeEvent)
+  UIActivityHelper.CancelLockEvent(self._enterLockName, self._enterLockTimeEvent)
+  UIActivityHelper.CancelLockEvent(self._moveLockName, self._moveLockTimeEvent)
   self:RemoveEvents()
   if self._pointCountdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._pointCountdownTimer)
+    GameGlobal.Timer():CancelEvent(self._pointCountdownTimer)
     self._pointCountdownTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.Flush = function(self)
-  -- function num : 0_8
+function UIActivityEveSinsaLevelAController_Review:Flush()
   self:FlushPanel()
   self:FlushNodes()
   self:FlushLines()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.FlushPanel = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local totalWidth = (self._lineMissionManager):GetTotalWidth()
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._contentRect).sizeDelta = Vector2(totalWidth, ((self._contentRect).sizeDelta).y)
-  local curMission = (self._line_info).m_cur_mission
-  local scrollPos = (self._lineMissionManager):GetScrollPos(curMission)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
+function UIActivityEveSinsaLevelAController_Review:FlushPanel()
+  local totalWidth = self._lineMissionManager:GetTotalWidth()
+  self._contentRect.sizeDelta = Vector2(totalWidth, self._contentRect.sizeDelta.y)
+  local curMission = self._line_info.m_cur_mission
+  local scrollPos = self._lineMissionManager:GetScrollPos(curMission)
   if scrollPos then
-    (self._contentRect).anchoredPosition = scrollPos
+    self._contentRect.anchoredPosition = scrollPos
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.FlushNodes = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local isSpecial, missionId = (UIActivityEveSinsaHelper_Review.CheckSpecialMissionShow)(self._campaign)
+function UIActivityEveSinsaLevelAController_Review:FlushNodes()
+  local isSpecial, missionId = UIActivityEveSinsaHelper_Review.CheckSpecialMissionShow(self._campaign)
   local normalNodeCount, bossNodeCount, plotNodeCount, slevelNodeCount = 0, 0, 0, 0
   local normalNodeIndex, bossNodeIndex, plotNodeIndex, slevelNodeIndex = 1, 1, 1, 1
   local slevelNode2Count, slevelNode2Index = 0, 1
-  local missionNodes = (self._lineMissionManager):GetNodes()
-  for i,node in pairs(missionNodes) do
+  local missionNodes = self._lineMissionManager:GetNodes()
+  for i, node in pairs(missionNodes) do
     if node.isSLevel and isSpecial and missionId == node.campaignMissionId then
       slevelNode2Count = slevelNode2Count + 1
+    elseif node.isSLevel then
+      slevelNodeCount = slevelNodeCount + 1
+    elseif node.type == DiscoveryStageType.FightNormal then
+      normalNodeCount = normalNodeCount + 1
+    elseif node.type == DiscoveryStageType.FightBoss then
+      bossNodeCount = bossNodeCount + 1
     else
-      if node.isSLevel then
-        slevelNodeCount = slevelNodeCount + 1
-      else
-        if node.type == DiscoveryStageType.FightNormal then
-          normalNodeCount = normalNodeCount + 1
-        else
-          if node.type == DiscoveryStageType.FightBoss then
-            bossNodeCount = bossNodeCount + 1
-          else
-            plotNodeCount = plotNodeCount + 1
-          end
-        end
-      end
+      plotNodeCount = plotNodeCount + 1
     end
   end
-  ;
-  (self._normalNodesPool):SpawnObjects("UIActivityMissionNode", normalNodeCount)
-  ;
-  (self._bossNodesPool):SpawnObjects("UIActivityMissionNode", bossNodeCount)
-  ;
-  (self._plotNodesPool):SpawnObjects("UIActivityMissionNode", plotNodeCount)
-  ;
-  (self._slevelNodesPool):SpawnObjects("UIActivityMissionNode", slevelNodeCount)
-  ;
-  (self._slevelNodes2Pool):SpawnObjects("UIActivityMissionNode", slevelNode2Count)
-  local normalNodes = (self._normalNodesPool):GetAllSpawnList()
-  local bossNodes = (self._bossNodesPool):GetAllSpawnList()
-  local plotNodes = (self._plotNodesPool):GetAllSpawnList()
-  local slevelNodes = (self._slevelNodesPool):GetAllSpawnList()
-  local slevelNodes2 = (self._slevelNodes2Pool):GetAllSpawnList()
+  self._normalNodesPool:SpawnObjects("UIActivityMissionNode", normalNodeCount)
+  self._bossNodesPool:SpawnObjects("UIActivityMissionNode", bossNodeCount)
+  self._plotNodesPool:SpawnObjects("UIActivityMissionNode", plotNodeCount)
+  self._slevelNodesPool:SpawnObjects("UIActivityMissionNode", slevelNodeCount)
+  self._slevelNodes2Pool:SpawnObjects("UIActivityMissionNode", slevelNode2Count)
+  local normalNodes = self._normalNodesPool:GetAllSpawnList()
+  local bossNodes = self._bossNodesPool:GetAllSpawnList()
+  local plotNodes = self._plotNodesPool:GetAllSpawnList()
+  local slevelNodes = self._slevelNodesPool:GetAllSpawnList()
+  local slevelNodes2 = self._slevelNodes2Pool:GetAllSpawnList()
   self._uiMapNodes = {}
-  for i,node in pairs(missionNodes) do
-    local uiNode = nil
+  for i, node in pairs(missionNodes) do
+    local uiNode
     if node.isSLevel and isSpecial and missionId == node.campaignMissionId then
       uiNode = slevelNodes2[slevelNode2Index]
       slevelNode2Index = slevelNode2Index + 1
+    elseif node.isSLevel then
+      uiNode = slevelNodes[slevelNodeIndex]
+      slevelNodeIndex = slevelNodeIndex + 1
+    elseif node.type == DiscoveryStageType.FightNormal then
+      uiNode = normalNodes[normalNodeIndex]
+      normalNodeIndex = normalNodeIndex + 1
+    elseif node.type == DiscoveryStageType.FightBoss then
+      uiNode = bossNodes[bossNodeIndex]
+      bossNodeIndex = bossNodeIndex + 1
     else
-      if node.isSLevel then
-        uiNode = slevelNodes[slevelNodeIndex]
-        slevelNodeIndex = slevelNodeIndex + 1
-      else
-        if node.type == DiscoveryStageType.FightNormal then
-          uiNode = normalNodes[normalNodeIndex]
-          normalNodeIndex = normalNodeIndex + 1
-        else
-          if node.type == DiscoveryStageType.FightBoss then
-            uiNode = bossNodes[bossNodeIndex]
-            bossNodeIndex = bossNodeIndex + 1
-          else
-            uiNode = plotNodes[plotNodeIndex]
-            plotNodeIndex = plotNodeIndex + 1
-          end
-        end
-      end
+      uiNode = plotNodes[plotNodeIndex]
+      plotNodeIndex = plotNodeIndex + 1
     end
     if node.isSLevel and isSpecial and missionId == node.campaignMissionId then
       uiNode:SetData(node, function(stageId, needScroll, trans)
-    -- function num : 0_10_0 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_evesinsa_slevel_lock"))
-  end
-)
+        ToastManager.ShowToast(StringTable.Get("str_activity_evesinsa_slevel_lock"))
+      end)
     else
       uiNode:SetData(node, function(stageId, needScroll, trans)
-    -- function num : 0_10_1 , upvalues : self
-    self:_MoveToStage(stageId, needScroll, trans)
-  end
-)
+        self:_MoveToStage(stageId, needScroll, trans)
+      end)
     end
-    -- DECOMPILER ERROR at PC156: Confused about usage of register: R25 in 'UnsetPending'
-
-    ;
-    (self._uiMapNodes)[#self._uiMapNodes + 1] = uiNode
+    self._uiMapNodes[#self._uiMapNodes + 1] = uiNode
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.FlushLines = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local lines = (self._lineMissionManager):GetLines()
-  local len = (table.count)(lines)
+function UIActivityEveSinsaLevelAController_Review:FlushLines()
+  local lines = self._lineMissionManager:GetLines()
+  local len = table.count(lines)
   if not lines or len <= 0 then
-    return 
+    return
   end
-  ;
-  (self._linesPool):SpawnObjects("UIActivityMissionLine", len)
-  local spawnLines = (self._linesPool):GetAllSpawnList()
+  self._linesPool:SpawnObjects("UIActivityMissionLine", len)
+  local spawnLines = self._linesPool:GetAllSpawnList()
   local i = 1
-  for k,v in ipairs(lines) do
+  for k, v in ipairs(lines) do
     local sNode = v[1]
     local eNode = v[2]
-    ;
-    (spawnLines[i]):Flush(sNode, eNode, false)
+    spawnLines[i]:Flush(sNode, eNode, false)
     i = i + 1
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.RefreshPoint = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cmp = (self._campaign):GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_ACTION_POINT)
+function UIActivityEveSinsaLevelAController_Review:RefreshPoint()
+  local cmp = self._campaign:GetComponent(ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_ACTION_POINT)
   if cmp == nil or not cmp:ComponentIsOpen() then
-    (Log.exception)("严重错误,行动点组件已关闭!")
+    Log.exception("严重错误,行动点组件已关闭!")
   end
   local cmpID = cmp:GetComponentCfgId()
   local pointCfg = cmp:GetActionPointConfig()
-  local itemCfg = (Cfg.cfg_item)[pointCfg.ItemID]
-  local count = (self:GetModule(ItemModule)):GetItemCount(pointCfg.ItemID)
-  ;
-  (self._pointCount):SetText(count .. "/" .. pointCfg.RegainMax)
+  local itemCfg = Cfg.cfg_item[pointCfg.ItemID]
+  local count = self:GetModule(ItemModule):GetItemCount(pointCfg.ItemID)
+  self._pointCount:SetText(count .. "/" .. pointCfg.RegainMax)
   if count < pointCfg.RegainMax then
-    ((self._pointCountdown).gameObject):SetActive(true)
-    ;
-    (self._pointTitle):SetActive(true)
-    ;
-    (self._pointMax):SetActive(false)
+    self._pointCountdown.gameObject:SetActive(true)
+    self._pointTitle:SetActive(true)
+    self._pointMax:SetActive(false)
     local closeTime = cmp:GetRegainEndTime()
-    do
-      local countDown = function()
-    -- function num : 0_12_0 , upvalues : self, _ENV, closeTime
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
-    local timeStr = (HelperProxy:GetInstance()):FormatTime(time)
-    ;
-    (self._pointCountdown):SetText(timeStr)
-    if time <= 0 then
-      self:StartTask(self.PowerTimeUp, self)
-    end
-  end
-
-      countDown()
-      if self._pointCountdownTimer then
-        ((GameGlobal.Timer)()):CancelEvent(self._pointCountdownTimer)
-        self._pointCountdownTimer = nil
+    
+    local function countDown()
+      local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+      local time = math.ceil(closeTime - now)
+      local timeStr = HelperProxy:GetInstance():FormatTime(time)
+      self._pointCountdown:SetText(timeStr)
+      if time <= 0 then
+        self:StartTask(self.PowerTimeUp, self)
       end
-      self._pointCountdownTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
     end
+    
+    countDown()
+    if self._pointCountdownTimer then
+      GameGlobal.Timer():CancelEvent(self._pointCountdownTimer)
+      self._pointCountdownTimer = nil
+    end
+    self._pointCountdownTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, countDown)
   else
-    do
-      ;
-      (self._pointCountdown):SetText("MAX")
-      ;
-      ((self._pointCountdown).gameObject):SetActive(false)
-      ;
-      (self._pointTitle):SetActive(false)
-      ;
-      (self._pointMax):SetActive(true)
-    end
+    self._pointCountdown:SetText("MAX")
+    self._pointCountdown.gameObject:SetActive(false)
+    self._pointTitle:SetActive(false)
+    self._pointMax:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.PowerTimeUp = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:PowerTimeUp(TT)
   if self._pointCountdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._pointCountdownTimer)
+    GameGlobal.Timer():CancelEvent(self._pointCountdownTimer)
     self._pointCountdownTimer = nil
   end
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  self:_ReLoadData(TT, res, (self._campaign)._id)
+  self:_ReLoadData(TT, res, self._campaign._id)
   if res:GetSucc() and self._isOpen then
     self:RefreshPoint()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.ShotTest = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+function UIActivityEveSinsaLevelAController_Review:ShotTest()
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local shotRect = self:GetUIComponent("RectTransform", "screenShot")
-  self._width = (shotRect.rect).width
-  self._height = (shotRect.rect).height
+  self._width = shotRect.rect.width
+  self._height = shotRect.rect.height
   local LeftTop = self:GetGameObject("LeftTop")
   local LeftBottom = self:GetGameObject("LeftBottom")
   local RightTop = self:GetGameObject("RightTop")
@@ -367,231 +262,156 @@ UIActivityEveSinsaLevelAController_Review.ShotTest = function(self)
   LeftBottom:SetActive(false)
   RightTop:SetActive(false)
   RightBottom:SetActive(false)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shot).width = self._width
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shot).height = self._height
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
-  ;
-  (self._shot):CleanRenderTexture()
-  self._rt = (self._shot):RefreshBlurTexture()
+  self._shot.width = self._width
+  self._shot.height = self._height
+  self._shot.blurTimes = 0
+  self._shot:CleanRenderTexture()
+  self._rt = self._shot:RefreshBlurTexture()
   LeftTop:SetActive(true)
   LeftBottom:SetActive(true)
   RightTop:SetActive(true)
   RightBottom:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review._CalcShotOffset = function(self, trans)
-  -- function num : 0_15 , upvalues : _ENV
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+function UIActivityEveSinsaLevelAController_Review:_CalcShotOffset(trans)
+  local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local screenPos = camera:WorldToScreenPoint(trans.position)
-  return -(Vector2(screenPos.x, screenPos.y) - Vector2((UnityEngine.Screen).width, (UnityEngine.Screen).height) / 2)
+  return -(Vector2(screenPos.x, screenPos.y) - Vector2(UnityEngine.Screen.width, UnityEngine.Screen.height) / 2)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review._MoveToStage = function(self, stageId, needScroll, trans)
-  -- function num : 0_16 , upvalues : _ENV
-  local pos = ((self._lineMissionManager):GetScrollPos(stageId)).x
-  local curPos = ((self._contentRect).anchoredPosition).x
+function UIActivityEveSinsaLevelAController_Review:_MoveToStage(stageId, needScroll, trans)
+  local pos = self._lineMissionManager:GetScrollPos(stageId).x
+  local curPos = self._contentRect.anchoredPosition.x
   local areaWidth = 408
   self._nodeOffset = 175
   local halfScreen = self._safeWidth / 2
-  local targetPos = nil
+  local targetPos
   if needScroll then
     if curPos < pos - (halfScreen - areaWidth) + self._nodeOffset then
       targetPos = pos - (halfScreen - areaWidth) + self._nodeOffset
-    else
-      if pos + (halfScreen - areaWidth) + self._nodeOffset < curPos then
-        targetPos = pos + (halfScreen - areaWidth) + self._nodeOffset
-      end
+    elseif curPos > pos + (halfScreen - areaWidth) + self._nodeOffset then
+      targetPos = pos + (halfScreen - areaWidth) + self._nodeOffset
     end
   end
   if targetPos then
-    (self._scrollRect):StopMovement()
+    self._scrollRect:StopMovement()
     if self._tweener then
-      (self._tweener):Kill()
+      self._tweener:Kill()
     end
     local _moveTime = 0.5
-    self._tweener = (self._contentRect):DOAnchorPosX(targetPos, _moveTime)
+    self._tweener = self._contentRect:DOAnchorPosX(targetPos, _moveTime)
     self._moveLockName = "UIXH1SimpleLevel_MoveToStage"
-    self._moveLockTimeEvent = (UIActivityHelper.StartLockEvent)(self._moveLockName, self._moveLockTimeEvent, function()
-    -- function num : 0_16_0 , upvalues : self, stageId, trans
-    self:_EnterStage(stageId, trans)
-  end
-, _moveTime * 1000)
-  else
-    do
+    self._moveLockTimeEvent = UIActivityHelper.StartLockEvent(self._moveLockName, self._moveLockTimeEvent, function()
       self:_EnterStage(stageId, trans)
-    end
+    end, _moveTime * 1000)
+  else
+    self:_EnterStage(stageId, trans)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review._EnterStage = function(self, stageId, trans)
-  -- function num : 0_17 , upvalues : _ENV
-  local nodes = (self._lineMissionManager):GetNodes()
+function UIActivityEveSinsaLevelAController_Review:_EnterStage(stageId, trans)
+  local nodes = self._lineMissionManager:GetNodes()
   local node = nodes[stageId]
   local stageType = node.type
   if stageType == DiscoveryStageType.Plot then
     self:CloseUIStage()
-    local titleId = (StringTable.Get)(node.title)
-    local titleName = (StringTable.Get)(node.name)
-    local storyId = (self._missionModule):GetStoryByStageIdStoryType(stageId, StoryTriggerType.Node)
+    local titleId = StringTable.Get(node.title)
+    local titleName = StringTable.Get(node.name)
+    local storyId = self._missionModule:GetStoryByStageIdStoryType(stageId, StoryTriggerType.Node)
     self:ShowDialog("UIActivityPlotEnter", titleId, titleName, storyId, function()
-    -- function num : 0_17_0 , upvalues : self, stageId
-    self:PlotEndCallback(stageId)
-  end
-)
+      self:PlotEndCallback(stageId)
+    end)
   else
-    do
-      self:ShotTest()
-      local passInfo = ((self._line_info).m_pass_mission_info)[stageId]
-      local extraCfg = (self._lineMissionManager):GetLineExtraConfig()
-      local scale = extraCfg._Scale
-      local offset = self:_CalcShotOffset(trans)
-      offset.x = offset.x + self._nodeOffset
-      local autoFightShow = self:_CheckSerialAutoFightShow(stageType, stageId)
-      self:ShowDialog("UIActivityLevelStageNew", stageId, ((self._line_info).m_pass_mission_info)[stageId], self._line_component, false, nil, true, true)
-    end
+    self:ShotTest()
+    local passInfo = self._line_info.m_pass_mission_info[stageId]
+    local extraCfg = self._lineMissionManager:GetLineExtraConfig()
+    local scale = extraCfg._Scale
+    local offset = self:_CalcShotOffset(trans)
+    offset.x = offset.x + self._nodeOffset
+    local autoFightShow = self:_CheckSerialAutoFightShow(stageType, stageId)
+    self:ShowDialog("UIActivityLevelStageNew", stageId, self._line_info.m_pass_mission_info[stageId], self._line_component, false, nil, true, true)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review._CheckSerialAutoFightShow = function(self, stageType, stageId)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:_CheckSerialAutoFightShow(stageType, stageId)
   local autoFightShow = false
   if stageType == DiscoveryStageType.Plot then
     autoFightShow = false
   else
-    local missionCfg = (Cfg.cfg_campaign_mission)[stageId]
+    local missionCfg = Cfg.cfg_campaign_mission[stageId]
     if missionCfg then
       local enableParam = missionCfg.EnableSerialAutoFight
       if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_DISABLE then
         autoFightShow = false
-      else
-        if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
-          autoFightShow = true
-        end
+      elseif enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
+        autoFightShow = true
       end
     end
   end
-  do
-    return autoFightShow
-  end
+  return autoFightShow
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.ShowSerialRewards = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:ShowSerialRewards()
   self:ShowDialog("UISerialAutoFightInfo", OpenUISerialFightInfoState.Finished)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.PlotEndCallback = function(self, stageId)
-  -- function num : 0_20 , upvalues : _ENV
-  local isActive = (self._line_component):IsPassCamMissionID(stageId)
+function UIActivityEveSinsaLevelAController_Review:PlotEndCallback(stageId)
+  local isActive = self._line_component:IsPassCamMissionID(stageId)
   if isActive then
     self:SwitchState(UIStateType.UIActivityEveSinsaLevelAController_Review)
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : self, stageId, _ENV
-    (self._line_component):SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    self._line_component:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
-    local award = (self._line_component):HandleCompleteStoryMission(TT, res, stageId)
+    local award = self._line_component:HandleCompleteStoryMission(TT, res, stageId)
     if not res:GetSucc() then
       local campaignModule = self:GetModule(CampaignModule)
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    elseif table.count(award) ~= 0 then
+      self:ShowDialog("UIGetItemController", award, function()
+        self:SwitchState(UIStateType.UIActivityEveSinsaLevelAController_Review)
+      end)
     else
-      do
-        if (table.count)(award) ~= 0 then
-          self:ShowDialog("UIGetItemController", award, function()
-      -- function num : 0_20_0_0 , upvalues : self, _ENV
       self:SwitchState(UIStateType.UIActivityEveSinsaLevelAController_Review)
     end
-)
-        else
-          self:SwitchState(UIStateType.UIActivityEveSinsaLevelAController_Review)
-        end
-      end
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.CloseUIStage = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if ((GameGlobal.UIStateManager)()):IsShow("UIActivityStage") then
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIActivityStage")
+function UIActivityEveSinsaLevelAController_Review:CloseUIStage()
+  if GameGlobal.UIStateManager():IsShow("UIActivityStage") then
+    GameGlobal.UIStateManager():CloseDialog("UIActivityStage")
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.AttachEvents = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.RemoveEvents = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:RemoveEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review._CheckActivityClose = function(self, id)
-  -- function num : 0_24 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityEveSinsaLevelAController_Review:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_25
+function UIActivityEveSinsaLevelAController_Review:OnUIGetItemCloseInQuest(type)
   if self._isOpen then
     self:_Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review._ShowUIGetItemController = function(self, rewards)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityEveSinsaLevelAController_Review:_ShowUIGetItemController(rewards)
   self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_26_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaLevelAController_Review.pointOnClick = function(self)
-  -- function num : 0_27
+function UIActivityEveSinsaLevelAController_Review:pointOnClick()
   self:ShowDialog("UIEvePointDetail")
 end
-
-

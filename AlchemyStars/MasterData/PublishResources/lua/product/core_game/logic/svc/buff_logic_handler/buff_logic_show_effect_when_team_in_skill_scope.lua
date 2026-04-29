@@ -1,82 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_show_effect_when_team_in_skill_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicShowEffectWhenTeamInSkillScope", BuffLogicBase)
 BuffLogicShowEffectWhenTeamInSkillScope = BuffLogicShowEffectWhenTeamInSkillScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicShowEffectWhenTeamInSkillScope.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicShowEffectWhenTeamInSkillScope:Constructor(buffInstance, logicParam)
   self._effectID = logicParam.effectID
   self._skillID = logicParam.skillID
   self._buffID = logicParam.buffID
   self._buffEffect = logicParam.buffEffect
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicShowEffectWhenTeamInSkillScope.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local posTeam = (teamEntity:GridLocation()).Position
+function BuffLogicShowEffectWhenTeamInSkillScope:DoLogic(notify)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local posTeam = teamEntity:GridLocation().Position
   local curMovePos = posTeam
   if notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveStart or notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
     curMovePos = notify:GetPos()
-  else
-    if notify:GetNotifyType() == NotifyType.Teleport then
-      local entity = notify:GetNotifyEntity()
-      if not entity:HasTeam() and not entity:HasPetPstID() then
-        return 
-      end
-      curMovePos = notify:GetPosNew()
-    else
-      do
-        if notify:GetNotifyType() == NotifyType.HitBackEnd then
-          if notify:GetDefenderId() ~= teamEntity:GetID() then
-            return 
-          end
-          curMovePos = notify:GetPosEnd()
-        else
-          if notify:GetNotifyType() == NotifyType.TransportEachMoveEnd then
-            if (notify:GetNotifyEntity()):GetID() ~= teamEntity:GetID() then
-              return 
-            end
-            curMovePos = notify:GetPosNew()
-          end
-        end
-        local ownerEntity = (self._buffInstance):Entity()
-        local bodyArea = (ownerEntity:BodyArea()):GetArea()
-        local posSelf = (ownerEntity:GridLocation()).Position
-        local configService = (self._world):GetService("Config")
-        local skillConfigData = configService:GetSkillConfigData(self._skillID)
-        local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-        local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
-        local skillResult = skillCalculater:CalcSkillScope(skillConfigData, posSelf, Vector2(0, 1), bodyArea)
-        local match = (table.icontains)(skillResult:GetAttackRange(), curMovePos)
-        local buffResult = BuffResultShowEffectWhenTeamInSkillScope:New(match, self._effectID)
-        buffResult:SetMovePos(curMovePos)
-        local buffSvc = (self._world):GetService("BuffLogic")
-        if match then
-          local buffInstance = buffSvc:AddBuff(self._buffID, teamEntity, {casterEntity = teamEntity})
-          if buffInstance then
-            buffResult:SetBuffSeq({buffInstance:BuffSeq()})
-          end
-        else
-          do
-            local buffCmpt = teamEntity:BuffComponent()
-            do
-              local tSeqID = buffCmpt:RemoveBuffByEffectType(self._buffEffect, NTBuffUnload:New())
-              buffResult:SetBuffSeq(tSeqID)
-              buffResult:SetBuffID(self._buffID)
-              return buffResult
-            end
-          end
-        end
-      end
+  elseif notify:GetNotifyType() == NotifyType.Teleport then
+    local entity = notify:GetNotifyEntity()
+    if not entity:HasTeam() and not entity:HasPetPstID() then
+      return
     end
+    curMovePos = notify:GetPosNew()
+  elseif notify:GetNotifyType() == NotifyType.HitBackEnd then
+    if notify:GetDefenderId() ~= teamEntity:GetID() then
+      return
+    end
+    curMovePos = notify:GetPosEnd()
+  elseif notify:GetNotifyType() == NotifyType.TransportEachMoveEnd then
+    if notify:GetNotifyEntity():GetID() ~= teamEntity:GetID() then
+      return
+    end
+    curMovePos = notify:GetPosNew()
   end
+  local ownerEntity = self._buffInstance:Entity()
+  local bodyArea = ownerEntity:BodyArea():GetArea()
+  local posSelf = ownerEntity:GridLocation().Position
+  local configService = self._world:GetService("Config")
+  local skillConfigData = configService:GetSkillConfigData(self._skillID)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
+  local skillResult = skillCalculater:CalcSkillScope(skillConfigData, posSelf, Vector2(0, 1), bodyArea)
+  local match = table.icontains(skillResult:GetAttackRange(), curMovePos)
+  local buffResult = BuffResultShowEffectWhenTeamInSkillScope:New(match, self._effectID)
+  buffResult:SetMovePos(curMovePos)
+  local buffSvc = self._world:GetService("BuffLogic")
+  if match then
+    local buffInstance = buffSvc:AddBuff(self._buffID, teamEntity, {casterEntity = teamEntity})
+    if buffInstance then
+      buffResult:SetBuffSeq({
+        buffInstance:BuffSeq()
+      })
+    end
+  else
+    local buffCmpt = teamEntity:BuffComponent()
+    local tSeqID = buffCmpt:RemoveBuffByEffectType(self._buffEffect, NTBuffUnload:New())
+    buffResult:SetBuffSeq(tSeqID)
+  end
+  buffResult:SetBuffID(self._buffID)
+  return buffResult
 end
-
-

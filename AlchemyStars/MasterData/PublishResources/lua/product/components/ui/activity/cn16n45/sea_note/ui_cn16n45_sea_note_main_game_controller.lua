@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn16n45/sea_note/ui_cn16n45_sea_note_main_game_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN16N45SeaNoteMainGameController", UIController)
 UICN16N45SeaNoteMainGameController = UICN16N45SeaNoteMainGameController
 local toint = math.tointeger
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-UICN16N45SeaNoteMainGameController.Constructor = function(self)
-  -- function num : 0_0
+function UICN16N45SeaNoteMainGameController:Constructor()
   self._componentState = {}
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:LoadDataOnEnter(TT, res, uiParams)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:OnShow(uiParams)
   self._stagAreaList = {}
   self._itemStagAreaList = {}
   self._gameScore = 0
@@ -39,52 +26,33 @@ UICN16N45SeaNoteMainGameController.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.InitGameTask = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:InitGameTask()
   self.curShowPopTime = 5
   self.originShowPopTime = 5
   self._taskid = self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    while 1 do
-      if not self.showEnd then
-        if self.curShowPopTime > 0 then
-          self.curShowPopTime = self.curShowPopTime - 1
-          if self.curShowPopTime <= 0 and self:CheckCanShowPop() then
-            local ASheepPopCount = ((Cfg.cfg_global).ASheepPopCount).IntValue
-            if ASheepPopCount == nil then
-              ASheepPopCount = 5
-            end
-            local CurPopCount = (LocalDB.GetInt)("UICN16N45SeaNote_CurPopCount")
-            if CurPopCount < ASheepPopCount then
-              (self.unCtrlPopObj):SetActive(true)
-            end
-            ;
-            (self.bgAnimation):Play("uianim_UICN16N45SeaNoteMainGameController_UseItem_Shake")
-            ;
-            (self.unCtrlPopAnimation):Play("uieff_CN9MainGameController_in")
+    while not self.showEnd do
+      if self.curShowPopTime > 0 then
+        self.curShowPopTime = self.curShowPopTime - 1
+        if self.curShowPopTime <= 0 and self:CheckCanShowPop() then
+          local ASheepPopCount = Cfg.cfg_global.ASheepPopCount.IntValue
+          if ASheepPopCount == nil then
+            ASheepPopCount = 5
           end
-        end
-        do
-          YIELD(TT, 1000)
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
+          local CurPopCount = LocalDB.GetInt("UICN16N45SeaNote_CurPopCount")
+          if ASheepPopCount > CurPopCount then
+            self.unCtrlPopObj:SetActive(true)
+          end
+          self.bgAnimation:Play("uianim_UICN16N45SeaNoteMainGameController_UseItem_Shake")
+          self.unCtrlPopAnimation:Play("uieff_CN9MainGameController_in")
+        else
         end
       end
+      YIELD(TT, 1000)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckCanShowPop = function(self)
-  -- function num : 0_4
+function UICN16N45SeaNoteMainGameController:CheckCanShowPop()
   local can = true
   if self._itemUseCount <= 0 then
     can = false
@@ -99,95 +67,67 @@ UICN16N45SeaNoteMainGameController.CheckCanShowPop = function(self)
   return can
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.ResetShowPopTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do
-    if (self.unCtrlPopObj).activeSelf then
-      local curPop = (LocalDB.GetInt)("UICN16N45SeaNote_CurPopCount")
-      curPop = curPop + 1
-      ;
-      (LocalDB.SetInt)("UICN16N45SeaNote_CurPopCount", curPop)
-    end
-    self.curShowPopTime = self.originShowPopTime
-    ;
-    (self.unCtrlPopObj):SetActive(false)
-    ;
-    (self.bgAnimation):Stop()
+function UICN16N45SeaNoteMainGameController:ResetShowPopTime()
+  if self.unCtrlPopObj.activeSelf then
+    local curPop = LocalDB.GetInt("UICN16N45SeaNote_CurPopCount")
+    curPop = curPop + 1
+    LocalDB.SetInt("UICN16N45SeaNote_CurPopCount", curPop)
   end
+  self.curShowPopTime = self.originShowPopTime
+  self.unCtrlPopObj:SetActive(false)
+  self.bgAnimation:Stop()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController._GetComponents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._topButton = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
-  ;
-  (self._topButton):SetData(function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    if not ((self.bg3).gameObject).activeInHierarchy then
-      ((GameGlobal.UIStateManager)()):CloseDialog("UICN16N45SeaNoteLevelDetail")
-      ;
-      (AudioHelperController.PlayBGM)(self._lastBGMResName)
+function UICN16N45SeaNoteMainGameController:_GetComponents()
+  self._topButton = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
+  self._topButton:SetData(function()
+    if not self.bg3.gameObject.activeInHierarchy then
+      GameGlobal.UIStateManager():CloseDialog("UICN16N45SeaNoteLevelDetail")
+      AudioHelperController.PlayBGM(self._lastBGMResName)
       self:CloseDialog()
-      return 
+      return
     end
-    ;
-    (self.mainGameAnimation):Play("uieff_CN9MainGameController_startSetView_in")
-    ;
-    (self.SetViewObj):SetActive(true)
+    self.mainGameAnimation:Play("uieff_CN9MainGameController_startSetView_in")
+    self.SetViewObj:SetActive(true)
     if self.isInfinite then
-      (self.ExitGameText):SetText((StringTable.Get)("str_cn9_calcu_game"))
+      self.ExitGameText:SetText(StringTable.Get("str_cn9_calcu_game"))
     end
-  end
-, nil, nil, true, nil, false, nil)
+  end, nil, nil, true, nil, false, nil)
   local missionId = self._missonId
-  self.curMission = (Cfg.cfg_cn9_client_mission)[missionId]
+  self.curMission = Cfg.cfg_cn9_client_mission[missionId]
   if self.curMission == nil then
-    (Log.error)("cfg_cn9_client_mission is nil" .. missionId)
-    return 
+    Log.error("cfg_cn9_client_mission is nil" .. missionId)
+    return
   end
   self.mainGameAnimation = self:GetUIComponent("Animation", "_anim")
   self.RelicStagAreaRectTf = self:GetUIComponent("RectTransform", "RelicStagArea")
   self.ItemStagAreaRectTf = self:GetUIComponent("RectTransform", "ItemStagArea")
   self.ItemStagAreaCount = 10
   self.SingleItemUseCount = 2
-  self._itemUseCount = (self.curMission).ItemUseCount
-  self.GameCountDown = (self.curMission).CountDown
+  self._itemUseCount = self.curMission.ItemUseCount
+  self.GameCountDown = self.curMission.CountDown
   local curCountDownText = self:_GetRemainTime(self.GameCountDown)
   self.CountDownText = self:GetUIComponent("UILocalizationText", "CountDownText")
-  ;
-  (self.CountDownText):SetText((StringTable.Get)("str_cn9_count_down_tips") .. curCountDownText)
+  self.CountDownText:SetText(StringTable.Get("str_cn9_count_down_tips") .. curCountDownText)
   self.StartViewObj = self:GetGameObject("StartView")
-  ;
-  (self.StartViewObj):SetActive(true)
+  self.StartViewObj:SetActive(true)
   self.StarObjAnim = self:GetUIComponent("Animation", "StartView")
-  ;
-  ((GameGlobal.Timer)()):AddEvent(1500, function()
-    -- function num : 0_6_1 , upvalues : self
+  GameGlobal.Timer():AddEvent(1500, function()
     self._canBegin = true
-  end
-)
+  end)
   self.StarAnimViewObj = self:GetGameObject("StarAnimView")
-  ;
-  (self.StarAnimViewObj):SetActive(false)
+  self.StarAnimViewObj:SetActive(false)
   self.CalcuViewbj = self:GetGameObject("CalcuView")
-  ;
-  (self.CalcuViewbj):SetActive(false)
+  self.CalcuViewbj:SetActive(false)
   self.CalcuViewCanvasGroup = self:GetUIComponent("CanvasGroup", "CalcuView")
   self.TimeOutViewbj = self:GetGameObject("TimeOutView")
-  ;
-  (self.TimeOutViewbj):SetActive(false)
+  self.TimeOutViewbj:SetActive(false)
   self.SetViewObj = self:GetGameObject("SetView")
-  ;
-  (self.SetViewObj):SetActive(false)
+  self.SetViewObj:SetActive(false)
   self.UseItemTipsBgObj = self:GetGameObject("UseItemTipsBg")
-  ;
-  (self.UseItemTipsBgObj):SetActive(false)
+  self.UseItemTipsBgObj:SetActive(false)
   self.GameScoreText = self:GetUIComponent("UILocalizationText", "GameScoreText")
-  ;
-  (self.GameScoreText):SetText((StringTable.Get)("str_cn9_score_tips") .. "<color=#a44143>0</color>")
+  self.GameScoreText:SetText(StringTable.Get("str_cn9_score_tips") .. "<color=#a44143>0</color>")
   self.BeginGameCountDownText = self:GetUIComponent("UILocalizationText", "BeginGameCountDownText")
   self.BeginGameTipsText = self:GetUIComponent("UILocalizationText", "BeginGameTipsText")
   self.GameEndTipsText = self:GetUIComponent("UILocalizationText", "GameEndTipsText")
@@ -196,178 +136,125 @@ UICN16N45SeaNoteMainGameController._GetComponents = function(self)
   self.GameEndScoreText = self:GetUIComponent("UILocalizationText", "GameEndScoreText")
   self.GameFailScoreText = self:GetUIComponent("UILocalizationText", "GameFailScoreText")
   self.UseCountText = self:GetUIComponent("UILocalizationText", "UseCountText")
-  ;
-  (self.UseCountText):SetText("" .. self._itemUseCount)
+  self.UseCountText:SetText("" .. self._itemUseCount)
   self.ZeroUseCountTextObj = self:GetGameObject("ZeroUseCountText")
-  ;
-  (self.ZeroUseCountTextObj):SetActive(false)
+  self.ZeroUseCountTextObj:SetActive(false)
   self.bgObj = self:GetGameObject("bg")
-  ;
-  (self.bgObj):SetActive(false)
+  self.bgObj:SetActive(false)
   self.bgBtn = self:GetUIComponent("Button", "bg")
   self:InitItemLongPress()
   self.Count3Image = self:GetGameObject("Count3Image")
   self.Count2Image = self:GetGameObject("Count2Image")
   self.Count1Image = self:GetGameObject("Count1Image")
-  ;
-  (self.Count3Image):SetActive(false)
-  ;
-  (self.Count2Image):SetActive(false)
-  ;
-  (self.Count1Image):SetActive(false)
+  self.Count3Image:SetActive(false)
+  self.Count2Image:SetActive(false)
+  self.Count1Image:SetActive(false)
   self.Botton = self:GetGameObject("Botton")
-  ;
-  (self.Botton):SetActive(false)
+  self.Botton:SetActive(false)
   self.bg3 = self:GetGameObject("bg3")
-  ;
-  (self.bg3):SetActive(false)
+  self.bg3:SetActive(false)
   self.RelicGameArea = self:GetGameObject("RelicGameArea")
-  self.isInfinite = (self.curMission).IsInfinte
-  self.infinitePool = (self.curMission).InfinteCubePool
-  ;
-  (self.mainGameAnimation):Play("uieff_CN9MainGameController_in")
+  self.isInfinite = self.curMission.IsInfinte
+  self.infinitePool = self.curMission.InfinteCubePool
+  self.mainGameAnimation:Play("uieff_CN9MainGameController_in")
   self.unCtrlPopObj = self:GetGameObject("UnCtrlPop")
-  ;
-  (self.unCtrlPopObj):SetActive(false)
+  self.unCtrlPopObj:SetActive(false)
   self.unCtrlPopAnimation = self:GetUIComponent("Animation", "UnCtrlPop")
   self.bgAnimation = self:GetUIComponent("Animation", "bg")
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController._OnValue = function(self)
-  -- function num : 0_7
+function UICN16N45SeaNoteMainGameController:_OnValue()
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.OnHide = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:OnHide()
   if self._startTimerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._startTimerHandler)
+    GameGlobal.Timer():CancelEvent(self._startTimerHandler)
     self._startTimerHandler = nil
   end
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   if self._GameCountTimerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._GameCountTimerHandler)
+    GameGlobal.Timer():CancelEvent(self._GameCountTimerHandler)
     self._GameCountTimerHandler = nil
   end
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
   if self._taskid then
-    ((GameGlobal.TaskManager)()):KillTask(self._taskid)
+    GameGlobal.TaskManager():KillTask(self._taskid)
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.Dispose = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (UICN16N45SeaNoteMainGameController.super):Dispose()
+function UICN16N45SeaNoteMainGameController:Dispose()
+  UICN16N45SeaNoteMainGameController.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.AfterUILayerChanged = function(self)
-  -- function num : 0_10
+function UICN16N45SeaNoteMainGameController:AfterUILayerChanged()
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController._RefreshUIInfo = function(self)
-  -- function num : 0_11
+function UICN16N45SeaNoteMainGameController:_RefreshUIInfo()
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController._Close = function(self)
-  -- function num : 0_12
+function UICN16N45SeaNoteMainGameController:_Close()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.InitItemLongPress = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self.bgObj), UIEvent.Press, function(go)
-    -- function num : 0_13_0 , upvalues : self, _ENV
+function UICN16N45SeaNoteMainGameController:InitItemLongPress()
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self.bgObj), UIEvent.Press, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
-    self._timerEvent = ((GameGlobal.Timer)()):AddEvent(1000, function()
-      -- function num : 0_13_0_0 , upvalues : _ENV, self
-      if (GuideHelper.IsUIGuideShow)() then
-        return 
+    self._timerEvent = GameGlobal.Timer():AddEvent(1000, function()
+      if GuideHelper.IsUIGuideShow() then
+        return
       end
-      ;
-      (self.UseItemTipsBgObj):SetActive(true)
-    end
-)
-  end
-)
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self.bgObj), UIEvent.Unhovered, function(go)
-    -- function num : 0_13_1 , upvalues : self, _ENV
+      self.UseItemTipsBgObj:SetActive(true)
+    end)
+  end)
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self.bgObj), UIEvent.Unhovered, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
-  end
-)
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self.bgObj), UIEvent.Release, function(go)
-    -- function num : 0_13_2 , upvalues : self, _ENV
+  end)
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self.bgObj), UIEvent.Release, function(go)
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
-    ;
-    (self.UseItemTipsBgObj):SetActive(false)
-  end
-)
+    self.UseItemTipsBgObj:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController._GetRemainTime = function(self, time)
-  -- function num : 0_14 , upvalues : _ENV
-  local day, hour, minute, second = nil, nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UICN16N45SeaNoteMainGameController:_GetRemainTime(time)
+  local day, hour, minute, second
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   second = time % 60
   if second < 10 then
     second = "0" .. second
   end
-  if day > 0 then
-    return day .. (StringTable.Get)("str_activity_common_day") .. hour .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    return day .. StringTable.Get("str_activity_common_day") .. hour .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    return hour .. StringTable.Get("str_activity_common_hour") .. minute .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    return minute .. ":" .. second
   else
-    if hour > 0 then
-      return hour .. (StringTable.Get)("str_activity_common_hour") .. minute .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        return minute .. ":" .. second
-      else
-        return "00" .. ":" .. second
-      end
-    end
+    return "00" .. ":" .. second
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckRelicItem = function(self, relicItem, from)
-  -- function num : 0_15 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:CheckRelicItem(relicItem, from)
   local sameRelic = false
   local sameCount = 0
   local initIndex = 1
   for i = 1, #self._stagAreaList do
-    local item = (self._stagAreaList)[i]
+    local item = self._stagAreaList[i]
     if relicItem.relicType == item.relicType then
       if not sameRelic then
         initIndex = i - 1
@@ -376,54 +263,46 @@ UICN16N45SeaNoteMainGameController.CheckRelicItem = function(self, relicItem, fr
       sameCount = sameCount + 1
     end
   end
-  if sameCount >= 3 then
+  if 3 <= sameCount then
     sameRelic = false
   end
   if sameRelic then
     local newRelicList = {}
-    for i = 1, initIndex + (sameCount) do
-      local topItem = (self._stagAreaList)[i]
+    for i = 1, initIndex + sameCount do
+      local topItem = self._stagAreaList[i]
       newRelicList[i] = topItem
     end
     newRelicList[#newRelicList + 1] = relicItem
-    for j = initIndex + (sameCount) + 1, #self._stagAreaList do
-      local bottomItem = (self._stagAreaList)[j]
+    for j = initIndex + sameCount + 1, #self._stagAreaList do
+      local bottomItem = self._stagAreaList[j]
       newRelicList[#newRelicList + 1] = bottomItem
     end
     self._stagAreaList = newRelicList
   else
-    do
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._stagAreaList)[#self._stagAreaList + 1] = relicItem
-      if from == RelicState.ItemToStag then
-        (table.remove)(self._itemStagAreaList, relicItem.CurRelicStagIndex)
-        self:RefreshItemToStagAreaList()
-      end
-      self:RefreshStagAreaList()
-      if self._relicCanEli ~= nil and (self._relicCanEli).relicType == relicItem.relicType and self._timerHandler ~= nil then
-        ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
-        self._timerHandler = nil
-      end
-      self:CheckEliminate(relicItem, from)
-      self:CheckCanPoint(relicItem, from)
-      if self.isInfinite then
-        self:CheckInfinite(relicItem)
-      end
-    end
+    self._stagAreaList[#self._stagAreaList + 1] = relicItem
+  end
+  if from == RelicState.ItemToStag then
+    table.remove(self._itemStagAreaList, relicItem.CurRelicStagIndex)
+    self:RefreshItemToStagAreaList()
+  end
+  self:RefreshStagAreaList()
+  if self._relicCanEli ~= nil and self._relicCanEli.relicType == relicItem.relicType and self._timerHandler ~= nil then
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
+    self._timerHandler = nil
+  end
+  self:CheckEliminate(relicItem, from)
+  self:CheckCanPoint(relicItem, from)
+  if self.isInfinite then
+    self:CheckInfinite(relicItem)
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckInfinite = function(self, relicItem)
-  -- function num : 0_16 , upvalues : _ENV, toint
+function UICN16N45SeaNoteMainGameController:CheckInfinite(relicItem)
   if self.infinitePool == nil or #self.infinitePool == 0 then
-    return 
+    return
   end
   local layer = relicItem.layer
-  if layer == 2 then
+  if 2 == layer then
     local list = {}
     local posList = {}
     local oddList = {}
@@ -432,16 +311,16 @@ UICN16N45SeaNoteMainGameController.CheckInfinite = function(self, relicItem)
     local posEvvList = {}
     local totalCount = #self._relicGameArea
     local addCount = 0
-    local randomIndex = (Mathf.Random)(1, #self.infinitePool)
-    local randomMissionId = (self.infinitePool)[randomIndex]
-    local nextcurMission = (Cfg.cfg_cn9_client_mission)[randomMissionId]
+    local randomIndex = Mathf.Random(1, #self.infinitePool)
+    local randomMissionId = self.infinitePool[randomIndex]
+    local nextcurMission = Cfg.cfg_cn9_client_mission[randomMissionId]
     local AllLayer = #nextcurMission.SecureCubePos
     local codeLayerList = self:CheckSecurePosType(nextcurMission)
     local cubePosList = {}
     local layerDic = SortedDictionary:New()
     for i = 1, AllLayer do
-      local oneLayerCfg = (nextcurMission.SecureCubePos)[i]
-      local b = (string.split)(oneLayerCfg, "|")
+      local oneLayerCfg = nextcurMission.SecureCubePos[i]
+      local b = string.split(oneLayerCfg, "|")
       addCount = addCount + #b
       for k = 1, #b do
         local pos = b[k]
@@ -457,52 +336,34 @@ UICN16N45SeaNoteMainGameController.CheckInfinite = function(self, relicItem)
       evvList[kk] = {}
       posEvvList[kk] = {}
     end
-    self._relicGameArea = (UIWidgetHelper.SpawnObjects)(self, "RelicGameArea", "UICN16N45RelicItem", totalCount + (addCount))
+    self._relicGameArea = UIWidgetHelper.SpawnObjects(self, "RelicGameArea", "UICN16N45RelicItem", totalCount + addCount)
     for i = totalCount + 1, #self._relicGameArea do
-      local item = (self._relicGameArea)[i]
+      local item = self._relicGameArea[i]
       local finalyCount = i - totalCount
       local posStr = cubePosList[finalyCount]
-      local realPos = (string.split)(posStr, "_")
+      local realPos = string.split(posStr, "_")
       local layer = toint(realPos[3])
       if layer ~= curLayer then
         index = 1
         curLayer = layer
       end
-      local code = (codeLayerList[layer])[index]
+      local code = codeLayerList[layer][index]
       local pos = Vector2(toint(realPos[1]), toint(realPos[2]))
       index = index + 1
       if pos.x % 2 ~= 0 then
         item:SetData(i - 1, function()
-    -- function num : 0_16_0 , upvalues : self
-    self:ResetShowPopTime()
-  end
-, self, pos, true, layer, code)
-        ;
-        (((item.rootRectTf).gameObject).transform):SetAsFirstSibling()
-        -- DECOMPILER ERROR at PC148: Confused about usage of register: R31 in 'UnsetPending'
-
-        ;
-        (oddList[layer])[#oddList[layer] + 1] = item
-        -- DECOMPILER ERROR at PC153: Confused about usage of register: R31 in 'UnsetPending'
-
-        ;
-        (posOddList[layer])[#posOddList[layer] + 1] = pos
+          self:ResetShowPopTime()
+        end, self, pos, true, layer, code)
+        item.rootRectTf.gameObject.transform:SetAsFirstSibling()
+        oddList[layer][#oddList[layer] + 1] = item
+        posOddList[layer][#posOddList[layer] + 1] = pos
       else
         item:SetData(i - 1, function()
-    -- function num : 0_16_1 , upvalues : self
-    self:ResetShowPopTime()
-  end
-, self, pos, false, layer, code)
-        ;
-        (((item.rootRectTf).gameObject).transform):SetAsFirstSibling()
-        -- DECOMPILER ERROR at PC173: Confused about usage of register: R31 in 'UnsetPending'
-
-        ;
-        (evvList[layer])[#evvList[layer] + 1] = item
-        -- DECOMPILER ERROR at PC178: Confused about usage of register: R31 in 'UnsetPending'
-
-        ;
-        (posEvvList[layer])[#posEvvList[layer] + 1] = pos
+          self:ResetShowPopTime()
+        end, self, pos, false, layer, code)
+        item.rootRectTf.gameObject.transform:SetAsFirstSibling()
+        evvList[layer][#evvList[layer] + 1] = item
+        posEvvList[layer][#posEvvList[layer] + 1] = pos
       end
     end
     for bb = 1, AllLayer do
@@ -511,42 +372,27 @@ UICN16N45SeaNoteMainGameController.CheckInfinite = function(self, relicItem)
       list[1] = oddList[bb]
       list[2] = evvList[bb]
       list[3] = {}
-      -- DECOMPILER ERROR at PC196: Confused about usage of register: R26 in 'UnsetPending'
-
-      ;
-      (list[3])[1] = "bb" .. bb
+      list[3][1] = "bb" .. bb
       posList[1] = posOddList[bb]
       posList[2] = evvList[bb]
-      ;
-      (table.insert)(self.layerItemList, 1, list)
-      ;
-      (table.insert)(self.layerList, 1, posList)
+      table.insert(self.layerItemList, 1, list)
+      table.insert(self.layerList, 1, posList)
     end
     for i = 1, #self.layerItemList do
-      local layer = (self.layerItemList)[i]
+      local layer = self.layerItemList[i]
       if layer then
         local layer1 = layer[1]
         local layer2 = layer[2]
-        if #layer1 > 0 then
+        if 0 < #layer1 then
           for j = 1, #layer1 do
             local item = layer1[j]
             item.layer = i
           end
         end
-        do
-          if #layer2 > 0 then
-            for j = 1, #layer2 do
-              local item = layer2[j]
-              item.layer = i
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC245: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC245: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC245: LeaveBlock: unexpected jumping out IF_STMT
-
+        if 0 < #layer2 then
+          for j = 1, #layer2 do
+            local item = layer2[j]
+            item.layer = i
           end
         end
       end
@@ -555,18 +401,15 @@ UICN16N45SeaNoteMainGameController.CheckInfinite = function(self, relicItem)
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckAllClean = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:CheckAllClean()
   if self._curElemCount > 0 and self._curElemCount == #self._relicGameArea then
     self:ShowGameEnd(true, self.isInfinite)
-    return 
+    return
   end
   if #self._stagAreaList >= 7 then
     local dic = SortedDictionary:New()
     for i = 1, #self._stagAreaList do
-      local single = (self._stagAreaList)[i]
+      local single = self._stagAreaList[i]
       if not dic:Find(single.relicType) then
         dic:Insert(single.relicType, 1)
       else
@@ -577,306 +420,210 @@ UICN16N45SeaNoteMainGameController.CheckAllClean = function(self)
     end
     for i = 1, dic:Size() do
       local key, value = dic:GetPairAt(i)
-      if value >= 3 then
-        (Log.debug)("###[FX:] 超量")
-        return 
+      if 3 <= value then
+        Log.debug("###[FX:] 超量")
+        return
       end
     end
     self:ShowGameEnd(false, self.isInfinite)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.ShowGameEnd = function(self, isSuccess, isInfinite)
-  -- function num : 0_18 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:ShowGameEnd(isSuccess, isInfinite)
   if self.showEnd then
-    return 
+    return
   end
   self.showEnd = true
   self.isSuccess = isSuccess
-  ;
-  (self.mainGameAnimation):Play("uieff_CN9MainGameController_startSetView_in")
-  ;
-  (self.bg3):SetActive(false)
-  ;
-  (self.bgObj):SetActive(false)
-  ;
-  (self.Botton):SetActive(false)
-  ;
-  (self.RelicGameArea):SetActive(false)
+  self.mainGameAnimation:Play("uieff_CN9MainGameController_startSetView_in")
+  self.bg3:SetActive(false)
+  self.bgObj:SetActive(false)
+  self.Botton:SetActive(false)
+  self.RelicGameArea:SetActive(false)
   if self._GameCountTimerHandler ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._GameCountTimerHandler)
+    GameGlobal.Timer():CancelEvent(self._GameCountTimerHandler)
     self._GameCountTimerHandler = nil
   end
-  ;
-  ((self.GameFailTipsText).gameObject):SetActive(false)
-  ;
-  ((self.GameEndTipsText).gameObject):SetActive(false)
-  ;
-  ((self.GameEndScoreText).gameObject):SetActive(false)
-  ;
-  ((self.GameFailScoreText).gameObject):SetActive(false)
-  ;
-  (self.CalcuViewbj):SetActive(true)
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.CalcuViewCanvasGroup).alpha = 1
+  self.GameFailTipsText.gameObject:SetActive(false)
+  self.GameEndTipsText.gameObject:SetActive(false)
+  self.GameEndScoreText.gameObject:SetActive(false)
+  self.GameFailScoreText.gameObject:SetActive(false)
+  self.CalcuViewbj:SetActive(true)
+  self.CalcuViewCanvasGroup.alpha = 1
   if isInfinite then
-    ((self.GameEndTipsText).gameObject):SetActive(true)
-    ;
-    ((self.GameEndScoreText).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC81: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.GameEndScoreText).color = Color(0.1372, 0.1372, 0.1372, 1)
-    -- DECOMPILER ERROR at PC89: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.GameEndTipsText).color = Color(0.1372, 0.1372, 0.1372, 1)
-    ;
-    (self.GameEndTipsText):SetText((StringTable.Get)("str_cn9_cn16_game_end"))
-    ;
-    (self.GameEndScoreText):SetText((StringTable.Get)("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
-    ;
-    (self.GameScoreText):SetText((StringTable.Get)("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCN9Mie_Success)
-    return 
+    self.GameEndTipsText.gameObject:SetActive(true)
+    self.GameEndScoreText.gameObject:SetActive(true)
+    self.GameEndScoreText.color = Color(0.1372, 0.1372, 0.1372, 1)
+    self.GameEndTipsText.color = Color(0.1372, 0.1372, 0.1372, 1)
+    self.GameEndTipsText:SetText(StringTable.Get("str_cn9_cn16_game_end"))
+    self.GameEndScoreText:SetText(StringTable.Get("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
+    self.GameScoreText:SetText(StringTable.Get("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCN9Mie_Success)
+    return
   end
   if isSuccess then
-    ((self.GameEndTipsText).gameObject):SetActive(true)
-    ;
-    ((self.GameEndScoreText).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC144: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.GameEndScoreText).color = Color(0.1372, 0.1372, 0.1372, 1)
-    -- DECOMPILER ERROR at PC152: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.GameEndTipsText).color = Color(0.1372, 0.1372, 0.1372, 1)
-    ;
-    (self.GameEndScoreText):SetText((StringTable.Get)("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
-    ;
-    (self.GameEndTipsText):SetText((StringTable.Get)("str_cn9_cn16_game_suc"))
-    ;
-    (self.GameScoreText):SetText((StringTable.Get)("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCN9Mie_Success)
+    self.GameEndTipsText.gameObject:SetActive(true)
+    self.GameEndScoreText.gameObject:SetActive(true)
+    self.GameEndScoreText.color = Color(0.1372, 0.1372, 0.1372, 1)
+    self.GameEndTipsText.color = Color(0.1372, 0.1372, 0.1372, 1)
+    self.GameEndScoreText:SetText(StringTable.Get("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
+    self.GameEndTipsText:SetText(StringTable.Get("str_cn9_cn16_game_suc"))
+    self.GameScoreText:SetText(StringTable.Get("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCN9Mie_Success)
   else
-    ;
-    ((self.GameFailTipsText).gameObject):SetActive(true)
-    ;
-    ((self.GameFailScoreText).gameObject):SetActive(true)
-    ;
-    (self.GameFailScoreText):SetText((StringTable.Get)("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
-    ;
-    (self.GameFailTipsText):SetText((StringTable.Get)("str_cn9_cn16_game_fail"))
-    ;
-    (self.GameScoreText):SetText((StringTable.Get)("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCN9Mie_Fail)
+    self.GameFailTipsText.gameObject:SetActive(true)
+    self.GameFailScoreText.gameObject:SetActive(true)
+    self.GameFailScoreText:SetText(StringTable.Get("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
+    self.GameFailTipsText:SetText(StringTable.Get("str_cn9_cn16_game_fail"))
+    self.GameScoreText:SetText(StringTable.Get("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCN9Mie_Fail)
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckCanPoint = function(self, relicItem, from)
-  -- function num : 0_19 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:CheckCanPoint(relicItem, from)
   if from == RelicState.Game then
     local layer = relicItem.layer
     self:RefreshAllItemState()
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckEliminate = function(self, relicItem, from)
-  -- function num : 0_20 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:CheckEliminate(relicItem, from)
   self._relicCanEli = relicItem
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(500, TimerTriggerCount.Once, function()
-    -- function num : 0_20_0 , upvalues : from, _ENV, self, relicItem
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(500, TimerTriggerCount.Once, function()
     local curRelicItems = {}
     if from == RelicState.Game then
       for i = 1, #self._stagAreaList do
         if #curRelicItems < 3 then
-          local item = (self._stagAreaList)[i]
+          local item = self._stagAreaList[i]
           if item.relicType == relicItem.relicType then
             curRelicItems[#curRelicItems + 1] = item
           end
         end
       end
-    else
-      do
-        if from == RelicState.ItemToStag then
-          for i = 1, #self._stagAreaList do
-            if #curRelicItems < 3 then
-              local item = (self._stagAreaList)[i]
-              if item.relicType == relicItem.relicType then
-                curRelicItems[#curRelicItems + 1] = item
-              end
-            end
+    elseif from == RelicState.ItemToStag then
+      for i = 1, #self._stagAreaList do
+        if #curRelicItems < 3 then
+          local item = self._stagAreaList[i]
+          if item.relicType == relicItem.relicType then
+            curRelicItems[#curRelicItems + 1] = item
           end
         end
-        do
-          if #curRelicItems == 3 then
-            for j = 1, #curRelicItems do
-              local eliminateItem = curRelicItems[#curRelicItems - j + 1]
-              eliminateItem:PlayDisAnim()
-            end
-            ;
-            ((GameGlobal.Timer)()):AddEventTimes(277, TimerTriggerCount.Once, function()
-      -- function num : 0_20_0_0 , upvalues : curRelicItems, _ENV, self
+      end
+    end
+    if #curRelicItems == 3 then
       for j = 1, #curRelicItems do
         local eliminateItem = curRelicItems[#curRelicItems - j + 1]
-        ;
-        ((eliminateItem.rootRectTf).gameObject):SetActive(false)
-        if eliminateItem._mRelicState == RelicState.RelicStag and self._stagAreaList then
-          if (table.count)(self._stagAreaList) < eliminateItem.CurRelicStagIndex then
-            (Log.error)(" [FX] CurRelicStagIndex > table.count")
-          end
-          ;
-          (table.remove)(self._stagAreaList, eliminateItem.CurRelicStagIndex)
-        end
-        if eliminateItem._mRelicState == RelicState.ItemToStag and self._itemStagAreaList then
-          (table.remove)(self._itemStagAreaList, eliminateItem.CurRelicStagIndex)
-        end
+        eliminateItem:PlayDisAnim()
       end
-      self._gameScore = self._gameScore + (self.curMission).SingleElemScore
-      self._curElemCount = self._curElemCount + 3
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCN9Mie_CleanRelic)
-      ;
-      (self.GameScoreText):SetText((StringTable.Get)("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
-      self:CheckAllClean()
+      GameGlobal.Timer():AddEventTimes(277, TimerTriggerCount.Once, function()
+        for j = 1, #curRelicItems do
+          local eliminateItem = curRelicItems[#curRelicItems - j + 1]
+          eliminateItem.rootRectTf.gameObject:SetActive(false)
+          if eliminateItem._mRelicState == RelicState.RelicStag then
+            if self._stagAreaList then
+              if eliminateItem.CurRelicStagIndex > table.count(self._stagAreaList) then
+                Log.error(" [FX] CurRelicStagIndex > table.count")
+              end
+              table.remove(self._stagAreaList, eliminateItem.CurRelicStagIndex)
+            end
+          elseif eliminateItem._mRelicState == RelicState.ItemToStag and self._itemStagAreaList then
+            table.remove(self._itemStagAreaList, eliminateItem.CurRelicStagIndex)
+          end
+        end
+        self._gameScore = self._gameScore + self.curMission.SingleElemScore
+        self._curElemCount = self._curElemCount + 3
+        AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCN9Mie_CleanRelic)
+        self.GameScoreText:SetText(StringTable.Get("str_cn9_score_tips") .. "<color=#a44143>" .. self._gameScore .. "</color>")
+        self:CheckAllClean()
+        self:RefreshStagAreaList()
+      end)
+    else
       self:RefreshStagAreaList()
+      self:CheckAllClean()
     end
-)
-          else
-            self:RefreshStagAreaList()
-            self:CheckAllClean()
-          end
-        end
-      end
-    end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.UseCountBgOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:UseCountBgOnClick()
   self:ResetShowPopTime()
   if self._itemUseCount <= 0 then
-    (self.ZeroUseCountTextObj):SetActive(true)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn9_right_item_less"))
-    return 
+    self.ZeroUseCountTextObj:SetActive(true)
+    ToastManager.ShowToast(StringTable.Get("str_cn9_right_item_less"))
+    return
   end
   local lessCount = self.ItemStagAreaCount - #self._itemStagAreaList
   if lessCount < self.SingleItemUseCount then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_cn9_left_area_less"), function()
-    -- function num : 0_21_0 , upvalues : self
-    self:_Close()
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_cn9_left_area_less"), function()
+      self:_Close()
+    end, nil)
+    return
   end
-, nil)
-    return 
-  end
-  if #self._stagAreaList < self.SingleItemUseCount then
-    return 
+  if self.SingleItemUseCount > #self._stagAreaList then
+    return
   end
   self._itemUseCount = self._itemUseCount - 1
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._itemUseCount <= 0 then
-    (self.bgBtn).interactable = false
-    ;
-    (self.UseCountText):SetText("0")
-    ;
-    ((self.UseCountText).gameObject):SetActive(false)
-    ;
-    (self.ZeroUseCountTextObj):SetActive(true)
+    self.bgBtn.interactable = false
+    self.UseCountText:SetText("0")
+    self.UseCountText.gameObject:SetActive(false)
+    self.ZeroUseCountTextObj:SetActive(true)
   else
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.bgBtn).interactable = true
-    ;
-    (self.UseCountText):SetText("" .. self._itemUseCount)
+    self.bgBtn.interactable = true
+    self.UseCountText:SetText("" .. self._itemUseCount)
   end
   local turnList = {}
   for i = 1, self.SingleItemUseCount do
-    local item = (self._stagAreaList)[i]
+    local item = self._stagAreaList[i]
     turnList[i] = item
   end
   for i = 1, self.SingleItemUseCount do
-    (table.remove)(self._stagAreaList, self.SingleItemUseCount + 1 - i)
+    table.remove(self._stagAreaList, self.SingleItemUseCount + 1 - i)
   end
   local curItemStagCount = #self._itemStagAreaList
   for i = 1, #turnList do
     local item = turnList[i]
     item._mRelicState = RelicState.ItemToStag
     item:SetRelicStagIndex(i + curItemStagCount)
-    -- DECOMPILER ERROR at PC114: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._itemStagAreaList)[#self._itemStagAreaList + 1] = item
+    self._itemStagAreaList[#self._itemStagAreaList + 1] = item
   end
   self:RefreshStagAreaList()
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.RefreshStagAreaList = function(self)
-  -- function num : 0_22
+function UICN16N45SeaNoteMainGameController:RefreshStagAreaList()
   for i = 1, #self._stagAreaList do
-    local singleItem = (self._stagAreaList)[i]
+    local singleItem = self._stagAreaList[i]
     singleItem:SetRelicStagIndex(i)
   end
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.RefreshItemToStagAreaList = function(self)
-  -- function num : 0_23
+function UICN16N45SeaNoteMainGameController:RefreshItemToStagAreaList()
   for i = 1, #self._itemStagAreaList do
-    local singleItem = (self._itemStagAreaList)[i]
+    local singleItem = self._itemStagAreaList[i]
     singleItem:SetRelicStagIndex(i)
   end
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.StartBtnOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV, toint
+function UICN16N45SeaNoteMainGameController:StartBtnOnClick()
   if not self._canBegin then
-    return 
+    return
   end
-  ;
-  (self.bg3):SetActive(true)
-  ;
-  (self.Botton):SetActive(true)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCN9Mie_StartBegin)
+  self.bg3:SetActive(true)
+  self.Botton:SetActive(true)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCN9Mie_StartBegin)
   local missionId = self._missonId
-  self.curMission = (Cfg.cfg_cn9_client_mission)[missionId]
+  self.curMission = Cfg.cfg_cn9_client_mission[missionId]
   if self.curMission == nil then
-    (Log.error)("cfg_cn9_client_mission is nil" .. missionId)
-    return 
+    Log.error("cfg_cn9_client_mission is nil" .. missionId)
+    return
   end
-  ;
-  (self.mainGameAnimation):Play("uieff_CN9MainGameController_start")
+  self.mainGameAnimation:Play("uieff_CN9MainGameController_start")
   if not self.isInfinite then
-    (self.BeginGameTipsText):SetText((StringTable.Get)("str_cn9_cn16_game_normal_begin_tips"))
+    self.BeginGameTipsText:SetText(StringTable.Get("str_cn9_cn16_game_normal_begin_tips"))
   else
-    ;
-    (self.BeginGameTipsText):SetText((StringTable.Get)("str_cn9_cn16_game_infinite_begin_tips"))
+    self.BeginGameTipsText:SetText(StringTable.Get("str_cn9_cn16_game_infinite_begin_tips"))
   end
-  local AllLayer = #(self.curMission).SecureCubePos
+  local AllLayer = #self.curMission.SecureCubePos
   local codeLayerList = self:CheckSecurePosType(self.curMission)
   self.layerList = {}
   self.layerItemList = {}
@@ -888,11 +635,11 @@ UICN16N45SeaNoteMainGameController.StartBtnOnClick = function(self)
     local singleItemLayer = {}
     local oddItemSingleLayer = {}
     local evenItemSingleLayer = {}
-    local oneLayerCfg = ((self.curMission).SecureCubePos)[i]
-    local b = (string.split)(oneLayerCfg, "|")
+    local oneLayerCfg = self.curMission.SecureCubePos[i]
+    local b = string.split(oneLayerCfg, "|")
     for j = 1, #b do
-      local singelV = (string.split)(b[j], "_")
-      local v = (Vector2.New)(toint(singelV[1]), toint(singelV[2]))
+      local singelV = string.split(b[j], "_")
+      local v = Vector2.New(toint(singelV[1]), toint(singelV[2]))
       if v.x % 2 ~= 0 then
         oddSingleLayer[#oddSingleLayer + 1] = v
       else
@@ -902,30 +649,20 @@ UICN16N45SeaNoteMainGameController.StartBtnOnClick = function(self)
     end
     singleLayer[1] = oddSingleLayer
     singleLayer[2] = evenSingleLayer
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R17 in 'UnsetPending'
-
-    ;
-    (self.layerList)[#self.layerList + 1] = singleLayer
+    self.layerList[#self.layerList + 1] = singleLayer
     singleItemLayer[1] = oddItemSingleLayer
     singleItemLayer[2] = evenItemSingleLayer
-    -- DECOMPILER ERROR at PC127: Confused about usage of register: R17 in 'UnsetPending'
-
-    ;
-    (self.layerItemList)[#self.layerItemList + 1] = singleItemLayer
+    self.layerItemList[#self.layerItemList + 1] = singleItemLayer
   end
-  self._relicGameArea = (UIWidgetHelper.SpawnObjects)(self, "RelicGameArea", "UICN16N45RelicItem", totalCount)
-  ;
-  (self.StartViewObj):SetActive(false)
-  ;
-  (self.StarAnimViewObj):SetActive(true)
+  self._relicGameArea = UIWidgetHelper.SpawnObjects(self, "RelicGameArea", "UICN16N45RelicItem", totalCount)
+  self.StartViewObj:SetActive(false)
+  self.StarAnimViewObj:SetActive(true)
   self:StartPhaseBegin()
-  ;
-  (self.StarObjAnim):Stop()
-  ;
-  ((self.StarObjAnim).gameObject):SetActive(false)
+  self.StarObjAnim:Stop()
+  self.StarObjAnim.gameObject:SetActive(false)
   local curIndex = 1
   for i = 1, #self.layerList do
-    local singelLayerList = (self.layerList)[i]
+    local singelLayerList = self.layerList[i]
     local singelCodeLayerList = codeLayerList[i]
     local singelLayerTotalIndex = 1
     local singleOdd = singelLayerList[1]
@@ -933,52 +670,37 @@ UICN16N45SeaNoteMainGameController.StartBtnOnClick = function(self)
     for k = 1, #singleOdd do
       local singleItem = singleOdd[k]
       local index = curIndex
-      local v = (self._relicGameArea)[curIndex]
+      local v = self._relicGameArea[curIndex]
       local relicId = singelCodeLayerList[singelLayerTotalIndex]
       if relicId == nil then
-        (Log.error)("[fx]: relicId is nil layer:" .. i .. "count:" .. singelLayerTotalIndex)
+        Log.error("[fx]: relicId is nil layer:" .. i .. "count:" .. singelLayerTotalIndex)
       end
       v:SetData(i - 1, function()
-    -- function num : 0_24_0 , upvalues : self
-    self:ResetShowPopTime()
-  end
-, self, singleItem, true, i, relicId)
+        self:ResetShowPopTime()
+      end, self, singleItem, true, i, relicId)
       curIndex = curIndex + 1
       singelLayerTotalIndex = singelLayerTotalIndex + 1
-      -- DECOMPILER ERROR at PC200: Confused about usage of register: R23 in 'UnsetPending'
-
-      ;
-      (((self.layerItemList)[i])[1])[k] = v
+      self.layerItemList[i][1][k] = v
     end
-    ;
-    (Log.debug)("[fx]奇数初始化完成 第" .. i .. "层 数量：" .. curIndex)
+    Log.debug("[fx]奇数初始化完成 第" .. i .. "层 数量：" .. curIndex)
     for k = 1, #singleEven do
       local singleItem = singleEven[k]
       local index = curIndex
-      local v = (self._relicGameArea)[curIndex]
+      local v = self._relicGameArea[curIndex]
       local relicId = singelCodeLayerList[singelLayerTotalIndex]
       v:SetData(i - 1, function()
-    -- function num : 0_24_1 , upvalues : self
-    self:ResetShowPopTime()
-  end
-, self, singleItem, false, i, relicId)
+        self:ResetShowPopTime()
+      end, self, singleItem, false, i, relicId)
       curIndex = curIndex + 1
       singelLayerTotalIndex = singelLayerTotalIndex + 1
-      -- DECOMPILER ERROR at PC233: Confused about usage of register: R23 in 'UnsetPending'
-
-      ;
-      (((self.layerItemList)[i])[2])[k] = v
+      self.layerItemList[i][2][k] = v
     end
-    ;
-    (Log.debug)("[fx]偶数初始化完成 第" .. i .. "层 数量：" .. curIndex)
+    Log.debug("[fx]偶数初始化完成 第" .. i .. "层 数量：" .. curIndex)
   end
   self:RefreshAllItemState()
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckSecurePosType = function(self, curMission)
-  -- function num : 0_25 , upvalues : _ENV, toint
+function UICN16N45SeaNoteMainGameController:CheckSecurePosType(curMission)
   local secureCubePoolDic = SortedDictionary:New()
   local secureCubeTypeDic = SortedDictionary:New()
   local secureCubeTypeList = {}
@@ -987,52 +709,38 @@ UICN16N45SeaNoteMainGameController.CheckSecurePosType = function(self, curMissio
   for i = 1, #secureCubeTypePool do
     local single = secureCubeTypePool[i]
     if #secureCubeTypeList ~= 0 then
-      local randomNum = (Mathf.Random)(1, #secureCubeTypeList)
+      local randomNum = Mathf.Random(1, #secureCubeTypeList)
       local got = secureCubeTypeList[randomNum]
-      ;
-      (table.remove)(secureCubeTypeList, randomNum)
+      table.remove(secureCubeTypeList, randomNum)
       secureCubePoolDic:Insert(got, toint(single))
     end
   end
   self.randomPoolList = {}
   local randomPoolCount = #curMission.CubeRandomPool
   for i = 1, randomPoolCount do
-    local singlePool = (curMission.CubeRandomPool)[i]
-    local singlePoolData = (curMission.RandomPoolData)[i]
+    local singlePool = curMission.CubeRandomPool[i]
+    local singlePoolData = curMission.RandomPoolData[i]
     local CN9RandomPool = CN9RandomPool:New()
     CN9RandomPool:Init(singlePool, singlePoolData, secureCubePoolDic)
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (self.randomPoolList)[i] = CN9RandomPool
+    self.randomPoolList[i] = CN9RandomPool
   end
   local AllLayer = #curMission.SecureCubeCode
   local codeLayerList = {}
   for jk = 1, AllLayer do
     local singleCodeLayer = {}
-    local singleCodeLayerCfg = (curMission.SecureCubeCode)[jk]
-    local b = (string.split)(singleCodeLayerCfg, "|")
+    local singleCodeLayerCfg = curMission.SecureCubeCode[jk]
+    local b = string.split(singleCodeLayerCfg, "|")
     for bb = 1, #b do
       if b[bb] == "ra" then
         for ts = 1, #self.randomPoolList do
-          local ts = (self.randomPoolList)[ts]
+          local ts = self.randomPoolList[ts]
           if ts:ContainsLayer(jk) then
             singleCodeLayer[bb] = ts:GetOneByPool()
           end
         end
       else
-        do
-          do
-            local id = secureCubePoolDic:Find(b[bb])
-            singleCodeLayer[bb] = id
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC106: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        local id = secureCubePoolDic:Find(b[bb])
+        singleCodeLayer[bb] = id
       end
     end
     codeLayerList[jk] = singleCodeLayer
@@ -1040,14 +748,11 @@ UICN16N45SeaNoteMainGameController.CheckSecurePosType = function(self, curMissio
   return codeLayerList
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CalcuAllCodeType = function(self, curMission, _secureCubeTypeDic, _secureCubeTypeList)
-  -- function num : 0_26 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:CalcuAllCodeType(curMission, _secureCubeTypeDic, _secureCubeTypeList)
   local AllLayer = #curMission.SecureCubeCode
   for jk = 1, AllLayer do
-    local singleCodeLayerCfg = (curMission.SecureCubeCode)[jk]
-    local b = (string.split)(singleCodeLayerCfg, "|")
+    local singleCodeLayerCfg = curMission.SecureCubeCode[jk]
+    local b = string.split(singleCodeLayerCfg, "|")
     for bb = 1, #b do
       if b[bb] ~= "ra" and not _secureCubeTypeDic:ContainsKey(b[bb]) then
         _secureCubeTypeList[#_secureCubeTypeList + 1] = b[bb]
@@ -1058,70 +763,45 @@ UICN16N45SeaNoteMainGameController.CalcuAllCodeType = function(self, curMission,
   return _secureCubeTypeDic
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.GameEndBgOnClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog("UIActivityCN9LevelDetail")
-  ;
-  (self.mainGameAnimation):Play("uieff_CN9MainGameController_SetView_out")
-  ;
-  ((GameGlobal.Timer)()):AddEventTimes(200, TimerTriggerCount.Once, function()
-    -- function num : 0_27_0 , upvalues : _ENV, self
-    (AudioHelperController.PlayBGM)(self._lastBGMResName)
+function UICN16N45SeaNoteMainGameController:GameEndBgOnClick()
+  GameGlobal.UIStateManager():CloseDialog("UIActivityCN9LevelDetail")
+  self.mainGameAnimation:Play("uieff_CN9MainGameController_SetView_out")
+  GameGlobal.Timer():AddEventTimes(200, TimerTriggerCount.Once, function()
+    AudioHelperController.PlayBGM(self._lastBGMResName)
     self:CloseDialog()
     if self.isInfinite then
-      (self.cb)(self._missonId, self._gameScore)
+      self.cb(self._missonId, self._gameScore)
+    elseif self.isSuccess then
+      self.cb(self._missonId, self._gameScore)
     else
-      if self.isSuccess then
-        (self.cb)(self._missonId, self._gameScore)
-      else
-        ;
-        (self.failCb)()
-      end
+      self.failCb()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.TimeOutViewBtnOnClick = function(self)
-  -- function num : 0_28
-  (self.TimeOutViewbj):SetActive(false)
+function UICN16N45SeaNoteMainGameController:TimeOutViewBtnOnClick()
+  self.TimeOutViewbj:SetActive(false)
   self:ShowGameEnd(false, self.isInfinite)
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.ContinueBtnOnClick = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  (self.mainGameAnimation):Play("uieff_CN9MainGameController_SetView_out")
-  ;
-  ((GameGlobal.Timer)()):AddEventTimes(300, TimerTriggerCount.Once, function()
-    -- function num : 0_29_0 , upvalues : self
-    (self.SetViewObj):SetActive(false)
-  end
-)
+function UICN16N45SeaNoteMainGameController:ContinueBtnOnClick()
+  self.mainGameAnimation:Play("uieff_CN9MainGameController_SetView_out")
+  GameGlobal.Timer():AddEventTimes(300, TimerTriggerCount.Once, function()
+    self.SetViewObj:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.ExitBtnOnClick = function(self)
-  -- function num : 0_30
-  (self.SetViewObj):SetActive(false)
+function UICN16N45SeaNoteMainGameController:ExitBtnOnClick()
+  self.SetViewObj:SetActive(false)
   self:ShowGameEnd(false, self.isInfinite)
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.RefreshAllItemState = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  for key,value in pairs(self._relicGameArea) do
+function UICN16N45SeaNoteMainGameController:RefreshAllItemState()
+  for key, value in pairs(self._relicGameArea) do
     local item = value
     if item.isOdd then
-      local curLayer = (self.layerList)[item.layer]
-      if #curLayer > 1 then
+      local curLayer = self.layerList[item.layer]
+      if 1 < #curLayer then
         local evenLayer = curLayer[2]
         if evenLayer then
           local canPoint = self:CheckOneItem(item.data, item.layer)
@@ -1132,48 +812,26 @@ UICN16N45SeaNoteMainGameController.RefreshAllItemState = function(self)
           end
         end
       else
-        do
-          do
-            item:SetCanPoint(true)
-            if #self.layerList < item.layer + 1 then
-              item:SetCanPoint(true)
-            else
-              local curLayer = (self.layerList)[item.layer]
-              local evenLayer = curLayer[1]
-              if evenLayer then
-                local canPoint = self:CheckOneItem(item.data, item.layer)
-                if canPoint then
-                  item:SetCanPoint(true)
-                else
-                  item:SetCanPoint(false)
-                end
-              end
-            end
-            do
-              -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC64: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+        item:SetCanPoint(true)
+      end
+    elseif item.layer + 1 > #self.layerList then
+      item:SetCanPoint(true)
+    else
+      local curLayer = self.layerList[item.layer]
+      local evenLayer = curLayer[1]
+      if evenLayer then
+        local canPoint = self:CheckOneItem(item.data, item.layer)
+        if canPoint then
+          item:SetCanPoint(true)
+        else
+          item:SetCanPoint(false)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckOneItem = function(self, itemPos, layer)
-  -- function num : 0_32 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:CheckOneItem(itemPos, layer)
   local check1 = Vector2(itemPos.x + 1, itemPos.y - 1)
   local check2 = Vector2(itemPos.x + 1, itemPos.y + 1)
   local check3 = Vector2(itemPos.x - 1, itemPos.y - 1)
@@ -1201,236 +859,158 @@ UICN16N45SeaNoteMainGameController.CheckOneItem = function(self, itemPos, layer)
   return true
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckOneDir = function(self, pos, layer, isSelf)
-  -- function num : 0_33 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:CheckOneDir(pos, layer, isSelf)
   if pos.x < 1 then
     return false
   end
   if pos.x > 11 then
     return false
   end
-  if pos.y < 1 then
+  if 1 > pos.y then
     return false
   end
   if pos.y > 9 then
     return false
   end
   if pos.x % 2 ~= 0 or layer == #self.layerItemList then
-    for i = layer, #self.layerItemList do
-      local curLayer = (self.layerItemList)[i]
-      if pos.x % 2 == 0 then
-        local evenLayer = curLayer[2]
-        for j = 1, #evenLayer do
-          local single = evenLayer[j]
-          if (single.data).x == pos.x and (single.data).y == pos.y then
-            if single.layer == layer and isSelf then
-              return false
-            end
-            if single._mRelicState == RelicState.Game then
-              return true
-            end
+  end
+  for i = layer, #self.layerItemList do
+    local curLayer = self.layerItemList[i]
+    if pos.x % 2 == 0 then
+      local evenLayer = curLayer[2]
+      for j = 1, #evenLayer do
+        local single = evenLayer[j]
+        if single.data.x == pos.x and single.data.y == pos.y then
+          if single.layer == layer and isSelf then
+            return false
+          end
+          if single._mRelicState == RelicState.Game then
+            return true
           end
         end
-      else
-        do
-          local oddLayer = curLayer[1]
-          for j = 1, #oddLayer do
-            local single = oddLayer[j]
-            if (single.data).x == pos.x and (single.data).y == pos.y then
-              if single.layer == layer and isSelf then
-                return false
-              end
-              if single._mRelicState == RelicState.Game then
-                return true
-              end
-            end
+      end
+    else
+      local oddLayer = curLayer[1]
+      for j = 1, #oddLayer do
+        local single = oddLayer[j]
+        if single.data.x == pos.x and single.data.y == pos.y then
+          if single.layer == layer and isSelf then
+            return false
           end
-          do
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
+          if single._mRelicState == RelicState.Game then
+            return true
           end
         end
       end
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.StartPhaseBegin = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UICN16N45SeaNoteMainGameController:StartPhaseBegin()
   local countDown = 3
-  ;
-  (self.Count3Image):SetActive(true)
-  ;
-  (self.Count2Image):SetActive(false)
-  ;
-  (self.Count1Image):SetActive(false)
-  ;
-  ((self.Count3Image).transform):DOScale(Vector3(1.3, 1.3, 1.3), 0.5)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCN9Mie_CountDown3)
-  self._startTimerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_34_0 , upvalues : countDown, self, _ENV
+  self.Count3Image:SetActive(true)
+  self.Count2Image:SetActive(false)
+  self.Count1Image:SetActive(false)
+  self.Count3Image.transform:DOScale(Vector3(1.3, 1.3, 1.3), 0.5)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCN9Mie_CountDown3)
+  self._startTimerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     countDown = countDown - 1
     if countDown == 2 then
-      (self.Count3Image):SetActive(false)
-      ;
-      (self.Count2Image):SetActive(true)
-      ;
-      (self.Count1Image):SetActive(false)
-      ;
-      ((self.Count2Image).transform):DOScale(Vector3(1.3, 1.3, 1.3), 0.5)
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCN9Mie_CountDown2)
-    else
-      if countDown == 1 then
-        (self.Count3Image):SetActive(false)
-        ;
-        (self.Count2Image):SetActive(false)
-        ;
-        (self.Count1Image):SetActive(true)
-        ;
-        ((self.Count1Image).transform):DOScale(Vector3(1.3, 1.3, 1.3), 0.5)
-        ;
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCN9Mie_CountDown1)
-      end
+      self.Count3Image:SetActive(false)
+      self.Count2Image:SetActive(true)
+      self.Count1Image:SetActive(false)
+      self.Count2Image.transform:DOScale(Vector3(1.3, 1.3, 1.3), 0.5)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCN9Mie_CountDown2)
+    elseif countDown == 1 then
+      self.Count3Image:SetActive(false)
+      self.Count2Image:SetActive(false)
+      self.Count1Image:SetActive(true)
+      self.Count1Image.transform:DOScale(Vector3(1.3, 1.3, 1.3), 0.5)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCN9Mie_CountDown1)
     end
     if countDown == 0 then
       if self._startTimerHandler then
-        ((GameGlobal.Timer)()):CancelEvent(self._startTimerHandler)
+        GameGlobal.Timer():CancelEvent(self._startTimerHandler)
         self._startTimerHandler = nil
       end
       self:InitGameTask()
-      ;
-      (self.StarAnimViewObj):SetActive(false)
+      self.StarAnimViewObj:SetActive(false)
       if self.isInfinite then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN16N45SeaNoteMainGameControllerInfinite)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN16N45SeaNoteMainGameControllerInfinite)
       else
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN16N45SeaNoteMainGameController)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN16N45SeaNoteMainGameController)
       end
       self:BeginGameCountDown()
-      ;
-      (self.bgObj):SetActive(true)
+      self.bgObj:SetActive(true)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.CheckInGuide = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UICN16N45SeaNoteMainGameController:CheckInGuide()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   return guideModule:GuideInProgress()
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-UICN16N45SeaNoteMainGameController.BeginGameCountDown = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  self._GameCountTimerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_36_0 , upvalues : self, _ENV
+function UICN16N45SeaNoteMainGameController:BeginGameCountDown()
+  self._GameCountTimerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     if not self:CheckInGuide() then
       self.GameCountDown = self.GameCountDown - 1
       local curCountDownText = self:_GetRemainTime(self.GameCountDown)
       if self.GameCountDown <= 30 then
         curCountDownText = "<color=#a44143>" .. curCountDownText .. "</color>"
       end
-      ;
-      (self.CountDownText):SetText((StringTable.Get)("str_cn9_count_down_tips") .. curCountDownText)
+      self.CountDownText:SetText(StringTable.Get("str_cn9_count_down_tips") .. curCountDownText)
       if self.GameCountDown <= 0 then
         if self._GameCountTimerHandler then
-          ((GameGlobal.Timer)()):CancelEvent(self._GameCountTimerHandler)
+          GameGlobal.Timer():CancelEvent(self._GameCountTimerHandler)
           self._GameCountTimerHandler = nil
         end
-        ;
-        (self.TimeOutViewbj):SetActive(true)
-        ;
-        (self.SetViewObj):SetActive(false)
-        ;
-        (self.mainGameAnimation):Play("uieff_CN9MainGameController_startSetView_in")
+        self.TimeOutViewbj:SetActive(true)
+        self.SetViewObj:SetActive(false)
+        self.mainGameAnimation:Play("uieff_CN9MainGameController_startSetView_in")
       end
     end
-  end
-)
+  end)
 end
 
 _class("CN9RandomPool", Object)
 CN9RandomPool = CN9RandomPool
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
 
-CN9RandomPool.Init = function(self, cacheLayer, data, _secureCubeTypeDic)
-  -- function num : 0_37 , upvalues : _ENV, toint
+function CN9RandomPool:Init(cacheLayer, data, _secureCubeTypeDic)
   self.cacheLayerIndex = {}
-  local b = (string.split)(cacheLayer, "|")
+  local b = string.split(cacheLayer, "|")
   for i = 1, #b do
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self.cacheLayerIndex)[i] = toint(b[i])
+    self.cacheLayerIndex[i] = toint(b[i])
   end
   self.itemPool = {}
-  local data = (string.split)(data, "|")
+  local data = string.split(data, "|")
   for j = 1, #data do
     local sigleItem = data[j]
-    local singleData = (string.split)(sigleItem, "#")
+    local singleData = string.split(sigleItem, "#")
     if _secureCubeTypeDic ~= nil then
       if _secureCubeTypeDic:ContainsKey(singleData[1]) then
         local id = _secureCubeTypeDic:Find(singleData[1])
         for k = 1, toint(singleData[3]) do
-          -- DECOMPILER ERROR at PC57: Confused about usage of register: R17 in 'UnsetPending'
-
-          (self.itemPool)[#self.itemPool + 1] = toint(id)
+          self.itemPool[#self.itemPool + 1] = toint(id)
         end
       else
-        do
-          for k = 1, toint(singleData[3]) do
-            -- DECOMPILER ERROR at PC73: Confused about usage of register: R16 in 'UnsetPending'
-
-            (self.itemPool)[#self.itemPool + 1] = toint(singleData[2])
-          end
-          do
-            local id = _secureCubeTypeDic:Find(singleData[1])
-            for k = 1, toint(singleData[3]) do
-              -- DECOMPILER ERROR at PC92: Confused about usage of register: R17 in 'UnsetPending'
-
-              (self.itemPool)[#self.itemPool + 1] = toint(id)
-            end
-            do
-              -- DECOMPILER ERROR at PC94: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC94: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC94: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC94: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC94: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC94: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+        for k = 1, toint(singleData[3]) do
+          self.itemPool[#self.itemPool + 1] = toint(singleData[2])
         end
+      end
+    else
+      local id = _secureCubeTypeDic:Find(singleData[1])
+      for k = 1, toint(singleData[3]) do
+        self.itemPool[#self.itemPool + 1] = toint(id)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
-
-CN9RandomPool.ContainsLayer = function(self, layer)
-  -- function num : 0_38
+function CN9RandomPool:ContainsLayer(layer)
   for i = 1, #self.cacheLayerIndex do
-    local singleLayer = (self.cacheLayerIndex)[i]
+    local singleLayer = self.cacheLayerIndex[i]
     if singleLayer == layer then
       return true
     end
@@ -1438,18 +1018,12 @@ CN9RandomPool.ContainsLayer = function(self, layer)
   return false
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
-
-CN9RandomPool.GetOneByPool = function(self)
-  -- function num : 0_39 , upvalues : _ENV, toint
+function CN9RandomPool:GetOneByPool()
   if self.itemPool == nil or #self.itemPool == 0 then
-    (Log.exception)(" [FX] 池子容量不足，请策划检查配置 ")
+    Log.exception(" [FX] 池子容量不足，请策划检查配置 ")
   end
-  local randomNum = (Mathf.Random)(1, #self.itemPool)
-  local got = (self.itemPool)[randomNum]
-  ;
-  (table.remove)(self.itemPool, randomNum)
+  local randomNum = Mathf.Random(1, #self.itemPool)
+  local got = self.itemPool[randomNum]
+  table.remove(self.itemPool, randomNum)
   return toint(got)
 end
-
-

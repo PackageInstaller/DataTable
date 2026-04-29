@@ -1,51 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_star_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyStarGroup", UICustomWidget)
 UIPetIntimacyStarGroup = UIPetIntimacyStarGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyStarGroup.SetData = function(self, pet, scale, spacing)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetIntimacyStarGroup:SetData(pet, scale, spacing)
   if not pet then
-    return 
+    return
   end
   local constMax = 6
   local petStar = pet:GetPetStar()
   local awakenStep = pet:GetPetAwakening()
   local awakenLock = pet:GetAwakeMatch()
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_root", "UIPetIntimacyStar", constMax)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_root", "UIPetIntimacyStar", constMax)
   for i = 1, #objs do
-    local isBackBreak = awakenLock < i and i <= awakenStep
-    ;
-    ((objs[i]):GetGameObject()):SetActive(i <= petStar)
-    ;
-    (objs[i]):Refresh(i <= awakenStep, isBackBreak)
+    local isBackBreak = awakenLock < i and awakenStep >= i
+    objs[i]:GetGameObject():SetActive(petStar >= i)
+    objs[i]:Refresh(awakenStep >= i, isBackBreak)
   end
-  if not scale then
-    scale = 1
-  end
+  scale = scale or 1
   self:_SetScale(Vector3(scale, scale, scale))
   self:_SetSpacing(spacing or 0)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyStarGroup._SetScale = function(self, scale)
-  -- function num : 0_1
+function UIPetIntimacyStarGroup:_SetScale(scale)
   local trans = self:GetUIComponent("RectTransform", "_root")
   trans.localScale = scale
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyStarGroup._SetSpacing = function(self, x)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetIntimacyStarGroup:_SetSpacing(x)
   local grid = self:GetUIComponent("GridLayoutGroup", "_root")
   grid.spacing = Vector2(x, 0)
 end
-
-

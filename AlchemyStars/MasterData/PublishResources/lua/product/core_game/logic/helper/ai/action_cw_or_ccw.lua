@@ -1,26 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_cw_or_ccw.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCWOrCCW", AINewNode)
 ActionCWOrCCW = ActionCWOrCCW
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCWOrCCW.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local boardService = (self._world):GetService("BoardLogic")
-  local cGridLocation = (self.m_entityOwn):GridLocation()
+function ActionCWOrCCW:OnUpdate()
+  local boardService = self._world:GetService("BoardLogic")
+  local cGridLocation = self.m_entityOwn:GridLocation()
   local dir = cGridLocation:GetGridDir()
   local clockwiseDir = Vector2(dir.y, -dir.x)
   local clockwiseDirPos = cGridLocation.Position + clockwiseDir
   local aiNewNodeStatus = AINewNodeStatus.Failure
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   if utilData:IsValidPiecePos(clockwiseDirPos) then
     aiNewNodeStatus = AINewNodeStatus.Success
   end
   return aiNewNodeStatus
 end
-
-

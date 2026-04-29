@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/str_team_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_team_change_no_choose = "外す", str_team_change_lv = "Lv", str_team_change_binder_toast_tips = "{1}が編成に入り、{2}が編成から外れました", str_team_change_binder_item_tex = "<color=#ffdc62>【{1}】</color>が編成されています"}
+local config = {
+  str_team_change_no_choose = "外す",
+  str_team_change_lv = "Lv",
+  str_team_change_binder_toast_tips = "{1}が編成に入り、{2}が編成から外れました",
+  str_team_change_binder_item_tex = "<color=#ffdc62>【{1}】</color>が編成されています"
+}
 return config
-

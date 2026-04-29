@@ -1,42 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_kill_targets.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_KillTargets", Object)
 SkillEffectCalc_KillTargets = SkillEffectCalc_KillTargets
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_KillTargets.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_KillTargets:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._monsterShowLogic = (self._world):GetService("MonsterShowLogic")
+  self._configService = self._world:GetService("Config")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._monsterShowLogic = self._world:GetService("MonsterShowLogic")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_KillTargets.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_KillTargets:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterID = skillEffectCalcParam.casterEntityID
   local targetIDs = skillEffectCalcParam.targetEntityIDs
   local result = SkillEffectKillTargetsResult:New()
-  local calcDamageService = (self._world):GetService("CalcDamage")
-  for i,targetID in ipairs(targetIDs) do
+  local calcDamageService = self._world:GetService("CalcDamage")
+  for i, targetID in ipairs(targetIDs) do
     if targetID ~= -1 then
-      local targetEntity = (self._world):GetEntityByID(targetID)
-      ;
-      (targetEntity:Attributes()):Modify("HP", 0)
+      local targetEntity = self._world:GetEntityByID(targetID)
+      targetEntity:Attributes():Modify("HP", 0)
       if targetEntity:HasMonsterID() then
         calcDamageService:_DisableMonsterAI(targetEntity)
-        ;
-        (self._monsterShowLogic):AddMonsterDeadMark(targetEntity)
+        self._monsterShowLogic:AddMonsterDeadMark(targetEntity)
         result:AddTargetID(targetID)
       end
     end
   end
   return result
 end
-
-

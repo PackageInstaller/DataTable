@@ -1,64 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_feature_master_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_FeatureMasterSkill", PickUpPolicy_Base)
 PickUpPolicy_FeatureMasterSkill = PickUpPolicy_FeatureMasterSkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_FeatureMasterSkill.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_FeatureMasterSkill:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
   local pickPosList, atkPosList, targetIds, extraParam = self:_CalPickPosPolicy_FeatureMasterSkill(activeSkillID, casterPos, validPosIdxList)
   return pickPosList, atkPosList, targetIds, extraParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_FeatureMasterSkill._CalPickPosPolicy_FeatureMasterSkill = function(self, activeSkillID, casterPos, validPosIdxList)
-  -- function num : 0_1 , upvalues : _ENV
+function PickUpPolicy_FeatureMasterSkill:_CalPickPosPolicy_FeatureMasterSkill(activeSkillID, casterPos, validPosIdxList)
   local env = self:_GetPickUpPolicyEnv()
-  local configService = (self._world):GetService("Config")
-  local boardService = (self._world):GetService("BoardLogic")
+  local configService = self._world:GetService("Config")
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
   local teamColor = PieceType.Yellow
   local teamPos = casterPos
   local teamEntity = env.TeamEntity
-  do
-    if teamEntity then
-      local teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
-      teamColor = (teamLeaderEntity:Element()):GetPrimaryType()
-      teamPos = teamEntity:GetGridPosition()
-    end
-    local skillConfigData = configService:GetSkillConfigData(activeSkillID)
-    local casterPosIndex = self:_Pos2Index(teamPos)
-    local pickExtraParam = {}
-    local firstPickPos = nil
-    for _,off in ipairs(ringMax) do
-      local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
-      if validPosIdxList[posIdx] then
-        local pos = self:_Index2Pos(posIdx)
-        local color = (env.BoardPosPieces)[posIdx]
-        if color and color ~= teamColor then
-          firstPickPos = pos
-          break
-        end
-      end
-    end
-    do
-      if firstPickPos then
-        return {firstPickPos}, {firstPickPos}, {}, pickExtraParam
-      else
-        return {}, {}, {}, {}
+  if teamEntity then
+    local teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
+    teamColor = teamLeaderEntity:Element():GetPrimaryType()
+    teamPos = teamEntity:GetGridPosition()
+  end
+  local skillConfigData = configService:GetSkillConfigData(activeSkillID)
+  local casterPosIndex = self:_Pos2Index(teamPos)
+  local pickExtraParam = {}
+  local firstPickPos
+  for _, off in ipairs(ringMax) do
+    local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
+    if validPosIdxList[posIdx] then
+      local pos = self:_Index2Pos(posIdx)
+      local color = env.BoardPosPieces[posIdx]
+      if color and color ~= teamColor then
+        firstPickPos = pos
+        break
       end
     end
   end
+  if firstPickPos then
+    return {firstPickPos}, {firstPickPos}, {}, pickExtraParam
+  else
+    return {}, {}, {}, {}
+  end
 end
-
-

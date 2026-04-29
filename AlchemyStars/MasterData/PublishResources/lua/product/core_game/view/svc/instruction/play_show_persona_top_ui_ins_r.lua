@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_show_persona_top_ui_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayShowPersonaTopUiInstruction", BaseInstruction)
 PlayShowPersonaTopUiInstruction = PlayShowPersonaTopUiInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayShowPersonaTopUiInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayShowPersonaTopUiInstruction:Constructor(paramList)
   self._show = tonumber(paramList.show)
   self._tarCamera = paramList.tarCamera
   self._petHead = paramList.petHead
@@ -17,27 +10,17 @@ PlayShowPersonaTopUiInstruction.Constructor = function(self, paramList)
   self._animName = paramList.anim
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayShowPersonaTopUiInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayShowPersonaTopUiInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._show and self._show == 1 then
-    local effCam = nil
-    do
-      do
-        if self._tarCamera then
-          local camera1 = ((UnityEngine.GameObject).Find)(self._tarCamera)
-          if camera1 then
-            effCam = camera1:GetComponent("Camera")
-          end
-        end
-        ;
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIBattlePersonaSkillEffTop", effCam, self._petHead, self._petWord, false, self._animName)
-        ;
-        ((GameGlobal.UIStateManager)()):CloseDialog("UIBattlePersonaSkillEffTop")
+    local effCam
+    if self._tarCamera then
+      local camera1 = UnityEngine.GameObject.Find(self._tarCamera)
+      if camera1 then
+        effCam = camera1:GetComponent("Camera")
       end
     end
+    GameGlobal.UIStateManager():ShowDialog("UIBattlePersonaSkillEffTop", effCam, self._petHead, self._petWord, false, self._animName)
+  else
+    GameGlobal.UIStateManager():CloseDialog("UIBattlePersonaSkillEffTop")
   end
 end
-
-

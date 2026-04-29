@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_question_db_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaQuestionDBController", UIController)
 UIXiaoLinJiaQuestionDBController = UIXiaoLinJiaQuestionDBController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaQuestionDBController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIXiaoLinJiaQuestionDBController:OnShow(uiParams)
   self.content = self:GetUIComponent("UISelectObjectPath", "content")
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.anim = self:GetUIComponent("Animation", "anim")
@@ -17,68 +10,49 @@ UIXiaoLinJiaQuestionDBController.OnShow = function(self, uiParams)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaQuestionDBController.OnValue = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (Cfg.cfg_xiaolinjia_mission)({ID = self.missionID})
+function UIXiaoLinJiaQuestionDBController:OnValue()
+  local cfg = Cfg.cfg_xiaolinjia_mission({
+    ID = self.missionID
+  })
   if cfg then
     self.missionCfg = cfg[1]
   else
-    ;
-    (Log.exception)("story cfg is nil", self.missionID)
+    Log.exception("story cfg is nil", self.missionID)
   end
-  local storyName = (self.missionCfg).StoryCfgName
-  local sessionCfg = (Cfg[storyName])({})
+  local storyName = self.missionCfg.StoryCfgName
+  local sessionCfg = Cfg[storyName]({})
   local dialogList = {}
-  for _,v in pairs(sessionCfg) do
+  for _, v in pairs(sessionCfg) do
     dialogList[v.ID] = v
   end
   self.sessionList = {}
   local sessionID = 1
-  while 1 do
+  while true do
     local session = dialogList[sessionID]
-    if session then
-      do
-        if session.Options then
-          (table.insert)(self.sessionList, session)
-        end
-        sessionID = sessionID + 1
-        -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if not session then
+      break
     end
+    if session.Options then
+      table.insert(self.sessionList, session)
+    end
+    sessionID = sessionID + 1
   end
-  local roleName = (StringTable.Get)((self.missionCfg).RoleName)
-  ;
-  (self.title):SetText((StringTable.Get)("str_xiaolinjia_text_qa_1", roleName))
-  ;
-  (self.content):SpawnObjects("UIXiaoLinJiaQuestionDBItem", #self.sessionList)
-  local pool = (self.content):GetAllSpawnList()
-  for index,v in pairs(self.sessionList) do
-    local session = (self.sessionList)[index]
-    ;
-    (pool[index]):SetData(session, session.Answer, (self.missionCfg).ClosingHeadIcon, (self.record)[index] ~= nil)
+  local roleName = StringTable.Get(self.missionCfg.RoleName)
+  self.title:SetText(StringTable.Get("str_xiaolinjia_text_qa_1", roleName))
+  self.content:SpawnObjects("UIXiaoLinJiaQuestionDBItem", #self.sessionList)
+  local pool = self.content:GetAllSpawnList()
+  for index, v in pairs(self.sessionList) do
+    local session = self.sessionList[index]
+    pool[index]:SetData(session, session.Answer, self.missionCfg.ClosingHeadIcon, self.record[index] ~= nil)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaQuestionDBController.CloseBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXiaoLinJiaQuestionDBController:CloseBtnOnClick()
   self:Lock("UIXiaoLinJiaQuestionDBController_Close")
-  ;
-  (self.anim):Play("uieffanim_UIXiaoLinJiaQuestionDBController_out")
+  self.anim:Play("uieffanim_UIXiaoLinJiaQuestionDBController_out")
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:CloseDialog()
     self:UnLock("UIXiaoLinJiaQuestionDBController_Close")
-  end
-)
+  end)
 end
-
-

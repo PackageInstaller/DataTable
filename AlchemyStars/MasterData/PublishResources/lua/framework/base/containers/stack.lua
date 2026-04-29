@@ -1,54 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/stack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Stack", Object)
 Stack = Stack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Stack.Constructor = function(self)
-  -- function num : 0_0
+function Stack:Constructor()
   self.elements = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Stack.Empty = function(self)
-  -- function num : 0_1
-  do return #self.elements == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function Stack:Empty()
+  return #self.elements == 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Stack.Size = function(self)
-  -- function num : 0_2
+function Stack:Size()
   return #self.elements
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Stack.Clear = function(self)
-  -- function num : 0_3
+function Stack:Clear()
   self.elements = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Stack.Push = function(self, value)
-  -- function num : 0_4
+function Stack:Push(value)
   if value == nil then
-    return 
+    return
   end
   local elements = self.elements
   elements[#elements + 1] = value
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Stack.Pop = function(self)
-  -- function num : 0_5
+function Stack:Pop()
   local elements = self.elements
   local size = #elements
   local temp = elements[size]
@@ -56,18 +33,12 @@ Stack.Pop = function(self)
   return temp
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Stack.Top = function(self)
-  -- function num : 0_6
+function Stack:Top()
   local elements = self.elements
   return elements[#elements]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Stack.ForEach = function(self, func)
-  -- function num : 0_7
+function Stack:ForEach(func)
   local elements = self.elements
   local size = #elements
   for i = size, 1, -1 do
@@ -75,10 +46,7 @@ Stack.ForEach = function(self, func)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Stack.Contains = function(self, value)
-  -- function num : 0_8
+function Stack:Contains(value)
   local elements = self.elements
   local size = #elements
   for i = size, 1, -1 do
@@ -89,10 +57,7 @@ Stack.Contains = function(self, value)
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Stack.ToArray = function(self)
-  -- function num : 0_9
+function Stack:ToArray()
   local t = {}
   local elements = self.elements
   local size = #elements
@@ -101,5 +66,3 @@ Stack.ToArray = function(self)
   end
   return t
 end
-
-

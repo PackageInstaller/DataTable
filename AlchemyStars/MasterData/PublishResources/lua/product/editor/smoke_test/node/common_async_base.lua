@@ -1,45 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common_async_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Common_AsyncBase", CTestRobot_Base)
 Common_AsyncBase = Common_AsyncBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_AsyncBase.OnWorking = function(self)
-  -- function num : 0_0
+function Common_AsyncBase:OnWorking()
   if not self._taskID then
     return self:CreateTask()
   end
   return self:WaitTaskFinish()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_AsyncBase.CreateTask = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function Common_AsyncBase:CreateTask()
   self._asyncRes = AsyncOperationStatusData:New()
-  local runData = (self._manager):GetMissionRunData()
-  self._taskID = ((GameGlobal.TaskManager)()):StartTask(self.TaskFunc, self, self._asyncRes)
+  local runData = self._manager:GetMissionRunData()
+  self._taskID = GameGlobal.TaskManager():StartTask(self.TaskFunc, self, self._asyncRes)
   if self._taskID == -1 then
-    return (Common_AsyncBase.super):OnWorking()
+    return Common_AsyncBase.super:OnWorking()
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_AsyncBase.TaskFunc = function(self, TT, outResult)
-  -- function num : 0_2
+function Common_AsyncBase:TaskFunc(TT, outResult)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_AsyncBase.WaitTaskFinish = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local isFinished = (TaskHelper:GetInstance()):IsTaskFinished(self._taskID, true)
+function Common_AsyncBase:WaitTaskFinish()
+  local isFinished = TaskHelper:GetInstance():IsTaskFinished(self._taskID, true)
   if isFinished then
     self:AfterTask()
     self.m_nNodeState = Enum_ActionState.E_Down
@@ -48,10 +32,5 @@ Common_AsyncBase.WaitTaskFinish = function(self)
   return isFinished
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_AsyncBase.AfterTask = function(self)
-  -- function num : 0_4
+function Common_AsyncBase:AfterTask()
 end
-
-

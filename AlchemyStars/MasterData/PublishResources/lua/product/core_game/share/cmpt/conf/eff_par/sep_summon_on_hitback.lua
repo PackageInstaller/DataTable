@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_summon_on_hitback.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectSummonOnHitbackParam", SkillEffectParamBase)
 SkillEffectSummonOnHitbackParam = SkillEffectSummonOnHitbackParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSummonOnHitbackParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectSummonOnHitbackParam:Constructor(t)
   self._trapID = t.trapID
   self._summonOnSides = t.summonOnSides
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonOnHitbackParam.GetTrapID = function(self)
-  -- function num : 0_1
+function SkillEffectSummonOnHitbackParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonOnHitbackParam.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectSummonOnHitbackParam:GetEffectType()
   return SkillEffectType.SummonOnHitbackPosition
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSummonOnHitbackParam.IsSummonOnSides = function(self)
-  -- function num : 0_3
+function SkillEffectSummonOnHitbackParam:IsSummonOnSides()
   return self._summonOnSides
 end
-
-

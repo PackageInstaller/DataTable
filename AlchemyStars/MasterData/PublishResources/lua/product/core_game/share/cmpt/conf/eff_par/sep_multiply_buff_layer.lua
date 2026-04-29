@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_multiply_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_MultiplyBuffLayer", SkillEffectParamBase)
 SkillEffectParam_MultiplyBuffLayer = SkillEffectParam_MultiplyBuffLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_MultiplyBuffLayer.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_MultiplyBuffLayer:Constructor(t)
   self._multiplier = t.multiplier
   self._buffEffectType = t.buffEffectType
   self._buffID = t.buffID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MultiplyBuffLayer.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_MultiplyBuffLayer:GetEffectType()
   return SkillEffectType.MultiplyBuffLayer
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MultiplyBuffLayer.GetMultiplier = function(self)
-  -- function num : 0_2
+function SkillEffectParam_MultiplyBuffLayer:GetMultiplier()
   return self._multiplier
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MultiplyBuffLayer.GetLayerBuffEffectType = function(self)
-  -- function num : 0_3
+function SkillEffectParam_MultiplyBuffLayer:GetLayerBuffEffectType()
   return self._buffEffectType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_MultiplyBuffLayer.GetLayerBuffID = function(self)
-  -- function num : 0_4
+function SkillEffectParam_MultiplyBuffLayer:GetLayerBuffID()
   return self._buffID
 end
-
-

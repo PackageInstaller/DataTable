@@ -1,87 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_mirage_pickup_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MiragePickUpComponent", Object)
 MiragePickUpComponent = MiragePickUpComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MiragePickUpComponent.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function MiragePickUpComponent:Constructor(world)
   self._world = world
   self._clickPos = Vector3(0, 0, 0)
   self._lastPickUpGridPos = Vector2(0, 0)
   self._curPickUpGridPos = Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpComponent.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.notice)("MiragePickUpComponent Initialize")
+function MiragePickUpComponent:Initialize()
+  Log.notice("MiragePickUpComponent Initialize")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpComponent.SetClickPos = function(self, clickPos)
-  -- function num : 0_2
+function MiragePickUpComponent:SetClickPos(clickPos)
   self._clickPos = clickPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpComponent.GetClickPos = function(self)
-  -- function num : 0_3
+function MiragePickUpComponent:GetClickPos()
   return self._clickPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpComponent.GetCurPickUpGridPos = function(self)
-  -- function num : 0_4
+function MiragePickUpComponent:GetCurPickUpGridPos()
   return self._curPickUpGridPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpComponent.SetCurPickUpGridPos = function(self, gridPos)
-  -- function num : 0_5
+function MiragePickUpComponent:SetCurPickUpGridPos(gridPos)
   self._curPickUpGridPos = gridPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.MiragePickUp = function(self)
-  -- function num : 0_6
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).MiragePickUp)
+function MainWorld:MiragePickUp()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.MiragePickUp)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasMiragePickUp = function(self)
-  -- function num : 0_7
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).MiragePickUp) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasMiragePickUp()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.MiragePickUp) ~= nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddMiragePickUp = function(self, world)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).MiragePickUp
+function MainWorld:AddMiragePickUp(world)
+  local index = self.BW_UniqueComponentsEnum.MiragePickUp
   local component = MiragePickUpComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveMiragePickUp = function(self)
-  -- function num : 0_9
+function MainWorld:RemoveMiragePickUp()
   if self:HasMiragePickUp() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).MiragePickUp, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.MiragePickUp, nil)
   end
 end
-
-

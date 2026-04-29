@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_flag_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultFlagCount", BuffResultBase)
 BuffResultFlagCount = BuffResultFlagCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultFlagCount.Constructor = function(self, flagID, layerBefore, layer)
-  -- function num : 0_0
+function BuffResultFlagCount:Constructor(flagID, layerBefore, layer)
   self._flagID = flagID
   self._layerBefore = layerBefore
   self._layer = layer
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultFlagCount.GetFlagID = function(self)
-  -- function num : 0_1
+function BuffResultFlagCount:GetFlagID()
   return self._flagID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultFlagCount.GetLayerBefore = function(self)
-  -- function num : 0_2
+function BuffResultFlagCount:GetLayerBefore()
   return self._layerBefore
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultFlagCount.GetLayerAfter = function(self)
-  -- function num : 0_3
+function BuffResultFlagCount:GetLayerAfter()
   return self._layer
 end
-
-

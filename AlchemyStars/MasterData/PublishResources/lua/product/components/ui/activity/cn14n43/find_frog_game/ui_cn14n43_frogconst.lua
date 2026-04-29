@@ -1,14 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/find_frog_game/ui_cn14n43_frogconst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FrogConst", Object)
 FrogConst = FrogConst
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 FrogConst.ShowStory = "ShowStory"
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 FrogConst.ShowGuideUI = "ShowGuideUI"
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n5.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaingN5", ICampaignComponentLocalProcessBase)
 CCampaingN5 = CCampaingN5
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaingN5.Constructor = function(self)
-  -- function num : 0_0
+function CCampaingN5:Constructor()
   self._battlefieldComponent = nil
   self._battlefieldCompInfo = nil
   self._personProgressComponent = nil
@@ -23,24 +16,15 @@ CCampaingN5.Constructor = function(self)
   self._recordMilitaryExploit = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaingN5:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N5
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaingN5:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaingN5:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetBattlefieldComponent()
   self:_GetPersonProgressComponent()
@@ -49,66 +33,48 @@ CCampaingN5.InitComponent = function(self, campaignObj)
   self:_GetFixTeamLineMissionComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5._GetBattlefieldComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._battlefieldComponent = (self._campaignObj):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
+function CCampaingN5:_GetBattlefieldComponent()
+  self._battlefieldComponent = self._campaignObj:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
   if not self._battlefieldComponent then
-    return 
+    return
   end
-  self._battlefieldCompInfo = (self._battlefieldComponent):ComponentInfo()
+  self._battlefieldCompInfo = self._battlefieldComponent:ComponentInfo()
   self:RefreshRecordMilitaryExploit()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5._GetPersonProgressComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._personProgressComponent = (self._campaignObj):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_PERSON_PROGRESS)
+function CCampaingN5:_GetPersonProgressComponent()
+  self._personProgressComponent = self._campaignObj:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_PERSON_PROGRESS)
   if not self._personProgressComponent then
-    return 
+    return
   end
-  self._personProgressCompInfo = (self._personProgressComponent):ComponentInfo()
+  self._personProgressCompInfo = self._personProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_CUMULATIVE_LOGIN)
+function CCampaingN5:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginCompInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginCompInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5._GetLineMissionComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._lineMissionComponet = (self._campaignObj):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION)
+function CCampaingN5:_GetLineMissionComponent()
+  self._lineMissionComponet = self._campaignObj:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION)
   if not self._lineMissionComponet then
-    return 
+    return
   end
-  self._lineMissionCompInfo = (self._lineMissionComponet):ComponentInfo()
+  self._lineMissionCompInfo = self._lineMissionComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5._GetFixTeamLineMissionComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._lineMissionComponet1 = (self._campaignObj):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
+function CCampaingN5:_GetFixTeamLineMissionComponent()
+  self._lineMissionComponet1 = self._campaignObj:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
   if not self._lineMissionComponet1 then
-    return 
+    return
   end
-  self._lineMissionCompInfo1 = (self._lineMissionComponet1):ComponentInfo()
+  self._lineMissionCompInfo1 = self._lineMissionComponet1:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5.GetComponent = function(self, componentID)
-  -- function num : 0_9 , upvalues : _ENV
+function CCampaingN5:GetComponent(componentID)
   if ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD == componentID then
     return self._battlefieldComponent
   end
@@ -127,10 +93,7 @@ CCampaingN5.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5.GetComponentInfo = function(self, componentID)
-  -- function num : 0_10 , upvalues : _ENV
+function CCampaingN5:GetComponentInfo(componentID)
   if ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD == componentID then
     return self._battlefieldCompInfo
   end
@@ -149,28 +112,16 @@ CCampaingN5.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5.RefreshRecordMilitaryExploit = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for key,value in pairs(((self._battlefieldCompInfo).m_battlefield_info).m_challenge_mission_info) do
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._recordMilitaryExploit)[key] = value.military_exploit
+function CCampaingN5:RefreshRecordMilitaryExploit()
+  for key, value in pairs(self._battlefieldCompInfo.m_battlefield_info.m_challenge_mission_info) do
+    self._recordMilitaryExploit[key] = value.military_exploit
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaingN5.GetRecordMilitaryExploit = function(self, id)
-  -- function num : 0_12
-  local militaryExploit = (self._recordMilitaryExploit)[id]
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
+function CCampaingN5:GetRecordMilitaryExploit(id)
+  local militaryExploit = self._recordMilitaryExploit[id]
   if self._battlefieldCompInfo then
-    (self._recordMilitaryExploit)[id] = ((((self._battlefieldCompInfo).m_battlefield_info).m_challenge_mission_info)[id]).military_exploit
+    self._recordMilitaryExploit[id] = self._battlefieldCompInfo.m_battlefield_info.m_challenge_mission_info[id].military_exploit
   end
   return militaryExploit
 end
-
-

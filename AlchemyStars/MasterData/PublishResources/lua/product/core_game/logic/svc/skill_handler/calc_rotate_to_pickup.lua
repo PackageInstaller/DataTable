@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_rotate_to_pickup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_RotateToPickup", SkillEffectCalc_Base)
 SkillEffectCalc_RotateToPickup = SkillEffectCalc_RotateToPickup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_RotateToPickup.CalculateOnSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_0 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+function SkillEffectCalc_RotateToPickup:CalculateOnSingleTarget(skillEffectCalcParam, targetID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local pickupComponent = casterEntity:ActiveSkillPickUpComponent()
   if not pickupComponent then
-    (Log.error)(self._className, "施法者没有ActiveSkillPickupComponent")
-    return 
+    Log.error(self._className, "施法者没有ActiveSkillPickupComponent")
+    return
   end
   local pickupPosArray = pickupComponent:GetAllValidPickUpGridPos()
   if #pickupPosArray == 0 then
-    (Log.error)(self._className, "没有点选位置记录")
-    return 
+    Log.error(self._className, "没有点选位置记录")
+    return
   end
   local sep = skillEffectCalcParam.skillEffectParam
   local pickUpIndex = sep:GetPickupIndex()
@@ -30,25 +23,19 @@ SkillEffectCalc_RotateToPickup.CalculateOnSingleTarget = function(self, skillEff
   local posNew = selectedPickupPos
   local dirNew = selectedPickupPos - currentPos
   if sep:IsUseOriDir() then
-    dirNew = (Vector2.Normalize)(dirNew)
+    dirNew = Vector2.Normalize(dirNew)
   else
-    if dirNew.x > 0 then
+    if 0 < dirNew.x then
       dirNew.x = 1
-    else
-      if dirNew.x < 0 then
-        dirNew.x = -1
-      end
+    elseif 0 > dirNew.x then
+      dirNew.x = -1
     end
-    if dirNew.y > 0 then
+    if 0 < dirNew.y then
       dirNew.y = 1
-    else
-      if dirNew.y < 0 then
-        dirNew.y = -1
-      end
+    elseif 0 > dirNew.y then
+      dirNew.y = -1
     end
   end
   local result = SkillEffectResultRotateToPickup:New(dirNew)
   return result
 end
-
-

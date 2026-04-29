@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_skill_select_by_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSkillSelectByBuffLayer", AINewNode)
 ActionSkillSelectByBuffLayer = ActionSkillSelectByBuffLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkillSelectByBuffLayer.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkillSelectByBuffLayer:Constructor()
   self._skillID = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByBuffLayer.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSkillSelectByBuffLayer.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionSkillSelectByBuffLayer:InitializeNode(cfg, context, parentNode, configData)
+  ActionSkillSelectByBuffLayer.super.InitializeNode(self, cfg, context, parentNode, configData)
   self._successSkillListIndex = 1
   self._failureSkillListIndex = 2
   self.m_nDefaultSkillIndex = 1
@@ -26,64 +16,44 @@ ActionSkillSelectByBuffLayer.InitializeNode = function(self, cfg, context, paren
   self._comparisonParam = configData[3]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByBuffLayer.Update = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionSkillSelectByBuffLayer:Update()
   self:_CalcSkillID()
   return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByBuffLayer.GetActionSkillID = function(self)
-  -- function num : 0_3
+function ActionSkillSelectByBuffLayer:GetActionSkillID()
   self:_CalcSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByBuffLayer._CalcSkillID = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self:GetConfigSkillList())
-  local vecSkillLists = nil
-  local selectSkill = nil
-  local buffCmp = (self.m_entityOwn):BuffComponent()
+function ActionSkillSelectByBuffLayer:_CalcSkillID()
+  local vecSkillLists = self:GetConfigSkillList()
+  local selectSkill
+  local buffCmp = self.m_entityOwn:BuffComponent()
   local buffInstance = buffCmp:GetBuffById(self._buffID)
   if buffInstance then
     local layer = buffInstance:GetLayerCount()
     local satisfied = false
-    if layer ~= self._comparisonParam then
-      satisfied = self._comparisonType ~= ComparisonOperator.EQ
-      if layer == self._comparisonParam then
-        satisfied = self._comparisonType ~= ComparisonOperator.NE
-        if self._comparisonParam >= layer then
-          satisfied = self._comparisonType ~= ComparisonOperator.GT
-          if self._comparisonParam > layer then
-            satisfied = self._comparisonType ~= ComparisonOperator.GE
-            if layer >= self._comparisonParam then
-              satisfied = self._comparisonType ~= ComparisonOperator.LT
-              if layer > self._comparisonParam then
-                do
-                  satisfied = self._comparisonType ~= ComparisonOperator.LE
-                  if satisfied then
-                    selectSkill = (vecSkillLists[self._successSkillListIndex])[self.m_nDefaultSkillIndex]
-                  end
-                  if selectSkill then
-                    self._skillID = selectSkill
-                  else
-                    self._skillID = (vecSkillLists[self._failureSkillListIndex])[self.m_nDefaultSkillIndex]
-                  end
-                  -- DECOMPILER ERROR: 15 unprocessed JMP targets
-                end
-              end
-            end
-          end
-        end
-      end
+    if self._comparisonType == ComparisonOperator.EQ then
+      satisfied = layer == self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.NE then
+      satisfied = layer ~= self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.GT then
+      satisfied = layer > self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.GE then
+      satisfied = layer >= self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.LT then
+      satisfied = layer < self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.LE then
+      satisfied = layer <= self._comparisonParam
+    end
+    if satisfied then
+      selectSkill = vecSkillLists[self._successSkillListIndex][self.m_nDefaultSkillIndex]
     end
   end
+  if selectSkill then
+    self._skillID = selectSkill
+  else
+    self._skillID = vecSkillLists[self._failureSkillListIndex][self.m_nDefaultSkillIndex]
+  end
 end
-
-

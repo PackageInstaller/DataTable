@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/preview_link_line/preview_link_line_end_drag_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewLinkLineEndDragSystem_Render", UniqueReactiveSystem)
 PreviewLinkLineEndDragSystem_Render = PreviewLinkLineEndDragSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewLinkLineEndDragSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_0 , upvalues : _ENV
+function PreviewLinkLineEndDragSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -21,216 +14,171 @@ PreviewLinkLineEndDragSystem_Render.IsInterested = function(self, index, previou
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineEndDragSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleTimeSpeed, true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeBossHPBuffButtonRayCast, true)
+function PreviewLinkLineEndDragSystem_Render:ExecuteWorld(world)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleTimeSpeed, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeBossHPBuffButtonRayCast, true)
   local gridTouchCmpt = world:GridTouch()
   local isTouchPlayer = gridTouchCmpt:IsTouchPlayer()
   if isTouchPlayer == true then
     local cameraCmpt = world:MainCamera()
     cameraCmpt:DoMoveCamera(false)
   else
-    do
-      do return  end
-      local syncMoveServiceRender = world:GetService("SyncMoveRender")
-      if syncMoveServiceRender then
-        syncMoveServiceRender:ClearPreview()
-      end
-      local linkageSvc = world:GetService("LinkageRender")
-      local previewEntity = world:GetPreviewEntity()
-      local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
-      local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
-      if chainPath == nil then
-        linkageSvc:DestroyTouchPosEffect()
-        return 
-      end
-      do
-        if isTouchPlayer then
-          local piece_service = world:GetService("Piece")
-          do
-            piece_service:RefreshPieceAnim()
-          end
-        end
-        local linkLineService = world:GetService("PreviewLinkLine")
-        linkLineService:FinishBulletTime()
-        if isTouchPlayer == true then
-          local guideService = world:GetService("Guide")
-          if #chainPath <= 1 then
-            guideService:ShowGuideWeakLine()
-          end
-          local guideFinishType = guideService:HandlePLLEndDragTrigger()
-          if guideFinishType == false then
-            self:_ClearLinkIn()
-            linkageSvc:DestroyTouchPosEffect()
-            self:_ClearFlashTarget()
-            self:_DestroyLinkLine()
-            self:_ClearLinkageNum()
-            linkLineService:CancelAllLinkPosPieceType(chainPath)
-            previewLinkLineCmpt:ClearPreviewChainPath()
-            linkLineService:AllMonsterAndTrapTrans(false)
-            linkLineService:ShowChainPathCancelArea(false)
-            gridTouchCmpt:SetTouchPlayer(false)
-            return 
-          end
-        end
-        do
-          gridTouchCmpt:SetTouchPlayer(false)
-          linkLineService:AllMonsterAndTrapTrans(false)
-          if #chainPath > 1 then
-            local pieceType = previewLinkLineCmpt:GetPreviewPieceType()
-            previewLinkLineCmpt:SetPreviewChainPath(chainPath, pieceType)
-            self:_LinkDone(chainPath)
-            linkageSvc:DestroyTouchPosEffect()
-            local utilDataSvc = (self._world):GetService("UtilData")
-            if utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
-              local linkageRenderService = (self.world):GetService("LinkageRender")
-              ;
-              ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, chainPath, pieceType, linkLineService
-    self:SendMovePathDoneCommand(chainPath, pieceType)
-    self:_LinkDone(chainPath)
-    ;
-    ((self.world):GetService("LinkageRender")):ClearLinkRender()
-    linkLineService:ShowChainPathCancelArea(false)
+    return
   end
-, self)
-            end
-          else
-            do
-              if #chainPath == 1 then
-                local pieceSvc = world:GetService("Piece")
-                local pieceEntity = pieceSvc:FindPieceEntity(chainPath[#chainPath])
-                if not pieceEntity then
-                  (Log.fatal)("连线坐标：" .. tostring(chainPath[#chainPath]) .. " 位置的格子无法获取到！")
-                else
-                  pieceSvc:SetPieceAnimLinkOut(chainPath[#chainPath])
-                end
-                local previewEntity = world:GetPreviewEntity()
-                previewEntity:ReplacePreviewLinkLine({}, PieceType.None, PieceType.None)
-                linkLineService:NotifyPickUpTargetChange()
-                linkageSvc:DestroyTouchPosEffect()
-                linkLineService:SetMonsterShadowPosListDown(true)
-              end
-              do
-                linkLineService:ShowChainPathCancelArea(false)
-              end
-            end
-          end
-        end
+  local syncMoveServiceRender = world:GetService("SyncMoveRender")
+  if syncMoveServiceRender then
+    syncMoveServiceRender:ClearPreview()
+  end
+  local linkageSvc = world:GetService("LinkageRender")
+  local previewEntity = world:GetPreviewEntity()
+  local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
+  local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
+  if chainPath == nil then
+    linkageSvc:DestroyTouchPosEffect()
+    return
+  end
+  if isTouchPlayer then
+    local piece_service = world:GetService("Piece")
+    piece_service:RefreshPieceAnim()
+  end
+  local linkLineService = world:GetService("PreviewLinkLine")
+  linkLineService:FinishBulletTime()
+  if isTouchPlayer == true then
+    local guideService = world:GetService("Guide")
+    if #chainPath <= 1 then
+      guideService:ShowGuideWeakLine()
+    end
+    local guideFinishType = guideService:HandlePLLEndDragTrigger()
+    if guideFinishType == false then
+      self:_ClearLinkIn()
+      linkageSvc:DestroyTouchPosEffect()
+      self:_ClearFlashTarget()
+      self:_DestroyLinkLine()
+      self:_ClearLinkageNum()
+      linkLineService:CancelAllLinkPosPieceType(chainPath)
+      previewLinkLineCmpt:ClearPreviewChainPath()
+      linkLineService:AllMonsterAndTrapTrans(false)
+      linkLineService:ShowChainPathCancelArea(false)
+      gridTouchCmpt:SetTouchPlayer(false)
+      return
+    end
+  else
+  end
+  gridTouchCmpt:SetTouchPlayer(false)
+  linkLineService:AllMonsterAndTrapTrans(false)
+  if 1 < #chainPath then
+    local pieceType = previewLinkLineCmpt:GetPreviewPieceType()
+    previewLinkLineCmpt:SetPreviewChainPath(chainPath, pieceType)
+    self:_LinkDone(chainPath)
+    linkageSvc:DestroyTouchPosEffect()
+    local utilDataSvc = self._world:GetService("UtilData")
+    if utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
+      do
+        local linkageRenderService = self.world:GetService("LinkageRender")
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          self:SendMovePathDoneCommand(chainPath, pieceType)
+          self:_LinkDone(chainPath)
+          self.world:GetService("LinkageRender"):ClearLinkRender()
+          linkLineService:ShowChainPathCancelArea(false)
+        end, self)
       end
     end
+  elseif #chainPath == 1 then
+    local pieceSvc = world:GetService("Piece")
+    local pieceEntity = pieceSvc:FindPieceEntity(chainPath[#chainPath])
+    if not pieceEntity then
+      Log.fatal("连线坐标：" .. tostring(chainPath[#chainPath]) .. " 位置的格子无法获取到！")
+    else
+      pieceSvc:SetPieceAnimLinkOut(chainPath[#chainPath])
+    end
+    local previewEntity = world:GetPreviewEntity()
+    previewEntity:ReplacePreviewLinkLine({}, PieceType.None, PieceType.None)
+    linkLineService:NotifyPickUpTargetChange()
+    linkageSvc:DestroyTouchPosEffect()
+    linkLineService:SetMonsterShadowPosListDown(true)
   end
+  linkLineService:ShowChainPathCancelArea(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineEndDragSystem_Render.Filter = function(self, world)
-  -- function num : 0_2
+function PreviewLinkLineEndDragSystem_Render:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineEndDragSystem_Render._DestroyLinkLine = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local linkageRenderService = (self._world):GetService("LinkageRender")
-  local reBoard = (self._world):GetRenderBoardEntity()
+function PreviewLinkLineEndDragSystem_Render:_DestroyLinkLine()
+  local linkageRenderService = self._world:GetService("LinkageRender")
+  local reBoard = self._world:GetRenderBoardEntity()
   local linkRendererDataCmpt = reBoard:LinkRendererData()
   local allEntities = linkRendererDataCmpt:GetLinkLineEntityList()
-  for _,linkLineEntity in ipairs(allEntities) do
+  for _, linkLineEntity in ipairs(allEntities) do
     linkageRenderService:DestroyLinkLine(linkLineEntity)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineEndDragSystem_Render._ClearLinkageNum = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local entityPoolService = (self.world):GetService("EntityPool")
-  local reBoard = (self.world):GetRenderBoardEntity()
+function PreviewLinkLineEndDragSystem_Render:_ClearLinkageNum()
+  local entityPoolService = self.world:GetService("EntityPool")
+  local reBoard = self.world:GetRenderBoardEntity()
   local linkRendererDataCmpt = reBoard:LinkRendererData()
   local allEntities = linkRendererDataCmpt:GetLinkageNumEntityList()
-  local linkageRenderService = (self.world):GetService("LinkageRender")
+  local linkageRenderService = self.world:GetService("LinkageRender")
   local remove_list = {}
-  for _,linkageNumEntity in ipairs(allEntities) do
-    (table.insert)(remove_list, linkageNumEntity)
+  for _, linkageNumEntity in ipairs(allEntities) do
+    table.insert(remove_list, linkageNumEntity)
   end
-  for _,e in ipairs(remove_list) do
+  for _, e in ipairs(remove_list) do
     linkageRenderService:DestroyLinkNum(e)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineEndDragSystem_Render._ClearLinkIn = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewLinkLineEndDragSystem_Render:_ClearLinkIn()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewLinkLineCmpt = previewEntity:PreviewLinkLine()
   local chainPath = previewLinkLineCmpt:GetPreviewChainPath()
-  for _,pos in ipairs(chainPath) do
-    ((self._world):GetService("Piece")):SetPieceAnimLinkOut(pos)
+  for _, pos in ipairs(chainPath) do
+    self._world:GetService("Piece"):SetPieceAnimLinkOut(pos)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineEndDragSystem_Render._LinkDone = function(self, chainPath)
-  -- function num : 0_6
-  local pieceService = (self._world):GetService("Piece")
+function PreviewLinkLineEndDragSystem_Render:_LinkDone(chainPath)
+  local pieceService = self._world:GetService("Piece")
   for i = 1, #chainPath do
     pieceService:SetPieceAnimLinkDone(chainPath[i])
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineEndDragSystem_Render.SendMovePathDoneCommand = function(self, chainPath, elementType)
-  -- function num : 0_7 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function PreviewLinkLineEndDragSystem_Render:SendMovePathDoneCommand(chainPath, elementType)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
   local petPstID = pickUpTargetCmpt:GetPetPstid()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  local svc = (self._world):GetService("RenderEntity")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  local svc = self._world:GetService("RenderEntity")
   svc:DestroyGhost()
   previewActiveSkillService:_DestroyPickUpArrow()
   previewActiveSkillService:_RevertBright()
-  local flashEnemyEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)):GetEntities()
-  for _,v in ipairs(flashEnemyEntities) do
+  local flashEnemyEntities = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID):GetEntities()
+  for _, v in ipairs(flashEnemyEntities) do
     local comp = v:MaterialAnimationComponent()
     if comp then
       comp:StopLayer(MaterialAnimLayer.SkillPreview)
     end
   end
   previewActiveSkillService:ResetPreview()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelActiveSkillCast)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelActiveSkillCast)
   previewActiveSkillService:_ClearPreviewActiveSkill(false, true)
   local cmd = MovePathDoneCommand:New()
   cmd:SetChainPath(chainPath)
   cmd:SetElementType(elementType)
   cmd:SetActiveSkillID(activeSkillID)
   cmd:SetCasterPstID(petPstID)
-  ;
-  ((self.world):Player()):SendCommand(cmd)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  self.world:Player():SendCommand(cmd)
+  local utilDataSvc = self._world:GetService("UtilData")
   local curstateid = utilDataSvc:GetCurMainStateID()
-  ;
-  (Log.debug)("PreviewLinkLineEndDragSystem_Render:SendMovePathDoneCommand gamefsm state ", curstateid)
+  Log.debug("PreviewLinkLineEndDragSystem_Render:SendMovePathDoneCommand gamefsm state ", curstateid)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineEndDragSystem_Render._ClearFlashTarget = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local flashEnemyEntities = ((self.world):GetGroup(((self.world).BW_WEMatchers).MaterialAnimation)):GetEntities()
-  for _,v in ipairs(flashEnemyEntities) do
+function PreviewLinkLineEndDragSystem_Render:_ClearFlashTarget()
+  local flashEnemyEntities = self.world:GetGroup(self.world.BW_WEMatchers.MaterialAnimation):GetEntities()
+  for _, v in ipairs(flashEnemyEntities) do
     v:StopAnimFlashAlpha()
   end
 end
-
-

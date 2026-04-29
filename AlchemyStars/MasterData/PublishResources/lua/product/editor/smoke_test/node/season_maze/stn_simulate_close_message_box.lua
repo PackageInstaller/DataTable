@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/season_maze/stn_simulate_close_message_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("UISimulate_CloseMessageBox", CTestRobot_Base)
 UISimulate_CloseMessageBox = UISimulate_CloseMessageBox
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimulate_CloseMessageBox.Constructor = function(self, pManger, stUI, stFunction, ...)
-  -- function num : 0_0
-  self.m_fakeParam = {ui = stUI, input = stFunction, 
-args = {...}
-}
+function UISimulate_CloseMessageBox:Constructor(pManger, stUI, stFunction, ...)
+  self.m_fakeParam = {
+    ui = stUI,
+    input = stFunction,
+    args = {
+      ...
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimulate_CloseMessageBox.OnWorking = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISimulate_CloseMessageBox:OnWorking()
   self:_HandleFakeEvent()
-  return ((UISimulate_CloseMessageBox.super).OnWorking)(self)
+  return UISimulate_CloseMessageBox.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimulate_CloseMessageBox._HandleFakeEvent = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
+function UISimulate_CloseMessageBox:_HandleFakeEvent(...)
   local popup = Popup:New("UICommonMessageBox", 1, ...)
-  ;
-  ((GameGlobal.UIStateManager)()):ClosePopup(popup)
+  GameGlobal.UIStateManager():ClosePopup(popup)
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_driller_summon_base_monster_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseDrillerSummonBaseMonsterParam", SkillPhaseParamBase)
 SkillPhaseDrillerSummonBaseMonsterParam = SkillPhaseDrillerSummonBaseMonsterParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseDrillerSummonBaseMonsterParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseDrillerSummonBaseMonsterParam:Constructor(t)
   self.startAction = t.startAction
   self.downAction = t.downAction
   self.lineEffectID = t.lineEffectID
@@ -24,27 +17,21 @@ SkillPhaseDrillerSummonBaseMonsterParam.Constructor = function(self, t)
   self.landDelay = t.landDelay
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseDrillerSummonBaseMonsterParam:GetPhaseType()
   return SkillViewPhaseType.DrillerSummonBaseMonster
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam._CacheEff = function(self, t, effID, count)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseDrillerSummonBaseMonsterParam:_CacheEff(t, effID, count)
   local cacheCount = count or 1
   if effID and effID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[effID]).ResPath, cacheCount})
+    table.insert(t, {
+      Cfg.cfg_effect[effID].ResPath,
+      cacheCount
+    })
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetCacheTable = function(self)
-  -- function num : 0_3
+function SkillPhaseDrillerSummonBaseMonsterParam:GetCacheTable()
   local t = {}
   self:_CacheEff(t, self.lineEffectID)
   self:_CacheEff(t, self.upTailEffectID)
@@ -53,95 +40,54 @@ SkillPhaseDrillerSummonBaseMonsterParam.GetCacheTable = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetStartAction = function(self)
-  -- function num : 0_4
+function SkillPhaseDrillerSummonBaseMonsterParam:GetStartAction()
   return self.startAction
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetDownAction = function(self)
-  -- function num : 0_5
+function SkillPhaseDrillerSummonBaseMonsterParam:GetDownAction()
   return self.downAction
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetLineEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseDrillerSummonBaseMonsterParam:GetLineEffectID()
   return self.lineEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetLineEffectCasterBone = function(self)
-  -- function num : 0_7
+function SkillPhaseDrillerSummonBaseMonsterParam:GetLineEffectCasterBone()
   return self.lineEffectCasterBone
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetLineEffectTrapBone = function(self)
-  -- function num : 0_8
+function SkillPhaseDrillerSummonBaseMonsterParam:GetLineEffectTrapBone()
   return self.lineEffectTrapBone
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetLineEffectID = function(self)
-  -- function num : 0_9
+function SkillPhaseDrillerSummonBaseMonsterParam:GetLineEffectID()
   return self.lineEffectID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetUpTailEffectID = function(self)
-  -- function num : 0_10
+function SkillPhaseDrillerSummonBaseMonsterParam:GetUpTailEffectID()
   return self.upTailEffectID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetDownTailEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseDrillerSummonBaseMonsterParam:GetDownTailEffectID()
   return self.downTailEffectID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetLandEffectID = function(self)
-  -- function num : 0_12
+function SkillPhaseDrillerSummonBaseMonsterParam:GetLandEffectID()
   return self.landEffectID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetUpEffAnim = function(self)
-  -- function num : 0_13
+function SkillPhaseDrillerSummonBaseMonsterParam:GetUpEffAnim()
   return self.upEffAnim
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetDownEffAnim = function(self)
-  -- function num : 0_14
+function SkillPhaseDrillerSummonBaseMonsterParam:GetDownEffAnim()
   return self.downEffAnim
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetShowDropDelay = function(self)
-  -- function num : 0_15
+function SkillPhaseDrillerSummonBaseMonsterParam:GetShowDropDelay()
   return self.showDropDelay
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSummonBaseMonsterParam.GetLandDelay = function(self)
-  -- function num : 0_16
+function SkillPhaseDrillerSummonBaseMonsterParam:GetLandDelay()
   return self.landDelay
 end
-
-

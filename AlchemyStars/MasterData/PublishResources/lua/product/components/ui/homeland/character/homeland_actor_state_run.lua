@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state_run.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_actor_state")
 _class("HomelandActorStateRun", HomelandActorState)
 HomelandActorStateRun = HomelandActorStateRun
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandActorStateRun.Constructor = function(self)
-  -- function num : 0_0
+function HomelandActorStateRun:Constructor()
   self._runSpeed = 5
   self._walkSpeed = 1
   self._rushSpeed = 15
@@ -19,114 +12,70 @@ HomelandActorStateRun.Constructor = function(self)
   self._movement = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateRun.GetType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandActorStateRun:GetType()
   return HomelandActorStateType.Run
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateRun.Enter = function(self, movement, moveState, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R4 in 'UnsetPending'
-
-  ((self._mcc)._navMeshAgent).isStopped = true
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnMainCharacterStartMove)
+function HomelandActorStateRun:Enter(movement, moveState, deltaTimeMS)
+  self._mcc._navMeshAgent.isStopped = true
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnMainCharacterStartMove)
   self:HandleEventMove(movement, moveState, deltaTimeMS)
   if moveState == HomelandCharMoveType.Run then
-    (self._mcc):SetAnimatorBool("Run", true)
-  else
-    if moveState == HomelandCharMoveType.Walk then
-      (self._mcc):SetAnimatorBool("Walk", true)
-    else
-      if moveState == HomelandCharMoveType.Rush then
-        (self._mcc):SetAnimatorBool("Rush", true)
-      end
-    end
+    self._mcc:SetAnimatorBool("Run", true)
+  elseif moveState == HomelandCharMoveType.Walk then
+    self._mcc:SetAnimatorBool("Walk", true)
+  elseif moveState == HomelandCharMoveType.Rush then
+    self._mcc:SetAnimatorBool("Rush", true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateRun.Exit = function(self)
-  -- function num : 0_3
-  (self._mcc):SetAnimatorBool("Run", false)
-  ;
-  (self._mcc):SetAnimatorBool("Walk", false)
-  ;
-  (self._mcc):SetAnimatorBool("Rush", false)
+function HomelandActorStateRun:Exit()
+  self._mcc:SetAnimatorBool("Run", false)
+  self._mcc:SetAnimatorBool("Walk", false)
+  self._mcc:SetAnimatorBool("Rush", false)
   self._moveType = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateRun.Update = function(self, deltaTimeMS)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandActorStateRun:Update(deltaTimeMS)
   if not self._movement then
-    (self._fsm):SwitchState(HomelandActorStateType.Idle)
+    self._fsm:SwitchState(HomelandActorStateType.Idle)
   end
   self._movement = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateRun.HandleEventMove = function(self, movement, moveState, deltaTimeMS)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandActorStateRun:HandleEventMove(movement, moveState, deltaTimeMS)
   if self._moveType ~= moveState then
     if moveState == HomelandCharMoveType.Run then
-      (self._mcc):SetAnimatorBool("Walk", false)
-      ;
-      (self._mcc):SetAnimatorBool("Run", true)
-      ;
-      (self._mcc):SetAnimatorBool("Rush", false)
-    else
-      if moveState == HomelandCharMoveType.Walk then
-        (self._mcc):SetAnimatorBool("Walk", true)
-        ;
-        (self._mcc):SetAnimatorBool("Run", false)
-        ;
-        (self._mcc):SetAnimatorBool("Rush", false)
-      else
-        if moveState == HomelandCharMoveType.Rush then
-          (self._mcc):SetAnimatorBool("Walk", false)
-          ;
-          (self._mcc):SetAnimatorBool("Run", false)
-          ;
-          (self._mcc):SetAnimatorBool("Rush", true)
-        end
-      end
+      self._mcc:SetAnimatorBool("Walk", false)
+      self._mcc:SetAnimatorBool("Run", true)
+      self._mcc:SetAnimatorBool("Rush", false)
+    elseif moveState == HomelandCharMoveType.Walk then
+      self._mcc:SetAnimatorBool("Walk", true)
+      self._mcc:SetAnimatorBool("Run", false)
+      self._mcc:SetAnimatorBool("Rush", false)
+    elseif moveState == HomelandCharMoveType.Rush then
+      self._mcc:SetAnimatorBool("Walk", false)
+      self._mcc:SetAnimatorBool("Run", false)
+      self._mcc:SetAnimatorBool("Rush", true)
     end
     self._moveType = moveState
   end
   if moveState == HomelandCharMoveType.Run then
-    if (self._mcc):GetAnimatorBool("InWater") then
-      ((self._mcc)._navMeshAgent):Move(movement * self._fastSwimSpeed * deltaTimeMS / 1000)
+    if self._mcc:GetAnimatorBool("InWater") then
+      self._mcc._navMeshAgent:Move(movement * self._fastSwimSpeed * deltaTimeMS / 1000)
     else
-      ;
-      ((self._mcc)._navMeshAgent):Move(movement * self._runSpeed * deltaTimeMS / 1000)
+      self._mcc._navMeshAgent:Move(movement * self._runSpeed * deltaTimeMS / 1000)
     end
-  else
-    if moveState == HomelandCharMoveType.Walk then
-      if (self._mcc):GetAnimatorBool("InWater") then
-        ((self._mcc)._navMeshAgent):Move(movement * self._swimSpeed * deltaTimeMS / 1000)
-      else
-        ;
-        ((self._mcc)._navMeshAgent):Move(movement * self._walkSpeed * deltaTimeMS / 1000)
-      end
+  elseif moveState == HomelandCharMoveType.Walk then
+    if self._mcc:GetAnimatorBool("InWater") then
+      self._mcc._navMeshAgent:Move(movement * self._swimSpeed * deltaTimeMS / 1000)
     else
-      if moveState == HomelandCharMoveType.Rush then
-        ((self._mcc)._navMeshAgent):Move(movement * self._rushSpeed * deltaTimeMS / 1000)
-      end
+      self._mcc._navMeshAgent:Move(movement * self._walkSpeed * deltaTimeMS / 1000)
     end
+  elseif moveState == HomelandCharMoveType.Rush then
+    self._mcc._navMeshAgent:Move(movement * self._rushSpeed * deltaTimeMS / 1000)
   end
-  ;
-  (self._mcc):SetTargetForward(movement)
+  self._mcc:SetTargetForward(movement)
   self._movement = movement
-  ;
-  (self._mcc):UpdateFollowCamPos()
+  self._mcc:UpdateFollowCamPos()
 end
-
-

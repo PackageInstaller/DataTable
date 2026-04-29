@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/common/ui_home_common_help.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandCommonHelp", UICustomWidget)
 UIHomelandCommonHelp = UIHomelandCommonHelp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandCommonHelp.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandCommonHelp:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandCommonHelp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandCommonHelp:OnShow(uiParams)
   self._helpBtn = self:GetGameObject("HelpBtn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandCommonHelp.SetData = function(self, str, backCB)
-  -- function num : 0_2
+function UIHomelandCommonHelp:SetData(str, backCB)
   self._tipStr = str
   self._backCB = backCB
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandCommonHelp.HelpBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomelandCommonHelp:HelpBtnOnClick(go)
   local tip = self:ShowDialog("UIHomeHelpController", self._tipStr)
 end
-
-

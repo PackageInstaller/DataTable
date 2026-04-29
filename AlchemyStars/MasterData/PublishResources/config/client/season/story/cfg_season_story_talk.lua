@@ -1,856 +1,4286 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season/story/cfg_season_story_talk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ChatWord = 2, NextWord = 3, AnswerID = 4, LastTalk = 5, IsMainActorWord = 6, SpeakerName = 7, SpeakerHead = 8, AnswerBtnTxt = 9}
-local common = {"ui_story_name_xiaopu", "S2_scene_npc_1601211", "ui_story_name_jiadongzhangxiwang", "S2_scene_npc_2000271", "ui_story_name_jiachujieshenpanguan", "S2_scene_npc_1501301", "ui_story_name_yilunting", "S2_scene_npc_1600891", "ui_story_name_jiachujieshenpanguan2", "ui_story_name_jiamantoubengdai", "base_icon_1400451_sorry", "ui_story_name_jiajianxixueshidaoshi", "base_icon_1601201_smile", "ui_story_name_jiashenfujingji", "base_icon_1500921_smile", "ui_story_name_jinseweibing", "S2_scene_npc_jinseweibing", "ui_story_name_jiazhebiyouyan", "base_icon_1601031_happy", "ui_story_name_jiamantuichijing", "base_icon_1601111_norm", "ui_story_name_jialaoshi", "S2_scene_npc_guizu", "ui_story_name_jiatoudailimao", "base_icon_1500091_norm", "ui_story_name_jiagaotingweiduizhang", "base_icon_1600061_norm", "ui_story_name_jiasenzhiqishizhang", "base_icon_1600291_norm", "ui_story_name_jiashuizhiqishizhang", "base_icon_1600281_norm", "ui_story_name_lieque", "S3_scene_npc_1400483", "ui_story_name_clarin", "S3_scene_npc_1600234", "S3_scene_npc_andong", "ui_story_name_kanshou", "S4_scene_npc_kanshou", "ui_story_name_lei", "S4_scene_npc_aileiya"}
+local key = {
+  ID = 1,
+  ChatWord = 2,
+  NextWord = 3,
+  AnswerID = 4,
+  LastTalk = 5,
+  IsMainActorWord = 6,
+  SpeakerName = 7,
+  SpeakerHead = 8,
+  AnswerBtnTxt = 9
+}
+local common = {
+  "ui_story_name_xiaopu",
+  "S2_scene_npc_1601211",
+  "ui_story_name_jiadongzhangxiwang",
+  "S2_scene_npc_2000271",
+  "ui_story_name_jiachujieshenpanguan",
+  "S2_scene_npc_1501301",
+  "ui_story_name_yilunting",
+  "S2_scene_npc_1600891",
+  "ui_story_name_jiachujieshenpanguan2",
+  "ui_story_name_jiamantoubengdai",
+  "base_icon_1400451_sorry",
+  "ui_story_name_jiajianxixueshidaoshi",
+  "base_icon_1601201_smile",
+  "ui_story_name_jiashenfujingji",
+  "base_icon_1500921_smile",
+  "ui_story_name_jinseweibing",
+  "S2_scene_npc_jinseweibing",
+  "ui_story_name_jiazhebiyouyan",
+  "base_icon_1601031_happy",
+  "ui_story_name_jiamantuichijing",
+  "base_icon_1601111_norm",
+  "ui_story_name_jialaoshi",
+  "S2_scene_npc_guizu",
+  "ui_story_name_jiatoudailimao",
+  "base_icon_1500091_norm",
+  "ui_story_name_jiagaotingweiduizhang",
+  "base_icon_1600061_norm",
+  "ui_story_name_jiasenzhiqishizhang",
+  "base_icon_1600291_norm",
+  "ui_story_name_jiashuizhiqishizhang",
+  "base_icon_1600281_norm",
+  "ui_story_name_lieque",
+  "S3_scene_npc_1400483",
+  "ui_story_name_clarin",
+  "S3_scene_npc_1600234",
+  "S3_scene_npc_andong",
+  "ui_story_name_kanshou",
+  "S4_scene_npc_kanshou",
+  "ui_story_name_lei",
+  "S4_scene_npc_aileiya"
+}
 local config = {
-[65010301] = {65010301, "ui_story_5065_50650103_1_dialog_content", 65010302, nil, nil, 0, common[1], common[2]}
-, 
-[65010302] = {65010302, "ui_story_5065_50650103_2_dialog_content", 65010303, nil, nil, 1, common[3], common[4]}
-, 
-[65010303] = {65010303, "ui_story_5065_50650103_3_dialog_content", 65010304, nil, nil, 1, common[3], common[4]}
-, 
-[65010304] = {65010304, "ui_story_5065_50650103_4_dialog_content", 65010305, nil, nil, 0, common[1], common[2]}
-, 
-[65010305] = {65010305, "ui_story_5065_50650103_5_dialog_content", 65010306, nil, nil, 0, common[1], common[2]}
-, 
-[65010306] = {65010306, "ui_story_5065_50650103_6_dialog_content", 65010307, nil, nil, 0, common[1], common[2]}
-, 
-[65010307] = {65010307, "ui_story_5065_50650103_7_dialog_content", 65010308, nil, nil, 1, common[3], common[4]}
-, 
-[65010308] = {65010308, "ui_story_5065_50650103_8_dialog_content", 65010309, nil, nil, 0, common[1], common[2]}
-, 
-[65010309] = {65010309, "ui_story_5065_50650103_9_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65010401] = {65010401, "ui_story_5065_50650104_1_dialog_content", 65010402, nil, nil, 1, common[5], common[6]}
-, 
-[65010402] = {65010402, "ui_story_5065_50650104_2_dialog_content", 65010403, nil, nil, 0, common[1], common[2]}
-, 
-[65010403] = {65010403, "ui_story_5065_50650104_3_dialog_content", 65010404, nil, nil, 1, common[5], common[6]}
-, 
-[65010404] = {65010404, "ui_story_5065_50650104_4_dialog_content", 65010405, nil, nil, 1, common[5], common[6]}
-, 
-[65010405] = {65010405, "ui_story_5065_50650104_5_dialog_content", 65010406, nil, nil, 1, "ui_story_name_jiadaoqiefan", common[4]}
-, 
-[65010406] = {65010406, "ui_story_5065_50650104_6_dialog_content", 65010407, nil, nil, 1, common[5], common[6]}
-, 
-[65010407] = {65010407, "ui_story_5065_50650104_7_dialog_content", 65010408, nil, nil, 0, common[1], common[2]}
-, 
-[65010408] = {65010408, "ui_story_5065_50650104_8_dialog_content", 65010409, nil, nil, 1, common[5], common[6]}
-, 
-[65010409] = {65010409, "ui_story_5065_50650104_9_dialog_content", 65010410, nil, nil, 1, common[5], common[6]}
-, 
-[65010410] = {65010410, "ui_story_5065_50650104_10_dialog_content", 65010411, nil, nil, 0, common[1], common[2]}
-, 
-[65010411] = {65010411, "ui_story_5065_50650104_11_dialog_content", 65010412, nil, nil, 1, common[5], common[6]}
-, 
-[65010412] = {65010412, "ui_story_5065_50650104_12_dialog_content", 65010413, nil, nil, 0, common[1], common[2]}
-, 
-[65010413] = {65010413, "ui_story_5065_50650104_13_dialog_content", nil, nil, 1, 1, common[5], common[6]}
-, 
-[65010414] = {65010414, "ui_story_5065_50650104_14_dialog_content", 65010415, nil, nil, 1, common[5], common[6]}
-, 
-[65010415] = {65010415, "ui_story_5065_50650104_15_dialog_content", 65010416, nil, nil, 0, common[1], common[2]}
-, 
-[65010416] = {65010416, "ui_story_5065_50650104_16_dialog_content", 65010417, nil, nil, 1, common[5], common[6]}
-, 
-[65010417] = {65010417, "ui_story_5065_50650104_17_dialog_content", nil, nil, 1, 1, common[5], common[6]}
-, 
-[65020101] = {65020101, "ui_story_5065_50650201_1_dialog_content", 65020102, nil, nil, 1, common[5], common[6]}
-, 
-[65020102] = {65020102, "ui_story_5065_50650201_2_dialog_content", 65020103, nil, nil, 0, common[1], common[2]}
-, 
-[65020103] = {65020103, "ui_story_5065_50650201_3_dialog_content", 65020104, nil, nil, 1, common[5], common[6]}
-, 
-[65020104] = {65020104, "ui_story_5065_50650201_4_dialog_content", 65020105, nil, nil, 1, common[5], common[6]}
-, 
-[65020105] = {65020105, "ui_story_5065_50650201_5_dialog_content", 65020106, nil, nil, 0, common[1], common[2]}
-, 
-[65020106] = {65020106, "ui_story_5065_50650201_6_dialog_content", 65020107, nil, nil, 1, common[5], common[6]}
-, 
-[65020107] = {65020107, "ui_story_5065_50650201_7_dialog_content", 65020108, nil, nil, 0, common[1], common[2]}
-, 
-[65020108] = {65020108, "ui_story_5065_50650201_8_dialog_content", 65020109, nil, nil, 1, common[5], common[6]}
-, 
-[65020109] = {65020109, "ui_story_5065_50650201_9_dialog_content", 65020110, nil, nil, 1, common[5], common[6]}
-, 
-[65020110] = {65020110, "ui_story_5065_50650201_10_dialog_content", 65020111, nil, nil, 1, common[5], common[6]}
-, 
-[65020111] = {65020111, "ui_story_5065_50650201_11_dialog_content", 65020112, nil, nil, 1, common[5], common[6]}
-, 
-[65020112] = {65020112, "ui_story_5065_50650201_12_dialog_content", 65020113, nil, nil, 1, common[5], common[6]}
-, 
-[65020113] = {65020113, "ui_story_5065_50650201_13_dialog_content", 65020114, nil, nil, 0, common[1], common[2]}
-, 
-[65020114] = {65020114, "ui_story_5065_50650201_14_dialog_content", 65020115, nil, nil, 1, common[5], common[6]}
-, 
-[65020115] = {65020115, "ui_story_5065_50650201_15_dialog_content", nil, nil, 1, 1, common[5], common[6]}
-, 
-[65020201] = {65020201, "ui_story_5065_50650202_1_dialog_content", 65020202, nil, nil, 0, common[1], common[2]}
-, 
-[65020202] = {65020202, "ui_story_5065_50650202_2_dialog_content", 65020203, nil, nil, 0, common[1], common[2]}
-, 
-[65020203] = {65020203, "ui_story_5065_50650202_3_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65020301] = {65020301, "ui_story_5065_50650203_1_dialog_content", 65020302, nil, nil, 0, common[1], common[2]}
-, 
-[65020302] = {65020302, "ui_story_5065_50650203_2_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65020401] = {65020401, "ui_story_5065_50650204_1_dialog_content", 65020402, nil, nil, 0, common[1], common[2]}
-, 
-[65020402] = {65020402, "ui_story_5065_50650204_2_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65020501] = {65020501, "ui_story_5065_50650205_1_dialog_content", 65020502, nil, nil, 1, common[5], common[6]}
-, 
-[65020502] = {65020502, "ui_story_5065_50650205_2_dialog_content", 65020503, nil, nil, 0, common[1], common[2]}
-, 
-[65020503] = {65020503, "ui_story_5065_50650205_3_dialog_content", 65020504, nil, nil, 1, common[5], common[6]}
-, 
-[65020504] = {65020504, "ui_story_5065_50650205_4_dialog_content", 65020505, nil, nil, 0, common[1], common[2]}
-, 
-[65020505] = {65020505, "ui_story_5065_50650205_5_dialog_content", 65020506, nil, nil, 1, common[5], common[6]}
-, 
-[65020506] = {65020506, "ui_story_5065_50650205_6_dialog_content", 65020507, nil, nil, 1, common[5], common[6]}
-, 
-[65020507] = {65020507, "ui_story_5065_50650205_7_dialog_content", 65020508, nil, nil, 0, common[1], common[2]}
-, 
-[65020508] = {65020508, "ui_story_5065_50650205_8_dialog_content", 65020509, nil, nil, 1, common[5], common[6]}
-, 
-[65020509] = {65020509, "ui_story_5065_50650205_9_dialog_content", 65020510, nil, nil, 1, common[5], common[6]}
-, 
-[65020510] = {65020510, "ui_story_5065_50650205_10_dialog_content", 65020511, nil, nil, 1, common[5], common[6]}
-, 
-[65020511] = {65020511, "ui_story_5065_50650205_11_dialog_content", 65020512, nil, nil, 1, common[5], common[6]}
-, 
-[65020512] = {65020512, "ui_story_5065_50650205_12_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65030101] = {65030101, "ui_story_5065_50650301_1_dialog_content", 65030102, nil, nil, 0, common[1], common[2]}
-, 
-[65030102] = {65030102, "ui_story_5065_50650301_2_dialog_content", 65030103, nil, nil, 1, common[5], common[6]}
-, 
-[65030103] = {65030103, "ui_story_5065_50650301_3_dialog_content", 65030104, nil, nil, 0, common[1], common[2]}
-, 
-[65030104] = {65030104, "ui_story_5065_50650301_4_dialog_content", 65030105, nil, nil, 1, common[5], common[6]}
-, 
-[65030105] = {65030105, "ui_story_5065_50650301_5_dialog_content", 65030106, nil, nil, 1, common[5], common[6]}
-, 
-[65030106] = {65030106, "ui_story_5065_50650301_6_dialog_content", 65030107, nil, nil, 0, common[1], common[2]}
-, 
-[65030107] = {65030107, "ui_story_5065_50650301_7_dialog_content", 65030108, nil, nil, 1, common[5], common[6]}
-, 
-[65030108] = {65030108, "ui_story_5065_50650301_8_dialog_content", 65030109, nil, nil, 1, common[5], common[6]}
-, 
-[65030109] = {65030109, "ui_story_5065_50650301_9_dialog_content", 65030110, nil, nil, 1, common[5], common[6]}
-, 
-[65030110] = {65030110, "ui_story_5065_50650301_10_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65030201] = {65030201, "ui_story_5065_50650302_1_dialog_content", 65030202, nil, nil, 0, common[1], common[2]}
-, 
-[65030202] = {65030202, "ui_story_5065_50650302_2_dialog_content", 65030203, nil, nil, 1, common[3], common[4]}
-, 
-[65030203] = {65030203, "ui_story_5065_50650302_3_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65030301] = {65030301, "ui_story_5065_50650303_1_dialog_content", 65030302, nil, nil, 0, common[1], common[2]}
-, 
-[65030302] = {65030302, "ui_story_5065_50650303_2_dialog_content", 65030303, nil, nil, 1, common[5], common[6]}
-, 
-[65030303] = {65030303, "ui_story_5065_50650303_3_dialog_content", 65030304, nil, nil, 0, common[1], common[2]}
-, 
-[65030304] = {65030304, "ui_story_5065_50650303_4_dialog_content", 65030305, nil, nil, 1, common[5], common[6]}
-, 
-[65030305] = {65030305, "ui_story_5065_50650303_5_dialog_content", 65030306, nil, nil, 1, common[5], common[6]}
-, 
-[65030306] = {65030306, "ui_story_5065_50650303_6_dialog_content", 65030307, nil, nil, 0, common[1], common[2]}
-, 
-[65030307] = {65030307, "ui_story_5065_50650303_7_dialog_content", 65030308, nil, nil, 1, common[5], common[6]}
-, 
-[65030308] = {65030308, "ui_story_5065_50650303_8_dialog_content", 65030309, nil, nil, 1, common[5], common[6]}
-, 
-[65030309] = {65030309, "ui_story_5065_50650303_9_dialog_content", 65030310, nil, nil, 0, common[1], common[2]}
-, 
-[65030310] = {65030310, "ui_story_5065_50650303_10_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65030401] = {65030401, "ui_story_5065_50650304_1_dialog_content", 65030402, nil, nil, 0, common[1], common[2]}
-, 
-[65030402] = {65030402, "ui_story_5065_50650304_2_dialog_content", 65030403, nil, nil, 0, common[1], common[2]}
-, 
-[65030403] = {65030403, "ui_story_5065_50650304_3_dialog_content", 65030404, nil, nil, 1, common[3], common[4]}
-, 
-[65030404] = {65030404, "ui_story_5065_50650304_4_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65040101] = {65040101, "ui_story_5065_50650401_1_dialog_content", 65040102, nil, nil, 0, common[1], common[2]}
-, 
-[65040102] = {65040102, "ui_story_5065_50650401_2_dialog_content", 65040103, nil, nil, 1, common[5], common[6]}
-, 
-[65040103] = {65040103, "ui_story_5065_50650401_3_dialog_content", 65040104, nil, nil, 1, common[5], common[6]}
-, 
-[65040104] = {65040104, "ui_story_5065_50650401_4_dialog_content", 65040105, nil, nil, 1, common[5], common[6]}
-, 
-[65040105] = {65040105, "ui_story_5065_50650401_5_dialog_content", 65040106, nil, nil, 0, common[1], common[2]}
-, 
-[65040106] = {65040106, "ui_story_5065_50650401_6_dialog_content", 65040107, nil, nil, 1, common[5], common[6]}
-, 
-[65040107] = {65040107, "ui_story_5065_50650401_7_dialog_content", 65040108, nil, nil, 1, common[5], common[6]}
-, 
-[65040108] = {65040108, "ui_story_5065_50650401_8_dialog_content", 65040109, nil, nil, 0, common[1], common[2]}
-, 
-[65040109] = {65040109, "ui_story_5065_50650401_9_dialog_content", 65040110, nil, nil, 0, common[1], common[2]}
-, 
-[65040110] = {65040110, "ui_story_5065_50650401_10_dialog_content", 65040111, nil, nil, 1, common[5], common[6]}
-, 
-[65040111] = {65040111, "ui_story_5065_50650401_11_dialog_content", 65040112, nil, nil, 1, common[5], common[6]}
-, 
-[65040112] = {65040112, "ui_story_5065_50650401_12_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65040301] = {65040301, "ui_story_5065_50650403_1_dialog_content", 65040302, nil, nil, 1, common[7], common[8]}
-, 
-[65040302] = {65040302, "ui_story_5065_50650403_2_dialog_content", 65040303, nil, nil, 0, common[1], common[2]}
-, 
-[65040303] = {65040303, "ui_story_5065_50650403_3_dialog_content", 65040304, nil, nil, 0, common[1], common[2]}
-, 
-[65040304] = {65040304, "ui_story_5065_50650403_4_dialog_content", nil, nil, 1, 1, common[7], common[8]}
-, 
-[65040401] = {65040401, "ui_story_5065_50650404_1_dialog_content", 65040402, nil, nil, 0, common[1], common[2]}
-, 
-[65040402] = {65040402, "ui_story_5065_50650404_2_dialog_content", 65040403, nil, nil, 1, common[7], common[8]}
-, 
-[65040403] = {65040403, "ui_story_5065_50650404_3_dialog_content", 65040404, nil, nil, 0, common[1], common[2]}
-, 
-[65040404] = {65040404, "ui_story_5065_50650404_4_dialog_content", 65040405, nil, nil, 1, common[7], common[8]}
-, 
-[65040405] = {65040405, "ui_story_5065_50650404_5_dialog_content", 65040406, nil, nil, 0, common[1], common[2]}
-, 
-[65040406] = {65040406, "ui_story_5065_50650404_6_dialog_content", 65040407, nil, nil, 0, common[1], common[2]}
-, 
-[65040407] = {65040407, "ui_story_5065_50650404_7_dialog_content", 65040408, nil, nil, 1, common[7], common[8]}
-, 
-[65040408] = {65040408, "ui_story_5065_50650404_8_dialog_content", 65040409, nil, nil, 1, common[7], common[8]}
-, 
-[65040409] = {65040409, "ui_story_5065_50650404_9_dialog_content", 65040410, nil, nil, 0, common[1], common[2]}
-, 
-[65040410] = {65040410, "ui_story_5065_50650404_10_dialog_content", 65040411, nil, nil, 0, common[1], common[2]}
-, 
-[65040411] = {65040411, "ui_story_5065_50650404_11_dialog_content", nil, nil, 1, 1, common[7], common[8]}
-, 
-[65040601] = {65040601, "ui_story_5065_50650406_1_dialog_content", 65040602, nil, nil, 0, common[1], common[2]}
-, 
-[65040602] = {65040602, "ui_story_5065_50650406_2_dialog_content", 65040603, nil, nil, 0, common[1], common[2]}
-, 
-[65040603] = {65040603, "ui_story_5065_50650406_3_dialog_content", 65040604, nil, nil, 1, common[5], common[6]}
-, 
-[65040604] = {65040604, "ui_story_5065_50650406_4_dialog_content", 65040605, nil, nil, 1, common[5], common[6]}
-, 
-[65040605] = {65040605, "ui_story_5065_50650406_5_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65050301] = {65050301, "ui_story_5065_50650503_1_dialog_content", 65050302, nil, nil, 1, common[9], common[6]}
-, 
-[65050302] = {65050302, "ui_story_5065_50650503_2_dialog_content", 65050303, nil, nil, 1, "ui_story_name_jiabycweibing", "S2_scene_npc_weibing"}
-, 
-[65050303] = {65050303, "ui_story_5065_50650503_3_dialog_content", 65050304, nil, nil, 0, common[1], common[2]}
-, 
-[65050304] = {65050304, "ui_story_5065_50650503_4_dialog_content", 65050305, nil, nil, 1, common[9], common[6]}
-, 
-[65050305] = {65050305, "ui_story_5065_50650503_5_dialog_content", 65050306, nil, nil, 0, common[1], common[2]}
-, 
-[65050306] = {65050306, "ui_story_5065_50650503_6_dialog_content", 65050307, nil, nil, 1, common[9], common[6]}
-, 
-[65050307] = {65050307, "ui_story_5065_50650503_7_dialog_content", 65050308, nil, nil, 0, common[1], common[2]}
-, 
-[65050308] = {65050308, "ui_story_5065_50650503_8_dialog_content", 65050309, nil, nil, 1, common[9], common[6]}
-, 
-[65050309] = {65050309, "ui_story_5065_50650503_9_dialog_content", 65050310, nil, nil, 1, common[5], common[6]}
-, 
-[65050310] = {65050310, "ui_story_5065_50650503_10_dialog_content", 65050311, nil, nil, 1, common[9], common[6]}
-, 
-[65050311] = {65050311, "ui_story_5065_50650503_11_dialog_content", nil, nil, 1, 1, common[5], common[6]}
-, 
-[65050312] = {65050312, "ui_story_5065_50650503_12_dialog_content", 65050313, nil, nil, 0, common[1], common[2]}
-, 
-[65050313] = {65050313, "ui_story_5065_50650503_13_dialog_content", 65050314, nil, nil, 1, common[5], common[6]}
-, 
-[65050314] = {65050314, "ui_story_5065_50650503_14_dialog_content", 65050315, nil, nil, 1, common[5], common[6]}
-, 
-[65050315] = {65050315, "ui_story_5065_50650503_15_dialog_content", 65050316, nil, nil, 1, common[5], common[6]}
-, 
-[65050316] = {65050316, "ui_story_5065_50650503_16_dialog_content", 65050317, nil, nil, 1, common[5], common[6]}
-, 
-[65050317] = {65050317, "ui_story_5065_50650503_17_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65060201] = {65060201, "ui_story_5065_50650602_1_dialog_content", 65060202, nil, nil, 1, common[10], common[11]}
-, 
-[65060202] = {65060202, "ui_story_5065_50650602_2_dialog_content", 65060203, nil, nil, 1, common[10], common[11]}
-, 
-[65060203] = {65060203, "ui_story_5065_50650602_3_dialog_content", 65060204, nil, nil, 0, common[1], common[2]}
-, 
-[65060204] = {65060204, "ui_story_5065_50650602_4_dialog_content", 65060205, nil, nil, 1, common[10], common[11]}
-, 
-[65060205] = {65060205, "ui_story_5065_50650602_5_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65060301] = {65060301, "ui_story_5065_50650603_1_dialog_content", 65060302, nil, nil, 1, common[12], common[13]}
-, 
-[65060302] = {65060302, "ui_story_5065_50650603_2_dialog_content", 65060303, nil, nil, 1, common[12], common[13]}
-, 
-[65060303] = {65060303, "ui_story_5065_50650603_3_dialog_content", 65060304, nil, nil, 1, common[12], common[13]}
-, 
-[65060304] = {65060304, "ui_story_5065_50650603_4_dialog_content", 65060305, nil, nil, 1, common[12], common[13]}
-, 
-[65060305] = {65060305, "ui_story_5065_50650603_5_dialog_content", nil, nil, 1, 1, common[12], common[13]}
-, 
-[65060401] = {65060401, "ui_story_5065_50650604_1_dialog_content", 65060402, nil, nil, 1, common[14], common[15]}
-, 
-[65060402] = {65060402, "ui_story_5065_50650604_2_dialog_content", 65060403, nil, nil, 1, common[14], common[15]}
-, 
-[65060403] = {65060403, "ui_story_5065_50650604_3_dialog_content", 65060404, nil, nil, 0, common[1], common[2]}
-, 
-[65060404] = {65060404, "ui_story_5065_50650604_4_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65070101] = {65070101, "ui_story_5065_50650701_1_dialog_content", 65070102, nil, nil, 1, common[12], common[13]}
-, 
-[65070102] = {65070102, "ui_story_5065_50650701_2_dialog_content", 65070103, nil, nil, 1, common[12], common[13]}
-, 
-[65070103] = {65070103, "ui_story_5065_50650701_3_dialog_content", 65070104, nil, nil, 0, common[1], common[2]}
-, 
-[65070104] = {65070104, "ui_story_5065_50650701_4_dialog_content", 65070105, nil, nil, 1, common[12], common[13]}
-, 
-[65070105] = {65070105, "ui_story_5065_50650701_5_dialog_content", 65070106, nil, nil, 1, common[12], common[13]}
-, 
-[65070106] = {65070106, "ui_story_5065_50650701_6_dialog_content", 65070107, nil, nil, 0, common[1], common[2]}
-, 
-[65070107] = {65070107, "ui_story_5065_50650701_7_dialog_content", 65070108, nil, nil, 1, common[12], common[13]}
-, 
-[65070108] = {65070108, "ui_story_5065_50650701_8_dialog_content", 65070109, nil, nil, 0, common[1], common[2]}
-, 
-[65070109] = {65070109, "ui_story_5065_50650701_9_dialog_content", nil, nil, 1, 1, common[12], common[13]}
-, 
-[65070201] = {65070201, "ui_story_5065_50650702_1_dialog_content", 65070202, nil, nil, 1, common[7], common[8]}
-, 
-[65070202] = {65070202, "ui_story_5065_50650702_2_dialog_content", 65070203, nil, nil, 0, common[1], common[2]}
-, 
-[65070203] = {65070203, "ui_story_5065_50650702_3_dialog_content", 65070204, nil, nil, 1, common[7], common[8]}
-, 
-[65070204] = {65070204, "ui_story_5065_50650702_4_dialog_content", 65070205, nil, nil, 0, common[1], common[2]}
-, 
-[65070205] = {65070205, "ui_story_5065_50650702_5_dialog_content", 65070206, nil, nil, 0, common[1], common[2]}
-, 
-[65070206] = {65070206, "ui_story_5065_50650702_6_dialog_content", 65070207, nil, nil, 1, common[7], common[8]}
-, 
-[65070207] = {65070207, "ui_story_5065_50650702_7_dialog_content", 65070208, nil, nil, 1, common[16], common[17]}
-, 
-[65070208] = {65070208, "ui_story_5065_50650702_8_dialog_content", 65070209, nil, nil, 0, common[1], common[2]}
-, 
-[65070209] = {65070209, "ui_story_5065_50650702_9_dialog_content", nil, nil, 1, 1, common[16], common[17]}
-, 
-[65070210] = {65070210, "ui_story_5065_50650702_10_dialog_content", 65070211, nil, nil, 0, common[1], common[2]}
-, 
-[65070211] = {65070211, "ui_story_5065_50650702_11_dialog_content", 65070212, nil, nil, 1, common[7], common[8]}
-, 
-[65070212] = {65070212, "ui_story_5065_50650702_12_dialog_content", 65070213, nil, nil, 0, common[1], common[2]}
-, 
-[65070213] = {65070213, "ui_story_5065_50650702_13_dialog_content", 65070214, nil, nil, 1, common[7], common[8]}
-, 
-[65070214] = {65070214, "ui_story_5065_50650702_14_dialog_content", 65070215, nil, nil, 0, common[1], common[2]}
-, 
-[65070215] = {65070215, "ui_story_5065_50650702_15_dialog_content", 65070216, nil, nil, 0, common[1], common[2]}
-, 
-[65070216] = {65070216, "ui_story_5065_50650702_16_dialog_content", 65070217, nil, nil, 1, common[7], common[8]}
-, 
-[65070217] = {65070217, "ui_story_5065_50650702_17_dialog_content", 65070218, nil, nil, 0, common[1], common[2]}
-, 
-[65070218] = {65070218, "ui_story_5065_50650702_18_dialog_content", nil, nil, 1, 1, common[7], common[8]}
-, 
-[65070301] = {65070301, "ui_story_5065_50650703_1_dialog_content", 65070302, nil, nil, 0, common[1], common[2]}
-, 
-[65070302] = {65070302, "ui_story_5065_50650703_2_dialog_content", 65070303, nil, nil, 1, common[7], common[8]}
-, 
-[65070303] = {65070303, "ui_story_5065_50650703_3_dialog_content", 65070304, nil, nil, 0, common[1], common[2]}
-, 
-[65070304] = {65070304, "ui_story_5065_50650703_4_dialog_content", 65070305, nil, nil, 0, common[1], common[2]}
-, 
-[65070305] = {65070305, "ui_story_5065_50650703_5_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65080101] = {65080101, "ui_story_5065_50650801_1_dialog_content", 65080102, nil, nil, 0, common[1], common[2]}
-, 
-[65080102] = {65080102, "ui_story_5065_50650801_2_dialog_content", 65080103, nil, nil, 1, common[12], common[13]}
-, 
-[65080103] = {65080103, "ui_story_5065_50650801_3_dialog_content", 65080104, nil, nil, 0, common[1], common[2]}
-, 
-[65080104] = {65080104, "ui_story_5065_50650801_4_dialog_content", 65080105, nil, nil, 1, common[12], common[13]}
-, 
-[65080105] = {65080105, "ui_story_5065_50650801_5_dialog_content", 65080106, nil, nil, 1, common[12], common[13]}
-, 
-[65080106] = {65080106, "ui_story_5065_50650801_6_dialog_content", 65080107, nil, nil, 0, common[1], common[2]}
-, 
-[65080107] = {65080107, "ui_story_5065_50650801_7_dialog_content", 65080108, nil, nil, 1, common[12], common[13]}
-, 
-[65080108] = {65080108, "ui_story_5065_50650801_8_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65080201] = {65080201, "ui_story_5065_50650802_1_dialog_content", 65080202, nil, nil, 1, common[18], common[19]}
-, 
-[65080202] = {65080202, "ui_story_5065_50650802_2_dialog_content", 65080203, nil, nil, 1, common[18], common[19]}
-, 
-[65080203] = {65080203, "ui_story_5065_50650802_3_dialog_content", 65080204, nil, nil, 1, common[18], common[19]}
-, 
-[65080204] = {65080204, "ui_story_5065_50650802_4_dialog_content", 65080205, nil, nil, 0, common[1], common[2]}
-, 
-[65080205] = {65080205, "ui_story_5065_50650802_5_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65080301] = {65080301, "ui_story_5065_50650803_1_dialog_content", 65080302, nil, nil, 1, common[12], common[13]}
-, 
-[65080302] = {65080302, "ui_story_5065_50650803_2_dialog_content", 65080303, nil, nil, 1, common[12], common[13]}
-, 
-[65080303] = {65080303, "ui_story_5065_50650803_3_dialog_content", 65080304, nil, nil, 1, common[12], common[13]}
-, 
-[65080304] = {65080304, "ui_story_5065_50650803_4_dialog_content", 65080305, nil, nil, 1, common[12], common[13]}
-, 
-[65080305] = {65080305, "ui_story_5065_50650803_5_dialog_content", 65080306, nil, nil, 1, common[12], common[13]}
-, 
-[65080306] = {65080306, "ui_story_5065_50650803_6_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65080401] = {65080401, "ui_story_5065_50650804_1_dialog_content", 65080402, nil, nil, 1, common[20], common[21]}
-, 
-[65080402] = {65080402, "ui_story_5065_50650804_2_dialog_content", 65080403, nil, nil, 0, common[1], common[2]}
-, 
-[65080403] = {65080403, "ui_story_5065_50650804_3_dialog_content", 65080404, nil, nil, 1, common[20], common[21]}
-, 
-[65080404] = {65080404, "ui_story_5065_50650804_4_dialog_content", 65080405, nil, nil, 1, common[20], common[21]}
-, 
-[65080405] = {65080405, "ui_story_5065_50650804_5_dialog_content", 65080406, nil, nil, 0, common[1], common[2]}
-, 
-[65080406] = {65080406, "ui_story_5065_50650804_6_dialog_content", 65080407, nil, nil, 1, common[20], common[21]}
-, 
-[65080407] = {65080407, "ui_story_5065_50650804_7_dialog_content", 65080408, nil, nil, 0, common[1], common[2]}
-, 
-[65080408] = {65080408, "ui_story_5065_50650804_8_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65090101] = {65090101, "ui_story_5065_50650901_1_dialog_content", 65090102, nil, nil, 1, common[12], common[13]}
-, 
-[65090102] = {65090102, "ui_story_5065_50650901_2_dialog_content", 65090103, nil, nil, 0, common[1], common[2]}
-, 
-[65090103] = {65090103, "ui_story_5065_50650901_3_dialog_content", 65090104, nil, nil, 1, common[12], common[13]}
-, 
-[65090104] = {65090104, "ui_story_5065_50650901_4_dialog_content", 65090105, nil, nil, 0, common[1], common[2]}
-, 
-[65090105] = {65090105, "ui_story_5065_50650901_5_dialog_content", 65090106, nil, nil, 1, common[12], common[13]}
-, 
-[65090106] = {65090106, "ui_story_5065_50650901_6_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65090301] = {65090301, "ui_story_5065_50650903_1_dialog_content", 65090302, nil, nil, 0, common[1], common[2]}
-, 
-[65090302] = {65090302, "ui_story_5065_50650903_2_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65090303] = {65090303, "ui_story_5065_50650903_3_dialog_content", 65090304, nil, nil, 0, common[1], common[2]}
-, 
-[65090304] = {65090304, "ui_story_5065_50650903_4_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65090401] = {65090401, "ui_story_5065_50650904_1_dialog_content", 65090402, nil, nil, 0, common[1], common[2]}
-, 
-[65090402] = {65090402, "ui_story_5065_50650904_2_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65090501] = {65090501, "ui_story_5065_50650905_1_dialog_content", 65090502, nil, nil, 0, common[1], common[2]}
-, 
-[65090502] = {65090502, "ui_story_5065_50650905_2_dialog_content", 65090503, nil, nil, 0, common[1], common[2]}
-, 
-[65090503] = {65090503, "ui_story_5065_50650905_3_dialog_content", 65090504, nil, nil, 0, common[1], common[2]}
-, 
-[65090504] = {65090504, "ui_story_5065_50650905_4_dialog_content", 65090505, nil, nil, 0, common[1], common[2]}
-, 
-[65090505] = {65090505, "ui_story_5065_50650905_5_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65090601] = {65090601, "ui_story_5065_50650906_1_dialog_content", 65090602, nil, nil, 1, common[22], common[23]}
-, 
-[65090602] = {65090602, "ui_story_5065_50650906_2_dialog_content", 65090603, nil, nil, 1, common[22], common[23]}
-, 
-[65090603] = {65090603, "ui_story_5065_50650906_3_dialog_content", 65090604, nil, nil, 1, common[22], common[23]}
-, 
-[65090604] = {65090604, "ui_story_5065_50650906_4_dialog_content", 65090605, nil, nil, 1, common[22], common[23]}
-, 
-[65090605] = {65090605, "ui_story_5065_50650906_5_dialog_content", 65090606, nil, nil, 0, common[1], common[2]}
-, 
-[65090606] = {65090606, "ui_story_5065_50650906_6_dialog_content", 65090607, nil, nil, 1, common[22], common[23]}
-, 
-[65090607] = {65090607, "ui_story_5065_50650906_7_dialog_content", 65090608, nil, nil, 1, common[22], common[23]}
-, 
-[65090608] = {65090608, "ui_story_5065_50650906_8_dialog_content", 65090609, nil, nil, 1, common[22], common[23]}
-, 
-[65090609] = {65090609, "ui_story_5065_50650906_9_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65100101] = {65100101, "ui_story_5065_50651001_1_dialog_content", 65100102, nil, nil, 0, common[1], common[2]}
-, 
-[65100102] = {65100102, "ui_story_5065_50651001_2_dialog_content", 65100103, nil, nil, 1, common[12], common[13]}
-, 
-[65100103] = {65100103, "ui_story_5065_50651001_3_dialog_content", 65100104, nil, nil, 1, common[12], common[13]}
-, 
-[65100104] = {65100104, "ui_story_5065_50651001_4_dialog_content", 65100105, nil, nil, 1, common[12], common[13]}
-, 
-[65100105] = {65100105, "ui_story_5065_50651001_5_dialog_content", 65100106, nil, nil, 1, common[12], common[13]}
-, 
-[65100106] = {65100106, "ui_story_5065_50651001_6_dialog_content", 65100107, nil, nil, 1, common[12], common[13]}
-, 
-[65100107] = {65100107, "ui_story_5065_50651001_7_dialog_content", 65100108, nil, nil, 1, common[12], common[13]}
-, 
-[65100108] = {65100108, "ui_story_5065_50651001_8_dialog_content", 65100109, nil, nil, 1, common[12], common[13]}
-, 
-[65100109] = {65100109, "ui_story_5065_50651001_9_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65100301] = {65100301, "ui_story_5065_50651003_1_dialog_content", 65100302, nil, nil, 0, common[1], common[2]}
-, 
-[65100302] = {65100302, "ui_story_5065_50651003_2_dialog_content", 65100303, nil, nil, 1, common[24], common[25]}
-, 
-[65100303] = {65100303, "ui_story_5065_50651003_3_dialog_content", 65100304, nil, nil, 0, common[1], common[2]}
-, 
-[65100304] = {65100304, "ui_story_5065_50651003_4_dialog_content", 65100305, nil, nil, 1, common[24], common[25]}
-, 
-[65100305] = {65100305, "ui_story_5065_50651003_5_dialog_content", 65100306, nil, nil, 1, common[24], common[25]}
-, 
-[65100306] = {65100306, "ui_story_5065_50651003_6_dialog_content", 65100307, nil, nil, 1, common[24], common[25]}
-, 
-[65100307] = {65100307, "ui_story_5065_50651003_7_dialog_content", 65100308, nil, nil, 0, common[1], common[2]}
-, 
-[65100308] = {65100308, "ui_story_5065_50651003_8_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65110201] = {65110201, "ui_story_5065_50651102_1_dialog_content", 65110202, nil, nil, 0, common[1], common[2]}
-, 
-[65110202] = {65110202, "ui_story_5065_50651102_2_dialog_content", 65110203, nil, nil, 1, common[26], common[27]}
-, 
-[65110203] = {65110203, "ui_story_5065_50651102_3_dialog_content", 65110204, nil, nil, 0, common[1], common[2]}
-, 
-[65110204] = {65110204, "ui_story_5065_50651102_4_dialog_content", 65110205, nil, nil, 1, common[26], common[27]}
-, 
-[65110205] = {65110205, "ui_story_5065_50651102_5_dialog_content", 65110206, nil, nil, 1, common[26], common[27]}
-, 
-[65110206] = {65110206, "ui_story_5065_50651102_6_dialog_content", 65110207, nil, nil, 1, common[26], common[27]}
-, 
-[65110207] = {65110207, "ui_story_5065_50651102_7_dialog_content", 65110208, nil, nil, 0, common[1], common[2]}
-, 
-[65110208] = {65110208, "ui_story_5065_50651102_8_dialog_content", 65110209, nil, nil, 1, common[26], common[27]}
-, 
-[65110209] = {65110209, "ui_story_5065_50651102_9_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65120101] = {65120101, "ui_story_5065_50651201_1_dialog_content", 65120102, nil, nil, 0, common[1], common[2]}
-, 
-[65120102] = {65120102, "ui_story_5065_50651201_2_dialog_content", 65120103, nil, nil, 1, common[26], common[27]}
-, 
-[65120103] = {65120103, "ui_story_5065_50651201_3_dialog_content", 65120104, nil, nil, 0, common[1], common[2]}
-, 
-[65120104] = {65120104, "ui_story_5065_50651201_4_dialog_content", 65120105, nil, nil, 1, common[26], common[27]}
-, 
-[65120105] = {65120105, "ui_story_5065_50651201_5_dialog_content", 65120106, nil, nil, 1, common[26], common[27]}
-, 
-[65120106] = {65120106, "ui_story_5065_50651201_6_dialog_content", 65120107, nil, nil, 1, common[26], common[27]}
-, 
-[65120107] = {65120107, "ui_story_5065_50651201_7_dialog_content", 65120108, nil, nil, 1, common[26], common[27]}
-, 
-[65120108] = {65120108, "ui_story_5065_50651201_8_dialog_content", 65120109, nil, nil, 1, common[26], common[27]}
-, 
-[65120109] = {65120109, "ui_story_5065_50651201_9_dialog_content", 65120110, nil, nil, 1, common[26], common[27]}
-, 
-[65120110] = {65120110, "ui_story_5065_50651201_10_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65120201] = {65120201, "ui_story_5065_50651202_1_dialog_content", 65120202, nil, nil, 0, common[1], common[2]}
-, 
-[65120202] = {65120202, "ui_story_5065_50651202_2_dialog_content", 65120203, nil, nil, 1, common[28], common[29]}
-, 
-[65120203] = {65120203, "ui_story_5065_50651202_3_dialog_content", 65120204, nil, nil, 1, common[28], common[29]}
-, 
-[65120204] = {65120204, "ui_story_5065_50651202_4_dialog_content", 65120205, nil, nil, 0, common[1], common[2]}
-, 
-[65120205] = {65120205, "ui_story_5065_50651202_5_dialog_content", 65120206, nil, nil, 1, common[28], common[29]}
-, 
-[65120206] = {65120206, "ui_story_5065_50651202_6_dialog_content", 65120207, nil, nil, 1, common[28], common[29]}
-, 
-[65120207] = {65120207, "ui_story_5065_50651202_7_dialog_content", nil, nil, 1, 1, common[28], common[29]}
-, 
-[65120401] = {65120401, "ui_story_5065_50651204_1_dialog_content", 65120402, nil, nil, 1, common[28], common[29]}
-, 
-[65120402] = {65120402, "ui_story_5065_50651204_2_dialog_content", 65120403, nil, nil, 1, common[28], common[29]}
-, 
-[65120403] = {65120403, "ui_story_5065_50651204_3_dialog_content", 65120404, nil, nil, 1, common[28], common[29]}
-, 
-[65120404] = {65120404, "ui_story_5065_50651204_4_dialog_content", 65120405, nil, nil, 1, common[28], common[29]}
-, 
-[65120405] = {65120405, "ui_story_5065_50651204_5_dialog_content", nil, nil, 1, 1, common[28], common[29]}
-, 
-[65130101] = {65130101, "ui_story_5065_50651301_1_dialog_content", 65130102, nil, nil, 1, common[28], common[29]}
-, 
-[65130102] = {65130102, "ui_story_5065_50651301_2_dialog_content", 65130103, nil, nil, 0, common[1], common[2]}
-, 
-[65130103] = {65130103, "ui_story_5065_50651301_3_dialog_content", 65130104, nil, nil, 1, common[28], common[29]}
-, 
-[65130104] = {65130104, "ui_story_5065_50651301_4_dialog_content", 65130105, nil, nil, 1, common[28], common[29]}
-, 
-[65130105] = {65130105, "ui_story_5065_50651301_5_dialog_content", 65130106, nil, nil, 0, common[1], common[2]}
-, 
-[65130106] = {65130106, "ui_story_5065_50651301_6_dialog_content", 65130107, nil, nil, 1, common[28], common[29]}
-, 
-[65130107] = {65130107, "ui_story_5065_50651301_7_dialog_content", 65130108, nil, nil, 1, common[28], common[29]}
-, 
-[65130108] = {65130108, "ui_story_5065_50651301_8_dialog_content", 65130109, nil, nil, 1, common[28], common[29]}
-, 
-[65130109] = {65130109, "ui_story_5065_50651301_9_dialog_content", 65130110, nil, nil, 0, common[1], common[2]}
-, 
-[65130110] = {65130110, "ui_story_5065_50651301_10_dialog_content", 65130111, nil, nil, 1, common[28], common[29]}
-, 
-[65130111] = {65130111, "ui_story_5065_50651301_11_dialog_content", 65130112, nil, nil, 1, common[28], common[29]}
-, 
-[65130112] = {65130112, "ui_story_5065_50651301_12_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65130201] = {65130201, "ui_story_5065_50651302_1_dialog_content", 65130202, nil, nil, 0, common[1], common[2]}
-, 
-[65130202] = {65130202, "ui_story_5065_50651302_2_dialog_content", 65130203, nil, nil, 0, common[1], common[2]}
-, 
-[65130203] = {65130203, "ui_story_5065_50651302_3_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65130301] = {65130301, "ui_story_5065_50651303_1_dialog_content", 65130302, nil, nil, 1, common[22], common[23]}
-, 
-[65130302] = {65130302, "ui_story_5065_50651303_2_dialog_content", 65130303, nil, nil, 0, common[1], common[2]}
-, 
-[65130303] = {65130303, "ui_story_5065_50651303_3_dialog_content", 65130304, nil, nil, 1, common[22], common[23]}
-, 
-[65130304] = {65130304, "ui_story_5065_50651303_4_dialog_content", 65130305, nil, nil, 1, common[22], common[23]}
-, 
-[65130305] = {65130305, "ui_story_5065_50651303_5_dialog_content", 65130306, nil, nil, 0, common[1], common[2]}
-, 
-[65130306] = {65130306, "ui_story_5065_50651303_6_dialog_content", 65130307, nil, nil, 0, common[1], common[2]}
-, 
-[65130307] = {65130307, "ui_story_5065_50651303_7_dialog_content", 65130308, nil, nil, 1, common[22], common[23]}
-, 
-[65130308] = {65130308, "ui_story_5065_50651303_8_dialog_content", 65130309, nil, nil, 1, common[22], common[23]}
-, 
-[65130309] = {65130309, "ui_story_5065_50651303_9_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65130310] = {65130310, "ui_story_5065_50651303_10_dialog_content", 65130311, nil, nil, 1, common[22], common[23]}
-, 
-[65130311] = {65130311, "ui_story_5065_50651303_11_dialog_content", 65130312, nil, nil, 1, common[22], common[23]}
-, 
-[65130312] = {65130312, "ui_story_5065_50651303_12_dialog_content", nil, nil, 1, 1, common[22], common[23]}
-, 
-[65130401] = {65130401, "ui_story_5065_50651304_1_dialog_content", 65130402, nil, nil, 1, common[28], common[29]}
-, 
-[65130402] = {65130402, "ui_story_5065_50651304_2_dialog_content", 65130403, nil, nil, 1, common[28], common[29]}
-, 
-[65130403] = {65130403, "ui_story_5065_50651304_3_dialog_content", 65130404, nil, nil, 1, common[28], common[29]}
-, 
-[65130404] = {65130404, "ui_story_5065_50651304_4_dialog_content", 65130405, nil, nil, 1, common[28], common[29]}
-, 
-[65130405] = {65130405, "ui_story_5065_50651304_5_dialog_content", 65130406, nil, nil, 1, common[28], common[29]}
-, 
-[65130406] = {65130406, "ui_story_5065_50651304_6_dialog_content", nil, nil, 1, 1, common[28], common[29]}
-, 
-[65140101] = {65140101, "ui_story_5065_50651401_1_dialog_content", 65140102, nil, nil, 1, common[28], common[29]}
-, 
-[65140102] = {65140102, "ui_story_5065_50651401_2_dialog_content", 65140103, nil, nil, 0, common[1], common[2]}
-, 
-[65140103] = {65140103, "ui_story_5065_50651401_3_dialog_content", 65140104, nil, nil, 0, common[1], common[2]}
-, 
-[65140104] = {65140104, "ui_story_5065_50651401_4_dialog_content", 65140105, nil, nil, 1, common[28], common[29]}
-, 
-[65140105] = {65140105, "ui_story_5065_50651401_5_dialog_content", 65140106, nil, nil, 1, common[28], common[29]}
-, 
-[65140106] = {65140106, "ui_story_5065_50651401_6_dialog_content", 65140107, nil, nil, 1, common[28], common[29]}
-, 
-[65140107] = {65140107, "ui_story_5065_50651401_7_dialog_content", 65140108, nil, nil, 1, common[28], common[29]}
-, 
-[65140108] = {65140108, "ui_story_5065_50651401_8_dialog_content", 65140109, nil, nil, 1, common[28], common[29]}
-, 
-[65140109] = {65140109, "ui_story_5065_50651401_9_dialog_content", 65140110, nil, nil, 1, common[28], common[29]}
-, 
-[65140110] = {65140110, "ui_story_5065_50651401_10_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65140201] = {65140201, "ui_story_5065_50651402_1_dialog_content", 65140202, nil, nil, 0, common[1], common[2]}
-, 
-[65140202] = {65140202, "ui_story_5065_50651402_2_dialog_content", 65140203, nil, nil, 1, common[30], common[31]}
-, 
-[65140203] = {65140203, "ui_story_5065_50651402_3_dialog_content", 65140204, nil, nil, 0, common[1], common[2]}
-, 
-[65140204] = {65140204, "ui_story_5065_50651402_4_dialog_content", 65140205, nil, nil, 1, common[30], common[31]}
-, 
-[65140205] = {65140205, "ui_story_5065_50651402_5_dialog_content", 65140206, nil, nil, 1, common[30], common[31]}
-, 
-[65140206] = {65140206, "ui_story_5065_50651402_6_dialog_content", 65140207, nil, nil, 1, common[30], common[31]}
-, 
-[65140207] = {65140207, "ui_story_5065_50651402_7_dialog_content", 65140208, nil, nil, 0, common[1], common[2]}
-, 
-[65140208] = {65140208, "ui_story_5065_50651402_8_dialog_content", 65140209, nil, nil, 1, common[30], common[31]}
-, 
-[65140209] = {65140209, "ui_story_5065_50651402_9_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65140301] = {65140301, "ui_story_5065_50651403_1_dialog_content", 65140302, nil, nil, 0, common[1], common[2]}
-, 
-[65140302] = {65140302, "ui_story_5065_50651403_2_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65150101] = {65150101, "ui_story_5065_50651501_1_dialog_content", 65150102, nil, nil, 1, common[7], common[8]}
-, 
-[65150102] = {65150102, "ui_story_5065_50651501_2_dialog_content", 65150103, nil, nil, 1, "ui_story_name_you", "S2_scene_npc_kongyi"}
-, 
-[65150103] = {65150103, "ui_story_5065_50651501_3_dialog_content", 65150104, nil, nil, 0, common[1], common[2]}
-, 
-[65150104] = {65150104, "ui_story_5065_50651501_4_dialog_content", 65150105, nil, nil, 1, common[7], common[8]}
-, 
-[65150105] = {65150105, "ui_story_5065_50651501_5_dialog_content", 65150106, nil, nil, 1, common[7], common[8]}
-, 
-[65150106] = {65150106, "ui_story_5065_50651501_6_dialog_content", 65150107, nil, nil, 1, common[7], common[8]}
-, 
-[65150107] = {65150107, "ui_story_5065_50651501_7_dialog_content", 65150108, nil, nil, 0, common[1], common[2]}
-, 
-[65150108] = {65150108, "ui_story_5065_50651501_8_dialog_content", 65150109, nil, nil, 1, common[7], common[8]}
-, 
-[65150109] = {65150109, "ui_story_5065_50651501_9_dialog_content", 65150110, nil, nil, 0, common[1], common[2]}
-, 
-[65150110] = {65150110, "ui_story_5065_50651501_10_dialog_content", 65150111, nil, nil, 0, common[1], common[2]}
-, 
-[65150111] = {65150111, "ui_story_5065_50651501_11_dialog_content", 65150112, nil, nil, 1, common[7], common[8]}
-, 
-[65150112] = {65150112, "ui_story_5065_50651501_12_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65150201] = {65150201, "ui_story_5065_50651502_1_dialog_content", 65150202, nil, nil, 0, common[1], common[2]}
-, 
-[65150202] = {65150202, "ui_story_5065_50651502_2_dialog_content", 65150203, nil, nil, 0, common[1], common[2]}
-, 
-[65150203] = {65150203, "ui_story_5065_50651502_3_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65150204] = {65150204, "ui_story_5065_50651502_4_dialog_content", 65150205, nil, nil, 0, common[1], common[2]}
-, 
-[65150205] = {65150205, "ui_story_5065_50651502_5_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65150301] = {65150301, "ui_story_5065_50651503_1_dialog_content", 65150302, nil, nil, 0, common[1], common[2]}
-, 
-[65150302] = {65150302, "ui_story_5065_50651503_2_dialog_content", 65150303, nil, nil, 0, common[1], common[2]}
-, 
-[65150303] = {65150303, "ui_story_5065_50651503_3_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65150304] = {65150304, "ui_story_5065_50651503_4_dialog_content", 65150305, nil, nil, 0, common[1], common[2]}
-, 
-[65150305] = {65150305, "ui_story_5065_50651503_5_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65150401] = {65150401, "ui_story_5065_50651504_1_dialog_content", 65150402, nil, nil, 0, common[1], common[2]}
-, 
-[65150402] = {65150402, "ui_story_5065_50651504_2_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65160101] = {65160101, "ui_story_5065_50651601_1_dialog_content", 65160102, nil, nil, 1, common[30], common[31]}
-, 
-[65160102] = {65160102, "ui_story_5065_50651601_2_dialog_content", 65160103, nil, nil, 0, common[1], common[2]}
-, 
-[65160103] = {65160103, "ui_story_5065_50651601_3_dialog_content", 65160104, nil, nil, 1, common[30], common[31]}
-, 
-[65160104] = {65160104, "ui_story_5065_50651601_4_dialog_content", 65160105, nil, nil, 0, common[1], common[2]}
-, 
-[65160105] = {65160105, "ui_story_5065_50651601_5_dialog_content", 65160106, nil, nil, 1, common[30], common[31]}
-, 
-[65160106] = {65160106, "ui_story_5065_50651601_6_dialog_content", 65160107, nil, nil, 1, common[30], common[31]}
-, 
-[65160107] = {65160107, "ui_story_5065_50651601_7_dialog_content", 65160108, nil, nil, 1, common[30], common[31]}
-, 
-[65160108] = {65160108, "ui_story_5065_50651601_8_dialog_content", 65160109, nil, nil, 1, common[30], common[31]}
-, 
-[65160109] = {65160109, "ui_story_5065_50651601_9_dialog_content", 65160110, nil, nil, 1, common[30], common[31]}
-, 
-[65160110] = {65160110, "ui_story_5065_50651601_10_dialog_content", 65160111, nil, nil, 0, common[1], common[2]}
-, 
-[65160111] = {65160111, "ui_story_5065_50651601_11_dialog_content", 65160112, nil, nil, 1, common[30], common[31]}
-, 
-[65160112] = {65160112, "ui_story_5065_50651601_12_dialog_content", 65160113, nil, nil, 0, common[1], common[2]}
-, 
-[65160113] = {65160113, "ui_story_5065_50651601_13_dialog_content", 65160114, nil, nil, 1, common[30], common[31]}
-, 
-[65160114] = {65160114, "ui_story_5065_50651601_14_dialog_content", 65160115, nil, nil, 1, common[30], common[31]}
-, 
-[65160115] = {65160115, "ui_story_5065_50651601_15_dialog_content", 65160116, nil, nil, 0, common[1], common[2]}
-, 
-[65160116] = {65160116, "ui_story_5065_50651601_16_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65160201] = {65160201, "ui_story_5065_50651602_1_dialog_content", 65160202, nil, nil, 1, common[12], common[13]}
-, 
-[65160202] = {65160202, "ui_story_5065_50651602_2_dialog_content", 65160203, nil, nil, 0, common[1], common[2]}
-, 
-[65160203] = {65160203, "ui_story_5065_50651602_3_dialog_content", 65160204, nil, nil, 1, common[12], common[13]}
-, 
-[65160204] = {65160204, "ui_story_5065_50651602_4_dialog_content", 65160205, nil, nil, 0, common[1], common[2]}
-, 
-[65160205] = {65160205, "ui_story_5065_50651602_5_dialog_content", nil, nil, 1, 0, common[1], common[2]}
-, 
-[65170101] = {65170101, "ui_story_5067_50670301_1_dialog_content", 65170102, nil, nil, 1, common[32], common[33]}
-, 
-[65170102] = {65170102, "ui_story_5067_50670301_2_dialog_content", 65170103, nil, nil, 1, common[32], common[33]}
-, 
-[65170103] = {65170103, "ui_story_5067_50670301_3_dialog_content", 65170104, nil, nil, nil, common[34], common[35]}
-, 
-[65170104] = {65170104, "ui_story_5067_50670301_4_dialog_content", 65170105, nil, nil, nil, common[34], common[35]}
-, 
-[65170105] = {65170105, "ui_story_5067_50670301_5_dialog_content", 65170106, nil, nil, 1, common[32], common[33]}
-, 
-[65170106] = {65170106, "ui_story_5067_50670301_6_dialog_content", 65170107, nil, nil, 1, common[32], common[33]}
-, 
-[65170107] = {65170107, "ui_story_5067_50670301_7_dialog_content", 65170108, nil, nil, nil, common[34], common[35]}
-, 
-[65170108] = {65170108, "ui_story_5067_50670301_8_dialog_content", 65170109, nil, nil, 1, common[32], common[33]}
-, 
-[65170109] = {65170109, "ui_story_5067_50670301_9_dialog_content", 65170110, nil, nil, 1, common[32], common[33]}
-, 
-[65170110] = {65170110, "ui_story_5067_50670301_10_dialog_content", 65170111, nil, nil, 1, common[32], common[33]}
-, 
-[65170111] = {65170111, "ui_story_5067_50670301_11_dialog_content", 65170112, nil, nil, nil, common[34], common[35]}
-, 
-[65170112] = {65170112, "ui_story_5067_50670301_12_dialog_content", 65170113, nil, nil, 1, common[32], common[33]}
-, 
-[65170113] = {65170113, "ui_story_5067_50670301_13_dialog_content", 65170114, nil, nil, 1, common[32], common[33]}
-, 
-[65170114] = {65170114, "ui_story_5067_50670301_14_dialog_content", 65170115, nil, nil, nil, common[34], common[35]}
-, 
-[65170115] = {65170115, "ui_story_5067_50670301_15_dialog_content", 65170116, nil, nil, 1, common[32], common[33]}
-, 
-[65170116] = {65170116, "ui_story_5067_50670301_16_dialog_content", 65170117, nil, nil, nil, common[34], common[35]}
-, 
-[65170117] = {65170117, "ui_story_5067_50670301_17_dialog_content", 65170118, nil, nil, 1, common[32], common[33]}
-, 
-[65170118] = {65170118, "ui_story_5067_50670301_18_dialog_content", 65170119, nil, nil, 1, common[32], common[33]}
-, 
-[65170119] = {65170119, "ui_story_5067_50670301_19_dialog_content", 65170120, nil, nil, nil, common[34], common[35]}
-, 
-[65170120] = {65170120, "ui_story_5067_50670301_20_dialog_content", 65170121, nil, nil, nil, common[34], common[35]}
-, 
-[65170121] = {65170121, "ui_story_5067_50670301_21_dialog_content", 65170122, nil, nil, nil, common[34], common[35]}
-, 
-[65170122] = {65170122, "ui_story_5067_50670301_22_dialog_content", 65170123, nil, nil, nil, common[34], common[35]}
-, 
-[65170123] = {65170123, "ui_story_5067_50670301_23_dialog_content", 65170124, nil, nil, nil, common[34], common[35]}
-, 
-[65170124] = {65170124, "ui_story_5067_50670301_24_dialog_content", 65170125, nil, nil, 1, common[32], common[33]}
-, 
-[65170125] = {65170125, "ui_story_5067_50670301_25_dialog_content", 65170126, nil, nil, nil, common[34], common[35]}
-, 
-[65170126] = {65170126, "ui_story_5067_50670301_26_dialog_content", 65170127, nil, nil, nil, common[34], common[35]}
-, 
-[65170127] = {65170127, "ui_story_5067_50670301_27_dialog_content", 65170128, nil, nil, 1, common[32], common[33]}
-, 
-[65170128] = {65170128, "ui_story_5067_50670301_28_dialog_content", 65170129, nil, nil, 1, common[32], common[33]}
-, 
-[65170129] = {65170129, "ui_story_5067_50670301_29_dialog_content", 65170130, nil, nil, 1, common[32], common[33]}
-, 
-[65170130] = {65170130, "ui_story_5067_50670301_30_dialog_content", 65170131, nil, nil, 1, common[32], common[33]}
-, 
-[65170131] = {65170131, "ui_story_5067_50670301_31_dialog_content", 65170132, nil, nil, nil, common[34], common[35]}
-, 
-[65170132] = {65170132, "ui_story_5067_50670301_32_dialog_content", 65170133, nil, nil, nil, common[34], common[35]}
-, 
-[65170133] = {65170133, "ui_story_5067_50670301_33_dialog_content", 65170134, nil, nil, 1, "ui_story_name_andonga", common[36]}
-, 
-[65170134] = {65170134, "ui_story_5067_50670301_34_dialog_content", 65170135, nil, nil, 1, "ui_story_name_andongb", common[36]}
-, 
-[65170135] = {65170135, "ui_story_5067_50670301_35_dialog_content", 65170136, nil, nil, 1, "ui_story_name_andongc", common[36]}
-, 
-[65170136] = {65170136, "ui_story_5067_50670301_36_dialog_content", nil, nil, 1, nil, common[34], common[35]}
-, 
-[65180101] = {65180101, "ui_story_5072_50721701_1_dialog_content", 65180102, nil, nil, 1, common[37], common[38]}
-, 
-[65180102] = {65180102, "ui_story_5072_50721701_2_dialog_content", nil, nil, 1, nil, common[39], common[40]}
-, 
-[65180201] = {65180201, "ui_story_5072_50721702_1_dialog_content", 65180202, nil, nil, 1, common[37], common[38]}
-, 
-[65180202] = {65180202, "ui_story_5072_50721702_2_dialog_content", 65180203, nil, nil, nil, common[39], common[40]}
-, 
-[65180203] = {65180203, "ui_story_5072_50721702_3_dialog_content", nil, nil, 1, 1, common[37], common[38]}
+  [65010301] = {
+    65010301,
+    "ui_story_5065_50650103_1_dialog_content",
+    65010302,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010302] = {
+    65010302,
+    "ui_story_5065_50650103_2_dialog_content",
+    65010303,
+    nil,
+    nil,
+    1,
+    common[3],
+    common[4]
+  },
+  [65010303] = {
+    65010303,
+    "ui_story_5065_50650103_3_dialog_content",
+    65010304,
+    nil,
+    nil,
+    1,
+    common[3],
+    common[4]
+  },
+  [65010304] = {
+    65010304,
+    "ui_story_5065_50650103_4_dialog_content",
+    65010305,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010305] = {
+    65010305,
+    "ui_story_5065_50650103_5_dialog_content",
+    65010306,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010306] = {
+    65010306,
+    "ui_story_5065_50650103_6_dialog_content",
+    65010307,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010307] = {
+    65010307,
+    "ui_story_5065_50650103_7_dialog_content",
+    65010308,
+    nil,
+    nil,
+    1,
+    common[3],
+    common[4]
+  },
+  [65010308] = {
+    65010308,
+    "ui_story_5065_50650103_8_dialog_content",
+    65010309,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010309] = {
+    65010309,
+    "ui_story_5065_50650103_9_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010401] = {
+    65010401,
+    "ui_story_5065_50650104_1_dialog_content",
+    65010402,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010402] = {
+    65010402,
+    "ui_story_5065_50650104_2_dialog_content",
+    65010403,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010403] = {
+    65010403,
+    "ui_story_5065_50650104_3_dialog_content",
+    65010404,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010404] = {
+    65010404,
+    "ui_story_5065_50650104_4_dialog_content",
+    65010405,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010405] = {
+    65010405,
+    "ui_story_5065_50650104_5_dialog_content",
+    65010406,
+    nil,
+    nil,
+    1,
+    "ui_story_name_jiadaoqiefan",
+    common[4]
+  },
+  [65010406] = {
+    65010406,
+    "ui_story_5065_50650104_6_dialog_content",
+    65010407,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010407] = {
+    65010407,
+    "ui_story_5065_50650104_7_dialog_content",
+    65010408,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010408] = {
+    65010408,
+    "ui_story_5065_50650104_8_dialog_content",
+    65010409,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010409] = {
+    65010409,
+    "ui_story_5065_50650104_9_dialog_content",
+    65010410,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010410] = {
+    65010410,
+    "ui_story_5065_50650104_10_dialog_content",
+    65010411,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010411] = {
+    65010411,
+    "ui_story_5065_50650104_11_dialog_content",
+    65010412,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010412] = {
+    65010412,
+    "ui_story_5065_50650104_12_dialog_content",
+    65010413,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010413] = {
+    65010413,
+    "ui_story_5065_50650104_13_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010414] = {
+    65010414,
+    "ui_story_5065_50650104_14_dialog_content",
+    65010415,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010415] = {
+    65010415,
+    "ui_story_5065_50650104_15_dialog_content",
+    65010416,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65010416] = {
+    65010416,
+    "ui_story_5065_50650104_16_dialog_content",
+    65010417,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65010417] = {
+    65010417,
+    "ui_story_5065_50650104_17_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020101] = {
+    65020101,
+    "ui_story_5065_50650201_1_dialog_content",
+    65020102,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020102] = {
+    65020102,
+    "ui_story_5065_50650201_2_dialog_content",
+    65020103,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020103] = {
+    65020103,
+    "ui_story_5065_50650201_3_dialog_content",
+    65020104,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020104] = {
+    65020104,
+    "ui_story_5065_50650201_4_dialog_content",
+    65020105,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020105] = {
+    65020105,
+    "ui_story_5065_50650201_5_dialog_content",
+    65020106,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020106] = {
+    65020106,
+    "ui_story_5065_50650201_6_dialog_content",
+    65020107,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020107] = {
+    65020107,
+    "ui_story_5065_50650201_7_dialog_content",
+    65020108,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020108] = {
+    65020108,
+    "ui_story_5065_50650201_8_dialog_content",
+    65020109,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020109] = {
+    65020109,
+    "ui_story_5065_50650201_9_dialog_content",
+    65020110,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020110] = {
+    65020110,
+    "ui_story_5065_50650201_10_dialog_content",
+    65020111,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020111] = {
+    65020111,
+    "ui_story_5065_50650201_11_dialog_content",
+    65020112,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020112] = {
+    65020112,
+    "ui_story_5065_50650201_12_dialog_content",
+    65020113,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020113] = {
+    65020113,
+    "ui_story_5065_50650201_13_dialog_content",
+    65020114,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020114] = {
+    65020114,
+    "ui_story_5065_50650201_14_dialog_content",
+    65020115,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020115] = {
+    65020115,
+    "ui_story_5065_50650201_15_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020201] = {
+    65020201,
+    "ui_story_5065_50650202_1_dialog_content",
+    65020202,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020202] = {
+    65020202,
+    "ui_story_5065_50650202_2_dialog_content",
+    65020203,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020203] = {
+    65020203,
+    "ui_story_5065_50650202_3_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020301] = {
+    65020301,
+    "ui_story_5065_50650203_1_dialog_content",
+    65020302,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020302] = {
+    65020302,
+    "ui_story_5065_50650203_2_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020401] = {
+    65020401,
+    "ui_story_5065_50650204_1_dialog_content",
+    65020402,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020402] = {
+    65020402,
+    "ui_story_5065_50650204_2_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020501] = {
+    65020501,
+    "ui_story_5065_50650205_1_dialog_content",
+    65020502,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020502] = {
+    65020502,
+    "ui_story_5065_50650205_2_dialog_content",
+    65020503,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020503] = {
+    65020503,
+    "ui_story_5065_50650205_3_dialog_content",
+    65020504,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020504] = {
+    65020504,
+    "ui_story_5065_50650205_4_dialog_content",
+    65020505,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020505] = {
+    65020505,
+    "ui_story_5065_50650205_5_dialog_content",
+    65020506,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020506] = {
+    65020506,
+    "ui_story_5065_50650205_6_dialog_content",
+    65020507,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020507] = {
+    65020507,
+    "ui_story_5065_50650205_7_dialog_content",
+    65020508,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65020508] = {
+    65020508,
+    "ui_story_5065_50650205_8_dialog_content",
+    65020509,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020509] = {
+    65020509,
+    "ui_story_5065_50650205_9_dialog_content",
+    65020510,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020510] = {
+    65020510,
+    "ui_story_5065_50650205_10_dialog_content",
+    65020511,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020511] = {
+    65020511,
+    "ui_story_5065_50650205_11_dialog_content",
+    65020512,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65020512] = {
+    65020512,
+    "ui_story_5065_50650205_12_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030101] = {
+    65030101,
+    "ui_story_5065_50650301_1_dialog_content",
+    65030102,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030102] = {
+    65030102,
+    "ui_story_5065_50650301_2_dialog_content",
+    65030103,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030103] = {
+    65030103,
+    "ui_story_5065_50650301_3_dialog_content",
+    65030104,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030104] = {
+    65030104,
+    "ui_story_5065_50650301_4_dialog_content",
+    65030105,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030105] = {
+    65030105,
+    "ui_story_5065_50650301_5_dialog_content",
+    65030106,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030106] = {
+    65030106,
+    "ui_story_5065_50650301_6_dialog_content",
+    65030107,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030107] = {
+    65030107,
+    "ui_story_5065_50650301_7_dialog_content",
+    65030108,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030108] = {
+    65030108,
+    "ui_story_5065_50650301_8_dialog_content",
+    65030109,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030109] = {
+    65030109,
+    "ui_story_5065_50650301_9_dialog_content",
+    65030110,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030110] = {
+    65030110,
+    "ui_story_5065_50650301_10_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030201] = {
+    65030201,
+    "ui_story_5065_50650302_1_dialog_content",
+    65030202,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030202] = {
+    65030202,
+    "ui_story_5065_50650302_2_dialog_content",
+    65030203,
+    nil,
+    nil,
+    1,
+    common[3],
+    common[4]
+  },
+  [65030203] = {
+    65030203,
+    "ui_story_5065_50650302_3_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030301] = {
+    65030301,
+    "ui_story_5065_50650303_1_dialog_content",
+    65030302,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030302] = {
+    65030302,
+    "ui_story_5065_50650303_2_dialog_content",
+    65030303,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030303] = {
+    65030303,
+    "ui_story_5065_50650303_3_dialog_content",
+    65030304,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030304] = {
+    65030304,
+    "ui_story_5065_50650303_4_dialog_content",
+    65030305,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030305] = {
+    65030305,
+    "ui_story_5065_50650303_5_dialog_content",
+    65030306,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030306] = {
+    65030306,
+    "ui_story_5065_50650303_6_dialog_content",
+    65030307,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030307] = {
+    65030307,
+    "ui_story_5065_50650303_7_dialog_content",
+    65030308,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030308] = {
+    65030308,
+    "ui_story_5065_50650303_8_dialog_content",
+    65030309,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65030309] = {
+    65030309,
+    "ui_story_5065_50650303_9_dialog_content",
+    65030310,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030310] = {
+    65030310,
+    "ui_story_5065_50650303_10_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030401] = {
+    65030401,
+    "ui_story_5065_50650304_1_dialog_content",
+    65030402,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030402] = {
+    65030402,
+    "ui_story_5065_50650304_2_dialog_content",
+    65030403,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65030403] = {
+    65030403,
+    "ui_story_5065_50650304_3_dialog_content",
+    65030404,
+    nil,
+    nil,
+    1,
+    common[3],
+    common[4]
+  },
+  [65030404] = {
+    65030404,
+    "ui_story_5065_50650304_4_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040101] = {
+    65040101,
+    "ui_story_5065_50650401_1_dialog_content",
+    65040102,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040102] = {
+    65040102,
+    "ui_story_5065_50650401_2_dialog_content",
+    65040103,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65040103] = {
+    65040103,
+    "ui_story_5065_50650401_3_dialog_content",
+    65040104,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65040104] = {
+    65040104,
+    "ui_story_5065_50650401_4_dialog_content",
+    65040105,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65040105] = {
+    65040105,
+    "ui_story_5065_50650401_5_dialog_content",
+    65040106,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040106] = {
+    65040106,
+    "ui_story_5065_50650401_6_dialog_content",
+    65040107,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65040107] = {
+    65040107,
+    "ui_story_5065_50650401_7_dialog_content",
+    65040108,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65040108] = {
+    65040108,
+    "ui_story_5065_50650401_8_dialog_content",
+    65040109,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040109] = {
+    65040109,
+    "ui_story_5065_50650401_9_dialog_content",
+    65040110,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040110] = {
+    65040110,
+    "ui_story_5065_50650401_10_dialog_content",
+    65040111,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65040111] = {
+    65040111,
+    "ui_story_5065_50650401_11_dialog_content",
+    65040112,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65040112] = {
+    65040112,
+    "ui_story_5065_50650401_12_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040301] = {
+    65040301,
+    "ui_story_5065_50650403_1_dialog_content",
+    65040302,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65040302] = {
+    65040302,
+    "ui_story_5065_50650403_2_dialog_content",
+    65040303,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040303] = {
+    65040303,
+    "ui_story_5065_50650403_3_dialog_content",
+    65040304,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040304] = {
+    65040304,
+    "ui_story_5065_50650403_4_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[7],
+    common[8]
+  },
+  [65040401] = {
+    65040401,
+    "ui_story_5065_50650404_1_dialog_content",
+    65040402,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040402] = {
+    65040402,
+    "ui_story_5065_50650404_2_dialog_content",
+    65040403,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65040403] = {
+    65040403,
+    "ui_story_5065_50650404_3_dialog_content",
+    65040404,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040404] = {
+    65040404,
+    "ui_story_5065_50650404_4_dialog_content",
+    65040405,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65040405] = {
+    65040405,
+    "ui_story_5065_50650404_5_dialog_content",
+    65040406,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040406] = {
+    65040406,
+    "ui_story_5065_50650404_6_dialog_content",
+    65040407,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040407] = {
+    65040407,
+    "ui_story_5065_50650404_7_dialog_content",
+    65040408,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65040408] = {
+    65040408,
+    "ui_story_5065_50650404_8_dialog_content",
+    65040409,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65040409] = {
+    65040409,
+    "ui_story_5065_50650404_9_dialog_content",
+    65040410,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040410] = {
+    65040410,
+    "ui_story_5065_50650404_10_dialog_content",
+    65040411,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040411] = {
+    65040411,
+    "ui_story_5065_50650404_11_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[7],
+    common[8]
+  },
+  [65040601] = {
+    65040601,
+    "ui_story_5065_50650406_1_dialog_content",
+    65040602,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040602] = {
+    65040602,
+    "ui_story_5065_50650406_2_dialog_content",
+    65040603,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65040603] = {
+    65040603,
+    "ui_story_5065_50650406_3_dialog_content",
+    65040604,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65040604] = {
+    65040604,
+    "ui_story_5065_50650406_4_dialog_content",
+    65040605,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65040605] = {
+    65040605,
+    "ui_story_5065_50650406_5_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65050301] = {
+    65050301,
+    "ui_story_5065_50650503_1_dialog_content",
+    65050302,
+    nil,
+    nil,
+    1,
+    common[9],
+    common[6]
+  },
+  [65050302] = {
+    65050302,
+    "ui_story_5065_50650503_2_dialog_content",
+    65050303,
+    nil,
+    nil,
+    1,
+    "ui_story_name_jiabycweibing",
+    "S2_scene_npc_weibing"
+  },
+  [65050303] = {
+    65050303,
+    "ui_story_5065_50650503_3_dialog_content",
+    65050304,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65050304] = {
+    65050304,
+    "ui_story_5065_50650503_4_dialog_content",
+    65050305,
+    nil,
+    nil,
+    1,
+    common[9],
+    common[6]
+  },
+  [65050305] = {
+    65050305,
+    "ui_story_5065_50650503_5_dialog_content",
+    65050306,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65050306] = {
+    65050306,
+    "ui_story_5065_50650503_6_dialog_content",
+    65050307,
+    nil,
+    nil,
+    1,
+    common[9],
+    common[6]
+  },
+  [65050307] = {
+    65050307,
+    "ui_story_5065_50650503_7_dialog_content",
+    65050308,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65050308] = {
+    65050308,
+    "ui_story_5065_50650503_8_dialog_content",
+    65050309,
+    nil,
+    nil,
+    1,
+    common[9],
+    common[6]
+  },
+  [65050309] = {
+    65050309,
+    "ui_story_5065_50650503_9_dialog_content",
+    65050310,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65050310] = {
+    65050310,
+    "ui_story_5065_50650503_10_dialog_content",
+    65050311,
+    nil,
+    nil,
+    1,
+    common[9],
+    common[6]
+  },
+  [65050311] = {
+    65050311,
+    "ui_story_5065_50650503_11_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[5],
+    common[6]
+  },
+  [65050312] = {
+    65050312,
+    "ui_story_5065_50650503_12_dialog_content",
+    65050313,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65050313] = {
+    65050313,
+    "ui_story_5065_50650503_13_dialog_content",
+    65050314,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65050314] = {
+    65050314,
+    "ui_story_5065_50650503_14_dialog_content",
+    65050315,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65050315] = {
+    65050315,
+    "ui_story_5065_50650503_15_dialog_content",
+    65050316,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65050316] = {
+    65050316,
+    "ui_story_5065_50650503_16_dialog_content",
+    65050317,
+    nil,
+    nil,
+    1,
+    common[5],
+    common[6]
+  },
+  [65050317] = {
+    65050317,
+    "ui_story_5065_50650503_17_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65060201] = {
+    65060201,
+    "ui_story_5065_50650602_1_dialog_content",
+    65060202,
+    nil,
+    nil,
+    1,
+    common[10],
+    common[11]
+  },
+  [65060202] = {
+    65060202,
+    "ui_story_5065_50650602_2_dialog_content",
+    65060203,
+    nil,
+    nil,
+    1,
+    common[10],
+    common[11]
+  },
+  [65060203] = {
+    65060203,
+    "ui_story_5065_50650602_3_dialog_content",
+    65060204,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65060204] = {
+    65060204,
+    "ui_story_5065_50650602_4_dialog_content",
+    65060205,
+    nil,
+    nil,
+    1,
+    common[10],
+    common[11]
+  },
+  [65060205] = {
+    65060205,
+    "ui_story_5065_50650602_5_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65060301] = {
+    65060301,
+    "ui_story_5065_50650603_1_dialog_content",
+    65060302,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65060302] = {
+    65060302,
+    "ui_story_5065_50650603_2_dialog_content",
+    65060303,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65060303] = {
+    65060303,
+    "ui_story_5065_50650603_3_dialog_content",
+    65060304,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65060304] = {
+    65060304,
+    "ui_story_5065_50650603_4_dialog_content",
+    65060305,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65060305] = {
+    65060305,
+    "ui_story_5065_50650603_5_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[12],
+    common[13]
+  },
+  [65060401] = {
+    65060401,
+    "ui_story_5065_50650604_1_dialog_content",
+    65060402,
+    nil,
+    nil,
+    1,
+    common[14],
+    common[15]
+  },
+  [65060402] = {
+    65060402,
+    "ui_story_5065_50650604_2_dialog_content",
+    65060403,
+    nil,
+    nil,
+    1,
+    common[14],
+    common[15]
+  },
+  [65060403] = {
+    65060403,
+    "ui_story_5065_50650604_3_dialog_content",
+    65060404,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65060404] = {
+    65060404,
+    "ui_story_5065_50650604_4_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070101] = {
+    65070101,
+    "ui_story_5065_50650701_1_dialog_content",
+    65070102,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65070102] = {
+    65070102,
+    "ui_story_5065_50650701_2_dialog_content",
+    65070103,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65070103] = {
+    65070103,
+    "ui_story_5065_50650701_3_dialog_content",
+    65070104,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070104] = {
+    65070104,
+    "ui_story_5065_50650701_4_dialog_content",
+    65070105,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65070105] = {
+    65070105,
+    "ui_story_5065_50650701_5_dialog_content",
+    65070106,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65070106] = {
+    65070106,
+    "ui_story_5065_50650701_6_dialog_content",
+    65070107,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070107] = {
+    65070107,
+    "ui_story_5065_50650701_7_dialog_content",
+    65070108,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65070108] = {
+    65070108,
+    "ui_story_5065_50650701_8_dialog_content",
+    65070109,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070109] = {
+    65070109,
+    "ui_story_5065_50650701_9_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[12],
+    common[13]
+  },
+  [65070201] = {
+    65070201,
+    "ui_story_5065_50650702_1_dialog_content",
+    65070202,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65070202] = {
+    65070202,
+    "ui_story_5065_50650702_2_dialog_content",
+    65070203,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070203] = {
+    65070203,
+    "ui_story_5065_50650702_3_dialog_content",
+    65070204,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65070204] = {
+    65070204,
+    "ui_story_5065_50650702_4_dialog_content",
+    65070205,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070205] = {
+    65070205,
+    "ui_story_5065_50650702_5_dialog_content",
+    65070206,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070206] = {
+    65070206,
+    "ui_story_5065_50650702_6_dialog_content",
+    65070207,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65070207] = {
+    65070207,
+    "ui_story_5065_50650702_7_dialog_content",
+    65070208,
+    nil,
+    nil,
+    1,
+    common[16],
+    common[17]
+  },
+  [65070208] = {
+    65070208,
+    "ui_story_5065_50650702_8_dialog_content",
+    65070209,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070209] = {
+    65070209,
+    "ui_story_5065_50650702_9_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[16],
+    common[17]
+  },
+  [65070210] = {
+    65070210,
+    "ui_story_5065_50650702_10_dialog_content",
+    65070211,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070211] = {
+    65070211,
+    "ui_story_5065_50650702_11_dialog_content",
+    65070212,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65070212] = {
+    65070212,
+    "ui_story_5065_50650702_12_dialog_content",
+    65070213,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070213] = {
+    65070213,
+    "ui_story_5065_50650702_13_dialog_content",
+    65070214,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65070214] = {
+    65070214,
+    "ui_story_5065_50650702_14_dialog_content",
+    65070215,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070215] = {
+    65070215,
+    "ui_story_5065_50650702_15_dialog_content",
+    65070216,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070216] = {
+    65070216,
+    "ui_story_5065_50650702_16_dialog_content",
+    65070217,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65070217] = {
+    65070217,
+    "ui_story_5065_50650702_17_dialog_content",
+    65070218,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070218] = {
+    65070218,
+    "ui_story_5065_50650702_18_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[7],
+    common[8]
+  },
+  [65070301] = {
+    65070301,
+    "ui_story_5065_50650703_1_dialog_content",
+    65070302,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070302] = {
+    65070302,
+    "ui_story_5065_50650703_2_dialog_content",
+    65070303,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65070303] = {
+    65070303,
+    "ui_story_5065_50650703_3_dialog_content",
+    65070304,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070304] = {
+    65070304,
+    "ui_story_5065_50650703_4_dialog_content",
+    65070305,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65070305] = {
+    65070305,
+    "ui_story_5065_50650703_5_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080101] = {
+    65080101,
+    "ui_story_5065_50650801_1_dialog_content",
+    65080102,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080102] = {
+    65080102,
+    "ui_story_5065_50650801_2_dialog_content",
+    65080103,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65080103] = {
+    65080103,
+    "ui_story_5065_50650801_3_dialog_content",
+    65080104,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080104] = {
+    65080104,
+    "ui_story_5065_50650801_4_dialog_content",
+    65080105,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65080105] = {
+    65080105,
+    "ui_story_5065_50650801_5_dialog_content",
+    65080106,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65080106] = {
+    65080106,
+    "ui_story_5065_50650801_6_dialog_content",
+    65080107,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080107] = {
+    65080107,
+    "ui_story_5065_50650801_7_dialog_content",
+    65080108,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65080108] = {
+    65080108,
+    "ui_story_5065_50650801_8_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080201] = {
+    65080201,
+    "ui_story_5065_50650802_1_dialog_content",
+    65080202,
+    nil,
+    nil,
+    1,
+    common[18],
+    common[19]
+  },
+  [65080202] = {
+    65080202,
+    "ui_story_5065_50650802_2_dialog_content",
+    65080203,
+    nil,
+    nil,
+    1,
+    common[18],
+    common[19]
+  },
+  [65080203] = {
+    65080203,
+    "ui_story_5065_50650802_3_dialog_content",
+    65080204,
+    nil,
+    nil,
+    1,
+    common[18],
+    common[19]
+  },
+  [65080204] = {
+    65080204,
+    "ui_story_5065_50650802_4_dialog_content",
+    65080205,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080205] = {
+    65080205,
+    "ui_story_5065_50650802_5_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080301] = {
+    65080301,
+    "ui_story_5065_50650803_1_dialog_content",
+    65080302,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65080302] = {
+    65080302,
+    "ui_story_5065_50650803_2_dialog_content",
+    65080303,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65080303] = {
+    65080303,
+    "ui_story_5065_50650803_3_dialog_content",
+    65080304,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65080304] = {
+    65080304,
+    "ui_story_5065_50650803_4_dialog_content",
+    65080305,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65080305] = {
+    65080305,
+    "ui_story_5065_50650803_5_dialog_content",
+    65080306,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65080306] = {
+    65080306,
+    "ui_story_5065_50650803_6_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080401] = {
+    65080401,
+    "ui_story_5065_50650804_1_dialog_content",
+    65080402,
+    nil,
+    nil,
+    1,
+    common[20],
+    common[21]
+  },
+  [65080402] = {
+    65080402,
+    "ui_story_5065_50650804_2_dialog_content",
+    65080403,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080403] = {
+    65080403,
+    "ui_story_5065_50650804_3_dialog_content",
+    65080404,
+    nil,
+    nil,
+    1,
+    common[20],
+    common[21]
+  },
+  [65080404] = {
+    65080404,
+    "ui_story_5065_50650804_4_dialog_content",
+    65080405,
+    nil,
+    nil,
+    1,
+    common[20],
+    common[21]
+  },
+  [65080405] = {
+    65080405,
+    "ui_story_5065_50650804_5_dialog_content",
+    65080406,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080406] = {
+    65080406,
+    "ui_story_5065_50650804_6_dialog_content",
+    65080407,
+    nil,
+    nil,
+    1,
+    common[20],
+    common[21]
+  },
+  [65080407] = {
+    65080407,
+    "ui_story_5065_50650804_7_dialog_content",
+    65080408,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65080408] = {
+    65080408,
+    "ui_story_5065_50650804_8_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090101] = {
+    65090101,
+    "ui_story_5065_50650901_1_dialog_content",
+    65090102,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65090102] = {
+    65090102,
+    "ui_story_5065_50650901_2_dialog_content",
+    65090103,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090103] = {
+    65090103,
+    "ui_story_5065_50650901_3_dialog_content",
+    65090104,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65090104] = {
+    65090104,
+    "ui_story_5065_50650901_4_dialog_content",
+    65090105,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090105] = {
+    65090105,
+    "ui_story_5065_50650901_5_dialog_content",
+    65090106,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65090106] = {
+    65090106,
+    "ui_story_5065_50650901_6_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090301] = {
+    65090301,
+    "ui_story_5065_50650903_1_dialog_content",
+    65090302,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090302] = {
+    65090302,
+    "ui_story_5065_50650903_2_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090303] = {
+    65090303,
+    "ui_story_5065_50650903_3_dialog_content",
+    65090304,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090304] = {
+    65090304,
+    "ui_story_5065_50650903_4_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090401] = {
+    65090401,
+    "ui_story_5065_50650904_1_dialog_content",
+    65090402,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090402] = {
+    65090402,
+    "ui_story_5065_50650904_2_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090501] = {
+    65090501,
+    "ui_story_5065_50650905_1_dialog_content",
+    65090502,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090502] = {
+    65090502,
+    "ui_story_5065_50650905_2_dialog_content",
+    65090503,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090503] = {
+    65090503,
+    "ui_story_5065_50650905_3_dialog_content",
+    65090504,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090504] = {
+    65090504,
+    "ui_story_5065_50650905_4_dialog_content",
+    65090505,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090505] = {
+    65090505,
+    "ui_story_5065_50650905_5_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090601] = {
+    65090601,
+    "ui_story_5065_50650906_1_dialog_content",
+    65090602,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65090602] = {
+    65090602,
+    "ui_story_5065_50650906_2_dialog_content",
+    65090603,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65090603] = {
+    65090603,
+    "ui_story_5065_50650906_3_dialog_content",
+    65090604,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65090604] = {
+    65090604,
+    "ui_story_5065_50650906_4_dialog_content",
+    65090605,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65090605] = {
+    65090605,
+    "ui_story_5065_50650906_5_dialog_content",
+    65090606,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65090606] = {
+    65090606,
+    "ui_story_5065_50650906_6_dialog_content",
+    65090607,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65090607] = {
+    65090607,
+    "ui_story_5065_50650906_7_dialog_content",
+    65090608,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65090608] = {
+    65090608,
+    "ui_story_5065_50650906_8_dialog_content",
+    65090609,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65090609] = {
+    65090609,
+    "ui_story_5065_50650906_9_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65100101] = {
+    65100101,
+    "ui_story_5065_50651001_1_dialog_content",
+    65100102,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65100102] = {
+    65100102,
+    "ui_story_5065_50651001_2_dialog_content",
+    65100103,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65100103] = {
+    65100103,
+    "ui_story_5065_50651001_3_dialog_content",
+    65100104,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65100104] = {
+    65100104,
+    "ui_story_5065_50651001_4_dialog_content",
+    65100105,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65100105] = {
+    65100105,
+    "ui_story_5065_50651001_5_dialog_content",
+    65100106,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65100106] = {
+    65100106,
+    "ui_story_5065_50651001_6_dialog_content",
+    65100107,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65100107] = {
+    65100107,
+    "ui_story_5065_50651001_7_dialog_content",
+    65100108,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65100108] = {
+    65100108,
+    "ui_story_5065_50651001_8_dialog_content",
+    65100109,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65100109] = {
+    65100109,
+    "ui_story_5065_50651001_9_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65100301] = {
+    65100301,
+    "ui_story_5065_50651003_1_dialog_content",
+    65100302,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65100302] = {
+    65100302,
+    "ui_story_5065_50651003_2_dialog_content",
+    65100303,
+    nil,
+    nil,
+    1,
+    common[24],
+    common[25]
+  },
+  [65100303] = {
+    65100303,
+    "ui_story_5065_50651003_3_dialog_content",
+    65100304,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65100304] = {
+    65100304,
+    "ui_story_5065_50651003_4_dialog_content",
+    65100305,
+    nil,
+    nil,
+    1,
+    common[24],
+    common[25]
+  },
+  [65100305] = {
+    65100305,
+    "ui_story_5065_50651003_5_dialog_content",
+    65100306,
+    nil,
+    nil,
+    1,
+    common[24],
+    common[25]
+  },
+  [65100306] = {
+    65100306,
+    "ui_story_5065_50651003_6_dialog_content",
+    65100307,
+    nil,
+    nil,
+    1,
+    common[24],
+    common[25]
+  },
+  [65100307] = {
+    65100307,
+    "ui_story_5065_50651003_7_dialog_content",
+    65100308,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65100308] = {
+    65100308,
+    "ui_story_5065_50651003_8_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65110201] = {
+    65110201,
+    "ui_story_5065_50651102_1_dialog_content",
+    65110202,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65110202] = {
+    65110202,
+    "ui_story_5065_50651102_2_dialog_content",
+    65110203,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65110203] = {
+    65110203,
+    "ui_story_5065_50651102_3_dialog_content",
+    65110204,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65110204] = {
+    65110204,
+    "ui_story_5065_50651102_4_dialog_content",
+    65110205,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65110205] = {
+    65110205,
+    "ui_story_5065_50651102_5_dialog_content",
+    65110206,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65110206] = {
+    65110206,
+    "ui_story_5065_50651102_6_dialog_content",
+    65110207,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65110207] = {
+    65110207,
+    "ui_story_5065_50651102_7_dialog_content",
+    65110208,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65110208] = {
+    65110208,
+    "ui_story_5065_50651102_8_dialog_content",
+    65110209,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65110209] = {
+    65110209,
+    "ui_story_5065_50651102_9_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65120101] = {
+    65120101,
+    "ui_story_5065_50651201_1_dialog_content",
+    65120102,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65120102] = {
+    65120102,
+    "ui_story_5065_50651201_2_dialog_content",
+    65120103,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65120103] = {
+    65120103,
+    "ui_story_5065_50651201_3_dialog_content",
+    65120104,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65120104] = {
+    65120104,
+    "ui_story_5065_50651201_4_dialog_content",
+    65120105,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65120105] = {
+    65120105,
+    "ui_story_5065_50651201_5_dialog_content",
+    65120106,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65120106] = {
+    65120106,
+    "ui_story_5065_50651201_6_dialog_content",
+    65120107,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65120107] = {
+    65120107,
+    "ui_story_5065_50651201_7_dialog_content",
+    65120108,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65120108] = {
+    65120108,
+    "ui_story_5065_50651201_8_dialog_content",
+    65120109,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65120109] = {
+    65120109,
+    "ui_story_5065_50651201_9_dialog_content",
+    65120110,
+    nil,
+    nil,
+    1,
+    common[26],
+    common[27]
+  },
+  [65120110] = {
+    65120110,
+    "ui_story_5065_50651201_10_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65120201] = {
+    65120201,
+    "ui_story_5065_50651202_1_dialog_content",
+    65120202,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65120202] = {
+    65120202,
+    "ui_story_5065_50651202_2_dialog_content",
+    65120203,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65120203] = {
+    65120203,
+    "ui_story_5065_50651202_3_dialog_content",
+    65120204,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65120204] = {
+    65120204,
+    "ui_story_5065_50651202_4_dialog_content",
+    65120205,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65120205] = {
+    65120205,
+    "ui_story_5065_50651202_5_dialog_content",
+    65120206,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65120206] = {
+    65120206,
+    "ui_story_5065_50651202_6_dialog_content",
+    65120207,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65120207] = {
+    65120207,
+    "ui_story_5065_50651202_7_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[28],
+    common[29]
+  },
+  [65120401] = {
+    65120401,
+    "ui_story_5065_50651204_1_dialog_content",
+    65120402,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65120402] = {
+    65120402,
+    "ui_story_5065_50651204_2_dialog_content",
+    65120403,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65120403] = {
+    65120403,
+    "ui_story_5065_50651204_3_dialog_content",
+    65120404,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65120404] = {
+    65120404,
+    "ui_story_5065_50651204_4_dialog_content",
+    65120405,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65120405] = {
+    65120405,
+    "ui_story_5065_50651204_5_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130101] = {
+    65130101,
+    "ui_story_5065_50651301_1_dialog_content",
+    65130102,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130102] = {
+    65130102,
+    "ui_story_5065_50651301_2_dialog_content",
+    65130103,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130103] = {
+    65130103,
+    "ui_story_5065_50651301_3_dialog_content",
+    65130104,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130104] = {
+    65130104,
+    "ui_story_5065_50651301_4_dialog_content",
+    65130105,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130105] = {
+    65130105,
+    "ui_story_5065_50651301_5_dialog_content",
+    65130106,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130106] = {
+    65130106,
+    "ui_story_5065_50651301_6_dialog_content",
+    65130107,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130107] = {
+    65130107,
+    "ui_story_5065_50651301_7_dialog_content",
+    65130108,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130108] = {
+    65130108,
+    "ui_story_5065_50651301_8_dialog_content",
+    65130109,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130109] = {
+    65130109,
+    "ui_story_5065_50651301_9_dialog_content",
+    65130110,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130110] = {
+    65130110,
+    "ui_story_5065_50651301_10_dialog_content",
+    65130111,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130111] = {
+    65130111,
+    "ui_story_5065_50651301_11_dialog_content",
+    65130112,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130112] = {
+    65130112,
+    "ui_story_5065_50651301_12_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130201] = {
+    65130201,
+    "ui_story_5065_50651302_1_dialog_content",
+    65130202,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130202] = {
+    65130202,
+    "ui_story_5065_50651302_2_dialog_content",
+    65130203,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130203] = {
+    65130203,
+    "ui_story_5065_50651302_3_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130301] = {
+    65130301,
+    "ui_story_5065_50651303_1_dialog_content",
+    65130302,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65130302] = {
+    65130302,
+    "ui_story_5065_50651303_2_dialog_content",
+    65130303,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130303] = {
+    65130303,
+    "ui_story_5065_50651303_3_dialog_content",
+    65130304,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65130304] = {
+    65130304,
+    "ui_story_5065_50651303_4_dialog_content",
+    65130305,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65130305] = {
+    65130305,
+    "ui_story_5065_50651303_5_dialog_content",
+    65130306,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130306] = {
+    65130306,
+    "ui_story_5065_50651303_6_dialog_content",
+    65130307,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130307] = {
+    65130307,
+    "ui_story_5065_50651303_7_dialog_content",
+    65130308,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65130308] = {
+    65130308,
+    "ui_story_5065_50651303_8_dialog_content",
+    65130309,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65130309] = {
+    65130309,
+    "ui_story_5065_50651303_9_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65130310] = {
+    65130310,
+    "ui_story_5065_50651303_10_dialog_content",
+    65130311,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65130311] = {
+    65130311,
+    "ui_story_5065_50651303_11_dialog_content",
+    65130312,
+    nil,
+    nil,
+    1,
+    common[22],
+    common[23]
+  },
+  [65130312] = {
+    65130312,
+    "ui_story_5065_50651303_12_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[22],
+    common[23]
+  },
+  [65130401] = {
+    65130401,
+    "ui_story_5065_50651304_1_dialog_content",
+    65130402,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130402] = {
+    65130402,
+    "ui_story_5065_50651304_2_dialog_content",
+    65130403,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130403] = {
+    65130403,
+    "ui_story_5065_50651304_3_dialog_content",
+    65130404,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130404] = {
+    65130404,
+    "ui_story_5065_50651304_4_dialog_content",
+    65130405,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130405] = {
+    65130405,
+    "ui_story_5065_50651304_5_dialog_content",
+    65130406,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65130406] = {
+    65130406,
+    "ui_story_5065_50651304_6_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[28],
+    common[29]
+  },
+  [65140101] = {
+    65140101,
+    "ui_story_5065_50651401_1_dialog_content",
+    65140102,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65140102] = {
+    65140102,
+    "ui_story_5065_50651401_2_dialog_content",
+    65140103,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65140103] = {
+    65140103,
+    "ui_story_5065_50651401_3_dialog_content",
+    65140104,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65140104] = {
+    65140104,
+    "ui_story_5065_50651401_4_dialog_content",
+    65140105,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65140105] = {
+    65140105,
+    "ui_story_5065_50651401_5_dialog_content",
+    65140106,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65140106] = {
+    65140106,
+    "ui_story_5065_50651401_6_dialog_content",
+    65140107,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65140107] = {
+    65140107,
+    "ui_story_5065_50651401_7_dialog_content",
+    65140108,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65140108] = {
+    65140108,
+    "ui_story_5065_50651401_8_dialog_content",
+    65140109,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65140109] = {
+    65140109,
+    "ui_story_5065_50651401_9_dialog_content",
+    65140110,
+    nil,
+    nil,
+    1,
+    common[28],
+    common[29]
+  },
+  [65140110] = {
+    65140110,
+    "ui_story_5065_50651401_10_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65140201] = {
+    65140201,
+    "ui_story_5065_50651402_1_dialog_content",
+    65140202,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65140202] = {
+    65140202,
+    "ui_story_5065_50651402_2_dialog_content",
+    65140203,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65140203] = {
+    65140203,
+    "ui_story_5065_50651402_3_dialog_content",
+    65140204,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65140204] = {
+    65140204,
+    "ui_story_5065_50651402_4_dialog_content",
+    65140205,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65140205] = {
+    65140205,
+    "ui_story_5065_50651402_5_dialog_content",
+    65140206,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65140206] = {
+    65140206,
+    "ui_story_5065_50651402_6_dialog_content",
+    65140207,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65140207] = {
+    65140207,
+    "ui_story_5065_50651402_7_dialog_content",
+    65140208,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65140208] = {
+    65140208,
+    "ui_story_5065_50651402_8_dialog_content",
+    65140209,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65140209] = {
+    65140209,
+    "ui_story_5065_50651402_9_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65140301] = {
+    65140301,
+    "ui_story_5065_50651403_1_dialog_content",
+    65140302,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65140302] = {
+    65140302,
+    "ui_story_5065_50651403_2_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150101] = {
+    65150101,
+    "ui_story_5065_50651501_1_dialog_content",
+    65150102,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65150102] = {
+    65150102,
+    "ui_story_5065_50651501_2_dialog_content",
+    65150103,
+    nil,
+    nil,
+    1,
+    "ui_story_name_you",
+    "S2_scene_npc_kongyi"
+  },
+  [65150103] = {
+    65150103,
+    "ui_story_5065_50651501_3_dialog_content",
+    65150104,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150104] = {
+    65150104,
+    "ui_story_5065_50651501_4_dialog_content",
+    65150105,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65150105] = {
+    65150105,
+    "ui_story_5065_50651501_5_dialog_content",
+    65150106,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65150106] = {
+    65150106,
+    "ui_story_5065_50651501_6_dialog_content",
+    65150107,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65150107] = {
+    65150107,
+    "ui_story_5065_50651501_7_dialog_content",
+    65150108,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150108] = {
+    65150108,
+    "ui_story_5065_50651501_8_dialog_content",
+    65150109,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65150109] = {
+    65150109,
+    "ui_story_5065_50651501_9_dialog_content",
+    65150110,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150110] = {
+    65150110,
+    "ui_story_5065_50651501_10_dialog_content",
+    65150111,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150111] = {
+    65150111,
+    "ui_story_5065_50651501_11_dialog_content",
+    65150112,
+    nil,
+    nil,
+    1,
+    common[7],
+    common[8]
+  },
+  [65150112] = {
+    65150112,
+    "ui_story_5065_50651501_12_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150201] = {
+    65150201,
+    "ui_story_5065_50651502_1_dialog_content",
+    65150202,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150202] = {
+    65150202,
+    "ui_story_5065_50651502_2_dialog_content",
+    65150203,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150203] = {
+    65150203,
+    "ui_story_5065_50651502_3_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150204] = {
+    65150204,
+    "ui_story_5065_50651502_4_dialog_content",
+    65150205,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150205] = {
+    65150205,
+    "ui_story_5065_50651502_5_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150301] = {
+    65150301,
+    "ui_story_5065_50651503_1_dialog_content",
+    65150302,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150302] = {
+    65150302,
+    "ui_story_5065_50651503_2_dialog_content",
+    65150303,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150303] = {
+    65150303,
+    "ui_story_5065_50651503_3_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150304] = {
+    65150304,
+    "ui_story_5065_50651503_4_dialog_content",
+    65150305,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150305] = {
+    65150305,
+    "ui_story_5065_50651503_5_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150401] = {
+    65150401,
+    "ui_story_5065_50651504_1_dialog_content",
+    65150402,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65150402] = {
+    65150402,
+    "ui_story_5065_50651504_2_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65160101] = {
+    65160101,
+    "ui_story_5065_50651601_1_dialog_content",
+    65160102,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160102] = {
+    65160102,
+    "ui_story_5065_50651601_2_dialog_content",
+    65160103,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65160103] = {
+    65160103,
+    "ui_story_5065_50651601_3_dialog_content",
+    65160104,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160104] = {
+    65160104,
+    "ui_story_5065_50651601_4_dialog_content",
+    65160105,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65160105] = {
+    65160105,
+    "ui_story_5065_50651601_5_dialog_content",
+    65160106,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160106] = {
+    65160106,
+    "ui_story_5065_50651601_6_dialog_content",
+    65160107,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160107] = {
+    65160107,
+    "ui_story_5065_50651601_7_dialog_content",
+    65160108,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160108] = {
+    65160108,
+    "ui_story_5065_50651601_8_dialog_content",
+    65160109,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160109] = {
+    65160109,
+    "ui_story_5065_50651601_9_dialog_content",
+    65160110,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160110] = {
+    65160110,
+    "ui_story_5065_50651601_10_dialog_content",
+    65160111,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65160111] = {
+    65160111,
+    "ui_story_5065_50651601_11_dialog_content",
+    65160112,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160112] = {
+    65160112,
+    "ui_story_5065_50651601_12_dialog_content",
+    65160113,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65160113] = {
+    65160113,
+    "ui_story_5065_50651601_13_dialog_content",
+    65160114,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160114] = {
+    65160114,
+    "ui_story_5065_50651601_14_dialog_content",
+    65160115,
+    nil,
+    nil,
+    1,
+    common[30],
+    common[31]
+  },
+  [65160115] = {
+    65160115,
+    "ui_story_5065_50651601_15_dialog_content",
+    65160116,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65160116] = {
+    65160116,
+    "ui_story_5065_50651601_16_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65160201] = {
+    65160201,
+    "ui_story_5065_50651602_1_dialog_content",
+    65160202,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65160202] = {
+    65160202,
+    "ui_story_5065_50651602_2_dialog_content",
+    65160203,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65160203] = {
+    65160203,
+    "ui_story_5065_50651602_3_dialog_content",
+    65160204,
+    nil,
+    nil,
+    1,
+    common[12],
+    common[13]
+  },
+  [65160204] = {
+    65160204,
+    "ui_story_5065_50651602_4_dialog_content",
+    65160205,
+    nil,
+    nil,
+    0,
+    common[1],
+    common[2]
+  },
+  [65160205] = {
+    65160205,
+    "ui_story_5065_50651602_5_dialog_content",
+    nil,
+    nil,
+    1,
+    0,
+    common[1],
+    common[2]
+  },
+  [65170101] = {
+    65170101,
+    "ui_story_5067_50670301_1_dialog_content",
+    65170102,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170102] = {
+    65170102,
+    "ui_story_5067_50670301_2_dialog_content",
+    65170103,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170103] = {
+    65170103,
+    "ui_story_5067_50670301_3_dialog_content",
+    65170104,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170104] = {
+    65170104,
+    "ui_story_5067_50670301_4_dialog_content",
+    65170105,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170105] = {
+    65170105,
+    "ui_story_5067_50670301_5_dialog_content",
+    65170106,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170106] = {
+    65170106,
+    "ui_story_5067_50670301_6_dialog_content",
+    65170107,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170107] = {
+    65170107,
+    "ui_story_5067_50670301_7_dialog_content",
+    65170108,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170108] = {
+    65170108,
+    "ui_story_5067_50670301_8_dialog_content",
+    65170109,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170109] = {
+    65170109,
+    "ui_story_5067_50670301_9_dialog_content",
+    65170110,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170110] = {
+    65170110,
+    "ui_story_5067_50670301_10_dialog_content",
+    65170111,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170111] = {
+    65170111,
+    "ui_story_5067_50670301_11_dialog_content",
+    65170112,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170112] = {
+    65170112,
+    "ui_story_5067_50670301_12_dialog_content",
+    65170113,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170113] = {
+    65170113,
+    "ui_story_5067_50670301_13_dialog_content",
+    65170114,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170114] = {
+    65170114,
+    "ui_story_5067_50670301_14_dialog_content",
+    65170115,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170115] = {
+    65170115,
+    "ui_story_5067_50670301_15_dialog_content",
+    65170116,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170116] = {
+    65170116,
+    "ui_story_5067_50670301_16_dialog_content",
+    65170117,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170117] = {
+    65170117,
+    "ui_story_5067_50670301_17_dialog_content",
+    65170118,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170118] = {
+    65170118,
+    "ui_story_5067_50670301_18_dialog_content",
+    65170119,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170119] = {
+    65170119,
+    "ui_story_5067_50670301_19_dialog_content",
+    65170120,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170120] = {
+    65170120,
+    "ui_story_5067_50670301_20_dialog_content",
+    65170121,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170121] = {
+    65170121,
+    "ui_story_5067_50670301_21_dialog_content",
+    65170122,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170122] = {
+    65170122,
+    "ui_story_5067_50670301_22_dialog_content",
+    65170123,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170123] = {
+    65170123,
+    "ui_story_5067_50670301_23_dialog_content",
+    65170124,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170124] = {
+    65170124,
+    "ui_story_5067_50670301_24_dialog_content",
+    65170125,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170125] = {
+    65170125,
+    "ui_story_5067_50670301_25_dialog_content",
+    65170126,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170126] = {
+    65170126,
+    "ui_story_5067_50670301_26_dialog_content",
+    65170127,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170127] = {
+    65170127,
+    "ui_story_5067_50670301_27_dialog_content",
+    65170128,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170128] = {
+    65170128,
+    "ui_story_5067_50670301_28_dialog_content",
+    65170129,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170129] = {
+    65170129,
+    "ui_story_5067_50670301_29_dialog_content",
+    65170130,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170130] = {
+    65170130,
+    "ui_story_5067_50670301_30_dialog_content",
+    65170131,
+    nil,
+    nil,
+    1,
+    common[32],
+    common[33]
+  },
+  [65170131] = {
+    65170131,
+    "ui_story_5067_50670301_31_dialog_content",
+    65170132,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170132] = {
+    65170132,
+    "ui_story_5067_50670301_32_dialog_content",
+    65170133,
+    nil,
+    nil,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65170133] = {
+    65170133,
+    "ui_story_5067_50670301_33_dialog_content",
+    65170134,
+    nil,
+    nil,
+    1,
+    "ui_story_name_andonga",
+    common[36]
+  },
+  [65170134] = {
+    65170134,
+    "ui_story_5067_50670301_34_dialog_content",
+    65170135,
+    nil,
+    nil,
+    1,
+    "ui_story_name_andongb",
+    common[36]
+  },
+  [65170135] = {
+    65170135,
+    "ui_story_5067_50670301_35_dialog_content",
+    65170136,
+    nil,
+    nil,
+    1,
+    "ui_story_name_andongc",
+    common[36]
+  },
+  [65170136] = {
+    65170136,
+    "ui_story_5067_50670301_36_dialog_content",
+    nil,
+    nil,
+    1,
+    nil,
+    common[34],
+    common[35]
+  },
+  [65180101] = {
+    65180101,
+    "ui_story_5072_50721701_1_dialog_content",
+    65180102,
+    nil,
+    nil,
+    1,
+    common[37],
+    common[38]
+  },
+  [65180102] = {
+    65180102,
+    "ui_story_5072_50721701_2_dialog_content",
+    nil,
+    nil,
+    1,
+    nil,
+    common[39],
+    common[40]
+  },
+  [65180201] = {
+    65180201,
+    "ui_story_5072_50721702_1_dialog_content",
+    65180202,
+    nil,
+    nil,
+    1,
+    common[37],
+    common[38]
+  },
+  [65180202] = {
+    65180202,
+    "ui_story_5072_50721702_2_dialog_content",
+    65180203,
+    nil,
+    nil,
+    nil,
+    common[39],
+    common[40]
+  },
+  [65180203] = {
+    65180203,
+    "ui_story_5072_50721702_3_dialog_content",
+    nil,
+    nil,
+    1,
+    1,
+    common[37],
+    common[38]
+  }
 }
 return config, "ID", key
-

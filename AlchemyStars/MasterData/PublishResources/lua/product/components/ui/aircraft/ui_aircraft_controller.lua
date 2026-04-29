@@ -1,24 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui_aircraft_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftController", UIController)
 UIAircraftController = UIAircraftController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftController:OnShow(uiParams)
   AirLog("UIAircraftController OnShow Start")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIAircraft)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIAircraft)
   self.guideFingerOffset = Vector3(0, 300, 0)
   self.fingerShow = false
   self.sceneRes = uiParams[1]
   self._module = self:GetModule(AircraftModule)
   self:Init(uiParams)
-  ;
-  (UIBgmHelper.PlyAircraftBgm)()
+  UIBgmHelper.PlyAircraftBgm()
   if self._main ~= nil then
     self.active = true
   end
@@ -26,42 +17,28 @@ UIAircraftController.OnShow = function(self, uiParams)
   AirLog("UIAircraftController OnShow Done")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RefrshEasyEntryBtns = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local makeState = (self._module):GetRoomStatus(AirRoomType.SmeltRoom)
+function UIAircraftController:RefrshEasyEntryBtns()
+  local makeState = self._module:GetRoomStatus(AirRoomType.SmeltRoom)
   local lock = not makeState or makeState < SpaceState.SpaceStateFull
-  ;
-  (self._btnMake):SetActive(not lock)
-  local sendState = (self._module):GetRoomStatus(AirRoomType.DispatchRoom)
+  self._btnMake:SetActive(not lock)
+  local sendState = self._module:GetRoomStatus(AirRoomType.DispatchRoom)
   local lock = not sendState or sendState < SpaceState.SpaceStateFull
-  ;
-  (self._btnSend):SetActive(not lock)
+  self._btnSend:SetActive(not lock)
   if not lock then
     self:RefreshEasyBtnsRed()
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RefreshEasyBtnsRed = function(self)
-  -- function num : 0_2
+function UIAircraftController:RefreshEasyBtnsRed()
   local redCount = self:CalcDispachRoomRedCount()
-  ;
-  (self._sendRed):SetActive(redCount > 0)
-  if redCount > 0 then
-    (self._txtSendRedNum):SetText(redCount)
+  self._sendRed:SetActive(0 < redCount)
+  if 0 < redCount then
+    self._txtSendRedNum:SetText(redCount)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.CalcDispachRoomRedCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local room = (self._module):GetRoomWithType(AirRoomType.DispatchRoom)
+function UIAircraftController:CalcDispachRoomRedCount()
+  local room = self._module:GetRoomWithType(AirRoomType.DispatchRoom)
   if not room then
     return 0
   end
@@ -69,7 +46,7 @@ UIAircraftController.CalcDispachRoomRedCount = function(self)
   local dispatchTeamCount = room:GetDispatchTeamCount()
   local roomCfg = room:GetRoomConfig()
   local lessTeamCount = roomCfg.TeamMax - dispatchTeamCount
-  local lessPetCount = (math.modf)((table.count)(room:GetDispatchPetList()) / 5 + 0.05)
+  local lessPetCount = math.modf(table.count(room:GetDispatchPetList()) / 5 + 0.05)
   local showNumber = dispatchCount
   if lessTeamCount < showNumber then
     showNumber = lessTeamCount
@@ -77,19 +54,14 @@ UIAircraftController.CalcDispachRoomRedCount = function(self)
   if lessPetCount < showNumber then
     showNumber = lessPetCount
   end
-  do
-    if room:HasCompleteTask() or showNumber > 0 then
-      local addCount = room:GetCompleteCount()
-      showNumber = showNumber + addCount
-    end
-    return showNumber
+  if room:HasCompleteTask() or 0 < showNumber then
+    local addCount = room:GetCompleteCount()
+    showNumber = showNumber + addCount
   end
+  return showNumber
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.Init = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftController:Init(uiParams)
   AirLog("UIAircraftController Init Start")
   self._guideFingerRect = self:GetUIComponent("RectTransform", "guideFinger")
   self:ShowGuideFinger(false)
@@ -112,147 +84,103 @@ UIAircraftController.Init = function(self, uiParams)
   self._easyBtns = self:GetGameObject("easyBtns")
   self._txtSendRedNum = self:GetUIComponent("UILocalizationText", "txtSendRedNum")
   self._uiRoot = self:GetGameObject("uianim")
-  self._topBar = (self._topBarLoader):SpawnObject("UIAircraftTopBarItem")
-  ;
-  (self._topBar):SetData(true, function()
-    -- function num : 0_4_0 , upvalues : self
+  self._topBar = self._topBarLoader:SpawnObject("UIAircraftTopBarItem")
+  self._topBar:SetData(true, function()
     self:OnBack()
-  end
-, function()
-    -- function num : 0_4_1 , upvalues : self, _ENV
+  end, function()
     local param = "UIAircraftController"
-    if self._roomUI and (self._roomUI):IsClosed() == false then
-      local data = (self._roomUI):GetRoomData()
+    if self._roomUI and self._roomUI:IsClosed() == false then
+      local data = self._roomUI:GetRoomData()
       if data then
         local roomType = data:GetRoomType()
-      end
-    end
-    do
-      if roomType ~= AirRoomType.AisleRoom or roomType == AirRoomType.CentralRoom then
-        param = "UIAircraftCentralRoom"
-      else
-        if roomType == AirRoomType.PowerRoom then
+        if roomType == AirRoomType.AisleRoom then
+        elseif roomType == AirRoomType.CentralRoom then
+          param = "UIAircraftCentralRoom"
+        elseif roomType == AirRoomType.PowerRoom then
           param = "UIAircraftPowerRoom"
-        else
-          if roomType == AirRoomType.MazeRoom then
-            param = "UIAircraftMazeRoom"
-          else
-            if roomType == AirRoomType.ResourceRoom then
-              param = "UIAircraftResourceRoom"
-            else
-              if roomType == AirRoomType.PrismRoom then
-                param = "UIAircraftPrismRoom"
-              else
-                if roomType == AirRoomType.TowerRoom then
-                  param = "UIAircraftTowerRoom"
-                else
-                end
-              end
-            end
-          end
-        end
-      end
-      if (roomType == AirRoomType.EvilRoom and roomType ~= AirRoomType.PurifyRoom) or roomType == AirRoomType.SmeltRoom then
-        param = "UIAircraftSmeltRoom"
-      else
-        if roomType == AirRoomType.DispatchRoom then
+        elseif roomType == AirRoomType.MazeRoom then
+          param = "UIAircraftMazeRoom"
+        elseif roomType == AirRoomType.ResourceRoom then
+          param = "UIAircraftResourceRoom"
+        elseif roomType == AirRoomType.PrismRoom then
+          param = "UIAircraftPrismRoom"
+        elseif roomType == AirRoomType.TowerRoom then
+          param = "UIAircraftTowerRoom"
+        elseif roomType == AirRoomType.EvilRoom then
+        elseif roomType == AirRoomType.PurifyRoom then
+        elseif roomType == AirRoomType.SmeltRoom then
+          param = "UIAircraftSmeltRoom"
+        elseif roomType == AirRoomType.DispatchRoom then
           param = "UIDispatchDetailController"
-        else
-          if roomType == AirRoomType.TacticRoom then
-            param = "UIAircraftTactic"
-          end
+        elseif roomType == AirRoomType.TacticRoom then
+          param = "UIAircraftTactic"
         end
       end
-      self:ShowDialog("UIHelpController", param)
     end
-  end
-, true, false)
+    self:ShowDialog("UIHelpController", param)
+  end, true, false)
   self._enterInteractiveWidget = nil
   self._interactiveWidget = nil
   self.curRoomWidget = nil
   self._roomUI = nil
   self:registEvent()
   self:InitDataUpdater()
-  self._main = (self._module):GetClientMain()
-  self._input = (self._main):Input()
+  self._main = self._module:GetClientMain()
+  self._input = self._main:Input()
   local stick = self:InitJoyStick()
   local focusGo = self:GetGameObject("Focus")
   local focusText = self:GetUIComponent("UILocalizationText", "FocusText")
   focusGo:SetActive(false)
-  local focusStart = function()
-    -- function num : 0_4_2 , upvalues : focusGo
+  
+  local function focusStart()
     focusGo:SetActive(true)
   end
-
-  local focusing = function(t)
-    -- function num : 0_4_3 , upvalues : focusText, _ENV
-    focusText.text = (string.format)("%.1f", (Mathf.Lerp)(1, 10, 1 - t))
+  
+  local function focusing(t)
+    focusText.text = string.format("%.1f", Mathf.Lerp(1, 10, 1 - t))
   end
-
-  local focusEnd = function()
-    -- function num : 0_4_4 , upvalues : focusGo
+  
+  local function focusEnd()
     focusGo:SetActive(false)
   end
-
-  ;
-  (self._main):SetJoyStick(stick, focusStart, focusing, focusEnd)
+  
+  self._main:SetJoyStick(stick, focusStart, focusing, focusEnd)
   local navMenuPool = self:GetUIComponent("UISelectObjectPath", "navMenu")
   self._navMenu = navMenuPool:SpawnObject("UIAirNavMenu")
   self._navMenuGo = self:GetGameObject("navMenu")
-  ;
-  (self._navMenu):SetData(self._main, function(room, cb)
-    -- function num : 0_4_5 , upvalues : self
+  self._navMenu:SetData(self._main, function(room, cb)
     self:FocusRoom(room, cb)
-  end
-, function(airPet)
-    -- function num : 0_4_6 , upvalues : self
+  end, function(airPet)
     self:FocusPet(airPet)
-  end
-)
-  ;
-  (Log.notice)("[Aircraft] 风船Loading结束，显示UI")
-  if (GuideHelper.GuideInProgress)() then
-    (self._main):MoveCameraToFar()
-  else
-    if uiParams[2] then
-      local paramType = uiParams[2]
-      if paramType == OpenAircraftParamType.Spaceid then
-        local param = uiParams[3]
-        if param and param ~= 0 then
-          self:SetGotoSpaceId(param, uiParams[4])
-        end
-      else
-        do
-          if paramType == OpenAircraftParamType.Petid then
-            local focusPetTempId = uiParams[3]
-            if focusPetTempId then
-              local pet = (self._main):GetPetByTmpID(focusPetTempId)
-              if pet then
-                (self._main):FocusPet(pet, nil, function()
-    -- function num : 0_4_7
-  end
-)
-              else
-                ;
-                (Log.error)("no find pet in aircraft petid:", focusPetTempId)
-              end
-            end
-          end
-          do
-            ;
-            (self._btnDecorate):SetActive((self._module):IsDecorateUnLocked())
-            AirLog("UIAircraftController Init Done")
-          end
+  end)
+  Log.notice("[Aircraft] 风船Loading结束，显示UI")
+  if GuideHelper.GuideInProgress() then
+    self._main:MoveCameraToFar()
+  elseif uiParams[2] then
+    local paramType = uiParams[2]
+    if paramType == OpenAircraftParamType.Spaceid then
+      local param = uiParams[3]
+      if param and param ~= 0 then
+        self:SetGotoSpaceId(param, uiParams[4])
+      end
+    elseif paramType == OpenAircraftParamType.Petid then
+      local focusPetTempId = uiParams[3]
+      if focusPetTempId then
+        local pet = self._main:GetPetByTmpID(focusPetTempId)
+        if pet then
+          self._main:FocusPet(pet, nil, function()
+          end)
+        else
+          Log.error("no find pet in aircraft petid:", focusPetTempId)
         end
       end
     end
   end
+  self._btnDecorate:SetActive(self._module:IsDecorateUnLocked())
+  AirLog("UIAircraftController Init Done")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.registEvent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftController:registEvent()
   self:AttachEvent(GameEventType.AircraftRefreshMainUI, self.RefreshMainUI)
   self:AttachEvent(GameEventType.AircraftRefreshRoomUI, self.RefreshOneRoomUI)
   self:AttachEvent(GameEventType.AircraftRequestDataAndRefreshMainUI, self.RequestAndRefreshMainUI)
@@ -293,24 +221,15 @@ UIAircraftController.registEvent = function(self)
   self:AttachEvent(GameEventType.AircraftLeaveToBattle, self.LeaveToBattle)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.AircraftDeletePet = function(self, templateId)
-  -- function num : 0_6
-  (self._main):DeletePet(templateId)
+function UIAircraftController:AircraftDeletePet(templateId)
+  self._main:DeletePet(templateId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.AircraftPushPetQueue = function(self, templateId)
-  -- function num : 0_7
-  (self._main):PushInQueue(templateId)
+function UIAircraftController:AircraftPushPetQueue(templateId)
+  self._main:PushInQueue(templateId)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.InitJoyStick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftController:InitJoyStick()
   local eventListener = self:GetUIComponent("UIEventTriggerListener", "joyStick")
   local image = self:GetUIComponent("Image", "Viewport")
   local content = self:GetUIComponent("RectTransform", "Content")
@@ -321,45 +240,32 @@ UIAircraftController.InitJoyStick = function(self)
   return UIAircraftJoyStick:New(eventListener, image, normal, drag, content, resetBtn)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.CloseSendGiftBtn = function(self)
-  -- function num : 0_9
-  (self._giftBtn):SetActive(false)
+function UIAircraftController:CloseSendGiftBtn()
+  self._giftBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.SendGiftRandomStory = function(self, storyid)
-  -- function num : 0_10
-  (self._main):SendGiftRandomStory(storyid)
+function UIAircraftController:SendGiftRandomStory(storyid)
+  self._main:SendGiftRandomStory(storyid)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.SetMainUIActive = function(self, active)
-  -- function num : 0_11
-  (self._uiRoot):SetActive(active)
-  if active and self:CheckAirNavMenuCanActive() then
-    self:UIAirNavMenuActive(true)
+function UIAircraftController:SetMainUIActive(active)
+  self._uiRoot:SetActive(active)
+  if active then
+    if self:CheckAirNavMenuCanActive() then
+      self:UIAirNavMenuActive(true)
+    end
+  else
+    self:UIAirNavMenuActive(false)
   end
-  self:UIAirNavMenuActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.OnHide = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (self.sceneRes):Dispose()
-  ;
-  ((GameGlobal.Timer)()):CancelEvent(self.d_dataUpdater)
+function UIAircraftController:OnHide()
+  self.sceneRes:Dispose()
+  GameGlobal.Timer():CancelEvent(self.d_dataUpdater)
   self.d_dataUpdater = nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.AircraftUILock = function(self, lock, lockName)
-  -- function num : 0_13
+function UIAircraftController:AircraftUILock(lock, lockName)
   if lock then
     self:Lock(lockName)
   else
@@ -367,129 +273,86 @@ UIAircraftController.AircraftUILock = function(self, lock, lockName)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.JumpOutTo = function(self, func)
-  -- function num : 0_14 , upvalues : _ENV
+function UIAircraftController:JumpOutTo(func)
   self:CloseAircraft()
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Exit, "UI", func)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Exit, "UI", func)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.LeaveAircraft = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIAircraftController:LeaveAircraft()
   self:CloseAircraft()
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.LeaveToBattle = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIAircraftController:LeaveToBattle()
   AirLog("进局析构风船逻辑")
   self:CloseAircraft()
-  ;
-  (self._main):Dispose()
+  self._main:Dispose()
   self._main = nil
-  ;
-  (self._module):SetClientMain(nil)
-  ;
-  (self._module):PushLeaveAircraft()
+  self._module:SetClientMain(nil)
+  self._module:PushLeaveAircraft()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_17
+function UIAircraftController:OnUpdate(deltaTimeMS)
   if not self.active then
-    return 
+    return
   end
-  ;
-  (self._main):Update(deltaTimeMS)
-  if self._interactiveWidget ~= nil and ((self._interactiveWidget):GetGameObject()).activeInHierarchy then
-    (self._interactiveWidget):Update(deltaTimeMS)
+  self._main:Update(deltaTimeMS)
+  if self._interactiveWidget ~= nil and self._interactiveWidget:GetGameObject().activeInHierarchy then
+    self._interactiveWidget:Update(deltaTimeMS)
   end
   if self.fingerShow then
     local petTrans = self:GetPetTransform()
     if petTrans then
       local pos = self:ConvertPos(petTrans)
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._guideFingerRect).anchoredPosition = pos
+      self._guideFingerRect.anchoredPosition = pos
     end
   end
-  do
-    if self._navMenu then
-      (self._navMenu):Update(deltaTimeMS)
-    end
+  if self._navMenu then
+    self._navMenu:Update(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ConvertPos = function(self, petTrans)
-  -- function num : 0_18 , upvalues : _ENV
-  local camera = (self._main):GetMainCamera()
+function UIAircraftController:ConvertPos(petTrans)
+  local camera = self._main:GetMainCamera()
   local screenPos = camera:WorldToScreenPoint(petTrans.position) + self.guideFingerOffset
-  local sw = (ResolutionManager.ScreenWidth)()
-  local rw = (ResolutionManager.RealWidth)()
+  local sw = ResolutionManager.ScreenWidth()
+  local rw = ResolutionManager.RealWidth()
   local factor = rw / sw
   local sx, sy = screenPos.x * factor, screenPos.y * factor
   screenPos = Vector2(sx, sy)
   return screenPos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ShowGuideFinger = function(self, show)
-  -- function num : 0_19
+function UIAircraftController:ShowGuideFinger(show)
   if self.isShowFinger ~= nil and self.isShowFinger == show then
-    return 
+    return
   end
   self.isShowFinger = show
-  ;
-  ((self._guideFingerRect).gameObject):SetActive(self.isShowFinger)
+  self._guideFingerRect.gameObject:SetActive(self.isShowFinger)
   if self.isShowFinger == false then
     self.petKey = nil
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ShowPetSelectedUI = function(self, room, targetPet)
-  -- function num : 0_20
+function UIAircraftController:ShowPetSelectedUI(room, targetPet)
   if self._enterInteractiveWidget == nil then
-    self._enterInteractiveWidget = (self._enterInteractiveLoader):SpawnObject("UIAircraftRoomEnterInteractiveItem")
+    self._enterInteractiveWidget = self._enterInteractiveLoader:SpawnObject("UIAircraftRoomEnterInteractiveItem")
   end
-  ;
-  (self._enterInteractiveWidget):Refresh(self, room, targetPet)
-  ;
-  ((self._enterInteractiveWidget):GetGameObject()):SetActive(true)
+  self._enterInteractiveWidget:Refresh(self, room, targetPet)
+  self._enterInteractiveWidget:GetGameObject():SetActive(true)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ShowInteractiveUI = function(self, room, targetPet)
-  -- function num : 0_21
+function UIAircraftController:ShowInteractiveUI(room, targetPet)
   if self._interactiveWidget == nil then
-    self._interactiveWidget = (self._interactiveLoader):SpawnObject("UIAircraftRoomInteractiveItem")
+    self._interactiveWidget = self._interactiveLoader:SpawnObject("UIAircraftRoomInteractiveItem")
   end
-  ;
-  (self._interactiveWidget):Refresh(room, targetPet)
-  ;
-  ((self._interactiveWidget):GetGameObject()):SetActive(true)
+  self._interactiveWidget:Refresh(room, targetPet)
+  self._interactiveWidget:GetGameObject():SetActive(true)
   self:CheckGuideFinger(targetPet)
   self.fingerShow = true
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.SwitchToInteractiveView = function(self, room, targetPet)
-  -- function num : 0_22
+function UIAircraftController:SwitchToInteractiveView(room, targetPet)
   local topBarGo = self:GetGameObject("TopBarLoader")
   if topBarGo then
     topBarGo:SetActive(false)
@@ -500,20 +363,13 @@ UIAircraftController.SwitchToInteractiveView = function(self, room, targetPet)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.InteractiveViewSwitchToRoomView = function(self, room, targetPet)
-  -- function num : 0_23
+function UIAircraftController:InteractiveViewSwitchToRoomView(room, targetPet)
   self.fingerShow = false
   self.isShowFinger = false
-  ;
-  ((self._guideFingerRect).gameObject):SetActive(false)
+  self._guideFingerRect.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.InteractiveViewSwitchToRoomViewComplete = function(self)
-  -- function num : 0_24
+function UIAircraftController:InteractiveViewSwitchToRoomViewComplete()
   local topBarGo = self:GetGameObject("TopBarLoader")
   if topBarGo then
     topBarGo:SetActive(true)
@@ -524,48 +380,36 @@ UIAircraftController.InteractiveViewSwitchToRoomViewComplete = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.CloseAircraft = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIAircraftController:CloseAircraft()
   if not self.active then
-    (Log.fatal)("already close aircraft")
-    return 
+    Log.fatal("already close aircraft")
+    return
   end
   self.active = false
   self:DetachAllEvents()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.OnBack = function(self)
-  -- function num : 0_26
-  if (self._main):TryBack() then
+function UIAircraftController:OnBack()
+  if self._main:TryBack() then
     self:LeaveAircraft()
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ReqAndShowRoomUI = function(self, spaceID)
-  -- function num : 0_27 , upvalues : _ENV
+function UIAircraftController:ReqAndShowRoomUI(spaceID)
   if spaceID == nil then
-    if self._roomUI and not (self._roomUI):IsClosed() then
-      (self._roomUI):Close()
+    if self._roomUI and not self._roomUI:IsClosed() then
+      self._roomUI:Close()
       if self:CheckAirNavMenuCanActive() then
         self:UIAirNavMenuActive(true)
       end
-      ;
-      (self._blackMask):SetActive(false)
-      if (self._module):IsDecorateUnLocked() then
-        (self._btnDecorate):SetActive(true)
+      self._blackMask:SetActive(false)
+      if self._module:IsDecorateUnLocked() then
+        self._btnDecorate:SetActive(true)
       end
     end
-    return 
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.ReqData, self, function()
-    -- function num : 0_27_0 , upvalues : self, spaceID
+  GameGlobal.TaskManager():StartTask(self.ReqData, self, function()
     if self.active then
       local navMenuTempData = self:GetNavMenuData()
       self:ShowRoomUI(spaceID, true, navMenuTempData)
@@ -573,732 +417,472 @@ UIAircraftController.ReqAndShowRoomUI = function(self, spaceID)
         self:SetNavMenuData(nil)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.SetNavMenuData = function(self, data)
-  -- function num : 0_28
+function UIAircraftController:SetNavMenuData(data)
   self._navMenuTempData = data
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetNavMenuData = function(self)
-  -- function num : 0_29
+function UIAircraftController:GetNavMenuData()
   return self._navMenuTempData
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.SelectAndFocusRoom = function(self, spaceid)
-  -- function num : 0_30
-  (self._main):GotoSpace(spaceid, true)
-  ;
-  (self._main):GotoSpace(spaceid, true)
+function UIAircraftController:SelectAndFocusRoom(spaceid)
+  self._main:GotoSpace(spaceid, true)
+  self._main:GotoSpace(spaceid, true)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.SelectRoom = function(self, spaceid)
-  -- function num : 0_31
-  (self._main):GotoSpace(spaceid, false)
+function UIAircraftController:SelectRoom(spaceid)
+  self._main:GotoSpace(spaceid, false)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RefreshClickPet = function(self, pstid)
-  -- function num : 0_32 , upvalues : _ENV
+function UIAircraftController:RefreshClickPet(pstid)
   if not pstid then
-    (self._giftBtn):SetActive(false)
-    return 
+    self._giftBtn:SetActive(false)
+    return
   end
   local petModule = self:GetModule(PetModule)
   self._clickPet = petModule:GetPet(pstid)
   if self._clickPet then
-    (self._giftBtn):SetActive(true)
-    local realLevel = (self._clickPet):GetPetAffinityLevel()
-    local realExp = (self._clickPet):GetPetAffinityExp()
-    local realMaxExp = (self._clickPet):GetPetAffinityMaxExp(realLevel)
-    local maxAffinityMaxLevel = (self._clickPet):GetPetAffinityMaxLevel()
-    local curExp = realExp - ((Cfg.cfg_pet_affinity_exp)[realLevel]).NeedAffintyExp
+    self._giftBtn:SetActive(true)
+    local realLevel = self._clickPet:GetPetAffinityLevel()
+    local realExp = self._clickPet:GetPetAffinityExp()
+    local realMaxExp = self._clickPet:GetPetAffinityMaxExp(realLevel)
+    local maxAffinityMaxLevel = self._clickPet:GetPetAffinityMaxLevel()
+    local curExp = realExp - Cfg.cfg_pet_affinity_exp[realLevel].NeedAffintyExp
     local percent = curExp / realMaxExp
-    if maxAffinityMaxLevel <= realLevel then
+    if realLevel >= maxAffinityMaxLevel then
       percent = 1
     end
     local value = percent
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._giftFillAmount).fillAmount = value
-    ;
-    (self._petHeadIcon):LoadImage((self._clickPet):GetPetHead(PetSkinEffectPath.HEAD_AIRCRAFT_INTERACT))
-    ;
-    (self._petNameTex):SetText((StringTable.Get)((self._clickPet):GetPetName()))
+    self._giftFillAmount.fillAmount = value
+    self._petHeadIcon:LoadImage(self._clickPet:GetPetHead(PetSkinEffectPath.HEAD_AIRCRAFT_INTERACT))
+    self._petNameTex:SetText(StringTable.Get(self._clickPet:GetPetName()))
     local number = realLevel
-    ;
-    (self._giftNumber):SetText(number)
+    self._giftNumber:SetText(number)
   else
-    do
-      ;
-      (self._giftBtn):SetActive(false)
-    end
+    self._giftBtn:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.giftBtnOnClick = function(self)
-  -- function num : 0_33
+function UIAircraftController:giftBtnOnClick()
   self:ChangeGiftSending(true)
   self:OpenSendGiftDiaLog()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.OpenSendGiftDiaLog = function(self)
-  -- function num : 0_34
+function UIAircraftController:OpenSendGiftDiaLog()
   self:ShowDialog("UIAircraftSendGiftController", self._clickPet)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ChangeGiftSending = function(self, state)
-  -- function num : 0_35
-  (self._fullGo):SetActive(not state)
-  ;
-  (self._main):ChangeGiftSending(state)
+function UIAircraftController:ChangeGiftSending(state)
+  self._fullGo:SetActive(not state)
+  self._main:ChangeGiftSending(state)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.AircraftOnSendGiftSuccess = function(self, lvup, love)
-  -- function num : 0_36 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGiveGift)
-  ;
-  (self._main):AircraftOnSendGiftSuccess(lvup, love)
+function UIAircraftController:AircraftOnSendGiftSuccess(lvup, love)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGiveGift)
+  self._main:AircraftOnSendGiftSuccess(lvup, love)
   if self._clickPet then
-    local realLevel = (self._clickPet):GetPetAffinityLevel()
-    local realExp = (self._clickPet):GetPetAffinityExp()
-    local realMaxExp = (self._clickPet):GetPetAffinityMaxExp(realLevel)
-    local maxAffinityMaxLevel = (self._clickPet):GetPetAffinityMaxLevel()
-    local curExp = realExp - ((Cfg.cfg_pet_affinity_exp)[realLevel]).NeedAffintyExp
+    local realLevel = self._clickPet:GetPetAffinityLevel()
+    local realExp = self._clickPet:GetPetAffinityExp()
+    local realMaxExp = self._clickPet:GetPetAffinityMaxExp(realLevel)
+    local maxAffinityMaxLevel = self._clickPet:GetPetAffinityMaxLevel()
+    local curExp = realExp - Cfg.cfg_pet_affinity_exp[realLevel].NeedAffintyExp
     local percent = curExp / realMaxExp
-    if maxAffinityMaxLevel <= realLevel then
+    if realLevel >= maxAffinityMaxLevel then
       percent = 1
     end
     local value = percent
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._giftFillAmount).fillAmount = value
+    self._giftFillAmount.fillAmount = value
     local number = realLevel
-    ;
-    (self._giftNumber):SetText(number)
+    self._giftNumber:SetText(number)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ReqData = function(self, TT, callBack)
-  -- function num : 0_37 , upvalues : _ENV
+function UIAircraftController:ReqData(TT, callBack)
   self:Lock(self:GetName())
-  local ack = (self._module):AircraftUpdate(TT)
+  local ack = self._module:AircraftUpdate(TT)
   if ack:GetSucc() then
     callBack()
   else
-    ;
-    (ToastManager.ShowToast)((self._module):GetErrorMsg(ack:GetResult()))
+    ToastManager.ShowToast(self._module:GetErrorMsg(ack:GetResult()))
   end
   self:UnLock(self:GetName())
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RequestAndRefreshMainUI = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  (Log.notice)("Request aircraft data")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.ReqData, self, function()
-    -- function num : 0_38_0 , upvalues : self
+function UIAircraftController:RequestAndRefreshMainUI()
+  Log.notice("Request aircraft data")
+  GameGlobal.TaskManager():StartTask(self.ReqData, self, function()
     if self.active then
       self:RefreshMainUI()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RefreshMainUI = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  (Log.notice)("Refresh aircraft main ui")
-  ;
-  (self._main):RefreshScene()
+function UIAircraftController:RefreshMainUI()
+  Log.notice("Refresh aircraft main ui")
+  self._main:RefreshScene()
   self:RefreshNavMenuData()
   self:RefrshEasyEntryBtns()
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RefreshOneRoomUI = function(self, _spaceId)
-  -- function num : 0_40
-  (self._main):RefreshRoom3DUI(_spaceId)
+function UIAircraftController:RefreshOneRoomUI(_spaceId)
+  self._main:RefreshRoom3DUI(_spaceId)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ShowRoomUI = function(self, spaceID, _closeInfoWindow, navMenuTempData)
-  -- function num : 0_41 , upvalues : _ENV
-  local logicRoomData = (self._module):GetRoom(spaceID)
+function UIAircraftController:ShowRoomUI(spaceID, _closeInfoWindow, navMenuTempData)
+  local logicRoomData = self._module:GetRoom(spaceID)
   if logicRoomData == nil then
-    return 
+    return
   end
   if self._roomUI == nil then
-    self._roomUI = (self._roomUILoader):SpawnObject("UIAircraftRoomItem")
+    self._roomUI = self._roomUILoader:SpawnObject("UIAircraftRoomItem")
   end
-  ;
-  (self._roomUI):Close()
-  ;
-  (self._roomUI):Refresh(logicRoomData, _closeInfoWindow)
+  self._roomUI:Close()
+  self._roomUI:Refresh(logicRoomData, _closeInfoWindow)
   self:UIAirNavMenuActive(false)
-  ;
-  (self._blackMask):SetActive(true)
-  ;
-  (self._btnDecorate):SetActive(false)
-  ;
-  (self._easyBtns):SetActive(false)
+  self._blackMask:SetActive(true)
+  self._btnDecorate:SetActive(false)
+  self._easyBtns:SetActive(false)
   if navMenuTempData ~= nil then
     self:Lock("UIAircraftController:ShowRoomUI")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(440, function()
-    -- function num : 0_41_0 , upvalues : self, navMenuTempData
-    self:UnLock("UIAircraftController:ShowRoomUI")
-    if navMenuTempData ~= nil then
-      if navMenuTempData == 1 then
-        (self._roomUI):OpenEnterBuild()
-      else
-        if navMenuTempData == 2 then
-          (self._roomUI):OpenLvUp()
+    GameGlobal.Timer():AddEvent(440, function()
+      self:UnLock("UIAircraftController:ShowRoomUI")
+      if navMenuTempData ~= nil then
+        if navMenuTempData == 1 then
+          self._roomUI:OpenEnterBuild()
+        elseif navMenuTempData == 2 then
+          self._roomUI:OpenLvUp()
         end
       end
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.PetDataChangeEvent = function(self)
-  -- function num : 0_42
+function UIAircraftController:PetDataChangeEvent()
   self:CheckGuideFinger()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.CheckGuideFinger = function(self, targetPet)
-  -- function num : 0_43
+function UIAircraftController:CheckGuideFinger(targetPet)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetPetTransform = function(self)
-  -- function num : 0_44
+function UIAircraftController:GetPetTransform()
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.OnCurrentRoomPetChanged = function(self)
-  -- function num : 0_45
-  local spaceID = (self._roomUI):SpaceID()
-  ;
-  (self._main):OnSpacePetChanged(spaceID)
+function UIAircraftController:OnCurrentRoomPetChanged()
+  local spaceID = self._roomUI:SpaceID()
+  self._main:OnSpacePetChanged(spaceID)
   if self._roomUI then
-    local data = (self._module):GetRoom(spaceID)
+    local data = self._module:GetRoom(spaceID)
     if data then
-      (self._roomUI):Refresh(data, false)
+      self._roomUI:Refresh(data, false)
     end
     self:UIAirNavMenuActive(false)
-    ;
-    (self._blackMask):SetActive(true)
-    ;
-    (self._btnDecorate):SetActive(false)
+    self._blackMask:SetActive(true)
+    self._btnDecorate:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.SetTopBarActive = function(self, active)
-  -- function num : 0_46
-  ((self._topBar):GetGameObject()):SetActive(active)
+function UIAircraftController:SetTopBarActive(active)
+  self._topBar:GetGameObject():SetActive(active)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RefreshTopBar = function(self)
-  -- function num : 0_47
-  (self._topBar):RefreshAllMsg()
+function UIAircraftController:RefreshTopBar()
+  self._topBar:RefreshAllMsg()
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ShowSpcaceClean = function(self, _spaceId)
-  -- function num : 0_48
-  if self._roomUI and not (self._roomUI):IsClosed() then
-    (self._roomUI):Close()
+function UIAircraftController:ShowSpcaceClean(_spaceId)
+  if self._roomUI and not self._roomUI:IsClosed() then
+    self._roomUI:Close()
     if self:CheckAirNavMenuCanActive() then
       self:UIAirNavMenuActive(true)
     end
-    ;
-    (self._blackMask):SetActive(false)
-    if (self._module):IsDecorateUnLocked() then
-      (self._btnDecorate):SetActive(true)
+    self._blackMask:SetActive(false)
+    if self._module:IsDecorateUnLocked() then
+      self._btnDecorate:SetActive(true)
     end
   end
   self:StartTask(self.RequestCleanSpace, self, _spaceId)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RequestCleanSpace = function(self, TT, spaceID)
-  -- function num : 0_49 , upvalues : _ENV
+function UIAircraftController:RequestCleanSpace(TT, spaceID)
   self:Lock(self:GetName())
   local _module = self._module
-  local roomType = (_module:GetBuildType(spaceID))[1]
+  local roomType = _module:GetBuildType(spaceID)[1]
   if roomType == AirRoomType.AisleRoom then
-    (Log.notice)("[Aircraft] 建造过道，先请求清理")
+    Log.notice("[Aircraft] 建造过道，先请求清理")
     local cleanRes, msg = _module:RequestCleanSpace(TT, spaceID)
     if not cleanRes:GetSucc() then
-      (ToastManager.ShowToast)(_module:GetErrorMsg(cleanRes:GetResult()))
+      ToastManager.ShowToast(_module:GetErrorMsg(cleanRes:GetResult()))
       self:UnLock(self:GetName())
-      return 
+      return
     end
-    ;
-    (Log.notice)("[Aircraft] 建造过道，清理成功，请求建造")
-    local roomCfg = (Cfg.cfg_aircraft_room)({RoomType = roomType, Level = 1})
-    local roomID = (roomCfg[1]).ID
+    Log.notice("[Aircraft] 建造过道，清理成功，请求建造")
+    local roomCfg = Cfg.cfg_aircraft_room({RoomType = roomType, Level = 1})
+    local roomID = roomCfg[1].ID
     local buildRes = _module:RequestBuildRoom(TT, spaceID, roomID)
     if not buildRes:GetSucc() then
-      (ToastManager.ShowToast)(_module:GetErrorMsg(buildRes:GetResult()))
+      ToastManager.ShowToast(_module:GetErrorMsg(buildRes:GetResult()))
       self:UnLock(self:GetName())
-      return 
+      return
     end
-    ;
-    (Log.notice)("[Aircraft] 建造过道成功，刷新UI")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRequestDataAndRefreshMainUI)
+    Log.notice("[Aircraft] 建造过道成功，刷新UI")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRequestDataAndRefreshMainUI)
     local showDialog = false
     if #msg.asset > 0 then
-      for _,value in ipairs(msg.asset) do
-        if value.count > 0 then
+      for _, value in ipairs(msg.asset) do
+        if 0 < value.count then
           showDialog = true
         end
       end
     end
-    do
-      do
-        if showDialog then
-          self:ShowDialog("UIGetItemController", msg.asset)
-        end
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_clean_success"))
-        ;
-        (Log.notice)("[Aircraft] 清理房间，ID: ", spaceID)
-        local cleanRes, msg = _module:RequestCleanSpace(TT, spaceID)
-        if not cleanRes:GetSucc() then
-          (ToastManager.ShowToast)(_module:GetErrorMsg(cleanRes:GetResult()))
-          self:UnLock(self:GetName())
-          return 
-        end
-        ;
-        (Log.notice)("[Aircraft]  清理房间成功，ID: ", spaceID)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRequestDataAndRefreshMainUI)
-        local showDialog = false
-        if #msg.asset > 0 then
-          for _,value in ipairs(msg.asset) do
-            if value.count > 0 then
-              showDialog = true
-            end
-          end
-        end
-        do
-          do
-            if showDialog then
-              self:ShowDialog("UIGetItemController", msg.asset)
-            end
-            ;
-            (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_clean_success"))
-            self:UnLock(self:GetName())
-          end
+    if showDialog then
+      self:ShowDialog("UIGetItemController", msg.asset)
+    end
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_clean_success"))
+  else
+    Log.notice("[Aircraft] 清理房间，ID: ", spaceID)
+    local cleanRes, msg = _module:RequestCleanSpace(TT, spaceID)
+    if not cleanRes:GetSucc() then
+      ToastManager.ShowToast(_module:GetErrorMsg(cleanRes:GetResult()))
+      self:UnLock(self:GetName())
+      return
+    end
+    Log.notice("[Aircraft]  清理房间成功，ID: ", spaceID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRequestDataAndRefreshMainUI)
+    local showDialog = false
+    if #msg.asset > 0 then
+      for _, value in ipairs(msg.asset) do
+        if 0 < value.count then
+          showDialog = true
         end
       end
     end
+    if showDialog then
+      self:ShowDialog("UIGetItemController", msg.asset)
+    end
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_clean_success"))
   end
+  self:UnLock(self:GetName())
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.InitDataUpdater = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  local d_curFireFly = (math.floor)((self._module):GetFirefly())
-  local d_atom = ((GameGlobal.GetModule)(RoleModule)):GetAtom()
-  self.d_dataUpdater = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_50_0 , upvalues : _ENV, d_curFireFly, d_atom
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
-    local airModule = (GameGlobal.GetModule)(AircraftModule)
+function UIAircraftController:InitDataUpdater()
+  local d_curFireFly = math.floor(self._module:GetFirefly())
+  local d_atom = GameGlobal.GetModule(RoleModule):GetAtom()
+  self.d_dataUpdater = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    local airModule = GameGlobal.GetModule(AircraftModule)
     if roleModule == nil or airModule == nil or airModule:GetAircraftInfo() == nil then
-      return 
+      return
     end
-    local curFire = (math.floor)(airModule:GetFirefly())
+    local curFire = math.floor(airModule:GetFirefly())
     if curFire ~= d_curFireFly then
       d_curFireFly = curFire
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftOnFireFlyChanged)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftOnFireFlyChanged)
     end
     if airModule:GetSmeltRoom() then
       local count = roleModule:GetAtom()
       if count ~= d_atom then
         d_atom = count
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftOnAtomChanged)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftOnAtomChanged)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RandomStoryStartOrEnd = function(self, look, timeLength)
-  -- function num : 0_51 , upvalues : _ENV
+function UIAircraftController:RandomStoryStartOrEnd(look, timeLength)
   if look then
-    ((self._randomStoryBlackMask).gameObject):SetActive(true)
-    ;
-    (self._randomStoryBlackMask):DOColor(Color(0, 0, 0, 1), timeLength * 0.001)
+    self._randomStoryBlackMask.gameObject:SetActive(true)
+    self._randomStoryBlackMask:DOColor(Color(0, 0, 0, 1), timeLength * 0.001)
   else
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._randomStoryBlackMask).color = Color(0, 0, 0, 0)
-    ;
-    ((self._randomStoryBlackMask).gameObject):SetActive(false)
+    self._randomStoryBlackMask.color = Color(0, 0, 0, 0)
+    self._randomStoryBlackMask.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.StartOneRandomEvent = function(self, storyid)
-  -- function num : 0_52
-  (self._main):StartOneRandomEvent(storyid)
+function UIAircraftController:StartOneRandomEvent(storyid)
+  self._main:StartOneRandomEvent(storyid)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.BuildRoom = function(self, _spaceId)
-  -- function num : 0_53
-  if self._roomUI and not (self._roomUI):IsClosed() then
-    (self._roomUI):Close()
+function UIAircraftController:BuildRoom(_spaceId)
+  if self._roomUI and not self._roomUI:IsClosed() then
+    self._roomUI:Close()
     if self:CheckAirNavMenuCanActive() then
       self:UIAirNavMenuActive(true)
     end
-    ;
-    (self._blackMask):SetActive(false)
-    if (self._module):IsDecorateUnLocked() then
-      (self._btnDecorate):SetActive(true)
+    self._blackMask:SetActive(false)
+    if self._module:IsDecorateUnLocked() then
+      self._btnDecorate:SetActive(true)
     end
   end
   self:ShowDialog("UIAircraftBuildRoomController", _spaceId)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.BuildOrUpgradeSpeedup = function(self, spaceID, option)
-  -- function num : 0_54
-  if self._roomUI and not (self._roomUI):IsClosed() then
-    (self._roomUI):Close()
+function UIAircraftController:BuildOrUpgradeSpeedup(spaceID, option)
+  if self._roomUI and not self._roomUI:IsClosed() then
+    self._roomUI:Close()
     if self:CheckAirNavMenuCanActive() then
       self:UIAirNavMenuActive(true)
     end
-    ;
-    (self._blackMask):SetActive(false)
-    if (self._module):IsDecorateUnLocked() then
-      (self._btnDecorate):SetActive(true)
+    self._blackMask:SetActive(false)
+    if self._module:IsDecorateUnLocked() then
+      self._btnDecorate:SetActive(true)
     end
   end
   self:ShowDialog("UIAircraftFireflySpeedupController", spaceID, option)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.FocusRoom = function(self, room, cb)
-  -- function num : 0_55
-  (self._main):FocusRoom(room, cb)
+function UIAircraftController:FocusRoom(room, cb)
+  self._main:FocusRoom(room, cb)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.FocusPet = function(self, airPet)
-  -- function num : 0_56
-  (self._main):FocusPet(airPet)
+function UIAircraftController:FocusPet(airPet)
+  self._main:FocusPet(airPet)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.SetGotoSpaceId = function(self, spaceId, param)
-  -- function num : 0_57
-  (self._main):SetGotoSpaceId(spaceId, param)
+function UIAircraftController:SetGotoSpaceId(spaceId, param)
+  self._main:SetGotoSpaceId(spaceId, param)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetFireIcon = function(self)
-  -- function num : 0_58
-  if self._topBar then
-    return ((self._topBar).fireFlyItem):GetGameObject()
-  end
+function UIAircraftController:GetFireIcon()
+  return self._topBar and self._topBar.fireFlyItem:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetStarIcon = function(self)
-  -- function num : 0_59
-  if self._topBar then
-    return ((self._topBar).energyItem):GetGameObject()
-  end
+function UIAircraftController:GetStarIcon()
+  return self._topBar and self._topBar.energyItem:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetRoomLeftBottom = function(self)
-  -- function num : 0_60
-  if self._roomUI then
-    return (self._roomUI):GetRoomInfoGameobject()
-  end
+function UIAircraftController:GetRoomLeftBottom()
+  return self._roomUI and self._roomUI:GetRoomInfoGameobject()
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetRoomInfoBtnFacility = function(self)
-  -- function num : 0_61
-  if self._roomUI and (self._roomUI)._roomInfo then
-    return ((self._roomUI)._roomInfo):GetGameObject("ButtonFacility")
-  end
+function UIAircraftController:GetRoomInfoBtnFacility()
+  return self._roomUI and self._roomUI._roomInfo and self._roomUI._roomInfo:GetGameObject("ButtonFacility")
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetRoomInfoBtnSettle = function(self)
-  -- function num : 0_62
-  if self._roomUI and (self._roomUI)._roomInfo then
-    return ((self._roomUI)._roomInfo):GetGameObject("ButtonSettle")
-  end
+function UIAircraftController:GetRoomInfoBtnSettle()
+  return self._roomUI and self._roomUI._roomInfo and self._roomUI._roomInfo:GetGameObject("ButtonSettle")
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetRoomInfoAddCell = function(self, index)
-  -- function num : 0_63
-  if self._roomUI and (self._roomUI)._roomInfo then
-    return ((self._roomUI)._roomInfo):GetItem(index)
-  end
+function UIAircraftController:GetRoomInfoAddCell(index)
+  return self._roomUI and self._roomUI._roomInfo and self._roomUI._roomInfo:GetItem(index)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetRoomInfoBtnLevelUp = function(self)
-  -- function num : 0_64
-  if self._roomUI and (self._roomUI)._roomInfo then
-    return ((self._roomUI)._roomInfo):GetGameObject("ButtonLevelUp")
-  end
+function UIAircraftController:GetRoomInfoBtnLevelUp()
+  return self._roomUI and self._roomUI._roomInfo and self._roomUI._roomInfo:GetGameObject("ButtonLevelUp")
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ForceRemoveInteractivePets = function(self, pstidList)
-  -- function num : 0_65
-  (self._main):ForceRemoveInteractivePets(pstidList)
+function UIAircraftController:ForceRemoveInteractivePets(pstidList)
+  self._main:ForceRemoveInteractivePets(pstidList)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.TryStopClickAction = function(self)
-  -- function num : 0_66
-  (self._main):StopInteraction()
+function UIAircraftController:TryStopClickAction()
+  self._main:StopInteraction()
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.AircraftOpenRoom = function(self, type, spaceid, param)
-  -- function num : 0_67 , upvalues : _ENV
+function UIAircraftController:AircraftOpenRoom(type, spaceid, param)
   if type == OpenAircraftParamType.Spaceid then
     self:SetGotoSpaceId(spaceid, param)
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.PlayDoorAnim = function(self, operate, spaceID)
-  -- function num : 0_68 , upvalues : _ENV
+function UIAircraftController:PlayDoorAnim(operate, spaceID)
   local anim = AirAnimRoomOperate:New(self._main, operate, spaceID, nil)
   anim:Play()
-  ;
-  (self._main):RefreshAreaSurfacesBySpaceID(spaceID)
+  self._main:RefreshAreaSurfacesBySpaceID(spaceID)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.AircraftMainMoveCameraToNavMenu = function(self, cb, movetime)
-  -- function num : 0_69
-  (self._main):MoveToNavMenuPos(cb, movetime)
+function UIAircraftController:AircraftMainMoveCameraToNavMenu(cb, movetime)
+  self._main:MoveToNavMenuPos(cb, movetime)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetCurrentCameraPos = function(self)
-  -- function num : 0_70
-  return (self._main):GetCurrentCameraPos()
+function UIAircraftController:GetCurrentCameraPos()
+  return self._main:GetCurrentCameraPos()
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetNavMenuTargetCameraPos = function(self)
-  -- function num : 0_71
-  return (self._main):GetNavMenuTargetCameraPos()
+function UIAircraftController:GetNavMenuTargetCameraPos()
+  return self._main:GetNavMenuTargetCameraPos()
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.SetCameraToNavMenuPos = function(self)
-  -- function num : 0_72
-  (self._main):SetCameraToNavMenuPos()
+function UIAircraftController:SetCameraToNavMenuPos()
+  self._main:SetCameraToNavMenuPos()
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RefreshNavMenuData = function(self)
-  -- function num : 0_73
-  (self._navMenu):RefreshData()
+function UIAircraftController:RefreshNavMenuData()
+  self._navMenu:RefreshData()
   self:RefreshEasyBtnsRed()
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetAirCamera3D = function(self)
-  -- function num : 0_74
-  return (self._main):GetMainCamera()
+function UIAircraftController:GetAirCamera3D()
+  return self._main:GetMainCamera()
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.GetAirCamera2D = function(self)
-  -- function num : 0_75 , upvalues : _ENV
-  return ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+function UIAircraftController:GetAirCamera2D()
+  return GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.AircraftMainGetStroyPets = function(self)
-  -- function num : 0_76
-  return (self._main):GetRandomStoryPets()
+function UIAircraftController:AircraftMainGetStroyPets()
+  return self._main:GetRandomStoryPets()
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.AircraftMainGetAirPetByID = function(self, id)
-  -- function num : 0_77
-  return (self._main):GetPetByTmpID(id)
+function UIAircraftController:AircraftMainGetAirPetByID(id)
+  return self._main:GetPetByTmpID(id)
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.ClearCurrentRoom = function(self)
-  -- function num : 0_78
-  (self._main):ClearCurrentRoom()
+function UIAircraftController:ClearCurrentRoom()
+  self._main:ClearCurrentRoom()
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.UIAirNavMenuActive = function(self, active)
-  -- function num : 0_79
+function UIAircraftController:UIAirNavMenuActive(active)
   if active == true then
-    if self._roomUI and not (self._roomUI):IsClosed() then
-      return 
+    if self._roomUI and not self._roomUI:IsClosed() then
+      return
     else
-      ;
-      (self._navMenuGo):SetActive(true)
-      ;
-      (self._navMenu):ResetIconPos()
-      ;
-      (self._easyBtns):SetActive(true)
+      self._navMenuGo:SetActive(true)
+      self._navMenu:ResetIconPos()
+      self._easyBtns:SetActive(true)
     end
   else
-    ;
-    (self._navMenuGo):SetActive(false)
+    self._navMenuGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.CheckAirNavMenuCanActive = function(self)
-  -- function num : 0_80
-  return (self._main):CheckAirNavMenuCanActive()
+function UIAircraftController:CheckAirNavMenuCanActive()
+  return self._main:CheckAirNavMenuCanActive()
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.BtnDecorateOnClick = function(self)
-  -- function num : 0_81
+function UIAircraftController:BtnDecorateOnClick()
   self:DoDerorate(nil)
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.BtnMakeOnClick = function(self)
-  -- function num : 0_82 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIAircraftItemSmeltController")
+function UIAircraftController:BtnMakeOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIAircraftItemSmeltController")
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.BtnSendOnClick = function(self)
-  -- function num : 0_83 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIDispatchMapController", true)
+function UIAircraftController:BtnSendOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIDispatchMapController", true)
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.DoDerorate = function(self, spaceID)
-  -- function num : 0_84 , upvalues : _ENV
-  (self._main):ChangeMode(AircraftMode.Decorate, spaceID)
+function UIAircraftController:DoDerorate(spaceID)
+  self._main:ChangeMode(AircraftMode.Decorate, spaceID)
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.RefreshDecorateArea = function(self, space)
-  -- function num : 0_85
-  (self._main):RefreshAreaBySpace(space)
+function UIAircraftController:RefreshDecorateArea(space)
+  self._main:RefreshAreaBySpace(space)
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftController.TryRefreshRoomUI = function(self, spaceID, forceReq)
-  -- function num : 0_86 , upvalues : _ENV
+function UIAircraftController:TryRefreshRoomUI(spaceID, forceReq)
   if self._roomUI == nil then
-    return 
+    return
   end
-  if (self._roomUI):IsClosed() then
-    return 
+  if self._roomUI:IsClosed() then
+    return
   end
   if forceReq then
-    ((GameGlobal.TaskManager)()):StartTask(self.ReqData, self, function()
-    -- function num : 0_86_0 , upvalues : self, spaceID
-    self:ShowRoomUI(spaceID, false, nil)
-  end
-)
+    GameGlobal.TaskManager():StartTask(self.ReqData, self, function()
+      self:ShowRoomUI(spaceID, false, nil)
+    end)
   else
     self:ShowRoomUI(spaceID, false, nil)
   end
@@ -1306,26 +890,18 @@ end
 
 local OpenAircraftParamType = {Spaceid = 1, Petid = 2}
 _enum("OpenAircraftParamType", OpenAircraftParamType)
--- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
 
-UIAircraftController.GetBackBtn = function(self)
-  -- function num : 0_87
-  return ((self._topBar).topButtonWidget):GetGameObject("ButtonBack")
+function UIAircraftController:GetBackBtn()
+  return self._topBar.topButtonWidget:GetGameObject("ButtonBack")
 end
 
--- DECOMPILER ERROR at PC279: Confused about usage of register: R1 in 'UnsetPending'
-
-UIAircraftController.GetHomeBtn = function(self)
-  -- function num : 0_88
-  return ((self._topBar).topButtonWidget):GetGameObject("ButtonThumb")
+function UIAircraftController:GetHomeBtn()
+  return self._topBar.topButtonWidget:GetGameObject("ButtonThumb")
 end
 
--- DECOMPILER ERROR at PC282: Confused about usage of register: R1 in 'UnsetPending'
-
-UIAircraftController.GetRoomInfoDecorateBtn = function(self)
-  -- function num : 0_89
+function UIAircraftController:GetRoomInfoDecorateBtn()
   if self._roomUI then
-    return (self._roomUI):GetDecorateBtn()
+    return self._roomUI:GetDecorateBtn()
   else
     return nil
   end
@@ -1333,14 +909,10 @@ end
 
 _class("AircraftLevelUpPreCondition", Object)
 AircraftLevelUpPreCondition = AircraftLevelUpPreCondition
--- DECOMPILER ERROR at PC291: Confused about usage of register: R1 in 'UnsetPending'
 
-AircraftLevelUpPreCondition.Constructor = function(self, type, level, need, had)
-  -- function num : 0_90
+function AircraftLevelUpPreCondition:Constructor(type, level, need, had)
   self.Type = type
   self.Level = level
   self.Need = need
   self.Had = had
 end
-
-

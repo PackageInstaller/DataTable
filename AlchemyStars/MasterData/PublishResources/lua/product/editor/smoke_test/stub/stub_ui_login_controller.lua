@@ -1,23 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/stub/stub_ui_login_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not SMOKE_TEST_ENABLED then
-  return 
+  return
 end
-;
-(Log.warn)("TestRobotModule: UILoginController stub!")
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
+Log.warn("TestRobotModule: UILoginController stub!")
 
-UILoginController.OnShow = function(self)
-  -- function num : 0_0
+function UILoginController:OnShow()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-UILoginController.OnHide = function(self)
-  -- function num : 0_1
+function UILoginController:OnHide()
 end
-
-

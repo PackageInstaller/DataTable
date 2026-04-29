@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_skill_cost_feature_step_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_SkillCostFeatureStepPoint", SkillEffectResultBase)
 SkillEffectResult_SkillCostFeatureStepPoint = SkillEffectResult_SkillCostFeatureStepPoint
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_SkillCostFeatureStepPoint.Constructor = function(self, curVal, oldVal, costVal)
-  -- function num : 0_0
+function SkillEffectResult_SkillCostFeatureStepPoint:Constructor(curVal, oldVal, costVal)
   self._curVal = curVal
   self._oldVal = oldVal
   self._costVal = costVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SkillCostFeatureStepPoint.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_SkillCostFeatureStepPoint:GetEffectType()
   return SkillEffectType.SkillCostFeatureStepPoint
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SkillCostFeatureStepPoint.GetCurVal = function(self)
-  -- function num : 0_2
+function SkillEffectResult_SkillCostFeatureStepPoint:GetCurVal()
   return self._curVal
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SkillCostFeatureStepPoint.GetOldVal = function(self)
-  -- function num : 0_3
+function SkillEffectResult_SkillCostFeatureStepPoint:GetOldVal()
   return self._oldVal
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SkillCostFeatureStepPoint.GetCostVal = function(self)
-  -- function num : 0_4
+function SkillEffectResult_SkillCostFeatureStepPoint:GetCostVal()
   return self._costVal
 end
-
-

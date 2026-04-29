@@ -1,136 +1,100 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n8/person_progress/ui_activity_n8_person_progress_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN8PersonProgressListItem", UICustomWidget)
 UIActivityN8PersonProgressListItem = UIActivityN8PersonProgressListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN8PersonProgressListItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityN8PersonProgressListItem:_GetComponents()
   self._anim = self:GetUIComponent("Animation", "ani")
   self._root = self:GetGameObject("root")
   self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._desTex = self:GetUIComponent("UILocalizationText", "desTex")
   self._stateObj = {
-{self:GetGameObject("state_Accepted"), self:GetGameObject("state_Accepted_bg")}
-, 
-{self:GetGameObject("state_Completed"), self:GetGameObject("state_Completed_bg")}
-, 
-{self:GetGameObject("state_Taken"), self:GetGameObject("state_Taken_bg")}
-}
-  self._stateCountTxt = {self:GetUIComponent("UILocalizationText", "text_count_Accepted"), self:GetUIComponent("UILocalizationText", "text_count_Completed"), self:GetUIComponent("UILocalizationText", "text_count_Taken")}
+    {
+      self:GetGameObject("state_Accepted"),
+      self:GetGameObject("state_Accepted_bg")
+    },
+    {
+      self:GetGameObject("state_Completed"),
+      self:GetGameObject("state_Completed_bg")
+    },
+    {
+      self:GetGameObject("state_Taken"),
+      self:GetGameObject("state_Taken_bg")
+    }
+  }
+  self._stateCountTxt = {
+    self:GetUIComponent("UILocalizationText", "text_count_Accepted"),
+    self:GetUIComponent("UILocalizationText", "text_count_Completed"),
+    self:GetUIComponent("UILocalizationText", "text_count_Taken")
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityN8PersonProgressListItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem.SetData = function(self, campaign, progress, callback, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN8PersonProgressListItem:SetData(campaign, progress, callback, tipsCallback)
   self:_GetComponents()
   self._campaign = campaign
   self._progress = progress
   self._callback = callback
   self._tipsCallback = tipsCallback
-  self._component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
-  self._state = (self._component):CheckItemStatus(self._progress)
+  self._component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
+  self._state = self._component:CheckItemStatus(self._progress)
   self:_Refresh()
   local trans = self:GetUIComponent("RectTransform", "root")
-  trans.anchoredPosition = Vector2(0, (trans.anchoredPosition).y)
+  trans.anchoredPosition = Vector2(0, trans.anchoredPosition.y)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem.OnHide = function(self, stamp)
-  -- function num : 0_3
+function UIActivityN8PersonProgressListItem:OnHide(stamp)
   self._root = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem._Refresh = function(self)
-  -- function num : 0_4
+function UIActivityN8PersonProgressListItem:_Refresh()
   self:_SetIcon()
   self:_SetState(self._state)
   self:_SetStateCount(self._state)
   self:_SetDynamicList()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem._SetIcon = function(self)
-  -- function num : 0_5
-  local url = (self._component):GetItemIcon()
-  ;
-  (self._icon):LoadImage(url)
+function UIActivityN8PersonProgressListItem:_SetIcon()
+  local url = self._component:GetItemIcon()
+  self._icon:LoadImage(url)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem._SetState = function(self, state)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIActivityN8PersonProgressListItem:_SetState(state)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem._SetStateCount = function(self, state)
-  -- function num : 0_7
-  ((self._stateCountTxt)[state]):SetText(self._progress)
+function UIActivityN8PersonProgressListItem:_SetStateCount(state)
+  self._stateCountTxt[state]:SetText(self._progress)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem._SetDynamicListData = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._dynamicListInfo = (self._component):GetProgressRewards(self._progress)
+function UIActivityN8PersonProgressListItem:_SetDynamicListData()
+  self._dynamicListInfo = self._component:GetProgressRewards(self._progress)
   self._itemCountPerRow = 1
-  self._dynamicListSize = (math.floor)(((table.count)(self._dynamicListInfo) - 1) / self._itemCountPerRow + 1)
+  self._dynamicListSize = math.floor((table.count(self._dynamicListInfo) - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem._SetDynamicList = function(self)
-  -- function num : 0_9
+function UIActivityN8PersonProgressListItem:_SetDynamicList()
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "dynamicList")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListSize, function(scrollView, index)
-    -- function num : 0_9_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListSize, self._dynamicList)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem._RefreshList = function(self, count, list)
-  -- function num : 0_10
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityN8PersonProgressListItem:_RefreshList(count, list)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_11
+function UIActivityN8PersonProgressListItem:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -144,39 +108,27 @@ UIActivityN8PersonProgressListItem._SpawnListItem = function(self, scrollView, i
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem._SetListItemData = function(self, listItem, index)
-  -- function num : 0_12 , upvalues : _ENV
-  local info = (self._dynamicListInfo)[index]
+function UIActivityN8PersonProgressListItem:_SetListItemData(listItem, index)
+  local info = self._dynamicListInfo[index]
   local gray = self._state == CampaignPersonProgressStatus.CPPS_Taken and 1 or 0
   listItem:SetData(index, info, self._tipsCallback, gray)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem.state_AcceptedOnClick = function(self)
-  -- function num : 0_13
+function UIActivityN8PersonProgressListItem:state_AcceptedOnClick()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressListItem.state_CompletedOnClick = function(self)
-  -- function num : 0_14
+function UIActivityN8PersonProgressListItem:state_CompletedOnClick()
   if self._callback then
-    (self._callback)(self._progress)
+    self._callback(self._progress)
   end
 end
-
-

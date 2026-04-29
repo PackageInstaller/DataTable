@@ -1,311 +1,215 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/ui_activity_n28_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN28Const", Object)
 UIActivityN28Const = UIActivityN28Const
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN28Const.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN28Const:Constructor()
   self.dataAVG = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.LoadData = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityN28Const:LoadData(TT, res)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self.dataAVG = campaignModule:GetN28AVGData()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N42, ECampaignN28ComponentID.ECAMPAIGN_N28_CUMULATIVE_LOGIN, ECampaignN28ComponentID.ECAMPAIGN_N28_AVG_PHASE_2, ECampaignN28ComponentID.ECAMPAIGN_N28_POWER2ITEM, ECampaignN28ComponentID.ECAMPAIGN_N28_LINE_MISSION, ECampaignN28ComponentID.ECAMPAIGN_N28_DIFFICULT_MISSION, ECampaignN28ComponentID.ECAMPAIGN_N28_FIRST_MEET, ECampaignN28ComponentID.ECAMPAIGN_N28_SHOP)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N42, ECampaignN28ComponentID.ECAMPAIGN_N28_CUMULATIVE_LOGIN, ECampaignN28ComponentID.ECAMPAIGN_N28_AVG_PHASE_2, ECampaignN28ComponentID.ECAMPAIGN_N28_POWER2ITEM, ECampaignN28ComponentID.ECAMPAIGN_N28_LINE_MISSION, ECampaignN28ComponentID.ECAMPAIGN_N28_DIFFICULT_MISSION, ECampaignN28ComponentID.ECAMPAIGN_N28_FIRST_MEET, ECampaignN28ComponentID.ECAMPAIGN_N28_SHOP)
   if res and not res:GetSucc() then
-    return 
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   local bpRes = AsyncRequestRes:New()
   bpRes:SetSucc(true)
   self._battlepassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlepassCampaign):LoadCampaignInfo(TT, bpRes, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlepassCampaign:LoadCampaignInfo(TT, bpRes, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
   if not bpRes:GetSucc() then
-    (Log.info)("获取战斗通行证数据失败")
+    Log.info("获取战斗通行证数据失败")
   end
-  self._cumulativeLoginComponent = (self._localProcess):GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_CUMULATIVE_LOGIN)
-  self._cumulativeLoginComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_CUMULATIVE_LOGIN)
-  self._fixTeamComponent = (self._localProcess):GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_FIRST_MEET)
-  self._fixTeamCompInfo = (self._localProcess):GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_FIRST_MEET)
-  self._power2itemComponent = (self._localProcess):GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_POWER2ITEM)
-  self._power2itemComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_POWER2ITEM)
-  self._normalLineMissionComponent = (self._localProcess):GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_LINE_MISSION)
-  self._normalLineMissionompInfo = (self._localProcess):GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_LINE_MISSION)
-  self._hardLineMissionComponent = (self._localProcess):GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_DIFFICULT_MISSION)
-  self._hardLineMissionompInfo = (self._localProcess):GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_DIFFICULT_MISSION)
-  self._exchangeItemComponent = (self._localProcess):GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_SHOP)
-  self._exchangeItemComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_SHOP)
-  self._N28AVGPHASE2Component = (self._localProcess):GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_AVG_PHASE_2)
-  self._N28AVGPHASE2CompInfo = (self._localProcess):GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_AVG_PHASE_2)
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._name = (StringTable.Get)(cfg_campaign.CampaignName)
-  self._subName = (StringTable.Get)(cfg_campaign.CampaignSubtitle)
+  self._cumulativeLoginComponent = self._localProcess:GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_CUMULATIVE_LOGIN)
+  self._cumulativeLoginComponentInfo = self._localProcess:GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_CUMULATIVE_LOGIN)
+  self._fixTeamComponent = self._localProcess:GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_FIRST_MEET)
+  self._fixTeamCompInfo = self._localProcess:GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_FIRST_MEET)
+  self._power2itemComponent = self._localProcess:GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_POWER2ITEM)
+  self._power2itemComponentInfo = self._localProcess:GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_POWER2ITEM)
+  self._normalLineMissionComponent = self._localProcess:GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_LINE_MISSION)
+  self._normalLineMissionompInfo = self._localProcess:GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_LINE_MISSION)
+  self._hardLineMissionComponent = self._localProcess:GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_DIFFICULT_MISSION)
+  self._hardLineMissionompInfo = self._localProcess:GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_DIFFICULT_MISSION)
+  self._exchangeItemComponent = self._localProcess:GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_SHOP)
+  self._exchangeItemComponentInfo = self._localProcess:GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_SHOP)
+  self._N28AVGPHASE2Component = self._localProcess:GetComponent(ECampaignN28ComponentID.ECAMPAIGN_N28_AVG_PHASE_2)
+  self._N28AVGPHASE2CompInfo = self._localProcess:GetComponentInfo(ECampaignN28ComponentID.ECAMPAIGN_N28_AVG_PHASE_2)
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._name = StringTable.Get(cfg_campaign.CampaignName)
+  self._subName = StringTable.Get(cfg_campaign.CampaignSubtitle)
   local plotIdList = cfg_campaign.FirstEnterStoryID
   self._plotId = nil
-  if plotIdList and #plotIdList > 0 then
+  if plotIdList and 0 < #plotIdList then
     self._plotId = plotIdList[1]
   end
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   if not sample then
-    return 
+    return
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
+  local nowTime = self._timeModule:GetServerTime() / 1000
   self._activeEndTime = sample.end_time
-  if sample.end_time < nowTime then
-    (Log.error)("Time error!")
-    return 
+  if nowTime > sample.end_time then
+    Log.error("Time error!")
+    return
   end
-  ;
-  (self.dataAVG):RequestCampaign(TT)
-  ;
-  (self.dataAVG):Init()
-  ;
-  (self.dataAVG):Update()
+  self.dataAVG:RequestCampaign(TT)
+  self.dataAVG:Init()
+  self.dataAVG:Update()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.ForceUpdate = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN28Const:ForceUpdate(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetCampaign = function(self)
-  -- function num : 0_3
+function UIActivityN28Const:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetCampaignId = function(self)
-  -- function num : 0_4
-  return (self._campaign)._id
+function UIActivityN28Const:GetCampaignId()
+  return self._campaign._id
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetName = function(self)
-  -- function num : 0_5
+function UIActivityN28Const:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetSubName = function(self)
-  -- function num : 0_6
+function UIActivityN28Const:GetSubName()
   return self._subName
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetActiveEndTime = function(self)
-  -- function num : 0_7
+function UIActivityN28Const:GetActiveEndTime()
   return self._activeEndTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetPlotId = function(self)
-  -- function num : 0_8
+function UIActivityN28Const:GetPlotId()
   return self._plotId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.CanPlayPlot = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityN28Const:CanPlayPlot()
   if self._plotId == nil then
     return false
   end
-  if (UIActivityN28Helper.GetNewFlagStatus)("PLAY_N28_ACTIVITY_FIRST_ENTER_PLOT") then
+  if UIActivityN28Helper.GetNewFlagStatus("PLAY_N28_ACTIVITY_FIRST_ENTER_PLOT") then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.SetPlayPlotStatus = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN28Const:SetPlayPlotStatus()
   if self._plotId == nil then
-    return 
+    return
   end
-  ;
-  (UIActivityN28Helper.SetNewFlagStatus)("PLAY_N28_ACTIVITY_FIRST_ENTER_PLOT", false)
+  UIActivityN28Helper.SetNewFlagStatus("PLAY_N28_ACTIVITY_FIRST_ENTER_PLOT", false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsActivityEnd = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityN28Const:IsActivityEnd()
   if not self._activeEndTime then
     return true
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(self._activeEndTime - nowTime)
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._activeEndTime - nowTime)
   if seconds <= 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetLoginComponent = function(self)
-  -- function num : 0_12
+function UIActivityN28Const:GetLoginComponent()
   return self._cumulativeLoginComponent, self._cumulativeLoginComponentInfo
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetTryPetComponent = function(self)
-  -- function num : 0_13
+function UIActivityN28Const:GetTryPetComponent()
   return self._fixTeamComponent, self._fixTeamCompInfo
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetPower2ItemComponent = function(self)
-  -- function num : 0_14
+function UIActivityN28Const:GetPower2ItemComponent()
   return self._power2itemComponent, self._power2itemComponentInfo
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetNormalLineMissionComponent = function(self)
-  -- function num : 0_15
+function UIActivityN28Const:GetNormalLineMissionComponent()
   return self._normalLineMissionComponent, self._normalLineMissionompInfo
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetHardLineMissionComponent = function(self)
-  -- function num : 0_16
+function UIActivityN28Const:GetHardLineMissionComponent()
   return self._hardLineMissionComponent, self._hardLineMissionompInfo
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetShopComponent = function(self)
-  -- function num : 0_17
+function UIActivityN28Const:GetShopComponent()
   return self._exchangeItemComponent, self._exchangeItemComponentInfo
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetAVGGameComponent = function(self)
-  -- function num : 0_18
+function UIActivityN28Const:GetAVGGameComponent()
   return self._N28AVGPHASE2Component, self._N28AVGPHASE2CompInfo
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetLoginComponentStatus = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityN28Const:GetLoginComponentStatus()
   if self:IsActivityEnd() then
     return ActivityN28ComponentStatus.ActivityEnd, 0
   end
-  return (UIActivityN28Helper.CheckComponentStatus)(self._cumulativeLoginComponent)
+  return UIActivityN28Helper.CheckComponentStatus(self._cumulativeLoginComponent)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetTryPetComponentStatus = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityN28Const:GetTryPetComponentStatus()
   if self:IsActivityEnd() then
     return ActivityN28ComponentStatus.ActivityEnd, 0
   end
-  return (UIActivityN28Helper.CheckComponentStatus)(self._fixTeamComponent)
+  return UIActivityN28Helper.CheckComponentStatus(self._fixTeamComponent)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetPower2ItemComponentStatus = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityN28Const:GetPower2ItemComponentStatus()
   if self:IsActivityEnd() then
     return ActivityN28ComponentStatus.ActivityEnd, 0
   end
-  return (UIActivityN28Helper.CheckComponentStatus)(self._power2itemComponent)
+  return UIActivityN28Helper.CheckComponentStatus(self._power2itemComponent)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetNormalLineMissionComponentStatus = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityN28Const:GetNormalLineMissionComponentStatus()
   if self:IsActivityEnd() then
     return ActivityN28ComponentStatus.ActivityEnd, 0
   end
-  return (UIActivityN28Helper.CheckComponentStatus)(self._normalLineMissionComponent)
+  return UIActivityN28Helper.CheckComponentStatus(self._normalLineMissionComponent)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetHardLineMissionComponentStatus = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIActivityN28Const:GetHardLineMissionComponentStatus()
   if self:IsActivityEnd() then
     return ActivityN28ComponentStatus.ActivityEnd, 0
   end
-  return (UIActivityN28Helper.CheckComponentStatus)(self._hardLineMissionComponent)
+  return UIActivityN28Helper.CheckComponentStatus(self._hardLineMissionComponent)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.EnterGetHardLineMissionComponentStatus = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIActivityN28Const:EnterGetHardLineMissionComponentStatus()
   if self:IsActivityEnd() then
     return ActivityN28ComponentStatus.ActivityEnd, 0
   end
-  return (UIActivityN28Helper.CheckHard)(self._hardLineMissionComponent)
+  return UIActivityN28Helper.CheckHard(self._hardLineMissionComponent)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetShopComponentStatus = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIActivityN28Const:GetShopComponentStatus()
   if self:IsActivityEnd() then
     return ActivityN28ComponentStatus.ActivityEnd, 0
   end
-  return (UIActivityN28Helper.CheckComponentStatus)(self._exchangeItemComponent)
+  return UIActivityN28Helper.CheckComponentStatus(self._exchangeItemComponent)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.GetAVGGameComponentStatus = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityN28Const:GetAVGGameComponentStatus()
   if self:IsActivityEnd() then
     return ActivityN28ComponentStatus.ActivityEnd, 0
   end
-  return (UIActivityN28Helper.CheckComponentStatus)(self._N28AVGPHASE2Component)
+  return UIActivityN28Helper.CheckComponentStatus(self._N28AVGPHASE2Component)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowEntryRed = function(self)
-  -- function num : 0_27
+function UIActivityN28Const:IsShowEntryRed()
   if self:IsActivityEnd() then
     return false
   end
@@ -327,93 +231,66 @@ UIActivityN28Const.IsShowEntryRed = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowLoginRed = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIActivityN28Const:IsShowLoginRed()
   local status, time = self:GetLoginComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
-  return (self._campaign):CheckComponentRed(ECampaignN28ComponentID.ECAMPAIGN_N28_CUMULATIVE_LOGIN)
+  return self._campaign:CheckComponentRed(ECampaignN28ComponentID.ECAMPAIGN_N28_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowBattlePassRed = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIActivityN28Const:IsShowBattlePassRed()
   if self:IsActivityEnd() then
     return false
   end
   if self._battlepassCampaign then
-    return (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
+    return UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowNormalLineRed = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIActivityN28Const:IsShowNormalLineRed()
   local status, time = self:GetNormalLineMissionComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
   local red = false
-  if not red then
-    red = (self._localProcess):LineMissionRedDot()
-  end
-  local isCross = (UIActivityN28Helper.LocalDB_Get_CrossDay)("line", "Red")
-  return not red or isCross
+  red = red or self._localProcess:LineMissionRedDot()
+  local isCross = UIActivityN28Helper.LocalDB_Get_CrossDay("line", "Red")
+  return red and isCross
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowHardLineRed = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UIActivityN28Const:IsShowHardLineRed()
   local status, time = self:GetHardLineMissionComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
-  local isCross = (UIActivityN28Helper.LocalDB_Get_CrossDay)("hard", "Red")
+  local isCross = UIActivityN28Helper.LocalDB_Get_CrossDay("hard", "Red")
   local red = false
-  if not red then
-    red = (self._localProcess):HardLineMissionRedDot()
-  end
-  if not red then
-    red = (self._localProcess):GetFixMissionRedDot()
-  end
-  return not red or isCross
+  red = red or self._localProcess:HardLineMissionRedDot()
+  red = red or self._localProcess:GetFixMissionRedDot()
+  return red and isCross
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowShopRed = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function UIActivityN28Const:IsShowShopRed()
   local status, time = self:GetShopComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
-  return (self._campaign):CheckComponentRed(ECampaignN28ComponentID.ECAMPAIGN_N28_SHOP)
+  return self._campaign:CheckComponentRed(ECampaignN28ComponentID.ECAMPAIGN_N28_SHOP)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowAVGGameRed = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIActivityN28Const:IsShowAVGGameRed()
   local status, time = self:GetAVGGameComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
-  local avgRed = (self.dataAVG):HasRed()
+  local avgRed = self.dataAVG:HasRed()
   return avgRed
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowEntryNew = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local enterNew = (UIActivityN28Helper.GetNewFlagStatus)("PLAY_N28_ACTIVITY_ENTER_NEW")
+function UIActivityN28Const:IsShowEntryNew()
+  local enterNew = UIActivityN28Helper.GetNewFlagStatus("PLAY_N28_ACTIVITY_ENTER_NEW")
   if enterNew then
     return true
   end
@@ -432,111 +309,76 @@ UIActivityN28Const.IsShowEntryNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.ClearEnterNew = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  (UIActivityN28Helper.SetNewFlagStatus)("PLAY_N28_ACTIVITY_ENTER_NEW", false)
+function UIActivityN28Const:ClearEnterNew()
+  UIActivityN28Helper.SetNewFlagStatus("PLAY_N28_ACTIVITY_ENTER_NEW", false)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowNormalLineNew = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function UIActivityN28Const:IsShowNormalLineNew()
   local status, time = self:GetNormalLineMissionComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
-  return (UIActivityN28Helper.GetNewFlagStatus)("PLAY_N28_ACTIVITY_NORMAL_LINE_NEW")
+  return UIActivityN28Helper.GetNewFlagStatus("PLAY_N28_ACTIVITY_NORMAL_LINE_NEW")
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.ClearNormalLineNew = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  (UIActivityN28Helper.SetNewFlagStatus)("PLAY_N28_ACTIVITY_NORMAL_LINE_NEW", false)
+function UIActivityN28Const:ClearNormalLineNew()
+  UIActivityN28Helper.SetNewFlagStatus("PLAY_N28_ACTIVITY_NORMAL_LINE_NEW", false)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowHardLineNew = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UIActivityN28Const:IsShowHardLineNew()
   local status, time = self:GetHardLineMissionComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
   local status1, time1 = self:GetTryPetComponentStatus()
   if status1 == ActivityN28ComponentStatus.Open then
-    return (UIActivityN28Helper.GetNewFlagStatus)("PLAY_N28_ACTIVITY_HARD_LINE2_NEW")
+    return UIActivityN28Helper.GetNewFlagStatus("PLAY_N28_ACTIVITY_HARD_LINE2_NEW")
   end
-  return (UIActivityN28Helper.GetNewFlagStatus)("PLAY_N28_ACTIVITY_HARD_LINE_NEW")
+  return UIActivityN28Helper.GetNewFlagStatus("PLAY_N28_ACTIVITY_HARD_LINE_NEW")
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.ClearHardLineNew = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  (UIActivityN28Helper.SetNewFlagStatus)("PLAY_N28_ACTIVITY_HARD_LINE_NEW", false)
+function UIActivityN28Const:ClearHardLineNew()
+  UIActivityN28Helper.SetNewFlagStatus("PLAY_N28_ACTIVITY_HARD_LINE_NEW", false)
   local status, time = self:GetTryPetComponentStatus()
   if status == ActivityN28ComponentStatus.Open then
-    (UIActivityN28Helper.SetNewFlagStatus)("PLAY_N28_ACTIVITY_HARD_LINE2_NEW", false)
+    UIActivityN28Helper.SetNewFlagStatus("PLAY_N28_ACTIVITY_HARD_LINE2_NEW", false)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowShopNew = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function UIActivityN28Const:IsShowShopNew()
   local status, time = self:GetShopComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
-  return (UIActivityN28Helper.GetNewFlagStatus)("PLAY_N28_ACTIVITY_SHOP_NEW")
+  return UIActivityN28Helper.GetNewFlagStatus("PLAY_N28_ACTIVITY_SHOP_NEW")
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.ClearShopNew = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  (UIActivityN28Helper.SetNewFlagStatus)("PLAY_N28_ACTIVITY_SHOP_NEW", false)
+function UIActivityN28Const:ClearShopNew()
+  UIActivityN28Helper.SetNewFlagStatus("PLAY_N28_ACTIVITY_SHOP_NEW", false)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowAVGGameNew = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function UIActivityN28Const:IsShowAVGGameNew()
   local status, time = self:GetAVGGameComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
-  local newFlag = (UIActivityN28Helper.GetNewFlagStatus)("PLAY_N28_AVG_Game_NEW")
-  local avgNew = (self.dataAVG):HasNew()
+  local newFlag = UIActivityN28Helper.GetNewFlagStatus("PLAY_N28_AVG_Game_NEW")
+  local avgNew = self.dataAVG:HasNew()
   return newFlag or avgNew
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.ClearAVGGameNew = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  (UIActivityN28Helper.SetNewFlagStatus)("PLAY_N28_AVG_Game_NEW", false)
+function UIActivityN28Const:ClearAVGGameNew()
+  UIActivityN28Helper.SetNewFlagStatus("PLAY_N28_AVG_Game_NEW", false)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.IsShowLoginNew = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function UIActivityN28Const:IsShowLoginNew()
   local status, time = self:GetLoginComponentStatus()
   if status ~= ActivityN28ComponentStatus.Open then
     return false
   end
-  return (UIActivityN28Helper.GetNewFlagStatus)("PLAY_N28_ACTIVITY_LOGIN_NEW")
+  return UIActivityN28Helper.GetNewFlagStatus("PLAY_N28_ACTIVITY_LOGIN_NEW")
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Const.ClearLoginNew = function(self)
-  -- function num : 0_45 , upvalues : _ENV
-  (UIActivityN28Helper.SetNewFlagStatus)("PLAY_N28_ACTIVITY_LOGIN_NEW", false)
+function UIActivityN28Const:ClearLoginNew()
+  UIActivityN28Helper.SetNewFlagStatus("PLAY_N28_ACTIVITY_LOGIN_NEW", false)
 end
-
-

@@ -1,79 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_backpack_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBackpackBox", UIController)
 UIHomelandBackpackBox = UIHomelandBackpackBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBackpackBox.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandBackpackBox:OnShow(uiParams)
   self:AttachEvent(GameEventType.CloseUIBackPackBox, self.btnCloseOnClick)
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   local Content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._item = uiParams[1]
   self._count = uiParams[2]
-  ;
-  (self.txtName):SetText((StringTable.Get)(((self._item):GetTemplate()).Name))
-  local lst = self:GetItemList((self._item):GetTemplateID())
+  self.txtName:SetText(StringTable.Get(self._item:GetTemplate().Name))
+  local lst = self:GetItemList(self._item:GetTemplateID())
   self._itemList = {}
-  for i,item in ipairs(lst) do
+  for i, item in ipairs(lst) do
     local ra = RoleAsset:New()
-    do
-      ra.assetid = item[1]
-      ra.count = item[2]
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._itemList)[i] = ra
-    end
+    ra.assetid = item[1]
+    ra.count = item[2]
+    self._itemList[i] = ra
   end
-  local len = (table.count)(self._itemList)
+  local len = table.count(self._itemList)
   Content:SpawnObjects("UIItemHomeland", len)
   local uiItems = Content:GetAllSpawnList()
-  for i,uiItem in ipairs(uiItems) do
+  for i, uiItem in ipairs(uiItems) do
     if i <= len then
-      uiItem:Flush((self._itemList)[i], function()
-    -- function num : 0_0_0 , upvalues : self, i
-    self:ShowUIBackPackBoxGain(i)
-  end
-, true)
+      uiItem:Flush(self._itemList[i], function()
+        self:ShowUIBackPackBoxGain(i)
+      end, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackBox.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandBackpackBox:OnHide()
   self:DetachEvent(GameEventType.CloseUIBackPackBox, self.btnCloseOnClick)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackBox.btnCloseOnClick = function(self)
-  -- function num : 0_2
+function UIHomelandBackpackBox:btnCloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackBox.ShowUIBackPackBoxGain = function(self, idx)
-  -- function num : 0_3
-  self:ShowDialog("UIHomelandBackPackBoxGain", (self._item):GetID(), self._count, (self._itemList)[idx], idx - 1)
+function UIHomelandBackpackBox:ShowUIBackPackBoxGain(idx)
+  self:ShowDialog("UIHomelandBackPackBoxGain", self._item:GetID(), self._count, self._itemList[idx], idx - 1)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackBox.GetItemList = function(self, itemGiftID)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfgItemGift = (Cfg.cfg_item_gift)[itemGiftID]
+function UIHomelandBackpackBox:GetItemList(itemGiftID)
+  local cfgItemGift = Cfg.cfg_item_gift[itemGiftID]
   if not cfgItemGift then
     return 0
   end
   local lst = cfgItemGift.ItemList
   return lst
 end
-
-

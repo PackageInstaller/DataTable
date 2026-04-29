@@ -1,117 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_snake_head_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SnakeHeadMove", Object)
 SkillEffectCalc_SnakeHeadMove = SkillEffectCalc_SnakeHeadMove
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SnakeHeadMove.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SnakeHeadMove:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._monsterShowLogic = (self._world):GetService("MonsterShowLogic")
+  self._configService = self._world:GetService("Config")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._monsterShowLogic = self._world:GetService("MonsterShowLogic")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SnakeHeadMove.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SnakeHeadMove:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterID = skillEffectCalcParam.casterEntityID
   local targetIDList = skillEffectCalcParam.targetEntityIDs
-  local casterEntity = (self._world):GetEntityByID(casterID)
+  local casterEntity = self._world:GetEntityByID(casterID)
   local casterPos = casterEntity:GetGridPosition()
   local effectParam = skillEffectCalcParam.skillEffectParam
   local snakeMoveType = effectParam:GetHeadMoveType()
   local tailMonsterID = effectParam:GetTailMonsterID()
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local shareResultCmpt = boardEntity:ShareSkillResult()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local tailEntityList = utilDataSvc:FindMonsterByMonsterID(tailMonsterID)
   local tailEntity = tailEntityList[1]
-  local ignorePos = nil
+  local ignorePos
   if snakeMoveType == SnakeMoveType.Move then
     ignorePos = tailEntity:GetGridPosition()
   end
-  local result = nil
+  local result
   if snakeMoveType ~= SnakeMoveType.Attack then
-    local utilCalcSvc = (self._world):GetService("UtilCalc")
+    local utilCalcSvc = self._world:GetService("UtilCalc")
     local retPath = utilCalcSvc:SnakeFindPathMove2PlayerNearestPath(casterEntity, ignorePos)
     if #retPath ~= 0 then
       local pos = retPath[1]
       result = SkillEffectSnakeHeadMoveResult:New(pos, casterPos, false)
     else
-      do
-        local casterDir = casterEntity:GetGridDirection()
-        local offset = {}
-        if casterDir == Vector2(0, 1) then
-          offset = {Vector2(0, 1), Vector2(1, 0), Vector2(-1, 0)}
-        else
-          if casterDir == Vector2(0, -1) then
-            offset = {Vector2(0, -1), Vector2(1, 0), Vector2(-1, 0)}
-          else
-            if casterDir == Vector2(1, 0) then
-              offset = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1)}
-            else
-              if casterDir == Vector2(-1, 0) then
-                offset = {Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1)}
-              end
-            end
-          end
-        end
-        local posList = {}
-        do
-          for i,v in ipairs(offset) do
-            local offSetPos = Vector2(casterPos.x + v.x, v.y + casterPos.y)
-            if utilCalcSvc:SnakeHeadCheckBlock(offSetPos, ignorePos) then
-              (table.insert)(posList, offSetPos)
-            end
-          end
-          if #posList > 0 then
-            local tailPos = tailEntity:GetGridPosition()
-            ;
-            (table.sort)(posList, function(a, b)
-    -- function num : 0_1_0 , upvalues : _ENV, tailPos
-    local disA = (Vector2.Distance)(a, tailPos)
-    local disB = (Vector2.Distance)(b, tailPos)
-    do return disB < disA end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-            local pos = posList[1]
-            result = SkillEffectSnakeHeadMoveResult:New(pos, casterPos, false)
-          else
-            do
-              if casterEntity:HasMonsterID() then
-                do
-                  (casterEntity:Attributes()):Modify("HP", 0)
-                  ;
-                  (self._monsterShowLogic):AddMonsterDeadMark(casterEntity)
-                  ;
-                  (Log.debug)("SnakeHeadDead ModifyHP =0 defender=", casterEntity:GetID())
-                  result = SkillEffectSnakeHeadMoveResult:New(nil, casterPos, true)
-                  -- DECOMPILER ERROR at PC222: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC222: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-          end
-          local targetID = targetIDList[1]
-          local targetEntity = (self._world):GetEntityByID(targetID)
-          do
-            local pos = targetEntity:GetGridPosition()
-            result = SkillEffectSnakeHeadMoveResult:New(pos, casterPos, false)
-            shareResultCmpt:AddEntityResult(casterID, result)
-            return result
-          end
+      local casterDir = casterEntity:GetGridDirection()
+      local offset = {}
+      if casterDir == Vector2(0, 1) then
+        offset = {
+          Vector2(0, 1),
+          Vector2(1, 0),
+          Vector2(-1, 0)
+        }
+      elseif casterDir == Vector2(0, -1) then
+        offset = {
+          Vector2(0, -1),
+          Vector2(1, 0),
+          Vector2(-1, 0)
+        }
+      elseif casterDir == Vector2(1, 0) then
+        offset = {
+          Vector2(0, 1),
+          Vector2(1, 0),
+          Vector2(0, -1)
+        }
+      elseif casterDir == Vector2(-1, 0) then
+        offset = {
+          Vector2(0, 1),
+          Vector2(-1, 0),
+          Vector2(0, -1)
+        }
+      end
+      local posList = {}
+      for i, v in ipairs(offset) do
+        local offSetPos = Vector2(casterPos.x + v.x, v.y + casterPos.y)
+        if utilCalcSvc:SnakeHeadCheckBlock(offSetPos, ignorePos) then
+          table.insert(posList, offSetPos)
         end
       end
+      if 0 < #posList then
+        local tailPos = tailEntity:GetGridPosition()
+        table.sort(posList, function(a, b)
+          local disA = Vector2.Distance(a, tailPos)
+          local disB = Vector2.Distance(b, tailPos)
+          return disA > disB
+        end)
+        local pos = posList[1]
+        result = SkillEffectSnakeHeadMoveResult:New(pos, casterPos, false)
+      elseif casterEntity:HasMonsterID() then
+        casterEntity:Attributes():Modify("HP", 0)
+        self._monsterShowLogic:AddMonsterDeadMark(casterEntity)
+        Log.debug("SnakeHeadDead ModifyHP =0 defender=", casterEntity:GetID())
+        result = SkillEffectSnakeHeadMoveResult:New(nil, casterPos, true)
+      end
     end
+  else
+    local targetID = targetIDList[1]
+    local targetEntity = self._world:GetEntityByID(targetID)
+    local pos = targetEntity:GetGridPosition()
+    result = SkillEffectSnakeHeadMoveResult:New(pos, casterPos, false)
   end
+  shareResultCmpt:AddEntityResult(casterID, result)
+  return result
 end
-
-

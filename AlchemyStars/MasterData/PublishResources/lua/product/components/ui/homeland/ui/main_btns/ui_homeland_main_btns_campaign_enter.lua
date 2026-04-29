@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/main_btns/ui_homeland_main_btns_campaign_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMainBtnsCampaignEnter", UICustomWidget)
 UIHomelandMainBtnsCampaignEnter = UIHomelandMainBtnsCampaignEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMainBtnsCampaignEnter.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMainBtnsCampaignEnter:OnShow()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMainBtnsCampaignEnter:OnHide()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter.SetData = function(self, root)
-  -- function num : 0_2
+function UIHomelandMainBtnsCampaignEnter:SetData(root)
   self._infos = {}
   self._root_open = false
   self._pool_open = false
@@ -33,63 +20,48 @@ UIHomelandMainBtnsCampaignEnter.SetData = function(self, root)
   self:_Start_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._Start_Refresh = function(self)
-  -- function num : 0_3
+function UIHomelandMainBtnsCampaignEnter:_Start_Refresh()
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self
     self._infos = self:_GetInfos(TT)
     self:_SetEnterItems(self._infos)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._Refresh = function(self)
-  -- function num : 0_4
+function UIHomelandMainBtnsCampaignEnter:_Refresh()
   self:_SetNewAndReds()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._GetInfos = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMainBtnsCampaignEnter:_GetInfos(TT)
   local tb = {}
   local cfgs = self:_GetCfgs()
-  for _,v in ipairs(cfgs) do
-    if v.Type == 1 and self:_CheckOpen_Campaign(TT, v.CampaignType) then
-      (table.insert)(tb, v)
-    end
-    if v.Type == 2 and self:_CheckOpen_CampaignComponent(TT, v.CampaignType, v.ComponentID) then
-      (table.insert)(tb, v)
-    end
-    if v.Type == 3 and self:_CheckOpen_Custom(v.TimeStart, v.TimeStop) then
-      (table.insert)(tb, v)
+  for _, v in ipairs(cfgs) do
+    if v.Type == 1 then
+      if self:_CheckOpen_Campaign(TT, v.CampaignType) then
+        table.insert(tb, v)
+      end
+    elseif v.Type == 2 then
+      if self:_CheckOpen_CampaignComponent(TT, v.CampaignType, v.ComponentID) then
+        table.insert(tb, v)
+      end
+    elseif v.Type == 3 and self:_CheckOpen_Custom(v.TimeStart, v.TimeStop) then
+      table.insert(tb, v)
     end
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._GetCfgs = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMainBtnsCampaignEnter:_GetCfgs()
   local tb = {}
-  local cfgs = (Cfg.cfg_homeland_enter)({})
-  for _,v in pairs(cfgs) do
+  local cfgs = Cfg.cfg_homeland_enter({})
+  for _, v in pairs(cfgs) do
     if v.IsActive then
-      (table.insert)(tb, v)
+      table.insert(tb, v)
     end
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._CheckOpen_Campaign = function(self, TT, campaignType)
-  -- function num : 0_7
+function UIHomelandMainBtnsCampaignEnter:_CheckOpen_Campaign(TT, campaignType)
   local campaign = self:_LoadCampaign(TT, campaignType)
   if not campaign:CheckCampaignOpen() then
     return false
@@ -97,10 +69,7 @@ UIHomelandMainBtnsCampaignEnter._CheckOpen_Campaign = function(self, TT, campaig
   return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._CheckOpen_CampaignComponent = function(self, TT, campaignType, componentId)
-  -- function num : 0_8
+function UIHomelandMainBtnsCampaignEnter:_CheckOpen_CampaignComponent(TT, campaignType, componentId)
   local campaign = self:_LoadCampaign(TT, campaignType)
   if not campaign:CheckCampaignOpen() then
     return false
@@ -111,66 +80,43 @@ UIHomelandMainBtnsCampaignEnter._CheckOpen_CampaignComponent = function(self, TT
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._CheckOpen_Custom = function(self, start, stop)
-  -- function num : 0_9 , upvalues : _ENV
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIHomelandMainBtnsCampaignEnter:_CheckOpen_Custom(start, stop)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local endTime = loginModule:GetTimeStampByTimeStr(endTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if beginTime <= curTime and curTime < endTime then
+  if curTime >= beginTime and curTime < endTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._LoadCampaign = function(self, TT, campaignType)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandMainBtnsCampaignEnter:_LoadCampaign(TT, campaignType)
   local res = AsyncRequestRes:New()
   local campaign = UIActivityCampaign:New()
   campaign:LoadCampaignInfo(TT, res, campaignType)
   return campaign
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._SetRootOpen = function(self, show)
-  -- function num : 0_11
-  if #self._infos <= 0 or not show then
-    show = false
-  end
+function UIHomelandMainBtnsCampaignEnter:_SetRootOpen(show)
+  show = #self._infos > 0 and show or false
   self._root_open = show
-  ;
-  (self._root):SetActive(show)
+  self._root:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._SetPoolOpen = function(self, show)
-  -- function num : 0_12
-  if #self._infos <= 0 or not show then
-    show = false
-  end
-  if not self._root_open or not show then
-    show = false
-  end
+function UIHomelandMainBtnsCampaignEnter:_SetPoolOpen(show)
+  show = #self._infos > 0 and show or false
+  show = self._root_open and show or false
   self._pool_open = show
-  ;
-  (self._pool):SetActive(show)
+  self._pool:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._SetEnterItems = function(self, infos)
-  -- function num : 0_13 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_pool", "UIHomelandMainBtnsCampaignItem", #infos)
-  for i,v in ipairs(objs) do
+function UIHomelandMainBtnsCampaignEnter:_SetEnterItems(infos)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_pool", "UIHomelandMainBtnsCampaignItem", #infos)
+  for i, v in ipairs(objs) do
     local campaign = UIActivityCampaign:New()
-    campaign:LoadCampaignInfo_Local((infos[i]).CampaignType)
+    campaign:LoadCampaignInfo_Local(infos[i].CampaignType)
     v:SetData(campaign, infos[i])
   end
   self:_SetRootOpen(true)
@@ -179,29 +125,20 @@ UIHomelandMainBtnsCampaignEnter._SetEnterItems = function(self, infos)
   self:_SetNewAndReds()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter._SetNewAndReds = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHomelandMainBtnsCampaignEnter:_SetNewAndReds()
   if not self._objs then
-    return 
+    return
   end
   local new = 0
   local red = 0
-  for i,v in ipairs(self._objs) do
+  for i, v in ipairs(self._objs) do
     local n, r = v:SetNewAndReds()
     new = new + n
     red = red + r
   end
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", nil, "_redCount", "_redCountTxt")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", nil, "_redCount", "_redCountTxt")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMainBtnsCampaignEnter.BtnOnClick = function(self, go)
-  -- function num : 0_15
+function UIHomelandMainBtnsCampaignEnter:BtnOnClick(go)
   self:_SetPoolOpen(not self._pool_open)
 end
-
-

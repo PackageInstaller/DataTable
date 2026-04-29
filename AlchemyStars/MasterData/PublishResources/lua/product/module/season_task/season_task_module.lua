@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/season_task/season_task_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonTaskModule", GameModule)
 SeasonTaskModule = SeasonTaskModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonTaskModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonTaskModule:Constructor()
   self.season_task_list_info = client_season_task_info:New()
   self.client_quest_progress_info = ClientQuestProgressInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventPushUpdateTaskNode, self.HandleSeasonTaskRefresh, self)
+function SeasonTaskModule:Init()
+  self.caller:RegisterPushHandler(CEventPushUpdateTaskNode, self.HandleSeasonTaskRefresh, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.ReqSeasonTaskInfoData = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonTaskModule:ReqSeasonTaskInfoData(TT)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventGetSeasonTaskInfoReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventGetSeasonTaskInfoReq)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(WorldBossErrorType.E_WORLDBOSS_ERROR_UNLOCK)
@@ -42,30 +29,21 @@ SeasonTaskModule.ReqSeasonTaskInfoData = function(self, TT)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.HandleSeasonTaskRefresh = function(self, msg)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonTaskModule:HandleSeasonTaskRefresh(msg)
   self.season_task_list_info = msg.cur_task_info
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
   if msg.is_cross_day == true then
     if self.client_quest_progress_info ~= nil then
-      (self.client_quest_progress_info).rand_quest_progress_info = {}
+      self.client_quest_progress_info.rand_quest_progress_info = {}
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonTaskReset)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonTaskReset)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.ReqSubmitClientInfo = function(self, TT, info)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonTaskModule:ReqSubmitClientInfo(TT, info)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventClientSubmitInfoReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventClientSubmitInfoReq)
   request.info = info
-  local cfgQuest = (Cfg.cfg_quest)[info.quest_id]
+  local cfgQuest = Cfg.cfg_quest[info.quest_id]
   if cfgQuest == nil then
     AsyncRes:SetResult(false)
     return AsyncRes
@@ -80,16 +58,11 @@ SeasonTaskModule.ReqSubmitClientInfo = function(self, TT, info)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R8 in 'UnsetPending'
-
   if replyEvent.n_ret == SeasonTaskErrorType.E_SEASONTASK_ERROR_TYPE_SUCCESS then
     if cfgQuest.QuestType == QuestType.QT_SeasonTaskLine then
-      ((self.client_quest_progress_info).line_quest_progress_info)[(replyEvent.info).quest_id] = replyEvent.info
+      self.client_quest_progress_info.line_quest_progress_info[replyEvent.info.quest_id] = replyEvent.info
     else
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      ((self.client_quest_progress_info).rand_quest_progress_info)[(replyEvent.info).quest_id] = replyEvent.info
+      self.client_quest_progress_info.rand_quest_progress_info[replyEvent.info.quest_id] = replyEvent.info
     end
     AsyncRes:SetSucc(true)
   else
@@ -98,75 +71,53 @@ SeasonTaskModule.ReqSubmitClientInfo = function(self, TT, info)
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.IsTaskStageType_Line = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do return (self.season_task_list_info).stage == TaskStageType.LINETASK end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonTaskModule:IsTaskStageType_Line()
+  return self.season_task_list_info.stage == TaskStageType.LINETASK
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule._FixNodesByCfg = function(self, tb)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonTaskModule:_FixNodesByCfg(tb)
   if self:IsTaskStageType_Line() then
-    return 
+    return
   end
   local nodeCount = 0
-  local seasonId = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonID() or 0
-  local cfgs = (Cfg.cfg_season_task_node_rand_rule)({SeasonId = seasonId})
-  for _,v in ipairs(cfgs) do
+  local seasonId = GameGlobal.GetModule(SeasonModule):GetCurSeasonID() or 0
+  local cfgs = Cfg.cfg_season_task_node_rand_rule({SeasonId = seasonId})
+  for _, v in ipairs(cfgs) do
     nodeCount = nodeCount + v.Num
   end
   if #tb ~= nodeCount then
-    local node = (self.season_task_list_info).cur_line_task
-    ;
-    (table.insert)(tb, 1, node)
+    local node = self.season_task_list_info.cur_line_task
+    table.insert(tb, 1, node)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.GetAllNode = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonTaskModule:GetAllNode()
   local tb = {}
-  do
-    if self:IsTaskStageType_Line() then
-      local node = (self.season_task_list_info).cur_line_task
-      ;
-      (table.insert)(tb, node)
-    end
-    for i,v in ipairs((self.season_task_list_info).cur_rand_task) do
-      (table.insert)(tb, v)
-    end
-    self:_FixNodesByCfg(tb)
-    return tb
+  if self:IsTaskStageType_Line() then
+    local node = self.season_task_list_info.cur_line_task
+    table.insert(tb, node)
   end
+  for i, v in ipairs(self.season_task_list_info.cur_rand_task) do
+    table.insert(tb, v)
+  end
+  self:_FixNodesByCfg(tb)
+  return tb
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.GetAllNodeLock = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonTaskModule:GetAllNodeLock()
   local nodes = self:GetAllNode()
   local tb = {}
   local isLock = false
-  for i,v in ipairs(nodes) do
-    (table.insert)(tb, isLock)
-    if not isLock then
-      isLock = not v.is_finish
-    end
+  for i, v in ipairs(nodes) do
+    table.insert(tb, isLock)
+    isLock = isLock or not v.is_finish
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.GetCurNodeIndex = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonTaskModule:GetCurNodeIndex()
   local nodes = self:GetAllNode()
-  for i,v in ipairs(nodes) do
+  for i, v in ipairs(nodes) do
     if v.is_finish == false then
       return i
     end
@@ -174,96 +125,69 @@ SeasonTaskModule.GetCurNodeIndex = function(self)
   return #nodes
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.GetCurNode = function(self)
-  -- function num : 0_10
+function SeasonTaskModule:GetCurNode()
   local nodes = self:GetAllNode()
   local idx = self:GetCurNodeIndex()
   return nodes[idx]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.TaskListShow = function(self)
-  -- function num : 0_11
+function SeasonTaskModule:TaskListShow()
   local node = self:GetCurNode()
   local isShow = node ~= nil and node.node_id ~= 0
-  do return isShow end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return isShow
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.TaskListRed = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonTaskModule:TaskListRed()
   local node = self:GetCurNode()
-  local questId, isFin = (UISeasonTaskListHelper.CheckLastQuestFin)(node)
-  ;
-  (Log.info)("SeasonTaskModule:TaskListRed() node =", node.node_id, ", questId =", questId, ", isFin =", isFin)
+  local questId, isFin = UISeasonTaskListHelper.CheckLastQuestFin(node)
+  Log.info("SeasonTaskModule:TaskListRed() node =", node.node_id, ", questId =", questId, ", isFin =", isFin)
   local isNodeValid = node ~= nil and node.node_id ~= 0
   local isQuestValid = questId ~= nil and questId ~= 0
-  if isNodeValid and isQuestValid then
-    local isRed = not isFin
-  end
-  do return isRed end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  local isRed = isNodeValid and isQuestValid and not isFin
+  return isRed
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.GetCurQuestId = function(self, node)
-  -- function num : 0_13 , upvalues : _ENV
-  return (UISeasonTaskListHelper.GetCurQuestId)(node)
+function SeasonTaskModule:GetCurQuestId(node)
+  return UISeasonTaskListHelper.GetCurQuestId(node)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.GetConditionMap = function(self, otherMap)
-  -- function num : 0_14 , upvalues : _ENV
+function SeasonTaskModule:GetConditionMap(otherMap)
   local map = {}
   if otherMap then
     map = otherMap
   end
-  local AddMapFunc = function(data)
-    -- function num : 0_14_0 , upvalues : _ENV, map
+  
+  local function AddMapFunc(data)
     local info = data
     if info then
-      for _,value in pairs(info.event_infos) do
+      for _, value in pairs(info.event_infos) do
         if value then
           map[value.event_id] = value.status
         end
       end
     end
   end
-
+  
   if self.client_quest_progress_info then
-    local lineInfos = (self.client_quest_progress_info).line_quest_progress_info
+    local lineInfos = self.client_quest_progress_info.line_quest_progress_info
     if lineInfos then
-      for _,questProgress in pairs(lineInfos) do
+      for _, questProgress in pairs(lineInfos) do
         AddMapFunc(questProgress)
       end
     end
-    do
-      local randInfos = (self.client_quest_progress_info).rand_quest_progress_info
-      if randInfos then
-        for _,questProgress in pairs(randInfos) do
-          AddMapFunc(questProgress)
-        end
-      end
-      do
-        return map
+    local randInfos = self.client_quest_progress_info.rand_quest_progress_info
+    if randInfos then
+      for _, questProgress in pairs(randInfos) do
+        AddMapFunc(questProgress)
       end
     end
   end
+  return map
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.ReqSubmitEventPointInfo = function(self, TT, info)
-  -- function num : 0_15 , upvalues : _ENV
+function SeasonTaskModule:ReqSubmitEventPointInfo(TT, info)
   local AsyncRes = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventClientSubmitEventPointInfoReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventClientSubmitEventPointInfoReq)
   request.info = info
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -271,25 +195,17 @@ SeasonTaskModule.ReqSubmitEventPointInfo = function(self, TT, info)
     return AsyncRes
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.n_ret == SeasonTaskErrorType.E_SEASONTASK_ERROR_TYPE_SUCCESS then
-    ((self.client_quest_progress_info).eventpoint_info)[(replyEvent.info).event_id] = replyEvent.info
+    self.client_quest_progress_info.eventpoint_info[replyEvent.info.event_id] = replyEvent.info
     AsyncRes:SetSucc(true)
-    ;
-    ((GameGlobal.GetUIModule)(SeasonModule)):OnTrackEventpointDataChged(replyEvent.info)
+    GameGlobal.GetUIModule(SeasonModule):OnTrackEventpointDataChged(replyEvent.info)
   else
     AsyncRes:SetResult(replyEvent.n_ret)
   end
   return AsyncRes
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTaskModule.GetTrackPointInfo = function(self, eventId)
-  -- function num : 0_16
-  local info = ((self.client_quest_progress_info).eventpoint_info)[eventId]
+function SeasonTaskModule:GetTrackPointInfo(eventId)
+  local info = self.client_quest_progress_info.eventpoint_info[eventId]
   return info
 end
-
-

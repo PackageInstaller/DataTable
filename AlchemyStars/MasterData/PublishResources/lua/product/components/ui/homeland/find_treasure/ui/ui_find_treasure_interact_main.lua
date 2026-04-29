@@ -1,60 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/ui/ui_find_treasure_interact_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFindTreasureInteractMain", UIController)
 UIFindTreasureInteractMain = UIFindTreasureInteractMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFindTreasureInteractMain.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaignType = (HomelandFindTreasureConst.GetCampaignType)()
-  self._componentId = (HomelandFindTreasureConst.GetComponentType)()
+function UIFindTreasureInteractMain:LoadDataOnEnter(TT, res, uiParams)
+  self._campaignType = HomelandFindTreasureConst.GetCampaignType()
+  self._componentId = HomelandFindTreasureConst.GetComponentType()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureInteractMain.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, false)
+function UIFindTreasureInteractMain:OnShow(uiParams)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, false)
   self._loader = self:GetUIComponent("UISelectObjectPath", "Loader")
-  local ui = (self._loader):SpawnObject("UIFindTreasureInteract")
+  local ui = self._loader:SpawnObject("UIFindTreasureInteract")
   ui:Init(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureInteractMain.OnHide = function(self)
-  -- function num : 0_2
+function UIFindTreasureInteractMain:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureInteractMain.Exit = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, true)
+function UIFindTreasureInteractMain:Exit()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, true)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFindTreasureInteractMain.Enter = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIFindTreasureInteractMain:Enter()
   self:CloseDialog()
-  ;
-  (UIActivityHelper.PlayFirstPlot_Component)(self._campaign, self._componentId, function()
-    -- function num : 0_4_0 , upvalues : self
+  UIActivityHelper.PlayFirstPlot_Component(self._campaign, self._componentId, function()
     self:ShowDialog("UIFindTreasureDetail", false)
-  end
-)
+  end)
 end
-
-

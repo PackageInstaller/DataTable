@@ -1,30 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_template/ui_dragimage_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDragImageItem", UICustomWidget)
 UIDragImageItem = UIDragImageItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDragImageItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIDragImageItem:OnShow(uiParams)
   self._textNum = self:GetUIComponent("Text", "Text")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDragImageItem.OnHide = function(self)
-  -- function num : 0_1
+function UIDragImageItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDragImageItem.SetData = function(self, index)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._textNum).text = index
+function UIDragImageItem:SetData(index)
+  self._textNum.text = index
 end
-
-

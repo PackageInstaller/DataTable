@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/quest/quest_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("quest_info")
 _class("QuestModule", GameModule)
 QuestModule = QuestModule
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-QuestModule.Constructor = function(self)
-  -- function num : 0_0
+function QuestModule:Constructor()
   self.questDict = {}
   self.m_tmGrowthUnlockTime = 0
   self.m_growth_points = 0
@@ -24,32 +17,20 @@ QuestModule.Constructor = function(self)
   self.m_LastRetList = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventPushQuestUpdate, self.HandleQuestUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushRecentAchieve, self.HandleRecentAchieve, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushResetDailyQuest, self.HandleDayliReset, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushQuestStateParamUpdate, self.HandleQuestStateUpdate, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushUnlockChapterQuest, self.HandleUnlockChapterQuest, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushResetWeekQuest, self.HandleWeekRewardReset, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushWorldBossReset, self.HandleWorldBossRest, self)
+function QuestModule:Init()
+  self.caller:RegisterPushHandler(CEventPushQuestUpdate, self.HandleQuestUpdate, self)
+  self.caller:RegisterPushHandler(CEventPushRecentAchieve, self.HandleRecentAchieve, self)
+  self.caller:RegisterPushHandler(CEventPushResetDailyQuest, self.HandleDayliReset, self)
+  self.caller:RegisterPushHandler(CEventPushQuestStateParamUpdate, self.HandleQuestStateUpdate, self)
+  self.caller:RegisterPushHandler(CEventPushUnlockChapterQuest, self.HandleUnlockChapterQuest, self)
+  self.caller:RegisterPushHandler(CEventPushResetWeekQuest, self.HandleWeekRewardReset, self)
+  self.caller:RegisterPushHandler(CEventPushWorldBossReset, self.HandleWorldBossRest, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.SetCfgQuestData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
-  local cli_cfg = (GameGlobal.GetZoneCfgTable)("cfg_quest", data.quest_id)
+function QuestModule:SetCfgQuestData(data)
+  local cli_cfg = GameGlobal.GetZoneCfgTable("cfg_quest", data.quest_id)
   if cli_cfg == nil then
-    (Log.error)("[quest module] QuestModule:SetMobileQuestData error --> cfg_quest == nil ,id=", data.quest_id)
+    Log.error("[quest module] QuestModule:SetMobileQuestData error --> cfg_quest == nil ,id=", data.quest_id)
   else
     if cli_cfg.ChapterID ~= nil then
       data.ChapterID = cli_cfg.ChapterID
@@ -81,17 +62,14 @@ QuestModule.SetCfgQuestData = function(self, data)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.SetMobileQuestData = function(self, data)
-  -- function num : 0_3 , upvalues : _ENV
+function QuestModule:SetMobileQuestData(data)
   local mMission = self:GetModule(MissionModule)
   local discoveryData = mMission:GetDiscoveryData()
-  for qid,qinfo in pairs(data.quest_dict) do
+  for qid, qinfo in pairs(data.quest_dict) do
     local b = true
     self:SetCfgQuestData(qinfo)
     if qinfo.JumpID == 1 then
-      local stageId = (qinfo.JumpParam)[1]
+      local stageId = qinfo.JumpParam[1]
       if stageId and stageId ~= 1 then
         local chapter = discoveryData:GetChapterByStageId(stageId)
         if not chapter then
@@ -99,21 +77,12 @@ QuestModule.SetMobileQuestData = function(self, data)
         end
       end
     end
-    do
-      do
-        if b then
-          local quest = (self.questDict)[qid]
-          if quest then
-            quest:Update(qinfo)
-          else
-            -- DECOMPILER ERROR at PC43: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (self.questDict)[qid] = Quest:New(qinfo)
-          end
-        end
-        -- DECOMPILER ERROR at PC44: LeaveBlock: unexpected jumping out DO_STMT
-
+    if b then
+      local quest = self.questDict[qid]
+      if quest then
+        quest:Update(qinfo)
+      else
+        self.questDict[qid] = Quest:New(qinfo)
       end
     end
   end
@@ -127,29 +96,20 @@ QuestModule.SetMobileQuestData = function(self, data)
   self._redPoint = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetQuest = function(self, id)
-  -- function num : 0_4
-  return (self.questDict)[id]
+function QuestModule:GetQuest(id)
+  return self.questDict[id]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetGrowthQuestCurDay = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function QuestModule:GetGrowthQuestCurDay()
   local md = self:GetModule(RoleModule)
-  return (md.m_char_info).growth_quest_days
+  return md.m_char_info.growth_quest_days
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetGrowthQuestCount = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function QuestModule:GetGrowthQuestCount()
   local finish = 0
   local total = 0
   local quests = self:GetQuestByQuestType(QuestType.QT_Growth)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     if quest:Status() == QuestStatus.QUEST_Completed then
       finish = finish + 1
     end
@@ -158,66 +118,51 @@ QuestModule.GetGrowthQuestCount = function(self)
   return finish, total
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetFinishQuestNumByType = function(self, eQuestType)
-  -- function num : 0_7 , upvalues : _ENV
+function QuestModule:GetFinishQuestNumByType(eQuestType)
   local nRet = 0
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmNowTime = (math.modf)(time_mod:GetServerTime() / 1000)
-  for qid,quest in pairs(self.questDict) do
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmNowTime = math.modf(time_mod:GetServerTime() / 1000)
+  for qid, quest in pairs(self.questDict) do
     local qinfo = quest:QuestInfo()
-    if (qinfo.BeginCountersTime <= 0 or qinfo.BeginCountersTime <= tmNowTime) and qinfo.QuestType == eQuestType then
+    if (0 >= qinfo.BeginCountersTime or tmNowTime >= qinfo.BeginCountersTime) and qinfo.QuestType == eQuestType then
       nRet = nRet + 1
     end
   end
   return nRet
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetDailyQuestVigorous = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function QuestModule:GetDailyQuestVigorous()
   local md = self:GetModule(RoleModule)
-  return (md.m_char_info).daily_vig_point
+  return md.m_char_info.daily_vig_point
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetAchPoint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function QuestModule:GetAchPoint()
   local md = self:GetModule(RoleModule)
-  return (md.m_char_info).ach_point
+  return md.m_char_info.ach_point
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsGotVigorousReward = function(self, reward_id)
-  -- function num : 0_10 , upvalues : _ENV
+function QuestModule:IsGotVigorousReward(reward_id)
   local md = self:GetModule(RoleModule)
-  local st = (md.m_char_info).vig_reward_state
+  local st = md.m_char_info.vig_reward_state
   local flag = FlagValue:New(st)
   return flag:CheckFlag(reward_id)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetUnReceivedVigorouRewardsBoxNum = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local l_cfg_vigorous_reward = (Cfg.cfg_vigorous_reward)({})
+function QuestModule:GetUnReceivedVigorouRewardsBoxNum()
+  local l_cfg_vigorous_reward = Cfg.cfg_vigorous_reward({})
   if l_cfg_vigorous_reward == nil then
-    (Log.fatal)("[quest module] function QuestModule:GetUnReceivedVigorouRewardsBoxNum() error --> l_cfg_vigorous_reward is nil ! name --> cfg_vigorous_reward")
+    Log.fatal("[quest module] function QuestModule:GetUnReceivedVigorouRewardsBoxNum() error --> l_cfg_vigorous_reward is nil ! name --> cfg_vigorous_reward")
     return 0
   end
   local md = self:GetModule(RoleModule)
-  local st = (md.m_char_info).vig_reward_state
+  local st = md.m_char_info.vig_reward_state
   local flag = FlagValue:New(st)
   local nCurVal = self:GetDailyQuestVigorous()
-  local nRewardCount = (table.count)(l_cfg_vigorous_reward)
+  local nRewardCount = table.count(l_cfg_vigorous_reward)
   local nUnRecvBoxNum = 0
   for i = 1, nRewardCount do
-    local nTarVal = (l_cfg_vigorous_reward[i]).VigPoint
-    if nTarVal <= nCurVal then
+    local nTarVal = l_cfg_vigorous_reward[i].VigPoint
+    if nCurVal >= nTarVal then
       if not flag:CheckFlag(i) then
         nUnRecvBoxNum = nUnRecvBoxNum + 1
       end
@@ -225,18 +170,13 @@ QuestModule.GetUnReceivedVigorouRewardsBoxNum = function(self)
       break
     end
   end
-  do
-    return nUnRecvBoxNum
-  end
+  return nUnRecvBoxNum
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetUnreceivedWeekRewardsBoxNum = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function QuestModule:GetUnreceivedWeekRewardsBoxNum()
   local nUnRecvBoxNum = 0
   local quests = self:GetQuestByQuestType(QuestType.QT_Week)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
       nUnRecvBoxNum = nUnRecvBoxNum + 1
@@ -245,34 +185,28 @@ QuestModule.GetUnreceivedWeekRewardsBoxNum = function(self)
   return nUnRecvBoxNum
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsGotAchPointReward = function(self, reward_id)
-  -- function num : 0_13 , upvalues : _ENV
+function QuestModule:IsGotAchPointReward(reward_id)
   local md = self:GetModule(RoleModule)
-  local st = (md.m_char_info).ach_reward_state
+  local st = md.m_char_info.ach_reward_state
   local flag = FlagValue:New(st)
   return flag:CheckFlag(reward_id)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetUnReceivedAchRewardsBoxNum = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local l_cfg_achieve_reward = (Cfg.cfg_achieve_reward)({})
+function QuestModule:GetUnReceivedAchRewardsBoxNum()
+  local l_cfg_achieve_reward = Cfg.cfg_achieve_reward({})
   if l_cfg_achieve_reward == nil then
-    (Log.fatal)("[quest module] function QuestModule:GetUnReceivedAchRewardsBoxNum() error --> l_cfg_achieve_reward is nil ! name --> cfg_achieve_reward")
+    Log.fatal("[quest module] function QuestModule:GetUnReceivedAchRewardsBoxNum() error --> l_cfg_achieve_reward is nil ! name --> cfg_achieve_reward")
     return 0
   end
   local md = self:GetModule(RoleModule)
-  local st = (md.m_char_info).ach_reward_state
+  local st = md.m_char_info.ach_reward_state
   local flag = FlagValue:New(st)
   local nCurVal = self:GetAchPoint()
-  local nRewardCount = (table.count)(l_cfg_achieve_reward)
+  local nRewardCount = table.count(l_cfg_achieve_reward)
   local nUnRecvBoxNum = 0
   for i = 1, nRewardCount do
-    local nTarVal = (l_cfg_achieve_reward[i]).AchPoint
-    if nTarVal <= nCurVal then
+    local nTarVal = l_cfg_achieve_reward[i].AchPoint
+    if nCurVal >= nTarVal then
       if not flag:CheckFlag(i) then
         nUnRecvBoxNum = nUnRecvBoxNum + 1
       end
@@ -280,120 +214,80 @@ QuestModule.GetUnReceivedAchRewardsBoxNum = function(self)
       break
     end
   end
-  do
-    return nUnRecvBoxNum
+  return nUnRecvBoxNum
+end
+
+function QuestModule:SetSortDirty(type)
+  if self.m_LastRetList and self.m_LastRetList[type] then
+    self.m_LastRetList[type].isSort = false
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.SetSortDirty = function(self, type)
-  -- function num : 0_15
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  if self.m_LastRetList and (self.m_LastRetList)[type] then
-    ((self.m_LastRetList)[type]).isSort = false
-  end
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetQuestByQuestType = function(self, type)
-  -- function num : 0_16 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+function QuestModule:GetQuestByQuestType(type)
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   local l_curTime = time_mod:GetServerTime()
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R4 in 'UnsetPending'
-
-  if l_curTime - self.m_LastGetQuestListTime < 1000 and (self.m_LastRetList)[type] ~= nil and ((self.m_LastRetList)[type]).ret ~= nil then
-    if not ((self.m_LastRetList)[type]).isSort then
-      ((self.m_LastRetList)[type]).ret = (QuestSorter.Sort)(((self.m_LastRetList)[type]).ret, {QuestSortParam:New(QuestSortType.Status), QuestSortParam:New(QuestSortType.ID)})
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self.m_LastRetList)[type]).isSort = true
+  if l_curTime - self.m_LastGetQuestListTime < 1000 and self.m_LastRetList[type] ~= nil and self.m_LastRetList[type].ret ~= nil then
+    if not self.m_LastRetList[type].isSort then
+      self.m_LastRetList[type].ret = QuestSorter.Sort(self.m_LastRetList[type].ret, {
+        QuestSortParam:New(QuestSortType.Status),
+        QuestSortParam:New(QuestSortType.ID)
+      })
+      self.m_LastRetList[type].isSort = true
     end
-    return ((self.m_LastRetList)[type]).ret
+    return self.m_LastRetList[type].ret
   end
   self.m_LastRetList = {}
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.m_LastRetList)[type] = {}
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self.m_LastRetList)[type]).ret = {}
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self.m_LastRetList)[type]).isSort = false
-  local tmNowTime = (math.modf)(l_curTime / 1000)
-  for qid,quest in pairs(self.questDict) do
+  self.m_LastRetList[type] = {}
+  self.m_LastRetList[type].ret = {}
+  self.m_LastRetList[type].isSort = false
+  local tmNowTime = math.modf(l_curTime / 1000)
+  for qid, quest in pairs(self.questDict) do
     local qinfo = quest:QuestInfo()
-    -- DECOMPILER ERROR at PC90: Confused about usage of register: R11 in 'UnsetPending'
-
-    if qinfo.BeginCountersTime <= 0 or qinfo.BeginCountersTime <= tmNowTime then
-      if not (self.m_LastRetList)[qinfo.QuestType] then
-        (self.m_LastRetList)[qinfo.QuestType] = {}
-        -- DECOMPILER ERROR at PC95: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        ((self.m_LastRetList)[qinfo.QuestType]).ret = {}
-        -- DECOMPILER ERROR at PC99: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        ((self.m_LastRetList)[qinfo.QuestType]).isSort = false
+    if qinfo.BeginCountersTime <= 0 or tmNowTime >= qinfo.BeginCountersTime then
+      if not self.m_LastRetList[qinfo.QuestType] then
+        self.m_LastRetList[qinfo.QuestType] = {}
+        self.m_LastRetList[qinfo.QuestType].ret = {}
+        self.m_LastRetList[qinfo.QuestType].isSort = false
       end
-      local l_ret = ((self.m_LastRetList)[qinfo.QuestType]).ret
+      local l_ret = self.m_LastRetList[qinfo.QuestType].ret
       l_ret[#l_ret + 1] = quest
     end
   end
-  -- DECOMPILER ERROR at PC129: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self.m_LastRetList)[type]).ret = (QuestSorter.Sort)(((self.m_LastRetList)[type]).ret, {QuestSortParam:New(QuestSortType.Status), QuestSortParam:New(QuestSortType.ID)})
+  self.m_LastRetList[type].ret = QuestSorter.Sort(self.m_LastRetList[type].ret, {
+    QuestSortParam:New(QuestSortType.Status),
+    QuestSortParam:New(QuestSortType.ID)
+  })
   self.m_LastGetQuestListTime = l_curTime
-  -- DECOMPILER ERROR at PC133: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self.m_LastRetList)[type]).isSort = true
-  return ((self.m_LastRetList)[type]).ret
+  self.m_LastRetList[type].isSort = true
+  return self.m_LastRetList[type].ret
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetQuestByQuestTypeChapter = function(self, type, chapterId)
-  -- function num : 0_17 , upvalues : _ENV
+function QuestModule:GetQuestByQuestTypeChapter(type, chapterId)
   local ret = {}
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmNowTime = (math.modf)(time_mod:GetServerTime() / 1000)
-  for qid,quest in pairs(self.questDict) do
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmNowTime = math.modf(time_mod:GetServerTime() / 1000)
+  for qid, quest in pairs(self.questDict) do
     local qinfo = quest:QuestInfo()
-    if (qinfo.BeginCountersTime <= 0 or qinfo.BeginCountersTime <= tmNowTime) and qinfo.QuestType == type and qinfo.ChapterID == chapterId then
+    if (qinfo.BeginCountersTime <= 0 or tmNowTime >= qinfo.BeginCountersTime) and qinfo.QuestType == type and qinfo.ChapterID == chapterId then
       ret[#ret + 1] = quest
     end
   end
-  ret = (QuestSorter.Sort)(ret, {QuestSortParam:New(QuestSortType.Status), QuestSortParam:New(QuestSortType.ID)})
+  ret = QuestSorter.Sort(ret, {
+    QuestSortParam:New(QuestSortType.Status),
+    QuestSortParam:New(QuestSortType.ID)
+  })
   return ret
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetQuestByDayIndex = function(self, dayIndex)
-  -- function num : 0_18 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_quest_growth_day)({})
-  if cfgs[dayIndex] then
-    local day = (cfgs[dayIndex]).Day
-  end
+function QuestModule:GetQuestByDayIndex(dayIndex)
+  local cfgs = Cfg.cfg_quest_growth_day({})
+  local day = cfgs[dayIndex] and cfgs[dayIndex].Day
   return self:GetQuestByDay(day)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetQuestByDay = function(self, day)
-  -- function num : 0_19 , upvalues : _ENV
+function QuestModule:GetQuestByDay(day)
   local ret = {}
-  for qid,quest in pairs(self.questDict) do
+  for qid, quest in pairs(self.questDict) do
     local qinfo = quest:QuestInfo()
     if qinfo.QuestType == QuestType.QT_Growth and qinfo.Day == day then
       ret[qinfo.LayoutIdx] = quest
@@ -402,13 +296,10 @@ QuestModule.GetQuestByDay = function(self, day)
   return ret
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetQuestIIByStage = function(self, stage)
-  -- function num : 0_20 , upvalues : _ENV
+function QuestModule:GetQuestIIByStage(stage)
   local tb = {}
   local ret = {}
-  for qid,quest in pairs(self.questDict) do
+  for qid, quest in pairs(self.questDict) do
     local qinfo = quest:QuestInfo()
     if qinfo.QuestType == QuestType.QT_Growth and qinfo.GrowthStage == stage then
       ret[qinfo.LayoutIdx] = quest
@@ -418,62 +309,54 @@ QuestModule.GetQuestIIByStage = function(self, stage)
   return ret
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsGrowthQuestAllTaken = function(self, isFirstStage)
-  -- function num : 0_21 , upvalues : _ENV
+function QuestModule:IsGrowthQuestAllTaken(isFirstStage)
   local quests = self:GetQuestByQuestType(QuestType.QT_Growth)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local first_stage = true
     if quest:GrowthStage() > 0 then
       first_stage = false
     end
-    if isFirstStage and first_stage and quest:Status() ~= QuestStatus.QUEST_Taken then
-      return false
-    end
-    if not first_stage and quest:Status() ~= QuestStatus.QUEST_Taken then
+    if isFirstStage then
+      if first_stage and quest:Status() ~= QuestStatus.QUEST_Taken then
+        return false
+      end
+    elseif not first_stage and quest:Status() ~= QuestStatus.QUEST_Taken then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetRecentCompletedAchiveID = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function QuestModule:GetRecentCompletedAchiveID()
   local questList = {}
-  for i = 1, (table.count)(self.recent_complete_achieves) do
-    (table.insert)(questList, self:GetQuest((self.recent_complete_achieves)[i]))
+  for i = 1, table.count(self.recent_complete_achieves) do
+    table.insert(questList, self:GetQuest(self.recent_complete_achieves[i]))
   end
-  ;
-  (QuestSorter.Sort)(questList, {QuestSortParam:New(QuestSortType.Status), QuestSortParam:New(QuestSortType.CompletedTime, QuestSortOrder.Descending), QuestSortParam:New(QuestSortType.ID)})
+  QuestSorter.Sort(questList, {
+    QuestSortParam:New(QuestSortType.Status),
+    QuestSortParam:New(QuestSortType.CompletedTime, QuestSortOrder.Descending),
+    QuestSortParam:New(QuestSortType.ID)
+  })
   local questIdList = {}
-  for i = 1, (table.count)(questList) do
-    (table.insert)(questIdList, ((questList[i]):QuestInfo()).quest_id)
+  for i = 1, table.count(questList) do
+    table.insert(questIdList, questList[i]:QuestInfo().quest_id)
   end
   return questIdList
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetMainRedPoint = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function QuestModule:GetMainRedPoint()
   local chapterIds = {}
   local quests = self:GetQuestByQuestType(QuestType.QT_Main)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
-    if qinfo.status == QuestStatus.QUEST_Completed and not (table.icontains)(chapterIds, qinfo.ChapterID) then
-      (table.insert)(chapterIds, qinfo.ChapterID)
+    if qinfo.status == QuestStatus.QUEST_Completed and not table.icontains(chapterIds, qinfo.ChapterID) then
+      table.insert(chapterIds, qinfo.ChapterID)
     end
   end
   return chapterIds
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsTakeStatus = function(self, quest_id, status)
-  -- function num : 0_24
+function QuestModule:IsTakeStatus(quest_id, status)
   local quest = self:GetQuest(quest_id)
   if not quest then
     return false
@@ -486,10 +369,7 @@ QuestModule.IsTakeStatus = function(self, quest_id, status)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsTakeQuest = function(self, quest_id)
-  -- function num : 0_25 , upvalues : _ENV
+function QuestModule:IsTakeQuest(quest_id)
   local quest = self:GetQuest(quest_id)
   if not quest then
     return false
@@ -502,13 +382,10 @@ QuestModule.IsTakeQuest = function(self, quest_id)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetMainRedPointNum = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function QuestModule:GetMainRedPointNum()
   local nTotalNum = 0
   local quests = self:GetQuestByQuestType(QuestType.QT_Main)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
       nTotalNum = nTotalNum + 1
@@ -517,59 +394,46 @@ QuestModule.GetMainRedPointNum = function(self)
   return nTotalNum
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetDailyRedPoint = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function QuestModule:GetDailyRedPoint()
   if self:GetUnReceivedVigorouRewardsBoxNum() > 0 then
     return true
   end
-  if self:GetUnreceivedWeekRewardsBoxNum() > 0 then
+  if 0 < self:GetUnreceivedWeekRewardsBoxNum() then
     return true
   end
   local check = self:GetVigorouAndSignIn()
   if check then
     local quests = self:GetQuestByQuestType(QuestType.QT_Daily)
-    for _,quest in ipairs(quests) do
+    for _, quest in ipairs(quests) do
       local qinfo = quest:QuestInfo()
       if qinfo.status == QuestStatus.QUEST_Completed then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetVigorouAndSignIn = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function QuestModule:GetVigorouAndSignIn()
   local signModule = self:GetModule(SignInModule)
   local needSignInAgain = signModule:NeedReSignInToday()
   local nCurVigPoint = self:GetDailyQuestVigorous()
   local check = true
   if nCurVigPoint <= 100 then
     check = true
-  else
-    if nCurVigPoint > 100 and nCurVigPoint <= 120 then
-      if needSignInAgain then
-        check = true
-      else
-        check = false
-      end
+  elseif 100 < nCurVigPoint and nCurVigPoint <= 120 then
+    if needSignInAgain then
+      check = true
     else
       check = false
     end
+  else
+    check = false
   end
   return check
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetDailyRedPointNum = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function QuestModule:GetDailyRedPointNum()
   if self:CheckQuestTypeUnlock(QuestType.QT_Daily) == false then
     return 0
   end
@@ -577,24 +441,19 @@ QuestModule.GetDailyRedPointNum = function(self)
   local check = self:GetVigorouAndSignIn()
   if check then
     local quests = self:GetQuestByQuestType(QuestType.QT_Daily)
-    for _,quest in ipairs(quests) do
+    for _, quest in ipairs(quests) do
       local qinfo = quest:QuestInfo()
       if qinfo.status == QuestStatus.QUEST_Completed then
         nTotalNum = nTotalNum + 1
       end
     end
   end
-  do
-    return nTotalNum
-  end
+  return nTotalNum
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetBranchRedPoint = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function QuestModule:GetBranchRedPoint()
   local quests = self:GetQuestByQuestType(QuestType.QT_Branch)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
       return true
@@ -603,13 +462,10 @@ QuestModule.GetBranchRedPoint = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetBranchRedPointNum = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function QuestModule:GetBranchRedPointNum()
   local nTotalNum = 0
   local quests = self:GetQuestByQuestType(QuestType.QT_Branch)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
       nTotalNum = nTotalNum + 1
@@ -618,46 +474,36 @@ QuestModule.GetBranchRedPointNum = function(self)
   return nTotalNum
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetGrowthRedPoint = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function QuestModule:GetGrowthRedPoint()
   local quests = self:GetQuestByQuestType(QuestType.QT_Growth)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
       return true
     end
   end
-  do
-    if not self:StatisticsGrowthRedPointNum(true, false) then
-      return self:StatisticsGrowthRedPointNum(true, true)
-    end
-  end
+  return self:StatisticsGrowthRedPointNum(true, false) or self:StatisticsGrowthRedPointNum(true, true)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.StatisticsGrowthRedPointNum = function(self, bReturn, bIsGrowthStageFirst)
-  -- function num : 0_33 , upvalues : _ENV
+function QuestModule:StatisticsGrowthRedPointNum(bReturn, bIsGrowthStageFirst)
   local quest_stage = QuestStage.QUEST_STAGE_FIRST
   if not bIsGrowthStageFirst then
     quest_stage = QuestStage.QUEST_STAGE_SECOND
   end
-  local cfg_quest_growth_feather = (Cfg.cfg_quest_growth_feather)({QuestStage = quest_stage})
+  local cfg_quest_growth_feather = Cfg.cfg_quest_growth_feather({QuestStage = quest_stage})
   local l_num = 0
-  if cfg_quest_growth_feather and #cfg_quest_growth_feather > 0 then
+  if cfg_quest_growth_feather and 0 < #cfg_quest_growth_feather then
     local currFeather = 0
     for i = 1, #cfg_quest_growth_feather do
       local isGot = true
       if bIsGrowthStageFirst then
-        isGot = self:CheckGrowthFeatherState((cfg_quest_growth_feather[i]).ID)
+        isGot = self:CheckGrowthFeatherState(cfg_quest_growth_feather[i].ID)
         currFeather = self:GetFeatherCount()
       else
-        isGot = self:CheckStage2GrowthFeatherState((cfg_quest_growth_feather[i]).ID)
+        isGot = self:CheckStage2GrowthFeatherState(cfg_quest_growth_feather[i].ID)
         currFeather = self:GetStage2FeatherCount()
       end
-      if not isGot and (cfg_quest_growth_feather[i]).NeedCount <= currFeather then
+      if not isGot and currFeather >= cfg_quest_growth_feather[i].NeedCount then
         if bReturn then
           return true
         end
@@ -665,165 +511,124 @@ QuestModule.StatisticsGrowthRedPointNum = function(self, bReturn, bIsGrowthStage
       end
     end
   end
-  do
-    if bReturn then
-      return false
-    else
-      return l_num
-    end
+  if bReturn then
+    return false
+  else
+    return l_num
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetGrowthNewPoint = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() then
+function QuestModule:GetGrowthNewPoint()
+  if EngineGameHelper.EnableAppleVerifyBulletin() then
     return false
   end
   local key = "QuestModule_GrowthNewPoint_"
-  key = (UIActivityHelper.GetLocalDBKeyWithPstId)(key)
-  local new = not (LocalDB.HasKey)(key)
+  key = UIActivityHelper.GetLocalDBKeyWithPstId(key)
+  local new = not LocalDB.HasKey(key)
   local show = self:IsGrowthVisible()
-  return not show or new
+  return show and new
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.SetGrowthNewPoint = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function QuestModule:SetGrowthNewPoint()
   local key = "QuestModule_GrowthNewPoint_"
-  key = (UIActivityHelper.GetLocalDBKeyWithPstId)(key)
-  ;
-  (LocalDB.SetInt)(key, 1)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestUpdate)
+  key = UIActivityHelper.GetLocalDBKeyWithPstId(key)
+  LocalDB.SetInt(key, 1)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestUpdate)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetGrowthRedPointNum = function(self, day)
-  -- function num : 0_36 , upvalues : _ENV
+function QuestModule:GetGrowthRedPointNum(day)
   if self:CheckQuestTypeUnlock(QuestType.QT_Growth) == false then
     return 0
   end
   local nTotalNum = 0
   local quests = self:GetQuestByQuestType(QuestType.QT_Growth)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
       if day and day == qinfo.Day then
         nTotalNum = nTotalNum + 1
-      else
-        if not day and qinfo.GrowthStage <= 0 then
-          nTotalNum = nTotalNum + 1
-        end
+      elseif not day and 0 >= qinfo.GrowthStage then
+        nTotalNum = nTotalNum + 1
       end
     end
   end
   return nTotalNum
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetStage2GrowthRedPointNum = function(self, GrowthStage)
-  -- function num : 0_37 , upvalues : _ENV
+function QuestModule:GetStage2GrowthRedPointNum(GrowthStage)
   if self:CheckQuestTypeUnlock(QuestType.QT_Growth) == false then
     return 0
   end
   local nTotalNum = 0
   local quests = self:GetQuestByQuestType(QuestType.QT_Growth)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
       if GrowthStage and GrowthStage == qinfo.GrowthStage then
         nTotalNum = nTotalNum + 1
-      else
-        if not GrowthStage and qinfo.GrowthStage > 0 then
-          nTotalNum = nTotalNum + 1
-        end
+      elseif not GrowthStage and 0 < qinfo.GrowthStage then
+        nTotalNum = nTotalNum + 1
       end
     end
   end
   return nTotalNum
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetGrowthRedPointNumWithFeather = function(self, day)
-  -- function num : 0_38
+function QuestModule:GetGrowthRedPointNumWithFeather(day)
   local nTotalNum = self:GetGrowthRedPointNum(day)
   nTotalNum = nTotalNum + self:StatisticsGrowthRedPointNum(false, true)
   return nTotalNum
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetStage2GrowthRedPointNumWithFeather = function(self, GrowthStage)
-  -- function num : 0_39
+function QuestModule:GetStage2GrowthRedPointNumWithFeather(GrowthStage)
   local nTotalNum = self:GetStage2GrowthRedPointNum(GrowthStage)
   nTotalNum = nTotalNum + self:StatisticsGrowthRedPointNum(false, false)
   return nTotalNum
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetAchRedPoint = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function QuestModule:GetAchRedPoint()
   local redpoint = {}
   local quests = self:GetQuestByQuestType(QuestType.QT_Achieve)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
-    if qinfo.status == QuestStatus.QUEST_Completed and not (table.icontains)(redpoint, qinfo.AchieveType) then
-      (table.insert)(redpoint, qinfo.AchieveType)
+    if qinfo.status == QuestStatus.QUEST_Completed and not table.icontains(redpoint, qinfo.AchieveType) then
+      table.insert(redpoint, qinfo.AchieveType)
     end
   end
   local mainRP = {}
   if next(redpoint) or self:GetUnReceivedAchRewardsBoxNum() > 0 then
-    (table.insert)(mainRP, AchieveType.AT_All)
+    table.insert(mainRP, AchieveType.AT_All)
   end
-  for _,subtype in ipairs(redpoint) do
+  for _, subtype in ipairs(redpoint) do
     local mainType = self:AchiveSubType2AchieveType(subtype)
-    if not (table.icontains)(mainRP, mainType) then
+    if not table.icontains(mainRP, mainType) then
       mainRP[#mainRP + 1] = mainType
     end
   end
-  ;
-  (table.appendArray)(redpoint, mainRP)
+  table.appendArray(redpoint, mainRP)
   return redpoint
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetSeasonRedPoint = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function QuestModule:GetSeasonRedPoint()
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   local curSample = seasonModule:GetCurSeasonSample()
-  do
-    if curSample then
-      local questRed = curSample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_SEASONQUEST_REWARD)
-      if questRed then
-        return true
-      end
+  if curSample then
+    local questRed = curSample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_SEASONQUEST_REWARD)
+    if questRed then
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetSeasonRedPointNum = function(self)
-  -- function num : 0_42
+function QuestModule:GetSeasonRedPointNum()
   local num = self:GetSeasonRedPoint() and 1 or 0
   return num
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.CanOneKeyGetReward = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function QuestModule:CanOneKeyGetReward()
   local quests = self:GetQuestByQuestType(QuestType.QT_Achieve)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
       return true
@@ -832,16 +637,13 @@ QuestModule.CanOneKeyGetReward = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetAchRedPointNum = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function QuestModule:GetAchRedPointNum()
   if self:CheckQuestTypeUnlock(QuestType.QT_Achieve) == false then
     return 0
   end
   local nTotalNum = 0
   local quests = self:GetQuestByQuestType(QuestType.QT_Achieve)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
       nTotalNum = nTotalNum + 1
@@ -850,17 +652,11 @@ QuestModule.GetAchRedPointNum = function(self)
   return nTotalNum
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.AchiveSubType2AchieveType = function(self, subtype)
-  -- function num : 0_45
+function QuestModule:AchiveSubType2AchieveType(subtype)
   return subtype // 100 * 100
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetNewPoint = function(self, enum)
-  -- function num : 0_46 , upvalues : _ENV
+function QuestModule:GetNewPoint(enum)
   local tb = self:CalcNewPoint()
   if not self._newPoint then
     self._newPoint = self:CalcNewPoint()
@@ -868,7 +664,7 @@ QuestModule.GetNewPoint = function(self, enum)
   if enum and tb[enum] ~= nil then
     return tb[enum]
   end
-  for _,v in pairs(tb) do
+  for _, v in pairs(tb) do
     if v then
       return true
     end
@@ -876,10 +672,7 @@ QuestModule.GetNewPoint = function(self, enum)
   return false
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.CalcNewPoint = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function QuestModule:CalcNewPoint()
   local tb = {}
   tb[QuestType.QT_Main] = false
   tb[QuestType.QT_Daily] = false
@@ -890,40 +683,29 @@ QuestModule.CalcNewPoint = function(self)
   return tb
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetSeasonNew = function(self)
-  -- function num : 0_48 , upvalues : _ENV
-  local curSample = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonSample()
+function QuestModule:GetSeasonNew()
+  local curSample = GameGlobal.GetModule(SeasonModule):GetCurSeasonSample()
   if curSample and curSample.is_open then
-    local openid = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+    local openid = GameGlobal.GetModule(RoleModule):GetPstId()
     local campid = curSample.id
     local key = "QuestSeasonKey" .. openid .. campid
-    local val = (LocalDB.GetInt)(key, 0)
+    local val = LocalDB.GetInt(key, 0)
     return val == 0
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.SetSeasonNew = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  local curSample = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonSample()
+function QuestModule:SetSeasonNew()
+  local curSample = GameGlobal.GetModule(SeasonModule):GetCurSeasonSample()
   if curSample and curSample.is_open then
-    local openid = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+    local openid = GameGlobal.GetModule(RoleModule):GetPstId()
     local campid = curSample.id
     local key = "QuestSeasonKey" .. openid .. campid
-    ;
-    (LocalDB.SetInt)(key, 1)
+    LocalDB.SetInt(key, 1)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetRedPoint = function(self)
-  -- function num : 0_50
+function QuestModule:GetRedPoint()
   if self._redPoint then
     return self._redPoint
   end
@@ -931,10 +713,7 @@ QuestModule.GetRedPoint = function(self)
   return self._redPoint
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.CalcRedPoint = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function QuestModule:CalcRedPoint()
   local redpoint = {}
   redpoint[QuestType.QT_Main] = self:GetMainRedPoint()
   redpoint[QuestType.QT_Daily] = self:GetDailyRedPoint()
@@ -945,10 +724,7 @@ QuestModule.CalcRedPoint = function(self)
   self._redPoint = redpoint
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetRedPointNum = function(self)
-  -- function num : 0_52
+function QuestModule:GetRedPointNum()
   local l_num = 0
   l_num = l_num + self:GetDailyRedPointNum()
   l_num = l_num + self:GetUnReceivedVigorouRewardsBoxNum()
@@ -967,14 +743,11 @@ QuestModule.GetRedPointNum = function(self)
   return l_num
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetMainQuestChapterID = function(self)
-  -- function num : 0_53 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function QuestModule:GetMainQuestChapterID()
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local discoveryData = missionModule:GetDiscoveryData()
   local quests = self:GetQuestByQuestType(QuestType.QT_Main)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Accepted or qinfo.status == QuestStatus.QUEST_Completed then
       local chapterId = qinfo.ChapterID
@@ -985,13 +758,10 @@ QuestModule.GetMainQuestChapterID = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetChapterQuests = function(self, chapterId)
-  -- function num : 0_54 , upvalues : _ENV
+function QuestModule:GetChapterQuests(chapterId)
   local qs = {}
   local quests = self:GetQuestByQuestType(QuestType.QT_Main)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.ChapterID == chapterId then
       qs[#qs + 1] = quest
@@ -1000,12 +770,9 @@ QuestModule.GetChapterQuests = function(self, chapterId)
   return qs
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetChapterQuestsFinish = function(self, chapterId)
-  -- function num : 0_55 , upvalues : _ENV
+function QuestModule:GetChapterQuestsFinish(chapterId)
   local quests = self:GetQuestByQuestTypeChapter(QuestType.QT_Main, chapterId)
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status ~= QuestStatus.QUEST_Taken then
       return false
@@ -1014,76 +781,53 @@ QuestModule.GetChapterQuestsFinish = function(self, chapterId)
   return true
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetAchieveCount = function(self, achType)
-  -- function num : 0_56 , upvalues : _ENV
+function QuestModule:GetAchieveCount(achType)
   local quests = self:GetQuestByQuestType(QuestType.QT_Achieve)
   local finished = 0
   local total = 0
   local taken = 0
-  for _,quest in ipairs(quests) do
+  for _, quest in ipairs(quests) do
     local info = quest:QuestInfo()
     if achType == AchieveType.AT_All or info.AchieveType == achType then
       local achPoint = 0
-      for _,reward in ipairs(info.rewards) do
+      for _, reward in ipairs(info.rewards) do
         if reward.assetid == RoleAssetID.RoleAssetAchPoint then
           achPoint = reward.count
           break
         end
       end
-      do
-        do
-          total = total + achPoint
-          if QuestStatus.QUEST_Completed <= info.status then
-            finished = finished + achPoint
-          end
-          if info.status == QuestStatus.QUEST_Taken then
-            taken = taken + achPoint
-          end
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      total = total + achPoint
+      if info.status >= QuestStatus.QUEST_Completed then
+        finished = finished + achPoint
+      end
+      if info.status == QuestStatus.QUEST_Taken then
+        taken = taken + achPoint
       end
     end
   end
   return finished, total, taken
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.CheckQuestTypeUnlock = function(self, qt)
-  -- function num : 0_57 , upvalues : _ENV
-  local role = (GameGlobal.GetModule)(RoleModule)
+function QuestModule:CheckQuestTypeUnlock(qt)
+  local role = GameGlobal.GetModule(RoleModule)
   if qt == QuestType.QT_Achieve then
     return role:CheckModuleUnlock(GameModuleID.MD_QuestAchieve)
-  else
-    if #self:GetQuestByQuestType(qt) <= 0 then
-      do return qt ~= QuestType.QT_Branch end
-      if qt == QuestType.QT_Daily then
-        return role:CheckModuleUnlock(GameModuleID.MD_QuestDaily)
-      elseif qt == QuestType.QT_Growth then
-        return role:CheckModuleUnlock(GameModuleID.MD_QuestGrowth)
-      elseif qt == QuestType.QT_Main then
-        return role:CheckModuleUnlock(GameModuleID.MD_QuestMain)
-      end
-      do return false end
-      -- DECOMPILER ERROR: 5 unprocessed JMP targets
-    end
+  elseif qt == QuestType.QT_Branch then
+    return #self:GetQuestByQuestType(qt) > 0
+  elseif qt == QuestType.QT_Daily then
+    return role:CheckModuleUnlock(GameModuleID.MD_QuestDaily)
+  elseif qt == QuestType.QT_Growth then
+    return role:CheckModuleUnlock(GameModuleID.MD_QuestGrowth)
+  elseif qt == QuestType.QT_Main then
+    return role:CheckModuleUnlock(GameModuleID.MD_QuestMain)
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.TakeQuestReward = function(self, TT, id)
-  -- function num : 0_58 , upvalues : _ENV
+function QuestModule:TakeQuestReward(TT, id)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventQuestTake)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventQuestTake)
   request.id = id
   local reply = self:Call(TT, request)
   if not reply:Succ() then
@@ -1096,83 +840,66 @@ QuestModule.TakeQuestReward = function(self, TT, id)
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
   if QuestErrorCode.QuestEC_Succ ~= replyEvent.ret then
-    self:ToastUITips((reply.msg).ret)
+    self:ToastUITips(reply.msg.ret)
   end
   return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetQuestDailyRefreshTime = function(self, svrTime)
-  -- function num : 0_59 , upvalues : _ENV
+function QuestModule:GetQuestDailyRefreshTime(svrTime)
   if self.m_is_request_daily_refresh_time then
     return svrTime
   end
-  if self.m_quest_daily_refresh_time <= 0 or self.m_quest_daily_refresh_time < svrTime then
+  if self.m_quest_daily_refresh_time <= 0 or svrTime > self.m_quest_daily_refresh_time then
     self.m_is_request_daily_refresh_time = true
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.ReqQuestDailyRefreshTime, self)
+    GameGlobal.TaskManager():StartTask(self.ReqQuestDailyRefreshTime, self)
     return svrTime
   else
     return self.m_quest_daily_refresh_time
   end
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.CalReqQuestDailyRefreshTime = function(self, TT)
-  -- function num : 0_60 , upvalues : _ENV
+function QuestModule:CalReqQuestDailyRefreshTime(TT)
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local svrTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local svrTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   if self.m_is_request_daily_refresh_time then
-    return 
+    return
   end
-  if self.m_quest_daily_refresh_time <= 0 or self.m_quest_daily_refresh_time < svrTime then
+  if self.m_quest_daily_refresh_time <= 0 or svrTime > self.m_quest_daily_refresh_time then
     self.m_is_request_daily_refresh_time = true
     self:ReqQuestDailyRefreshTime(TT)
-    return 
+    return
   else
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetWeekRefreshTime = function(self)
-  -- function num : 0_61
+function QuestModule:GetWeekRefreshTime()
   return self.m_quest_week_refresh_time
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.ReqQuestDailyRefreshTime = function(self, TT)
-  -- function num : 0_62 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventQuestDailyRefreshTime)
+function QuestModule:ReqQuestDailyRefreshTime(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventQuestDailyRefreshTime)
   local reply = self:Call(TT, request)
   self.m_is_request_daily_refresh_time = false
   if not reply:Succ() then
-    (Log.fatal)(" CEventQuestDailyRefreshTime Failed 1")
-    return 
+    Log.fatal(" CEventQuestDailyRefreshTime Failed 1")
+    return
   end
   local replyEvent = CEventQuestDailyRefreshTimeResult(reply.msg)
   if replyEvent == nil then
-    (Log.fatal)(" CEventQuestDailyRefreshTime Failed 2")
-    return 
+    Log.fatal(" CEventQuestDailyRefreshTime Failed 2")
+    return
   end
   self.m_quest_daily_refresh_time = replyEvent.next_refresh_time
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIQuestDailyVigorous)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIQuestDailyVigorous)
   self.m_quest_week_refresh_time = replyEvent.week_next_refresh_time
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.TakeOneKeyReward = function(self, TT, quest_type, custom_quest_array)
-  -- function num : 0_63 , upvalues : _ENV
+function QuestModule:TakeOneKeyReward(TT, quest_type, custom_quest_array)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventOneKeyTake)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventOneKeyTake)
   request.quest_type = quest_type
   if custom_quest_array == nil then
     custom_quest_array = {}
@@ -1189,20 +916,17 @@ QuestModule.TakeOneKeyReward = function(self, TT, quest_type, custom_quest_array
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
   if QuestErrorCode.QuestEC_Succ ~= replyEvent.ret then
-    self:ToastUITips((reply.msg).ret)
+    self:ToastUITips(reply.msg.ret)
   else
     self:CalcRedPoint()
   end
   return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.TakeVigReward = function(self, TT, id)
-  -- function num : 0_64 , upvalues : _ENV
+function QuestModule:TakeVigReward(TT, id)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventQuestGetVigReward)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventQuestGetVigReward)
   request.reward_id = id
   local reply = self:Call(TT, request)
   if not reply:Succ() then
@@ -1215,18 +939,15 @@ QuestModule.TakeVigReward = function(self, TT, id)
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
   if QuestErrorCode.QuestEC_Succ ~= replyEvent.ret then
-    self:ToastUITips((reply.msg).ret)
+    self:ToastUITips(reply.msg.ret)
   end
   return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.TakeAchReward = function(self, TT, id)
-  -- function num : 0_65 , upvalues : _ENV
+function QuestModule:TakeAchReward(TT, id)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventQuestGetAchReward)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventQuestGetAchReward)
   request.reward_id = id
   local reply = self:Call(TT, request)
   if not reply:Succ() then
@@ -1239,43 +960,34 @@ QuestModule.TakeAchReward = function(self, TT, id)
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
   if QuestErrorCode.QuestEC_Succ ~= replyEvent.ret then
-    self:ToastUITips((reply.msg).ret)
+    self:ToastUITips(reply.msg.ret)
   else
     self:CalcRedPoint()
   end
   return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.HandleQuestUpdate = function(self, msg)
-  -- function num : 0_66 , upvalues : _ENV
+function QuestModule:HandleQuestUpdate(msg)
   local calc_red_point = false
   local quests = {}
   local season_task_update = false
-  for _,quest in ipairs(msg.update_list) do
+  for _, quest in ipairs(msg.update_list) do
     self:SetCfgQuestData(quest)
     local q = self:GetQuest(quest.quest_id)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R11 in 'UnsetPending'
-
     if not q then
-      (self.questDict)[quest.quest_id] = Quest:New(quest)
+      self.questDict[quest.quest_id] = Quest:New(quest)
     else
-      if ((quest.QuestType ~= QuestType.QT_SeasonTaskLine and quest.QuestType ~= QuestType.QT_SeasonTaskRand) or (((self.questDict)[quest.quest_id]):Status() ~= QuestStatus.QUEST_Accepted and ((self.questDict)[quest.quest_id]):Status() ~= QuestStatus.QUEST_Completed) or quest.status == QuestStatus.QUEST_Taken) then
+      if (quest.QuestType == QuestType.QT_SeasonTaskLine or quest.QuestType == QuestType.QT_SeasonTaskRand) and (self.questDict[quest.quest_id]:Status() == QuestStatus.QUEST_Accepted or self.questDict[quest.quest_id]:Status() == QuestStatus.QUEST_Completed) and quest.status == QuestStatus.QUEST_Taken then
         season_task_update = true
       end
-      if ((self.questDict)[quest.quest_id]):Status() == QuestStatus.QUEST_Completed and quest.status == QuestStatus.QUEST_Taken then
+      if self.questDict[quest.quest_id]:Status() == QuestStatus.QUEST_Completed and quest.status == QuestStatus.QUEST_Taken then
         calc_red_point = true
       end
-      ;
-      ((self.questDict)[quest.quest_id]):Update(quest)
+      self.questDict[quest.quest_id]:Update(quest)
     end
-    ;
-    (table.insert)(quests, (self.questDict)[quest.quest_id])
-    -- DECOMPILER ERROR at PC97: Confused about usage of register: R11 in 'UnsetPending'
-
+    table.insert(quests, self.questDict[quest.quest_id])
     if quest.status == QuestStatus.QUEST_Taken and quest.QuestType == QuestType.QT_Branch then
-      (self.questDict)[quest.quest_id] = nil
+      self.questDict[quest.quest_id] = nil
     end
     if quest.status == QuestStatus.QUEST_Completed or self.m_force_cal then
       calc_red_point = true
@@ -1285,39 +997,26 @@ QuestModule.HandleQuestUpdate = function(self, msg)
   if calc_red_point then
     self:CalcRedPoint()
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestUpdate, quests)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestUpdate, quests)
   if season_task_update then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonSubTaskRefresh)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonSubTaskRefresh)
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.HandleWorldBossRest = function(self, msg)
-  -- function num : 0_67 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIQuestWorldBossRest)
+function QuestModule:HandleWorldBossRest(msg)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIQuestWorldBossRest)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.HandleDayliReset = function(self)
-  -- function num : 0_68 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIQuestDailyReset)
+function QuestModule:HandleDayliReset()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIQuestDailyReset)
   self.m_force_cal = true
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.HandleWeekRewardReset = function(self)
-  -- function num : 0_69 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnWeekRewardChanged)
+function QuestModule:HandleWeekRewardReset()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnWeekRewardChanged)
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.HandleQuestStateUpdate = function(self, msg)
-  -- function num : 0_70
+function QuestModule:HandleQuestStateUpdate(msg)
   self.m_tmGrowthUnlockTime = msg.growth_quest_unlock_time
   self.m_growth_points = msg.growth_points
   self.m_growth_reward_state = msg.growth_reward_state
@@ -1325,27 +1024,20 @@ QuestModule.HandleQuestStateUpdate = function(self, msg)
   self.m_growth_stage2_reward_state = msg.growth_stage2_reward_state
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.HandleRecentAchieve = function(self, msg)
-  -- function num : 0_71
+function QuestModule:HandleRecentAchieve(msg)
   self.recent_complete_achieves = msg.recent_achieves
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsGrowthFeatherAwardAllGot = function(self, bIsGrowthStageFirst)
-  -- function num : 0_72 , upvalues : _ENV
-  local cfg_quest_growth_feather = (Cfg.cfg_quest_growth_feather)({})
-  if cfg_quest_growth_feather and #cfg_quest_growth_feather > 0 then
+function QuestModule:IsGrowthFeatherAwardAllGot(bIsGrowthStageFirst)
+  local cfg_quest_growth_feather = Cfg.cfg_quest_growth_feather({})
+  if cfg_quest_growth_feather and 0 < #cfg_quest_growth_feather then
     for i = 1, #cfg_quest_growth_feather do
       local isGot = true
-      -- DECOMPILER ERROR at PC23: Unhandled construct in 'MakeBoolean' P1
-
-      if bIsGrowthStageFirst and (cfg_quest_growth_feather[i]).QuestStage == 1 then
-        isGot = self:CheckGrowthFeatherState(i)
-      end
-      if (cfg_quest_growth_feather[i]).QuestStage == 2 then
+      if bIsGrowthStageFirst then
+        if cfg_quest_growth_feather[i].QuestStage == 1 then
+          isGot = self:CheckGrowthFeatherState(i)
+        end
+      elseif cfg_quest_growth_feather[i].QuestStage == 2 then
         isGot = self:CheckStage2GrowthFeatherState(i)
       end
       if not isGot then
@@ -1354,37 +1046,27 @@ QuestModule.IsGrowthFeatherAwardAllGot = function(self, bIsGrowthStageFirst)
     end
     return true
   else
-    ;
-    (Log.fatal)("can not find cfg_quest_growth_feather")
+    Log.fatal("can not find cfg_quest_growth_feather")
     return true
   end
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.CheckGrowthFeatherState = function(self, idx)
-  -- function num : 0_73 , upvalues : _ENV
+function QuestModule:CheckGrowthFeatherState(idx)
   local st = self.m_growth_reward_state
   local flag = FlagValue:New(st)
   return flag:CheckFlag(idx)
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.CheckStage2GrowthFeatherState = function(self, idx)
-  -- function num : 0_74 , upvalues : _ENV
+function QuestModule:CheckStage2GrowthFeatherState(idx)
   local st = self.m_growth_stage2_reward_state
   local flag = FlagValue:New(st)
   return flag:CheckFlag(idx)
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.RequestGetGrowthFeatherAward = function(self, TT, idx)
-  -- function num : 0_75 , upvalues : _ENV
+function QuestModule:RequestGetGrowthFeatherAward(TT, idx)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventQuestGrowthFeatherReward)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventQuestGrowthFeatherReward)
   request.reward_id = idx
   local reply = self:Call(TT, request)
   if not reply:Succ() then
@@ -1397,56 +1079,38 @@ QuestModule.RequestGetGrowthFeatherAward = function(self, TT, idx)
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
   if QuestErrorCode.QuestEC_Succ ~= replyEvent.ret then
-    self:ToastUITips((reply.msg).ret)
+    self:ToastUITips(reply.msg.ret)
   else
     self:CalcRedPoint()
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ItemCountChanged)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ItemCountChanged)
   return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetFeatherCount = function(self)
-  -- function num : 0_76
+function QuestModule:GetFeatherCount()
   return self.m_growth_points
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetStage2FeatherCount = function(self)
-  -- function num : 0_77
+function QuestModule:GetStage2FeatherCount()
   return self.m_growth_stage2_points
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetGrowthTime = function(self)
-  -- function num : 0_78 , upvalues : _ENV
+function QuestModule:GetGrowthTime()
   if self.m_tmGrowthUnlockTime <= 0 then
     return 0
   end
-  local l_growth_quest_time = ((Cfg.cfg_global).GrowthQuestSec).IntValue
+  local l_growth_quest_time = Cfg.cfg_global.GrowthQuestSec.IntValue
   return self.m_tmGrowthUnlockTime + l_growth_quest_time
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsGrowthVisible = function(self)
-  -- function num : 0_79
+function QuestModule:IsGrowthVisible()
   if not self:IsGrowthOpen() then
     return false
   end
-  if not self:IsGrowth1Visible() then
-    return self:IsGrowth2Visible()
-  end
+  return self:IsGrowth1Visible() or self:IsGrowth2Visible()
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsGrowth1Visible = function(self)
-  -- function num : 0_80
+function QuestModule:IsGrowth1Visible()
   if self:IsGrowthQuestAllTaken(true) then
     return not self:IsGrowthFeatherAwardAllGot(true)
   else
@@ -1454,10 +1118,7 @@ QuestModule.IsGrowth1Visible = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsGrowth2Visible = function(self)
-  -- function num : 0_81
+function QuestModule:IsGrowth2Visible()
   if self:IsGrowthQuestAllTaken(false) then
     return not self:IsGrowthFeatherAwardAllGot(false)
   else
@@ -1465,10 +1126,7 @@ QuestModule.IsGrowth2Visible = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.IsGrowthOpen = function(self)
-  -- function num : 0_82 , upvalues : _ENV
+function QuestModule:IsGrowthOpen()
   if self:CheckQuestTypeUnlock(QuestType.QT_Growth) == false then
     return false
   end
@@ -1477,112 +1135,86 @@ QuestModule.IsGrowthOpen = function(self)
   if l_end_time == 0 then
     return false
   end
-  if l_end_time <= l_now_time then
+  if l_now_time >= l_end_time then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule._GetServerTime = function(self)
-  -- function num : 0_83 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmSecond = (math.floor)(time_mod:GetServerTime() / 1000)
+function QuestModule:_GetServerTime()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmSecond = math.floor(time_mod:GetServerTime() / 1000)
   return tmSecond
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetErrorMsg = function(self, nErrorCode)
-  -- function num : 0_84 , upvalues : _ENV
-  local vecErrorMsg = {[QuestErrorCode.QuestEC_Succ] = (StringTable.Get)("str_help_pet_error_Succ"), [QuestErrorCode.QuestEC_SendRewardError] = (StringTable.Get)("str_physicalpower_error_phy_add_full")}
+function QuestModule:GetErrorMsg(nErrorCode)
+  local vecErrorMsg = {
+    [QuestErrorCode.QuestEC_Succ] = StringTable.Get("str_help_pet_error_Succ"),
+    [QuestErrorCode.QuestEC_SendRewardError] = StringTable.Get("str_physicalpower_error_phy_add_full")
+  }
   return vecErrorMsg[nErrorCode]
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.ToastUITips = function(self, ret)
-  -- function num : 0_85 , upvalues : _ENV
+function QuestModule:ToastUITips(ret)
   local stErrorMsg = self:GetErrorMsg(ret)
   if stErrorMsg then
-    (ToastManager.ShowToast)(stErrorMsg)
+    ToastManager.ShowToast(stErrorMsg)
   end
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetLatestIndex_QuestGrowthTab = function(self)
-  -- function num : 0_86
+function QuestModule:GetLatestIndex_QuestGrowthTab()
   local lock = self:CheckQuestIILock(1)
   return lock and 1 or 2
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetLatestIndex_QuestGrowthDay = function(self)
-  -- function num : 0_87 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_quest_growth_day)({})
+function QuestModule:GetLatestIndex_QuestGrowthDay()
+  local cfgs = Cfg.cfg_quest_growth_day({})
   local index = 1
-  for i,v in ipairs(cfgs) do
-    if not self:CheckQuestLock(i) or not index then
-      index = i
-    end
+  for i, v in ipairs(cfgs) do
+    index = self:CheckQuestLock(i) and index or i
   end
   return index
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetLatestIndex_QuestGrowthGoal = function(self)
-  -- function num : 0_88 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_quest_growth_goal)({})
+function QuestModule:GetLatestIndex_QuestGrowthGoal()
+  local cfgs = Cfg.cfg_quest_growth_goal({})
   local index = 1
-  for i,v in ipairs(cfgs) do
-    if not self:CheckQuestIILock(i) or not index then
-      index = i
-    end
+  for i, v in ipairs(cfgs) do
+    index = self:CheckQuestIILock(i) and index or i
   end
   return index
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.CheckQuestLock = function(self, index)
-  -- function num : 0_89 , upvalues : _ENV
+function QuestModule:CheckQuestLock(index)
   local curDay = self:GetGrowthQuestCurDay()
-  local cfg = (Cfg.cfg_quest_growth_day)[index]
-  do return not cfg or curDay < cfg.Day end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local cfg = Cfg.cfg_quest_growth_day[index]
+  return not cfg or curDay < cfg.Day
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.CheckQuestIILock = function(self, index)
-  -- function num : 0_90 , upvalues : _ENV
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() then
+function QuestModule:CheckQuestIILock(index)
+  if EngineGameHelper.EnableAppleVerifyBulletin() then
     return true
   end
   local list = self:GetQuestIIByStage(index)
-  do
-    if list and #list ~= 0 then
-      local quest = list[1]
-      return quest:Status() == QuestStatus.QUEST_NotStart
-    end
-    do return true end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if list and #list ~= 0 then
+    local quest = list[1]
+    return quest:Status() == QuestStatus.QUEST_NotStart
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.HomeLandTaskRedPoint = function(self)
-  -- function num : 0_91 , upvalues : _ENV
-  local taskType = {QuestType.QT_Homeland_Group_Rookie, QuestType.QT_Homeland_Stage, QuestType.QT_Homeland_Stage_Num, QuestType.QT_Homeland_Common, QuestType.QT_Homeland_Change}
-  for _,_type in pairs(taskType) do
+function QuestModule:HomeLandTaskRedPoint()
+  local taskType = {
+    QuestType.QT_Homeland_Group_Rookie,
+    QuestType.QT_Homeland_Stage,
+    QuestType.QT_Homeland_Stage_Num,
+    QuestType.QT_Homeland_Common,
+    QuestType.QT_Homeland_Change
+  }
+  for _, _type in pairs(taskType) do
     local allQuest = self:GetQuestByQuestType(_type)
-    for _,quest in pairs(allQuest) do
-      if (quest:QuestInfo()).status == QuestStatus.QUEST_Completed then
+    for _, quest in pairs(allQuest) do
+      if quest:QuestInfo().status == QuestStatus.QUEST_Completed then
         return true, _type
       end
     end
@@ -1590,29 +1222,19 @@ QuestModule.HomeLandTaskRedPoint = function(self)
   return false, nil
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.HandleUnlockChapterQuest = function(self, msg)
-  -- function num : 0_92 , upvalues : _ENV
+function QuestModule:HandleUnlockChapterQuest(msg)
   local unlock_chapter = msg.chapter_index
-  ;
-  (LocalDB.SetInt)("ChapterQuestIndex", unlock_chapter)
+  LocalDB.SetInt("ChapterQuestIndex", unlock_chapter)
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.GetLocalChapterQuestIndex = function(self)
-  -- function num : 0_93 , upvalues : _ENV
-  return (LocalDB.GetInt)("ChapterQuestIndex", 0)
+function QuestModule:GetLocalChapterQuestIndex()
+  return LocalDB.GetInt("ChapterQuestIndex", 0)
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-QuestModule.HandleClientProcess = function(self, TT, quest_id, num)
-  -- function num : 0_94 , upvalues : _ENV
+function QuestModule:HandleClientProcess(TT, quest_id, num)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventClientProcess)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventClientProcess)
   request.quest_id = quest_id
   request.num = num == nil and 1 or num
   local reply = self:Call(TT, request)
@@ -1626,9 +1248,7 @@ QuestModule.HandleClientProcess = function(self, TT, quest_id, num)
   res:SetSucc(true)
   res:SetResult(replyEvent.ret)
   if QuestErrorCode.QuestEC_Succ ~= replyEvent.ret then
-    self:ToastUITips((reply.msg).ret)
+    self:ToastUITips(reply.msg.ret)
   end
   return res, replyEvent.rewards
 end
-
-

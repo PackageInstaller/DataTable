@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/homeland_pet_behavior.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetBehavior", Object)
 HomelandPetBehavior = HomelandPetBehavior
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehavior.Constructor = function(self, pet)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetBehavior:Constructor(pet)
   self._pet = pet
   self._allBehaviors = {}
   self._curBehavior = nil
-  self._homelandClient = (self._pet):GetHomelandClient()
-  self._behaviorFactory = ((self._homelandClient):PetManager()):GetBehaviorFactory()
+  self._homelandClient = self._pet:GetHomelandClient()
+  self._behaviorFactory = self._homelandClient:PetManager():GetBehaviorFactory()
   self._totalWeight = 0
   self._weightArray = {}
-  self._cfgBehavior = (Cfg.cfg_homeland_pet)[(self._pet):TemplateID()]
+  self._cfgBehavior = Cfg.cfg_homeland_pet[self._pet:TemplateID()]
   self:_InitBehaviors()
   self._coolingBehaviors = {}
   self._tempCoolingBehaviorTypes = {}
@@ -26,128 +19,98 @@ HomelandPetBehavior.Constructor = function(self, pet)
   self._storyCallback = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior._InitBehaviors = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandPetBehavior:_InitBehaviors()
   if not self._cfgBehavior then
-    (Log.error)("Homeland Pet No Behavior Cfg.", (self._pet):TemplateID())
-    return 
+    Log.error("Homeland Pet No Behavior Cfg.", self._pet:TemplateID())
+    return
   end
-  for _,behaviorTypeWeight in pairs((self._cfgBehavior).Behaviors) do
+  for _, behaviorTypeWeight in pairs(self._cfgBehavior.Behaviors) do
     local behaviorType = behaviorTypeWeight[1]
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-    if not (self._allBehaviors)[behaviorType] then
-      (self._allBehaviors)[behaviorType] = (self._behaviorFactory):CreateHomelandPetBehavior(behaviorType, self._pet)
+    if not self._allBehaviors[behaviorType] then
+      self._allBehaviors[behaviorType] = self._behaviorFactory:CreateHomelandPetBehavior(behaviorType, self._pet)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.GetHomelandPetBehavior = function(self, behaviorType)
-  -- function num : 0_2
-  return (self._allBehaviors)[behaviorType]
+function HomelandPetBehavior:GetHomelandPetBehavior(behaviorType)
+  return self._allBehaviors[behaviorType]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.ReloadBehaviorComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,behavior in pairs(self._allBehaviors) do
+function HomelandPetBehavior:ReloadBehaviorComponent()
+  for _, behavior in pairs(self._allBehaviors) do
     behavior:ReLoadBehaviorComponent()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.Update = function(self, deltaTime)
-  -- function num : 0_4
+function HomelandPetBehavior:Update(deltaTime)
   if not self._curBehavior then
-    return 
+    return
   end
   self:_UpdateCoolingBehavior(deltaTime)
-  if (self._curBehavior):Done() then
+  if self._curBehavior:Done() then
     self:_RandomBehavior()
   end
-  ;
-  (self._curBehavior):Update(deltaTime)
+  self._curBehavior:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.RandomBehavior = function(self)
-  -- function num : 0_5
+function HomelandPetBehavior:RandomBehavior()
   self:_RandomBehavior()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior._RandomBehavior = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._pet):IsOccupied() then
-    local tb = {[HomelandPetOccupiedType.Treasure] = HomelandPetBehaviorType.TreasureIdle, [HomelandPetOccupiedType.StoryWaiting] = HomelandPetBehaviorType.StoryWaitingStand}
-    local occupiedType = (self._pet):GetOccupiedType()
+function HomelandPetBehavior:_RandomBehavior()
+  if self._pet:IsOccupied() then
+    local tb = {
+      [HomelandPetOccupiedType.Treasure] = HomelandPetBehaviorType.TreasureIdle,
+      [HomelandPetOccupiedType.StoryWaiting] = HomelandPetBehaviorType.StoryWaitingStand
+    }
+    local occupiedType = self._pet:GetOccupiedType()
     local behaviorType = tb[occupiedType]
     if behaviorType then
       self:ChangeBehavior(behaviorType)
-      return 
+      return
     end
   end
-  do
-    if not self._cfgBehavior then
-      return 
+  if not self._cfgBehavior then
+    return
+  end
+  if self._curBehavior then
+    local cfg = self._curBehavior:GetCfg()
+    if cfg.NextBehaviorType then
+      self:ChangeBehavior(cfg.NextBehaviorType)
+      return
     end
-    do
-      if self._curBehavior then
-        local cfg = (self._curBehavior):GetCfg()
-        if cfg.NextBehaviorType then
-          self:ChangeBehavior(cfg.NextBehaviorType)
-          return 
-        end
-      end
-      local behaviorType = HomelandPetBehaviorType.Free
-      local totalWeight = self:_GetTotalWeight()
-      if totalWeight > 0 then
-        local randomWeight = (math.random)(1, totalWeight)
-        for _type,_weight in pairs(self._weightArray) do
-          if _weight[1] < randomWeight and randomWeight <= _weight[2] then
-            behaviorType = _type
-            break
-          end
-        end
-      end
-      do
-        self:ChangeBehavior(behaviorType)
+  end
+  local behaviorType = HomelandPetBehaviorType.Free
+  local totalWeight = self:_GetTotalWeight()
+  if 0 < totalWeight then
+    local randomWeight = math.random(1, totalWeight)
+    for _type, _weight in pairs(self._weightArray) do
+      if randomWeight > _weight[1] and randomWeight <= _weight[2] then
+        behaviorType = _type
+        break
       end
     end
   end
+  self:ChangeBehavior(behaviorType)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior._GetTotalWeight = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandPetBehavior:_GetTotalWeight()
   self._totalWeight = 0
   self._weightArray = {}
-  for _,_typeWeight in pairs((self._cfgBehavior).Behaviors) do
-    if not self:InCooling(_typeWeight[1]) and _typeWeight[2] > 0 then
+  for _, _typeWeight in pairs(self._cfgBehavior.Behaviors) do
+    if not self:InCooling(_typeWeight[1]) and 0 < _typeWeight[2] then
       local weight = self._totalWeight + _typeWeight[2]
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._weightArray)[_typeWeight[1]] = {self._totalWeight, weight}
+      self._weightArray[_typeWeight[1]] = {
+        self._totalWeight,
+        weight
+      }
       self._totalWeight = weight
     end
   end
   return self._totalWeight
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.StartBehavior = function(self, behaviorType)
-  -- function num : 0_8
+function HomelandPetBehavior:StartBehavior(behaviorType)
   if behaviorType then
     self:ChangeBehavior(behaviorType)
   else
@@ -155,70 +118,53 @@ HomelandPetBehavior.StartBehavior = function(self, behaviorType)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.ChangeBehavior = function(self, behaviorType, args, isInteract, index)
-  -- function num : 0_9 , upvalues : _ENV
-  local nextBehavior = (self._allBehaviors)[behaviorType]
+function HomelandPetBehavior:ChangeBehavior(behaviorType, args, isInteract, index)
+  local nextBehavior = self._allBehaviors[behaviorType]
   if not nextBehavior then
-    (Log.error)("HomelandPet Have\'t This Behavior. behaviorType:", behaviorType)
-    return 
+    Log.error("HomelandPet Have't This Behavior. behaviorType:", behaviorType)
+    return
   end
   self._lastBehaviorArgs = self._curBehaviorArgs
-  self._curBehaviorArgs = {behaviorType = behaviorType, args = args, isInteract = isInteract, index = index}
+  self._curBehaviorArgs = {
+    behaviorType = behaviorType,
+    args = args,
+    isInteract = isInteract,
+    index = index
+  }
   self:_AddCoolingBehavior(nextBehavior)
   if not self._curBehavior then
     self._curBehavior = nextBehavior
-    ;
-    (self._curBehavior):OnEnter(args, index)
-    ;
-    (self._curBehavior):Enter()
+    self._curBehavior:OnEnter(args, index)
+    self._curBehavior:Enter()
   else
-    if (self._curBehavior):CanInterrupt() then
-      if isInteract and (self._curBehavior):GetBehaviorType() == HomelandPetBehaviorType.SwimmingPool then
-        (self._curBehavior):BeInvitedToNextBehavior(nextBehavior, args)
-        return 
+    if self._curBehavior:CanInterrupt() then
+      if isInteract and self._curBehavior:GetBehaviorType() == HomelandPetBehaviorType.SwimmingPool then
+        self._curBehavior:BeInvitedToNextBehavior(nextBehavior, args)
+        return
       end
-      ;
-      (self._curBehavior):Exit()
+      self._curBehavior:Exit()
       self._curBehavior = nextBehavior
-      ;
-      (self._curBehavior):OnEnter(args, index)
-      ;
-      (self._curBehavior):Enter()
+      self._curBehavior:OnEnter(args, index)
+      self._curBehavior:Enter()
+    else
     end
   end
-  ;
-  (self._pet):OnBehaviorChanged()
+  self._pet:OnBehaviorChanged()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.CanChange = function(self, behaviorType)
-  -- function num : 0_10
-  if self._curBehavior then
-    return (self._curBehavior):CanInterrupt()
-  end
+function HomelandPetBehavior:CanChange(behaviorType)
+  return self._curBehavior and self._curBehavior:CanInterrupt()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.OnChangeToNextBehavior = function(self, nextBehavior, args)
-  -- function num : 0_11
+function HomelandPetBehavior:OnChangeToNextBehavior(nextBehavior, args)
   self._curBehavior = nextBehavior
-  ;
-  (self._curBehavior):OnEnter(args)
-  ;
-  (self._curBehavior):Enter()
-  ;
-  (self._pet):OnBehaviorChanged()
+  self._curBehavior:OnEnter(args)
+  self._curBehavior:Enter()
+  self._pet:OnBehaviorChanged()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.Dispose = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  for _,behavior in pairs(self._allBehaviors) do
+function HomelandPetBehavior:Dispose()
+  for _, behavior in pairs(self._allBehaviors) do
     behavior:Dispose()
   end
   self._allBehaviors = nil
@@ -226,112 +172,71 @@ HomelandPetBehavior.Dispose = function(self)
   self._coolingBehaviors = nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.RecoverBehaviorToLast = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandPetBehavior:RecoverBehaviorToLast()
   if self._lastBehaviorArgs then
     local args = self._lastBehaviorArgs
     self:ChangeBehavior(args.behaviorType, args.args, args.isInteract, args.index)
     if self._storyCallback and (args.behaviorType == HomelandPetBehaviorType.StoryWaitingBuild or HomelandPetBehaviorType.StoryWaitingBuildStand or HomelandPetBehaviorType.StoryWaitingStand or HomelandPetBehaviorType.StoryWaitingWalk) then
       local storyArgs = self._storyArg
-      ;
-      (self._storyCallback)(storyArgs.furniture, storyArgs.interactID, storyArgs.id)
+      self._storyCallback(storyArgs.furniture, storyArgs.interactID, storyArgs.id)
     end
   else
-    do
-      ;
-      (Log.fatal)("没有上一个状态！")
-    end
+    Log.fatal("没有上一个状态！")
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.SetStoryBehaviorArgs = function(self, args, callback)
-  -- function num : 0_14
+function HomelandPetBehavior:SetStoryBehaviorArgs(args, callback)
   self._storyArg = args
   self._storyCallback = callback
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.GetCurBehavior = function(self)
-  -- function num : 0_15
+function HomelandPetBehavior:GetCurBehavior()
   return self._curBehavior
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.GetHasBehaviors = function(self)
-  -- function num : 0_16
-  do return self._allBehaviors ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandPetBehavior:GetHasBehaviors()
+  return self._allBehaviors ~= nil
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.GetCurBehaviorType = function(self)
-  -- function num : 0_17
-  if self._curBehavior then
-    return (self._curBehavior):GetBehaviorType()
-  end
+function HomelandPetBehavior:GetCurBehaviorType()
+  return self._curBehavior and self._curBehavior:GetBehaviorType()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior._AddCoolingBehavior = function(self, behavior)
-  -- function num : 0_18 , upvalues : _ENV
+function HomelandPetBehavior:_AddCoolingBehavior(behavior)
   if not behavior then
-    return 
+    return
   end
   local behaviorType = behavior:GetBehaviorType()
-  if (self._coolingBehaviors)[behaviorType] then
-    (Log.info)("Homeland Pet Behavior In Cooling.", behaviorType)
-    return 
+  if self._coolingBehaviors[behaviorType] then
+    Log.info("Homeland Pet Behavior In Cooling.", behaviorType)
+    return
   end
   if behavior:CD() <= 0 then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._coolingBehaviors)[behaviorType] = behavior:CD()
+  self._coolingBehaviors[behaviorType] = behavior:CD()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior._UpdateCoolingBehavior = function(self, deltaTime)
-  -- function num : 0_19 , upvalues : _ENV
-  if (table.count)(self._coolingBehaviors) <= 0 then
-    return 
+function HomelandPetBehavior:_UpdateCoolingBehavior(deltaTime)
+  if table.count(self._coolingBehaviors) <= 0 then
+    return
   end
-  ;
-  (table.clear)(self._tempCoolingBehaviorTypes)
-  for _behaviorType,_ in pairs(self._coolingBehaviors) do
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._curBehavior):GetBehaviorType() ~= _behaviorType then
-      (self._coolingBehaviors)[_behaviorType] = (self._coolingBehaviors)[_behaviorType] - deltaTime
-      if (self._coolingBehaviors)[_behaviorType] <= 0 then
-        (table.insert)(self._tempCoolingBehaviorTypes, _behaviorType)
+  table.clear(self._tempCoolingBehaviorTypes)
+  for _behaviorType, _ in pairs(self._coolingBehaviors) do
+    if self._curBehavior:GetBehaviorType() ~= _behaviorType then
+      self._coolingBehaviors[_behaviorType] = self._coolingBehaviors[_behaviorType] - deltaTime
+      if self._coolingBehaviors[_behaviorType] <= 0 then
+        table.insert(self._tempCoolingBehaviorTypes, _behaviorType)
       end
     end
   end
-  if #self._tempCoolingBehaviorTypes > 0 then
-    for _,behaviorType in pairs(self._tempCoolingBehaviorTypes) do
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
-
-      (self._coolingBehaviors)[behaviorType] = nil
+  if 0 < #self._tempCoolingBehaviorTypes then
+    for _, behaviorType in pairs(self._tempCoolingBehaviorTypes) do
+      self._coolingBehaviors[behaviorType] = nil
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehavior.InCooling = function(self, behaviorType)
-  -- function num : 0_20
-  return (self._coolingBehaviors)[behaviorType]
+function HomelandPetBehavior:InCooling(behaviorType)
+  return self._coolingBehaviors[behaviorType]
 end
-
-

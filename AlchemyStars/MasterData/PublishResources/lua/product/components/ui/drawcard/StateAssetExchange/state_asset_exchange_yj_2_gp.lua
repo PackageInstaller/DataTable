@@ -1,85 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/StateAssetExchange/state_asset_exchange_yj_2_gp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAssetExchangeYj2Gp", State)
 StateAssetExchangeYj2Gp = StateAssetExchangeYj2Gp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAssetExchangeYj2Gp.Init = function(self)
-  -- function num : 0_0
+function StateAssetExchangeYj2Gp:Init()
   self._fsm = self:GetFsm()
-  self._ui = (self._fsm):GetData()
-  self._uiData = (self._ui):GetUIData()
+  self._ui = self._fsm:GetData()
+  self._uiData = self._ui:GetUIData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeYj2Gp.OnEnter = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function StateAssetExchangeYj2Gp:OnEnter(TT, ...)
   self:Init()
-  local costYJ, diffGP, diffXB = (table.unpack)({...})
+  local costYJ, diffGP, diffXB = table.unpack({
+    ...
+  })
   local strContent = ""
   if diffXB then
-    strContent = (StringTable.Get)("str_pay_drawcard_yj_2_gp_2_xb", costYJ, diffGP, diffXB, (self._uiData):GetXBName((self._ui):GetIsSingle()))
+    strContent = StringTable.Get("str_pay_drawcard_yj_2_gp_2_xb", costYJ, diffGP, diffXB, self._uiData:GetXBName(self._ui:GetIsSingle()))
   else
-    strContent = (string.format)((StringTable.Get)("str_pay_drawcard_yj_2_gp", costYJ, diffGP))
+    strContent = string.format(StringTable.Get("str_pay_drawcard_yj_2_gp", costYJ, diffGP))
   end
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", strContent, function(param)
-    -- function num : 0_1_0 , upvalues : self, costYJ, diffGP, diffXB
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", strContent, function(param)
     if self._fsm then
       self:RequestYJ2GP(costYJ, diffGP, diffXB)
     end
-  end
-, nil, function(param)
-    -- function num : 0_1_1 , upvalues : self, _ENV
+  end, nil, function(param)
     if self._fsm then
-      (self._fsm):ChangeState(StateAssetExchange.Init)
+      self._fsm:ChangeState(StateAssetExchange.Init)
     end
-  end
-, nil)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeYj2Gp.OnExit = function(self, TT)
-  -- function num : 0_2
+function StateAssetExchangeYj2Gp:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeYj2Gp.Destroy = function(self)
-  -- function num : 0_3
+function StateAssetExchangeYj2Gp:Destroy()
   self._fsm = nil
   self._ui = nil
   self._uiData = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAssetExchangeYj2Gp.RequestYJ2GP = function(self, count, diffGP, diffXB)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, count, diffXB, self, diffGP
-    local mShop = (GameGlobal.GetModule)(ShopModule)
+function StateAssetExchangeYj2Gp:RequestYJ2GP(count, diffGP, diffXB)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    local mShop = GameGlobal.GetModule(ShopModule)
     local clientShop = mShop:GetClientShop()
     local guangpo = count * clientShop:GetDiamondExchangeGlowRate()
     local ret = mShop:ApplyDiamondExchangeGlow(TT, count, guangpo)
-    if (ClientShop.CheckShopCode)(ret:GetResult()) then
+    if ClientShop.CheckShopCode(ret:GetResult()) then
       if diffXB then
-        (self._fsm):ChangeState(StateAssetExchange.Gp2Xb, diffGP, diffXB, false)
+        self._fsm:ChangeState(StateAssetExchange.Gp2Xb, diffGP, diffXB, false)
       else
-        ;
-        (self._fsm):ChangeState(StateAssetExchange.DrawCard)
+        self._fsm:ChangeState(StateAssetExchange.DrawCard)
       end
     else
-      ;
-      (self._fsm):ChangeState(StateAssetExchange.Init)
+      self._fsm:ChangeState(StateAssetExchange.Init)
     end
-  end
-, self)
+  end, self)
 end
-
-

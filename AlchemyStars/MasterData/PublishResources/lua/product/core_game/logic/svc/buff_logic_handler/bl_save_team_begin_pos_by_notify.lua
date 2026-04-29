@@ -1,44 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_save_team_begin_pos_by_notify.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSaveTeamBeginPosByNotify", BuffLogicBase)
 BuffLogicSaveTeamBeginPosByNotify = BuffLogicSaveTeamBeginPosByNotify
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSaveTeamBeginPosByNotify.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.skillEffectList then
-    self._skillEffectList = {}
-    if not logicParam.validParentNotifyType then
-      self._validParentNotifyType = {}
-    end
-  end
+function BuffLogicSaveTeamBeginPosByNotify:Constructor(buffInstance, logicParam)
+  self._skillEffectList = logicParam.skillEffectList or {}
+  self._validParentNotifyType = logicParam.validParentNotifyType or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSaveTeamBeginPosByNotify.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local pos = nil
-  if notify:GetNotifyType() == NotifyType.EntityMoveEnd and (table.intable)(self._validParentNotifyType, notify:GetParentNotifyType()) then
+function BuffLogicSaveTeamBeginPosByNotify:DoLogic(notify)
+  local pos
+  if notify:GetNotifyType() == NotifyType.EntityMoveEnd and table.intable(self._validParentNotifyType, notify:GetParentNotifyType()) then
     pos = notify:GetPosOld()
     local convertInfoArray = notify:GetConvertInfoArray()
     local convertInfo = convertInfoArray[1]
     pos = convertInfo:GetPos()
   end
-  do
-    if notify:GetNotifyType() == NotifyType.Teleport then
-      pos = notify:GetPosOld()
-    end
-    if notify:GetNotifyType() == NotifyType.AfterPieceRefreshBeginChainSkill and notify:GetChainPathCount() > 1 then
-      pos = notify:GetBeginPos()
-    end
-    local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-    ;
-    (teamEntity:BuffComponent()):SetBuffValue("SaveTeamBeginPos", pos)
+  if notify:GetNotifyType() == NotifyType.Teleport then
+    pos = notify:GetPosOld()
   end
+  if notify:GetNotifyType() == NotifyType.AfterPieceRefreshBeginChainSkill and 1 < notify:GetChainPathCount() then
+    pos = notify:GetBeginPos()
+  end
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  teamEntity:BuffComponent():SetBuffValue("SaveTeamBeginPos", pos)
 end
-
-

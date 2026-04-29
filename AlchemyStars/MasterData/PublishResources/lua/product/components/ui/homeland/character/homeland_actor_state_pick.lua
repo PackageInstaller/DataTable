@@ -1,43 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state_pick.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_actor_state")
 _class("HomelandActorStatePick", HomelandActorState)
 HomelandActorStatePick = HomelandActorStatePick
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandActorStatePick.Constructor = function(self)
-  -- function num : 0_0
+function HomelandActorStatePick:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStatePick.GetType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandActorStatePick:GetType()
   return HomelandActorStateType.Pick
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStatePick.Enter = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._mcc):SetAnimatorBool("HoldPick", true)
-  local cfg = ((GameGlobal.GetUIModule)(HomelandModule)):GetCurrentToolCfg(ToolType.TT_PICK)
-  ;
-  (self._mcc):AttachModel(cfg.Res, cfg.AttachPath)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioPullOutPickaxe)
+function HomelandActorStatePick:Enter()
+  self._mcc:SetAnimatorBool("HoldPick", true)
+  local cfg = GameGlobal.GetUIModule(HomelandModule):GetCurrentToolCfg(ToolType.TT_PICK)
+  self._mcc:AttachModel(cfg.Res, cfg.AttachPath)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioPullOutPickaxe)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStatePick.Exit = function(self)
-  -- function num : 0_3
-  (self._mcc):SetAnimatorBool("HoldPick", false)
-  ;
-  (self._mcc):ReleaseAttachedModel()
+function HomelandActorStatePick:Exit()
+  self._mcc:SetAnimatorBool("HoldPick", false)
+  self._mcc:ReleaseAttachedModel()
 end
-
-

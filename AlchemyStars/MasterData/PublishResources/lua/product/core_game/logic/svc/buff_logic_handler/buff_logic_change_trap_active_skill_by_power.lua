@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_trap_active_skill_by_power.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeTrapActiveSkillByPower", BuffLogicBase)
 BuffLogicChangeTrapActiveSkillByPower = BuffLogicChangeTrapActiveSkillByPower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeTrapActiveSkillByPower.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeTrapActiveSkillByPower:Constructor(buffInstance, logicParam)
   self._changeSkillList = logicParam.changeSkillList or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeTrapActiveSkillByPower.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local trapEntity = (self._buffInstance):Entity()
+function BuffLogicChangeTrapActiveSkillByPower:DoLogic()
+  local trapEntity = self._buffInstance:Entity()
   if not trapEntity then
-    return 
+    return
   end
   local curAttributeCmpt = trapEntity:Attributes()
   local curPower = curAttributeCmpt:GetAttribute("TrapPower")
@@ -26,16 +16,12 @@ BuffLogicChangeTrapActiveSkillByPower.DoLogic = function(self)
   local activeSkillID = trapCmpt:GetActiveSkillID()
   for i = 1, #activeSkillID do
     local skillID = activeSkillID[i]
-    if (table.intable)(self._changeSkillList, skillID) then
-      local newSkillIndex = (math.max)((math.min)(curPower, #self._changeSkillList), 1)
-      local newSkillID = (self._changeSkillList)[newSkillIndex]
+    if table.intable(self._changeSkillList, skillID) then
+      local newSkillIndex = math.max(math.min(curPower, #self._changeSkillList), 1)
+      local newSkillID = self._changeSkillList[newSkillIndex]
       activeSkillID[i] = newSkillID
       break
     end
   end
-  do
-    trapCmpt:SetActiveSkillID(activeSkillID)
-  end
+  trapCmpt:SetActiveSkillID(activeSkillID)
 end
-
-

@@ -1,62 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/game_turn_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameTurnComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GameTurnComponent.Constructor = function(self, gameTurn)
-  -- function num : 0_0
+function GameTurnComponent:Constructor(gameTurn)
   self._gameTurn = gameTurn
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GameTurnComponent.GetGameTurn = function(self)
-  -- function num : 0_1
+function GameTurnComponent:GetGameTurn()
   return self._gameTurn
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GameTurn = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).GameTurn)
+function Entity:GameTurn()
+  return self:GetComponent(self.WEComponentsEnum.GameTurn)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGameTurn = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).GameTurn)
+function Entity:HasGameTurn()
+  return self:HasComponent(self.WEComponentsEnum.GameTurn)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGameTurn = function(self, myTurn)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GameTurn
+function Entity:AddGameTurn(myTurn)
+  local index = self.WEComponentsEnum.GameTurn
   local component = GameTurnComponent:New(myTurn)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGameTurn = function(self, myTurn)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GameTurn
+function Entity:ReplaceGameTurn(myTurn)
+  local index = self.WEComponentsEnum.GameTurn
   local component = GameTurnComponent:New(myTurn)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGameTurn = function(self)
-  -- function num : 0_6
+function Entity:RemoveGameTurn()
   if self:HasGameTurn() then
-    self:RemoveComponent((self.WEComponentsEnum).GameTurn)
+    self:RemoveComponent(self.WEComponentsEnum.GameTurn)
   end
 end
-
-

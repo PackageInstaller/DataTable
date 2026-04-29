@@ -1,113 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_feature_shop_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFeatureShopInfoItem", UICustomWidget)
 UIFeatureShopInfoItem = UIFeatureShopInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFeatureShopInfoItem.Constructor = function(self, uiview, index, callBack)
-  -- function num : 0_0
+function UIFeatureShopInfoItem:Constructor(uiview, index, callBack)
   self._view = uiview
   self._index = index
   self._callBack = callBack
-  self.text = (self._view):GetUIComponent("UILocalizationText", "CellText")
-  self.lock = (self._view):GetUIComponent("RawImage", "Lock")
-  self.select = (self._view):GetGameObject("Select")
-  self.cellImage = (self._view):GetUIComponent("RawImageLoader", "CellImage")
-  self.hadInvest = (self._view):GetGameObject("HadInvest")
-  self.mask = (self._view):GetGameObject("Mask")
-  self._anim = (self._view):GetUIComponent("Animation", "CellItem")
+  self.text = self._view:GetUIComponent("UILocalizationText", "CellText")
+  self.lock = self._view:GetUIComponent("RawImage", "Lock")
+  self.select = self._view:GetGameObject("Select")
+  self.cellImage = self._view:GetUIComponent("RawImageLoader", "CellImage")
+  self.hadInvest = self._view:GetGameObject("HadInvest")
+  self.mask = self._view:GetGameObject("Mask")
+  self._anim = self._view:GetUIComponent("Animation", "CellItem")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfoItem.OnHide = function(self)
-  -- function num : 0_1
+function UIFeatureShopInfoItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfoItem.OnRefresh = function(self, isLock, hadInvest, cantSelect)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFeatureShopInfoItem:OnRefresh(isLock, hadInvest, cantSelect)
   self._isLock = isLock
   self._hadInvest = hadInvest
   self._cantSelect = cantSelect
-  local shopUIHadSeeUnlockCellList = (FeatureServiceHelper.GetShopUIHadSeeUnlockCellList)()
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  if isLock and not (table.icontains)(shopUIHadSeeUnlockCellList, self._index) then
-    (self.lock).color = Color(1, 1, 1, 1)
+  local shopUIHadSeeUnlockCellList = FeatureServiceHelper.GetShopUIHadSeeUnlockCellList()
+  if isLock and not table.icontains(shopUIHadSeeUnlockCellList, self._index) then
+    self.lock.color = Color(1, 1, 1, 1)
   else
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.lock).color = Color(1, 1, 1, 0)
+    self.lock.color = Color(1, 1, 1, 0)
   end
-  ;
-  (self.hadInvest):SetActive(hadInvest)
+  self.hadInvest:SetActive(hadInvest)
   local showMask = hadInvest == false and cantSelect == true
-  ;
-  (self.mask):SetActive(showMask)
+  self.mask:SetActive(showMask)
   self._selectStage = false
-  ;
-  (self.select):SetActive(self._selectStage)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self.select:SetActive(self._selectStage)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfoItem.OnPlayAnimHadInvest = function(self)
-  -- function num : 0_3
-  (self._anim):Play("uieff_UIFeatureShopInfo_CellItem_HadInvest")
+function UIFeatureShopInfoItem:OnPlayAnimHadInvest()
+  self._anim:Play("uieff_UIFeatureShopInfo_CellItem_HadInvest")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfoItem.OnPlayAnimCantInvest = function(self)
-  -- function num : 0_4
-  (self._anim):Play("uieff_UIFeatureShopInfo_CellItem_NotInvest")
+function UIFeatureShopInfoItem:OnPlayAnimCantInvest()
+  self._anim:Play("uieff_UIFeatureShopInfo_CellItem_NotInvest")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfoItem.OnPlayAnimUnlock = function(self)
-  -- function num : 0_5
+function UIFeatureShopInfoItem:OnPlayAnimUnlock()
   self._isLock = false
-  ;
-  (self._anim):Play("uieff_UIFeatureShopInfo_CellItem_unlock")
+  self._anim:Play("uieff_UIFeatureShopInfo_CellItem_unlock")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfoItem.ButtonOnClick = function(self, go)
-  -- function num : 0_6
-  if not self._isLock and not self._hadInvest then
-    if not self._cantSelect or self._selectStage == false then
+function UIFeatureShopInfoItem:ButtonOnClick(go)
+  if self._isLock or self._hadInvest or self._cantSelect then
+  else
+    if self._selectStage == false then
       self._selectStage = true
     else
       self._selectStage = false
     end
-    ;
-    (self.select):SetActive(self._selectStage)
+    self.select:SetActive(self._selectStage)
   end
   if self._callBack then
-    (self._callBack)(self._index, self._selectStage)
+    self._callBack(self._index, self._selectStage)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfoItem.ClearSelect = function(self)
-  -- function num : 0_7
+function UIFeatureShopInfoItem:ClearSelect()
   if self._cantSelect then
-    return 
+    return
   end
   self._selectStage = false
   if self._cantSelect == false then
-    (self.select):SetActive(self._selectStage)
+    self.select:SetActive(self._selectStage)
   end
 end
-
-

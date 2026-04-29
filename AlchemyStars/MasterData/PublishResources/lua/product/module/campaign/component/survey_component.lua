@@ -1,70 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/survey_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("SurveyComponent", ICampaignComponent)
 SurveyComponent = SurveyComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SurveyComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SurveyComponent:Constructor()
   self.m_component_info = SurveyComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SurveyComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SurveyComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = SurveyComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SurveyComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function SurveyComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SurveyComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SurveyComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_SURVEY
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SurveyComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function SurveyComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SurveyComponent.HandleSurveyClientDataReq = function(self, TT, asyncRes, optype)
-  -- function num : 0_5 , upvalues : _ENV
+function SurveyComponent:HandleSurveyClientDataReq(TT, asyncRes, optype)
   local request = SurveyClientDataReq:New()
   request.op_type = optype
   local response = SurveyClientDataReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][SurveyComponent] HandleSurveyClientDataReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SurveyComponent] HandleSurveyClientDataReq ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).info = response.info
+  self.m_component_info.info = response.info
   asyncRes:SetSucc(true)
   return response.ret, response.reward
 end
-
-

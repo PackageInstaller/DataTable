@@ -1,35 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_take_scene_screenshot_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataTakeSceneScreenshotInstruction", BaseInstruction)
 DataTakeSceneScreenshotInstruction = DataTakeSceneScreenshotInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataTakeSceneScreenshotInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function DataTakeSceneScreenshotInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local cMainCamera = world:MainCamera()
   local csCamera = cMainCamera:Camera()
-  local csRT = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+  local csRT = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
   csCamera.targetTexture = csRT
   csCamera:Render()
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = csRT
-  local csTex2d = (UnityEngine.Texture2D):New((UnityEngine.Screen).width, (UnityEngine.Screen).height)
-  csTex2d:ReadPixels((UnityEngine.Rect):New(0, 0, (UnityEngine.Screen).width, (UnityEngine.Screen).height), 0, 0, false)
+  UnityEngine.RenderTexture.active = csRT
+  local csTex2d = UnityEngine.Texture2D:New(UnityEngine.Screen.width, UnityEngine.Screen.height)
+  csTex2d:ReadPixels(UnityEngine.Rect:New(0, 0, UnityEngine.Screen.width, UnityEngine.Screen.height), 0, 0, false)
   csTex2d:Apply()
   csCamera.targetTexture = nil
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = nil
+  UnityEngine.RenderTexture.active = nil
   csRT:Destroy()
   cMainCamera:SetScreenCameraScreenshot(csTex2d)
 end
-
-

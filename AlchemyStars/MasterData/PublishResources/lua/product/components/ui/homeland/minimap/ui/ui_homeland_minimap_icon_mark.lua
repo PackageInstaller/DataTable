@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/ui_homeland_minimap_icon_mark.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local HomelandMimimapIconMarkType = {None = 0, Treasure = 1, Pet = 2, FishingMatch = 3}
+local HomelandMimimapIconMarkType = {
+  None = 0,
+  Treasure = 1,
+  Pet = 2,
+  FishingMatch = 3
+}
 _enum("HomelandMimimapIconMarkType", HomelandMimimapIconMarkType)
-

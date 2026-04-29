@@ -1,22 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_item/ui_item_sale_and_use_with_count_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIItemSaleAndUseWithCountController", UIController)
 UIItemSaleAndUseWithCountController = UIItemSaleAndUseWithCountController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIItemSaleAndUseWithCountController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIItemSaleAndUseWithCountController:OnShow(uiParams)
   self._itemdata = uiParams[1]
   self._openType = uiParams[2]
   self._callBack = uiParams[3]
-  self._itemID = (self._itemdata):GetID()
+  self._itemID = self._itemdata:GetID()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
+  self.uiItem:SetForm(UIItemForm.Base)
   self._inputItemCount = self:GetUIComponent("InputField", "input_item_count")
   self._txtItemName = self:GetUIComponent("UILocalizationText", "txt_item_name")
   self._itemCountText = self:GetUIComponent("UILocalizationText", "itemCount")
@@ -24,149 +16,116 @@ UIItemSaleAndUseWithCountController.OnShow = function(self, uiParams)
   self._saleGo = self:GetGameObject("sale")
   self._useGo = self:GetGameObject("use")
   if self._openType == EnumItemSaleAndUseState.Sale then
-    (self._useGo):SetActive(false)
+    self._useGo:SetActive(false)
     self._itemSaleMoney = self:GetUIComponent("UILocalizationText", "txt_sale_money")
   else
-    ;
-    (self._saleGo):SetActive(false)
+    self._saleGo:SetActive(false)
   end
-  local templetaData = (self._itemdata):GetTemplate()
-  self._itemCount = (self._itemdata):GetCount()
-  ;
-  (self._itemCountText):SetText((StringTable.Get)("str_item_public_owned") .. (UIItemSaleAndUseWithCountController._FormatItemCount)(self._itemCount))
+  local templetaData = self._itemdata:GetTemplate()
+  self._itemCount = self._itemdata:GetCount()
+  self._itemCountText:SetText(StringTable.Get("str_item_public_owned") .. UIItemSaleAndUseWithCountController._FormatItemCount(self._itemCount))
   self._itemPerPiece = templetaData.SaleGold
-  ;
-  (self._txtItemName):SetText((StringTable.Get)(templetaData.Name))
+  self._txtItemName:SetText(StringTable.Get(templetaData.Name))
   local icon = templetaData.Icon
   local quality = templetaData.Color
   local itemId = templetaData.ID
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, itemId = itemId})
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    itemId = itemId
+  })
   self._currentCount = 1
-  -- DECOMPILER ERROR at PC110: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._inputItemCount).keyboardType = (UnityEngine.TouchScreenKeyboardType).NumberPad
-  ;
-  ((self._inputItemCount).onValueChanged):AddListener(function(inputString)
-    -- function num : 0_0_0 , upvalues : self
+  self._inputItemCount.keyboardType = UnityEngine.TouchScreenKeyboardType.NumberPad
+  self._inputItemCount.onValueChanged:AddListener(function(inputString)
     self:OnValueChange(inputString)
-  end
-)
+  end)
   self:SetInputText(self._currentCount)
   self._addBtn = self:GetGameObject("addBtn")
   self._subBtn = self:GetGameObject("subBtn")
   self._isAddMouseDown = false
   self._isSubMouseDown = false
   self._anim = self:GetUIComponent("Animation", "anim")
-  local etlAdd = (UILongPressTriggerListener.Get)(self._addBtn)
-  etlAdd.onLongPress = function(go)
-    -- function num : 0_0_1 , upvalues : self
+  local etlAdd = UILongPressTriggerListener.Get(self._addBtn)
+  
+  function etlAdd.onLongPress(go)
     if self._isAddMouseDown == false then
       self._isAddMouseDown = true
     end
   end
-
-  etlAdd.onLongPressEnd = function(go)
-    -- function num : 0_0_2 , upvalues : self
+  
+  function etlAdd.onLongPressEnd(go)
     if self._isAddMouseDown == true then
       self._isAddMouseDown = false
     end
   end
-
-  etlAdd.onClick = function(go)
-    -- function num : 0_0_3 , upvalues : self
+  
+  function etlAdd.onClick(go)
     self:itemaddOnClick()
   end
-
-  local etlSub = (UILongPressTriggerListener.Get)(self._subBtn)
-  etlSub.onLongPress = function(go)
-    -- function num : 0_0_4 , upvalues : self
+  
+  local etlSub = UILongPressTriggerListener.Get(self._subBtn)
+  
+  function etlSub.onLongPress(go)
     if self._isSubMouseDown == false then
       self._isSubMouseDown = true
     end
   end
-
-  etlSub.onLongPressEnd = function(go)
-    -- function num : 0_0_5 , upvalues : self
+  
+  function etlSub.onLongPressEnd(go)
     if self._isSubMouseDown == true then
       self._isSubMouseDown = false
     end
   end
-
-  etlSub.onClick = function(go)
-    -- function num : 0_0_6 , upvalues : self
+  
+  function etlSub.onClick(go)
     self:itemsubOnClick()
   end
-
-  self._pressTime = ((Cfg.cfg_global).sale_and_use_press_long_deltaTime).IntValue
+  
+  self._pressTime = Cfg.cfg_global.sale_and_use_press_long_deltaTime.IntValue
   self._updateTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.DoAnimation = function(self)
-  -- function num : 0_1
+function UIItemSaleAndUseWithCountController:DoAnimation()
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "panel")
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 1
+  self._canvasGroup.alpha = 1
   self._bg = self:GetUIComponent("RectTransform", "bg")
   self._panel = self:GetUIComponent("RectTransform", "panel")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController._FormatItemCount = function(itemCount)
-  -- function num : 0_2 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIItemSaleAndUseWithCountController._FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.SetInputText = function(self, count)
-  -- function num : 0_3 , upvalues : _ENV
+function UIItemSaleAndUseWithCountController:SetInputText(count)
   if count == nil then
-    return 
+    return
   end
   if count < 1 then
     count = 1
-  else
-    if self._itemCount < count then
-      count = self._itemCount
-    end
+  elseif count > self._itemCount then
+    count = self._itemCount
   end
   self._currentCount = count
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._inputItemCount).text = tostring(self._currentCount)
+  self._inputItemCount.text = tostring(self._currentCount)
   if self._openType == 1 then
-    local allPrice = nil
+    local allPrice
     if self._currentCount * self._itemPerPiece > 99999999 then
-      allPrice = "9999" .. (StringTable.Get)("str_item_public_unit")
+      allPrice = "9999" .. StringTable.Get("str_item_public_unit")
     else
       allPrice = tostring(self._currentCount * self._itemPerPiece)
     end
-    ;
-    (self._itemSaleMoney):SetText(tostring(allPrice))
+    self._itemSaleMoney:SetText(tostring(allPrice))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.OnValueChange = function(self, inputString)
-  -- function num : 0_4 , upvalues : _ENV
+function UIItemSaleAndUseWithCountController:OnValueChange(inputString)
   local num = 0
   if inputString == nil then
     num = 1
+  elseif inputString == "" then
+    num = 1
   else
-    if inputString == "" then
-      num = 1
-    else
-      num = tonumber(inputString)
-    end
+    num = tonumber(inputString)
   end
   if num < 1 then
     num = 1
@@ -176,12 +135,9 @@ UIItemSaleAndUseWithCountController.OnValueChange = function(self, inputString)
   self:SetInputText(num)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_5
+function UIItemSaleAndUseWithCountController:OnUpdate(deltaTimeMS)
   self._updateTime = self._updateTime + deltaTimeMS
-  if self._pressTime < self._updateTime then
+  if self._updateTime > self._pressTime then
     self._updateTime = self._updateTime - self._pressTime
     if self._isAddMouseDown then
       self:itemaddOnClick()
@@ -192,11 +148,8 @@ UIItemSaleAndUseWithCountController.OnUpdate = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController._ComputeMaxItemCount = function(self, nCount)
-  -- function num : 0_6 , upvalues : _ENV
-  local itemData = (self._itemdata):GetTemplate()
+function UIItemSaleAndUseWithCountController:_ComputeMaxItemCount(nCount)
+  local itemData = self._itemdata:GetTemplate()
   local stUseEffect = itemData.UseEffect
   local nMaxLimitCount = 99
   local isPhy = false
@@ -206,67 +159,52 @@ UIItemSaleAndUseWithCountController._ComputeMaxItemCount = function(self, nCount
     local roleModule = self:GetModule(RoleModule)
     local itemModule = self:GetModule(ItemModule)
     local nPhyData = roleModule:GetHealthPoint()
-    local cfgRoleLevel = (Cfg.cfg_role_level)[roleModule:GetLevel()]
-    if not cfgRoleLevel.TotalMaxPhyPoint then
-      local nPhyMaxLevel = not cfgRoleLevel or 100
-    end
-    local nPhyMaxLimit = ((Cfg.cfg_global).role_phy_max_limit).IntValue or 999
-    local nPhyMax = 0
-    if nPhyMaxLevel < nPhyMaxLimit then
-      nPhyMax = nPhyMaxLevel
-    else
-      nPhyMax = nPhyMaxLimit
-    end
-    if nPhyData < nPhyMax then
-      local nPhyEffect = itemModule:GetPhyGiftData(itemData.ID)
-      if nPhyEffect > 0 then
-        local nMaxCount = (nPhyMax - nPhyData) / nPhyEffect
-        nMaxLimitCount = (math.floor)(nMaxCount)
+    local cfgRoleLevel = Cfg.cfg_role_level[roleModule:GetLevel()]
+    if cfgRoleLevel then
+      local nPhyMaxLevel = cfgRoleLevel.TotalMaxPhyPoint or 100
+      local nPhyMaxLimit = Cfg.cfg_global.role_phy_max_limit.IntValue or 999
+      local nPhyMax = 0
+      if nPhyMaxLevel < nPhyMaxLimit then
+        nPhyMax = nPhyMaxLevel
+      else
+        nPhyMax = nPhyMaxLimit
       end
-    end
-  end
-  do
-    if nMaxLimitCount < nCount then
-      do
-        if isPhy then
-          local tips = (StringTable.Get)("str_item_public_use_phy_more_than_max")
-          ;
-          (ToastManager.ShowToast)(tips)
+      if nPhyData < nPhyMax then
+        local nPhyEffect = itemModule:GetPhyGiftData(itemData.ID)
+        if 0 < nPhyEffect then
+          local nMaxCount = (nPhyMax - nPhyData) / nPhyEffect
+          nMaxLimitCount = math.floor(nMaxCount)
         end
-        do return nMaxLimitCount end
-        return nCount
       end
     end
   end
+  if nCount > nMaxLimitCount then
+    if isPhy then
+      local tips = StringTable.Get("str_item_public_use_phy_more_than_max")
+      ToastManager.ShowToast(tips)
+    end
+    return nMaxLimitCount
+  end
+  return nCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.itemaddOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._inputItemCount).text == nil then
-    (self._inputItemCount).text = "1"
+function UIItemSaleAndUseWithCountController:itemaddOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+  if self._inputItemCount.text == nil then
+    self._inputItemCount.text = "1"
   end
-  local num = tonumber((self._inputItemCount).text)
+  local num = tonumber(self._inputItemCount.text)
   num = self:_ComputeMaxItemCount(num + 1)
   self:SetInputText(num)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.itemsubOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._inputItemCount).text == nil then
-    (self._inputItemCount).text = "1"
+function UIItemSaleAndUseWithCountController:itemsubOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+  if self._inputItemCount.text == nil then
+    self._inputItemCount.text = "1"
   end
-  local num = tonumber((self._inputItemCount).text)
-  if num > 1 then
+  local num = tonumber(self._inputItemCount.text)
+  if 1 < num then
     num = num - 1
   else
     num = 1
@@ -274,68 +212,45 @@ UIItemSaleAndUseWithCountController.itemsubOnClick = function(self)
   self:SetInputText(num)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.itemmaxOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (self._inputItemCount).text == nil then
-    (self._inputItemCount).text = "1"
+function UIItemSaleAndUseWithCountController:itemmaxOnClick()
+  if self._inputItemCount.text == nil then
+    self._inputItemCount.text = "1"
   end
-  local num = tonumber((self._inputItemCount).text)
+  local num = tonumber(self._inputItemCount.text)
   num = self:_ComputeMaxItemCount(self._itemCount)
   self:SetInputText(num)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.itemsaleOnClick = function(self)
-  -- function num : 0_10
+function UIItemSaleAndUseWithCountController:itemsaleOnClick()
   if self._currentCount ~= 0 then
-    (self._callBack)(self._itemdata, self._currentCount)
+    self._callBack(self._itemdata, self._currentCount)
   end
   self:ClosePanel()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.ClosePanel = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.OnClosePanel, self)
+function UIItemSaleAndUseWithCountController:ClosePanel(TT)
+  GameGlobal.TaskManager():StartTask(self.OnClosePanel, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.OnClosePanel = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UIItemSaleAndUseWithCountController:OnClosePanel(TT)
   if self._exit then
-    return 
+    return
   end
   self._exit = true
   local a = 1
-  ;
-  (self._anim):Play("uieffanim_UIItemSaleAndUseWithCountController_out")
+  self._anim:Play("uieffanim_UIItemSaleAndUseWithCountController_out")
   YIELD(TT, 333)
   self._exit = false
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.itemuseOnClick = function(self)
-  -- function num : 0_13
+function UIItemSaleAndUseWithCountController:itemuseOnClick()
   if self._currentCount ~= 0 then
-    (self._callBack)(self._itemdata, self._currentCount)
+    self._callBack(self._itemdata, self._currentCount)
   end
   self:ClosePanel()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemSaleAndUseWithCountController.closeOnClick = function(self)
-  -- function num : 0_14
+function UIItemSaleAndUseWithCountController:closeOnClick()
   self:ClosePanel()
 end
-
-

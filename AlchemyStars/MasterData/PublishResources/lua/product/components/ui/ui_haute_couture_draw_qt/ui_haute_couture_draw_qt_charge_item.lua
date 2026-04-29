@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_qt/ui_haute_couture_draw_qt_charge_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_haute_couture_draw_charge_item_base")
 _class("UIHauteCoutureDraw_QT_ChargeItem", UIHauteCoutureDrawChargeItemBase)
 UIHauteCoutureDraw_QT_ChargeItem = UIHauteCoutureDraw_QT_ChargeItem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDraw_QT_ChargeItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHauteCoutureDraw_QT_ChargeItem:OnShow(uiParams)
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_ChargeItem.OnHide = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDraw_QT_ChargeItem:OnHide()
   self:ClearTimer()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_ChargeItem.InitWidgets = function(self, uiParams)
-  -- function num : 0_2
+function UIHauteCoutureDraw_QT_ChargeItem:InitWidgets(uiParams)
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_ChargeItem.GetCountStrKey = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDraw_QT_ChargeItem:GetCountStrKey()
   return "str_senior_skin_draw_gift_count_qt"
 end
-
-

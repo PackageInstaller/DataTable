@@ -1,51 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/common/ui_n20_avg_actor_value_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGActorValueChange", UICustomWidget)
 UIN20AVGActorValueChange = UIN20AVGActorValueChange
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGActorValueChange.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
+function UIN20AVGActorValueChange:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGActorValueChange.OnShow = function(self)
-  -- function num : 0_1
+function UIN20AVGActorValueChange:OnShow()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.up = self:GetGameObject("up")
   self.down = self:GetGameObject("down")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGActorValueChange.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIN20AVGActorValueChange:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGActorValueChange.Flush = function(self, index, influenceValueChange)
-  -- function num : 0_3
-  local actor = (self.data):GetActorByIndex(index)
-  ;
-  (self.imgIcon):LoadImage(actor.iconOption)
-  if influenceValueChange > 0 then
-    (self.up):SetActive(true)
-    ;
-    (self.down):SetActive(false)
+function UIN20AVGActorValueChange:Flush(index, influenceValueChange)
+  local actor = self.data:GetActorByIndex(index)
+  self.imgIcon:LoadImage(actor.iconOption)
+  if 0 < influenceValueChange then
+    self.up:SetActive(true)
+    self.down:SetActive(false)
   else
-    ;
-    (self.up):SetActive(false)
-    ;
-    (self.down):SetActive(true)
+    self.up:SetActive(false)
+    self.down:SetActive(true)
   end
 end
-
-

@@ -1,111 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_focus.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressFocus", SeasonMapExpressBase)
 SeasonMapExpressFocus = SeasonMapExpressFocus
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressFocus.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).Focus
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
-  self._seasonCamera = ((self._seasonManager):SeasonCameraManager()):SeasonCamera()
+function SeasonMapExpressFocus:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Focus
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
+  self._seasonCamera = self._seasonManager:SeasonCameraManager():SeasonCamera()
   self._focusType = SeasonExpressFocusType.Center
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressFocus.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
+function SeasonMapExpressFocus:Update(deltaTime)
   if self._state == SeasonExpressState.Playing and self._targetPosition then
     if self._focusType == SeasonExpressFocusType.Left then
-      (self._targetPosition).x = self._rawTargetPositionX - self:GetFocusOffsetX()
-    else
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._focusType == SeasonExpressFocusType.Right then
-        (self._targetPosition).x = self._rawTargetPositionX + self:GetFocusOffsetX()
-      end
+      self._targetPosition.x = self._rawTargetPositionX - self:GetFocusOffsetX()
+    elseif self._focusType == SeasonExpressFocusType.Right then
+      self._targetPosition.x = self._rawTargetPositionX + self:GetFocusOffsetX()
     end
-    ;
-    (self._seasonCamera):SetPosition(self._targetPosition)
-    if (self._seasonCamera):FocusDone() and (not self._sizeScale or not self._sizeScale or (self._seasonCamera):SizeDone()) then
+    self._seasonCamera:SetPosition(self._targetPosition)
+    if self._seasonCamera:FocusDone() and (not self._sizeScale or self._sizeScale and self._seasonCamera:SizeDone()) then
       self._targetPosition = nil
       self:Next()
-      ;
-      (self._seasonManager):UnLock("focus")
+      self._seasonManager:UnLock("focus")
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressFocus.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMapExpressFocus:OnPlay()
   if self._content then
-    local focusObjType = (self._content).type
-    local value = (self._content).value
-    if not (self._content).focusType then
-      self._focusType = SeasonExpressFocusType.Center
-      self._sizeScale = (self._content).sizeScale
-      self._targetPosition = nil
-      if focusObjType == SeasonExpressFocusObjType.Player then
-        local player = ((self._seasonManager):SeasonPlayerManager()):GetPlayer()
-        self._targetPosition = Vector3((player:Position()).x, 0, (player:Position()).z)
-      else
-        do
-          if focusObjType == SeasonExpressFocusObjType.EventPoint then
-            local eventPoint = ((self._seasonManager):SeasonMapManager()):GetEventPoint(value)
-            if eventPoint then
-              self._targetPosition = Vector3((eventPoint:Position()).x, 0, (eventPoint:Position()).z)
-            end
-          else
-            do
-              if focusObjType == SeasonExpressFocusObjType.Position then
-                self._targetPosition = Vector3(value.x, 0, value.z)
-              end
-              if self._targetPosition then
-                self._rawTargetPositionX = (self._targetPosition).x
-                ;
-                (self._seasonCamera):Focus(self._targetPosition)
-                if self._sizeScale then
-                  (self._seasonCamera):SetRecordSize((self._seasonCamera):Size())
-                  ;
-                  (self._seasonCamera):SetSize((self._seasonCamera):MinSize())
-                  self._scaleStartTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime()
-                end
-                self._state = SeasonExpressState.Playing
-                ;
-                (self._seasonManager):Lock("focus")
-              else
-                self:Next()
-              end
-            end
-          end
-        end
+    local focusObjType = self._content.type
+    local value = self._content.value
+    self._focusType = self._content.focusType or SeasonExpressFocusType.Center
+    self._sizeScale = self._content.sizeScale
+    self._targetPosition = nil
+    if focusObjType == SeasonExpressFocusObjType.Player then
+      local player = self._seasonManager:SeasonPlayerManager():GetPlayer()
+      self._targetPosition = Vector3(player:Position().x, 0, player:Position().z)
+    elseif focusObjType == SeasonExpressFocusObjType.EventPoint then
+      local eventPoint = self._seasonManager:SeasonMapManager():GetEventPoint(value)
+      if eventPoint then
+        self._targetPosition = Vector3(eventPoint:Position().x, 0, eventPoint:Position().z)
       end
+    elseif focusObjType == SeasonExpressFocusObjType.Position then
+      self._targetPosition = Vector3(value.x, 0, value.z)
+    end
+    if self._targetPosition then
+      self._rawTargetPositionX = self._targetPosition.x
+      self._seasonCamera:Focus(self._targetPosition)
+      if self._sizeScale then
+        self._seasonCamera:SetRecordSize(self._seasonCamera:Size())
+        self._seasonCamera:SetSize(self._seasonCamera:MinSize())
+        self._scaleStartTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime()
+      end
+      self._state = SeasonExpressState.Playing
+      self._seasonManager:Lock("focus")
+    else
+      self:Next()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressFocus.GetFocusOffsetX = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local camera = (self._seasonCamera):Camera()
+function SeasonMapExpressFocus:GetFocusOffsetX()
+  local camera = self._seasonCamera:Camera()
   local aspect = camera.aspect
   local size = camera.orthographicSize
   local cameraWidth = size * aspect
-  local bangWidth = (ResolutionManager.BangWidth)()
-  local blackWidth = (ResolutionManager.BlackWidth)()
+  local bangWidth = ResolutionManager.BangWidth()
+  local blackWidth = ResolutionManager.BlackWidth()
   local width = bangWidth + blackWidth
-  width = (UnityEngine.Screen).width - width * 2
-  local percent = ((width) / 2 - (width - 694) / 2) / (width)
+  width = UnityEngine.Screen.width - width * 2
+  local percent = (width / 2 - (width - 694) / 2) / width
   return percent * cameraWidth * 2
 end
-
-

@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_escape_and_update_ui_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEscapeAndUpdateUIInstruction", BaseInstruction)
 PlayEscapeAndUpdateUIInstruction = PlayEscapeAndUpdateUIInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEscapeAndUpdateUIInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEscapeAndUpdateUIInstruction:Constructor(paramList)
   self._addNum = tonumber(paramList.addNum) or 1
   self._chessClassID = tonumber(paramList.chessClassID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEscapeAndUpdateUIInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEscapeAndUpdateUIInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Escape)
   if not resultArray then
-    return 
+    return
   end
-  for _,v in ipairs(resultArray) do
+  for _, v in ipairs(resultArray) do
     local result = v
     local targetID = result:GetTargetID()
     local targetEntity = world:GetEntityByID(targetID)
@@ -36,12 +26,9 @@ PlayEscapeAndUpdateUIInstruction.DoInstruction = function(self, TT, casterEntity
         targetEntity:SetLocation(posNew)
       end
       if addNum then
-        (world:EventDispatcher()):Dispatch(GameEventType.UIUpdateChessEscape, 1)
-        ;
-        (world:EventDispatcher()):Dispatch(GameEventType.BattleUIRefreshCombinedWaveInfoOnRoundResult)
+        world:EventDispatcher():Dispatch(GameEventType.UIUpdateChessEscape, 1)
+        world:EventDispatcher():Dispatch(GameEventType.BattleUIRefreshCombinedWaveInfoOnRoundResult)
       end
     end
   end
 end
-
-

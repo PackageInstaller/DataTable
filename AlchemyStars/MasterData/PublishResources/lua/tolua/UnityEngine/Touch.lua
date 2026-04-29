@@ -1,19 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/Touch.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local zero = Vector2.zero
-local rawget = rawget
-local setmetatable = setmetatable
-TouchPhase = {Began = 0, Moved = 1, Stationary = 2, Ended = 3, Canceled = 4}
-TouchBits = {DeltaPosition = 1, Position = 2, RawPosition = 4, ALL = 7}
-local TouchPhase = TouchPhase
-local TouchBits = TouchBits
+local rawget = _ENV.rawget
+local setmetatable = _ENV.setmetatable
+TouchPhase = {
+  Began = 0,
+  Moved = 1,
+  Stationary = 2,
+  Ended = 3,
+  Canceled = 4
+}
+TouchBits = {
+  DeltaPosition = 1,
+  Position = 2,
+  RawPosition = 4,
+  ALL = 7
+}
+local TouchPhase = _ENV.TouchPhase
+local TouchBits = _ENV.TouchBits
 local Touch = {}
-local get = (tolua.initget)(Touch)
-Touch.__index = function(t, k)
-  -- function num : 0_0 , upvalues : rawget, Touch, get
+local get = tolua.initget(Touch)
+
+function Touch.__index(t, k)
   local var = rawget(Touch, k)
   if var == nil then
     var = rawget(get, k)
@@ -24,13 +30,19 @@ Touch.__index = function(t, k)
   return var
 end
 
-Touch.New = function(fingerId, position, rawPosition, deltaPosition, deltaTime, tapCount, phase)
-  -- function num : 0_1 , upvalues : setmetatable, zero, Touch
-  return setmetatable({fingerId = fingerId or 0, position = position or zero, rawPosition = rawPosition or zero, deltaPosition = deltaPosition or zero, deltaTime = deltaTime or 0, tapCount = tapCount or 0, phase = phase or 0}, Touch)
+function Touch.New(fingerId, position, rawPosition, deltaPosition, deltaTime, tapCount, phase)
+  return setmetatable({
+    fingerId = fingerId or 0,
+    position = position or zero,
+    rawPosition = rawPosition or zero,
+    deltaPosition = deltaPosition or zero,
+    deltaTime = deltaTime or 0,
+    tapCount = tapCount or 0,
+    phase = phase or 0
+  }, Touch)
 end
 
-Touch.Init = function(self, fingerId, position, rawPosition, deltaPosition, deltaTime, tapCount, phase)
-  -- function num : 0_2
+function Touch:Init(fingerId, position, rawPosition, deltaPosition, deltaTime, tapCount, phase)
   self.fingerId = fingerId
   self.position = position
   self.rawPosition = rawPosition
@@ -40,16 +52,16 @@ Touch.Init = function(self, fingerId, position, rawPosition, deltaPosition, delt
   self.phase = phase
 end
 
-Touch.Destroy = function(self)
-  -- function num : 0_3
+function Touch:Destroy()
   self.position = nil
   self.rawPosition = nil
   self.deltaPosition = nil
 end
 
-Touch.GetMask = function(...)
-  -- function num : 0_4 , upvalues : TouchBits
-  local arg = {...}
+function Touch.GetMask(...)
+  local arg = {
+    ...
+  }
   local value = 0
   for i = 1, #arg do
     local n = TouchBits[arg[i]] or 0
@@ -63,12 +75,7 @@ Touch.GetMask = function(...)
   return value
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
 UnityEngine.TouchPhase = TouchPhase
--- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
 UnityEngine.Touch = Touch
 setmetatable(Touch, Touch)
 return Touch
-

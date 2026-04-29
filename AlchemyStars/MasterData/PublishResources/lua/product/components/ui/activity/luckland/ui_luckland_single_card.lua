@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_single_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandSingleCard", UICustomWidget)
 UILuckLandSingleCard = UILuckLandSingleCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandSingleCard.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UILuckLandSingleCard:OnShow(uiParams)
   self:InitWidget()
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
-  self._elementCfg = (Cfg.cfg_pet_element)({})
+  self._elementCfg = Cfg.cfg_pet_element({})
   self._luckLandatlas = self:GetAsset("Luckland.spriteatlas", LoadType.SpriteAtlas)
   self._detailMod = false
-  self.defaultResColor = (Color.New)(0.094117647058824, 0.10980392156863, 0.13333333333333)
-  self.redResColor = (Color.New)(0.95294117647059, 0.32549019607843, 0.28627450980392)
-  self.popuResColor = (Color.New)(0.45490196078431, 0.35686274509804, 0.72156862745098)
+  self.defaultResColor = Color.New(0.09411764705882353, 0.10980392156862745, 0.13333333333333333)
+  self.redResColor = Color.New(0.9529411764705882, 0.3254901960784314, 0.28627450980392155)
+  self.popuResColor = Color.New(0.4549019607843137, 0.3568627450980392, 0.7215686274509804)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandSingleCard:InitWidget()
   self.characterImg = self:GetUIComponent("RawImageLoader", "CharacterImg")
   self._qualityImg = self:GetUIComponent("Image", "Quality")
   self.atkImg = self:GetUIComponent("Image", "AtkImg")
@@ -42,10 +32,8 @@ UILuckLandSingleCard.InitWidget = function(self)
   self.countDownRawImage = self:GetUIComponent("RawImageLoader", "CountDownRawImage")
   self._emptyCardGO = self:GetGameObject("EmptyCard")
   self._lockCardGO = self:GetGameObject("LockCard")
-  ;
-  (self._emptyCardGO):SetActive(false)
-  ;
-  (self._lockCardGO):SetActive(false)
+  self._emptyCardGO:SetActive(false)
+  self._lockCardGO:SetActive(false)
   self.resDataTextTf = self:GetUIComponent("RectTransform", "ResDataText")
   self.rootRectTf = self:GetUIComponent("RectTransform", "UILuckLandSingleCard")
   self.moneyImgTf = self:GetUIComponent("RectTransform", "MoneyImg")
@@ -53,308 +41,208 @@ UILuckLandSingleCard.InitWidget = function(self)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.SetData = function(self, cardData, isDelete, fromInnerGame)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandSingleCard:SetData(cardData, isDelete, fromInnerGame)
   self._cardData = cardData
   self._isDelete = isDelete
   self._fromInnerGame = fromInnerGame
-  ;
-  ((self.view):GetGameObject()):SetActive(self._cardData ~= nil)
-  ;
-  ((self.characterImg).gameObject):SetActive(true)
-  ;
-  (self.characterImg):SetColor(Color(1, 1, 1, 1))
+  self.view:GetGameObject():SetActive(self._cardData ~= nil)
+  self.characterImg.gameObject:SetActive(true)
+  self.characterImg:SetColor(Color(1, 1, 1, 1))
   self:RefreshUIInfo()
-  ;
-  ((self.countBg).gameObject):SetActive(false)
-  do
-    if self._fromInnerGame and self._cardData then
-      local petEntity = (LuckLandInnerGameHelper.GetBackpackPetDataByID)((self._cardData):UniqueID())
-      if petEntity then
-        self:SetBindEntity(petEntity)
-      end
+  self.countBg.gameObject:SetActive(false)
+  if self._fromInnerGame and self._cardData then
+    local petEntity = LuckLandInnerGameHelper.GetBackpackPetDataByID(self._cardData:UniqueID())
+    if petEntity then
+      self:SetBindEntity(petEntity)
     end
-    ;
-    (self._resRootGO):SetActive(true)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
   end
+  self._resRootGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.SetBindEntity = function(self, entity, playAnim)
-  -- function num : 0_3
+function UILuckLandSingleCard:SetBindEntity(entity, playAnim)
   self.BindEntity = entity
   if self.BindEntity ~= nil then
-    local curCost = (self.BindEntity):GetCountDown()
+    local curCost = self.BindEntity:GetCountDown()
     if curCost ~= nil then
-      ((self.countBg).gameObject):SetActive(true)
-      if (self.BindEntity):HasDeleteFlag() then
+      self.countBg.gameObject:SetActive(true)
+      if self.BindEntity:HasDeleteFlag() then
         curCost = 0
       end
       if curCost < 10 then
-        (self.countDownRawImage):LoadImage("n11_jnzd_sz" .. curCost)
+        self.countDownRawImage:LoadImage("n11_jnzd_sz" .. curCost)
       end
     end
     if curCost == nil then
-      ((self.countBg).gameObject):SetActive(false)
+      self.countBg.gameObject:SetActive(false)
     end
-    local textValue = (self.BindEntity):CalculateResBag()
-    ;
-    (self.resDataText):SetText(textValue)
+    local textValue = self.BindEntity:CalculateResBag()
+    self.resDataText:SetText(textValue)
     if playAnim then
-      (self._anim):Play("uieff_UILuckLand_Card_in")
+      self._anim:Play("uieff_UILuckLand_Card_in")
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.PlayAnimation = function(self)
-  -- function num : 0_4
+function UILuckLandSingleCard:PlayAnimation()
   if self._cardData then
-    (self._anim):Play("uieff_UILuckLand_Card_in")
+    self._anim:Play("uieff_UILuckLand_Card_in")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.SetPosIndex = function(self, index)
-  -- function num : 0_5 , upvalues : _ENV
-  local anchorPos = (self.rootRectTf).anchoredPosition
+function UILuckLandSingleCard:SetPosIndex(index)
+  local anchorPos = self.rootRectTf.anchoredPosition
   if self.originPos == nil then
     self.originPos = Vector2(anchorPos.x, anchorPos.y)
   else
-    anchorPos = Vector2((self.originPos).x, (self.originPos).y)
+    anchorPos = Vector2(self.originPos.x, self.originPos.y)
   end
   anchorPos.x = anchorPos.x + (index - 1) * 159.3
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.rootRectTf).anchoredPosition = anchorPos
+  self.rootRectTf.anchoredPosition = anchorPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.MovePos = function(self, index)
-  -- function num : 0_6 , upvalues : _ENV
-  local anchorPos = Vector2((self.originPos).x, (self.originPos).y)
+function UILuckLandSingleCard:MovePos(index)
+  local anchorPos = Vector2(self.originPos.x, self.originPos.y)
   anchorPos.x = anchorPos.x + (index - 1) * 159.3
-  ;
-  (self.rootRectTf):DOAnchorPosX(anchorPos.x, 0.5, false)
+  self.rootRectTf:DOAnchorPosX(anchorPos.x, 0.5, false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.GetBindEntity = function(self)
-  -- function num : 0_7
+function UILuckLandSingleCard:GetBindEntity()
   return self.BindEntity
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.RefreshUIInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UILuckLandSingleCard:RefreshUIInfo()
   if self._cardData then
-    self._cfg = (self._cardData):Cfg()
-    ;
-    (self.characterImg):LoadImage((self._cfg).CardIcon)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.attributeImg).sprite = (self._atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((self._elementCfg)[(self._cardData):Attribute()]).Icon))
-    ;
-    (self.atkImgGO):SetActive((self._cardData):Attack() ~= nil)
-    ;
-    (self.moneyImgGO):SetActive((self._cardData):Money() ~= nil)
-    ;
-    (self.recoverImgGO):SetActive((self._cardData):HP() ~= nil)
-    local textValue = nil
+    self._cfg = self._cardData:Cfg()
+    self.characterImg:LoadImage(self._cfg.CardIcon)
+    self.attributeImg.sprite = self._atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(self._elementCfg[self._cardData:Attribute()].Icon))
+    self.atkImgGO:SetActive(self._cardData:Attack() ~= nil)
+    self.moneyImgGO:SetActive(self._cardData:Money() ~= nil)
+    self.recoverImgGO:SetActive(self._cardData:HP() ~= nil)
+    local textValue
     if self._fromInnerGame then
-      local petEntity = (LuckLandInnerGameHelper.GetBackpackPetDataByID)((self._cardData):UniqueID())
+      local petEntity = LuckLandInnerGameHelper.GetBackpackPetDataByID(self._cardData:UniqueID())
       if petEntity then
         textValue = petEntity:CalculateResBag()
       end
-    elseif not (self._cardData):Attack() and not (self._cardData):Money() then
-      textValue = (self._cardData):HP()
+    else
+      textValue = self._cardData:Attack() or self._cardData:Money() or self._cardData:HP()
     end
     if textValue then
-      (self.resDataText):SetText(textValue)
+      self.resDataText:SetText(textValue)
     else
-      (self.resDataText):SetText("")
+      self.resDataText:SetText("")
     end
-    local campName = (self._cardData):CampName()
+    local campName = self._cardData:CampName()
     if campName then
-      (self.campAreaText):SetText((StringTable.Get)(campName))
+      self.campAreaText:SetText(StringTable.Get(campName))
     else
-      (self.campAreaText):SetText("")
+      self.campAreaText:SetText("")
     end
-    ;
-    (self._deleteBtnGO):SetActive(self._isDelete == true)
-    -- DECOMPILER ERROR at PC136: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (self._cardData):Star() == LuckLandCardStarType.One then
-      (self._qualityImg).sprite = (self._luckLandatlas):GetSprite("n11_jnzd_di15")
-    else
-      -- DECOMPILER ERROR at PC150: Confused about usage of register: R3 in 'UnsetPending'
-
-      if (self._cardData):Star() == LuckLandCardStarType.Two then
-        (self._qualityImg).sprite = (self._luckLandatlas):GetSprite("n11_jnzd_di16")
-      else
-        -- DECOMPILER ERROR at PC164: Confused about usage of register: R3 in 'UnsetPending'
-
-        if (self._cardData):Star() == LuckLandCardStarType.Three then
-          (self._qualityImg).sprite = (self._luckLandatlas):GetSprite("n11_jnzd_di17")
-        end
-      end
+    self._deleteBtnGO:SetActive(self._isDelete == true)
+    if self._cardData:Star() == LuckLandCardStarType.One then
+      self._qualityImg.sprite = self._luckLandatlas:GetSprite("n11_jnzd_di15")
+    elseif self._cardData:Star() == LuckLandCardStarType.Two then
+      self._qualityImg.sprite = self._luckLandatlas:GetSprite("n11_jnzd_di16")
+    elseif self._cardData:Star() == LuckLandCardStarType.Three then
+      self._qualityImg.sprite = self._luckLandatlas:GetSprite("n11_jnzd_di17")
     end
     local targetResColor = self.defaultResColor
-    if (self._cardData):Money() then
+    if self._cardData:Money() then
       targetResColor = self.popuResColor
     end
-    if (self._cardData):HP() then
+    if self._cardData:HP() then
       targetResColor = self.redResColor
     end
-    -- DECOMPILER ERROR at PC179: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.resDataText).color = targetResColor
-    ;
-    (self._emptyCardGO):SetActive(false)
-    ;
-    (self._lockCardGO):SetActive(false)
+    self.resDataText.color = targetResColor
+    self._emptyCardGO:SetActive(false)
+    self._lockCardGO:SetActive(false)
   else
-    (self._emptyCardGO):SetActive(true)
+    self._emptyCardGO:SetActive(true)
   end
-  -- DECOMPILER ERROR: 17 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.RefreshDetailMod = function(self, isdetail)
-  -- function num : 0_9
+function UILuckLandSingleCard:RefreshDetailMod(isdetail)
   self._detailMod = isdetail
-  ;
-  ((self.attributeImg).gameObject):SetActive(self._detailMod)
-  ;
-  ((self.campArea).gameObject):SetActive(self._detailMod)
+  self.attributeImg.gameObject:SetActive(self._detailMod)
+  self.campArea.gameObject:SetActive(self._detailMod)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.SetEmptyCard = function(self)
-  -- function num : 0_10
-  (self._emptyCardGO):SetActive(true)
-  ;
-  (self._lockCardGO):SetActive(false)
+function UILuckLandSingleCard:SetEmptyCard()
+  self._emptyCardGO:SetActive(true)
+  self._lockCardGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.SetLockCard = function(self)
-  -- function num : 0_11
-  (self._emptyCardGO):SetActive(false)
-  ;
-  (self._lockCardGO):SetActive(true)
+function UILuckLandSingleCard:SetLockCard()
+  self._emptyCardGO:SetActive(false)
+  self._lockCardGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.SetUnlockCard = function(self)
-  -- function num : 0_12
-  if (self._lockCardGO).activeSelf then
-    (self._emptyCardGO):SetActive(true)
-    ;
-    (self._lockCardGO):SetActive(false)
+function UILuckLandSingleCard:SetUnlockCard()
+  if self._lockCardGO.activeSelf then
+    self._emptyCardGO:SetActive(true)
+    self._lockCardGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.SkillShow = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UILuckLandSingleCard:SkillShow()
   if self.BindEntity == nil then
-    return 
+    return
   end
-  local curCost = (self.BindEntity):GetCountDown()
-  if (self.BindEntity):HasDeleteFlag() then
-    (self.characterImg):SetColor(Color(0, 0, 0, 1))
+  local curCost = self.BindEntity:GetCountDown()
+  if self.BindEntity:HasDeleteFlag() then
+    self.characterImg:SetColor(Color(0, 0, 0, 1))
   end
-  local directGold = (self.BindEntity):GetDirectGold()
+  local directGold = self.BindEntity:GetDirectGold()
   if directGold == nil then
     directGold = 0
   end
-  local textValue = (self.BindEntity):CalculateRes()
+  local textValue = self.BindEntity:CalculateRes()
   if textValue then
-    (self.resDataText):SetText(textValue + directGold)
+    self.resDataText:SetText(textValue + directGold)
   else
-    ;
-    (self.resDataText):SetText("")
+    self.resDataText:SetText("")
   end
-  ;
-  (self.resDataTextTf):DOPunchScale(Vector3(0.5, 0.5, 0.5), 0.2, 1)
+  self.resDataTextTf:DOPunchScale(Vector3(0.5, 0.5, 0.5), 0.2, 1)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.GetCurDemond = function(self)
-  -- function num : 0_14
-  local directGold = (self.BindEntity):GetDirectGold()
+function UILuckLandSingleCard:GetCurDemond()
+  local directGold = self.BindEntity:GetDirectGold()
   if directGold == nil then
     directGold = 0
   end
-  local textValue = (self.BindEntity):CalculateRes()
+  local textValue = self.BindEntity:CalculateRes()
   return textValue + directGold
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.DemondFly = function(self)
-  -- function num : 0_15
-  (self._resRootGO):SetActive(false)
+function UILuckLandSingleCard:DemondFly()
+  self._resRootGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.CharacterImgOnClick = function(self, go)
-  -- function num : 0_16
+function UILuckLandSingleCard:CharacterImgOnClick(go)
   if self._cardData == nil then
-    return 
+    return
   end
   self:ShowDialog("UILuckLandCardDetailPopUp", self._cardData)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.DeleteBtnOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
-  local isOnlyOne = ((LuckLandData:GetInstance()):CurCardDatas()):IsOnlyOne()
+function UILuckLandSingleCard:DeleteBtnOnClick(go)
+  local isOnlyOne = LuckLandData:GetInstance():CurCardDatas():IsOnlyOne()
   if isOnlyOne then
-    (ToastManager.ShowToast)((StringTable.Get)("str_luckland_cardbag_delete_error1"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_luckland_cardbag_delete_error1"))
+    return
   end
-  local curCost = ((LuckLandData:GetInstance()):CurCardDatas()):CurDeleteCost()
-  local curMoney = (LuckLandInnerGameHelper.GetCurMoney)()
-  if curMoney < curCost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_luckland_cardbag_delete_error"))
-    return 
+  local curCost = LuckLandData:GetInstance():CurCardDatas():CurDeleteCost()
+  local curMoney = LuckLandInnerGameHelper.GetCurMoney()
+  if curCost > curMoney then
+    ToastManager.ShowToast(StringTable.Get("str_luckland_cardbag_delete_error"))
+    return
   end
-  local uniqueID = (self._cardData):UniqueID()
-  ;
-  ((LuckLandData:GetInstance()):CurCardDatas()):DeleteCardByID(uniqueID)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandDeleteCard, uniqueID)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnLuckLandDeleteCardSucc, uniqueID)
+  local uniqueID = self._cardData:UniqueID()
+  LuckLandData:GetInstance():CurCardDatas():DeleteCardByID(uniqueID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandDeleteCard, uniqueID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnLuckLandDeleteCardSucc, uniqueID)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandSingleCard.ShowDeleteBtn = function(self, show)
-  -- function num : 0_18
-  (self._deleteBtnGO):SetActive(show)
+function UILuckLandSingleCard:ShowDeleteBtn(show)
+  self._deleteBtnGO:SetActive(show)
 end
-
-

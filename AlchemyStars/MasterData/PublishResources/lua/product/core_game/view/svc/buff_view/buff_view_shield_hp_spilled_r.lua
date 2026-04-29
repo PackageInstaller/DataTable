@@ -1,19 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_shield_hp_spilled_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPShieldHpSpilled", BuffViewBase)
 BuffViewAddHPShieldHpSpilled = BuffViewAddHPShieldHpSpilled
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPShieldHpSpilled.PlayView = function(self, TT)
-  -- function num : 0_0
-  local seq = (self:GetBuffResult()):GetBuffSeq()
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local inst = (teamEntity:BuffView()):GetBuffViewInstance(seq)
+function BuffViewAddHPShieldHpSpilled:PlayView(TT)
+  local seq = self:GetBuffResult():GetBuffSeq()
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local inst = teamEntity:BuffView():GetBuffViewInstance(seq)
   playBuffSvc:PlayAddBuff(TT, inst)
 end
-
-

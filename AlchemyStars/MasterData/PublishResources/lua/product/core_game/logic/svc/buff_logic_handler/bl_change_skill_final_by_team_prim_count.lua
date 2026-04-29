@@ -1,46 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_team_prim_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByTeamPrimaryTypeCount", BuffLogicBase)
 BuffLogicChangeSkillFinalByTeamPrimaryTypeCount = BuffLogicChangeSkillFinalByTeamPrimaryTypeCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByTeamPrimaryTypeCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillFinalByTeamPrimaryTypeCount:Constructor(buffInstance, logicParam)
   self._rates = logicParam.rates
   self._effectList = logicParam.effectList
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount = 0
+  self._buffInstance.BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByTeamPrimaryTypeCount.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = self._effectList
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+function BuffLogicChangeSkillFinalByTeamPrimaryTypeCount:DoLogic()
+  self._buffInstance._effectList = self._effectList
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local primaryCount = utilCalcSvc:GetTeamPrimaryTypeCount(self._entity)
   local val = self._rates * primaryCount
-  for _,paramType in ipairs(self._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, val)
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, val)
   end
 end
 
 _class("BuffLogicUnDoChangeSkillFinalByTeamPrimaryTypeCount", BuffLogicBase)
 BuffLogicUnDoChangeSkillFinalByTeamPrimaryTypeCount = BuffLogicUnDoChangeSkillFinalByTeamPrimaryTypeCount
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUnDoChangeSkillFinalByTeamPrimaryTypeCount.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,paramType in pairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicUnDoChangeSkillFinalByTeamPrimaryTypeCount:DoLogic()
+  for _, paramType in pairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

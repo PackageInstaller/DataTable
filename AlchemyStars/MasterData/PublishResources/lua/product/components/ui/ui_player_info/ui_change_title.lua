@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_change_title.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChangeTitleController", UIController)
 UIChangeTitleController = UIChangeTitleController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChangeTitleController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIChangeTitleController:OnShow(uiParams)
   self._playerInfo = uiParams[1]
   self._timeEvents = {}
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChangeTitleController:_GetComponents()
   self._anim = self:GetUIComponent("Animation", "anim")
   self._unlockText = self:GetUIComponent("UILocalizationText", "unlockText")
   self._LockIcon = self:GetGameObject("LockIcon")
@@ -33,25 +23,16 @@ UIChangeTitleController._GetComponents = function(self)
   self._titleScrollView = self:GetUIComponent("UIDynamicScrollView", "titleScrollView")
   local _leftUpper = self:GetUIComponent("UISelectObjectPath", "LeftUpper")
   self._backBtns = _leftUpper:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    (self._anim):Play("uieff_UIChangeTitle_out")
+  self._backBtns:SetData(function()
+    self._anim:Play("uieff_UIChangeTitle_out")
     self:_LockAnim(167)
-    ;
-    ((GameGlobal.Timer)()):AddEvent(167, function()
-      -- function num : 0_1_0_0 , upvalues : self
+    GameGlobal.Timer():AddEvent(167, function()
       self:CloseDialog()
-    end
-)
-  end
-, nil)
+    end)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChangeTitleController:_OnValue()
   self._titleHoldCount = 15
   self._noTitleItemID = 0
   self._itemCountPerRow = 3
@@ -61,42 +42,42 @@ UIChangeTitleController._OnValue = function(self)
   local noTitleItemData = self:GetNoTitleItemData()
   datas[self._noTitleItemID] = noTitleItemData
   local idx = 1
-  local cfgTitle = (Cfg.cfg_item_title)({})
+  local cfgTitle = Cfg.cfg_item_title({})
   local cfg_Title = {}
-  for k,v in pairs(cfgTitle) do
+  for k, v in pairs(cfgTitle) do
     cfg_Title[v.Order] = v
   end
   if cfg_Title and next(cfg_Title) then
-    for k,v in pairs(cfg_Title) do
+    for k, v in pairs(cfg_Title) do
       local title = v
       local data = {}
       if title then
         local lock = true
         local itemid = title.ID
         idx = idx + 1
-        local itemcount = (self._itemModule):GetItemCount(itemid)
-        if itemcount and itemcount > 0 then
+        local itemcount = self._itemModule:GetItemCount(itemid)
+        if itemcount and 0 < itemcount then
           lock = false
         end
         if GameSingle then
           lock = false
         end
         data.itemid = itemid
-        data.icon = ((Cfg.cfg_item_title_extend)[itemid]).ChangeTitleIcon
+        data.icon = Cfg.cfg_item_title_extend[itemid].ChangeTitleIcon
         data.Order = idx
         data.lock = lock
-        data.desc = ((Cfg.cfg_item_title)[itemid]).Desc
-        data.using = (self._playerInfo).m_title_used == itemid
-        data.callback = function(itemid)
-    -- function num : 0_2_0 , upvalues : self
-    self:_ChooseOneTitle(itemid)
-  end
-
+        data.desc = Cfg.cfg_item_title[itemid].Desc
+        data.using = self._playerInfo.m_title_used == itemid
+        
+        function data.callback(itemid)
+          self:_ChooseOneTitle(itemid)
+        end
+        
         datas[itemid] = data
       end
     end
     if idx < self._titleHoldCount then
-      for i = 1, self._titleHoldCount - (idx) do
+      for i = 1, self._titleHoldCount - idx do
         local data = {}
         data.itemid = -i
         data.Order = idx + i
@@ -104,32 +85,23 @@ UIChangeTitleController._OnValue = function(self)
       end
     end
   end
-  self._itemTotalCount = (math.max)(self._titleHoldCount, idx)
+  self._itemTotalCount = math.max(self._titleHoldCount, idx)
   self._datas = datas
   self:_LockAnim(100 * self:GetRowCount())
   self:_InitTitleSrollView()
-  if (self._playerInfo).m_title_used ~= -1 then
-    self:_ChooseOneTitle((self._playerInfo).m_title_used)
+  if self._playerInfo.m_title_used ~= -1 then
+    self:_ChooseOneTitle(self._playerInfo.m_title_used)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController._InitTitleSrollView = function(self)
-  -- function num : 0_3
-  (self._titleScrollView):InitListView(self:GetRowCount(), function(scrollView, index)
-    -- function num : 0_3_0 , upvalues : self
+function UIChangeTitleController:_InitTitleSrollView()
+  self._titleScrollView:InitListView(self:GetRowCount(), function(scrollView, index)
     return self:InitTitleList(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController._GetItemFromOrder = function(self, order)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,v in pairs(self._datas) do
+function UIChangeTitleController:_GetItemFromOrder(order)
+  for _, v in pairs(self._datas) do
     if v.Order == order then
       return v
     end
@@ -137,18 +109,12 @@ UIChangeTitleController._GetItemFromOrder = function(self, order)
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController.GetRowCount = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local row = (math.ceil)(self._itemTotalCount / self._itemCountPerRow)
+function UIChangeTitleController:GetRowCount()
+  local row = math.ceil(self._itemTotalCount / self._itemCountPerRow)
   return row
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController.InitTitleList = function(self, scrollView, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChangeTitleController:InitTitleList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -156,18 +122,15 @@ UIChangeTitleController.InitTitleList = function(self, scrollView, index)
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
-    ;
-    ((GameGlobal.Timer)()):AddEvent(index * 100, function()
-    -- function num : 0_6_0 , upvalues : rowPool, self, index
-    rowPool:SpawnObjects("UITitleItem", self._itemCountPerRow)
-    local rowList = rowPool:GetAllSpawnList()
-    for i = 1, self._itemCountPerRow do
-      local heartItem = rowList[i]
-      local itemIndex = index * self._itemCountPerRow + i
-      self:ShowTitleItem(heartItem, itemIndex)
-    end
-  end
-)
+    GameGlobal.Timer():AddEvent(index * 100, function()
+      rowPool:SpawnObjects("UITitleItem", self._itemCountPerRow)
+      local rowList = rowPool:GetAllSpawnList()
+      for i = 1, self._itemCountPerRow do
+        local heartItem = rowList[i]
+        local itemIndex = index * self._itemCountPerRow + i
+        self:ShowTitleItem(heartItem, itemIndex)
+      end
+    end)
   else
     rowPool:SpawnObjects("UITitleItem", self._itemCountPerRow)
     local rowList = rowPool:GetAllSpawnList()
@@ -177,151 +140,96 @@ UIChangeTitleController.InitTitleList = function(self, scrollView, index)
       self:ShowTitleItem(heartItem, itemIndex)
     end
   end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController.ShowTitleItem = function(self, item, index)
-  -- function num : 0_7
+function UIChangeTitleController:ShowTitleItem(item, index)
   local itemData = self:_GetItemFromOrder(index)
   if itemData then
-    (item:GetGameObject()):SetActive(true)
+    item:GetGameObject():SetActive(true)
     item:SetData(self:_GetItemFromOrder(index))
   else
-    ;
-    (item:GetGameObject()):SetActive(false)
+    item:GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController.OnHide = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for key,value in pairs(self._timeEvents) do
-    ((GameGlobal.Timer)()):CancelEvent(value)
+function UIChangeTitleController:OnHide()
+  for key, value in pairs(self._timeEvents) do
+    GameGlobal.Timer():CancelEvent(value)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController.GetNoTitleItemData = function(self)
-  -- function num : 0_9
+function UIChangeTitleController:GetNoTitleItemData()
   local data = {}
   data.itemid = self._noTitleItemID
   data.lock = false
   data.Order = 1
-  data.using = (self._playerInfo).m_title_used == self._noTitleItemID
-  data.callback = function(itemid)
-    -- function num : 0_9_0 , upvalues : self
+  data.using = self._playerInfo.m_title_used == self._noTitleItemID
+  
+  function data.callback(itemid)
     self:_ChooseOneTitle(itemid)
   end
-
-  do return data end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  
+  return data
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController._ChooseOneTitle = function(self, itemid)
-  -- function num : 0_10 , upvalues : _ENV
+function UIChangeTitleController:_ChooseOneTitle(itemid)
   if self._currentChooseItemID == itemid then
-    return 
+    return
   end
   self._currentChooseItemID = itemid
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTitleItemSelect, self._currentChooseItemID)
-  ;
-  (self._noTitleShow):SetActive(false)
-  ;
-  (self._condition):SetActive(true)
-  ;
-  (self._showLine):SetActive(true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTitleItemSelect, self._currentChooseItemID)
+  self._noTitleShow:SetActive(false)
+  self._condition:SetActive(true)
+  self._showLine:SetActive(true)
   if self._currentChooseItemID == self._noTitleItemID then
-    (self._noTitleIconObj):SetActive(true)
-    ;
-    (self._showTitleIconObj):SetActive(false)
+    self._noTitleIconObj:SetActive(true)
+    self._showTitleIconObj:SetActive(false)
   else
-    ;
-    (self._noTitleIconObj):SetActive(false)
-    ;
-    (self._showTitleIconObj):SetActive(true)
-    local PreviewTitleIcon = ((Cfg.cfg_item_title_extend)[itemid]).ChangeTitleIcon
-    ;
-    (self._showTitleIcon):LoadImage(PreviewTitleIcon)
+    self._noTitleIconObj:SetActive(false)
+    self._showTitleIconObj:SetActive(true)
+    local PreviewTitleIcon = Cfg.cfg_item_title_extend[itemid].ChangeTitleIcon
+    self._showTitleIcon:LoadImage(PreviewTitleIcon)
   end
-  do
-    self:RefreshChangeBtnStatus(itemid)
-  end
+  self:RefreshChangeBtnStatus(itemid)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController.RefreshChangeBtnStatus = function(self, itemid)
-  -- function num : 0_11 , upvalues : _ENV
-  local isUsing = (self._playerInfo).m_title_used == itemid
-  local isLock = ((self._datas)[itemid]).lock
-  ;
-  (self._LockIcon):SetActive(isLock)
-  ;
-  (self._changeBtn):SetActive((not isUsing and not isLock))
-  if isUsing then
-    (self._UsingIconObj):SetActive(not isLock)
-    ;
-    (self._unlockText):SetText((StringTable.Get)(((self._datas)[itemid]).desc))
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
-  end
+function UIChangeTitleController:RefreshChangeBtnStatus(itemid)
+  local isUsing = self._playerInfo.m_title_used == itemid
+  local isLock = self._datas[itemid].lock
+  self._LockIcon:SetActive(isLock)
+  self._changeBtn:SetActive(not isUsing and not isLock)
+  self._UsingIconObj:SetActive(isUsing and not isLock)
+  self._unlockText:SetText(StringTable.Get(self._datas[itemid].desc))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController.backOnClick = function(self)
-  -- function num : 0_12
+function UIChangeTitleController:backOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController.changeBtnOnClick = function(self)
-  -- function num : 0_13
+function UIChangeTitleController:changeBtnOnClick()
   self:Lock("UIChangeTitleController:changeBtnOnClick")
   self:StartTask(self._ChangeTitleTask, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController._ChangeTitleTask = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
-  local res = (self._roleModule):Request_TitleAndFifure(TT, 1, self._currentChooseItemID)
+function UIChangeTitleController:_ChangeTitleTask(TT)
+  local res = self._roleModule:Request_TitleAndFifure(TT, 1, self._currentChooseItemID)
   self:UnLock("UIChangeTitleController:changeBtnOnClick")
   if res and res:GetSucc() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_player_info_change_title_succ"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPlayerTitleInfoChanged, self._currentChooseItemID)
-    self._playerInfo = (self._roleModule):UI_GetPlayerInfo()
+    ToastManager.ShowToast(StringTable.Get("str_player_info_change_title_succ"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPlayerTitleInfoChanged, self._currentChooseItemID)
+    self._playerInfo = self._roleModule:UI_GetPlayerInfo()
     self:RefreshChangeBtnStatus(self._currentChooseItemID)
   else
-    ;
-    (ToastManager.ShowToast)("###[UIChangeTitleController] changeBtnOnClick fail ! result --> ", res:GetResult())
-    ;
-    (Log.error)("###[UIChangeTitleController] changeBtnOnClick fail ! result --> ", res:GetResult())
+    ToastManager.ShowToast("###[UIChangeTitleController] changeBtnOnClick fail ! result --> ", res:GetResult())
+    Log.error("###[UIChangeTitleController] changeBtnOnClick fail ! result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeTitleController._LockAnim = function(self, timeLen)
-  -- function num : 0_15 , upvalues : _ENV
+function UIChangeTitleController:_LockAnim(timeLen)
   self:Lock("UIChangeTitleController_LockAnim")
-  local te = ((GameGlobal.Timer)()):AddEvent(timeLen, function()
-    -- function num : 0_15_0 , upvalues : self
+  local te = GameGlobal.Timer():AddEvent(timeLen, function()
     self:UnLock("UIChangeTitleController_LockAnim")
-  end
-)
-  ;
-  (table.insert)(self._timeEvents, te)
+  end)
+  table.insert(self._timeEvents, te)
 end
-
-

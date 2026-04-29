@@ -1,47 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_aircraft_atom_exchange_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISmeltAtomExchangeController", UIController)
 UISmeltAtomExchangeController = UISmeltAtomExchangeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISmeltAtomExchangeController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISmeltAtomExchangeController:OnShow(uiParams)
   self:InitWidget()
   self._airModule = self:GetModule(AircraftModule)
-  self._smeltRoom = (self._airModule):GetSmeltRoom()
+  self._smeltRoom = self._airModule:GetSmeltRoom()
   self._roleModule = self:GetModule(RoleModule)
-  self._rate = ((Cfg.cfg_aircraft_values)[17]).IntValue
+  self._rate = Cfg.cfg_aircraft_values[17].IntValue
   self:OnCountChanged(1, true)
-  local atomCfg = (Cfg.cfg_top_tips)[RoleAssetID.RoleAssetAtom]
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._icon).sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(atomCfg.Icon)
+  local atomCfg = Cfg.cfg_top_tips[RoleAssetID.RoleAssetAtom]
+  self._icon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(atomCfg.Icon)
   self:OnAtomChanged()
   self:OnFireflyChanged()
   self:AttachEvent(GameEventType.AircraftOnAtomChanged, self.OnAtomChanged)
   self:AttachEvent(GameEventType.AircraftOnFireFlyChanged, self.OnFireflyChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISmeltAtomExchangeController:OnHide()
   self:DetachEvent(GameEventType.AircraftOnAtomChanged, self.OnAtomChanged)
   self:DetachEvent(GameEventType.AircraftOnFireFlyChanged, self.OnFireflyChanged)
-  ;
-  (self.addBtn):Dispose()
-  ;
-  (self.removeBtn):Dispose()
+  self.addBtn:Dispose()
+  self.removeBtn:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISmeltAtomExchangeController:InitWidget()
   self.tip = self:GetUIComponent("UILocalizationText", "tip")
   self.text2 = self:GetUIComponent("UILocalizationText", "text2")
   self.count = self:GetUIComponent("UILocalizationText", "count")
@@ -49,141 +31,104 @@ UISmeltAtomExchangeController.InitWidget = function(self)
   self.remove = self:GetUIComponent("UIEventTriggerListener", "remove")
   self.currencymenu = self:GetUIComponent("UISelectObjectPath", "currencymenu")
   self.addBtn = UITouchButton:New(self.add, function()
-    -- function num : 0_2_0 , upvalues : self
     self:OnCountChanged(self._count + 1)
-  end
-)
+  end)
   self.removeBtn = UITouchButton:New(self.remove, function()
-    -- function num : 0_2_1 , upvalues : self
     self:OnCountChanged(self._count - 1)
-  end
-)
-  self._topTips = (self.currencymenu):SpawnObject("UICurrencyMenu")
-  ;
-  (self._topTips):SetData({RoleAssetID.RoleAssetAtom, RoleAssetID.RoleAssetFirefly}, true)
+  end)
+  self._topTips = self.currencymenu:SpawnObject("UICurrencyMenu")
+  self._topTips:SetData({
+    RoleAssetID.RoleAssetAtom,
+    RoleAssetID.RoleAssetFirefly
+  }, true)
   self._icon = self:GetUIComponent("Image", "icon")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.OnCountChanged = function(self, count, notCheck)
-  -- function num : 0_3 , upvalues : _ENV
+function UISmeltAtomExchangeController:OnCountChanged(count, notCheck)
   local max = self:_calMax()
-  if not notCheck and (max < count or count < 1) then
-    return 
+  if not notCheck and (count > max or count < 1) then
+    return
   end
   self._count = count
-  ;
-  (self.count):SetText(self._count)
+  self.count:SetText(self._count)
   local atom = self._count * self._rate
-  ;
-  (self.text2):SetText(atom)
-  ;
-  (self.tip):SetText((StringTable.Get)("str_aircraft_smelt_atom_tip", self._count, atom))
+  self.text2:SetText(atom)
+  self.tip:SetText(StringTable.Get("str_aircraft_smelt_atom_tip", self._count, atom))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController._calMax = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local atom = (self._roleModule):GetAtom()
-  local atomMax = (self._smeltRoom):GetStorageMax()
-  if atomMax <= atom then
+function UISmeltAtomExchangeController:_calMax()
+  local atom = self._roleModule:GetAtom()
+  local atomMax = self._smeltRoom:GetStorageMax()
+  if atom >= atomMax then
     return 0
   end
-  local available = (self._airModule):GetFirefly()
+  local available = self._airModule:GetFirefly()
   if available < 1 then
     return 0
   end
-  if atomMax - atom < available * self._rate then
-    return (math.ceil)((atomMax - atom) / self._rate)
+  if available * self._rate > atomMax - atom then
+    return math.ceil((atomMax - atom) / self._rate)
   else
-    return (math.floor)(available)
+    return math.floor(available)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.OnAtomChanged = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local atom = (self._topTips):GetItemByTypeId(RoleAssetID.RoleAssetAtom)
-  atom:SetText((math.floor)((self._roleModule):GetAtom()) .. "/" .. (math.floor)((self._smeltRoom):GetStorageMax()))
+function UISmeltAtomExchangeController:OnAtomChanged()
+  local atom = self._topTips:GetItemByTypeId(RoleAssetID.RoleAssetAtom)
+  atom:SetText(math.floor(self._roleModule:GetAtom()) .. "/" .. math.floor(self._smeltRoom:GetStorageMax()))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.OnFireflyChanged = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local firefly = (self._topTips):GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
-  firefly:SetText((self._airModule):GetFirefly() .. "/" .. (math.floor)((self._airModule):GetMaxFirefly()))
+function UISmeltAtomExchangeController:OnFireflyChanged()
+  local firefly = self._topTips:GetItemByTypeId(RoleAssetID.RoleAssetFirefly)
+  firefly:SetText(self._airModule:GetFirefly() .. "/" .. math.floor(self._airModule:GetMaxFirefly()))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.minOnClick = function(self, go)
-  -- function num : 0_7
+function UISmeltAtomExchangeController:minOnClick(go)
   self:OnCountChanged(1, true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.maxOnClick = function(self, go)
-  -- function num : 0_8
+function UISmeltAtomExchangeController:maxOnClick(go)
   local max = self:_calMax()
   self:OnCountChanged(max)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.cancelOnClick = function(self, go)
-  -- function num : 0_9
+function UISmeltAtomExchangeController:cancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.okOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._airModule):GetFirefly() < self._count then
+function UISmeltAtomExchangeController:okOnClick(go)
+  if self._airModule:GetFirefly() < self._count then
     self:OnCountChanged(1)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_firefly_not_enough"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_firefly_not_enough"))
+    return
   end
-  if (self._smeltRoom):GetStorageMax() <= (self._roleModule):GetAtom() then
+  if self._roleModule:GetAtom() >= self._smeltRoom:GetStorageMax() then
     self:OnCountChanged(1)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_atom_max"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_atom_max"))
+    return
   end
   local max = self:_calMax()
   if max < self._count then
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_atom_changed"))
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_atom_changed"))
     self:OnCountChanged(max)
-    return 
+    return
   end
   self:StartTask(self.exchange, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmeltAtomExchangeController.exchange = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UISmeltAtomExchangeController:exchange(TT)
   self:Lock(self:GetName())
-  local updateRes = (self._airModule):AircraftUpdate(TT, false)
+  local updateRes = self._airModule:AircraftUpdate(TT, false)
   if not updateRes:GetSucc() then
-    (ToastManager.ShowToast)((self._airModule):GetErrorMsg(updateRes:GetResult()))
-    return 
+    ToastManager.ShowToast(self._airModule:GetErrorMsg(updateRes:GetResult()))
+    return
   end
-  local res = (self._airModule):HandleFireflyToAtom(TT, self._count)
+  local res = self._airModule:HandleFireflyToAtom(TT, self._count)
   self:UnLock(self:GetName())
   if res:GetSucc() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_exchange_success"))
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_exchange_success"))
     self:CloseDialog()
   else
-    ;
-    (ToastManager.ShowToast)((self._airModule):GetErrorMsg(res:GetResult()))
+    ToastManager.ShowToast(self._airModule:GetErrorMsg(res:GetResult()))
   end
 end
-
-

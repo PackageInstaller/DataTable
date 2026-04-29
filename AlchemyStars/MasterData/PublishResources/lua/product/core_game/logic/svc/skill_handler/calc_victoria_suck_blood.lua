@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_victoria_suck_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_VictoriaSuckBlood", Object)
 SkillEffectCalc_VictoriaSuckBlood = SkillEffectCalc_VictoriaSuckBlood
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_VictoriaSuckBlood.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_VictoriaSuckBlood:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_VictoriaSuckBlood.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_VictoriaSuckBlood:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam.skillEffectParam
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
   local totalTargetCount = skillEffectCalcParam:GetTotalTargetCount()
@@ -23,15 +13,19 @@ SkillEffectCalc_VictoriaSuckBlood.DoSkillEffectCalculator = function(self, skill
   if totalTargetCount == 1 then
     formulaID = skillParam:GetDamageFormulaID2()
   end
-  local skillEffectService = (self._world):GetService("SkillEffectCalc")
+  local skillEffectService = self._world:GetService("SkillEffectCalc")
   local results = {}
   local attackPos = skillEffectCalcParam.attackPos
   local gridPos = skillEffectCalcParam.gridPos
-  local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  for _,targetID in ipairs(targets) do
-    local target = (self._world):GetEntityByID(targetID)
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  for _, targetID in ipairs(targets) do
+    local target = self._world:GetEntityByID(targetID)
     if target then
-      local damageParam = SkillDamageEffectParam:New({percent = skillParam:GetDamagePercent(), formulaID = formulaID, damageStageIndex = 1})
+      local damageParam = SkillDamageEffectParam:New({
+        percent = skillParam:GetDamagePercent(),
+        formulaID = formulaID,
+        damageStageIndex = 1
+      })
       local nTotalDamage, listDamageInfo = skillEffectService:ComputeSkillDamage(attacker, skillEffectCalcParam.attackPos, target, gridPos, skillEffectCalcParam.skillID, damageParam, SkillEffectType.VictoriaSuckBlood, 1)
       local damageEffectResult = skillEffectService:NewSkillDamageEffectResult(gridPos, targetID, nTotalDamage, listDamageInfo, 1)
       results[#results + 1] = damageEffectResult
@@ -39,5 +33,3 @@ SkillEffectCalc_VictoriaSuckBlood.DoSkillEffectCalculator = function(self, skill
   end
   return results
 end
-
-

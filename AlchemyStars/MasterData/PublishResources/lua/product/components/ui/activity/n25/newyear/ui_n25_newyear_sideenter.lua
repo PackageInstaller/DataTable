@@ -1,94 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/newyear/ui_n25_newyear_sideenter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25NewYearSideEnter", UICustomWidget)
 UIN25NewYearSideEnter = UIN25NewYearSideEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25NewYearSideEnter.Constructor = function(self)
-  -- function num : 0_0
+function UIN25NewYearSideEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearSideEnter.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25NewYearSideEnter:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearSideEnter._GetComponents = function(self)
-  -- function num : 0_2
+function UIN25NewYearSideEnter:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._red = self:GetGameObject("red")
   self._new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearSideEnter.SetData = function(self)
-  -- function num : 0_3
+function UIN25NewYearSideEnter:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearSideEnter.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local open = (self._campaign):CheckCampaignOpen()
+function UIN25NewYearSideEnter:BtnOnClick(go)
+  local open = self._campaign:CheckCampaignOpen()
   if not open then
-    (self.root):SetActive(open)
-    ;
-    (self._setShowCallback)(open)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n25_newyear_close"))
-    return 
+    self.root:SetActive(open)
+    self._setShowCallback(open)
+    ToastManager.ShowToast(StringTable.Get("str_n25_newyear_close"))
+    return
   end
   self:ShowDialog("UIN25NewYear")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearSideEnter.OnSideEnterLoad = function(self, TT, setShowCallback, setNewRedCallback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25NewYearSideEnter:OnSideEnterLoad(TT, setShowCallback, setNewRedCallback)
   self._setShowCallback = setShowCallback
   self._setNewRedCallback = setNewRedCallback
   self.root = self:GetGameObject()
   self:Lock("UIN25NewYearSideEnter")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25_NEW_YEAR)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25_NEW_YEAR)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   self:UnLock("UIN25NewYearSideEnter")
   if res and not res:GetSucc() then
-    (self.root):SetActive(false)
-    ;
-    (self._setShowCallback)(false)
-    return 
+    self.root:SetActive(false)
+    self._setShowCallback(false)
+    return
   end
-  ;
-  (self.root):SetActive(true)
-  ;
-  (self._setShowCallback)(true)
-  ;
-  (self._red):SetActive(false)
-  ;
-  (self._setNewRedCallback)(false, false)
+  self.root:SetActive(true)
+  self._setShowCallback(true)
+  self._red:SetActive(false)
+  self._setNewRedCallback(false, false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearSideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    return cfg.SideEnterIcon
-  end
+function UIN25NewYearSideEnter:GetSideEnterRawImage()
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  return cfg and cfg.SideEnterIcon
 end
-
-

@@ -1,65 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_chain_skill_release_mul.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeChainSkillReleaseMul", BuffLogicBase)
 BuffLogicChangeChainSkillReleaseMul = BuffLogicChangeChainSkillReleaseMul
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeChainSkillReleaseMul.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeChainSkillReleaseMul:Constructor(buffInstance, logicParam)
   self._mul = logicParam.val
   self._runCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeChainSkillReleaseMul.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local cAttr = (self:GetEntity()):Attributes()
+function BuffLogicChangeChainSkillReleaseMul:DoLogic()
+  local cAttr = self:GetEntity():Attributes()
   if not cAttr or not cAttr:GetAttribute("ChainSkillReleaseMul") then
-    return 
+    return
   end
   self._runCount = self._runCount + 1
   local changeVal = self._mul * self._runCount
-  local bfsvc = (self._world):GetService("BuffLogic")
+  local bfsvc = self._world:GetService("BuffLogic")
   bfsvc:ChangeChainSkillReleaseMul(self:GetEntity(), self:GetBuffSeq(), changeVal)
   local val = cAttr:GetAttribute("ChainSkillReleaseMul")
-  local res = DataAttributeResult:New((self:GetEntity()):GetID(), "ChainSkillReleaseMul", val)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
+  local res = DataAttributeResult:New(self:GetEntity():GetID(), "ChainSkillReleaseMul", val)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeChainSkillReleaseMul.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicChangeChainSkillReleaseMul:DoOverlap()
   return self:DoLogic()
 end
 
 _class("BuffLogicUndoChangeChainSkillReleaseMul", BuffLogicBase)
 BuffLogicUndoChangeChainSkillReleaseMul = BuffLogicUndoChangeChainSkillReleaseMul
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoChangeChainSkillReleaseMul.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicUndoChangeChainSkillReleaseMul:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoChangeChainSkillReleaseMul.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cAttr = (self:GetEntity()):Attributes()
+function BuffLogicUndoChangeChainSkillReleaseMul:DoLogic()
+  local cAttr = self:GetEntity():Attributes()
   if not cAttr or not cAttr:GetAttribute("ChainSkillReleaseMul") then
-    return 
+    return
   end
-  local bfsvc = (self._world):GetService("BuffLogic")
+  local bfsvc = self._world:GetService("BuffLogic")
   bfsvc:RemoveChainSkillReleaseMul(self:GetEntity(), self:GetBuffSeq())
   local val = cAttr:GetAttribute("ChainSkillReleaseMul")
-  local res = DataAttributeResult:New((self:GetEntity()):GetID(), "ChainSkillReleaseMul", val)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
+  local res = DataAttributeResult:New(self:GetEntity():GetID(), "ChainSkillReleaseMul", val)
+  self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
 end
-
-

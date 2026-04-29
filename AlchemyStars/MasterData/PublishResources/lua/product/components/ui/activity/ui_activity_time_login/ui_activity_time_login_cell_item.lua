@@ -1,46 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_time_login/ui_activity_time_login_cell_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityTimeLoginCellItem", UICustomWidget)
 UIActivityTimeLoginCellItem = UIActivityTimeLoginCellItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityTimeLoginCellItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityTimeLoginCellItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCellItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityTimeLoginCellItem:InitWidget()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._iconRect = self:GetUIComponent("RectTransform", "Icon")
-  self._iconRectDefaultSize = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).y)
+  self._iconRectDefaultSize = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.y)
   self._iconImg = self:GetUIComponent("RawImage", "Icon")
   self._countArea = self:GetUIComponent("Image", "CountArea")
   self._countText = self:GetUIComponent("UILocalizationText", "CountText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCellItem.SetData = function(self, roleAsset, tipsCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityTimeLoginCellItem:SetData(roleAsset, tipsCallback)
   self._roleAsset = roleAsset
   self._itemId = roleAsset.assetid
   self._itemCount = roleAsset.count
   self._tipsCallback = tipsCallback
-  local cfg_item = (Cfg.cfg_item)[self._itemId]
+  local cfg_item = Cfg.cfg_item[self._itemId]
   if not cfg_item then
-    return 
+    return
   end
   local icon = cfg_item.Icon
-  ;
-  (self._icon):LoadImage(icon)
-  ;
-  (self._countText):SetText(self._itemCount)
+  self._icon:LoadImage(icon)
+  self._countText:SetText(self._itemCount)
   local isHead = false
   if self._itemId >= 3750000 and self._itemId <= 3759999 then
     isHead = true
@@ -48,37 +33,20 @@ UIActivityTimeLoginCellItem.SetData = function(self, roleAsset, tipsCallback)
   if isHead then
     local whRate = 1
     if self._itemId >= 3751000 and self._itemId <= 3751999 then
-      whRate = 0.84210526315789
-    else
-      if self._itemId >= 3752000 and self._itemId <= 3752999 then
-        whRate = 0.63888888888889
-      else
-        if self._itemId >= 3753000 and self._itemId <= 3753999 then
-          whRate = 0.63888888888889
-        end
-      end
+      whRate = 0.8421052631578947
+    elseif self._itemId >= 3752000 and self._itemId <= 3752999 then
+      whRate = 0.6388888888888888
+    elseif self._itemId >= 3753000 and self._itemId <= 3753999 then
+      whRate = 0.6388888888888888
     end
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._iconRect).sizeDelta = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).x * whRate)
+    self._iconRect.sizeDelta = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.x * whRate)
   else
-    do
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._iconRect).sizeDelta = self._iconRectDefaultSize
-    end
+    self._iconRect.sizeDelta = self._iconRectDefaultSize
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityTimeLoginCellItem.IconOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityTimeLoginCellItem:IconOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
-
-

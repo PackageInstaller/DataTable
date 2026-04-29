@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_fly_effect_target_to_target_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayFlyEffectTargetToTargetInstruction", BaseInstruction)
 PlayFlyEffectTargetToTargetInstruction = PlayFlyEffectTargetToTargetInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayFlyEffectTargetToTargetInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayFlyEffectTargetToTargetInstruction:Constructor(paramList)
   self._flyEffectID = tonumber(paramList.flyEffectID)
   self._flyTime = tonumber(paramList.flyTime)
   self._flyTrace = tonumber(paramList.flyTrace)
@@ -19,97 +12,74 @@ PlayFlyEffectTargetToTargetInstruction.Constructor = function(self, paramList)
   self._targetParam = tonumber(paramList.targetParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectTargetToTargetInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayFlyEffectTargetToTargetInstruction:GetCacheResource()
   local t = {}
   if self._flyEffectID and self._flyEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectTargetToTargetInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayFlyEffectTargetToTargetInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local isFinalHit = skillEffectResultContainer:IsFinalAttack()
   local posCaster = casterEntity:GetGridPosition()
-  local posTarget = (Vector2.New)(0, 0)
+  local posTarget = Vector2.New(0, 0)
   local posStart = self:_PhaseWorkPos(self._casterType, self._casterParam, posCaster, posTarget)
   local posEnd = self:_PhaseWorkPos(self._targetType, self._targetParam, posCaster, posTarget)
   local boardServiceRender = world:GetService("BoardRender")
-  local effectService = (world:GetService("Effect"))
-  local entityEffect = nil
+  local effectService = world:GetService("Effect")
+  local entityEffect
   local posDirectory = posEnd - posStart
   entityEffect = effectService:CreateWorldPositionDirectionEffect(self._flyEffectID, posStart, posDirectory)
   YIELD(TT)
-  local disx = (math.abs)(posEnd.x - posStart.x)
-  local disy = (math.abs)(posEnd.y - posStart.y)
-  local dis = (math.sqrt)(disx * disx + disy * disy)
+  local disx = math.abs(posEnd.x - posStart.x)
+  local disy = math.abs(posEnd.y - posStart.y)
+  local dis = math.sqrt(disx * disx + disy * disy)
   local nTotalTime = self._flyTime
-  local nFlyTime = nTotalTime / 1000
-  local nEndTime = (GameGlobal:GetInstance()):GetCurrentTime() + nTotalTime
-  local trajectoryObject = (entityEffect:View()):GetGameObject()
+  local nFlyTime = nTotalTime / 1000.0
+  local nEndTime = GameGlobal:GetInstance():GetCurrentTime() + nTotalTime
+  local trajectoryObject = entityEffect:View():GetGameObject()
   local transWork = trajectoryObject.transform
-  local gridWorldpos = (boardServiceRender:GridPos2RenderPos(posEnd))
-  local easeWork = nil
+  local gridWorldpos = boardServiceRender:GridPos2RenderPos(posEnd)
+  local easeWork
   if SkillPhaseParam_TrajectoryType.Line == self._flyTrace then
-    easeWork = (transWork:DOMove(gridWorldpos, nFlyTime, false)):SetEase(((DG.Tweening).Ease).InOutSine)
-  else
-    if SkillPhaseParam_TrajectoryType.Parabola == self._flyTrace then
-      transWork.position = transWork.position + Vector3.up * 1
-      local jumpPower = (math.sqrt)(disx + disy)
-      local sequence = transWork:DOJump(gridWorldpos, jumpPower, 1, nFlyTime, false)
-      easeWork = sequence:SetEase(((DG.Tweening).Ease).InOutSine)
-    else
-      do
-        do
-          if SkillPhaseParam_TrajectoryType.Laser == self._flyTrace then
-            local sequence = transWork:DOScaleZ(dis, nFlyTime)
-            easeWork = sequence:SetEase(((DG.Tweening).Ease).InOutSine)
-          end
-          while (GameGlobal:GetInstance()):GetCurrentTime() < nEndTime do
-            YIELD(TT)
-          end
-          self:_DelEffectEntity(TT, world, trajectoryObject, entityEffect)
-        end
-      end
-    end
+    easeWork = transWork:DOMove(gridWorldpos, nFlyTime, false):SetEase(DG.Tweening.Ease.InOutSine)
+  elseif SkillPhaseParam_TrajectoryType.Parabola == self._flyTrace then
+    transWork.position = transWork.position + Vector3.up * 1
+    local jumpPower = math.sqrt(disx + disy)
+    local sequence = transWork:DOJump(gridWorldpos, jumpPower, 1, nFlyTime, false)
+    easeWork = sequence:SetEase(DG.Tweening.Ease.InOutSine)
+  elseif SkillPhaseParam_TrajectoryType.Laser == self._flyTrace then
+    local sequence = transWork:DOScaleZ(dis, nFlyTime)
+    easeWork = sequence:SetEase(DG.Tweening.Ease.InOutSine)
   end
+  while nEndTime > GameGlobal:GetInstance():GetCurrentTime() do
+    YIELD(TT)
+  end
+  self:_DelEffectEntity(TT, world, trajectoryObject, entityEffect)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectTargetToTargetInstruction._PhaseWorkPos = function(self, posType, posParam, posCaster, posTarget)
-  -- function num : 0_3 , upvalues : _ENV
-  local posReturn = (Vector2.New)(0, 0)
+function PlayFlyEffectTargetToTargetInstruction:_PhaseWorkPos(posType, posParam, posCaster, posTarget)
+  local posReturn = Vector2.New(0, 0)
   if SkillPhaseParam_PointType.CasterPos == posType then
     posReturn = posCaster
-  else
-    if SkillPhaseParam_PointType.CasterX == posType then
-      posReturn.x = posCaster.x
-      posReturn.y = posParam
-    else
-      if SkillPhaseParam_PointType.CasterY == posType then
-        posReturn.x = posParam
-        posReturn.y = posCaster.y
-      end
-    end
+  elseif SkillPhaseParam_PointType.CasterX == posType then
+    posReturn.x = posCaster.x
+    posReturn.y = posParam
+  elseif SkillPhaseParam_PointType.CasterY == posType then
+    posReturn.x = posParam
+    posReturn.y = posCaster.y
   end
   return posReturn
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectTargetToTargetInstruction._DelEffectEntity = function(self, TT, world, trajectoryObject, entityEffect)
-  -- function num : 0_4
+function PlayFlyEffectTargetToTargetInstruction:_DelEffectEntity(TT, world, trajectoryObject, entityEffect)
   trajectoryObject:SetActive(false)
   world:DestroyEntity(entityEffect)
 end
-
-

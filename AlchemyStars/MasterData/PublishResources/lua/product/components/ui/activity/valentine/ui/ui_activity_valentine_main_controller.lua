@@ -1,30 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/ui_activity_valentine_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineMainController", UIController)
 UIActivityValentineMainController = UIActivityValentineMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineMainController.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityValentineMainController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityValentineMainController:LoadDataOnEnter(TT, res, uiParams)
   res:SetSucc(true)
   self._activityData = ActivityValentineData:New()
-  ;
-  (self._activityData):LoadData(TT, res)
+  self._activityData:LoadData(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.OnShow = function(self)
-  -- function num : 0_2
+function UIActivityValentineMainController:OnShow()
   self._allTaskDone = false
   self._curWidget = nil
   self._rewardWidgets = {}
@@ -33,35 +19,22 @@ UIActivityValentineMainController.OnShow = function(self)
   self:SetHeadList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityValentineMainController:OnHide()
   self:StartTask(self._CloseAnim, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._CloseAnim = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityValentineMainController:_CloseAnim(TT)
   self:Lock("UIActivityValentineMainController_Close")
-  ;
-  (self._anim):Play("uieff_N27_UIActivityValentine_blur_out")
+  self._anim:Play("uieff_N27_UIActivityValentine_blur_out")
   YIELD(TT, 500)
   self:UnLock("UIActivityValentineMainController_Close")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.OnUpdate = function(self)
-  -- function num : 0_5
+function UIActivityValentineMainController:OnUpdate()
   self:CheckMailRed()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._GetComponent = function(self)
-  -- function num : 0_6
+function UIActivityValentineMainController:_GetComponent()
   self._headContent = self:GetUIComponent("UISelectObjectPath", "headContent")
   self._foodName = self:GetUIComponent("UILocalizationText", "foodName")
   self._foodImage = self:GetUIComponent("RawImageLoader", "foodImage")
@@ -93,335 +66,247 @@ UIActivityValentineMainController._GetComponent = function(self)
   self._flavorAreaAnim = self:GetUIComponent("Animation", "flavorAreaAnim")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.SetHeadList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._headCfg = (Cfg.cfg_valentine_main)({})
-  self._headWidgets = (self._headContent):SpawnObjects("UIActivityValentineMainHeadItem", #self._headCfg)
-  for i,v in pairs(self._headWidgets) do
-    local cfg = (self._headCfg)[i]
-    local taskId = (((Cfg.cfg_valentine_task_group)[cfg.TaskGroupID]).TaskIDGroup)[1]
-    local isLock = (self._activityData):CheckTaskIsLock(taskId)
+function UIActivityValentineMainController:SetHeadList()
+  self._headCfg = Cfg.cfg_valentine_main({})
+  self._headWidgets = self._headContent:SpawnObjects("UIActivityValentineMainHeadItem", #self._headCfg)
+  for i, v in pairs(self._headWidgets) do
+    local cfg = self._headCfg[i]
+    local taskId = Cfg.cfg_valentine_task_group[cfg.TaskGroupID].TaskIDGroup[1]
+    local isLock = self._activityData:CheckTaskIsLock(taskId)
     v:SetData(cfg, isLock, function(widget)
-    -- function num : 0_7_0 , upvalues : self
-    self:HeadClickCallback(widget)
-  end
-)
+      self:HeadClickCallback(widget)
+    end)
   end
   self:_SetPrimeHeadList()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._SetPrimeHeadList = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local widget = (self._headWidgets)[1]
-  for _,v in pairs(self._headWidgets) do
+function UIActivityValentineMainController:_SetPrimeHeadList()
+  local widget = self._headWidgets[1]
+  for _, v in pairs(self._headWidgets) do
     local status = v:GetSendTaskStatus()
     local isLock = v:GetIsLock()
     if status < QuestStatus.QUEST_Taken and not isLock then
       v:HeadBtnOnClick()
-      return 
-    else
-      if status == QuestStatus.QUEST_Taken then
-        widget = v
-      else
-        if not self._curWidget then
-          widget = v
-        end
-      end
+      return
+    elseif status == QuestStatus.QUEST_Taken then
+      widget = v
+    elseif not self._curWidget then
+      widget = v
     end
   end
   widget:HeadBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.CheckMailRed = function(self)
-  -- function num : 0_9
-  local haveRed = (self._activityData):GetMailRed()
+function UIActivityValentineMainController:CheckMailRed()
+  local haveRed = self._activityData:GetMailRed()
   if haveRed then
-    (self._redObj):SetActive(true)
+    self._redObj:SetActive(true)
   else
-    ;
-    (self._redObj):SetActive(false)
+    self._redObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.HeadClickCallback = function(self, widget)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityValentineMainController:HeadClickCallback(widget)
   if widget == self._curWidget then
-    return 
+    return
   end
-  local oldWidget = nil
+  local oldWidget
   if self._curWidget then
-    (self._curWidget):SetSelecte(false)
+    self._curWidget:SetSelecte(false)
     oldWidget = self._curWidget
   end
   self._curWidget = widget
   self:SetInfo(oldWidget, widget)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._headParentRect)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._headParentRect)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.SetInfo = function(self, oldWidget, widget)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityValentineMainController:SetInfo(oldWidget, widget)
   local cfg = widget:GetCfg()
-  local petName = (StringTable.Get)(((Cfg.cfg_pet)[cfg.PetID]).Name)
-  ;
-  (self._foodNameNew):SetText(petName)
+  local petName = StringTable.Get(Cfg.cfg_pet[cfg.PetID].Name)
+  self._foodNameNew:SetText(petName)
   if oldWidget then
     local oldCfg = oldWidget:GetCfg()
-    local oldName = (StringTable.Get)(((Cfg.cfg_pet)[oldCfg.PetID]).Name)
-    ;
-    (self._foodName):SetText(oldName)
+    local oldName = StringTable.Get(Cfg.cfg_pet[oldCfg.PetID].Name)
+    self._foodName:SetText(oldName)
     self:_CheckTaskIsLock(cfg, oldCfg)
   else
-    do
-      ;
-      (self._foodImage):LoadImage(cfg.FoodImg)
-      self:_CheckTaskIsLock(cfg, nil)
-      ;
-      (self._anim):Play("uieff_UIActivityValentineMainController_CenterArea")
-      self:StartTask(self._PlayAnimation, self, oldWidget, widget)
-    end
+    self._foodImage:LoadImage(cfg.FoodImg)
+    self:_CheckTaskIsLock(cfg, nil)
   end
+  self._anim:Play("uieff_UIActivityValentineMainController_CenterArea")
+  self:StartTask(self._PlayAnimation, self, oldWidget, widget)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._PlayAnimation = function(self, TT, oldWidget, widget)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityValentineMainController:_PlayAnimation(TT, oldWidget, widget)
   local cfg = widget:GetCfg()
   self:Lock("UIActivityValentineMainController_taskArea")
-  ;
-  (self._petImgNew):LoadImage(cfg.PetImg)
+  self._petImgNew:LoadImage(cfg.PetImg)
   if oldWidget then
     local oldCfg = oldWidget:GetCfg()
-    local oldName = (StringTable.Get)(((Cfg.cfg_pet)[oldCfg.PetID]).Name)
-    ;
-    (self._foodName):SetText(oldName)
-    ;
-    (self._petImg):LoadImage(oldCfg.PetImg)
-    ;
-    (self._foodAnim):Play("uieff_UIActivityValentineMainController_area_out")
+    local oldName = StringTable.Get(Cfg.cfg_pet[oldCfg.PetID].Name)
+    self._foodName:SetText(oldName)
+    self._petImg:LoadImage(oldCfg.PetImg)
+    self._foodAnim:Play("uieff_UIActivityValentineMainController_area_out")
     YIELD(TT, 200)
-    ;
-    (self._methodFindingObj):SetActive(false)
-    ;
-    (self._replyAreaObj):SetActive(false)
-    ;
-    (self._taskAreaParentObj):SetActive(false)
+    self._methodFindingObj:SetActive(false)
+    self._replyAreaObj:SetActive(false)
+    self._taskAreaParentObj:SetActive(false)
   end
-  do
-    self:InitAward(cfg)
-    self:InitFlavor(cfg)
-    self:InitTask(cfg)
-    local taskGroup = ((Cfg.cfg_valentine_task_group)[cfg.TaskGroupID]).TaskIDGroup
-    local taskId = taskGroup[1]
-    local isLock, openTime = (self._activityData):CheckTaskIsLock(taskId)
-    if isLock then
-      (self._taskAreaObj):SetActive(false)
-      ;
-      (self._foodAnim):Play("uieff_UIActivityValentineMainController_methodFinding_in")
-      ;
-      (self._taskAreaParentObj):SetActive(true)
-      ;
-      (self._methodFindingObj):SetActive(true)
+  self:InitAward(cfg)
+  self:InitFlavor(cfg)
+  self:InitTask(cfg)
+  local taskGroup = Cfg.cfg_valentine_task_group[cfg.TaskGroupID].TaskIDGroup
+  local taskId = taskGroup[1]
+  local isLock, openTime = self._activityData:CheckTaskIsLock(taskId)
+  if isLock then
+    self._taskAreaObj:SetActive(false)
+    self._foodAnim:Play("uieff_UIActivityValentineMainController_methodFinding_in")
+    self._taskAreaParentObj:SetActive(true)
+    self._methodFindingObj:SetActive(true)
+  else
+    self._taskAreaObj:SetActive(true)
+    self._foodAnim:Play("uieff_UIActivityValentineMainController_area_in")
+    local isDone = widget:GetSendTaskStatus() == QuestStatus.QUEST_Taken
+    if isDone then
+      self._replyAreaObj:SetActive(true)
     else
-      ;
-      (self._taskAreaObj):SetActive(true)
-      ;
-      (self._foodAnim):Play("uieff_UIActivityValentineMainController_area_in")
-      local isDone = widget:GetSendTaskStatus() == QuestStatus.QUEST_Taken
-      if isDone then
-        (self._replyAreaObj):SetActive(true)
-      else
-        (self._taskAreaParentObj):SetActive(true)
-      end
+      self._taskAreaParentObj:SetActive(true)
     end
-    YIELD(TT, 200)
-    self:UnLock("UIActivityValentineMainController_taskArea")
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  YIELD(TT, 200)
+  self:UnLock("UIActivityValentineMainController_taskArea")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.InitAward = function(self, cfg)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityValentineMainController:InitAward(cfg)
   local rewards = cfg.AwardID
-  self._rewardWidgets = (self._rewardContent):SpawnObjects("UIActivityValentineMainReward", #rewards)
-  local isDone = (self._curWidget):GetSendTaskStatus() == QuestStatus.QUEST_Taken
-  for i,rewardWidget in pairs(self._rewardWidgets) do
+  self._rewardWidgets = self._rewardContent:SpawnObjects("UIActivityValentineMainReward", #rewards)
+  local isDone = self._curWidget:GetSendTaskStatus() == QuestStatus.QUEST_Taken
+  for i, rewardWidget in pairs(self._rewardWidgets) do
     local rew = {}
-    rew.assetid = (rewards[i])[1]
-    rew.count = (rewards[i])[2]
+    rew.assetid = rewards[i][1]
+    rew.count = rewards[i][2]
     rewardWidget:Flush(rew, function(id, pos)
-    -- function num : 0_13_0 , upvalues : self
-    self:OnItemSelect(id, pos)
-  end
-)
+      self:OnItemSelect(id, pos)
+    end)
     rewardWidget:SetIsGet(isDone)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.InitFlavor = function(self, cfg)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityValentineMainController:InitFlavor(cfg)
   local flavorIDs = cfg.Flavor
-  local flavorWidgets = (self._flavorList):SpawnObjects("UIActivityValentineMainFlavorItem", #flavorIDs)
-  for i,v in pairs(flavorWidgets) do
+  local flavorWidgets = self._flavorList:SpawnObjects("UIActivityValentineMainFlavorItem", #flavorIDs)
+  for i, v in pairs(flavorWidgets) do
     local id = flavorIDs[i]
-    local isDone = (self._curWidget):GetSendTaskStatus() == QuestStatus.QUEST_Taken
-    v:SetData((Cfg.cfg_valentine_flavor)[id], isDone)
+    local isDone = self._curWidget:GetSendTaskStatus() == QuestStatus.QUEST_Taken
+    v:SetData(Cfg.cfg_valentine_flavor[id], isDone)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.InitTask = function(self, cfg)
-  -- function num : 0_15 , upvalues : _ENV
-  local taskIDs = ((Cfg.cfg_valentine_task_group)[cfg.TaskGroupID]).TaskIDGroup
-  local taskWidgets = (self._taskArea):SpawnObjects("UIActivityValentineMainTaskItem", #taskIDs - 1)
+function UIActivityValentineMainController:InitTask(cfg)
+  local taskIDs = Cfg.cfg_valentine_task_group[cfg.TaskGroupID].TaskIDGroup
+  local taskWidgets = self._taskArea:SpawnObjects("UIActivityValentineMainTaskItem", #taskIDs - 1)
   for i = 1, 3 do
     local id = taskIDs[i]
-    ;
-    (taskWidgets[i]):SetData((Cfg.cfg_quest)[id], i, self._activityData)
+    taskWidgets[i]:SetData(Cfg.cfg_quest[id], i, self._activityData)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._CheckTaskIsLock = function(self, cfg, oldCfg)
-  -- function num : 0_16 , upvalues : _ENV
-  local taskGroup = ((Cfg.cfg_valentine_task_group)[cfg.TaskGroupID]).TaskIDGroup
+function UIActivityValentineMainController:_CheckTaskIsLock(cfg, oldCfg)
+  local taskGroup = Cfg.cfg_valentine_task_group[cfg.TaskGroupID].TaskIDGroup
   local taskId = taskGroup[1]
-  local isLock, openTime = (self._activityData):CheckTaskIsLock(taskId)
+  local isLock, openTime = self._activityData:CheckTaskIsLock(taskId)
   local isOldLock = false
-  do
-    if oldCfg then
-      local oldTaskId = (((Cfg.cfg_valentine_task_group)[oldCfg.TaskGroupID]).TaskIDGroup)[1]
-      isOldLock = (self._activityData):CheckTaskIsLock(oldTaskId)
-      self:StartTask(self._ShowFoodAnim, self, isLock, isOldLock)
-    end
-    if isLock then
-      (self._flavorTitleOld):SetText((StringTable.Get)("str_n27_valentine_y_lock_flavor"))
-      ;
-      (self._flavorTitle):SetText((StringTable.Get)("str_n27_valentine_y_lock_flavor"))
-      ;
-      (self._sendBtnObj):SetActive(false)
-      ;
-      (self._anim):Play("uieff_UIActivityValentineMainController_methodFinding_in")
-      self:_SetTaskLockTime(openTime)
-      return 
-    end
-    ;
-    (self._curWidget):SetHeadUnLock()
-    ;
-    (self._flavorTitleOld):SetText((StringTable.Get)("str_n27_valentine_y_nameTitle"))
-    ;
-    (self._flavorTitle):SetText((StringTable.Get)("str_n27_valentine_y_nameTitle"))
-    ;
-    (self._sendBtnObj):SetActive(true)
+  if oldCfg then
+    local oldTaskId = Cfg.cfg_valentine_task_group[oldCfg.TaskGroupID].TaskIDGroup[1]
+    isOldLock = self._activityData:CheckTaskIsLock(oldTaskId)
     self:StartTask(self._ShowFoodAnim, self, isLock, isOldLock)
-    local isDone = (self._curWidget):GetSendTaskStatus() == QuestStatus.QUEST_Taken
-    if isDone then
-      self._allTaskDone = true
-      ;
-      (self._sendBtnMask):SetActive(true)
-      ;
-      (self._taskAreaParentObj):SetActive(false)
-      ;
-      (self._sendTxt):SetText((StringTable.Get)("str_n27_valentine_y_sendTxt_done"))
-      self:_CheckReply()
-      return 
-    end
-    self._allTaskDone = false
-    local questModule = (GameGlobal.GetModule)(QuestModule)
-    for i = 1, 3 do
-      local task = questModule:GetQuest(taskGroup[i])
-      local status = task:Status()
-      if status < QuestStatus.QUEST_Completed then
-        (self._sendBtnMask):SetActive(true)
-        ;
-        (self._sendTxt):SetText((StringTable.Get)("str_n27_valentine_y_sendTxt_undone"))
-        return 
-      end
-    end
+  end
+  if isLock then
+    self._flavorTitleOld:SetText(StringTable.Get("str_n27_valentine_y_lock_flavor"))
+    self._flavorTitle:SetText(StringTable.Get("str_n27_valentine_y_lock_flavor"))
+    self._sendBtnObj:SetActive(false)
+    self._anim:Play("uieff_UIActivityValentineMainController_methodFinding_in")
+    self:_SetTaskLockTime(openTime)
+    return
+  end
+  self._curWidget:SetHeadUnLock()
+  self._flavorTitleOld:SetText(StringTable.Get("str_n27_valentine_y_nameTitle"))
+  self._flavorTitle:SetText(StringTable.Get("str_n27_valentine_y_nameTitle"))
+  self._sendBtnObj:SetActive(true)
+  self:StartTask(self._ShowFoodAnim, self, isLock, isOldLock)
+  local isDone = self._curWidget:GetSendTaskStatus() == QuestStatus.QUEST_Taken
+  if isDone then
     self._allTaskDone = true
-    ;
-    (self._sendBtnMask):SetActive(false)
-    ;
-    (self._sendTxt):SetText((StringTable.Get)("str_n27_valentine_y_sendTxt_undone"))
-    ;
-    (self._replyAreaObj):SetActive(false)
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    self._sendBtnMask:SetActive(true)
+    self._taskAreaParentObj:SetActive(false)
+    self._sendTxt:SetText(StringTable.Get("str_n27_valentine_y_sendTxt_done"))
+    self:_CheckReply()
+    return
   end
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._ShowFoodAnim = function(self, TT, isLock, isOldLock)
-  -- function num : 0_17 , upvalues : _ENV
-  self:Lock("UIActivityValentineMainController_FoodAnim")
-  if (not isLock or not isOldLock or isLock) and not isOldLock then
-    (self._flavorAreaAnim):Play("uieff_UIActivityValentineMainController_flavorArea_out")
-    YIELD(TT, 100)
-  else
-    if not isLock and isOldLock then
-      (self._flavorAreaAnim):Play("uieff_UIActivityValentineMainController_flavorArea_in")
-      YIELD(TT, 100)
-    else
-      if not isLock and not isOldLock then
-        (self._flavorAreaAnim):Play("uieff_UIActivityValentineMainController_flavorArea_out")
-        YIELD(TT, 100)
-        local cfg = (self._curWidget):GetCfg()
-        ;
-        (self._foodImage):LoadImage(cfg.FoodImg)
-        ;
-        (self._flavorAreaAnim):Play("uieff_UIActivityValentineMainController_flavorArea_in")
-        YIELD(TT, 100)
-      end
+  self._allTaskDone = false
+  local questModule = GameGlobal.GetModule(QuestModule)
+  for i = 1, 3 do
+    local task = questModule:GetQuest(taskGroup[i])
+    local status = task:Status()
+    if status < QuestStatus.QUEST_Completed then
+      self._sendBtnMask:SetActive(true)
+      self._sendTxt:SetText(StringTable.Get("str_n27_valentine_y_sendTxt_undone"))
+      return
     end
   end
-  do
-    self:UnLock("UIActivityValentineMainController_FoodAnim")
-  end
+  self._allTaskDone = true
+  self._sendBtnMask:SetActive(false)
+  self._sendTxt:SetText(StringTable.Get("str_n27_valentine_y_sendTxt_undone"))
+  self._replyAreaObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
+function UIActivityValentineMainController:_ShowFoodAnim(TT, isLock, isOldLock)
+  self:Lock("UIActivityValentineMainController_FoodAnim")
+  if isLock and isOldLock then
+  elseif isLock and not isOldLock then
+    self._flavorAreaAnim:Play("uieff_UIActivityValentineMainController_flavorArea_out")
+    YIELD(TT, 100)
+  elseif not isLock and isOldLock then
+    self._flavorAreaAnim:Play("uieff_UIActivityValentineMainController_flavorArea_in")
+    YIELD(TT, 100)
+  elseif not isLock and not isOldLock then
+    self._flavorAreaAnim:Play("uieff_UIActivityValentineMainController_flavorArea_out")
+    YIELD(TT, 100)
+    local cfg = self._curWidget:GetCfg()
+    self._foodImage:LoadImage(cfg.FoodImg)
+    self._flavorAreaAnim:Play("uieff_UIActivityValentineMainController_flavorArea_in")
+    YIELD(TT, 100)
+  end
+  self:UnLock("UIActivityValentineMainController_FoodAnim")
+end
 
-UIActivityValentineMainController._SetTaskLockTime = function(self, openTime)
-  -- function num : 0_18
+function UIActivityValentineMainController:_SetTaskLockTime(openTime)
   local descId = "str_n27_valentine_y_task_cowndown"
-  local timeStr = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_common_less_minute"}
+  local timeStr = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_common_less_minute"
+  }
   self:_SetRemainingTime("taskRemainingTimePool", descId, openTime, timeStr)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._SetCampainTime = function(self)
-  -- function num : 0_19
-  local questCompInfo = (self._activityData):GetQuestComponentInfo()
+function UIActivityValentineMainController:_SetCampainTime()
+  local questCompInfo = self._activityData:GetQuestComponentInfo()
   local endTime = questCompInfo.m_close_time
   local descId = "str_n27_valentine_y_campaign_cowndown"
-  local timeStr = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_common_less_minute"}
+  local timeStr = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_common_less_minute"
+  }
   self:_SetRemainingTime("remainingTimePool", descId, endTime, timeStr)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._SetRemainingTime = function(self, widgetName, descId, endTime, timeStr, stopCallback)
-  -- function num : 0_20
+function UIActivityValentineMainController:_SetRemainingTime(widgetName, descId, endTime, timeStr, stopCallback)
   local sop = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = sop:SpawnObject("UIActivityCommonRemainingTime")
   obj:SetCustomTimeStr(timeStr)
@@ -430,179 +315,128 @@ UIActivityValentineMainController._SetRemainingTime = function(self, widgetName,
   obj:SetData(endTime, nil, stopCallback)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._SendFunc = function(self, TT, questId)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityValentineMainController:_SendFunc(TT, questId)
   self:Lock("UIActivityValentineMainController_SendBtn")
-  ;
-  (self._anim):Play("uieff_UIActivityValentineMainController_SendBtn")
+  self._anim:Play("uieff_UIActivityValentineMainController_SendBtn")
   YIELD(TT, 500)
   self:UnLock("UIActivityValentineMainController_SendBtn")
   local res = AsyncRequestRes:New()
-  local questComponent = (self._activityData):GetQuestComponent()
+  local questComponent = self._activityData:GetQuestComponent()
   local code, rewards = questComponent:HandleQuestTake(TT, res, questId)
   self:UnLock("UIQuestGet")
-  -- DECOMPILER ERROR at PC38: Unhandled construct in 'MakeBoolean' P1
-
-  if res:GetSucc() and #rewards > 0 then
-    self:ShowDialog("UIActivityValentineSendLetterController", function()
-    -- function num : 0_21_0 , upvalues : self, rewards, _ENV
-    self:ShowDialog("UIActivityValentineGetController", rewards, function()
-      -- function num : 0_21_0_0 , upvalues : self, _ENV
-      (self._sendBtnMask):SetActive(true)
-      ;
-      (self._sendTxt):SetText((StringTable.Get)("str_n27_valentine_y_sendTxt_done"))
-      ;
-      (self._taskAreaParentObj):SetActive(false)
-      ;
-      (self._replyAreaObj):SetActive(true)
-      self:_CheckReply()
-      ;
-      (self._curWidget):SetHeadFinish()
-      for i,rewardWidget in pairs(self._rewardWidgets) do
-        rewardWidget:PlayGetAnim()
-      end
+  if res:GetSucc() then
+    if 0 < #rewards then
+      self:ShowDialog("UIActivityValentineSendLetterController", function()
+        self:ShowDialog("UIActivityValentineGetController", rewards, function()
+          self._sendBtnMask:SetActive(true)
+          self._sendTxt:SetText(StringTable.Get("str_n27_valentine_y_sendTxt_done"))
+          self._taskAreaParentObj:SetActive(false)
+          self._replyAreaObj:SetActive(true)
+          self:_CheckReply()
+          self._curWidget:SetHeadFinish()
+          for i, rewardWidget in pairs(self._rewardWidgets) do
+            rewardWidget:PlayGetAnim()
+          end
+        end)
+      end)
     end
-)
+  else
+    Log.fatal("送出巧克力任务完成失败：", code)
   end
-)
-  end
-  ;
-  (Log.fatal)("送出巧克力任务完成失败：", code)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._CheckReply = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local cfg = (self._curWidget):GetCfg()
+function UIActivityValentineMainController:_CheckReply()
+  local cfg = self._curWidget:GetCfg()
   local letterId = cfg.LetterID
-  ;
-  (self._replyTxt):SetText((StringTable.Get)(cfg.ReplyTxt))
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local mailCompInfo = (self._activityData):GetMailComponent()
-  local infos = (mailCompInfo.m_component_info).infos
-  local letter = nil
-  for i,v in pairs(infos) do
+  self._replyTxt:SetText(StringTable.Get(cfg.ReplyTxt))
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local mailCompInfo = self._activityData:GetMailComponent()
+  local infos = mailCompInfo.m_component_info.infos
+  local letter
+  for i, v in pairs(infos) do
     if v.id == letterId then
       letter = v
       break
     end
   end
-  do
-    if letter then
-      local unLockTime = letter.unlock_time
-      if unLockTime < curTime then
-        (self._replyRemainingTimePoolObj):SetActive(false)
-      else
-        ;
-        (self._replyRemainingTimePoolObj):SetActive(true)
-        local descId = "str_n27_valentine_y_letter_cowndown"
-        local timeStr = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_common_less_minute"}
-        self:_SetRemainingTime("replyRemainingTimePool", descId, unLockTime, timeStr, function()
-    -- function num : 0_22_0 , upvalues : self
-    (self._replyRemainingTimePoolObj):SetActive(false)
-  end
-)
-      end
+  if letter then
+    local unLockTime = letter.unlock_time
+    if curTime > unLockTime then
+      self._replyRemainingTimePoolObj:SetActive(false)
     else
-      do
-        ;
-        (self._replyRemainingTimePoolObj):SetActive(false)
-      end
+      self._replyRemainingTimePoolObj:SetActive(true)
+      local descId = "str_n27_valentine_y_letter_cowndown"
+      local timeStr = {
+        day = "str_activity_common_day",
+        hour = "str_activity_common_hour",
+        min = "str_activity_common_minute",
+        zero = "str_activity_common_less_minute",
+        over = "str_activity_common_less_minute"
+      }
+      self:_SetRemainingTime("replyRemainingTimePool", descId, unLockTime, timeStr, function()
+        self._replyRemainingTimePoolObj:SetActive(false)
+      end)
     end
+  else
+    self._replyRemainingTimePoolObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.MailBoxBtnOnClick = function(self)
-  -- function num : 0_23
+function UIActivityValentineMainController:MailBoxBtnOnClick()
   self:StartTask(self._MailBtnClick, self)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._MailBtnClick = function(self, TT)
-  -- function num : 0_24 , upvalues : _ENV
+function UIActivityValentineMainController:_MailBtnClick(TT)
   self:Lock("uieff_UIActivityValentineMainController_mailBoxBtn")
-  ;
-  (self._anim):Play("uieff_UIActivityValentineMainController_mailBoxBtn")
+  self._anim:Play("uieff_UIActivityValentineMainController_mailBoxBtn")
   YIELD(TT, 100)
   self:UnLock("uieff_UIActivityValentineMainController_mailBoxBtn")
   self:ShowDialog("UIActivityValentineMailboxController")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.SendBtnOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  if (self._activityData):CheckTaskIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_valentine_y_offline"))
-    return 
+function UIActivityValentineMainController:SendBtnOnClick()
+  if self._activityData:CheckTaskIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_n27_valentine_y_offline"))
+    return
   end
   if self._allTaskDone then
-    local sendQuestId = (self._curWidget):GetSendTaskId()
-    local status = (self._activityData):CheckSendTaskIsDone(sendQuestId)
+    local sendQuestId = self._curWidget:GetSendTaskId()
+    local status = self._activityData:CheckSendTaskIsDone(sendQuestId)
     if status == CampaignQuestStatus.CQS_Completed then
       self:Lock("UIQuestGet")
-      local questId = (self._curWidget):GetSendTaskId()
+      local questId = self._curWidget:GetSendTaskId()
       self:StartTask(self._SendFunc, self, questId)
+    elseif status >= CampaignQuestStatus.CQS_Taken then
+      ToastManager.ShowToast(StringTable.Get("str_n27_valentine_y_send_done"))
     else
-      do
-        do
-          if CampaignQuestStatus.CQS_Taken <= status then
-            (ToastManager.ShowToast)((StringTable.Get)("str_n27_valentine_y_send_done"))
-          else
-            ;
-            (Log.fatal)("不允许送巧克力，任务状态：", status)
-          end
-          ;
-          (ToastManager.ShowToast)((StringTable.Get)("str_n27_valentine_y_task_undone"))
-          do return  end
-        end
-      end
+      Log.fatal("不允许送巧克力，任务状态：", status)
     end
+  else
+    ToastManager.ShowToast(StringTable.Get("str_n27_valentine_y_task_undone"))
+    return
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.IntroBtnOnClick = function(self)
-  -- function num : 0_26
+function UIActivityValentineMainController:IntroBtnOnClick()
   self:StartTask(self._IntroBtnOnClick, self)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController._IntroBtnOnClick = function(self, TT)
-  -- function num : 0_27 , upvalues : _ENV
+function UIActivityValentineMainController:_IntroBtnOnClick(TT)
   self:Lock("IntroBtnOnClick")
-  ;
-  (self._anim):Play("uieff_UIActivityValentineMainController_introBtn")
+  self._anim:Play("uieff_UIActivityValentineMainController_introBtn")
   YIELD(TT, 200)
   self:UnLock("IntroBtnOnClick")
   self:ShowDialog("UIIntroLoader", "UIActivityValentineIntro", MaskType.MT_BlurMask)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.BackBtnOnClick = function(self)
-  -- function num : 0_28
+function UIActivityValentineMainController:BackBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineMainController.OnItemSelect = function(self, id, pos)
-  -- function num : 0_29
+function UIActivityValentineMainController:OnItemSelect(id, pos)
   if not self._selectInfo then
-    self._selectInfo = (self._selectInfoPool):SpawnObject("UISelectInfo")
+    self._selectInfo = self._selectInfoPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._selectInfo):SetData(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
-
-

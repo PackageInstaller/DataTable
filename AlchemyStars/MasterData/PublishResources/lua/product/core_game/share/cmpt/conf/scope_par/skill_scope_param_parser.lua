@@ -1,288 +1,165 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/scope_par/skill_scope_param_parser.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillScopeParamParser", Object)
 SkillScopeParamParser = SkillScopeParamParser
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeParamParser.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeParamParser:Constructor()
   self._scopeParamFuncDic = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.NRowsMColumns] = self._ParseNRowsMColumnsParam
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.DoubleCross] = self._ParseDoubleCrossParam
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.FullScreen] = self._ParseParam_FullScreen
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.Rhombus] = self._ParseRhombusParam
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.Square] = self._ParseSquare
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.Nearest] = self._ParseNearestParam
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.SuperCross] = self._ParseSuperCrossParam
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.NRowsMColumnsSpreadAlongRow] = self._ParseNRowsMColumnsSpreadAlongRowParam
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.EmptyRandGrid] = self._ParseEmptyRandGridParam
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.WidthCrossWithPickUp] = self._ParseWidthCrossWithPickUpParam
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.DoubleCrossBeBlocked] = self._ParseDoubleCrossParam
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.FixedArea] = self._ParseFixedAreaParam
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.MultiCenterSquare] = self._ParseMultiCenterSquare
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.RandomGrids] = self._ParseRandomGrids
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.MonsterWithBuffType] = self._ParserMonsterWithBuffType
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.WalkableGridOnEdge] = self._ParserWalkableGridOnEdgeParam
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._scopeParamFuncDic)[SkillScopeType.RandomGridsAndTypeSize] = self._ParserRandomGridsAndTypeSizeParam
+  self._scopeParamFuncDic[SkillScopeType.NRowsMColumns] = self._ParseNRowsMColumnsParam
+  self._scopeParamFuncDic[SkillScopeType.DoubleCross] = self._ParseDoubleCrossParam
+  self._scopeParamFuncDic[SkillScopeType.FullScreen] = self._ParseParam_FullScreen
+  self._scopeParamFuncDic[SkillScopeType.Rhombus] = self._ParseRhombusParam
+  self._scopeParamFuncDic[SkillScopeType.Square] = self._ParseSquare
+  self._scopeParamFuncDic[SkillScopeType.Nearest] = self._ParseNearestParam
+  self._scopeParamFuncDic[SkillScopeType.SuperCross] = self._ParseSuperCrossParam
+  self._scopeParamFuncDic[SkillScopeType.NRowsMColumnsSpreadAlongRow] = self._ParseNRowsMColumnsSpreadAlongRowParam
+  self._scopeParamFuncDic[SkillScopeType.EmptyRandGrid] = self._ParseEmptyRandGridParam
+  self._scopeParamFuncDic[SkillScopeType.WidthCrossWithPickUp] = self._ParseWidthCrossWithPickUpParam
+  self._scopeParamFuncDic[SkillScopeType.DoubleCrossBeBlocked] = self._ParseDoubleCrossParam
+  self._scopeParamFuncDic[SkillScopeType.FixedArea] = self._ParseFixedAreaParam
+  self._scopeParamFuncDic[SkillScopeType.MultiCenterSquare] = self._ParseMultiCenterSquare
+  self._scopeParamFuncDic[SkillScopeType.RandomGrids] = self._ParseRandomGrids
+  self._scopeParamFuncDic[SkillScopeType.MonsterWithBuffType] = self._ParserMonsterWithBuffType
+  self._scopeParamFuncDic[SkillScopeType.WalkableGridOnEdge] = self._ParserWalkableGridOnEdgeParam
+  self._scopeParamFuncDic[SkillScopeType.RandomGridsAndTypeSize] = self._ParserRandomGridsAndTypeSizeParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser.ParseScopeParam = function(self, scopeType, scopeParamArray)
-  -- function num : 0_1
-  if (self._scopeParamFuncDic)[scopeType] then
-    return ((self._scopeParamFuncDic)[scopeType])(self, scopeParamArray)
+function SkillScopeParamParser:ParseScopeParam(scopeType, scopeParamArray)
+  if self._scopeParamFuncDic[scopeType] then
+    return self._scopeParamFuncDic[scopeType](self, scopeParamArray)
   else
     return scopeParamArray
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParserMonsterWithBuffType = function(self, scopeParamArray)
-  -- function num : 0_2 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum > 0 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParserMonsterWithBuffType(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if 0 < paramNum then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseSuperCrossParam = function(self, scopeParamArray)
-  -- function num : 0_3 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum > 0 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParseSuperCrossParam(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if 0 < paramNum then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseNRowsMColumnsParam = function(self, scopeParamArray)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillScopeParamParser:_ParseNRowsMColumnsParam(scopeParamArray)
   return SkillNRowsMColumnsScopeParam:New(scopeParamArray[1], scopeParamArray[2], scopeParamArray.ScopeCenterParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseNRowsMColumnsSpreadAlongRowParam = function(self, scopeParamArray)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillScopeParamParser:_ParseNRowsMColumnsSpreadAlongRowParam(scopeParamArray)
   return SkillNRowsMColumnsScopeParam:New(scopeParamArray[1], scopeParamArray[2])
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseCrossExceptBlockParam = function(self, scopeParamArray)
-  -- function num : 0_6 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum > 0 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParseCrossExceptBlockParam(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if 0 < paramNum then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseDoubleCrossParam = function(self, scopeParamArray)
-  -- function num : 0_7 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum == 1 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParseDoubleCrossParam(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if paramNum == 1 then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseParam_FullScreen = function(self, scopeParamArray)
-  -- function num : 0_8 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum > 0 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParseParam_FullScreen(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if 0 < paramNum then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseRhombusParam = function(self, scopeParamArray)
-  -- function num : 0_9
+function SkillScopeParamParser:_ParseRhombusParam(scopeParamArray)
   local size = scopeParamArray[1]
   local isCenterIncluded = scopeParamArray[2] ~= 0
   local canMove = scopeParamArray[3] or false
-  do return {size, isCenterIncluded, canMove} end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return {
+    size,
+    isCenterIncluded,
+    canMove
+  }
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseSquare = function(self, scopeParamArray)
-  -- function num : 0_10 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum > 0 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParseSquare(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if 0 < paramNum then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseNearestParam = function(self, scopeParamArray)
-  -- function num : 0_11 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum > 0 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParseNearestParam(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if 0 < paramNum then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseEmptyRandGridParam = function(self, scopeParamArray)
-  -- function num : 0_12 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum > 0 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParseEmptyRandGridParam(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if 0 < paramNum then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseWidthCrossWithPickUpParam = function(self, scopeParamArray)
-  -- function num : 0_13
+function SkillScopeParamParser:_ParseWidthCrossWithPickUpParam(scopeParamArray)
   local length = scopeParamArray[1]
   local width = scopeParamArray[2]
   return {length, width}
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseFixedAreaParam = function(self, scopeParamArray)
-  -- function num : 0_14 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum > 0 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParseFixedAreaParam(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if 0 < paramNum then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseMultiCenterSquare = function(self, scopeParamArray)
-  -- function num : 0_15 , upvalues : _ENV
-  do
-    if type(scopeParamArray) == "table" then
-      local paramNum = #scopeParamArray
-      if paramNum > 0 then
-        return scopeParamArray[1]
-      end
+function SkillScopeParamParser:_ParseMultiCenterSquare(scopeParamArray)
+  if type(scopeParamArray) == "table" then
+    local paramNum = #scopeParamArray
+    if 0 < paramNum then
+      return scopeParamArray[1]
     end
-    return scopeParamArray
   end
+  return scopeParamArray
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParseRandomGrids = function(self, scopeParamArray)
-  -- function num : 0_16 , upvalues : _ENV
+function SkillScopeParamParser:_ParseRandomGrids(scopeParamArray)
   local i = 1
   local retIdx = 1
   local ret = {}
-  for _,num in ipairs(scopeParamArray) do
+  for _, num in ipairs(scopeParamArray) do
     if num == 0 then
       retIdx = retIdx + 1
     else
@@ -291,55 +168,27 @@ SkillScopeParamParser._ParseRandomGrids = function(self, scopeParamArray)
       end
       if i % 2 == 0 then
         local t = ret[retIdx]
-        -- DECOMPILER ERROR at PC22: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (t[#t]).y = num
+        t[#t].y = num
       else
-        do
-          do
-            do
-              local vec = Vector2.zero
-              vec.x = num
-              ;
-              (table.insert)(ret[retIdx], vec)
-              i = i + 1
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+        local vec = Vector2.zero
+        vec.x = num
+        table.insert(ret[retIdx], vec)
       end
+      i = i + 1
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParserWalkableGridOnEdgeParam = function(self, ...)
-  -- function num : 0_17
+function SkillScopeParamParser:_ParserWalkableGridOnEdgeParam(...)
   return ...
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeParamParser._ParserRandomGridsAndTypeSizeParam = function(self, scopeParamArray)
-  -- function num : 0_18 , upvalues : _ENV
+function SkillScopeParamParser:_ParserRandomGridsAndTypeSizeParam(scopeParamArray)
   local i = 1
   local retIdx = 1
   local ret = {}
-  for _,num in ipairs(scopeParamArray.pos) do
+  for _, num in ipairs(scopeParamArray.pos) do
     if num == 0 then
       retIdx = retIdx + 1
     else
@@ -348,39 +197,15 @@ SkillScopeParamParser._ParserRandomGridsAndTypeSizeParam = function(self, scopeP
       end
       if i % 2 == 0 then
         local t = ret[retIdx]
-        -- DECOMPILER ERROR at PC22: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (t[#t]).y = num
+        t[#t].y = num
       else
-        do
-          do
-            do
-              local vec = Vector2.zero
-              vec.x = num
-              ;
-              (table.insert)(ret[retIdx], vec)
-              i = i + 1
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+        local vec = Vector2.zero
+        vec.x = num
+        table.insert(ret[retIdx], vec)
       end
+      i = i + 1
     end
   end
   scopeParamArray.posList = ret
   return scopeParamArray
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/_buff_view_base_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewBase", Object)
 BuffViewBase = BuffViewBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewBase.Constructor = function(self, viewInstance, buffResult, viewName, triggers, notify)
-  -- function num : 0_0
+function BuffViewBase:Constructor(viewInstance, buffResult, viewName, triggers, notify)
   self._viewInstance = viewInstance
   self._buffResult = buffResult
   self._world = viewInstance:World()
@@ -18,70 +11,43 @@ BuffViewBase.Constructor = function(self, viewInstance, buffResult, viewName, tr
   self._notify = notify
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.BuffViewInstance = function(self)
-  -- function num : 0_1
+function BuffViewBase:BuffViewInstance()
   return self._viewInstance
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.GetBuffResult = function(self)
-  -- function num : 0_2
+function BuffViewBase:GetBuffResult()
   return self._buffResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.Entity = function(self)
-  -- function num : 0_3
+function BuffViewBase:Entity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.World = function(self)
-  -- function num : 0_4
+function BuffViewBase:World()
   return self._world
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.ViewName = function(self)
-  -- function num : 0_5
+function BuffViewBase:ViewName()
   return self._viewName
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.ViewParams = function(self)
-  -- function num : 0_6
-  return ((self._viewInstance):BuffConfigData()):GetViewParams()
+function BuffViewBase:ViewParams()
+  return self._viewInstance:BuffConfigData():GetViewParams()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.GetNotify = function(self)
-  -- function num : 0_7
+function BuffViewBase:GetNotify()
   return self._notify
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.GetTriggers = function(self)
-  -- function num : 0_8
+function BuffViewBase:GetTriggers()
   return self._triggers
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.HasTriggerType = function(self, triggerType)
-  -- function num : 0_9 , upvalues : _ENV
+function BuffViewBase:HasTriggerType(triggerType)
   if not self._triggers then
     return false
   end
-  for _,trigger in ipairs(self._triggers) do
+  for _, trigger in ipairs(self._triggers) do
     if triggerType == trigger:GetTriggerType() then
       return true
     end
@@ -89,23 +55,17 @@ BuffViewBase.HasTriggerType = function(self, triggerType)
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.IsNotifyMatch = function(self, notify)
-  -- function num : 0_10
+function BuffViewBase:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.CheckNotifyAndTriggers = function(self, notify)
-  -- function num : 0_11 , upvalues : _ENV
+function BuffViewBase:CheckNotifyAndTriggers(notify)
   local notifyType = notify:GetNotifyType()
   if notify.GetChainSkillTimeIndex then
-    if notify:GetChainSkillTimeIndex() ~= (self._notify):GetChainSkillTimeIndex() then
+    if notify:GetChainSkillTimeIndex() ~= self._notify:GetChainSkillTimeIndex() then
       return false
     end
-    if notify.GetChainSkillStageIndex and notify:GetChainSkillStageIndex() ~= (self._notify):GetChainSkillStageIndex() then
+    if notify.GetChainSkillStageIndex and notify:GetChainSkillStageIndex() ~= self._notify:GetChainSkillStageIndex() then
       return false
     end
   end
@@ -115,10 +75,5 @@ BuffViewBase.CheckNotifyAndTriggers = function(self, notify)
   return self:IsNotifyMatch(notify)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewBase.PlayView = function(self, TT)
-  -- function num : 0_12
+function BuffViewBase:PlayView(TT)
 end
-
-

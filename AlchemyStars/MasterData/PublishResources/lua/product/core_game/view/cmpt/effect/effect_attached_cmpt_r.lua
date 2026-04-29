@@ -1,125 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/effect/effect_attached_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EffectAttachedComponent", Object)
 EffectAttachedComponent = EffectAttachedComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EffectAttachedComponent.Constructor = function(self)
-  -- function num : 0_0
+function EffectAttachedComponent:Constructor()
   self._tAttachedEntityID = {}
   self._mapAttachedFxEntity = {}
   self._mapAttachedFxID = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectAttachedComponent.AddAttachedEntityID = function(self, id)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._tAttachedEntityID, id)
+function EffectAttachedComponent:AddAttachedEntityID(id)
+  table.insert(self._tAttachedEntityID, id)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectAttachedComponent.AddAttachedEffectEntityID = function(self, id, effectID)
-  -- function num : 0_2
+function EffectAttachedComponent:AddAttachedEffectEntityID(id, effectID)
   self:AddAttachedEntityID(id)
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._mapAttachedFxEntity)[effectID] = id
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._mapAttachedFxID)[id] = effectID
+  self._mapAttachedFxEntity[effectID] = id
+  self._mapAttachedFxID[id] = effectID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectAttachedComponent.GetAttachedEntityIDArray = function(self)
-  -- function num : 0_3
+function EffectAttachedComponent:GetAttachedEntityIDArray()
   return self._tAttachedEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectAttachedComponent.ClearAttachedEntityIDArray = function(self)
-  -- function num : 0_4
+function EffectAttachedComponent:ClearAttachedEntityIDArray()
   self._tAttachedEntityID = {}
   self._mapAttachedFxEntity = {}
   self._mapAttachedFxID = {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectAttachedComponent.GetAttachedFxMap = function(self)
-  -- function num : 0_5
+function EffectAttachedComponent:GetAttachedFxMap()
   return self._mapAttachedFxEntity, self._mapAttachedFxID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectAttachedComponent.RemoveAttachedEntityID = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
+function EffectAttachedComponent:RemoveAttachedEntityID(id)
   for i = 1, #self._tAttachedEntityID do
-    if (self._tAttachedEntityID)[i] == id then
-      (table.remove)(self._tAttachedEntityID, i)
+    if self._tAttachedEntityID[i] == id then
+      table.remove(self._tAttachedEntityID, i)
       break
     end
   end
-  do
-    local fxID = (self._mapAttachedFxID)[id]
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    if fxID then
-      (self._mapAttachedFxEntity)[fxID] = nil
-    end
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._mapAttachedFxID)[id] = nil
+  local fxID = self._mapAttachedFxID[id]
+  if fxID then
+    self._mapAttachedFxEntity[fxID] = nil
   end
+  self._mapAttachedFxID[id] = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EffectAttached = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).EffectAttached)
+function Entity:EffectAttached()
+  return self:GetComponent(self.WEComponentsEnum.EffectAttached)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasEffectAttached = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).EffectController)
+function Entity:HasEffectAttached()
+  return self:HasComponent(self.WEComponentsEnum.EffectController)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddEffectAttached = function(self, e)
-  -- function num : 0_9 , upvalues : _ENV
+function Entity:AddEffectAttached(e)
   local c = EffectAttachedComponent:New()
-  self:AddComponent((self.WEComponentsEnum).EffectAttached, c)
+  self:AddComponent(self.WEComponentsEnum.EffectAttached, c)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceEffectAttached = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function Entity:ReplaceEffectAttached()
   local c = EffectAttachedComponent:New()
-  self:ReplaceComponent((self.WEComponentsEnum).EffectAttached, c)
+  self:ReplaceComponent(self.WEComponentsEnum.EffectAttached, c)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveEffectController = function(self)
-  -- function num : 0_11
+function Entity:RemoveEffectController()
   if self:HasEffectAttached() then
-    self:RemoveComponent((self.WEComponentsEnum).EffectAttached)
+    self:RemoveComponent(self.WEComponentsEnum.EffectAttached)
   end
 end
-
-

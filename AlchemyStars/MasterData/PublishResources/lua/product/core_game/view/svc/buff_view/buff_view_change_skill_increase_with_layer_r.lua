@@ -1,23 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_skill_increase_with_layer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeSkillIncreaseWithLayer", BuffViewBase)
 BuffViewChangeSkillIncreaseWithLayer = BuffViewChangeSkillIncreaseWithLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeSkillIncreaseWithLayer.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewChangeSkillIncreaseWithLayer:PlayView(TT)
 end
 
 _class("BuffViewRemoveSkillIncreaseWithLayer", BuffViewBase)
 BuffViewRemoveSkillIncreaseWithLayer = BuffViewRemoveSkillIncreaseWithLayer
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveSkillIncreaseWithLayer.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+function BuffViewRemoveSkillIncreaseWithLayer:PlayView(TT)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
-
-

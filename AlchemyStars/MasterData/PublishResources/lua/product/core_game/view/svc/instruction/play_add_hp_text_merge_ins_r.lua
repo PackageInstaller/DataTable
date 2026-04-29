@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_add_hp_text_merge_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAddHpTextMergeInstruction", BaseInstruction)
 PlayAddHpTextMergeInstruction = PlayAddHpTextMergeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAddHpTextMergeInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayAddHpTextMergeInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAddHpTextMergeInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAddHpTextMergeInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playDamageService = world:GetService("PlayDamage")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local addHpResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBlood)
   if not addHpResultArray then
-    return 
+    return
   end
   local addHpResult = addHpResultArray[1]
   local targetID = addHpResult:GetTargetID()
@@ -29,7 +19,7 @@ PlayAddHpTextMergeInstruction.DoInstruction = function(self, TT, casterEntity, p
   local skillID = skillEffectResultContainer:GetSkillID()
   local gridPos = addHpResult:GetGridPos()
   if not targetEntity then
-    (Log.error)("[PlayInstruction_AddHpText] 没有找到目标， nSkillID = ", skillID, ", TargetID = ", targetID)
+    Log.error("[PlayInstruction_AddHpText] 没有找到目标， nSkillID = ", skillID, ", TargetID = ", targetID)
   end
   local damageShowType = playDamageService:SingleOrGrid(skillID)
   local addValue = 0
@@ -40,22 +30,16 @@ PlayAddHpTextMergeInstruction.DoInstruction = function(self, TT, casterEntity, p
     addValue = addValue + result:GetAddValue()
     local damageInfo = result:GetDamageInfo()
     if damageInfo:GetMazeDamageList() then
-      for entityID,damageValue in pairs(damageInfo:GetMazeDamageList()) do
+      for entityID, damageValue in pairs(damageInfo:GetMazeDamageList()) do
         if not mazeDamageList[entityID] then
           mazeDamageList[entityID] = 0
         end
         mazeDamageList[entityID] = mazeDamageList[entityID] + damageValue
       end
     end
-    do
-      if damageInfo:GetMazeTeamMemberDamageList() then
-        for entityID,damageInfo in pairs(damageInfo:GetMazeTeamMemberDamageList()) do
-          mazeTeamMemberDamageList[entityID] = damageInfo
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out DO_STMT
-
+    if damageInfo:GetMazeTeamMemberDamageList() then
+      for entityID, damageInfo in pairs(damageInfo:GetMazeTeamMemberDamageList()) do
+        mazeTeamMemberDamageList[entityID] = damageInfo
       end
     end
   end
@@ -67,5 +51,3 @@ PlayAddHpTextMergeInstruction.DoInstruction = function(self, TT, casterEntity, p
   mergeDamageInfo:SetRenderGridPos(gridPos)
   playDamageService:AsyncUpdateHPAndDisplayDamage(targetEntity, mergeDamageInfo)
 end
-
-

@@ -1,55 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/profile_collector.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ProfileCollector", Object)
 ProfileCollector = ProfileCollector
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ProfileCollector.Constructor = function(self, title)
-  -- function num : 0_0
+function ProfileCollector:Constructor(title)
   self._title = title
   self._last_tick = 0
   self._begin_tick = 0
   self._collection = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ProfileCollector.Sample = function(self, name)
-  -- function num : 0_1 , upvalues : _ENV
-  local tick = (os.clock)()
+function ProfileCollector:Sample(name)
+  local tick = os.clock()
   if self._last_tick == 0 then
     self._last_tick = tick
     self._begin_tick = tick
   end
   local diff = (tick - self._last_tick) * 1000
   self._last_tick = tick
-  ;
-  (table.insert)(self._collection, {name = name, usetime = diff})
+  table.insert(self._collection, {name = name, usetime = diff})
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ProfileCollector.Dump = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ProfileCollector:Dump()
   self._last_tick = 0
-  for i,v in ipairs(self._collection) do
-    (Log.prof)("[", self._title, "]", ",name,", v.name, ",usetime,", v.usetime)
+  for i, v in ipairs(self._collection) do
+    Log.prof("[", self._title, "]", ",name,", v.name, ",usetime,", v.usetime)
   end
-  local total = ((os.clock)() - self._begin_tick) * 1000
-  ;
-  (Log.prof)("[", self._title, "]", ",name,", "total", ",usetime,", total)
+  local total = (os.clock() - self._begin_tick) * 1000
+  Log.prof("[", self._title, "]", ",name,", "total", ",usetime,", total)
   self:ResetCollector()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ProfileCollector.ResetCollector = function(self)
-  -- function num : 0_3
+function ProfileCollector:ResetCollector()
   self._last_tick = 0
   self._collection = {}
 end
-
-

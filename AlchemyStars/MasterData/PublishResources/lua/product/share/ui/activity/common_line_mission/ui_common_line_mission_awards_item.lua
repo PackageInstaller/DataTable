@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_awards_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLineMissionAwardsItem", UICustomWidget)
 UICommonLineMissionAwardsItem = UICommonLineMissionAwardsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionAwardsItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICommonLineMissionAwardsItem:OnShow(uiParams)
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._starCount = self:GetUIComponent("UILocalizationText", "starCount")
   self._items = self:GetUIComponent("UISelectObjectPath", "items")
@@ -18,96 +11,70 @@ UICommonLineMissionAwardsItem.OnShow = function(self, uiParams)
   self._needStarCount = self:GetUIComponent("UILocalizationText", "needStarCount")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwardsItem.SetData = function(self, questCmpt, quest, checkCampaignCloseFunc)
-  -- function num : 0_1 , upvalues : _ENV
+function UICommonLineMissionAwardsItem:SetData(questCmpt, quest, checkCampaignCloseFunc)
   self._questCmpt = questCmpt
   self._quest = quest
   self._checkCampaignCloseFunc = checkCampaignCloseFunc
   local questInfo = quest:QuestInfo()
-  ;
-  (self._title):SetText((StringTable.Get)(questInfo.QuestName))
-  ;
-  (self._starCount):SetText(questInfo.total_progress)
+  self._title:SetText(StringTable.Get(questInfo.QuestName))
+  self._starCount:SetText(questInfo.total_progress)
   local status = quest:Status()
   if status == QuestStatus.QUEST_Taken then
-    (self._btnGot):SetActive(true)
-    ;
-    (self._btnCanGet):SetActive(false)
-    ;
-    (self._needStars):SetActive(false)
+    self._btnGot:SetActive(true)
+    self._btnCanGet:SetActive(false)
+    self._needStars:SetActive(false)
+  elseif status == QuestStatus.QUEST_Completed then
+    self._btnGot:SetActive(false)
+    self._btnCanGet:SetActive(true)
+    self._needStars:SetActive(false)
   else
-    if status == QuestStatus.QUEST_Completed then
-      (self._btnGot):SetActive(false)
-      ;
-      (self._btnCanGet):SetActive(true)
-      ;
-      (self._needStars):SetActive(false)
-    else
-      ;
-      (self._btnGot):SetActive(false)
-      ;
-      (self._btnCanGet):SetActive(false)
-      ;
-      (self._needStars):SetActive(true)
-      ;
-      (self._needStarCount):SetText("<color=#ff5555>" .. questInfo.cur_progress .. "</color>/" .. questInfo.total_progress)
-    end
+    self._btnGot:SetActive(false)
+    self._btnCanGet:SetActive(false)
+    self._needStars:SetActive(true)
+    self._needStarCount:SetText("<color=#ff5555>" .. questInfo.cur_progress .. "</color>/" .. questInfo.total_progress)
   end
   local rewards = questInfo.rewards
-  local uiAssets = (self._items):SpawnObjects("UIAsset", #rewards)
+  local uiAssets = self._items:SpawnObjects("UIAsset", #rewards)
   for i = 1, #rewards do
     local reward = rewards[i]
-    do
-      local uiAsset = uiAssets[i]
-      local cfgItem = (Cfg.cfg_item)[reward.assetid]
-      local icon = cfgItem.Icon
-      local quality = cfgItem.Color
-      uiAsset:SetData(reward.assetid)
-      uiAsset:SetItemData({showBG = true, icon = icon, text = reward.count, quality = quality})
-      local eventComponent = uiAsset:AddComponent(UIAssetComponentEvent)
-      eventComponent:SetClickCallBack(function(go)
-    -- function num : 0_1_0 , upvalues : self, reward
-    self:ShowTip(reward.assetid, go)
-  end
-)
-    end
+    local uiAsset = uiAssets[i]
+    local cfgItem = Cfg.cfg_item[reward.assetid]
+    local icon = cfgItem.Icon
+    local quality = cfgItem.Color
+    uiAsset:SetData(reward.assetid)
+    uiAsset:SetItemData({
+      showBG = true,
+      icon = icon,
+      text = reward.count,
+      quality = quality
+    })
+    local eventComponent = uiAsset:AddComponent(UIAssetComponentEvent)
+    eventComponent:SetClickCallBack(function(go)
+      self:ShowTip(reward.assetid, go)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwardsItem.ShowTip = function(self, id, go)
-  -- function num : 0_2
-  self:CallUIMethod("UICommonLineMissionAwards", "ShowAssetTips", id, (go.transform).position)
+function UICommonLineMissionAwardsItem:ShowTip(id, go)
+  self:CallUIMethod("UICommonLineMissionAwards", "ShowAssetTips", id, go.transform.position)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwardsItem.BtnCanGetOnClick = function(self)
-  -- function num : 0_3
-  if self._checkCampaignCloseFunc and (self._checkCampaignCloseFunc)() then
-    return 
+function UICommonLineMissionAwardsItem:BtnCanGetOnClick()
+  if self._checkCampaignCloseFunc and self._checkCampaignCloseFunc() then
+    return
   end
   self:StartTask(self.DoTakeQuest, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionAwardsItem.DoTakeQuest = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UICommonLineMissionAwardsItem:DoTakeQuest(TT)
   self:Lock("UICommonLineMissionAwardsItem:DoTakeQuest")
   local res = AsyncRequestRes:New()
-  local ret, rewards = (self._questCmpt):HandleQuestTake(TT, res, (self._quest):ID())
+  local ret, rewards = self._questCmpt:HandleQuestTake(TT, res, self._quest:ID())
   if res:GetSucc() then
     self:ShowDialog("UIGetItemController", rewards)
     self:CallUIMethod("UICommonLineMissionAwards", "RefreshUI")
   else
-    ;
-    (LogWrapper.LogFatal)("HandleQuestTake failed, ret:", ret)
+    LogWrapper.LogFatal("HandleQuestTake failed, ret:", ret)
   end
   self:UnLock("UICommonLineMissionAwardsItem:DoTakeQuest")
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_effect_calc_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalcParam", Object)
 SkillEffectCalcParam = SkillEffectCalcParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcParam.Constructor = function(self, casterEntityID, targetEntityIDs, skillEffectParam, skillID, skillRange, attackPos, gridPos, centerPos, wholeRange)
-  -- function num : 0_0
+function SkillEffectCalcParam:Constructor(casterEntityID, targetEntityIDs, skillEffectParam, skillID, skillRange, attackPos, gridPos, centerPos, wholeRange)
   self.casterEntityID = casterEntityID
   self.targetEntityIDs = targetEntityIDs
   self.skillID = skillID
@@ -16,157 +9,90 @@ SkillEffectCalcParam.Constructor = function(self, casterEntityID, targetEntityID
   self.gridPos = gridPos
   self.centerPos = centerPos
   self.skillRange = skillRange
-  if not skillEffectParam then
-    self.skillEffectParam = {}
-    self.wholeRange = wholeRange
-  end
+  self.skillEffectParam = skillEffectParam or {}
+  self.wholeRange = wholeRange
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetCasterEntityID = function(self)
-  -- function num : 0_1
+function SkillEffectCalcParam:GetCasterEntityID()
   return self.casterEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetTargetEntityIDs = function(self)
-  -- function num : 0_2
+function SkillEffectCalcParam:GetTargetEntityIDs()
   return self.targetEntityIDs
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.SetTargetEntityIDs = function(self, targetEntityIDs)
-  -- function num : 0_3
+function SkillEffectCalcParam:SetTargetEntityIDs(targetEntityIDs)
   self.targetEntityIDs = targetEntityIDs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetSkillID = function(self)
-  -- function num : 0_4
+function SkillEffectCalcParam:GetSkillID()
   return self.skillID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetSkillEffectParam = function(self)
-  -- function num : 0_5
+function SkillEffectCalcParam:GetSkillEffectParam()
   return self.skillEffectParam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetAttackPos = function(self)
-  -- function num : 0_6
+function SkillEffectCalcParam:GetAttackPos()
   return self.attackPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetGridPos = function(self)
-  -- function num : 0_7
+function SkillEffectCalcParam:GetGridPos()
   return self.gridPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetSkillRange = function(self)
-  -- function num : 0_8
+function SkillEffectCalcParam:GetSkillRange()
   return self.skillRange
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.SetSkillEffectParam = function(self, t)
-  -- function num : 0_9
+function SkillEffectCalcParam:SetSkillEffectParam(t)
   self.skillEffectParam = t
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.SetSkillRange = function(self, t)
-  -- function num : 0_10
+function SkillEffectCalcParam:SetSkillRange(t)
   self.skillRange = t
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.SetGridPos = function(self, gridPos)
-  -- function num : 0_11
+function SkillEffectCalcParam:SetGridPos(gridPos)
   self.gridPos = gridPos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetCenterPos = function(self)
-  -- function num : 0_12
+function SkillEffectCalcParam:GetCenterPos()
   return self.centerPos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.SetSpecialScopeResult = function(self, specialScopeResult)
-  -- function num : 0_13
+function SkillEffectCalcParam:SetSpecialScopeResult(specialScopeResult)
   self._specialScopeResult = specialScopeResult
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetSpecialScopeResult = function(self)
-  -- function num : 0_14
+function SkillEffectCalcParam:GetSpecialScopeResult()
   return self._specialScopeResult
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetWholeRange = function(self)
-  -- function num : 0_15
+function SkillEffectCalcParam:GetWholeRange()
   return self.wholeRange
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.SetTotalTargetCount = function(self, cnt)
-  -- function num : 0_16
+function SkillEffectCalcParam:SetTotalTargetCount(cnt)
   self.totalTargetCount = cnt
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetTotalTargetCount = function(self)
-  -- function num : 0_17
+function SkillEffectCalcParam:GetTotalTargetCount()
   return self.totalTargetCount or 0
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.SetDamageGridPos = function(self, v2)
-  -- function num : 0_18
+function SkillEffectCalcParam:SetDamageGridPos(v2)
   self._damageGridPos = v2
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetDamageGridPos = function(self)
-  -- function num : 0_19
+function SkillEffectCalcParam:GetDamageGridPos()
   return self._damageGridPos
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.GetNormalAttackIndex = function(self)
-  -- function num : 0_20
+function SkillEffectCalcParam:GetNormalAttackIndex()
   return self._normalAttackIndex
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcParam.SetNormalAttackIndex = function(self, index)
-  -- function num : 0_21
+function SkillEffectCalcParam:SetNormalAttackIndex(index)
   self._normalAttackIndex = index
 end
-
-

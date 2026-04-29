@@ -1,64 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_duplicate_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDuplicateReward", UIController)
 UIHauteCoutureDuplicateReward = UIHauteCoutureDuplicateReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDuplicateReward.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIHauteCoutureDuplicateReward:LoadDataOnEnter(TT, res)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self.CtxData = campaignModule:GetCurHauteCouture_Review()
   if not self.CtxData then
-    (Log.fatal)("没有开启的高级时装复刻活动")
+    Log.fatal("没有开启的高级时装复刻活动")
     res:SetSucc(false)
-    return 
+    return
   end
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateReward.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDuplicateReward:OnShow(uiParams)
   self:InitWidget()
-  local bg, bgClass = (self.CtxData):Review_DuplicateRewardBgInfo()
-  local ui, uiClass = (self.CtxData):Review_DuplicateRewardUIInfo()
+  local bg, bgClass = self.CtxData:Review_DuplicateRewardBgInfo()
+  local ui, uiClass = self.CtxData:Review_DuplicateRewardUIInfo()
   if bg and bgClass then
-    ((self.bg).dynamicInfoOfEngine):SetObjectName(bg)
-    ;
-    (self.bg):SpawnObject(bgClass._className)
+    self.bg.dynamicInfoOfEngine:SetObjectName(bg)
+    self.bg:SpawnObject(bgClass._className)
   end
-  ;
-  ((self.content).dynamicInfoOfEngine):SetObjectName(ui)
-  local content = (self.content):SpawnObject(uiClass._className)
+  self.content.dynamicInfoOfEngine:SetObjectName(ui)
+  local content = self.content:SpawnObject(uiClass._className)
   content:SetData(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateReward.InitWidget = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDuplicateReward:InitWidget()
   self.bg = self:GetUIComponent("UISelectObjectPath", "bg")
   self.content = self:GetUIComponent("UISelectObjectPath", "content")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateReward.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIHauteCoutureDuplicateReward:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateReward.OnItemClick = function(self, id, pos)
-  -- function num : 0_4
+function UIHauteCoutureDuplicateReward:OnItemClick(id, pos)
   if self._selectInfo then
-    (self._selectInfo):SetData(id, pos)
+    self._selectInfo:SetData(id, pos)
   end
 end
-
-

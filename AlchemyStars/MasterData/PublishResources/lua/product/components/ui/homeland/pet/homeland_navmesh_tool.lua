@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/homeland_navmesh_tool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandNavmeshTool", Singleton)
 HomelandNavmeshTool = HomelandNavmeshTool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandNavmeshTool.GetRandomPositionCircle = function(self, sRadius, center)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandNavmeshTool:GetRandomPositionCircle(sRadius, center)
   for i = 1, 10 do
-    local radius = ((UnityEngine.Random).Range)(0, sRadius)
-    local radian = ((UnityEngine.Random).Range)(0, 360) * Mathf.Deg2Rad
-    local x = (Mathf.Cos)(radian) * radius + center.x
+    local radius = UnityEngine.Random.Range(0, sRadius)
+    local radian = UnityEngine.Random.Range(0, 360) * Mathf.Deg2Rad
+    local x = Mathf.Cos(radian) * radius + center.x
     local y = center.y
-    local z = (Mathf.Sin)(radian) * radius + center.z
-    local hit, navMeshHit = (((UnityEngine.AI).NavMesh).SamplePosition)((Vector3(x, y, z)), nil, 100, 1)
+    local z = Mathf.Sin(radian) * radius + center.z
+    local hit, navMeshHit = UnityEngine.AI.NavMesh.SamplePosition(Vector3(x, y, z), nil, 100, 1)
     if hit then
       return navMeshHit.position
     end
@@ -23,70 +16,50 @@ HomelandNavmeshTool.GetRandomPositionCircle = function(self, sRadius, center)
   return center
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandNavmeshTool.GetRandomPositionRing = function(self, sRadius, bRadius, center)
-  -- function num : 0_1 , upvalues : _ENV
-  local radius = ((UnityEngine.Random).Range)(sRadius, bRadius)
-  local radian = ((UnityEngine.Random).Range)(0, 360) * Mathf.Deg2Rad
-  local x = (Mathf.Cos)(radian) * radius + center.x
+function HomelandNavmeshTool:GetRandomPositionRing(sRadius, bRadius, center)
+  local radius = UnityEngine.Random.Range(sRadius, bRadius)
+  local radian = UnityEngine.Random.Range(0, 360) * Mathf.Deg2Rad
+  local x = Mathf.Cos(radian) * radius + center.x
   local y = center.y
-  local z = (Mathf.Sin)(radian) * radius + center.z
-  local hit, navMeshHit = (((UnityEngine.AI).NavMesh).SamplePosition)((Vector3(x, y, z)), nil, 100, 1)
+  local z = Mathf.Sin(radian) * radius + center.z
+  local hit, navMeshHit = UnityEngine.AI.NavMesh.SamplePosition(Vector3(x, y, z), nil, 100, 1)
   if hit then
     return navMeshHit.position
   end
   return center
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandNavmeshTool.GetRandomPositionMap = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local triangulation = (((UnityEngine.AI).NavMesh).CalculateTriangulation)()
-  local t = (math.random)(0, (triangulation.indices).Length - 3)
-  local point = (Vector3.Lerp)((triangulation.vertices)[(triangulation.indices)[t]], (triangulation.vertices)[(triangulation.indices)[t + 1]], (math.random)())
-  point = (Vector3.Lerp)(point, (triangulation.vertices)[(triangulation.indices)[t + 2]], (math.random)())
+function HomelandNavmeshTool:GetRandomPositionMap()
+  local triangulation = UnityEngine.AI.NavMesh.CalculateTriangulation()
+  local t = math.random(0, triangulation.indices.Length - 3)
+  local point = Vector3.Lerp(triangulation.vertices[triangulation.indices[t]], triangulation.vertices[triangulation.indices[t + 1]], math.random())
+  point = Vector3.Lerp(point, triangulation.vertices[triangulation.indices[t + 2]], math.random())
   return point
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandNavmeshTool.PositionReachable = function(self, position)
-  -- function num : 0_3 , upvalues : _ENV
-  return (((UnityEngine.AI).NavMesh).SamplePosition)(position, nil, 100, 1)
+function HomelandNavmeshTool:PositionReachable(position)
+  return UnityEngine.AI.NavMesh.SamplePosition(position, nil, 100, 1)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandNavmeshTool.PositionConnected = function(self, sourcePosition, targetPosition)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandNavmeshTool:PositionConnected(sourcePosition, targetPosition)
   if EDITOR then
-    ((UnityEngine.Debug).DrawLine)(sourcePosition, targetPosition, Color.yellow, 60)
+    UnityEngine.Debug.DrawLine(sourcePosition, targetPosition, Color.yellow, 60)
   end
-  local path = ((UnityEngine.AI).NavMeshPath):New()
-  local connected = (((UnityEngine.AI).NavMesh).CalculatePath)(sourcePosition, targetPosition, 1, path)
+  local path = UnityEngine.AI.NavMeshPath:New()
+  local connected = UnityEngine.AI.NavMesh.CalculatePath(sourcePosition, targetPosition, 1, path)
   if EDITOR and connected then
-    for i = 0, (path.corners).Length - 2 do
-      ((UnityEngine.Debug).DrawLine)((path.corners)[i], (path.corners)[i + 1], Color.red, 60)
+    for i = 0, path.corners.Length - 2 do
+      UnityEngine.Debug.DrawLine(path.corners[i], path.corners[i + 1], Color.red, 60)
     end
   end
-  do
-    do return not connected or path.status == ((UnityEngine.AI).NavMeshPathStatus).PathComplete end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
+  return connected and path.status == UnityEngine.AI.NavMeshPathStatus.PathComplete
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandNavmeshTool.GetReachablePosition = function(self, position)
-  -- function num : 0_5 , upvalues : _ENV
-  local hit, navMeshHit = (((UnityEngine.AI).NavMesh).SamplePosition)(position, nil, 100, 1)
+function HomelandNavmeshTool:GetReachablePosition(position)
+  local hit, navMeshHit = UnityEngine.AI.NavMesh.SamplePosition(position, nil, 100, 1)
   if hit then
     return navMeshHit.position
   else
     return position
   end
 end
-
-

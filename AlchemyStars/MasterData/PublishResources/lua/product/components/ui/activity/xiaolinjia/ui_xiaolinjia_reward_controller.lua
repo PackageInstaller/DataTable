@@ -1,180 +1,115 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_reward_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaRewardController", UIController)
 UIXiaoLinJiaRewardController = UIXiaoLinJiaRewardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaRewardController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIXiaoLinJiaRewardController:OnShow(uiParams)
   self._campaign = uiParams[1]
   self._missionList = uiParams[2]
   self.anim = self:GetUIComponent("Animation", "anim")
   self._cmptId = ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST
-  self._component = (self._campaign):GetComponent(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
-  self._componentInfo = (self._component):GetComponentInfo()
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+  self._component = self._campaign:GetComponent(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
+  self._componentInfo = self._component:GetComponentInfo()
+  
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-
+  
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIXiaoLinJiaRewardController:OnHide()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController.Refresh = function(self)
-  -- function num : 0_2
+function UIXiaoLinJiaRewardController:Refresh()
   self:_SetDynamicList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController._SetDynamicListData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local questInfo = (self._component):GetQuestInfo()
+function UIXiaoLinJiaRewardController:_SetDynamicListData()
+  local questInfo = self._component:GetQuestInfo()
   self._dynamicListInfo = {}
-  for index,mission in pairs(self._missionList) do
+  for index, mission in pairs(self._missionList) do
     if not mission:GetIsLock() then
       local svrCfg = mission:GetServerCfg()
-      for _,taskId in pairs(svrCfg.TaskList) do
-        (table.insert)(self._dynamicListInfo, self:GetTaskItem(questInfo, taskId))
+      for _, taskId in pairs(svrCfg.TaskList) do
+        table.insert(self._dynamicListInfo, self:GetTaskItem(questInfo, taskId))
       end
     end
   end
-  self._questStatus = (self._component):GetCampaignQuestStatus(self._dynamicListInfo)
-  ;
-  (self._component):SortQuestInfoByCampaignQuestStatus(self._dynamicListInfo)
+  self._questStatus = self._component:GetCampaignQuestStatus(self._dynamicListInfo)
+  self._component:SortQuestInfoByCampaignQuestStatus(self._dynamicListInfo)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController.GetTaskItem = function(self, questInfo, taskId)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,v in pairs(questInfo) do
-    if (v._questInfo).quest_id == taskId then
+function UIXiaoLinJiaRewardController:GetTaskItem(questInfo, taskId)
+  for _, v in pairs(questInfo) do
+    if v._questInfo.quest_id == taskId then
       return v
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController._SetDynamicList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIXiaoLinJiaRewardController:_SetDynamicList()
   self:_SetDynamicListData()
   if not self._dynamicListHelper then
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self:GetUIComponent("UIDynamicScrollView", "dynamicList"), "UIXiaoLinJiaRewardItem", function(listItem, itemIndex)
-    -- function num : 0_5_0 , upvalues : self
-    self:_SetCellData(listItem, itemIndex)
-  end
-)
+      self:_SetCellData(listItem, itemIndex)
+    end)
   end
   local itemCount = #self._dynamicListInfo
   local itemCountPerRow = 1
-  ;
-  (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController._SetCellData = function(self, listItem, index)
-  -- function num : 0_6 , upvalues : _ENV
-  local quest = (self._dynamicListInfo)[index]
-  local status = (self._questStatus)[quest]
+function UIXiaoLinJiaRewardController:_SetCellData(listItem, index)
+  local quest = self._dynamicListInfo[index]
+  local status = self._questStatus[quest]
   if quest ~= nil then
     listItem:SetData(index, self._campaign, quest, status, self._componentInfo, function(questInfo)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    (self._component):Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
-      -- function num : 0_6_0_0 , upvalues : self, _ENV
-      self:_OnGetRewards(res, rewards)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
-    end
-)
-  end
-, self._tipsCallback)
+      self._component:Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
+        self:_OnGetRewards(res, rewards)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
+      end)
+    end, self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController.HandleOneKeyTakeQuest = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._component):Start_HandleOneKeyTakeQuest(function(res, rewards)
-    -- function num : 0_7_0 , upvalues : self, _ENV
+function UIXiaoLinJiaRewardController:HandleOneKeyTakeQuest()
+  self._component:Start_HandleOneKeyTakeQuest(function(res, rewards)
     self:_OnGetRewards(res, rewards)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController._DynamicListPlayAnimation = function(self)
-  -- function num : 0_8
+function UIXiaoLinJiaRewardController:_DynamicListPlayAnimation()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController.CloseBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIXiaoLinJiaRewardController:CloseBtnOnClick()
   self:Lock("UIXiaoLinJiaRewardController_Close")
-  ;
-  (self.anim):Play("uieffanim_UIXiaoLinJiaIntroController_out")
+  self.anim:Play("uieffanim_UIXiaoLinJiaIntroController_out")
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:CloseDialog()
     self:UnLock("UIXiaoLinJiaRewardController_Close")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController.OneClickGetRewardBtnOnClick = function(self)
-  -- function num : 0_10
+function UIXiaoLinJiaRewardController:OneClickGetRewardBtnOnClick()
   self:HandleOneKeyTakeQuest()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController._OnGetRewards = function(self, res, rewards)
-  -- function num : 0_11 , upvalues : _ENV
+function UIXiaoLinJiaRewardController:_OnGetRewards(res, rewards)
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_11_0 , upvalues : self
-    self:Refresh()
-  end
-, function()
-    -- function num : 0_11_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:Refresh()
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaRewardController.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_12
+function UIXiaoLinJiaRewardController:OnUIGetItemCloseInQuest(type)
   self:Refresh()
 end
-
-

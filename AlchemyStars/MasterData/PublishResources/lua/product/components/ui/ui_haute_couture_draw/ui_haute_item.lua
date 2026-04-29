@@ -1,42 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_haute_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteItem", UICustomWidget)
 UIHauteItem = UIHauteItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function UIHauteItem:Constructor()
+  self.mRole = GameGlobal.GetModule(RoleModule)
   self.colorTxtCount = Color.white
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteItem:OnShow()
   self.bg = self:GetUIComponent("Image", "bg")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
-  self.colorTxtCount = (self.txtCount).color
+  self.colorTxtCount = self.txtCount.color
   self._goumaiObj = self:GetGameObject("goumai")
   self.first = self:GetGameObject("first")
   self.atlas = self:GetAsset("UIHauteCoutureKL.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIHauteItem:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteItem.Flush = function(self, roleAsset, funcClick, showTips)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHauteItem:Flush(roleAsset, funcClick, showTips)
   self.roleAsset = roleAsset
   local icon = ""
   local color = 1
@@ -46,86 +30,51 @@ UIHauteItem.Flush = function(self, roleAsset, funcClick, showTips)
     color = 6
     count = roleAsset.count
   else
-    local cfg = (Cfg.cfg_item)[roleAsset.assetid]
+    local cfg = Cfg.cfg_item[roleAsset.assetid]
     icon = cfg.Icon
     color = cfg.Color
     count = roleAsset.count
   end
-  do
-    ;
-    (self.imgIcon):LoadImage(icon)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.bg).sprite = (self.atlas):GetSprite("N17_produce_bg_item_" .. color)
-    ;
-    (self.txtCount):SetText(self:FormatCount(count))
-    ;
-    (self.first):SetActive(roleAsset.first ~= nil)
-    self.funcClick = funcClick
-    self._showTips = showTips
-    ;
-    (self._goumaiObj):SetActive(self._showTips)
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  self.imgIcon:LoadImage(icon)
+  self.bg.sprite = self.atlas:GetSprite("N17_produce_bg_item_" .. color)
+  self.txtCount:SetText(self:FormatCount(count))
+  self.first:SetActive(roleAsset.first ~= nil)
+  self.funcClick = funcClick
+  self._showTips = showTips
+  self._goumaiObj:SetActive(self._showTips)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteItem.FormatCount = function(self, count)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHauteItem:FormatCount(count)
   if not count or count == "" then
     return ""
   end
-  if count > 999999 then
-    local c = (math.floor)(count * 0.0001)
-    return (StringTable.Get)("str_homeland_backpack_n_w", c)
-  else
-    do
-      do
-        if count > 99999 then
-          local c = (math.floor)(count * 0.001) * 0.1
-          return (StringTable.Get)("str_homeland_backpack_n_w", c)
-        end
-        return tostring(count)
-      end
-    end
+  if 999999 < count then
+    local c = math.floor(count * 1.0E-4)
+    return StringTable.Get("str_homeland_backpack_n_w", c)
+  elseif 99999 < count then
+    local c = math.floor(count * 0.001) * 0.1
+    return StringTable.Get("str_homeland_backpack_n_w", c)
   end
+  return tostring(count)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteItem.TxtCountRedIfNotEnough = function(self, cost)
-  -- function num : 0_5 , upvalues : _ENV
-  local c = (self.mRole):GetAssetCount((self.roleAsset).assetid) or 0
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIHauteItem:TxtCountRedIfNotEnough(cost)
+  local c = self.mRole:GetAssetCount(self.roleAsset.assetid) or 0
   if cost <= c then
-    (self.txtCount).color = self.colorTxtCount
+    self.txtCount.color = self.colorTxtCount
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtCount).color = Color.red
+    self.txtCount.color = Color.red
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteItem.SetNotShowTips = function(self, notShowTips)
-  -- function num : 0_6
+function UIHauteItem:SetNotShowTips(notShowTips)
   self._notShowTips = notShowTips
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteItem.BgOnClick = function(self, go)
-  -- function num : 0_7
+function UIHauteItem:BgOnClick(go)
   if self.funcClick then
-    (self.funcClick)(go)
+    self.funcClick(go)
   end
   if not self._notShowTips then
   end
 end
-
-

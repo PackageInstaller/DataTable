@@ -1,36 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_team_bind_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 PlayTeamBindEffectMode = {Add = 1, Remove = 2}
 _enum("PlayTeamBindEffectMode", PlayTeamBindEffectMode)
 _class("PlayTeamBindEffectInstruction", BaseInstruction)
 PlayTeamBindEffectInstruction = PlayTeamBindEffectInstruction
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTeamBindEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTeamBindEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._mode = tonumber(paramList.mode)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTeamBindEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTeamBindEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-    casterEntity = (casterEntity:SuperEntityComponent()):GetSuperEntity()
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    casterEntity = casterEntity:SuperEntityComponent():GetSuperEntity()
   end
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   if casterEntity:HasTeam() then
     teamEntity = casterEntity
-  else
-    if casterEntity:HasPet() then
-      teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-    end
+  elseif casterEntity:HasPet() then
+    teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
   end
   local teamLeader = teamEntity:GetTeamLeaderPetEntity()
   local cEffectAttached = teamEntity:EffectAttached()
@@ -40,21 +28,14 @@ PlayTeamBindEffectInstruction.DoInstruction = function(self, TT, casterEntity, p
       self:_RemoveEffect(cEffectAttached, world)
     end
     YIELD(TT)
-    local effect = (world:GetService("Effect")):CreateEffect(self._effectID, teamLeader)
+    local effect = world:GetService("Effect"):CreateEffect(self._effectID, teamLeader)
     cEffectAttached:AddAttachedEffectEntityID(effect:GetID(), self._effectID)
-  else
-    do
-      if self._mode == PlayTeamBindEffectMode.Remove then
-        self:_RemoveEffect(cEffectAttached, world)
-      end
-    end
+  elseif self._mode == PlayTeamBindEffectMode.Remove then
+    self:_RemoveEffect(cEffectAttached, world)
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTeamBindEffectInstruction._RemoveEffect = function(self, cEffectAttached, world)
-  -- function num : 0_2
+function PlayTeamBindEffectInstruction:_RemoveEffect(cEffectAttached, world)
   local mapFxID, _ = cEffectAttached:GetAttachedFxMap()
   if mapFxID[self._effectID] then
     local eid = mapFxID[self._effectID]
@@ -66,15 +47,13 @@ PlayTeamBindEffectInstruction._RemoveEffect = function(self, cEffectAttached, wo
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTeamBindEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayTeamBindEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

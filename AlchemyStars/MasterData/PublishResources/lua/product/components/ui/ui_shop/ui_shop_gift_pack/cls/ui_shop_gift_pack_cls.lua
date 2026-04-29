@@ -1,38 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_gift_pack/cls/ui_shop_gift_pack_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GiftPackShopData", Object)
 GiftPackShopData = GiftPackShopData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GiftPackShopData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function GiftPackShopData:Constructor()
   self._goods = {}
   self._goodPriceList = {}
-  self._mPay = (GameGlobal.GetModule)(PayModule)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._mPay = GameGlobal.GetModule(PayModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.UpdateByServerData = function(self, marketInfo, cfgs)
-  -- function num : 0_1 , upvalues : _ENV
+function GiftPackShopData:UpdateByServerData(marketInfo, cfgs)
   if not marketInfo then
-    (Log.fatal)("### marketInfo nil.")
-    return 
+    Log.fatal("### marketInfo nil.")
+    return
   end
-  local srvTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(srvTimeModule:GetServerTime() / 1000)
-  local goodPriceList = (self._mPay):GetGoodPriceList()
+  local srvTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(srvTimeModule:GetServerTime() / 1000)
+  local goodPriceList = self._mPay:GetGoodPriceList()
   self._goods = {}
   local serGoods = marketInfo.goods
   local productList = {}
-  for i,good in ipairs(serGoods) do
+  for i, good in ipairs(serGoods) do
     local id = good.gift_id
     local cfgv = cfgs[id]
-    local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
+    local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
     local giftType = tonumber(cfgv[ConfigKey.ConfigKey_ShopGiftType])
     if cfgv and cfgClient and giftType ~= ShopGiftType.SGT_CampaignGift and giftType ~= ShopGiftType.SGT_CampaignWeekCard then
       local item = GiftPackShopItem:New(id)
@@ -42,11 +32,11 @@ GiftPackShopData.UpdateByServerData = function(self, marketInfo, cfgs)
       local maxBuyCount = tonumber(cfgv[ConfigKey.ConfigKey_SaleNum])
       item:SetMaxBuyCount(maxBuyCount)
       local strOneTime = cfgv[ConfigKey.ConfigKey_DirectAssetList]
-      local lstOneTime = (GiftPackShopData.ItemString2List)(strOneTime)
+      local lstOneTime = GiftPackShopData.ItemString2List(strOneTime)
       local awardsImmediately = self:Lst2GiftPackShopItemAward(lstOneTime)
       item:SetAwardsImmediately(awardsImmediately)
       local strCycle = cfgv[ConfigKey.ConfigKey_CycleAcceptAssetList]
-      local lstCycle = (GiftPackShopData.ItemString2List)(strCycle)
+      local lstCycle = GiftPackShopData.ItemString2List(strCycle)
       local awardsDaily = self:Lst2GiftPackShopItemAward(lstCycle)
       item:SetAwardsDaily(awardsDaily)
       local strShopGiftType = cfgv[ConfigKey.ConfigKey_ShopGiftType]
@@ -57,7 +47,7 @@ GiftPackShopData.UpdateByServerData = function(self, marketInfo, cfgs)
       if cfgv[ConfigKey.ConfigKey_AcceptUseFullLife] then
         item.duration = tonumber(cfgv[ConfigKey.ConfigKey_AcceptUseFullLife])
       else
-        item.duration = ((Cfg.cfg_shop_giftmarket_goods)[id]).AcceptUsefulLife or 0
+        item.duration = Cfg.cfg_shop_giftmarket_goods[id].AcceptUsefulLife or 0
       end
       self:UpdateByServerData_LevelGift(item, good, cfgv, cfgClient)
       local refreshMethod = tonumber(cfgv[ConfigKey.ConfigKey_RefreshMethod])
@@ -66,20 +56,19 @@ GiftPackShopData.UpdateByServerData = function(self, marketInfo, cfgs)
       item:SetCycleDayCount(refreshInterval)
       item:SetRefreshTime(good.deadline_time)
       local insert = true
-      local showEndTime = nil
-      if cfgClient.LiveTime and cfgClient.LiveTime > 0 then
-        if good.deadline_time and good.deadline_time > 0 then
-          local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
+      local showEndTime
+      if cfgClient.LiveTime and 0 < cfgClient.LiveTime then
+        if good.deadline_time and 0 < good.deadline_time then
+          local nowTime = self._svrTimeModule:GetServerTime() * 0.001
           if nowTime < good.deadline_time then
             showEndTime = good.deadline_time
-            ;
-            (Log.debug)("###[GiftPackShopData] 限时礼包未过期,showEndTime:", showEndTime, "|nowTime:", nowTime)
+            Log.debug("###[GiftPackShopData] 限时礼包未过期,showEndTime:", showEndTime, "|nowTime:", nowTime)
           else
-            (Log.debug)("###[GiftPackShopData] 过期")
+            Log.debug("###[GiftPackShopData] 过期")
             insert = false
           end
         else
-          (Log.debug)("###[GiftPackShopData] deadline_time 无")
+          Log.debug("###[GiftPackShopData] deadline_time 无")
           insert = false
         end
       else
@@ -96,9 +85,9 @@ GiftPackShopData.UpdateByServerData = function(self, marketInfo, cfgs)
           item._price = goodPrice.microprice / 1000000
           item:SetPriceWithCurrencySymbol(goodPrice.price)
         elseif showEndTime == nil then
-          (table.insert)(productList, midasId)
+          table.insert(productList, midasId)
         elseif curTime < showEndTime then
-          (table.insert)(productList, midasId)
+          table.insert(productList, midasId)
         end
       else
         local priceRawNotCash = tonumber(cfgv[ConfigKey.ConfigKey_RawPrice])
@@ -122,210 +111,170 @@ GiftPackShopData.UpdateByServerData = function(self, marketInfo, cfgs)
         item._price = priceNotCash
       end
       item._discount = tonumber(cfgv[ConfigKey.ConfigKey_Discount])
-      item:SetName((StringTable.Get)(cfgClient.Name))
+      item:SetName(StringTable.Get(cfgClient.Name))
       item:SetIcon(cfgClient.Icon)
       item:SetIconDetail(cfgClient.IconDetail)
       item.isSkin = cfgClient.IsSkin or false
       if insert then
-        (table.insert)(self._goods, item)
+        table.insert(self._goods, item)
       end
     else
-      (Log.fatal)("### no goods in cfgs. id = ", id)
+      Log.fatal("### no goods in cfgs. id = ", id)
     end
   end
-  if productList and (table.count)(productList) > 0 then
-    ((GameGlobal.GetModule)(ShopModule)):GetLocalPrice()
+  if productList and 0 < table.count(productList) then
+    GameGlobal.GetModule(ShopModule):GetLocalPrice()
   end
   local newList = marketInfo.new_mark_goods
-  if newList and (table.count)(newList) > 0 then
-    for _,newItem in ipairs(newList) do
-      for _,good in ipairs(self._goods) do
-        if newItem == good:GetId() then
-          if not good:IsBattlePassGift() or good:IsLevelGift() then
-            good:SetNew(not good:IsLevelGiftLock())
-          else
-            good:SetNew(true)
-          end
+  if newList and 0 < table.count(newList) then
+    for _, newItem in ipairs(newList) do
+      for _, good in ipairs(self._goods) do
+        if newItem ~= good:GetId() or good:IsBattlePassGift() then
+        elseif good:IsLevelGift() then
+          good:SetNew(not good:IsLevelGiftLock())
+        else
+          good:SetNew(true)
         end
       end
     end
   end
-  -- DECOMPILER ERROR: 29 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.UpdateByServerData_LevelGift = function(self, item, good, cfgv, cfgClient)
-  -- function num : 0_2 , upvalues : _ENV
+function GiftPackShopData:UpdateByServerData_LevelGift(item, good, cfgv, cfgClient)
   local strShopGiftType = cfgv[ConfigKey.ConfigKey_ShopGiftType]
   if tonumber(strShopGiftType) == ShopGiftType.SGT_LevelGift then
     item:SetLevelGift(true)
     local saleNum = tonumber(cfgv[ConfigKey.ConfigKey_SaleNum])
     if saleNum ~= 1 then
-      (Log.exception)("GiftPackShopData:UpdateByServerData_LevelGift()", " [cfg_shop_giftmarket_goods]", " ID = ", good.gift_id, " Error: GiftType == 5 and SaleNum ~= 1")
+      Log.exception("GiftPackShopData:UpdateByServerData_LevelGift()", " [cfg_shop_giftmarket_goods]", " ID = ", good.gift_id, " Error: GiftType == 5 and SaleNum ~= 1")
     end
     local levelLock = good.gift_lock_status & GiftLockStatus.GLS_LevelLock ~= 0
     local preLock = good.gift_lock_status & GiftLockStatus.GLS_PreposeLock ~= 0
     local buy = good.selled_num ~= 0
     item:SetLevelGiftLock(levelLock)
-    local isShow = (not preLock and not buy)
+    local isShow = not preLock and not buy
     item:SetLevelGiftShow(isShow)
     item:SetLevelGiftLockLv(tonumber(cfgv[ConfigKey.ConfigKey_LevelCondition]))
     local free = cfgClient.SaleType == 0
-    local red = isShow and ((not levelLock and free))
+    local red = isShow and not levelLock and free
     item:SetLevelGiftRed(red)
   end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.SortGoods_Client_LevelGift = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function GiftPackShopData:SortGoods_Client_LevelGift()
   local tb = {}
   local items = {}
-  for i,v in ipairs(self._goods) do
+  for i, v in ipairs(self._goods) do
     if v:IsLevelGift() and v:IsLevelGiftShow() and v:IsLevelGiftLock() then
-      (table.insert)(items, v)
+      table.insert(items, v)
     end
   end
-  for i,v in ipairs(self._goods) do
+  for i, v in ipairs(self._goods) do
     if not v:IsLevelGift() or v:IsLevelGiftShow() and not v:IsLevelGiftLock() then
-      (table.insert)(tb, v)
+      table.insert(tb, v)
     end
   end
-  if #items > 0 then
-    (table.appendArray)(tb, items)
+  if 0 < #items then
+    table.appendArray(tb, items)
   end
   self._goods = tb
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.SortGoods_Client_BattlePass = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function GiftPackShopData:SortGoods_Client_BattlePass()
   local campaignType = ECampaignType.CAMPAIGN_TYPE_BATTLEPASS
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo_Local(campaignType, cmptId)
-  local componentInfo = (self._campaign):GetComponentInfo(cmptId)
+  self._campaign:LoadCampaignInfo_Local(campaignType, cmptId)
+  local componentInfo = self._campaign:GetComponentInfo(cmptId)
   local buyState = componentInfo and componentInfo.m_buy_state or -1
   local toFirst = buyState == 0
   local toLast = buyState == 1 or buyState == 2
-  ;
-  (Log.debug)("GiftPackShopData:SortGoods_Client_BattlePass()", " toFirst = ", toFirst, " toLast = ", toLast)
+  Log.debug("GiftPackShopData:SortGoods_Client_BattlePass()", " toFirst = ", toFirst, " toLast = ", toLast)
   local tb = {}
   local items = {}
-  for i,v in ipairs(self._goods) do
+  for i, v in ipairs(self._goods) do
     if v:IsBattlePassGift() then
-      (table.insert)(items, v)
+      table.insert(items, v)
     end
   end
-  if #items > 0 and toFirst then
-    (table.appendArray)(tb, items)
+  if 0 < #items and toFirst then
+    table.appendArray(tb, items)
   end
-  for i,v in ipairs(self._goods) do
+  for i, v in ipairs(self._goods) do
     if not v:IsBattlePassGift() then
-      (table.insert)(tb, v)
+      table.insert(tb, v)
     end
   end
-  if #items > 0 and toLast then
-    (table.appendArray)(tb, items)
+  if 0 < #items and toLast then
+    table.appendArray(tb, items)
   end
   self._goods = tb
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.UpdateGoodsPrice = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local goodPriceList = (self._mPay):GetGoodPriceList()
-  if goodPriceList and (table.count)(goodPriceList) > 0 then
-    for i,item in ipairs(self._goods) do
+function GiftPackShopData:UpdateGoodsPrice()
+  local goodPriceList = self._mPay:GetGoodPriceList()
+  if goodPriceList and table.count(goodPriceList) > 0 then
+    for i, item in ipairs(self._goods) do
       local midasId = item:GetMidasId()
-      if not (string.isnullorempty)(midasId) and goodPriceList[midasId] then
+      if not string.isnullorempty(midasId) and goodPriceList[midasId] then
         local goodPrice = goodPriceList[midasId]
         item._price = goodPrice.microprice / 1000000
         item:SetPriceWithCurrencySymbol(goodPrice.price)
       end
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateGiftPackItemPrice)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateGiftPackItemPrice)
   else
-    ;
-    (Log.fatal)("### [Pay]no data in goodPriceList.")
+    Log.fatal("### [Pay]no data in goodPriceList.")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.ItemString2List = function(itemStr)
-  -- function num : 0_6 , upvalues : _ENV
+function GiftPackShopData.ItemString2List(itemStr)
   local lst = {}
-  local a = (string.split)(itemStr, "|")
-  for _,idcount in ipairs(a) do
-    local strs = (string.split)(idcount, ",")
+  local a = string.split(itemStr, "|")
+  for _, idcount in ipairs(a) do
+    local strs = string.split(idcount, ",")
     local templateId = tonumber(strs[1])
     local count = tonumber(strs[2])
-    ;
-    (table.insert)(lst, {templateId = templateId, count = count})
+    table.insert(lst, {templateId = templateId, count = count})
   end
   return lst
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.Lst2GiftPackShopItemAward = function(self, lst)
-  -- function num : 0_7 , upvalues : _ENV
+function GiftPackShopData:Lst2GiftPackShopItemAward(lst)
   local items = {}
-  for i,item in ipairs(lst) do
+  for i, item in ipairs(lst) do
     local item = GiftPackShopItemAward:New(item.templateId, item.count)
-    ;
-    (table.insert)(items, item)
+    table.insert(items, item)
   end
   return items
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.GetGoods = function(self)
-  -- function num : 0_8
+function GiftPackShopData:GetGoods()
   self:SortGoods_Client_LevelGift()
   self:SortGoods_Client_BattlePass()
   return self._goods
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.GetRechargeGiftGoods = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function GiftPackShopData:GetRechargeGiftGoods()
   self.rechargeGiftGoods = {}
-  for index,value in ipairs(self._goods) do
+  for index, value in ipairs(self._goods) do
     if value:GetRechargeGift() then
-      (table.insert)(self.rechargeGiftGoods, value)
+      table.insert(self.rechargeGiftGoods, value)
     end
   end
   return self.rechargeGiftGoods
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.GetGoodBuyId = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  for index,good in ipairs(self._goods) do
+function GiftPackShopData:GetGoodBuyId(id)
+  for index, good in ipairs(self._goods) do
     if good:GetId() == id then
       return good
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopData.GetNew = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for index,good in ipairs(self._goods) do
+function GiftPackShopData:GetNew()
+  for index, good in ipairs(self._goods) do
     if good:GetNew() then
       return true
     end
@@ -335,10 +284,8 @@ end
 
 _class("ShopPriceItem", Object)
 ShopPriceItem = ShopPriceItem
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
 
-ShopPriceItem.Constructor = function(self, id)
-  -- function num : 0_12
+function ShopPriceItem:Constructor(id)
   self._priceIcon = ""
   self._priceItemId = 0
   self._priceRaw = 1
@@ -347,104 +294,68 @@ ShopPriceItem.Constructor = function(self, id)
   self._priceWithCurrencySymbol = ""
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.GetPriceIcon = function(self)
-  -- function num : 0_13
+function ShopPriceItem:GetPriceIcon()
   return self._priceIcon
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.SetPriceIcon = function(self, priceIcon)
-  -- function num : 0_14
+function ShopPriceItem:SetPriceIcon(priceIcon)
   self._priceIcon = priceIcon
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.GetPriceItemId = function(self)
-  -- function num : 0_15
+function ShopPriceItem:GetPriceItemId()
   return self._priceItemId
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.SetPriceItemId = function(self, priceItemId)
-  -- function num : 0_16
+function ShopPriceItem:SetPriceItemId(priceItemId)
   self._priceItemId = priceItemId
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.GetPrice = function(self)
-  -- function num : 0_17
+function ShopPriceItem:GetPrice()
   return self._price
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.GetPriceRaw = function(self)
-  -- function num : 0_18
+function ShopPriceItem:GetPriceRaw()
   return self._priceRaw
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.GetDiscount = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  do
-    if self._discount > 0 then
-      local str = (StringTable.Get)("str_pay_discount_percent", self._discount)
-      return self._discount, str
-    end
-    return nil, nil
+function ShopPriceItem:GetDiscount()
+  if self._discount > 0 then
+    local str = StringTable.Get("str_pay_discount_percent", self._discount)
+    return self._discount, str
   end
+  return nil, nil
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.GetDiscountEx = function(self, onlyNumber)
-  -- function num : 0_20 , upvalues : _ENV
+function ShopPriceItem:GetDiscountEx(onlyNumber)
   if self._discount > 0 then
     local discount = self._discount
-    local i, f = (math.modf)(discount)
+    local i, f = math.modf(discount)
     if f <= 0 then
       discount = i
     end
     if onlyNumber then
       return discount
     end
-    local str = (StringTable.Get)("str_pay_discount_percent", discount)
+    local str = StringTable.Get("str_pay_discount_percent", discount)
     return self._discount, str
   end
-  do
-    return nil, nil
-  end
+  return nil, nil
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.GetPriceWithCurrencySymbol = function(self)
-  -- function num : 0_21
+function ShopPriceItem:GetPriceWithCurrencySymbol()
   return self._priceWithCurrencySymbol
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopPriceItem.SetPriceWithCurrencySymbol = function(self, priceWithCurrencySymbol)
-  -- function num : 0_22 , upvalues : _ENV
-  priceWithCurrencySymbol = (RechargeShopItem.RemoveDot00)(priceWithCurrencySymbol)
+function ShopPriceItem:SetPriceWithCurrencySymbol(priceWithCurrencySymbol)
+  priceWithCurrencySymbol = RechargeShopItem.RemoveDot00(priceWithCurrencySymbol)
   self._priceWithCurrencySymbol = priceWithCurrencySymbol
 end
 
 _class("GiftPackShopItem", ShopPriceItem)
 GiftPackShopItem = GiftPackShopItem
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
 
-GiftPackShopItem.Constructor = function(self, id)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GiftPackShopItem.super).Constructor)(self, id)
+function GiftPackShopItem:Constructor(id)
+  GiftPackShopItem.super.Constructor(self, id)
   self._currencyGoodsType = MidasCurrencyGoodsType.MIDAS_CURRENCY_GOODS_TYPE_GIFT_PACK
   self._id = id
   self._type = GiftPackType.Item
@@ -467,581 +378,386 @@ GiftPackShopItem.Constructor = function(self, id)
   self._new = false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetCurrencyGoodsType = function(self)
-  -- function num : 0_24
+function GiftPackShopItem:GetCurrencyGoodsType()
   return self._currencyGoodsType
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetId = function(self)
-  -- function num : 0_25
+function GiftPackShopItem:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetType = function(self)
-  -- function num : 0_26
+function GiftPackShopItem:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetType = function(self, ptype)
-  -- function num : 0_27
+function GiftPackShopItem:SetType(ptype)
   self._type = ptype
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetMidasId = function(self)
-  -- function num : 0_28
+function GiftPackShopItem:GetMidasId()
   return self._midasId
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetMidasId = function(self, midasId)
-  -- function num : 0_29 , upvalues : _ENV
+function GiftPackShopItem:SetMidasId(midasId)
   self._midasId = midasId
-  ;
-  (Log.debug)("midasId : ", self._midasId)
+  Log.debug("midasId : ", self._midasId)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetName = function(self)
-  -- function num : 0_30
+function GiftPackShopItem:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetName = function(self, name)
-  -- function num : 0_31
+function GiftPackShopItem:SetName(name)
   self._name = name
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetRefreshTime = function(self)
-  -- function num : 0_32
+function GiftPackShopItem:GetRefreshTime()
   return self._refreshTime
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetRefreshTime = function(self, refreshTime)
-  -- function num : 0_33
+function GiftPackShopItem:SetRefreshTime(refreshTime)
   self._refreshTime = refreshTime
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetEndTime = function(self)
-  -- function num : 0_34
+function GiftPackShopItem:GetEndTime()
   return self._endTime
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetEndTime = function(self, endTime)
-  -- function num : 0_35
+function GiftPackShopItem:SetEndTime(endTime)
   self._endTime = endTime
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.IsMonthCard = function(self)
-  -- function num : 0_36
+function GiftPackShopItem:IsMonthCard()
   return self._isMonthCard
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetPriceWithCurrencySymbolEx = function(self, symbolSize)
-  -- function num : 0_37
+function GiftPackShopItem:GetPriceWithCurrencySymbolEx(symbolSize)
   return self:GetPriceWithSymbolSize(self._priceWithCurrencySymbol, symbolSize)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetPriceWithSymbolSize = function(self, currencySymbol, symbolSize)
-  -- function num : 0_38 , upvalues : _ENV
-  if (string.isnullorempty)(currencySymbol) then
+function GiftPackShopItem:GetPriceWithSymbolSize(currencySymbol, symbolSize)
+  if string.isnullorempty(currencySymbol) then
     return ""
   end
-  local priceSymbol = nil
-  local len = (string.len)(currencySymbol)
-  local n0 = (string.byte)("0")
-  local n9 = (string.byte)("9")
-  local npt = (string.byte)(".")
-  local firstByte = (string.byte)(currencySymbol, 1)
-  if n0 <= firstByte and firstByte <= n9 then
-    local firstSymbolID = (string.len)(currencySymbol) + 1
+  local priceSymbol
+  local len = string.len(currencySymbol)
+  local n0 = string.byte("0")
+  local n9 = string.byte("9")
+  local npt = string.byte(".")
+  local firstByte = string.byte(currencySymbol, 1)
+  if n0 <= firstByte and n9 >= firstByte then
+    local firstSymbolID = string.len(currencySymbol) + 1
     for i = 1, len do
-      local byte = (string.byte)(currencySymbol, i)
-      if (byte == npt and byte < n0) or n9 < byte then
+      local byte = string.byte(currencySymbol, i)
+      if byte == npt then
+      elseif n0 > byte or n9 < byte then
         firstSymbolID = i
         break
       end
     end
-    do
-      local subNumber = (string.sub)(currencySymbol, 1, firstSymbolID - 1)
-      local subSymbol = (string.sub)(currencySymbol, firstSymbolID)
-      do
-        local format = "%s<size=%d>%s</size>"
-        priceSymbol = (string.format)(format, subNumber, symbolSize, subSymbol)
-        local firstNumID = (string.len)(currencySymbol) + 1
-        for i = 1, len do
-          local byte = (string.byte)(currencySymbol, i)
-          if n0 <= byte and byte <= n9 then
-            firstNumID = i
-            break
-          end
-        end
-        do
-          local subSymbol = (string.sub)(currencySymbol, 1, firstNumID - 1)
-          local subNumber = (string.sub)(currencySymbol, firstNumID)
-          do
-            local format = "<size=%d>%s</size>%s"
-            priceSymbol = (string.format)(format, symbolSize, subSymbol, subNumber)
-            return priceSymbol
-          end
-        end
+    local subNumber = string.sub(currencySymbol, 1, firstSymbolID - 1)
+    local subSymbol = string.sub(currencySymbol, firstSymbolID)
+    local format = "%s<size=%d>%s</size>"
+    priceSymbol = string.format(format, subNumber, symbolSize, subSymbol)
+  else
+    local firstNumID = string.len(currencySymbol) + 1
+    for i = 1, len do
+      local byte = string.byte(currencySymbol, i)
+      if n0 <= byte and n9 >= byte then
+        firstNumID = i
+        break
       end
     end
+    local subSymbol = string.sub(currencySymbol, 1, firstNumID - 1)
+    local subNumber = string.sub(currencySymbol, firstNumID)
+    local format = "<size=%d>%s</size>%s"
+    priceSymbol = string.format(format, symbolSize, subSymbol, subNumber)
   end
+  return priceSymbol
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetMonthCardCycleTypeStr = function(self, daySize)
-  -- function num : 0_39 , upvalues : _ENV
+function GiftPackShopItem:GetMonthCardCycleTypeStr(daySize)
   if self:IsMonthCard() then
     local rt = self:GetRefreshTime()
     if rt <= 0 then
-      return (StringTable.Get)("str_pay_not_buy_yet")
+      return StringTable.Get("str_pay_not_buy_yet")
     else
-      local d, h, m, s = (UICommonHelper.S2DHMS)(rt)
-      local leftDays = (math.ceil)(d)
-      leftDays = (string.format)("<size=%d>%d</size>", daySize, leftDays)
-      return (StringTable.Get)("str_shop_buy_left_day", leftDays)
+      local d, h, m, s = UICommonHelper.S2DHMS(rt)
+      local leftDays = math.ceil(d)
+      leftDays = string.format("<size=%d>%d</size>", daySize, leftDays)
+      return StringTable.Get("str_shop_buy_left_day", leftDays)
     end
   else
-    do
-      ;
-      (Log.error)("err: GiftPackShopItem:GetMonthCardCycleTypeStr is not mathCard")
-    end
+    Log.error("err: GiftPackShopItem:GetMonthCardCycleTypeStr is not mathCard")
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetIsMonthCard = function(self, isMonthCard)
-  -- function num : 0_40
+function GiftPackShopItem:SetIsMonthCard(isMonthCard)
   self._isMonthCard = isMonthCard
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.IsBattlePassGift = function(self)
-  -- function num : 0_41
+function GiftPackShopItem:IsBattlePassGift()
   return self._isBattlePassGift
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetBattlePassGift = function(self, isBattlePassGift)
-  -- function num : 0_42
+function GiftPackShopItem:SetBattlePassGift(isBattlePassGift)
   self._isBattlePassGift = isBattlePassGift
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.IsWeekCard = function(self)
-  -- function num : 0_43
+function GiftPackShopItem:IsWeekCard()
   return self.isWeekCard
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.IsLevelGift = function(self)
-  -- function num : 0_44
+function GiftPackShopItem:IsLevelGift()
   return self._isLevelGift
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetLevelGift = function(self, isLevelGift)
-  -- function num : 0_45
+function GiftPackShopItem:SetLevelGift(isLevelGift)
   self._isLevelGift = isLevelGift
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.IsLevelGiftShow = function(self)
-  -- function num : 0_46
+function GiftPackShopItem:IsLevelGiftShow()
   return self._isLevelGiftShow
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetLevelGiftShow = function(self, isLevelGiftShow)
-  -- function num : 0_47
+function GiftPackShopItem:SetLevelGiftShow(isLevelGiftShow)
   self._isLevelGiftShow = isLevelGiftShow
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.IsLevelGiftLock = function(self)
-  -- function num : 0_48
+function GiftPackShopItem:IsLevelGiftLock()
   return self._isLevelGiftLock
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetLevelGiftLock = function(self, isLevelGiftLock)
-  -- function num : 0_49
+function GiftPackShopItem:SetLevelGiftLock(isLevelGiftLock)
   self._isLevelGiftLock = isLevelGiftLock
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetLevelGiftLockLv = function(self, lv)
-  -- function num : 0_50
+function GiftPackShopItem:SetLevelGiftLockLv(lv)
   self._isLevelGiftLockLv = lv
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetLevelGiftLockLv = function(self)
-  -- function num : 0_51
+function GiftPackShopItem:GetLevelGiftLockLv()
   return self._isLevelGiftLockLv
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetLevelGiftRed = function(self, red)
-  -- function num : 0_52
+function GiftPackShopItem:SetLevelGiftRed(red)
   self._isLevelGiftRed = red
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.IsLevelGiftRed = function(self)
-  -- function num : 0_53
+function GiftPackShopItem:IsLevelGiftRed()
   return self._isLevelGiftRed
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetCycleType = function(self)
-  -- function num : 0_54
+function GiftPackShopItem:GetCycleType()
   return self._cycleType
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetCycleType = function(self, refreshMethod)
-  -- function num : 0_55 , upvalues : _ENV
+function GiftPackShopItem:SetCycleType(refreshMethod)
   if refreshMethod == 1 then
     self._cycleType = GiftPackCycleType.Weekly
+  elseif refreshMethod == 2 then
+    self._cycleType = GiftPackCycleType.Monthly
+  elseif refreshMethod == 3 then
+    self._cycleType = GiftPackCycleType.Cycle
   else
-    if refreshMethod == 2 then
-      self._cycleType = GiftPackCycleType.Monthly
-    else
-      if refreshMethod == 3 then
-        self._cycleType = GiftPackCycleType.Cycle
-      else
-        self._cycleType = GiftPackCycleType.Once
-      end
-    end
+    self._cycleType = GiftPackCycleType.Once
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetCycleDayCount = function(self)
-  -- function num : 0_56
+function GiftPackShopItem:GetCycleDayCount()
   return self._cycleDayCount
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetCycleDayCount = function(self, cycleDayCount)
-  -- function num : 0_57
+function GiftPackShopItem:SetCycleDayCount(cycleDayCount)
   self._cycleDayCount = cycleDayCount
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetMonthCardMaxDayNum = function()
-  -- function num : 0_58 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_shop_global)[1]
-  do
-    if cfgv then
-      local day = cfgv.MonthCardMaxDayNum
-      return day
-    end
-    return 0
+function GiftPackShopItem.GetMonthCardMaxDayNum()
+  local cfgv = Cfg.cfg_shop_global[1]
+  if cfgv then
+    local day = cfgv.MonthCardMaxDayNum
+    return day
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetMonthCycleDay = function()
-  -- function num : 0_59 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_shop_global)[1]
-  do
-    if cfgv then
-      local day = cfgv.MonthCycleDay
-      return day
-    end
-    return 0
+function GiftPackShopItem.GetMonthCycleDay()
+  local cfgv = Cfg.cfg_shop_global[1]
+  if cfgv then
+    local day = cfgv.MonthCycleDay
+    return day
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.CheckDayCount = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function GiftPackShopItem:CheckDayCount()
   local isMonthCard = self:IsMonthCard()
   if isMonthCard then
-    local d, h, m, s = (UICommonHelper.S2DHMS)(self:GetRefreshTime())
-    local dayCount = (math.ceil)(d)
-    local monthCycleDay = (GiftPackShopItem.GetMonthCycleDay)()
-    local monthCardMaxDayNum = (GiftPackShopItem.GetMonthCardMaxDayNum)()
+    local d, h, m, s = UICommonHelper.S2DHMS(self:GetRefreshTime())
+    local dayCount = math.ceil(d)
+    local monthCycleDay = GiftPackShopItem.GetMonthCycleDay()
+    local monthCardMaxDayNum = GiftPackShopItem.GetMonthCardMaxDayNum()
     if monthCardMaxDayNum < dayCount + monthCycleDay then
       if self._type == GiftPackType.Currency then
-        ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "month_card_day_count_limit_reached")
+        GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "month_card_day_count_limit_reached")
       end
-      ;
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_month_card_max_day_count_cant_over_limit", (GiftPackShopItem.GetMonthCardMaxDayNum)()))
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_month_card_max_day_count_cant_over_limit", GiftPackShopItem.GetMonthCardMaxDayNum()))
       return false
     end
   else
-    do
-      local nowTime = (UICommonHelper.GetNowTimestamp)()
-      do
-        local endTime = self:GetEndTime()
-        if endTime < nowTime then
-          if self._type == GiftPackType.Currency then
-            ((GameGlobal.GetUIModule)(ShopModule)):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "gift_invalid")
-          end
-          ;
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_pay_gift_invalid"))
-          return false
-        end
-        return true
+    local nowTime = UICommonHelper.GetNowTimestamp()
+    local endTime = self:GetEndTime()
+    if nowTime > endTime then
+      if self._type == GiftPackType.Currency then
+        GameGlobal.GetUIModule(ShopModule):ReportPayStep(PayStep.ClickPurchaseButton, false, -1, "gift_invalid")
       end
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_pay_gift_invalid"))
+      return false
     end
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetCycleTypeStr = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function GiftPackShopItem:GetCycleTypeStr()
   if self:IsMonthCard() or self:IsWeekCard() then
     local rt = self:GetRefreshTime()
     if rt <= 0 then
-      return (StringTable.Get)("str_pay_not_buy_yet")
+      return StringTable.Get("str_pay_not_buy_yet")
     else
-      local d, h, m, s = (UICommonHelper.S2DHMS)(rt)
-      local leftDays = (math.ceil)(d)
-      return (StringTable.Get)("str_pay_left_collect_day", leftDays)
+      local d, h, m, s = UICommonHelper.S2DHMS(rt)
+      local leftDays = math.ceil(d)
+      return StringTable.Get("str_pay_left_collect_day", leftDays)
     end
   else
-    do
-      local soldOut = self:HasSoldOut()
-      if soldOut then
-        return 
-      end
-      local endTime = self:GetEndTime()
-      local mShop = (GameGlobal.GetModule)(ShopModule)
-      local notShowLeftTime = (mShop:GetClientShop()):GetNotShowLeftTime()
-      if notShowLeftTime < endTime then
-        return 
-      end
-      local leftSeconds = (UICommonHelper.CalcLeftSeconds)(endTime)
-      if leftSeconds <= 0 then
-        return (StringTable.Get)("str_pay_expired")
-      end
-      local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-      if d >= 1 then
-        return (StringTable.Get)("str_pay_left_day", (math.floor)(d))
-      else
-        if h >= 1 then
-          return (StringTable.Get)("str_pay_left_hour", (math.floor)(h))
-        else
-          if m >= 1 then
-            return (StringTable.Get)("str_pay_left_minute", (math.floor)(m))
-          else
-            return (StringTable.Get)("str_pay_left_minute", "<1")
-          end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetWeekShowStr = function(self)
-  -- function num : 0_62 , upvalues : _ENV
-  if self:IsWeekCard() then
-    local rt = self:GetRefreshTime()
-    if rt > 0 then
-      return 
+    local soldOut = self:HasSoldOut()
+    if soldOut then
+      return
     end
     local endTime = self:GetEndTime()
-    local mShop = (GameGlobal.GetModule)(ShopModule)
-    local notShowLeftTime = (mShop:GetClientShop()):GetNotShowLeftTime()
-    if notShowLeftTime < endTime then
-      return 
+    local mShop = GameGlobal.GetModule(ShopModule)
+    local notShowLeftTime = mShop:GetClientShop():GetNotShowLeftTime()
+    if endTime > notShowLeftTime then
+      return
     end
-    local leftSeconds = (UICommonHelper.CalcLeftSeconds)(endTime)
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(endTime)
     if leftSeconds <= 0 then
-      return (StringTable.Get)("str_pay_expired")
+      return StringTable.Get("str_pay_expired")
     end
-    local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-    if d >= 1 then
-      return (StringTable.Get)("str_pay_left_day", (math.floor)(d))
+    local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+    if 1 <= d then
+      return StringTable.Get("str_pay_left_day", math.floor(d))
+    elseif 1 <= h then
+      return StringTable.Get("str_pay_left_hour", math.floor(h))
+    elseif 1 <= m then
+      return StringTable.Get("str_pay_left_minute", math.floor(m))
     else
-      if h >= 1 then
-        return (StringTable.Get)("str_pay_left_hour", (math.floor)(h))
-      else
-        if m >= 1 then
-          return (StringTable.Get)("str_pay_left_minute", (math.floor)(m))
-        else
-          return (StringTable.Get)("str_pay_left_minute", "<1")
-        end
-      end
+      return StringTable.Get("str_pay_left_minute", "<1")
     end
   end
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
+function GiftPackShopItem:GetWeekShowStr()
+  if self:IsWeekCard() then
+    local rt = self:GetRefreshTime()
+    if 0 < rt then
+      return
+    end
+    local endTime = self:GetEndTime()
+    local mShop = GameGlobal.GetModule(ShopModule)
+    local notShowLeftTime = mShop:GetClientShop():GetNotShowLeftTime()
+    if endTime > notShowLeftTime then
+      return
+    end
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(endTime)
+    if leftSeconds <= 0 then
+      return StringTable.Get("str_pay_expired")
+    end
+    local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+    if 1 <= d then
+      return StringTable.Get("str_pay_left_day", math.floor(d))
+    elseif 1 <= h then
+      return StringTable.Get("str_pay_left_hour", math.floor(h))
+    elseif 1 <= m then
+      return StringTable.Get("str_pay_left_minute", math.floor(m))
+    else
+      return StringTable.Get("str_pay_left_minute", "<1")
+    end
+  end
+end
 
-GiftPackShopItem.GetRefreshTimeStr = function(self)
-  -- function num : 0_63 , upvalues : _ENV
+function GiftPackShopItem:GetRefreshTimeStr()
   if self:IsMonthCard() then
-    return 
+    return
   end
   local cycleType = self:GetCycleType()
   if cycleType == GiftPackCycleType.Once then
-    return 
+    return
   end
   local refreshTime = self:GetRefreshTime()
-  local leftSeconds = (UICommonHelper.CalcLeftSeconds)(refreshTime)
+  local leftSeconds = UICommonHelper.CalcLeftSeconds(refreshTime)
   if leftSeconds <= 0 then
-    return 
+    return
   end
-  local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-  if d >= 1 then
-    return (StringTable.Get)("str_pay_purchase_refresh_n_day", (math.floor)(d))
+  local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+  if 1 <= d then
+    return StringTable.Get("str_pay_purchase_refresh_n_day", math.floor(d))
+  elseif 1 <= h then
+    return StringTable.Get("str_pay_purchase_refresh_n_hour", math.floor(h))
+  elseif 1 <= m then
+    return StringTable.Get("str_pay_purchase_refresh_n_minute", math.floor(m))
   else
-    if h >= 1 then
-      return (StringTable.Get)("str_pay_purchase_refresh_n_hour", (math.floor)(h))
-    else
-      if m >= 1 then
-        return (StringTable.Get)("str_pay_purchase_refresh_n_minute", (math.floor)(m))
-      else
-        return (StringTable.Get)("str_pay_purchase_refresh_n_minute", "<1")
-      end
-    end
+    return StringTable.Get("str_pay_purchase_refresh_n_minute", "<1")
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetPrice = function(self)
-  -- function num : 0_64
+function GiftPackShopItem:GetPrice()
   return self._price
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetPrice = function(self, price)
-  -- function num : 0_65
+function GiftPackShopItem:SetPrice(price)
   self._price = price
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetIcon = function(self)
-  -- function num : 0_66
+function GiftPackShopItem:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetIcon = function(self, icon)
-  -- function num : 0_67
+function GiftPackShopItem:SetIcon(icon)
   self._icon = icon
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetIconDetail = function(self)
-  -- function num : 0_68
+function GiftPackShopItem:GetIconDetail()
   return self._iconDetail
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetIconDetail = function(self, iconDetail)
-  -- function num : 0_69
+function GiftPackShopItem:SetIconDetail(iconDetail)
   self._iconDetail = iconDetail
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetBuyCount = function(self)
-  -- function num : 0_70
+function GiftPackShopItem:GetBuyCount()
   return self._buyCount
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetBuyCount = function(self, buyCount)
-  -- function num : 0_71
+function GiftPackShopItem:SetBuyCount(buyCount)
   self._buyCount = buyCount
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetMaxBuyCount = function(self)
-  -- function num : 0_72
+function GiftPackShopItem:GetMaxBuyCount()
   return self._maxBuyCount
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetMaxBuyCount = function(self, maxBuyCount)
-  -- function num : 0_73
+function GiftPackShopItem:SetMaxBuyCount(maxBuyCount)
   self._maxBuyCount = maxBuyCount
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.HasSoldOut = function(self)
-  -- function num : 0_74
+function GiftPackShopItem:HasSoldOut()
   local buyCount = self:GetBuyCount()
   local maxBuyCount = self:GetMaxBuyCount()
-  local soldOut = maxBuyCount <= buyCount
-  do return soldOut end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local soldOut = buyCount >= maxBuyCount
+  return soldOut
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetCountStr = function(self)
-  -- function num : 0_75 , upvalues : _ENV
+function GiftPackShopItem:GetCountStr()
   if self:IsBattlePassGift() then
     return ""
   end
@@ -1054,93 +770,60 @@ GiftPackShopItem.GetCountStr = function(self)
   local cycleType = self:GetCycleType()
   local strLimit = ""
   if cycleType == GiftPackCycleType.Weekly then
-    strLimit = (StringTable.Get)("str_pay_purchase_limitation_weekly", n2m)
+    strLimit = StringTable.Get("str_pay_purchase_limitation_weekly", n2m)
+  elseif cycleType == GiftPackCycleType.Monthly then
+    strLimit = StringTable.Get("str_pay_purchase_limitation_monthly", n2m)
+  elseif cycleType == GiftPackCycleType.Cycle then
+    local dayCount = self:GetCycleDayCount()
+    strLimit = StringTable.Get("str_pay_purchase_limitation_n_day", dayCount, n2m)
   else
-    if cycleType == GiftPackCycleType.Monthly then
-      strLimit = (StringTable.Get)("str_pay_purchase_limitation_monthly", n2m)
-    else
-      if cycleType == GiftPackCycleType.Cycle then
-        local dayCount = self:GetCycleDayCount()
-        strLimit = (StringTable.Get)("str_pay_purchase_limitation_n_day", dayCount, n2m)
-      else
-        do
-          strLimit = (StringTable.Get)("str_pay_purchase_limitation_forever", n2m)
-          return strLimit
-        end
-      end
-    end
+    strLimit = StringTable.Get("str_pay_purchase_limitation_forever", n2m)
   end
+  return strLimit
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetAwardsImmediately = function(self)
-  -- function num : 0_76
+function GiftPackShopItem:GetAwardsImmediately()
   return self._awardsImmediately
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetAwardsImmediately = function(self, awardsImmediately)
-  -- function num : 0_77
+function GiftPackShopItem:SetAwardsImmediately(awardsImmediately)
   self._awardsImmediately = awardsImmediately
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetAwardsDaily = function(self)
-  -- function num : 0_78
+function GiftPackShopItem:GetAwardsDaily()
   return self._awardsDaily
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetAwardsDaily = function(self, awardsDaily)
-  -- function num : 0_79
+function GiftPackShopItem:SetAwardsDaily(awardsDaily)
   self._awardsDaily = awardsDaily
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetNew = function(self)
-  -- function num : 0_80
+function GiftPackShopItem:GetNew()
   return self._new
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetNew = function(self, new)
-  -- function num : 0_81
+function GiftPackShopItem:SetNew(new)
   self._new = new
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.IsSkin = function(self)
-  -- function num : 0_82 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_shop_giftmarket_goods)[self._id]
+function GiftPackShopItem:IsSkin()
+  local cfgv = Cfg.cfg_shop_giftmarket_goods[self._id]
   if cfgv then
     return cfgv.IsSkin
   end
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.IsShowInSkinsTab = function(self)
-  -- function num : 0_83 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_shop_giftmarket_goods)[self._id]
+function GiftPackShopItem:IsShowInSkinsTab()
+  local cfgv = Cfg.cfg_shop_giftmarket_goods[self._id]
   if cfgv then
     return cfgv.ShowInSkinsTab
   end
   return false
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetShopGiftTabID = function(self)
-  -- function num : 0_84 , upvalues : _ENV
+function GiftPackShopItem:GetShopGiftTabID()
   local goodsId = self:GetId()
-  local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[goodsId]
+  local cfgClient = Cfg.cfg_shop_giftmarket_goods[goodsId]
   local tabID = -1
   if cfgClient ~= nil then
     tabID = cfgClient.GiftPackTabID
@@ -1151,63 +834,52 @@ GiftPackShopItem.GetShopGiftTabID = function(self)
   return tabID
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.SetRechargeGift = function(self, isRechargeGift)
-  -- function num : 0_85
+function GiftPackShopItem:SetRechargeGift(isRechargeGift)
   self._isRechargeGift = isRechargeGift
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItem.GetRechargeGift = function(self)
-  -- function num : 0_86
+function GiftPackShopItem:GetRechargeGift()
   return self._isRechargeGift
 end
 
-GiftPackType = {Currency = 0, Yaojing = 1, Guangpo = 2, Item = 3, Free = 4}
-GiftPackCycleType = {Once = 0, Monthly = 1, Weekly = 2, Cycle = 3}
+GiftPackType = {
+  Currency = 0,
+  Yaojing = 1,
+  Guangpo = 2,
+  Item = 3,
+  Free = 4
+}
+GiftPackCycleType = {
+  Once = 0,
+  Monthly = 1,
+  Weekly = 2,
+  Cycle = 3
+}
 _class("GiftPackShopItemAward", Object)
 GiftPackShopItemAward = GiftPackShopItemAward
--- DECOMPILER ERROR at PC300: Confused about usage of register: R0 in 'UnsetPending'
 
-GiftPackShopItemAward.Constructor = function(self, templateId, count)
-  -- function num : 0_87 , upvalues : _ENV
+function GiftPackShopItemAward:Constructor(templateId, count)
   self._templateId = templateId
   self._count = count
-  local cfg = (Cfg.cfg_item)[self._templateId]
+  local cfg = Cfg.cfg_item[self._templateId]
   if cfg then
-    self._name = (StringTable.Get)(cfg.Name)
+    self._name = StringTable.Get(cfg.Name)
     self._icon = cfg.Icon
   end
 end
 
--- DECOMPILER ERROR at PC303: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItemAward.GetTemplateId = function(self)
-  -- function num : 0_88
+function GiftPackShopItemAward:GetTemplateId()
   return self._templateId
 end
 
--- DECOMPILER ERROR at PC306: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItemAward.GetIcon = function(self)
-  -- function num : 0_89
+function GiftPackShopItemAward:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC309: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItemAward.GetName = function(self)
-  -- function num : 0_90
+function GiftPackShopItemAward:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC312: Confused about usage of register: R0 in 'UnsetPending'
-
-GiftPackShopItemAward.GetCount = function(self)
-  -- function num : 0_91
+function GiftPackShopItemAward:GetCount()
   return self._count
 end
-
-

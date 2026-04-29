@@ -1,13 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/component/cfg_activity_draw_shop_client.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {DrawOnceText = 1, DrawMultiText = 2, HelpInfo = 3, CurrencyId = 4}
+local key = {
+  DrawOnceText = 1,
+  DrawMultiText = 2,
+  HelpInfo = 3,
+  CurrencyId = 4
+}
 local config = {
-[1002] = {"str_sakura_draw_shop_get_one", "str_sakura_draw_shop_get_multi", "str_sakura_draw_shop_intro", 3500001}
-, 
-[1011] = {"str_n10_lottery_one", "str_n10_lottery_multi"}
+  [1002] = {
+    "str_sakura_draw_shop_get_one",
+    "str_sakura_draw_shop_get_multi",
+    "str_sakura_draw_shop_intro",
+    3500001
+  },
+  [1011] = {
+    "str_n10_lottery_one",
+    "str_n10_lottery_multi"
+  }
 }
 return config, "CampaignID", key
-

@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_assistant_new_pet_skin_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseAssistantNewPetSkinCard", UICustomWidget)
 UIChooseAssistantNewPetSkinCard = UIChooseAssistantNewPetSkinCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseAssistantNewPetSkinCard.Constructor = function(self)
-  -- function num : 0_0
+function UIChooseAssistantNewPetSkinCard:Constructor()
   self._checkIsCurSkinCallBack = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinCard.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChooseAssistantNewPetSkinCard:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.ChangeAssistantNewPetSkinCard, self.SelectItem)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinCard.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChooseAssistantNewPetSkinCard:InitWidget()
   self._cardAreaGo = self:GetGameObject("CardArea")
   self.bg = self:GetUIComponent("Image", "BottomBg")
   self._bgGo = self:GetGameObject("BottomBg")
@@ -34,122 +21,84 @@ UIChooseAssistantNewPetSkinCard.InitWidget = function(self)
   self._frameImgGo = self:GetGameObject("SelectFrame")
   self._funcLayerGo = self:GetGameObject("FuncLayer")
   self._grayCoverGo = self:GetGameObject("GrayCoverImg")
-  ;
-  (self._grayCoverGo):SetActive(false)
+  self._grayCoverGo:SetActive(false)
   self._red = self:GetGameObject("red")
   self:AttachEvent(GameEventType.OnRemoveAsCardNew, self.RemoveAsNew)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinCard.RemoveAsNew = function(self, asid)
-  -- function num : 0_3
+function UIChooseAssistantNewPetSkinCard:RemoveAsNew(asid)
   if asid == self._asid then
-    (self._red):SetActive(false)
+    self._red:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinCard.SetCheckIsCurSkinCallBack = function(self, callBack)
-  -- function num : 0_4
+function UIChooseAssistantNewPetSkinCard:SetCheckIsCurSkinCallBack(callBack)
   self._checkIsCurSkinCallBack = callBack
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinCard.SetData = function(self, skinData, idx, callbcak)
-  -- function num : 0_5 , upvalues : _ENV
-  local skinCfg = (MatchPet.GetPetSkinCfg)(skinData.petid, skinData.grade, skinData.skinid, PetSkinEffectPath.HEAD_ICON_CHANGE_ASSIST)
+function UIChooseAssistantNewPetSkinCard:SetData(skinData, idx, callbcak)
+  local skinCfg = MatchPet.GetPetSkinCfg(skinData.petid, skinData.grade, skinData.skinid, PetSkinEffectPath.HEAD_ICON_CHANGE_ASSIST)
   self._idx = idx
   self._callback = callbcak
   self._asid = 0
   local resData = {}
   if skinData.asid and skinData.asid ~= 0 then
-    local cfg = (Cfg.cfg_only_assistant)[skinData.asid]
+    local cfg = Cfg.cfg_only_assistant[skinData.asid]
     resData.icon = cfg.Icon
     self._asid = skinData.asid
   else
-    do
-      resData.icon = skinCfg.AircraftBody
-      do
-        if self._curUseArea and self._checkIsCurSkinCallBack then
-          local isCur = (self._checkIsCurSkinCallBack)(skinData.petid, skinData.grade, skinData.skinid, skinData.asid)
-          ;
-          (self._curUseArea):SetActive(isCur)
-        end
-        if self._headImg and skinCfg then
-          (self._headImg):LoadImage(resData.icon)
-        end
-        self:SetRed()
-      end
-    end
+    resData.icon = skinCfg.AircraftBody
   end
+  if self._curUseArea and self._checkIsCurSkinCallBack then
+    local isCur = self._checkIsCurSkinCallBack(skinData.petid, skinData.grade, skinData.skinid, skinData.asid)
+    self._curUseArea:SetActive(isCur)
+  end
+  if self._headImg and skinCfg then
+    self._headImg:LoadImage(resData.icon)
+  end
+  self:SetRed()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinCard.SetRed = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChooseAssistantNewPetSkinCard:SetRed()
   self._redState = false
   if self._asid ~= 0 then
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
+    local itemModule = GameGlobal.GetModule(ItemModule)
     local itemDatas = itemModule:GetItemByTempId(self._asid)
-    if itemDatas and (table.count)(itemDatas) > 0 then
-      local item_data = nil
-      for key,value in pairs(itemDatas) do
+    if itemDatas and 0 < table.count(itemDatas) then
+      local item_data
+      for key, value in pairs(itemDatas) do
         item_data = value
-        do break end
+        break
       end
-      do
-        do
-          local isNew = item_data:IsNewOverlay()
-          self._redState = isNew
-          self._pstid = item_data:GetID()
-          ;
-          (self._red):SetActive(self._redState)
-        end
-      end
+      local isNew = item_data:IsNewOverlay()
+      self._redState = isNew
+      self._pstid = item_data:GetID()
     end
   end
+  self._red:SetActive(self._redState)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinCard.BottomBgOnClick = function(self, go)
-  -- function num : 0_7
+function UIChooseAssistantNewPetSkinCard:BottomBgOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinCard.SetIsOnTop = function(self, isOnTop)
-  -- function num : 0_8
+function UIChooseAssistantNewPetSkinCard:SetIsOnTop(isOnTop)
   if self._lastOnTop ~= isOnTop then
     self._lastOnTop = isOnTop
   else
-    return 
+    return
   end
   if isOnTop then
-    ((self._cardAreaGo).transform):DOLocalMoveX(-5.5, 0.2)
+    self._cardAreaGo.transform:DOLocalMoveX(-5.5, 0.2)
   else
-    ;
-    ((self._cardAreaGo).transform):DOLocalMoveX(0, 0.2)
+    self._cardAreaGo.transform:DOLocalMoveX(0, 0.2)
   end
-  ;
-  (self._funcLayerGo):SetActive(isOnTop)
+  self._funcLayerGo:SetActive(isOnTop)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinCard.SelectItem = function(self, id)
-  -- function num : 0_9
+function UIChooseAssistantNewPetSkinCard:SelectItem(id)
   local select = self._idx == id
-  ;
-  (self._frameImgGo):SetActive(select)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._frameImgGo:SetActive(select)
 end
-
-

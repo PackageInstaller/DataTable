@@ -1,55 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/screen_shot_set_texture_for_anton_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("ScreenShotSetTestureForAntonInstruction", BaseInstruction)
 ScreenShotSetTestureForAntonInstruction = ScreenShotSetTestureForAntonInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ScreenShotSetTestureForAntonInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function ScreenShotSetTestureForAntonInstruction:Constructor(paramList)
   self._duration = tonumber(paramList.duration) or 3500
   self._effectID = tonumber(paramList.effectID)
   self._block = tonumber(paramList.block) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ScreenShotSetTestureForAntonInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function ScreenShotSetTestureForAntonInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local efx = effectService:CreateScreenEffPointEffect(self._effectID)
-  local obj = (efx:View()):GetGameObject()
+  local obj = efx:View():GetGameObject()
   obj:SetActive(false)
   obj:SetActive(true)
-  local csMeshRenderer = (obj.gameObject):GetComponentInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
+  local csMeshRenderer = obj.gameObject:GetComponentInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
   local cMainCamera = world:MainCamera()
   local csCamera = cMainCamera._sceneCamera
   self._csCamera = csCamera
   self._oldMask = csCamera.cullingMask
   self._oldclearFlags = csCamera.clearFlags
-  csCamera.clearFlags = (UnityEngine.CameraClearFlags).Depth
+  csCamera.clearFlags = UnityEngine.CameraClearFlags.Depth
   csCamera.cullingMask = 1048576
-  local casterEntityObj = (casterEntity:View()):GetGameObject()
-  ;
-  (GameObjectHelper.SetGameObjectLayer)(casterEntityObj, 20)
+  local casterEntityObj = casterEntity:View():GetGameObject()
+  GameObjectHelper.SetGameObjectLayer(casterEntityObj, 20)
   local renderTextureScene = self:OnGetRenderTexture()
-  ;
-  (GameObjectHelper.SetGameObjectLayer)(casterEntityObj, 0)
+  GameObjectHelper.SetGameObjectLayer(casterEntityObj, 0)
   YIELD(TT)
   csCamera.cullingMask = 2097152
   local renderBoardEntity = world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
-  local brillantLineObj = (renderBoardCmpt:GetBrillantGridObj())
-  local renderTextureWangge = nil
+  local brillantLineObj = renderBoardCmpt:GetBrillantGridObj()
+  local renderTextureWangge
   if brillantLineObj ~= nil then
-    (GameObjectHelper.SetGameObjectLayer)(brillantLineObj, 21)
+    GameObjectHelper.SetGameObjectLayer(brillantLineObj, 21)
     renderTextureWangge = self:OnGetRenderTexture()
-    ;
-    (GameObjectHelper.SetGameObjectLayer)(brillantLineObj, 0)
+    GameObjectHelper.SetGameObjectLayer(brillantLineObj, 0)
   else
     renderTextureWangge = self:OnGetRenderTexture()
   end
@@ -62,63 +49,35 @@ ScreenShotSetTestureForAntonInstruction.DoInstruction = function(self, TT, caste
     renderTextureScene:Destroy()
     renderTextureWangge:Destroy()
   else
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self, renderTextureScene, renderTextureWangge
-    YIELD(TT, self._duration)
-    renderTextureScene:Destroy()
-    renderTextureWangge:Destroy()
-  end
-)
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      YIELD(TT, self._duration)
+      renderTextureScene:Destroy()
+      renderTextureWangge:Destroy()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ScreenShotSetTestureForAntonInstruction.OnGetRenderTexture = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self._csCamera).gameObject):SetActive(true)
-  local renderTexture = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._csCamera).targetTexture = renderTexture
-  ;
-  (self._csCamera):Render()
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = renderTexture
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._csCamera).targetTexture = nil
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = nil
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._csCamera).cullingMask = self._oldMask
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._csCamera).clearFlags = self._oldclearFlags
-  ;
-  ((self._csCamera).gameObject):SetActive(false)
+function ScreenShotSetTestureForAntonInstruction:OnGetRenderTexture()
+  self._csCamera.gameObject:SetActive(true)
+  local renderTexture = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  self._csCamera.targetTexture = renderTexture
+  self._csCamera:Render()
+  UnityEngine.RenderTexture.active = renderTexture
+  self._csCamera.targetTexture = nil
+  UnityEngine.RenderTexture.active = nil
+  self._csCamera.cullingMask = self._oldMask
+  self._csCamera.clearFlags = self._oldclearFlags
+  self._csCamera.gameObject:SetActive(false)
   return renderTexture
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ScreenShotSetTestureForAntonInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ScreenShotSetTestureForAntonInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

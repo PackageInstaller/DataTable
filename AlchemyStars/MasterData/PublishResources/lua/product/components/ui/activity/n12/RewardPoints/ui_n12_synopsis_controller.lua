@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/RewardPoints/ui_n12_synopsis_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12SynopsisController", UIController)
 UIN12SynopsisController = UIN12SynopsisController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12SynopsisController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN12SynopsisController:OnShow(uiParams)
   self:_GetComponent()
   self:_SetValue(uiParams)
   self:_SetShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynopsisController._GetComponent = function(self)
-  -- function num : 0_1
+function UIN12SynopsisController:_GetComponent()
   self._picture = self:GetUIComponent("RawImageLoader", "_picture")
   self._pictureGO = self:GetUIComponent("RectTransform", "_picture")
   self._rewardState = self:GetGameObject("_rewardState")
@@ -29,50 +19,35 @@ UIN12SynopsisController._GetComponent = function(self)
   self._transition = self:GetUIComponent("ATransitionComponent", "_syn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynopsisController._SetValue = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN12SynopsisController:_SetValue(uiParams)
   self._story = uiParams[1]
   self._story_component = uiParams[2]
   self._callback = uiParams[3]
   self._photo = uiParams[4]
   self._idx = uiParams[5]
   self._callback1 = uiParams[6]
-  self._rewards = ((Cfg.cfg_campaign_story)[self._story]).RewardList
+  self._rewards = Cfg.cfg_campaign_story[self._story].RewardList
   self._isGetAward = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynopsisController._SetShow = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._transition):PlayEnterAnimation(true)
+function UIN12SynopsisController:_SetShow()
+  self._transition:PlayEnterAnimation(true)
   local reward = self:GetUIComponent("UISelectObjectPath", "_reward")
   reward:SpawnObjects("UIN12SynAwardItem", #self._rewards)
   self._reward = reward:GetAllSpawnList()
   local iteminfo = self:GetUIComponent("UISelectObjectPath", "_iteminfo")
   self._iteminfo = iteminfo:SpawnObject("UISelectInfo")
-  ;
-  (self._describetxt):SetText((StringTable.Get)((self._photo).Describe))
-  ;
-  (self._name):SetText((StringTable.Get)((self._photo).Name))
-  ;
-  (self._missingidx):SetText((string.format)("%02d", self._idx))
+  self._describetxt:SetText(StringTable.Get(self._photo.Describe))
+  self._name:SetText(StringTable.Get(self._photo.Name))
+  self._missingidx:SetText(string.format("%02d", self._idx))
   for i = 1, #self._rewards do
-    ((self._reward)[i]):SetData((self._rewards)[i], self:CheckStoryGotAwards(self._idx), function(matid, pos)
-    -- function num : 0_3_0 , upvalues : self
-    (self._iteminfo):SetData(matid, pos)
+    self._reward[i]:SetData(self._rewards[i], self:CheckStoryGotAwards(self._idx), function(matid, pos)
+      self._iteminfo:SetData(matid, pos)
+    end)
   end
-)
-  end
-  ;
-  (self._picture):LoadImage((self._photo).Icon)
-  local size = (self._photo).Size
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._pictureGO).sizeDelta = Vector2(size[1], size[2])
+  self._picture:LoadImage(self._photo.Icon)
+  local size = self._photo.Size
+  self._pictureGO.sizeDelta = Vector2(size[1], size[2])
   if self:CheckStoryGotAwards(self._idx) then
     self:_SetState(true)
   else
@@ -80,75 +55,50 @@ UIN12SynopsisController._SetShow = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynopsisController._SetState = function(self, isGet)
-  -- function num : 0_4
-  (self._rewardState):SetActive(isGet)
+function UIN12SynopsisController:_SetState(isGet)
+  self._rewardState:SetActive(isGet)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynopsisController.btnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._callback1)() then
-    return 
+function UIN12SynopsisController:btnOnClick(go)
+  if self._callback1() then
+    return
   end
   if not self._story then
-    (Log.error)("### [UIActivityPlotEnter] no story")
-    return 
+    Log.error("### [UIActivityPlotEnter] no story")
+    return
   end
   self:ShowDialog("UIStoryController", self._story, function()
-    -- function num : 0_5_0 , upvalues : self
     self:GetPlotAward()
-  end
-)
+  end)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynopsisController._closeOnClick = function(self, go)
-  -- function num : 0_6
+function UIN12SynopsisController:_closeOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynopsisController.GetPlotAward = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN12SynopsisController:GetPlotAward()
   if not self:CheckStoryGotAwards(self._idx) then
     self:Lock("UIN12SynopsisController:GetPlotAward")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnGetPlotAward, self)
+    GameGlobal.TaskManager():StartTask(self.OnGetPlotAward, self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynopsisController.OnGetPlotAward = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN12SynopsisController:OnGetPlotAward(TT)
   local request = AsyncRequestRes:New()
-  local rewards = (self._story_component):HandleStoryTake(TT, request, self._story)
+  local rewards = self._story_component:HandleStoryTake(TT, request, self._story)
   self:UnLock("UIN12SynopsisController:GetPlotAward")
   self.issucc = request:GetSucc()
   if self.issucc then
     self:ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_8_0 , upvalues : self
-    if self._callback then
-      (self._callback)()
-    end
-  end
-)
+      if self._callback then
+        self._callback()
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12SynopsisController.CheckStoryGotAwards = function(self, idx)
-  -- function num : 0_9 , upvalues : _ENV
-  local recv_list = (self._story_component):GetAlreadyReceivedStoryIdList()
-  return (table.icontains)(recv_list, self._story)
+function UIN12SynopsisController:CheckStoryGotAwards(idx)
+  local recv_list = self._story_component:GetAlreadyReceivedStoryIdList()
+  return table.icontains(recv_list, self._story)
 end
-
-

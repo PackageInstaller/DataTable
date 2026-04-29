@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_review_hiiro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignReviewHiiro", ICampaignComponentLocalProcessBase)
 CCampaignReviewHiiro = CCampaignReviewHiiro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignReviewHiiro.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignReviewHiiro:Constructor()
   self._storyComponent = nil
   self._storyComponentInfo = nil
   self._pointProgressComponent = nil
@@ -16,55 +9,37 @@ CCampaignReviewHiiro.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewHiiro.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignReviewHiiro:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_REVIEW_N2
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewHiiro.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignReviewHiiro:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewHiiro.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignReviewHiiro:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetPointProgressComponent()
   self:_GetStoryComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewHiiro._GetPointProgressComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._pointProgressComponent = (self._campaignObj):GetComponent(ECampaignReviewHiiroComponentID.ECAMPAIGN_REVIEW_HIIRO_POINT_PROGRESS)
+function CCampaignReviewHiiro:_GetPointProgressComponent()
+  self._pointProgressComponent = self._campaignObj:GetComponent(ECampaignReviewHiiroComponentID.ECAMPAIGN_REVIEW_HIIRO_POINT_PROGRESS)
   if not self._pointProgressComponent then
-    return 
+    return
   end
-  self._pointProgressComponentInfo = (self._pointProgressComponent):ComponentInfo()
+  self._pointProgressComponentInfo = self._pointProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewHiiro._GetStoryComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._storyComponent = (self._campaignObj):GetComponent(ECampaignReviewHiiroComponentID.ECAMPAIGN_REVIEW_HIIRO_STORY)
+function CCampaignReviewHiiro:_GetStoryComponent()
+  self._storyComponent = self._campaignObj:GetComponent(ECampaignReviewHiiroComponentID.ECAMPAIGN_REVIEW_HIIRO_STORY)
   if not self._storyComponent then
-    return 
+    return
   end
-  self._storyComponentInfo = (self._storyComponent):ComponentInfo()
+  self._storyComponentInfo = self._storyComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewHiiro.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignReviewHiiro:GetComponent(componentID)
   if ECampaignReviewHiiroComponentID.ECAMPAIGN_REVIEW_HIIRO_POINT_PROGRESS == componentID then
     return self._pointProgressComponent
   end
@@ -74,10 +49,7 @@ CCampaignReviewHiiro.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewHiiro.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignReviewHiiro:GetComponentInfo(componentID)
   if ECampaignReviewHiiroComponentID.ECAMPAIGN_REVIEW_HIIRO_POINT_PROGRESS == componentID then
     return self._pointProgressComponentInfo
   end
@@ -86,5 +58,3 @@ CCampaignReviewHiiro.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

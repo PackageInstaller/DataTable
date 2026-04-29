@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_delete_preview_effect_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayDeletePreviewEffectInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayDeletePreviewEffectInstruction = SkillPreviewPlayDeletePreviewEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayDeletePreviewEffectInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayDeletePreviewEffectInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayDeletePreviewEffectInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayDeletePreviewEffectInstruction:DoInstruction(TT, casterEntity, previewContext)
   local previewStrageEffectRecordComponent = casterEntity:PreviewStageEffectRecord()
   if previewStrageEffectRecordComponent then
     local entityIDs = previewStrageEffectRecordComponent:GetPreviewStageEffectEntityIDList()
     local world = casterEntity:GetOwnerWorld()
-    for _,id in ipairs(entityIDs) do
+    for _, id in ipairs(entityIDs) do
       local e = world:GetEntityByID(id)
       if e then
         world:DestroyEntity(e)
@@ -29,5 +19,3 @@ SkillPreviewPlayDeletePreviewEffectInstruction.DoInstruction = function(self, TT
     previewStrageEffectRecordComponent:ClearPreviewStageEffectEntityIDList()
   end
 end
-
-

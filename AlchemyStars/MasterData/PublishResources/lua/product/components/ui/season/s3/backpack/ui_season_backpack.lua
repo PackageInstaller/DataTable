@@ -1,44 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/backpack/ui_season_backpack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBackpack", UIController)
 UISeasonBackpack = UISeasonBackpack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBackpack.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonBackpack:Constructor()
   self._seasonModule = self:GetModule(SeasonModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1
+function UISeasonBackpack:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBackpack:OnShow(uiParams)
   self._eventPoint = uiParams[1]
   self._callBack = uiParams[2]
   self._cfgs = {}
   self._interval = 0
   self:InitWidget()
   self:OnValue()
-  local key = "UISeasonBackpack" .. ((GameGlobal.GetModule)(LoginModule)):GetRoleShowID()
-  ;
-  (LocalDB.SetInt)(key, 1)
+  local key = "UISeasonBackpack" .. GameGlobal.GetModule(LoginModule):GetRoleShowID()
+  LocalDB.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.OnUpdate = function(self, deltaTime)
-  -- function num : 0_3
+function UISeasonBackpack:OnUpdate(deltaTime)
   self._interval = self._interval + deltaTime
   if self._interval >= 1000 then
     self._interval = 0
@@ -46,108 +29,81 @@ UISeasonBackpack.OnUpdate = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.InitWidget = function(self)
-  -- function num : 0_4
+function UISeasonBackpack:InitWidget()
   self._backBtns = self:GetUIComponent("UISelectObjectPath", "BackBtns")
   self._lines = self:GetUIComponent("UISelectObjectPath", "Lines")
   self._nodes = self:GetUIComponent("UISelectObjectPath", "Nodes")
   self._remainTime = self:GetUIComponent("UILocalizationText", "RemainTime")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
-  self._animation = (self:GetGameObject()):GetComponent("Animation")
+  self._animation = self:GetGameObject():GetComponent("Animation")
   self._centerRect = self:GetUIComponent("RectTransform", "Center")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "BackBtns", "UISeasonTopBtn")
+function UISeasonBackpack:OnValue()
+  local obj = UIWidgetHelper.SpawnObject(self, "BackBtns", "UISeasonTopBtn")
   obj:SetData(function()
-    -- function num : 0_5_0 , upvalues : self
     self:Back()
-  end
-, function()
-    -- function num : 0_5_1 , upvalues : self
+  end, function()
     self:GoHome()
-  end
-)
+  end)
   self:_SetRemainTime()
   self:_CreateNodes()
   self:_MoveToFirstNode()
   self:Lock("uieff_UISeasonBackpack_in:OnValue")
   self:StartTask(function(TT)
-    -- function num : 0_5_2 , upvalues : self, _ENV
-    (self._animation):Play("uieff_UISeasonBackpack_in")
+    self._animation:Play("uieff_UISeasonBackpack_in")
     YIELD(TT, 300)
     self:PlayNodesAnimation()
     YIELD(TT, 500)
     self:UnLock("uieff_UISeasonBackpack_in:OnValue")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack._SetRemainTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local seasonObj = (self._seasonModule):GetCurSeasonObj()
+function UISeasonBackpack:_SetRemainTime()
+  local seasonObj = self._seasonModule:GetCurSeasonObj()
   if seasonObj and seasonObj._sample then
     local sample = seasonObj._sample
     local endTime = sample.end_time
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
     local remainTime = endTime - curTime
-    if remainTime > 0 then
-      local timeStr = "<color=#D2B443>" .. (UIActivityHelper.GetFormatTimerStr)(remainTime) .. "</color>"
-      ;
-      (self._remainTime):SetText((StringTable.Get)("str_season_debris_remain", timeStr))
+    if 0 < remainTime then
+      local timeStr = "<color=#D2B443>" .. UIActivityHelper.GetFormatTimerStr(remainTime) .. "</color>"
+      self._remainTime:SetText(StringTable.Get("str_season_debris_remain", timeStr))
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.Close = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonBackpackClose)
+function UISeasonBackpack:Close()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonBackpackClose)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack._CreateNodes = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._cfgs = (Cfg.cfg_season_debris_mission)({SeasonID = (self._seasonModule):GetCurSeasonID(), Type = 1})
+function UISeasonBackpack:_CreateNodes()
+  self._cfgs = Cfg.cfg_season_debris_mission({
+    SeasonID = self._seasonModule:GetCurSeasonID(),
+    Type = 1
+  })
   if self._cfgs then
-    (table.sort)(self._cfgs, function(a, b)
-    -- function num : 0_8_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    local count = (table.count)(self._cfgs)
-    ;
-    (self._nodes):SpawnObjects("UISeasonBackpackNode", count)
-    ;
-    (self._lines):SpawnObjects("UISeasonBackpackLine", count - 1)
-    self._nodeWidgets = (self._nodes):GetAllSpawnList()
-    self._lineWidgets = (self._lines):GetAllSpawnList()
+    table.sort(self._cfgs, function(a, b)
+      return a.ID < b.ID
+    end)
+    local count = table.count(self._cfgs)
+    self._nodes:SpawnObjects("UISeasonBackpackNode", count)
+    self._lines:SpawnObjects("UISeasonBackpackLine", count - 1)
+    self._nodeWidgets = self._nodes:GetAllSpawnList()
+    self._lineWidgets = self._lines:GetAllSpawnList()
     for i = 1, count do
-      ((self._nodeWidgets)[i]):SetData(i, (self._cfgs)[i])
-      if i < count then
-        ((self._lineWidgets)[i]):SetData(i)
+      self._nodeWidgets[i]:SetData(i, self._cfgs[i])
+      if count > i then
+        self._lineWidgets[i]:SetData(i)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack._GetFirstChallenge = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonBackpack:_GetFirstChallenge()
   local targetIndex = 1
-  for _,widget in pairs(self._nodeWidgets) do
+  for _, widget in pairs(self._nodeWidgets) do
     if widget:IsUnlock() and targetIndex < widget:Index() then
       targetIndex = widget:Index()
     end
@@ -155,84 +111,58 @@ UISeasonBackpack._GetFirstChallenge = function(self)
   return targetIndex
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack._MoveToFirstNode = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonBackpack:_MoveToFirstNode()
   local index = self:_GetFirstChallenge()
   local pos = index * 400 + 290
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  if ((self._centerRect).rect).width < pos then
-    (self._contentRect).anchoredPosition = Vector2(-(pos - ((self._centerRect).rect).width), 0)
+  if pos > self._centerRect.rect.width then
+    self._contentRect.anchoredPosition = Vector2(-(pos - self._centerRect.rect.width), 0)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.RefreshUI = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonBackpack:RefreshUI()
   if self._nodeWidgets then
-    for _,widget in pairs(self._nodeWidgets) do
+    for _, widget in pairs(self._nodeWidgets) do
       widget:Refresh()
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.PlayNodesAnimation = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonBackpack:PlayNodesAnimation()
   if self._nodeWidgets then
-    for _,widget in pairs(self._nodeWidgets) do
+    for _, widget in pairs(self._nodeWidgets) do
       widget:PlayAnimation()
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.GoHome = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonBackpack:GoHome()
   if self._callBack then
-    (self._callBack)(true)
+    self._callBack(true)
   end
-  ;
-  ((self._seasonModule).uiModule):ExitSeasonTo(UIStateType.UIMain)
+  self._seasonModule.uiModule:ExitSeasonTo(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.IsClose = function(self)
-  -- function num : 0_14
-  local seasonObj = (self._seasonModule):GetCurSeasonObj()
+function UISeasonBackpack:IsClose()
+  local seasonObj = self._seasonModule:GetCurSeasonObj()
   if seasonObj and seasonObj._sample then
     local sample = seasonObj._sample
     local endTime = sample.end_time
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
     local remainTime = endTime - curTime
     return remainTime <= 0
   end
-  do return true end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return true
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpack.Back = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UISeasonBackpack:Back()
   self:Lock("uieff_UISeasonBackpack_out")
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV
-    (self._animation):Play("uieff_UISeasonBackpack_out")
+    self._animation:Play("uieff_UISeasonBackpack_out")
     YIELD(TT, 267)
     if self._callBack then
-      (self._callBack)(true)
+      self._callBack(true)
     end
     self:Close()
     self:UnLock("uieff_UISeasonBackpack_out")
-  end
-)
+  end)
 end
-
-

@@ -1,28 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_ambient_panel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAmbientPanel", UIController)
 UIAmbientPanel = UIAmbientPanel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAmbientPanel.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.module_ = (GameGlobal.GetModule)(AircraftModule)
+function UIAmbientPanel:OnShow()
+  self.module_ = GameGlobal.GetModule(AircraftModule)
   self.bg_ = self:GetUIComponent("RectTransform", "canvasGroup")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.bg_).localScale = Vector3(1, 1, 1)
+  self.bg_.localScale = Vector3(1, 1, 1)
   local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
   self.blur_ = self:GetUIComponent("H3DUIBlurHelper", "Blur")
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.blur_).OwnerCamera = bgCanvas.worldCamera
-  ;
-  (self.blur_):RefreshBlurTexture()
+  self.blur_.OwnerCamera = bgCanvas.worldCamera
+  self.blur_:RefreshBlurTexture()
   self.qualityText_ = self:GetUIComponent("Text", "TitleText")
   self.slider_ = self:GetUIComponent("Slider", "Slider")
   self:SetSliderValue()
@@ -35,153 +21,100 @@ UIAmbientPanel.OnShow = function(self)
   self:_InitSrollView()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel.OnHide = function(self)
-  -- function num : 0_1
+function UIAmbientPanel:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel.NextOnClick = function(self, go)
-  -- function num : 0_2
+function UIAmbientPanel:NextOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel.SetOtherValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local _, percent = (self.module_):CalCentralPetWorkSkill()
+function UIAmbientPanel:SetOtherValue()
+  local _, percent = self.module_:CalCentralPetWorkSkill()
   local text = 100 * percent .. "%"
-  ;
-  (self.extraAddValue_):SetText(text)
-  local centralRoom = (self.module_):GetCentralRoom()
+  self.extraAddValue_:SetText(text)
+  local centralRoom = self.module_:GetCentralRoom()
   local centralLimit = centralRoom:GetAmbientLimit()
-  ;
-  (self.ambientTopValue_):SetText(tostring(centralLimit))
-  local centralLevel = (StringTable.Get)("str_aircraft_central_level", centralRoom:Level())
-  ;
-  (self.centralLevel_):SetText(centralLevel)
-  local curTotalAmbient = (self.module_):GetValidAmbient() .. "/" .. centralLimit
-  ;
-  (self.valueText_):SetText(tostring(curTotalAmbient))
+  self.ambientTopValue_:SetText(tostring(centralLimit))
+  local centralLevel = StringTable.Get("str_aircraft_central_level", centralRoom:Level())
+  self.centralLevel_:SetText(centralLevel)
+  local curTotalAmbient = self.module_:GetValidAmbient() .. "/" .. centralLimit
+  self.valueText_:SetText(tostring(curTotalAmbient))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel.SetSliderValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self.qualityCfg_ = (Cfg.cfg_aircraft_ambient_quality)({})
-  local curValue = (self.module_):GetValidAmbient()
-  local maxValue = (self.module_):GetCentralTotalAmbientLimit()
+function UIAmbientPanel:SetSliderValue()
+  self.qualityCfg_ = Cfg.cfg_aircraft_ambient_quality({})
+  local curValue = self.module_:GetValidAmbient()
+  local maxValue = self.module_:GetCentralTotalAmbientLimit()
   self.tipColor_ = self:GetUIComponent("Image", "TipColor")
   self.atlas_ = self:GetAsset("UIAircraftDecorate.spriteatlas", LoadType.SpriteAtlas)
   local qualityID = self:GetQualityByValue(curValue)
   if qualityID == 0 then
-    return 
+    return
   end
-  local spriteName = ((self.qualityCfg_)[qualityID]).PictureName
-  local tipSprite = (self.atlas_):GetSprite(spriteName)
-  local nameStrID = ((self.qualityCfg_)[qualityID]).Desc
-  local nameStr = (StringTable.Get)(nameStrID)
-  ;
-  (self.qualityText_):SetText(nameStr)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.tipColor_).sprite = tipSprite
+  local spriteName = self.qualityCfg_[qualityID].PictureName
+  local tipSprite = self.atlas_:GetSprite(spriteName)
+  local nameStrID = self.qualityCfg_[qualityID].Desc
+  local nameStr = StringTable.Get(nameStrID)
+  self.qualityText_:SetText(nameStr)
+  self.tipColor_.sprite = tipSprite
   local rulerValues = self:GetRulerValues()
   self.rulerValue1 = self:GetUIComponent("Text", "RulerValue1")
-  ;
-  (self.rulerValue1):SetText(rulerValues[1])
+  self.rulerValue1:SetText(rulerValues[1])
   self.rulerValue2 = self:GetUIComponent("Text", "RulerValue2")
-  ;
-  (self.rulerValue2):SetText(rulerValues[2])
+  self.rulerValue2:SetText(rulerValues[2])
   self.rulerValue3 = self:GetUIComponent("Text", "RulerValue3")
-  ;
-  (self.rulerValue3):SetText(rulerValues[3])
+  self.rulerValue3:SetText(rulerValues[3])
   self.rulerValue4 = self:GetUIComponent("Text", "RulerValue4")
-  ;
-  (self.rulerValue4):SetText(rulerValues[4])
+  self.rulerValue4:SetText(rulerValues[4])
   self.rulerValue5 = self:GetUIComponent("Text", "RulerValue5")
-  ;
-  (self.rulerValue5):SetText(rulerValues[5])
+  self.rulerValue5:SetText(rulerValues[5])
   self.rulerValue6 = self:GetUIComponent("Text", "RulerValue6")
-  ;
-  (self.rulerValue6):SetText(rulerValues[6])
+  self.rulerValue6:SetText(rulerValues[6])
   self.rulerValue7 = self:GetUIComponent("Text", "RulerValue7")
-  ;
-  (self.rulerValue7):SetText(rulerValues[7])
-  -- DECOMPILER ERROR at PC118: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.slider_).value = self:_GetSliderValue(curValue, rulerValues[7])
+  self.rulerValue7:SetText(rulerValues[7])
+  self.slider_.value = self:_GetSliderValue(curValue, rulerValues[7])
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel.GetQualityByValue = function(self, value)
-  -- function num : 0_5 , upvalues : _ENV
-  for id,vt in pairs(self.qualityCfg_) do
-    if value <= vt.MaxAmbient and vt.MinAmbient <= value then
+function UIAmbientPanel:GetQualityByValue(value)
+  for id, vt in pairs(self.qualityCfg_) do
+    if value <= vt.MaxAmbient and value >= vt.MinAmbient then
       return id
     end
   end
-  ;
-  (Log.exception)("current Ambient Value : ", value, "haven\'t config")
+  Log.exception("current Ambient Value : ", value, "haven't config")
   return 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel.GetRulerValues = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIAmbientPanel:GetRulerValues()
   local ret = {}
-  for id,vt in pairs(self.qualityCfg_) do
-    (table.insert)(ret, vt.MaxAmbient)
+  for id, vt in pairs(self.qualityCfg_) do
+    table.insert(ret, vt.MaxAmbient)
   end
-  ;
-  (table.sort)(ret)
+  table.sort(ret)
   return ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel._InitSrollView = function(self)
-  -- function num : 0_7
-  self.furnitures_ = (self.module_):CalAllFurnitureAmbientInfo()
-  ;
-  (self.scrollView_):InitListView(self:CalculateRowCount(), function(scrollView, index)
-    -- function num : 0_7_0 , upvalues : self
+function UIAmbientPanel:_InitSrollView()
+  self.furnitures_ = self.module_:CalAllFurnitureAmbientInfo()
+  self.scrollView_:InitListView(self:CalculateRowCount(), function(scrollView, index)
     return self:_InitSpritListInfo(scrollView, index)
-  end
-)
+  end)
   self._firstIn = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel.CalculateRowCount = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self.furnitureInfos_ = (self.module_):CalAllFurnitureAmbientInfo()
-  local furnitureCount = (table.count)(self.furnitureInfos_)
+function UIAmbientPanel:CalculateRowCount()
+  self.furnitureInfos_ = self.module_:CalAllFurnitureAmbientInfo()
+  local furnitureCount = table.count(self.furnitureInfos_)
   return furnitureCount / 2 + 1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel._GetScrollViewParam = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIAmbientPanel:_GetScrollViewParam()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 333
   return param
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel._InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UIAmbientPanel:_InitSpritListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -192,21 +125,18 @@ UIAmbientPanel._InitSpritListInfo = function(self, scrollView, index)
   for i = 1, 2 do
     local petItem = furnitureList[i]
     local itemIndex = index * 2 + i
-    if (table.count)(self.furnitureInfos_) < itemIndex then
-      (petItem:GetGameObject()):SetActive(false)
+    if itemIndex > table.count(self.furnitureInfos_) then
+      petItem:GetGameObject():SetActive(false)
     else
-      petItem:SetData((self.furnitureInfos_)[itemIndex])
+      petItem:SetData(self.furnitureInfos_[itemIndex])
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAmbientPanel._GetSliderValue = function(self, cur, max)
-  -- function num : 0_11 , upvalues : _ENV
+function UIAmbientPanel:_GetSliderValue(cur, max)
   if cur < 0 or max < cur then
-    (Log.exception)("风船氛围值异常:", cur, max)
+    Log.exception("风船氛围值异常:", cur, max)
     return 0
   end
   local ambientSpliter = 10000
@@ -219,5 +149,3 @@ UIAmbientPanel._GetSliderValue = function(self, cur, max)
     return (cur - ambientSpliter) / (max - ambientSpliter) * (1 - spliterValue) + spliterValue
   end
 end
-
-

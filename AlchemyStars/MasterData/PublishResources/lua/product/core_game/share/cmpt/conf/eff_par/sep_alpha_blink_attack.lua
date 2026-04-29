@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_alpha_blink_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectAlphaBlinkAttackParam", SkillEffectParamBase)
 SkillEffectAlphaBlinkAttackParam = SkillEffectAlphaBlinkAttackParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectAlphaBlinkAttackParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectAlphaBlinkAttackParam:Constructor(t)
   self._trapID = t.trapID
   self._backOffset = t.backOffset
   self._height = t.height
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectAlphaBlinkAttackParam:GetEffectType()
   return SkillEffectType.AlphaBlinkAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackParam.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectAlphaBlinkAttackParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackParam.GetBackOffset = function(self)
-  -- function num : 0_3
+function SkillEffectAlphaBlinkAttackParam:GetBackOffset()
   return self._backOffset
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAlphaBlinkAttackParam.GetTrapHeight = function(self)
-  -- function num : 0_4
+function SkillEffectAlphaBlinkAttackParam:GetTrapHeight()
   return self._height
 end
-
-

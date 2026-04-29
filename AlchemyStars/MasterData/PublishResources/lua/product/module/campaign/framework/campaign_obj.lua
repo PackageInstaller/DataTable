@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/framework/campaign_obj.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CampaignObj", Object)
 CampaignObj = CampaignObj
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignObj.Constructor = function(self, a_module)
-  -- function num : 0_0 , upvalues : _ENV
+function CampaignObj:Constructor(a_module)
   self.m_module = a_module
   self.m_server_time = 0
   self.m_sample_info = nil
@@ -17,29 +10,18 @@ CampaignObj.Constructor = function(self, a_module)
   self.m_special_type = CampaignSpecialType.CST_Common
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.SpecialType = function(self, type)
-  -- function num : 0_1
-  do return self.m_special_type == type end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function CampaignObj:SpecialType(type)
+  return self.m_special_type == type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.IsCommonCam = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  do return self.m_special_type == CampaignSpecialType.CST_Common end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function CampaignObj:IsCommonCam()
+  return self.m_special_type == CampaignSpecialType.CST_Common
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.IsReView = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local campaign_cfg = (Cfg.cfg_campaign)[(self.m_sample_info).id]
+function CampaignObj:IsReView()
+  local campaign_cfg = Cfg.cfg_campaign[self.m_sample_info.id]
   if campaign_cfg == nil then
-    (Log.exception)("cfg_campaign中找不到对应活动配置 id:" .. (self.m_sample_info).id)
+    Log.exception("cfg_campaign中找不到对应活动配置 id:" .. self.m_sample_info.id)
     return false
   end
   if campaign_cfg.CostItem ~= nil and #campaign_cfg.CostItem > 0 then
@@ -48,48 +30,36 @@ CampaignObj.IsReView = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.GetComponent = function(self, a_component_id)
-  -- function num : 0_4 , upvalues : _ENV
-  local component = (self.m_component_dict)[a_component_id]
+function CampaignObj:GetComponent(a_component_id)
+  local component = self.m_component_dict[a_component_id]
   if not component then
-    (Log.debug)("[Campaign][CampaignObj] GetComponent not component! a_component_id:", a_component_id)
+    Log.debug("[Campaign][CampaignObj] GetComponent not component! a_component_id:", a_component_id)
     return nil
   end
   return component
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.GetComponentInfo = function(self, a_component_id)
-  -- function num : 0_5 , upvalues : _ENV
+function CampaignObj:GetComponentInfo(a_component_id)
   local component = self:GetComponent(a_component_id)
   if not component then
-    (Log.error)("[Campaign][CampaignObj] GetComponentInfo not component! a_component_id:", a_component_id)
+    Log.error("[Campaign][CampaignObj] GetComponentInfo not component! a_component_id:", a_component_id)
     return nil
   end
   return component:GetComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.Init = function(self, a_campaign_load_info)
-  -- function num : 0_6 , upvalues : _ENV
+function CampaignObj:Init(a_campaign_load_info)
   self.m_server_time = a_campaign_load_info.m_server_time
   self:UpdateSampleInfo(a_campaign_load_info.m_sample_info)
   self.m_campaign_common_config = a_campaign_load_info.m_campaign_common_config
-  for key,value in pairs(a_campaign_load_info.m_data_dict) do
-    local component_obj = (self.m_component_dict)[key]
+  for key, value in pairs(a_campaign_load_info.m_data_dict) do
+    local component_obj = self.m_component_dict[key]
     if not component_obj then
-      component_obj = ((self.m_module).m_component_factory):CreateCampaignComponent(value.m_com_type, value)
+      component_obj = self.m_module.m_component_factory:CreateCampaignComponent(value.m_com_type, value)
       if not component_obj then
-        (Log.error)("[Campaign][CampaignObj] Init CreateCampaignComponent error!", key)
+        Log.error("[Campaign][CampaignObj] Init CreateCampaignComponent error!", key)
       else
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self.m_component_dict)[key] = component_obj
+        self.m_component_dict[key] = component_obj
       end
     else
       component_obj:ResetUnLockInfo(value.m_b_unlock, value.m_unlock_time, value.m_unlock_items, value.m_need_mission_type, value.m_need_mission_id)
@@ -97,144 +67,94 @@ CampaignObj.Init = function(self, a_campaign_load_info)
       component_obj:ResetCommonInfo(value.m_open_time, value.m_close_time, value.m_first_story_id)
       component_obj:InitComponentInfo(value)
     end
-    ;
-    (Log.debug)("[Campaign][CampaignObj] Init component succ!", key)
+    Log.debug("[Campaign][CampaignObj] Init component succ!", key)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.UpdateSampleInfo = function(self, a_sample_info)
-  -- function num : 0_7 , upvalues : _ENV
+function CampaignObj:UpdateSampleInfo(a_sample_info)
   if a_sample_info then
     self.m_sample_info = a_sample_info
-    self.m_special_type = ((Cfg.cfg_campaign)[a_sample_info.id]).SpecialType
-    ;
-    (self.HandleCampaignSampleExtandData)(a_sample_info.camp_type, a_sample_info.extend_data)
-    ;
-    (self.HandleCampaignSampleExtandInfo)(a_sample_info.camp_type, a_sample_info.m_extend_info)
+    self.m_special_type = Cfg.cfg_campaign[a_sample_info.id].SpecialType
+    self.HandleCampaignSampleExtandData(a_sample_info.camp_type, a_sample_info.extend_data)
+    self.HandleCampaignSampleExtandInfo(a_sample_info.camp_type, a_sample_info.m_extend_info)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.HandleCampaignSampleExtandData = function(self, a_camp_type, a_extend_data)
-  -- function num : 0_8
+function CampaignObj:HandleCampaignSampleExtandData(a_camp_type, a_extend_data)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.HandleCampaignSampleExtandInfo = function(self, a_camp_type, a_extend_info)
-  -- function num : 0_9
+function CampaignObj:HandleCampaignSampleExtandInfo(a_camp_type, a_extend_info)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.UpdateComponentStep = function(self, a_component_id, a_step)
-  -- function num : 0_10 , upvalues : _ENV
-  local component = (self.m_component_dict)[a_component_id]
+function CampaignObj:UpdateComponentStep(a_component_id, a_step)
+  local component = self.m_component_dict[a_component_id]
   if not component then
-    (Log.error)("[Campaign][CampaignObj] UpdateComponentStep not component! ", a_component_id)
-    return 
+    Log.error("[Campaign][CampaignObj] UpdateComponentStep not component! ", a_component_id)
+    return
   end
   component:UpdateComponentStep(a_step)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.UpdateCampaignStep = function(self, step, flag)
-  -- function num : 0_11 , upvalues : _ENV
+function CampaignObj:UpdateCampaignStep(step, flag)
   if not self.m_sample_info then
-    (Log.error)("[Campaign][CampaignObj] UpdateCampaignStep sample_info not found! ")
-    return 
+    Log.error("[Campaign][CampaignObj] UpdateCampaignStep sample_info not found! ")
+    return
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
   if flag then
-    (self.m_sample_info).step = (self.m_sample_info).step | step
+    self.m_sample_info.step = self.m_sample_info.step | step
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.m_sample_info).step = (self.m_sample_info).step & ~step
+    self.m_sample_info.step = self.m_sample_info.step & ~step
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.SetCampaignStep = function(self, step)
-  -- function num : 0_12 , upvalues : _ENV
+function CampaignObj:SetCampaignStep(step)
   if not self.m_sample_info then
-    (Log.error)("[Campaign][CampaignObj] UpdateCampaignStep sample_info not found! ")
-    return 
+    Log.error("[Campaign][CampaignObj] UpdateCampaignStep sample_info not found! ")
+    return
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_sample_info).step = step
+  self.m_sample_info.step = step
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.CampaignComProtoPushNotify = function(self, notify)
-  -- function num : 0_13 , upvalues : _ENV
-  local component = (self.m_component_dict)[notify.m_component_id]
+function CampaignObj:CampaignComProtoPushNotify(notify)
+  local component = self.m_component_dict[notify.m_component_id]
   if component then
     component:UpdateComponentStep(notify.m_component_step)
-    if (notify.m_push_data).m_notify_type ~= CampaignDefaultNotify.CAMPAIGN_NOTIFY_DEFAULT then
+    if notify.m_push_data.m_notify_type ~= CampaignDefaultNotify.CAMPAIGN_NOTIFY_DEFAULT then
       component:CampaignComponentPushNotify(notify.m_push_data)
     end
-    return 
+    return
   else
-    ;
-    (Log.error)("[Campaign][CampaignObj] CampaignComProtoPushNotify not component! ", notify.m_component_id)
+    Log.error("[Campaign][CampaignObj] CampaignComProtoPushNotify not component! ", notify.m_component_id)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.CampaignComponentIsUnLock = function(self, component_id)
-  -- function num : 0_14 , upvalues : _ENV
-  local component = (self.m_component_dict)[component_id]
+function CampaignObj:CampaignComponentIsUnLock(component_id)
+  local component = self.m_component_dict[component_id]
   if not component then
-    (Log.error)("[Campaign][CampaignObj] CampaignComponentIsUnLock not component!", component_id)
+    Log.error("[Campaign][CampaignObj] CampaignComponentIsUnLock not component!", component_id)
     return false
   end
   return component:ComponentIsUnLock()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.CampaignComponentUnLockTime = function(self, component_id)
-  -- function num : 0_15 , upvalues : _ENV
-  local component = (self.m_component_dict)[component_id]
+function CampaignObj:CampaignComponentUnLockTime(component_id)
+  local component = self.m_component_dict[component_id]
   if not component then
-    (Log.error)("[Campaign][CampaignObj] CampaignComponentUnLockTime not component!", component_id)
-    return (GameGlobal:GetInstance()):GetCurrentRealTime()
+    Log.error("[Campaign][CampaignObj] CampaignComponentUnLockTime not component!", component_id)
+    return GameGlobal:GetInstance():GetCurrentRealTime()
   end
   return component:ComponentUnLockTime()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.GetCampaignCommonConfigByKey = function(self, key)
-  -- function num : 0_16
-  local val = (self.m_campaign_common_config)[key]
+function CampaignObj:GetCampaignCommonConfigByKey(key)
+  local val = self.m_campaign_common_config[key]
   return val
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.GetCampaignLocalProcess = function(self)
-  -- function num : 0_17
-  return (self.m_module):GetCampaignLocalProcess((self.m_sample_info).camp_type)
+function CampaignObj:GetCampaignLocalProcess()
+  return self.m_module:GetCampaignLocalProcess(self.m_sample_info.camp_type)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignObj.GetSampleInfo = function(self)
-  -- function num : 0_18
+function CampaignObj:GetSampleInfo()
   return self.m_sample_info
 end
-
-

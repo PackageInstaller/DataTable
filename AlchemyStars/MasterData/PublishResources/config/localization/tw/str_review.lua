@@ -1,8 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/str_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_review_unlock_tip = "解鎖消耗", str_review_name = "遊歷映像", str_review_extra_name = "途說紀行", str_review_downloading = "資源下載中，請稍後", str_review_download_finish = "【{1}】相關資源下載完成", str_review_unlock_btn_text = "解鎖消耗", str_review_cant_unlock = "{1}不足，無法解鎖", str_review_download_tip_title = "資源下載", str_review_download_tip_text = "此遊歷映像內容需要下載後體驗，是否開始下載？", str_review_download_tip_size = "下載大小：{1}M", str_review_not_download = "待下載", str_review_award_tip = "風起之處和歸家之人過關後可<color=#e3a437>獲得獎勵</color>", str_review_tip1 = "正在下載目前遊歷映像", str_review_tip2 = "正在下載其他遊歷映像", str_review_tip3 = "【{1}】下載完成", str_review_tip4 = "下載失敗，磁碟空間不足", str_review_tip5 = "正在使用流量下載", str_review_tip6 = "下載失敗", str_review_can_collect = "可領取", str_review_progress_intro = "獎勵說明", str_review_progress_desc = "目前進度：", str_review_progress_tip = "首次完成關卡可獲得進度，累積進度可<color=#f8b33b>獲得獎勵</color>", str_review_n1_name_eva = "風暴停轉之時", str_review_n1_desc_eva = "空裔意外遭遇了走失的神祕少女「伊芙」，並遭到紅油扳手追擊。一行人來到伊芙與醒山的故鄉——赤眼谷，準備揭開一段往日的祕密。", str_review_n2_desc_fei = "緋長官邀請大家去她的故鄉雲山一遊，卻遇到了昔日的宿敵，並展開了一場化解誤會的戰鬥。", str_review_n3_name = "暮夏之夢", str_review_n4_name = "叛逆殘局", str_review_n3_desc = "眾人受邀前往海邊飯店休息，準備參加當地的節日，然而深埋於海底的某些恨意，卻讓此地籠罩了一絲陰影。", str_review_n4_desc = "昔日的飯店已面目全非，夥伴們卻深深受困於各自的心結之中，要如何破除這重重迷宮？", str_review_n5_name = "熱砂攻防戰", str_review_n5_desc = "巨像收到來自啟光前線的訊號，意外捲入一場與暗鬼的攻防戰。有人犧牲、有人得到救贖，大家與啟光人一起並肩作戰。", str_review_n6_name = "風中來信", str_review_n6_desc = "空裔回到空谷希望修復古老的白塔驛站，並過一次屬於自己的傳統節日，沒想到被名為米倫的敵人騷擾，繼而發現這場危機似乎和熟悉的家族矛盾又扯上了關係……", str_review_n7_name = "夜與霧之影", str_review_n7_desc = "得知在影鎮有空裔遺產需要繼承，空裔來到影鎮並認識了貝菲爾和傭兵團的夥伴。暗中有人試圖顛覆影主的統治，與幾位宿敵有關的祕密也再次浮出水面。", str_review_n8_name = "白夜長明", str_review_n8_desc = "影鎮危機過去，白夜城迎來慶典。可是真正的幕後黑手也醞釀著宏大的陰謀，並在慶典上與空裔一行人大打出手。最終在新夥伴海蒂的幫助下，大家化解了危機。", str_review_n9_name = "沙漏女王", str_review_n9_desc = "白夜慶典過去，北境也迎來新年。大家在女王的邀請下前往冬宮，經歷了一場過去與現在交織的奇妙冒險，認識到女王不為人知的一面。", str_review_n11_name = "終焉！少女與遺跡極限地表深度 873m", str_review_n11_desc = "地下城面臨終結，大家試圖在人工智慧的引導下化解危機卻回天乏術，最終空裔只能帶著所有夥伴選擇逃生，而地下城則化為廢墟。", str_review_n12_name = "終焉！少女與遺跡 真·極限地表深度 1024m", str_review_n12_desc = "地下城面臨終結，大家試圖在人工智慧的引導下化解危機卻回天乏術，最終空裔只能帶著所有夥伴選擇逃生，而地下城則化為廢墟。", str_review_n12_progress_tip = "首次觀看劇情可以獲得進度，總進度可<color=#f8b33b>獲得獎勵</color>", str_review_n13_name = "櫻雪紅玉·Part.I", str_review_n13_desc = "故事發生在全新的雲島之上。大家為了找回新夥伴瑤的記憶遠道而來，卻被捲入了當地領主與反叛軍的爭鬥之中。", str_review_n14_name = "櫻雪紅玉 Part.II", str_review_n14_desc = "惡鬥宣告結束，領主終受制裁。幾位新夥伴也終於探明歷史真相，彼此和解，瑤也找回了記憶。大家互相道別，各奔前程。", str_review_n15_name = "開！往世界盡頭開！", str_review_n15_desc = "紅油扳手召開了不靠譜的盛大拉力賽，中途選手們卻遭遇了暗鬼的攻擊，賽事陷入混亂。選手們暫時並肩作戰擊敗了敵人，也成功直面了來自內心的恐懼。", str_review_n16_name = "真實之下：狂宴的斷章", str_review_n16_desc = "為了尋找失蹤少女，空裔和卡蓮在深夜探索神祕的都市傳說，但誤入了真理結社的地盤。想要離開這裡，就必須和一群新朋友完成一場古怪的表演……"}
+local config = {
+  str_review_unlock_tip = "解鎖消耗",
+  str_review_name = "遊歷映像",
+  str_review_extra_name = "途說紀行",
+  str_review_downloading = "資源下載中，請稍後",
+  str_review_download_finish = "【{1}】相關資源下載完成",
+  str_review_unlock_btn_text = "解鎖消耗",
+  str_review_cant_unlock = "{1}不足，無法解鎖",
+  str_review_download_tip_title = "資源下載",
+  str_review_download_tip_text = "此遊歷映像內容需要下載後體驗，是否開始下載？",
+  str_review_download_tip_size = "下載大小：{1}M",
+  str_review_not_download = "待下載",
+  str_review_award_tip = "風起之處和歸家之人過關後可<color=#e3a437>獲得獎勵</color>",
+  str_review_tip1 = "正在下載目前遊歷映像",
+  str_review_tip2 = "正在下載其他遊歷映像",
+  str_review_tip3 = "【{1}】下載完成",
+  str_review_tip4 = "下載失敗，磁碟空間不足",
+  str_review_tip5 = "正在使用流量下載",
+  str_review_tip6 = "下載失敗",
+  str_review_can_collect = "可領取",
+  str_review_progress_intro = "獎勵說明",
+  str_review_progress_desc = "目前進度：",
+  str_review_progress_tip = "首次完成關卡可獲得進度，累積進度可<color=#f8b33b>獲得獎勵</color>",
+  str_review_n1_name_eva = "風暴停轉之時",
+  str_review_n1_desc_eva = "空裔意外遭遇了走失的神祕少女「伊芙」，並遭到紅油扳手追擊。一行人來到伊芙與醒山的故鄉——赤眼谷，準備揭開一段往日的祕密。",
+  str_review_n2_desc_fei = "緋長官邀請大家去她的故鄉雲山一遊，卻遇到了昔日的宿敵，並展開了一場化解誤會的戰鬥。",
+  str_review_n3_name = "暮夏之夢",
+  str_review_n4_name = "叛逆殘局",
+  str_review_n3_desc = "眾人受邀前往海邊飯店休息，準備參加當地的節日，然而深埋於海底的某些恨意，卻讓此地籠罩了一絲陰影。",
+  str_review_n4_desc = "昔日的飯店已面目全非，夥伴們卻深深受困於各自的心結之中，要如何破除這重重迷宮？",
+  str_review_n5_name = "熱砂攻防戰",
+  str_review_n5_desc = "巨像收到來自啟光前線的訊號，意外捲入一場與暗鬼的攻防戰。有人犧牲、有人得到救贖，大家與啟光人一起並肩作戰。",
+  str_review_n6_name = "風中來信",
+  str_review_n6_desc = "空裔回到空谷希望修復古老的白塔驛站，並過一次屬於自己的傳統節日，沒想到被名為米倫的敵人騷擾，繼而發現這場危機似乎和熟悉的家族矛盾又扯上了關係……",
+  str_review_n7_name = "夜與霧之影",
+  str_review_n7_desc = "得知在影鎮有空裔遺產需要繼承，空裔來到影鎮並認識了貝菲爾和傭兵團的夥伴。暗中有人試圖顛覆影主的統治，與幾位宿敵有關的祕密也再次浮出水面。",
+  str_review_n8_name = "白夜長明",
+  str_review_n8_desc = "影鎮危機過去，白夜城迎來慶典。可是真正的幕後黑手也醞釀著宏大的陰謀，並在慶典上與空裔一行人大打出手。最終在新夥伴海蒂的幫助下，大家化解了危機。",
+  str_review_n9_name = "沙漏女王",
+  str_review_n9_desc = "白夜慶典過去，北境也迎來新年。大家在女王的邀請下前往冬宮，經歷了一場過去與現在交織的奇妙冒險，認識到女王不為人知的一面。",
+  str_review_n11_name = "終焉！少女與遺跡極限地表深度 873m",
+  str_review_n11_desc = "地下城面臨終結，大家試圖在人工智慧的引導下化解危機卻回天乏術，最終空裔只能帶著所有夥伴選擇逃生，而地下城則化為廢墟。",
+  str_review_n12_name = "終焉！少女與遺跡 真·極限地表深度 1024m",
+  str_review_n12_desc = "地下城面臨終結，大家試圖在人工智慧的引導下化解危機卻回天乏術，最終空裔只能帶著所有夥伴選擇逃生，而地下城則化為廢墟。",
+  str_review_n12_progress_tip = "首次觀看劇情可以獲得進度，總進度可<color=#f8b33b>獲得獎勵</color>",
+  str_review_n13_name = "櫻雪紅玉·Part.I",
+  str_review_n13_desc = "故事發生在全新的雲島之上。大家為了找回新夥伴瑤的記憶遠道而來，卻被捲入了當地領主與反叛軍的爭鬥之中。",
+  str_review_n14_name = "櫻雪紅玉 Part.II",
+  str_review_n14_desc = "惡鬥宣告結束，領主終受制裁。幾位新夥伴也終於探明歷史真相，彼此和解，瑤也找回了記憶。大家互相道別，各奔前程。",
+  str_review_n15_name = "開！往世界盡頭開！",
+  str_review_n15_desc = "紅油扳手召開了不靠譜的盛大拉力賽，中途選手們卻遭遇了暗鬼的攻擊，賽事陷入混亂。選手們暫時並肩作戰擊敗了敵人，也成功直面了來自內心的恐懼。",
+  str_review_n16_name = "真實之下：狂宴的斷章",
+  str_review_n16_desc = "為了尋找失蹤少女，空裔和卡蓮在深夜探索神祕的都市傳說，但誤入了真理結社的地盤。想要離開這裡，就必須和一群新朋友完成一場古怪的表演……"
+}
 return config
-

@@ -1,24 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_normal_attack_double_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetNormalAttackDoubleCount", BuffLogicBase)
 BuffLogicSetNormalAttackDoubleCount = BuffLogicSetNormalAttackDoubleCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNormalAttackDoubleCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetNormalAttackDoubleCount:Constructor(buffInstance, logicParam)
   self._count = logicParam.count
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNormalAttackDoubleCount.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("NormalAttackDoubleCount", self._count)
+function BuffLogicSetNormalAttackDoubleCount:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("NormalAttackDoubleCount", self._count)
 end
-
-

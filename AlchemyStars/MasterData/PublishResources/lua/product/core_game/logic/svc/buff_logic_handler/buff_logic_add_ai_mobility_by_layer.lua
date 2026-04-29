@@ -1,43 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_ai_mobility_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddAIMobilityByLayer", BuffLogicBase)
 BuffLogicAddAIMobilityByLayer = BuffLogicAddAIMobilityByLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddAIMobilityByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._addValuePerLayer = logicParam.addValuePerLayer or 0
-  end
+function BuffLogicAddAIMobilityByLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._addValuePerLayer = logicParam.addValuePerLayer or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAIMobilityByLayer.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicAddAIMobilityByLayer:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasMonsterID() then
-    return 
+    return
   end
-  local svc = (self._world):GetService("BuffLogic")
+  local svc = self._world:GetService("BuffLogic")
   local curMarkLayer = svc:GetBuffLayer(e, self._layerType)
-  ;
-  (e:Attributes()):RemoveModify("Mobility", (self._buffInstance):BuffSeq())
+  e:Attributes():RemoveModify("Mobility", self._buffInstance:BuffSeq())
   local addVal = self._addValuePerLayer * curMarkLayer
   if addVal ~= 0 then
-    (e:Attributes()):Modify("Mobility", addVal, (self._buffInstance):BuffSeq(), MultModifyOperator.PLUS)
+    e:Attributes():Modify("Mobility", addVal, self._buffInstance:BuffSeq(), MultModifyOperator.PLUS)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAIMobilityByLayer.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicAddAIMobilityByLayer:DoOverlap()
   self:DoLogic()
 end
-
-

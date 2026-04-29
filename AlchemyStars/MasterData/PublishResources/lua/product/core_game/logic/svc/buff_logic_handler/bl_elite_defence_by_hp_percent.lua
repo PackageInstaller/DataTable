@@ -1,51 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_elite_defence_by_hp_percent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeEliteDefenceByHPPercent", BuffLogicBase)
 BuffLogicChangeEliteDefenceByHPPercent = BuffLogicChangeEliteDefenceByHPPercent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeEliteDefenceByHPPercent.Constructor = function(self, _buffIns, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicChangeEliteDefenceByHPPercent:Constructor(_buffIns, logicParam)
   self._defArgument = tonumber(logicParam.defArgument)
   self._hpPercentFix = tonumber(logicParam.hpPercentFix)
   assert(self._defArgument, "ChangeEliteDefenceByHPPercent: parameter[defArgument] is required. ")
   assert(self._hpPercentFix, "ChangeEliteDefenceByHPPercent: parameter[hpPercentFix] is required. ")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeEliteDefenceByHPPercent.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self:GetBuffLogicService()):RemoveBaseDefence(self:GetEntity(), self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
-  local cAttr = (self:GetEntity()):Attributes()
+function BuffLogicChangeEliteDefenceByHPPercent:DoLogic()
+  self:GetBuffLogicService():RemoveBaseDefence(self:GetEntity(), self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
+  local cAttr = self:GetEntity():Attributes()
   local currentDef = cAttr:GetDefence()
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   local hp, maxHP = battleSvc:GetCasterHP(self:GetEntity())
   local newDef = currentDef * self._defArgument * (self._hpPercentFix - hp / maxHP)
   local def = newDef - currentDef
-  ;
-  (self:GetBuffLogicService()):ChangeBaseDefence(self:GetEntity(), self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, def)
+  self:GetBuffLogicService():ChangeBaseDefence(self:GetEntity(), self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, def)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeEliteDefenceByHPPercent.DoOverlap = function(self, logicParam, context)
-  -- function num : 0_2
+function BuffLogicChangeEliteDefenceByHPPercent:DoOverlap(logicParam, context)
   return self:DoLogic()
 end
 
 _class("BuffLogicRevertEliteDefenceByHPPercent", BuffLogicBase)
 BuffLogicRevertEliteDefenceByHPPercent = BuffLogicRevertEliteDefenceByHPPercent
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertEliteDefenceByHPPercent.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self:GetBuffLogicService()):RemoveBaseDefence(self:GetEntity(), self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
+function BuffLogicRevertEliteDefenceByHPPercent:DoLogic()
+  self:GetBuffLogicService():RemoveBaseDefence(self:GetEntity(), self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix)
   return true
 end
-
-

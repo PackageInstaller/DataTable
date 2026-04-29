@@ -1,57 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_buff_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckBuffValue", AINewNode)
 ActionCheckBuffValue = ActionCheckBuffValue
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckBuffValue.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_0 , upvalues : _ENV
-  ((ActionCheckBuffValue.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionCheckBuffValue:InitializeNode(cfg, context, parentNode, configData)
+  ActionCheckBuffValue.super.InitializeNode(self, cfg, context, parentNode, configData)
   self._buffValueKey = configData[1]
   self._comparisonType = configData[2]
   self._buffValue = configData[3]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCheckBuffValue.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local buffCmp = (self.m_entityOwn):BuffComponent()
+function ActionCheckBuffValue:OnUpdate()
+  local buffCmp = self.m_entityOwn:BuffComponent()
   local value = buffCmp:GetBuffValue(self._buffValueKey)
   if value then
-    local satisfied = nil
-    if value ~= self._buffValue then
-      satisfied = self._comparisonType ~= ComparisonOperator.EQ
-      if value == self._buffValue then
-        satisfied = self._comparisonType ~= ComparisonOperator.NE
-        if self._buffValue >= value then
-          satisfied = self._comparisonType ~= ComparisonOperator.GT
-          if self._buffValue > value then
-            satisfied = self._comparisonType ~= ComparisonOperator.GE
-            if value >= self._buffValue then
-              satisfied = self._comparisonType ~= ComparisonOperator.LT
-              if value > self._buffValue then
-                do
-                  satisfied = self._comparisonType ~= ComparisonOperator.LE
-                  if satisfied then
-                    return AINewNodeStatus.Success
-                  else
-                    return AINewNodeStatus.Failure
-                  end
-                  do return AINewNodeStatus.Failure end
-                  -- DECOMPILER ERROR: 14 unprocessed JMP targets
-                end
-              end
-            end
-          end
-        end
-      end
+    local satisfied
+    if self._comparisonType == ComparisonOperator.EQ then
+      satisfied = value == self._buffValue
+    elseif self._comparisonType == ComparisonOperator.NE then
+      satisfied = value ~= self._buffValue
+    elseif self._comparisonType == ComparisonOperator.GT then
+      satisfied = value > self._buffValue
+    elseif self._comparisonType == ComparisonOperator.GE then
+      satisfied = value >= self._buffValue
+    elseif self._comparisonType == ComparisonOperator.LT then
+      satisfied = value < self._buffValue
+    elseif self._comparisonType == ComparisonOperator.LE then
+      satisfied = value <= self._buffValue
+    end
+    if satisfied then
+      return AINewNodeStatus.Success
+    else
+      return AINewNodeStatus.Failure
     end
   end
+  return AINewNodeStatus.Failure
 end
-
-

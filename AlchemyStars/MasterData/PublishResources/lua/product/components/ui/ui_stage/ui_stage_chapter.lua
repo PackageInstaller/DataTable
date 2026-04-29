@@ -1,52 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_stage_chapter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStageChapter", UICustomWidget)
 UIStageChapter = UIStageChapter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStageChapter.OnShow = function(self)
-  -- function num : 0_0
+function UIStageChapter:OnShow()
   self._txtTitleIdx = self:GetUIComponent("UILocalizationText", "txtTitleIdx")
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self._chapterName = self:GetUIComponent("UILocalizationText", "chapterName")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageChapter.Flush = function(self, titleIdx, title, desc, chapterName, isBetween)
-  -- function num : 0_1 , upvalues : _ENV
-  if not titleIdx then
-    titleIdx = ""
-  end
-  if not title then
-    title = ""
-  end
-  ;
-  (self._txtTitleIdx):SetText(titleIdx .. title)
-  if not desc then
-    desc = ""
-  end
-  ;
-  (self._txtDesc):SetText(desc)
+function UIStageChapter:Flush(titleIdx, title, desc, chapterName, isBetween)
+  titleIdx = titleIdx or ""
+  title = title or ""
+  self._txtTitleIdx:SetText(titleIdx .. title)
+  desc = desc or ""
+  self._txtDesc:SetText(desc)
   local showChapterName = chapterName or ""
-  ;
-  (self._chapterName):SetText(showChapterName)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
+  self._chapterName:SetText(showChapterName)
   if isBetween then
-    (self._chapterName).color = Color(0.61176470588235, 0.45098039215686, 0.72549019607843, 1)
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._txtTitleIdx).color = Color(0.63921568627451, 0.61960784313725, 0.66666666666667, 1)
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._txtDesc).color = Color(0.52549019607843, 0.52549019607843, 0.52549019607843, 1)
+    self._chapterName.color = Color(0.611764705882353, 0.45098039215686275, 0.7254901960784313, 1)
+    self._txtTitleIdx.color = Color(0.6392156862745098, 0.6196078431372549, 0.6666666666666666, 1)
+    self._txtDesc.color = Color(0.5254901960784314, 0.5254901960784314, 0.5254901960784314, 1)
   end
 end
-
-

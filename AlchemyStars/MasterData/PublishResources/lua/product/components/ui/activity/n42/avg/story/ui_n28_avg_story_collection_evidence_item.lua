@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/story/ui_n28_avg_story_collection_evidence_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGStoryCollectionEvidenceItem", UICustomWidget)
 UIN28AVGStoryCollectionEvidenceItem = UIN28AVGStoryCollectionEvidenceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGStoryCollectionEvidenceItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN28AVGStoryCollectionEvidenceItem:OnShow()
   self._selectObj = self:GetGameObject("select")
   self._newObj = self:GetGameObject("new")
   self._lockObj = self:GetGameObject("lock")
@@ -21,23 +14,17 @@ UIN28AVGStoryCollectionEvidenceItem.OnShow = function(self)
   self:AttachEvent(GameEventType.AVGSelectCollectionEvidenceItem, self.OnSelect)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryCollectionEvidenceItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGStoryCollectionEvidenceItem:OnHide()
   self:DetachEvent(GameEventType.AVGSelectCollectionEvidenceItem, self.OnSelect)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryCollectionEvidenceItem.SetData = function(self, type, evidenceList)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28AVGStoryCollectionEvidenceItem:SetData(type, evidenceList)
   self._type = type
   self._maxCount = #evidenceList
   self._hasCount = 0
   local hasNew = false
-  local lastEvidence = nil
-  for _,evidence in pairs(evidenceList) do
+  local lastEvidence
+  for _, evidence in pairs(evidenceList) do
     if evidence:HasGot() then
       self._hasCount = self._hasCount + 1
       if evidence:HasNew() then
@@ -46,55 +33,37 @@ UIN28AVGStoryCollectionEvidenceItem.SetData = function(self, type, evidenceList)
       lastEvidence = evidence
     end
   end
-  ;
-  (self._newObj):SetActive(hasNew)
-  ;
-  (self._countText):SetText(self._hasCount .. "/" .. self._maxCount)
-  ;
-  (self._countImageObj):SetActive(self._maxCount > 1)
+  self._newObj:SetActive(hasNew)
+  self._countText:SetText(self._hasCount .. "/" .. self._maxCount)
+  self._countImageObj:SetActive(self._maxCount > 1)
   if self._hasCount == 0 then
-    (self._lockObj):SetActive(true)
+    self._lockObj:SetActive(true)
   else
-    (self._iconObj):SetActive(true)
-    ;
-    (self._icon):LoadImage(lastEvidence.icon)
+    self._iconObj:SetActive(true)
+    self._icon:LoadImage(lastEvidence.icon)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryCollectionEvidenceItem.BtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGSelectCollectionEvidenceItem, self._type)
+function UIN28AVGStoryCollectionEvidenceItem:BtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGSelectCollectionEvidenceItem, self._type)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryCollectionEvidenceItem.OnSelect = function(self, selectType)
-  -- function num : 0_4 , upvalues : _ENV
-  if selectType ~= self._type then
-    (self._lockSelectObj):SetActive(self._hasCount ~= 0)
-    if selectType == self._type and not (self._selectObj).activeSelf then
-      (self._selectObj):SetActive(true)
-      ;
-      (self._anim):Play("uieff_UIN28AVGStoryCollectionEvidenceItem_select_in")
+function UIN28AVGStoryCollectionEvidenceItem:OnSelect(selectType)
+  if self._hasCount == 0 then
+    self._lockSelectObj:SetActive(selectType == self._type)
+  end
+  if selectType == self._type then
+    if not self._selectObj.activeSelf then
+      self._selectObj:SetActive(true)
+      self._anim:Play("uieff_UIN28AVGStoryCollectionEvidenceItem_select_in")
     end
-    if (self._selectObj).activeSelf then
-      (self._anim):Play("uieff_UIN28AVGStoryCollectionEvidenceItem_select_out")
-      self:Lock("UIN28AVGStoryCollectionEvidenceItem_UnSelect")
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
-    YIELD(TT, 200)
-    ;
-    (self._selectObj):SetActive(false)
-    self:UnLock("UIN28AVGStoryCollectionEvidenceItem_UnSelect")
-  end
-, self)
-    end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  elseif self._selectObj.activeSelf then
+    self._anim:Play("uieff_UIN28AVGStoryCollectionEvidenceItem_select_out")
+    self:Lock("UIN28AVGStoryCollectionEvidenceItem_UnSelect")
+    GameGlobal.TaskManager():StartTask(function(TT)
+      YIELD(TT, 200)
+      self._selectObj:SetActive(false)
+      self:UnLock("UIN28AVGStoryCollectionEvidenceItem_UnSelect")
+    end, self)
   end
 end
-
-

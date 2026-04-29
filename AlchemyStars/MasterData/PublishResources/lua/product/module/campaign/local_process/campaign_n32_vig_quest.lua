@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n32_vig_quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignVigQuest", ICampaignComponentLocalProcessBase)
 CCampaignVigQuest = CCampaignVigQuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignVigQuest.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignVigQuest:Constructor()
   self._turncardComponent = nil
   self._turncardCompInfo = nil
   self._campaignQuestComponent = nil
@@ -16,55 +9,37 @@ CCampaignVigQuest.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignVigQuest:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N32_VIG_QUEST
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignVigQuest:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignVigQuest:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetTurnCardComponent()
   self:_GetCampaignQuestComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest._GetTurnCardComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._turncardComponent = (self._campaignObj):GetComponent(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD)
+function CCampaignVigQuest:_GetTurnCardComponent()
+  self._turncardComponent = self._campaignObj:GetComponent(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD)
   if not self._turncardComponent then
-    return 
+    return
   end
-  self._turncardCompInfo = (self._turncardComponent):ComponentInfo()
+  self._turncardCompInfo = self._turncardComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest._GetCampaignQuestComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._campaignQuestComponent = (self._campaignObj):GetComponent(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
+function CCampaignVigQuest:_GetCampaignQuestComponent()
+  self._campaignQuestComponent = self._campaignObj:GetComponent(ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_QUEST)
   if not self._campaignQuestComponent then
-    return 
+    return
   end
-  self._campaignQuestCompInfo = (self._campaignQuestComponent):ComponentInfo()
+  self._campaignQuestCompInfo = self._campaignQuestComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignVigQuest:GetComponent(componentID)
   if ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD == componentID then
     return self._turncardComponent
   end
@@ -74,10 +49,7 @@ CCampaignVigQuest.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignVigQuest:GetComponentInfo(componentID)
   if ECampaignVigQuestComponentID.ECAMPAIGN_VIGQUEST_TURNCARD == componentID then
     return self._turncardCompInfo
   end
@@ -87,42 +59,20 @@ CCampaignVigQuest.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest.GetEntryNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignVigQuest:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N32_VIG_QUEST)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest.GetEntryRedDot = function(self)
-  -- function num : 0_9
-  if not self:TurnCardReddot() then
-    return self:CampQuestReddot()
-  end
+function CCampaignVigQuest:GetEntryRedDot()
+  return self:TurnCardReddot() or self:CampQuestReddot()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest.TurnCardReddot = function(self)
-  -- function num : 0_10
-  if self._turncardComponent then
-    return (self._turncardComponent):HaveRedPoint()
-  end
+function CCampaignVigQuest:TurnCardReddot()
+  return self._turncardComponent and self._turncardComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignVigQuest.CampQuestReddot = function(self)
-  -- function num : 0_11
-  if self._campaignQuestComponent then
-    return (self._campaignQuestComponent):HaveRedPoint()
-  end
+function CCampaignVigQuest:CampQuestReddot()
+  return self._campaignQuestComponent and self._campaignQuestComponent:HaveRedPoint()
 end
-
-

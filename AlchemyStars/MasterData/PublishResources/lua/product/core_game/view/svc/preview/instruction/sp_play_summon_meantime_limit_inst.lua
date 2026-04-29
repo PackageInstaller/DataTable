@@ -1,59 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_summon_meantime_limit_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlaySummonMeantimeLimitInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlaySummonMeantimeLimitInstruction = SkillPreviewPlaySummonMeantimeLimitInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlaySummonMeantimeLimitInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlaySummonMeantimeLimitInstruction:Constructor(params)
   self._visible = tonumber(params.visible)
   self._trapID = tonumber(params.trapID)
   self._limitCount = tonumber(params.limitCount)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlaySummonMeantimeLimitInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlaySummonMeantimeLimitInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local battleFlags = world:BattleFlags()
   local entityIDList = battleFlags:GetSummonMeantimeLimitEntityID(self._trapID)
-  if (table.count)(entityIDList) < self._limitCount then
-    return 
+  if table.count(entityIDList) < self._limitCount then
+    return
   end
-  for _,entityID in ipairs(entityIDList) do
+  for _, entityID in ipairs(entityIDList) do
     local entity = world:GetEntityByID(entityID)
     local location = entity:Location()
     if location then
       local gridWorldPos = entity:GetPosition()
-      local gridWorldNew = ((UnityEngine.Vector3).New)(gridWorldPos.x, 0, gridWorldPos.z)
+      local gridWorldNew = UnityEngine.Vector3.New(gridWorldPos.x, 0, gridWorldPos.z)
       entity:SetPosition(gridWorldNew)
     end
   end
   local targetEntityID = entityIDList[1]
   local targetEntity = world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    return 
+    return
   end
   local secondEntityID = entityIDList[2]
   local secondEntity = world:GetEntityByID(secondEntityID)
   if not secondEntity then
-    return 
+    return
   end
-  if previewContext:GetPickUpPos() == (secondEntity:GridLocation()):GetGridPos() then
+  if previewContext:GetPickUpPos() == secondEntity:GridLocation():GetGridPos() then
     targetEntity = secondEntity
   end
   local location = targetEntity:Location()
   if location then
     local gridWorldPos = targetEntity:GetPosition()
     local offsetY = self._visible == 1 and 0 or 1000
-    local gridWorldNew = ((UnityEngine.Vector3).New)(gridWorldPos.x, offsetY, gridWorldPos.z)
+    local gridWorldNew = UnityEngine.Vector3.New(gridWorldPos.x, offsetY, gridWorldPos.z)
     targetEntity:SetPosition(gridWorldNew)
   end
 end
-
-

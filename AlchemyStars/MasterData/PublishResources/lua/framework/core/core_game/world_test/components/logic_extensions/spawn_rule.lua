@@ -1,57 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/components/logic_extensions/spawn_rule.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SpawnRuleFixedLocation", ISpawnRule)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-SpawnRuleFixedLocation.Constructor = function(self, pos, dir)
-  -- function num : 0_0
+function SpawnRuleFixedLocation:Constructor(pos, dir)
   self.Position = pos
   self.Direction = dir
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnRuleFixedLocation.MakeSpawn = function(self, entity, world)
-  -- function num : 0_1
+function SpawnRuleFixedLocation:MakeSpawn(entity, world)
   entity:SetLocation(self.Position, self.Direction)
 end
 
 _class("SpawnRuleFixedScenePoint", ISpawnRule)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
 
-SpawnRuleFixedScenePoint.Constructor = function(self, pointIndex)
-  -- function num : 0_2
+function SpawnRuleFixedScenePoint:Constructor(pointIndex)
   self.PointIndex = pointIndex
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnRuleFixedScenePoint.MakeSpawn = function(self, entity, world)
-  -- function num : 0_3 , upvalues : _ENV
-  local spawnMng = (world:SpawnMng()).Manager
+function SpawnRuleFixedScenePoint:MakeSpawn(entity, world)
+  local spawnMng = world:SpawnMng().Manager
   local points = spawnMng.AllPoints
   local pos = points[self.PointIndex]
   if pos == nil then
-    (Log.fatal)("SpawnRuleFixedScenePoint Cant Find Point on index: " .. self.PointIndex)
+    Log.fatal("SpawnRuleFixedScenePoint Cant Find Point on index: " .. self.PointIndex)
     pos = Vector3(0, 0, 0)
   end
   entity:SetPosition(pos)
 end
 
 _class("SpawnRuleRandomScenePoint", ISpawnRule)
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-SpawnRuleRandomScenePoint.Constructor = function(self)
-  -- function num : 0_4
+function SpawnRuleRandomScenePoint:Constructor()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SpawnRuleRandomScenePoint.MakeSpawn = function(self, entity, world)
-  -- function num : 0_5
+function SpawnRuleRandomScenePoint:MakeSpawn(entity, world)
 end
-
-

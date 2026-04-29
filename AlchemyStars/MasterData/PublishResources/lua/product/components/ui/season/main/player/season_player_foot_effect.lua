@@ -1,69 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/player/season_player_foot_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonPlayerFootEffect", Object)
 SeasonPlayerFootEffect = SeasonPlayerFootEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonPlayerFootEffect.Constructor = function(self, cfg, rootTransform)
-  -- function num : 0_0
+function SeasonPlayerFootEffect:Constructor(cfg, rootTransform)
   self._cfg = cfg
   self._rootTransform = rootTransform
   self:_LoadEffect()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFootEffect.Dispose = function(self)
-  -- function num : 0_1
+function SeasonPlayerFootEffect:Dispose()
   if self._resRequest then
-    (self._resRequest):Dispose()
+    self._resRequest:Dispose()
     self._resRequest = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFootEffect._LoadEffect = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._resRequest = (ResourceManager:GetInstance()):SyncLoadAsset((self._cfg).FootEffect, LoadType.GameObject)
+function SeasonPlayerFootEffect:_LoadEffect()
+  self._resRequest = ResourceManager:GetInstance():SyncLoadAsset(self._cfg.FootEffect, LoadType.GameObject)
   if not self._resRequest then
-    (Log.error)("SeasonPlayerFootEffect load rooteffect fail.", (self._cfg).FootEffect)
-    return 
+    Log.error("SeasonPlayerFootEffect load rooteffect fail.", self._cfg.FootEffect)
+    return
   end
-  self._effectGO = (self._resRequest).Obj
-  ;
-  ((self._effectGO).transform):SetParent(self._rootTransform)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._effectGO).transform).localPosition = Vector3.zero
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._effectGO).transform).localRotation = (Quaternion.Euler)(0, 0, 0)
-  ;
-  (self._effectGO):SetActive(true)
+  self._effectGO = self._resRequest.Obj
+  self._effectGO.transform:SetParent(self._rootTransform)
+  self._effectGO.transform.localPosition = Vector3.zero
+  self._effectGO.transform.localRotation = Quaternion.Euler(0, 0, 0)
+  self._effectGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFootEffect.Stop = function(self)
-  -- function num : 0_3
+function SeasonPlayerFootEffect:Stop()
   if self._effectGO then
-    (self._effectGO):SetActive(false)
+    self._effectGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFootEffect.Play = function(self)
-  -- function num : 0_4
+function SeasonPlayerFootEffect:Play()
   if self._effectGO then
-    (self._effectGO):SetActive(true)
+    self._effectGO:SetActive(true)
   end
 end
-
-

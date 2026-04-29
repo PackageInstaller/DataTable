@@ -1,10 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/breed/homeland_breed_land_misc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local HomelandBreedSpriteEffect = {zhaohuan = "eff_jy_1022001_zhaohuan.prefab", shifei = "eff_jy_1022001_shifei_Dummy001.prefab", jiaoshui = "eff_jy_1022001_jiaoshui.prefab", xiaoshi = "eff_jy_1022001_xiaoshi.prefab"}
+local HomelandBreedSpriteEffect = {
+  zhaohuan = "eff_jy_1022001_zhaohuan.prefab",
+  shifei = "eff_jy_1022001_shifei_Dummy001.prefab",
+  jiaoshui = "eff_jy_1022001_jiaoshui.prefab",
+  xiaoshi = "eff_jy_1022001_xiaoshi.prefab"
+}
 _enum("HomelandBreedSpriteEffect", HomelandBreedSpriteEffect)
-local HomelandBreedLandEffect = {p1 = "eff_jy_pt_bianhuan.prefab", p2 = "eff_jy_pt_bianhuan_01.prefab", p3 = "eff_jy_pt_bianhuan_02.prefab"}
+local HomelandBreedLandEffect = {
+  p1 = "eff_jy_pt_bianhuan.prefab",
+  p2 = "eff_jy_pt_bianhuan_01.prefab",
+  p3 = "eff_jy_pt_bianhuan_02.prefab"
+}
 _enum("HomelandBreedLandEffect", HomelandBreedLandEffect)
-

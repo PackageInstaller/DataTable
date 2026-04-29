@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/fep_tetris.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamTetris", FeatureEffectParamBase)
 FeatureEffectParamTetris = FeatureEffectParamTetris
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamTetris.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamTetris:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris._RefreshData = function(self, t)
-  -- function num : 0_1 , upvalues : _ENV
+function FeatureEffectParamTetris:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   self._defaultTetris = t.defaultTetris or 1
   self._reRollEnable = t.reRollEnable or false
@@ -31,158 +21,115 @@ FeatureEffectParamTetris._RefreshData = function(self, t)
   self._clickCostPower = t.clickCostPower or 1
   self._mainColorEnable = t.mainColorEnable or false
   self._mainColorMaxCount = t.mainColorMaxCount or 4
-  if not t.dirList then
-    self._dirList = {HitBackDirectionType.Up, HitBackDirectionType.Right, HitBackDirectionType.Down, HitBackDirectionType.Left}
-    if not t.defaultDir then
-      self._defaultDir = HitBackDirectionType.Up
-      if not t.tetrisList then
-        self._tetrisList = {FeatureTetrisType.O, FeatureTetrisType.I, FeatureTetrisType.T, FeatureTetrisType.L, FeatureTetrisType.S, FeatureTetrisType.Z, FeatureTetrisType.J}
-        self._tetrisIconList = t.tetrisIconList
-        self._tetrisSmallIconList = t.tetrisSmallIconList
-      end
-    end
-  end
+  self._dirList = t.dirList or {
+    HitBackDirectionType.Up,
+    HitBackDirectionType.Right,
+    HitBackDirectionType.Down,
+    HitBackDirectionType.Left
+  }
+  self._defaultDir = t.defaultDir or HitBackDirectionType.Up
+  self._tetrisList = t.tetrisList or {
+    FeatureTetrisType.O,
+    FeatureTetrisType.I,
+    FeatureTetrisType.T,
+    FeatureTetrisType.L,
+    FeatureTetrisType.S,
+    FeatureTetrisType.Z,
+    FeatureTetrisType.J
+  }
+  self._tetrisIconList = t.tetrisIconList
+  self._tetrisSmallIconList = t.tetrisSmallIconList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetMaxShowPower = function(self)
-  -- function num : 0_2
+function FeatureEffectParamTetris:GetMaxShowPower()
   return self._maxShowPower
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetClickCostPower = function(self)
-  -- function num : 0_3
+function FeatureEffectParamTetris:GetClickCostPower()
   return self._clickCostPower
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetMainColorMaxCount = function(self)
-  -- function num : 0_4
+function FeatureEffectParamTetris:GetMainColorMaxCount()
   return self._mainColorMaxCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetDefaultCostPower = function(self)
-  -- function num : 0_5
+function FeatureEffectParamTetris:GetDefaultCostPower()
   return self._defaultCostPower
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetDefaultTetrisDir = function(self)
-  -- function num : 0_6
+function FeatureEffectParamTetris:GetDefaultTetrisDir()
   return self._defaultDir
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetDefaultTetris = function(self)
-  -- function num : 0_7
+function FeatureEffectParamTetris:GetDefaultTetris()
   return self._defaultTetris
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetReRollEnable = function(self)
-  -- function num : 0_8
+function FeatureEffectParamTetris:GetReRollEnable()
   return self._reRollEnable
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetPowerEnable = function(self)
-  -- function num : 0_9
+function FeatureEffectParamTetris:GetPowerEnable()
   return self._powerEnable
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetMainColorEnable = function(self)
-  -- function num : 0_10
+function FeatureEffectParamTetris:GetMainColorEnable()
   return self._mainColorEnable
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetDirList = function(self)
-  -- function num : 0_11
+function FeatureEffectParamTetris:GetDirList()
   return self._dirList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetTetrisList = function(self)
-  -- function num : 0_12
+function FeatureEffectParamTetris:GetTetrisList()
   return self._tetrisList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetTetrisSmallIconByIndex = function(self, index)
-  -- function num : 0_13
-  return (self._tetrisSmallIconList)[index]
+function FeatureEffectParamTetris:GetTetrisSmallIconByIndex(index)
+  return self._tetrisSmallIconList[index]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetTetrisIconByIndex = function(self, index)
-  -- function num : 0_14
-  return (self._tetrisIconList)[index]
+function FeatureEffectParamTetris:GetTetrisIconByIndex(index)
+  return self._tetrisIconList[index]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetTetrisIconList = function(self)
-  -- function num : 0_15
+function FeatureEffectParamTetris:GetTetrisIconList()
   return self._tetrisIconList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetLockEnable = function(self)
-  -- function num : 0_16
+function FeatureEffectParamTetris:GetLockEnable()
   return self._lockEnable
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.GetFeatureType = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function FeatureEffectParamTetris:GetFeatureType()
   return FeatureType.TetrisGame
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.CopyFrom = function(self, param)
-  -- function num : 0_18 , upvalues : _ENV
+function FeatureEffectParamTetris:CopyFrom(param)
   if param then
-    for k,v in pairs(param) do
+    for k, v in pairs(param) do
       self[k] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.CloneSelf = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function FeatureEffectParamTetris:CloneSelf()
   local param = FeatureEffectParamTetris:New()
   param:CopyFrom(self)
   return param
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamTetris.ReplaceByCustomCfg = function(self, t)
-  -- function num : 0_20
+function FeatureEffectParamTetris:ReplaceByCustomCfg(t)
   self:_RefreshData(t)
 end
 
-local FeatureTetrisType = {O = 1, I = 2, T = 3, L = 4, S = 5, Z = 6, J = 7}
+local FeatureTetrisType = {
+  O = 1,
+  I = 2,
+  T = 3,
+  L = 4,
+  S = 5,
+  Z = 6,
+  J = 7
+}
 _enum("FeatureTetrisType", FeatureTetrisType)
-

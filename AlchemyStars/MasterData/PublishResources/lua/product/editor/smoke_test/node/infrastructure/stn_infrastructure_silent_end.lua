@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/infrastructure/stn_infrastructure_silent_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("stn_infrastructure_end")
 _class("Infrastructure_SilentEnd", Infrastructure_End)
 Infrastructure_SilentEnd = Infrastructure_SilentEnd
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Infrastructure_SilentEnd.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (self.m_pManager):OnTestRobot_End()
-  return ((Infrastructure_SilentEnd.super).OnWorking)(self)
+function Infrastructure_SilentEnd:OnWorking()
+  self.m_pManager:OnTestRobot_End()
+  return Infrastructure_SilentEnd.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Infrastructure_SilentEnd.OnEnd = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  local nReturn = ((Infrastructure_SilentEnd.super).OnEnd)(self, ...)
-  ;
-  (self.m_pManager):WriteProgressEnd()
-  ;
-  (self.m_pManager):OnTestRobot_End()
-  ;
-  (self.m_pManager):StopAutoTest()
+function Infrastructure_SilentEnd:OnEnd(...)
+  local nReturn = Infrastructure_SilentEnd.super.OnEnd(self, ...)
+  self.m_pManager:WriteProgressEnd()
+  self.m_pManager:OnTestRobot_End()
+  self.m_pManager:StopAutoTest()
   return nReturn
 end
-
-

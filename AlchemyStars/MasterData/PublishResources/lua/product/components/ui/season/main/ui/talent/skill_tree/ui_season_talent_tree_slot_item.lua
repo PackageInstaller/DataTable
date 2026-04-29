@@ -1,120 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/skill_tree/ui_season_talent_tree_slot_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentTreeSlotItem", UICustomWidget)
 UISeasonTalentTreeSlotItem = UISeasonTalentTreeSlotItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentTreeSlotItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTalentTreeSlotItem:OnShow()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._slotInfoPanel = self:GetGameObject("SlotInfoPanel")
-  ;
-  (self._slotInfoPanel):SetActive(false)
+  self._slotInfoPanel:SetActive(false)
   self._skillName = self:GetUIComponent("UILocalizationText", "SkillName")
   self._skillTYpe = self:GetUIComponent("UILocalizationText", "SkillType")
   self._activeSkillNumber = self:GetUIComponent("UILocalizationText", "ActiveSkillNumber")
   self._anim = self:GetUIComponent("Animation", "UISeasonTalentTree_Slot")
   self._panelPos = self:GetUIComponent("RectTransform", "SlotInfoPanel")
   self._currentSelectSlotID = nil
-  self.idx2slotPos = {[1] = Vector2(227, 221), [2] = Vector2(227, 73), [3] = Vector2(227, -73), [4] = Vector2(227, -221)}
+  self.idx2slotPos = {
+    [1] = Vector2(227, 221),
+    [2] = Vector2(227, 73),
+    [3] = Vector2(227, -73),
+    [4] = Vector2(227, -221)
+  }
   self:AttachEvent(GameEventType.OnSelectSlot, self.OnSelectSlot)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSlotItem.OnSelectSlot = function(self, id)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonTalentTreeSlotItem:OnSelectSlot(id)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  local info = (self.talentComInfo).m_talent_info
+  local info = self.talentComInfo.m_talent_info
   local slotInfo = info.m_skill_solt
-  if slotInfo[id] and slotInfo[id] > 0 then
-    (self._slotInfoPanel):SetActive(true)
+  if slotInfo[id] and 0 < slotInfo[id] then
+    self._slotInfoPanel:SetActive(true)
     local rootid = slotInfo[id]
-    local map = (self.skillData):RootIDMap()
+    local map = self.skillData:RootIDMap()
     local skillCls = map[rootid]
     local cfg = skillCls:GetCfg()
     local nameStr = cfg.Name
     local type = skillCls.type
-    local typeName = nil
+    local typeName
     if type == SeasonTalentSkillType.Passive then
       typeName = "str_season_talent_tree_skil_type_1"
-    else
-      if type == SeasonTalentSkillType.Normal then
-        typeName = "str_season_talent_tree_skil_type_3"
-      else
-        if type == SeasonTalentSkillType.Power then
-          typeName = "str_season_talent_tree_skil_type_2"
-        end
-      end
+    elseif type == SeasonTalentSkillType.Normal then
+      typeName = "str_season_talent_tree_skil_type_3"
+    elseif type == SeasonTalentSkillType.Power then
+      typeName = "str_season_talent_tree_skil_type_2"
     end
-    local pos = (self.idx2slotPos)[id]
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._panelPos).anchoredPosition = pos
-    ;
-    (self._skillTYpe):SetText((StringTable.Get)(typeName))
-    ;
-    (self._skillName):SetText((StringTable.Get)(nameStr))
+    local pos = self.idx2slotPos[id]
+    self._panelPos.anchoredPosition = pos
+    self._skillTYpe:SetText(StringTable.Get(typeName))
+    self._skillName:SetText(StringTable.Get(nameStr))
     self._currentSelectSlotID = id
-    ;
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uianim_UISeasonTalentTree_SlotInfoPanel_in")
-    return 
+    self._anim:Stop()
+    self._anim:Play("uianim_UISeasonTalentTree_SlotInfoPanel_in")
+    return
   end
-  do
-    if self._currentSelectSlotID then
-      (self._anim):Stop()
-      ;
-      (self._anim):Play("uianim_UISeasonTalentTree_SlotInfoPanel_out")
-      self._timer = ((GameGlobal.Timer)()):AddEvent(500, function()
-    -- function num : 0_1_0 , upvalues : self
-    (self._slotInfoPanel):SetActive(false)
+  if self._currentSelectSlotID then
+    self._anim:Stop()
+    self._anim:Play("uianim_UISeasonTalentTree_SlotInfoPanel_out")
+    self._timer = GameGlobal.Timer():AddEvent(500, function()
+      self._slotInfoPanel:SetActive(false)
+    end)
   end
-)
-    end
-    self._currentSelectSlotID = nil
-  end
+  self._currentSelectSlotID = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSlotItem.BtnOnClick = function(self, go)
-  -- function num : 0_2
-  (self.unloadCb)(self._currentSelectSlotID)
+function UISeasonTalentTreeSlotItem:BtnOnClick(go)
+  self.unloadCb(self._currentSelectSlotID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSlotItem.OneBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  local info = (self.talentComInfo).m_talent_info
+function UISeasonTalentTreeSlotItem:OneBtnOnClick(go)
+  local info = self.talentComInfo.m_talent_info
   local slotInfo = info.m_skill_solt
-  for key,value in pairs(slotInfo) do
-    if value and value > 0 then
-      (self.unloadAllCb)(self._currentSelectSlotID)
-      return 
+  for key, value in pairs(slotInfo) do
+    if value and 0 < value then
+      self.unloadAllCb(self._currentSelectSlotID)
+      return
     end
   end
-  ;
-  (Log.debug)("###[UISeasonTalentTreeSlotItem] OneBtnOnClick,but no slot use !")
+  Log.debug("###[UISeasonTalentTreeSlotItem] OneBtnOnClick,but no slot use !")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSlotItem.SetData = function(self, com, skillData, callback, unloadCb, unloadAllCb)
-  -- function num : 0_4
+function UISeasonTalentTreeSlotItem:SetData(com, skillData, callback, unloadCb, unloadAllCb)
   self.talentCom = com
   self.skillData = skillData
-  self._comCfgId = (self.talentCom):GetComponentCfgId()
-  self.talentComInfo = (self.talentCom):GetComponentInfo()
-  local info = (self.talentComInfo).m_talent_info
+  self._comCfgId = self.talentCom:GetComponentCfgId()
+  self.talentComInfo = self.talentCom:GetComponentInfo()
+  local info = self.talentComInfo.m_talent_info
   self.slotInfo = info.m_skill_solt
   self.callback = callback
   self.unloadCb = unloadCb
@@ -126,81 +94,58 @@ UISeasonTalentTreeSlotItem.SetData = function(self, com, skillData, callback, un
   return poolRect, slotRect, self.slotCfgList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSlotItem.ShowActiveSkill = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local info = (self.talentComInfo).m_talent_info
-  local len = (table.count)(info.m_skill_list)
-  ;
-  (self._activeSkillNumber):SetText(len)
+function UISeasonTalentTreeSlotItem:ShowActiveSkill()
+  local info = self.talentComInfo.m_talent_info
+  local len = table.count(info.m_skill_list)
+  self._activeSkillNumber:SetText(len)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSlotItem.SlotCfgList = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonTalentTreeSlotItem:SlotCfgList()
   self.slotCfgList = {}
-  local cfgs = (Cfg.cfg_component_talent_tree_slot)({ComponentID = self._comCfgId})
-  for key,value in pairs(cfgs) do
-    (table.insert)(self.slotCfgList, value)
+  local cfgs = Cfg.cfg_component_talent_tree_slot({
+    ComponentID = self._comCfgId
+  })
+  for key, value in pairs(cfgs) do
+    table.insert(self.slotCfgList, value)
   end
-  ;
-  (table.sort)(self.slotCfgList, function(a, b)
-    -- function num : 0_6_0
-    do return a.SlotID < b.SlotID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self.slotCfgList, function(a, b)
+    return a.SlotID < b.SlotID
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSlotItem.ShowPools = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonTalentTreeSlotItem:ShowPools()
   local slotRectList = {}
-  ;
-  (self._pool):SpawnObjects("UISeasonTalentTreeSlotCell", #self.slotCfgList)
-  local pools = (self._pool):GetAllSpawnList()
+  self._pool:SpawnObjects("UISeasonTalentTreeSlotCell", #self.slotCfgList)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self.slotCfgList do
     local item = pools[i]
-    local cfg = (self.slotCfgList)[i]
-    local rootid = (self.slotInfo)[cfg.SlotID]
+    local cfg = self.slotCfgList[i]
+    local rootid = self.slotInfo[cfg.SlotID]
     item:SetData(i, cfg, rootid, self.callback)
     local slotRect = self:GetUIComponent("RectTransform", "slotRect" .. i)
-    ;
-    (table.insert)(slotRectList, slotRect)
+    table.insert(slotRectList, slotRect)
   end
   return slotRectList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSlotItem.RefreshData = function(self, com, skillData)
-  -- function num : 0_8
+function UISeasonTalentTreeSlotItem:RefreshData(com, skillData)
   self.talentCom = com
   self.skillData = skillData
-  self._comCfgId = (self.talentCom):GetComponentCfgId()
-  self.talentComInfo = (self.talentCom):GetComponentInfo()
-  local info = (self.talentComInfo).m_talent_info
+  self._comCfgId = self.talentCom:GetComponentCfgId()
+  self.talentComInfo = self.talentCom:GetComponentInfo()
+  local info = self.talentComInfo.m_talent_info
   self.slotInfo = info.m_skill_solt
   self:RefreshPools()
   self:ShowActiveSkill()
-  ;
-  (self._slotInfoPanel):SetActive(false)
+  self._slotInfoPanel:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSlotItem.RefreshPools = function(self)
-  -- function num : 0_9
-  local pools = (self._pool):GetAllSpawnList()
+function UISeasonTalentTreeSlotItem:RefreshPools()
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self.slotCfgList do
     local item = pools[i]
-    local cfg = (self.slotCfgList)[i]
-    local rootid = (self.slotInfo)[cfg.SlotID]
+    local cfg = self.slotCfgList[i]
+    local rootid = self.slotInfo[cfg.SlotID]
     item:RefreshData(rootid)
   end
 end
-
-

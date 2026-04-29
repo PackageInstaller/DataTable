@@ -1,74 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/sign_in/ui_n19_p5_sign_in_item_award_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19P5SignInItemAwardBase", UICustomWidget)
 UIN19P5SignInItemAwardBase = UIN19P5SignInItemAwardBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5SignInItemAwardBase.OnShow = function(self)
-  -- function num : 0_0
+function UIN19P5SignInItemAwardBase:OnShow()
   self.pos = self:GetUIComponent("RectTransform", "pos")
   self.countPos = self:GetUIComponent("RectTransform", "countPos")
   self.count = self:GetUIComponent("UILocalizationText", "count")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
-  self._iconRectDefaultSize = (self._iconRect).sizeDelta
+  self._iconRectDefaultSize = self._iconRect.sizeDelta
   self._iconRawImg = self:GetUIComponent("RawImage", "icon")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInItemAwardBase.SetData = function(self, idx, roleAsset, callback, gray, pos, countPos)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R7 in 'UnsetPending'
-
-  (self.pos).anchoredPosition = pos
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.countPos).anchoredPosition = countPos
+function UIN19P5SignInItemAwardBase:SetData(idx, roleAsset, callback, gray, pos, countPos)
+  self.pos.anchoredPosition = pos
+  self.countPos.anchoredPosition = countPos
   self.id = roleAsset.assetid
   local count = roleAsset.count
-  local cfg = (Cfg.cfg_item)[self.id]
+  local cfg = Cfg.cfg_item[self.id]
   if not cfg then
-    (Log.fatal)("###[UIN19P5SignInItemAwardBase] cfg is nil ! id --> ", self.id)
+    Log.fatal("###[UIN19P5SignInItemAwardBase] cfg is nil ! id --> ", self.id)
   end
   local icon = cfg.Icon
-  ;
-  (self.icon):LoadImage(icon)
+  self.icon:LoadImage(icon)
   self:SetIcon()
   if not self._EMIMat then
-    self._EMIMat = (UnityEngine.Material):New((self._iconRawImg).material)
+    self._EMIMat = UnityEngine.Material:New(self._iconRawImg.material)
   end
-  local texture = ((self._iconRawImg).material).mainTexture
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._iconRawImg).material = self._EMIMat
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  ((self._iconRawImg).material).mainTexture = texture
+  local texture = self._iconRawImg.material.mainTexture
+  self._iconRawImg.material = self._EMIMat
+  self._iconRawImg.material.mainTexture = texture
   if gray then
-    ((self._iconRawImg).material):SetFloat("_LuminosityAmount", 1)
+    self._iconRawImg.material:SetFloat("_LuminosityAmount", 1)
   else
-    ;
-    ((self._iconRawImg).material):SetFloat("_LuminosityAmount", 0)
+    self._iconRawImg.material:SetFloat("_LuminosityAmount", 0)
   end
-  ;
-  ((self._iconRawImg).gameObject):SetActive(false)
-  ;
-  ((self._iconRawImg).gameObject):SetActive(true)
-  ;
-  (self.count):SetText(count)
+  self._iconRawImg.gameObject:SetActive(false)
+  self._iconRawImg.gameObject:SetActive(true)
+  self.count:SetText(count)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInItemAwardBase.SetIcon = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN19P5SignInItemAwardBase:SetIcon()
   local isHead = false
   if self.id >= 3750000 and self.id <= 3759999 then
     isHead = true
@@ -76,36 +47,22 @@ UIN19P5SignInItemAwardBase.SetIcon = function(self)
   if isHead then
     local whRate = 1
     if self.id >= 3751000 and self.id <= 3751999 then
-      whRate = 0.84210526315789
-    else
-      if self.id >= 3752000 and self.id <= 3752999 then
-        whRate = 0.63888888888889
-      else
-        if self.id >= 3753000 and self.id <= 3753999 then
-          whRate = 0.63888888888889
-        end
-      end
+      whRate = 0.8421052631578947
+    elseif self.id >= 3752000 and self.id <= 3752999 then
+      whRate = 0.6388888888888888
+    elseif self.id >= 3753000 and self.id <= 3753999 then
+      whRate = 0.6388888888888888
     end
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._iconRect).sizeDelta = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).x * whRate)
+    self._iconRect.sizeDelta = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.x * whRate)
   else
-    do
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._iconRect).sizeDelta = self._iconRectDefaultSize
-    end
+    self._iconRect.sizeDelta = self._iconRectDefaultSize
   end
 end
 
 _class("UIN19P5SignInItemAwardBig", UIN19P5SignInItemAwardBase)
 UIN19P5SignInItemAwardBig = UIN19P5SignInItemAwardBig
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5SignInItemAwardBig.IconOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN19P5SignInItemAwardBig:IconOnClick(go)
   local awardInfo = AwardInfo:New()
   awardInfo.m_item_id = self.id
   self:ShowDialog("UIN19P5Tip", awardInfo, true)
@@ -113,4 +70,3 @@ end
 
 _class("UIN19P5SignInItemAwardSmall", UIN19P5SignInItemAwardBase)
 UIN19P5SignInItemAwardSmall = UIN19P5SignInItemAwardSmall
-

@@ -1,44 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/view_extensions/view_extension_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ViewExtensionComponent", Object)
 ViewExtensionComponent = ViewExtensionComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ViewExtensionComponent.Constructor = function(self, visible)
-  -- function num : 0_0
+function ViewExtensionComponent:Constructor(visible)
   self.Visible = visible
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ViewExtension = function(self)
-  -- function num : 0_1
+function Entity:ViewExtension()
   if self:HasTeam() then
     local teamLeaderEntity = self:GetTeamLeaderPetEntity()
     return teamLeaderEntity:ViewExtension()
   else
-    do
-      do return self:GetComponent((self.WEComponentsEnum).ViewExtension) end
-    end
+    return self:GetComponent(self.WEComponentsEnum.ViewExtension)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasViewExtension = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).ViewExtension)
+function Entity:HasViewExtension()
+  return self:HasComponent(self.WEComponentsEnum.ViewExtension)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetViewVisible = function(self, visible)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ViewExtension
-  local component = nil
+function Entity:SetViewVisible(visible)
+  local index = self.WEComponentsEnum.ViewExtension
+  local component
   if self:HasViewExtension() then
     component = self:ViewExtension()
     component.Visible = visible
@@ -53,10 +35,7 @@ Entity.SetViewVisible = function(self, visible)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetUpToVisible = function(self, visible)
-  -- function num : 0_4 , upvalues : _ENV
+function Entity:SetUpToVisible(visible)
   if not visible then
     self:SetLocationHeight(BattleConst.CacheHeight)
   else
@@ -64,15 +43,10 @@ Entity.SetUpToVisible = function(self, visible)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.IsViewVisible = function(self)
-  -- function num : 0_5
+function Entity:IsViewVisible()
   local viewExtensionCmpt = self:ViewExtension()
   if viewExtensionCmpt == nil then
     return false
   end
   return viewExtensionCmpt.Visible
 end
-
-

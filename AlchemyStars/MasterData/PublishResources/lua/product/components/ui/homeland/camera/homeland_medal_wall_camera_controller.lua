@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/camera/homeland_medal_wall_camera_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandMedalWallCameraController", Object)
 HomelandMedalWallCameraController = HomelandMedalWallCameraController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandMedalWallCameraController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandMedalWallCameraController:Constructor()
   self._resName = "HomelandMedalWallCamControl"
   self._minX = MedalWallConfig.XMin
   self._maxX = MedalWallConfig.XMax
@@ -20,164 +13,93 @@ HomelandMedalWallCameraController.Constructor = function(self)
   self._camInitPos = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
-  self._resReq = (ResourceManager:GetInstance()):SyncLoadAsset(self._resName .. ".prefab", LoadType.GameObject)
-  self._camRootGO = (self._resReq).Obj
-  self._camRootTrans = (self._camRootGO).transform
-  self._camTrans = (self._camRootTrans):GetChild(0)
-  ;
-  (self._camRootGO):SetActive(false)
-  self._cam = (self._camRootGO):GetComponentInChildren(typeof(UnityEngine.Camera), false)
+function HomelandMedalWallCameraController:Init(homelandClient)
+  self._resReq = ResourceManager:GetInstance():SyncLoadAsset(self._resName .. ".prefab", LoadType.GameObject)
+  self._camRootGO = self._resReq.Obj
+  self._camRootTrans = self._camRootGO.transform
+  self._camTrans = self._camRootTrans:GetChild(0)
+  self._camRootGO:SetActive(false)
+  self._cam = self._camRootGO:GetComponentInChildren(typeof(UnityEngine.Camera), false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.Dispose = function(self)
-  -- function num : 0_2
-  (self._resReq):Dispose()
+function HomelandMedalWallCameraController:Dispose()
+  self._resReq:Dispose()
   self._resReq = nil
   self._camRootGO = nil
   self._camRootTrans = nil
   self._camTrans = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.SetActive = function(self, active)
-  -- function num : 0_3
-  (self._camRootGO):SetActive(active)
+function HomelandMedalWallCameraController:SetActive(active)
+  self._camRootGO:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.CameraCmp = function(self)
-  -- function num : 0_4
+function HomelandMedalWallCameraController:CameraCmp()
   return self._cam
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.CameraFowardRay = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local camTrans = (self._cam).transform
-  return (Ray.New)(camTrans.forward, camTrans.position)
+function HomelandMedalWallCameraController:CameraFowardRay()
+  local camTrans = self._cam.transform
+  return Ray.New(camTrans.forward, camTrans.position)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.GetFocusPos = function(self)
-  -- function num : 0_6
-  return (self._camRootTrans).position
+function HomelandMedalWallCameraController:GetFocusPos()
+  return self._camRootTrans.position
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.UpdateCameraTransform = function(self, cameraTransform)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._camRootTrans).position = cameraTransform.position
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._camRootTrans).rotation = cameraTransform.rotation
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._camTrans).localPosition = Vector3(0, 0, 0)
+function HomelandMedalWallCameraController:UpdateCameraTransform(cameraTransform)
+  self._camRootTrans.position = cameraTransform.position
+  self._camRootTrans.rotation = cameraTransform.rotation
+  self._camTrans.localPosition = Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.UpdatePos = function(self, x, y, z)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._camRootTrans).position = Vector3(x, y, z)
+function HomelandMedalWallCameraController:UpdatePos(x, y, z)
+  self._camRootTrans.position = Vector3(x, y, z)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.HandleMove = function(self, x, y)
-  -- function num : 0_9 , upvalues : _ENV
-  do
-    if x ~= 0 then
-      local deltaX = x
-      if ((self._camTrans).localPosition).x + x < self._minX then
-        deltaX = self._minX - ((self._camTrans).localPosition).x
-      else
-        if self._maxX < ((self._camTrans).localPosition).x + x then
-          deltaX = self._maxX - ((self._camTrans).localPosition).x
-        end
-      end
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._camTrans).localPosition = (self._camTrans).localPosition + Vector3(deltaX, 0, 0)
+function HomelandMedalWallCameraController:HandleMove(x, y)
+  if x ~= 0 then
+    local deltaX = x
+    if self._camTrans.localPosition.x + x < self._minX then
+      deltaX = self._minX - self._camTrans.localPosition.x
+    elseif self._camTrans.localPosition.x + x > self._maxX then
+      deltaX = self._maxX - self._camTrans.localPosition.x
     end
-    if y ~= 0 then
-      local deltaY = y
-      if ((self._camTrans).localPosition).y + y < self._minY then
-        deltaY = self._minY - ((self._camTrans).localPosition).y
-      else
-        if self._maxY < ((self._camTrans).localPosition).y + y then
-          deltaY = self._maxY - ((self._camTrans).localPosition).y
-        end
-      end
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._camTrans).localPosition = (self._camTrans).localPosition + Vector3(0, deltaY, 0)
+    self._camTrans.localPosition = self._camTrans.localPosition + Vector3(deltaX, 0, 0)
+  end
+  if y ~= 0 then
+    local deltaY = y
+    if self._camTrans.localPosition.y + y < self._minY then
+      deltaY = self._minY - self._camTrans.localPosition.y
+    elseif self._camTrans.localPosition.y + y > self._maxY then
+      deltaY = self._maxY - self._camTrans.localPosition.y
     end
+    self._camTrans.localPosition = self._camTrans.localPosition + Vector3(0, deltaY, 0)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.HandleScale = function(self, scale)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandMedalWallCameraController:HandleScale(scale)
   local delta = scale
-  if ((self._camTrans).localPosition).z + scale < self._minScale then
-    delta = self._minScale - ((self._camTrans).localPosition).z
-  else
-    if self._maxScale < ((self._camTrans).localPosition).z + scale then
-      delta = self._maxScale - ((self._camTrans).localPosition).z
-    end
+  if self._camTrans.localPosition.z + scale < self._minScale then
+    delta = self._minScale - self._camTrans.localPosition.z
+  elseif self._camTrans.localPosition.z + scale > self._maxScale then
+    delta = self._maxScale - self._camTrans.localPosition.z
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._camTrans).localPosition = (self._camTrans).localPosition + Vector3(0, 0, delta)
+  self._camTrans.localPosition = self._camTrans.localPosition + Vector3(0, 0, delta)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.ResetInitPos = function(self, callBackFun)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandMedalWallCameraController:ResetInitPos(callBackFun)
   local focusTime = self._defaultFocusTime
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("HomelandMedalWallCameraController:Reset")
-  ;
-  ((self._camTrans):DOLocalMove(Vector3(0, 0, 0), focusTime, false)):OnComplete(function()
-    -- function num : 0_11_0 , upvalues : callBackFun, _ENV
+  GameGlobal.UIStateManager():Lock("HomelandMedalWallCameraController:Reset")
+  self._camTrans:DOLocalMove(Vector3(0, 0, 0), focusTime, false):OnComplete(function()
     if callBackFun then
       callBackFun()
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("HomelandMedalWallCameraController:Reset")
-  end
-)
+    GameGlobal.UIStateManager():UnLock("HomelandMedalWallCameraController:Reset")
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWallCameraController.ScalePercent = function(self)
-  -- function num : 0_12
-  local percent = (self._maxScale - ((self._camTrans).localPosition).z) / (self._maxScale - self._minScale)
+function HomelandMedalWallCameraController:ScalePercent()
+  local percent = (self._maxScale - self._camTrans.localPosition.z) / (self._maxScale - self._minScale)
   return percent
 end
-
-

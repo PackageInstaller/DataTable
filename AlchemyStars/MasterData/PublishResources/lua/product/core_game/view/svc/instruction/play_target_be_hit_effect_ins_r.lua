@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_target_be_hit_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTargetBeHitEffectInstruction", BaseInstruction)
 PlayTargetBeHitEffectInstruction = PlayTargetBeHitEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTargetBeHitEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTargetBeHitEffectInstruction:Constructor(paramList)
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._hitEffectIDBodyAreaMoreThanOne = tonumber(paramList.hitEffectIDBodyAreaMoreThanOne)
   self._randomDir = paramList.randomDir ~= nil
@@ -17,34 +10,33 @@ PlayTargetBeHitEffectInstruction.Constructor = function(self, paramList)
   self._randomMax = tonumber(paramList.randomMax)
   self._targetHitOffsetMin = tonumber(paramList.targetHitOffsetMin) or 0
   self._targetHitOffsetMax = tonumber(paramList.targetHitOffsetMax)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetBeHitEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTargetBeHitEffectInstruction:GetCacheResource()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
-  if self._hitEffectIDBodyAreaMoreThanOne and self._hitEffectIDBodyAreaMoreThanOne > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectIDBodyAreaMoreThanOne]).ResPath, 1})
+  if self._hitEffectIDBodyAreaMoreThanOne and 0 < self._hitEffectIDBodyAreaMoreThanOne then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectIDBodyAreaMoreThanOne].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetBeHitEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTargetBeHitEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._randomDir and not phaseContext.__PlayTargetBeHitEffect_RandTime then
     phaseContext.__PlayTargetBeHitEffect_RandTime = 0
   end
   local world = casterEntity:GetOwnerWorld()
   local playDamageService = world:GetService("PlayDamage")
   local effectService = world:GetService("Effect")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local targetEntity = world:GetEntityByID(targetEntityID)
@@ -55,47 +47,42 @@ PlayTargetBeHitEffectInstruction.DoInstruction = function(self, TT, casterEntity
   local damageResult = damageResultArray[curDamageIndex]
   local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
   if not damageInfo then
-    (Log.fatal)("### PlayTargetBeHitAnimation DamageInfo is nil. curDamageIndex, curDamageInfoIndex=", curDamageIndex, curDamageInfoIndex)
-    return 
+    Log.fatal("### PlayTargetBeHitAnimation DamageInfo is nil. curDamageIndex, curDamageInfoIndex=", curDamageIndex, curDamageInfoIndex)
+    return
   end
   local damageGridPos = damageResult:GetGridPos()
   local guard = damageInfo:GetDamageType() == DamageType.Guard
   local damageShowType = playDamageService:SingleOrGrid(skillID)
   local curHitEffectID = self._hitEffectID
-  do
-    if self._hitEffectIDBodyAreaMoreThanOne and self._hitEffectIDBodyAreaMoreThanOne > 0 then
-      local bodyAreaCount = (targetEntity:BodyArea()):GetAreaCount()
-      if bodyAreaCount > 1 then
-        curHitEffectID = self._hitEffectIDBodyAreaMoreThanOne
+  if self._hitEffectIDBodyAreaMoreThanOne and 0 < self._hitEffectIDBodyAreaMoreThanOne then
+    local bodyAreaCount = targetEntity:BodyArea():GetAreaCount()
+    if 1 < bodyAreaCount then
+      curHitEffectID = self._hitEffectIDBodyAreaMoreThanOne
+    end
+  end
+  if curHitEffectID and 0 < curHitEffectID then
+    local beHitEffectEntity = effectService:CreateBeHitEffect(curHitEffectID, targetEntity, damageShowType, damageGridPos)
+    if beHitEffectEntity ~= nil then
+      local effectCtrl = beHitEffectEntity:EffectController()
+      if effectCtrl ~= nil and casterEntity ~= nil then
+        effectCtrl:SetEffectCasterID(casterEntity:GetID())
+      end
+      if self._randomDir then
+        effectCtrl:SetNoResetRotationOnCreated(true)
+        local rand = math.random(self._randomMin, self._randomMax)
+        local v3 = Vector3.up * rand * phaseContext.__PlayTargetBeHitEffect_RandTime
+        local trans = beHitEffectEntity:View():GetGameObject().transform
+        trans.rotation = Quaternion.identity
+        trans:Rotate(v3)
+        phaseContext.__PlayTargetBeHitEffect_RandTime = phaseContext.__PlayTargetBeHitEffect_RandTime + 1
+      end
+      if self._targetHitOffsetMax then
+        local targetHitOffset = math.random(self._targetHitOffsetMin * 1000, self._targetHitOffsetMax * 1000) / 1000
+        local playSkillService = world:GetService("PlaySkill")
+        local targetBoneTransform = playSkillService:GetEntityRenderSelectBoneTransform(targetEntity, "Hit")
+        local targetPos = targetBoneTransform.position + UnityEngine.Random.onUnitSphere * targetHitOffset
+        beHitEffectEntity:SetPosition(targetPos)
       end
     end
-    if curHitEffectID and curHitEffectID > 0 then
-      local beHitEffectEntity = effectService:CreateBeHitEffect(curHitEffectID, targetEntity, damageShowType, damageGridPos)
-      if beHitEffectEntity ~= nil then
-        local effectCtrl = beHitEffectEntity:EffectController()
-        if effectCtrl ~= nil and casterEntity ~= nil then
-          effectCtrl:SetEffectCasterID(casterEntity:GetID())
-        end
-        if self._randomDir then
-          effectCtrl:SetNoResetRotationOnCreated(true)
-          local rand = (math.random)(self._randomMin, self._randomMax)
-          local v3 = Vector3.up * rand * phaseContext.__PlayTargetBeHitEffect_RandTime
-          local trans = ((beHitEffectEntity:View()):GetGameObject()).transform
-          trans.rotation = Quaternion.identity
-          trans:Rotate(v3)
-          phaseContext.__PlayTargetBeHitEffect_RandTime = phaseContext.__PlayTargetBeHitEffect_RandTime + 1
-        end
-        if self._targetHitOffsetMax then
-          local targetHitOffset = (math.random)(self._targetHitOffsetMin * 1000, self._targetHitOffsetMax * 1000) / 1000
-          local playSkillService = world:GetService("PlaySkill")
-          local targetBoneTransform = playSkillService:GetEntityRenderSelectBoneTransform(targetEntity, "Hit")
-          local targetPos = targetBoneTransform.position + (UnityEngine.Random).onUnitSphere * targetHitOffset
-          beHitEffectEntity:SetPosition(targetPos)
-        end
-      end
-    end
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
   end
 end
-
-

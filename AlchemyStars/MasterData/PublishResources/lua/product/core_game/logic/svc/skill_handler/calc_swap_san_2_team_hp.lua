@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_swap_san_2_team_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SwapSan2TeamHp", Object)
 SkillEffectCalc_SwapSan2TeamHp = SkillEffectCalc_SwapSan2TeamHp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SwapSan2TeamHp.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SwapSan2TeamHp:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SwapSan2TeamHp.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+function SkillEffectCalc_SwapSan2TeamHp:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local resultList = {}
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.Sanity) then
     return resultList
   end
@@ -32,19 +22,14 @@ SkillEffectCalc_SwapSan2TeamHp.DoSkillEffectCalculator = function(self, skillEff
     return resultList
   end
   local sanPercent = curSan / maxSan
-  local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
+  local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
   local teamAttrConmpt = teamEntity:Attributes()
   local teamCurHP = teamAttrConmpt:GetCurrentHP()
   local teamMaxHP = teamAttrConmpt:CalcMaxHp()
   local hpPercent = teamCurHP / teamMaxHP
-  do
-    if sanPercent ~= hpPercent then
-      local result = SkillEffectResult_SwapSan2TeamHp:New(hpPercent, sanPercent)
-      ;
-      (table.insert)(resultList, result)
-    end
-    return resultList
+  if sanPercent ~= hpPercent then
+    local result = SkillEffectResult_SwapSan2TeamHp:New(hpPercent, sanPercent)
+    table.insert(resultList, result)
   end
+  return resultList
 end
-
-

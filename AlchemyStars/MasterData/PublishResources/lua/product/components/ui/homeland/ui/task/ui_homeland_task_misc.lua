@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/task/ui_homeland_task_misc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local HomelandTaskType = {Guide = QuestType.QT_Homeland_Group_Rookie, Phase = QuestType.QT_Homeland_Stage, Home = QuestType.QT_Homeland_Common, Change = QuestType.QT_Homeland_Change}
+local HomelandTaskType = {
+  Guide = QuestType.QT_Homeland_Group_Rookie,
+  Phase = QuestType.QT_Homeland_Stage,
+  Home = QuestType.QT_Homeland_Common,
+  Change = QuestType.QT_Homeland_Change
+}
 _enum("HomelandTaskType", HomelandTaskType)
-

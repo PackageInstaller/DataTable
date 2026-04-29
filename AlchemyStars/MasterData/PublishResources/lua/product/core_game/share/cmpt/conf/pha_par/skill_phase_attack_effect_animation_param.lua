@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_attack_effect_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseAttackAnimationParam", SkillPhaseParamBase)
 SkillPhaseAttackAnimationParam = SkillPhaseAttackAnimationParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseAttackAnimationParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseAttackAnimationParam:Constructor(t)
   self._hitAnimation = t.onHitAnimation
   self._castTotalTime = t.castTotalTime
   self._longCastTotalTime = t.longCastTotalTime
@@ -38,34 +31,22 @@ SkillPhaseAttackAnimationParam.Constructor = function(self, t)
   self._skillStageIndex = t.skillStageIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseAttackAnimationParam:GetPhaseType()
   return SkillViewPhaseType.AttackAnimation
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetCastEffectID = function(self, isSlantAttack)
-  -- function num : 0_2
+function SkillPhaseAttackAnimationParam:GetCastEffectID(isSlantAttack)
   if isSlantAttack then
     return self._slantCastEffectID
   end
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetSlantCastEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseAttackAnimationParam:GetSlantCastEffectID()
   return self._slantCastEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetAnimationName = function(self, isFinalAttack, isSlantAttack)
-  -- function num : 0_4
+function SkillPhaseAttackAnimationParam:GetAnimationName(isFinalAttack, isSlantAttack)
   if isSlantAttack then
     if isFinalAttack and self._slantCastLongAnimation then
       return self._slantCastLongAnimation
@@ -80,10 +61,7 @@ SkillPhaseAttackAnimationParam.GetAnimationName = function(self, isFinalAttack, 
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetHitPointDelay = function(self, isFinalAttack, isSlantAttack)
-  -- function num : 0_5
+function SkillPhaseAttackAnimationParam:GetHitPointDelay(isFinalAttack, isSlantAttack)
   if isSlantAttack then
     if isFinalAttack and self._slantLongHitPointDelay then
       return self._slantLongHitPointDelay
@@ -98,10 +76,7 @@ SkillPhaseAttackAnimationParam.GetHitPointDelay = function(self, isFinalAttack, 
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetHitPointDelaySecond = function(self, isFinalAttack)
-  -- function num : 0_6
+function SkillPhaseAttackAnimationParam:GetHitPointDelaySecond(isFinalAttack)
   if isFinalAttack and self._longHitPointDelaySecond then
     return self._longHitPointDelaySecond
   else
@@ -109,27 +84,18 @@ SkillPhaseAttackAnimationParam.GetHitPointDelaySecond = function(self, isFinalAt
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetHitAnimation = function(self)
-  -- function num : 0_7
+function SkillPhaseAttackAnimationParam:GetHitAnimation()
   return self._hitAnimation
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetHitEffectID = function(self, isSlantAttack)
-  -- function num : 0_8
+function SkillPhaseAttackAnimationParam:GetHitEffectID(isSlantAttack)
   if isSlantAttack then
     return self._slantHitEffectID
   end
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetCastTotalTime = function(self, isFinalAttack)
-  -- function num : 0_9
+function SkillPhaseAttackAnimationParam:GetCastTotalTime(isFinalAttack)
   if isFinalAttack and self._longCastTotalTime then
     return self._longCastTotalTime
   else
@@ -137,37 +103,40 @@ SkillPhaseAttackAnimationParam.GetCastTotalTime = function(self, isFinalAttack)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetCacheTable = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function SkillPhaseAttackAnimationParam:GetCacheTable()
   local t = {}
   if self._castEffectID and self._castEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
-  if self._slantCastEffectID and self._slantCastEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._slantCastEffectID]).ResPath, 1})
+  if self._slantCastEffectID and 0 < self._slantCastEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._slantCastEffectID].ResPath,
+      1
+    })
   end
-  if self._slantHitEffectID and self._slantHitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._slantHitEffectID]).ResPath, 1})
+  if self._slantHitEffectID and 0 < self._slantHitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._slantHitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetHPDelay = function(self)
-  -- function num : 0_11
+function SkillPhaseAttackAnimationParam:GetHPDelay()
   return self._hpDelayTime
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetHitEffectDelay = function(self, isFinalAttack, isSlantAttack)
-  -- function num : 0_12
+function SkillPhaseAttackAnimationParam:GetHitEffectDelay(isFinalAttack, isSlantAttack)
   if isSlantAttack then
     if isFinalAttack and self._slantLongAtkEffectDelay then
       return self._slantLongAtkEffectDelay
@@ -182,32 +151,18 @@ SkillPhaseAttackAnimationParam.GetHitEffectDelay = function(self, isFinalAttack,
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetDamageIndex = function(self)
-  -- function num : 0_13
+function SkillPhaseAttackAnimationParam:GetDamageIndex()
   return self._nDamageIndex
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.IsUsePermanentEffectPlayAnim = function(self)
-  -- function num : 0_14
+function SkillPhaseAttackAnimationParam:IsUsePermanentEffectPlayAnim()
   return self._usePermanentEffectPlayAnim
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetPermanentEffSpecialAnimRoot = function(self)
-  -- function num : 0_15
+function SkillPhaseAttackAnimationParam:GetPermanentEffSpecialAnimRoot()
   return self._permanentEffSpecialAnimRoot
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAttackAnimationParam.GetSkillStageIndex = function(self)
-  -- function num : 0_16
+function SkillPhaseAttackAnimationParam:GetSkillStageIndex()
   return self._skillStageIndex
 end
-
-

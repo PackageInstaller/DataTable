@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_change_feature_day_night_ui_style.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultChangeFeatureDayNightUiStyle", BuffResultBase)
 BuffResultChangeFeatureDayNightUiStyle = BuffResultChangeFeatureDayNightUiStyle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeFeatureDayNightUiStyle.Constructor = function(self, uiStyle)
-  -- function num : 0_0
+function BuffResultChangeFeatureDayNightUiStyle:Constructor(uiStyle)
   self._uiStyle = uiStyle
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeFeatureDayNightUiStyle.GetUiStyle = function(self)
-  -- function num : 0_1
+function BuffResultChangeFeatureDayNightUiStyle:GetUiStyle()
   return self._uiStyle
 end
-
-

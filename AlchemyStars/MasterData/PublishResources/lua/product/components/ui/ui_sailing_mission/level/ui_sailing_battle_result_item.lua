@@ -1,45 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/level/ui_sailing_battle_result_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingBattleResultItem", UICustomWidget)
 UISailingBattleResultItem = UISailingBattleResultItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingBattleResultItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISailingBattleResultItem:OnShow(uiParams)
   self._sailingProgressLabel = self:GetUIComponent("UILocalizationText", "SailingProgress")
   self._sailingLayerLabel = self:GetUIComponent("UILocalizationText", "SailingLayer")
   self._sailingNameLabel = self:GetUIComponent("UILocalizationText", "SailingName")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingBattleResultItem.Refresh = function(self, matchResult)
-  -- function num : 0_1 , upvalues : _ENV
-  local sailingMissionModule = (GameGlobal.GetModule)(SailingMissionModule)
+function UISailingBattleResultItem:Refresh(matchResult)
+  local sailingMissionModule = GameGlobal.GetModule(SailingMissionModule)
   local layerId = matchResult.m_parent_mission_id
   local missionId = matchResult.m_nID
-  local cfg = (Cfg.cfg_sailing_mission)[missionId]
-  local layerCfg = (Cfg.cfg_sailing_layer)[layerId]
+  local cfg = Cfg.cfg_sailing_mission[missionId]
+  local layerCfg = Cfg.cfg_sailing_layer[layerId]
   local missionList = layerCfg.SailingMissionList
-  local missionCount = (table.count)(missionList)
-  ;
-  (self._sailingNameLabel):SetText((StringTable.Get)(cfg.MissionName))
-  ;
-  (self._sailingProgressLabel):SetText("<color=#ffbd1d>" .. matchResult.layer_mission_num .. "</color>/" .. missionCount)
-  ;
-  (self._sailingLayerLabel):SetText((StringTable.Get)("str_sailing_mission_level_result_layer_tips1", layerId))
-  local getDataFuc = function(layer_id, mission_Id)
-    -- function num : 0_1_0 , upvalues : _ENV, sailingMissionModule
+  local missionCount = table.count(missionList)
+  self._sailingNameLabel:SetText(StringTable.Get(cfg.MissionName))
+  self._sailingProgressLabel:SetText("<color=#ffbd1d>" .. matchResult.layer_mission_num .. "</color>/" .. missionCount)
+  self._sailingLayerLabel:SetText(StringTable.Get("str_sailing_mission_level_result_layer_tips1", layerId))
+  
+  local function getDataFuc(layer_id, mission_Id)
     local t = {}
-    local cfg = (Cfg.cfg_sailing_mission)[mission_Id]
-    t.name = (StringTable.Get)(cfg.MissionName)
+    local cfg = Cfg.cfg_sailing_mission[mission_Id]
+    t.name = StringTable.Get(cfg.MissionName)
     t.complete = sailingMissionModule:IsMissionComplete(layer_id, mission_Id)
     return t
   end
-
+  
   local index = 1
   for i = 1, #missionList do
     if missionList[i] == missionId then
@@ -47,120 +34,91 @@ UISailingBattleResultItem.Refresh = function(self, matchResult)
       break
     end
   end
-  do
-    local getPreLayerCfgFunc = function(layer_id)
-    -- function num : 0_1_1 , upvalues : _ENV
-    local cfgs = (Cfg.cfg_sailing_layer)({})
-    for _,v in pairs(cfgs) do
+  
+  local function getPreLayerCfgFunc(layer_id)
+    local cfgs = Cfg.cfg_sailing_layer({})
+    for _, v in pairs(cfgs) do
       if v.NextLayerId == layer_id then
         return v
       end
     end
     return nil
   end
-
-    local getNextLayerCfgFunc = function(layer_id)
-    -- function num : 0_1_2 , upvalues : _ENV
-    local cfg = (Cfg.cfg_sailing_layer)[layer_id]
+  
+  local function getNextLayerCfgFunc(layer_id)
+    local cfg = Cfg.cfg_sailing_layer[layer_id]
     if cfg.NextLayerId > 0 then
-      return (Cfg.cfg_sailing_layer)[cfg.NextLayerId]
+      return Cfg.cfg_sailing_layer[cfg.NextLayerId]
     end
     return nil
   end
-
-    local leftCount = 3
-    local leftDatas = {}
-    for i = index - 1, 1, -1 do
-      leftDatas[#leftDatas + 1] = getDataFuc(layerId, missionList[i])
-      leftCount = leftCount - 1
+  
+  local leftCount = 3
+  local leftDatas = {}
+  for i = index - 1, 1, -1 do
+    leftDatas[#leftDatas + 1] = getDataFuc(layerId, missionList[i])
+    leftCount = leftCount - 1
+    if leftCount <= 0 then
+      break
     end
-    do
-      if leftCount > 0 then
-        local currentLayerCfg = getPreLayerCfgFunc(layerId)
-        while 1 do
-          if currentLayerCfg ~= nil and leftCount > 0 then
-            local missions = currentLayerCfg.SailingMissionList
-            for i = #missions, 1, -1 do
-              leftDatas[#leftDatas + 1] = getDataFuc(currentLayerCfg.ID, missions[i])
-              leftCount = leftCount - 1
-            end
-            do
-              if leftCount > 0 then
-                do
-                  currentLayerCfg = getPreLayerCfgFunc(currentLayerCfg.ID)
-                  -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-          end
-        end
-        local rightCount = 3
-        local rightDatas = {}
-        for i = index + 1, #missionList do
-          rightDatas[#rightDatas + 1] = getDataFuc(layerId, missionList[i])
-          rightCount = rightCount - 1
-        end
-        do
-          if rightCount > 0 then
-            local currentLayerCfg = getNextLayerCfgFunc(layerId)
-            while 1 do
-              if currentLayerCfg ~= nil and rightCount > 0 then
-                local missions = currentLayerCfg.SailingMissionList
-                for i = 1, #missions do
-                  rightDatas[#rightDatas + 1] = getDataFuc(currentLayerCfg.ID, missions[i])
-                  rightCount = rightCount - 1
-                end
-                do
-                  if rightCount > 0 then
-                    do
-                      currentLayerCfg = getNextLayerCfgFunc(currentLayerCfg.ID)
-                      -- DECOMPILER ERROR at PC143: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                      -- DECOMPILER ERROR at PC143: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC143: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC143: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                      -- DECOMPILER ERROR at PC143: LeaveBlock: unexpected jumping out IF_STMT
-
-                    end
-                  end
-                end
-              end
-            end
-            local leftItems = {"Level3", "Level2", "Level1"}
-            local rightItems = {"Level4", "Level5", "Level6"}
-            for i = 1, #leftItems do
-              local data = leftDatas[i]
-              if data ~= nil then
-                local itemLoader = self:GetUIComponent("UISelectObjectPath", leftItems[i])
-                local item = itemLoader:SpawnObject("UISailingBattleResultItemProcess")
-                item:Refresh(data.name, data.complete)
-              end
-            end
-            for i = 1, #rightItems do
-              local data = rightDatas[i]
-              if data ~= nil then
-                local itemLoader = self:GetUIComponent("UISelectObjectPath", rightItems[i])
-                local item = itemLoader:SpawnObject("UISailingBattleResultItemProcess")
-                item:Refresh(data.name, data.complete)
-              end
-            end
-          end
-        end
+  end
+  local currentLayerCfg = getPreLayerCfgFunc(layerId)
+  while currentLayerCfg ~= nil and 0 < leftCount do
+    local missions = currentLayerCfg.SailingMissionList
+    for i = #missions, 1, -1 do
+      leftDatas[#leftDatas + 1] = getDataFuc(currentLayerCfg.ID, missions[i])
+      leftCount = leftCount - 1
+      if leftCount <= 0 then
+        break
       end
+    end
+    currentLayerCfg = getPreLayerCfgFunc(currentLayerCfg.ID)
+  end
+  local rightCount = 3
+  local rightDatas = {}
+  for i = index + 1, #missionList do
+    rightDatas[#rightDatas + 1] = getDataFuc(layerId, missionList[i])
+    rightCount = rightCount - 1
+    if rightCount <= 0 then
+      break
+    end
+  end
+  local currentLayerCfg = getNextLayerCfgFunc(layerId)
+  while currentLayerCfg ~= nil and 0 < rightCount do
+    local missions = currentLayerCfg.SailingMissionList
+    for i = 1, #missions do
+      rightDatas[#rightDatas + 1] = getDataFuc(currentLayerCfg.ID, missions[i])
+      rightCount = rightCount - 1
+      if rightCount <= 0 then
+        break
+      end
+    end
+    currentLayerCfg = getNextLayerCfgFunc(currentLayerCfg.ID)
+  end
+  local leftItems = {
+    "Level3",
+    "Level2",
+    "Level1"
+  }
+  local rightItems = {
+    "Level4",
+    "Level5",
+    "Level6"
+  }
+  for i = 1, #leftItems do
+    local data = leftDatas[i]
+    if data ~= nil then
+      local itemLoader = self:GetUIComponent("UISelectObjectPath", leftItems[i])
+      local item = itemLoader:SpawnObject("UISailingBattleResultItemProcess")
+      item:Refresh(data.name, data.complete)
+    end
+  end
+  for i = 1, #rightItems do
+    local data = rightDatas[i]
+    if data ~= nil then
+      local itemLoader = self:GetUIComponent("UISelectObjectPath", rightItems[i])
+      local item = itemLoader:SpawnObject("UISailingBattleResultItemProcess")
+      item:Refresh(data.name, data.complete)
     end
   end
 end
-
-

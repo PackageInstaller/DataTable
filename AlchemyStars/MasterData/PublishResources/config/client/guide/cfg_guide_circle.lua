@@ -1,1434 +1,5472 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/guide/cfg_guide_circle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {id = 1, radius = 2, type = 3, param = 4, offset = 5, ismask = 6, lt = 7, lttitle = 8, rt = 9, rttitle = 10, lb = 11, lbtitle = 12, rb = 13, rbtitle = 14, showTips = 15, line = 16, delay = 17, alpha = 18, showFinger = 19, describe = 20, descrbeIcon = 21, describeOffset = 22, anyClose = 23}
+local key = {
+  id = 1,
+  radius = 2,
+  type = 3,
+  param = 4,
+  offset = 5,
+  ismask = 6,
+  lt = 7,
+  lttitle = 8,
+  rt = 9,
+  rttitle = 10,
+  lb = 11,
+  lbtitle = 12,
+  rb = 13,
+  rbtitle = 14,
+  showTips = 15,
+  line = 16,
+  delay = 17,
+  alpha = 18,
+  showFinger = 19,
+  describe = 20,
+  descrbeIcon = 21,
+  describeOffset = 22,
+  anyClose = 23
+}
 local common = {
-{0, 40}
-, 
-{0, 50}
-, 
-{0, 20}
-, 
-{5, 6}
-, 
-{0, 80}
-, 
-{2021011}
-, 
-{0, 30}
-, 
-{2085}
-, 
-{0, 90}
-, 
-{5, 8}
-, 
-{0, 100}
-, 
-{0, 0}
-, 
-{0, 70}
-, 
-{0, 120}
-, 
-{0, 60}
-, 
-{2040611}
-, 
-{5, 5}
-, 
-{4, 4}
-, 
-{5, 7}
-, 
-{10140912}
-, 
-{10141411}
-, 
-{10140711}
-, 
-{1, 1}
-, 
-{527112101}
-, 
-{529101411}
-, 
-{529300511}
-, 
-{531101411}
-, 
-{4, 6}
-, 
-{5, 2}
-, 
-{0, -223}
-, 
-{0, -323}
-, 
-{8001201}
-, 
-{25, 55}
-, 
-{10, 4}
-, 
-{-20, -325}
-, 
-{80030701}
-, 
-{250, 50}
-, 
-{0, 25}
-, 
-{5, 60}
-, 
-{0, -230}
-, 
-{0, 45}
-, 
-{-100, 0}
-, "str_guide_circle_ex1-4_Lt", "str_guide_circle_ex1-4_LtT", "str_guide_circle_ex1-4_Lb", "str_guide_circle_ex1-4_LbT", "str_guide_circle_N1_2-2_Lb", "str_guide_circle_sailing_2-4_Lt", "str_guide_circle_sailing_2-4_LtT", "str_guide_circle_N12_1-1_Lb", "str_guide_circle_N12_1-1_LbT", "str_guide_circle_N12_1-1_Rb", "str_guide_circle_N12_1-1_RbT", "str_guide_circle_N12_1-2_Lb", "str_guide_circle_N12_1-2_LbT", "str_guide_circle_N12_1-2_Rb", "str_guide_circle_N12_1-2_RbT", "str_guide_circle_N12_1-3_Lb", "str_guide_circle_N12_1-3_LbT", "str_guide_circle_N12_1-3_Rb", "str_guide_circle_N12_1-3_RbT", "str_guide_circle_N12_1-4_Lb", "str_guide_circle_N12_1-4_LbT", "str_guide_circle_N12_1-4_Rb", "str_guide_circle_N12_1-4_RbT", "str_guide_circle_N24_petTry_LtT", "str_guide_circle_N30_tower10_Rb", "str_guide_circle_N30_tower10_RbT", "str_guide_circle_N30_tower10_Lt", "str_guide_circle_N30_tower10_LtT", "str_guide_circle_N30_tower10_Lb", "str_guide_circle_N30_tower10_LbT", "str_guide_circle_N30_tower10_3_Rb", "str_guide_circle_N30_tower10_3_RbT", "str_guide_circle_N30_tower10_3_Lb", "str_guide_circle_N30_tower10_3_LbT", "str_guide_circle_N30_tower10_3_Lt", "str_guide_circle_N30_tower10_3_LtT", "str_guide_circle_80011621_Lb", "str_guide_circle_80011621_LbT", "head1_guid_1601054", "str_guide_circle_CN2-18_Lt", "str_guide_circle_CN2-18_LtT", "str_guide_circle_CN2-18_Rt", "str_guide_circle_CN2-18_RtT", "str_guide_circle_CN2-18_Rb", "str_guide_circle_CN2-18_RbT", "str_guide_circle_29057011_LbT", "str_guide_circle_CN5-8_Lt", "str_guide_circle_CN5-8_LtT", "str_guide_circle_CN5-8_Lb", "str_guide_circle_CN5-8_LbT", "str_guide_circle_CN5-8_Rb", "str_guide_circle_CN5-8_RbT", "str_guide_circle_CN5-15_Lt", "str_guide_circle_CN5-15_LtT", "str_guide_circle_CN5-15_Rt", "str_guide_circle_CN5-15_RtT", "str_guide_circle_CN5-15_Lb", "str_guide_circle_CN5-15_LbT", "str_guide_circle_CN5-15_Rb", "str_guide_circle_CN5-15_RbT", "str_guide_circle_CN5-18_Lb", "str_guide_circle_CN5-18_LbT", "head1_guid_2908901", "str_guide_circle_CN5-4_Rb", "str_guide_circle_CN5-4_RbT", "str_guide_circle_CN7-15_Lt", "str_guide_circle_CN7-15_LtT", "str_guide_circle_CN7-15_Rt", "str_guide_circle_CN7-15_RtT", "str_guide_circle_CN7-15_Lb", "str_guide_circle_CN7-15_LbT", "head1_guid_1600234", "str_guide_circle_CN7-5_Lt", "str_guide_circle_CN7-5_LtT", "str_guide_circle_CN7-5_Rt", "str_guide_circle_CN7-5_RtT", "str_guide_circle_CN7-7_Lt", "str_guide_circle_CN7-7_LtT", "str_guide_circle_S4boss_Lt", "str_guide_circle_S4boss_LtT", "str_guide_circle_S4boss_Lb", "str_guide_circle_S4boss_LbT", "str_guide_crab_Lb", "str_guide_crab_LbT", "str_guide_crab_Lt", "str_guide_crab_LtT", "str_guide_crab_Rt", "str_guide_crab_RtT", "str_guide_circle_2921201_Lt", "str_guide_circle_2921201_LtT", "str_guide_circle_2921201_Rt", "str_guide_circle_2921201_RtT", "str_guide_circle_2921201_Lb", "str_guide_circle_2921201_LbT", "head1_guid_qidizhe"}
+  {0, 40},
+  {0, 50},
+  {0, 20},
+  {5, 6},
+  {0, 80},
+  {2021011},
+  {0, 30},
+  {2085},
+  {0, 90},
+  {5, 8},
+  {0, 100},
+  {0, 0},
+  {0, 70},
+  {0, 120},
+  {0, 60},
+  {2040611},
+  {5, 5},
+  {4, 4},
+  {5, 7},
+  {10140912},
+  {10141411},
+  {10140711},
+  {1, 1},
+  {527112101},
+  {529101411},
+  {529300511},
+  {531101411},
+  {4, 6},
+  {5, 2},
+  {0, -223},
+  {0, -323},
+  {8001201},
+  {25, 55},
+  {10, 4},
+  {-20, -325},
+  {80030701},
+  {250, 50},
+  {0, 25},
+  {5, 60},
+  {0, -230},
+  {0, 45},
+  {-100, 0},
+  "str_guide_circle_ex1-4_Lt",
+  "str_guide_circle_ex1-4_LtT",
+  "str_guide_circle_ex1-4_Lb",
+  "str_guide_circle_ex1-4_LbT",
+  "str_guide_circle_N1_2-2_Lb",
+  "str_guide_circle_sailing_2-4_Lt",
+  "str_guide_circle_sailing_2-4_LtT",
+  "str_guide_circle_N12_1-1_Lb",
+  "str_guide_circle_N12_1-1_LbT",
+  "str_guide_circle_N12_1-1_Rb",
+  "str_guide_circle_N12_1-1_RbT",
+  "str_guide_circle_N12_1-2_Lb",
+  "str_guide_circle_N12_1-2_LbT",
+  "str_guide_circle_N12_1-2_Rb",
+  "str_guide_circle_N12_1-2_RbT",
+  "str_guide_circle_N12_1-3_Lb",
+  "str_guide_circle_N12_1-3_LbT",
+  "str_guide_circle_N12_1-3_Rb",
+  "str_guide_circle_N12_1-3_RbT",
+  "str_guide_circle_N12_1-4_Lb",
+  "str_guide_circle_N12_1-4_LbT",
+  "str_guide_circle_N12_1-4_Rb",
+  "str_guide_circle_N12_1-4_RbT",
+  "str_guide_circle_N24_petTry_LtT",
+  "str_guide_circle_N30_tower10_Rb",
+  "str_guide_circle_N30_tower10_RbT",
+  "str_guide_circle_N30_tower10_Lt",
+  "str_guide_circle_N30_tower10_LtT",
+  "str_guide_circle_N30_tower10_Lb",
+  "str_guide_circle_N30_tower10_LbT",
+  "str_guide_circle_N30_tower10_3_Rb",
+  "str_guide_circle_N30_tower10_3_RbT",
+  "str_guide_circle_N30_tower10_3_Lb",
+  "str_guide_circle_N30_tower10_3_LbT",
+  "str_guide_circle_N30_tower10_3_Lt",
+  "str_guide_circle_N30_tower10_3_LtT",
+  "str_guide_circle_80011621_Lb",
+  "str_guide_circle_80011621_LbT",
+  "head1_guid_1601054",
+  "str_guide_circle_CN2-18_Lt",
+  "str_guide_circle_CN2-18_LtT",
+  "str_guide_circle_CN2-18_Rt",
+  "str_guide_circle_CN2-18_RtT",
+  "str_guide_circle_CN2-18_Rb",
+  "str_guide_circle_CN2-18_RbT",
+  "str_guide_circle_29057011_LbT",
+  "str_guide_circle_CN5-8_Lt",
+  "str_guide_circle_CN5-8_LtT",
+  "str_guide_circle_CN5-8_Lb",
+  "str_guide_circle_CN5-8_LbT",
+  "str_guide_circle_CN5-8_Rb",
+  "str_guide_circle_CN5-8_RbT",
+  "str_guide_circle_CN5-15_Lt",
+  "str_guide_circle_CN5-15_LtT",
+  "str_guide_circle_CN5-15_Rt",
+  "str_guide_circle_CN5-15_RtT",
+  "str_guide_circle_CN5-15_Lb",
+  "str_guide_circle_CN5-15_LbT",
+  "str_guide_circle_CN5-15_Rb",
+  "str_guide_circle_CN5-15_RbT",
+  "str_guide_circle_CN5-18_Lb",
+  "str_guide_circle_CN5-18_LbT",
+  "head1_guid_2908901",
+  "str_guide_circle_CN5-4_Rb",
+  "str_guide_circle_CN5-4_RbT",
+  "str_guide_circle_CN7-15_Lt",
+  "str_guide_circle_CN7-15_LtT",
+  "str_guide_circle_CN7-15_Rt",
+  "str_guide_circle_CN7-15_RtT",
+  "str_guide_circle_CN7-15_Lb",
+  "str_guide_circle_CN7-15_LbT",
+  "head1_guid_1600234",
+  "str_guide_circle_CN7-5_Lt",
+  "str_guide_circle_CN7-5_LtT",
+  "str_guide_circle_CN7-5_Rt",
+  "str_guide_circle_CN7-5_RtT",
+  "str_guide_circle_CN7-7_Lt",
+  "str_guide_circle_CN7-7_LtT",
+  "str_guide_circle_S4boss_Lt",
+  "str_guide_circle_S4boss_LtT",
+  "str_guide_circle_S4boss_Lb",
+  "str_guide_circle_S4boss_LbT",
+  "str_guide_crab_Lb",
+  "str_guide_crab_LbT",
+  "str_guide_crab_Lt",
+  "str_guide_crab_LtT",
+  "str_guide_crab_Rt",
+  "str_guide_crab_RtT",
+  "str_guide_circle_2921201_Lt",
+  "str_guide_circle_2921201_LtT",
+  "str_guide_circle_2921201_Rt",
+  "str_guide_circle_2921201_RtT",
+  "str_guide_circle_2921201_Lb",
+  "str_guide_circle_2921201_LbT",
+  "head1_guid_qidizhe"
+}
 local config = {
-{1, 292, 3, 
-{1003}
-, common[1], false, "str_guide_circle_1_Lt", "str_guide_circle_1_LtT", "str_guide_circle_1_Rt", "str_guide_circle_1_RtT", nil, nil, "str_guide_circle_1_Rb", "str_guide_circle_1_RbT"}
-, 
-{2, 320, 2, 
-{2011724}
-, common[2], false, "str_guide_circle_2_Lt", "str_guide_circle_2_LtT", nil, nil, "str_guide_circle_2_Lb", "str_guide_circle_2_LbT"}
-, 
-{3, 292, 2, 
-{2010523}
-, common[1], false, nil, nil, "str_guide_circle_3_Lt", "str_guide_circle_3_LtT", nil, nil, "str_guide_circle_3_Lb", "str_guide_circle_3_LbT"}
-, 
-{4, 320, 2, 
-{2010814}
-, common[2], false, nil, nil, "str_guide_circle_4_Rt", "str_guide_circle_4_RtT", "str_guide_circle_4_Lt", "str_guide_circle_4_LtT", "str_guide_circle_4_Rb", "str_guide_circle_4_RbT"}
-, 
-{5, 292, 3, 
-{701}
-, common[3], false, nil, nil, "str_guide_circle_5_Rt", "str_guide_circle_5_RtT"}
-, 
-{6, 292, 3, 
-{702}
-, common[3], false, nil, nil, "str_guide_circle_6_Rt", "str_guide_circle_6_RtT"}
-, 
-{7, 292, 1, common[4], common[3], false, nil, nil, nil, nil, nil, nil, "str_guide_circle_7_Rb", "str_guide_circle_7_RbT"}
-, 
-{8, 292, 2, 
-{2020111}
-, common[5], false, "str_guide_circle_2-1_Lt", "str_guide_circle_2-1_LtT", nil, nil, "str_guide_circle_2-1_Lb", "str_guide_circle_2-1_LbT"}
-, 
-{9, 292, 3, 
-{1999}
-, common[3], false, "str_guide_circle_2-2_Lt", "str_guide_circle_2-2_LtT", "str_guide_circle_2-2_Rt", "str_guide_circle_2-2_RtT"}
-, 
-{10, 292, 3, 
-{1998}
-, common[3], false, nil, nil, nil, nil, "str_guide_circle_2-3_Rt", "str_guide_circle_2-3_RtT", "str_guide_circle_2-3_Lt", "str_guide_circle_2-3_LtT"}
-, 
-{11, 292, 2, 
-{2020712}
-, common[1], false, "str_guide_circle_2-7_Lt", "str_guide_circle_2-7_LtT", "str_guide_circle_2-7_Rt", "str_guide_circle_2-7_RtT", nil, nil, "str_guide_circle_2-7_Rb", "str_guide_circle_2-7_RbT"}
-, 
-{12, 292, 3, 
-{3000}
-, common[3], false, nil, nil, "str_guide_circle_2-8_Rt", "str_guide_circle_2-8_RtT", nil, nil, "str_guide_circle_2-8_Rb", "str_guide_circle_2-8_RbT"}
-, 
-{13, 292, 2, common[6], common[3], false, "str_guide_circle_2-10_Lt", "str_guide_circle_2-10_LtT", "str_guide_circle_2-10_Rt", "str_guide_circle_2-10_RtT", nil, nil, "str_guide_circle_2-10_Rb", "str_guide_circle_2-10_RbT"}
-, 
-{14, 292, 2, 
-{2021511}
-, common[3], false, nil, nil, nil, nil, "str_guide_circle_2-10-1_Lt", "str_guide_circle_2-10-1_LtT", "str_guide_circle_2-10-1_Rt", "str_guide_circle_2-10-1_RtT"}
-, 
-{15, 292, 3, 
-{3406}
-, common[3], true, nil, nil, nil, nil, "str_guide_circle_ex1-2_Lt", "str_guide_circle_ex1-2_LtT", "str_guide_circle_ex1-2_Lb", "str_guide_circle_ex1-2_LbT"}
-, 
-{16, 292, 2, 
-{4010312}
-, common[7], false, nil, nil, "str_guide_circle_ex1-3_Lt", "str_guide_circle_ex1-3_LtT", "str_guide_circle_ex1-3_Rt", "str_guide_circle_ex1-3_RtT", "str_guide_circle_ex1-3_Rb", "str_guide_circle_ex1-3_RbT"}
-, 
-{17, 292, 3, 
-{3402}
-, common[3], true, nil, nil, nil, nil, common[43], common[44], common[45], common[46]}
-, 
-{18, 292, 3, 
-{3201}
-, common[3], false, nil, nil, nil, nil, "str_guide_circle_2-3-1_Lb", "str_guide_circle_2-3-1_LbT", "str_guide_circle_2-3-1_Lt", "str_guide_circle_2-3-1_LtT"}
-, 
-{19, 320, 3, common[8], common[9], false, nil, nil, nil, nil, "str_guide_circle_2-11_Lb", "str_guide_circle_2-11_LbT"}
-, 
-{20, 320, 1, common[10], 
-{50, 100}
-, false, nil, nil, nil, nil, "str_guide_circle_air1-1_Lt", "str_guide_circle_air1-1_LtT", "str_guide_circle_air1-1_Rb", "str_guide_circle_air1-1_RbT"}
-, 
-{21, 292, 1, common[10], 
-{50, 160}
-, false, nil, nil, nil, nil, "str_guide_circle_air1-2_Lb", "str_guide_circle_air1-2_LbT"}
-, 
-{22, 292, 2, 
-{2030112}
-, common[5], false, nil, nil, nil, nil, "str_guide_circle_3-1_Lt", "str_guide_circle_3-1_LtT", "str_guide_circle_3-1_Lb", "str_guide_circle_3-1_LbT"}
-, 
-{23, 360, 2, 
-{2030414}
-, common[3], false, "str_guide_circle_3-4_Lt", "str_guide_circle_3-4_LtT", nil, nil, "str_guide_circle_3-4_Lb", "str_guide_circle_3-4_LbT", "str_guide_circle_3-4_Rb", "str_guide_circle_3-4_RbT"}
-, 
-{24, 292, 2, 
-{2030713}
-, common[3], false, "str_guide_circle_3-7_Lt", "str_guide_circle_3-7_LtT", nil, nil, "str_guide_circle_3-7_Lb", "str_guide_circle_3-7_LbT"}
-, 
-{25, 292, 1, 
-{4, 7}
-, common[3], false, nil, nil, nil, nil, "str_guide_circle_3-10_Lt", "str_guide_circle_3-10_LtT", "str_guide_circle_3-10_Lb", "str_guide_circle_3-10_LbT"}
-, 
-{26, 292, 2, 
-{2040113}
-, common[2], false, "str_guide_circle_4-1_Lt", "str_guide_circle_4-1_LtT", nil, nil, "str_guide_circle_4-1_Lb", "str_guide_circle_4-1_LbT", "str_guide_circle_4-1_Rb", "str_guide_circle_4-1_RbT"}
-, 
-{27, 292, 2, 
-{2040712}
-, common[5], false, nil, nil, nil, nil, "str_guide_circle_4-7_Lt", "str_guide_circle_4-7_LtT", "str_guide_circle_4-7_Lb", "str_guide_circle_4-7_LbT"}
-, 
-{28, 360, 2, 
-{4010611}
-, common[11], false, nil, nil, nil, nil, "str_guide_circle_ex1-6_Rt", "str_guide_circle_ex1-6_RtT", "str_guide_circle_ex1-6_Rb", "str_guide_circle_ex1-6_RbT"}
-, 
-{29, 292, 3, 
-{2210}
-, common[1], false, "str_guide_circle_ex2-1_Lt", "str_guide_circle_ex2-1_LtT", nil, nil, "str_guide_circle_ex2-1_Lb", "str_guide_circle_ex2-1_LbT"}
-, 
-{30, 292, 2, 
-{2040413}
-, common[3], false, nil, nil, "str_guide_circle_ex2-4_Lb", "str_guide_circle_ex2-4_LbT", nil, nil, "str_guide_circle_ex2-4_Rb", "str_guide_circle_ex2-4_RbT"}
-, 
-{31, 292, 2, 
-{2050111}
-, common[7], false, nil, nil, "str_guide_circle_5-1_Lb", "str_guide_circle_5-1_LbT", nil, nil, "str_guide_circle_5-1_Rb", "str_guide_circle_5-1_RbT"}
-, 
-{32, 292, 2, 
-{2050713}
-, common[3], false, "str_guide_circle_5-7_Lt", "str_guide_circle_5-7_LtT", nil, nil, "str_guide_circle_5-7_Lb", "str_guide_circle_5-7_LbT"}
-, 
-{33, 292, 3, 
-{2015}
-, common[3], false, nil, nil, nil, nil, "str_guide_circle_2-3-2_Rt", "str_guide_circle_2-3-2_RtT", "str_guide_circle_2-3-2_Rb", "str_guide_circle_2-3-2_RbT"}
-, 
-{34, 292, 2, 
-{2060111}
-, common[1], false, "str_guide_circle_6-1_Lt", "str_guide_circle_6-1_LtT", nil, nil, "str_guide_circle_6-1_Lb", "str_guide_circle_6-1_LbT"}
-, 
-{35, 292, 2, 
-{2060713}
-, common[7], false, nil, nil, nil, nil, "str_guide_circle_6-7_Lb", "str_guide_circle_6-7_LbT", "str_guide_circle_6-7_Rb", "str_guide_circle_6-7_RbT"}
-, 
-{36, 292, 2, 
-{2070112}
-, common[3], false, "str_guide_circle_7-1_Lt", "str_guide_circle_7-1_LtT", "str_guide_circle_7-1_Rt", "str_guide_circle_7-1_RtT"}
-, 
-{37, 292, 2, 
-{2070712}
-, common[1], false, "str_guide_circle_7-7_Lt", "str_guide_circle_7-7_LtT", nil, nil, "str_guide_circle_7-7_Lb", "str_guide_circle_7-7_LbT"}
-, 
-{38, 292, 2, 
-{2021015}
-, common[2], false, "str_guide_circle_2-13_Lt_Red", "str_guide_circle_2-13_LtT_Red"}
-, 
-{39, 292, 2, common[6], common[2], false, "str_guide_circle_2-13_Lt_Yellow", "str_guide_circle_2-13_LtT_Yellow"}
-, 
-{40, 292, 3, 
-{3412}
-, common[3], true, nil, nil, nil, nil, common[43], common[44], common[45], common[46]}
-, 
-{41, 292, 3, 
-{3413}
-, common[3], true, nil, nil, "str_guide_circle_4-10_Rt", "str_guide_circle_4-10_RtT"}
-, 
-{42, 292, 2, 
-{2080113}
-, common[1], false, nil, nil, nil, nil, "str_guide_circle_8-2_Lt", "str_guide_circle_8-2_LtT", "str_guide_circle_8-2_Lb", "str_guide_circle_8-2_LbT"}
-, 
-{43, 292, 2, 
-{2080713}
-, common[11], false, nil, nil, nil, nil, "str_guide_circle_8-9_Lt", "str_guide_circle_8-9_LtT", "str_guide_circle_8-9_Lb", "str_guide_circle_8-9_LbT"}
-, 
-{44, 360, 2, 
-{2080611}
-, common[11], false, nil, nil, nil, nil, "str_guide_circle_8-7_Lt", "str_guide_circle_8-7_LtT", "str_guide_circle_8-7_Lb", "str_guide_circle_8-7_LbT"}
-, 
-{45, 440, 2, 
-{2081211}
-, common[11], false, nil, nil, nil, nil, "str_guide_circle_8-14_Lt", "str_guide_circle_8-14_LtT", "str_guide_circle_8-14_Lb", "str_guide_circle_8-14_LbT"}
-, 
-{46, 360, 2, 
-{2090213}
-, common[3], false, "str_guide_circle_9-2_Lt", "str_guide_circle_9-2_LtT", "str_guide_circle_9-2_Rt", "str_guide_circle_9-2_RtT", "str_guide_circle_9-2_Lb", "str_guide_circle_9-2_LbT"}
-, 
-{47, 292, 2, 
-{2090911}
-, common[3], false, "str_guide_circle_9-9_Lt", "str_guide_circle_9-9_LtT", nil, nil, nil, nil, "str_guide_circle_9-9_Rb", "str_guide_circle_9-9_RbT"}
-, 
-{48, 360, 2, 
-{2100211}
-, common[12], false, "str_guide_circle_10-2_Lt", "str_guide_circle_10-2_LtT", "str_guide_circle_10-2_Rt", "str_guide_circle_10-2_RtT", nil, nil, "str_guide_circle_10-2_Rb", "str_guide_circle_10-2_RbT"}
-, 
-{49, 292, 2, 
-{2100911}
-, common[3], false, "str_guide_circle_10-9_Lt", "str_guide_circle_10-9_LtT", nil, nil, "str_guide_circle_10-9_Lb", "str_guide_circle_10-9_LbT"}
-; 
-[101] = {101, 320, 2, 
-{2010611}
-, common[13], true, nil, nil, nil, nil, "str_guide_circle_1-7BOSS_Lb", "str_guide_circle_1-7BOSS_LbT", "str_guide_circle_1-7BOSS_Rb", "str_guide_circle_1-7BOSS_RbT"}
-, 
-[102] = {102, 292, 2, 
-{2011211}
-, common[14], true, nil, nil, nil, nil, "str_guide_circle_1-13BOSS_Lb", "str_guide_circle_1-13BOSS_LbT", "str_guide_circle_1-13BOSS_Rb", "str_guide_circle_1-13BOSS_RbT"}
-, 
-[103] = {103, 320, 2, 
-{2020611}
-, common[2], false, "str_guide_circle_2-6BOSS_Lt", "str_guide_circle_2-6BOSS_LtT", nil, nil, "str_guide_circle_2-6BOSS_Lb", "str_guide_circle_2-6BOSS_LbT", "str_guide_circle_2-6BOSS_Rb", "str_guide_circle_2-6BOSS_RbT"}
-, 
-[104] = {104, 400, 2, 
-{2021211}
-, common[14], false, nil, nil, nil, nil, "str_guide_circle_2-12BOSS_Lt", "str_guide_circle_2-12BOSS_LtT", "str_guide_circle_2-12BOSS_Lb", "str_guide_circle_2-12BOSS_LbT"}
-, 
-[105] = {105, 380, 2, 
-{2030611}
-, common[15], false, nil, nil, nil, nil, "str_guide_circle_3-6BOSS_Lb", "str_guide_circle_3-6BOSS_LbT", "str_guide_circle_3-6BOSS_Rb", "str_guide_circle_3-6BOSS_RbT"}
-, 
-[106] = {106, 400, 2, 
-{2031211}
-, common[5], false, "str_guide_circle_3-12BOSS_Lt", "str_guide_circle_3-12BOSS_LtT", nil, nil, "str_guide_circle_3-12BOSS_Lb", "str_guide_circle_3-12BOSS_LbT", "str_guide_circle_3-12BOSS_Rb", "str_guide_circle_3-12BOSS_RbT"}
-, 
-[107] = {107, 292, 2, common[16], common[15], false, nil, nil, nil, nil, "str_guide_circle_4-6BOSS_Lb", "str_guide_circle_4-6BOSS_LbT", "str_guide_circle_4-6BOSS_Rb", "str_guide_circle_4-6BOSS_RbT"}
-, 
-[108] = {108, 360, 2, 
-{2041211}
-, common[13], false, "str_guide_circle_4-12BOSS_Lt", "str_guide_circle_4-12BOSS_LtT", nil, nil, "str_guide_circle_4-12BOSS_Lb", "str_guide_circle_4-12BOSS_LbT", "str_guide_circle_4-12BOSS_Rb", "str_guide_circle_4-12BOSS_RbT"}
-, 
-[109] = {109, 292, 2, 
-{2040621}
-, common[15], false, "str_guide_circle_4-6BOSS2_Lt", "str_guide_circle_4-6BOSS2_LtT", "str_guide_circle_4-6BOSS2_Rt", "str_guide_circle_4-6BOSS2_RtT"}
-, 
-[110] = {110, 292, 2, common[16], common[3], false, nil, nil, nil, nil, "str_guide_circle_3-6BOSS2_Lb", "str_guide_circle_3-6BOSS2_LbT", "str_guide_circle_3-6BOSS2_Rb", "str_guide_circle_3-6BOSS2_RbT"}
-, 
-[111] = {111, 360, 2, 
-{2050611}
-, common[15], false, nil, nil, nil, nil, "str_guide_circle_5-6BOSS2_Lt", "str_guide_circle_5-6BOSS2_LtT", "str_guide_circle_5-6BOSS2_Rt", "str_guide_circle_5-6BOSS2_RtT"}
-, 
-[112] = {112, 360, 2, 
-{2051211}
-, common[13], false, nil, nil, nil, nil, "str_guide_circle_5-12BOSS_Lb", "str_guide_circle_5-12BOSS_LbT", "str_guide_circle_5-12BOSS_Rb", "str_guide_circle_5-12BOSS_RbT"}
-, 
-[113] = {113, 360, 2, 
-{2060611}
-, common[15], false, "str_guide_circle_6-6BOSS2_Lt", "str_guide_circle_6-6BOSS2_LtT", "str_guide_circle_6-6BOSS2_Rt", "str_guide_circle_6-6BOSS2_RtT"}
-, 
-[114] = {114, 360, 2, 
-{2061211}
-, 
-{-150, 90}
-, false, nil, nil, nil, nil, "str_guide_circle_6-12BOSS_Lb", "str_guide_circle_6-12BOSS_LbT", "str_guide_circle_6-12BOSS_Rb", "str_guide_circle_6-12BOSS_RbT"}
-, 
-[115] = {115, 360, 2, 
-{2070611}
-, common[15], false, nil, nil, nil, nil, "str_guide_circle_7-6BOSS2_Lt", "str_guide_circle_7-6BOSS2_LtT", "str_guide_circle_7-6BOSS2_Rt", "str_guide_circle_7-6BOSS2_RtT"}
-, 
-[116] = {116, 360, 2, 
-{2071211}
-, common[13], false, nil, nil, "str_guide_circle_7-12BOSS_Lb", "str_guide_circle_7-12BOSS_LbT", nil, nil, "str_guide_circle_7-12BOSS_Rb", "str_guide_circle_7-12BOSS_RbT"}
-, 
-[117] = {117, 360, 1, common[17], 
-{100, 70}
-, false, nil, nil, nil, nil, "str_guide_circle_jianta-5-BOSS_Lb", "str_guide_circle_jianta-5-BOSS_LbT", "str_guide_circle_jianta-5-BOSS_Rb", "str_guide_circle_jianta-5-BOSS_RbT"}
-, 
-[118] = {118, 360, 1, 
-{5, 9}
-, common[1], false, nil, nil, nil, nil, "str_guide_circle_jianta-10-BOSS_Lt", "str_guide_circle_jianta-10-BOSS_LtT", "str_guide_circle_jianta-10-BOSS_Lb", "str_guide_circle_jianta-10-BOSS_LbT"}
-, 
-[119] = {119, 360, 1, common[17], common[11], false, nil, nil, nil, nil, "str_guide_circle_jianta-15-BOSS_Lb", "str_guide_circle_jianta-15-BOSS_LbT", "str_guide_circle_jianta-15-BOSS_Rb", "str_guide_circle_jianta-15-BOSS_RbT"}
-, 
-[120] = {120, 360, 1, common[17], 
-{100, 80}
-, false, nil, nil, nil, nil, "str_guide_circle_jianta-20-BOSS_Lb", "str_guide_circle_jianta-20-BOSS_LbT", "str_guide_circle_jianta-20-BOSS_Rb", "str_guide_circle_jianta-20-BOSS_RbT"}
-, 
-[121] = {121, 440, 2, 
-{2092711}
-, common[7], false, "str_guide_circle_9-7BOSS_Lt", "str_guide_circle_9-7BOSS_LtT"}
-, 
-[122] = {122, 500, 2, 
-{2100711}
-, common[13], false, "str_guide_circle_10-7BOSS_Lt", "str_guide_circle_10-7BOSS_LtT", "str_guide_circle_10-7BOSS_Rt", "str_guide_circle_10-7BOSS_RtT"}
-, 
-[123] = {123, 440, 2, 
-{2091411}
-, 
-{20, 70}
-, false, nil, nil, nil, nil, "str_guide_circle_9-14BOSS_Lb", "str_guide_circle_9-14BOSS_LbT"}
-, 
-[124] = {124, 440, 2, 
-{2101411}
-, 
-{30, 70}
-, false, "str_guide_circle_10-14BOSS_Lt", "str_guide_circle_10-14BOSS_LtT", "str_guide_circle_10-14BOSS_Rt", "str_guide_circle_10-14BOSS_RtT", "str_guide_circle_10-14BOSS_Lb", "str_guide_circle_10-14BOSS_LbT", "str_guide_circle_10-14BOSS_Rb", "str_guide_circle_10-14BOSS_RbT"}
-, 
-[125] = {125, 440, 3, 
-{3511}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_9-14Trap_Lb", "str_guide_circle_9-14Trap_LbT"}
-, 
-[201] = {201, 360, 2, 
-{50110114}
-, common[2], nil, nil, nil, nil, nil, "str_guide_circle_N1_1-1_Lb", "str_guide_circle_N1_1-1_LbT", "str_guide_circle_N1_1-1_Rb", "str_guide_circle_N1_1-1_RbT"}
-, 
-[202] = {202, 360, 2, 
-{50110811}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_N1_1-8_Lb", "str_guide_circle_N1_1-8_LbT", "str_guide_circle_N1_1-8_Rb", "str_guide_circle_N1_1-8_RbT"}
-, 
-[203] = {203, 360, 2, 
-{50121111}
-, common[3], nil, nil, nil, nil, nil, "str_guide_circle_N1_2-1_Lb", "str_guide_circle_N1_2-1_LbT", "str_guide_circle_N1_2-1_Rb", "str_guide_circle_N1_2-1_RbT"}
-, 
-[204] = {204, 360, 3, common[8], common[13], nil, nil, nil, nil, nil, common[47], "str_guide_circle_N1_2-2_LbT", "str_guide_circle_N1_2-2_Rb", "str_guide_circle_N1_2-2_RbT"}
-, 
-[205] = {205, 360, 3, 
-{2080}
-, common[3], nil, nil, nil, nil, nil, common[47], "str_guide_circle_N1_2-3_LbT", "str_guide_circle_N1_2-3_Rb", "str_guide_circle_N1_2-3_RbT"}
-, 
-[206] = {206, 292, 2, 
-{50310111}
-, common[7], nil, nil, nil, nil, nil, "str_guide_circle_N3_1-1_Lb", "str_guide_circle_N3_1-1_LbT", "str_guide_circle_N3_1-1_Rb", "str_guide_circle_N3_1-1_RbT"}
-, 
-[207] = {207, 292, 2, 
-{50310311}
-, common[7], nil, nil, nil, nil, nil, "str_guide_circle_N3_1-3_Lb", "str_guide_circle_N3_1-3_LbT", "str_guide_circle_N3_1-3_Rb", "str_guide_circle_N3_1-3_RbT"}
-, 
-[208] = {208, 292, 2, 
-{50310511}
-, common[7], nil, nil, nil, nil, nil, "str_guide_circle_N3_1-5_Lb", "str_guide_circle_N3_1-5_LbT", "str_guide_circle_N3_1-5_Rb", "str_guide_circle_N3_1-5_RbT"}
-, 
-[209] = {209, 292, 2, 
-{50310711}
-, common[7], nil, nil, nil, "str_guide_circle_N3_1-7_Rt", "str_guide_circle_N3_1-7_RtT", nil, nil, "str_guide_circle_N3_1-7_Lt", "str_guide_circle_N3_1-7_LtT"}
-, 
-[210] = {210, 292, 2, 
-{50310911}
-, common[7], nil, nil, nil, "str_guide_circle_N3_1-9_Rt", "str_guide_circle_N3_1-9_RtT", nil, nil, "str_guide_circle_N3_1-9_Lt", "str_guide_circle_N3_1-9_LtT"}
-, 
-[211] = {211, 360, 2, 
-{50312011}
-, 
-{30, 60}
-, nil, nil, nil, nil, nil, "str_guide_circle_N3_1-20_Lb", "str_guide_circle_N3_1-20_LbT", "str_guide_circle_N3_1-20_Rb", "str_guide_circle_N3_1-20_RbT"}
-, 
-[212] = {212, 360, 2, 
-{50510711}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_N5_1-10_Lb", "str_guide_circle_N5_1-10_LbT", "str_guide_circle_N5_1-10_Rb", "str_guide_circle_N5_1-10_RbT"}
-, 
-[213] = {213, 292, 2, 
-{50510313}
-, common[15], nil, "str_guide_circle_N5_1-3_Lt", "str_guide_circle_N5_1-3_LtT", "str_guide_circle_N5_1-3_Rt", "str_guide_circle_N5_1-3_RtT", "str_guide_circle_N5_1-3_Rb", "str_guide_circle_N5_1-3_RbT"}
-, 
-[214] = {214, 290, 2, 
-{50610311}
-, common[15], nil, "str_guide_circle_N6_1-1_Rb", "str_guide_circle_N6_1-1_RbT", nil, nil, "str_guide_circle_N6_1-1_Lt", "str_guide_circle_N6_1-1_LtT", "str_guide_circle_N6_1-1_Rt", "str_guide_circle_N6_1-1_RtT"}
-, 
-[215] = {215, 440, 2, 
-{50611011}
-, common[9], nil, "str_guide_circle_N6_1-10_Lb", "str_guide_circle_N6_1-10_LbT", "str_guide_circle_N6_1-10_Rb", "str_guide_circle_N6_1-10_RbT", "str_guide_circle_N6_1-10_Lt", "str_guide_circle_N6_1-10_LtT", "str_guide_circle_N6_1-10_Rt", "str_guide_circle_N6_1-10_RtT"}
-, 
-[216] = {216, 440, 2, 
-{50711011}
-, common[15], nil, "str_guide_circle_N7_1-10_Lt", "str_guide_circle_N7_1-10_LtT", "str_guide_circle_N7_1-10_Rt", "str_guide_circle_N7_1-10_RtT", "str_guide_circle_N7_1-10_Lb", "str_guide_circle_N7_1-10_LbT"}
-, 
-[217] = {217, 440, 2, 
-{4040212}
-, common[15], nil, nil, nil, "str_guide_circle_ex4-2_Rb", "str_guide_circle_ex4-2_RbT", "str_guide_circle_ex4-2_Lb", "str_guide_circle_ex4-2_LbT", "str_guide_circle_ex4-2_Rt", "str_guide_circle_ex4-2_RtT"}
-, 
-[218] = {218, 440, 2, 
-{4040611}
-, common[14], nil, "str_guide_circle_ex4-6_Lb", "str_guide_circle_ex4-6_LbT", nil, nil, "str_guide_circle_ex4-6_Rt", "str_guide_circle_ex4-6_RtT", "str_guide_circle_ex4-6_Rb", "str_guide_circle_ex4-6_RbT"}
-, 
-[219] = {219, 440, 2, 
-{50710313}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_N7_1-4_Lb", "str_guide_circle_N7_1-4_LbT"}
-, 
-[220] = {220, 440, 2, 
-{50910311}
-, common[14], nil, "str_guide_circle_N9_1-3_Lb", "str_guide_circle_N9_1-3_LbT", "str_guide_circle_N9_1-3_Rb", "str_guide_circle_N9_1-3_RbT", "str_guide_circle_N9_1-3_Lt", "str_guide_circle_N9_1-3_LtT"}
-, 
-[221] = {221, 440, 2, 
-{50911211}
-, common[14], nil, "str_guide_circle_N9_1-10_Lb", "str_guide_circle_N9_1-10_LbT", "str_guide_circle_N9_1-10_Rb", "str_guide_circle_N9_1-10_RbT", "str_guide_circle_N9_1-10_Lt", "str_guide_circle_N9_1-10_LtT"}
-, 
-[222] = {222, 440, 3, 
-{2800533}
-, common[15], nil, "str_guide_circle_N11_1-3_Lt", "str_guide_circle_N11_1-3_LtT", "str_guide_circle_N11_1-3_Rt", "str_guide_circle_N11_1-3_RtT", "str_guide_circle_N11_1-3_Lb", "str_guide_circle_N11_1-3_LbT"}
-, 
-[223] = {223, 440, 2, 
-{51111211}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_N11_1-12_Lb", "str_guide_circle_N11_1-12_LbT", "str_guide_circle_N11_1-12_Rb", "str_guide_circle_N11_1-12_RbT"}
-, 
-[228] = {228, 440, 2, 
-{51311111}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_N13_1-1_Lb", "str_guide_circle_N13_1-1_LbT", "str_guide_circle_N13_1-1_Rb", "str_guide_circle_N13_1-1_RbT"}
-, 
-[229] = {229, 440, 2, 
-{51310113}
-, common[15], nil, "str_guide_circle_N13_1-2_Lb", "str_guide_circle_N13_1-2_LbT", "str_guide_circle_N13_1-2_Rb", "str_guide_circle_N13_1-2_RbT"}
-, 
-[230] = {230, 440, 2, 
-{51311211}
-, common[15], nil, nil, nil, "str_guide_circle_N13_1-12_Rb", "str_guide_circle_N13_1-12_RbT", "str_guide_circle_N13_1-12_Lb", "str_guide_circle_N13_1-12_LbT", "str_guide_circle_N13_1-12_Lt", "str_guide_circle_N13_1-12_LtT"}
-, 
-[231] = {231, 600, 2, 
-{51411211}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_N14_1-12_Lb", "str_guide_circle_N14_1-12_LbT", "str_guide_circle_N14_1-12_Rb", "str_guide_circle_N14_1-12_RbT"}
-, 
-[232] = {232, 440, 2, 
-{514214101}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_N14_1-1_Lb", "str_guide_circle_N14_1-1_LbT", "str_guide_circle_N14_1-1_Rb", "str_guide_circle_N14_1-1_RbT"}
-, 
-[233] = {233, 440, 2, 
-{2110211}
-, common[15], nil, "str_guide_circle_10s-2_Lt", "str_guide_circle_10s-2_LtT", "str_guide_circle_10s-2_Rt", "str_guide_circle_10s-2_RtT"}
-, 
-[234] = {234, 440, 2, 
-{2110411}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_10s-4_Lt", "str_guide_circle_10s-4_LtT", "str_guide_circle_10s-4_Rt", "str_guide_circle_10s-4_RtT"}
-, 
-[235] = {235, 440, 2, 
-{2902202}
-, common[15], nil, nil, nil, "str_guide_circle_10s-9_Rt", "str_guide_circle_10s-9_RtT", "str_guide_circle_10s-9_Lt", "str_guide_circle_10s-9_LtT"}
-, 
-[236] = {236, 440, 2, 
-{10110911}
-, common[14], nil, nil, nil, nil, nil, "str_guide_circle_11-7BOSS_Lb", "str_guide_circle_11-7BOSS_LbT", "str_guide_circle_11-7BOSS_RbT", "str_guide_circle_11-7BOSS_Rb"}
-, 
-[237] = {237, 440, 2, 
-{10111411}
-, common[15], nil, nil, nil, "str_guide_circle_N17_1-14_Lb", "str_guide_circle_N17_1-14_LbT", "str_guide_circle_N17_1-14_Lt", "str_guide_circle_N17_1-14_LtT", "str_guide_circle_N17_1-14_Rb", "str_guide_circle_N17_1-14_RbT"}
-, 
-[238] = {238, 600, 2, 
-{10121412}
-, common[14], nil, "str_guide_circle_N17_2-14_Lt", "str_guide_circle_N17_2-14_LtT", "str_guide_circle_N17_2-14_Rb", "str_guide_circle_N17_2-14_RbT", nil, nil, "str_guide_circle_N17_2-14_Lb", "str_guide_circle_N17_2-14_LbT"}
-, 
-[239] = {239, 600, 3, 
-{80}
-, common[12], nil, nil, nil, nil, nil, nil, nil, "str_guide_circle_12-6_Lt", "str_guide_circle_12-6_LtT"}
-, 
-[240] = {240, 440, 2, 
-{518101211}
-, common[15], nil, "str_guide_circle_N18_1-12_Lt", "str_guide_circle_N18_1-12_LtT", "str_guide_circle_N18_1-12_Rt", "str_guide_circle_N18_1-12_RtT", nil, nil, "str_guide_circle_N18_1-12_Rb", "str_guide_circle_N18_1-12_RbT"}
-, 
-[241] = {241, 360, 1, 
-{6, 5}
-, common[3], nil, "str_guide_circle_N18_1-1_Lt", "str_guide_circle_N18_1-1_LtT", nil, nil, nil, nil, "str_guide_circle_N18_1-1_Rb", "str_guide_circle_N18_1-1_RbT"}
-, 
-[242] = {242, 600, 2, 
-{520112101}
-, common[12], nil, "str_guide_circle_N20_1-12_Lt", "str_guide_circle_N20_1-12_LtT", nil, nil, "str_guide_circle_N20_1-12_Lb", "str_guide_circle_N20_1-12_LbT", "str_guide_circle_N20_1-12_Rb", "str_guide_circle_N20_1-12_RbT"}
-, 
-[243] = {243, 440, 2, 
-{522101011}
-, common[15], nil, "str_guide_circle_N22_1-10_Lt", "str_guide_circle_N22_1-10_LtT", nil, nil, "str_guide_circle_N22_1-10_Lb", "str_guide_circle_N22_1-10_LbT", "str_guide_circle_N22_1-10_Rb", "str_guide_circle_N22_1-10_RbT"}
-, 
-[244] = {244, 290, 1, common[18], common[15], nil, nil, nil, "str_guide_circle_sailing_2-1_Lt", "str_guide_circle_sailing_2-1_LtT", nil, nil, "str_guide_circle_sailing_2-1_Rb", "str_guide_circle_sailing_2-1_RbT"}
-, 
-[245] = {245, 290, 1, common[18], common[15], nil, nil, nil, "str_guide_circle_sailing_2-1_Rt", "str_guide_circle_sailing_2-1_RtT", nil, nil, "str_guide_circle_sailing_2-2_Rb", "str_guide_circle_sailing_2-2_RbT"}
-, 
-[246] = {246, 290, 1, common[19], common[15], nil, nil, nil, "str_guide_circle_sailing_2-3_Rb", "str_guide_circle_sailing_2-3_RbT", "str_guide_circle_sailing_2-3_Lt", "str_guide_circle_sailing_2-3_LtT", common[48], common[49]}
-, 
-[247] = {247, 290, 1, 
-{1, 4}
-, common[15], nil, nil, nil, nil, nil, nil, nil, common[48], common[49]}
-, 
-[248] = {248, 440, 3, 
-{4100011}
-, common[12], nil, "str_guide_circle_sailing_1-1_Lt", "str_guide_circle_sailing_1-1_LtT", "str_guide_circle_sailing_1-1_Rb", "str_guide_circle_sailing_1-1_RbT", "str_guide_circle_sailing_1-1_Rt", "str_guide_circle_sailing_1-1_RtT"}
-, 
-[249] = {249, 440, 3, 
-{4100016}
-, common[12]}
-, 
-[25001] = {25001, 600, 2, 
-{410003101}
-, common[14], nil, nil, nil, nil, nil, "str_guide_circle_N22_2-1_Lt", "str_guide_circle_N22_2-1_LtT", "str_guide_circle_N22_2-1_Rb", "str_guide_circle_N22_2-1_RbT"}
-, 
-[25002] = {25002, 600, 2, 
-{410004101}
-, common[14]}
-, 
-[25003] = {25003, 600, 2, 
-{410005101}
-, common[14]}
-, 
-[25004] = {25004, 600, 2, 
-{410006101}
-, common[14]}
-, 
-[7040] = {7040, 500, 2, 
-{523101211}
-, common[12], nil, "str_guide_circle_N23_1-14_Lt", "str_guide_circle_N23_1-14_LtT", "str_guide_circle_N23_1-14_Rt", "str_guide_circle_N23_1-14_RtT", nil, nil, "str_guide_circle_N23_1-14_Rb", "str_guide_circle_N23_1-14_RbT"}
-, 
-[7053] = {7053, 500, 2, 
-{10131412}
-, common[12], nil, "str_guide_circle_13-14_Lt", "str_guide_circle_13-14_LtT", "str_guide_circle_13-14_Rt", "str_guide_circle_13-14_RtT", nil, nil, "str_guide_circle_13-14_Rb", "str_guide_circle_13-14_RbT"}
-, 
-[7054] = {7054, 500, 2, 
-{10130711}
-, common[14], nil, "str_guide_circle_13-7-1_Rt", "str_guide_circle_13-7-1_RtT", "str_guide_circle_13-7-1_Lt", "str_guide_circle_13-7-1_LtT", nil, nil, "str_guide_circle_13-7-1_Rb", "str_guide_circle_13-7-1_RbT"}
-, 
-[7055] = {7055, 440, 1, common[4], common[3], nil, nil, nil, nil, nil, nil, nil, "str_guide_circle_13-7-2_Lt", "str_guide_circle_13-7-2_LtT"}
-, 
-[7056] = {7056, 440, 2, 
-{10130713}
-, common[3], nil, nil, nil, nil, nil, "str_guide_circle_13-7-3_Lt", "str_guide_circle_13-7-3_LtT"}
-, 
-[7060] = {7060, 440, 2, common[20], common[15], nil, "str_guide_circle_14-9-1_Lt", "str_guide_circle_14-9-1_LtT", "str_guide_circle_14-9-1_Rt", "str_guide_circle_14-9-1_RtT", nil, nil, "str_guide_circle_14-9-1_Rb", "str_guide_circle_14-9-1_RbT"}
-, 
-[7061] = {7061, 440, 2, common[20], common[15], nil, "str_guide_circle_14-9-2_Lt", "str_guide_circle_14-9-2_LtT", "str_guide_circle_14-9-2_Rt", "str_guide_circle_14-9-2_RtT", nil, nil, "str_guide_circle_14-9-2_Rb", "str_guide_circle_14-9-2_RbT"}
-, 
-[7062] = {7062, 440, 2, common[21], common[15], nil, "str_guide_circle_14-14-1_Lt", "str_guide_circle_14-14-1_LtT", "str_guide_circle_14-14-1_Rt", "str_guide_circle_14-14-1_RtT", "str_guide_circle_14-14-1_Rb", "str_guide_circle_14-14-1_RbT"}
-, 
-[7063] = {7063, 440, 2, 
-{10141412}
-, common[15], nil, nil, nil, nil, nil, nil, nil, "str_guide_circle_14-14-2_Lt", "str_guide_circle_14-14-2_LtT"}
-, 
-[7064] = {7064, 440, 2, common[21], common[15], nil, nil, nil, nil, nil, "str_guide_circle_14-14-3_Rt", "str_guide_circle_14-14-3_RtT", "str_guide_circle_14-14-3_Rb", "str_guide_circle_14-14-3_RbT"}
-, 
-[7080] = {7080, 800, 2, common[22], common[15], nil, nil, nil, nil, nil, "str_guide_circle_14-7_Lt", "str_guide_circle_14-7_LtT"}
-, 
-[7081] = {7081, 800, 2, common[22], common[15], nil, nil, nil, nil, nil, "str_guide_circle_14-7_Rt", "str_guide_circle_14-7_RtT", "str_guide_circle_14-7_Rb", "str_guide_circle_14-7_RbT"}
-, 
-[22401] = {22401, 440, 2, 
-{51210111}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22402] = {22402, 440, 2, 
-{51210211}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22403] = {22403, 440, 2, 
-{51210311}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22404] = {22404, 440, 2, 
-{51210411}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22405] = {22405, 440, 2, 
-{51210511}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22406] = {22406, 440, 2, 
-{51210611}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22407] = {22407, 440, 2, 
-{51210711}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22408] = {22408, 440, 2, 
-{51210811}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22409] = {22409, 440, 2, 
-{51210911}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22410] = {22410, 440, 2, 
-{51211011}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22411] = {22411, 440, 2, 
-{51211111}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22412] = {22412, 440, 2, 
-{51211211}
-, common[15], nil, nil, nil, nil, nil, common[50], common[51], common[52], common[53]}
-, 
-[22501] = {22501, 440, 2, 
-{51211311}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22502] = {22502, 440, 2, 
-{51211411}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22503] = {22503, 440, 2, 
-{51211511}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22504] = {22504, 440, 2, 
-{51211611}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22505] = {22505, 440, 2, 
-{51211711}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22506] = {22506, 440, 2, 
-{51211811}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22507] = {22507, 440, 2, 
-{51211911}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22508] = {22508, 440, 2, 
-{51212011}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22509] = {22509, 440, 2, 
-{51212111}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22510] = {22510, 440, 2, 
-{51212211}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22511] = {22511, 440, 2, 
-{51212311}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22512] = {22512, 440, 2, 
-{51212411}
-, common[15], nil, nil, nil, nil, nil, common[54], common[55], common[56], common[57]}
-, 
-[22601] = {22601, 440, 2, 
-{51212511}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22602] = {22602, 440, 2, 
-{51212611}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22603] = {22603, 440, 2, 
-{51212711}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22604] = {22604, 440, 2, 
-{51212811}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22605] = {22605, 440, 2, 
-{51212911}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22606] = {22606, 440, 2, 
-{51213011}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22607] = {22607, 440, 2, 
-{51213111}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22608] = {22608, 440, 2, 
-{51213211}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22609] = {22609, 440, 2, 
-{51213311}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22610] = {22610, 440, 2, 
-{51213411}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22611] = {22611, 440, 2, 
-{51213511}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22612] = {22612, 440, 2, 
-{51213611}
-, common[15], nil, nil, nil, nil, nil, common[58], common[59], common[60], common[61]}
-, 
-[22701] = {22701, 440, 2, 
-{51213711}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22702] = {22702, 440, 2, 
-{51213811}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22703] = {22703, 440, 2, 
-{51213911}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22704] = {22704, 440, 2, 
-{51214011}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22705] = {22705, 440, 2, 
-{51214111}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22706] = {22706, 440, 2, 
-{51214211}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22707] = {22707, 440, 2, 
-{51214311}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22708] = {22708, 440, 2, 
-{51214411}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22709] = {22709, 440, 2, 
-{51214511}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22710] = {22710, 440, 2, 
-{51214611}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22711] = {22711, 440, 2, 
-{51214711}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[22712] = {22712, 440, 2, 
-{51214811}
-, common[15], nil, nil, nil, nil, nil, common[62], common[63], common[64], common[65]}
-, 
-[1001] = {1001, 200, 4, 
-{8, 0}
-, common[12], false}
-, 
-[1002] = {1002, 200, 4, 
-{6, 0}
-, common[12], false}
-, 
-[1003] = {1003, 200, 4, 
-{6, 1}
-, common[12], false}
-, 
-[1004] = {1004, 200, 4, 
-{8, 1}
-, common[12], false}
-, 
-[1005] = {1005, 250, 4, common[23], common[12], false}
-, 
-[1006] = {1006, 200, 4, 
-{14, 0}
-, common[12], false}
-, 
-[1007] = {1007, 200, 4, 
-{15, 0}
-, common[12], false}
-, 
-[1101] = {1101, 360, 5, 
-{1500331}
-, 
-{0, 300}
-, false}
-, 
-[1102] = {1102, 360, 6, 
-{14}
-, 
-{0, 200}
-, false}
-, 
-[1103] = {1103, 360, 7, 
-{15}
-, 
-{100, 200}
-, false}
-, 
-[1104] = {1104, 200, 4, 
-{16, 0}
-, common[12], false}
-, 
-[1105] = {1105, 200, 8, 
-{16}
-, 
-{0, -100}
-, false}
-, 
-[1106] = {1106, 200, 1, 
-{9, 5}
-, common[2], false, "str_guide_circle_N24_petTry_Lt", common[66]}
-, 
-[1107] = {1107, 200, 1, 
-{4, 2}
-, common[2], false, nil, nil, "str_guide_circle_N24_petTry_Lt_1", common[66]}
-, 
-[7100] = {7100, 440, 2, 
-{525103102}
-, common[12], nil, "str_guide_circle_N25_1-4_Lt", "str_guide_circle_N25_1-4_LtT", "str_guide_circle_N25_1-4_Rt", "str_guide_circle_N25_1-4_RtT", "str_guide_circle_N25_1-4_Lb", "str_guide_circle_N25_1-4_LbT"}
-, 
-[7101] = {7101, 540, 2, 
-{525113101}
-, 
-{0, 75}
-, nil, "str_guide_circle_N25_1-16_Lt", "str_guide_circle_N25_1-16_LtT", "str_guide_circle_N25_1-16_Rt", "str_guide_circle_N25_1-16_RtT", "str_guide_circle_N25_1-16_Lb", "str_guide_circle_N25_1-16_LbT"}
-, 
-[7201] = {7201, 440, 3, 
-{2002100}
-, common[12], nil, "str_guide_circle_N25_2-4_Lt", "str_guide_circle_N25_2-4_LtT", "str_guide_circle_N25_2-4_Lb", "str_guide_circle_N25_2-4_LbT", "str_guide_circle_N25_2-4_Rt", "str_guide_circle_N25_2-4_RtT"}
-, 
-[7202] = {7202, 300, 2, 
-{526112101}
-, common[2], nil, "str_guide_circle_N26_1-12_Lt", "str_guide_circle_N26_1-12_LtT", "str_guide_circle_N26_1-12_Lb", "str_guide_circle_N26_1-12_LbT", "str_guide_circle_N26_1-12_Rt", "str_guide_circle_N26_1-12_RtT"}
-, 
-[7401] = {7401, 900, 2, common[24], common[15], nil, nil, nil, nil, nil, "str_guide_circle_N27_1-12_Lt", "str_guide_circle_N27_1-12_LtT"}
-, 
-[7402] = {7402, 900, 2, common[24], common[15], nil, nil, nil, nil, nil, "str_guide_circle_N27_1-12_Rt", "str_guide_circle_N27_1-12_RtT", "str_guide_circle_N27_1-12_Rb", "str_guide_circle_N27_1-12_RbT"}
-, 
-[7501] = {7501, 360, 2, 
-{527107102}
-, common[15], nil, nil, nil, "str_guide_circle_N27_1-1_Lt", "str_guide_circle_N27_1-1_LtT", "str_guide_circle_N27_1-1_Rt", "str_guide_circle_N27_1-1_RtT", "str_guide_circle_N27_1-1_Lb", "str_guide_circle_N27_1-1_LbT"}
-, 
-[7602] = {7602, 400, 1, 
-{3, 6}
-, common[2], nil, nil, nil, nil, nil, nil, nil, "str_guide_circle_N27_2-4-1_Rb", "str_guide_circle_N27_2-4-1_RbT"}
-, 
-[7601] = {7601, 600, 3, 
-{140127101}
-, 
-{0, 35}
-, nil, nil, nil, nil, nil, nil, nil, "str_guide_circle_N27_2-4-2_Rb", "str_guide_circle_N27_2-4-2_RbT"}
-, 
-[7701] = {7701, 600, 2, 
-{527201208}
-, common[2]}
-, 
-[7801] = {7801, 600, 2, 
-{527200218}
-, common[15], nil, nil, nil, "str_guide_circle_N27_2_1_Rt", "str_guide_circle_N27_2_1_RtT", nil, nil, "str_guide_circle_N27_2_1_Rb", "str_guide_circle_N27_2_1_RbT"}
-, 
-[7802] = {7802, 600, 2, 
-{527200219}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_N27_2_2_Lb", "str_guide_circle_N27_2_2_LbT", "str_guide_circle_N27_2_2_Rb", "str_guide_circle_N27_2_2_RbT"}
-, 
-[8001] = {8001, 200, 1, common[23], common[12], nil, nil, nil, "str_guide_circle_N28_3-4_Rt", "str_guide_circle_N28_3_4_RtT", nil, nil, "str_guide_circle_N28_3-4_Rb", "str_guide_circle_N28_3-4_RbT"}
-, 
-[8002] = {8002, 700, 2, 
-{528101114}
-, common[15], nil, "str_guide_circle_N28_1_12_Lt", "str_guide_circle_N28_1_12_LtT", "str_guide_circle_N28_1_12_Lb", "str_guide_circle_N28_1_12_LbT", nil, nil, "str_guide_circle_N28_1_12_Rb", "str_guide_circle_N28_1_12_RbT"}
-, 
-[8052] = {8052, 700, 3, 
-{2801004}
-, common[12], nil, nil, nil, nil, nil, "str_guide_circle_N29_zhanqi_1_Lb", "str_guide_circle_N29_zhanqi_1_LbT", "str_guide_circle_N29_zhanqi_1_Lt", "str_guide_circle_N29_zhanqi_1_LtT"}
-, 
-[8089] = {8089, 440, 2, 
-{529100811}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_N29_1_8_Lb", "str_guide_circle_N29_1_8_LbT", "str_guide_circle_N29_1_8_Rb", "str_guide_circle_N29_1_8_RbT"}
-, 
-[8090] = {8090, 440, 2, common[25], common[15], nil, nil, nil, nil, nil, "str_guide_circle_N29_1_14_Lb", "str_guide_circle_N29_1_14_LbT", "str_guide_circle_N29_1_14_Rb", "str_guide_circle_N29_1_14_RbT"}
-, 
-[8091] = {8091, 440, 2, common[25], common[15], nil, nil, nil, nil, nil, "str_guide_circle_N29_1_14_Lb_2", "str_guide_circle_N29_1_14_LbT_2"}
-, 
-[8092] = {8092, 440, 2, common[26], common[15], nil, nil, nil, nil, nil, "str_guide_circle_N29_ex3_1_Lb", "str_guide_circle_N29_ex3_1_LbT", "str_guide_circle_N29_ex3_1_Rb", "str_guide_circle_N29_ex3_1_RbT"}
-, 
-[8093] = {8093, 440, 2, common[26], common[15], nil, nil, nil, nil, nil, "str_guide_circle_N29_ex3_1_Lb_2", "str_guide_circle_N29_ex3_1_LbT_2", "str_guide_circle_N29_ex3_1_Rb_2", "str_guide_circle_N29_ex3_1_RbT_2"}
-, 
-[8094] = {8094, 440, 2, 
-{10150214}
-, common[15], nil, nil, nil, "str_guide_circle_N30_15-2_Rt", "str_guide_circle_N30_15-2_RtT", "str_guide_circle_N30_15-2_Lb", "str_guide_circle_N30_15-2_LbT", "str_guide_circle_N30_15-2_Rb", "str_guide_circle_N30_15-2_RbT"}
-, 
-[8095] = {8095, 440, 2, 
-{10150911}
-, common[15], nil, "str_guide_circle_N30_15-9_Lt", "str_guide_circle_N30_15-9_LtT", nil, nil, "str_guide_circle_N30_15-9_Lb", "str_guide_circle_N30_15-9_LbT", "str_guide_circle_N30_15-9_Rb", "str_guide_circle_N30_15-9_RbT"}
-, 
-[8097] = {8097, 300, 1, common[10], common[12], nil, nil, nil, nil, nil, "str_guide_circle_N30_15-9-2_Rb", "str_guide_circle_N30_15-9-2_RbT", "str_guide_circle_N30_15-9-2_Lt", "str_guide_circle_N30_15-9-2_LtT"}
-, 
-[8098] = {8098, 400, 2, 
-{10161411}
-, common[2], nil, "str_guide_circle_N30_16-14_Lt", "str_guide_circle_N30_16-14_LtT", "str_guide_circle_N30_16-14_Rt", "str_guide_circle_N30_16-14_RtT", "str_guide_circle_N30_16-14_Lb", "str_guide_circle_N30_16-14_LbT"}
-, 
-[8099] = {8099, 440, 2, 
-{45010101}
-, common[15], nil, nil, nil, common[67], common[68], common[69], common[70], common[71], common[72]}
-, 
-[8100] = {8100, 440, 2, 
-{48010101}
-, common[15], nil, nil, nil, common[67], common[68], common[69], common[70], common[71], common[72]}
-, 
-[8101] = {8101, 440, 2, 
-{46010101}
-, common[15], nil, nil, nil, common[73], common[74], common[75], common[76], common[77], common[78]}
-, 
-[8102] = {8102, 440, 2, 
-{47010101}
-, common[15], nil, nil, nil, common[73], common[74], common[75], common[76], common[77], common[78]}
-, 
-[8103] = {8103, 440, 2, 
-{10151411}
-, common[5], nil, nil, nil, "str_guide_circle_15-14_Rb", "str_guide_circle_15-14_RbT", "str_guide_circle_15-14_Lt", "str_guide_circle_15-14_LtT", "str_guide_circle_15-14_Rt", "str_guide_circle_15-14_RtT"}
-, 
-[8104] = {8104, 440, 3, 
-{621}
-, 
-{0, 15}
-, nil, nil, nil, nil, nil, nil, nil, "str_guide_circle_621_Rt", "str_guide_circle_621_RtT"}
-, 
-[8109] = {8109, 500, 1, common[19], common[12], nil, nil, nil, "str_guide_circle_N30_16-9_Lb", "str_guide_circle_N30_16-9_LbT", "str_guide_circle_N30_16-9_Lt", "str_guide_circle_N30_16-9_LtT", "str_guide_circle_N30_16-9_Rt", "str_guide_circle_N30_16-9_RtT"}
-, 
-[8110] = {8110, 440, 2, 
-{10160311}
-, common[1], nil, "str_guide_circle_N30_16-3_Lt", "str_guide_circle_N30_16-3_LtT", nil, nil, "str_guide_circle_N30_16-3_Lb", "str_guide_circle_N30_16-3_LbT", "str_guide_circle_N30_16-3_Rt", "str_guide_circle_N30_16-3_RtT"}
-, 
-[8121] = {8121, 440, 2, common[27], 
-{30, 35}
-, nil, "str_guide_circle_N31_1-14_Lt", "str_guide_circle_N31_1-14_LtT", "str_guide_circle_N31_1-14_Rt", "str_guide_circle_N31_1-14_RtT", "str_guide_circle_N31_1-14_Lb", "str_guide_circle_N31_1-14_LbT"}
-, 
-[8122] = {8122, 300, 1, common[28], common[12], nil, nil, nil, nil, nil, nil, nil, "str_guide_circle_N31_star1_Rt", "str_guide_circle_N31_star1_RtT"}
-, 
-[8123] = {8123, 300, 1, common[28], common[12], nil, nil, nil, nil, nil, nil, nil, "str_guide_circle_N31_star2_Rt", "str_guide_circle_N31_star2_RtT"}
-, 
-[8124] = {8124, 300, 1, 
-{3, 7}
-, common[12], nil, nil, nil, nil, nil, nil, nil, "str_guide_circle_N31_star3_Rt", "str_guide_circle_N31_star3_RtT"}
-, 
-[8127] = {8127, 440, 2, common[27], common[1], nil, "str_guide_circle_N31_1-16_Lt", "str_guide_circle_N31_1-16_LtT", nil, nil, "str_guide_circle_N31_1-16_Lb", "str_guide_circle_N31_1-16_LbT"}
-, 
-[8240] = {8240, 400, 2, 
-{533113101}
-, common[2], nil, nil, nil, "str_guide_circle_N33_15_Lb", "str_guide_circle_N33_15_LbT", "str_guide_circle_N33_15_Lt", "str_guide_circle_N33_15_LtT", "str_guide_circle_N33_15_Rt", "str_guide_circle_N33_15_RtT"}
-, 
-[80010531] = {80010531, 300, 2, 
-{80011012}
-, common[1], nil, nil, nil, nil, nil, "str_guide_circle_80010521_Rb", "str_guide_circle_80010521_RbT", "str_guide_circle_80010521_Lb", "str_guide_circle_80010521_LbT"}
-, 
-[80010621] = {80010621, 660, 2, 
-{80011211}
-, common[15], nil, "str_guide_circle_80010621_Lt", "str_guide_circle_80010621_LtT", nil, nil, "str_guide_circle_80010621_Lb", "str_guide_circle_80010621_LbT"}
-, 
-[80010721] = {80010721, 660, 2, 
-{80011416}
-, common[15], nil, "str_guide_circle_80010721_Lt", "str_guide_circle_80010721_LtT", "str_guide_circle_80010721_Rt", "str_guide_circle_80010721_RtT"}
-, 
-[80010821] = {80010821, 440, 2, 
-{80011611}
-, common[1], nil, "str_guide_circle_80010821_Rt", "str_guide_circle_80010821_RtT", nil, nil, "str_guide_circle_80010821_Lt", "str_guide_circle_80010821_LtT", "str_guide_circle_80010821_Rb", "str_guide_circle_80010821_RbT"}
-, 
-[80011021] = {80011021, 300, 1, common[29], common[7], nil, nil, nil, "str_guide_circle_80011021_Rt", "str_guide_circle_80011021_RtT", nil, nil, "str_guide_circle_80011021_Rb", "str_guide_circle_80011021_RbT"}
-, 
-[80011121] = {80011121, 300, 1, 
-{2, 2}
-, common[12], nil, nil, nil, "str_guide_circle_80011121_Rt", "str_guide_circle_80011121_RtT", nil, nil, "str_guide_circle_80011121_Rb", "str_guide_circle_80011121_RbT"}
-, 
-[80011421] = {80011421, 440, 2, 
-{80012814}
-, common[3], nil, nil, nil, nil, nil, "str_guide_circle_80011421_Rt", "str_guide_circle_80011421_RtT", "str_guide_circle_80011421_Rb", "str_guide_circle_80011421_RbT"}
-, 
-[80011521] = {80011521, 440, 2, 
-{80013011}
-, common[1], nil, nil, nil, nil, nil, "str_guide_circle_80011521_Rt", "str_guide_circle_80011521_RtT"}
-, 
-[80010921] = {80010921, 440, 2, 
-{80011811}
-, common[1], nil, nil, nil, nil, nil, "str_guide_circle_80010921_Lb", "str_guide_circle_80010921_LbT", "str_guide_circle_80010921_Rb", "str_guide_circle_80010921_RbT"}
-, 
-[80011321] = {80011321, 440, 2, 
-{80012611}
-, common[1], nil, nil, nil, nil, nil, "str_guide_circle_80011321_Lb", "str_guide_circle_80011321_LbT", "str_guide_circle_80011321_Rb", "str_guide_circle_80011321_RbT"}
-, 
-[80011621] = {80011621, 300, 1, common[29], common[7], nil, nil, nil, common[79], common[80]}
-, 
-[80011611] = {80011611, 300, 1, common[29], common[7], nil, nil, nil, common[79], common[80]}
-, 
-[80010206] = {80010206, 220, 10, 
-{8001002}
-, common[2], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, false, "str_guide_circle_80010206", common[81], common[30], true}
-, 
-[80010207] = {80010207, 220, 10, 
-{8001002, 8001002}
-, common[2], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, true, "str_guide_circle_80010207", common[81], common[31], false}
-, 
-[80010304] = {80010304, 220, 10, 
-{8001004, 8001004}
-, common[2], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, true, "str_guide_circle_80010304", common[81], common[31], false}
-, 
-[80010402] = {80010402, 220, 10, 
-{8001102, 8001102}
-, common[2], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, true, "str_guide_circle_80010402", common[81], common[31], false}
-, 
-[80010501] = {80010501, 220, 10, common[32], common[33], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, false, "str_guide_circle_80010501", common[81], common[30], true}
-, 
-[80010502] = {80010502, 220, 10, common[32], common[33], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, false, "str_guide_circle_80010502", common[81], common[30], true}
-, 
-[80011101] = {80011101, 220, 10, 
-{8001301, 8001301}
-, 
-{5, 50}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, true, "str_guide_circle_80011101", common[81], common[30], false}
-, 
-[52906001] = {52906001, 440, 2, 
-{80013511}
-, common[15], nil, common[82], common[83], common[84], common[85], nil, nil, common[86], common[87]}
-, 
-[52916001] = {52916001, 440, 2, 
-{80013611}
-, common[15], nil, common[82], common[83], common[84], common[85], nil, nil, common[86], common[87]}
-, 
-[8403] = {8403, 300, 2, 
-{10170901}
-, common[3], nil, nil, nil, "str_guide_circle_10170901_Rt", "str_guide_circle_10170901_RtT", "str_guide_circle_10170901_Lb", "str_guide_circle_10170901_LbT", "str_guide_circle_10170901_Rb", "str_guide_circle_10170901_RbT"}
-, 
-[8430] = {8430, 600, 2, 
-{10181401}
-, common[2], nil, nil, nil, "str_guide_circle_chapter18_14_Rt", "str_guide_circle_chapter18_14_RtT", nil, nil, "str_guide_circle_chapter18_14_Rb", "str_guide_circle_chapter18_14_RbT"}
-, 
-[8501] = {8501, 600, 2, 
-{10171401}
-, common[2], nil, nil, nil, "str_guide_circle_2905701_Rt", "str_guide_circle_2905701_RtT", "str_guide_circle_2905701_Lb", "str_guide_circle_2905701_LbT", "str_guide_circle_2905701_Rb", "str_guide_circle_2905701_RbT"}
-, 
-[8502] = {8502, 300, 1, 
-{6, 7}
-, common[12], nil, "str_guide_circle_29057011_Rt", "str_guide_circle_29057011_RtT", "str_guide_circle_29057011_Lb", common[88], nil, nil, "str_guide_circle_29057011_Rb", "str_guide_circle_29057011_RbT"}
-, 
-[8503] = {8503, 440, 2, 
-{10180302}
-, common[2], nil, nil, nil, nil, nil, "str_guide_circle_2003101_Rt", "str_guide_circle_2003101_RtT", "str_guide_circle_2003101_Lb", "str_guide_circle_2003101_LbT"}
-, 
-[8440] = {8440, 300, 2, 
-{10180401}
-, common[2], nil, nil, nil, nil, nil, "str_guide_circle_N34_18_1_Rt", "str_guide_circle_N34_18_1_RtT", "str_guide_circle_N34_18_1_Lb", "str_guide_circle_N34_18_1_LbT"}
-, 
-[8441] = {8441, 300, 2, 
-{10180504}
-, common[2], nil, nil, nil, "str_guide_circle_N34_18_2_Rt", "str_guide_circle_N34_18_2_RtT", nil, nil, "str_guide_circle_N34_18_2_Lb", "str_guide_circle_N34_18_2_LbT"}
-, 
-[8442] = {8442, 600, 2, 
-{10180801}
-, common[2], nil, nil, nil, nil, nil, "str_guide_circle_2002901_Rt", "str_guide_circle_2002901_RtT", "str_guide_circle_2002901_Lb", "str_guide_circle_2002901_LbT"}
-, 
-[8443] = {8443, 600, 2, 
-{10181001}
-, common[2], nil, nil, nil, nil, nil, "str_guide_circle_2003001_Rt", "str_guide_circle_2003001_RtT", "str_guide_circle_2003001_Lb", "str_guide_circle_2003001_LbT"}
-, 
-[8444] = {8444, 600, 2, 
-{10180601}
-, common[2], nil, nil, nil, nil, nil, "str_guide_circle_2003401_Rt", "str_guide_circle_2003401_RtT", "str_guide_circle_2003401_Lb", "str_guide_circle_2003401_LbT"}
-, 
-[80011701] = {80011701, 300, 2, 
-{80021512}
-, common[15], nil, common[89], common[90], nil, nil, common[91], common[92], common[93], common[94]}
-, 
-[80011702] = {80011702, 300, 2, 
-{80021612}
-, common[15], nil, common[89], common[90], nil, nil, common[91], common[92], common[93], common[94]}
-, 
-[80022901] = {80022901, 300, 2, 
-{80022912}
-, common[15], nil, common[95], common[96], common[97], common[98]}
-, 
-[80022902] = {80022902, 300, 2, 
-{80022913}
-, common[15], nil, nil, nil, common[99], common[100], nil, nil, common[101], common[102]}
-, 
-[80023001] = {80023001, 300, 2, 
-{80023012}
-, common[15], nil, common[95], common[96], common[97], common[98]}
-, 
-[80023002] = {80023002, 300, 2, 
-{80023013}
-, common[15], nil, nil, nil, common[99], common[100], nil, nil, common[101], common[102]}
-, 
-[80023501] = {80023501, 300, 2, 
-{80023512}
-, common[15], nil, common[95], common[96], common[97], common[98]}
-, 
-[80023502] = {80023502, 300, 1, common[34], common[15], nil, common[103], common[104], common[101], common[102]}
-, 
-[80023601] = {80023601, 300, 2, 
-{80023612}
-, common[11], nil, common[95], common[96], common[97], common[98]}
-, 
-[80023602] = {80023602, 300, 1, common[34], common[11], nil, common[103], common[104], common[101], common[102]}
-, 
-[80020201] = {80020201, 350, 10, 
-{8002403}
-, common[2], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, false, "str_guide_circle_80020201", common[105], common[35], true}
-, 
-[80020202] = {80020202, 350, 10, 
-{8002403, 8002403}
-, common[2], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, true, "str_guide_circle_80020202", common[105], common[35], false}
-, 
-[80020401] = {80020401, 220, 2, 
-{80020713}
-, common[2], nil, nil, nil, nil, nil, nil, nil, common[106], common[107]}
-, 
-[80020402] = {80020402, 220, 2, 
-{80020813}
-, common[2], nil, nil, nil, nil, nil, nil, nil, common[106], common[107]}
-, 
-[535100701] = {535100701, 300, 2, 
-{535107101}
-, common[2], nil, "str_guide_circle_n35-7_Rb", "str_guide_circle_n35-7_RbT", nil, nil, "str_guide_circle_n35-7_Lb", "str_guide_circle_n35-7_LbT", "str_guide_circle_n35-7_Lt", "str_guide_circle_n35-7_LtT"}
-, 
-[535100901] = {535100901, 300, 2, 
-{535109101}
-, common[2], nil, "str_guide_circle_n35-9_Lt", "str_guide_circle_n35-9_LtT", nil, nil, "str_guide_circle_n35-9_Lb", "str_guide_circle_n35-9_LbT", "str_guide_circle_n35-9_Rb", "str_guide_circle_n35-9_RbT"}
-, 
-[5352031] = {5352031, 300, 3, 
-{5352031}
-, common[2], nil, nil, nil, "str_guide_circle_n35_trap5352031_Rt", "str_guide_circle_n35_trap5352031_RtT", nil, nil, "str_guide_circle_n35_trap5352031_Rb", "str_guide_circle_n35_trap5352031_RbT"}
-, 
-[8450] = {8450, 600, 2, 
-{536108101}
-, common[2], nil, "str_guide_circle_n36-9_Lt", "str_guide_circle_n36-9_LtT", nil, nil, "str_guide_circle_n36-9_Lb", "str_guide_circle_n36-9_LbT", "str_guide_circle_n36-9_Rb", "str_guide_circle_n36-9_RbT"}
-, 
-[80032901] = {80032901, 300, 2, 
-{80032911}
-, common[2], nil, common[108], common[109], nil, nil, common[110], common[111], common[112], common[113]}
-, 
-[80033001] = {80033001, 300, 2, 
-{80033011}
-, common[2], nil, common[108], common[109], nil, nil, common[110], common[111], common[112], common[113]}
-, 
-[80033501] = {80033501, 300, 2, 
-{80033511}
-, common[2], nil, common[108], common[109], nil, nil, common[110], common[111], common[112], common[113]}
-, 
-[80033601] = {80033601, 300, 2, 
-{80033611}
-, common[2], nil, common[108], common[109], nil, nil, common[110], common[111], common[112], common[113]}
-, 
-[80030101] = {80030101, 350, 10, 
-{8003301}
-, 
-{20, 50}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, false, "str_guide_circle_80030101", common[114], 
-{-20, -310}
-, true}
-, 
-[80030201] = {80030201, 300, 10, 
-{8003302}
-, 
-{5, 20}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, false, "str_season_debris_guide_80040101", common[114], 
-{-20, -260}
-, true}
-, 
-[537100101] = {537100101, 300, 1, 
-{5, 3}
-, common[12], nil, nil, nil, "str_guide_circle_n37_trap2803501_Rt", "str_guide_circle_n37_trap2803501_RtT", nil, nil, "str_guide_circle_n37_trap2803501_Rb", "str_guide_circle_n37_trap2803501_RbT"}
-, 
-[537100301] = {537100301, 300, 2, 
-{537103104}
-, common[2], nil, nil, nil, "str_guide_circle_N37ranger_Rt", "str_guide_circle_N37ranger_RtT", "str_guide_circle_N37ranger_Lb", "str_guide_circle_N37ranger_LbT", "str_guide_circle_N37ranger_Lt", "str_guide_circle_N37ranger_LtT"}
-, 
-[537100401] = {537100401, 300, 2, 
-{537104106}
-, common[2], nil, "str_guide_circle_N37cike_Lt", "str_guide_circle_N37cike_LtT", "str_guide_circle_N37cike_Lb", "str_guide_circle_N37cike_LbT"}
-, 
-[537100501] = {537100501, 300, 2, 
-{537105103}
-, common[2], nil, "str_guide_circle_N37cap_Lt", "str_guide_circle_N37cap_LtT", "str_guide_circle_N37cap_Rt", "str_guide_circle_N37cap_RtT", "str_guide_circle_N37cap_Lb", "str_guide_circle_N37cap_LbT"}
-, 
-[537100901] = {537100901, 300, 2, 
-{537109102}
-, common[2], nil, "str_guide_circle_N37light_Lb", "str_guide_circle_N37light_LbT", nil, nil, "str_guide_circle_N37light_Lt", "str_guide_circle_N37light_LtT", "str_guide_circle_N37light_Rt", "str_guide_circle_N37light_RtT"}
-, 
-[537101201] = {537101201, 300, 2, 
-{537112101}
-, common[2], nil, "str_guide_circle_N37boss_Lt", "str_guide_circle_N37boss_LtT", "str_guide_circle_N37boss_Rt", "str_guide_circle_N37boss_RtT", "str_guide_circle_N37boss_Lb", "str_guide_circle_N37boss_LbT"}
-, 
-[80030701] = {80030701, 300, 2, 
-{80030713}
-, common[2], nil, nil, nil, common[115], common[116], nil, nil, common[117], common[118]}
-, 
-[80030801] = {80030801, 300, 2, 
-{80030813}
-, common[2], nil, nil, nil, common[115], common[116], nil, nil, common[117], common[118]}
-, 
-[80031301] = {80031301, 300, 3, common[36], common[37], nil, nil, nil, common[119], common[120]}
-, 
-[80031401] = {80031401, 300, 3, common[36], common[37], nil, nil, nil, common[119], common[120]}
-, 
-[53810021] = {53810021, 600, 3, 
-{53810021}
-, common[2], nil, nil, nil, nil, nil, "str_guide_cage_Rt", "str_guide_cage_RtT"}
-, 
-[538100101] = {538100101, 600, 2, 
-{53810102}
-, common[2], nil, "str_guide_circle_N38boss_Lb", "str_guide_circle_N38boss_LbT", nil, nil, "str_guide_circle_N38boss_Lt", "str_guide_circle_N38boss_LtT", "str_guide_circle_N38boss_Rt", "str_guide_circle_N38boss_RtT"}
-, 
-[80040001] = {80040001, 600, 2, 
-{80042911}
-, common[2], nil, nil, nil, nil, nil, common[121], common[122], common[123], common[124]}
-, 
-[80040002] = {80040002, 600, 2, 
-{80043011}
-, common[2], nil, nil, nil, nil, nil, common[121], common[122], common[123], common[124]}
-, 
-[800413] = {800413, 590, 2, 
-{80041311}
-, common[38], nil, nil, nil, common[125], common[126], common[127], common[128], common[129], common[130]}
-, 
-[800414] = {800414, 590, 2, 
-{80041411}
-, common[38], nil, nil, nil, common[125], common[126], common[127], common[128], common[129], common[130]}
-, 
-[10190501] = {10190501, 400, 2, 
-{101905103}
-, common[2], nil, "str_guide_circle_soilder1_Rt", "str_guide_circle_soilder1_RtT", nil, nil, "str_guide_circle_soilder1_Rb", "str_guide_circle_soilder1_RbT", "str_guide_circle_soilder1_Lb", "str_guide_circle_soilder1_LbT"}
-, 
-[10190901] = {10190901, 400, 2, 
-{101909104}
-, common[2], nil, "str_guide_circle_soilder2_Rt", "str_guide_circle_soilder2_RtT", nil, nil, "str_guide_circle_soilder2_Rb", "str_guide_circle_soilder2_RbT", "str_guide_circle_soilder2_Lb", "str_guide_circle_soilder2_LbT"}
-, 
-[10190701] = {10190701, 400, 2, 
-{101907101}
-, common[2], nil, "str_guide_circle_soilder3_Rb", "str_guide_circle_soilder3_RbT", nil, nil, "str_guide_circle_soilder3_Rt", "str_guide_circle_soilder3_RtT", "str_guide_circle_soilder3_Lb", "str_guide_circle_soilder3_LbT"}
-, 
-[10191201] = {10191201, 400, 2, 
-{101912101}
-, common[2], nil, "str_guide_circle_shenghuaboss_Rt", "str_guide_circle_shenghuaboss_RtT", nil, nil, "str_guide_circle_shenghuaboss_Lt", "str_guide_circle_shenghuaboss_LtT", "str_guide_circle_shenghuaboss_Lb", "str_guide_circle_shenghuaboss_LbT"}
-, 
-[10201101] = {10201101, 400, 2, 
-{102011101}
-, common[2], nil, "str_guide_circle_ylxs_Lt", "str_guide_circle_ylxs_LtT"}
-, 
-[10201202] = {10201202, 400, 2, 
-{102012101}
-, common[2], nil, "str_guide_circle_ylxs_Rt", "str_guide_circle_ylxs_RtT", nil, nil, "str_guide_circle_ylxs_Lb", "str_guide_circle_ylxs_LbT"}
-, 
-[80240102] = {80240102, 400, 1, common[18], common[2], nil, nil, nil, "str_guide_circle_8024001", common[88]}
-, 
-[80240211] = {80240211, 300, 2, 
-{80241313}
-, common[7], nil, nil, nil, "str_guide_circle_yingzi_Lt", "str_guide_circle_yingzi_LtT", nil, nil, "str_guide_circle_yingzi_Rt", "str_guide_circle_yingzi_RtT"}
-, 
-[80240212] = {80240212, 300, 3, 
-{80241901}
-, common[7], nil, nil, nil, "str_guide_circle_jingmianta_Lt", "str_guide_circle_jingmianta_LtT", nil, nil, "str_guide_circle_jingmianta_Rt", "str_guide_circle_jingmianta_RtT"}
-, 
-[80240213] = {80240213, 300, 2, 
-{80243113}
-, common[7], nil, "str_guide_circle_miran_Lt", "str_guide_circle_miran_LtT", nil, nil, "str_guide_circle_miran_Rt", "str_guide_circle_miran_RtT"}
-, 
-[80240214] = {80240214, 600, 3, 
-{80242086}
-, common[15], nil, nil, nil, nil, nil, "str_guide_circle_fengchuan_Rt", "str_guide_circle_fengchuan_RtT"}
-, 
-[80240215] = {80240215, 600, 3, 
-{80242803}
-, common[2], nil, nil, nil, "str_guide_circle_laolong_Lt", "str_guide_circle_laolong_LtT", nil, nil, "str_guide_circle_laolong_Rt", "str_guide_circle_laolong_RtT"}
-, 
-[5419301] = {5419301, 700, 2, 
-{2909301}
-, common[11], nil, "str_guide_circle_2909301_Rt", "str_guide_circle_2909301_RtT", "str_guide_circle_2909301_Lt", "str_guide_circle_2909301_LtT", "str_guide_circle_2909301_Lb", "str_guide_circle_2909301_LbT"}
-, 
-[5419302] = {5419302, 600, 2, 
-{541100113}
-, common[2], nil, "str_guide_mouse_Rt", "str_guide_mouse_RtT", "str_guide_mouse_Lt", "str_guide_mouse_LtT", "str_guide_mouse_Lb", "str_guide_mouse_LbT"}
-, 
-[80050001] = {80050001, 440, 2, 
-{80050415}
-, common[7], nil, nil, nil, "str_guide_circle_80050001_Rt", "str_guide_circle_80050001_RtT", nil, nil, "str_guide_circle_80050001_Rb", "str_guide_circle_80050001_RbT"}
-, 
-[80150101] = {80150101, 400, 1, common[29], common[2], nil, nil, nil, "str_guide_circle_80150101", common[88]}
-, 
-[80150201] = {80150201, 400, 1, common[29], common[2], nil, nil, nil, "str_guide_circle_80150201", common[88]}
-, 
-[80150301] = {80150301, 300, 1, common[17], common[3], nil, nil, nil, "str_guide_circle_80150301", common[88]}
-, 
-[80250101] = {80250101, 220, 1, common[28], common[12], nil, nil, nil, "str_guide_circle_80250101", common[88]}
-, 
-[5419305] = {5419305, 700, 2, 
-{800544101}
-, common[12], nil, common[131], common[132], common[133], common[134], common[135], common[136]}
-, 
-[5419306] = {5419306, 700, 2, 
-{80051011}
-, common[12], nil, common[131], common[132], common[133], common[134], common[135], common[136]}
-, 
-[100209] = {100209, 500, 2, 
-{1002091}
-, common[2], nil, "str_guide_circle_2909401_Lt", "str_guide_circle_2909401_LtT", nil, nil, "str_guide_circle_2909401_Rt", "str_guide_circle_2909401_RtT", "str_guide_circle_2909401_Lb", "str_guide_circle_2909401_LbT"}
-, 
-[90010401] = {90010401, 250, 11, 
-{9001001}
-, common[39], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, false, "str_season_maze_s1_guide_circle_90010401", common[137], common[40], true}
-, 
-[90010402] = {90010402, 250, 11, 
-{9001002}
-, 
-{10, 60}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, true, "str_season_maze_s1_guide_circle_90010402", common[137], 
-{0, 230}
-, false}
-, 
-[90020401] = {90020401, 250, 11, 
-{9003001}
-, common[39], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 128, false, "str_season_maze_s2_guide_circle_90020401", common[137], common[40], true}
-, 
-[80060301] = {80060301, 590, 2, 
-{2004901}
-, common[38], nil, "str_guide_circle_2004901_Lb", "str_guide_circle_2004901_LbT", "str_guide_circle_2004901_Rt", "str_guide_circle_2004901_RtT", "str_guide_circle_2004901_Rb", "str_guide_circle_2004901_RbT"}
-, 
-[80060302] = {80060302, 650, 2, 
-{80060313}
-, common[7], nil, "str_guide_circle_80060313_Lb", "str_guide_circle_80060313_LbT"}
-, 
-[80061801] = {80061801, 900, 2, 
-{80061811}
-, common[41], nil, "str_guide_circle_2909501_Lb", "str_guide_circle_2909501_LbT", "str_guide_circle_2909501_Rt", "str_guide_circle_2909501_RtT", "str_guide_circle_2909501_Rb", "str_guide_circle_2909501_RbT"}
-, 
-[80061001] = {80061001, 900, 2, 
-{80061011}
-, common[41], nil, "str_guide_circle_2909502_Lb", "str_guide_circle_2909502_LbT", "str_guide_circle_2909502_Rt", "str_guide_circle_2909502_RtT", "str_guide_circle_2909502_Rb", "str_guide_circle_2909502_RbT"}
-, 
-[80060101] = {80060101, 400, 1, common[29], common[2], nil, nil, nil, "str_guide_circle_80060101_Rb", "str_guide_circle_80060101_RbT", nil, nil, "str_guide_circle_80060101_Rt", "str_guide_circle_80060101_RtT"}
-, 
-[80060102] = {80060102, 650, 2, 
-{80060115}
-, common[15], nil, nil, nil, "str_guide_circle_80060102_Lt", "str_guide_circle_80060102_LtT"}
-, 
-[80060201] = {80060201, 400, 3, 
-{80060203}
-, common[2], nil, "str_guide_circle_80060201_Rt", "str_guide_circle_80060201_RtT", "str_guide_circle_80060201_Lt", "str_guide_circle_80060201_LtT"}
-, 
-[80060401] = {80060401, 500, 1, 
-{4, 5}
-, common[12], nil, nil, nil, "str_guide_circle_80060401_Rt", "str_guide_circle_80060401_RtT"}
-, 
-[2909701] = {2909701, 500, 2, 
-{545111101}
-, common[41], nil, "str_guide_circle_2909701_Lb", "str_guide_circle_2909701_LbT", "str_guide_circle_2909701_Rt", "str_guide_circle_2909701_RtT", "str_guide_circle_2909701_Rb", "str_guide_circle_2909701_RbT"}
-, 
-[2909801] = {2909801, 600, 2, 
-{547110105}
-, common[41], nil, "str_guide_circle_2909801_Lb", "str_guide_circle_2909801_LbT", "str_guide_circle_2909801_Rt", "str_guide_circle_2909801_RtT", "str_guide_circle_2909801_Rb", "str_guide_circle_2909801_RbT"}
-, 
-[2005101] = {2005101, 300, 2, 
-{547103105}
-, common[2], nil, "str_guide_2005101_Lb", "str_guide_2005101_LbT", "str_guide_2005101_Rt", "str_guide_2005101_RtT", "str_guide_2005101_Lt", "str_guide_2005101_LtT"}
-, 
-[2910101] = {2910101, 400, 2, 
-{548110101}
-, common[41], nil, "str_guide_circle_2910101_Lb", "str_guide_circle_2910101_LbT", nil, nil, "str_guide_circle_2910101_Rt", "str_guide_circle_2910101_RtT", "str_guide_circle_2910101_Rb", "str_guide_circle_2910101_RbT"}
-, 
-[2005201] = {2005201, 400, 2, 
-{548105104}
-, common[2], nil, "str_guide_circle_2005201_Lb", "str_guide_circle_2005201_LbT", "str_guide_circle_2005201_Rt", "str_guide_circle_2005201_RtT", nil, nil, "str_guide_circle_2005201_Rb", "str_guide_circle_2005201_RbT"}
-, 
-[2910001] = {2910001, 1400, 2, 
-{807004101}
-, common[42], nil, nil, nil, nil, nil, "str_guide_2910001_Lt", "str_guide_2910001_LtT", "str_guide_2910001_Lb", "str_guide_2910001_LbT"}
-, 
-[2910002] = {2910002, 1400, 2, 
-{807110301}
-, common[42], nil, nil, nil, nil, nil, "str_guide_2910002_Lt", "str_guide_2910002_LtT", "str_guide_2910002_Lb", "str_guide_2910002_LbT"}
-, 
-[2909901] = {2909901, 500, 2, 
-{549109101}
-, common[11], nil, "str_guide_2909901_Lb", "str_guide_2909901_LbT", nil, nil, "str_guide_2909901_Lt", "str_guide_2909901_LtT", "str_guide_2909901_Rb", "str_guide_2909901_RbT"}
-, 
-[2803101] = {2803101, 300, 3, 
-{2803101}
-, common[12], nil, nil, nil, nil, nil, "str_guide_2803101_Lb", "str_guide_2803101_LbT"}
-, 
-[2910201] = {2910201, 500, 2, 
-{550109101}
-, common[11], nil, "str_guide_2910201_Lt", "str_guide_2910201_LtT", nil, nil, "str_guide_2910201_Lb", "str_guide_2910201_LbT", "str_guide_2910201_Rb", "str_guide_2910201_RbT"}
+  {
+    1,
+    292,
+    3,
+    {1003},
+    common[1],
+    false,
+    "str_guide_circle_1_Lt",
+    "str_guide_circle_1_LtT",
+    "str_guide_circle_1_Rt",
+    "str_guide_circle_1_RtT",
+    nil,
+    nil,
+    "str_guide_circle_1_Rb",
+    "str_guide_circle_1_RbT"
+  },
+  {
+    2,
+    320,
+    2,
+    {2011724},
+    common[2],
+    false,
+    "str_guide_circle_2_Lt",
+    "str_guide_circle_2_LtT",
+    nil,
+    nil,
+    "str_guide_circle_2_Lb",
+    "str_guide_circle_2_LbT"
+  },
+  {
+    3,
+    292,
+    2,
+    {2010523},
+    common[1],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_3_Lt",
+    "str_guide_circle_3_LtT",
+    nil,
+    nil,
+    "str_guide_circle_3_Lb",
+    "str_guide_circle_3_LbT"
+  },
+  {
+    4,
+    320,
+    2,
+    {2010814},
+    common[2],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_4_Rt",
+    "str_guide_circle_4_RtT",
+    "str_guide_circle_4_Lt",
+    "str_guide_circle_4_LtT",
+    "str_guide_circle_4_Rb",
+    "str_guide_circle_4_RbT"
+  },
+  {
+    5,
+    292,
+    3,
+    {701},
+    common[3],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_5_Rt",
+    "str_guide_circle_5_RtT"
+  },
+  {
+    6,
+    292,
+    3,
+    {702},
+    common[3],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_6_Rt",
+    "str_guide_circle_6_RtT"
+  },
+  {
+    7,
+    292,
+    1,
+    common[4],
+    common[3],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_7_Rb",
+    "str_guide_circle_7_RbT"
+  },
+  {
+    8,
+    292,
+    2,
+    {2020111},
+    common[5],
+    false,
+    "str_guide_circle_2-1_Lt",
+    "str_guide_circle_2-1_LtT",
+    nil,
+    nil,
+    "str_guide_circle_2-1_Lb",
+    "str_guide_circle_2-1_LbT"
+  },
+  {
+    9,
+    292,
+    3,
+    {1999},
+    common[3],
+    false,
+    "str_guide_circle_2-2_Lt",
+    "str_guide_circle_2-2_LtT",
+    "str_guide_circle_2-2_Rt",
+    "str_guide_circle_2-2_RtT"
+  },
+  {
+    10,
+    292,
+    3,
+    {1998},
+    common[3],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2-3_Rt",
+    "str_guide_circle_2-3_RtT",
+    "str_guide_circle_2-3_Lt",
+    "str_guide_circle_2-3_LtT"
+  },
+  {
+    11,
+    292,
+    2,
+    {2020712},
+    common[1],
+    false,
+    "str_guide_circle_2-7_Lt",
+    "str_guide_circle_2-7_LtT",
+    "str_guide_circle_2-7_Rt",
+    "str_guide_circle_2-7_RtT",
+    nil,
+    nil,
+    "str_guide_circle_2-7_Rb",
+    "str_guide_circle_2-7_RbT"
+  },
+  {
+    12,
+    292,
+    3,
+    {3000},
+    common[3],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_2-8_Rt",
+    "str_guide_circle_2-8_RtT",
+    nil,
+    nil,
+    "str_guide_circle_2-8_Rb",
+    "str_guide_circle_2-8_RbT"
+  },
+  {
+    13,
+    292,
+    2,
+    common[6],
+    common[3],
+    false,
+    "str_guide_circle_2-10_Lt",
+    "str_guide_circle_2-10_LtT",
+    "str_guide_circle_2-10_Rt",
+    "str_guide_circle_2-10_RtT",
+    nil,
+    nil,
+    "str_guide_circle_2-10_Rb",
+    "str_guide_circle_2-10_RbT"
+  },
+  {
+    14,
+    292,
+    2,
+    {2021511},
+    common[3],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2-10-1_Lt",
+    "str_guide_circle_2-10-1_LtT",
+    "str_guide_circle_2-10-1_Rt",
+    "str_guide_circle_2-10-1_RtT"
+  },
+  {
+    15,
+    292,
+    3,
+    {3406},
+    common[3],
+    true,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_ex1-2_Lt",
+    "str_guide_circle_ex1-2_LtT",
+    "str_guide_circle_ex1-2_Lb",
+    "str_guide_circle_ex1-2_LbT"
+  },
+  {
+    16,
+    292,
+    2,
+    {4010312},
+    common[7],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_ex1-3_Lt",
+    "str_guide_circle_ex1-3_LtT",
+    "str_guide_circle_ex1-3_Rt",
+    "str_guide_circle_ex1-3_RtT",
+    "str_guide_circle_ex1-3_Rb",
+    "str_guide_circle_ex1-3_RbT"
+  },
+  {
+    17,
+    292,
+    3,
+    {3402},
+    common[3],
+    true,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[44],
+    common[45],
+    common[46]
+  },
+  {
+    18,
+    292,
+    3,
+    {3201},
+    common[3],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2-3-1_Lb",
+    "str_guide_circle_2-3-1_LbT",
+    "str_guide_circle_2-3-1_Lt",
+    "str_guide_circle_2-3-1_LtT"
+  },
+  {
+    19,
+    320,
+    3,
+    common[8],
+    common[9],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2-11_Lb",
+    "str_guide_circle_2-11_LbT"
+  },
+  {
+    20,
+    320,
+    1,
+    common[10],
+    {50, 100},
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_air1-1_Lt",
+    "str_guide_circle_air1-1_LtT",
+    "str_guide_circle_air1-1_Rb",
+    "str_guide_circle_air1-1_RbT"
+  },
+  {
+    21,
+    292,
+    1,
+    common[10],
+    {50, 160},
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_air1-2_Lb",
+    "str_guide_circle_air1-2_LbT"
+  },
+  {
+    22,
+    292,
+    2,
+    {2030112},
+    common[5],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_3-1_Lt",
+    "str_guide_circle_3-1_LtT",
+    "str_guide_circle_3-1_Lb",
+    "str_guide_circle_3-1_LbT"
+  },
+  {
+    23,
+    360,
+    2,
+    {2030414},
+    common[3],
+    false,
+    "str_guide_circle_3-4_Lt",
+    "str_guide_circle_3-4_LtT",
+    nil,
+    nil,
+    "str_guide_circle_3-4_Lb",
+    "str_guide_circle_3-4_LbT",
+    "str_guide_circle_3-4_Rb",
+    "str_guide_circle_3-4_RbT"
+  },
+  {
+    24,
+    292,
+    2,
+    {2030713},
+    common[3],
+    false,
+    "str_guide_circle_3-7_Lt",
+    "str_guide_circle_3-7_LtT",
+    nil,
+    nil,
+    "str_guide_circle_3-7_Lb",
+    "str_guide_circle_3-7_LbT"
+  },
+  {
+    25,
+    292,
+    1,
+    {4, 7},
+    common[3],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_3-10_Lt",
+    "str_guide_circle_3-10_LtT",
+    "str_guide_circle_3-10_Lb",
+    "str_guide_circle_3-10_LbT"
+  },
+  {
+    26,
+    292,
+    2,
+    {2040113},
+    common[2],
+    false,
+    "str_guide_circle_4-1_Lt",
+    "str_guide_circle_4-1_LtT",
+    nil,
+    nil,
+    "str_guide_circle_4-1_Lb",
+    "str_guide_circle_4-1_LbT",
+    "str_guide_circle_4-1_Rb",
+    "str_guide_circle_4-1_RbT"
+  },
+  {
+    27,
+    292,
+    2,
+    {2040712},
+    common[5],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_4-7_Lt",
+    "str_guide_circle_4-7_LtT",
+    "str_guide_circle_4-7_Lb",
+    "str_guide_circle_4-7_LbT"
+  },
+  {
+    28,
+    360,
+    2,
+    {4010611},
+    common[11],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_ex1-6_Rt",
+    "str_guide_circle_ex1-6_RtT",
+    "str_guide_circle_ex1-6_Rb",
+    "str_guide_circle_ex1-6_RbT"
+  },
+  {
+    29,
+    292,
+    3,
+    {2210},
+    common[1],
+    false,
+    "str_guide_circle_ex2-1_Lt",
+    "str_guide_circle_ex2-1_LtT",
+    nil,
+    nil,
+    "str_guide_circle_ex2-1_Lb",
+    "str_guide_circle_ex2-1_LbT"
+  },
+  {
+    30,
+    292,
+    2,
+    {2040413},
+    common[3],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_ex2-4_Lb",
+    "str_guide_circle_ex2-4_LbT",
+    nil,
+    nil,
+    "str_guide_circle_ex2-4_Rb",
+    "str_guide_circle_ex2-4_RbT"
+  },
+  {
+    31,
+    292,
+    2,
+    {2050111},
+    common[7],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_5-1_Lb",
+    "str_guide_circle_5-1_LbT",
+    nil,
+    nil,
+    "str_guide_circle_5-1_Rb",
+    "str_guide_circle_5-1_RbT"
+  },
+  {
+    32,
+    292,
+    2,
+    {2050713},
+    common[3],
+    false,
+    "str_guide_circle_5-7_Lt",
+    "str_guide_circle_5-7_LtT",
+    nil,
+    nil,
+    "str_guide_circle_5-7_Lb",
+    "str_guide_circle_5-7_LbT"
+  },
+  {
+    33,
+    292,
+    3,
+    {2015},
+    common[3],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2-3-2_Rt",
+    "str_guide_circle_2-3-2_RtT",
+    "str_guide_circle_2-3-2_Rb",
+    "str_guide_circle_2-3-2_RbT"
+  },
+  {
+    34,
+    292,
+    2,
+    {2060111},
+    common[1],
+    false,
+    "str_guide_circle_6-1_Lt",
+    "str_guide_circle_6-1_LtT",
+    nil,
+    nil,
+    "str_guide_circle_6-1_Lb",
+    "str_guide_circle_6-1_LbT"
+  },
+  {
+    35,
+    292,
+    2,
+    {2060713},
+    common[7],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_6-7_Lb",
+    "str_guide_circle_6-7_LbT",
+    "str_guide_circle_6-7_Rb",
+    "str_guide_circle_6-7_RbT"
+  },
+  {
+    36,
+    292,
+    2,
+    {2070112},
+    common[3],
+    false,
+    "str_guide_circle_7-1_Lt",
+    "str_guide_circle_7-1_LtT",
+    "str_guide_circle_7-1_Rt",
+    "str_guide_circle_7-1_RtT"
+  },
+  {
+    37,
+    292,
+    2,
+    {2070712},
+    common[1],
+    false,
+    "str_guide_circle_7-7_Lt",
+    "str_guide_circle_7-7_LtT",
+    nil,
+    nil,
+    "str_guide_circle_7-7_Lb",
+    "str_guide_circle_7-7_LbT"
+  },
+  {
+    38,
+    292,
+    2,
+    {2021015},
+    common[2],
+    false,
+    "str_guide_circle_2-13_Lt_Red",
+    "str_guide_circle_2-13_LtT_Red"
+  },
+  {
+    39,
+    292,
+    2,
+    common[6],
+    common[2],
+    false,
+    "str_guide_circle_2-13_Lt_Yellow",
+    "str_guide_circle_2-13_LtT_Yellow"
+  },
+  {
+    40,
+    292,
+    3,
+    {3412},
+    common[3],
+    true,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[43],
+    common[44],
+    common[45],
+    common[46]
+  },
+  {
+    41,
+    292,
+    3,
+    {3413},
+    common[3],
+    true,
+    nil,
+    nil,
+    "str_guide_circle_4-10_Rt",
+    "str_guide_circle_4-10_RtT"
+  },
+  {
+    42,
+    292,
+    2,
+    {2080113},
+    common[1],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_8-2_Lt",
+    "str_guide_circle_8-2_LtT",
+    "str_guide_circle_8-2_Lb",
+    "str_guide_circle_8-2_LbT"
+  },
+  {
+    43,
+    292,
+    2,
+    {2080713},
+    common[11],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_8-9_Lt",
+    "str_guide_circle_8-9_LtT",
+    "str_guide_circle_8-9_Lb",
+    "str_guide_circle_8-9_LbT"
+  },
+  {
+    44,
+    360,
+    2,
+    {2080611},
+    common[11],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_8-7_Lt",
+    "str_guide_circle_8-7_LtT",
+    "str_guide_circle_8-7_Lb",
+    "str_guide_circle_8-7_LbT"
+  },
+  {
+    45,
+    440,
+    2,
+    {2081211},
+    common[11],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_8-14_Lt",
+    "str_guide_circle_8-14_LtT",
+    "str_guide_circle_8-14_Lb",
+    "str_guide_circle_8-14_LbT"
+  },
+  {
+    46,
+    360,
+    2,
+    {2090213},
+    common[3],
+    false,
+    "str_guide_circle_9-2_Lt",
+    "str_guide_circle_9-2_LtT",
+    "str_guide_circle_9-2_Rt",
+    "str_guide_circle_9-2_RtT",
+    "str_guide_circle_9-2_Lb",
+    "str_guide_circle_9-2_LbT"
+  },
+  {
+    47,
+    292,
+    2,
+    {2090911},
+    common[3],
+    false,
+    "str_guide_circle_9-9_Lt",
+    "str_guide_circle_9-9_LtT",
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_9-9_Rb",
+    "str_guide_circle_9-9_RbT"
+  },
+  {
+    48,
+    360,
+    2,
+    {2100211},
+    common[12],
+    false,
+    "str_guide_circle_10-2_Lt",
+    "str_guide_circle_10-2_LtT",
+    "str_guide_circle_10-2_Rt",
+    "str_guide_circle_10-2_RtT",
+    nil,
+    nil,
+    "str_guide_circle_10-2_Rb",
+    "str_guide_circle_10-2_RbT"
+  },
+  {
+    49,
+    292,
+    2,
+    {2100911},
+    common[3],
+    false,
+    "str_guide_circle_10-9_Lt",
+    "str_guide_circle_10-9_LtT",
+    nil,
+    nil,
+    "str_guide_circle_10-9_Lb",
+    "str_guide_circle_10-9_LbT"
+  },
+  [101] = {
+    101,
+    320,
+    2,
+    {2010611},
+    common[13],
+    true,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_1-7BOSS_Lb",
+    "str_guide_circle_1-7BOSS_LbT",
+    "str_guide_circle_1-7BOSS_Rb",
+    "str_guide_circle_1-7BOSS_RbT"
+  },
+  [102] = {
+    102,
+    292,
+    2,
+    {2011211},
+    common[14],
+    true,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_1-13BOSS_Lb",
+    "str_guide_circle_1-13BOSS_LbT",
+    "str_guide_circle_1-13BOSS_Rb",
+    "str_guide_circle_1-13BOSS_RbT"
+  },
+  [103] = {
+    103,
+    320,
+    2,
+    {2020611},
+    common[2],
+    false,
+    "str_guide_circle_2-6BOSS_Lt",
+    "str_guide_circle_2-6BOSS_LtT",
+    nil,
+    nil,
+    "str_guide_circle_2-6BOSS_Lb",
+    "str_guide_circle_2-6BOSS_LbT",
+    "str_guide_circle_2-6BOSS_Rb",
+    "str_guide_circle_2-6BOSS_RbT"
+  },
+  [104] = {
+    104,
+    400,
+    2,
+    {2021211},
+    common[14],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2-12BOSS_Lt",
+    "str_guide_circle_2-12BOSS_LtT",
+    "str_guide_circle_2-12BOSS_Lb",
+    "str_guide_circle_2-12BOSS_LbT"
+  },
+  [105] = {
+    105,
+    380,
+    2,
+    {2030611},
+    common[15],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_3-6BOSS_Lb",
+    "str_guide_circle_3-6BOSS_LbT",
+    "str_guide_circle_3-6BOSS_Rb",
+    "str_guide_circle_3-6BOSS_RbT"
+  },
+  [106] = {
+    106,
+    400,
+    2,
+    {2031211},
+    common[5],
+    false,
+    "str_guide_circle_3-12BOSS_Lt",
+    "str_guide_circle_3-12BOSS_LtT",
+    nil,
+    nil,
+    "str_guide_circle_3-12BOSS_Lb",
+    "str_guide_circle_3-12BOSS_LbT",
+    "str_guide_circle_3-12BOSS_Rb",
+    "str_guide_circle_3-12BOSS_RbT"
+  },
+  [107] = {
+    107,
+    292,
+    2,
+    common[16],
+    common[15],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_4-6BOSS_Lb",
+    "str_guide_circle_4-6BOSS_LbT",
+    "str_guide_circle_4-6BOSS_Rb",
+    "str_guide_circle_4-6BOSS_RbT"
+  },
+  [108] = {
+    108,
+    360,
+    2,
+    {2041211},
+    common[13],
+    false,
+    "str_guide_circle_4-12BOSS_Lt",
+    "str_guide_circle_4-12BOSS_LtT",
+    nil,
+    nil,
+    "str_guide_circle_4-12BOSS_Lb",
+    "str_guide_circle_4-12BOSS_LbT",
+    "str_guide_circle_4-12BOSS_Rb",
+    "str_guide_circle_4-12BOSS_RbT"
+  },
+  [109] = {
+    109,
+    292,
+    2,
+    {2040621},
+    common[15],
+    false,
+    "str_guide_circle_4-6BOSS2_Lt",
+    "str_guide_circle_4-6BOSS2_LtT",
+    "str_guide_circle_4-6BOSS2_Rt",
+    "str_guide_circle_4-6BOSS2_RtT"
+  },
+  [110] = {
+    110,
+    292,
+    2,
+    common[16],
+    common[3],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_3-6BOSS2_Lb",
+    "str_guide_circle_3-6BOSS2_LbT",
+    "str_guide_circle_3-6BOSS2_Rb",
+    "str_guide_circle_3-6BOSS2_RbT"
+  },
+  [111] = {
+    111,
+    360,
+    2,
+    {2050611},
+    common[15],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_5-6BOSS2_Lt",
+    "str_guide_circle_5-6BOSS2_LtT",
+    "str_guide_circle_5-6BOSS2_Rt",
+    "str_guide_circle_5-6BOSS2_RtT"
+  },
+  [112] = {
+    112,
+    360,
+    2,
+    {2051211},
+    common[13],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_5-12BOSS_Lb",
+    "str_guide_circle_5-12BOSS_LbT",
+    "str_guide_circle_5-12BOSS_Rb",
+    "str_guide_circle_5-12BOSS_RbT"
+  },
+  [113] = {
+    113,
+    360,
+    2,
+    {2060611},
+    common[15],
+    false,
+    "str_guide_circle_6-6BOSS2_Lt",
+    "str_guide_circle_6-6BOSS2_LtT",
+    "str_guide_circle_6-6BOSS2_Rt",
+    "str_guide_circle_6-6BOSS2_RtT"
+  },
+  [114] = {
+    114,
+    360,
+    2,
+    {2061211},
+    {-150, 90},
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_6-12BOSS_Lb",
+    "str_guide_circle_6-12BOSS_LbT",
+    "str_guide_circle_6-12BOSS_Rb",
+    "str_guide_circle_6-12BOSS_RbT"
+  },
+  [115] = {
+    115,
+    360,
+    2,
+    {2070611},
+    common[15],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_7-6BOSS2_Lt",
+    "str_guide_circle_7-6BOSS2_LtT",
+    "str_guide_circle_7-6BOSS2_Rt",
+    "str_guide_circle_7-6BOSS2_RtT"
+  },
+  [116] = {
+    116,
+    360,
+    2,
+    {2071211},
+    common[13],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_7-12BOSS_Lb",
+    "str_guide_circle_7-12BOSS_LbT",
+    nil,
+    nil,
+    "str_guide_circle_7-12BOSS_Rb",
+    "str_guide_circle_7-12BOSS_RbT"
+  },
+  [117] = {
+    117,
+    360,
+    1,
+    common[17],
+    {100, 70},
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_jianta-5-BOSS_Lb",
+    "str_guide_circle_jianta-5-BOSS_LbT",
+    "str_guide_circle_jianta-5-BOSS_Rb",
+    "str_guide_circle_jianta-5-BOSS_RbT"
+  },
+  [118] = {
+    118,
+    360,
+    1,
+    {5, 9},
+    common[1],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_jianta-10-BOSS_Lt",
+    "str_guide_circle_jianta-10-BOSS_LtT",
+    "str_guide_circle_jianta-10-BOSS_Lb",
+    "str_guide_circle_jianta-10-BOSS_LbT"
+  },
+  [119] = {
+    119,
+    360,
+    1,
+    common[17],
+    common[11],
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_jianta-15-BOSS_Lb",
+    "str_guide_circle_jianta-15-BOSS_LbT",
+    "str_guide_circle_jianta-15-BOSS_Rb",
+    "str_guide_circle_jianta-15-BOSS_RbT"
+  },
+  [120] = {
+    120,
+    360,
+    1,
+    common[17],
+    {100, 80},
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_jianta-20-BOSS_Lb",
+    "str_guide_circle_jianta-20-BOSS_LbT",
+    "str_guide_circle_jianta-20-BOSS_Rb",
+    "str_guide_circle_jianta-20-BOSS_RbT"
+  },
+  [121] = {
+    121,
+    440,
+    2,
+    {2092711},
+    common[7],
+    false,
+    "str_guide_circle_9-7BOSS_Lt",
+    "str_guide_circle_9-7BOSS_LtT"
+  },
+  [122] = {
+    122,
+    500,
+    2,
+    {2100711},
+    common[13],
+    false,
+    "str_guide_circle_10-7BOSS_Lt",
+    "str_guide_circle_10-7BOSS_LtT",
+    "str_guide_circle_10-7BOSS_Rt",
+    "str_guide_circle_10-7BOSS_RtT"
+  },
+  [123] = {
+    123,
+    440,
+    2,
+    {2091411},
+    {20, 70},
+    false,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_9-14BOSS_Lb",
+    "str_guide_circle_9-14BOSS_LbT"
+  },
+  [124] = {
+    124,
+    440,
+    2,
+    {2101411},
+    {30, 70},
+    false,
+    "str_guide_circle_10-14BOSS_Lt",
+    "str_guide_circle_10-14BOSS_LtT",
+    "str_guide_circle_10-14BOSS_Rt",
+    "str_guide_circle_10-14BOSS_RtT",
+    "str_guide_circle_10-14BOSS_Lb",
+    "str_guide_circle_10-14BOSS_LbT",
+    "str_guide_circle_10-14BOSS_Rb",
+    "str_guide_circle_10-14BOSS_RbT"
+  },
+  [125] = {
+    125,
+    440,
+    3,
+    {3511},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_9-14Trap_Lb",
+    "str_guide_circle_9-14Trap_LbT"
+  },
+  [201] = {
+    201,
+    360,
+    2,
+    {50110114},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N1_1-1_Lb",
+    "str_guide_circle_N1_1-1_LbT",
+    "str_guide_circle_N1_1-1_Rb",
+    "str_guide_circle_N1_1-1_RbT"
+  },
+  [202] = {
+    202,
+    360,
+    2,
+    {50110811},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N1_1-8_Lb",
+    "str_guide_circle_N1_1-8_LbT",
+    "str_guide_circle_N1_1-8_Rb",
+    "str_guide_circle_N1_1-8_RbT"
+  },
+  [203] = {
+    203,
+    360,
+    2,
+    {50121111},
+    common[3],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N1_2-1_Lb",
+    "str_guide_circle_N1_2-1_LbT",
+    "str_guide_circle_N1_2-1_Rb",
+    "str_guide_circle_N1_2-1_RbT"
+  },
+  [204] = {
+    204,
+    360,
+    3,
+    common[8],
+    common[13],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[47],
+    "str_guide_circle_N1_2-2_LbT",
+    "str_guide_circle_N1_2-2_Rb",
+    "str_guide_circle_N1_2-2_RbT"
+  },
+  [205] = {
+    205,
+    360,
+    3,
+    {2080},
+    common[3],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[47],
+    "str_guide_circle_N1_2-3_LbT",
+    "str_guide_circle_N1_2-3_Rb",
+    "str_guide_circle_N1_2-3_RbT"
+  },
+  [206] = {
+    206,
+    292,
+    2,
+    {50310111},
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N3_1-1_Lb",
+    "str_guide_circle_N3_1-1_LbT",
+    "str_guide_circle_N3_1-1_Rb",
+    "str_guide_circle_N3_1-1_RbT"
+  },
+  [207] = {
+    207,
+    292,
+    2,
+    {50310311},
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N3_1-3_Lb",
+    "str_guide_circle_N3_1-3_LbT",
+    "str_guide_circle_N3_1-3_Rb",
+    "str_guide_circle_N3_1-3_RbT"
+  },
+  [208] = {
+    208,
+    292,
+    2,
+    {50310511},
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N3_1-5_Lb",
+    "str_guide_circle_N3_1-5_LbT",
+    "str_guide_circle_N3_1-5_Rb",
+    "str_guide_circle_N3_1-5_RbT"
+  },
+  [209] = {
+    209,
+    292,
+    2,
+    {50310711},
+    common[7],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N3_1-7_Rt",
+    "str_guide_circle_N3_1-7_RtT",
+    nil,
+    nil,
+    "str_guide_circle_N3_1-7_Lt",
+    "str_guide_circle_N3_1-7_LtT"
+  },
+  [210] = {
+    210,
+    292,
+    2,
+    {50310911},
+    common[7],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N3_1-9_Rt",
+    "str_guide_circle_N3_1-9_RtT",
+    nil,
+    nil,
+    "str_guide_circle_N3_1-9_Lt",
+    "str_guide_circle_N3_1-9_LtT"
+  },
+  [211] = {
+    211,
+    360,
+    2,
+    {50312011},
+    {30, 60},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N3_1-20_Lb",
+    "str_guide_circle_N3_1-20_LbT",
+    "str_guide_circle_N3_1-20_Rb",
+    "str_guide_circle_N3_1-20_RbT"
+  },
+  [212] = {
+    212,
+    360,
+    2,
+    {50510711},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N5_1-10_Lb",
+    "str_guide_circle_N5_1-10_LbT",
+    "str_guide_circle_N5_1-10_Rb",
+    "str_guide_circle_N5_1-10_RbT"
+  },
+  [213] = {
+    213,
+    292,
+    2,
+    {50510313},
+    common[15],
+    nil,
+    "str_guide_circle_N5_1-3_Lt",
+    "str_guide_circle_N5_1-3_LtT",
+    "str_guide_circle_N5_1-3_Rt",
+    "str_guide_circle_N5_1-3_RtT",
+    "str_guide_circle_N5_1-3_Rb",
+    "str_guide_circle_N5_1-3_RbT"
+  },
+  [214] = {
+    214,
+    290,
+    2,
+    {50610311},
+    common[15],
+    nil,
+    "str_guide_circle_N6_1-1_Rb",
+    "str_guide_circle_N6_1-1_RbT",
+    nil,
+    nil,
+    "str_guide_circle_N6_1-1_Lt",
+    "str_guide_circle_N6_1-1_LtT",
+    "str_guide_circle_N6_1-1_Rt",
+    "str_guide_circle_N6_1-1_RtT"
+  },
+  [215] = {
+    215,
+    440,
+    2,
+    {50611011},
+    common[9],
+    nil,
+    "str_guide_circle_N6_1-10_Lb",
+    "str_guide_circle_N6_1-10_LbT",
+    "str_guide_circle_N6_1-10_Rb",
+    "str_guide_circle_N6_1-10_RbT",
+    "str_guide_circle_N6_1-10_Lt",
+    "str_guide_circle_N6_1-10_LtT",
+    "str_guide_circle_N6_1-10_Rt",
+    "str_guide_circle_N6_1-10_RtT"
+  },
+  [216] = {
+    216,
+    440,
+    2,
+    {50711011},
+    common[15],
+    nil,
+    "str_guide_circle_N7_1-10_Lt",
+    "str_guide_circle_N7_1-10_LtT",
+    "str_guide_circle_N7_1-10_Rt",
+    "str_guide_circle_N7_1-10_RtT",
+    "str_guide_circle_N7_1-10_Lb",
+    "str_guide_circle_N7_1-10_LbT"
+  },
+  [217] = {
+    217,
+    440,
+    2,
+    {4040212},
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_ex4-2_Rb",
+    "str_guide_circle_ex4-2_RbT",
+    "str_guide_circle_ex4-2_Lb",
+    "str_guide_circle_ex4-2_LbT",
+    "str_guide_circle_ex4-2_Rt",
+    "str_guide_circle_ex4-2_RtT"
+  },
+  [218] = {
+    218,
+    440,
+    2,
+    {4040611},
+    common[14],
+    nil,
+    "str_guide_circle_ex4-6_Lb",
+    "str_guide_circle_ex4-6_LbT",
+    nil,
+    nil,
+    "str_guide_circle_ex4-6_Rt",
+    "str_guide_circle_ex4-6_RtT",
+    "str_guide_circle_ex4-6_Rb",
+    "str_guide_circle_ex4-6_RbT"
+  },
+  [219] = {
+    219,
+    440,
+    2,
+    {50710313},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N7_1-4_Lb",
+    "str_guide_circle_N7_1-4_LbT"
+  },
+  [220] = {
+    220,
+    440,
+    2,
+    {50910311},
+    common[14],
+    nil,
+    "str_guide_circle_N9_1-3_Lb",
+    "str_guide_circle_N9_1-3_LbT",
+    "str_guide_circle_N9_1-3_Rb",
+    "str_guide_circle_N9_1-3_RbT",
+    "str_guide_circle_N9_1-3_Lt",
+    "str_guide_circle_N9_1-3_LtT"
+  },
+  [221] = {
+    221,
+    440,
+    2,
+    {50911211},
+    common[14],
+    nil,
+    "str_guide_circle_N9_1-10_Lb",
+    "str_guide_circle_N9_1-10_LbT",
+    "str_guide_circle_N9_1-10_Rb",
+    "str_guide_circle_N9_1-10_RbT",
+    "str_guide_circle_N9_1-10_Lt",
+    "str_guide_circle_N9_1-10_LtT"
+  },
+  [222] = {
+    222,
+    440,
+    3,
+    {2800533},
+    common[15],
+    nil,
+    "str_guide_circle_N11_1-3_Lt",
+    "str_guide_circle_N11_1-3_LtT",
+    "str_guide_circle_N11_1-3_Rt",
+    "str_guide_circle_N11_1-3_RtT",
+    "str_guide_circle_N11_1-3_Lb",
+    "str_guide_circle_N11_1-3_LbT"
+  },
+  [223] = {
+    223,
+    440,
+    2,
+    {51111211},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N11_1-12_Lb",
+    "str_guide_circle_N11_1-12_LbT",
+    "str_guide_circle_N11_1-12_Rb",
+    "str_guide_circle_N11_1-12_RbT"
+  },
+  [228] = {
+    228,
+    440,
+    2,
+    {51311111},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N13_1-1_Lb",
+    "str_guide_circle_N13_1-1_LbT",
+    "str_guide_circle_N13_1-1_Rb",
+    "str_guide_circle_N13_1-1_RbT"
+  },
+  [229] = {
+    229,
+    440,
+    2,
+    {51310113},
+    common[15],
+    nil,
+    "str_guide_circle_N13_1-2_Lb",
+    "str_guide_circle_N13_1-2_LbT",
+    "str_guide_circle_N13_1-2_Rb",
+    "str_guide_circle_N13_1-2_RbT"
+  },
+  [230] = {
+    230,
+    440,
+    2,
+    {51311211},
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N13_1-12_Rb",
+    "str_guide_circle_N13_1-12_RbT",
+    "str_guide_circle_N13_1-12_Lb",
+    "str_guide_circle_N13_1-12_LbT",
+    "str_guide_circle_N13_1-12_Lt",
+    "str_guide_circle_N13_1-12_LtT"
+  },
+  [231] = {
+    231,
+    600,
+    2,
+    {51411211},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N14_1-12_Lb",
+    "str_guide_circle_N14_1-12_LbT",
+    "str_guide_circle_N14_1-12_Rb",
+    "str_guide_circle_N14_1-12_RbT"
+  },
+  [232] = {
+    232,
+    440,
+    2,
+    {514214101},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N14_1-1_Lb",
+    "str_guide_circle_N14_1-1_LbT",
+    "str_guide_circle_N14_1-1_Rb",
+    "str_guide_circle_N14_1-1_RbT"
+  },
+  [233] = {
+    233,
+    440,
+    2,
+    {2110211},
+    common[15],
+    nil,
+    "str_guide_circle_10s-2_Lt",
+    "str_guide_circle_10s-2_LtT",
+    "str_guide_circle_10s-2_Rt",
+    "str_guide_circle_10s-2_RtT"
+  },
+  [234] = {
+    234,
+    440,
+    2,
+    {2110411},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_10s-4_Lt",
+    "str_guide_circle_10s-4_LtT",
+    "str_guide_circle_10s-4_Rt",
+    "str_guide_circle_10s-4_RtT"
+  },
+  [235] = {
+    235,
+    440,
+    2,
+    {2902202},
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_10s-9_Rt",
+    "str_guide_circle_10s-9_RtT",
+    "str_guide_circle_10s-9_Lt",
+    "str_guide_circle_10s-9_LtT"
+  },
+  [236] = {
+    236,
+    440,
+    2,
+    {10110911},
+    common[14],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_11-7BOSS_Lb",
+    "str_guide_circle_11-7BOSS_LbT",
+    "str_guide_circle_11-7BOSS_RbT",
+    "str_guide_circle_11-7BOSS_Rb"
+  },
+  [237] = {
+    237,
+    440,
+    2,
+    {10111411},
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N17_1-14_Lb",
+    "str_guide_circle_N17_1-14_LbT",
+    "str_guide_circle_N17_1-14_Lt",
+    "str_guide_circle_N17_1-14_LtT",
+    "str_guide_circle_N17_1-14_Rb",
+    "str_guide_circle_N17_1-14_RbT"
+  },
+  [238] = {
+    238,
+    600,
+    2,
+    {10121412},
+    common[14],
+    nil,
+    "str_guide_circle_N17_2-14_Lt",
+    "str_guide_circle_N17_2-14_LtT",
+    "str_guide_circle_N17_2-14_Rb",
+    "str_guide_circle_N17_2-14_RbT",
+    nil,
+    nil,
+    "str_guide_circle_N17_2-14_Lb",
+    "str_guide_circle_N17_2-14_LbT"
+  },
+  [239] = {
+    239,
+    600,
+    3,
+    {80},
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_12-6_Lt",
+    "str_guide_circle_12-6_LtT"
+  },
+  [240] = {
+    240,
+    440,
+    2,
+    {518101211},
+    common[15],
+    nil,
+    "str_guide_circle_N18_1-12_Lt",
+    "str_guide_circle_N18_1-12_LtT",
+    "str_guide_circle_N18_1-12_Rt",
+    "str_guide_circle_N18_1-12_RtT",
+    nil,
+    nil,
+    "str_guide_circle_N18_1-12_Rb",
+    "str_guide_circle_N18_1-12_RbT"
+  },
+  [241] = {
+    241,
+    360,
+    1,
+    {6, 5},
+    common[3],
+    nil,
+    "str_guide_circle_N18_1-1_Lt",
+    "str_guide_circle_N18_1-1_LtT",
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N18_1-1_Rb",
+    "str_guide_circle_N18_1-1_RbT"
+  },
+  [242] = {
+    242,
+    600,
+    2,
+    {520112101},
+    common[12],
+    nil,
+    "str_guide_circle_N20_1-12_Lt",
+    "str_guide_circle_N20_1-12_LtT",
+    nil,
+    nil,
+    "str_guide_circle_N20_1-12_Lb",
+    "str_guide_circle_N20_1-12_LbT",
+    "str_guide_circle_N20_1-12_Rb",
+    "str_guide_circle_N20_1-12_RbT"
+  },
+  [243] = {
+    243,
+    440,
+    2,
+    {522101011},
+    common[15],
+    nil,
+    "str_guide_circle_N22_1-10_Lt",
+    "str_guide_circle_N22_1-10_LtT",
+    nil,
+    nil,
+    "str_guide_circle_N22_1-10_Lb",
+    "str_guide_circle_N22_1-10_LbT",
+    "str_guide_circle_N22_1-10_Rb",
+    "str_guide_circle_N22_1-10_RbT"
+  },
+  [244] = {
+    244,
+    290,
+    1,
+    common[18],
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_sailing_2-1_Lt",
+    "str_guide_circle_sailing_2-1_LtT",
+    nil,
+    nil,
+    "str_guide_circle_sailing_2-1_Rb",
+    "str_guide_circle_sailing_2-1_RbT"
+  },
+  [245] = {
+    245,
+    290,
+    1,
+    common[18],
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_sailing_2-1_Rt",
+    "str_guide_circle_sailing_2-1_RtT",
+    nil,
+    nil,
+    "str_guide_circle_sailing_2-2_Rb",
+    "str_guide_circle_sailing_2-2_RbT"
+  },
+  [246] = {
+    246,
+    290,
+    1,
+    common[19],
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_sailing_2-3_Rb",
+    "str_guide_circle_sailing_2-3_RbT",
+    "str_guide_circle_sailing_2-3_Lt",
+    "str_guide_circle_sailing_2-3_LtT",
+    common[48],
+    common[49]
+  },
+  [247] = {
+    247,
+    290,
+    1,
+    {1, 4},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[48],
+    common[49]
+  },
+  [248] = {
+    248,
+    440,
+    3,
+    {4100011},
+    common[12],
+    nil,
+    "str_guide_circle_sailing_1-1_Lt",
+    "str_guide_circle_sailing_1-1_LtT",
+    "str_guide_circle_sailing_1-1_Rb",
+    "str_guide_circle_sailing_1-1_RbT",
+    "str_guide_circle_sailing_1-1_Rt",
+    "str_guide_circle_sailing_1-1_RtT"
+  },
+  [249] = {
+    249,
+    440,
+    3,
+    {4100016},
+    common[12]
+  },
+  [25001] = {
+    25001,
+    600,
+    2,
+    {410003101},
+    common[14],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N22_2-1_Lt",
+    "str_guide_circle_N22_2-1_LtT",
+    "str_guide_circle_N22_2-1_Rb",
+    "str_guide_circle_N22_2-1_RbT"
+  },
+  [25002] = {
+    25002,
+    600,
+    2,
+    {410004101},
+    common[14]
+  },
+  [25003] = {
+    25003,
+    600,
+    2,
+    {410005101},
+    common[14]
+  },
+  [25004] = {
+    25004,
+    600,
+    2,
+    {410006101},
+    common[14]
+  },
+  [7040] = {
+    7040,
+    500,
+    2,
+    {523101211},
+    common[12],
+    nil,
+    "str_guide_circle_N23_1-14_Lt",
+    "str_guide_circle_N23_1-14_LtT",
+    "str_guide_circle_N23_1-14_Rt",
+    "str_guide_circle_N23_1-14_RtT",
+    nil,
+    nil,
+    "str_guide_circle_N23_1-14_Rb",
+    "str_guide_circle_N23_1-14_RbT"
+  },
+  [7053] = {
+    7053,
+    500,
+    2,
+    {10131412},
+    common[12],
+    nil,
+    "str_guide_circle_13-14_Lt",
+    "str_guide_circle_13-14_LtT",
+    "str_guide_circle_13-14_Rt",
+    "str_guide_circle_13-14_RtT",
+    nil,
+    nil,
+    "str_guide_circle_13-14_Rb",
+    "str_guide_circle_13-14_RbT"
+  },
+  [7054] = {
+    7054,
+    500,
+    2,
+    {10130711},
+    common[14],
+    nil,
+    "str_guide_circle_13-7-1_Rt",
+    "str_guide_circle_13-7-1_RtT",
+    "str_guide_circle_13-7-1_Lt",
+    "str_guide_circle_13-7-1_LtT",
+    nil,
+    nil,
+    "str_guide_circle_13-7-1_Rb",
+    "str_guide_circle_13-7-1_RbT"
+  },
+  [7055] = {
+    7055,
+    440,
+    1,
+    common[4],
+    common[3],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_13-7-2_Lt",
+    "str_guide_circle_13-7-2_LtT"
+  },
+  [7056] = {
+    7056,
+    440,
+    2,
+    {10130713},
+    common[3],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_13-7-3_Lt",
+    "str_guide_circle_13-7-3_LtT"
+  },
+  [7060] = {
+    7060,
+    440,
+    2,
+    common[20],
+    common[15],
+    nil,
+    "str_guide_circle_14-9-1_Lt",
+    "str_guide_circle_14-9-1_LtT",
+    "str_guide_circle_14-9-1_Rt",
+    "str_guide_circle_14-9-1_RtT",
+    nil,
+    nil,
+    "str_guide_circle_14-9-1_Rb",
+    "str_guide_circle_14-9-1_RbT"
+  },
+  [7061] = {
+    7061,
+    440,
+    2,
+    common[20],
+    common[15],
+    nil,
+    "str_guide_circle_14-9-2_Lt",
+    "str_guide_circle_14-9-2_LtT",
+    "str_guide_circle_14-9-2_Rt",
+    "str_guide_circle_14-9-2_RtT",
+    nil,
+    nil,
+    "str_guide_circle_14-9-2_Rb",
+    "str_guide_circle_14-9-2_RbT"
+  },
+  [7062] = {
+    7062,
+    440,
+    2,
+    common[21],
+    common[15],
+    nil,
+    "str_guide_circle_14-14-1_Lt",
+    "str_guide_circle_14-14-1_LtT",
+    "str_guide_circle_14-14-1_Rt",
+    "str_guide_circle_14-14-1_RtT",
+    "str_guide_circle_14-14-1_Rb",
+    "str_guide_circle_14-14-1_RbT"
+  },
+  [7063] = {
+    7063,
+    440,
+    2,
+    {10141412},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_14-14-2_Lt",
+    "str_guide_circle_14-14-2_LtT"
+  },
+  [7064] = {
+    7064,
+    440,
+    2,
+    common[21],
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_14-14-3_Rt",
+    "str_guide_circle_14-14-3_RtT",
+    "str_guide_circle_14-14-3_Rb",
+    "str_guide_circle_14-14-3_RbT"
+  },
+  [7080] = {
+    7080,
+    800,
+    2,
+    common[22],
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_14-7_Lt",
+    "str_guide_circle_14-7_LtT"
+  },
+  [7081] = {
+    7081,
+    800,
+    2,
+    common[22],
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_14-7_Rt",
+    "str_guide_circle_14-7_RtT",
+    "str_guide_circle_14-7_Rb",
+    "str_guide_circle_14-7_RbT"
+  },
+  [22401] = {
+    22401,
+    440,
+    2,
+    {51210111},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22402] = {
+    22402,
+    440,
+    2,
+    {51210211},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22403] = {
+    22403,
+    440,
+    2,
+    {51210311},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22404] = {
+    22404,
+    440,
+    2,
+    {51210411},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22405] = {
+    22405,
+    440,
+    2,
+    {51210511},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22406] = {
+    22406,
+    440,
+    2,
+    {51210611},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22407] = {
+    22407,
+    440,
+    2,
+    {51210711},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22408] = {
+    22408,
+    440,
+    2,
+    {51210811},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22409] = {
+    22409,
+    440,
+    2,
+    {51210911},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22410] = {
+    22410,
+    440,
+    2,
+    {51211011},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22411] = {
+    22411,
+    440,
+    2,
+    {51211111},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22412] = {
+    22412,
+    440,
+    2,
+    {51211211},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[50],
+    common[51],
+    common[52],
+    common[53]
+  },
+  [22501] = {
+    22501,
+    440,
+    2,
+    {51211311},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22502] = {
+    22502,
+    440,
+    2,
+    {51211411},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22503] = {
+    22503,
+    440,
+    2,
+    {51211511},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22504] = {
+    22504,
+    440,
+    2,
+    {51211611},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22505] = {
+    22505,
+    440,
+    2,
+    {51211711},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22506] = {
+    22506,
+    440,
+    2,
+    {51211811},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22507] = {
+    22507,
+    440,
+    2,
+    {51211911},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22508] = {
+    22508,
+    440,
+    2,
+    {51212011},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22509] = {
+    22509,
+    440,
+    2,
+    {51212111},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22510] = {
+    22510,
+    440,
+    2,
+    {51212211},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22511] = {
+    22511,
+    440,
+    2,
+    {51212311},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22512] = {
+    22512,
+    440,
+    2,
+    {51212411},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[54],
+    common[55],
+    common[56],
+    common[57]
+  },
+  [22601] = {
+    22601,
+    440,
+    2,
+    {51212511},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22602] = {
+    22602,
+    440,
+    2,
+    {51212611},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22603] = {
+    22603,
+    440,
+    2,
+    {51212711},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22604] = {
+    22604,
+    440,
+    2,
+    {51212811},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22605] = {
+    22605,
+    440,
+    2,
+    {51212911},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22606] = {
+    22606,
+    440,
+    2,
+    {51213011},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22607] = {
+    22607,
+    440,
+    2,
+    {51213111},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22608] = {
+    22608,
+    440,
+    2,
+    {51213211},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22609] = {
+    22609,
+    440,
+    2,
+    {51213311},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22610] = {
+    22610,
+    440,
+    2,
+    {51213411},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22611] = {
+    22611,
+    440,
+    2,
+    {51213511},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22612] = {
+    22612,
+    440,
+    2,
+    {51213611},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[58],
+    common[59],
+    common[60],
+    common[61]
+  },
+  [22701] = {
+    22701,
+    440,
+    2,
+    {51213711},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22702] = {
+    22702,
+    440,
+    2,
+    {51213811},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22703] = {
+    22703,
+    440,
+    2,
+    {51213911},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22704] = {
+    22704,
+    440,
+    2,
+    {51214011},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22705] = {
+    22705,
+    440,
+    2,
+    {51214111},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22706] = {
+    22706,
+    440,
+    2,
+    {51214211},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22707] = {
+    22707,
+    440,
+    2,
+    {51214311},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22708] = {
+    22708,
+    440,
+    2,
+    {51214411},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22709] = {
+    22709,
+    440,
+    2,
+    {51214511},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22710] = {
+    22710,
+    440,
+    2,
+    {51214611},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22711] = {
+    22711,
+    440,
+    2,
+    {51214711},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [22712] = {
+    22712,
+    440,
+    2,
+    {51214811},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[62],
+    common[63],
+    common[64],
+    common[65]
+  },
+  [1001] = {
+    1001,
+    200,
+    4,
+    {8, 0},
+    common[12],
+    false
+  },
+  [1002] = {
+    1002,
+    200,
+    4,
+    {6, 0},
+    common[12],
+    false
+  },
+  [1003] = {
+    1003,
+    200,
+    4,
+    {6, 1},
+    common[12],
+    false
+  },
+  [1004] = {
+    1004,
+    200,
+    4,
+    {8, 1},
+    common[12],
+    false
+  },
+  [1005] = {
+    1005,
+    250,
+    4,
+    common[23],
+    common[12],
+    false
+  },
+  [1006] = {
+    1006,
+    200,
+    4,
+    {14, 0},
+    common[12],
+    false
+  },
+  [1007] = {
+    1007,
+    200,
+    4,
+    {15, 0},
+    common[12],
+    false
+  },
+  [1101] = {
+    1101,
+    360,
+    5,
+    {1500331},
+    {0, 300},
+    false
+  },
+  [1102] = {
+    1102,
+    360,
+    6,
+    {14},
+    {0, 200},
+    false
+  },
+  [1103] = {
+    1103,
+    360,
+    7,
+    {15},
+    {100, 200},
+    false
+  },
+  [1104] = {
+    1104,
+    200,
+    4,
+    {16, 0},
+    common[12],
+    false
+  },
+  [1105] = {
+    1105,
+    200,
+    8,
+    {16},
+    {0, -100},
+    false
+  },
+  [1106] = {
+    1106,
+    200,
+    1,
+    {9, 5},
+    common[2],
+    false,
+    "str_guide_circle_N24_petTry_Lt",
+    common[66]
+  },
+  [1107] = {
+    1107,
+    200,
+    1,
+    {4, 2},
+    common[2],
+    false,
+    nil,
+    nil,
+    "str_guide_circle_N24_petTry_Lt_1",
+    common[66]
+  },
+  [7100] = {
+    7100,
+    440,
+    2,
+    {525103102},
+    common[12],
+    nil,
+    "str_guide_circle_N25_1-4_Lt",
+    "str_guide_circle_N25_1-4_LtT",
+    "str_guide_circle_N25_1-4_Rt",
+    "str_guide_circle_N25_1-4_RtT",
+    "str_guide_circle_N25_1-4_Lb",
+    "str_guide_circle_N25_1-4_LbT"
+  },
+  [7101] = {
+    7101,
+    540,
+    2,
+    {525113101},
+    {0, 75},
+    nil,
+    "str_guide_circle_N25_1-16_Lt",
+    "str_guide_circle_N25_1-16_LtT",
+    "str_guide_circle_N25_1-16_Rt",
+    "str_guide_circle_N25_1-16_RtT",
+    "str_guide_circle_N25_1-16_Lb",
+    "str_guide_circle_N25_1-16_LbT"
+  },
+  [7201] = {
+    7201,
+    440,
+    3,
+    {2002100},
+    common[12],
+    nil,
+    "str_guide_circle_N25_2-4_Lt",
+    "str_guide_circle_N25_2-4_LtT",
+    "str_guide_circle_N25_2-4_Lb",
+    "str_guide_circle_N25_2-4_LbT",
+    "str_guide_circle_N25_2-4_Rt",
+    "str_guide_circle_N25_2-4_RtT"
+  },
+  [7202] = {
+    7202,
+    300,
+    2,
+    {526112101},
+    common[2],
+    nil,
+    "str_guide_circle_N26_1-12_Lt",
+    "str_guide_circle_N26_1-12_LtT",
+    "str_guide_circle_N26_1-12_Lb",
+    "str_guide_circle_N26_1-12_LbT",
+    "str_guide_circle_N26_1-12_Rt",
+    "str_guide_circle_N26_1-12_RtT"
+  },
+  [7401] = {
+    7401,
+    900,
+    2,
+    common[24],
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N27_1-12_Lt",
+    "str_guide_circle_N27_1-12_LtT"
+  },
+  [7402] = {
+    7402,
+    900,
+    2,
+    common[24],
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N27_1-12_Rt",
+    "str_guide_circle_N27_1-12_RtT",
+    "str_guide_circle_N27_1-12_Rb",
+    "str_guide_circle_N27_1-12_RbT"
+  },
+  [7501] = {
+    7501,
+    360,
+    2,
+    {527107102},
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N27_1-1_Lt",
+    "str_guide_circle_N27_1-1_LtT",
+    "str_guide_circle_N27_1-1_Rt",
+    "str_guide_circle_N27_1-1_RtT",
+    "str_guide_circle_N27_1-1_Lb",
+    "str_guide_circle_N27_1-1_LbT"
+  },
+  [7602] = {
+    7602,
+    400,
+    1,
+    {3, 6},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N27_2-4-1_Rb",
+    "str_guide_circle_N27_2-4-1_RbT"
+  },
+  [7601] = {
+    7601,
+    600,
+    3,
+    {140127101},
+    {0, 35},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N27_2-4-2_Rb",
+    "str_guide_circle_N27_2-4-2_RbT"
+  },
+  [7701] = {
+    7701,
+    600,
+    2,
+    {527201208},
+    common[2]
+  },
+  [7801] = {
+    7801,
+    600,
+    2,
+    {527200218},
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N27_2_1_Rt",
+    "str_guide_circle_N27_2_1_RtT",
+    nil,
+    nil,
+    "str_guide_circle_N27_2_1_Rb",
+    "str_guide_circle_N27_2_1_RbT"
+  },
+  [7802] = {
+    7802,
+    600,
+    2,
+    {527200219},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N27_2_2_Lb",
+    "str_guide_circle_N27_2_2_LbT",
+    "str_guide_circle_N27_2_2_Rb",
+    "str_guide_circle_N27_2_2_RbT"
+  },
+  [8001] = {
+    8001,
+    200,
+    1,
+    common[23],
+    common[12],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N28_3-4_Rt",
+    "str_guide_circle_N28_3_4_RtT",
+    nil,
+    nil,
+    "str_guide_circle_N28_3-4_Rb",
+    "str_guide_circle_N28_3-4_RbT"
+  },
+  [8002] = {
+    8002,
+    700,
+    2,
+    {528101114},
+    common[15],
+    nil,
+    "str_guide_circle_N28_1_12_Lt",
+    "str_guide_circle_N28_1_12_LtT",
+    "str_guide_circle_N28_1_12_Lb",
+    "str_guide_circle_N28_1_12_LbT",
+    nil,
+    nil,
+    "str_guide_circle_N28_1_12_Rb",
+    "str_guide_circle_N28_1_12_RbT"
+  },
+  [8052] = {
+    8052,
+    700,
+    3,
+    {2801004},
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N29_zhanqi_1_Lb",
+    "str_guide_circle_N29_zhanqi_1_LbT",
+    "str_guide_circle_N29_zhanqi_1_Lt",
+    "str_guide_circle_N29_zhanqi_1_LtT"
+  },
+  [8089] = {
+    8089,
+    440,
+    2,
+    {529100811},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N29_1_8_Lb",
+    "str_guide_circle_N29_1_8_LbT",
+    "str_guide_circle_N29_1_8_Rb",
+    "str_guide_circle_N29_1_8_RbT"
+  },
+  [8090] = {
+    8090,
+    440,
+    2,
+    common[25],
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N29_1_14_Lb",
+    "str_guide_circle_N29_1_14_LbT",
+    "str_guide_circle_N29_1_14_Rb",
+    "str_guide_circle_N29_1_14_RbT"
+  },
+  [8091] = {
+    8091,
+    440,
+    2,
+    common[25],
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N29_1_14_Lb_2",
+    "str_guide_circle_N29_1_14_LbT_2"
+  },
+  [8092] = {
+    8092,
+    440,
+    2,
+    common[26],
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N29_ex3_1_Lb",
+    "str_guide_circle_N29_ex3_1_LbT",
+    "str_guide_circle_N29_ex3_1_Rb",
+    "str_guide_circle_N29_ex3_1_RbT"
+  },
+  [8093] = {
+    8093,
+    440,
+    2,
+    common[26],
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N29_ex3_1_Lb_2",
+    "str_guide_circle_N29_ex3_1_LbT_2",
+    "str_guide_circle_N29_ex3_1_Rb_2",
+    "str_guide_circle_N29_ex3_1_RbT_2"
+  },
+  [8094] = {
+    8094,
+    440,
+    2,
+    {10150214},
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N30_15-2_Rt",
+    "str_guide_circle_N30_15-2_RtT",
+    "str_guide_circle_N30_15-2_Lb",
+    "str_guide_circle_N30_15-2_LbT",
+    "str_guide_circle_N30_15-2_Rb",
+    "str_guide_circle_N30_15-2_RbT"
+  },
+  [8095] = {
+    8095,
+    440,
+    2,
+    {10150911},
+    common[15],
+    nil,
+    "str_guide_circle_N30_15-9_Lt",
+    "str_guide_circle_N30_15-9_LtT",
+    nil,
+    nil,
+    "str_guide_circle_N30_15-9_Lb",
+    "str_guide_circle_N30_15-9_LbT",
+    "str_guide_circle_N30_15-9_Rb",
+    "str_guide_circle_N30_15-9_RbT"
+  },
+  [8097] = {
+    8097,
+    300,
+    1,
+    common[10],
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N30_15-9-2_Rb",
+    "str_guide_circle_N30_15-9-2_RbT",
+    "str_guide_circle_N30_15-9-2_Lt",
+    "str_guide_circle_N30_15-9-2_LtT"
+  },
+  [8098] = {
+    8098,
+    400,
+    2,
+    {10161411},
+    common[2],
+    nil,
+    "str_guide_circle_N30_16-14_Lt",
+    "str_guide_circle_N30_16-14_LtT",
+    "str_guide_circle_N30_16-14_Rt",
+    "str_guide_circle_N30_16-14_RtT",
+    "str_guide_circle_N30_16-14_Lb",
+    "str_guide_circle_N30_16-14_LbT"
+  },
+  [8099] = {
+    8099,
+    440,
+    2,
+    {45010101},
+    common[15],
+    nil,
+    nil,
+    nil,
+    common[67],
+    common[68],
+    common[69],
+    common[70],
+    common[71],
+    common[72]
+  },
+  [8100] = {
+    8100,
+    440,
+    2,
+    {48010101},
+    common[15],
+    nil,
+    nil,
+    nil,
+    common[67],
+    common[68],
+    common[69],
+    common[70],
+    common[71],
+    common[72]
+  },
+  [8101] = {
+    8101,
+    440,
+    2,
+    {46010101},
+    common[15],
+    nil,
+    nil,
+    nil,
+    common[73],
+    common[74],
+    common[75],
+    common[76],
+    common[77],
+    common[78]
+  },
+  [8102] = {
+    8102,
+    440,
+    2,
+    {47010101},
+    common[15],
+    nil,
+    nil,
+    nil,
+    common[73],
+    common[74],
+    common[75],
+    common[76],
+    common[77],
+    common[78]
+  },
+  [8103] = {
+    8103,
+    440,
+    2,
+    {10151411},
+    common[5],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_15-14_Rb",
+    "str_guide_circle_15-14_RbT",
+    "str_guide_circle_15-14_Lt",
+    "str_guide_circle_15-14_LtT",
+    "str_guide_circle_15-14_Rt",
+    "str_guide_circle_15-14_RtT"
+  },
+  [8104] = {
+    8104,
+    440,
+    3,
+    {621},
+    {0, 15},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_621_Rt",
+    "str_guide_circle_621_RtT"
+  },
+  [8109] = {
+    8109,
+    500,
+    1,
+    common[19],
+    common[12],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N30_16-9_Lb",
+    "str_guide_circle_N30_16-9_LbT",
+    "str_guide_circle_N30_16-9_Lt",
+    "str_guide_circle_N30_16-9_LtT",
+    "str_guide_circle_N30_16-9_Rt",
+    "str_guide_circle_N30_16-9_RtT"
+  },
+  [8110] = {
+    8110,
+    440,
+    2,
+    {10160311},
+    common[1],
+    nil,
+    "str_guide_circle_N30_16-3_Lt",
+    "str_guide_circle_N30_16-3_LtT",
+    nil,
+    nil,
+    "str_guide_circle_N30_16-3_Lb",
+    "str_guide_circle_N30_16-3_LbT",
+    "str_guide_circle_N30_16-3_Rt",
+    "str_guide_circle_N30_16-3_RtT"
+  },
+  [8121] = {
+    8121,
+    440,
+    2,
+    common[27],
+    {30, 35},
+    nil,
+    "str_guide_circle_N31_1-14_Lt",
+    "str_guide_circle_N31_1-14_LtT",
+    "str_guide_circle_N31_1-14_Rt",
+    "str_guide_circle_N31_1-14_RtT",
+    "str_guide_circle_N31_1-14_Lb",
+    "str_guide_circle_N31_1-14_LbT"
+  },
+  [8122] = {
+    8122,
+    300,
+    1,
+    common[28],
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N31_star1_Rt",
+    "str_guide_circle_N31_star1_RtT"
+  },
+  [8123] = {
+    8123,
+    300,
+    1,
+    common[28],
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N31_star2_Rt",
+    "str_guide_circle_N31_star2_RtT"
+  },
+  [8124] = {
+    8124,
+    300,
+    1,
+    {3, 7},
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N31_star3_Rt",
+    "str_guide_circle_N31_star3_RtT"
+  },
+  [8127] = {
+    8127,
+    440,
+    2,
+    common[27],
+    common[1],
+    nil,
+    "str_guide_circle_N31_1-16_Lt",
+    "str_guide_circle_N31_1-16_LtT",
+    nil,
+    nil,
+    "str_guide_circle_N31_1-16_Lb",
+    "str_guide_circle_N31_1-16_LbT"
+  },
+  [8240] = {
+    8240,
+    400,
+    2,
+    {533113101},
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N33_15_Lb",
+    "str_guide_circle_N33_15_LbT",
+    "str_guide_circle_N33_15_Lt",
+    "str_guide_circle_N33_15_LtT",
+    "str_guide_circle_N33_15_Rt",
+    "str_guide_circle_N33_15_RtT"
+  },
+  [80010531] = {
+    80010531,
+    300,
+    2,
+    {80011012},
+    common[1],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80010521_Rb",
+    "str_guide_circle_80010521_RbT",
+    "str_guide_circle_80010521_Lb",
+    "str_guide_circle_80010521_LbT"
+  },
+  [80010621] = {
+    80010621,
+    660,
+    2,
+    {80011211},
+    common[15],
+    nil,
+    "str_guide_circle_80010621_Lt",
+    "str_guide_circle_80010621_LtT",
+    nil,
+    nil,
+    "str_guide_circle_80010621_Lb",
+    "str_guide_circle_80010621_LbT"
+  },
+  [80010721] = {
+    80010721,
+    660,
+    2,
+    {80011416},
+    common[15],
+    nil,
+    "str_guide_circle_80010721_Lt",
+    "str_guide_circle_80010721_LtT",
+    "str_guide_circle_80010721_Rt",
+    "str_guide_circle_80010721_RtT"
+  },
+  [80010821] = {
+    80010821,
+    440,
+    2,
+    {80011611},
+    common[1],
+    nil,
+    "str_guide_circle_80010821_Rt",
+    "str_guide_circle_80010821_RtT",
+    nil,
+    nil,
+    "str_guide_circle_80010821_Lt",
+    "str_guide_circle_80010821_LtT",
+    "str_guide_circle_80010821_Rb",
+    "str_guide_circle_80010821_RbT"
+  },
+  [80011021] = {
+    80011021,
+    300,
+    1,
+    common[29],
+    common[7],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80011021_Rt",
+    "str_guide_circle_80011021_RtT",
+    nil,
+    nil,
+    "str_guide_circle_80011021_Rb",
+    "str_guide_circle_80011021_RbT"
+  },
+  [80011121] = {
+    80011121,
+    300,
+    1,
+    {2, 2},
+    common[12],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80011121_Rt",
+    "str_guide_circle_80011121_RtT",
+    nil,
+    nil,
+    "str_guide_circle_80011121_Rb",
+    "str_guide_circle_80011121_RbT"
+  },
+  [80011421] = {
+    80011421,
+    440,
+    2,
+    {80012814},
+    common[3],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80011421_Rt",
+    "str_guide_circle_80011421_RtT",
+    "str_guide_circle_80011421_Rb",
+    "str_guide_circle_80011421_RbT"
+  },
+  [80011521] = {
+    80011521,
+    440,
+    2,
+    {80013011},
+    common[1],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80011521_Rt",
+    "str_guide_circle_80011521_RtT"
+  },
+  [80010921] = {
+    80010921,
+    440,
+    2,
+    {80011811},
+    common[1],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80010921_Lb",
+    "str_guide_circle_80010921_LbT",
+    "str_guide_circle_80010921_Rb",
+    "str_guide_circle_80010921_RbT"
+  },
+  [80011321] = {
+    80011321,
+    440,
+    2,
+    {80012611},
+    common[1],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80011321_Lb",
+    "str_guide_circle_80011321_LbT",
+    "str_guide_circle_80011321_Rb",
+    "str_guide_circle_80011321_RbT"
+  },
+  [80011621] = {
+    80011621,
+    300,
+    1,
+    common[29],
+    common[7],
+    nil,
+    nil,
+    nil,
+    common[79],
+    common[80]
+  },
+  [80011611] = {
+    80011611,
+    300,
+    1,
+    common[29],
+    common[7],
+    nil,
+    nil,
+    nil,
+    common[79],
+    common[80]
+  },
+  [80010206] = {
+    80010206,
+    220,
+    10,
+    {8001002},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    false,
+    "str_guide_circle_80010206",
+    common[81],
+    common[30],
+    true
+  },
+  [80010207] = {
+    80010207,
+    220,
+    10,
+    {8001002, 8001002},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    true,
+    "str_guide_circle_80010207",
+    common[81],
+    common[31],
+    false
+  },
+  [80010304] = {
+    80010304,
+    220,
+    10,
+    {8001004, 8001004},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    true,
+    "str_guide_circle_80010304",
+    common[81],
+    common[31],
+    false
+  },
+  [80010402] = {
+    80010402,
+    220,
+    10,
+    {8001102, 8001102},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    true,
+    "str_guide_circle_80010402",
+    common[81],
+    common[31],
+    false
+  },
+  [80010501] = {
+    80010501,
+    220,
+    10,
+    common[32],
+    common[33],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    false,
+    "str_guide_circle_80010501",
+    common[81],
+    common[30],
+    true
+  },
+  [80010502] = {
+    80010502,
+    220,
+    10,
+    common[32],
+    common[33],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    false,
+    "str_guide_circle_80010502",
+    common[81],
+    common[30],
+    true
+  },
+  [80011101] = {
+    80011101,
+    220,
+    10,
+    {8001301, 8001301},
+    {5, 50},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    true,
+    "str_guide_circle_80011101",
+    common[81],
+    common[30],
+    false
+  },
+  [52906001] = {
+    52906001,
+    440,
+    2,
+    {80013511},
+    common[15],
+    nil,
+    common[82],
+    common[83],
+    common[84],
+    common[85],
+    nil,
+    nil,
+    common[86],
+    common[87]
+  },
+  [52916001] = {
+    52916001,
+    440,
+    2,
+    {80013611},
+    common[15],
+    nil,
+    common[82],
+    common[83],
+    common[84],
+    common[85],
+    nil,
+    nil,
+    common[86],
+    common[87]
+  },
+  [8403] = {
+    8403,
+    300,
+    2,
+    {10170901},
+    common[3],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_10170901_Rt",
+    "str_guide_circle_10170901_RtT",
+    "str_guide_circle_10170901_Lb",
+    "str_guide_circle_10170901_LbT",
+    "str_guide_circle_10170901_Rb",
+    "str_guide_circle_10170901_RbT"
+  },
+  [8430] = {
+    8430,
+    600,
+    2,
+    {10181401},
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_chapter18_14_Rt",
+    "str_guide_circle_chapter18_14_RtT",
+    nil,
+    nil,
+    "str_guide_circle_chapter18_14_Rb",
+    "str_guide_circle_chapter18_14_RbT"
+  },
+  [8501] = {
+    8501,
+    600,
+    2,
+    {10171401},
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2905701_Rt",
+    "str_guide_circle_2905701_RtT",
+    "str_guide_circle_2905701_Lb",
+    "str_guide_circle_2905701_LbT",
+    "str_guide_circle_2905701_Rb",
+    "str_guide_circle_2905701_RbT"
+  },
+  [8502] = {
+    8502,
+    300,
+    1,
+    {6, 7},
+    common[12],
+    nil,
+    "str_guide_circle_29057011_Rt",
+    "str_guide_circle_29057011_RtT",
+    "str_guide_circle_29057011_Lb",
+    common[88],
+    nil,
+    nil,
+    "str_guide_circle_29057011_Rb",
+    "str_guide_circle_29057011_RbT"
+  },
+  [8503] = {
+    8503,
+    440,
+    2,
+    {10180302},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2003101_Rt",
+    "str_guide_circle_2003101_RtT",
+    "str_guide_circle_2003101_Lb",
+    "str_guide_circle_2003101_LbT"
+  },
+  [8440] = {
+    8440,
+    300,
+    2,
+    {10180401},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N34_18_1_Rt",
+    "str_guide_circle_N34_18_1_RtT",
+    "str_guide_circle_N34_18_1_Lb",
+    "str_guide_circle_N34_18_1_LbT"
+  },
+  [8441] = {
+    8441,
+    300,
+    2,
+    {10180504},
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N34_18_2_Rt",
+    "str_guide_circle_N34_18_2_RtT",
+    nil,
+    nil,
+    "str_guide_circle_N34_18_2_Lb",
+    "str_guide_circle_N34_18_2_LbT"
+  },
+  [8442] = {
+    8442,
+    600,
+    2,
+    {10180801},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2002901_Rt",
+    "str_guide_circle_2002901_RtT",
+    "str_guide_circle_2002901_Lb",
+    "str_guide_circle_2002901_LbT"
+  },
+  [8443] = {
+    8443,
+    600,
+    2,
+    {10181001},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2003001_Rt",
+    "str_guide_circle_2003001_RtT",
+    "str_guide_circle_2003001_Lb",
+    "str_guide_circle_2003001_LbT"
+  },
+  [8444] = {
+    8444,
+    600,
+    2,
+    {10180601},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_2003401_Rt",
+    "str_guide_circle_2003401_RtT",
+    "str_guide_circle_2003401_Lb",
+    "str_guide_circle_2003401_LbT"
+  },
+  [80011701] = {
+    80011701,
+    300,
+    2,
+    {80021512},
+    common[15],
+    nil,
+    common[89],
+    common[90],
+    nil,
+    nil,
+    common[91],
+    common[92],
+    common[93],
+    common[94]
+  },
+  [80011702] = {
+    80011702,
+    300,
+    2,
+    {80021612},
+    common[15],
+    nil,
+    common[89],
+    common[90],
+    nil,
+    nil,
+    common[91],
+    common[92],
+    common[93],
+    common[94]
+  },
+  [80022901] = {
+    80022901,
+    300,
+    2,
+    {80022912},
+    common[15],
+    nil,
+    common[95],
+    common[96],
+    common[97],
+    common[98]
+  },
+  [80022902] = {
+    80022902,
+    300,
+    2,
+    {80022913},
+    common[15],
+    nil,
+    nil,
+    nil,
+    common[99],
+    common[100],
+    nil,
+    nil,
+    common[101],
+    common[102]
+  },
+  [80023001] = {
+    80023001,
+    300,
+    2,
+    {80023012},
+    common[15],
+    nil,
+    common[95],
+    common[96],
+    common[97],
+    common[98]
+  },
+  [80023002] = {
+    80023002,
+    300,
+    2,
+    {80023013},
+    common[15],
+    nil,
+    nil,
+    nil,
+    common[99],
+    common[100],
+    nil,
+    nil,
+    common[101],
+    common[102]
+  },
+  [80023501] = {
+    80023501,
+    300,
+    2,
+    {80023512},
+    common[15],
+    nil,
+    common[95],
+    common[96],
+    common[97],
+    common[98]
+  },
+  [80023502] = {
+    80023502,
+    300,
+    1,
+    common[34],
+    common[15],
+    nil,
+    common[103],
+    common[104],
+    common[101],
+    common[102]
+  },
+  [80023601] = {
+    80023601,
+    300,
+    2,
+    {80023612},
+    common[11],
+    nil,
+    common[95],
+    common[96],
+    common[97],
+    common[98]
+  },
+  [80023602] = {
+    80023602,
+    300,
+    1,
+    common[34],
+    common[11],
+    nil,
+    common[103],
+    common[104],
+    common[101],
+    common[102]
+  },
+  [80020201] = {
+    80020201,
+    350,
+    10,
+    {8002403},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    false,
+    "str_guide_circle_80020201",
+    common[105],
+    common[35],
+    true
+  },
+  [80020202] = {
+    80020202,
+    350,
+    10,
+    {8002403, 8002403},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    true,
+    "str_guide_circle_80020202",
+    common[105],
+    common[35],
+    false
+  },
+  [80020401] = {
+    80020401,
+    220,
+    2,
+    {80020713},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[106],
+    common[107]
+  },
+  [80020402] = {
+    80020402,
+    220,
+    2,
+    {80020813},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[106],
+    common[107]
+  },
+  [535100701] = {
+    535100701,
+    300,
+    2,
+    {535107101},
+    common[2],
+    nil,
+    "str_guide_circle_n35-7_Rb",
+    "str_guide_circle_n35-7_RbT",
+    nil,
+    nil,
+    "str_guide_circle_n35-7_Lb",
+    "str_guide_circle_n35-7_LbT",
+    "str_guide_circle_n35-7_Lt",
+    "str_guide_circle_n35-7_LtT"
+  },
+  [535100901] = {
+    535100901,
+    300,
+    2,
+    {535109101},
+    common[2],
+    nil,
+    "str_guide_circle_n35-9_Lt",
+    "str_guide_circle_n35-9_LtT",
+    nil,
+    nil,
+    "str_guide_circle_n35-9_Lb",
+    "str_guide_circle_n35-9_LbT",
+    "str_guide_circle_n35-9_Rb",
+    "str_guide_circle_n35-9_RbT"
+  },
+  [5352031] = {
+    5352031,
+    300,
+    3,
+    {5352031},
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_n35_trap5352031_Rt",
+    "str_guide_circle_n35_trap5352031_RtT",
+    nil,
+    nil,
+    "str_guide_circle_n35_trap5352031_Rb",
+    "str_guide_circle_n35_trap5352031_RbT"
+  },
+  [8450] = {
+    8450,
+    600,
+    2,
+    {536108101},
+    common[2],
+    nil,
+    "str_guide_circle_n36-9_Lt",
+    "str_guide_circle_n36-9_LtT",
+    nil,
+    nil,
+    "str_guide_circle_n36-9_Lb",
+    "str_guide_circle_n36-9_LbT",
+    "str_guide_circle_n36-9_Rb",
+    "str_guide_circle_n36-9_RbT"
+  },
+  [80032901] = {
+    80032901,
+    300,
+    2,
+    {80032911},
+    common[2],
+    nil,
+    common[108],
+    common[109],
+    nil,
+    nil,
+    common[110],
+    common[111],
+    common[112],
+    common[113]
+  },
+  [80033001] = {
+    80033001,
+    300,
+    2,
+    {80033011},
+    common[2],
+    nil,
+    common[108],
+    common[109],
+    nil,
+    nil,
+    common[110],
+    common[111],
+    common[112],
+    common[113]
+  },
+  [80033501] = {
+    80033501,
+    300,
+    2,
+    {80033511},
+    common[2],
+    nil,
+    common[108],
+    common[109],
+    nil,
+    nil,
+    common[110],
+    common[111],
+    common[112],
+    common[113]
+  },
+  [80033601] = {
+    80033601,
+    300,
+    2,
+    {80033611},
+    common[2],
+    nil,
+    common[108],
+    common[109],
+    nil,
+    nil,
+    common[110],
+    common[111],
+    common[112],
+    common[113]
+  },
+  [80030101] = {
+    80030101,
+    350,
+    10,
+    {8003301},
+    {20, 50},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    false,
+    "str_guide_circle_80030101",
+    common[114],
+    {-20, -310},
+    true
+  },
+  [80030201] = {
+    80030201,
+    300,
+    10,
+    {8003302},
+    {5, 20},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    false,
+    "str_season_debris_guide_80040101",
+    common[114],
+    {-20, -260},
+    true
+  },
+  [537100101] = {
+    537100101,
+    300,
+    1,
+    {5, 3},
+    common[12],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_n37_trap2803501_Rt",
+    "str_guide_circle_n37_trap2803501_RtT",
+    nil,
+    nil,
+    "str_guide_circle_n37_trap2803501_Rb",
+    "str_guide_circle_n37_trap2803501_RbT"
+  },
+  [537100301] = {
+    537100301,
+    300,
+    2,
+    {537103104},
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_N37ranger_Rt",
+    "str_guide_circle_N37ranger_RtT",
+    "str_guide_circle_N37ranger_Lb",
+    "str_guide_circle_N37ranger_LbT",
+    "str_guide_circle_N37ranger_Lt",
+    "str_guide_circle_N37ranger_LtT"
+  },
+  [537100401] = {
+    537100401,
+    300,
+    2,
+    {537104106},
+    common[2],
+    nil,
+    "str_guide_circle_N37cike_Lt",
+    "str_guide_circle_N37cike_LtT",
+    "str_guide_circle_N37cike_Lb",
+    "str_guide_circle_N37cike_LbT"
+  },
+  [537100501] = {
+    537100501,
+    300,
+    2,
+    {537105103},
+    common[2],
+    nil,
+    "str_guide_circle_N37cap_Lt",
+    "str_guide_circle_N37cap_LtT",
+    "str_guide_circle_N37cap_Rt",
+    "str_guide_circle_N37cap_RtT",
+    "str_guide_circle_N37cap_Lb",
+    "str_guide_circle_N37cap_LbT"
+  },
+  [537100901] = {
+    537100901,
+    300,
+    2,
+    {537109102},
+    common[2],
+    nil,
+    "str_guide_circle_N37light_Lb",
+    "str_guide_circle_N37light_LbT",
+    nil,
+    nil,
+    "str_guide_circle_N37light_Lt",
+    "str_guide_circle_N37light_LtT",
+    "str_guide_circle_N37light_Rt",
+    "str_guide_circle_N37light_RtT"
+  },
+  [537101201] = {
+    537101201,
+    300,
+    2,
+    {537112101},
+    common[2],
+    nil,
+    "str_guide_circle_N37boss_Lt",
+    "str_guide_circle_N37boss_LtT",
+    "str_guide_circle_N37boss_Rt",
+    "str_guide_circle_N37boss_RtT",
+    "str_guide_circle_N37boss_Lb",
+    "str_guide_circle_N37boss_LbT"
+  },
+  [80030701] = {
+    80030701,
+    300,
+    2,
+    {80030713},
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[115],
+    common[116],
+    nil,
+    nil,
+    common[117],
+    common[118]
+  },
+  [80030801] = {
+    80030801,
+    300,
+    2,
+    {80030813},
+    common[2],
+    nil,
+    nil,
+    nil,
+    common[115],
+    common[116],
+    nil,
+    nil,
+    common[117],
+    common[118]
+  },
+  [80031301] = {
+    80031301,
+    300,
+    3,
+    common[36],
+    common[37],
+    nil,
+    nil,
+    nil,
+    common[119],
+    common[120]
+  },
+  [80031401] = {
+    80031401,
+    300,
+    3,
+    common[36],
+    common[37],
+    nil,
+    nil,
+    nil,
+    common[119],
+    common[120]
+  },
+  [53810021] = {
+    53810021,
+    600,
+    3,
+    {53810021},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_cage_Rt",
+    "str_guide_cage_RtT"
+  },
+  [538100101] = {
+    538100101,
+    600,
+    2,
+    {53810102},
+    common[2],
+    nil,
+    "str_guide_circle_N38boss_Lb",
+    "str_guide_circle_N38boss_LbT",
+    nil,
+    nil,
+    "str_guide_circle_N38boss_Lt",
+    "str_guide_circle_N38boss_LtT",
+    "str_guide_circle_N38boss_Rt",
+    "str_guide_circle_N38boss_RtT"
+  },
+  [80040001] = {
+    80040001,
+    600,
+    2,
+    {80042911},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[121],
+    common[122],
+    common[123],
+    common[124]
+  },
+  [80040002] = {
+    80040002,
+    600,
+    2,
+    {80043011},
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[121],
+    common[122],
+    common[123],
+    common[124]
+  },
+  [800413] = {
+    800413,
+    590,
+    2,
+    {80041311},
+    common[38],
+    nil,
+    nil,
+    nil,
+    common[125],
+    common[126],
+    common[127],
+    common[128],
+    common[129],
+    common[130]
+  },
+  [800414] = {
+    800414,
+    590,
+    2,
+    {80041411},
+    common[38],
+    nil,
+    nil,
+    nil,
+    common[125],
+    common[126],
+    common[127],
+    common[128],
+    common[129],
+    common[130]
+  },
+  [10190501] = {
+    10190501,
+    400,
+    2,
+    {101905103},
+    common[2],
+    nil,
+    "str_guide_circle_soilder1_Rt",
+    "str_guide_circle_soilder1_RtT",
+    nil,
+    nil,
+    "str_guide_circle_soilder1_Rb",
+    "str_guide_circle_soilder1_RbT",
+    "str_guide_circle_soilder1_Lb",
+    "str_guide_circle_soilder1_LbT"
+  },
+  [10190901] = {
+    10190901,
+    400,
+    2,
+    {101909104},
+    common[2],
+    nil,
+    "str_guide_circle_soilder2_Rt",
+    "str_guide_circle_soilder2_RtT",
+    nil,
+    nil,
+    "str_guide_circle_soilder2_Rb",
+    "str_guide_circle_soilder2_RbT",
+    "str_guide_circle_soilder2_Lb",
+    "str_guide_circle_soilder2_LbT"
+  },
+  [10190701] = {
+    10190701,
+    400,
+    2,
+    {101907101},
+    common[2],
+    nil,
+    "str_guide_circle_soilder3_Rb",
+    "str_guide_circle_soilder3_RbT",
+    nil,
+    nil,
+    "str_guide_circle_soilder3_Rt",
+    "str_guide_circle_soilder3_RtT",
+    "str_guide_circle_soilder3_Lb",
+    "str_guide_circle_soilder3_LbT"
+  },
+  [10191201] = {
+    10191201,
+    400,
+    2,
+    {101912101},
+    common[2],
+    nil,
+    "str_guide_circle_shenghuaboss_Rt",
+    "str_guide_circle_shenghuaboss_RtT",
+    nil,
+    nil,
+    "str_guide_circle_shenghuaboss_Lt",
+    "str_guide_circle_shenghuaboss_LtT",
+    "str_guide_circle_shenghuaboss_Lb",
+    "str_guide_circle_shenghuaboss_LbT"
+  },
+  [10201101] = {
+    10201101,
+    400,
+    2,
+    {102011101},
+    common[2],
+    nil,
+    "str_guide_circle_ylxs_Lt",
+    "str_guide_circle_ylxs_LtT"
+  },
+  [10201202] = {
+    10201202,
+    400,
+    2,
+    {102012101},
+    common[2],
+    nil,
+    "str_guide_circle_ylxs_Rt",
+    "str_guide_circle_ylxs_RtT",
+    nil,
+    nil,
+    "str_guide_circle_ylxs_Lb",
+    "str_guide_circle_ylxs_LbT"
+  },
+  [80240102] = {
+    80240102,
+    400,
+    1,
+    common[18],
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_8024001",
+    common[88]
+  },
+  [80240211] = {
+    80240211,
+    300,
+    2,
+    {80241313},
+    common[7],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_yingzi_Lt",
+    "str_guide_circle_yingzi_LtT",
+    nil,
+    nil,
+    "str_guide_circle_yingzi_Rt",
+    "str_guide_circle_yingzi_RtT"
+  },
+  [80240212] = {
+    80240212,
+    300,
+    3,
+    {80241901},
+    common[7],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_jingmianta_Lt",
+    "str_guide_circle_jingmianta_LtT",
+    nil,
+    nil,
+    "str_guide_circle_jingmianta_Rt",
+    "str_guide_circle_jingmianta_RtT"
+  },
+  [80240213] = {
+    80240213,
+    300,
+    2,
+    {80243113},
+    common[7],
+    nil,
+    "str_guide_circle_miran_Lt",
+    "str_guide_circle_miran_LtT",
+    nil,
+    nil,
+    "str_guide_circle_miran_Rt",
+    "str_guide_circle_miran_RtT"
+  },
+  [80240214] = {
+    80240214,
+    600,
+    3,
+    {80242086},
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_fengchuan_Rt",
+    "str_guide_circle_fengchuan_RtT"
+  },
+  [80240215] = {
+    80240215,
+    600,
+    3,
+    {80242803},
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_laolong_Lt",
+    "str_guide_circle_laolong_LtT",
+    nil,
+    nil,
+    "str_guide_circle_laolong_Rt",
+    "str_guide_circle_laolong_RtT"
+  },
+  [5419301] = {
+    5419301,
+    700,
+    2,
+    {2909301},
+    common[11],
+    nil,
+    "str_guide_circle_2909301_Rt",
+    "str_guide_circle_2909301_RtT",
+    "str_guide_circle_2909301_Lt",
+    "str_guide_circle_2909301_LtT",
+    "str_guide_circle_2909301_Lb",
+    "str_guide_circle_2909301_LbT"
+  },
+  [5419302] = {
+    5419302,
+    600,
+    2,
+    {541100113},
+    common[2],
+    nil,
+    "str_guide_mouse_Rt",
+    "str_guide_mouse_RtT",
+    "str_guide_mouse_Lt",
+    "str_guide_mouse_LtT",
+    "str_guide_mouse_Lb",
+    "str_guide_mouse_LbT"
+  },
+  [80050001] = {
+    80050001,
+    440,
+    2,
+    {80050415},
+    common[7],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80050001_Rt",
+    "str_guide_circle_80050001_RtT",
+    nil,
+    nil,
+    "str_guide_circle_80050001_Rb",
+    "str_guide_circle_80050001_RbT"
+  },
+  [80150101] = {
+    80150101,
+    400,
+    1,
+    common[29],
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80150101",
+    common[88]
+  },
+  [80150201] = {
+    80150201,
+    400,
+    1,
+    common[29],
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80150201",
+    common[88]
+  },
+  [80150301] = {
+    80150301,
+    300,
+    1,
+    common[17],
+    common[3],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80150301",
+    common[88]
+  },
+  [80250101] = {
+    80250101,
+    220,
+    1,
+    common[28],
+    common[12],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80250101",
+    common[88]
+  },
+  [5419305] = {
+    5419305,
+    700,
+    2,
+    {800544101},
+    common[12],
+    nil,
+    common[131],
+    common[132],
+    common[133],
+    common[134],
+    common[135],
+    common[136]
+  },
+  [5419306] = {
+    5419306,
+    700,
+    2,
+    {80051011},
+    common[12],
+    nil,
+    common[131],
+    common[132],
+    common[133],
+    common[134],
+    common[135],
+    common[136]
+  },
+  [100209] = {
+    100209,
+    500,
+    2,
+    {1002091},
+    common[2],
+    nil,
+    "str_guide_circle_2909401_Lt",
+    "str_guide_circle_2909401_LtT",
+    nil,
+    nil,
+    "str_guide_circle_2909401_Rt",
+    "str_guide_circle_2909401_RtT",
+    "str_guide_circle_2909401_Lb",
+    "str_guide_circle_2909401_LbT"
+  },
+  [90010401] = {
+    90010401,
+    250,
+    11,
+    {9001001},
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    false,
+    "str_season_maze_s1_guide_circle_90010401",
+    common[137],
+    common[40],
+    true
+  },
+  [90010402] = {
+    90010402,
+    250,
+    11,
+    {9001002},
+    {10, 60},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    true,
+    "str_season_maze_s1_guide_circle_90010402",
+    common[137],
+    {0, 230},
+    false
+  },
+  [90020401] = {
+    90020401,
+    250,
+    11,
+    {9003001},
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    128,
+    false,
+    "str_season_maze_s2_guide_circle_90020401",
+    common[137],
+    common[40],
+    true
+  },
+  [80060301] = {
+    80060301,
+    590,
+    2,
+    {2004901},
+    common[38],
+    nil,
+    "str_guide_circle_2004901_Lb",
+    "str_guide_circle_2004901_LbT",
+    "str_guide_circle_2004901_Rt",
+    "str_guide_circle_2004901_RtT",
+    "str_guide_circle_2004901_Rb",
+    "str_guide_circle_2004901_RbT"
+  },
+  [80060302] = {
+    80060302,
+    650,
+    2,
+    {80060313},
+    common[7],
+    nil,
+    "str_guide_circle_80060313_Lb",
+    "str_guide_circle_80060313_LbT"
+  },
+  [80061801] = {
+    80061801,
+    900,
+    2,
+    {80061811},
+    common[41],
+    nil,
+    "str_guide_circle_2909501_Lb",
+    "str_guide_circle_2909501_LbT",
+    "str_guide_circle_2909501_Rt",
+    "str_guide_circle_2909501_RtT",
+    "str_guide_circle_2909501_Rb",
+    "str_guide_circle_2909501_RbT"
+  },
+  [80061001] = {
+    80061001,
+    900,
+    2,
+    {80061011},
+    common[41],
+    nil,
+    "str_guide_circle_2909502_Lb",
+    "str_guide_circle_2909502_LbT",
+    "str_guide_circle_2909502_Rt",
+    "str_guide_circle_2909502_RtT",
+    "str_guide_circle_2909502_Rb",
+    "str_guide_circle_2909502_RbT"
+  },
+  [80060101] = {
+    80060101,
+    400,
+    1,
+    common[29],
+    common[2],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80060101_Rb",
+    "str_guide_circle_80060101_RbT",
+    nil,
+    nil,
+    "str_guide_circle_80060101_Rt",
+    "str_guide_circle_80060101_RtT"
+  },
+  [80060102] = {
+    80060102,
+    650,
+    2,
+    {80060115},
+    common[15],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80060102_Lt",
+    "str_guide_circle_80060102_LtT"
+  },
+  [80060201] = {
+    80060201,
+    400,
+    3,
+    {80060203},
+    common[2],
+    nil,
+    "str_guide_circle_80060201_Rt",
+    "str_guide_circle_80060201_RtT",
+    "str_guide_circle_80060201_Lt",
+    "str_guide_circle_80060201_LtT"
+  },
+  [80060401] = {
+    80060401,
+    500,
+    1,
+    {4, 5},
+    common[12],
+    nil,
+    nil,
+    nil,
+    "str_guide_circle_80060401_Rt",
+    "str_guide_circle_80060401_RtT"
+  },
+  [2909701] = {
+    2909701,
+    500,
+    2,
+    {545111101},
+    common[41],
+    nil,
+    "str_guide_circle_2909701_Lb",
+    "str_guide_circle_2909701_LbT",
+    "str_guide_circle_2909701_Rt",
+    "str_guide_circle_2909701_RtT",
+    "str_guide_circle_2909701_Rb",
+    "str_guide_circle_2909701_RbT"
+  },
+  [2909801] = {
+    2909801,
+    600,
+    2,
+    {547110105},
+    common[41],
+    nil,
+    "str_guide_circle_2909801_Lb",
+    "str_guide_circle_2909801_LbT",
+    "str_guide_circle_2909801_Rt",
+    "str_guide_circle_2909801_RtT",
+    "str_guide_circle_2909801_Rb",
+    "str_guide_circle_2909801_RbT"
+  },
+  [2005101] = {
+    2005101,
+    300,
+    2,
+    {547103105},
+    common[2],
+    nil,
+    "str_guide_2005101_Lb",
+    "str_guide_2005101_LbT",
+    "str_guide_2005101_Rt",
+    "str_guide_2005101_RtT",
+    "str_guide_2005101_Lt",
+    "str_guide_2005101_LtT"
+  },
+  [2910101] = {
+    2910101,
+    400,
+    2,
+    {548110101},
+    common[41],
+    nil,
+    "str_guide_circle_2910101_Lb",
+    "str_guide_circle_2910101_LbT",
+    nil,
+    nil,
+    "str_guide_circle_2910101_Rt",
+    "str_guide_circle_2910101_RtT",
+    "str_guide_circle_2910101_Rb",
+    "str_guide_circle_2910101_RbT"
+  },
+  [2005201] = {
+    2005201,
+    400,
+    2,
+    {548105104},
+    common[2],
+    nil,
+    "str_guide_circle_2005201_Lb",
+    "str_guide_circle_2005201_LbT",
+    "str_guide_circle_2005201_Rt",
+    "str_guide_circle_2005201_RtT",
+    nil,
+    nil,
+    "str_guide_circle_2005201_Rb",
+    "str_guide_circle_2005201_RbT"
+  },
+  [2910001] = {
+    2910001,
+    1400,
+    2,
+    {807004101},
+    common[42],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_2910001_Lt",
+    "str_guide_2910001_LtT",
+    "str_guide_2910001_Lb",
+    "str_guide_2910001_LbT"
+  },
+  [2910002] = {
+    2910002,
+    1400,
+    2,
+    {807110301},
+    common[42],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_2910002_Lt",
+    "str_guide_2910002_LtT",
+    "str_guide_2910002_Lb",
+    "str_guide_2910002_LbT"
+  },
+  [2909901] = {
+    2909901,
+    500,
+    2,
+    {549109101},
+    common[11],
+    nil,
+    "str_guide_2909901_Lb",
+    "str_guide_2909901_LbT",
+    nil,
+    nil,
+    "str_guide_2909901_Lt",
+    "str_guide_2909901_LtT",
+    "str_guide_2909901_Rb",
+    "str_guide_2909901_RbT"
+  },
+  [2803101] = {
+    2803101,
+    300,
+    3,
+    {2803101},
+    common[12],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "str_guide_2803101_Lb",
+    "str_guide_2803101_LbT"
+  },
+  [2910201] = {
+    2910201,
+    500,
+    2,
+    {550109101},
+    common[11],
+    nil,
+    "str_guide_2910201_Lt",
+    "str_guide_2910201_LtT",
+    nil,
+    nil,
+    "str_guide_2910201_Lb",
+    "str_guide_2910201_LbT",
+    "str_guide_2910201_Rb",
+    "str_guide_2910201_RbT"
+  }
 }
 return config, "id", key
-

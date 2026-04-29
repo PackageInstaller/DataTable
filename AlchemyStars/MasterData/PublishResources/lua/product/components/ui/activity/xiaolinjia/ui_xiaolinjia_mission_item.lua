@@ -1,239 +1,150 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_mission_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaMissionItem", Object)
 UIXiaoLinJiaMissionItem = UIXiaoLinJiaMissionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaMissionItem.Constructor = function(self, uiView, owner)
-  -- function num : 0_0 , upvalues : _ENV
+function UIXiaoLinJiaMissionItem:Constructor(uiView, owner)
   self._uiView = uiView
   self._owner = owner
   self.isLock = false
   self.isHide = false
-  self.icon = (self._uiView):GetUIComponent("RawImageLoader", "icon")
-  self.lockText = (self._uiView):GetUIComponent("UILocalizationText", "lockText")
-  self.normal = (self._uiView):GetGameObject("normal")
-  self.select = (self._uiView):GetGameObject("select")
-  self.lock = (self._uiView):GetGameObject("lock")
-  self.root = (self._uiView):GetGameObject("root")
-  self.canvasGroup = (self._uiView):GetUIComponent("CanvasGroup", "root")
-  self.btnObj = (self._uiView):GetGameObject("btn")
-  self.headIcon1 = (self._uiView):GetUIComponent("Image", "headIcon1")
-  self.headIcon2 = (self._uiView):GetUIComponent("Image", "headIcon2")
-  self.notFinish = (self._uiView):GetGameObject("notFinish")
-  self.finish = (self._uiView):GetGameObject("finish")
-  self.line = (self._uiView):GetGameObject("line")
+  self.icon = self._uiView:GetUIComponent("RawImageLoader", "icon")
+  self.lockText = self._uiView:GetUIComponent("UILocalizationText", "lockText")
+  self.normal = self._uiView:GetGameObject("normal")
+  self.select = self._uiView:GetGameObject("select")
+  self.lock = self._uiView:GetGameObject("lock")
+  self.root = self._uiView:GetGameObject("root")
+  self.canvasGroup = self._uiView:GetUIComponent("CanvasGroup", "root")
+  self.btnObj = self._uiView:GetGameObject("btn")
+  self.headIcon1 = self._uiView:GetUIComponent("Image", "headIcon1")
+  self.headIcon2 = self._uiView:GetUIComponent("Image", "headIcon2")
+  self.notFinish = self._uiView:GetGameObject("notFinish")
+  self.finish = self._uiView:GetGameObject("finish")
+  self.line = self._uiView:GetGameObject("line")
   self._uicustomEventListener = UICustomUIEventListener:New()
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self.btnObj), UIEvent.Click, function(go)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self.btnObj), UIEvent.Click, function(go)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
     self:OnSelect()
-  end
-)
+  end)
   self.finishIn = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMissionItem.GetIsLock = function(self)
-  -- function num : 0_1
+function UIXiaoLinJiaMissionItem:GetIsLock()
   return self.isLock
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMissionItem.GetIsHide = function(self)
-  -- function num : 0_2
+function UIXiaoLinJiaMissionItem:GetIsHide()
   return self.isHide
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMissionItem.GetClientCfg = function(self)
-  -- function num : 0_3
+function UIXiaoLinJiaMissionItem:GetClientCfg()
   return self.clientCfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMissionItem.GetServerCfg = function(self)
-  -- function num : 0_4
+function UIXiaoLinJiaMissionItem:GetServerCfg()
   return self.serverCfg
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMissionItem.GetMissionID = function(self)
-  -- function num : 0_5
-  return (self.serverCfg).CampaignMissionId
+function UIXiaoLinJiaMissionItem:GetMissionID()
+  return self.serverCfg.CampaignMissionId
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMissionItem.SetData = function(self, clientCfg, serverCfg, serverData)
-  -- function num : 0_6
+function UIXiaoLinJiaMissionItem:SetData(clientCfg, serverCfg, serverData)
   self.clientCfg = clientCfg
   self.serverCfg = serverCfg
   self.serverData = serverData
-  local unlockTime = (self.serverCfg).UnlockTime
-  self.diff = (self._owner):GetCheckTimeIsUnlock(unlockTime)
+  local unlockTime = self.serverCfg.UnlockTime
+  self.diff = self._owner:GetCheckTimeIsUnlock(unlockTime)
   if self.diff <= 0 then
-    if (self.clientCfg).AfterPlayIcon then
+    if self.clientCfg.AfterPlayIcon then
       self.isHide = true
-      if not (self._owner):GetHasHideMissionUnLock() then
+      if not self._owner:GetHasHideMissionUnLock() then
         self.isLock = true
       end
     else
       self.isLock = false
       if self.serverData then
-        self.star = (self.serverData).star
+        self.star = self.serverData.star
       end
     end
   else
-    self.isHide = (self.clientCfg).AfterPlayIcon ~= nil
+    self.isHide = self.clientCfg.AfterPlayIcon ~= nil
     self.isLock = true
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMissionItem.Refresh = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIXiaoLinJiaMissionItem:Refresh()
   local showRoot = true
   if self.isLock then
-    local nextMission = (self._owner):GetNextUnlockMission()
-    do
-      -- DECOMPILER ERROR at PC23: Unhandled construct in 'MakeBoolean' P1
-
-      if nextMission and nextMission:GetMissionID() == self:GetMissionID() then
-        local str = (StringTable.Get)("str_xiaolinjia_levellock_countdown", (UIActivityHelper.GetFormatTimerStr)(self.diff))
-        ;
-        (self.lockText):SetText(str)
-        ;
-        (self.icon):LoadImage((self.clientCfg).Icon)
-        ;
-        (self.lock):SetActive(true)
+    local nextMission = self._owner:GetNextUnlockMission()
+    if nextMission then
+      if nextMission:GetMissionID() == self:GetMissionID() then
+        local str = StringTable.Get("str_xiaolinjia_levellock_countdown", UIActivityHelper.GetFormatTimerStr(self.diff))
+        self.lockText:SetText(str)
+        self.icon:LoadImage(self.clientCfg.Icon)
+        self.lock:SetActive(true)
         if nextMission.isHide then
           showRoot = false
         end
       else
-        do
-          do
-            showRoot = false
-            ;
-            (self.notFinish):SetActive(true)
-            ;
-            (self.finish):SetActive(false)
-            ;
-            ((self.headIcon1).gameObject):SetActive(false)
-            ;
-            ((self.headIcon2).gameObject):SetActive(false)
-          end
-          if (self.clientCfg).AfterPlayIcon and self.serverData then
-            (self.icon):LoadImage((self.clientCfg).AfterPlayIcon)
-          else
-            ;
-            (self.icon):LoadImage((self.clientCfg).Icon)
-          end
-          if (self.clientCfg).HeadIcon then
-            ((self.headIcon1).gameObject):SetActive(true)
-            ;
-            ((self.headIcon2).gameObject):SetActive(true)
-            -- DECOMPILER ERROR at PC101: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self.headIcon1).sprite = ((self._owner).atlas):GetSprite(((self.clientCfg).HeadIcon)[1])
-            -- DECOMPILER ERROR at PC110: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self.headIcon2).sprite = ((self._owner).atlas):GetSprite(((self.clientCfg).HeadIcon)[2])
-          else
-            ;
-            ((self.headIcon1).gameObject):SetActive(false)
-            ;
-            ((self.headIcon2).gameObject):SetActive(false)
-          end
-          ;
-          (self.notFinish):SetActive(self.serverData == nil)
-          ;
-          (self.finish):SetActive(self.serverData ~= nil)
-          ;
-          (self.lock):SetActive(false)
-          ;
-          (self.root):SetActive(showRoot)
-          ;
-          (self.line):SetActive(showRoot)
-          -- DECOMPILER ERROR at PC151: Confused about usage of register: R2 in 'UnsetPending'
-
-          ;
-          (self.canvasGroup).alpha = 0
-          if self.finishIn then
-            self.finishIn = false
-            local id = self:GetMissionID()
-            if id > 1 then
-              local anim = (self._uiView):GetUIComponent("Animation", "anim")
-              ;
-              ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, id, self, anim
-    YIELD(TT, (id - 1) * 80)
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.canvasGroup).alpha = 1
-    anim:Play("uieffanim_UIXiaoLinJiaMainController_anim")
-  end
-)
-            else
-              -- DECOMPILER ERROR at PC174: Confused about usage of register: R3 in 'UnsetPending'
-
-              (self.canvasGroup).alpha = 1
-            end
-          else
-            (self.root):SetActive(showRoot)
-            ;
-            (self.line):SetActive(showRoot)
-          end
-          -- DECOMPILER ERROR: 6 unprocessed JMP targets
-        end
+        showRoot = false
       end
     end
+    self.notFinish:SetActive(true)
+    self.finish:SetActive(false)
+    self.headIcon1.gameObject:SetActive(false)
+    self.headIcon2.gameObject:SetActive(false)
+  else
+    if self.clientCfg.AfterPlayIcon and self.serverData then
+      self.icon:LoadImage(self.clientCfg.AfterPlayIcon)
+    else
+      self.icon:LoadImage(self.clientCfg.Icon)
+    end
+    if self.clientCfg.HeadIcon then
+      self.headIcon1.gameObject:SetActive(true)
+      self.headIcon2.gameObject:SetActive(true)
+      self.headIcon1.sprite = self._owner.atlas:GetSprite(self.clientCfg.HeadIcon[1])
+      self.headIcon2.sprite = self._owner.atlas:GetSprite(self.clientCfg.HeadIcon[2])
+    else
+      self.headIcon1.gameObject:SetActive(false)
+      self.headIcon2.gameObject:SetActive(false)
+    end
+    self.notFinish:SetActive(self.serverData == nil)
+    self.finish:SetActive(self.serverData ~= nil)
+    self.lock:SetActive(false)
+  end
+  self.root:SetActive(showRoot)
+  self.line:SetActive(showRoot)
+  self.canvasGroup.alpha = 0
+  if self.finishIn then
+    self.finishIn = false
+    local id = self:GetMissionID()
+    if 1 < id then
+      local anim = self._uiView:GetUIComponent("Animation", "anim")
+      GameGlobal.TaskManager():StartTask(function(TT)
+        YIELD(TT, (id - 1) * 80)
+        self.canvasGroup.alpha = 1
+        anim:Play("uieffanim_UIXiaoLinJiaMainController_anim")
+      end)
+    else
+      self.canvasGroup.alpha = 1
+    end
+  else
+    self.root:SetActive(showRoot)
+    self.line:SetActive(showRoot)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMissionItem.ShowSelectIcon = function(self, missionID)
-  -- function num : 0_8
-  (self.select):SetActive(missionID == self:GetMissionID())
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIXiaoLinJiaMissionItem:ShowSelectIcon(missionID)
+  self.select:SetActive(missionID == self:GetMissionID())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMissionItem.OnSelect = function(self)
-  -- function num : 0_9
-  local title, content = nil, nil
+function UIXiaoLinJiaMissionItem:OnSelect()
+  local title, content
   if self.isHide then
-    if not self.serverData or not (self.clientCfg).Title then
-      title = (self.clientCfg).lockTitle
-    end
-    if not self.serverData or not (self.clientCfg).Content then
-      content = (self.clientCfg).lockContent
-      if not self.isLock or not (self.clientCfg).lockTitle then
-        title = (self.clientCfg).Title
-      end
-      if not self.isLock or not (self.clientCfg).lockContent then
-        content = (self.clientCfg).Content
-      end
-      ;
-      (self._owner):ShowMissionInfo(self:GetMissionID(), title, content, self.isLock, self.isHide, self.star, self.diff)
-    end
+    title = self.serverData and self.clientCfg.Title or self.clientCfg.lockTitle
+    content = self.serverData and self.clientCfg.Content or self.clientCfg.lockContent
+  else
+    title = self.isLock and self.clientCfg.lockTitle or self.clientCfg.Title
+    content = self.isLock and self.clientCfg.lockContent or self.clientCfg.Content
   end
+  self._owner:ShowMissionInfo(self:GetMissionID(), title, content, self.isLock, self.isHide, self.star, self.diff)
 end
-
-

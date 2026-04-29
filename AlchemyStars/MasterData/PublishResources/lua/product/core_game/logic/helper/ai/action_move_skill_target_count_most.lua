@@ -1,161 +1,123 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_skill_target_count_most.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveSkillTargetCountMost", ActionMoveBase)
 ActionMoveSkillTargetCountMost = ActionMoveSkillTargetCountMost
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveSkillTargetCountMost.Constructor = function(self)
-  -- function num : 0_0
+function ActionMoveSkillTargetCountMost:Constructor()
   self:_Reset()
   self._targetPosAndRound = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSkillTargetCountMost.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveSkillTargetCountMost.super).Reset)(self)
+function ActionMoveSkillTargetCountMost:Reset()
+  ActionMoveSkillTargetCountMost.super.Reset(self)
   self:_Reset()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSkillTargetCountMost._Reset = function(self)
-  -- function num : 0_2
+function ActionMoveSkillTargetCountMost:_Reset()
   self._targetPos = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSkillTargetCountMost.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_3 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function ActionMoveSkillTargetCountMost:InitTargetPosList(listPosTarget)
+  local battleStatCmpt = self._world:BattleStat()
   local levelTotalRoundCount = battleStatCmpt:GetLevelTotalRoundCount()
-  local targetPos = (self._targetPosAndRound)[levelTotalRoundCount]
+  local targetPos = self._targetPosAndRound[levelTotalRoundCount]
   if targetPos then
     self._targetPos = targetPos
-    return 
+    return
   end
-  local monsterClassID = ((self.m_entityOwn):MonsterID()):GetMonsterClassID()
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
+  local monsterClassID = self.m_entityOwn:MonsterID():GetMonsterClassID()
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
     if not monsterEntity:HasDeadMark() then
-      local targetMonsterClassID = (monsterEntity:MonsterID()):GetMonsterClassID()
+      local targetMonsterClassID = monsterEntity:MonsterID():GetMonsterClassID()
       if targetMonsterClassID == monsterClassID then
         local buffCmpt = monsterEntity:BuffComponent()
-        if not buffCmpt:GetBuffValue("ActionMoveSkillTargetCountMost") then
-          local targetPosAndRound = {}
-        end
+        local targetPosAndRound = buffCmpt:GetBuffValue("ActionMoveSkillTargetCountMost") or {}
         local targetPos = targetPosAndRound[levelTotalRoundCount]
         if targetPos then
           self._targetPos = targetPos
-          -- DECOMPILER ERROR at PC51: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (self._targetPosAndRound)[levelTotalRoundCount] = self._targetPos
-          return 
+          self._targetPosAndRound[levelTotalRoundCount] = self._targetPos
+          return
         end
       end
     end
   end
   local skillID = self:GetLogicData(-1)
   if skillID == 0 then
-    return 
+    return
   end
-  local posSelf = (self.m_entityOwn):GetGridPosition()
-  local aiCmpt = (self.m_entityOwn):AI()
+  local posSelf = self.m_entityOwn:GetGridPosition()
+  local aiCmpt = self.m_entityOwn:AI()
   local remainMobility = aiCmpt:GetMobilityValid()
   if remainMobility <= 0 then
     self._targetPos = posSelf
-    return 
+    return
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local blockFlag = boardServiceLogic:GetEntityMoveBlockFlag(self.m_entityOwn)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
   local fullScreenCalc = SkillScopeCalculator_FullScreen:New(skillCalculater)
-  local scopeResult = fullScreenCalc:CalcRange(SkillScopeType.FullScreen, 1, posSelf, ((self.m_entityOwn):BodyArea()):GetArea(), (self.m_entityOwn):GetGridDirection(), SkillTargetType.Board, posSelf)
+  local scopeResult = fullScreenCalc:CalcRange(SkillScopeType.FullScreen, 1, posSelf, self.m_entityOwn:BodyArea():GetArea(), self.m_entityOwn:GetGridDirection(), SkillTargetType.Board, posSelf)
   local targetPosList = {}
-  for _,pos in ipairs(scopeResult:GetAttackRange()) do
+  for _, pos in ipairs(scopeResult:GetAttackRange()) do
     local isBlock = boardServiceLogic:IsPosBlock(pos, blockFlag)
     if not isBlock then
-      (table.insert)(targetPosList, pos)
+      table.insert(targetPosList, pos)
     end
   end
-  if not (table.intable)(targetPosList, posSelf) then
-    (table.insert)(targetPosList, posSelf)
+  if not table.intable(targetPosList, posSelf) then
+    table.insert(targetPosList, posSelf)
   end
-  local bodyArea = ((self.m_entityOwn):BodyArea()):GetArea()
-  local configService = (self._world):GetService("Config")
+  local bodyArea = self.m_entityOwn:BodyArea():GetArea()
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
   local posAndTargrtCount = {}
-  for _,pos in ipairs(targetPosList) do
+  for _, pos in ipairs(targetPosList) do
     local skillResult = skillCalculater:CalcSkillScope(skillConfigData, pos, Vector2(0, 1), bodyArea)
     local targetType = skillConfigData:GetSkillTargetType()
-    if not targetSelector:DoSelectSkillTarget(self.m_entityOwn, targetType, skillResult, skillID) then
-      local targetArray = {}
-    end
-    if targetArray and (table.count)(targetArray) > 0 then
-      (table.insert)(posAndTargrtCount, {pos = pos, targetCount = (table.count)(targetArray)})
+    local targetArray = targetSelector:DoSelectSkillTarget(self.m_entityOwn, targetType, skillResult, skillID) or {}
+    if targetArray and 0 < table.count(targetArray) then
+      table.insert(posAndTargrtCount, {
+        pos = pos,
+        targetCount = table.count(targetArray)
+      })
     end
   end
-  if (table.count)(posAndTargrtCount) == 0 then
+  if table.count(posAndTargrtCount) == 0 then
     self._targetPos = posSelf
-    return 
+    return
   end
-  ;
-  (table.sort)(posAndTargrtCount, function(a, b)
-    -- function num : 0_3_0
-    do return b.targetCount < a.targetCount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(posAndTargrtCount, function(a, b)
+    return a.targetCount > b.targetCount
+  end)
   local posAndTargrtCountSecend = {}
-  if (table.count)(posAndTargrtCount) > 0 then
-    local targetCount = (posAndTargrtCount[1]).targetCount
-    for _,v in ipairs(posAndTargrtCount) do
+  if 0 < table.count(posAndTargrtCount) then
+    local targetCount = posAndTargrtCount[1].targetCount
+    for _, v in ipairs(posAndTargrtCount) do
       if v.targetCount == targetCount then
-        (table.insert)(posAndTargrtCountSecend, v)
+        table.insert(posAndTargrtCountSecend, v)
       end
     end
   end
-  do
-    ;
-    (table.sort)(posAndTargrtCountSecend, function(a, b)
-    -- function num : 0_3_1 , upvalues : _ENV, posSelf
-    local disA = (Vector2.Distance)(a.pos, posSelf)
-    local disB = (Vector2.Distance)(b.pos, posSelf)
-    do return disA < disB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    if (table.count)(posAndTargrtCountSecend) > 0 then
-      self._targetPos = (posAndTargrtCountSecend[1]).pos
-      if (table.intable)(posAndTargrtCountSecend, posSelf) then
-        self._targetPos = posSelf
-      end
+  table.sort(posAndTargrtCountSecend, function(a, b)
+    local disA = Vector2.Distance(a.pos, posSelf)
+    local disB = Vector2.Distance(b.pos, posSelf)
+    return disA < disB
+  end)
+  if 0 < table.count(posAndTargrtCountSecend) then
+    self._targetPos = posAndTargrtCountSecend[1].pos
+    if table.intable(posAndTargrtCountSecend, posSelf) then
+      self._targetPos = posSelf
     end
-    -- DECOMPILER ERROR at PC269: Confused about usage of register: R26 in 'UnsetPending'
-
-    ;
-    (self._targetPosAndRound)[levelTotalRoundCount] = self._targetPos
-    local curBuffCmpt = (self.m_entityOwn):BuffComponent()
-    curBuffCmpt:SetBuffValue("ActionMoveSkillTargetCountMost", self._targetPosAndRound)
   end
+  self._targetPosAndRound[levelTotalRoundCount] = self._targetPos
+  local curBuffCmpt = self.m_entityOwn:BuffComponent()
+  curBuffCmpt:SetBuffValue("ActionMoveSkillTargetCountMost", self._targetPosAndRound)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveSkillTargetCountMost.FindNewTargetPos = function(self)
-  -- function num : 0_4
+function ActionMoveSkillTargetCountMost:FindNewTargetPos()
   return self._targetPos
 end
-
-

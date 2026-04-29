@@ -1,34 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/event/ui_n30_entrust_event_start_auto_load.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local e = require("ui_n30_entrust_event")
 e:Class("N30EntrustEventStart", N30EntrustEvent, EntrustEventType.EntrustEventType_Start)
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
 
-N30EntrustEventStart.Constructor = function(self)
-  -- function num : 0_0
+function N30EntrustEventStart:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventStart.DebugName = function(self)
-  -- function num : 0_1
+function N30EntrustEventStart:DebugName()
   return "Start"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventStart.GetIconBgName = function(self)
-  -- function num : 0_2
+function N30EntrustEventStart:GetIconBgName()
   return "n30_wt_ld_ico001"
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventStart.GetIconName = function(self)
-  -- function num : 0_3
+function N30EntrustEventStart:GetIconName()
   if self._isPass then
     return "n30_wt_ld_ico01"
   else
@@ -36,18 +20,10 @@ N30EntrustEventStart.GetIconName = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventStart.GetWidgetName = function(self)
-  -- function num : 0_4
+function N30EntrustEventStart:GetWidgetName()
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventStart.OnArrived = function(self, ui)
-  -- function num : 0_5
+function N30EntrustEventStart:OnArrived(ui)
   return nil
 end
-
-

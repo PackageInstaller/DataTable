@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_daily/ui_quest_daily_week_awards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestDailyWeekAwards", UIController)
 UIQuestDailyWeekAwards = UIQuestDailyWeekAwards
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestDailyWeekAwards.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIQuestDailyWeekAwards:OnShow(uiParams)
   self._awards = uiParams[1]
   self._endTime = uiParams[2]
   self._maxValue = uiParams[3]
@@ -16,136 +9,91 @@ UIQuestDailyWeekAwards.OnShow = function(self, uiParams)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwards.GetComponents = function(self)
-  -- function num : 0_1
+function UIQuestDailyWeekAwards:GetComponents()
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._titleNameTex = self:GetUIComponent("UILocalizationText", "titleName")
   self._timerTex = self:GetUIComponent("UILocalizationText", "timerTex")
   self._tipsTex = self:GetUIComponent("UILocalizationText", "tipsTex")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwards.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIQuestDailyWeekAwards:OnValue()
   local count = #self._awards
   if self._titleName then
-    (self._titleNameTex):SetText((StringTable.Get)(self._titleName))
+    self._titleNameTex:SetText(StringTable.Get(self._titleName))
   end
   local scrollView = self:GetGameObject("itemScrollView")
   local content = self:GetGameObject("pool")
-  ;
-  (self._pool):SpawnObjects("UIQuestDailyWeekAwardsItem", count)
-  self._items = (self._pool):GetAllSpawnList()
+  self._pool:SpawnObjects("UIQuestDailyWeekAwardsItem", count)
+  self._items = self._pool:GetAllSpawnList()
   for i = 1, count do
-    local item = (self._items)[i]
-    local data = (self._awards)[i]
+    local item = self._items[i]
+    local data = self._awards[i]
     item:SetData(i, data, function(id, pos)
-    -- function num : 0_2_0 , upvalues : self
-    self:OnItemClick(id, pos)
-  end
-)
+      self:OnItemClick(id, pos)
+    end)
   end
   self:InitTimer()
   self:Tips()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwards.Tips = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local WeekQuestResetDay = ((Cfg.cfg_global).WeekQuestResetDay).IntValue
-  local weekDayStr = nil
+function UIQuestDailyWeekAwards:Tips()
+  local WeekQuestResetDay = Cfg.cfg_global.WeekQuestResetDay.IntValue
+  local weekDayStr
   if WeekQuestResetDay == 1 then
-    weekDayStr = (StringTable.Get)("str_quest_base_week_Monday")
-  else
-    if WeekQuestResetDay == 2 then
-      weekDayStr = (StringTable.Get)("str_quest_base_week_Tuesday")
-    else
-      if WeekQuestResetDay == 3 then
-        weekDayStr = (StringTable.Get)("str_quest_base_week_Wednesday")
-      else
-        if WeekQuestResetDay == 4 then
-          weekDayStr = (StringTable.Get)("str_quest_base_week_Thursday")
-        else
-          if WeekQuestResetDay == 5 then
-            weekDayStr = (StringTable.Get)("str_quest_base_week_Friday")
-          else
-            if WeekQuestResetDay == 6 then
-              weekDayStr = (StringTable.Get)("str_quest_base_week_Saturday")
-            else
-              if WeekQuestResetDay == 7 then
-                weekDayStr = (StringTable.Get)("str_quest_base_week_Sunday")
-              end
-            end
-          end
-        end
-      end
-    end
+    weekDayStr = StringTable.Get("str_quest_base_week_Monday")
+  elseif WeekQuestResetDay == 2 then
+    weekDayStr = StringTable.Get("str_quest_base_week_Tuesday")
+  elseif WeekQuestResetDay == 3 then
+    weekDayStr = StringTable.Get("str_quest_base_week_Wednesday")
+  elseif WeekQuestResetDay == 4 then
+    weekDayStr = StringTable.Get("str_quest_base_week_Thursday")
+  elseif WeekQuestResetDay == 5 then
+    weekDayStr = StringTable.Get("str_quest_base_week_Friday")
+  elseif WeekQuestResetDay == 6 then
+    weekDayStr = StringTable.Get("str_quest_base_week_Saturday")
+  elseif WeekQuestResetDay == 7 then
+    weekDayStr = StringTable.Get("str_quest_base_week_Sunday")
   end
-  local hourStr = (StringTable.Get)("str_quest_base_week_hour")
-  local tips = (StringTable.Get)("str_quest_base_week_awards_tips", self._maxValue, weekDayStr, hourStr)
-  ;
-  (self._tipsTex):SetText(tips)
+  local hourStr = StringTable.Get("str_quest_base_week_hour")
+  local tips = StringTable.Get("str_quest_base_week_awards_tips", self._maxValue, weekDayStr, hourStr)
+  self._tipsTex:SetText(tips)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwards.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIQuestDailyWeekAwards:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwards.InitTimer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIQuestDailyWeekAwards:InitTimer()
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
-  self._event = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_5_0 , upvalues : self
+  self._event = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:SetTimerTex()
-  end
-)
+  end)
   self:SetTimerTex()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwards.SetTimerTex = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
-  local sec = (math.floor)(self._endTime - nowTime)
+function UIQuestDailyWeekAwards:SetTimerTex()
+  local nowTime = self._svrTimeModule:GetServerTime() * 0.001
+  local sec = math.floor(self._endTime - nowTime)
   if sec < 0 then
     sec = 0
   end
-  local tex = (HelperProxy:GetInstance()):Time2Tex(sec)
-  ;
-  (self._timerTex):SetText((StringTable.Get)("str_quest_base_week_awards_timer", tex))
+  local tex = HelperProxy:GetInstance():Time2Tex(sec)
+  self._timerTex:SetText(StringTable.Get("str_quest_base_week_awards_timer", tex))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwards.OnItemClick = function(self, id, pos)
-  -- function num : 0_7
+function UIQuestDailyWeekAwards:OnItemClick(id, pos)
   if self._selectInfo then
-    (self._selectInfo):SetData(id, pos)
+    self._selectInfo:SetData(id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwards.BgOnClick = function(self, go)
-  -- function num : 0_8
+function UIQuestDailyWeekAwards:BgOnClick(go)
   self:CloseDialog()
 end
-
-

@@ -1,77 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/level/ui_n22_entrust_level_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustLevelController", UIController)
 UIN22EntrustLevelController = UIN22EntrustLevelController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustLevelController._CampaignSwitchState_Shot = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustLevelController:_CampaignSwitchState_Shot()
   local screenShot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
-  screenShot.OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+  screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local rt = screenShot:RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
   self:StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, rt, cache_rt, self
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-    ;
-    ((self._campaign)._campaign_module):CampaignSwitchState(true, UIStateType.UIN22EntrustStageController, UIStateType.UIMain, {cache_rt, false}, (self._campaign)._id)
-  end
-)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
+    self._campaign._campaign_module:CampaignSwitchState(true, UIStateType.UIN22EntrustStageController, UIStateType.UIMain, {cache_rt, false}, self._campaign._id)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._SetCommonTopButton = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local desc = (StringTable.Get)("str_n22_entrust_event_exits_pop_title")
-  local exitTitle = (StringTable.Get)("str_n22_entrust_event_exits_leave")
-  local exitCallback = function()
-    -- function num : 0_1_0 , upvalues : self
+function UIN22EntrustLevelController:_SetCommonTopButton()
+  local desc = StringTable.Get("str_n22_entrust_event_exits_pop_title")
+  local exitTitle = StringTable.Get("str_n22_entrust_event_exits_leave")
+  
+  local function exitCallback()
     self:_PlayExitAnim()
   end
-
-  local confirmTitle = ((StringTable.Get)("str_n22_entrust_event_exits_goon"))
-  local confirmCallback = nil
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+  
+  local confirmTitle = StringTable.Get("str_n22_entrust_event_exits_goon")
+  local confirmCallback
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_1_1 , upvalues : self, desc, exitTitle, exitCallback, confirmTitle, confirmCallback
     self:ShowDialog("UIN22EntrustMsgPopController", "", desc, exitTitle, exitCallback, confirmTitle, confirmCallback)
-  end
-, nil, nil, false)
+  end, nil, nil, false)
   obj:HideHomeBtn()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN22EntrustLevelController:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N22
   self._componentId = ECampaignN22ComponentID.ECAMPAIGN_N22_ENTRUST
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
-  if not (self._campaign):CheckComponentOpen(self._componentId) then
-    res.m_result = (self._campaign):CheckComponentOpenClientError(self._componentId)
-    ;
-    (self._campaign):ShowErrorToast(res.m_result, true)
-    return 
+  if not self._campaign:CheckComponentOpen(self._componentId) then
+    res.m_result = self._campaign:CheckComponentOpenClientError(self._componentId)
+    self._campaign:ShowErrorToast(res.m_result, true)
+    return
   end
-  self._component = (self._campaign):GetComponent(self._componentId)
+  self._component = self._campaign:GetComponent(self._componentId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController.OnShow = function(self, uiParams)
-  -- function num : 0_3
+function UIN22EntrustLevelController:OnShow(uiParams)
   self:_AttachEvents()
   self._isOpen = true
   self._levelId = uiParams[1] or 0
@@ -81,141 +57,116 @@ UIN22EntrustLevelController.OnShow = function(self, uiParams)
   self:_SetDebug()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController.OnHide = function(self)
-  -- function num : 0_4
+function UIN22EntrustLevelController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._Init = function(self)
-  -- function num : 0_5
+function UIN22EntrustLevelController:_Init()
   self:_SetCommonTopButton()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._Refresh = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN22EntrustLevelController:_Refresh()
   self:_SetTreasureBox()
-  local tb_node = (UIN22EntrustHelper.CalcNodeInfo)(self._showEnterAnim, self._component, self._levelId)
-  local tb_line = (UIN22EntrustHelper.CalcLineInfo)(self._showEnterAnim, self._component, self._levelId, tb_node)
+  local tb_node = UIN22EntrustHelper.CalcNodeInfo(self._showEnterAnim, self._component, self._levelId)
+  local tb_line = UIN22EntrustHelper.CalcLineInfo(self._showEnterAnim, self._component, self._levelId, tb_node)
   self:_SetMapNode(tb_node)
   self:_SetMapLine(tb_line)
-  local tb_player = (UIN22EntrustHelper.CalcPlayerInfo)(false, self._showEnterAnim, tb_node[self._startNode])
+  local tb_player = UIN22EntrustHelper.CalcPlayerInfo(false, self._showEnterAnim, tb_node[self._startNode])
   self:_SetMapPlayer(self._startNode, tb_player)
   self._showEnterAnim = false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._PlayEnterAnim = function(self, showAnim)
-  -- function num : 0_7 , upvalues : _ENV
-  local tb = {[1] = "uieff_UIN22EntrustLevelController_in_01", [2] = "uieff_UIN22EntrustLevelController_in_02", [3] = "uieff_UIN22EntrustLevelController_in_03", [4] = "uieff_UIN22EntrustLevelController_in_04", [5] = "uieff_UIN22EntrustLevelController_in_05", [6] = "uieff_UIN22EntrustLevelController_in_06"}
-  local index = (UIN22EntrustHelper.GetLevelIndex)(self._component, self._levelId) or 0
+function UIN22EntrustLevelController:_PlayEnterAnim(showAnim)
+  local tb = {
+    [1] = "uieff_UIN22EntrustLevelController_in_01",
+    [2] = "uieff_UIN22EntrustLevelController_in_02",
+    [3] = "uieff_UIN22EntrustLevelController_in_03",
+    [4] = "uieff_UIN22EntrustLevelController_in_04",
+    [5] = "uieff_UIN22EntrustLevelController_in_05",
+    [6] = "uieff_UIN22EntrustLevelController_in_06"
+  }
+  local index = UIN22EntrustHelper.GetLevelIndex(self._component, self._levelId) or 0
   local animName = tb[index]
   if self._showEnterAnim and animName then
-    (UIWidgetHelper.PlayAnimation)(self, "root", animName, 733, function()
-    -- function num : 0_7_0 , upvalues : self
-    self:_Init()
-    self:_Refresh()
-  end
-)
+    UIWidgetHelper.PlayAnimation(self, "root", animName, 733, function()
+      self:_Init()
+      self:_Refresh()
+    end)
   else
     self:_Init()
     self:_Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._PlayExitAnim = function(self, isDebug)
-  -- function num : 0_8 , upvalues : _ENV
-  local tb = {[1] = "uieff_UIN22EntrustLevelController_out_01", [2] = "uieff_UIN22EntrustLevelController_out_02", [3] = "uieff_UIN22EntrustLevelController_out_03", [4] = "uieff_UIN22EntrustLevelController_out_04", [5] = "uieff_UIN22EntrustLevelController_out_05", [6] = "uieff_UIN22EntrustLevelController_out_06"}
-  local index = (UIN22EntrustHelper.GetLevelIndex)(self._component, self._levelId) or 0
+function UIN22EntrustLevelController:_PlayExitAnim(isDebug)
+  local tb = {
+    [1] = "uieff_UIN22EntrustLevelController_out_01",
+    [2] = "uieff_UIN22EntrustLevelController_out_02",
+    [3] = "uieff_UIN22EntrustLevelController_out_03",
+    [4] = "uieff_UIN22EntrustLevelController_out_04",
+    [5] = "uieff_UIN22EntrustLevelController_out_05",
+    [6] = "uieff_UIN22EntrustLevelController_out_06"
+  }
+  local index = UIN22EntrustHelper.GetLevelIndex(self._component, self._levelId) or 0
   local animName = tb[index]
   if animName then
     local obj = self:GetUIComponent("Transform", "Center")
     local parent = self:GetUIComponent("Transform", "bg_ori")
     obj.parent = parent
-    ;
-    (UIWidgetHelper.PlayAnimation)(self, "Center", "UIN22EntrustLevelController_Center_out", 167)
-    ;
-    (UIWidgetHelper.PlayAnimation)(self, "root", animName, 700, function()
-    -- function num : 0_8_0 , upvalues : isDebug, self
-    if not isDebug then
-      self:_CampaignSwitchState_Shot()
-    end
-  end
-)
+    UIWidgetHelper.PlayAnimation(self, "Center", "UIN22EntrustLevelController_Center_out", 167)
+    UIWidgetHelper.PlayAnimation(self, "root", animName, 700, function()
+      if not isDebug then
+        self:_CampaignSwitchState_Shot()
+      end
+    end)
   else
-    do
-      self:_CampaignSwitchState_Shot()
-    end
+    self:_CampaignSwitchState_Shot()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._SetTreasureBox = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local txt = (self._component):GetTreasureBoxText(self._levelId)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTreasureBox", txt)
+function UIN22EntrustLevelController:_SetTreasureBox()
+  local txt = self._component:GetTreasureBoxText(self._levelId)
+  UIWidgetHelper.SetLocalizationText(self, "_txtTreasureBox", txt)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._SetMapNode = function(self, tb_node)
-  -- function num : 0_10 , upvalues : _ENV
-  local tb = (self._component):GetAllOpenEvents(self._levelId)
-  local count = (table.count)(tb)
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "Nodes", "UIN22EntrustLevelNode", count)
-  for i,v in ipairs(objs) do
+function UIN22EntrustLevelController:_SetMapNode(tb_node)
+  local tb = self._component:GetAllOpenEvents(self._levelId)
+  local count = table.count(tb)
+  local objs = UIWidgetHelper.SpawnObjects(self, "Nodes", "UIN22EntrustLevelNode", count)
+  for i, v in ipairs(objs) do
     local nodeId = tb[i]
     v:SetData(self._campaign, self._component, self._levelId, nodeId, function(nodeId)
-    -- function num : 0_10_0 , upvalues : _ENV, self
-    local tb_player = (UIN22EntrustHelper.CalcPlayerInfo)(true)
-    self:_SetMapPlayer(nodeId, tb_player)
-  end
-, function(isExit)
-    -- function num : 0_10_1 , upvalues : self
-    if not isExit then
-      self:_Refresh()
-    else
-      self:_ShowExitMsg()
-    end
-  end
-)
+      local tb_player = UIN22EntrustHelper.CalcPlayerInfo(true)
+      self:_SetMapPlayer(nodeId, tb_player)
+    end, function(isExit)
+      if not isExit then
+        self:_Refresh()
+      else
+        self:_ShowExitMsg()
+      end
+    end)
     local nodeInfo = tb_node[nodeId]
     if nodeInfo.isPlay then
       v:PlayAnim(i, "uieff_UIN22EntrustLevel_Node_in", nodeInfo.delay, nodeInfo.time)
     end
   end
   if count == 0 then
-    (Log.exception)("UIN22EntrustLevelController:_SetMapNode() count == 0")
-    return 
+    Log.exception("UIN22EntrustLevelController:_SetMapNode() count == 0")
+    return
   end
-  if tb then
-    self._startNode = tb[1]
-    local x = (self._component):GetPlayerPos()
-    if x ~= 0 then
-      self._startNode = x
-    end
+  self._startNode = tb and tb[1]
+  local x = self._component:GetPlayerPos()
+  if x ~= 0 then
+    self._startNode = x
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._SetMapLine = function(self, tb_line)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN22EntrustLevelController:_SetMapLine(tb_line)
   local tb = tb_line
-  local count = (table.count)(tb)
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "Lines", "UIN22EntrustLevelLine", count)
-  for i,v in ipairs(objs) do
+  local count = table.count(tb)
+  local objs = UIWidgetHelper.SpawnObjects(self, "Lines", "UIN22EntrustLevelLine", count)
+  for i, v in ipairs(objs) do
     local lineInfo = tb[i]
     v:SetPos(lineInfo.from, lineInfo.to)
     if lineInfo.isPlay then
@@ -225,118 +176,80 @@ UIN22EntrustLevelController._SetMapLine = function(self, tb_line)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._SetMapPlayer = function(self, nodeId, tb_player)
-  -- function num : 0_12 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "Player", "UIN22EntrustLevelPlayer")
+function UIN22EntrustLevelController:_SetMapPlayer(nodeId, tb_player)
+  local obj = UIWidgetHelper.SpawnObject(self, "Player", "UIN22EntrustLevelPlayer")
   obj:SetData(self._component, nodeId)
-  ;
-  (self._component):SetPlayerPos(nodeId)
+  self._component:SetPlayerPos(nodeId)
   if tb_player.isPlay then
     obj:PlayAnim(tb_player.anim, tb_player.delay, tb_player.time)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._ShowExitMsg = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local rate = (self._component):GetExplorNum(self._levelId)
-  local over = rate >= 100
-  local strTitle = (StringTable.Get)("str_n22_entrust_event_exits_title")
-  local str1 = (StringTable.Get)("str_n22_entrust_event_exits_rate_leave", "100%%")
-  local str2 = (StringTable.Get)("str_n22_entrust_event_exits_rate_leave_or_goon", rate .. "%%")
+function UIN22EntrustLevelController:_ShowExitMsg()
+  local rate = self._component:GetExplorNum(self._levelId)
+  local over = 100 <= rate
+  local strTitle = StringTable.Get("str_n22_entrust_event_exits_title")
+  local str1 = StringTable.Get("str_n22_entrust_event_exits_rate_leave", "100%%")
+  local str2 = StringTable.Get("str_n22_entrust_event_exits_rate_leave_or_goon", rate .. "%%")
   local desc = over and str1 or str2
-  local exitTitle = (StringTable.Get)("str_n22_entrust_event_exits_leave")
-  local exitCallback = function()
-    -- function num : 0_13_0 , upvalues : self
+  local exitTitle = StringTable.Get("str_n22_entrust_event_exits_leave")
+  
+  local function exitCallback()
     self:_PlayExitAnim()
   end
-
-  if not over or not "" then
-    local confirmTitle = (StringTable.Get)("str_n22_entrust_event_exits_goon")
-  end
-  local confirmCallback = function()
-    -- function num : 0_13_1 , upvalues : self
+  
+  local confirmTitle = over and "" or StringTable.Get("str_n22_entrust_event_exits_goon")
+  
+  local function confirmCallback()
     self:_Refresh()
   end
-
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN22EntrustMsgPopController", strTitle, desc, exitTitle, exitCallback, confirmTitle, confirmCallback)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  
+  GameGlobal.UIStateManager():ShowDialog("UIN22EntrustMsgPopController", strTitle, desc, exitTitle, exitCallback, confirmTitle, confirmCallback)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._AttachEvents = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN22EntrustLevelController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._DetachEvents = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN22EntrustLevelController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._CheckActivityClose = function(self, id)
-  -- function num : 0_16 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN22EntrustLevelController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController.EnterAnimDebugBtnOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN22EntrustLevelController:EnterAnimDebugBtnOnClick(go)
   self._showEnterAnim = true
-  ;
-  (UIWidgetHelper.SpawnObjects)(self, "Nodes", "UIN22EntrustLevelNode", 0)
-  ;
-  (UIWidgetHelper.SpawnObjects)(self, "Lines", "UIN22EntrustLevelLine", 0)
-  local obj = (UIWidgetHelper.SpawnObject)(self, "Player", "UIN22EntrustLevelPlayer")
+  UIWidgetHelper.SpawnObjects(self, "Nodes", "UIN22EntrustLevelNode", 0)
+  UIWidgetHelper.SpawnObjects(self, "Lines", "UIN22EntrustLevelLine", 0)
+  local obj = UIWidgetHelper.SpawnObject(self, "Player", "UIN22EntrustLevelPlayer")
   obj:SetShow(false)
   self:_PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController.NewNodeDebugBtnOnClick = function(self, go)
-  -- function num : 0_18
-  local tb = (self._component):GetAllOpenEvents(self._levelId)
-  local tb_del = {tb[#tb]}
+function UIN22EntrustLevelController:NewNodeDebugBtnOnClick(go)
+  local tb = self._component:GetAllOpenEvents(self._levelId)
+  local tb_del = {
+    tb[#tb]
+  }
   self:_Debug_ClearAnimationKey_Node(tb_del)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController.ExitAnimDebugBtnOnClick = function(self, go)
-  -- function num : 0_19
+function UIN22EntrustLevelController:ExitAnimDebugBtnOnClick(go)
   self:_PlayExitAnim(true)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._Debug_ClearAnimationKey_Node = function(self, tb)
-  -- function num : 0_20 , upvalues : _ENV
-  for _,v in ipairs(tb) do
-    local key = (self._component):GetEntrustEventNewKey(v)
-    ;
-    (LocalDB.SetInt)(key, 0)
+function UIN22EntrustLevelController:_Debug_ClearAnimationKey_Node(tb)
+  for _, v in ipairs(tb) do
+    local key = self._component:GetEntrustEventNewKey(v)
+    LocalDB.SetInt(key, 0)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelController._SetDebug = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  (self:GetGameObject("_debug")):SetActive((UIActivityHelper.CheckDebugOpen)())
+function UIN22EntrustLevelController:_SetDebug()
+  self:GetGameObject("_debug"):SetActive(UIActivityHelper.CheckDebugOpen())
 end
-
-

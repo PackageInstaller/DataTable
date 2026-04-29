@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/new_year_luck_bag/ui_activity_new_year_luck_bag_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNewYearLuckBagController", UIController)
 UIActivityNewYearLuckBagController = UIActivityNewYearLuckBagController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNewYearLuckBagController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityNewYearLuckBagController:OnShow(uiParams)
   self._randomLotteryComponentInfo = uiParams[1]
-  self.drawList = (self._randomLotteryComponentInfo).m_draw
+  self.drawList = self._randomLotteryComponentInfo.m_draw
   self.uiCtrl = uiParams[2]
   self._storyComp = uiParams[3]
-  self._DRAWResult = (self.uiCtrl)._DRAWResult
-  self.MAXDRAWTIME = (self.uiCtrl).MAXDRAWTIME
+  self._DRAWResult = self.uiCtrl._DRAWResult
+  self.MAXDRAWTIME = self.uiCtrl.MAXDRAWTIME
   self._isExpire = false
   self._hasDrawedExtremely = false
   self._DrawResult = self:GetUIComponent("UISelectObjectPath", "DrawResult")
@@ -29,168 +22,109 @@ UIActivityNewYearLuckBagController.OnShow = function(self, uiParams)
   local topBarPool = self:GetUIComponent("UISelectObjectPath", "CommonTopBar")
   local topBtns = topBarPool:SpawnObject("UINewCommonTopButton")
   topBtns:SetData(function()
-    -- function num : 0_0_0 , upvalues : self
     self:_Close()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self:ShowDrawAnimation()
   self:_SetCommonTopButton()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.ShowDrawAnimation = function(self)
-  -- function num : 0_1
+function UIActivityNewYearLuckBagController:ShowDrawAnimation()
   self:FlushDrawResult()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.OnItemSelect = function(self, id, pos)
-  -- function num : 0_2
+function UIActivityNewYearLuckBagController:OnItemSelect(id, pos)
   if not self._selectInfo then
-    self._selectInfo = (self._selectInfoPool):SpawnObject("UISelectInfo")
+    self._selectInfo = self._selectInfoPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._selectInfo):SetData(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.FlushDrawResult = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,v in pairs(self.drawList) do
-    if v.random_type == (self._DRAWResult).Extremely then
+function UIActivityNewYearLuckBagController:FlushDrawResult()
+  for _, v in pairs(self.drawList) do
+    if v.random_type == self._DRAWResult.Extremely then
       self._hasDrawedExtremely = true
     end
   end
-  local drawResultPool = (self._DrawResult):SpawnObject("UIActivityNewYearLuckBagResultItem")
-  local lastestDrawResultInfo = (self.drawList)[#self.drawList]
+  local drawResultPool = self._DrawResult:SpawnObject("UIActivityNewYearLuckBagResultItem")
+  local lastestDrawResultInfo = self.drawList[#self.drawList]
   local resultCfg = self:GetDrawResultCfg(lastestDrawResultInfo.pet_cfg_id)
   drawResultPool:FlushData(lastestDrawResultInfo, self.uiCtrl, false, function(id, pos)
-    -- function num : 0_3_0 , upvalues : self
     self:OnItemSelect(id, pos)
-  end
-)
+  end)
   self.curDrawResultType = lastestDrawResultInfo.random_type
-  local leftTime = self.MAXDRAWTIME - (table.count)(self.drawList)
-  if leftTime ~= 0 or not "<color=#FF0000>" .. leftTime .. "</color>" then
-    local tempRemindTime = "<color=#ffd257>" .. leftTime .. "/" .. self.MAXDRAWTIME .. "</color>"
-    ;
-    (self.remainDrawTime):SetText((StringTable.Get)("str_cn12_n41_game_tip2", tempRemindTime))
-    self:FlushButtons()
-    self:FlushSpine(resultCfg.SpineIdle, resultCfg.SpineFace)
-    ;
-    (UICG.SetTransform)((self.spineLoader).transform, "UIMainLobbyController", resultCfg.SpineIdle)
-  end
+  local leftTime = self.MAXDRAWTIME - table.count(self.drawList)
+  leftTime = leftTime == 0 and "<color=#FF0000>" .. leftTime .. "</color>" or leftTime
+  local tempRemindTime = "<color=#ffd257>" .. leftTime .. "/" .. self.MAXDRAWTIME .. "</color>"
+  self.remainDrawTime:SetText(StringTable.Get("str_cn12_n41_game_tip2", tempRemindTime))
+  self:FlushButtons()
+  self:FlushSpine(resultCfg.SpineIdle, resultCfg.SpineFace)
+  UICG.SetTransform(self.spineLoader.transform, "UIMainLobbyController", resultCfg.SpineIdle)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.FlushSpine = function(self, spine, spineFace)
-  -- function num : 0_4
-  if not spineFace then
-    spineFace = "idle"
-  end
-  ;
-  (self.spineLoader):LoadSpine(spine)
-  self._spineSke = (self.spineLoader).CurrentSkeleton
+function UIActivityNewYearLuckBagController:FlushSpine(spine, spineFace)
+  spineFace = spineFace or "idle"
+  self.spineLoader:LoadSpine(spine)
+  self._spineSke = self.spineLoader.CurrentSkeleton
   if not self._spineSke then
-    self._spineSke = (self.spineLoader).CurrentMultiSkeleton
+    self._spineSke = self.spineLoader.CurrentMultiSkeleton
   end
   if self._spineSke then
-    ((self._spineSke).AnimationState):SetAnimation(0, spineFace, true)
+    self._spineSke.AnimationState:SetAnimation(0, spineFace, true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.GetDrawResultCfg = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_random_lottery_draw_pet)({ID = id})
-  if cfgs and #cfgs > 0 then
+function UIActivityNewYearLuckBagController:GetDrawResultCfg(id)
+  local cfgs = Cfg.cfg_component_random_lottery_draw_pet({ID = id})
+  if cfgs and 0 < #cfgs then
     return cfgs[1]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.FlushButtons = function(self)
-  -- function num : 0_6
-  (self.cancelButton):SetActive(false)
-  ;
-  (self.finishDrawButton):SetActive(false)
-  ;
-  (self.reDrawButton):SetActive(false)
+function UIActivityNewYearLuckBagController:FlushButtons()
+  self.cancelButton:SetActive(false)
+  self.finishDrawButton:SetActive(false)
+  self.reDrawButton:SetActive(false)
   if #self.drawList == self.MAXDRAWTIME then
-    (self.finishDrawButton):SetActive(true)
+    self.finishDrawButton:SetActive(true)
+  elseif self.curDrawResultType ~= self._DRAWResult.Extremely then
+    self.reDrawButton:SetActive(true)
   else
-    if self.curDrawResultType ~= (self._DRAWResult).Extremely then
-      (self.reDrawButton):SetActive(true)
-    else
-      ;
-      (self.cancelButton):SetActive(true)
-      ;
-      (self.reDrawButton):SetActive(true)
-    end
+    self.cancelButton:SetActive(true)
+    self.reDrawButton:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController._SetCommonTopButton = function(self)
-  -- function num : 0_7
+function UIActivityNewYearLuckBagController:_SetCommonTopButton()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.SetExpire = function(self, isExpire)
-  -- function num : 0_8
+function UIActivityNewYearLuckBagController:SetExpire(isExpire)
   self._isExpire = isExpire
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.ReDrawButtonOnClick = function(self)
-  -- function num : 0_9
+function UIActivityNewYearLuckBagController:ReDrawButtonOnClick()
   if self._isExpire then
     self:_Close()
-    return 
+    return
   end
-  ;
-  (self.uiCtrl):DrawAction(function()
-    -- function num : 0_9_0 , upvalues : self
+  self.uiCtrl:DrawAction(function()
     self:_Close(function()
-      -- function num : 0_9_0_0 , upvalues : self
       self:ShowDialog("UIActivityNewYearLuckBagAnimController", self._randomLotteryComponentInfo, self.uiCtrl, self._storyComp)
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.CancelButtonOnClick = function(self)
-  -- function num : 0_10
+function UIActivityNewYearLuckBagController:CancelButtonOnClick()
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController.FinishDrawButtonOnClick = function(self)
-  -- function num : 0_11
+function UIActivityNewYearLuckBagController:FinishDrawButtonOnClick()
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController._Close = function(self, cb)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityNewYearLuckBagController:_Close(cb)
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV, cb
-    (self._anim):Play("uieff_UIActivityNewYearLuckBagController_out")
+    self._anim:Play("uieff_UIActivityNewYearLuckBagController_out")
     self:Lock("uieff_UIActivityNewYearLuckBagController_out")
     YIELD(TT, 267)
     self:UnLock("uieff_UIActivityNewYearLuckBagController_out")
@@ -198,22 +132,13 @@ UIActivityNewYearLuckBagController._Close = function(self, cb)
     if cb then
       cb()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController._HideUI = function(self)
-  -- function num : 0_13
-  (self._topComponentObj):SetActive(false)
+function UIActivityNewYearLuckBagController:_HideUI()
+  self._topComponentObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagController._ShowUI = function(self)
-  -- function num : 0_14
-  (self._topComponentObj):SetActive(true)
+function UIActivityNewYearLuckBagController:_ShowUI()
+  self._topComponentObj:SetActive(true)
 end
-
-

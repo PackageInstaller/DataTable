@@ -1,142 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/level/ui_summer_activity_two_level_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoLevelGroup", UICustomWidget)
 UISummerActivityTwoLevelGroup = UISummerActivityTwoLevelGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoLevelGroup.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISummerActivityTwoLevelGroup:OnShow()
   self._spawnObj = self:GetUIComponent("UISelectObjectPath", "spawnobj")
   self._timerLabel = self:GetUIComponent("UILocalizationText", "Timer")
   self._timerGo = self:GetGameObject("Timer")
   self._unLock = self:GetGameObject("UnLock")
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._timerHandler = nil
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelGroup.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoLevelGroup:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelGroup.Refresh = function(self, levelGroupData, index)
-  -- function num : 0_2 , upvalues : _ENV
+function UISummerActivityTwoLevelGroup:Refresh(levelGroupData, index)
   self:PlayAnim(index)
-  ;
-  (self._spawnObj):SpawnObjects("UISummerActivityTwoLevelItem", #levelGroupData)
-  self._levelIems = (self._spawnObj):GetAllSpawnList()
+  self._spawnObj:SpawnObjects("UISummerActivityTwoLevelItem", #levelGroupData)
+  self._levelIems = self._spawnObj:GetAllSpawnList()
   for i = 1, #levelGroupData do
-    ((self._levelIems)[i]):Refresh(levelGroupData[i])
+    self._levelIems[i]:Refresh(levelGroupData[i])
   end
   if #levelGroupData <= 0 then
-    (self._unLock):SetActive(false)
-    return 
+    self._unLock:SetActive(false)
+    return
   end
   self._levelGroupData = levelGroupData
   self._levelData = levelGroupData[1]
-  if (self._levelData):GetStatus() == UISummerActivityTwoLevelStatus.UnOpen then
-    (self._unLock):SetActive(true)
-    if (self._levelData):IsPreLevelCondition() then
-      (self._timerGo):SetActive(false)
+  if self._levelData:GetStatus() == UISummerActivityTwoLevelStatus.UnOpen then
+    self._unLock:SetActive(true)
+    if self._levelData:IsPreLevelCondition() then
+      self._timerGo:SetActive(false)
     else
-      ;
-      (self._timerGo):SetActive(true)
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._timerLabel).text = (StringTable.Get)("str_summer_activity_two_normal_level_unopen_tips", self:RefreshRemainTime())
-      self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(10, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._timerLabel).text = (StringTable.Get)("str_summer_activity_two_normal_level_unopen_tips", self:RefreshRemainTime())
-  end
-)
+      self._timerGo:SetActive(true)
+      self._timerLabel.text = StringTable.Get("str_summer_activity_two_normal_level_unopen_tips", self:RefreshRemainTime())
+      self._timerHandler = GameGlobal.Timer():AddEventTimes(10, TimerTriggerCount.Infinite, function()
+        self._timerLabel.text = StringTable.Get("str_summer_activity_two_normal_level_unopen_tips", self:RefreshRemainTime())
+      end)
     end
   else
-    ;
-    (self._unLock):SetActive(false)
+    self._unLock:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelGroup.PlayAnim = function(self, index)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayAnimCoro, self, index)
+function UISummerActivityTwoLevelGroup:PlayAnim(index)
+  GameGlobal.TaskManager():StartTask(self.PlayAnimCoro, self, index)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelGroup.PlayAnimCoro = function(self, TT, index)
-  -- function num : 0_4 , upvalues : _ENV
+function UISummerActivityTwoLevelGroup:PlayAnimCoro(TT, index)
   self:Lock("UISummerActivityTwoLevelGroup_PlayAnimCoro")
   YIELD(TT, index * 40)
-  ;
-  (self._anim):Play("uieff_Summer2_LevelGroup_In")
+  self._anim:Play("uieff_Summer2_LevelGroup_In")
   self:UnLock("UISummerActivityTwoLevelGroup_PlayAnimCoro")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelGroup.RefreshRemainTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)((self._levelData):GetTimes() - nowTime)
+function UISummerActivityTwoLevelGroup:RefreshRemainTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._levelData:GetTimes() - nowTime)
   if seconds < 0 then
     seconds = 0
-    ;
-    (self._unLock):SetActive(false)
-    ;
-    (self._levelData):CalStatus()
-    ;
-    ((self._levelIems)[1]):Refresh(self._levelData)
+    self._unLock:SetActive(false)
+    self._levelData:CalStatus()
+    self._levelIems[1]:Refresh(self._levelData)
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
-    return 
+    return
   end
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_summer_activity_two_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_summer_activity_two_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_summer_activity_two_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_summer_activity_two_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_summer_activity_two_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get("str_summer_activity_two_minus", minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_summer_activity_two_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)("str_summer_activity_two_minus", minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_summer_activity_two_less_minus")
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_summer_activity_two_less_minus")
   end
+  return timeStr
 end
-
-

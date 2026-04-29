@@ -1,62 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/dispatch/ui_n34_dispatch_complete.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34DispatchComplete", UIController)
 UIN34DispatchComplete = UIN34DispatchComplete
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34DispatchComplete.Constructor = function(self)
-  -- function num : 0_0
+function UIN34DispatchComplete:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN34DispatchComplete:LoadDataOnEnter(TT, res, uiParams)
   self._archId = uiParams[1]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN34DispatchComplete:OnShow(uiParams)
   self:UIWidget()
   self:CreateRewards()
   self:FlushRewards()
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.OnHide = function(self)
-  -- function num : 0_3
+function UIN34DispatchComplete:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_4
+function UIN34DispatchComplete:BtnAnywhereOnClick(go)
   self:OutAnimation(function()
-    -- function num : 0_4_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.OnShowItemInfo = function(self, reward, go)
-  -- function num : 0_5
-  local deltaPosition = (go.transform).position - ((self._safeArea).transform).position
+function UIN34DispatchComplete:OnShowItemInfo(reward, go)
+  local deltaPosition = go.transform.position - self._safeArea.transform.position
   self:ShowDialog("UICommonItemInfo", reward, deltaPosition)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.UIWidget = function(self)
-  -- function num : 0_6
+function UIN34DispatchComplete:UIWidget()
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._btnAnywhere = self:GetUIComponent("RectTransform", "btnAnywhere")
   self._rewardContent = self:GetUIComponent("UISelectObjectPath", "rewardContent")
@@ -64,125 +37,88 @@ UIN34DispatchComplete.UIWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.CreateRewards = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_dispatch_arch)[self._archId]
+function UIN34DispatchComplete:CreateRewards()
+  local cfg = Cfg.cfg_component_dispatch_arch[self._archId]
   self._rewards = {}
-  for k,v in pairs(cfg.Rewards) do
-    if #v >= 2 then
+  for k, v in pairs(cfg.Rewards) do
+    if 2 <= #v then
       local asset = RoleAsset:New()
       asset.assetid = v[1]
       asset.count = v[2]
-      ;
-      (table.insert)(self._rewards, asset)
+      table.insert(self._rewards, asset)
     end
   end
   local assetCount = #self._rewards
-  self._widgetRewards = (self._rewardContent):SpawnObjects("UIItem", assetCount)
+  self._widgetRewards = self._rewardContent:SpawnObjects("UIItem", assetCount)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.FlushRewards = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for k,v in pairs(self._rewards) do
-    local cfgItem = (Cfg.cfg_item)[v.assetid]
-    do
-      local data = {icon = cfgItem.Icon, quality = cfgItem.Color, text1 = tostring(v.count)}
-      local reward = v
-      local uiWidget = (self._widgetRewards)[k]
-      uiWidget:SetForm(UIItemForm.Base, UIItemScale.Level1)
-      uiWidget:SetData(data)
-      uiWidget:SetClickCallBack(function(go)
-    -- function num : 0_8_0 , upvalues : self, reward
-    self:OnShowItemInfo(reward, go)
-  end
-)
-    end
+function UIN34DispatchComplete:FlushRewards()
+  for k, v in pairs(self._rewards) do
+    local cfgItem = Cfg.cfg_item[v.assetid]
+    local data = {
+      icon = cfgItem.Icon,
+      quality = cfgItem.Color,
+      text1 = tostring(v.count)
+    }
+    local reward = v
+    local uiWidget = self._widgetRewards[k]
+    uiWidget:SetForm(UIItemForm.Base, UIItemScale.Level1)
+    uiWidget:SetData(data)
+    uiWidget:SetClickCallBack(function(go)
+      self:OnShowItemInfo(reward, go)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.InAnimation = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN34DispatchComplete:InAnimation()
   local lockName = "UIN34DispatchComplete:InAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN34DispatchComplete_in")
+    self._animation:Play("uieff_UIN34DispatchComplete_in")
     YIELD(TT, 400)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchComplete.OutAnimation = function(self, endCb)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN34DispatchComplete:OutAnimation(endCb)
   local lockName = "UIN34DispatchComplete:OutAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, lockName, _ENV, endCb
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN34DispatchComplete_out")
+    self._animation:Play("uieff_UIN34DispatchComplete_out")
     YIELD(TT, 167)
     if endCb ~= nil then
       endCb()
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
 _class("UIN34DispatchReward", UICustomWidget)
 UIN34DispatchReward = UIN34DispatchReward
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34DispatchReward.Constructor = function(self)
-  -- function num : 0_11
+function UIN34DispatchReward:Constructor()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchReward.OnShow = function(self)
-  -- function num : 0_12
+function UIN34DispatchReward:OnShow()
   self._iconLoader = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._iconImg = self:GetUIComponent("RawImage", "imgIcon")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchReward.OnHide = function(self)
-  -- function num : 0_13
+function UIN34DispatchReward:OnHide()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchReward.ButtonOnClick = function(self, go)
-  -- function num : 0_14
-  (self:RootUIOwner()):OnShowItemInfo(self._reward, go)
+function UIN34DispatchReward:ButtonOnClick(go)
+  self:RootUIOwner():OnShowItemInfo(self._reward, go)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34DispatchReward.SetData = function(self, data)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN34DispatchReward:SetData(data)
   self._reward = data
-  local cfgItem = (Cfg.cfg_item)[(self._reward).assetid]
+  local cfgItem = Cfg.cfg_item[self._reward.assetid]
   if cfgItem ~= nil then
-    (self._iconLoader):LoadImage(cfgItem.Icon)
+    self._iconLoader:LoadImage(cfgItem.Icon)
   end
-  ;
-  ((self._txtName).gameObject):SetActive(false)
-  ;
-  (self._txtCount):SetText((string.format)("X %d", (self._reward).count))
+  self._txtName.gameObject:SetActive(false)
+  self._txtCount:SetText(string.format("X %d", self._reward.count))
 end
-
-

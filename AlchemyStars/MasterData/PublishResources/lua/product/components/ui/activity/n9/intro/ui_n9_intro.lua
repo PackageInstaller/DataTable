@@ -1,84 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/intro/ui_n9_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9Intro", UIController)
 UIN9Intro = UIN9Intro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9Intro.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN9Intro:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UIN9Intro] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UIN9Intro] self._cfg is nil. param --> ", self._param)
   end
-  self.anim = (self:GetGameObject()):GetComponent("Animation")
+  self.anim = self:GetGameObject():GetComponent("Animation")
   self.Content = self:GetUIComponent("UILocalizationText", "Content")
   self._TitleText = self:GetUIComponent("UILocalizationText", "txtTitle")
   self:Flush()
   self:PlayAnim(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Intro.OnHide = function(self)
-  -- function num : 0_1
+function UIN9Intro:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Intro.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.Content):SetText((StringTable.Get)((self._cfg).Intro))
-  ;
-  (self._TitleText):SetText((StringTable.Get)((self._cfg).Title))
+function UIN9Intro:Flush()
+  self.Content:SetText(StringTable.Get(self._cfg.Intro))
+  self._TitleText:SetText(StringTable.Get(self._cfg.Title))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Intro.btnCloseOnClick = function(self, go)
-  -- function num : 0_3
+function UIN9Intro:btnCloseOnClick(go)
   self:PlayAnim(false, function()
-    -- function num : 0_3_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Intro.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIN9Intro:bgOnClick(go)
   self:PlayAnim(false, function()
-    -- function num : 0_4_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9Intro.PlayAnim = function(self, isIn, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN9Intro:PlayAnim(isIn, callback)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, isIn, _ENV, callback
     self:Lock("UIN9IntroPlayAnim")
     if isIn then
-      (self.anim):Play("uieff_Activity_UISummer1Intro_In")
+      self.anim:Play("uieff_Activity_UISummer1Intro_In")
       YIELD(TT, 500)
     else
-      ;
-      (self.anim):Play("uieff_Activity_UISummer1Intro_Out")
+      self.anim:Play("uieff_Activity_UISummer1Intro_Out")
       YIELD(TT, 500)
     end
     self:UnLock("UIN9IntroPlayAnim")
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
-
-

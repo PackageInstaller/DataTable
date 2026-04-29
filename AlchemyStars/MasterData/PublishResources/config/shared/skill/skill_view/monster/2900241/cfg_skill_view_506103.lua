@@ -1,35 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900241/cfg_skill_view_506103.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 37, 1, 0, 0, 
-{castEffectID = 748, castAnimation = "Disappear", castDuration = 600, stealthDuration = 750, appearEffectID = 743, appearAnimation = "Appear", appearDuration = 1300}
-}
-, 
-{2, 2, 0, 1, 1, 0, 
-{" Wait,waitTime=1350; PlayAudio,audioID = 5033,audioType=1; PlayCasterBindEffect,effectID=747; "}
-}
-, 
-{3, 3, 45, 1, 2, 0, 
-{prob = 100, 
-tipsList = {290024101}
-}
-}
-, 
-{4, 4, 0, 1, 2, 0, 
-{" PlayCasterBindEffect,effectID=834; "}
-}
-, 
-{5, 5, 0, 1, 2, 1000, 
-{" PlayCasterBindEffect,effectID=833; "}
-}
-, 
-{6, 6, 0, 1, 0, 0, 
-{"PlayCasterRenderState,renderState=1;"}
-}
+  {
+    1,
+    1,
+    37,
+    1,
+    0,
+    0,
+    {
+      castEffectID = 748,
+      castAnimation = "Disappear",
+      castDuration = 600,
+      stealthDuration = 750,
+      appearEffectID = 743,
+      appearAnimation = "Appear",
+      appearDuration = 1300
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    0,
+    {
+      " Wait,waitTime=1350; PlayAudio,audioID = 5033,audioType=1; PlayCasterBindEffect,effectID=747; "
+    }
+  },
+  {
+    3,
+    3,
+    45,
+    1,
+    2,
+    0,
+    {
+      prob = 100,
+      tipsList = {290024101}
+    }
+  },
+  {
+    4,
+    4,
+    0,
+    1,
+    2,
+    0,
+    {
+      " PlayCasterBindEffect,effectID=834; "
+    }
+  },
+  {
+    5,
+    5,
+    0,
+    1,
+    2,
+    1000,
+    {
+      " PlayCasterBindEffect,effectID=833; "
+    }
+  },
+  {
+    6,
+    6,
+    0,
+    1,
+    0,
+    0,
+    {
+      "PlayCasterRenderState,renderState=1;"
+    }
+  }
 }
 return config, "ID", key
-

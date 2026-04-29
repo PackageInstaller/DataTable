@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/main/shop/ui_activity_n20_shop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN20ShopItem", UICustomWidget)
 UIActivityN20ShopItem = UIActivityN20ShopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN20ShopItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN20ShopItem:OnShow()
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._reamainCountLabel = self:GetUIComponent("UILocalizationText", "ReamainCount")
@@ -19,83 +12,59 @@ UIActivityN20ShopItem.OnShow = function(self)
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20ShopItem.SetVisible = function(self, status)
-  -- function num : 0_1
-  (self._go):SetActive(status)
+function UIActivityN20ShopItem:SetVisible(status)
+  self._go:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20ShopItem.Refresh = function(self, itemInfo, comp, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN20ShopItem:Refresh(itemInfo, comp, callback)
   if itemInfo == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
-  ;
-  (self._empty):SetActive(false)
+  self._go:SetActive(true)
+  self._empty:SetActive(false)
   self._itemInfo = itemInfo
   self._callback = callback
-  if (self._itemInfo).m_exchange_limit_count == -1 then
-    (self._reamainCountLabel):SetText((StringTable.Get)("str_n20_item_unlimit_count"))
+  if self._itemInfo.m_exchange_limit_count == -1 then
+    self._reamainCountLabel:SetText(StringTable.Get("str_n20_item_unlimit_count"))
   else
-    ;
-    (self._reamainCountLabel):SetText((self._itemInfo).m_can_exchange_count)
-    if (self._itemInfo).m_can_exchange_count == 0 then
-      (self._empty):SetActive(true)
+    self._reamainCountLabel:SetText(self._itemInfo.m_can_exchange_count)
+    if self._itemInfo.m_can_exchange_count == 0 then
+      self._empty:SetActive(true)
     end
   end
-  ;
-  (self._costLabel):SetText((self._itemInfo).m_cost_count)
-  local itemId = ((self._itemInfo).m_reward).assetid
-  local count = ((self._itemInfo).m_reward).count
-  ;
-  (self._counttLabel):SetText("x" .. count)
-  local cfgItem = (Cfg.cfg_item)[itemId]
+  self._costLabel:SetText(self._itemInfo.m_cost_count)
+  local itemId = self._itemInfo.m_reward.assetid
+  local count = self._itemInfo.m_reward.count
+  self._counttLabel:SetText("x" .. count)
+  local cfgItem = Cfg.cfg_item[itemId]
   if not cfgItem then
-    return 
+    return
   end
-  ;
-  (self._nameLabel):SetText((StringTable.Get)(cfgItem.Name))
+  self._nameLabel:SetText(StringTable.Get(cfgItem.Name))
   local icon = ""
-  local specialIconCfg = (Cfg.cfg_activity_shop_special_item_icon_client)[itemId]
+  local specialIconCfg = Cfg.cfg_activity_shop_special_item_icon_client[itemId]
   if specialIconCfg then
     icon = specialIconCfg.SpecialIcon
   else
     icon = cfgItem.Icon
   end
-  ;
-  (self._iconLoader):LoadImage(icon)
+  self._iconLoader:LoadImage(icon)
   local icon1, realCount = comp:GetCostItemIconText()
-  ;
-  (self._costIconLoader):LoadImage(icon1)
-  -- DECOMPILER ERROR at PC102: Confused about usage of register: R11 in 'UnsetPending'
-
-  if (self._itemInfo).m_cost_count <= realCount then
-    (self._costLabel).color = Color(1, 1, 1, 1)
+  self._costIconLoader:LoadImage(icon1)
+  if realCount >= self._itemInfo.m_cost_count then
+    self._costLabel.color = Color(1, 1, 1, 1)
   else
-    -- DECOMPILER ERROR at PC111: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._costLabel).color = Color(1, 0, 0, 1)
+    self._costLabel.color = Color(1, 0, 0, 1)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20ShopItem.BGOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._itemInfo).m_exchange_limit_count ~= -1 and (self._itemInfo).m_can_exchange_count == 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n20_item_has_empty_tips"))
-    return 
+function UIActivityN20ShopItem:BGOnClick()
+  if self._itemInfo.m_exchange_limit_count ~= -1 and self._itemInfo.m_can_exchange_count == 0 then
+    ToastManager.ShowToast(StringTable.Get("str_n20_item_has_empty_tips"))
+    return
   end
   if self._callback then
-    (self._callback)(self._itemInfo)
+    self._callback(self._itemInfo)
   end
 end
-
-

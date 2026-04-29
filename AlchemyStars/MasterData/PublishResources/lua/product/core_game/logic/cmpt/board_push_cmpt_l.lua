@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/board_push_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BoardPushComponent", Object)
 BoardPushComponent = BoardPushComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BoardPushComponent.Constructor = function(self)
-  -- function num : 0_0
+function BoardPushComponent:Constructor()
   self._pieceCacheTab = {}
   self._posIndex2Pos = {}
   self._blockFlags = {}
@@ -19,137 +12,84 @@ BoardPushComponent.Constructor = function(self)
   self._pushedPieceCacheTab = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.SetPushIndex = function(self, index)
-  -- function num : 0_1
+function BoardPushComponent:SetPushIndex(index)
   self._pushIndex = index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.GetPushIndex = function(self)
-  -- function num : 0_2
+function BoardPushComponent:GetPushIndex()
   return self._pushIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.InitPieceTableData = function(self, pieceTable)
-  -- function num : 0_3 , upvalues : _ENV
-  for x,col in pairs(pieceTable) do
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._pieceCacheTab)[x] = {}
-    for y,grid in pairs(col) do
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R12 in 'UnsetPending'
-
-      ((self._pieceCacheTab)[x])[y] = grid.color
+function BoardPushComponent:InitPieceTableData(pieceTable)
+  for x, col in pairs(pieceTable) do
+    self._pieceCacheTab[x] = {}
+    for y, grid in pairs(col) do
+      self._pieceCacheTab[x][y] = grid.color
       self:AddGridEntityData(Vector2(x, y), grid.color)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.CloneBoardPosList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function BoardPushComponent:CloneBoardPosList()
   local pieceList = {}
-  for x,row in pairs(self._pieceCacheTab) do
-    for y,color in pairs(row) do
+  for x, row in pairs(self._pieceCacheTab) do
+    for y, color in pairs(row) do
       pieceList[#pieceList + 1] = Vector2(x, y)
     end
   end
   return pieceList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.GetPieceType = function(self, pos)
-  -- function num : 0_5 , upvalues : _ENV
+function BoardPushComponent:GetPieceType(pos)
   local x, y = pos.x, pos.y
-  if (self._pieceCacheTab)[x] and ((self._pieceCacheTab)[x])[y] then
-    return ((self._pieceCacheTab)[x])[y]
+  if self._pieceCacheTab[x] and self._pieceCacheTab[x][y] then
+    return self._pieceCacheTab[x][y]
   end
   return PieceType.None
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.SetPieceElement = function(self, pos, pieceType)
-  -- function num : 0_6 , upvalues : _ENV
-  local old = ((self._pieceCacheTab)[pos.x])[pos.y]
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._pieceCacheTab)[pos.x])[pos.y] = pieceType
-  self:PrintBoardCmptLog("SetPieceElement() pos=", (Vector2.Pos2Index)(pos), " from=", old, " to=", pieceType)
+function BoardPushComponent:SetPieceElement(pos, pieceType)
+  local old = self._pieceCacheTab[pos.x][pos.y]
+  self._pieceCacheTab[pos.x][pos.y] = pieceType
+  self:PrintBoardCmptLog("SetPieceElement() pos=", Vector2.Pos2Index(pos), " from=", old, " to=", pieceType)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.PrintBoardCmptLog = function(self, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._entity)._world and ((self._entity)._world):IsDevelopEnv() then
-    (Log.debug)(...)
+function BoardPushComponent:PrintBoardCmptLog(...)
+  if self._entity._world and self._entity._world:IsDevelopEnv() then
+    Log.debug(...)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.GetChangePosAndClear = function(self)
-  -- function num : 0_8
+function BoardPushComponent:GetChangePosAndClear()
   local chagePosArray = self.ChangePos
   self.ChangePos = {}
   return chagePosArray
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.GetGridEntityData = function(self)
-  -- function num : 0_9
+function BoardPushComponent:GetGridEntityData()
   return self._gridEntityTable
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardPushComponent.AddGridEntityData = function(self, pos, pieceType)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._gridEntityTable)[pos] = pieceType
+function BoardPushComponent:AddGridEntityData(pos, pieceType)
+  self._gridEntityTable[pos] = pieceType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BoardPush = function(self)
-  -- function num : 0_11
-  return self:GetComponent((self.WEComponentsEnum).BoardPush)
+function Entity:BoardPush()
+  return self:GetComponent(self.WEComponentsEnum.BoardPush)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBoardPush = function(self)
-  -- function num : 0_12
-  return self:HasComponent((self.WEComponentsEnum).BoardPush)
+function Entity:HasBoardPush()
+  return self:HasComponent(self.WEComponentsEnum.BoardPush)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceBoardPush = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BoardPush
+function Entity:ReplaceBoardPush()
+  local index = self.WEComponentsEnum.BoardPush
   local component = BoardPushComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBoardPush = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BoardPush
+function Entity:AddBoardPush()
+  local index = self.WEComponentsEnum.BoardPush
   local component = BoardPushComponent:New()
   self:AddComponent(index, component)
 end
-
-

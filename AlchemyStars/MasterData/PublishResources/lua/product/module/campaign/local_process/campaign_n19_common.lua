@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n19_common.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN19Common", ICampaignComponentLocalProcessBase)
 CCampaignN19Common = CCampaignN19Common
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN19Common.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN19Common:Constructor()
   self._hardLevelComponent = nil
   self._hardLevelCompInfo = nil
   self._fixTeamComponent = nil
@@ -18,67 +11,46 @@ CCampaignN19Common.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19Common.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN19Common:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N19_COMMON
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19Common.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN19Common:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19Common.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN19Common:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetHardLevelComponent()
   self:_GetFixTeamComponent()
   self:_GetPangolinComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19Common._GetHardLevelComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._hardLevelComponent = (self._campaignObj):GetComponent(ECampaignN19CommonComponentID.HARD_LEVEL)
+function CCampaignN19Common:_GetHardLevelComponent()
+  self._hardLevelComponent = self._campaignObj:GetComponent(ECampaignN19CommonComponentID.HARD_LEVEL)
   if not self._hardLevelComponent then
-    return 
+    return
   end
-  self._hardLevelCompInfo = (self._hardLevelComponent):ComponentInfo()
+  self._hardLevelCompInfo = self._hardLevelComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19Common._GetFixTeamComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._fixTeamComponent = (self._campaignObj):GetComponent(ECampaignN19CommonComponentID.COMMON_LEVEL)
+function CCampaignN19Common:_GetFixTeamComponent()
+  self._fixTeamComponent = self._campaignObj:GetComponent(ECampaignN19CommonComponentID.COMMON_LEVEL)
   if not self._fixTeamComponent then
-    return 
+    return
   end
-  self._fixTeamCompInfo = (self._fixTeamComponent):ComponentInfo()
+  self._fixTeamCompInfo = self._fixTeamComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19Common._GetPangolinComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._pangolinComponent = (self._campaignObj):GetComponent(ECampaignN19CommonComponentID.PANGOLIN)
+function CCampaignN19Common:_GetPangolinComponent()
+  self._pangolinComponent = self._campaignObj:GetComponent(ECampaignN19CommonComponentID.PANGOLIN)
   if not self._pangolinComponent then
-    return 
+    return
   end
-  self._pangolinCompInfo = (self._pangolinComponent):ComponentInfo()
+  self._pangolinCompInfo = self._pangolinComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19Common.GetComponent = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignN19Common:GetComponent(componentID)
   if ECampaignN19CommonComponentID.HARD_LEVEL == componentID then
     return self._hardLevelComponent
   end
@@ -91,10 +63,7 @@ CCampaignN19Common.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN19Common.GetComponentInfo = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignN19Common:GetComponentInfo(componentID)
   if ECampaignN19CommonComponentID.HARD_LEVEL == componentID then
     return self._hardLevelCompInfo
   end
@@ -106,5 +75,3 @@ CCampaignN19Common.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

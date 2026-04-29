@@ -1,98 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_passive_and_energy_cost.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local ChangeSkillFinalByPassiveAndEnergyCostMode = {Full = 1, CurrentRound = 2}
 _enum("ChangeSkillFinalByPassiveAndEnergyCostMode", ChangeSkillFinalByPassiveAndEnergyCostMode)
 _class("BuffLogicChangeSkillFinalByPassiveAndEnergyCost", BuffLogicBase)
 BuffLogicChangeSkillFinalByPassiveAndEnergyCost = BuffLogicChangeSkillFinalByPassiveAndEnergyCost
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByPassiveAndEnergyCost.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList_changeSkillFinalByPassiveAndEnergyCost = logicParam.effectList
+function BuffLogicChangeSkillFinalByPassiveAndEnergyCost:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList_changeSkillFinalByPassiveAndEnergyCost = logicParam.effectList
   self._range = logicParam.range
   self._val = logicParam.val
   self._maxVal = logicParam.maxVal
   self._mode = logicParam.mode
 end
 
-local getFinalCount = function(mode, round, active, passive)
-  -- function num : 0_1 , upvalues : ChangeSkillFinalByPassiveAndEnergyCostMode, _ENV
+local function getFinalCount(mode, round, active, passive)
   local activeCount = 0
   local passiveCount = 0
   if mode == ChangeSkillFinalByPassiveAndEnergyCostMode.Full then
-    for _,v in pairs(active) do
+    for _, v in pairs(active) do
       activeCount = activeCount + v
     end
-    for _,v in pairs(passive) do
+    for _, v in pairs(passive) do
       passiveCount = passiveCount + v
     end
   else
-    do
-      activeCount = active[round] or 0
-      passiveCount = passive[round] or 0
-      return (activeCount) + (passiveCount)
-    end
+    activeCount = active[round] or 0
+    passiveCount = passive[round] or 0
   end
+  return activeCount + passiveCount
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByPassiveAndEnergyCost.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV, getFinalCount
-  for _,paramType in ipairs((self._buffInstance)._effectList_changeSkillFinalByPassiveAndEnergyCost) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicChangeSkillFinalByPassiveAndEnergyCost:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList_changeSkillFinalByPassiveAndEnergyCost) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
   local cBuff = self:GetBuffComponent()
-  if not cBuff:GetBuffValue("ActiveSkillEnergyCostCountByRound") then
-    local activeSkillEnergyCostCount = {}
-  end
-  if not cBuff:GetBuffValue("PassiveSkillCostCountByRound") then
-    local passiveSkillCount = {}
-  end
-  local round = ((self._world):BattleStat()):GetLevelTotalRoundCount()
+  local activeSkillEnergyCostCount = cBuff:GetBuffValue("ActiveSkillEnergyCostCountByRound") or {}
+  local passiveSkillCount = cBuff:GetBuffValue("PassiveSkillCostCountByRound") or {}
+  local round = self._world:BattleStat():GetLevelTotalRoundCount()
   local count = getFinalCount(self._mode, round, activeSkillEnergyCostCount, passiveSkillCount)
   if count <= 0 then
-    return 
+    return
   end
   local changeValue = 0
-  if (self._range)[#self._range] < count then
+  if count > self._range[#self._range] then
     count = self._maxVal
   else
     for i = #self._range, 1, -1 do
-      local edge = (self._range)[i]
+      local edge = self._range[i]
       if count < edge then
-        changeValue = (self._val)[i]
+        changeValue = self._val[i]
       end
     end
   end
-  do
-    for _,paramType in ipairs((self._buffInstance)._effectList_changeSkillFinalByPassiveAndEnergyCost) do
-      (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
-    end
+  for _, paramType in ipairs(self._buffInstance._effectList_changeSkillFinalByPassiveAndEnergyCost) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByPassiveAndEnergyCost.DoOverlap = function(self)
-  -- function num : 0_3
+function BuffLogicChangeSkillFinalByPassiveAndEnergyCost:DoOverlap()
   self:DoLogic()
 end
 
 _class("BuffLogicRevertSkillFinalByPassiveAndEnergyCost", BuffLogicBase)
 BuffLogicRevertSkillFinalByPassiveAndEnergyCost = BuffLogicRevertSkillFinalByPassiveAndEnergyCost
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
 
-BuffLogicRevertSkillFinalByPassiveAndEnergyCost.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList_changeSkillFinalByPassiveAndEnergyCost) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRevertSkillFinalByPassiveAndEnergyCost:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList_changeSkillFinalByPassiveAndEnergyCost) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

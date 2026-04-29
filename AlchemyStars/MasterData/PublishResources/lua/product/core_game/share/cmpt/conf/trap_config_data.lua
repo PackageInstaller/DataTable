@@ -1,79 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/trap_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapConfigData", Object)
 TrapConfigData = TrapConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapConfigData.Constructor = function(self)
-  -- function num : 0_0
+function TrapConfigData:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTrapArea = function(self, trapID)
-  -- function num : 0_1 , upvalues : _ENV
-  local trapConfig = (Cfg.cfg_trap)[trapID]
+function TrapConfigData:GetTrapArea(trapID)
+  local trapConfig = Cfg.cfg_trap[trapID]
   local areaStrArray = trapConfig.Area
   return self:ExplainTrapArea(areaStrArray)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTrapData = function(self, trapID)
-  -- function num : 0_2 , upvalues : _ENV
-  local trapData = (Cfg.cfg_trap)[trapID]
+function TrapConfigData:GetTrapData(trapID)
+  local trapData = Cfg.cfg_trap[trapID]
   if trapData == nil then
-    (Log.error)("TrapConfigData:GetTrapConfigData error ", trapID)
+    Log.error("TrapConfigData:GetTrapConfigData error ", trapID)
   end
   return trapData
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTrapList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local listConfig = (Cfg.cfg_trap)()
+function TrapConfigData:GetTrapList()
+  local listConfig = Cfg.cfg_trap()
   local listReturn = {}
-  for key,value in pairs(listConfig) do
-    (table.insert)(listReturn, key)
+  for key, value in pairs(listConfig) do
+    table.insert(listReturn, key)
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTrapListByGroupID = function(self, nGroupID)
-  -- function num : 0_4 , upvalues : _ENV
-  local listConfig = (Cfg.cfg_trap)()
+function TrapConfigData:GetTrapListByGroupID(nGroupID)
+  local listConfig = Cfg.cfg_trap()
   local listReturn = {}
-  for key,value in pairs(listConfig) do
+  for key, value in pairs(listConfig) do
     if nGroupID == value.GroupID then
-      (table.insert)(listReturn, value)
+      table.insert(listReturn, value)
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTrapResPath = function(self, trapID)
-  -- function num : 0_5
+function TrapConfigData:GetTrapResPath(trapID)
   local trapData = self:GetTrapData(trapID)
-  if trapData == nil then
-    return 
+  if nil == trapData then
+    return
   end
   return trapData.ResPath
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTrapAISkillIDs = function(self, trapID)
-  -- function num : 0_6 , upvalues : _ENV
+function TrapConfigData:GetTrapAISkillIDs(trapID)
   local trapData = self:GetTrapData(trapID)
-  if trapData == nil then
+  if nil == trapData then
     return {}
   end
   local tidSkill = {}
@@ -81,53 +56,42 @@ TrapConfigData.GetTrapAISkillIDs = function(self, trapID)
   if not tAI or #tAI == 0 then
     return {}
   end
-  for _,id in ipairs(tAI) do
-    if (Cfg.cfg_ai)[id] then
-      local cfgAIData = (Cfg.cfg_ai)[id]
-      ;
-      (table.appendArray)(tidSkill, cfgAIData.SkillList)
+  for _, id in ipairs(tAI) do
+    if Cfg.cfg_ai[id] then
+      local cfgAIData = Cfg.cfg_ai[id]
+      table.appendArray(tidSkill, cfgAIData.SkillList)
     end
   end
   return tidSkill
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.ExplainTrapArea = function(self, stArea)
-  -- function num : 0_7 , upvalues : _ENV
+function TrapConfigData:ExplainTrapArea(stArea)
   local areaPosArray = {}
   local areaStrArray = stArea
   if #areaStrArray == 1 then
     local posStr = areaStrArray[1]
-    local numStr = (string.split)(posStr, ",")
+    local numStr = string.split(posStr, ",")
     local vec2 = Vector2(tonumber(numStr[1]), tonumber(numStr[2]))
     areaPosArray[#areaPosArray + 1] = vec2
   else
-    do
-      for index = 1, #areaStrArray do
-        local posStr = areaStrArray[index]
-        local numStr = (string.split)(posStr, ",")
-        local vec2 = Vector2(tonumber(numStr[1]), tonumber(numStr[2]))
-        areaPosArray[#areaPosArray + 1] = vec2
-      end
-      do
-        return areaPosArray
-      end
+    for index = 1, #areaStrArray do
+      local posStr = areaStrArray[index]
+      local numStr = string.split(posStr, ",")
+      local vec2 = Vector2(tonumber(numStr[1]), tonumber(numStr[2]))
+      areaPosArray[#areaPosArray + 1] = vec2
     end
   end
+  return areaPosArray
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetSkillIDs = function(self, trapID)
-  -- function num : 0_8 , upvalues : _ENV
+function TrapConfigData:GetSkillIDs(trapID)
   local trapData = self:GetTrapData(trapID)
-  if trapData == nil then
-    return 
+  if nil == trapData then
+    return
   end
   local trapDataSkillID = trapData.SkillID
   if not trapDataSkillID then
-    return 
+    return
   end
   local result = {}
   self:GetSkillID(trapDataSkillID, result, "Trigger")
@@ -142,95 +106,68 @@ TrapConfigData.GetSkillIDs = function(self, trapID)
   self:GetSkillID(trapDataSkillID, result, "Warning")
   self:GetSkillID(trapDataSkillID, result, "Move")
   if trapData.TriggerByRace then
-    for _,t in ipairs(trapData.TriggerByRace) do
-      (table.insert)(result, t.SkillID)
+    for _, t in ipairs(trapData.TriggerByRace) do
+      table.insert(result, t.SkillID)
     end
   end
-  do
-    return result
-  end
+  return result
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetSkillID = function(self, trapDataSkillID, result, name)
-  -- function num : 0_9 , upvalues : _ENV
+function TrapConfigData:GetSkillID(trapDataSkillID, result, name)
   local skillID = trapDataSkillID[name]
   if skillID then
     if type(skillID) == "table" then
-      (table.appendArray)(result, skillID)
+      table.appendArray(result, skillID)
     else
-      ;
-      (table.insert)(result, skillID)
+      table.insert(result, skillID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTrapShaderEffect = function(self, trapID)
-  -- function num : 0_10
+function TrapConfigData:GetTrapShaderEffect(trapID)
   local trapData = self:GetTrapData(trapID)
-  if trapData == nil then
-    return 
+  if nil == trapData then
+    return
   end
   return trapData.ShaderEffect
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTrapInnerDesc = function(self, trapID)
-  -- function num : 0_11
+function TrapConfigData:GetTrapInnerDesc(trapID)
   local trapData = self:GetTrapData(trapID)
-  if trapData == nil then
+  if nil == trapData then
     return nil
   end
   return trapData.InnerDesc
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTrapName = function(self, trapID)
-  -- function num : 0_12
+function TrapConfigData:GetTrapName(trapID)
   local trapData = self:GetTrapData(trapID)
-  if trapData == nil then
+  if nil == trapData then
     return nil
   end
   return trapData.NameStr
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.IsShowDescTips = function(self, trapID)
-  -- function num : 0_13
+function TrapConfigData:IsShowDescTips(trapID)
   local trapData = self:GetTrapData(trapID)
-  if trapData == nil then
+  if nil == trapData then
     return nil
   end
-  do return trapData.ShowDescTips == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return trapData.ShowDescTips == 1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetStoryTipsOffset = function(self, trapID)
-  -- function num : 0_14
+function TrapConfigData:GetStoryTipsOffset(trapID)
   local trapData = self:GetTrapData(trapID)
-  if trapData == nil then
+  if nil == trapData then
     return nil
   end
   return trapData.TipsOffset
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapConfigData.GetTransferTrapIDs = function(self, trapID)
-  -- function num : 0_15
+function TrapConfigData:GetTransferTrapIDs(trapID)
   local trapData = self:GetTrapData(trapID)
-  if trapData == nil then
+  if nil == trapData then
     return nil
   end
   return trapData.TransferTrapIDs
 end
-
-

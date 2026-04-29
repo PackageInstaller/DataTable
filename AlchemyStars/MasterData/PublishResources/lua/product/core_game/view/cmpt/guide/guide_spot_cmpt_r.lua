@@ -1,66 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/guide/guide_spot_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideSpotComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideSpotComponent.Constructor = function(self)
-  -- function num : 0_0
+function GuideSpotComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideSpotComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function GuideSpotComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideSpotComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function GuideSpotComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GuideSpot = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).GuideSpot)
+function Entity:GuideSpot()
+  return self:GetComponent(self.WEComponentsEnum.GuideSpot)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGuideSpot = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).GuideSpot)
+function Entity:HasGuideSpot()
+  return self:HasComponent(self.WEComponentsEnum.GuideSpot)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGuideSpot = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuideSpot
+function Entity:AddGuideSpot()
+  local index = self.WEComponentsEnum.GuideSpot
   local component = GuideSpotComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGuideSpot = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuideSpot
+function Entity:ReplaceGuideSpot()
+  local index = self.WEComponentsEnum.GuideSpot
   local component = GuideSpotComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGuideSpot = function(self)
-  -- function num : 0_7
+function Entity:RemoveGuideSpot()
   if self:HasGuideSpot() then
-    self:RemoveComponent((self.WEComponentsEnum).GuideSpot)
+    self:RemoveComponent(self.WEComponentsEnum.GuideSpot)
   end
 end
-
-

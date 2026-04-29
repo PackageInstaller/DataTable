@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cancel_chain_skill_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("entity_commands")
 _class("CancelChainSkillCommand", IEntityCommand)
 CancelChainSkillCommand = CancelChainSkillCommand
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CancelChainSkillCommand.Constructor = function(self)
-  -- function num : 0_0
+function CancelChainSkillCommand:Constructor()
   self._commandType = "CancelChainSkill"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CancelChainSkillCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function CancelChainSkillCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CancelChainSkillCommand.GetExecStateID = function(self)
-  -- function num : 0_2
+function CancelChainSkillCommand:GetExecStateID()
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CancelChainSkillCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CancelChainSkillCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CancelChainSkillCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CancelChainSkillCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CancelChainSkillCommand.ToNetMessage = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CancelChainSkillCommand:ToNetMessage()
   local msg = CEventCancelChainSkillCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -54,15 +32,10 @@ CancelChainSkillCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CancelChainSkillCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_6
+function CancelChainSkillCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
   self.CmdIndex = msg.CmdIndex
   self.IsAutoFight = msg.IsAutoFight
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/world_boss/ui_season_maze_world_boss_select_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeWorldBossSelectPopUp", UIController)
 UISeasonMazeWorldBossSelectPopUp = UISeasonMazeWorldBossSelectPopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeWorldBossSelectPopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeWorldBossSelectPopUp:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossSelectPopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMazeWorldBossSelectPopUp:OnShow(uiParams)
   local fromBattle = uiParams[1]
   self:InitWidget()
   self:InitUI()
@@ -24,81 +14,52 @@ UISeasonMazeWorldBossSelectPopUp.OnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossSelectPopUp.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeWorldBossSelectPopUp:InitWidget()
   self._anim = self:GetGameObject("_anim")
-  self.backBtns = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+  self.backBtns = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossSelectPopUp.InitUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeWorldBossSelectPopUp:InitUI()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._sample = (self._seasonMazeModule):GetCurSample()
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._component = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self._componentInfo = (self._component):GetComponentInfo()
-  self._progressComponent = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.TOTAL_PROCESS)
-  self._endTime = (self._sample).end_time
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._sample = self._seasonMazeModule:GetCurSample()
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._component = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._componentInfo = self._component:GetComponentInfo()
+  self._progressComponent = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.TOTAL_PROCESS)
+  self._endTime = self._sample.end_time
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossSelectPopUp.CheckSeasonMazeClosed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+function UISeasonMazeWorldBossSelectPopUp:CheckSeasonMazeClosed()
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
   local endTime = self._endTime
-  if endTime < curTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_state_over"))
+  if curTime > endTime then
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_state_over"))
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossSelectPopUp.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UISeasonMazeWorldBossSelectPopUp:BgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossSelectPopUp.ResultBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  do
-    if self:CheckSeasonMazeClosed() then
-      local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-      ;
-      (seasonMazeModule:UIModule()):ExitTo(UIStateType.UIMain)
-      return 
-    end
-    ;
-    (PopupManager.Alert)("UISeasonMazeMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, (StringTable.Get)("str_collect_card_pop_title"), (StringTable.Get)("str_season_maze_world_boss_end_select_tips"), function(param)
-    -- function num : 0_6_0 , upvalues : self
+function UISeasonMazeWorldBossSelectPopUp:ResultBtnOnClick(go)
+  if self:CheckSeasonMazeClosed() then
+    local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+    seasonMazeModule:UIModule():ExitTo(UIStateType.UIMain)
+    return
+  end
+  PopupManager.Alert("UISeasonMazeMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, StringTable.Get("str_collect_card_pop_title"), StringTable.Get("str_season_maze_world_boss_end_select_tips"), function(param)
     self:ShowDialog("UISeasonMazeCompleteResult")
-  end
-, nil, nil, nil)
-  end
+  end, nil, nil, nil)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossSelectPopUp.BattleBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  do
-    if self:CheckSeasonMazeClosed() then
-      local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-      ;
-      (seasonMazeModule:UIModule()):ExitTo(UIStateType.UIMain)
-      return 
-    end
-    self:ShowDialog("UISeasonMazeWorldBossDetailPopUp", false)
+function UISeasonMazeWorldBossSelectPopUp:BattleBtnOnClick(go)
+  if self:CheckSeasonMazeClosed() then
+    local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+    seasonMazeModule:UIModule():ExitTo(UIStateType.UIMain)
+    return
   end
+  self:ShowDialog("UISeasonMazeWorldBossDetailPopUp", false)
 end
-
-

@@ -1,303 +1,193 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/data/ui_haute_couture_data_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDataBase", Object)
 UIHauteCoutureDataBase = UIHauteCoutureDataBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDataBase.Constructor = function(self, campaignID)
-  -- function num : 0_0
+function UIHauteCoutureDataBase:Constructor(campaignID)
   self._id = campaignID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.CostItemID = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.exception)("CostItemID()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:CostItemID()
+  Log.exception("CostItemID()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.ShopGoodsOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.exception)("ShopGoodsOnClick()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:ShopGoodsOnClick()
+  Log.exception("ShopGoodsOnClick()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.BuyItem = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.exception)("BuyItem()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:BuyItem()
+  Log.exception("BuyItem()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.IsReview = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.exception)("IsReview()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:IsReview()
+  Log.exception("IsReview()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetSkinId = function(self)
-  -- function num : 0_5
+function UIHauteCoutureDataBase:GetSkinId()
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.HC_Type = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.exception)("HC_Type()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:HC_Type()
+  Log.exception("HC_Type()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetMainUIInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.exception)("GetMainUIInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetMainUIInfo()
+  Log.exception("GetMainUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetMainUIBgInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.exception)("GetMainUIInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetMainUIBgInfo()
+  Log.exception("GetMainUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetGetItemUIInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.exception)("GetGetItemUIInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetGetItemUIInfo()
+  Log.exception("GetGetItemUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetChargeUIInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.exception)("GetChargeUIInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetChargeUIInfo()
+  Log.exception("GetChargeUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetChargeUIBgInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.exception)("GetChargeUIBgInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetChargeUIBgInfo()
+  Log.exception("GetChargeUIBgInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetRulesUIInfo = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (Log.exception)("GetRulesUIInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetRulesUIInfo()
+  Log.exception("GetRulesUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetRulesUIBgInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (Log.exception)("GetRulesUIBgInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetRulesUIBgInfo()
+  Log.exception("GetRulesUIBgInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetVideoUIInfo = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.exception)("GetVideoUIInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetVideoUIInfo()
+  Log.exception("GetVideoUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetDynamicProbablityUIInfo = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  (Log.exception)("GetDynamicProbablityUIInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetDynamicProbablityUIInfo()
+  Log.exception("GetDynamicProbablityUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetDynamicProbablityUIBgInfo = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (Log.exception)("GetDynamicProbablityUIBgInfo()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:GetDynamicProbablityUIBgInfo()
+  Log.exception("GetDynamicProbablityUIBgInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.SideEnterText = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  (Log.exception)("SideEnterText()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureDataBase:SideEnterText()
+  Log.exception("SideEnterText()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.Review_DuplicateRewardBgInfo = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHauteCoutureDataBase:Review_DuplicateRewardBgInfo()
   if not self:IsReview() then
-    (Log.exception)("非复刻的活动不可调用Review_DuplicateRewardBgInfo()方法:", (debug.traceback)())
-    return 
+    Log.exception("非复刻的活动不可调用Review_DuplicateRewardBgInfo()方法:", debug.traceback())
+    return
   end
-  ;
-  (Log.exception)("Review_DuplicateRewardBgInfo()方法必须重写：", (debug.traceback)())
+  Log.exception("Review_DuplicateRewardBgInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.Review_DuplicateRewardUIInfo = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIHauteCoutureDataBase:Review_DuplicateRewardUIInfo()
   if not self:IsReview() then
-    (Log.exception)("非复刻的活动不可调用Review_DuplicateRewardUIInfo()方法:", (debug.traceback)())
-    return 
+    Log.exception("非复刻的活动不可调用Review_DuplicateRewardUIInfo()方法:", debug.traceback())
+    return
   end
-  ;
-  (Log.exception)("Review_DuplicateRewardUIInfo()方法必须重写：", (debug.traceback)())
+  Log.exception("Review_DuplicateRewardUIInfo()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.ReqDetailInfo = function(self, TT, res)
-  -- function num : 0_20 , upvalues : _ENV
+function UIHauteCoutureDataBase:ReqDetailInfo(TT, res)
   if not res then
     res = AsyncRequestRes:New()
     res:SetSucc(false)
   end
-  local module = ((GameGlobal.GetModule)(CampaignModule))
-  -- DECOMPILER ERROR at PC13: Overwrote pending register: R4 in 'AssignReg'
-
-  local campType, cmpIDs = .end, nil
+  local module = GameGlobal.GetModule(CampaignModule)
+  local campType, cmpIDs
   if self:IsReview() then
     campType = ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN_COPY
   else
     campType = ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN
   end
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, campType)
+  self._campaign:LoadCampaignInfo(TT, res, campType)
   if res and not res:GetSucc() then
-    module:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    module:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     return nil
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
-    module:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    module:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     return nil
   end
   self._buyGiftCmp = nil
   self._seniorSkinCmp = nil
   if self:IsReview() then
-    self._buyGiftCmp = (self._campaign):GetComponentByType(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_BUY_GIFT)
+    self._buyGiftCmp = self._campaign:GetComponentByType(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_BUY_GIFT)
   else
-    self._buyGiftCmp = (self._campaign):GetComponentByType(ECampaignSeniorSkinComponentID.ECAMPAIGN_BUY_GIFT)
+    self._buyGiftCmp = self._campaign:GetComponentByType(ECampaignSeniorSkinComponentID.ECAMPAIGN_BUY_GIFT)
   end
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.MinDrawCount = function(self)
-  -- function num : 0_21
+function UIHauteCoutureDataBase:MinDrawCount()
   return 5
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.CampaignID = function(self)
-  -- function num : 0_22
+function UIHauteCoutureDataBase:CampaignID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetBgm = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIHauteCoutureDataBase:GetBgm()
   return CriAudioIDConst.BGSeniorSkin
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.SpecailAwardIdx = function(self)
-  -- function num : 0_24
+function UIHauteCoutureDataBase:SpecailAwardIdx()
   return 10
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetBuyGiftCmp = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIHauteCoutureDataBase:GetBuyGiftCmp()
   if not self._campaign then
-    (Log.exception)("必须先调用ReqDetailInfo()请求详细数据，才能调用GetBuyGiftCmp()。", (debug.traceback)())
+    Log.exception("必须先调用ReqDetailInfo()请求详细数据，才能调用GetBuyGiftCmp()。", debug.traceback())
     return nil
   end
   if self:IsReview() then
-    return (self._campaign):GetComponent(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_BUY_GIFT)
+    return self._campaign:GetComponent(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_BUY_GIFT)
   else
-    return (self._campaign):GetComponent(ECampaignSeniorSkinComponentID.ECAMPAIGN_BUY_GIFT)
+    return self._campaign:GetComponent(ECampaignSeniorSkinComponentID.ECAMPAIGN_BUY_GIFT)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetSeniorSkinCmp = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIHauteCoutureDataBase:GetSeniorSkinCmp()
   if not self._campaign then
-    (Log.exception)("必须先调用ReqDetailInfo()请求详细数据，才能调用GetSeniorSkinCmp()。", (debug.traceback)())
+    Log.exception("必须先调用ReqDetailInfo()请求详细数据，才能调用GetSeniorSkinCmp()。", debug.traceback())
     return nil
   end
   if self:IsReview() then
-    return (self._campaign):GetComponent(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_SENIOR_SKIN)
+    return self._campaign:GetComponent(ECampaignSeniorSkinCopyComponentID.ECAMPAIGN_COPY_SENIOR_SKIN)
   else
-    return (self._campaign):GetComponent(ECampaignSeniorSkinComponentID.ECAMPAIGN_SENIOR_SKIN)
+    return self._campaign:GetComponent(ECampaignSeniorSkinComponentID.ECAMPAIGN_SENIOR_SKIN)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetPrizeCfgs = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  do
-    if not self._cfg_prizes then
-      local cmpID = (self:GetSeniorSkinCmp()):GetComponentCfgId()
-      self._cfg_prizes = (Cfg.cfg_component_senior_skin_weight)({ComponentID = cmpID})
-      if not self._cfg_prizes or not next(self._cfg_prizes) then
-        (Log.exception)("[HauteCouture] cfg_component_senior_skin_weight中缺少配置:", cmpID)
-      end
-      ;
-      (table.sort)(self._cfg_prizes, function(a, b)
-    -- function num : 0_27_0
-    do return b.RewardSortOrder < a.RewardSortOrder end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UIHauteCoutureDataBase:GetPrizeCfgs()
+  if not self._cfg_prizes then
+    local cmpID = self:GetSeniorSkinCmp():GetComponentCfgId()
+    self._cfg_prizes = Cfg.cfg_component_senior_skin_weight({ComponentID = cmpID})
+    if not self._cfg_prizes or not next(self._cfg_prizes) then
+      Log.exception("[HauteCouture] cfg_component_senior_skin_weight中缺少配置:", cmpID)
     end
-    return self._cfg_prizes
+    table.sort(self._cfg_prizes, function(a, b)
+      return a.RewardSortOrder > b.RewardSortOrder
+    end)
   end
+  return self._cfg_prizes
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetUICampaign = function(self)
-  -- function num : 0_28
+function UIHauteCoutureDataBase:GetUICampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDataBase.GetSeniorSkinCfg = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIHauteCoutureDataBase:GetSeniorSkinCfg()
   if not self._cfg_senior_skin then
-    local cmpID = (self:GetSeniorSkinCmp()):GetComponentCfgId()
-    local cfgs = (Cfg.cfg_senior_skin_draw)({ComponentId = cmpID})
+    local cmpID = self:GetSeniorSkinCmp():GetComponentCfgId()
+    local cfgs = Cfg.cfg_senior_skin_draw({ComponentId = cmpID})
     if not cfgs or not next(cfgs) then
-      (Log.exception)("[HauteCouture] cfg_senior_skin_draw中缺少配置:", cmpID)
+      Log.exception("[HauteCouture] cfg_senior_skin_draw中缺少配置:", cmpID)
     end
     self._cfg_senior_skin = cfgs[1]
   end
-  do
-    return self._cfg_senior_skin
-  end
+  return self._cfg_senior_skin
 end
-
-

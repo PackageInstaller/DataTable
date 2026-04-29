@@ -1,87 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/nav/season_nav_trans_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonNavTransPoint", Object)
 SeasonNavTransPoint = SeasonNavTransPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonNavTransPoint.Constructor = function(self, id, baseEventPoint)
-  -- function num : 0_0
+function SeasonNavTransPoint:Constructor(id, baseEventPoint)
   self._zoneID = id
   self._baseEventPoint = baseEventPoint
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavTransPoint.PlayTransAni = function(self)
-  -- function num : 0_1
+function SeasonNavTransPoint:PlayTransAni()
   if self._baseEventPoint then
-    (self._baseEventPoint):PlayAnimationSeq("effanim_S4_pfb_chuansongzhu_release", "effanim_S4_pfb_chuansongzhu_idle")
+    self._baseEventPoint:PlayAnimationSeq("effanim_S4_pfb_chuansongzhu_release", "effanim_S4_pfb_chuansongzhu_idle")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavTransPoint.GetZoneID = function(self)
-  -- function num : 0_2
+function SeasonNavTransPoint:GetZoneID()
   return self._zoneID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavTransPoint.GetPosition = function(self)
-  -- function num : 0_3
+function SeasonNavTransPoint:GetPosition()
   if not self._showPos then
-    self._showPos = (self._baseEventPoint):Position()
+    self._showPos = self._baseEventPoint:Position()
   end
   return self._showPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavTransPoint.GetNavPosition = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonNavTransPoint:GetNavPosition()
   if not self._navPos then
-    (self:GetPosition())
-    local showPos = nil
-    local offset = nil
-    local cfg = (self._baseEventPoint):GetEventPointCfg()
+    local showPos = self:GetPosition()
+    local offset
+    local cfg = self._baseEventPoint:GetEventPointCfg()
     if cfg then
       offset = cfg.TransportPointSkew
     end
-    self._navPos = (SeasonNavTransPoint.CalcNavPosition)(showPos, offset)
+    self._navPos = SeasonNavTransPoint.CalcNavPosition(showPos, offset)
   end
-  do
-    return self._navPos
-  end
+  return self._navPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavTransPoint.CalcNavPosition = function(position, offset)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonNavTransPoint.CalcNavPosition(position, offset)
   if not offset then
     return position
   end
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
   if not SeasonNavTransPoint._dirCfg then
-    SeasonNavTransPoint._dirCfg = {[1] = Vector3(0, 0, -1), [2] = Vector3(-1, 0, 0), [3] = Vector3(0, 0, 1), [4] = Vector3(1, 0, 0)}
+    SeasonNavTransPoint._dirCfg = {
+      [1] = Vector3(0, 0, -1),
+      [2] = Vector3(-1, 0, 0),
+      [3] = Vector3(0, 0, 1),
+      [4] = Vector3(1, 0, 0)
+    }
   end
-  local dir = (SeasonNavTransPoint._dirCfg)[offset]
+  local dir = SeasonNavTransPoint._dirCfg[offset]
   if dir then
     return position + dir * 0.5
   end
   return position
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonNavTransPoint.IsUnLock = function(self)
-  -- function num : 0_6
-  return (self._baseEventPoint):IsUnlock()
+function SeasonNavTransPoint:IsUnLock()
+  return self._baseEventPoint:IsUnlock()
 end
-
-

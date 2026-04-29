@@ -1,209 +1,136 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/collect_card_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("CollectCardComponent", ICampaignComponent)
 CollectCardComponent = CollectCardComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CollectCardComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CollectCardComponent:Constructor()
   self.m_component_info = CollectCardComponentInfo:New()
   self.m_receive_card_info = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CollectCardComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = CollectCardComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function CollectCardComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CollectCardComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COLLECT_CARD
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function CollectCardComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   if ret then
-    self.m_receive_card_info = (self.m_component_info).receive_cards
+    self.m_receive_card_info = self.m_component_info.receive_cards
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.HandleTakeRewardReq = function(self, TT, asyncRes, reward_id)
-  -- function num : 0_5 , upvalues : _ENV
+function CollectCardComponent:HandleTakeRewardReq(TT, asyncRes, reward_id)
   local request = TakeCollectCardRewardReq:New()
   request.reward_id = reward_id
   local response = TakeCollectCardRewardRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS == asyncRes.m_result then
-    (table.insert)((self.m_component_info).received_rewards, reward_id)
+    table.insert(self.m_component_info.received_rewards, reward_id)
   else
-    ;
-    (Log.error)("[CampaignCom][CollectCardComponent] HandleTakeRewardReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CollectCardComponent] HandleTakeRewardReq ret:", asyncRes.m_result)
     asyncRes:SetSucc(false)
     return asyncRes, nil
   end
   return asyncRes, response.rewards
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.HandleDropCardReq = function(self, TT, asyncRes, item1, item2)
-  -- function num : 0_6 , upvalues : _ENV
+function CollectCardComponent:HandleDropCardReq(TT, asyncRes, item1, item2)
   local request = DropCardsReq:New()
   request.item1 = item1
   request.item2 = item2
   local response = DropCardsRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS == asyncRes.m_result then
-    for key,value in pairs(response.add_cards) do
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R13 in 'UnsetPending'
-
-      if ((self.m_component_info).card)[key] then
-        ((self.m_component_info).card)[key] = ((self.m_component_info).card)[key] + value
+    for key, value in pairs(response.add_cards) do
+      if self.m_component_info.card[key] then
+        self.m_component_info.card[key] = self.m_component_info.card[key] + value
       else
-        -- DECOMPILER ERROR at PC43: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        ((self.m_component_info).card)[key] = value
+        self.m_component_info.card[key] = value
       end
     end
   else
-    do
-      ;
-      (Log.error)("[CampaignCom][CollectCardComponent] HandleDropCardReq ret:", asyncRes.m_result)
-      asyncRes:SetSucc(false)
-      do return asyncRes, nil end
-      return asyncRes, response.add_cards
-    end
+    Log.error("[CampaignCom][CollectCardComponent] HandleDropCardReq ret:", asyncRes.m_result)
+    asyncRes:SetSucc(false)
+    return asyncRes, nil
   end
+  return asyncRes, response.add_cards
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.HandleSendCardReq = function(self, TT, asyncRes, pstid, card_id)
-  -- function num : 0_7 , upvalues : _ENV
+function CollectCardComponent:HandleSendCardReq(TT, asyncRes, pstid, card_id)
   local request = SendCardReq:New()
   request.pstid = pstid
   request.card_id = card_id
   local response = SendCardRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R8 in 'UnsetPending'
-
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS == asyncRes.m_result then
-    ((self.m_component_info).card)[card_id] = ((self.m_component_info).card)[card_id] - 1
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.m_component_info).send_card_info = response.send_card_info
+    self.m_component_info.card[card_id] = self.m_component_info.card[card_id] - 1
+    self.m_component_info.send_card_info = response.send_card_info
   else
-    ;
-    (Log.error)("[CampaignCom][CollectCardComponent] HandleDropCardReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CollectCardComponent] HandleDropCardReq ret:", asyncRes.m_result)
     asyncRes:SetSucc(false)
     return asyncRes, nil
   end
   return asyncRes
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.HandleClearSendCardInfoReq = function(self, TT, asyncRes)
-  -- function num : 0_8 , upvalues : _ENV
+function CollectCardComponent:HandleClearSendCardInfoReq(TT, asyncRes)
   local request = ClearSendCardInfoReq:New()
   local response = ClearSendCardInfoRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R6 in 'UnsetPending'
-
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS == asyncRes.m_result then
-    (self.m_component_info).receive_cards = {}
+    self.m_component_info.receive_cards = {}
   else
-    ;
-    (Log.error)("[CampaignCom][CollectCardComponent] HandleClearSendCardInfoReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CollectCardComponent] HandleClearSendCardInfoReq ret:", asyncRes.m_result)
     asyncRes:SetSucc(false)
     return asyncRes
   end
   return asyncRes
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_9 , upvalues : _ENV
+function CollectCardComponent:CampaignComponentPushNotify(notify_data)
   if CollectCardComponentNotifyType.CollectCardComponentNotifyType_InfoChanged == notify_data.m_notify_type then
     local ev = NotifyCollectCardComponentInfoChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnUpdateBaseInfo(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][CollectCardComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][CollectCardComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.OnUpdateBaseInfo = function(self, ev)
-  -- function num : 0_10 , upvalues : _ENV
-  for key,value in pairs(ev.add_cards) do
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R7 in 'UnsetPending'
-
-    if ((self.m_component_info).card)[key] then
-      ((self.m_component_info).card)[key] = ((self.m_component_info).card)[key] + value
+function CollectCardComponent:OnUpdateBaseInfo(ev)
+  for key, value in pairs(ev.add_cards) do
+    if self.m_component_info.card[key] then
+      self.m_component_info.card[key] = self.m_component_info.card[key] + value
     else
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      ((self.m_component_info).card)[key] = value
+      self.m_component_info.card[key] = value
     end
   end
-  for key,value in pairs(ev.infos) do
-    (table.insert)(self.m_receive_card_info, value)
+  for key, value in pairs(ev.infos) do
+    table.insert(self.m_receive_card_info, value)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.GetReceiveCardsInfo = function(self)
-  -- function num : 0_11
+function CollectCardComponent:GetReceiveCardsInfo()
   return self.m_receive_card_info
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CollectCardComponent.ClearReceiveCardsInfo = function(self)
-  -- function num : 0_12
+function CollectCardComponent:ClearReceiveCardsInfo()
   self.m_receive_card_info = {}
 end
-
-

@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_square_ring_on2_br.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculatorSquareRingOn2BodyArea", SkillScopeCalculator_Base)
 SkillScopeCalculatorSquareRingOn2BodyArea = SkillScopeCalculatorSquareRingOn2BodyArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculatorSquareRingOn2BodyArea.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculatorSquareRingOn2BodyArea:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._gridFilter._world
   local utilDataCalcSvc = world:GetService("UtilData")
   local rangeList = {}
-  for i,body in ipairs(bodyArea) do
+  for i, body in ipairs(bodyArea) do
     for x = -1, 1 do
       for y = -1, 1 do
         local newPos = Vector2(casterPos.x + x + body.x, casterPos.y + y + body.y)
-        if utilDataCalcSvc:IsValidPiecePos(newPos) and not (table.Vector2Include)(rangeList, newPos) then
-          (table.insert)(rangeList, newPos)
+        if utilDataCalcSvc:IsValidPiecePos(newPos) and not table.Vector2Include(rangeList, newPos) then
+          table.insert(rangeList, newPos)
         end
       end
     end
@@ -26,5 +19,3 @@ SkillScopeCalculatorSquareRingOn2BodyArea.CalcRange = function(self, scopeType, 
   local result = SkillScopeResult:New(SkillScopeType.SquareRingOn2BodyArea, casterPos, rangeList, rangeList, nil)
   return result
 end
-
-

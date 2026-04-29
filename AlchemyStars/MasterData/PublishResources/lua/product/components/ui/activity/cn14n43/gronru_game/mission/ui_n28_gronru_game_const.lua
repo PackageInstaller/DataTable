@@ -1,159 +1,134 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/mission/ui_n28_gronru_game_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameConst", Object)
 UIN28GronruGameConst = UIN28GronruGameConst
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.playerData = {
-[1] = {"1600061_players.prefab"}
-, 
-[2] = {"1000011_players.prefab"}
-, 
-[3] = {"1500331_players.prefab"}
+  [1] = {
+    "1600061_players.prefab"
+  },
+  [2] = {
+    "1000011_players.prefab"
+  },
+  [3] = {
+    "1500331_players.prefab"
+  }
 }
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.bgData = {
-[1] = {
-{"N28_yrj_gzdt_btbg01", "N28_yrj_gzdt_btbg02", "N28_yrj_gzdt_btbg03", "N28_yrj_gzdt_btbg04", "N28_yrj_gzdt_btbg05", "N28_yrj_gzdt_btbg06", "N28_yrj_gzdt_btbg07", "N28_yrj_gzdt_btbg12"}
-, 
-{"N28_yrj_gzdt_btbg09", "N28_yrj_gzdt_btbg10", "N28_yrj_gzdt_btbg11", "N28_yrj_gzdt_btbg08"}
+  [1] = {
+    {
+      "N28_yrj_gzdt_btbg01",
+      "N28_yrj_gzdt_btbg02",
+      "N28_yrj_gzdt_btbg03",
+      "N28_yrj_gzdt_btbg04",
+      "N28_yrj_gzdt_btbg05",
+      "N28_yrj_gzdt_btbg06",
+      "N28_yrj_gzdt_btbg07",
+      "N28_yrj_gzdt_btbg12"
+    },
+    {
+      "N28_yrj_gzdt_btbg09",
+      "N28_yrj_gzdt_btbg10",
+      "N28_yrj_gzdt_btbg11",
+      "N28_yrj_gzdt_btbg08"
+    }
+  },
+  [2] = {
+    {
+      "N28_yrj_gzdt_bwbg01",
+      "N28_yrj_gzdt_bwbg02",
+      "N28_yrj_gzdt_bwbg03",
+      "N28_yrj_gzdt_bwbg04",
+      "N28_yrj_gzdt_bwbg05",
+      "N28_yrj_gzdt_bwbg06",
+      "N28_yrj_gzdt_bwbg07",
+      "N28_yrj_gzdt_bwbg12"
+    },
+    {
+      "N28_yrj_gzdt_bwbg09",
+      "N28_yrj_gzdt_bwbg10",
+      "N28_yrj_gzdt_bwbg11",
+      "N28_yrj_gzdt_bwbg08"
+    }
+  },
+  [3] = {
+    {
+      "N28_yrj_gzdt_ywbg01",
+      "N28_yrj_gzdt_ywbg02",
+      "N28_yrj_gzdt_ywbg03",
+      "N28_yrj_gzdt_ywbg04",
+      "N28_yrj_gzdt_ywbg05",
+      "N28_yrj_gzdt_ywbg06",
+      "N28_yrj_gzdt_ywbg07",
+      "N28_yrj_gzdt_ywbg12"
+    },
+    {
+      "N28_yrj_gzdt_ywbg09",
+      "N28_yrj_gzdt_ywbg10",
+      "N28_yrj_gzdt_ywbg11",
+      "N28_yrj_gzdt_ywbg08"
+    }
+  }
 }
-, 
-[2] = {
-{"N28_yrj_gzdt_bwbg01", "N28_yrj_gzdt_bwbg02", "N28_yrj_gzdt_bwbg03", "N28_yrj_gzdt_bwbg04", "N28_yrj_gzdt_bwbg05", "N28_yrj_gzdt_bwbg06", "N28_yrj_gzdt_bwbg07", "N28_yrj_gzdt_bwbg12"}
-, 
-{"N28_yrj_gzdt_bwbg09", "N28_yrj_gzdt_bwbg10", "N28_yrj_gzdt_bwbg11", "N28_yrj_gzdt_bwbg08"}
-}
-, 
-[3] = {
-{"N28_yrj_gzdt_ywbg01", "N28_yrj_gzdt_ywbg02", "N28_yrj_gzdt_ywbg03", "N28_yrj_gzdt_ywbg04", "N28_yrj_gzdt_ywbg05", "N28_yrj_gzdt_ywbg06", "N28_yrj_gzdt_ywbg07", "N28_yrj_gzdt_ywbg12"}
-, 
-{"N28_yrj_gzdt_ywbg09", "N28_yrj_gzdt_ywbg10", "N28_yrj_gzdt_ywbg11", "N28_yrj_gzdt_ywbg08"}
-}
-}
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameConst.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameConst:Constructor()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.ClearSelectPlayer = function()
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
+function UIN28GronruGameConst.ClearSelectPlayer()
   UIN28GronruGameConst.selectPlayerIndex = nil
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.GetSelectPlayer = function()
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28GronruGameConst.GetSelectPlayer()
   return UIN28GronruGameConst.selectPlayerIndex
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.SetSelectPlayer = function(playerIndex)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN28GronruGameConst.SetSelectPlayer(playerIndex)
   UIN28GronruGameConst.selectPlayerIndex = playerIndex
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.ClearSelectLevel = function()
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
+function UIN28GronruGameConst.ClearSelectLevel()
   UIN28GronruGameConst.selectLevel = nil
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.GetSelectLevel = function()
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28GronruGameConst.GetSelectLevel()
   return UIN28GronruGameConst.selectLevel
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.SetSelectLevel = function(level)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN28GronruGameConst.SetSelectLevel(level)
   UIN28GronruGameConst.selectLevel = level
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.GetPlayerInfo = function(index)
-  -- function num : 0_7 , upvalues : _ENV
-  return (UIN28GronruGameConst.playerData)[index]
+function UIN28GronruGameConst.GetPlayerInfo(index)
+  return UIN28GronruGameConst.playerData[index]
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.GetScoreFont = function(score)
-  -- function num : 0_8 , upvalues : _ENV
-  local a, b, c, d = (math.floor)(score / 1000), (math.floor)(score / 100 % 10), (math.floor)(score / 10 % 10), score % 10
-  return {a, b, c, d}
+function UIN28GronruGameConst.GetScoreFont(score)
+  local a, b, c, d = math.floor(score / 1000), math.floor(score / 100 % 10), math.floor(score / 10 % 10), score % 10
+  return {
+    a,
+    b,
+    c,
+    d
+  }
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.CheckStoryLocalDb = function(roleId, key, pre)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN28GronruGameConst.CheckStoryLocalDb(roleId, key, pre)
   local str = pre and "Per" or "Last"
-  if (LocalDB.GetInt)("ui_n28_mini_game_story" .. roleId .. key .. str) > 0 then
+  if LocalDB.GetInt("ui_n28_mini_game_story" .. roleId .. key .. str) > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameConst.SetStoryLocalDb = function(roleId, key, pre)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN28GronruGameConst.SetStoryLocalDb(roleId, key, pre)
   local str = pre and "Per" or "Last"
-  ;
-  (LocalDB.SetInt)("ui_n28_mini_game_story" .. roleId .. key .. str, 1)
+  LocalDB.SetInt("ui_n28_mini_game_story" .. roleId .. key .. str, 1)
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.plainMoveX = -4964
--- DECOMPILER ERROR at PC117: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.plainMoveSpeed = 100
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.smallItemsMoveX = -2143
--- DECOMPILER ERROR at PC121: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.smallItemsMoveSpeed = 200
--- DECOMPILER ERROR at PC123: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.BossNodeMoveX_1 = -2560
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.BossNodeMoveSpeed_1 = 100
--- DECOMPILER ERROR at PC127: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.BossNodeMoveX_2 = -1812
--- DECOMPILER ERROR at PC129: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.BossNodeMoveSpeed_2 = 300
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.BossNodeMoveX_3 = -1955
--- DECOMPILER ERROR at PC133: Confused about usage of register: R0 in 'UnsetPending'
-
 UIN28GronruGameConst.BossNodeMoveSpeed_3 = 200
-

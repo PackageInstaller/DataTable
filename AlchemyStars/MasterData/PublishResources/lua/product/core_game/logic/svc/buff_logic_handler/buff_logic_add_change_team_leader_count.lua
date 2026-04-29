@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_change_team_leader_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddChangeTeamLeaderCount", BuffLogicBase)
 BuffLogicAddChangeTeamLeaderCount = BuffLogicAddChangeTeamLeaderCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddChangeTeamLeaderCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddChangeTeamLeaderCount:Constructor(buffInstance, logicParam)
   self._addNum = logicParam.addNum
   self._noLimit = logicParam.noLimit
   self._setZero = logicParam.setZero
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddChangeTeamLeaderCount.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = nil
-  if (self._entity):HasTeam() then
+function BuffLogicAddChangeTeamLeaderCount:DoLogic()
+  local teamEntity
+  if self._entity:HasTeam() then
     teamEntity = self._entity
-  else
-    if (self._entity):HasPet() then
-      teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-    end
+  elseif self._entity:HasPet() then
+    teamEntity = self._entity:Pet():GetOwnerTeamEntity()
   end
   if teamEntity then
     local teamAttrConmpt = teamEntity:Attributes()
@@ -32,19 +20,15 @@ BuffLogicAddChangeTeamLeaderCount.DoLogic = function(self)
     local newCount = 0
     if self._noLimit and self._noLimit == 1 then
       newCount = -1
-    else
-      if self._setZero and self._setZero == 1 then
-        newCount = 0
+    elseif self._setZero and self._setZero == 1 then
+      newCount = 0
+    elseif self._addNum then
+      if curLeftCount == -1 then
+        return
       else
-        if self._addNum then
-          if curLeftCount == -1 then
-            return 
-          else
-            newCount = curLeftCount + self._addNum
-            if newCount < 0 then
-              newCount = 0
-            end
-          end
+        newCount = curLeftCount + self._addNum
+        if newCount < 0 then
+          newCount = 0
         end
       end
     end
@@ -53,5 +37,3 @@ BuffLogicAddChangeTeamLeaderCount.DoLogic = function(self)
     return result
   end
 end
-
-

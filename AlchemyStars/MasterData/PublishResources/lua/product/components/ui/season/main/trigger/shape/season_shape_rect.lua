@@ -1,82 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/trigger/shape/season_shape_rect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonShapeRect", SeasonShapeBase)
 SeasonShapeRect = SeasonShapeRect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonShapeRect.Constructor = function(self, root, id, position, rotation, param)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonShapeRect:Constructor(root, id, position, rotation, param)
   self._root = root
   self._width = param[1]
   self._height = param[2]
   self._gameObject = nil
   if EDITOR then
-    self._gameObject = ((UnityEngine.GameObject).CreatePrimitive)((UnityEngine.PrimitiveType).Cube)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._gameObject).name = tostring(id)
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._gameObject).transform).parent = self._root
-    ;
-    (SeasonTool:GetInstance()):DisenableMeshRender(self._gameObject)
+    self._gameObject = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Cube)
+    self._gameObject.name = tostring(id)
+    self._gameObject.transform.parent = self._root
+    SeasonTool:GetInstance():DisenableMeshRender(self._gameObject)
   else
-    self._gameObject = (GameObjectHelper.CreateEmpty)(tostring(id), self._root)
+    self._gameObject = GameObjectHelper.CreateEmpty(tostring(id), self._root)
   end
-  self._transform = (self._gameObject).transform
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._transform).position = position
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._transform).rotation = (Quaternion.Euler)(0, rotation, 0)
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._transform).localScale = Vector3(self._width, 0, self._height)
-  ;
-  (self._gameObject):SetActive(true)
+  self._transform = self._gameObject.transform
+  self._transform.position = position
+  self._transform.rotation = Quaternion.Euler(0, rotation, 0)
+  self._transform.localScale = Vector3(self._width, 0, self._height)
+  self._gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShapeRect.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonShapeRect:Dispose()
   self._root = nil
-  ;
-  ((UnityEngine.Object).Destroy)(self._gameObject)
+  UnityEngine.Object.Destroy(self._gameObject)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShapeRect.OnCheck = function(self, position)
-  -- function num : 0_2 , upvalues : _ENV
-  local targetPosition = Vector3(position.x, ((self._transform).position).y, position.z)
-  local p = (self._transform):InverseTransformPoint(targetPosition)
+function SeasonShapeRect:OnCheck(position)
+  local targetPosition = Vector3(position.x, self._transform.position.y, position.z)
+  local p = self._transform:InverseTransformPoint(targetPosition)
   p.x = p.x * self._width
   p.z = p.z * self._height
   local half_width = self._width / 2
   local half_height = self._height / 2
-  local r1 = p.x <= half_width
-  local r2 = -half_width <= p.x
-  local r3 = p.z <= half_height
-  local r4 = -half_height <= p.z
+  local r1 = half_width >= p.x
+  local r2 = p.x >= -half_width
+  local r3 = half_height >= p.z
+  local r4 = p.z >= -half_height
   if r1 and r2 and r3 and r4 then
     if EDITOR then
-      ((UnityEngine.Debug).DrawLine)((self._transform).position, targetPosition, Color.green)
+      UnityEngine.Debug.DrawLine(self._transform.position, targetPosition, Color.green)
     end
     return true
   else
     return false
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
-
-

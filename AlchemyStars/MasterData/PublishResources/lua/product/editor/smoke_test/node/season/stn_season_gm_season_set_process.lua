@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/season/stn_season_gm_season_set_process.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Season_GM_SeasonSetProcess", Common_AsyncBase)
 Season_GM_SeasonSetProcess = Season_GM_SeasonSetProcess
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Season_GM_SeasonSetProcess.Constructor = function(self, _manager)
-  -- function num : 0_0
+function Season_GM_SeasonSetProcess:Constructor(_manager)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Season_GM_SeasonSetProcess.TaskFunc = function(self, TT, status)
-  -- function num : 0_1 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function Season_GM_SeasonSetProcess:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
   local dailyProcess = runData:GetDailyProcess()
-  if dailyProcess and dailyProcess >= 0 then
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  if dailyProcess and 0 <= dailyProcess then
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
     local res = AsyncRequestRes:New()
     campaignModule:GetCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_SEASON)
-    local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+    local seasonModule = GameGlobal.GetModule(SeasonModule)
     local seasonObj = seasonModule:GetCurSeasonObj()
     local campaignID = seasonObj:GetSeasonID()
     local seasonMissionComponent = seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
@@ -30,9 +20,6 @@ Season_GM_SeasonSetProcess.TaskFunc = function(self, TT, status)
     local componentCfgID = seasonMissionComponent:GetComponentCfgId()
     local componentEnumID = ECCampaignSeasonComponentID.SEASON_MISSION
     local paramKeyMap = seasonMissionComponent:GetCampaignMissionParamKeyMap()
-    ;
-    (self._manager):AsyncGM_SeasonSetProcess(TT, status, campaignID, componentEnumID, dailyProcess)
+    self._manager:AsyncGM_SeasonSetProcess(TT, status, campaignID, componentEnumID, dailyProcess)
   end
 end
-
-

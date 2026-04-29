@@ -1,16 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_puzzle_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local PuzzleStateType = {None = 0, PreEnter = 1, Enter = 2, Moving = 3}
+local PuzzleStateType = {
+  None = 0,
+  PreEnter = 1,
+  Enter = 2,
+  Moving = 3
+}
 _enum("PuzzleStateType", PuzzleStateType)
 _class("PreviewPuzzleComponent", Object)
 PreviewPuzzleComponent = PreviewPuzzleComponent
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-PreviewPuzzleComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : PuzzleStateType, _ENV
+function PreviewPuzzleComponent:Constructor()
   self._puzzleState = PuzzleStateType.None
   self._centerPos = Vector2.zero
   self._casterEntityID = -1
@@ -19,140 +17,81 @@ PreviewPuzzleComponent.Constructor = function(self)
   self._puzzleGridEffID = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.Dispose = function(self)
-  -- function num : 0_1
+function PreviewPuzzleComponent:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.SetCenterPos = function(self, pos)
-  -- function num : 0_2
+function PreviewPuzzleComponent:SetCenterPos(pos)
   self._centerPos = pos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.GetCenterPos = function(self)
-  -- function num : 0_3
+function PreviewPuzzleComponent:GetCenterPos()
   return self._centerPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.SetPuzzleGridEffID = function(self, effID)
-  -- function num : 0_4
+function PreviewPuzzleComponent:SetPuzzleGridEffID(effID)
   self._puzzleGridEffID = effID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.GetPuzzleGridEffID = function(self)
-  -- function num : 0_5
+function PreviewPuzzleComponent:GetPuzzleGridEffID()
   return self._puzzleGridEffID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.SetCasterEntityID = function(self, entityID)
-  -- function num : 0_6
+function PreviewPuzzleComponent:SetCasterEntityID(entityID)
   self._casterEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.GetCasterEntityID = function(self)
-  -- function num : 0_7
+function PreviewPuzzleComponent:GetCasterEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.SetGapTilePos = function(self, pos)
-  -- function num : 0_8
+function PreviewPuzzleComponent:SetGapTilePos(pos)
   self._gapTilePos = pos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.GetGapTilePos = function(self)
-  -- function num : 0_9
+function PreviewPuzzleComponent:GetGapTilePos()
   return self._gapTilePos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.SetPuzzleRange = function(self, posList)
-  -- function num : 0_10
+function PreviewPuzzleComponent:SetPuzzleRange(posList)
   self._puzzleRange = posList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.GetPuzzleRange = function(self)
-  -- function num : 0_11
+function PreviewPuzzleComponent:GetPuzzleRange()
   return self._puzzleRange
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.AddPuzzleGridPos = function(self, pickUpGridPos)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.insert)(self._puzzleGridPosList, pickUpGridPos)
+function PreviewPuzzleComponent:AddPuzzleGridPos(pickUpGridPos)
+  table.insert(self._puzzleGridPosList, pickUpGridPos)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.GetPuzzleGridPosList = function(self)
-  -- function num : 0_13
+function PreviewPuzzleComponent:GetPuzzleGridPosList()
   return self._puzzleGridPosList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.SetPuzzleState = function(self, stateType)
-  -- function num : 0_14
+function PreviewPuzzleComponent:SetPuzzleState(stateType)
   self._puzzleState = stateType
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewPuzzleComponent.GetPuzzleState = function(self)
-  -- function num : 0_15
+function PreviewPuzzleComponent:GetPuzzleState()
   return self._puzzleState
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.PreviewPuzzle = function(self)
-  -- function num : 0_16
-  return self:GetComponent((self.WEComponentsEnum).PreviewPuzzle)
+function Entity:PreviewPuzzle()
+  return self:GetComponent(self.WEComponentsEnum.PreviewPuzzle)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.HasPreviewPuzzle = function(self)
-  -- function num : 0_17
-  return self:HasComponent((self.WEComponentsEnum).PreviewPuzzle)
+function Entity:HasPreviewPuzzle()
+  return self:HasComponent(self.WEComponentsEnum.PreviewPuzzle)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.AddPreviewPuzzle = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewPuzzle
+function Entity:AddPreviewPuzzle()
+  local index = self.WEComponentsEnum.PreviewPuzzle
   local component = PreviewPuzzleComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-Entity.ReplacePreviewPuzzle = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewPuzzle
+function Entity:ReplacePreviewPuzzle()
+  local index = self.WEComponentsEnum.PreviewPuzzle
   local component = PreviewPuzzleComponent:New()
   self:ReplaceComponent(index, component)
 end
-
-

@@ -1,80 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/rank/ui_luckland_rank_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandRankItem", UICustomWidget)
 UILuckLandRankItem = UILuckLandRankItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandRankItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandRankItem:OnShow(uiParams)
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRankItem._InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandRankItem:_InitWidget()
   self._rankText = self:GetUIComponent("UILocalizedTMP", "RankText")
   self._headIcon = self:GetUIComponent("RawImageLoader", "HeadIcon")
   self._head_icon_rect = self:GetUIComponent("RectTransform", "HeadIcon")
   self._nickName = self:GetUIComponent("UILocalizationText", "NickName")
   self._score = self:GetUIComponent("UILocalizationText", "Score")
   self._rGO = {}
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rGO)[1] = self:GetGameObject("R1")
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rGO)[2] = self:GetGameObject("R2")
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rGO)[3] = self:GetGameObject("R3")
+  self._rGO[1] = self:GetGameObject("R1")
+  self._rGO[2] = self:GetGameObject("R2")
+  self._rGO[3] = self:GetGameObject("R3")
   self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRankItem.SetData = function(self, index, info)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandRankItem:SetData(index, info)
   self._index = index
   for i = 1, 3 do
-    ((self._rGO)[i]):SetActive(false)
+    self._rGO[i]:SetActive(false)
   end
   if index <= 3 then
-    ((self._rGO)[index]):SetActive(true)
-    ;
-    (self._rankText):SetText("")
+    self._rGO[index]:SetActive(true)
+    self._rankText:SetText("")
+  elseif 100 < index then
+    self._rankText:SetText("100+")
   else
-    if index > 100 then
-      (self._rankText):SetText("100+")
-    else
-      ;
-      (self._rankText):SetText(tostring(index))
-    end
+    self._rankText:SetText(tostring(index))
   end
   local headIcon = info.head
-  local cfg_header = (Cfg.cfg_role_head_image)[headIcon]
+  local cfg_header = Cfg.cfg_role_head_image[headIcon]
   if cfg_header then
-    (self._headIcon):LoadImage(cfg_header.Icon)
-    ;
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._head_icon_rect, cfg_header.Tag)
+    self._headIcon:LoadImage(cfg_header.Icon)
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._head_icon_rect, cfg_header.Tag)
   end
-  ;
-  (self._nickName):SetText(info.nick)
-  ;
-  (self._score):SetText(info.damage)
+  self._nickName:SetText(info.nick)
+  self._score:SetText(info.damage)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRankItem.PlayAnimation = function(self)
-  -- function num : 0_3
-  (self._animation):Play("uieff_UILuckLandRankItem_in")
+function UILuckLandRankItem:PlayAnimation()
+  self._animation:Play("uieff_UILuckLandRankItem_in")
 end
-
-

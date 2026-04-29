@@ -1,110 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/cumulative_login_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CumulativeLoginComponent", ICampaignComponent)
 CumulativeLoginComponent = CumulativeLoginComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CumulativeLoginComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CumulativeLoginComponent:Constructor()
   self._componentInfo = CumulativeLoginComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CumulativeLoginComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CumulativeLoginComponent:ComponentInfo()
   if not self._componentInfo then
     self._componentInfo = CumulativeLoginComponentInfo:New()
   end
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CumulativeLoginComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function CumulativeLoginComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CumulativeLoginComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CumulativeLoginComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_CUMULATIVE_LOGIN
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CumulativeLoginComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self._componentInfo)
+function CumulativeLoginComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self._componentInfo)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CumulativeLoginComponent.HandleReceiveCumulativeLoginReward = function(self, TT, asyncRes, rewardID)
-  -- function num : 0_5 , upvalues : _ENV
+function CumulativeLoginComponent:HandleReceiveCumulativeLoginReward(TT, asyncRes, rewardID)
   local request = CumulativeLoginComponentReceiveRewardReq:New()
   request.m_reward_id = rewardID
   local response = CumulativeLoginComponentReceiveRewardRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][CumulateLogin] HandleReceiveCumulativeLoginReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][CumulateLogin] HandleReceiveCumulativeLoginReward ret:", asyncRes.m_result)
     return nil
   end
-  local cumulativeInfo = ((self._componentInfo).m_cumulative_info)[rewardID]
+  local cumulativeInfo = self._componentInfo.m_cumulative_info[rewardID]
   if not cumulativeInfo then
-    (Log.error)("[CampaignCom][CumulateLogin] no reward info, login day: ", rewardID)
+    Log.error("[CampaignCom][CumulateLogin] no reward info, login day: ", rewardID)
     return nil
   end
   cumulativeInfo.m_reward_status = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
   return response.m_rewards
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CumulativeLoginComponent.Start_HandleReceiveCumulativeLoginReward = function(self, rewardID, callback)
-  -- function num : 0_6 , upvalues : _ENV
+function CumulativeLoginComponent:Start_HandleReceiveCumulativeLoginReward(rewardID, callback)
   local lockName = "CumulativeLoginComponent:Start_HandleReceiveCumulativeLoginReward"
-  ;
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self, rewardID, lockName, callback
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
+  GameGlobal.UIStateManager():Lock(lockName)
+  TaskManager:GetInstance():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local rewards = self:HandleReceiveCumulativeLoginReward(TT, res, rewardID)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     callback(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CumulativeLoginComponent.GetCumulativeRewardInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CumulativeLoginComponent:GetCumulativeRewardInfo()
   local tb = {}
   local info = self:GetComponentInfo()
-  for _,v in pairs(info.m_cumulative_info) do
-    (table.insert)(tb, v)
+  for _, v in pairs(info.m_cumulative_info) do
+    table.insert(tb, v)
   end
-  ;
-  (table.sort)(tb, function(a, b)
-    -- function num : 0_7_0
-    do return a.m_login_days < b.m_login_days end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(tb, function(a, b)
+    return a.m_login_days < b.m_login_days
+  end)
   return tb
 end
-
-

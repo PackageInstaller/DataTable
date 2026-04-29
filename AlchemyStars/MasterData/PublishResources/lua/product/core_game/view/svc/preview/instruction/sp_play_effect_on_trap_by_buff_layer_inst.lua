@@ -1,72 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_effect_on_trap_by_buff_layer_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayEffectOnTrapByBuffLayerInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayEffectOnTrapByBuffLayerInstruction = SkillPreviewPlayEffectOnTrapByBuffLayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayEffectOnTrapByBuffLayerInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayEffectOnTrapByBuffLayerInstruction:Constructor(params)
   self._trapIDList = {}
   local trapList = params.trapIDList
   if trapList then
-    local strTrapIDs = (string.split)(trapList, "|")
-    for i,v in ipairs(strTrapIDs) do
-      (table.insert)(self._trapIDList, tonumber(v))
+    local strTrapIDs = string.split(trapList, "|")
+    for i, v in ipairs(strTrapIDs) do
+      table.insert(self._trapIDList, tonumber(v))
     end
   end
-  do
-    self._effectIDDic = {}
-    local effectIDDic = params.effectIDList
-    if effectIDDic then
-      local strEffIDs = (string.split)(effectIDDic, "|")
-      for k,effectID in ipairs(strEffIDs) do
-        -- DECOMPILER ERROR at PC41: Confused about usage of register: R10 in 'UnsetPending'
-
-        (self._effectIDDic)[k] = tonumber(effectID)
-      end
+  self._effectIDDic = {}
+  local effectIDDic = params.effectIDList
+  if effectIDDic then
+    local strEffIDs = string.split(effectIDDic, "|")
+    for k, effectID in ipairs(strEffIDs) do
+      self._effectIDDic[k] = tonumber(effectID)
     end
-    do
-      self._checkBuffEffectType = tonumber(params.checkBuffEffectType)
-      self._dirX = 0
-      self._dirY = 1
-      if params.dirX then
-        self._dirX = tonumber(params.dirX)
-      end
-      if params.dirY then
-        self._dirY = tonumber(params.dirY)
-      end
-    end
+  end
+  self._checkBuffEffectType = tonumber(params.checkBuffEffectType)
+  self._dirX = 0
+  self._dirY = 1
+  if params.dirX then
+    self._dirX = tonumber(params.dirX)
+  end
+  if params.dirY then
+    self._dirY = tonumber(params.dirY)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayEffectOnTrapByBuffLayerInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayEffectOnTrapByBuffLayerInstruction:GetCacheResource()
   local res = {}
-  for i,effectID in pairs(self._effectIDDic) do
-    local effRes = {((Cfg.cfg_effect)[effectID]).ResPath, 1}
-    ;
-    (table.insert)(res, effRes)
+  for i, effectID in pairs(self._effectIDDic) do
+    local effRes = {
+      Cfg.cfg_effect[effectID].ResPath,
+      1
+    }
+    table.insert(res, effRes)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayEffectOnTrapByBuffLayerInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayEffectOnTrapByBuffLayerInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local trapEntityList = {}
-  local trapGroup = world:GetGroup((world.BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = world:GetGroup(world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     local trapRenderCmpt = e:TrapRender()
-    if trapRenderCmpt and not trapRenderCmpt:GetHadPlayDestroy() and (table.icontains)(self._trapIDList, trapRenderCmpt:GetTrapID()) then
-      (table.insert)(trapEntityList, e)
+    if trapRenderCmpt and not trapRenderCmpt:GetHadPlayDestroy() and table.icontains(self._trapIDList, trapRenderCmpt:GetTrapID()) then
+      table.insert(trapEntityList, e)
     end
   end
   if not casterEntity:HasPreviewStageEffectRecord() then
@@ -75,17 +58,17 @@ SkillPreviewPlayEffectOnTrapByBuffLayerInstruction.DoInstruction = function(self
   local previewStrageEffectRecordComponent = casterEntity:PreviewStageEffectRecord()
   local dir = Vector2(self._dirX, self._dirY)
   local sEffect = world:GetService("Effect")
-  for i,trapEntity in ipairs(trapEntityList) do
+  for i, trapEntity in ipairs(trapEntityList) do
     local effectID = 0
     local trap = trapEntity
     local buffLogicService = world:GetService("BuffLogic")
     local buffLayer = buffLogicService:GetBuffLayer(trap, self._checkBuffEffectType)
     local effCount = #self._effectIDDic
-    effectID = (self._effectIDDic)[buffLayer]
-    if not effectID and effCount > 0 then
-      effectID = (self._effectIDDic)[effCount]
+    effectID = self._effectIDDic[buffLayer]
+    if not effectID and 0 < effCount then
+      effectID = self._effectIDDic[effCount]
     end
-    if effectID and effectID > 0 then
+    if effectID and 0 < effectID then
       local trapPos = trap:GetGridPosition()
       local effectEntity = sEffect:CreateWorldPositionDirectionEffect(effectID, trapPos, dir)
       if previewStrageEffectRecordComponent then
@@ -94,5 +77,3 @@ SkillPreviewPlayEffectOnTrapByBuffLayerInstruction.DoInstruction = function(self
     end
   end
 end
-
-

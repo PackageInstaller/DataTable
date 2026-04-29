@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_single_grid_full_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParam_SingleGridFullDamage", SkillDamageEffectParam)
 SkillEffectParam_SingleGridFullDamage = SkillEffectParam_SingleGridFullDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_SingleGridFullDamage.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_SingleGridFullDamage:Constructor(t)
   self._multiGridDecreaseRate = t.multiGridDecreaseRate
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SingleGridFullDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_SingleGridFullDamage:GetEffectType()
   return SkillEffectType.SingleGridFullDamage
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_SingleGridFullDamage.GetMultiGridDecreaseRate = function(self)
-  -- function num : 0_2
+function SkillEffectParam_SingleGridFullDamage:GetMultiGridDecreaseRate()
   return self._multiGridDecreaseRate
 end
-
-

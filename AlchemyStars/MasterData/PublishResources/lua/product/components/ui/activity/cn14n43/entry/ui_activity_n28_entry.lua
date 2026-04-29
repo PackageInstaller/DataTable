@@ -1,153 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/entry/ui_activity_n28_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN28Entry", UISideEnterCenterContentBase)
 UIActivityN28Entry = UIActivityN28Entry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN28Entry.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN28Entry:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN28Entry:DoInit()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = self._data
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   self._endTime = sample.end_time
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   self._component = localProcess:GetComponent(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
   self._compoentInfo = localProcess:GetComponentInfo(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry.DoShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN28Entry:DoShow()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self:_GetComponents()
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : self, _ENV
-    while 1 do
+    while true do
       self:_OnValue()
       YIELD(TT, 1000)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry.DoHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN28Entry:DoHide()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry.DoDestroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIActivityN28Entry.super):Dispose()
+function UIActivityN28Entry:DoDestroy()
+  UIActivityN28Entry.super:Dispose()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry._GetComponents = function(self)
-  -- function num : 0_5
+function UIActivityN28Entry:_GetComponents()
   self._remainTime = self:GetUIComponent("UILocalizationText", "RemainTimeText")
   self._remainTime2 = self:GetUIComponent("UILocalizationText", "RemainTimeText2")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN28Entry:_OnValue()
   if self._remainTime then
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
     local endTime = self._endTime
     if curTime < endTime then
-      (self._remainTime):SetText((StringTable.Get)("str_activity_common_remainingtime_3", ""))
-      ;
-      (self._remainTime2):SetText((UIActivityHelper.GetFormatTimerStr)(endTime - curTime))
-      ;
-      ((self._remainTime2).gameObject):SetActive(true)
+      self._remainTime:SetText(StringTable.Get("str_activity_common_remainingtime_3", ""))
+      self._remainTime2:SetText(UIActivityHelper.GetFormatTimerStr(endTime - curTime))
+      self._remainTime2.gameObject:SetActive(true)
     else
-      ;
-      (self._remainTime):SetText((StringTable.Get)("str_activity_common_state_over"))
-      ;
-      ((self._remainTime2).gameObject):SetActive(false)
+      self._remainTime:SetText(StringTable.Get("str_activity_common_state_over"))
+      self._remainTime2.gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry.AfterUILayerChanged = function(self)
-  -- function num : 0_7
+function UIActivityN28Entry:AfterUILayerChanged()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry.PlayBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN28Entry:PlayBtnOnClick(go)
   if self:CheckActivityOver() then
-    return 
+    return
   end
-  ;
-  (UIActivityHelper.PlayFirstPlot_Campaign)(self._campaign, function()
-    -- function num : 0_8_0 , upvalues : self, _ENV
+  UIActivityHelper.PlayFirstPlot_Campaign(self._campaign, function()
     self:ShowDialog(UIStateType.UIN28GronruPlatform, nil, function()
-      -- function num : 0_8_0_0 , upvalues : self
       self:CheckActivityOver()
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry.IntroBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIActivityN28Entry:IntroBtnOnClick(go)
   if self:CheckActivityOver() then
-    return 
+    return
   end
   self:ShowDialog("UIIntroLoader", "UIActivityN28Entry")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN28Entry.CheckActivityOver = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+function UIActivityN28Entry:CheckActivityOver()
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
   local endTime = self._endTime
   if curTime < endTime then
     return false
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
     return true
   end
 end
-
-

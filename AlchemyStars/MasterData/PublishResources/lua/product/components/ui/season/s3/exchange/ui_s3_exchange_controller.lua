@@ -1,120 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/exchange/ui_s3_exchange_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS3ExchangeController", UIController)
 UIS3ExchangeController = UIS3ExchangeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS3ExchangeController._SetRemainingTime = function(self, widgetName, descId, endTime)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
-  ;
-  (obj:GetGameObject()):SetActive(endTime ~= nil)
+function UIS3ExchangeController:_SetRemainingTime(widgetName, descId, endTime)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
+  obj:GetGameObject():SetActive(endTime ~= nil)
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, function()
-    -- function num : 0_0_0 , upvalues : self
     self:_Refresh()
-  end
-)
-  ;
-  (UIWidgetHelper.SetAnimationPlay)(obj, "_anim", "uieff_UIS2TimeExchange")
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  end)
+  UIWidgetHelper.SetAnimationPlay(obj, "_anim", "uieff_UIS2TimeExchange")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._SetCommonTopButton = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+function UIS3ExchangeController:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_1_0 , upvalues : self
     self:_Back()
-  end
-, function()
-    -- function num : 0_1_1 , upvalues : _ENV
-    (UISeasonHelper.ShowSeasonHelperBook)(UISeasonHelperTabIndex.S1Exchange)
-  end
-, nil, false, nil)
+  end, function()
+    UISeasonHelper.ShowSeasonHelperBook(UISeasonHelperTabIndex.S1Exchange)
+  end, nil, false, nil)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._Back = function(self)
-  -- function num : 0_2
+function UIS3ExchangeController:_Back()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._SetSpine = function(self)
-  -- function num : 0_3
+function UIS3ExchangeController:_SetSpine()
   local obj = self:GetUIComponent("SpineLoader", "_spine")
   obj:LoadSpine("1600234_spine_idle")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._SetImgRT = function(self, imgRT)
-  -- function num : 0_4
-  do
-    if imgRT ~= nil then
-      local rt = self:GetUIComponent("RawImage", "rt")
-      rt.texture = imgRT
-      return true
-    end
-    return false
+function UIS3ExchangeController:_SetImgRT(imgRT)
+  if imgRT ~= nil then
+    local rt = self:GetUIComponent("RawImage", "rt")
+    rt.texture = imgRT
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._PlayAnim = function(self, type, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS3ExchangeController:_PlayAnim(type, callback)
   local tb = {
-["in"] = {animName = "uieff_UIS3ExchangeController_in", duration = 600}
-, 
-out = {animName = "uieff_UIS3ExchangeController_out", duration = 567}
-}
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[type]).animName, (tb[type]).duration, callback)
+    ["in"] = {
+      animName = "uieff_UIS3ExchangeController_in",
+      duration = 600
+    },
+    out = {
+      animName = "uieff_UIS3ExchangeController_out",
+      duration = 567
+    }
+  }
+  UIWidgetHelper.PlayAnimation(self, "_anim", tb[type].animName, tb[type].duration, callback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._CheckGuide = function(self)
-  -- function num : 0_6
+function UIS3ExchangeController:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_7 , upvalues : _ENV
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local reqRes = (self._seasonModule):ForceRequestCurSeasonData(TT)
-  self._seasonId = (self._seasonModule):GetCurSeasonID()
-  self._component = (self._seasonModule):GetCurSeasonExchangeComponent()
+function UIS3ExchangeController:LoadDataOnEnter(TT, res, uiParams)
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  local reqRes = self._seasonModule:ForceRequestCurSeasonData(TT)
+  self._seasonId = self._seasonModule:GetCurSeasonID()
+  self._component = self._seasonModule:GetCurSeasonExchangeComponent()
   if reqRes and not reqRes:GetSucc() then
-    (self._seasonModule):CheckErrorCode(reqRes.m_result, nil, nil)
+    self._seasonModule:CheckErrorCode(reqRes.m_result, nil, nil)
     res:SetSucc(false)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController.OnShow = function(self, uiParams)
-  -- function num : 0_8 , upvalues : _ENV
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+function UIS3ExchangeController:OnShow(uiParams)
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-
+  
   if self._component == nil then
-    return 
+    return
   end
-  local time = ((self._component):GetComponentInfo()).m_close_time
+  local time = self._component:GetComponentInfo().m_close_time
   self:_SetRemainingTime("_remainingTime", "str_season_main_time_exchange", time)
   self:_SetCommonTopButton()
   self:_SetSpine()
@@ -123,95 +84,64 @@ UIS3ExchangeController.OnShow = function(self, uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController.OnHide = function(self)
-  -- function num : 0_9
+function UIS3ExchangeController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._Refresh = function(self, isFirst)
-  -- function num : 0_10
+function UIS3ExchangeController:_Refresh(isFirst)
   self:_SetTaken()
   self:_SetTopTips()
   self:_SetDynamicList()
   self:_DynamicListPlayAnimation(isFirst)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._SetTaken = function(self)
-  -- function num : 0_11
-  local itemInfo = (self._component):GetExchangeItemSpecial()
-  local show = (self._component):IsExchangeItemSoldout(itemInfo)
-  ;
-  (self:GetGameObject("_taken")):SetActive(show)
+function UIS3ExchangeController:_SetTaken()
+  local itemInfo = self._component:GetExchangeItemSpecial()
+  local show = self._component:IsExchangeItemSoldout(itemInfo)
+  self:GetGameObject("_taken"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._SetTopTips = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local id1, id2 = (self._component):GetCostItemId(true), (self._component):GetCostItemId(false)
+function UIS3ExchangeController:_SetTopTips()
+  local id1, id2 = self._component:GetCostItemId(true), self._component:GetCostItemId(false)
   local tb = {id1, id2}
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_topTips", "UIS1TopTips", #tb)
-  for i,v in ipairs(objs) do
+  local objs = UIWidgetHelper.SpawnObjects(self, "_topTips", "UIS1TopTips", #tb)
+  for i, v in ipairs(objs) do
     v:SetData(tb[i])
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._SetDynamicListData = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._infos = (UISeasonExchangeHelper.GetExchangeItemList_Sort)(self._component)
+function UIS3ExchangeController:_SetDynamicListData()
+  self._infos = UISeasonExchangeHelper.GetExchangeItemList_Sort(self._component)
   self._itemCountPerRow = 1
-  self._dynamicListSize = (math.floor)(((table.count)(self._infos) - 1) / self._itemCountPerRow + 1)
+  self._dynamicListSize = math.floor((table.count(self._infos) - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._SetDynamicList = function(self)
-  -- function num : 0_14
+function UIS3ExchangeController:_SetDynamicList()
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "DynamicList")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListSize, function(scrollView, index)
-    -- function num : 0_14_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListSize, self._dynamicList)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._RefreshList = function(self, count, list)
-  -- function num : 0_15
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIS3ExchangeController:_RefreshList(count, list)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_16
+function UIS3ExchangeController:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
   local idx = index * self._itemCountPerRow + 1
-  local isLarge = ((self._infos)[idx]).m_is_special
+  local isLarge = self._infos[idx].m_is_special
   local prefabName = isLarge and "CellLarge" or "CellSmall"
   local className = "UIS3ExchangeCell"
   local item = scrollView:NewListViewItem(prefabName)
@@ -224,36 +154,29 @@ UIS3ExchangeController._SpawnListItem = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._SetListItemData = function(self, item, index)
-  -- function num : 0_17
-  local info = (self._infos)[index]
+function UIS3ExchangeController:_SetListItemData(item, index)
+  local info = self._infos[index]
   item:SetData(index, info, self._seasonId, self._component, self._tipsCallback)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._DynamicListPlayAnimation = function(self, isPlay)
-  -- function num : 0_18 , upvalues : _ENV
+function UIS3ExchangeController:_DynamicListPlayAnimation(isPlay)
   if isPlay ~= true then
-    return 
+    return
   end
-  local showTabIds = (self._dynamicList):GetVisibleItemIDsInScrollView()
+  local showTabIds = self._dynamicList:GetVisibleItemIDsInScrollView()
   for index = 0, showTabIds.Count - 1 do
-    local id = (math.floor)(showTabIds[index])
-    local item = (self._dynamicList):GetShownItemByItemIndex(id)
+    local id = math.floor(showTabIds[index])
+    local item = self._dynamicList:GetShownItemByItemIndex(id)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local rowList = rowPool:GetAllSpawnList()
     for i = 1, self._itemCountPerRow do
@@ -264,39 +187,24 @@ UIS3ExchangeController._DynamicListPlayAnimation = function(self, isPlay)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController.SkinBtnOnClick = function(self, go)
-  -- function num : 0_19
-  local item = (self._component):GetExchangeItemSpecial()
-  local itemId = (item.m_reward).assetid
-  ;
-  (self._tipsCallback)(itemId)
+function UIS3ExchangeController:SkinBtnOnClick(go)
+  local item = self._component:GetExchangeItemSpecial()
+  local itemId = item.m_reward.assetid
+  self._tipsCallback(itemId)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._AttachEvents = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIS3ExchangeController:_AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self._Refresh)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._DetachEvents = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIS3ExchangeController:_DetachEvents()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self._Refresh)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3ExchangeController._CheckActivityClose = function(self, id)
-  -- function num : 0_22
+function UIS3ExchangeController:_CheckActivityClose(id)
   if self._seasonId == id then
     self:CloseDialog()
   end
 end
-
-

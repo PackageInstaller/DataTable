@@ -1,109 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_multi_traction_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectMultiTractionResult", SkillEffectResultBase)
 SkillEffectMultiTractionResult = SkillEffectMultiTractionResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMultiTractionResult.Constructor = function(self, final, supplyPlayerPiece)
-  -- function num : 0_0
+function SkillEffectMultiTractionResult:Constructor(final, supplyPlayerPiece)
   self._pullResultArray = final.array
   self._gridPossessionMap = final
   self._supplyPlayerPiece = supplyPlayerPiece
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectMultiTractionResult:GetEffectType()
   return SkillEffectType.MultiTraction
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.GetResultArray = function(self)
-  -- function num : 0_2
+function SkillEffectMultiTractionResult:GetResultArray()
   return self._pullResultArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.GetSupplyPlayerPiece = function(self)
-  -- function num : 0_3
+function SkillEffectMultiTractionResult:GetSupplyPlayerPiece()
   return self._supplyPlayerPiece
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.SetSupplyPlayerPiece = function(self, supply)
-  -- function num : 0_4
+function SkillEffectMultiTractionResult:SetSupplyPlayerPiece(supply)
   self._supplyPlayerPiece = supply
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.GetColorNew = function(self)
-  -- function num : 0_5
+function SkillEffectMultiTractionResult:GetColorNew()
   return self._colorNew
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.SetColorNew = function(self, colorNew)
-  -- function num : 0_6
+function SkillEffectMultiTractionResult:SetColorNew(colorNew)
   self._colorNew = colorNew
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.SetDamageIncreaseRate = function(self, val)
-  -- function num : 0_7
+function SkillEffectMultiTractionResult:SetDamageIncreaseRate(val)
   self._damageIncreaseRate = val
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.GetDamageIncreaseRate = function(self)
-  -- function num : 0_8
+function SkillEffectMultiTractionResult:GetDamageIncreaseRate()
   return self._damageIncreaseRate
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.GetGridPossessorMap = function(self)
-  -- function num : 0_9
+function SkillEffectMultiTractionResult:GetGridPossessorMap()
   return self._gridPossessionMap
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.SetTractionCenterPos = function(self, val)
-  -- function num : 0_10
+function SkillEffectMultiTractionResult:SetTractionCenterPos(val)
   self._tractionCenterPos = val
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.GetTractionCenterPos = function(self)
-  -- function num : 0_11
+function SkillEffectMultiTractionResult:GetTractionCenterPos()
   return self._tractionCenterPos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.SetReplaceScopeCenterPos = function(self, val)
-  -- function num : 0_12
+function SkillEffectMultiTractionResult:SetReplaceScopeCenterPos(val)
   self._replaceScopeCenterPos = val
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMultiTractionResult.GetReplaceScopeCenterPos = function(self)
-  -- function num : 0_13
+function SkillEffectMultiTractionResult:GetReplaceScopeCenterPos()
   return self._replaceScopeCenterPos
 end
-
-

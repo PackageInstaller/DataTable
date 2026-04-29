@@ -1,47 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/new/ui_recruit_confirm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRecruitConfirm", UIController)
 UIRecruitConfirm = UIRecruitConfirm
-local ConfirmType = {InValid = 1, FreeSingle = 2, FreeTen = 3, XbEnough = 4, Gp2Xb = 5, Yj2Gp2Xb = 6, GpEnough = 7, Yj2Gp = 8, CustomItemEnough = 9, CustomItemNotEnough = 10, NotEnough = 99}
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
+local ConfirmType = {
+  InValid = 1,
+  FreeSingle = 2,
+  FreeTen = 3,
+  XbEnough = 4,
+  Gp2Xb = 5,
+  Yj2Gp2Xb = 6,
+  GpEnough = 7,
+  Yj2Gp = 8,
+  CustomItemEnough = 9,
+  CustomItemNotEnough = 10,
+  NotEnough = 99
+}
 
-UIRecruitConfirm.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV, ConfirmType
+function UIRecruitConfirm:LoadDataOnEnter(TT, res, uiParams)
   res:SetSucc(true)
   local data = uiParams[1]
   local type = uiParams[2]
   local isSingle = type == ShakeType.SHAKE_ONCE
-  local shop = ((GameGlobal.GetModule)(ShopModule)):GetClientShop()
+  local shop = GameGlobal.GetModule(ShopModule):GetClientShop()
   local drawCount = 1
   if not isSingle then
     drawCount = 10
   end
   if type == ShakeType.SHAKE_ONCE then
     local freeCount = data:GetFreeCount_Single()
-    if freeCount and freeCount > 0 then
+    if freeCount and 0 < freeCount then
       self._confirmType = ConfirmType.FreeSingle
       self._ctx = {freeCount}
-      return 
+      return
     end
   elseif type == ShakeType.SHAKE_MULTIPLE then
     local info = data.poolData
     if info.close_type == PrizePoolOpenCloseType.PLAY_TIMES_CONDITON and info.extend_data < info.multiple_shake_times then
-      (Log.info)("剩余次数不足以多抽,不处理")
+      Log.info("剩余次数不足以多抽,不处理")
       self._confirmType = ConfirmType.InValid
       res:SetSucc(false)
-      return 
+      return
     end
     local freeCount = data:GetFreeCount_Multi()
-    if freeCount and freeCount > 0 then
+    if freeCount and 0 < freeCount then
       self._confirmType = ConfirmType.FreeTen
       self._ctx = {freeCount}
-      return 
+      return
     end
   end
-  local costItem = nil
+  local costItem
   if type == ShakeType.SHAKE_ONCE then
     costItem = data.singleMat
   elseif type == ShakeType.SHAKE_MULTIPLE then
@@ -54,33 +59,42 @@ UIRecruitConfirm.LoadDataOnEnter = function(self, TT, res, uiParams)
     if isEnoughXB then
       self._confirmType = ConfirmType.XbEnough
       self._ctx = {costItem, discountPrice}
-      return 
+      return
     else
-      local cfgv, goodsId = (ClientShop.GetXBCfg)(xbId)
+      local cfgv, goodsId = ClientShop.GetXBCfg(xbId)
       local xbPrice = cfgv[ConfigKey.ConfigKey_NowPrice]
       local costGP = diffXB * xbPrice
       local isEnoughGP, diffGP = data:IsGPEnough(costGP)
       if isEnoughGP then
         self._confirmType = ConfirmType.Gp2Xb
-        self._ctx = {costItem, costGP, diffXB}
-        return 
+        self._ctx = {
+          costItem,
+          costGP,
+          diffXB
+        }
+        return
       else
         local yj2gpRate = shop:GetDiamondExchangeGlowRate()
-        local costYJ = (math.ceil)(diffGP / yj2gpRate)
+        local costYJ = math.ceil(diffGP / yj2gpRate)
         local isEnoughYJ, diffYJ = data:IsYJEnough(costYJ)
         if isEnoughYJ then
           local buyGP = costYJ * yj2gpRate
           self._confirmType = ConfirmType.Yj2Gp2Xb
-          self._ctx = {costItem, costYJ, buyGP, diffXB}
-          return 
-        elseif (EngineGameHelper.EnableAppleVerifyBulletin)() then
-          (ToastManager.ShowToast)((StringTable.Get)("str_pay_yj_not_enough_cant_exchange"))
+          self._ctx = {
+            costItem,
+            costYJ,
+            buyGP,
+            diffXB
+          }
+          return
+        elseif EngineGameHelper.EnableAppleVerifyBulletin() then
+          ToastManager.ShowToast(StringTable.Get("str_pay_yj_not_enough_cant_exchange"))
           res:SetSucc(false)
           self._confirmType = ConfirmType.InValid
-          return 
+          return
         else
           self._confirmType = ConfirmType.NotEnough
-          return 
+          return
         end
       end
     end
@@ -89,179 +103,162 @@ UIRecruitConfirm.LoadDataOnEnter = function(self, TT, res, uiParams)
     if isEnoughGP then
       self._confirmType = ConfirmType.GpEnough
       self._ctx = {costItem, discountPrice}
-      return 
+      return
     else
       local yj2gpRate = shop:GetDiamondExchangeGlowRate()
-      local costYJ = (math.ceil)(diffGP / yj2gpRate)
+      local costYJ = math.ceil(diffGP / yj2gpRate)
       local isEnoughYJ, diffYJ = data:IsYJEnough(costYJ)
       if isEnoughYJ then
         local buyGP = costYJ * yj2gpRate
         self._confirmType = ConfirmType.Yj2Gp
-        self._ctx = {costItem, costYJ, buyGP}
-        return 
-      elseif (EngineGameHelper.EnableAppleVerifyBulletin)() then
-        (ToastManager.ShowToast)((StringTable.Get)("str_pay_yj_not_enough_cant_exchange"))
+        self._ctx = {
+          costItem,
+          costYJ,
+          buyGP
+        }
+        return
+      elseif EngineGameHelper.EnableAppleVerifyBulletin() then
+        ToastManager.ShowToast(StringTable.Get("str_pay_yj_not_enough_cant_exchange"))
         res:SetSucc(false)
         self._confirmType = ConfirmType.InValid
-        return 
+        return
       else
         self._confirmType = ConfirmType.NotEnough
-        return 
+        return
       end
     end
   else
-    local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(costItem)
-    if count < discountPrice then
+    local count = GameGlobal.GetModule(ItemModule):GetItemCount(costItem)
+    if discountPrice > count then
       self._confirmType = ConfirmType.CustomItemNotEnough
       self._ctx = {costItem}
-      return 
+      return
     else
       self._confirmType = ConfirmType.CustomItemEnough
       self._ctx = {costItem, discountPrice}
-      return 
+      return
     end
   end
-  -- DECOMPILER ERROR: 18 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV, ConfirmType
+function UIRecruitConfirm:OnShow(uiParams)
   self:InitWidget()
   self._data = uiParams[1]
   self._type = uiParams[2]
-  self._poolID = ((self._data).poolData).prize_pool_id
+  self._poolID = self._data.poolData.prize_pool_id
   self._isSingle = self._type == ShakeType.SHAKE_ONCE
   if self._confirmType == ConfirmType.InValid then
     self:CloseDialog()
   elseif self._confirmType == ConfirmType.FreeSingle then
-    local count = (self._ctx)[1]
-    do
-      self:_Enough(0, count, true, true)
-      self._confirmCb = function()
-    -- function num : 0_1_0 , upvalues : self, count
-    self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, 0, count)
-  end
-
+    local count = self._ctx[1]
+    self:_Enough(0, count, true, true)
+    
+    function self._confirmCb()
+      self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, 0, count)
     end
   elseif self._confirmType == ConfirmType.FreeTen then
-    local count = (self._ctx)[1]
+    local count = self._ctx[1]
     self:_Enough(0, count, true, false)
-    self._confirmCb = function()
-    -- function num : 0_1_1 , upvalues : self
-    self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, 0, 0)
-  end
-
+    
+    function self._confirmCb()
+      self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, 0, 0)
+    end
   elseif self._confirmType == ConfirmType.XbEnough then
-    local id = (self._ctx)[1]
-    local count = (self._ctx)[2]
+    local id = self._ctx[1]
+    local count = self._ctx[2]
     self:_Enough(id, count, false)
-    self._confirmCb = function()
-    -- function num : 0_1_2 , upvalues : self, id, count
-    self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, id, count)
-  end
-
+    
+    function self._confirmCb()
+      self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, id, count)
+    end
   elseif self._confirmType == ConfirmType.Gp2Xb then
-    local id = (self._ctx)[1]
-    local gp = (self._ctx)[2]
-    local xb = (self._ctx)[3]
+    local id = self._ctx[1]
+    local gp = self._ctx[2]
+    local xb = self._ctx[3]
     local drawCount = 1
     if not self._isSingle then
       drawCount = 10
     end
-    local name = (StringTable.Get)(((Cfg.cfg_item)[id]).Name)
-    local strContent = (StringTable.Get)("str_pay_drawcard_gp_2_xb", gp, xb, name, drawCount, drawCount)
+    local name = StringTable.Get(Cfg.cfg_item[id].Name)
+    local strContent = StringTable.Get("str_pay_drawcard_gp_2_xb", gp, xb, name, drawCount, drawCount)
     self:_NotEnough(strContent)
-    self._confirmCb = function()
-    -- function num : 0_1_3 , upvalues : self, id, gp, xb
-    self:StartTask(self._Gp2Xb, self, id, gp, xb)
-  end
-
+    
+    function self._confirmCb()
+      self:StartTask(self._Gp2Xb, self, id, gp, xb)
+    end
   elseif self._confirmType == ConfirmType.Yj2Gp2Xb then
-    local id = (self._ctx)[1]
-    local yj = (self._ctx)[2]
-    local gp = (self._ctx)[3]
-    local xb = (self._ctx)[4]
+    local id = self._ctx[1]
+    local yj = self._ctx[2]
+    local gp = self._ctx[3]
+    local xb = self._ctx[4]
     local drawCount = 1
     if not self._isSingle then
       drawCount = 10
     end
-    local name = (StringTable.Get)(((Cfg.cfg_item)[id]).Name)
-    local strContent = (StringTable.Get)("str_pay_drawcard_yj_2_gp_2_xb", yj, gp, xb, name, drawCount, drawCount)
+    local name = StringTable.Get(Cfg.cfg_item[id].Name)
+    local strContent = StringTable.Get("str_pay_drawcard_yj_2_gp_2_xb", yj, gp, xb, name, drawCount, drawCount)
     self:_NotEnough(strContent)
-    self._confirmCb = function()
-    -- function num : 0_1_4 , upvalues : self, id, yj, gp, xb
-    self:StartTask(self._Yj2Gp2Xb, self, id, yj, gp, xb)
-  end
-
+    
+    function self._confirmCb()
+      self:StartTask(self._Yj2Gp2Xb, self, id, yj, gp, xb)
+    end
   elseif self._confirmType == ConfirmType.GpEnough then
-    local id = (self._ctx)[1]
-    local count = (self._ctx)[2]
+    local id = self._ctx[1]
+    local count = self._ctx[2]
     self:_Enough(id, count, false)
-    self._confirmCb = function()
-    -- function num : 0_1_5 , upvalues : self, id, count
-    self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, id, count)
-  end
-
+    
+    function self._confirmCb()
+      self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, id, count)
+    end
   elseif self._confirmType == ConfirmType.Yj2Gp then
-    local id = (self._ctx)[1]
-    local yj = (self._ctx)[2]
-    local gp = (self._ctx)[3]
+    local id = self._ctx[1]
+    local yj = self._ctx[2]
+    local gp = self._ctx[3]
     local drawCount = 1
     if not self._isSingle then
       drawCount = 10
     end
-    local strContent = (StringTable.Get)("str_pay_drawcard_yj_2_gp", yj, gp, drawCount, drawCount)
+    local strContent = StringTable.Get("str_pay_drawcard_yj_2_gp", yj, gp, drawCount, drawCount)
     self:_NotEnough(strContent)
-    self._confirmCb = function()
-    -- function num : 0_1_6 , upvalues : self, id, yj, gp
-    self:StartTask(self._Yj2Gp, self, id, yj, gp)
-  end
-
-  elseif self._confirmType == ConfirmType.CustomItemEnough then
-    local id = (self._ctx)[1]
-    local count = (self._ctx)[2]
-    self:_Enough(id, count, false)
-    self._confirmCb = function()
-    -- function num : 0_1_7 , upvalues : self, id, count
-    self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, id, count)
-  end
-
-  elseif self._confirmType == ConfirmType.CustomItemNotEnough then
-    local id = (self._ctx)[1]
-    local name = (StringTable.Get)(((Cfg.cfg_item)[id]).Name)
-    local strContent = (StringTable.Get)("str_draw_card_special_expend_not_enough", name)
-    self:_NotEnough(strContent)
-    self._confirmCb = function()
-    -- function num : 0_1_8 , upvalues : self, _ENV
-    local viewID = ((self._data).poolData).performance_id
-    local cfg = (Cfg.cfg_recruit_pool_view)[viewID]
-    if not cfg.GiftID then
-      (Log.exception)("卡池表现配置中没有GiftID字段,ID:", viewID)
+    
+    function self._confirmCb()
+      self:StartTask(self._Yj2Gp, self, id, yj, gp)
     end
-    self:CloseDialog()
-    self:ShowDialog("UIShopController", 2, 5, 0, cfg.GiftID)
-  end
-
-  elseif self._confirmType == ConfirmType.NotEnough then
-    local strContent = (StringTable.Get)("str_pay_res_not_enough_goto_recharge")
+  elseif self._confirmType == ConfirmType.CustomItemEnough then
+    local id = self._ctx[1]
+    local count = self._ctx[2]
+    self:_Enough(id, count, false)
+    
+    function self._confirmCb()
+      self:StartTask(self._RecruitDirectly, self, self._type, self._poolID, id, count)
+    end
+  elseif self._confirmType == ConfirmType.CustomItemNotEnough then
+    local id = self._ctx[1]
+    local name = StringTable.Get(Cfg.cfg_item[id].Name)
+    local strContent = StringTable.Get("str_draw_card_special_expend_not_enough", name)
     self:_NotEnough(strContent)
-    self._confirmCb = function()
-    -- function num : 0_1_9 , upvalues : self, _ENV
-    self:CloseDialog()
-    ;
-    (((GameGlobal.GetModule)(ShopModule)):GetClientShop()):OpenRechargeShop()
+    
+    function self._confirmCb()
+      local viewID = self._data.poolData.performance_id
+      local cfg = Cfg.cfg_recruit_pool_view[viewID]
+      if not cfg.GiftID then
+        Log.exception("卡池表现配置中没有GiftID字段,ID:", viewID)
+      end
+      self:CloseDialog()
+      self:ShowDialog("UIShopController", 2, 5, 0, cfg.GiftID)
+    end
+  elseif self._confirmType == ConfirmType.NotEnough then
+    local strContent = StringTable.Get("str_pay_res_not_enough_goto_recharge")
+    self:_NotEnough(strContent)
+    
+    function self._confirmCb()
+      self:CloseDialog()
+      GameGlobal.GetModule(ShopModule):GetClientShop():OpenRechargeShop()
+    end
   end
-
-  end
-  -- DECOMPILER ERROR: 15 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm.InitWidget = function(self)
-  -- function num : 0_2
+function UIRecruitConfirm:InitWidget()
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.have = self:GetUIComponent("UILocalizationText", "have")
@@ -274,20 +271,16 @@ UIRecruitConfirm.InitWidget = function(self)
   self.otherRoot = self:GetUIComponent("RectTransform", "otherRoot")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm._Enough = function(self, itemId, itemCount, free, isSingleFree)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.enoughTip):SetActive(true)
-  ;
-  (self.msgBox):SetActive(false)
-  local cfg = (Cfg.cfg_item)[itemId]
-  local ss = nil
+function UIRecruitConfirm:_Enough(itemId, itemCount, free, isSingleFree)
+  self.enoughTip:SetActive(true)
+  self.msgBox:SetActive(false)
+  local cfg = Cfg.cfg_item[itemId]
+  local ss
   if free then
     if isSingleFree then
-      ss = (StringTable.Get)("str_draw_card_cost_free")
+      ss = StringTable.Get("str_draw_card_cost_free")
     else
-      ss = (StringTable.Get)("str_draw_card_cost_freeten")
+      ss = StringTable.Get("str_draw_card_cost_freeten")
     end
   else
     local heartstoneCount = 1
@@ -296,248 +289,167 @@ UIRecruitConfirm._Enough = function(self, itemId, itemCount, free, isSingleFree)
       heartstoneCount = 10
       drawCount = 10
     end
-    ss = (StringTable.Get)("str_draw_card_cost_to_draw", itemCount, (StringTable.Get)(cfg.Name), heartstoneCount, drawCount)
+    ss = StringTable.Get("str_draw_card_cost_to_draw", itemCount, StringTable.Get(cfg.Name), heartstoneCount, drawCount)
   end
-  do
-    ;
-    (self.title):SetText(ss)
-    ;
-    (self.iconRoot):SetActive(not free)
-    local otherRootPosX = 0
-    if free then
-      otherRootPosX = -75
-      local freeCount = itemCount
-      local lessCount = freeCount - 1
-      ;
-      (self.have):SetText(freeCount)
-      ;
-      (self.rest):SetText(lessCount)
-    else
-      do
-        local had = (self:GetModule(RoleModule)):GetAssetCount(itemId)
-        do
-          local rest = had - itemCount
-          if had > 99999 then
-            had = "99999+"
-          end
-          if rest > 99999 then
-            rest = "99999+"
-          end
-          ;
-          (self.have):SetText(had)
-          ;
-          (self.rest):SetText(rest)
-          ;
-          (self.icon):LoadImage(cfg.Icon)
-          -- DECOMPILER ERROR at PC102: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self.otherRoot).anchoredPosition = Vector2(otherRootPosX, 0)
-        end
-      end
+  self.title:SetText(ss)
+  self.iconRoot:SetActive(not free)
+  local otherRootPosX = 0
+  if free then
+    otherRootPosX = -75
+    local freeCount = itemCount
+    local lessCount = freeCount - 1
+    self.have:SetText(freeCount)
+    self.rest:SetText(lessCount)
+  else
+    local had = self:GetModule(RoleModule):GetAssetCount(itemId)
+    local rest = had - itemCount
+    if 99999 < had then
+      had = "99999+"
     end
+    if 99999 < rest then
+      rest = "99999+"
+    end
+    self.have:SetText(had)
+    self.rest:SetText(rest)
+    self.icon:LoadImage(cfg.Icon)
   end
+  self.otherRoot.anchoredPosition = Vector2(otherRootPosX, 0)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm._NotEnough = function(self, text)
-  -- function num : 0_4
-  (self.enoughTip):SetActive(false)
-  ;
-  (self.msgBox):SetActive(true)
-  ;
-  (self.msgBoxText):SetText(text)
+function UIRecruitConfirm:_NotEnough(text)
+  self.enoughTip:SetActive(false)
+  self.msgBox:SetActive(true)
+  self.msgBoxText:SetText(text)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm.ConfirmButtonOnClick = function(self, go)
-  -- function num : 0_5
+function UIRecruitConfirm:ConfirmButtonOnClick(go)
   if self._confirmCb then
-    (self._confirmCb)()
+    self._confirmCb()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm.CancelButtonOnClick = function(self, go)
-  -- function num : 0_6
+function UIRecruitConfirm:CancelButtonOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm.MsgBoxOKOnClick = function(self, go)
-  -- function num : 0_7
+function UIRecruitConfirm:MsgBoxOKOnClick(go)
   if self._confirmCb then
-    (self._confirmCb)()
+    self._confirmCb()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm.MsgBoxCancelOnClick = function(self, go)
-  -- function num : 0_8
+function UIRecruitConfirm:MsgBoxCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm._Yj2Gp2Xb = function(self, TT, costMat, yaojing, guangpo, xingbiao)
-  -- function num : 0_9 , upvalues : _ENV
+function UIRecruitConfirm:_Yj2Gp2Xb(TT, costMat, yaojing, guangpo, xingbiao)
   self:Lock("RequestYJ2GP2XB")
-  local mShop = (GameGlobal.GetModule)(ShopModule)
+  local mShop = GameGlobal.GetModule(ShopModule)
   local guangpoRet = mShop:ApplyDiamondExchangeGlow(TT, yaojing, guangpo)
-  if (ClientShop.CheckShopCode)(guangpoRet:GetResult()) then
-    local cfgv, goodsId = (ClientShop.GetXBCfg)(costMat)
+  if ClientShop.CheckShopCode(guangpoRet:GetResult()) then
+    local cfgv, goodsId = ClientShop.GetXBCfg(costMat)
     local sale_tpye = cfgv[ConfigKey.ConfigKey_SaleType]
     local price = cfgv[ConfigKey.ConfigKey_NowPrice]
     local xingbiaoRet = mShop:BuyItem(TT, MarketType.Shop_GuangPo, goodsId, xingbiao, sale_tpye, price)
-    if (ClientShop.CheckShopCode)(xingbiaoRet) then
-      local p, discountPrice, d, m = (self._data):GetAssetsPrice(self._isSingle)
-      self:_RequestDrawcard(TT, self._type, ((self._data).poolData).prize_pool_id, costMat, discountPrice)
+    if ClientShop.CheckShopCode(xingbiaoRet) then
+      local p, discountPrice, d, m = self._data:GetAssetsPrice(self._isSingle)
+      self:_RequestDrawcard(TT, self._type, self._data.poolData.prize_pool_id, costMat, discountPrice)
     else
-      do
-        do
-          ;
-          (Log.error)("耀晶兑换光珀后，再兑换星标失败:", xingbiaoRet)
-          ;
-          (Log.error)("耀晶兑换光珀失败:", guangpoRet:GetResult())
-          self:UnLock("RequestYJ2GP2XB")
-          self:CloseDialog()
-        end
-      end
+      Log.error("耀晶兑换光珀后，再兑换星标失败:", xingbiaoRet)
     end
+  else
+    Log.error("耀晶兑换光珀失败:", guangpoRet:GetResult())
   end
+  self:UnLock("RequestYJ2GP2XB")
+  self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm._Gp2Xb = function(self, TT, costMat, guangpo, xingbiao)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfgv, goodsId = (ClientShop.GetXBCfg)(costMat)
+function UIRecruitConfirm:_Gp2Xb(TT, costMat, guangpo, xingbiao)
+  local cfgv, goodsId = ClientShop.GetXBCfg(costMat)
   if not cfgv then
-    return 
+    return
   end
   local sale_tpye = cfgv[ConfigKey.ConfigKey_SaleType]
   local price = cfgv[ConfigKey.ConfigKey_NowPrice]
-  local mShop = (GameGlobal.GetModule)(ShopModule)
+  local mShop = GameGlobal.GetModule(ShopModule)
   self:Lock("RequestGP2XB")
   local ret = mShop:BuyItem(TT, MarketType.Shop_GuangPo, goodsId, xingbiao, sale_tpye, price)
   self:UnLock("RequestGP2XB")
-  if (ClientShop.CheckShopCode)(ret) then
-    local p, discountPrice, d, m = (self._data):GetAssetsPrice(self._isSingle)
-    self:_RequestDrawcard(TT, self._type, ((self._data).poolData).prize_pool_id, costMat, discountPrice)
+  if ClientShop.CheckShopCode(ret) then
+    local p, discountPrice, d, m = self._data:GetAssetsPrice(self._isSingle)
+    self:_RequestDrawcard(TT, self._type, self._data.poolData.prize_pool_id, costMat, discountPrice)
   else
-    do
-      ;
-      (Log.fatal)("### RequestGP2XB failed.", guangpo, xingbiao, ret)
-      self:CloseDialog()
-    end
+    Log.fatal("### RequestGP2XB failed.", guangpo, xingbiao, ret)
   end
+  self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm._Yj2Gp = function(self, TT, costMat, yaojing, guangpo)
-  -- function num : 0_11 , upvalues : _ENV
-  local mShop = (GameGlobal.GetModule)(ShopModule)
+function UIRecruitConfirm:_Yj2Gp(TT, costMat, yaojing, guangpo)
+  local mShop = GameGlobal.GetModule(ShopModule)
   self:Lock("RequestYJ2GP")
   local ret = mShop:ApplyDiamondExchangeGlow(TT, yaojing, guangpo)
   self:UnLock("RequestYJ2GP")
-  if (ClientShop.CheckShopCode)(ret:GetResult()) then
-    local p, discountPrice, d, m = (self._data):GetAssetsPrice(self._isSingle)
-    self:_RequestDrawcard(TT, self._type, ((self._data).poolData).prize_pool_id, costMat, discountPrice)
+  if ClientShop.CheckShopCode(ret:GetResult()) then
+    local p, discountPrice, d, m = self._data:GetAssetsPrice(self._isSingle)
+    self:_RequestDrawcard(TT, self._type, self._data.poolData.prize_pool_id, costMat, discountPrice)
   else
-    do
-      ;
-      (Log.fatal)("### ApplyDiamondExchangeGlow failed.", yaojing, guangpo, ret:GetResult())
-      self:CloseDialog()
-    end
+    Log.fatal("### ApplyDiamondExchangeGlow failed.", yaojing, guangpo, ret:GetResult())
   end
+  self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm._RecruitDirectly = function(self, TT, drawType, poolID, itemID, itemCount)
-  -- function num : 0_12
+function UIRecruitConfirm:_RecruitDirectly(TT, drawType, poolID, itemID, itemCount)
   self:_RequestDrawcard(TT, drawType, poolID, itemID, itemCount)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIRecruitConfirm._RequestDrawcard = function(self, TT, drawType, poolID, itemID, itemCount)
-  -- function num : 0_13 , upvalues : _ENV
-  do
-    if (SDKProxy:GetInstance()):IsInlandSDK() then
-      local ready = false
-      do
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WaitForRecuitSceneLoadFinish, function()
-    -- function num : 0_13_0 , upvalues : ready
-    ready = true
-  end
-)
-        self:Lock("WaitRecruitScene")
-        while not ready do
-          YIELD(TT)
-        end
-        self:UnLock("WaitRecruitScene")
-      end
+function UIRecruitConfirm:_RequestDrawcard(TT, drawType, poolID, itemID, itemCount)
+  if SDKProxy:GetInstance():IsInlandSDK() then
+    local ready = false
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.WaitForRecuitSceneLoadFinish, function()
+      ready = true
+    end)
+    self:Lock("WaitRecruitScene")
+    while not ready do
+      YIELD(TT)
     end
-    self:Lock("StartDrawCard")
-    local module = (GameGlobal.GetModule)(GambleModule)
-    local petModule = (GameGlobal.GetModule)(PetModule)
-    petModule:GetAllPetsSnapshoot()
-    ;
-    (module:Context()):SetHaveMaxStarPet(petModule:GetMaxStarResult())
-    local funcModule = ((GameGlobal.GetModule)(RoleModule)).uiModule
-    funcModule:LockAchievementFinishPanel(true)
-    local ack, cards, duplicateTags, fixed_reward = module:Shake(TT, drawType, poolID, itemID, itemCount)
-    self:UnLock("StartDrawCard")
-    if ack:GetSucc() then
-      if cards == nil or #cards == 0 then
-        (Log.fatal)("[DrawCard] cards result is empty!")
-        return 
-      end
-      ;
-      (Log.notice)("[DrawCard] draw card success, count: ", #cards)
-      local viewData = UIDrawCardViewData:New(cards, duplicateTags, drawType, poolID, fixed_reward)
-      ;
-      (module:Context()):SetStateDrawCard(true)
-      self:ShowDialog("UIDrawCardAnimController", viewData)
-    else
-      do
-        do
-          local funcModule = ((GameGlobal.GetModule)(RoleModule)).uiModule
-          funcModule:LockAchievementFinishPanel(false)
-          ;
-          (ToastManager.ShowToast)(module:GetReasonByErrorCode(ack:GetResult()))
-          ;
-          (Log.error)("抽卡失败:", ack:GetResult())
-          local ack2 = module:ApplyAllPoolInfo(TT)
-          if ack2:GetSucc() then
-            (Log.notice)("[DrawCard] get draw card data success, open ui")
-          else
-            ;
-            (Log.notice)("[DrawCard] promotion time up, refresh pools failed")
-            ;
-            (ToastManager.ShowToast)(module:GetReasonByErrorCode(ack2:GetResult()))
-          end
-          local shopModule = (GameGlobal.GetModule)(ShopModule)
-          shopModule:RequestGlowMarket(TT)
-          local module = (GameGlobal.GetModule)(GambleModule)
-          ;
-          (module:Context()):SetDefaultPoolIndex((self._data).index)
-          ;
-          (module:Context()):SetPoolID(((self._data).poolData).performance_id)
-          ;
-          (module:Context()):SetPoolType(((self._data).poolData).prize_pool_type)
-        end
-      end
-    end
+    self:UnLock("WaitRecruitScene")
   end
+  self:Lock("StartDrawCard")
+  local module = GameGlobal.GetModule(GambleModule)
+  local petModule = GameGlobal.GetModule(PetModule)
+  petModule:GetAllPetsSnapshoot()
+  module:Context():SetHaveMaxStarPet(petModule:GetMaxStarResult())
+  local funcModule = GameGlobal.GetModule(RoleModule).uiModule
+  funcModule:LockAchievementFinishPanel(true)
+  local ack, cards, duplicateTags, fixed_reward = module:Shake(TT, drawType, poolID, itemID, itemCount)
+  self:UnLock("StartDrawCard")
+  if ack:GetSucc() then
+    if cards == nil or #cards == 0 then
+      Log.fatal("[DrawCard] cards result is empty!")
+      return
+    end
+    Log.notice("[DrawCard] draw card success, count: ", #cards)
+    local viewData = UIDrawCardViewData:New(cards, duplicateTags, drawType, poolID, fixed_reward)
+    module:Context():SetStateDrawCard(true)
+    self:ShowDialog("UIDrawCardAnimController", viewData)
+  else
+    local funcModule = GameGlobal.GetModule(RoleModule).uiModule
+    funcModule:LockAchievementFinishPanel(false)
+    ToastManager.ShowToast(module:GetReasonByErrorCode(ack:GetResult()))
+    Log.error("抽卡失败:", ack:GetResult())
+  end
+  local ack2 = module:ApplyAllPoolInfo(TT)
+  if ack2:GetSucc() then
+    Log.notice("[DrawCard] get draw card data success, open ui")
+  else
+    Log.notice("[DrawCard] promotion time up, refresh pools failed")
+    ToastManager.ShowToast(module:GetReasonByErrorCode(ack2:GetResult()))
+  end
+  local shopModule = GameGlobal.GetModule(ShopModule)
+  shopModule:RequestGlowMarket(TT)
+  local module = GameGlobal.GetModule(GambleModule)
+  module:Context():SetDefaultPoolIndex(self._data.index)
+  module:Context():SetPoolID(self._data.poolData.performance_id)
+  module:Context():SetPoolType(self._data.poolData.prize_pool_type)
 end
-
-

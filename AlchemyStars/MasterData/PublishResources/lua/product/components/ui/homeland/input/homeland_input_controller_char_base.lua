@@ -1,115 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/input/homeland_input_controller_char_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandInputControllerCharBase", Object)
 HomelandInputControllerCharBase = HomelandInputControllerCharBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandInputControllerCharBase.Constructor = function(self)
-  -- function num : 0_0
+function HomelandInputControllerCharBase:Constructor()
   self._active = false
   self._dashHolding = false
   self._rushing = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.Init = function(self, mainCharacterController, followCameraController)
-  -- function num : 0_1
+function HomelandInputControllerCharBase:Init(mainCharacterController, followCameraController)
   self._mainCharacterController = mainCharacterController
   self._followCameraController = followCameraController
   self:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.SetActive = function(self, active)
-  -- function num : 0_2
+function HomelandInputControllerCharBase:SetActive(active)
   self._active = active
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.Dispose = function(self)
-  -- function num : 0_3
+function HomelandInputControllerCharBase:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.Update = function(self, deltaTimeMS)
-  -- function num : 0_4
+function HomelandInputControllerCharBase:Update(deltaTimeMS)
   if self._active then
     self:OnUpdate(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.HandleMove = function(self, moveVec, moveState)
-  -- function num : 0_5
+function HomelandInputControllerCharBase:HandleMove(moveVec, moveState)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.HandleRotate = function(self, rotateVec)
-  -- function num : 0_6
+function HomelandInputControllerCharBase:HandleRotate(rotateVec)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.HandleScale = function(self, scale)
-  -- function num : 0_7
+function HomelandInputControllerCharBase:HandleScale(scale)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.DashStart = function(self)
-  -- function num : 0_8
+function HomelandInputControllerCharBase:DashStart()
   self._dashHolding = true
-  ;
-  (self._mainCharacterController):Dash(function()
-    -- function num : 0_8_0 , upvalues : self
+  self._mainCharacterController:Dash(function()
     self:DashUpdateCallback()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.DashRelease = function(self)
-  -- function num : 0_9
+function HomelandInputControllerCharBase:DashRelease()
   self._dashHolding = false
   self._rushing = false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.DashEnd = function(self)
-  -- function num : 0_10
+function HomelandInputControllerCharBase:DashEnd()
   self._rushing = self._dashHolding
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.IsRushing = function(self)
-  -- function num : 0_11
+function HomelandInputControllerCharBase:IsRushing()
   return self._rushing
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.DashUpdateCallback = function(self)
-  -- function num : 0_12
-  (self._followCameraController):UpdatePos((self._mainCharacterController):Position())
+function HomelandInputControllerCharBase:DashUpdateCallback()
+  self._followCameraController:UpdatePos(self._mainCharacterController:Position())
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharBase.Enter = function(self)
-  -- function num : 0_13
-  (self._followCameraController):UpdatePos((self._mainCharacterController):Position())
+function HomelandInputControllerCharBase:Enter()
+  self._followCameraController:UpdatePos(self._mainCharacterController:Position())
 end
-
-

@@ -1,85 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge_sort.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeSort", UICustomWidget)
 UIForgeSort = UIForgeSort
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForgeSort.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIForgeSort:OnShow()
   self.txtSort = self:GetUIComponent("UILocalizationText", "txtSort")
   self.imgArrow = self:GetUIComponent("Transform", "imgArrow")
   self.arrow = self:GetUIComponent("Image", "imgArrow")
-  self.data = (self:GetModule(HomelandModule)):GetForgeData()
+  self.data = self:GetModule(HomelandModule):GetForgeData()
   self.up = Vector3(0, 0, 180)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSort.OnHide = function(self)
-  -- function num : 0_1
+function UIForgeSort:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSort.Init = function(self, forgeSortType)
-  -- function num : 0_2 , upvalues : _ENV
+function UIForgeSort:Init(forgeSortType)
   self.forgeSortType = forgeSortType
-  ;
-  (self.txtSort):SetText((StringTable.Get)("str_homeland_forge_sort_type_" .. forgeSortType))
+  self.txtSort:SetText(StringTable.Get("str_homeland_forge_sort_type_" .. forgeSortType))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSort.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  if ((self.data).tSort)[1] == self.forgeSortType then
-    if ((self.data).tSort)[2] then
-      (self.imgArrow).localEulerAngles = self.up
+function UIForgeSort:Flush()
+  if self.data.tSort[1] == self.forgeSortType then
+    if self.data.tSort[2] then
+      self.imgArrow.localEulerAngles = self.up
     else
-      -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.imgArrow).localEulerAngles = Vector3.zero
+      self.imgArrow.localEulerAngles = Vector3.zero
     end
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.arrow).color = Color(0.97254901960784, 0.78823529411765, 0.48627450980392)
+    self.arrow.color = Color(0.9725490196078431, 0.788235294117647, 0.48627450980392156)
   else
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.arrow).color = Color(0.6, 0.6, 0.6)
+    self.arrow.color = Color(0.6, 0.6, 0.6)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSort.bgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if ((self.data).tSort)[1] == self.forgeSortType then
-    ((self.data).tSort)[2] = not ((self.data).tSort)[2]
-    ;
-    (self.data):SortList()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
+function UIForgeSort:bgOnClick(go)
+  if self.data.tSort[1] == self.forgeSortType then
+    self.data.tSort[2] = not self.data.tSort[2]
+    self.data:SortList()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
   else
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self.data).tSort)[1] = self.forgeSortType
-    ;
-    (self.data):SortList()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
+    self.data.tSort[1] = self.forgeSortType
+    self.data:SortList()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
   end
 end
-
-

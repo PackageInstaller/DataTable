@@ -1,60 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/cls/ui_grave_robber_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GraveRobberData", Object)
 GraveRobberData = GraveRobberData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GraveRobberData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function GraveRobberData:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
   self.campaign = nil
   self.chapters = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.RequestCampaign = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function GraveRobberData:RequestCampaign(TT)
   local res = AsyncRequestRes:New()
   if not self.mCampaign then
-    return 
+    return
   end
-  if not self.campaign or (self.campaign)._id <= 0 then
+  if not self.campaign or self.campaign._id <= 0 then
     self._campaign = UIActivityCampaign:New()
-    ;
-    (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_GRASS)
+    self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_GRASS)
     self:Init()
-    return 
+    return
   end
-  ;
-  (self.mCampaign):CampaignComProtoLoadInfo(TT, res, (self.campaign)._id)
+  self.mCampaign:CampaignComProtoLoadInfo(TT, res, self.campaign._id)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GetCampaign = function(self)
-  -- function num : 0_2
+function GraveRobberData:GetCampaign()
   return self.campaign
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GetCampaignLocalProgress = function(self)
-  -- function num : 0_3
+function GraveRobberData:GetCampaignLocalProgress()
   local campaign = self:GetCampaign()
   if campaign then
     return campaign:GetLocalProcess()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GetComponentGrassMission = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function GraveRobberData:GetComponentGrassMission()
   local lp = self:GetCampaignLocalProgress()
   if lp then
     local c = lp:GetComponent(ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION)
@@ -62,10 +41,7 @@ GraveRobberData.GetComponentGrassMission = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GetComponentInfoGrassMission = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function GraveRobberData:GetComponentInfoGrassMission()
   local lp = self:GetCampaignLocalProgress()
   if lp then
     local cInfo = lp:GetComponentInfo(ECampaignGrassComponentID.ECAMPAIGN_GRASS_MISSION)
@@ -73,148 +49,109 @@ GraveRobberData.GetComponentInfoGrassMission = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.Init = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function GraveRobberData:Init()
   local cInfo = self:GetComponentInfoGrassMission()
   if not cInfo then
-    (Log.warn)("### GraveRobberData Init failed. GetComponentInfoGrassMission is nil.")
-    return 
+    Log.warn("### GraveRobberData Init failed. GetComponentInfoGrassMission is nil.")
+    return
   end
   local c = self:GetComponentGrassMission()
   local cCfgId = c:GetComponetCfgId(cInfo.m_campaign_id, cInfo.m_component_id)
-  local cfg_component_line_mission = (Cfg.cfg_component_line_mission)({ComponentID = cCfgId})
-  local len_cfg_component_line_mission = (table.count)(cfg_component_line_mission)
-  local GetCfgPassMissionInfo = function(campaignMissionId)
-    -- function num : 0_6_0 , upvalues : cfg_component_line_mission, len_cfg_component_line_mission, _ENV, cCfgId
-    if cfg_component_line_mission and len_cfg_component_line_mission > 0 then
-      for key,cfgv in pairs(cfg_component_line_mission) do
+  local cfg_component_line_mission = Cfg.cfg_component_line_mission({ComponentID = cCfgId})
+  local len_cfg_component_line_mission = table.count(cfg_component_line_mission)
+  
+  local function GetCfgPassMissionInfo(campaignMissionId)
+    if cfg_component_line_mission and 0 < len_cfg_component_line_mission then
+      for key, cfgv in pairs(cfg_component_line_mission) do
         if cfgv.CampaignMissionId == campaignMissionId then
           return cfgv
         end
       end
     else
-      do
-        ;
-        (Log.fatal)("### GraveRobberData Init failed. no data in cfg_component_line_mission. ComponentID=", cCfgId)
-      end
+      Log.fatal("### GraveRobberData Init failed. no data in cfg_component_line_mission. ComponentID=", cCfgId)
     end
   end
-
+  
   local m_pass_mission_info = cInfo.m_pass_mission_info
-  local len_m_pass_mission_info = (table.count)(m_pass_mission_info)
-  local GetNodeState = function(campaignMissionId, cfgvLineMission)
-    -- function num : 0_6_1 , upvalues : m_pass_mission_info, len_m_pass_mission_info, _ENV
+  local len_m_pass_mission_info = table.count(m_pass_mission_info)
+  
+  local function GetNodeState(campaignMissionId, cfgvLineMission)
     local hasPass = false
-    if m_pass_mission_info and len_m_pass_mission_info > 0 then
-      for stageId,v in pairs(m_pass_mission_info) do
+    if m_pass_mission_info and 0 < len_m_pass_mission_info then
+      for stageId, v in pairs(m_pass_mission_info) do
         if v.mission_id == campaignMissionId then
           hasPass = true
           break
         end
       end
     end
-    do
-      if hasPass then
-        return DiscoveryStageState.Nomal
-      else
-        local mMission = (GameGlobal.GetModule)(MissionModule)
-        local discoveryData = mMission:GetDiscoveryData()
-        local nodeMain = discoveryData:GetCanMoveNodeDataByStageId(cfgvLineMission.NeedMainMissionId)
-        if nodeMain:State() == DiscoveryStageState.Nomal then
-          return DiscoveryStageState.CanPlay
-        end
+    if hasPass then
+      return DiscoveryStageState.Nomal
+    else
+      local mMission = GameGlobal.GetModule(MissionModule)
+      local discoveryData = mMission:GetDiscoveryData()
+      local nodeMain = discoveryData:GetCanMoveNodeDataByStageId(cfgvLineMission.NeedMainMissionId)
+      if nodeMain:State() == DiscoveryStageState.Nomal then
+        return DiscoveryStageState.CanPlay
       end
     end
   end
-
-  local cfgChapter = (Cfg.cfg_grass_chapter)()
+  
+  local cfgChapter = Cfg.cfg_grass_chapter()
   self.chapters = {}
-  for key,cfgv in pairs(cfgChapter) do
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R16 in 'UnsetPending'
-
-    if not (self.chapters)[cfgv.ChapterID] then
-      (self.chapters)[cfgv.ChapterID] = GraveRobberChapter:New()
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R16 in 'UnsetPending'
-
-      ;
-      ((self.chapters)[cfgv.ChapterID]).chapterId = cfgv.ChapterID
+  for key, cfgv in pairs(cfgChapter) do
+    if not self.chapters[cfgv.ChapterID] then
+      self.chapters[cfgv.ChapterID] = GraveRobberChapter:New()
+      self.chapters[cfgv.ChapterID].chapterId = cfgv.ChapterID
     end
     local node = GraveRobberNode:New()
     node.stageId = cfgv.MissionID
     node.chapterId = cfgv.ChapterID
     local cfgvLineMission = GetCfgPassMissionInfo(cfgv.MissionID)
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R18 in 'UnsetPending'
-
-    ;
-    (node.pos).x = cfgvLineMission.MapPosX
-    -- DECOMPILER ERROR at PC71: Confused about usage of register: R18 in 'UnsetPending'
-
-    ;
-    (node.pos).y = cfgvLineMission.MapPosY
-    node.name = (StringTable.Get)(cfgvLineMission.Name)
+    node.pos.x = cfgvLineMission.MapPosX
+    node.pos.y = cfgvLineMission.MapPosY
+    node.name = StringTable.Get(cfgvLineMission.Name)
     node.state = GetNodeState(cfgv.MissionID, cfgvLineMission)
-    ;
-    (table.insert)(((self.chapters)[cfgv.ChapterID]).nodes, node)
+    table.insert(self.chapters[cfgv.ChapterID].nodes, node)
   end
   self:CancelTimerEvent()
-  local leftSeconds = (UICommonHelper.CalcLeftSeconds)(cInfo.m_close_time)
-  self.te = ((GameGlobal.Timer)()):AddEvent(leftSeconds * 1000, function()
-    -- function num : 0_6_2 , upvalues : self, _ENV
+  local leftSeconds = UICommonHelper.CalcLeftSeconds(cInfo.m_close_time)
+  self.te = GameGlobal.Timer():AddEvent(leftSeconds * 1000, function()
     self:CancelTimerEvent()
     self.campaign = nil
     self.chapters = nil
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GrassClose)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GrassClose)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.CancelTimerEvent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function GraveRobberData:CancelTimerEvent()
   if self.te then
-    ((GameGlobal.Timer)()):CancelEvent(self.te)
+    GameGlobal.Timer():CancelEvent(self.te)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.IsOpenGraveRobber = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function GraveRobberData:IsOpenGraveRobber()
   local cInfo = self:GetComponentInfoGrassMission()
-  do
-    if cInfo and cInfo.m_b_unlock then
-      local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-      if nowTimestamp < cInfo.m_unlock_time then
-        return false
-      else
-        if cInfo.m_close_time < nowTimestamp then
-          return false
-        else
-          return true
-        end
-      end
+  if cInfo and cInfo.m_b_unlock then
+    local nowTimestamp = UICommonHelper.GetNowTimestamp()
+    if nowTimestamp < cInfo.m_unlock_time then
+      return false
+    elseif nowTimestamp > cInfo.m_close_time then
+      return false
+    else
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GetChapterByChapterId = function(self, chapterId)
-  -- function num : 0_9
+function GraveRobberData:GetChapterByChapterId(chapterId)
   if self.chapters then
-    return (self.chapters)[chapterId]
+    return self.chapters[chapterId]
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.IsChapterCanPlay = function(self, chapterId)
-  -- function num : 0_10
+function GraveRobberData:IsChapterCanPlay(chapterId)
   local chapter = self:GetChapterByChapterId(chapterId)
   if chapter then
     return chapter:HasCanPlayNode()
@@ -222,27 +159,19 @@ GraveRobberData.IsChapterCanPlay = function(self, chapterId)
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GetCanPlayNodesCount = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function GraveRobberData:GetCanPlayNodesCount()
   local count = 0
-  if self.chapters and (table.count)(self.chapters) > 0 then
-    for k,v in pairs(self.chapters) do
+  if self.chapters and 0 < table.count(self.chapters) then
+    for k, v in pairs(self.chapters) do
       local chapter = self:GetChapterByChapterId(v.chapterId)
       count = count + chapter:GetCanPlayNodesCount()
     end
   end
-  do
-    return count
-  end
+  return count
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GetCanPlayNodeByChapterId = function(self, chapterId)
-  -- function num : 0_12 , upvalues : _ENV
-  if self.chapters and (table.count)(self.chapters) > 0 then
+function GraveRobberData:GetCanPlayNodeByChapterId(chapterId)
+  if self.chapters and table.count(self.chapters) > 0 then
     local chapter = self:GetChapterByChapterId(chapterId)
     local node = chapter:GetCanPlayNode()
     if node then
@@ -251,12 +180,9 @@ GraveRobberData.GetCanPlayNodeByChapterId = function(self, chapterId)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GetCanPlayNode = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if self.chapters and (table.count)(self.chapters) > 0 then
-    for k,v in pairs(self.chapters) do
+function GraveRobberData:GetCanPlayNode()
+  if self.chapters and table.count(self.chapters) > 0 then
+    for k, v in pairs(self.chapters) do
       local node = self:GetCanPlayNodeByChapterId(v.chapterId)
       if node then
         return node
@@ -265,10 +191,7 @@ GraveRobberData.GetCanPlayNode = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.HasCanPlayNode = function(self)
-  -- function num : 0_14
+function GraveRobberData:HasCanPlayNode()
   local node = self:GetCanPlayNode()
   if node then
     return true
@@ -276,13 +199,10 @@ GraveRobberData.HasCanPlayNode = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GetNodeByStageId = function(self, stageId)
-  -- function num : 0_15 , upvalues : _ENV
-  if self.chapters and (table.count)(self.chapters) > 0 then
-    for i,chapter in pairs(self.chapters) do
-      for j,node in ipairs(chapter.nodes) do
+function GraveRobberData:GetNodeByStageId(stageId)
+  if self.chapters and table.count(self.chapters) > 0 then
+    for i, chapter in pairs(self.chapters) do
+      for j, node in ipairs(chapter.nodes) do
         if node and node.stageId == stageId then
           return node
         end
@@ -291,67 +211,45 @@ GraveRobberData.GetNodeByStageId = function(self, stageId)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.LastNode = function(self)
-  -- function num : 0_16
+function GraveRobberData:LastNode()
   return self.lastNode
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.SaveLastNode = function(self, node)
-  -- function num : 0_17
+function GraveRobberData:SaveLastNode(node)
   self.lastNode = node
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.GrassNodeFirst = function(self)
-  -- function num : 0_18
+function GraveRobberData:GrassNodeFirst()
   return self.grassNodeFirst
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberData.SaveGrassNodeFirst = function(self, node)
-  -- function num : 0_19
+function GraveRobberData:SaveGrassNodeFirst(node)
   self.grassNodeFirst = node
 end
 
 _class("GraveRobberChapter", Object)
 GraveRobberChapter = GraveRobberChapter
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-GraveRobberChapter.Constructor = function(self)
-  -- function num : 0_20
+function GraveRobberChapter:Constructor()
   self.chapterId = 0
   self.nodes = {}
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberChapter.GetCanPlayNodesCount = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function GraveRobberChapter:GetCanPlayNodesCount()
   local count = 0
-  if self.nodes and (table.count)(self.nodes) > 0 then
-    for i,v in ipairs(self.nodes) do
+  if self.nodes and 0 < table.count(self.nodes) then
+    for i, v in ipairs(self.nodes) do
       if v:State() == DiscoveryStageState.CanPlay then
         count = count + 1
       end
     end
   end
-  do
-    return count
-  end
+  return count
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberChapter.GetCanPlayNode = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if self.nodes and (table.count)(self.nodes) > 0 then
-    for i,v in ipairs(self.nodes) do
+function GraveRobberChapter:GetCanPlayNode()
+  if self.nodes and table.count(self.nodes) > 0 then
+    for i, v in ipairs(self.nodes) do
       if v:State() == DiscoveryStageState.CanPlay then
         return v
       end
@@ -359,10 +257,7 @@ GraveRobberChapter.GetCanPlayNode = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberChapter.HasCanPlayNode = function(self)
-  -- function num : 0_23
+function GraveRobberChapter:HasCanPlayNode()
   local node = self:GetCanPlayNode()
   if node then
     return true
@@ -372,10 +267,8 @@ end
 
 _class("GraveRobberNode", Object)
 GraveRobberNode = GraveRobberNode
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
 
-GraveRobberNode.Constructor = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function GraveRobberNode:Constructor()
   self.stageId = 0
   self.chapterId = 0
   self.pos = Vector2.zero
@@ -383,11 +276,6 @@ GraveRobberNode.Constructor = function(self)
   self.name = ""
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-GraveRobberNode.State = function(self)
-  -- function num : 0_25
+function GraveRobberNode:State()
   return self.state
 end
-
-

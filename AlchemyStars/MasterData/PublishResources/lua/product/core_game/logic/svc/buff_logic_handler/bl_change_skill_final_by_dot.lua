@@ -1,51 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_dot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByDotCount", BuffLogicBase)
 BuffLogicChangeSkillFinalByDotCount = BuffLogicChangeSkillFinalByDotCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByDotCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillFinalByDotCount:Constructor(buffInstance, logicParam)
   self._changeValue = logicParam.changeValue or 0
   self._buffEffectList = logicParam.buffEffectList
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = logicParam.effectList
+  self._buffInstance._effectList = logicParam.effectList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByDotCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillFinalByDotCount:DoLogic(notify)
   if notify.GetDefenderEntity then
     local defenderEntity = notify:GetDefenderEntity()
-    local dotCount = (self._buffLogicService):CalcBuffEffectCount(defenderEntity, self._buffEffectList)
+    local dotCount = self._buffLogicService:CalcBuffEffectCount(defenderEntity, self._buffEffectList)
     local changeValue = self._changeValue * dotCount
-    for _,paramType in ipairs((self._buffInstance)._effectList) do
-      (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
+    for _, paramType in ipairs(self._buffInstance._effectList) do
+      self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
     end
   end
 end
 
 _class("BuffLogicRemoveChangeSkillFinalByDotCount", BuffLogicBase)
 BuffLogicRemoveChangeSkillFinalByDotCount = BuffLogicRemoveChangeSkillFinalByDotCount
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveChangeSkillFinalByDotCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveChangeSkillFinalByDotCount:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeSkillFinalByDotCount.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveChangeSkillFinalByDotCount:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

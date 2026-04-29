@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_force_movement.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_ForceMovement", SkillEffectParamBase)
 SkillEffectParam_ForceMovement = SkillEffectParam_ForceMovement
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_ForceMovement.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_ForceMovement:Constructor(t)
   self._step = t.step
   self._isIncludeMultiSize = t.includeMultiSize
   self._isIncludeTrap = t.includeTrap
@@ -17,46 +10,26 @@ SkillEffectParam_ForceMovement.Constructor = function(self, t)
   self._recordCurRoundForceMoveStep = t.recordCurRoundForceMoveStep
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ForceMovement.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_ForceMovement:GetEffectType()
   return SkillEffectType.ForceMovement
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ForceMovement.GetStep = function(self)
-  -- function num : 0_2
+function SkillEffectParam_ForceMovement:GetStep()
   return self._step
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ForceMovement.IsIncludeMultiSize = function(self)
-  -- function num : 0_3
+function SkillEffectParam_ForceMovement:IsIncludeMultiSize()
   return self._isIncludeMultiSize
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ForceMovement.IsCalcStepByPick = function(self)
-  -- function num : 0_4
+function SkillEffectParam_ForceMovement:IsCalcStepByPick()
   return self._calcStepByPick
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ForceMovement.IsRecordCurRoundForceMoveStep = function(self)
-  -- function num : 0_5
+function SkillEffectParam_ForceMovement:IsRecordCurRoundForceMoveStep()
   return self._recordCurRoundForceMoveStep
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ForceMovement.IsIncludeTrap = function(self)
-  -- function num : 0_6
+function SkillEffectParam_ForceMovement:IsIncludeTrap()
   return self._isIncludeTrap
 end
-
-

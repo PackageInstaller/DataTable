@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/bullet_screen/ui_bullet_screen_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBulletScreenController", UICustomWidget)
 UIHomelandBulletScreenController = UIHomelandBulletScreenController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBulletScreenController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandBulletScreenController:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandBulletScreenController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.SetData = function(self, timeScale, speedScale, actorScore, itemScore, optionScore, totalScore)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandBulletScreenController:SetData(timeScale, speedScale, actorScore, itemScore, optionScore, totalScore)
   self:_GetComponents()
   self:InitBulletScreenData()
   self._intervalTime = self._intervalTime * timeScale
   self._flowSpeed = self._flowSpeed * speedScale
-  self._actorScoreCondition = (MovieDataManager:GetInstance()):GetBulletScreenCondition(actorScore)
-  self._propScoreCondition = (MovieDataManager:GetInstance()):GetBulletScreenCondition(itemScore)
-  self._optionScoreCondition = (MovieDataManager:GetInstance()):GetBulletScreenCondition(optionScore)
-  self._totalScoreCondition = (MovieDataManager:GetInstance()):GetBulletScreenCondition(totalScore)
+  self._actorScoreCondition = MovieDataManager:GetInstance():GetBulletScreenCondition(actorScore)
+  self._propScoreCondition = MovieDataManager:GetInstance():GetBulletScreenCondition(itemScore)
+  self._optionScoreCondition = MovieDataManager:GetInstance():GetBulletScreenCondition(optionScore)
+  self._totalScoreCondition = MovieDataManager:GetInstance():GetBulletScreenCondition(totalScore)
   self._actorScoreType = 1
   self._propScoreType = 2
   self._optionScoreType = 3
@@ -38,31 +25,44 @@ UIHomelandBulletScreenController.SetData = function(self, timeScale, speedScale,
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController._GetComponents = function(self)
-  -- function num : 0_3
+function UIHomelandBulletScreenController:_GetComponents()
   self._BulletScreenRect = self:GetUIComponent("RectTransform", "BulletScreenRect")
   self._BSType1Prefab = self:GetGameObject("BSType1")
   self._BSType2Prefab = self:GetGameObject("BSType2")
   self._BSType3Prefab = self:GetGameObject("BSType3")
   self._bsPoolDic = {
-[1] = {prefab = self._BSType1Prefab, type = 1}
-, 
-[2] = {prefab = self._BSType2Prefab, type = 2}
-, 
-[3] = {prefab = self._BSType3Prefab, type = 3}
-}
+    [1] = {
+      prefab = self._BSType1Prefab,
+      type = 1
+    },
+    [2] = {
+      prefab = self._BSType2Prefab,
+      type = 2
+    },
+    [3] = {
+      prefab = self._BSType3Prefab,
+      type = 3
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local actorBS = (Cfg.cfg_homeland_bullet_screen)({ScoreType = self._actorScoreType, ScoreCondition = self._actorScoreCondition})
-  local propBS = (Cfg.cfg_homeland_bullet_screen)({ScoreType = self._propScoreType, ScoreCondition = self._propScoreCondition})
-  local optionBS = (Cfg.cfg_homeland_bullet_screen)({ScoreType = self._optionScoreType, ScoreCondition = self._optionScoreCondition})
-  local totalBS = (Cfg.cfg_homeland_bullet_screen)({ScoreType = self._totalScoreType, ScoreCondition = self._totalScoreCondition})
+function UIHomelandBulletScreenController:_OnValue()
+  local actorBS = Cfg.cfg_homeland_bullet_screen({
+    ScoreType = self._actorScoreType,
+    ScoreCondition = self._actorScoreCondition
+  })
+  local propBS = Cfg.cfg_homeland_bullet_screen({
+    ScoreType = self._propScoreType,
+    ScoreCondition = self._propScoreCondition
+  })
+  local optionBS = Cfg.cfg_homeland_bullet_screen({
+    ScoreType = self._optionScoreType,
+    ScoreCondition = self._optionScoreCondition
+  })
+  local totalBS = Cfg.cfg_homeland_bullet_screen({
+    ScoreType = self._totalScoreType,
+    ScoreCondition = self._totalScoreCondition
+  })
   self:InsertBulletScreenList(actorBS)
   self:InsertBulletScreenList(propBS)
   self:InsertBulletScreenList(optionBS)
@@ -70,25 +70,19 @@ UIHomelandBulletScreenController._OnValue = function(self)
   self:RefreshConfigPool()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.InsertBulletScreenList = function(self, cfgs)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,v in pairs(cfgs) do
-    (table.insert)(self.bulletScreenList, v)
+function UIHomelandBulletScreenController:InsertBulletScreenList(cfgs)
+  for _, v in pairs(cfgs) do
+    table.insert(self.bulletScreenList, v)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.InitBulletScreenData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandBulletScreenController:InitBulletScreenData()
   self._flowSpeed = 300
   self._intervalTime = 0.1
   self._spaceSize = 20
   self._bsCheckQueue = {}
-  self._screenWidth = (ResolutionManager.RealWidth)()
-  self._bsPanelHeight = ((self._BulletScreenRect).sizeDelta).y
+  self._screenWidth = ResolutionManager.RealWidth()
+  self._bsPanelHeight = self._BulletScreenRect.sizeDelta.y
   self._blPanelLowerPosY = -self._bsPanelHeight / 2
   self._blockHeight = 10
   self._randomMaxGap = 5
@@ -96,106 +90,67 @@ UIHomelandBulletScreenController.InitBulletScreenData = function(self)
   local bsPanelUpperPosY = self._bsPanelHeight / 2
   local idx = 1
   for b = self._blPanelLowerPosY, bsPanelUpperPosY, self._blockHeight do
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._blockList)[idx] = {}
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._blockList)[idx]).bound = b
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._blockList)[idx]).use = false
+    self._blockList[idx] = {}
+    self._blockList[idx].bound = b
+    self._blockList[idx].use = false
     idx = idx + 1
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.RefreshConfigPool = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self.bulletScreenList = (table.shuffle)(self.bulletScreenList)
+function UIHomelandBulletScreenController:RefreshConfigPool()
+  self.bulletScreenList = table.shuffle(self.bulletScreenList)
   self.curBulletIndex = 1
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.BeginShowBulletScreen = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHomelandBulletScreenController:BeginShowBulletScreen()
   local deltaTime = self._intervalTime * 1000
-  self._BSTimer = ((GameGlobal.Timer)()):AddEventTimes(deltaTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_8_0 , upvalues : self
+  self._BSTimer = GameGlobal.Timer():AddEventTimes(deltaTime, TimerTriggerCount.Infinite, function()
     self:_UpdateBulletScreenStatus()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.StopShowBulletScreen = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandBulletScreenController:StopShowBulletScreen()
   if self._BSTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._BSTimer)
+    GameGlobal.Timer():CancelEvent(self._BSTimer)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController._UpdateBulletScreenStatus = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if #self.bulletScreenList < self.curBulletIndex then
+function UIHomelandBulletScreenController:_UpdateBulletScreenStatus()
+  if self.curBulletIndex > #self.bulletScreenList then
     self:RefreshConfigPool()
   end
-  local bsCfg = (self.bulletScreenList)[self.curBulletIndex]
+  local bsCfg = self.bulletScreenList[self.curBulletIndex]
   self.curBulletIndex = self.curBulletIndex + 1
   local obj = self:CreateOneBulletScreen(bsCfg.Type, bsCfg.Content, bsCfg.BodyName)
-  ;
-  (obj.transform):SetParent((self._BulletScreenRect).transform)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (obj.transform).localScale = Vector3.one
+  obj.transform:SetParent(self._BulletScreenRect.transform)
+  obj.transform.localScale = Vector3.one
   local rect = obj:GetComponent("RectTransform")
-  local width = (rect.sizeDelta).x
-  local height = (rect.sizeDelta).y + (math.random)(0, self._randomMaxGap) * 10
+  local width = rect.sizeDelta.x
+  local height = rect.sizeDelta.y + math.random(0, self._randomMaxGap) * 10
   local count = height / self._blockHeight
   local bound = self:TryGetBlockSlot(count)
   if bound ~= -1 then
     local posY = self._blPanelLowerPosY + bound * self._blockHeight
-    do
-      rect.anchoredPosition = Vector2(self._screenWidth, posY)
-      local triggerPosX = self._screenWidth - width
-      local time1 = ((rect.anchoredPosition).x - triggerPosX) / self._flowSpeed
-      local targetPosX = -width
-      local time2 = (triggerPosX - targetPosX) / self._flowSpeed
-      ;
-      ((rect:DOAnchorPos(Vector2(triggerPosX, posY), time1)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_10_0 , upvalues : self, bound, count, rect, _ENV, targetPosX, posY, time2, bsCfg, obj
-    self:SetBlockStatus(bound, count, false)
-    ;
-    ((rect:DOAnchorPos(Vector2(targetPosX, posY), time2)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-      -- function num : 0_10_0_0 , upvalues : self, bsCfg, obj
-      self:RecycleBullectScreenToPool(bsCfg.Type, obj)
-    end
-)
-  end
-)
-      self:SetBlockStatus(bound, count, true)
-    end
+    rect.anchoredPosition = Vector2(self._screenWidth, posY)
+    local triggerPosX = self._screenWidth - width
+    local time1 = (rect.anchoredPosition.x - triggerPosX) / self._flowSpeed
+    local targetPosX = -width
+    local time2 = (triggerPosX - targetPosX) / self._flowSpeed
+    rect:DOAnchorPos(Vector2(triggerPosX, posY), time1):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
+      self:SetBlockStatus(bound, count, false)
+      rect:DOAnchorPos(Vector2(targetPosX, posY), time2):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
+        self:RecycleBullectScreenToPool(bsCfg.Type, obj)
+      end)
+    end)
+    self:SetBlockStatus(bound, count, true)
   else
-    do
-      self:RecycleBullectScreenToPool(bsCfg.Type, obj)
-    end
+    self:RecycleBullectScreenToPool(bsCfg.Type, obj)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.TryGetBlockSlot = function(self, count)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandBulletScreenController:TryGetBlockSlot(count)
   local n = 0
-  for id,v in pairs(self._blockList) do
+  for id, v in pairs(self._blockList) do
     if v.use then
       n = 0
     else
@@ -208,70 +163,40 @@ UIHomelandBulletScreenController.TryGetBlockSlot = function(self, count)
   return -1
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.SetBlockStatus = function(self, bound, count, use)
-  -- function num : 0_12
+function UIHomelandBulletScreenController:SetBlockStatus(bound, count, use)
   for i = 1, count do
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R8 in 'UnsetPending'
-
-    ((self._blockList)[bound + i]).use = use
+    self._blockList[bound + i].use = use
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.CreateOneBulletScreen = function(self, type, content, icon)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandBulletScreenController:CreateOneBulletScreen(type, content, icon)
   local obj = self:GetBulletScreenFromPool(type)
   obj:SetActive(true)
-  local tex = (((obj.transform):Find("LocalizationText")).gameObject):GetComponent("UILocalizationText")
-  tex:SetText((StringTable.Get)(content))
+  local tex = obj.transform:Find("LocalizationText").gameObject:GetComponent("UILocalizationText")
+  tex:SetText(StringTable.Get(content))
   if type == 3 then
-    local RawImageLoader = (((obj.transform):Find("Head/BodyImage")).gameObject):GetComponent("RawImageLoader")
+    local RawImageLoader = obj.transform:Find("Head/BodyImage").gameObject:GetComponent("RawImageLoader")
     RawImageLoader:LoadImage(icon)
     local rect = obj:GetComponent("RectTransform")
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(rect)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(rect)
   end
-  do
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(obj:GetComponent("RectTransform"))
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(obj:GetComponent("RectTransform"))
+  return obj
+end
+
+function UIHomelandBulletScreenController:GetBulletScreenFromPool(type)
+  self._objPoolDic[type] = self._objPoolDic[type] or {}
+  if #self._objPoolDic[type] == 0 then
+    return UnityEngine.GameObject.Instantiate(self._bsPoolDic[type].prefab)
+  else
+    local obj = self._objPoolDic[type][1]
+    table.remove(self._objPoolDic[type], 1)
     return obj
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.GetBulletScreenFromPool = function(self, type)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._objPoolDic)[type] then
-    (self._objPoolDic)[type] = {}
-    if #(self._objPoolDic)[type] == 0 then
-      return ((UnityEngine.GameObject).Instantiate)(((self._bsPoolDic)[type]).prefab)
-    else
-      local obj = ((self._objPoolDic)[type])[1]
-      ;
-      (table.remove)((self._objPoolDic)[type], 1)
-      return obj
-    end
-  end
+function UIHomelandBulletScreenController:RecycleBullectScreenToPool(type, obj)
+  self._objPoolDic[type] = self._objPoolDic[type] or {}
+  obj:SetActive(false)
+  table.insert(self._objPoolDic[type], obj)
 end
-
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBulletScreenController.RecycleBullectScreenToPool = function(self, type, obj)
-  -- function num : 0_15 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._objPoolDic)[type] then
-    (self._objPoolDic)[type] = {}
-    obj:SetActive(false)
-    ;
-    (table.insert)((self._objPoolDic)[type], obj)
-  end
-end
-
-

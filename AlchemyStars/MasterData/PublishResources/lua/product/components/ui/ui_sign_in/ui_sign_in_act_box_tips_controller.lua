@@ -1,64 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sign_in/ui_sign_in_act_box_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISignInActBoxTipsController", UIController)
 UISignInActBoxTipsController = UISignInActBoxTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISignInActBoxTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISignInActBoxTipsController:OnShow(uiParams)
   self._endTime = uiParams[1]
-  self._svrModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._svrModule = GameGlobal.GetModule(SvrTimeModule)
   self._timeTex = self:GetUIComponent("UILocalizationText", "timeTex")
   if self._endTime then
     self:ShowTime()
-    self._event = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_0_0 , upvalues : self
-    self:ShowTime()
-  end
-)
+    self._event = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:ShowTime()
+    end)
   else
-    ;
-    (self._timeTex):SetText("")
+    self._timeTex:SetText("")
   end
   local itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
   self._selectInfo = itemInfo:SpawnObject("UISelectInfo")
   self:ShowAwards()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInActBoxTipsController.ShowTime = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local nowTime = (math.ceil)((self._svrModule):GetServerTime() * 0.001)
+function UISignInActBoxTipsController:ShowTime()
+  local nowTime = math.ceil(self._svrModule:GetServerTime() * 0.001)
   local timeDown = self._endTime - nowTime
-  if timeDown > 0 then
-    local timeStr = (HelperProxy:GetInstance()):Time2Tex(timeDown)
-    ;
-    (self._timeTex):SetText((StringTable.Get)("str_sign_in_act_box_time", timeStr))
+  if 0 < timeDown then
+    local timeStr = HelperProxy:GetInstance():Time2Tex(timeDown)
+    self._timeTex:SetText(StringTable.Get("str_sign_in_act_box_time", timeStr))
   else
-    do
-      self:CloseDialog()
-    end
+    self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInActBoxTipsController.ItemClick = function(self, id, pos)
-  -- function num : 0_2
+function UISignInActBoxTipsController:ItemClick(id, pos)
   if self._selectInfo then
-    (self._selectInfo):SetData(id, pos)
+    self._selectInfo:SetData(id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInActBoxTipsController.ShowAwards = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local showAwards = (((Cfg.cfg_global).sign_activity_reward_id).TableValue).showAwards
+function UISignInActBoxTipsController:ShowAwards()
+  local showAwards = Cfg.cfg_global.sign_activity_reward_id.TableValue.showAwards
   local awards = {}
   for i = 1, #showAwards do
     local id = showAwards[i]
@@ -66,8 +44,7 @@ UISignInActBoxTipsController.ShowAwards = function(self)
     local roleAsset = RoleAsset:New()
     roleAsset.assetid = id
     roleAsset.count = count
-    ;
-    (table.insert)(awards, roleAsset)
+    table.insert(awards, roleAsset)
   end
   local pool = self:GetUIComponent("UISelectObjectPath", "layout")
   pool:SpawnObjects("UISignInActBoxItem", #awards)
@@ -75,28 +52,18 @@ UISignInActBoxTipsController.ShowAwards = function(self)
   for i = 1, #list do
     local item = list[i]
     item:SetData(i, awards[i], function(id, pos)
-    -- function num : 0_3_0 , upvalues : self
-    self:ItemClick(id, pos)
-  end
-, false, true)
+      self:ItemClick(id, pos)
+    end, false, true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInActBoxTipsController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISignInActBoxTipsController:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInActBoxTipsController.BgOnClick = function(self)
-  -- function num : 0_5
+function UISignInActBoxTipsController:BgOnClick()
   self:CloseDialog()
 end
-
-

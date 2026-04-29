@@ -1,69 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_shejiao_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftShejiaoManager", Object)
 AircraftShejiaoManager = AircraftShejiaoManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftShejiaoManager.Constructor = function(self, main)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftShejiaoManager:Constructor(main)
   self._main = main
-  self._triggerTime = ((Cfg.cfg_aircraft_const).aircraft_social_check_time).IntValue
+  self._triggerTime = Cfg.cfg_aircraft_const.aircraft_social_check_time.IntValue
   self._timer = 0
   self._actions = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftShejiaoManager.Init = function(self)
-  -- function num : 0_1
+function AircraftShejiaoManager:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftShejiaoManager.Dispose = function(self)
-  -- function num : 0_2
+function AircraftShejiaoManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftShejiaoManager.Update = function(self, dtMS)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftShejiaoManager:Update(dtMS)
   self._timer = self._timer + dtMS
-  if self._triggerTime < self._timer then
+  if self._timer > self._triggerTime then
     self._timer = 0
     self:_triggerOnce()
   end
-  for key,action in pairs(self._actions) do
+  for key, action in pairs(self._actions) do
     action:Update(dtMS)
     if action:IsOver() then
       AirLog("社交行为结束")
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._actions)[key] = nil
+      self._actions[key] = nil
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftShejiaoManager._triggerOnce = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local pets = (self._main):GetPets(function(p)
-    -- function num : 0_4_0 , upvalues : _ENV
+function AircraftShejiaoManager:_triggerOnce()
+  local pets = self._main:GetPets(function(p)
     local pet = p
     local state = pet:GetState()
-    do return state == AirPetState.Wandering end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-, true)
+    return state == AirPetState.Wandering
+  end, true)
   if #pets == 0 then
     AirLog("没有可社交的星灵")
-    return 
+    return
   end
 end
-
-

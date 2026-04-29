@@ -1,280 +1,197 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/skill_effect_target_sorter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectTargetSorter", Object)
 SkillEffectTargetSorter = SkillEffectTargetSorter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectTargetSorter.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectTargetSorter:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTargetSorter.DoSortTargetList = function(self, casterEntity, targetIDArray, skillEffectParam, skillScopeResult)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectTargetSorter:DoSortTargetList(casterEntity, targetIDArray, skillEffectParam, skillScopeResult)
   local skillEffectType = skillEffectParam:GetEffectType()
   if skillEffectType == SkillEffectType.HitBack then
     return self:_SortHitbackEffectTargetList(casterEntity, targetIDArray, skillEffectParam)
   end
   local component = casterEntity:ActiveSkillPickUpComponent()
-  do
-    if component then
-      local direction = component:GetLastPickUpDirection()
-      if skillEffectType == SkillEffectType.Damage and component:GetLastPickUpDirection() then
-        return self:_SortDamageEffectTargetList(casterEntity, targetIDArray, skillEffectParam, direction, skillScopeResult)
-      end
+  if component then
+    local direction = component:GetLastPickUpDirection()
+    if skillEffectType == SkillEffectType.Damage and component:GetLastPickUpDirection() then
+      return self:_SortDamageEffectTargetList(casterEntity, targetIDArray, skillEffectParam, direction, skillScopeResult)
     end
-    return targetIDArray
   end
+  return targetIDArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTargetSorter._SortHitbackEffectTargetList = function(self, casterEntity, enemyIDList, hitbackParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function SkillEffectTargetSorter:_SortHitbackEffectTargetList(casterEntity, enemyIDList, hitbackParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   if skillEffectResultContainer == nil then
-    (Log.fatal)("caster has no skill routine component")
+    Log.fatal("caster has no skill routine component")
   end
   local skillID = skillEffectResultContainer:GetSkillID()
-  local effectCalcService = (self._world):GetService("SkillEffectCalc")
+  local effectCalcService = self._world:GetService("SkillEffectCalc")
   local casterPetEntityID = casterEntity:GetID()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local scopeType = skillConfigData:GetSkillScopeType()
   local pickUpType = skillConfigData:GetSkillPickType()
   local targetType = skillConfigData:GetSkillTargetType()
   local hitbackDirType = hitbackParam:GetDirType()
   local usePickPosIndex = hitbackParam:GetUsePickPosIndex()
-  local casterPos = (casterEntity:GridLocation()).Position
+  local casterPos = casterEntity:GridLocation().Position
   if pickUpType == SkillPickUpType.DirectionInstruction then
     local component = casterEntity:ActiveSkillPickUpComponent()
     if component then
       hitbackDirType = component:GetLastPickUpDirection()
     end
-  else
-    do
-      if pickUpType == SkillPickUpType.Instruction then
-        local component = casterEntity:ActiveSkillPickUpComponent()
-        if component then
-          local pickList = component:GetAllValidPickUpGridPos()
-        end
-      end
-      do
-        if (not hitbackParam:GetForceUseCasterPos() or usePickPosIndex) and usePickPosIndex > 0 and usePickPosIndex <= #pickList then
-          casterPos = pickList[usePickPosIndex]
-        else
-          casterPos = component:GetLastPickUpGridPos()
-        end
-        self:_SortHitbackTargetByDirType(enemyIDList, hitbackDirType, casterPos)
-        for k,v in ipairs(enemyIDList) do
-          local enemyEntity = (self._world):GetEntityByID(v)
-          local pos = (enemyEntity:GridLocation()).Position
-        end
-        return enemyIDList
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTargetSorter._SortHitbackTargetByDirType = function(self, hitbackIDArray, hitbackDirType, casterPos)
-  -- function num : 0_3 , upvalues : _ENV
-  if hitbackDirType == HitBackDirectionType.Left then
-    local CmpLeftfunc = function(entityID1, entityID2)
-    -- function num : 0_3_0 , upvalues : self
-    local entity1 = (self._world):GetEntityByID(entityID1)
-    local entity2 = (self._world):GetEntityByID(entityID2)
-    local pos1 = (entity1:GridLocation()).Position
-    local pos2 = (entity2:GridLocation()).Position
-    do return pos1.x < pos2.x end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-    ;
-    (table.sort)(hitbackIDArray, CmpLeftfunc)
-  else
-    do
-      if hitbackDirType == HitBackDirectionType.Right then
-        local CmpRightfunc = function(entityID1, entityID2)
-    -- function num : 0_3_1 , upvalues : self
-    local entity1 = (self._world):GetEntityByID(entityID1)
-    local entity2 = (self._world):GetEntityByID(entityID2)
-    local pos1 = (entity1:GridLocation()).Position
-    local pos2 = (entity2:GridLocation()).Position
-    do return pos2.x < pos1.x end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-        ;
-        (table.sort)(hitbackIDArray, CmpRightfunc)
+  elseif pickUpType == SkillPickUpType.Instruction then
+    local component = casterEntity:ActiveSkillPickUpComponent()
+    if component then
+      local pickList = component:GetAllValidPickUpGridPos()
+      if hitbackParam:GetForceUseCasterPos() then
+      elseif usePickPosIndex and 0 < usePickPosIndex and usePickPosIndex <= #pickList then
+        casterPos = pickList[usePickPosIndex]
       else
-        do
-          if hitbackDirType == HitBackDirectionType.Up then
-            local CmpUpfunc = function(entityID1, entityID2)
-    -- function num : 0_3_2 , upvalues : self
-    local entity1 = (self._world):GetEntityByID(entityID1)
-    local entity2 = (self._world):GetEntityByID(entityID2)
-    local pos1 = (entity1:GridLocation()).Position
-    local pos2 = (entity2:GridLocation()).Position
-    do return pos2.y < pos1.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-            ;
-            (table.sort)(hitbackIDArray, CmpUpfunc)
-          else
-            do
-              if hitbackDirType == HitBackDirectionType.Down then
-                local CmpDownfunc = function(entityID1, entityID2)
-    -- function num : 0_3_3 , upvalues : self
-    local entity1 = (self._world):GetEntityByID(entityID1)
-    local entity2 = (self._world):GetEntityByID(entityID2)
-    local pos1 = (entity1:GridLocation()).Position
-    local pos2 = (entity2:GridLocation()).Position
-    do return pos1.y < pos2.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-                ;
-                (table.sort)(hitbackIDArray, CmpDownfunc)
-              else
-                do
-                  if hitbackDirType == HitBackDirectionType.AntiEightDir then
-                    local CmpDistancefunc = function(entityID1, entityID2)
-    -- function num : 0_3_4 , upvalues : self, casterPos, _ENV
-    local entity1 = (self._world):GetEntityByID(entityID1)
-    local entity2 = (self._world):GetEntityByID(entityID2)
-    local pos1 = (entity1:GridLocation()).Position
-    local pos2 = (entity2:GridLocation()).Position
-    local castPos = casterPos
-    local dis1 = (Vector2.Distance)(castPos, pos1)
-    local dis2 = (Vector2.Distance)(castPos, pos2)
-    do return dis1 < dis2 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-                    ;
-                    (table.sort)(hitbackIDArray, CmpDistancefunc)
-                  else
-                    do
-                      local CmpDistancefunc = function(entityID1, entityID2)
-    -- function num : 0_3_5 , upvalues : self, casterPos, _ENV
-    local entity1 = (self._world):GetEntityByID(entityID1)
-    local entity2 = (self._world):GetEntityByID(entityID2)
-    local pos1 = (entity1:GridLocation()).Position
-    local pos2 = (entity2:GridLocation()).Position
-    local castPos = casterPos
-    local dis1 = (Vector2.Distance)(castPos, pos1)
-    local dis2 = (Vector2.Distance)(castPos, pos2)
-    do return dis2 < dis1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-                      ;
-                      (table.sort)(hitbackIDArray, CmpDistancefunc)
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+        casterPos = component:GetLastPickUpGridPos()
       end
     end
   end
+  self:_SortHitbackTargetByDirType(enemyIDList, hitbackDirType, casterPos)
+  for k, v in ipairs(enemyIDList) do
+    local enemyEntity = self._world:GetEntityByID(v)
+    local pos = enemyEntity:GridLocation().Position
+  end
+  return enemyIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
+function SkillEffectTargetSorter:_SortHitbackTargetByDirType(hitbackIDArray, hitbackDirType, casterPos)
+  if hitbackDirType == HitBackDirectionType.Left then
+    local function CmpLeftfunc(entityID1, entityID2)
+      local entity1 = self._world:GetEntityByID(entityID1)
+      
+      local entity2 = self._world:GetEntityByID(entityID2)
+      local pos1 = entity1:GridLocation().Position
+      local pos2 = entity2:GridLocation().Position
+      return pos1.x < pos2.x
+    end
+    
+    table.sort(hitbackIDArray, CmpLeftfunc)
+  elseif hitbackDirType == HitBackDirectionType.Right then
+    local function CmpRightfunc(entityID1, entityID2)
+      local entity1 = self._world:GetEntityByID(entityID1)
+      
+      local entity2 = self._world:GetEntityByID(entityID2)
+      local pos1 = entity1:GridLocation().Position
+      local pos2 = entity2:GridLocation().Position
+      return pos1.x > pos2.x
+    end
+    
+    table.sort(hitbackIDArray, CmpRightfunc)
+  elseif hitbackDirType == HitBackDirectionType.Up then
+    local function CmpUpfunc(entityID1, entityID2)
+      local entity1 = self._world:GetEntityByID(entityID1)
+      
+      local entity2 = self._world:GetEntityByID(entityID2)
+      local pos1 = entity1:GridLocation().Position
+      local pos2 = entity2:GridLocation().Position
+      return pos1.y > pos2.y
+    end
+    
+    table.sort(hitbackIDArray, CmpUpfunc)
+  elseif hitbackDirType == HitBackDirectionType.Down then
+    local function CmpDownfunc(entityID1, entityID2)
+      local entity1 = self._world:GetEntityByID(entityID1)
+      
+      local entity2 = self._world:GetEntityByID(entityID2)
+      local pos1 = entity1:GridLocation().Position
+      local pos2 = entity2:GridLocation().Position
+      return pos1.y < pos2.y
+    end
+    
+    table.sort(hitbackIDArray, CmpDownfunc)
+  elseif hitbackDirType == HitBackDirectionType.AntiEightDir then
+    local function CmpDistancefunc(entityID1, entityID2)
+      local entity1 = self._world:GetEntityByID(entityID1)
+      
+      local entity2 = self._world:GetEntityByID(entityID2)
+      local pos1 = entity1:GridLocation().Position
+      local pos2 = entity2:GridLocation().Position
+      local castPos = casterPos
+      local dis1 = Vector2.Distance(castPos, pos1)
+      local dis2 = Vector2.Distance(castPos, pos2)
+      return dis1 < dis2
+    end
+    
+    table.sort(hitbackIDArray, CmpDistancefunc)
+  else
+    local function CmpDistancefunc(entityID1, entityID2)
+      local entity1 = self._world:GetEntityByID(entityID1)
+      
+      local entity2 = self._world:GetEntityByID(entityID2)
+      local pos1 = entity1:GridLocation().Position
+      local pos2 = entity2:GridLocation().Position
+      local castPos = casterPos
+      local dis1 = Vector2.Distance(castPos, pos1)
+      local dis2 = Vector2.Distance(castPos, pos2)
+      return dis1 > dis2
+    end
+    
+    table.sort(hitbackIDArray, CmpDistancefunc)
+  end
+end
 
-SkillEffectTargetSorter._SortDamageEffectTargetList = function(self, casterEntity, targetIDArray, skillEffectParam, directionType, skillScopeResult)
-  -- function num : 0_4 , upvalues : _ENV
-  if #targetIDArray == 0 or not directionType or directionType == HitBackDirectionType.None then
+function SkillEffectTargetSorter:_SortDamageEffectTargetList(casterEntity, targetIDArray, skillEffectParam, directionType, skillScopeResult)
+  if not (#targetIDArray ~= 0 and directionType) or directionType == HitBackDirectionType.None then
     return targetIDArray
   end
-  local validScopeGridList = (skillScopeResult:GetAttackRange())
-  local cmpFun = nil
+  local validScopeGridList = skillScopeResult:GetAttackRange()
+  local cmpFun
   if directionType == HitBackDirectionType.Up or directionType == HitBackDirectionType.LeftUp or directionType == HitBackDirectionType.RightUp then
-    cmpFun = function(p1, p2)
-    -- function num : 0_4_0
-    do return p1.y < p2.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-  else
-    if directionType == HitBackDirectionType.Down or directionType == HitBackDirectionType.LeftDown or directionType == HitBackDirectionType.RightDown then
-      cmpFun = function(p1, p2)
-    -- function num : 0_4_1
-    do return p2.y < p1.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-    else
-      if directionType == HitBackDirectionType.Left then
-        cmpFun = function(p1, p2)
-    -- function num : 0_4_2
-    do return p2.x < p1.x end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-      else
-        if directionType == HitBackDirectionType.Right then
-          cmpFun = function(p1, p2)
-    -- function num : 0_4_3
-    do return p1.x < p2.x end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
-        end
-      end
+    function cmpFun(p1, p2)
+      return p1.y < p2.y
+    end
+  elseif directionType == HitBackDirectionType.Down or directionType == HitBackDirectionType.LeftDown or directionType == HitBackDirectionType.RightDown then
+    function cmpFun(p1, p2)
+      return p1.y > p2.y
+    end
+  elseif directionType == HitBackDirectionType.Left then
+    function cmpFun(p1, p2)
+      return p1.x > p2.x
+    end
+  elseif directionType == HitBackDirectionType.Right then
+    function cmpFun(p1, p2)
+      return p1.x < p2.x
     end
   end
   local pos2IDList = {}
   local targetPosList = {}
-  for _,entityID in ipairs(targetIDArray) do
-    local targetEntity = (self._world):GetEntityByID(entityID)
-    local bodyArea = (targetEntity:BodyArea()):GetArea()
-    local position = (targetEntity:GridLocation()).Position
-    for k,v in ipairs(bodyArea) do
+  for _, entityID in ipairs(targetIDArray) do
+    local targetEntity = self._world:GetEntityByID(entityID)
+    local bodyArea = targetEntity:BodyArea():GetArea()
+    local position = targetEntity:GridLocation().Position
+    for k, v in ipairs(bodyArea) do
       local bodyPos = Vector2(v.x + position.x, v.y + position.y)
-      if (table.icontains)(validScopeGridList, bodyPos) then
-        (table.insert)(targetPosList, bodyPos)
+      if table.icontains(validScopeGridList, bodyPos) then
+        table.insert(targetPosList, bodyPos)
         pos2IDList[bodyPos] = entityID
       end
     end
   end
-  ;
-  (table.sort)(targetPosList, cmpFun)
+  table.sort(targetPosList, cmpFun)
   local firstRowPosList = {}
-  local firstRowPos = nil
+  local firstRowPos
   local newTargetIDList = {}
-  for index,pos in ipairs(targetPosList) do
+  for index, pos in ipairs(targetPosList) do
     if index == 1 then
       firstRowPos = pos
-      ;
-      (table.insert)(firstRowPosList, firstRowPos)
-    else
-      -- DECOMPILER ERROR at PC139: Unhandled construct in 'MakeBoolean' P1
-
-      if (directionType == HitBackDirectionType.Left or directionType == HitBackDirectionType.Right) and pos.x == firstRowPos.x then
-        (table.insert)(firstRowPosList, pos)
+      table.insert(firstRowPosList, firstRowPos)
+    elseif directionType == HitBackDirectionType.Left or directionType == HitBackDirectionType.Right then
+      if pos.x == firstRowPos.x then
+        table.insert(firstRowPosList, pos)
       end
+    elseif (directionType == HitBackDirectionType.Up or directionType == HitBackDirectionType.Down) and pos.y == firstRowPos.y then
+      table.insert(firstRowPosList, pos)
     end
-    if (directionType == HitBackDirectionType.Up or directionType == HitBackDirectionType.Down) and pos.y == firstRowPos.y then
-      (table.insert)(firstRowPosList, pos)
-    end
-    ;
-    (table.insert)(newTargetIDList, pos2IDList[pos])
+    table.insert(newTargetIDList, pos2IDList[pos])
   end
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTNotifyTrainFirstRowPos:New(firstRowPosList, casterEntity))
-  newTargetIDList = (table.unique)(newTargetIDList)
+  self._world:GetService("Trigger"):Notify(NTNotifyTrainFirstRowPos:New(firstRowPosList, casterEntity))
+  newTargetIDList = table.unique(newTargetIDList)
   return newTargetIDList
 end
-
-

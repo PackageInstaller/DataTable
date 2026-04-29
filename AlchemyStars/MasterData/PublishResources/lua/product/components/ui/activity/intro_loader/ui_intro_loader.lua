@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/intro_loader/ui_intro_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIIntroLoader", UIController)
 UIIntroLoader = UIIntroLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIIntroLoader.Constructor = function(self, ui_root_transform)
-  -- function num : 0_0
+function UIIntroLoader:Constructor(ui_root_transform)
   self._redefBlurMask = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIntroLoader.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIIntroLoader:LoadDataOnEnter(TT, res, uiParams)
   if uiParams[2] ~= nil then
     self.maskType = uiParams[2]
     self._redefBlurMask = self.maskType == MaskType.MT_BlurMask
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIntroLoader.UpdateUIOnEnter = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIIntroLoader:UpdateUIOnEnter()
   if self._redefBlurMask then
-    local uiStateManager = (GameGlobal.UIStateManager)()
+    local uiStateManager = GameGlobal.UIStateManager()
     local uiControllerManager = uiStateManager.uiControllerManager
     local layerManager = uiControllerManager.layerManager
     local regInfo = uiStateManager:GetUIRegisterInfo(self.name)
@@ -39,55 +25,33 @@ UIIntroLoader.UpdateUIOnEnter = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIntroLoader.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIIntroLoader:OnShow(uiParams)
   local cfgId = uiParams[1] or ""
-  self._cfg = (Cfg.cfg_intro_loader)[cfgId]
+  self._cfg = Cfg.cfg_intro_loader[cfgId]
   if self._cfg then
-    local obj = (UIWidgetHelper.SpawnObject)(self, "_pool", (self._cfg).ClassName, (self._cfg).PrefabName)
+    local obj = UIWidgetHelper.SpawnObject(self, "_pool", self._cfg.ClassName, self._cfg.PrefabName)
     obj:SetData(self, cfgId)
   else
-    do
-      ;
-      (Log.exception)("UIIntroLoader:OnShow() cfg_intro_loader[", cfgId, "] error")
-      self:CloseDialog()
-      if self._cfg then
-        local animName = (self._cfg).ShowAnim
-      end
-      local duration = self._cfg and (self._cfg).ShowAnimTime or 0
-      self:_PlayAnimation(animName, duration, nil)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIntroLoader.CloseDialogWithAnimation = function(self)
-  -- function num : 0_4
-  if self._cfg then
-    local animName = (self._cfg).HideAnim
-  end
-  local duration = self._cfg and (self._cfg).HideAnimTime or 0
-  self:_PlayAnimation(animName, duration, function()
-    -- function num : 0_4_0 , upvalues : self
+    Log.exception("UIIntroLoader:OnShow() cfg_intro_loader[", cfgId, "] error")
     self:CloseDialog()
   end
-)
+  local animName = self._cfg and self._cfg.ShowAnim
+  local duration = self._cfg and self._cfg.ShowAnimTime or 0
+  self:_PlayAnimation(animName, duration, nil)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
+function UIIntroLoader:CloseDialogWithAnimation()
+  local animName = self._cfg and self._cfg.HideAnim
+  local duration = self._cfg and self._cfg.HideAnimTime or 0
+  self:_PlayAnimation(animName, duration, function()
+    self:CloseDialog()
+  end)
+end
 
-UIIntroLoader._PlayAnimation = function(self, animName, duration, callback)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (string.isnullorempty)(animName) then
-    (UIWidgetHelper.PlayAnimation)(self, "_root", animName, duration, callback)
-  else
-    if callback then
-      callback()
-    end
+function UIIntroLoader:_PlayAnimation(animName, duration, callback)
+  if not string.isnullorempty(animName) then
+    UIWidgetHelper.PlayAnimation(self, "_root", animName, duration, callback)
+  elseif callback then
+    callback()
   end
 end
-
-

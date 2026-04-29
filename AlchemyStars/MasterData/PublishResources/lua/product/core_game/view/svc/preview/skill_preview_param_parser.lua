@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/skill_preview_param_parser.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPreviewParamParser", Object)
 SkillPreviewParamParser = SkillPreviewParamParser
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewParamParser.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewParamParser:Constructor()
   self._previewParamClassDict = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._previewParamClassDict)[SkillPreviewType.Instruction] = SkillPreviewParamInstruction
+  self._previewParamClassDict[SkillPreviewType.Instruction] = SkillPreviewParamInstruction
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewParamParser.ParseSkillPreviewList = function(self, previewList)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewParamParser:ParseSkillPreviewList(previewList)
   local _previewList = {}
-  for i,v in ipairs(previewList) do
+  for i, v in ipairs(previewList) do
     local previewType = v.PreviewType
     local param = v.Param
-    local classType = (self._previewParamClassDict)[previewType]
+    local classType = self._previewParamClassDict[previewType]
     if classType == nil then
-      (Log.fatal)("ParsePreviewList Failed PreviewType:", previewType)
+      Log.fatal("ParsePreviewList Failed PreviewType:", previewType)
     end
     local paramObj = classType:New(v)
-    ;
-    (table.insert)(_previewList, paramObj)
+    table.insert(_previewList, paramObj)
   end
   return _previewList
 end
-
-

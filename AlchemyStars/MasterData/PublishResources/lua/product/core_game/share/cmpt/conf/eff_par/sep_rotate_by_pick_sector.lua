@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_rotate_by_pick_sector.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamRotateByPickSector", SkillEffectParamBase)
 SkillEffectParamRotateByPickSector = SkillEffectParamRotateByPickSector
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamRotateByPickSector.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamRotateByPickSector:GetEffectType()
   return SkillEffectType.RotateByPickSector
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRotateByPickSector.Constructor = function(self, t)
-  -- function num : 0_1
+function SkillEffectParamRotateByPickSector:Constructor(t)
   self._absRotateAngle = t.absRotateAngle or 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRotateByPickSector.GetAbsRotateAngle = function(self)
-  -- function num : 0_2
+function SkillEffectParamRotateByPickSector:GetAbsRotateAngle()
   return self._absRotateAngle
 end
-
-

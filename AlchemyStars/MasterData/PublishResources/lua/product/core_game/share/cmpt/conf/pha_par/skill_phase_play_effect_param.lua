@@ -1,92 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_play_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
-SkillPlayEffectType = {Grid = 0, HealthShield = 1, CasterTransform = 2}
+SkillPlayEffectType = {
+  Grid = 0,
+  HealthShield = 1,
+  CasterTransform = 2
+}
 _enum("SkillPlayEffectType", SkillPlayEffectType)
 _class("SkillPhasePlayEffectParam", SkillPhaseParamBase)
 SkillPhasePlayEffectParam = SkillPhasePlayEffectParam
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhasePlayEffectParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhasePlayEffectParam:Constructor(t)
   self._effectID = t.effectID
   self._position = t.position
-  if not t.effectType then
-    self._effectType = SkillPlayEffectType.Grid
-    do
-      if t.rotation then
-        local r = t.rotation
-        self._quaternionDir = (Quaternion.AngleAxis)(r.angle, Vector3((r.axis).x, (r.axis).y, (r.axis).z))
-      end
-      if t.translation then
-        local tran = t.translation
-        self._translationQuaternion = (Quaternion.AngleAxis)(tran.angle, Vector3((tran.axis).x, (tran.axis).y, (tran.axis).z))
-        self._translationOffset = tran.offset
-      end
-    end
+  self._effectType = t.effectType or SkillPlayEffectType.Grid
+  if t.rotation then
+    local r = t.rotation
+    self._quaternionDir = Quaternion.AngleAxis(r.angle, Vector3(r.axis.x, r.axis.y, r.axis.z))
+  end
+  if t.translation then
+    local tran = t.translation
+    self._translationQuaternion = Quaternion.AngleAxis(tran.angle, Vector3(tran.axis.x, tran.axis.y, tran.axis.z))
+    self._translationOffset = tran.offset
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhasePlayEffectParam:GetPhaseType()
   return SkillViewPhaseType.PlayEffect
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectParam.GetEffectID = function(self)
-  -- function num : 0_2
+function SkillPhasePlayEffectParam:GetEffectID()
   return self._effectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectParam.GetEffectPosition = function(self)
-  -- function num : 0_3
+function SkillPhasePlayEffectParam:GetEffectPosition()
   return self._position
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectParam.GetPlayEffectType = function(self)
-  -- function num : 0_4
+function SkillPhasePlayEffectParam:GetPlayEffectType()
   return self._effectType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectParam.GetQuaternionDir = function(self)
-  -- function num : 0_5
+function SkillPhasePlayEffectParam:GetQuaternionDir()
   return self._quaternionDir
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectParam.GetTranslationQuaternion = function(self)
-  -- function num : 0_6
+function SkillPhasePlayEffectParam:GetTranslationQuaternion()
   return self._translationQuaternion
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectParam.GetTranslationOffset = function(self)
-  -- function num : 0_7
+function SkillPhasePlayEffectParam:GetTranslationOffset()
   return self._translationOffset
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayEffectParam.GetCacheTable = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillPhasePlayEffectParam:GetCacheTable()
   local t = {}
-  ;
-  (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+  table.insert(t, {
+    Cfg.cfg_effect[self._effectID].ResPath,
+    1
+  })
   return t
 end
-
-

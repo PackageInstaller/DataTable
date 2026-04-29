@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/prop/s_maze_prop_tp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeProp_TP", SMazePropBase)
 SMazeProp_TP = SMazeProp_TP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeProp_TP.Use = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local cpt = (((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()):GetMazeComponent()
+function SMazeProp_TP:Use(TT)
+  local cpt = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj():GetMazeComponent()
   local res = AsyncRequestRes:New()
   cpt:HandleSeasonMazeUseOnce(TT, res, self:CfgID())
   if res:GetSucc() then
-    (Log.info)("回城道具使用成功")
+    Log.info("回城道具使用成功")
     return true
   else
-    ;
-    (Log.error)("回城道具使用失败:", res:GetResult())
-    if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
+    Log.error("回城道具使用失败:", res:GetResult())
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
       return false
     end
     return false
   end
 end
-
-

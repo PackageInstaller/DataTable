@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/robot_bomb_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("RobotBombInstruction", BaseInstruction)
 RobotBombInstruction = RobotBombInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RobotBombInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function RobotBombInstruction:Constructor(paramList)
   self._robotEffectID = tonumber(paramList.effectID) or 150228110
   self._hitAnimName = paramList.hitAnimName
   self._hitEffectID = tonumber(paramList.hitEffectID)
@@ -26,117 +19,98 @@ RobotBombInstruction.Constructor = function(self, paramList)
   self._bombEffectID = tonumber(paramList["bombEffectID "]) or 150228108
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RobotBombInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function RobotBombInstruction:GetCacheResource()
   local t = {}
   if self._robotEffectID and self._robotEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._robotEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._robotEffectID].ResPath,
+      1
+    })
   end
-  if self._bombEffectID and self._bombEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._bombEffectID]).ResPath, 1})
+  if self._bombEffectID and 0 < self._bombEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._bombEffectID].ResPath,
+      1
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
-  if self._trapMoveEffectID and self._trapMoveEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._trapMoveEffectID]).ResPath, 4})
+  if self._trapMoveEffectID and 0 < self._trapMoveEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._trapMoveEffectID].ResPath,
+      4
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RobotBombInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function RobotBombInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if not casterEntity:HasPetPstID() then
-    return 
+    return
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.RobotBomb)
   self._world = casterEntity:GetOwnerWorld()
-  self._effectService = (self._world):GetService("Effect")
-  local resourcesPoolService = ((self._world).BW_Services).ResourcesPool
+  self._effectService = self._world:GetService("Effect")
+  local resourcesPoolService = self._world.BW_Services.ResourcesPool
   local shaderEffect = resourcesPoolService:LoadAsset("15022811_shader_effects.asset")
   local casterPosition = casterEntity:GetRenderGridPosition()
-  for _,value in ipairs(resultArray) do
+  for _, value in ipairs(resultArray) do
     local result = value
     if result.trapEntityID then
-      local trapEntity = (self._world):GetEntityByID(result.trapEntityID)
-      ;
-      ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayRobot, self, trapEntity, casterEntity, result, phaseContext, 1)
+      local trapEntity = self._world:GetEntityByID(result.trapEntityID)
+      GameGlobal.TaskManager():CoreGameStartTask(self._PlayRobot, self, trapEntity, casterEntity, result, phaseContext, 1)
     else
-      do
-        local robot = (self._effectService):CreateEffect(self._robotEffectID, casterEntity)
-        local viewComponent = robot:View()
-        local robotObj = viewComponent:GetGameObject()
-        local materialAnimation = robotObj:GetComponent(typeof(MaterialAnimation))
-        if materialAnimation then
-          ((UnityEngine.Object).Destroy)(materialAnimation)
-        end
-        materialAnimation = robotObj:AddComponent(typeof(MaterialAnimation))
-        robot:RemoveMaterialAnimationComponent()
-        if shaderEffect then
-          robot:AddMaterialAnimationComponent(shaderEffect, materialAnimation)
-        end
-        robot:PlayMaterialAnim(self._materialAnim1)
-        do
-          do
-            if (result.path)[2] then
-              local walkDir = (result.path)[2] - casterPosition
-              robot:SetLocation(casterPosition, walkDir)
-            end
-            YIELD(TT, self._startWait)
-            if (result.path)[2] then
-              robot:AddGridMove(BattleConst.MoveSpeed, (result.path)[2], casterPosition)
-            end
-            YIELD(TT, self._moveStartTime)
-            ;
-            ((GameGlobal.TaskManager)()):CoreGameStartTask(self._PlayRobot, self, robot, casterEntity, result, phaseContext, 2)
-            -- DECOMPILER ERROR at PC134: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC134: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC134: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC134: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      local robot = self._effectService:CreateEffect(self._robotEffectID, casterEntity)
+      local viewComponent = robot:View()
+      local robotObj = viewComponent:GetGameObject()
+      local materialAnimation = robotObj:GetComponent(typeof(MaterialAnimation))
+      if materialAnimation then
+        UnityEngine.Object.Destroy(materialAnimation)
       end
+      materialAnimation = robotObj:AddComponent(typeof(MaterialAnimation))
+      robot:RemoveMaterialAnimationComponent()
+      if shaderEffect then
+        robot:AddMaterialAnimationComponent(shaderEffect, materialAnimation)
+      end
+      robot:PlayMaterialAnim(self._materialAnim1)
+      if result.path[2] then
+        local walkDir = result.path[2] - casterPosition
+        robot:SetLocation(casterPosition, walkDir)
+      end
+      YIELD(TT, self._startWait)
+      if result.path[2] then
+        robot:AddGridMove(BattleConst.MoveSpeed, result.path[2], casterPosition)
+      end
+      YIELD(TT, self._moveStartTime)
+      GameGlobal.TaskManager():CoreGameStartTask(self._PlayRobot, self, robot, casterEntity, result, phaseContext, 2)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RobotBombInstruction._PlayRobot = function(self, TT, robot, casterEntity, result, phaseContext, pathStartIndex)
-  -- function num : 0_3 , upvalues : _ENV
+function RobotBombInstruction:_PlayRobot(TT, robot, casterEntity, result, phaseContext, pathStartIndex)
   self:_Move(TT, robot, result, pathStartIndex)
-  self:_PlayExplodeEffect((result.path)[#result.path])
+  self:_PlayExplodeEffect(result.path[#result.path])
   self:_PlayHit(TT, casterEntity, result)
   self:_RechargeColorPalette(TT, casterEntity, result)
   if result.trapEntityID then
-    local trapServiceRender = (self._world):GetService("TrapRender")
-    local dieTaskID = (TaskManager:GetInstance()):CoreGameStartTask(trapServiceRender.PlayTrapDieSkill, trapServiceRender, {robot}, self._donotPlayDie)
+    local trapServiceRender = self._world:GetService("TrapRender")
+    local dieTaskID = TaskManager:GetInstance():CoreGameStartTask(trapServiceRender.PlayTrapDieSkill, trapServiceRender, {robot}, self._donotPlayDie)
     phaseContext:AddPhaseTask(dieTaskID)
   else
-    do
-      ;
-      (self._world):DestroyEntity(robot)
-    end
+    self._world:DestroyEntity(robot)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RobotBombInstruction._RechargeColorPalette = function(self, TT, casterEntity, result)
-  -- function num : 0_4 , upvalues : _ENV
+function RobotBombInstruction:_RechargeColorPalette(TT, casterEntity, result)
   local pieceTypes = {}
-  for _,pieceType in ipairs(result.pieceTypes) do
+  for _, pieceType in ipairs(result.pieceTypes) do
     if pieceType ~= PieceType.None then
-      (table.insert)(pieceTypes, pieceType)
+      table.insert(pieceTypes, pieceType)
     end
   end
   if not casterEntity:HasColorPaletteRender() then
@@ -145,29 +119,25 @@ RobotBombInstruction._RechargeColorPalette = function(self, TT, casterEntity, re
   local renderComponent = casterEntity:ColorPaletteRender()
   local isNotSatisfy = not renderComponent:IsSatisfy()
   renderComponent:AddPieceTypes(pieceTypes)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ColorPaletteRefresh, (casterEntity:PetPstID()):GetPstID(), renderComponent:GetPieceTypes())
+  self._world:EventDispatcher():Dispatch(GameEventType.ColorPaletteRefresh, casterEntity:PetPstID():GetPstID(), renderComponent:GetPieceTypes())
   if isNotSatisfy and renderComponent:IsSatisfy() then
     self:_RefreshExtraActiveSkillReady(casterEntity)
-    local playBuffSvc = (self._world):GetService("PlayBuff")
+    local playBuffSvc = self._world:GetService("PlayBuff")
     playBuffSvc:PlayBuffView(TT, NTColorPaletteChargeComplete:New(casterEntity, renderComponent:GetPieceTypes()))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RobotBombInstruction._Move = function(self, TT, robot, result, pathStartIndex)
-  -- function num : 0_5 , upvalues : _ENV
+function RobotBombInstruction:_Move(TT, robot, result, pathStartIndex)
   if #result.path >= 3 then
     local viewComponent = robot:View()
     local robotObj = viewComponent:GetGameObject()
-    local animator = ((robotObj.transform):Find("Root")):GetComponent(typeof(UnityEngine.Animator))
+    local animator = robotObj.transform:Find("Root"):GetComponent(typeof(UnityEngine.Animator))
     animator:SetBool("Move", true)
-    local effectTrailEntity = (self._effectService):CreateEffect(self._trapMoveEffectID, robot)
+    local effectTrailEntity = self._effectService:CreateEffect(self._trapMoveEffectID, robot)
     robot:PlayMaterialAnim(self._materialAnim2)
     for i = pathStartIndex, #result.path do
-      local curPosition = (result.path)[i]
-      local nextPosition = (result.path)[i + 1]
+      local curPosition = result.path[i]
+      local nextPosition = result.path[i + 1]
       if nextPosition then
         robot:AddGridMove(BattleConst.MoveSpeed, nextPosition, curPosition)
         while robot:HasGridMove() do
@@ -177,51 +147,39 @@ RobotBombInstruction._Move = function(self, TT, robot, result, pathStartIndex)
     end
     robot:StopMaterialAnim(self._materialAnim2)
     animator:SetBool("Move", false)
-    ;
-    (self._world):DestroyEntity(effectTrailEntity)
+    self._world:DestroyEntity(effectTrailEntity)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RobotBombInstruction._PlayExplodeEffect = function(self, position)
-  -- function num : 0_6
-  local effectService = (self._world):GetService("Effect")
+function RobotBombInstruction:_PlayExplodeEffect(position)
+  local effectService = self._world:GetService("Effect")
   effectService:CreateWorldPositionDirectionEffect(self._bombEffectID, position)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RobotBombInstruction._PlayHit = function(self, TT, casterEntity, result)
-  -- function num : 0_7 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function RobotBombInstruction:_PlayHit(TT, casterEntity, result)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
-  local playSkillService = (self._world):GetService("PlaySkill")
+  local playSkillService = self._world:GetService("PlaySkill")
   local damageResults = result.damageResult
-  for _,damageResult in ipairs(damageResults) do
-    local targetEntity = (self._world):GetEntityByID(damageResult:GetTargetID())
+  for _, damageResult in ipairs(damageResults) do
+    local targetEntity = self._world:GetEntityByID(damageResult:GetTargetID())
     local damageInfo = damageResult:GetDamageInfo(1)
     local damageGridPos = damageResult:GetGridPos()
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(self._deathClear)):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack())):SetHandleBeHitParam_SkillID(skillID)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(self._deathClear):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack()):SetHandleBeHitParam_SkillID(skillID)
     playSkillService:HandleBeHit(TT, beHitParam)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RobotBombInstruction._RefreshExtraActiveSkillReady = function(self, entity)
-  -- function num : 0_8 , upvalues : _ENV
+function RobotBombInstruction:_RefreshExtraActiveSkillReady(entity)
   local world = entity:GetOwnerWorld()
   local configService = world:GetService("Config")
-  local extraSkillList = (entity:SkillInfo()):GetExtraActiveSkillIDList()
+  local extraSkillList = entity:SkillInfo():GetExtraActiveSkillIDList()
   if extraSkillList then
-    for _,extraSkillID in ipairs(extraSkillList) do
+    for _, extraSkillID in ipairs(extraSkillList) do
       local extraSkillConfigData = configService:GetSkillConfigData(extraSkillID)
       if extraSkillConfigData and extraSkillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetExtraActiveSkillGetReady, (entity:PetPstID()):GetPstID(), extraSkillID, true)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.PetExtraActiveSkillGetReady, entity:PetPstID():GetPstID(), extraSkillID, true)
       end
     end
   end
 end
-
-

@@ -1,83 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/StateAVGStory/n28_state_avg_story_next.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N28StateAVGStoryNext", N28StateAVGStoryBase)
 N28StateAVGStoryNext = N28StateAVGStoryNext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N28StateAVGStoryNext.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function N28StateAVGStoryNext:OnEnter(TT, ...)
   self:Init()
-  self.uiDialog = (table.unpack)({...})
-  self._storyManager = (self.data):StoryManager()
-  if (self.data).notRemindJump then
+  self.uiDialog = table.unpack({
+    ...
+  })
+  self._storyManager = self.data:StoryManager()
+  if self.data.notRemindJump then
     self:JumpTo()
   else
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_avg_n28_jump_2_next_story"), function()
-    -- function num : 0_0_0 , upvalues : self
-    self:JumpTo()
-  end
-, nil, function()
-    -- function num : 0_0_1 , upvalues : self, _ENV
-    self:ChangeState(N28StateAVGStory.Play)
-  end
-, nil, nil, nil, nil, function()
-    -- function num : 0_0_2 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self.data).notRemindJump = true
-  end
-)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_avg_n28_jump_2_next_story"), function()
+      self:JumpTo()
+    end, nil, function()
+      self:ChangeState(N28StateAVGStory.Play)
+    end, nil, nil, nil, nil, function()
+      self.data.notRemindJump = true
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryNext.OnExit = function(self, TT)
-  -- function num : 0_1
+function N28StateAVGStoryNext:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryNext.JumpTo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function N28StateAVGStoryNext:JumpTo()
   local lastParagraphId, lastSectionIdx = self:GetLast()
-  local curParagraphId = (self._storyManager):GetCurParagraphID()
-  local curSectionIdx = (self._storyManager):GetCurSectionIndex()
+  local curParagraphId = self._storyManager:GetCurParagraphID()
+  local curSectionIdx = self._storyManager:GetCurSectionIndex()
   if curParagraphId == lastParagraphId and lastSectionIdx <= curSectionIdx then
     self:ChangeState(N28StateAVGStory.Play)
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28AVGJumpDialog)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28AVGJumpDialog)
   self:ShowJumpAnim(function()
-    -- function num : 0_2_0 , upvalues : self, lastParagraphId, lastSectionIdx, _ENV
-    (self._storyManager):JumpTo(lastParagraphId, lastSectionIdx)
+    self._storyManager:JumpTo(lastParagraphId, lastSectionIdx)
     self:ChangeState(N28StateAVGStory.Play)
-    ;
-    (self.ui):ShowHideJumpBtn(false)
-  end
-)
+    self.ui:ShowHideJumpBtn(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryNext.GetNext = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local storyId = (self._storyManager):GetCurStoryID()
-  local node = (self.data):GetNodeByStoryId(storyId)
-  local curParagraphId = (self._storyManager):GetCurParagraphID()
-  local curSectionIdx = (self._storyManager):GetCurSectionIndex()
-  for _,paragraph in ipairs(node.paragraphs) do
+function N28StateAVGStoryNext:GetNext()
+  local storyId = self._storyManager:GetCurStoryID()
+  local node = self.data:GetNodeByStoryId(storyId)
+  local curParagraphId = self._storyManager:GetCurParagraphID()
+  local curSectionIdx = self._storyManager:GetCurSectionIndex()
+  for _, paragraph in ipairs(node.paragraphs) do
     if curParagraphId <= paragraph.id then
-      for _,dialog in ipairs(paragraph.dialogs) do
+      for _, dialog in ipairs(paragraph.dialogs) do
         if curSectionIdx < dialog.sectionIdx then
           local visibleOptions = dialog:GetVisibleOptions()
           local showEvidenceEvent = dialog:HaveShowEvienceEvent()
-          if visibleOptions and (table.count)(visibleOptions) > 0 then
+          if visibleOptions and table.count(visibleOptions) > 0 then
             return paragraph.id, dialog.sectionIdx
           end
           if showEvidenceEvent then
@@ -89,18 +62,13 @@ N28StateAVGStoryNext.GetNext = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryNext.GetLast = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local storyId = (self._storyManager):GetCurStoryID()
-  local node = (self.data):GetNodeByStoryId(storyId)
-  local lenParagraph = (table.count)(node.paragraphs)
-  local lastParagraph = (node.paragraphs)[lenParagraph]
-  local lenDialog = (table.count)(lastParagraph.dialogs)
-  local lastDialog = (lastParagraph.dialogs)[lenDialog]
+function N28StateAVGStoryNext:GetLast()
+  local storyId = self._storyManager:GetCurStoryID()
+  local node = self.data:GetNodeByStoryId(storyId)
+  local lenParagraph = table.count(node.paragraphs)
+  local lastParagraph = node.paragraphs[lenParagraph]
+  local lenDialog = table.count(lastParagraph.dialogs)
+  local lastDialog = lastParagraph.dialogs[lenDialog]
   local lastParagraphId, lastSectionIdx = lastParagraph.id, lastDialog.sectionIdx
   return lastParagraphId, lastSectionIdx
 end
-
-

@@ -1,211 +1,134 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/point_progress_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PointProgressComponent", ICampaignComponent)
 PointProgressComponent = PointProgressComponent
-local CampaignPointProgressStatus = {CPPS_Accepted = 1, CPPS_Completed = 2, CPPS_Taken = 3}
+local CampaignPointProgressStatus = {
+  CPPS_Accepted = 1,
+  CPPS_Completed = 2,
+  CPPS_Taken = 3
+}
 _enum("CampaignPointProgressStatus", CampaignPointProgressStatus)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-PointProgressComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PointProgressComponent:Constructor()
   self.m_component_info = PointProgressComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PointProgressComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = PointProgressComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function PointProgressComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PointProgressComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_POINT_PROGRESS
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function PointProgressComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.HandleReceiveReward = function(self, TT, asyncRes, progress)
-  -- function num : 0_5 , upvalues : _ENV
+function PointProgressComponent:HandleReceiveReward(TT, asyncRes, progress)
   local request = PointProgressComponentReceiveRewardReq:New()
   local response = PointProgressComponentReceiveRewardRep:New()
   request.m_progress = progress
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PointProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PointProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
     return nil
   end
-  ;
-  (table.insert)((self.m_component_info).m_received_progress, progress)
+  table.insert(self.m_component_info.m_received_progress, progress)
   return response.m_rewards
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.HandleOneKeyReceiveRewards = function(self, TT, asyncRes)
-  -- function num : 0_6 , upvalues : _ENV
+function PointProgressComponent:HandleOneKeyReceiveRewards(TT, asyncRes)
   local request = PointProgressComponentOneKeyReceiveRewardReq:New()
   local response = PointProgressComponentOneKeyReceiveRewardRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PointProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PointProgressComponent] HandleReceiveReward ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).m_current_progress = response.m_new_progress
-  for progress,reward in pairs((self.m_component_info).m_progress_rewards) do
-    if progress <= (self.m_component_info).m_current_progress then
+  self.m_component_info.m_current_progress = response.m_new_progress
+  for progress, reward in pairs(self.m_component_info.m_progress_rewards) do
+    if progress <= self.m_component_info.m_current_progress then
       local bFind = false
-      for _,record in ipairs((self.m_component_info).m_received_progress) do
+      for _, record in ipairs(self.m_component_info.m_received_progress) do
         if record == progress then
           bFind = true
           break
         end
       end
-      do
-        do
-          if not bFind then
-            (table.insert)((self.m_component_info).m_received_progress, progress)
-          end
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if not bFind then
+        table.insert(self.m_component_info.m_received_progress, progress)
       end
     end
   end
   return response.m_rewards
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_7 , upvalues : _ENV
+function PointProgressComponent:CampaignComponentPushNotify(notify_data)
   if PointProgressComponentNotifyType.PointProgressComponentNotify_StepChanged == notify_data.m_notify_type then
     local ev = NotifyPresonProgressComponentItemCountChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnItemCountChanged(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][PointProgressComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][PointProgressComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.OnItemCountChanged = function(self, ev)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_component_info).m_current_progress = ev.m_item_count
+function PointProgressComponent:OnItemCountChanged(ev)
+  self.m_component_info.m_current_progress = ev.m_item_count
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.Start_HandleReceiveReward = function(self, progress, callback)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("PointProgressComponent:Start_HandleReceiveReward")
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self, progress, callback
+function PointProgressComponent:Start_HandleReceiveReward(progress, callback)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
+  GameGlobal.UIStateManager():Lock("PointProgressComponent:Start_HandleReceiveReward")
+  TaskManager:GetInstance():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local rewards = self:HandleReceiveReward(TT, res, progress)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("PointProgressComponent:Start_HandleReceiveReward")
+    GameGlobal.UIStateManager():UnLock("PointProgressComponent:Start_HandleReceiveReward")
     callback(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.Start_HandleOneKeyReceiveRewards = function(self, callback)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("PointProgressComponent:Start_HandleOneKeyReceiveRewards")
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : _ENV, self, callback
+function PointProgressComponent:Start_HandleOneKeyReceiveRewards(callback)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
+  GameGlobal.UIStateManager():Lock("PointProgressComponent:Start_HandleOneKeyReceiveRewards")
+  TaskManager:GetInstance():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local rewards = self:HandleOneKeyReceiveRewards(TT, res)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("PointProgressComponent:Start_HandleOneKeyReceiveRewards")
+    GameGlobal.UIStateManager():UnLock("PointProgressComponent:Start_HandleOneKeyReceiveRewards")
     callback(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.GetItemId = function(self)
-  -- function num : 0_11
-  return (self.m_component_info).m_item_id
+function PointProgressComponent:GetItemId()
+  return self.m_component_info.m_item_id
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.GetItemIcon = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfgItem = (Cfg.cfg_item)[self:GetItemId()]
+function PointProgressComponent:GetItemIcon()
+  local cfgItem = Cfg.cfg_item[self:GetItemId()]
   return cfgItem and cfgItem.Icon or nil
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.GetItemPriceIcon = function(self)
-  -- function num : 0_13
+function PointProgressComponent:GetItemPriceIcon()
   return "toptoon_" .. self:GetItemId()
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.GetCurrentProgress = function(self)
-  -- function num : 0_14
-  return (self.m_component_info).m_current_progress
+function PointProgressComponent:GetCurrentProgress()
+  return self.m_component_info.m_current_progress
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.IsReceivedProgress = function(self, progress)
-  -- function num : 0_15 , upvalues : _ENV
-  for _,v in ipairs((self.m_component_info).m_received_progress) do
+function PointProgressComponent:IsReceivedProgress(progress)
+  for _, v in ipairs(self.m_component_info.m_received_progress) do
     if v == progress then
       return true
     end
@@ -213,12 +136,9 @@ PointProgressComponent.IsReceivedProgress = function(self, progress)
   return false
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.HasCanGetReward = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function PointProgressComponent:HasCanGetReward()
   local cur = self:GetCurrentProgress()
-  for k,v in pairs((self.m_component_info).m_progress_rewards) do
+  for k, v in pairs(self.m_component_info.m_progress_rewards) do
     if k <= cur and not self:IsReceivedProgress(k) then
       return true
     end
@@ -226,35 +146,22 @@ PointProgressComponent.HasCanGetReward = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.GetProgressList = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function PointProgressComponent:GetProgressList()
   local tb = {}
-  for k,v in pairs((self.m_component_info).m_progress_rewards) do
-    (table.insert)(tb, k)
+  for k, v in pairs(self.m_component_info.m_progress_rewards) do
+    table.insert(tb, k)
   end
-  ;
-  (table.sort)(tb, function(a, b)
-    -- function num : 0_17_0
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(tb, function(a, b)
+    return a < b
+  end)
   return tb
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.GetProgressRewards = function(self, progress)
-  -- function num : 0_18
-  return ((self.m_component_info).m_progress_rewards)[progress]
+function PointProgressComponent:GetProgressRewards(progress)
+  return self.m_component_info.m_progress_rewards[progress]
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.CheckItemStatus = function(self, progress)
-  -- function num : 0_19 , upvalues : CampaignPointProgressStatus
+function PointProgressComponent:CheckItemStatus(progress)
   local curProgress = self:GetCurrentProgress()
   local status = CampaignPointProgressStatus.CPPS_Accepted
   if progress <= curProgress then
@@ -266,13 +173,10 @@ PointProgressComponent.CheckItemStatus = function(self, progress)
   return status
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.SortProgressListByCampaignPointProgressStatus = function(self, progressList)
-  -- function num : 0_20 , upvalues : _ENV, CampaignPointProgressStatus
+function PointProgressComponent:SortProgressListByCampaignPointProgressStatus(progressList)
   local status = {}
   local defaultIndex = {}
-  for k,v in ipairs(progressList) do
+  for k, v in ipairs(progressList) do
     defaultIndex[v] = k
     status[v] = self:CheckItemStatus(v)
   end
@@ -280,32 +184,21 @@ PointProgressComponent.SortProgressListByCampaignPointProgressStatus = function(
   val[CampaignPointProgressStatus.CPPS_Completed] = 0
   val[CampaignPointProgressStatus.CPPS_Accepted] = 1
   val[CampaignPointProgressStatus.CPPS_Taken] = 2
-  ;
-  (table.sort)(progressList, function(a, b)
-    -- function num : 0_20_0 , upvalues : val, status, defaultIndex
-    if defaultIndex[a] >= defaultIndex[b] then
-      do return val[status[a]] ~= val[status[b]] end
-      do return val[status[a]] < val[status[b]] end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(progressList, function(a, b)
+    if val[status[a]] == val[status[b]] then
+      return defaultIndex[a] < defaultIndex[b]
     end
-  end
-)
+    return val[status[a]] < val[status[b]]
+  end)
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.IsSpecialRewards = function(self, progress_index)
-  -- function num : 0_21
-  do return ((self.m_component_info).m_special_rewards)[progress_index] == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PointProgressComponent:IsSpecialRewards(progress_index)
+  return self.m_component_info.m_special_rewards[progress_index] == 1
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.GetProgressItemCountInTable = function(self, tb)
-  -- function num : 0_22 , upvalues : _ENV
+function PointProgressComponent:GetProgressItemCountInTable(tb)
   local itemId = self:GetItemId()
-  for _,v in ipairs(tb) do
+  for _, v in ipairs(tb) do
     if v.assetid == itemId then
       return v.count
     end
@@ -313,18 +206,13 @@ PointProgressComponent.GetProgressItemCountInTable = function(self, tb)
   return 0
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-PointProgressComponent.RemoveProgressItemInTable = function(self, tb)
-  -- function num : 0_23 , upvalues : _ENV
+function PointProgressComponent:RemoveProgressItemInTable(tb)
   local itemId = self:GetItemId()
   local newTb = {}
-  for _,v in ipairs(tb) do
+  for _, v in ipairs(tb) do
     if v.assetid ~= itemId then
-      (table.insert)(newTb, v)
+      table.insert(newTb, v)
     end
   end
   return newTb
 end
-
-

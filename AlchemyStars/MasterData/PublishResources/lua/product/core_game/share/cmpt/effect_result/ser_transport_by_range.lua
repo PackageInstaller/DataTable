@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_transport_by_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultTransportByRange", SkillEffectResultBase)
 SkillEffectResultTransportByRange = SkillEffectResultTransportByRange
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultTransportByRange.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectResultTransportByRange:Constructor()
   self._pieceDataList = {}
   self._transportDirType = nil
   self._targetID = nil
@@ -22,144 +15,86 @@ SkillEffectResultTransportByRange.Constructor = function(self)
   self._outlineRange = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.SetOutlineRange = function(self, range)
-  -- function num : 0_1
+function SkillEffectResultTransportByRange:SetOutlineRange(range)
   self._outlineRange = range
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.GetOutlineRange = function(self)
-  -- function num : 0_2
+function SkillEffectResultTransportByRange:GetOutlineRange()
   return self._outlineRange
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.SetResetGridPosList = function(self, posList)
-  -- function num : 0_3
+function SkillEffectResultTransportByRange:SetResetGridPosList(posList)
   self._resetGridPosList = posList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.GetResetGridPosList = function(self)
-  -- function num : 0_4
+function SkillEffectResultTransportByRange:GetResetGridPosList()
   return self._resetGridPosList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.SetResetGridPieceDataList = function(self, dataList)
-  -- function num : 0_5
+function SkillEffectResultTransportByRange:SetResetGridPieceDataList(dataList)
   self._resetGridPieceDataList = dataList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.GetResetGridPieceDataList = function(self)
-  -- function num : 0_6
+function SkillEffectResultTransportByRange:GetResetGridPieceDataList()
   return self._resetGridPieceDataList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.AddPieceData = function(self, pieceData)
-  -- function num : 0_7 , upvalues : _ENV
-  (table.insert)(self._pieceDataList, pieceData)
+function SkillEffectResultTransportByRange:AddPieceData(pieceData)
+  table.insert(self._pieceDataList, pieceData)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.GetTransportDir = function(self)
-  -- function num : 0_8
+function SkillEffectResultTransportByRange:GetTransportDir()
   return self._transportDirType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.SetTransportDir = function(self, dirType)
-  -- function num : 0_9
+function SkillEffectResultTransportByRange:SetTransportDir(dirType)
   self._transportDirType = dirType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.GetPieceDataList = function(self)
-  -- function num : 0_10
+function SkillEffectResultTransportByRange:GetPieceDataList()
   return self._pieceDataList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.AddTargetData = function(self, targetID, oldPos, nextPos)
-  -- function num : 0_11
+function SkillEffectResultTransportByRange:AddTargetData(targetID, oldPos, nextPos)
   self._targetID = targetID
   self._targetNextPos = nextPos
   self._targetOldPos = oldPos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.GetTargetData = function(self)
-  -- function num : 0_12
+function SkillEffectResultTransportByRange:GetTargetData()
   return self._targetID, self._targetOldPos, self._targetNextPos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.GetEffectType = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillEffectResultTransportByRange:GetEffectType()
   return SkillEffectType.TransportByRange
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.SetEdge = function(self, edgeBegin, edgeEnd)
-  -- function num : 0_14
+function SkillEffectResultTransportByRange:SetEdge(edgeBegin, edgeEnd)
   self._edgeBegin = edgeBegin
   self._edgeEnd = edgeEnd
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTransportByRange.GetEdge = function(self)
-  -- function num : 0_15
+function SkillEffectResultTransportByRange:GetEdge()
   return self._edgeBegin, self._edgeEnd
 end
 
 _class("TransportByRangePieceData", Object)
 TransportByRangePieceData = TransportByRangePieceData
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-TransportByRangePieceData.Constructor = function(self, pos, pieceType, nextPos)
-  -- function num : 0_16
+function TransportByRangePieceData:Constructor(pos, pieceType, nextPos)
   self._pos = pos
   self._pieceType = pieceType
   self._nextPos = nextPos
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TransportByRangePieceData.GetPiecePos = function(self)
-  -- function num : 0_17
+function TransportByRangePieceData:GetPiecePos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-TransportByRangePieceData.GetPieceType = function(self)
-  -- function num : 0_18
+function TransportByRangePieceData:GetPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-TransportByRangePieceData.GetNextPos = function(self)
-  -- function num : 0_19
+function TransportByRangePieceData:GetNextPos()
   return self._nextPos
 end
-
-

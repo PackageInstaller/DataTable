@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/common/ui_homeland_accelerate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandAccelerate", UIController)
 UIHomelandAccelerate = UIHomelandAccelerate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandAccelerate.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandAccelerate:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._uiHomelandModule = (GameGlobal.GetUIModule)(HomelandModule)
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._homelandClient = (self._uiHomelandModule):GetClient()
-  self._buildManager = (self._homelandClient):BuildManager()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._uiHomelandModule = GameGlobal.GetUIModule(HomelandModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._homelandClient = self._uiHomelandModule:GetClient()
+  self._buildManager = self._homelandClient:BuildManager()
   self._timeRefreshInterval = 0
   self._maxCount = 100
   self._curCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandAccelerate:OnShow(uiParams)
   self._titleStr = uiParams[1]
   self._remainTime = uiParams[2]
   self._itemID = uiParams[3]
@@ -34,10 +24,7 @@ UIHomelandAccelerate.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandAccelerate:_GetComponents()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._remainTimeText = self:GetUIComponent("UILocalizationText", "RemainTime")
   self._resultTime = self:GetUIComponent("UILocalizationText", "ResultTime")
@@ -47,109 +34,64 @@ UIHomelandAccelerate._GetComponents = function(self)
   self._itemName = self:GetUIComponent("UILocalizationText", "ItemName")
   self._slider = self:GetUIComponent("Slider", "Slider")
   self._countValue = self:GetUIComponent("UILocalizationText", "CountValue")
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._slider).wholeNumbers = true
-  ;
-  ((self._slider).onValueChanged):AddListener(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    self._curCount = (math.min)(self._maxCount, (math.ceil)((self._slider).value))
-    ;
-    (self._countValue):SetText(self._curCount)
-    ;
-    (self._remainCount):SetText(self._packageCount - self._curCount)
-  end
-)
+  self._slider.wholeNumbers = true
+  self._slider.onValueChanged:AddListener(function()
+    self._curCount = math.min(self._maxCount, math.ceil(self._slider.value))
+    self._countValue:SetText(self._curCount)
+    self._remainCount:SetText(self._packageCount - self._curCount)
+  end)
   self._helpTime = self:GetUIComponent("UILocalizationText", "helpTime")
   self._helpTimeParent = self:GetGameObject("helpTimeParent")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_item)[self._itemID]
-  local packageCount = (self._itemModule):GetItemCount((self._cfg).ID)
+function UIHomelandAccelerate:_OnValue()
+  self._cfg = Cfg.cfg_item[self._itemID]
+  local packageCount = self._itemModule:GetItemCount(self._cfg.ID)
   self._packageCount = packageCount
-  local remainTime = self._remainTime - (self._svrTimeModule):GetServerTime() * 0.001
-  local maxCount = (math.ceil)(remainTime / self._itemTime)
-  self._maxCount = (math.min)(maxCount, packageCount)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._slider).maxValue = self._maxCount
+  local remainTime = self._remainTime - self._svrTimeModule:GetServerTime() * 0.001
+  local maxCount = math.ceil(remainTime / self._itemTime)
+  self._maxCount = math.min(maxCount, packageCount)
+  self._slider.maxValue = self._maxCount
   self._curCount = 0
-  ;
-  (self._title):SetText(self._titleStr)
-  ;
-  (self._remainTimeText):SetText((HomelandBreedTool.GetTimeStr)(remainTime))
-  ;
-  (self._resultTime):SetText((HomelandBreedTool.GetTimeStr)(0))
-  ;
-  (self._itemIcon):LoadImage((self._cfg).Icon)
-  ;
-  (self._totalCount):SetText(self._packageCount)
-  ;
-  (self._remainCount):SetText(self._packageCount)
-  ;
-  (self._itemName):SetText((StringTable.Get)((self._cfg).Name))
+  self._title:SetText(self._titleStr)
+  self._remainTimeText:SetText(HomelandBreedTool.GetTimeStr(remainTime))
+  self._resultTime:SetText(HomelandBreedTool.GetTimeStr(0))
+  self._itemIcon:LoadImage(self._cfg.Icon)
+  self._totalCount:SetText(self._packageCount)
+  self._remainCount:SetText(self._packageCount)
+  self._itemName:SetText(StringTable.Get(self._cfg.Name))
   self:_RefreshSlider()
   if self._helpAllTime then
-    ((self._helpTime).gameObject):SetActive(true)
-    local hour = (math.ceil)(self._helpAllTime / 3600)
-    ;
-    (self._helpTime):SetText((StringTable.Get)("str_homeland_visit_help_time", hour))
-    ;
-    (self._helpTimeParent):SetActive(true)
+    self._helpTime.gameObject:SetActive(true)
+    local hour = math.ceil(self._helpAllTime / 3600)
+    self._helpTime:SetText(StringTable.Get("str_homeland_visit_help_time", hour))
+    self._helpTimeParent:SetActive(true)
   else
-    do
-      ;
-      (self._helpTimeParent):SetActive(false)
-    end
+    self._helpTimeParent:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate.ReduceBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  self._curCount = (math.max)(0, self._curCount - 1)
+function UIHomelandAccelerate:ReduceBtnOnClick(go)
+  self._curCount = math.max(0, self._curCount - 1)
   self:_RefreshSlider()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate.AddBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  self._curCount = (math.min)(self._curCount + 1, self._maxCount)
+function UIHomelandAccelerate:AddBtnOnClick(go)
+  self._curCount = math.min(self._curCount + 1, self._maxCount)
   self:_RefreshSlider()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIHomelandAccelerate:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate._RefreshSlider = function(self)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._slider).value = self._curCount
-  ;
-  (self._countValue):SetText(self._curCount)
-  ;
-  (self._remainCount):SetText(self._packageCount - self._curCount)
+function UIHomelandAccelerate:_RefreshSlider()
+  self._slider.value = self._curCount
+  self._countValue:SetText(self._curCount)
+  self._remainCount:SetText(self._packageCount - self._curCount)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate.Update = function(self, deltaTime)
-  -- function num : 0_8
+function UIHomelandAccelerate:Update(deltaTime)
   self._timeRefreshInterval = self._timeRefreshInterval + deltaTime
   if self._timeRefreshInterval >= 1000 then
     self._timeRefreshInterval = 0
@@ -157,84 +99,69 @@ UIHomelandAccelerate.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate._RefreshTime = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandAccelerate:_RefreshTime()
   if self._cfg then
-    local remainTime = self._remainTime - (self._svrTimeModule):GetServerTime() * 0.001
-    if remainTime >= 0 then
-      (self._remainTimeText):SetText((HomelandBreedTool.GetTimeStr)(remainTime))
+    local remainTime = self._remainTime - self._svrTimeModule:GetServerTime() * 0.001
+    if 0 <= remainTime then
+      self._remainTimeText:SetText(HomelandBreedTool.GetTimeStr(remainTime))
       local itemTime = self._itemTime * self._curCount
-      local surplusTime = (math.floor)(itemTime - remainTime)
-      do
-        do
-          if surplusTime > 0 then
-            local surplusCount = (math.floor)(surplusTime / self._itemTime)
-            if surplusCount > 0 then
-              self._curCount = (math.max)(0, self._curCount - surplusCount)
-              self._maxCount = self._curCount
-              -- DECOMPILER ERROR at PC45: Confused about usage of register: R5 in 'UnsetPending'
-
-              ;
-              (self._slider).maxValue = self._maxCount
-              itemTime = self._itemTime * self._curCount
-              self:_RefreshSlider()
-            end
-          end
-          ;
-          (self._resultTime):SetText((HomelandBreedTool.GetTimeStr)(remainTime - itemTime))
-          self._curCount = 0
+      local surplusTime = math.floor(itemTime - remainTime)
+      if 0 < surplusTime then
+        local surplusCount = math.floor(surplusTime / self._itemTime)
+        if 0 < surplusCount then
+          self._curCount = math.max(0, self._curCount - surplusCount)
+          self._maxCount = self._curCount
+          self._slider.maxValue = self._maxCount
+          itemTime = self._itemTime * self._curCount
           self:_RefreshSlider()
-          ;
-          (self._resultTime):SetText((HomelandBreedTool.GetTimeStr)(0))
         end
       end
+      self._resultTime:SetText(HomelandBreedTool.GetTimeStr(remainTime - itemTime))
+    else
+      self._curCount = 0
+      self:_RefreshSlider()
+      self._resultTime:SetText(HomelandBreedTool.GetTimeStr(0))
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate.OnSureBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIHomelandAccelerate:OnSureBtnOnClick(go)
   if self._curCount <= 0 then
-    return 
+    return
   end
-  local remainTime = self._remainTime - (self._svrTimeModule):GetServerTime() * 0.001
+  local remainTime = self._remainTime - self._svrTimeModule:GetServerTime() * 0.001
   local resultTime = self._curCount * self._itemTime
-  -- DECOMPILER ERROR at PC23: Unhandled construct in 'MakeBoolean' P1
-
-  if remainTime < resultTime and remainTime > 0 and self._callBack then
-    (self._callBack)(self._itemID, self._curCount)
-    self:CloseDialog()
-  end
-  self:CloseDialog()
-  if self._callBack then
-    (self._callBack)(self._itemID, self._curCount)
-    self:CloseDialog()
-  end
-end
-
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandAccelerate._PopBox = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local title = ""
-  local desc = (StringTable.Get)("str_homeland_breed_selectitem_desc")
-  local leftBtn = {(StringTable.Get)("str_common_cancel"), function(param)
-    -- function num : 0_11_0
-  end
-}
-  local rightBtn = {(StringTable.Get)("str_common_ok"), function(param)
-    -- function num : 0_11_1 , upvalues : self
-    if self._callBack then
-      (self._callBack)(self._itemID, self._curCount)
+  if remainTime < resultTime then
+    if 0 < remainTime then
+      if self._callBack then
+        self._callBack(self._itemID, self._curCount)
+        self:CloseDialog()
+      end
+    else
       self:CloseDialog()
     end
+  elseif self._callBack then
+    self._callBack(self._itemID, self._curCount)
+    self:CloseDialog()
   end
-}
-  self:ShowDialog("UIHomelandMessageBox", title, desc, leftBtn, rightBtn, true)
 end
 
-
+function UIHomelandAccelerate:_PopBox()
+  local title = ""
+  local desc = StringTable.Get("str_homeland_breed_selectitem_desc")
+  local leftBtn = {
+    StringTable.Get("str_common_cancel"),
+    function(param)
+    end
+  }
+  local rightBtn = {
+    StringTable.Get("str_common_ok"),
+    function(param)
+      if self._callBack then
+        self._callBack(self._itemID, self._curCount)
+        self:CloseDialog()
+      end
+    end
+  }
+  self:ShowDialog("UIHomelandMessageBox", title, desc, leftBtn, rightBtn, true)
+end

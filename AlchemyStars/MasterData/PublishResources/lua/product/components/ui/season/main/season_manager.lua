@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/season_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonManager", Object)
 SeasonManager = SeasonManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonManager:Constructor()
   self._seasonNavManager = SeasonNavManager:New()
   self._seasonCoverManager = SeasonCoverManager:New()
   self._seasonCoverByNavManager = SeasonCoverByNavManager:New()
@@ -23,269 +16,152 @@ SeasonManager.Constructor = function(self)
   self._seasonUIManager = SeasonUIManager:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.Init = function(self, seasonID, params)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonManager:Init(seasonID, params)
   self._locks = {}
   self._inputMode = SeasonInputMode.Input
-  ;
-  (self._seasonCoverManager):OnInit(seasonID)
-  ;
-  (self._seasonCoverByNavManager):OnInit(seasonID)
-  ;
-  (self._seasonShowByNavManager):OnInit(seasonID)
-  ;
-  (self._seasonSceneManager):OnInit(seasonID, params)
-  ;
-  (self._seasonPlayerManager):OnInit(seasonID, params)
-  ;
-  (self._seasonTriggerManager):OnInit(seasonID, params)
-  ;
-  (self._seasonCameraManager):OnInit(seasonID, params)
-  ;
-  (self._seasonInputManager):OnInit(seasonID, params)
-  ;
-  (self._seasonMapManager):OnInit(seasonID, params)
-  ;
-  (self._seasonAudioManager):OnInit(seasonID, params)
-  ;
-  (self._seasonUIManager):OnInit(seasonID)
+  self._seasonCoverManager:OnInit(seasonID)
+  self._seasonCoverByNavManager:OnInit(seasonID)
+  self._seasonShowByNavManager:OnInit(seasonID)
+  self._seasonSceneManager:OnInit(seasonID, params)
+  self._seasonPlayerManager:OnInit(seasonID, params)
+  self._seasonTriggerManager:OnInit(seasonID, params)
+  self._seasonCameraManager:OnInit(seasonID, params)
+  self._seasonInputManager:OnInit(seasonID, params)
+  self._seasonMapManager:OnInit(seasonID, params)
+  self._seasonAudioManager:OnInit(seasonID, params)
+  self._seasonUIManager:OnInit(seasonID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.AfterInit = function(self)
-  -- function num : 0_2
-  (self._seasonPlayerManager):OnAfterInit()
-  ;
-  (self._seasonMapManager):OnAfterInit()
-  ;
-  (self._seasonSceneManager):OnAfterInit()
-  ;
-  (self._seasonAudioManager):OnAfterInit()
+function SeasonManager:AfterInit()
+  self._seasonPlayerManager:OnAfterInit()
+  self._seasonMapManager:OnAfterInit()
+  self._seasonSceneManager:OnAfterInit()
+  self._seasonAudioManager:OnAfterInit()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.Update = function(self, deltaTime)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonManager:Update(deltaTime)
   self._inputMode = self:GetInputMode()
-  ;
-  (self._seasonSceneManager):Update(deltaTime)
-  ;
-  (self._seasonPlayerManager):Update(deltaTime)
-  ;
-  (self._seasonTriggerManager):Update(deltaTime)
-  ;
-  (self._seasonCameraManager):Update(deltaTime, self._inputMode)
+  self._seasonSceneManager:Update(deltaTime)
+  self._seasonPlayerManager:Update(deltaTime)
+  self._seasonTriggerManager:Update(deltaTime)
+  self._seasonCameraManager:Update(deltaTime, self._inputMode)
   if self._inputMode == SeasonInputMode.Input then
-    (self._seasonInputManager):Update(deltaTime)
+    self._seasonInputManager:Update(deltaTime)
   end
-  ;
-  (self._seasonMapManager):Update(deltaTime)
-  ;
-  (self._seasonAudioManager):Update(deltaTime)
-  ;
-  (self._seasonUIManager):Update(deltaTime)
-  ;
-  (self._seasonCoverManager):Update(deltaTime)
+  self._seasonMapManager:Update(deltaTime)
+  self._seasonAudioManager:Update(deltaTime)
+  self._seasonUIManager:Update(deltaTime)
+  self._seasonCoverManager:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.Dispose = function(self, isExit)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._seasonSceneManager):Dispose()
-  ;
-  (self._seasonPlayerManager):Dispose(isExit)
-  ;
-  (self._seasonTriggerManager):Dispose()
-  ;
-  (self._seasonCameraManager):Dispose()
-  ;
-  (self._seasonInputManager):Dispose()
-  ;
-  (self._seasonMapManager):Dispose()
-  ;
-  (self._seasonAudioManager):Dispose()
-  ;
-  (self._seasonUIManager):Dispose()
-  ;
-  (self._seasonCoverManager):Dispose()
-  ;
-  (self._seasonCoverByNavManager):Dispose()
-  ;
-  (self._seasonShowByNavManager):Dispose()
-  ;
-  (table.clear)(self._locks)
+function SeasonManager:Dispose(isExit)
+  self._seasonSceneManager:Dispose()
+  self._seasonPlayerManager:Dispose(isExit)
+  self._seasonTriggerManager:Dispose()
+  self._seasonCameraManager:Dispose()
+  self._seasonInputManager:Dispose()
+  self._seasonMapManager:Dispose()
+  self._seasonAudioManager:Dispose()
+  self._seasonUIManager:Dispose()
+  self._seasonCoverManager:Dispose()
+  self._seasonCoverByNavManager:Dispose()
+  self._seasonShowByNavManager:Dispose()
+  table.clear(self._locks)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonSceneManager = function(self)
-  -- function num : 0_5
+function SeasonManager:SeasonSceneManager()
   return self._seasonSceneManager
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonPlayerManager = function(self)
-  -- function num : 0_6
+function SeasonManager:SeasonPlayerManager()
   return self._seasonPlayerManager
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonCameraManager = function(self)
-  -- function num : 0_7
+function SeasonManager:SeasonCameraManager()
   return self._seasonCameraManager
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonInputManager = function(self)
-  -- function num : 0_8
+function SeasonManager:SeasonInputManager()
   return self._seasonInputManager
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonMapManager = function(self)
-  -- function num : 0_9
+function SeasonManager:SeasonMapManager()
   return self._seasonMapManager
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonAudioManager = function(self)
-  -- function num : 0_10
+function SeasonManager:SeasonAudioManager()
   return self._seasonAudioManager
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonUIManager = function(self)
-  -- function num : 0_11
+function SeasonManager:SeasonUIManager()
   return self._seasonUIManager
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonTriggerManager = function(self)
-  -- function num : 0_12
+function SeasonManager:SeasonTriggerManager()
   return self._seasonTriggerManager
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonCoverManager = function(self)
-  -- function num : 0_13
+function SeasonManager:SeasonCoverManager()
   return self._seasonCoverManager
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonCoverByNavManager = function(self)
-  -- function num : 0_14
+function SeasonManager:SeasonCoverByNavManager()
   return self._seasonCoverByNavManager
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SeasonShowByNavManager = function(self)
-  -- function num : 0_15
+function SeasonManager:SeasonShowByNavManager()
   return self._seasonShowByNavManager
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.NavManager = function(self)
-  -- function num : 0_16
+function SeasonManager:NavManager()
   return self._seasonNavManager
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.GetInputMode = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  if (table.count)(self._locks) > 0 then
+function SeasonManager:GetInputMode()
+  if table.count(self._locks) > 0 then
     return SeasonInputMode.LockInput
   else
     return SeasonInputMode.Input
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.Lock = function(self, name)
-  -- function num : 0_18 , upvalues : _ENV
-  if (self._locks)[name] then
-    (Log.error)("SeasonManager lock exist.", name)
+function SeasonManager:Lock(name)
+  if self._locks[name] then
+    Log.error("SeasonManager lock exist.", name)
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._locks)[name] = true
-  ;
-  (Log.debug)("SeasonManager add lock", name)
+  self._locks[name] = true
+  Log.debug("SeasonManager add lock", name)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.UnLock = function(self, name)
-  -- function num : 0_19 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._locks)[name] then
-    (self._locks)[name] = nil
-    ;
-    (Log.debug)("SeasonManager remove lock", name)
+function SeasonManager:UnLock(name)
+  if self._locks[name] then
+    self._locks[name] = nil
+    Log.debug("SeasonManager remove lock", name)
   else
-    ;
-    (Log.error)("SeasonManager UnLock not exist.", name)
+    Log.error("SeasonManager UnLock not exist.", name)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.ClearLocks = function(self)
-  -- function num : 0_20
+function SeasonManager:ClearLocks()
   self._locks = {}
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.SwitchDiff = function(self, diff)
-  -- function num : 0_21
-  (self._seasonMapManager):SwitchDiff(diff)
-  ;
-  (self._seasonUIManager):SwitchDiff(diff)
+function SeasonManager:SwitchDiff(diff)
+  self._seasonMapManager:SwitchDiff(diff)
+  self._seasonUIManager:SwitchDiff(diff)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.AutoMoveToEventPoint = function(self, id)
-  -- function num : 0_22
-  local eventPoint = (self._seasonMapManager):GetEventPoint(id)
+function SeasonManager:AutoMoveToEventPoint(id)
+  local eventPoint = self._seasonMapManager:GetEventPoint(id)
   if eventPoint then
-    ((self._seasonCameraManager):SeasonCamera()):Focus(eventPoint:Position())
-    ;
-    ((self._seasonInputManager):GetInput()):SetClickUnLockZone(eventPoint:IsUnlock())
-    ;
-    (((self._seasonInputManager):GetInput()):GetClickEffect()):Click()
-    ;
-    ((self._seasonInputManager):GetInput()):SetCurClickEventPoint(eventPoint)
+    self._seasonCameraManager:SeasonCamera():Focus(eventPoint:Position())
+    self._seasonInputManager:GetInput():SetClickUnLockZone(eventPoint:IsUnlock())
+    self._seasonInputManager:GetInput():GetClickEffect():Click()
+    self._seasonInputManager:GetInput():SetCurClickEventPoint(eventPoint)
     eventPoint:AutoMoveToMe()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonManager.LockUI = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  do return not (self._seasonMapManager):EventPointPlaying() or self:GetInputMode() == SeasonInputMode.LockInput end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SeasonManager:LockUI()
+  return self._seasonMapManager:EventPointPlaying() and self:GetInputMode() == SeasonInputMode.LockInput
 end
-
-

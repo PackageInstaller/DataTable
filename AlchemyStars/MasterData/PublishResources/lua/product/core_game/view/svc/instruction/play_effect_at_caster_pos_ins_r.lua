@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_at_caster_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectAtCasterPosInstruction", BaseInstruction)
 PlayEffectAtCasterPosInstruction = PlayEffectAtCasterPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectAtCasterPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectAtCasterPosInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._offsetX = 0
   self._offsetY = 0
@@ -24,33 +17,29 @@ PlayEffectAtCasterPosInstruction.Constructor = function(self, paramList)
     self._offsetZ = tonumber(paramList.offsetZ)
   end
   self._isGridPos = true
-  if tonumber(paramList.isGridPos) ~= 1 then
-    self._isGridPos = not paramList.isGridPos
-    self._isLogicGridPos = false
-    if tonumber(paramList.isLogicGridPos) ~= 1 then
-      self._isLogicGridPos = not paramList.isLogicGridPos
-      if paramList.tarPickGridIndex then
-        self._tarPickGridIndex = tonumber(paramList.tarPickGridIndex)
-      end
-      if paramList.gridDirX then
-        self._dirX = tonumber(paramList.gridDirX)
-      end
-      if paramList.gridDirY then
-        self._dirY = tonumber(paramList.gridDirY)
-      end
-      self._useRenderDir = tonumber(paramList.useRenderDir) == 1
-      -- DECOMPILER ERROR: 8 unprocessed JMP targets
-    end
+  if paramList.isGridPos then
+    self._isGridPos = tonumber(paramList.isGridPos) == 1
   end
+  self._isLogicGridPos = false
+  if paramList.isLogicGridPos then
+    self._isLogicGridPos = tonumber(paramList.isLogicGridPos) == 1
+  end
+  if paramList.tarPickGridIndex then
+    self._tarPickGridIndex = tonumber(paramList.tarPickGridIndex)
+  end
+  if paramList.gridDirX then
+    self._dirX = tonumber(paramList.gridDirX)
+  end
+  if paramList.gridDirY then
+    self._dirY = tonumber(paramList.gridDirY)
+  end
+  self._useRenderDir = tonumber(paramList.useRenderDir) == 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtCasterPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEffectAtCasterPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local boardServiceRender = (world:GetService("BoardRender"))
-  local effectEntity = nil
+  local boardServiceRender = world:GetService("BoardRender")
+  local effectEntity
   local dir = casterEntity:GetGridDirection()
   if self._useRenderDir then
     dir = casterEntity:GetDirection()
@@ -67,59 +56,44 @@ PlayEffectAtCasterPosInstruction.DoInstruction = function(self, TT, casterEntity
     effectEntity = sEffect:CreateWorldPositionDirectionEffect(self._effectID, pos, dir)
     effectEntity:SetDirection(dir)
   else
-    do
-      do
-        local renderPos = casterEntity:GetPosition()
-        effectEntity = (world:GetService("Effect")):CreatePositionEffect(self._effectID, renderPos)
-        effectEntity:SetDirection(dir)
-        YIELD(TT)
-        if effectEntity then
-          local count = 0
-          while 1 do
-            if not effectEntity:View() then
-              count = count + 1
-              if count <= 10 then
-                YIELD(TT)
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
-          local view = effectEntity:View()
-          if view then
-            local effectTran = (view:GetGameObject()).transform
-            effectTran.position = effectTran.position + Vector3(self._offsetX, self._offsetY, self._offsetZ)
-            if self._tarPickGridIndex then
-              local renderPickUpComponent = casterEntity:RenderPickUpComponent()
-              local scopeGridList = renderPickUpComponent:GetAllValidPickUpGridPos()
-              local tarGridPos = scopeGridList[self._tarPickGridIndex]
-              local casterGridPos = casterEntity:GetGridPosition()
-              local dirV2 = tarGridPos - casterGridPos
-              local effNewDir = Vector3(dirV2.x, 0 - (effectTran.position).y, dirV2.y)
-              effectEntity:SetLocation(effectTran.position, effNewDir)
-            end
-          end
-        end
+    local renderPos = casterEntity:GetPosition()
+    effectEntity = world:GetService("Effect"):CreatePositionEffect(self._effectID, renderPos)
+    effectEntity:SetDirection(dir)
+  end
+  YIELD(TT)
+  if effectEntity then
+    local count = 0
+    while not effectEntity:View() do
+      count = count + 1
+      if 10 < count then
+        break
+      end
+      YIELD(TT)
+    end
+    local view = effectEntity:View()
+    if view then
+      local effectTran = view:GetGameObject().transform
+      effectTran.position = effectTran.position + Vector3(self._offsetX, self._offsetY, self._offsetZ)
+      if self._tarPickGridIndex then
+        local renderPickUpComponent = casterEntity:RenderPickUpComponent()
+        local scopeGridList = renderPickUpComponent:GetAllValidPickUpGridPos()
+        local tarGridPos = scopeGridList[self._tarPickGridIndex]
+        local casterGridPos = casterEntity:GetGridPosition()
+        local dirV2 = tarGridPos - casterGridPos
+        local effNewDir = Vector3(dirV2.x, 0 - effectTran.position.y, dirV2.y)
+        effectEntity:SetLocation(effectTran.position, effNewDir)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtCasterPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectAtCasterPosInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

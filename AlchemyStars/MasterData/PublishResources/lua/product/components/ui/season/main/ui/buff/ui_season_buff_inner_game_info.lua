@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/buff/ui_season_buff_inner_game_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuffInnerGameInfo", UIController)
 UISeasonBuffInnerGameInfo = UISeasonBuffInnerGameInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuffInnerGameInfo.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UISeasonBuffInnerGameInfo:LoadDataOnEnter(TT, res, uiParams)
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   local seasonClose = seasonModule:GetCurSeasonID() == -1
   if seasonClose then
-    (Log.error)("当前赛季已经结束不能打开BUFF弹窗")
+    Log.error("当前赛季已经结束不能打开BUFF弹窗")
     seasonModule:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
     res:SetSucc(false)
-    return 
+    return
   end
   local serialautofightmodule = self:GetModule(SerialAutoFightModule)
   local running = serialautofightmodule:IsRunning()
@@ -24,13 +17,9 @@ UISeasonBuffInnerGameInfo.LoadDataOnEnter = function(self, TT, res, uiParams)
   else
     res:SetSucc(true)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffInnerGameInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBuffInnerGameInfo:OnShow(uiParams)
   self._detailLevelText = self:GetUIComponent("UILocalizationText", "DetailLevel")
   self._detailContentText = self:GetUIComponent("UILocalizationText", "DetailContent")
   self._titleText = self:GetUIComponent("UILocalizationText", "Title")
@@ -38,35 +27,22 @@ UISeasonBuffInnerGameInfo.OnShow = function(self, uiParams)
   local seasonObj = seasonModule:GetCurSeasonObj()
   if seasonObj then
     local componentID = seasonObj:GetSeasonMissionComponentCfgID()
-    local curLevel, curProgress, maxLevel, isMaxLevel = (UISeasonHelper.CalcBuffLevel)(componentID)
-    ;
-    (self._detailLevelText):SetText((StringTable.Get)("str_season_buff_level", tostring(curLevel)))
-    local cfgGroup = (Cfg.cfg_component_season_wordbuff)({ComponentID = componentID, Lv = curLevel})
-    if cfgGroup and #cfgGroup > 0 then
+    local curLevel, curProgress, maxLevel, isMaxLevel = UISeasonHelper.CalcBuffLevel(componentID)
+    self._detailLevelText:SetText(StringTable.Get("str_season_buff_level", tostring(curLevel)))
+    local cfgGroup = Cfg.cfg_component_season_wordbuff({ComponentID = componentID, Lv = curLevel})
+    if cfgGroup and 0 < #cfgGroup then
       local cfg = cfgGroup[1]
       local desc = cfg.Desc
-      ;
-      (self._detailContentText):SetText((StringTable.Get)(desc))
+      self._detailContentText:SetText(StringTable.Get(desc))
     else
-      do
-        do
-          ;
-          (self._detailContentText):SetText("")
-          ;
-          (self._titleText):SetText((StringTable.Get)((UISeasonHelper.CurSeasonBuffTitleInBattle)()))
-          local icon = self:GetUIComponent("RawImageLoader", "Icon")
-          icon:LoadImage((UISeasonHelper.CurSeasonBuffIconInBattle)())
-        end
-      end
+      self._detailContentText:SetText("")
     end
   end
+  self._titleText:SetText(StringTable.Get(UISeasonHelper.CurSeasonBuffTitleInBattle()))
+  local icon = self:GetUIComponent("RawImageLoader", "Icon")
+  icon:LoadImage(UISeasonHelper.CurSeasonBuffIconInBattle())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffInnerGameInfo.FullScreenBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UISeasonBuffInnerGameInfo:FullScreenBtnOnClick(go)
   self:CloseDialog()
 end
-
-

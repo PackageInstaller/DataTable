@@ -1,99 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_awards_info/ui_quest_awards_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestAwardsInfoController", UIController)
 UIQuestAwardsInfoController = UIQuestAwardsInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestAwardsInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestAwardsInfoController:OnShow(uiParams)
   self._reward = uiParams[1]
   self._titleName = uiParams[2]
   self._itemCountPerRow = 1
-  self._count = (table.count)(self._reward)
+  self._count = table.count(self._reward)
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAwardsInfoController.OnHide = function(self)
-  -- function num : 0_1
+function UIQuestAwardsInfoController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAwardsInfoController._GetComponents = function(self)
-  -- function num : 0_2
+function UIQuestAwardsInfoController:_GetComponents()
   self._titleNameTex = self:GetUIComponent("UILocalizationText", "titleName")
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAwardsInfoController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIQuestAwardsInfoController:_OnValue()
   if self._titleName then
-    (self._titleNameTex):SetText((StringTable.Get)(self._titleName))
+    self._titleNameTex:SetText(StringTable.Get(self._titleName))
   end
   local scrollView = self:GetGameObject("itemScrollView")
   local content = self:GetGameObject("pool")
   if self._count > 5 then
-    (scrollView:GetComponent("ScrollRect")).enabled = true
-    ;
-    (content:GetComponent("ContentSizeFitter")).enabled = true
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((content:GetComponent("GridLayoutGroup")).padding).left = 88
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((content:GetComponent("GridLayoutGroup")).padding).right = 88
+    scrollView:GetComponent("ScrollRect").enabled = true
+    content:GetComponent("ContentSizeFitter").enabled = true
+    content:GetComponent("GridLayoutGroup").padding.left = 88
+    content:GetComponent("GridLayoutGroup").padding.right = 88
   else
-    ;
-    (scrollView:GetComponent("ScrollRect")).enabled = false
-    ;
-    (content:GetComponent("ContentSizeFitter")).enabled = false
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((content:GetComponent("GridLayoutGroup")).padding).left = 0
-    local width = ((scrollView:GetComponent("RectTransform")).sizeDelta).x
-    ;
-    (content:GetComponent("RectTransform")).sizeDelta = Vector2(width, ((content:GetComponent("RectTransform")).sizeDelta).y)
+    scrollView:GetComponent("ScrollRect").enabled = false
+    content:GetComponent("ContentSizeFitter").enabled = false
+    content:GetComponent("GridLayoutGroup").padding.left = 0
+    local width = scrollView:GetComponent("RectTransform").sizeDelta.x
+    content:GetComponent("RectTransform").sizeDelta = Vector2(width, content:GetComponent("RectTransform").sizeDelta.y)
   end
-  do
-    ;
-    (self._pool):SpawnObjects("UIQuestAwardsInfoItem", self._count)
-    self._items = (self._pool):GetAllSpawnList()
-    for i = 1, #self._items do
-      ((self._items)[i]):SetData(i, (self._reward)[i], function(matid, pos)
-    -- function num : 0_3_0 , upvalues : self
-    (self._selectInfo):SetData(matid, pos)
+  self._pool:SpawnObjects("UIQuestAwardsInfoItem", self._count)
+  self._items = self._pool:GetAllSpawnList()
+  for i = 1, #self._items do
+    self._items[i]:SetData(i, self._reward[i], function(matid, pos)
+      self._selectInfo:SetData(matid, pos)
+    end)
   end
-)
-    end
-    local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
-    self._blur = self:GetUIComponent("H3DUIBlurHelper", "Blur")
-    -- DECOMPILER ERROR at PC102: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._blur).OwnerCamera = bgCanvas.worldCamera
-    ;
-    (self._blur):RefreshBlurTexture()
-  end
+  local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
+  self._blur = self:GetUIComponent("H3DUIBlurHelper", "Blur")
+  self._blur.OwnerCamera = bgCanvas.worldCamera
+  self._blur:RefreshBlurTexture()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAwardsInfoController.bgOnClick = function(self)
-  -- function num : 0_4
+function UIQuestAwardsInfoController:bgOnClick()
   self:CloseDialog()
 end
-
-

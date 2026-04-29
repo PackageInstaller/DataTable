@@ -1,92 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/data/ui_activity_n21cc_level_group_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCLevelGroupData", Object)
 UIActivityN21CCLevelGroupData = UIActivityN21CCLevelGroupData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCLevelGroupData.Constructor = function(self, cfgs, missionComponentInfo)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityN21CCLevelGroupData:Constructor(cfgs, missionComponentInfo)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._levels = {}
   if not cfgs then
-    return 
+    return
   end
   for i = 1, #cfgs do
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._levels)[#self._levels + 1] = UIActivityN21CCLevelData:New(cfgs[i], missionComponentInfo)
+    self._levels[#self._levels + 1] = UIActivityN21CCLevelData:New(cfgs[i], missionComponentInfo)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.Refresh = function(self)
-  -- function num : 0_1
+function UIActivityN21CCLevelGroupData:Refresh()
   for i = 1, #self._levels do
-    ((self._levels)[i]):Refresh()
+    self._levels[i]:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetLevels = function(self)
-  -- function num : 0_2
+function UIActivityN21CCLevelGroupData:GetLevels()
   return self._levels
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.IsLevelGroupOpen = function(self)
-  -- function num : 0_3
+function UIActivityN21CCLevelGroupData:IsLevelGroupOpen()
   if #self._levels <= 0 then
     return false
   end
-  return ((self._levels)[1]):IsLevelOpen()
+  return self._levels[1]:IsLevelOpen()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetIcon = function(self)
-  -- function num : 0_4
+function UIActivityN21CCLevelGroupData:GetIcon()
   if #self._levels <= 0 then
     return ""
   end
-  return ((self._levels)[1]):GetMonsterIcon()
+  return self._levels[1]:GetMonsterIcon()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetName = function(self)
-  -- function num : 0_5
+function UIActivityN21CCLevelGroupData:GetName()
   if #self._levels <= 0 then
     return ""
   end
-  return ((self._levels)[1]):GetMonsterName()
+  return self._levels[1]:GetMonsterName()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetIndex = function(self)
-  -- function num : 0_6
+function UIActivityN21CCLevelGroupData:GetIndex()
   if #self._levels <= 0 then
     return 0
   end
-  return ((self._levels)[1]):GetIndex()
+  return self._levels[1]:GetIndex()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetMaxScore = function(self)
-  -- function num : 0_7
+function UIActivityN21CCLevelGroupData:GetMaxScore()
   if #self._levels <= 0 then
     return 0
   end
   local maxScore = 0
   for i = 1, #self._levels do
-    local score = ((self._levels)[i]):GetMaxScore()
+    local score = self._levels[i]:GetMaxScore()
     if maxScore < score then
       maxScore = score
     end
@@ -94,41 +64,29 @@ UIActivityN21CCLevelGroupData.GetMaxScore = function(self)
   return maxScore
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetElementIcon1 = function(self)
-  -- function num : 0_8
+function UIActivityN21CCLevelGroupData:GetElementIcon1()
   if #self._levels <= 0 then
     return nil
   end
-  return ((self._levels)[1]):GetElementIcon1()
+  return self._levels[1]:GetElementIcon1()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetElementIcon2 = function(self)
-  -- function num : 0_9
+function UIActivityN21CCLevelGroupData:GetElementIcon2()
   if #self._levels <= 0 then
     return nil
   end
-  return ((self._levels)[1]):GetElementIcon2()
+  return self._levels[1]:GetElementIcon2()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetUnlockTime = function(self)
-  -- function num : 0_10
+function UIActivityN21CCLevelGroupData:GetUnlockTime()
   if #self._levels <= 0 then
     return false
   end
-  return ((self._levels)[1]):GetUnlockTime()
+  return self._levels[1]:GetUnlockTime()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetUnlockSeconds = function(self)
-  -- function num : 0_11
-  local nowTime = (self._timeModule):GetServerTime() / 1000
+function UIActivityN21CCLevelGroupData:GetUnlockSeconds()
+  local nowTime = self._timeModule:GetServerTime() / 1000
   local unlockTime = self:GetUnlockTime()
   local seconds = unlockTime - nowTime
   if seconds < 0 then
@@ -137,87 +95,64 @@ UIActivityN21CCLevelGroupData.GetUnlockSeconds = function(self)
   return seconds
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.IsShowRed = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityN21CCLevelGroupData:IsShowRed()
   if self:IsLevelGroupOpen() == false then
     return false
   end
   local result = true
   for i = 1, #self._levels do
-    local level = (self._levels)[i]
+    local level = self._levels[i]
     local missionId = level:GetMissionId()
     if not self:GetNewFlagStatus("MISSION_ENTER_STATUS" .. missionId) then
       result = false
       break
     end
   end
-  do
-    if not result then
-      return false
-    end
-    local index = self:GetIndex()
-    local status = (UIActivityN21CCConst.GetLevelRedStatus)()
-    if status[index] then
-      return false
-    end
-    return true
+  if not result then
+    return false
   end
+  local index = self:GetIndex()
+  local status = UIActivityN21CCConst.GetLevelRedStatus()
+  if status[index] then
+    return false
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.ClearOnceRedStatus = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN21CCLevelGroupData:ClearOnceRedStatus()
   if self:IsLevelGroupOpen() == false then
-    return 
+    return
   end
-  local status = (UIActivityN21CCConst.GetLevelRedStatus)()
+  local status = UIActivityN21CCConst.GetLevelRedStatus()
   local index = self:GetIndex()
   status[index] = true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.IsShowNew = function(self)
-  -- function num : 0_14
+function UIActivityN21CCLevelGroupData:IsShowNew()
   if self:IsLevelGroupOpen() == false then
     return false
   end
   return self:GetNewFlagStatus("LEVEL_INDEX" .. self:GetIndex())
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.ClearNewStatus = function(self)
-  -- function num : 0_15
+function UIActivityN21CCLevelGroupData:ClearNewStatus()
   if self:IsLevelGroupOpen() == false then
-    return 
+    return
   end
   self:SetNewFlagStatus("LEVEL_INDEX" .. self:GetIndex())
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.GetNewFlagStatus = function(self, id)
-  -- function num : 0_16 , upvalues : _ENV
-  return (UIActivityN21CCConst.GetNewFlagStatus)(id)
+function UIActivityN21CCLevelGroupData:GetNewFlagStatus(id)
+  return UIActivityN21CCConst.GetNewFlagStatus(id)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.SetNewFlagStatus = function(self, id, status)
-  -- function num : 0_17 , upvalues : _ENV
-  (UIActivityN21CCConst.SetNewFlagStatus)(id, status)
+function UIActivityN21CCLevelGroupData:SetNewFlagStatus(id, status)
+  UIActivityN21CCConst.SetNewFlagStatus(id, status)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupData.IsHardOpen = function(self, hard)
-  -- function num : 0_18
+function UIActivityN21CCLevelGroupData:IsHardOpen(hard)
   for i = 1, #self._levels do
-    local level = (self._levels)[i]
+    local level = self._levels[i]
     if level:GetHardId() == hard then
       return level:IsLevelOpen()
     end
@@ -227,17 +162,15 @@ end
 
 _class("UIActivityN21CCLevelGroupsData", Object)
 UIActivityN21CCLevelGroupsData = UIActivityN21CCLevelGroupsData
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCLevelGroupsData.Constructor = function(self, componentId, missionComponentInfo)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityN21CCLevelGroupsData:Constructor(componentId, missionComponentInfo)
   self._levelGroups = {}
-  local cfgs = (Cfg.cfg_component_challenge_mission)({ComponentID = componentId})
+  local cfgs = Cfg.cfg_component_challenge_mission({ComponentID = componentId})
   if not cfgs then
-    return 
+    return
   end
   local t = {}
-  for _,cfg in pairs(cfgs) do
+  for _, cfg in pairs(cfgs) do
     local levelIndex = cfg.LeveIndex
     local tmp = t[levelIndex]
     if not tmp then
@@ -246,91 +179,61 @@ UIActivityN21CCLevelGroupsData.Constructor = function(self, componentId, mission
     end
     tmp[#tmp + 1] = cfg
   end
-  ;
-  (table.sort)(t, function(a, b)
-    -- function num : 0_19_0
-    do return (a[1]).LeveIndex < (b[1]).LeveIndex end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(t, function(a, b)
+    return a[1].LeveIndex < b[1].LeveIndex
+  end)
   for i = 1, #t do
-    (table.sort)(t[i], function(a, b)
-    -- function num : 0_19_1
-    do return a.HardID < b.HardID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(t[i], function(a, b)
+      return a.HardID < b.HardID
+    end)
   end
   for i = 1, #t do
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self._levelGroups)[#self._levelGroups + 1] = UIActivityN21CCLevelGroupData:New(t[i], missionComponentInfo)
+    self._levelGroups[#self._levelGroups + 1] = UIActivityN21CCLevelGroupData:New(t[i], missionComponentInfo)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupsData.Refresh = function(self)
-  -- function num : 0_20
+function UIActivityN21CCLevelGroupsData:Refresh()
   for i = 1, #self._levelGroups do
-    ((self._levelGroups)[i]):Refresh()
+    self._levelGroups[i]:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupsData.GetLevelGroups = function(self)
-  -- function num : 0_21
+function UIActivityN21CCLevelGroupsData:GetLevelGroups()
   return self._levelGroups
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupsData.GetOpenLevelGroups = function(self)
-  -- function num : 0_22
+function UIActivityN21CCLevelGroupsData:GetOpenLevelGroups()
   local t = {}
   for i = 1, #self._levelGroups do
-    if ((self._levelGroups)[i]):IsLevelGroupOpen() then
-      t[#t + 1] = (self._levelGroups)[i]
+    if self._levelGroups[i]:IsLevelGroupOpen() then
+      t[#t + 1] = self._levelGroups[i]
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupsData.GetLockLevelGroups = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIActivityN21CCLevelGroupsData:GetLockLevelGroups()
   local t = {}
   for i = 1, #self._levelGroups do
-    if not ((self._levelGroups)[i]):IsLevelGroupOpen() then
-      t[#t + 1] = (self._levelGroups)[i]
+    if not self._levelGroups[i]:IsLevelGroupOpen() then
+      t[#t + 1] = self._levelGroups[i]
     end
   end
-  ;
-  (table.sort)(t, function(a, b)
-    -- function num : 0_23_0
+  table.sort(t, function(a, b)
     local aTime = a:GetUnlockTime()
     local bTime = b:GetUnlockTime()
-    if bTime >= aTime then
-      do return aTime == bTime end
-      do return b:GetIndex() < a:GetIndex() end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if aTime ~= bTime then
+      return aTime > bTime
     end
-  end
-)
+    return a:GetIndex() > b:GetIndex()
+  end)
   return t
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelGroupsData.GetLevelGroupDataByIndex = function(self, index)
-  -- function num : 0_24
+function UIActivityN21CCLevelGroupsData:GetLevelGroupDataByIndex(index)
   for i = 1, #self._levelGroups do
-    if ((self._levelGroups)[i]):GetIndex() == index then
-      return (self._levelGroups)[i]
+    if self._levelGroups[i]:GetIndex() == index then
+      return self._levelGroups[i]
     end
   end
 end
-
-

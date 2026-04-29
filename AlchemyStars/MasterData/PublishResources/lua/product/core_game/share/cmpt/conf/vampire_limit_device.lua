@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/vampire_limit_device.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("VampireLimitDevice", Object)
 VampireLimitDevice = VampireLimitDevice
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-VampireLimitDevice.Constructor = function(self)
-  -- function num : 0_0
+function VampireLimitDevice:Constructor()
   self._limitMaxHP = 0.01
   self._baseHP = 0
   self._switch = false
   self._fromSkill = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireLimitDevice.ConsumeLimit = function(self, consumeValue)
-  -- function num : 0_1
+function VampireLimitDevice:ConsumeLimit(consumeValue)
   if not self._switch then
     return nil
   end
@@ -26,9 +16,9 @@ VampireLimitDevice.ConsumeLimit = function(self, consumeValue)
     return 0.01
   end
   local ret = 0.01
-  if consumeValue + self._baseHP <= self._limitMaxHP then
+  if self._limitMaxHP >= consumeValue + self._baseHP then
     ret = consumeValue + self._baseHP
-    self._limitMaxHP = self._limitMaxHP - (ret)
+    self._limitMaxHP = self._limitMaxHP - ret
   else
     ret = self._limitMaxHP
     self._limitMaxHP = 0.01
@@ -37,12 +27,9 @@ VampireLimitDevice.ConsumeLimit = function(self, consumeValue)
   return ret
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireLimitDevice.SetLimit = function(self, baseVampireHP, maxVampireHP, fromSkill)
-  -- function num : 0_2 , upvalues : _ENV
+function VampireLimitDevice:SetLimit(baseVampireHP, maxVampireHP, fromSkill)
   if self._switch then
-    (Log.fatal)("当真要重复设置吸血参数？")
+    Log.fatal("当真要重复设置吸血参数？")
   end
   self._switch = true
   self._baseHP = baseVampireHP
@@ -54,11 +41,6 @@ VampireLimitDevice.SetLimit = function(self, baseVampireHP, maxVampireHP, fromSk
   self._fromSkill = fromSkill
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-VampireLimitDevice.Status = function(self)
-  -- function num : 0_3
+function VampireLimitDevice:Status()
   return self._switch, self._fromSkill
 end
-
-

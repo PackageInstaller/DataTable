@@ -1,58 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_phase_show_hide_role_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhase_ShowHideRole", PlaySkillPhaseBase)
 PlaySkillPhase_ShowHideRole = PlaySkillPhase_ShowHideRole
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhase_ShowHideRole.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPhase_ShowHideRole:PlayFlight(TT, casterEntity, phaseParam)
   self:_DelayTime(TT, phaseParam:GetBeginDelay())
   local nShowType, showParam = phaseParam:GetShowData()
   if SkillPhaseParam_ShowType.Hide == nShowType then
-    ((casterEntity:View()):GetGameObject()):SetActive(false)
-  else
-    if SkillPhaseParam_ShowType.Show == nShowType then
-      ((casterEntity:View()):GetGameObject()):SetActive(true)
+    casterEntity:View():GetGameObject():SetActive(false)
+  elseif SkillPhaseParam_ShowType.Show == nShowType then
+    casterEntity:View():GetGameObject():SetActive(true)
+  elseif SkillPhaseParam_ShowType.Replace == nShowType then
+    local newPrefab = showParam
+    casterEntity:ReplaceAsset(NativeUnityPrefabAsset:New(newPrefab, true))
+  elseif SkillPhaseParam_ShowType.Fade == nShowType then
+    local fadeIn = showParam.fadeIn
+    local isSelf = showParam.isSelf
+    local duration = showParam.duration
+    if isSelf then
+      casterEntity:NewEnableGhost()
+      self:DOFade(casterEntity, fadeIn, duration)
     else
-      if SkillPhaseParam_ShowType.Replace == nShowType then
-        local newPrefab = showParam
-        casterEntity:ReplaceAsset(NativeUnityPrefabAsset:New(newPrefab, true))
-      else
-        do
-          if SkillPhaseParam_ShowType.Fade == nShowType then
-            local fadeIn = showParam.fadeIn
-            local isSelf = showParam.isSelf
-            local duration = showParam.duration
-            if isSelf then
-              casterEntity:NewEnableGhost()
-              self:DOFade(casterEntity, fadeIn, duration)
-            else
-              local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-              local pos = (casterEntity:GridLocation()).Position
-              local damageResult = skillEffectResultContainer:GetEffectResultByPos(SkillEffectType.Damage, pos)
-              local targetEntityID = damageResult:GetTargetID()
-              local entity = (self._world):GetEntityByID(targetEntityID)
-              entity:NewEnableGhost()
-              self:DOFade(entity, fadeIn, duration)
-            end
-          end
-          do
-            self:_DelayTime(TT, phaseParam:GetEndDelay())
-          end
-        end
-      end
+      local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+      local pos = casterEntity:GridLocation().Position
+      local damageResult = skillEffectResultContainer:GetEffectResultByPos(SkillEffectType.Damage, pos)
+      local targetEntityID = damageResult:GetTargetID()
+      local entity = self._world:GetEntityByID(targetEntityID)
+      entity:NewEnableGhost()
+      self:DOFade(entity, fadeIn, duration)
     end
   end
+  self:_DelayTime(TT, phaseParam:GetEndDelay())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_ShowHideRole.DOFade = function(self, e, fadeIn, duration)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillPhase_ShowHideRole:DOFade(e, fadeIn, duration)
   duration = duration * 0.001
   if duration <= 0 then
     if fadeIn then
@@ -60,43 +40,34 @@ PlaySkillPhase_ShowHideRole.DOFade = function(self, e, fadeIn, duration)
     else
       e:SetTransparentValue(0)
     end
-    return 
+    return
   end
   local tmpDuration = 0
   local factor = 0
-  local func = nil
+  local func
   if fadeIn then
     tmpDuration = 0
     factor = 1
-    func = function()
-    -- function num : 0_1_0 , upvalues : tmpDuration
-    do return tmpDuration <= 1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-
+    
+    function func()
+      return tmpDuration <= 1
+    end
   else
     tmpDuration = duration
     factor = -1
-    func = function()
-    -- function num : 0_1_1 , upvalues : tmpDuration
-    do return tmpDuration >= 0 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    
+    function func()
+      return 0 <= tmpDuration
+    end
   end
-
-  end
-  local mathService = (self._world):GetService("Math")
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_2 , upvalues : func, tmpDuration, _ENV, factor, duration, mathService, e
+  local mathService = self._world:GetService("Math")
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     while func() do
-      tmpDuration = tmpDuration + (UnityEngine.Time).deltaTime * factor
+      tmpDuration = tmpDuration + UnityEngine.Time.deltaTime * factor
       local tran = tmpDuration / duration
       tran = mathService:ClampValue(tran, 0, 1)
       e:SetTransparentValue(tran)
       YIELD(TT)
     end
-  end
-, self)
+  end, self)
 end
-
-

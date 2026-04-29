@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_skins/ui_pet_skin_obtain_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetSkinObtainController", UIController)
 UIPetSkinObtainController = UIPetSkinObtainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetSkinObtainController.Constructor = function(self)
-  -- function num : 0_0
+function UIPetSkinObtainController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinObtainController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetSkinObtainController:OnShow(uiParams)
   local skinInfo = uiParams[1]
   if not skinInfo then
     self:Close()
-    return 
+    return
   end
   self._callback = uiParams[2]
   self._curAnim = nil
@@ -27,87 +17,60 @@ UIPetSkinObtainController.OnShow = function(self, uiParams)
   local skinId = 0
   local isNew = true
   skinId = id
-  local curSkinCfg = (Cfg.cfg_pet_skin)[skinId]
+  local curSkinCfg = Cfg.cfg_pet_skin[skinId]
   if curSkinCfg then
     petId = curSkinCfg.PetId
   end
   self._getSkinInfo = ObtainPet:New(petId, isNew, skinId)
   self:InitWidget()
   self._anim = self:getAnim(self._getSkinInfo)
-  ;
-  (self._anim):SetAsFirst()
-  ;
-  (self._anim):Prepare()
+  self._anim:SetAsFirst()
+  self._anim:Prepare()
   self:PlayAnimation()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinObtainController.OnHide = function(self)
-  -- function num : 0_2
+function UIPetSkinObtainController:OnHide()
   if self._curAnim then
-    (self._curAnim):Dispose()
+    self._curAnim:Dispose()
     self._curAnim = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinObtainController.getAnim = function(self, pet)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetSkinObtainController:getAnim(pet)
   return PetSkinObtainAnim:New(pet, nil, self:GetGameObject())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinObtainController.InitWidget = function(self)
-  -- function num : 0_4
+function UIPetSkinObtainController:InitWidget()
   self.closeBtnArea = self:GetGameObject("CloseBtnArea")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinObtainController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIPetSkinObtainController:CloseBtnOnClick(go)
   self:Close()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinObtainController.Close = function(self)
-  -- function num : 0_6
+function UIPetSkinObtainController:Close()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinObtainController.PlayAnimation = function(self)
-  -- function num : 0_7
+function UIPetSkinObtainController:PlayAnimation()
   if self._curAnim then
-    (self._curAnim):Dispose()
+    self._curAnim:Dispose()
     self._curAnim = nil
   end
-  ;
-  (self.closeBtnArea):SetActive(false)
+  self.closeBtnArea:SetActive(false)
   self._curAnim = self._anim
-  ;
-  (self._curAnim):Start()
+  self._curAnim:Start()
   self._isPlaying = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetSkinObtainController.OnUpdate = function(self, dtMS)
-  -- function num : 0_8
+function UIPetSkinObtainController:OnUpdate(dtMS)
   if self._curAnim and self._isPlaying then
-    (self._curAnim):Update(dtMS)
-    if (self._curAnim):IsOver() then
-      (self.closeBtnArea):SetActive(true)
+    self._curAnim:Update(dtMS)
+    if self._curAnim:IsOver() then
+      self.closeBtnArea:SetActive(true)
       self._isPlaying = false
     end
   end
 end
-
-

@@ -1,43 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_campaign")
 _class("UICommonLineMissionEnter", UISideEnterItem_Campaign)
 UICommonLineMissionEnter = UICommonLineMissionEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionEnter.DoShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (UISideEnterItem_Campaign.DoShow)(self)
+function UICommonLineMissionEnter:DoShow()
+  UISideEnterItem_Campaign.DoShow(self)
   if not IsInland then
-    (self:GetGameObject("reuse")):SetActive(true)
+    self:GetGameObject("reuse"):SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionEnter._CalcRed = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICommonLineMissionEnter:_CalcRed()
   local campaign = UIActivityCampaign:New()
   campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_STORY_ACTIVITY, ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK)
   local sample = campaign:GetSample()
   if not sample then
-    (Log.fatal)("can not load campaign sample data, type: ECampaignType.CAMPAIGN_TYPE_STORY_ACTIVITY")
+    Log.fatal("can not load campaign sample data, type: ECampaignType.CAMPAIGN_TYPE_STORY_ACTIVITY")
     return 0
   end
   local component = campaign:GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK)
-  local missionRed = (not (UIActivityHelper.HasCmptRedViewed)((UICommonLineMissionConst.LineMissionDBID)()) and sample:IsCompRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION))
-  do
+  if component then
+    local missionRed = not UIActivityHelper.HasCmptRedViewed(UICommonLineMissionConst.LineMissionDBID()) and sample:IsCompRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION)
     local taskRed = component:HaveRedPoint()
-    do return (missionRed or taskRed) and 1 or 0 end
-    if not sample:IsCompRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK) or not 1 then
-      do return not (UIActivityHelper.HasCmptRedViewed)((UICommonLineMissionConst.LineMissionDBID)()) or 0 end
-      do return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD) and 1 or 0 end
-      -- DECOMPILER ERROR: 12 unprocessed JMP targets
-    end
+    return (missionRed or taskRed) and 1 or 0
+  elseif UIActivityHelper.HasCmptRedViewed(UICommonLineMissionConst.LineMissionDBID()) then
+    return sample:IsCompRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK) and 1 or 0
+  else
+    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD) and 1 or 0
   end
 end
-
-

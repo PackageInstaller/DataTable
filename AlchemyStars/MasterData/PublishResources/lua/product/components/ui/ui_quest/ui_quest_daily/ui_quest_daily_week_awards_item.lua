@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_daily/ui_quest_daily_week_awards_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestDailyWeekAwardsItem", UICustomWidget)
 UIQuestDailyWeekAwardsItem = UIQuestDailyWeekAwardsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestDailyWeekAwardsItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIQuestDailyWeekAwardsItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwardsItem.SetData = function(self, index, reward, callback)
-  -- function num : 0_1
+function UIQuestDailyWeekAwardsItem:SetData(index, reward, callback)
   self:_GetComponents()
   self._index = index
   self._reward = reward
@@ -23,34 +13,23 @@ UIQuestDailyWeekAwardsItem.SetData = function(self, index, reward, callback)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwardsItem.OnHide = function(self)
-  -- function num : 0_2
+function UIQuestDailyWeekAwardsItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwardsItem._GetComponents = function(self)
-  -- function num : 0_3
+function UIQuestDailyWeekAwardsItem:_GetComponents()
   self._item = self:GetUIComponent("UISelectObjectPath", "item")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestDailyWeekAwardsItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg_item = (Cfg.cfg_item)[self._id]
+function UIQuestDailyWeekAwardsItem:_OnValue()
+  local cfg_item = Cfg.cfg_item[self._id]
   if cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. self._id)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._id)
+    return
   end
-  local award = (self._item):SpawnObject("UIQuestSideAwardItem")
+  local award = self._item:SpawnObject("UIQuestSideAwardItem")
   local params = {}
   params.quality = cfg_item.Color
   params.icon = cfg_item.Icon
-  params.text = (self._reward).count
+  params.text = self._reward.count
   award:SetData(self._id, params, self._callback)
 end
-
-

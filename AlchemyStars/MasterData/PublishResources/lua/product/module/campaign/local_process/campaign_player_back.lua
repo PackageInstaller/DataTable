@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_player_back.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignPlayerBack", ICampaignComponentLocalProcessBase)
 CCampaignPlayerBack = CCampaignPlayerBack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignPlayerBack.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignPlayerBack:Constructor()
   self._PlayerBackComponent = nil
   self._PlayerBackComponentInfo = nil
   self._cumulativeLoginComponent = nil
@@ -26,24 +19,15 @@ CCampaignPlayerBack.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignPlayerBack:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_BACK
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignPlayerBack:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignPlayerBack:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetPlayerBackComponent()
   self:_GetCumulativeLoginComponent()
@@ -53,87 +37,63 @@ CCampaignPlayerBack.InitComponent = function(self, campaignObj)
   self:_GetResHelpComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack._GetPlayerBackComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._PlayerBackComponent = (self._campaignObj):GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_COMPONENT)
+function CCampaignPlayerBack:_GetPlayerBackComponent()
+  self._PlayerBackComponent = self._campaignObj:GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_COMPONENT)
   if not self._PlayerBackComponent then
-    return 
+    return
   end
-  self._PlayerBackComponentInfo = (self._PlayerBackComponent):ComponentInfo()
+  self._PlayerBackComponentInfo = self._PlayerBackComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_CUMULATIVE_LOGIN)
+function CCampaignPlayerBack:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginCompInfo = (self._cumulativeLoginComponent):GetComponentInfo()
+  self._cumulativeLoginCompInfo = self._cumulativeLoginComponent:GetComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack._GetCamQuestComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._camQuestComponet = (self._campaignObj):GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_QUEST)
+function CCampaignPlayerBack:_GetCamQuestComponent()
+  self._camQuestComponet = self._campaignObj:GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_QUEST)
   if not self._camQuestComponet then
-    return 
+    return
   end
-  self._camQuestComponetInfo = (self._camQuestComponet):ComponentInfo()
+  self._camQuestComponetInfo = self._camQuestComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack._GetBuyGiftComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._buyGiftComponent = (self._campaignObj):GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_BUY_GIFT)
+function CCampaignPlayerBack:_GetBuyGiftComponent()
+  self._buyGiftComponent = self._campaignObj:GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_BUY_GIFT)
   if not self._buyGiftComponent then
-    return 
+    return
   end
-  self._buyGiftComponentInfo = (self._buyGiftComponent):ComponentInfo()
+  self._buyGiftComponentInfo = self._buyGiftComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack._GetPersonProgress1Component = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._personProgress1Component = (self._campaignObj):GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_PERSON_PROGRESS)
+function CCampaignPlayerBack:_GetPersonProgress1Component()
+  self._personProgress1Component = self._campaignObj:GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_PERSON_PROGRESS)
   if not self._personProgress1Component then
-    return 
+    return
   end
-  self._personProgress1CompInfo = (self._personProgress1Component):ComponentInfo()
+  self._personProgress1CompInfo = self._personProgress1Component:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack._GetResHelpComponent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._resHelpComponent = (self._campaignObj):GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_RES_HELP)
+function CCampaignPlayerBack:_GetResHelpComponent()
+  self._resHelpComponent = self._campaignObj:GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_RES_HELP)
   if not self._resHelpComponent then
-    return 
+    return
   end
-  self._resHelpComponentInfo = (self._resHelpComponent):ComponentInfo()
+  self._resHelpComponentInfo = self._resHelpComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack._GetBuyShopComponent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._buyShopComponent = (self._campaignObj):GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_PHASEII_POWER2ITEM)
+function CCampaignPlayerBack:_GetBuyShopComponent()
+  self._buyShopComponent = self._campaignObj:GetComponent(ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_PHASEII_POWER2ITEM)
   if not self._buyShopComponent then
-    return 
+    return
   end
-  self._buyShopComponentInfo = (self._buyShopComponent):ComponentInfo()
+  self._buyShopComponentInfo = self._buyShopComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack.GetComponent = function(self, componentID)
-  -- function num : 0_11 , upvalues : _ENV
+function CCampaignPlayerBack:GetComponent(componentID)
   if ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_COMPONENT == componentID then
     return self._PlayerBackComponent
   end
@@ -155,10 +115,7 @@ CCampaignPlayerBack.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignPlayerBack.GetComponentInfo = function(self, componentID)
-  -- function num : 0_12 , upvalues : _ENV
+function CCampaignPlayerBack:GetComponentInfo(componentID)
   if ECampaignPlayerBackComponentID.ECAMPAIGN_BACK_COMPONENT == componentID then
     return self._PlayerBackComponentInfo
   end
@@ -179,5 +136,3 @@ CCampaignPlayerBack.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

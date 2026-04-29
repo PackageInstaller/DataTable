@@ -1,47 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_caster_around_farest_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CasterAroundFarestTeam", SkillScopeCalculator_Base)
 SkillScopeCalculator_CasterAroundFarestTeam = SkillScopeCalculator_CasterAroundFarestTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CasterAroundFarestTeam.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  if not scopeParam then
-    scopeParam = {}
-  end
+function SkillScopeCalculator_CasterAroundFarestTeam:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  scopeParam = scopeParam or {}
   local ringCount = scopeParam[1] or 1
   local posCount = scopeParam[2] or 1
-  local world = ((self._hub)._gridFilter)._world
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local world = self._hub._gridFilter._world
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   local teamPos = teamEntity:GetGridPosition()
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
-  local squareRingRange = (ComputeScopeRange.ComputeRange_SquareRing)(casterPos, #casterBodyArea, ringCount)
-  ;
-  (table.sort)(squareRingRange, function(a, b)
-    -- function num : 0_0_0 , upvalues : _ENV, teamPos
-    local disA = (Vector2.Distance)(teamPos, a)
-    local disB = (Vector2.Distance)(teamPos, b)
-    do return disB < disA end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
+  local squareRingRange = ComputeScopeRange.ComputeRange_SquareRing(casterPos, #casterBodyArea, ringCount)
+  table.sort(squareRingRange, function(a, b)
+    local disA = Vector2.Distance(teamPos, a)
+    local disB = Vector2.Distance(teamPos, b)
+    return disA > disB
+  end)
   local wholeRange = {}
   local boardSvc = world:GetService("BoardLogic")
-  for i,pos in ipairs(squareRingRange) do
+  for i, pos in ipairs(squareRingRange) do
     if not boardSvc:IsPosBlock(pos, BlockFlag.MonsterLand) then
-      (table.insert)(wholeRange, pos)
+      table.insert(wholeRange, pos)
+      if posCount <= table.count(wholeRange) then
+        break
+      end
     end
   end
-  do
-    if posCount > (table.count)(wholeRange) then
-      local result = SkillScopeResult:New(SkillScopeType.CasterAroundFarestTeam, casterPos, wholeRange, wholeRange)
-      return result
-    end
-  end
+  local result = SkillScopeResult:New(SkillScopeType.CasterAroundFarestTeam, casterPos, wholeRange, wholeRange)
+  return result
 end
-
-

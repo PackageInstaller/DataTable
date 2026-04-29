@@ -1,13 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_detective_ending.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, CgId = 3, StoryParagraph = 4, StoryOptionIndex = 5}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  CgId = 3,
+  StoryParagraph = 4,
+  StoryOptionIndex = 5
+}
 local config = {
-{1, 108911209, 41, 1, 1}
-, 
-{2, 108911209, 42, 1, 2}
+  {
+    1,
+    108911209,
+    41,
+    1,
+    1
+  },
+  {
+    2,
+    108911209,
+    42,
+    1,
+    2
+  }
 }
 return config, "ID", key
-

@@ -1,358 +1,255 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureShop", UICustomWidget)
 UIWidgetFeatureShop = UIWidgetFeatureShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureShop.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureShop:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetFeatureShop:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.InitWidget = function(self)
-  -- function num : 0_2
+function UIWidgetFeatureShop:InitWidget()
   self.enableFakeInput = true
   self._shopUiName = "UIFeatureShopInfo"
   self._skillID = 0
   self._coinCount = self:GetUIComponent("UILocalizationText", "CoinCount")
   self._redPoint = self:GetGameObject("uieff_NewInfo")
   if self._redPoint then
-    (self._redPoint):SetActive(false)
+    self._redPoint:SetActive(false)
   end
   self._switchTimeEvent = nil
   self._switchTimeLength = 100
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.RegisterEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetFeatureShop:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureCoinCountChange, self._OnFeatureCoinCountChange)
   self:AttachEvent(GameEventType.FeatureRedPointUpdate, self._OnFeatureRedPointUpdate)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.SetData = function(self, shopInitInfo)
-  -- function num : 0_4
+function UIWidgetFeatureShop:SetData(shopInitInfo)
   self._shopInitInfo = shopInitInfo
   local enterValue = shopInitInfo:GetEnterCoinCount()
   self._skillID = shopInitInfo:GetSkillID()
   self:SetValue(enterValue)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.UIWidgetFeatureShopOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if (InnerGameHelperRender.IsPuzzleState)() or (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+function UIWidgetFeatureShop:UIWidgetFeatureShopOnClick(go)
+  if InnerGameHelperRender.IsPuzzleState() or InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
   self:OnClickUI()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.OnClickUI = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetFeatureShop:OnClickUI()
   local canCastSkill = true
   if canCastSkill then
-    local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
-    local enableInput = (GameGlobal:GetInstance()):IsInputEnable()
+    local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
+    local enableInput = GameGlobal:GetInstance():IsInputEnable()
     if coreGameStateID == GameStateID.WaitInput and enableInput == true then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, self._skillID)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._skillID)
       self:ShowShopInfoUI()
-    else
-      if coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
-        if self._switchTimeEvent == nil then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UISwitchActiveSkillUI)
-          self:ShowShopInfoUI()
-          ;
-          (Log.notice)("preclickhead card skill", self._skillID)
-          self._switchTimeEvent = ((GameGlobal.Timer)()):AddEvent(self._switchTimeLength, function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    self._switchTimeEvent = nil
-    ;
-    (Log.notice)("preview card skill", self._skillID)
-  end
-)
-        else
-          ;
-          (Log.notice)("still in switch", self._skillID)
-        end
+    elseif coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
+      if self._switchTimeEvent == nil then
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.UISwitchActiveSkillUI)
+        self:ShowShopInfoUI()
+        Log.notice("preclickhead card skill", self._skillID)
+        self._switchTimeEvent = GameGlobal.Timer():AddEvent(self._switchTimeLength, function()
+          self._switchTimeEvent = nil
+          Log.notice("preview card skill", self._skillID)
+        end)
+      else
+        Log.notice("still in switch", self._skillID)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.ShowShopInfoUI = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, true, FeatureType.Shop)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelActiveSkillCast)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PauseGuideWeakLine)
+function UIWidgetFeatureShop:ShowShopInfoUI()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, true, FeatureType.Shop)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelActiveSkillCast)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PauseGuideWeakLine)
   local canCast = true
-  local castCb = function(castSkillID, selectInfo, delayCloseMs)
-    -- function num : 0_7_0 , upvalues : self
+  
+  local function castCb(castSkillID, selectInfo, delayCloseMs)
     self:OnCastSkill(castSkillID, selectInfo, delayCloseMs)
   end
-
-  local cancelCb = function(curSkillID, delayCloseMs)
-    -- function num : 0_7_1 , upvalues : self
+  
+  local function cancelCb(curSkillID, delayCloseMs)
     self:OnCancelSkill(curSkillID, delayCloseMs)
   end
-
+  
   self:ShowDialog(self._shopUiName, self._shopInitInfo, self._curVal, castCb, cancelCb)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, self._skillID)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickPersonaSkill, FeatureType.Shop, self._skillID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._skillID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickPersonaSkill, FeatureType.Shop, self._skillID)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.SetValue = function(self, coinCount)
-  -- function num : 0_8
+function UIWidgetFeatureShop:SetValue(coinCount)
   self._curVal = coinCount
   self:_SetUiValue(self._curVal)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop._SetUiValue = function(self, sanValue)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWidgetFeatureShop:_SetUiValue(sanValue)
   if sanValue < 0 then
     sanValue = 0
   end
-  sanValue = (math.floor)(sanValue + 0.5)
-  ;
-  (self._coinCount):SetText(sanValue)
+  sanValue = math.floor(sanValue + 0.5)
+  self._coinCount:SetText(sanValue)
   self:_OnFeatureRedPointUpdate()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop._OnFeatureRedPointUpdate = function(self)
-  -- function num : 0_10
+function UIWidgetFeatureShop:_OnFeatureRedPointUpdate()
   if self._redPoint then
     local showRedPoint = self:_OnCehckFeatureShopRedPoint(self._curVal)
-    ;
-    (self._redPoint):SetActive(showRedPoint)
+    self._redPoint:SetActive(showRedPoint)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.OnGetCurCellData = function(self, cellID)
-  -- function num : 0_11
-  local groupDataList = (self._shopInitInfo):GetGroupDataList()
+function UIWidgetFeatureShop:OnGetCurCellData(cellID)
+  local groupDataList = self._shopInitInfo:GetGroupDataList()
   for i = 1, #groupDataList do
     local curGroupDataList = groupDataList[i]
     for j = 1, #curGroupDataList do
-      if (curGroupDataList[j]).CellID == cellID then
+      if curGroupDataList[j].CellID == cellID then
         return curGroupDataList[j]
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.OnGetCurCellCantSelect = function(self, cellID, unlockParamCount, showPageIndex)
-  -- function num : 0_12 , upvalues : _ENV
-  local selectedCellList = (FeatureServiceHelper.GetShopSelectedCellList)()
+function UIWidgetFeatureShop:OnGetCurCellCantSelect(cellID, unlockParamCount, showPageIndex)
+  local selectedCellList = FeatureServiceHelper.GetShopSelectedCellList()
   if unlockParamCount == 2 and showPageIndex == 2 then
     return false
   end
   local targetCellID = 1
   if cellID == 1 then
     targetCellID = 2
-  else
-    if cellID == 2 then
-      targetCellID = 1
-    else
-      if cellID == 3 then
-        targetCellID = 4
-      else
-        if cellID == 4 then
-          targetCellID = 3
-        else
-          if cellID == 5 then
-            targetCellID = 6
-          else
-            if cellID == 6 then
-              targetCellID = 5
-            end
-          end
-        end
-      end
-    end
+  elseif cellID == 2 then
+    targetCellID = 1
+  elseif cellID == 3 then
+    targetCellID = 4
+  elseif cellID == 4 then
+    targetCellID = 3
+  elseif cellID == 5 then
+    targetCellID = 6
+  elseif cellID == 6 then
+    targetCellID = 5
   end
-  local targetCellHadInvest = (table.icontains)(selectedCellList, targetCellID)
+  local targetCellHadInvest = table.icontains(selectedCellList, targetCellID)
   if targetCellHadInvest then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop._OnCehckFeatureShopRedPoint = function(self, sanValue)
-  -- function num : 0_13 , upvalues : _ENV
+function UIWidgetFeatureShop:_OnCehckFeatureShopRedPoint(sanValue)
   local showRedPoint = false
-  local selectedCellList = (FeatureServiceHelper.GetShopSelectedCellList)()
-  if (table.count)(selectedCellList) == 6 then
+  local selectedCellList = FeatureServiceHelper.GetShopSelectedCellList()
+  if table.count(selectedCellList) == 6 then
     return showRedPoint
   end
-  local unlockParam = (self._shopInitInfo):GetUnlockParam()
-  local unlockParamCount = (table.count)(unlockParam)
+  local unlockParam = self._shopInitInfo:GetUnlockParam()
+  local unlockParamCount = table.count(unlockParam)
   local eachGroupCellCount = 2
   local showPageIndex = 1
-  do
-    if unlockParamCount > 1 then
-      local firstSelectCount = 0
-      if (table.icontains)(selectedCellList, 1) or (table.icontains)(selectedCellList, 2) then
-        firstSelectCount = firstSelectCount + 1
-      end
-      if (table.icontains)(selectedCellList, 3) or (table.icontains)(selectedCellList, 4) then
-        firstSelectCount = firstSelectCount + 1
-      end
-      if (table.icontains)(selectedCellList, 5) or (table.icontains)(selectedCellList, 6) then
-        firstSelectCount = firstSelectCount + 1
-      end
-      if firstSelectCount == 3 then
-        showPageIndex = 2
-      end
+  if 1 < unlockParamCount then
+    local firstSelectCount = 0
+    if table.icontains(selectedCellList, 1) or table.icontains(selectedCellList, 2) then
+      firstSelectCount = firstSelectCount + 1
     end
-    local curUnlockParam = unlockParam[showPageIndex]
-    local curStage = #curUnlockParam
-    local curStageMin = 0
-    local curStageMax = 0
-    for i = 1, #curUnlockParam do
-      if sanValue <= curUnlockParam[i] then
-        curStage = i
+    if table.icontains(selectedCellList, 3) or table.icontains(selectedCellList, 4) then
+      firstSelectCount = firstSelectCount + 1
+    end
+    if table.icontains(selectedCellList, 5) or table.icontains(selectedCellList, 6) then
+      firstSelectCount = firstSelectCount + 1
+    end
+    if firstSelectCount == 3 then
+      showPageIndex = 2
+    end
+  end
+  local curUnlockParam = unlockParam[showPageIndex]
+  local curStage = #curUnlockParam
+  local curStageMin = 0
+  local curStageMax = 0
+  for i = 1, #curUnlockParam do
+    if sanValue <= curUnlockParam[i] then
+      curStage = i
+      break
+    end
+  end
+  local matchPet = InnerGameHelperRender.GetLocalMatchPetByTemplateID(1602181)
+  local curEquipLv = matchPet:GetEquipLv()
+  for i = 1, 6 do
+    if not table.icontains(selectedCellList, i) then
+      local curCellData = self:OnGetCurCellData(i)
+      local equipLevelLimit = curCellData.NeedEquipLevel or 0
+      local groupIndex = math.floor((i - 1) / eachGroupCellCount) + 1
+      local unlockNeedCount = curUnlockParam[groupIndex]
+      local isLock = curEquipLv < equipLevelLimit or sanValue < unlockNeedCount and curStage == 1
+      local cantSelect = self:OnGetCurCellCantSelect(i, unlockParamCount, showPageIndex) or sanValue < unlockNeedCount
+      if isLock == false and cantSelect == false then
+        showRedPoint = true
+      end
+      if showRedPoint == true then
         break
       end
     end
-    do
-      local matchPet = (InnerGameHelperRender.GetLocalMatchPetByTemplateID)(1602181)
-      local curEquipLv = matchPet:GetEquipLv()
-      for i = 1, 6 do
-        if not (table.icontains)(selectedCellList, i) then
-          local curCellData = self:OnGetCurCellData(i)
-          local equipLevelLimit = curCellData.NeedEquipLevel or 0
-          local groupIndex = (math.floor)((i - 1) / eachGroupCellCount) + 1
-          local unlockNeedCount = curUnlockParam[groupIndex]
-          local isLock = curEquipLv < equipLevelLimit or (sanValue < unlockNeedCount and curStage == 1)
-          local cantSelect = self:OnGetCurCellCantSelect(i, unlockParamCount, showPageIndex) or sanValue < unlockNeedCount
-          if isLock == false and cantSelect == false then
-            showRedPoint = true
-          end
-        end
-      end
-      if showRedPoint ~= true then
-        do return showRedPoint end
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
-      end
-    end
   end
+  return showRedPoint
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop._OnFeatureCoinCountChange = function(self, curValue, oldValue, modifyValue)
-  -- function num : 0_14
+function UIWidgetFeatureShop:_OnFeatureCoinCountChange(curValue, oldValue, modifyValue)
   self._curVal = self._curVal + modifyValue
   self:SetValue(self._curVal)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.OnCastSkill = function(self, castSkillID, selectInfo, delayCloseMs)
-  -- function num : 0_15 , upvalues : _ENV
+function UIWidgetFeatureShop:OnCastSkill(castSkillID, selectInfo, delayCloseMs)
   self:Lock("UIAnimOnShopCast")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastShopSkill, castSkillID, selectInfo)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIResetLastPreviewPetId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CastShopSkill, castSkillID, selectInfo)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIResetLastPreviewPetId)
   self:HideShopInfoUI(delayCloseMs)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.OnCancelSkill = function(self, curSkillID, delayCloseMs)
-  -- function num : 0_16 , upvalues : _ENV
-  if delayCloseMs and delayCloseMs > 0 then
+function UIWidgetFeatureShop:OnCancelSkill(curSkillID, delayCloseMs)
+  if delayCloseMs and 0 < delayCloseMs then
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
-    self._timerHandler = ((GameGlobal.Timer)()):AddEvent(delayCloseMs, function()
-    -- function num : 0_16_0 , upvalues : self, curSkillID, delayCloseMs
-    self:OnCancelSkillDo(curSkillID, delayCloseMs)
-  end
-)
+    self._timerHandler = GameGlobal.Timer():AddEvent(delayCloseMs, function()
+      self:OnCancelSkillDo(curSkillID, delayCloseMs)
+    end)
   else
     self:OnCancelSkillDo(curSkillID, delayCloseMs)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.OnCancelSkillDo = function(self, curSkillID, delayCloseMs)
-  -- function num : 0_17 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopPreviewFeatureSkill, false, true, curSkillID, FeatureType.Shop)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, -1)
+function UIWidgetFeatureShop:OnCancelSkillDo(curSkillID, delayCloseMs)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopPreviewFeatureSkill, false, true, curSkillID, FeatureType.Shop)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, -1)
   self:HideShopInfoUI(delayCloseMs)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureShop.HideShopInfoUI = function(self, delayCloseMs)
-  -- function num : 0_18 , upvalues : _ENV
-  if delayCloseMs and delayCloseMs > 0 then
+function UIWidgetFeatureShop:HideShopInfoUI(delayCloseMs)
+  if delayCloseMs and 0 < delayCloseMs then
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
-    self._timerHandler = ((GameGlobal.Timer)()):AddEvent(delayCloseMs, function()
-    -- function num : 0_18_0 , upvalues : self, _ENV
-    self:UnLock("UIAnimOnShopCast")
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog(self._shopUiName)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.Shop)
-  end
-)
+    self._timerHandler = GameGlobal.Timer():AddEvent(delayCloseMs, function()
+      self:UnLock("UIAnimOnShopCast")
+      GameGlobal.UIStateManager():CloseDialog(self._shopUiName)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.Shop)
+    end)
   else
     self:UnLock("UIAnimOnShopCast")
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog(self._shopUiName)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.Shop)
+    GameGlobal.UIStateManager():CloseDialog(self._shopUiName)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.Shop)
   end
 end
-
-

@@ -1,13 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/activity/sakura/cfg_sakura_taskvigorousreward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Vigorous = 2, Reward = 3}
+local key = {
+  ID = 1,
+  Vigorous = 2,
+  Reward = 3
+}
 local config = {
-{1, 10, 3000001}
-, 
-{2, 20, 3000002}
+  {
+    1,
+    10,
+    3000001
+  },
+  {
+    2,
+    20,
+    3000002
+  }
 }
 return config, "ID", key
-

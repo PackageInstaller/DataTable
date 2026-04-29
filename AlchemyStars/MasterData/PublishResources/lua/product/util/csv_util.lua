@@ -1,67 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/csv_util.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CSVUtil", Singleton)
 CSVUtil = CSVUtil
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CSVUtil.ReadCSVFile = function(self, filename)
-  -- function num : 0_0 , upvalues : _ENV
-  local path = (ResourceManager:GetInstance()):GetAsset(filename, LoadType.CSV)
+function CSVUtil:ReadCSVFile(filename)
+  local path = ResourceManager:GetInstance():GetAsset(filename, LoadType.CSV)
   local t = {}
   if path then
-    local file = (io.open)(path, "r")
+    local file = io.open(path, "r")
     local text = file:read("a")
-    local linetable = (string.split)(text, "\n")
-    for key,value in pairs(linetable) do
-      local str = (string.trimend)(value, "\r")
-      ;
-      (table.insert)(t, self:ReadCSVLine(str))
+    local linetable = string.split(text, "\n")
+    for key, value in pairs(linetable) do
+      local str = string.trimend(value, "\r")
+      table.insert(t, self:ReadCSVLine(str))
     end
     file:close()
   end
-  do
-    return t
-  end
+  return t
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CSVUtil.ReadCSVLine = function(self, s)
-  -- function num : 0_1 , upvalues : _ENV
+function CSVUtil:ReadCSVLine(s)
   s = s .. ","
   local t = {}
   local fieldstart = 1
   repeat
-    if (string.find)(s, "^\"", fieldstart) then
-      local a, c = nil, nil
+    if string.find(s, "^\"", fieldstart) then
+      local a, c
       local i = fieldstart
       repeat
-        a = (string.find)(s, "\"(\"?)", i + 1)
+        a, i, c = string.find(s, "\"(\"?)", i + 1)
       until c ~= "\""
       if not i then
         return t
       end
-      local f = (string.sub)(s, fieldstart + 1, i - 1)
-      ;
-      (table.insert)(t, (string.gsub)(f, "\"\"", "\""))
-      fieldstart = (string.find)(s, ",", i) + 1
+      local f = string.sub(s, fieldstart + 1, i - 1)
+      table.insert(t, (string.gsub(f, "\"\"", "\"")))
+      fieldstart = string.find(s, ",", i) + 1
     else
-      do
-        -- DECOMPILER ERROR at PC55: Overwrote pending register: R5 in 'AssignReg'
-
-        -- DECOMPILER ERROR at PC56: Overwrote pending register: R6 in 'AssignReg'
-
-        local nexti = (string.find)(c, i, fieldstart)
-        ;
-        (table.insert)(t, (string.sub)(s, fieldstart, nexti - 1))
-        fieldstart = nexti + 1
-      end
+      local nexti = string.find(s, ",", fieldstart)
+      table.insert(t, string.sub(s, fieldstart, nexti - 1))
+      fieldstart = nexti + 1
     end
-  until (string.len)(s) < fieldstart
+  until fieldstart > string.len(s)
   return t
 end
-
-

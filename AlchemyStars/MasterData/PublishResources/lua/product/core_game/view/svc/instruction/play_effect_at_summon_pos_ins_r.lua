@@ -1,54 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_at_summon_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectAtSummonPosInstruction", BaseInstruction)
 PlayEffectAtSummonPosInstruction = PlayEffectAtSummonPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectAtSummonPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectAtSummonPosInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtSummonPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEffectAtSummonPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if skillEffectResultContainer == nil then
-    (Log.fatal)("ShowSummonThingInstruction has no skill effect result")
-    return 
+    Log.fatal("ShowSummonThingInstruction has no skill effect result")
+    return
   end
   local summonResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
   if not summonResultArray then
-    return 
+    return
   end
   local idx = phaseContext:GetCurSummonInEverythingIndex()
   local summonRes = summonResultArray[idx]
   if not summonRes then
-    (Log.fatal)("### ShowSummonThingInstruction SkillEffectResult_SummonEverything nil")
-    return 
+    Log.fatal("### ShowSummonThingInstruction SkillEffectResult_SummonEverything nil")
+    return
   end
   local posSummon = summonRes:GetSummonPos()
-  ;
-  (Log.error)("PlayEffectAtSummonPos     ", posSummon)
+  Log.error("PlayEffectAtSummonPos     ", posSummon)
   local sEffect = world:GetService("Effect")
   sEffect:CreateWorldPositionEffect(self._effectID, posSummon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtSummonPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectAtSummonPosInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

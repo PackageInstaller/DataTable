@@ -1,42 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build_widgets/ui_homeland_build_edit_operate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBuildEditOperate", UICustomWidget)
 UIHomelandBuildEditOperate = UIHomelandBuildEditOperate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBuildEditOperate.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self.homeBuildManager = (self.homelandClient):BuildManager()
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
+function UIHomelandBuildEditOperate:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self.homeBuildManager = self.homelandClient:BuildManager()
+  self.mItem = GameGlobal.GetModule(ItemModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandBuildEditOperate:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.HomeBuildOnAmbientChanged, self.HomeBuildOnAmbientChanged)
   self:AttachEvent(GameEventType.OnHomeBuildRotateOpen, self.OnOpenRotate)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandBuildEditOperate:OnHide()
   self:DetachEvent(GameEventType.HomeBuildOnAmbientChanged, self.HomeBuildOnAmbientChanged)
   self:DetachEvent(GameEventType.OnHomeBuildRotateOpen, self.OnOpenRotate)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandBuildEditOperate:InitWidget()
   self.operate = self:GetGameObject("operate")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.goTakeIn = self:GetGameObject("imgTakeIn")
@@ -45,118 +29,75 @@ UIHomelandBuildEditOperate.InitWidget = function(self)
   self._rotateImg = self:GetUIComponent("Image", "rotateimg")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.FlushOperate = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
-  ;
-  (self.txtName):SetText((UIHomelandBuildEdit.GetBuildingName)(homeBuilding:GetBuildId()))
+function UIHomelandBuildEditOperate:FlushOperate()
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
+  self.txtName:SetText(UIHomelandBuildEdit.GetBuildingName(homeBuilding:GetBuildId()))
   if not homeBuilding:ShowDeleteBtn() then
-    (self.goTakeIn):SetActive(false)
+    self.goTakeIn:SetActive(false)
   else
-    local canDelete, reason, showBtn = (UIHomelandBuildEdit.CanBuildingDelete)(homeBuilding)
-    ;
-    (self.goTakeIn):SetActive(showBtn)
-    if (UIHomelandBuildEdit.CanBuildingMove)(homeBuilding:GetBuildId()) then
-      (self.goRotate):SetActive(true)
-      ;
-      (self.goConfirm):SetActive(true)
+    local canDelete, reason, showBtn = UIHomelandBuildEdit.CanBuildingDelete(homeBuilding)
+    self.goTakeIn:SetActive(showBtn)
+    if UIHomelandBuildEdit.CanBuildingMove(homeBuilding:GetBuildId()) then
+      self.goRotate:SetActive(true)
+      self.goConfirm:SetActive(true)
     else
-      ;
-      (self.goRotate):SetActive(false)
-      ;
-      (self.goConfirm):SetActive(false)
+      self.goRotate:SetActive(false)
+      self.goConfirm:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate._Exit = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBuildEditOperate:_Exit(TT)
   self:Lock("HomeExitBuildMode")
   self:SwitchState(UIStateType.UIHomeland)
-  while ((GameGlobal.UIStateManager)()):CurUIStateType() ~= UIStateType.UIHomeland do
+  while GameGlobal.UIStateManager():CurUIStateType() ~= UIStateType.UIHomeland do
     YIELD(TT)
   end
-  ;
-  (self.homelandClient):FinishBuild(TT)
+  self.homelandClient:FinishBuild(TT)
   self:UnLock("HomeExitBuildMode")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.ImgCancelOnClick = function(self, go)
-  -- function num : 0_6
-  (self.homeBuildManager):RevertCurrent()
+function UIHomelandBuildEditOperate:ImgCancelOnClick(go)
+  self.homeBuildManager:RevertCurrent()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.ImgTakeInOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
-  local canDelete, reason = (UIHomelandBuildEdit.CanBuildingDelete)(homeBuilding)
+function UIHomelandBuildEditOperate:ImgTakeInOnClick(go)
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
+  local canDelete, reason = UIHomelandBuildEdit.CanBuildingDelete(homeBuilding)
   if canDelete then
-    (self.homeBuildManager):Delete()
+    self.homeBuildManager:Delete()
+  elseif not string.isnullorempty(reason) then
+    ToastManager.ShowHomeToast(reason)
   else
-    if not (string.isnullorempty)(reason) then
-      (ToastManager.ShowHomeToast)(reason)
-    else
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_build_cant_delete"))
-    end
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_build_cant_delete"))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.ImgRotateOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local homeBuilding = (self.homeBuildManager):GetCurrentBuilding()
+function UIHomelandBuildEditOperate:ImgRotateOnClick(go)
+  local homeBuilding = self.homeBuildManager:GetCurrentBuilding()
   if not homeBuilding:CanRotate() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_homeland_build_fixed_rotation"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_homeland_build_fixed_rotation"))
+    return
   end
   self:ShowDialog("UIHomelandBuildEditRotate")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.ImgConfirmOnClick = function(self, go)
-  -- function num : 0_9
-  (self.homeBuildManager):DropDown()
+function UIHomelandBuildEditOperate:ImgConfirmOnClick(go)
+  self.homeBuildManager:DropDown()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.GetSpecialTag = function(self)
-  -- function num : 0_10
-  return (self._specialTag):GetGameObject("imgTab")
+function UIHomelandBuildEditOperate:GetSpecialTag()
+  return self._specialTag:GetGameObject("imgTab")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.GetSpecialLand = function(self)
-  -- function num : 0_11
-  return (self._specialLand):GetGameObject("imgTab")
+function UIHomelandBuildEditOperate:GetSpecialLand()
+  return self._specialLand:GetGameObject("imgTab")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditOperate.OnOpenRotate = function(self, isOpen)
-  -- function num : 0_12 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIHomelandBuildEditOperate:OnOpenRotate(isOpen)
   if isOpen then
-    (self._rotateImg).color = Color(0.96862745098039, 0.68235294117647, 0.17254901960784)
+    self._rotateImg.color = Color(0.9686274509803922, 0.6823529411764706, 0.17254901960784313)
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rotateImg).color = Color.white
+    self._rotateImg.color = Color.white
   end
 end
-
-

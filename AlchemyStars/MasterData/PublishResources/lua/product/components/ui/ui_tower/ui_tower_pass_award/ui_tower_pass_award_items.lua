@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_tower/ui_tower_pass_award/ui_tower_pass_award_items.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITowerPassAwardItems", UICustomWidget)
 UITowerPassAwardItems = UITowerPassAwardItems
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITowerPassAwardItems.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITowerPassAwardItems:OnShow(uiParams)
   self._atlas = self:GetAsset("UITowerPassAward.spriteatlas", LoadType.SpriteAtlas)
   self._questModule = self:GetModule(QuestModule)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardItems._GetComponents = function(self)
-  -- function num : 0_1
+function UITowerPassAwardItems:_GetComponents()
   self._condition = self:GetUIComponent("UILocalizationText", "Condition")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._getBtnGO = self:GetGameObject("GetBtn")
@@ -30,116 +20,62 @@ UITowerPassAwardItems._GetComponents = function(self)
   self._progressValue = self:GetUIComponent("Image", "ProgressValue")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardItems.SetData = function(self, quest, index, callBack)
-  -- function num : 0_2 , upvalues : _ENV
+function UITowerPassAwardItems:SetData(quest, index, callBack)
   self._questInfo = quest:QuestInfo()
   self._index = index
   self._tipsCallBack = callBack
-  self._rewards = (self._questInfo).rewards
-  ;
-  (self._content):SpawnObjects("UITowerPassAwardItem", #self._rewards)
-  local widgets = (self._content):GetAllSpawnList()
-  for i,widget in ipairs(widgets) do
-    widget:SetData((self._rewards)[i], function(id, pos)
-    -- function num : 0_2_0 , upvalues : self
-    self:ShowTips(id, pos)
+  self._rewards = self._questInfo.rewards
+  self._content:SpawnObjects("UITowerPassAwardItem", #self._rewards)
+  local widgets = self._content:GetAllSpawnList()
+  for i, widget in ipairs(widgets) do
+    widget:SetData(self._rewards[i], function(id, pos)
+      self:ShowTips(id, pos)
+    end)
   end
-)
-  end
-  ;
-  (self._condition):SetText((StringTable.Get)((self._questInfo).CondDesc))
+  self._condition:SetText(StringTable.Get(self._questInfo.CondDesc))
   self:_SetUIInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardItems._SetUIInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._questInfo).status == QuestStatus.QUEST_NotStart or (self._questInfo).status == QuestStatus.QUEST_Accepted then
-    (self._getBtnGO):SetActive(false)
-    ;
-    (self._progressGO):SetActive(true)
-    ;
-    (self._progressText):SetText((self._questInfo).cur_progress .. "/" .. (self._questInfo).total_progress)
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._progressValue).fillAmount = (self._questInfo).cur_progress / (self._questInfo).total_progress
-  else
-    if (self._questInfo).status == QuestStatus.QUEST_Completed then
-      (self._getBtnGO):SetActive(true)
-      ;
-      (self._getBtnText):SetText((StringTable.Get)("str_tower_pass_award_get"))
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._getBtnText).color = Color(0.18039215686275, 0.18039215686275, 0.18039215686275)
-      -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._getBtnImg).sprite = (self._atlas):GetSprite("tower_jl_btn2")
-      -- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._getButton).interactable = true
-      ;
-      (self._progressGO):SetActive(false)
-    else
-      if (self._questInfo).status == QuestStatus.QUEST_Taken then
-        (self._getBtnGO):SetActive(true)
-        ;
-        (self._getBtnText):SetText((StringTable.Get)("str_tower_pass_award_got"))
-        -- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._getBtnText).color = Color.white
-        -- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._getBtnImg).sprite = (self._atlas):GetSprite("tower_jl_btn3")
-        -- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._getButton).interactable = false
-        ;
-        (self._progressGO):SetActive(false)
-      end
-    end
+function UITowerPassAwardItems:_SetUIInfo()
+  if self._questInfo.status == QuestStatus.QUEST_NotStart or self._questInfo.status == QuestStatus.QUEST_Accepted then
+    self._getBtnGO:SetActive(false)
+    self._progressGO:SetActive(true)
+    self._progressText:SetText(self._questInfo.cur_progress .. "/" .. self._questInfo.total_progress)
+    self._progressValue.fillAmount = self._questInfo.cur_progress / self._questInfo.total_progress
+  elseif self._questInfo.status == QuestStatus.QUEST_Completed then
+    self._getBtnGO:SetActive(true)
+    self._getBtnText:SetText(StringTable.Get("str_tower_pass_award_get"))
+    self._getBtnText.color = Color(0.1803921568627451, 0.1803921568627451, 0.1803921568627451)
+    self._getBtnImg.sprite = self._atlas:GetSprite("tower_jl_btn2")
+    self._getButton.interactable = true
+    self._progressGO:SetActive(false)
+  elseif self._questInfo.status == QuestStatus.QUEST_Taken then
+    self._getBtnGO:SetActive(true)
+    self._getBtnText:SetText(StringTable.Get("str_tower_pass_award_got"))
+    self._getBtnText.color = Color.white
+    self._getBtnImg.sprite = self._atlas:GetSprite("tower_jl_btn3")
+    self._getButton.interactable = false
+    self._progressGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardItems.GetBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UITowerPassAwardItems:GetBtnOnClick(go)
   self:Lock("UITowerPassAwardItems_GetQuestRewards")
   self:StartTask(self._GetQuestRewards, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardItems.ShowTips = function(self, id, pos)
-  -- function num : 0_5
-  (self._tipsCallBack)(id, pos)
+function UITowerPassAwardItems:ShowTips(id, pos)
+  self._tipsCallBack(id, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardItems._GetQuestRewards = function(self, TT)
-  -- function num : 0_6
-  local res, msg = (self._questModule):TakeQuestReward(TT, (self._questInfo).quest_id)
+function UITowerPassAwardItems:_GetQuestRewards(TT)
+  local res, msg = self._questModule:TakeQuestReward(TT, self._questInfo.quest_id)
   self:UnLock("UITowerPassAwardItems_GetQuestRewards")
   if res:GetSucc() and msg.rewards then
     self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_6_0 , upvalues : self
-    local quest = (self._questModule):GetQuest((self._questInfo).quest_id)
-    self._questInfo = quest:QuestInfo()
-    self:_SetUIInfo()
-  end
-)
+      local quest = self._questModule:GetQuest(self._questInfo.quest_id)
+      self._questInfo = quest:QuestInfo()
+      self:_SetUIInfo()
+    end)
   end
 end
-
-

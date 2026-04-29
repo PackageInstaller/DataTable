@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_update_line_renderer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicUpdateLineRenderer", BuffLogicBase)
 BuffLogicUpdateLineRenderer = BuffLogicUpdateLineRenderer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUpdateLineRenderer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicUpdateLineRenderer:Constructor(buffInstance, logicParam)
   self._target = logicParam.target
   self._current = logicParam.current
   self._buffEffect = logicParam.buffEffect
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUpdateLineRenderer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicUpdateLineRenderer:DoLogic(notify)
   local buffResult = BuffResultUpdateLineRenderer:New(self._target, self._current, self._buffEffect)
   return buffResult
 end
-
-

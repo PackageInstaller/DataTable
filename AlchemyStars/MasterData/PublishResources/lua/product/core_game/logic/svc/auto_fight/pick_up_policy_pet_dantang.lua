@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_dantang.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetDanTang", PickUpPolicy_Base)
 PickUpPolicy_PetDanTang = PickUpPolicy_PetDanTang
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetDanTang.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_PetDanTang:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
@@ -17,79 +10,76 @@ PickUpPolicy_PetDanTang.CalcAutoFightPickUpPolicy = function(self, calcParam)
   local attackPosList = {}
   local targetIdList = {}
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local monsterList, monsterPosList = utilScopeSvc:SelectAllMonster()
-  for i,pos in ipairs(monsterPosList) do
-    (table.removev)(validPosList, pos)
+  for i, pos in ipairs(monsterPosList) do
+    table.removev(validPosList, pos)
   end
   local t = {}
-  for _,pos in ipairs(validPosList) do
+  for _, pos in ipairs(validPosList) do
     local posIdx = self:_Pos2Index(pos)
     local env = self:_GetPickUpPolicyEnv()
-    local color = (env.BoardPosPieces)[posIdx]
+    local color = env.BoardPosPieces[posIdx]
     if color and color ~= PieceType.Red then
       t[#t + 1] = pos
     end
   end
   validPosList = t
-  if (table.count)(validPosList) <= 2 then
-    for _,pos in ipairs(validPosList) do
-      (table.insert)(pickPosList, pos)
+  if table.count(validPosList) <= 2 then
+    for _, pos in ipairs(validPosList) do
+      table.insert(pickPosList, pos)
     end
     return pickPosList, attackPosList, targetIdList
   end
-  local firstPickUpPos = nil
-  local utilScope = (self._world):GetService("UtilScopeCalc")
+  local firstPickUpPos
+  local utilScope = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScope:GetSkillScopeCalc()
   for i = 1, 9 do
     local curPos = petEntity:GetGridPosition()
-    local curBodyArea = (petEntity:BodyArea()):GetArea()
+    local curBodyArea = petEntity:BodyArea():GetArea()
     local scopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.SquareRing, {1}, curPos, curBodyArea)
-    for _,pos in ipairs(scopeResult:GetAttackRange()) do
-      if (table.icontains)(validPosList, pos) then
+    for _, pos in ipairs(scopeResult:GetAttackRange()) do
+      if table.icontains(validPosList, pos) then
         firstPickUpPos = pos
         break
       end
     end
-  end
-  do
-    if firstPickUpPos or not firstPickUpPos then
-      firstPickUpPos = validPosList[1]
+    if firstPickUpPos then
+      break
     end
-    local hasCalcPosList = {}
-    ;
-    (table.insert)(hasCalcPosList, firstPickUpPos)
-    local results = {}
-    for i,e in ipairs(monsterList) do
-      local curPos = e:GetGridPosition()
-      local curBodyArea = (e:BodyArea()):GetArea()
-      local scopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.SquareRing, {1}, curPos, curBodyArea)
-      for _,pos in ipairs(scopeResult:GetAttackRange()) do
-        if (table.icontains)(validPosList, pos) and not (table.icontains)(hasCalcPosList, pos) then
-          local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets_PickUpPolicy(petEntity, activeSkillID, {firstPickUpPos, pos})
-          if #target_ids > 0 then
-            (table.insert)(results, {pos, target_ids, scope_result:GetAttackRange()})
-          end
-          ;
-          (table.insert)(hasCalcPosList, pos)
+  end
+  firstPickUpPos = firstPickUpPos or validPosList[1]
+  local hasCalcPosList = {}
+  table.insert(hasCalcPosList, firstPickUpPos)
+  local results = {}
+  for i, e in ipairs(monsterList) do
+    local curPos = e:GetGridPosition()
+    local curBodyArea = e:BodyArea():GetArea()
+    local scopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.SquareRing, {1}, curPos, curBodyArea)
+    for _, pos in ipairs(scopeResult:GetAttackRange()) do
+      if table.icontains(validPosList, pos) and not table.icontains(hasCalcPosList, pos) then
+        local scope_result, target_ids = self:_CalcSkillScopeResultAndTargets_PickUpPolicy(petEntity, activeSkillID, {firstPickUpPos, pos})
+        if 0 < #target_ids then
+          table.insert(results, {
+            pos,
+            target_ids,
+            scope_result:GetAttackRange()
+          })
         end
+        table.insert(hasCalcPosList, pos)
       end
     end
-    if #results > 0 then
-      (table.sort)(results, function(a, b)
-    -- function num : 0_0_0
-    do return #b[2] < #a[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
   end
-)
-      pickPosList = {firstPickUpPos, (results[1])[1]}
-      ;
-      (table.appendArray)(targetIdList, (results[1])[2])
-      ;
-      (table.appendArray)(attackPosList, (results[1])[3])
-    end
-    return pickPosList, attackPosList, targetIdList
+  if 0 < #results then
+    table.sort(results, function(a, b)
+      return #a[2] > #b[2]
+    end)
+    pickPosList = {
+      firstPickUpPos,
+      results[1][1]
+    }
+    table.appendArray(targetIdList, results[1][2])
+    table.appendArray(attackPosList, results[1][3])
   end
+  return pickPosList, attackPosList, targetIdList
 end
-
-

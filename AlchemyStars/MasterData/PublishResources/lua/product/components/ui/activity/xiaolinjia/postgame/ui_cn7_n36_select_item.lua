@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/postgame/ui_cn7_n36_select_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN7N36PostSelectItem", UICustomWidget)
 UICN7N36PostSelectItem = UICN7N36PostSelectItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36PostSelectItem.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN7N36PostSelectItem:InitWidget()
   self._atlas = self:GetAsset("CN7N36PostGame.spriteatlas", LoadType.SpriteAtlas)
   self._specialText = self:GetUIComponent("UILocalizationText", "specialText")
   self._countText = self:GetUIComponent("UILocalizationText", "countText")
@@ -18,90 +11,53 @@ UICN7N36PostSelectItem.InitWidget = function(self)
   self._specialScoreObj = self:GetGameObject("specialScore")
   self._btnObj = self:GetGameObject("btn")
   self._anim = self:GetGameObject("anim")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnObj), UIEvent.BeginDrag, function(go)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    (Log.debug)("UICN7N36PostSelectItem BeginDrag")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCN7N36PostGameItemPress, self)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnObj), UIEvent.EndDrag, function(go)
-    -- function num : 0_0_1 , upvalues : _ENV, self
-    (Log.debug)("UICN7N36PostSelectItem EndDrag")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCN7N36PostGameItemRelease, self)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnObj), UIEvent.Click, function(go)
-    -- function num : 0_0_2 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCN7N36PostGameItemClick, self)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnObj), UIEvent.BeginDrag, function(go)
+    Log.debug("UICN7N36PostSelectItem BeginDrag")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCN7N36PostGameItemPress, self)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnObj), UIEvent.EndDrag, function(go)
+    Log.debug("UICN7N36PostSelectItem EndDrag")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCN7N36PostGameItemRelease, self)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnObj), UIEvent.Click, function(go)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCN7N36PostGameItemClick, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.OnValue = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN7N36PostSelectItem:OnValue()
   if self._specialScoreDesc then
-    (self._specialScoreObj):SetActive(true)
-    ;
-    (self._specialText):SetText((StringTable.Get)(self._specialScoreDesc))
+    self._specialScoreObj:SetActive(true)
+    self._specialText:SetText(StringTable.Get(self._specialScoreDesc))
   else
-    ;
-    (self._specialScoreObj):SetActive(false)
+    self._specialScoreObj:SetActive(false)
   end
-  ;
-  (self._countText):SetText("X" .. self._count)
-  ;
-  (self._normalText):SetText(self._score)
-  ;
-  (self._iconRawImage):LoadImage(self._bagIcon)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._thumbImage).sprite = (self._atlas):GetSprite(self._thumbIcon)
+  self._countText:SetText("X" .. self._count)
+  self._normalText:SetText(self._score)
+  self._iconRawImage:LoadImage(self._bagIcon)
+  self._thumbImage.sprite = self._atlas:GetSprite(self._thumbIcon)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.GetItemIcon = function(self)
-  -- function num : 0_2
+function UICN7N36PostSelectItem:GetItemIcon()
   return self._itemIcon
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.GetCanPutItemIcon = function(self)
-  -- function num : 0_3
+function UICN7N36PostSelectItem:GetCanPutItemIcon()
   return self._canPutItemIcon
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.GetUnPutItemIcon = function(self)
-  -- function num : 0_4
+function UICN7N36PostSelectItem:GetUnPutItemIcon()
   return self._unPutItemIcon
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.PlayShowAnimation = function(self)
-  -- function num : 0_5
-  (self._anim):Play("uieff_UICN7N36PostSelectItem_in")
+function UICN7N36PostSelectItem:PlayShowAnimation()
+  self._anim:Play("uieff_UICN7N36PostSelectItem_in")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.OnShow = function(self)
-  -- function num : 0_6
+function UICN7N36PostSelectItem:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.SetData = function(self, cfg, count, index)
-  -- function num : 0_7
+function UICN7N36PostSelectItem:SetData(cfg, count, index)
   self._cfg = cfg
   self._count = count
   self._score = cfg.Score
@@ -116,47 +72,27 @@ UICN7N36PostSelectItem.SetData = function(self, cfg, count, index)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.PlayInAnim = function(self, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN7N36PostSelectItem:PlayInAnim(index)
   self:Lock("UICN7N36PostSelectItem_PlayInAnim" .. index)
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : _ENV, index, self
     YIELD(TT, 23 * index)
-    ;
-    (self._anim):SetActive(true)
+    self._anim:SetActive(true)
     self:UnLock("UICN7N36PostSelectItem_PlayInAnim" .. index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.GetItemCount = function(self)
-  -- function num : 0_9
+function UICN7N36PostSelectItem:GetItemCount()
   return self._count
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.GetItemID = function(self)
-  -- function num : 0_10
+function UICN7N36PostSelectItem:GetItemID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.GetGuideGameObject = function(self)
-  -- function num : 0_11
+function UICN7N36PostSelectItem:GetGuideGameObject()
   return self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostSelectItem.GetGuideGameObjectBtn = function(self)
-  -- function num : 0_12
+function UICN7N36PostSelectItem:GetGuideGameObjectBtn()
   return self._btnObj
 end
-
-

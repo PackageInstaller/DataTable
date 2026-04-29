@@ -1,115 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n39/entry/ui_n39_main_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_main_campaign_base")
 _class("UIN39MainEnter", UIMainLobbyMainCampaignBase)
 UIN39MainEnter = UIN39MainEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39MainEnter.GetComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN39MainEnter:GetComponent()
   self._redGo = self:GetGameObject("redGo")
   self._newGo = self:GetGameObject("newGo")
   self._tips = self:GetUIComponent("RollingText", "tipsText")
   self._ny_campaign = UIActivityCampaign:New()
-  ;
-  (self._ny_campaign):LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N25_NEW_YEAR)
+  self._ny_campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N25_NEW_YEAR)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainEnter.RefreshView = function(self)
-  -- function num : 0_1
+function UIN39MainEnter:RefreshView()
   local new = self:CheckNew()
   local red = self:CheckRed()
-  ;
-  (self._newGo):SetActive(new)
-  if red then
-    (self._redGo):SetActive(not new)
-    self:BlackOpen()
-  end
+  self._newGo:SetActive(new)
+  self._redGo:SetActive(red and not new)
+  self:BlackOpen()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainEnter.CheckNew = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local mainNew = (UIN39Helper.CheckNew)("main")
+function UIN39MainEnter:CheckNew()
+  local mainNew = UIN39Helper.CheckNew("main")
   local loginNew = self:CheckComNew("login")
   local exchangeNew = self:CheckComNew("exchange")
   local lineNew = self:CheckComNew("line")
   local hardNew = self:CheckComNew("hard")
   local blackNew = self:CheckComNew("black")
-  if (self._ny_campaign):CheckCampaignOpen() then
-    local ny_new = (UIN39Helper.CheckNew)("ny_login")
-  end
+  local ny_new = self._ny_campaign:CheckCampaignOpen() and UIN39Helper.CheckNew("ny_login")
   return mainNew or loginNew or exchangeNew or lineNew or hardNew or blackNew or ny_new
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainEnter.CheckRed = function(self)
-  -- function num : 0_3
+function UIN39MainEnter:CheckRed()
   local loginRed = self:CheckComRed("login")
   local exchangeRed = self:CheckComRed("exchange")
   local lineRed = self:CheckComRed("line")
   local hardRed = self:CheckComRed("hard")
   local blackRed = self:CheckComRed("black")
-  local ny_red = (self._ny_campaign):CheckCampaignRed()
+  local ny_red = self._ny_campaign:CheckCampaignRed()
   return loginRed or exchangeRed or lineRed or hardRed or blackRed or ny_red
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainEnter.CheckComRed = function(self, comTag)
-  -- function num : 0_4
+function UIN39MainEnter:CheckComRed(comTag)
   local open = self:CheckComOpen(comTag)
   local red = self:CheckComRedWithTime(comTag)
-  return not open or red
+  return open and red
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainEnter.CheckComRedWithTime = function(self, comTag)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN39MainEnter:CheckComRedWithTime(comTag)
   local timePass = true
   if comTag == "line" or comTag == "hard" or comTag == "black" then
-    timePass = (UIN39Helper.CheckComRedTime)(comTag)
+    timePass = UIN39Helper.CheckComRedTime(comTag)
   end
-  local comid = (UIN39Helper.GetComponentId)(comTag)
-  local red = (self.sampleInfo).m_components_step >> comid & 1 == 1
-  do return not timePass or red end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local comid = UIN39Helper.GetComponentId(comTag)
+  local red = self.sampleInfo.m_components_step >> comid & 1 == 1
+  return timePass and red
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainEnter.CheckComNew = function(self, comTag)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN39MainEnter:CheckComNew(comTag)
   local open = self:CheckComOpen(comTag)
-  local new = (UIN39Helper.CheckNew)(comTag)
-  return not open or new
+  local new = UIN39Helper.CheckNew(comTag)
+  return open and new
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainEnter.CheckComOpen = function(self, comTag)
-  -- function num : 0_7 , upvalues : _ENV
-  local comid = (UIN39Helper.GetComponentId)(comTag)
-  local open = (self.sampleInfo).m_is_component_open >> comid & 1 == 1
-  do return open end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN39MainEnter:CheckComOpen(comTag)
+  local comid = UIN39Helper.GetComponentId(comTag)
+  local open = self.sampleInfo.m_is_component_open >> comid & 1 == 1
+  return open
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainEnter.BlackOpen = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self:CheckComOpen("black"))
-  local blackOpen = nil
-  local tex = nil
+function UIN39MainEnter:BlackOpen()
+  local blackOpen = self:CheckComOpen("black")
+  local tex
   if blackOpen then
     tex = "str_n39_main_entry_tips3"
   else
@@ -120,38 +80,21 @@ UIN39MainEnter.BlackOpen = function(self)
       tex = "str_n39_main_entry_tips1"
     end
   end
-  do
-    ;
-    (self._tips):RefreshText((StringTable.Get)(tex))
-  end
+  self._tips:RefreshText(StringTable.Get(tex))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainEnter.BtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((UIN39MainEnter.super).BtnOnClick)(self)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN39MainEnter:BtnOnClick()
+  UIN39MainEnter.super.BtnOnClick(self)
   if self.ctl then
-    ((self.ctl)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self.ctl):GetName())
-    local rt = ((self.ctl)._screenShot):RefreshBlurTexture()
-    do
-      local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-      self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, rt, cache_rt, self
-    YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-    self:SwitchState(UIStateType.UIN39MainController, false, cache_rt)
-  end
-)
-    end
+    self.ctl._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self.ctl:GetName())
+    local rt = self.ctl._screenShot:RefreshBlurTexture()
+    local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+    self:StartTask(function(TT)
+      YIELD(TT)
+      UnityEngine.Graphics.Blit(rt, cache_rt)
+      self:SwitchState(UIStateType.UIN39MainController, false, cache_rt)
+    end)
   else
-    do
-      self:SwitchState(UIStateType.UIN39MainController, false)
-    end
+    self:SwitchState(UIStateType.UIN39MainController, false)
   end
 end
-
-

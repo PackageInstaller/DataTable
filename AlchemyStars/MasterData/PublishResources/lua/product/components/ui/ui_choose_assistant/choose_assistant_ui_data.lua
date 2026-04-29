@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/choose_assistant_ui_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("choose_assistant_ui_data_skin", Object)
 choose_assistant_ui_data_skin = choose_assistant_ui_data_skin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-choose_assistant_ui_data_skin.Constructor = function(self, petId, grade, skinId, asId)
-  -- function num : 0_0
+function choose_assistant_ui_data_skin:Constructor(petId, grade, skinId, asId)
   self.petid = petId
   self.grade = grade
   self.skinid = skinId
@@ -17,10 +10,8 @@ end
 
 _class("choose_assistant_ui_data_pet", Object)
 choose_assistant_ui_data_pet = choose_assistant_ui_data_pet
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-choose_assistant_ui_data_pet.Constructor = function(self, petId, grade, skinId, asId, withPet)
-  -- function num : 0_1
+function choose_assistant_ui_data_pet:Constructor(petId, grade, skinId, asId, withPet)
   self.withPet = withPet
   self.petid = petId
   self.grade = grade
@@ -30,18 +21,10 @@ choose_assistant_ui_data_pet.Constructor = function(self, petId, grade, skinId, 
   self.aslist = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-choose_assistant_ui_data_pet.AppendSkinData = function(self, skinData)
-  -- function num : 0_2 , upvalues : _ENV
-  (table.insert)(self.skinList, skinData)
+function choose_assistant_ui_data_pet:AppendSkinData(skinData)
+  table.insert(self.skinList, skinData)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-choose_assistant_ui_data_pet.AppendAsData = function(self, asData)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.insert)(self.aslist, asData)
+function choose_assistant_ui_data_pet:AppendAsData(asData)
+  table.insert(self.aslist, asData)
 end
-
-

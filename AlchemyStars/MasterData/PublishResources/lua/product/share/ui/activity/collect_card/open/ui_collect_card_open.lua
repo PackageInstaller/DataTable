@@ -1,84 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/open/ui_collect_card_open.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardOpen", UIController)
 UICollectCardOpen = UICollectCardOpen
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardOpen.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UICollectCardOpen:OnShow(uiParam)
   self._cardMap = uiParam[1]
   self:SortCards()
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardOpen.SortCards = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICollectCardOpen:SortCards()
   self._cards = {}
-  for key,value in pairs(self._cardMap) do
+  for key, value in pairs(self._cardMap) do
     for i = 1, value do
       local cardid = key
-      ;
-      (table.insert)(self._cards, cardid)
+      table.insert(self._cards, cardid)
     end
   end
-  ;
-  (table.sort)(self._cards, function(a, b)
-    -- function num : 0_1_0 , upvalues : _ENV
-    local cfg_a = (Cfg.cfg_component_collect_card)[a]
-    local cfg_b = (Cfg.cfg_component_collect_card)[b]
-    if a >= b then
-      do return cfg_a.Type ~= cfg_b.Type end
-      do return cfg_a.Type == 2 end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.sort(self._cards, function(a, b)
+    local cfg_a = Cfg.cfg_component_collect_card[a]
+    local cfg_b = Cfg.cfg_component_collect_card[b]
+    if cfg_a.Type == cfg_b.Type then
+      return a < b
+    else
+      return cfg_a.Type == 2
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardOpen.GetComponents = function(self)
-  -- function num : 0_2
+function UICollectCardOpen:GetComponents()
   self._pool = self:GetUIComponent("UISelectObjectPath", "Pool")
-  self._ScrollRect = ((((self:GetUIComponent("Transform", "Pool")).parent).parent).gameObject):GetComponent("ScrollRect")
+  self._ScrollRect = self:GetUIComponent("Transform", "Pool").parent.parent.gameObject:GetComponent("ScrollRect")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardOpen.OnValue = function(self)
-  -- function num : 0_3
+function UICollectCardOpen:OnValue()
   self:SetPool()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardOpen.SetPool = function(self)
-  -- function num : 0_4
-  (self._pool):SpawnObjects("UICollectCardOpenItem", #self._cards)
-  local pools = (self._pool):GetAllSpawnList()
+function UICollectCardOpen:SetPool()
+  self._pool:SpawnObjects("UICollectCardOpenItem", #self._cards)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self._cards do
     local item = pools[i]
-    local id = (self._cards)[i]
+    local id = self._cards[i]
     item:SetData(i, id)
   end
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._ScrollRect).enabled = #self._cards > 15
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._ScrollRect.enabled = #self._cards > 15
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardOpen.BtnOnClick = function(self, go)
-  -- function num : 0_5
+function UICollectCardOpen:BtnOnClick(go)
   self:CloseDialog()
 end
-
-

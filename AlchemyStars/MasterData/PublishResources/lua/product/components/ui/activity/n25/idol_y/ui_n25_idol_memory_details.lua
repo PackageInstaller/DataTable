@@ -1,84 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_memory_details.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolMemoryDetails", UICustomWidget)
 UIN25IdolMemoryDetails = UIN25IdolMemoryDetails
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolMemoryDetails.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolMemoryDetails:Constructor()
   self._parent = nil
   self._cfg = nil
   self._reddot = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMemoryDetails.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolMemoryDetails:OnShow(uiParams)
   self._imgBg = self:GetUIComponent("RawImage", "imgBg")
   self._imgBgLoader = self:GetUIComponent("RawImageLoader", "imgBg")
   self._imgIcon = self:GetUIComponent("RawImage", "imgIcon")
   self._imgIconLoader = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtDescription = self:GetUIComponent("UILocalizationText", "txtDescription")
-  self._redDot = (self:View()):GetUIComponent("UISelectObjectPath", "redDot")
+  self._redDot = self:View():GetUIComponent("UISelectObjectPath", "redDot")
   self._redDotSpawn = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMemoryDetails.OnHide = function(self)
-  -- function num : 0_2
+function UIN25IdolMemoryDetails:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMemoryDetails.BtnOnClick = function(self, go)
-  -- function num : 0_3
-  (self._parent):OnMemoryDetails(self._cfg)
+function UIN25IdolMemoryDetails:BtnOnClick(go)
+  self._parent:OnMemoryDetails(self._cfg)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMemoryDetails.SetRedDot = function(self, showRedDot)
-  -- function num : 0_4
-  ((self._redDot).gameObject):SetActive(showRedDot)
+function UIN25IdolMemoryDetails:SetRedDot(showRedDot)
+  self._redDot.gameObject:SetActive(showRedDot)
   if showRedDot and self._redDotSpawn == nil then
-    self._redDotSpawn = (self._redDot):SpawnOneObject("ManualLoad0")
+    self._redDotSpawn = self._redDot:SpawnOneObject("ManualLoad0")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMemoryDetails.ID = function(self)
-  -- function num : 0_5
-  return (self._cfg).ID
+function UIN25IdolMemoryDetails:ID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMemoryDetails.SetData = function(self, parent, cfg)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25IdolMemoryDetails:SetData(parent, cfg)
   self._parent = parent
   self._cfg = cfg
   self._reddot = parent:GetRedDot()
-  local cfgPet = (Cfg.cfg_pet)[(self._cfg).PetId]
-  ;
-  (self._txtName):SetText((StringTable.Get)(cfgPet.Name))
-  ;
-  (self._txtDescription):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._imgIconLoader):LoadImage(cfg.PetHead)
-  local unlocked = (self._reddot):GetMemoryUnlocked()
+  local cfgPet = Cfg.cfg_pet[self._cfg.PetId]
+  self._txtName:SetText(StringTable.Get(cfgPet.Name))
+  self._txtDescription:SetText(StringTable.Get(cfg.Name))
+  self._imgIconLoader:LoadImage(cfg.PetHead)
+  local unlocked = self._reddot:GetMemoryUnlocked()
   if unlocked[cfg.ID] == nil then
-    (self._imgBgLoader):LoadImage("n25_ychsj_di11")
+    self._imgBgLoader:LoadImage("n25_ychsj_di11")
   else
-    ;
-    (self._imgBgLoader):LoadImage("n25_ychsj_di10")
+    self._imgBgLoader:LoadImage("n25_ychsj_di10")
   end
 end
-
-

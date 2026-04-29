@@ -1,46 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/hard_level/ui_activity_n32_diff_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN32DiffLevelNode", UIActivityDiffLevelNode)
 UIActivityN32DiffLevelNode = UIActivityN32DiffLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN32DiffLevelNode.OnInit = function(self)
-  -- function num : 0_0
+function UIActivityN32DiffLevelNode:OnInit()
   self._anim = self:GetUIComponent("Animation", "Anim")
   self._nameGo = self:GetGameObject("Name")
   self._iconLockLoader = self:GetUIComponent("RawImageLoader", "IconLock")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32DiffLevelNode.OnRefresh = function(self)
-  -- function num : 0_1
-  if (self._data):IsOpen() then
-    (self._nameGo):SetActive(true)
+function UIActivityN32DiffLevelNode:OnRefresh()
+  if self._data:IsOpen() then
+    self._nameGo:SetActive(true)
   else
-    ;
-    (self._nameGo):SetActive(false)
-    ;
-    (self._iconLockLoader):LoadImage((self._data):GetUnOpenIcon())
+    self._nameGo:SetActive(false)
+    self._iconLockLoader:LoadImage(self._data:GetUnOpenIcon())
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32DiffLevelNode.PlayAnimation = function(self)
-  -- function num : 0_2
+function UIActivityN32DiffLevelNode:PlayAnimation()
   if self._anim then
-    if ((self._rectTransform).anchoredPosition).y > 0 then
-      (self._anim):Play("uieff_UIActivityN32NHardLevelNode_in01")
-    else
-      if ((self._rectTransform).anchoredPosition).y <= 0 then
-        (self._anim):Play("uieff_UIActivityN32NHardLevelNode_in02")
-      end
+    if self._rectTransform.anchoredPosition.y > 0 then
+      self._anim:Play("uieff_UIActivityN32NHardLevelNode_in01")
+    elseif self._rectTransform.anchoredPosition.y <= 0 then
+      self._anim:Play("uieff_UIActivityN32NHardLevelNode_in02")
     end
   end
 end
-
-

@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_ecs/systems/systems.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("collector")
 _class("Systems", Object)
 Systems = Systems
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Systems.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("Systems:Constructor()")
+function Systems:Constructor()
+  Log.debug("Systems:Constructor()")
   self._initializeSystems = {}
   self._executeSystems = {}
   self._cleanupSystems = {}
@@ -18,51 +11,34 @@ Systems.Constructor = function(self)
   self.IsSystems = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Systems.Add = function(self, system)
-  -- function num : 0_1
-  do
-    if system.Initialize then
-      local sysList = self._initializeSystems
-      sysList[#sysList + 1] = system
-    end
-    do
-      if system.Execute then
-        local sysList = self._executeSystems
-        sysList[#sysList + 1] = system
-      end
-      do
-        if system.Cleanup then
-          local sysList = self._cleanupSystems
-          sysList[#sysList + 1] = system
-        end
-        do
-          if system.TearDown then
-            local sysList = self._tearDownSystems
-            sysList[#sysList + 1] = system
-          end
-          return self
-        end
-      end
-    end
+function Systems:Add(system)
+  if system.Initialize then
+    local sysList = self._initializeSystems
+    sysList[#sysList + 1] = system
   end
+  if system.Execute then
+    local sysList = self._executeSystems
+    sysList[#sysList + 1] = system
+  end
+  if system.Cleanup then
+    local sysList = self._cleanupSystems
+    sysList[#sysList + 1] = system
+  end
+  if system.TearDown then
+    local sysList = self._tearDownSystems
+    sysList[#sysList + 1] = system
+  end
+  return self
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Systems.Initialize = function(self)
-  -- function num : 0_2
+function Systems:Initialize()
   local sysList = self._initializeSystems
   for i = 1, #sysList do
-    (sysList[i]):Initialize()
+    sysList[i]:Initialize()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Systems.Execute = function(self)
-  -- function num : 0_3
+function Systems:Execute()
   local sysList = self._executeSystems
   for i = 1, #sysList do
     local sys = sysList[i]
@@ -70,10 +46,7 @@ Systems.Execute = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Systems.Cleanup = function(self)
-  -- function num : 0_4
+function Systems:Cleanup()
   local sysList = self._cleanupSystems
   for i = 1, #sysList do
     local sys = sysList[i]
@@ -81,20 +54,14 @@ Systems.Cleanup = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Systems.TearDown = function(self)
-  -- function num : 0_5
+function Systems:TearDown()
   local sysList = self._tearDownSystems
   for i = 1, #sysList do
-    (sysList[i]):TearDown()
+    sysList[i]:TearDown()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Systems.ActivateReactiveSystems = function(self)
-  -- function num : 0_6
+function Systems:ActivateReactiveSystems()
   local executeSystems = self._executeSystems
   for i = 1, #executeSystems do
     local sys = executeSystems[i]
@@ -107,10 +74,7 @@ Systems.ActivateReactiveSystems = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Systems.DeactivateReactiveSystems = function(self)
-  -- function num : 0_7
+function Systems:DeactivateReactiveSystems()
   local executeSystems = self._executeSystems
   for i = 1, #executeSystems do
     local sys = executeSystems[i]
@@ -123,10 +87,7 @@ Systems.DeactivateReactiveSystems = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Systems.ClearReactiveSystems = function(self)
-  -- function num : 0_8
+function Systems:ClearReactiveSystems()
   local executeSystems = self._executeSystems
   for i = 1, #executeSystems do
     local sys = executeSystems[i]
@@ -138,5 +99,3 @@ Systems.ClearReactiveSystems = function(self)
     end
   end
 end
-
-

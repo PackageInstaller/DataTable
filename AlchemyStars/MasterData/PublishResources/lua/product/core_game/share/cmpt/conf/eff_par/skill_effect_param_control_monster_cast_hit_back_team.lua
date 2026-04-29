@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_control_monster_cast_hit_back_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamControlMonsterCastHitBackTeam", SkillEffectParamBase)
 SkillEffectParamControlMonsterCastHitBackTeam = SkillEffectParamControlMonsterCastHitBackTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamControlMonsterCastHitBackTeam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamControlMonsterCastHitBackTeam:Constructor(t)
   self._monsterClassID = t.monsterClassID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamControlMonsterCastHitBackTeam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamControlMonsterCastHitBackTeam:GetEffectType()
   return SkillEffectType.ControlMonsterCastHitBackTeam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamControlMonsterCastHitBackTeam.GetMonsterClassID = function(self)
-  -- function num : 0_2
+function SkillEffectParamControlMonsterCastHitBackTeam:GetMonsterClassID()
   return self._monsterClassID
 end
-
-

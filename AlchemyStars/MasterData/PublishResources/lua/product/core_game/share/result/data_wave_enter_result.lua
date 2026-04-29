@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_wave_enter_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataWaveEnterResult", Object)
 DataWaveEnterResult = DataWaveEnterResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataWaveEnterResult.Constructor = function(self, waveNum, isExit, exitPos)
-  -- function num : 0_0
+function DataWaveEnterResult:Constructor(waveNum, isExit, exitPos)
   self._waveNum = waveNum
   self._exitPos = exitPos
   self._isExit = isExit
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataWaveEnterResult.GetWaveIndex = function(self)
-  -- function num : 0_1
+function DataWaveEnterResult:GetWaveIndex()
   return self._waveNum
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataWaveEnterResult.GetExitPos = function(self)
-  -- function num : 0_2
+function DataWaveEnterResult:GetExitPos()
   return self._exitPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataWaveEnterResult.IsExit = function(self)
-  -- function num : 0_3
+function DataWaveEnterResult:IsExit()
   return self._isExit
 end
-
-

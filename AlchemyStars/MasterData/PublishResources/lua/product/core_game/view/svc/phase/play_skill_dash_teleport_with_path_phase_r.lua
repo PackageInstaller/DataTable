@@ -1,69 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_dash_teleport_with_path_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillDashTeleportWithPathPhase", PlaySkillPhaseBase)
 PlaySkillDashTeleportWithPathPhase = PlaySkillDashTeleportWithPathPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillDashTeleportWithPathPhase.PlayFlight = function(self, TT, casterEntity, phaseParam, phaseIndex, phaseAdapter)
-  -- function num : 0_0 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillDashTeleportWithPathPhase:PlayFlight(TT, casterEntity, phaseParam, phaseIndex, phaseAdapter)
+  local effectService = self._world:GetService("Effect")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport)
   if not skillResult then
-    return 
+    return
   end
   local path = skillResult:GetRenderTeleportPath()
-  if path and #path > 0 then
-    do return  end
-    casterEntity:SetAnimatorControllerTriggers({phaseParam.castAnimation})
-    if phaseParam.castEffectID and phaseParam.castEffectID ~= 0 then
-      effectService:CreateEffect(phaseParam.castEffectID, casterEntity)
-    end
-    local startPos = skillResult:GetPosOld()
-    local firstPos = path[1]
-    local startDir = firstPos - startPos
-    casterEntity:SetDirection(startDir)
-    YIELD(TT, phaseParam.castDuration)
-    local world = casterEntity:GetOwnerWorld()
-    local playSkillInstructionService = world:GetService("PlaySkillInstruction")
-    if path and #path > 0 then
-      local lastPos = skillResult:GetPosOld()
-      for index,pathPos in ipairs(path) do
-        local isFirst = false
-        local isFinal = false
-        if index == 1 then
-          isFirst = true
-        end
-        if index == #path then
-          isFinal = true
-        end
-        self:_PlayDashToPos(TT, casterEntity, phaseParam, lastPos, pathPos, isFirst, isFinal)
-        lastPos = pathPos
+  if path and 0 < #path then
+  else
+    return
+  end
+  casterEntity:SetAnimatorControllerTriggers({
+    phaseParam.castAnimation
+  })
+  if phaseParam.castEffectID and phaseParam.castEffectID ~= 0 then
+    effectService:CreateEffect(phaseParam.castEffectID, casterEntity)
+  end
+  local startPos = skillResult:GetPosOld()
+  local firstPos = path[1]
+  local startDir = firstPos - startPos
+  casterEntity:SetDirection(startDir)
+  YIELD(TT, phaseParam.castDuration)
+  local world = casterEntity:GetOwnerWorld()
+  local playSkillInstructionService = world:GetService("PlaySkillInstruction")
+  if path and 0 < #path then
+    local lastPos = skillResult:GetPosOld()
+    for index, pathPos in ipairs(path) do
+      local isFirst = false
+      local isFinal = false
+      if index == 1 then
+        isFirst = true
       end
-      playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.TeleportMove, false, skillResult)
-      playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.TeleportShow, false, skillResult)
-      playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.BuffNotify, false, skillResult)
-      local stopDelay = phaseParam:GetStopDelay()
-      if stopDelay and stopDelay >= 0 then
-        YIELD(TT, stopDelay)
+      if index == #path then
+        isFinal = true
       end
+      self:_PlayDashToPos(TT, casterEntity, phaseParam, lastPos, pathPos, isFirst, isFinal)
+      lastPos = pathPos
     end
-    do
-      YIELD(TT, 100)
+    playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.TeleportMove, false, skillResult)
+    playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.TeleportShow, false, skillResult)
+    playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.BuffNotify, false, skillResult)
+    local stopDelay = phaseParam:GetStopDelay()
+    if stopDelay and 0 <= stopDelay then
+      YIELD(TT, stopDelay)
     end
   end
+  YIELD(TT, 100)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillDashTeleportWithPathPhase._PlayDashToPos = function(self, TT, casterEntity, phaseParam, lastPos, toPos, isFirst, isFinal)
-  -- function num : 0_1 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local effectService = (self._world):GetService("Effect")
+function PlaySkillDashTeleportWithPathPhase:_PlayDashToPos(TT, casterEntity, phaseParam, lastPos, toPos, isFirst, isFinal)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local effectService = self._world:GetService("Effect")
   local dashAction = phaseParam:GetDashAction()
   local dashDuration = phaseParam:GetEachDashDuration() or 500
   local entity = casterEntity
@@ -87,77 +78,68 @@ PlaySkillDashTeleportWithPathPhase._PlayDashToPos = function(self, TT, casterEnt
       effectService:CreateEffect(pathPointEffectID, casterEntity)
     end
     local firstStartDelay = phaseParam:GetStartDashDelay()
-    if firstStartDelay and firstStartDelay >= 0 then
+    if firstStartDelay and 0 <= firstStartDelay then
       YIELD(TT, firstStartDelay)
     end
   else
-    do
-      local middleStartAction = phaseParam:GetMiddleStartAction()
-      if middleStartAction then
-        casterEntity:SetAnimatorControllerTriggers({middleStartAction})
-      end
-      local eachDashFinishEffectID = phaseParam:GetEachDashFinishEffectID()
-      if eachDashFinishEffectID then
-        effectService:CreateEffect(eachDashFinishEffectID, casterEntity)
-      end
-      if pathPointEffectID then
-        effectService:CreateEffect(pathPointEffectID, casterEntity)
-      end
-      do
-        local middleStartDelay = phaseParam:GetMiddleStartDashDelay()
-        if middleStartDelay and middleStartDelay >= 0 then
-          YIELD(TT, middleStartDelay)
-        end
-        local dashEffectID = phaseParam:GetDashEffectID()
-        if dashEffectID then
-          effectService:CreateEffect(dashEffectID, casterEntity)
-        end
-        local dashAudioID = phaseParam:GetDashAudioID()
-        if dashAudioID then
-          (AudioHelperController.PlayInnerGameSfx)(dashAudioID)
-        end
-        if dashAction then
-          casterEntity:SetAnimatorControllerTriggers({dashAction})
-        end
-        casterEntity:SetDirection(dir)
-        local easeWork = ((transWork:DOMove(toPosRender, dashDuration / 1000, false)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_1_0 , upvalues : entity, toPos, dir
-    entity:SetLocation(toPos, dir)
+    local middleStartAction = phaseParam:GetMiddleStartAction()
+    if middleStartAction then
+      casterEntity:SetAnimatorControllerTriggers({middleStartAction})
+    end
+    local eachDashFinishEffectID = phaseParam:GetEachDashFinishEffectID()
+    if eachDashFinishEffectID then
+      effectService:CreateEffect(eachDashFinishEffectID, casterEntity)
+    end
+    if pathPointEffectID then
+      effectService:CreateEffect(pathPointEffectID, casterEntity)
+    end
+    local middleStartDelay = phaseParam:GetMiddleStartDashDelay()
+    if middleStartDelay and 0 <= middleStartDelay then
+      YIELD(TT, middleStartDelay)
+    end
   end
-)
-        YIELD(TT, dashDuration)
-        YIELD(TT)
-        self:_SacrificeTrap(TT, casterEntity, toPos)
-        if isFinal then
-          local stopAction = phaseParam:GetStopAction()
-          if stopAction then
-            casterEntity:SetAnimatorControllerTriggers({stopAction})
-          end
-          if pathPointEffectID then
-            effectService:CreateEffect(pathPointEffectID, casterEntity)
-          end
-        end
-      end
+  local dashEffectID = phaseParam:GetDashEffectID()
+  if dashEffectID then
+    effectService:CreateEffect(dashEffectID, casterEntity)
+  end
+  local dashAudioID = phaseParam:GetDashAudioID()
+  if dashAudioID then
+    AudioHelperController.PlayInnerGameSfx(dashAudioID)
+  end
+  if dashAction then
+    casterEntity:SetAnimatorControllerTriggers({dashAction})
+  end
+  casterEntity:SetDirection(dir)
+  local easeWork = transWork:DOMove(toPosRender, dashDuration / 1000, false):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
+    entity:SetLocation(toPos, dir)
+  end)
+  YIELD(TT, dashDuration)
+  YIELD(TT)
+  self:_SacrificeTrap(TT, casterEntity, toPos)
+  if isFinal then
+    local stopAction = phaseParam:GetStopAction()
+    if stopAction then
+      casterEntity:SetAnimatorControllerTriggers({stopAction})
+    end
+    if pathPointEffectID then
+      effectService:CreateEffect(pathPointEffectID, casterEntity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillDashTeleportWithPathPhase._SacrificeTrap = function(self, TT, casterEntity, pos)
-  -- function num : 0_2 , upvalues : _ENV
-  local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillDashTeleportWithPathPhase:_SacrificeTrap(TT, casterEntity, pos)
+  local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local sacrificeResults = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.PetSacrificeSuperGridTraps)
   if not sacrificeResults then
-    return 
+    return
   end
   local sacrificeResult = sacrificeResults[1]
   if sacrificeResult then
     local trapIDs = sacrificeResult:GetTrapIDs()
-    local playBuffSvc = (self._world):GetService("PlayBuff")
-    for i,id in ipairs(trapIDs) do
-      local trapEntity = (self._world):GetEntityByID(id)
+    local playBuffSvc = self._world:GetService("PlayBuff")
+    for i, id in ipairs(trapIDs) do
+      local trapEntity = self._world:GetEntityByID(id)
       if trapEntity then
         local trapPos = trapEntity:GetGridPosition()
         if trapPos == pos then
@@ -172,5 +154,3 @@ PlaySkillDashTeleportWithPathPhase._SacrificeTrap = function(self, TT, casterEnt
     end
   end
 end
-
-

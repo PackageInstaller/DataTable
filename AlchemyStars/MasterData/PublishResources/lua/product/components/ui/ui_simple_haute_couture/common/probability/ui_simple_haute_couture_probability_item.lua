@@ -1,78 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/probability/ui_simple_haute_couture_probability_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureProbabiltyItem", UICustomWidget)
 UISimpleHauteCoutureProbabiltyItem = UISimpleHauteCoutureProbabiltyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureProbabiltyItem.Constructor = function(self)
-  -- function num : 0_0
+function UISimpleHauteCoutureProbabiltyItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbabiltyItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISimpleHauteCoutureProbabiltyItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbabiltyItem._GetComponents = function(self)
-  -- function num : 0_2
+function UISimpleHauteCoutureProbabiltyItem:_GetComponents()
   self._prizeImg1 = self:GetUIComponent("RawImageLoader", "prizeImg1")
   self._percent = self:GetUIComponent("UILocalizationText", "percent")
   self._asset = self:GetUIComponent("UISelectObjectPath", "asset")
   self._detailBg = self:GetUIComponent("Image", "detailbg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbabiltyItem.SetData = function(self, cfg, isBig, callback)
-  -- function num : 0_3
+function UISimpleHauteCoutureProbabiltyItem:SetData(cfg, isBig, callback)
   self._cfg = cfg
   self._isBig = isBig
   self._callback = callback
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbabiltyItem._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[(self._cfg).ItemID]
-  ;
-  (self._percent):SetText((self._cfg).Probablity * 100 .. "%")
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._detailBg).sprite = ((self.uiOwner).altas):GetSprite("senior_rare0" .. (self._cfg).Color)
-  ;
-  ((self._prizeImg1).gameObject):SetActive(self._isBig)
+function UISimpleHauteCoutureProbabiltyItem:_InitComponents()
+  local itemCfg = Cfg.cfg_item[self._cfg.ItemID]
+  self._percent:SetText(self._cfg.Probablity * 100 .. "%")
+  self._detailBg.sprite = self.uiOwner.altas:GetSprite("senior_rare0" .. self._cfg.Color)
+  self._prizeImg1.gameObject:SetActive(self._isBig)
   if not self._isBig then
-    local asset = (self._asset):SpawnObject("UIAsset")
-    asset:SetData((self._cfg).ItemID)
+    local asset = self._asset:SpawnObject("UIAsset")
+    asset:SetData(self._cfg.ItemID)
     local param = {}
-    param.text = (self._cfg).Count
-    param.icon = ((Cfg.cfg_item)[(self._cfg).ItemID]).Icon
+    param.text = self._cfg.Count
+    param.icon = Cfg.cfg_item[self._cfg.ItemID].Icon
     asset:SetItemData(param)
   else
-    do
-      ;
-      (self._prizeImg1):LoadImage((self._cfg).Pic)
-    end
+    self._prizeImg1:LoadImage(self._cfg.Pic)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureProbabiltyItem.ItemBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISimpleHauteCoutureProbabiltyItem:ItemBtnOnClick(go)
   if self._callback then
-    (self._callback)((self._cfg).ItemID, (go.transform).position)
+    self._callback(self._cfg.ItemID, go.transform.position)
   end
 end
-
-

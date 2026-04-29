@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_role/ui_main_lobby_role.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyRole", UICustomWidget)
 UIMainLobbyRole = UIMainLobbyRole
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyRole.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyRole:OnShow()
   self._isShow = true
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
-  self._signInModule = (GameGlobal.GetModule)(SignInModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
+  self._signInModule = GameGlobal.GetModule(SignInModule)
   self._playerInfoAnim = self:GetUIComponent("Animation", "UIMainLobbyRole")
   self._head_bg = self:GetUIComponent("UICircleMaskLoader", "headbg")
   self._head_icon = self:GetUIComponent("RawImageLoader", "head")
@@ -44,263 +37,197 @@ UIMainLobbyRole.OnShow = function(self)
   self:OnItemCountChange()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.OnHide = function(self)
-  -- function num : 0_1
+function UIMainLobbyRole:OnHide()
   self._isShow = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.OnAfterUILayerChanged = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI((self.uiOwner):GetName())
+function UIMainLobbyRole:OnAfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self.uiOwner:GetName())
   if topui then
     self:CheckRed()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.OnItemCountChange = function(self)
-  -- function num : 0_3
+function UIMainLobbyRole:OnItemCountChange()
   self:PlayerInfo()
   self:CheckRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.CheckRed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(self.Task_RoleImageInfo, self)
+function UIMainLobbyRole:CheckRed()
+  TaskManager:GetInstance():StartTask(self.Task_RoleImageInfo, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.InfoBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_PlayerInfoController"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyRole:InfoBtnOnClick()
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_PlayerInfoController"
+  }, true)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Role)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_PLAYER_INFO)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_PLAYER_INFO)
   self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.MainLobby)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.PlayerInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local nPlayerExp = (self._roleModule):GetRoleExp()
-  local nPlayerLevel = (HelperProxy:GetInstance()):GetLvByExp(nPlayerExp)
-  ;
-  (self._levelText):SetText(tostring(nPlayerLevel))
+function UIMainLobbyRole:PlayerInfo()
+  local nPlayerExp = self._roleModule:GetRoleExp()
+  local nPlayerLevel = HelperProxy:GetInstance():GetLvByExp(nPlayerExp)
+  self._levelText:SetText(tostring(nPlayerLevel))
   local expPercent = 0
-  if nPlayerLevel == (HelperProxy:GetInstance()):GetMaxLevel() then
+  if nPlayerLevel == HelperProxy:GetInstance():GetMaxLevel() then
     expPercent = 1
   else
-    local curLvExp = (HelperProxy:GetInstance()):GetLevelExp(nPlayerLevel)
-    local nextLvExp = (HelperProxy:GetInstance()):GetLevelExp(nPlayerLevel + 1)
+    local curLvExp = HelperProxy:GetInstance():GetLevelExp(nPlayerLevel)
+    local nextLvExp = HelperProxy:GetInstance():GetLevelExp(nPlayerLevel + 1)
     local deltaExp = nextLvExp - curLvExp
-    if deltaExp > 0 then
+    if 0 < deltaExp then
       expPercent = (nPlayerExp - curLvExp) / deltaExp
     end
   end
-  do
-    local txtFilling = ((self._levelText).gameObject):GetComponent("ArtFont")
-    txtFilling.Division = expPercent
-    ;
-    (self._playerNameText):SetText((self._roleModule):GetName())
-    ;
-    (self._playerIDText1):SetText((StringTable.Get)("str_player_info_id"))
-    ;
-    (self._playerIDText2):SetText((self._loginModule):GetRoleShowID())
-    self:PlayerHeader()
-  end
+  local txtFilling = self._levelText.gameObject:GetComponent("ArtFont")
+  txtFilling.Division = expPercent
+  self._playerNameText:SetText(self._roleModule:GetName())
+  self._playerIDText1:SetText(StringTable.Get("str_player_info_id"))
+  self._playerIDText2:SetText(self._loginModule:GetRoleShowID())
+  self:PlayerHeader()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.PlayerHeader = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local playerInfo = (self._roleModule):UI_GetPlayerInfo()
+function UIMainLobbyRole:PlayerHeader()
+  local playerInfo = self._roleModule:UI_GetPlayerInfo()
   local headIcon = playerInfo.m_nHeadImageID
-  local cfg_header = (Cfg.cfg_role_head_image)[headIcon]
+  local cfg_header = Cfg.cfg_role_head_image[headIcon]
   if cfg_header then
-    (self._head_icon):LoadImage(cfg_header.Icon)
-    ;
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._head_icon_rect, cfg_header.Tag)
+    self._head_icon:LoadImage(cfg_header.Icon)
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._head_icon_rect, cfg_header.Tag)
   else
-    ;
-    (Log.fatal)("###main - cfg_header is nil ! id - ", headIcon)
+    Log.fatal("###main - cfg_header is nil ! id - ", headIcon)
   end
   local headFrame = playerInfo.m_nHeadFrameID
   if not headFrame or headFrame == 0 then
-    headFrame = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
+    headFrame = HelperProxy:GetInstance():GetHeadFrameDefaultID()
   end
-  local cfg_head_frame = (Cfg.cfg_role_head_frame)[headFrame]
-  ;
-  (self._head_frame):LoadImage(cfg_head_frame.Icon)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self._head_bg_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self._head_bg_mask_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self._head_frame_rect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self._head_root_rect, RoleHeadFrameSizeType.Size2)
+  local cfg_head_frame = Cfg.cfg_role_head_frame[headFrame]
+  self._head_frame:LoadImage(cfg_head_frame.Icon)
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self._head_bg_rect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self._head_bg_mask_rect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self._head_frame_rect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self._head_root_rect, RoleHeadFrameSizeType.Size2)
   local headBg = playerInfo.m_nHeadColorID
-  local cfg_head_bg = (Cfg.cfg_player_head_bg)[headBg]
-  if not cfg_head_bg then
-    cfg_head_bg = (Cfg.cfg_player_head_bg)[1]
-  end
-  ;
-  (self._head_bg):LoadImage(cfg_head_bg.Icon)
-  ;
-  (UIWorldBossHelper.InitSelfDanBadgeSimple)(self._head_dan_badge_gen, self._head_dan_badge_gen_go, self._head_dan_badge_gen_rect)
+  local cfg_head_bg = Cfg.cfg_player_head_bg[headBg]
+  cfg_head_bg = cfg_head_bg or Cfg.cfg_player_head_bg[1]
+  self._head_bg:LoadImage(cfg_head_bg.Icon)
+  UIWorldBossHelper.InitSelfDanBadgeSimple(self._head_dan_badge_gen, self._head_dan_badge_gen_go, self._head_dan_badge_gen_rect)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.UI_GetHeadFrameList = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg = (Cfg.cfg_role_head_frame)({})
+function UIMainLobbyRole:UI_GetHeadFrameList()
+  local cfg = Cfg.cfg_role_head_frame({})
   local frameList = {}
-  for i,v in (HelperProxy:GetInstance()):pairsByKeys(cfg) do
+  for i, v in HelperProxy:GetInstance():pairsByKeys(cfg) do
     local headFrame = {}
     headFrame.ID = v[1]
     headFrame.Icon = v[3]
-    ;
-    (table.insert)(frameList, headFrame)
+    table.insert(frameList, headFrame)
   end
   return frameList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.CheckHeadRedPoint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local showRed = (self._signInModule):HaveTotalLoginReward()
-  if not showRed then
-    showRed = (self._signInModule):IsReSignInToday()
-  end
+function UIMainLobbyRole:CheckHeadRedPoint()
+  local showRed = self._signInModule:HaveTotalLoginReward()
+  showRed = showRed or self._signInModule:IsReSignInToday()
   if showRed then
     return true
   end
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   if socialModule:HaveNewMsg() or socialModule:HaveNewInvitation() then
     return true
   end
   self._itemModule = self:GetModule(ItemModule)
-  local headRed = (self._itemModule):HasNewSubTypeItem(ItemSubType.ItemSubType_Head, true)
-  if not (self._roleModule):CheckLimitedShowRed(ItemSubType.ItemSubType_Head) then
-    local headFrameRed = (self._itemModule):HasNewSubTypeItem(ItemSubType.ItemSubType_HeadFrame, true)
-    if not (self._roleModule):CheckLimitedShowRed(ItemSubType.ItemSubType_HeadFrame) then
-      self._tmpheadList = (self._roleModule):UI_GetHeadImageListByTag(0)
-      for i = 1, #self._tmpheadList do
-        local headitem = (self._tmpheadList)[i] or nil
-        local isOpen = false
-        local canUnLock = false
-        do
-          do
-            if headitem then
-              local lockInfo = (self._roleModule):UI_GetHeadImageLockInfo(headitem.m_nImageID)
-              if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
-                isOpen = true
-              end
-              if not isOpen then
-                canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
-                ;
-                (Log.debug)(lockInfo, canUnLock)
-              end
-            end
-            if not isOpen and canUnLock then
-              headRed = true
-            end
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
+  local headRed = self._itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_Head, true)
+  headRed = self._roleModule:CheckLimitedShowRed(ItemSubType.ItemSubType_Head) or headRed
+  local headFrameRed = self._itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_HeadFrame, true)
+  headFrameRed = self._roleModule:CheckLimitedShowRed(ItemSubType.ItemSubType_HeadFrame) or headFrameRed
+  self._tmpheadList = self._roleModule:UI_GetHeadImageListByTag(0)
+  for i = 1, #self._tmpheadList do
+    local headitem = self._tmpheadList[i] or nil
+    local isOpen = false
+    local canUnLock = false
+    if headitem then
+      local lockInfo = self._roleModule:UI_GetHeadImageLockInfo(headitem.m_nImageID)
+      if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
+        isOpen = true
       end
-      self._tmpHeadFrameList = self:UI_GetHeadFrameList()
-      for i = 1, #self._tmpHeadFrameList do
-        local hide = false
-        local frame = (self._tmpHeadFrameList)[i] or nil
-        local canUnLock = false
-        local isOpen = false
-        do
-          do
-            if frame then
-              local lockInfo = (self._roleModule):UI_GetHeadFrameLockInfo(frame.ID)
-              if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
-                isOpen = true
-              end
-              if not isOpen then
-                canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
-              end
-            end
-            if not isOpen and canUnLock then
-              headFrameRed = true
-            end
-            -- DECOMPILER ERROR at PC152: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
+      if not isOpen then
+        canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
+        Log.debug(lockInfo, canUnLock)
       end
-      if headRed or headFrameRed then
-        return true
-      end
-      local titleRed = (self._itemModule):HasNewSubTypeItem(ItemSubType.ItemSubType_Title, true)
-      if (self._roleModule):CheckLimitedShowRed(ItemSubType.ItemSubType_Title) or titleRed then
-        return true
-      end
-      local emblazonryRed = (self._itemModule):HasNewSubTypeItem(ItemSubType.ItemSubType_Fifure, true)
-      if (self._roleModule):CheckLimitedShowRed(ItemSubType.ItemSubType_Title) or emblazonryRed then
-        return true
-      end
-      self.chessCfg = (Cfg.cfg_item_chess)({})
-      self.itemModule = (GameGlobal.GetModule)(ItemModule)
-      for _,v in pairs(self.chessCfg) do
-        local items = (self.itemModule):GetItemByTempId(v.ID)
-        for _,vitem in pairs(items) do
-          self.item = vitem
-        end
-        if self.item and (self.item):IsNewOverlay() then
-          return true
-        end
-      end
-      local roleModule = (GameGlobal.GetModule)(RoleModule)
-      if not (LocalDB.HasKey)("FirstAutoFightRecord" .. roleModule:GetPstId()) then
-        return true
-      end
-      return false
+    end
+    if not isOpen and canUnLock then
+      headRed = true
     end
   end
+  self._tmpHeadFrameList = self:UI_GetHeadFrameList()
+  for i = 1, #self._tmpHeadFrameList do
+    local hide = false
+    local frame = self._tmpHeadFrameList[i] or nil
+    local canUnLock = false
+    local isOpen = false
+    if frame then
+      local lockInfo = self._roleModule:UI_GetHeadFrameLockInfo(frame.ID)
+      if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
+        isOpen = true
+      end
+      if not isOpen then
+        canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
+      end
+    end
+    if not isOpen and canUnLock then
+      headFrameRed = true
+    end
+  end
+  if headRed or headFrameRed then
+    return true
+  end
+  local titleRed = self._itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_Title, true)
+  titleRed = self._roleModule:CheckLimitedShowRed(ItemSubType.ItemSubType_Title) or titleRed
+  if titleRed then
+    return true
+  end
+  local emblazonryRed = self._itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_Fifure, true)
+  emblazonryRed = self._roleModule:CheckLimitedShowRed(ItemSubType.ItemSubType_Title) or emblazonryRed
+  if emblazonryRed then
+    return true
+  end
+  self.chessCfg = Cfg.cfg_item_chess({})
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  for _, v in pairs(self.chessCfg) do
+    local items = self.itemModule:GetItemByTempId(v.ID)
+    for _, vitem in pairs(items) do
+      self.item = vitem
+    end
+    if self.item and self.item:IsNewOverlay() then
+      return true
+    end
+  end
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  if not LocalDB.HasKey("FirstAutoFightRecord" .. roleModule:GetPstId()) then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.Task_RoleImageInfo = function(self, TT)
-  -- function num : 0_10
-  local res = (self._roleModule):Request_RoleImageInfo(TT)
+function UIMainLobbyRole:Task_RoleImageInfo(TT)
+  local res = self._roleModule:Request_RoleImageInfo(TT)
   if res:GetSucc() and self._isShow then
     local red = self:CheckHeadRedPoint()
     local friendRed = self:_GetFriendRedStatus()
-    ;
-    (self._redGo):SetActive(red or friendRed)
+    self._redGo:SetActive(red or friendRed)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole._GetFriendRedStatus = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+function UIMainLobbyRole:_GetFriendRedStatus()
+  local socialModule = GameGlobal.GetModule(SocialModule)
   if socialModule:HaveNewMsg() or socialModule:HaveNewInvitation() then
     return true
   else
@@ -308,44 +235,21 @@ UIMainLobbyRole._GetFriendRedStatus = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole._RefreshFriendRedStatus = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(self.Task_RoleImageInfo, self)
+function UIMainLobbyRole:_RefreshFriendRedStatus()
+  TaskManager:GetInstance():StartTask(self.Task_RoleImageInfo, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyRole.SetRoleCanvasGroup = function(self, value)
-  -- function num : 0_13 , upvalues : _ENV
+function UIMainLobbyRole:SetRoleCanvasGroup(value)
   if self._artFont then
-    local upColor = (self._artFont).UpColor
-    local downColor = (self._artFont).DownColor
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._artFont).UpColor = Color(upColor.r, upColor.g, upColor.b, value)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._artFont).DownColor = Color(downColor.r, downColor.g, downColor.b, value)
-    local outline1 = (self._playerIDText1Outline).effectColor
-    local outline2 = (self._playerIDText2Outline).effectColor
-    local outline3 = (self._playerNameTextOutline).effectColor
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._playerIDText1Outline).effectColor = Color(outline1.r, outline1.g, outline1.b, value)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._playerIDText2Outline).effectColor = Color(outline2.r, outline2.g, outline2.b, value)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._playerNameTextOutline).effectColor = Color(outline3.r, outline3.g, outline3.b, value)
+    local upColor = self._artFont.UpColor
+    local downColor = self._artFont.DownColor
+    self._artFont.UpColor = Color(upColor.r, upColor.g, upColor.b, value)
+    self._artFont.DownColor = Color(downColor.r, downColor.g, downColor.b, value)
+    local outline1 = self._playerIDText1Outline.effectColor
+    local outline2 = self._playerIDText2Outline.effectColor
+    local outline3 = self._playerNameTextOutline.effectColor
+    self._playerIDText1Outline.effectColor = Color(outline1.r, outline1.g, outline1.b, value)
+    self._playerIDText2Outline.effectColor = Color(outline2.r, outline2.g, outline2.b, value)
+    self._playerNameTextOutline.effectColor = Color(outline3.r, outline3.g, outline3.b, value)
   end
 end
-
-

@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_refresh_grid_by_board_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectRefreshGridByBoardIDResult", SkillEffectResultBase)
 SkillEffectRefreshGridByBoardIDResult = SkillEffectRefreshGridByBoardIDResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectRefreshGridByBoardIDResult.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectRefreshGridByBoardIDResult:Constructor()
   self._gridPieceData = nil
   self._destroyTrapEntityIDList = {}
   self._sceneChangeTimes = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRefreshGridByBoardIDResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectRefreshGridByBoardIDResult:GetEffectType()
   return SkillEffectType.RefreshGridByBoardID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRefreshGridByBoardIDResult.SetGridPieceData = function(self, gridPieceData)
-  -- function num : 0_2
+function SkillEffectRefreshGridByBoardIDResult:SetGridPieceData(gridPieceData)
   self._gridPieceData = gridPieceData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRefreshGridByBoardIDResult.GetGridPieceData = function(self)
-  -- function num : 0_3
+function SkillEffectRefreshGridByBoardIDResult:GetGridPieceData()
   return self._gridPieceData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRefreshGridByBoardIDResult.AddDestroyTrapEntityIDList = function(self, entityID)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._destroyTrapEntityIDList, entityID)
+function SkillEffectRefreshGridByBoardIDResult:AddDestroyTrapEntityIDList(entityID)
+  table.insert(self._destroyTrapEntityIDList, entityID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRefreshGridByBoardIDResult.GetDestroyTrapEntityIDList = function(self)
-  -- function num : 0_5
+function SkillEffectRefreshGridByBoardIDResult:GetDestroyTrapEntityIDList()
   return self._destroyTrapEntityIDList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRefreshGridByBoardIDResult.SetSceneChangeTimes = function(self, changeTimes)
-  -- function num : 0_6
+function SkillEffectRefreshGridByBoardIDResult:SetSceneChangeTimes(changeTimes)
   self._sceneChangeTimes = changeTimes
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRefreshGridByBoardIDResult.GetSceneChangeTimes = function(self)
-  -- function num : 0_7
+function SkillEffectRefreshGridByBoardIDResult:GetSceneChangeTimes()
   return self._sceneChangeTimes
 end
-
-

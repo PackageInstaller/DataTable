@@ -1,78 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_driller_to_most_spacious_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveDrillerToMostSpaciousArea", ActionMoveBase)
 ActionMoveDrillerToMostSpaciousArea = ActionMoveDrillerToMostSpaciousArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveDrillerToMostSpaciousArea.Constructor = function(self)
-  -- function num : 0_0
+function ActionMoveDrillerToMostSpaciousArea:Constructor()
   self:_Reset()
   self._targetPosAndRound = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveDrillerToMostSpaciousArea.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveSkillTargetCountMost.super).Reset)(self)
+function ActionMoveDrillerToMostSpaciousArea:Reset()
+  ActionMoveSkillTargetCountMost.super.Reset(self)
   self:_Reset()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveDrillerToMostSpaciousArea._Reset = function(self)
-  -- function num : 0_2
+function ActionMoveDrillerToMostSpaciousArea:_Reset()
   self._targetPos = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveDrillerToMostSpaciousArea.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_3 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function ActionMoveDrillerToMostSpaciousArea:InitTargetPosList(listPosTarget)
+  local battleStatCmpt = self._world:BattleStat()
   local levelTotalRoundCount = battleStatCmpt:GetLevelTotalRoundCount()
-  local targetPos = (self._targetPosAndRound)[levelTotalRoundCount]
+  local targetPos = self._targetPosAndRound[levelTotalRoundCount]
   if targetPos then
     self._targetPos = targetPos
-    return 
+    return
   end
   local trapID1 = self:GetLogicData(-1)
   local trapID2 = self:GetLogicData(-2)
   local tarTrapIDList = {}
   if trapID1 then
-    (table.insert)(tarTrapIDList, trapID1)
+    table.insert(tarTrapIDList, trapID1)
   end
   if trapID2 then
-    (table.insert)(tarTrapIDList, trapID2)
+    table.insert(tarTrapIDList, trapID2)
   end
-  local posSelf = (self.m_entityOwn):GetGridPosition()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local posSelf = self.m_entityOwn:GetGridPosition()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local blockFlag = boardServiceLogic:GetEntityMoveBlockFlag(self.m_entityOwn)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
   local scopeCalc = SkillScopeCalculator_DrillerMoveTargetPos:New(skillCalculater)
-  local scopeResult = scopeCalc:CalcRange(SkillScopeType.DrillerMoveTargetPos, {trapIDList = tarTrapIDList}, posSelf, ((self.m_entityOwn):BodyArea()):GetArea(), (self.m_entityOwn):GetGridDirection(), SkillTargetType.Board, posSelf, self.m_entityOwn)
+  local scopeResult = scopeCalc:CalcRange(SkillScopeType.DrillerMoveTargetPos, {trapIDList = tarTrapIDList}, posSelf, self.m_entityOwn:BodyArea():GetArea(), self.m_entityOwn:GetGridDirection(), SkillTargetType.Board, posSelf, self.m_entityOwn)
   local tarPos = posSelf
   local range = scopeResult:GetAttackRange()
-  if range and #range > 0 then
+  if range and 0 < #range then
     tarPos = range[1]
   end
   self._targetPos = tarPos
-  -- DECOMPILER ERROR at PC85: Confused about usage of register: R17 in 'UnsetPending'
-
-  ;
-  (self._targetPosAndRound)[levelTotalRoundCount] = self._targetPos
+  self._targetPosAndRound[levelTotalRoundCount] = self._targetPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveDrillerToMostSpaciousArea.FindNewTargetPos = function(self)
-  -- function num : 0_4
+function ActionMoveDrillerToMostSpaciousArea:FindNewTargetPos()
   return self._targetPos
 end
-
-

@@ -1,32 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_random_rect_and_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_RandomRectAndCount", SkillScopeCalculator_Base)
 SkillScopeCalculator_RandomRectAndCount = SkillScopeCalculator_RandomRectAndCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_RandomRectAndCount.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local validGridList = (self._gridFilter):GetAllValidGridPosList()
+function SkillScopeCalculator_RandomRectAndCount:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local validGridList = self._gridFilter:GetAllValidGridPosList()
   local validGridListCount = #validGridList
   local scopeGridList = {}
   local count = scopeParam[1]
   local column = scopeParam[2]
   local rows = scopeParam[3]
-  while #scopeGridList < count do
-    local rand = (self._gridFilter):_GetRandomNumber(1, validGridListCount)
+  while count > #scopeGridList do
+    local rand = self._gridFilter:_GetRandomNumber(1, validGridListCount)
     local gridList = self:_CalcLeftDownColumnsAndRowsRange(validGridList[rand], column, rows)
-    if not gridList or #gridList ~= 0 then
-      (table.insert)(scopeGridList, gridList)
+    if gridList and #gridList ~= 0 then
+      table.insert(scopeGridList, gridList)
     end
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.RandomRectAndCount, centerPos, scopeGridList, validGridList)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.RandomRectAndCount, centerPos, scopeGridList, validGridList)
+  return result
 end
-
-

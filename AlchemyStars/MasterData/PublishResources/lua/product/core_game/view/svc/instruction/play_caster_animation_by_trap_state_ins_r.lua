@@ -1,36 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_animation_by_trap_state_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterAnimationByTrapStateInstruction", BaseInstruction)
 PlayCasterAnimationByTrapStateInstruction = PlayCasterAnimationByTrapStateInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterAnimationByTrapStateInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayCasterAnimationByTrapStateInstruction:Constructor(paramList)
   self._openAnimName = paramList.openAnimName
   self._closeAnimName = paramList.closeAnimName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterAnimationByTrapStateInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterAnimationByTrapStateInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local e = casterEntity
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      e = cSuperEntity:GetSuperEntity()
-    end
-    local renderAttrCmpt = e:RenderAttributes()
-    if renderAttrCmpt:GetAttribute("OpenState") and renderAttrCmpt:GetAttribute("OpenState") == 1 then
-      e:SetAnimatorControllerTriggers({self._openAnimName})
-    else
-      e:SetAnimatorControllerTriggers({self._closeAnimName})
-    end
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    e = cSuperEntity:GetSuperEntity()
+  end
+  local renderAttrCmpt = e:RenderAttributes()
+  if renderAttrCmpt:GetAttribute("OpenState") and renderAttrCmpt:GetAttribute("OpenState") == 1 then
+    e:SetAnimatorControllerTriggers({
+      self._openAnimName
+    })
+  else
+    e:SetAnimatorControllerTriggers({
+      self._closeAnimName
+    })
   end
 end
-
-

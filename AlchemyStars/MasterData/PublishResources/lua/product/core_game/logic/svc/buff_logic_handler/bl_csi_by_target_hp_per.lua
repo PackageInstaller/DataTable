@@ -1,69 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_csi_by_target_hp_per.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillIncreaseByTargetHPPercent", BuffLogicBase)
 BuffLogicChangeSkillIncreaseByTargetHPPercent = BuffLogicChangeSkillIncreaseByTargetHPPercent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillIncreaseByTargetHPPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillIncreaseByTargetHPPercent:Constructor(buffInstance, logicParam)
   self._changeValue = logicParam.changeValue or 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = logicParam.effectList
+  self._buffInstance._effectList = logicParam.effectList
   self._maxHpPercent = logicParam.maxHpPercent
   self._entity = buffInstance._entity
   self._targetIsTeam = logicParam.targetIsTeam or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillIncreaseByTargetHPPercent.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillIncreaseByTargetHPPercent:DoLogic(notify)
   if not notify.GetDefenderEntity then
-    return 
+    return
   end
   local e = notify:GetDefenderEntity()
   if self._targetIsTeam == 1 then
-    e = ((self._world):Player()):GetCurrentTeamEntity()
+    e = self._world:Player():GetCurrentTeamEntity()
   end
   local attrCmpt = e:Attributes()
   local max_hp = attrCmpt:CalcMaxHp()
-  local cur_hp = (e:Attributes()):GetCurrentHP()
+  local cur_hp = e:Attributes():GetCurrentHP()
   local losePercent = 1 - cur_hp / max_hp
   local changeValue = 0
   if losePercent ~= 0 then
-    if self._maxHpPercent and self._maxHpPercent < losePercent then
+    if self._maxHpPercent and losePercent > self._maxHpPercent then
       losePercent = self._maxHpPercent
     end
     changeValue = losePercent * self._changeValue
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
+  for _, paramType in ipairs(self._buffInstance._effectList) do
     if changeValue ~= 0 then
-      (self._buffLogicService):ChangeSkillIncrease(self._entity, (self._buffInstance)._buffSeq, paramType, changeValue)
+      self._buffLogicService:ChangeSkillIncrease(self._entity, self._buffInstance._buffSeq, paramType, changeValue)
     end
   end
 end
 
 _class("BuffLogicRemoveSkillIncreaseByTargetHPPercent", BuffLogicBase)
 BuffLogicRemoveSkillIncreaseByTargetHPPercent = BuffLogicRemoveSkillIncreaseByTargetHPPercent
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillIncreaseByTargetHPPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillIncreaseByTargetHPPercent:Constructor(buffInstance, logicParam)
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillIncreaseByTargetHPPercent.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillIncrease(self._entity, (self._buffInstance):BuffSeq(), paramType)
+function BuffLogicRemoveSkillIncreaseByTargetHPPercent:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillIncrease(self._entity, self._buffInstance:BuffSeq(), paramType)
   end
 end
-
-

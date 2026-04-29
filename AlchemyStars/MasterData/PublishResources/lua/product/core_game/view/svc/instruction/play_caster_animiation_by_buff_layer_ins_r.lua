@@ -1,47 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_animiation_by_buff_layer_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterAnimationByBuffLayerInstruction", BaseInstruction)
 PlayCasterAnimationByBuffLayerInstruction = PlayCasterAnimationByBuffLayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterAnimationByBuffLayerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
-  local strNameList = (string.split)(paramList.animNameList, "|")
-  local strLayerList = (string.split)(paramList.layerCountList, "|")
+function PlayCasterAnimationByBuffLayerInstruction:Constructor(paramList)
+  local strNameList = string.split(paramList.animNameList, "|")
+  local strLayerList = string.split(paramList.layerCountList, "|")
   self._animNameList = {}
-  for _,value in ipairs(strNameList) do
-    (table.insert)(self._animNameList, value)
+  for _, value in ipairs(strNameList) do
+    table.insert(self._animNameList, value)
   end
   self._buffLayerCountList = {}
-  for _,value in ipairs(strLayerList) do
-    (table.insert)(self._buffLayerCountList, tonumber(value))
+  for _, value in ipairs(strLayerList) do
+    table.insert(self._buffLayerCountList, tonumber(value))
   end
   if #self._animNameList ~= #self._buffLayerCountList then
-    (Log.fatal)("PlayCasterAnimationByBuffLayer: count error.")
+    Log.fatal("PlayCasterAnimationByBuffLayer: count error.")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterAnimationByBuffLayerInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayCasterAnimationByBuffLayerInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local damageResult = routineComponent:GetEffectResultByArray(SkillEffectType.Damage)
   if not damageResult then
-    return 
+    return
   end
   local layerCount = damageResult:GetBuffLayerCountForDamage()
-  local animName = (self._animNameList)[1]
-  for index,value in ipairs(self._buffLayerCountList) do
+  local animName = self._animNameList[1]
+  for index, value in ipairs(self._buffLayerCountList) do
     if value <= layerCount then
-      animName = (self._animNameList)[index]
+      animName = self._animNameList[index]
     end
   end
   casterEntity:SetAnimatorControllerTriggers({animName})
 end
-
-

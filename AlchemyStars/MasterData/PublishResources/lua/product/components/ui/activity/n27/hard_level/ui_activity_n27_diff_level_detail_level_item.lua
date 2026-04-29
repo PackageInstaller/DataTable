@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/hard_level/ui_activity_n27_diff_level_detail_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN27DiffLevelDetailLevelItem", UICustomWidget)
 UIActivityN27DiffLevelDetailLevelItem = UIActivityN27DiffLevelDetailLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN27DiffLevelDetailLevelItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN27DiffLevelDetailLevelItem:OnShow(uiParam)
   self._atlas = self:GetAsset("UIDiffMission.spriteatlas", LoadType.SpriteAtlas)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevelDetailLevelItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIActivityN27DiffLevelDetailLevelItem:GetComponents()
   self._nameTex = self:GetUIComponent("UILocalizationText", "name")
   self._finishGo = self:GetGameObject("finish")
   self._teamPool = self:GetUIComponent("UISelectObjectPath", "team")
@@ -24,40 +14,28 @@ UIActivityN27DiffLevelDetailLevelItem.GetComponents = function(self)
   self._typeImg = self:GetUIComponent("Image", "type")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevelDetailLevelItem.SetData = function(self, data, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN27DiffLevelDetailLevelItem:SetData(data, cb)
   self._data = data
   self._cb = cb
-  ;
-  (self._nameTex):SetText((self._data):GetName())
-  ;
-  (self._finishGo):SetActive((self._data):IsComplete())
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = (self._data):GetPosition()
-  local sprite = nil
-  if (self._data):GetLevelType() == DiffMissionType.Boss then
-    sprite = (self._atlas):GetSprite("map_black_icon15")
+  self._nameTex:SetText(self._data:GetName())
+  self._finishGo:SetActive(self._data:IsComplete())
+  self._rect.anchoredPosition = self._data:GetPosition()
+  local sprite
+  if self._data:GetLevelType() == DiffMissionType.Boss then
+    sprite = self._atlas:GetSprite("map_black_icon15")
   else
-    sprite = (self._atlas):GetSprite("map_black_icon12")
+    sprite = self._atlas:GetSprite("map_black_icon12")
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._typeImg).sprite = sprite
-  local team = (self._data):GetTeam()
-  ;
-  (self._teamPool):SpawnObjects("UIActivityN27DiffLevelDetailTeamItem", 5)
-  local pools = (self._teamPool):GetAllSpawnList()
-  if not (self._data):IsComplete() then
+  self._typeImg.sprite = sprite
+  local team = self._data:GetTeam()
+  self._teamPool:SpawnObjects("UIActivityN27DiffLevelDetailTeamItem", 5)
+  local pools = self._teamPool:GetAllSpawnList()
+  if not self._data:IsComplete() then
     for i = 1, #pools do
       local item = pools[i]
       item:SetData(0)
     end
-    return 
+    return
   end
   for i = 1, #pools do
     local item = pools[i]
@@ -69,13 +47,8 @@ UIActivityN27DiffLevelDetailLevelItem.SetData = function(self, data, cb)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN27DiffLevelDetailLevelItem.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityN27DiffLevelDetailLevelItem:BgOnClick(go)
   if self._cb then
-    (self._cb)(self._data)
+    self._cb(self._data)
   end
 end
-
-

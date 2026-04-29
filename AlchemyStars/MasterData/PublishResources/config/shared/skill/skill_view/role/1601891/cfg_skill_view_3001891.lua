@@ -1,17 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1601891/cfg_skill_view_3001891.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayAudio,audioID = 9037,audioType=1; PlaySkillCGEffect,effectRes = eff_ui_cutin_red.prefab,petID = 1600301,waitTime = 2000; "}
-}
-, 
-{2, 2, 0, 2, 1, 0, 
-{" PlayTurnToPickUpPosDirection,pickUpIndex=1,waitTime=0; PlayCasterAnimation,animName = AtkUlt1; PlayCasterBindEffect,effectID=160189116; PlayCasterBindEffect,effectID=160189117; PlayCameraEffect,effectID=160189118; PlayAudio,audioID = 2605,audioType=1; PlayCasterBindEffect,effectID=160189115; Wait,waitTime=1000; DataSelectScopeGridRange,effectType=1,damageInfoIndex=1; DataSortScopeGridRange,sortType=3; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=playRangeEffect; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; PlayChangeBuffLayer; Wait,waitTime=1800; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID = 9037,audioType=1; PlaySkillCGEffect,effectRes = eff_ui_cutin_red.prefab,petID = 1600301,waitTime = 2000; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " PlayTurnToPickUpPosDirection,pickUpIndex=1,waitTime=0; PlayCasterAnimation,animName = AtkUlt1; PlayCasterBindEffect,effectID=160189116; PlayCasterBindEffect,effectID=160189117; PlayCameraEffect,effectID=160189118; PlayAudio,audioID = 2605,audioType=1; PlayCasterBindEffect,effectID=160189115; Wait,waitTime=1000; DataSelectScopeGridRange,effectType=1,damageInfoIndex=1; DataSortScopeGridRange,sortType=3; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=playRangeEffect; DataSelectNextScopeGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; PlayChangeBuffLayer; Wait,waitTime=1800; "
+    }
+  }
 }
 return config, "ID", key
-

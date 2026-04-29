@@ -1,17 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/cfg_skill_view_280100102.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" Jump,condition=CheckTrapOpenStateChange,result=0,param=1,goto=phaseEnd; PlayDeleteCasterEffect,effectIDList=3849|3850|3851; PlayCasterBindEffect,effectID=3852; "}
-}
-, 
-{2, 2, 0, 1, 0, 0, 
-{" Jump,condition=CheckTrapOpenStateChange,result=0,param=0,goto=phaseEnd; PlayDeleteCasterEffect,effectIDList=3849|3850|3851; PlayCasterBindEffect,effectID=3853; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " Jump,condition=CheckTrapOpenStateChange,result=0,param=1,goto=phaseEnd; PlayDeleteCasterEffect,effectIDList=3849|3850|3851; PlayCasterBindEffect,effectID=3852; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    0,
+    0,
+    {
+      " Jump,condition=CheckTrapOpenStateChange,result=0,param=0,goto=phaseEnd; PlayDeleteCasterEffect,effectIDList=3849|3850|3851; PlayCasterBindEffect,effectID=3853; "
+    }
+  }
 }
 return config, "ID", key
-

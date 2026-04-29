@@ -1,21 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2908901/cfg_skill_view_28089012.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterLegacyAnimation,animNames=eff_2908901_skill_01_death; PlayAudio,audioID = 290890103,audioType=1; Wait,waitTime=1500; "}
-}
-, 
-{2, 2, 30, 1, 1, 1000, 
-{gridEffectID = 0, bestEffectTime = 0, finishDelayTime = 1000}
-}
-, 
-{3, 3, 23, 1, 1, 1000, 
-{showTime = 0}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterLegacyAnimation,animNames=eff_2908901_skill_01_death; PlayAudio,audioID = 290890103,audioType=1; Wait,waitTime=1500; "
+    }
+  },
+  {
+    2,
+    2,
+    30,
+    1,
+    1,
+    1000,
+    {
+      gridEffectID = 0,
+      bestEffectTime = 0,
+      finishDelayTime = 1000
+    }
+  },
+  {
+    3,
+    3,
+    23,
+    1,
+    1,
+    1000,
+    {showTime = 0}
+  }
 }
 return config, "ID", key
-

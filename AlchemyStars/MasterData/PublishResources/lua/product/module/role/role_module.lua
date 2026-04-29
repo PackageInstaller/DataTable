@@ -1,17 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/role/role_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RoleModule", GameModule)
 RoleModule = RoleModule
-SkillAnimationPermissionType = {Open = 1, Close = 2, Once = 3}
+SkillAnimationPermissionType = {
+  Open = 1,
+  Close = 2,
+  Once = 3
+}
 _enum("SkillAnimationPermissionType", SkillAnimationPermissionType)
 local SKILL_ANIMATION_SETTING_KEY = "SkillAnimationSettingKey"
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-RoleModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RoleModule:Constructor()
   self.m_char_info = MobileCharInfo:New()
   self.m_choose_painting = MobileChoosePainting:New()
   self.m_Level_info = {}
@@ -32,74 +29,51 @@ RoleModule.Constructor = function(self)
   self.is_push_login_ext_data = false
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventMinorChatResult, self.HandleCEventMinorChatResult, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushPropertyChange, self.HandlePropertyChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushModuleUnlocked, self.HandleModuleUnlocked, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushLevelChange, self.HandleLevelChange, self)
+function RoleModule:Init()
+  self.caller:RegisterPushHandler(CEventMinorChatResult, self.HandleCEventMinorChatResult, self)
+  self.caller:RegisterPushHandler(CEventPushPropertyChange, self.HandlePropertyChange, self)
+  self.caller:RegisterPushHandler(CEventPushModuleUnlocked, self.HandleModuleUnlocked, self)
+  self.caller:RegisterPushHandler(CEventPushLevelChange, self.HandleLevelChange, self)
   self:AttachEvent(GameEventType.UIChangeTeamLeader, self.ChangeTeamLeader)
   self:AttachEvent(GameEventType.MazeChangeTeamLeader, self.MazeChangeTeamLeader)
   self:AttachEvent(GameEventType.AppHome, self.TssSdkAppHome)
   self:AttachEvent(GameEventType.AppResume, self.TssSdkAppAppResume)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(CEventMinorChatResult)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushPropertyChange)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushModuleUnlocked)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushLevelChange)
+function RoleModule:Dispose()
+  self.caller:UnRegisterPushHandler(CEventMinorChatResult)
+  self.caller:UnRegisterPushHandler(CEventPushPropertyChange)
+  self.caller:UnRegisterPushHandler(CEventPushModuleUnlocked)
+  self.caller:UnRegisterPushHandler(CEventPushLevelChange)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Update = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (TSSSDKProxy:GetInstance()):Tick()
+function RoleModule:Update()
+  TSSSDKProxy:GetInstance():Tick()
   self:ReportTssData2Server()
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleInitCharInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function RoleModule:GameSingleInitCharInfo()
   local saveKey = "m_char_info"
   local jsonStr = PlayerPrefsGetPersonString(saveKey, nil)
-  do
-    if jsonStr ~= nil and jsonStr ~= "" then
-      local info = (cjson.decode)(jsonStr)
-      if info ~= nil then
-        self.m_char_info = info
-      end
+  if jsonStr ~= nil and jsonStr ~= "" then
+    local info = cjson.decode(jsonStr)
+    if info ~= nil then
+      self.m_char_info = info
     end
-    if self.m_char_info == nil or (self.m_char_info).m_nHeadImageID == 0 then
-      jsonStr = "{\"phy_point\":920,\"daily_vig_point\":0,\"tmServerBase\":1735118196,\"pstid\":0,\"title_used\":-1,\"_className\":\"MobileCharInfo\",\"guide_info\":{\"guide_id2count\":{},\"_className\":\"GuideInfo\"},\"m_nHeadFrameID\":1000,\"exp\":0,\"chapter_id\":0,\"vig_reward_state\":0,\"nick\":\"ass666\",\"m_dan\":0,\"light\":100,\"growth_quest_days\":1,\"ach_point\":0,\"unlock_modules\":4329324937215,\"double_res_num\":0,\"m_nHeadColorID\":1,\"m_grading\":0,\"m_nAmendNameCount\":0,\"level\":1,\"ext_flag\":0,\"fifure_used\":6500001,\"m_bBadgeSwitch\":true,\"m_nTotalLoginDays\":1,\"damage\":0,\"phy_last_time\":1735118196,\"active_token_accumulative\":0,\"active_token_num\":5,\"m_nTotalChangeLoginDays\":1,\"m_nHeadImageID\":1001,\"sailing_mission\":0,\"ach_reward_state\":0,\"phy_point_rate\":360,\"phy_point_max\":20,\"create_time\":1735095721,\"difficulty_mission\":0}"
-      local info = (cjson.decode)(jsonStr)
-      if info ~= nil then
-        self.m_char_info = info
-      end
+  end
+  if self.m_char_info == nil or self.m_char_info.m_nHeadImageID == 0 then
+    jsonStr = "{\"phy_point\":920,\"daily_vig_point\":0,\"tmServerBase\":1735118196,\"pstid\":0,\"title_used\":-1,\"_className\":\"MobileCharInfo\",\"guide_info\":{\"guide_id2count\":{},\"_className\":\"GuideInfo\"},\"m_nHeadFrameID\":1000,\"exp\":0,\"chapter_id\":0,\"vig_reward_state\":0,\"nick\":\"ass666\",\"m_dan\":0,\"light\":100,\"growth_quest_days\":1,\"ach_point\":0,\"unlock_modules\":4329324937215,\"double_res_num\":0,\"m_nHeadColorID\":1,\"m_grading\":0,\"m_nAmendNameCount\":0,\"level\":1,\"ext_flag\":0,\"fifure_used\":6500001,\"m_bBadgeSwitch\":true,\"m_nTotalLoginDays\":1,\"damage\":0,\"phy_last_time\":1735118196,\"active_token_accumulative\":0,\"active_token_num\":5,\"m_nTotalChangeLoginDays\":1,\"m_nHeadImageID\":1001,\"sailing_mission\":0,\"ach_reward_state\":0,\"phy_point_rate\":360,\"phy_point_max\":20,\"create_time\":1735095721,\"difficulty_mission\":0}"
+    local info = cjson.decode(jsonStr)
+    if info ~= nil then
+      self.m_char_info = info
     end
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.InitCharInfo = function(self, charinfo)
-  -- function num : 0_5 , upvalues : _ENV
+function RoleModule:InitCharInfo(charinfo)
   if GameSingle then
     self:GameSingleInitCharInfo()
-    return 
+    return
   end
   self.m_char_info = charinfo
   local time_mod = self:GetModule(SvrTimeModule)
@@ -107,28 +81,22 @@ RoleModule.InitCharInfo = function(self, charinfo)
   self.m_cur_login_time = charinfo.tmServerBase
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleInitChosePainting = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function RoleModule:GameSingleInitChosePainting()
   local saveKey = "m_choose_painting"
   local jsonStr = PlayerPrefsGetPersonString(saveKey, nil)
   if jsonStr ~= nil then
-    self.m_choose_painting = (cjson.decode)(jsonStr)
+    self.m_choose_painting = cjson.decode(jsonStr)
   end
   if self.m_choose_painting == nil then
     jsonStr = "{\"bgm_aircraft\":0,\"bgm_main\":0,\"bgm_homeland\":0,\"back_id\":2,\"board_pet\":-1,\"background_type\":1,\"_className\":\"MobileChoosePainting\",\"spine_id\":0,\"is_hand_operate\":false,\"background_scale\":1,\"background_y\":0,\"background_x\":0,\"skin_id\":-1,\"pet_grade\":-1,\"pet_template_id\":-1}"
-    self.m_choose_painting = (cjson.decode)(jsonStr)
+    self.m_choose_painting = cjson.decode(jsonStr)
   end
   if self.m_choose_painting == nil then
     self:CreateChoosePainting()
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.CreateChoosePainting = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function RoleModule:CreateChoosePainting()
   local info = MobileChoosePainting:New()
   info.pet_template_id = 1500331
   info.pet_grade = 10
@@ -147,263 +115,139 @@ RoleModule.CreateChoosePainting = function(self)
   self.m_choose_painting = info
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.InitChosePainting = function(self, choose_painting)
-  -- function num : 0_8 , upvalues : _ENV
-  local jsonInfo = (cjson.encode)(choose_painting)
-  ;
-  (Log.debug)("painting jsonInfo", jsonInfo)
+function RoleModule:InitChosePainting(choose_painting)
+  local jsonInfo = cjson.encode(choose_painting)
+  Log.debug("painting jsonInfo", jsonInfo)
   if GameSingle then
     self:GameSingleInitChosePainting()
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).pet_template_id = choose_painting.pet_template_id
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).pet_grade = choose_painting.pet_grade
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).skin_id = choose_painting.skin_id
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).back_id = choose_painting.back_id
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).bgm_main = choose_painting.bgm_main
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).bgm_aircraft = choose_painting.bgm_aircraft
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).board_pet = choose_painting.board_pet
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).bgm_homeland = choose_painting.bgm_homeland
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).background_type = choose_painting.background_type
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).background_x = choose_painting.background_x
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).background_y = choose_painting.background_y
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).background_scale = choose_painting.background_scale
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).is_hand_operate = choose_painting.is_hand_operate
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).spine_id = choose_painting.spine_id
+  self.m_choose_painting.pet_template_id = choose_painting.pet_template_id
+  self.m_choose_painting.pet_grade = choose_painting.pet_grade
+  self.m_choose_painting.skin_id = choose_painting.skin_id
+  self.m_choose_painting.back_id = choose_painting.back_id
+  self.m_choose_painting.bgm_main = choose_painting.bgm_main
+  self.m_choose_painting.bgm_aircraft = choose_painting.bgm_aircraft
+  self.m_choose_painting.board_pet = choose_painting.board_pet
+  self.m_choose_painting.bgm_homeland = choose_painting.bgm_homeland
+  self.m_choose_painting.background_type = choose_painting.background_type
+  self.m_choose_painting.background_x = choose_painting.background_x
+  self.m_choose_painting.background_y = choose_painting.background_y
+  self.m_choose_painting.background_scale = choose_painting.background_scale
+  self.m_choose_painting.is_hand_operate = choose_painting.is_hand_operate
+  self.m_choose_painting.spine_id = choose_painting.spine_id
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.InitTodayFirstLoginState = function(self, bTodayIsFirstLogin)
-  -- function num : 0_9
+function RoleModule:InitTodayFirstLoginState(bTodayIsFirstLogin)
   self.m_today_first_login = bTodayIsFirstLogin
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetTotalLoginDays = function(self)
-  -- function num : 0_10
-  return (self.m_char_info).m_nTotalLoginDays
+function RoleModule:GetTotalLoginDays()
+  return self.m_char_info.m_nTotalLoginDays
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetWorldBossRecordDan = function(self)
-  -- function num : 0_11
-  return (self.m_char_info).m_dan
+function RoleModule:GetWorldBossRecordDan()
+  return self.m_char_info.m_dan
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetWorldBossRecordRank = function(self)
-  -- function num : 0_12
-  return (self.m_char_info).m_grading
+function RoleModule:GetWorldBossRecordRank()
+  return self.m_char_info.m_grading
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetWorldBossRecordDamage = function(self)
-  -- function num : 0_13
-  return (self.m_char_info).damage
+function RoleModule:GetWorldBossRecordDamage()
+  return self.m_char_info.damage
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetBadgeSwitch = function(self)
-  -- function num : 0_14
-  return (self.m_char_info).m_bBadgeSwitch
+function RoleModule:GetBadgeSwitch()
+  return self.m_char_info.m_bBadgeSwitch
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetTotalLoginChangeDays = function(self)
-  -- function num : 0_15
-  return (self.m_char_info).m_nTotalChangeLoginDays
+function RoleModule:GetTotalLoginChangeDays()
+  return self.m_char_info.m_nTotalChangeLoginDays
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SetStoreReview = function(self, values)
-  -- function num : 0_16
+function RoleModule:SetStoreReview(values)
   self.m_store_review = values
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.CanStoreReview = function(self)
-  -- function num : 0_17
+function RoleModule:CanStoreReview()
   return self.m_store_review
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SetAPPPublishSubType = function(self, values)
-  -- function num : 0_18
+function RoleModule:SetAPPPublishSubType(values)
   self.apppublishsubtype = values
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetAPPPublishSubType = function(self)
-  -- function num : 0_19
+function RoleModule:GetAPPPublishSubType()
   return self.apppublishsubtype
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.isAPPPublishSubType = function(self, values)
-  -- function num : 0_20
-  do return self.apppublishsubtype == values end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function RoleModule:isAPPPublishSubType(values)
+  return self.apppublishsubtype == values
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.TodayIsFirstLogin = function(self)
-  -- function num : 0_21
+function RoleModule:TodayIsFirstLogin()
   return self.m_today_first_login
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SetMinorChat = function(self, values)
-  -- function num : 0_22
+function RoleModule:SetMinorChat(values)
   self.m_minor_chat = values
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetCanChat = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  if (SDKProxy:GetInstance()):IsAdult() == true then
+function RoleModule:GetCanChat()
+  if SDKProxy:GetInstance():IsAdult() == true then
     return true
   end
   return self.m_minor_chat
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.HandleCEventMinorChatResult = function(self, msg)
-  -- function num : 0_24
+function RoleModule:HandleCEventMinorChatResult(msg)
   self:SetMinorChat(msg.minor_chat_open)
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.HandlePropertyChange = function(self, msg)
-  -- function num : 0_25 , upvalues : _ENV
+function RoleModule:HandlePropertyChange(msg)
   self.m_char_info = msg.info
   local time_mod = self:GetModule(SvrTimeModule)
-  time_mod:InitServerTime((msg.info).tmServerBase)
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+  time_mod:InitServerTime(msg.info.tmServerBase)
+  local questModule = GameGlobal.GetModule(QuestModule)
   questModule:CalcRedPoint()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RolePropertyChanged, self:GetHealthPoint(), self:GetHpLevelMax())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RolePropertyChanged, self:GetHealthPoint(), self:GetHpLevelMax())
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetResId = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  if GameSingle and (self.m_choose_painting).pet_template_id == 0 then
-    (self.m_choose_painting).pet_template_id = 1500331
+function RoleModule:GetResId()
+  if GameSingle and self.m_choose_painting.pet_template_id == 0 then
+    self.m_choose_painting.pet_template_id = 1500331
   end
-  return (self.m_choose_painting).pet_template_id
+  return self.m_choose_painting.pet_template_id
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetResGrade = function(self)
-  -- function num : 0_27
-  return (self.m_choose_painting).pet_grade
+function RoleModule:GetResGrade()
+  return self.m_choose_painting.pet_grade
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetName = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  do
-    if GameSingle then
-      local loginModule = (GameGlobal.GetModule)(LoginModule)
-      return loginModule:GetReadStrByIdx(4)
-    end
-    return (self.m_char_info).nick
+function RoleModule:GetName()
+  if GameSingle then
+    local loginModule = GameGlobal.GetModule(LoginModule)
+    return loginModule:GetReadStrByIdx(4)
   end
+  return self.m_char_info.nick
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetSaveName = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local str = (GetQR_Local.StringToUnicode)(self:GetName())
-  return str
+function RoleModule:GetSaveName()
+  return GetQR_Local.StringToUnicode(self:GetName())
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SetName = function(self, newName)
-  -- function num : 0_30
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_char_info).nick = newName
+function RoleModule:SetName(newName)
+  self.m_char_info.nick = newName
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.RequestChangeName = function(self, TT, new_name)
-  -- function num : 0_31 , upvalues : _ENV
+function RoleModule:RequestChangeName(TT, new_name)
   local res = AsyncRequestRes:New()
   if new_name == nil or new_name == "" then
     res:SetResult(ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_INVALID)
     return res
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChangePlayerName)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChangePlayerName)
   request.new_name = new_name
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -416,49 +260,28 @@ RoleModule.RequestChangeName = function(self, TT, new_name)
   return res
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleRequestChoosePainting = function(self, pet_template_id, pet_grade, skin_id, board_pet)
-  -- function num : 0_32 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R5 in 'UnsetPending'
-
-  (self.m_choose_painting).pet_template_id = pet_template_id
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).pet_grade = pet_grade ~= nil and pet_grade or 0
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).skin_id = skin_id ~= nil and skin_id or 0
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).board_pet = board_pet ~= nil and board_pet or 0
+function RoleModule:GameSingleRequestChoosePainting(pet_template_id, pet_grade, skin_id, board_pet)
+  self.m_choose_painting.pet_template_id = pet_template_id
+  self.m_choose_painting.pet_grade = pet_grade ~= nil and pet_grade or 0
+  self.m_choose_painting.skin_id = skin_id ~= nil and skin_id or 0
+  self.m_choose_painting.board_pet = board_pet ~= nil and board_pet or 0
   self:GameSingleSaveChoosePainting()
   return EmptyRes
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleSaveChoosePainting = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local jsonStr = (cjson.encode)(self.m_choose_painting)
+function RoleModule:GameSingleSaveChoosePainting()
+  local jsonStr = cjson.encode(self.m_choose_painting)
   local saveKey = "m_choose_painting"
-  ;
-  (Log.debug)("savekey m_choose_painting=", jsonStr)
+  Log.debug("savekey m_choose_painting=", jsonStr)
   PlayerPrefsSetPersonString(saveKey, jsonStr)
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.RequestChoosePainting = function(self, TT, pet_template_id, pet_grade, skin_id, board_pet)
-  -- function num : 0_34 , upvalues : _ENV
+function RoleModule:RequestChoosePainting(TT, pet_template_id, pet_grade, skin_id, board_pet)
   if GameSingle then
     return self:GameSingleRequestChoosePainting(pet_template_id, pet_grade, skin_id, board_pet)
   end
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChoosePainting)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChoosePainting)
   request.pet_template_id = pet_template_id
   request.pet_grade = pet_grade ~= nil and pet_grade or 0
   request.skin_id = skin_id ~= nil and skin_id or 0
@@ -470,309 +293,175 @@ RoleModule.RequestChoosePainting = function(self, TT, pet_template_id, pet_grade
   end
   res:SetSucc(true)
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R10 in 'UnsetPending'
-
   if replyEvent.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
-    (self.m_choose_painting).pet_template_id = pet_template_id
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.m_choose_painting).pet_grade = pet_grade ~= nil and pet_grade or 0
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.m_choose_painting).skin_id = skin_id ~= nil and skin_id or 0
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.m_choose_painting).board_pet = board_pet ~= nil and board_pet or 0
+    self.m_choose_painting.pet_template_id = pet_template_id
+    self.m_choose_painting.pet_grade = pet_grade ~= nil and pet_grade or 0
+    self.m_choose_painting.skin_id = skin_id ~= nil and skin_id or 0
+    self.m_choose_painting.board_pet = board_pet ~= nil and board_pet or 0
   end
   res:SetResult(replyEvent.ret)
   return res
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.HandleModuleUnlocked = function(self, msg)
-  -- function num : 0_35 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_char_info).unlock_modules = msg.unlock_modules
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ModuleUnlocked, msg.unlock_module_id)
+function RoleModule:HandleModuleUnlocked(msg)
+  self.m_char_info.unlock_modules = msg.unlock_modules
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ModuleUnlocked, msg.unlock_module_id)
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.HandleLevelChange = function(self, msg)
-  -- function num : 0_36
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_Level_info)[msg.level_id] = true
+function RoleModule:HandleLevelChange(msg)
+  self.m_Level_info[msg.level_id] = true
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SetLevelInfo = function(self, info)
-  -- function num : 0_37 , upvalues : _ENV
-  for k,v in pairs(info) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.m_Level_info)[v] = true
+function RoleModule:SetLevelInfo(info)
+  for k, v in pairs(info) do
+    self.m_Level_info[v] = true
   end
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.IsPassLevel = function(self, levelId)
-  -- function num : 0_38
-  if (self.m_Level_info)[levelId] ~= nil then
+function RoleModule:IsPassLevel(levelId)
+  if self.m_Level_info[levelId] ~= nil then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetLevelInfo = function(self)
-  -- function num : 0_39
+function RoleModule:GetLevelInfo()
   return self.m_Level_info
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetAssetCount = function(self, assetid)
-  -- function num : 0_40 , upvalues : _ENV
+function RoleModule:GetAssetCount(assetid)
   if assetid == RoleAssetID.RoleAssetPhyPoint then
     return self:GetHealthPoint()
+  elseif assetid == RoleAssetID.RoleAssetExp then
+    return self:GetRoleExp()
+  elseif assetid == RoleAssetID.RoleAssetLight then
+    return self:GetLight()
+  elseif assetid == RoleAssetID.RoleAssetFirefly then
+    return self:GetFirfly()
+  elseif assetid == RoleAssetID.RoleAssetVigorous then
+    return self.m_char_info.daily_vig_point
+  elseif assetid == RoleAssetID.RoleAssetAchPoint then
+    return self.m_char_info.ach_point
+  elseif assetid == RoleAssetID.RoleAssetAtom then
+    return self:GetModule(ItemModule):GetItemCount(assetid)
+  elseif assetid == RoleAssetID.RoleAssetDoubleRes then
+    return self:GetModule(ResDungeonModule):GetDoubleResNum()
+  elseif assetid == RoleAssetID.RoleAssetMazeCoin then
+    return self:GetMazeCoin()
+  elseif assetid > RoleAssetID.RoleAssetPetBegin and assetid < RoleAssetID.RoleAssetPetEnd then
+    return self:GetModule(PetModule):HasPet(assetid) and 1 or 0
+  elseif assetid > RoleAssetID.RoleAssetItemBegin and assetid < RoleAssetID.RoleAssetItemEnd then
+    return self:GetModule(ItemModule):GetItemCount(assetid)
+  elseif assetid > RoleAssetID.RoleAssetPetSkinBegin and assetid < RoleAssetID.RoleAssetPetSkinEnd then
+    local petModule = self:GetModule(PetModule)
+    local skinId = petModule:GetSkinIDFromItemID(assetid)
+    return self:GetModule(PetModule):HaveSkin(skinId) and 1 or 0
   else
-    if assetid == RoleAssetID.RoleAssetExp then
-      return self:GetRoleExp()
-    else
-      if assetid == RoleAssetID.RoleAssetLight then
-        return self:GetLight()
-      else
-        if assetid == RoleAssetID.RoleAssetFirefly then
-          return self:GetFirfly()
-        else
-          if assetid == RoleAssetID.RoleAssetVigorous then
-            return (self.m_char_info).daily_vig_point
-          else
-            if assetid == RoleAssetID.RoleAssetAchPoint then
-              return (self.m_char_info).ach_point
-            else
-              if assetid == RoleAssetID.RoleAssetAtom then
-                return (self:GetModule(ItemModule)):GetItemCount(assetid)
-              else
-                if assetid == RoleAssetID.RoleAssetDoubleRes then
-                  return (self:GetModule(ResDungeonModule)):GetDoubleResNum()
-                else
-                  if assetid == RoleAssetID.RoleAssetMazeCoin then
-                    return self:GetMazeCoin()
-                  else
-                    if not (self:GetModule(PetModule)):HasPet(assetid) or not 1 then
-                      do return RoleAssetID.RoleAssetPetBegin >= assetid or assetid >= RoleAssetID.RoleAssetPetEnd or 0 end
-                      if RoleAssetID.RoleAssetItemBegin < assetid and assetid < RoleAssetID.RoleAssetItemEnd then
-                        return (self:GetModule(ItemModule)):GetItemCount(assetid)
-                      else
-                        if RoleAssetID.RoleAssetPetSkinBegin < assetid and assetid < RoleAssetID.RoleAssetPetSkinEnd then
-                          local petModule = self:GetModule(PetModule)
-                          local skinId = petModule:GetSkinIDFromItemID(assetid)
-                          return (self:GetModule(PetModule)):HaveSkin(skinId) and 1 or 0
-                        else
-                          do
-                            do return (self:GetModule(ItemModule)):GetItemCount(assetid) end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return self:GetModule(ItemModule):GetItemCount(assetid)
   end
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetPstId = function(self)
-  -- function num : 0_41
-  return (self.m_char_info).pstid
+function RoleModule:GetPstId()
+  return self.m_char_info.pstid
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetLight = function(self)
-  -- function num : 0_42
-  return (self.m_char_info).light
+function RoleModule:GetLight()
+  return self.m_char_info.light
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetLevel = function(self)
-  -- function num : 0_43
-  return (self.m_char_info).level
+function RoleModule:GetLevel()
+  return self.m_char_info.level
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetRoleExp = function(self)
-  -- function num : 0_44
-  return (self.m_char_info).exp
+function RoleModule:GetRoleExp()
+  return self.m_char_info.exp
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetGold = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function RoleModule:GetGold()
   local itemMd = self:GetModule(ItemModule)
   return itemMd:GetItemCount(RoleAssetID.RoleAssetGold)
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetGlow = function(self)
-  -- function num : 0_46 , upvalues : _ENV
+function RoleModule:GetGlow()
   local itemMd = self:GetModule(ItemModule)
   return itemMd:GetItemCount(RoleAssetID.RoleAssetGlow)
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetDiamond = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function RoleModule:GetDiamond()
   local itemMd = self:GetModule(ItemModule)
   return itemMd:GetItemCount(RoleAssetID.RoleAssetDiamond)
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetMazeCoin = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function RoleModule:GetMazeCoin()
   local itemMd = self:GetModule(ItemModule)
   return itemMd:GetItemCount(RoleAssetID.RoleAssetMazeCoin)
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetWorldBossCoin = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function RoleModule:GetWorldBossCoin()
   local itemMd = self:GetModule(ItemModule)
   return itemMd:GetItemCount(RoleAssetID.RoleAssetWorldBossCoin)
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetWorldBossCoin2 = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function RoleModule:GetWorldBossCoin2()
   local itemMd = self:GetModule(ItemModule)
   return itemMd:GetItemCount(RoleAssetID.RoleAssetWorldBossCoin2)
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetFirfly = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function RoleModule:GetFirfly()
   local airMD = self:GetModule(AircraftModule)
   return airMD:GetFirefly()
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetHealthPoint = function(self)
-  -- function num : 0_52
-  return (self.m_char_info).phy_point
+function RoleModule:GetHealthPoint()
+  return self.m_char_info.phy_point
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetHpLevelMax = function(self)
-  -- function num : 0_53
-  return (self.m_char_info).phy_point_max
+function RoleModule:GetHpLevelMax()
+  return self.m_char_info.phy_point_max
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetAutoRecoverTime = function(self)
-  -- function num : 0_54
-  return (self.m_char_info).phy_last_time
+function RoleModule:GetAutoRecoverTime()
+  return self.m_char_info.phy_last_time
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._SaveHealthPointResult = function(self, msg)
-  -- function num : 0_55
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_char_info).phy_point = msg.phy_point
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_char_info).phy_point_max = msg.phy_point_max
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_char_info).phy_point_rate = msg.phy_point_rate
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_char_info).phy_last_time = msg.phy_last_time
+function RoleModule:_SaveHealthPointResult(msg)
+  self.m_char_info.phy_point = msg.phy_point
+  self.m_char_info.phy_point_max = msg.phy_point_max
+  self.m_char_info.phy_point_rate = msg.phy_point_rate
+  self.m_char_info.phy_last_time = msg.phy_last_time
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetAtom = function(self)
-  -- function num : 0_56 , upvalues : _ENV
-  return (self:GetModule(ItemModule)):GetItemCount(RoleAssetID.RoleAssetAtom)
+function RoleModule:GetAtom()
+  return self:GetModule(ItemModule):GetItemCount(RoleAssetID.RoleAssetAtom)
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetZoneIdType = function(self)
-  -- function num : 0_57
+function RoleModule:GetZoneIdType()
   return self.m_zone_id_type
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.IsJapanZone = function(self)
-  -- function num : 0_58 , upvalues : _ENV
-  do return self.apppublishsubtype == APPPublishSubType.APST_JA end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function RoleModule:IsJapanZone()
+  return self.apppublishsubtype == APPPublishSubType.APST_JA
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SetZoneIdType = function(self, zId)
-  -- function num : 0_59
+function RoleModule:SetZoneIdType(zId)
   self.m_zone_id_type = zId
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._GetServerTime = function(self)
-  -- function num : 0_60 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmSecond, nMilliSecond = (math.modf)(time_mod:GetServerTime() / 1000)
+function RoleModule:_GetServerTime()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmSecond, nMilliSecond = math.modf(time_mod:GetServerTime() / 1000)
   return tmSecond
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._GetRecoverData = function(self)
-  -- function num : 0_61
+function RoleModule:_GetRecoverData()
   local tmNow = self:_GetServerTime()
-  local phyNow = (self.m_char_info).phy_point
+  local phyNow = self.m_char_info.phy_point
   local phyMax = self:GetHpLevelMax()
-  local lastTime = (self.m_char_info).phy_last_time
-  local oneTime = (self.m_char_info).phy_point_rate
+  local lastTime = self.m_char_info.phy_last_time
+  local oneTime = self.m_char_info.phy_point_rate
   local nRecoverLeftTimeOne = lastTime + oneTime - tmNow
   local nRecoverLeftTimeTotal = nRecoverLeftTimeOne + (phyMax - phyNow - 1) * oneTime
-  if phyMax <= phyNow then
+  if phyNow >= phyMax then
     nRecoverLeftTimeOne = 0
     nRecoverLeftTimeTotal = 0
   end
@@ -785,72 +474,48 @@ RoleModule._GetRecoverData = function(self)
   return tmNow, oneTime, nRecoverLeftTimeOne, nRecoverLeftTimeTotal
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetRecoverData = function(self, TT, pid)
-  -- function num : 0_62 , upvalues : _ENV
-  do
-    if GameSingle then
-      local res = AsyncRequestRes:New()
-      return res, self:_GetRecoverData()
-    end
-    local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRoleHealthPoint)
-    request.persistid = pid
+function RoleModule:GetRecoverData(TT, pid)
+  if GameSingle then
     local res = AsyncRequestRes:New()
-    local reply = self:Call(TT, request)
-    if reply.res ~= CallResultType.Normal then
-      res:SetResult(-1)
-      return res
-    end
-    res:SetSucc(true)
-    self:_SaveHealthPointResult(reply.msg)
     return res, self:_GetRecoverData()
   end
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRoleHealthPoint)
+  request.persistid = pid
+  local res = AsyncRequestRes:New()
+  local reply = self:Call(TT, request)
+  if reply.res ~= CallResultType.Normal then
+    res:SetResult(-1)
+    return res
+  end
+  res:SetSucc(true)
+  self:_SaveHealthPointResult(reply.msg)
+  return res, self:_GetRecoverData()
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleSetExtFlag = function(self, flag, value)
-  -- function num : 0_63 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
+function RoleModule:GameSingleSetExtFlag(flag, value)
   if value then
-    (self.m_char_info).ext_flag = (self.m_char_info).ext_flag | 1 << flag
+    self.m_char_info.ext_flag = self.m_char_info.ext_flag | 1 << flag
   else
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.m_char_info).ext_flag = (self.m_char_info).ext_flag & ~(1 << flag)
+    self.m_char_info.ext_flag = self.m_char_info.ext_flag & ~(1 << flag)
   end
   self:GameSingleSaveCharInfo()
   return EmptyRes
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleSaveCharInfo = function(self, ...)
-  -- function num : 0_64 , upvalues : _ENV
-  local jsonStr = (cjson.encode)(self.m_char_info)
+function RoleModule:GameSingleSaveCharInfo(...)
+  local jsonStr = cjson.encode(self.m_char_info)
   local saveKey = "m_char_info"
   PlayerPrefsSetPersonString(saveKey, jsonStr)
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SetExtFlag = function(self, TT, flag, value)
-  -- function num : 0_65 , upvalues : _ENV
+function RoleModule:SetExtFlag(TT, flag, value)
   if GameSingle then
     return self:GameSingleSetExtFlag(flag, value)
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
   if value then
-    (self.m_char_info).ext_flag = (self.m_char_info).ext_flag | 1 << flag
+    self.m_char_info.ext_flag = self.m_char_info.ext_flag | 1 << flag
   else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.m_char_info).ext_flag = (self.m_char_info).ext_flag & ~(1 << flag)
+    self.m_char_info.ext_flag = self.m_char_info.ext_flag & ~(1 << flag)
   end
   local msg = CEventSetExtFlag:New()
   msg.ext_flag = flag
@@ -865,60 +530,40 @@ RoleModule.SetExtFlag = function(self, TT, flag, value)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetExtFlag = function(self, flag)
-  -- function num : 0_66
-  local value = (self.m_char_info).ext_flag & 1 << flag
-  do return value ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function RoleModule:GetExtFlag(flag)
+  local value = self.m_char_info.ext_flag & 1 << flag
+  return value ~= 0
 end
 
--- DECOMPILER ERROR at PC219: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.CheckModuleUnlock = function(self, module_id)
-  -- function num : 0_67 , upvalues : _ENV
+function RoleModule:CheckModuleUnlock(module_id)
   if GameSingle then
     return true
   end
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() and module_id == GameModuleID.MD_HomeLand then
+  if EngineGameHelper.EnableAppleVerifyBulletin() and module_id == GameModuleID.MD_HomeLand then
     return true
   end
-  local value = (self.m_char_info).unlock_modules & 1 << module_id
-  do return value ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = self.m_char_info.unlock_modules & 1 << module_id
+  return value ~= 0
 end
 
--- DECOMPILER ERROR at PC222: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SkillAnimationLocalDBKey = function(self)
-  -- function num : 0_68 , upvalues : SKILL_ANIMATION_SETTING_KEY
+function RoleModule:SkillAnimationLocalDBKey()
   return SKILL_ANIMATION_SETTING_KEY
 end
 
--- DECOMPILER ERROR at PC225: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.OnHomePageEnter = function(self, entranceId)
-  -- function num : 0_69 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventHomePageEnter)
+function RoleModule:OnHomePageEnter(entranceId)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventHomePageEnter)
   request.entrance_id = entranceId
   self:Push(request)
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.OnSkipStory = function(self, TT, storyId)
-  -- function num : 0_70 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSkipStory)
+function RoleModule:OnSkipStory(TT, storyId)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSkipStory)
   request.skip_id = storyId
   self:Call(TT, request, false)
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.OnEndStory = function(self, TT, storyID, paragraphID, sectionID, BeSkipped, costSecond, beMission)
-  -- function num : 0_71 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventEndStory)
+function RoleModule:OnEndStory(TT, storyID, paragraphID, sectionID, BeSkipped, costSecond, beMission)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventEndStory)
   request.story_id = storyID
   request.paragraph_id = paragraphID
   request.section_id = sectionID
@@ -932,162 +577,123 @@ RoleModule.OnEndStory = function(self, TT, storyID, paragraphID, sectionID, BeSk
   return true
 end
 
--- DECOMPILER ERROR at PC234: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetAutoFightStatusUI = function(self, ids, matchType, out)
-  -- function num : 0_72 , upvalues : _ENV
-  local cfg = (Cfg.cfg_global).auto_fight_need_pass_main_mission_id
+function RoleModule:GetAutoFightStatusUI(ids, matchType, out)
+  local cfg = Cfg.cfg_global.auto_fight_need_pass_main_mission_id
   local mainMissionID = cfg.IntValue
-  local cfg = (Cfg.cfg_global).auto_fight_need_role_level
-  do
-    if cfg and cfg.IntValue then
-      local needLevel = cfg.IntValue
-      if self:GetLevel() < needLevel then
+  local cfg = Cfg.cfg_global.auto_fight_need_role_level
+  if cfg and cfg.IntValue then
+    local needLevel = cfg.IntValue
+    if needLevel > self:GetLevel() then
+      return false, cfg.StrValue
+    end
+  end
+  cfg = Cfg.cfg_global.auto_fight_need_aircraft_level
+  if cfg and cfg.ArrayValue then
+    local airType, airLevel = table.unpack(cfg.ArrayValue)
+    local cnt = self:GetModule(AircraftModule):GetRoomCount(airType, airLevel)
+    if cnt == 0 then
+      return false, cfg.StrValue
+    end
+  end
+  cfg = Cfg.cfg_global.auto_fight_need_mission_id
+  if cfg and cfg.IntValue then
+    local needMissionId = cfg.IntValue
+    if not self:GetModule(MissionModule):IsPassMissionID(needMissionId) then
+      return false, cfg.StrValue
+    end
+  end
+  cfg = Cfg.cfg_global.auto_fight_need_pass
+  if cfg and cfg.IntValue and cfg.IntValue == 1 then
+    if matchType == MatchType.MT_ResDungeon then
+      local resModule = self:GetModule(ResDungeonModule)
+      local isPass = resModule:IsResDungeonPassed(ids[1])
+      if not isPass then
         return false, cfg.StrValue
       end
-    end
-    cfg = (Cfg.cfg_global).auto_fight_need_aircraft_level
-    if cfg and cfg.ArrayValue then
-      local airType, airLevel = (table.unpack)(cfg.ArrayValue)
-      local cnt = (self:GetModule(AircraftModule)):GetRoomCount(airType, airLevel)
-      if cnt == 0 then
-        return false, cfg.StrValue
-      end
-    end
-    do
-      cfg = (Cfg.cfg_global).auto_fight_need_mission_id
-      do
-        if cfg and cfg.IntValue then
-          local needMissionId = cfg.IntValue
-          if not (self:GetModule(MissionModule)):IsPassMissionID(needMissionId) then
-            return false, cfg.StrValue
-          end
+    elseif matchType == MatchType.MT_Mission then
+      if out then
+        local missionModule = self:GetModule(MissionModule)
+        local missionId = ids[1]
+        local passStage = missionModule:GetPassMissionById(missionId)
+        if not passStage then
+          return false, cfg.StrValue
         end
-        cfg = (Cfg.cfg_global).auto_fight_need_pass
-        if cfg and cfg.IntValue and cfg.IntValue == 1 then
-          if matchType == MatchType.MT_ResDungeon then
-            local resModule = self:GetModule(ResDungeonModule)
-            local isPass = resModule:IsResDungeonPassed(ids[1])
-            if not isPass then
-              return false, cfg.StrValue
-            end
+        local cfgMission = Cfg.cfg_mission[missionId]
+        if cfgMission and cfgMission.EnableAutoFight == 0 then
+          local cfgGlobal = Cfg.cfg_global.auto_fight_disable_in_mission
+          return false, cfgGlobal.StrValue
+        end
+      else
+        local missionModule = self:GetModule(MissionModule)
+        local missionId = ids[1]
+        local passStage = missionModule:GetPassMissionById(missionId)
+        local passMain = missionModule:GetPassMissionById(mainMissionID)
+        local cfgMission = Cfg.cfg_mission[missionId]
+        if not cfgMission then
+          return false
+        end
+        if cfgMission.EnableAutoFight == 0 then
+          local cfgGlobal = Cfg.cfg_global.auto_fight_can_not_use
+          return false, cfgGlobal.StrValue
+        elseif cfgMission.EnableAutoFight == 1 then
+          return true
+        elseif cfgMission.EnableAutoFight == 2 then
+          local cfgGlobal = Cfg.cfg_global.auto_fight_need_pass_boss_level
+          if passStage then
+            return true
           else
-            do
-              if matchType == MatchType.MT_Mission then
-                if out then
-                  local missionModule = self:GetModule(MissionModule)
-                  local missionId = ids[1]
-                  local passStage = missionModule:GetPassMissionById(missionId)
-                  if not passStage then
-                    return false, cfg.StrValue
-                  end
-                  local cfgMission = (Cfg.cfg_mission)[missionId]
-                  if cfgMission and cfgMission.EnableAutoFight == 0 then
-                    local cfgGlobal = (Cfg.cfg_global).auto_fight_disable_in_mission
-                    return false, cfgGlobal.StrValue
-                  end
-                else
-                  do
-                    local missionModule = self:GetModule(MissionModule)
-                    local missionId = ids[1]
-                    local passStage = missionModule:GetPassMissionById(missionId)
-                    local passMain = missionModule:GetPassMissionById(mainMissionID)
-                    local cfgMission = (Cfg.cfg_mission)[missionId]
-                    if not cfgMission then
-                      return false
-                    end
-                    if cfgMission.EnableAutoFight == 0 then
-                      local cfgGlobal = (Cfg.cfg_global).auto_fight_can_not_use
-                      return false, cfgGlobal.StrValue
-                    else
-                      do
-                        if cfgMission.EnableAutoFight == 1 then
-                          return true
-                        else
-                          if cfgMission.EnableAutoFight == 2 then
-                            local cfgGlobal = (Cfg.cfg_global).auto_fight_need_pass_boss_level
-                            if passStage then
-                              return true
-                            else
-                              return false, cfgGlobal.StrValue
-                            end
-                          else
-                            do
-                              do
-                                if cfgMission.EnableAutoFight == 3 then
-                                  local cfgGlobal = (Cfg.cfg_global).auto_fight_need_pass_mainLine_level
-                                  if passMain or passStage then
-                                    return true
-                                  else
-                                    return false, cfgGlobal.StrValue
-                                  end
-                                end
-                                if matchType == MatchType.MT_ExtMission then
-                                  local extMissionModule = self:GetModule(ExtMissionModule)
-                                  local missionId = ids[1]
-                                  local chapterId = ids[2]
-                                  if not extMissionModule:IsExtTaskPass(chapterId) then
-                                    return false, cfg.StrValue
-                                  end
-                                end
-                                do
-                                  cfg = (Cfg.cfg_global).auto_fight_need_3_star
-                                  if cfg and cfg.IntValue and cfg.IntValue == 1 then
-                                    if matchType == MatchType.MT_Mission then
-                                      local missionModule = self:GetModule(MissionModule)
-                                      local missionId = ids[1]
-                                      local passStage = missionModule:GetPassMissionById(missionId)
-                                      if not passStage then
-                                        return false, cfg.StrValue
-                                      end
-                                      local starCount, completeStarList = missionModule:ParseStarInfo(passStage.star)
-                                      if starCount < 3 then
-                                        return false, cfg.StrValue
-                                      end
-                                      local cfgMission = (Cfg.cfg_mission)[missionId]
-                                      if cfgMission and cfgMission.EnableAutoFight ~= 1 then
-                                        local cfgGlobal = (Cfg.cfg_global).auto_fight_disable_in_mission
-                                        return false, cfgGlobal.StrValue
-                                      end
-                                    else
-                                      do
-                                        if matchType == MatchType.MT_ExtMission then
-                                          local extMissionModule = self:GetModule(ExtMissionModule)
-                                          local missionId = ids[1]
-                                          local chapterId = ids[2]
-                                          local starCount = extMissionModule:UI_GetExtTaskState(missionId, chapterId)
-                                          if starCount < 3 then
-                                            return false, cfg.StrValue
-                                          end
-                                        end
-                                        do
-                                          return true
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+            return false, cfgGlobal.StrValue
+          end
+        elseif cfgMission.EnableAutoFight == 3 then
+          local cfgGlobal = Cfg.cfg_global.auto_fight_need_pass_mainLine_level
+          if passMain or passStage then
+            return true
+          else
+            return false, cfgGlobal.StrValue
           end
         end
+      end
+    elseif matchType == MatchType.MT_ExtMission then
+      local extMissionModule = self:GetModule(ExtMissionModule)
+      local missionId = ids[1]
+      local chapterId = ids[2]
+      if not extMissionModule:IsExtTaskPass(chapterId) then
+        return false, cfg.StrValue
       end
     end
   end
+  cfg = Cfg.cfg_global.auto_fight_need_3_star
+  if cfg and cfg.IntValue and cfg.IntValue == 1 then
+    if matchType == MatchType.MT_Mission then
+      local missionModule = self:GetModule(MissionModule)
+      local missionId = ids[1]
+      local passStage = missionModule:GetPassMissionById(missionId)
+      if not passStage then
+        return false, cfg.StrValue
+      end
+      local starCount, completeStarList = missionModule:ParseStarInfo(passStage.star)
+      if starCount < 3 then
+        return false, cfg.StrValue
+      end
+      local cfgMission = Cfg.cfg_mission[missionId]
+      if cfgMission and cfgMission.EnableAutoFight ~= 1 then
+        local cfgGlobal = Cfg.cfg_global.auto_fight_disable_in_mission
+        return false, cfgGlobal.StrValue
+      end
+    elseif matchType == MatchType.MT_ExtMission then
+      local extMissionModule = self:GetModule(ExtMissionModule)
+      local missionId = ids[1]
+      local chapterId = ids[2]
+      local starCount = extMissionModule:UI_GetExtTaskState(missionId, chapterId)
+      if starCount < 3 then
+        return false, cfg.StrValue
+      end
+    end
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC237: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.CheckWordBuff = function(self, ids, matchType)
-  -- function num : 0_73 , upvalues : _ENV
+function RoleModule:CheckWordBuff(ids, matchType)
   if matchType == MatchType.MT_Mission then
     local missionModule = self:GetModule(MissionModule)
     local missionId = ids[1]
@@ -1096,123 +702,90 @@ RoleModule.CheckWordBuff = function(self, ids, matchType)
       return false
     end
     local starCount, completeStarList = missionModule:ParseStarInfo(passStage.star)
-    return starCount >= 3
+    return 3 <= starCount
   elseif matchType == MatchType.MT_ExtMission then
     local extMissionModule = self:GetModule(ExtMissionModule)
     local missionId = ids[1]
     local chapterId = ids[2]
     local starCount = extMissionModule:UI_GetExtTaskState(missionId, chapterId)
-    return starCount >= 3
+    return 3 <= starCount
   elseif matchType == MatchType.MT_ResDungeon then
     local resDungeonModule = self:GetModule(ResDungeonModule)
     return resDungeonModule:IsResDungeonPassed(ids[1])
   else
     return false
   end
-  do return false end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  return false
 end
 
 _class("DRoleHeadImage", Object)
 DRoleHeadImage = DRoleHeadImage
--- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
 
-DRoleHeadImage.Constructor = function(self, nImageID, bLock, canUnlock)
-  -- function num : 0_74
+function DRoleHeadImage:Constructor(nImageID, bLock, canUnlock)
   self.m_nImageID = nImageID
   self.m_bLock = bLock
   self._canUnlock = canUnlock
   self.m_vecPassCondition = {}
 end
 
--- DECOMPILER ERROR at PC249: Confused about usage of register: R1 in 'UnsetPending'
-
-DRoleHeadImage.AddPassCondition = function(self, nConditionID)
-  -- function num : 0_75 , upvalues : _ENV
-  (table.insert)(self.m_vecPassCondition, nConditionID)
+function DRoleHeadImage:AddPassCondition(nConditionID)
+  table.insert(self.m_vecPassCondition, nConditionID)
 end
 
--- DECOMPILER ERROR at PC252: Confused about usage of register: R1 in 'UnsetPending'
-
-DRoleHeadImage.PassConditionAll = function(self)
-  -- function num : 0_76 , upvalues : _ENV
-  local cfgHeadImage = (Cfg.cfg_role_head_image)[self.m_nImageID]
-  if cfgHeadImage == nil then
+function DRoleHeadImage:PassConditionAll()
+  local cfgHeadImage = Cfg.cfg_role_head_image[self.m_nImageID]
+  if nil == cfgHeadImage then
     return nil
   end
   self.m_vecPassCondition = cfgHeadImage.LockCondition
 end
 
--- DECOMPILER ERROR at PC255: Confused about usage of register: R1 in 'UnsetPending'
-
-DRoleHeadImage.ResetPassCondition = function(self)
-  -- function num : 0_77 , upvalues : _ENV
-  (table.clear)(self.m_vecPassCondition)
+function DRoleHeadImage:ResetPassCondition()
+  table.clear(self.m_vecPassCondition)
 end
 
--- DECOMPILER ERROR at PC258: Confused about usage of register: R1 in 'UnsetPending'
-
-DRoleHeadImage.IsConditionPass = function(self, nConditionID)
-  -- function num : 0_78 , upvalues : _ENV
-  if self.m_bLock == false then
+function DRoleHeadImage:IsConditionPass(nConditionID)
+  if false == self.m_bLock then
     return true
   end
-  return (table.icontains)(self.m_vecPassCondition, nConditionID)
+  return table.icontains(self.m_vecPassCondition, nConditionID)
 end
 
--- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-DRoleHeadImage.IsLock = function(self, bLock)
-  -- function num : 0_79
+function DRoleHeadImage:IsLock(bLock)
   return self.m_bLock
 end
 
--- DECOMPILER ERROR at PC264: Confused about usage of register: R1 in 'UnsetPending'
-
-DRoleHeadImage.SetLock = function(self, bLock)
-  -- function num : 0_80
+function DRoleHeadImage:SetLock(bLock)
   self.m_bLock = bLock
 end
 
--- DECOMPILER ERROR at PC267: Confused about usage of register: R1 in 'UnsetPending'
-
-DRoleHeadImage.CanUnLock = function(self)
-  -- function num : 0_81
+function DRoleHeadImage:CanUnLock()
   return self._canUnlock
 end
 
--- DECOMPILER ERROR at PC270: Confused about usage of register: R1 in 'UnsetPending'
-
-DRoleHeadImage.SetCanUnLock = function(self, canUnlock)
-  -- function num : 0_82
+function DRoleHeadImage:SetCanUnLock(canUnlock)
   self._canUnlock = canUnlock
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.CanUnLock = function(self, nImageID)
-  -- function num : 0_83
-  local roleHeadImage = (self.m_mapImageData)[nImageID]
+function RoleModule:CanUnLock(nImageID)
+  local roleHeadImage = self.m_mapImageData[nImageID]
   if roleHeadImage then
     return roleHeadImage:CanUnLock()
   end
   return false
 end
 
--- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.HasCanUnLock = function(self)
-  -- function num : 0_84 , upvalues : _ENV
+function RoleModule:HasCanUnLock()
   if not self.m_mapImageData then
     return false
   end
-  for k,v in pairs(self.m_mapImageData) do
+  for k, v in pairs(self.m_mapImageData) do
     local canUnlock = v:CanUnLock()
     if canUnlock then
       return true
     end
   end
-  for k,v in pairs(self.m_mapFrameData) do
+  for k, v in pairs(self.m_mapFrameData) do
     local canUnlock = v:CanUnLock()
     if canUnlock then
       return true
@@ -1221,61 +794,44 @@ RoleModule.HasCanUnLock = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC279: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetHeadImageUnLockCount = function(self)
-  -- function num : 0_85 , upvalues : _ENV
+function RoleModule:GetHeadImageUnLockCount()
   local nCount = 0
-  for nImageID,roleHeadImage in pairs(self.m_mapImageData) do
-    if roleHeadImage:IsLock() == false then
+  for nImageID, roleHeadImage in pairs(self.m_mapImageData) do
+    if false == roleHeadImage:IsLock() then
       nCount = nCount + 1
     end
   end
   return nCount
 end
 
--- DECOMPILER ERROR at PC282: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._FindMapDataByType = function(self, listMapData, nWorkID)
-  -- function num : 0_86 , upvalues : _ENV
+function RoleModule:_FindMapDataByType(listMapData, nWorkID)
   local pFindImageData = listMapData[nWorkID]
-  if pFindImageData == nil then
+  if nil == pFindImageData then
     listMapData[nWorkID] = DRoleHeadImage:New(nWorkID, true, false)
     pFindImageData = listMapData[nWorkID]
   end
   return pFindImageData
 end
 
--- DECOMPILER ERROR at PC285: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._FindRoleImageData = function(self, nImageID)
-  -- function num : 0_87 , upvalues : _ENV
-  local pFindImageData = (self.m_mapImageData)[nImageID]
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  if pFindImageData == nil then
-    (self.m_mapImageData)[nImageID] = DRoleHeadImage:New(nImageID, true, false)
-    pFindImageData = (self.m_mapImageData)[nImageID]
+function RoleModule:_FindRoleImageData(nImageID)
+  local pFindImageData = self.m_mapImageData[nImageID]
+  if nil == pFindImageData then
+    self.m_mapImageData[nImageID] = DRoleHeadImage:New(nImageID, true, false)
+    pFindImageData = self.m_mapImageData[nImageID]
   end
   return pFindImageData
 end
 
--- DECOMPILER ERROR at PC288: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._FindRoleFrameData = function(self, nFrameID)
-  -- function num : 0_88
+function RoleModule:_FindRoleFrameData(nFrameID)
   return self:_FindMapDataByType(self.m_mapFrameData, nFrameID)
 end
 
--- DECOMPILER ERROR at PC291: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._Request_Handle = function(self, TT, request)
-  -- function num : 0_89 , upvalues : _ENV
+function RoleModule:_Request_Handle(TT, request)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     if reply.msg then
-      res:SetResult((reply.msg).m_nResult)
+      res:SetResult(reply.msg.m_nResult)
     else
       res:SetResult(ROLE_RESULT_CODE.ROLE_FAILED)
     end
@@ -1285,63 +841,42 @@ RoleModule._Request_Handle = function(self, TT, request)
   return res, reply
 end
 
--- DECOMPILER ERROR at PC294: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_RoleImageInfo = function(self, TT)
-  -- function num : 0_90 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRoleInfo_Req)
+function RoleModule:Request_RoleImageInfo(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRoleInfo_Req)
   local res, reply = self:_Request_Handle(TT, request)
   if not res:GetSucc() then
     return res
   end
   local recvPacket = reply.msg
   self.m_stSignText = recvPacket.m_stSignText
-  ;
-  (table.clear)(self.m_mapImageData)
+  table.clear(self.m_mapImageData)
   self.m_mapImageData = {}
-  for key,value in pairs(recvPacket.m_mapImageData) do
+  for key, value in pairs(recvPacket.m_mapImageData) do
     local headImageLock = DRoleHeadImage:New(key, value <= 0, false)
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self.m_mapImageData)[key] = headImageLock
+    self.m_mapImageData[key] = headImageLock
   end
-  for key,nHeadImageID in pairs(recvPacket.m_vecCanUnlockImage) do
+  for key, nHeadImageID in pairs(recvPacket.m_vecCanUnlockImage) do
     local headImageLock = DRoleHeadImage:New(nHeadImageID, true, true)
     headImageLock:PassConditionAll()
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self.m_mapImageData)[nHeadImageID] = headImageLock
+    self.m_mapImageData[nHeadImageID] = headImageLock
   end
-  ;
-  (table.clear)(self.m_mapFrameData)
+  table.clear(self.m_mapFrameData)
   self.m_mapFrameData = {}
-  for key,value in pairs(recvPacket.m_mapImageFrame) do
+  for key, value in pairs(recvPacket.m_mapImageFrame) do
     local headFrameLock = DRoleHeadImage:New(key, value <= 0, false)
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self.m_mapFrameData)[key] = headFrameLock
+    self.m_mapFrameData[key] = headFrameLock
   end
-  for key,nHeadFrameID in pairs(recvPacket.m_vecCanUnlockFrame) do
+  for key, nHeadFrameID in pairs(recvPacket.m_vecCanUnlockFrame) do
     local headFrameLock = DRoleHeadImage:New(nHeadFrameID, true, true)
     headFrameLock:PassConditionAll()
-    -- DECOMPILER ERROR at PC93: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self.m_mapFrameData)[nHeadFrameID] = headFrameLock
+    self.m_mapFrameData[nHeadFrameID] = headFrameLock
   end
   res:SetResult(recvPacket.ret)
-  do return res end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  return res
 end
 
--- DECOMPILER ERROR at PC297: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_AmendRoleName = function(self, TT, stNewName)
-  -- function num : 0_91 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAmendRoleName_Req)
+function RoleModule:Request_AmendRoleName(TT, stNewName)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAmendRoleName_Req)
   request.m_stRoleName = stNewName
   local res, reply = self:_Request_Handle(TT, request)
   if not res:GetSucc() then
@@ -1349,23 +884,15 @@ RoleModule.Request_AmendRoleName = function(self, TT, stNewName)
   end
   local recvPacket = reply.msg
   res:SetResult(recvPacket.ret)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R7 in 'UnsetPending'
-
   if recvPacket.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
-    (self.m_char_info).nick = stNewName
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.m_char_info).m_nAmendNameCount = (self.m_char_info).m_nAmendNameCount + 1
+    self.m_char_info.nick = stNewName
+    self.m_char_info.m_nAmendNameCount = self.m_char_info.m_nAmendNameCount + 1
   end
   return res
 end
 
--- DECOMPILER ERROR at PC300: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_AmendSignText = function(self, TT, stSignText)
-  -- function num : 0_92 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAmendSignText_Req)
+function RoleModule:Request_AmendSignText(TT, stSignText)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAmendSignText_Req)
   request.m_stSignText = stSignText
   local res, reply = self:_Request_Handle(TT, request)
   if not res:GetSucc() then
@@ -1379,14 +906,11 @@ RoleModule.Request_AmendSignText = function(self, TT, stSignText)
   return res
 end
 
--- DECOMPILER ERROR at PC303: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_TitleAndFifure = function(self, TT, type, itemid)
-  -- function num : 0_93 , upvalues : _ENV
+function RoleModule:Request_TitleAndFifure(TT, type, itemid)
   if GameSingle then
     return self:GameSingleRequest_TitleAndFifure(type, itemid)
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChangeTitle)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChangeTitle)
   request.type = type
   request.id = itemid
   local res, reply = self:_Request_Handle(TT, request)
@@ -1396,68 +920,37 @@ RoleModule.Request_TitleAndFifure = function(self, TT, type, itemid)
   local recvPacket = reply.msg
   res:SetResult(recvPacket.ret)
   if recvPacket.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
-    return res
   end
+  return res
 end
 
--- DECOMPILER ERROR at PC306: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleRequest_TitleAndFifure = function(self, type, itemid)
-  -- function num : 0_94 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
+function RoleModule:GameSingleRequest_TitleAndFifure(type, itemid)
   if type == 1 then
-    (self.m_char_info).title_used = itemid
-  else
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-    if type == 2 then
-      (self.m_char_info).fifure_used = itemid
-    else
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-      if type == 4 then
-        (self.m_char_info).m_nHeadImageID = itemid
-      else
-        -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-        if type == 5 then
-          (self.m_char_info).m_nHeadFrameID = itemid
-        end
-      end
-    end
+    self.m_char_info.title_used = itemid
+  elseif type == 2 then
+    self.m_char_info.fifure_used = itemid
+  elseif type == 4 then
+    self.m_char_info.m_nHeadImageID = itemid
+  elseif type == 5 then
+    self.m_char_info.m_nHeadFrameID = itemid
   end
   self:GameSingleSaveCharInfo()
   return EmptyRes
 end
 
--- DECOMPILER ERROR at PC309: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleRequest_AmendHeadImage = function(self, nImageID, nColorID, nFrameID)
-  -- function num : 0_95 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self.m_char_info).m_nHeadImageID = nImageID
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.m_char_info).m_nHeadColorID = nColorID
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.m_char_info).m_nHeadFrameID = nFrameID
+function RoleModule:GameSingleRequest_AmendHeadImage(nImageID, nColorID, nFrameID)
+  self.m_char_info.m_nHeadImageID = nImageID
+  self.m_char_info.m_nHeadColorID = nColorID
+  self.m_char_info.m_nHeadFrameID = nFrameID
   self:GameSingleSaveCharInfo()
   return EmptyRes
 end
 
--- DECOMPILER ERROR at PC312: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_AmendHeadImage = function(self, TT, nImageID, nColorID, nFrameID)
-  -- function num : 0_96 , upvalues : _ENV
+function RoleModule:Request_AmendHeadImage(TT, nImageID, nColorID, nFrameID)
   if GameSingle then
     return self:GameSingleRequest_AmendHeadImage(nImageID, nColorID, nFrameID)
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAmendHeadImage_Req)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAmendHeadImage_Req)
   request.m_nImageID = nImageID
   request.m_nColorID = nColorID
   request.m_nFrameID = nFrameID or 0
@@ -1467,27 +960,16 @@ RoleModule.Request_AmendHeadImage = function(self, TT, nImageID, nColorID, nFram
   end
   local recvPacket = reply.msg
   res:SetResult(recvPacket.ret)
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R9 in 'UnsetPending'
-
   if recvPacket.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
-    (self.m_char_info).m_nHeadImageID = nImageID
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.m_char_info).m_nHeadColorID = nColorID
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.m_char_info).m_nHeadFrameID = nFrameID
+    self.m_char_info.m_nHeadImageID = nImageID
+    self.m_char_info.m_nHeadColorID = nColorID
+    self.m_char_info.m_nHeadFrameID = nFrameID
   end
   return res
 end
 
--- DECOMPILER ERROR at PC315: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_ClearHeadImageLock = function(self, TT, nImageID)
-  -- function num : 0_97 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventClearHeadImageLock_Req)
+function RoleModule:Request_ClearHeadImageLock(TT, nImageID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventClearHeadImageLock_Req)
   request.m_nImageID = nImageID
   local res, reply = self:_Request_Handle(TT, request)
   if not res:GetSucc() then
@@ -1495,21 +977,16 @@ RoleModule.Request_ClearHeadImageLock = function(self, TT, nImageID)
   end
   local recvPacket = reply.msg
   res:SetResult(recvPacket.ret)
-  do
-    if recvPacket.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
-      local pFindImageData = self:_FindRoleImageData(nImageID)
-      pFindImageData:SetLock(false)
-      pFindImageData:SetCanUnLock(false)
-    end
-    return res
+  if recvPacket.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
+    local pFindImageData = self:_FindRoleImageData(nImageID)
+    pFindImageData:SetLock(false)
+    pFindImageData:SetCanUnLock(false)
   end
+  return res
 end
 
--- DECOMPILER ERROR at PC318: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_GetHeadImageLockInfo = function(self, TT, nImageID)
-  -- function num : 0_98 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRoleHeadImageLock_Req)
+function RoleModule:Request_GetHeadImageLockInfo(TT, nImageID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRoleHeadImageLock_Req)
   request.m_nImageID = nImageID
   local res, reply = self:_Request_Handle(TT, request)
   if not res:GetSucc() then
@@ -1519,46 +996,37 @@ RoleModule.Request_GetHeadImageLockInfo = function(self, TT, nImageID)
   res:SetResult(recvPacket.ret)
   local pFindImageData = self:_FindRoleImageData(nImageID)
   pFindImageData:ResetPassCondition()
-  for key,value in pairs(recvPacket.m_vecLockCondition) do
+  for key, value in pairs(recvPacket.m_vecLockCondition) do
     pFindImageData:AddPassCondition(value)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC321: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.CheckLimitedShowRed = function(self, subType, id)
-  -- function num : 0_99 , upvalues : _ENV
+function RoleModule:CheckLimitedShowRed(subType, id)
   if self.m_overt_info then
-    for key,date in pairs(self.m_overt_info) do
-      if (LocalDB.GetInt)(((GameGlobal.GetModule)(LoginModule)):GetRoleShowID() .. "LimitedShowRed_" .. key .. date, 0) > 0 then
-        do return not id or key ~= id end
-        local cfg = (Cfg.cfg_item)[key]
-        do
-          if cfg and cfg.ItemSubType == subType then
-            local record = (LocalDB.GetInt)(((GameGlobal.GetModule)(LoginModule)):GetRoleShowID() .. "LimitedShowRed_" .. key .. date, 0)
-            if record <= 0 then
-              return true
-            end
+    for key, date in pairs(self.m_overt_info) do
+      if id then
+        if key == id then
+          return LocalDB.GetInt(GameGlobal.GetModule(LoginModule):GetRoleShowID() .. "LimitedShowRed_" .. key .. date, 0) <= 0
+        end
+      else
+        local cfg = Cfg.cfg_item[key]
+        if cfg and cfg.ItemSubType == subType then
+          local record = LocalDB.GetInt(GameGlobal.GetModule(LoginModule):GetRoleShowID() .. "LimitedShowRed_" .. key .. date, 0)
+          if record <= 0 then
+            return true
           end
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_STMT
-
         end
       end
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return false
 end
 
 _class("PlayerRoleBaseInfo", Object)
 PlayerRoleBaseInfo = PlayerRoleBaseInfo
--- DECOMPILER ERROR at PC330: Confused about usage of register: R1 in 'UnsetPending'
 
-PlayerRoleBaseInfo.Constructor = function(self)
-  -- function num : 0_100
+function PlayerRoleBaseInfo:Constructor()
   self.m_stRoleName = ""
   self.m_nHeadImageID = 0
   self.m_nHeadColorID = 0
@@ -1570,53 +1038,42 @@ PlayerRoleBaseInfo.Constructor = function(self)
   self.m_player_exp = 0
 end
 
--- DECOMPILER ERROR at PC333: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetRoleCreateTime = function(self)
-  -- function num : 0_101
-  return (self.m_char_info).create_time
+function RoleModule:GetRoleCreateTime()
+  return self.m_char_info.create_time
 end
 
--- DECOMPILER ERROR at PC336: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_GetPlayerInfo = function(self)
-  -- function num : 0_102 , upvalues : _ENV
+function RoleModule:UI_GetPlayerInfo()
   local playerInfo = PlayerRoleBaseInfo:New()
   playerInfo.m_stRoleName = self:GetName()
-  local charInfo = (cjson.encode)(self.m_char_info)
-  ;
-  (Log.debug)("charinfo=", charInfo)
-  playerInfo.m_nHeadImageID = (self.m_char_info).m_nHeadImageID
-  playerInfo.m_nHeadColorID = (self.m_char_info).m_nHeadColorID
-  playerInfo.m_nHeadFrameID = (self.m_char_info).m_nHeadFrameID
+  local charInfo = cjson.encode(self.m_char_info)
+  Log.debug("charinfo=", charInfo)
+  playerInfo.m_nHeadImageID = self.m_char_info.m_nHeadImageID
+  playerInfo.m_nHeadColorID = self.m_char_info.m_nHeadColorID
+  playerInfo.m_nHeadFrameID = self.m_char_info.m_nHeadFrameID
   playerInfo.m_stSignText = self.m_stSignText
-  playerInfo.m_nCreateTime = (self.m_char_info).create_time
-  playerInfo.m_difficulty_mission = (self.m_char_info).difficulty_mission
-  playerInfo.m_sailing_mission = (self.m_char_info).sailing_mission
-  playerInfo.m_title_used = (self.m_char_info).title_used
-  playerInfo.m_fifure_used = (self.m_char_info).fifure_used
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  playerInfo.m_nCreateTime = self.m_char_info.create_time
+  playerInfo.m_difficulty_mission = self.m_char_info.difficulty_mission
+  playerInfo.m_sailing_mission = self.m_char_info.sailing_mission
+  playerInfo.m_title_used = self.m_char_info.title_used
+  playerInfo.m_fifure_used = self.m_char_info.fifure_used
+  local loginModule = GameGlobal.GetModule(LoginModule)
   playerInfo.m_player_showid = loginModule:GetRoleShowID()
   local nPlayerExp = self:GetRoleExp()
-  local nPlayerLevel = (HelperProxy:GetInstance()):GetLvByExp(nPlayerExp)
+  local nPlayerLevel = HelperProxy:GetInstance():GetLvByExp(nPlayerExp)
   playerInfo.m_player_lv = nPlayerLevel
   local deltaExp = 0
-  do
-    if nPlayerLevel ~= (HelperProxy:GetInstance()):GetMaxLevel() then
-      local curLvExp = (HelperProxy:GetInstance()):GetLevelExp(nPlayerLevel)
-      deltaExp = nPlayerExp - curLvExp
-    end
-    playerInfo.m_player_exp = deltaExp
-    return playerInfo
+  if nPlayerLevel ~= HelperProxy:GetInstance():GetMaxLevel() then
+    local curLvExp = HelperProxy:GetInstance():GetLevelExp(nPlayerLevel)
+    deltaExp = nPlayerExp - curLvExp
   end
+  playerInfo.m_player_exp = deltaExp
+  return playerInfo
 end
 
 _class("PlayerScheduleInfo", Object)
 PlayerScheduleInfo = PlayerScheduleInfo
--- DECOMPILER ERROR at PC345: Confused about usage of register: R1 in 'UnsetPending'
 
-PlayerScheduleInfo.Constructor = function(self)
-  -- function num : 0_103
+function PlayerScheduleInfo:Constructor()
   self.m_player_current_missionid = ""
   self.m_player_mission_star = 0
   self.m_player_pet_count = 0
@@ -1625,15 +1082,12 @@ PlayerScheduleInfo.Constructor = function(self)
   self.m_player_tower_info = {}
 end
 
--- DECOMPILER ERROR at PC348: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_GetPlayerScheduleInfo = function(self)
-  -- function num : 0_104 , upvalues : _ENV
+function RoleModule:UI_GetPlayerScheduleInfo()
   local playerInfo = PlayerScheduleInfo:New()
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local discoveryData = missionModule:GetDiscoveryData()
   local node = discoveryData:GetCanPlayNode()
-  playerInfo.m_player_current_missionid = ((node.stages)[1]).id
+  playerInfo.m_player_current_missionid = node.stages[1].id
   local chapterInfos = missionModule:GetChapterInfo()
   local star = 0
   for i = 1, #chapterInfos do
@@ -1645,54 +1099,34 @@ RoleModule.UI_GetPlayerScheduleInfo = function(self)
     star = star + starTemp
   end
   playerInfo.m_player_mission_star = star
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local pets = petModule:GetPets()
-  local petCount = (table.count)(pets)
+  local petCount = table.count(pets)
   playerInfo.m_player_pet_count = petCount
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+  local questModule = GameGlobal.GetModule(QuestModule)
   local achievementPoint = 0
   local achievementPointAll = 0
-  achievementPoint = questModule:GetAchieveCount(AchieveType.AT_All)
+  achievementPoint, achievementPointAll = questModule:GetAchieveCount(AchieveType.AT_All)
   playerInfo.m_player_achievement_point = achievementPoint
   playerInfo.m_player_achievement_all_point = achievementPointAll
-  local towerModule = (GameGlobal.GetModule)(TowerModule)
+  local towerModule = GameGlobal.GetModule(TowerModule)
   local towerInfo = towerModule:GetPlayerTowerData()
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (playerInfo.m_player_tower_info).tower_water = 0
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (playerInfo.m_player_tower_info).tower_fire = 0
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (playerInfo.m_player_tower_info).tower_wood = 0
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (playerInfo.m_player_tower_info).tower_thunder = 0
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R15 in 'UnsetPending'
-
+  playerInfo.m_player_tower_info.tower_water = 0
+  playerInfo.m_player_tower_info.tower_fire = 0
+  playerInfo.m_player_tower_info.tower_wood = 0
+  playerInfo.m_player_tower_info.tower_thunder = 0
   if towerInfo then
     if towerInfo.tower_water then
-      (playerInfo.m_player_tower_info).tower_water = towerInfo.tower_water
+      playerInfo.m_player_tower_info.tower_water = towerInfo.tower_water
     end
-    -- DECOMPILER ERROR at PC85: Confused about usage of register: R15 in 'UnsetPending'
-
     if towerInfo.tower_fire then
-      (playerInfo.m_player_tower_info).tower_fire = towerInfo.tower_fire
+      playerInfo.m_player_tower_info.tower_fire = towerInfo.tower_fire
     end
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R15 in 'UnsetPending'
-
     if towerInfo.tower_wood then
-      (playerInfo.m_player_tower_info).tower_wood = towerInfo.tower_wood
+      playerInfo.m_player_tower_info.tower_wood = towerInfo.tower_wood
     end
-    -- DECOMPILER ERROR at PC97: Confused about usage of register: R15 in 'UnsetPending'
-
     if towerInfo.tower_thunder then
-      (playerInfo.m_player_tower_info).tower_thunder = towerInfo.tower_thunder
+      playerInfo.m_player_tower_info.tower_thunder = towerInfo.tower_thunder
     end
   end
   return playerInfo
@@ -1700,38 +1134,29 @@ end
 
 _class("HeadImageLockCondition", Object)
 HeadImageLockCondition = HeadImageLockCondition
--- DECOMPILER ERROR at PC357: Confused about usage of register: R1 in 'UnsetPending'
 
-HeadImageLockCondition.Constructor = function(self, nConditionID)
-  -- function num : 0_105
+function HeadImageLockCondition:Constructor(nConditionID)
   self.m_nConditionID = nConditionID
   self.m_stDesc = ""
   self.m_bPass = false
   self.m_listParam = {}
 end
 
--- DECOMPILER ERROR at PC360: Confused about usage of register: R1 in 'UnsetPending'
-
-HeadImageLockCondition.SetConditionParam = function(self, stConditionParam)
-  -- function num : 0_106 , upvalues : _ENV
-  if stConditionParam == nil then
-    return 
+function HeadImageLockCondition:SetConditionParam(stConditionParam)
+  if nil == stConditionParam then
+    return
   end
   self.m_listParam = {}
-  local listParam = (string.split)(stConditionParam, ",")
+  local listParam = string.split(stConditionParam, ",")
   for i = 1, #listParam do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.m_listParam)[i] = tonumber(listParam[i])
+    self.m_listParam[i] = tonumber(listParam[i])
   end
 end
 
 _class("HeadImageLockInfo", Object)
 HeadImageLockInfo = HeadImageLockInfo
--- DECOMPILER ERROR at PC369: Confused about usage of register: R1 in 'UnsetPending'
 
-HeadImageLockInfo.Constructor = function(self, nImageID)
-  -- function num : 0_107
+function HeadImageLockInfo:Constructor(nImageID)
   self.m_nImageID = nImageID
   self.m_nTag = 0
   self.m_stIcon = nil
@@ -1741,16 +1166,13 @@ HeadImageLockInfo.Constructor = function(self, nImageID)
   self.m_lockConditionList = {}
 end
 
--- DECOMPILER ERROR at PC372: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_GetHeadImageLockInfo = function(self, nImageID)
-  -- function num : 0_108 , upvalues : _ENV
-  local cfgWorkData = (Cfg.cfg_role_head_image)[nImageID]
-  if cfgWorkData == nil then
+function RoleModule:UI_GetHeadImageLockInfo(nImageID)
+  local cfgWorkData = Cfg.cfg_role_head_image[nImageID]
+  if nil == cfgWorkData then
     return nil
   end
   local pFindHeadImage = self:_FindRoleImageData(nImageID)
-  if pFindHeadImage == nil then
+  if nil == pFindHeadImage then
     return nil
   end
   local headLockInfo = HeadImageLockInfo:New(nImageID)
@@ -1763,174 +1185,127 @@ RoleModule.UI_GetHeadImageLockInfo = function(self, nImageID)
   return headLockInfo
 end
 
--- DECOMPILER ERROR at PC375: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_GetHeadImageListByTag = function(self, nTag)
-  -- function num : 0_109 , upvalues : _ENV
-  local cfgv = (Cfg.cfg_role_head_image)()
+function RoleModule:UI_GetHeadImageListByTag(nTag)
+  local cfgv = Cfg.cfg_role_head_image()
   local list = {}
-  for k,v in pairs(cfgv) do
-    if nTag == 0 or nTag == v.Tag then
-      (table.insert)(list, self:UI_GetHeadImageLockInfo(k))
+  for k, v in pairs(cfgv) do
+    if 0 == nTag or nTag == v.Tag then
+      table.insert(list, self:UI_GetHeadImageLockInfo(k))
     end
   end
-  local Compare = function(sordDataA, sordDataB)
-    -- function num : 0_109_0
+  
+  local function Compare(sordDataA, sordDataB)
     local dataA = sordDataA
     local dataB = sordDataB
     if not dataA.m_bLock and dataB.m_bLock then
       return 1
+    elseif dataA.m_bLock and not dataB.m_bLock then
+      return -1
+    elseif dataA.m_nTag < dataB.m_nTag then
+      return 1
+    elseif dataA.m_nTag > dataB.m_nTag then
+      return -1
+    elseif dataA.m_nImageID < dataB.m_nImageID then
+      return 1
+    elseif dataA.m_nImageID > dataB.m_nImageID then
+      return -1
     else
-      if dataA.m_bLock and not dataB.m_bLock then
-        return -1
-      else
-        if dataA.m_nTag < dataB.m_nTag then
-          return 1
-        else
-          if dataB.m_nTag < dataA.m_nTag then
-            return -1
-          else
-            if dataA.m_nImageID < dataB.m_nImageID then
-              return 1
-            else
-              if dataB.m_nImageID < dataA.m_nImageID then
-                return -1
-              else
-                return 0
-              end
-            end
-          end
-        end
-      end
+      return 0
     end
     return 0
   end
-
+  
   local sortedArray = SortedArray:New(Algorithm.COMPARE_CUSTOM, Compare)
   for i = 1, #list do
     sortedArray:Insert(list[i])
   end
   local listReturn = {}
   sortedArray:ForEach(function(element)
-    -- function num : 0_109_1 , upvalues : _ENV, listReturn
-    (table.insert)(listReturn, element)
-  end
-)
+    table.insert(listReturn, element)
+  end)
   return listReturn
 end
 
--- DECOMPILER ERROR at PC378: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_GetHeadBgList = function(self)
-  -- function num : 0_110 , upvalues : _ENV
+function RoleModule:UI_GetHeadBgList()
   local bgs = {}
-  local cfg_head_bg = (Cfg.cfg_player_head_bg)({})
-  local count = (table.count)(cfg_head_bg)
+  local cfg_head_bg = Cfg.cfg_player_head_bg({})
+  local count = table.count(cfg_head_bg)
   for i = 1, count do
-    (table.insert)(bgs, (cfg_head_bg[i]).ID)
+    table.insert(bgs, cfg_head_bg[i].ID)
   end
   return bgs
 end
 
--- DECOMPILER ERROR at PC381: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.ReportTssData2Server = function(self)
-  -- function num : 0_111 , upvalues : _ENV
-  if (os.time)() % 5 ~= 0 then
+function RoleModule:ReportTssData2Server()
+  if os.time() % 5 ~= 0 then
     self.curTimeGotten = false
-    return 
+    return
   end
   if self.curTimeGotten == true then
-    return 
+    return
   end
-  local antiData = (TSSSDKProxy:GetInstance()):GetTssReportDataString()
-  ;
-  (Log.debug)("GetReportData : ", antiData)
+  local antiData = TSSSDKProxy:GetInstance():GetTssReportDataString()
+  Log.debug("GetReportData : ", antiData)
   self.curTimeGotten = true
-  if type(antiData) == "string" and (string.len)(antiData) ~= 0 then
+  if type(antiData) == "string" and string.len(antiData) ~= 0 then
     self:SendAntiDataToServer(antiData)
   end
 end
 
--- DECOMPILER ERROR at PC384: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.TssSdkAppHome = function(self)
-  -- function num : 0_112 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("SwitchOut", {}, true)
-  if (SDKProxy:GetInstance()):IsInternationalSDK() then
-    (TSSSDKProxy:GetInstance()):OnPause()
-    ;
-    (Log.debug)("OnApplicationPause")
-  else
-    if (SDKProxy:GetInstance()):IsInlandSDK() then
-      (Log.debug)("OnApplicationPause")
-    end
+function RoleModule:TssSdkAppHome()
+  GameGlobal.UAReportForceGuideEvent("SwitchOut", {}, true)
+  if SDKProxy:GetInstance():IsInternationalSDK() then
+    TSSSDKProxy:GetInstance():OnPause()
+    Log.debug("OnApplicationPause")
+  elseif SDKProxy:GetInstance():IsInlandSDK() then
+    Log.debug("OnApplicationPause")
   end
   local moduleMain = self:GetModule(LoginModule)
   if not moduleMain:IsLogin() then
-    return 
+    return
   end
   local msg = CEventAppHome:New()
-  msg.log_data = ((((GameGlobal.UIStateManager)()).uiControllerManager).lockManager):GetLocksNameString()
-  ;
-  (Log.debug)(msg.log_data)
+  msg.log_data = GameGlobal.UIStateManager().uiControllerManager.lockManager:GetLocksNameString()
+  Log.debug(msg.log_data)
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC387: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.HelpFun = function(self)
-  -- function num : 0_113
+function RoleModule:HelpFun()
 end
 
--- DECOMPILER ERROR at PC390: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.TssSdkAppAppResume = function(self)
-  -- function num : 0_114 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("SwitchResume", {}, true)
-  if (SDKProxy:GetInstance()):IsInternationalSDK() then
-    (TSSSDKProxy:GetInstance()):OnPause()
-    ;
-    (Log.debug)("OnApplicationResume")
-  else
-    if (SDKProxy:GetInstance()):IsInlandSDK() then
-      (Log.debug)("OnApplicationResume")
-    end
+function RoleModule:TssSdkAppAppResume()
+  GameGlobal.UAReportForceGuideEvent("SwitchResume", {}, true)
+  if SDKProxy:GetInstance():IsInternationalSDK() then
+    TSSSDKProxy:GetInstance():OnPause()
+    Log.debug("OnApplicationResume")
+  elseif SDKProxy:GetInstance():IsInlandSDK() then
+    Log.debug("OnApplicationResume")
   end
   local moduleMain = self:GetModule(LoginModule)
   if not moduleMain:IsLogin() then
-    return 
+    return
   end
   local msg = CEventAppResume:New()
-  msg.log_data = ((((GameGlobal.UIStateManager)()).uiControllerManager).lockManager):GetLocksNameString()
-  ;
-  (Log.debug)(msg.log_data)
+  msg.log_data = GameGlobal.UIStateManager().uiControllerManager.lockManager:GetLocksNameString()
+  Log.debug(msg.log_data)
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC393: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SendAntiDataToServer = function(self, data)
-  -- function num : 0_115 , upvalues : _ENV
+function RoleModule:SendAntiDataToServer(data)
   local moduleMain = self:GetModule(LoginModule)
   if not moduleMain:IsLogin() then
-    return 
+    return
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTssReportData)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTssReportData)
   request.pst_ID = self:GetPstId()
-  ;
-  (Log.debug)("GetReportData : ", data)
-  ;
-  (Log.debug)("GetReportData len : ", (string.len)(data))
+  Log.debug("GetReportData : ", data)
+  Log.debug("GetReportData len : ", string.len(data))
   request.report_data = data
   local res = self:Push(request)
 end
 
--- DECOMPILER ERROR at PC396: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.PushNewSettingTLog = function(self, setting_info)
-  -- function num : 0_116 , upvalues : _ENV
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileSettingInfo)
+function RoleModule:PushNewSettingTLog(setting_info)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventMobileSettingInfo)
   msg.bgmVolume = setting_info.bgmVolume
   msg.soundVolume = setting_info.soundVolume
   msg.voiceVolume = setting_info.voiceVolume
@@ -1944,25 +1319,16 @@ RoleModule.PushNewSettingTLog = function(self, setting_info)
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC399: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.PushBadgeSwitchSetting = function(self, badgeSwitch)
-  -- function num : 0_117 , upvalues : _ENV
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventMobileBadgeInfo)
+function RoleModule:PushBadgeSwitchSetting(badgeSwitch)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventMobileBadgeInfo)
   msg.badgeSwitch = badgeSwitch
   self:Push(msg)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_char_info).m_bBadgeSwitch = badgeSwitch
+  self.m_char_info.m_bBadgeSwitch = badgeSwitch
 end
 
--- DECOMPILER ERROR at PC402: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.ChangeLeaderFlow = function(self, ChangeLeaderTimes, BeforeLeaderId, AfterLeaderId, RemainChangeTime, BeActiveChange)
-  -- function num : 0_118 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChangeLeader)
+function RoleModule:ChangeLeaderFlow(ChangeLeaderTimes, BeforeLeaderId, AfterLeaderId, RemainChangeTime, BeActiveChange)
+  local petModule = GameGlobal.GetModule(PetModule)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChangeLeader)
   request.battle_type = self.BattleType
   request.mission_id = self.MissionId
   request.change_leader_times = ChangeLeaderTimes
@@ -1984,20 +1350,14 @@ RoleModule.ChangeLeaderFlow = function(self, ChangeLeaderTimes, BeforeLeaderId, 
   self:Push(request)
 end
 
--- DECOMPILER ERROR at PC405: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UpdateMatchInfo = function(self, BattleType, MissionId)
-  -- function num : 0_119
+function RoleModule:UpdateMatchInfo(BattleType, MissionId)
   self.BattleType = BattleType
   self.MissionId = MissionId
 end
 
--- DECOMPILER ERROR at PC408: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UpdateMatchPetsList = function(self, PetsList)
-  -- function num : 0_120 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for i,pstid in ipairs(PetsList) do
+function RoleModule:UpdateMatchPetsList(PetsList)
+  local petModule = GameGlobal.GetModule(PetModule)
+  for i, pstid in ipairs(PetsList) do
     local curPet = petModule:GetPet(pstid)
     local pet_template_id = 0
     if curPet ~= nil then
@@ -2005,41 +1365,26 @@ RoleModule.UpdateMatchPetsList = function(self, PetsList)
     else
       pet_template_id = pstid
     end
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.PetsTemplateIdList)[i] = pet_template_id
+    self.PetsTemplateIdList[i] = pet_template_id
   end
 end
 
--- DECOMPILER ERROR at PC411: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.ChangeTeamLeader = function(self, BeforeLeaderId, AfterLeaderId, RemainChangeTime, teamOrderBefore, teamOrderAfter)
-  -- function num : 0_121 , upvalues : _ENV
-  self:ChangeLeaderFlow(((Cfg.cfg_global).changeTeamLeaderCount).IntValue - RemainChangeTime, BeforeLeaderId, AfterLeaderId, RemainChangeTime, true)
+function RoleModule:ChangeTeamLeader(BeforeLeaderId, AfterLeaderId, RemainChangeTime, teamOrderBefore, teamOrderAfter)
+  self:ChangeLeaderFlow(Cfg.cfg_global.changeTeamLeaderCount.IntValue - RemainChangeTime, BeforeLeaderId, AfterLeaderId, RemainChangeTime, true)
 end
 
--- DECOMPILER ERROR at PC414: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.MazeChangeTeamLeader = function(self, BeforeLeaderId, AfterLeaderId)
-  -- function num : 0_122
+function RoleModule:MazeChangeTeamLeader(BeforeLeaderId, AfterLeaderId)
   self:ChangeLeaderFlow(0, BeforeLeaderId, AfterLeaderId, 0, false)
 end
 
--- DECOMPILER ERROR at PC417: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.PushClientLog = function(self, stLogKey, stLogValue)
-  -- function num : 0_123 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventClientSaveLog)
+function RoleModule:PushClientLog(stLogKey, stLogValue)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventClientSaveLog)
   request.m_stKey = stLogKey
   request.m_stValue = stLogValue
   self:Push(request)
 end
 
--- DECOMPILER ERROR at PC420: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetHelpPetData = function(self, playerPstId, sourceType, roleHelpPetInfo)
-  -- function num : 0_124 , upvalues : _ENV
+function RoleModule:GetHelpPetData(playerPstId, sourceType, roleHelpPetInfo)
   local helpInfo = DHelpPet_PetData:New()
   helpInfo.m_nPlayerID = playerPstId
   helpInfo.m_nTemplateID = roleHelpPetInfo.pet_template_id
@@ -2055,18 +1400,12 @@ RoleModule.GetHelpPetData = function(self, playerPstId, sourceType, roleHelpPetI
   return helpInfo
 end
 
--- DECOMPILER ERROR at PC423: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetChangeNameTimes = function(self)
-  -- function num : 0_125
-  return (self.m_char_info).m_nAmendNameCount
+function RoleModule:GetChangeNameTimes()
+  return self.m_char_info.m_nAmendNameCount
 end
 
--- DECOMPILER ERROR at PC426: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_AmendHeadFrame = function(self, TT, nFrameID)
-  -- function num : 0_126 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventAmendHeadFrame_Req)
+function RoleModule:Request_AmendHeadFrame(TT, nFrameID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventAmendHeadFrame_Req)
   request.m_nFrameID = nFrameID
   local res, reply = self:_Request_Handle(TT, request)
   if not res:GetSucc() then
@@ -2074,19 +1413,14 @@ RoleModule.Request_AmendHeadFrame = function(self, TT, nFrameID)
   end
   local recvPacket = reply.msg
   res:SetResult(recvPacket.ret)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R7 in 'UnsetPending'
-
   if recvPacket.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
-    (self.m_char_info).m_nHeadFrameID = nFrameID
+    self.m_char_info.m_nHeadFrameID = nFrameID
   end
   return res
 end
 
--- DECOMPILER ERROR at PC429: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_ClearHeadFrameLock = function(self, TT, nFrameID)
-  -- function num : 0_127 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventClearHeadFrameLock_Req)
+function RoleModule:Request_ClearHeadFrameLock(TT, nFrameID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventClearHeadFrameLock_Req)
   request.m_nFrameID = nFrameID
   local res, reply = self:_Request_Handle(TT, request)
   if not res:GetSucc() then
@@ -2094,21 +1428,16 @@ RoleModule.Request_ClearHeadFrameLock = function(self, TT, nFrameID)
   end
   local recvPacket = reply.msg
   res:SetResult(recvPacket.ret)
-  do
-    if recvPacket.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
-      local pFindFrameData = self:_FindRoleFrameData(nFrameID)
-      pFindFrameData:SetLock(false)
-      pFindFrameData:SetCanUnLock(false)
-    end
-    return res
+  if recvPacket.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
+    local pFindFrameData = self:_FindRoleFrameData(nFrameID)
+    pFindFrameData:SetLock(false)
+    pFindFrameData:SetCanUnLock(false)
   end
+  return res
 end
 
--- DECOMPILER ERROR at PC432: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.Request_GetHeadFrameLockInfo = function(self, TT, nFrameID)
-  -- function num : 0_128 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRoleHeadFrameLock_Req)
+function RoleModule:Request_GetHeadFrameLockInfo(TT, nFrameID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRoleHeadFrameLock_Req)
   request.m_nFrameID = nFrameID
   local res, reply = self:_Request_Handle(TT, request)
   if not res:GetSucc() then
@@ -2118,24 +1447,21 @@ RoleModule.Request_GetHeadFrameLockInfo = function(self, TT, nFrameID)
   res:SetResult(recvPacket.ret)
   local pFindFrameData = self:_FindRoleFrameData(nFrameID)
   pFindFrameData:ResetPassCondition()
-  for key,value in pairs(recvPacket.m_vecLockCondition) do
+  for key, value in pairs(recvPacket.m_vecLockCondition) do
     pFindFrameData:AddPassCondition(value)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC435: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._UI_GetLockCondition = function(self, lockCondition, pFindHeadFrame, cfgTableLockCondition)
-  -- function num : 0_129 , upvalues : _ENV
+function RoleModule:_UI_GetLockCondition(lockCondition, pFindHeadFrame, cfgTableLockCondition)
   local listCondition = {}
   if GameSingle then
     return listCondition
   end
-  if lockCondition == nil then
+  if nil == lockCondition then
     return listCondition
   end
-  for key,nConditionID in pairs(lockCondition) do
+  for key, nConditionID in pairs(lockCondition) do
     local headFrameLockCondition = HeadImageLockCondition:New(nConditionID)
     headFrameLockCondition.m_bPass = pFindHeadFrame:IsConditionPass(nConditionID)
     local cfgLockCondition = cfgTableLockCondition[nConditionID]
@@ -2143,22 +1469,18 @@ RoleModule._UI_GetLockCondition = function(self, lockCondition, pFindHeadFrame, 
       headFrameLockCondition.m_stDesc = cfgLockCondition.LockDesc
     end
     headFrameLockCondition:SetConditionParam(cfgLockCondition.ConditionParam)
-    ;
-    (table.insert)(listCondition, headFrameLockCondition)
+    table.insert(listCondition, headFrameLockCondition)
   end
   return listCondition
 end
 
--- DECOMPILER ERROR at PC438: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_GetHeadFrameLockInfo = function(self, nFrameID)
-  -- function num : 0_130 , upvalues : _ENV
-  local cfgWorkData = (Cfg.cfg_role_head_frame)[nFrameID]
-  if cfgWorkData == nil then
+function RoleModule:UI_GetHeadFrameLockInfo(nFrameID)
+  local cfgWorkData = Cfg.cfg_role_head_frame[nFrameID]
+  if nil == cfgWorkData then
     return nil
   end
   local pFindHeadFrame = self:_FindRoleFrameData(nFrameID)
-  if pFindHeadFrame == nil then
+  if nil == pFindHeadFrame then
     return nil
   end
   local headLockInfo = HeadImageLockInfo:New(nFrameID)
@@ -2171,56 +1493,27 @@ RoleModule.UI_GetHeadFrameLockInfo = function(self, nFrameID)
   return headLockInfo
 end
 
--- DECOMPILER ERROR at PC441: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_GetMainBgID = function(self)
-  -- function num : 0_131
-  return (self.m_choose_painting).back_id
+function RoleModule:UI_GetMainBgID()
+  return self.m_choose_painting.back_id
 end
 
--- DECOMPILER ERROR at PC444: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleRequestRole_BackID = function(self, param)
-  -- function num : 0_132 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_choose_painting).back_id = param.nBackImageID
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).background_type = param.background_type
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).background_x = param.background_x
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).background_y = param.background_y
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).background_scale = param.background_scale
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).is_hand_operate = param.is_hand_operate
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_choose_painting).spine_id = param.spine_id
+function RoleModule:GameSingleRequestRole_BackID(param)
+  self.m_choose_painting.back_id = param.nBackImageID
+  self.m_choose_painting.background_type = param.background_type
+  self.m_choose_painting.background_x = param.background_x
+  self.m_choose_painting.background_y = param.background_y
+  self.m_choose_painting.background_scale = param.background_scale
+  self.m_choose_painting.is_hand_operate = param.is_hand_operate
+  self.m_choose_painting.spine_id = param.spine_id
   self:GameSingleSaveChoosePainting()
   return EmptyRes
 end
 
--- DECOMPILER ERROR at PC447: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.RequestRole_BackID = function(self, TT, param)
-  -- function num : 0_133 , upvalues : _ENV
+function RoleModule:RequestRole_BackID(TT, param)
   if GameSingle then
     return self:GameSingleRequestRole_BackID(param)
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChooseBackImage)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChooseBackImage)
   request.m_nBackImageID = param.nBackImageID
   request.m_background_type = param.background_type
   request.m_background_x = param.background_x
@@ -2233,72 +1526,36 @@ RoleModule.RequestRole_BackID = function(self, TT, param)
     return res
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R7 in 'UnsetPending'
-
   if replyEvent.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
-    (self.m_choose_painting).back_id = param.nBackImageID
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.m_choose_painting).background_type = param.background_type
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.m_choose_painting).background_x = param.background_x
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.m_choose_painting).background_y = param.background_y
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.m_choose_painting).background_scale = param.background_scale
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.m_choose_painting).is_hand_operate = param.is_hand_operate
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.m_choose_painting).spine_id = param.spine_id
+    self.m_choose_painting.back_id = param.nBackImageID
+    self.m_choose_painting.background_type = param.background_type
+    self.m_choose_painting.background_x = param.background_x
+    self.m_choose_painting.background_y = param.background_y
+    self.m_choose_painting.background_scale = param.background_scale
+    self.m_choose_painting.is_hand_operate = param.is_hand_operate
+    self.m_choose_painting.spine_id = param.spine_id
   end
   res:SetResult(replyEvent.ret)
   return res
 end
 
--- DECOMPILER ERROR at PC450: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GameSingleRequestRole_Music = function(self, nBgmType, nBgmID)
-  -- function num : 0_134 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
+function RoleModule:GameSingleRequestRole_Music(nBgmType, nBgmID)
   if EnumBgmType.E_Bgm_Main == nBgmType then
-    (self.m_choose_painting).bgm_main = nBgmID
-  else
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-    if EnumBgmType.E_Bgm_AirCraft == nBgmType then
-      (self.m_choose_painting).bgm_aircraft = nBgmID
-    else
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-      if EnumBgmType.E_Bgm_Homeland == nBgmType then
-        (self.m_choose_painting).bgm_homeland = nBgmID
-      end
-    end
+    self.m_choose_painting.bgm_main = nBgmID
+  elseif EnumBgmType.E_Bgm_AirCraft == nBgmType then
+    self.m_choose_painting.bgm_aircraft = nBgmID
+  elseif EnumBgmType.E_Bgm_Homeland == nBgmType then
+    self.m_choose_painting.bgm_homeland = nBgmID
   end
   self:GameSingleSaveChoosePainting()
   return EmptyRes
 end
 
--- DECOMPILER ERROR at PC453: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.RequestRole_Music = function(self, TT, nBgmType, nBgmID)
-  -- function num : 0_135 , upvalues : _ENV
+function RoleModule:RequestRole_Music(TT, nBgmType, nBgmID)
   if GameSingle then
     return self:GameSingleRequestRole_Music(nBgmType, nBgmID)
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventChooseBgm)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventChooseBgm)
   request.m_nBgmType = nBgmType
   request.m_nBgmID = nBgmID
   local res, reply = self:_Request_Handle(TT, request)
@@ -2307,70 +1564,45 @@ RoleModule.RequestRole_Music = function(self, TT, nBgmType, nBgmID)
   end
   local recvPacket = reply.msg
   res:SetResult(recvPacket.ret)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R8 in 'UnsetPending'
-
   if recvPacket.ret == ROLE_RESULT_CODE.ROLE_SUCCESS then
     if EnumBgmType.E_Bgm_Main == nBgmType then
-      (self.m_choose_painting).bgm_main = nBgmID
-    else
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R8 in 'UnsetPending'
-
-      if EnumBgmType.E_Bgm_AirCraft == nBgmType then
-        (self.m_choose_painting).bgm_aircraft = nBgmID
-      else
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R8 in 'UnsetPending'
-
-        if EnumBgmType.E_Bgm_Homeland == nBgmType then
-          (self.m_choose_painting).bgm_homeland = nBgmID
-        end
-      end
+      self.m_choose_painting.bgm_main = nBgmID
+    elseif EnumBgmType.E_Bgm_AirCraft == nBgmType then
+      self.m_choose_painting.bgm_aircraft = nBgmID
+    elseif EnumBgmType.E_Bgm_Homeland == nBgmType then
+      self.m_choose_painting.bgm_homeland = nBgmID
     end
   end
   return res
 end
 
--- DECOMPILER ERROR at PC456: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_GetMusic = function(self, nBgmType)
-  -- function num : 0_136 , upvalues : _ENV
+function RoleModule:UI_GetMusic(nBgmType)
   if EnumBgmType.E_Bgm_Main == nBgmType then
-    return (self.m_choose_painting).bgm_main
-  else
-    if EnumBgmType.E_Bgm_AirCraft == nBgmType then
-      return (self.m_choose_painting).bgm_aircraft
-    else
-      if EnumBgmType.E_Bgm_Homeland == nBgmType then
-        return (self.m_choose_painting).bgm_homeland
-      end
-    end
+    return self.m_choose_painting.bgm_main
+  elseif EnumBgmType.E_Bgm_AirCraft == nBgmType then
+    return self.m_choose_painting.bgm_aircraft
+  elseif EnumBgmType.E_Bgm_Homeland == nBgmType then
+    return self.m_choose_painting.bgm_homeland
   end
 end
 
--- DECOMPILER ERROR at PC459: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_CheckMusicLock = function(self, cfg)
-  -- function num : 0_137 , upvalues : _ENV
+function RoleModule:UI_CheckMusicLock(cfg)
   local seasonMissionID = cfg.SeasonMissionID
   if seasonMissionID then
     if not self._missionModule then
-      self._missionModule = (GameGlobal.GetModule)(MissionModule)
+      self._missionModule = GameGlobal.GetModule(MissionModule)
     end
     local missionid = seasonMissionID[1]
     local type = seasonMissionID[2]
-    local isactive = (self._missionModule):IsMissionStoryActive(missionid, type)
+    local isactive = self._missionModule:IsMissionStoryActive(missionid, type)
     if isactive then
       return false
     end
   end
-  do
-    return self:UI_CheckLockCondition(cfg.LockCondition)
-  end
+  return self:UI_CheckLockCondition(cfg.LockCondition)
 end
 
--- DECOMPILER ERROR at PC462: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_CheckMusicShow = function(self, cfg)
-  -- function num : 0_138
+function RoleModule:UI_CheckMusicShow(cfg)
   if cfg.IsShow then
     local timeCheck = self:UI_CheckTimeUnlock(cfg)
     if not timeCheck then
@@ -2382,15 +1614,10 @@ RoleModule.UI_CheckMusicShow = function(self, cfg)
     end
     return true
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC465: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_CheckTimeUnlock = function(self, cfg)
-  -- function num : 0_139 , upvalues : _ENV
+function RoleModule:UI_CheckTimeUnlock(cfg)
   if cfg.IsShow then
     if cfg.UnLockTime then
       local type = cfg.TimeTransform
@@ -2398,31 +1625,24 @@ RoleModule.UI_CheckTimeUnlock = function(self, cfg)
       if type and type == 0 then
         timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
       end
-      local unlockTime = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr(cfg.UnLockTime, timeType)
-      local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-      return svrTime < unlockTime
+      local unlockTime = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(cfg.UnLockTime, timeType)
+      local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+      return unlockTime > svrTime
     else
       return true
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC468: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_CheckLockCondition = function(self, cfgCondition)
-  -- function num : 0_140
+function RoleModule:UI_CheckLockCondition(cfgCondition)
   if cfgCondition == nil then
     return false
   end
   return not self:_CheckCondition(cfgCondition[1], cfgCondition[2], cfgCondition[3], cfgCondition[4])
 end
 
--- DECOMPILER ERROR at PC471: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.UI_CheckLockConditionNew = function(self, lockInfo)
-  -- function num : 0_141 , upvalues : _ENV
+function RoleModule:UI_CheckLockConditionNew(lockInfo)
   if lockInfo == nil then
     return false
   end
@@ -2430,763 +1650,453 @@ RoleModule.UI_CheckLockConditionNew = function(self, lockInfo)
   if item ~= nil then
     local itemMd = self:GetModule(ItemModule)
     local num = itemMd:GetItemCount(item[1])
-    if item[2] <= num then
+    if num >= item[2] then
       return true
     end
   end
-  do
-    local conditions = lockInfo.m_lockConditionList
-    local _tempCanLock = true
-    for i = 1, #conditions do
-      local cfgCondition = (conditions[i]).m_listParam
-      _tempCanLock = self:_CheckCondition(cfgCondition[1], cfgCondition[2], cfgCondition[3], cfgCondition[4])
-    end
-    do
-      if _tempCanLock ~= false then
-        return _tempCanLock
-      end
+  local conditions = lockInfo.m_lockConditionList
+  local _tempCanLock = true
+  for i = 1, #conditions do
+    local cfgCondition = conditions[i].m_listParam
+    _tempCanLock = self:_CheckCondition(cfgCondition[1], cfgCondition[2], cfgCondition[3], cfgCondition[4])
+    if _tempCanLock == false then
+      break
     end
   end
+  return _tempCanLock
 end
 
--- DECOMPILER ERROR at PC474: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._InitCheckCondition = function(self, nConditionType, nParam1, nParam2, nParam3)
-  -- function num : 0_142 , upvalues : _ENV
+function RoleModule:_InitCheckCondition(nConditionType, nParam1, nParam2, nParam3)
   self.m_listCheckCondition = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_RoleLevel] = self._CheckCondition_CT_RoleLevel
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_MissionID] = self._CheckCondition_CT_MissionID
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_ModuleUnlock] = self._CheckCondition_CT_ModuleUnlock
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_ExMissionID] = self._CheckCondition_CT_ExMissionID
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_ResDungeonID] = self._CheckCondition_CT_ResDungeonID
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_TowerID] = self._CheckCondition_CT_TowerID
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_TowerType] = self._CheckCondition_CT_TowerType
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_UnlockHeadNum] = self._CheckCondition_CT_UnlockHeadNum
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_AirRoomTypeY] = self._CheckCondition_CT_AirRoomTypeY
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_AirRoomLevelY] = self._CheckCondition_CT_AirRoomLevelY
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetYElementZLevel] = self._CheckCondition_CT_PetYElementZLevel
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetYStar] = self._CheckCondition_CT_PetYStar
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetYAffinity] = self._CheckCondition_CT_PetYAffinity
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetEnterAirRoom] = self._CheckCondition_CT_PetEnterAirRoom
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetYElementZStar] = self._CheckCondition_CT_PetYElementZStar
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetGradeY] = self._CheckCondition_CT_PetGradeY
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetAwakeY] = self._CheckCondition_CT_PetAwakeY
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetGradeLevel] = self._CheckCondition_CT_PetGradeLevel
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetAwakeLevel] = self._CheckCondition_CT_PetAwakeLevel
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PeAffinityLevel] = self._CheckCondition_CT_PetAffinityLevel
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetGradeTo] = self._CheckCondition_CT_PetGradeTo
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_FriendTeamPetsGradeLevel] = self._CheckCondition_CT_FriendTeamPetsGradeLevel
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetEquipLv] = self._CheckCondition_CT_PetEquipLv
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PetNumEquipLv] = self._CheckCondition_CT_PetNumEquipLv
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_ItemCount] = self._CheckCondition_CT_ItemCount
-  -- DECOMPILER ERROR at PC130: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_BattleWinYTZID] = nil
-  -- DECOMPILER ERROR at PC135: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PlayerLogin] = self._CheckCondition_CT_PlayerLogin
-  -- DECOMPILER ERROR at PC140: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_PlayerChangeLogin] = self._CheckCondition_CT_PlayerChangeLogin
-  -- DECOMPILER ERROR at PC144: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_TotalComStoryEventNum] = nil
-  -- DECOMPILER ERROR at PC149: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_QuestChatPetCompleteNum] = self._CheckCondition_CT_QuestChatPetCompleteNum
-  -- DECOMPILER ERROR at PC154: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_QuestChatIsReaded] = self._CheckCondition_CT_QuestChatTalkComplete
-  -- DECOMPILER ERROR at PC159: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_QuestChatTotalCompleteNum] = self._CheckCondition_CT_QuestChatTotalCompleteNum
-  -- DECOMPILER ERROR at PC164: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_AircraftUpdateAmusementNum] = self._CheckCondition_CT_AircraftUpdateAmusementNum
-  -- DECOMPILER ERROR at PC169: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_AircraftUpdateAmusementType] = self._CheckCondition_CT_AircraftUpdateAmusementType
-  -- DECOMPILER ERROR at PC174: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_ComPetStoryEventNum] = self._CheckCondition_CT_ComPetStoryEventNum
-  -- DECOMPILER ERROR at PC179: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_ComAssignStoryEventNum] = self._CheckCondition_CT_ComAssignStoryEventNum
-  -- DECOMPILER ERROR at PC184: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_Ambient] = self._CheckCondition_CT_Ambient
-  -- DECOMPILER ERROR at PC189: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.m_listCheckCondition)[ConditionType.CT_FurnitureNum] = self._CheckCondition_CT_FurnitureNum
+  self.m_listCheckCondition[ConditionType.CT_RoleLevel] = self._CheckCondition_CT_RoleLevel
+  self.m_listCheckCondition[ConditionType.CT_MissionID] = self._CheckCondition_CT_MissionID
+  self.m_listCheckCondition[ConditionType.CT_ModuleUnlock] = self._CheckCondition_CT_ModuleUnlock
+  self.m_listCheckCondition[ConditionType.CT_ExMissionID] = self._CheckCondition_CT_ExMissionID
+  self.m_listCheckCondition[ConditionType.CT_ResDungeonID] = self._CheckCondition_CT_ResDungeonID
+  self.m_listCheckCondition[ConditionType.CT_TowerID] = self._CheckCondition_CT_TowerID
+  self.m_listCheckCondition[ConditionType.CT_TowerType] = self._CheckCondition_CT_TowerType
+  self.m_listCheckCondition[ConditionType.CT_UnlockHeadNum] = self._CheckCondition_CT_UnlockHeadNum
+  self.m_listCheckCondition[ConditionType.CT_AirRoomTypeY] = self._CheckCondition_CT_AirRoomTypeY
+  self.m_listCheckCondition[ConditionType.CT_AirRoomLevelY] = self._CheckCondition_CT_AirRoomLevelY
+  self.m_listCheckCondition[ConditionType.CT_PetYElementZLevel] = self._CheckCondition_CT_PetYElementZLevel
+  self.m_listCheckCondition[ConditionType.CT_PetYStar] = self._CheckCondition_CT_PetYStar
+  self.m_listCheckCondition[ConditionType.CT_PetYAffinity] = self._CheckCondition_CT_PetYAffinity
+  self.m_listCheckCondition[ConditionType.CT_PetEnterAirRoom] = self._CheckCondition_CT_PetEnterAirRoom
+  self.m_listCheckCondition[ConditionType.CT_PetYElementZStar] = self._CheckCondition_CT_PetYElementZStar
+  self.m_listCheckCondition[ConditionType.CT_PetGradeY] = self._CheckCondition_CT_PetGradeY
+  self.m_listCheckCondition[ConditionType.CT_PetAwakeY] = self._CheckCondition_CT_PetAwakeY
+  self.m_listCheckCondition[ConditionType.CT_PetGradeLevel] = self._CheckCondition_CT_PetGradeLevel
+  self.m_listCheckCondition[ConditionType.CT_PetAwakeLevel] = self._CheckCondition_CT_PetAwakeLevel
+  self.m_listCheckCondition[ConditionType.CT_PeAffinityLevel] = self._CheckCondition_CT_PetAffinityLevel
+  self.m_listCheckCondition[ConditionType.CT_PetGradeTo] = self._CheckCondition_CT_PetGradeTo
+  self.m_listCheckCondition[ConditionType.CT_FriendTeamPetsGradeLevel] = self._CheckCondition_CT_FriendTeamPetsGradeLevel
+  self.m_listCheckCondition[ConditionType.CT_PetEquipLv] = self._CheckCondition_CT_PetEquipLv
+  self.m_listCheckCondition[ConditionType.CT_PetNumEquipLv] = self._CheckCondition_CT_PetNumEquipLv
+  self.m_listCheckCondition[ConditionType.CT_ItemCount] = self._CheckCondition_CT_ItemCount
+  self.m_listCheckCondition[ConditionType.CT_BattleWinYTZID] = nil
+  self.m_listCheckCondition[ConditionType.CT_PlayerLogin] = self._CheckCondition_CT_PlayerLogin
+  self.m_listCheckCondition[ConditionType.CT_PlayerChangeLogin] = self._CheckCondition_CT_PlayerChangeLogin
+  self.m_listCheckCondition[ConditionType.CT_TotalComStoryEventNum] = nil
+  self.m_listCheckCondition[ConditionType.CT_QuestChatPetCompleteNum] = self._CheckCondition_CT_QuestChatPetCompleteNum
+  self.m_listCheckCondition[ConditionType.CT_QuestChatIsReaded] = self._CheckCondition_CT_QuestChatTalkComplete
+  self.m_listCheckCondition[ConditionType.CT_QuestChatTotalCompleteNum] = self._CheckCondition_CT_QuestChatTotalCompleteNum
+  self.m_listCheckCondition[ConditionType.CT_AircraftUpdateAmusementNum] = self._CheckCondition_CT_AircraftUpdateAmusementNum
+  self.m_listCheckCondition[ConditionType.CT_AircraftUpdateAmusementType] = self._CheckCondition_CT_AircraftUpdateAmusementType
+  self.m_listCheckCondition[ConditionType.CT_ComPetStoryEventNum] = self._CheckCondition_CT_ComPetStoryEventNum
+  self.m_listCheckCondition[ConditionType.CT_ComAssignStoryEventNum] = self._CheckCondition_CT_ComAssignStoryEventNum
+  self.m_listCheckCondition[ConditionType.CT_Ambient] = self._CheckCondition_CT_Ambient
+  self.m_listCheckCondition[ConditionType.CT_FurnitureNum] = self._CheckCondition_CT_FurnitureNum
 end
 
--- DECOMPILER ERROR at PC477: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition = function(self, nConditionType, nParam1, nParam2, nParam3)
-  -- function num : 0_143 , upvalues : _ENV
-  local pFunction = (self.m_listCheckCondition)[nConditionType]
+function RoleModule:_CheckCondition(nConditionType, nParam1, nParam2, nParam3)
+  local pFunction = self.m_listCheckCondition[nConditionType]
   if pFunction == nil then
-    (Log.error)("No Support ConditionType ", nConditionType)
+    Log.error("No Support ConditionType ", nConditionType)
     return false
   end
   return pFunction(self, nParam1, nParam2, nParam3)
 end
 
--- DECOMPILER ERROR at PC480: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_RoleLevel = function(self, nLevel)
-  -- function num : 0_144
-  do return nLevel <= self:GetLevel(), self:GetLevel(), nLevel end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function RoleModule:_CheckCondition_CT_RoleLevel(nLevel)
+  return nLevel <= self:GetLevel(), self:GetLevel(), nLevel
 end
 
--- DECOMPILER ERROR at PC483: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_MissionID = function(self, nLimitCount, nMissionID)
-  -- function num : 0_145 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_MissionID(nLimitCount, nMissionID)
   local moduleWork = self:GetModule(MissionModule)
   return moduleWork:IsPassMissionID(nMissionID)
 end
 
--- DECOMPILER ERROR at PC486: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_ModuleUnlock = function(self, nModuleID)
-  -- function num : 0_146
+function RoleModule:_CheckCondition_CT_ModuleUnlock(nModuleID)
   return self:CheckModuleUnlock(nModuleID)
 end
 
--- DECOMPILER ERROR at PC489: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_ExMissionID = function(self, nExtTaskID)
-  -- function num : 0_147 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_ExMissionID(nExtTaskID)
   local moduleWork = self:GetModule(ExtMissionModule)
   return moduleWork:IsExtTaskPass(nExtTaskID)
 end
 
--- DECOMPILER ERROR at PC492: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_ResDungeonID = function(self, nInstanceId)
-  -- function num : 0_148 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_ResDungeonID(nInstanceId)
   local moduleWork = self:GetModule(ResDungeonModule)
   return moduleWork:IsResDungeonPassed(nInstanceId)
 end
 
--- DECOMPILER ERROR at PC495: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_TowerID = function(self, nTowerID)
-  -- function num : 0_149 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_TowerID(nTowerID)
   local moduleWork = self:GetModule(TowerModule)
   return moduleWork:IsTowerPass(nTowerID)
 end
 
--- DECOMPILER ERROR at PC498: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_TowerType = function(self, nTowerType, nNeedPassLevel)
-  -- function num : 0_150 , upvalues : _ENV
-  if nTowerType < ElementType.ElementType_None or ElementType.ElementType_Any < nTowerType then
+function RoleModule:_CheckCondition_CT_TowerType(nTowerType, nNeedPassLevel)
+  if nTowerType < ElementType.ElementType_None or nTowerType > ElementType.ElementType_Any then
     return false
   end
   local moduleWork = self:GetModule(TowerModule)
   local nTowerLayer = 0
-  local listTowerType = {ElementType.ElementType_Blue, ElementType.ElementType_Red, ElementType.ElementType_Green, ElementType.ElementType_Yellow}
+  local listTowerType = {
+    ElementType.ElementType_Blue,
+    ElementType.ElementType_Red,
+    ElementType.ElementType_Green,
+    ElementType.ElementType_Yellow
+  }
   if ElementType.ElementType_None == nTowerType then
     for i = 1, #listTowerType do
       local nTempLayer = moduleWork:GetTowerLayer(listTowerType[i])
-      if nTempLayer < nTowerLayer or i == 1 then
+      if nTowerLayer > nTempLayer or i == 1 then
+        nTowerLayer = nTempLayer
+      end
+    end
+  elseif ElementType.ElementType_Any == nTowerType then
+    for i = 1, #listTowerType do
+      local nTempLayer = moduleWork:GetTowerLayer(listTowerType[i])
+      if nTowerLayer < nTempLayer or i == 1 then
         nTowerLayer = nTempLayer
       end
     end
   else
-    do
-      if ElementType.ElementType_Any == nTowerType then
-        for i = 1, #listTowerType do
-          local nTempLayer = moduleWork:GetTowerLayer(listTowerType[i])
-          if nTowerLayer < nTempLayer or i == 1 then
-            nTowerLayer = nTempLayer
-          end
-        end
-      else
-        do
-          nTowerLayer = moduleWork:GetTowerLayer(nTowerType)
-          do return nNeedPassLevel <= nTowerLayer, nTowerLayer, nNeedPassLevel end
-          -- DECOMPILER ERROR: 1 unprocessed JMP targets
-        end
-      end
-    end
+    nTowerLayer = moduleWork:GetTowerLayer(nTowerType)
   end
+  return nNeedPassLevel <= nTowerLayer, nTowerLayer, nNeedPassLevel
 end
 
--- DECOMPILER ERROR at PC501: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_UnlockHeadNum = function(self, nLimitCount)
-  -- function num : 0_151
+function RoleModule:_CheckCondition_CT_UnlockHeadNum(nLimitCount)
   local nCount = self:GetHeadImageUnLockCount()
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC504: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_AirRoomTypeY = function(self, nLimitCount, nRoomType)
-  -- function num : 0_152 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_AirRoomTypeY(nLimitCount, nRoomType)
   local workModule = self:GetModule(AircraftModule)
   local nCount = workModule:GetRoomCount(nRoomType, 0)
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC507: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_AirRoomLevelY = function(self, nLimitCount, nLimitLevel)
-  -- function num : 0_153 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_AirRoomLevelY(nLimitCount, nLimitLevel)
   local workModule = self:GetModule(AircraftModule)
   local nCount = workModule:GetRoomCountWithOutAmusement(0, nLimitLevel)
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC510: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetYElementZLevel = function(self, nLimitCount, nElementType, nLimitGrade, nLimitLevel, nLimitStar)
-  -- function num : 0_154 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_PetYElementZLevel(nLimitCount, nElementType, nLimitGrade, nLimitLevel, nLimitStar)
   local nCount = 0
-  local petList = (self:GetModule(PetModule)):GetPets()
-  for pstid,petData in pairs(petList) do
-    if (((petData:GetPetFirstElement() ~= nElementType and nElementType ~= 0) or (nLimitGrade > petData:GetPetGrade() and nLimitGrade ~= 0) or (nLimitLevel > petData:GetPetLevel() and nLimitLevel ~= 0) or (nLimitStar <= petData:GetPetStar() or nLimitStar == 0))) then
+  local petList = self:GetModule(PetModule):GetPets()
+  for pstid, petData in pairs(petList) do
+    if (petData:GetPetFirstElement() == nElementType or 0 == nElementType) and (nLimitGrade <= petData:GetPetGrade() or 0 == nLimitGrade) and (nLimitLevel <= petData:GetPetLevel() or 0 == nLimitLevel) and (nLimitStar <= petData:GetPetStar() or 0 == nLimitStar) then
       nCount = nCount + 1
     end
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount, nElementType, nLimitGrade, nLimitLevel, nLimitStar end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount, nElementType, nLimitGrade, nLimitLevel, nLimitStar
 end
 
--- DECOMPILER ERROR at PC513: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetYStar = function(self, nLimitCount, nLimitStar)
-  -- function num : 0_155 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_PetYStar(nLimitCount, nLimitStar)
   local nCount = 0
-  local petList = (self:GetModule(PetModule)):GetPets()
-  for pstid,petData in pairs(petList) do
-    if nLimitStar <= petData:GetPetStar() or nLimitStar == 0 then
+  local petList = self:GetModule(PetModule):GetPets()
+  for pstid, petData in pairs(petList) do
+    if nLimitStar <= petData:GetPetStar() or 0 == nLimitStar then
       nCount = nCount + 1
     end
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC516: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetYAffinity = function(self, nLimitCount, nLimitAffinity)
-  -- function num : 0_156 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_PetYAffinity(nLimitCount, nLimitAffinity)
   local nCount = 0
-  local petList = (self:GetModule(PetModule)):GetPets()
-  for pstid,petData in pairs(petList) do
+  local petList = self:GetModule(PetModule):GetPets()
+  for pstid, petData in pairs(petList) do
     if nLimitAffinity <= petData:GetPetAffinityLevel() then
       nCount = nCount + 1
     end
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC519: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetEnterAirRoom = function(self, nLimitCount)
-  -- function num : 0_157 , upvalues : _ENV
-  local nCount = (self:GetModule(AircraftModule)):GetAllRoomPetCount()
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function RoleModule:_CheckCondition_CT_PetEnterAirRoom(nLimitCount)
+  local nCount = self:GetModule(AircraftModule):GetAllRoomPetCount()
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC522: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetYElementZStar = function(self, nLimitCount, nElementType, nLimitStar)
-  -- function num : 0_158 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_PetYElementZStar(nLimitCount, nElementType, nLimitStar)
   local nCount = 0
-  local petList = (self:GetModule(PetModule)):GetPets()
-  for pstid,petData in pairs(petList) do
-    if (petData:GetPetFirstElement() == nElementType or nElementType == 0) and (nLimitStar <= petData:GetPetStar() or nLimitStar == 0) then
+  local petList = self:GetModule(PetModule):GetPets()
+  for pstid, petData in pairs(petList) do
+    if (petData:GetPetFirstElement() == nElementType or 0 == nElementType) and (nLimitStar <= petData:GetPetStar() or 0 == nLimitStar) then
       nCount = nCount + 1
     end
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC525: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetGradeY = function(self, nLimitCount, nLimitGrade)
-  -- function num : 0_159 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_PetGradeY(nLimitCount, nLimitGrade)
   local nCount = 0
-  local petList = (self:GetModule(PetModule)):GetPets()
-  for pstid,petData in pairs(petList) do
-    if petData:GetPetGrade() == nLimitGrade or nLimitGrade == 0 then
+  local petList = self:GetModule(PetModule):GetPets()
+  for pstid, petData in pairs(petList) do
+    if petData:GetPetGrade() == nLimitGrade or 0 == nLimitGrade then
       nCount = nCount + 1
     end
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC528: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetAwakeY = function(self, nLimitCount, nLimitAwake)
-  -- function num : 0_160 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_PetAwakeY(nLimitCount, nLimitAwake)
   local nCount = 0
-  local petList = (self:GetModule(PetModule)):GetPets()
-  for pstid,petData in pairs(petList) do
-    if petData:GetPetAwakening() == nLimitAwake or nLimitAwake == 0 then
+  local petList = self:GetModule(PetModule):GetPets()
+  for pstid, petData in pairs(petList) do
+    if petData:GetPetAwakening() == nLimitAwake or 0 == nLimitAwake then
       nCount = nCount + 1
     end
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC531: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetGradeLevel = function(self, nPetTemplateID, nLimitGrade, nLimitLevel)
-  -- function num : 0_161 , upvalues : _ENV
-  local petFind = (self:GetModule(PetModule)):GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+function RoleModule:_CheckCondition_CT_PetGradeLevel(nPetTemplateID, nLimitGrade, nLimitLevel)
+  local petFind = self:GetModule(PetModule):GetPetByTemplateId(nPetTemplateID)
+  if nil == petFind then
     return false, 0, 0
   end
-  if not nLimitGrade then
-    nLimitGrade = 0
-  end
-  if petFind:GetPetGrade() < nLimitGrade then
+  nLimitGrade = nLimitGrade or 0
+  if nLimitGrade > petFind:GetPetGrade() then
     return false, petFind:GetPetGrade(), nLimitGrade
   end
-  if not nLimitLevel then
-    nLimitLevel = 0
-  end
-  if petFind:GetPetLevel() < nLimitLevel then
+  nLimitLevel = nLimitLevel or 0
+  if nLimitLevel > petFind:GetPetLevel() then
     return false, petFind:GetPetLevel(), nLimitLevel
   end
   return true, petFind:GetPetLevel(), nLimitLevel
 end
 
--- DECOMPILER ERROR at PC534: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetAwakeLevel = function(self, nPetTemplateID, nLimitAwake)
-  -- function num : 0_162 , upvalues : _ENV
-  local petFind = (self:GetModule(PetModule)):GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+function RoleModule:_CheckCondition_CT_PetAwakeLevel(nPetTemplateID, nLimitAwake)
+  local petFind = self:GetModule(PetModule):GetPetByTemplateId(nPetTemplateID)
+  if nil == petFind then
     return false, 0, 0
   end
-  if not nLimitAwake then
-    nLimitAwake = 0
-  end
-  if petFind:GetPetAwakening() < nLimitAwake then
+  nLimitAwake = nLimitAwake or 0
+  if nLimitAwake > petFind:GetPetAwakening() then
     return false, petFind:GetPetAwakening(), nLimitAwake
   end
   return true, petFind:GetPetAwakening(), nLimitAwake
 end
 
--- DECOMPILER ERROR at PC537: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetAffinityLevel = function(self, nPetTemplateID, nLimitAffinity)
-  -- function num : 0_163 , upvalues : _ENV
-  local petFind = (self:GetModule(PetModule)):GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+function RoleModule:_CheckCondition_CT_PetAffinityLevel(nPetTemplateID, nLimitAffinity)
+  local petFind = self:GetModule(PetModule):GetPetByTemplateId(nPetTemplateID)
+  if nil == petFind then
     return false, 0, 0
   end
-  if not nLimitAffinity then
-    nLimitAffinity = 0
-  end
-  if petFind:GetPetAffinityLevel() < nLimitAffinity then
+  nLimitAffinity = nLimitAffinity or 0
+  if nLimitAffinity > petFind:GetPetAffinityLevel() then
     return false, petFind:GetPetAffinityLevel(), nLimitAffinity
   end
   return true, petFind:GetPetAffinityLevel(), nLimitAffinity
 end
 
--- DECOMPILER ERROR at PC540: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetGradeTo = function(self, nPetTemplateID, nLimitGrade)
-  -- function num : 0_164 , upvalues : _ENV
-  local petFind = (self:GetModule(PetModule)):GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+function RoleModule:_CheckCondition_CT_PetGradeTo(nPetTemplateID, nLimitGrade)
+  local petFind = self:GetModule(PetModule):GetPetByTemplateId(nPetTemplateID)
+  if nil == petFind then
     return false, 0, 0
   end
-  if not nLimitGrade then
-    nLimitGrade = 0
-  end
-  if petFind:GetPetGrade() < nLimitGrade then
+  nLimitGrade = nLimitGrade or 0
+  if nLimitGrade > petFind:GetPetGrade() then
     return false, petFind:GetPetGrade(), nLimitGrade
   end
   return true, petFind:GetPetGrade(), nLimitGrade
 end
 
--- DECOMPILER ERROR at PC543: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_FriendTeamPetsGradeLevel = function(self, nLimitTag, nLimitCount, nLimitGrade, nLimitLevel)
-  -- function num : 0_165 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_FriendTeamPetsGradeLevel(nLimitTag, nLimitCount, nLimitGrade, nLimitLevel)
   local nCount = 0
-  local petList = (self:GetModule(PetModule)):GetPets()
-  if not nLimitTag then
-    nLimitTag = 0
-  end
-  if not nLimitGrade then
-    nLimitGrade = 0
-  end
-  if not nLimitLevel then
-    nLimitLevel = 0
-  end
-  for pstid,petData in pairs(petList) do
-    if ((nLimitTag ~= 0 and not petData:IsMyTag(nLimitTag)) or (nLimitGrade > petData:GetPetGrade() and nLimitGrade ~= 0) or (nLimitLevel <= petData:GetPetLevel() or nLimitLevel == 0)) then
+  local petList = self:GetModule(PetModule):GetPets()
+  nLimitTag = nLimitTag or 0
+  nLimitGrade = nLimitGrade or 0
+  nLimitLevel = nLimitLevel or 0
+  for pstid, petData in pairs(petList) do
+    if (0 == nLimitTag or petData:IsMyTag(nLimitTag)) and (nLimitGrade <= petData:GetPetGrade() or 0 == nLimitGrade) and (nLimitLevel <= petData:GetPetLevel() or 0 == nLimitLevel) then
       nCount = nCount + 1
     end
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC546: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetEquipLv = function(self, nPetTemplateID, nLimitEquipLevel)
-  -- function num : 0_166 , upvalues : _ENV
-  local petFind = (self:GetModule(PetModule)):GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+function RoleModule:_CheckCondition_CT_PetEquipLv(nPetTemplateID, nLimitEquipLevel)
+  local petFind = self:GetModule(PetModule):GetPetByTemplateId(nPetTemplateID)
+  if nil == petFind then
     return false, 0, 0
   end
-  if not nLimitEquipLevel then
-    nLimitEquipLevel = 0
-  end
-  if petFind:GetEquipLv() < nLimitEquipLevel then
+  nLimitEquipLevel = nLimitEquipLevel or 0
+  if nLimitEquipLevel > petFind:GetEquipLv() then
     return false, petFind:GetEquipLv(), nLimitEquipLevel
   end
   return true, petFind:GetEquipLv(), nLimitEquipLevel
 end
 
--- DECOMPILER ERROR at PC549: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PetNumEquipLv = function(self, nLimitCount, nLimitEquipLevel)
-  -- function num : 0_167 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_PetNumEquipLv(nLimitCount, nLimitEquipLevel)
   local nCount = 0
-  local petList = (self:GetModule(PetModule)):GetPets()
-  if not nLimitEquipLevel then
-    nLimitEquipLevel = 0
-  end
-  for pstid,petData in pairs(petList) do
-    if petData:GetEquipLv() == nLimitEquipLevel or nLimitEquipLevel == 0 then
+  local petList = self:GetModule(PetModule):GetPets()
+  nLimitEquipLevel = nLimitEquipLevel or 0
+  for pstid, petData in pairs(petList) do
+    if petData:GetEquipLv() == nLimitEquipLevel or 0 == nLimitEquipLevel then
       nCount = nCount + 1
     end
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC552: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_ItemCount = function(self, nItemCount, nItemID)
-  -- function num : 0_168 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_ItemCount(nItemCount, nItemID)
   local workModule = self:GetModule(ItemModule)
   local nHaveCount = workModule:GetItemCount(nItemID)
-  do return nItemCount <= nHaveCount, nHaveCount, nItemCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nItemCount <= nHaveCount, nHaveCount, nItemCount
 end
 
--- DECOMPILER ERROR at PC555: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_BattleWinYTZID = function(self, nCount, nMatchType, nMatchID)
-  -- function num : 0_169
+function RoleModule:_CheckCondition_CT_BattleWinYTZID(nCount, nMatchType, nMatchID)
   return false
 end
 
--- DECOMPILER ERROR at PC558: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PlayerLogin = function(self, nLoginDays)
-  -- function num : 0_170
+function RoleModule:_CheckCondition_CT_PlayerLogin(nLoginDays)
   local nHaveCount = self:GetTotalLoginDays()
-  do return nLoginDays <= nHaveCount, nHaveCount, nLoginDays end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLoginDays <= nHaveCount, nHaveCount, nLoginDays
 end
 
--- DECOMPILER ERROR at PC561: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_PlayerChangeLogin = function(self, nLoginDays)
-  -- function num : 0_171
+function RoleModule:_CheckCondition_CT_PlayerChangeLogin(nLoginDays)
   local nHaveCount = self:GetTotalLoginChangeDays()
-  do return nLoginDays <= nHaveCount, nHaveCount, nLoginDays end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLoginDays <= nHaveCount, nHaveCount, nLoginDays
 end
 
--- DECOMPILER ERROR at PC564: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_TotalComStoryEventNum = function(self, nLoginDays)
-  -- function num : 0_172 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_TotalComStoryEventNum(nLoginDays)
   local workModule = self:GetModule(AircraftModule)
   return false
 end
 
--- DECOMPILER ERROR at PC567: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_QuestChatPetCompleteNum = function(self, nPetTemplateID, nLimitCount)
-  -- function num : 0_173 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_QuestChatPetCompleteNum(nPetTemplateID, nLimitCount)
   local workModule = self:GetModule(QuestChatModule)
-  if not nPetTemplateID then
-    nPetTemplateID = 0
-  end
+  nPetTemplateID = nPetTemplateID or 0
   local nCount = workModule:UI_StatCompleteCount(nPetTemplateID)
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC570: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_QuestChatTalkComplete = function(self, chatid, talkid)
-  -- function num : 0_174 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_QuestChatTalkComplete(chatid, talkid)
   local workModule = self:GetModule(QuestChatModule)
   local complete = workModule:UI_StatCompleteTalkInChat(chatid, talkid)
   return complete
 end
 
--- DECOMPILER ERROR at PC573: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_QuestChatTotalCompleteNum = function(self, nLimitCount)
-  -- function num : 0_175 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_QuestChatTotalCompleteNum(nLimitCount)
   local workModule = self:GetModule(QuestChatModule)
   local nCount = workModule:UI_StatCompleteCount(0)
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC576: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_AircraftUpdateAmusementNum = function(self, nLimitCount)
-  -- function num : 0_176 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_AircraftUpdateAmusementNum(nLimitCount)
   local workModule = self:GetModule(AircraftModule)
   local nCount = 0
   local nAmusementBaseLevel = 1
   for nRoomType = AirRoomType.AmusementBegin, AirRoomType.AmusementEnd - 1 do
     nCount = nCount + workModule:GetRoomCount(nRoomType, nAmusementBaseLevel)
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC579: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_AircraftUpdateAmusementType = function(self, nRoomType)
-  -- function num : 0_177 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_AircraftUpdateAmusementType(nRoomType)
   local workModule = self:GetModule(AircraftModule)
   local nCount = 0
   local nAmusementBaseLevel = 1
   nCount = nCount + workModule:GetRoomCount(nRoomType, nAmusementBaseLevel)
-  do return nCount >= 1, nCount, 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 1 <= nCount, nCount, 1
 end
 
--- DECOMPILER ERROR at PC582: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_ComPetStoryEventNum = function(self, nLimitCount, nPetTemplateID)
-  -- function num : 0_178 , upvalues : _ENV
-  local petFind = (self:GetModule(PetModule)):GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+function RoleModule:_CheckCondition_CT_ComPetStoryEventNum(nLimitCount, nPetTemplateID)
+  local petFind = self:GetModule(PetModule):GetPetByTemplateId(nPetTemplateID)
+  if nil == petFind then
     return false
   end
   local nCount = petFind:GetFinishedStoryCount()
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC585: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_ComAssignStoryEventNum = function(self, nStroyEventID)
-  -- function num : 0_179 , upvalues : _ENV
-  local cfg_story = (Cfg.cfg_aircraft_pet_stroy_refresh)[nStroyEventID]
-  if cfg_story == nil then
+function RoleModule:_CheckCondition_CT_ComAssignStoryEventNum(nStroyEventID)
+  local cfg_story = Cfg.cfg_aircraft_pet_stroy_refresh[nStroyEventID]
+  if nil == cfg_story then
     return false
   end
   local nPetTemplateID = cfg_story.PetID
-  if nPetTemplateID == nil then
+  if nil == nPetTemplateID then
     return false
   end
-  local petFind = (self:GetModule(PetModule)):GetPetByTemplateId(nPetTemplateID)
-  if petFind == nil then
+  local petFind = self:GetModule(PetModule):GetPetByTemplateId(nPetTemplateID)
+  if nil == petFind then
     return false
   end
   local bFinish = petFind:IsFinishedStory(nStroyEventID)
   return bFinish
 end
 
--- DECOMPILER ERROR at PC588: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_Ambient = function(self, nAmbientLimit)
-  -- function num : 0_180 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_Ambient(nAmbientLimit)
   local workModule = self:GetModule(AircraftModule)
   local nAmbient = workModule:GetValidAmbient()
-  do return nAmbientLimit <= nAmbient, nAmbient, nAmbientLimit end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nAmbientLimit <= nAmbient, nAmbient, nAmbientLimit
 end
 
--- DECOMPILER ERROR at PC591: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule._CheckCondition_CT_FurnitureNum = function(self, nLimitCount, nFurnitureID)
-  -- function num : 0_181 , upvalues : _ENV
+function RoleModule:_CheckCondition_CT_FurnitureNum(nLimitCount, nFurnitureID)
   local workModule = self:GetModule(ItemModule)
   local furnitureList = workModule:GetItemListBySubType(ItemSubType.ItemSubType_Furniture)
-  if furnitureList == nil then
+  if nil == furnitureList then
     return false, 0, 0
   end
   local nCount = 0
-  for nItemID,nItemCount in pairs(furnitureList) do
-    if nFurnitureID == 0 or nFurnitureID == nItemID then
+  for nItemID, nItemCount in pairs(furnitureList) do
+    if 0 == nFurnitureID or nFurnitureID == nItemID then
       nCount = nCount + nItemCount
     end
   end
-  do return nLimitCount <= nCount, nCount, nLimitCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nLimitCount <= nCount, nCount, nLimitCount
 end
 
--- DECOMPILER ERROR at PC594: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetLoginTme = function(self)
-  -- function num : 0_182
+function RoleModule:GetLoginTme()
   return self.m_cur_login_time
 end
 
--- DECOMPILER ERROR at PC597: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetHeadFrameID = function(self)
-  -- function num : 0_183
-  return (self.m_char_info).m_nHeadFrameID
+function RoleModule:GetHeadFrameID()
+  return self.m_char_info.m_nHeadFrameID
 end
 
--- DECOMPILER ERROR at PC600: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SetIsFixItem = function(self, is_fix)
-  -- function num : 0_184
+function RoleModule:SetIsFixItem(is_fix)
   self.is_fix = is_fix
 end
 
--- DECOMPILER ERROR at PC603: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetIsFix = function(self)
-  -- function num : 0_185
+function RoleModule:GetIsFix()
   return self.is_fix
 end
 
--- DECOMPILER ERROR at PC606: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.SetNotEnough = function(self, not_enough)
-  -- function num : 0_186
+function RoleModule:SetNotEnough(not_enough)
   self.not_enough = not_enough
 end
 
--- DECOMPILER ERROR at PC609: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetNotEnough = function(self)
-  -- function num : 0_187
+function RoleModule:GetNotEnough()
   return self.not_enough
 end
 
--- DECOMPILER ERROR at PC612: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.GetReviewCoinAddedCount = function(self)
-  -- function num : 0_188
-  return (self.m_char_info).active_token_accumulative
+function RoleModule:GetReviewCoinAddedCount()
+  return self.m_char_info.active_token_accumulative
 end
 
--- DECOMPILER ERROR at PC615: Confused about usage of register: R1 in 'UnsetPending'
-
-RoleModule.LoginCompleteEvent = function(self)
-  -- function num : 0_189 , upvalues : _ENV
+function RoleModule:LoginCompleteEvent()
   if self.is_push_login_ext_data then
-    return 
+    return
   end
   self.is_push_login_ext_data = true
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventPushLoginComplete)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventPushLoginComplete)
   self:Push(msg)
 end
-
-

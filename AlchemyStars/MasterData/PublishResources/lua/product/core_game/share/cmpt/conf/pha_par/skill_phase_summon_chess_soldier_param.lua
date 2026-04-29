@@ -1,49 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_summon_chess_soldier_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseSummonChessSoldierParam", SkillPhaseParamBase)
 SkillPhaseSummonChessSoldierParam = SkillPhaseSummonChessSoldierParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseSummonChessSoldierParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseSummonChessSoldierParam:Constructor(t)
   self._birthEffectID = t.birthEffectID
   self._turnWaitTime = t.turnWaitTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSummonChessSoldierParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseSummonChessSoldierParam:GetCacheTable()
   local t = {}
   if self._birthEffectID and self._birthEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._birthEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._birthEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSummonChessSoldierParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseSummonChessSoldierParam:GetPhaseType()
   return SkillViewPhaseType.SummonChessSoldier
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSummonChessSoldierParam.GetBirthEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseSummonChessSoldierParam:GetBirthEffectID()
   return self._birthEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSummonChessSoldierParam.GetTurnWaitTime = function(self)
-  -- function num : 0_4
+function SkillPhaseSummonChessSoldierParam:GetTurnWaitTime()
   return self._turnWaitTime
 end
-
-

@@ -1,327 +1,230 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n39/exchange/ui_n39_exchange_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN39ExchangeController", UIController)
 UIN39ExchangeController = UIN39ExchangeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39ExchangeController._SetCommonTopButton = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UINewCommonTopButton")
-  local closeCallback = function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
+function UIN39ExchangeController:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UINewCommonTopButton")
+  
+  local function closeCallback()
     if self._fromLine then
-      local id, com, info = (UIN39Helper.GetComponent)(self._campaign, "line")
-      if com then
-        local lineIsOpen = com:ComponentIsOpen()
-      end
+      local id, com, info = UIN39Helper.GetComponent(self._campaign, "line")
+      local lineIsOpen = com and com:ComponentIsOpen()
       if lineIsOpen then
         self:CloseDialog()
+      elseif self._campaign:CheckCampaignOpen() then
+        self:SwitchState(UIStateType.UIN39MainController)
       else
-        if (self._campaign):CheckCampaignOpen() then
-          self:SwitchState(UIStateType.UIN39MainController)
-        else
-          local strId = "str_activity_error_109"
-          local errorStr = (StringTable.Get)(strId)
-          ;
-          (ToastManager.ShowToast)(errorStr)
-          self:SwitchState(UIStateType.UIMain)
-        end
+        local strId = "str_activity_error_109"
+        local errorStr = StringTable.Get(strId)
+        ToastManager.ShowToast(errorStr)
+        self:SwitchState(UIStateType.UIMain)
       end
     else
-      do
-        self:CloseDialog()
-      end
+      self:CloseDialog()
     end
   end
-
+  
   obj:SetData(function()
-    -- function num : 0_0_1 , upvalues : self, _ENV, closeCallback
     if self._animTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._animTimer)
+      GameGlobal.Timer():CancelEvent(self._animTimer)
     end
     local anim = self:GetUIComponent("Animation", "_anim")
     anim:Play("uieff_UIN39ExchangeController_out")
     self:Lock("uieff_UIN39ExchangeController_out")
-    self._animTimer = ((GameGlobal.Timer)()):AddEvent(333, function()
-      -- function num : 0_0_1_0 , upvalues : self, closeCallback
+    self._animTimer = GameGlobal.Timer():AddEvent(333, function()
       self:UnLock("uieff_UIN39ExchangeController_out")
       closeCallback()
-    end
-)
-  end
-, nil, nil, false)
+    end)
+  end, nil, nil, false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController._SetRemainingTime = function(self, widgetName, descId, endTime, customTimeStr)
-  -- function num : 0_1 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIN39TimeExchange")
+function UIN39ExchangeController:_SetRemainingTime(widgetName, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIN39TimeExchange")
   obj:SetData(endTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  local campaignType = (UIN39Helper.GetCampaignType)()
-  local componentIds = {(UIN39Helper.GetComponentId)("exchange")}
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, campaignType, componentIds)
+function UIN39ExchangeController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignType = UIN39Helper.GetCampaignType()
+  local componentIds = {
+    UIN39Helper.GetComponentId("exchange")
+  }
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
   self._component = nil
   self._componentInfo = nil
-  self._cmptId = (UIN39Helper.GetComponent)(self._campaign, "exchange")
+  self._cmptId, self._component, self._componentInfo = UIN39Helper.GetComponent(self._campaign, "exchange")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN39ExchangeController:OnShow(uiParams)
   self._fromLine = uiParams[1]
   self._UIN39ExchangeCellPool = self:GetUIComponent("UISelectObjectPath", "UIN39ExchangeCell")
-  self._UIN39ExchangeCell = (self._UIN39ExchangeCellPool):SpawnObject("UIN39ExchangeCell")
+  self._UIN39ExchangeCell = self._UIN39ExchangeCellPool:SpawnObject("UIN39ExchangeCell")
   self._costCountTex = self:GetUIComponent("UILocalizationText", "CostCount")
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+  
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-
+  
   self:_SetCommonTopButton()
   self:_SetNpc()
-  local closeTime = (self._componentInfo).m_close_time
+  local closeTime = self._componentInfo.m_close_time
   self:_SetRemainingTime("_time", "str_n39_exchange_remain_time", closeTime, true)
   self:_Refresh()
   self:AttachEvent(GameEventType.ActivityShopBuySuccess, self._Refresh)
   self._timerHolder = UITimerHolder:New()
   local lockName = "UIN39ExchangeController_OnShow"
   self:Lock(lockName)
-  ;
-  (self._timerHolder):StartTimer(lockName, 800, function()
-    -- function num : 0_3_1 , upvalues : self, lockName
+  self._timerHolder:StartTimer(lockName, 800, function()
     self:UnLock(lockName)
-  end
-)
-  ;
-  (UIN39Helper.ClearNew)("exchange")
+  end)
+  UIN39Helper.ClearNew("exchange")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._timerHolder):Dispose()
+function UIN39ExchangeController:OnHide()
+  self._timerHolder:Dispose()
   self:UnLock("uieff_UIN39ExchangeController_out")
   if self._animTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._animTimer)
+    GameGlobal.Timer():CancelEvent(self._animTimer)
   end
   self:DetachEvent(GameEventType.ActivityShopBuySuccess, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController._Refresh = function(self)
-  -- function num : 0_5
+function UIN39ExchangeController:_Refresh()
   if not self.view then
-    return 
+    return
   end
   self:_SetList()
   self:_SetCostItem()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController._GetListData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN39ExchangeController:_GetListData()
   self._itemList = {}
-  local shopList = (self._componentInfo).m_exchange_item_list
+  local shopList = self._componentInfo.m_exchange_item_list
   local insertIdx = 0
-  local insertData = nil
+  local insertData
   local goOn = false
-  for index,value in ipairs(shopList) do
+  for index, value in ipairs(shopList) do
     if value.m_is_special then
       insertIdx = insertIdx + 1
       insertData = UIN39ExchangeRowItemData:New()
       insertData:AddData(value)
       insertData.sin = true
-      -- DECOMPILER ERROR at PC24: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._itemList)[insertIdx] = insertData
+      self._itemList[insertIdx] = insertData
+      goOn = false
+    elseif goOn then
+      insertData:AddData(value)
       goOn = false
     else
-      if goOn then
-        insertData:AddData(value)
-        goOn = false
-      else
-        insertIdx = insertIdx + 1
-        insertData = UIN39ExchangeRowItemData:New()
-        insertData:AddData(value)
-        insertData.sin = false
-        -- DECOMPILER ERROR at PC44: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._itemList)[insertIdx] = insertData
-        goOn = true
-      end
+      insertIdx = insertIdx + 1
+      insertData = UIN39ExchangeRowItemData:New()
+      insertData:AddData(value)
+      insertData.sin = false
+      self._itemList[insertIdx] = insertData
+      goOn = true
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController._SetList = function(self)
-  -- function num : 0_7
+function UIN39ExchangeController:_SetList()
   self:_GetListData()
-  ;
-  (self._UIN39ExchangeCell):SetData(self._itemList, self._component, self._tipsCallback)
+  self._UIN39ExchangeCell:SetData(self._itemList, self._component, self._tipsCallback)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController._SetNpc = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local shopCfg = (Cfg.cfg_activity_shop_common_client)[(self._campaign)._id]
+function UIN39ExchangeController:_SetNpc()
+  local shopCfg = Cfg.cfg_activity_shop_common_client[self._campaign._id]
   if shopCfg then
     local spineName = shopCfg.NpcSpine
     if spineName then
-      (UIWidgetHelper.SetSpineLoad)(self, "_npcSpine", "duya_spine_idle")
-      local name = shopCfg.NpcName
-      if name then
-        (UIWidgetHelper.SetLocalizationText)(self, "_npcName", (StringTable.Get)(name))
-      end
-      do
-        local word = shopCfg.NpcWord
-        if word then
-          self._npcWord = (string.split)((StringTable.Get)(word), "|")
-        end
-        self:NpcBtnOnClick()
-      end
+    end
+    UIWidgetHelper.SetSpineLoad(self, "_npcSpine", "duya_spine_idle")
+    local name = shopCfg.NpcName
+    if name then
+      UIWidgetHelper.SetLocalizationText(self, "_npcName", StringTable.Get(name))
+    end
+    local word = shopCfg.NpcWord
+    if word then
+      self._npcWord = string.split(StringTable.Get(word), "|")
     end
   end
+  self:NpcBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController.NpcBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN39ExchangeController:NpcBtnOnClick(go)
   if not self._npcWord then
-    (Log.error)("###[UIN39ExchangeController] NpcBtnOnClick _npcWord is nil !")
-    return 
+    Log.error("###[UIN39ExchangeController] NpcBtnOnClick _npcWord is nil !")
+    return
   end
   if #self._npcWord == 0 then
-    (Log.error)("###[UIN39ExchangeController] _npcWord len == 0")
-    return 
+    Log.error("###[UIN39ExchangeController] _npcWord len == 0")
+    return
   end
   if not self._npcWordId or self._npcWord == 1 then
     self._npcWordId = 1
+  elseif #self._npcWord == 1 then
+    Log.debug("###[UIN39ExchangeController] _npcWord len == 1")
+    self._npcWordId = 1
   else
-    if #self._npcWord == 1 then
-      (Log.debug)("###[UIN39ExchangeController] _npcWord len == 1")
-      self._npcWordId = 1
-    else
-      local randomPool = {}
-      for i = 1, #self._npcWord do
-        if self._npcWordId ~= i then
-          (table.insert)(randomPool, i)
-        end
+    local randomPool = {}
+    for i = 1, #self._npcWord do
+      if self._npcWordId ~= i then
+        table.insert(randomPool, i)
       end
-      local randomIdx = (math.random)(1, #randomPool)
-      self._npcWordId = randomPool[randomIdx]
     end
+    local randomIdx = math.random(1, #randomPool)
+    self._npcWordId = randomPool[randomIdx]
   end
-  do
-    local txt = (self._npcWord)[self._npcWordId]
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_npcWord", txt)
-  end
+  local txt = self._npcWord[self._npcWordId]
+  UIWidgetHelper.SetLocalizationText(self, "_npcWord", txt)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController.CostItemOnClick = function(self, go)
-  -- function num : 0_10
-  (self:GetGameObject("CostTips")):SetActive(true)
+function UIN39ExchangeController:CostItemOnClick(go)
+  self:GetGameObject("CostTips"):SetActive(true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController.CostTipsOnClick = function(self, go)
-  -- function num : 0_11
-  (self:GetGameObject("CostTips")):SetActive(false)
+function UIN39ExchangeController:CostTipsOnClick(go)
+  self:GetGameObject("CostTips"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeController._SetCostItem = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local itemId = (self._component):GetCostItemId()
-  local itemCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(itemId)
-  ;
-  (self._costCountTex):SetText(itemCount)
+function UIN39ExchangeController:_SetCostItem()
+  local itemId = self._component:GetCostItemId()
+  local itemCount = GameGlobal.GetModule(ItemModule):GetItemCount(itemId)
+  self._costCountTex:SetText(itemCount)
 end
 
 _class("UIN39ExchangeRowItemData", Object)
 UIN39ExchangeRowItemData = UIN39ExchangeRowItemData
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39ExchangeRowItemData.Constructor = function(self)
-  -- function num : 0_13
+function UIN39ExchangeRowItemData:Constructor()
   self.sin = false
   self.list = {}
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeRowItemData.AddData = function(self, UIN39ExchangeData)
-  -- function num : 0_14 , upvalues : _ENV
-  (table.insert)(self.list, UIN39ExchangeData)
+function UIN39ExchangeRowItemData:AddData(UIN39ExchangeData)
+  table.insert(self.list, UIN39ExchangeData)
 end
 
 _class("UIN39ExchangeData", Object)
 UIN39ExchangeData = UIN39ExchangeData
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39ExchangeData.ShowRemain = function(self)
-  -- function num : 0_15
+function UIN39ExchangeData:ShowRemain()
   return true
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeData.IsUnLimit = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  do return (self.cfg)[ConfigKey.ConfigKey_SaleNum] == SpecialNum.MysteryGoodsUnlimitedNum end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN39ExchangeData:IsUnLimit()
+  return self.cfg[ConfigKey.ConfigKey_SaleNum] == SpecialNum.MysteryGoodsUnlimitedNum
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeData.GetSeasonSaleTag = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  if self.cfg then
-    local saleTag = (self.cfg)[ConfigKey.ConfigKey_SaleTag]
-  end
+function UIN39ExchangeData:GetSeasonSaleTag()
+  local saleTag = self.cfg and self.cfg[ConfigKey.ConfigKey_SaleTag]
   if saleTag and saleTag == 1 then
     return 1
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39ExchangeData.GrandPrize = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_season_goods)[self.goodId]
-  do
-    if cfg then
-      local grandPrize = cfg.GrandPrize
-      return not grandPrize or grandPrize == 1
-    end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIN39ExchangeData:GrandPrize()
+  local cfg = Cfg.cfg_shop_season_goods[self.goodId]
+  if cfg then
+    local grandPrize = cfg.GrandPrize
+    return grandPrize and grandPrize == 1
   end
+  return false
 end
-
-

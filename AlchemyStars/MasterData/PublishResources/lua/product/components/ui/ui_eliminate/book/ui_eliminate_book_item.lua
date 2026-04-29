@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/book/ui_eliminate_book_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateBookItem", UICustomWidget)
 UIEliminateBookItem = UIEliminateBookItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateBookItem.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateBookItem:Constructor()
   self._isSelect = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEliminateBookItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIEliminateBookItem:_GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._rect = self:GetUIComponent("RectTransform", "Root")
@@ -31,110 +18,68 @@ UIEliminateBookItem._GetComponents = function(self)
   self._playerChooseObj = self:GetGameObject("playerChoose")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.SetSelect = function(self, isSelect)
-  -- function num : 0_3
+function UIEliminateBookItem:SetSelect(isSelect)
   if isSelect == self._isSelect then
-    return 
+    return
   end
   self._isSelect = isSelect
-  ;
-  (self._selectObj):SetActive(isSelect)
+  self._selectObj:SetActive(isSelect)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.SetUse = function(self, isUse)
-  -- function num : 0_4
-  (self._playerChooseObj):SetActive(isUse)
+function UIEliminateBookItem:SetUse(isUse)
+  self._playerChooseObj:SetActive(isUse)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.SetData = function(self, cfg, index, callback)
-  -- function num : 0_5
+function UIEliminateBookItem:SetData(cfg, index, callback)
   self._cfg = cfg
   self._index = index
   self._callback = callback
-  ;
-  ((self._icon).gameObject):SetActive(false)
-  ;
-  (self._selectObj):SetActive(false)
-  ;
-  (self._playerChooseObj):SetActive(false)
+  self._icon.gameObject:SetActive(false)
+  self._selectObj:SetActive(false)
+  self._playerChooseObj:SetActive(false)
   self._isSelect = false
   if self._cfg then
-    ((self._icon).gameObject):SetActive(true)
+    self._icon.gameObject:SetActive(true)
     self:_InitComponents()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.GetID = function(self)
-  -- function num : 0_6
+function UIEliminateBookItem:GetID()
   if self._cfg then
-    return (self._cfg).ID
+    return self._cfg.ID
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.GetCfg = function(self)
-  -- function num : 0_7
+function UIEliminateBookItem:GetCfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.GetIndex = function(self)
-  -- function num : 0_8
+function UIEliminateBookItem:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem._InitComponents = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[(self._cfg).ItemID]
-  ;
-  (self._icon):LoadImage(cfg.Icon)
+function UIEliminateBookItem:_InitComponents()
+  local cfg = Cfg.cfg_item[self._cfg.ItemID]
+  self._icon:LoadImage(cfg.Icon)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.PlayFadeInAnim = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if not (tolua.isnull)(self._anim) then
-    (self._anim):Play("uieff_UIEliminateBookItem_in")
+function UIEliminateBookItem:PlayFadeInAnim()
+  if not tolua.isnull(self._anim) then
+    self._anim:Play("uieff_UIEliminateBookItem_in")
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.ResetInAnim = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._canvasGroup).alpha = 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(0, -22)
+function UIEliminateBookItem:ResetInAnim()
+  self._canvasGroup.alpha = 0
+  self._rect.anchoredPosition = Vector2(0, -22)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookItem.BtnOnClick = function(self)
-  -- function num : 0_12
+function UIEliminateBookItem:BtnOnClick()
   if not self._cfg then
-    return 
+    return
   end
   if self._callback then
-    (self._callback)(self)
+    self._callback(self)
   end
 end
-
-

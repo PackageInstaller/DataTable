@@ -1,82 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/senior_skin_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("SeniorSkinComponent", ICampaignComponent)
 SeniorSkinComponent = SeniorSkinComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeniorSkinComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SeniorSkinComponent:Constructor()
   self.m_component_info = SeniorSkinComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeniorSkinComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SeniorSkinComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = SeniorSkinComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeniorSkinComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function SeniorSkinComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeniorSkinComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeniorSkinComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_SENIOR_SKIN
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeniorSkinComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function SeniorSkinComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeniorSkinComponent.HandleApplySeniorSkin = function(self, TT, asyncRes)
-  -- function num : 0_5 , upvalues : _ENV
+function SeniorSkinComponent:HandleApplySeniorSkin(TT, asyncRes)
   local request = SeniorSkinComponentApplyShake:New()
   local response = SeniorSkinComponentApplyShakeReplay:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][SeniorSkinComponent] HandleApplySeniorSkin ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeniorSkinComponent] HandleApplySeniorSkin ret:", asyncRes.m_result)
     return nil
   end
   asyncRes:SetSucc(true)
   return asyncRes, response.id
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeniorSkinComponent.AllAwardCollected = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SeniorSkinComponent:AllAwardCollected()
   local info = self:GetComponentInfo()
-  local allCfgs = (Cfg.cfg_component_senior_skin_weight)({ComponentID = self:GetComponentCfgId()})
+  local allCfgs = Cfg.cfg_component_senior_skin_weight({
+    ComponentID = self:GetComponentCfgId()
+  })
   local allIDs = {}
-  for _,cfg in pairs(allCfgs) do
+  for _, cfg in pairs(allCfgs) do
     allIDs[cfg.ID] = true
   end
-  for _,id in pairs(info.shake_win_ids) do
+  for _, id in pairs(info.shake_win_ids) do
     allIDs[id] = nil
   end
-  do return next(allIDs) == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return next(allIDs) == nil
 end
-
-

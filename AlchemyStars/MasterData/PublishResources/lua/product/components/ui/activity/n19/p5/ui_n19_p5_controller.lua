@@ -1,82 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/ui_n19_p5_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19P5Controller", UIController)
 UIN19P5Controller = UIN19P5Controller
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5Controller.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN19P5Controller:LoadDataOnEnter(TT, res, uiParams)
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._missionModule = self:GetModule(MissionModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N19_P5, ECampaignN19P5ComponentID.POWER2ITEM, ECampaignN19P5ComponentID.POWER_SHOP, ECampaignN19P5ComponentID.CUMULATIVE_LOGIN, ECampaignN19P5ComponentID.LEVEL)
-  self._lotteryComponentInfo = (self._campaign):GetComponentInfo(ECampaignN19P5ComponentID.POWER_SHOP)
-  self._costItemID = (self._lotteryComponentInfo).m_cost_item_id
-  self._localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N19_P5)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N19_P5, ECampaignN19P5ComponentID.POWER2ITEM, ECampaignN19P5ComponentID.POWER_SHOP, ECampaignN19P5ComponentID.CUMULATIVE_LOGIN, ECampaignN19P5ComponentID.LEVEL)
+  self._lotteryComponentInfo = self._campaign:GetComponentInfo(ECampaignN19P5ComponentID.POWER_SHOP)
+  self._costItemID = self._lotteryComponentInfo.m_cost_item_id
+  self._localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N19_P5)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_0_0
-  end
-, function()
-    -- function num : 0_0_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
   self:LoadDataOnEnter_BattlePass(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.LoadDataOnEnter_BattlePass = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN19P5Controller:LoadDataOnEnter_BattlePass(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._battlepassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlepassCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlepassCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneOut)()
+function UIN19P5Controller:OnShow(uiParams)
+  CutsceneManager.ExcuteCutsceneOut()
   self._rt = uiParams[1]
   self:GetComponents()
   self:AddListener()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.AddListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN19P5Controller:AddListener()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.N19P5SignInRed, self.N19P5SignInRed)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self.OnComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller._CheckActivityClose = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN19P5Controller:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.GetComponents = function(self)
-  -- function num : 0_5
+function UIN19P5Controller:GetComponents()
   self.TimeDay = self:GetUIComponent("UILocalizationText", "TimeDay")
   self.TimeHour = self:GetUIComponent("UILocalizationText", "TimeHour")
   self.TimeMin = self:GetUIComponent("UILocalizationText", "TimeMin")
@@ -100,161 +72,102 @@ UIN19P5Controller.GetComponents = function(self)
   self:SignInRedPos()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.SignInRedPos = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN19P5Controller:SignInRedPos()
   local pos = Vector2(153, 14)
-  local type = (Localization.GetCurLanguage)()
+  local type = Localization.GetCurLanguage()
   if LanguageType.zh == type then
     pos = Vector2(153, 14)
-  else
-    if LanguageType.tw == type then
-      pos = Vector2(153, 14)
-    else
-      if LanguageType.us == type then
-        pos = Vector2(250, -60)
-      else
-        if LanguageType.kr == type then
-          pos = Vector2(153, 14)
-        else
-          if LanguageType.jp == type then
-            pos = Vector2(153, 14)
-          else
-            if LanguageType.pt == type then
-              pos = Vector2(250, -60)
-            else
-              if LanguageType.es == type then
-                pos = Vector2(250, -60)
-              else
-                if LanguageType.idn == type then
-                  pos = Vector2(250, -60)
-                else
-                  if LanguageType.th == type then
-                    pos = Vector2(204, -20)
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif LanguageType.tw == type then
+    pos = Vector2(153, 14)
+  elseif LanguageType.us == type then
+    pos = Vector2(250, -60)
+  elseif LanguageType.kr == type then
+    pos = Vector2(153, 14)
+  elseif LanguageType.jp == type then
+    pos = Vector2(153, 14)
+  elseif LanguageType.pt == type then
+    pos = Vector2(250, -60)
+  elseif LanguageType.es == type then
+    pos = Vector2(250, -60)
+  elseif LanguageType.idn == type then
+    pos = Vector2(250, -60)
+  elseif LanguageType.th == type then
+    pos = Vector2(204, -20)
   end
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.SignInRedRect).anchoredPosition = pos
+  self.SignInRedRect.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.SetPetTryLock = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local component = (self._campaign):GetComponentInfo(ECampaignN19P5ComponentID.LEVEL)
+function UIN19P5Controller:SetPetTryLock()
+  local component = self._campaign:GetComponentInfo(ECampaignN19P5ComponentID.LEVEL)
   local endTime = component.m_close_time
-  local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
+  local nowTime = self._svrTimeModule:GetServerTime() * 0.001
   self._petTryLock = endTime < nowTime
-  local color = nil
+  local color
   if self._petTryLock then
-    color = Color(0.3921568627451, 0.3921568627451, 0.3921568627451, 1)
+    color = Color(0.39215686274509803, 0.39215686274509803, 0.39215686274509803, 1)
   else
     color = Color(1, 1, 1, 1)
   end
-  ;
-  (self.PetTryLock):SetActive(self._petTryLock)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.PetTryBtnView).color = color
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self.PetTryLock:SetActive(self._petTryLock)
+  self.PetTryBtnView.color = color
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.SetSignInLock = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local component = (self._campaign):GetComponentInfo(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
+function UIN19P5Controller:SetSignInLock()
+  local component = self._campaign:GetComponentInfo(ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
   local endTime = component.m_close_time
-  local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
+  local nowTime = self._svrTimeModule:GetServerTime() * 0.001
   self._signInLock = endTime < nowTime
-  local color = nil
+  local color
   if self._signInLock then
-    color = Color(0.3921568627451, 0.3921568627451, 0.3921568627451, 1)
+    color = Color(0.39215686274509803, 0.39215686274509803, 0.39215686274509803, 1)
   else
     color = Color(1, 1, 1, 1)
   end
-  ;
-  (self.SignInLock):SetActive(self._signInLock)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.SignInBtnView).color = color
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self.SignInLock:SetActive(self._signInLock)
+  self.SignInBtnView.color = color
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.SetBtnLockState = function(self)
-  -- function num : 0_9
+function UIN19P5Controller:SetBtnLockState()
   self:SetSignInLock()
   self:SetPetTryLock()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.ItemCount = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  ;
-  (self.itemCount):SetText(itemModule:GetItemCount(self._costItemID))
-  local cfg = (Cfg.cfg_item)[self._costItemID]
+function UIN19P5Controller:ItemCount()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  self.itemCount:SetText(itemModule:GetItemCount(self._costItemID))
+  local cfg = Cfg.cfg_item[self._costItemID]
   if not cfg then
-    (Log.error)("###[UIN19P5Controller] cfg is nil ! id --> ", self._costItemID)
+    Log.error("###[UIN19P5Controller] cfg is nil ! id --> ", self._costItemID)
   end
-  ;
-  (self.itemIcon):LoadImage(cfg.Icon)
+  self.itemIcon:LoadImage(cfg.Icon)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.OnHide = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN19P5Controller:OnHide()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
   if self.animEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+    GameGlobal.Timer():CancelEvent(self.animEvent)
     self.animEvent = nil
   end
   if self._guideTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._guideTask)
+    GameGlobal.TaskManager():KillTask(self._guideTask)
     self._guideTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.OnValue = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN19P5Controller:OnValue()
   local btns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_12_0 , upvalues : self, _ENV
+  self._backBtn:SetData(function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, nil, function()
-    -- function num : 0_12_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, false, function()
-    -- function num : 0_12_2 , upvalues : self
+  end, false, function()
     self:HideBtnOnClick()
-  end
-)
+  end)
   self:InitTimer()
   self:SetBtnLockState()
   self:ItemCount()
@@ -263,236 +176,159 @@ UIN19P5Controller.OnValue = function(self)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.RT = function(self)
-  -- function num : 0_13
+function UIN19P5Controller:RT()
   if self._rt then
     local rt = self:GetUIComponent("RawImage", "rt")
     rt.texture = self._rt
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.InitTimer = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local sample = (self._campaign):GetSample()
+function UIN19P5Controller:InitTimer()
+  local sample = self._campaign:GetSample()
   local overTime = sample.end_time
   self._overTime = overTime or 0
-  if (self._svrTimeModule):GetServerTime() * 0.001 < self._overTime then
+  if self._overTime > self._svrTimeModule:GetServerTime() * 0.001 then
     self._open = true
   else
     self._open = false
   end
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
   if self._open then
-    self._timerEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_14_0 , upvalues : self
-    self:SetTimerTex()
-  end
-)
+    self._timerEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:SetTimerTex()
+    end)
   end
   self:SetTimerTex()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.SetTimerTex = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN19P5Controller:SetTimerTex()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._overTime - svrTime
   if sec < 0 then
     self._open = false
     if self._timerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+      GameGlobal.Timer():CancelEvent(self._timerEvent)
       self._timerEvent = nil
     end
   else
-    local day, hour, min = (HelperProxy:GetInstance()):Sec2DayHourMin(sec)
-    ;
-    (self.TimeDay):SetText(day)
-    ;
-    (self.TimeHour):SetText(hour)
-    ;
-    (self.TimeMin):SetText(min)
+    local day, hour, min = HelperProxy:GetInstance():Sec2DayHourMin(sec)
+    self.TimeDay:SetText(day)
+    self.TimeHour:SetText(hour)
+    self.TimeMin:SetText(min)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.HideBtnOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (self.ShowBtn):SetActive(true)
+function UIN19P5Controller:HideBtnOnClick()
+  self.ShowBtn:SetActive(true)
   self:Lock("UIN19P5ControllerAnim")
-  ;
-  (self.uiAnim):Play("UIN19P5Controller_out")
+  self.uiAnim:Play("UIN19P5Controller_out")
   if self.animEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+    GameGlobal.Timer():CancelEvent(self.animEvent)
   end
-  self.animEvent = ((GameGlobal.Timer)()):AddEvent(400, function()
-    -- function num : 0_16_0 , upvalues : self
+  self.animEvent = GameGlobal.Timer():AddEvent(400, function()
     self:UnLock("UIN19P5ControllerAnim")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.N19P5SignInRed = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN19P5Controller:N19P5SignInRed()
   local redSignIn = self:_CheckRedPoint(self.SignInRed, ECampaignN19P5ComponentID.CUMULATIVE_LOGIN)
-  ;
-  (self.SignInRed):SetActive(redSignIn)
+  self.SignInRed:SetActive(redSignIn)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.Red = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local redEvent = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
-  ;
-  (self.EventRed):SetActive(redEvent)
+function UIN19P5Controller:Red()
+  local redEvent = UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
+  self.EventRed:SetActive(redEvent)
   self:EndStoryShowAndRed()
-  if self:_CheckRedPoint(self.SignInRed, ECampaignN19P5ComponentID.CUMULATIVE_LOGIN) then
-    local redSignIn = not self._signInLock
-  end
-  ;
-  (self.SignInRed):SetActive(redSignIn)
+  local redSignIn = self:_CheckRedPoint(self.SignInRed, ECampaignN19P5ComponentID.CUMULATIVE_LOGIN) and not self._signInLock
+  self.SignInRed:SetActive(redSignIn)
   local redPool = self:_CheckRedPoint(self.PoolRed, ECampaignN19P5ComponentID.POWER_SHOP)
-  ;
-  (self.PoolRed):SetActive(redPool)
-  if (self._localProcess):PetStageRedPoint() then
-    local redTry = not self._petTryLock
-  end
-  ;
-  (self.PetTryRed):SetActive(redTry)
+  self.PoolRed:SetActive(redPool)
+  local redTry = self._localProcess:PetStageRedPoint() and not self._petTryLock
+  self.PetTryRed:SetActive(redTry)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.OnComponentStepChange = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local redEvent = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._battlepassCampaign)
-  ;
-  (self.EventRed):SetActive(redEvent)
+function UIN19P5Controller:OnComponentStepChange()
+  local redEvent = UIActivityHelper.CheckCampaignSampleRedPoint(self._battlepassCampaign)
+  self.EventRed:SetActive(redEvent)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.EndStoryShowAndRed = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN19P5Controller:EndStoryShowAndRed()
   self._endStoryRed = false
   self._endStoryKey = "N19P5EndStoryKey"
-  if (LocalDB.GetInt)(self._endStoryKey, 0) == 1 then
+  if LocalDB.GetInt(self._endStoryKey, 0) == 1 then
     self._endStoryRed = false
   else
     self._endStoryRed = true
   end
-  ;
-  (self.EndStoryRed):SetActive(self._endStoryRed)
-  ;
-  (self.EndStory):SetActive(self:_GetCampaignEndStoryBtnState())
+  self.EndStoryRed:SetActive(self._endStoryRed)
+  self.EndStory:SetActive(self:_GetCampaignEndStoryBtnState())
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller._GetCampaignEndStoryBtnState = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local cfg = (Cfg.cfg_n19_p5_end_story)[1]
+function UIN19P5Controller:_GetCampaignEndStoryBtnState()
+  local cfg = Cfg.cfg_n19_p5_end_story[1]
   if not cfg then
     return false
   end
-  local endTime = (self._loginModule):GetTimeStampByTimeStr(cfg.OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
-  do return endTime <= nowTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local endTime = self._loginModule:GetTimeStampByTimeStr(cfg.OpenTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  local nowTime = self._svrTimeModule:GetServerTime() * 0.001
+  return endTime <= nowTime
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller._CheckRedPoint = function(self, obj, ...)
-  -- function num : 0_22
-  local bShow = (self._campaign):CheckComponentRed(...)
+function UIN19P5Controller:_CheckRedPoint(obj, ...)
+  local bShow = self._campaign:CheckComponentRed(...)
   return bShow
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.IntrBtnOnClick = function(self, go)
-  -- function num : 0_23
+function UIN19P5Controller:IntrBtnOnClick(go)
   self:ShowDialog("UIN19P5IntrController", "UIN19P5Controller")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.SignInBtnOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
-  do
-    if self._signInLock then
-      local tips = (StringTable.Get)("str_activity_common_notice_content")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    self:ShowDialog("UIN19P5SignInController")
+function UIN19P5Controller:SignInBtnOnClick(go)
+  if self._signInLock then
+    local tips = StringTable.Get("str_activity_common_notice_content")
+    ToastManager.ShowToast(tips)
+    return
   end
+  self:ShowDialog("UIN19P5SignInController")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.EventBtnOnClick = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
-  ((UIActivityBattlePassHelper.OpenMainController)())(self._battlepassCampaign)
+function UIN19P5Controller:EventBtnOnClick(go)
+  UIActivityBattlePassHelper.OpenMainController()(self._battlepassCampaign)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
+function UIN19P5Controller:PoolBtnOnClick(go)
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIN19P5DrawCard .. "Open", function()
+    self._campaignModule:CampaignSwitchState(true, UIStateType.UIN19P5DrawCard, UIStateType.UIMain, nil, self._campaign._id)
+  end)
+end
 
-UIN19P5Controller.PoolBtnOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIN19P5DrawCard .. "Open", function()
-    -- function num : 0_26_0 , upvalues : self, _ENV
-    (self._campaignModule):CampaignSwitchState(true, UIStateType.UIN19P5DrawCard, UIStateType.UIMain, nil, (self._campaign)._id)
+function UIN19P5Controller:PetTryBtnOnClick(go)
+  if self._petTryLock then
+    local tips = StringTable.Get("str_activity_common_notice_content")
+    ToastManager.ShowToast(tips)
+    return
   end
-)
-end
-
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.PetTryBtnOnClick = function(self, go)
-  -- function num : 0_27 , upvalues : _ENV
-  do
-    if self._petTryLock then
-      local tips = (StringTable.Get)("str_activity_common_notice_content")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    self:ShowDialog("UIActivityPetTryPlusController", ECampaignType.CAMPAIGN_TYPE_N19_P5, ECampaignN19P5ComponentID.LEVEL, function(mid)
-    -- function num : 0_27_0 , upvalues : self, _ENV
-    local component = (self._campaign):GetComponent(ECampaignN19P5ComponentID.LEVEL)
+  self:ShowDialog("UIActivityPetTryPlusController", ECampaignType.CAMPAIGN_TYPE_N19_P5, ECampaignN19P5ComponentID.LEVEL, function(mid)
+    local component = self._campaign:GetComponent(ECampaignN19P5ComponentID.LEVEL)
     return component:IsPassCamMissionID(mid)
-  end
-, function(missionid)
-    -- function num : 0_27_1 , upvalues : self, _ENV
-    local ctx = (self._missionModule):TeamCtx()
-    local missionComponent = (self._campaign):GetComponent(ECampaignN19P5ComponentID.LEVEL)
-    local param = {missionid, missionComponent:GetCampaignMissionComponentId(), missionComponent:GetCampaignMissionParamKeyMap()}
+  end, function(missionid)
+    local ctx = self._missionModule:TeamCtx()
+    local missionComponent = self._campaign:GetComponent(ECampaignN19P5ComponentID.LEVEL)
+    local param = {
+      missionid,
+      missionComponent:GetCampaignMissionComponentId(),
+      missionComponent:GetCampaignMissionParamKeyMap()
+    }
     ctx:Init(TeamOpenerType.Campaign, param)
     ctx:ShowDialogUITeams(false)
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.StartStoryBtnOnClick = function(self, go)
-  -- function num : 0_28 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
+function UIN19P5Controller:StartStoryBtnOnClick(go)
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
   if cfg then
     local storyIDs = cfg.FirstEnterStoryID
     if storyIDs then
@@ -504,51 +340,33 @@ UIN19P5Controller.StartStoryBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.EndStoryBtnOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN19P5Controller:EndStoryBtnOnClick(go)
   if self._endStoryRed then
-    (LocalDB.SetInt)(self._endStoryKey, 1)
+    LocalDB.SetInt(self._endStoryKey, 1)
   end
-  ;
-  (self.EndStoryRed):SetActive(false)
-  local cfg = (Cfg.cfg_n19_p5_end_story)[1]
+  self.EndStoryRed:SetActive(false)
+  local cfg = Cfg.cfg_n19_p5_end_story[1]
   local id = cfg.StoryID
   self:ShowDialog("UIStoryController", id)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller.ShowBtnOnClick = function(self, go)
-  -- function num : 0_30 , upvalues : _ENV
-  (self.ShowBtn):SetActive(false)
+function UIN19P5Controller:ShowBtnOnClick(go)
+  self.ShowBtn:SetActive(false)
   self:Lock("UIN19P5ControllerAnim")
-  ;
-  (self.uiAnim):Play("UIN19P5Controller_in")
+  self.uiAnim:Play("UIN19P5Controller_in")
   if self.animEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+    GameGlobal.Timer():CancelEvent(self.animEvent)
   end
-  self.animEvent = ((GameGlobal.Timer)()):AddEvent(400, function()
-    -- function num : 0_30_0 , upvalues : self
+  self.animEvent = GameGlobal.Timer():AddEvent(400, function()
     self:UnLock("UIN19P5ControllerAnim")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5Controller._CheckGuide = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UIN19P5Controller:_CheckGuide()
   self:Lock("UIN19P5ControllerCheckGuide")
   self._guideTask = self:StartTask(function(TT)
-    -- function num : 0_31_0 , upvalues : _ENV, self
     YIELD(TT, 400)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN19P5Controller)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN19P5Controller)
     self:UnLock("UIN19P5ControllerCheckGuide")
-  end
-)
+  end)
 end
-
-

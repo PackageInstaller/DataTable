@@ -1,485 +1,360 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/guide/guide_trigger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideTrigger", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideTrigger.Constructor = function(self, manager)
-  -- function num : 0_0
+function GuideTrigger:Constructor(manager)
   self.triggers = {}
   self.manager = manager
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideTrigger.AddListener = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.cb = (GameHelper:GetInstance()):CreateCallback(self.OnTrigger, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(self.eventType, self.cb)
+function GuideTrigger:AddListener()
+  self.cb = GameHelper:GetInstance():CreateCallback(self.OnTrigger, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(self.eventType, self.cb)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideTrigger.RemoveListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(self.eventType, self.cb)
+function GuideTrigger:RemoveListener()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(self.eventType, self.cb)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_3
+function GuideTrigger:PreHandleCfg(v)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideTrigger.OnTrigger = function(self)
-  -- function num : 0_4
+function GuideTrigger:OnTrigger()
 end
 
 _class("GuideDoneTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideDoneTrigger.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function GuideDoneTrigger:Constructor()
   self.eventType = GameEventType.GuideDone
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideDoneTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_6
+function GuideDoneTrigger:PreHandleCfg(v)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideDoneTrigger.OnTrigger = function(self, id)
-  -- function num : 0_7
+function GuideDoneTrigger:OnTrigger(id)
   if id then
-    (self.manager):ActivateGuide(id)
+    self.manager:ActivateGuide(id)
   end
 end
 
 _class("BattleStartTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleStartTrigger.Constructor = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function BattleStartTrigger:Constructor()
   self.eventType = GameEventType.GuideBattleStart
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStartTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_9 , upvalues : _ENV
+function BattleStartTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.BattleStartTrigger then
-    local levelId = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[levelId] then
-      (self.triggers)[levelId] = {}
+    local levelId = v.triggerParam[1]
+    if not self.triggers[levelId] then
+      self.triggers[levelId] = {}
     end
-    ;
-    (table.insert)((self.triggers)[levelId], v)
+    table.insert(self.triggers[levelId], v)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleStartTrigger.OnTrigger = function(self, levelId, callBack)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.manager).skillTimesAtWave = {}
+function BattleStartTrigger:OnTrigger(levelId, callBack)
+  self.manager.skillTimesAtWave = {}
   if not levelId then
-    return 
+    return
   end
-  local guides = (self.triggers)[levelId]
-  if not guides and callBack then
-    callBack(false)
+  local guides = self.triggers[levelId]
+  if not guides then
+    if callBack then
+      callBack(false)
+    end
+    return
   end
-  do return  end
-  for _,cfg in next do
-    (self.manager):ActivateGuide(cfg.id, callBack)
+  for _, cfg in next, guides, nil do
+    self.manager:ActivateGuide(cfg.id, callBack)
   end
 end
 
 _class("RoundTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
 
-RoundTrigger.Constructor = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function RoundTrigger:Constructor()
   self.eventType = GameEventType.GuideRound
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_12 , upvalues : _ENV
+function RoundTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.RoundTrigger then
     local cfgRound = v.triggerParam
     if cfgRound then
       local roundFlag = cfgRound[1] .. "|" .. cfgRound[2] .. "|" .. cfgRound[3] .. "|" .. cfgRound[4]
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self.triggers)[roundFlag] then
-        (self.triggers)[roundFlag] = {}
+      if not self.triggers[roundFlag] then
+        self.triggers[roundFlag] = {}
       end
-      ;
-      (table.insert)((self.triggers)[roundFlag], v)
+      table.insert(self.triggers[roundFlag], v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-RoundTrigger.OnTrigger = function(self, levelId, wave, round, mOrEaction, callBack)
-  -- function num : 0_13 , upvalues : _ENV
+function RoundTrigger:OnTrigger(levelId, wave, round, mOrEaction, callBack)
   if not levelId then
-    return 
+    return
   end
   local roundFlag = levelId .. "|" .. wave .. "|" .. round .. "|" .. mOrEaction
-  local guides = (self.triggers)[roundFlag]
-  if not guides and callBack then
-    callBack(false)
+  local guides = self.triggers[roundFlag]
+  if not guides then
+    if callBack then
+      callBack(false)
+    end
+    return
   end
-  do return  end
-  for _,cfg in next do
-    (self.manager):ActivateGuide(cfg.id, callBack)
+  for _, cfg in next, guides, nil do
+    self.manager:ActivateGuide(cfg.id, callBack)
   end
 end
 
 _class("OpenUITrigger", GuideTrigger)
--- DECOMPILER ERROR at PC64: Confused about usage of register: R0 in 'UnsetPending'
 
-OpenUITrigger.Constructor = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function OpenUITrigger:Constructor()
   self.eventType = GameEventType.GuideOpenUI
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R0 in 'UnsetPending'
-
-OpenUITrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_15 , upvalues : _ENV
+function OpenUITrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.OpenUITrigger then
-    local uiName = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
+    local uiName = v.triggerParam[1]
     if v.triggerParam then
-      if not (self.triggers)[uiName] then
-        (self.triggers)[uiName] = {}
+      if not self.triggers[uiName] then
+        self.triggers[uiName] = {}
       end
-      ;
-      (table.insert)((self.triggers)[uiName], v.id)
+      table.insert(self.triggers[uiName], v.id)
     end
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R0 in 'UnsetPending'
-
-OpenUITrigger.OnTrigger = function(self, uiName)
-  -- function num : 0_16 , upvalues : _ENV
+function OpenUITrigger:OnTrigger(uiName)
   if uiName then
-    local guides = (self.triggers)[uiName]
+    local guides = self.triggers[uiName]
     if not guides then
-      return 
+      return
     end
-    for _,v in next do
-      (self.manager):ActivateGuide(v)
+    for _, v in next, guides, nil do
+      self.manager:ActivateGuide(v)
     end
-    return 
+    return
   end
 end
 
 _class("PlayerHandleFinishTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerHandleFinishTrigger.Constructor = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function PlayerHandleFinishTrigger:Constructor()
   self.eventType = GameEventType.GuidePlayerHandleFinish
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerHandleFinishTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_18 , upvalues : _ENV
+function PlayerHandleFinishTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PlayerHandleFinishTrigger then
     local cfg = v.triggerParam
-    if not cfg[5] then
-      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (not cfg or 0)
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self.triggers)[mark] then
-        (self.triggers)[mark] = {}
+    if cfg then
+      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (cfg[5] or 0)
+      if not self.triggers[mark] then
+        self.triggers[mark] = {}
       end
-      ;
-      (table.insert)((self.triggers)[mark], v)
+      table.insert(self.triggers[mark], v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerHandleFinishTrigger.OnTrigger = function(self, levelId, wave, round, playerHandleType, petTempId, callBack)
-  -- function num : 0_19 , upvalues : _ENV
+function PlayerHandleFinishTrigger:OnTrigger(levelId, wave, round, playerHandleType, petTempId, callBack)
   if playerHandleType then
     local mark = levelId .. "|" .. wave .. "|" .. round .. "|" .. playerHandleType .. "|" .. petTempId
-    local guides = (self.triggers)[mark]
-    if not guides and callBack then
-      callBack(false)
+    local guides = self.triggers[mark]
+    if not guides then
+      if callBack then
+        callBack(false)
+      end
+      return
     end
-    do return  end
-    for _,cfg in next do
-      (self.manager):ActivateGuide(cfg.id, callBack)
+    for _, cfg in next, guides, nil do
+      self.manager:ActivateGuide(cfg.id, callBack)
     end
-    return 
+    return
   end
 end
 
 _class("PlaySkillFinishTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC90: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillFinishTrigger.Constructor = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function PlaySkillFinishTrigger:Constructor()
   self.eventType = GameEventType.GuidePlayerSkillFinish
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFinishTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_21 , upvalues : _ENV
+function PlaySkillFinishTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PlaySkillFinishTrigger then
     local cfg = v.triggerParam
-    if not cfg[5] then
-      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (not cfg or 0)
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self.triggers)[mark] then
-        (self.triggers)[mark] = {}
+    if cfg then
+      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (cfg[5] or 0)
+      if not self.triggers[mark] then
+        self.triggers[mark] = {}
       end
-      ;
-      (table.insert)((self.triggers)[mark], v)
+      table.insert(self.triggers[mark], v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFinishTrigger.OnTrigger = function(self, levelId, wave, round, playerHandleType, petTempId, callBack)
-  -- function num : 0_22 , upvalues : _ENV
+function PlaySkillFinishTrigger:OnTrigger(levelId, wave, round, playerHandleType, petTempId, callBack)
   if playerHandleType then
     local mark = levelId .. "|" .. wave .. "|" .. round .. "|" .. playerHandleType .. "|" .. petTempId
-    local guides = (self.triggers)[mark]
-    if not guides and callBack then
-      callBack(false)
+    local guides = self.triggers[mark]
+    if not guides then
+      if callBack then
+        callBack(false)
+      end
+      return
     end
-    do return  end
-    for _,cfg in next do
-      (self.manager):ActivateGuide(cfg.id, callBack)
+    for _, cfg in next, guides, nil do
+      self.manager:ActivateGuide(cfg.id, callBack)
     end
-    return 
+    return
   end
 end
 
 _class("LevelFinishTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC103: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelFinishTrigger.Constructor = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function LevelFinishTrigger:Constructor()
   self.eventType = GameEventType.GuideLevelFinish
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelFinishTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_24 , upvalues : _ENV
+function LevelFinishTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.LevelFinishTrigger and v.triggerParam then
-    local levelId = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[levelId] then
-      (self.triggers)[levelId] = {}
+    local levelId = v.triggerParam[1]
+    if not self.triggers[levelId] then
+      self.triggers[levelId] = {}
     end
-    ;
-    (table.insert)((self.triggers)[levelId], v.id)
+    table.insert(self.triggers[levelId], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelFinishTrigger.OnTrigger = function(self, levelId, callBack)
-  -- function num : 0_25 , upvalues : _ENV
+function LevelFinishTrigger:OnTrigger(levelId, callBack)
   if levelId then
-    local guides = (self.triggers)[levelId]
-    do
-      if not guides and callBack then
+    local guides = self.triggers[levelId]
+    if not guides then
+      if callBack then
         callBack(false)
       end
-      do return  end
-      local triggerGuide = false
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideLevelFinishAircraft, levelId, function(trigger)
-    -- function num : 0_25_0 , upvalues : triggerGuide
-    triggerGuide = trigger
-  end
-)
-      if not triggerGuide then
-        for _,v in next do
-          local cfg = (Cfg.cfg_guide_trigger)[v]
-          if (self.manager):IsGuideDone(cfg.guide) or (self.manager):IsGuideDone(cfg.exclusiveGuide) then
-            return 
-          end
-          ;
-          (self.manager):ActivateGuide(v, callBack)
-        end
-      else
-        do
-          if callBack then
-            callBack(true)
-          end
-          return 
-        end
-      end
+      return
     end
+    local triggerGuide = false
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideLevelFinishAircraft, levelId, function(trigger)
+      triggerGuide = trigger
+    end)
+    if not triggerGuide then
+      for _, v in next, guides, nil do
+        local cfg = Cfg.cfg_guide_trigger[v]
+        if self.manager:IsGuideDone(cfg.guide) or self.manager:IsGuideDone(cfg.exclusiveGuide) then
+          return
+        end
+        self.manager:ActivateGuide(v, callBack)
+      end
+    elseif callBack then
+      callBack(true)
+    end
+    return
   end
 end
 
 _class("ShowGuideCancelAreaTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
 
-ShowGuideCancelAreaTrigger.Constructor = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function ShowGuideCancelAreaTrigger:Constructor()
   self.eventType = GameEventType.ShowGuideCancelArea
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowGuideCancelAreaTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_27 , upvalues : _ENV
+function ShowGuideCancelAreaTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.ShowGuideCancelAreaTrigger then
     local cfgRound = v.triggerParam
     if cfgRound then
       local roundFlag = cfgRound[1] .. "|" .. cfgRound[2]
-      -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self.triggers)[roundFlag] then
-        (self.triggers)[roundFlag] = {}
+      if not self.triggers[roundFlag] then
+        self.triggers[roundFlag] = {}
       end
-      ;
-      (table.insert)((self.triggers)[roundFlag], v)
+      table.insert(self.triggers[roundFlag], v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowGuideCancelAreaTrigger.OnTrigger = function(self, levelId, wave, callBack)
-  -- function num : 0_28 , upvalues : _ENV
+function ShowGuideCancelAreaTrigger:OnTrigger(levelId, wave, callBack)
   if not levelId then
-    return 
+    return
   end
   local roundFlag = levelId .. "|" .. wave
-  local guides = (self.triggers)[roundFlag]
-  if not guides and callBack then
-    callBack(false)
+  local guides = self.triggers[roundFlag]
+  if not guides then
+    if callBack then
+      callBack(false)
+    end
+    return
   end
-  do return  end
-  for _,cfg in next do
-    (self.manager):ActivateGuide(cfg.id, callBack)
+  for _, cfg in next, guides, nil do
+    self.manager:ActivateGuide(cfg.id, callBack)
   end
 end
 
 _class("PowerReadyTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC129: Confused about usage of register: R0 in 'UnsetPending'
 
-PowerReadyTrigger.Constructor = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function PowerReadyTrigger:Constructor()
   self.eventType = GameEventType.ShowGuidePowerReady
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R0 in 'UnsetPending'
-
-PowerReadyTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_30 , upvalues : _ENV
+function PowerReadyTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PowerReadyTrigger then
     local cfgRound = v.triggerParam
     if cfgRound then
       local roundFlag = cfgRound[1] .. "|" .. cfgRound[2]
-      -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self.triggers)[roundFlag] then
-        (self.triggers)[roundFlag] = {}
+      if not self.triggers[roundFlag] then
+        self.triggers[roundFlag] = {}
       end
-      ;
-      (table.insert)((self.triggers)[roundFlag], v)
+      table.insert(self.triggers[roundFlag], v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R0 in 'UnsetPending'
-
-PowerReadyTrigger.OnTrigger = function(self, levelId, wave, callBack)
-  -- function num : 0_31 , upvalues : _ENV
+function PowerReadyTrigger:OnTrigger(levelId, wave, callBack)
   if not levelId then
-    return 
+    return
   end
   local roundFlag = levelId .. "|" .. wave
-  local guides = (self.triggers)[roundFlag]
-  if not guides and callBack then
-    callBack(false)
+  local guides = self.triggers[roundFlag]
+  if not guides then
+    if callBack then
+      callBack(false)
+    end
+    return
   end
-  do return  end
-  for _,cfg in next do
-    (self.manager):ActivateGuide(cfg.id, callBack)
+  for _, cfg in next, guides, nil do
+    self.manager:ActivateGuide(cfg.id, callBack)
   end
 end
 
 _class("LoginTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC142: Confused about usage of register: R0 in 'UnsetPending'
 
-LoginTrigger.Constructor = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function LoginTrigger:Constructor()
   self.eventType = GameEventType.GuideLogin
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R0 in 'UnsetPending'
-
-LoginTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_33 , upvalues : _ENV
+function LoginTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.LoginTrigger then
     local param = v.triggerParam
     if param then
       local doneGuideId = param[1]
       local unDoneGuideId = param[2]
       local flag = doneGuideId .. "|" .. unDoneGuideId
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R6 in 'UnsetPending'
-
-      if not (self.triggers)[flag] then
-        (self.triggers)[flag] = {}
+      if not self.triggers[flag] then
+        self.triggers[flag] = {}
       end
-      ;
-      (table.insert)((self.triggers)[flag], v.id)
+      table.insert(self.triggers[flag], v.id)
     end
   end
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R0 in 'UnsetPending'
-
-LoginTrigger.OnTrigger = function(self, callBack)
-  -- function num : 0_34 , upvalues : _ENV
-  for flag,guides in pairs(self.triggers) do
-    local param = (string.split)(flag, "|")
+function LoginTrigger:OnTrigger(callBack)
+  for flag, guides in pairs(self.triggers) do
+    local param = string.split(flag, "|")
     local doneGuideId = tonumber(param[1])
     local unDoneGuideId = tonumber(param[2])
-    if ((doneGuideId > 0 and (self.manager):IsGuideDone(doneGuideId)) or doneGuideId < 0) and not (self.manager):IsGuideDone(unDoneGuideId) then
-      for _,id in next do
-        (self.manager):ActivateGuide(id, callBack)
-        local guide = ((self.manager).triggerGuides)[id]
-        if guide and (self.manager):IsGuideProcess(guide:GetID()) then
-          return 
+    if (0 < doneGuideId and self.manager:IsGuideDone(doneGuideId) or doneGuideId < 0) and not self.manager:IsGuideDone(unDoneGuideId) then
+      for _, id in next, guides, nil do
+        self.manager:ActivateGuide(id, callBack)
+        local guide = self.manager.triggerGuides[id]
+        if guide and self.manager:IsGuideProcess(guide:GetID()) then
+          return
         end
       end
     end
@@ -487,802 +362,593 @@ LoginTrigger.OnTrigger = function(self, callBack)
 end
 
 _class("BattleCompleteTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleCompleteTrigger.Constructor = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function BattleCompleteTrigger:Constructor()
   self.eventType = GameEventType.GuideBattleComplete
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleCompleteTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_36 , upvalues : _ENV
+function BattleCompleteTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.BattleCompleteTrigger then
-    local levelId = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[levelId] then
-      (self.triggers)[levelId] = {}
+    local levelId = v.triggerParam[1]
+    if not self.triggers[levelId] then
+      self.triggers[levelId] = {}
     end
-    ;
-    (table.insert)((self.triggers)[levelId], v.id)
+    table.insert(self.triggers[levelId], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleCompleteTrigger.OnTrigger = function(self, levelId)
-  -- function num : 0_37 , upvalues : _ENV
+function BattleCompleteTrigger:OnTrigger(levelId)
   if not levelId then
-    return 
+    return
   end
-  local guides = (self.triggers)[levelId]
+  local guides = self.triggers[levelId]
   if not guides then
-    return 
+    return
   end
-  for _,id in next do
-    (self.manager):ActivateGuide(id)
+  for _, id in next, guides, nil do
+    self.manager:ActivateGuide(id)
   end
 end
 
 _class("PetGradeTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC168: Confused about usage of register: R0 in 'UnsetPending'
 
-PetGradeTrigger.Constructor = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function PetGradeTrigger:Constructor()
   self.eventType = GameEventType.GuideGrade
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R0 in 'UnsetPending'
-
-PetGradeTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_39 , upvalues : _ENV
+function PetGradeTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PetGradeTrigger then
-    (table.insert)(self.triggers, v.id)
+    table.insert(self.triggers, v.id)
   end
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R0 in 'UnsetPending'
-
-PetGradeTrigger.OnTrigger = function(self, callBack)
-  -- function num : 0_40 , upvalues : _ENV
-  for index,id in pairs(self.triggers) do
-    (self.manager):ActivateGuide(id, callBack)
+function PetGradeTrigger:OnTrigger(callBack)
+  for index, id in pairs(self.triggers) do
+    self.manager:ActivateGuide(id, callBack)
   end
 end
 
 _class("PetAwakeTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC181: Confused about usage of register: R0 in 'UnsetPending'
 
-PetAwakeTrigger.Constructor = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function PetAwakeTrigger:Constructor()
   self.eventType = GameEventType.GuideAwake
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAwakeTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_42 , upvalues : _ENV
+function PetAwakeTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PetAwakeTrigger then
-    (table.insert)(self.triggers, v.id)
+    table.insert(self.triggers, v.id)
   end
 end
 
--- DECOMPILER ERROR at PC187: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAwakeTrigger.OnTrigger = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  for index,id in pairs(self.triggers) do
-    (self.manager):ActivateGuide(id)
+function PetAwakeTrigger:OnTrigger()
+  for index, id in pairs(self.triggers) do
+    self.manager:ActivateGuide(id)
   end
 end
 
 _class("RoomEnterTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
 
-RoomEnterTrigger.Constructor = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function RoomEnterTrigger:Constructor()
   self.eventType = GameEventType.GuideRoomEnter
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-RoomEnterTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_45 , upvalues : _ENV
+function RoomEnterTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.RoomEnterTrigger then
-    local spaceId = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[spaceId] then
-      (self.triggers)[spaceId] = {}
+    local spaceId = v.triggerParam[1]
+    if not self.triggers[spaceId] then
+      self.triggers[spaceId] = {}
     end
-    ;
-    (table.insert)((self.triggers)[spaceId], v.id)
+    table.insert(self.triggers[spaceId], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-RoomEnterTrigger.OnTrigger = function(self, spaceId, callBack)
-  -- function num : 0_46 , upvalues : _ENV
-  local guides = (self.triggers)[spaceId]
-  if not guides and callBack then
-    callBack(false)
+function RoomEnterTrigger:OnTrigger(spaceId, callBack)
+  local guides = self.triggers[spaceId]
+  if not guides then
+    if callBack then
+      callBack(false)
+    end
+    return
   end
-  do return  end
-  for _,id in next do
-    (self.manager):ActivateGuide(id, callBack)
+  for _, id in next, guides, nil do
+    self.manager:ActivateGuide(id, callBack)
   end
 end
 
 _class("ShowResSwitchTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC207: Confused about usage of register: R0 in 'UnsetPending'
 
-ShowResSwitchTrigger.Constructor = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function ShowResSwitchTrigger:Constructor()
   self.eventType = GameEventType.GuideShowResDouble
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowResSwitchTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_48 , upvalues : _ENV
+function ShowResSwitchTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.ShowResSwitchTrigger then
-    (table.insert)(self.triggers, v.id)
+    table.insert(self.triggers, v.id)
   end
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowResSwitchTrigger.OnTrigger = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  for index,id in pairs(self.triggers) do
-    (self.manager):ActivateGuide(id)
+function ShowResSwitchTrigger:OnTrigger()
+  for index, id in pairs(self.triggers) do
+    self.manager:ActivateGuide(id)
   end
 end
 
 _class("MissionAutoBattleTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC220: Confused about usage of register: R0 in 'UnsetPending'
 
-MissionAutoBattleTrigger.Constructor = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function MissionAutoBattleTrigger:Constructor()
   self.eventType = GameEventType.GuideMissionAutoBattle
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionAutoBattleTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_51 , upvalues : _ENV
+function MissionAutoBattleTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.MissionAutoBattleTrigger then
-    (table.insert)(self.triggers, v.id)
+    table.insert(self.triggers, v.id)
   end
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R0 in 'UnsetPending'
-
-MissionAutoBattleTrigger.OnTrigger = function(self)
-  -- function num : 0_52 , upvalues : _ENV
-  for index,id in pairs(self.triggers) do
-    (self.manager):ActivateGuide(id)
+function MissionAutoBattleTrigger:OnTrigger()
+  for index, id in pairs(self.triggers) do
+    self.manager:ActivateGuide(id)
   end
 end
 
 _class("ResAutoBattleTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
 
-ResAutoBattleTrigger.Constructor = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function ResAutoBattleTrigger:Constructor()
   self.eventType = GameEventType.GuideResAutoBattle
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-ResAutoBattleTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_54 , upvalues : _ENV
+function ResAutoBattleTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.ResAutoBattleTrigger then
-    (table.insert)(self.triggers, v.id)
+    table.insert(self.triggers, v.id)
   end
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-ResAutoBattleTrigger.OnTrigger = function(self)
-  -- function num : 0_55 , upvalues : _ENV
-  for index,id in pairs(self.triggers) do
-    (self.manager):ActivateGuide(id)
+function ResAutoBattleTrigger:OnTrigger()
+  for index, id in pairs(self.triggers) do
+    self.manager:ActivateGuide(id)
   end
 end
 
 _class("PlotEnterFinishTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC246: Confused about usage of register: R0 in 'UnsetPending'
 
-PlotEnterFinishTrigger.Constructor = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function PlotEnterFinishTrigger:Constructor()
   self.eventType = GameEventType.GuidePlotEnterFinish
 end
 
--- DECOMPILER ERROR at PC249: Confused about usage of register: R0 in 'UnsetPending'
-
-PlotEnterFinishTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_57 , upvalues : _ENV
+function PlotEnterFinishTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PlotEnterFinishTrigger then
-    local missionId = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[missionId] then
-      (self.triggers)[missionId] = {}
+    local missionId = v.triggerParam[1]
+    if not self.triggers[missionId] then
+      self.triggers[missionId] = {}
     end
-    ;
-    (table.insert)((self.triggers)[missionId], v)
+    table.insert(self.triggers[missionId], v)
   end
 end
 
--- DECOMPILER ERROR at PC252: Confused about usage of register: R0 in 'UnsetPending'
-
-PlotEnterFinishTrigger.OnTrigger = function(self, missionId, callBack)
-  -- function num : 0_58 , upvalues : _ENV
+function PlotEnterFinishTrigger:OnTrigger(missionId, callBack)
   if not missionId then
-    return 
+    return
   end
-  local guides = (self.triggers)[missionId]
-  if not guides and callBack then
-    callBack(false)
+  local guides = self.triggers[missionId]
+  if not guides then
+    if callBack then
+      callBack(false)
+    end
+    return
   end
-  do return  end
-  for _,cfg in next do
-    (self.manager):ActivateGuide(cfg.id, callBack)
+  for _, cfg in next, guides, nil do
+    self.manager:ActivateGuide(cfg.id, callBack)
   end
 end
 
 _class("LevelFinishAircraftTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC259: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelFinishAircraftTrigger.Constructor = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function LevelFinishAircraftTrigger:Constructor()
   self.eventType = GameEventType.GuideLevelFinishAircraft
 end
 
--- DECOMPILER ERROR at PC262: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelFinishAircraftTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_60 , upvalues : _ENV
+function LevelFinishAircraftTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.LevelFinishAircraftTrigger and v.triggerParam then
-    local levelId = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[levelId] then
-      (self.triggers)[levelId] = {}
+    local levelId = v.triggerParam[1]
+    if not self.triggers[levelId] then
+      self.triggers[levelId] = {}
     end
-    ;
-    (table.insert)((self.triggers)[levelId], v)
+    table.insert(self.triggers[levelId], v)
   end
 end
 
--- DECOMPILER ERROR at PC265: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelFinishAircraftTrigger.OnTrigger = function(self, levelId, callBack)
-  -- function num : 0_61 , upvalues : _ENV
+function LevelFinishAircraftTrigger:OnTrigger(levelId, callBack)
   if levelId then
-    local guides = (self.triggers)[levelId]
-    if not guides and callBack then
-      callBack(false)
+    local guides = self.triggers[levelId]
+    if not guides then
+      if callBack then
+        callBack(false)
+      end
+      return
     end
-    do return  end
-    local module = (GameGlobal.GetModule)(AircraftModule)
-    for _,v in next do
-      local room = module:GetRoom((v.triggerParam)[2])
+    local module = GameGlobal.GetModule(AircraftModule)
+    for _, v in next, guides, nil do
+      local room = module:GetRoom(v.triggerParam[2])
       if not room then
-        (self.manager):ActivateGuide(v.id, callBack)
+        self.manager:ActivateGuide(v.id, callBack)
       end
     end
-    return 
+    return
   end
 end
 
 _class("LeaveAircraftTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
 
-LeaveAircraftTrigger.Constructor = function(self)
-  -- function num : 0_62 , upvalues : _ENV
+function LeaveAircraftTrigger:Constructor()
   self.eventType = GameEventType.GuideLeaveAircraft
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-LeaveAircraftTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_63 , upvalues : _ENV
+function LeaveAircraftTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.LeaveAircraftTrigger then
-    (table.insert)(self.triggers, v)
+    table.insert(self.triggers, v)
   end
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-LeaveAircraftTrigger.OnTrigger = function(self, callBack)
-  -- function num : 0_64 , upvalues : _ENV
-  for index,v in pairs(self.triggers) do
-    if (self.manager):IsGuideProcess(v.guide) then
-      (self.manager):ActivateGuide(v.id, callBack)
+function LeaveAircraftTrigger:OnTrigger(callBack)
+  for index, v in pairs(self.triggers) do
+    if self.manager:IsGuideProcess(v.guide) then
+      self.manager:ActivateGuide(v.id, callBack)
     end
   end
 end
 
 _class("PetGradeDoneTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC285: Confused about usage of register: R0 in 'UnsetPending'
 
-PetGradeDoneTrigger.Constructor = function(self)
-  -- function num : 0_65 , upvalues : _ENV
+function PetGradeDoneTrigger:Constructor()
   self.eventType = GameEventType.GuideGradeUpDone
 end
 
--- DECOMPILER ERROR at PC288: Confused about usage of register: R0 in 'UnsetPending'
-
-PetGradeDoneTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_66 , upvalues : _ENV
+function PetGradeDoneTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PetGradeDoneTrigger then
-    local GradeLv = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[GradeLv] then
-      (self.triggers)[GradeLv] = {}
+    local GradeLv = v.triggerParam[1]
+    if not self.triggers[GradeLv] then
+      self.triggers[GradeLv] = {}
     end
-    ;
-    (table.insert)((self.triggers)[GradeLv], v.id)
+    table.insert(self.triggers[GradeLv], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC291: Confused about usage of register: R0 in 'UnsetPending'
-
-PetGradeDoneTrigger.OnTrigger = function(self, gradeLv)
-  -- function num : 0_67 , upvalues : _ENV
+function PetGradeDoneTrigger:OnTrigger(gradeLv)
   if gradeLv then
-    local guides = (self.triggers)[gradeLv]
+    local guides = self.triggers[gradeLv]
     if not guides then
-      return 
+      return
     end
-    for _,v in ipairs(guides) do
-      (self.manager):ActivateGuide(v)
+    for _, v in ipairs(guides) do
+      self.manager:ActivateGuide(v)
     end
-    return 
+    return
   end
 end
 
 _class("OpenTeamUITrigger", GuideTrigger)
--- DECOMPILER ERROR at PC298: Confused about usage of register: R0 in 'UnsetPending'
 
-OpenTeamUITrigger.Constructor = function(self)
-  -- function num : 0_68 , upvalues : _ENV
+function OpenTeamUITrigger:Constructor()
   self.eventType = GameEventType.GuideOpenTeamUI
 end
 
--- DECOMPILER ERROR at PC301: Confused about usage of register: R0 in 'UnsetPending'
-
-OpenTeamUITrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_69 , upvalues : _ENV
+function OpenTeamUITrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.OpenTeamUITrigger then
-    local missionType = (v.triggerParam)[1]
-    local missionID = (v.triggerParam)[2]
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-    if not (self.triggers)[missionType] then
-      (self.triggers)[missionType] = {}
+    local missionType = v.triggerParam[1]
+    local missionID = v.triggerParam[2]
+    if not self.triggers[missionType] then
+      self.triggers[missionType] = {}
     end
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-    if not ((self.triggers)[missionType])[missionID] then
-      ((self.triggers)[missionType])[missionID] = {}
+    if not self.triggers[missionType][missionID] then
+      self.triggers[missionType][missionID] = {}
     end
-    ;
-    (table.insert)(((self.triggers)[missionType])[missionID], v.id)
+    table.insert(self.triggers[missionType][missionID], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC304: Confused about usage of register: R0 in 'UnsetPending'
-
-OpenTeamUITrigger.OnTrigger = function(self, missionType, missionID)
-  -- function num : 0_70 , upvalues : _ENV
+function OpenTeamUITrigger:OnTrigger(missionType, missionID)
   if missionType and missionID then
-    if not (self.triggers)[missionType] or not ((self.triggers)[missionType])[missionID] then
-      return 
+    if not self.triggers[missionType] or not self.triggers[missionType][missionID] then
+      return
     end
-    local guides = ((self.triggers)[missionType])[missionID]
+    local guides = self.triggers[missionType][missionID]
     if not guides then
-      return 
+      return
     end
-    for _,v in ipairs(guides) do
-      (self.manager):ActivateGuide(v)
+    for _, v in ipairs(guides) do
+      self.manager:ActivateGuide(v)
     end
-    return 
+    return
   end
 end
 
 _class("EntertainmentRoomUnlockTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
 
-EntertainmentRoomUnlockTrigger.Constructor = function(self)
-  -- function num : 0_71 , upvalues : _ENV
+function EntertainmentRoomUnlockTrigger:Constructor()
   self.eventType = GameEventType.GuideEntertainmentRoomUnlock
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R0 in 'UnsetPending'
-
-EntertainmentRoomUnlockTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_72 , upvalues : _ENV
+function EntertainmentRoomUnlockTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.EntertainmentRoomUnlockTrigger and v.triggerParam and #v.triggerParam > 0 then
-    local spaceID = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[spaceID] then
-      (self.triggers)[spaceID] = {}
+    local spaceID = v.triggerParam[1]
+    if not self.triggers[spaceID] then
+      self.triggers[spaceID] = {}
     end
-    ;
-    (table.insert)((self.triggers)[spaceID], v.id)
+    table.insert(self.triggers[spaceID], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC317: Confused about usage of register: R0 in 'UnsetPending'
-
-EntertainmentRoomUnlockTrigger.OnTrigger = function(self, spaceID)
-  -- function num : 0_73 , upvalues : _ENV
+function EntertainmentRoomUnlockTrigger:OnTrigger(spaceID)
   if spaceID then
-    local guides = (self.triggers)[spaceID]
+    local guides = self.triggers[spaceID]
     if not guides then
-      return 
+      return
     end
-    for _,v in ipairs(guides) do
-      (self.manager):ActivateGuide(v)
+    for _, v in ipairs(guides) do
+      self.manager:ActivateGuide(v)
     end
-    return 
+    return
   end
 end
 
 _class("OpenAirRoomFacilityTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC324: Confused about usage of register: R0 in 'UnsetPending'
 
-OpenAirRoomFacilityTrigger.Constructor = function(self)
-  -- function num : 0_74 , upvalues : _ENV
+function OpenAirRoomFacilityTrigger:Constructor()
   self.eventType = GameEventType.GuideOpenAirRoomFacilityUI
 end
 
--- DECOMPILER ERROR at PC327: Confused about usage of register: R0 in 'UnsetPending'
-
-OpenAirRoomFacilityTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_75 , upvalues : _ENV
+function OpenAirRoomFacilityTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.OpenAirRoomFacilityTrigger then
-    local roomType = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[roomType] then
-      (self.triggers)[roomType] = {}
+    local roomType = v.triggerParam[1]
+    if not self.triggers[roomType] then
+      self.triggers[roomType] = {}
     end
-    ;
-    (table.insert)((self.triggers)[roomType], v.id)
+    table.insert(self.triggers[roomType], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC330: Confused about usage of register: R0 in 'UnsetPending'
-
-OpenAirRoomFacilityTrigger.OnTrigger = function(self, roomType)
-  -- function num : 0_76 , upvalues : _ENV
+function OpenAirRoomFacilityTrigger:OnTrigger(roomType)
   if roomType then
-    local guides = (self.triggers)[roomType]
+    local guides = self.triggers[roomType]
     if not guides then
-      return 
+      return
     end
-    for _,v in ipairs(guides) do
-      (self.manager):ActivateGuide(v)
+    for _, v in ipairs(guides) do
+      self.manager:ActivateGuide(v)
     end
-    return 
+    return
   end
 end
 
 _class("OpenAirRoomSettleTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC337: Confused about usage of register: R0 in 'UnsetPending'
 
-OpenAirRoomSettleTrigger.Constructor = function(self)
-  -- function num : 0_77 , upvalues : _ENV
+function OpenAirRoomSettleTrigger:Constructor()
   self.eventType = GameEventType.GuideOpenAirRoomSettleUI
 end
 
--- DECOMPILER ERROR at PC340: Confused about usage of register: R0 in 'UnsetPending'
-
-OpenAirRoomSettleTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_78 , upvalues : _ENV
+function OpenAirRoomSettleTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.OpenAirRoomSettleTrigger then
-    local roomType = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[roomType] then
-      (self.triggers)[roomType] = {}
+    local roomType = v.triggerParam[1]
+    if not self.triggers[roomType] then
+      self.triggers[roomType] = {}
     end
-    ;
-    (table.insert)((self.triggers)[roomType], v.id)
+    table.insert(self.triggers[roomType], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC343: Confused about usage of register: R0 in 'UnsetPending'
-
-OpenAirRoomSettleTrigger.OnTrigger = function(self, roomType)
-  -- function num : 0_79 , upvalues : _ENV
+function OpenAirRoomSettleTrigger:OnTrigger(roomType)
   if roomType then
-    local guides = (self.triggers)[roomType]
+    local guides = self.triggers[roomType]
     if not guides then
-      return 
+      return
     end
-    for _,v in ipairs(guides) do
-      (self.manager):ActivateGuide(v)
+    for _, v in ipairs(guides) do
+      self.manager:ActivateGuide(v)
     end
-    return 
+    return
   end
 end
 
 _class("BuildAirRoomTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC350: Confused about usage of register: R0 in 'UnsetPending'
 
-BuildAirRoomTrigger.Constructor = function(self)
-  -- function num : 0_80 , upvalues : _ENV
+function BuildAirRoomTrigger:Constructor()
   self.eventType = GameEventType.GuideBuildAirRoom
 end
 
--- DECOMPILER ERROR at PC353: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildAirRoomTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_81 , upvalues : _ENV
+function BuildAirRoomTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.BuildAirRoomTrigger and v.triggerParam and #v.triggerParam > 0 then
-    local spaceID = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[spaceID] then
-      (self.triggers)[spaceID] = {}
+    local spaceID = v.triggerParam[1]
+    if not self.triggers[spaceID] then
+      self.triggers[spaceID] = {}
     end
-    ;
-    (table.insert)((self.triggers)[spaceID], v.id)
+    table.insert(self.triggers[spaceID], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC356: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildAirRoomTrigger.OnTrigger = function(self, spaceID)
-  -- function num : 0_82 , upvalues : _ENV
+function BuildAirRoomTrigger:OnTrigger(spaceID)
   if spaceID then
-    local guides = (self.triggers)[spaceID]
+    local guides = self.triggers[spaceID]
     if not guides then
-      return 
+      return
     end
-    for _,v in ipairs(guides) do
-      (self.manager):ActivateGuide(v)
+    for _, v in ipairs(guides) do
+      self.manager:ActivateGuide(v)
     end
-    return 
+    return
   end
 end
 
 _class("TaskStateTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC363: Confused about usage of register: R0 in 'UnsetPending'
 
-TaskStateTrigger.Constructor = function(self)
-  -- function num : 0_83 , upvalues : _ENV
+function TaskStateTrigger:Constructor()
   self.eventType = GameEventType.GuideTaskState
 end
 
--- DECOMPILER ERROR at PC366: Confused about usage of register: R0 in 'UnsetPending'
-
-TaskStateTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_84 , upvalues : _ENV
+function TaskStateTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.TaskStateTrigger and v.triggerParam and #v.triggerParam > 0 then
-    local id = (v.triggerParam)[1]
-    local state = (v.triggerParam)[2]
+    local id = v.triggerParam[1]
+    local state = v.triggerParam[2]
     local key = id .. "|" .. state
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-    if not (self.triggers)[key] then
-      (self.triggers)[key] = {}
+    if not self.triggers[key] then
+      self.triggers[key] = {}
     end
-    ;
-    (table.insert)((self.triggers)[key], v.id)
+    table.insert(self.triggers[key], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC369: Confused about usage of register: R0 in 'UnsetPending'
-
-TaskStateTrigger.OnTrigger = function(self, id, state)
-  -- function num : 0_85 , upvalues : _ENV
+function TaskStateTrigger:OnTrigger(id, state)
   if id and state then
     local key = id .. "|" .. state
-    local guides = (self.triggers)[key]
+    local guides = self.triggers[key]
     if not guides then
-      return 
+      return
     end
-    for _,v in ipairs(guides) do
-      (self.manager):ActivateGuide(v)
+    for _, v in ipairs(guides) do
+      self.manager:ActivateGuide(v)
     end
-    return 
+    return
   end
 end
 
 _class("BattleFinishTrigger", GuideTrigger)
--- DECOMPILER ERROR at PC376: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleFinishTrigger.Constructor = function(self)
-  -- function num : 0_86 , upvalues : _ENV
+function BattleFinishTrigger:Constructor()
   self.eventType = GameEventType.GuideBattleFinish
 end
 
--- DECOMPILER ERROR at PC379: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFinishTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_87 , upvalues : _ENV
+function BattleFinishTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.BattleFinishTrigger then
-    local missionID = (v.triggerParam)[1]
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not (self.triggers)[missionID] then
-      (self.triggers)[missionID] = {}
+    local missionID = v.triggerParam[1]
+    if not self.triggers[missionID] then
+      self.triggers[missionID] = {}
     end
-    ;
-    (table.insert)((self.triggers)[missionID], v.id)
+    table.insert(self.triggers[missionID], v.id)
   end
 end
 
--- DECOMPILER ERROR at PC382: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleFinishTrigger.OnTrigger = function(self, missionID, callBack)
-  -- function num : 0_88 , upvalues : _ENV
+function BattleFinishTrigger:OnTrigger(missionID, callBack)
   if missionID then
-    local guides = (self.triggers)[missionID]
+    local guides = self.triggers[missionID]
     if guides then
-      for _,v in ipairs(guides) do
-        (self.manager):ActivateGuide(v, callBack)
+      for _, v in ipairs(guides) do
+        self.manager:ActivateGuide(v, callBack)
       end
-    else
-      do
-        if callBack then
-          callBack(false)
-        end
-      end
+    elseif callBack then
+      callBack(false)
     end
   end
 end
 
 _class("PlaySkillRealFinishTrigger", GuideTrigger)
 PlaySkillRealFinishTrigger = PlaySkillRealFinishTrigger
--- DECOMPILER ERROR at PC391: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillRealFinishTrigger.Constructor = function(self)
-  -- function num : 0_89 , upvalues : _ENV
+function PlaySkillRealFinishTrigger:Constructor()
   self.eventType = GameEventType.GuidePlayerSkillRealFinish
 end
 
--- DECOMPILER ERROR at PC394: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillRealFinishTrigger.PreHandleCfg = function(self, v)
-  -- function num : 0_90 , upvalues : _ENV
+function PlaySkillRealFinishTrigger:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PlaySkillRealFinishTrigger then
     local cfg = v.triggerParam
-    if not cfg[5] then
-      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (not cfg or 0)
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self.triggers)[mark] then
-        (self.triggers)[mark] = {}
+    if cfg then
+      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (cfg[5] or 0)
+      if not self.triggers[mark] then
+        self.triggers[mark] = {}
       end
-      ;
-      (table.insert)((self.triggers)[mark], v)
+      table.insert(self.triggers[mark], v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC397: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillRealFinishTrigger.OnTrigger = function(self, levelId, wave, round, playerHandleType, petTempId, callBack)
-  -- function num : 0_91 , upvalues : _ENV
+function PlaySkillRealFinishTrigger:OnTrigger(levelId, wave, round, playerHandleType, petTempId, callBack)
   if playerHandleType then
     local mark = levelId .. "|" .. wave .. "|" .. round .. "|" .. playerHandleType .. "|" .. petTempId
-    local guides = (self.triggers)[mark]
-    if not guides and callBack then
-      callBack(false)
+    local guides = self.triggers[mark]
+    if not guides then
+      if callBack then
+        callBack(false)
+      end
+      return
     end
-    do return  end
-    for _,cfg in next do
-      (self.manager):ActivateGuide(cfg.id, callBack)
+    for _, cfg in next, guides, nil do
+      self.manager:ActivateGuide(cfg.id, callBack)
     end
-    return 
+    return
   end
 end
 
 _class("PlaySkillRealFinishTriggerWithoutRoundLimit", GuideTrigger)
 PlaySkillRealFinishTriggerWithoutRoundLimit = PlaySkillRealFinishTriggerWithoutRoundLimit
--- DECOMPILER ERROR at PC406: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillRealFinishTriggerWithoutRoundLimit.Constructor = function(self)
-  -- function num : 0_92 , upvalues : _ENV
+function PlaySkillRealFinishTriggerWithoutRoundLimit:Constructor()
   self.eventType = GameEventType.GuidePlayerSkillRealFinish
 end
 
--- DECOMPILER ERROR at PC409: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillRealFinishTriggerWithoutRoundLimit.PreHandleCfg = function(self, v)
-  -- function num : 0_93 , upvalues : _ENV
+function PlaySkillRealFinishTriggerWithoutRoundLimit:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PlaySkillRealFinishTriggerWithoutRoundLimit then
     local cfg = v.triggerParam
-    if not cfg[5] then
-      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (not cfg or 0)
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self.triggers)[mark] then
-        (self.triggers)[mark] = {}
+    if cfg then
+      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (cfg[5] or 0)
+      if not self.triggers[mark] then
+        self.triggers[mark] = {}
       end
-      ;
-      (table.insert)((self.triggers)[mark], v)
+      table.insert(self.triggers[mark], v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC412: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillRealFinishTriggerWithoutRoundLimit.OnTrigger = function(self, levelId, wave, round, playerHandleType, petTempId, callBack)
-  -- function num : 0_94 , upvalues : _ENV
+function PlaySkillRealFinishTriggerWithoutRoundLimit:OnTrigger(levelId, wave, round, playerHandleType, petTempId, callBack)
   if playerHandleType then
     round = 0
     local mark = levelId .. "|" .. wave .. "|" .. round .. "|" .. playerHandleType .. "|" .. petTempId
-    local guides = (self.triggers)[mark]
-    if not guides and callBack then
-      callBack(false)
+    local guides = self.triggers[mark]
+    if not guides then
+      if callBack then
+        callBack(false)
+      end
+      return
     end
-    do return  end
-    for _,cfg in next do
-      (self.manager):ActivateGuide(cfg.id, callBack)
+    for _, cfg in next, guides, nil do
+      self.manager:ActivateGuide(cfg.id, callBack)
     end
-    return 
+    return
   end
 end
 
 _class("PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes", GuideTrigger)
 PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes = PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes
--- DECOMPILER ERROR at PC421: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes.Constructor = function(self)
-  -- function num : 0_95 , upvalues : _ENV
+function PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes:Constructor()
   self.eventType = GameEventType.GuidePlayerSkillRealFinish
 end
 
--- DECOMPILER ERROR at PC424: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes.PreHandleCfg = function(self, v)
-  -- function num : 0_96 , upvalues : _ENV
+function PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes then
     local cfg = v.triggerParam
-    if not cfg[5] then
-      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (not cfg or 0)
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self.triggers)[mark] then
-        (self.triggers)[mark] = {}
+    if cfg then
+      local mark = cfg[1] .. "|" .. cfg[2] .. "|" .. cfg[3] .. "|" .. cfg[4] .. "|" .. (cfg[5] or 0)
+      if not self.triggers[mark] then
+        self.triggers[mark] = {}
       end
-      ;
-      (table.insert)((self.triggers)[mark], v)
+      table.insert(self.triggers[mark], v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC427: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes.OnTrigger = function(self, levelId, wave, round, playerHandleType, petTempId, callBack)
-  -- function num : 0_97 , upvalues : _ENV
+function PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes:OnTrigger(levelId, wave, round, playerHandleType, petTempId, callBack)
   if playerHandleType then
     round = 0
     local mark = levelId .. "|" .. wave .. "|" .. round .. "|" .. playerHandleType .. "|" .. petTempId
-    local guides = (self.triggers)[mark]
-    if not guides and callBack then
-      callBack(false)
+    local guides = self.triggers[mark]
+    if not guides then
+      if callBack then
+        callBack(false)
+      end
+      return
     end
-    do return  end
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R9 in 'UnsetPending'
-
-    if not ((self.manager).skillTimesAtWave)[wave] then
-      ((self.manager).skillTimesAtWave)[wave] = {}
+    if not self.manager.skillTimesAtWave[wave] then
+      self.manager.skillTimesAtWave[wave] = {}
     end
-    local waveDic = ((self.manager).skillTimesAtWave)[wave]
+    local waveDic = self.manager.skillTimesAtWave[wave]
     local skillTimes = 0
     if not waveDic[petTempId] then
       waveDic[petTempId] = 1
@@ -1291,58 +957,47 @@ PlaySkillRealFinishTriggerWithoutRoundLimitWithTimes.OnTrigger = function(self, 
       skillTimes = waveDic[petTempId] + 1
       waveDic[petTempId] = skillTimes
     end
-    for _,cfg in next do
+    for _, cfg in next, guides, nil do
       local trigerParam = cfg.triggerParam
       local paramNum = tonumber(trigerParam[6])
       if paramNum == skillTimes then
-        (self.manager):ActivateGuide(cfg.id, callBack)
+        self.manager:ActivateGuide(cfg.id, callBack)
       end
     end
-    return 
+    return
   end
 end
 
 _class("N28BounceGameArriveTarget", GuideTrigger)
 N28BounceGameArriveTarget = N28BounceGameArriveTarget
--- DECOMPILER ERROR at PC436: Confused about usage of register: R0 in 'UnsetPending'
 
-N28BounceGameArriveTarget.Constructor = function(self)
-  -- function num : 0_98 , upvalues : _ENV
+function N28BounceGameArriveTarget:Constructor()
   self.eventType = GameEventType.N28BounceGameArriveTarget
 end
 
--- DECOMPILER ERROR at PC439: Confused about usage of register: R0 in 'UnsetPending'
-
-N28BounceGameArriveTarget.PreHandleCfg = function(self, v)
-  -- function num : 0_99 , upvalues : _ENV
+function N28BounceGameArriveTarget:PreHandleCfg(v)
   if v.triggerType == GuideTriggerType.N28BounceGameArriveTarget then
     local cfg = v.triggerParam
     if cfg then
       local mark = "guide" .. cfg[1]
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-      if not (self.triggers)[mark] then
-        (self.triggers)[mark] = {}
+      if not self.triggers[mark] then
+        self.triggers[mark] = {}
       end
-      ;
-      (table.insert)((self.triggers)[mark], v)
+      table.insert(self.triggers[mark], v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC442: Confused about usage of register: R0 in 'UnsetPending'
-
-N28BounceGameArriveTarget.OnTrigger = function(self, target, callBack)
-  -- function num : 0_100 , upvalues : _ENV
+function N28BounceGameArriveTarget:OnTrigger(target, callBack)
   local mark = target
-  local guides = (self.triggers)[mark]
-  if not guides and callBack then
-    callBack(false)
+  local guides = self.triggers[mark]
+  if not guides then
+    if callBack then
+      callBack(false)
+    end
+    return
   end
-  do return  end
-  for _,cfg in next do
-    (self.manager):ActivateGuide(cfg.id, callBack)
+  for _, cfg in next, guides, nil do
+    self.manager:ActivateGuide(cfg.id, callBack)
   end
 end
-
-

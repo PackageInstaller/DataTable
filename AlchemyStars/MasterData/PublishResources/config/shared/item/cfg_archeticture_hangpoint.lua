@@ -1,53 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/item/cfg_archeticture_hangpoint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Res = 2, Unlock = 3, Cost = 4, Reward = 5, FinishEffectId = 6, UnlockInteract = 7, UnlockModelNode = 8}
+local key = {
+  ID = 1,
+  Res = 2,
+  Unlock = 3,
+  Cost = 4,
+  Reward = 5,
+  FinishEffectId = 6,
+  UnlockInteract = 7,
+  UnlockModelNode = 8
+}
 local config = {
-[527100111] = {527100111, "5271001_7.prefab", 11100205, nil, 
-{
-{5272006, 1}
-}
-, 2}
-, 
-[527100121] = {527100121, "5271001_1.prefab", 11100212, nil, 
-{
-{5272001, 1}
-}
-, 3}
-, 
-[527100122] = {527100122, "5271001_4.prefab", 11100218, nil, 
-{
-{5272002, 1}
-}
-, 3}
-, 
-[527100123] = {527100123, "5271001_8.prefab", 11100228, nil, 
-{
-{5272003, 1}
-}
-, 3}
-, 
-[527100131] = {527100131, "5271001_2.prefab", 11100222, nil, 
-{
-{5272009, 1}
-, 
-{5272008, 2}
-}
-, 3}
-, 
-[527100132] = {527100132, "5271001_5.prefab", 11100230, nil, 
-{
-{5272005, 1}
-}
-, 3}
-, 
-[527100331] = {527100331, "5271003_1.prefab", 11100306, nil, nil, 3, 
-{33}
-, 
-{"hl_pfb_camera"}
-}
+  [527100111] = {
+    527100111,
+    "5271001_7.prefab",
+    11100205,
+    nil,
+    {
+      {5272006, 1}
+    },
+    2
+  },
+  [527100121] = {
+    527100121,
+    "5271001_1.prefab",
+    11100212,
+    nil,
+    {
+      {5272001, 1}
+    },
+    3
+  },
+  [527100122] = {
+    527100122,
+    "5271001_4.prefab",
+    11100218,
+    nil,
+    {
+      {5272002, 1}
+    },
+    3
+  },
+  [527100123] = {
+    527100123,
+    "5271001_8.prefab",
+    11100228,
+    nil,
+    {
+      {5272003, 1}
+    },
+    3
+  },
+  [527100131] = {
+    527100131,
+    "5271001_2.prefab",
+    11100222,
+    nil,
+    {
+      {5272009, 1},
+      {5272008, 2}
+    },
+    3
+  },
+  [527100132] = {
+    527100132,
+    "5271001_5.prefab",
+    11100230,
+    nil,
+    {
+      {5272005, 1}
+    },
+    3
+  },
+  [527100331] = {
+    527100331,
+    "5271003_1.prefab",
+    11100306,
+    nil,
+    nil,
+    3,
+    {33},
+    {
+      "hl_pfb_camera"
+    }
+  }
 }
 return config, "ID", key
-

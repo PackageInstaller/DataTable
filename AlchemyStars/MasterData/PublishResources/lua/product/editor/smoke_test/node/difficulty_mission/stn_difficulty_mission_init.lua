@@ -1,27 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/difficulty_mission/stn_difficulty_mission_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("DifficultyMission_Init", Common_AsyncBase)
 DifficultyMission_Init = DifficultyMission_Init
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DifficultyMission_Init.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local worldBossModule = (GameGlobal.GetModule)(DifficultyMissionModule)
+function DifficultyMission_Init:TaskFunc(TT, status)
+  local worldBossModule = GameGlobal.GetModule(DifficultyMissionModule)
   local result = worldBossModule:HandleGetDifficultyMissionData(TT)
   if result.m_call_err ~= CallResultType.Normal then
-    (Log.exception)(self._className, "HandleGetDifficultyMissionData failed. ")
+    Log.exception(self._className, "HandleGetDifficultyMissionData failed. ")
     status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
     status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-    return 
+    return
   end
-  local uiModule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
+  local uiModule = GameGlobal.GetUIModule(DifficultyMissionModule)
   uiModule:Init()
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
 end
-
-

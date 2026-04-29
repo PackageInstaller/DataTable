@@ -1,8 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/us/story/charastory/str_charastory_ailuma.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31350401_1_dialog_content = "PlayerName, I need to work!", ui_story_31350401_2_dialog_content = "R-Really? I didn\'t know anyone could like work that much...", ui_story_31350401_3_dialog_content = "I can\'t just stay here without earning my keep! It goes against the common order!", ui_story_31350401_4_dialog_content = "(I almost forgot, Elma belongs to the Harmony faction, so she puts a lot of importance on rules and order.)", ui_story_31350401_5_dialog_content = "Alright, then let\'s go take a look around Soroz.", ui_story_31350401_6_dialog_content = "Wow, is this the Bar?!", ui_story_31350401_7_dialog_content = "If you\'re looking for work, why not work here? The most important part of the job is maintaining order too.", ui_story_31350401_8_dialog_content = "Understood! Leave it to me!", ui_story_31350401_9_dialog_content = "Hey, you over there! This is no place for children!", ui_story_31350401_10_dialog_content = "Huh? But I came of age a long time ago...", ui_story_31350401_11_dialog_content = "So how old are you?", ui_story_31350401_12_dialog_content = "How old, huh... Too old to remember, honestly!", ui_story_31350401_13_dialog_content = "She really is old enough to be here, Elma.", ui_story_31350401_14_dialog_content = "You must be PlayerName\'s friend from another world! Come have a drink with me!", ui_story_31350401_15_dialog_content = "D-Does it taste good?", ui_story_31350401_16_dialog_content = "Of course! It\'s a Northland specialty: a sweet wine made with melted snow straight from the mountaintops!", ui_story_31350401_17_dialog_content = "Wow—You weren\'t kidding! This tastes amazing!", ui_story_31350401_18_dialog_content = "Wait, this isn\'t right! I\'m supposed to be keeping watch over this place! B-But... I just can\'t stop!", ui_story_31350401_19_dialog_content = "M-Maybe we can take a look at some other jobs?", ui_story_31350401_20_dialog_content = "This is the Lumina Grid. All you need to do is get along with the Fireflies to manage this area.", ui_story_31350401_21_dialog_content = "...", ui_story_31350401_22_dialog_content = "(This job is really simple, there won\'t be any trouble at all.)", ui_story_31350401_23_dialog_content = "Serious threat detected. Activating escape protocols.", ui_story_31350401_24_dialog_content = "Do not come near us. Do not add us to your drinks. We are not food.", ui_story_31350401_25_dialog_content = "Huh, what\'s going on? The Fireflies are fleeing from their favorite place on the Colossus!", ui_story_31350401_26_dialog_content = "Ah... I think it\'s because I once mistook them for little, floating balls of honey, and I attempted to add them to my drink...", ui_story_31350401_27_dialog_content = "If that\'s the case, I\'m not sure if there\'s any other suitable job for you here...", ui_story_31350401_28_dialog_content = "Boo-hoo... I-I can\'t do anything right around here! I\'m a disgrace to the entire Harmony faction!", ui_story_31350401_29_dialog_content = "Don\'t say that! You\'re an incredible person!", ui_story_31350401_30_dialog_content = "B-But... At this rate—", ui_story_31350401_31_dialog_content = "I won\'t be able to afford that super-loaded cake from Umbraton\'s candy store! I\'ve basically spent all of my pay from the Illumina Federation!", ui_story_31350401_32_dialog_content = "I should\'ve known.", ui_story_31350401_33_dialog_content = "I was really looking forward to that cake...", ui_story_31350401_34_option_content = "I\'ll buy it for you next time.", ui_story_31350401_35_dialog_content = "Wow, really?! B-But I can\'t just take it without earning my keep!", ui_story_31350401_36_dialog_content = "It\'s fine. Besides, you helped us root out those Eclipsites before, didn\'t you? Think of the cake as my way of repaying you.", ui_story_31350401_37_option_content = "I\'ll make you one in a bit.", ui_story_31350401_38_dialog_content = "Y-You actually know how to bake cakes?!", ui_story_31350401_39_dialog_content = "A little bit.", ui_story_31350401_40_dialog_content = "Do I really get to taste one of PlayerName\'s hand-made cakes? I can\'t believe how lucky I am!", ui_story_31350401_41_dialog_content = "As for the cake in Umbraton, I\'ll just tag along and buy it for you next time.", ui_story_31350401_42_dialog_content = "Wow, really?! B-But I can\'t just take it without earning my keep!", ui_story_31350401_43_dialog_content = "It\'s fine. Besides, you helped us root out those Eclipsites before, didn\'t you? Think of the cake as my way of repaying you.", ui_story_31350401_44_dialog_content = "So how much does that cake in Umbraton cost, anyway?", ui_story_31350401_45_dialog_content = "<size=45>30,000 Nightium</size>, if I remember correctly.", ui_story_31350401_46_dialog_content = "Urgh—!", ui_story_31350401_47_dialog_content = "What\'s the matter? Are you feeling okay?!", ui_story_31350401_48_dialog_content = "I-I\'m fine... It\'s just all of my hard-earned money, but I\'ll do it just for you, Elma."}
+local config = {
+  ui_story_31350401_1_dialog_content = "PlayerName, I need to work!",
+  ui_story_31350401_2_dialog_content = "R-Really? I didn't know anyone could like work that much...",
+  ui_story_31350401_3_dialog_content = "I can't just stay here without earning my keep! It goes against the common order!",
+  ui_story_31350401_4_dialog_content = "(I almost forgot, Elma belongs to the Harmony faction, so she puts a lot of importance on rules and order.)",
+  ui_story_31350401_5_dialog_content = "Alright, then let's go take a look around Soroz.",
+  ui_story_31350401_6_dialog_content = "Wow, is this the Bar?!",
+  ui_story_31350401_7_dialog_content = "If you're looking for work, why not work here? The most important part of the job is maintaining order too.",
+  ui_story_31350401_8_dialog_content = "Understood! Leave it to me!",
+  ui_story_31350401_9_dialog_content = "Hey, you over there! This is no place for children!",
+  ui_story_31350401_10_dialog_content = "Huh? But I came of age a long time ago...",
+  ui_story_31350401_11_dialog_content = "So how old are you?",
+  ui_story_31350401_12_dialog_content = "How old, huh... Too old to remember, honestly!",
+  ui_story_31350401_13_dialog_content = "She really is old enough to be here, Elma.",
+  ui_story_31350401_14_dialog_content = "You must be PlayerName's friend from another world! Come have a drink with me!",
+  ui_story_31350401_15_dialog_content = "D-Does it taste good?",
+  ui_story_31350401_16_dialog_content = "Of course! It's a Northland specialty: a sweet wine made with melted snow straight from the mountaintops!",
+  ui_story_31350401_17_dialog_content = "Wow—You weren't kidding! This tastes amazing!",
+  ui_story_31350401_18_dialog_content = "Wait, this isn't right! I'm supposed to be keeping watch over this place! B-But... I just can't stop!",
+  ui_story_31350401_19_dialog_content = "M-Maybe we can take a look at some other jobs?",
+  ui_story_31350401_20_dialog_content = "This is the Lumina Grid. All you need to do is get along with the Fireflies to manage this area.",
+  ui_story_31350401_21_dialog_content = "...",
+  ui_story_31350401_22_dialog_content = "(This job is really simple, there won't be any trouble at all.)",
+  ui_story_31350401_23_dialog_content = "Serious threat detected. Activating escape protocols.",
+  ui_story_31350401_24_dialog_content = "Do not come near us. Do not add us to your drinks. We are not food.",
+  ui_story_31350401_25_dialog_content = "Huh, what's going on? The Fireflies are fleeing from their favorite place on the Colossus!",
+  ui_story_31350401_26_dialog_content = "Ah... I think it's because I once mistook them for little, floating balls of honey, and I attempted to add them to my drink...",
+  ui_story_31350401_27_dialog_content = "If that's the case, I'm not sure if there's any other suitable job for you here...",
+  ui_story_31350401_28_dialog_content = "Boo-hoo... I-I can't do anything right around here! I'm a disgrace to the entire Harmony faction!",
+  ui_story_31350401_29_dialog_content = "Don't say that! You're an incredible person!",
+  ui_story_31350401_30_dialog_content = "B-But... At this rate—",
+  ui_story_31350401_31_dialog_content = "I won't be able to afford that super-loaded cake from Umbraton's candy store! I've basically spent all of my pay from the Illumina Federation!",
+  ui_story_31350401_32_dialog_content = "I should've known.",
+  ui_story_31350401_33_dialog_content = "I was really looking forward to that cake...",
+  ui_story_31350401_34_option_content = "I'll buy it for you next time.",
+  ui_story_31350401_35_dialog_content = "Wow, really?! B-But I can't just take it without earning my keep!",
+  ui_story_31350401_36_dialog_content = "It's fine. Besides, you helped us root out those Eclipsites before, didn't you? Think of the cake as my way of repaying you.",
+  ui_story_31350401_37_option_content = "I'll make you one in a bit.",
+  ui_story_31350401_38_dialog_content = "Y-You actually know how to bake cakes?!",
+  ui_story_31350401_39_dialog_content = "A little bit.",
+  ui_story_31350401_40_dialog_content = "Do I really get to taste one of PlayerName's hand-made cakes? I can't believe how lucky I am!",
+  ui_story_31350401_41_dialog_content = "As for the cake in Umbraton, I'll just tag along and buy it for you next time.",
+  ui_story_31350401_42_dialog_content = "Wow, really?! B-But I can't just take it without earning my keep!",
+  ui_story_31350401_43_dialog_content = "It's fine. Besides, you helped us root out those Eclipsites before, didn't you? Think of the cake as my way of repaying you.",
+  ui_story_31350401_44_dialog_content = "So how much does that cake in Umbraton cost, anyway?",
+  ui_story_31350401_45_dialog_content = "<size=45>30,000 Nightium</size>, if I remember correctly.",
+  ui_story_31350401_46_dialog_content = "Urgh—!",
+  ui_story_31350401_47_dialog_content = "What's the matter? Are you feeling okay?!",
+  ui_story_31350401_48_dialog_content = "I-I'm fine... It's just all of my hard-earned money, but I'll do it just for you, Elma."
+}
 return config
-

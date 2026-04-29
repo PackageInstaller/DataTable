@@ -1,112 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_butterfly_summon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ButterflySummon", SkillEffectCalc_Base)
 SkillEffectCalc_ButterflySummon = SkillEffectCalc_ButterflySummon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ButterflySummon.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_ButterflySummon:DoSkillEffectCalculator(skillEffectCalcParam)
   local effectParam = skillEffectCalcParam:GetSkillEffectParam()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local casterPos = casterEntity:GetGridPosition()
-  local effectCalcService = (self._world):GetService("SkillEffectCalc")
+  local effectCalcService = self._world:GetService("SkillEffectCalc")
   local summonPosArray = {}
   local resultArray = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
-    local wishSummonPos = nil
+  for _, targetID in ipairs(targets) do
+    local wishSummonPos
     local damageResult = skillEffectResultContainer:GetEffectResultByTargetID(SkillEffectType.Damage, targetID)
-    local targetEntity = (self._world):GetEntityByID(targetID)
+    local targetEntity = self._world:GetEntityByID(targetID)
     if damageResult and targetEntity then
       local targetPos = targetEntity:GetGridPosition()
       local dir = targetPos - casterPos
       if dir.x > 0 then
         dir.x = 1
-      else
-        if dir.x < 0 then
-          dir.x = -1
-        end
+      elseif dir.x < 0 then
+        dir.x = -1
       end
-      if dir.y > 0 then
+      if 0 < dir.y then
         dir.y = 1
-      else
-        if dir.y < 0 then
-          dir.y = -1
-        end
+      elseif 0 > dir.y then
+        dir.y = -1
       end
       wishSummonPos = targetPos - dir
       local summonValidPos = effectCalcService:_FindSummonPos(SkillEffectEnum_SummonType.Monster, {wishSummonPos}, effectParam:GetSummonID(), summonPosArray, nil, true)
       if summonValidPos then
         local result = SkillEffectResult_SummonEverything:New(SkillEffectEnum_SummonType.Monster, effectParam:GetSummonID(), casterPos, summonValidPos)
-        ;
-        (table.insert)(resultArray, result)
-        ;
-        (table.insert)(summonPosArray, summonValidPos)
+        table.insert(resultArray, result)
+        table.insert(summonPosArray, summonValidPos)
       end
     else
-      do
-        local calcInfo = {
-up = {distance = -1, 
-grids = {}
-}
-, 
-down = {distance = -1, 
-grids = {}
-}
-, 
-left = {distance = -1, 
-grids = {}
-}
-, 
-right = {distance = -1, 
-grids = {}
-}
-}
-        for _,v2 in ipairs(skillEffectCalcParam.skillRange) do
-          self:_ChallengeFarthestPos(calcInfo, casterPos, v2)
+      local calcInfo = {
+        up = {
+          distance = -1,
+          grids = {}
+        },
+        down = {
+          distance = -1,
+          grids = {}
+        },
+        left = {
+          distance = -1,
+          grids = {}
+        },
+        right = {
+          distance = -1,
+          grids = {}
+        }
+      }
+      for _, v2 in ipairs(skillEffectCalcParam.skillRange) do
+        self:_ChallengeFarthestPos(calcInfo, casterPos, v2)
+      end
+      local t = {}
+      for _, v2 in ipairs(calcInfo.up.grids) do
+        if not table.Vector2Include(t, v2) then
+          table.insert(t, v2)
         end
-        local t = {}
-        for _,v2 in ipairs((calcInfo.up).grids) do
-          if not (table.Vector2Include)(t, v2) then
-            (table.insert)(t, v2)
-          end
+      end
+      for _, v2 in ipairs(calcInfo.down.grids) do
+        if not table.Vector2Include(t, v2) then
+          table.insert(t, v2)
         end
-        for _,v2 in ipairs((calcInfo.down).grids) do
-          if not (table.Vector2Include)(t, v2) then
-            (table.insert)(t, v2)
-          end
+      end
+      for _, v2 in ipairs(calcInfo.left.grids) do
+        if not table.Vector2Include(t, v2) then
+          table.insert(t, v2)
         end
-        for _,v2 in ipairs((calcInfo.left).grids) do
-          if not (table.Vector2Include)(t, v2) then
-            (table.insert)(t, v2)
-          end
+      end
+      for _, v2 in ipairs(calcInfo.right.grids) do
+        if not table.Vector2Include(t, v2) then
+          table.insert(t, v2)
         end
-        for _,v2 in ipairs((calcInfo.right).grids) do
-          if not (table.Vector2Include)(t, v2) then
-            (table.insert)(t, v2)
-          end
-        end
-        for _,v2 in ipairs(t) do
-          local summonValidPos = effectCalcService:_FindSummonPos(SkillEffectEnum_SummonType.Monster, {v2}, effectParam:GetSummonID(), summonPosArray, nil, true)
-          if summonValidPos then
-            local result = SkillEffectResult_SummonEverything:New(SkillEffectEnum_SummonType.Monster, effectParam:GetSummonID(), casterPos, summonValidPos)
-            ;
-            (table.insert)(resultArray, result)
-            ;
-            (table.insert)(summonPosArray, summonValidPos)
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC242: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC242: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC242: LeaveBlock: unexpected jumping out IF_STMT
-
+      end
+      for _, v2 in ipairs(t) do
+        local summonValidPos = effectCalcService:_FindSummonPos(SkillEffectEnum_SummonType.Monster, {v2}, effectParam:GetSummonID(), summonPosArray, nil, true)
+        if summonValidPos then
+          local result = SkillEffectResult_SummonEverything:New(SkillEffectEnum_SummonType.Monster, effectParam:GetSummonID(), casterPos, summonValidPos)
+          table.insert(resultArray, result)
+          table.insert(summonPosArray, summonValidPos)
         end
       end
     end
@@ -114,59 +90,40 @@ grids = {}
   return resultArray
 end
 
-local isRangeDirMatch = function(v2, centerPos, dir)
-  -- function num : 0_1
+local function isRangeDirMatch(v2, centerPos, dir)
   local sub = v2 - centerPos
   if sub.x > 0 then
     sub.x = 1
-  else
-    if sub.x < 0 then
-      sub.x = -1
-    end
+  elseif sub.x < 0 then
+    sub.x = -1
   end
-  if sub.y > 0 then
+  if 0 < sub.y then
     sub.y = 1
-  else
-    if sub.y < 0 then
-      sub.y = -1
-    end
+  elseif 0 > sub.y then
+    sub.y = -1
   end
-  do return sub == dir end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return sub == dir
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectCalc_ButterflySummon._ChallengeFarthestPos = function(self, info, centerPos, v2)
-  -- function num : 0_2 , upvalues : isRangeDirMatch, _ENV
-  local dirInfo = nil
+function SkillEffectCalc_ButterflySummon:_ChallengeFarthestPos(info, centerPos, v2)
+  local dirInfo
   if isRangeDirMatch(v2, centerPos, Vector2.up) then
     dirInfo = info.up
-  else
-    if isRangeDirMatch(v2, centerPos, Vector2.down) then
-      dirInfo = info.down
-    else
-      if isRangeDirMatch(v2, centerPos, Vector2.left) then
-        dirInfo = info.left
-      else
-        if isRangeDirMatch(v2, centerPos, Vector2.right) then
-          dirInfo = info.right
-        end
-      end
-    end
+  elseif isRangeDirMatch(v2, centerPos, Vector2.down) then
+    dirInfo = info.down
+  elseif isRangeDirMatch(v2, centerPos, Vector2.left) then
+    dirInfo = info.left
+  elseif isRangeDirMatch(v2, centerPos, Vector2.right) then
+    dirInfo = info.right
   end
   if not dirInfo then
-    (Log.fatal)("SkillEffectCalc_ButterflySummon: unrecognized dir. pos=", v2, " centerPos=", centerPos)
-    return 
+    Log.fatal("SkillEffectCalc_ButterflySummon: unrecognized dir. pos=", v2, " centerPos=", centerPos)
+    return
   end
-  local dis = (Vector2.Distance)(centerPos, v2)
-  if dirInfo.distance < dis then
+  local dis = Vector2.Distance(centerPos, v2)
+  if dis > dirInfo.distance then
     dirInfo.grids = {v2}
-  else
-    if dirInfo.distance == dis then
-      (table.insert)(dirInfo.grids, v2)
-    end
+  elseif dirInfo.distance == dis then
+    table.insert(dirInfo.grids, v2)
   end
 end
-
-

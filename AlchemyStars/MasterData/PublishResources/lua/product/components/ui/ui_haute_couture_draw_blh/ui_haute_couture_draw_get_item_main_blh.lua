@@ -1,108 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_blh/ui_haute_couture_draw_get_item_main_blh.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawGetItemMainBLH", UIHauteCoutureDrawGetItemBase)
 UIHauteCoutureDrawGetItemMainBLH = UIHauteCoutureDrawGetItemMainBLH
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawGetItemMainBLH.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawGetItemMainBLH:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemMainBLH.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawGetItemMainBLH:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemMainBLH.InitWidgets = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawGetItemMainBLH:InitWidgets()
   self:InitWidgetsBase()
   self._title = self:GetUIComponent("UILocalizationText", "txt_title")
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   local itemInfo = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
   self._selectInfo = itemInfo:SpawnObject("UISelectInfo")
-  ;
-  (self._selectInfo):SetType(3)
-  local detailObj = (self._selectInfo):GetG3CustomPool()
-  ;
-  (detailObj.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawGetItemCellDetailBLH.prefab")
+  self._selectInfo:SetType(3)
+  local detailObj = self._selectInfo:GetG3CustomPool()
+  detailObj.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawGetItemCellDetailBLH.prefab")
   self._selectDetail = detailObj:SpawnObject("UIHauteCoutureDrawGetItemCellDetailBLH")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemMainBLH._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (self.controller).titleTex then
-    local titleTex = (StringTable.Get)("str_senior_skin_draw_get_item_title")
-  end
-  ;
-  (self._title):SetText(titleTex)
-  local items = (self.controller).items
+function UIHauteCoutureDrawGetItemMainBLH:_OnValue()
+  local titleTex = self.controller.titleTex or StringTable.Get("str_senior_skin_draw_get_item_title")
+  self._title:SetText(titleTex)
+  local items = self.controller.items
   self._items = {}
   local sortItems = {}
   if noSort then
     sortItems = items
   else
-    sortItems = (self:GetModule(ItemModule)):SortRoleAsset(items)
+    sortItems = self:GetModule(ItemModule):SortRoleAsset(items)
   end
-  for i = 1, (table.count)(sortItems) do
-    local ItemTempleate = (Cfg.cfg_item)[(sortItems[i]).assetid]
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R9 in 'UnsetPending'
-
+  for i = 1, table.count(sortItems) do
+    local ItemTempleate = Cfg.cfg_item[sortItems[i].assetid]
     if ItemTempleate then
-      (self._items)[i] = {item_index = i, item_id = (sortItems[i]).assetid, item_count = (sortItems[i]).count, item_des = (sortItems[i]).des, award_type = (sortItems[i]).type, icon = ItemTempleate.Icon, item_name = ItemTempleate.Name, simple_desc = ItemTempleate.RpIntro, color = ItemTempleate.Color}
+      self._items[i] = {
+        item_index = i,
+        item_id = sortItems[i].assetid,
+        item_count = sortItems[i].count,
+        item_des = sortItems[i].des,
+        award_type = sortItems[i].type,
+        icon = ItemTempleate.Icon,
+        item_name = ItemTempleate.Name,
+        simple_desc = ItemTempleate.RpIntro,
+        color = ItemTempleate.Color
+      }
     end
   end
   if self._items and next(self._items) then
-    (self._pool):SpawnObjects("UIHauteCoutureDrawGetItemCellBLH", #self._items)
-    local pools = (self._pool):GetAllSpawnList()
+    self._pool:SpawnObjects("UIHauteCoutureDrawGetItemCellBLH", #self._items)
+    local pools = self._pool:GetAllSpawnList()
     for i = 1, #pools do
       local item = pools[i]
-      local data = (self._items)[i]
+      local data = self._items[i]
       item:SetData(data, true, function(idx, pos)
-    -- function num : 0_3_0 , upvalues : self
-    self:ItemClick(idx, pos)
-  end
-)
+        self:ItemClick(idx, pos)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemMainBLH.ItemClick = function(self, idx, pos)
-  -- function num : 0_4
+function UIHauteCoutureDrawGetItemMainBLH:ItemClick(idx, pos)
   if self._selectInfo then
-    (self._selectDetail):SetData((self._items)[idx])
-    ;
-    (self._selectInfo):OnlyShow(pos)
+    self._selectDetail:SetData(self._items[idx])
+    self._selectInfo:OnlyShow(pos)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemMainBLH.BgOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self.controller).callback then
-    ((self.controller).callback)()
+function UIHauteCoutureDrawGetItemMainBLH:BgOnClick(go)
+  if self.controller.callback then
+    self.controller.callback()
   end
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    (self._anim):Play("uieff_UIHauteCoutureDrawGetItemMainBLH_out")
+    self._anim:Play("uieff_UIHauteCoutureDrawGetItemMainBLH_out")
     YIELD(TT, 334)
-    ;
-    (self.controller):CloseDialog()
-  end
-)
+    self.controller:CloseDialog()
+  end)
 end
-
-

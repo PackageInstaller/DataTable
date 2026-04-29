@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/lineTalent/ui_cn20_n49_sweep_condition_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49SweepConditionTips", UIController)
 UICN20N49SweepConditionTips = UICN20N49SweepConditionTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49SweepConditionTips.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20N49SweepConditionTips:OnShow(uiParams)
   self._offset = self:GetUIComponent("RectTransform", "offset")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49SweepConditionTips.bgOnClick = function(self)
-  -- function num : 0_1
+function UICN20N49SweepConditionTips:bgOnClick()
   self:CloseDialog()
 end
-
-

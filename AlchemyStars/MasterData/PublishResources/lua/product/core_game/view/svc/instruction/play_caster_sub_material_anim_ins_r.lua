@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_sub_material_anim_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterSubMaterialAnimInstruction", BaseInstruction)
 PlayCasterSubMaterialAnimInstruction = PlayCasterSubMaterialAnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterSubMaterialAnimInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayCasterSubMaterialAnimInstruction:Constructor(paramList)
   self._nodeName = paramList.nodeName
   self._animName = paramList.animName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterSubMaterialAnimInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterSubMaterialAnimInstruction:DoInstruction(TT, casterEntity, phaseContext)
   casterEntity:PlaySubMaterialAnim(self._nodeName, self._animName)
 end
-
-

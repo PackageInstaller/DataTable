@@ -1,83 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/indulge/indulge_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-_enum("IndulgeRes", {Tips = 1, Logout = 2, OpenUrl = 3})
+_enum("IndulgeRes", {
+  Tips = 1,
+  Logout = 2,
+  OpenUrl = 3
+})
 _class("IndulgeModule", GameModule)
 IndulgeModule = IndulgeModule
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-IndulgeModule.Constructor = function(self)
-  -- function num : 0_0
+function IndulgeModule:Constructor()
   self._info = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-IndulgeModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((IndulgeModule.super).Init)(self)
-  ;
-  (self.caller):RegisterPushHandler(CEventNotifyIndulgeState, self.HandleMsg, self)
+function IndulgeModule:Init()
+  IndulgeModule.super.Init(self)
+  self.caller:RegisterPushHandler(CEventNotifyIndulgeState, self.HandleMsg, self)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-IndulgeModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(CEventNotifyIndulgeState)
-  ;
-  ((IndulgeModule.super).Dispose)(self)
+function IndulgeModule:Dispose()
+  self.caller:UnRegisterPushHandler(CEventNotifyIndulgeState)
+  IndulgeModule.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-IndulgeModule.Update = function(self)
-  -- function num : 0_3
+function IndulgeModule:Update()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-IndulgeModule.IsIndulge = function(self)
-  -- function num : 0_4
+function IndulgeModule:IsIndulge()
   return self._info ~= nil and true or false
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-IndulgeModule.GetAndClearInfo = function(self)
-  -- function num : 0_5
+function IndulgeModule:GetAndClearInfo()
   local info = self._info
   self._info = nil
   return info
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-IndulgeModule.HandleMsg = function(self, msg)
-  -- function num : 0_6
+function IndulgeModule:HandleMsg(msg)
   if msg == nil or msg.info == nil then
-    return 
+    return
   end
   self:SetMsgInfo(msg.info)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-IndulgeModule.SetMsgInfo = function(self, info)
-  -- function num : 0_7 , upvalues : _ENV
+function IndulgeModule:SetMsgInfo(info)
   if info == nil then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC19: Unhandled construct in 'MakeBoolean' P1
-
-  if self._info ~= nil and ((self._info).type ~= IndulgeRes.Logout or (self._info).type == IndulgeRes.Tips) then
+  if self._info ~= nil then
+    if self._info.type == IndulgeRes.Logout then
+    elseif self._info.type == IndulgeRes.Tips then
+      self._info = info
+    end
+  else
     self._info = info
   end
-  self._info = info
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.IndulgeDataEvent)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.IndulgeDataEvent)
 end
-
-

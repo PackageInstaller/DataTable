@@ -1,105 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_unscaled_count_down_ui.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetUnscaledCountDownUI", UICustomWidget)
 UIWidgetUnscaledCountDownUI = UIWidgetUnscaledCountDownUI
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetUnscaledCountDownUI.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetUnscaledCountDownUI:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetUnscaledCountDownUI.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetUnscaledCountDownUI:InitWidget()
   self._countDownObj = self:GetGameObject("CountDown")
   self._countDownTimeText = self:GetUIComponent("UILocalizationText", "CountDownTime")
   self:OnReset()
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetUnscaledCountDownUI.OnReset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetUnscaledCountDownUI:OnReset()
   self._countDownNum = 30
   local strNum = tostring(self._countDownNum) .. "s"
-  ;
-  (self._countDownTimeText):SetText(strNum)
+  self._countDownTimeText:SetText(strNum)
   self._countDownMs = self._countDownNum * 1000
   self._enableCountDown = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetUnscaledCountDownUI.RegisterEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetUnscaledCountDownUI:RegisterEvent()
   self:AttachEvent(GameEventType.UIShowUnscaledCountDown, self.UIShowUnscaledCountDown)
   self:AttachEvent(GameEventType.UIEnableUnscaledCountDown, self.UIEnableUnscaledCountDown)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetUnscaledCountDownUI.IsAutoFighting = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):IsAutoFighting()
+function UIWidgetUnscaledCountDownUI:IsAutoFighting()
+  return GameGlobal.GetUIModule(MatchModule):IsAutoFighting()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetUnscaledCountDownUI.ShowAutoFightForbiddenMsg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):ShowAutoFightForbiddenMsg()
+function UIWidgetUnscaledCountDownUI:ShowAutoFightForbiddenMsg()
+  return GameGlobal.GetUIModule(MatchModule):ShowAutoFightForbiddenMsg()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetUnscaledCountDownUI.UIShowUnscaledCountDown = function(self, show)
-  -- function num : 0_6
-  (self._countDownObj):SetActive(show)
+function UIWidgetUnscaledCountDownUI:UIShowUnscaledCountDown(show)
+  self._countDownObj:SetActive(show)
   if not show then
     self:OnReset()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetUnscaledCountDownUI.UIEnableUnscaledCountDown = function(self, bEnable)
-  -- function num : 0_7
+function UIWidgetUnscaledCountDownUI:UIEnableUnscaledCountDown(bEnable)
   self._enableCountDown = bEnable
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetUnscaledCountDownUI.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_8 , upvalues : _ENV
-  if self._enableCountDown and (self._countDownObj).activeSelf then
-    local restTimeMs = (InnerGameHelperRender.UIGetCurGlobalUnscaledCoundDownTime)()
+function UIWidgetUnscaledCountDownUI:OnUpdate(deltaTimeMS)
+  if self._enableCountDown and self._countDownObj.activeSelf then
+    local restTimeMs = InnerGameHelperRender.UIGetCurGlobalUnscaledCoundDownTime()
     self._countDownMs = restTimeMs
     self:RefreshCountDownNum()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetUnscaledCountDownUI.RefreshCountDownNum = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWidgetUnscaledCountDownUI:RefreshCountDownNum()
   local refreshNumSec = 0
-  if self._countDownMs < 0 then
+  if 0 > self._countDownMs then
     refreshNumSec = 0
   else
-    refreshNumSec = (math.ceil)(self._countDownMs / 1000)
+    refreshNumSec = math.ceil(self._countDownMs / 1000)
   end
   if self._countDownNum ~= refreshNumSec then
     self._countDownNum = refreshNumSec
     local timeNumStr = tostring(self._countDownNum) .. "s"
-    ;
-    (self._countDownTimeText):SetText(timeNumStr)
+    self._countDownTimeText:SetText(timeNumStr)
   end
 end
-
-

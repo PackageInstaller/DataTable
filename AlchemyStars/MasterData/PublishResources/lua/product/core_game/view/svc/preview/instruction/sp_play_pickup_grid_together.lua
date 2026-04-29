@@ -1,32 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_pickup_grid_together.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayPickUpGridTogetherInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayPickUpGridTogetherInstruction = SkillPreviewPlayPickUpGridTogetherInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayPickUpGridTogetherInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayPickUpGridTogetherInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayPickUpGridTogetherInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayPickUpGridTogetherInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   local pickUpPosList = previewPickUpComponent:GetAllValidPickUpGridPos()
   local scopeGridList = previewContext:GetScopeResult()
   previewActiveSkillService:DoConvert(scopeGridList, "Normal", "Dark")
-  local previewEffectCalcService = (self._world):GetService("PreviewCalcEffect")
+  local previewEffectCalcService = self._world:GetService("PreviewCalcEffect")
   local effectList = previewContext:GetEffect(SkillEffectType.PickUpGridTogether)
   local effectParam = previewEffectCalcService:CreateSkillEffectParam(SkillEffectType.PickUpGridTogether, effectList)
   local result = previewEffectCalcService:CalcPickUpGridTogether(casterEntity, previewContext, effectParam, pickUpPosList)
   previewActiveSkillService:PlayPickUpGridTogether(TT, result:GetNewGridDataList(), casterEntity, nil)
 end
-
-

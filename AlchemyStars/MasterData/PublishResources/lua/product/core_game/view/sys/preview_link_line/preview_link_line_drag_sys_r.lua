@@ -1,31 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/preview_link_line/preview_link_line_drag_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewLinkLineDragSystem_Render", UniqueReactiveSystem)
 PreviewLinkLineDragSystem_Render = PreviewLinkLineDragSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewLinkLineDragSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PreviewLinkLineDragSystem_Render:Constructor(world)
   self._world = world
-  self._CancelChainPathCallBack = (GameHelper:GetInstance()):CreateCallback(self.CancelChainPath, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.CancelChainPath, self._CancelChainPathCallBack)
+  self._CancelChainPathCallBack = GameHelper:GetInstance():CreateCallback(self.CancelChainPath, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.CancelChainPath, self._CancelChainPathCallBack)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineDragSystem_Render.TearDown = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.CancelChainPath, self._CancelChainPathCallBack)
+function PreviewLinkLineDragSystem_Render:TearDown()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.CancelChainPath, self._CancelChainPathCallBack)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineDragSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_2 , upvalues : _ENV
+function PreviewLinkLineDragSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -38,20 +24,17 @@ PreviewLinkLineDragSystem_Render.IsInterested = function(self, index, previousCo
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineDragSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_3 , upvalues : _ENV
+function PreviewLinkLineDragSystem_Render:ExecuteWorld(world)
   local gridTouchComponent = world:GridTouch()
   local touchPlayer = gridTouchComponent:IsTouchPlayer()
   if not touchPlayer then
-    return 
+    return
   end
   local previewEntity = world:GetPreviewEntity()
   local previewChainPathCmpt = previewEntity:PreviewLinkLine()
   local chainPath = previewChainPathCmpt:GetPreviewChainPath()
   if chainPath == nil then
-    return 
+    return
   end
   local gridTouchComponent = world:GridTouch()
   local posArray = gridTouchComponent:GetGridMovePositionArray()
@@ -64,105 +47,71 @@ PreviewLinkLineDragSystem_Render.ExecuteWorld = function(self, world)
       local touchOffset = offsetArray[touchIndex]
       if beginIndex == 0 then
         local touchPlayer = linkLineService:IsTouchInPlayerTouchArea(touchPosition, touchOffset)
-        if touchPlayer then
-          local prvwSvc = world:GetService("PreviewMonsterTrap")
-          prvwSvc:ClearMonsterTrapPreview()
-          gridTouchComponent:SetTouchPlayer(touchPlayer)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideCanMoveArrow)
-          local ret = linkLineService:StartLinkLine(touchPosition, touchOffset)
-          beginIndex = touchIndex
+        if not touchPlayer then
+          goto lbl_75
         end
-      else
-        do
-          -- DECOMPILER ERROR at PC73: Unhandled construct in 'MakeBoolean' P1
-
-          if ret ~= nil and ret ~= false then
-            do
-              if beginIndex < touchIndex then
-                linkLineService:CalcPathPoint(touchPosition, touchOffset)
-              end
-              -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+        local prvwSvc = world:GetService("PreviewMonsterTrap")
+        prvwSvc:ClearMonsterTrapPreview()
+        gridTouchComponent:SetTouchPlayer(touchPlayer)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HideCanMoveArrow)
+        local ret = linkLineService:StartLinkLine(touchPosition, touchOffset)
+        beginIndex = touchIndex
+        if ret ~= nil and ret == false then
+          break
         end
-      end
-    end
-  else
-    do
-      for touchIndex = 1, #posArray do
-        local touchPosition = posArray[touchIndex]
-        local touchOffset = offsetArray[touchIndex]
+      elseif touchIndex > beginIndex then
         linkLineService:CalcPathPoint(touchPosition, touchOffset)
       end
+      ::lbl_75::
+    end
+  else
+    for touchIndex = 1, #posArray do
+      local touchPosition = posArray[touchIndex]
+      local touchOffset = offsetArray[touchIndex]
+      linkLineService:CalcPathPoint(touchPosition, touchOffset)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineDragSystem_Render.Filter = function(self, world)
-  -- function num : 0_4
+function PreviewLinkLineDragSystem_Render:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineDragSystem_Render.CancelChainPath = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local inputCmpt = (self._world):Input()
+function PreviewLinkLineDragSystem_Render:CancelChainPath()
+  local inputCmpt = self._world:Input()
   if not inputCmpt:IsPreviewActiveSkill() then
-    return 
+    return
   end
   if inputCmpt:IsPreviewActiveSkillPlaying() then
-    return 
+    return
   end
-  local linkLineService = (self._world):GetService("PreviewLinkLine")
+  local linkLineService = self._world:GetService("PreviewLinkLine")
   linkLineService:CancelChainPath()
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   linkLineService:NotifyPickUpTargetChange()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   if utilDataSvc:IsPreviewNeedShowLinkageNumForCostStep() then
     previewEntity:ReplacePreviewChainPath({}, PieceType.None, PieceType.None)
-    local linkageRenderService = (self.world):GetService("LinkageRender")
+    local linkageRenderService = self.world:GetService("LinkageRender")
     linkageRenderService:ShowLinkageInfo({})
     linkageRenderService:HideBenumbTips()
     linkageRenderService:HideTrapWallBlock()
     self:_DisablePreviewChainSkillRange()
     self:_ClearFlashTarget()
   end
-  do
-    previewEntity:ReplacePreviewLinkLine({}, PieceType.None, PieceType.None)
-    linkLineService:NotifyPickUpTargetChange()
-  end
+  previewEntity:ReplacePreviewLinkLine({}, PieceType.None, PieceType.None)
+  linkLineService:NotifyPickUpTargetChange()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineDragSystem_Render._ClearFlashTarget = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local flashEnemyEntities = ((self.world):GetGroup(((self.world).BW_WEMatchers).MaterialAnimation)):GetEntities()
-  for _,v in ipairs(flashEnemyEntities) do
+function PreviewLinkLineDragSystem_Render:_ClearFlashTarget()
+  local flashEnemyEntities = self.world:GetGroup(self.world.BW_WEMatchers.MaterialAnimation):GetEntities()
+  for _, v in ipairs(flashEnemyEntities) do
     v:StopAnimFlashAlpha()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewLinkLineDragSystem_Render._DisablePreviewChainSkillRange = function(self)
-  -- function num : 0_7
-  local reBoard = (self._world):GetRenderBoardEntity()
+function PreviewLinkLineDragSystem_Render:_DisablePreviewChainSkillRange()
+  local reBoard = self._world:GetRenderBoardEntity()
   local previewChainSkillRangeCmpt = reBoard:PreviewChainSkillRange()
   previewChainSkillRangeCmpt:EnablePreviewChainSkillRange(false)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_enemy_info/ui_enemy_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEnemyTip", UIController)
 UIEnemyTip = UIEnemyTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEnemyTip.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIEnemyTip:OnShow(uiParam)
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._texRect = self:GetUIComponent("RectTransform", "txtName")
   self._contentSizeFilter = self:GetUIComponent("ContentSizeFitter", "txtName")
@@ -30,125 +23,82 @@ UIEnemyTip.OnShow = function(self, uiParam)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyTip.OnHide = function(self)
-  -- function num : 0_1
+function UIEnemyTip:OnHide()
   if self._imgCG then
-    (self._imgCG):DestoryLastImage()
+    self._imgCG:DestoryLastImage()
     self._imgCG = nil
   end
   self._backBtns = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyTip.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEnemyTip:Init()
   self._monsters = {}
-  for i,v in ipairs(self._enemis) do
+  for i, v in ipairs(self._enemis) do
     local enemy = Enemy:New()
     enemy:Init(v)
-    ;
-    (table.insert)(self._monsters, enemy)
+    table.insert(self._monsters, enemy)
   end
   if self._monsters then
-    local monsterCount = (table.count)(self._monsters)
-    ;
-    (self._content):SpawnObjects("UIEnemyTipItem", monsterCount)
-    self._enemyItems = (self._content):GetAllSpawnList()
+    local monsterCount = table.count(self._monsters)
+    self._content:SpawnObjects("UIEnemyTipItem", monsterCount)
+    self._enemyItems = self._content:GetAllSpawnList()
     for i = 1, #self._enemyItems do
-      ((self._enemyItems)[i]):Flush(i, (self._monsters)[i], function(idx)
-    -- function num : 0_2_0 , upvalues : self
-    self:Flush(idx)
-  end
-)
+      self._enemyItems[i]:Flush(i, self._monsters[i], function(idx)
+        self:Flush(idx)
+      end)
     end
     self:Flush(self._currIdx)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyTip.Flush = function(self, idx)
-  -- function num : 0_3 , upvalues : _ENV
+function UIEnemyTip:Flush(idx)
   self._currIdx = idx
-  local enemy = (self._monsters)[idx]
-  ;
-  (self._txtName):SetText(enemy.name)
-  ;
-  (self._txtProperty):SetText((enemy.prop).name)
-  ;
-  (self._txtDesc):SetText((StringTable.Get)("str_discovery_enemy_intr") .. enemy.desc)
-  ;
-  (self._powerTex):SetText((StringTable.Get)("str_discovery_enemy_power") .. enemy.power)
+  local enemy = self._monsters[idx]
+  self._txtName:SetText(enemy.name)
+  self._txtProperty:SetText(enemy.prop.name)
+  self._txtDesc:SetText(StringTable.Get("str_discovery_enemy_intr") .. enemy.desc)
+  self._powerTex:SetText(StringTable.Get("str_discovery_enemy_power") .. enemy.power)
   local staticBody = enemy.staticBody
-  local size = ((Cfg.cfg_global).ui_interface_common_monster_size).ArrayValue
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._tranCG).sizeDelta = Vector2(size[1], size[2])
-  ;
-  (UICG.SetTransform)(self._tranCG, self:GetName(), staticBody)
-  ;
-  (self._imgCG):LoadImage(staticBody)
-  ;
-  (self._isBoss):SetActive(enemy.isBoss)
-  ;
-  (self.txtElite):SetActive(enemy.isElite)
-  ;
-  (self.EliteGroup):SetActive(enemy.isElite)
+  local size = Cfg.cfg_global.ui_interface_common_monster_size.ArrayValue
+  self._tranCG.sizeDelta = Vector2(size[1], size[2])
+  UICG.SetTransform(self._tranCG, self:GetName(), staticBody)
+  self._imgCG:LoadImage(staticBody)
+  self._isBoss:SetActive(enemy.isBoss)
+  self.txtElite:SetActive(enemy.isElite)
+  self.EliteGroup:SetActive(enemy.isElite)
   if enemy.isElite then
-    (self.txtEliteDesc):SetText(enemy.eliteDesc)
+    self.txtEliteDesc:SetText(enemy.eliteDesc)
   end
   local strArea = ""
-  strArea = (StringTable.Get)("str_discovery_enemy_grid", enemy.area)
+  strArea = StringTable.Get("str_discovery_enemy_grid", enemy.area)
   local strStep = ""
   if enemy.canMove then
-    strStep = (StringTable.Get)("str_discovery_enemy_grid", enemy.step)
+    strStep = StringTable.Get("str_discovery_enemy_grid", enemy.step)
   else
-    strStep = (StringTable.Get)("str_discovery_enemy_cant_move")
+    strStep = StringTable.Get("str_discovery_enemy_cant_move")
   end
-  ;
-  (self._body):SetText(strArea)
-  ;
-  (self._move):SetText(strStep)
+  self._body:SetText(strArea)
+  self._move:SetText(strStep)
   for i = 1, #self._enemyItems do
-    ((self._enemyItems)[i]):Select(self._currIdx)
+    self._enemyItems[i]:Select(self._currIdx)
   end
-  local texWidth = nil
+  local texWidth
   if enemy.isBoss and enemy.isElite then
     texWidth = 477
+  elseif enemy.isBoss or enemy.isElite then
+    texWidth = 690
   else
-    if enemy.isBoss or enemy.isElite then
-      texWidth = 690
-    else
-      texWidth = 1024
-    end
+    texWidth = 1024
   end
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._texRect).sizeDelta = Vector2(texWidth, 100)
-  -- DECOMPILER ERROR at PC142: Confused about usage of register: R8 in 'UnsetPending'
-
-  if (self._txtName).preferredWidth < texWidth then
-    (self._contentSizeFilter).enabled = true
+  self._texRect.sizeDelta = Vector2(texWidth, 100)
+  if texWidth > self._txtName.preferredWidth then
+    self._contentSizeFilter.enabled = true
   else
-    -- DECOMPILER ERROR at PC145: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._contentSizeFilter).enabled = false
+    self._contentSizeFilter.enabled = false
   end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._nameRoot)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._nameRoot)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyTip.bgOnClick = function(self)
-  -- function num : 0_4
+function UIEnemyTip:bgOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_stage_top/ui_stage_top_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStageTopItem", UICustomWidget)
 UIStageTopItem = UIStageTopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStageTopItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIStageTopItem:OnShow()
   self.bg2 = self:GetGameObject("bg2")
   self.bg1 = self:GetGameObject("bg1")
   self.icon = self:GetUIComponent("Image", "icon")
@@ -19,100 +12,58 @@ UIStageTopItem.OnShow = function(self)
   self._atlas = self:GetAsset("UIStageItem.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTopItem.SetData = function(self, id, sprite, txt, iconClick, callback, isBetween)
-  -- function num : 0_1 , upvalues : _ENV
+function UIStageTopItem:SetData(id, sprite, txt, iconClick, callback, isBetween)
   self.id = id
   if callback then
-    (self.bg1):SetActive(true)
-    ;
-    (self.bg2):SetActive(false)
-    ;
-    (self.btn):SetActive(true)
-    local sprite = nil
+    self.bg1:SetActive(true)
+    self.bg2:SetActive(false)
+    self.btn:SetActive(true)
+    local sprite
     if isBetween then
       sprite = "spirit_touming4_frame"
     else
       sprite = "map_guanqia_ludian44"
     end
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.bg1img).sprite = (self._atlas):GetSprite(sprite)
+    self.bg1img.sprite = self._atlas:GetSprite(sprite)
   else
-    do
-      ;
-      (self.bg2):SetActive(true)
-      ;
-      (self.bg1):SetActive(false)
-      ;
-      (self.btn):SetActive(false)
-      do
-        local sprite = nil
-        if isBetween then
-          sprite = "map_guanqia_ludian39"
-        else
-          sprite = "map_guanqia_ludian37"
-        end
-        -- DECOMPILER ERROR at PC51: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self.bg2img).sprite = (self._atlas):GetSprite(sprite)
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.icon).sprite = sprite
-        ;
-        (self.txt):SetText(txt)
-        self.callback = callback
-        self.iconClick = iconClick
-        if GameSingle then
-          (self.btn):SetActive(false)
-        end
-      end
+    self.bg2:SetActive(true)
+    self.bg1:SetActive(false)
+    self.btn:SetActive(false)
+    local sprite
+    if isBetween then
+      sprite = "map_guanqia_ludian39"
+    else
+      sprite = "map_guanqia_ludian37"
     end
+    self.bg2img.sprite = self._atlas:GetSprite(sprite)
   end
+  self.icon.sprite = sprite
+  self.txt:SetText(txt)
+  self.callback = callback
+  self.iconClick = iconClick
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTopItem.SetText = function(self, txt)
-  -- function num : 0_2
-  (self.txt):SetText(txt)
+function UIStageTopItem:SetText(txt)
+  self.txt:SetText(txt)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTopItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIStageTopItem:BtnOnClick(go)
   if self.callback then
-    (self.callback)(self.id, go)
+    self.callback(self.id, go)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTopItem.IconOnClick = function(self, go)
-  -- function num : 0_4
+function UIStageTopItem:IconOnClick(go)
   if self.iconClick then
-    (self.iconClick)(self.id, go)
+    self.iconClick(self.id, go)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTopItem.SetBgCallBack = function(self, bgCallback)
-  -- function num : 0_5
+function UIStageTopItem:SetBgCallBack(bgCallback)
   self.bgCallback = bgCallback
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTopItem.BgOnClick = function(self, go)
-  -- function num : 0_6
+function UIStageTopItem:BgOnClick(go)
   if self.bgCallback then
   end
 end
-
-

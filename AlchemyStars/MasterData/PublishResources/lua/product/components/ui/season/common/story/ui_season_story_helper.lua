@@ -1,26 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/story/ui_season_story_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonStoryHelper", Object)
 SeasonStoryHelper = SeasonStoryHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonStoryHelper.GetContentInfo = function(str, splitChar)
-  -- function num : 0_0 , upvalues : _ENV
-  if not splitChar then
-    splitChar = "|"
-  end
-  local plainStr = (string.gsub)(str, "<size=%d*>", "")
-  plainStr = (string.gsub)(plainStr, "</size>", "")
-  plainStr = (string.gsub)(plainStr, "<color=#%x*>", "")
-  plainStr = (string.gsub)(plainStr, "</color>", "")
-  plainStr = (string.gsub)(plainStr, "<sprite.*/>", "a")
-  local finalStr = (string.gsub)(str, splitChar, "")
+function SeasonStoryHelper.GetContentInfo(str, splitChar)
+  splitChar = splitChar or "|"
+  local plainStr = string.gsub(str, "<size=%d*>", "")
+  plainStr = string.gsub(plainStr, "</size>", "")
+  plainStr = string.gsub(plainStr, "<color=#%x*>", "")
+  plainStr = string.gsub(plainStr, "</color>", "")
+  plainStr = string.gsub(plainStr, "<sprite.*/>", "a")
+  local finalStr = string.gsub(str, splitChar, "")
   local breakIndexList = {}
   local charCount = 0
-  for uchar in (string.gmatch)(plainStr, "[%z\001-\127\194-\244][\128-\191]*") do
+  for uchar in string.gmatch(plainStr, "[%z\001-\127Â-ô][€-¿]*") do
     if uchar == splitChar then
       breakIndexList[#breakIndexList + 1] = charCount
     else
@@ -28,104 +19,76 @@ SeasonStoryHelper.GetContentInfo = function(str, splitChar)
     end
   end
   breakIndexList[#breakIndexList + 1] = charCount
-  local hideTextAnim = (SeasonStoryHelper.CheckHideTextAnim)(str)
+  local hideTextAnim = SeasonStoryHelper.CheckHideTextAnim(str)
   return finalStr, breakIndexList, charCount, hideTextAnim
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonStoryHelper.CheckHideTextAnim = function(str)
-  -- function num : 0_1 , upvalues : _ENV
-  local hide = (HelperProxy:GetInstance()):CheckTextIncludeImg(str)
+function SeasonStoryHelper.CheckHideTextAnim(str)
+  local hide = HelperProxy:GetInstance():CheckTextIncludeImg(str)
   return hide
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonStoryHelper.SubStringUTF8 = function(str, startIndex, endIndex)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonStoryHelper.SubStringUTF8(str, startIndex, endIndex)
   if startIndex < 0 then
-    startIndex = (SeasonStoryHelper.SubStringGetTotalIndex)(str) + startIndex + 1
+    startIndex = SeasonStoryHelper.SubStringGetTotalIndex(str) + startIndex + 1
   end
   if endIndex ~= nil and endIndex < 0 then
-    endIndex = (SeasonStoryHelper.SubStringGetTotalIndex)(str) + endIndex + 1
+    endIndex = SeasonStoryHelper.SubStringGetTotalIndex(str) + endIndex + 1
   end
   if endIndex == nil then
-    return (string.sub)(str, (SeasonStoryHelper.SubStringGetTrueIndex)(str, startIndex))
+    return string.sub(str, SeasonStoryHelper.SubStringGetTrueIndex(str, startIndex))
   else
-    return (string.sub)(str, (SeasonStoryHelper.SubStringGetTrueIndex)(str, startIndex), (SeasonStoryHelper.SubStringGetTrueIndex)(str, endIndex + 1) - 1)
+    return string.sub(str, SeasonStoryHelper.SubStringGetTrueIndex(str, startIndex), SeasonStoryHelper.SubStringGetTrueIndex(str, endIndex + 1) - 1)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonStoryHelper.SubStringGetTotalIndex = function(str)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonStoryHelper.SubStringGetTotalIndex(str)
   local curIndex = 0
   local i = 1
   local lastCount = 1
   repeat
-    lastCount = (SeasonStoryHelper.SubStringGetByteCount)(str, i)
+    lastCount = SeasonStoryHelper.SubStringGetByteCount(str, i)
     i = i + lastCount
     curIndex = curIndex + 1
   until lastCount == 0
   return curIndex - 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonStoryHelper.SubStringGetTrueIndex = function(str, index)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonStoryHelper.SubStringGetTrueIndex(str, index)
   local curIndex = 0
   local i = 1
   local lastCount = 1
   repeat
-    lastCount = (SeasonStoryHelper.SubStringGetByteCount)(str, i)
+    lastCount = SeasonStoryHelper.SubStringGetByteCount(str, i)
     i = i + lastCount
     curIndex = curIndex + 1
   until index <= curIndex
   return i - lastCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonStoryHelper.SubStringGetByteCount = function(str, index)
-  -- function num : 0_5 , upvalues : _ENV
-  local curByte = (string.byte)(str, index)
+function SeasonStoryHelper.SubStringGetByteCount(str, index)
+  local curByte = string.byte(str, index)
   local byteCount = 1
   if curByte == nil then
     byteCount = 0
-  else
-    if curByte > 0 and curByte <= 127 then
-      byteCount = 1
-    else
-      if curByte >= 192 and curByte <= 223 then
-        byteCount = 2
-      else
-        if curByte >= 224 and curByte <= 239 then
-          byteCount = 3
-        else
-          if curByte >= 240 and curByte <= 247 then
-            byteCount = 4
-          end
-        end
-      end
-    end
+  elseif 0 < curByte and curByte <= 127 then
+    byteCount = 1
+  elseif 192 <= curByte and curByte <= 223 then
+    byteCount = 2
+  elseif 224 <= curByte and curByte <= 239 then
+    byteCount = 3
+  elseif 240 <= curByte and curByte <= 247 then
+    byteCount = 4
   end
   return byteCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonStoryHelper.DoEscape = function(strContent)
-  -- function num : 0_6 , upvalues : _ENV
-  strContent = (string.gsub)(strContent, "$$", "$")
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function SeasonStoryHelper.DoEscape(strContent)
+  strContent = string.gsub(strContent, "$$", "$")
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  strContent = (string.gsub)(strContent, "PlayerName", name)
+  strContent = string.gsub(strContent, "PlayerName", name)
   return strContent
 end
-
-

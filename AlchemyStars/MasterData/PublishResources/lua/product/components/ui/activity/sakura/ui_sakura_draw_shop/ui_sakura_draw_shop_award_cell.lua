@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_draw_shop/ui_sakura_draw_shop_award_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISakuraDrawShopAwardCell", UICustomWidget)
 UISakuraDrawShopAwardCell = UISakuraDrawShopAwardCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISakuraDrawShopAwardCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISakuraDrawShopAwardCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardCell.InitWidget = function(self)
-  -- function num : 0_1
+function UISakuraDrawShopAwardCell:InitWidget()
   self.itemIcon = self:GetUIComponent("RawImageLoader", "ItemIcon")
   self.itemNumText = self:GetUIComponent("UILocalizationText", "ItemNumText")
   self.itemNumArea = self:GetGameObject("ItemNumArea")
@@ -26,66 +16,44 @@ UISakuraDrawShopAwardCell.InitWidget = function(self)
   self.restNumText = self:GetUIComponent("UILocalizationText", "RestNumText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardCell.SetData = function(self)
-  -- function num : 0_2
+function UISakuraDrawShopAwardCell:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardCell.InitData = function(self, data, itemInfoCallback)
-  -- function num : 0_3
+function UISakuraDrawShopAwardCell:InitData(data, itemInfoCallback)
   self._data = data
-  self._itemId = (self._data):GetItemId()
-  self._itemCount = (self._data):GetTotalNum()
-  self._itemRestCount = (self._data):GetRestNum()
+  self._itemId = self._data:GetItemId()
+  self._itemCount = self._data:GetTotalNum()
+  self._itemRestCount = self._data:GetRestNum()
   self._itemInfoCallback = itemInfoCallback
   self:_fillUi()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardCell._fillUi = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[self._itemId]
+function UISakuraDrawShopAwardCell:_fillUi()
+  local itemCfg = Cfg.cfg_item[self._itemId]
   if itemCfg then
-    (self.itemIcon):DestoryLastImage()
+    self.itemIcon:DestoryLastImage()
     local res = itemCfg.Icon
-    ;
-    (self.itemIcon):LoadImage(res)
-    local itemCount = (self._data):GetItemCount()
-    if itemCount > 1 then
-      (self.itemNumArea):SetActive(true)
-      ;
-      (self.itemNumText):SetText(itemCount)
+    self.itemIcon:LoadImage(res)
+    local itemCount = self._data:GetItemCount()
+    if 1 < itemCount then
+      self.itemNumArea:SetActive(true)
+      self.itemNumText:SetText(itemCount)
     else
-      ;
-      (self.itemNumArea):SetActive(false)
+      self.itemNumArea:SetActive(false)
     end
-    ;
-    (self.bigAwardFlag):SetActive((self._data):IsBigReward())
-    ;
-    (self.normalBg):SetActive(not (self._data):IsBigReward())
-    ;
-    (self.specialBg):SetActive((self._data):IsBigReward())
-    local showEff = not (self._data):IsBigReward() or self._itemRestCount > 0
+    self.bigAwardFlag:SetActive(self._data:IsBigReward())
+    self.normalBg:SetActive(not self._data:IsBigReward())
+    self.specialBg:SetActive(self._data:IsBigReward())
+    local showEff = self._data:IsBigReward() and self._itemRestCount > 0
     if self.fxGo then
-      (self.fxGo):SetActive(showEff)
+      self.fxGo:SetActive(showEff)
     end
-    ;
-    (self.restNumText):SetText("<color=#F6A201>" .. self._itemRestCount .. "</color>" .. "/" .. self._itemCount)
+    self.restNumText:SetText("<color=#F6A201>" .. self._itemRestCount .. "</color>" .. "/" .. self._itemCount)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISakuraDrawShopAwardCell.ItemIconOnClick = function(self, go)
-  -- function num : 0_5
+function UISakuraDrawShopAwardCell:ItemIconOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)(self._data)
+    self._itemInfoCallback(self._data)
   end
 end
-
-

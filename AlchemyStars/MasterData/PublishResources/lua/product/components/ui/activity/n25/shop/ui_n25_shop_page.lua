@@ -1,55 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/shop/ui_n25_shop_page.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25ShopPage", UICustomWidget)
 UIN25ShopPage = UIN25ShopPage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25ShopPage.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25ShopPage:Constructor()
   self._atlas = self:GetAsset("UIN25.spriteatlas", LoadType.SpriteAtlas)
   self:InitCfg()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25ShopPage.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25ShopPage:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25ShopPage.InitWidget = function(self)
-  -- function num : 0_2
+function UIN25ShopPage:InitWidget()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25ShopPage.SetData = function(self, pageIndex, itemsData)
-  -- function num : 0_3
+function UIN25ShopPage:SetData(pageIndex, itemsData)
   self.pageIndex = pageIndex
   self.itemsData = itemsData
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25ShopPage.Refresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (UIN25ShopPage.PageCfg)[self.pageIndex]
+function UIN25ShopPage:Refresh()
+  local cfg = UIN25ShopPage.PageCfg[self.pageIndex]
   self.startIndex = cfg.startIndex
   self.count = cfg.count
   self._itmes = {}
   for i = 1, self.count do
     local itemIndex = self.startIndex + i - 1
-    local itemCfg = (UIN25ShopPage.ItemCfg)[itemIndex]
+    local itemCfg = UIN25ShopPage.ItemCfg[itemIndex]
     local style = itemCfg.style
-    if self._itmes then
-      local item = (self._itmes)[i]
-    end
+    local item = self._itmes and self._itmes[i]
     if not item then
       local pos = "pos" .. i
       local itemPool = self:GetUIComponent("UISelectObjectPath", pos)
@@ -57,135 +36,204 @@ UIN25ShopPage.Refresh = function(self)
       local scale = itemCfg.scale
       local rot = itemCfg.rot
       itemRt.localScale = Vector3(scale, scale, 1)
-      itemRt.localRotation = (Quaternion.Euler)(0, 0, rot)
+      itemRt.localRotation = Quaternion.Euler(0, 0, rot)
       if style == 1 then
         item = itemPool:SpawnObject("UIN25CampaignShopItemBig")
-        -- DECOMPILER ERROR at PC61: Confused about usage of register: R15 in 'UnsetPending'
-
-        ;
-        (self._itmes)[i] = item
+        self._itmes[i] = item
       else
         item = itemPool:SpawnObject("UIN25CampaignShopItemSmall")
-        -- DECOMPILER ERROR at PC68: Confused about usage of register: R15 in 'UnsetPending'
-
-        ;
-        (self._itmes)[i] = item
+        self._itmes[i] = item
       end
       local bgImg = item:GetInfoBg()
       if itemCfg.infoBg and bgImg then
-        bgImg.sprite = (self._atlas):GetSprite(itemCfg.infoBg)
+        bgImg.sprite = self._atlas:GetSprite(itemCfg.infoBg)
       end
     end
-    do
-      do
-        local subData = ((self.itemsData)[1])[itemIndex]
-        if subData then
-          if not subData.goodsId then
-            subData = subData[1]
-          end
-          item:InitData(subData)
-        else
-          ;
-          (Log.fatal)("UIN25ShopPage:Refresh can\'t find itemIndex " .. itemIndex .. "  curpage = " .. self.pageIndex .. " pos = " .. i)
-        end
-        -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out DO_STMT
-
+    local subData = self.itemsData[1][itemIndex]
+    if subData then
+      if not subData.goodsId then
+        subData = subData[1]
       end
+      item:InitData(subData)
+    else
+      Log.fatal("UIN25ShopPage:Refresh can't find itemIndex " .. itemIndex .. "  curpage = " .. self.pageIndex .. " pos = " .. i)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25ShopPage.Show = function(self, bShow)
-  -- function num : 0_5
+function UIN25ShopPage:Show(bShow)
   if not self.gameObject then
     self.gameObject = self:GetGameObject()
   end
-  ;
-  (self.gameObject):SetActive(bShow)
+  self.gameObject:SetActive(bShow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25ShopPage.InitCfg = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN25ShopPage:InitCfg()
   if not UIN25ShopPage.PageCfg then
     UIN25ShopPage.PageCfg = {
-[1] = {startIndex = 1, count = 7}
-, 
-[2] = {startIndex = 8, count = 10}
-, 
-[3] = {startIndex = 18, count = 8}
-}
-    -- DECOMPILER ERROR at PC168: Confused about usage of register: R1 in 'UnsetPending'
-
+      [1] = {startIndex = 1, count = 7},
+      [2] = {startIndex = 8, count = 10},
+      [3] = {startIndex = 18, count = 8}
+    }
     UIN25ShopPage.ItemCfg = {
-[1] = {scale = 1, rot = 0, style = 1}
-, 
-[2] = {scale = 0.98, rot = 1, style = 1}
-, 
-[3] = {scale = 0.95, rot = 2, style = 1}
-, 
-[4] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di7"}
-, 
-[5] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di7"}
-, 
-[6] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di7"}
-, 
-[7] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di7"}
-, 
-[8] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[9] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[10] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[11] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[12] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[13] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[14] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[15] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[16] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[17] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[18] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[19] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[20] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[21] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[22] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[23] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di6"}
-, 
-[24] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di5"}
-, 
-[25] = {scale = 1, rot = 0, style = 2, infoBg = "N25_shop_di5"}
-}
+      [1] = {
+        scale = 1,
+        rot = 0,
+        style = 1
+      },
+      [2] = {
+        scale = 0.98,
+        rot = 1,
+        style = 1
+      },
+      [3] = {
+        scale = 0.95,
+        rot = 2,
+        style = 1
+      },
+      [4] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di7"
+      },
+      [5] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di7"
+      },
+      [6] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di7"
+      },
+      [7] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di7"
+      },
+      [8] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [9] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [10] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [11] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [12] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [13] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [14] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [15] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [16] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [17] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [18] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [19] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [20] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [21] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [22] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [23] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di6"
+      },
+      [24] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di5"
+      },
+      [25] = {
+        scale = 1,
+        rot = 0,
+        style = 2,
+        infoBg = "N25_shop_di5"
+      }
+    }
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25ShopPage.PlaySellOutAni = function(self, goodsId)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25ShopPage:PlaySellOutAni(goodsId)
   if not self._itmes then
-    return 
+    return
   end
-  for k,subItem in pairs(self._itmes) do
-    if subItem._data and (subItem._data):GetGoodsId() == goodsId then
-      local remainCount = (subItem._data):GetRemainCount()
+  for k, subItem in pairs(self._itmes) do
+    if subItem._data and subItem._data:GetGoodsId() == goodsId then
+      local remainCount = subItem._data:GetRemainCount()
       if remainCount < 1 then
         subItem:PlaySellOutAni()
       end
@@ -193,5 +241,3 @@ UIN25ShopPage.PlaySellOutAni = function(self, goodsId)
     end
   end
 end
-
-

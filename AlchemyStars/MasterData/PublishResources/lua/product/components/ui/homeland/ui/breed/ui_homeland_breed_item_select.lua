@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_item_select.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedItemSelect", UIController)
 UIHomelandBreedItemSelect = UIHomelandBreedItemSelect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedItemSelect.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandBreedItemSelect:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._timeRefreshInterval = 0
   self._itemWidget = nil
   self._cfgSpeedItem = nil
@@ -20,10 +13,7 @@ UIHomelandBreedItemSelect.Constructor = function(self)
   self._count = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedItemSelect:OnShow(uiParams)
   self._buildingPstId = uiParams[1]
   self._breedInfo = uiParams[2]
   self._callback = uiParams[3]
@@ -31,10 +21,7 @@ UIHomelandBreedItemSelect.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedItemSelect:_GetComponents()
   self._remainTime = self:GetUIComponent("UILocalizationText", "RemainTime")
   self._resultTime = self:GetUIComponent("UILocalizationText", "ResultTime")
   self._itemName = self:GetUIComponent("UILocalizationText", "ItemName")
@@ -46,40 +33,23 @@ UIHomelandBreedItemSelect._GetComponents = function(self)
   self._countRect = self:GetUIComponent("RectTransform", "Count")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandBreedItemSelect:_OnValue()
   self._cfgSpeedItem = self:_FilterSpeedItem()
   if self._cfgSpeedItem then
-    self._cfg = (Cfg.cfg_item)[(self._cfgSpeedItem).ID]
-    self._packageCount = (self._itemModule):GetItemCount((self._cfg).ID)
-    ;
-    (self._itemName):SetText((StringTable.Get)((self._cfg).Name))
-    ;
-    (self._itemIcon):LoadImage((self._cfg).Icon)
+    self._cfg = Cfg.cfg_item[self._cfgSpeedItem.ID]
+    self._packageCount = self._itemModule:GetItemCount(self._cfg.ID)
+    self._itemName:SetText(StringTable.Get(self._cfg.Name))
+    self._itemIcon:LoadImage(self._cfg.Icon)
   end
-  ;
-  (self._totalCount):SetText(self._packageCount)
-  ;
-  (self._remainCount):SetText(self._packageCount)
-  ;
-  (self._countValue):SetText(self._count)
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._fillRect).localScale = Vector3(self._count / self._packageCount, 1, 1)
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._countRect).localPosition = Vector3((self._count / self._packageCount - 0.5) * 945, ((self._countRect).localPosition).y, 0)
+  self._totalCount:SetText(self._packageCount)
+  self._remainCount:SetText(self._packageCount)
+  self._countValue:SetText(self._count)
+  self._fillRect.localScale = Vector3(self._count / self._packageCount, 1, 1)
+  self._countRect.localPosition = Vector3((self._count / self._packageCount - 0.5) * 945, self._countRect.localPosition.y, 0)
   self:_RefreshTime()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect.Update = function(self, deltaTime)
-  -- function num : 0_4
+function UIHomelandBreedItemSelect:Update(deltaTime)
   self._timeRefreshInterval = self._timeRefreshInterval + deltaTime
   if self._timeRefreshInterval >= 1000 then
     self._timeRefreshInterval = 0
@@ -87,68 +57,39 @@ UIHomelandBreedItemSelect.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect._RefreshTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBreedItemSelect:_RefreshTime()
   if self._breedInfo and self._cfgSpeedItem then
-    local remainTime = (self._homelandModule):GetLandEndTime(self._breedInfo) - (self._svrTimeModule):GetServerTime() * 0.001
-    if remainTime >= 0 then
-      (self._remainTime):SetText((HomelandBreedTool.GetTimeStr)(remainTime))
-      local itemTime = (self._cfgSpeedItem).Time * self._count
-      local surplusTime = (math.floor)(itemTime - remainTime)
-      do
-        do
-          if surplusTime > 0 then
-            local surplusCount = (math.floor)(surplusTime / (self._cfgSpeedItem).Time)
-            self._count = (math.max)(0, self._count - surplusCount)
-            itemTime = (self._cfgSpeedItem).Time * self._count
-            ;
-            (self._countValue):SetText(self._count)
-            -- DECOMPILER ERROR at PC63: Confused about usage of register: R5 in 'UnsetPending'
-
-            ;
-            (self._fillRect).localScale = Vector3(self._count / self._packageCount, 1, 1)
-            -- DECOMPILER ERROR at PC76: Confused about usage of register: R5 in 'UnsetPending'
-
-            ;
-            (self._countRect).localPosition = Vector3((self._count / self._packageCount - 0.5) * 945, ((self._countRect).localPosition).y, 0)
-            ;
-            (self._remainCount):SetText(self._packageCount - self._count)
-          end
-          ;
-          (self._resultTime):SetText((HomelandBreedTool.GetTimeStr)(remainTime - itemTime))
-          self._count = 0
-          ;
-          (self._countValue):SetText(self._count)
-          -- DECOMPILER ERROR at PC104: Confused about usage of register: R2 in 'UnsetPending'
-
-          ;
-          (self._fillRect).localScale = Vector3(self._count / self._packageCount, 1, 1)
-          -- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-          ;
-          (self._countRect).localPosition = Vector3((self._count / self._packageCount - 0.5) * 945, ((self._countRect).localPosition).y, 0)
-          ;
-          (self._remainCount):SetText(self._packageCount - self._count)
-        end
+    local remainTime = self._homelandModule:GetLandEndTime(self._breedInfo) - self._svrTimeModule:GetServerTime() * 0.001
+    if 0 <= remainTime then
+      self._remainTime:SetText(HomelandBreedTool.GetTimeStr(remainTime))
+      local itemTime = self._cfgSpeedItem.Time * self._count
+      local surplusTime = math.floor(itemTime - remainTime)
+      if 0 < surplusTime then
+        local surplusCount = math.floor(surplusTime / self._cfgSpeedItem.Time)
+        self._count = math.max(0, self._count - surplusCount)
+        itemTime = self._cfgSpeedItem.Time * self._count
+        self._countValue:SetText(self._count)
+        self._fillRect.localScale = Vector3(self._count / self._packageCount, 1, 1)
+        self._countRect.localPosition = Vector3((self._count / self._packageCount - 0.5) * 945, self._countRect.localPosition.y, 0)
+        self._remainCount:SetText(self._packageCount - self._count)
       end
+      self._resultTime:SetText(HomelandBreedTool.GetTimeStr(remainTime - itemTime))
+    else
+      self._count = 0
+      self._countValue:SetText(self._count)
+      self._fillRect.localScale = Vector3(self._count / self._packageCount, 1, 1)
+      self._countRect.localPosition = Vector3((self._count / self._packageCount - 0.5) * 945, self._countRect.localPosition.y, 0)
+      self._remainCount:SetText(self._packageCount - self._count)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect._ItemOnClick = function(self)
-  -- function num : 0_6
+function UIHomelandBreedItemSelect:_ItemOnClick()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect._FilterSpeedItem = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_cultivation)({})
-  for _,value in pairs(cfg) do
+function UIHomelandBreedItemSelect:_FilterSpeedItem()
+  local cfg = Cfg.cfg_item_cultivation({})
+  for _, value in pairs(cfg) do
     if value.ItemAttrType == CultivationItemType.E_ACCELERATION then
       return value
     end
@@ -156,89 +97,58 @@ UIHomelandBreedItemSelect._FilterSpeedItem = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect.ClearBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIHomelandBreedItemSelect:ClearBtnOnClick(go)
   self:_SetCount(0)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect.ReduceBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIHomelandBreedItemSelect:ReduceBtnOnClick(go)
   self:_SetCount(self._count - 1)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect.AddBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIHomelandBreedItemSelect:AddBtnOnClick(go)
   self:_SetCount(self._count + 1)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect.MaxBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandBreedItemSelect:MaxBtnOnClick(go)
   if not self._breedInfo or not self._cfgSpeedItem then
-    return 
+    return
   end
-  local remainTime = (self._homelandModule):GetLandEndTime(self._breedInfo) - (self._svrTimeModule):GetServerTime() * 0.001
-  local count = (math.ceil)(remainTime / (self._cfgSpeedItem).Time)
-  if self._packageCount < count then
+  local remainTime = self._homelandModule:GetLandEndTime(self._breedInfo) - self._svrTimeModule:GetServerTime() * 0.001
+  local count = math.ceil(remainTime / self._cfgSpeedItem.Time)
+  if count > self._packageCount then
     count = self._packageCount
   end
   self:_SetCount(count)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect._SetCount = function(self, count)
-  -- function num : 0_12 , upvalues : _ENV
-  if count < 0 or self._packageCount < count then
-    return 
+function UIHomelandBreedItemSelect:_SetCount(count)
+  if count < 0 or count > self._packageCount then
+    return
   end
   self._count = count
-  ;
-  (self._countValue):SetText(self._count)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._fillRect).localScale = Vector3(self._count / self._packageCount, 1, 1)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._countRect).localPosition = Vector3((self._count / self._packageCount - 0.5) * 945, ((self._countRect).localPosition).y, 0)
-  ;
-  (self._remainCount):SetText(self._packageCount - self._count)
+  self._countValue:SetText(self._count)
+  self._fillRect.localScale = Vector3(self._count / self._packageCount, 1, 1)
+  self._countRect.localPosition = Vector3((self._count / self._packageCount - 0.5) * 945, self._countRect.localPosition.y, 0)
+  self._remainCount:SetText(self._packageCount - self._count)
   self._timeRefreshInterval = 0
   self:_RefreshTime()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect.CancleBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UIHomelandBreedItemSelect:CancleBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect.OnSureBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHomelandBreedItemSelect:OnSureBtnOnClick(go)
   if self._count <= 0 then
-    return 
+    return
   end
-  local remainTime = (self._homelandModule):GetLandEndTime(self._breedInfo) - (self._svrTimeModule):GetServerTime() * 0.001
-  local resultTime = self._count * (self._cfgSpeedItem).Time
+  local remainTime = self._homelandModule:GetLandEndTime(self._breedInfo) - self._svrTimeModule:GetServerTime() * 0.001
+  local resultTime = self._count * self._cfgSpeedItem.Time
   if remainTime < resultTime then
-    if remainTime > 0 then
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, nil, (StringTable.Get)("str_homeland_breed_selectitem_desc"), function()
-    -- function num : 0_14_0 , upvalues : self
-    self:_UseSpeedItem()
-  end
-, nil)
+    if 0 < remainTime then
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, nil, StringTable.Get("str_homeland_breed_selectitem_desc"), function()
+        self:_UseSpeedItem()
+      end, nil)
     else
       self:CloseDialog()
     end
@@ -247,31 +157,22 @@ UIHomelandBreedItemSelect.OnSureBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedItemSelect._UseSpeedItem = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIHomelandBreedItemSelect:_UseSpeedItem()
   self:Lock("UIHomelandBreedSelectItem")
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : _ENV, self
     local roleAsset = RoleAsset:New()
-    roleAsset.assetid = (self._cfg).ID
+    roleAsset.assetid = self._cfg.ID
     roleAsset.count = self._count
-    local res = (self._homelandModule):HandleAccelerateCultivation(TT, self._buildingPstId, roleAsset)
+    local res = self._homelandModule:HandleAccelerateCultivation(TT, self._buildingPstId, roleAsset)
     if res:GetSucc() then
       self:CloseDialog()
       if self._callback then
-        (self._callback)()
+        self._callback()
       end
     else
-      ;
-      (Log.fatal)("Breed accelerate failed:", res:GetResult())
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_error_" .. res:GetResult()))
+      Log.fatal("Breed accelerate failed:", res:GetResult())
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_error_" .. res:GetResult()))
     end
     self:UnLock("UIHomelandBreedSelectItem")
-  end
-, self)
+  end, self)
 end
-
-

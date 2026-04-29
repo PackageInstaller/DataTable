@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/common/ui_activity_returnsystem_progress_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemProgressListItem", UICustomWidget)
 UIActivityReturnSystemProgressListItem = UIActivityReturnSystemProgressListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemProgressListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityReturnSystemProgressListItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgressListItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemProgressListItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgressListItem.SetData = function(self, campaign, component, progress, callback, tipsCallback)
-  -- function num : 0_2
+function UIActivityReturnSystemProgressListItem:SetData(campaign, component, progress, callback, tipsCallback)
   self._campaign = campaign
   self._component = component
   self._progress = progress
@@ -29,76 +16,63 @@ UIActivityReturnSystemProgressListItem.SetData = function(self, campaign, compon
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgressListItem._Refresh = function(self)
-  -- function num : 0_3
-  self._state = (self._component):CheckItemStatus(self._progress)
+function UIActivityReturnSystemProgressListItem:_Refresh()
+  self._state = self._component:CheckItemStatus(self._progress)
   self:_SetState(self._state)
   self:_SetArrow(self._state)
   self:_SetItem()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgressListItem._SetState = function(self, state)
-  -- function num : 0_4 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"state_Accepted"}
-, 
-{"state_Completed", "state_Completed_bg"}
-, 
-{"state_Taken"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIActivityReturnSystemProgressListItem:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "state_Accepted"
+    },
+    {
+      "state_Completed",
+      "state_Completed_bg"
+    },
+    {
+      "state_Taken"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgressListItem._SetArrow = function(self, state)
-  -- function num : 0_5 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_arrowPool", "UIActivityReturnSystemProgressArrow")
+function UIActivityReturnSystemProgressListItem:_SetArrow(state)
+  local obj = UIWidgetHelper.SpawnObject(self, "_arrowPool", "UIActivityReturnSystemProgressArrow")
   obj:SetData(self._progress, state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgressListItem._SetItem = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local rewards = (self._component):GetProgressRewards(self._progress)
-  if rewards then
-    self._roleAsset = rewards[1]
-    local cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
-    if cfg_item == nil then
-      (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._roleAsset).assetid)
-      return 
-    end
-    local obj = (UIWidgetHelper.SpawnObject)(self, "_itemPool", "UIItem")
-    obj:SetForm(UIItemForm.Base, self._scale)
-    local icon = cfg_item.Icon
-    local quality = cfg_item.Color
-    local text1 = (self._roleAsset).count
-    obj:SetData({icon = icon, quality = quality, text1 = text1, itemId = (self._roleAsset).assetid})
+function UIActivityReturnSystemProgressListItem:_SetItem()
+  local rewards = self._component:GetProgressRewards(self._progress)
+  self._roleAsset = rewards and rewards[1]
+  local cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
+  if cfg_item == nil then
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._roleAsset.assetid)
+    return
   end
+  local obj = UIWidgetHelper.SpawnObject(self, "_itemPool", "UIItem")
+  obj:SetForm(UIItemForm.Base, self._scale)
+  local icon = cfg_item.Icon
+  local quality = cfg_item.Color
+  local text1 = self._roleAsset.count
+  obj:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = self._roleAsset.assetid
+  })
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgressListItem.AcceptedOnClick = function(self, go)
-  -- function num : 0_7
+function UIActivityReturnSystemProgressListItem:AcceptedOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemProgressListItem.CompletedOnClick = function(self, go)
-  -- function num : 0_8
+function UIActivityReturnSystemProgressListItem:CompletedOnClick(go)
   if self._callback then
-    (self._callback)(self._progress)
+    self._callback(self._progress)
   end
 end
-
-

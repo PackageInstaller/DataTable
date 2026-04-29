@@ -1,130 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_bank_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMaze_Campsites_BankWidget", UICustomWidget)
 UISeasonMaze_Campsites_BankWidget = UISeasonMaze_Campsites_BankWidget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_BankWidget.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMaze_Campsites_BankWidget:InitWidget()
   self._OpenAreaGo = self:GetGameObject("OpenArea")
   self._LockAreaGo = self:GetGameObject("LockArea")
   self._SaveCountGo = self:GetGameObject("SaveCount")
   self._SaveCountText = self:GetUIComponent("UILocalizationText", "SaveCount")
   self._DescText = self:GetUIComponent("UILocalizationText", "DescText")
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
   self._rootGo = self:GetGameObject("root")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BankWidget.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMaze_Campsites_BankWidget:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BankWidget.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMaze_Campsites_BankWidget:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
   if self._timerUnlock then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerUnlock)
+    GameGlobal.Timer():CancelEvent(self._timerUnlock)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BankWidget.SetData = function(self, idx, save, currentSave)
-  -- function num : 0_3
+function UISeasonMaze_Campsites_BankWidget:SetData(idx, save, currentSave)
   self._idx = idx
   self._save = save
   self._currentSave = currentSave
   self:SetQuestInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BankWidget.SetQuestInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local target = (self._save).NeedNum
+function UISeasonMaze_Campsites_BankWidget:SetQuestInfo()
+  local target = self._save.NeedNum
   local formatStr = "%s<color=#8f1010>/%s</color>"
-  local saveStr = (string.format)(formatStr, tostring(self._currentSave), tostring(target))
-  ;
-  (self._SaveCountText):SetText(saveStr)
-  local desc = (self._save).Desc
+  local saveStr = string.format(formatStr, tostring(self._currentSave), tostring(target))
+  self._SaveCountText:SetText(saveStr)
+  local desc = self._save.Desc
   if desc then
-    (self._DescText):SetText((StringTable.Get)(desc))
+    self._DescText:SetText(StringTable.Get(desc))
   end
   if target <= 0 then
     target = 1
-    ;
-    (Log.error)("###[UISeasonMaze_Campsites_BankWidget] target == 0 ! self._idx:", self._idx)
+    Log.error("###[UISeasonMaze_Campsites_BankWidget] target == 0 ! self._idx:", self._idx)
   end
-  local isLock = self._currentSave < target
-  ;
-  (self._OpenAreaGo):SetActive(not isLock)
-  ;
-  (self._LockAreaGo):SetActive(isLock)
-  ;
-  (self._SaveCountGo):SetActive(isLock)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local isLock = target > self._currentSave
+  self._OpenAreaGo:SetActive(not isLock)
+  self._LockAreaGo:SetActive(isLock)
+  self._SaveCountGo:SetActive(isLock)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BankWidget.PlayShowInAnim = function(self, delay)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMaze_Campsites_BankWidget:PlayShowInAnim(delay)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
-    ;
-    (self._rootGo):SetActive(true)
+    GameGlobal.Timer():CancelEvent(self._timer)
+    self._rootGo:SetActive(true)
   end
-  if delay and delay > 0 then
-    (self._rootGo):SetActive(false)
-    self._timer = ((GameGlobal.Timer)()):AddEvent(delay, function()
-    -- function num : 0_5_0 , upvalues : self
-    (self._rootGo):SetActive(true)
-    if self._anim then
-      (self._anim):Play("uieffanim_UISeasonMaze_Campsites_BankWidget_in")
-    end
-  end
-)
+  if delay and 0 < delay then
+    self._rootGo:SetActive(false)
+    self._timer = GameGlobal.Timer():AddEvent(delay, function()
+      self._rootGo:SetActive(true)
+      if self._anim then
+        self._anim:Play("uieffanim_UISeasonMaze_Campsites_BankWidget_in")
+      end
+    end)
   else
-    ;
-    (self._rootGo):SetActive(true)
+    self._rootGo:SetActive(true)
     if self._anim then
-      (self._anim):Play("uieffanim_UISeasonMaze_Campsites_BankWidget_in")
+      self._anim:Play("uieffanim_UISeasonMaze_Campsites_BankWidget_in")
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BankWidget.PlayUnlockAnim = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMaze_Campsites_BankWidget:PlayUnlockAnim()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
-    ;
-    (self._rootGo):SetActive(true)
+    GameGlobal.Timer():CancelEvent(self._timer)
+    self._rootGo:SetActive(true)
   end
   if self._timerUnlock then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerUnlock)
+    GameGlobal.Timer():CancelEvent(self._timerUnlock)
   end
   if self._anim then
-    (self._LockAreaGo):SetActive(true)
-    ;
-    (self._anim):Play("uieffanim_UISeasonMaze_Campsites_BankWidget_unlock")
-    self._timerUnlock = ((GameGlobal.Timer)()):AddEvent(867, function()
-    -- function num : 0_6_0 , upvalues : self
-    (self._LockAreaGo):SetActive(false)
-  end
-)
+    self._LockAreaGo:SetActive(true)
+    self._anim:Play("uieffanim_UISeasonMaze_Campsites_BankWidget_unlock")
+    self._timerUnlock = GameGlobal.Timer():AddEvent(867, function()
+      self._LockAreaGo:SetActive(false)
+    end)
   end
 end
-
-

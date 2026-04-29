@@ -1,27 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_star_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandStarItem", UICustomWidget)
 UILuckLandStarItem = UILuckLandStarItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandStarItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandStarItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandStarItem.InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandStarItem:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandStarItem.SetData = function(self)
-  -- function num : 0_2
+function UILuckLandStarItem:SetData()
 end
-
-

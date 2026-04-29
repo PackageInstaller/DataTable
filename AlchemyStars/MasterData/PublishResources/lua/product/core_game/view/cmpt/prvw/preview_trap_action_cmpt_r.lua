@@ -1,137 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_trap_action_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewData", Object)
 PreviewData = PreviewData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewData.Constructor = function(self, nTrapEntityID, touchPosition, offset)
-  -- function num : 0_0 , upvalues : _ENV
+function PreviewData:Constructor(nTrapEntityID, touchPosition, offset)
   self.m_nEntityID = nTrapEntityID
-  if not touchPosition then
-    self.m_posTouch = Vector2(0, 0)
-    if not offset then
-      self.m_posOffset = Vector2(0, 0)
-    end
-  end
+  self.m_posTouch = touchPosition or Vector2(0, 0)
+  self.m_posOffset = offset or Vector2(0, 0)
 end
 
 _class("PreviewTrapActionComponent", Object)
 PreviewTrapActionComponent = PreviewTrapActionComponent
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewTrapActionComponent.Constructor = function(self)
-  -- function num : 0_1
+function PreviewTrapActionComponent:Constructor()
   self._showTrapAction = false
   self._listTrapPreview = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionComponent.SetTrapPreviewData = function(self, nTrapEntityID, touchPosition, offset)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._listTrapPreview)[nTrapEntityID] = PreviewData:New(nTrapEntityID, touchPosition, offset)
+function PreviewTrapActionComponent:SetTrapPreviewData(nTrapEntityID, touchPosition, offset)
+  self._listTrapPreview[nTrapEntityID] = PreviewData:New(nTrapEntityID, touchPosition, offset)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionComponent.RemoveTrapEntityID = function(self, trapEntityID)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._listTrapPreview)[trapEntityID] = nil
+function PreviewTrapActionComponent:RemoveTrapEntityID(trapEntityID)
+  self._listTrapPreview[trapEntityID] = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionComponent.GetTrapEntityList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function PreviewTrapActionComponent:GetTrapEntityList()
   local listTrapID = {}
-  for key,value in pairs(self._listTrapPreview) do
-    (table.insert)(listTrapID, key)
+  for key, value in pairs(self._listTrapPreview) do
+    table.insert(listTrapID, key)
   end
   return listTrapID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionComponent.ShowTrapAction = function(self, show)
-  -- function num : 0_5
+function PreviewTrapActionComponent:ShowTrapAction(show)
   self._showTrapAction = show
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionComponent.IsShowTrapAction = function(self)
-  -- function num : 0_6
+function PreviewTrapActionComponent:IsShowTrapAction()
   return self._showTrapAction
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionComponent.GetTouchPosition = function(self, trapEntityID)
-  -- function num : 0_7 , upvalues : _ENV
-  local pPreviewData = (self._listTrapPreview)[trapEntityID]
-  if pPreviewData == nil then
+function PreviewTrapActionComponent:GetTouchPosition(trapEntityID)
+  local pPreviewData = self._listTrapPreview[trapEntityID]
+  if nil == pPreviewData then
     return Vector2(0, 0)
   end
   return pPreviewData.m_posTouch
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionComponent.GetTouchPositionOffset = function(self, trapEntityID)
-  -- function num : 0_8 , upvalues : _ENV
-  local pPreviewData = (self._listTrapPreview)[trapEntityID]
-  if pPreviewData == nil then
+function PreviewTrapActionComponent:GetTouchPositionOffset(trapEntityID)
+  local pPreviewData = self._listTrapPreview[trapEntityID]
+  if nil == pPreviewData then
     return Vector2(0, 0)
   end
   return pPreviewData.m_posOffset
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewTrapAction = function(self)
-  -- function num : 0_9
-  return self:GetComponent((self.WEComponentsEnum).PreviewTrapAction)
+function Entity:PreviewTrapAction()
+  return self:GetComponent(self.WEComponentsEnum.PreviewTrapAction)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewTrapAction = function(self)
-  -- function num : 0_10
-  return self:HasComponent((self.WEComponentsEnum).PreviewTrapAction)
+function Entity:HasPreviewTrapAction()
+  return self:HasComponent(self.WEComponentsEnum.PreviewTrapAction)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewTrapAction = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewTrapAction
+function Entity:AddPreviewTrapAction()
+  local index = self.WEComponentsEnum.PreviewTrapAction
   local component = PreviewTrapActionComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewTrapAction = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewTrapAction
+function Entity:ReplacePreviewTrapAction()
+  local index = self.WEComponentsEnum.PreviewTrapAction
   local component = PreviewTrapActionComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewTrapAction = function(self)
-  -- function num : 0_13
+function Entity:RemovePreviewTrapAction()
   if self:HasPreviewTrapAction() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewTrapAction)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewTrapAction)
   end
 end
-
-

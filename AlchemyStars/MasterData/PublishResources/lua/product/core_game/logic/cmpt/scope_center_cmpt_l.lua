@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/scope_center_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ScopeCenterComponent", Object)
 ScopeCenterComponent = ScopeCenterComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ScopeCenterComponent.Constructor = function(self, groupId)
-  -- function num : 0_0
+function ScopeCenterComponent:Constructor(groupId)
   self._groupId = groupId
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ScopeCenterComponent.GetGroupId = function(self)
-  -- function num : 0_1
+function ScopeCenterComponent:GetGroupId()
   return self._groupId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ScopeCenter = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).ScopeCenter)
+function Entity:ScopeCenter()
+  return self:GetComponent(self.WEComponentsEnum.ScopeCenter)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddScopeCenter = function(self, groupId)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ScopeCenter
+function Entity:AddScopeCenter(groupId)
+  local index = self.WEComponentsEnum.ScopeCenter
   local component = ScopeCenterComponent:New(groupId)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasScopeCenter = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).ScopeCenter)
+function Entity:HasScopeCenter()
+  return self:HasComponent(self.WEComponentsEnum.ScopeCenter)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveScopeCenter = function(self)
-  -- function num : 0_5
+function Entity:RemoveScopeCenter()
   if self:HasScopeCenter() then
-    self:RemoveComponent((self.WEComponentsEnum).ScopeCenter)
+    self:RemoveComponent(self.WEComponentsEnum.ScopeCenter)
   end
 end
-
-

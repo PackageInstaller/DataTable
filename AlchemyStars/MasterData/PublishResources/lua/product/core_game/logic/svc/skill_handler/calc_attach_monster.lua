@@ -1,78 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_attach_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalcAttachMonster", SkillEffectCalc_Base)
 SkillEffectCalcAttachMonster = SkillEffectCalcAttachMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcAttachMonster.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalcAttachMonster:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcAttachMonster.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalcAttachMonster:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcAttachMonster._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalcAttachMonster:_CalculateSingleTarget(skillEffectCalcParam, targetID)
   local casterID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterID)
-  local targetEntity = (self._world):GetEntityByID(targetID)
+  local casterEntity = self._world:GetEntityByID(casterID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   local aiComponent = casterEntity:AI()
   aiComponent:SetRuntimeData("AttachMonsterID", targetID)
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTAttachMonster:New(casterEntity, targetEntity))
-  if not self:_CalculateAddEliteIDArray(skillEffectCalcParam, casterEntity, targetEntity) then
-    local eliteIDArray = {}
-  end
+  self._world:GetService("Trigger"):Notify(NTAttachMonster:New(casterEntity, targetEntity))
+  local eliteIDArray = self:_CalculateAddEliteIDArray(skillEffectCalcParam, casterEntity, targetEntity) or {}
   return SkillEffectAttachMonsterResult:New(targetID, eliteIDArray)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcAttachMonster._CalculateAddEliteIDArray = function(self, skillEffectCalcParam, casterEntity, targetEntity)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalcAttachMonster:_CalculateAddEliteIDArray(skillEffectCalcParam, casterEntity, targetEntity)
   local addEliteIDArray = {}
   local skillParam = skillEffectCalcParam:GetSkillEffectParam()
   if not skillParam:IsAddElite() then
-    return 
+    return
   end
   local casterMonsterIDCmpt = casterEntity:MonsterID()
   if not casterMonsterIDCmpt then
-    return 
+    return
   end
   local casterEliteIDArray = casterMonsterIDCmpt:GetEliteIDArray()
   if #casterEliteIDArray == 0 then
-    return 
+    return
   end
   local targetMonsterIDCmpt = targetEntity:MonsterID()
   if not targetMonsterIDCmpt then
-    return 
+    return
   end
   local targetEliteIDArray = targetMonsterIDCmpt:GetEliteIDArray()
-  for _,id in ipairs(casterEliteIDArray) do
-    if not (table.icontains)(targetEliteIDArray, id) then
-      (table.insert)(addEliteIDArray, id)
+  for _, id in ipairs(casterEliteIDArray) do
+    if not table.icontains(targetEliteIDArray, id) then
+      table.insert(addEliteIDArray, id)
     end
   end
   return addEliteIDArray
 end
-
-

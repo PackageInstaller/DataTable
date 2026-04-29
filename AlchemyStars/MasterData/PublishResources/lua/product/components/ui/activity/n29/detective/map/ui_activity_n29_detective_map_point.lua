@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/map/ui_activity_n29_detective_map_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DetectiveMapPoint", UICustomWidget)
 UIActivityN29DetectiveMapPoint = UIActivityN29DetectiveMapPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DetectiveMapPoint.Constructor = function(self, uiview)
-  -- function num : 0_0
+function UIActivityN29DetectiveMapPoint:Constructor(uiview)
   self._isExplored = true
   self._isLock = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityN29DetectiveMapPoint:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint._GetComponent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN29DetectiveMapPoint:_GetComponent()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._newObj = self:GetGameObject("new")
@@ -34,25 +21,16 @@ UIActivityN29DetectiveMapPoint._GetComponent = function(self)
   self._playerImgRect = self:GetUIComponent("RectTransform", "playerImg")
   self._pointBtn = self:GetGameObject("pointBtn")
   self._anim = self:GetUIComponent("Animation", "rect")
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = Vector2(0.5, 0.5)
+  self._rect.anchorMax = Vector2(0.5, 0.5)
+  self._rect.anchorMin = Vector2(0.5, 0.5)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.SetData = function(self, data, campaign, psdid, stage)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN29DetectiveMapPoint:SetData(data, campaign, psdid, stage)
   self._data = data
   self._campaign = campaign
   local localProcess = campaign:GetLocalProcess()
   self._compInfo = localProcess:GetComponentInfo(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
-  self._clueInfo = (self._compInfo).cur_info
+  self._clueInfo = self._compInfo.cur_info
   self._psdId = psdid
   self._curStage = stage
   self._legalClueList = {}
@@ -60,258 +38,163 @@ UIActivityN29DetectiveMapPoint.SetData = function(self, data, campaign, psdid, s
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.GetLegalClueList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local stageCfg = (Cfg.cfg_component_detective_stage)({})
-  for i,cfg in pairs(stageCfg) do
-    if self._curStage < i then
-      return 
+function UIActivityN29DetectiveMapPoint:GetLegalClueList()
+  local stageCfg = Cfg.cfg_component_detective_stage({})
+  for i, cfg in pairs(stageCfg) do
+    if i > self._curStage then
+      return
     end
     local stageClues = cfg.ClueList
-    ;
-    (table.appendArray)(self._legalClueList, stageClues)
+    table.appendArray(self._legalClueList, stageClues)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.InitData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local position = (self._data).Position
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(position[1] / 10, position[2] / 10)
-  if (self._data).PointPic then
-    (self._playerImg):LoadImage((self._data).PointPic)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._playerImgRect).sizeDelta = Vector2(((self._data).PointPicSize)[1], ((self._data).PointPicSize)[2])
-    if (self._data).Scale then
-      local scale = (self._data).Scale * 0.01
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._playerImgRect).localScale = Vector3(scale, scale, 1)
+function UIActivityN29DetectiveMapPoint:InitData()
+  local position = self._data.Position
+  self._rect.anchoredPosition = Vector2(position[1] / 10, position[2] / 10)
+  if self._data.PointPic then
+    self._playerImg:LoadImage(self._data.PointPic)
+    self._playerImgRect.sizeDelta = Vector2(self._data.PointPicSize[1], self._data.PointPicSize[2])
+    if self._data.Scale then
+      local scale = self._data.Scale * 0.01
+      self._playerImgRect.localScale = Vector3(scale, scale, 1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.GetCfg = function(self)
-  -- function num : 0_6
+function UIActivityN29DetectiveMapPoint:GetCfg()
   return self._data
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.GetIsLockStatue = function(self)
-  -- function num : 0_7
+function UIActivityN29DetectiveMapPoint:GetIsLockStatue()
   return self._isLock
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.GetContentXPos = function(self)
-  -- function num : 0_8
-  return ((self._rect).anchoredPosition).x
+function UIActivityN29DetectiveMapPoint:GetContentXPos()
+  return self._rect.anchoredPosition.x
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.GetContentYPos = function(self)
-  -- function num : 0_9
-  return ((self._rect).anchoredPosition).y
+function UIActivityN29DetectiveMapPoint:GetContentYPos()
+  return self._rect.anchoredPosition.y
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.SetUnLock = function(self, callback)
-  -- function num : 0_10
+function UIActivityN29DetectiveMapPoint:SetUnLock(callback)
   self:StartTask(self._SetUnLockAnim, self, callback)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint._SetUnLockAnim = function(self, TT, callback)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityN29DetectiveMapPoint:_SetUnLockAnim(TT, callback)
   self:SetPointActive(true)
   self:SetLock(false)
-  ;
-  (self._newObj):SetActive(true)
+  self._newObj:SetActive(true)
   self:CheckPointIsOver()
-  ;
-  (self._anim):Play("uieff_UIN29DetectiveMapPoint_unlock")
+  self._anim:Play("uieff_UIN29DetectiveMapPoint_unlock")
   YIELD(TT, 600)
-  ;
-  (self._anim):Play("uieff_UIN29DetectiveMapPoint_unlockedswing")
+  self._anim:Play("uieff_UIN29DetectiveMapPoint_unlockedswing")
   if callback then
     callback()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.CancelNew = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (UIN29DetectiveHelper.SetOpenIdKey)(self._psdId, "UIActivityN29DetectiveMapPoint" .. (self._data).ID)
-  ;
-  (self._newObj):SetActive(false)
+function UIActivityN29DetectiveMapPoint:CancelNew()
+  UIN29DetectiveHelper.SetOpenIdKey(self._psdId, "UIActivityN29DetectiveMapPoint" .. self._data.ID)
+  self._newObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.SetLock = function(self, isLock, isAnim)
-  -- function num : 0_13
+function UIActivityN29DetectiveMapPoint:SetLock(isLock, isAnim)
   self:StartTask(self._SetLock, self, isLock, isAnim)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint._SetLock = function(self, TT, isLock, isAnim)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN29DetectiveMapPoint:_SetLock(TT, isLock, isAnim)
   if isLock then
-    (self._newObj):SetActive(false)
+    self._newObj:SetActive(false)
     self._isLock = true
-    ;
-    (self._icon):LoadImage("n29_dt_icon03")
-    ;
-    (self._title):SetText((StringTable.Get)((self._data).HideName))
-    ;
-    (self._markObj):SetActive(false)
+    self._icon:LoadImage("n29_dt_icon03")
+    self._title:SetText(StringTable.Get(self._data.HideName))
+    self._markObj:SetActive(false)
   else
     self._isLock = false
-    ;
-    (self._title):SetText((StringTable.Get)((self._data).ShowName))
-    ;
-    (self._icon):LoadImage((self._data).Icon)
+    self._title:SetText(StringTable.Get(self._data.ShowName))
+    self._icon:LoadImage(self._data.Icon)
   end
-  ;
-  (self._anim):Play("uieff_UIN29DetectiveMapPoint_unlockedswing")
+  self._anim:Play("uieff_UIN29DetectiveMapPoint_unlockedswing")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.CheckPointIsOver = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local hasKey = (UIN29DetectiveHelper.CheckOpenIdKey)(self._psdId, "UIActivityN29DetectiveMapPoint" .. (self._data).ID)
+function UIActivityN29DetectiveMapPoint:CheckPointIsOver()
+  local hasKey = UIN29DetectiveHelper.CheckOpenIdKey(self._psdId, "UIActivityN29DetectiveMapPoint" .. self._data.ID)
   if hasKey then
-    (self._newObj):SetActive(false)
+    self._newObj:SetActive(false)
     self:SetPointExplored()
     self._isExplored = true
   else
-    ;
-    (self._newObj):SetActive(true)
+    self._newObj:SetActive(true)
     self._isExplored = false
   end
-  local clueList = (self._clueInfo).clue_list
-  local needItems = ((Cfg.cfg_component_detective_waypoint)[(self._data).ID]).WaypointContent
+  local clueList = self._clueInfo.clue_list
+  local needItems = Cfg.cfg_component_detective_waypoint[self._data.ID].WaypointContent
   local isOver = true
-  for _,v in pairs(needItems) do
-    local talkItem = nil
-    if (self._data).Type == 1 then
-      local cfg = (Cfg.cfg_component_detective_suspicious)({})
+  for _, v in pairs(needItems) do
+    local talkItem
+    if self._data.Type == 1 then
+      local cfg = Cfg.cfg_component_detective_suspicious({})
       talkItem = cfg[v]
     else
-      do
-        do
-          local cfg = (Cfg.cfg_component_detective_talk)({})
-          talkItem = cfg[v]
-          local stageClues = ((Cfg.cfg_component_detective_stage)[self._curStage]).ClueList
-          local isContain = (UIN29DetectiveHelper.Contain)(clueList, talkItem.ClueId)
-          local isLegal = (UIN29DetectiveHelper.Contain)(stageClues, talkItem.ClueId)
-          if isLegal then
-            if not isContain and not talkItem.NeedClue then
-              isOver = false
-              break
-            else
-              if not isContain and talkItem.NeedClue then
-                local isAllGet = true
-                for i,need in pairs(talkItem.NeedClue) do
-                  if not (UIN29DetectiveHelper.Contain)(clueList, need) then
-                    isAllGet = false
-                  end
-                end
-                if isAllGet then
-                  isOver = false
-                end
-              end
-            end
+      local cfg = Cfg.cfg_component_detective_talk({})
+      talkItem = cfg[v]
+    end
+    local stageClues = Cfg.cfg_component_detective_stage[self._curStage].ClueList
+    local isContain = UIN29DetectiveHelper.Contain(clueList, talkItem.ClueId)
+    local isLegal = UIN29DetectiveHelper.Contain(stageClues, talkItem.ClueId)
+    if isLegal then
+      if not isContain and not talkItem.NeedClue then
+        isOver = false
+        break
+      elseif not isContain and talkItem.NeedClue then
+        local isAllGet = true
+        for i, need in pairs(talkItem.NeedClue) do
+          if not UIN29DetectiveHelper.Contain(clueList, need) then
+            isAllGet = false
           end
-          do
-            -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        end
+        if isAllGet then
+          isOver = false
         end
       end
     end
   end
   self._isOver = isOver
-  ;
-  (self._markObj):SetActive(not isOver)
+  self._markObj:SetActive(not isOver)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.GetPointIsOver = function(self)
-  -- function num : 0_16
-  if not self._isLock then
-    return self._isOver
-  end
+function UIActivityN29DetectiveMapPoint:GetPointIsOver()
+  return self._isLock or self._isOver
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.SetPointActive = function(self, isActive)
-  -- function num : 0_17
-  (self._parent):SetActive(isActive)
+function UIActivityN29DetectiveMapPoint:SetPointActive(isActive)
+  self._parent:SetActive(isActive)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.SetPointExplored = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)((self._data).ShowName))
-  ;
-  (self._icon):LoadImage((self._data).Icon)
+function UIActivityN29DetectiveMapPoint:SetPointExplored()
+  self._title:SetText(StringTable.Get(self._data.ShowName))
+  self._icon:LoadImage(self._data.Icon)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.PointBtnOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = svrTimeModule and (math.floor)(svrTimeModule:GetServerTime() * 0.001) or 0
-  local closeTime = (self._compInfo).m_close_time
+function UIActivityN29DetectiveMapPoint:PointBtnOnClick()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = svrTimeModule and math.floor(svrTimeModule:GetServerTime() * 0.001) or 0
+  local closeTime = self._compInfo.m_close_time
   local isOpen = curTime < closeTime
   if not isOpen then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n24_specialtask_close"))
+    ToastManager.ShowToast(StringTable.Get("str_n24_specialtask_close"))
     self:SwitchState(UIStateType.UIActivityN29MainController)
-    return 
+    return
   end
   if not self._isExplored and not self._isLock then
     self:CancelNew()
     self:SetPointExplored()
   end
   self:ShowDialog("UIActivityN29DetectiveWayController", self, self._curStage, self._psdId)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveMapPoint.GetPointBtnGo = function(self)
-  -- function num : 0_20
+function UIActivityN29DetectiveMapPoint:GetPointBtnGo()
   return self._pointBtn
 end
-
-

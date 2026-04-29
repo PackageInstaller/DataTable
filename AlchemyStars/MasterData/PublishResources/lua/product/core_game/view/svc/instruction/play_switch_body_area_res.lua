@@ -1,42 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_switch_body_area_res.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySwitchBodyAreaResultInstruction", BaseInstruction)
 PlaySwitchBodyAreaResultInstruction = PlaySwitchBodyAreaResultInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySwitchBodyAreaResultInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlaySwitchBodyAreaResultInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySwitchBodyAreaResultInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySwitchBodyAreaResultInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local switchBodyAreaResult = routineComponent:GetEffectResultByArray(SkillEffectType.SwitchBodyAreaByTargetPos)
   if not switchBodyAreaResult then
-    return 
+    return
   end
   local dirType = switchBodyAreaResult:GetSwitchDirType()
   local oldBodyAreaPos = switchBodyAreaResult:GetOldBodyAreaPos()
   local newDir = switchBodyAreaResult:GetNewDir()
   local newBodyArea = switchBodyAreaResult:GetNewBodyArea()
   self._world = casterEntity:GetOwnerWorld()
-  local renderEntityService = (self._world):GetService("RenderEntity")
+  local renderEntityService = self._world:GetService("RenderEntity")
   renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
   renderEntityService:CreateMonsterAreaOutlineEntity(casterEntity)
   local casterPos = casterEntity:GetRenderGridPosition()
   local newBodyAreaPos = casterPos + newBodyArea[1]
-  local pieceService = (self._world):GetService("Piece")
+  local pieceService = self._world:GetService("Piece")
   casterEntity:SetDirection(newDir)
   pieceService:SetPieceAnimUp(oldBodyAreaPos)
   pieceService:SetPieceAnimDown(newBodyAreaPos)
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTBodyAreaChange:New(casterEntity))
 end
-
-

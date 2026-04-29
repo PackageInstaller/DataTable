@@ -1,88 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_head_bg_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHeadBgItem", UICustomWidget)
 UIHeadBgItem = UIHeadBgItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHeadBgItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHeadBgItem:OnShow(uiParams)
   self:AttachEvent(GameEventType.OnPlayerChangeHeadBgItemClick, self.OnPlayerChangeHeadBgItemClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadBgItem.SetData = function(self, idx, headbgid, currid, callback)
-  -- function num : 0_1
+function UIHeadBgItem:SetData(idx, headbgid, currid, callback)
   self:_GetComponents()
   if headbgid then
-    (self._uiRoot):SetActive(true)
+    self._uiRoot:SetActive(true)
     self._idx = idx
     self._headbgid = headbgid
     self._callback = callback
     self._isSelect = currid == self._headbgid
     self:_OnValue()
   else
-    (self._uiRoot):SetActive(false)
+    self._uiRoot:SetActive(false)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadBgItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHeadBgItem:OnHide()
   self:DetachEvent(GameEventType.OnPlayerChangeHeadBgItemClick, self.OnPlayerChangeHeadBgItemClick)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadBgItem._GetComponents = function(self)
-  -- function num : 0_3
+function UIHeadBgItem:_GetComponents()
   self._uiRoot = self:GetGameObject("icon")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._select = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadBgItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg_head_bg = (Cfg.cfg_player_head_bg)[self._headbgid]
+function UIHeadBgItem:_OnValue()
+  local cfg_head_bg = Cfg.cfg_player_head_bg[self._headbgid]
   if cfg_head_bg then
-    (self._icon):LoadImage(cfg_head_bg.Icon)
+    self._icon:LoadImage(cfg_head_bg.Icon)
   else
-    ;
-    (Log.fatal)("###playerinfo - cfg_player_head_bg is nil ! id ", self._headbgid)
+    Log.fatal("###playerinfo - cfg_player_head_bg is nil ! id ", self._headbgid)
   end
   self:Select(self._isSelect)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadBgItem.bgOnClick = function(self)
-  -- function num : 0_5
+function UIHeadBgItem:bgOnClick()
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadBgItem.OnPlayerChangeHeadBgItemClick = function(self, headbgid)
-  -- function num : 0_6
+function UIHeadBgItem:OnPlayerChangeHeadBgItemClick(headbgid)
   self._isSelect = headbgid == self._headbgid
   self:Select(self._isSelect)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeadBgItem.Select = function(self, select)
-  -- function num : 0_7
-  (self._select):SetActive(select)
+function UIHeadBgItem:Select(select)
+  self._select:SetActive(select)
 end
-
-

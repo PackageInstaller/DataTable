@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_each_grid_add_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamEachGridAddBlood", SkillEffectParamBase)
 SkillEffectParamEachGridAddBlood = SkillEffectParamEachGridAddBlood
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamEachGridAddBlood.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamEachGridAddBlood:Constructor(t)
   self._baseAddValue = t.baseAddValue
   self._baseAddType = t.baseAddType
   self._onePieceAddValue = t.addValue
@@ -17,46 +10,26 @@ SkillEffectParamEachGridAddBlood.Constructor = function(self, t)
   self._enhanceGridRecoverValue = t.enhanceGridAddValue
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamEachGridAddBlood.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamEachGridAddBlood:GetEffectType()
   return SkillEffectType.EachGridAddBlood
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamEachGridAddBlood.GetBaseAddValue = function(self)
-  -- function num : 0_2
+function SkillEffectParamEachGridAddBlood:GetBaseAddValue()
   return self._baseAddValue
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamEachGridAddBlood.GetBaseAddType = function(self)
-  -- function num : 0_3
+function SkillEffectParamEachGridAddBlood:GetBaseAddType()
   return self._baseAddType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamEachGridAddBlood.GetOnePieceAddValue = function(self)
-  -- function num : 0_4
+function SkillEffectParamEachGridAddBlood:GetOnePieceAddValue()
   return self._onePieceAddValue
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamEachGridAddBlood.GetOnePieceAddType = function(self)
-  -- function num : 0_5
+function SkillEffectParamEachGridAddBlood:GetOnePieceAddType()
   return self._onePieceAddType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamEachGridAddBlood.GetEnhanceGridRecoverValue = function(self)
-  -- function num : 0_6
+function SkillEffectParamEachGridAddBlood:GetEnhanceGridRecoverValue()
   return self._enhanceGridRecoverValue
 end
-
-

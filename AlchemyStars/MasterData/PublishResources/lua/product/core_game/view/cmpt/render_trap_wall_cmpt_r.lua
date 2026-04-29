@@ -1,168 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_trap_wall_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderTrapWallComponent", Object)
 RenderTrapWallComponent = RenderTrapWallComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderTrapWallComponent.Constructor = function(self)
-  -- function num : 0_0
+function RenderTrapWallComponent:Constructor()
   self._wallDataList = {}
   self._trapWallPosList = {}
   self._blockEffectEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallComponent.GetWallList = function(self)
-  -- function num : 0_1
+function RenderTrapWallComponent:GetWallList()
   return self._wallDataList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallComponent.AddEffectEntity = function(self, effEntityID, pos, dir)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._wallDataList)[pos.x] then
-    (self._wallDataList)[pos.x] = {}
+function RenderTrapWallComponent:AddEffectEntity(effEntityID, pos, dir)
+  if not self._wallDataList[pos.x] then
+    self._wallDataList[pos.x] = {}
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._wallDataList)[pos.x])[pos.y] = RenderTrapWallData:New(effEntityID, pos, dir)
-  ;
-  (table.insert)(self._trapWallPosList, pos)
+  self._wallDataList[pos.x][pos.y] = RenderTrapWallData:New(effEntityID, pos, dir)
+  table.insert(self._trapWallPosList, pos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallComponent.RemoveTrapWall = function(self, pos)
-  -- function num : 0_3
-  if not (self._wallDataList)[pos.x] then
-    return 
+function RenderTrapWallComponent:RemoveTrapWall(pos)
+  if not self._wallDataList[pos.x] then
+    return
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._wallDataList)[pos.x])[pos.y] = nil
+  self._wallDataList[pos.x][pos.y] = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallComponent.GetTrapWall = function(self, pos)
-  -- function num : 0_4
-  if not (self._wallDataList)[pos.x] then
+function RenderTrapWallComponent:GetTrapWall(pos)
+  if not self._wallDataList[pos.x] then
     return nil
   end
-  local wall = ((self._wallDataList)[pos.x])[pos.y]
+  local wall = self._wallDataList[pos.x][pos.y]
   return wall
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallComponent.GetTrapWallPosList = function(self)
-  -- function num : 0_5
+function RenderTrapWallComponent:GetTrapWallPosList()
   return self._trapWallPosList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallComponent.AddBlockEffectEntityID = function(self, effEntityID)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.insert)(self._blockEffectEntityIDList, effEntityID)
+function RenderTrapWallComponent:AddBlockEffectEntityID(effEntityID)
+  table.insert(self._blockEffectEntityIDList, effEntityID)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallComponent.GetBlockEffectEntityIDList = function(self)
-  -- function num : 0_7
+function RenderTrapWallComponent:GetBlockEffectEntityIDList()
   return self._blockEffectEntityIDList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallComponent.ClearBlockEffectEntityIDList = function(self)
-  -- function num : 0_8
+function RenderTrapWallComponent:ClearBlockEffectEntityIDList()
   self._blockEffectEntityIDList = {}
 end
 
 _class("RenderTrapWallData", Object)
 RenderTrapWallData = RenderTrapWallData
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderTrapWallData.Constructor = function(self, effectEntityID, pos, dir)
-  -- function num : 0_9 , upvalues : _ENV
+function RenderTrapWallData:Constructor(effectEntityID, pos, dir)
   self._effectEntityID = effectEntityID
   self._pos = pos
-  if not dir then
-    self._dir = Vector2(0, 0)
-  end
+  self._dir = dir or Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallData.GetEffectEntityID = function(self)
-  -- function num : 0_10
+function RenderTrapWallData:GetEffectEntityID()
   return self._effectEntityID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallData.GetPos = function(self)
-  -- function num : 0_11
+function RenderTrapWallData:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderTrapWallData.GetDir = function(self)
-  -- function num : 0_12
+function RenderTrapWallData:GetDir()
   return self._dir
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderTrapWall = function(self)
-  -- function num : 0_13
-  return self:GetComponent((self.WEComponentsEnum).RenderTrapWall)
+function Entity:RenderTrapWall()
+  return self:GetComponent(self.WEComponentsEnum.RenderTrapWall)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderTrapWall = function(self)
-  -- function num : 0_14
-  return self:HasComponent((self.WEComponentsEnum).RenderTrapWall)
+function Entity:HasRenderTrapWall()
+  return self:HasComponent(self.WEComponentsEnum.RenderTrapWall)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderTrapWall = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderTrapWall
+function Entity:AddRenderTrapWall()
+  local index = self.WEComponentsEnum.RenderTrapWall
   local component = RenderTrapWallComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderTrapWall = function(self, roundTeam)
-  -- function num : 0_16 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderTrapWall
+function Entity:ReplaceRenderTrapWall(roundTeam)
+  local index = self.WEComponentsEnum.RenderTrapWall
   local component = RenderTrapWallComponent:New(roundTeam)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderTrapWall = function(self)
-  -- function num : 0_17
+function Entity:RemoveRenderTrapWall()
   if self:HasRenderTrapWall() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderTrapWall)
+    self:RemoveComponent(self.WEComponentsEnum.RenderTrapWall)
   end
 end
-
-

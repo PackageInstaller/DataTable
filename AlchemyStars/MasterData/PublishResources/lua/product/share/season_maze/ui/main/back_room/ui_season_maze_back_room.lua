@@ -1,47 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/back_room/ui_season_maze_back_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBackRoom", UICustomWidget)
 UISeasonMazeBackRoom = UISeasonMazeBackRoom
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBackRoom.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeBackRoom:InitWidget()
   self._go = self:GetGameObject("Go")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackRoom.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeBackRoom:OnShow()
   self:InitWidget()
   self:AttachEvent(GameEventType.OnTempCloseRoom, self.ShowBtn)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackRoom.SetData = function(self)
-  -- function num : 0_2
+function UISeasonMazeBackRoom:SetData()
   self:ShowBtn(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackRoom.ShowBtn = function(self, active)
-  -- function num : 0_3
-  (self._go):SetActive(active)
+function UISeasonMazeBackRoom:ShowBtn(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackRoom.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTempCloseRoom, false)
-  local nodeid = (SMazeAdaptor.CurNodeID)()
-  ;
-  ((GameGlobal.GetUIModule)(SeasonMazeModule)):ReturnTempRoom(nodeid)
+function UISeasonMazeBackRoom:BtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTempCloseRoom, false)
+  local nodeid = SMazeAdaptor.CurNodeID()
+  GameGlobal.GetUIModule(SeasonMazeModule):ReturnTempRoom(nodeid)
 end
-
-

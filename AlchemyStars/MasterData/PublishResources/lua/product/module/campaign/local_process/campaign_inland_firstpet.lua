@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_firstpet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignInlandFirstPet", ICampaignComponentLocalProcessBase)
 CCampaignInlandFirstPet = CCampaignInlandFirstPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignInlandFirstPet.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignInlandFirstPet:Constructor()
   self._levelCommonComponet = nil
   self._levelCommonCompInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandFirstPet.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignInlandFirstPet:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_FIRSTPET
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandFirstPet.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignInlandFirstPet:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandFirstPet.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignInlandFirstPet:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLevelCommonComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandFirstPet._GetLevelCommonComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._levelCommonComponet = (self._campaignObj):GetComponent(ECCampaignInlandFirstPetComponentID.Line_MISSION)
+function CCampaignInlandFirstPet:_GetLevelCommonComponent()
+  self._levelCommonComponet = self._campaignObj:GetComponent(ECCampaignInlandFirstPetComponentID.Line_MISSION)
   if not self._levelCommonComponet then
-    return 
+    return
   end
-  self._levelCommonCompInfo = (self._levelCommonComponet):ComponentInfo()
+  self._levelCommonCompInfo = self._levelCommonComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandFirstPet.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignInlandFirstPet:GetComponent(componentID)
   if ECCampaignInlandFirstPetComponentID.Line_MISSION == componentID then
     return self._levelCommonComponet
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandFirstPet.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignInlandFirstPet:GetComponentInfo(componentID)
   if ECCampaignInlandFirstPetComponentID.Line_MISSION == componentID then
     return self._levelCommonCompInfo
   end
   return nil
 end
-
-

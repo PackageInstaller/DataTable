@@ -1,20 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/third/third_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local PlayerSex = {SEX_Error = -1, SEX_Male = 0, SEX_Female = 1, SEX_Both = 2}
+local PlayerSex = {
+  SEX_Error = -1,
+  SEX_Male = 0,
+  SEX_Female = 1,
+  SEX_Both = 2
+}
 _enum("PlayerSex", PlayerSex)
-local IEG_TEXT_SCENE = {ITS_NONE = 0, ITS_NAME = 1, ITS_MES = 2, ITS_TITLE = 3, ITS_COMMENT = 4, ITS_SIGN = 5, ITS_SEEK = 6, ITS_OTHER = 7}
+local IEG_TEXT_SCENE = {
+  ITS_NONE = 0,
+  ITS_NAME = 1,
+  ITS_MES = 2,
+  ITS_TITLE = 3,
+  ITS_COMMENT = 4,
+  ITS_SIGN = 5,
+  ITS_SEEK = 6,
+  ITS_OTHER = 7
+}
 _enum("IEG_TEXT_SCENE", IEG_TEXT_SCENE)
-local IEG_TEXT_CHECK_RET = {ITC_NONE = -1, ITC_OK = 0, ITC_EVIL = 1}
+local IEG_TEXT_CHECK_RET = {
+  ITC_NONE = -1,
+  ITC_OK = 0,
+  ITC_EVIL = 1
+}
 _enum("IEG_TEXT_CHECK_RET", IEG_TEXT_CHECK_RET)
-local IEG_TEXT_PUNISH_TYPE = {ITP_NONE = 0, ITP_FORBID = 1, ITP_REPLACE = 2}
+local IEG_TEXT_PUNISH_TYPE = {
+  ITP_NONE = 0,
+  ITP_FORBID = 1,
+  ITP_REPLACE = 2
+}
 _enum("IEG_TEXT_PUNISH_TYPE", IEG_TEXT_PUNISH_TYPE)
-local IDG_FACT_TYPE = {IDG_FT_LOGIN = 11, IDG_FT_HEART = 12, IDG_FT_LOGOUT = 13}
+local IDG_FACT_TYPE = {
+  IDG_FT_LOGIN = 11,
+  IDG_FT_HEART = 12,
+  IDG_FT_LOGOUT = 13
+}
 _enum("IDG_FACT_TYPE", IDG_FACT_TYPE)
-local IDG_INSTRUCTION_TYPE = {IDG_ITRCT_UNDEFINED = 0, IDG_ITRCT_TIPS = 1, IDG_ITRCT_LOGOUT = 2, IDG_ITRCT_OPENURL = 3, IDG_ITRCT_USER_DEFINED = 4, IDG_ITRCT_INCOME = 5, IDG_ITRCT_INCOME_TIPS = 6, IDG_ITRCT_STOP = 7}
+local IDG_INSTRUCTION_TYPE = {
+  IDG_ITRCT_UNDEFINED = 0,
+  IDG_ITRCT_TIPS = 1,
+  IDG_ITRCT_LOGOUT = 2,
+  IDG_ITRCT_OPENURL = 3,
+  IDG_ITRCT_USER_DEFINED = 4,
+  IDG_ITRCT_INCOME = 5,
+  IDG_ITRCT_INCOME_TIPS = 6,
+  IDG_ITRCT_STOP = 7
+}
 _enum("IDG_INSTRUCTION_TYPE", IDG_INSTRUCTION_TYPE)
 local IDG_INSTRUCTION_MODAL = {IDG_ITRCM_DEFAULT = 0, IDG_ITRCM_MODAL = 1}
 _enum("IDG_INSTRUCTION_MODAL", IDG_INSTRUCTION_MODAL)
-

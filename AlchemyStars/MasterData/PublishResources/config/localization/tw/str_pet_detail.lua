@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/str_pet_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_pet_detail_lvup = "光靈升級", str_pet_detail_awake = "光靈覺醒", str_pet_detail_grade = "光靈突破", str_pet_detail_equip = "光靈裝備", str_pet_detail_pet_intr = "光靈簡介PROFILE", str_pet_detail_intimacy = "好感度", str_pet_detail_clothes = "時裝", str_pet_detail_book = "檔案", str_pet_detail_skill_info = "技能詳情", str_pet_detail_element_first = "主", str_pet_detail_element_second = "副", str_pet_detail_element_property = "屬性", str_pet_detail_element_1 = "水", str_pet_detail_element_2 = "火", str_pet_detail_element_3 = "森", str_pet_detail_element_4 = "雷", str_pet_detail_element_5 = "無", str_pet_detail_element_6 = "無", str_pet_detail_skill_area = "技能範圍", str_pet_detail_team_item_detail = "光靈詳情", str_pet_detail_team_item_detail_en = "PARTICULAR", str_pet_detail_maze_value_intr = "祕境數值說明", str_pet_detail_maze_value_desc = "祕境探索中，光靈擁有獨立的數值，養成僅保留覺醒和突破所帶來的技能變化。", str_pet_detail_left_down_skill_active = "主動技能", str_pet_detail_left_down_skill_chain = "連鎖技能", str_pet_detail_left_down_skill_equip = "裝備技能", str_pet_detail_awake_directly_tip = "選擇任意光靈，將其提升至 <color=#f1c702>覺醒{1} Lv.{2}</color>", str_pet_detail_awake_directly_confirm = "是否使用<color=#f1c702>{1}</color>將<color=#f1c702>{2}</color>覺醒至<color=#f1c702>覺醒{3} Lv.{4}</color>？\n<size=30>覺醒後，該光靈此前消耗的覺醒和升級材料將透過信件退還</size>", str_pet_detail_awake_directly_choose_pet = "尚未選擇光靈，請選擇光靈後重試！", str_pet_detail_awake_directly_success = "已將光靈{1}提升至覺醒{2}LV{3}！"}
+local config = {
+  str_pet_detail_lvup = "光靈升級",
+  str_pet_detail_awake = "光靈覺醒",
+  str_pet_detail_grade = "光靈突破",
+  str_pet_detail_equip = "光靈裝備",
+  str_pet_detail_pet_intr = "光靈簡介PROFILE",
+  str_pet_detail_intimacy = "好感度",
+  str_pet_detail_clothes = "時裝",
+  str_pet_detail_book = "檔案",
+  str_pet_detail_skill_info = "技能詳情",
+  str_pet_detail_element_first = "主",
+  str_pet_detail_element_second = "副",
+  str_pet_detail_element_property = "屬性",
+  str_pet_detail_element_1 = "水",
+  str_pet_detail_element_2 = "火",
+  str_pet_detail_element_3 = "森",
+  str_pet_detail_element_4 = "雷",
+  str_pet_detail_element_5 = "無",
+  str_pet_detail_element_6 = "無",
+  str_pet_detail_skill_area = "技能範圍",
+  str_pet_detail_team_item_detail = "光靈詳情",
+  str_pet_detail_team_item_detail_en = "PARTICULAR",
+  str_pet_detail_maze_value_intr = "祕境數值說明",
+  str_pet_detail_maze_value_desc = "祕境探索中，光靈擁有獨立的數值，養成僅保留覺醒和突破所帶來的技能變化。",
+  str_pet_detail_left_down_skill_active = "主動技能",
+  str_pet_detail_left_down_skill_chain = "連鎖技能",
+  str_pet_detail_left_down_skill_equip = "裝備技能",
+  str_pet_detail_awake_directly_tip = "選擇任意光靈，將其提升至 <color=#f1c702>覺醒{1} Lv.{2}</color>",
+  str_pet_detail_awake_directly_confirm = "是否使用<color=#f1c702>{1}</color>將<color=#f1c702>{2}</color>覺醒至<color=#f1c702>覺醒{3} Lv.{4}</color>？\n<size=30>覺醒後，該光靈此前消耗的覺醒和升級材料將透過信件退還</size>",
+  str_pet_detail_awake_directly_choose_pet = "尚未選擇光靈，請選擇光靈後重試！",
+  str_pet_detail_awake_directly_success = "已將光靈{1}提升至覺醒{2}LV{3}！"
+}
 return config
-

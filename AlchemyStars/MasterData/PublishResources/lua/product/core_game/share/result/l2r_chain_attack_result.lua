@@ -1,94 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/l2r_chain_attack_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("L2R_ChainAttackResult", Object)
 L2R_ChainAttackResult = L2R_ChainAttackResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-L2R_ChainAttackResult.Constructor = function(self, dataList)
-  -- function num : 0_0
+function L2R_ChainAttackResult:Constructor(dataList)
   self._chainAtkResultList = dataList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.GetPetChainSkillDataList = function(self, entityID)
-  -- function num : 0_1
-  local chainResData = (self._chainAtkResultList)[entityID]
+function L2R_ChainAttackResult:GetPetChainSkillDataList(entityID)
+  local chainResData = self._chainAtkResultList[entityID]
   if chainResData == nil then
     return nil
   end
   return chainResData:GetChainAttackResultAtkDataList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.GetPetShadowChainSkillDataList = function(self, entityID)
-  -- function num : 0_2
-  local chainResData = (self._chainAtkResultList)[entityID]
+function L2R_ChainAttackResult:GetPetShadowChainSkillDataList(entityID)
+  local chainResData = self._chainAtkResultList[entityID]
   if chainResData == nil then
     return nil
   end
   return chainResData:GetChainAttackResultShadowAtkDataList()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.GetPetAgentChainSkillDataList = function(self, entityID)
-  -- function num : 0_3
-  local chainResData = (self._chainAtkResultList)[entityID]
+function L2R_ChainAttackResult:GetPetAgentChainSkillDataList(entityID)
+  local chainResData = self._chainAtkResultList[entityID]
   if chainResData == nil then
     return nil
   end
   return chainResData:GetChainAttackResultAgentAtkDataList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.GetPetReplaceChainSkillDataList = function(self, entityID)
-  -- function num : 0_4
-  local chainResData = (self._chainAtkResultList)[entityID]
+function L2R_ChainAttackResult:GetPetReplaceChainSkillDataList(entityID)
+  local chainResData = self._chainAtkResultList[entityID]
   if chainResData == nil then
     return nil
   end
   return chainResData:GetChainAttackResultReplaceAtkDataList()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.GetPetHasCastChainSkill = function(self, entityID)
-  -- function num : 0_5
-  local chainResData = (self._chainAtkResultList)[entityID]
+function L2R_ChainAttackResult:GetPetHasCastChainSkill(entityID)
+  local chainResData = self._chainAtkResultList[entityID]
   if chainResData == nil then
     return false
   end
   return chainResData:GetChainAttackResultCastSkillFlag()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.GetPetCastChainSkillID = function(self, entityID)
-  -- function num : 0_6
-  local chainResData = (self._chainAtkResultList)[entityID]
+function L2R_ChainAttackResult:GetPetCastChainSkillID(entityID)
+  local chainResData = self._chainAtkResultList[entityID]
   if chainResData == nil then
     return -1
   end
   return chainResData:GetChainAttackResultSkillID()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.ChainAttackResultHasDamage = function(self, entityID)
-  -- function num : 0_7 , upvalues : _ENV
-  local chainResData = (self._chainAtkResultList)[entityID]
+function L2R_ChainAttackResult:ChainAttackResultHasDamage(entityID)
+  local chainResData = self._chainAtkResultList[entityID]
   if chainResData == nil then
     return false
   end
   local effectResListTable = chainResData:GetChainAttackResultAtkDataList()
-  for i,effectResList in ipairs(effectResListTable) do
-    for _,v in ipairs(effectResList) do
+  for i, effectResList in ipairs(effectResListTable) do
+    for _, v in ipairs(effectResList) do
       local chainAttackData = v
       if chainAttackData:GetEffectResultByArray(SkillEffectType.Damage) then
         return true
@@ -98,29 +70,18 @@ L2R_ChainAttackResult.ChainAttackResultHasDamage = function(self, entityID)
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.GetDeadEntityIDListByPet = function(self, entityID)
-  -- function num : 0_8
-  local chainResData = (self._chainAtkResultList)[entityID]
+function L2R_ChainAttackResult:GetDeadEntityIDListByPet(entityID)
+  local chainResData = self._chainAtkResultList[entityID]
   if chainResData == nil then
     return nil
   end
   return chainResData:GetDeadEntityIDList()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.GetChainTeamResult = function(self)
-  -- function num : 0_9
+function L2R_ChainAttackResult:GetChainTeamResult()
   return self._chainTeamResult
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_ChainAttackResult.SetChainTeamResult = function(self, team)
-  -- function num : 0_10
+function L2R_ChainAttackResult:SetChainTeamResult(team)
   self._chainTeamResult = team
 end
-
-

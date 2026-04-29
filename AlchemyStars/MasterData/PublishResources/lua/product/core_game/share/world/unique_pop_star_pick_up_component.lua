@@ -1,71 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_pop_star_pick_up_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PopStarPickUpComponent", Object)
 PopStarPickUpComponent = PopStarPickUpComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarPickUpComponent.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarPickUpComponent:Constructor(world)
   self._world = world
   self._clickPos = Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpComponent.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.notice)("PopStarPickUpComponent Initialize")
+function PopStarPickUpComponent:Initialize()
+  Log.notice("PopStarPickUpComponent Initialize")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpComponent.SetPopStarClickPos = function(self, clickPos)
-  -- function num : 0_2
+function PopStarPickUpComponent:SetPopStarClickPos(clickPos)
   self._clickPos = clickPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpComponent.GetPopStarClickPos = function(self)
-  -- function num : 0_3
+function PopStarPickUpComponent:GetPopStarClickPos()
   return self._clickPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.PopStarPickUp = function(self)
-  -- function num : 0_4
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).PopStarPickUp)
+function MainWorld:PopStarPickUp()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.PopStarPickUp)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasPopStarPickUp = function(self)
-  -- function num : 0_5
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).PopStarPickUp) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasPopStarPickUp()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.PopStarPickUp) ~= nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddPopStarPickUp = function(self, world)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).PopStarPickUp
+function MainWorld:AddPopStarPickUp(world)
+  local index = self.BW_UniqueComponentsEnum.PopStarPickUp
   local component = PopStarPickUpComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemovePopStarPickUp = function(self)
-  -- function num : 0_7
+function MainWorld:RemovePopStarPickUp()
   if self:HasPopStarPickUp() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).PopStarPickUp, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.PopStarPickUp, nil)
   end
 end
-
-

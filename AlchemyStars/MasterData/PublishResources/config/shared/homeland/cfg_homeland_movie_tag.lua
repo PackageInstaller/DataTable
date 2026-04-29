@@ -1,21 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/homeland/cfg_homeland_movie_tag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Title = 2, MovieId = 3}
+local key = {
+  ID = 1,
+  Title = 2,
+  MovieId = 3
+}
 local config = {
-{1, "str_movie_tag_title_1", 
-{101, 102, 103}
-}
-, 
-{2, "str_movie_tag_title_2", 
-{104, 105, 106}
-}
-, 
-{3, "str_movie_tag_title_3", 
-{201, 202, 203}
-}
+  {
+    1,
+    "str_movie_tag_title_1",
+    {
+      101,
+      102,
+      103
+    }
+  },
+  {
+    2,
+    "str_movie_tag_title_2",
+    {
+      104,
+      105,
+      106
+    }
+  },
+  {
+    3,
+    "str_movie_tag_title_3",
+    {
+      201,
+      202,
+      203
+    }
+  }
 }
 return config, "ID", key
-

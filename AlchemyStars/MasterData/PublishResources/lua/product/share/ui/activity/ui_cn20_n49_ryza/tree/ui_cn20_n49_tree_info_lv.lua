@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/tree/ui_cn20_n49_tree_info_lv.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49TreeInfoLv", UICustomWidget)
 UICN20N49TreeInfoLv = UICN20N49TreeInfoLv
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49TreeInfoLv.OnShow = function(self)
-  -- function num : 0_0
+function UICN20N49TreeInfoLv:OnShow()
   self._select = self:GetGameObject("Select")
   self._lv = self:GetGameObject("Lv")
   self._lvTex = self:GetUIComponent("UILocalizationText", "LvTex")
@@ -17,27 +10,16 @@ UICN20N49TreeInfoLv.OnShow = function(self)
   self._down = self:GetGameObject("down")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeInfoLv.SetData = function(self, lv, currentLv, desc)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._lv):SetActive(lv ~= nil)
+function UICN20N49TreeInfoLv:SetData(lv, currentLv, desc)
+  self._lv:SetActive(lv ~= nil)
   if lv then
-    (self._lvTex):SetText((StringTable.Get)("str_cn20_n49_tree_skil_info_lv", lv))
-    ;
-    (self._select):SetActive(lv <= currentLv)
-    ;
-    (self._descTex):SetText(desc)
+    self._lvTex:SetText(StringTable.Get("str_cn20_n49_tree_skil_info_lv", lv))
+    self._select:SetActive(lv <= currentLv)
+    self._descTex:SetText(desc)
   else
-    (self._descTex2):SetText(desc)
+    self._descTex2:SetText(desc)
   end
-  ;
-  ((self._descTex2).gameObject):SetActive(lv == nil)
-  ;
-  ((self._descTex).gameObject):SetActive(lv ~= nil)
-  ;
-  (self._down):SetActive(lv ~= nil)
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  self._descTex2.gameObject:SetActive(lv == nil)
+  self._descTex.gameObject:SetActive(lv ~= nil)
+  self._down:SetActive(lv ~= nil)
 end
-
-

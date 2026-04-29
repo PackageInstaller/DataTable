@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_visit_friend_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeVisitFriendItem", UICustomWidget)
 UIHomeVisitFriendItem = UIHomeVisitFriendItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeVisitFriendItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeVisitFriendItem:OnShow(uiParams)
   self:InitWidget()
   local atlas = self:GetAsset("UIHomelandVisit.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriendItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeVisitFriendItem:InitWidget()
   self.nickName = self:GetUIComponent("UILocalizationText", "nickName")
   self.level = self:GetUIComponent("UILocalizationText", "level")
   self.time = self:GetUIComponent("UILocalizationText", "time")
@@ -36,73 +26,44 @@ UIHomeVisitFriendItem.InitWidget = function(self)
   self.empty = self:GetGameObject("empty")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriendItem.SetData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.nickName):SetText(data:Name())
-  ;
-  (self.level):SetText("Lv." .. data:Level())
-  ;
-  (self.time):SetText(data:OnlineInfo())
-  ;
-  (self._ambient):SetText(data:LivableValue())
+function UIHomeVisitFriendItem:SetData(data)
+  self.nickName:SetText(data:Name())
+  self.level:SetText("Lv." .. data:Level())
+  self.time:SetText(data:OnlineInfo())
+  self._ambient:SetText(data:LivableValue())
   local head, headbg, headbox = data:HeadIcon()
-  local headCfg = (Cfg.cfg_role_head_image)[head]
-  ;
-  (self._head):LoadImage(headCfg.Icon)
-  local head_bg_cfg = (Cfg.cfg_player_head_bg)[headbg]
-  if not head_bg_cfg then
-    head_bg_cfg = (Cfg.cfg_player_head_bg)[(HelperProxy:GetInstance()):GetHeadBgDefaultID()]
+  local headCfg = Cfg.cfg_role_head_image[head]
+  self._head:LoadImage(headCfg.Icon)
+  local head_bg_cfg = Cfg.cfg_player_head_bg[headbg]
+  head_bg_cfg = head_bg_cfg or Cfg.cfg_player_head_bg[HelperProxy:GetInstance():GetHeadBgDefaultID()]
+  self._headBg:LoadImage(head_bg_cfg.Icon)
+  local head_frame_cfg = Cfg.cfg_role_head_frame[headbox]
+  head_frame_cfg = head_frame_cfg or Cfg.cfg_role_head_frame[HelperProxy:GetInstance():GetHeadFrameDefaultID()]
+  self._headBox:LoadImage(head_frame_cfg.Icon)
+  if not string.isnullorempty(headCfg.Tag) then
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._headRect, headCfg.Tag)
   end
-  ;
-  (self._headBg):LoadImage(head_bg_cfg.Icon)
-  local head_frame_cfg = (Cfg.cfg_role_head_frame)[headbox]
-  if not head_frame_cfg then
-    head_frame_cfg = (Cfg.cfg_role_head_frame)[(HelperProxy:GetInstance()):GetHeadFrameDefaultID()]
-  end
-  ;
-  (self._headBox):LoadImage(head_frame_cfg.Icon)
-  if not (string.isnullorempty)(headCfg.Tag) then
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._headRect, headCfg.Tag)
-  end
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self._headBgRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self._headBgMaskRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self.headBoxRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self._headRoot, RoleHeadFrameSizeType.Size7)
-  ;
-  (self.gift):SetActive(data:CanGetGift())
-  ;
-  (self.speedup):SetActive(data:CanSpeedup())
-  ;
-  (self.water):SetActive(data:CanWater())
-  ;
-  (self.empty):SetActive((not data:CanGetGift() and not data:CanSpeedup() and not data:CanWater()))
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self._headBgRect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self._headBgMaskRect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self.headBoxRect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self._headRoot, RoleHeadFrameSizeType.Size7)
+  self.gift:SetActive(data:CanGetGift())
+  self.speedup:SetActive(data:CanSpeedup())
+  self.water:SetActive(data:CanWater())
+  self.empty:SetActive(not data:CanGetGift() and not data:CanSpeedup() and not data:CanWater())
   self._pstID = data:PstID()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriendItem.VisitOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-  local isVisit = (uiModule:GetClient()):IsVisit()
+function UIHomeVisitFriendItem:VisitOnClick(go)
+  local uiModule = GameGlobal.GetUIModule(HomelandModule)
+  local isVisit = uiModule:GetClient():IsVisit()
   if isVisit then
-    if (uiModule:GetVisitInfo()).pstid == self._pstID then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_visit_already_in"))
+    if uiModule:GetVisitInfo().pstid == self._pstID then
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_visit_already_in"))
     else
-      ;
-      (HomeLoading.VisitToVisit)(self._pstID)
+      HomeLoading.VisitToVisit(self._pstID)
     end
   else
-    ;
-    (HomeLoading.SelfToVisit)(self._pstID)
+    HomeLoading.SelfToVisit(self._pstID)
   end
 end
-
-

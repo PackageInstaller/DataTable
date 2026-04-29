@@ -1,73 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_convert_occupied_grid_element_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseConvertOccupiedGridElementParam", SkillPhaseParamBase)
 SkillPhaseConvertOccupiedGridElementParam = SkillPhaseConvertOccupiedGridElementParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseConvertOccupiedGridElementParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseConvertOccupiedGridElementParam:Constructor(t)
   self._gridEffectID = t.gridEffectID
   self._bestEffectTime = t.bestEffectTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertOccupiedGridElementParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseConvertOccupiedGridElementParam:GetCacheTable()
   local t = {}
   if self._gridEffectID and self._gridEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    }
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1}
+  if self._hitEffectID and 0 < self._hitEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertOccupiedGridElementParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseConvertOccupiedGridElementParam:GetPhaseType()
   return SkillViewPhaseType.ConvertOccupiedGridPhase
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertOccupiedGridElementParam.GetSoundCacheTable = function(self)
-  -- function num : 0_3
+function SkillPhaseConvertOccupiedGridElementParam:GetSoundCacheTable()
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertOccupiedGridElementParam.GetVoiceCacheTable = function(self)
-  -- function num : 0_4
+function SkillPhaseConvertOccupiedGridElementParam:GetVoiceCacheTable()
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertOccupiedGridElementParam.GetBestEffectTime = function(self)
-  -- function num : 0_5
+function SkillPhaseConvertOccupiedGridElementParam:GetBestEffectTime()
   return self._bestEffectTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertOccupiedGridElementParam.GetGridEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseConvertOccupiedGridElementParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertOccupiedGridElementParam.GetBestEffectTime = function(self)
-  -- function num : 0_7
+function SkillPhaseConvertOccupiedGridElementParam:GetBestEffectTime()
   return self._bestEffectTime
 end
-
-

@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_build_room/aircraft_build_need_mat.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircrafBuildNeedMat", Object)
 AircrafBuildNeedMat = AircrafBuildNeedMat
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircrafBuildNeedMat.Constructor = function(self)
-  -- function num : 0_0
+function AircrafBuildNeedMat:Constructor()
   self._matID = 0
   self._count = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircrafBuildNeedMat.Init = function(self, matID, count)
-  -- function num : 0_1
+function AircrafBuildNeedMat:Init(matID, count)
   self._matID = matID
   self._count = count
 end
-
-

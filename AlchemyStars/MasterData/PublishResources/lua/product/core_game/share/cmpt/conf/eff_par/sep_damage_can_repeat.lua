@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_can_repeat.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillDamageCanRepeatEffectParam", SkillDamageEffectParam)
 SkillDamageCanRepeatEffectParam = SkillDamageCanRepeatEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillDamageCanRepeatEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillDamageCanRepeatEffectParam:Constructor(t)
   self._dampPer = t.dampPer
   self._dampMax = t.dampMax
   self._finalEffectType = t.finalEffectType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageCanRepeatEffectParam.GetDampPer = function(self)
-  -- function num : 0_1
+function SkillDamageCanRepeatEffectParam:GetDampPer()
   return self._dampPer
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageCanRepeatEffectParam.GetDampMax = function(self)
-  -- function num : 0_2
+function SkillDamageCanRepeatEffectParam:GetDampMax()
   return self._dampMax
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageCanRepeatEffectParam.GetFinalEffectType = function(self)
-  -- function num : 0_3
+function SkillDamageCanRepeatEffectParam:GetFinalEffectType()
   return self._finalEffectType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageCanRepeatEffectParam.GetEffectType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillDamageCanRepeatEffectParam:GetEffectType()
   return SkillEffectType.DamageTargetCanRepeat
 end
-
-

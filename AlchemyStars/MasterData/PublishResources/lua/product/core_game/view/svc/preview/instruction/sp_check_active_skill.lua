@@ -1,38 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_check_active_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewCheckActiveSkillInstruction", SkillPreviewBaseInstruction)
 SkillPreviewCheckActiveSkillInstruction = SkillPreviewCheckActiveSkillInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewCheckActiveSkillInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewCheckActiveSkillInstruction:Constructor(params)
   self._skillID = tonumber(params.skillID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewCheckActiveSkillInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewCheckActiveSkillInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local utilData = world:GetService("UtilData")
   local renderBoardEntity = world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local checkSkillID = self._skillID
-  if not checkSkillID then
-    checkSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-  end
-  local resultCommon, tmp, commonReason = utilData:CheckActiveSkillCastCondition((casterEntity:PetPstID()):GetPstID(), checkSkillID)
+  checkSkillID = checkSkillID or pickUpTargetCmpt:GetCurActiveSkillID()
+  local resultCommon, tmp, commonReason = utilData:CheckActiveSkillCastCondition(casterEntity:PetPstID():GetPstID(), checkSkillID)
   local fin = resultCommon
-  local presentReason = nil
+  local presentReason
   if not resultCommon then
     presentReason = commonReason
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleUIRefreshActiveSkillCastButtonState, fin, presentReason)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleUIRefreshActiveSkillCastButtonState, fin, presentReason)
 end
-
-

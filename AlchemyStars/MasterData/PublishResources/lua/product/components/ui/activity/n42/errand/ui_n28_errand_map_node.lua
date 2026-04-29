@@ -1,113 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/errand/ui_n28_errand_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28ErrandMapNode", UICustomWidget)
 UIN28ErrandMapNode = UIN28ErrandMapNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28ErrandMapNode.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UIN28ErrandMapNode:OnShow(uiParams)
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self.atlas = self:GetAsset("UIN28Errand.spriteatlas", LoadType.SpriteAtlas)
   self._anim = self:GetUIComponent("Animation", "anim")
   self._go = self:GetGameObject()
-  ;
-  (self._go):SetActive(false)
+  self._go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._matReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq)
+function UIN28ErrandMapNode:Destroy()
+  self._matReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode.SetData = function(self, lineCfg, passInfo, cb, unlock, yieldTime)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28ErrandMapNode:SetData(lineCfg, passInfo, cb, unlock, yieldTime)
   self._missionID = lineCfg.CampaignMissionId
   self._callback = cb
   self._unlock = unlock
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
   self:_SetRectTransform(lineCfg)
   local missionType = missionCfg.Type
-  local cfg_c_line_mission = ((Cfg.cfg_component_line_mission)({CampaignMissionId = self._missionID}))[1]
-  if cfg_c_line_mission.CustomParams then
-    local param = (cfg_c_line_mission.CustomParams)[1]
-  end
+  local cfg_c_line_mission = Cfg.cfg_component_line_mission({
+    CampaignMissionId = self._missionID
+  })[1]
+  local param = cfg_c_line_mission.CustomParams and cfg_c_line_mission.CustomParams[1]
   if param and next(param) and param[1] == 2 and missionType == DiscoveryStageType.FightNormal then
     missionType = 4
   end
   self:_SetState(missionType)
-  self:_SetName_TMP(missionCfg.Type, (StringTable.Get)(missionCfg.Name))
+  self:_SetName_TMP(missionCfg.Type, StringTable.Get(missionCfg.Name))
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
   self.missionType = missionCfg.Type
   self:_SetStar(passInfo)
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
-  self._event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._go):SetActive(true)
-  end
-)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._event = GameGlobal.Timer():AddEvent(yieldTime, function()
+    self._go:SetActive(true)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode._SetRectTransform = function(self, lineCfg)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+function UIN28ErrandMapNode:_SetRectTransform(lineCfg)
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN28ErrandMapNode:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
   if self._cliclEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._cliclEvent)
+    GameGlobal.Timer():CancelEvent(self._cliclEvent)
     self._cliclEvent = nil
   end
   self:UnLock("UIN28ErrandMapNode:BtnOnClick")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode._SetName = function(self, state, text)
-  -- function num : 0_5 , upvalues : _ENV
-  local tb = {"name_normal", "name_boss", "name_plot"}
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, tb[state], text)
+function UIN28ErrandMapNode:_SetName(state, text)
+  local tb = {
+    "name_normal",
+    "name_boss",
+    "name_plot"
+  }
+  UIWidgetHelper.SetLocalizationText(self, tb[state], text)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode._SetName_TMP = function(self, state, text)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN28ErrandMapNode:_SetName_TMP(state, text)
   local nameTex_boss = self:GetUIComponent("UILocalizationText", "name_boss")
   local nameTex_norm = self:GetUIComponent("UILocalizationText", "name_normal")
   local nameTex_plot = self:GetUIComponent("UILocalizationText", "name_plot")
@@ -124,84 +87,71 @@ UIN28ErrandMapNode._SetName_TMP = function(self, state, text)
   else
     nameTex_boss:SetText(text)
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode._SetState = function(self, state)
-  -- function num : 0_7 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"bg_normal", "name_normal", "star"}
-, 
-{"bg_boss", "name_boss", "star"}
-, 
-{"bg_plot", "name_plot"}
-, 
-{"bg_normal2", "name_normal", "star"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIN28ErrandMapNode:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "bg_normal",
+      "name_normal",
+      "star"
+    },
+    {
+      "bg_boss",
+      "name_boss",
+      "star"
+    },
+    {"bg_plot", "name_plot"},
+    {
+      "bg_normal2",
+      "name_normal",
+      "star"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode._SetStar = function(self, passInfo)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN28ErrandMapNode:_SetStar(passInfo)
   local missionModule = self:GetModule(MissionModule)
   local stars = passInfo and missionModule:ParseStarInfo(passInfo.star) or 0
-  local tb = {self:GetGameObject("Star1"), self:GetGameObject("Star2"), self:GetGameObject("Star3")}
+  local tb = {
+    self:GetGameObject("Star1"),
+    self:GetGameObject("Star2"),
+    self:GetGameObject("Star3")
+  }
   for i = 1, 3 do
-    local pass = i <= stars
-    ;
-    (tb[i]):SetActive(pass)
+    local pass = stars >= i
+    tb[i]:SetActive(pass)
   end
   local lockGo = self:GetGameObject("lockGo")
   lockGo:SetActive(not self._unlock)
   self._selectGo = self:GetGameObject("selectGo")
-  ;
-  (self._selectGo):SetActive(false)
+  self._selectGo:SetActive(false)
   local localdbMissionKey = "UIN28ErrandSideEnter_Mission"
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local mission_key = localdbMissionKey .. self._missionID .. openID
-  local mission_val = (LocalDB.GetInt)(mission_key, 0)
+  local mission_val = LocalDB.GetInt(mission_key, 0)
   self._redGo = self:GetGameObject("red")
-  ;
-  (self._redGo):SetActive((mission_val == 0 and self._unlock))
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._redGo:SetActive(mission_val == 0 and self._unlock)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode.Select = function(self, missionID)
-  -- function num : 0_9
-  (self._selectGo):SetActive(missionID == self._missionID)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN28ErrandMapNode:Select(missionID)
+  self._selectGo:SetActive(missionID == self._missionID)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandMapNode.BtnOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN28ErrandMapNode:BtnOnClick(go)
   if self._unlock then
     self:Lock("UIN28ErrandMapNode:BtnOnClick")
     if self._cliclEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._cliclEvent)
+      GameGlobal.Timer():CancelEvent(self._cliclEvent)
       self._cliclEvent = nil
     end
-    ;
-    (self._anim):Play("uieff_UIN28ErrandMapNode_xuanzhong")
-    self._cliclEvent = ((GameGlobal.Timer)()):AddEvent(300, function()
-    -- function num : 0_10_0 , upvalues : self
-    self:UnLock("UIN28ErrandMapNode:BtnOnClick")
-    ;
-    (self._callback)(self._missionID, self._isStoryNode, (self._rectTransform).position)
-    ;
-    (self._redGo):SetActive(false)
-  end
-)
+    self._anim:Play("uieff_UIN28ErrandMapNode_xuanzhong")
+    self._cliclEvent = GameGlobal.Timer():AddEvent(300, function()
+      self:UnLock("UIN28ErrandMapNode:BtnOnClick")
+      self._callback(self._missionID, self._isStoryNode, self._rectTransform.position)
+      self._redGo:SetActive(false)
+    end)
   end
 end
-
-

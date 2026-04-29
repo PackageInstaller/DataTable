@@ -1,49 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_double_row_col_spread.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_DoubleNRowMColSpread", SkillScopeCalculator_Base)
 SkillScopeCalculator_DoubleNRowMColSpread = SkillScopeCalculator_DoubleNRowMColSpread
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_DoubleNRowMColSpread.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_DoubleNRowMColSpread:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local scopeParam1 = {}
-  ;
-  (table.insert)(scopeParam1, scopeParam[1])
-  ;
-  (table.insert)(scopeParam1, scopeParam[2])
-  ;
-  (table.insert)(scopeParam1, scopeParam[3])
+  table.insert(scopeParam1, scopeParam[1])
+  table.insert(scopeParam1, scopeParam[2])
+  table.insert(scopeParam1, scopeParam[3])
   local targetArea1, wholeArea1 = self:_CalcNRowMColSpread(scopeParam1, centerPos, bodyArea)
   local scopeParam2 = {}
-  ;
-  (table.insert)(scopeParam2, scopeParam[4])
-  ;
-  (table.insert)(scopeParam2, scopeParam[5])
-  ;
-  (table.insert)(scopeParam2, scopeParam[6])
+  table.insert(scopeParam2, scopeParam[4])
+  table.insert(scopeParam2, scopeParam[5])
+  table.insert(scopeParam2, scopeParam[6])
   local targetArea2, wholeArea2 = self:_CalcNRowMColSpread(scopeParam2, centerPos, bodyArea)
   local targetArea = {}
   local wholeArea = {}
-  ;
-  (table.appendArray)(targetArea, targetArea1)
-  ;
-  (table.appendArray)(wholeArea, wholeArea1)
-  for _,pos in ipairs(targetArea2) do
-    if not (table.intable)(targetArea1, pos) then
-      (table.insert)(targetArea, pos)
+  table.appendArray(targetArea, targetArea1)
+  table.appendArray(wholeArea, wholeArea1)
+  for _, pos in ipairs(targetArea2) do
+    if not table.intable(targetArea1, pos) then
+      table.insert(targetArea, pos)
     end
   end
-  for _,pos in ipairs(wholeArea2) do
-    if not (table.intable)(wholeArea1, pos) then
-      (table.insert)(wholeArea, pos)
+  for _, pos in ipairs(wholeArea2) do
+    if not table.intable(wholeArea1, pos) then
+      table.insert(wholeArea, pos)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.NRowsMColumns, centerPos, targetArea, wholeArea)
   return result
 end
-
-

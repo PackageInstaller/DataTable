@@ -1,21 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2904501/cfg_skill_view_290450102.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterTurnToTargetGrid; PlayCasterAnimation,animName=Skill2; PlayCasterBindEffect,effectID = 2461; PlayAudio,audioID = 2276; PlayChangeBuffLayer; PlayDeleteWaringArea; Wait,waitTime=5333; "}
-}
-, 
-{2, 2, 0, 1, 1, 3300, 
-{" PlayEffectOffsetScopeCenter,effectID=2462,offset=0|0; "}
-}
-, 
-{3, 3, 0, 1, 1, 4300, 
-{" DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=doAgain; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterTurnToTargetGrid; PlayCasterAnimation,animName=Skill2; PlayCasterBindEffect,effectID = 2461; PlayAudio,audioID = 2276; PlayChangeBuffLayer; PlayDeleteWaringArea; Wait,waitTime=5333; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    3300,
+    {
+      " PlayEffectOffsetScopeCenter,effectID=2462,offset=0|0; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    4300,
+    {
+      " DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0,label=doAgain; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "
+    }
+  }
 }
 return config, "ID", key
-

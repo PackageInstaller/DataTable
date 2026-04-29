@@ -1,70 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_target_edge_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByTargetEdgeDistance", BuffLogicBase)
 BuffLogicChangeSkillFinalByTargetEdgeDistance = BuffLogicChangeSkillFinalByTargetEdgeDistance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByTargetEdgeDistance.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillFinalByTargetEdgeDistance:Constructor(buffInstance, logicParam)
   self._distanceRateMap = logicParam.distanceRateMap
   self._effectList = logicParam.effectList
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount = 0
+  self._buffInstance.BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByTargetEdgeDistance.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount = (self._buffInstance).BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount + 1
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = self._effectList
+function BuffLogicChangeSkillFinalByTargetEdgeDistance:DoLogic(notify)
+  self._buffInstance.BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount = self._buffInstance.BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount + 1
+  self._buffInstance._effectList = self._effectList
   if not notify then
-    (Log.error)(self._className, "notify required. ")
+    Log.error(self._className, "notify required. ")
     return false
   end
-  local def = (notify:GetDefenderEntity())
-  -- DECOMPILER ERROR at PC19: Overwrote pending register: R3 in 'AssignReg'
-
-  local eDef = .end
+  local def = notify:GetDefenderEntity()
+  local eDef
   if type(def) == "number" then
-    eDef = (self._world):GetEntityByID(def)
-  else
-    if Entity:IsInstanceOfType(def) then
-      eDef = def
-    end
+    eDef = self._world:GetEntityByID(def)
+  elseif Entity:IsInstanceOfType(def) then
+    eDef = def
   end
   local pos = notify:GetTargetPos()
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local cBoard = boardEntity:Board()
-  ;
-  (Log.info)(self._className, "targetPos: ", tostring(pos))
+  Log.info(self._className, "targetPos: ", tostring(pos))
   local disX, disY = cBoard:GetGridEdgeDistance(pos)
   if not disX or not disY then
-    (Log.warn)(self._className, "targetPos grid edge distance failed: ", tostring(disX), " ", tostring(disY))
+    Log.warn(self._className, "targetPos grid edge distance failed: ", tostring(disX), " ", tostring(disY))
     return false
   end
   local a = disX + disY + 1
-  local rate = (self._distanceRateMap)[a]
+  local rate = self._distanceRateMap[a]
   if not rate then
-    (Log.info)(self._className, "empty rate: distanceX = ", disX, " distanceY = ", disY)
+    Log.info(self._className, "empty rate: distanceX = ", disX, " distanceY = ", disY)
     return false
   end
   rate = rate * 0.01
-  ;
-  (Log.info)(self._className, "rate: ", rate, "distanceX = ", disX, " distanceY = ", disY)
-  local val = rate * (self._buffInstance).BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount
-  for _,paramType in ipairs(self._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, val)
+  Log.info(self._className, "rate: ", rate, "distanceX = ", disX, " distanceY = ", disY)
+  local val = rate * self._buffInstance.BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, val)
   end
   local result = BuffResultChangeSkillFinalByTargetEdgeDistance:New(rate, self._effectList, val)
   return result
@@ -72,24 +48,14 @@ end
 
 _class("BuffLogicRevertSkillFinalByTargetEdgeDistance", BuffLogicBase)
 BuffLogicRevertSkillFinalByTargetEdgeDistance = BuffLogicRevertSkillFinalByTargetEdgeDistance
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertSkillFinalByTargetEdgeDistance.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount = 0
-  if not self._buffInstance or not (self._buffInstance)._effectList then
-    (Log.error)(self._className, "unexcepted buff instance data")
+function BuffLogicRevertSkillFinalByTargetEdgeDistance:DoLogic()
+  self._buffInstance.BuffLogicChangeSkillFinalByTargetEdgeDistance_RunCount = 0
+  if not self._buffInstance or not self._buffInstance._effectList then
+    Log.error(self._className, "unexcepted buff instance data")
   end
-  ;
-  (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillParamType.NormalSkill)
-  ;
-  (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillParamType.ChainSkill)
-  ;
-  (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillParamType.ActiveSkill)
-  ;
-  (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillParamType.MonsterDamage)
+  self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillParamType.NormalSkill)
+  self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillParamType.ChainSkill)
+  self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillParamType.ActiveSkill)
+  self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), ModifySkillParamType.MonsterDamage)
 end
-
-

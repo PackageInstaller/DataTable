@@ -1,59 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/shop/ui_n33_tab_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN33TabItem", UICustomWidget)
 UIN33TabItem = UIN33TabItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33TabItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN33TabItem:OnShow(uiParams)
   self:_GetComponents()
   self._animCfg = {
-[1] = {"uieff_UIN33TabItem_in", 333.33333333333}
-, 
-[2] = {"uieff_UIN33TabItem_select_in", 300}
-, 
-[3] = {"uieff_UIN33TabItem_select_out", 266.66666666667}
-}
+    [1] = {
+      "uieff_UIN33TabItem_in",
+      333.3333333333333
+    },
+    [2] = {
+      "uieff_UIN33TabItem_select_in",
+      300.0
+    },
+    [3] = {
+      "uieff_UIN33TabItem_select_out",
+      266.6666666666667
+    }
+  }
   self._isSelected = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33TabItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN33TabItem:OnHide()
   if self._inAnimTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._inAnimTask)
+    GameGlobal.TaskManager():KillTask(self._inAnimTask)
     self._inAnimTask = nil
   end
   if self._animTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._animTask)
+    GameGlobal.TaskManager():KillTask(self._animTask)
     self._animTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33TabItem.InitData = function(self, idx, islock, isbigEmpty, leftNum, callback, yieldTime)
-  -- function num : 0_2
+function UIN33TabItem:InitData(idx, islock, isbigEmpty, leftNum, callback, yieldTime)
   self._id = idx
   self._islock = islock
   self._isbigEmpty = isbigEmpty
   self._leftNum = leftNum
   self._callback = callback
   self:_FillUi()
-  if yieldTime >= 0 then
-    (self._goAnim):SetActive(false)
+  if 0 <= yieldTime then
+    self._goAnim:SetActive(false)
     self:ShowInAnim(yieldTime)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33TabItem._GetComponents = function(self)
-  -- function num : 0_3
+function UIN33TabItem:_GetComponents()
   self._inAnim = self:GetUIComponent("Animation", "inAnim")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._goAnim = self:GetGameObject("anim")
@@ -66,94 +57,64 @@ UIN33TabItem._GetComponents = function(self)
   self._goSelect = self:GetGameObject("GoSelect")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33TabItem._FillUi = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local uiCfg = (Cfg.cfg_n33_shop_ui)[self._id]
+function UIN33TabItem:_FillUi()
+  local uiCfg = Cfg.cfg_n33_shop_ui[self._id]
   if not uiCfg then
-    return 
+    return
   end
-  ;
-  (self._goLock):SetActive(self._islock)
-  ;
-  (self._goUnlock):SetActive(not self._islock)
+  self._goLock:SetActive(self._islock)
+  self._goUnlock:SetActive(not self._islock)
   if self._islock then
-    (self._imgBabyJianYing):LoadImage(uiCfg.DollShadowImage)
+    self._imgBabyJianYing:LoadImage(uiCfg.DollShadowImage)
   else
-    ;
-    (self._imgBaby):LoadImage(uiCfg.DollImage)
-    ;
-    (self._textLeftNum):SetText((StringTable.Get)("str_n33_shop_tab_left_item_number") .. self._leftNum)
-    ;
-    (self._goBig):SetActive(self._isbigEmpty)
+    self._imgBaby:LoadImage(uiCfg.DollImage)
+    self._textLeftNum:SetText(StringTable.Get("str_n33_shop_tab_left_item_number") .. self._leftNum)
+    self._goBig:SetActive(self._isbigEmpty)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33TabItem.ChangeSelect = function(self, show, yieldTime)
-  -- function num : 0_5
-  if yieldTime > 0 and show then
-    self:ShowAnim(2, yieldTime)
-    self._isSelected = true
-  end
-  if not self._isSelected and show then
-    self:ShowAnim(2, yieldTime)
-    self._isSelected = true
-  else
-    if self._isSelected and not show then
-      self:ShowAnim(3, yieldTime)
-      self._isSelected = false
+function UIN33TabItem:ChangeSelect(show, yieldTime)
+  if 0 < yieldTime then
+    if show then
+      self:ShowAnim(2, yieldTime)
+      self._isSelected = true
     end
+  elseif not self._isSelected and show then
+    self:ShowAnim(2, yieldTime)
+    self._isSelected = true
+  elseif self._isSelected and not show then
+    self:ShowAnim(3, yieldTime)
+    self._isSelected = false
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33TabItem.BgOnClick = function(self, go)
-  -- function num : 0_6
+function UIN33TabItem:BgOnClick(go)
   if self._callback then
-    (self._callback)(self._id)
+    self._callback(self._id)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33TabItem.ShowInAnim = function(self, yieldTime)
-  -- function num : 0_7 , upvalues : _ENV
-  local data = (self._animCfg)[1]
+function UIN33TabItem:ShowInAnim(yieldTime)
+  local data = self._animCfg[1]
   self._inAnimTask = self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, yieldTime, self, data
     YIELD(TT, yieldTime)
-    ;
-    (self._goAnim):SetActive(true)
-    ;
-    (self._inAnim):Play(data[1])
+    self._goAnim:SetActive(true)
+    self._inAnim:Play(data[1])
     YIELD(TT, data[2])
     self._inAnimTask = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33TabItem.ShowAnim = function(self, id, yieldTime)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN33TabItem:ShowAnim(id, yieldTime)
   if self._animTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._animTask)
+    GameGlobal.TaskManager():KillTask(self._animTask)
     self._animTask = nil
   end
-  local data = (self._animCfg)[id]
+  local data = self._animCfg[id]
   self._animTask = self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : _ENV, yieldTime, self, data
     YIELD(TT, yieldTime)
-    ;
-    (self._anim):Play(data[1])
+    self._anim:Play(data[1])
     YIELD(TT, data[2])
     self._animTask = nil
-  end
-)
+  end)
 end
-
-

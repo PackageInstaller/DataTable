@@ -1,40 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/main/ui_activity_n4_level_effect_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4LevelEffController", UIController)
 UIActivityN4LevelEffController = UIActivityN4LevelEffController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4LevelEffController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN4LevelEffController:OnShow(uiParams)
   self:InitWidget()
   local data = uiParams[1]
   local context = uiParams[2]
   local closeCb = uiParams[3]
-  ;
-  (self._levelRoot):SetData(data, context, nil, true)
-  ;
-  (self._levelRoot):PlaySelectAni()
+  self._levelRoot:SetData(data, context, nil, true)
+  self._levelRoot:PlaySelectAni()
   self:StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, closeCb, self
     YIELD(TT, 1233)
     if closeCb then
       closeCb()
     end
     YIELD(TT, 66)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4LevelEffController.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN4LevelEffController:InitWidget()
   local levelRootPool = self:GetUIComponent("UISelectObjectPath", "levelRoot")
   self._levelRoot = levelRootPool:SpawnObject("UIActivityN4CCLevelItem")
 end
-
-

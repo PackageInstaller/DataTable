@@ -1,67 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_on_hitback_position.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonOnHitbackPosition", Object)
 SkillEffectCalc_SummonOnHitbackPosition = SkillEffectCalc_SummonOnHitbackPosition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonOnHitbackPosition.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SummonOnHitbackPosition:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonOnHitbackPosition.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local trapID = (skillEffectCalcParam.skillEffectParam):GetTrapID()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local routineComponent = (casterEntity:SkillContext()):GetResultContainer()
+function SkillEffectCalc_SummonOnHitbackPosition:DoSkillEffectCalculator(skillEffectCalcParam)
+  local trapID = skillEffectCalcParam.skillEffectParam:GetTrapID()
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local routineComponent = casterEntity:SkillContext():GetResultContainer()
   local resultsArray = routineComponent:GetEffectResultsAsArray(SkillEffectType.HitBack)
   if not resultsArray then
     return {}
   end
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local summonTrapResultArray = {}
-  for _,hitbackResult in ipairs(resultsArray) do
+  for _, hitbackResult in ipairs(resultsArray) do
     local hitbackStartPos = hitbackResult:GetStartPos()
     local hitbackTargetPos = hitbackResult:GetGridPos()
     if hitbackStartPos ~= hitbackTargetPos then
       local direction = hitbackStartPos - hitbackTargetPos
       if direction.x > 1 then
         direction.x = 1
-      else
-        if direction.x < -1 then
-          direction.x = -1
-        end
+      elseif direction.x < -1 then
+        direction.x = -1
       end
-      if direction.y > 1 then
+      if 1 < direction.y then
         direction.y = 1
-      else
-        if direction.y < -1 then
-          direction.y = -1
-        end
+      elseif -1 > direction.y then
+        direction.y = -1
       end
       local trapPos = hitbackTargetPos + direction
       if trapServiceLogic:CanSummonTrapOnPos(trapPos, trapID) then
-        (table.insert)(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, trapPos))
+        table.insert(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, trapPos))
       end
-      if (skillEffectCalcParam.skillEffectParam):IsSummonOnSides() then
-        local reverseDir = (Vector2.New)(direction.y, direction.x)
+      if skillEffectCalcParam.skillEffectParam:IsSummonOnSides() then
+        local reverseDir = Vector2.New(direction.y, direction.x)
         local posAlpha = hitbackTargetPos + reverseDir
         if trapServiceLogic:CanSummonTrapOnPos(posAlpha, trapID) then
-          (table.insert)(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, posAlpha))
+          table.insert(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, posAlpha))
         end
         local posBeta = hitbackTargetPos - reverseDir
         if trapServiceLogic:CanSummonTrapOnPos(posBeta, trapID) then
-          (table.insert)(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, posBeta))
+          table.insert(summonTrapResultArray, SkillSummonTrapEffectResult:New(trapID, posBeta))
         end
       end
     end
   end
   return summonTrapResultArray
 end
-
-

@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_get_phy_point/ui_get_phy_point_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGetPhyPointTipsController", UIController)
 UIGetPhyPointTipsController = UIGetPhyPointTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGetPhyPointTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIGetPhyPointTipsController:OnShow(uiParams)
   self._right_data = uiParams[1]
   local rightList = {}
-  for index,value in ipairs((self._right_data).begin_end) do
-    local _values = (string.split)(value, "|")
+  for index, value in ipairs(self._right_data.begin_end) do
+    local _values = string.split(value, "|")
     local _times_01 = tonumber(_values[1])
     local _times_02 = tonumber(_values[2])
     local _cost = tonumber(_values[3])
@@ -20,34 +13,26 @@ UIGetPhyPointTipsController.OnShow = function(self, uiParams)
     times[1] = _times_01
     times[2] = _times_02
     times[3] = _cost
-    ;
-    (table.insert)(rightList, times)
+    table.insert(rightList, times)
   end
   self._pools = self:GetUIComponent("UISelectObjectPath", "rect")
   self._tipsContent = self:GetUIComponent("UILocalizationText", "txt")
-  local maxCount = (self._right_data).max_times
-  ;
-  (self._tipsContent):SetText((StringTable.Get)("str_get_phy_point_bug_tips_content", maxCount))
-  local count = (table.count)(rightList)
-  ;
-  (self._pools):SpawnObjects("UIGetPhyPointTipsItem", count)
-  local items = (self._pools):GetAllSpawnList()
+  local maxCount = self._right_data.max_times
+  self._tipsContent:SetText(StringTable.Get("str_get_phy_point_bug_tips_content", maxCount))
+  local count = table.count(rightList)
+  self._pools:SpawnObjects("UIGetPhyPointTipsItem", count)
+  local items = self._pools:GetAllSpawnList()
   for i = 1, #items do
     local item = items[i]
-    local costID = (self._right_data).cost_id
-    local cfg_item = (Cfg.cfg_item)[costID]
+    local costID = self._right_data.cost_id
+    local cfg_item = Cfg.cfg_item[costID]
     local times = rightList[i]
-    local cost = (self._right_data).cost_count
+    local cost = self._right_data.cost_count
     local icon = cfg_item.Icon
     item:SetData(times, cost, icon)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointTipsController.bgOnClick = function(self)
-  -- function num : 0_1
+function UIGetPhyPointTipsController:bgOnClick()
   self:CloseDialog()
 end
-
-

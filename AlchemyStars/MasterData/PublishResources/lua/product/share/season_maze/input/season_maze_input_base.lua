@@ -1,45 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/input/season_maze_input_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeInputBase", Object)
 SeasonMazeInputBase = SeasonMazeInputBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeInputBase.Constructor = function(self, seasonID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._seasonMazeManger = ((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()
-  self._player = (self._seasonMazeManger):Player()
-  self._camera = ((self._seasonMazeManger):SeasonMazeCameraManager()):Camera()
-  self._seasonCamera = ((self._seasonMazeManger):SeasonMazeCameraManager()):SeasonCamera()
-  self._zoneFlagLayer = ((self._seasonMazeManger):SeasonMazeSceneManager()):GetLayer(SeasonSceneLayer.ZoneFlag)
-  self._input = (GameGlobal.EngineInput)()
+function SeasonMazeInputBase:Constructor(seasonID)
+  self._seasonMazeManger = GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager()
+  self._player = self._seasonMazeManger:Player()
+  self._camera = self._seasonMazeManger:SeasonMazeCameraManager():Camera()
+  self._seasonCamera = self._seasonMazeManger:SeasonMazeCameraManager():SeasonCamera()
+  self._zoneFlagLayer = self._seasonMazeManger:SeasonMazeSceneManager():GetLayer(SeasonSceneLayer.ZoneFlag)
+  self._input = GameGlobal.EngineInput()
   self._clickTime = 0.2
   self._clickDownTime = 0
   self._clickEffect = SeasonMazeInputEffect:New(seasonID)
   self._functionTag = "Function"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputBase.Update = function(self, deltaTime)
-  -- function num : 0_1
-  (self._clickEffect):Update(deltaTime)
+function SeasonMazeInputBase:Update(deltaTime)
+  self._clickEffect:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputBase.Dispose = function(self)
-  -- function num : 0_2
-  (self._clickEffect):Dispose()
+function SeasonMazeInputBase:Dispose()
+  self._clickEffect:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputBase.GetClickEffect = function(self)
-  -- function num : 0_3
+function SeasonMazeInputBase:GetClickEffect()
   return self._clickEffect
 end
-
-

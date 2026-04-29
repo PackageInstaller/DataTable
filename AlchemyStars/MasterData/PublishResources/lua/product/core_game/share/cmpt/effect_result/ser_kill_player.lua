@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_kill_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectKillPlayerResult", SkillEffectResultBase)
 SkillEffectKillPlayerResult = SkillEffectKillPlayerResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectKillPlayerResult.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectKillPlayerResult:GetEffectType()
   return SkillEffectType.KillPlayer
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectKillPlayerResult.Constructor = function(self, pathList, newGridList)
-  -- function num : 0_1
+function SkillEffectKillPlayerResult:Constructor(pathList, newGridList)
   self._pathList = pathList
   self._newGridList = newGridList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectKillPlayerResult.GetPathList = function(self)
-  -- function num : 0_2
+function SkillEffectKillPlayerResult:GetPathList()
   return self._pathList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectKillPlayerResult.GetNewGridList = function(self)
-  -- function num : 0_3
+function SkillEffectKillPlayerResult:GetNewGridList()
   return self._newGridList
 end
-
-

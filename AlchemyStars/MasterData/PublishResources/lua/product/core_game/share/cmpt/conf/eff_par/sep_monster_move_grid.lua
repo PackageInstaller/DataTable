@@ -1,31 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_monster_move_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectMonsterMoveGridParam", SkillEffectParamBase)
 SkillEffectMonsterMoveGridParam = SkillEffectMonsterMoveGridParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMonsterMoveGridParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectMonsterMoveGridParam:Constructor(t)
   self._enableAnyPiece = t.enableAnyPiece or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridParam.IsEnableAnyPiece = function(self)
-  -- function num : 0_1
-  do return self._enableAnyPiece == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillEffectMonsterMoveGridParam:IsEnableAnyPiece()
+  return self._enableAnyPiece == 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridParam.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectMonsterMoveGridParam:GetEffectType()
   return SkillEffectType.MonsterMoveGrid
 end
-
-

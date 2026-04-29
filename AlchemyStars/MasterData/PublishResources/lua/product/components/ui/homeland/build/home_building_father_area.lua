@@ -1,276 +1,202 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/home_building_father_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeBuildingFatherArea", Object)
 HomeBuildingFatherArea = HomeBuildingFatherArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeBuildingFatherArea.Constructor = function(self, areaTrans, fatherBuilding)
-  -- function num : 0_0 , upvalues : _ENV
+function HomeBuildingFatherArea:Constructor(areaTrans, fatherBuilding)
   self._trans = areaTrans
-  local area = (self._trans):GetComponent("HomeArea")
+  local area = self._trans:GetComponent("HomeArea")
   if not area then
-    BuildError(((self._trans).gameObject).name .. "节点上没有HomeArea组件")
-    return 
+    BuildError(self._trans.gameObject.name .. "节点上没有HomeArea组件")
+    return
   end
-  self._id = tonumber(((self._trans).gameObject).name)
+  self._id = tonumber(self._trans.gameObject.name)
   self._obstacleResMap = {}
   self._area = HomeBuildArea:New(area, self)
-  ;
-  (self._area):ShowArea(false)
+  self._area:ShowArea(false)
   self._fatherBuilding = fatherBuilding
   self._uncleanedHangPointList = {}
-  self:InitHangPoints((self._trans):Find("HangPoint"))
+  self:InitHangPoints(self._trans:Find("HangPoint"))
   self._questIDHangpointIDMap = {}
-  self._homelandTaskReceiveCallback = (GameHelper:GetInstance()):CreateCallback(self.RefreshTaskInfo, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.QuestUpdate, self._homelandTaskReceiveCallback)
+  self._homelandTaskReceiveCallback = GameHelper:GetInstance():CreateCallback(self.RefreshTaskInfo, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.QuestUpdate, self._homelandTaskReceiveCallback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,req in pairs(self._obstacleResMap) do
+function HomeBuildingFatherArea:Dispose()
+  for _, req in pairs(self._obstacleResMap) do
     req:Dispose()
   end
   self._obstacleResMap = nil
   self._uncleanedHangPointList = nil
   self._questIDHangpointIDMap = nil
   if self._homelandTaskReceiveCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.QuestUpdate, self._homelandTaskReceiveCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.QuestUpdate, self._homelandTaskReceiveCallback)
     self._homelandTaskReceiveCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.RefreshTaskInfo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomeBuildingFatherArea:RefreshTaskInfo()
   if not self._hangPointCfgID then
     self._hangPointCfgID = self:GetHangPointCfgID()
   end
-  for questID,id in pairs(self._questIDHangpointIDMap) do
-    local quest = ((GameGlobal.GetModule)(QuestModule)):GetQuest(questID)
-    if quest and QuestStatus.QUEST_Completed <= quest:Status() then
-      (self._fatherBuilding):AddInteractPoint_UniqueIndex(self._fatherBuilding, id, self._hangPointCfgID)
+  for questID, id in pairs(self._questIDHangpointIDMap) do
+    local quest = GameGlobal.GetModule(QuestModule):GetQuest(questID)
+    if quest and quest:Status() >= QuestStatus.QUEST_Completed then
+      self._fatherBuilding:AddInteractPoint_UniqueIndex(self._fatherBuilding, id, self._hangPointCfgID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.GetID = function(self)
-  -- function num : 0_3
+function HomeBuildingFatherArea:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.GetHomeArea = function(self)
-  -- function num : 0_4
+function HomeBuildingFatherArea:GetHomeArea()
   return self._area
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.GetObstacles = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomeBuildingFatherArea:GetObstacles()
   local list = {}
-  for _,resReq in pairs(self._obstacleResMap) do
+  for _, resReq in pairs(self._obstacleResMap) do
     list[#list + 1] = resReq.Obj
   end
   return list
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.InitHangPoints = function(self, hangPointTrans)
-  -- function num : 0_6 , upvalues : _ENV
+function HomeBuildingFatherArea:InitHangPoints(hangPointTrans)
   if not hangPointTrans then
-    return 
+    return
   end
-  local hangPointInfo = nil
-  local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-  if (uiModule:GetClient()):IsVisit() then
-    local info = (((uiModule:GetVisitInfo()).father_arch_info).infos)[(self._fatherBuilding):GetBuildId()]
+  local hangPointInfo
+  local uiModule = GameGlobal.GetUIModule(HomelandModule)
+  if uiModule:GetClient():IsVisit() then
+    local info = uiModule:GetVisitInfo().father_arch_info.infos[self._fatherBuilding:GetBuildId()]
     if info then
       hangPointInfo = info.clean_hang_point
     else
       hangPointInfo = {}
     end
   else
-    do
-      hangPointInfo = ((GameGlobal.GetModule)(HomelandModule)):GetHangPointInfo((self._fatherBuilding):GetBuildId())
-      for i = 1, hangPointTrans.childCount do
-        local pointTrans = hangPointTrans:GetChild(i - 1)
-        local hangPointID = tonumber((pointTrans.gameObject).name)
-        ;
-        (self._fatherBuilding):RegisterInteractPoint(hangPointID, self)
-        if not (table.icontains)(hangPointInfo, hangPointID) then
-          self:SetHangPointObstacle(hangPointID, pointTrans:Find("obstacle"))
-        end
-      end
+    hangPointInfo = GameGlobal.GetModule(HomelandModule):GetHangPointInfo(self._fatherBuilding:GetBuildId())
+  end
+  for i = 1, hangPointTrans.childCount do
+    local pointTrans = hangPointTrans:GetChild(i - 1)
+    local hangPointID = tonumber(pointTrans.gameObject.name)
+    self._fatherBuilding:RegisterInteractPoint(hangPointID, self)
+    if not table.icontains(hangPointInfo, hangPointID) then
+      self:SetHangPointObstacle(hangPointID, pointTrans:Find("obstacle"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.SetHangPointObstacle = function(self, id, trans)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_archeticture_hangpoint)[id]
+function HomeBuildingFatherArea:SetHangPointObstacle(id, trans)
+  local cfg = Cfg.cfg_archeticture_hangpoint[id]
   if not cfg then
     BuildError("cfg_archeticture_hangpoint中不存在id为", id, "的配置，无法创建挂点障碍物")
-    return 
+    return
   end
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(cfg.Res, LoadType.GameObject)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(cfg.Res, LoadType.GameObject)
   if not req then
     BuildError("障碍物资源不存在:", cfg.Res)
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._obstacleResMap)[id] = req
-  ;
-  (req.Obj):SetActive(true)
-  ;
-  ((req.Obj).transform):SetParent(trans, false)
+  self._obstacleResMap[id] = req
+  req.Obj:SetActive(true)
+  req.Obj.transform:SetParent(trans, false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.RefreshInteractPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function HomeBuildingFatherArea:RefreshInteractPoint()
   if not self._hangPointCfgID then
     self._hangPointCfgID = self:GetHangPointCfgID()
   end
-  for id,_ in pairs(self._obstacleResMap) do
-    local unlockQuestID = ((Cfg.cfg_archeticture_hangpoint)[id]).Unlock
+  for id, _ in pairs(self._obstacleResMap) do
+    local unlockQuestID = Cfg.cfg_archeticture_hangpoint[id].Unlock
     if not unlockQuestID then
-      (self._fatherBuilding):AddInteractPoint_UniqueIndex(self._fatherBuilding, id, self._hangPointCfgID)
+      self._fatherBuilding:AddInteractPoint_UniqueIndex(self._fatherBuilding, id, self._hangPointCfgID)
     else
-      local quest = ((GameGlobal.GetModule)(QuestModule)):GetQuest(unlockQuestID)
+      local quest = GameGlobal.GetModule(QuestModule):GetQuest(unlockQuestID)
       if quest then
-        if QuestStatus.QUEST_Completed <= quest:Status() then
-          (self._fatherBuilding):AddInteractPoint_UniqueIndex(self._fatherBuilding, id, self._hangPointCfgID)
+        if quest:Status() >= QuestStatus.QUEST_Completed then
+          self._fatherBuilding:AddInteractPoint_UniqueIndex(self._fatherBuilding, id, self._hangPointCfgID)
         else
-          -- DECOMPILER ERROR at PC48: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          (self._questIDHangpointIDMap)[quest:ID()] = id
+          self._questIDHangpointIDMap[quest:ID()] = id
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.RefreshObstacleUnlock = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for k,v in pairs(self._obstacleResMap) do
+function HomeBuildingFatherArea:RefreshObstacleUnlock()
+  for k, v in pairs(self._obstacleResMap) do
     self:EnableObstacleUnlockInteractPoint(k, false)
     self:EnableObstacleUnlockModelNode(k, false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.EnableObstacleUnlockInteractPoint = function(self, hangpointId, isEnable)
-  -- function num : 0_10 , upvalues : _ENV
-  local unlockInteract = ((Cfg.cfg_archeticture_hangpoint)[hangpointId]).UnlockInteract
+function HomeBuildingFatherArea:EnableObstacleUnlockInteractPoint(hangpointId, isEnable)
+  local unlockInteract = Cfg.cfg_archeticture_hangpoint[hangpointId].UnlockInteract
   local count = 0
   if unlockInteract ~= nil then
     count = #unlockInteract
   end
   for i = 1, count do
     local interactId = unlockInteract[i]
-    ;
-    (self._fatherBuilding):EnableInteractPointByCfgId(interactId, isEnable)
+    self._fatherBuilding:EnableInteractPointByCfgId(interactId, isEnable)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.EnableObstacleUnlockModelNode = function(self, hangpointId, isEnable)
-  -- function num : 0_11 , upvalues : _ENV
-  local unlockModelNode = ((Cfg.cfg_archeticture_hangpoint)[hangpointId]).UnlockModelNode
+function HomeBuildingFatherArea:EnableObstacleUnlockModelNode(hangpointId, isEnable)
+  local unlockModelNode = Cfg.cfg_archeticture_hangpoint[hangpointId].UnlockModelNode
   local count = 0
   if unlockModelNode ~= nil then
     count = #unlockModelNode
   end
   for i = 1, count do
     local nodeName = unlockModelNode[i]
-    local trNode = (self._fatherBuilding):FindRecursively(nodeName)
+    local trNode = self._fatherBuilding:FindRecursively(nodeName)
     if trNode ~= nil then
-      (trNode.gameObject):SetActive(isEnable)
+      trNode.gameObject:SetActive(isEnable)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.GetHangPointCfgID = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local hangPointCfgList = (Cfg.cfg_building_interact_point)({FunctionType = InteractPointType.Clean})
+function HomeBuildingFatherArea:GetHangPointCfgID()
+  local hangPointCfgList = Cfg.cfg_building_interact_point({
+    FunctionType = InteractPointType.Clean
+  })
   if not hangPointCfgList or #hangPointCfgList == 0 then
-    return 
+    return
   end
   local hangPointCfg = hangPointCfgList[1]
   return hangPointCfg.ID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.GetInteractPosition = function(self, index)
-  -- function num : 0_13
+function HomeBuildingFatherArea:GetInteractPosition(index)
   if self._interactpos == nil then
     self._interactpos = {}
   end
-  do
-    if (self._interactpos)[index] == nil then
-      local tran = (self._trans):Find("HangPoint/" .. index .. "/Interact")
-      if not tran then
-        return 
-      end
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._interactpos)[index] = tran.position
+  if self._interactpos[index] == nil then
+    local tran = self._trans:Find("HangPoint/" .. index .. "/Interact")
+    if not tran then
+      return
     end
-    return (self._interactpos)[index]
+    self._interactpos[index] = tran.position
   end
+  return self._interactpos[index]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.Clean = function(self, index)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self._obstacleResMap)[index] then
-    ((self._obstacleResMap)[index]):Dispose()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._obstacleResMap)[index] = nil
-    local tb = (table.reverse)(self._questIDHangpointIDMap)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
+function HomeBuildingFatherArea:Clean(index)
+  if self._obstacleResMap[index] then
+    self._obstacleResMap[index]:Dispose()
+    self._obstacleResMap[index] = nil
+    local tb = table.reverse(self._questIDHangpointIDMap)
     if tb[index] then
-      (self._questIDHangpointIDMap)[tb[index]] = nil
+      self._questIDHangpointIDMap[tb[index]] = nil
     end
     self:EnableObstacleUnlockInteractPoint(index, true)
     self:EnableObstacleUnlockModelNode(index, true)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.IsAllCleaned = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function HomeBuildingFatherArea:IsAllCleaned()
   if next(self._obstacleResMap) then
     return false
   else
@@ -278,35 +204,25 @@ HomeBuildingFatherArea.IsAllCleaned = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.GetHangPointChildBuilingNodes = function(self, hangPointID)
-  -- function num : 0_16 , upvalues : _ENV
+function HomeBuildingFatherArea:GetHangPointChildBuilingNodes(hangPointID)
   local res = {}
-  local trans = (self._trans):Find("HangPoint/" .. hangPointID)
+  local trans = self._trans:Find("HangPoint/" .. hangPointID)
   if trans then
     for i = 0, trans.childCount - 1 do
       local childTrans = trans:GetChild(i)
-      local id = tonumber((childTrans.gameObject).name)
+      local id = tonumber(childTrans.gameObject.name)
       if id then
         if res[id] then
-          (table.insert)(res[id], childTrans)
+          table.insert(res[id], childTrans)
         else
           res[id] = {childTrans}
         end
       end
     end
   end
-  do
-    return res
-  end
+  return res
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildingFatherArea.GetFatherBuilding = function(self)
-  -- function num : 0_17
+function HomeBuildingFatherArea:GetFatherBuilding()
   return self._fatherBuilding
 end
-
-

@@ -1,41 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_skill_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetSkillArea", UICustomWidget)
 UIWidgetSkillArea = UIWidgetSkillArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetSkillArea.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetSkillArea:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetSkillArea:InitWidget()
   self.chooseTargetRoot = self:GetUIComponent("UISelectObjectPath", "ChooseTargetRoot")
   self._petSkillPool = self:GetUIComponent("UISelectObjectPath", "petSkillPool")
-  self._petSkillUIOri = (self._petSkillPool):SpawnObject("UIWidgetPetSkill")
+  self._petSkillUIOri = self._petSkillPool:SpawnObject("UIWidgetPetSkill")
   self._petSkillUI = self._petSkillUIOri
   self._petSubSkillPool = self:GetUIComponent("UISelectObjectPath", "petSubSkillPool")
-  self._petSubSkillUI = (self._petSubSkillPool):SpawnObject("UIWidgetPetSubSkill")
+  self._petSubSkillUI = self._petSubSkillPool:SpawnObject("UIWidgetPetSubSkill")
   self._petMultiSkillPool = self:GetUIComponent("UISelectObjectPath", "petMultiSkillPool")
-  self._petMultiSkillUI = (self._petMultiSkillPool):SpawnObject("UIWidgetPetMultiActiveSkill")
+  self._petMultiSkillUI = self._petMultiSkillPool:SpawnObject("UIWidgetPetMultiActiveSkill")
   self._petEquipRefinePool = self:GetUIComponent("UISelectObjectPath", "petEquipRefinePool")
-  self._petEquipRefineUI = (self._petEquipRefinePool):SpawnObject("UIWidgetPetEquipRefine")
+  self._petEquipRefineUI = self._petEquipRefinePool:SpawnObject("UIWidgetPetEquipRefine")
   self:_CloseActiveSkillTip()
   self._curWidgetPet = nil
   self:SpawnChooseTargetUI()
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetSkillArea:RegisterEvent()
   self:AttachEvent(GameEventType.UIShowActiveSkillUI, self.OnUIShowActiveSkillUI)
   self:AttachEvent(GameEventType.UIShowMultiActiveSkillUI, self.OnUIShowMultiActiveSkillUI)
   self:AttachEvent(GameEventType.AutoFightCastSkill, self.OnCastSkill)
@@ -60,133 +47,93 @@ UIWidgetSkillArea.RegisterEvent = function(self)
   self:AttachEvent(GameEventType.UIShowPetInfo, self.HandleUIShowPetInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.SetData = function(self, uiBattle)
-  -- function num : 0_3
+function UIWidgetSkillArea:SetData(uiBattle)
   self._uiBattle = uiBattle
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.SpawnChooseTargetUI = function(self)
-  -- function num : 0_4
-  self._chooseTargetWidget = (self.chooseTargetRoot):SpawnObject("UIWidgetChooseTarget")
+function UIWidgetSkillArea:SpawnChooseTargetUI()
+  self._chooseTargetWidget = self.chooseTargetRoot:SpawnObject("UIWidgetChooseTarget")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea._CloseActiveSkillTip = function(self)
-  -- function num : 0_5
+function UIWidgetSkillArea:_CloseActiveSkillTip()
   if self._petSkillUI then
-    (self._petSkillUI):HideSelf()
-    if (self._petSkillUI)._className == "UIWidgetPetSubSkill" then
-      (self._petSkillUI):ClearCurSkillID()
+    self._petSkillUI:HideSelf()
+    if self._petSkillUI._className == "UIWidgetPetSubSkill" then
+      self._petSkillUI:ClearCurSkillID()
     else
-      ;
-      (self._petSkillUI):ResetSkillCanCast()
+      self._petSkillUI:ResetSkillCanCast()
     end
   end
   if self._petSubSkillUI then
-    (self._petSubSkillUI):HideSelf()
+    self._petSubSkillUI:HideSelf()
   end
   if self._petMultiSkillUI then
-    (self._petMultiSkillUI):ClearCurSkillID()
-    ;
-    (self._petMultiSkillUI):HideSelf()
+    self._petMultiSkillUI:ClearCurSkillID()
+    self._petMultiSkillUI:HideSelf()
   end
   if self._petEquipRefineUI then
-    (self._petEquipRefineUI):HideSelf()
+    self._petEquipRefineUI:HideSelf()
   end
   self:ResetLastPreviewPetId()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.ResetLastPreviewPetId = function(self)
-  -- function num : 0_6
+function UIWidgetSkillArea:ResetLastPreviewPetId()
   self._lastPreviewPetId = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.SetPreviewPetId = function(self, petId)
-  -- function num : 0_7
+function UIWidgetSkillArea:SetPreviewPetId(petId)
   self._lastPreviewPetId = petId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.GetPreviewPetId = function(self)
-  -- function num : 0_8
+function UIWidgetSkillArea:GetPreviewPetId()
   return self._lastPreviewPetId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.GetCurPetActiveSkillId = function(self)
-  -- function num : 0_9
+function UIWidgetSkillArea:GetCurPetActiveSkillId()
   return self._curPetActiveSkillId
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.IsAutoFighting = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):IsAutoFighting()
+function UIWidgetSkillArea:IsAutoFighting()
+  return GameGlobal.GetUIModule(MatchModule):IsAutoFighting()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.ShowAutoFightForbiddenMsg = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):ShowAutoFightForbiddenMsg()
+function UIWidgetSkillArea:ShowAutoFightForbiddenMsg()
+  return GameGlobal.GetUIModule(MatchModule):ShowAutoFightForbiddenMsg()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.IsMoreFivePet = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
-  do return matchEnterData:GetMatchType() == MatchType.MT_MiniMaze or matchEnterData:GetMatchType() == MatchType.MT_EightPets or matchEnterData:GetMatchType() == MatchType.MT_SeasonMaze end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIWidgetSkillArea:IsMoreFivePet()
+  local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
+  return matchEnterData:GetMatchType() == MatchType.MT_MiniMaze or matchEnterData:GetMatchType() == MatchType.MT_EightPets or matchEnterData:GetMatchType() == MatchType.MT_SeasonMaze
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.SkillNeedHideActiveSkillUIInMiniMaze = function(self, skillId)
-  -- function num : 0_13 , upvalues : _ENV
-  local spePetSkillIDList = {302144, 305144, 312144, 315144}
-  if (table.icontains)(spePetSkillIDList, skillId) then
+function UIWidgetSkillArea:SkillNeedHideActiveSkillUIInMiniMaze(skillId)
+  local spePetSkillIDList = {
+    302144,
+    305144,
+    312144,
+    315144
+  }
+  if table.icontains(spePetSkillIDList, skillId) then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.OnUIShowActiveSkillUI = function(self, petWidget, skillId, maxPower, leftPower, canCast)
-  -- function num : 0_14
+function UIWidgetSkillArea:OnUIShowActiveSkillUI(petWidget, skillId, maxPower, leftPower, canCast)
   self:ShowActiveSkillUI(petWidget, skillId, maxPower, leftPower, canCast)
   if self:IsMoreFivePet() and self:SkillNeedHideActiveSkillUIInMiniMaze(skillId) and self._petSkillUI then
-    (self._petSkillUI):HideSelf()
+    self._petSkillUI:HideSelf()
   end
   self:ShowPetEquipRefineUI(petWidget)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.OnUIShowMultiActiveSkillUI = function(self, index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
-  -- function num : 0_15
+function UIWidgetSkillArea:OnUIShowMultiActiveSkillUI(index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
   self:ShowMultiActiveSkillUI(index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.ShowActiveSkillUI = function(self, petWidget, skillId, maxPower, leftPower, canCast)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PauseGuideWeakLine)
+function UIWidgetSkillArea:ShowActiveSkillUI(petWidget, skillId, maxPower, leftPower, canCast)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PauseGuideWeakLine)
   local posGO = petWidget:GetActiveSkillUIPos()
   local cancelSkillPosGo = petWidget:GetCancelSkillUIPos()
   local petPstID = petWidget:GetPetPstID()
@@ -194,44 +141,33 @@ UIWidgetSkillArea.ShowActiveSkillUI = function(self, petWidget, skillId, maxPowe
   self._curPetActiveSkillId = skillId
   self._curPetPstId = petPstID
   self._previewActiveSkillCheckPass = nil
-  local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(skillId, petPstID)
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(skillId, petPstID)
   local subSkillIDList = skillConfigData:GetSubSkillIDList()
   if #subSkillIDList == 0 then
     self._petSkillUI = self._petSkillUIOri
-    ;
-    (self._curWidgetPet):SetUseSubActiveSkillState(false)
+    self._curWidgetPet:SetUseSubActiveSkillState(false)
   else
     self._petSkillUI = self._petSubSkillUI
-    ;
-    (self._curWidgetPet):SetUseSubActiveSkillState(true)
+    self._curWidgetPet:SetUseSubActiveSkillState(true)
   end
-  ;
-  (self._petSkillUI):SetUiPos((posGO.transform).position)
-  ;
-  (self._petSkillUI):SetPetPstId(petPstID)
-  ;
-  (self._petSkillUI):ShowSelf()
-  ;
-  (self._petSkillUI):Init(skillId, maxPower, leftPower, canCast, function(castSkillID, pickUpType)
-    -- function num : 0_16_0 , upvalues : self, petPstID
+  self._petSkillUI:SetUiPos(posGO.transform.position)
+  self._petSkillUI:SetPetPstId(petPstID)
+  self._petSkillUI:ShowSelf()
+  self._petSkillUI:Init(skillId, maxPower, leftPower, canCast, function(castSkillID, pickUpType)
     self:CancelActiveSkillSwitchTimer()
-    ;
-    (self._petSkillUI):HideSelf()
-    ;
-    (self._petEquipRefineUI):HideSelf()
-    if (self._petSkillUI)._className == "UIWidgetPetSubSkill" then
-      (self._petSkillUI):ClearCurSkillID()
+    self._petSkillUI:HideSelf()
+    self._petEquipRefineUI:HideSelf()
+    if self._petSkillUI._className == "UIWidgetPetSubSkill" then
+      self._petSkillUI:ClearCurSkillID()
     end
     self:ShowHideCancelActiveSkillBtn(false)
     self:OnCastSkill(castSkillID, pickUpType, petPstID)
-  end
-, petPstID)
-  self._curPetActiveSkillId = (self._petSkillUI):GetCurActiveSkillID()
-  skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self._curPetActiveSkillId, petPstID)
+  end, petPstID)
+  self._curPetActiveSkillId = self._petSkillUI:GetCurActiveSkillID()
+  skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._curPetActiveSkillId, petPstID)
   local pickUpType = skillConfigData:GetSkillPickType()
   self._pickUpType = pickUpType
-  ;
-  (self._chooseTargetWidget):ShowChooseTargetPanel(false)
+  self._chooseTargetWidget:ShowChooseTargetPanel(false)
   if pickUpType ~= SkillPickUpType.None then
     self._isCurPetSkillReady = canCast
     self:_PreviewPickUpSkill(self._curPetActiveSkillId, pickUpType, petPstID, cancelSkillPosGo)
@@ -240,108 +176,74 @@ UIWidgetSkillArea.ShowActiveSkillUI = function(self, petWidget, skillId, maxPowe
     self:ShowHideCancelActiveSkillBtn(true)
   end
   self:OnExclusivePetHeadMaskAlpha(BattleConst.ActiveSkillDarkAlpha, petPstID)
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
-  ;
-  (InnerGameHelperRender.InnerGamePlayPetUIVoice)("StandBy", petWidget._petTemplateID)
+  local pm = GameGlobal.GetModule(PetAudioModule)
+  InnerGameHelperRender.InnerGamePlayPetUIVoice("StandBy", petWidget._petTemplateID)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.OnCastSkill = function(self, castSkillID, pickUpType, petPstID)
-  -- function num : 0_17 , upvalues : _ENV
-  local petWidget = (self._uiBattle):GetPetWidgetByPstID(petPstID)
+function UIWidgetSkillArea:OnCastSkill(castSkillID, pickUpType, petPstID)
+  local petWidget = self._uiBattle:GetPetWidgetByPstID(petPstID)
   if pickUpType == SkillPickUpType.None then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastActiveSkill, castSkillID, petPstID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CastActiveSkill, castSkillID, petPstID)
     petWidget:ClearPower(castSkillID)
     self:OnExclusivePetHeadMaskAlpha(0, -1)
-    local pm = (GameGlobal.GetModule)(PetAudioModule)
-    ;
-    (InnerGameHelperRender.InnerGamePlayPetUIVoice)("Skill", petWidget._petTemplateID, true)
+    local pm = GameGlobal.GetModule(PetAudioModule)
+    InnerGameHelperRender.InnerGamePlayPetUIVoice("Skill", petWidget._petTemplateID, true)
     self:ResetLastPreviewPetId()
+  elseif pickUpType == SkillPickUpType.PickSwitchInstruction then
+    self:EnablePickUpSkillCast(true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
   else
-    do
-      if pickUpType == SkillPickUpType.PickSwitchInstruction then
-        self:EnablePickUpSkillCast(true)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
-      else
-        self:EnablePickUpSkillCast(false)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
-      end
-    end
+    self:EnablePickUpSkillCast(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea._OnBattleUIRefreshActiveSkillCastButtonState = function(self, result, reason)
-  -- function num : 0_18
+function UIWidgetSkillArea:_OnBattleUIRefreshActiveSkillCastButtonState(result, reason)
   self:SetPickUpActiveBtnState(result)
   self._previewActiveSkillCheckPass = result
   self._activeSkillDisableReason = reason
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.SetPickUpActiveBtnState = function(self, canCast)
-  -- function num : 0_19
-  (self._chooseTargetWidget):SetPickUpActiveBtnState(canCast)
+function UIWidgetSkillArea:SetPickUpActiveBtnState(canCast)
+  self._chooseTargetWidget:SetPickUpActiveBtnState(canCast)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea._PreviewPickUpSkill = function(self, skillId, pickUpType, petPstID, cancelSkillPosGo)
-  -- function num : 0_20 , upvalues : _ENV
+function UIWidgetSkillArea:_PreviewPickUpSkill(skillId, pickUpType, petPstID, cancelSkillPosGo)
   self:CancelActiveSkillSwitchTimer()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastActiveSkill, skillId, petPstID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CastActiveSkill, skillId, petPstID)
   if pickUpType == SkillPickUpType.None then
-    (Log.fatal)("[UIBattle] preview skill pickup type is none")
+    Log.fatal("[UIBattle] preview skill pickup type is none")
   else
     self:_OnShowActiveSkillChooseUI(skillId, pickUpType, petPstID, self._isCurPetSkillReady)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea._OnShowActiveSkillChooseUI = function(self, skillId, pickUpType, petPstID, canCast)
-  -- function num : 0_21
+function UIWidgetSkillArea:_OnShowActiveSkillChooseUI(skillId, pickUpType, petPstID, canCast)
   self._curPetActiveSkillId = skillId
   self._curPetPstId = petPstID
   self._pickUpType = pickUpType
   self._isCurPetSkillReady = canCast
-  ;
-  (self._chooseTargetWidget):InitChooseTargetWidget(skillId, petPstID)
-  ;
-  (self._chooseTargetWidget):SetChooseUIText(pickUpType)
+  self._chooseTargetWidget:InitChooseTargetWidget(skillId, petPstID)
+  self._chooseTargetWidget:SetChooseUIText(pickUpType)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea._OnSelectSubActiveSkill = function(self, skillID, canCast)
-  -- function num : 0_22 , upvalues : _ENV
+function UIWidgetSkillArea:_OnSelectSubActiveSkill(skillID, canCast)
   self._curPetActiveSkillId = skillID
-  local petPstID = (self._curWidgetPet):GetPetPstID()
-  local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self._curPetActiveSkillId, petPstID)
+  local petPstID = self._curWidgetPet:GetPetPstID()
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._curPetActiveSkillId, petPstID)
   local pickUpType = skillConfigData:GetSkillPickType()
   self._pickUpType = pickUpType
   if pickUpType ~= SkillPickUpType.None then
-    local cancelSkillPosGo = (self._curWidgetPet):GetCancelSkillUIPos()
+    local cancelSkillPosGo = self._curWidgetPet:GetCancelSkillUIPos()
     self._isCurPetSkillReady = canCast
     self:_PreviewPickUpSkill(self._curPetActiveSkillId, pickUpType, petPstID, cancelSkillPosGo)
     self:ShowHideCancelActiveSkillBtn(false)
   else
-    do
-      self:ShowHideCancelActiveSkillBtn(true)
-    end
+    self:ShowHideCancelActiveSkillBtn(true)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea._CancelActiveSkill = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIWidgetSkillArea:_CancelActiveSkill()
   self:CancelActiveSkillSwitchTimer()
   self:_CloseActiveSkillTip()
   self:ShowHideCancelActiveSkillBtn(false)
@@ -350,74 +252,46 @@ UIWidgetSkillArea._CancelActiveSkill = function(self)
   self._isCurPetSkillReady = false
   self._curWidgetPet = nil
   self._previewActiveSkillCheckPass = nil
-  ;
-  (self._chooseTargetWidget):ShowChooseTargetPanel(false)
+  self._chooseTargetWidget:ShowChooseTargetPanel(false)
   self:OnExclusivePetHeadMaskAlpha(0, -1)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TrapPowerVisible, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TrapPowerVisible, true)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.ShowHideCancelActiveSkillBtn = function(self, bShow)
-  -- function num : 0_24 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIShowHideCancelActiveSkillBtn, bShow)
+function UIWidgetSkillArea:ShowHideCancelActiveSkillBtn(bShow)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIShowHideCancelActiveSkillBtn, bShow)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.CancelActiveSkillSwitchTimer = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelActiveSkillSwitchTimer)
+function UIWidgetSkillArea:CancelActiveSkillSwitchTimer()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelActiveSkillSwitchTimer)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.PickInvalidGridCancelPreview = function(self)
-  -- function num : 0_26
+function UIWidgetSkillArea:PickInvalidGridCancelPreview()
   self:_CancelActiveSkill()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.HandleUICancelChooseTarget = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CancelActiveSkillCast, self._curPetActiveSkillId, self._curPetPstId)
+function UIWidgetSkillArea:HandleUICancelChooseTarget()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CancelActiveSkillCast, self._curPetActiveSkillId, self._curPetPstId)
   self:_CancelActiveSkill()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.OnExclusivePetHeadMaskAlpha = function(self, alpha, exclusivePetPstID)
-  -- function num : 0_28 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIExclusivePetHeadMaskAlpha, alpha, exclusivePetPstID)
+function UIWidgetSkillArea:OnExclusivePetHeadMaskAlpha(alpha, exclusivePetPstID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIExclusivePetHeadMaskAlpha, alpha, exclusivePetPstID)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.ShowChooseTarget = function(self, show)
-  -- function num : 0_29
+function UIWidgetSkillArea:ShowChooseTarget(show)
   self._previewActiveSkillCheckPass = true
-  ;
-  (self._chooseTargetWidget):ShowChooseTargetPanel(show)
+  self._chooseTargetWidget:ShowChooseTargetPanel(show)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.SwitchActiveSkillUI = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIWidgetSkillArea:SwitchActiveSkillUI()
   self:CancelActiveSkillSwitchTimer()
   if self._petSkillUI then
     self:_CloseActiveSkillTip()
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopPreviewActiveSkill, true, false, self._curPetActiveSkillId, self._curPetPstId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopPreviewActiveSkill, true, false, self._curPetActiveSkillId, self._curPetPstId)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.OnPetSwitchCallBack = function(self, go)
-  -- function num : 0_31
+function UIWidgetSkillArea:OnPetSwitchCallBack(go)
   if self:IsAutoFighting() and go then
     self:ShowAutoFightForbiddenMsg()
   else
@@ -425,154 +299,102 @@ UIWidgetSkillArea.OnPetSwitchCallBack = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.HandleUIChooseTargetConfirm = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self._curPetActiveSkillId, self._curPetPstId)
+function UIWidgetSkillArea:HandleUIChooseTargetConfirm()
+  local skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._curPetActiveSkillId, self._curPetPstId)
   self._curPetActiveSkillId = skillConfigData:GetID()
   if skillConfigData:GetSkillType() == SkillType.Active then
-    local logicCanCast, log = (BattleStatHelper.CheckActiveSkillCastCondition)(self._curPetPstId, self._curPetActiveSkillId)
-    do
-      if not logicCanCast then
-        local cmd = (ClientExceptionReportCommand.CreateCastPickupActiveException)(self._curWidgetPet, log)
-        cmd._dbgAutoFightInfo = self._dbgAutoFightInfo
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClientExceptionReport, cmd)
-        if EDITOR then
-          (Log.exception)(echo(cmd))
-        end
-        return 
+    local logicCanCast, log = BattleStatHelper.CheckActiveSkillCastCondition(self._curPetPstId, self._curPetActiveSkillId)
+    if not logicCanCast then
+      local cmd = ClientExceptionReportCommand.CreateCastPickupActiveException(self._curWidgetPet, log)
+      cmd._dbgAutoFightInfo = self._dbgAutoFightInfo
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ClientExceptionReport, cmd)
+      if EDITOR then
+        Log.exception(echo(cmd))
       end
-      self:OnExclusivePetHeadMaskAlpha(0, -1)
-      do
-        do
-          if self._curWidgetPet ~= nil then
-            local pm = (GameGlobal.GetModule)(PetAudioModule)
-            ;
-            (InnerGameHelperRender.InnerGamePlayPetUIVoice)("Skill", (self._curWidgetPet)._petTemplateID, true)
-            ;
-            (self._curWidgetPet):ClearPower(self._curPetActiveSkillId)
-          end
-          self._curWidgetPet = nil
-          if skillConfigData:GetSkillType() == SkillType.TrapSkill then
-            self._curWidgetPet = nil
-          else
-            if skillConfigData:GetSkillType() == SkillType.FeatureSkill then
-              self._curWidgetPet = nil
-              ;
-              (self._uiBattle):FeatureOnChooseTargetConfirm()
-            end
-          end
-          self:_CloseActiveSkillTip()
-          self._curPetActiveSkillId = 0
-          self._curPetPstId = 0
-          self._isCurPetSkillReady = false
-          self._previewActiveSkillCheckPass = nil
-          ;
-          (self._petSkillUI):ShowCancelBtn(false)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastPickUpSkill)
-        end
-      end
+      return
     end
+    self:OnExclusivePetHeadMaskAlpha(0, -1)
+    if self._curWidgetPet ~= nil then
+      local pm = GameGlobal.GetModule(PetAudioModule)
+      InnerGameHelperRender.InnerGamePlayPetUIVoice("Skill", self._curWidgetPet._petTemplateID, true)
+      self._curWidgetPet:ClearPower(self._curPetActiveSkillId)
+    end
+    self._curWidgetPet = nil
+  elseif skillConfigData:GetSkillType() == SkillType.TrapSkill then
+    self._curWidgetPet = nil
+  elseif skillConfigData:GetSkillType() == SkillType.FeatureSkill then
+    self._curWidgetPet = nil
+    self._uiBattle:FeatureOnChooseTargetConfirm()
   end
+  self:_CloseActiveSkillTip()
+  self._curPetActiveSkillId = 0
+  self._curPetPstId = 0
+  self._isCurPetSkillReady = false
+  self._previewActiveSkillCheckPass = nil
+  self._petSkillUI:ShowCancelBtn(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CastPickUpSkill)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.HandleUIChooseTargetGray = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIWidgetSkillArea:HandleUIChooseTargetGray()
   if not self._curWidgetPet then
-    return 
+    return
   end
-  local canCast, reason, forceTips = (self._curWidgetPet):GetCanCastAndReason(self._curPetActiveSkillId)
+  local canCast, reason, forceTips = self._curWidgetPet:GetCanCastAndReason(self._curPetActiveSkillId)
   if forceTips then
-    (ToastManager.ShowToast)(reason)
+    ToastManager.ShowToast(reason)
+  elseif self._isCurPetSkillReady == false and not canCast then
+    ToastManager.ShowToast(reason)
   else
-    if self._isCurPetSkillReady == false and not canCast then
-      (ToastManager.ShowToast)(reason)
-    else
-      local textKey = ActiveSkillCannotCastReasonText[self._activeSkillDisableReason]
-      if textKey then
-        local text = (StringTable.Get)(textKey)
-        ;
-        (ToastManager.ShowToast)(text)
-      end
+    local textKey = ActiveSkillCannotCastReasonText[self._activeSkillDisableReason]
+    if textKey then
+      local text = StringTable.Get(textKey)
+      ToastManager.ShowToast(text)
     end
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.OnCancelActiveSkillBtnOnClick = function(self, go)
-  -- function num : 0_34 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBattle", input = "CancelActiveSkillBtnOnClick", 
-args = {}
-})
+function UIWidgetSkillArea:OnCancelActiveSkillBtnOnClick(go)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBattle",
+    input = "CancelActiveSkillBtnOnClick",
+    args = {}
+  })
   self:CancelActiveSkillSwitchTimer()
   self:OnExclusivePetHeadMaskAlpha(0, -1)
   self:ShowHideCancelActiveSkillBtn(false)
   self:_CloseActiveSkillTip()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CasterPreviewAnimatorExitPreview, self._curPetPstId, self._curPetActiveSkillId)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopPreviewActiveSkill, false, true, self._curPetActiveSkillId, self._curPetPstId)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, -1)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CasterPreviewAnimatorExitPreview, self._curPetPstId, self._curPetActiveSkillId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopPreviewActiveSkill, false, true, self._curPetActiveSkillId, self._curPetPstId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, -1)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.GetPetSkillBtn = function(self)
-  -- function num : 0_35
-  if self._petSkillUI then
-    return (self._petSkillUI):GetPetSkillBtn()
-  end
+function UIWidgetSkillArea:GetPetSkillBtn()
+  return self._petSkillUI and self._petSkillUI:GetPetSkillBtn()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.GetPetMultiSkillIndexBtn = function(self, index)
-  -- function num : 0_36
-  if self._petMultiSkillUI then
-    return (self._petMultiSkillUI):GetPetMultiSkillIndexBtn(index)
-  end
+function UIWidgetSkillArea:GetPetMultiSkillIndexBtn(index)
+  return self._petMultiSkillUI and self._petMultiSkillUI:GetPetMultiSkillIndexBtn(index)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.EnablePickUpSkillCast = function(self, canCast)
-  -- function num : 0_37
-  if canCast and self._isCurPetSkillReady then
-    local canCastActive = self._previewActiveSkillCheckPass
-  end
+function UIWidgetSkillArea:EnablePickUpSkillCast(canCast)
+  local canCastActive = canCast and self._isCurPetSkillReady and self._previewActiveSkillCheckPass
   self:SetPickUpActiveBtnState(canCastActive)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.ShowHideSelectTeamPositionButton = function(self, pstID, bShow)
-  -- function num : 0_38
+function UIWidgetSkillArea:ShowHideSelectTeamPositionButton(pstID, bShow)
   if self:IsMoreFivePet() and self._petSkillUI then
-    (self._petSkillUI):HideSelf()
+    self._petSkillUI:HideSelf()
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.OnBattleUISelectTargetTeamPosition = function(self, pstID)
-  -- function num : 0_39
+function UIWidgetSkillArea:OnBattleUISelectTargetTeamPosition(pstID)
   if self:IsMoreFivePet() and self._petSkillUI then
-    (self._petSkillUI):ShowSelf()
+    self._petSkillUI:ShowSelf()
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.ShowMultiActiveSkillUI = function(self, index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
-  -- function num : 0_40 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PauseGuideWeakLine)
+function UIWidgetSkillArea:ShowMultiActiveSkillUI(index, petWidget, uiDataArray, isVariantSkillList, lastClickIndex)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PauseGuideWeakLine)
   local posGO = petWidget:GetActiveSkillUIPos()
   local cancelSkillPosGo = petWidget:GetCancelSkillUIPos()
   local petPstID = petWidget:GetPetPstID()
@@ -580,114 +402,80 @@ UIWidgetSkillArea.ShowMultiActiveSkillUI = function(self, index, petWidget, uiDa
   self._curWidgetPet = petWidget
   self._curPetPstId = petPstID
   self._previewActiveSkillCheckPass = nil
-  ;
-  (self._curWidgetPet):SetUseSubActiveSkillState(false)
-  ;
-  (self._petMultiSkillUI):SetIsMoreFivePet(self:IsMoreFivePet())
-  ;
-  (self._petMultiSkillUI):SetUiPos((posGO.transform).position)
-  ;
-  (self._petMultiSkillUI):SetPetPstId(petPstID)
-  ;
-  (self._petMultiSkillUI):SetPetTemplateId(petTemplateID)
-  ;
-  (self._petMultiSkillUI):ShowSelf()
-  ;
-  (self._petMultiSkillUI):Init(index, uiDataArray, function(castSkillID, pickUpType, ready)
-    -- function num : 0_40_0 , upvalues : self, petPstID
+  self._curWidgetPet:SetUseSubActiveSkillState(false)
+  self._petMultiSkillUI:SetIsMoreFivePet(self:IsMoreFivePet())
+  self._petMultiSkillUI:SetUiPos(posGO.transform.position)
+  self._petMultiSkillUI:SetPetPstId(petPstID)
+  self._petMultiSkillUI:SetPetTemplateId(petTemplateID)
+  self._petMultiSkillUI:ShowSelf()
+  self._petMultiSkillUI:Init(index, uiDataArray, function(castSkillID, pickUpType, ready)
     self._curPetActiveSkillId = castSkillID
     self._isCurPetSkillReady = ready
     self:CancelActiveSkillSwitchTimer()
-    ;
-    (self._petMultiSkillUI):ClearCurSkillID()
-    ;
-    (self._petMultiSkillUI):HideSelf()
+    self._petMultiSkillUI:ClearCurSkillID()
+    self._petMultiSkillUI:HideSelf()
     self:ShowHideCancelActiveSkillBtn(false)
     self:OnCastSkill(castSkillID, pickUpType, petPstID)
-  end
-, isVariantSkillList, lastClickIndex)
-  ;
-  (self._chooseTargetWidget):ShowChooseTargetPanel(false)
+  end, isVariantSkillList, lastClickIndex)
+  self._chooseTargetWidget:ShowChooseTargetPanel(false)
   self:OnExclusivePetHeadMaskAlpha(BattleConst.ActiveSkillDarkAlpha, petPstID)
-  local pm = (GameGlobal.GetModule)(PetAudioModule)
-  ;
-  (InnerGameHelperRender.InnerGamePlayPetUIVoice)("StandBy", petWidget._petTemplateID)
+  local pm = GameGlobal.GetModule(PetAudioModule)
+  InnerGameHelperRender.InnerGamePlayPetUIVoice("StandBy", petWidget._petTemplateID)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.OnClickPetHead = function(self, castSkillPetPstID, energyReady, curSkillID)
-  -- function num : 0_41
+function UIWidgetSkillArea:OnClickPetHead(castSkillPetPstID, energyReady, curSkillID)
   if self._curPetPstId and self._curPetPstId ~= castSkillPetPstID and self._petMultiSkillUI then
-    (self._petMultiSkillUI):HideSelf()
+    self._petMultiSkillUI:HideSelf()
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.HandleUIShowPetInfo = function(self, petPstID, isShow)
-  -- function num : 0_42 , upvalues : _ENV
+function UIWidgetSkillArea:HandleUIShowPetInfo(petPstID, isShow)
   if isShow and self._curWidgetPet ~= nil then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CancelActiveSkillCast, self._curPetActiveSkillId, self._curPetPstId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CancelActiveSkillCast, self._curPetActiveSkillId, self._curPetPstId)
     self:_CancelActiveSkill()
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea.ShowPetEquipRefineUI = function(self, petWidget)
-  -- function num : 0_43 , upvalues : _ENV
-  local petPstID = (petWidget:GetPetPstID())
-  -- DECOMPILER ERROR at PC2: Overwrote pending register: R3 in 'AssignReg'
-
-  local buffViewIns = .end
-  local buffViewArray = (InnerGameHelperRender.GetBuffViewByPetPstID)(petPstID)
-  for i,buffView in ipairs(buffViewArray) do
+function UIWidgetSkillArea:ShowPetEquipRefineUI(petWidget)
+  local petPstID = petWidget:GetPetPstID()
+  local buffViewIns
+  local buffViewArray = InnerGameHelperRender.GetBuffViewByPetPstID(petPstID)
+  for i, buffView in ipairs(buffViewArray) do
     if buffView:GetBuffEffectType() == BuffEffectType.ShowEquipRefineUI then
       buffViewIns = buffView
       break
     end
   end
-  do
-    if not buffViewIns then
-      return 
-    end
-    local objPos = (self._petSkillUI):GetEquipRefineDownPosObj()
-    local isUp = false
-    if (InnerGameHelperRender.UICheckIsFifthPet)(petPstID) then
-      objPos = (self._petSkillUI):GetEquipRefineUpPosObj()
-      isUp = true
-    end
-    ;
-    (self._petEquipRefineUI):SetUIPos((objPos.transform).position, isUp)
-    ;
-    (self._petEquipRefineUI):ShowSelf()
-    ;
-    (self._petEquipRefineUI):Init(petPstID, buffViewIns)
+  if not buffViewIns then
+    return
   end
+  local objPos = self._petSkillUI:GetEquipRefineDownPosObj()
+  local isUp = false
+  if InnerGameHelperRender.UICheckIsFifthPet(petPstID) then
+    objPos = self._petSkillUI:GetEquipRefineUpPosObj()
+    isUp = true
+  end
+  self._petEquipRefineUI:SetUIPos(objPos.transform.position, isUp)
+  self._petEquipRefineUI:ShowSelf()
+  self._petEquipRefineUI:Init(petPstID, buffViewIns)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetSkillArea._CheckGuide = function(self)
-  -- function num : 0_44 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIWidgetSkillArea:_CheckGuide()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:GuideInProgress() then
     local guides = guideModule:GetCurGuides()
     if guides then
-      for _,guide in pairs(guides) do
+      for _, guide in pairs(guides) do
         local curStep = guide:GetCurStep()
         if curStep and curStep.show then
           local cfg = curStep:GetBtnGuideCfg()
           if cfg and cfg.completeRule == GuideCompleteType.OperationComplete then
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
-            return 
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
+            return
           end
         end
       end
     end
   end
 end
-
-

@@ -1,15 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/homeland/cfg_homeland_building_fixed_position.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, FixedPosition = 2, ReplaceNode = 3}
+local key = {
+  ID = 1,
+  FixedPosition = 2,
+  ReplaceNode = 3
+}
 local config = {
-[527100231] = {527100231, "FixedSlotTop"}
-, 
-[527100301] = {527100301, "FixedSlotWall"}
-, 
-[527100302] = {527100302, "FixedSlotFloor", "hl_mod_5271003"}
+  [527100231] = {
+    527100231,
+    "FixedSlotTop"
+  },
+  [527100301] = {
+    527100301,
+    "FixedSlotWall"
+  },
+  [527100302] = {
+    527100302,
+    "FixedSlotFloor",
+    "hl_mod_5271003"
+  }
 }
 return config, "ID", key
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_swap_san_2_team_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_SwapSan2TeamHp", SkillEffectResultBase)
 SkillEffectResult_SwapSan2TeamHp = SkillEffectResult_SwapSan2TeamHp
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_SwapSan2TeamHp.Constructor = function(self, sanPercent, teamHpPercent)
-  -- function num : 0_0
+function SkillEffectResult_SwapSan2TeamHp:Constructor(sanPercent, teamHpPercent)
   self._sanPercent = sanPercent
   self._teamHpPercent = teamHpPercent
   self._curSan = 0
@@ -19,97 +12,54 @@ SkillEffectResult_SwapSan2TeamHp.Constructor = function(self, sanPercent, teamHp
   self._mazeDamageList = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.GetSanPercent = function(self)
-  -- function num : 0_1
+function SkillEffectResult_SwapSan2TeamHp:GetSanPercent()
   return self._sanPercent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.GetTeamHpPercent = function(self)
-  -- function num : 0_2
+function SkillEffectResult_SwapSan2TeamHp:GetTeamHpPercent()
   return self._teamHpPercent
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectResult_SwapSan2TeamHp:GetEffectType()
   return SkillEffectType.SwapSan2TeamHp
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.SetCurSan = function(self, curSan)
-  -- function num : 0_4
+function SkillEffectResult_SwapSan2TeamHp:SetCurSan(curSan)
   self._curSan = curSan
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.GetCurSan = function(self)
-  -- function num : 0_5
+function SkillEffectResult_SwapSan2TeamHp:GetCurSan()
   return self._curSan
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.SetOldSan = function(self, oldSan)
-  -- function num : 0_6
+function SkillEffectResult_SwapSan2TeamHp:SetOldSan(oldSan)
   self._oldSan = oldSan
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.GetOldSan = function(self)
-  -- function num : 0_7
+function SkillEffectResult_SwapSan2TeamHp:GetOldSan()
   return self._oldSan
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.SetDeltaSan = function(self, deltaSan)
-  -- function num : 0_8
+function SkillEffectResult_SwapSan2TeamHp:SetDeltaSan(deltaSan)
   self._deltaSan = deltaSan
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.GetDeltaSan = function(self)
-  -- function num : 0_9
+function SkillEffectResult_SwapSan2TeamHp:GetDeltaSan()
   return self._deltaSan
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.SetModifyTimes = function(self, modifyTimes)
-  -- function num : 0_10
+function SkillEffectResult_SwapSan2TeamHp:SetModifyTimes(modifyTimes)
   self._modifyTimes = modifyTimes
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.GetModifyTimes = function(self)
-  -- function num : 0_11
+function SkillEffectResult_SwapSan2TeamHp:GetModifyTimes()
   return self._modifyTimes
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.AddMazeDamage = function(self, id, value)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._mazeDamageList)[id] = value
+function SkillEffectResult_SwapSan2TeamHp:AddMazeDamage(id, value)
+  self._mazeDamageList[id] = value
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SwapSan2TeamHp.GetMazeDamage = function(self)
-  -- function num : 0_13
+function SkillEffectResult_SwapSan2TeamHp:GetMazeDamage()
   return self._mazeDamageList
 end
-
-

@@ -1,138 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/lib/table_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local toint = math.tointeger
-local type = type
-local next = next
--- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
+local type = _ENV.type
+local next = _ENV.next
 
-table.append = function(a, b, filter_list)
-  -- function num : 0_0 , upvalues : next, _ENV
-  if not filter_list or not filter_list then
-    filter_list = {}
-  end
-  for k,v in next do
+function table.append(a, b, filter_list)
+  filter_list = filter_list and filter_list or {}
+  for k, v in next, b, nil do
     local filter = false
-    for _,_v in pairs(filter_list) do
+    for _, _v in pairs(filter_list) do
       if k == _v then
         filter = true
       end
     end
-    if filter == false and a[k] == nil then
+    if false == filter and nil == a[k] then
       a[k] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-table.appendArray = function(a, b)
-  -- function num : 0_1 , upvalues : _ENV
+function table.appendArray(a, b)
   if not a or not b then
-    return 
+    return
   end
-  for i,v in ipairs(b) do
-    (table.insert)(a, v)
+  for i, v in ipairs(b) do
+    table.insert(a, v)
   end
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-table.select = function(tt, k)
-  -- function num : 0_2 , upvalues : _ENV
+function table.select(tt, k)
   local ret = {}
-  for _,t in pairs(tt) do
-    (table.insert)(ret, t[k])
+  for _, t in pairs(tt) do
+    table.insert(ret, t[k])
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-table.ACS = function(a, b)
-  -- function num : 0_3
-  do return a < b end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function table.ACS(a, b)
+  return a < b
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-table.asc = function(k)
-  -- function num : 0_4
+function table.asc(k)
   return function(a, b)
-    -- function num : 0_4_0 , upvalues : k
-    do return a[k] < b[k] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return a[k] < b[k]
   end
-
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-table.DESC = function(a, b)
-  -- function num : 0_5
-  do return b < a end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function table.DESC(a, b)
+  return b < a
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-table.desc = function(k)
-  -- function num : 0_6
+function table.desc(k)
   return function(a, b)
-    -- function num : 0_6_0 , upvalues : k
-    do return b[k] < a[k] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return a[k] > b[k]
   end
-
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-table.orderby = function(...)
-  -- function num : 0_7 , upvalues : _ENV
-  local tb = {...}
+function table.orderby(...)
+  local tb = {
+    ...
+  }
   return function(a, b)
-    -- function num : 0_7_0 , upvalues : tb, _ENV
     for i = 1, #tb, 2 do
       local k = tb[i]
       local by = tb[i + 1]
       assert(a[k] ~= nil, "table.orderby nil " .. k)
       assert(b[k] ~= nil, "table.orderby nil " .. k)
-      if b[k] >= a[k] then
-        do
-          do return a[k] == b[k] and by ~= "desc" end
-          do return a[k] < b[k] end
-          -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if a[k] == b[k] then
+      elseif by == "desc" then
+        return a[k] > b[k]
+      else
+        return a[k] < b[k]
       end
     end
-    do return false end
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
+    return false
   end
-
 end
 
-local visited = nil
--- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
+local visited
 
-table.singlefind = function(tb, func, path)
-  -- function num : 0_8 , upvalues : next, type, visited, _ENV
-  for k,v in next do
+function table.singlefind(tb, func, path)
+  for k, v in next, tb, nil do
     if type(v) == "table" and not visited[v] then
       visited[v] = true
       if func(v) then
-        (table.insert)(path, k)
+        table.insert(path, k)
         return true
       else
-        ;
-        (table.insert)(path, k)
-        if (table.singlefind)(v, func, path) then
+        table.insert(path, k)
+        if table.singlefind(v, func, path) then
           return path
         end
         path[#path] = nil
@@ -142,11 +96,8 @@ table.singlefind = function(tb, func, path)
   return false
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-table.template = function(tb)
-  -- function num : 0_9 , upvalues : _ENV
-  local s, loop = (table.tostring)(tb)
+function table.template(tb)
+  local s, loop = table.tostring(tb)
   if loop then
     assert("template loop table")
     return loadstring("return string.totable[===[" .. s .. "]===]")
@@ -156,31 +107,26 @@ table.template = function(tb)
 end
 
 local tpns = {}
--- DECOMPILER ERROR at PC38: Confused about usage of register: R5 in 'UnsetPending'
 
-table.templaten = function(n)
-  -- function num : 0_10 , upvalues : tpns, _ENV
+function table.templaten(n)
   if n <= 0 then
     return {}
   end
   if tpns[n] then
-    return (tpns[n])()
+    return tpns[n]()
   end
   local tb = {}
   for ii = 1, n do
     tb[ii] = 0
   end
-  local tpn = (table.template)(tb)
+  local tpn = table.template(tb)
   tpns[n] = tpn
   return tpn()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-table.filter = function(tb, func)
-  -- function num : 0_11 , upvalues : next
+function table.filter(tb, func)
   local newtb = {}
-  for k,v in next do
+  for k, v in next, tb, nil do
     if func(v) then
       newtb[k] = v
     end
@@ -188,53 +134,36 @@ table.filter = function(tb, func)
   return newtb
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-table.cover = function(dest, src)
-  -- function num : 0_12 , upvalues : next
-  local samek = nil
-  for k,v in next do
+function table.cover(dest, src)
+  local samek
+  for k, v in next, src, nil do
     if dest[k] ~= v then
       dest[k] = v
       if dest[k] == nil then
         samek = false
-      else
-        if samek == nil then
-          samek = true
-        end
+      elseif samek == nil then
+        samek = true
       end
     end
   end
   return dest, samek
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-table.find = function(tb, func)
-  -- function num : 0_13 , upvalues : visited, _ENV
+function table.find(tb, func)
   visited = {}
-  return (table.singlefind)(tb, func, {})
+  return table.singlefind(tb, func, {})
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R5 in 'UnsetPending'
-
-table.add = function(tb, col, newcol)
-  -- function num : 0_14
+function table.add(tb, col, newcol)
   local v = 0
   for ii = 1, #tb do
-    v = v + (tb[ii])[col]
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (tb[ii])[newcol] = v
+    v = v + tb[ii][col]
+    tb[ii][newcol] = v
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R5 in 'UnsetPending'
-
-table.ikey = function(tb, v)
-  -- function num : 0_15
+function table.ikey(tb, v)
   for ii = 1, #tb do
     if tb[ii] == v then
       return ii
@@ -242,65 +171,47 @@ table.ikey = function(tb, v)
   end
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R5 in 'UnsetPending'
-
 if not table.clear then
-  table.clear = function(t)
-  -- function num : 0_16 , upvalues : next
-  if not t then
+  function table.clear(t)
+    if not t then
+      return t
+    end
+    for k, v in next, t, nil do
+      t[k] = nil
+    end
     return t
   end
-  for k,v in next do
-    t[k] = nil
-  end
-  return t
-end
-
 else
   local clear0 = table.clear
-  do
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R6 in 'UnsetPending'
-
-    table.clear = function(t)
-  -- function num : 0_17 , upvalues : clear0
-  if not t then
-    return 
-  end
-  return clear0(t)
-end
-
+  
+  function table.clear(t)
+    if not t then
+      return
+    end
+    return clear0(t)
   end
 end
-do
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R5 in 'UnsetPending'
 
-  table.pushv = function(dest, src)
-  -- function num : 0_18 , upvalues : next, _ENV
-  for k,v in next do
-    (table.insert)(dest, v)
+function table.pushv(dest, src)
+  for k, v in next, src, nil do
+    table.insert(dest, v)
   end
   return dest
 end
 
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.removev = function(tb, value)
-  -- function num : 0_19 , upvalues : next, _ENV
-  for k,v in next do
+function table.removev(tb, value)
+  for k, v in next, tb, nil do
     if v == value then
-      (table.remove)(tb, k)
-      return 
+      table.remove(tb, k)
+      return
     end
   end
 end
 
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.recursive = function(dest, src)
-  -- function num : 0_20 , upvalues : next, type, _ENV
-  for k,v in next do
+function table.recursive(dest, src)
+  for k, v in next, src, nil do
     if type(v) == "table" and type(dest[k]) == "table" then
-      (table.recursive)(dest[k], v)
+      table.recursive(dest[k], v)
     else
       dest[k] = v
     end
@@ -308,58 +219,42 @@ end
   return dest
 end
 
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.del = function(tb, dels)
-  -- function num : 0_21 , upvalues : next, type, _ENV
-  for k,v in next do
+function table.del(tb, dels)
+  for k, v in next, dels, nil do
     if type(v) == "table" then
-      (table.del)(tb[k], v)
+      table.del(tb[k], v)
     else
       tb[k] = nil
     end
   end
 end
 
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.readonly = function(x, name, deep)
-  -- function num : 0_22 , upvalues : next, type, _ENV
+function table.readonly(x, name, deep)
   if deep then
-    for k,v in next do
+    for k, v in next, x, nil do
       if type(v) == "table" then
-        x[k] = (table.readonly)(v, name .. "." .. k, true)
+        x[k] = table.readonly(v, name .. "." .. k, true)
       end
     end
   end
-  do
-    local m = {}
-    m.__newindex = function()
-    -- function num : 0_22_0 , upvalues : _ENV, name
+  local m = {}
+  
+  function m.__newindex()
     error(name and "readonly " .. name or "readonly")
   end
-
-    return setmetatable(x, m), m
-  end
+  
+  return setmetatable(x, m), m
 end
 
-  -- DECOMPILER ERROR at PC85: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.keys = function(t, keys)
-  -- function num : 0_23 , upvalues : next
-  if not keys then
-    local keys = {}
-  end
-  for k,_ in next do
+function table.keys(t, keys)
+  local keys = keys or {}
+  for k, _ in next, t, nil do
     keys[#keys + 1] = k
   end
   return keys
 end
 
-  -- DECOMPILER ERROR at PC88: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.ikeys = function(t)
-  -- function num : 0_24
+function table.ikeys(t)
   local s = {}
   for i = 1, #t do
     s[i] = i
@@ -367,29 +262,19 @@ end
   return s
 end
 
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.values = function(t)
-  -- function num : 0_25 , upvalues : next, _ENV
+function table.values(t)
   local values = {}
-  for _,v in next do
-    (table.insert)(values, v)
+  for _, v in next, t, nil do
+    table.insert(values, v)
   end
   return values
 end
 
-  -- DECOMPILER ERROR at PC94: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.compare = function(t1, t2)
-  -- function num : 0_26 , upvalues : _ENV, next
-  if not t1 then
-    t1 = GameHelper.EMPTY_TABLE
-  end
-  if not t2 then
-    t2 = GameHelper.EMPTY_TABLE
-  end
-  local com, r1, r2 = {}, (table.append)({}, t1), (table.append)({}, t2)
-  for k,v in next do
+function table.compare(t1, t2)
+  t1 = t1 or GameHelper.EMPTY_TABLE
+  t2 = t2 or GameHelper.EMPTY_TABLE
+  local com, r1, r2 = {}, table.append({}, t1), table.append({}, t2)
+  for k, v in next, t1, nil do
     if t2[k] == v then
       com[k] = v
       r1[k] = nil
@@ -399,34 +284,25 @@ end
   return com, r1, r2
 end
 
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.reverse = function(t, func)
-  -- function num : 0_27 , upvalues : next
+function table.reverse(t, func)
   local r = {}
-  for k,v in next do
+  for k, v in next, t, nil do
     r[v] = func and func(k) or k
   end
   return r
 end
 
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.collect = function(t)
-  -- function num : 0_28 , upvalues : _ENV
+function table.collect(t)
   local arr = {}
-  for ii = 1, (table.maxn)(t) do
+  for ii = 1, table.maxn(t) do
     if t[ii] then
-      (table.insert)(arr, t[ii])
+      table.insert(arr, t[ii])
     end
   end
   return arr
 end
 
-  -- DECOMPILER ERROR at PC103: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.minn = function(t)
-  -- function num : 0_29
+function table.minn(t)
   for ii = 1, #t do
     if t[ii] then
       return ii
@@ -434,52 +310,41 @@ end
   end
 end
 
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.minv = function(tb, key)
-  -- function num : 0_30 , upvalues : _ENV, next
+function table.minv(tb, key)
   local minv = math.huge
-  for _,v in next do
+  for _, v in next, tb, nil do
     local rv = key and v[key] or v
-    minv = (math.min)(minv, rv)
+    minv = math.min(minv, rv)
   end
   return minv
 end
 
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.min = function(t)
-  -- function num : 0_31
-  local firstk = nil
+function table.min(t)
+  local firstk
   for k = 1, #t do
     if t[k] then
       firstk = k
       break
     end
   end
-  do
-    local minnum = t[firstk]
-    local pos = firstk
-    if not minnum then
-      return 
-    end
-    for k = 1, #t do
-      local v = t[k]
-      if v < minnum then
-        minnum = v
-        pos = k
-      end
-    end
-    return minnum, pos
+  local minnum = t[firstk]
+  local pos = firstk
+  if not minnum then
+    return
   end
+  for k = 1, #t do
+    local v = t[k]
+    if minnum > v then
+      minnum = v
+      pos = k
+    end
+  end
+  return minnum, pos
 end
 
-  -- DECOMPILER ERROR at PC112: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.max = function(t)
-  -- function num : 0_32 , upvalues : next, _ENV
-  local firstk = nil
-  for k,_ in next do
+function table.max(t)
+  local firstk
+  for k, _ in next, t, nil do
     if t[k] then
       firstk = k
     end
@@ -487,8 +352,8 @@ end
   local maxnum = t[firstk]
   local pos = firstk
   assert(maxnum, "blank table")
-  for k,v in next do
-    if maxnum < v then
+  for k, v in next, t, nil do
+    if v > maxnum then
       maxnum = v
       pos = k
     end
@@ -496,12 +361,9 @@ end
   return maxnum, pos
 end
 
-  -- DECOMPILER ERROR at PC115: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.count = function(t)
-  -- function num : 0_33 , upvalues : next
+function table.count(t)
   local sum = 0
-  for k,v in next do
+  for k, v in next, t, nil do
     if v ~= nil then
       sum = sum + 1
     end
@@ -509,36 +371,21 @@ end
   return sum
 end
 
-  -- DECOMPILER ERROR at PC118: Confused about usage of register: R5 in 'UnsetPending'
-
-  table.addValue = function(base, app)
-  -- function num : 0_34 , upvalues : _ENV, type
-  for k,v in pairs(app) do
-    if not base[k] then
-      base[k] = (type(v) ~= "number" or 0) + v
-      if not base[k] then
-        do
-          base[k] = (table.addValue)({}, v)
-          -- DECOMPILER ERROR at PC25: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC25: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC25: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC25: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+function table.addValue(base, app)
+  for k, v in pairs(app) do
+    if type(v) == "number" then
+      base[k] = (base[k] or 0) + v
+    else
+      base[k] = table.addValue(base[k] or {}, v)
     end
   end
   return base
 end
 
-  local unserialize = function(flattb, tb, visited)
-  -- function num : 0_35 , upvalues : next, unserialize
+local function unserialize(flattb, tb, visited)
   if not visited[tb] then
     visited[tb] = true
-    for key,v in next do
+    for key, v in next, tb.__ref__, nil do
       tb[key] = flattb[v]
       unserialize(flattb, flattb[v], visited)
     end
@@ -546,171 +393,100 @@ end
   end
 end
 
-  -- DECOMPILER ERROR at PC122: Confused about usage of register: R6 in 'UnsetPending'
-
-  string.totable = function(s)
-  -- function num : 0_36 , upvalues : _ENV, next, unserialize
-  local flattb = (loadstring("return " .. s))()
-  if #flattb > 1 then
+function string.totable(s)
+  local flattb = loadstring("return " .. s)()
+  if 1 < #flattb then
     local tbs = {}
-    for _,ftb in next do
+    for _, ftb in next, flattb, nil do
       local tb = ftb.tb0
       if tb then
         unserialize(ftb, tb, {})
       else
         tb = ftb
       end
-      ;
-      (table.insert)(tbs, tb)
+      table.insert(tbs, tb)
     end
     return tbs
   else
-    do
-      local tb = flattb.tb0
-      if tb then
-        unserialize(flattb, tb, {})
-      else
-        tb = flattb
-      end
-      do return {tb} end
+    local tb = flattb.tb0
+    if tb then
+      unserialize(flattb, tb, {})
+    else
+      tb = flattb
     end
+    return {tb}
   end
 end
 
-  -- DECOMPILER ERROR at PC125: Confused about usage of register: R6 in 'UnsetPending'
-
-  table.flat = function(t, flattb, visited)
-  -- function num : 0_37 , upvalues : next, type, _ENV
+function table.flat(t, flattb, visited)
   local tbname = "tb" .. flattb.lv
   if not visited[t] then
     flattb[tbname] = {
-__ref__ = {}
-}
+      __ref__ = {}
+    }
     visited[t] = tbname
-    for k,v in next do
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R9 in 'UnsetPending'
-
+    for k, v in next, t, nil do
       if type(v) ~= "table" then
-        (flattb[tbname])[k] = v
+        flattb[tbname][k] = v
+      elseif not visited[v] then
+        flattb.lv = flattb.lv + 1
+        local newtbname = "tb" .. flattb.lv
+        flattb[tbname][k] = newtbname
+        flattb[tbname].__ref__[k] = newtbname
+        table.flat(v, flattb, visited)
       else
-        if not visited[v] then
-          flattb.lv = flattb.lv + 1
-          local newtbname = "tb" .. flattb.lv
-          -- DECOMPILER ERROR at PC33: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (flattb[tbname])[k] = newtbname
-          -- DECOMPILER ERROR at PC36: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          ((flattb[tbname]).__ref__)[k] = newtbname
-          ;
-          (table.flat)(v, flattb, visited)
-        else
-          do
-            do
-              flattb.loop = true
-              -- DECOMPILER ERROR at PC47: Confused about usage of register: R9 in 'UnsetPending'
-
-              ;
-              (flattb[tbname])[k] = visited[v]
-              -- DECOMPILER ERROR at PC51: Confused about usage of register: R9 in 'UnsetPending'
-
-              ;
-              ((flattb[tbname]).__ref__)[k] = visited[v]
-              -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+        flattb.loop = true
+        flattb[tbname][k] = visited[v]
+        flattb[tbname].__ref__[k] = visited[v]
       end
     end
   end
 end
 
-  local serialize = function(o, s)
-  -- function num : 0_38 , upvalues : type, next, serialize, _ENV
+local function serialize(o, s)
   if type(o) == "number" then
     s = s .. o
-  else
-    if type(o) == "string" then
-      s = s .. "\'" .. o .. "\'"
-    else
-      if not o or not "true" then
-        s = s .. (type(o) ~= "boolean" or "false")
-        if type(o) == "table" then
-          s = s .. "{"
-          for k,v in next do
-            if type(k) == "number" then
-              s = s .. "[" .. k .. "]="
-              s = serialize(v, s)
-              s = s .. ","
-            else
-              if type(k) == "string" then
-                s = s .. "[\'" .. k .. "\']="
-                s = serialize(v, s)
-                s = s .. ","
-              else
-                if not k or not "true" then
-                  do
-                    s = s .. "[" .. (type(k) ~= "boolean" or "false") .. "]="
-                    s = serialize(v, s)
-                    s = s .. ","
-                    -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-          end
-          s = s .. "}"
-        else
-        end
-        if type(o) ~= "function" or type(o) == "userdata" then
-          error("cannot serialize a " .. type(o))
-          return s
-        end
+  elseif type(o) == "string" then
+    s = s .. "'" .. o .. "'"
+  elseif type(o) == "boolean" then
+    s = s .. (o and "true" or "false")
+  elseif type(o) == "table" then
+    s = s .. "{"
+    for k, v in next, o, nil do
+      if type(k) == "number" then
+        s = s .. "[" .. k .. "]="
+        s = serialize(v, s)
+        s = s .. ","
+      elseif type(k) == "string" then
+        s = s .. "['" .. k .. "']="
+        s = serialize(v, s)
+        s = s .. ","
+      elseif type(k) == "boolean" then
+        s = s .. "[" .. (k and "true" or "false") .. "]="
+        s = serialize(v, s)
+        s = s .. ","
       end
     end
+    s = s .. "}"
+  elseif type(o) == "function" then
+  elseif type(o) == "userdata" then
+  else
+    error("cannot serialize a " .. type(o))
   end
+  return s
 end
 
-  -- DECOMPILER ERROR at PC129: Confused about usage of register: R7 in 'UnsetPending'
-
-  table.tonumber = function(t)
-  -- function num : 0_39 , upvalues : next, _ENV
+function table.tonumber(t)
   local t2 = {}
-  for k,v in next do
+  for k, v in next, t, nil do
     t2[k] = tonumber(v)
   end
   return t2
 end
 
-  -- DECOMPILER ERROR at PC132: Confused about usage of register: R7 in 'UnsetPending'
-
-  table.tostring = function(t)
-  -- function num : 0_40 , upvalues : _ENV, serialize
+function table.tostring(t)
   local flattb, visited = {lv = 0}, {}
-  ;
-  (table.flat)(t, flattb, visited)
+  table.flat(t, flattb, visited)
   flattb.lv = nil
   if not flattb.loop then
     return serialize(t, ""), false
@@ -720,10 +496,7 @@ end
   end
 end
 
-  -- DECOMPILER ERROR at PC135: Confused about usage of register: R7 in 'UnsetPending'
-
-  table.minn = function(t)
-  -- function num : 0_41
+function table.minn(t)
   for ii = 1, #t do
     if not t[ii] then
       return ii
@@ -732,10 +505,7 @@ end
   return #t + 1
 end
 
-  -- DECOMPILER ERROR at PC138: Confused about usage of register: R7 in 'UnsetPending'
-
-  table.tostr = function(t, tabnum, float)
-  -- function num : 0_42 , upvalues : type, _ENV, toint
+function table.tostr(t, tabnum, float)
   local tabnum = tabnum or 1
   local tabs = ""
   for i = 1, tabnum do
@@ -744,23 +514,18 @@ end
   local tt = type(t)
   assert(tt == "table", "bad argument #1(table expected, got " .. tt .. ")")
   local ts = {}
-  local t0 = (table.keys)(t)
-  ;
-  (table.sort)(t0, function(a, b)
-    -- function num : 0_42_0 , upvalues : type, _ENV
-    if a >= b then
-      do return type(a) ~= "number" or type(b) ~= "number" end
-      if type(a) == "number" and type(b) ~= "number" then
-        return true
-      elseif type(b) == "number" and type(a) ~= "number" then
-        return false
-      else
-        return tostring(a) < tostring(b)
-      end
-      -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  local t0 = table.keys(t)
+  table.sort(t0, function(a, b)
+    if type(a) == "number" and type(b) == "number" then
+      return a < b
+    elseif type(a) == "number" and type(b) ~= "number" then
+      return true
+    elseif type(b) == "number" and type(a) ~= "number" then
+      return false
+    else
+      return tostring(a) < tostring(b)
     end
-  end
-)
+  end)
   for i = 1, #t0 do
     local k = t0[i]
     local v = t[k]
@@ -774,44 +539,24 @@ end
     end
     k = tabs .. tostring(k)
     if tv == "table" then
-      ts[#ts + 1] = k .. "=" .. (table.tostr)(v, tabnum + 1, float)
+      ts[#ts + 1] = k .. "=" .. table.tostr(v, tabnum + 1, float)
     elseif tv == "string" then
       ts[#ts + 1] = k .. "=[[" .. v .. "]]"
-    elseif v ~= toint(v) and float then
-      if float < 0 or toint(float) ~= float then
-        do
-          assert(tv ~= "number", "")
-          ts[#ts + 1] = k .. (string.format)("=%." .. float .. "f", v)
-          ts[#ts + 1] = k .. "=" .. tostring(v)
-          ts[#ts + 1] = k .. "=" .. tostring(v)
-          -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    elseif tv == "number" then
+      if v ~= toint(v) and float then
+        assert(0 <= float and toint(float) == float, "")
+        ts[#ts + 1] = k .. string.format("=%." .. float .. "f", v)
+      else
+        ts[#ts + 1] = k .. "=" .. tostring(v)
       end
+    else
+      ts[#ts + 1] = k .. "=" .. tostring(v)
     end
   end
-  do return "{\n" .. (table.concat)(ts, ",\n") .. "\n" .. tabs .. "}" end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
+  return "{\n" .. table.concat(ts, ",\n") .. "\n" .. tabs .. "}"
 end
 
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R7 in 'UnsetPending'
-
-  table.cloneconf = function(st)
-  -- function num : 0_43 , upvalues : _ENV, type, next
+function table.cloneconf(st)
   if not st then
     return st
   end
@@ -826,111 +571,83 @@ end
     if isConf then
       return CloneConf(name)
     end
-    for k,v in next do
+    for k, v in next, st, nil do
       if type(v) ~= "table" then
         dt[k] = v
       else
-        dt[k] = (table.cloneconf)(v)
+        dt[k] = table.cloneconf(v)
       end
     end
   end
-  do
+  return dt
+end
+
+if not table.clone then
+  function table.clone(st)
+    local dt = {}
+    
+    if type(st) ~= "table" then
+      error("source is not table in table.clone")
+    else
+      for k, v in next, st, nil do
+        if type(v) == "table" then
+          dt[k] = table.clone(v)
+        else
+          dt[k] = v
+        end
+      end
+    end
     return dt
   end
 end
 
-  -- DECOMPILER ERROR at PC148: Confused about usage of register: R7 in 'UnsetPending'
-
-  if not table.clone then
-    table.clone = function(st)
-  -- function num : 0_44 , upvalues : type, _ENV, next
-  local dt = {}
-  if type(st) ~= "table" then
-    error("source is not table in table.clone")
-  else
-    for k,v in next do
-      if type(v) == "table" then
-        dt[k] = (table.clone)(v)
-      else
-        dt[k] = v
-      end
-    end
-  end
-  do
-    return dt
-  end
-end
-
-  end
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R7 in 'UnsetPending'
-
-  table.replace = function(t, r)
-  -- function num : 0_45 , upvalues : next, type, _ENV
-  for k,v in next do
+function table.replace(t, r)
+  for k, v in next, t, nil do
     if type(v) == "string" then
       local a = {}
-      for s in (string.gmatch)(v, "var%d+") do
-        (table.insert)(a, s)
+      for s in string.gmatch(v, "var%d+") do
+        table.insert(a, s)
       end
       if #a == 1 and a[1] == v then
-        local index = (string.find)(v, "%d")
-        local value = r["var" .. (string.sub)(v, index)]
+        local index = string.find(v, "%d")
+        local value = r["var" .. string.sub(v, index)]
         if not value then
-          (Log.fatal)(r.id, "no define", "var" .. (string.sub)(v, index))
+          Log.fatal(r.id, "no define", "var" .. string.sub(v, index))
         end
         t[k] = value
       end
-    else
-      do
-        do
-          if type(v) == "table" then
-            t[k] = (table.replace)(v, r)
-          end
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif type(v) == "table" then
+      t[k] = table.replace(v, r)
     end
   end
   return t
 end
 
-  -- DECOMPILER ERROR at PC154: Confused about usage of register: R7 in 'UnsetPending'
-
-  table.delEmpty = function(tbl)
-  -- function num : 0_46 , upvalues : next, type, _ENV
+function table.delEmpty(tbl)
   if not next(tbl) then
     return nil
   end
-  for k,v in next do
+  for k, v in next, tbl, nil do
     if type(v) == "table" then
-      tbl[k] = (table.delEmpty)(v)
+      tbl[k] = table.delEmpty(v)
     end
   end
   return tbl
 end
 
-  local hequal = function(tb1, tb2)
-  -- function num : 0_47 , upvalues : _ENV, next
-  if #(table.keys)(tb1) ~= #(table.keys)(tb2) then
+local function hequal(tb1, tb2)
+  if #table.keys(tb1) ~= #table.keys(tb2) then
     return false
   end
-  for k1,v1 in next do
-    if not (table.equal)(v1, tb2[k1]) then
+  for k1, v1 in next, tb1, nil do
+    if not table.equal(v1, tb2[k1]) then
       return false
     end
   end
   return true
 end
 
-  -- DECOMPILER ERROR at PC158: Confused about usage of register: R8 in 'UnsetPending'
-
-  table.equal = function(tb1, tb2)
-  -- function num : 0_48 , upvalues : type, hequal
+function table.equal(tb1, tb2)
   local kd1, kd2 = type(tb1), type(tb2)
   if kd1 ~= kd2 then
     return false
@@ -938,75 +655,58 @@ end
   if kd1 == "table" then
     return hequal(tb1, tb2)
   end
-  do return tb1 == tb2 or (tb1 ~= tb1 and tb2 ~= tb2) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return tb1 == tb2 or tb1 ~= tb1 and tb2 ~= tb2
 end
 
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R8 in 'UnsetPending'
-
-  table.pre = function(tb1, tb2)
-  -- function num : 0_49 , upvalues : _ENV
-  if tb1 ~= nil then
-    do return tb2 end
-    for ii = 1, #tb1 do
-      if not (table.equal)(tb1[ii], tb2[ii]) then
-        return false
-      end
-    end
-    do return true end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function table.pre(tb1, tb2)
+  if not tb2 then
+    return tb1 == nil
   end
+  for ii = 1, #tb1 do
+    if not table.equal(tb1[ii], tb2[ii]) then
+      return false
+    end
+  end
+  return true
 end
 
-  -- DECOMPILER ERROR at PC164: Confused about usage of register: R8 in 'UnsetPending'
-
-  table.childequalex = function(v1, tb2)
-  -- function num : 0_50 , upvalues : next, _ENV
+function table.childequalex(v1, tb2)
   local has = false
-  for k2,v2 in next do
-    if (table.equal)(v1, v2) then
+  for k2, v2 in next, tb2, nil do
+    if table.equal(v1, v2) then
       has = true
       break
     end
   end
-  do
-    return has
-  end
+  return has
 end
 
-  -- DECOMPILER ERROR at PC167: Confused about usage of register: R8 in 'UnsetPending'
-
-  table.childequal = function(tb1, tb2)
-  -- function num : 0_51 , upvalues : type, next, _ENV
+function table.childequal(tb1, tb2)
   local kd1, kd2 = type(tb1), type(tb2)
   if kd1 ~= kd2 then
     return false
   end
   if kd1 == "table" then
-    for k1,v1 in next do
-      if not (table.childequalex)(v1, tb2) then
+    for k1, v1 in next, tb1, nil do
+      if not table.childequalex(v1, tb2) then
         return false
       end
     end
-    for k2,v2 in next do
-      if not (table.childequalex)(v2, tb1) then
+    for k2, v2 in next, tb2, nil do
+      if not table.childequalex(v2, tb1) then
         return false
       end
     end
     return true
   end
-  do return tb1 == tb2 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return tb1 == tb2
 end
 
-  -- DECOMPILER ERROR at PC170: Confused about usage of register: R8 in 'UnsetPending'
-
-  table.recursive = function(dest, src)
-  -- function num : 0_52 , upvalues : type, next, _ENV
+function table.recursive(dest, src)
   local type = type
-  for k,v in next do
+  for k, v in next, src, nil do
     if type(v) == "table" and type(dest[k]) == "table" then
-      (table.recursive)(dest[k], v)
+      table.recursive(dest[k], v)
     else
       dest[k] = v
     end
@@ -1014,57 +714,40 @@ end
   return dest
 end
 
-  -- DECOMPILER ERROR at PC173: Confused about usage of register: R8 in 'UnsetPending'
-
-  table.sub = function(tb, from, to)
-  -- function num : 0_53 , upvalues : _ENV
-  if not from then
-    from = 1
-  end
-  if not to then
-    to = #tb
-  end
+function table.sub(tb, from, to)
+  from = from or 1
+  to = to or #tb
   local ntb = {}
   for ii = from, to do
-    (table.insert)(ntb, tb[ii])
+    table.insert(ntb, tb[ii])
   end
   return ntb
 end
 
-  local weakk = {__mode = "k"}
-  -- DECOMPILER ERROR at PC178: Confused about usage of register: R9 in 'UnsetPending'
+local weakk = {__mode = "k"}
 
-  table.weakk = function()
-  -- function num : 0_54 , upvalues : _ENV, weakk
+function table.weakk()
   return setmetatable({}, weakk)
 end
 
-  local weakv = {__mode = "v"}
-  -- DECOMPILER ERROR at PC183: Confused about usage of register: R10 in 'UnsetPending'
+local weakv = {__mode = "v"}
 
-  table.weakv = function()
-  -- function num : 0_55 , upvalues : _ENV, weakv
+function table.weakv()
   return setmetatable({}, weakv)
 end
 
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.intable = function(tb, val, key)
-  -- function num : 0_56 , upvalues : _ENV
-  for _,v in pairs(tb) do
-    if val == key and v[key] or v then
+function table.intable(tb, val, key)
+  for _, v in pairs(tb) do
+    if val == (key and v[key] or v) then
       return true
     end
   end
   return false
 end
 
-  -- DECOMPILER ERROR at PC189: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.noarray = function(s)
-  -- function num : 0_57 , upvalues : next, type
+function table.noarray(s)
   local ss = {}
-  for k,v in next do
+  for k, v in next, s, nil do
     if type(k) ~= "number" then
       ss[k] = v
     end
@@ -1072,27 +755,21 @@ end
   return ss
 end
 
-  -- DECOMPILER ERROR at PC192: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.findpos = function(tb, val, key)
-  -- function num : 0_58
+function table.findpos(tb, val, key)
   for ii = 1, #tb do
-    if val < (tb[ii])[key] then
+    if val < tb[ii][key] then
       return ii - 1
     end
   end
 end
 
-  -- DECOMPILER ERROR at PC195: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.appendattrs = function(tb, newtb)
-  -- function num : 0_59 , upvalues : _ENV
+function table.appendattrs(tb, newtb)
   if not newtb then
-    return 
+    return
   end
-  local temp = (table.clone)(newtb)
-  for key,value in pairs(temp) do
-    local iksy = (table.iskey)(tb, key)
+  local temp = table.clone(newtb)
+  for key, value in pairs(temp) do
+    local iksy = table.iskey(tb, key)
     if iksy then
       tb[key] = tb[key] + value
     else
@@ -1101,91 +778,67 @@ end
   end
 end
 
-  -- DECOMPILER ERROR at PC198: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.appendattr = function(tb, key, value)
-  -- function num : 0_60 , upvalues : _ENV
-  if (table.iskey)(tb, key) then
+function table.appendattr(tb, key, value)
+  if table.iskey(tb, key) then
     tb[key] = tb[key] + value
   else
     tb[key] = value
   end
 end
 
-  -- DECOMPILER ERROR at PC201: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.appendnum = function(tb1, tb2)
-  -- function num : 0_61 , upvalues : _ENV
-  if not tb2 then
-    for k,v in pairs({}) do
-      local key = nil
-      if not tb1 then
-        do
-          for m,n in pairs({}) do
-            if v[1] == n[1] then
-              n[2] = n[2] + v[2]
-              key = n[1]
-            end
-          end
-          if not key then
-            (table.insert)(tb1, {v[1], v[2]})
-          end
-          -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+function table.appendnum(tb1, tb2)
+  for k, v in pairs(tb2 or {}) do
+    local key
+    for m, n in pairs(tb1 or {}) do
+      if v[1] == n[1] then
+        n[2] = n[2] + v[2]
+        key = n[1]
       end
     end
-    return tb1
+    if not key then
+      table.insert(tb1, {
+        v[1],
+        v[2]
+      })
+    end
   end
+  return tb1
 end
 
-  -- DECOMPILER ERROR at PC204: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.iskey = function(tb, key)
-  -- function num : 0_62 , upvalues : _ENV
+function table.iskey(tb, key)
   if tb == nil then
     return false
   end
-  for k,v in pairs(tb) do
+  for k, v in pairs(tb) do
     if k == key then
       return true
     end
   end
 end
 
-  -- DECOMPILER ERROR at PC207: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.randomn = function(t, n)
-  -- function num : 0_63 , upvalues : _ENV
-  if #t < n then
+function table.randomn(t, n)
+  if n > #t then
     assert(false, "cant sel n from t")
   end
   if #t == n then
     return t
   end
   local s = {}
-  do
-    while #s < n do
-      local i = (math.random)(1, #t)
-      if not (table.ikey)(s, t[i]) then
-        s[#s + 1] = t[i]
-      end
+  while n > #s do
+    local i = math.random(1, #t)
+    if not table.ikey(s, t[i]) then
+      s[#s + 1] = t[i]
     end
-    return s
   end
+  return s
 end
 
-  -- DECOMPILER ERROR at PC210: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.icontains = function(t, value)
-  -- function num : 0_64 , upvalues : _ENV
+function table.icontains(t, value)
   if t == nil then
     return false
   end
   if value == nil then
-    (Log.error)("table.icontains is checking nil in a table")
+    Log.error("table.icontains is checking nil in a table")
     return false
   end
   for ii = 1, #t do
@@ -1196,106 +849,79 @@ end
   return false
 end
 
-  -- DECOMPILER ERROR at PC213: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.maxn = function(t)
-  -- function num : 0_65 , upvalues : _ENV
+function table.maxn(t)
   local mn = 0
-  for k,v in pairs(t) do
-    if mn < k then
+  for k, v in pairs(t) do
+    if k > mn then
       mn = k
     end
   end
   return mn
 end
 
-  -- DECOMPILER ERROR at PC216: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.foreach = function(t, visitor)
-  -- function num : 0_66 , upvalues : _ENV
-  for k,v in pairs(t) do
+function table.foreach(t, visitor)
+  for k, v in pairs(t) do
     visitor(v)
   end
 end
 
-  -- DECOMPILER ERROR at PC219: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.shallowcopy = function(dest)
-  -- function num : 0_67 , upvalues : type, _ENV
-  (type(dest))
-  local destType = nil
-  local src = nil
+function table.shallowcopy(dest)
+  local destType = type(dest)
+  local src
   if destType == "table" then
     src = {}
-    for k,v in pairs(dest) do
+    for k, v in pairs(dest) do
       src[k] = v
     end
   else
-    do
-      src = dest
-      return src
-    end
+    src = dest
   end
+  return src
 end
 
-  -- DECOMPILER ERROR at PC222: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.shuffle = function(t)
-  -- function num : 0_68 , upvalues : _ENV
+function table.shuffle(t)
   for i = 1, #t do
-    local n = (math.random)(1, #t)
-    t[i] = t[n]
+    local n = math.random(1, #t)
+    t[i], t[n] = t[n], t[i]
   end
   return t
 end
 
-  -- DECOMPILER ERROR at PC225: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.unique = function(t)
-  -- function num : 0_69 , upvalues : _ENV
+function table.unique(t)
   local s = {}
-  for _,v in ipairs(t) do
-    if not (table.icontains)(s, v) then
+  for _, v in ipairs(t) do
+    if not table.icontains(s, v) then
       s[#s + 1] = v
     end
   end
   return s
 end
 
-  -- DECOMPILER ERROR at PC228: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.union = function(t1, t2)
-  -- function num : 0_70 , upvalues : _ENV
+function table.union(t1, t2)
   local t = {}
-  for _,v in ipairs(t1) do
-    if (table.icontains)(t2, v) then
+  for _, v in ipairs(t1) do
+    if table.icontains(t2, v) then
       t[#t + 1] = v
     end
   end
   return t
 end
 
-  -- DECOMPILER ERROR at PC231: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.toArray = function(t)
-  -- function num : 0_71 , upvalues : _ENV
+function table.toArray(t)
   local r = {}
-  for k,v in pairs(t) do
+  for k, v in pairs(t) do
     r[#r + 1] = v
   end
   return r
 end
 
-  -- DECOMPILER ERROR at PC234: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.isSame = function(t1, t2)
-  -- function num : 0_72 , upvalues : _ENV
-  for k,v in pairs(t1) do
+function table.isSame(t1, t2)
+  for k, v in pairs(t1) do
     if not t2[k] or t2[k] ~= v then
       return false
     end
   end
-  for k,v in pairs(t2) do
+  for k, v in pairs(t2) do
     if not t1[k] or t1[k] ~= v then
       return false
     end
@@ -1303,14 +929,11 @@ end
   return true
 end
 
-  -- DECOMPILER ERROR at PC237: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.Vector2Include = function(t, v)
-  -- function num : 0_73 , upvalues : _ENV
+function table.Vector2Include(t, v)
   if not v._className or v._className ~= "Vector2" then
     return false
   end
-  for i,s in ipairs(t) do
+  for i, s in ipairs(t) do
     if s.x == v.x and s.y == v.y then
       return true
     end
@@ -1318,40 +941,28 @@ end
   return false
 end
 
-  -- DECOMPILER ERROR at PC240: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.Vector2Append = function(t, v, filter_list)
-  -- function num : 0_74 , upvalues : _ENV
-  if not filter_list then
-    filter_list = {}
-  end
-  for _,pos in pairs(v) do
-    if not (table.Vector2Include)(filter_list, pos) then
-      (table.insert)(t, pos)
+function table.Vector2Append(t, v, filter_list)
+  filter_list = filter_list or {}
+  for _, pos in pairs(v) do
+    if not table.Vector2Include(filter_list, pos) then
+      table.insert(t, pos)
     end
   end
 end
 
-  -- DECOMPILER ERROR at PC243: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.Unfold = function(t)
-  -- function num : 0_75 , upvalues : _ENV, type
+function table.Unfold(t)
   local r = {}
-  for i,v in ipairs(t) do
+  for i, v in ipairs(t) do
     if type(v) ~= "table" then
       r[#r + 1] = v
     else
-      ;
-      (table.appendArray)(r, (table.Unfold)(v))
+      table.appendArray(r, table.Unfold(v))
     end
   end
   return r
 end
 
-  -- DECOMPILER ERROR at PC246: Confused about usage of register: R10 in 'UnsetPending'
-
-  table.getTableDiffIndex = function(arr1, arr2)
-  -- function num : 0_76 , upvalues : type, _ENV
+function table.getTableDiffIndex(arr1, arr2)
   local idx = 0
   local diff = false
   local new = false
@@ -1360,7 +971,7 @@ end
   end
   local len1 = #arr1
   local len2 = #arr2
-  local len = (math.max)(len1, len2)
+  local len = math.max(len1, len2)
   for i = 1, len do
     local val1 = arr1[i]
     local val2 = arr2[i]
@@ -1373,10 +984,5 @@ end
       break
     end
   end
-  do
-    return diff, idx, new
-  end
+  return diff, idx, new
 end
-
-end
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_review_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaReviewItem", UICustomWidget)
 UIXiaoLinJiaReviewItem = UIXiaoLinJiaReviewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaReviewItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.atlas = (self:RootUIOwner()):GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
+function UIXiaoLinJiaReviewItem:OnShow()
+  self.atlas = self:RootUIOwner():GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
   self.txtContent = self:GetUIComponent("UILocalizationText", "txtContent")
   self.icon = self:GetUIComponent("Image", "icon")
   self.txtBG = self:GetUIComponent("Image", "txtBG")
@@ -17,62 +10,32 @@ UIXiaoLinJiaReviewItem.OnShow = function(self)
   self.img2Obj = self:GetGameObject("img2")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaReviewItem.OnHide = function(self)
-  -- function num : 0_1
+function UIXiaoLinJiaReviewItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaReviewItem.Flush = function(self, speakerIdx, icon, content)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXiaoLinJiaReviewItem:Flush(speakerIdx, icon, content)
   if speakerIdx == 1 then
-    (self.img1Obj):SetActive(false)
-    ;
-    (self.img2Obj):SetActive(true)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.txtBG).sprite = (self.atlas):GetSprite("n36_xljmqd_record-01")
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.txtContent).color = Color(1, 1, 1, 1)
+    self.img1Obj:SetActive(false)
+    self.img2Obj:SetActive(true)
+    self.txtBG.sprite = self.atlas:GetSprite("n36_xljmqd_record-01")
+    self.txtContent.color = Color(1, 1, 1, 1)
   else
-    ;
-    (self.img1Obj):SetActive(true)
-    ;
-    (self.img2Obj):SetActive(false)
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.txtBG).sprite = (self.atlas):GetSprite("n36_xljmqd_record-02")
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.txtContent).color = Color(0.43921568627451, 0.78039215686275, 0.17647058823529, 1)
+    self.img1Obj:SetActive(true)
+    self.img2Obj:SetActive(false)
+    self.txtBG.sprite = self.atlas:GetSprite("n36_xljmqd_record-02")
+    self.txtContent.color = Color(0.4392156862745098, 0.7803921568627451, 0.17647058823529413, 1)
   end
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = (self.atlas):GetSprite(icon)
-  local content = self:_DoEscape((StringTable.Get)(content))
-  ;
-  (self.txtContent):SetText(content)
+  self.icon.sprite = self.atlas:GetSprite(icon)
+  local content = self:_DoEscape(StringTable.Get(content))
+  self.txtContent:SetText(content)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaReviewItem._DoEscape = function(self, strContent)
-  -- function num : 0_3 , upvalues : _ENV
-  strContent = (string.gsub)(strContent, "$$", "$")
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function UIXiaoLinJiaReviewItem:_DoEscape(strContent)
+  strContent = string.gsub(strContent, "$$", "$")
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  strContent = (string.gsub)(strContent, "PlayerName", name)
+  strContent = string.gsub(strContent, "PlayerName", name)
   return strContent
 end
-
-

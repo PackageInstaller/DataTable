@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_get_collection_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaGetCollectionController", UIController)
 UIXiaoLinJiaGetCollectionController = UIXiaoLinJiaGetCollectionController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaGetCollectionController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIXiaoLinJiaGetCollectionController:OnShow(uiParams)
   self.atlas = self:GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
   self.callback = uiParams[1]
   self.cfg = uiParams[2]
@@ -22,40 +15,22 @@ UIXiaoLinJiaGetCollectionController.OnShow = function(self, uiParams)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaGetCollectionController.OnValue = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.collectionImage).sprite = (self.atlas):GetSprite((self.cfg).Icon)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.headIconImage).sprite = (self.atlas):GetSprite(self.headIcon)
-  ;
-  (self.collectionRoleSpeakingText):SetText((StringTable.Get)("str_xiaolinjia_text_gift_1", self.roleName))
-  ;
-  (self.collectionDesc):SetText((StringTable.Get)((self.cfg).UnlockName))
+function UIXiaoLinJiaGetCollectionController:OnValue()
+  self.collectionImage.sprite = self.atlas:GetSprite(self.cfg.Icon)
+  self.headIconImage.sprite = self.atlas:GetSprite(self.headIcon)
+  self.collectionRoleSpeakingText:SetText(StringTable.Get("str_xiaolinjia_text_gift_1", self.roleName))
+  self.collectionDesc:SetText(StringTable.Get(self.cfg.UnlockName))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaGetCollectionController.CloseBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXiaoLinJiaGetCollectionController:CloseBtnOnClick()
   self:Lock("UIXiaoLinJiaRewardController_Close")
-  ;
-  (self.anim):Play("uieffanim_UIXiaoLinJiaGetCollectionController_out")
+  self.anim:Play("uieffanim_UIXiaoLinJiaGetCollectionController_out")
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     if self.callback then
-      (self.callback)()
+      self.callback()
     end
     self:CloseDialog()
     self:UnLock("UIXiaoLinJiaRewardController_Close")
-  end
-)
+  end)
 end
-
-

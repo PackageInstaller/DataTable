@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/RewardPoints/Main/ui_n12_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12AwardItem", UICustomWidget)
 UIN12AwardItem = UIN12AwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12AwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN12AwardItem:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12AwardItem._GetComponent = function(self)
-  -- function num : 0_1
+function UIN12AwardItem:_GetComponent()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRaw = self:GetUIComponent("RawImage", "icon")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12AwardItem.OnHide = function(self)
-  -- function num : 0_2
+function UIN12AwardItem:OnHide()
   if self._icon then
-    (self._icon):DestoryLastImage()
+    self._icon:DestoryLastImage()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12AwardItem.SetData = function(self, award, curScore, date, callback, setColorCallback)
-  -- function num : 0_3
+function UIN12AwardItem:SetData(award, curScore, date, callback, setColorCallback)
   self._callback = callback
   self._curScore = curScore
   self._date = date
@@ -41,51 +25,38 @@ UIN12AwardItem.SetData = function(self, award, curScore, date, callback, setColo
   self:Refresh(award)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12AwardItem.Refresh = function(self, award)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12AwardItem:Refresh(award)
   self._award = award
-  local cfgItem = (Cfg.cfg_item)[award.assetid]
+  local cfgItem = Cfg.cfg_item[award.assetid]
   if cfgItem then
-    (self._icon):LoadImage(cfgItem.Icon)
-    ;
-    (self._txtCount):SetText("x" .. award.count)
+    self._icon:LoadImage(cfgItem.Icon)
+    self._txtCount:SetText("x" .. award.count)
   else
-    ;
-    (Log.warn)("### no data in cfg_item. assetid=", award.assetid)
+    Log.warn("### no data in cfg_item. assetid=", award.assetid)
   end
-  if not (self._date).gotState then
-    return 
+  if not self._date.gotState then
+    return
   end
-  if (self._date).gotState == N12IntegralState.Got then
+  if self._date.gotState == N12IntegralState.Got then
     self:RefGray(1)
   else
     self:RefGray(0)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12AwardItem.RefGray = function(self, gray)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN12AwardItem:RefGray(gray)
   if self._setColorCallback then
-    (self._setColorCallback)(gray)
-    ;
-    (UIN12ChallengesContorl.SetIconGrey)({self._iconRaw}, gray)
+    self._setColorCallback(gray)
+    UIN12ChallengesContorl.SetIconGrey({
+      self._iconRaw
+    }, gray)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12AwardItem.iconOnClick = function(self, go)
-  -- function num : 0_6
+function UIN12AwardItem:iconOnClick(go)
   if self._callback then
     local tr = go.transform
     local pos = tr.position
-    ;
-    (self._callback)((self._award).assetid, pos)
+    self._callback(self._award.assetid, pos)
   end
 end
-
-

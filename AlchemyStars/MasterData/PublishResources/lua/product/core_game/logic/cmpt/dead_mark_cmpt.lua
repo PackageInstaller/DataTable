@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/dead_mark_cmpt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DeadMarkComponent", Object)
 DeadMarkComponent = DeadMarkComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DeadMarkComponent.Constructor = function(self, addCount)
-  -- function num : 0_0
+function DeadMarkComponent:Constructor(addCount)
   self._casterEntityID = nil
   self._chainAttackTimeIndex = -1
   self._chainAttackStageIndex = 1
@@ -18,140 +11,86 @@ DeadMarkComponent.Constructor = function(self, addCount)
   self._autoBeadAttackTimeIndex = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.SetDeadCasterID = function(self, casterEntityID)
-  -- function num : 0_1
+function DeadMarkComponent:SetDeadCasterID(casterEntityID)
   self._casterEntityID = casterEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.GetDeadCasterID = function(self)
-  -- function num : 0_2
+function DeadMarkComponent:GetDeadCasterID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.SetChainAttackIndex = function(self, atkIndex)
-  -- function num : 0_3
+function DeadMarkComponent:SetChainAttackIndex(atkIndex)
   self._chainAttackTimeIndex = atkIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.GetChainAttackIndex = function(self)
-  -- function num : 0_4
+function DeadMarkComponent:GetChainAttackIndex()
   return self._chainAttackTimeIndex
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.SetChainAttackStageIndex = function(self, atkIndex)
-  -- function num : 0_5
+function DeadMarkComponent:SetChainAttackStageIndex(atkIndex)
   self._chainAttackStageIndex = atkIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.GetChainAttackStageIndex = function(self)
-  -- function num : 0_6
+function DeadMarkComponent:GetChainAttackStageIndex()
   return self._chainAttackStageIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.SetDoLogicDead = function(self, hasDoLogic)
-  -- function num : 0_7
+function DeadMarkComponent:SetDoLogicDead(hasDoLogic)
   self._hasDoLogicDead = hasDoLogic
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.HasDoLogicDead = function(self)
-  -- function num : 0_8
+function DeadMarkComponent:HasDoLogicDead()
   return self._hasDoLogicDead
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.GetDeadMarkAddCount = function(self)
-  -- function num : 0_9
+function DeadMarkComponent:GetDeadMarkAddCount()
   return self._addCount
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.SetDeadStateID = function(self, deadStateID)
-  -- function num : 0_10
+function DeadMarkComponent:SetDeadStateID(deadStateID)
   self._deadStateID = deadStateID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.GetDeadStateID = function(self)
-  -- function num : 0_11
+function DeadMarkComponent:GetDeadStateID()
   return self._deadStateID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.SetAutoBeadAttackIndex = function(self, atkIndex)
-  -- function num : 0_12
+function DeadMarkComponent:SetAutoBeadAttackIndex(atkIndex)
   self._autoBeadAttackTimeIndex = atkIndex
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DeadMarkComponent.GetAutoBeadAttackIndex = function(self)
-  -- function num : 0_13
+function DeadMarkComponent:GetAutoBeadAttackIndex()
   return self._autoBeadAttackTimeIndex
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.DeadMark = function(self)
-  -- function num : 0_14
-  return self:GetComponent((self.WEComponentsEnum).DeadMark)
+function Entity:DeadMark()
+  return self:GetComponent(self.WEComponentsEnum.DeadMark)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasDeadMark = function(self)
-  -- function num : 0_15
-  return self:HasComponent((self.WEComponentsEnum).DeadMark)
+function Entity:HasDeadMark()
+  return self:HasComponent(self.WEComponentsEnum.DeadMark)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddDeadMark = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local addCount = ((self._world):BattleStat()):FetchNewDeadMarkAddCount()
-  local index = (self.WEComponentsEnum).DeadMark
+function Entity:AddDeadMark()
+  local addCount = self._world:BattleStat():FetchNewDeadMarkAddCount()
+  local index = self.WEComponentsEnum.DeadMark
   local component = DeadMarkComponent:New(addCount)
   self:AddComponent(index, component)
-  ;
-  ((self._world):GetSyncLogger()):Trace({key = "AddDeadMark", entityID = self:GetID()})
+  self._world:GetSyncLogger():Trace({
+    key = "AddDeadMark",
+    entityID = self:GetID()
+  })
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceDeadMark = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local addCount = ((self._world):BattleStat()):FetchNewDeadMarkAddCount()
-  local index = (self.WEComponentsEnum).DeadMark
+function Entity:ReplaceDeadMark()
+  local addCount = self._world:BattleStat():FetchNewDeadMarkAddCount()
+  local index = self.WEComponentsEnum.DeadMark
   local component = DeadMarkComponent:New(addCount)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveDeadMark = function(self)
-  -- function num : 0_18
+function Entity:RemoveDeadMark()
   if self:HasDeadMark() then
-    self:RemoveComponent((self.WEComponentsEnum).DeadMark)
+    self:RemoveComponent(self.WEComponentsEnum.DeadMark)
   end
 end
-
-

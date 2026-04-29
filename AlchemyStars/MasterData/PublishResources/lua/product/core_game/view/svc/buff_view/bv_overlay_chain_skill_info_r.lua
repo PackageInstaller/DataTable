@@ -1,28 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_overlay_chain_skill_info_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewOverlayChainSkillInfo", BuffViewBase)
 BuffViewOverlayChainSkillInfo = BuffViewOverlayChainSkillInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewOverlayChainSkillInfo.PlayView = function(self, TT)
-  -- function num : 0_0
-  if not (self._entity):HasPetPstID() then
-    return 
+function BuffViewOverlayChainSkillInfo:PlayView(TT)
+  if not self._entity:HasPetPstID() then
+    return
   end
 end
 
 _class("BuffViewClearOverlayChainSkillInfo", BuffViewBase)
 BuffViewClearOverlayChainSkillInfo = BuffViewClearOverlayChainSkillInfo
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewClearOverlayChainSkillInfo.PlayView = function(self, TT)
-  -- function num : 0_1
-  if not (self._entity):HasPetPstID() then
-    return 
+function BuffViewClearOverlayChainSkillInfo:PlayView(TT)
+  if not self._entity:HasPetPstID() then
+    return
   end
 end
-
-

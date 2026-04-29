@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/mark_grid_in_scope_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MarkGridInScopeCalculator", Object)
 MarkGridInScopeCalculator = MarkGridInScopeCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MarkGridInScopeCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function MarkGridInScopeCalculator:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkGridInScopeCalculator.Calculate = function(self, casterEntity, effectParam)
-  -- function num : 0_1
+function MarkGridInScopeCalculator:Calculate(casterEntity, effectParam)
   if effectParam:IsClear() then
     self:DoClearMark(casterEntity, effectParam)
   else
@@ -23,18 +13,15 @@ MarkGridInScopeCalculator.Calculate = function(self, casterEntity, effectParam)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkGridInScopeCalculator.DoMarkGrid = function(self, casterEntity, effectParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function MarkGridInScopeCalculator:DoMarkGrid(casterEntity, effectParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local tv2AttackPos = {}
-  for _,v2 in ipairs(scopeResult:GetAttackRange()) do
-    (table.insert)(v2)
+  for _, v2 in ipairs(scopeResult:GetAttackRange()) do
+    table.insert(v2)
   end
-  local randomService = (self._world):GetService("RandomLogic")
+  local randomService = self._world:GetService("RandomLogic")
   if not casterEntity:HasMarkGrid() then
     casterEntity:AddMarkGrid()
   end
@@ -43,27 +30,21 @@ MarkGridInScopeCalculator.DoMarkGrid = function(self, casterEntity, effectParam)
   local max = effectParam:GetMaxCount()
   for i = 1, max do
     local rand = randomService:LogicRand(1, #tv2AttackPos)
-    local v2 = (table.remove)(tv2AttackPos, rand)
-    local index = (Vector2.Pos2Index)(v2)
+    local v2 = table.remove(tv2AttackPos, rand)
+    local index = Vector2.Pos2Index(v2)
     cMarkGrid:MarkGrid(index)
-    ;
-    (table.insert)(tv2Marked, v2)
+    table.insert(tv2Marked, v2)
   end
   local result = SkillEffectResult_MarkGridInScope:New(tv2Marked)
   skillEffectResultContainer:AddEffectResult(result)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MarkGridInScopeCalculator.DoClearMark = function(self, casterEntity, effectParam)
-  -- function num : 0_3 , upvalues : _ENV
+function MarkGridInScopeCalculator:DoClearMark(casterEntity, effectParam)
   if not casterEntity:HasMarkGridComponent() then
-    return 
+    return
   end
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
-  local tv2 = (casterEntity:MarkGridComponent()):ClearMark()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
+  local tv2 = casterEntity:MarkGridComponent():ClearMark()
   local result = SkillEffectResult_MarkGridInScope:New(nil, tv2)
   skillEffectResultContainer:AddEffectResult(result)
 end
-
-

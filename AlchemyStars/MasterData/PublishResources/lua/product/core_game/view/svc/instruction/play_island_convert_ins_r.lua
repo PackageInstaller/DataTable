@@ -1,75 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_island_convert_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_grid_range_convert_ins_r")
 _class("PlayIslandConvertInstruction", PlayGridRangeConvertInstruction)
 PlayIslandConvertInstruction = PlayIslandConvertInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayIslandConvertInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayIslandConvertInstruction:Constructor(paramList)
   self._patternEffectID = tonumber(paramList.patternEffectID) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayIslandConvertInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local cRoutine = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayIslandConvertInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local cRoutine = casterEntity:SkillRoutine():GetResultContainer()
   local results = cRoutine:GetEffectResultsAsArray(SkillEffectType.IslandConvert)
   local result = results[1]
   if not result then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local svcFx = world:GetService("Effect")
   if self._patternEffectID > 0 then
     local tv2FxPos = result:GetGroupCenterArray()
-    for _,v2 in ipairs(tv2FxPos) do
+    for _, v2 in ipairs(tv2FxPos) do
       svcFx:CreateCommonGridEffect(self._patternEffectID, v2)
     end
   end
-  do
-    local tConvertInfo = {}
-    local tAtomicData = result:GetAtomicDataArray()
-    for _,atomicData in ipairs(tAtomicData) do
-      local pos = atomicData:GetPosition()
-      local oldPieceType = atomicData:GetOldPieceType()
-      local newPieceType = atomicData:GetTargetPieceType()
-      local flushTrapIds = atomicData:GetDestroyedTrapArray()
-      local traps = {}
-      for i,v in ipairs(flushTrapIds) do
-        local e = world:GetEntityByID(v)
-        ;
-        (table.insert)(traps, e)
-      end
-      self:_Convert(world, pos, newPieceType, traps)
-      local convertInfo = NTGridConvert_ConvertInfo:New(pos, oldPieceType, newPieceType)
-      ;
-      (table.insert)(tConvertInfo, convertInfo)
+  local tConvertInfo = {}
+  local tAtomicData = result:GetAtomicDataArray()
+  for _, atomicData in ipairs(tAtomicData) do
+    local pos = atomicData:GetPosition()
+    local oldPieceType = atomicData:GetOldPieceType()
+    local newPieceType = atomicData:GetTargetPieceType()
+    local flushTrapIds = atomicData:GetDestroyedTrapArray()
+    local traps = {}
+    for i, v in ipairs(flushTrapIds) do
+      local e = world:GetEntityByID(v)
+      table.insert(traps, e)
     end
-    local svcPlaySkill = world:GetService("PlaySkill")
-    local svcPlayBuff = world:GetService("PlayBuff")
-    if #tConvertInfo > 0 then
-      local notify = NTGridConvert:New(casterEntity, tConvertInfo)
-      notify:SetConvertEffectType(SkillEffectType.IslandConvert)
-      notify.__attackPosMatchRequired = true
-      svcPlayBuff:PlayBuffView(TT, notify)
-    end
+    self:_Convert(world, pos, newPieceType, traps)
+    local convertInfo = NTGridConvert_ConvertInfo:New(pos, oldPieceType, newPieceType)
+    table.insert(tConvertInfo, convertInfo)
+  end
+  local svcPlaySkill = world:GetService("PlaySkill")
+  local svcPlayBuff = world:GetService("PlayBuff")
+  if 0 < #tConvertInfo then
+    local notify = NTGridConvert:New(casterEntity, tConvertInfo)
+    notify:SetConvertEffectType(SkillEffectType.IslandConvert)
+    notify.__attackPosMatchRequired = true
+    svcPlayBuff:PlayBuffView(TT, notify)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayIslandConvertInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayIslandConvertInstruction:GetCacheResource()
   local t = {}
   if self._patternEffectID and self._patternEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._patternEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._patternEffectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

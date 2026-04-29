@@ -1,202 +1,149 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_head_bar/ui_power_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPowerInfo", UICustomWidget)
 UIPowerInfo = UIPowerInfo
 local modf = math.modf
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-UIPowerInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPowerInfo:OnShow()
   self._inited = true
   self._tips = self:GetGameObject("tips")
   self._bgpos = self:GetUIComponent("Transform", "bgpos")
-  ;
-  (self._tips):SetActive(false)
+  self._tips:SetActive(false)
   self:AttachEvent(GameEventType.OnUIEmptyClose, self.OnUIEmptyClose)
   self:GetCurrentPhyTimer()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.GetCurrentPhyTimer = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPowerInfo:GetCurrentPhyTimer()
   self:Lock("UIPowerInfo:GetCurrentPhyTimer")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnGetCurrentPhyTimer, self)
+  GameGlobal.TaskManager():StartTask(self.OnGetCurrentPhyTimer, self)
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.OnGetCurrentPhyTimer = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = (self._roleModule):GetRecoverData(TT, 0)
+function UIPowerInfo:OnGetCurrentPhyTimer(TT)
+  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = self._roleModule:GetRecoverData(TT, 0)
   self:UnLock("UIPowerInfo:GetCurrentPhyTimer")
   if not self._inited then
-    return 
+    return
   end
   if not res:GetSucc() then
-    (Log.fatal)("###OnGetCurrentPhyTimer false !")
-    return 
+    Log.fatal("###OnGetCurrentPhyTimer false !")
+    return
   end
   local gapTimeNum = intervalRecoverTime * 1000
   local nextTimeNum = leftRecoverTime * 1000
   if self._startPhyTimerEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerEvent)
     self._startPhyTimerEvent = nil
   end
-  self._startPhyTimerEvent = ((GameGlobal.RealTimer)()):AddEvent(nextTimeNum, function(gapTimeNum)
-    -- function num : 0_2_0 , upvalues : self
+  self._startPhyTimerEvent = GameGlobal.RealTimer():AddEvent(nextTimeNum, function(gapTimeNum)
     self:StartPhyTimer(gapTimeNum)
-  end
-, gapTimeNum)
+  end, gapTimeNum)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.StartPhyTimer = function(self, gapTime)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPowerInfo:StartPhyTimer(gapTime)
   if self._startPhyTimerLoopEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerLoopEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerLoopEvent)
     self._startPhyTimerLoopEvent = nil
   end
   self:StartPhyTimerLoop()
-  self._startPhyTimerLoopEvent = ((GameGlobal.RealTimer)()):AddEventTimes(gapTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_3_0 , upvalues : self
+  self._startPhyTimerLoopEvent = GameGlobal.RealTimer():AddEventTimes(gapTime, TimerTriggerCount.Infinite, function()
     self:StartPhyTimerLoop()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.StartPhyTimerLoop = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPowerInfo:StartPhyTimerLoop()
   self:Lock("UIPowerInfo:StartPhyTimerLoop")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnStartPhyTimerLoop, self)
+  GameGlobal.TaskManager():StartTask(self.OnStartPhyTimerLoop, self)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.OnStartPhyTimerLoop = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local res = (self._roleModule):GetRecoverData(TT, 0)
+function UIPowerInfo:OnStartPhyTimerLoop(TT)
+  local res = self._roleModule:GetRecoverData(TT, 0)
   self:UnLock("UIPowerInfo:StartPhyTimerLoop")
   if not self._inited then
-    return 
+    return
   end
   if res:GetSucc() then
     self:ShowPhyPoint()
   else
-    ;
-    (Log.fatal)("###GetRecoverData false --> result --> ", res:GetResult())
+    Log.fatal("###GetRecoverData false --> result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ShowPhyPoint = function(self)
-  -- function num : 0_6
-  self._currentPhysicalPower = (self._roleModule):GetHealthPoint()
+function UIPowerInfo:ShowPhyPoint()
+  self._currentPhysicalPower = self._roleModule:GetHealthPoint()
   if self._currentPhysicalPower == nil then
     self._currentPhysicalPower = 0
   end
-  self._upperPhysicalPower = (self._roleModule):GetHpLevelMax()
+  self._upperPhysicalPower = self._roleModule:GetHpLevelMax()
   if self._upperPhysicalPower == nil then
     self._upperPhysicalPower = 0
   end
   self:ChangePhysicalPowerNumber(self._currentPhysicalPower, self._upperPhysicalPower)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPowerInfo:OnHide()
   self._inited = false
   self:DetachEvent(GameEventType.OnUIEmptyClose, self.OnUIEmptyClose)
   if self._startPhyTimerEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerEvent)
     self._startPhyTimerEvent = nil
   end
   if self._startPhyTimerLoopEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerLoopEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerLoopEvent)
     self._startPhyTimerLoopEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.SetData = function(self, tr, currencyItem, matchType)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._bgpos).position = tr.position
+function UIPowerInfo:SetData(tr, currencyItem, matchType)
+  self._bgpos.position = tr.position
   if currencyItem then
     self.powerItem = currencyItem
     currencyItem:SetBgCallBack(function()
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    self:Lock("UIPowerOpened")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnBtnOpenPhysicalPowerWindowOnClick, self)
-  end
-)
+      self:Lock("UIPowerOpened")
+      GameGlobal.TaskManager():StartTask(self.OnBtnOpenPhysicalPowerWindowOnClick, self)
+    end)
   else
     local sop = self:GetUIComponent("UISelectObjectPath", "power")
     self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
     if matchType == MatchType.MT_Mission then
-      (self.currencyMenu):SetData({RoleAssetID.RoleAssetPhyPoint, RoleAssetID.RoleAssetDoubleRes}, false)
+      self.currencyMenu:SetData({
+        RoleAssetID.RoleAssetPhyPoint,
+        RoleAssetID.RoleAssetDoubleRes
+      }, false)
     else
-      ;
-      (self.currencyMenu):SetData({RoleAssetID.RoleAssetPhyPoint}, false)
+      self.currencyMenu:SetData({
+        RoleAssetID.RoleAssetPhyPoint
+      }, false)
     end
-    self.powerItem = (self.currencyMenu):GetItemByTypeId(RoleAssetID.RoleAssetPhyPoint)
-    ;
-    (self.powerItem):SetBgCallBack(function()
-    -- function num : 0_8_1 , upvalues : self, _ENV
-    self:Lock("UIPowerOpened")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnBtnOpenPhysicalPowerWindowOnClick, self)
-  end
-)
-    ;
-    (self.powerItem):SetAddCallBack(function()
-    -- function num : 0_8_2 , upvalues : self
-    self:ShowDialog("UIGetPhyPointController")
-  end
-)
-    self.doubleItem = (self.currencyMenu):GetItemByTypeId(RoleAssetID.RoleAssetDoubleRes)
+    self.powerItem = self.currencyMenu:GetItemByTypeId(RoleAssetID.RoleAssetPhyPoint)
+    self.powerItem:SetBgCallBack(function()
+      self:Lock("UIPowerOpened")
+      GameGlobal.TaskManager():StartTask(self.OnBtnOpenPhysicalPowerWindowOnClick, self)
+    end)
+    self.powerItem:SetAddCallBack(function()
+      self:ShowDialog("UIGetPhyPointController")
+    end)
+    self.doubleItem = self.currencyMenu:GetItemByTypeId(RoleAssetID.RoleAssetDoubleRes)
     if self.doubleItem then
       local aircraftModule = self:GetModule(AircraftModule)
       local room = aircraftModule:GetResRoom()
       if room then
-        (self.doubleItem):Enable(true)
+        self.doubleItem:Enable(true)
       else
-        ;
-        (self.doubleItem):Enable(false)
+        self.doubleItem:Enable(false)
       end
     end
   end
-  do
-    self:ChangePhysicalPowerNumber(self._currentPhysicalPower, self._upperPhysicalPower)
-  end
+  self:ChangePhysicalPowerNumber(self._currentPhysicalPower, self._upperPhysicalPower)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.Constructor = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIPowerInfo:Constructor()
   if not self._roleModule then
-    self._roleModule = (GameGlobal.GetModule)(RoleModule)
+    self._roleModule = GameGlobal.GetModule(RoleModule)
   end
   self._canMoreThanUpper = true
-  self._currentPhysicalPower = (self._roleModule):GetHealthPoint()
+  self._currentPhysicalPower = self._roleModule:GetHealthPoint()
   if self._currentPhysicalPower == nil then
     self._currentPhysicalPower = 0
   end
-  self._upperPhysicalPower = (self._roleModule):GetHpLevelMax()
+  self._upperPhysicalPower = self._roleModule:GetHpLevelMax()
   if self._upperPhysicalPower == nil then
     self._upperPhysicalPower = 0
   end
@@ -208,10 +155,7 @@ UIPowerInfo.Constructor = function(self)
   self:AttachEvent(GameEventType.RolePropertyChanged, self.ChangePhysicalPowerNumber)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.Dispose = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIPowerInfo:Dispose()
   self._currentTimeTex = nil
   self._nextTimeTex = nil
   self._allTimeTex = nil
@@ -227,17 +171,14 @@ UIPowerInfo.Dispose = function(self)
   self:DetachEvent(GameEventType.RolePropertyChanged, self.ChangePhysicalPowerNumber)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.OnBtnOpenPhysicalPowerWindowOnClick = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIPowerInfo:OnBtnOpenPhysicalPowerWindowOnClick(TT)
   if not self._roleModule then
-    self._roleModule = (GameGlobal.GetModule)(RoleModule)
+    self._roleModule = GameGlobal.GetModule(RoleModule)
   end
-  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = (self._roleModule):GetRecoverData(TT, 0)
+  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = self._roleModule:GetRecoverData(TT, 0)
   self:UnLock("UIPowerOpened")
   if not res:GetSucc() then
-    return 
+    return
   end
   if not self._pos then
     self._pos = self:GetUIComponent("RectTransform", "pos")
@@ -245,77 +186,60 @@ UIPowerInfo.OnBtnOpenPhysicalPowerWindowOnClick = function(self, TT)
   if not self._safe then
     self._safe = self:FindParentWithName(self._pos)
   end
-  local posOffset = (self._pos).position - (self._safe).position
-  self._currentPhysicalPower = (self._roleModule):GetHealthPoint()
+  local posOffset = self._pos.position - self._safe.position
+  self._currentPhysicalPower = self._roleModule:GetHealthPoint()
   if self._currentPhysicalPower == nil then
     self._currentPhysicalPower = 0
   end
-  self._upperPhysicalPower = (self._roleModule):GetHpLevelMax()
+  self._upperPhysicalPower = self._roleModule:GetHpLevelMax()
   if self._upperPhysicalPower == nil then
     self._upperPhysicalPower = 0
   end
   self:ChangePhysicalPowerNumber(self._currentPhysicalPower, self._upperPhysicalPower)
   self:OpenPowerInfoRunTime(startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime, function()
-    -- function num : 0_11_0 , upvalues : self
     self:GetServerLastPhysicalPower()
-  end
-)
-  self:ShowDialog("UIEmptyController", posOffset, (self._pos).sizeDelta)
+  end)
+  self:ShowDialog("UIEmptyController", posOffset, self._pos.sizeDelta)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.OnUIEmptyClose = function(self)
-  -- function num : 0_12
+function UIPowerInfo:OnUIEmptyClose()
   self:ClosePowerInfoRunTime()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.FindParentWithName = function(self, trans)
-  -- function num : 0_13
-  if (trans.parent).name == "SafeArea" then
+function UIPowerInfo:FindParentWithName(trans)
+  if trans.parent.name == "SafeArea" then
     return trans.parent
   else
     return self:FindParentWithName(trans.parent)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.GetServerLastPhysicalPower = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.OnGetServerLastPhysicalPower, self)
+function UIPowerInfo:GetServerLastPhysicalPower()
+  GameGlobal.TaskManager():StartTask(self.OnGetServerLastPhysicalPower, self)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.OnGetServerLastPhysicalPower = function(self, TT)
-  -- function num : 0_15 , upvalues : _ENV
+function UIPowerInfo:OnGetServerLastPhysicalPower(TT)
   if not self._roleModule then
-    self._roleModule = (GameGlobal.GetModule)(RoleModule)
+    self._roleModule = GameGlobal.GetModule(RoleModule)
   end
-  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = (self._roleModule):GetRecoverData(TT, 0)
+  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = self._roleModule:GetRecoverData(TT, 0)
   if not res:GetSucc() then
-    return 
+    return
   end
-  self._currentPhysicalPower = (self._roleModule):GetHealthPoint()
+  self._currentPhysicalPower = self._roleModule:GetHealthPoint()
   if self._currentPhysicalPower == nil then
     self._currentPhysicalPower = 0
   end
-  self._upperPhysicalPower = (self._roleModule):GetHpLevelMax()
+  self._upperPhysicalPower = self._roleModule:GetHpLevelMax()
   if self._upperPhysicalPower == nil then
     self._upperPhysicalPower = 0
   end
   self:ChangePhysicalPowerNumber(self._currentPhysicalPower, self._upperPhysicalPower)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.AddPhysicalPower = function(self, value)
-  -- function num : 0_16
+function UIPowerInfo:AddPhysicalPower(value)
   self._currentPhysicalPower = self._currentPhysicalPower + value
-  if not self._canMoreThanUpper and self._upperPhysicalPower < self._currentPhysicalPower then
+  if not self._canMoreThanUpper and self._currentPhysicalPower > self._upperPhysicalPower then
     self._currentPhysicalPower = self._upperPhysicalPower
   end
   if self._currentPhysicalPower < 0 then
@@ -324,10 +248,7 @@ UIPowerInfo.AddPhysicalPower = function(self, value)
   self:ChangePhysicalPowerNumber(self._currentPhysicalPower, self._upperPhysicalPower)
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.AddPhysicalPowerUpper = function(self, value)
-  -- function num : 0_17
+function UIPowerInfo:AddPhysicalPowerUpper(value)
   self._upperPhysicalPower = self._upperPhysicalPower + value
   if self._upperPhysicalPower < 0 then
     self._upperPhysicalPower = 0
@@ -335,10 +256,7 @@ UIPowerInfo.AddPhysicalPowerUpper = function(self, value)
   self:ChangePhysicalPowerNumber(self._currentPhysicalPower, self._upperPhysicalPower)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ChangePhysicalPowerNumber = function(self, newCurrent, newUpper)
-  -- function num : 0_18
+function UIPowerInfo:ChangePhysicalPowerNumber(newCurrent, newUpper)
   local newc = newCurrent
   local newu = newUpper
   if newc < 0 then
@@ -347,12 +265,12 @@ UIPowerInfo.ChangePhysicalPowerNumber = function(self, newCurrent, newUpper)
   if newu < 0 then
     newu = 0
   end
-  if not self._canMoreThanUpper and newu < newc then
+  if not self._canMoreThanUpper and newc > newu then
     newc = newu
   end
   self._currentPhysicalPower = newc
   self._upperPhysicalPower = newu
-  local currentStr, upperStr = nil, nil
+  local currentStr, upperStr
   if self._currentPhysicalPower > 999 then
     currentStr = "999+"
   else
@@ -364,32 +282,26 @@ UIPowerInfo.ChangePhysicalPowerNumber = function(self, newCurrent, newUpper)
     upperStr = self._upperPhysicalPower .. ""
   end
   upperStr = "<color=#aeaeae>" .. upperStr .. "</color>"
-  if self._upperPhysicalPower < self._currentPhysicalPower then
+  if self._currentPhysicalPower > self._upperPhysicalPower then
     currentStr = "<color=#00ffea>" .. currentStr .. "</color>"
   else
     currentStr = "<color=#ffffff>" .. currentStr .. "</color>"
   end
   if self.powerItem then
-    (self.powerItem):SetText(currentStr .. "<color=#ffffff>/</color>" .. upperStr)
+    self.powerItem:SetText(currentStr .. "<color=#ffffff>/</color>" .. upperStr)
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.GetCurrentPhysicalPower = function(self)
-  -- function num : 0_19
+function UIPowerInfo:GetCurrentPhysicalPower()
   local isFull = false
-  if self._upperPhysicalPower <= self._currentPhysicalPower then
+  if self._currentPhysicalPower >= self._upperPhysicalPower then
     isFull = true
   end
   return isFull
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.OpenPowerInfoRunTime = function(self, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime, callback)
-  -- function num : 0_20
-  (self._tips):SetActive(true)
+function UIPowerInfo:OpenPowerInfoRunTime(startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime, callback)
+  self._tips:SetActive(true)
   if not self._currentTimeTex then
     self._currentTimeTex = self:GetUIComponent("UILocalizationText", "txtCurrent")
   end
@@ -410,55 +322,42 @@ UIPowerInfo.OpenPowerInfoRunTime = function(self, startTime, intervalRecoverTime
   self:ChangeAllRecoverTime(self._allTime)
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ClosePowerInfoRunTime = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIPowerInfo:ClosePowerInfoRunTime()
   if not self._svrTimeModule then
-    self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+    self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   end
   if self._currentTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._currentTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._currentTimeEvent)
   end
   if self._InvertalTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._InvertalTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._InvertalTimeEvent)
   end
   if self._AllTimeOverimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._AllTimeOverimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._AllTimeOverimeEvent)
   end
   self._addPhysicalPowerEvent = nil
   self._isOpen = false
-  ;
-  (self._tips):SetActive(false)
+  self._tips:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo._RunTime = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  self._currentTimeEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, self.ChangeCurrentTimeEvent, self)
+function UIPowerInfo:_RunTime()
+  self._currentTimeEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, self.ChangeCurrentTimeEvent, self)
   if self._allTime == 0 then
-    return 
+    return
   end
-  self._InvertalTimeEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, self.InvertalTimeOverEvent, self)
-  self._AllTimeOverimeEvent = ((GameGlobal.RealTimer)()):AddEventTimes(self._allTime * 1000, 1, self.AllTimeOverEvent, self)
+  self._InvertalTimeEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, self.InvertalTimeOverEvent, self)
+  self._AllTimeOverimeEvent = GameGlobal.RealTimer():AddEventTimes(self._allTime * 1000, 1, self.AllTimeOverEvent, self)
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ChangeCurrentTimeEvent = function(self)
-  -- function num : 0_23 , upvalues : _ENV, modf
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime()
+function UIPowerInfo:ChangeCurrentTimeEvent()
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime()
   self._currentTime = modf(svrTime / 1000)
   self:ChangeCurrentTime(self._currentTime)
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.AllTimeOverEvent = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIPowerInfo:AllTimeOverEvent()
   if self._InvertalTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._InvertalTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._InvertalTimeEvent)
   end
   if self._addPhysicalPowerEvent then
     self:_addPhysicalPowerEvent()
@@ -467,17 +366,14 @@ UIPowerInfo.AllTimeOverEvent = function(self)
   self:ChangeNextRecoverTime(0)
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.InvertalTimeOverEvent = function(self)
-  -- function num : 0_25
+function UIPowerInfo:InvertalTimeOverEvent()
   self._allTime = self._allTime - 1
   if self._allTime < 0 then
     self._allTime = 0
   end
   self:ChangeAllRecoverTime(self._allTime)
   self._nextTime = self._nextTime - 1
-  while self._nextTime <= 0 do
+  while 0 >= self._nextTime do
     if self._addPhysicalPowerEvent then
       self:_addPhysicalPowerEvent()
     end
@@ -486,64 +382,47 @@ UIPowerInfo.InvertalTimeOverEvent = function(self)
   self:ChangeNextRecoverTime(self._nextTime)
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ChangeCurrentTime = function(self, time)
-  -- function num : 0_26 , upvalues : _ENV
-  local timeStr = (os.date)("%X", time)
+function UIPowerInfo:ChangeCurrentTime(time)
+  local timeStr = os.date("%X", time)
   self:ShowCurrentTimeOnText(timeStr)
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ChangeNextRecoverTime = function(self, nextTime)
-  -- function num : 0_27
+function UIPowerInfo:ChangeNextRecoverTime(nextTime)
   local timeTable = self:ChangeSecondToTime(nextTime)
   local timeStr = self:ChangeTimeTableToStr(timeTable)
   self:ShowNextTimeOnText(timeStr)
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ChangeAllRecoverTime = function(self, allTime)
-  -- function num : 0_28
+function UIPowerInfo:ChangeAllRecoverTime(allTime)
   local timeTable = self:ChangeSecondToTime(allTime)
   local timeStr = self:ChangeTimeTableToStr(timeTable)
   self:ShowAllTimeOnText(timeStr)
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ShowCurrentTimeOnText = function(self, timeStr)
-  -- function num : 0_29
+function UIPowerInfo:ShowCurrentTimeOnText(timeStr)
   if self._currentTimeTex then
-    (self._currentTimeTex):SetText(timeStr)
+    self._currentTimeTex:SetText(timeStr)
   end
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ShowNextTimeOnText = function(self, timeStr)
-  -- function num : 0_30
+function UIPowerInfo:ShowNextTimeOnText(timeStr)
   if self._nextTimeTex then
-    (self._nextTimeTex):SetText(timeStr)
+    self._nextTimeTex:SetText(timeStr)
   end
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ShowAllTimeOnText = function(self, timeStr)
-  -- function num : 0_31
+function UIPowerInfo:ShowAllTimeOnText(timeStr)
   if self._allTimeTex then
-    (self._allTimeTex):SetText(timeStr)
+    self._allTimeTex:SetText(timeStr)
   end
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ChangeSecondToTime = function(self, second)
-  -- function num : 0_32 , upvalues : modf
-  local timeTable = {hour = 0, min = 0, sec = 0}
+function UIPowerInfo:ChangeSecondToTime(second)
+  local timeTable = {
+    hour = 0,
+    min = 0,
+    sec = 0
+  }
   if second == 0 then
     return timeTable
   end
@@ -557,42 +436,36 @@ UIPowerInfo.ChangeSecondToTime = function(self, second)
   return timeTable
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ChangeTimeToSecond = function(self, timeTable)
-  -- function num : 0_33
+function UIPowerInfo:ChangeTimeToSecond(timeTable)
   local second = 0
   local hour = timeTable.hour
   local min = timeTable.min
   local sec = timeTable.sec
-  if hour > 0 then
+  if 0 < hour then
     second = hour * 3600 + second
   end
-  if min > 0 then
-    second = min * 60 + (second)
+  if 0 < min then
+    second = min * 60 + second
   end
-  if sec > 0 then
-    second = sec + (second)
+  if 0 < sec then
+    second = sec + second
   end
   return second
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.ChangeTimeTableToStr = function(self, timeTable)
-  -- function num : 0_34
-  local hourStr, minStr, secStr = nil, nil, nil
+function UIPowerInfo:ChangeTimeTableToStr(timeTable)
+  local hourStr, minStr, secStr
   if timeTable.hour > 9 then
     hourStr = timeTable.hour
   else
     hourStr = "0" .. timeTable.hour
   end
-  if timeTable.min > 9 then
+  if 9 < timeTable.min then
     minStr = timeTable.min
   else
     minStr = "0" .. timeTable.min
   end
-  if timeTable.sec > 9 then
+  if 9 < timeTable.sec then
     secStr = timeTable.sec
   else
     secStr = "0" .. timeTable.sec
@@ -600,13 +473,8 @@ UIPowerInfo.ChangeTimeTableToStr = function(self, timeTable)
   return hourStr .. ":" .. minStr .. ":" .. secStr
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-UIPowerInfo.OnAppResume = function(self)
-  -- function num : 0_35
+function UIPowerInfo:OnAppResume()
   if self._isOpen then
     self:BtnOpenPhysicalPowerWindowOnClick()
   end
 end
-
-

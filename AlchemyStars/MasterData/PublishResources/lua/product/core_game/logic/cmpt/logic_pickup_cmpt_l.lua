@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/logic_pickup_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LogicPickUpComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicPickUpComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LogicPickUpComponent:Constructor()
   self._pickUpTargetType = SkillPickUpType.None
   self._activeSkillID = -1
   self._petPstID = -1
@@ -17,89 +10,53 @@ LogicPickUpComponent.Constructor = function(self)
   self._entityID = -1
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.SetLogicPickUpTargetType = function(self, type)
-  -- function num : 0_1
+function LogicPickUpComponent:SetLogicPickUpTargetType(type)
   self._pickUpTargetType = type
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.GetLogicPickUpTargetType = function(self)
-  -- function num : 0_2
+function LogicPickUpComponent:GetLogicPickUpTargetType()
   return self._pickUpTargetType
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.GetLogicCurPickUpGridPos = function(self)
-  -- function num : 0_3
+function LogicPickUpComponent:GetLogicCurPickUpGridPos()
   return self._curPickUpGridPos
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.GetLogicCurPickUpGridSafePos = function(self)
-  -- function num : 0_4
+function LogicPickUpComponent:GetLogicCurPickUpGridSafePos()
   return self._curPickUpGridPosSafe
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.GetLogicPetPstid = function(self)
-  -- function num : 0_5
+function LogicPickUpComponent:GetLogicPetPstid()
   return self._petPstID
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.GetEntityID = function(self)
-  -- function num : 0_6
+function LogicPickUpComponent:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.SetEntityID = function(self, entityID)
-  -- function num : 0_7
+function LogicPickUpComponent:SetEntityID(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.SetLogicPickUpGridPos = function(self, pickUpGridPos)
-  -- function num : 0_8
+function LogicPickUpComponent:SetLogicPickUpGridPos(pickUpGridPos)
   self._lastPickUpGridPos = self._curPickUpGridPos
   self._curPickUpGridPos = pickUpGridPos
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.SetLogicPickUpGridSafePos = function(self, pickUpGridPos)
-  -- function num : 0_9
+function LogicPickUpComponent:SetLogicPickUpGridSafePos(pickUpGridPos)
   self._curPickUpGridPosSafe = pickUpGridPos
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.GetLogicCurActiveSkillID = function(self)
-  -- function num : 0_10
+function LogicPickUpComponent:GetLogicCurActiveSkillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.SetLogicCurActiveSkillInfo = function(self, activeSkillID, petPstID)
-  -- function num : 0_11
+function LogicPickUpComponent:SetLogicCurActiveSkillInfo(activeSkillID, petPstID)
   self._activeSkillID = activeSkillID
   self._petPstID = petPstID
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.ResetLogicPickUp = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function LogicPickUpComponent:ResetLogicPickUp()
   self._pickUpTargetType = SkillPickUpType.None
   self._activeSkillID = -1
   self._petPstID = -1
@@ -109,57 +66,34 @@ LogicPickUpComponent.ResetLogicPickUp = function(self)
   self._entityID = -1
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_13
+function LogicPickUpComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicPickUpComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_14
+function LogicPickUpComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicPickUp = function(self)
-  -- function num : 0_15
-  return self:GetComponent((self.WEComponentsEnum).LogicPickUp)
+function Entity:LogicPickUp()
+  return self:GetComponent(self.WEComponentsEnum.LogicPickUp)
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicPickUp = function(self)
-  -- function num : 0_16
-  return self:HasComponent((self.WEComponentsEnum).LogicPickUp)
+function Entity:HasLogicPickUp()
+  return self:HasComponent(self.WEComponentsEnum.LogicPickUp)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicPickUp = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicPickUp
+function Entity:AddLogicPickUp()
+  local index = self.WEComponentsEnum.LogicPickUp
   local component = LogicPickUpComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLogicPickUp = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicPickUp
+function Entity:ReplaceLogicPickUp()
+  local index = self.WEComponentsEnum.LogicPickUp
   local component = LogicPickUpComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicPickUp = function(self)
-  -- function num : 0_19
+function Entity:RemoveLogicPickUp()
   if self:HasLogicPickUp() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicPickUp)
+    self:RemoveComponent(self.WEComponentsEnum.LogicPickUp)
   end
 end
-
-

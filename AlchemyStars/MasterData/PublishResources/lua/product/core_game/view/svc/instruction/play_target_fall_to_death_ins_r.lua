@@ -1,44 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_target_fall_to_death_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTargetFallToDeathInstruction", BaseInstruction)
 PlayTargetFallToDeathInstruction = PlayTargetFallToDeathInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTargetFallToDeathInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTargetFallToDeathInstruction:Constructor(paramList)
   self._fallTime = tonumber(paramList.fallTime)
   self._fallDistance = tonumber(paramList.fallDistance)
   self._finishWaitTime = tonumber(paramList.finishWaitTime) or 500
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetFallToDeathInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTargetFallToDeathInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if damageResultArray == nil then
-    return 
+    return
   end
   local damageResCount = #damageResultArray
   if damageResCount <= 0 then
-    return 
+    return
   end
-  local targetEntityID = (damageResultArray[1]):GetTargetID()
+  local targetEntityID = damageResultArray[1]:GetTargetID()
   if targetEntityID == nil or targetEntityID < 0 then
-    return 
+    return
   end
-  local damageInfo = (damageResultArray[1]):GetDamageInfo(1)
+  local damageInfo = damageResultArray[1]:GetDamageInfo(1)
   local targetEntity = world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    return 
+    return
   end
-  local targetObject = (targetEntity:View()):GetGameObject()
+  local targetObject = targetEntity:View():GetGameObject()
   local targetTransform = targetObject.transform
   local curPos = targetTransform.position
   local targetPos = curPos + Vector3(0, -self._fallDistance, 0)
@@ -48,5 +38,3 @@ PlayTargetFallToDeathInstruction.DoInstruction = function(self, TT, casterEntity
   playDamageSvc:UpdateTargetHPBar(TT, targetEntity, damageInfo)
   YIELD(TT, self._finishWaitTime)
 end
-
-

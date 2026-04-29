@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_play_effect_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPlayEffectPhase", PlaySkillPhaseBase)
 PlaySkillPlayEffectPhase = PlaySkillPlayEffectPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPlayEffectPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
+function PlaySkillPlayEffectPhase:PlayFlight(TT, casterEntity, phaseParam)
+  local effectService = self._world:GetService("Effect")
   local effectType = phaseParam:GetPlayEffectType()
   if effectType == SkillPlayEffectType.Grid then
     local effectID = tonumber(phaseParam:GetEffectID())
@@ -19,31 +12,22 @@ PlaySkillPlayEffectPhase.PlayFlight = function(self, TT, casterEntity, phasePara
     local y = tonumber(effectPosParam[2])
     local effectPos = Vector2(x, y)
     effectService:CreateWorldPositionEffect(effectID, effectPos)
-  else
-    do
-      if effectType == SkillPlayEffectType.CasterTransform then
-        self:PlayEffectCasterTransform(casterEntity, phaseParam)
-      end
-    end
+  elseif effectType == SkillPlayEffectType.CasterTransform then
+    self:PlayEffectCasterTransform(casterEntity, phaseParam)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPlayEffectPhase.PlayEffectCasterTransform = function(self, casterEntity, phaseParam)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillPlayEffectPhase:PlayEffectCasterTransform(casterEntity, phaseParam)
   local quaternionDir = phaseParam:GetQuaternionDir()
   local translationQuaternion = phaseParam:GetTranslationQuaternion()
   local translationOffset = phaseParam:GetTranslationOffset()
   local gridLocation = casterEntity:GridLocation()
   local center = gridLocation:Center()
-  local casterDir = Vector2((gridLocation.Direction).x, (gridLocation.Direction).y)
-  local effectService = (self._world):GetService("Effect")
+  local casterDir = Vector2(gridLocation.Direction.x, gridLocation.Direction.y)
+  local effectService = self._world:GetService("Effect")
   local rot = translationQuaternion * casterDir
   local offset = rot * translationOffset
   local pos = center + offset
   local dir = quaternionDir * casterDir
   effectService:CreateWorldPositionDirectionEffect(phaseParam:GetEffectID(), pos, dir)
 end
-
-

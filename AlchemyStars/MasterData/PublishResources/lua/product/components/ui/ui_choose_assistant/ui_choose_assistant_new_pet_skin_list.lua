@@ -1,84 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_assistant_new_pet_skin_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseAssistantNewPetSkinList", UICustomWidget)
 UIChooseAssistantNewPetSkinList = UIChooseAssistantNewPetSkinList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseAssistantNewPetSkinList.Constructor = function(self)
-  -- function num : 0_0
+function UIChooseAssistantNewPetSkinList:Constructor()
   self._itemCountPerRow = 1
   self._spawnBtnList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIChooseAssistantNewPetSkinList:OnShow(uiParams)
   self._checkIsCurSkinCallBack = nil
   self._refreshUiCallBack = nil
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList.InitWidget = function(self)
-  -- function num : 0_2
+function UIChooseAssistantNewPetSkinList:InitWidget()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "scrollView")
   self.descScroll = self:GetUIComponent("ScrollRect", "scrollView")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList.SetRefreshUiCallBack = function(self, callBack)
-  -- function num : 0_3
+function UIChooseAssistantNewPetSkinList:SetRefreshUiCallBack(callBack)
   self._refreshUiCallBack = callBack
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList.SetCheckIsCurSkinCallBack = function(self, callBack)
-  -- function num : 0_4
+function UIChooseAssistantNewPetSkinList:SetCheckIsCurSkinCallBack(callBack)
   self._checkIsCurSkinCallBack = callBack
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList._RefreshUiByCurSkinIndex = function(self, idx)
-  -- function num : 0_5
+function UIChooseAssistantNewPetSkinList:_RefreshUiByCurSkinIndex(idx)
   if idx and idx == self._curSelSkinIndex then
-    return 
+    return
   end
   self._curSelSkinIndex = idx
   if self._refreshUiCallBack then
-    local data = (self._datas)[self._curSelSkinIndex]
-    ;
-    (self._refreshUiCallBack)(data.petid, data.grade, data.skinid, data.asid)
+    local data = self._datas[self._curSelSkinIndex]
+    self._refreshUiCallBack(data.petid, data.grade, data.skinid, data.asid)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList._InitScrollView = function(self)
-  -- function num : 0_6
+function UIChooseAssistantNewPetSkinList:_InitScrollView()
   self._spawnBtnList = {}
   if self._scrollView then
     self._initScrollViewFlag = true
-    ;
-    (self._scrollView):InitListView(self._skinsCellCount, function(scrollView, index)
-    -- function num : 0_6_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
+    self._scrollView:InitListView(self._skinsCellCount, function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList._InitListView = function(self, scrollView, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UIChooseAssistantNewPetSkinList:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -92,56 +60,41 @@ UIChooseAssistantNewPetSkinList._InitListView = function(self, scrollView, index
   for i = 1, self._itemCountPerRow do
     local rowitem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if (table.count)(self._datas) < itemIndex then
-      (rowitem:GetGameObject()):SetActive(false)
+    if itemIndex > table.count(self._datas) then
+      rowitem:GetGameObject():SetActive(false)
     else
       self:_ShowItem(rowitem, itemIndex)
     end
-    ;
-    (table.insert)(self._spawnBtnList, rowitem)
+    table.insert(self._spawnBtnList, rowitem)
   end
   return item
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList._ResetListView = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._scrollView):SetListItemCount((table.count)(self._datas), true)
+function UIChooseAssistantNewPetSkinList:_ResetListView()
+  self._scrollView:SetListItemCount(table.count(self._datas), true)
   self._spawnBtnList = {}
-  ;
-  (self._scrollView):RefreshAllShownItem()
+  self._scrollView:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList._ShowItem = function(self, item, index)
-  -- function num : 0_9 , upvalues : _ENV
-  local data = (self._datas)[index]
-  ;
-  (item:GetGameObject()):SetActive(true)
+function UIChooseAssistantNewPetSkinList:_ShowItem(item, index)
+  local data = self._datas[index]
+  item:GetGameObject():SetActive(true)
   if data then
     item:SetCheckIsCurSkinCallBack(self._checkIsCurSkinCallBack)
     item:SetData(data, index, function(idx)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    if self._count <= 1 then
-      return 
-    end
-    self:_RefreshUiByCurSkinIndex(idx)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeAssistantNewPetSkinCard, idx)
-  end
-)
+      if self._count <= 1 then
+        return
+      end
+      self:_RefreshUiByCurSkinIndex(idx)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeAssistantNewPetSkinCard, idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList.RefreshData = function(self, data)
-  -- function num : 0_10 , upvalues : _ENV
+function UIChooseAssistantNewPetSkinList:RefreshData(data)
   self._data = data
-  local skinsCellCount = #(self._data).skinList
-  local asCellCount = #(self._data).aslist
+  local skinsCellCount = #self._data.skinList
+  local asCellCount = #self._data.aslist
   self._skinsCellCount = skinsCellCount + asCellCount
   self._count = self._skinsCellCount
   self._curSelSkinIndex = nil
@@ -153,31 +106,25 @@ UIChooseAssistantNewPetSkinList.RefreshData = function(self, data)
   end
   local chooseId = 1
   self:_RefreshUiByCurSkinIndex(chooseId)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeAssistantNewPetSkinCard, chooseId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeAssistantNewPetSkinCard, chooseId)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList._SetItemDatas = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIChooseAssistantNewPetSkinList:_SetItemDatas()
   self._datas = {}
   local datas2 = {}
-  for i = 1, #(self._data).skinList do
-    local data = ((self._data).skinList)[i]
-    ;
-    (table.insert)(datas2, data)
+  for i = 1, #self._data.skinList do
+    local data = self._data.skinList[i]
+    table.insert(datas2, data)
   end
-  for i = 1, #(self._data).aslist do
-    local data = ((self._data).aslist)[i]
-    ;
-    (table.insert)(datas2, data)
+  for i = 1, #self._data.aslist do
+    local data = self._data.aslist[i]
+    table.insert(datas2, data)
   end
   local insertNewIdx = 0
   local igCount = 0
   for i = 1, #datas2 do
     local data = datas2[i]
-    local cur = (self._checkIsCurSkinCallBack)(data.petid, data.grade, data.skinid, data.asid)
+    local cur = self._checkIsCurSkinCallBack(data.petid, data.grade, data.skinid, data.asid)
     local new = self:CheckIsNew(data.asid)
     if new then
       igCount = igCount + 1
@@ -187,45 +134,29 @@ UIChooseAssistantNewPetSkinList._SetItemDatas = function(self)
       break
     end
   end
-  do
-    do
-      if insertNewIdx ~= 0 then
-        local curData = datas2[insertNewIdx]
-        ;
-        (table.remove)(datas2, insertNewIdx)
-        ;
-        (table.insert)(datas2, 1, curData)
-      end
-      for i = 1, #datas2 do
-        local data = datas2[i]
-        ;
-        (table.insert)(self._datas, data)
-      end
-    end
+  if insertNewIdx ~= 0 then
+    local curData = datas2[insertNewIdx]
+    table.remove(datas2, insertNewIdx)
+    table.insert(datas2, 1, curData)
+  end
+  for i = 1, #datas2 do
+    local data = datas2[i]
+    table.insert(self._datas, data)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantNewPetSkinList.CheckIsNew = function(self, asid)
-  -- function num : 0_12 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIChooseAssistantNewPetSkinList:CheckIsNew(asid)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local itemDatas = itemModule:GetItemByTempId(asid)
-  if itemDatas and (table.count)(itemDatas) > 0 then
-    local item_data = nil
-    for key,value in pairs(itemDatas) do
+  if itemDatas and table.count(itemDatas) > 0 then
+    local item_data
+    for key, value in pairs(itemDatas) do
       item_data = value
-      do break end
+      break
     end
-    do
-      local isNew = item_data:IsNewOverlay()
-      do
-        local pstid = item_data:GetID()
-        do return isNew, pstid end
-        return false
-      end
-    end
+    local isNew = item_data:IsNewOverlay()
+    local pstid = item_data:GetID()
+    return isNew, pstid
   end
+  return false
 end
-
-

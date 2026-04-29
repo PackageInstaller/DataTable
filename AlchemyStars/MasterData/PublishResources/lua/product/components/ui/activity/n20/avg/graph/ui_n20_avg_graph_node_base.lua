@@ -1,94 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/graph/ui_n20_avg_graph_node_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGGraphNodeBase", UICustomWidget)
 UIN20AVGGraphNodeBase = UIN20AVGGraphNodeBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGGraphNodeBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
+function UIN20AVGGraphNodeBase:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeBase.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN20AVGGraphNodeBase:OnShow()
   self.atlas = self:GetAsset("UIAVG.spriteatlas", LoadType.SpriteAtlas)
   self.curPos = self:GetGameObject("curPos")
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeBase.OnHide = function(self)
-  -- function num : 0_2
+function UIN20AVGGraphNodeBase:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeBase.InitComponent = function(self)
-  -- function num : 0_3
+function UIN20AVGGraphNodeBase:InitComponent()
   self.imgBG = self:GetUIComponent("Image", "imgBG")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeBase.Flush = function(self, id)
-  -- function num : 0_4
-  self.node = (self.data):GetNodeById(id)
+function UIN20AVGGraphNodeBase:Flush(id)
+  self.node = self.data:GetNodeById(id)
   self:FlushName()
   self:FlushState()
   self:FlushNew()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeBase.FlushName = function(self)
-  -- function num : 0_5
+function UIN20AVGGraphNodeBase:FlushName()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeBase.FlushCurPos = function(self, endId)
-  -- function num : 0_6
-  if endId > 0 then
-    if (self.node):IsEnd() then
-      if (self.node).endId == endId then
-        (self.curPos):SetActive(true)
+function UIN20AVGGraphNodeBase:FlushCurPos(endId)
+  if 0 < endId then
+    if self.node:IsEnd() then
+      if self.node.endId == endId then
+        self.curPos:SetActive(true)
       else
-        ;
-        (self.curPos):SetActive(false)
+        self.curPos:SetActive(false)
       end
     else
-      ;
-      (self.curPos):SetActive(false)
+      self.curPos:SetActive(false)
     end
   else
-    local curNodeId = (self.data):CurNodeId()
-    if curNodeId == (self.node).id then
-      (self.curPos):SetActive(true)
+    local curNodeId = self.data:CurNodeId()
+    if curNodeId == self.node.id then
+      self.curPos:SetActive(true)
     else
-      ;
-      (self.curPos):SetActive(false)
+      self.curPos:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeBase.FlushState = function(self)
-  -- function num : 0_7
+function UIN20AVGGraphNodeBase:FlushState()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeBase.FlushNew = function(self)
-  -- function num : 0_8
+function UIN20AVGGraphNodeBase:FlushNew()
 end
-
-

@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/shop/ui_cn20_n49_ryza_shop_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49RyzaItemData", Object)
 UICN20N49RyzaItemData = UICN20N49RyzaItemData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49RyzaItemData.Constructor = function(self, id, color, price, count)
-  -- function num : 0_0
+function UICN20N49RyzaItemData:Constructor(id, color, price, count)
   self.id = id
   self.color = color
   self.price = price
   self.count = count
 end
-
-

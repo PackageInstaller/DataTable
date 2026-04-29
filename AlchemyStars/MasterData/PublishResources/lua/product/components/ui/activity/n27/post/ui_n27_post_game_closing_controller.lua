@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/ui_n27_post_game_closing_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27PostGameClosingController", UIController)
 UIN27PostGameClosingController = UIN27PostGameClosingController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27PostGameClosingController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN27PostGameClosingController:OnShow(uiParams)
   self._curOrderMap = uiParams[1]
   self._curOrderRTMap = uiParams[2]
   self._curOrderSeq = uiParams[3]
@@ -18,33 +11,34 @@ UIN27PostGameClosingController.OnShow = function(self, uiParams)
   self._componentInfo = uiParams[7]
   self._isSuccess = uiParams[8]
   self._curSelectOrder = nil
-  self._color1 = Color(0.17647058823529, 0.66666666666667, 0.86274509803922, 1)
-  self._color2 = Color(0.30588235294118, 0.28627450980392, 0.27450980392157, 1)
-  self._missionCfg = ((Cfg.cfg_component_post_station_game_mission)({ID = self._missionID}))[1]
+  self._color1 = Color(0.17647058823529413, 0.6666666666666666, 0.8627450980392157, 1)
+  self._color2 = Color(0.3058823529411765, 0.28627450980392155, 0.27450980392156865, 1)
+  self._missionCfg = Cfg.cfg_component_post_station_game_mission({
+    ID = self._missionID
+  })[1]
   self:InitWidget()
   self:InitTaskPanel()
   self:InitOrderPanel()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostGameClosingController.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN27PostGameClosingController:InitWidget()
   self._taskObjList = {}
   for i = 1, 3 do
-    (table.insert)(self._taskObjList, self:GetGameObject("Task" .. i))
+    table.insert(self._taskObjList, self:GetGameObject("Task" .. i))
   end
   self._orderObjList = {}
   for i = 1, 5 do
     local rootObj = self:GetGameObject("Order" .. i)
-    local selectImageObj = ((rootObj.transform):Find("SelectImage")).gameObject
-    local orderNameText = ((rootObj.transform):Find("LocalizationText")):GetComponent("UILocalizationText")
-    local orderPercentText = ((rootObj.transform):Find("LocalizationText1")):GetComponent("UILocalizationText")
-    local cfg = {rootObj = rootObj, selectImageObj = selectImageObj, orderNameText = orderNameText, orderPercentText = orderPercentText}
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._orderObjList)[i] = cfg
+    local selectImageObj = rootObj.transform:Find("SelectImage").gameObject
+    local orderNameText = rootObj.transform:Find("LocalizationText"):GetComponent("UILocalizationText")
+    local orderPercentText = rootObj.transform:Find("LocalizationText1"):GetComponent("UILocalizationText")
+    local cfg = {
+      rootObj = rootObj,
+      selectImageObj = selectImageObj,
+      orderNameText = orderNameText,
+      orderPercentText = orderPercentText
+    }
+    self._orderObjList[i] = cfg
   end
   self._gameRawImage = self:GetUIComponent("RawImage", "GameRawImage")
   self._gameRawImageRect = self:GetUIComponent("RectTransform", "GameRawImage")
@@ -55,167 +49,106 @@ UIN27PostGameClosingController.InitWidget = function(self)
   self._gamePassObj = self:GetGameObject("PassObj")
   self._gameFailObj = self:GetGameObject("FailImage")
   self._taskRootObj = self:GetGameObject("TaskRoot")
-  ;
-  (self._gamePassObj):SetActive(self._isSuccess)
-  ;
-  (self._gameFailObj):SetActive(not self._isSuccess)
-  ;
-  (self._orderBtnGroup):SetActive(self._isSuccess)
-  ;
-  (self._taskRootObj):SetActive(self._isSuccess)
+  self._gamePassObj:SetActive(self._isSuccess)
+  self._gameFailObj:SetActive(not self._isSuccess)
+  self._orderBtnGroup:SetActive(self._isSuccess)
+  self._taskRootObj:SetActive(self._isSuccess)
   if self._isSuccess then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N27MiniGaneSuccess)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N27MiniGaneSuccess)
   else
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioLose)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioLose)
   end
   if not self._isSuccess then
-    (self._failText):SetText((StringTable.Get)((self._missionCfg).FailMessage))
-    ;
-    (self._failTextObj):SetActive(true)
+    self._failText:SetText(StringTable.Get(self._missionCfg.FailMessage))
+    self._failTextObj:SetActive(true)
   end
-  ;
-  (self._titleText):SetText((StringTable.Get)((self._missionCfg).Title))
-  -- DECOMPILER ERROR at PC160: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._gameRawImageRect).sizeDelta = Vector2(675 * (UnityEngine.Screen).width / (UnityEngine.Screen).height, 675)
+  self._titleText:SetText(StringTable.Get(self._missionCfg.Title))
+  self._gameRawImageRect.sizeDelta = Vector2(675 * UnityEngine.Screen.width / UnityEngine.Screen.height, 675)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostGameClosingController.RestartBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN27PostGameClosingController:RestartBtnOnClick()
   self:SwitchState(UIStateType.UIN27PostInnerGameController, self._missionID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostGameClosingController.QuitBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN27PostGameClosingController:QuitBtnOnClick()
   local param = self._isSuccess and self._missionID or nil
   if self:CheckComponentClose() then
     self:SwitchState(UIStateType.UIMain)
   else
     local openDialogListInfo = OpenDialogListInfo:New()
-    openDialogListInfo:AddUIInfo("UISideEnterCenterController", {campaign_type = ECampaignType.CAMPAIGN_TYPE_N27, 
-params = {param}
-})
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchStateWithDialogList(UIStateType.UIMain, openDialogListInfo, true)
+    openDialogListInfo:AddUIInfo("UISideEnterCenterController", {
+      campaign_type = ECampaignType.CAMPAIGN_TYPE_N27,
+      params = {param}
+    })
+    GameGlobal.UIStateManager():SwitchStateWithDialogList(UIStateType.UIMain, openDialogListInfo, true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostGameClosingController.InitOrderPanel = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN27PostGameClosingController:InitOrderPanel()
   if not self._isSuccess then
-    return 
+    return
   end
   local firstOrderID = -1
-  local len = (table.count)(self._curOrderMap)
-  for orderID,orderMap in pairs(self._curOrderMap) do
-    local idx = (self._curOrderSeq)[orderID]
-    do
-      local refIdx = idx
-      local refOrderID = orderID
-      if idx == 1 then
-        firstOrderID = orderID
-      end
-      local rootCfg = (self._orderObjList)[idx]
-      ;
-      (rootCfg.orderNameText):SetText((StringTable.Get)("str_n27_poststation_order") .. idx)
-      local orderFinishPercent = (self._uiN27MissionTaskCondition):GetOrderFinishPercent(orderID, orderMap)
-      ;
-      (rootCfg.orderPercentText):SetText(orderFinishPercent .. "%")
-      self:AddUICustomEventListener((UICustomUIEventListener.Get)(rootCfg.rootObj), UIEvent.Click, function(go)
-    -- function num : 0_4_0 , upvalues : self, refOrderID, refIdx
-    self:ShowOrderDetail({refOrderID, refIdx})
-  end
-)
+  local len = table.count(self._curOrderMap)
+  for orderID, orderMap in pairs(self._curOrderMap) do
+    local idx = self._curOrderSeq[orderID]
+    local refIdx = idx
+    local refOrderID = orderID
+    if idx == 1 then
+      firstOrderID = orderID
     end
+    local rootCfg = self._orderObjList[idx]
+    rootCfg.orderNameText:SetText(StringTable.Get("str_n27_poststation_order") .. idx)
+    local orderFinishPercent = self._uiN27MissionTaskCondition:GetOrderFinishPercent(orderID, orderMap)
+    rootCfg.orderPercentText:SetText(orderFinishPercent .. "%")
+    self:AddUICustomEventListener(UICustomUIEventListener.Get(rootCfg.rootObj), UIEvent.Click, function(go)
+      self:ShowOrderDetail({refOrderID, refIdx})
+    end)
   end
   for i = len + 1, #self._orderObjList do
-    (((self._orderObjList)[i]).rootObj):SetActive(false)
+    self._orderObjList[i].rootObj:SetActive(false)
   end
   self:ShowOrderDetail({firstOrderID, 1})
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostGameClosingController.ShowOrderDetail = function(self, cfg)
-  -- function num : 0_5 , upvalues : _ENV
-  do
-    if self._curSelectOrder then
-      local rootCfg = (self._orderObjList)[(self._curSelectOrder)[2]]
-      ;
-      (rootCfg.selectImageObj):SetActive(false)
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (rootCfg.orderNameText).color = self._color1
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (rootCfg.orderPercentText).color = self._color2
-    end
-    local orderID = cfg[1]
-    local rootCfg = (self._orderObjList)[cfg[2]]
-    self._curSelectOrder = cfg
-    ;
-    (rootCfg.selectImageObj):SetActive(true)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (rootCfg.orderNameText).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (rootCfg.orderPercentText).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._gameRawImage).texture = (self._curOrderRTMap)[orderID]
+function UIN27PostGameClosingController:ShowOrderDetail(cfg)
+  if self._curSelectOrder then
+    local rootCfg = self._orderObjList[self._curSelectOrder[2]]
+    rootCfg.selectImageObj:SetActive(false)
+    rootCfg.orderNameText.color = self._color1
+    rootCfg.orderPercentText.color = self._color2
   end
+  local orderID = cfg[1]
+  local rootCfg = self._orderObjList[cfg[2]]
+  self._curSelectOrder = cfg
+  rootCfg.selectImageObj:SetActive(true)
+  rootCfg.orderNameText.color = Color(1, 1, 1, 1)
+  rootCfg.orderPercentText.color = Color(1, 1, 1, 1)
+  self._gameRawImage.texture = self._curOrderRTMap[orderID]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostGameClosingController.InitTaskPanel = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN27PostGameClosingController:InitTaskPanel()
   local idx = 1
-  for _,task in pairs(self._curTaskList) do
-    local taskObj = (self._taskObjList)[idx]
-    local textComp = ((taskObj.transform):Find("LocalizationText")):GetComponent("UILocalizationText")
-    local str, done = (self._uiN27MissionTaskCondition):CheckTaskAndGetStr(task, self._curOrderMap)
+  for _, task in pairs(self._curTaskList) do
+    local taskObj = self._taskObjList[idx]
+    local textComp = taskObj.transform:Find("LocalizationText"):GetComponent("UILocalizationText")
+    local str, done = self._uiN27MissionTaskCondition:CheckTaskAndGetStr(task, self._curOrderMap)
     if done then
-      local UnDoneImageObj = ((taskObj.transform):Find("Image")).gameObject
-      local DoneMaskObj = ((taskObj.transform):Find("Mask")).gameObject
+      local UnDoneImageObj = taskObj.transform:Find("Image").gameObject
+      local DoneMaskObj = taskObj.transform:Find("Mask").gameObject
       UnDoneImageObj:SetActive(false)
       DoneMaskObj:SetActive(true)
     end
-    do
-      do
-        textComp.text = str
-        idx = idx + 1
-        -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    textComp.text = str
+    idx = idx + 1
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostGameClosingController.CheckComponentClose = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  if (self._componentInfo).m_close_time <= curTime then
+function UIN27PostGameClosingController:CheckComponentClose()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  if curTime >= self._componentInfo.m_close_time then
     return true
   end
   return false
 end
-
-

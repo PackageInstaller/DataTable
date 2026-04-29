@@ -1,187 +1,153 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pickup_convert_with_weight.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
-local directions = {(Vector2.New)(0, 1), (Vector2.New)(0, -1), (Vector2.New)(1, 0), (Vector2.New)(-1, 0), (Vector2.New)(1, 1), (Vector2.New)(-1, -1), (Vector2.New)(1, -1), (Vector2.New)(-1, 1)}
+local directions = {
+  Vector2.New(0, 1),
+  Vector2.New(0, -1),
+  Vector2.New(1, 0),
+  Vector2.New(-1, 0),
+  Vector2.New(1, 1),
+  Vector2.New(-1, -1),
+  Vector2.New(1, -1),
+  Vector2.New(-1, 1)
+}
 _class("PickUpPolicy_PickUpConvertWithWeight", PickUpPolicy_Base)
 PickUpPolicy_PickUpConvertWithWeight = PickUpPolicy_PickUpConvertWithWeight
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
 
-PickUpPolicy_PickUpConvertWithWeight.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_PickUpConvertWithWeight:CalcAutoFightPickUpPolicy(calcParam)
   local policyParam = calcParam.policyParam
   local activeSkillID = calcParam.activeSkillID
   local pickUpNum = self:_GetPickUpNumByConfig(activeSkillID)
   local pickupResults = {}
   for i = 1, pickUpNum do
-    (Log.info)(self._className, "calculation #", i)
+    Log.info(self._className, "calculation #", i)
     local pickUpPos = self:_CalcSinglePickResult(calcParam, pickupResults)
-    ;
-    (Log.info)(self._className, "calculation #", i, "result=", tostring(pickUpPos))
+    Log.info(self._className, "calculation #", i, "result=", tostring(pickUpPos))
     if pickUpPos then
-      (table.insert)(pickupResults, pickUpPos)
+      table.insert(pickupResults, pickUpPos)
     end
     YIELD(calcParam.TT)
   end
   return pickupResults, pickupResults, {}
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-PickUpPolicy_PickUpConvertWithWeight._CalcSinglePickResult = function(self, calcParam, overwritePosList)
-  -- function num : 0_1 , upvalues : _ENV
-  local autoFightSvc = (self._world):GetService("AutoFight")
+function PickUpPolicy_PickUpConvertWithWeight:_CalcSinglePickResult(calcParam, overwritePosList)
+  local autoFightSvc = self._world:GetService("AutoFight")
   self._boardPosPieces = autoFightSvc:_CalcBoardPosPieceType()
-  if not overwritePosList then
-    overwritePosList = {}
-  end
-  ;
-  (Log.info)("   -", self._className, "overwritePosList: ")
-  for _,v2 in ipairs(overwritePosList) do
-    (Log.info)("       +", self._className, tostring(v2))
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._boardPosPieces)[(Vector2.Pos2Index)(v2)] = (calcParam.policyParam).targetPieceType
+  overwritePosList = overwritePosList or {}
+  Log.info("   -", self._className, "overwritePosList: ")
+  for _, v2 in ipairs(overwritePosList) do
+    Log.info("       +", self._className, tostring(v2))
+    self._boardPosPieces[Vector2.Pos2Index(v2)] = calcParam.policyParam.targetPieceType
   end
   local weightedGrids = self:_CalcWeightGrids(calcParam)
-  ;
-  (table.sort)(weightedGrids, function(a, b)
-    -- function num : 0_1_0
-    if b.weight >= a.weight then
-      do return a.weight == b.weight end
-      if b.distance >= a.distance then
-        do return a.distance == b.distance end
-        do return a.sortIndex < b.sortIndex end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+  table.sort(weightedGrids, function(a, b)
+    if a.weight ~= b.weight then
+      return a.weight > b.weight
+    elseif a.distance ~= b.distance then
+      return a.distance > b.distance
     end
-  end
-)
+    return a.sortIndex < b.sortIndex
+  end)
   YIELD(calcParam.TT)
   local policyParam = calcParam.policyParam
-  local eTeam = ((calcParam.petEntity):Pet()):GetOwnerTeamEntity()
+  local eTeam = calcParam.petEntity:Pet():GetOwnerTeamEntity()
   local playerLinkableGroups, allGroups = self:_GetAllLinkableGroups(calcParam.TT, policyParam, eTeam)
   local candidatesGridDic = {}
-  for _,group in ipairs(playerLinkableGroups) do
-    for index,_ in pairs(group.surroundingGridIndexDic) do
-      local v2 = (Vector2.Index2Pos)(index)
+  for _, group in ipairs(playerLinkableGroups) do
+    for index, _ in pairs(group.surroundingGridIndexDic) do
+      local v2 = Vector2.Index2Pos(index)
       if self:_IsSuitableCandidate(v2, policyParam) then
         candidatesGridDic[index] = true
       end
     end
   end
   local candidatesAroundPlayer = self:_CalcCandidatesAroundPlayer(calcParam)
-  for _,info in ipairs(candidatesAroundPlayer) do
-    candidatesGridDic[(Vector2.Pos2Index)(info.pos)] = true
+  for _, info in ipairs(candidatesAroundPlayer) do
+    candidatesGridDic[Vector2.Pos2Index(info.pos)] = true
   end
   local weightedCandidates = {}
-  for _,info in ipairs(weightedGrids) do
-    local posIndex = (Vector2.Pos2Index)(info.pos)
+  for _, info in ipairs(weightedGrids) do
+    local posIndex = Vector2.Pos2Index(info.pos)
     if candidatesGridDic[posIndex] then
-      (table.insert)(weightedCandidates, info)
+      table.insert(weightedCandidates, info)
     end
   end
   YIELD(calcParam.TT)
   local teamPos = eTeam:GetGridPosition()
-  if #weightedCandidates > 0 then
-    (table.sort)(weightedCandidates, function(a, b)
-    -- function num : 0_1_1
-    if b.weight >= a.weight then
-      do return a.weight == b.weight end
-      if b.distance >= a.distance then
-        do return a.distance == b.distance end
-        do return a.sortIndex < b.sortIndex end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  if 0 < #weightedCandidates then
+    table.sort(weightedCandidates, function(a, b)
+      if a.weight ~= b.weight then
+        return a.weight > b.weight
       end
-    end
-  end
-)
-    ;
-    (Log.info)(self._className, "winner weighted candidate: ", tostring((weightedCandidates[1]).pos))
-    return (weightedCandidates[1]).pos
+      if a.distance ~= b.distance then
+        return a.distance > b.distance
+      end
+      return a.sortIndex < b.sortIndex
+    end)
+    Log.info(self._className, "winner weighted candidate: ", tostring(weightedCandidates[1].pos))
+    return weightedCandidates[1].pos
   else
     local surroundingGridsGroupByIndex = {}
-    for _,group in ipairs(allGroups) do
-      for index,_ in pairs(group.surroundingGridIndexDic) do
+    for _, group in ipairs(allGroups) do
+      for index, _ in pairs(group.surroundingGridIndexDic) do
         candidatesGridDic[index] = true
         if not surroundingGridsGroupByIndex[index] then
           surroundingGridsGroupByIndex[index] = {}
         end
-        if not (table.icontains)(surroundingGridsGroupByIndex[index], group) then
-          (table.insert)(surroundingGridsGroupByIndex[index], group)
+        if not table.icontains(surroundingGridsGroupByIndex[index], group) then
+          table.insert(surroundingGridsGroupByIndex[index], group)
         end
       end
     end
     local candidates = {}
-    for gridIndex,groups in pairs(surroundingGridsGroupByIndex) do
-      local v2 = (Vector2.Index2Pos)(gridIndex)
-      if self:_IsSuitableCandidate(v2, policyParam) and not (table.Vector2Include)(overwritePosList, v2) then
+    for gridIndex, groups in pairs(surroundingGridsGroupByIndex) do
+      local v2 = Vector2.Index2Pos(gridIndex)
+      if self:_IsSuitableCandidate(v2, policyParam) and not table.Vector2Include(overwritePosList, v2) then
         local g = PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup:New(eTeam, policyParam.targetPieceType)
         g:PosJoin(v2)
         local convertCount = 1
-        for _,group in ipairs(groups) do
+        for _, group in ipairs(groups) do
           if not group.isPlayerLinkable then
             convertCount = convertCount + #group.grids
-            ;
-            (Log.info)("       -", self._className, "surrounding pos: ", gridIndex, "add linking group: ", tostring(group))
+            Log.info("       -", self._className, "surrounding pos: ", gridIndex, "add linking group: ", tostring(group))
           end
           g:MergeGroup(group)
         end
-        ;
-        (Log.info)("       -", self._className, "surrounding pos: ", gridIndex, "final group: ", tostring(g))
+        Log.info("       -", self._className, "surrounding pos: ", gridIndex, "final group: ", tostring(g))
         if g.isPlayerLinkable then
-          (Log.info)("           +", self._className, "...can get player to linkable area")
-          ;
-          (table.insert)(candidates, {pos = v2, weight = convertCount, sortIndex = #candidates, group = g})
+          Log.info("           +", self._className, "...can get player to linkable area")
+          table.insert(candidates, {
+            pos = v2,
+            weight = convertCount,
+            sortIndex = #candidates,
+            group = g
+          })
         end
         YIELD(calcParam.TT)
       else
-        do
-          do
-            ;
-            (Log.info)("       -", self._className, "skipping surrounding pos: ", gridIndex, "because it\'s invalid or selected as result before. ")
-            -- DECOMPILER ERROR at PC274: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC274: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC274: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        Log.info("       -", self._className, "skipping surrounding pos: ", gridIndex, "because it's invalid or selected as result before. ")
       end
     end
     if #candidates == 0 then
-      return 
+      return
     end
-    ;
-    (table.sort)(candidates, function(a, b)
-    -- function num : 0_1_2
-    if b.weight >= a.weight then
-      do return a.weight == b.weight end
-      do return a.sortIndex < b.sortIndex end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-  end
-)
-    ;
-    (Log.info)(self._className, "winner surrounding candidate: ", tostring((candidates[1]).pos))
-    return (candidates[1]).pos
+    table.sort(candidates, function(a, b)
+      if a.weight ~= b.weight then
+        return a.weight > b.weight
+      end
+      return a.sortIndex < b.sortIndex
+    end)
+    Log.info(self._className, "winner surrounding candidate: ", tostring(candidates[1].pos))
+    return candidates[1].pos
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-PickUpPolicy_PickUpConvertWithWeight._IsSuitableCandidate = function(self, v2, policyParam)
-  -- function num : 0_2 , upvalues : _ENV
+function PickUpPolicy_PickUpConvertWithWeight:_IsSuitableCandidate(v2, policyParam)
   local targetPieceType = policyParam.targetPieceType
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   if not utilData:IsValidPiecePos(v2) then
     return false
   end
-  local pieceType = (self._boardPosPieces)[(Vector2.Pos2Index)(v2)]
+  local pieceType = self._boardPosPieces[Vector2.Pos2Index(v2)]
   if pieceType == targetPieceType or pieceType == PieceType.Any then
     return false
   end
@@ -194,119 +160,94 @@ PickUpPolicy_PickUpConvertWithWeight._IsSuitableCandidate = function(self, v2, p
   return true
 end
 
-local monsterWeight = function(e)
-  -- function num : 0_3 , upvalues : _ENV
+local function monsterWeight(e)
   local weight = BattleConst.NormalMonsterAroundGridWeightWhenConverting
   if e:HasBoss() then
     weight = BattleConst.BossAroundGridWeightWhenConverting
-  else
-    if e:HasMonsterID() and (e:MonsterID()):IsEliteMonster() then
-      weight = BattleConst.EliteMonsterAroundGridWeightWhenConverting
-    end
+  elseif e:HasMonsterID() and e:MonsterID():IsEliteMonster() then
+    weight = BattleConst.EliteMonsterAroundGridWeightWhenConverting
   end
   return weight
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-PickUpPolicy_PickUpConvertWithWeight._CalcWeightGrids = function(self, calcParam)
-  -- function num : 0_4 , upvalues : _ENV, monsterWeight, directions
+function PickUpPolicy_PickUpConvertWithWeight:_CalcWeightGrids(calcParam)
   local policyParam = calcParam.policyParam
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalc = SkillScopeCalculator:New(utilScopeSvc)
   local crossCalc = SkillScopeCalculator_Cross:New(scopeCalc)
-  local eTeam = ((calcParam.petEntity):Pet()):GetOwnerTeamEntity()
+  local eTeam = calcParam.petEntity:Pet():GetOwnerTeamEntity()
   local teamPos = eTeam:GetGridPosition()
   local posIndexCheck = {}
   local weightedGrids = {}
-  local utilData = (self._world):GetService("UtilData")
-  local monsterGlobalEntityGroup = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    monsterGlobalEntityGroup = {((((calcParam.petEntity):Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()}
+  local utilData = self._world:GetService("UtilData")
+  local monsterGlobalEntityGroup = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    monsterGlobalEntityGroup = {
+      calcParam.petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+    }
   end
-  for _,e in ipairs(monsterGlobalEntityGroup) do
+  for _, e in ipairs(monsterGlobalEntityGroup) do
     if not e:HasDeadMark() then
       local weight = monsterWeight(e)
-      ;
-      (Log.info)(self._className, "weight calculation on entity ", e:GetID(), "basic weight: ", weight)
-      local crossScope = crossCalc:CalcRange(SkillScopeType.Cross, 1, e:GetGridPosition(), (e:BodyArea()):GetArea())
+      Log.info(self._className, "weight calculation on entity ", e:GetID(), "basic weight: ", weight)
+      local crossScope = crossCalc:CalcRange(SkillScopeType.Cross, 1, e:GetGridPosition(), e:BodyArea():GetArea())
       local attackRange = crossScope:GetAttackRange()
-      for _,rangePos in ipairs(attackRange) do
-        local posIndex = (Vector2.Pos2Index)(R26_PC91)
-        R26_PC91 = Log
-        R26_PC91 = R26_PC91.info
-        R26_PC91("   -", self._className, "pos in range: ", posIndex)
-        R26_PC91 = R26_PC91(self, R28_PC102, policyParam)
-        if R26_PC91 then
-          R26_PC91 = math
-          R26_PC91 = R26_PC91.max
-          -- DECOMPILER ERROR at PC111: Overwrote pending register: R28 in 'AssignReg'
-
-          -- DECOMPILER ERROR at PC113: Overwrote pending register: R28 in 'AssignReg'
-
-          -- DECOMPILER ERROR at PC114: Overwrote pending register: R28 in 'AssignReg'
-
-          R26_PC91 = R26_PC91((math.abs)(R28_PC102), R28_PC102(rangePos.y - teamPos.y))
-          local dis = nil
+      for _, rangePos in ipairs(attackRange) do
+        local posIndex = Vector2.Pos2Index(rangePos)
+        Log.info("   -", self._className, "pos in range: ", posIndex)
+        if self:_IsSuitableCandidate(rangePos, policyParam) then
+          local dis = math.max(math.abs(rangePos.x - teamPos.x), math.abs(rangePos.y - teamPos.y))
           local additionalWeight = 0
-          for _,dir in ipairs(directions) do
+          for _, dir in ipairs(directions) do
             local v2 = rangePos + dir
-            local index = (Vector2.Pos2Index)(v2)
-            local isSpecificPieceType = (self._boardPosPieces)[index] == policyParam.targetPieceType or (self._boardPosPieces)[index] == PieceType.Any
+            local index = Vector2.Pos2Index(v2)
+            local isSpecificPieceType = self._boardPosPieces[index] == policyParam.targetPieceType or self._boardPosPieces[index] == PieceType.Any
             if v2 ~= teamPos and not utilData:GetMonsterAtPos(v2) and isSpecificPieceType then
-              (Log.info)("       +", self._className, " additional weight for specific type of piece around: ", index)
+              Log.info("       +", self._className, " additional weight for specific type of piece around: ", index)
               additionalWeight = additionalWeight + 1
             end
           end
-          ;
-          (Log.info)("   -", self._className, "final weight: ", weight + (additionalWeight), " sortIndex: ", #weightedGrids + 9990000)
+          Log.info("   -", self._className, "final weight: ", weight + additionalWeight, " sortIndex: ", #weightedGrids + 9990000)
           if not posIndexCheck[posIndex] then
-            local candidate = {pos = rangePos, weight = weight + (additionalWeight), sortIndex = #weightedGrids + 9990000, distance = dis}
-            ;
-            (table.insert)(weightedGrids, candidate)
+            local candidate = {
+              pos = rangePos,
+              weight = weight + additionalWeight,
+              sortIndex = #weightedGrids + 9990000,
+              distance = dis
+            }
+            table.insert(weightedGrids, candidate)
             posIndexCheck[posIndex] = candidate
           else
-            -- DECOMPILER ERROR at PC195: Confused about usage of register: R28 in 'UnsetPending'
-
-            (posIndexCheck[posIndex]).weight = (posIndexCheck[posIndex]).weight + weight + (additionalWeight)
+            posIndexCheck[posIndex].weight = posIndexCheck[posIndex].weight + weight + additionalWeight
           end
         end
       end
     end
   end
-  do return weightedGrids end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  return weightedGrids
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-PickUpPolicy_PickUpConvertWithWeight._CalcCandidatesAroundPlayer = function(self, calcParam)
-  -- function num : 0_5 , upvalues : _ENV
+function PickUpPolicy_PickUpConvertWithWeight:_CalcCandidatesAroundPlayer(calcParam)
   local policyParam = calcParam.policyParam
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalc = SkillScopeCalculator:New(utilScopeSvc)
   local candidates = {}
   local posIndexCheck = {}
-  local eTeam = ((calcParam.petEntity):Pet()):GetOwnerTeamEntity()
+  local eTeam = calcParam.petEntity:Pet():GetOwnerTeamEntity()
   local teamPos = eTeam:GetGridPosition()
   local aroundBodyAreaCalc = SkillScopeCalculator_AroundBodyArea:New(scopeCalc)
-  local aroundTeamScope = aroundBodyAreaCalc:CalcRange(SkillScopeType.AroundBodyArea, {}, teamPos, (eTeam:BodyArea()):GetArea())
+  local aroundTeamScope = aroundBodyAreaCalc:CalcRange(SkillScopeType.AroundBodyArea, {}, teamPos, eTeam:BodyArea():GetArea())
   local aroundAttackRange = aroundTeamScope:GetAttackRange()
-  for _,rangePos in ipairs(aroundAttackRange) do
-    local posIndex = (Vector2.Pos2Index)(R18_PC41)
-    R18_PC41 = posIndexCheck[posIndex]
-    if not R18_PC41 then
-      R18_PC41 = R18_PC41(self, R20_PC48, policyParam)
-      if R18_PC41 then
-        R18_PC41 = Log
-        R18_PC41 = R18_PC41.info
-        R18_PC41(self._className, R20_PC48, posIndex)
-        R18_PC41 = table
-        R18_PC41 = R18_PC41.insert
-        R18_PC41(candidates, R20_PC48)
-        R20_PC48 = {pos = rangePos, weight = 0, sortIndex = #candidates}
-        posIndexCheck[posIndex] = true
-      end
+  for _, rangePos in ipairs(aroundAttackRange) do
+    local posIndex = Vector2.Pos2Index(rangePos)
+    if not posIndexCheck[posIndex] and self:_IsSuitableCandidate(rangePos, policyParam) then
+      Log.info(self._className, " second class candidate: ", posIndex)
+      table.insert(candidates, {
+        pos = rangePos,
+        weight = 0,
+        sortIndex = #candidates
+      })
+      posIndexCheck[posIndex] = true
     end
   end
   return candidates
@@ -314,10 +255,8 @@ end
 
 _class("PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup", Object)
 PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup = PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup
--- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
 
-PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup.Constructor = function(self, eTeam, desirePieceType)
-  -- function num : 0_6
+function PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup:Constructor(eTeam, desirePieceType)
   self.grids = {}
   self.posIndexDic = {}
   self.isPlayerLinkable = false
@@ -327,53 +266,35 @@ PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup.Constructor = function(self, 
   self.surroundingGridIndexDic = {}
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup.PosJoin = function(self, v2)
-  -- function num : 0_7 , upvalues : _ENV
-  if (table.Vector2Include)(self.grids, v2) then
-    return 
+function PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup:PosJoin(v2)
+  if table.Vector2Include(self.grids, v2) then
+    return
   end
-  ;
-  (table.insert)(self.grids, v2)
-  local posIndex = (Vector2.Pos2Index)(v2)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.posIndexDic)[posIndex] = true
+  table.insert(self.grids, v2)
+  local posIndex = Vector2.Pos2Index(v2)
+  self.posIndexDic[posIndex] = true
   if not self.isPlayerLinkable and self:_IsPosLinkable(v2) then
     self:SetLinkableByPlayer(true)
   end
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup.MergeGroup = function(self, group)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.appendArray)(self.grids, group.grids)
-  for _,index in pairs(group.posIndexDic) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.posIndexDic)[index] = true
+function PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup:MergeGroup(group)
+  table.appendArray(self.grids, group.grids)
+  for _, index in pairs(group.posIndexDic) do
+    self.posIndexDic[index] = true
   end
   if group.isPlayerLinkable then
     self:SetLinkableByPlayer(true)
   end
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup.SetLinkableByPlayer = function(self, b)
-  -- function num : 0_9
+function PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup:SetLinkableByPlayer(b)
   self.isPlayerLinkable = b
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup._IsPosLinkable = function(self, v2)
-  -- function num : 0_10 , upvalues : _ENV, directions
-  local v2TeamPos = (self._eTeam):GetGridPosition()
-  for _,dir in ipairs(directions) do
+function PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup:_IsPosLinkable(v2)
+  local v2TeamPos = self._eTeam:GetGridPosition()
+  for _, dir in ipairs(directions) do
     if v2 + dir == v2TeamPos then
       return true
     end
@@ -381,120 +302,97 @@ PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup._IsPosLinkable = function(sel
   return false
 end
 
-local eq = function(a, b)
-  -- function num : 0_11 , upvalues : _ENV
-  for _,index in pairs(a.posIndexDic) do
-    if not (b.posIndexDic)[index] then
+local function eq(a, b)
+  for _, index in pairs(a.posIndexDic) do
+    if not b.posIndexDic[index] then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R3 in 'UnsetPending'
-
 PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup.__eq = eq
--- DECOMPILER ERROR at PC93: Confused about usage of register: R3 in 'UnsetPending'
 
-PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup.SetSurroundingGridsCache = function(self, dic)
-  -- function num : 0_12
+function PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup:SetSurroundingGridsCache(dic)
   self.surroundingGridIndexDic = dic
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R3 in 'UnsetPending'
-
-PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup.SetPlayerLinkable = function(self, b)
-  -- function num : 0_13
+function PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup:SetPlayerLinkable(b)
   self.isPlayerLinkable = b
 end
 
-local strify = function(group)
-  -- function num : 0_14 , upvalues : _ENV
+local function strify(group)
   local t = {"grids: "}
-  for _,grid in ipairs(group.grids) do
-    (table.insert)(t, (Vector2.Pos2Index)(grid))
-    ;
-    (table.insert)(t, " ")
+  for _, grid in ipairs(group.grids) do
+    table.insert(t, Vector2.Pos2Index(grid))
+    table.insert(t, " ")
   end
-  ;
-  (table.insert)(t, ", isPlayerLinkable: ")
-  ;
-  (table.insert)(t, tostring(group.isPlayerLinkable))
-  return (table.concat)(t)
+  table.insert(t, ", isPlayerLinkable: ")
+  table.insert(t, tostring(group.isPlayerLinkable))
+  return table.concat(t)
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R4 in 'UnsetPending'
-
 PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup.__tostring = strify
--- DECOMPILER ERROR at PC102: Confused about usage of register: R4 in 'UnsetPending'
 
-PickUpPolicy_PickUpConvertWithWeight._GetAllLinkableGroups = function(self, TT, policyParam, eTeam)
-  -- function num : 0_15 , upvalues : _ENV, directions
-  local utilData = (self._world):GetService("UtilData")
+function PickUpPolicy_PickUpConvertWithWeight:_GetAllLinkableGroups(TT, policyParam, eTeam)
+  local utilData = self._world:GetService("UtilData")
   local teamPos = eTeam:GetGridPosition()
-  local teamPosIndex = (Vector2.Pos2Index)(teamPos)
+  local teamPosIndex = Vector2.Pos2Index(teamPos)
   local posIndexOfSpecificPieceType = {}
-  for posIndex,pieceType in pairs(self._boardPosPieces) do
-    local v2 = (Vector2.Index2Pos)(posIndex)
+  for posIndex, pieceType in pairs(self._boardPosPieces) do
+    local v2 = Vector2.Index2Pos(posIndex)
     local isSpecificPieceType = pieceType == policyParam.targetPieceType or pieceType == PieceType.Any
     local isValidPos = utilData:IsValidPiecePos(v2)
     local isNotLinkLineBlocked = not utilData:IsPosBlock(v2, BlockFlag.LinkLine)
     if teamPosIndex ~= posIndex and isSpecificPieceType and isValidPos and isNotLinkLineBlocked then
-      (table.insert)(posIndexOfSpecificPieceType, posIndex)
+      table.insert(posIndexOfSpecificPieceType, posIndex)
     end
   end
   local groupDic = {}
-  for dataIndex,posIndex in ipairs(posIndexOfSpecificPieceType) do
+  for dataIndex, posIndex in ipairs(posIndexOfSpecificPieceType) do
     if dataIndex % 20 == 0 then
       YIELD(TT)
     end
-    local current = (Vector2.Index2Pos)(posIndex)
+    local current = Vector2.Index2Pos(posIndex)
     local group = groupDic[posIndex]
-    ;
-    (Log.info)(self._className, "Calculating group for pos ", posIndex, "group: ", tostring(group))
-    for _,dir in ipairs(directions) do
+    Log.info(self._className, "Calculating group for pos ", posIndex, "group: ", tostring(group))
+    for _, dir in ipairs(directions) do
       local aroundPos = current + dir
-      local vindex = (Vector2.Pos2Index)(aroundPos)
-      local isSpecificPieceType = (self._boardPosPieces)[vindex] == policyParam.targetPieceType or (self._boardPosPieces)[vindex] == PieceType.Any
+      local vindex = Vector2.Pos2Index(aroundPos)
+      local isSpecificPieceType = self._boardPosPieces[vindex] == policyParam.targetPieceType or self._boardPosPieces[vindex] == PieceType.Any
       local isValidPos = utilData:IsValidPiecePos(aroundPos)
       local isNotLinkLineBlocked = not utilData:IsPosBlock(aroundPos, BlockFlag.LinkLine)
       local isNotPlayerPos = vindex ~= teamPosIndex
-      ;
-      (Log.info)("   -", self._className, "around pos: ", vindex, "isSpecificPieceType: ", tostring(isSpecificPieceType), "isValidPos: ", tostring(isValidPos), "isNotLinkLineBlocked: ", tostring(isNotLinkLineBlocked), " isNotPlayerPos: ", tostring(isNotPlayerPos))
+      Log.info("   -", self._className, "around pos: ", vindex, "isSpecificPieceType: ", tostring(isSpecificPieceType), "isValidPos: ", tostring(isValidPos), "isNotLinkLineBlocked: ", tostring(isNotLinkLineBlocked), " isNotPlayerPos: ", tostring(isNotPlayerPos))
       if isSpecificPieceType and isValidPos and isNotLinkLineBlocked and isNotPlayerPos then
         if groupDic[vindex] then
-          (Log.info)("       +", self._className, "found group: ", tostring(groupDic[vindex]))
+          Log.info("       +", self._className, "found group: ", tostring(groupDic[vindex]))
           if group and group == groupDic[vindex] then
-            (Log.info)("       +", self._className, "...same group with calculating pos. ")
+            Log.info("       +", self._className, "...same group with calculating pos. ")
           elseif not group then
-            (Log.info)("       +", self._className, "calculating pos has no group, joining to found one")
-            ;
-            (groupDic[vindex]):PosJoin(current)
+            Log.info("       +", self._className, "calculating pos has no group, joining to found one")
+            groupDic[vindex]:PosJoin(current)
             group = groupDic[vindex]
           else
-            (Log.info)("       +", self._className, "both calculating pos and around pos has group")
-            ;
-            (Log.info)("       +", self._className, "calculating pos: ", tostring(group))
-            ;
-            (Log.info)("       +", self._className, "around pos: ", tostring(groupDic[vindex]))
+            Log.info("       +", self._className, "both calculating pos and around pos has group")
+            Log.info("       +", self._className, "calculating pos: ", tostring(group))
+            Log.info("       +", self._className, "around pos: ", tostring(groupDic[vindex]))
             group:MergeGroup(groupDic[vindex])
-            for _,index in pairs(group) do
+            for _, index in pairs(group) do
               groupDic[index] = group
             end
-            ;
-            (Log.info)("       +", self._className, "...merged group: ", tostring(group))
+            Log.info("       +", self._className, "...merged group: ", tostring(group))
           end
         else
           if not group then
-            (Log.info)("       +", self._className, "has no group, creating new group for them. ")
+            Log.info("       +", self._className, "has no group, creating new group for them. ")
             group = PickUpPolicy_PickUpConvertWithWeight_LinkLineGroup:New(eTeam, policyParam.targetPieceType)
             group:PosJoin(current)
             groupDic[posIndex] = group
           end
           group:PosJoin(aroundPos)
           groupDic[vindex] = group
-          ;
-          (Log.info)("       +", self._className, "joining group of calculating pos. ")
+          Log.info("       +", self._className, "joining group of calculating pos. ")
         end
       end
     end
@@ -505,19 +403,19 @@ PickUpPolicy_PickUpConvertWithWeight._GetAllLinkableGroups = function(self, TT, 
     end
   end
   local teamGridPos = eTeam:GetGridPosition()
-  local teamGridIndex = (Vector2.Pos2Index)(teamGridPos)
+  local teamGridIndex = Vector2.Pos2Index(teamGridPos)
   local playerLinkableFromPosGroup = {}
   local allGroups = {}
-  for _,group in pairs(groupDic) do
+  for _, group in pairs(groupDic) do
     local dic = {}
-    for _,grid in ipairs(group.grids) do
-      for _,dir in ipairs(directions) do
+    for _, grid in ipairs(group.grids) do
+      for _, dir in ipairs(directions) do
         local v2 = grid + dir
-        local vindex = (Vector2.Pos2Index)(v2)
+        local vindex = Vector2.Pos2Index(v2)
         local isValidPos = utilData:IsValidPiecePos(v2)
         local isNotLinkLineBlocked = not utilData:IsPosBlock(v2, BlockFlag.LinkLine)
         if isValidPos and isNotLinkLineBlocked then
-          local posIndex = (Vector2.Pos2Index)(v2)
+          local posIndex = Vector2.Pos2Index(v2)
           dic[posIndex] = true
         end
       end
@@ -525,21 +423,17 @@ PickUpPolicy_PickUpConvertWithWeight._GetAllLinkableGroups = function(self, TT, 
     group:SetSurroundingGridsCache(dic)
     if dic[teamGridIndex] then
       group:SetPlayerLinkable(true)
-      if not (table.icontains)(playerLinkableFromPosGroup, group) then
-        (table.insert)(playerLinkableFromPosGroup, group)
+      if not table.icontains(playerLinkableFromPosGroup, group) then
+        table.insert(playerLinkableFromPosGroup, group)
       end
     end
-    if not (table.icontains)(allGroups, group) then
-      (table.insert)(allGroups, group)
+    if not table.icontains(allGroups, group) then
+      table.insert(allGroups, group)
     end
   end
-  ;
-  (Log.info)(self._className, "all groups: ")
-  for _,g in ipairs(allGroups) do
-    (Log.info)("   -", self._className, tostring(g))
+  Log.info(self._className, "all groups: ")
+  for _, g in ipairs(allGroups) do
+    Log.info("   -", self._className, tostring(g))
   end
-  do return playerLinkableFromPosGroup, allGroups end
-  -- DECOMPILER ERROR: 17 unprocessed JMP targets
+  return playerLinkableFromPosGroup, allGroups
 end
-
-

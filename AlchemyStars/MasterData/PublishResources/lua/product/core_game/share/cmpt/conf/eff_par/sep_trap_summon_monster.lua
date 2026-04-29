@@ -1,56 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_trap_summon_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectTrapSummonMonsterParam", SkillEffectParamBase)
 SkillEffectTrapSummonMonsterParam = SkillEffectTrapSummonMonsterParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectTrapSummonMonsterParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectTrapSummonMonsterParam:Constructor(t)
   self._summonType = t.summonType
   self._monsterIDList = t.monsterIDList
   self._interval = t.interval
   self._delay = t.delay or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectTrapSummonMonsterParam:GetEffectType()
   return SkillEffectType.TrapSummonMonster
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterParam.GetSummonType = function(self)
-  -- function num : 0_2
+function SkillEffectTrapSummonMonsterParam:GetSummonType()
   return self._summonType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterParam.GetMonsterIDList = function(self)
-  -- function num : 0_3
+function SkillEffectTrapSummonMonsterParam:GetMonsterIDList()
   return self._monsterIDList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterParam.GetInterval = function(self)
-  -- function num : 0_4
+function SkillEffectTrapSummonMonsterParam:GetInterval()
   return self._interval
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTrapSummonMonsterParam.GetDelay = function(self)
-  -- function num : 0_5
+function SkillEffectTrapSummonMonsterParam:GetDelay()
   return self._delay
 end
 
 local TrapSummonMonsterType = {SequenceType = 1, CycleType = 2}
 _enum("TrapSummonMonsterType", TrapSummonMonsterType)
-

@@ -1,23 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/cls/ui_discovery_enter_unlock_cls_extra.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryEnterUnlockClsExtra", UIDiscoveryEnterUnlockClsBase)
 UIDiscoveryEnterUnlockClsExtra = UIDiscoveryEnterUnlockClsExtra
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryEnterUnlockClsExtra.Constructor = function(self, moduleID, go, tex, img)
-  -- function num : 0_0
+function UIDiscoveryEnterUnlockClsExtra:Constructor(moduleID, go, tex, img)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryEnterUnlockClsExtra.IsUnlock = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if not (self._roleModule):CheckModuleUnlock(GameModuleID.MD_ExtMission) then
-    return (self._roleModule):CheckModuleUnlock(GameModuleID.MD_CAMPAIGNREVIEW)
-  end
+function UIDiscoveryEnterUnlockClsExtra:IsUnlock()
+  return self._roleModule:CheckModuleUnlock(GameModuleID.MD_ExtMission) or self._roleModule:CheckModuleUnlock(GameModuleID.MD_CAMPAIGNREVIEW)
 end
-
-

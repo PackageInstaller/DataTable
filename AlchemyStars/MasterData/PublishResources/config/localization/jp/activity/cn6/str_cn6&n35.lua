@@ -1,8 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/cn6/str_cn6&n35.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {["str_cn6&n35_hard_level_lock_tips"] = "{1}をクリアすると解放", ["str_cn6&n35_day"] = "{1}日", ["str_cn6&n35_hour"] = "{1}時間", ["str_cn6&n35_minus"] = "{1}分", ["str_cn6&n35_less_one_minus"] = "<1分", ["str_cn6&n35_activity_end"] = "イベントは終了しました", ["str_cn6&n35_activity_remain_time"] = "イベント終了まで：{1}", ["str_cn6&n35_activity_exchange_remain_time"] = "交換終了まであと：{1}", ["str_cn6&n35_activity_line_mission_remain_time"] = "イベント残り時間：{1}", ["str_cn6&n35_activity_line_mission_lock_time_tips"] = "解放時間：{1}", ["str_cn6&n35_activity_login_btn"] = "考察記録", ["str_cn6&n35_activity_event_btn"] = "特別事件簿", ["str_cn6&n35_activity_normal_level_remain_time"] = "イベント残り時間：{1}", ["str_cn6&n35_activity_normal_level_lock_time_tips"] = "解放時間：{1}", ["str_cn6&n35_activity_hard_level_remain_time"] = "イベント残り時間：{1}", ["str_cn6&n35_activity_hard_level_lock_mission_tips"] = "【深雪の追跡】をクリアしてください", ["str_cn6&n35_activity_hard_level_lock_time_tips"] = "解放時間：{1}", ["str_cn6&n35_activity_shop_remain_time"] = "イベント残り時間：{1}", ["str_cn6&n35_activity_shop_lock_time_tips"] = "解放時間：{1}", ["str_cn6&n35_activity_game_remain_time"] = "イベント残り時間：{1}", ["str_cn6&n35_activity_game_lock_time_tips"] = "解放時間：{1}", ["str_cn6&n35_level_firstpass_ward"] = "初回報酬", ["str_cn6&n35_level_3star_award"] = "星3報酬", ["str_cn6&n35_shop_close_time_tips"] = "イベント残り時間：{1}", ["str_cn6&n35_diff_unlock_tips"] = "前のポイントの任意のステージクリアで解放", ["str_cn6&n35_intro_title"] = "イベント【封氷に眠る謎】について", ["str_cn6&n35_intro_head_1"] = "<size=28><color=#334662> アイテム【遺跡の欠片】獲得方法について：</color></size>", ["str_cn6&n35_intro_body_1"] = "1．イベント期間中、プリズムを消費するメインストーリーまたは資源ステージをクリアすると、一定数の【遺跡の欠片】を獲得できます。\n2．イベント終了の3日前より、上記ステージでは【遺跡の欠片】を獲得できなくなります。", ["str_cn6&n35_intro_head_2"] = "<size=28><color=#334662> アイテム【遺跡の欠片】使用方法について：</color></size>", ["str_cn6&n35_intro_body_2"] = "1．イベント期間中、【遺跡キャンプ】で【遺跡の欠片】を消費すると、アイテムを購入できます。\n2．【遺跡の欠片】のドロップ停止後からも3日間は【遺跡キャンプ】が開放されます。余っている【遺跡の欠片】はお早めにご使用ください。\n3．【遺跡キャンプ】終了後、未使用の【遺跡の欠片】は1:10の比率で白夜コインに変換されます。", ["str_cn6&n35_intro_head_3"] = "<size=28><color=#334662>【ザーリャの衣装箱】について：</color></size>", ["str_cn6&n35_intro_body_3"] = "1．イベント期間中、新しいミニゲーム【ザーリャの衣装箱】が解放されます。入口をタップして、新しいゲームを楽しみましょう。\n2．詳細はゲーム内の説明画面をご覧ください。", ["str_cn6&n35__main_entry_tips1"] = "遺跡キャンプ解放済", ["str_cn6&n35__main_entry_tips2"] = "銀嶺の冒険解放済", ["str_cn6&n35__main_entry_tips3"] = "難路モード解放済", ["str_cn6&n35_activity_normal_level_open_time"] = "GMT：9月27日～10月16日", ["str_cn6&n35_activity_hardl_level_open_time"] = "GMT：10月4日～10月16日", ["str_cn6&n35_activity_shop_open_time"] = "GMT：9月27日～10月18日", ["str_cn6&n35_activity_game_open_time"] = "GMT：10月9日～10月18日", ["str_cn6&n35_item_remain_title"] = "残り：", ["str_cn6&n35_activity_end_tips"] = "終了", ["str_cn6&n35_remain_time_in_activity"] = "イベント残り時間：<color=#FEF272>{1}</color>", ["str_cn6&n35_shop_npc_name_1"] = "33号", ["str_cn6&n35_shop_npc_word_1"] = "33号がサポートします！|33号：現在、興味を持っていただける商品を捜索中。| お客様のニーズには以下の商品が適していると判断しました。このサービスに対する評価やフィードバックをお待ちしております。", ["str_cn6&n35_hard_cdtime"] = "解放時間：", ["str_cn6&n35_hard_level_unopen"] = "平路モードの全ステージクリアで解放", ["str_cn6&n35_hard_title"] = "平路", ["str_cn6&n35_diff_title"] = "難路", ["str_cn6&n35_item_empty_title"] = "交換済", ["str_cn6&n35_item_remain_title2"] = "残り", ["str_cn6&n35_hard_level_time_lock"] = "解放時間になると解放"}
+local config = {
+  ["str_cn6&n35_hard_level_lock_tips"] = "{1}をクリアすると解放",
+  ["str_cn6&n35_day"] = "{1}日",
+  ["str_cn6&n35_hour"] = "{1}時間",
+  ["str_cn6&n35_minus"] = "{1}分",
+  ["str_cn6&n35_less_one_minus"] = "<1分",
+  ["str_cn6&n35_activity_end"] = "イベントは終了しました",
+  ["str_cn6&n35_activity_remain_time"] = "イベント終了まで：{1}",
+  ["str_cn6&n35_activity_exchange_remain_time"] = "交換終了まであと：{1}",
+  ["str_cn6&n35_activity_line_mission_remain_time"] = "イベント残り時間：{1}",
+  ["str_cn6&n35_activity_line_mission_lock_time_tips"] = "解放時間：{1}",
+  ["str_cn6&n35_activity_login_btn"] = "考察記録",
+  ["str_cn6&n35_activity_event_btn"] = "特別事件簿",
+  ["str_cn6&n35_activity_normal_level_remain_time"] = "イベント残り時間：{1}",
+  ["str_cn6&n35_activity_normal_level_lock_time_tips"] = "解放時間：{1}",
+  ["str_cn6&n35_activity_hard_level_remain_time"] = "イベント残り時間：{1}",
+  ["str_cn6&n35_activity_hard_level_lock_mission_tips"] = "【深雪の追跡】をクリアしてください",
+  ["str_cn6&n35_activity_hard_level_lock_time_tips"] = "解放時間：{1}",
+  ["str_cn6&n35_activity_shop_remain_time"] = "イベント残り時間：{1}",
+  ["str_cn6&n35_activity_shop_lock_time_tips"] = "解放時間：{1}",
+  ["str_cn6&n35_activity_game_remain_time"] = "イベント残り時間：{1}",
+  ["str_cn6&n35_activity_game_lock_time_tips"] = "解放時間：{1}",
+  ["str_cn6&n35_level_firstpass_ward"] = "初回報酬",
+  ["str_cn6&n35_level_3star_award"] = "星3報酬",
+  ["str_cn6&n35_shop_close_time_tips"] = "イベント残り時間：{1}",
+  ["str_cn6&n35_diff_unlock_tips"] = "前のポイントの任意のステージクリアで解放",
+  ["str_cn6&n35_intro_title"] = "イベント【封氷に眠る謎】について",
+  ["str_cn6&n35_intro_head_1"] = "<size=28><color=#334662> アイテム【遺跡の欠片】獲得方法について：</color></size>",
+  ["str_cn6&n35_intro_body_1"] = "1．イベント期間中、プリズムを消費するメインストーリーまたは資源ステージをクリアすると、一定数の【遺跡の欠片】を獲得できます。\n2．イベント終了の3日前より、上記ステージでは【遺跡の欠片】を獲得できなくなります。",
+  ["str_cn6&n35_intro_head_2"] = "<size=28><color=#334662> アイテム【遺跡の欠片】使用方法について：</color></size>",
+  ["str_cn6&n35_intro_body_2"] = "1．イベント期間中、【遺跡キャンプ】で【遺跡の欠片】を消費すると、アイテムを購入できます。\n2．【遺跡の欠片】のドロップ停止後からも3日間は【遺跡キャンプ】が開放されます。余っている【遺跡の欠片】はお早めにご使用ください。\n3．【遺跡キャンプ】終了後、未使用の【遺跡の欠片】は1:10の比率で白夜コインに変換されます。",
+  ["str_cn6&n35_intro_head_3"] = "<size=28><color=#334662>【ザーリャの衣装箱】について：</color></size>",
+  ["str_cn6&n35_intro_body_3"] = "1．イベント期間中、新しいミニゲーム【ザーリャの衣装箱】が解放されます。入口をタップして、新しいゲームを楽しみましょう。\n2．詳細はゲーム内の説明画面をご覧ください。",
+  ["str_cn6&n35__main_entry_tips1"] = "遺跡キャンプ解放済",
+  ["str_cn6&n35__main_entry_tips2"] = "銀嶺の冒険解放済",
+  ["str_cn6&n35__main_entry_tips3"] = "難路モード解放済",
+  ["str_cn6&n35_activity_normal_level_open_time"] = "GMT：9月27日～10月16日",
+  ["str_cn6&n35_activity_hardl_level_open_time"] = "GMT：10月4日～10月16日",
+  ["str_cn6&n35_activity_shop_open_time"] = "GMT：9月27日～10月18日",
+  ["str_cn6&n35_activity_game_open_time"] = "GMT：10月9日～10月18日",
+  ["str_cn6&n35_item_remain_title"] = "残り：",
+  ["str_cn6&n35_activity_end_tips"] = "終了",
+  ["str_cn6&n35_remain_time_in_activity"] = "イベント残り時間：<color=#FEF272>{1}</color>",
+  ["str_cn6&n35_shop_npc_name_1"] = "33号",
+  ["str_cn6&n35_shop_npc_word_1"] = "33号がサポートします！|33号：現在、興味を持っていただける商品を捜索中。| お客様のニーズには以下の商品が適していると判断しました。このサービスに対する評価やフィードバックをお待ちしております。",
+  ["str_cn6&n35_hard_cdtime"] = "解放時間：",
+  ["str_cn6&n35_hard_level_unopen"] = "平路モードの全ステージクリアで解放",
+  ["str_cn6&n35_hard_title"] = "平路",
+  ["str_cn6&n35_diff_title"] = "難路",
+  ["str_cn6&n35_item_empty_title"] = "交換済",
+  ["str_cn6&n35_item_remain_title2"] = "残り",
+  ["str_cn6&n35_hard_level_time_lock"] = "解放時間になると解放"
+}
 return config
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/pop/ui_n29_detective_clue_pop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveCluePopController", UIController)
 UIN29DetectiveCluePopController = UIN29DetectiveCluePopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveCluePopController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIN29DetectiveCluePopController:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveCluePopController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20ShowNormalResult)
+function UIN29DetectiveCluePopController:OnShow(uiParams)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20ShowNormalResult)
   self.clueId = uiParams[1]
   self.type = uiParams[2]
   self.callback = uiParams[3]
@@ -23,67 +13,42 @@ UIN29DetectiveCluePopController.OnShow = function(self, uiParams)
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveCluePopController.InitWidget = function(self)
-  -- function num : 0_2
+function UIN29DetectiveCluePopController:InitWidget()
   self._item = self:GetUIComponent("RawImageLoader", "Item")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._Info = self:GetUIComponent("UILocalizedTMP", "Info")
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveCluePopController.InitData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN29DetectiveCluePopController:InitData()
   self:SetFontMat("ui_n29_detective_clue_pop_text_outline.mat")
-  local cfg = (Cfg.cfg_component_detective_item)[self.clueId]
+  local cfg = Cfg.cfg_component_detective_item[self.clueId]
   local Name = cfg.Name
   local Icon = cfg.Icon
   local info = cfg.Info
-  ;
-  (self._anim):Play("uieff_UIN29DetectiveCluePopController_in")
-  ;
-  (self._item):LoadImage(Icon)
-  ;
-  (self._name):SetText((StringTable.Get)(Name))
-  ;
-  (self._Info):SetText((StringTable.Get)(info))
+  self._anim:Play("uieff_UIN29DetectiveCluePopController_in")
+  self._item:LoadImage(Icon)
+  self._name:SetText(StringTable.Get(Name))
+  self._Info:SetText(StringTable.Get(info))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveCluePopController.SetFontMat = function(self, resname)
-  -- function num : 0_4 , upvalues : _ENV
-  self._res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
-  if self._res and (self._res).Obj then
-    self.mat = (self._res).Obj
-    local oldMaterial = (self._Info).fontMaterial
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._Info).fontMaterial = self.mat
-    ;
-    ((self._Info).fontMaterial):SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
+function UIN29DetectiveCluePopController:SetFontMat(resname)
+  self._res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
+  if self._res and self._res.Obj then
+    self.mat = self._res.Obj
+    local oldMaterial = self._Info.fontMaterial
+    self._Info.fontMaterial = self.mat
+    self._Info.fontMaterial:SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveCluePopController.CloseOnClick = function(self)
-  -- function num : 0_5
-  (self._anim):Play("uieff_UIN29DetectiveCluePopController_out")
+function UIN29DetectiveCluePopController:CloseOnClick()
+  self._anim:Play("uieff_UIN29DetectiveCluePopController_out")
   self:CloseDialog()
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveCluePopController.OnHide = function(self)
-  -- function num : 0_6
+function UIN29DetectiveCluePopController:OnHide()
 end
-
-

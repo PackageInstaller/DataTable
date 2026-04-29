@@ -1,132 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/mirage_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MirageServiceLogic", BaseService)
 MirageServiceLogic = MirageServiceLogic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageServiceLogic.GetMirageComponent = function(self)
-  -- function num : 0_0
-  local boardEntity = (self._world):GetBoardEntity()
+function MirageServiceLogic:GetMirageComponent()
+  local boardEntity = self._world:GetBoardEntity()
   local mirageCmpt = boardEntity:Mirage()
   return mirageCmpt
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.SetMirageOver = function(self)
-  -- function num : 0_1
-  local boardEntity = (self._world):GetBoardEntity()
+function MirageServiceLogic:SetMirageOver()
+  local boardEntity = self._world:GetBoardEntity()
   boardEntity:ReplaceMirage()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.SetMirageOpen = function(self)
-  -- function num : 0_2
+function MirageServiceLogic:SetMirageOpen()
   local mirageCmpt = self:GetMirageComponent()
   mirageCmpt:SetMirageOpenState(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.IsMirageOpen = function(self)
-  -- function num : 0_3
+function MirageServiceLogic:IsMirageOpen()
   local mirageCmpt = self:GetMirageComponent()
   return mirageCmpt:IsMirageOpen()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.SetMirageForceClose = function(self)
-  -- function num : 0_4
+function MirageServiceLogic:SetMirageForceClose()
   local mirageCmpt = self:GetMirageComponent()
   mirageCmpt:SetMirageForceClose(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.IsMirageForceClose = function(self)
-  -- function num : 0_5
+function MirageServiceLogic:IsMirageForceClose()
   local mirageCmpt = self:GetMirageComponent()
   return mirageCmpt:IsMirageForceClose()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.SetTrapRefreshID = function(self, refreshID)
-  -- function num : 0_6
+function MirageServiceLogic:SetTrapRefreshID(refreshID)
   local mirageCmpt = self:GetMirageComponent()
   mirageCmpt:SetTrapRefreshID(refreshID)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.SetMirageTrapInheritAttributes = function(self, attributes)
-  -- function num : 0_7
+function MirageServiceLogic:SetMirageTrapInheritAttributes(attributes)
   local mirageCmpt = self:GetMirageComponent()
   mirageCmpt:SetMirageTrapInheritAttributes(attributes)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.SetMirageBossEntityID = function(self, bossEntityID)
-  -- function num : 0_8
+function MirageServiceLogic:SetMirageBossEntityID(bossEntityID)
   local mirageCmpt = self:GetMirageComponent()
   mirageCmpt:SetMirageBossEntityID(bossEntityID)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.DoMirageCreateTraps = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function MirageServiceLogic:DoMirageCreateTraps()
   local mirageCmpt = self:GetMirageComponent()
   local trapRefreshID = mirageCmpt:GetTrapRefreshID()
   local refreshParam = LevelMonsterRefreshParam:New(self._world)
   local trapInternalIDList = {}
-  do
-    if trapRefreshID > 0 then
-      local trapRefCfg = (Cfg.cfg_refresh_trap)[trapRefreshID]
-      if not trapRefCfg then
-        (Log.fatal)("MirageServiceLogic:CreateTraps Not Find Trap Refresh ID:", trapRefreshID)
-      end
-      trapInternalIDList = (table.cloneconf)(refreshParam:ParseTrapRefreshParam(trapRefCfg))
+  if 0 < trapRefreshID then
+    local trapRefCfg = Cfg.cfg_refresh_trap[trapRefreshID]
+    if not trapRefCfg then
+      Log.fatal("MirageServiceLogic:CreateTraps Not Find Trap Refresh ID:", trapRefreshID)
     end
-    local entitySvc = (self._world):GetService("LogicEntity")
-    local inheritAttributes = mirageCmpt:GetMirageTrapInheritAttributes()
-    local trapPosTable, eTraps = entitySvc:CreateWaveRefreshTraps(trapInternalIDList, inheritAttributes)
-    return eTraps
+    trapInternalIDList = table.cloneconf(refreshParam:ParseTrapRefreshParam(trapRefCfg))
   end
+  local entitySvc = self._world:GetService("LogicEntity")
+  local inheritAttributes = mirageCmpt:GetMirageTrapInheritAttributes()
+  local trapPosTable, eTraps = entitySvc:CreateWaveRefreshTraps(trapInternalIDList, inheritAttributes)
+  return eTraps
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.DoMirageCalculateTeamMove = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function MirageServiceLogic:DoMirageCalculateTeamMove()
   local mirageCmpt = self:GetMirageComponent()
   local movePos = mirageCmpt:GetMovePos()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   if not teamEntity then
-    return 
+    return
   end
   local mirageWalkRes = MirageWalkResult:New()
   local lastPos = teamEntity:GetGridPosition()
-  local sBoard = (self._world):GetService("BoardLogic")
+  local sBoard = self._world:GetService("BoardLogic")
   local newDirection = movePos - lastPos
-  local pets = (teamEntity:Team()):GetTeamPetEntities()
-  for _,entityPet in ipairs(pets) do
+  local pets = teamEntity:Team():GetTeamPetEntities()
+  for _, entityPet in ipairs(pets) do
     entityPet:SetGridLocation(movePos, newDirection)
-    ;
-    (entityPet:GridLocation()):SetMoveLastPosition(movePos)
+    entityPet:GridLocation():SetMoveLastPosition(movePos)
   end
   teamEntity:SetGridLocation(movePos, newDirection)
-  ;
-  (teamEntity:GridLocation()):SetMoveLastPosition(movePos)
+  teamEntity:GridLocation():SetMoveLastPosition(movePos)
   mirageWalkRes:SetWalkPos(movePos)
   sBoard:UpdateEntityBlockFlag(teamEntity, lastPos, movePos)
-  local pieceColor = ((sBoard:SupplyPieceList({lastPos}))[1]).color
+  local pieceColor = sBoard:SupplyPieceList({lastPos})[1].color
   sBoard:SetPieceTypeLogic(pieceColor, lastPos)
   mirageWalkRes:SetOldPosColor(pieceColor)
   local colorNew = sBoard:GetPieceType(movePos)
@@ -135,9 +94,9 @@ MirageServiceLogic.DoMirageCalculateTeamMove = function(self)
   end
   sBoard:SetPieceTypeLogic(colorNew, movePos)
   mirageWalkRes:SetNewPosColor(colorNew)
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local listTrapWork, listTrapResult = trapServiceLogic:TriggerTrapByEntity(teamEntity, TrapTriggerOrigin.Move)
-  for i,e in ipairs(listTrapWork) do
+  for i, e in ipairs(listTrapWork) do
     local trapEntity = e
     local skillEffectResultContainer = listTrapResult[i]
     local aiResult = AISkillResult:New()
@@ -145,23 +104,20 @@ MirageServiceLogic.DoMirageCalculateTeamMove = function(self)
     mirageWalkRes:AddWalkTrap(trapEntity:GetID(), aiResult)
   end
   mirageCmpt:SetWalkResult(mirageWalkRes)
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   svc:L2RMirageWalkData(mirageWalkRes)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.DoMirageCastTrapSkill = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function MirageServiceLogic:DoMirageCastTrapSkill()
   local traps = {}
-  local skillLogicService = (self._world):GetService("SkillLogic")
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
-  for i,e in ipairs(group:GetEntities()) do
+  local skillLogicService = self._world:GetService("SkillLogic")
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
+  for i, e in ipairs(group:GetEntities()) do
     local trapCmpt = e:Trap()
     local trapType = trapCmpt:GetTrapType()
     if trapType == TrapType.MirageTrap and not e:HasDeadMark() then
       local skillID = trapCmpt:GetMoveSkillID()
-      if skillID and skillID > 0 then
+      if skillID and 0 < skillID then
         skillLogicService:CalcSkillEffect(e, skillID)
         skillLogicService:UpdateRenderSkillRoutine(e)
         traps[#traps + 1] = e
@@ -171,65 +127,44 @@ MirageServiceLogic.DoMirageCastTrapSkill = function(self)
   return traps
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.DoMirageCastTrapWarningSkill = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function MirageServiceLogic:DoMirageCastTrapWarningSkill()
   local traps = {}
   local warningPosList = {}
-  local skillLogicService = (self._world):GetService("SkillLogic")
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
-  for i,e in ipairs(group:GetEntities()) do
+  local skillLogicService = self._world:GetService("SkillLogic")
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
+  for i, e in ipairs(group:GetEntities()) do
     local trapCmpt = e:Trap()
     local trapType = trapCmpt:GetTrapType()
     if trapType == TrapType.MirageTrap and not e:HasDeadMark() then
       local skillID = trapCmpt:GetWarningSkillID()
-      if skillID and skillID > 0 then
+      if skillID and 0 < skillID then
         skillLogicService:CalcSkillEffect(e, skillID)
-        local skillEffectResultContainer = (e:SkillContext()):GetResultContainer()
+        local skillEffectResultContainer = e:SkillContext():GetResultContainer()
         local effectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ShowWarningArea)
-        do
-          do
-            if effectResult then
-              local posList = effectResult:GetWarningPosList()
-              ;
-              (table.appendArray)(warningPosList, posList)
-            end
-            skillLogicService:UpdateRenderSkillRoutine(e)
-            traps[#traps + 1] = e
-            -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if effectResult then
+          local posList = effectResult:GetWarningPosList()
+          table.appendArray(warningPosList, posList)
         end
+        skillLogicService:UpdateRenderSkillRoutine(e)
+        traps[#traps + 1] = e
       end
     end
   end
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   svc:L2RMirageWarningData(warningPosList)
   return traps
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.DoMirageCastTrapDieSkill = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function MirageServiceLogic:DoMirageCastTrapDieSkill()
   local traps = {}
-  local skillLogicService = (self._world):GetService("SkillLogic")
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
-  for i,e in ipairs(group:GetEntities()) do
+  local skillLogicService = self._world:GetService("SkillLogic")
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
+  for i, e in ipairs(group:GetEntities()) do
     local trapCmpt = e:Trap()
     local trapType = trapCmpt:GetTrapType()
     if trapType == TrapType.MirageTrap and not e:HasDeadMark() then
       local skillID = trapCmpt:GetDieSkillID()
-      if skillID and skillID > 0 then
+      if skillID and 0 < skillID then
         skillLogicService:CalcSkillEffect(e, skillID)
         skillLogicService:UpdateRenderSkillRoutine(e)
         traps[#traps + 1] = e
@@ -239,25 +174,18 @@ MirageServiceLogic.DoMirageCastTrapDieSkill = function(self)
   return traps
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageServiceLogic.DoMirageBossReturn = function(self)
-  -- function num : 0_14
-  local skillLogicService = (self._world):GetService("SkillLogic")
+function MirageServiceLogic:DoMirageBossReturn()
+  local skillLogicService = self._world:GetService("SkillLogic")
   local mirageCmpt = self:GetMirageComponent()
   local bossEntityID = mirageCmpt:GetMirageBossEntityID()
-  local bossEntity = (self._world):GetEntityByID(bossEntityID)
+  local bossEntity = self._world:GetEntityByID(bossEntityID)
   if bossEntity then
-    local utilDataSvc = (self._world):GetService("UtilData")
+    local utilDataSvc = self._world:GetService("UtilData")
     local skillID = utilDataSvc:GetMonsterBackSkill(bossEntity)
-    if skillID and skillID > 0 then
+    if skillID and 0 < skillID then
       skillLogicService:CalcSkillEffect(bossEntity, skillID)
       skillLogicService:UpdateRenderSkillRoutine(bossEntity)
     end
   end
-  do
-    return bossEntity
-  end
+  return bossEntity
 end
-
-

@@ -1,355 +1,258 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_move_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_MoveBoard", Object)
 SkillEffectCalc_MoveBoard = SkillEffectCalc_MoveBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_MoveBoard.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_MoveBoard:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoveBoard.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_MoveBoard:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   self._skillEffectParam = skillEffectParam
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local times = skillEffectParam:GetTimes()
   local direction = skillEffectParam:GetDirection()
   local destroyOutTrap = skillEffectParam:GetDestroyOutTrap()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local board = ((self._world):GetBoardEntity()):Board()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local board = self._world:GetBoardEntity():Board()
   local arr = board:GetBlockFlagArray()
   local skillRange = {}
-  for x,col in pairs(arr) do
-    for y,block in pairs(col) do
+  for x, col in pairs(arr) do
+    for y, block in pairs(col) do
       local grid = Vector2(x, y)
       if not boardServiceLogic:IsPosBlock(grid, BlockFlag.SkillSkip) then
         if direction.x ~= 0 then
           if not skillRange[grid.x] then
             skillRange[grid.x] = {}
           end
-          ;
-          (table.insert)(skillRange[grid.x], grid)
-        else
-          if direction.y ~= 0 then
-            if not skillRange[grid.y] then
-              skillRange[grid.y] = {}
-            end
-            ;
-            (table.insert)(skillRange[grid.y], grid)
+          table.insert(skillRange[grid.x], grid)
+        elseif direction.y ~= 0 then
+          if not skillRange[grid.y] then
+            skillRange[grid.y] = {}
           end
+          table.insert(skillRange[grid.y], grid)
         end
       end
     end
   end
-  do
-    if direction == Vector2(0, 1) or direction == Vector2(1, 0) then
-      skillRange = self:_SmallToLargeSort(skillRange)
-    else
-      if direction == Vector2(0, -1) or direction == Vector2(-1, 0) then
-        skillRange = self:_OnReinsert(skillRange)
-      end
-    end
-    self._fourAreaFixPos = Vector2(0, 0)
-    if direction == Vector2(0, 1) then
-      self._fourAreaFixPos = Vector2(1, 1)
-    else
-      if direction == Vector2(0, -1) then
-        self._fourAreaFixPos = Vector2(1, 0)
-      else
-        if direction == Vector2(1, 0) then
-          self._fourAreaFixPos = Vector2(1, 1)
-        else
-          if direction == Vector2(-1, 0) then
-            self._fourAreaFixPos = Vector2(0, 1)
-          end
-        end
-      end
-    end
-    local results = {}
-    for i = 1, times do
-      local result = SkillEffectResultMoveBoard:New()
-      for index,posList in pairs(skillRange) do
-        local isLast = index == (table.count)(skillRange)
-        self:_MoveBoardOneStepNew(result, posList, direction, destroyOutTrap, casterEntity, isLast)
-      end
-      results[#results + 1] = result
-    end
-    do return results end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if direction == Vector2(0, 1) or direction == Vector2(1, 0) then
+    skillRange = self:_SmallToLargeSort(skillRange)
+  elseif direction == Vector2(0, -1) or direction == Vector2(-1, 0) then
+    skillRange = self:_OnReinsert(skillRange)
   end
+  self._fourAreaFixPos = Vector2(0, 0)
+  if direction == Vector2(0, 1) then
+    self._fourAreaFixPos = Vector2(1, 1)
+  elseif direction == Vector2(0, -1) then
+    self._fourAreaFixPos = Vector2(1, 0)
+  elseif direction == Vector2(1, 0) then
+    self._fourAreaFixPos = Vector2(1, 1)
+  elseif direction == Vector2(-1, 0) then
+    self._fourAreaFixPos = Vector2(0, 1)
+  end
+  local results = {}
+  for i = 1, times do
+    local result = SkillEffectResultMoveBoard:New()
+    for index, posList in pairs(skillRange) do
+      local isLast = index == table.count(skillRange)
+      self:_MoveBoardOneStepNew(result, posList, direction, destroyOutTrap, casterEntity, isLast)
+    end
+    results[#results + 1] = result
+  end
+  return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoveBoard._SmallToLargeSort = function(self, posDic)
-  -- function num : 0_2 , upvalues : _ENV
-  local sortDicFunc = function(dic)
-    -- function num : 0_2_0 , upvalues : _ENV
+function SkillEffectCalc_MoveBoard:_SmallToLargeSort(posDic)
+  local function sortDicFunc(dic)
     local newDic = {}
+    
     local keyList = {}
-    for k,_ in pairs(dic) do
-      (table.insert)(keyList, k)
+    for k, _ in pairs(dic) do
+      table.insert(keyList, k)
     end
-    ;
-    (table.sort)(keyList, function(a, b)
-      -- function num : 0_2_0_0
-      do return b < a end
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
-    end
-)
+    table.sort(keyList, function(a, b)
+      return b < a
+    end)
     for i = 1, #keyList do
       newDic[#newDic + 1] = dic[keyList[i]]
     end
     return newDic
   end
-
+  
   posDic = sortDicFunc(posDic)
   return posDic
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoveBoard._OnReinsert = function(self, posDic)
-  -- function num : 0_3 , upvalues : _ENV
-  local sortDicFunc = function(dic)
-    -- function num : 0_3_0 , upvalues : _ENV
+function SkillEffectCalc_MoveBoard:_OnReinsert(posDic)
+  local function sortDicFunc(dic)
     local newDic = {}
+    
     local keyList = {}
-    for k,_ in pairs(dic) do
-      (table.insert)(keyList, k)
+    for k, _ in pairs(dic) do
+      table.insert(keyList, k)
     end
     for i = 1, #keyList do
       newDic[#newDic + 1] = dic[keyList[i]]
     end
     return newDic
   end
-
+  
   posDic = sortDicFunc(posDic)
   return posDic
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoveBoard._MoveBoardOneStepNew = function(self, result, posList, direction, destroyOutTrap, casterEntity, isLast)
-  -- function num : 0_4 , upvalues : _ENV
-  local sRandom = (self._world):GetService("RandomLogic")
-  local sTrigger = (self._world):GetService("Trigger")
-  local utilData = (self._world):GetService("UtilData")
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function SkillEffectCalc_MoveBoard:_MoveBoardOneStepNew(result, posList, direction, destroyOutTrap, casterEntity, isLast)
+  local sRandom = self._world:GetService("RandomLogic")
+  local sTrigger = self._world:GetService("Trigger")
+  local utilData = self._world:GetService("UtilData")
+  local boardCmpt = self._world:GetBoardEntity():Board()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local toTriggerTraps = {}
   local toDeadTraps = {}
-  for i,pos in ipairs(posList) do
-    do
-      local curPos = pos
-      local targetPos = pos + direction
-      local nextPos = pos - direction
-      local pieceType = boardCmpt:GetPieceType(pos)
-      local nextPieceType = boardCmpt:GetPieceType(nextPos)
-      local targetPieceType = utilData:IsValidPiecePos(targetPos)
-      local isPieceEffect = boardCmpt:IsSpecialPieceEffect(pos)
-      local pieceEffectType = boardCmpt:GetBoardPieceEffectType(pos)
-      local prismEntityID = isPieceEffect and boardCmpt:GetPrismEntityIDAtPos(pos) or nil
-      local filter = function(e)
-    -- function num : 0_4_0 , upvalues : _ENV, self, pos
-    if e:HasDeadMark() then
-      return false
-    end
-    local moreAreaCanMove = true
-    local bodyArea = e:BodyArea()
-    if bodyArea then
-      local area = bodyArea:GetArea()
-      if (table.count)(area) > 1 then
-        local gridPos = e:GetGridPosition()
-        -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P1
-
-        if (table.count)(area) == 4 and gridPos + self._fourAreaFixPos ~= pos then
-          moreAreaCanMove = false
-        end
+  for i, pos in ipairs(posList) do
+    local curPos = pos
+    local targetPos = pos + direction
+    local nextPos = pos - direction
+    local pieceType = boardCmpt:GetPieceType(pos)
+    local nextPieceType = boardCmpt:GetPieceType(nextPos)
+    local targetPieceType = utilData:IsValidPiecePos(targetPos)
+    local isPieceEffect = boardCmpt:IsSpecialPieceEffect(pos)
+    local pieceEffectType = boardCmpt:GetBoardPieceEffectType(pos)
+    local prismEntityID = isPieceEffect and boardCmpt:GetPrismEntityIDAtPos(pos) or nil
+    
+    local function filter(e)
+      if e:HasDeadMark() then
+        return false
       end
-    end
-    do
-      if gridPos ~= pos then
-        moreAreaCanMove = false
+      local moreAreaCanMove = true
+      local bodyArea = e:BodyArea()
+      if bodyArea then
+        local area = bodyArea:GetArea()
+        if table.count(area) > 1 then
+          local gridPos = e:GetGridPosition()
+          if table.count(area) == 4 then
+            if gridPos + self._fourAreaFixPos ~= pos then
+              moreAreaCanMove = false
+            end
+          elseif gridPos ~= pos then
+            moreAreaCanMove = false
+          end
+        end
       end
       local blockFlag = BlockFlag.None
       if e:HasBlockFlag() then
-        blockFlag = (e:BlockFlag()):GetBlockFlag()
+        blockFlag = e:BlockFlag():GetBlockFlag()
       end
       if blockFlag & BlockFlag.MoveBoard ~= 0 then
         moreAreaCanMove = false
       end
-      do return (e ~= e:HasBlockFlag() and moreAreaCanMove) end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
+      return e ~= e:HasBlockFlag() and moreAreaCanMove
     end
-  end
-
-      local es = boardCmpt:GetPieceEntities(pos, filter)
-      if targetPieceType then
-        result:AddMoveBoardPiece(curPos, targetPos)
-        for i,e in ipairs(es) do
-          local canMove = true
-          local blockFlag = BlockFlag.MonsterLand
-          local bodyArea = {}
-          if e:HasBodyArea() then
-            bodyArea = (e:BodyArea()):GetArea()
+    
+    local es = boardCmpt:GetPieceEntities(pos, filter)
+    if targetPieceType then
+      result:AddMoveBoardPiece(curPos, targetPos)
+      for i, e in ipairs(es) do
+        local canMove = true
+        local blockFlag = BlockFlag.MonsterLand
+        local bodyArea = {}
+        if e:HasBodyArea() then
+          bodyArea = e:BodyArea():GetArea()
+        end
+        local gridPos = e:GetGridPosition()
+        local targetPosList = {}
+        local bodyAreaPosList = {}
+        if table.count(bodyArea) > 1 then
+          for _, area in ipairs(bodyArea) do
+            local workPos = gridPos + area
+            table.insert(bodyAreaPosList, workPos)
+            local areaPos = workPos + direction
+            table.insert(targetPosList, areaPos)
           end
-          local gridPos = e:GetGridPosition()
-          local targetPosList = {}
-          local bodyAreaPosList = {}
-          if (table.count)(bodyArea) > 1 then
-            for _,area in ipairs(bodyArea) do
-              local workPos = gridPos + area
-              ;
-              (table.insert)(bodyAreaPosList, workPos)
-              local areaPos = workPos + direction
-              ;
-              (table.insert)(targetPosList, areaPos)
-            end
+        elseif gridPos then
+          local areaPos = gridPos + direction
+          targetPosList = {areaPos}
+          bodyAreaPosList = {gridPos}
+        end
+        if #targetPosList == 0 then
+          canMove = false
+        end
+        for _, pos in ipairs(targetPosList) do
+          if not table.intable(bodyAreaPosList, pos) and (not utilData:IsValidPiecePos(pos) or boardServiceLogic:IsPosBlock(pos, blockFlag)) then
+            canMove = false
+            break
+          end
+        end
+        if e:HasTrapID() and not canMove then
+          local curBlockFlag = e:BlockFlag():GetBlockFlag()
+          if curBlockFlag & BlockFlag.LinkLine == 0 then
+            canMove = true
+          end
+        end
+        if canMove then
+          if table.count(bodyArea) == 4 then
+            result:AddMoveBoardEntity(e:GetID(), curPos - self._fourAreaFixPos, targetPos - self._fourAreaFixPos)
+            e:SetGridPosition(targetPos - self._fourAreaFixPos)
+            boardServiceLogic:UpdateEntityBlockFlag(e, curPos - self._fourAreaFixPos, targetPos - self._fourAreaFixPos)
           else
-            do
-              do
-                if gridPos then
-                  local areaPos = gridPos + direction
-                  targetPosList = 
-                  bodyAreaPosList = 
-                end
-                if #targetPosList == 0 then
-                  canMove = false
-                end
-                for _,pos in ipairs({areaPos, gridPos}) do
-                  if not (table.intable)(bodyAreaPosList, pos) and (not utilData:IsValidPiecePos(pos) or boardServiceLogic:IsPosBlock(pos, blockFlag)) then
-                    canMove = false
-                    break
-                  end
-                end
-                do
-                  do
-                    if e:HasTrapID() and not canMove then
-                      local curBlockFlag = (e:BlockFlag()):GetBlockFlag()
-                      if curBlockFlag & BlockFlag.LinkLine == 0 then
-                        canMove = true
-                      end
-                    end
-                    if canMove then
-                      if (table.count)(bodyArea) == 4 then
-                        result:AddMoveBoardEntity(e:GetID(), curPos - self._fourAreaFixPos, targetPos - self._fourAreaFixPos)
-                        e:SetGridPosition(targetPos - self._fourAreaFixPos)
-                        boardServiceLogic:UpdateEntityBlockFlag(e, curPos - self._fourAreaFixPos, targetPos - self._fourAreaFixPos)
-                      else
-                        result:AddMoveBoardEntity(e:GetID(), curPos, targetPos)
-                        e:SetGridPosition(targetPos)
-                        boardServiceLogic:UpdateEntityBlockFlag(e, curPos, targetPos)
-                      end
-                      if e:HasTeam() then
-                        local pets = (e:Team()):GetTeamPetEntities()
-                        for i,e in ipairs(pets) do
-                          e:SetGridPosition(targetPos)
-                        end
-                      else
-                        do
-                          if e:HasTrapID() then
-                            local targetEntity = nil
-                            local blockEntitys = boardCmpt:GetPieceEntities(targetPos, function(e)
-    -- function num : 0_4_1
-    if e:HasTeam() or e:HasMonsterID() then
-      return not e:HasDeadMark()
-    end
-  end
-)
-                            if #es > 0 then
-                              targetEntity = es[1]
-                            end
-                            if targetEntity then
-                              toTriggerTraps[#toTriggerTraps + 1] = {e, targetEntity}
-                            end
-                          end
-                          do
-                            do
-                              sTrigger:Notify(NTTransportEachMoveEnd:New(e, curPos, targetPos))
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out DO_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out DO_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out IF_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out IF_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out DO_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out DO_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out DO_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out DO_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                              -- DECOMPILER ERROR at PC258: LeaveBlock: unexpected jumping out IF_STMT
-
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
+            result:AddMoveBoardEntity(e:GetID(), curPos, targetPos)
+            e:SetGridPosition(targetPos)
+            boardServiceLogic:UpdateEntityBlockFlag(e, curPos, targetPos)
+          end
+          if e:HasTeam() then
+            local pets = e:Team():GetTeamPetEntities()
+            for i, e in ipairs(pets) do
+              e:SetGridPosition(targetPos)
+            end
+          elseif e:HasTrapID() then
+            local targetEntity
+            local blockEntitys = boardCmpt:GetPieceEntities(targetPos, function(e)
+              return (e:HasTeam() or e:HasMonsterID()) and not e:HasDeadMark()
+            end)
+            if 0 < #es then
+              targetEntity = es[1]
+            end
+            if targetEntity then
+              toTriggerTraps[#toTriggerTraps + 1] = {e, targetEntity}
             end
           end
+          sTrigger:Notify(NTTransportEachMoveEnd:New(e, curPos, targetPos))
+        else
         end
-        local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-        local teamPos = teamEntity:GetGridPosition()
-        if teamPos == curPos then
-          pieceType = sRandom:LogicRand(1, 4)
-        end
+      end
+      local teamEntity = self._world:Player():GetCurrentTeamEntity()
+      local teamPos = teamEntity:GetGridPosition()
+      if teamPos == curPos then
+        pieceType = sRandom:LogicRand(1, 4)
+      end
+      if teamPos == targetPos then
+        pieceType = PieceType.None
+      end
+      result:AddConvertColor(targetPos, targetPieceType, pieceType)
+      boardServiceLogic:SetPieceTypeLogic(pieceType, targetPos)
+      if isPieceEffect then
         if teamPos == targetPos then
-          pieceType = PieceType.None
-        end
-        result:AddConvertColor(targetPos, targetPieceType, pieceType)
-        boardServiceLogic:SetPieceTypeLogic(pieceType, targetPos)
-        if isPieceEffect then
-          if teamPos == targetPos then
-            result:AddMoveBoardPrism(curPos, nil, prismEntityID, nil)
-          else
-            result:AddMoveBoardPrism(curPos, targetPos, prismEntityID, pieceEffectType)
-          end
-        end
-      else
-        do
-          result:AddMoveBoardPiece(curPos, targetPos)
-          if isPieceEffect then
-            result:AddMoveBoardPrism(curPos, nil, prismEntityID, nil)
-          end
-          for i,entity in ipairs(es) do
-            if entity:HasTrapID() and destroyOutTrap == 1 then
-              result:AddMoveBoardEntity(entity:GetID(), curPos, targetPos)
-              entity:SetGridPosition(targetPos)
-              boardServiceLogic:RemoveEntityBlockFlag(entity, curPos)
-              ;
-              (table.insert)(toDeadTraps, entity)
-            end
-          end
+          result:AddMoveBoardPrism(curPos, nil, prismEntityID, nil)
+        else
+          result:AddMoveBoardPrism(curPos, targetPos, prismEntityID, pieceEffectType)
         end
       end
-      do
-        -- DECOMPILER ERROR at PC349: LeaveBlock: unexpected jumping out DO_STMT
-
+    else
+      result:AddMoveBoardPiece(curPos, targetPos)
+      if isPieceEffect then
+        result:AddMoveBoardPrism(curPos, nil, prismEntityID, nil)
+      end
+      for i, entity in ipairs(es) do
+        if entity:HasTrapID() and destroyOutTrap == 1 then
+          result:AddMoveBoardEntity(entity:GetID(), curPos, targetPos)
+          entity:SetGridPosition(targetPos)
+          boardServiceLogic:RemoveEntityBlockFlag(entity, curPos)
+          table.insert(toDeadTraps, entity)
+        else
+        end
       end
     end
   end
-  for i,v in ipairs(result:GetMoveBoardPrisms()) do
+  for i, v in ipairs(result:GetMoveBoardPrisms()) do
     local oldPos = v[1]
     boardCmpt:RemoveBoardPieceEffectType(oldPos)
     local newPos = v[2]
@@ -360,11 +263,11 @@ SkillEffectCalc_MoveBoard._MoveBoardOneStepNew = function(self, result, posList,
     end
   end
   if isLast then
-    for i,pos in ipairs(posList) do
+    for i, pos in ipairs(posList) do
       local curPieceType = boardCmpt:GetPieceType(pos)
       local envIndexZeroPos = pos - direction
       local pieceFillTable = boardServiceLogic:SupplyPieceList({pos})
-      local newPieceType = (pieceFillTable[1]).color
+      local newPieceType = pieceFillTable[1].color
       if newPieceType ~= curPieceType then
         result:AddConvertColor(pos, curPieceType, newPieceType)
         boardServiceLogic:SetPieceTypeLogic(newPieceType, pos)
@@ -373,64 +276,49 @@ SkillEffectCalc_MoveBoard._MoveBoardOneStepNew = function(self, result, posList,
       result:AddMoveBoardPieceCutIn(envIndexZeroPos, pos, newPieceType)
       local convertInfoArray = {}
       local convertInfo = NTGridConvert_ConvertInfo:New(envIndexZeroPos, PieceType.None, newPieceType)
-      ;
-      (table.insert)(convertInfoArray, convertInfo)
-      if #convertInfoArray > 0 then
+      table.insert(convertInfoArray, convertInfo)
+      if 0 < #convertInfoArray then
         local nt = NTGridConvert:New(casterEntity, convertInfoArray)
         sTrigger:Notify(nt)
-        nt:SetSkillType((self._skillEffectParam):GetSkillType())
+        nt:SetSkillType(self._skillEffectParam:GetSkillType())
       end
     end
   end
-  do
-    for i,v in ipairs(toTriggerTraps) do
-      self:_TriggerTraps(result, v[1], v[2])
-    end
-    for i,entity in ipairs(toDeadTraps) do
-      self:_DestroyTrap(result, entity)
-    end
+  for i, v in ipairs(toTriggerTraps) do
+    self:_TriggerTraps(result, v[1], v[2])
+  end
+  for i, entity in ipairs(toDeadTraps) do
+    self:_DestroyTrap(result, entity)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoveBoard._TriggerTraps = function(self, result, trapEntity, triggerEntity)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_MoveBoard:_TriggerTraps(result, trapEntity, triggerEntity)
   if triggerEntity:HasTrapID() then
-    return 
+    return
   end
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local triggerTraps, triggerResults = trapServiceLogic:CalcTrapTriggerSkill(trapEntity, triggerEntity)
   if triggerTraps then
-    for i,trap in ipairs(triggerTraps) do
+    for i, trap in ipairs(triggerTraps) do
       local skillResult = triggerResults[i]
       result:AddTrapSkillResult(trap:GetID(), skillResult, triggerEntity:GetID())
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoveBoard._DestroyTrap = function(self, result, trapEntity)
-  -- function num : 0_6
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function SkillEffectCalc_MoveBoard:_DestroyTrap(result, trapEntity)
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local trapCmpt = trapEntity:Trap()
-  ;
-  (trapEntity:Attributes()):Modify("HP", 0)
+  trapEntity:Attributes():Modify("HP", 0)
   local disableDieSkill = true
   trapServiceLogic:AddTrapDeadMark(trapEntity, disableDieSkill)
   result:AddTrapDestroyList(trapEntity:GetID())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoveBoard._GetNeighboringEnv = function(self, envList, env)
-  -- function num : 0_7
+function SkillEffectCalc_MoveBoard:_GetNeighboringEnv(envList, env)
   local total = #envList
   local envIdx = env.index
   local idx = envIdx - 1
   local neighboringEnv = envList[idx]
   return neighboringEnv
 end
-
-

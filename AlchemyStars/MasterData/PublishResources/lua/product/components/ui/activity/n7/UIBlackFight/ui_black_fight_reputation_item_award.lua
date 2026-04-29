@@ -1,76 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/UIBlackFight/ui_black_fight_reputation_item_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBlackFightReputationItemAward", UICustomWidget)
 UIBlackFightReputationItemAward = UIBlackFightReputationItemAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBlackFightReputationItemAward.OnShow = function(self)
-  -- function num : 0_0
+function UIBlackFightReputationItemAward:OnShow()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.iconRaw = self:GetUIComponent("RawImage", "icon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItemAward.OnHide = function(self)
-  -- function num : 0_1
+function UIBlackFightReputationItemAward:OnHide()
   if self.icon then
-    (self.icon):DestoryLastImage()
+    self.icon:DestoryLastImage()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItemAward.Flush = function(self, award)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBlackFightReputationItemAward:Flush(award)
   self.award = award
-  local cfgItem = (Cfg.cfg_item)[award.assetid]
+  local cfgItem = Cfg.cfg_item[award.assetid]
   if cfgItem then
-    (self.icon):LoadImage(cfgItem.Icon)
-    ;
-    (self.txtCount):SetText(award.count)
+    self.icon:LoadImage(cfgItem.Icon)
+    self.txtCount:SetText(award.count)
   else
-    ;
-    (Log.warn)("### no data in cfg_item. assetid=", award.assetid)
+    Log.warn("### no data in cfg_item. assetid=", award.assetid)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItemAward.FlushGray = function(self, gray)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBlackFightReputationItemAward:FlushGray(gray)
   if not self._EMIMat then
-    self._EMIMat = (UnityEngine.Material):New((self.iconRaw).material)
+    self._EMIMat = UnityEngine.Material:New(self.iconRaw.material)
   end
   if gray then
-    local texture = ((self.iconRaw).material).mainTexture
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.iconRaw).material = self._EMIMat
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self.iconRaw).material).mainTexture = texture
-    ;
-    ((self.iconRaw).material):SetFloat("_LuminosityAmount", 1)
+    local texture = self.iconRaw.material.mainTexture
+    self.iconRaw.material = self._EMIMat
+    self.iconRaw.material.mainTexture = texture
+    self.iconRaw.material:SetFloat("_LuminosityAmount", 1)
   else
-    do
-      ;
-      ((self.iconRaw).material):SetFloat("_LuminosityAmount", 0)
-    end
+    self.iconRaw.material:SetFloat("_LuminosityAmount", 0)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputationItemAward.iconOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftInteractiveEventRewardShowItemTips, (self.award).assetid, ((self:GetGameObject()).transform).position)
+function UIBlackFightReputationItemAward:iconOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftInteractiveEventRewardShowItemTips, self.award.assetid, self:GetGameObject().transform.position)
 end
-
-

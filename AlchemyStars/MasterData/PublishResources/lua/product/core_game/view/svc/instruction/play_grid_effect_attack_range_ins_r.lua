@@ -1,61 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_effect_attack_range_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridEffectAttackRangeInstruction", BaseInstruction)
 PlayGridEffectAttackRangeInstruction = PlayGridEffectAttackRangeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridEffectAttackRangeInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridEffectAttackRangeInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   local dirParam = tonumber(paramList.effectDir)
   self._effectDir = Vector2(0, 1)
   if dirParam == EffectDirectionType.Up then
     self._effectDir = Vector2(0, 1)
-  else
-    if dirParam == EffectDirectionType.Right then
-      self._effectDir = Vector2(1, 0)
-    else
-      if dirParam == EffectDirectionType.Down then
-        self._effectDir = Vector2(0, -1)
-      else
-        if dirParam == EffectDirectionType.Left then
-          self._effectDir = Vector2(-1, 0)
-        end
-      end
-    end
+  elseif dirParam == EffectDirectionType.Right then
+    self._effectDir = Vector2(1, 0)
+  elseif dirParam == EffectDirectionType.Down then
+    self._effectDir = Vector2(0, -1)
+  elseif dirParam == EffectDirectionType.Left then
+    self._effectDir = Vector2(-1, 0)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectAttackRangeInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayGridEffectAttackRangeInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectAttackRangeInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayGridEffectAttackRangeInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local utilDataSvc = world:GetService("UtilData")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local gridArray = scopeResult:GetAttackRange()
-  for i,pos in ipairs(gridArray) do
+  for i, pos in ipairs(gridArray) do
     if utilDataSvc:IsValidPiecePos(pos) and not utilDataSvc:IsPosBlock(pos, BlockFlag.Skill | BlockFlag.SkillSkip) then
       effectService:CreateWorldPositionDirectionEffect(self._effectID, pos, self._effectDir)
     end
   end
 end
-
-

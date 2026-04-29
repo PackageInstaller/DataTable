@@ -1,114 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s7/awards/ui_season_result_single_award_list_s7.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonResultSingleAwardListS7", UICustomWidget)
 UISeasonResultSingleAwardListS7 = UISeasonResultSingleAwardListS7
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonResultSingleAwardListS7.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonResultSingleAwardListS7:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultSingleAwardListS7.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonResultSingleAwardListS7:InitWidget()
   self._awardsGen = self:GetUIComponent("UISelectObjectPath", "Awards")
   self._bgImg = self:GetUIComponent("Image", "BgImg")
   self._atlas = self:GetAsset("UIS1Main.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultSingleAwardListS7.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonResultSingleAwardListS7:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonResultSingleAwardListS7.SetData = function(self, awardsTb)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonResultSingleAwardListS7:SetData(awardsTb)
   self._taskIDList = {}
   self._awardsTb = awardsTb
-  local levelDiff = (self._awardsTb).levelDiff
+  local levelDiff = self._awardsTb.levelDiff
   if levelDiff then
-    local count = (self._awardsTb).cellCount
-    ;
-    (self._awardsGen):SpawnObjects("UIWidgetSeasonResultRewardS7", count)
-    local items = (self._awardsGen):GetAllSpawnList()
-    local itemIndex = 1
-    if awardsTb.starRewards then
-      local starRewards = awardsTb.starRewards
-      for i = 1, #starRewards do
-        local roleAsset = starRewards[i]
-        local taskID = (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, true)
-        ;
-        (items[itemIndex]):SetLevelDiff(levelDiff)
-        ;
-        (table.insert)(self._taskIDList, taskID)
-        itemIndex = itemIndex + 1
-      end
+  end
+  local count = self._awardsTb.cellCount
+  self._awardsGen:SpawnObjects("UIWidgetSeasonResultRewardS7", count)
+  local items = self._awardsGen:GetAllSpawnList()
+  local itemIndex = 1
+  if awardsTb.starRewards then
+    local starRewards = awardsTb.starRewards
+    for i = 1, #starRewards do
+      local roleAsset = starRewards[i]
+      local taskID = items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, true)
+      items[itemIndex]:SetLevelDiff(levelDiff)
+      table.insert(self._taskIDList, taskID)
+      itemIndex = itemIndex + 1
     end
-    do
-      if awardsTb.extStarRewards then
-        local extStarRewards = awardsTb.extStarRewards
-        for i = 1, #extStarRewards do
-          local roleAsset = extStarRewards[i]
-          local taskID = (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, true)
-          ;
-          (items[itemIndex]):SetLevelDiff(levelDiff)
-          ;
-          (table.insert)(self._taskIDList, taskID)
-          itemIndex = itemIndex + 1
-        end
-      end
-      do
-        if awardsTb.firstPassRawrds then
-          local firstPassRawrds = awardsTb.firstPassRawrds
-          for i = 1, #firstPassRawrds do
-            local roleAsset = firstPassRawrds[i]
-            local taskID = (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false, false, true)
-            ;
-            (items[itemIndex]):SetLevelDiff(levelDiff)
-            ;
-            (table.insert)(self._taskIDList, taskID)
-            itemIndex = itemIndex + 1
-          end
-        end
-        do
-          if awardsTb.extFirstPassRewards then
-            local extFirstPassRewards = awardsTb.extFirstPassRewards
-            for i = 1, #extFirstPassRewards do
-              local roleAsset = extFirstPassRewards[i]
-              local taskID = (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false, false, true)
-              ;
-              (items[itemIndex]):SetLevelDiff(levelDiff)
-              ;
-              (table.insert)(self._taskIDList, taskID)
-              itemIndex = itemIndex + 1
-            end
-          end
-          do
-            if awardsTb.normalRewards then
-              local normalRewards = awardsTb.normalRewards
-              for i = 1, #normalRewards do
-                local roleAsset = normalRewards[i]
-                if roleAsset.assetid ~= RoleAssetID.RoleAssetExp then
-                  (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false)
-                  ;
-                  (items[itemIndex]):SetLevelDiff(levelDiff)
-                  itemIndex = itemIndex + 1
-                end
-              end
-            end
-          end
-        end
+  end
+  if awardsTb.extStarRewards then
+    local extStarRewards = awardsTb.extStarRewards
+    for i = 1, #extStarRewards do
+      local roleAsset = extStarRewards[i]
+      local taskID = items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, true)
+      items[itemIndex]:SetLevelDiff(levelDiff)
+      table.insert(self._taskIDList, taskID)
+      itemIndex = itemIndex + 1
+    end
+  end
+  if awardsTb.firstPassRawrds then
+    local firstPassRawrds = awardsTb.firstPassRawrds
+    for i = 1, #firstPassRawrds do
+      local roleAsset = firstPassRawrds[i]
+      local taskID = items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false, false, true)
+      items[itemIndex]:SetLevelDiff(levelDiff)
+      table.insert(self._taskIDList, taskID)
+      itemIndex = itemIndex + 1
+    end
+  end
+  if awardsTb.extFirstPassRewards then
+    local extFirstPassRewards = awardsTb.extFirstPassRewards
+    for i = 1, #extFirstPassRewards do
+      local roleAsset = extFirstPassRewards[i]
+      local taskID = items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false, false, true)
+      items[itemIndex]:SetLevelDiff(levelDiff)
+      table.insert(self._taskIDList, taskID)
+      itemIndex = itemIndex + 1
+    end
+  end
+  if awardsTb.normalRewards then
+    local normalRewards = awardsTb.normalRewards
+    for i = 1, #normalRewards do
+      local roleAsset = normalRewards[i]
+      if roleAsset.assetid ~= RoleAssetID.RoleAssetExp then
+        items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false)
+        items[itemIndex]:SetLevelDiff(levelDiff)
+        itemIndex = itemIndex + 1
       end
     end
   end
 end
-
-

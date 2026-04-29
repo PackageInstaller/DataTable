@@ -1,63 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_coffin_musume_candle_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayCoffinMusumeCandleInstruction", BaseInstruction)
 PlayCoffinMusumeCandleInstruction = PlayCoffinMusumeCandleInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCoffinMusumeCandleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCoffinMusumeCandleInstruction:Constructor(paramList)
   self._candleEffectID = tonumber(paramList.candleEffectID)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCoffinMusumeCandleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayCoffinMusumeCandleInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local result = routineComponent:GetEffectResultByArray(SkillEffectType.CoffinMusumeCandle)
   if not result then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local selectedLights = result:GetSelectedLights()
-  for _,eid in ipairs(selectedLights) do
+  for _, eid in ipairs(selectedLights) do
     local e = world:GetEntityByID(eid)
     if e then
       local fxsvc = world:GetService("Effect")
       fxsvc:CreateEffect(self._candleEffectID, e)
     end
   end
-  ;
-  (world:GetService("PlayBuff")):PlayBuffView(TT, NTCoffinMusumeSkillChangeLight:New(selectedLights))
+  world:GetService("PlayBuff"):PlayBuffView(TT, NTCoffinMusumeSkillChangeLight:New(selectedLights))
   self:_TryPlayAddHP(result, casterEntity)
   self:_TryPlayDamage(TT, result, casterEntity, phaseContext)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCoffinMusumeCandleInstruction._TryPlayAddHP = function(self, result, casterEntity)
-  -- function num : 0_2
+function PlayCoffinMusumeCandleInstruction:_TryPlayAddHP(result, casterEntity)
   local world = casterEntity:GetOwnerWorld()
   local addHPResult = result:GetAddHPResult()
   if not addHPResult then
-    return 
+    return
   end
   local damageInfo = addHPResult:GetDamageInfo()
   local playDamageService = world:GetService("PlayDamage")
   playDamageService:AsyncUpdateHPAndDisplayDamage(casterEntity, damageInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCoffinMusumeCandleInstruction._TryPlayDamage = function(self, TT, result, casterEntity, phaseContext)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayCoffinMusumeCandleInstruction:_TryPlayDamage(TT, result, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local damageResult = result:GetDamageResult()
   if not damageResult then
-    return 
+    return
   end
   local targetEntityID = damageResult:GetTargetID()
   local targetEntity = world:GetEntityByID(targetEntityID)
@@ -65,10 +48,8 @@ PlayCoffinMusumeCandleInstruction._TryPlayDamage = function(self, TT, result, ca
   local damageGridPos = damageResult:GetGridPos()
   local playSkillService = world:GetService("PlaySkill")
   local playFinalAttack = playSkillService:GetFinalAttack(world, casterEntity, phaseContext)
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
-  local beHitParam = (((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName("Hit")):SetHandleBeHitParam_HitEffectID(0)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(1)):SetHandleBeHitParam_DeathClear(0)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_DamageIndex(1)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName("Hit"):SetHandleBeHitParam_HitEffectID(0):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(1):SetHandleBeHitParam_DeathClear(0):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_DamageIndex(1)
   playSkillService:HandleBeHit(TT, beHitParam)
 end
-
-

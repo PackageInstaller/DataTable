@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_turn_flight_vehcile_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillTurnFlightVehcileGridArrayParam", SkillPhaseParamBase)
 SkillTurnFlightVehcileGridArrayParam = SkillTurnFlightVehcileGridArrayParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillTurnFlightVehcileGridArrayParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillTurnFlightVehcileGridArrayParam:Constructor(t)
   self._hitAnimName = t.hitAnimName
   self._hitEffectID = t.hitEffectID
   self._flyEffectID = t.flyEffectID
@@ -20,84 +13,61 @@ SkillTurnFlightVehcileGridArrayParam.Constructor = function(self, t)
   self._flyBackStartWaitTime = t.flyBackStartWaitTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillTurnFlightVehcileGridArrayParam:GetCacheTable()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    }
   end
-  if self._flyEffectID and self._flyEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 1}
+  if self._flyEffectID and 0 < self._flyEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      1
+    }
   end
-  if self._flyBackEffectID and self._flyBackEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._flyBackEffectID]).ResPath, 1}
+  if self._flyBackEffectID and 0 < self._flyBackEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._flyBackEffectID].ResPath,
+      1
+    }
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillTurnFlightVehcileGridArrayParam:GetPhaseType()
   return SkillViewPhaseType.TurnRoundFlightVehicle
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetFlyTime = function(self)
-  -- function num : 0_3
+function SkillTurnFlightVehcileGridArrayParam:GetFlyTime()
   return self._flyTime
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetFlyBackTime = function(self)
-  -- function num : 0_4
+function SkillTurnFlightVehcileGridArrayParam:GetFlyBackTime()
   return self._flyBackTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetFlyArriveDestory = function(self)
-  -- function num : 0_5
+function SkillTurnFlightVehcileGridArrayParam:GetFlyArriveDestory()
   return self._flyArriveDestory
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetFlyBackStartWaitTime = function(self)
-  -- function num : 0_6
+function SkillTurnFlightVehcileGridArrayParam:GetFlyBackStartWaitTime()
   return self._flyBackStartWaitTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetFlyEffectID = function(self)
-  -- function num : 0_7
+function SkillTurnFlightVehcileGridArrayParam:GetFlyEffectID()
   return self._flyEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetFlyBackEffectID = function(self)
-  -- function num : 0_8
+function SkillTurnFlightVehcileGridArrayParam:GetFlyBackEffectID()
   return self._flyBackEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetHitAnimName = function(self)
-  -- function num : 0_9
+function SkillTurnFlightVehcileGridArrayParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTurnFlightVehcileGridArrayParam.GetHitEffectID = function(self)
-  -- function num : 0_10
+function SkillTurnFlightVehcileGridArrayParam:GetHitEffectID()
   return self._hitEffectID
 end
-
-

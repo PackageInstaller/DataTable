@@ -1,28 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_skill_increase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeSkillIncrease", BuffViewBase)
 BuffViewChangeSkillIncrease = BuffViewChangeSkillIncrease
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeSkillIncrease.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self._buffResult):GetLight() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((self._entity):PetPstID()):GetPstID(), true)
+function BuffViewChangeSkillIncrease:PlayView(TT)
+  if self._buffResult:GetLight() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, self._entity:PetPstID():GetPstID(), true)
   end
 end
 
 _class("BuffViewRemoveSkillIncrease", BuffViewBase)
 BuffViewRemoveSkillIncrease = BuffViewRemoveSkillIncrease
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveSkillIncrease.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._buffResult):GetBlack() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((self._entity):PetPstID()):GetPstID(), false)
+function BuffViewRemoveSkillIncrease:PlayView(TT)
+  if self._buffResult:GetBlack() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, self._entity:PetPstID():GetPstID(), false)
   end
 end
-
-

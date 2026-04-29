@@ -1,83 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/lineTalent/ui_cn20_n49_action_point_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49ActionPointDetail", UIController)
 UICN20N49ActionPointDetail = UICN20N49ActionPointDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49ActionPointDetail.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UICN20N49ActionPointDetail:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20N49ActionPointDetail:OnShow(uiParams)
   self:InitWidget()
   self._cpt = uiParams[1]
   local pos = uiParams[2]
   self._onHide = uiParams[3]
   self.go = uiParams[4]
   self.uiName = uiParams[5]
-  self.uiCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self.uiName)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.root).anchoredPosition = pos + Vector2(0, -100)
+  self.uiCamera = GameGlobal.UIStateManager():GetControllerCamera(self.uiName)
+  self.root.anchoredPosition = pos + Vector2(0, -100)
   self:FlushPos()
-  local itemID = (self._cpt):GetItemId()
-  local tipCfg = (Cfg.cfg_top_tips)[itemID]
-  ;
-  (self.itemName):SetText((StringTable.Get)(tipCfg.Title))
-  ;
-  (self.desText):SetText((StringTable.Get)(tipCfg.Intr))
+  local itemID = self._cpt:GetItemId()
+  local tipCfg = Cfg.cfg_top_tips[itemID]
+  self.itemName:SetText(StringTable.Get(tipCfg.Title))
+  self.desText:SetText(StringTable.Get(tipCfg.Intr))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointDetail.FlushPos = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20N49ActionPointDetail:FlushPos()
   if self.go then
-    local posScreen = (self.uiCamera):WorldToScreenPoint(((self.go).transform).position)
-    local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)((self.root).parent, posScreen, camera, nil)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.root).anchoredPosition = pos
+    local posScreen = self.uiCamera:WorldToScreenPoint(self.go.transform.position)
+    local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+    local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.root.parent, posScreen, camera, nil)
+    self.root.anchoredPosition = pos
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointDetail.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49ActionPointDetail:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   if self._onHide then
-    (self._onHide)()
+    self._onHide()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointDetail.InitWidget = function(self)
-  -- function num : 0_4
+function UICN20N49ActionPointDetail:InitWidget()
   self.itemName = self:GetUIComponent("UILocalizationText", "ItemName")
   self.desText = self:GetUIComponent("UILocalizationText", "DesText")
   self.root = self:GetUIComponent("RectTransform", "Root")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49ActionPointDetail.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UICN20N49ActionPointDetail:BgOnClick(go)
   self:CloseDialog()
 end
-
-

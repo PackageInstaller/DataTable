@@ -1,8 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/str_item_public.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_item_public_use_en = "USEITEMS", str_item_public_use = "使用", str_item_public_cantuse = "不可使用", str_item_public_sale = "出售", str_item_public_cantsale = "不可出售", str_item_public_all = "全部", str_item_public_cl = "材料", str_item_public_xh = "消耗", str_item_public_getway = "獲取途徑", str_item_public_owned = "目前擁有：", str_item_public_maxuse = "最大", str_item_public_currentNull = "本分類下暫無物品", str_item_public_unit = "萬", str_item_public_no_path = "暫無取得途徑", str_item_public_color_white = "暗淡", str_item_public_color_green = "微明", str_item_public_color_blue = "閃亮", str_item_public_color_purple = "燦爛", str_item_public_color_yellow = "臻金", str_item_public_color_golden = "輝耀", str_item_public_sale_item_tips = "是否確認出售物品", str_item_public_select_one_below = "從以上物品任選一種", str_item_public_gain = "獲得", str_item_public_time_out = "道具已過期", str_item_public_time_out_str = "過期時間：{1}", str_item_public_get_path_owned = "擁有：{1}", str_item_public_get_path_not_enough = "不足", str_item_public_exchange_btn_tex = "確認轉化", str_item_public_exchange_btn_tips = "您將消耗珍貴材料-{1}，請進行最終確認", str_item_public_exchange_title = "{1}-{2}轉化", str_item_public_exchange_not_enough = "材料不足", str_item_public_exchange_path_desc = "{1}x{2}", str_item_public_item_not_exist = "物品不存在", str_item_public_select_one_usecount = "使用數量：", str_item_public_smeltroom_lv_limit = "【達到Lv.{1}可冶煉】", str_item_public_smeltroom_unlock_tip = "【冶煉獲得】", str_item_public_smeltroom_lock_tip = "【解鎖後可冶煉】", str_item_public_goto_aircraft = "前往巨像", str_item_public_aircraft_lock_tip = "【巨像未解鎖】", str_item_public_use_phy_more_than_max = "稜鏡數量已達上限", str_item_public_common_conversion_title = "轉換物品", str_item_public_common_conversion_title2 = "已將您已擁有的物品轉換為以下獎勵"}
+local config = {
+  str_item_public_use_en = "USEITEMS",
+  str_item_public_use = "使用",
+  str_item_public_cantuse = "不可使用",
+  str_item_public_sale = "出售",
+  str_item_public_cantsale = "不可出售",
+  str_item_public_all = "全部",
+  str_item_public_cl = "材料",
+  str_item_public_xh = "消耗",
+  str_item_public_getway = "獲取途徑",
+  str_item_public_owned = "目前擁有：",
+  str_item_public_maxuse = "最大",
+  str_item_public_currentNull = "本分類下暫無物品",
+  str_item_public_unit = "萬",
+  str_item_public_no_path = "暫無取得途徑",
+  str_item_public_color_white = "暗淡",
+  str_item_public_color_green = "微明",
+  str_item_public_color_blue = "閃亮",
+  str_item_public_color_purple = "燦爛",
+  str_item_public_color_yellow = "臻金",
+  str_item_public_color_golden = "輝耀",
+  str_item_public_sale_item_tips = "是否確認出售物品",
+  str_item_public_select_one_below = "從以上物品任選一種",
+  str_item_public_gain = "獲得",
+  str_item_public_time_out = "道具已過期",
+  str_item_public_time_out_str = "過期時間：{1}",
+  str_item_public_get_path_owned = "擁有：{1}",
+  str_item_public_get_path_not_enough = "不足",
+  str_item_public_exchange_btn_tex = "確認轉化",
+  str_item_public_exchange_btn_tips = "您將消耗珍貴材料-{1}，請進行最終確認",
+  str_item_public_exchange_title = "{1}-{2}轉化",
+  str_item_public_exchange_not_enough = "材料不足",
+  str_item_public_exchange_path_desc = "{1}x{2}",
+  str_item_public_item_not_exist = "物品不存在",
+  str_item_public_select_one_usecount = "使用數量：",
+  str_item_public_smeltroom_lv_limit = "【達到Lv.{1}可冶煉】",
+  str_item_public_smeltroom_unlock_tip = "【冶煉獲得】",
+  str_item_public_smeltroom_lock_tip = "【解鎖後可冶煉】",
+  str_item_public_goto_aircraft = "前往巨像",
+  str_item_public_aircraft_lock_tip = "【巨像未解鎖】",
+  str_item_public_use_phy_more_than_max = "稜鏡數量已達上限",
+  str_item_public_common_conversion_title = "轉換物品",
+  str_item_public_common_conversion_title2 = "已將您已擁有的物品轉換為以下獎勵"
+}
 return config
-

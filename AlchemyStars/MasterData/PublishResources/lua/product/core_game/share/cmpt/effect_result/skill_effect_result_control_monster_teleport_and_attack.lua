@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_control_monster_teleport_and_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultControlMonsterTeleportAndAttack", SkillEffectResultBase)
 SkillEffectResultControlMonsterTeleportAndAttack = SkillEffectResultControlMonsterTeleportAndAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultControlMonsterTeleportAndAttack.Constructor = function(self, targetMonsterEntityID)
-  -- function num : 0_0
+function SkillEffectResultControlMonsterTeleportAndAttack:Constructor(targetMonsterEntityID)
   self._targetMonsterEntityID = targetMonsterEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultControlMonsterTeleportAndAttack.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultControlMonsterTeleportAndAttack:GetEffectType()
   return SkillEffectType.ControlMonsterTeleportAndAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultControlMonsterTeleportAndAttack.GetTargetMonsterEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultControlMonsterTeleportAndAttack:GetTargetMonsterEntityID()
   return self._targetMonsterEntityID
 end
-
-

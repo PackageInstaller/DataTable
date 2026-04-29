@@ -1,98 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/petinvite/ui_home_pet_invite_petinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetInviteItemEnableInfo", Object)
 UIHomePetInviteItemEnableInfo = UIHomePetInviteItemEnableInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetInviteItemEnableInfo.Constructor = function(self, id, petId)
-  -- function num : 0_0
+function UIHomePetInviteItemEnableInfo:Constructor(id, petId)
   self._interactId = id
   self._petId = petId
   self._needCheckSkin = false
   self._skin = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.GetPetId = function(self)
-  -- function num : 0_1
+function UIHomePetInviteItemEnableInfo:GetPetId()
   return self._petId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.GetInteractId = function(self)
-  -- function num : 0_2
+function UIHomePetInviteItemEnableInfo:GetInteractId()
   return self._interactId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.GetOriginalSkin = function(self)
-  -- function num : 0_3
+function UIHomePetInviteItemEnableInfo:GetOriginalSkin()
   return self._originalSkin
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.SetOriginalSkin = function(self, skin)
-  -- function num : 0_4
+function UIHomePetInviteItemEnableInfo:SetOriginalSkin(skin)
   self._originalSkin = skin
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.GetUsingSkin = function(self)
-  -- function num : 0_5
+function UIHomePetInviteItemEnableInfo:GetUsingSkin()
   return self._usingSkin
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.SetUsingSkin = function(self, skin)
-  -- function num : 0_6
+function UIHomePetInviteItemEnableInfo:SetUsingSkin(skin)
   self._usingSkin = skin
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.GetSkin = function(self)
-  -- function num : 0_7
+function UIHomePetInviteItemEnableInfo:GetSkin()
   return self._skin
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.AddSkin = function(self, skin)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.insert)(self._skin, skin)
+function UIHomePetInviteItemEnableInfo:AddSkin(skin)
+  table.insert(self._skin, skin)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.GetNeedCheckSkin = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomePetInviteItemEnableInfo:GetNeedCheckSkin()
   self._needCheckSkin = true
   for i = 1, #self._skin do
-    local id = (string.gsub)(((self._skin)[i]).Prefab, ".prefab", "")
+    local id = string.gsub(self._skin[i].Prefab, ".prefab", "")
     if self._petId == tonumber(id) then
       self._needCheckSkin = false
       break
     end
   end
-  do
-    return self._needCheckSkin
-  end
+  return self._needCheckSkin
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInviteItemEnableInfo.GetPetCfg = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  return (Cfg.cfg_pet)[self._petId]
+function UIHomePetInviteItemEnableInfo:GetPetCfg()
+  return Cfg.cfg_pet[self._petId]
 end
-
-

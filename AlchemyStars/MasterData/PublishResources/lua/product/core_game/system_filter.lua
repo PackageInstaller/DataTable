@@ -1,25 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/system_filter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _staticClass("SystemFilter")
--- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
+SystemFilter.LogicSystems = {
+  CommandSendSystem = true,
+  CommandReceiveSystem = true,
+  MainFSMSystem = true,
+  GameFSMSystem = true,
+  LoadingSystem = true,
+  BattleEnterSystem = true,
+  WaveEnterSystem = true,
+  RoundEnterSystem = true,
+  FirstWaveEnterSystem = true,
+  WaitInputSystem = true,
+  WaveResultSystem = true,
+  WaveResultAwardSystem = true,
+  WaveResultAwardApplySystem = true,
+  RoleMovementSystem = true,
+  RoleTurnResultStateSystem = true,
+  PreChainStateSystem = true,
+  ActiveSkillSystem = true,
+  PersonaSkillSystem = true,
+  MonsterBuffCalcSystem = true,
+  RoundResultSystem = true,
+  ChainAttackStateSystem = true,
+  PieceRefreshSystem = true,
+  MonsterMoveSystem = true,
+  BattleResultSystem = true,
+  WaveSwitchSystem = true,
+  PieceEffectSystem = true,
+  WaitInputChainSystem = true,
+  BuffUnloadSystem = true,
+  ChessPetMoveSystem = true,
+  ChessPetAttackSystem = true,
+  ChessPetMoveAndAttackSystem = true,
+  ChessPetResultSystem = true,
+  AutoFightSystem = true,
+  MirageEnterSystem = true,
+  MirageWaitInputSystem = true,
+  MirageRoleTurnSystem = true,
+  MirageMonsterTurnSystem = true,
+  MirageEndSystem = true,
+  PopStarLoadingSystem = true,
+  PopStarBattleEnterSystem = true,
+  PopStarWaveEnterSystem = true,
+  PopStarRoundEnterSystem = true,
+  PopStarPieceRefreshSystem = true,
+  PopStarTrapTurnSystem = true,
+  PopStarRoundResultSystem = true,
+  PopStarWaveResultSystem = true,
+  PopStarBattleResultSystem = true,
+  PopStarProPieceRefreshSystem = true,
+  PopStarProRoleTurnSystem = true,
+  UnscaledCountDownFinishNotifySystem = true
+}
 
-SystemFilter.LogicSystems = {CommandSendSystem = true, CommandReceiveSystem = true, MainFSMSystem = true, GameFSMSystem = true, LoadingSystem = true, BattleEnterSystem = true, WaveEnterSystem = true, RoundEnterSystem = true, FirstWaveEnterSystem = true, WaitInputSystem = true, WaveResultSystem = true, WaveResultAwardSystem = true, WaveResultAwardApplySystem = true, RoleMovementSystem = true, RoleTurnResultStateSystem = true, PreChainStateSystem = true, ActiveSkillSystem = true, PersonaSkillSystem = true, MonsterBuffCalcSystem = true, RoundResultSystem = true, ChainAttackStateSystem = true, PieceRefreshSystem = true, MonsterMoveSystem = true, BattleResultSystem = true, WaveSwitchSystem = true, PieceEffectSystem = true, WaitInputChainSystem = true, BuffUnloadSystem = true, ChessPetMoveSystem = true, ChessPetAttackSystem = true, ChessPetMoveAndAttackSystem = true, ChessPetResultSystem = true, AutoFightSystem = true, MirageEnterSystem = true, MirageWaitInputSystem = true, MirageRoleTurnSystem = true, MirageMonsterTurnSystem = true, MirageEndSystem = true, PopStarLoadingSystem = true, PopStarBattleEnterSystem = true, PopStarWaveEnterSystem = true, PopStarRoundEnterSystem = true, PopStarPieceRefreshSystem = true, PopStarTrapTurnSystem = true, PopStarRoundResultSystem = true, PopStarWaveResultSystem = true, PopStarBattleResultSystem = true, PopStarProPieceRefreshSystem = true, PopStarProRoleTurnSystem = true, UnscaledCountDownFinishNotifySystem = true}
--- DECOMPILER ERROR at PC58: Confused about usage of register: R0 in 'UnsetPending'
-
-SystemFilter.CheckSystem = function(self, system_name, world_running_postion)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self.LogicSystems)[system_name] and world_running_postion == WorldRunPostion.AtServer then
+function SystemFilter:CheckSystem(system_name, world_running_postion)
+  if self.LogicSystems[system_name] and world_running_postion == WorldRunPostion.AtServer then
+    return true
+  elseif world_running_postion == WorldRunPostion.AtClient then
     return true
   else
-    if world_running_postion == WorldRunPostion.AtClient then
-      return true
-    else
-      return false
-    end
+    return false
   end
 end
-
-

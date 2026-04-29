@@ -1,89 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21/line_mission/ui_n21_line_mission_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN21LineMissionMapNode", UICustomWidget)
 UIN21LineMissionMapNode = UIN21LineMissionMapNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN21LineMissionMapNode.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UIN21LineMissionMapNode:OnShow(uiParams)
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self.atlas = self:GetAsset("UIN21.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21LineMissionMapNode.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._matReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq)
+function UIN21LineMissionMapNode:Destroy()
+  self._matReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21LineMissionMapNode.SetData = function(self, lineCfg, passInfo, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN21LineMissionMapNode:SetData(lineCfg, passInfo, cb)
   self._missionID = lineCfg.CampaignMissionId
   self._callback = cb
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
   self:_SetRectTransform(lineCfg)
   local missionType = missionCfg.Type
-  local cfg_c_line_mission = ((Cfg.cfg_component_line_mission)({CampaignMissionId = self._missionID}))[1]
-  if cfg_c_line_mission.CustomParams then
-    local param = (cfg_c_line_mission.CustomParams)[1]
-  end
+  local cfg_c_line_mission = Cfg.cfg_component_line_mission({
+    CampaignMissionId = self._missionID
+  })[1]
+  local param = cfg_c_line_mission.CustomParams and cfg_c_line_mission.CustomParams[1]
   if param and next(param) and param[1] == 2 and missionType == DiscoveryStageType.FightNormal then
     missionType = 4
   end
   self:_SetState(missionType)
-  self:_SetName_TMP(missionCfg.Type, (StringTable.Get)(missionCfg.Name))
+  self:_SetName_TMP(missionCfg.Type, StringTable.Get(missionCfg.Name))
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
   self.missionType = missionCfg.Type
   self:_SetStar(passInfo)
   local id = lineCfg.MapPosY >= 0 and "uieff_UIXH1MissionNode_belowin" or "uieff_UIXH1MissionNode_topin"
-  ;
-  (UIWidgetHelper.SetAnimationPlay)(self, "anim", id)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  UIWidgetHelper.SetAnimationPlay(self, "anim", id)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21LineMissionMapNode._SetRectTransform = function(self, lineCfg)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+function UIN21LineMissionMapNode:_SetRectTransform(lineCfg)
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21LineMissionMapNode._SetName = function(self, state, text)
-  -- function num : 0_4 , upvalues : _ENV
-  local tb = {"name_normal", "name_boss", "name_plot"}
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, tb[state], text)
+function UIN21LineMissionMapNode:_SetName(state, text)
+  local tb = {
+    "name_normal",
+    "name_boss",
+    "name_plot"
+  }
+  UIWidgetHelper.SetLocalizationText(self, tb[state], text)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21LineMissionMapNode._SetName_TMP = function(self, state, text)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN21LineMissionMapNode:_SetName_TMP(state, text)
   local nameTex_boss = self:GetUIComponent("UILocalizationText", "name_boss")
   local nameTex_norm = self:GetUIComponent("UILocalizationText", "name_normal")
   local nameTex_plot = self:GetUIComponent("UILocalizationText", "name_plot")
@@ -100,57 +68,59 @@ UIN21LineMissionMapNode._SetName_TMP = function(self, state, text)
   else
     nameTex_boss:SetText(text)
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21LineMissionMapNode._SetState = function(self, state)
-  -- function num : 0_6 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"bg_normal", "name_normal", "star"}
-, 
-{"bg_boss", "name_boss", "star"}
-, 
-{"bg_plot", "name_plot"}
-, 
-{"bg_normal2", "name_normal", "star"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIN21LineMissionMapNode:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "bg_normal",
+      "name_normal",
+      "star"
+    },
+    {
+      "bg_boss",
+      "name_boss",
+      "star"
+    },
+    {"bg_plot", "name_plot"},
+    {
+      "bg_normal2",
+      "name_normal",
+      "star"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21LineMissionMapNode._SetStar = function(self, passInfo)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN21LineMissionMapNode:_SetStar(passInfo)
   local missionModule = self:GetModule(MissionModule)
   local stars = passInfo and missionModule:ParseStarInfo(passInfo.star) or 0
-  local tb = {self:GetGameObject("Star1"), self:GetGameObject("Star2"), self:GetGameObject("Star3")}
+  local tb = {
+    self:GetGameObject("Star1"),
+    self:GetGameObject("Star2"),
+    self:GetGameObject("Star3")
+  }
   for i = 1, 3 do
-    local pass = i <= stars
-    ;
-    (tb[i]):SetActive(pass)
+    local pass = stars >= i
+    tb[i]:SetActive(pass)
   end
-  local starBgTb = {self:GetUIComponent("Image", "StarBg1"), self:GetUIComponent("Image", "StarBg2"), self:GetUIComponent("Image", "StarBg3")}
-  local sprite = nil
+  local starBgTb = {
+    self:GetUIComponent("Image", "StarBg1"),
+    self:GetUIComponent("Image", "StarBg2"),
+    self:GetUIComponent("Image", "StarBg3")
+  }
+  local sprite
   if self.missionType == DiscoveryStageType.FightNormal then
-    sprite = (self.atlas):GetSprite("n21_xxg_di1")
+    sprite = self.atlas:GetSprite("n21_xxg_di1")
   else
-    sprite = (self.atlas):GetSprite("n21_xxg_di2")
+    sprite = self.atlas:GetSprite("n21_xxg_di2")
   end
   for i = 1, 3 do
     local img = starBgTb[i]
     img.sprite = sprite
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21LineMissionMapNode.BtnOnClick = function(self, go)
-  -- function num : 0_8
-  (self._callback)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+function UIN21LineMissionMapNode:BtnOnClick(go)
+  self._callback(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
-
-

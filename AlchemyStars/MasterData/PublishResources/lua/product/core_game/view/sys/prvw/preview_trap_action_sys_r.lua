@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/preview_trap_action_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewTrapActionSystem_Render", ReactiveSystem)
 PreviewTrapActionSystem_Render = PreviewTrapActionSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewTrapActionSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PreviewTrapActionSystem_Render:Constructor(world)
   self._world = world
   self._configService = world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).PreviewTrapAction)
-  local c = Collector:New({group}, {"AddedOrRemoved"})
+function PreviewTrapActionSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.PreviewTrapAction)
+  local c = Collector:New({group}, {
+    "AddedOrRemoved"
+  })
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function PreviewTrapActionSystem_Render:Filter(entity)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
+function PreviewTrapActionSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     local boardEntity = entities[i]
     if boardEntity:HasPreviewTrapAction() then
@@ -43,115 +29,85 @@ PreviewTrapActionSystem_Render.ExecuteEntities = function(self, entities)
         for i = 1, #listTrapID do
           self:_ShowTrapAction(listTrapID[i])
         end
+      else
       end
     else
-      do
-        do
-          ;
-          (Log.debug)("[Preview] 预览机关攻击范围： 时机不到")
-          -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.debug("[Preview] 预览机关攻击范围： 时机不到")
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionSystem_Render._ShowTrapAction = function(self, trapEntityID)
-  -- function num : 0_4 , upvalues : _ENV
-  local trapEntity = (self._world):GetEntityByID(trapEntityID)
+function PreviewTrapActionSystem_Render:_ShowTrapAction(trapEntityID)
+  local trapEntity = self._world:GetEntityByID(trapEntityID)
   local trapRenderCmpt = trapEntity:TrapRender()
   if #trapRenderCmpt:GetActiveSkillID() > 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UITrapSkillVisible, true, trapEntityID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UITrapSkillVisible, true, trapEntityID)
   else
     local configService = self._configService
     local trapConfigData = configService:GetTrapConfigData()
     local desc = trapConfigData:GetTrapInnerDesc(trapRenderCmpt:GetTrapID())
     local name = trapConfigData:GetTrapName(trapRenderCmpt:GetTrapID())
-    local utilSvc = (self._world):GetService("UtilData")
+    local utilSvc = self._world:GetService("UtilData")
     local skillID = utilSvc:GetTrapPreviewSkillID(trapEntity)
-    local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-    if skillID == 0 then
+    local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+    if 0 == skillID then
       if trapConfigData:IsShowDescTips(trapRenderCmpt:GetTrapID()) then
         previewActiveSkillService:_ShowDescTips(name, desc)
       end
-      return 
+      return
     else
       local skillConfigData = configService:GetSkillConfigData(skillID, trapEntity)
       local skillPreviewType = skillConfigData:GetSkillPreviewType()
       if SkillPreviewType.Scope == skillPreviewType then
         self:_ShowSkillRange(trapEntity, skillConfigData)
-      else
-        if SkillPreviewType.Tips == skillPreviewType then
-          previewActiveSkillService:_ShowSkillTips(skillConfigData)
-        else
-          if SkillPreviewType.ScopeAndTips == skillPreviewType then
-            self:_ShowSkillRange(trapEntity, skillConfigData)
-            previewActiveSkillService:_ShowSkillTips(skillConfigData)
-          else
-            if SkillPreviewType.TrapDesc == skillPreviewType then
-              previewActiveSkillService:_ShowDescTips(name, desc)
-            else
-              if SkillPreviewType.TrapScopeAndTips == skillPreviewType then
-                self:_ShowSkillRange(trapEntity, skillConfigData)
-                previewActiveSkillService:_ShowDescTips(name, desc)
-              else
-                if SkillPreviewType.PetTrapMoveArrow == skillPreviewType then
-                  self:_ShowSkillEffectMove(trapEntity, skillConfigData)
-                  previewActiveSkillService:_ShowDescTips(name, desc)
-                end
-              end
-            end
-          end
-        end
+      elseif SkillPreviewType.Tips == skillPreviewType then
+        previewActiveSkillService:_ShowSkillTips(skillConfigData)
+      elseif SkillPreviewType.ScopeAndTips == skillPreviewType then
+        self:_ShowSkillRange(trapEntity, skillConfigData)
+        previewActiveSkillService:_ShowSkillTips(skillConfigData)
+      elseif SkillPreviewType.TrapDesc == skillPreviewType then
+        previewActiveSkillService:_ShowDescTips(name, desc)
+      elseif SkillPreviewType.TrapScopeAndTips == skillPreviewType then
+        self:_ShowSkillRange(trapEntity, skillConfigData)
+        previewActiveSkillService:_ShowDescTips(name, desc)
+      elseif SkillPreviewType.PetTrapMoveArrow == skillPreviewType then
+        self:_ShowSkillEffectMove(trapEntity, skillConfigData)
+        previewActiveSkillService:_ShowDescTips(name, desc)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionSystem_Render._ShowSkillRange = function(self, trapEntity, skillConfigData)
-  -- function num : 0_5 , upvalues : _ENV
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  local trapBasePos = (trapEntity:GridLocation()).Position
+function PreviewTrapActionSystem_Render:_ShowSkillRange(trapEntity, skillConfigData)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local renderEntityService = self._world:GetService("RenderEntity")
+  local trapBasePos = trapEntity:GridLocation().Position
   local rangResult = utilScopeSvc:CalcSkillScope(skillConfigData, trapBasePos, trapEntity)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local skillRangeGridList = rangResult:GetWholeGridRange()
   local skillAttackRange = {}
-  for _,gridPos in ipairs(skillRangeGridList) do
+  for _, gridPos in ipairs(skillRangeGridList) do
     local bPosInBoard = utilDataSvc:IsValidPiecePos(gridPos)
     if bPosInBoard then
-      local alreadyInRange = (table.icontains)(skillAttackRange, gridPos)
-      if alreadyInRange == false then
+      local alreadyInRange = table.icontains(skillAttackRange, gridPos)
+      if false == alreadyInRange then
         skillAttackRange[#skillAttackRange + 1] = gridPos
       end
     end
   end
   renderEntityService:CreatePreviewAreaOutlineEntity(skillAttackRange, EntityConfigIDRender.MoveRange)
-  ;
-  (Log.debug)("[Preview] 预览机关攻击范围： 标示技能范围<" .. skillConfigData:GetSkillName() .. ">")
+  Log.debug("[Preview] 预览机关攻击范围： 标示技能范围<" .. skillConfigData:GetSkillName() .. ">")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewTrapActionSystem_Render._ShowSkillEffectMove = function(self, trapEntity, skillConfigData)
-  -- function num : 0_6 , upvalues : _ENV
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local entityPoolServiceRender = (self._world):GetService("EntityPool")
+function PreviewTrapActionSystem_Render:_ShowSkillEffectMove(trapEntity, skillConfigData)
+  local renderEntityService = self._world:GetService("RenderEntity")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local entityPoolServiceRender = self._world:GetService("EntityPool")
   local csterID = trapEntity:GetID()
   local skillID = skillConfigData:GetID()
   local skillResultList = utilCalcSvc:CalcSkillTargetEffect(csterID, skillID, SkillEffectType.PetTrapMove)
   local skillAttackRange = {}
-  for index,result in ipairs(skillResultList) do
+  for index, result in ipairs(skillResultList) do
     local posNew = result:GetPosNew()
     local dirNew = result:GetDirNew()
     local previewRange = result:GetPreviewRange()
@@ -159,17 +115,15 @@ PreviewTrapActionSystem_Render._ShowSkillEffectMove = function(self, trapEntity,
     if moveType == PetTrapMoveType.FixedPos or moveType == PetTrapMoveType.FixedPos then
       renderEntityService:CreateMoveRangeArrowEntity(posNew, -dirNew, EntityConfigIDRender.MoveRangeArrow)
     else
-      for _,pos in ipairs(previewRange) do
-        if not (table.intable)(skillAttackRange, pos) then
-          (table.insert)(skillAttackRange, pos)
+      for _, pos in ipairs(previewRange) do
+        if not table.intable(skillAttackRange, pos) then
+          table.insert(skillAttackRange, pos)
         end
       end
     end
   end
-  for _,pos in ipairs(skillAttackRange) do
-    local dirNew = pos - (skillResultList[1]):GetPosOld()
+  for _, pos in ipairs(skillAttackRange) do
+    local dirNew = pos - skillResultList[1]:GetPosOld()
     renderEntityService:CreateMoveRangeArrowEntity(pos, -dirNew, EntityConfigIDRender.MoveRangeArrow)
   end
 end
-
-

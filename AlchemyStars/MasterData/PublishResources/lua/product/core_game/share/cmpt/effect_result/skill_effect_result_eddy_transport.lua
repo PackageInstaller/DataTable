@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_eddy_transport.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_teleport")
 _class("SkillEffectResult_EddyTransport", SkillEffectResult_Teleport)
 SkillEffectResult_EddyTransport = SkillEffectResult_EddyTransport
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_EddyTransport.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResult_EddyTransport:GetEffectType()
   return SkillEffectType.EddyTransport
 end
-
-

@@ -1,141 +1,306 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season/balance/cfg_season_balance_qa.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Question = 2, Answers = 3, SuccIdx = 4}
+local key = {
+  ID = 1,
+  Question = 2,
+  Answers = 3,
+  SuccIdx = 4
+}
 local config = {
-{1, "str_season_s2_question_1", 
-{"str_season_s2_choice_1", "str_season_s2_choice_3"}
-, 2}
-, 
-{2, "str_season_s2_question_2", 
-{"str_season_s2_choice_2", "str_season_s2_choice_4"}
-, 2}
-, 
-{3, "str_season_s2_question_3", 
-{"str_season_s2_choice_5", "str_season_s2_choice_6"}
-, 1}
-, 
-{4, "str_season_s2_question_4", 
-{"str_season_s2_choice_7", "str_season_s2_choice_8"}
-, 1}
-, 
-{5, "str_season_s2_question_5", 
-{"str_season_s2_choice_9", "str_season_s2_choice_10"}
-, 2}
-, 
-{6, "str_season_s2_question_6", 
-{"str_season_s2_choice_11", "str_season_s2_choice_12"}
-, 2}
-, 
-{7, "str_season_s2_question_7", 
-{"str_season_s2_choice_13", "str_season_s2_choice_14"}
-, 2}
-, 
-{8, "str_season_s2_question_8", 
-{"str_season_s2_choice_15", "str_season_s2_choice_16"}
-, 1}
-, 
-{9, "str_season_s2_question_9", 
-{"str_season_s2_choice_17", "str_season_s2_choice_18"}
-, 1}
-, 
-{10, "str_season_s2_quest_1", 
-{"str_season_s2_quest_1_a", "str_season_s2_quest_1_b"}
-, 2}
-, 
-{11, "str_season_s2_quest_2", 
-{"str_season_s2_quest_2_a", "str_season_s2_quest_2_b"}
-, 1}
-, 
-{12, "str_season_s2_quest_3", 
-{"str_season_s2_quest_3_a", "str_season_s2_quest_3_b"}
-, 1}
-, 
-{13, "str_season_s2_quest_4", 
-{"str_season_s2_quest_4_a", "str_season_s2_quest_4_b"}
-, 1}
-, 
-{14, "str_season_s2_quest_5", 
-{"str_season_s2_quest_5_a", "str_season_s2_quest_5_b"}
-, 2}
-, 
-{15, "str_season_s2_quest_6", 
-{"str_season_s2_quest_6_a", "str_season_s2_quest_6_b"}
-, 1}
-, 
-{16, "str_season_s2_quest_7", 
-{"str_season_s2_quest_7_a", "str_season_s2_quest_7_b"}
-, 1}
-, 
-{17, "str_season_s2_quest_8", 
-{"str_season_s2_quest_8_a", "str_season_s2_quest_8_b"}
-, 2}
-, 
-{18, "str_season_s2_quest_9", 
-{"str_season_s2_quest_9_a", "str_season_s2_quest_9_b"}
-, 1}
-, 
-{19, "str_season_s2_quest_10", 
-{"str_season_s2_quest_10_a", "str_season_s2_quest_10_b"}
-, 2}
-, 
-{20, "str_season_s2_quest_11", 
-{"str_season_s2_quest_11_a", "str_season_s2_quest_11_b"}
-, 1}
-, 
-{21, "str_season_s2_quest_12", 
-{"str_season_s2_quest_12_a", "str_season_s2_quest_12_b"}
-, 1}
-, 
-{22, "str_season_s2_quest_13", 
-{"str_season_s2_quest_13_a", "str_season_s2_quest_13_b"}
-, 1}
-, 
-{23, "str_season_s2_quest_14", 
-{"str_season_s2_quest_14_a", "str_season_s2_quest_14_b"}
-, 1}
-, 
-{24, "str_season_s2_quest_15", 
-{"str_season_s2_quest_15_a", "str_season_s2_quest_15_b"}
-, 2}
-, 
-{25, "str_season_s2_quest_16", 
-{"str_season_s2_quest_16_a", "str_season_s2_quest_16_b"}
-, 1}
-, 
-{26, "str_season_s2_quest_17", 
-{"str_season_s2_quest_17_a", "str_season_s2_quest_17_b"}
-, 1}
-, 
-{27, "str_season_s2_quest_18", 
-{"str_season_s2_quest_18_a", "str_season_s2_quest_18_b"}
-, 1}
-, 
-{28, "str_season_s2_quest_19", 
-{"str_season_s2_quest_19_a", "str_season_s2_quest_19_b"}
-, 1}
-, 
-{29, "str_season_s2_quest_20", 
-{"str_season_s2_quest_20_a", "str_season_s2_quest_20_b"}
-, 1}
-, 
-{30, "str_season_s2_quest_21", 
-{"str_season_s2_quest_21_a", "str_season_s2_quest_21_b"}
-, 1}
-, 
-{31, "str_season_s2_quest_22", 
-{"str_season_s2_quest_22_a", "str_season_s2_quest_22_b"}
-, 2}
-, 
-{32, "str_season_s2_quest_23", 
-{"str_season_s2_quest_23_a", "str_season_s2_quest_23_b"}
-, 1}
-, 
-{33, "str_season_s2_quest_24", 
-{"str_season_s2_quest_24_a", "str_season_s2_quest_24_b"}
-, 1}
+  {
+    1,
+    "str_season_s2_question_1",
+    {
+      "str_season_s2_choice_1",
+      "str_season_s2_choice_3"
+    },
+    2
+  },
+  {
+    2,
+    "str_season_s2_question_2",
+    {
+      "str_season_s2_choice_2",
+      "str_season_s2_choice_4"
+    },
+    2
+  },
+  {
+    3,
+    "str_season_s2_question_3",
+    {
+      "str_season_s2_choice_5",
+      "str_season_s2_choice_6"
+    },
+    1
+  },
+  {
+    4,
+    "str_season_s2_question_4",
+    {
+      "str_season_s2_choice_7",
+      "str_season_s2_choice_8"
+    },
+    1
+  },
+  {
+    5,
+    "str_season_s2_question_5",
+    {
+      "str_season_s2_choice_9",
+      "str_season_s2_choice_10"
+    },
+    2
+  },
+  {
+    6,
+    "str_season_s2_question_6",
+    {
+      "str_season_s2_choice_11",
+      "str_season_s2_choice_12"
+    },
+    2
+  },
+  {
+    7,
+    "str_season_s2_question_7",
+    {
+      "str_season_s2_choice_13",
+      "str_season_s2_choice_14"
+    },
+    2
+  },
+  {
+    8,
+    "str_season_s2_question_8",
+    {
+      "str_season_s2_choice_15",
+      "str_season_s2_choice_16"
+    },
+    1
+  },
+  {
+    9,
+    "str_season_s2_question_9",
+    {
+      "str_season_s2_choice_17",
+      "str_season_s2_choice_18"
+    },
+    1
+  },
+  {
+    10,
+    "str_season_s2_quest_1",
+    {
+      "str_season_s2_quest_1_a",
+      "str_season_s2_quest_1_b"
+    },
+    2
+  },
+  {
+    11,
+    "str_season_s2_quest_2",
+    {
+      "str_season_s2_quest_2_a",
+      "str_season_s2_quest_2_b"
+    },
+    1
+  },
+  {
+    12,
+    "str_season_s2_quest_3",
+    {
+      "str_season_s2_quest_3_a",
+      "str_season_s2_quest_3_b"
+    },
+    1
+  },
+  {
+    13,
+    "str_season_s2_quest_4",
+    {
+      "str_season_s2_quest_4_a",
+      "str_season_s2_quest_4_b"
+    },
+    1
+  },
+  {
+    14,
+    "str_season_s2_quest_5",
+    {
+      "str_season_s2_quest_5_a",
+      "str_season_s2_quest_5_b"
+    },
+    2
+  },
+  {
+    15,
+    "str_season_s2_quest_6",
+    {
+      "str_season_s2_quest_6_a",
+      "str_season_s2_quest_6_b"
+    },
+    1
+  },
+  {
+    16,
+    "str_season_s2_quest_7",
+    {
+      "str_season_s2_quest_7_a",
+      "str_season_s2_quest_7_b"
+    },
+    1
+  },
+  {
+    17,
+    "str_season_s2_quest_8",
+    {
+      "str_season_s2_quest_8_a",
+      "str_season_s2_quest_8_b"
+    },
+    2
+  },
+  {
+    18,
+    "str_season_s2_quest_9",
+    {
+      "str_season_s2_quest_9_a",
+      "str_season_s2_quest_9_b"
+    },
+    1
+  },
+  {
+    19,
+    "str_season_s2_quest_10",
+    {
+      "str_season_s2_quest_10_a",
+      "str_season_s2_quest_10_b"
+    },
+    2
+  },
+  {
+    20,
+    "str_season_s2_quest_11",
+    {
+      "str_season_s2_quest_11_a",
+      "str_season_s2_quest_11_b"
+    },
+    1
+  },
+  {
+    21,
+    "str_season_s2_quest_12",
+    {
+      "str_season_s2_quest_12_a",
+      "str_season_s2_quest_12_b"
+    },
+    1
+  },
+  {
+    22,
+    "str_season_s2_quest_13",
+    {
+      "str_season_s2_quest_13_a",
+      "str_season_s2_quest_13_b"
+    },
+    1
+  },
+  {
+    23,
+    "str_season_s2_quest_14",
+    {
+      "str_season_s2_quest_14_a",
+      "str_season_s2_quest_14_b"
+    },
+    1
+  },
+  {
+    24,
+    "str_season_s2_quest_15",
+    {
+      "str_season_s2_quest_15_a",
+      "str_season_s2_quest_15_b"
+    },
+    2
+  },
+  {
+    25,
+    "str_season_s2_quest_16",
+    {
+      "str_season_s2_quest_16_a",
+      "str_season_s2_quest_16_b"
+    },
+    1
+  },
+  {
+    26,
+    "str_season_s2_quest_17",
+    {
+      "str_season_s2_quest_17_a",
+      "str_season_s2_quest_17_b"
+    },
+    1
+  },
+  {
+    27,
+    "str_season_s2_quest_18",
+    {
+      "str_season_s2_quest_18_a",
+      "str_season_s2_quest_18_b"
+    },
+    1
+  },
+  {
+    28,
+    "str_season_s2_quest_19",
+    {
+      "str_season_s2_quest_19_a",
+      "str_season_s2_quest_19_b"
+    },
+    1
+  },
+  {
+    29,
+    "str_season_s2_quest_20",
+    {
+      "str_season_s2_quest_20_a",
+      "str_season_s2_quest_20_b"
+    },
+    1
+  },
+  {
+    30,
+    "str_season_s2_quest_21",
+    {
+      "str_season_s2_quest_21_a",
+      "str_season_s2_quest_21_b"
+    },
+    1
+  },
+  {
+    31,
+    "str_season_s2_quest_22",
+    {
+      "str_season_s2_quest_22_a",
+      "str_season_s2_quest_22_b"
+    },
+    2
+  },
+  {
+    32,
+    "str_season_s2_quest_23",
+    {
+      "str_season_s2_quest_23_a",
+      "str_season_s2_quest_23_b"
+    },
+    1
+  },
+  {
+    33,
+    "str_season_s2_quest_24",
+    {
+      "str_season_s2_quest_24_a",
+      "str_season_s2_quest_24_b"
+    },
+    1
+  }
 }
 return config, "ID", key
-

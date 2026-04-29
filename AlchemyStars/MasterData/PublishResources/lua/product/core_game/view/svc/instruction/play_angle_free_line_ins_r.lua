@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_angle_free_line_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAngleFreeLineInstruction", BaseInstruction)
 PlayAngleFreeLineInstruction = PlayAngleFreeLineInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAngleFreeLineInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAngleFreeLineInstruction:Constructor(paramList)
   self._hitAnimName = paramList.hitAnimName
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._turnToTarget = tonumber(paramList.turnToTarget)
@@ -18,32 +11,29 @@ PlayAngleFreeLineInstruction.Constructor = function(self, paramList)
   self._hitTime = tonumber(paramList.hitTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAngleFreeLineInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAngleFreeLineInstruction:GetCacheResource()
   local t = {}
   if self._lineEffectID and self._lineEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._lineEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._lineEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAngleFreeLineInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayAngleFreeLineInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local resultIndex = phaseContext:GetCurResultIndexByType(SkillEffectType.AngleFreeLineDamage)
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = routineCmpt:GetEffectResultsAsArray(SkillEffectType.AngleFreeLineDamage)
   if not resultArray or not resultArray[resultIndex] then
-    (Log.error)("PlayAngleFreeLine需要正确的数据操作指令，当前index为: ", resultIndex)
-    return 
+    Log.error("PlayAngleFreeLine需要正确的数据操作指令，当前index为: ", resultIndex)
+    return
   end
   local result = resultArray[resultIndex]
   if not result:GetPickupPos() then
-    (Log.info)(self._className, "没有对应的点选，跳过播放。")
-    return 
+    Log.info(self._className, "没有对应的点选，跳过播放。")
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local boardServiceRender = world:GetService("BoardRender")
@@ -51,29 +41,26 @@ PlayAngleFreeLineInstruction.DoInstruction = function(self, TT, casterEntity, ph
   local fxSvc = world:GetService("Effect")
   local fxEntity = fxSvc:CreateEffect(self._lineEffectID, casterEntity)
   YIELD(TT)
-  local fxGo = (fxEntity:View()):GetGameObject()
+  local fxGo = fxEntity:View():GetGameObject()
   local fxTransform = fxGo.transform
-  local fxRenderPos = (fxGo.transform).position
+  local fxRenderPos = fxGo.transform.position
   local relative = renderPos - fxRenderPos
-  fxTransform.rotation = (Quaternion.LookRotation)(relative, Vector3.up)
+  fxTransform.rotation = Quaternion.LookRotation(relative, Vector3.up)
   local playSkillService = world:GetService("PlaySkill")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   if self._hitTime then
     YIELD(TT, self._hitTime)
   end
   local damageResultArrayAll = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   local damageResultArray = result:GetDamageResults()
-  for _,damageResult in ipairs(damageResultArray) do
+  for _, damageResult in ipairs(damageResultArray) do
     local targetEntityID = damageResult:GetTargetID()
     local targetEntity = world:GetEntityByID(targetEntityID)
     local damageInfo = damageResult:GetDamageInfo(1)
     local damageGridPos = damageResult:GetGridPos()
-    local playFinalAttack = not skillEffectResultContainer:IsFinalAttack() or damageResult == damageResultArrayAll[#damageResultArrayAll]
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(self._deathClear)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
+    local playFinalAttack = skillEffectResultContainer:IsFinalAttack() and damageResult == damageResultArrayAll[#damageResultArrayAll]
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(self._deathClear):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID)
     playSkillService:HandleBeHit(TT, beHitParam)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
-
-

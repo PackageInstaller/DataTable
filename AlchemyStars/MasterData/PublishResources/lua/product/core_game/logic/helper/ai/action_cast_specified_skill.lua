@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_cast_specified_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCastSpecifiedSkill", ActionCastSkillBase)
 ActionCastSpecifiedSkill = ActionCastSpecifiedSkill
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCastSpecifiedSkill.Constructor = function(self)
-  -- function num : 0_0
+function ActionCastSpecifiedSkill:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCastSpecifiedSkill.GetWorkSkillID = function(self)
-  -- function num : 0_1
+function ActionCastSpecifiedSkill:GetWorkSkillID()
   local skillIndexX, skillIndexY = self:GetLogicData(-1), self:GetLogicData(-2)
   local nSkillID = self:GetConfigSkillID(skillIndexX, skillIndexY)
   self:PrintDebugLog("释放技能：", nSkillID)
   return nSkillID
 end
-
-

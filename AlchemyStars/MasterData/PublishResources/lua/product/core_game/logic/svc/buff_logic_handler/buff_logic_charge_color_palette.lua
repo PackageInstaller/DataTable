@@ -1,44 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_charge_color_palette.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicChargeColorPalette", BuffLogicBase)
 BuffLogicChargeColorPalette = BuffLogicChargeColorPalette
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChargeColorPalette.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChargeColorPalette:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChargeColorPalette.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicChargeColorPalette:DoLogic()
+  local entity = self._buffInstance:Entity()
   if entity:HasPetPstID() then
     if not entity:HasColorPalette() then
       entity:AddColorPalette()
     end
     local component = entity:ColorPalette()
-    local pieceTypes = {PieceType.Blue, PieceType.Red, PieceType.Green, PieceType.Yellow}
+    local pieceTypes = {
+      PieceType.Blue,
+      PieceType.Red,
+      PieceType.Green,
+      PieceType.Yellow
+    }
     component:AddPieceTypes(pieceTypes)
-    local configService = (self._world):GetService("Config")
-    local buffLogicService = (self._world):GetService("BuffLogic")
-    local extraSkillList = (entity:SkillInfo()):GetExtraActiveSkillIDList()
+    local configService = self._world:GetService("Config")
+    local buffLogicService = self._world:GetService("BuffLogic")
+    local extraSkillList = entity:SkillInfo():GetExtraActiveSkillIDList()
     if extraSkillList then
-      for _,extraSkillID in ipairs(extraSkillList) do
+      for _, extraSkillID in ipairs(extraSkillList) do
         local extraSkillConfigData = configService:GetSkillConfigData(extraSkillID)
         if extraSkillConfigData and extraSkillConfigData:GetSkillTriggerType() == SkillTriggerType.ColorPalette then
           buffLogicService:ChangePetActiveSkillReady(entity, 1, extraSkillID)
         end
       end
     end
-    do
-      do return BuffResultChargeColorPalette:New(entity:GetID(), pieceTypes) end
-    end
+    return BuffResultChargeColorPalette:New(entity:GetID(), pieceTypes)
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/send_pet/ui_send_pet_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISendPetCard", UICustomWidget)
 UISendPetCard = UISendPetCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISendPetCard.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UISendPetCard:OnShow(uiParam)
   self._cgLoader = self:GetUIComponent("RawImageLoader", "Cg")
   self._elemFirstImg = self:GetUIComponent("Image", "FirstElement")
   self._elemSecondImg = self:GetUIComponent("Image", "SecondElement")
@@ -18,76 +11,51 @@ UISendPetCard.OnShow = function(self, uiParam)
   self._stars = self:GetUIComponent("Transform", "stars")
   self._starList = {}
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
-  for i = 1, (self._stars).childCount do
-    local star = ((self._stars):GetChild(i - 1)).gameObject
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._starList)[i] = star
+  for i = 1, self._stars.childCount do
+    local star = self._stars:GetChild(i - 1).gameObject
+    self._starList[i] = star
   end
   self._atlas = self:GetAsset("SendCard.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetCard.SetStarSp = function(self, starSp1, starSp2, atlasProperty)
-  -- function num : 0_1
+function UISendPetCard:SetStarSp(starSp1, starSp2, atlasProperty)
   self._sp1 = starSp1
   self._sp2 = starSp2
   self.atlasProperty = atlasProperty
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetCard.SetData = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
+function UISendPetCard:SetData(id)
   self._petid = id
-  local cfg_pet = (Cfg.cfg_pet)[self._petid]
-  ;
-  (self._petNameTex):SetText((StringTable.Get)(cfg_pet.Name))
+  local cfg_pet = Cfg.cfg_pet[self._petid]
+  self._petNameTex:SetText(StringTable.Get(cfg_pet.Name))
   local star = cfg_pet.Star
-  local petInfo = ((GameGlobal.GetModule)(PetModule)):GetPetByTemplateId(self._petid)
-  ;
-  (self._notHaveGo):SetActive(not petInfo)
+  local petInfo = GameGlobal.GetModule(PetModule):GetPetByTemplateId(self._petid)
+  self._notHaveGo:SetActive(not petInfo)
   local curBreak = 0
   if petInfo then
     curBreak = petInfo:GetPetAwakening()
   end
-  for i,v in ipairs(self._starList) do
+  for i, v in ipairs(self._starList) do
     v:SetActive(i <= star)
-    local sp = nil
+    local sp
     if i <= curBreak then
-      sp = (self._atlas):GetSprite("cn15_glzx_star01")
+      sp = self._atlas:GetSprite("cn15_glzx_star01")
     else
-      sp = (self._atlas):GetSprite("cn15_glzx_star02")
+      sp = self._atlas:GetSprite("cn15_glzx_star02")
     end
-    ;
-    (v:GetComponent("Image")).sprite = sp
+    v:GetComponent("Image").sprite = sp
   end
-  local cfg_pet_skin = (Cfg.cfg_pet_skin)[cfg_pet.SkinId]
-  ;
-  (self._cgLoader):LoadImage(cfg_pet_skin.Body)
+  local cfg_pet_skin = Cfg.cfg_pet_skin[cfg_pet.SkinId]
+  self._cgLoader:LoadImage(cfg_pet_skin.Body)
   local elemtFirst = cfg_pet.FirstElement
   local elemSecond = cfg_pet.SecondElement
-  ;
-  (self._elemFirstImgGO):SetActive(not elemSecond == 0)
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._elemFirstImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[elemtFirst]).Icon))
-  -- DECOMPILER ERROR at PC107: Confused about usage of register: R9 in 'UnsetPending'
-
+  self._elemFirstImgGO:SetActive(not elemSecond == 0)
+  self._elemFirstImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[elemtFirst].Icon))
   if elemSecond ~= 0 then
-    (self._elemSecondImg).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[elemSecond]).Icon))
+    self._elemSecondImg.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[elemSecond].Icon))
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISendPetCard.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISendPetCard:BtnOnClick(go)
   self:ShowDialog("UIShopPetDetailController", self._petid)
 end
-
-

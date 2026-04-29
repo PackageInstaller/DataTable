@@ -1,35 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_dynamic_scope_chain_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResult_DynamicScopeChainDamage", SkillEffectResultBase)
 SkillEffectResult_DynamicScopeChainDamage = SkillEffectResult_DynamicScopeChainDamage
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResult_DynamicScopeChainDamage.__EFFECT_TYPE = SkillEffectType.DynamicCenterDamage
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_DynamicScopeChainDamage.Constructor = function(self, damageScope, damageResults)
-  -- function num : 0_0
+function SkillEffectResult_DynamicScopeChainDamage:Constructor(damageScope, damageResults)
   self._damageScope = damageScope
-  if not damageResults then
-    self._damageResults = {}
-  end
+  self._damageResults = damageResults or {}
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DynamicScopeChainDamage.GetDamageScope = function(self)
-  -- function num : 0_1
+function SkillEffectResult_DynamicScopeChainDamage:GetDamageScope()
   return self._damageScope
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DynamicScopeChainDamage.GetDamageResults = function(self)
-  -- function num : 0_2
+function SkillEffectResult_DynamicScopeChainDamage:GetDamageResults()
   return self._damageResults
 end
-
-

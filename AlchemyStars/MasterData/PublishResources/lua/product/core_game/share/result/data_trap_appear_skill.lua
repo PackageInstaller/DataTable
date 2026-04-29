@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_trap_appear_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataTrapAppearSkill", Object)
 DataTrapAppearSkill = DataTrapAppearSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataTrapAppearSkill.Constructor = function(self)
-  -- function num : 0_0
+function DataTrapAppearSkill:Constructor()
   self._trapEntity = nil
   self._resultContainer = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapAppearSkill.SetTrapEntity = function(self, e)
-  -- function num : 0_1
+function DataTrapAppearSkill:SetTrapEntity(e)
   self._trapEntity = e
   return self
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapAppearSkill.GetTrapEntity = function(self)
-  -- function num : 0_2
+function DataTrapAppearSkill:GetTrapEntity()
   return self._trapEntity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapAppearSkill.SetResultContainer = function(self, container)
-  -- function num : 0_3
+function DataTrapAppearSkill:SetResultContainer(container)
   self._resultContainer = container
   return self
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataTrapAppearSkill.GetResultContainer = function(self)
-  -- function num : 0_4
+function DataTrapAppearSkill:GetResultContainer()
   return self._resultContainer
 end
-
-

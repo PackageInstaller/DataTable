@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_growth/ui_quest_growth_feather_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestGrowthFeatherItem", UICustomWidget)
 UIQuestGrowthFeatherItem = UIQuestGrowthFeatherItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestGrowthFeatherItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:OnShow(uiParams)
   self._questModule = self:GetModule(QuestModule)
   self._anim = self:GetUIComponent("Animation", "UIQuestGrowthFeatherItem")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "award")
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem.SetData = function(self, tabIndex, index, posx, lastPos, iconID, iconCount, featherCount, currCount, showAnimDelay, anim)
-  -- function num : 0_1 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:SetData(tabIndex, index, posx, lastPos, iconID, iconCount, featherCount, currCount, showAnimDelay, anim)
   self:_GetComponents()
   self._posX = posx
   self._lastPos = lastPos
@@ -32,113 +22,79 @@ UIQuestGrowthFeatherItem.SetData = function(self, tabIndex, index, posx, lastPos
   self:_OnValue()
   if anim then
     if self._animTaskID then
-      ((GameGlobal.TaskManager)()):KillTask(self._animTaskID)
+      GameGlobal.TaskManager():KillTask(self._animTaskID)
     end
-    ;
-    (self._anim):Stop()
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).alpha = 0
+    self._anim:Stop()
+    self._canvasGroup.alpha = 0
     self._animTaskID = self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : showAnimDelay, _ENV, self
-    if showAnimDelay > 0 then
-      YIELD(TT, showAnimDelay * 1000)
-    end
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).alpha = 1
-    ;
-    (self._anim):Play("uieffanim_UIItemForQuest_in")
-  end
-)
+      if 0 < showAnimDelay then
+        YIELD(TT, showAnimDelay * 1000)
+      end
+      self._canvasGroup.alpha = 1
+      self._anim:Play("uieffanim_UIItemForQuest_in")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem._OnValue = function(self)
-  -- function num : 0_2
+function UIQuestGrowthFeatherItem:_OnValue()
   self:_GetState()
   self:_ShowInfo()
   self:_ShowState()
   self:_CalcWidthAndPos()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem._GetState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local isGot = {(self._questModule):CheckGrowthFeatherState(self._index), (self._questModule):CheckStage2GrowthFeatherState(self._index)}
+function UIQuestGrowthFeatherItem:_GetState()
+  local isGot = {
+    self._questModule:CheckGrowthFeatherState(self._index),
+    self._questModule:CheckStage2GrowthFeatherState(self._index)
+  }
   if isGot[self._tabIndex] then
     self._state = QuestStatus.QUEST_Taken
+  elseif self._currCount >= self._count then
+    self._state = QuestStatus.QUEST_Completed
   else
-    if self._count <= self._currCount then
-      self._state = QuestStatus.QUEST_Completed
-    else
-      self._state = QuestStatus.QUEST_Accepted
-    end
+    self._state = QuestStatus.QUEST_Accepted
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem._ShowState = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:_ShowState()
   if self._state <= QuestStatus.QUEST_Accepted then
-    (self._eff):SetActive(false)
-    ;
-    (self._imgGot):SetActive(false)
-    ;
-    (self._complete):SetActive(false)
-    ;
-    (self._unComplete):SetActive(true)
-  else
-    if self._state == QuestStatus.QUEST_Completed then
-      (self._eff):SetActive(true)
-      ;
-      (self._imgGot):SetActive(false)
-      ;
-      (self._complete):SetActive(true)
-      ;
-      (self._unComplete):SetActive(false)
-    else
-      if self._state == QuestStatus.QUEST_Taken then
-        (self._eff):SetActive(false)
-        ;
-        (self._imgGot):SetActive(true)
-        ;
-        (self._complete):SetActive(true)
-        ;
-        (self._unComplete):SetActive(false)
-      end
-    end
+    self._eff:SetActive(false)
+    self._imgGot:SetActive(false)
+    self._complete:SetActive(false)
+    self._unComplete:SetActive(true)
+  elseif self._state == QuestStatus.QUEST_Completed then
+    self._eff:SetActive(true)
+    self._imgGot:SetActive(false)
+    self._complete:SetActive(true)
+    self._unComplete:SetActive(false)
+  elseif self._state == QuestStatus.QUEST_Taken then
+    self._eff:SetActive(false)
+    self._imgGot:SetActive(true)
+    self._complete:SetActive(true)
+    self._unComplete:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem._ShowInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg_item = (Cfg.cfg_item)[self._id]
+function UIQuestGrowthFeatherItem:_ShowInfo()
+  local cfg_item = Cfg.cfg_item[self._id]
   if not cfg_item then
-    (Log.fatal)("###cfg_item is nil ! id --> ", self._id)
+    Log.fatal("###cfg_item is nil ! id --> ", self._id)
   end
-  ;
-  (self._countTex):SetText(self._count)
+  self._countTex:SetText(self._count)
   local icon = cfg_item.Icon
   local quality = cfg_item.Color
-  local text1 = (UIActivityHelper.GetRichText)({size = 42}, self._iconCount)
+  local text1 = UIActivityHelper.GetRichText({size = 42}, self._iconCount)
   local itemId = self._id
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, itemId = self._id})
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = self._id
+  })
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem._GetComponents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:_GetComponents()
   self._imgGot = self:GetGameObject("imgGot")
   self._countTex = self:GetUIComponent("UILocalizationText", "countTex")
   self._rect = self:GetUIComponent("RectTransform", "rect")
@@ -146,24 +102,15 @@ UIQuestGrowthFeatherItem._GetComponents = function(self)
   self._unComplete = self:GetGameObject("unComplete")
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItemForQuest")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base, UIItemScale.Level3)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_6_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base, UIItemScale.Level3)
+  self.uiItem:SetClickCallBack(function(go)
     self:bgOnClick(go)
-  end
-)
+  end)
   self._eff = self:GetGameObject("eff")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem._CalcWidthAndPos = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = Vector2(self._posX, 0)
+function UIQuestGrowthFeatherItem:_CalcWidthAndPos()
+  self._rect.anchoredPosition = Vector2(self._posX, 0)
   local width = 0
   local awardWidthHalf = 70
   local awardWidthPadding = 12
@@ -175,130 +122,83 @@ UIQuestGrowthFeatherItem._CalcWidthAndPos = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem.bgOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:bgOnClick(go)
   if self._state <= QuestStatus.QUEST_Accepted then
-    local pos = (go.transform).position
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestAwardItemClick, self._id, pos)
-  else
-    do
-      if self._state == QuestStatus.QUEST_Completed then
-        self:_GetAward()
-      else
-        if self._state == QuestStatus.QUEST_Taken then
-          local pos = (go.transform).position
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestAwardItemClick, self._id, pos)
-        end
-      end
-    end
+    local pos = go.transform.position
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestAwardItemClick, self._id, pos)
+  elseif self._state == QuestStatus.QUEST_Completed then
+    self:_GetAward()
+  elseif self._state == QuestStatus.QUEST_Taken then
+    local pos = go.transform.position
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestAwardItemClick, self._id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem._GetAward = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:_GetAward()
   self:Lock(self:GetName())
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OnGetAward, self)
+  GameGlobal.TaskManager():StartTask(self._OnGetAward, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_10 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:OnUIGetItemCloseInQuest(type)
   if type == QuestType.QT_Growth + 1000 then
     self:_GetState()
     self:_ShowState()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem.OnUIPetObtainCloseInQuest = function(self, type)
-  -- function num : 0_11 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:OnUIPetObtainCloseInQuest(type)
   if type == QuestType.QT_Growth + 1000 * self._index then
     self:ShowDialog("UIGetItemController", self._tempMsgRewards, function()
-    -- function num : 0_11_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth + 1000)
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth + 1000)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem.AttachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem.RemoveEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:RemoveEvents()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:DetachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem._OnGetAward = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
-  local res, msg = (self._questModule):RequestGetGrowthFeatherAward(TT, self._index)
+function UIQuestGrowthFeatherItem:_OnGetAward(TT)
+  local res, msg = self._questModule:RequestGetGrowthFeatherAward(TT, self._index)
   self:UnLock(self:GetName())
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = pets
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      do
-        if #tempPets > 0 then
-          self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_14_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Growth + 1000 * self._index)
-  end
-)
-        else
-          self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_14_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth + 1000)
-  end
-)
-        end
-        local result = res:GetResult()
-        ;
-        (Log.fatal)("### RequestGetGrowthFeatherAward fail , result -> ", result)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Growth + 1000 * self._index)
+      end)
+    else
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Growth + 1000)
+      end)
     end
+  else
+    local result = res:GetResult()
+    Log.fatal("### RequestGetGrowthFeatherAward fail , result -> ", result)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthFeatherItem.OnHide = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIQuestGrowthFeatherItem:OnHide()
   self:RemoveEvents()
-  ;
-  ((GameGlobal.TaskManager)()):KillTask(self._animTaskID)
+  GameGlobal.TaskManager():KillTask(self._animTaskID)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/lost_area/lost_area_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LostAreaModule", GameModule)
 LostAreaModule = LostAreaModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LostAreaModule.Constructor = function(self)
-  -- function num : 0_0
+function LostAreaModule:Constructor()
   self._difficulty_status = {}
   self._nextRefreshTime = 0
   self._choosed_design_id = 0
@@ -17,35 +10,23 @@ LostAreaModule.Constructor = function(self)
   self._areaLevelGroupCfg = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.Init = function(self)
-  -- function num : 0_1
+function LostAreaModule:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.LoadInitializeData = function(self, designConfig, levelGroupConfig)
-  -- function num : 0_2
+function LostAreaModule:LoadInitializeData(designConfig, levelGroupConfig)
   self._areaDesignCfg = designConfig
   self._areaLevelGroupCfg = levelGroupConfig
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.RequestLostAreaRedDot = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventLostAreaRedDotReq)
+function LostAreaModule:RequestLostAreaRedDot(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventLostAreaRedDotReq)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
-  return (reply.msg).show
+  return reply.msg.show
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.RequestLostAreadifficultyStatus = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventLostAreadifficultyStatusReq)
+function LostAreaModule:RequestLostAreadifficultyStatus(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventLostAreadifficultyStatusReq)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -65,32 +46,20 @@ LostAreaModule.RequestLostAreadifficultyStatus = function(self, TT)
   return res
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.GetDifficultyStatusData = function(self)
-  -- function num : 0_5
+function LostAreaModule:GetDifficultyStatusData()
   return self._nextRefreshTime, self._difficulty_status
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.GetLostAreaDesignConfig = function(self)
-  -- function num : 0_6
+function LostAreaModule:GetLostAreaDesignConfig()
   return self._areaDesignCfg
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.GetLostAreaLevelGroupConfig = function(self)
-  -- function num : 0_7
+function LostAreaModule:GetLostAreaLevelGroupConfig()
   return self._areaLevelGroupCfg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.RequestLostAreaUnlockOnedifficulty = function(self, TT, designID)
-  -- function num : 0_8 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CeventLostAreaUnlockOnedifficultyReq)
+function LostAreaModule:RequestLostAreaUnlockOnedifficulty(TT, designID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CeventLostAreaUnlockOnedifficultyReq)
   local res = AsyncRequestRes:New()
   request.id = designID
   local reply = self:Call(TT, request)
@@ -105,11 +74,8 @@ LostAreaModule.RequestLostAreaUnlockOnedifficulty = function(self, TT, designID)
   return res
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.RequestLostAreadifficultyMission = function(self, TT, designID)
-  -- function num : 0_9 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CeventLostAreaGetdifficultyMissionReq)
+function LostAreaModule:RequestLostAreadifficultyMission(TT, designID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CeventLostAreaGetdifficultyMissionReq)
   request.ID = designID
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -127,18 +93,12 @@ LostAreaModule.RequestLostAreadifficultyMission = function(self, TT, designID)
   return res
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.GetLostAreadifficultyMission = function(self)
-  -- function num : 0_10
+function LostAreaModule:GetLostAreadifficultyMission()
   return self._difficult_mission_info
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.RequestLostAreaChooseWeekDifficulty = function(self, TT, designID)
-  -- function num : 0_11 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CeventLostAreaChooseWeekDifficultyReq)
+function LostAreaModule:RequestLostAreaChooseWeekDifficulty(TT, designID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CeventLostAreaChooseWeekDifficultyReq)
   request.design_id = designID
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -156,10 +116,7 @@ LostAreaModule.RequestLostAreaChooseWeekDifficulty = function(self, TT, designID
   return res
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LostAreaModule.Module_ConvertMatchResult = function(self, recvResult)
-  -- function num : 0_12 , upvalues : _ENV
+function LostAreaModule:Module_ConvertMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_LostArea
   uiMatchResult.m_nID = recvResult.mission_id
@@ -167,5 +124,3 @@ LostAreaModule.Module_ConvertMatchResult = function(self, recvResult)
   uiMatchResult.m_recommend_pet_rewards = recvResult.recommend_pet_rewards
   return uiMatchResult
 end
-
-

@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_random_count_damage_same_half.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamRandomCountDamageSameHalf", SkillDamageEffectParam)
 SkillEffectParamRandomCountDamageSameHalf = SkillEffectParamRandomCountDamageSameHalf
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamRandomCountDamageSameHalf.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamRandomCountDamageSameHalf:Constructor(t)
   self._dampPer = t.dampPer
   self._percentAdd = t.percentAdd or 0
   self._selTargetLoop = t.selTargetLoop or false
   self._damageRandomCount = t.damageRandomCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRandomCountDamageSameHalf.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamRandomCountDamageSameHalf:GetEffectType()
   return SkillEffectType.RandomCountDamageSameHalf
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRandomCountDamageSameHalf.GetPercentAdd = function(self)
-  -- function num : 0_2
+function SkillEffectParamRandomCountDamageSameHalf:GetPercentAdd()
   return self._percentAdd
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRandomCountDamageSameHalf.GetDampPercent = function(self)
-  -- function num : 0_3
+function SkillEffectParamRandomCountDamageSameHalf:GetDampPercent()
   return self._dampPer
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRandomCountDamageSameHalf.GetIsSelTargetLoop = function(self)
-  -- function num : 0_4
+function SkillEffectParamRandomCountDamageSameHalf:GetIsSelTargetLoop()
   return self._selTargetLoop
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRandomCountDamageSameHalf.GetDamageRandomCount = function(self)
-  -- function num : 0_5
+function SkillEffectParamRandomCountDamageSameHalf:GetDamageRandomCount()
   return self._damageRandomCount
 end
-
-

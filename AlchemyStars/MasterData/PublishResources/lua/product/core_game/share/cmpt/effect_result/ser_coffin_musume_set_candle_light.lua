@@ -1,34 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_coffin_musume_set_candle_light.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_CoffinMusumeSetCandleLight", SkillEffectResultBase)
 SkillEffectResult_CoffinMusumeSetCandleLight = SkillEffectResult_CoffinMusumeSetCandleLight
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResult_CoffinMusumeSetCandleLight.__EFFECT_TYPE = SkillEffectType.CoffinMusumeSetCandleLight
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_CoffinMusumeSetCandleLight.Constructor = function(self, entityID, isLight)
-  -- function num : 0_0
+function SkillEffectResult_CoffinMusumeSetCandleLight:Constructor(entityID, isLight)
   self._entityID = entityID
   self._isLight = isLight
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_CoffinMusumeSetCandleLight.GetEntityID = function(self)
-  -- function num : 0_1
+function SkillEffectResult_CoffinMusumeSetCandleLight:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_CoffinMusumeSetCandleLight.IsLight = function(self)
-  -- function num : 0_2
+function SkillEffectResult_CoffinMusumeSetCandleLight:IsLight()
   return self._isLight
 end
-
-

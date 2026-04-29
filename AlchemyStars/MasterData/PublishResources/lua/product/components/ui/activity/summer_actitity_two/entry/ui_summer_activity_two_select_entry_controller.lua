@@ -1,43 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/entry/ui_summer_activity_two_select_entry_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoSelectEntryController", UIController)
 UISummerActivityTwoSelectEntryController = UISummerActivityTwoSelectEntryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoSelectEntryController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UISummerActivityTwoSelectEntryController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._missionComponentInfo = (self._localProcess):GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
-  self._missionComponent = (self._localProcess):GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+  self._missionComponentInfo = self._localProcess:GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+  self._missionComponent = self._localProcess:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
   self._levelData = uiParams[1]
-  local affixDatas = (self._levelData):GetAffixAndScore()
+  local affixDatas = self._levelData:GetAffixAndScore()
   self._affixGroupDatas = affixDatas:GetEntryGroups()
   self._grouCount = affixDatas:GetGroupCount()
   self._entryCount = affixDatas:GetEntryCount()
-  local selectedAffixs = (self._missionComponentInfo).m_select_affix
+  local selectedAffixs = self._missionComponentInfo.m_select_affix
   local selectedAffix = {}
-  local missionId = (self._levelData):GetMissionId()
+  local missionId = self._levelData:GetMissionId()
   if selectedAffixs and selectedAffixs[missionId] then
     selectedAffix = selectedAffixs[missionId]
   end
   for i = 1, #self._affixGroupDatas do
-    local entryDatas = (self._affixGroupDatas)[i]
+    local entryDatas = self._affixGroupDatas[i]
     for j = 1, #entryDatas do
       local entryData = entryDatas[j]
       entryData:SetSelectedStatus(false)
@@ -49,41 +41,31 @@ UISummerActivityTwoSelectEntryController.LoadDataOnEnter = function(self, TT, re
       end
     end
   end
-  local selectedHards = (self._missionComponentInfo).m_select_hard
-  local selectedHard = nil
+  local selectedHards = self._missionComponentInfo.m_select_hard
+  local selectedHard
   if selectedHards and selectedHards[missionId] then
     selectedHard = selectedHards[missionId]
   end
-  local entryLevelDatas = (self._levelData):GetEntryLevelDatas()
+  local entryLevelDatas = self._levelData:GetEntryLevelDatas()
   if selectedHard and entryLevelDatas:GetEntryLevelDataByLevel(selectedHard) then
     local entryLevelData = entryLevelDatas:GetEntryLevelDataByLevel(selectedHard)
     entryLevelData:SetSelectedStatus(true)
   else
-    do
-      local entryLevelDataList = entryLevelDatas:GetEntryLevelDatas()
-      if entryLevelDataList and #entryLevelDataList > 0 then
-        (entryLevelDataList[1]):SetSelectedStatus(true)
-      end
+    local entryLevelDataList = entryLevelDatas:GetEntryLevelDatas()
+    if entryLevelDataList and 0 < #entryLevelDataList then
+      entryLevelDataList[1]:SetSelectedStatus(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoSelectEntryController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoSelectEntryController:OnShow(uiParams)
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, function()
-    -- function num : 0_1_1 , upvalues : self
+  self._backBtn:SetData(function()
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, function()
     self:ShowDialog("UIHelpController", "UISummerActivityTwoSelectEntryController")
-  end
-, nil, true)
+  end, nil, true)
   self._anim = self:GetUIComponent("Animation", "Anim")
   self._icon1Img = self:GetUIComponent("RawImageLoader", "Icon1")
   self._icon2Img = self:GetUIComponent("RawImageLoader", "Icon2")
@@ -94,48 +76,31 @@ UISummerActivityTwoSelectEntryController.OnShow = function(self, uiParams)
   self._baseScoreLabel = self:GetUIComponent("UILocalizationText", "BaseScore")
   self._totalScoreLabel = self:GetUIComponent("UILocalizationText", "TotalScore")
   self._ratioScoreLabel = self:GetUIComponent("UILocalizationText", "RatioScore")
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._titleLabel).text = (self._levelData):GetAffixTitle()
-  ;
-  (self._titleIconImg):LoadImage((self._levelData):GetAffixTitleIcon())
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._maxScoreLabel).text = (self._levelData):GetMaxScore()
-  ;
-  (self._icon1Img):LoadImage(UISummerActivityTwoConst.EntryIcon)
-  ;
-  (self._icon2Img):LoadImage(UISummerActivityTwoConst.EntryIcon)
+  self._titleLabel.text = self._levelData:GetAffixTitle()
+  self._titleIconImg:LoadImage(self._levelData:GetAffixTitleIcon())
+  self._maxScoreLabel.text = self._levelData:GetMaxScore()
+  self._icon1Img:LoadImage(UISummerActivityTwoConst.EntryIcon)
+  self._icon2Img:LoadImage(UISummerActivityTwoConst.EntryIcon)
   local loader = self:GetUIComponent("UISelectObjectPath", "EntryGroup")
   loader:SpawnObjects("UISummerActivityTwoEntryGroupItem", self._grouCount)
   self._list = loader:GetAllSpawnList()
   for i = 1, #self._list do
-    ((self._list)[i]):Refresh((self._affixGroupDatas)[i], function()
-    -- function num : 0_1_2 , upvalues : self
-    self:SelectEntryChanged()
-  end
-)
+    self._list[i]:Refresh(self._affixGroupDatas[i], function()
+      self:SelectEntryChanged()
+    end)
   end
   local loader = self:GetUIComponent("UISelectObjectPath", "LevelEntry")
   local levelGroup = loader:SpawnObject("UISummerActivityTwoEntryLevelGroup")
-  levelGroup:Refresh((self._levelData):GetEntryLevelDatas(), function()
-    -- function num : 0_1_3 , upvalues : self
+  levelGroup:Refresh(self._levelData:GetEntryLevelDatas(), function()
     self:SelectEntryLevelChanged()
-  end
-)
+  end)
   self:RefreshEntryScoreInfo()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISummerActivityTwoSelectEntryController)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISummerActivityTwoSelectEntryController)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoSelectEntryController.RefreshEntryScoreInfo = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local selectEntryLevelData = nil
-  local entryLevelData = (self._levelData):GetEntryLevelDatas()
+function UISummerActivityTwoSelectEntryController:RefreshEntryScoreInfo()
+  local selectEntryLevelData
+  local entryLevelData = self._levelData:GetEntryLevelDatas()
   local entryLevelDatas = entryLevelData:GetEntryLevelDatas()
   for i = 1, #entryLevelDatas do
     local entryLevelData = entryLevelDatas[i]
@@ -144,77 +109,55 @@ UISummerActivityTwoSelectEntryController.RefreshEntryScoreInfo = function(self)
       break
     end
   end
-  do
-    local baseScore = selectEntryLevelData:GetLevelScore()
-    ;
-    (self._baseScoreLabel):SetText((StringTable.Get)("str_summer_activity_two_base_score_title", baseScore))
-    local count = 0
-    local entryDatas = {}
-    for i = 1, #self._list do
-      local entryItem = ((self._list)[i]):GetSelectedEntryItem()
-      if entryItem then
-        local entryData = entryItem:GetEntryData()
-        entryDatas[#entryDatas + 1] = entryData
-        count = count + 1
-      end
+  local baseScore = selectEntryLevelData:GetLevelScore()
+  self._baseScoreLabel:SetText(StringTable.Get("str_summer_activity_two_base_score_title", baseScore))
+  local count = 0
+  local entryDatas = {}
+  for i = 1, #self._list do
+    local entryItem = self._list[i]:GetSelectedEntryItem()
+    if entryItem then
+      local entryData = entryItem:GetEntryData()
+      entryDatas[#entryDatas + 1] = entryData
+      count = count + 1
     end
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._selectedEntryCountLabel).text = count .. "/" .. self._grouCount
-    local ratio, totalScore = (UISummerActivityTwoLevelDatas.CalcScore)(selectEntryLevelData, entryDatas)
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._totalScoreLabel).text = totalScore
-    local a, b = (math.modf)(ratio / 10)
-    local text = ""
-    if b == 0 then
-      text = (StringTable.Get)("str_summer_activity_two_ratio_score_title", 100 + a)
-    else
-      text = (StringTable.Get)("str_summer_activity_two_ratio_score_title", 100 + ratio / 10)
-    end
-    ;
-    (self._ratioScoreLabel):SetText(text)
   end
+  self._selectedEntryCountLabel.text = count .. "/" .. self._grouCount
+  local ratio, totalScore = UISummerActivityTwoLevelDatas.CalcScore(selectEntryLevelData, entryDatas)
+  self._totalScoreLabel.text = totalScore
+  local a, b = math.modf(ratio / 10)
+  local text = ""
+  if b == 0 then
+    text = StringTable.Get("str_summer_activity_two_ratio_score_title", 100 + a)
+  else
+    text = StringTable.Get("str_summer_activity_two_ratio_score_title", 100 + ratio / 10)
+  end
+  self._ratioScoreLabel:SetText(text)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoSelectEntryController.SelectEntryLevelChanged = function(self)
-  -- function num : 0_3
+function UISummerActivityTwoSelectEntryController:SelectEntryLevelChanged()
   self:RefreshEntryScoreInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoSelectEntryController.SelectEntryChanged = function(self)
-  -- function num : 0_4
+function UISummerActivityTwoSelectEntryController:SelectEntryChanged()
   self:RefreshEntryScoreInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoSelectEntryController.StartBattleBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.StartBattleBtnCoro, self)
+function UISummerActivityTwoSelectEntryController:StartBattleBtnOnClick()
+  GameGlobal.TaskManager():StartTask(self.StartBattleBtnCoro, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoSelectEntryController.StartBattleBtnCoro = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UISummerActivityTwoSelectEntryController:StartBattleBtnCoro(TT)
   local res = AsyncRequestRes:New()
   local selectaffixIdArray = {}
   for i = 1, #self._list do
-    local entryItem = ((self._list)[i]):GetSelectedEntryItem()
+    local entryItem = self._list[i]:GetSelectedEntryItem()
     if entryItem then
-      local id = (entryItem:GetEntryData()):GetId()
+      local id = entryItem:GetEntryData():GetId()
       selectaffixIdArray[#selectaffixIdArray + 1] = id
     end
   end
-  local selectEntryLevelData = nil
-  local entryLevelData = (self._levelData):GetEntryLevelDatas()
+  local selectEntryLevelData
+  local entryLevelData = self._levelData:GetEntryLevelDatas()
   local entryLevelDatas = entryLevelData:GetEntryLevelDatas()
   for i = 1, #entryLevelDatas do
     local entryLevelData = entryLevelDatas[i]
@@ -223,48 +166,41 @@ UISummerActivityTwoSelectEntryController.StartBattleBtnCoro = function(self, TT)
       break
     end
   end
-  do
-    ;
-    (self._missionComponent):HandleSelectAffix(TT, res, (self._levelData):GetMissionId(), selectaffixIdArray, selectEntryLevelData:GetLevel())
-    if res:GetSucc() then
-      local missiontModule = (GameGlobal.GetModule)(MissionModule)
-      local ctx = missiontModule:TeamCtx()
-      local level = selectEntryLevelData:GetSuggestLevel()
-      local awake = selectEntryLevelData:GetSuggestAwake()
-      local param = {(self._levelData):GetMissionId(), (self._missionComponent):GetCampaignMissionComponentId(), (self._missionComponent):GetCampaignMissionParamKeyMap(), 
-{true, level, awake}
-}
-      ctx:Init(TeamOpenerType.Campaign, param)
-      ctx:ShowDialogUITeams(false)
-    else
-      do
-        local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-        campaignModule:CheckErrorCode(res.m_result)
-      end
-    end
+  self._missionComponent:HandleSelectAffix(TT, res, self._levelData:GetMissionId(), selectaffixIdArray, selectEntryLevelData:GetLevel())
+  if res:GetSucc() then
+    local missiontModule = GameGlobal.GetModule(MissionModule)
+    local ctx = missiontModule:TeamCtx()
+    local level = selectEntryLevelData:GetSuggestLevel()
+    local awake = selectEntryLevelData:GetSuggestAwake()
+    local param = {
+      self._levelData:GetMissionId(),
+      self._missionComponent:GetCampaignMissionComponentId(),
+      self._missionComponent:GetCampaignMissionParamKeyMap(),
+      {
+        true,
+        level,
+        awake
+      }
+    }
+    ctx:Init(TeamOpenerType.Campaign, param)
+    ctx:ShowDialogUITeams(false)
+  else
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CheckErrorCode(res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoSelectEntryController.ClearBtnOnClick = function(self)
-  -- function num : 0_7
+function UISummerActivityTwoSelectEntryController:ClearBtnOnClick()
   for i = 1, #self._list do
-    ((self._list)[i]):ClearSelected()
+    self._list[i]:ClearSelected()
   end
   self:SelectEntryChanged()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoSelectEntryController.CloseCoro = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UISummerActivityTwoSelectEntryController:CloseCoro(TT)
   self:Lock("UISummerActivityTwoSelectEntryController_CloseCoro")
-  ;
-  (self._anim):Play("uieff_Summer2_Level_Select_Out")
+  self._anim:Play("uieff_Summer2_Level_Select_Out")
   YIELD(TT, 700)
   self:CloseDialog()
   self:UnLock("UISummerActivityTwoSelectEntryController_CloseCoro")
 end
-
-

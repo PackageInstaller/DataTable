@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_teleport_and_summontrap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamTeleportAndSummonTrap", SkillEffectParamBase)
 SkillEffectParamTeleportAndSummonTrap = SkillEffectParamTeleportAndSummonTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamTeleportAndSummonTrap.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamTeleportAndSummonTrap:Constructor(t)
   self._trapID = t.trapID
   self._trapCount = t.trapCount
   self._teleportParam = t.teleportParam
@@ -17,63 +10,42 @@ SkillEffectParamTeleportAndSummonTrap.Constructor = function(self, t)
   self:InitArea(t.area)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTeleportAndSummonTrap.InitArea = function(self, area)
-  -- function num : 0_1 , upvalues : _ENV
-  for i,param in ipairs(area) do
+function SkillEffectParamTeleportAndSummonTrap:InitArea(area)
+  for i, param in ipairs(area) do
     local areaList = {}
-    local xBegin = (param.x)[1]
-    local xEnd = (param.x)[2]
-    local yBegin = (param.y)[1]
-    local yEnd = (param.y)[2]
+    local xBegin = param.x[1]
+    local xEnd = param.x[2]
+    local yBegin = param.y[1]
+    local yEnd = param.y[2]
     for x = xBegin, xEnd do
       for y = yBegin, yEnd do
-        (table.insert)(areaList, Vector2(x, y))
+        table.insert(areaList, Vector2(x, y))
       end
     end
-    ;
-    (table.insert)(self._gridAreaArray, areaList)
+    table.insert(self._gridAreaArray, areaList)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTeleportAndSummonTrap.GetGridAreaArray = function(self)
-  -- function num : 0_2
+function SkillEffectParamTeleportAndSummonTrap:GetGridAreaArray()
   return self._gridAreaArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTeleportAndSummonTrap.GetTrapID = function(self)
-  -- function num : 0_3
+function SkillEffectParamTeleportAndSummonTrap:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTeleportAndSummonTrap.GetEffectType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectParamTeleportAndSummonTrap:GetEffectType()
   return SkillEffectType.TeleportAndSummonTrap
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTeleportAndSummonTrap.GetTeleportCountByHPPercent = function(self, hpPercent)
-  -- function num : 0_5 , upvalues : _ENV
-  for i,param in ipairs(self._teleportParam) do
-    if (param.hp_percent)[1] < hpPercent then
+function SkillEffectParamTeleportAndSummonTrap:GetTeleportCountByHPPercent(hpPercent)
+  for i, param in ipairs(self._teleportParam) do
+    if hpPercent > param.hp_percent[1] then
       return param.teleportCount
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTeleportAndSummonTrap.GetTrapCount = function(self)
-  -- function num : 0_6
+function SkillEffectParamTeleportAndSummonTrap:GetTrapCount()
   return self._trapCount
 end
-
-

@@ -1,16 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass/main/ui_activity_battlepass_quest_group_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassQuestGroupBtn", UICustomWidget)
 UIActivityBattlePassQuestGroupBtn = UIActivityBattlePassQuestGroupBtn
-local UIActivityBattlePassQuestGroupBtnState = {EState_NotStart = 1, EState_Normal = 2, EState_Over = 3}
+local UIActivityBattlePassQuestGroupBtnState = {
+  EState_NotStart = 1,
+  EState_Normal = 2,
+  EState_Over = 3
+}
 _enum("UIActivityBattlePassQuestGroupBtnState", UIActivityBattlePassQuestGroupBtnState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityBattlePassQuestGroupBtn._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityBattlePassQuestGroupBtn:_GetComponents()
   self._state_Normal = self:GetGameObject("state_Normal")
   self._state_NotStart = self:GetGameObject("state_NotStart")
   self._state_Over = self:GetGameObject("state_Over")
@@ -20,10 +17,7 @@ UIActivityBattlePassQuestGroupBtn._GetComponents = function(self)
   self._red = self:GetGameObject("red")
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn.SetData = function(self, index, campaign, info, callback)
-  -- function num : 0_1
+function UIActivityBattlePassQuestGroupBtn:SetData(index, campaign, info, callback)
   self._index = index
   self._campaign = campaign
   self._info = info
@@ -32,161 +26,108 @@ UIActivityBattlePassQuestGroupBtn.SetData = function(self, index, campaign, info
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn.SetSelected = function(self, isSel)
-  -- function num : 0_2
-  (self._selected):SetActive(isSel)
+function UIActivityBattlePassQuestGroupBtn:SetSelected(isSel)
+  self._selected:SetActive(isSel)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn.OnShow = function(self, uiParams)
-  -- function num : 0_3
+function UIActivityBattlePassQuestGroupBtn:OnShow(uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn.OnHide = function(self)
-  -- function num : 0_4
+function UIActivityBattlePassQuestGroupBtn:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn._Refresh = function(self)
-  -- function num : 0_5
+function UIActivityBattlePassQuestGroupBtn:_Refresh()
   self._state = self:_CheckState()
   self:_SetState()
   self:_SetTitle()
   self:_CheckRedPointAll()
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn._SetState = function(self)
-  -- function num : 0_6 , upvalues : UIActivityBattlePassQuestGroupBtnState
-  (self._state_Normal):SetActive(self._state ~= UIActivityBattlePassQuestGroupBtnState.EState_Over)
-  ;
-  (self._state_NotStart):SetActive(self._state == UIActivityBattlePassQuestGroupBtnState.EState_NotStart)
-  ;
-  (self._state_Over):SetActive(self._state == UIActivityBattlePassQuestGroupBtnState.EState_Over)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIActivityBattlePassQuestGroupBtn:_SetState()
+  self._state_Normal:SetActive(self._state ~= UIActivityBattlePassQuestGroupBtnState.EState_Over)
+  self._state_NotStart:SetActive(self._state == UIActivityBattlePassQuestGroupBtnState.EState_NotStart)
+  self._state_Over:SetActive(self._state == UIActivityBattlePassQuestGroupBtnState.EState_Over)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn._SetTitle = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index2id = {"str_activity_battlepass_tab_quest_group_title_1", "str_activity_battlepass_tab_quest_group_title_2", "str_activity_battlepass_tab_quest_group_title_3"}
-  ;
-  (self._txtTitle):SetText((StringTable.Get)(index2id[self._index]))
-  ;
-  (self._txtTitle_Over):SetText((StringTable.Get)(index2id[self._index]))
+function UIActivityBattlePassQuestGroupBtn:_SetTitle()
+  local index2id = {
+    "str_activity_battlepass_tab_quest_group_title_1",
+    "str_activity_battlepass_tab_quest_group_title_2",
+    "str_activity_battlepass_tab_quest_group_title_3"
+  }
+  self._txtTitle:SetText(StringTable.Get(index2id[self._index]))
+  self._txtTitle_Over:SetText(StringTable.Get(index2id[self._index]))
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn._CheckState = function(self)
-  -- function num : 0_8 , upvalues : _ENV, UIActivityBattlePassQuestGroupBtnState
+function UIActivityBattlePassQuestGroupBtn:_CheckState()
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  if curTime < (self._info).m_unlock_time then
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  if curTime < self._info.m_unlock_time then
     return UIActivityBattlePassQuestGroupBtnState.EState_NotStart
+  elseif curTime > self._info.m_close_time then
+    return UIActivityBattlePassQuestGroupBtnState.EState_Over
   else
-    if (self._info).m_close_time < curTime then
-      return UIActivityBattlePassQuestGroupBtnState.EState_Over
-    else
-      return UIActivityBattlePassQuestGroupBtnState.EState_Normal
-    end
+    return UIActivityBattlePassQuestGroupBtnState.EState_Normal
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn.NormalBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.info)("UIActivityBattlePassQuestGroupBtn:NormalBtnOnClick")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIActivityBattlePassQuestGroupBtn:NormalBtnOnClick()
+  Log.info("UIActivityBattlePassQuestGroupBtn:NormalBtnOnClick")
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn.NotStartBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.info)("UIActivityBattlePassQuestGroupBtn:NotStartBtnOnClick")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIActivityBattlePassQuestGroupBtn:NotStartBtnOnClick()
+  Log.info("UIActivityBattlePassQuestGroupBtn:NotStartBtnOnClick")
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local endTime = (self._info).m_unlock_time
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local endTime = self._info.m_unlock_time
   local stamp = endTime - curTime
   if stamp <= 0 then
     self:_Refresh()
-    return 
+    return
   end
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local str = (StringTable.Get)("str_activity_battlepass_tab_quest_group_notstart", timeStr)
-  ;
-  (ToastManager.ShowToast)(str)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local str = StringTable.Get("str_activity_battlepass_tab_quest_group_notstart", timeStr)
+  ToastManager.ShowToast(str)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn.OverBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.info)("UIActivityBattlePassQuestGroupBtn:OverBtnOnClick")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_activity_battlepass_tab_quest_group_over"))
+function UIActivityBattlePassQuestGroupBtn:OverBtnOnClick()
+  Log.info("UIActivityBattlePassQuestGroupBtn:OverBtnOnClick")
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
+  ToastManager.ShowToast(StringTable.Get("str_activity_battlepass_tab_quest_group_over"))
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn._AttachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityBattlePassQuestGroupBtn:_AttachEvents()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn._DetachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityBattlePassQuestGroupBtn:_DetachEvents()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_14
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityBattlePassQuestGroupBtn:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckRedPointAll()
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn._CheckRedPointAll = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local index2component = {ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3}
+function UIActivityBattlePassQuestGroupBtn:_CheckRedPointAll()
+  local index2component = {
+    ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1,
+    ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2,
+    ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3
+  }
   local componentId = index2component[self._index]
   self:_CheckRedPoint(self._red, componentId)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassQuestGroupBtn._CheckRedPoint = function(self, obj, ...)
-  -- function num : 0_16 , upvalues : _ENV
-  if self._campaign then
-    local bShow = (UIActivityBattlePassHelper.CheckComponentRedPoint)(self._campaign, ...)
-  end
+function UIActivityBattlePassQuestGroupBtn:_CheckRedPoint(obj, ...)
+  local bShow = self._campaign and UIActivityBattlePassHelper.CheckComponentRedPoint(self._campaign, ...)
   obj:SetActive(bShow)
 end
-
-

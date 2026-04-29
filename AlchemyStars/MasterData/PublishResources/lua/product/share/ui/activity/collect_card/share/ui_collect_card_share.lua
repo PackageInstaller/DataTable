@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/share/ui_collect_card_share.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardShare", UIController)
 UICollectCardShare = UICollectCardShare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardShare.Constructor = function(self)
-  -- function num : 0_0
+function UICollectCardShare:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardShare.GetComponents = function(self)
-  -- function num : 0_1
+function UICollectCardShare:GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._sBg = self:GetGameObject("S")
   self._nBg = self:GetGameObject("N")
@@ -22,65 +12,41 @@ UICollectCardShare.GetComponents = function(self)
   self._shareTips = self:GetUIComponent("UILocalizationText", "shareTips")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardShare.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UICollectCardShare:OnShow(uiParams)
   self:GetComponents()
   self._cardid = uiParams[1]
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardShare.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_collect_card)[self._cardid]
-  ;
-  (self._cardName):SetText("【" .. (StringTable.Get)(cfg.Name) .. "】")
-  ;
-  (self._icon):LoadImage(cfg.IconBig)
-  ;
-  (self._sBg):SetActive(cfg.Type == 2)
-  ;
-  (self._nBg):SetActive(cfg.Type == 1)
-  local info = ((GameGlobal.GameLogic)()).ClientInfo
+function UICollectCardShare:OnValue()
+  local cfg = Cfg.cfg_component_collect_card[self._cardid]
+  self._cardName:SetText("【" .. StringTable.Get(cfg.Name) .. "】")
+  self._icon:LoadImage(cfg.IconBig)
+  self._sBg:SetActive(cfg.Type == 2)
+  self._nBg:SetActive(cfg.Type == 1)
+  local info = GameGlobal.GameLogic().ClientInfo
   local source = info.m_login_source
-  local tips = nil
+  local tips
   if source == MobileClientLoginChannel.MCLC_WX then
     tips = "str_collect_card_share_wechat"
   else
     tips = "str_collect_card_share_qq"
   end
-  ;
-  (self._shareTips):SetText((StringTable.Get)(tips))
+  self._shareTips:SetText(StringTable.Get(tips))
   self:Share()
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardShare.OnHide = function(self)
-  -- function num : 0_4
+function UICollectCardShare:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardShare.Share = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UICollectCardShare:Share(go)
   self:Lock("UICollectCardShare")
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
     YIELD(TT)
     YIELD(TT)
     self:ShowDialog("UIShare", self:GetName(), ShareAnchorType.BottomRight, function()
-      -- function num : 0_5_0_0 , upvalues : self
       self:CloseDialog()
-    end
-, ShareAnchorType.Hide, nil, nil, nil, nil, nil, "red")
+    end, ShareAnchorType.Hide, nil, nil, nil, nil, nil, "red")
     self:UnLock("UICollectCardShare")
-  end
-, self)
+  end, self)
 end
-
-

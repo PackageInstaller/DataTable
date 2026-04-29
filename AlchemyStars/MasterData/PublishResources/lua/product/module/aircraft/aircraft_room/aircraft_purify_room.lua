@@ -1,82 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_purify_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftPurifyRoom", AircraftRoomBase)
 AircraftPurifyRoom = AircraftPurifyRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPurifyRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftPurifyRoom:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1
+function AircraftPurifyRoom:SetClientData(client_data)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.GetPurifyRoomConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_purify_room)[self._roomid]
+function AircraftPurifyRoom:GetPurifyRoomConfig()
+  local cfg = Cfg.cfg_aircraft_purify_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.GetPurifyEvilConfig = function(self)
-  -- function num : 0_3
+function AircraftPurifyRoom:GetPurifyEvilConfig()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.GetTotalPurifyTime = function(self)
-  -- function num : 0_4
+function AircraftPurifyRoom:GetTotalPurifyTime()
   local base_time = 10
   local pet_minus = 1
   return base_time, pet_minus
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.GetLeftPurifyTime = function(self)
-  -- function num : 0_5
+function AircraftPurifyRoom:GetLeftPurifyTime()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.CollectReward = function(self)
-  -- function num : 0_6
+function AircraftPurifyRoom:CollectReward()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.StopPurify = function(self)
-  -- function num : 0_7
+function AircraftPurifyRoom:StopPurify()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.PurifyStatus = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftPurifyRoom:PurifyStatus()
   return PurifyRoomStatus.EVIL_WITHOUT_PURIFY
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function AircraftPurifyRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
-  local next_cfg = (Cfg.cfg_aircraft_room)[room_cfg.NextLevelID]
+  local next_cfg = Cfg.cfg_aircraft_room[room_cfg.NextLevelID]
   if next_cfg == nil then
     return nil
   end
-  local cur_purifyroom_cfg = (Cfg.cfg_aircraft_purify_room)[self._roomid]
-  local next_purifyroom_cfg = (Cfg.cfg_aircraft_purify_room)[room_cfg.NextLevelID]
+  local cur_purifyroom_cfg = Cfg.cfg_aircraft_purify_room[self._roomid]
+  local next_purifyroom_cfg = Cfg.cfg_aircraft_purify_room[room_cfg.NextLevelID]
   if next_purifyroom_cfg == nil then
     return nil
   end
@@ -85,20 +51,16 @@ AircraftPurifyRoom.GetUpgradeInfo = function(self)
   local cur_pet_number = room_cfg.PetNum
   local next_pet_number = next_cfg.PetNum
   return {
-{cur_cell_count, next_cell_count}
-, 
-{cur_pet_number, next_pet_number}
-}
+    {cur_cell_count, next_cell_count},
+    {cur_pet_number, next_pet_number}
+  }
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPurifyRoom.GetDegradeInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function AircraftPurifyRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
-  local prev_cfg = (Cfg.cfg_aircraft_room)[room_cfg.prevLevelID]
-  local cur_purifyroom_cfg = (Cfg.cfg_aircraft_purify_room)[self._roomid]
-  local prev_purifyroom_cfg = (Cfg.cfg_aircraft_purify_room)[room_cfg.prevLevelID]
+  local prev_cfg = Cfg.cfg_aircraft_room[room_cfg.prevLevelID]
+  local cur_purifyroom_cfg = Cfg.cfg_aircraft_purify_room[self._roomid]
+  local prev_purifyroom_cfg = Cfg.cfg_aircraft_purify_room[room_cfg.prevLevelID]
   local cur_decr_time = cur_purifyroom_cfg.DecrTime
   local prev_decr_time = 0
   if prev_purifyroom_cfg ~= nil then
@@ -110,10 +72,7 @@ AircraftPurifyRoom.GetDegradeInfo = function(self)
     prev_pet_number = prev_cfg.PetNum
   end
   return {
-{cur_decr_time, prev_decr_time}
-, 
-{cur_pet_number, prev_pet_number}
-}
+    {cur_decr_time, prev_decr_time},
+    {cur_pet_number, prev_pet_number}
+  }
 end
-
-

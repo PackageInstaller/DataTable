@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_buff_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillBuffEffectResult", SkillEffectResultBase)
 SkillBuffEffectResult = SkillBuffEffectResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillBuffEffectResult.Constructor = function(self, entityID)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillBuffEffectResult:Constructor(entityID)
   self._effectType = SkillEffectType.AddBuff
   self._newBuffArray = {}
   self._stageIndex = 1
@@ -17,76 +10,42 @@ SkillBuffEffectResult.Constructor = function(self, entityID)
   self._isRemove = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillBuffEffectResult:GetEffectType()
   return SkillEffectType.AddBuff
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.GetAddBuffResult = function(self)
-  -- function num : 0_2
+function SkillBuffEffectResult:GetAddBuffResult()
   return self._newBuffArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.GetEntityID = function(self)
-  -- function num : 0_3
+function SkillBuffEffectResult:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.AddBuffResult = function(self, buffseq)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._newBuffArray)[#self._newBuffArray + 1] = buffseq
+function SkillBuffEffectResult:AddBuffResult(buffseq)
+  self._newBuffArray[#self._newBuffArray + 1] = buffseq
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.SetDamageStageIndex = function(self, stageIndex)
-  -- function num : 0_5
+function SkillBuffEffectResult:SetDamageStageIndex(stageIndex)
   self._stageIndex = stageIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.GetDamageStageIndex = function(self)
-  -- function num : 0_6
+function SkillBuffEffectResult:GetDamageStageIndex()
   return self._stageIndex
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.SetBuffInitLayer = function(self, v)
-  -- function num : 0_7
+function SkillBuffEffectResult:SetBuffInitLayer(v)
   self._buffLayer = v
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.GetBuffInitLayer = function(self)
-  -- function num : 0_8
+function SkillBuffEffectResult:GetBuffInitLayer()
   return self._buffLayer
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.SetIsRemove = function(self, isRemove)
-  -- function num : 0_9
+function SkillBuffEffectResult:SetIsRemove(isRemove)
   self._isRemove = isRemove
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillBuffEffectResult.GetIsRemove = function(self)
-  -- function num : 0_10
+function SkillBuffEffectResult:GetIsRemove()
   return self._isRemove
 end
-
-

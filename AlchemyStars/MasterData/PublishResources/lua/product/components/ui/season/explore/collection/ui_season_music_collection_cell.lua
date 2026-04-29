@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/collection/ui_season_music_collection_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMusicCollectionCell", UICustomWidget)
 UISeasonMusicCollectionCell = UISeasonMusicCollectionCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMusicCollectionCell.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonMusicCollectionCell:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionCell.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMusicCollectionCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionCell.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMusicCollectionCell:InitWidget()
   self.new = self:GetGameObject("new")
   self.txtLock = self:GetUIComponent("UILocalizationText", "txtLock")
   self.lock = self:GetGameObject("lock")
@@ -33,67 +20,44 @@ UISeasonMusicCollectionCell.InitWidget = function(self)
   self.pauseObj = self:GetGameObject("pauseObj")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionCell.SetData = function(self, cfg, index, playingIndex, pauseIndex, clickCb)
-  -- function num : 0_3 , upvalues : _ENV
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISeasonMusicCollectionCell:SetData(cfg, index, playingIndex, pauseIndex, clickCb)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
   self.idx = index
   self.clickCb = clickCb
   self._cfg = cfg
   self._isPlaying = playingIndex == index
   self._isPause = pauseIndex == index
-  self.isUnlock = not (self._roleModule):UI_CheckMusicLock(cfg)
-  ;
-  (self.lock):SetActive(not self.isUnlock)
-  ;
-  (self.unlock):SetActive(self.isUnlock)
-  ;
-  (self.txtMusicName):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self.txtAuthorName):SetText((StringTable.Get)(cfg.Author))
-  ;
-  (self.imgMusic):LoadImage(cfg.Icon)
+  self.isUnlock = not self._roleModule:UI_CheckMusicLock(cfg)
+  self.lock:SetActive(not self.isUnlock)
+  self.unlock:SetActive(self.isUnlock)
+  self.txtMusicName:SetText(StringTable.Get(cfg.Name))
+  self.txtAuthorName:SetText(StringTable.Get(cfg.Author))
+  self.imgMusic:LoadImage(cfg.Icon)
   if not self.unlock then
-    (self.txtLock):SetText((StringTable.Get)(cfg.UnLockDes))
-    ;
-    (self.new):SetActive(false)
+    self.txtLock:SetText(StringTable.Get(cfg.UnLockDes))
+    self.new:SetActive(false)
   else
     self:_RefreshNew()
   end
   self:RefreshPlayUI()
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionCell.ItemBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMusicCollectionCell:ItemBtnOnClick(go)
   if self.unlock then
-    (UISeasonExploreHelper.SetMusicAsClicked)((self._cfg).ID)
+    UISeasonExploreHelper.SetMusicAsClicked(self._cfg.ID)
     self:_RefreshNew()
   end
   if self.clickCb then
-    (self.clickCb)(self.idx, self.isUnlock)
+    self.clickCb(self.idx, self.isUnlock)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionCell.RefreshPlayUI = function(self)
-  -- function num : 0_5
-  (self.playingObj):SetActive(self._isPlaying)
-  ;
-  (self.pauseObj):SetActive(self._isPause)
+function UISeasonMusicCollectionCell:RefreshPlayUI()
+  self.playingObj:SetActive(self._isPlaying)
+  self.pauseObj:SetActive(self._isPause)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMusicCollectionCell._RefreshNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local isNew = not (UISeasonExploreHelper.IsMusicHasClicked)((self._cfg).ID)
-  ;
-  (self.new):SetActive(isNew)
+function UISeasonMusicCollectionCell:_RefreshNew()
+  local isNew = not UISeasonExploreHelper.IsMusicHasClicked(self._cfg.ID)
+  self.new:SetActive(isNew)
 end
-
-

@@ -1,47 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/room/game_room_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameRoomModule", GameModule)
 GameRoomModule = GameRoomModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GameRoomModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function GameRoomModule:Constructor()
   self.room_token = GroupToken:New()
   self.vkey = 0
   self.ip = ""
   self.port = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GameRoomModule.Init = function(self)
-  -- function num : 0_1
+function GameRoomModule:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GameRoomModule.CreateRoom = function(self, TT, room_type)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("sending CEventRequestCreateRoom")
+function GameRoomModule:CreateRoom(TT, room_type)
+  Log.debug("sending CEventRequestCreateRoom")
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestCreateRoom)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestCreateRoom)
   request.m_room_type = room_type
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("GameRoomModule:CreateRoom failed with !reply:Succ()")
+    Log.fatal("GameRoomModule:CreateRoom failed with !reply:Succ()")
     return res
   end
   local replyEvent = CEventReplyCreateRoom(reply.msg)
   if replyEvent == nil then
-    (Log.fatal)("GameRoomModule:CreateRoom failed with replyEvent == nil")
+    Log.fatal("GameRoomModule:CreateRoom failed with replyEvent == nil")
     return res
   end
   if replyEvent.m_ret ~= 0 then
-    (Log.fatal)("GameRoomModule:CreateRoom failed with ret=" .. replyEvent.m_ret)
+    Log.fatal("GameRoomModule:CreateRoom failed with ret=" .. replyEvent.m_ret)
     return res
   end
   res:SetSucc(true)
@@ -49,32 +36,28 @@ GameRoomModule.CreateRoom = function(self, TT, room_type)
   self.vkey = replyEvent.m_vkey
   self.ip = replyEvent.m_server_ip
   self.port = replyEvent.m_server_port
-  ;
-  (Log.debug)("GameRoomModule:CreateRoom succeeded, ip=" .. self.ip .. ":" .. self.port)
+  Log.debug("GameRoomModule:CreateRoom succeeded, ip=" .. self.ip .. ":" .. self.port)
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GameRoomModule.JoinRoom = function(self, TT, res, room_to_join)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.debug)("sending CEventRequestJoinRoom")
+function GameRoomModule:JoinRoom(TT, res, room_to_join)
+  Log.debug("sending CEventRequestJoinRoom")
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestJoinRoom)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestJoinRoom)
   request.m_room_to_join = room_to_join
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("GameRoomModule:JoinRoom failed with !reply:Succ()")
+    Log.fatal("GameRoomModule:JoinRoom failed with !reply:Succ()")
     return res
   end
   local replyEvent = CEventReplyJoinRoom(reply.msg)
   if replyEvent == nil then
-    (Log.fatal)("GameRoomModule:JoinRoom failed with replyEvent == nil")
+    Log.fatal("GameRoomModule:JoinRoom failed with replyEvent == nil")
     return res
   end
   if replyEvent.m_ret ~= 0 then
-    (Log.fatal)("GameRoomModule:JoinRoom failed with ret=" .. replyEvent.m_ret)
+    Log.fatal("GameRoomModule:JoinRoom failed with ret=" .. replyEvent.m_ret)
     return res
   end
   res:SetSucc(true)
@@ -85,14 +68,11 @@ GameRoomModule.JoinRoom = function(self, TT, res, room_to_join)
   return res
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GameRoomModule.LeaveRoom = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("sending CEventRequestLeaveRoom")
+function GameRoomModule:LeaveRoom(TT)
+  Log.debug("sending CEventRequestLeaveRoom")
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestLeaveRoom)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestLeaveRoom)
   local reply = self:Call(TT, request)
   if not reply:Succ() then
     return res
@@ -109,34 +89,28 @@ GameRoomModule.LeaveRoom = function(self, TT)
   return res
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GameRoomModule.StartMatch = function(self, TT, match_type, level_id)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.debug)("sending CEventRequestStartMatch")
+function GameRoomModule:StartMatch(TT, match_type, level_id)
+  Log.debug("sending CEventRequestStartMatch")
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestStartMatch)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestStartMatch)
   request.m_match_type = match_type
   request.m_level_id = level_id
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("GameRoomModule:StartMatch failed with !reply:Succ()")
+    Log.fatal("GameRoomModule:StartMatch failed with !reply:Succ()")
     return res
   end
   local replyEvent = CEventReplyStartMatch(reply.msg)
   if replyEvent == nil then
-    (Log.fatal)("GameRoomModule:StartMatch failed with replyEvent == nil")
+    Log.fatal("GameRoomModule:StartMatch failed with replyEvent == nil")
     return res
   end
   if replyEvent.m_ret ~= 0 then
-    (Log.fatal)("GameRoomModule:StartMatch failed with ret=" .. replyEvent.m_ret)
+    Log.fatal("GameRoomModule:StartMatch failed with ret=" .. replyEvent.m_ret)
     return res
   end
   res:SetSucc(true)
-  ;
-  (Log.debug)("GameRoomModule:StartMatch succeeded")
+  Log.debug("GameRoomModule:StartMatch succeeded")
   return res
 end
-
-

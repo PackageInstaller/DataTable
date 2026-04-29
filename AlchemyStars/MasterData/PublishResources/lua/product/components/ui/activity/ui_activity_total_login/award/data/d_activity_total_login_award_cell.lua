@@ -1,48 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_total_login/award/data/d_activity_total_login_award_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DActivityTotalLoginAwardCell", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-DActivityTotalLoginAwardCell.Constructor = function(self)
-  -- function num : 0_0
+function DActivityTotalLoginAwardCell:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTotalLoginAwardCell.Refresh = function(self, data)
-  -- function num : 0_1
+function DActivityTotalLoginAwardCell:Refresh(data)
   self._dayNum = 0
   self._items = {}
   self._state = 1
   self._isSpecial = false
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTotalLoginAwardCell.GetGoodsId = function(self)
-  -- function num : 0_2
+function DActivityTotalLoginAwardCell:GetGoodsId()
   return self.goodsId
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTotalLoginAwardCell.CanReceive = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  do return self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DActivityTotalLoginAwardCell:CanReceive()
+  return self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-DActivityTotalLoginAwardCell.Unlocked = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function DActivityTotalLoginAwardCell:Unlocked()
   if self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV or self._state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED then
     return true
   end
   return false
 end
-
-

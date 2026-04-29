@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/ai_result/ai_skill_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_container")
 _class("AISkillResult", Object)
 AISkillResult = AISkillResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AISkillResult.Constructor = function(self)
-  -- function num : 0_0
+function AISkillResult:Constructor()
   self._castSkillDir = nil
   self._resultContainer = nil
   self._deadChessPetEntityIDList = {}
@@ -19,102 +12,58 @@ AISkillResult.Constructor = function(self)
   self._casterEntityID = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.SetCasterEntityID = function(self, casterEntityID)
-  -- function num : 0_1
+function AISkillResult:SetCasterEntityID(casterEntityID)
   self._casterEntityID = casterEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.GetCasterEntityID = function(self)
-  -- function num : 0_2
+function AISkillResult:GetCasterEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.SetParallelID = function(self, parallelID)
-  -- function num : 0_3
+function AISkillResult:SetParallelID(parallelID)
   self._parallelID = parallelID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.GetParallelID = function(self)
-  -- function num : 0_4
+function AISkillResult:GetParallelID()
   return self._parallelID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.IsHadPlay = function(self)
-  -- function num : 0_5
+function AISkillResult:IsHadPlay()
   return self._hadPlay
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.HadPlay = function(self)
-  -- function num : 0_6
+function AISkillResult:HadPlay()
   self._hadPlay = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.SetCastSkillDir = function(self, dir)
-  -- function num : 0_7
+function AISkillResult:SetCastSkillDir(dir)
   self._castSkillDir = dir
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.GetCastSkillDir = function(self)
-  -- function num : 0_8
+function AISkillResult:GetCastSkillDir()
   return self._castSkillDir
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.GetResultContainer = function(self)
-  -- function num : 0_9
+function AISkillResult:GetResultContainer()
   return self._resultContainer
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.SetResultContainer = function(self, rc)
-  -- function num : 0_10
+function AISkillResult:SetResultContainer(rc)
   self._resultContainer = rc
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.SetAISkillResult_DeadChessList = function(self, idList)
-  -- function num : 0_11
+function AISkillResult:SetAISkillResult_DeadChessList(idList)
   self._deadChessPetEntityIDList = idList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.GetAISkillResult_DeadChessList = function(self)
-  -- function num : 0_12
+function AISkillResult:GetAISkillResult_DeadChessList()
   return self._deadChessPetEntityIDList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.SetAISkillResult_AntiChessResultList = function(self, resultList)
-  -- function num : 0_13
+function AISkillResult:SetAISkillResult_AntiChessResultList(resultList)
   self._antiChessResultList = resultList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AISkillResult.GetAISkillResult_AntiChessResultList = function(self)
-  -- function num : 0_14
+function AISkillResult:GetAISkillResult_AntiChessResultList()
   return self._antiChessResultList
 end
-
-

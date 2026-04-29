@@ -1,36 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_enemy_team_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_EnemyTeamGrid", SkillScopeCalculator_Base)
 SkillScopeCalculator_EnemyTeamGrid = SkillScopeCalculator_EnemyTeamGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_EnemyTeamGrid.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_EnemyTeamGrid:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local targetArea = {}
   local wholeArea = {}
   if casterEntity:HasSuperEntity() then
-    casterEntity = (casterEntity:SuperEntityComponent()):GetSuperEntity()
+    casterEntity = casterEntity:SuperEntityComponent():GetSuperEntity()
   end
-  local teamEntity = nil
-  if (casterEntity:EntityType()):IsPersonaSkillHolder() then
-    teamEntity = ((casterEntity:GetOwnerWorld()):Player()):GetLocalTeamEntity()
+  local teamEntity
+  if casterEntity:EntityType():IsPersonaSkillHolder() then
+    teamEntity = casterEntity:GetOwnerWorld():Player():GetLocalTeamEntity()
+  elseif casterEntity:EntityType():IsAutoBeadSkillHolder() then
+    teamEntity = casterEntity:GetOwnerWorld():Player():GetCurrentTeamEntity()
   else
-    if (casterEntity:EntityType()):IsAutoBeadSkillHolder() then
-      teamEntity = ((casterEntity:GetOwnerWorld()):Player()):GetCurrentTeamEntity()
-    else
-      teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-    end
+    teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
   end
-  local enemyEntity = (teamEntity:Team()):GetEnemyTeamEntity()
+  local enemyEntity = teamEntity:Team():GetEnemyTeamEntity()
   local enemyPos = enemyEntity:GetGridPosition()
-  local targetIds = {enemyEntity:GetID()}
+  local targetIds = {
+    enemyEntity:GetID()
+  }
   self:_InsertTargetGrid(targetArea, enemyPos, wholeArea)
   local result = SkillScopeResult:New(SkillScopeType.EnemyTeamGrid, enemyPos, targetArea, wholeArea, targetIds)
   return result
 end
-
-

@@ -1,56 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_each_trap_add_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 local TrapAddBloodParamType = {CasterMaxHP = 1}
 _enum("TrapAddBloodParamType", TrapAddBloodParamType)
 _class("SkillEffectParamEachTrapAddBlood", SkillEffectParamBase)
 SkillEffectParamEachTrapAddBlood = SkillEffectParamEachTrapAddBlood
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParamEachTrapAddBlood.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : TrapAddBloodParamType
+function SkillEffectParamEachTrapAddBlood:Constructor(t)
   self._trapId = t.trapId
   self._oneTrapAddValue = t.oneTrapAddValue
   self._baseAddValue = t.baseAddValue or 0
   self._addParamType = t.addParamType or TrapAddBloodParamType.CasterMaxHP
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamEachTrapAddBlood.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamEachTrapAddBlood:GetEffectType()
   return SkillEffectType.EachTrapAddBlood
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamEachTrapAddBlood.GetBaseAddValue = function(self)
-  -- function num : 0_2
+function SkillEffectParamEachTrapAddBlood:GetBaseAddValue()
   return self._baseAddValue
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamEachTrapAddBlood.GetOneTrapAddValue = function(self)
-  -- function num : 0_3
+function SkillEffectParamEachTrapAddBlood:GetOneTrapAddValue()
   return self._oneTrapAddValue
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamEachTrapAddBlood.GetAddParamType = function(self)
-  -- function num : 0_4
+function SkillEffectParamEachTrapAddBlood:GetAddParamType()
   return self._addParamType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParamEachTrapAddBlood.GetTrapId = function(self)
-  -- function num : 0_5
+function SkillEffectParamEachTrapAddBlood:GetTrapId()
   return self._trapId
 end
-
-

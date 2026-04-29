@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_increase_san_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayIncreaseSanInstruction", BaseInstruction)
 PlayIncreaseSanInstruction = PlayIncreaseSanInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayIncreaseSanInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayIncreaseSanInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local rsvcFeature = world:GetService("FeatureRender")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.IncreaseSan)
   if not resultArray then
-    return 
+    return
   end
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local old = result:GetOldSanValue()
     local current = result:GetNewSanValue()
     local val = result:GetVal()
@@ -24,9 +17,6 @@ PlayIncreaseSanInstruction.DoInstruction = function(self, TT, casterEntity, phas
     local modifyTimes = result:GetModifyTimes()
     rsvcFeature:NotifySanValueChange(current, old, val)
     local nt = NTSanValueChange:New(current, old, debtVal, modifyTimes)
-    ;
-    (world:GetService("PlayBuff")):PlayBuffView(TT, nt)
+    world:GetService("PlayBuff"):PlayBuffView(TT, nt)
   end
 end
-
-

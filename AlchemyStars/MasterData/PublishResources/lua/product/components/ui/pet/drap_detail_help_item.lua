@@ -1,30 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/drap_detail_help_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DrapDetailHelpItem", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-DrapDetailHelpItem.Constructor = function(self)
-  -- function num : 0_0
+function DrapDetailHelpItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-DrapDetailHelpItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function DrapDetailHelpItem:OnShow(uiParams)
   self._Icon = self:GetUIComponent("Image", "icon")
   self._uiDragAtlas = self:GetAsset("UIDragImages.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-DrapDetailHelpItem.SetData = function(self, iconName)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._Icon).sprite = (self._uiDragAtlas):GetSprite(iconName)
+function DrapDetailHelpItem:SetData(iconName)
+  self._Icon.sprite = self._uiDragAtlas:GetSprite(iconName)
 end
-
-

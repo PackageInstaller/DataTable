@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/level/ui_summer_activity_two_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoLevelItem", UICustomWidget)
 UISummerActivityTwoLevelItem = UISummerActivityTwoLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoLevelItem.OnShow = function(self)
-  -- function num : 0_0
+function UISummerActivityTwoLevelItem:OnShow()
   self._normalPanel = self:GetGameObject("NormalPanel")
   self._normalIcon = self:GetUIComponent("RawImageLoader", "NormalIcon")
   self._normalRed = self:GetGameObject("NormalRed")
@@ -26,211 +19,135 @@ UISummerActivityTwoLevelItem.OnShow = function(self)
   self._tipsLabel = self:GetUIComponent("UILocalizationText", "Tips")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelItem.Refresh = function(self, levelData)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoLevelItem:Refresh(levelData)
   self._levelData = levelData
-  self._levelType = (self._levelData):GetLevelType()
-  local status = (self._levelData):GetStatus()
+  self._levelType = self._levelData:GetLevelType()
+  local status = self._levelData:GetStatus()
   if self._levelType == UISummerActivity2LevelType.Normal then
-    (self._normalPanel):SetActive(true)
-    ;
-    (self._affixPanel):SetActive(false)
-    ;
-    (self._normalIcon):LoadImage(self:GetIconName(status))
+    self._normalPanel:SetActive(true)
+    self._affixPanel:SetActive(false)
+    self._normalIcon:LoadImage(self:GetIconName(status))
     if status == UISummerActivityTwoLevelStatus.UnComplete then
-      (self._normalRed):SetActive(true)
+      self._normalRed:SetActive(true)
     else
-      ;
-      (self._normalRed):SetActive(false)
+      self._normalRed:SetActive(false)
     end
     if status == UISummerActivityTwoLevelStatus.Complete then
-      (self._normalComplete):SetActive(true)
+      self._normalComplete:SetActive(true)
     else
-      ;
-      (self._normalComplete):SetActive(false)
+      self._normalComplete:SetActive(false)
     end
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._normalIndex).text = self:GetLevelName()
+    self._normalIndex.text = self:GetLevelName()
+  elseif self._levelType == UISummerActivity2LevelType.Affix then
+    self._normalPanel:SetActive(false)
+    self._affixPanel:SetActive(true)
+    self._scoreIcon:LoadImage(UISummerActivityTwoConst.EntryIcon)
+    self._score.text = self._levelData:GetMaxScore()
+    if status == UISummerActivityTwoLevelStatus.UnComplete then
+      self._affixRed:SetActive(true)
+    else
+      self._affixRed:SetActive(false)
+    end
+    self._affixIcon:LoadImage(self:GetIconName(status))
+    self._affixName:SetText(self:GetLevelName())
+    if status == UISummerActivityTwoLevelStatus.UnOpen then
+      self._scoreIconGo:SetActive(false)
+      self._scoreGo:SetActive(false)
+      self._tipsGo:SetActive(true)
+      self._tipsLabel.text = StringTable.Get("str_summer_activity_two_level_un_open_tips")
+    elseif status == UISummerActivityTwoLevelStatus.Complete then
+      self._scoreIconGo:SetActive(true)
+      self._scoreGo:SetActive(true)
+      self._tipsGo:SetActive(false)
+    elseif status == UISummerActivityTwoLevelStatus.UnComplete then
+      self._scoreIconGo:SetActive(false)
+      self._scoreGo:SetActive(false)
+      self._tipsGo:SetActive(true)
+      self._tipsLabel.text = StringTable.Get("str_summer_activity_two_level_unstart")
+    end
   else
-    if self._levelType == UISummerActivity2LevelType.Affix then
-      (self._normalPanel):SetActive(false)
-      ;
-      (self._affixPanel):SetActive(true)
-      ;
-      (self._scoreIcon):LoadImage(UISummerActivityTwoConst.EntryIcon)
-      -- DECOMPILER ERROR at PC80: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._score).text = (self._levelData):GetMaxScore()
-      if status == UISummerActivityTwoLevelStatus.UnComplete then
-        (self._affixRed):SetActive(true)
-      else
-        ;
-        (self._affixRed):SetActive(false)
-      end
-      ;
-      (self._affixIcon):LoadImage(self:GetIconName(status))
-      ;
-      (self._affixName):SetText(self:GetLevelName())
-      if status == UISummerActivityTwoLevelStatus.UnOpen then
-        (self._scoreIconGo):SetActive(false)
-        ;
-        (self._scoreGo):SetActive(false)
-        ;
-        (self._tipsGo):SetActive(true)
-        -- DECOMPILER ERROR at PC126: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._tipsLabel).text = (StringTable.Get)("str_summer_activity_two_level_un_open_tips")
-      else
-        if status == UISummerActivityTwoLevelStatus.Complete then
-          (self._scoreIconGo):SetActive(true)
-          ;
-          (self._scoreGo):SetActive(true)
-          ;
-          (self._tipsGo):SetActive(false)
-        else
-          if status == UISummerActivityTwoLevelStatus.UnComplete then
-            (self._scoreIconGo):SetActive(false)
-            ;
-            (self._scoreGo):SetActive(false)
-            ;
-            (self._tipsGo):SetActive(true)
-            -- DECOMPILER ERROR at PC166: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._tipsLabel).text = (StringTable.Get)("str_summer_activity_two_level_unstart")
-          end
-        end
-      end
-    else
-      ;
-      (self._normalPanel):SetActive(false)
-      ;
-      (self._affixPanel):SetActive(false)
-    end
+    self._normalPanel:SetActive(false)
+    self._affixPanel:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelItem.RefreshRemainTime = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UISummerActivityTwoLevelItem:RefreshRemainTime()
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
-  local seconds = (math.floor)((self._levelData):GetTimes() - nowTime)
+  local seconds = math.floor(self._levelData:GetTimes() - nowTime)
   if seconds < 0 then
     seconds = 0
-    ;
-    (self._levelData):CalStatus()
+    self._levelData:CalStatus()
     self:Refresh(self._levelData)
-    return 
+    return
   end
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_summer_activity_two_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_summer_activity_two_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_summer_activity_two_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_summer_activity_two_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_summer_activity_two_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get("str_summer_activity_two_minus", minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_summer_activity_two_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)("str_summer_activity_two_minus", minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_summer_activity_two_less_minus")
-          return timeStr
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_summer_activity_two_less_minus")
   end
+  return timeStr
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelItem.BtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._levelData):GetStatus() == UISummerActivityTwoLevelStatus.UnOpen then
-    if (self._levelData):IsPreLevelCondition() then
-      (ToastManager.ShowToast)((StringTable.Get)("str_summer_activity_two_level_unlock_tips"))
+function UISummerActivityTwoLevelItem:BtnOnClick()
+  if self._levelData:GetStatus() == UISummerActivityTwoLevelStatus.UnOpen then
+    if self._levelData:IsPreLevelCondition() then
+      ToastManager.ShowToast(StringTable.Get("str_summer_activity_two_level_unlock_tips"))
     else
       local remainTimeStr = self:RefreshRemainTime()
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_summer_activity_two_normal_level_unopen_tips", remainTimeStr))
+      ToastManager.ShowToast(StringTable.Get("str_summer_activity_two_normal_level_unopen_tips", remainTimeStr))
     end
-    do
-      do return  end
-      if (self._levelData):GetLevelType() == UISummerActivity2LevelType.Normal then
-        self:ShowDialog("UISummerActivityTwoNormalLevelDetail", self._levelData)
-      else
-        if (self._levelData):GetLevelType() == UISummerActivity2LevelType.Affix then
-          self:ShowDialog("UISummerActivityTwoLevelDetail", self._levelData)
-        end
-      end
-    end
+    return
+  end
+  if self._levelData:GetLevelType() == UISummerActivity2LevelType.Normal then
+    self:ShowDialog("UISummerActivityTwoNormalLevelDetail", self._levelData)
+  elseif self._levelData:GetLevelType() == UISummerActivity2LevelType.Affix then
+    self:ShowDialog("UISummerActivityTwoLevelDetail", self._levelData)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelItem.NormalBtnOnClick = function(self)
-  -- function num : 0_4
+function UISummerActivityTwoLevelItem:NormalBtnOnClick()
   self:BtnOnClick()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelItem.AffixBtnOnClick = function(self)
-  -- function num : 0_5
+function UISummerActivityTwoLevelItem:AffixBtnOnClick()
   self:BtnOnClick()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelItem.GetIconName = function(self, status)
-  -- function num : 0_6 , upvalues : _ENV
+function UISummerActivityTwoLevelItem:GetIconName(status)
   if status == UISummerActivityTwoLevelStatus.UnOpen then
-    return (self._levelData):GetLevelIconUnOpen()
-  else
-    if status == UISummerActivityTwoLevelStatus.Complete then
-      return (self._levelData):GetLevelIconComplete()
-    else
-      if status == UISummerActivityTwoLevelStatus.UnComplete then
-        return (self._levelData):GetLevelIconUnComplete()
-      end
-    end
+    return self._levelData:GetLevelIconUnOpen()
+  elseif status == UISummerActivityTwoLevelStatus.Complete then
+    return self._levelData:GetLevelIconComplete()
+  elseif status == UISummerActivityTwoLevelStatus.UnComplete then
+    return self._levelData:GetLevelIconUnComplete()
   end
   return ""
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelItem.GetLevelName = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISummerActivityTwoLevelItem:GetLevelName()
   if self._levelType == UISummerActivity2LevelType.Normal then
-    return (self._levelData):GetLevelGroup() .. "-" .. (self._levelData):GetSortIndex()
+    return self._levelData:GetLevelGroup() .. "-" .. self._levelData:GetSortIndex()
+  elseif self._levelType == UISummerActivity2LevelType.Affix then
+    return self._levelData:GetName() .. " " .. self._levelData:GetLevelGroup() .. "-" .. self._levelData:GetSortIndex()
   else
-    if self._levelType == UISummerActivity2LevelType.Affix then
-      return (self._levelData):GetName() .. " " .. (self._levelData):GetLevelGroup() .. "-" .. (self._levelData):GetSortIndex()
-    else
-      return (self._levelData):GetName()
-    end
+    return self._levelData:GetName()
   end
 end
-
-

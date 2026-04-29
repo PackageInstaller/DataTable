@@ -1,59 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/l2r_loading_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("L2R_LoadingResult", Object)
 L2R_LoadingResult = L2R_LoadingResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-L2R_LoadingResult.Constructor = function(self)
-  -- function num : 0_0
+function L2R_LoadingResult:Constructor()
   self._teamCreationResult = {}
   self._monsterResultList = {}
   self._chessPetCreationResult = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_LoadingResult.GetTeamCreationResult = function(self)
-  -- function num : 0_1
+function L2R_LoadingResult:GetTeamCreationResult()
   return self._teamCreationResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_LoadingResult.SetTeamCreationResult = function(self, teamRes)
-  -- function num : 0_2
+function L2R_LoadingResult:SetTeamCreationResult(teamRes)
   self._teamCreationResult = teamRes
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_LoadingResult.SetLoadMonsterResultList = function(self, resList)
-  -- function num : 0_3
+function L2R_LoadingResult:SetLoadMonsterResultList(resList)
   self._monsterResultList = resList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_LoadingResult.GetLoadMonsterResultList = function(self)
-  -- function num : 0_4
+function L2R_LoadingResult:GetLoadMonsterResultList()
   return self._monsterResultList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_LoadingResult.GetChessPetCreationResult = function(self)
-  -- function num : 0_5
+function L2R_LoadingResult:GetChessPetCreationResult()
   return self._chessPetCreationResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_LoadingResult.SetChessPetCreationResult = function(self, res)
-  -- function num : 0_6
+function L2R_LoadingResult:SetChessPetCreationResult(res)
   self._chessPetCreationResult = res
 end
-
-

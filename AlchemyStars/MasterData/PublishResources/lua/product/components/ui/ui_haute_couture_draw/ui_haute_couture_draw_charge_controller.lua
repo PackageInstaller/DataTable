@@ -1,47 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_haute_couture_draw_charge_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawChargeController", UIController)
 UIHauteCoutureDrawChargeController = UIHauteCoutureDrawChargeController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawChargeController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHauteCoutureDrawChargeController:LoadDataOnEnter(TT, res, uiParams)
   self._buyComponet = uiParams[1]
-  ;
-  (self._buyComponet):GetAllGiftLocalPrice()
+  self._buyComponet:GetAllGiftLocalPrice()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawChargeController:OnShow(uiParams)
   local btns = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   local currency = self:GetUIComponent("UISelectObjectPath", "currencyMenu")
   self._topTips = currency:SpawnObject("UICurrencyMenu")
-  ;
-  (self._topTips):SetData({RoleAssetID.RoleAssetDrawCardSeniorSkin}, true)
-  ;
-  (self._topTips):ShowHideTSFBtn(true)
-  local ids = (self._buyComponet):GetAllGiftIDByType(CampaignGiftType.ECGT_SENIOR_SKIN)
-  local onclick = function(id)
-    -- function num : 0_1_1 , upvalues : self
+  self._topTips:SetData({
+    RoleAssetID.RoleAssetDrawCardSeniorSkin
+  }, true)
+  self._topTips:ShowHideTSFBtn(true)
+  local ids = self._buyComponet:GetAllGiftIDByType(CampaignGiftType.ECGT_SENIOR_SKIN)
+  
+  local function onclick(id)
     self:buyGift(id)
   end
-
+  
   local itemPool = self:GetUIComponent("UISelectObjectPath", "Content")
-  self._items = itemPool:SpawnObjects("UISeniorSkinGiftItem", (table.count)(ids))
-  local closeTime = ((self._buyComponet):GetComponentInfo()).m_close_time
-  for i,uiItem in ipairs(self._items) do
+  self._items = itemPool:SpawnObjects("UISeniorSkinGiftItem", table.count(ids))
+  local closeTime = self._buyComponet:GetComponentInfo().m_close_time
+  for i, uiItem in ipairs(self._items) do
     uiItem:SetData(ids[i], onclick, closeTime)
   end
   self:refreshPrice()
@@ -49,52 +35,36 @@ UIHauteCoutureDrawChargeController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.ActivityCurrencyBuySuccess, self.OnBuySuccess)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeController.refreshPrice = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for i,uiItem in ipairs(self._items) do
-    local price = (self._buyComponet):GetGiftPriceForShowById(uiItem:GetID())
+function UIHauteCoutureDrawChargeController:refreshPrice()
+  for i, uiItem in ipairs(self._items) do
+    local price = self._buyComponet:GetGiftPriceForShowById(uiItem:GetID())
     uiItem:SetPrice(price)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeController.maskOnClick = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawChargeController:maskOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeController.buyGift = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHauteCoutureDrawChargeController:buyGift(id)
   local type = CampaignGiftType.ECGT_SENIOR_SKIN
   self._buyID = id
-  ;
-  (Log.debug)("请求购买礼包:", self._buyID)
-  ;
-  (self._buyComponet):BuyGift(id, 1, type)
+  Log.debug("请求购买礼包:", self._buyID)
+  self._buyComponet:BuyGift(id, 1, type)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeController.OnBuySuccess = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.debug)("购买礼包成功:", self._buyID)
-  local cfg = ((Cfg.cfg_component_buy_gift)({GiftID = self._buyID}))[1]
+function UIHauteCoutureDrawChargeController:OnBuySuccess(id)
+  Log.debug("购买礼包成功:", self._buyID)
+  local cfg = Cfg.cfg_component_buy_gift({
+    GiftID = self._buyID
+  })[1]
   self._buyID = nil
-  local id = ((cfg.ExtraAward)[1])[1]
-  local count = ((cfg.ExtraAward)[1])[2]
+  local id = cfg.ExtraAward[1][1]
+  local count = cfg.ExtraAward[1][2]
   local asset = RoleAsset:New()
   asset.assetid = id
   asset.count = count
   local awards = {asset}
-  self:ShowDialog("UIHauteCoutureGetItemController", awards, (StringTable.Get)("str_pay_gain_goods"), true, function()
-    -- function num : 0_5_0
-  end
-)
+  self:ShowDialog("UIHauteCoutureGetItemController", awards, StringTable.Get("str_pay_gain_goods"), true, function()
+  end)
 end
-
-

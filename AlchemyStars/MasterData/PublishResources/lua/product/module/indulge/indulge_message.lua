@@ -1,24 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/indulge/indulge_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
 local indulgeMessageDef = {CLSID_CEventNotifyIndulgeState = 8000}
-;
-(table.append)(MessageDef, indulgeMessageDef)
+table.append(MessageDef, indulgeMessageDef)
 _class("CEventNotifyIndulgeState", CSvrPushEvent)
 CEventNotifyIndulgeState = CEventNotifyIndulgeState
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventNotifyIndulgeState.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CEventNotifyIndulgeState:Constructor()
   self.info = MobileindulgeInfo:New()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventNotifyIndulgeState._proto = {
-[1] = {"info", "MobileindulgeInfo"}
+  [1] = {
+    "info",
+    "MobileindulgeInfo"
+  }
 }
-

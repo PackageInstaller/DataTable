@@ -1,113 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/item/core/item_container.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ItemContainer", Object)
 ItemContainer = ItemContainer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ItemContainer.Constructor = function(self)
-  -- function num : 0_0
+function ItemContainer:Constructor()
   self.m_items = {}
   self.m_itemsRefByTplID = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemContainer.Init = function(self)
-  -- function num : 0_1
+function ItemContainer:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemContainer.AddItem = function(self, item)
-  -- function num : 0_2 , upvalues : _ENV
+function ItemContainer:AddItem(item)
   if not item then
-    (Log.fatal)("not item")
+    Log.fatal("not item")
     return false
   end
   if self:FindItem(item:GetID()) then
-    (Log.fatal)("item exists ", item:GetID())
+    Log.fatal("item exists ", item:GetID())
     return false
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_items)[item:GetID()] = item
+  self.m_items[item:GetID()] = item
   local tplid = item:GetTemplateID()
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self.m_itemsRefByTplID)[tplid] then
-    (self.m_itemsRefByTplID)[tplid] = {item}
+  if not self.m_itemsRefByTplID[tplid] then
+    self.m_itemsRefByTplID[tplid] = {item}
   else
-    ;
-    (table.insert)((self.m_itemsRefByTplID)[tplid], item)
+    table.insert(self.m_itemsRefByTplID[tplid], item)
   end
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemContainer.DelItem = function(self, pst_id)
-  -- function num : 0_3 , upvalues : _ENV
+function ItemContainer:DelItem(pst_id)
   if not self:FindItem(pst_id) then
     return false
   end
-  local item = (self.m_items)[pst_id]
-  ;
-  (table.removev)((self.m_itemsRefByTplID)[item:GetTemplateID()], item)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_items)[pst_id] = nil
+  local item = self.m_items[pst_id]
+  table.removev(self.m_itemsRefByTplID[item:GetTemplateID()], item)
+  self.m_items[pst_id] = nil
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemContainer.FindItem = function(self, pst_id)
-  -- function num : 0_4
-  return (self.m_items)[pst_id]
+function ItemContainer:FindItem(pst_id)
+  return self.m_items[pst_id]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemContainer.FindItems = function(self, template_id, item_list)
-  -- function num : 0_5
-  local list = (self.m_itemsRefByTplID)[template_id]
+function ItemContainer:FindItems(template_id, item_list)
+  local list = self.m_itemsRefByTplID[template_id]
   if not list then
-    return 
+    return
   end
   for i = 1, #list do
-    item_list[(list[i]):GetID()] = list[i]
+    item_list[list[i]:GetID()] = list[i]
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemContainer.GetItemCount = function(self, template_id)
-  -- function num : 0_6
-  local list = (self.m_itemsRefByTplID)[template_id]
+function ItemContainer:GetItemCount(template_id)
+  local list = self.m_itemsRefByTplID[template_id]
   if not list then
     return 0
   end
   local sum = 0
   for i = 1, #list do
-    sum = sum + (list[i]):GetCount()
+    sum = sum + list[i]:GetCount()
   end
   return sum
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemContainer.GetAllItemInfo = function(self, item_list, filter)
-  -- function num : 0_7 , upvalues : _ENV
-  for k,v in pairs(self.m_items) do
+function ItemContainer:GetAllItemInfo(item_list, filter)
+  for k, v in pairs(self.m_items) do
     if not filter or filter(v) then
-      (table.insert)(item_list, v)
+      table.insert(item_list, v)
     end
   end
 end
-
-

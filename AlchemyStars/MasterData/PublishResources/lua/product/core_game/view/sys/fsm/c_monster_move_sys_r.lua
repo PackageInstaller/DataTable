@@ -1,191 +1,125 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_monster_move_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_move_system")
 _class("ClientMonsterMoveSystem_Render", MonsterMoveSystem)
 ClientMonsterMoveSystem_Render = ClientMonsterMoveSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientMonsterMoveSystem_Render._DoRenderHidePetInfo = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("[refresh] HidePetInfo start ")
-  local renderEntitySvc = (self._world):GetService("RenderEntity")
+function ClientMonsterMoveSystem_Render:_DoRenderHidePetInfo(TT)
+  Log.debug("[refresh] HidePetInfo start ")
+  local renderEntitySvc = self._world:GetService("RenderEntity")
   renderEntitySvc:ShowUITurnTips(false)
-  ;
-  (self._renderBattleService):HideUIPetInfo(TT)
-  local guideService = (self._world):GetService("Guide")
+  self._renderBattleService:HideUIPetInfo(TT)
+  local guideService = self._world:GetService("Guide")
   local guideTaskId = guideService:Trigger(GameEventType.GuideRound, GuideRoundTurn.MonsterTurn)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderTrapState = function(self, TT, calcStateTraps)
-  -- function num : 0_1 , upvalues : _ENV
-  local trapServiceRender = (self._world):GetService("TrapRender")
+function ClientMonsterMoveSystem_Render:_DoRenderTrapState(TT, calcStateTraps)
+  local trapServiceRender = self._world:GetService("TrapRender")
   trapServiceRender:RenderTrapState(TT, TrapDestroyType.DestroyByRound, calcStateTraps)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderShowPetInfo = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowPetInfo, 1)
+function ClientMonsterMoveSystem_Render:_DoRenderShowPetInfo(TT)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowPetInfo, 1)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderInnerStoryMonsterTurn = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local innerStoryService = (self._world):GetService("InnerStory")
+function ClientMonsterMoveSystem_Render:_DoRenderInnerStoryMonsterTurn(TT)
+  local innerStoryService = self._world:GetService("InnerStory")
   if innerStoryService:CheckStoryBanner(StoryShowType.WaveAndRoundBeginMonsterRound) then
-    (InnerGameHelperRender:GetInstance()):IsUIBannerComplete(TT)
+    InnerGameHelperRender:GetInstance():IsUIBannerComplete(TT)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderMonsterBuff = function(self, TT)
-  -- function num : 0_4
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function ClientMonsterMoveSystem_Render:_DoRenderMonsterBuff(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayMonsterTurnBuff(TT, false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderMonsterBuffDelayed = function(self, TT)
-  -- function num : 0_5
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function ClientMonsterMoveSystem_Render:_DoRenderMonsterBuffDelayed(TT)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayMonsterTurnBuff(TT, true)
   playBuffSvc:PlayMonsterTurnDelayedBuff(TT)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderNotifyMonsterTurnEnd = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTMonsterTurnEnd:New())
+function ClientMonsterMoveSystem_Render:_DoRenderNotifyMonsterTurnEnd(TT)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTMonsterTurnEnd:New())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderShowInnerStory = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
-  local innerStoryService = (self._world):GetService("InnerStory")
+function ClientMonsterMoveSystem_Render:_DoRenderShowInnerStory(TT)
+  local innerStoryService = self._world:GetService("InnerStory")
   if innerStoryService:CheckStoryBanner(StoryShowType.WaveAndRoundAfterMonsterRound) then
-    (InnerGameHelperRender:GetInstance()):IsUIBannerComplete(TT)
+    InnerGameHelperRender:GetInstance():IsUIBannerComplete(TT)
   end
   innerStoryService:CheckStoryTips(StoryShowType.WaveAndRoundAfterMonsterRound)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderMonsterLockHPState = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  local PlayBuffService = (self._world):GetService("PlayBuff")
+function ClientMonsterMoveSystem_Render:_DoRenderMonsterLockHPState(TT)
+  local PlayBuffService = self._world:GetService("PlayBuff")
   PlayBuffService:RefreshLockHPView(TT, GameStateID.MonsterTurn)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._WaitBeHitSkillFinish = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function ClientMonsterMoveSystem_Render:_WaitBeHitSkillFinish(TT)
   local count = 0
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local renderState = previewEntity:RenderState()
-  do
-    if renderState and renderState:GetRenderStateType() == RenderStateType.WaitPlayTask then
-      local taskID = renderState:GetRenderStateParam()
-      while not (TaskHelper:GetInstance()):IsTaskFinished(taskID) do
-        YIELD(TT)
-        count = count + 1
-      end
+  if renderState and renderState:GetRenderStateType() == RenderStateType.WaitPlayTask then
+    local taskID = renderState:GetRenderStateParam()
+    while not TaskHelper:GetInstance():IsTaskFinished(taskID) do
+      YIELD(TT)
+      count = count + 1
     end
-    if count ~= 0 then
-      (Log.warn)("HPLock Wait Count:", count)
-    end
+  end
+  if count ~= 0 then
+    Log.warn("HPLock Wait Count:", count)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderPlayMonsterAction = function(self, TT)
-  -- function num : 0_10
-  local monsterMoveServiceRender = (self.world):GetService("MonsterMoveRender")
+function ClientMonsterMoveSystem_Render:_DoRenderPlayMonsterAction(TT)
+  local monsterMoveServiceRender = self.world:GetService("MonsterMoveRender")
   monsterMoveServiceRender:_DoRenderPlayMonsterAction(TT)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderTrapBeforeMonster = function(self, TT)
-  -- function num : 0_11
-  local monsterMoveServiceRender = (self.world):GetService("MonsterMoveRender")
+function ClientMonsterMoveSystem_Render:_DoRenderTrapBeforeMonster(TT)
+  local monsterMoveServiceRender = self.world:GetService("MonsterMoveRender")
   monsterMoveServiceRender:_DoRenderTrapBeforeMonster(TT)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderTrapAfterMonster = function(self, TT)
-  -- function num : 0_12
-  local monsterMoveServiceRender = (self.world):GetService("MonsterMoveRender")
+function ClientMonsterMoveSystem_Render:_DoRenderTrapAfterMonster(TT)
+  local monsterMoveServiceRender = self.world:GetService("MonsterMoveRender")
   monsterMoveServiceRender:_DoRenderTrapAfterMonster(TT)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderHideBesiegedTips = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ShowHideBesiegedTips, false)
+function ClientMonsterMoveSystem_Render:_DoRenderHideBesiegedTips(TT)
+  self._world:EventDispatcher():Dispatch(GameEventType.ShowHideBesiegedTips, false)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderInWave = function(self, TT, traps, monsters)
-  -- function num : 0_14
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ClientMonsterMoveSystem_Render:_DoRenderInWave(TT, traps, monsters)
+  local utilDataSvc = self._world:GetService("UtilData")
   local waveNum = utilDataSvc:GetStatCurWaveIndex()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local interval = levelConfigData:GetWaveShowInterval(waveNum)
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:PlaySpawnInWave(TT, traps, monsters, interval)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._UpdateTrapGridRound = function(self, TT)
-  -- function num : 0_15
-  local svc = (self._world):GetService("TrapRender")
+function ClientMonsterMoveSystem_Render:_UpdateTrapGridRound(TT)
+  local svc = self._world:GetService("TrapRender")
   svc:UpdateTrapGridRound()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderWorldBossStageBuff = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.WorldBossBattle) == MatchType.MT_WorldBoss then
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTWorldBossStageSwitch:New())
+function ClientMonsterMoveSystem_Render:_DoRenderWorldBossStageBuff(TT)
+  if self._world:MatchType(GetMatchTypeType.WorldBossBattle) == MatchType.MT_WorldBoss then
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, NTWorldBossStageSwitch:New())
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoPrintAIDebugInfo = function(self, TT)
-  -- function num : 0_17
-  local aiLogger = (self._world):GetAILogger()
+function ClientMonsterMoveSystem_Render:_DoPrintAIDebugInfo(TT)
+  local aiLogger = self._world:GetAILogger()
   aiLogger:SaveAILog()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientMonsterMoveSystem_Render._DoRenderBuffBeforeTrapRoundCount = function(self, TT, teamEntity)
-  -- function num : 0_18 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function ClientMonsterMoveSystem_Render:_DoRenderBuffBeforeTrapRoundCount(TT, teamEntity)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTMonsterRoundBeforeTrapRoundCount:New(teamEntity))
 end
-
-

@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_main/ui_quest_type_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestTypeBtnItem", UICustomWidget)
 UIQuestTypeBtnItem = UIQuestTypeBtnItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestTypeBtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestTypeBtnItem:OnShow(uiParams)
   self._state = 0
-  self._atlas = (self:RootUIOwner()):GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
-  self._module = (GameGlobal.GetModule)(QuestModule)
+  self._atlas = self:RootUIOwner():GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
+  self._module = GameGlobal.GetModule(QuestModule)
   if self._module == nil then
-    (Log.fatal)("[quest] erro --> module id nil !")
-    return 
+    Log.fatal("[quest] erro --> module id nil !")
+    return
   end
   self:AttachEvent(GameEventType.ItemCountChanged, self.CheckQuestRedPoint)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.CampaignComponentStepChange)
@@ -22,73 +15,49 @@ UIQuestTypeBtnItem.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.RolePropertyChanged, self.CheckQuestRedPoint)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem.SetData = function(self, index, cfg, callback)
-  -- function num : 0_1
+function UIQuestTypeBtnItem:SetData(index, cfg, callback)
   self:_GetComponents()
   self._index = index
   self._cfg = cfg
-  self._type = (self._cfg).ClientType
+  self._type = self._cfg.ClientType
   self._callback = callback
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._typeTex):SetText((StringTable.Get)((self._cfg).TypeName))
-  ;
-  (self._typeTex_select):SetText((StringTable.Get)((self._cfg).TypeName))
-  ;
-  (self._typeTex):SetLayoutDirty()
-  ;
-  (self._typeTexEn):SetText((self._cfg).TypeNameEn)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._icon).sprite = (self._atlas):GetSprite((self._cfg).Icon)
+function UIQuestTypeBtnItem:_OnValue()
+  self._typeTex:SetText(StringTable.Get(self._cfg.TypeName))
+  self._typeTex_select:SetText(StringTable.Get(self._cfg.TypeName))
+  self._typeTex:SetLayoutDirty()
+  self._typeTexEn:SetText(self._cfg.TypeNameEn)
+  self._icon.sprite = self._atlas:GetSprite(self._cfg.Icon)
   self:CheckQuestRedPoint()
-  ;
-  (self._growth):SetActive(false)
+  self._growth:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem.Time2Str = function(self, time)
-  -- function num : 0_3 , upvalues : _ENV
-  local str = (math.ceil)(time / 60 / 60 / 24) .. (StringTable.Get)("str_quest_base_growth_time_day_str")
+function UIQuestTypeBtnItem:Time2Str(time)
+  local str = math.ceil(time / 60 / 60 / 24) .. StringTable.Get("str_quest_base_growth_time_day_str")
   return str
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem.CheckNew = function(self, enum)
-  -- function num : 0_4
-  return (self._module):GetNewPoint(enum)
+function UIQuestTypeBtnItem:CheckNew(enum)
+  return self._module:GetNewPoint(enum)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem.CheckRed = function(self, enum)
-  -- function num : 0_5 , upvalues : _ENV
-  local redInfo = (self._module):GetRedPoint()
-  -- DECOMPILER ERROR at PC18: Unhandled construct in 'MakeBoolean' P1
-
-  -- DECOMPILER ERROR at PC18: Unhandled construct in 'MakeBoolean' P1
-
-  if redInfo[enum] and type(redInfo[enum]) == "table" and (table.count)(redInfo[enum]) > 0 then
-    return true
+function UIQuestTypeBtnItem:CheckRed(enum)
+  local redInfo = self._module:GetRedPoint()
+  if redInfo[enum] then
+    if type(redInfo[enum]) == "table" then
+      if table.count(redInfo[enum]) > 0 then
+        return true
+      end
+    else
+      return true
+    end
   end
-  do return true end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem._GetComponents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIQuestTypeBtnItem:_GetComponents()
   self._typeTex = self:GetUIComponent("UILocalizedTMP", "typeTex")
   self._typeTexEn = self:GetUIComponent("UILocalizationText", "typeTexEn")
   self._icon = self:GetUIComponent("Image", "icon")
@@ -101,77 +70,43 @@ UIQuestTypeBtnItem._GetComponents = function(self)
   self._remainingTime = self:GetUIComponent("UILocalizationText", "remainingTime")
   self._remainingImg = self:GetUIComponent("Image", "remainingImg")
   self._redPos = self:GetUIComponent("RectTransform", "redPos")
-  ;
-  (self._select):SetActive(false)
+  self._select:SetActive(false)
   self._typeTex_select = self:GetUIComponent("UILocalizedTMP", "typeTex_select")
-  ;
-  ((self._typeTex_select).gameObject):SetActive(false)
+  self._typeTex_select.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem.Select = function(self, select)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIQuestTypeBtnItem:Select(select)
   if select then
-    (self._icon).sprite = (self._atlas):GetSprite((self._cfg).SelectIcon)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._redRect).anchoredPosition = self._selectedRedLocalPos
+    self._icon.sprite = self._atlas:GetSprite(self._cfg.SelectIcon)
+    self._redRect.anchoredPosition = self._selectedRedLocalPos
   else
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._icon).sprite = (self._atlas):GetSprite((self._cfg).Icon)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._redRect).anchoredPosition = self._initRedLocalPos
+    self._icon.sprite = self._atlas:GetSprite(self._cfg.Icon)
+    self._redRect.anchoredPosition = self._initRedLocalPos
   end
-  ;
-  (self._select):SetActive(select)
-  ;
-  ((self._typeTex_select).gameObject):SetActive(select)
+  self._select:SetActive(select)
+  self._typeTex_select.gameObject:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem.bgOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIQuestTypeBtnItem:bgOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self._callback then
-    (self._callback)(self._index, (self._cfg).ClientType)
+    self._callback(self._index, self._cfg.ClientType)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem.OnHide = function(self)
-  -- function num : 0_9
+function UIQuestTypeBtnItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem.CampaignComponentStepChange = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIQuestTypeBtnItem:CampaignComponentStepChange()
   if self._type == ClientQuestType.QT_Season then
-    (self._module):CalcRedPoint()
+    self._module:CalcRedPoint()
     self:CheckQuestRedPoint()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestTypeBtnItem.CheckQuestRedPoint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIQuestTypeBtnItem:CheckQuestRedPoint()
   local new = self:CheckNew(self._type)
   local red = self:CheckRed(self._type)
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "questNew", "red")
-  ;
-  (self._red):SetActive(red)
+  UIWidgetHelper.SetNewAndReds(self, new, red, "questNew", "red")
+  self._red:SetActive(red)
 end
-
-

@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/world_boss/world_boss_enter_battle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("WorldBoss_EnterBattle", Common_AsyncBase)
 WorldBoss_EnterBattle = WorldBoss_EnterBattle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WorldBoss_EnterBattle.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function WorldBoss_EnterBattle:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
+  local game = GameGlobal.GetModule(GameMatchModule)
   local missionID = runData:GetMissionID()
   local createInfo = game:GetMatchCreateInfo(MatchType.MT_WorldBoss, {missionID})
   for i = 1, 3 do
@@ -19,14 +12,11 @@ WorldBoss_EnterBattle.TaskFunc = function(self, TT, status)
     if res:GetSucc() then
       status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-      return 
+      return
     end
     YIELD(TT, 10000)
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-  ;
-  (self._manager):Exception_DeclareExceptionThrew("对局创建失败")
+  self._manager:Exception_DeclareExceptionThrew("对局创建失败")
 end
-
-

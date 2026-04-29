@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/role_turn_result_state_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("RoleTurnResultStateSystem", MainStateSystem)
 RoleTurnResultStateSystem = RoleTurnResultStateSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RoleTurnResultStateSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RoleTurnResultStateSystem:_GetMainStateID()
   return GameStateID.RoleTurnResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
+function RoleTurnResultStateSystem:_OnMainStateEnter(TT)
   self:_DoLogicNotify()
   self:_DoRenderPlayNotify(TT)
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoLogicNormalAttackMonsterDead()
   self:_DoRenderNormalAttackMonsterDead(TT)
   self:_WaitBeHitSkillFinish(TT)
@@ -28,82 +18,51 @@ RoleTurnResultStateSystem._OnMainStateEnter = function(self, TT)
   self:_DoRoleTurnResultEnd(teamEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._DoLogicNotify = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self._world):GetService("Trigger")):Notify(NTRoleTurnResultState:New())
+function RoleTurnResultStateSystem:_DoLogicNotify()
+  self._world:GetService("Trigger"):Notify(NTRoleTurnResultState:New())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._DoLogicNormalAttackMonsterDead = function(self)
-  -- function num : 0_3
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
+function RoleTurnResultStateSystem:_DoLogicNormalAttackMonsterDead()
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
   sMonsterShowLogic:DoAllMonsterDeadLogic()
-  local deadGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).DeadMark)
+  local deadGroup = self._world:GetGroup(self._world.BW_WEMatchers.DeadMark)
   local normalSkillKillCount = #deadGroup:GetEntities()
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetNormalAttackKillCount(normalSkillKillCount)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._DoRoleTurnResultEnd = function(self, teamEntity)
-  -- function num : 0_4 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function RoleTurnResultStateSystem:_DoRoleTurnResultEnd(teamEntity)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local isTriggerDimension = boardServiceLogic:IsPlayerOnDimension(teamEntity)
   if isTriggerDimension then
-    ((self._world):BattleStat()):SetTriggerDimensionFlag(TriggerDimensionFlag.ChainAttack)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.RoleTurnResultFinish, 2)
+    self._world:BattleStat():SetTriggerDimensionFlag(TriggerDimensionFlag.ChainAttack)
+    self._world:EventDispatcher():Dispatch(GameEventType.RoleTurnResultFinish, 2)
   else
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.RoleTurnResultFinish, 1)
+    self._world:EventDispatcher():Dispatch(GameEventType.RoleTurnResultFinish, 1)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._DoRestoreTeamLeader = function(self, teamEntity)
-  -- function num : 0_5
+function RoleTurnResultStateSystem:_DoRestoreTeamLeader(teamEntity)
   local teamCmpt = teamEntity:Team()
   local teamLeaderEntityID = teamCmpt:GetOriginalTeamLeaderID()
   if teamLeaderEntityID then
-    local teamLeaderEntity = (self._world):GetEntityByID(teamLeaderEntityID)
+    local teamLeaderEntity = self._world:GetEntityByID(teamLeaderEntityID)
     teamEntity:SetTeamLeaderPetEntity(teamLeaderEntity)
     teamCmpt:SetOriginalTeamLeaderID(nil)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._DoRenderPlayNotify = function(self, TT)
-  -- function num : 0_6
+function RoleTurnResultStateSystem:_DoRenderPlayNotify(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._DoRenderNormalAttackMonsterDead = function(self, TT)
-  -- function num : 0_7
+function RoleTurnResultStateSystem:_DoRenderNormalAttackMonsterDead(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._DoRenderGuideSkill = function(self, TT)
-  -- function num : 0_8
+function RoleTurnResultStateSystem:_DoRenderGuideSkill(TT)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._DoRenderWaitDeathEnd = function(self, TT)
-  -- function num : 0_9
+function RoleTurnResultStateSystem:_DoRenderWaitDeathEnd(TT)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleTurnResultStateSystem._WaitBeHitSkillFinish = function(self, TT)
-  -- function num : 0_10
+function RoleTurnResultStateSystem:_WaitBeHitSkillFinish(TT)
 end
-
-

@@ -1,31 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2909501/cfg_skill_view_290950105.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayAudio,audioID = 29095013,audioType=1; PlayCasterAnimation,animName=Skill1; PlayCasterBindEffect,effectID=290950107; Wait,waitTime=5000; "}
-}
-, 
-{2, 2, 110, 1, 1, 800, 
-{startPosEffectID = 290950108, bulletEffectID = 290950109, spawnIntervalTime = 100, flyDelayTime = 960, flyTime = 200, hitAnimName = "Hit", hitEffectID = 290950110, 
-bulletOffSet = {-0.167, 0.309, 1.048}
-, 
-startPosList = {
-{2, 2}
-, 
-{1, 6}
-, 
-{5, 9}
-, 
-{9, 4}
-, 
-{8, 8}
-}
-}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID = 29095013,audioType=1; PlayCasterAnimation,animName=Skill1; PlayCasterBindEffect,effectID=290950107; Wait,waitTime=5000; "
+    }
+  },
+  {
+    2,
+    2,
+    110,
+    1,
+    1,
+    800,
+    {
+      startPosEffectID = 290950108,
+      bulletEffectID = 290950109,
+      spawnIntervalTime = 100,
+      flyDelayTime = 960,
+      flyTime = 200,
+      hitAnimName = "Hit",
+      hitEffectID = 290950110,
+      bulletOffSet = {
+        -0.167,
+        0.309,
+        1.048
+      },
+      startPosList = {
+        {2, 2},
+        {1, 6},
+        {5, 9},
+        {9, 4},
+        {8, 8}
+      }
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,126 +1,83 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/lottery/StateN29Shop/state_n29_shop_get_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateN29ShopGetAward", StateN29ShopBase)
 StateN29ShopGetAward = StateN29ShopGetAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateN29ShopGetAward.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function StateN29ShopGetAward:OnEnter(TT, ...)
   self:Init()
   local rewardRecord = self:GetRewardRecord()
   self:_ShowGetReward(rewardRecord)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopGetAward.OnExit = function(self, TT)
-  -- function num : 0_1
-  (self._uiModule):LockAchievementFinishPanel(false)
+function StateN29ShopGetAward:OnExit(TT)
+  self._uiModule:LockAchievementFinishPanel(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopGetAward._ShowGetReward = function(self, record)
-  -- function num : 0_2 , upvalues : _ENV
+function StateN29ShopGetAward:_ShowGetReward(record)
   local rewards = record.m_getRewards
   local isOpenNew = record.m_isOpenNew
   self:Sort(rewards)
   local tempPets, assetAwards, hasBig = self:GetPetAssetBig(rewards)
-  local cbFunc = function()
-    -- function num : 0_2_0 , upvalues : isOpenNew, self, _ENV, hasBig
+  
+  local function cbFunc()
     if isOpenNew then
       local curPageIndex = self:CurPageIndex()
-      ;
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_n29_shop_new_box_unlock_title"), (StringTable.Get)("str_n29_shop_open_next_text", curPageIndex, curPageIndex + 1), function()
-      -- function num : 0_2_0_0 , upvalues : self
-      self:ForceRefresh(true)
-    end
-, nil)
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_n29_shop_new_box_unlock_title"), StringTable.Get("str_n29_shop_open_next_text", curPageIndex, curPageIndex + 1), function()
+        self:ForceRefresh(true)
+      end, nil)
+    elseif hasBig and self.data:GotAllBigAward() then
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", StringTable.Get("str_n29_shop_loop_box_reset_tips"), function()
+        self:ForceRefresh(true)
+      end, nil)
     else
-      do
-        if hasBig and (self.data):GotAllBigAward() then
-          (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, "", (StringTable.Get)("str_n29_shop_loop_box_reset_tips"), function()
-      -- function num : 0_2_0_1 , upvalues : self
-      self:ForceRefresh(true)
-    end
-, nil)
-        else
-          self:ForceRefresh(false)
-        end
-      end
+      self:ForceRefresh(false)
     end
   end
-
+  
   local getItemCtrl = "UIGetItemController"
-  if #tempPets > 0 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_2_1 , upvalues : _ENV, getItemCtrl, assetAwards, cbFunc
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog(getItemCtrl, assetAwards, cbFunc, true)
-  end
-)
+  if 0 < #tempPets then
+    GameGlobal.UIStateManager():ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      GameGlobal.UIStateManager():ShowDialog(getItemCtrl, assetAwards, cbFunc, true)
+    end)
   else
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog(getItemCtrl, assetAwards, cbFunc, true)
+    GameGlobal.UIStateManager():ShowDialog(getItemCtrl, assetAwards, cbFunc, true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopGetAward.Sort = function(self, rewards)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.sort)(rewards, function(a, b)
-    -- function num : 0_3_0
+function StateN29ShopGetAward:Sort(rewards)
+  table.sort(rewards, function(a, b)
     local isBigA = a.m_is_big_reward and 1 or 0
     local isBigB = b.m_is_big_reward and 1 or 0
-    do return isBigB < isBigA end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    return isBigA > isBigB
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopGetAward.GetPetAssetBig = function(self, rewards)
-  -- function num : 0_4 , upvalues : _ENV
+function StateN29ShopGetAward:GetPetAssetBig(rewards)
   local tempPets = {}
   local assetAwards = {}
   local hasBig = false
-  if #rewards > 0 then
+  if 0 < #rewards then
     for i = 1, #rewards do
       local roleAsset = RoleAsset:New()
-      roleAsset.assetid = (rewards[i]).m_item_id
-      roleAsset.count = (rewards[i]).m_count
-      local ispet = (self.mPet):IsPetID(roleAsset.assetid)
+      roleAsset.assetid = rewards[i].m_item_id
+      roleAsset.count = rewards[i].m_count
+      local ispet = self.mPet:IsPetID(roleAsset.assetid)
       if ispet then
-        (table.insert)(tempPets, roleAsset)
+        table.insert(tempPets, roleAsset)
       end
-      ;
-      (table.insert)(assetAwards, roleAsset)
-      if (rewards[i]).m_is_big_reward then
+      table.insert(assetAwards, roleAsset)
+      if rewards[i].m_is_big_reward then
         hasBig = true
       end
     end
   end
-  do
-    return tempPets, assetAwards, hasBig
-  end
+  return tempPets, assetAwards, hasBig
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateN29ShopGetAward.ForceRefresh = function(self, b)
-  -- function num : 0_5 , upvalues : _ENV
-  local dontPlaySpine = nil
+function StateN29ShopGetAward:ForceRefresh(b)
+  local dontPlaySpine
   if not b then
     dontPlaySpine = true
   end
   self:_ForceRefresh(b, dontPlaySpine)
   self:ChangeState(StateN29Shop.Init)
 end
-
-

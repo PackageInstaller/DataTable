@@ -1,96 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/login_authority/auth_international/auth_international_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_International then
-  return 
+  return
 end
 _class("AuthInternationalResult", Object)
 AuthInternationalResult = AuthInternationalResult
 local retCodeDefine = INTL.INTLErrorCode
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-AuthInternationalResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : retCodeDefine, _ENV
+function AuthInternationalResult:Constructor()
   self.retCode = retCodeDefine.UNKNOWN
   self.channelID = MobileClientLoginChannel.MCLC_NONE
   self.openID = ""
   self.token = ""
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-AuthInternationalResult.SyncAndFillResult = function(self, authRet)
-  -- function num : 0_1
+function AuthInternationalResult:SyncAndFillResult(authRet)
   self.retCode = authRet.RetCode
   self.channelID = authRet.ChannelID
   self.openID = authRet.OpenId
   self.token = authRet.Token
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-AuthInternationalResult.IsAuthSuccess = function(self)
-  -- function num : 0_2 , upvalues : retCodeDefine
-  do return self.retCode == retCodeDefine.SUCCESS end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AuthInternationalResult:IsAuthSuccess()
+  return self.retCode == retCodeDefine.SUCCESS
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-AuthInternationalResult.MakeInvalid = function(self)
-  -- function num : 0_3 , upvalues : retCodeDefine
+function AuthInternationalResult:MakeInvalid()
   self.retCode = retCodeDefine.UNKNOWN
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-AuthInternationalResult.CopyFrom = function(self, srcRes)
-  -- function num : 0_4
+function AuthInternationalResult:CopyFrom(srcRes)
   self.retCode = srcRes.retCode
   self.channelID = srcRes.channelID
   self.openID = srcRes.openID
   self.token = srcRes.token
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-AuthInternationalResult.CloneSelf = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function AuthInternationalResult:CloneSelf()
   local authRes = AuthInternationalResult:New()
   authRes:CopyFrom(self)
   return authRes
 end
 
-local AuthINTLCustomAccountType = {UNKNOWN = 0, REG_THEN_AUTH = 1, AUTH_WITH_PASS = 2, AUTH_WITH_VERIFYCODE = 3}
+local AuthINTLCustomAccountType = {
+  UNKNOWN = 0,
+  REG_THEN_AUTH = 1,
+  AUTH_WITH_PASS = 2,
+  AUTH_WITH_VERIFYCODE = 3
+}
 _enum("AuthINTLCustomAccountType", AuthINTLCustomAccountType)
 _class("AuthINTLCustomAccountInfo", Object)
 AuthINTLCustomAccountInfo = AuthINTLCustomAccountInfo
 local retCodeDefine = INTL.INTLErrorCode
--- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
 
-AuthINTLCustomAccountInfo.Constructor = function(self)
-  -- function num : 0_6 , upvalues : AuthINTLCustomAccountType, _ENV
+function AuthINTLCustomAccountInfo:Constructor()
   self.authType = AuthINTLCustomAccountType.UNKNOWN
   self.account = "11111111111"
   self.password = "1"
   self.verifyCode = "12345"
   self.phoneAreaCode = "86"
-  self.accountProfile = (INTL.AccountProfile):New()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.accountProfile).UserName = "h3dcustomaccount"
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.accountProfile).IsReceiveEmail = 1
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.accountProfile).Region = 392
+  self.accountProfile = INTL.AccountProfile:New()
+  self.accountProfile.UserName = "h3dcustomaccount"
+  self.accountProfile.IsReceiveEmail = 1
+  self.accountProfile.Region = 392
   self.extraJson = ""
 end
-
-

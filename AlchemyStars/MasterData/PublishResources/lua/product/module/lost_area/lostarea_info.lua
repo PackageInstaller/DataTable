@@ -1,43 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/lost_area/lostarea_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local LOST_AREA_RESULT_CODE = {LOST_AREA_SUCCEED = 0, LOST_AREA_UNKNOWN = 1, LOST_AREA_ID_INVALID = 2, LOST_AREA_NOT_ONSHOW = 3, LOST_AREA_UNREACH_UNLOCK_COND = 4, LOST_AREA_GOT_NEW_DESIGN_TIME = 5, LOST_AREA_HAVENOT_UNLOCKED = 6, LOST_AREA_DESIGN_ID_NOT_CURRENT_ID = 7, LOST_AREA_ALREADY_UNLOCKED = 8, LOST_AREA_HAVENT_CLIENT_CREATE_INFO = 9, LOST_AREA_LEVEL_ID_ERROR = 101}
+local LOST_AREA_RESULT_CODE = {
+  LOST_AREA_SUCCEED = 0,
+  LOST_AREA_UNKNOWN = 1,
+  LOST_AREA_ID_INVALID = 2,
+  LOST_AREA_NOT_ONSHOW = 3,
+  LOST_AREA_UNREACH_UNLOCK_COND = 4,
+  LOST_AREA_GOT_NEW_DESIGN_TIME = 5,
+  LOST_AREA_HAVENOT_UNLOCKED = 6,
+  LOST_AREA_DESIGN_ID_NOT_CURRENT_ID = 7,
+  LOST_AREA_ALREADY_UNLOCKED = 8,
+  LOST_AREA_HAVENT_CLIENT_CREATE_INFO = 9,
+  LOST_AREA_LEVEL_ID_ERROR = 101
+}
 _enum("LOST_AREA_RESULT_CODE", LOST_AREA_RESULT_CODE)
-local DifficultyStatus = {DS_AlreadyUnlocked = 1, DS_CannotUnlock = 2, DS_WaitingUnlock = 3, DS_ThisWeekChoosed = 4}
+local DifficultyStatus = {
+  DS_AlreadyUnlocked = 1,
+  DS_CannotUnlock = 2,
+  DS_WaitingUnlock = 3,
+  DS_ThisWeekChoosed = 4
+}
 _enum("DifficultyStatus", DifficultyStatus)
-local PetFilterCondType = {RFCT_Color = 1, RFCT_Force = 2, RFCT_Prof = 3}
+local PetFilterCondType = {
+  RFCT_Color = 1,
+  RFCT_Force = 2,
+  RFCT_Prof = 3
+}
 _enum("PetFilterCondType", PetFilterCondType)
 _class("MissionInfo", Object)
 MissionInfo = MissionInfo
--- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
 
-MissionInfo.Constructor = function(self)
-  -- function num : 0_0
+function MissionInfo:Constructor()
   self.pass_time = 0
   self.recommend_reward_num = 0
   self.level_id = 0
   self.wordd_id = 0
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
 MissionInfo._proto = {
-[1] = {"pass_time", "int"}
-, 
-[2] = {"recommend_reward_num", "int"}
-, 
-[3] = {"level_id", "int"}
-, 
-[4] = {"wordd_id", "int"}
+  [1] = {"pass_time", "int"},
+  [2] = {
+    "recommend_reward_num",
+    "int"
+  },
+  [3] = {"level_id", "int"},
+  [4] = {"wordd_id", "int"}
 }
 _class("lost_area", Object)
 lost_area = lost_area
--- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
 
-lost_area.Constructor = function(self)
-  -- function num : 0_1
+function lost_area:Constructor()
   self.owner_pstid = 0
   self.unlocked_difficulty = 0
   self.last_enter_time = 0
@@ -46,44 +56,45 @@ lost_area.Constructor = function(self)
   self.red_dot = 0
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R3 in 'UnsetPending'
-
 lost_area._proto = {
-[1] = {"owner_pstid", "int64"}
-, 
-[2] = {"unlocked_difficulty", "int"}
-, 
-[3] = {"last_enter_time", "time"}
-, 
-[4] = {"choosed_design_id", "int"}
-, 
-[5] = {"difficult_mission_info", "map<int,MissionInfo>"}
-, 
-[6] = {"red_dot", "int"}
+  [1] = {
+    "owner_pstid",
+    "int64"
+  },
+  [2] = {
+    "unlocked_difficulty",
+    "int"
+  },
+  [3] = {
+    "last_enter_time",
+    "time"
+  },
+  [4] = {
+    "choosed_design_id",
+    "int"
+  },
+  [5] = {
+    "difficult_mission_info",
+    "map<int,MissionInfo>"
+  },
+  [6] = {"red_dot", "int"}
 }
 _class("RecommendCond", Object)
 RecommendCond = RecommendCond
--- DECOMPILER ERROR at PC115: Confused about usage of register: R3 in 'UnsetPending'
 
-RecommendCond.Constructor = function(self)
-  -- function num : 0_2
+function RecommendCond:Constructor()
   self.cond1 = 0
   self.cond2 = 0
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R3 in 'UnsetPending'
-
 RecommendCond._proto = {
-[1] = {"cond1", "int"}
-, 
-[2] = {"cond2", "int"}
+  [1] = {"cond1", "int"},
+  [2] = {"cond2", "int"}
 }
 _class("LostAreaDesignConfig", Object)
 LostAreaDesignConfig = LostAreaDesignConfig
--- DECOMPILER ERROR at PC137: Confused about usage of register: R3 in 'UnsetPending'
 
-LostAreaDesignConfig.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function LostAreaDesignConfig:Constructor()
   self.id = 0
   self.difficulty = 0
   self.level_group_id = 0
@@ -97,37 +108,41 @@ LostAreaDesignConfig.Constructor = function(self)
   self.recommend_reward = RoleAsset:New()
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R3 in 'UnsetPending'
-
 LostAreaDesignConfig._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"difficulty", "int"}
-, 
-[3] = {"level_group_id", "int"}
-, 
-[4] = {"seed", "int"}
-, 
-[5] = {"start_time", "time"}
-, 
-[6] = {"end_time", "time"}
-, 
-[7] = {"recommend_level", "int"}
-, 
-[8] = {"recommend_awake", "int"}
-, 
-[9] = {"unlock_condition", "list<int>"}
-, 
-[10] = {"recommend_cond", "list<RecommendCond>"}
-, 
-[11] = {"recommend_reward", "RoleAsset"}
+  [1] = {"id", "int"},
+  [2] = {"difficulty", "int"},
+  [3] = {
+    "level_group_id",
+    "int"
+  },
+  [4] = {"seed", "int"},
+  [5] = {"start_time", "time"},
+  [6] = {"end_time", "time"},
+  [7] = {
+    "recommend_level",
+    "int"
+  },
+  [8] = {
+    "recommend_awake",
+    "int"
+  },
+  [9] = {
+    "unlock_condition",
+    "list<int>"
+  },
+  [10] = {
+    "recommend_cond",
+    "list<RecommendCond>"
+  },
+  [11] = {
+    "recommend_reward",
+    "RoleAsset"
+  }
 }
 _class("LostAreaLevelGroupConfig", Object)
 LostAreaLevelGroupConfig = LostAreaLevelGroupConfig
--- DECOMPILER ERROR at PC204: Confused about usage of register: R3 in 'UnsetPending'
 
-LostAreaLevelGroupConfig.Constructor = function(self)
-  -- function num : 0_4
+function LostAreaLevelGroupConfig:Constructor()
   self.id = 0
   self.group_id = 0
   self.difficulty = 0
@@ -140,50 +155,49 @@ LostAreaLevelGroupConfig.Constructor = function(self)
   self.words_weight = {}
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R3 in 'UnsetPending'
-
 LostAreaLevelGroupConfig._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"group_id", "int"}
-, 
-[3] = {"difficulty", "int"}
-, 
-[4] = {"group_seq_id", "int"}
-, 
-[5] = {"seq_in_group", "int"}
-, 
-[6] = {"level_type", "int"}
-, 
-[7] = {"fight_level_pool", "list<int>"}
-, 
-[8] = {"award", "list<RoleAsset>"}
-, 
-[9] = {"words", "list<int>"}
-, 
-[10] = {"words_weight", "list<int>"}
+  [1] = {"id", "int"},
+  [2] = {"group_id", "int"},
+  [3] = {"difficulty", "int"},
+  [4] = {
+    "group_seq_id",
+    "int"
+  },
+  [5] = {
+    "seq_in_group",
+    "int"
+  },
+  [6] = {"level_type", "int"},
+  [7] = {
+    "fight_level_pool",
+    "list<int>"
+  },
+  [8] = {
+    "award",
+    "list<RoleAsset>"
+  },
+  [9] = {"words", "list<int>"},
+  [10] = {
+    "words_weight",
+    "list<int>"
+  }
 }
 _class("LostAreaUnitGroupConfig", Object)
 LostAreaUnitGroupConfig = LostAreaUnitGroupConfig
--- DECOMPILER ERROR at PC266: Confused about usage of register: R3 in 'UnsetPending'
 
-LostAreaUnitGroupConfig.Constructor = function(self)
-  -- function num : 0_5
+function LostAreaUnitGroupConfig:Constructor()
   self.id = 0
   self.group_id = 0
   self.seq_in_group = 0
   self.level_ids = {}
 end
 
--- DECOMPILER ERROR at PC289: Confused about usage of register: R3 in 'UnsetPending'
-
 LostAreaUnitGroupConfig._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"group_id", "int"}
-, 
-[3] = {"seq_in_group", "int"}
-, 
-[4] = {"level_ids", "list<int>"}
+  [1] = {"id", "int"},
+  [2] = {"group_id", "int"},
+  [3] = {
+    "seq_in_group",
+    "int"
+  },
+  [4] = {"level_ids", "list<int>"}
 }
-

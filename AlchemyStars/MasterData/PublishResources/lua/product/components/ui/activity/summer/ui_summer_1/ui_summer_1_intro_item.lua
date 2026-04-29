@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/ui_summer_1_intro_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummer1IntroItem", UICustomWidget)
 UISummer1IntroItem = UISummer1IntroItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummer1IntroItem.OnShow = function(self)
-  -- function num : 0_0
+function UISummer1IntroItem:OnShow()
   self.txtHead = self:GetUIComponent("UILocalizationText", "txtHead")
   self.txtBody = self:GetUIComponent("UILocalizationText", "txtBody")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1IntroItem.Flush = function(self, head, body)
-  -- function num : 0_1
-  (self.txtHead):SetText(head)
-  ;
-  (self.txtBody):SetText(body)
+function UISummer1IntroItem:Flush(head, body)
+  self.txtHead:SetText(head)
+  self.txtBody:SetText(body)
 end
-
-

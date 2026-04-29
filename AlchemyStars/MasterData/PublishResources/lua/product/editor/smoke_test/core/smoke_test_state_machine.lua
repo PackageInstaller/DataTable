@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/core/smoke_test_state_machine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SmokeTestStateMachine", Object)
 SmokeTestStateMachine = SmokeTestStateMachine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SmokeTestStateMachine.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._manager = (GameGlobal.GetModule)(TestRobotModule)
+function SmokeTestStateMachine:Constructor()
+  self._manager = GameGlobal.GetModule(TestRobotModule)
   self._currentNode = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateMachine.SetRunData = function(self, runData)
-  -- function num : 0_1
+function SmokeTestStateMachine:SetRunData(runData)
   self._runData = runData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateMachine.GetRunData = function(self)
-  -- function num : 0_2
+function SmokeTestStateMachine:GetRunData()
   return self._runData
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateMachine.Update = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SmokeTestStateMachine:Update()
   if not self._currentNode then
-    return 
+    return
   end
   local node = self._currentNode
   if SmokeTestStateNodeStatus.Create == node:GetStatus() then
@@ -45,10 +29,5 @@ SmokeTestStateMachine.Update = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestStateMachine.CreateInstance = function(sequence, rootNodeID)
-  -- function num : 0_4
+function SmokeTestStateMachine.CreateInstance(sequence, rootNodeID)
 end
-
-

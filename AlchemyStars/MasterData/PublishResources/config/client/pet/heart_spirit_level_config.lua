@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/heart_spirit_level_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, NeedExp = 2}
 local config = {
-{1, 1000}
-, 
-{2, 1001}
-, 
-{3, 1002}
-, 
-{4, 1003}
-, 
-{5, 1004}
-, 
-{6, 1005}
-, 
-{7, 1006}
-, 
-{8, 1007}
+  {1, 1000},
+  {2, 1001},
+  {3, 1002},
+  {4, 1003},
+  {5, 1004},
+  {6, 1005},
+  {7, 1006},
+  {8, 1007}
 }
 return config, "ID", key
-

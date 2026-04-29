@@ -1,143 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/postgame/ui_cn7_n36_main_grid_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN7N36PostMainGridItem", Object)
 UICN7N36PostMainGridItem = UICN7N36PostMainGridItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36PostMainGridItem.Constructor = function(self, row, col, gameObject, isEmpty)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN7N36PostMainGridItem:Constructor(row, col, gameObject, isEmpty)
   self._row = row
   self._col = col
   self._gameObject = gameObject
-  self._occupyObj = (((self._gameObject).transform):Find("occupy")).gameObject
-  self._greenObj = (((self._gameObject).transform):Find("green")).gameObject
-  self._redObj = (((self._gameObject).transform):Find("red")).gameObject
+  self._occupyObj = self._gameObject.transform:Find("occupy").gameObject
+  self._greenObj = self._gameObject.transform:Find("green").gameObject
+  self._redObj = self._gameObject.transform:Find("red").gameObject
   self._isEmpty = isEmpty
   self._occupy = isEmpty
   self._uiCustomEventListener = UICustomUIEventListener:New()
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(gameObject), UIEvent.Hovered, function(go)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    (Log.debug)("Hovered!!!!!!!!!!!!", self:GetX(), self:GetY())
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCN7N36PostGameBlockHovered, self)
-  end
-)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(gameObject), UIEvent.BeginDrag, function(go)
-    -- function num : 0_0_1 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCN7N36PostGameBlockPress, self)
-  end
-)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(gameObject), UIEvent.EndDrag, function(go)
-    -- function num : 0_0_2 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCN7N36PostGameBlockRelease, self)
-  end
-)
-  ;
-  (self._uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(gameObject), UIEvent.Click, function(go)
-    -- function num : 0_0_3 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCN7N36PostGameBlockClick, self)
-  end
-)
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(gameObject), UIEvent.Hovered, function(go)
+    Log.debug("Hovered!!!!!!!!!!!!", self:GetX(), self:GetY())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCN7N36PostGameBlockHovered, self)
+  end)
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(gameObject), UIEvent.BeginDrag, function(go)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCN7N36PostGameBlockPress, self)
+  end)
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(gameObject), UIEvent.EndDrag, function(go)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCN7N36PostGameBlockRelease, self)
+  end)
+  self._uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(gameObject), UIEvent.Click, function(go)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCN7N36PostGameBlockClick, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.GetInstanceID = function(self)
-  -- function num : 0_1
-  return (self._gameObject):GetInstanceID()
+function UICN7N36PostMainGridItem:GetInstanceID()
+  return self._gameObject:GetInstanceID()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.SetOccupy = function(self, flag, atomicItemID, itemID)
-  -- function num : 0_2
+function UICN7N36PostMainGridItem:SetOccupy(flag, atomicItemID, itemID)
   self._occupy = flag
   self._atomicItemID = atomicItemID
   self._itemID = itemID
-  ;
-  (self._occupyObj):SetActive(self._occupy)
+  self._occupyObj:SetActive(self._occupy)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.SetOccupyColor = function(self, flag)
-  -- function num : 0_3
-  (self._occupyObj):SetActive(flag)
+function UICN7N36PostMainGridItem:SetOccupyColor(flag)
+  self._occupyObj:SetActive(flag)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.ShowCheckColor = function(self, isPass)
-  -- function num : 0_4
-  (self._greenObj):SetActive(isPass)
+function UICN7N36PostMainGridItem:ShowCheckColor(isPass)
+  self._greenObj:SetActive(isPass)
   if not self._occupy then
-    (self._redObj):SetActive(not isPass)
+    self._redObj:SetActive(not isPass)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.ClearCheckColor = function(self)
-  -- function num : 0_5
-  (self._greenObj):SetActive(false)
-  ;
-  (self._redObj):SetActive(false)
+function UICN7N36PostMainGridItem:ClearCheckColor()
+  self._greenObj:SetActive(false)
+  self._redObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.GetAtomicItemID = function(self)
-  -- function num : 0_6
+function UICN7N36PostMainGridItem:GetAtomicItemID()
   return self._atomicItemID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.GetItemID = function(self)
-  -- function num : 0_7
+function UICN7N36PostMainGridItem:GetItemID()
   return self._itemID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.GetIsEmpty = function(self)
-  -- function num : 0_8
+function UICN7N36PostMainGridItem:GetIsEmpty()
   return self._isEmpty
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.GetIsOccupy = function(self)
-  -- function num : 0_9
+function UICN7N36PostMainGridItem:GetIsOccupy()
   return self._occupy
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.GetX = function(self)
-  -- function num : 0_10
+function UICN7N36PostMainGridItem:GetX()
   return self._row
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.GetY = function(self)
-  -- function num : 0_11
+function UICN7N36PostMainGridItem:GetY()
   return self._col
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36PostMainGridItem.GetIsGuideBlock = function(self)
-  -- function num : 0_12
-  do return self._row == 2 and self._col == 2 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICN7N36PostMainGridItem:GetIsGuideBlock()
+  return self._row == 2 and self._col == 2
 end
-
-

@@ -1,54 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_summon_on_pickup_no_trap_pos_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlaySummonOnPickupNoTrapPosInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlaySummonOnPickupNoTrapPosInstruction = SkillPreviewPlaySummonOnPickupNoTrapPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlaySummonOnPickupNoTrapPosInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlaySummonOnPickupNoTrapPosInstruction:Constructor(params)
   self._trapID = tonumber(params.trapID)
   self._effectID = tonumber(params.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlaySummonOnPickupNoTrapPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlaySummonOnPickupNoTrapPosInstruction:GetCacheResource()
   return {
-{((Cfg.cfg_effect)[self._effectID]).ResPath, 1}
-}
+    {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlaySummonOnPickupNoTrapPosInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2
+function SkillPreviewPlaySummonOnPickupNoTrapPosInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local entitySvc = world:GetService("RenderEntity")
   local pickUpPos = previewContext:GetPickUpPos()
-  local boardCmpt = (world:GetBoardEntity()):Board()
+  local boardCmpt = world:GetBoardEntity():Board()
   local traps = boardCmpt:GetPieceEntities(pickUpPos, function(e)
-    -- function num : 0_2_0 , upvalues : casterEntity, self
     local isOwner = false
-    -- DECOMPILER ERROR at PC14: Unhandled construct in 'MakeBoolean' P1
-
-    if e:HasSummoner() and (e:Summoner()):GetSummonerEntityID() == casterEntity:GetID() then
+    if e:HasSummoner() then
+      if e:Summoner():GetSummonerEntityID() == casterEntity:GetID() then
+        isOwner = true
+      end
+    else
       isOwner = true
     end
-    isOwner = true
-    do return isOwner and (((e:TrapRender()):GetTrapID() == self._trapID and not e:HasDeadMark())) end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
-  if #traps > 0 then
-    local effectEntity = (world:GetService("Effect")):CreateWorldPositionEffect(self._effectID, pickUpPos)
+    return isOwner and e:HasTrapRender() and e:TrapRender():GetTrapID() == self._trapID and not e:HasDeadMark()
+  end)
+  if 0 < #traps then
+  else
+    local effectEntity = world:GetService("Effect"):CreateWorldPositionEffect(self._effectID, pickUpPos)
     local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
     previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
   end
 end
-
-

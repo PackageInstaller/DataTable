@@ -1,104 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/player/season_player_fixed_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonPlayerFixedLine", Object)
 SeasonPlayerFixedLine = SeasonPlayerFixedLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonPlayerFixedLine.Constructor = function(self, root)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonPlayerFixedLine:Constructor(root)
   self._root = root
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local seasonID = ((self._seasonModule).uiModule):GetSeasonID()
-  self._cfg = (Cfg.cfg_season_map)[seasonID]
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  local seasonID = self._seasonModule.uiModule:GetSeasonID()
+  self._cfg = Cfg.cfg_season_map[seasonID]
   self:_CreateLineRenderer()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFixedLine.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonPlayerFixedLine:Dispose()
   if self._lineRendererReq then
-    (self._lineRendererReq):Dispose()
+    self._lineRendererReq:Dispose()
     self._lineRendererReq = nil
   end
-  ;
-  ((UnityEngine.Object).Destroy)(self._lineRendererGO)
+  UnityEngine.Object.Destroy(self._lineRendererGO)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFixedLine.SetLine = function(self, originPos, targetPos, areaMask)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonPlayerFixedLine:SetLine(originPos, targetPos, areaMask)
   originPos.y = 0
-  local path = ((UnityEngine.AI).NavMeshPath):New()
-  local pass = (((UnityEngine.AI).NavMesh).CalculatePath)(originPos, targetPos, areaMask, path)
+  local path = UnityEngine.AI.NavMeshPath:New()
+  local pass = UnityEngine.AI.NavMesh.CalculatePath(originPos, targetPos, areaMask, path)
   if not pass then
-    (Log.fatal)("SeasonPlayerFixedLine path is not pass")
+    Log.fatal("SeasonPlayerFixedLine path is not pass")
   end
   self._path = path
   self:_UpdateLineRenderer()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFixedLine._CreateLineRenderer = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._lineRendererReq = (ResourceManager:GetInstance()):SyncLoadAsset((self._cfg).Line, LoadType.GameObject)
+function SeasonPlayerFixedLine:_CreateLineRenderer()
+  self._lineRendererReq = ResourceManager:GetInstance():SyncLoadAsset(self._cfg.Line, LoadType.GameObject)
   if not self._lineRendererReq then
-    (Log.error)("SeasonPlayer load line fail.")
-    return 
+    Log.error("SeasonPlayer load line fail.")
+    return
   end
-  self._lineRendererGO = (self._lineRendererReq).Obj
-  ;
-  ((self._lineRendererGO).transform):SetParent((self._root).transform)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._lineRendererGO).transform).position = Vector3(0, 0, 0)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._lineRendererGO).transform).rotation = Vector3(0, 0, 0)
+  self._lineRendererGO = self._lineRendererReq.Obj
+  self._lineRendererGO.transform:SetParent(self._root.transform)
+  self._lineRendererGO.transform.position = Vector3(0, 0, 0)
+  self._lineRendererGO.transform.rotation = Vector3(0, 0, 0)
   self._lineRendererList = {}
-  local lineRenderchildCount = ((self._lineRendererGO).transform).childCount
-  if lineRenderchildCount > 0 then
+  local lineRenderchildCount = self._lineRendererGO.transform.childCount
+  if 0 < lineRenderchildCount then
     for i = 0, lineRenderchildCount - 1 do
-      local lineRenderGO = ((self._lineRendererGO).transform):GetChild(i)
+      local lineRenderGO = self._lineRendererGO.transform:GetChild(i)
       if lineRenderGO ~= nil and lineRenderGO:GetComponent(typeof(UnityEngine.LineRenderer)) ~= nil then
         local lineRender = lineRenderGO:GetComponent(typeof(UnityEngine.LineRenderer))
-        -- DECOMPILER ERROR at PC81: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (lineRender.transform).position = Vector3(0, 0, 0)
-        -- DECOMPILER ERROR at PC88: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (lineRender.transform).rotation = Vector3(0, 0, 0)
-        ;
-        (table.insert)(self._lineRendererList, lineRender)
+        lineRender.transform.position = Vector3(0, 0, 0)
+        lineRender.transform.rotation = Vector3(0, 0, 0)
+        table.insert(self._lineRendererList, lineRender)
       end
     end
   end
-  do
-    for _,lineRenderer in ipairs(self._lineRendererList) do
-      lineRenderer.numCornerVertices = 0
-    end
-    ;
-    (self._lineRendererGO):SetActive(true)
+  for _, lineRenderer in ipairs(self._lineRendererList) do
+    lineRenderer.numCornerVertices = 0
   end
+  self._lineRendererGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFixedLine._UpdateLineRenderer = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonPlayerFixedLine:_UpdateLineRenderer()
   local bezierCorners1bend = self:_UpdateCalculateSmoothLine()
   if bezierCorners1bend ~= nil then
     local count = #bezierCorners1bend
-    for _,lineRenderer in ipairs(self._lineRendererList) do
+    for _, lineRenderer in ipairs(self._lineRendererList) do
       lineRenderer.positionCount = count
       for j = count - 1, 0, -1 do
         local p = bezierCorners1bend[j + 1]
@@ -107,113 +70,90 @@ SeasonPlayerFixedLine._UpdateLineRenderer = function(self)
       end
     end
   else
-    do
-      for _,lineRenderer in ipairs(self._lineRendererList) do
-        lineRenderer.positionCount = 0
-      end
+    for _, lineRenderer in ipairs(self._lineRendererList) do
+      lineRenderer.positionCount = 0
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFixedLine.ClearLineRender = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,lineRenderer in ipairs(self._lineRendererList) do
+function SeasonPlayerFixedLine:ClearLineRender()
+  for _, lineRenderer in ipairs(self._lineRendererList) do
     lineRenderer.positionCount = 0
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFixedLine._UpdateCalculateSmoothLine = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local count = ((self._path).corners).Length
-  local navPoints = (self._path).corners
+function SeasonPlayerFixedLine:_UpdateCalculateSmoothLine()
+  local count = self._path.corners.Length
+  local navPoints = self._path.corners
   local splitPoints = {}
   local controlPoints = {}
   if count == 0 or count == 1 then
     return nil
   end
   for i = 0, count - 1 do
-    (table.insert)(splitPoints, navPoints[i])
+    table.insert(splitPoints, navPoints[i])
   end
-  ;
-  (table.insert)(controlPoints, splitPoints[1] + (splitPoints[1] - splitPoints[2]) * 0.05)
-  ;
-  (table.insert)(controlPoints, splitPoints[1])
+  table.insert(controlPoints, splitPoints[1] + (splitPoints[1] - splitPoints[2]) * 0.05)
+  table.insert(controlPoints, splitPoints[1])
   for l = 1, #splitPoints - 1 do
     local splitCont = self:_GetStraightLineSplit(splitPoints[l], splitPoints[l + 1])
     for m = 1, #splitCont do
-      (table.insert)(controlPoints, splitCont[m])
+      table.insert(controlPoints, splitCont[m])
     end
   end
-  ;
-  (table.insert)(controlPoints, navPoints[count - 1])
-  ;
-  (table.insert)(controlPoints, navPoints[count - 1] + (navPoints[count - 1] - splitPoints[#splitPoints - 1]) * 0.05)
+  table.insert(controlPoints, navPoints[count - 1])
+  table.insert(controlPoints, navPoints[count - 1] + (navPoints[count - 1] - splitPoints[#splitPoints - 1]) * 0.05)
   local numPoints = 3
   local positions = {}
-  ;
-  (table.insert)(positions, navPoints[0])
+  table.insert(positions, navPoints[0])
   for k = 2, #controlPoints - 2 do
     local p0 = controlPoints[k - 1]
     local p1 = controlPoints[k]
     local p2 = controlPoints[k + 1]
     local p3 = controlPoints[k + 2]
-    local romDist = (Vector3.Distance)(p1, p2)
+    local romDist = Vector3.Distance(p1, p2)
     if romDist < 0.1 and p2 == #controlPoints - 2 then
-      (table.insert)(positions, controlPoints[k + 1])
+      table.insert(positions, controlPoints[k + 1])
     else
-      numPoints = (math.ceil)(romDist / 0.2)
-      numPoints = (math.max)(3, numPoints)
+      numPoints = math.ceil(romDist / 0.2)
+      numPoints = math.max(3, numPoints)
       for j = 1, numPoints do
         local t = j / numPoints
         local point = self:_CatmullRomPoint(p0, p1, p2, p3, t)
-        ;
-        (table.insert)(positions, point)
+        table.insert(positions, point)
       end
     end
   end
   return positions
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFixedLine._CatmullRomPoint = function(self, p0, p1, p2, p3, t)
-  -- function num : 0_7
-  return p0 * (-0.5 * t * t * t + t * t - 0.5 * t) + p1 * (1.5 * t * t * t - 2.5 * t * t + 1) + p2 * (-1.5 * t * t * t + 2 * t * t + 0.5 * t) + p3 * (0.5 * t * t * t - 0.5 * t * t)
+function SeasonPlayerFixedLine:_CatmullRomPoint(p0, p1, p2, p3, t)
+  return p0 * (-0.5 * t * t * t + t * t - 0.5 * t) + p1 * (1.5 * t * t * t - 2.5 * t * t + 1.0) + p2 * (-1.5 * t * t * t + 2.0 * t * t + 0.5 * t) + p3 * (0.5 * t * t * t - 0.5 * t * t)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerFixedLine._GetStraightLineSplit = function(self, p1, p2)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonPlayerFixedLine:_GetStraightLineSplit(p1, p2)
   local pointList = {}
   local spliteCount = 2
-  local mSvrTime = (GameGlobal.GetModule)(SvrTimeModule)
+  local mSvrTime = GameGlobal.GetModule(SvrTimeModule)
   local lineArg = mSvrTime:GetServerTime() / 1000
-  spliteCount = (math.ceil)((Vector3.Distance)(p1, p2) / 0.25)
-  spliteCount = (math.max)(2, spliteCount)
+  spliteCount = math.ceil(Vector3.Distance(p1, p2) / 0.25)
+  spliteCount = math.max(2, spliteCount)
   local vectorX = Vector3(1, p1.y, 0)
   local vectorZ = Vector3(0, p1.y, 1)
   for i = 1, spliteCount do
     local lerp = 1 / spliteCount * i
-    if lerp > 0 and lerp < 1 then
+    if 0 < lerp and lerp < 1 then
       local x = p1.x * (1 - lerp) + p2.x * lerp
       local z = p1.z * (1 - lerp) + p2.z * lerp
       local splitPoint = Vector3(x, p1.y, z)
-      local dotX = (math.abs)((Vector3.Dot)(vectorX.normalized, splitPoint.normalized))
-      local dotZ = (math.abs)((Vector3.Dot)(vectorZ.normalized, splitPoint.normalized))
-      local tDistX = (math.sin)(lineArg + splitPoint.z * 2) * dotX * 0.18
-      local tDistz = (math.sin)(lineArg + splitPoint.x * 2) * dotZ * 0.18
+      local dotX = math.abs(Vector3.Dot(vectorX.normalized, splitPoint.normalized))
+      local dotZ = math.abs(Vector3.Dot(vectorZ.normalized, splitPoint.normalized))
+      local tDistX = math.sin(lineArg + splitPoint.z * 2) * dotX * 0.18
+      local tDistz = math.sin(lineArg + splitPoint.x * 2) * dotZ * 0.18
       splitPoint.x = splitPoint.x + tDistX
       splitPoint.z = splitPoint.z + tDistz
-      ;
-      (table.insert)(pointList, splitPoint)
+      table.insert(pointList, splitPoint)
     end
   end
   return pointList
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/collage/ui_season_maze_collage_card_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeCollageCardTips", UICustomWidget)
 UISeasonMazeCollageCardTips = UISeasonMazeCollageCardTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeCollageCardTips.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonMazeCollageCardTips:OnShow()
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageCardTips.InitWidgets = function(self)
-  -- function num : 0_1
+function UISeasonMazeCollageCardTips:InitWidgets()
   self.root = self:GetUIComponent("RectTransform", "Root")
   self._rootGo = self:GetGameObject("Root")
   self.steps = self:GetUIComponent("UILocalizationText", "Steps")
@@ -26,38 +16,26 @@ UISeasonMazeCollageCardTips.InitWidgets = function(self)
   self._effectRoot = self:GetGameObject("EffectRoot")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeCollageCardTips.SetData = function(self, itemId)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._rootGo):SetActive(true)
-  local stepDes, eftDes, exteaEftDes = (SeasonMazeTool:GetInstance()):GetCardDesc(itemId)
+function UISeasonMazeCollageCardTips:SetData(itemId)
+  self._rootGo:SetActive(true)
+  local stepDes, eftDes, exteaEftDes = SeasonMazeTool:GetInstance():GetCardDesc(itemId)
   if stepDes then
-    (self.steps):SetText(stepDes)
-    ;
-    (self._stepRoot):SetActive(true)
+    self.steps:SetText(stepDes)
+    self._stepRoot:SetActive(true)
   else
-    ;
-    (self._stepRoot):SetActive(false)
+    self._stepRoot:SetActive(false)
   end
   if eftDes then
-    (self.asset):SetText(eftDes)
-    ;
-    (self._assetRoot):SetActive(true)
+    self.asset:SetText(eftDes)
+    self._assetRoot:SetActive(true)
   else
-    ;
-    (self._assetRoot):SetActive(false)
+    self._assetRoot:SetActive(false)
   end
   if exteaEftDes then
-    (self.effect):SetText(exteaEftDes)
-    ;
-    (self._effectRoot):SetActive(true)
+    self.effect:SetText(exteaEftDes)
+    self._effectRoot:SetActive(true)
   else
-    ;
-    (self._effectRoot):SetActive(false)
+    self._effectRoot:SetActive(false)
   end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.root)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.root)
 end
-
-

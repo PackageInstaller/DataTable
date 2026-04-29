@@ -1,87 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/StateDrawCardPool/state_draw_card_pool_turn_next.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateDrawCardPoolTurnNext", State)
 StateDrawCardPoolTurnNext = StateDrawCardPoolTurnNext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateDrawCardPoolTurnNext.Init = function(self)
-  -- function num : 0_0
+function StateDrawCardPoolTurnNext:Init()
   self._fsm = self:GetFsm()
-  self._ui = (self._fsm):GetData()
-  self._anim = (self._ui):GetAnimNameSwitch()
+  self._ui = self._fsm:GetData()
+  self._anim, self._animName = self._ui:GetAnimNameSwitch()
   self.lockKey = "StateDrawCardPoolTurnNext"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolTurnNext.OnEnter = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function StateDrawCardPoolTurnNext:OnEnter(TT, ...)
   self:Init()
   if self._ui then
-    (self._ui):Lock(self.lockKey)
-    ;
-    (self._anim):Play(self._animName)
+    self._ui:Lock(self.lockKey)
+    self._anim:Play(self._animName)
   end
   YIELD(TT, 300)
   self:DOPlayTurnNext()
   YIELD(TT, 800)
   if self._fsm then
-    (self._fsm):ChangeState(StateDrawCardPool.Init)
+    self._fsm:ChangeState(StateDrawCardPool.Init)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolTurnNext.OnExit = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function StateDrawCardPoolTurnNext:OnExit(TT)
   if self._ui then
-    if (self._anim):IsPlaying(self._animName) then
-      (Log.fatal)("### StateDrawCardPoolTurnNext OnExit anim IsPlaying. ", self._animName)
+    if self._anim:IsPlaying(self._animName) then
+      Log.fatal("### StateDrawCardPoolTurnNext OnExit anim IsPlaying. ", self._animName)
     end
-    for i = 1, (self._ui):GetLenLogos() do
-      local anim, animName = (self._ui):GetAnimNameSwitchPool(i)
+    for i = 1, self._ui:GetLenLogos() do
+      local anim, animName = self._ui:GetAnimNameSwitchPool(i)
       if anim and anim:IsPlaying(animName) then
-        (Log.fatal)("### StateDrawCardPoolTurnNext OnExit anim IsPlaying.", animName)
+        Log.fatal("### StateDrawCardPoolTurnNext OnExit anim IsPlaying.", animName)
       end
     end
-    ;
-    (self._ui):UnLock(self.lockKey)
+    self._ui:UnLock(self.lockKey)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolTurnNext.Destroy = function(self)
-  -- function num : 0_3
+function StateDrawCardPoolTurnNext:Destroy()
   if self._ui then
-    (self._ui):UnLock(self.lockKey)
+    self._ui:UnLock(self.lockKey)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolTurnNext.DOPlayTurnNext = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function StateDrawCardPoolTurnNext:DOPlayTurnNext()
   if not self._ui then
-    return 
+    return
   end
   local duration = 0.3
-  local isFlip = (self._ui):IsFlip()
-  local layer2Rect = (self._ui).layer2Rect
-  local layer2Group = (self._ui).layer2Group
-  local tipsRT = (self._ui).tipsRT
-  local btnsRT = (self._ui).btnsRT
-  local onePetGoRT = (self._ui).onePetGoRT
-  local morePetGoRT = (self._ui).morePetGoRT
-  local tipsCanvasGroup = (self._ui).tipsCanvasGroup
-  local btnsCanvasGroup = (self._ui).btnsCanvasGroup
-  local onePetGoCanvasGroup = (self._ui).onePetGoCanvasGroup
-  local morePetGoCanvasGroup = (self._ui).morePetGoCanvasGroup
-  local leftDownGoCanvasGroup = (self._ui).leftDownGoCanvasGroup
-  local leftDownRt = (self._ui).leftDownRt
+  local isFlip = self._ui:IsFlip()
+  local layer2Rect = self._ui.layer2Rect
+  local layer2Group = self._ui.layer2Group
+  local tipsRT = self._ui.tipsRT
+  local btnsRT = self._ui.btnsRT
+  local onePetGoRT = self._ui.onePetGoRT
+  local morePetGoRT = self._ui.morePetGoRT
+  local tipsCanvasGroup = self._ui.tipsCanvasGroup
+  local btnsCanvasGroup = self._ui.btnsCanvasGroup
+  local onePetGoCanvasGroup = self._ui.onePetGoCanvasGroup
+  local morePetGoCanvasGroup = self._ui.morePetGoCanvasGroup
+  local leftDownGoCanvasGroup = self._ui.leftDownGoCanvasGroup
+  local leftDownRt = self._ui.leftDownRt
   local leftDownRtPos = leftDownRt.anchoredPosition
   layer2Rect.anchoredPosition = Vector2(100 * (isFlip and -1 or 1), 0)
   local v2Layer = layer2Rect.anchoredPosition
@@ -90,9 +69,7 @@ StateDrawCardPoolTurnNext.DOPlayTurnNext = function(self)
   onePetGoRT.anchoredPosition = v2Layer
   morePetGoRT.anchoredPosition = v2Layer
   leftDownRtPos.x = v2Layer.x
-  ;
-  (layer2Rect:DOAnchorPosX(0, duration)):OnUpdate(function()
-    -- function num : 0_4_0 , upvalues : layer2Rect, tipsRT, btnsRT, onePetGoRT, morePetGoRT, leftDownRtPos, leftDownRt
+  layer2Rect:DOAnchorPosX(0, duration):OnUpdate(function()
     local v2Layer = layer2Rect.anchoredPosition
     tipsRT.anchoredPosition = v2Layer
     btnsRT.anchoredPosition = v2Layer
@@ -100,19 +77,13 @@ StateDrawCardPoolTurnNext.DOPlayTurnNext = function(self)
     morePetGoRT.anchoredPosition = v2Layer
     leftDownRtPos.x = v2Layer.x
     leftDownRt.anchoredPosition = leftDownRtPos
-  end
-)
-  ;
-  (layer2Group:DOFade(1, duration)):OnUpdate(function()
-    -- function num : 0_4_1 , upvalues : layer2Group, tipsCanvasGroup, btnsCanvasGroup, onePetGoCanvasGroup, morePetGoCanvasGroup, leftDownGoCanvasGroup
+  end)
+  layer2Group:DOFade(1, duration):OnUpdate(function()
     local alpha = layer2Group.alpha
     tipsCanvasGroup.alpha = alpha
     btnsCanvasGroup.alpha = alpha
     onePetGoCanvasGroup.alpha = alpha
     morePetGoCanvasGroup.alpha = alpha
     leftDownGoCanvasGroup.alpha = alpha
-  end
-)
+  end)
 end
-
-

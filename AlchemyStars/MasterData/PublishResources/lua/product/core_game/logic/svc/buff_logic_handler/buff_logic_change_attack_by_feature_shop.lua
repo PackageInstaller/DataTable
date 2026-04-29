@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_attack_by_feature_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttackByFeatureShop", BuffLogicBase)
 BuffLogicChangeAttackByFeatureShop = BuffLogicChangeAttackByFeatureShop
 local ChangeAttackByFeatureShopAttributeType = {Attack = 0}
 _enum("ChangeAttackByFeatureShopAttributeType", ChangeAttackByFeatureShopAttributeType)
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeAttackByFeatureShop.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : ChangeAttackByFeatureShopAttributeType
+function BuffLogicChangeAttackByFeatureShop:Constructor(buffInstance, logicParam)
   self._baseAttrType = ChangeAttackByFeatureShopAttributeType.Attack
   self._mul = logicParam.mul or 0
   self._getParamFromFeatureCfg = logicParam.getParamFromFeatureCfg or 1
@@ -21,13 +14,10 @@ BuffLogicChangeAttackByFeatureShop.Constructor = function(self, buffInstance, lo
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeAttackByFeatureShop.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : ChangeAttackByFeatureShopAttributeType, _ENV
-  local context = (self._buffInstance):Context()
+function BuffLogicChangeAttackByFeatureShop:DoLogic()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local eCaster = context.casterEntity
   local cAttrCaster = eCaster:Attributes()
@@ -36,14 +26,14 @@ BuffLogicChangeAttackByFeatureShop.DoLogic = function(self)
     base = cAttrCaster:GetAttribute("Attack")
   end
   if not base then
-    return 
+    return
   end
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local overMaxCoinCount = lsvcFeature:GetShopOverMaxCoinCount()
   if overMaxCoinCount <= 0 then
-    return 
+    return
   end
-  if self._maxOverCoinCount > 0 and self._maxOverCoinCount < overMaxCoinCount then
+  if 0 < self._maxOverCoinCount and overMaxCoinCount > self._maxOverCoinCount then
     overMaxCoinCount = self._maxOverCoinCount
   end
   local mulParam = self._mul
@@ -51,76 +41,56 @@ BuffLogicChangeAttackByFeatureShop.DoLogic = function(self)
     mulParam = lsvcFeature:GetShopOverMaxCoinCountAddAttackParam()
   end
   local val = base * mulParam * overMaxCoinCount
-  local eBeneficiary = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):ChangeBaseAttack(eBeneficiary, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._ChangeAttackType = ModifyBaseAttackType.AttackConstantFix
-  local owner = ((self._buffInstance):Entity())
-  local pstID = nil
+  local eBeneficiary = self._buffInstance:Entity()
+  self._buffLogicService:ChangeBaseAttack(eBeneficiary, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, val)
+  self._buffInstance._ChangeAttackType = ModifyBaseAttackType.AttackConstantFix
+  local owner = self._buffInstance:Entity()
+  local pstID
   if owner:HasPetPstID() then
-    pstID = (owner:PetPstID()):GetPstID()
+    pstID = owner:PetPstID():GetPstID()
   end
-  local casterPstID = nil
+  local casterPstID
   if eCaster:HasPetPstID() then
-    casterPstID = (eCaster:PetPstID()):GetPstID()
+    casterPstID = eCaster:PetPstID():GetPstID()
   end
   local result = BuffResultChangeAttackByFeatureShop:New(eCaster:GetID(), val, self._light, pstID, casterPstID)
   return result
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeAttackByFeatureShop.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicChangeAttackByFeatureShop:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicUndoChangeAttackByFeatureShop", BuffLogicBase)
 BuffLogicUndoChangeAttackByFeatureShop = BuffLogicUndoChangeAttackByFeatureShop
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicUndoChangeAttackByFeatureShop.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicUndoChangeAttackByFeatureShop:Constructor(buffInstance, logicParam)
   self._black = false
   if logicParam.black and logicParam.black == 1 then
     self._black = true
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicUndoChangeAttackByFeatureShop.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeAttackByFeatureShop_RunCount = 0
-  local eBeneficiary = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseAttack(eBeneficiary, self:GetBuffSeq(), (self._buffInstance)._ChangeAttackType)
-  local context = (self._buffInstance):Context()
+function BuffLogicUndoChangeAttackByFeatureShop:DoLogic()
+  self._buffInstance.BuffLogicChangeAttackByFeatureShop_RunCount = 0
+  local eBeneficiary = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseAttack(eBeneficiary, self:GetBuffSeq(), self._buffInstance._ChangeAttackType)
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
-  local owner = ((self._buffInstance):Entity())
-  local pstID = nil
+  local owner = self._buffInstance:Entity()
+  local pstID
   if owner:HasPetPstID() then
-    local casterEntity = context.casterEntity
-    local casterPstID = 0
-    if casterEntity:HasPetPstID() then
-      casterPstID = (casterEntity:PetPstID()):GetPstID()
-    end
-    local result = BuffResultUndoChangeAttackByFeatureShop:New(self._black, casterPstID)
-    return result
   end
+  local casterEntity = context.casterEntity
+  local casterPstID = 0
+  if casterEntity:HasPetPstID() then
+    casterPstID = casterEntity:PetPstID():GetPstID()
+  end
+  local result = BuffResultUndoChangeAttackByFeatureShop:New(self._black, casterPstID)
+  return result
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicUndoChangeAttackByFeatureShop.DoOverlap = function(self)
-  -- function num : 0_5
+function BuffLogicUndoChangeAttackByFeatureShop:DoOverlap()
 end
-
-

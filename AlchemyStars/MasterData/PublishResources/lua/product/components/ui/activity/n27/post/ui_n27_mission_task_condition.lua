@@ -1,172 +1,114 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/ui_n27_mission_task_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27MissionTaskCondition", Object)
 UIN27MissionTaskCondition = UIN27MissionTaskCondition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27MissionTaskCondition.Constructor = function(self)
-  -- function num : 0_0
+function UIN27MissionTaskCondition:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MissionTaskCondition.CheckTaskAndGetStr = function(self, task, curOrderMap)
-  -- function num : 0_1 , upvalues : _ENV
-  local taskCondition = (string.split)(task.Condition, ",")
+function UIN27MissionTaskCondition:CheckTaskAndGetStr(task, curOrderMap)
+  local taskCondition = string.split(task.Condition, ",")
   for i = 1, #taskCondition do
     taskCondition[i] = tonumber(taskCondition[i])
   end
-  local str = (StringTable.Get)(task.Desc)
+  local str = StringTable.Get(task.Desc)
   local typeID = taskCondition[1]
   if typeID == 3500 then
     local count = taskCondition[3]
     return self:FinishOrderCountStr(str, count, curOrderMap)
-  else
-    do
-      if typeID == 3503 then
-        local type = taskCondition[3]
-        local id = taskCondition[4]
-        local count = taskCondition[5]
-        return self:OrderContainsItemStr(str, type, id, count, curOrderMap)
-      else
-        do
-          if typeID == 3502 then
-            local petID = taskCondition[3]
-            local percent = taskCondition[4]
-            return self:FinishPetOrder(str, petID, percent, curOrderMap)
-          else
-            do
-              if typeID == 3501 then
-                local percent = taskCondition[3]
-                return self:FinishPercent(str, percent, curOrderMap)
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif typeID == 3503 then
+    local type = taskCondition[3]
+    local id = taskCondition[4]
+    local count = taskCondition[5]
+    return self:OrderContainsItemStr(str, type, id, count, curOrderMap)
+  elseif typeID == 3502 then
+    local petID = taskCondition[3]
+    local percent = taskCondition[4]
+    return self:FinishPetOrder(str, petID, percent, curOrderMap)
+  elseif typeID == 3501 then
+    local percent = taskCondition[3]
+    return self:FinishPercent(str, percent, curOrderMap)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MissionTaskCondition.FinishOrderCountStr = function(self, str, count, curOrderMap)
-  -- function num : 0_2 , upvalues : _ENV
-  local orderCount = (table.count)(curOrderMap)
+function UIN27MissionTaskCondition:FinishOrderCountStr(str, count, curOrderMap)
+  local orderCount = table.count(curOrderMap)
   local done = count <= orderCount
-  do return (string.format)("%s<color=#DCA42B>(%d/%d)</color>", str, orderCount, count), done end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return string.format("%s<color=#DCA42B>(%d/%d)</color>", str, orderCount, count), done
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MissionTaskCondition.GetOrderItemTypeCount = function(self, orderID, orderMap, typeId)
-  -- function num : 0_3 , upvalues : _ENV
-  local orderCfg = ((Cfg.cfg_component_post_station_game_mission_order)({ID = orderID}))[1]
+function UIN27MissionTaskCondition:GetOrderItemTypeCount(orderID, orderMap, typeId)
+  local orderCfg = Cfg.cfg_component_post_station_game_mission_order({ID = orderID})[1]
   local itemTypeMap = {}
-  for itemID,itemCount in pairs(orderMap) do
-    local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = itemID}))[1]
+  for itemID, itemCount in pairs(orderMap) do
+    local itemCfg = Cfg.cfg_component_post_station_game_item({ID = itemID})[1]
     local itemType = itemCfg.ItemType
     itemTypeMap[itemType] = itemTypeMap[itemType] or 0
     itemTypeMap[itemType] = itemTypeMap[itemType] + itemCount
   end
   local curCount = 0
-  if not orderCfg.ItemIdAndNum then
-    local itemIdAndNum = {}
-  end
-  if not orderCfg.ItemTypeAndNum then
-    local itemTypeAndNum = {}
-  end
-  for _,v in pairs(itemIdAndNum) do
-    local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = v[1]}))[1]
+  local itemIdAndNum = orderCfg.ItemIdAndNum or {}
+  local itemTypeAndNum = orderCfg.ItemTypeAndNum or {}
+  for _, v in pairs(itemIdAndNum) do
+    local itemCfg = Cfg.cfg_component_post_station_game_item({
+      ID = v[1]
+    })[1]
     local itemType = itemCfg.ItemType
-    if not orderMap[v[1]] then
-      local haveCount = itemType ~= typeId or 0
-    end
-    if v[2] >= haveCount or not v[2] then
-      do
-        curCount = curCount + haveCount
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if itemType == typeId then
+      local haveCount = orderMap[v[1]] or 0
+      haveCount = haveCount > v[2] and v[2] or haveCount
+      curCount = curCount + haveCount
     end
   end
-  for _,v in pairs(itemTypeAndNum) do
-    if not itemTypeMap[typeId] then
-      local haveCount = v[1] ~= typeId or 0
-    end
-    if v[2] >= haveCount or not v[2] then
-      do
-        curCount = curCount + haveCount
-        -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for _, v in pairs(itemTypeAndNum) do
+    if v[1] == typeId then
+      local haveCount = itemTypeMap[typeId] or 0
+      haveCount = haveCount > v[2] and v[2] or haveCount
+      curCount = curCount + haveCount
     end
   end
   return curCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MissionTaskCondition.GetOrderItemCount = function(self, orderID, orderMap, itemId)
-  -- function num : 0_4 , upvalues : _ENV
-  local orderCfg = ((Cfg.cfg_component_post_station_game_mission_order)({ID = orderID}))[1]
+function UIN27MissionTaskCondition:GetOrderItemCount(orderID, orderMap, itemId)
+  local orderCfg = Cfg.cfg_component_post_station_game_mission_order({ID = orderID})[1]
   local curCount = 0
-  if not orderCfg.ItemIdAndNum then
-    local itemIdAndNum = {}
-  end
-  if not orderCfg.ItemTypeAndNum then
-    local itemTypeAndNum = {}
-  end
-  local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = itemId}))[1]
+  local itemIdAndNum = orderCfg.ItemIdAndNum or {}
+  local itemTypeAndNum = orderCfg.ItemTypeAndNum or {}
+  local itemCfg = Cfg.cfg_component_post_station_game_item({ID = itemId})[1]
   local itemType = itemCfg.ItemType
   local haveCount = orderMap[itemId] or 0
-  for _,v in pairs(itemIdAndNum) do
-    if v[1] == itemId and (v[2] >= haveCount or not v[2]) then
+  for _, v in pairs(itemIdAndNum) do
+    if v[1] == itemId then
+      haveCount = haveCount > v[2] and v[2] or haveCount
       curCount = curCount + haveCount
     end
   end
-  for _,v in pairs(itemTypeAndNum) do
-    if v[1] == itemType and (v[2] >= haveCount or not v[2]) then
+  for _, v in pairs(itemTypeAndNum) do
+    if v[1] == itemType then
+      haveCount = haveCount > v[2] and v[2] or haveCount
       curCount = curCount + haveCount
     end
   end
   return curCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MissionTaskCondition.OrderContainsItemStr = function(self, str, type, id, needCount, curOrderMap)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN27MissionTaskCondition:OrderContainsItemStr(str, type, id, needCount, curOrderMap)
   local curCount = 0
-  for orderID,orderMap in pairs(curOrderMap) do
+  for orderID, orderMap in pairs(curOrderMap) do
     if type == 0 then
       curCount = curCount + self:GetOrderItemCount(orderID, orderMap, id)
     else
       curCount = curCount + self:GetOrderItemTypeCount(orderID, orderMap, id)
     end
   end
-  do
-    local done = (needCount >= curCount or not needCount) and curCount == needCount
-    do return (string.format)("%s<color=#DCA42B>(%d/%d)</color>", str, curCount, needCount), done end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  curCount = needCount < curCount and needCount or curCount
+  local done = curCount == needCount
+  return string.format("%s<color=#DCA42B>(%d/%d)</color>", str, curCount, needCount), done
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MissionTaskCondition.FinishPetOrder = function(self, str, petID, percent, curOrderMap)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN27MissionTaskCondition:FinishPetOrder(str, petID, percent, curOrderMap)
   local petFinish = 0
-  for orderID,orderMap in pairs(curOrderMap) do
-    local orderCfg = ((Cfg.cfg_component_post_station_game_mission_order)({ID = orderID}))[1]
+  for orderID, orderMap in pairs(curOrderMap) do
+    local orderCfg = Cfg.cfg_component_post_station_game_mission_order({ID = orderID})[1]
     if orderCfg.PetId == petID then
       local finishPercent = self:GetOrderFinishPercent(orderID, orderMap)
       if percent <= finishPercent then
@@ -175,85 +117,52 @@ UIN27MissionTaskCondition.FinishPetOrder = function(self, str, petID, percent, c
     end
   end
   local done = petFinish == 1
-  do return (string.format)("%s<color=#DCA42B>(%d/%d)</color>", str, petFinish, 1), done end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return string.format("%s<color=#DCA42B>(%d/%d)</color>", str, petFinish, 1), done
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MissionTaskCondition.FinishPercent = function(self, str, percent, curOrderMap)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN27MissionTaskCondition:FinishPercent(str, percent, curOrderMap)
   local orderPercentMap = {}
-  for orderID,orderMap in pairs(curOrderMap) do
+  for orderID, orderMap in pairs(curOrderMap) do
     local per = self:GetOrderFinishPercent(orderID, orderMap)
-    ;
-    (table.insert)(orderPercentMap, per)
+    table.insert(orderPercentMap, per)
   end
   local all = 0
-  for _,v in pairs(orderPercentMap) do
+  for _, v in pairs(orderPercentMap) do
     all = all + v
   end
-  do
-    if #orderPercentMap ~= 0 or not 0 then
-      local per = (math.floor)((all) / #orderPercentMap)
-    end
-    local done = percent <= per
-    do return (string.format)("%s<color=#DCA42B>(%d%%/%d%%)</color>", str, per, percent), done end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  local per = #orderPercentMap == 0 and 0 or math.floor(all / #orderPercentMap)
+  local done = percent <= per
+  return string.format("%s<color=#DCA42B>(%d%%/%d%%)</color>", str, per, percent), done
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27MissionTaskCondition.GetOrderFinishPercent = function(self, orderID, orderMap)
-  -- function num : 0_8 , upvalues : _ENV
-  local orderCfg = ((Cfg.cfg_component_post_station_game_mission_order)({ID = orderID}))[1]
+function UIN27MissionTaskCondition:GetOrderFinishPercent(orderID, orderMap)
+  local orderCfg = Cfg.cfg_component_post_station_game_mission_order({ID = orderID})[1]
   local itemTypeMap = {}
-  for itemID,itemCount in pairs(orderMap) do
-    local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = itemID}))[1]
+  for itemID, itemCount in pairs(orderMap) do
+    local itemCfg = Cfg.cfg_component_post_station_game_item({ID = itemID})[1]
     local itemType = itemCfg.ItemType
     itemTypeMap[itemType] = itemTypeMap[itemType] or 0
     itemTypeMap[itemType] = itemTypeMap[itemType] + itemCount
   end
   local haveCount = 0
   local needCount = 0
-  if not orderCfg.ItemTypeAndNum then
-    local itemTypeAndNum = {}
-  end
-  if not orderCfg.ItemIdAndNum then
-    local itemIdAndNum = {}
-  end
-  for _,v in pairs(itemTypeAndNum) do
+  local itemTypeAndNum = orderCfg.ItemTypeAndNum or {}
+  local itemIdAndNum = orderCfg.ItemIdAndNum or {}
+  for _, v in pairs(itemTypeAndNum) do
     local type = v[1]
     local curNeedCount = v[2]
     local curHaveCount = itemTypeMap[type] and itemTypeMap[type] or 0
-    if curNeedCount >= curHaveCount or not curNeedCount then
-      do
-        haveCount = haveCount + curHaveCount
-        needCount = needCount + curNeedCount
-        -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
+    curHaveCount = curNeedCount < curHaveCount and curNeedCount or curHaveCount
+    haveCount = haveCount + curHaveCount
+    needCount = needCount + curNeedCount
   end
-  for _,v in pairs(itemIdAndNum) do
+  for _, v in pairs(itemIdAndNum) do
     local itemID = v[1]
     local curNeedCount = v[2]
     local curHaveCount = orderMap[itemID] and orderMap[itemID] or 0
-    if curNeedCount >= curHaveCount or not curNeedCount then
-      do
-        haveCount = haveCount + curHaveCount
-        needCount = needCount + curNeedCount
-        -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
+    curHaveCount = curNeedCount < curHaveCount and curNeedCount or curHaveCount
+    haveCount = haveCount + curHaveCount
+    needCount = needCount + curNeedCount
   end
-  return (math.floor)((haveCount) / (needCount) * 100)
+  return math.floor(haveCount / needCount * 100)
 end
-
-

@@ -1,55 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_poison_by_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddPoisonByAttack", BuffLogicBase)
 BuffLogicAddPoisonByAttack = BuffLogicAddPoisonByAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddPoisonByAttack.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddPoisonByAttack:Constructor(buffInstance, logicParam)
   self._damagePercent = logicParam.damagePercent
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddPoisonByAttack.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicAddPoisonByAttack:DoLogic()
+  local e = self._buffInstance:Entity()
   local attrCmpt = e:Attributes()
   local maxHp = attrCmpt:CalcMaxHp()
   if maxHp <= 0 then
-    return 
+    return
   end
   local buffCmpt = e:BuffComponent()
   if not buffCmpt then
-    return 
+    return
   end
   local casterID = buffCmpt:GetPoisonByAttackCasterID()
-  local caster = (self._world):GetEntityByID(casterID)
+  local caster = self._world:GetEntityByID(casterID)
   if not caster then
-    return 
+    return
   end
   local turn = buffCmpt:GetBuffValue("PoisonByAttackTurn")
-  local round = ((self._world):BattleStat()):GetLevelTotalRoundCount()
+  local round = self._world:BattleStat():GetLevelTotalRoundCount()
   if turn == round then
-    return 
+    return
   end
   buffCmpt:SetBuffValue("PoisonByAttackTurn", round)
-  local layer = (self._buffInstance):GetLayerCount()
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
+  local layer = self._buffInstance:GetLayerCount()
+  local buffLogicSvc = self._world:GetService("BuffLogic")
   local casterAttack = buffLogicSvc:GetEntityAttackValue(caster)
   local casterEntity = self:GetCasterEntity()
   if casterEntity:EntityType() == nil then
     casterEntity = e
   end
-  local damageInfo = buffLogicSvc:DoBuffDamage((self._buffInstance):BuffID(), casterEntity, e, {percent = self._damagePercent, layer = layer, attack = casterAttack, formulaID = FormulaNumberType.PoisonByAttackDamage})
+  local damageInfo = buffLogicSvc:DoBuffDamage(self._buffInstance:BuffID(), casterEntity, e, {
+    percent = self._damagePercent,
+    layer = layer,
+    attack = casterAttack,
+    formulaID = FormulaNumberType.PoisonByAttackDamage
+  })
   if damageInfo:GetDamageType() == DamageType.Real then
     damageInfo:SetDamageType(DamageType.Poison)
   end
   local buffResult = BuffResultAddPoison:New(damageInfo)
   return buffResult
 end
-
-

@@ -1,49 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_ui.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressUI", SeasonMapExpressBase)
 SeasonMapExpressUI = SeasonMapExpressUI
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressUI.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).UI
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+function SeasonMapExpressUI:Constructor(cfg, eventPoint)
+  self._content = self._cfg.UI
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressUI.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpressUI:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressUI.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMapExpressUI:OnPlay()
   if self._content then
     self._state = SeasonExpressState.Playing
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog(self._content, self._eventPoint, function(success)
-    -- function num : 0_2_0 , upvalues : self
-    self:_OnCallBack(success)
-  end
-)
+    GameGlobal.UIStateManager():ShowDialog(self._content, self._eventPoint, function(success)
+      self:_OnCallBack(success)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressUI._OnCallBack = function(self, success)
-  -- function num : 0_3
+function SeasonMapExpressUI:_OnCallBack(success)
   if success then
     self:Next()
   else
-    ;
-    (self._eventPoint):InterruptExpress()
+    self._eventPoint:InterruptExpress()
   end
 end
-
-

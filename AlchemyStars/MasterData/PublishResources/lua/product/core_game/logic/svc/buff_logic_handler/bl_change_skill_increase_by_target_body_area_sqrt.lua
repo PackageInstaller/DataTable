@@ -1,66 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_increase_by_target_body_area_sqrt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillIncreaseByTargetBodyAreaSqrt", BuffLogicBase)
 BuffLogicChangeSkillIncreaseByTargetBodyAreaSqrt = BuffLogicChangeSkillIncreaseByTargetBodyAreaSqrt
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillIncreaseByTargetBodyAreaSqrt.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeSkillIncreaseByTargetBodyAreaSqrt:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillIncreaseByTargetBodyAreaSqrt.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillIncreaseByTargetBodyAreaSqrt:DoLogic(notify)
   if not notify.GetDefenderEntity then
-    return 
+    return
   end
   local defenderEntity = notify:GetDefenderEntity()
   local defenderPos = defenderEntity:GetGridPosition()
   local bodyAreaCmpt = defenderEntity:BodyArea()
   if not bodyAreaCmpt then
-    return 
+    return
   end
   local areaCount = bodyAreaCmpt:GetAreaCount()
-  local changeValue = (math.sqrt)(areaCount)
+  local changeValue = math.sqrt(areaCount)
   local tmpVal = changeValue * 10
-  local f = (math.floor)(tmpVal)
+  local f = math.floor(tmpVal)
   if f == tmpVal then
     tmpVal = f
   else
-    tmpVal = (math.floor)(tmpVal + 0.5)
+    tmpVal = math.floor(tmpVal + 0.5)
   end
   changeValue = tmpVal / 10
   changeValue = changeValue - 1
   if changeValue < 0 then
     changeValue = 0
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, changeValue)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, changeValue)
   end
 end
 
 _class("BuffLogicRemoveSkillIncreaseByTargetBodyAreaSqrt", BuffLogicBase)
 BuffLogicRemoveSkillIncreaseByTargetBodyAreaSqrt = BuffLogicRemoveSkillIncreaseByTargetBodyAreaSqrt
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillIncreaseByTargetBodyAreaSqrt.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillIncreaseByTargetBodyAreaSqrt:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillIncreaseByTargetBodyAreaSqrt.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillIncrease(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveSkillIncreaseByTargetBodyAreaSqrt:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillIncrease(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

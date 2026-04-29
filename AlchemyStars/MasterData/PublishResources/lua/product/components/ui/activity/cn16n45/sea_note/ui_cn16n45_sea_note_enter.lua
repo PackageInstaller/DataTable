@@ -1,109 +1,96 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn16n45/sea_note/ui_cn16n45_sea_note_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN16N45SeaNoteEnter", UISideEnterCenterContentBase)
 UICN16N45SeaNoteEnter = UICN16N45SeaNoteEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN16N45SeaNoteEnter.Constructor = function(self)
-  -- function num : 0_0
+function UICN16N45SeaNoteEnter:Constructor()
   self._componentState = {}
-  self._move = {[1] = 0, [2] = 0, [3] = -260, [4] = -640, [5] = -1000, [6] = -1450, [7] = -1800, [8] = -2000, [9] = -2400, [10] = -2800, [11] = -3200, [12] = -2800, [13] = -3000, [14] = -2350, [15] = -2350, [16] = -2350, [17] = -2350}
+  self._move = {
+    [1] = 0,
+    [2] = 0,
+    [3] = -260,
+    [4] = -640,
+    [5] = -1000,
+    [6] = -1450,
+    [7] = -1800,
+    [8] = -2000,
+    [9] = -2400,
+    [10] = -2800,
+    [11] = -3200,
+    [12] = -2800,
+    [13] = -3000,
+    [14] = -2350,
+    [15] = -2350,
+    [16] = -2350,
+    [17] = -2350
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:DoInit()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = self._data
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   self._activeEndTime = sample.end_time
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   self._ASheepCom = localProcess:GetComponent(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP)
   self._ASheeoComInfo = localProcess:GetComponentInfo(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP)
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  self.open_id = ((GameGlobal.GameLogic)()):GetOpenId()
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  self.open_id = GameGlobal.GameLogic():GetOpenId()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.DoShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:DoShow()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self:_GetComponents()
   self:_OnValue()
   self:RefreshRed()
   self:_SetTimer()
   self:_PlayAnim()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN16N45SeaNoteEnter)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN16N45SeaNoteEnter)
   self:RefreshItemTask()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.RefreshItemTask = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:RefreshItemTask()
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    while 1 do
-      local nodes = (self._roadPool):GetAllSpawnList()
+    while true do
+      local nodes = self._roadPool:GetAllSpawnList()
       for i = 1, #nodes do
         local single = nodes[i]
         single:RefreshTimelock()
       end
       YIELD(TT, 1000)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.DoHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:DoHide()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
   if self._taskUnkLockid then
-    ((GameGlobal.TaskManager)()):KillTask(self._taskUnkLockid)
+    GameGlobal.TaskManager():KillTask(self._taskUnkLockid)
     self._taskUnkLockid = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.DoDestroy = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:DoDestroy()
   if self._timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+    GameGlobal.Timer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
   if self._taskUnkLockid then
-    ((GameGlobal.TaskManager)()):KillTask(self._taskUnkLockid)
+    GameGlobal.TaskManager():KillTask(self._taskUnkLockid)
     self._taskUnkLockid = nil
   end
-  ;
-  (UICN16N45SeaNoteEnter.super):Dispose()
+  UICN16N45SeaNoteEnter.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._GetComponents = function(self)
-  -- function num : 0_6
+function UICN16N45SeaNoteEnter:_GetComponents()
   self._roadPool = self:GetUIComponent("UISelectObjectPath", "RoadPointPool")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._RestTimeText = self:GetUIComponent("UILocalizationText", "RestTimeText")
@@ -117,30 +104,21 @@ UICN16N45SeaNoteEnter._GetComponents = function(self)
   self.rankMissionBtnAnimation = self:GetUIComponent("Animation", "RankMissionBtn")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._SortCfg = function(self, items)
-  -- function num : 0_7 , upvalues : _ENV
-  (table.sort)(items, function(a, b)
-    -- function num : 0_7_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UICN16N45SeaNoteEnter:_SortCfg(items)
+  table.sort(items, function(a, b)
+    return a.ID < b.ID
+  end)
   return items
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._OnValue = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._passmission = ((self._ASheeoComInfo).m_info).m_pass_mission_info
+function UICN16N45SeaNoteEnter:_OnValue()
+  self._passmission = self._ASheeoComInfo.m_info.m_pass_mission_info
   local count = 0
   self.first = false
-  local campaignId = (self._ASheepCom):GetComponentCfgId()
-  local sheepComCfg = ((Cfg.cfg_campaign_component)({ComponentID = campaignId}))[1]
-  local rankMissionId = (sheepComCfg.RankSubKey)[1]
-  local cfgs = (Cfg.cfg_component_asheep_mission)({ComponentID = campaignId})
+  local campaignId = self._ASheepCom:GetComponentCfgId()
+  local sheepComCfg = Cfg.cfg_campaign_component({ComponentID = campaignId})[1]
+  local rankMissionId = sheepComCfg.RankSubKey[1]
+  local cfgs = Cfg.cfg_component_asheep_mission({ComponentID = campaignId})
   cfgs = self:_SortCfg(cfgs)
   local missionCount = 0
   for i = 1, #cfgs do
@@ -151,367 +129,257 @@ UICN16N45SeaNoteEnter._OnValue = function(self)
   end
   local allClear = false
   if self._passmission then
-    local passCount = (table.count)(self._passmission)
+    local passCount = table.count(self._passmission)
     if passCount == 0 then
       self.first = true
     end
     count = passCount
-    if (self._passmission)[rankMissionId] ~= nil then
+    if self._passmission[rankMissionId] ~= nil then
       count = count - 1
     end
-    if count + 1 <= missionCount then
+    if missionCount >= count + 1 then
       count = count + 1
     else
       allClear = true
     end
   else
-    do
-      self.first = true
-      count = 1
-      ;
-      (self._roadPool):SpawnObjects("UICN16N45SeaNoteRoadPointItem", count)
-      local nodes = (self._roadPool):GetAllSpawnList()
-      for i,v in ipairs(nodes) do
-        local pass = true
-        if self.first or i == count then
-          pass = false
-        end
-        if allClear then
-          pass = true
-        end
-        local index = (cfgs[i]).ID
-        v:SetData(index, pass, self._passmission, function(index)
-    -- function num : 0_8_0 , upvalues : self
-    self:ShowDetail(index)
+    self.first = true
+    count = 1
   end
-, cfgs[i], self._campaign)
-      end
-      if #nodes == 0 then
-        return 
-      end
-      -- DECOMPILER ERROR at PC110: Confused about usage of register: R9 in 'UnsetPending'
-
-      if not self.first then
-        (self._contentRect).anchoredPosition = Vector2((self._move)[count], 0)
-      else
-        -- DECOMPILER ERROR at PC117: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self._contentRect).anchoredPosition = Vector2(0, 0)
-        -- DECOMPILER ERROR at PC125: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        ((self._RoadPointGuide).transform).position = (((nodes[1]):GetGameObject()).transform).position
-      end
-      local width = 400 * (#nodes + 2)
-      if width > 0 then
-        if width > 4750 then
-          width = 4750
-        end
-        local delta = (self._contentRect).sizeDelta
-        delta.x = width
-        -- DECOMPILER ERROR at PC138: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._contentRect).sizeDelta = delta
-      end
-      do
-        if (table.count)(self._passmission) == 0 then
-          (self._RankLock):SetActive(true)
-          ;
-          (self._RankMissionBtn):SetActive(false)
-          ;
-          (self._RankBtn):SetActive(false)
-          ;
-          (LocalDB.SetInt)("UICN16N45SeaNoteEnter:LockRank5", 1)
-        else
-          ;
-          (self._RankMissionBtn):SetActive(true)
-          ;
-          (self._RankBtn):SetActive(true)
-          ;
-          (self._RankLock):SetActive(true)
-          if (LocalDB.GetInt)("UICN16N45SeaNoteEnter:LockRank5") == 1 or (LocalDB.GetInt)("UICN16N45SeaNoteEnter:LockRank5") == 0 then
-            (LocalDB.SetInt)("UICN16N45SeaNoteEnter:LockRank5", 2)
-            self._taskUnkLockid = self:StartTask(self.Task_UnLockRank, self)
-          else
-            if self._taskUnkLockid == nil then
-              (self._RankLock):SetActive(false)
-            end
-          end
-          local lastCfg = cfgs[#cfgs]
-          ;
-          (self._RankMissionNameText):SetText((StringTable.Get)(lastCfg.MissionName))
-        end
-      end
+  self._roadPool:SpawnObjects("UICN16N45SeaNoteRoadPointItem", count)
+  local nodes = self._roadPool:GetAllSpawnList()
+  for i, v in ipairs(nodes) do
+    local pass = true
+    if self.first or i == count then
+      pass = false
     end
+    if allClear then
+      pass = true
+    end
+    local index = cfgs[i].ID
+    v:SetData(index, pass, self._passmission, function(index)
+      self:ShowDetail(index)
+    end, cfgs[i], self._campaign)
+  end
+  if #nodes == 0 then
+    return
+  end
+  if not self.first then
+    self._contentRect.anchoredPosition = Vector2(self._move[count], 0)
+  else
+    self._contentRect.anchoredPosition = Vector2(0, 0)
+    self._RoadPointGuide.transform.position = nodes[1]:GetGameObject().transform.position
+  end
+  local width = 400 * (#nodes + 2)
+  if 0 < width then
+    if 4750 < width then
+      width = 4750
+    end
+    local delta = self._contentRect.sizeDelta
+    delta.x = width
+    self._contentRect.sizeDelta = delta
+  end
+  if table.count(self._passmission) == 0 then
+    self._RankLock:SetActive(true)
+    self._RankMissionBtn:SetActive(false)
+    self._RankBtn:SetActive(false)
+    LocalDB.SetInt("UICN16N45SeaNoteEnter:LockRank5", 1)
+  else
+    self._RankMissionBtn:SetActive(true)
+    self._RankBtn:SetActive(true)
+    self._RankLock:SetActive(true)
+    if LocalDB.GetInt("UICN16N45SeaNoteEnter:LockRank5") == 1 or LocalDB.GetInt("UICN16N45SeaNoteEnter:LockRank5") == 0 then
+      LocalDB.SetInt("UICN16N45SeaNoteEnter:LockRank5", 2)
+      self._taskUnkLockid = self:StartTask(self.Task_UnLockRank, self)
+    elseif self._taskUnkLockid == nil then
+      self._RankLock:SetActive(false)
+    end
+    local lastCfg = cfgs[#cfgs]
+    self._RankMissionNameText:SetText(StringTable.Get(lastCfg.MissionName))
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.Task_UnLockRank = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:Task_UnLockRank()
   YIELD(TT, 1000)
-  while ((GameGlobal.UIStateManager)()):IsShow("UIGetItemController") do
+  while GameGlobal.UIStateManager():IsShow("UIGetItemController") do
     YIELD(TT)
   end
   YIELD(TT, 500)
-  ;
-  (self.rankMissionBtnAnimation):Play("uianim_UICN16N45SeaNoteEnter_RankMissionName_unlock")
+  self.rankMissionBtnAnimation:Play("uianim_UICN16N45SeaNoteEnter_RankMissionName_unlock")
   YIELD(TT, 500)
   self._taskUnkLockid = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.CheckInGuide = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UICN16N45SeaNoteEnter:CheckInGuide()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   return guideModule:GuideInProgress()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.ShowDetail = function(self, id)
-  -- function num : 0_11
+function UICN16N45SeaNoteEnter:ShowDetail(id)
   local ActicityEnd = self:CheckActivityEnd()
   if ActicityEnd then
     self:CheckClose()
-    return 
+    return
   end
   self:Move(id)
   self:ShowDialog("UICN16N45SeaNoteLevelDetail", self._ASheepCom, self._ASheeoComInfo, id, self._passmission, function()
-    -- function num : 0_11_0 , upvalues : self
     self:RefreshRoadPoint()
     local ActicityEnd = self:CheckActivityEnd()
     if ActicityEnd then
       self:CheckClose()
-      return 
+      return
     end
-  end
-, function()
-    -- function num : 0_11_1 , upvalues : self
+  end, function()
     self:RefreshRed()
-  end
-, self._campaign)
+  end, self._campaign)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.Move = function(self, id)
-  -- function num : 0_12
+function UICN16N45SeaNoteEnter:Move(id)
   local moveTime = 1
   id = id - 17
-  local x = (self._move)[id]
-  ;
-  (self._contentRect):DOAnchorPosX(x, moveTime)
+  local x = self._move[id]
+  self._contentRect:DOAnchorPosX(x, moveTime)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.AfterUILayerChanged = function(self)
-  -- function num : 0_13
+function UICN16N45SeaNoteEnter:AfterUILayerChanged()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.RefreshRoadPoint = function(self)
-  -- function num : 0_14
+function UICN16N45SeaNoteEnter:RefreshRoadPoint()
   self:_ForceRefresh()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._ForceRefresh = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:_ForceRefresh()
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     self:_OnValue()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.BookBtnOnClick = function(self)
-  -- function num : 0_16
+function UICN16N45SeaNoteEnter:BookBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.CheckClose = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP) then
-    if ((GameGlobal.UIStateManager)()):IsShow("UICN16N45SeaNoteLevelDetail") then
-      ((GameGlobal.UIStateManager)()):CloseDialog("UICN16N45SeaNoteLevelDetail")
+function UICN16N45SeaNoteEnter:CheckClose()
+  if not self._campaign:CheckComponentOpen(ECampaignN9CenterComponentID.ECAMPAIGN_N9_ASHEEP) then
+    if GameGlobal.UIStateManager():IsShow("UICN16N45SeaNoteLevelDetail") then
+      GameGlobal.UIStateManager():CloseDialog("UICN16N45SeaNoteLevelDetail")
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_notice_content"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_notice_content"))
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.RankMissionBtnOnClick = function(self)
-  -- function num : 0_18
-  if (self._RankLock).activeSelf then
-    local ActicityEnd = self:CheckActivityEnd()
-    if ActicityEnd then
-      self:CheckClose()
-      return 
-    end
-    local id = 28
-    self:ShowDialog("UICN16N45SeaNoteLevelDetail", self._ASheepCom, self._ASheeoComInfo, id, self._passmission, function()
-    -- function num : 0_18_0 , upvalues : self
-    self:RefreshRoadPoint()
+function UICN16N45SeaNoteEnter:RankMissionBtnOnClick()
+  if self._RankLock.activeSelf then
   end
-, function()
-    -- function num : 0_18_1 , upvalues : self
-    self:RefreshRed()
-  end
-, self._campaign)
-  end
-end
-
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.RankBtnOnClick = function(self)
-  -- function num : 0_19
   local ActicityEnd = self:CheckActivityEnd()
   if ActicityEnd then
     self:CheckClose()
-    return 
+    return
+  end
+  local id = 28
+  self:ShowDialog("UICN16N45SeaNoteLevelDetail", self._ASheepCom, self._ASheeoComInfo, id, self._passmission, function()
+    self:RefreshRoadPoint()
+  end, function()
+    self:RefreshRed()
+  end, self._campaign)
+end
+
+function UICN16N45SeaNoteEnter:RankBtnOnClick()
+  local ActicityEnd = self:CheckActivityEnd()
+  if ActicityEnd then
+    self:CheckClose()
+    return
   end
   self:ShowDialog("UICN16N45SeaNoteRankingList", self._campaign)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.ActivityTipsbtnOnClick = function(self)
-  -- function num : 0_20
+function UICN16N45SeaNoteEnter:ActivityTipsbtnOnClick()
   local ActicityEnd = self:CheckActivityEnd()
   if ActicityEnd then
     self:CheckClose()
-    return 
+    return
   end
   local key = "UICN16N45SeaNoteIntro"
   self:ShowDialog("UIIntroLoader", key)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._SetTimer = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_21_0 , upvalues : self
+function UICN16N45SeaNoteEnter:_SetTimer()
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     return self:_SetRemainingTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._SetRemainingTimer = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:_SetRemainingTimer()
   local remaintime = 0
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local sample = (self._campaign):GetSample()
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local sample = self._campaign:GetSample()
   if sample == nil then
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-    ;
-    (self._RestTimeText):SetText("")
-    ;
-    (self._Text):SetText((StringTable.Get)("str_activity_finished"))
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+    self._RestTimeText:SetText("")
+    self._Text:SetText(StringTable.Get("str_activity_finished"))
     return true
   end
   local endtime = sample.end_time
   remaintime = endtime - curtime
   local pre_remaining = ""
   if remaintime < 0 then
-    ((self._RestTimeText).gameObject):SetActive(false)
+    self._RestTimeText.gameObject:SetActive(false)
   else
     self:_SetRemainTime(remaintime)
   end
   if remaintime <= 0 then
-    self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
-    ;
-    (self._RestTimeText):SetText("")
-    ;
-    (self._Text):SetText((StringTable.Get)("str_activity_finished"))
+    self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
+    self._RestTimeText:SetText("")
+    self._Text:SetText(StringTable.Get("str_activity_finished"))
     return true
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._SetRemainTime = function(self, remaintime)
-  -- function num : 0_23
-  (self._RestTimeText):SetText(self:_GetRemainTime(remaintime))
+function UICN16N45SeaNoteEnter:_SetRemainTime(remaintime)
+  self._RestTimeText:SetText(self:_GetRemainTime(remaintime))
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._GetRemainTime = function(self, time)
-  -- function num : 0_24 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UICN16N45SeaNoteEnter:_GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_activity_common_day") .. hour .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = day .. StringTable.Get("str_activity_common_day") .. hour .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = hour .. StringTable.Get("str_activity_common_hour") .. minute .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = minute .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = hour .. (StringTable.Get)("str_activity_common_hour") .. minute .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = minute .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), timestring)
+  return string.format(StringTable.Get("str_activity_common_over"), timestring)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.RefreshRed = function(self)
-  -- function num : 0_25
+function UICN16N45SeaNoteEnter:RefreshRed()
   local status = self:CheckRed()
-  ;
-  (self._Red):SetActive(status)
+  self._Red:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.CheckRed = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:CheckRed()
   local keyStr = "UICN16N45SeaNoteEnter_ItemCount" .. self.open_id
   local HaveCount = self:_GetHaveCount()
-  local LastCount = (LocalDB.GetInt)(keyStr, 0)
+  local LastCount = LocalDB.GetInt(keyStr, 0)
   if LastCount == HaveCount then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._GetHaveCount = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local cfg = (Cfg.cfg_south_sea_antique)({})
+function UICN16N45SeaNoteEnter:_GetHaveCount()
+  local cfg = Cfg.cfg_south_sea_antique({})
   local HaveCount = 0
-  for i,v in ipairs(cfg) do
+  for i, v in ipairs(cfg) do
     local have = self:_CheckHave(v.ItemID)
     if have then
       HaveCount = HaveCount + 1
@@ -520,11 +388,8 @@ UICN16N45SeaNoteEnter._GetHaveCount = function(self)
   return HaveCount
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._CheckHave = function(self, ItemID)
-  -- function num : 0_28
-  local count = (self.itemModule):GetItemCount(ItemID)
+function UICN16N45SeaNoteEnter:_CheckHave(ItemID)
+  local count = self.itemModule:GetItemCount(ItemID)
   if not count or count == 0 then
     return false
   else
@@ -532,33 +397,22 @@ UICN16N45SeaNoteEnter._CheckHave = function(self, ItemID)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter.CheckActivityEnd = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local sample = (self._campaign):GetSample()
+function UICN16N45SeaNoteEnter:CheckActivityEnd()
+  local sample = self._campaign:GetSample()
   if sample == nil then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN16N45SeaNoteEnter._PlayAnim = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UICN16N45SeaNoteEnter:_PlayAnim()
   self._Anim = self:GetUIComponent("Animation", "Anim")
   local LockName = "UICN16N45SeaNoteEnter_AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_30_0 , upvalues : self, LockName, _ENV
     self:Lock(LockName)
-    ;
-    (self._Anim):Play("uianim_UIActivitySouthSeaCN9MainController_in")
+    self._Anim:Play("uianim_UIActivitySouthSeaCN9MainController_in")
     YIELD(TT, 500)
     self:UnLock(LockName)
-  end
-)
+  end)
 end
-
-

@@ -1,49 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/components/logic_extensions/movement/movement_logic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MovementByDirection", IMovement)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-MovementByDirection.Constructor = function(self, dir, maxspeed)
-  -- function num : 0_0
+function MovementByDirection:Constructor(dir, maxspeed)
   self.Direction = dir
   self.max_speed = maxspeed
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementByDirection.Update = function(self, owner_entity, curPos, curDir, delta_time)
-  -- function num : 0_1
+function MovementByDirection:Update(owner_entity, curPos, curDir, delta_time)
   if curDir ~= self.Direction then
-    curDir = (self.Direction):Clone()
+    curDir = self.Direction:Clone()
     self.NextDirection = curDir
   end
   self.NextPosition = curPos:Add(curDir:Mul(delta_time * self.max_speed))
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementByDirection.SetMaxSpeed = function(self, max_speed)
-  -- function num : 0_2
+function MovementByDirection:SetMaxSpeed(max_speed)
   self.max_speed = max_speed
 end
 
 _class("MovementAlongPath", IMovement)
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
 
-MovementAlongPath.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function MovementAlongPath:Constructor()
   self.m_cur_way_point = -1
   self.remain_time = 0
   self.path = ArrayList:New()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-MovementAlongPath.Update = function(self, curPos, curDir, delta_time)
-  -- function num : 0_4
+function MovementAlongPath:Update(curPos, curDir, delta_time)
 end
-
-

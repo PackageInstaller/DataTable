@@ -1,98 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cast_active_skill_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CastActiveSkillCommand", IEntityCommand)
 CastActiveSkillCommand = CastActiveSkillCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CastActiveSkillCommand.Constructor = function(self)
-  -- function num : 0_0
+function CastActiveSkillCommand:Constructor()
   self._commandType = "CastActiveSkill"
   self._activeSkillID = -1
   self._casterPstID = -1
   self._casterTrapEntityID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function CastActiveSkillCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2 , upvalues : _ENV
+function CastActiveSkillCommand:GetExecStateID(runAtClient)
   if runAtClient then
-    return {GameStateID.PreviewActiveSkill, GameStateID.WaitInput}
+    return {
+      GameStateID.PreviewActiveSkill,
+      GameStateID.WaitInput
+    }
   else
     return GameStateID.WaitInput
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CastActiveSkillCommand:IsExecExcluded()
   return 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CastActiveSkillCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.GetCmdActiveSkillID = function(self)
-  -- function num : 0_5
+function CastActiveSkillCommand:GetCmdActiveSkillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.GetCmdCasterPstID = function(self)
-  -- function num : 0_6
+function CastActiveSkillCommand:GetCmdCasterPstID()
   return self._casterPstID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.GetCmdCasterTrapEntityID = function(self)
-  -- function num : 0_7
+function CastActiveSkillCommand:GetCmdCasterTrapEntityID()
   return self._casterTrapEntityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.SetCmdActiveSkillID = function(self, activeSkillID)
-  -- function num : 0_8
+function CastActiveSkillCommand:SetCmdActiveSkillID(activeSkillID)
   self._activeSkillID = activeSkillID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.SetCmdCasterPstID = function(self, pstID)
-  -- function num : 0_9
+function CastActiveSkillCommand:SetCmdCasterPstID(pstID)
   self._casterPstID = pstID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.SetCmdCasterTrapEntityID = function(self, trapEntityID)
-  -- function num : 0_10
+function CastActiveSkillCommand:SetCmdCasterTrapEntityID(trapEntityID)
   self._casterTrapEntityID = trapEntityID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.ToNetMessage = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CastActiveSkillCommand:ToNetMessage()
   local msg = CEventCastActiveSkillCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -105,10 +68,7 @@ CastActiveSkillCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CastActiveSkillCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_12
+function CastActiveSkillCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -118,5 +78,3 @@ CastActiveSkillCommand.FromNetMessage = function(self, msg)
   self._casterPstID = msg.CasterPstID
   self._casterTrapEntityID = msg.CasterTrapEntityID
 end
-
-

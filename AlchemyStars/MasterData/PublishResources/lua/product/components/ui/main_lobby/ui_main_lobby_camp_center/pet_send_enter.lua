@@ -1,42 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/pet_send_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("PetSendEnter", MainLobbyCenterCampData)
 PetSendEnter = PetSendEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PetSendEnter.LoadData = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function PetSendEnter:LoadData(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_OPTION_PET, ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST, ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_PERSON_PROCESS)
-  self.localProcess = (self._campaign):GetLocalProcess()
-  self._questCom = (self.localProcess):GetComponent(ECampaignOptionPetComponentID.CAMPAIGN_TYPE_OPTION_PET)
-  self._questComInfo = (self.localProcess):GetComponentInfo(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST)
-  self._progressInfo = (self.localProcess):GetComponentInfo(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_PERSON_PROCESS)
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_OPTION_PET, ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST, ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_PERSON_PROCESS)
+  self.localProcess = self._campaign:GetLocalProcess()
+  self._questCom = self.localProcess:GetComponent(ECampaignOptionPetComponentID.CAMPAIGN_TYPE_OPTION_PET)
+  self._questComInfo = self.localProcess:GetComponentInfo(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST)
+  self._progressInfo = self.localProcess:GetComponentInfo(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_PERSON_PROCESS)
+  self._questModule = GameGlobal.GetModule(QuestModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetSendEnter.CheckNew = function(self)
-  -- function num : 0_1
-  return (self._campaign):CheckCampaignNew() and 1 or 0
+function PetSendEnter:CheckNew()
+  return self._campaign:CheckCampaignNew() and 1 or 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetSendEnter.CheckRed = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PetSendEnter:CheckRed()
   if not self._progressInfo then
     return 0
   end
-  for k,v in pairs((self._progressInfo).m_progress_rewards) do
+  for k, v in pairs(self._progressInfo.m_progress_rewards) do
     if self:GetState(k) == QuestStatus.QUEST_Completed then
       return 1
     end
@@ -44,23 +30,20 @@ PetSendEnter.CheckRed = function(self)
   if not self._questComInfo then
     return 0
   end
-  local questList = (self._questComInfo).m_accept_cam_quest_list
+  local questList = self._questComInfo.m_accept_cam_quest_list
   self._questList = {}
-  for k,v in pairs(questList) do
-    if (((self._questModule):GetQuest(v)):QuestInfo()).status == QuestStatus.QUEST_Completed then
+  for k, v in pairs(questList) do
+    if self._questModule:GetQuest(v):QuestInfo().status == QuestStatus.QUEST_Completed then
       return 1
     end
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PetSendEnter.GetState = function(self, progress)
-  -- function num : 0_3 , upvalues : _ENV
-  local cur = (self._progressInfo).m_current_progress
-  local pass = (self._progressInfo).m_received_progress
-  if (table.icontains)(pass, progress) then
+function PetSendEnter:GetState(progress)
+  local cur = self._progressInfo.m_current_progress
+  local pass = self._progressInfo.m_received_progress
+  if table.icontains(pass, progress) then
     return QuestStatus.QUEST_Taken
   end
   if progress <= cur then
@@ -68,5 +51,3 @@ PetSendEnter.GetState = function(self, progress)
   end
   return QuestStatus.QUEST_Accepted
 end
-
-

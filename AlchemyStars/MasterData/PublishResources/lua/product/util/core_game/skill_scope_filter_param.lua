@@ -1,80 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/skill_scope_filter_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillScopeFilterParam", Object)
 SkillScopeFilterParam = SkillScopeFilterParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeFilterParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeFilterParam:Constructor(t)
   self._scopeCasterOccupiedFilter = t.scopeCasterOccupiedFilter
   self._scopeObstructingTrapFilter = t.obstructingTrapFilter
   self._scopeObstructingTrapByIDFilter = t.obstructingTrapByIDFilter
   self._scopeMonsterOccupiedFilter = t.monsterOccupiedPosFilter
-  if not t.targetSelectionMode then
-    self._targetSelectionMode = SkillTargetSelectionMode.Grid
-    self._default = false
-  end
+  self._targetSelectionMode = t.targetSelectionMode or SkillTargetSelectionMode.Grid
+  self._default = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterParam.GenerateDefaultParam = function()
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeFilterParam.GenerateDefaultParam()
   local p = SkillScopeFilterParam:New({})
   p:SetDefaultFlag()
   return p
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterParam.GetCasterOccupiedPosFilter = function(self)
-  -- function num : 0_2
+function SkillScopeFilterParam:GetCasterOccupiedPosFilter()
   return self._scopeCasterOccupiedFilter
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterParam.GetObstructingTrapByIDFilter = function(self)
-  -- function num : 0_3
+function SkillScopeFilterParam:GetObstructingTrapByIDFilter()
   return self._scopeObstructingTrapByIDFilter
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterParam.GetObstructingTrapFilter = function(self)
-  -- function num : 0_4
+function SkillScopeFilterParam:GetObstructingTrapFilter()
   return self._scopeObstructingTrapFilter
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterParam.GetMonsterOccupiedPosFilter = function(self)
-  -- function num : 0_5
+function SkillScopeFilterParam:GetMonsterOccupiedPosFilter()
   return self._scopeMonsterOccupiedFilter
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterParam.GetTargetSelectionMode = function(self)
-  -- function num : 0_6
+function SkillScopeFilterParam:GetTargetSelectionMode()
   return self._targetSelectionMode
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterParam.IsDefault = function(self)
-  -- function num : 0_7
+function SkillScopeFilterParam:IsDefault()
   return self._default
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterParam.SetDefaultFlag = function(self)
-  -- function num : 0_8
+function SkillScopeFilterParam:SetDefaultFlag()
   self._default = true
 end
-
-

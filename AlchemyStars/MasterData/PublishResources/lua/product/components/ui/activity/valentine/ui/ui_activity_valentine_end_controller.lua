@@ -1,68 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/ui_activity_valentine_end_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineEndController", UIController)
 UIActivityValentineEndController = UIActivityValentineEndController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineEndController.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityValentineEndController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityValentineEndController:LoadDataOnEnter(TT, res, uiParams)
   res:SetSucc(true)
   self._activityData = ActivityValentineData:New()
-  ;
-  (self._activityData):LoadData(TT, res)
-  local camapign = (self._activityData):GetCampaign()
+  self._activityData:LoadData(TT, res)
+  local camapign = self._activityData:GetCampaign()
   local isOpen = camapign:CheckCampaignOpen()
   if not isOpen then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_valentine_y_offline"))
+    ToastManager.ShowToast(StringTable.Get("str_n27_valentine_y_offline"))
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController.OnShow = function(self)
-  -- function num : 0_2
+function UIActivityValentineEndController:OnShow()
   self:_GetComponent()
   self:_SetCampainTime()
   self:CheckMailRed()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityValentineEndController:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController._GetComponent = function(self)
-  -- function num : 0_4
+function UIActivityValentineEndController:_GetComponent()
   self._redObj = self:GetGameObject("red")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController._SetCampainTime = function(self)
-  -- function num : 0_5
-  local mailCompInfo = (self._activityData):GetMailComponentInfo()
+function UIActivityValentineEndController:_SetCampainTime()
+  local mailCompInfo = self._activityData:GetMailComponentInfo()
   local endTime = mailCompInfo.m_close_time
   local descId = "str_n27_valentine_y_campaign_cowndown"
-  local timeStr = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_common_less_minute"}
+  local timeStr = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_common_less_minute"
+  }
   self:_SetRemainingTime("remainingTimePool", descId, endTime, timeStr)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController._SetRemainingTime = function(self, widgetName, descId, endTime, timeStr)
-  -- function num : 0_6
+function UIActivityValentineEndController:_SetRemainingTime(widgetName, descId, endTime, timeStr)
   local sop = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = sop:SpawnObject("UIActivityCommonRemainingTime")
   obj:SetCustomTimeStr(timeStr)
@@ -71,43 +51,28 @@ UIActivityValentineEndController._SetRemainingTime = function(self, widgetName, 
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController.CheckMailRed = function(self)
-  -- function num : 0_7
-  local haveRed = (self._activityData):GetMailRed()
+function UIActivityValentineEndController:CheckMailRed()
+  local haveRed = self._activityData:GetMailRed()
   if haveRed then
-    (self._redObj):SetActive(true)
+    self._redObj:SetActive(true)
   else
-    ;
-    (self._redObj):SetActive(false)
+    self._redObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController.IntroBtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityValentineEndController:IntroBtnOnClick()
   self:ShowDialog("UIIntroLoader", "UIActivityValentineIntro", MaskType.MT_BlurMask)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController.MailBoxBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self._activityData):CheckMailIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_valentine_y_offline"))
+function UIActivityValentineEndController:MailBoxBtnOnClick()
+  if self._activityData:CheckMailIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_n27_valentine_y_offline"))
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   self:ShowDialog("UIActivityValentineMailboxController")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineEndController.BackBtnOnClick = function(self)
-  -- function num : 0_10
+function UIActivityValentineEndController:BackBtnOnClick()
   self:CloseDialog()
 end
-
-

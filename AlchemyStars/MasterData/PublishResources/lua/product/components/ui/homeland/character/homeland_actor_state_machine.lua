@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state_machine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandActorStateMachine", Object)
 HomelandActorStateMachine = HomelandActorStateMachine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandActorStateMachine.Constructor = function(self)
-  -- function num : 0_0
+function HomelandActorStateMachine:Constructor()
   self._curState = nil
   self._mcc = nil
   self._stateMap = {}
@@ -16,10 +9,7 @@ HomelandActorStateMachine.Constructor = function(self)
   self._nextStateType = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateMachine.Init = function(self, mcc)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandActorStateMachine:Init(mcc)
   self._mcc = mcc
   self:AddState(HomelandActorStateIdle:New(self))
   self:AddState(HomelandActorStateSwim:New(self))
@@ -31,111 +21,70 @@ HomelandActorStateMachine.Init = function(self, mcc)
   self:AddState(HomelandActorStateNavigate:New(self))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateMachine.AddState = function(self, state)
-  -- function num : 0_2
+function HomelandActorStateMachine:AddState(state)
   local type = state:GetType()
-  if (self._stateMap)[type] then
-    return 
+  if self._stateMap[type] then
+    return
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._stateMap)[type] = state
+  self._stateMap[type] = state
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateMachine.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,state in pairs(self._stateMap) do
+function HomelandActorStateMachine:Dispose()
+  for _, state in pairs(self._stateMap) do
     state:Dispose()
   end
   self._stateMap = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateMachine.Update = function(self, deltaTimeMS)
-  -- function num : 0_4
+function HomelandActorStateMachine:Update(deltaTimeMS)
   self._stateSwitchLock = true
   if self._curState then
-    (self._curState):Update(deltaTimeMS)
+    self._curState:Update(deltaTimeMS)
   end
   self._stateSwitchLock = false
   self:CheckSwitchState()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateMachine.CurrenStateType = function(self)
-  -- function num : 0_5
+function HomelandActorStateMachine:CurrenStateType()
   if self._curState then
-    return (self._curState):GetType()
+    return self._curState:GetType()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateMachine.GetMainCharacterController = function(self)
-  -- function num : 0_6
+function HomelandActorStateMachine:GetMainCharacterController()
   return self._mcc
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateMachine.SwitchState = function(self, targetState, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  if self._curState and (self._curState):GetType() == targetState then
-    return 
+function HomelandActorStateMachine:SwitchState(targetState, ...)
+  if self._curState and self._curState:GetType() == targetState then
+    return
   end
   self._nextStateType = targetState
-  self._nextStateParam = (table.pack)(...)
+  self._nextStateParam = table.pack(...)
   if not self._stateSwitchLock then
     self:CheckSwitchState()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateMachine.CheckSwitchState = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandActorStateMachine:CheckSwitchState()
   self._stateSwitchLock = true
-  while 1 do
-    if self._nextStateType then
-      local nextState = (self._stateMap)[self._nextStateType]
-      self._nextStateType = nil
-      if nextState then
-        do
-          if self._curState then
-            (self._curState):Exit()
-          end
-          self._curState = nextState
-          ;
-          (self._curState):Enter((table.unpack)(self._nextStateParam))
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while self._nextStateType do
+    local nextState = self._stateMap[self._nextStateType]
+    self._nextStateType = nil
+    if not nextState then
+      break
     end
+    if self._curState then
+      self._curState:Exit()
+    end
+    self._curState = nextState
+    self._curState:Enter(table.unpack(self._nextStateParam))
   end
   self._stateSwitchLock = false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateMachine.HandleEvent = function(self, eventType, ...)
-  -- function num : 0_9
+function HomelandActorStateMachine:HandleEvent(eventType, ...)
   if self._curState then
-    (self._curState):HandleEvent(eventType, ...)
+    self._curState:HandleEvent(eventType, ...)
   end
 end
-
-

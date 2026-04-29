@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_charge_grey_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultChargeGreyHP", BuffResultBase)
 BuffResultChargeGreyHP = BuffResultChargeGreyHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChargeGreyHP.Constructor = function(self, entityID, val, notifyType, runCount, changedVal, damageHP)
-  -- function num : 0_0
+function BuffResultChargeGreyHP:Constructor(entityID, val, notifyType, runCount, changedVal, damageHP)
   self._entityID = entityID
   self._greyHPVal = val
   self._notifyType = notifyType
@@ -18,46 +11,26 @@ BuffResultChargeGreyHP.Constructor = function(self, entityID, val, notifyType, r
   self._damageHP = damageHP
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeGreyHP.GetDamageHP = function(self)
-  -- function num : 0_1
+function BuffResultChargeGreyHP:GetDamageHP()
   return self._damageHP
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeGreyHP.GetChangedVal = function(self)
-  -- function num : 0_2
+function BuffResultChargeGreyHP:GetChangedVal()
   return self._changedVal
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeGreyHP.GetEntityID = function(self)
-  -- function num : 0_3
+function BuffResultChargeGreyHP:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeGreyHP.GetGreyHPVal = function(self)
-  -- function num : 0_4
+function BuffResultChargeGreyHP:GetGreyHPVal()
   return self._greyHPVal
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeGreyHP.GetLogicRunCount = function(self)
-  -- function num : 0_5
+function BuffResultChargeGreyHP:GetLogicRunCount()
   return self._runCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChargeGreyHP.GetNotifyType = function(self)
-  -- function num : 0_6
+function BuffResultChargeGreyHP:GetNotifyType()
   return self._notifyType
 end
-
-

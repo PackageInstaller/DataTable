@@ -1,42 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/ui_homeland_movie_prepare_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMoviePrepareBase", UICustomWidget)
 UIHomelandMoviePrepareBase = UIHomelandMoviePrepareBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMoviePrepareBase.OnEnter = function(self, prepareType)
-  -- function num : 0_0
+function UIHomelandMoviePrepareBase:OnEnter(prepareType)
   self:Refresh(prepareType)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareBase.OnExit = function(self, prepareType)
-  -- function num : 0_1
+function UIHomelandMoviePrepareBase:OnExit(prepareType)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareBase.CheckExit = function(self, prepareType)
-  -- function num : 0_2
+function UIHomelandMoviePrepareBase:CheckExit(prepareType)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareBase.Refresh = function(self, prepareType)
-  -- function num : 0_3
+function UIHomelandMoviePrepareBase:Refresh(prepareType)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareBase.Clear = function(self, prepareType)
-  -- function num : 0_4 , upvalues : _ENV
-  (MoviePrepareData:GetInstance()):ClearData(prepareType)
+function UIHomelandMoviePrepareBase:Clear(prepareType)
+  MoviePrepareData:GetInstance():ClearData(prepareType)
   self:Refresh(prepareType)
 end
-
-

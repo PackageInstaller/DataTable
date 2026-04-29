@@ -1,8 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/idn/story/eventstory/str_eventstory_N18yinrujuqing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_5026_50263301_1_dialog_content = "Boleh juga.", ui_story_5026_50263301_2_dialog_content = "Pemandangan dan cuaca di sini sempurna. Tempat ini memang sangat luar biasa.", ui_story_5026_50263301_3_dialog_content = "PlayerName, apa kau mengapresiasi rumahmu lagi?", ui_story_5026_50263301_4_dialog_content = "Yah, bisa dibilang begitu. Aku hendak memancing, tetapi pemandangan indah ini mengalihkan perhatianku.", ui_story_5026_50263301_5_dialog_content = "Saat tersadar dari lamunanku, ternyata aku sudah berdiri di sini selama dua puluh menit.", ui_story_5026_50263301_6_dialog_content = "Berhubung kau jarang punya waktu senggang, bagaimana kalau...", ui_story_5026_50263301_7_dialog_content = "Hmm? Apa yang ingin kaulakukan kali ini, Vice?", ui_story_5026_50263301_8_dialog_content = "Coba lihat ini!", ui_story_5026_50263301_9_dialog_content = "Apakah ini <color=#FFB400>Portable Detector</color>?", ui_story_5026_50263301_10_dialog_content = "Kita pernah memakai benda ini untuk mencari harta karun di Cloud Gardens.", ui_story_5026_50263301_11_dialog_content = "Yah, walaupun sebagian besar temuan kita adalah benda aneh, seperti spesimen serangga yang ditinggalkan oleh Chubb...", ui_story_5026_50263301_12_dialog_content = "Iya, waktu itu kau sangat ketakutan, sampai-sampai kau lompat jauh sekali.", ui_story_5026_50263301_13_dialog_content = "Jadi, apa kita akan berburu harta karun di Cloud Gardens lagi?", ui_story_5026_50263301_14_dialog_content = "Haha! Tebakanmu tepat! Kuyakin kau pasti mau!", ui_story_5026_50263301_15_dialog_content = "Cuma sebentar saja, kok. Aku menemukan detektor ini saat membersihkan Colossus Warehouse.", ui_story_5026_50263301_16_dialog_content = "\"Di Cloud Gardens yang membentang seluas ini, pasti ada tempat yang belum pernah kita jelajahi! Bisa jadi, di sana ada harta karun rahasia!\"", ui_story_5026_50263301_17_dialog_content = "Aku berjalan ke sini sambil menenteng detektor ini dan membayangkan kemungkinan itu!", ui_story_5026_50263301_18_dialog_content = "Perhatian Vice mudah teralihkan juga, sama sepertiku.", ui_story_5026_50263301_19_dialog_content = "Perasaan ini bisa disebut hasrat untuk menjelajahi tempat asing! PlayerName, kau juga mau mengenal tempat ini lebih dalam lagi, \'kan?", ui_story_5026_50263301_20_dialog_content = "Tentu. Sebenarnya, petualangan terakhir kita masih sering terbayang dalam benakku.", ui_story_5026_50263301_21_dialog_content = "Bagiku, semua benda yang kita temukan saat bertualang adalah harta karunku.", ui_story_5026_50263301_22_dialog_content = "Benda-benda itu berasal dari tempat ini, atau dari Caelestite yang dahulu tinggal di sini.", ui_story_5026_50263301_23_dialog_content = "Lalu sekarang, harta karun itu menghubungkan diriku dengan masa lalu, membantuku melintasi ruang dan waktu...", ui_story_5026_50263301_24_dialog_content = "Harta karun ini memang tak bisa bicara, tapi mereka menceritakan kisah yang lebih menarik dibanding legenda mana pun.", ui_story_5026_50263301_25_dialog_content = "PlayerName…", ui_story_5026_50263301_26_dialog_content = "...", ui_story_5026_50263301_27_dialog_content = "Kalau begitu, ayo jelajahi tempat ini!", ui_story_5026_50263301_28_dialog_content = "Baiklah!", ui_story_5026_50263301_29_dialog_content = "Apa kau masih ingat cara menggunakan Portable Detector?", ui_story_5026_50263301_30_dialog_content = "Pasti, dong. Ayo!", ui_story_5026_50263301_31_dialog_content = "Sekarang, sebaiknya kita mulai dari mana, ya?"}
+local config = {
+  ui_story_5026_50263301_1_dialog_content = "Boleh juga.",
+  ui_story_5026_50263301_2_dialog_content = "Pemandangan dan cuaca di sini sempurna. Tempat ini memang sangat luar biasa.",
+  ui_story_5026_50263301_3_dialog_content = "PlayerName, apa kau mengapresiasi rumahmu lagi?",
+  ui_story_5026_50263301_4_dialog_content = "Yah, bisa dibilang begitu. Aku hendak memancing, tetapi pemandangan indah ini mengalihkan perhatianku.",
+  ui_story_5026_50263301_5_dialog_content = "Saat tersadar dari lamunanku, ternyata aku sudah berdiri di sini selama dua puluh menit.",
+  ui_story_5026_50263301_6_dialog_content = "Berhubung kau jarang punya waktu senggang, bagaimana kalau...",
+  ui_story_5026_50263301_7_dialog_content = "Hmm? Apa yang ingin kaulakukan kali ini, Vice?",
+  ui_story_5026_50263301_8_dialog_content = "Coba lihat ini!",
+  ui_story_5026_50263301_9_dialog_content = "Apakah ini <color=#FFB400>Portable Detector</color>?",
+  ui_story_5026_50263301_10_dialog_content = "Kita pernah memakai benda ini untuk mencari harta karun di Cloud Gardens.",
+  ui_story_5026_50263301_11_dialog_content = "Yah, walaupun sebagian besar temuan kita adalah benda aneh, seperti spesimen serangga yang ditinggalkan oleh Chubb...",
+  ui_story_5026_50263301_12_dialog_content = "Iya, waktu itu kau sangat ketakutan, sampai-sampai kau lompat jauh sekali.",
+  ui_story_5026_50263301_13_dialog_content = "Jadi, apa kita akan berburu harta karun di Cloud Gardens lagi?",
+  ui_story_5026_50263301_14_dialog_content = "Haha! Tebakanmu tepat! Kuyakin kau pasti mau!",
+  ui_story_5026_50263301_15_dialog_content = "Cuma sebentar saja, kok. Aku menemukan detektor ini saat membersihkan Colossus Warehouse.",
+  ui_story_5026_50263301_16_dialog_content = "\"Di Cloud Gardens yang membentang seluas ini, pasti ada tempat yang belum pernah kita jelajahi! Bisa jadi, di sana ada harta karun rahasia!\"",
+  ui_story_5026_50263301_17_dialog_content = "Aku berjalan ke sini sambil menenteng detektor ini dan membayangkan kemungkinan itu!",
+  ui_story_5026_50263301_18_dialog_content = "Perhatian Vice mudah teralihkan juga, sama sepertiku.",
+  ui_story_5026_50263301_19_dialog_content = "Perasaan ini bisa disebut hasrat untuk menjelajahi tempat asing! PlayerName, kau juga mau mengenal tempat ini lebih dalam lagi, 'kan?",
+  ui_story_5026_50263301_20_dialog_content = "Tentu. Sebenarnya, petualangan terakhir kita masih sering terbayang dalam benakku.",
+  ui_story_5026_50263301_21_dialog_content = "Bagiku, semua benda yang kita temukan saat bertualang adalah harta karunku.",
+  ui_story_5026_50263301_22_dialog_content = "Benda-benda itu berasal dari tempat ini, atau dari Caelestite yang dahulu tinggal di sini.",
+  ui_story_5026_50263301_23_dialog_content = "Lalu sekarang, harta karun itu menghubungkan diriku dengan masa lalu, membantuku melintasi ruang dan waktu...",
+  ui_story_5026_50263301_24_dialog_content = "Harta karun ini memang tak bisa bicara, tapi mereka menceritakan kisah yang lebih menarik dibanding legenda mana pun.",
+  ui_story_5026_50263301_25_dialog_content = "PlayerName…",
+  ui_story_5026_50263301_26_dialog_content = "...",
+  ui_story_5026_50263301_27_dialog_content = "Kalau begitu, ayo jelajahi tempat ini!",
+  ui_story_5026_50263301_28_dialog_content = "Baiklah!",
+  ui_story_5026_50263301_29_dialog_content = "Apa kau masih ingat cara menggunakan Portable Detector?",
+  ui_story_5026_50263301_30_dialog_content = "Pasti, dong. Ayo!",
+  ui_story_5026_50263301_31_dialog_content = "Sekarang, sebaiknya kita mulai dari mana, ya?"
+}
 return config
-

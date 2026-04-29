@@ -1,57 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_dead_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayDeadEffectInstruction", BaseInstruction)
 PlayDeadEffectInstruction = PlayDeadEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDeadEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayDeadEffectInstruction:Constructor(paramList)
   self._deadType = tonumber(paramList.deadType)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeadEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDeadEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local monsterDeadType = self._deadType
-  local deathEffectID = nil
+  local deathEffectID
   if self._deadType == DeathShowType.DissolveLight then
     casterEntity:NewPlayDeadLight()
     deathEffectID = BattleConst.MonsterDeadEffectLight
-  else
-    if monsterDeadType == DeathShowType.DissolveDark then
-      casterEntity:NewPlayDeadDark()
-      deathEffectID = BattleConst.MonsterDeadEffectDark
-    end
+  elseif monsterDeadType == DeathShowType.DissolveDark then
+    casterEntity:NewPlayDeadDark()
+    deathEffectID = BattleConst.MonsterDeadEffectDark
   end
   if deathEffectID then
     local effectService = world:GetService("Effect")
     if type(deathEffectID) == "number" then
       deathEffectID = {deathEffectID}
     end
-    for i,effID in ipairs(deathEffectID) do
+    for i, effID in ipairs(deathEffectID) do
       local effectEntity = effectService:CreateEffect(effID, casterEntity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDeadEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayDeadEffectInstruction:GetCacheResource()
   local t = {}
   if BattleConst.MonsterDeadEffectLight and BattleConst.MonsterDeadEffectLight > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[BattleConst.MonsterDeadEffectLight]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[BattleConst.MonsterDeadEffectLight].ResPath,
+      1
+    })
   end
-  if BattleConst.MonsterDeadEffectDark and BattleConst.MonsterDeadEffectDark > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[BattleConst.MonsterDeadEffectDark]).ResPath, 1})
+  if BattleConst.MonsterDeadEffectDark and 0 < BattleConst.MonsterDeadEffectDark then
+    table.insert(t, {
+      Cfg.cfg_effect[BattleConst.MonsterDeadEffectDark].ResPath,
+      1
+    })
   end
   return t
 end
-
-

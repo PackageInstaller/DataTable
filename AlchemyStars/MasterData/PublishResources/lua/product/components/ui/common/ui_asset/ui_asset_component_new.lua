@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_asset/ui_asset_component_new.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAssetComponentNew", UIAssetComponentBase)
 UIAssetComponentNew = UIAssetComponentNew
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAssetComponentNew.OnInit = function(self)
-  -- function num : 0_0
-  self._redObj = (((self._gameObject).transform):Find("new")).gameObject
+function UIAssetComponentNew:OnInit()
+  self._redObj = self._gameObject.transform:Find("new").gameObject
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentNew.SetNew = function(self, active)
-  -- function num : 0_1
-  (self._redObj):SetActive(active)
+function UIAssetComponentNew:SetNew(active)
+  self._redObj:SetActive(active)
 end
-
-

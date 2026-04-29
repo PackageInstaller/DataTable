@@ -1,22 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/reward/ui_battlepass_cn1_reward_cell_fixed.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1RewardCellFixed", UICustomWidget)
 UIBattlePassCN1RewardCellFixed = UIBattlePassCN1RewardCellFixed
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1RewardCellFixed.SetData = function(self, campaign, component)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattlePassCN1RewardCellFixed:SetData(campaign, component)
   self._campaign = campaign
   self._component = component
   self._info = component:ComponentInfo()
-  local isAdvLock = not (self._info).m_unlock_advanced_reward
-  ;
-  (self:GetGameObject("_advLock")):SetActive(isAdvLock)
-  ;
-  (UIBattlePassStyleHelper.FitStyle_Widget)(self._campaign, self)
+  local isAdvLock = not self._info.m_unlock_advanced_reward
+  self:GetGameObject("_advLock"):SetActive(isAdvLock)
+  UIBattlePassStyleHelper.FitStyle_Widget(self._campaign, self)
 end
-
-

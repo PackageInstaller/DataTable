@@ -1,172 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn12n41/entry/ui_cn12_n41_main_lobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_main_campaign_base")
 _class("UICN12N41MainLobbyEntry", UIMainLobbyMainCampaignBase)
 UICN12N41MainLobbyEntry = UICN12N41MainLobbyEntry
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN12N41MainLobbyEntry.OnHide = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._time = (UIActivityHelper.CancelTimerEvent)(self._time)
+function UICN12N41MainLobbyEntry:OnHide()
+  self._time = UIActivityHelper.CancelTimerEvent(self._time)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41MainLobbyEntry.SetData = function(self, sampleInfo, controller)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN12N41MainLobbyEntry:SetData(sampleInfo, controller)
   self.sampleInfo = sampleInfo
   self._uiMainLobbyController = controller
-  self._campaignType = (UICN12N41Helper.GetCampaignType)()
+  self._campaignType = UICN12N41Helper.GetCampaignType()
   self:_RequestCampaign()
-  self._time = (UIActivityHelper.StartTimerEvent)(self._time, function()
-    -- function num : 0_1_0 , upvalues : self
+  self._time = UIActivityHelper.StartTimerEvent(self._time, function()
     self:_CheckState()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41MainLobbyEntry._RequestCampaign = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN12N41MainLobbyEntry:_RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
     local lockName = "UICN12N41MainLobbyEntry:_RequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    self._campaign = (UIActivityHelper.LoadCampaign)(TT, res, self._campaignType)
+    self._campaign = UIActivityHelper.LoadCampaign(TT, res, self._campaignType)
     self:_Refresh()
     self:_CheckState()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41MainLobbyEntry._Refresh = function(self)
-  -- function num : 0_3
+function UICN12N41MainLobbyEntry:_Refresh()
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41MainLobbyEntry._SetText = function(self, state)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN12N41MainLobbyEntry:_SetText(state)
   if state == 1 then
-    local hard1Tips = (StringTable.Get)("str_cn12_n41_main_entry_tips1")
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "Hard1_Tips", hard1Tips)
-    ;
-    (UIWidgetHelper.SetRollingText)(self, "Hard1_Tips")
-  else
-    do
-      if state == 2 then
-        local hard2Tips = (StringTable.Get)("str_cn12_n41_main_entry_tips2")
-        ;
-        (UIWidgetHelper.SetLocalizationText)(self, "Hard2_Tips", hard2Tips)
-        ;
-        (UIWidgetHelper.SetRollingText)(self, "Hard2_Tips")
-      else
-        do
-          if state == 3 then
-            local hard3Tips = (StringTable.Get)("str_cn12_n41_main_entry_tips3")
-            ;
-            (UIWidgetHelper.SetLocalizationText)(self, "Subject_Tips", hard3Tips)
-            ;
-            (UIWidgetHelper.SetRollingText)(self, "Subject_Tips")
-          end
-        end
-      end
-    end
+    local hard1Tips = StringTable.Get("str_cn12_n41_main_entry_tips1")
+    UIWidgetHelper.SetLocalizationText(self, "Hard1_Tips", hard1Tips)
+    UIWidgetHelper.SetRollingText(self, "Hard1_Tips")
+  elseif state == 2 then
+    local hard2Tips = StringTable.Get("str_cn12_n41_main_entry_tips2")
+    UIWidgetHelper.SetLocalizationText(self, "Hard2_Tips", hard2Tips)
+    UIWidgetHelper.SetRollingText(self, "Hard2_Tips")
+  elseif state == 3 then
+    local hard3Tips = StringTable.Get("str_cn12_n41_main_entry_tips3")
+    UIWidgetHelper.SetLocalizationText(self, "Subject_Tips", hard3Tips)
+    UIWidgetHelper.SetRollingText(self, "Subject_Tips")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41MainLobbyEntry._CheckState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN12N41MainLobbyEntry:_CheckState()
   if not self.view then
-    return 
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  local state = (UICN12N41Helper.CheckCampaignTimeState)(self._campaign)
+  local state = UICN12N41Helper.CheckCampaignTimeState(self._campaign)
   if state == self._state then
-    return 
+    return
   end
   self._state = state
   self:_SetState(state)
   self:_SetText(state)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41MainLobbyEntry._SetState = function(self, state)
-  -- function num : 0_6 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[1] = {"Hard1_TipsPanel"}
-, 
-[2] = {"Hard2_TipsPanel"}
-, 
-[3] = {"Subject_TipsPanel"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UICN12N41MainLobbyEntry:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [1] = {
+      "Hard1_TipsPanel"
+    },
+    [2] = {
+      "Hard2_TipsPanel"
+    },
+    [3] = {
+      "Subject_TipsPanel"
+    }
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41MainLobbyEntry._CheckPoint = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN12N41MainLobbyEntry:_CheckPoint()
   if not self._campaign then
-    return 
+    return
   end
-  local new = (UICN12N41Helper.CalcNew)(self._campaign)
-  local red = (UICN12N41Helper.CalcRed)(self._campaign)
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "new", "red")
+  local new = UICN12N41Helper.CalcNew(self._campaign)
+  local red = UICN12N41Helper.CalcRed(self._campaign)
+  UIWidgetHelper.SetNewAndReds(self, new, red, "new", "red")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41MainLobbyEntry.BtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((UICN12N41MainLobbyEntry.super).BtnOnClick)(self)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UICN12N41MainController")
+function UICN12N41MainLobbyEntry:BtnOnClick()
+  UICN12N41MainLobbyEntry.super.BtnOnClick(self)
+  GameGlobal.UIStateManager():ShowDialog("UICN12N41MainController")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN12N41MainLobbyEntry.Entry = function(self, stateType)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
+function UICN12N41MainLobbyEntry:Entry(stateType)
   if self._uiMainLobbyController then
-    ((self._uiMainLobbyController)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self._uiMainLobbyController):GetName())
-    local rt = ((self._uiMainLobbyController)._screenShot):RefreshBlurTexture()
-    do
-      local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-      self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, rt, cache_rt, self, stateType
-    YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-    self:SwitchState(stateType, cache_rt)
-  end
-)
-    end
+    self._uiMainLobbyController._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self._uiMainLobbyController:GetName())
+    local rt = self._uiMainLobbyController._screenShot:RefreshBlurTexture()
+    local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+    self:StartTask(function(TT)
+      YIELD(TT)
+      UnityEngine.Graphics.Blit(rt, cache_rt)
+      self:SwitchState(stateType, cache_rt)
+    end)
   else
-    do
-      self:SwitchState(stateType)
-    end
+    self:SwitchState(stateType)
   end
 end
-
-

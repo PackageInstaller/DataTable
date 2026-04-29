@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star/pop_star_trap_turn_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("PopStarTrapTurnSystem", MainStateSystem)
 PopStarTrapTurnSystem = PopStarTrapTurnSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarTrapTurnSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarTrapTurnSystem:_GetMainStateID()
   return GameStateID.PopStarTrapTurn
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
+function PopStarTrapTurnSystem:_OnMainStateEnter(TT)
   local calcStateTraps = self:_DoLogicCalcTrapState()
   self:_DoRenderTrapState(TT, calcStateTraps)
   self:_DoLogicTrapBeforeMonster()
@@ -27,59 +17,33 @@ PopStarTrapTurnSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicChangeGameState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem._DoLogicCalcTrapState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function PopStarTrapTurnSystem:_DoLogicCalcTrapState()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   return trapServiceLogic:CalcTrapState(TrapDestroyType.DestroyByRound)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem._DoLogicChangeGameState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PopStarTrapTurnFinish, 1)
+function PopStarTrapTurnSystem:_DoLogicChangeGameState()
+  self._world:EventDispatcher():Dispatch(GameEventType.PopStarTrapTurnFinish, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem._DoLogicTrapBeforeMonster = function(self)
-  -- function num : 0_4
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function PopStarTrapTurnSystem:_DoLogicTrapBeforeMonster()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:StartBeforeMainAI()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem._DoLogicTrapAfterMonster = function(self)
-  -- function num : 0_5
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function PopStarTrapTurnSystem:_DoLogicTrapAfterMonster()
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   trapServiceLogic:TrapActionAfterAI()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem._DoRenderTrapState = function(self, TT, calcStateTraps)
-  -- function num : 0_6
+function PopStarTrapTurnSystem:_DoRenderTrapState(TT, calcStateTraps)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem._DoRenderTrapBeforeMonster = function(self, TT)
-  -- function num : 0_7
+function PopStarTrapTurnSystem:_DoRenderTrapBeforeMonster(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem._DoRenderTrapAfterMonster = function(self, TT)
-  -- function num : 0_8
+function PopStarTrapTurnSystem:_DoRenderTrapAfterMonster(TT)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem._UpdateTrapGridRound = function(self, TT)
-  -- function num : 0_9
+function PopStarTrapTurnSystem:_UpdateTrapGridRound(TT)
 end
-
-

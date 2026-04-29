@@ -1,37 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/result/ui_eliminate_result_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateResultController", UIController)
 UIEliminateResultController = UIEliminateResultController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateResultController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIEliminateResultController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEliminateResultController:OnShow(uiParams)
   self._passAll = uiParams[1]
   self:_GetComponents()
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AniPopRoundRes)
+function UIEliminateResultController:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AniPopRoundRes)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultController._GetComponents = function(self)
-  -- function num : 0_3
+function UIEliminateResultController:_GetComponents()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._levelTxt = self:GetUIComponent("UILocalizationText", "levelTxt")
   self._roundTxt = self:GetUIComponent("UILocalizationText", "roundTxt")
@@ -39,49 +23,39 @@ UIEliminateResultController._GetComponents = function(self)
   self._scoreTxt = self:GetUIComponent("UILocalizationText", "scoreTxt")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._selectItemInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
-  self._selectItemInfo = (self._selectItemInfoPool):SpawnObject("UISelectInfo")
+  self._selectItemInfo = self._selectItemInfoPool:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultController._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function UIEliminateResultController:_InitComponents()
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local aniPopInfo = anipopModule:GetAniPopInfo()
   local weekInfo = aniPopInfo.week_info
   local roundInfo = aniPopInfo.round_info
-  if not self._passAll or not roundInfo.mission_index then
-    local pass = roundInfo.mission_index - 1
-  end
-  local passLevel = pass .. "/" .. (table.count)(roundInfo.level_list)
+  local pass = self._passAll and roundInfo.mission_index or roundInfo.mission_index - 1
+  local passLevel = pass .. "/" .. table.count(roundInfo.level_list)
   local curSeason = aniPopInfo.cur_season
   local hardID = roundInfo.select_hard_id
-  local missionTeamId = ((Cfg.cfg_anipop_season)[curSeason]).MissionTeamId
+  local missionTeamId = Cfg.cfg_anipop_season[curSeason].MissionTeamId
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : anipopModule, aniPopInfo, self, passLevel, roundInfo, weekInfo, _ENV, missionTeamId, hardID, pass
     local res = anipopModule:Balance(TT, aniPopInfo.cur_hard_id)
     if res:GetSucc() then
-      (self._levelTxt):SetText(passLevel)
-      ;
-      (self._roundTxt):SetText(roundInfo.total_use_turn)
-      ;
-      (self._eliminateTxt):SetText(roundInfo.total_star_num)
+      self._levelTxt:SetText(passLevel)
+      self._roundTxt:SetText(roundInfo.total_use_turn)
+      self._eliminateTxt:SetText(roundInfo.total_star_num)
       local scoreHardID = weekInfo.hard_id
-      local scoreHardCfg = (Cfg.cfg_anipop_hard)[scoreHardID]
-      local showTotalScore = (math.min)(weekInfo.total_score, scoreHardCfg.MaxScore)
-      ;
-      (self._scoreTxt):SetText(showTotalScore)
+      local scoreHardCfg = Cfg.cfg_anipop_hard[scoreHardID]
+      local showTotalScore = math.min(weekInfo.total_score, scoreHardCfg.MaxScore)
+      self._scoreTxt:SetText(showTotalScore)
       local awardList = {}
-      local missionCfgs = (Cfg.cfg_anipop_mission)({MissionTeamId = missionTeamId, HardId = hardID})
+      local missionCfgs = Cfg.cfg_anipop_mission({MissionTeamId = missionTeamId, HardId = hardID})
       for i = 1, pass do
-        local missionID = ((roundInfo.level_list)[i]).level_id
-        for _,cfg in pairs(missionCfgs) do
-          if (table.icontains)(cfg.FightLevelArray, missionID) and cfg.ItemId then
+        local missionID = roundInfo.level_list[i].level_id
+        for _, cfg in pairs(missionCfgs) do
+          if table.icontains(cfg.FightLevelArray, missionID) and cfg.ItemId then
             local award = {}
             award.ID = cfg.ItemId
             award.Count = cfg.ItemCount
-            ;
-            (table.insert)(awardList, award)
+            table.insert(awardList, award)
             break
           end
         end
@@ -89,75 +63,45 @@ UIEliminateResultController._InitComponents = function(self)
       local showAwardList = {}
       local roundTotalAwardNum = roundInfo.local_search_reward_num
       local forNum = 0
-      for _,award in pairs(awardList) do
+      for _, award in pairs(awardList) do
         local itemInfo = {}
         itemInfo.ID = award.ID
         forNum = forNum + award.Count
         if roundTotalAwardNum < forNum then
-          local tempNum = roundTotalAwardNum - (forNum) + award.Count
+          local tempNum = roundTotalAwardNum - forNum + award.Count
           if tempNum ~= 0 then
             itemInfo.Count = tempNum
-            ;
-            (table.insert)(showAwardList, itemInfo)
+            table.insert(showAwardList, itemInfo)
           end
           break
-        else
-          do
-            do
-              if forNum <= roundTotalAwardNum then
-                itemInfo.Count = award.Count
-              end
-              ;
-              (table.insert)(showAwardList, itemInfo)
-              -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC114: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+        elseif roundTotalAwardNum >= forNum then
+          itemInfo.Count = award.Count
         end
+        table.insert(showAwardList, itemInfo)
       end
-      local awards = (self._content):SpawnObjects("UIEliminateResultItem", #showAwardList)
-      for i,award in pairs(awards) do
+      local awards = self._content:SpawnObjects("UIEliminateResultItem", #showAwardList)
+      for i, award in pairs(awards) do
         award:SetData(awardList[i], function(id, pos)
-      -- function num : 0_4_0_0 , upvalues : self
-      (self._selectItemInfo):SetData(id, pos)
-    end
-)
+          self._selectItemInfo:SetData(id, pos)
+        end)
       end
     else
-      do
-        self:CloseDialog()
-        do return  end
-      end
+      self:CloseDialog()
+      return
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultController.FullOnClick = function(self)
-  -- function num : 0_5
+function UIEliminateResultController:FullOnClick()
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateResultController._Close = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIEliminateResultController:_Close()
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
     self:Lock("uieff_UIEliminateResultController_out")
-    ;
-    (self._anim):Play("uieff_UIEliminateResultController_out")
+    self._anim:Play("uieff_UIEliminateResultController_out")
     YIELD(TT, 500)
     self:UnLock("uieff_UIEliminateResultController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

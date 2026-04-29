@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_blh/_Review2/ui_haute_couture_draw_probability_item_blh_review2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawProbabiltyItemBLHReview2", UICustomWidget)
 UIHauteCoutureDrawProbabiltyItemBLHReview2 = UIHauteCoutureDrawProbabiltyItemBLHReview2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawProbabiltyItemBLHReview2.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHauteCoutureDrawProbabiltyItemBLHReview2:Constructor()
   self._drawTimes = 0
   self._rareLevel = 0
   self._atlas = self:GetAsset("UIHauteCoutureBLH.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabiltyItemBLHReview2.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawProbabiltyItemBLHReview2:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabiltyItemBLHReview2.InitWidget = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawProbabiltyItemBLHReview2:InitWidget()
   self.prizeName = self:GetUIComponent("UILocalizationText", "prizeName")
   self.prize1 = self:GetGameObject("prize1")
   self.prize2 = self:GetGameObject("prize2")
@@ -38,64 +25,37 @@ UIHauteCoutureDrawProbabiltyItemBLHReview2.InitWidget = function(self)
   self._bg = self:GetUIComponent("Image", "bg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabiltyItemBLHReview2.SetData = function(self, prizeData, drawTimes, hasGot, probablity, isreplaced)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.prizeName):SetText((StringTable.Get)(prizeData.Name))
+function UIHauteCoutureDrawProbabiltyItemBLHReview2:SetData(prizeData, drawTimes, hasGot, probablity, isreplaced)
+  self.prizeName:SetText(StringTable.Get(prizeData.Name))
   if drawTimes then
     self._drawTimes = drawTimes
   end
   if prizeData.RareLevel then
     self._rareLevel = prizeData.RareLevel
   end
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
   if prizeData.UIType <= 2 then
-    (self.detailbg).sprite = (self._atlas):GetSprite("blhsenior_rule_di11")
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._bg).sprite = (self._atlas):GetSprite("blhsenior_rule_di08")
-  else
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R6 in 'UnsetPending'
-
-    if prizeData.UIType == 3 then
-      (self.detailbg).sprite = (self._atlas):GetSprite("blhsenior_rule_di12")
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._bg).sprite = (self._atlas):GetSprite("blhsenior_rule_di09")
-    else
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-      if prizeData.UIType == 4 then
-        (self.detailbg).sprite = (self._atlas):GetSprite("blhsenior_rule_di13")
-        -- DECOMPILER ERROR at PC61: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._bg).sprite = (self._atlas):GetSprite("blhsenior_rule_di10")
-      end
-    end
+    self.detailbg.sprite = self._atlas:GetSprite("blhsenior_rule_di11")
+    self._bg.sprite = self._atlas:GetSprite("blhsenior_rule_di08")
+  elseif prizeData.UIType == 3 then
+    self.detailbg.sprite = self._atlas:GetSprite("blhsenior_rule_di12")
+    self._bg.sprite = self._atlas:GetSprite("blhsenior_rule_di09")
+  elseif prizeData.UIType == 4 then
+    self.detailbg.sprite = self._atlas:GetSprite("blhsenior_rule_di13")
+    self._bg.sprite = self._atlas:GetSprite("blhsenior_rule_di10")
   end
   if hasGot then
-    (self.detail):SetText((StringTable.Get)("str_senior_skin_draw_got"))
-    ;
-    (self.detailTips):SetText((StringTable.Get)("str_senior_skin_draw_rule_get_probability"))
+    self.detail:SetText(StringTable.Get("str_senior_skin_draw_got"))
+    self.detailTips:SetText(StringTable.Get("str_senior_skin_draw_rule_get_probability"))
+  elseif self._rareLevel - 1 > self._drawTimes then
+    self.detail:SetText(StringTable.Get("str_senior_skin_draw_rule_probability_5_times_kr", self._rareLevel - self._drawTimes - 1))
+    self.detailTips:SetText(StringTable.Get("str_senior_skin_draw_rule_show_get_probability"))
   else
-    if self._drawTimes < self._rareLevel - 1 then
-      (self.detail):SetText((StringTable.Get)("str_senior_skin_draw_rule_probability_5_times_kr", self._rareLevel - self._drawTimes - 1))
-      ;
-      (self.detailTips):SetText((StringTable.Get)("str_senior_skin_draw_rule_show_get_probability"))
-    else
-      ;
-      (self.detailTips):SetText((StringTable.Get)("str_senior_skin_draw_rule_get_probability"))
-      if probablity then
-        (self.detail):SetText((string.format)("%.2f", probablity) .. "%")
-      end
+    self.detailTips:SetText(StringTable.Get("str_senior_skin_draw_rule_get_probability"))
+    if probablity then
+      self.detail:SetText(string.format("%.2f", probablity) .. "%")
     end
   end
-  local id, count = nil, nil
+  local id, count
   if isreplaced then
     id = prizeData.ReplaceRewardID
     count = prizeData.ReplaceRewardCount
@@ -103,35 +63,25 @@ UIHauteCoutureDrawProbabiltyItemBLHReview2.SetData = function(self, prizeData, d
     id = prizeData.RewardID
     count = prizeData.RewardCount
   end
-  local cfg = (Cfg.cfg_item)[id]
+  local cfg = Cfg.cfg_item[id]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil.")
+    Log.fatal("cfg_item is nil.")
   else
-    ;
-    (self.prizeImg1):LoadImage(cfg.Icon)
+    self.prizeImg1:LoadImage(cfg.Icon)
   end
-  ;
-  (self.count1):SetText(self:FormatCount(count))
+  self.count1:SetText(self:FormatCount(count))
   if prizeData.AppendGlow and prizeData.AppendGlow > 0 then
-    (self.prize2):SetActive(true)
-    ;
-    (self.prizeImg2):LoadImage("icon_item_3000003")
-    ;
-    (self.count2):SetText(self:FormatCount(prizeData.AppendGlow))
+    self.prize2:SetActive(true)
+    self.prizeImg2:LoadImage("icon_item_3000003")
+    self.count2:SetText(self:FormatCount(prizeData.AppendGlow))
   else
-    ;
-    (self.prize2):SetActive(false)
+    self.prize2:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabiltyItemBLHReview2.FormatCount = function(self, count)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHauteCoutureDrawProbabiltyItemBLHReview2:FormatCount(count)
   if count < 1000 then
     return count
   end
-  return (math.floor)(count / 1000) .. "k"
+  return math.floor(count / 1000) .. "k"
 end
-
-

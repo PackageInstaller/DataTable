@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_hp_complex_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPComplex", BuffViewBase)
 BuffViewAddHPComplex = BuffViewAddHPComplex
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPComplex.Constructor = function(self)
-  -- function num : 0_0
+function BuffViewAddHPComplex:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPComplex.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewAddHPComplex:IsNotifyMatch(notify)
   local result = self._buffResult
   if notify:GetNotifyType() == NotifyType.NotifyLayerChange then
     local n = notify
@@ -25,57 +15,41 @@ BuffViewAddHPComplex.IsNotifyMatch = function(self, notify)
     if result:GetLayerTotalCount() and result:GetLayerTotalCount() ~= n:GetTotalCount() then
       return false
     end
-  else
-    do
-      if (self._buffResult).attackPos ~= notify:GetAttackPos() or (self._buffResult).targetPos ~= notify:GetTargetPos() or (self._buffResult).attacker ~= notify:GetAttackerEntity() or (self._buffResult).defender ~= notify:GetDefenderEntity() then
-        do return notify:GetNotifyType() ~= NotifyType.NormalEachAttackEnd and notify:GetNotifyType() ~= NotifyType.ChainSkillEachAttackEnd end
-        do return true end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
-    end
+  elseif notify:GetNotifyType() == NotifyType.NormalEachAttackEnd or notify:GetNotifyType() == NotifyType.ChainSkillEachAttackEnd then
+    return self._buffResult.attackPos == notify:GetAttackPos() and self._buffResult.targetPos == notify:GetTargetPos() and self._buffResult.attacker == notify:GetAttackerEntity() and self._buffResult.defender == notify:GetDefenderEntity()
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPComplex.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewAddHPComplex:PlayView(TT)
   local res = self._buffResult
   local entity = self._entity
   local damageInfo = res:GetDamageInfo()
   local headOut = res:GetHeadout()
   local delay = res:GetDelay()
-  if delay > 0 then
+  if 0 < delay then
     YIELD(TT, delay)
   end
   if headOut then
     local petPstIdCmp = entity:PetPstID()
     local petPstId = petPstIdCmp:GetPstID()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InOutQueue, petPstId, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.InOutQueue, petPstId, true)
   end
-  do
-    local materialAnimCmpt = entity:MaterialAnimationComponent()
-    if materialAnimCmpt then
-      materialAnimCmpt:PlayCure()
-    end
-    local playDmg = (self._world):GetService("PlayDamage")
-    if entity:PetPstID() then
-      (entity:Pet()):GetOwnerTeamEntity()
-      local teamEntity = (entity:Pet()):GetOwnerTeamEntity()
-      playDmg:AsyncUpdateHPAndDisplayDamage(teamEntity, damageInfo)
-    else
-      do
-        playDmg:AsyncUpdateHPAndDisplayDamage(entity, damageInfo)
-        if headOut then
-          local petPstIdCmp = entity:PetPstID()
-          local petPstId = petPstIdCmp:GetPstID()
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InOutQueue, petPstId, false)
-        end
-      end
-    end
+  local materialAnimCmpt = entity:MaterialAnimationComponent()
+  if materialAnimCmpt then
+    materialAnimCmpt:PlayCure()
+  end
+  local playDmg = self._world:GetService("PlayDamage")
+  if entity:PetPstID() then
+    entity:Pet():GetOwnerTeamEntity()
+    local teamEntity = entity:Pet():GetOwnerTeamEntity()
+    playDmg:AsyncUpdateHPAndDisplayDamage(teamEntity, damageInfo)
+  else
+    playDmg:AsyncUpdateHPAndDisplayDamage(entity, damageInfo)
+  end
+  if headOut then
+    local petPstIdCmp = entity:PetPstID()
+    local petPstId = petPstIdCmp:GetPstID()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.InOutQueue, petPstId, false)
   end
 end
-
-

@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_dinner.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignInlandDinner", ICampaignComponentLocalProcessBase)
 CCampaignInlandDinner = CCampaignInlandDinner
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignInlandDinner.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignInlandDinner:Constructor()
   self._dinnerComponent = nil
   self._dinnerCompInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandDinner.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignInlandDinner:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_DINNER
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandDinner.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignInlandDinner:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandDinner.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignInlandDinner:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetNewYearDinnerComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandDinner._GetNewYearDinnerComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._dinnerComponent = (self._campaignObj):GetComponent(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
+function CCampaignInlandDinner:_GetNewYearDinnerComponent()
+  self._dinnerComponent = self._campaignObj:GetComponent(ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER)
   if not self._dinnerComponent then
-    return 
+    return
   end
-  self._dinnerCompInfo = (self._dinnerComponent):ComponentInfo()
+  self._dinnerCompInfo = self._dinnerComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandDinner.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignInlandDinner:GetComponent(componentID)
   if ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER == componentID then
     return self._dinnerComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandDinner.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignInlandDinner:GetComponentInfo(componentID)
   if ECCampaignInlandDinnerComponentID.ECAMPAIGN_INLAND_DINNER == componentID then
     return self._dinnerCompInfo
   end
   return nil
 end
-
-

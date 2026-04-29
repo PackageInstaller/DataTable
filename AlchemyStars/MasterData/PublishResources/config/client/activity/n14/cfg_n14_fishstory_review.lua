@@ -1,16 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n14/cfg_n14_fishstory_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Name = 2, StageIndexTitle = 3, FullName = 4, Des = 5, StoryList = 6}
-local common = {"str_n14_mission_sidename_1"}
+local key = {
+  ID = 1,
+  Name = 2,
+  StageIndexTitle = 3,
+  FullName = 4,
+  Des = 5,
+  StoryList = 6
+}
+local common = {
+  "str_n14_mission_sidename_1"
+}
 local config = {
-{1, common[1], "str_n14_1_Index", common[1], "str_n13_1_desc_long", 
-{
-{50210001, 1}
-}
-}
+  {
+    1,
+    common[1],
+    "str_n14_1_Index",
+    common[1],
+    "str_n13_1_desc_long",
+    {
+      {50210001, 1}
+    }
+  }
 }
 return config, "ID", key
-

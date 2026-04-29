@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_add_combo_num_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAddComboNumInstruction", BaseInstruction)
 PlayAddComboNumInstruction = PlayAddComboNumInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAddComboNumInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayAddComboNumInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAddComboNumInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAddComboNumInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultAddComboNum = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddComboNum)
-  if resultAddComboNum == nil or (table.count)(resultAddComboNum) == 0 then
-    (Log.fatal)("add combo instruction ,combo result is nil")
-    return 
+  if resultAddComboNum == nil or table.count(resultAddComboNum) == 0 then
+    Log.fatal("add combo instruction ,combo result is nil")
+    return
   end
   skillEffectResultContainer:SetNormalAttack(true)
   local renderBattleSvc = world:GetService("RenderBattle")
@@ -29,5 +19,3 @@ PlayAddComboNumInstruction.DoInstruction = function(self, TT, casterEntity, phas
   curComboNum = curComboNum + 1
   renderBattleSvc:SetComboNum(curComboNum)
 end
-
-

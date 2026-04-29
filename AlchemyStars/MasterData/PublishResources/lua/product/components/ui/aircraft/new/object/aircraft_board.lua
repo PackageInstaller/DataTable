@@ -1,81 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftBoard", Object)
 AircraftBoard = AircraftBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftBoard.Constructor = function(self, go, floor, os)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftBoard:Constructor(go, floor, os)
   self._gameObject = go
   self._floor = floor
-  local points = ((((UnityEngine.GameObject).Find)("BoardPoints")).transform):GetChild(floor - 1)
+  local points = UnityEngine.GameObject.Find("BoardPoints").transform:GetChild(floor - 1)
   self._pointHolder = AircraftPointHolder:New(points, self._floor, self._floor .. "层甲板漫游点")
-  local gatherPoints = ((((UnityEngine.GameObject).Find)("BoardGatherPoints")).transform):GetChild(floor - 1)
+  local gatherPoints = UnityEngine.GameObject.Find("BoardGatherPoints").transform:GetChild(floor - 1)
   self._gatherPointHolder = AircraftPointHolder:New(gatherPoints, self._floor, self._floor .. "层甲板社交聚集点")
-  local randomPoints = ((((UnityEngine.GameObject).Find)("BoardRandomStoryPoints")).transform):GetChild(floor - 1)
+  local randomPoints = UnityEngine.GameObject.Find("BoardRandomStoryPoints").transform:GetChild(floor - 1)
   self._randomStoryPointHolder = AircraftStoryPointHolder:New(randomPoints, self._floor)
   local navmeshObj = go
   local moduleNavMesh = navmeshObj:GetComponent("NavMeshSurface")
   if moduleNavMesh == nil then
-    (Log.fatal)("找不到导航组件")
-    return 
+    Log.fatal("找不到导航组件")
+    return
   end
   moduleNavMesh.defaultArea = self._floor + 2
   moduleNavMesh:BuildNavMesh()
-  for i = 0, (navmeshObj.transform).childCount - 1 do
-    (((navmeshObj.transform):GetChild(i)).gameObject):SetActive(false)
+  for i = 0, navmeshObj.transform.childCount - 1 do
+    navmeshObj.transform:GetChild(i).gameObject:SetActive(false)
   end
   navmeshObj = os
   local moduleNavMesh = navmeshObj:GetComponent("NavMeshSurface")
   if moduleNavMesh == nil then
-    (Log.fatal)("找不到导航组件")
-    return 
+    Log.fatal("找不到导航组件")
+    return
   end
   moduleNavMesh.defaultArea = self._floor + 2
   moduleNavMesh:BuildNavMesh()
-  for i = 0, (navmeshObj.transform).childCount - 1 do
-    (((navmeshObj.transform):GetChild(i)).gameObject):SetActive(false)
+  for i = 0, navmeshObj.transform.childCount - 1 do
+    navmeshObj.transform:GetChild(i).gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftBoard.PointHolder = function(self)
-  -- function num : 0_1
+function AircraftBoard:PointHolder()
   return self._pointHolder
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftBoard.RandomPoints = function(self)
-  -- function num : 0_2
+function AircraftBoard:RandomPoints()
   return self._randomStoryPointRoot, self._floor
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftBoard.GatherPointHolder = function(self)
-  -- function num : 0_3
+function AircraftBoard:GatherPointHolder()
   return self._gatherPointHolder
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftBoard.RandomStoryPointHolder = function(self)
-  -- function num : 0_4
+function AircraftBoard:RandomStoryPointHolder()
   return self._randomStoryPointHolder
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftBoard.ReleaseAllPoints = function(self)
-  -- function num : 0_5
-  (self._pointHolder):ReleaseAll()
-  ;
-  (self._gatherPointHolder):ReleaseAll()
+function AircraftBoard:ReleaseAllPoints()
+  self._pointHolder:ReleaseAll()
+  self._gatherPointHolder:ReleaseAll()
 end
-
-

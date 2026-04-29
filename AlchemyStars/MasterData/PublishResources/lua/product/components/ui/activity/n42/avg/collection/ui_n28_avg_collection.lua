@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/collection/ui_n28_avg_collection.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGCollection", UIController)
 UIN28AVGCollection = UIN28AVGCollection
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGCollection.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
+function UIN28AVGCollection:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
+  self.mItem = GameGlobal.GetModule(ItemModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGCollection:OnShow(uiParams)
   self.redTabBadge = self:GetGameObject("redTabBadge")
   self.newTabBadge = self:GetGameObject("newTabBadge")
   self.newTabEvidence = self:GetGameObject("newTabEvidence")
@@ -27,8 +17,7 @@ UIN28AVGCollection.OnShow = function(self, uiParams)
   self.badge = self:GetGameObject("badge")
   self.badgeSelect = self:GetGameObject("badgeSelect")
   self.evidenceSelect = self:GetGameObject("evidenceSelect")
-  ;
-  (self.badge):SetActive(false)
+  self.badge:SetActive(false)
   self.evience = self:GetGameObject("evience")
   self.poolEvidence = self:GetUIComponent("UISelectObjectPath", "poolEvidence")
   self.evidenceTitle = self:GetUIComponent("UILocalizationText", "evidenceTitle")
@@ -37,8 +26,7 @@ UIN28AVGCollection.OnShow = function(self, uiParams)
   self.evidenceSelectCountObj = self:GetGameObject("evidenceSelectCount")
   self.evidenceIconImage = self:GetUIComponent("RawImageLoader", "evidenceIconImage")
   self.cg = self:GetGameObject("cg")
-  ;
-  (self.cg):SetActive(false)
+  self.cg:SetActive(false)
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self.evidenceTxtCount = self:GetUIComponent("UILocalizationText", "evidenceTxtCount")
   self.sldProgress = self:GetUIComponent("Slider", "sldProgress")
@@ -54,12 +42,11 @@ UIN28AVGCollection.OnShow = function(self, uiParams)
   self.imgCGObj = self:GetGameObject("imgCG")
   self.suo = self:GetGameObject("suo")
   self.btnShowCG = self:GetGameObject("btnShowCG")
-  ;
-  (self.btnShowCG):SetActive(false)
+  self.btnShowCG:SetActive(false)
   self.txtGetCondition = self:GetUIComponent("UILocalizationText", "txtGetCondition")
   self.poolCGAward = self:GetUIComponent("UISelectObjectPath", "cgAward")
   self.poolItemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._tips = (self.poolItemInfo):SpawnObject("UISelectInfo")
+  self._tips = self.poolItemInfo:SpawnObject("UISelectInfo")
   self.got = self:GetGameObject("got")
   self.canGet = self:GetGameObject("canGet")
   self.goBigCG = self:GetGameObject("goBigCG")
@@ -68,18 +55,27 @@ UIN28AVGCollection.OnShow = function(self, uiParams)
   self.evidencePanelBtnsObj = self:GetGameObject("evidencePanelBtns")
   self.evidenceLeftBtnObj = self:GetGameObject("evidenceLeftBtn")
   self.evidenceRightBtnObj = self:GetGameObject("evidenceRightBtn")
-  ;
-  (self.goBigCG):SetActive(false)
+  self.goBigCG:SetActive(false)
   self.imgBigCG = self:GetUIComponent("RawImageLoader", "imgBigCG")
   self.evidenceContent = self:GetUIComponent("RectTransform", "evidenceContent")
   self.evidencePanelAnim = self:GetUIComponent("Animation", "evidencePanelAnim")
   self.contentAnimCfg = {
-[0] = {anim = "badgeAnim", animIn = "uieff_UIN28AVGCollection_Badge_in", animOut = "uieff_UIN28AVGCollection_Badge_out"}
-, 
-[1] = {anim = "evienceAnim", animIn = "uieff_UIN28AVGCollection_evience_in", animOut = "uieff_UIN28AVGCollection_evience_out"}
-, 
-[2] = {anim = "cgAnim", animIn = "uieff_UIN28AVGMain_cg_in", animOut = "uieff_UIN28AVGMain_cg_out"}
-}
+    [0] = {
+      anim = "badgeAnim",
+      animIn = "uieff_UIN28AVGCollection_Badge_in",
+      animOut = "uieff_UIN28AVGCollection_Badge_out"
+    },
+    [1] = {
+      anim = "evienceAnim",
+      animIn = "uieff_UIN28AVGCollection_evience_in",
+      animOut = "uieff_UIN28AVGCollection_evience_out"
+    },
+    [2] = {
+      anim = "cgAnim",
+      animIn = "uieff_UIN28AVGMain_cg_in",
+      animOut = "uieff_UIN28AVGMain_cg_out"
+    }
+  }
   self:AttachEvent(GameEventType.AVGSelectCollectionEvidenceItem, self.OnSelectEvidenceType)
   self:FlushTab()
   self.curEndId = -1
@@ -95,375 +91,249 @@ UIN28AVGCollection.OnShow = function(self, uiParams)
   self:AutoSelectTab()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.imgCG):DestoryLastImage()
-  ;
-  (self.imgBigCG):DestoryLastImage()
+function UIN28AVGCollection:OnHide()
+  self.imgCG:DestoryLastImage()
+  self.imgBigCG:DestoryLastImage()
   self:DetachEvent(GameEventType.AVGSelectCollectionEvidenceItem, self.OnSelectEvidenceType)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.SetCurEndId = function(self, endId)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN28AVGCollection:SetCurEndId(endId)
   if endId == self.curEndId then
-    return 
+    return
   end
-  local uis = (self.poolContent):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     if endId == ui:EndId() then
       ui:FlushSelect(true)
     else
       ui:FlushSelect(false)
     end
   end
-  do
-    if self.curEndId ~= -1 or not self.curEndId then
-      local fromAnimID = self:GetChangeContentAnimID(self.curEndId)
-    end
-    local targetAnimID = self:GetChangeContentAnimID(endId)
-    self.curEndId = endId
-    if endId == 0 then
-      (self.evidenceSelect):SetActive(false)
-      ;
-      (self.badgeSelect):SetActive(true)
-      self:DoChangeContentAnimation(fromAnimID, targetAnimID, function()
-    -- function num : 0_3_0 , upvalues : self
-    (self.evience):SetActive(false)
-    ;
-    (self.cg):SetActive(false)
+  local fromAnimID = self.curEndId == -1 and self.curEndId or self:GetChangeContentAnimID(self.curEndId)
+  local targetAnimID = self:GetChangeContentAnimID(endId)
+  self.curEndId = endId
+  if endId == 0 then
+    self.evidenceSelect:SetActive(false)
+    self.badgeSelect:SetActive(true)
+    self:DoChangeContentAnimation(fromAnimID, targetAnimID, function()
+      self.evience:SetActive(false)
+      self.cg:SetActive(false)
+    end, function()
+      self.badge:SetActive(true)
+      self:FlushBadge()
+      self:FlushTabBadgeNewEffect()
+    end)
+  elseif endId == 1 then
+    self.badgeSelect:SetActive(false)
+    self.evidenceSelect:SetActive(true)
+    self:DoChangeContentAnimation(fromAnimID, targetAnimID, function()
+      self.badge:SetActive(false)
+      self.cg:SetActive(false)
+    end, function()
+      self.evience:SetActive(true)
+      self:FlushEvidence(true)
+    end)
+  else
+    self.evidenceSelect:SetActive(false)
+    self.badgeSelect:SetActive(false)
+    self:DoChangeContentAnimation(fromAnimID, targetAnimID, function()
+      self.evience:SetActive(false)
+      self.badge:SetActive(false)
+    end, function()
+      self.cg:SetActive(true)
+      self:FlushCG()
+      self:FlushTabCgNew()
+    end)
   end
-, function()
-    -- function num : 0_3_1 , upvalues : self
-    (self.badge):SetActive(true)
-    self:FlushBadge()
-    self:FlushTabBadgeNewEffect()
-  end
-)
-    else
-      if endId == 1 then
-        (self.badgeSelect):SetActive(false)
-        ;
-        (self.evidenceSelect):SetActive(true)
-        self:DoChangeContentAnimation(fromAnimID, targetAnimID, function()
-    -- function num : 0_3_2 , upvalues : self
-    (self.badge):SetActive(false)
-    ;
-    (self.cg):SetActive(false)
-  end
-, function()
-    -- function num : 0_3_3 , upvalues : self
-    (self.evience):SetActive(true)
-    self:FlushEvidence(true)
-  end
-)
-      else
-        ;
-        (self.evidenceSelect):SetActive(false)
-        ;
-        (self.badgeSelect):SetActive(false)
-        self:DoChangeContentAnimation(fromAnimID, targetAnimID, function()
-    -- function num : 0_3_4 , upvalues : self
-    (self.evience):SetActive(false)
-    ;
-    (self.badge):SetActive(false)
-  end
-, function()
-    -- function num : 0_3_5 , upvalues : self
-    (self.cg):SetActive(true)
-    self:FlushCG()
-    self:FlushTabCgNew()
-  end
-)
-      end
-    end
-    self:FlushTabPos()
-  end
+  self:FlushTabPos()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection._ShowRewardTips = function(self, id, pos)
-  -- function num : 0_4
-  (self._tips):SetData(id, pos)
+function UIN28AVGCollection:_ShowRewardTips(id, pos)
+  self._tips:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.GetChangeContentAnimID = function(self, endID)
-  -- function num : 0_5
+function UIN28AVGCollection:GetChangeContentAnimID(endID)
   return (endID == 0 or endID == 1) and endID or 2
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.DoChangeContentAnimation = function(self, fromID, targetID, cbOut, cbIn)
-  -- function num : 0_6 , upvalues : _ENV
-  local t = (self.contentAnimCfg)[targetID]
-  local f = (self.contentAnimCfg)[fromID]
+function UIN28AVGCollection:DoChangeContentAnimation(fromID, targetID, cbOut, cbIn)
+  local t = self.contentAnimCfg[targetID]
+  local f = self.contentAnimCfg[fromID]
   local key = "UIN28AVGCollection_DoChangeContentAnimation"
   self:Lock(key)
   if f then
-    (UIWidgetHelper.PlayAnimation)(self, f.anim, f.animOut, 160, function()
-    -- function num : 0_6_0 , upvalues : cbOut, cbIn, _ENV, self, t, key
-    cbOut()
-    cbIn()
-    ;
-    (UIWidgetHelper.PlayAnimation)(self, t.anim, t.animIn, 200, function()
-      -- function num : 0_6_0_0 , upvalues : self, key
-      self:UnLock(key)
-    end
-)
-  end
-)
+    UIWidgetHelper.PlayAnimation(self, f.anim, f.animOut, 160, function()
+      cbOut()
+      cbIn()
+      UIWidgetHelper.PlayAnimation(self, t.anim, t.animIn, 200, function()
+        self:UnLock(key)
+      end)
+    end)
   else
     cbIn()
-    ;
-    (UIWidgetHelper.PlayAnimation)(self, t.anim, t.animIn, 100, function()
-    -- function num : 0_6_1 , upvalues : self, key
-    self:UnLock(key)
-  end
-)
+    UIWidgetHelper.PlayAnimation(self, t.anim, t.animIn, 100, function()
+      self:UnLock(key)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushTab = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN28AVGCollection:FlushTab()
   local notBEs = {}
-  for index,ending in ipairs((self.data).endings) do
+  for index, ending in ipairs(self.data.endings) do
     if not ending.isBE then
-      (table.insert)(notBEs, ending)
+      table.insert(notBEs, ending)
     end
   end
-  local len = (table.count)(notBEs)
-  ;
-  (self.poolContent):SpawnObjects("UIN28AVGCollectionItem", len)
-  local uis = (self.poolContent):GetAllSpawnList()
-  do
-    for i,ui in ipairs(uis) do
-      local ending = notBEs[i]
-      local endId = ending.id
-      ui:Flush(endId, function()
-    -- function num : 0_7_0 , upvalues : self, endId
-    self:SetCurEndId(endId)
-  end
-)
-    end
+  local len = table.count(notBEs)
+  self.poolContent:SpawnObjects("UIN28AVGCollectionItem", len)
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local ending = notBEs[i]
+    local endId = ending.id
+    ui:Flush(endId, function()
+      self:SetCurEndId(endId)
+    end)
   end
   self:FlushTabBadgeRed()
   self:FlushTabBadgeNew()
   self:FlushTabEvidenceNew()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushTabBadgeRed = function(self)
-  -- function num : 0_8
-  local isShow = (self.data):HasRedBadge()
-  ;
-  (self.redTabBadge):SetActive(isShow)
+function UIN28AVGCollection:FlushTabBadgeRed()
+  local isShow = self.data:HasRedBadge()
+  self.redTabBadge:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushTabBadgeNew = function(self)
-  -- function num : 0_9
-  local isShow = (self.data):HasNewBadge()
-  ;
-  (self.newTabBadge):SetActive(isShow)
+function UIN28AVGCollection:FlushTabBadgeNew()
+  local isShow = self.data:HasNewBadge()
+  self.newTabBadge:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushTabEvidenceNew = function(self)
-  -- function num : 0_10
-  local isShow = (self.data):HasNewEvidence()
-  ;
-  (self.newTabEvidence):SetActive(isShow)
+function UIN28AVGCollection:FlushTabEvidenceNew()
+  local isShow = self.data:HasNewEvidence()
+  self.newTabEvidence:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.AutoSelectTab = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self.data):HasNewBadge() then
+function UIN28AVGCollection:AutoSelectTab()
+  if self.data:HasNewBadge() then
     self:SetCurEndId(0)
-    return 
+    return
   end
-  if (self.data):HasNewEvidence() then
+  if self.data:HasNewEvidence() then
     self:SetCurEndId(1)
-    return 
+    return
   end
-  for index,ending in ipairs((self.data).endings) do
+  for index, ending in ipairs(self.data.endings) do
     if ending:HasNew() then
       self:SetCurEndId(ending.id)
-      return 
+      return
     end
   end
   self:SetCurEndId(0)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushBadge = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN28AVGCollection:FlushBadge()
   local countReach, count = 0, 0
-  for _,badge in ipairs((self.data).badges) do
+  for _, badge in ipairs(self.data.badges) do
     count = count + 1
     if badge:HasGot() then
       countReach = countReach + 1
     end
   end
-  ;
-  (self.txtCount):SetText("<color=#29b4e5>" .. countReach .. "</color>/" .. count)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.sldProgress).maxValue = count
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.sldProgress).value = countReach
-  local len = (table.count)((self.data).badgeStages)
-  do
-    (self.poolProgress):SpawnObjects("UIN28AVGBadgeProgressItem", len)
-    local uis = (self.poolProgress):GetAllSpawnList()
-    do
-      for i,ui in ipairs(uis) do
-        local badgeStage = ((self.data).badgeStages)[i]
-        ui:Flush(badgeStage.id, function()
-    -- function num : 0_12_0 , upvalues : badgeStage, _ENV, self, ui
-    local state = badgeStage:State()
-    if state == N28AVGAwardState.CanGet then
-      self:StartTask(function(TT)
-      -- function num : 0_12_0_0 , upvalues : self, _ENV, badgeStage
-      self:Lock("UIN28AVGCollection_HandleGetBadgeReward")
-      local c = (self.data):GetComponentAVG()
-      local res = AsyncRequestRes:New()
-      local ret = c:HandleGetBadgeReward(TT, res, badgeStage.id)
-      if (N28AVGData.CheckCode)(res) then
-        (UIActivityHelper.ShowUIGetRewards)(badgeStage.awards)
-        self:FlushTab()
-        self:FlushBadge()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGFlushNewRed)
+  self.txtCount:SetText("<color=#29b4e5>" .. countReach .. "</color>/" .. count)
+  self.sldProgress.maxValue = count
+  self.sldProgress.value = countReach
+  local len = table.count(self.data.badgeStages)
+  self.poolProgress:SpawnObjects("UIN28AVGBadgeProgressItem", len)
+  local uis = self.poolProgress:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local badgeStage = self.data.badgeStages[i]
+    ui:Flush(badgeStage.id, function()
+      local state = badgeStage:State()
+      if state == N28AVGAwardState.CanGet then
+        self:StartTask(function(TT)
+          self:Lock("UIN28AVGCollection_HandleGetBadgeReward")
+          local c = self.data:GetComponentAVG()
+          local res = AsyncRequestRes:New()
+          local ret = c:HandleGetBadgeReward(TT, res, badgeStage.id)
+          if N28AVGData.CheckCode(res) then
+            UIActivityHelper.ShowUIGetRewards(badgeStage.awards)
+            self:FlushTab()
+            self:FlushBadge()
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGFlushNewRed)
+          end
+          self:UnLock("UIN28AVGCollection_HandleGetBadgeReward")
+        end)
+      else
+        local itemid = badgeStage.awards[1].assetid
+        self:_ShowRewardTips(itemid, ui:GetGameObject().transform.position)
       end
-      self:UnLock("UIN28AVGCollection_HandleGetBadgeReward")
-    end
-)
-    else
-      local itemid = ((badgeStage.awards)[1]).assetid
-      self:_ShowRewardTips(itemid, ((ui:GetGameObject()).transform).position)
-    end
+    end)
+    local pos = Vector2(self.rtProgress.rect.width * badgeStage.count / count, 0)
+    ui:FlushPos(pos)
   end
-)
-        local pos = Vector2(((self.rtProgress).rect).width * badgeStage.count / (count), 0)
-        ui:FlushPos(pos)
+  len = table.count(self.data.badges)
+  self.poolBadge:SpawnObjects("UIN28AVGBadgeItem", len)
+  local uis = self.poolBadge:GetAllSpawnList()
+  for i = 1, #uis do
+    local ui = uis[i]
+    local badge = self.data.badges[i]
+    ui:Flush(badge.id, function()
+      for i, ui in ipairs(uis) do
+        ui:FlushSelect(badge.id)
       end
-    end
-    len = (table.count)((self.data).badges)
-    ;
-    (self.poolBadge):SpawnObjects("UIN28AVGBadgeItem", len)
-    local uis = nil
-    for i = 1, uis do
-      local l_0_12_20, i = nil
-      l_0_12_20 = ((self.poolBadge):GetAllSpawnList())[l_0_12_19]
-      local ui = nil
-      i = self.data
-      i = i.badges
-      i = i[l_0_12_19]
-      local badge = nil
-      ui, badge = l_0_12_20:Flush, l_0_12_20
-      ui(badge, i.id, function()
-    -- function num : 0_12_1 , upvalues : _ENV, uis, badge, self
-    for i,ui in ipairs(uis) do
-      ui:FlushSelect(badge.id)
-    end
-    local showName = nil
-    if badge:HasGot() then
-      showName = badge.name
-    else
-      showName = "???"
-    end
-    ;
-    (self.txtName):SetText(showName)
-    ;
-    (self.txtDesc):SetText(badge.desc)
-  end
-)
-      ui, badge = l_0_12_20:FlushPos, l_0_12_20
-      ui(badge, i.pos)
-      if l_0_12_19 == 1 then
-        ui, badge = l_0_12_20:BtnOnClick, l_0_12_20
-        ui(badge)
+      local showName
+      if badge:HasGot() then
+        showName = badge.name
+      else
+        showName = "???"
       end
+      self.txtName:SetText(showName)
+      self.txtDesc:SetText(badge.desc)
+    end)
+    ui:FlushPos(badge.pos)
+    if i == 1 then
+      ui:BtnOnClick()
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.InitEvidenceTypeMap = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  for i = 1, #(self.data).allEvidences do
-    local evidence = ((self.data).allEvidences)[i]
+function UIN28AVGCollection:InitEvidenceTypeMap()
+  for i = 1, #self.data.allEvidences do
+    local evidence = self.data.allEvidences[i]
     local type = evidence.type
-    if not (self.poolEvidenceTypeMap)[type] then
-      (table.insert)(self.evidenceTypeOrderList, type)
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.poolEvidenceTypeMap)[type] = {}
+    if not self.poolEvidenceTypeMap[type] then
+      table.insert(self.evidenceTypeOrderList, type)
+      self.poolEvidenceTypeMap[type] = {}
     end
-    ;
-    (table.insert)((self.poolEvidenceTypeMap)[type], evidence)
+    table.insert(self.poolEvidenceTypeMap[type], evidence)
     if evidence:HasGot() then
       self.hasGotEvidenceCount = self.hasGotEvidenceCount + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushEvidence = function(self, selectDefault)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN28AVGCollection:FlushEvidence(selectDefault)
   local len = #self.evidenceTypeOrderList
-  ;
-  (self.poolEvidence):SpawnObjects("UIN28AVGStoryCollectionEvidenceItem", len)
-  local uis = ((self.poolEvidence):GetAllSpawnList())
-  local firstEvidenceType = nil
+  self.poolEvidence:SpawnObjects("UIN28AVGStoryCollectionEvidenceItem", len)
+  local uis = self.poolEvidence:GetAllSpawnList()
+  local firstEvidenceType
   for i = 1, len do
-    local type = (self.evidenceTypeOrderList)[i]
-    local evidenceList = (self.poolEvidenceTypeMap)[type]
-    if i ~= 1 or not type then
-      do
-        (uis[i]):SetData(type, evidenceList)
-        -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
+    local type = self.evidenceTypeOrderList[i]
+    local evidenceList = self.poolEvidenceTypeMap[type]
+    firstEvidenceType = i == 1 and type or firstEvidenceType
+    uis[i]:SetData(type, evidenceList)
   end
   if selectDefault then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGSelectCollectionEvidenceItem, firstEvidenceType)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGSelectCollectionEvidenceItem, firstEvidenceType)
   end
-  local maxCount = #(self.data).allEvidences
-  ;
-  (self.evidenceTxtCount):SetText("<color=#29b4e5>" .. self.hasGotEvidenceCount .. "</color>/" .. maxCount)
+  local maxCount = #self.data.allEvidences
+  self.evidenceTxtCount:SetText("<color=#29b4e5>" .. self.hasGotEvidenceCount .. "</color>/" .. maxCount)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.OnSelectEvidenceType = function(self, type)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN28AVGCollection:OnSelectEvidenceType(type)
   if self.curSelectEvidenceType == type then
-    return 
+    return
   end
   local anim = true
   local isLeft = true
@@ -473,494 +343,353 @@ UIN28AVGCollection.OnSelectEvidenceType = function(self, type)
     isLeft = type < self.curSelectEvidenceType
   end
   self.curSelectEvidenceType = type
-  local evidenceList = (self.poolEvidenceTypeMap)[type]
+  local evidenceList = self.poolEvidenceTypeMap[type]
   self.curEvidenceMaxCountCount = #evidenceList
   self.curEvidenceHasCount = 0
   self.curHasEvidenceList = {}
-  for _,evidence in pairs(evidenceList) do
+  for _, evidence in pairs(evidenceList) do
     if evidence:HasGot() then
       self.curEvidenceHasCount = self.curEvidenceHasCount + 1
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.curHasEvidenceList)[self.curEvidenceHasCount] = evidence
+      self.curHasEvidenceList[self.curEvidenceHasCount] = evidence
       if evidence:HasNew() then
         evidence:SetNew()
         self:FlushTab()
         self:FlushEvidence()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGFlushNewRed)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGFlushNewRed)
       end
     end
   end
   self.curSelectEvidenceIdx = self.curEvidenceHasCount
-  if self.curSelectEvidenceIdx > 0 then
-    (self.evidenceDescPanel):SetActive(true)
-    ;
-    (self.evidenceNotGetPanel):SetActive(false)
-    self:FlushEvidencePanel((self.curHasEvidenceList)[self.curSelectEvidenceIdx], isLeft, anim)
-    ;
-    (self.evidencePanelBtnsObj):SetActive(self.curSelectEvidenceIdx > 1)
+  if 0 < self.curSelectEvidenceIdx then
+    self.evidenceDescPanel:SetActive(true)
+    self.evidenceNotGetPanel:SetActive(false)
+    self:FlushEvidencePanel(self.curHasEvidenceList[self.curSelectEvidenceIdx], isLeft, anim)
+    self.evidencePanelBtnsObj:SetActive(1 < self.curSelectEvidenceIdx)
   else
-    (self.evidencePanelBtnsObj):SetActive(false)
-    ;
-    (self.evidenceDescPanel):SetActive(false)
-    ;
-    (self.evidenceNotGetPanel):SetActive(true)
+    self.evidencePanelBtnsObj:SetActive(false)
+    self.evidenceDescPanel:SetActive(false)
+    self.evidenceNotGetPanel:SetActive(true)
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection._DoEscape = function(self, strContent)
-  -- function num : 0_16 , upvalues : _ENV
-  strContent = (string.gsub)(strContent, "$$", "$")
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function UIN28AVGCollection:_DoEscape(strContent)
+  strContent = string.gsub(strContent, "$$", "$")
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  strContent = (string.gsub)(strContent, "PlayerName", name)
+  strContent = string.gsub(strContent, "PlayerName", name)
   return strContent
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushEvidencePanel = function(self, evidence, isLeft, anim)
-  -- function num : 0_17 , upvalues : _ENV
-  local showInfo = function()
-    -- function num : 0_17_0 , upvalues : self, evidence
-    (self.evidenceTitle):SetText(evidence.name)
+function UIN28AVGCollection:FlushEvidencePanel(evidence, isLeft, anim)
+  local function showInfo()
+    self.evidenceTitle:SetText(evidence.name)
+    
     local info = self:_DoEscape(evidence.desc)
-    ;
-    (self.evidenceDetail):SetText(info)
-    ;
-    (self.evidenceIconImage):LoadImage(evidence.icon)
-    ;
-    (self.evidenceSelectCount):SetText(self.curSelectEvidenceIdx .. "/" .. self.curEvidenceMaxCountCount)
+    self.evidenceDetail:SetText(info)
+    self.evidenceIconImage:LoadImage(evidence.icon)
+    self.evidenceSelectCount:SetText(self.curSelectEvidenceIdx .. "/" .. self.curEvidenceMaxCountCount)
     local showCount = self.curEvidenceMaxCountCount > 1
-    ;
-    (self.evidenceSelectCountObj):SetActive(showCount)
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    self.evidenceSelectCountObj:SetActive(showCount)
   end
-
+  
   if anim then
     if isLeft then
-      (self.evidencePanelAnim):Play("uieff_UIN28AVGCollection_evidencePanel_R_out")
+      self.evidencePanelAnim:Play("uieff_UIN28AVGCollection_evidencePanel_R_out")
       self:StartTask(function(TT)
-    -- function num : 0_17_1 , upvalues : self, _ENV, showInfo
-    self:Lock("UIN28AVGCollection_EvidencePanel")
-    YIELD(TT, 333)
-    self:UnLock("UIN28AVGCollection_EvidencePanel")
-    ;
-    (self.evidencePanelAnim):Play("uieff_UIN28AVGCollection_evidencePanel_R_in")
-    showInfo()
-  end
-)
+        self:Lock("UIN28AVGCollection_EvidencePanel")
+        YIELD(TT, 333)
+        self:UnLock("UIN28AVGCollection_EvidencePanel")
+        self.evidencePanelAnim:Play("uieff_UIN28AVGCollection_evidencePanel_R_in")
+        showInfo()
+      end)
     else
-      ;
-      (self.evidencePanelAnim):Play("uieff_UIN28AVGCollection_evidencePanel_L_in")
+      self.evidencePanelAnim:Play("uieff_UIN28AVGCollection_evidencePanel_L_in")
       self:StartTask(function(TT)
-    -- function num : 0_17_2 , upvalues : self, _ENV, showInfo
-    self:Lock("UIN28AVGCollection_EvidencePanel")
-    YIELD(TT, 333)
-    self:UnLock("UIN28AVGCollection_EvidencePanel")
-    ;
-    (self.evidencePanelAnim):Play("uieff_UIN28AVGCollection_evidencePanel_L_out")
-    showInfo()
-  end
-)
+        self:Lock("UIN28AVGCollection_EvidencePanel")
+        YIELD(TT, 333)
+        self:UnLock("UIN28AVGCollection_EvidencePanel")
+        self.evidencePanelAnim:Play("uieff_UIN28AVGCollection_evidencePanel_L_out")
+        showInfo()
+      end)
     end
   else
     showInfo()
   end
-  ;
-  (self.evidenceLeftBtnObj):SetActive(self.curSelectEvidenceIdx ~= 1)
-  ;
-  (self.evidenceRightBtnObj):SetActive(self.curSelectEvidenceIdx ~= self.curEvidenceHasCount)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self.evidenceLeftBtnObj:SetActive(self.curSelectEvidenceIdx ~= 1)
+  self.evidenceRightBtnObj:SetActive(self.curSelectEvidenceIdx ~= self.curEvidenceHasCount)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.GetEvidenceCfg = function(self, eid)
-  -- function num : 0_18 , upvalues : _ENV
-  local evidenceCfg = (Cfg.cfg_component_avg_evidence)({ID = eid})
+function UIN28AVGCollection:GetEvidenceCfg(eid)
+  local evidenceCfg = Cfg.cfg_component_avg_evidence({ID = eid})
   if evidenceCfg then
     return evidenceCfg[1]
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.EvidenceLeftBtnOnClick = function(self)
-  -- function num : 0_19
+function UIN28AVGCollection:EvidenceLeftBtnOnClick()
   if self.curEvidenceHasCount == 0 then
-    return 
+    return
   end
   self.curSelectEvidenceIdx = self.curSelectEvidenceIdx - 1
-  self:FlushEvidencePanel((self.curHasEvidenceList)[self.curSelectEvidenceIdx], true, true)
+  self:FlushEvidencePanel(self.curHasEvidenceList[self.curSelectEvidenceIdx], true, true)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.EvidenceRightBtnOnClick = function(self)
-  -- function num : 0_20
+function UIN28AVGCollection:EvidenceRightBtnOnClick()
   if self.curEvidenceHasCount == 0 then
-    return 
+    return
   end
   self.curSelectEvidenceIdx = self.curSelectEvidenceIdx + 1
-  self:FlushEvidencePanel((self.curHasEvidenceList)[self.curSelectEvidenceIdx], false, true)
+  self:FlushEvidencePanel(self.curHasEvidenceList[self.curSelectEvidenceIdx], false, true)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushTabBadgeNewEffect = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN28AVGCollection:FlushTabBadgeNewEffect()
   if self.curEndId ~= 0 then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, _ENV
-    if (self.data):HasNewBadge() then
+    if self.data:HasNewBadge() then
       local key = "UIN28AVGCollection_FlushTabBadgeNewEffect"
       self:Lock(key)
       YIELD(TT, 500)
-      for index,badge in ipairs((self.data).badges) do
+      for index, badge in ipairs(self.data.badges) do
         if badge:HasNew() then
           self:BadgeNewEffect(TT, index, badge)
-          local items = (self.mItem):GetItemByTempId(badge.itemId)
-          for _,item in pairs(items) do
+          local items = self.mItem:GetItemByTempId(badge.itemId)
+          for _, item in pairs(items) do
             local pstId = item:GetID()
-            ;
-            (self.mItem):SetItemUnnewOverlay(TT, pstId)
+            self.mItem:SetItemUnnewOverlay(TT, pstId)
           end
         end
       end
       self:UnLock(key)
       self:FlushTabBadgeRed()
       self:FlushTabBadgeNew()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGFlushNewRed)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGFlushNewRed)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.BadgeNewEffect = function(self, TT, index, badge)
-  -- function num : 0_22 , upvalues : _ENV
-  local uis = (self.poolBadge):GetAllSpawnList()
+function UIN28AVGCollection:BadgeNewEffect(TT, index, badge)
+  local uis = self.poolBadge:GetAllSpawnList()
   local ui = uis[index]
   self:_MoveTransform(ui)
   ui:FlushNewEffect(badge.pos)
   YIELD(TT, 1500)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection._MoveTransform = function(self, obj)
-  -- function num : 0_23
-  local trans = (obj:GetGameObject()):GetComponent("Transform")
+function UIN28AVGCollection:_MoveTransform(obj)
+  local trans = obj:GetGameObject():GetComponent("Transform")
   trans:SetAsLastSibling()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.PlayUnlockCGAnimation = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN28AVGCollection:PlayUnlockCGAnimation()
   self:StartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : self, _ENV
-    (self.imgCGObj):SetActive(false)
+    self.imgCGObj:SetActive(false)
     self:Lock("UIN28AVGCollection_EvidencePanel")
     YIELD(TT, 200)
     self:UnLock("UIN28AVGCollection_EvidencePanel")
-    ;
-    (self.imgCGObj):SetActive(true)
-    ;
-    (UIWidgetHelper.PlayAnimation)(self, "cgAnim", "uieff_UIN28AVGMain_cg_lock", 400)
-  end
-)
+    self.imgCGObj:SetActive(true)
+    UIWidgetHelper.PlayAnimation(self, "cgAnim", "uieff_UIN28AVGMain_cg_lock", 400)
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushCG = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local ending = (self.data):GetEndingById(self.curEndId)
+function UIN28AVGCollection:FlushCG()
+  local ending = self.data:GetEndingById(self.curEndId)
   local state = ending:AwardState()
   local hasNew = ending:HasNew()
   if state then
-    (self.time):SetActive(true)
-    ;
-    (self.timeNotGet):SetActive(false)
+    self.time:SetActive(true)
+    self.timeNotGet:SetActive(false)
     local timestampGot = ending:GetTimestamp()
-    local str = (self.data):Timestamp2Str(timestampGot)
-    ;
-    (self.txtGetTime):SetText(str)
-    ;
-    (self.imgCG):LoadImage(ending.cgCollect)
-    ;
-    (self.suo):SetActive(hasNew)
+    local str = self.data:Timestamp2Str(timestampGot)
+    self.txtGetTime:SetText(str)
+    self.imgCG:LoadImage(ending.cgCollect)
+    self.suo:SetActive(hasNew)
     if hasNew then
       self:PlayUnlockCGAnimation()
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20GetCG)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20GetCG)
     else
-      ;
-      (self.imgCGObj):SetActive(true)
+      self.imgCGObj:SetActive(true)
     end
-    ;
-    (self.imgBigCG):LoadImage(ending.cg)
-    ;
-    (self.btnShowCG):SetActive(true)
+    self.imgBigCG:LoadImage(ending.cg)
+    self.btnShowCG:SetActive(true)
   else
-    do
-      ;
-      (self.time):SetActive(false)
-      ;
-      (self.timeNotGet):SetActive(true)
-      ;
-      (self.imgCGObj):SetActive(false)
-      ;
-      (self.btnShowCG):SetActive(false)
-      ;
-      (self.txtGetCondition):SetText(ending.getConditionDesc)
-      local awardState = ending:AwardState()
-      local len = (table.count)(ending.awards)
-      ;
-      (self.poolCGAward):SpawnObjects("UIN28AVGCGAward", len)
-      local uis = (self.poolCGAward):GetAllSpawnList()
-      do
-        for i,ui in ipairs(uis) do
-          local ra = (ending.awards)[i]
-          ui:Flush(ra, function()
-    -- function num : 0_25_0 , upvalues : ra, self, ui, _ENV
-    local itemid = ra.assetid
-    self:_ShowRewardTips(itemid, ((ui:GetGameObject()).transform).position - Vector3(0.1, 0, 0))
+    self.time:SetActive(false)
+    self.timeNotGet:SetActive(true)
+    self.imgCGObj:SetActive(false)
+    self.btnShowCG:SetActive(false)
   end
-)
-          ui:FlushGot(awardState == N28AVGAwardState.Got)
-        end
-      end
-      if awardState then
-        if awardState == N28AVGAwardState.CanGet then
-          (self.got):SetActive(false)
-          ;
-          (self.canGet):SetActive(true)
-        else
-          (self.got):SetActive(true)
-          ;
-          (self.canGet):SetActive(false)
-        end
-      else
-        (self.got):SetActive(false)
-        ;
-        (self.canGet):SetActive(false)
-      end
-      -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  self.txtGetCondition:SetText(ending.getConditionDesc)
+  local awardState = ending:AwardState()
+  local len = table.count(ending.awards)
+  self.poolCGAward:SpawnObjects("UIN28AVGCGAward", len)
+  local uis = self.poolCGAward:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local ra = ending.awards[i]
+    ui:Flush(ra, function()
+      local itemid = ra.assetid
+      self:_ShowRewardTips(itemid, ui:GetGameObject().transform.position - Vector3(0.1, 0, 0))
+    end)
+    ui:FlushGot(awardState == N28AVGAwardState.Got)
+  end
+  if awardState then
+    if awardState == N28AVGAwardState.CanGet then
+      self.got:SetActive(false)
+      self.canGet:SetActive(true)
+    else
+      self.got:SetActive(true)
+      self.canGet:SetActive(false)
     end
+  else
+    self.got:SetActive(false)
+    self.canGet:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.GetTabIndex = function(self, endId)
-  -- function num : 0_26 , upvalues : _ENV
-  local uis = (self.poolContent):GetAllSpawnList()
+function UIN28AVGCollection:GetTabIndex(endId)
+  local uis = self.poolContent:GetAllSpawnList()
   if self.curEndId < 0 then
     return 1
+  elseif self.curEndId < 2 then
+    return self.curEndId + 1
   else
-    if self.curEndId < 2 then
-      return self.curEndId + 1
-    else
-      for i,ui in ipairs(uis) do
-        if endId == ui:EndId() then
-          return i + 2
-        end
+    for i, ui in ipairs(uis) do
+      if endId == ui:EndId() then
+        return i + 2
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushTabPos = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIN28AVGCollection:FlushTabPos()
   local maxh = 764
-  local svh = ((self.poolContentTrans).sizeDelta).y
+  local svh = self.poolContentTrans.sizeDelta.y
   local svmaxh = maxh < svh and svh - maxh or 0
   if svmaxh == 0 then
-    return 
+    return
   end
   local h = 222
   local spacing = 20
-  local uis = (self.poolContent):GetAllSpawnList()
-  local len = (table.count)(uis) + 2
+  local uis = self.poolContent:GetAllSpawnList()
+  local len = table.count(uis) + 2
   local idx = self:GetTabIndex(self.curEndId)
-  local curPosY = ((self.poolContentTrans).anchoredPosition).y
+  local curPosY = self.poolContentTrans.anchoredPosition.y
   local minY = (idx - 1) * h + (idx - 1) * spacing
   local maxY = svmaxh - (len - idx) * h + (len - idx) * spacing
-  local targetY = nil
-  if minY < curPosY then
+  local targetY
+  if curPosY > minY then
     targetY = minY
-  else
-    if curPosY < maxY then
-      targetY = maxY
-    end
+  elseif curPosY < maxY then
+    targetY = maxY
   end
   if targetY then
     self:Lock("UIN28AVGCollection_FlushTabPos")
-    ;
-    ((self.poolContentTrans):DOAnchorPosY(targetY, 0.5)):OnComplete(function()
-    -- function num : 0_27_0 , upvalues : self
-    self:UnLock("UIN28AVGCollection_FlushTabPos")
-  end
-)
+    self.poolContentTrans:DOAnchorPosY(targetY, 0.5):OnComplete(function()
+      self:UnLock("UIN28AVGCollection_FlushTabPos")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.FlushTabCgNew = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIN28AVGCollection:FlushTabCgNew()
   if self.curEndId == 0 then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_28_0 , upvalues : self, _ENV
-    local ending = (self.data):GetEndingById(self.curEndId)
+    local ending = self.data:GetEndingById(self.curEndId)
     if ending:HasNew() then
-      local items = (self.mItem):GetItemByTempId(ending.itemId)
-      for _,item in pairs(items) do
+      local items = self.mItem:GetItemByTempId(ending.itemId)
+      for _, item in pairs(items) do
         local key = "UIN28AVGCollectionFlushTab"
         self:Lock(key)
         local pstId = item:GetID()
-        ;
-        (self.mItem):SetItemUnnewOverlay(TT, pstId)
+        self.mItem:SetItemUnnewOverlay(TT, pstId)
         self:FlushTab()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGFlushNewRed)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGFlushNewRed)
         self:UnLock(key)
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.BtnExitOnClick = function(self, go)
-  -- function num : 0_29
+function UIN28AVGCollection:BtnExitOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.ImgTabBadgeOnClick = function(self, go)
-  -- function num : 0_30
+function UIN28AVGCollection:ImgTabBadgeOnClick(go)
   self:SetCurEndId(0)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.ImgTabEvidenceOnClick = function(self, go)
-  -- function num : 0_31
+function UIN28AVGCollection:ImgTabEvidenceOnClick(go)
   self:SetCurEndId(1)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.BtnAwardOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
-  local ending = (self.data):GetEndingById(self.curEndId)
+function UIN28AVGCollection:BtnAwardOnClick(go)
+  local ending = self.data:GetEndingById(self.curEndId)
   local awardState = ending:AwardState()
   if awardState == N28AVGAwardState.CanGet then
     self:StartTask(function(TT)
-    -- function num : 0_32_0 , upvalues : self, _ENV, ending
-    local key = "UIN28AVGCollectionbtnAwardOnClick"
-    self:Lock(key)
-    local c = (self.data):GetComponentAVG()
-    local res = AsyncRequestRes:New()
-    local res = c:HandleAcceptCgReward(TT, ending.itemIdGift)
-    if (N28AVGData.CheckCode)(res) then
-      (UIActivityHelper.ShowUIGetRewards)(ending.awards)
-      self:FlushTab()
-      self:FlushCG()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGFlushNewRed)
-    end
-    self:UnLock(key)
-  end
-)
+      local key = "UIN28AVGCollectionbtnAwardOnClick"
+      self:Lock(key)
+      local c = self.data:GetComponentAVG()
+      local res = AsyncRequestRes:New()
+      local res = c:HandleAcceptCgReward(TT, ending.itemIdGift)
+      if N28AVGData.CheckCode(res) then
+        UIActivityHelper.ShowUIGetRewards(ending.awards)
+        self:FlushTab()
+        self:FlushCG()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGFlushNewRed)
+      end
+      self:UnLock(key)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.BtnShowCGOnClick = function(self, go)
-  -- function num : 0_33
-  (self.goBigCG):SetActive(true)
+function UIN28AVGCollection:BtnShowCGOnClick(go)
+  self.goBigCG:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection.ImgBGOnClick = function(self, go)
-  -- function num : 0_34
-  (self.goBigCG):SetActive(false)
+function UIN28AVGCollection:ImgBGOnClick(go)
+  self.goBigCG:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection._Test_SetCgNew = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  if not (UIActivityHelper.CheckDebugOpen)() then
-    return 
+function UIN28AVGCollection:_Test_SetCgNew()
+  if not UIActivityHelper.CheckDebugOpen() then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_35_0 , upvalues : _ENV, self
     local notBEs = {}
-    for index,ending in ipairs((self.data).endings) do
+    for index, ending in ipairs(self.data.endings) do
       if not ending.isBE then
-        local items = (self.mItem):GetItemByTempId(ending.itemId)
-        for _,item in pairs(items) do
+        local items = self.mItem:GetItemByTempId(ending.itemId)
+        for _, item in pairs(items) do
           local key = "UIN28AVGCollectionFlushTab"
           self:Lock(key)
           local pstId = item:GetID()
-          ;
-          (self.mItem):_RequestItemOverlayFlag(TT, pstId, ItemDataFlags.Item_Flag_Is_New_Overlay, true)
+          self.mItem:_RequestItemOverlayFlag(TT, pstId, ItemDataFlags.Item_Flag_Is_New_Overlay, true)
           self:UnLock(key)
         end
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGCollection._Test_SetBadgeNew = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  if not (UIActivityHelper.CheckDebugOpen)() then
-    return 
+function UIN28AVGCollection:_Test_SetBadgeNew()
+  if not UIActivityHelper.CheckDebugOpen() then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_36_0 , upvalues : _ENV, self
-    for index,badge in ipairs((self.data).badges) do
-      local items = (self.mItem):GetItemByTempId(badge.itemId)
-      for _,item in pairs(items) do
+    for index, badge in ipairs(self.data.badges) do
+      local items = self.mItem:GetItemByTempId(badge.itemId)
+      for _, item in pairs(items) do
         local key = "UIN28AVGCollectionFlushTab"
         self:Lock(key)
         local pstId = item:GetID()
-        ;
-        (self.mItem):_RequestItemOverlayFlag(TT, pstId, ItemDataFlags.Item_Flag_Is_New_Overlay, true)
+        self.mItem:_RequestItemOverlayFlag(TT, pstId, ItemDataFlags.Item_Flag_Is_New_Overlay, true)
         self:UnLock(key)
       end
     end
-  end
-, self)
+  end, self)
 end
-
-

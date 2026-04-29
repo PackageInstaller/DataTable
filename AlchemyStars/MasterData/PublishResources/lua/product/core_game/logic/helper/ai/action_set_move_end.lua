@@ -1,19 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_set_move_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSetMoveEnd", AINewNode)
 ActionSetMoveEnd = ActionSetMoveEnd
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSetMoveEnd.OnBegin = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionSetMoveEnd:OnBegin()
   local state = self:GetLogicData(-1)
-  local aiCmpt = (self.m_entityOwn):AI()
+  local aiCmpt = self.m_entityOwn:AI()
   aiCmpt:SetMoveState(AIMoveState.MoveEnd)
   self:PrintLog("无移动行为，设置为移动结束状态")
 end
-
-

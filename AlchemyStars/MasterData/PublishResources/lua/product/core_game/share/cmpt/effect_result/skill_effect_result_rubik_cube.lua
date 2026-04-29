@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_rubik_cube.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultRubikCube", SkillEffectResultBase)
 SkillEffectResultRubikCube = SkillEffectResultRubikCube
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultRubikCube.Constructor = function(self, trapID, summonPosList)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResultRubikCube:Constructor(trapID, summonPosList)
   self._rubikCubeEntities = {}
   self._convertColors = {}
   self._rubikCubePieces = {}
@@ -18,109 +11,86 @@ SkillEffectResultRubikCube.Constructor = function(self, trapID, summonPosList)
   self._targetAngle = Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultRubikCube:GetEffectType()
   return SkillEffectType.RubikCube
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.GetRubikCubeTargetAngle = function(self)
-  -- function num : 0_2
+function SkillEffectResultRubikCube:GetRubikCubeTargetAngle()
   return self._targetAngle
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.SetRubikCubeTargetAngle = function(self, targetAngle)
-  -- function num : 0_3
+function SkillEffectResultRubikCube:SetRubikCubeTargetAngle(targetAngle)
   self._targetAngle = targetAngle
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.AddRubikCubeEntity = function(self, eid, oldPos, newPos, fromBoard, toBoard)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._rubikCubeEntities, {eid, oldPos, newPos, fromBoard, toBoard})
+function SkillEffectResultRubikCube:AddRubikCubeEntity(eid, oldPos, newPos, fromBoard, toBoard)
+  table.insert(self._rubikCubeEntities, {
+    eid,
+    oldPos,
+    newPos,
+    fromBoard,
+    toBoard
+  })
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.GetRubikCubeEntities = function(self)
-  -- function num : 0_5
+function SkillEffectResultRubikCube:GetRubikCubeEntities()
   return self._rubikCubeEntities
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.AddConvertColor = function(self, oldPos, newPos, oldPieceType, newPieceType, fromBoard, toBoard)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.insert)(self._convertColors, {oldPos, newPos, oldPieceType, newPieceType, fromBoard, toBoard})
+function SkillEffectResultRubikCube:AddConvertColor(oldPos, newPos, oldPieceType, newPieceType, fromBoard, toBoard)
+  table.insert(self._convertColors, {
+    oldPos,
+    newPos,
+    oldPieceType,
+    newPieceType,
+    fromBoard,
+    toBoard
+  })
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.GetConvertColors = function(self)
-  -- function num : 0_7
+function SkillEffectResultRubikCube:GetConvertColors()
   return self._convertColors
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.AddRubikCubePiece = function(self, oldPos, newPos, fromBoard, toBoard)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.insert)(self._rubikCubePieces, {oldPos, newPos, fromBoard, toBoard})
+function SkillEffectResultRubikCube:AddRubikCubePiece(oldPos, newPos, fromBoard, toBoard)
+  table.insert(self._rubikCubePieces, {
+    oldPos,
+    newPos,
+    fromBoard,
+    toBoard
+  })
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.RubikCube = function(self)
-  -- function num : 0_9
+function SkillEffectResultRubikCube:RubikCube()
   return self._rubikCubePieces
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.AddRubikCubePrism = function(self, oldPos, newPos, fromBoard, toBoard, pieceEffectType)
-  -- function num : 0_10 , upvalues : _ENV
-  (table.insert)(self._rubikCubePrisms, {oldPos, newPos, fromBoard, toBoard, pieceEffectType})
+function SkillEffectResultRubikCube:AddRubikCubePrism(oldPos, newPos, fromBoard, toBoard, pieceEffectType)
+  table.insert(self._rubikCubePrisms, {
+    oldPos,
+    newPos,
+    fromBoard,
+    toBoard,
+    pieceEffectType
+  })
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.GetRubikCubePrisms = function(self)
-  -- function num : 0_11
+function SkillEffectResultRubikCube:GetRubikCubePrisms()
   return self._rubikCubePrisms
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.AddTrapDestroyList = function(self, entityID)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.insert)(self._trapDestroyList, entityID)
+function SkillEffectResultRubikCube:AddTrapDestroyList(entityID)
+  table.insert(self._trapDestroyList, entityID)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.GetTrapDestroyList = function(self)
-  -- function num : 0_13
+function SkillEffectResultRubikCube:GetTrapDestroyList()
   return self._trapDestroyList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.SetAloneBoard = function(self, aloneBoardID)
-  -- function num : 0_14
+function SkillEffectResultRubikCube:SetAloneBoard(aloneBoardID)
   self._aloneBoardID = aloneBoardID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultRubikCube.GetAloneBoard = function(self)
-  -- function num : 0_15
+function SkillEffectResultRubikCube:GetAloneBoard()
   return self._aloneBoardID
 end
-
-

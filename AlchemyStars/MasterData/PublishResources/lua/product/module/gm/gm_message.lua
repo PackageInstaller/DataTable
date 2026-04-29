@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/gm/gm_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
 local gmMessageDef = {CLSID_CEventMobileGM_SendCMD = 7000, CLSID_CEventMobileGM_SendCMDResult = 7001}
-;
-(table.append)(MessageDef, gmMessageDef)
+table.append(MessageDef, gmMessageDef)
 local GM_ProxyErrorCode = {GM_PROXY_SUCC = 0, GM_PROXY_UNKNOW = 1}
 _enum("GM_ProxyErrorCode", GM_ProxyErrorCode)
 _class("CEventMobileGM_SendCMD", CCallRequestEvent)
 CEventMobileGM_SendCMD = CEventMobileGM_SendCMD
--- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventMobileGM_SendCMD.Constructor = function(self)
-  -- function num : 0_0
+function CEventMobileGM_SendCMD:Constructor()
   self.gm_cmd = ""
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventMobileGM_SendCMD._proto = {
-[1] = {"gm_cmd", "string"}
+  [1] = {"gm_cmd", "string"}
 }
 _class("CEventMobileGM_SendCMDResult", CCallReplyEvent)
 CEventMobileGM_SendCMDResult = CEventMobileGM_SendCMDResult
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventMobileGM_SendCMDResult.Constructor = function(self)
-  -- function num : 0_1
+function CEventMobileGM_SendCMDResult:Constructor()
   self.err_code = 0
   self.err_msg = ""
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventMobileGM_SendCMDResult._proto = {
-[1] = {"err_code", "int"}
-, 
-[2] = {"err_msg", "string"}
+  [1] = {"err_code", "int"},
+  [2] = {"err_msg", "string"}
 }
-

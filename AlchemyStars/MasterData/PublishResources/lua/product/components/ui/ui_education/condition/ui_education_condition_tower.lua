@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/condition/ui_education_condition_tower.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_education_condition")
 _class("UIEducationConditionTower", UIEducationCondition)
 UIEducationConditionTower = UIEducationConditionTower
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEducationConditionTower.Constructor = function(self, towerType, towerLevel)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEducationConditionTower:Constructor(towerType, towerLevel)
   self._type = ConditionType.CT_TowerType
   self._quantity = ElementType.ElementType_Yellow
   self._towerType = towerType
@@ -21,48 +14,31 @@ UIEducationConditionTower.Constructor = function(self, towerType, towerLevel)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationConditionTower.GetTowerType = function(self)
-  -- function num : 0_1
+function UIEducationConditionTower:GetTowerType()
   return self._towerType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationConditionTower.GetTowerLevel = function(self)
-  -- function num : 0_2
+function UIEducationConditionTower:GetTowerLevel()
   return self._towerLevel
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationConditionTower.Test = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIEducationConditionTower:Test()
   self._completed = 0
-  local towerModule = (GameGlobal.GetModule)(TowerModule)
+  local towerModule = GameGlobal.GetModule(TowerModule)
   if self._towerType == ElementType.ElementType_None then
     for i = ElementType.ElementType_Blue, self._quantity do
       local level = towerModule:GetTowerLayer(i)
-      if self._towerLevel <= level then
+      if level >= self._towerLevel then
         self._completed = self._completed + 1
       end
     end
-  else
-    do
-      if self._towerType == ElementType.ElementType_Any then
-        for i = ElementType.ElementType_Blue, ElementType.ElementType_Yellow do
-          local level = towerModule:GetTowerLayer(i)
-          self._completed = (math.max)(self._completed, level)
-        end
-      else
-        do
-          self._completed = towerModule:GetTowerLayer(self._towerType)
-          self._completed = (math.min)(self._completed, self._quantity)
-        end
-      end
+  elseif self._towerType == ElementType.ElementType_Any then
+    for i = ElementType.ElementType_Blue, ElementType.ElementType_Yellow do
+      local level = towerModule:GetTowerLayer(i)
+      self._completed = math.max(self._completed, level)
     end
+  else
+    self._completed = towerModule:GetTowerLayer(self._towerType)
   end
+  self._completed = math.min(self._completed, self._quantity)
 end
-
-

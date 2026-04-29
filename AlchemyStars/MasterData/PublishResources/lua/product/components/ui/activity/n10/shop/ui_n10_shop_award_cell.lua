@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n10/shop/ui_n10_shop_award_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN10ShopAwardCell", UICustomWidget)
 UIN10ShopAwardCell = UIN10ShopAwardCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN10ShopAwardCell.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN10ShopAwardCell:OnShow(uiParams)
   self._atlas = self:GetAsset("UIN10.spriteatlas", LoadType.SpriteAtlas)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardCell._GetComponents = function(self)
-  -- function num : 0_1
+function UIN10ShopAwardCell:_GetComponents()
   self.itemIcon = self:GetUIComponent("RawImageLoader", "ItemIcon")
   self.itemIconRawImg = self:GetUIComponent("RawImage", "ItemIcon")
   self.itemNumText = self:GetUIComponent("UILocalizationText", "ItemNumText")
@@ -27,130 +17,82 @@ UIN10ShopAwardCell._GetComponents = function(self)
   self.fxGo = self:GetGameObject("Fx")
   self.restNumText = self:GetUIComponent("UILocalizationText", "RestNumText")
   self.blackMask = self:GetGameObject("BlackMask")
-  self._animation = ((self.view).gameObject):GetComponent("Animation")
+  self._animation = self.view.gameObject:GetComponent("Animation")
   self._normalBgImg = self:GetUIComponent("Image", "NormalBg")
   self._itemNumBgImg = self:GetUIComponent("Image", "ItemNumBg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardCell.InitData = function(self, data, itemInfoCallback, showBlackMask, delayTime)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN10ShopAwardCell:InitData(data, itemInfoCallback, showBlackMask, delayTime)
   self._data = data
-  self._itemId = (self._data):GetItemId()
-  self._itemCount = (self._data):GetTotalNum()
-  self._itemRestCount = (self._data):GetRestNum()
+  self._itemId = self._data:GetItemId()
+  self._itemCount = self._data:GetTotalNum()
+  self._itemRestCount = self._data:GetRestNum()
   self._itemInfoCallback = itemInfoCallback
   self._showBlackMask = showBlackMask
   self:_fillUi()
-  if delayTime > 0 then
+  if 0 < delayTime then
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, delayTime, self
-    YIELD(TT, delayTime * 33)
-    ;
-    (self._animation):Play("uieff_ShopCell")
-  end
-)
+      YIELD(TT, delayTime * 33)
+      self._animation:Play("uieff_ShopCell")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardCell._fillUi = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local itemCfg = (Cfg.cfg_item)[self._itemId]
+function UIN10ShopAwardCell:_fillUi()
+  local itemCfg = Cfg.cfg_item[self._itemId]
   if itemCfg then
     local res = itemCfg.Icon
-    ;
-    (self.itemIcon):LoadImage(res)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.itemIconRawImg).material = (UnityEngine.Material):New((self.itemIconRawImg).material)
+    self.itemIcon:LoadImage(res)
+    self.itemIconRawImg.material = UnityEngine.Material:New(self.itemIconRawImg.material)
     self:SetStencil()
-    local itemCount = (self._data):GetItemCount()
-    if itemCount > 1 then
-      (self.itemNumArea):SetActive(true)
-      ;
-      (self.itemNumText):SetText(itemCount)
+    local itemCount = self._data:GetItemCount()
+    if 1 < itemCount then
+      self.itemNumArea:SetActive(true)
+      self.itemNumText:SetText(itemCount)
     else
-      ;
-      (self.itemNumArea):SetActive(false)
+      self.itemNumArea:SetActive(false)
     end
-    ;
-    (self.bigAwardFlag):SetActive((self._data):IsBigReward())
-    ;
-    (self.normalBg):SetActive(not (self._data):IsBigReward())
-    ;
-    (self.specialBg):SetActive((self._data):IsBigReward())
-    local showEff = not (self._data):IsBigReward() or self._itemRestCount > 0
+    self.bigAwardFlag:SetActive(self._data:IsBigReward())
+    self.normalBg:SetActive(not self._data:IsBigReward())
+    self.specialBg:SetActive(self._data:IsBigReward())
+    local showEff = self._data:IsBigReward() and self._itemRestCount > 0
     if self.fxGo then
-      do
-        (self.restNumText):SetText("<color=#875832>" .. self._itemRestCount .. "</color>" .. "/" .. self._itemCount)
-        ;
-        (self.blackMask):SetActive((self._itemRestCount <= 0 and self._showBlackMask))
-        -- DECOMPILER ERROR at PC104: Confused about usage of register: R5 in 'UnsetPending'
-
-        if not (self._data):IsBigReward() then
-          (self._normalBgImg).sprite = (self._atlas):GetSprite((ShopTheme.JackPotCellBg)[ShopTheme.Theme])
-          -- DECOMPILER ERROR at PC111: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._itemNumBgImg).color = (ShopTheme.JackPotCellNumberColor)[ShopTheme.Theme]
-        else
-          -- DECOMPILER ERROR at PC119: Confused about usage of register: R5 in 'UnsetPending'
-
-          (self._itemNumBgImg).color = Color(0.90588235294118, 0.54117647058824, 0.18823529411765)
-        end
-        -- DECOMPILER ERROR: 7 unprocessed JMP targets
-      end
+    end
+    self.restNumText:SetText("<color=#875832>" .. self._itemRestCount .. "</color>" .. "/" .. self._itemCount)
+    self.blackMask:SetActive(self._itemRestCount <= 0 and self._showBlackMask)
+    if not self._data:IsBigReward() then
+      self._normalBgImg.sprite = self._atlas:GetSprite(ShopTheme.JackPotCellBg[ShopTheme.Theme])
+      self._itemNumBgImg.color = ShopTheme.JackPotCellNumberColor[ShopTheme.Theme]
+    else
+      self._itemNumBgImg.color = Color(0.9058823529411765, 0.5411764705882353, 0.18823529411764706)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardCell.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((UnityEngine.Object).Destroy)((self.itemIconRawImg).material)
+function UIN10ShopAwardCell:OnHide()
+  UnityEngine.Object.Destroy(self.itemIconRawImg.material)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardCell.ItemIconOnClick = function(self, go)
-  -- function num : 0_5
+function UIN10ShopAwardCell:ItemIconOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)(self._data)
+    self._itemInfoCallback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardCell.NormalBgOnClick = function(self, go)
-  -- function num : 0_6
+function UIN10ShopAwardCell:NormalBgOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)(self._data)
+    self._itemInfoCallback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardCell.SpecialBgOnClick = function(self, go)
-  -- function num : 0_7
+function UIN10ShopAwardCell:SpecialBgOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)(self._data)
+    self._itemInfoCallback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardCell.SetStencil = function(self)
-  -- function num : 0_8
-  ((self.itemIconRawImg).material):SetFloat("_Stencil", 18)
-  ;
-  ((self.itemIconRawImg).material):SetFloat("_StencilComp", 4)
-  ;
-  ((self.itemIconRawImg).material):SetFloat("_StencilOp", 0)
+function UIN10ShopAwardCell:SetStencil()
+  self.itemIconRawImg.material:SetFloat("_Stencil", 18)
+  self.itemIconRawImg.material:SetFloat("_StencilComp", 4)
+  self.itemIconRawImg.material:SetFloat("_StencilOp", 0)
 end
-
-

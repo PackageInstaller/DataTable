@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_play_audio_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutscenePlayAudioInstruction", CutsceneBaseInstruction)
 CutscenePlayAudioInstruction = CutscenePlayAudioInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutscenePlayAudioInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutscenePlayAudioInstruction:Constructor(paramList)
   self._audioID = tonumber(paramList.audioID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePlayAudioInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  (AudioHelperController.PlayInnerGameSfx)(self._audioID)
+function CutscenePlayAudioInstruction:DoInstruction(TT, phaseContext)
+  AudioHelperController.PlayInnerGameSfx(self._audioID)
 end
-
-

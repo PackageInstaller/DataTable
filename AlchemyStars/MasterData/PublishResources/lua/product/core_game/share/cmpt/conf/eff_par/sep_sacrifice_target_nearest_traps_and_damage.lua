@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_sacrifice_target_nearest_traps_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectSacrificeTargetNearestTrapsAndDamageParam", SkillEffectParamBase)
 SkillEffectSacrificeTargetNearestTrapsAndDamageParam = SkillEffectSacrificeTargetNearestTrapsAndDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:Constructor(t)
   self._checkTrapIDList = t.checkTrapIDList
   self._basePercent = t.basePercent
   self._addValue = t.addValue
@@ -20,67 +13,38 @@ SkillEffectSacrificeTargetNearestTrapsAndDamageParam.Constructor = function(self
   self._mainFormulaID = t.mainFormulaID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:GetEffectType()
   return SkillEffectType.SacrificeTargetNearestTrapsAndDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.GetBasePercent = function(self)
-  -- function num : 0_2
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:GetBasePercent()
   return self._basePercent
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.GetAddValue = function(self)
-  -- function num : 0_3
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:GetAddValue()
   return self._addValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.GetCheckTrapIDList = function(self)
-  -- function num : 0_4
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:GetCheckTrapIDList()
   return self._checkTrapIDList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.GetSacrificeFormulaID = function(self)
-  -- function num : 0_5
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:GetSacrificeFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.GetTrapLimit = function(self)
-  -- function num : 0_6
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:GetTrapLimit()
   return self._trapLimit
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.GetMainBasePercent = function(self)
-  -- function num : 0_7
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:GetMainBasePercent()
   return self._mainBasePercent
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.GetMainAddValue = function(self)
-  -- function num : 0_8
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:GetMainAddValue()
   return self._mainAddValue
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTargetNearestTrapsAndDamageParam.GetMainFormulaID = function(self)
-  -- function num : 0_9
+function SkillEffectSacrificeTargetNearestTrapsAndDamageParam:GetMainFormulaID()
   return self._mainFormulaID
 end
-
-

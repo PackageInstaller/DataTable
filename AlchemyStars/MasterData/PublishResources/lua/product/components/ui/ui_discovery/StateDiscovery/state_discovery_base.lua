@@ -1,31 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/StateDiscovery/state_discovery_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateDiscoveryBase", State)
 StateDiscoveryBase = StateDiscoveryBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateDiscoveryBase.Init = function(self)
-  -- function num : 0_0
+function StateDiscoveryBase:Init()
   self.fsm = self:GetFsm()
-  self._ui = (self.fsm):GetData()
-  self._data = (self._ui)._data
-  self._sr = (self._ui)._sr
-  self._imgSR = (self._ui)._imgSR
-  self._cg = (self._ui)._cg
-  self._scaleStep = (self._ui)._scaleStep
-  self._scaleMin = (self._ui)._scaleMin
-  self._scaleMax = (self._ui)._scaleMax
+  self._ui = self.fsm:GetData()
+  self._data = self._ui._data
+  self._sr = self._ui._sr
+  self._imgSR = self._ui._imgSR
+  self._cg = self._ui._cg
+  self._scaleStep = self._ui._scaleStep
+  self._scaleMin = self._ui._scaleMin
+  self._scaleMax = self._ui._scaleMax
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDiscoveryBase.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (StateDiscoveryBase.super):Destroy()
+function StateDiscoveryBase:Destroy()
+  StateDiscoveryBase.super:Destroy()
   self._ui = nil
 end
-
-

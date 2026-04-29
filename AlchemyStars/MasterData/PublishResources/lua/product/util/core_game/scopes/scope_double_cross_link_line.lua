@@ -1,51 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_double_cross_link_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_DoubleCrossLinkLine", SkillScopeCalculator_Base)
 SkillScopeCalculator_DoubleCrossLinkLine = SkillScopeCalculator_DoubleCrossLinkLine
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_DoubleCrossLinkLine.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_DoubleCrossLinkLine:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._gridFilter._world
   local boardServiceLogic = world:GetService("BoardLogic")
   local maxLen = boardServiceLogic:GetCurBoardMaxLen()
-  local teamLeader = (world:Player()):GetCurrentTeamEntity()
+  local teamLeader = world:Player():GetCurrentTeamEntity()
   local teamPos = teamLeader:GetGridPosition()
   local cross_area, wholeArea = {}, {}
   local dirPos = casterPos - teamPos
-  local x, y = nil, nil
+  local x, y
   if dirPos.x > 0 then
     x = 1
+  elseif dirPos.x == 0 then
+    x = 0
   else
-    if dirPos.x == 0 then
-      x = 0
-    else
-      x = -1
-    end
+    x = -1
   end
-  if dirPos.y > 0 then
+  if 0 < dirPos.y then
     y = 1
+  elseif dirPos.y == 0 then
+    y = 0
   else
-    if dirPos.y == 0 then
-      y = 0
-    else
-      y = -1
-    end
+    y = -1
   end
   local dir = Vector2(x, y)
   local blocks = {}
   for i = -maxLen, maxLen do
     local newPos = Vector2(casterPos.x + dir.x * i, casterPos.y + dir.y * i)
-    if not (table.icontains)(blocks, newPos) then
+    if not table.icontains(blocks, newPos) then
       self:_InsertTargetGrid(cross_area, newPos, wholeArea)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.DoubleCrossLinkLine, centerPos, cross_area, wholeArea)
   return result
 end
-
-

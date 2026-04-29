@@ -1,76 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/move_scope_record_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MoveScopeRecordComponent", Object)
 MoveScopeRecordComponent = MoveScopeRecordComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MoveScopeRecordComponent.Constructor = function(self, offSet)
-  -- function num : 0_0
+function MoveScopeRecordComponent:Constructor(offSet)
   self._moveOffSet = offSet
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveScopeRecordComponent.RecordMoveOffSet = function(self, offSet)
-  -- function num : 0_1
+function MoveScopeRecordComponent:RecordMoveOffSet(offSet)
   self._moveOffSet = offSet
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveScopeRecordComponent.GetMoveOffSet = function(self)
-  -- function num : 0_2
+function MoveScopeRecordComponent:GetMoveOffSet()
   return self._moveOffSet
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveScopeRecordComponent.RecordMoveScope = function(self, moveScope)
-  -- function num : 0_3
+function MoveScopeRecordComponent:RecordMoveScope(moveScope)
   self._moveScope = moveScope
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MoveScopeRecordComponent.GetMoveScope = function(self)
-  -- function num : 0_4
+function MoveScopeRecordComponent:GetMoveScope()
   return self._moveScope
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MoveScopeRecord = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).MoveScopeRecord)
+function Entity:MoveScopeRecord()
+  return self:GetComponent(self.WEComponentsEnum.MoveScopeRecord)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMoveScopeRecord = function(self)
-  -- function num : 0_6
+function Entity:RemoveMoveScopeRecord()
   if self:HasMoveScopeRecord() then
-    self:RemoveComponent((self.WEComponentsEnum).MoveScopeRecord)
+    self:RemoveComponent(self.WEComponentsEnum.MoveScopeRecord)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMoveScopeRecord = function(self, offSet)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).MoveScopeRecord
+function Entity:AddMoveScopeRecord(offSet)
+  local index = self.WEComponentsEnum.MoveScopeRecord
   local component = MoveScopeRecordComponent:New(offSet)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMoveScopeRecord = function(self)
-  -- function num : 0_8
-  local index = (self.WEComponentsEnum).MoveScopeRecord
+function Entity:HasMoveScopeRecord()
+  local index = self.WEComponentsEnum.MoveScopeRecord
   return self:HasComponent(index)
 end
-
-

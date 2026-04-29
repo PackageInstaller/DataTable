@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_rotate_by_pick_sector_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResult_RotateByPickSector", SkillEffectResultBase)
 SkillEffectResult_RotateByPickSector = SkillEffectResult_RotateByPickSector
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_RotateByPickSector.Constructor = function(self, rotateAngle, dirNew)
-  -- function num : 0_0
+function SkillEffectResult_RotateByPickSector:Constructor(rotateAngle, dirNew)
   self._rotateAngle = rotateAngle
   self._dirNew = dirNew:Clone()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RotateByPickSector.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_RotateByPickSector:GetEffectType()
   return SkillEffectType.RotateByPickSector
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RotateByPickSector.GetRotateAngle = function(self)
-  -- function num : 0_2
+function SkillEffectResult_RotateByPickSector:GetRotateAngle()
   return self._rotateAngle
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RotateByPickSector.GetDirNew = function(self)
-  -- function num : 0_3
+function SkillEffectResult_RotateByPickSector:GetDirNew()
   return self._dirNew
 end
-
-

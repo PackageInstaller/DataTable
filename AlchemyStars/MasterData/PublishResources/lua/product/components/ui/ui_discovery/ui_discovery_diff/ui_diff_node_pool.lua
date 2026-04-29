@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_diff/ui_diff_node_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffNodePool", UICustomWidget)
 UIDiffNodePool = UIDiffNodePool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffNodePool.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDiffNodePool:Constructor()
   self.mMission = self:GetModule(MissionModule)
-  self.data = (self.mMission):GetDiscoveryData()
+  self.data = self.mMission:GetDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodePool.OnShow = function(self)
-  -- function num : 0_1
+function UIDiffNodePool:OnShow()
   self.chapter = self:GetGameObject("chapter")
   self.section = self:GetGameObject("section")
   self._normalNodesPool = self:GetUIComponent("UISelectObjectPath", "Normal")
@@ -28,10 +18,7 @@ UIDiffNodePool.OnShow = function(self)
   self.GrassPool = self:GetUIComponent("UISelectObjectPath", "Grass")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodePool.SetData = function(self, nodes, chapter)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDiffNodePool:SetData(nodes, chapter)
   self._chapter = chapter
   local plot = {}
   local norm = {}
@@ -40,77 +27,56 @@ UIDiffNodePool.SetData = function(self, nodes, chapter)
   for i = 1, #nodes do
     local node = nodes[i]
     if node:Next() then
-      (table.insert)(next, node)
-    else
-      if node:Type() == 1 then
-        (table.insert)(norm, node)
-      else
-        if node:Type() == 2 then
-          (table.insert)(boss, node)
-        end
-      end
+      table.insert(next, node)
+    elseif node:Type() == 1 then
+      table.insert(norm, node)
+    elseif node:Type() == 2 then
+      table.insert(boss, node)
     end
   end
-  ;
-  (self._normalNodesPool):SpawnObjects("UIDiffNodeNorm", #norm)
-  ;
-  (self._bossNodesPool):SpawnObjects("UIDiffNodeBoss", #boss)
-  ;
-  (self._plotNodesPool):SpawnObjects("UIDiffNodePlot", #plot)
-  ;
-  (self._nextChapterPool):SpawnObjects("UIDiffNodeNext", #next)
-  local normalNodes = (self._normalNodesPool):GetAllSpawnList()
-  local bossNodes = (self._bossNodesPool):GetAllSpawnList()
-  local plotNodes = (self._plotNodesPool):GetAllSpawnList()
-  local nextNodes = (self._nextChapterPool):GetAllSpawnList()
+  self._normalNodesPool:SpawnObjects("UIDiffNodeNorm", #norm)
+  self._bossNodesPool:SpawnObjects("UIDiffNodeBoss", #boss)
+  self._plotNodesPool:SpawnObjects("UIDiffNodePlot", #plot)
+  self._nextChapterPool:SpawnObjects("UIDiffNodeNext", #next)
+  local normalNodes = self._normalNodesPool:GetAllSpawnList()
+  local bossNodes = self._bossNodesPool:GetAllSpawnList()
+  local plotNodes = self._plotNodesPool:GetAllSpawnList()
+  local nextNodes = self._nextChapterPool:GetAllSpawnList()
   for i = 1, #normalNodes do
     local item = normalNodes[i]
     local data = norm[i]
     item:SetData(data, function(node)
-    -- function num : 0_2_0 , upvalues : self
-    self:NodeItemClick(node)
-  end
-)
+      self:NodeItemClick(node)
+    end)
   end
   for i = 1, #bossNodes do
     local item = bossNodes[i]
     local data = boss[i]
     item:SetData(data, function(node)
-    -- function num : 0_2_1 , upvalues : self
-    self:NodeItemClick(node)
-  end
-)
+      self:NodeItemClick(node)
+    end)
   end
   for i = 1, #plotNodes do
     local item = plotNodes[i]
     local data = plot[i]
     item:SetData(data, function(node)
-    -- function num : 0_2_2 , upvalues : self
-    self:NodeItemClick(node)
-  end
-)
+      self:NodeItemClick(node)
+    end)
   end
   for i = 1, #nextNodes do
     local item = nextNodes[i]
     local data = next[i]
     item:SetData(data, function(node)
-    -- function num : 0_2_3 , upvalues : self
-    self:NodeItemClick(node)
-  end
-)
+      self:NodeItemClick(node)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodePool.NodeItemClick = function(self, node)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDiffNodePool:NodeItemClick(node)
   local pos = node:Pos()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryCameraMove, pos, -1, false, function()
-    -- function num : 0_3_0 , upvalues : node, _ENV, self
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryCameraMove, pos, -1, false, function()
     if node:Next() then
-      local uiModule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
+      local uiModule = GameGlobal.GetUIModule(DifficultyMissionModule)
       local diffCid = node:ChapterID()
       local nextChapterID = uiModule:GetNextChapterID(diffCid)
       if nextChapterID then
@@ -123,43 +89,26 @@ UIDiffNodePool.NodeItemClick = function(self, node)
           local complete = c:IsThreeComplete()
           if not complete then
             local missionChapterName = c.name
-            local tips = (StringTable.Get)("str_diff_mission_main_chapter_lock", missionChapterName)
-            ;
-            (ToastManager.ShowToast)(tips)
-            return 
+            local tips = StringTable.Get("str_diff_mission_main_chapter_lock", missionChapterName)
+            ToastManager.ShowToast(tips)
+            return
           end
-          do
-            if nextChapter:Lock() == DiffMissionChapterStatus.Lock then
-              local diffChapterName = (StringTable.Get)(nextChapter:Name())
-              local tips = (StringTable.Get)("str_diff_mission_diff_chapter_lock", diffChapterName)
-              ;
-              (ToastManager.ShowToast)(tips)
-              return 
-            end
-            do
-              do
-                uiModule:JumpNextChapter(nextChapterID)
-                if node:Type() == 1 then
-                  self:ShowDialog("UIDiffStage", self._chapter, node)
-                else
-                  if node:Type() == 2 then
-                    self:ShowDialog("UIDiffStage", self._chapter, node)
-                  end
-                end
-              end
-            end
+          if nextChapter:Lock() == DiffMissionChapterStatus.Lock then
+            local diffChapterName = StringTable.Get(nextChapter:Name())
+            local tips = StringTable.Get("str_diff_mission_diff_chapter_lock", diffChapterName)
+            ToastManager.ShowToast(tips)
+            return
           end
         end
+        uiModule:JumpNextChapter(nextChapterID)
       end
+    elseif node:Type() == 1 then
+      self:ShowDialog("UIDiffStage", self._chapter, node)
+    elseif node:Type() == 2 then
+      self:ShowDialog("UIDiffStage", self._chapter, node)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodePool.OnHide = function(self)
-  -- function num : 0_4
+function UIDiffNodePool:OnHide()
 end
-
-

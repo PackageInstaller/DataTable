@@ -1,19 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_as_increase_by_attack_undo_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddSkillIncreaseByAttackUndo", BuffViewBase)
 BuffViewAddSkillIncreaseByAttackUndo = BuffViewAddSkillIncreaseByAttackUndo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddSkillIncreaseByAttackUndo.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  self._buffComp = (self:Entity()):BuffView()
-  ;
-  (self._buffComp):SetBuffValue("SkillIncreaseByAttackLayer", 1)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self:Entity()):PetPstID()):GetPstID(), 0)
+function BuffViewAddSkillIncreaseByAttackUndo:PlayView(TT)
+  self._buffComp = self:Entity():BuffView()
+  self._buffComp:SetBuffValue("SkillIncreaseByAttackLayer", 1)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self:Entity():PetPstID():GetPstID(), 0)
 end
-
-

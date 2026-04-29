@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/ui_collect_card_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UICollectCardContent", UISideEnterCenterContentBase)
 UICollectCardContent = UICollectCardContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardContent.DoInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICollectCardContent:DoInit()
   self._pool = self:GetUIComponent("UISelectObjectPath", "Pool")
   self._activePool = self:GetUIComponent("UISelectObjectPath", "ActivePool")
   self._activeImg = self:GetUIComponent("Image", "ActiveImg")
@@ -25,70 +18,49 @@ UICollectCardContent.DoInit = function(self)
   self._desc3 = self:GetUIComponent("UILocalizationText", "DescGo3")
   self._GetCardBtnTex = self:GetUIComponent("UILocalizationText", "GetCardBtnTex")
   self._WebBtnRed = self:GetGameObject("WebBtnRed")
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self._campaign = self._data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.CreateData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local localProcess = (self._campaign):GetLocalProcess()
+function UICollectCardContent:CreateData()
+  local localProcess = self._campaign:GetLocalProcess()
   self._cardCom = localProcess:GetComponent(ECampaignCollectCardComponentID.COLLECT_CARD)
   self._questCom = localProcess:GetComponent(ECampaignCollectCardComponentID.QUEST)
-  self._cardCfgID = (self._cardCom):GetComponentCfgId()
+  self._cardCfgID = self._cardCom:GetComponentCfgId()
   self._cardComInfo = localProcess:GetComponentInfo(ECampaignCollectCardComponentID.COLLECT_CARD)
   self._questComInfo = localProcess:GetComponentInfo(ECampaignCollectCardComponentID.QUEST)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.IsInland = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICollectCardContent:IsInland()
   if IsInland then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.BigAwardBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UICollectCardContent:BigAwardBtnOnClick(go)
   local cfg = self:BigCfg()
   self:GetAward(cfg.ID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.GetAward = function(self, awardid)
-  -- function num : 0_4 , upvalues : _ENV
+function UICollectCardContent:GetAward(awardid)
   if awardid and self:GetCardAwardStatus(awardid) == QuestStatus.QUEST_Completed then
     self:Lock("UICollectCardContent:GetAward")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnGetAward, self, awardid)
+    GameGlobal.TaskManager():StartTask(self.OnGetAward, self, awardid)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.CheckCardComplete = function(self, awardid)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_collect_card_reward)[awardid]
+function UICollectCardContent:CheckCardComplete(awardid)
+  local cfg = Cfg.cfg_component_collect_card_reward[awardid]
   local cardList = cfg.CardList
   local notHave = false
-  for key,value in pairs(cardList) do
-    if ((self._cardComInfo).card)[value] then
-      do
-        notHave = true
-        do break end
-        -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for key, value in pairs(cardList) do
+    if self._cardComInfo.card[value] then
+    else
+      notHave = true
+      break
     end
   end
   if notHave then
@@ -97,231 +69,164 @@ UICollectCardContent.CheckCardComplete = function(self, awardid)
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.OnGetAward = function(self, TT, awardid)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("###[UICollectCardContent] OnGetAward awardid:", awardid)
-  local res = (AsyncRequestRes:New())
-  local rewards = nil
-  res = (self._cardCom):HandleTakeRewardReq(TT, res, awardid)
+function UICollectCardContent:OnGetAward(TT, awardid)
+  Log.debug("###[UICollectCardContent] OnGetAward awardid:", awardid)
+  local res = AsyncRequestRes:New()
+  local rewards
+  res, rewards = self._cardCom:HandleTakeRewardReq(TT, res, awardid)
   self:UnLock("UICollectCardContent:GetAward")
   if res and res:GetSucc() then
-    if rewards and (table.count)(rewards) > 0 then
+    if rewards and table.count(rewards) > 0 then
       self:ShowDialog("UIGetItemController", rewards)
     end
     self:CreateData()
     self:_Refresh()
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UICollectCardContent] HandleTakeRewardReq fail! result:", result)
+    Log.error("###[UICollectCardContent] HandleTakeRewardReq fail! result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.BigAwardInfoBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UICollectCardContent:BigAwardInfoBtnOnClick(go)
   self:ShowDialog("UICollectCardAwardView", self:BigCfg())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.BigAwardInfoBtn2OnClick = function(self, go)
-  -- function num : 0_8
+function UICollectCardContent:BigAwardInfoBtn2OnClick(go)
   self:ShowDialog("UICollectCardAwardView", self:BigCfg())
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.BigCfg = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_collect_card_reward)({ComponentID = self._cardCfgID, RewardType = 2})
+function UICollectCardContent:BigCfg()
+  local cfgs = Cfg.cfg_component_collect_card_reward({
+    ComponentID = self._cardCfgID,
+    RewardType = 2
+  })
   local cfg = cfgs[1]
   return cfg
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SendBtnOnClick = function(self, go)
-  -- function num : 0_10
-  self:ShowDialog("UICollectCardSend", self._cardCom, (self._campaign)._id)
+function UICollectCardContent:SendBtnOnClick(go)
+  self:ShowDialog("UICollectCardSend", self._cardCom, self._campaign._id)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.WebBtnOnClick = function(self, go)
-  -- function num : 0_11
+function UICollectCardContent:WebBtnOnClick(go)
   self:OpenUrl()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.WebBtn2OnClick = function(self, go)
-  -- function num : 0_12
+function UICollectCardContent:WebBtn2OnClick(go)
   self:OpenUrl()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SetOpenUrlRed = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UICollectCardContent:SetOpenUrlRed()
   local red = false
-  if not (UICollectCardContent.CheckLocalDB_Enter_WebView)() then
-    local closeTime = (self._questComInfo).m_close_time
-    local svrTime = (self._svrTimeModule):GetServerTime() * 0.001
+  if not UICollectCardContent.CheckLocalDB_Enter_WebView() then
+    local closeTime = self._questComInfo.m_close_time
+    local svrTime = self._svrTimeModule:GetServerTime() * 0.001
     if closeTime <= svrTime and self:IsAllCollected() then
       red = true
     end
   end
-  do
-    ;
-    (self._WebBtnRed):SetActive(red)
-  end
+  self._WebBtnRed:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.IsAllCollected = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local cards = (self._cardComInfo).card
-  local cfgs = (Cfg.cfg_component_collect_card_reward)({ComponentID = self._cardCfgID, RewardType = 2})
+function UICollectCardContent:IsAllCollected()
+  local cards = self._cardComInfo.card
+  local cfgs = Cfg.cfg_component_collect_card_reward({
+    ComponentID = self._cardCfgID,
+    RewardType = 2
+  })
   local cfg = cfgs[1]
   local cardList = cfg.CardList
   local isAllCollected = true
-  for key,value in pairs(cardList) do
+  for key, value in pairs(cardList) do
     if cards[value] then
-      do
-        isAllCollected = false
-        do break end
-        -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    else
+      isAllCollected = false
+      break
     end
   end
   return isAllCollected
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.OpenUrl = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local closeTime = (self._questComInfo).m_close_time
-  local svrTime = (self._svrTimeModule):GetServerTime() * 0.001
-  do
-    if svrTime < closeTime then
-      local tips = (StringTable.Get)("str_collect_card_packet_locked")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    local cards = (self._cardComInfo).card
-    local cfgs = (Cfg.cfg_component_collect_card_reward)({ComponentID = self._cardCfgID, RewardType = 2})
-    local cfg = cfgs[1]
-    local cardList = cfg.CardList
-    local isAllCollected = true
-    for key,value in pairs(cardList) do
-      if cards[value] then
-        do
-          isAllCollected = false
-          do break end
-          -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
-    end
-    do
-      if not isAllCollected then
-        local tips = (StringTable.Get)("str_collect_card_packet_empty")
-        ;
-        (ToastManager.ShowToast)(tips)
-        return 
-      end
-      local info = ((GameGlobal.GameLogic)()).ClientInfo
-      local source = info.m_login_source
-      local www = nil
-      if source == MobileClientLoginChannel.MCLC_WX then
-        www = "https://game.weixin.qq.com/cgi-bin/comm/openlink?noticeid=90303934&auth_appid=wx4fa1b8651cf789f1&url=https%3A%2F%2Fgame.weixin.qq.com%2Fcgi-bin%2Factnew%2Fnewportalact%2F187964%2FHnIJLwWBCCjBe4Ka2piAWw%2Fmain_page%3Fact_id%3D187964%26k%3DHnIJLwWBCCjBe4Ka2piAWw%26pid%3Dmain_page%23wechat_redirect"
-      else
-        www = "https://youxi.gamecenter.qq.com/m/act/3e308e3780a87062_10178708.html?_wv=1&_wwv=4"
-      end
-      ;
-      (SDKProxy:GetInstance()):OpenUrl(www, "Portrait")
-      ;
-      (UICollectCardContent.SaveLocalDB_Enter_WebView)()
+function UICollectCardContent:OpenUrl()
+  local closeTime = self._questComInfo.m_close_time
+  local svrTime = self._svrTimeModule:GetServerTime() * 0.001
+  if closeTime > svrTime then
+    local tips = StringTable.Get("str_collect_card_packet_locked")
+    ToastManager.ShowToast(tips)
+    return
+  end
+  local cards = self._cardComInfo.card
+  local cfgs = Cfg.cfg_component_collect_card_reward({
+    ComponentID = self._cardCfgID,
+    RewardType = 2
+  })
+  local cfg = cfgs[1]
+  local cardList = cfg.CardList
+  local isAllCollected = true
+  for key, value in pairs(cardList) do
+    if cards[value] then
+    else
+      isAllCollected = false
+      break
     end
   end
+  if not isAllCollected then
+    local tips = StringTable.Get("str_collect_card_packet_empty")
+    ToastManager.ShowToast(tips)
+    return
+  end
+  local info = GameGlobal.GameLogic().ClientInfo
+  local source = info.m_login_source
+  local www
+  if source == MobileClientLoginChannel.MCLC_WX then
+    www = "https://game.weixin.qq.com/cgi-bin/comm/openlink?noticeid=90303934&auth_appid=wx4fa1b8651cf789f1&url=https%3A%2F%2Fgame.weixin.qq.com%2Fcgi-bin%2Factnew%2Fnewportalact%2F187964%2FHnIJLwWBCCjBe4Ka2piAWw%2Fmain_page%3Fact_id%3D187964%26k%3DHnIJLwWBCCjBe4Ka2piAWw%26pid%3Dmain_page%23wechat_redirect"
+  else
+    www = "https://youxi.gamecenter.qq.com/m/act/3e308e3780a87062_10178708.html?_wv=1&_wwv=4"
+  end
+  SDKProxy:GetInstance():OpenUrl(www, "Portrait")
+  UICollectCardContent.SaveLocalDB_Enter_WebView()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SaveLocalDB_Enter_WebView = function()
-  -- function num : 0_16 , upvalues : _ENV
-  if not (UICollectCardContent.CheckLocalDB_Enter_WebView)() then
-    local pstid = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+function UICollectCardContent.SaveLocalDB_Enter_WebView()
+  if not UICollectCardContent.CheckLocalDB_Enter_WebView() then
+    local pstid = GameGlobal.GetModule(RoleModule):GetPstId()
     local key = "CollectCardWebView" .. pstid
-    ;
-    (LocalDB.SetInt)(key, 1)
+    LocalDB.SetInt(key, 1)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.CheckLocalDB_Enter_WebView = function()
-  -- function num : 0_17 , upvalues : _ENV
-  local pstid = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+function UICollectCardContent.CheckLocalDB_Enter_WebView()
+  local pstid = GameGlobal.GetModule(RoleModule):GetPstId()
   local key = "CollectCardWebView" .. pstid
-  local val = (LocalDB.GetInt)(key, 0)
-  do return val ~= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local val = LocalDB.GetInt(key, 0)
+  return val ~= 0
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.DoShow = function(self)
-  -- function num : 0_18
-  if (self._campaign):CheckCampaignNew() then
+function UICollectCardContent:DoShow()
+  if self._campaign:CheckCampaignNew() then
     self:StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+      self._campaign:ClearCampaignNew(TT)
+    end)
   end
   self:CreateData()
   self:_Refresh()
-  local reveiceInfo = (self._cardCom):GetReceiveCardsInfo()
-  if reveiceInfo and #reveiceInfo > 0 then
+  local reveiceInfo = self._cardCom:GetReceiveCardsInfo()
+  if reveiceInfo and 0 < #reveiceInfo then
     self:ShowDialog("UICollectCardReceive", reveiceInfo, function()
-    -- function num : 0_18_1 , upvalues : self
-    (self._cardCom):ClearReceiveCardsInfo()
-  end
-, self._cardCom)
+      self._cardCom:ClearReceiveCardsInfo()
+    end, self._cardCom)
   end
   self._inited = true
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.DoHide = function(self)
-  -- function num : 0_19
+function UICollectCardContent:DoHide()
   self._inited = false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.DoDestroy = function(self)
-  -- function num : 0_20
+function UICollectCardContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent._Refresh = function(self)
-  -- function num : 0_21
+function UICollectCardContent:_Refresh()
   local comIsOpen = self:CheckComOpen()
   self:SetOnlyWeb(comIsOpen)
   self:SetDescGo2()
@@ -336,397 +241,296 @@ UICollectCardContent._Refresh = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SetOnlyWeb = function(self, open)
-  -- function num : 0_22
-  (self._normalGo):SetActive(open)
-  ;
-  (self._onlyWebGo):SetActive(not open)
+function UICollectCardContent:SetOnlyWeb(open)
+  self._normalGo:SetActive(open)
+  self._onlyWebGo:SetActive(not open)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SetBigAward = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UICollectCardContent:SetBigAward()
   local cfg = self:BigCfg()
   local status = self:GetCardAwardStatus(cfg.ID)
-  ;
-  (self._bigAwardBtn):SetActive(status == QuestStatus.QUEST_Completed)
-  ;
-  (self._bigAwardGot):SetActive(status == QuestStatus.QUEST_Taken)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._bigAwardBtn:SetActive(status == QuestStatus.QUEST_Completed)
+  self._bigAwardGot:SetActive(status == QuestStatus.QUEST_Taken)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SetWebBtn = function(self)
-  -- function num : 0_24
-  (self._webBtn):SetActive(self:IsInland())
+function UICollectCardContent:SetWebBtn()
+  self._webBtn:SetActive(self:IsInland())
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SetDescGo2 = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  (self._descGo2):SetActive(self:IsInland())
-  ;
-  (Log.debug)("###[UICollectCardContent] IsInland() 1")
+function UICollectCardContent:SetDescGo2()
+  self._descGo2:SetActive(self:IsInland())
+  Log.debug("###[UICollectCardContent] IsInland() 1")
   if self:IsInland() then
-    (Log.debug)("###[UICollectCardContent] IsInland() 2")
-    local info = ((GameGlobal.GameLogic)()).ClientInfo
+    Log.debug("###[UICollectCardContent] IsInland() 2")
+    local info = GameGlobal.GameLogic().ClientInfo
     local source = info.m_login_source
-    local desc2, desc3 = nil, nil
+    local desc2, desc3
     if source == MobileClientLoginChannel.MCLC_WX then
       desc3 = "str_collect_card_close_money_wechat"
       desc2 = "str_collect_card_money_wechat"
-      ;
-      (Log.debug)("###[UICollectCardContent] IsInland() 3")
+      Log.debug("###[UICollectCardContent] IsInland() 3")
     else
       desc3 = "str_collect_card_close_money_qq"
       desc2 = "str_collect_card_money_qq"
-      ;
-      (Log.debug)("###[UICollectCardContent] IsInland() 4")
+      Log.debug("###[UICollectCardContent] IsInland() 4")
     end
-    ;
-    (self._desc2):SetText((StringTable.Get)(desc2))
-    ;
-    (self._desc3):SetText((StringTable.Get)(desc3))
+    self._desc2:SetText(StringTable.Get(desc2))
+    self._desc3:SetText(StringTable.Get(desc3))
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SetActivePoint = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local activeVal = (self._questModule):GetDailyQuestVigorous()
+function UICollectCardContent:SetActivePoint()
+  local activeVal = self._questModule:GetDailyQuestVigorous()
   local questList = self:GetQuestList()
-  ;
-  (self._activePool):SpawnObjects("UICollectCardActivePoint", #questList)
-  local pools = (self._activePool):GetAllSpawnList()
+  self._activePool:SpawnObjects("UICollectCardActivePoint", #questList)
+  local pools = self._activePool:GetAllSpawnList()
   local maxPoint = 100
   local sliderWidth = 870
   for i = 1, #questList do
     local item = pools[i]
     local questid = questList[i]
-    local quest = (self._questModule):GetQuest(questid)
+    local quest = self._questModule:GetQuest(questid)
     local questInfo = quest:QuestInfo()
     item:SetData(i, questInfo, function(idx)
-    -- function num : 0_26_0 , upvalues : self
-    self:OnQuestItemClick(idx)
+      self:OnQuestItemClick(idx)
+    end, maxPoint, sliderWidth)
   end
-, maxPoint, sliderWidth)
-  end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._activeImg).fillAmount = (math.min)(1, activeVal / maxPoint)
-  local getCardTexStr = nil
+  self._activeImg.fillAmount = math.min(1, activeVal / maxPoint)
+  local getCardTexStr
   local itemNew1, itemNew2 = self:GetNewCostItemCount()
   if itemNew1 or itemNew2 then
     getCardTexStr = "str_collect_card_box_btn"
-    ;
-    (self._GetCardBtnTex):SetText((StringTable.Get)(getCardTexStr))
-    ;
-    (self._redGo):SetActive(true)
+    self._GetCardBtnTex:SetText(StringTable.Get(getCardTexStr))
+    self._redGo:SetActive(true)
   else
     local item1, item2 = self:GetCostItemCount()
     if item1 or item2 then
       getCardTexStr = "str_collect_card_reget_button"
-      ;
-      (self._GetCardBtnTex):SetText((StringTable.Get)(getCardTexStr))
-      ;
-      (self._redGo):SetActive(true)
+      self._GetCardBtnTex:SetText(StringTable.Get(getCardTexStr))
+      self._redGo:SetActive(true)
     else
-      ;
-      (self._redGo):SetActive(false)
+      self._redGo:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.OnQuestItemClick = function(self, idx)
-  -- function num : 0_27 , upvalues : _ENV
-  (Log.debug)("###[UICollectCardContent] start get quest awards")
+function UICollectCardContent:OnQuestItemClick(idx)
+  Log.debug("###[UICollectCardContent] start get quest awards")
   self:Lock("UICollectCardContent:OnQuestItemClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnHandleOneKeyTakeQuest, self)
+  GameGlobal.TaskManager():StartTask(self.OnHandleOneKeyTakeQuest, self)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.OnHandleOneKeyTakeQuest = function(self, TT)
-  -- function num : 0_28 , upvalues : _ENV
+function UICollectCardContent:OnHandleOneKeyTakeQuest(TT)
   local res = AsyncRequestRes:New()
-  ;
-  (self._questCom):HandleOneKeyTakeQuest(TT, res)
+  self._questCom:HandleOneKeyTakeQuest(TT, res)
   self:UnLock("UICollectCardContent:OnQuestItemClick")
   if res and res:GetSucc() then
-    (Log.debug)("###[UICollectCardContent] start get quest awards over")
+    Log.debug("###[UICollectCardContent] start get quest awards over")
     local item1, item2 = self:GetUseCostItem()
     if item1 or item2 then
       self:HandleDropCardReq(item1, item2)
     else
-      ;
-      (Log.error)("###[UICollectCardContent] get quest awards,item is nil !")
+      Log.error("###[UICollectCardContent] get quest awards,item is nil !")
     end
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UICollectCardContent] OnHandleOneKeyTakeQuest fail ! result:", result)
-    end
+    local result = res:GetResult()
+    Log.error("###[UICollectCardContent] OnHandleOneKeyTakeQuest fail ! result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.GetCardBtnOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
+function UICollectCardContent:GetCardBtnOnClick(go)
   local item1, item2 = self:GetUseCostItem()
   if item1 or item2 then
     self:HandleDropCardReq(item1, item2)
   else
-    ;
-    (Log.debug)("###[UICollectCardContent] GetCardBtnOnClick,item is nil !")
+    Log.debug("###[UICollectCardContent] GetCardBtnOnClick,item is nil !")
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.HandleDropCardReq = function(self, item1, item2)
-  -- function num : 0_30 , upvalues : _ENV
+function UICollectCardContent:HandleDropCardReq(item1, item2)
   self:Lock("UICollectCardContent:HandleDropCardReq")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnHandleDropCardReq, self, item1, item2)
+  GameGlobal.TaskManager():StartTask(self.OnHandleDropCardReq, self, item1, item2)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.OnHandleDropCardReq = function(self, TT, item1, item2)
-  -- function num : 0_31 , upvalues : _ENV
-  (Log.debug)("###[UICollectCardContent] start OnHandleDropCardReq")
-  local res = (AsyncRequestRes:New())
-  local cards = nil
-  res = (self._cardCom):HandleDropCardReq(TT, res, item1, item2)
+function UICollectCardContent:OnHandleDropCardReq(TT, item1, item2)
+  Log.debug("###[UICollectCardContent] start OnHandleDropCardReq")
+  local res = AsyncRequestRes:New()
+  local cards
+  res, cards = self._cardCom:HandleDropCardReq(TT, res, item1, item2)
   self:UnLock("UICollectCardContent:HandleDropCardReq")
   if res and res:GetSucc() then
-    if cards and (table.count)(cards) > 0 then
+    if cards and table.count(cards) > 0 then
       self:ShowDialog("UICollectCardOpen", cards)
     end
     self:CreateData()
     self:_Refresh()
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UICollectCardContent] HandleDropCardReq fail! result:", result)
+    Log.error("###[UICollectCardContent] HandleDropCardReq fail! result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.GetNewCostItemCount = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local cfgs1 = (Cfg.cfg_component_collect_item)({ComponentID = self._cardCfgID, Type = 1, Mail = 1})
-  local cfgs2 = (Cfg.cfg_component_collect_item)({ComponentID = self._cardCfgID, Type = 2, Mail = 1})
+function UICollectCardContent:GetNewCostItemCount()
+  local cfgs1 = Cfg.cfg_component_collect_item({
+    ComponentID = self._cardCfgID,
+    Type = 1,
+    Mail = 1
+  })
+  local cfgs2 = Cfg.cfg_component_collect_item({
+    ComponentID = self._cardCfgID,
+    Type = 2,
+    Mail = 1
+  })
   local cfg1 = cfgs1[1]
   local cfg2 = cfgs2[1]
-  local RoleAsset1, RoleAsset2 = nil, nil
+  local RoleAsset1, RoleAsset2
   if cfg1 then
     local id = cfg1.ID
-    local count = (self._itemModule):GetItemCount(id)
-    if count > 0 then
+    local count = self._itemModule:GetItemCount(id)
+    if 0 < count then
       RoleAsset1 = RoleAsset:New()
       RoleAsset1.assetid = id
       RoleAsset1.count = count
     end
   end
-  do
-    if cfg2 then
-      local id = cfg2.ID
-      local count = (self._itemModule):GetItemCount(id)
-      if count > 0 then
-        RoleAsset2 = RoleAsset:New()
-        RoleAsset2.assetid = id
-        RoleAsset2.count = count
-      end
-    end
-    do
-      return RoleAsset1, RoleAsset2
+  if cfg2 then
+    local id = cfg2.ID
+    local count = self._itemModule:GetItemCount(id)
+    if 0 < count then
+      RoleAsset2 = RoleAsset:New()
+      RoleAsset2.assetid = id
+      RoleAsset2.count = count
     end
   end
+  return RoleAsset1, RoleAsset2
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.GetUseCostItem = function(self)
-  -- function num : 0_33
+function UICollectCardContent:GetUseCostItem()
   local item1, item2 = self:GetNewCostItemCount()
-  if not item1 then
-    if item2 then
-      item1 = self:GetCostItemCount()
-      return item1, item2
-    end
+  if item1 or item2 then
+  else
+    item1, item2 = self:GetCostItemCount()
   end
+  return item1, item2
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.GetCostItemCount = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local cfgs1 = (Cfg.cfg_component_collect_item)({ComponentID = self._cardCfgID, Type = 1, Mail = 0})
-  local cfgs2 = (Cfg.cfg_component_collect_item)({ComponentID = self._cardCfgID, Type = 2, Mail = 0})
+function UICollectCardContent:GetCostItemCount()
+  local cfgs1 = Cfg.cfg_component_collect_item({
+    ComponentID = self._cardCfgID,
+    Type = 1,
+    Mail = 0
+  })
+  local cfgs2 = Cfg.cfg_component_collect_item({
+    ComponentID = self._cardCfgID,
+    Type = 2,
+    Mail = 0
+  })
   local cfg1 = cfgs1[1]
   local cfg2 = cfgs2[1]
-  local RoleAsset1, RoleAsset2 = nil, nil
+  local RoleAsset1, RoleAsset2
   if cfg1 then
     local id = cfg1.ID
-    local count = (self._itemModule):GetItemCount(id)
-    if count > 0 then
+    local count = self._itemModule:GetItemCount(id)
+    if 0 < count then
       RoleAsset1 = RoleAsset:New()
       RoleAsset1.assetid = id
       RoleAsset1.count = count
     end
   end
-  do
-    if cfg2 then
-      local id = cfg2.ID
-      local count = (self._itemModule):GetItemCount(id)
-      if count > 0 then
-        RoleAsset2 = RoleAsset:New()
-        RoleAsset2.assetid = id
-        RoleAsset2.count = count
-      end
-    end
-    do
-      return RoleAsset1, RoleAsset2
+  if cfg2 then
+    local id = cfg2.ID
+    local count = self._itemModule:GetItemCount(id)
+    if 0 < count then
+      RoleAsset2 = RoleAsset:New()
+      RoleAsset2.assetid = id
+      RoleAsset2.count = count
     end
   end
+  return RoleAsset1, RoleAsset2
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.GetQuestList = function(self)
-  -- function num : 0_35
-  local questList = (self._questComInfo).m_accept_cam_quest_list
+function UICollectCardContent:GetQuestList()
+  local questList = self._questComInfo.m_accept_cam_quest_list
   return questList
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SetCardList = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_collect_card_reward)({ComponentID = self._cardCfgID, RewardType = 1})
+function UICollectCardContent:SetCardList()
+  local cfgs = Cfg.cfg_component_collect_card_reward({
+    ComponentID = self._cardCfgID,
+    RewardType = 1
+  })
   self._cardList = {}
   for i = 1, #cfgs do
-    (table.insert)(self._cardList, cfgs[i])
+    table.insert(self._cardList, cfgs[i])
   end
-  ;
-  (table.sort)(self._cardList, function(a, b)
-    -- function num : 0_36_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (self._pool):SpawnObjects("UICollectCardItem", #self._cardList)
-  local pools = (self._pool):GetAllSpawnList()
+  table.sort(self._cardList, function(a, b)
+    return a.ID < b.ID
+  end)
+  self._pool:SpawnObjects("UICollectCardItem", #self._cardList)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self._cardList do
-    local cfg = (self._cardList)[i]
+    local cfg = self._cardList[i]
     local item = pools[i]
     local status = self:GetCardAwardStatus(cfg.ID)
     local haveCount, allCount = self:GetCardHaveCount(cfg.ID)
     item:SetData(i, cfg, haveCount, allCount, status, function(idx)
-    -- function num : 0_36_1 , upvalues : self
-    self:OnCardClick(idx)
-  end
-, function(idx)
-    -- function num : 0_36_2 , upvalues : self
-    self:OnCardClickAward(idx)
-  end
-, self._inited)
+      self:OnCardClick(idx)
+    end, function(idx)
+      self:OnCardClickAward(idx)
+    end, self._inited)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.GetCardHaveCount = function(self, awardid)
-  -- function num : 0_37 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_collect_card_reward)[awardid]
+function UICollectCardContent:GetCardHaveCount(awardid)
+  local cfg = Cfg.cfg_component_collect_card_reward[awardid]
   local cardList = cfg.CardList
   local count = 0
-  for key,value in pairs(cardList) do
-    if ((self._cardComInfo).card)[value] then
+  for key, value in pairs(cardList) do
+    if self._cardComInfo.card[value] then
       count = count + 1
     end
   end
   return count, #cardList
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.GetCardAwardStatus = function(self, id)
-  -- function num : 0_38 , upvalues : _ENV
-  local gotList = (self._cardComInfo).received_rewards
-  if (table.icontains)(gotList, id) then
+function UICollectCardContent:GetCardAwardStatus(id)
+  local gotList = self._cardComInfo.received_rewards
+  if table.icontains(gotList, id) then
     return QuestStatus.QUEST_Taken
+  elseif self:CheckCardComplete(id) then
+    return QuestStatus.QUEST_Completed
   else
-    if self:CheckCardComplete(id) then
-      return QuestStatus.QUEST_Completed
-    else
-      return QuestStatus.QUEST_Accepted
-    end
+    return QuestStatus.QUEST_Accepted
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.OnCardClick = function(self, idx)
-  -- function num : 0_39
-  local cfg = (self._cardList)[idx]
+function UICollectCardContent:OnCardClick(idx)
+  local cfg = self._cardList[idx]
   local haveCount = self:GetCardHaveCount(cfg.ID)
   self:ShowDialog("UICollectCardInfo", cfg, haveCount, self._cardComInfo)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.OnCardClickAward = function(self, idx)
-  -- function num : 0_40
-  local cfg = (self._cardList)[idx]
+function UICollectCardContent:OnCardClickAward(idx)
+  local cfg = self._cardList[idx]
   self:GetAward(cfg.ID)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.CheckComOpen = function(self)
-  -- function num : 0_41
-  local svrTime = (self._svrTimeModule):GetServerTime() * 0.001
-  local endTime = (self._cardComInfo).m_close_time
+function UICollectCardContent:CheckComOpen()
+  local svrTime = self._svrTimeModule:GetServerTime() * 0.001
+  local endTime = self._cardComInfo.m_close_time
   if svrTime < endTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardContent.SetTimer = function(self)
-  -- function num : 0_42 , upvalues : _ENV
-  local endTime = (self._cardComInfo).m_close_time
-  self._timerObj = (self._timerPool):SpawnObject("UISeasonTalentTimeBase")
-  ;
-  (self._timerObj):Set_Time_Tex("str_collect_card_time")
-  ;
-  (self._timerObj):SetData(endTime, function()
-    -- function num : 0_42_0 , upvalues : _ENV, self
-    local tips = (StringTable.Get)("str_activity_error_107")
-    ;
-    (ToastManager.ShowToast)(tips)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-  end
-)
+function UICollectCardContent:SetTimer()
+  local endTime = self._cardComInfo.m_close_time
+  self._timerObj = self._timerPool:SpawnObject("UISeasonTalentTimeBase")
+  self._timerObj:Set_Time_Tex("str_collect_card_time")
+  self._timerObj:SetData(endTime, function()
+    local tips = StringTable.Get("str_activity_error_107")
+    ToastManager.ShowToast(tips)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
+  end)
 end
-
-

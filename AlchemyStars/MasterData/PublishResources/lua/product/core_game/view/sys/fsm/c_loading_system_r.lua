@@ -1,53 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_loading_system_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("loading_system")
 _class("ClientLoadingSystem_Render", LoadingSystem)
 ClientLoadingSystem_Render = ClientLoadingSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientLoadingSystem_Render._DoRenderMatchStart = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local battleRenderConfigCmpt = (self.world):BattleRenderConfig()
+function ClientLoadingSystem_Render:_DoRenderMatchStart(TT)
+  local battleRenderConfigCmpt = self.world:BattleRenderConfig()
   while not battleRenderConfigCmpt:IsMatchStart() do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientLoadingSystem_Render._DoRenderLoading = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local loadingService = (self._world):GetService("Loading")
-  return ((GameGlobal.TaskManager)()):CoreGameStartTask(loadingService.MockLoading, loadingService)
+function ClientLoadingSystem_Render:_DoRenderLoading(TT)
+  local loadingService = self._world:GetService("Loading")
+  return GameGlobal.TaskManager():CoreGameStartTask(loadingService.MockLoading, loadingService)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientLoadingSystem_Render._DoRenderCreateRenderBoard = function(self)
-  -- function num : 0_2
-  local resvc = (self._world):GetService("RenderEntity")
+function ClientLoadingSystem_Render:_DoRenderCreateRenderBoard()
+  local resvc = self._world:GetService("RenderEntity")
   resvc:CreateRenderBoardEntity()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientLoadingSystem_Render._DoRenderPreloadCfg = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ClientLoadingSystem_Render:_DoRenderPreloadCfg()
   local bEnable = true
   if EDITOR and bEnable then
-    local testRobot = (GameGlobal.GetModule)(TestRobotModule)
+    local testRobot = GameGlobal.GetModule(TestRobotModule)
     local isRunAutoTest = testRobot:GetIsEnableRobot()
     if not isRunAutoTest then
-      return 
+      return
     end
-    local board_guide = (Cfg.cfg_board_guide)()
-    local trap = (Cfg.cfg_trap)()
-    local ai = (Cfg.cfg_ai)()
-    local passive_skill = (Cfg.cfg_passive_skill)()
+    local board_guide = Cfg.cfg_board_guide()
+    local trap = Cfg.cfg_trap()
+    local ai = Cfg.cfg_ai()
+    local passive_skill = Cfg.cfg_passive_skill()
   end
 end
-
-

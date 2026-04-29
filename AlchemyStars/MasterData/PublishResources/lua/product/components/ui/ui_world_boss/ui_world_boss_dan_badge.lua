@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_dan_badge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossDanBadge", UICustomWidget)
 UIWorldBossDanBadge = UIWorldBossDanBadge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossDanBadge.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWorldBossDanBadge:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanBadge.InitWidget = function(self)
-  -- function num : 0_1
+function UIWorldBossDanBadge:InitWidget()
   self._rect = self:GetUIComponent("RectTransform", "Info")
   self._myDanIconBase = self:GetUIComponent("RawImageLoader", "MyDanIconBase")
   self._myDanIconBaseGo = self:GetGameObject("MyDanIconBase")
@@ -25,75 +15,49 @@ UIWorldBossDanBadge.InitWidget = function(self)
   self._myDanIconFrontTextBack = self:GetUIComponent("UILocalizationText", "MyDanIconFrontTextBack")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanBadge.SetData = function(self, badgeStyle, danId, rankLevel, tarSizeX, tarSizeY)
-  -- function num : 0_2 , upvalues : _ENV
-  local sizeX = ((self._rect).sizeDelta).x
-  local sizeY = ((self._rect).sizeDelta).y
-  if not tarSizeX then
-    tarSizeX = sizeX
-  end
-  if not tarSizeY then
-    tarSizeY = sizeY
-  end
+function UIWorldBossDanBadge:SetData(badgeStyle, danId, rankLevel, tarSizeX, tarSizeY)
+  local sizeX = self._rect.sizeDelta.x
+  local sizeY = self._rect.sizeDelta.y
+  tarSizeX = tarSizeX or sizeX
+  tarSizeY = tarSizeY or sizeY
   local scaleX = tarSizeX / sizeX
   local scaleY = tarSizeY / sizeY
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._rect).localScale = Vector3(scaleX, scaleY, 1)
-  if (UIWorldBossHelper.IsNoDan)(danId, rankLevel) then
-    (self._myDanIconBase):LoadImage("1601191_logo")
-    ;
-    (self._myDanIconBaseGo):SetActive(false)
-    ;
-    (self._myDanIconFrontGo):SetActive(false)
-    return 
+  self._rect.localScale = Vector3(scaleX, scaleY, 1)
+  if UIWorldBossHelper.IsNoDan(danId, rankLevel) then
+    self._myDanIconBase:LoadImage("1601191_logo")
+    self._myDanIconBaseGo:SetActive(false)
+    self._myDanIconFrontGo:SetActive(false)
+    return
   end
-  local badgeBase = nil
+  local badgeBase
   if badgeStyle == UIWroldBossBadgeStype.WBBS_NORMAL then
-    badgeBase = (UIWorldBossHelper.GetDanBadgeBase)(danId, rankLevel)
-  else
-    if badgeStyle == UIWroldBossBadgeStype.WBBS_SIMPLE then
-      badgeBase = (UIWorldBossHelper.GetDanBadgeBaseSimple)(danId, rankLevel)
-    end
+    badgeBase = UIWorldBossHelper.GetDanBadgeBase(danId, rankLevel)
+  elseif badgeStyle == UIWroldBossBadgeStype.WBBS_SIMPLE then
+    badgeBase = UIWorldBossHelper.GetDanBadgeBaseSimple(danId, rankLevel)
   end
   if badgeBase then
-    (self._myDanIconBaseGo):SetActive(true)
-    ;
-    (self._myDanIconBase):LoadImage(badgeBase)
-    if rankLevel > 0 then
-      (self._myDanIconFrontGo):SetActive(true)
-      ;
-      (self._myDanIconFrontText):SetText(tostring(rankLevel))
+    self._myDanIconBaseGo:SetActive(true)
+    self._myDanIconBase:LoadImage(badgeBase)
+    if 0 < rankLevel then
+      self._myDanIconFrontGo:SetActive(true)
+      self._myDanIconFrontText:SetText(tostring(rankLevel))
       if self._myDanIconFrontTextBack then
-        (self._myDanIconFrontTextBack):SetText(tostring(rankLevel))
+        self._myDanIconFrontTextBack:SetText(tostring(rankLevel))
       end
     else
-      ;
-      (self._myDanIconFrontGo):SetActive(false)
+      self._myDanIconFrontGo:SetActive(false)
     end
-    local bPlus = (UIWorldBossHelper.IsPlusDan)(danId, rankLevel)
-    ;
-    (self._myDanPlusIconGo):SetActive(bPlus)
+    local bPlus = UIWorldBossHelper.IsPlusDan(danId, rankLevel)
+    self._myDanPlusIconGo:SetActive(bPlus)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanBadge.EnableRankLevel = function(self, isEnable)
-  -- function num : 0_3
-  (self._myDanIconFrontGo):SetActive(isEnable)
+function UIWorldBossDanBadge:EnableRankLevel(isEnable)
+  self._myDanIconFrontGo:SetActive(isEnable)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanBadge.RankLevelTransform = function(self, position, scale)
-  -- function num : 0_4 , upvalues : _ENV
-  local transform = (self._myDanIconFrontGo).transform
+function UIWorldBossDanBadge:RankLevelTransform(position, scale)
+  local transform = self._myDanIconFrontGo.transform
   transform.localScale = Vector3(scale, scale, 1)
   transform.anchoredPosition = position
 end
-
-

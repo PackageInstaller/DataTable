@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/_review/ui_n5_review_progress_award_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5ReviewProgressAwardDetailItem", UICustomWidget)
 UIN5ReviewProgressAwardDetailItem = UIN5ReviewProgressAwardDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5ReviewProgressAwardDetailItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN5ReviewProgressAwardDetailItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetailItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIN5ReviewProgressAwardDetailItem:InitWidget()
   self.progress = self:GetUIComponent("UILocalizationText", "progress")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.count = self:GetUIComponent("UILocalizationText", "count")
@@ -25,34 +15,23 @@ UIN5ReviewProgressAwardDetailItem.InitWidget = function(self)
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetailItem.SetData = function(self, id, count, progress, collected, canCollect, onClick, collectCallback)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.icon):LoadImage(((Cfg.cfg_item)[id]).Icon)
+function UIN5ReviewProgressAwardDetailItem:SetData(id, count, progress, collected, canCollect, onClick, collectCallback)
+  self.icon:LoadImage(Cfg.cfg_item[id].Icon)
   self.progressData = progress
-  ;
-  (self.count):SetText("×" .. count)
-  ;
-  (self.progress):SetText(progress .. "%")
+  self.count:SetText("×" .. count)
+  self.progress:SetText(progress .. "%")
   if collected then
-    (self.collected):SetActive(true)
-    ;
-    (self.canCollect):SetActive(false)
-    ;
-    (self.cantCollect):SetActive(false)
+    self.collected:SetActive(true)
+    self.canCollect:SetActive(false)
+    self.cantCollect:SetActive(false)
   else
-    ;
-    (self.collected):SetActive(false)
+    self.collected:SetActive(false)
     if canCollect then
-      (self.canCollect):SetActive(true)
-      ;
-      (self.cantCollect):SetActive(false)
+      self.canCollect:SetActive(true)
+      self.cantCollect:SetActive(false)
     else
-      ;
-      (self.canCollect):SetActive(false)
-      ;
-      (self.cantCollect):SetActive(true)
+      self.canCollect:SetActive(false)
+      self.cantCollect:SetActive(true)
     end
   end
   self._onClick = onClick
@@ -60,37 +39,21 @@ UIN5ReviewProgressAwardDetailItem.SetData = function(self, id, count, progress, 
   self._collectCallback = collectCallback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetailItem.PlayEnterAni = function(self, delay)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN5ReviewProgressAwardDetailItem:PlayEnterAni(delay)
   self:StartTask(function()
-    -- function num : 0_3_0 , upvalues : _ENV, delay, self
     YIELD(TT, delay)
-    ;
-    (self.animation):Play("uieff_N24_Main_DetailItem01")
-  end
-)
+    self.animation:Play("uieff_N24_Main_DetailItem01")
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetailItem.IconOnClick = function(self, go)
-  -- function num : 0_4
-  (self._onClick)(self._itemID, go)
+function UIN5ReviewProgressAwardDetailItem:IconOnClick(go)
+  self._onClick(self._itemID, go)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetailItem.CanCollectOnClick = function(self, go)
-  -- function num : 0_5
+function UIN5ReviewProgressAwardDetailItem:CanCollectOnClick(go)
   if self._collectCallback then
-    (self._collectCallback)(self.progressData)
-    ;
-    (self.collected):SetActive(true)
-    ;
-    (self.canCollect):SetActive(false)
+    self._collectCallback(self.progressData)
+    self.collected:SetActive(true)
+    self.canCollect:SetActive(false)
   end
 end
-
-

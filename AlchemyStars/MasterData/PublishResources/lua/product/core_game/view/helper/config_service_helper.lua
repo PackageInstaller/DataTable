@@ -1,144 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/helper/config_service_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ConfigServiceHelper", Object)
 ConfigServiceHelper = ConfigServiceHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ConfigServiceHelper._GetConfigService = function()
-  -- function num : 0_0 , upvalues : _ENV
+function ConfigServiceHelper._GetConfigService()
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local configService = mainWorld:GetService("Config")
   return configService
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetLevelConfigData = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetLevelConfigData()
+  local configService = ConfigServiceHelper._GetConfigService()
   return configService:GetLevelConfigData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.ClearSkillConfigData = function()
-  -- function num : 0_2 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.ClearSkillConfigData()
+  local configService = ConfigServiceHelper._GetConfigService()
   configService:ClearSkillConfigData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetMonsterConfigData = function()
-  -- function num : 0_3 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetMonsterConfigData()
+  local configService = ConfigServiceHelper._GetConfigService()
   return configService:GetMonsterConfigData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetBuffConfigData = function(buffID)
-  -- function num : 0_4 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetBuffConfigData(buffID)
+  local configService = ConfigServiceHelper._GetConfigService()
   return configService:GetBuffConfigData(buffID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetSkillConfigData = function(skillID, pstID)
-  -- function num : 0_5 , upvalues : _ENV
-  local entity = nil
+function ConfigServiceHelper.GetSkillConfigData(skillID, pstID)
+  local entity
   if pstID then
     local gameGlobal = GameGlobal:GetInstance()
     local mainWorld = gameGlobal:GetMainWorld()
-    local eTeam = (mainWorld:Player()):GetLocalTeamEntity()
+    local eTeam = mainWorld:Player():GetLocalTeamEntity()
     local cTeam = eTeam:Team()
     entity = cTeam:GetPetEntityByPetPstID(pstID)
     if not entity then
-      (Log.error)()
+      Log.error()
     end
   end
-  do
-    local configService = (ConfigServiceHelper._GetConfigService)()
-    return configService:GetSkillConfigData(skillID, entity)
-  end
+  local configService = ConfigServiceHelper._GetConfigService()
+  return configService:GetSkillConfigData(skillID, entity)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetMission3StarCondition = function(missionID)
-  -- function num : 0_6 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetMission3StarCondition(missionID)
+  local configService = ConfigServiceHelper._GetConfigService()
   return configService:GetMission3StarCondition(missionID)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetCampaignMission3StarCondition = function(missionID)
-  -- function num : 0_7 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetCampaignMission3StarCondition(missionID)
+  local configService = ConfigServiceHelper._GetConfigService()
   return configService:GetCampaignMission3StarCondition(missionID)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetChessMission3StarCondition = function(missionID)
-  -- function num : 0_8 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetChessMission3StarCondition(missionID)
+  local configService = ConfigServiceHelper._GetConfigService()
   return configService:GetChessMission3StarCondition(missionID)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetPopStar3StarCondition = function(missionID)
-  -- function num : 0_9 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetPopStar3StarCondition(missionID)
+  local configService = ConfigServiceHelper._GetConfigService()
   return configService:GetPopStar3StarCondition(missionID)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetPopStarPro3StarCondition = function(missionID)
-  -- function num : 0_10 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetPopStarPro3StarCondition(missionID)
+  local configService = ConfigServiceHelper._GetConfigService()
   return configService:GetPopStarPro3StarCondition(missionID)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetSeasonMission3StarCondition = function(missionID)
-  -- function num : 0_11 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetSeasonMission3StarCondition(missionID)
+  local configService = ConfigServiceHelper._GetConfigService()
   return configService:GetSeasonMission3StarCondition(missionID)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetChangeTeamLeaderCount = function()
-  -- function num : 0_12 , upvalues : _ENV
-  local configService = (ConfigServiceHelper._GetConfigService)()
+function ConfigServiceHelper.GetChangeTeamLeaderCount()
+  local configService = ConfigServiceHelper._GetConfigService()
   local leftCount = configService:GetChangeTeamLeaderCount()
   return leftCount
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigServiceHelper.GetConfigMessageByAttr = function(tab, attr, comp)
-  -- function num : 0_13 , upvalues : _ENV
+function ConfigServiceHelper.GetConfigMessageByAttr(tab, attr, comp)
   if not tab then
-    return 
+    return
   end
   local tabNew = {}
-  for index,value in ipairs(tab) do
+  for index, value in ipairs(tab) do
     if value[attr] and value[attr] == comp then
-      (table.insert)(tabNew, value)
+      table.insert(tabNew, value)
     end
   end
   return tabNew
 end
-
-

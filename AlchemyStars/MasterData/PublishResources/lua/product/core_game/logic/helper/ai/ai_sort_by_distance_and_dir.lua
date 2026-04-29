@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/ai_sort_by_distance_and_dir.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AiSortByDistanceAndDir", Object)
 AiSortByDistanceAndDir = AiSortByDistanceAndDir
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AiSortByDistanceAndDir.Constructor = function(self, centerPos, workPos, curPos, nIndex)
-  -- function num : 0_0
+function AiSortByDistanceAndDir:Constructor(centerPos, workPos, curPos, nIndex)
   self.centerPos = centerPos
   self.workPos = workPos
   self.curPos = curPos
@@ -16,80 +9,53 @@ AiSortByDistanceAndDir.Constructor = function(self, centerPos, workPos, curPos, 
   self.distance = self:Distance()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistanceAndDir.GetDistance = function(self)
-  -- function num : 0_1
+function AiSortByDistanceAndDir:GetDistance()
   return self.distance
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistanceAndDir.GetPosData = function(self)
-  -- function num : 0_2
+function AiSortByDistanceAndDir:GetPosData()
   return self.workPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistanceAndDir.Distance = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (GameHelper.ComputeLogicDistance)(self.centerPos, self.workPos)
+function AiSortByDistanceAndDir:Distance()
+  return GameHelper.ComputeLogicDistance(self.centerPos, self.workPos)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistanceAndDir.GetUpAngle = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local angle = nil
+function AiSortByDistanceAndDir:GetUpAngle()
+  local angle
   local vecUp = Vector2.up
   local vecTarget = self.curPos - self.centerPos
   vecTarget = vecTarget.normalized
   local dot = vecUp.x * vecTarget.x + vecUp.y * vecTarget.y
-  if (math.abs)(dot - 1) <= 1e-06 then
+  if math.abs(dot - 1.0) <= 1.0E-6 then
     angle = 0
+  elseif math.abs(dot + 1.0) <= 1.0E-6 then
+    angle = math.pi
   else
-    if (math.abs)(dot + 1) <= 1e-06 then
-      angle = math.pi
-    else
-      angle = (math.acos)(dot)
-      local cross = vecUp.x * vecTarget.y - vecTarget.x * vecUp.y
-      if cross < 0 then
-        angle = 2 * math.pi - angle
-      end
+    angle = math.acos(dot)
+    local cross = vecUp.x * vecTarget.y - vecTarget.x * vecUp.y
+    if cross < 0 then
+      angle = 2 * math.pi - angle
     end
   end
-  do
-    local degree = (angle) * 180 / math.pi
-    return degree
-  end
+  local degree = angle * 180.0 / math.pi
+  return degree
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AiSortByDistanceAndDir._ComparerByNearAndDir = function(dataA, dataB)
-  -- function num : 0_5
+function AiSortByDistanceAndDir._ComparerByNearAndDir(dataA, dataB)
   local nDistanceA = dataA:GetDistance()
   local nDistanceB = dataB:GetDistance()
   local angleUpToA = dataA:GetUpAngle()
   local angleUpToB = dataB:GetUpAngle()
-  if nDistanceB < nDistanceA then
+  if nDistanceA > nDistanceB then
     return -1
+  elseif nDistanceA < nDistanceB then
+    return 1
+  elseif angleUpToA > angleUpToB then
+    return -1
+  elseif angleUpToA > angleUpToB then
+    return 1
   else
-    if nDistanceA < nDistanceB then
-      return 1
-    else
-      if angleUpToB < angleUpToA then
-        return -1
-      else
-        if angleUpToB < angleUpToA then
-          return 1
-        else
-          return dataB.index - dataA.index
-        end
-      end
-    end
+    return dataB.index - dataA.index
   end
 end
-
-

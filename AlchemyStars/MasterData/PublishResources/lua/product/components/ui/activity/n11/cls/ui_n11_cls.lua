@@ -1,209 +1,134 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n11/cls/ui_n11_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N11Data", CampaignDataBase)
 N11Data = N11Data
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N11Data.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function N11Data:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.CheckRedAward = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function N11Data:CheckRedAward()
   local lp = self:GetLocalProcess()
-  local red = (self.mCampaign):CheckComponentRed(lp, ECampaignN11ComponentID.ECAMPAIGN_N11_CUMULATIVE_LOGIN)
+  local red = self.mCampaign:CheckComponentRed(lp, ECampaignN11ComponentID.ECAMPAIGN_N11_CUMULATIVE_LOGIN)
   return red
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.CheckRedNormal = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function N11Data:CheckRedNormal()
   local state = self:GetStateNormal()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetLocalProcess()
-    local redActionPoint = (self.mCampaign):CheckComponentRed(lp, ECampaignN11ComponentID.ECAMPAIGN_N11_ACTION_POINT)
-    local redFixTeam = (self.mCampaign):CheckComponentRed(lp, ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_FIXTEAM)
+    local redActionPoint = self.mCampaign:CheckComponentRed(lp, ECampaignN11ComponentID.ECAMPAIGN_N11_ACTION_POINT)
+    local redFixTeam = self.mCampaign:CheckComponentRed(lp, ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_FIXTEAM)
     return redActionPoint or redFixTeam
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.CheckNewHard = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (N11Data.HasPrefsHard)() and self:GetStateHard() == UISummerOneEnterBtnState.Normal then
+function N11Data:CheckNewHard()
+  if not N11Data.HasPrefsHard() and self:GetStateHard() == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetComponentNormal = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_COMMON)
+function N11Data:GetComponentNormal()
+  local c = self.activityCampaign:GetComponent(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_COMMON)
   return c
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetComponentHard = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
+function N11Data:GetComponentHard()
+  local c = self.activityCampaign:GetComponent(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
   return c
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetComponentInfoNormal = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_COMMON)
+function N11Data:GetComponentInfoNormal()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_COMMON)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetComponentInfoHard = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
+function N11Data:GetComponentInfoHard()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN11ComponentID.ECAMPAIGN_N11_LEVEL_HARD)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetStateShop = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponentInfo(ECampaignN11ComponentID.ECAMPAIGN_N11_SHOP)
+function N11Data:GetStateShop()
+  local c = self.activityCampaign:GetComponentInfo(ECampaignN11ComponentID.ECAMPAIGN_N11_SHOP)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetStateAward = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponentInfo(ECampaignN11ComponentID.ECAMPAIGN_N11_CUMULATIVE_LOGIN)
+function N11Data:GetStateAward()
+  local c = self.activityCampaign:GetComponentInfo(ECampaignN11ComponentID.ECAMPAIGN_N11_CUMULATIVE_LOGIN)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetState = function(self, cInfo)
-  -- function num : 0_10 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function N11Data:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetStateNormal = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function N11Data:GetStateNormal()
   local cInfo = self:GetComponentInfoNormal()
   if not cInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cInfo)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetStateHard = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function N11Data:GetStateHard()
   local cHardInfo = self:GetComponentInfoHard()
   if not cHardInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cHardInfo)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetPstId = function()
-  -- function num : 0_13 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function N11Data.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetPrefsKey = function(str)
-  -- function num : 0_14 , upvalues : _ENV
-  local playerPrefsKey = (N11Data.GetPstId)() .. str
+function N11Data.GetPrefsKey(str)
+  local playerPrefsKey = N11Data.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetPrefsKeyMain = function()
-  -- function num : 0_15 , upvalues : _ENV
-  return (N11Data.GetPrefsKey)("UIN11DataPrefsKeyMain")
+function N11Data.GetPrefsKeyMain()
+  return N11Data.GetPrefsKey("UIN11DataPrefsKeyMain")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.GetPrefsKeyHard = function()
-  -- function num : 0_16 , upvalues : _ENV
-  return (N11Data.GetPrefsKey)("UIN11DataPrefsKeyHard")
+function N11Data.GetPrefsKeyHard()
+  return N11Data.GetPrefsKey("UIN11DataPrefsKeyHard")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.HasPrefsMain = function()
-  -- function num : 0_17 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N11Data.GetPrefsKeyMain)())
+function N11Data.HasPrefsMain()
+  return UnityEngine.PlayerPrefs.HasKey(N11Data.GetPrefsKeyMain())
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.HasPrefsHard = function()
-  -- function num : 0_18 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N11Data.GetPrefsKeyHard)())
+function N11Data.HasPrefsHard()
+  return UnityEngine.PlayerPrefs.HasKey(N11Data.GetPrefsKeyHard())
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.SetPrefsMain = function()
-  -- function num : 0_19 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N11Data.GetPrefsKeyMain)(), 1)
+function N11Data.SetPrefsMain()
+  UnityEngine.PlayerPrefs.SetInt(N11Data.GetPrefsKeyMain(), 1)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N11Data.SetPrefsHard = function()
-  -- function num : 0_20 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N11Data.GetPrefsKeyHard)(), 1)
+function N11Data.SetPrefsHard()
+  UnityEngine.PlayerPrefs.SetInt(N11Data.GetPrefsKeyHard(), 1)
 end
-
-

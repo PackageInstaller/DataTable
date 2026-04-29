@@ -1,78 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_mat_path_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20MatPathItem", UICustomWidget)
 UICN20MatPathItem = UICN20MatPathItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20MatPathItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20MatPathItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatPathItem.InitWidget = function(self)
-  -- function num : 0_1
+function UICN20MatPathItem:InitWidget()
   self.bg = self:GetUIComponent("Image", "bg")
   self.high = self:GetUIComponent("Image", "high")
-  ;
-  ((self.high).gameObject):SetActive(false)
+  self.high.gameObject:SetActive(false)
   self.rootRect = self:GetUIComponent("RectTransform", "Root")
   self.rootObj = self:GetGameObject("Root")
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatPathItem.SetData = function(self, pos, angle, data, width)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20MatPathItem:SetData(pos, angle, data, width)
   self.pos = pos
   self.angle = angle
   self.data = data
   self.width = width
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.rootRect).anchoredPosition = pos
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self.rootObj).transform).eulerAngles = Vector3(0, 0, angle)
-  local heigh = ((self.rootRect).sizeDelta).y
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.rootRect).sizeDelta = Vector2(width, heigh)
-  ;
-  (self._anim):Play("uieff_UICN20MatPathItem_dark")
+  self.rootRect.anchoredPosition = pos
+  self.rootObj.transform.eulerAngles = Vector3(0, 0, angle)
+  local heigh = self.rootRect.sizeDelta.y
+  self.rootRect.sizeDelta = Vector2(width, heigh)
+  self._anim:Play("uieff_UICN20MatPathItem_dark")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatPathItem.GetPathLinkData = function(self)
-  -- function num : 0_3
+function UICN20MatPathItem:GetPathLinkData()
   return self.data
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatPathItem.SetHigh = function(self, high)
-  -- function num : 0_4
-  if not ((self.high).gameObject).activeSelf then
-    (self._anim):Play("uieff_UICN20MatPathItem_unlock_in")
+function UICN20MatPathItem:SetHigh(high)
+  if not self.high.gameObject.activeSelf then
+    self._anim:Play("uieff_UICN20MatPathItem_unlock_in")
   end
-  ;
-  ((self.high).gameObject):SetActive(high)
+  self.high.gameObject:SetActive(high)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatPathItem.SetItemActive = function(self, active)
-  -- function num : 0_5
-  (self.rootObj):SetActive(active)
+function UICN20MatPathItem:SetItemActive(active)
+  self.rootObj:SetActive(active)
 end
-
-

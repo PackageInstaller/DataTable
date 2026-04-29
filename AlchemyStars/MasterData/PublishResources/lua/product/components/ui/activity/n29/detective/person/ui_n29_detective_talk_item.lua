@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/person/ui_n29_detective_talk_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveTalkItem", UICustomWidget)
 UIN29DetectiveTalkItem = UIN29DetectiveTalkItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveTalkItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN29DetectiveTalkItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIN29DetectiveTalkItem:InitWidget()
   self._lock = self:GetGameObject("Lock")
   self._unlock = self:GetGameObject("Unlock")
   self._show = self:GetGameObject("Show")
@@ -28,10 +18,7 @@ UIN29DetectiveTalkItem.InitWidget = function(self)
   self._lockTitle = self:GetUIComponent("UILocalizationText", "LockTitle")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkItem.SetData = function(self, talkId, severList, psdId, playStory, right, wrong, time)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN29DetectiveTalkItem:SetData(talkId, severList, psdId, playStory, right, wrong, time)
   self.talkId = talkId
   self.severLsit = severList
   self._psdId = psdId
@@ -40,22 +27,19 @@ UIN29DetectiveTalkItem.SetData = function(self, talkId, severList, psdId, playSt
   self.wrongShow = wrong
   self.checkTime = time
   if self.checkTime then
-    (self.checkTime)()
+    self.checkTime()
   end
-  local cfg = (Cfg.cfg_component_detective_talk)[self.talkId]
+  local cfg = Cfg.cfg_component_detective_talk[self.talkId]
   self._clueID = cfg.ClueId
   self._storyID = cfg.StoryID
   self._title = cfg.Title
-  ;
-  (self._show):SetActive(false)
-  ;
-  (self._lock):SetActive(false)
-  ;
-  (self._unlock):SetActive(false)
-  self.haveGetClue = (UIN29DetectiveHelper.IsInList)(self._clueID, self.severLsit)
-  if (UIN29DetectiveHelper.IsLock)(self.talkId, self.severLsit) and not self.haveGetClue then
-    if (UIN29DetectiveHelper.IsShow)(self.talkId, self.severLsit) then
-      if (UIN29DetectiveHelper.CheckOpenIdKey)(self._psdId, "UIN29DetectiveTalkItemShow" .. self.talkId) then
+  self._show:SetActive(false)
+  self._lock:SetActive(false)
+  self._unlock:SetActive(false)
+  self.haveGetClue = UIN29DetectiveHelper.IsInList(self._clueID, self.severLsit)
+  if UIN29DetectiveHelper.IsLock(self.talkId, self.severLsit) and not self.haveGetClue then
+    if UIN29DetectiveHelper.IsShow(self.talkId, self.severLsit) then
+      if UIN29DetectiveHelper.CheckOpenIdKey(self._psdId, "UIN29DetectiveTalkItemShow" .. self.talkId) then
         self:InitUnlockData()
       else
         self:InitShowData()
@@ -68,143 +52,94 @@ UIN29DetectiveTalkItem.SetData = function(self, talkId, severList, psdId, playSt
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkItem.InitShowData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._show):SetActive(true)
-  ;
-  (self._showTitle):SetText((StringTable.Get)(self._title))
-  local clues = ((Cfg.cfg_component_detective_talk)[self.talkId]).NeedClue
-  ;
-  (self._clueUISelect):SpawnObjects("UIN29DetectiveTalkClueItem", #clues)
-  self._clues = (self._clueUISelect):GetAllSpawnList()
+function UIN29DetectiveTalkItem:InitShowData()
+  self._show:SetActive(true)
+  self._showTitle:SetText(StringTable.Get(self._title))
+  local clues = Cfg.cfg_component_detective_talk[self.talkId].NeedClue
+  self._clueUISelect:SpawnObjects("UIN29DetectiveTalkClueItem", #clues)
+  self._clues = self._clueUISelect:GetAllSpawnList()
   for i = 1, #self._clues do
-    ((self._clues)[i]):SetData(clues[i], function(item)
-    -- function num : 0_3_0 , upvalues : self
-    self:OnClueClicked(item)
-  end
-)
+    self._clues[i]:SetData(clues[i], function(item)
+      self:OnClueClicked(item)
+    end)
     if i == 1 then
-      self:OnClueClicked((self._clues)[i])
+      self:OnClueClicked(self._clues[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkItem.InitLockData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._lock):SetActive(true)
-  ;
-  (self._lockTitle):SetText((StringTable.Get)(self._title))
+function UIN29DetectiveTalkItem:InitLockData()
+  self._lock:SetActive(true)
+  self._lockTitle:SetText(StringTable.Get(self._title))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkItem.InitUnlockData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._unlock):SetActive(true)
-  ;
-  (self._unlockTitle):SetText((StringTable.Get)(self._title))
+function UIN29DetectiveTalkItem:InitUnlockData()
+  self._unlock:SetActive(true)
+  self._unlockTitle:SetText(StringTable.Get(self._title))
   if self.haveGetClue then
-    (self._clicked):SetActive(true)
-    ;
-    (self._notClick):SetActive(false)
+    self._clicked:SetActive(true)
+    self._notClick:SetActive(false)
   else
-    ;
-    (self._clicked):SetActive(false)
-    ;
-    (self._notClick):SetActive(true)
+    self._clicked:SetActive(false)
+    self._notClick:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkItem.OnClueClicked = function(self, item)
-  -- function num : 0_6
+function UIN29DetectiveTalkItem:OnClueClicked(item)
   if self.checkTime then
-    (self.checkTime)()
+    self.checkTime()
   end
   if self._clueWidget then
-    (self._clueWidget):SetSelected(false)
+    self._clueWidget:SetSelected(false)
   end
   self._clueWidget = item
-  ;
-  (self._clueWidget):SetSelected(true)
-  self._clueId = (self._clueWidget):GetClue()
+  self._clueWidget:SetSelected(true)
+  self._clueId = self._clueWidget:GetClue()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkItem.ShowBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN29DetectiveTalkItem:ShowBtnOnClick()
   if self.checkTime then
-    (self.checkTime)()
+    self.checkTime()
   end
-  local RightClueId = ((Cfg.cfg_component_detective_talk)[self.talkId]).Evidence
+  local RightClueId = Cfg.cfg_component_detective_talk[self.talkId].Evidence
   if self._clueId and RightClueId == self._clueId then
-    (self._show):SetActive(false)
-    ;
-    (self._unlock):SetActive(true)
-    ;
-    (self._notClick):SetActive(true)
-    ;
-    (self._unlockTitle):SetText((StringTable.Get)(self._title))
+    self._show:SetActive(false)
+    self._unlock:SetActive(true)
+    self._notClick:SetActive(true)
+    self._unlockTitle:SetText(StringTable.Get(self._title))
     if self.rightShow then
-      (self.rightShow)()
+      self.rightShow()
     end
-    ;
-    (UIN29DetectiveHelper.SetOpenIdKey)(self._psdId, "UIN29DetectiveTalkItemShow" .. self.talkId)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20StrategyAdd)
-  else
-    if self.wrongShow then
-      (self.wrongShow)()
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20StrategyReduce)
-    end
+    UIN29DetectiveHelper.SetOpenIdKey(self._psdId, "UIN29DetectiveTalkItemShow" .. self.talkId)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20StrategyAdd)
+  elseif self.wrongShow then
+    self.wrongShow()
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20StrategyReduce)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkItem.UnlockOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  do
-    if self.checkTime then
-      local isOpen = (self.checkTime)()
-      if not isOpen then
-        return 
-      end
-    end
-    local hasGetClue = (UIN29DetectiveHelper.IsInList)(self._clueID, self.severLsit)
-    if hasGetClue then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n29_detective_had_clue"))
-    else
-      if self.playStory then
-        (self.playStory)(self._storyID, self.talkId)
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveTalkItem.LockOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN29DetectiveTalkItem:UnlockOnClick()
   if self.checkTime then
-    (self.checkTime)()
+    local isOpen = self.checkTime()
+    if not isOpen then
+      return
+    end
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_n29_detective_not_had_clue"))
+  local hasGetClue = UIN29DetectiveHelper.IsInList(self._clueID, self.severLsit)
+  if hasGetClue then
+    ToastManager.ShowToast(StringTable.Get("str_n29_detective_had_clue"))
+  elseif self.playStory then
+    self.playStory(self._storyID, self.talkId)
+  end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
+function UIN29DetectiveTalkItem:LockOnClick()
+  if self.checkTime then
+    self.checkTime()
+  end
+  ToastManager.ShowToast(StringTable.Get("str_n29_detective_not_had_clue"))
+end
 
-UIN29DetectiveTalkItem.GetItemBtnGo = function(self)
-  -- function num : 0_10
+function UIN29DetectiveTalkItem:GetItemBtnGo()
   return self._unlock
 end
-
-

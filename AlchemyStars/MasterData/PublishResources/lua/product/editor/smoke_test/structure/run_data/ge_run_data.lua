@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/ge_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_base_run_data")
 _class("GoldbergEventRunData", TestRobotRunData)
 GoldbergEventRunData = GoldbergEventRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GoldbergEventRunData.Constructor = function(self)
-  -- function num : 0_0
+function GoldbergEventRunData:Constructor()
   self._index = 1
   self._missionIDs = {}
   self._mission2Cmpt = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GoldbergEventRunData.SetMissionList = function(self, t)
-  -- function num : 0_1
+function GoldbergEventRunData:SetMissionList(t)
   self._missionIDs = t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GoldbergEventRunData.GetMissionID = function(self)
-  -- function num : 0_2
-  return (self._missionIDs)[self._index]
+function GoldbergEventRunData:GetMissionID()
+  return self._missionIDs[self._index]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GoldbergEventRunData.TickMissionID = function(self)
-  -- function num : 0_3
+function GoldbergEventRunData:TickMissionID()
   self._index = self._index + 1
   return self:GetMissionID()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GoldbergEventRunData.SetMission2CmptDic = function(self, d)
-  -- function num : 0_4
+function GoldbergEventRunData:SetMission2CmptDic(d)
   self._mission2Cmpt = d
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GoldbergEventRunData.GetCampaignComponent = function(self)
-  -- function num : 0_5
+function GoldbergEventRunData:GetCampaignComponent()
   local missionID = self:GetMissionID()
-  return (self._mission2Cmpt)[missionID]
+  return self._mission2Cmpt[missionID]
 end
-
-

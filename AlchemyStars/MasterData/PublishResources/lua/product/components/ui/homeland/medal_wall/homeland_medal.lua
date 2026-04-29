@@ -1,51 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/medal_wall/homeland_medal.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandMedal", Object)
 HomelandMedal = HomelandMedal
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandMedal.Constructor = function(self, rootTran, boardMedal)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandMedal:Constructor(rootTran, boardMedal)
   self._id = boardMedal.itemId
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset(boardMedal.model, LoadType.GameObject)
+  self._req = ResourceManager:GetInstance():SyncLoadAsset(boardMedal.model, LoadType.GameObject)
   if not self._req then
     BuildError("找不到勋章模型:" .. boardMedal.model)
-    return 
+    return
   end
-  self._go = (self._req).Obj
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._go).layer = HomeBuildLayer.MedalWall
-  ;
-  (self._go):SetActive(true)
-  self._transform = ((self._req).Obj).transform
-  ;
-  (self._transform):SetParent(rootTran)
+  self._go = self._req.Obj
+  self._go.layer = HomeBuildLayer.MedalWall
+  self._go:SetActive(true)
+  self._transform = self._req.Obj.transform
+  self._transform:SetParent(rootTran)
   local offsetZ = (boardMedal.index - 1) * MedalWallConfig.MedalOffset
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._transform).localPosition = Vector3(-(boardMedal.pos).x, (boardMedal.pos).y, offsetZ)
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._transform).localRotation = Quaternion((boardMedal.quat).x, (boardMedal.quat).y, (boardMedal.quat).z, -(boardMedal.quat).w)
+  self._transform.localPosition = Vector3(-boardMedal.pos.x, boardMedal.pos.y, offsetZ)
+  self._transform.localRotation = Quaternion(boardMedal.quat.x, boardMedal.quat.y, boardMedal.quat.z, -boardMedal.quat.w)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedal.Destroy = function(self)
-  -- function num : 0_1
+function HomelandMedal:Destroy()
   self._go = nil
   self._transform = nil
   if self._req then
-    (self._req):Dispose()
+    self._req:Dispose()
   end
   self._req = nil
 end
-
-

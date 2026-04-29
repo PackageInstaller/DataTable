@@ -1,161 +1,120 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/treasure/home_treasure_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 TreasureBirthPosType = {Good = 0, Bad = 1}
 _class("HomelandTreasureManager", Object)
 HomelandTreasureManager = HomelandTreasureManager
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandTreasureManager.Constructor = function(self)
-  -- function num : 0_0
+function HomelandTreasureManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.Init = function(self, homeClient)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandTreasureManager:Init(homeClient)
   self._homelandClient = homeClient
   self._interactPointMng = homeClient:InteractPointManager()
   self._buildMng = homeClient:BuildManager()
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._treasureInfo = (self._homelandModule):GetTreasureInfo()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._treasureInfo = self._homelandModule:GetTreasureInfo()
   self._treasures = {}
-  self._enterCallback = (GameHelper:GetInstance()):CreateCallback(self.DisposeTreasure, self)
-  self._exitCallback = (GameHelper:GetInstance()):CreateCallback(self.ShowTreasure, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.EnterFindTreasure, self._enterCallback)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ExitFindTreasure, self._exitCallback)
-  self._treaCallback = (GameHelper:GetInstance()):CreateCallback(self.TreasureHandle, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.TreasureRemove, self._treaCallback)
+  self._enterCallback = GameHelper:GetInstance():CreateCallback(self.DisposeTreasure, self)
+  self._exitCallback = GameHelper:GetInstance():CreateCallback(self.ShowTreasure, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.EnterFindTreasure, self._enterCallback)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ExitFindTreasure, self._exitCallback)
+  self._treaCallback = GameHelper:GetInstance():CreateCallback(self.TreasureHandle, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.TreasureRemove, self._treaCallback)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.EnterFindTreasure, self._enterCallback)
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ExitFindTreasure, self._exitCallback)
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.TreasureRemove, self._treaCallback)
+function HomelandTreasureManager:Dispose()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.EnterFindTreasure, self._enterCallback)
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ExitFindTreasure, self._exitCallback)
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.TreasureRemove, self._treaCallback)
   self:DisposeTreasure()
   self._homelandClient = nil
   self._homelandModule = nil
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.DisposeTreasure = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for k,v in pairs(self._treasures) do
+function HomelandTreasureManager:DisposeTreasure()
+  for k, v in pairs(self._treasures) do
     v:Dispose()
   end
   self._treasures = {}
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.HomelandClient = function(self)
-  -- function num : 0_4
+function HomelandTreasureManager:HomelandClient()
   return self._homelandClient
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.HomelandModule = function(self)
-  -- function num : 0_5
+function HomelandTreasureManager:HomelandModule()
   return self._homelandModule
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.RefreshTreasure = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = ((GameGlobal.GetUIModule)(HomelandModule)):GetCurrentToolCfg(ToolType.TT_SHOVEL)
+function HomelandTreasureManager:RefreshTreasure()
+  local cfg = GameGlobal.GetUIModule(HomelandModule):GetCurrentToolCfg(ToolType.TT_SHOVEL)
   if cfg == nil then
     return false
   end
-  local limit = ((Cfg.cfg_homeland_global).TreasureCountLimit).IntValue
-  if limit <= (table.count)((self._treasureInfo).treasures) then
+  local limit = Cfg.cfg_homeland_global.TreasureCountLimit.IntValue
+  if limit <= table.count(self._treasureInfo.treasures) then
     return false
   end
-  local item_id = ((Cfg.cfg_homeland_global).TreasureRefreshItemId).IntValue
-  local im = (GameGlobal.GetModule)(ItemModule)
+  local item_id = Cfg.cfg_homeland_global.TreasureRefreshItemId.IntValue
+  local im = GameGlobal.GetModule(ItemModule)
   if im:GetItemCount(item_id) <= 0 then
     return false
   end
-  local range = ((Cfg.cfg_homeland_global).TreasureOccupyRange).FloatValue
-  local birthID = nil
-  local cfgs = (Cfg.cfg_homeland_treasure_birth)({BirthType = TreasureBirthPosType.Good})
-  ;
-  (table.shuffle)(cfgs)
-  for i,cfg in ipairs(cfgs) do
-    if not ((self._treasureInfo).treasures)[cfg.ID] then
-      local pos = Vector3((cfg.BirthPos)[1], (cfg.BirthPos)[2], (cfg.BirthPos)[3])
+  local range = Cfg.cfg_homeland_global.TreasureOccupyRange.FloatValue
+  local birthID
+  local cfgs = Cfg.cfg_homeland_treasure_birth({
+    BirthType = TreasureBirthPosType.Good
+  })
+  table.shuffle(cfgs)
+  for i, cfg in ipairs(cfgs) do
+    if not self._treasureInfo.treasures[cfg.ID] then
+      local pos = Vector3(cfg.BirthPos[1], cfg.BirthPos[2], cfg.BirthPos[3])
       if not self:IsBirthPosOccupied(pos, range) then
         birthID = cfg.ID
         break
       end
     end
   end
-  do
-    if birthID == nil then
-      cfgs = (Cfg.cfg_homeland_treasure_birth)({BirthType = TreasureBirthPosType.Bad})
-      ;
-      (table.shuffle)(cfgs)
-      for i,cfg in ipairs(cfgs) do
-        if not ((self._treasureInfo).treasures)[cfg.ID] then
-          birthID = cfg.ID
-          break
-        end
+  if birthID == nil then
+    cfgs = Cfg.cfg_homeland_treasure_birth({
+      BirthType = TreasureBirthPosType.Bad
+    })
+    table.shuffle(cfgs)
+    for i, cfg in ipairs(cfgs) do
+      if not self._treasureInfo.treasures[cfg.ID] then
+        birthID = cfg.ID
+        break
       end
     end
-    do
-      if birthID == nil then
-        (Log.error)("HomelandTreasureManager:OnEnterHomeland()  birthID == nil.")
-        return false
-      end
-      ;
-      (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, birthID
-    local res, trea = (self._homelandModule):HomelandGetNewTreasure(TT, birthID)
+  end
+  if birthID == nil then
+    Log.error("HomelandTreasureManager:OnEnterHomeland()  birthID == nil.")
+    return false
+  end
+  TaskManager:GetInstance():StartTask(function(TT)
+    local res, trea = self._homelandModule:HomelandGetNewTreasure(TT, birthID)
     if res:GetSucc() then
       self._treasureInfo = trea
     end
     self:ShowTreasure()
-  end
-)
-      return true
-    end
-  end
+  end)
+  return true
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.OnEnterHomeland = function(self)
-  -- function num : 0_7
+function HomelandTreasureManager:OnEnterHomeland()
   if self:RefreshTreasure() == false then
     self:ShowTreasure()
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.IsBirthPosOccupied = function(self, pos, range)
-  -- function num : 0_8 , upvalues : _ENV
-  local cb = function(newPos, hitdis)
-    -- function num : 0_8_0 , upvalues : _ENV
-    local canStart, hits = (((UnityEngine.AI).NavMesh).SamplePosition)(newPos, nil, hitdis, ((UnityEngine.AI).NavMesh).AllAreas)
+function HomelandTreasureManager:IsBirthPosOccupied(pos, range)
+  local function cb(newPos, hitdis)
+    local canStart, hits = UnityEngine.AI.NavMesh.SamplePosition(newPos, nil, hitdis, UnityEngine.AI.NavMesh.AllAreas)
+    
     if canStart then
       return false
     end
     return true
   end
-
+  
   if cb(pos, 2) == true then
     return true
   end
@@ -181,47 +140,32 @@ HomelandTreasureManager.IsBirthPosOccupied = function(self, pos, range)
   return false
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.ShowTreasure = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local sceneManager = (self._homelandClient):SceneManager()
+function HomelandTreasureManager:ShowTreasure()
+  local sceneManager = self._homelandClient:SceneManager()
   local root = sceneManager:RuntimeRootTrans()
-  for birthID,v in pairs((self._treasureInfo).treasures) do
+  for birthID, v in pairs(self._treasureInfo.treasures) do
     if v.state ~= TreasureState.TS_DESTROY then
       local treasure = HomelandTreasure:New(self, birthID, v)
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._treasures)[birthID] = treasure
+      self._treasures[birthID] = treasure
       treasure:Show(root)
     end
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.GetTreasure = function(self, birthID)
-  -- function num : 0_10
-  return (self._treasures)[birthID]
+function HomelandTreasureManager:GetTreasure(birthID)
+  return self._treasures[birthID]
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.GetTreasureState = function(self, birthID)
-  -- function num : 0_11 , upvalues : _ENV
-  local info = (self._treasures)[birthID]
+function HomelandTreasureManager:GetTreasureState(birthID)
+  local info = self._treasures[birthID]
   if info == nil then
     return TreasureState.TS_DESTROY
   end
   return info:GetState()
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.GetTreasureByPet = function(self, pstID)
-  -- function num : 0_12 , upvalues : _ENV
-  for birthID,v in pairs((self._treasureInfo).treasures) do
+function HomelandTreasureManager:GetTreasureByPet(pstID)
+  for birthID, v in pairs(self._treasureInfo.treasures) do
     if v.pet_id == pstID then
       return v.state
     end
@@ -229,26 +173,17 @@ HomelandTreasureManager.GetTreasureByPet = function(self, pstID)
   return TreasureState.TS_DESTROY
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.DelTreasure = function(self, birthID)
-  -- function num : 0_13
-  local t = (self._treasures)[birthID]
+function HomelandTreasureManager:DelTreasure(birthID)
+  local t = self._treasures[birthID]
   if t then
     t:Dispose()
   end
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._treasures)[birthID] = nil
+  self._treasures[birthID] = nil
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.GetAllTreasure = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function HomelandTreasureManager:GetAllTreasure()
   local vv = {}
-  for k,v in pairs(self._treasures) do
+  for k, v in pairs(self._treasures) do
     if v:GetGameObj() ~= nil then
       vv[k] = v
     end
@@ -256,16 +191,11 @@ HomelandTreasureManager.GetAllTreasure = function(self)
   return vv
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureManager.TreasureHandle = function(self, delmap)
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandTreasureManager:TreasureHandle(delmap)
   if delmap == nil then
-    return 
+    return
   end
-  for k,v in pairs(delmap) do
+  for k, v in pairs(delmap) do
     self:DelTreasure(v)
   end
 end
-
-

@@ -1,40 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_award_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardDetailItem", UICustomWidget)
 UIDrawCardAwardDetailItem = UIDrawCardAwardDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardDetailItem.OnShow = function(self)
-  -- function num : 0_0
+function UIDrawCardAwardDetailItem:OnShow()
   self.title = self:GetUIComponent("UILocalizationText", "title")
   self.detail = self:GetUIComponent("UILocalizationText", "detail")
   self.content = self:GetGameObject("content")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardDetailItem.SetData = function(self, title, content)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.title).text = (StringTable.Get)(title)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIDrawCardAwardDetailItem:SetData(title, content)
+  self.title.text = StringTable.Get(title)
   if content then
-    (self.detail).text = (StringTable.Get)(content)
+    self.detail.text = StringTable.Get(content)
   else
-    ;
-    (self.content):SetActive(false)
+    self.content:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardDetailItem.OnHide = function(self)
-  -- function num : 0_2
+function UIDrawCardAwardDetailItem:OnHide()
 end
-
-

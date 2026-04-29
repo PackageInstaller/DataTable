@@ -1,140 +1,757 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/aircraft/cfg_aircraft_room_camera.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, CamController = 2, CamDeltaPos = 3, CamDragParam = 4, CamRotateParam = 5, CamZoomParam = 6, CamInitRot = 7, CameraCubeSize = 8, CameraCubeOffset = 9, CameraAngle = 10, SphereDragParam = 11, SphereZoomParam = 12, SphereOffset = 13, SphereAngleRange = 14, SpereMaxAngleY = 15, SphereHeightRange = 16, SphereRadiusRange = 17, FadeObjects = 18, AwardTextPos = 19, InteractDistance = 20}
+local key = {
+  ID = 1,
+  CamController = 2,
+  CamDeltaPos = 3,
+  CamDragParam = 4,
+  CamRotateParam = 5,
+  CamZoomParam = 6,
+  CamInitRot = 7,
+  CameraCubeSize = 8,
+  CameraCubeOffset = 9,
+  CameraAngle = 10,
+  SphereDragParam = 11,
+  SphereZoomParam = 12,
+  SphereOffset = 13,
+  SphereAngleRange = 14,
+  SpereMaxAngleY = 15,
+  SphereHeightRange = 16,
+  SphereRadiusRange = 17,
+  FadeObjects = 18,
+  AwardTextPos = 19,
+  InteractDistance = 20
+}
 local common = {
-{0, 0, 0}
-, 
-{2, 6}
-, 
-{6, 0, 0}
-, 
-{15, 14, 20}
-, 
-{5, 15}
-, 
-{1.5, 4}
-, 
-{8, 10}
-, 
-{0.35, 1.8, -2.6}
-, 
-{0, 5, -25}
-, 
-{0.02, 3.5, -9.1}
-, 
-{0, 2, 1}
-, 
-{8, 11}
-, 
-{-60, 60}
-, 
-{-30, 30}
+  {
+    0,
+    0,
+    0
+  },
+  {2, 6},
+  {
+    6,
+    0,
+    0
+  },
+  {
+    15,
+    14,
+    20
+  },
+  {5, 15},
+  {1.5, 4},
+  {8, 10},
+  {
+    0.35,
+    1.8,
+    -2.6
+  },
+  {
+    0,
+    5,
+    -25
+  },
+  {
+    0.02,
+    3.5,
+    -9.1
+  },
+  {
+    0,
+    2,
+    1
+  },
+  {8, 11},
+  {-60, 60},
+  {-30, 30}
 }
 local config = {
-{1, 1, 
-{2.2, 4.7, -9.3}
-, 0.008, 0.03, 3, 
-{21.29, -55.6, 0}
-, 
-{9.2, 2.2, -6.14}
-, common[1], 
-{5, 25}
-, 0.17, 3, 
-{-2.7, 1, -1.3}
-, 
-{-50, 0}
-, 30, common[2], 
-{5, 10.5}
-, nil, nil, 5}
-, 
-{2, 2, nil, 0.008, 0.03, 3, nil, nil, nil, nil, nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{3, 1, 
-{-1.75, 3.6, -11}
-, 0.008, 0.03, 3, common[3], common[4], common[1], common[5], 0.17, 3, 
-{-1.7, 1.8, -2.6}
-, common[14], 15, common[6], common[7], nil, nil, 5}
-, 
-{4, 1, 
-{0.59, 3.6, -10.95}
-, 0.008, 0.03, 3, common[3], common[4], common[1], common[5], 0.17, 3, common[8], common[14], 15, common[6], common[7], nil, nil, 5}
-, 
-{5, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{6, 1, 
-{-1.4, 4.16, -12}
-, 0.008, 0.03, 3, common[3], common[4], common[1], common[5], 0.17, 3, 
-{-1, 2.3, 0}
-, common[14], 18, common[2], 
-{8, 13}
-, nil, 
-{-12, 42, -3.3}
-, 5}
-, 
-{7, 2, nil, 0.008, 0.03, 3, nil, nil, nil, nil, nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{8, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{9, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{10, 2, nil, 0.008, 0.03, 3, nil, nil, nil, nil, nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{11, 2, nil, 0.008, 0.03, 3, nil, nil, nil, nil, nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{12, 1, 
-{-2.79, 3.87, -9.96}
-, 0.008, 0.03, 3, common[3], common[4], common[1], common[5], 0.17, 3, 
-{-1, 1.8, -1.6}
-, common[14], 15, common[6], common[7], nil, nil, 5}
-, 
-{13, 1, 
-{0.75, 3.87, -11.1}
-, 0.008, 0.03, 3, common[3], common[4], common[1], common[5], 0.17, 3, common[8], common[14], 15, common[6], common[7], nil, nil, 5}
-, 
-{14, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{15, 1, 
-{0.2, 4, -11}
-, 0.008, 0.03, 3, common[3], common[4], common[1], common[5], 0.17, 3, 
-{0.4, 2.3, 0.04}
-, common[14], 20, common[2], 
-{8, 12}
-, nil, 
-{-17.64, -2.14, -2.56}
-, 5}
-, 
-{16, 2, nil, 0.008, 0.03, 3, nil, nil, nil, nil, nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{17, 1, common[10], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], 0.17, 3, common[11], common[14], 20, common[2], common[12], nil, 
-{4.88, 21.2, -4.1}
-, 5}
-, 
-{18, 1, common[10], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], 0.17, 3, common[11], common[14], 20, common[2], common[12], nil, 
-{14.5, 21, -2.8}
-, 5}
-, 
-{19, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{20, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{21, 2, nil, 0.008, 0.03, 3, nil, nil, nil, nil, nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{22, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{23, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{24, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{25, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{26, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{27, 2, nil, 0.008, 0.03, 3, nil, nil, nil, nil, nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
-, 
-{28, 2, common[9], 0.008, 0.03, 3, common[3], common[4], common[1], common[5], nil, nil, nil, common[13], 30, nil, nil, nil, nil, 5}
+  {
+    1,
+    1,
+    {
+      2.2,
+      4.7,
+      -9.3
+    },
+    0.008,
+    0.03,
+    3,
+    {
+      21.29,
+      -55.6,
+      0
+    },
+    {
+      9.2,
+      2.2,
+      -6.14
+    },
+    common[1],
+    {5, 25},
+    0.17,
+    3,
+    {
+      -2.7,
+      1,
+      -1.3
+    },
+    {-50, 0},
+    30,
+    common[2],
+    {5, 10.5},
+    nil,
+    nil,
+    5
+  },
+  {
+    2,
+    2,
+    nil,
+    0.008,
+    0.03,
+    3,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    3,
+    1,
+    {
+      -1.75,
+      3.6,
+      -11
+    },
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    0.17,
+    3,
+    {
+      -1.7,
+      1.8,
+      -2.6
+    },
+    common[14],
+    15,
+    common[6],
+    common[7],
+    nil,
+    nil,
+    5
+  },
+  {
+    4,
+    1,
+    {
+      0.59,
+      3.6,
+      -10.95
+    },
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    0.17,
+    3,
+    common[8],
+    common[14],
+    15,
+    common[6],
+    common[7],
+    nil,
+    nil,
+    5
+  },
+  {
+    5,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    6,
+    1,
+    {
+      -1.4,
+      4.16,
+      -12
+    },
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    0.17,
+    3,
+    {
+      -1,
+      2.3,
+      0
+    },
+    common[14],
+    18,
+    common[2],
+    {8, 13},
+    nil,
+    {
+      -12,
+      42,
+      -3.3
+    },
+    5
+  },
+  {
+    7,
+    2,
+    nil,
+    0.008,
+    0.03,
+    3,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    8,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    9,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    10,
+    2,
+    nil,
+    0.008,
+    0.03,
+    3,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    11,
+    2,
+    nil,
+    0.008,
+    0.03,
+    3,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    12,
+    1,
+    {
+      -2.79,
+      3.87,
+      -9.96
+    },
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    0.17,
+    3,
+    {
+      -1.0,
+      1.8,
+      -1.6
+    },
+    common[14],
+    15,
+    common[6],
+    common[7],
+    nil,
+    nil,
+    5
+  },
+  {
+    13,
+    1,
+    {
+      0.75,
+      3.87,
+      -11.1
+    },
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    0.17,
+    3,
+    common[8],
+    common[14],
+    15,
+    common[6],
+    common[7],
+    nil,
+    nil,
+    5
+  },
+  {
+    14,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    15,
+    1,
+    {
+      0.2,
+      4,
+      -11
+    },
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    0.17,
+    3,
+    {
+      0.4,
+      2.3,
+      0.04
+    },
+    common[14],
+    20,
+    common[2],
+    {8, 12},
+    nil,
+    {
+      -17.64,
+      -2.14,
+      -2.56
+    },
+    5
+  },
+  {
+    16,
+    2,
+    nil,
+    0.008,
+    0.03,
+    3,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    17,
+    1,
+    common[10],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    0.17,
+    3,
+    common[11],
+    common[14],
+    20,
+    common[2],
+    common[12],
+    nil,
+    {
+      4.88,
+      21.2,
+      -4.1
+    },
+    5
+  },
+  {
+    18,
+    1,
+    common[10],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    0.17,
+    3,
+    common[11],
+    common[14],
+    20,
+    common[2],
+    common[12],
+    nil,
+    {
+      14.5,
+      21,
+      -2.8
+    },
+    5
+  },
+  {
+    19,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    20,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    21,
+    2,
+    nil,
+    0.008,
+    0.03,
+    3,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    22,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    23,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    24,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    25,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    26,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    27,
+    2,
+    nil,
+    0.008,
+    0.03,
+    3,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  },
+  {
+    28,
+    2,
+    common[9],
+    0.008,
+    0.03,
+    3,
+    common[3],
+    common[4],
+    common[1],
+    common[5],
+    nil,
+    nil,
+    nil,
+    common[13],
+    30,
+    nil,
+    nil,
+    nil,
+    nil,
+    5
+  }
 }
 return config, "ID", key
-

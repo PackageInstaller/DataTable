@@ -1,50 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_legacy_animation_by_logic_layer_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterLegacyAnimationByLogicLayerInstruction", BaseInstruction)
 PlayCasterLegacyAnimationByLogicLayerInstruction = PlayCasterLegacyAnimationByLogicLayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterLegacyAnimationByLogicLayerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterLegacyAnimationByLogicLayerInstruction:Constructor(paramList)
   self._buffEffectType = tonumber(paramList.buffEffectType)
   self._noLayerAnimName = paramList.noLayerAnimName
   local animNameGroup = paramList.animNameByLayer
-  self._animNameByLayer = (string.split)(animNameGroup, "|")
+  self._animNameByLayer = string.split(animNameGroup, "|")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterLegacyAnimationByLogicLayerInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterLegacyAnimationByLogicLayerInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if not self._buffEffectType then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local utilData = world:GetService("UtilData")
   local realEntity = casterEntity:HasSuperEntity() and casterEntity:GetSuperEntity() or casterEntity
   local buffLayer = utilData:GetBuffLayer(realEntity, self._buffEffectType)
-  ;
-  (Log.info)((table.concat)({"PlayCasterLegacyAnimationByLogicLayer: entityID=", realEntity:GetID(), " buffEffectType=", self._buffEffectType, " layer=", buffLayer}))
-  local go = (casterEntity:View()):GetGameObject()
+  Log.info(table.concat({
+    "PlayCasterLegacyAnimationByLogicLayer: entityID=",
+    realEntity:GetID(),
+    " buffEffectType=",
+    self._buffEffectType,
+    " layer=",
+    buffLayer
+  }))
+  local go = casterEntity:View():GetGameObject()
   local anim = go:GetComponentInChildren(typeof(UnityEngine.Animation))
   if not anim or tostring(anim) == "null" then
-    (Log.fatal)("PlayCasterLegacyAnimationByLogicLayer: no UnityEngine.Animation on entityID=", realEntity:GetID())
-    return 
+    Log.fatal("PlayCasterLegacyAnimationByLogicLayer: no UnityEngine.Animation on entityID=", realEntity:GetID())
+    return
   end
   anim:Stop()
   if buffLayer == 0 then
     anim:Play(self._noLayerAnimName)
   else
-    local name = (self._animNameByLayer)[buffLayer]
+    local name = self._animNameByLayer[buffLayer]
     if not name then
-      (Log.exception)("PlayCasterLegacyAnimationByLogicLayer: unmatched buffLayer: ", tostring(buffLayer))
+      Log.exception("PlayCasterLegacyAnimationByLogicLayer: unmatched buffLayer: ", tostring(buffLayer))
     end
-    anim:Play((self._animNameByLayer)[buffLayer])
+    anim:Play(self._animNameByLayer[buffLayer])
   end
 end
-
-

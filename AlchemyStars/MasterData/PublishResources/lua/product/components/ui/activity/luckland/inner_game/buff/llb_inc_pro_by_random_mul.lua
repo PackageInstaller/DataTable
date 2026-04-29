@@ -1,42 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_inc_pro_by_random_mul.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicIncProByRandomMul", LLBuffLogicBase)
 LLBuffLogicIncProByRandomMul = LLBuffLogicIncProByRandomMul
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicIncProByRandomMul.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicIncProByRandomMul:Constructor(buffObj, logicParam)
   self._min = logicParam.min
   self._max = logicParam.max
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncProByRandomMul.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicIncProByRandomMul:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
-  local randVal = (math.random)(self._min, self._max) * 0.01
-  local targets = (self._buffObj):GetTargets()
-  for _,target in ipairs(targets) do
+  local randVal = math.random(self._min, self._max) * 0.01
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
     self:DoLogicSingle(target, randVal)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncProByRandomMul.DoLogicSingle = function(self, target, randVal)
-  -- function num : 0_2 , upvalues : _ENV
-  if target:GetEntityType() == LuckLandEntityType.Pet and target:HasDeleteFlag() then
-    return 
-  end
-  if target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
-    return 
+function LLBuffLogicIncProByRandomMul:DoLogicSingle(target, randVal)
+  if target:GetEntityType() == LuckLandEntityType.Pet then
+    if target:HasDeleteFlag() then
+      return
+    end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
+    return
   end
   target:SetFinalTempMulValue(randVal)
 end
-
-

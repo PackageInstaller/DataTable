@@ -1,42 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_robot_bomb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamRobotBomb", SkillDamageEffectParam)
 SkillEffectParamRobotBomb = SkillEffectParamRobotBomb
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamRobotBomb.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  self._robotBombParam = RobotBombParam:New((t.robot)[1])
+function SkillEffectParamRobotBomb:Constructor(t)
+  self._robotBombParam = RobotBombParam:New(t.robot[1])
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRobotBomb.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamRobotBomb:GetEffectType()
   return SkillEffectType.RobotBomb
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamRobotBomb.GetRobotBombParam = function(self)
-  -- function num : 0_2
+function SkillEffectParamRobotBomb:GetRobotBombParam()
   return self._robotBombParam
 end
 
 _class("RobotBombParam", Object)
 RobotBombParam = RobotBombParam
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-RobotBombParam.Constructor = function(self, info)
-  -- function num : 0_3
+function RobotBombParam:Constructor(info)
   self.scopeType = info.scopeType
   self.scopeParam = info.scopeParam
   self.recordCount = info.recordCount or 0
   self.trapID = info.trapID
 end
-
-

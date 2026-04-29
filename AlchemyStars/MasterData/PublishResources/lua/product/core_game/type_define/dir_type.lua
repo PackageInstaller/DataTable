@@ -1,8 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/dir_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local DirectionType = {None = 0, Up = 1, Right = 2, Down = 3, Left = 4, LeftUp = 5, LeftDown = 6, RightUp = 7, RightDown = 8, END = 9999}
+local DirectionType = {
+  None = 0,
+  Up = 1,
+  Right = 2,
+  Down = 3,
+  Left = 4,
+  LeftUp = 5,
+  LeftDown = 6,
+  RightUp = 7,
+  RightDown = 8,
+  END = 9999
+}
 _enum("DirectionType", DirectionType)
-

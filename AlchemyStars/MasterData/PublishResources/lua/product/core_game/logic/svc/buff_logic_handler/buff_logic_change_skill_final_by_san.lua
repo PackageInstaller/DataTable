@@ -1,66 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_skill_final_by_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalBySan", BuffLogicBase)
 BuffLogicChangeSkillFinalBySan = BuffLogicChangeSkillFinalBySan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalBySan.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillFinalBySan:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._baseSan = logicParam.baseSan or 100
   self._minValue = logicParam.minValue
   self._maxValue = logicParam.maxValue
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = logicParam.effectList
+  self._buffInstance._effectList = logicParam.effectList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalBySan.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local featureLogicSvc = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeSkillFinalBySan:DoLogic()
+  local featureLogicSvc = self._world:GetService("FeatureLogic")
   if not featureLogicSvc then
-    return 
+    return
   end
   if not featureLogicSvc:HasFeatureType(FeatureType.Sanity) then
-    return 
+    return
   end
   local curSanValue = featureLogicSvc:GetSanValue()
-  local entity = (self._buffInstance):Entity()
+  local entity = self._buffInstance:Entity()
   local changeSan = curSanValue - self._baseSan
   local newChangeValue = changeSan * self._mulValue
   if self._minValue then
-    newChangeValue = (math.max)(newChangeValue, self._minValue)
+    newChangeValue = math.max(newChangeValue, self._minValue)
   end
   if self._maxValue then
-    newChangeValue = (math.min)(newChangeValue, self._maxValue)
+    newChangeValue = math.min(newChangeValue, self._maxValue)
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(entity, self:GetBuffSeq(), paramType, newChangeValue)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(entity, self:GetBuffSeq(), paramType, newChangeValue)
   end
 end
 
 _class("BuffLogicRemoveSkillFinalBySan", BuffLogicBase)
 BuffLogicRemoveSkillFinalBySan = BuffLogicRemoveSkillFinalBySan
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillFinalBySan.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillFinalBySan:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillFinalBySan.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveSkillFinalBySan:DoLogic()
+  local entity = self._buffInstance:Entity()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

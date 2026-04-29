@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_phase_summon_everything_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhase_SummonEverything", PlaySkillPhaseBase)
 PlaySkillPhase_SummonEverything = PlaySkillPhase_SummonEverything
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhase_SummonEverything.Constructor = function(self)
-  -- function num : 0_0
+function PlaySkillPhase_SummonEverything:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhase_SummonEverything.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillPhase_SummonEverything:PlayFlight(TT, casterEntity, phaseParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultSummonArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
-  local sPlaySkillInstruction = (self._world):GetService("PlaySkillInstruction")
-  if resultSummonArray == nil then
-    (Log.debug)("[Phase_Summon] 召唤失败：没有召唤结果数值（可能不需要）")
-    return 
+  local sPlaySkillInstruction = self._world:GetService("PlaySkillInstruction")
+  if nil == resultSummonArray then
+    Log.debug("[Phase_Summon] 召唤失败：没有召唤结果数值（可能不需要）")
+    return
   end
   local isFxNoRotation = phaseParam:IsFxNoRotation()
   local nSkillID = skillEffectResultContainer:GetSkillID()
@@ -30,20 +20,17 @@ PlaySkillPhase_SummonEverything.PlayFlight = function(self, TT, casterEntity, ph
     local resultSummon = resultSummonArray[i]
     local gridPos = resultSummon:GetGridPos()
     local bFromGrid = 0
-    if i > 1 then
+    if 1 < i then
       self:_DelayTime(TT, phaseParam:GetGridIntervalTime())
     end
     local posCenter = resultSummon:GetPosCenter()
     self:_PlayEffect(TT, posCenter, gridPos, phaseParam:GetGridEffectID(), phaseParam:GetGridEffectDelayTime(), isFxNoRotation)
-    local nTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(sPlaySkillInstruction.ShowSummonAction, sPlaySkillInstruction, self._world, resultSummon)
-    ;
-    (table.insert)(listWaitTask, nTaskID)
+    local nTaskID = GameGlobal.TaskManager():CoreGameStartTask(sPlaySkillInstruction.ShowSummonAction, sPlaySkillInstruction, self._world, resultSummon)
+    table.insert(listWaitTask, nTaskID)
   end
-  local nTimeNow = (GameGlobal:GetInstance()):GetCurrentTime()
+  local nTimeNow = GameGlobal:GetInstance():GetCurrentTime()
   self:_WaitSonTask(listWaitTask)
   local nShowTimeDelay = phaseParam:GetShowTimeDelay() or 0
-  nShowTimeDelay = nShowTimeDelay - ((GameGlobal:GetInstance()):GetCurrentTime() - nTimeNow)
+  nShowTimeDelay = nShowTimeDelay - (GameGlobal:GetInstance():GetCurrentTime() - nTimeNow)
   self:_DelayTime(TT, nShowTimeDelay)
 end
-
-

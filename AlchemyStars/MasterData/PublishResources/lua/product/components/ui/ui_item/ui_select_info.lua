@@ -1,42 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_item/ui_select_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISelectInfo", UICustomWidget)
 UISelectInfo = UISelectInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISelectInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISelectInfo:OnShow()
   self._lockName = "OpenSelectInfoLock"
   self._pos = self:GetGameObject("pos")
-  local passEvent = (self._pos):GetComponent("PassEventComponent")
+  local passEvent = self._pos:GetComponent("PassEventComponent")
   passEvent:SetClickCallback(function()
-    -- function num : 0_0_0 , upvalues : self
     self:closeOnClick()
-  end
-)
+  end)
   self._selectInfo = self:GetUIComponent("RectTransform", "select_info")
   self:GetOffset()
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "select_info")
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).anchoredPosition = Vector2(10000, 0)
-  ;
-  (self._pos):SetActive(false)
+  self._selectInfo.anchoredPosition = Vector2(10000, 0)
+  self._pos:SetActive(false)
   self._g1 = self:GetGameObject("g1")
   self._g2 = self:GetGameObject("g2")
   self._g3 = self:GetGameObject("g3")
   self._g3RectTrans = self:GetUIComponent("RectTransform", "g3")
   self._g3CustomObj = self:GetUIComponent("UISelectObjectPath", "g3")
-  ;
-  (self._g1):SetActive(false)
-  ;
-  (self._g2):SetActive(false)
-  ;
-  (self._g3):SetActive(false)
+  self._g1:SetActive(false)
+  self._g2:SetActive(false)
+  self._g3:SetActive(false)
   self._itemInfoName = self:GetUIComponent("UILocalizationText", "txt_item_name")
   self._itemInfoName2 = self:GetUIComponent("UILocalizationText", "txt_item_name2")
   self._itemInfoDesc = self:GetUIComponent("UILocalizedTMP", "txt_item_simple_desc")
@@ -48,32 +32,25 @@ UISelectInfo.OnShow = function(self)
   self._isDispose = false
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
+  self.uiItem:SetForm(UIItemForm.Base)
   local sop2 = self:GetUIComponent("UISelectObjectPath", "uiitem2")
   self.uiItem2 = sop2:SpawnObject("UIItem")
-  ;
-  (self.uiItem2):SetForm(UIItemForm.Base)
+  self.uiItem2:SetForm(UIItemForm.Base)
   self._g4 = self:GetGameObject("g4")
-  ;
-  (self._g4):SetActive(false)
+  self._g4:SetActive(false)
   self._itemInfoName_new = self:GetUIComponent("UILocalizationText", "txt_item_name_new")
   self._itemInfoDesc_new = self:GetUIComponent("UILocalizationText", "txt_item_simple_desc_new")
   self._itemInfoCount_new = self:GetUIComponent("UILocalizationText", "txt_item_own_count_new")
   local sop3 = self:GetUIComponent("UISelectObjectPath", "uiitem_new")
   self.uiItem3 = sop3:SpawnObject("UIItem")
-  ;
-  (self.uiItem3):SetForm(UIItemForm.Base)
+  self.uiItem3:SetForm(UIItemForm.Base)
   self:SetType(1)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.SetType = function(self, type)
-  -- function num : 0_1
+function UISelectInfo:SetType(type)
   self._type = type
   if self._showGo then
-    (self._showGo):SetActive(false)
+    self._showGo:SetActive(false)
   end
   if self._type == 1 then
     self._showGo = self._g1
@@ -81,229 +58,158 @@ UISelectInfo.SetType = function(self, type)
     self._showCount = self._itemInfoCount
     self._showItem = self.uiItem
     self._showDes = self._itemInfoDesc
-    self._descRectTf = ((self._itemInfoDesc).gameObject):GetComponent("RectTransform")
-  else
-    if self._type == 2 then
-      self._showGo = self._g2
-      self._showName = self._itemInfoName2
-      self._showCount = self._itemInfoCount2
-      self._showItem = self.uiItem2
-      self._showDes = self._itemInfoDesc2
-      self._descRectTf = ((self._itemInfoDesc2).gameObject):GetComponent("RectTransform")
-    else
-      if self._type == 3 then
-        self._showGo = self._g3
-      end
-    end
+    self._descRectTf = self._itemInfoDesc.gameObject:GetComponent("RectTransform")
+  elseif self._type == 2 then
+    self._showGo = self._g2
+    self._showName = self._itemInfoName2
+    self._showCount = self._itemInfoCount2
+    self._showItem = self.uiItem2
+    self._showDes = self._itemInfoDesc2
+    self._descRectTf = self._itemInfoDesc2.gameObject:GetComponent("RectTransform")
+  elseif self._type == 3 then
+    self._showGo = self._g3
   end
-  ;
-  (self._showGo):SetActive(true)
+  self._showGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.GetG3CustomPool = function(self)
-  -- function num : 0_2
+function UISelectInfo:GetG3CustomPool()
   return self._g3CustomObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.GetOffset = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._offsetX = ((self._selectInfo).rect).width * 0.5
-  self._offsetY = ((self._selectInfo).rect).height * 0.5 - 50
+function UISelectInfo:GetOffset()
+  self._offsetX = self._selectInfo.rect.width * 0.5
+  self._offsetY = self._selectInfo.rect.height * 0.5 - 50
   self._showAnchorPositions = {}
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._showAnchorPositions)[1] = Vector2(-50 - self._offsetX, -50 - self._offsetY)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._showAnchorPositions)[2] = Vector2(50 + self._offsetX, -50 - self._offsetY)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._showAnchorPositions)[3] = Vector2(50 + self._offsetX, 50 + self._offsetY)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._showAnchorPositions)[4] = Vector2(-50 - self._offsetX, 50 + self._offsetY)
+  self._showAnchorPositions[1] = Vector2(-50 - self._offsetX, -50 - self._offsetY)
+  self._showAnchorPositions[2] = Vector2(50 + self._offsetX, -50 - self._offsetY)
+  self._showAnchorPositions[3] = Vector2(50 + self._offsetX, 50 + self._offsetY)
+  self._showAnchorPositions[4] = Vector2(-50 - self._offsetX, 50 + self._offsetY)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.SetData = function(self, item_id, pos, des)
-  -- function num : 0_4 , upvalues : _ENV
+function UISelectInfo:SetData(item_id, pos, des)
   if not self._canvasGroup then
-    return 
+    return
   end
   if self._isDispose then
-    return 
+    return
   end
-  local itemConfig = (Cfg.cfg_item)[item_id]
+  local itemConfig = Cfg.cfg_item[item_id]
   if not itemConfig then
-    return 
+    return
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   if not itemModule then
-    return 
+    return
   end
-  ;
-  (self._pos):SetActive(true)
-  ;
-  (self._showName):SetText((StringTable.Get)(itemConfig.Name))
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._pos:SetActive(true)
+  self._showName:SetText(StringTable.Get(itemConfig.Name))
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local c = roleModule:GetAssetCount(item_id)
-  ;
-  (self._showCount):SetText((StringTable.Get)("str_item_public_owned") .. self:_FormatItemCount(c))
+  self._showCount:SetText(StringTable.Get("str_item_public_owned") .. self:_FormatItemCount(c))
   if des then
-    (self._showDes):SetText(des)
+    self._showDes:SetText(des)
   else
-    ;
-    (self._showDes):SetText((StringTable.Get)(itemConfig.Intro))
+    self._showDes:SetText(StringTable.Get(itemConfig.Intro))
   end
   local icon = itemConfig.Icon
   local quality = itemConfig.Color
   local itemId = itemConfig.ID
-  ;
-  (self._showItem):SetData({icon = icon, quality = quality, itemId = itemId})
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).localScale = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).position = pos
+  self._showItem:SetData({
+    icon = icon,
+    quality = quality,
+    itemId = itemId
+  })
+  self._selectInfo.localScale = Vector3(1, 1, 1)
+  self._canvasGroup.alpha = 0
+  self._selectInfo.position = pos
   local index = 0
-  if ((self._selectInfo).anchoredPosition).x + 50 > 0 then
-    if ((self._selectInfo).anchoredPosition).y > 0 then
+  if 0 < self._selectInfo.anchoredPosition.x + 50 then
+    if 0 < self._selectInfo.anchoredPosition.y then
       index = 1
     else
       index = 4
     end
+  elseif 0 < self._selectInfo.anchoredPosition.y then
+    index = 2
   else
-    if ((self._selectInfo).anchoredPosition).y > 0 then
-      index = 2
-    else
-      index = 3
-    end
+    index = 3
   end
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).anchoredPosition = Vector2(((self._selectInfo).anchoredPosition).x + ((self._showAnchorPositions)[index]).x, ((self._selectInfo).anchoredPosition).y + ((self._showAnchorPositions)[index]).y)
+  self._selectInfo.anchoredPosition = Vector2(self._selectInfo.anchoredPosition.x + self._showAnchorPositions[index].x, self._selectInfo.anchoredPosition.y + self._showAnchorPositions[index].y)
   self:Lock(self._lockName)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayAnimation, self)
+  GameGlobal.TaskManager():StartTask(self.PlayAnimation, self)
   if self._descRectTf ~= nil then
-    self.eventTime = ((GameGlobal.Timer)()):AddEvent(100, function()
-    -- function num : 0_4_0 , upvalues : self, _ENV, itemConfig, icon, quality, itemId, c, des
-    if ((self._descRectTf).sizeDelta).y > 700 then
-      (self._g1):SetActive(false)
-      ;
-      (self._g2):SetActive(false)
-      ;
-      (self._g4):SetActive(true)
-      ;
-      (self._itemInfoName_new):SetText((StringTable.Get)(itemConfig.Name))
-      ;
-      (self.uiItem3):SetData({icon = icon, quality = quality, itemId = itemId})
-      ;
-      (self._itemInfoCount_new):SetText((StringTable.Get)("str_item_public_owned") .. self:_FormatItemCount(c))
-      if des then
-        (self._itemInfoDesc_new):SetText(des)
-      else
-        ;
-        (self._itemInfoDesc_new):SetText((StringTable.Get)(itemConfig.Intro))
+    self.eventTime = GameGlobal.Timer():AddEvent(100, function()
+      if self._descRectTf.sizeDelta.y > 700 then
+        self._g1:SetActive(false)
+        self._g2:SetActive(false)
+        self._g4:SetActive(true)
+        self._itemInfoName_new:SetText(StringTable.Get(itemConfig.Name))
+        self.uiItem3:SetData({
+          icon = icon,
+          quality = quality,
+          itemId = itemId
+        })
+        self._itemInfoCount_new:SetText(StringTable.Get("str_item_public_owned") .. self:_FormatItemCount(c))
+        if des then
+          self._itemInfoDesc_new:SetText(des)
+        else
+          self._itemInfoDesc_new:SetText(StringTable.Get(itemConfig.Intro))
+        end
+        self.eventTime = nil
       end
-      self.eventTime = nil
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.OnlyShow = function(self, pos)
-  -- function num : 0_5 , upvalues : _ENV
+function UISelectInfo:OnlyShow(pos)
   if not self._canvasGroup then
-    return 
+    return
   end
   if self._isDispose then
-    return 
+    return
   end
-  ;
-  (self._pos):SetActive(true)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).localScale = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).position = pos
+  self._pos:SetActive(true)
+  self._selectInfo.localScale = Vector3(1, 1, 1)
+  self._canvasGroup.alpha = 0
+  self._selectInfo.position = pos
   local index = 0
-  if ((self._selectInfo).anchoredPosition).x > 0 then
-    if ((self._selectInfo).anchoredPosition).y > 0 then
+  if 0 < self._selectInfo.anchoredPosition.x then
+    if 0 < self._selectInfo.anchoredPosition.y then
       index = 1
     else
       index = 4
     end
+  elseif 0 < self._selectInfo.anchoredPosition.y then
+    index = 2
   else
-    if ((self._selectInfo).anchoredPosition).y > 0 then
-      index = 2
-    else
-      index = 3
-    end
+    index = 3
   end
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).anchoredPosition = Vector2(((self._selectInfo).anchoredPosition).x + ((self._showAnchorPositions)[index]).x, ((self._selectInfo).anchoredPosition).y + ((self._showAnchorPositions)[index]).y)
+  self._selectInfo.anchoredPosition = Vector2(self._selectInfo.anchoredPosition.x + self._showAnchorPositions[index].x, self._selectInfo.anchoredPosition.y + self._showAnchorPositions[index].y)
   self:Lock(self._lockName)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayAnimation, self)
+  GameGlobal.TaskManager():StartTask(self.PlayAnimation, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.PlayAnimation = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UISelectInfo:PlayAnimation(TT)
   if not self._canvasGroup then
-    return 
+    return
   end
   if self._isDispose then
-    return 
+    return
   end
   self._enter = true
   local a = 0
   while a < 1 do
     a = a + 0.1
-    if a > 1 then
+    if 1 < a then
       a = 1
     end
     if not self._canvasGroup then
-      return 
+      return
     end
     if self._isDispose then
-      return 
+      return
     end
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).alpha = a
+    self._canvasGroup.alpha = a
     YIELD(TT)
   end
   YIELD(TT)
@@ -311,342 +217,241 @@ UISelectInfo.PlayAnimation = function(self, TT)
   self:UnLock(self._lockName)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.closeOnClick = function(self)
-  -- function num : 0_7
-  (self._pos):SetActive(false)
+function UISelectInfo:closeOnClick()
+  self._pos:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.OnHide = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISelectInfo:OnHide()
   self._isDispose = true
   if self.eventTime then
-    ((GameGlobal.Timer)()):CancelEvent(self.eventTime)
+    GameGlobal.Timer():CancelEvent(self.eventTime)
     self.eventTime = nil
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.OncloseOnClick = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function UISelectInfo:OncloseOnClick(TT)
   if not self._canvasGroup then
-    return 
+    return
   end
   if self._enter == true then
-    return 
+    return
   end
   if self._exit == true then
-    return 
+    return
   end
   self._exit = true
   local a = 1
   if self._tweenerClose then
-    (self._tweenerClose):Kill()
+    self._tweenerClose:Kill()
   end
-  self._tweenerClose = (self._selectInfo):DOScale(Vector3(3, 3, 3), 0.3)
-  ;
-  (self._tweenerClose):OnComplete(function()
-    -- function num : 0_9_0 , upvalues : self, a, _ENV
+  self._tweenerClose = self._selectInfo:DOScale(Vector3(3, 3, 3), 0.3)
+  self._tweenerClose:OnComplete(function()
     if not self._canvasGroup then
-      return 
+      return
     end
     if self._isDispose then
-      return 
+      return
     end
     a = 0
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).alpha = 0
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._selectInfo).anchoredPosition = Vector2(10000, 0)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._selectInfo).localScale = Vector3(1, 1, 1)
-    ;
-    (self._pos):SetActive(false)
+    self._canvasGroup.alpha = 0
+    self._selectInfo.anchoredPosition = Vector2(10000, 0)
+    self._selectInfo.localScale = Vector3(1, 1, 1)
+    self._pos:SetActive(false)
     if self._exit == true then
       self._exit = false
     end
-    return 
-  end
-)
-  while a > 0 do
+    return
+  end)
+  while 0 < a do
     if self._isDispose then
-      return 
+      return
     end
     a = a - 0.05
     if a < 0 then
       a = 0
     end
     if not self._canvasGroup then
-      return 
+      return
     end
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._canvasGroup).alpha = a
+    self._canvasGroup.alpha = a
     YIELD(TT)
   end
   if self._isDispose then
-    return 
+    return
   end
   YIELD(TT)
   self._exit = false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo._FormatItemCount = function(self, itemCount)
-  -- function num : 0_10 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UISelectInfo:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.SetSeasonMazeData = function(self, data, countValue, pos)
-  -- function num : 0_11 , upvalues : _ENV
+function UISelectInfo:SetSeasonMazeData(data, countValue, pos)
   if not data then
-    return 
+    return
   end
   if data.type == SeasonMazeEffectType.SMET_Pro then
-    local name, icon, quality, count, describe, position, itemId = nil, nil, nil, nil, nil, nil, nil
-    local cfg = (Cfg.cfg_season_maze_attribute)[data.id]
+    local name, icon, quality, count, describe, position, itemId
+    local cfg = Cfg.cfg_season_maze_attribute[data.id]
     if cfg then
       name = cfg.Name
       icon = cfg.ItemIcon
       quality = cfg.Quality
       count = countValue
-      describe = (StringTable.Get)(cfg.Desc)
+      describe = StringTable.Get(cfg.Desc)
       position = pos
       self:_SetData(name, icon, quality, count, describe, position, itemId)
     end
-  else
-    do
-      if data.type == SeasonMazeEffectType.SMET_Bead then
-        local name, icon, quality, count, describe, position, itemId = nil, nil, nil, nil, nil, nil, nil
-        local cfg = (Cfg.cfg_component_season_maze_autobead)[data.id]
-        if cfg then
-          name = cfg.Name
-          icon = cfg.ItemIcon
-          quality = cfg.Quality
-          count = countValue
-          describe = (StringTable.Get)(cfg.Desc)
-          position = pos
-          self:_SetData(name, icon, quality, count, describe, position, itemId)
-        end
-      else
-        do
-          if data.type == SeasonMazeEffectType.SMET_Relic then
-            local name, icon, quality, count, describe, position, itemId = nil, nil, nil, nil, nil, nil, nil
-            local cfg = (Cfg.cfg_item)[data.id]
-            if cfg then
-              name = cfg.Name
-              icon = cfg.Icon
-              quality = cfg.Color
-              count = countValue
-              describe = (StringTable.Get)(cfg.Intro)
-              position = pos
-              itemId = data.id
-              self:_SetData(name, icon, quality, count, describe, position, itemId)
-            end
-          else
-            do
-              if data.type == SeasonMazeEffectType.SMET_Bead_LV then
-                local name, icon, quality, count, describe, position, itemId = nil, nil, nil, nil, nil, nil, nil
-                name = "str_season_maze_unknow_tips_name"
-                local level = (math.max)(0, data.id - 1)
-                icon = "cn14_sjmj_xdjmk_di12" .. "_" .. level
-                quality = 1
-                count = 0
-                describe = (StringTable.Get)("str_season_maze_unknow_tips_desc")
-                position = pos
-                local beadType = data.beadType
-                if beadType and level > 0 then
-                  name = "str_season_maze_unknow_tips_name" .. "_" .. beadType
-                  local suffix = beadType * 3 + level + 3
-                  icon = "cn14_sjmj_xdjmk_di12" .. "_" .. suffix
-                  describe = (StringTable.Get)("str_season_maze_unknow_tips_desc" .. "_" .. beadType)
-                end
-                do
-                  do
-                    self:_SetData(name, icon, quality, count, describe, position, itemId)
-                    self:SetData(data.id, pos)
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+  elseif data.type == SeasonMazeEffectType.SMET_Bead then
+    local name, icon, quality, count, describe, position, itemId
+    local cfg = Cfg.cfg_component_season_maze_autobead[data.id]
+    if cfg then
+      name = cfg.Name
+      icon = cfg.ItemIcon
+      quality = cfg.Quality
+      count = countValue
+      describe = StringTable.Get(cfg.Desc)
+      position = pos
+      self:_SetData(name, icon, quality, count, describe, position, itemId)
     end
+  elseif data.type == SeasonMazeEffectType.SMET_Relic then
+    local name, icon, quality, count, describe, position, itemId
+    local cfg = Cfg.cfg_item[data.id]
+    if cfg then
+      name = cfg.Name
+      icon = cfg.Icon
+      quality = cfg.Color
+      count = countValue
+      describe = StringTable.Get(cfg.Intro)
+      position = pos
+      itemId = data.id
+      self:_SetData(name, icon, quality, count, describe, position, itemId)
+    end
+  elseif data.type == SeasonMazeEffectType.SMET_Bead_LV then
+    local name, icon, quality, count, describe, position, itemId
+    name = "str_season_maze_unknow_tips_name"
+    local level = math.max(0, data.id - 1)
+    icon = "cn14_sjmj_xdjmk_di12" .. "_" .. level
+    quality = 1
+    count = 0
+    describe = StringTable.Get("str_season_maze_unknow_tips_desc")
+    position = pos
+    local beadType = data.beadType
+    if beadType and 0 < level then
+      name = "str_season_maze_unknow_tips_name" .. "_" .. beadType
+      local suffix = beadType * 3 + level + 3
+      icon = "cn14_sjmj_xdjmk_di12" .. "_" .. suffix
+      describe = StringTable.Get("str_season_maze_unknow_tips_desc" .. "_" .. beadType)
+    end
+    self:_SetData(name, icon, quality, count, describe, position, itemId)
+  else
+    self:SetData(data.id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo._SetData = function(self, name, icon, quality, count, describe, position, itemId)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._pos):SetActive(true)
-  ;
-  (self._showName):SetText((StringTable.Get)(name))
-  ;
-  (self._showCount):SetText((StringTable.Get)("str_item_public_owned") .. self:_FormatItemCount(count))
-  ;
-  (self._showDes):SetText(describe)
+function UISelectInfo:_SetData(name, icon, quality, count, describe, position, itemId)
+  self._pos:SetActive(true)
+  self._showName:SetText(StringTable.Get(name))
+  self._showCount:SetText(StringTable.Get("str_item_public_owned") .. self:_FormatItemCount(count))
+  self._showDes:SetText(describe)
   if self._isHomelandItem then
     local item = self._showItem
-    item:Flush((NewRoleAsset(itemId, "")), nil, true)
+    item:Flush(NewRoleAsset(itemId, ""), nil, true)
   else
-    do
-      ;
-      (self._showItem):SetData({icon = icon, quality = quality, itemId = itemId})
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._selectInfo).localScale = Vector3(1, 1, 1)
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._canvasGroup).alpha = 0
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._selectInfo).position = position
-      local index = 0
-      if ((self._selectInfo).anchoredPosition).x > 0 then
-        if ((self._selectInfo).anchoredPosition).y > 0 then
-          index = 1
-        else
-          index = 4
-        end
-      else
-        if ((self._selectInfo).anchoredPosition).y > 0 then
-          index = 2
-        else
-          index = 3
-        end
-      end
-      -- DECOMPILER ERROR at PC97: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._selectInfo).anchoredPosition = Vector2(((self._selectInfo).anchoredPosition).x + ((self._showAnchorPositions)[index]).x, ((self._selectInfo).anchoredPosition).y + ((self._showAnchorPositions)[index]).y)
-      self:Lock(self._lockName)
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self.PlayAnimation, self)
-      if self._descRectTf ~= nil then
-        self.eventTime = ((GameGlobal.Timer)()):AddEvent(100, function()
-    -- function num : 0_12_0 , upvalues : self, _ENV, name, icon, quality, itemId, count, describe
-    if ((self._descRectTf).sizeDelta).y > 700 then
-      (self._g1):SetActive(false)
-      ;
-      (self._g2):SetActive(false)
-      ;
-      (self._g4):SetActive(true)
-      ;
-      (self._itemInfoName_new):SetText((StringTable.Get)(name))
-      ;
-      (self.uiItem3):SetData({icon = icon, quality = quality, itemId = itemId})
-      ;
-      (self._itemInfoCount_new):SetText((StringTable.Get)("str_item_public_owned") .. self:_FormatItemCount(count))
-      ;
-      (self._itemInfoDesc_new):SetText(describe)
-      self.eventTime = nil
-    end
+    self._showItem:SetData({
+      icon = icon,
+      quality = quality,
+      itemId = itemId
+    })
   end
-)
-      end
+  self._selectInfo.localScale = Vector3(1, 1, 1)
+  self._canvasGroup.alpha = 0
+  self._selectInfo.position = position
+  local index = 0
+  if 0 < self._selectInfo.anchoredPosition.x then
+    if 0 < self._selectInfo.anchoredPosition.y then
+      index = 1
+    else
+      index = 4
     end
+  elseif 0 < self._selectInfo.anchoredPosition.y then
+    index = 2
+  else
+    index = 3
+  end
+  self._selectInfo.anchoredPosition = Vector2(self._selectInfo.anchoredPosition.x + self._showAnchorPositions[index].x, self._selectInfo.anchoredPosition.y + self._showAnchorPositions[index].y)
+  self:Lock(self._lockName)
+  GameGlobal.TaskManager():StartTask(self.PlayAnimation, self)
+  if self._descRectTf ~= nil then
+    self.eventTime = GameGlobal.Timer():AddEvent(100, function()
+      if self._descRectTf.sizeDelta.y > 700 then
+        self._g1:SetActive(false)
+        self._g2:SetActive(false)
+        self._g4:SetActive(true)
+        self._itemInfoName_new:SetText(StringTable.Get(name))
+        self.uiItem3:SetData({
+          icon = icon,
+          quality = quality,
+          itemId = itemId
+        })
+        self._itemInfoCount_new:SetText(StringTable.Get("str_item_public_owned") .. self:_FormatItemCount(count))
+        self._itemInfoDesc_new:SetText(describe)
+        self.eventTime = nil
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.CreateCustom = function(self, prefabName, prefabClassName, selectInfoSize)
-  -- function num : 0_13
-  (self._showGo):SetActive(false)
+function UISelectInfo:CreateCustom(prefabName, prefabClassName, selectInfoSize)
+  self._showGo:SetActive(false)
   local pool = self:GetUIComponent("UISelectObjectPath", "custom")
-  ;
-  (pool.dynamicInfoOfEngine):SetObjectName(prefabName)
+  pool.dynamicInfoOfEngine:SetObjectName(prefabName)
   local widget = pool:SpawnObject(prefabClassName)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R6 in 'UnsetPending'
-
   if selectInfoSize then
-    (self._selectInfo).sizeDelta = selectInfoSize
+    self._selectInfo.sizeDelta = selectInfoSize
     self:GetOffset()
   end
   return widget
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISelectInfo.SetCustomPos = function(self, pos, selectInfoSize)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
+function UISelectInfo:SetCustomPos(pos, selectInfoSize)
   if selectInfoSize then
-    (self._selectInfo).sizeDelta = selectInfoSize
+    self._selectInfo.sizeDelta = selectInfoSize
     self:GetOffset()
   end
-  ;
-  (self._pos):SetActive(true)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).localScale = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).position = pos
+  self._pos:SetActive(true)
+  self._selectInfo.localScale = Vector3(1, 1, 1)
+  self._selectInfo.position = pos
   local index = 0
-  if ((self._selectInfo).anchoredPosition).x > 0 then
-    if ((self._selectInfo).anchoredPosition).y > 0 then
+  if 0 < self._selectInfo.anchoredPosition.x then
+    if 0 < self._selectInfo.anchoredPosition.y then
       index = 1
     else
       index = 4
     end
+  elseif 0 < self._selectInfo.anchoredPosition.y then
+    index = 2
   else
-    if ((self._selectInfo).anchoredPosition).y > 0 then
-      index = 2
-    else
-      index = 3
-    end
+    index = 3
   end
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._selectInfo).anchoredPosition = Vector2(((self._selectInfo).anchoredPosition).x + ((self._showAnchorPositions)[index]).x, ((self._selectInfo).anchoredPosition).y + ((self._showAnchorPositions)[index]).y)
-  local size = (self._selectInfo).sizeDelta
+  self._selectInfo.anchoredPosition = Vector2(self._selectInfo.anchoredPosition.x + self._showAnchorPositions[index].x, self._selectInfo.anchoredPosition.y + self._showAnchorPositions[index].y)
+  local size = self._selectInfo.sizeDelta
   local halfH = 0.5 * size.y
   local halfSceen = 500
-  local pos = (self._selectInfo).anchoredPosition
+  local pos = self._selectInfo.anchoredPosition
   local d = pos.y + halfH - halfSceen
-  local checkedY = nil
-  if d > -20 then
-    pos.y = pos.y - (math.max)(d, 50)
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._selectInfo).anchoredPosition = pos
+  local checkedY
+  if -20 < d then
+    pos.y = pos.y - math.max(d, 50)
+    self._selectInfo.anchoredPosition = pos
     checkedY = true
   end
   if not checkedY then
     d = pos.y - halfH + halfSceen
     if d < 50 then
-      pos.y = pos.y - (math.min)(d, -50)
-      -- DECOMPILER ERROR at PC100: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._selectInfo).anchoredPosition = pos
+      pos.y = pos.y - math.min(d, -50)
+      self._selectInfo.anchoredPosition = pos
     end
   end
 end
-
-

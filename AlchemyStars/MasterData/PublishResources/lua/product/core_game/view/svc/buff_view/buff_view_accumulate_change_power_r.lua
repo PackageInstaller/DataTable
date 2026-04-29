@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_accumulate_change_power_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAccumulateChangePower", BuffViewBase)
 BuffViewAccumulateChangePower = BuffViewAccumulateChangePower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAccumulateChangePower.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAccumulateChangePower:PlayView(TT)
   local result = self:GetBuffResult()
   local curAccumulateNum = result:GetAccChain()
   local curPower = result:GetPower()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), curAccumulateNum)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetPowerChange, ((self._entity):PetPstID()):GetPstID(), curPower, true)
-  local entityID = (self._buffResult):GetPetEntityID()
-  local requireNTPowerReady = (self._buffResult):IsNTPowerReadyRequired()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), curAccumulateNum)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetPowerChange, self._entity:PetPstID():GetPstID(), curPower, true)
+  local entityID = self._buffResult:GetPetEntityID()
+  local requireNTPowerReady = self._buffResult:IsNTPowerReadyRequired()
   if requireNTPowerReady then
-    local notify = NTPowerReady:New((self._world):GetEntityByID(entityID))
-    ;
-    ((self._world):GetService("PlayBuff")):PlayBuffView(TT, notify)
+    local notify = NTPowerReady:New(self._world:GetEntityByID(entityID))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, notify)
   end
 end
-
-

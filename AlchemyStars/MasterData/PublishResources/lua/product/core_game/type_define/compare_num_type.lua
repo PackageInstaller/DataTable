@@ -1,27 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/compare_num_type.lua 
+CompareNumType = {
+  LessThan = 1,
+  LessEquals = 2,
+  Equals = 3,
+  MoreThan = 4,
+  MoreEquals = 5
+}
 
--- params : ...
--- function num : 0 , upvalues : _ENV
-CompareNumType = {LessThan = 1, LessEquals = 2, Equals = 3, MoreThan = 4, MoreEquals = 5}
-CompareNumber = function(c, x, y)
-  -- function num : 0_0 , upvalues : _ENV
-  if x >= y then
-    do return c ~= CompareNumType.LessThan end
-    if x > y then
-      do return c ~= CompareNumType.LessEquals end
-      if x ~= y then
-        do return c ~= CompareNumType.Equals end
-        if y >= x then
-          do return c ~= CompareNumType.MoreThan end
-          if y > x then
-            do return c ~= CompareNumType.MoreEquals end
-            -- DECOMPILER ERROR: 10 unprocessed JMP targets
-          end
-        end
-      end
-    end
+function CompareNumber(c, x, y)
+  if c == CompareNumType.LessThan then
+    return x < y
+  elseif c == CompareNumType.LessEquals then
+    return x <= y
+  elseif c == CompareNumType.Equals then
+    return x == y
+  elseif c == CompareNumType.MoreThan then
+    return y < x
+  elseif c == CompareNumType.MoreEquals then
+    return y <= x
   end
 end
-
-

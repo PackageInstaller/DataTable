@@ -1,88 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn9/SouthSea/ui_activity_cn9_level_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local CN9SouthSeaRoadType = {Normal = 1, Special = 2}
 _enum("CN9SouthSeaRoadType", CN9SouthSeaRoadType)
 _class("UIACtivityCN9LevelAwardItem", UICustomWidget)
 UIACtivityCN9LevelAwardItem = UIACtivityCN9LevelAwardItem
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIACtivityCN9LevelAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIACtivityCN9LevelAwardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIACtivityCN9LevelAwardItem:InitWidget()
   self.txt = self:GetUIComponent("UILocalizationText", "txt")
   self._trans = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardItem.SetData = function(self, tyoe, id, pass)
-  -- function num : 0_2
+function UIACtivityCN9LevelAwardItem:SetData(tyoe, id, pass)
   self._type = tyoe
   self._id = id
   self:SetDetail()
   self:SetPass(pass)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardItem.SetDetail = function(self)
-  -- function num : 0_3 , upvalues : CN9SouthSeaRoadType, _ENV
+function UIACtivityCN9LevelAwardItem:SetDetail()
   if self._type == CN9SouthSeaRoadType.Normal then
     self.cfg = Cfg.cfg_component_asheep_mission
-    local awards = ((self.cfg)[self._id]).Rewards
+    local awards = self.cfg[self._id].Rewards
     self:_SetIcon(awards)
-    ;
-    (self.txt):SetText((StringTable.Get)("str_cn9_awards_tip1"))
+    self.txt:SetText(StringTable.Get("str_cn9_awards_tip1"))
   else
-    do
-      self.specialCfg = Cfg.cfg_component_asheep_mission_reward
-      local ScoreLimit = ((self.specialCfg)[self._id]).ScoreLimit
-      local awards = ((self.specialCfg)[self._id]).Rewards
-      self:_SetIcon(awards)
-      ;
-      (self.txt):SetText((StringTable.Get)("str_cn9_awards_tip2") .. " " .. ScoreLimit)
-    end
+    self.specialCfg = Cfg.cfg_component_asheep_mission_reward
+    local ScoreLimit = self.specialCfg[self._id].ScoreLimit
+    local awards = self.specialCfg[self._id].Rewards
+    self:_SetIcon(awards)
+    self.txt:SetText(StringTable.Get("str_cn9_awards_tip2") .. " " .. ScoreLimit)
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardItem.SetPass = function(self, pass)
-  -- function num : 0_4 , upvalues : _ENV
-  for i,v in ipairs(self.list) do
+function UIACtivityCN9LevelAwardItem:SetPass(pass)
+  for i, v in ipairs(self.list) do
     v:SetPass(pass)
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardItem._SetIcon = function(self, awards)
-  -- function num : 0_5 , upvalues : _ENV
+function UIACtivityCN9LevelAwardItem:_SetIcon(awards)
   local pool = self:GetUIComponent("UISelectObjectPath", "awards")
   self.list = pool:SpawnObjects("UIACtivityCN9LevelAwardOneItem", #awards)
-  for i,v in ipairs(self.list) do
+  for i, v in ipairs(self.list) do
     v:SetData(awards[i], function(id)
-    -- function num : 0_5_0 , upvalues : self
-    self:ClickItem(id)
-  end
-)
+      self:ClickItem(id)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIACtivityCN9LevelAwardItem.ClickItem = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, id, ((self._trans).transform).position)
+function UIACtivityCN9LevelAwardItem:ClickItem(id)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, id, self._trans.transform.position)
 end
-
-

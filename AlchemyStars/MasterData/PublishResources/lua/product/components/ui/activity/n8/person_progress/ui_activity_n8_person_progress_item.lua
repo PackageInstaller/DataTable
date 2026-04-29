@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n8/person_progress/ui_activity_n8_person_progress_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN8PersonProgressItem", UICustomWidget)
 UIActivityN8PersonProgressItem = UIActivityN8PersonProgressItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN8PersonProgressItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityN8PersonProgressItem:_GetComponents()
   self._iconImg = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
   self._iconObj = self:GetGameObject("icon")
@@ -18,165 +11,105 @@ UIActivityN8PersonProgressItem._GetComponents = function(self)
   self._countTextObj = self:GetGameObject("countText")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityN8PersonProgressItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityN8PersonProgressItem:OnHide()
   self._tipsCallback = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.SetData = function(self, index, roleAsset, tipsCallback, gray)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN8PersonProgressItem:SetData(index, roleAsset, tipsCallback, gray)
   self:_GetComponents()
   self._index = index
   self._roleAsset = roleAsset
   self._tipsCallback = tipsCallback
   self._gray = gray
-  self._cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
+  self._cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
   if self._cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._roleAsset).assetid)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._roleAsset.assetid)
+    return
   end
-  local icon = (self._cfg_item).Icon
-  local count = (self._roleAsset).count
-  local itemId = (self._roleAsset).assetid
+  local icon = self._cfg_item.Icon
+  local count = self._roleAsset.count
+  local itemId = self._roleAsset.assetid
   self:SetIcon(icon, itemId)
   self:SetIconGrey(icon, "icon", gray)
   self:SetCount("", count, true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.iconOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityN8PersonProgressItem:iconOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)((self._roleAsset).assetid, (go.transform).position)
+    self._tipsCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.SetIcon = function(self, name, itemId)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (string.isnullorempty)(name) then
+function UIActivityN8PersonProgressItem:SetIcon(name, itemId)
+  if not string.isnullorempty(name) then
     self:ShowIcon(true, itemId)
-    ;
-    (self._iconImg):LoadImage(name)
+    self._iconImg:LoadImage(name)
   else
     self:ShowIcon(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.ShowIcon = function(self, show, itemId)
-  -- function num : 0_6
-  (self._iconObj):SetActive(show)
+function UIActivityN8PersonProgressItem:ShowIcon(show, itemId)
+  self._iconObj:SetActive(show)
   self:SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.SetIconOffset = function(self, itemId)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIActivityN8PersonProgressItem:SetIconOffset(itemId)
   if self:_IsPet(itemId) then
-    (self._iconRect).anchoredPosition = Vector2(0, 0)
+    self._iconRect.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = Vector2(0, 5)
+    self._iconRect.anchoredPosition = Vector2(0, 5)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem._IsPet = function(self, id)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({ID = id})
+function UIActivityN8PersonProgressItem:_IsPet(id)
+  local cfg = Cfg.cfg_pet({ID = id})
   return cfg and true or false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.SetIconGrey = function(self, name, widgetName, gray)
-  -- function num : 0_9 , upvalues : _ENV
-  if (string.isnullorempty)(name) then
-    return 
+function UIActivityN8PersonProgressItem:SetIconGrey(name, widgetName, gray)
+  if string.isnullorempty(name) then
+    return
   end
   local obj = self:GetUIComponent("RawImage", widgetName)
   if not self._EMIMat then
-    self._EMIMat = (UnityEngine.Material):New(obj.material)
+    self._EMIMat = UnityEngine.Material:New(obj.material)
   end
-  local texture = (obj.material).mainTexture
+  local texture = obj.material.mainTexture
   obj.material = self._EMIMat
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (obj.material).mainTexture = texture
+  obj.material.mainTexture = texture
   if gray == 1 then
-    (obj.material):SetFloat("_LuminosityAmount", 1)
+    obj.material:SetFloat("_LuminosityAmount", 1)
   else
-    ;
-    (obj.material):SetFloat("_LuminosityAmount", 0)
+    obj.material:SetFloat("_LuminosityAmount", 0)
   end
-  ;
-  (obj.gameObject):SetActive(false)
-  ;
-  (obj.gameObject):SetActive(true)
+  obj.gameObject:SetActive(false)
+  obj.gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.SetCount = function(self, prefix, text, showZeroFlag)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN8PersonProgressItem:SetCount(prefix, text, showZeroFlag)
   if text ~= nil then
     local show = false
     if type(text) == "number" then
       local num = text
-      if num <= 0 then
-        show = showZeroFlag
-        show = show
-        do
-          do
-            local str = prefix .. (HelperProxy:GetInstance()):FormatItemCount(num)
-            ;
-            (self._countText):SetText(str)
-            if type(text) == "string" then
-              show = not (string.isnullorempty)(text)
-              ;
-              (self._countText):SetText(text)
-            end
-            self:ShowCountGroup(show)
-            self:ShowCountGroup(false)
-            -- DECOMPILER ERROR: 6 unprocessed JMP targets
-          end
-        end
-      end
+      show = 0 < num or showZeroFlag
+      local str = prefix .. HelperProxy:GetInstance():FormatItemCount(num)
+      self._countText:SetText(str)
+    elseif type(text) == "string" then
+      show = not string.isnullorempty(text)
+      self._countText:SetText(text)
     end
+    self:ShowCountGroup(show)
+  else
+    self:ShowCountGroup(false)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressItem.ShowCountGroup = function(self, show)
-  -- function num : 0_11
-  (self._countTextObj):SetActive(show)
-  ;
-  (self._countBgObj):SetActive(not show or self._gray ~= 1)
-  ;
-  (self._countBg_grayObj):SetActive(not show or self._gray == 1)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UIActivityN8PersonProgressItem:ShowCountGroup(show)
+  self._countTextObj:SetActive(show)
+  self._countBgObj:SetActive(show and self._gray ~= 1)
+  self._countBg_grayObj:SetActive(show and self._gray == 1)
 end
-
-

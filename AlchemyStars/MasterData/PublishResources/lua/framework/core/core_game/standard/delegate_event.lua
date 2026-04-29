@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/standard/delegate_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 DelegateEvent = {}
--- DECOMPILER ERROR at PC4: Confused about usage of register: R0 in 'UnsetPending'
 
-DelegateEvent.New = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DelegateEvent:New()
   local event = {}
   setmetatable(event, self)
   self.__index = self
@@ -16,44 +9,29 @@ DelegateEvent.New = function(self)
   return event
 end
 
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-DelegateEvent.AddEvent = function(self, source, func)
-  -- function num : 0_1
-  (self._callArray):PushBack({source, func})
+function DelegateEvent:AddEvent(source, func)
+  self._callArray:PushBack({source, func})
 end
 
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
-DelegateEvent.RemoveEvent = function(self, source, func)
-  -- function num : 0_2
-  for i = 1, (self._callArray):Size() do
-    local item = (self._callArray):GetAt(i)
+function DelegateEvent:RemoveEvent(source, func)
+  for i = 1, self._callArray:Size() do
+    local item = self._callArray:GetAt(i)
     if item[2] == func and item[1] == source then
-      (self._callArray):RemoveAt(i)
+      self._callArray:RemoveAt(i)
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-DelegateEvent.Clear = function(self)
-  -- function num : 0_3
-  (self._callArray):Clear()
+function DelegateEvent:Clear()
+  self._callArray:Clear()
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-DelegateEvent.Call = function(self, ...)
-  -- function num : 0_4
-  local size = (self._callArray):Size()
+function DelegateEvent:Call(...)
+  local size = self._callArray:Size()
   for i = 1, size do
-    local item = (self._callArray):GetAt(i)
-    ;
-    (item[2])(item[1], ...)
+    local item = self._callArray:GetAt(i)
+    item[2](item[1], ...)
   end
 end
-
-

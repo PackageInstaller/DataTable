@@ -1,1285 +1,755 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/cg_pos_editor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not EDITOR then
-  return 
+  return
 end
-CheckCgPosEditor = {CurController = nil, CurCgUIName = nil, 
-callbackList = {}
-, 
-refreshFuncDic = {}
+CheckCgPosEditor = {
+  CurController = nil,
+  CurCgUIName = nil,
+  callbackList = {},
+  refreshFuncDic = {}
 }
-CheckCgPosEditorReady = function()
-  -- function num : 0_0 , upvalues : _ENV
-  local gameLogic = (GameGlobal.GameLogic)()
-  if gameLogic and gameLogic.inited and ((GameGlobal.UIStateManager)()):GetController("UIMainLobbyController") then
-    ((GameGlobal.GetUIModule)(SignInModule))._openList = {}
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
 
+function CheckCgPosEditorReady()
+  local gameLogic = GameGlobal.GameLogic()
+  if gameLogic and gameLogic.inited and GameGlobal.UIStateManager():GetController("UIMainLobbyController") then
+    GameGlobal.GetUIModule(SignInModule)._openList = {}
     CheckCgPosEditor.CurCgUIName = "UIMainLobbyController"
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-    CheckCgPosEditor.CurController = ((GameGlobal.UIStateManager)()):GetController("UIMainLobbyController")
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIMainLobbyController = CgPosEditorRefreshUIMainLobbyController
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIPetDetailItem = CgPosEditorRefreshUIPetDetailItem
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIUpLevelInterfaceController = CgPosEditorRefreshUIUpLevelInterfaceController
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIGradeInterfaceController = CgPosEditorRefreshUIGradeInterfaceController
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIGradeInterfaceController_color = CgPosEditorRefreshUIGradeInterfaceController_color
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIBreakController = CgPosEditorRefreshUIBreakController
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIHelpPetInfoController = CgPosEditorRefreshUIHelpPetInfoController
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIBattleResultComplete = CgPosEditorRefreshUIBattleResultComplete
-    -- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIAircraftEnterBuildController = CgPosEditorRefreshUIAircraftEnterBuildController
-    -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIGradeSkillPanelController = CgPosEditorRefreshUIGradeSkillPanelController
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIPetObtain = CgPosEditorRefreshUIPetObtain
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIPetObtain_mid = CgPosEditorRefreshUIPetObtain_mid
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIWidgetPetInfo = CgPosEditorRefreshUIWidgetPetInfo
-    -- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UISpineContainer = CgPosEditorRefreshUISpineContainer
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIChooseAssistantController = CgPosEditorRefreshUIChooseAssistantController
-    -- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIPetIntimacyMainController = CgPosEditorRefreshUIPetIntimacyMainController
-    -- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIStoryBanner = CgPosEditorRefreshUIStoryBanner
-    -- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIPetSkinsMainController = CgPosEditorRefreshUIPetSkinsMainController
-    -- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIPetSkinsMainController_mid = CgPosEditorRefreshUIPetSkinsMainController_mid
-    -- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.refreshFuncDic).UIPlayerInfoController = CgPosEditorRefreshUIPlayerInfoController
-    return ((GameGlobal.UIStateManager)()):IsTopUI("UIMainLobbyController")
+    CheckCgPosEditor.CurController = GameGlobal.UIStateManager():GetController("UIMainLobbyController")
+    CheckCgPosEditor.refreshFuncDic.UIMainLobbyController = CgPosEditorRefreshUIMainLobbyController
+    CheckCgPosEditor.refreshFuncDic.UIPetDetailItem = CgPosEditorRefreshUIPetDetailItem
+    CheckCgPosEditor.refreshFuncDic.UIUpLevelInterfaceController = CgPosEditorRefreshUIUpLevelInterfaceController
+    CheckCgPosEditor.refreshFuncDic.UIGradeInterfaceController = CgPosEditorRefreshUIGradeInterfaceController
+    CheckCgPosEditor.refreshFuncDic.UIGradeInterfaceController_color = CgPosEditorRefreshUIGradeInterfaceController_color
+    CheckCgPosEditor.refreshFuncDic.UIBreakController = CgPosEditorRefreshUIBreakController
+    CheckCgPosEditor.refreshFuncDic.UIHelpPetInfoController = CgPosEditorRefreshUIHelpPetInfoController
+    CheckCgPosEditor.refreshFuncDic.UIBattleResultComplete = CgPosEditorRefreshUIBattleResultComplete
+    CheckCgPosEditor.refreshFuncDic.UIAircraftEnterBuildController = CgPosEditorRefreshUIAircraftEnterBuildController
+    CheckCgPosEditor.refreshFuncDic.UIGradeSkillPanelController = CgPosEditorRefreshUIGradeSkillPanelController
+    CheckCgPosEditor.refreshFuncDic.UIPetObtain = CgPosEditorRefreshUIPetObtain
+    CheckCgPosEditor.refreshFuncDic.UIPetObtain_mid = CgPosEditorRefreshUIPetObtain_mid
+    CheckCgPosEditor.refreshFuncDic.UIWidgetPetInfo = CgPosEditorRefreshUIWidgetPetInfo
+    CheckCgPosEditor.refreshFuncDic.UISpineContainer = CgPosEditorRefreshUISpineContainer
+    CheckCgPosEditor.refreshFuncDic.UIChooseAssistantController = CgPosEditorRefreshUIChooseAssistantController
+    CheckCgPosEditor.refreshFuncDic.UIPetIntimacyMainController = CgPosEditorRefreshUIPetIntimacyMainController
+    CheckCgPosEditor.refreshFuncDic.UIStoryBanner = CgPosEditorRefreshUIStoryBanner
+    CheckCgPosEditor.refreshFuncDic.UIPetSkinsMainController = CgPosEditorRefreshUIPetSkinsMainController
+    CheckCgPosEditor.refreshFuncDic.UIPetSkinsMainController_mid = CgPosEditorRefreshUIPetSkinsMainController_mid
+    CheckCgPosEditor.refreshFuncDic.UIPlayerInfoController = CgPosEditorRefreshUIPlayerInfoController
+    return GameGlobal.UIStateManager():IsTopUI("UIMainLobbyController")
   end
   return false
 end
 
-CgPosEditorGetPetID = function(uiname)
-  -- function num : 0_1 , upvalues : _ENV
+function CgPosEditorGetPetID(uiname)
   if uiname == "UIMainLobbyController" then
-    local con = ((GameGlobal.UIStateManager)()):GetController(uiname)
-    return (con._main_lobby_bg)._defaultPetID
+    local con = GameGlobal.UIStateManager():GetController(uiname)
+    return con._main_lobby_bg._defaultPetID
   end
 end
 
-CgPosEditorGetSkinID = function(uiname)
-  -- function num : 0_2 , upvalues : _ENV
+function CgPosEditorGetSkinID(uiname)
   if uiname == "UIMainLobbyController" then
-    local con = ((GameGlobal.UIStateManager)()):GetController(uiname)
+    local con = GameGlobal.UIStateManager():GetController(uiname)
     con = con._main_lobby_bg
     local petID = con._defaultPetID
     local grade = con._assistantGrade
     local skinID = con._assistantSkinID
     local asid = con.asid
-    if skinID and skinID > 0 then
+    if skinID and 0 < skinID then
       return skinID
     end
     if grade == 0 then
-      return ((Cfg.cfg_pet)[petID]).SkinId
+      return Cfg.cfg_pet[petID].SkinId
     else
-      return (((Cfg.cfg_pet_grade)({PetID = petID, Grade = grade}))[1]).SkinId
+      return Cfg.cfg_pet_grade({PetID = petID, Grade = grade})[1].SkinId
     end
   end
 end
 
-CgPosEditorRefreshUICg = function(uiname, checkcg, skinID, offset, scale, l2d)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R6 in 'UnsetPending'
-
+function CgPosEditorRefreshUICg(uiname, checkcg, skinID, offset, scale, l2d)
   if uiname ~= nil then
-    if CgPosEditorGetRealUIName(uiname) == (CheckCgPosEditor.CurController).name then
+    if CgPosEditorGetRealUIName(uiname) == CheckCgPosEditor.CurController.name then
       CheckCgPosEditor.CurCgUIName = uiname
       CgPosEditorRefreshCgSkin(checkcg, skinID, offset, scale)
     else
-      if (CheckCgPosEditor.CurController).name ~= "UIMainLobbyController" then
+      if CheckCgPosEditor.CurController.name ~= "UIMainLobbyController" then
         if CheckCgPosEditor.CurDynamicCGHandle then
-          (CheckCgPosEditor.CurDynamicCGHandle):Release()
-          -- DECOMPILER ERROR at PC33: Confused about usage of register: R6 in 'UnsetPending'
-
+          CheckCgPosEditor.CurDynamicCGHandle:Release()
           CheckCgPosEditor.CurDynamicCGHandle = nil
         end
-        ;
-        (CheckCgPosEditor.CurController):CloseDialog()
+        CheckCgPosEditor.CurController:CloseDialog()
       end
       CgPosEditorShowUI(uiname, checkcg, skinID, offset, scale)
     end
+  elseif checkcg ~= nil or skinID ~= nil then
+    CgPosEditorRefreshCgSkin(checkcg, skinID, offset, scale, l2d)
   else
-    if checkcg ~= nil or skinID ~= nil then
-      CgPosEditorRefreshCgSkin(checkcg, skinID, offset, scale, l2d)
-    else
-      CgPosEditorRefreshOffsetScale(offset, scale)
-    end
+    CgPosEditorRefreshOffsetScale(offset, scale)
   end
 end
 
-CgPosEditorRefreshCgSkin = function(checkcg, skinID, offset, scale, l2d)
-  -- function num : 0_4 , upvalues : _ENV
+function CgPosEditorRefreshCgSkin(checkcg, skinID, offset, scale, l2d)
   if CheckCgPosEditor.CurDynamicCGHandle then
-    (CheckCgPosEditor.CurDynamicCGHandle):Release()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
+    CheckCgPosEditor.CurDynamicCGHandle:Release()
     CheckCgPosEditor.CurDynamicCGHandle = nil
   end
-  ;
-  ((CheckCgPosEditor.refreshFuncDic)[CheckCgPosEditor.CurCgUIName])(checkcg, skinID, offset, scale, l2d)
+  CheckCgPosEditor.refreshFuncDic[CheckCgPosEditor.CurCgUIName](checkcg, skinID, offset, scale, l2d)
 end
 
-CgPosEditorRefreshOffsetScale = function(offset, scale)
-  -- function num : 0_5 , upvalues : _ENV
-  ((CheckCgPosEditor.refreshFuncDic)[CheckCgPosEditor.CurCgUIName])(nil, nil, offset, scale)
+function CgPosEditorRefreshOffsetScale(offset, scale)
+  CheckCgPosEditor.refreshFuncDic[CheckCgPosEditor.CurCgUIName](nil, nil, offset, scale)
 end
 
-CgPosEditorGetRealUIName = function(uiname)
-  -- function num : 0_6
+function CgPosEditorGetRealUIName(uiname)
   local realUIName = uiname
   if uiname == "UIPetDetailItem" then
     realUIName = "UISpiritDetailGroupController"
-  else
-    if uiname == "UIGradeInterfaceController_color" then
-      realUIName = "UIGradeInterfaceController"
-    else
-      if uiname == "UIPetObtain_mid" then
-        realUIName = "UIPetObtain"
-      else
-        if uiname == "UIWidgetPetInfo" then
-          realUIName = "UIBattle"
-        else
-          if uiname == "UISpineContainer" then
-            realUIName = "UIShopPetDetailController"
-          else
-            if uiname == "UIPetSkinsMainController_mid" then
-              realUIName = "UIPetSkinsMainController"
-            end
-          end
-        end
-      end
-    end
+  elseif uiname == "UIGradeInterfaceController_color" then
+    realUIName = "UIGradeInterfaceController"
+  elseif uiname == "UIPetObtain_mid" then
+    realUIName = "UIPetObtain"
+  elseif uiname == "UIWidgetPetInfo" then
+    realUIName = "UIBattle"
+  elseif uiname == "UISpineContainer" then
+    realUIName = "UIShopPetDetailController"
+  elseif uiname == "UIPetSkinsMainController_mid" then
+    realUIName = "UIPetSkinsMainController"
   end
   return realUIName
 end
 
-CgPosEditorShowUI = function(uiname, checkcg, skinID, offset, scale)
-  -- function num : 0_7 , upvalues : _ENV
+function CgPosEditorShowUI(uiname, checkcg, skinID, offset, scale)
   local realUIName = CgPosEditorGetRealUIName(uiname)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (CheckCgPosEditor.callbackList)[realUIName] = (GameHelper:GetInstance()):CreateCallback(function()
-    -- function num : 0_7_0 , upvalues : _ENV, uiname, realUIName, checkcg, skinID, offset, scale
-    -- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
+  CheckCgPosEditor.callbackList[realUIName] = GameHelper:GetInstance():CreateCallback(function()
     CheckCgPosEditor.CurCgUIName = uiname
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
-    CheckCgPosEditor.CurController = ((GameGlobal.UIStateManager)()):GetController(realUIName)
+    CheckCgPosEditor.CurController = GameGlobal.UIStateManager():GetController(realUIName)
     CgPosEditorRefreshCgSkin(checkcg, skinID, offset, scale)
-    ;
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.UIOpen, (CheckCgPosEditor.callbackList)[realUIName])
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.callbackList)[realUIName] = nil
-  end
-)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.UIOpen, (CheckCgPosEditor.callbackList)[realUIName])
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.UIOpen, CheckCgPosEditor.callbackList[realUIName])
+    CheckCgPosEditor.callbackList[realUIName] = nil
+  end)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.UIOpen, CheckCgPosEditor.callbackList[realUIName])
   if realUIName == "UIMainLobbyController" then
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-  else
-    if realUIName == "UISpiritDetailGroupController" then
-      CgPosEditorSetModulePetData(skinID)
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, ((Cfg.cfg_pet_skin)[skinID]).PetId)
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R6 in 'UnsetPending'
-
-      UISpiritDetailGroupController.CheckRedPoint = function()
-    -- function num : 0_7_1
-  end
-
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R6 in 'UnsetPending'
-
-      UISpiritDetailGroupController.CheckSkinRedPoint = function()
-    -- function num : 0_7_2
-  end
-
-    else
-      if realUIName == "UIUpLevelInterfaceController" then
-        CgPosEditorSetModulePetData(skinID)
-        ;
-        ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, ((Cfg.cfg_pet_skin)[skinID]).PetId)
-      else
-        if realUIName == "UIGradeInterfaceController" then
-          ((GameGlobal.GetUIModule)(PetModule)).GetSortedPets = function()
-    -- function num : 0_7_3 , upvalues : _ENV, skinID
-    local petInfo = pet_data:New()
-    petInfo.pet_pstid = 1
-    petInfo.template_id = ((Cfg.cfg_pet_skin)[skinID]).PetId
-    petInfo.level = 1
-    petInfo.grade = 1
-    petInfo.awakening = 1
-    petInfo.affinity_level = 1
-    petInfo.current_skin = 0
-    local pet = Pet:New(petInfo)
-    return {pet}
-  end
-
-          ;
-          ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, ((Cfg.cfg_pet_skin)[skinID]).PetId)
-        else
-          if realUIName == "UIBreakController" then
-            CgPosEditorSetModulePetData(skinID)
-            ;
-            ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, ((Cfg.cfg_pet_skin)[skinID]).PetId)
-          else
-            if realUIName == "UIHelpPetInfoController" then
-              local pet = {}
-              do
-                pet.m_nTemplateID = ((Cfg.cfg_pet_skin)[skinID]).PetId
-                pet.m_nLevel = 1
-                pet.m_nGrade = (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[1] == 2 and (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[2] or 1
-                pet.m_nAwake = 1
-                pet.m_nEquipLevel = 0
-                pet.m_nSkinID = 0
-                pet.m_nAwakeLock = 1
-                -- DECOMPILER ERROR at PC136: Confused about usage of register: R7 in 'UnsetPending'
-
-                UIFightSkillItem.CheckRefineSkillReplace = function()
-    -- function num : 0_7_4
-    return false
-  end
-
-                ;
-                ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, pet)
-              end
-            else
-              do
-                if realUIName == "UIBattleResultComplete" then
-                  local playerInfo = {}
-                  playerInfo.pet_list = {}
-                  local pet = MatchPetInfo:New()
-                  pet.template_id = ((Cfg.cfg_pet_skin)[skinID]).PetId
-                  pet.level = 1
-                  pet.grade = (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[1] == 2 and (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[2] or 1
-                  pet.awakening = 1
-                  pet.affinity_level = 1
-                  pet.current_skin = 0
-                  local pet2 = MatchPetInfo:New()
-                  pet2.template_id = 1500331
-                  pet2.level = 1
-                  pet2.grade = 1
-                  pet2.awakening = 1
-                  pet2.affinity_level = 1
-                  pet2.current_skin = 0
-                  local pet3 = MatchPetInfo:New()
-                  pet3.template_id = 1600021
-                  pet3.level = 1
-                  pet3.grade = 1
-                  pet3.awakening = 1
-                  pet3.affinity_level = 1
-                  pet3.current_skin = 0
-                  local pet4 = MatchPetInfo:New()
-                  pet4.template_id = 1600251
-                  pet4.level = 1
-                  pet4.grade = 1
-                  pet4.awakening = 1
-                  pet4.affinity_level = 1
-                  pet4.current_skin = 0
-                  local pet5 = MatchPetInfo:New()
-                  pet5.template_id = 1600641
-                  pet5.level = 1
-                  pet5.grade = 3
-                  pet5.awakening = 1
-                  pet5.affinity_level = 1
-                  pet5.current_skin = 0
-                  -- DECOMPILER ERROR at PC215: Confused about usage of register: R12 in 'UnsetPending'
-
-                  ;
-                  (playerInfo.pet_list)[1] = pet
-                  -- DECOMPILER ERROR at PC217: Confused about usage of register: R12 in 'UnsetPending'
-
-                  ;
-                  (playerInfo.pet_list)[2] = pet2
-                  -- DECOMPILER ERROR at PC219: Confused about usage of register: R12 in 'UnsetPending'
-
-                  ;
-                  (playerInfo.pet_list)[3] = pet3
-                  -- DECOMPILER ERROR at PC221: Confused about usage of register: R12 in 'UnsetPending'
-
-                  ;
-                  (playerInfo.pet_list)[4] = pet4
-                  -- DECOMPILER ERROR at PC223: Confused about usage of register: R12 in 'UnsetPending'
-
-                  ;
-                  (playerInfo.pet_list)[5] = pet5
-                  local matchEnterData = MatchEnterData:New(1, {}, {playerInfo})
-                  ;
-                  ((GameGlobal.GetModule)(MatchModule)).m_match_enter_data = matchEnterData
-                  -- DECOMPILER ERROR at PC239: Confused about usage of register: R13 in 'UnsetPending'
-
-                  MatchEnterData.GetMissionCreateInfo = function()
-    -- function num : 0_7_5
-    return nil
-  end
-
-                  local matchRes = UI_MatchResult:New()
-                  matchRes.m_nMatchType = MatchType.MT_Mission
-                  matchRes.m_activity_rewards = {}
-                  ;
-                  ((GameGlobal.GetModule)(GameMatchModule))._match_result = matchRes
-                  ;
-                  ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, true, playerInfo.pet_list)
-                else
-                  do
-                    if realUIName == "UIAircraftEnterBuildController" then
-                      CgPosEditorSetModuleSortPetData(skinID)
-                      local roomData = AircraftRoomBase:New()
-                      roomData._spaceid = 1
-                      roomData._roomid = 7101001
-                      ;
-                      ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, roomData, 1)
-                    else
-                      do
-                        if realUIName == "UIGradeSkillPanelController" then
-                          CgPosEditorSetModulePet(skinID)
-                          ;
-                          ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, 1)
-                        else
-                          if realUIName == "UIPetObtain" then
-                            local ra = RoleAsset:New()
-                            ra.assetid = ((Cfg.cfg_pet_skin)[skinID]).PetId
-                            ;
-                            ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, {ra}, nil, true)
-                          else
-                            do
-                              if realUIName == "UIBattle" then
-                                local matchpetlist = {}
-                                local playerInfo = {}
-                                playerInfo.pet_list = {}
-                                local pet = MatchPetInfo:New()
-                                pet.template_id = ((Cfg.cfg_pet_skin)[skinID]).PetId
-                                pet.level = 1
-                                pet.grade = (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[1] == 2 and (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[2] or 1
-                                pet.awakening = 1
-                                pet.affinity_level = 1
-                                pet.current_skin = 0
-                                pet.pet_pstid = 1
-                                for i = 1, 5 do
-                                  -- DECOMPILER ERROR at PC356: Confused about usage of register: R13 in 'UnsetPending'
-
-                                  (playerInfo.pet_list)[i] = pet
-                                  matchpetlist[#matchpetlist + 1] = MatchPet:New(pet)
-                                end
-                                local matchEnterData = MatchEnterData:New(1, {}, {playerInfo})
-                                matchEnterData._wordBuffIds = {}
-                                matchEnterData.GetLocalMatchPets = function()
-    -- function num : 0_7_6 , upvalues : matchpetlist
-    return matchpetlist
-  end
-
-                                ;
-                                ((GameGlobal.GetModule)(MatchModule)).m_match_enter_data = matchEnterData
-                                -- DECOMPILER ERROR at PC384: Confused about usage of register: R10 in 'UnsetPending'
-
-                                ConfigServiceHelper.GetChangeTeamLeaderCount = function()
-    -- function num : 0_7_7
-    return 1
-  end
-
-                                -- DECOMPILER ERROR at PC387: Confused about usage of register: R10 in 'UnsetPending'
-
-                                ConfigServiceHelper.GetLevelConfigData = function()
-    -- function num : 0_7_8
-    local lcd = {}
-    lcd.GetLevelID = function()
-      -- function num : 0_7_8_0
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
+  elseif realUIName == "UISpiritDetailGroupController" then
+    CgPosEditorSetModulePetData(skinID)
+    GameGlobal.UIStateManager():ShowDialog(realUIName, Cfg.cfg_pet_skin[skinID].PetId)
+    
+    function UISpiritDetailGroupController.CheckRedPoint()
+    end
+    
+    function UISpiritDetailGroupController.CheckSkinRedPoint()
+    end
+  elseif realUIName == "UIUpLevelInterfaceController" then
+    CgPosEditorSetModulePetData(skinID)
+    GameGlobal.UIStateManager():ShowDialog(realUIName, Cfg.cfg_pet_skin[skinID].PetId)
+  elseif realUIName == "UIGradeInterfaceController" then
+    GameGlobal.GetUIModule(PetModule).GetSortedPets = function()
+      local petInfo = pet_data:New()
+      petInfo.pet_pstid = 1
+      petInfo.template_id = Cfg.cfg_pet_skin[skinID].PetId
+      petInfo.level = 1
+      petInfo.grade = 1
+      petInfo.awakening = 1
+      petInfo.affinity_level = 1
+      petInfo.current_skin = 0
+      local pet = Pet:New(petInfo)
+      return {pet}
+    end
+    GameGlobal.UIStateManager():ShowDialog(realUIName, Cfg.cfg_pet_skin[skinID].PetId)
+  elseif realUIName == "UIBreakController" then
+    CgPosEditorSetModulePetData(skinID)
+    GameGlobal.UIStateManager():ShowDialog(realUIName, Cfg.cfg_pet_skin[skinID].PetId)
+  elseif realUIName == "UIHelpPetInfoController" then
+    local pet = {}
+    pet.m_nTemplateID = Cfg.cfg_pet_skin[skinID].PetId
+    pet.m_nLevel = 1
+    pet.m_nGrade = Cfg.cfg_pet_skin[skinID].UnlockType[1] == 2 and Cfg.cfg_pet_skin[skinID].UnlockType[2] or 1
+    pet.m_nAwake = 1
+    pet.m_nEquipLevel = 0
+    pet.m_nSkinID = 0
+    pet.m_nAwakeLock = 1
+    
+    function UIFightSkillItem.CheckRefineSkillReplace()
+      return false
+    end
+    
+    GameGlobal.UIStateManager():ShowDialog(realUIName, pet)
+  elseif realUIName == "UIBattleResultComplete" then
+    local playerInfo = {}
+    playerInfo.pet_list = {}
+    local pet = MatchPetInfo:New()
+    pet.template_id = Cfg.cfg_pet_skin[skinID].PetId
+    pet.level = 1
+    pet.grade = Cfg.cfg_pet_skin[skinID].UnlockType[1] == 2 and Cfg.cfg_pet_skin[skinID].UnlockType[2] or 1
+    pet.awakening = 1
+    pet.affinity_level = 1
+    pet.current_skin = 0
+    local pet2 = MatchPetInfo:New()
+    pet2.template_id = 1500331
+    pet2.level = 1
+    pet2.grade = 1
+    pet2.awakening = 1
+    pet2.affinity_level = 1
+    pet2.current_skin = 0
+    local pet3 = MatchPetInfo:New()
+    pet3.template_id = 1600021
+    pet3.level = 1
+    pet3.grade = 1
+    pet3.awakening = 1
+    pet3.affinity_level = 1
+    pet3.current_skin = 0
+    local pet4 = MatchPetInfo:New()
+    pet4.template_id = 1600251
+    pet4.level = 1
+    pet4.grade = 1
+    pet4.awakening = 1
+    pet4.affinity_level = 1
+    pet4.current_skin = 0
+    local pet5 = MatchPetInfo:New()
+    pet5.template_id = 1600641
+    pet5.level = 1
+    pet5.grade = 3
+    pet5.awakening = 1
+    pet5.affinity_level = 1
+    pet5.current_skin = 0
+    playerInfo.pet_list[1] = pet
+    playerInfo.pet_list[2] = pet2
+    playerInfo.pet_list[3] = pet3
+    playerInfo.pet_list[4] = pet4
+    playerInfo.pet_list[5] = pet5
+    local matchEnterData = MatchEnterData:New(1, {}, {playerInfo})
+    GameGlobal.GetModule(MatchModule).m_match_enter_data = matchEnterData
+    
+    function MatchEnterData.GetMissionCreateInfo()
+      return nil
+    end
+    
+    local matchRes = UI_MatchResult:New()
+    matchRes.m_nMatchType = MatchType.MT_Mission
+    matchRes.m_activity_rewards = {}
+    GameGlobal.GetModule(GameMatchModule)._match_result = matchRes
+    GameGlobal.UIStateManager():ShowDialog(realUIName, true, playerInfo.pet_list)
+  elseif realUIName == "UIAircraftEnterBuildController" then
+    CgPosEditorSetModuleSortPetData(skinID)
+    local roomData = AircraftRoomBase:New()
+    roomData._spaceid = 1
+    roomData._roomid = 7101001
+    GameGlobal.UIStateManager():ShowDialog(realUIName, roomData, 1)
+  elseif realUIName == "UIGradeSkillPanelController" then
+    CgPosEditorSetModulePet(skinID)
+    GameGlobal.UIStateManager():ShowDialog(realUIName, 1)
+  elseif realUIName == "UIPetObtain" then
+    local ra = RoleAsset:New()
+    ra.assetid = Cfg.cfg_pet_skin[skinID].PetId
+    GameGlobal.UIStateManager():ShowDialog(realUIName, {ra}, nil, true)
+  elseif realUIName == "UIBattle" then
+    local matchpetlist = {}
+    local playerInfo = {}
+    playerInfo.pet_list = {}
+    local pet = MatchPetInfo:New()
+    pet.template_id = Cfg.cfg_pet_skin[skinID].PetId
+    pet.level = 1
+    pet.grade = Cfg.cfg_pet_skin[skinID].UnlockType[1] == 2 and Cfg.cfg_pet_skin[skinID].UnlockType[2] or 1
+    pet.awakening = 1
+    pet.affinity_level = 1
+    pet.current_skin = 0
+    pet.pet_pstid = 1
+    for i = 1, 5 do
+      playerInfo.pet_list[i] = pet
+      matchpetlist[#matchpetlist + 1] = MatchPet:New(pet)
+    end
+    local matchEnterData = MatchEnterData:New(1, {}, {playerInfo})
+    matchEnterData._wordBuffIds = {}
+    
+    function matchEnterData.GetLocalMatchPets()
+      return matchpetlist
+    end
+    
+    GameGlobal.GetModule(MatchModule).m_match_enter_data = matchEnterData
+    
+    function ConfigServiceHelper.GetChangeTeamLeaderCount()
       return 1
     end
-
-    lcd.GetLevelRoundCount = function()
-      -- function num : 0_7_8_1
-      return 1
-    end
-
-    return lcd
-  end
-
-                                -- DECOMPILER ERROR at PC390: Confused about usage of register: R10 in 'UnsetPending'
-
-                                UIBattleProgressInfo.RefreshWaveInfo = function()
-    -- function num : 0_7_9
-  end
-
-                                -- DECOMPILER ERROR at PC393: Confused about usage of register: R10 in 'UnsetPending'
-
-                                BattleStatHelper.GetCurRoundDoActiveSkillTimes = function()
-    -- function num : 0_7_10
-    return 1
-  end
-
-                                -- DECOMPILER ERROR at PC396: Confused about usage of register: R10 in 'UnsetPending'
-
-                                BattleStatHelper.GetLevelOutOfRoundType = function()
-    -- function num : 0_7_11
-    return 1
-  end
-
-                                -- DECOMPILER ERROR at PC399: Confused about usage of register: R10 in 'UnsetPending'
-
-                                BattleStatHelper.GetLevelOutOfRoundType = function()
-    -- function num : 0_7_12
-    return 0
-  end
-
-                                -- DECOMPILER ERROR at PC402: Confused about usage of register: R10 in 'UnsetPending'
-
-                                ConfigServiceHelper.GetSkillConfigData = function()
-    -- function num : 0_7_13
-    local scd = {}
-    scd.GetSkillTriggerParam = function()
-      -- function num : 0_7_13_0
-      return 1
-    end
-
-    scd.GetSkillTriggerType = function()
-      -- function num : 0_7_13_1
-    end
-
-    return scd
-  end
-
-                                -- DECOMPILER ERROR at PC405: Confused about usage of register: R10 in 'UnsetPending'
-
-                                InnerGameHelperRender.UISetUIPetAccumulateNum = function()
-    -- function num : 0_7_14
-  end
-
-                                -- DECOMPILER ERROR at PC408: Confused about usage of register: R10 in 'UnsetPending'
-
-                                MatchEnterData.GetMissionCreateInfo = function()
-    -- function num : 0_7_15
-    return nil
-  end
-
-                                -- DECOMPILER ERROR at PC411: Confused about usage of register: R10 in 'UnsetPending'
-
-                                InnerGameHelperRender.GetLocalMatchPets = function()
-    -- function num : 0_7_16 , upvalues : matchEnterData
-    return matchEnterData:GetLocalMatchPets()
-  end
-
-                                ;
-                                ((GameGlobal.UIStateManager)()):ShowDialog(realUIName)
-                              else
-                                do
-                                  if realUIName == "UIShopPetDetailController" then
-                                    ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, ((Cfg.cfg_pet_skin)[skinID]).PetId)
-                                  else
-                                    if realUIName == "UIPetIntimacyMainController" then
-                                      ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, ((Cfg.cfg_pet_skin)[skinID]).PetId, PetIntimacyWindowType.FilesPanel)
-                                    else
-                                      if realUIName == "UIStoryBanner" then
-                                        ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, 1, StoryBannerShowType.HalfPortrait)
-                                      else
-                                        if realUIName == "UIPetSkinsMainController" then
-                                          ((GameGlobal.UIStateManager)()):ShowDialog(realUIName, PetSkinUiOpenType.PSUOT_SHOW_LIST, ((Cfg.cfg_pet_skin)[skinID]).PetId)
-                                        else
-                                          ;
-                                          ((GameGlobal.UIStateManager)()):ShowDialog(realUIName)
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+    
+    function ConfigServiceHelper.GetLevelConfigData()
+      local lcd = {}
+      
+      function lcd.GetLevelID()
+        return 1
       end
+      
+      function lcd.GetLevelRoundCount()
+        return 1
+      end
+      
+      return lcd
     end
+    
+    function UIBattleProgressInfo.RefreshWaveInfo()
+    end
+    
+    function BattleStatHelper.GetCurRoundDoActiveSkillTimes()
+      return 1
+    end
+    
+    function BattleStatHelper.GetLevelOutOfRoundType()
+      return 1
+    end
+    
+    function BattleStatHelper.GetLevelOutOfRoundType()
+      return 0
+    end
+    
+    function ConfigServiceHelper.GetSkillConfigData()
+      local scd = {}
+      
+      function scd.GetSkillTriggerParam()
+        return 1
+      end
+      
+      function scd.GetSkillTriggerType()
+      end
+      
+      return scd
+    end
+    
+    function InnerGameHelperRender.UISetUIPetAccumulateNum()
+    end
+    
+    function MatchEnterData.GetMissionCreateInfo()
+      return nil
+    end
+    
+    function InnerGameHelperRender.GetLocalMatchPets()
+      return matchEnterData:GetLocalMatchPets()
+    end
+    
+    GameGlobal.UIStateManager():ShowDialog(realUIName)
+  elseif realUIName == "UIShopPetDetailController" then
+    GameGlobal.UIStateManager():ShowDialog(realUIName, Cfg.cfg_pet_skin[skinID].PetId)
+  elseif realUIName == "UIPetIntimacyMainController" then
+    GameGlobal.UIStateManager():ShowDialog(realUIName, Cfg.cfg_pet_skin[skinID].PetId, PetIntimacyWindowType.FilesPanel)
+  elseif realUIName == "UIStoryBanner" then
+    GameGlobal.UIStateManager():ShowDialog(realUIName, 1, StoryBannerShowType.HalfPortrait)
+  elseif realUIName == "UIPetSkinsMainController" then
+    GameGlobal.UIStateManager():ShowDialog(realUIName, PetSkinUiOpenType.PSUOT_SHOW_LIST, Cfg.cfg_pet_skin[skinID].PetId)
+  else
+    GameGlobal.UIStateManager():ShowDialog(realUIName)
   end
 end
 
-CgPosEditorSetModulePet = function(skinID)
-  -- function num : 0_8 , upvalues : _ENV
+function CgPosEditorSetModulePet(skinID)
   local petData = pet_data:New()
   petData.pet_pstid = 1
-  petData.template_id = ((Cfg.cfg_pet_skin)[skinID]).PetId
+  petData.template_id = Cfg.cfg_pet_skin[skinID].PetId
   petData.level = 1
   petData.grade = 0
   petData.awakening = 1
   petData.affinity_level = 1
   petData.current_skin = 0
-  ;
-  ((GameGlobal.GetModule)(PetModule)):AddPet(petData)
-  ;
-  ((GameGlobal.GetUIModule)(PetModule)).GetDiffWithGrade = function()
-    -- function num : 0_8_0 , upvalues : _ENV, skinID
-    local body = UIFightSkillChangeData:New("type", PetSkillChangeState.Improved, {""}, {((Cfg.cfg_pet_skin)[skinID]).StaticBody})
+  GameGlobal.GetModule(PetModule):AddPet(petData)
+  GameGlobal.GetUIModule(PetModule).GetDiffWithGrade = function()
+    local body = UIFightSkillChangeData:New("type", PetSkillChangeState.Improved, {""}, {
+      Cfg.cfg_pet_skin[skinID].StaticBody
+    })
     return body, {}
   end
-
 end
 
-CgPosEditorSetModulePetData = function(skinID)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.GetUIModule)(PetModule)).GetSortedPets = function()
-    -- function num : 0_9_0 , upvalues : _ENV, skinID
+function CgPosEditorSetModulePetData(skinID)
+  GameGlobal.GetUIModule(PetModule).GetSortedPets = function()
     local petInfo = pet_data:New()
     petInfo.pet_pstid = 1
-    petInfo.template_id = ((Cfg.cfg_pet_skin)[skinID]).PetId
+    petInfo.template_id = Cfg.cfg_pet_skin[skinID].PetId
     petInfo.level = 1
-    petInfo.grade = (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[1] == 2 and (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[2] or 1
+    petInfo.grade = Cfg.cfg_pet_skin[skinID].UnlockType[1] == 2 and Cfg.cfg_pet_skin[skinID].UnlockType[2] or 1
     petInfo.awakening = 1
     petInfo.affinity_level = 1
     petInfo.current_skin = 0
     local pet = Pet:New(petInfo)
     return {pet}
   end
-
 end
 
-CgPosEditorSetModuleSortPetData = function(skinID)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule))._SortPets = function()
-    -- function num : 0_10_0 , upvalues : _ENV, skinID
+function CgPosEditorSetModuleSortPetData(skinID)
+  GameGlobal.GetModule(PetModule)._SortPets = function()
     local petInfo = pet_data:New()
     petInfo.pet_pstid = 1
-    petInfo.template_id = ((Cfg.cfg_pet_skin)[skinID]).PetId
+    petInfo.template_id = Cfg.cfg_pet_skin[skinID].PetId
     petInfo.level = 1
-    petInfo.grade = (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[1] == 2 and (((Cfg.cfg_pet_skin)[skinID]).UnlockType)[2] or 1
+    petInfo.grade = Cfg.cfg_pet_skin[skinID].UnlockType[1] == 2 and Cfg.cfg_pet_skin[skinID].UnlockType[2] or 1
     petInfo.awakening = 1
     petInfo.affinity_level = 1
     petInfo.current_skin = 0
     local pet = Pet:New(petInfo)
     return {pet}
   end
-
 end
 
-CgPosEditorRefreshUIMainLobbyController = function(checkcg, skinID, offset, scale, l2d)
-  -- function num : 0_11 , upvalues : _ENV
-  local widget = (CheckCgPosEditor.CurController)._main_lobby_bg
-  local spineSke = (widget._spine).CurrentSkeleton
-  if not spineSke then
-    spineSke = (widget._spine).CurrentMultiSkeleton
-  end
+function CgPosEditorRefreshUIMainLobbyController(checkcg, skinID, offset, scale, l2d)
+  local widget = CheckCgPosEditor.CurController._main_lobby_bg
+  local spineSke = widget._spine.CurrentSkeleton
+  spineSke = spineSke or widget._spine.CurrentMultiSkeleton
   if checkcg ~= nil then
-    (widget._cgGo):SetActive(checkcg)
-    ;
-    (widget._spineGo):SetActive(not checkcg)
+    widget._cgGo:SetActive(checkcg)
+    widget._spineGo:SetActive(not checkcg)
   end
   if skinID ~= nil then
     if checkcg then
-      if (Cfg.cfg_pet_skin)[skinID] and ((Cfg.cfg_pet_skin)[skinID]).StaticBody then
-        (widget._cg):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+      if Cfg.cfg_pet_skin[skinID] and Cfg.cfg_pet_skin[skinID].StaticBody then
+        widget._cg:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
       else
-        ;
-        (widget._cg):LoadImage(((Cfg.cfg_only_assistant)[skinID]).CG)
+        widget._cg:LoadImage(Cfg.cfg_only_assistant[skinID].CG)
       end
-    else
-      if (Cfg.cfg_pet_skin)[skinID] and ((Cfg.cfg_pet_skin)[skinID]).Spine then
-        if l2d then
-          (widget._spine):DestroyCurrentSpine()
-          -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-          CheckCgPosEditor.CurDynamicCGHandle = (DynamicCG.SyncLoad)(((Cfg.cfg_pet_skin)[skinID]).Spine, widget._spine)
-        else
-          if (string.startwith)(((Cfg.cfg_pet_skin)[skinID]).Spine, "l2d_") then
-            local spineRes = (DynamicCG.ReplaceL2D)(((Cfg.cfg_pet_skin)[skinID]).Spine, true)
-            ;
-            (widget._spine):LoadSpine(spineRes)
-          else
-            do
-              ;
-              (widget._spine):LoadSpine(((Cfg.cfg_pet_skin)[skinID]).Spine)
-              ;
-              (widget._spine):LoadSpine(((Cfg.cfg_only_assistant)[skinID]).Spine)
-              do
-                local spineSke = (widget._spine).CurrentSkeleton
-                if not spineSke then
-                  spineSke = (widget._spine).CurrentMultiSkeleton
-                end
-                if spineSke then
-                  spineSke:Initialize(true)
-                  ;
-                  (spineSke.AnimationState):SetAnimation(0, ((Cfg.cfg_only_assistant)[skinID]).SpineAnim, true)
-                end
-                -- DECOMPILER ERROR at PC141: Confused about usage of register: R7 in 'UnsetPending'
-
-                if (widget._cgGo).activeSelf then
-                  ((widget._cgGo).transform).anchoredPosition = offset
-                  -- DECOMPILER ERROR at PC149: Confused about usage of register: R7 in 'UnsetPending'
-
-                  ;
-                  ((widget._cgGo).transform).localScale = Vector3(scale, scale, scale)
-                else
-                  -- DECOMPILER ERROR at PC153: Confused about usage of register: R7 in 'UnsetPending'
-
-                  ;
-                  ((widget._spineGo).transform).anchoredPosition = offset
-                  -- DECOMPILER ERROR at PC161: Confused about usage of register: R7 in 'UnsetPending'
-
-                  ;
-                  ((widget._spineGo).transform).localScale = Vector3(scale, scale, scale)
-                end
-              end
-            end
-          end
-        end
-      end
-    end
-  end
-end
-
-CgPosEditorRefreshUIPetDetailItem = function(checkcg, skinID, offset, scale, l2d)
-  -- function num : 0_12 , upvalues : _ENV
-  if checkcg ~= nil then
-    ((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo):SetActive(checkcg)
-    ;
-    ((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._spineGo):SetActive(not checkcg)
-  end
-  if skinID ~= nil then
-    if checkcg then
-      (((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex]):LoadCgSync(((Cfg.cfg_pet_skin)[skinID]).StaticBody, true)
-    else
+    elseif Cfg.cfg_pet_skin[skinID] and Cfg.cfg_pet_skin[skinID].Spine then
       if l2d then
-        (((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex]):LoadSpineSync(((Cfg.cfg_pet_skin)[skinID]).Spine, true)
+        widget._spine:DestroyCurrentSpine()
+        CheckCgPosEditor.CurDynamicCGHandle = DynamicCG.SyncLoad(Cfg.cfg_pet_skin[skinID].Spine, widget._spine)
+      elseif string.startwith(Cfg.cfg_pet_skin[skinID].Spine, "l2d_") then
+        local spineRes = DynamicCG.ReplaceL2D(Cfg.cfg_pet_skin[skinID].Spine, true)
+        widget._spine:LoadSpine(spineRes)
       else
-        if (string.startwith)(((Cfg.cfg_pet_skin)[skinID]).Spine, "l2d_") then
-          local spineRes = (DynamicCG.ReplaceL2D)(((Cfg.cfg_pet_skin)[skinID]).Spine, true)
-          ;
-          (((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex]):LoadSpineSync(spineRes, true)
-        else
-          do
-            ;
-            (((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex]):LoadSpineSync(((Cfg.cfg_pet_skin)[skinID]).Spine, true)
-            -- DECOMPILER ERROR at PC124: Confused about usage of register: R5 in 'UnsetPending'
-
-            if ((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).activeSelf then
-              (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).anchoredPosition = offset
-              -- DECOMPILER ERROR at PC139: Confused about usage of register: R5 in 'UnsetPending'
-
-              ;
-              (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).localScale = Vector3(scale, scale, scale)
-            else
-              -- DECOMPILER ERROR at PC150: Confused about usage of register: R5 in 'UnsetPending'
-
-              ;
-              (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._spineGo).transform).anchoredPosition = offset
-              -- DECOMPILER ERROR at PC165: Confused about usage of register: R5 in 'UnsetPending'
-
-              ;
-              (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._spineGo).transform).localScale = Vector3(scale, scale, scale)
-            end
-          end
-        end
+        widget._spine:LoadSpine(Cfg.cfg_pet_skin[skinID].Spine)
+      end
+    else
+      widget._spine:LoadSpine(Cfg.cfg_only_assistant[skinID].Spine)
+      local spineSke = widget._spine.CurrentSkeleton
+      spineSke = spineSke or widget._spine.CurrentMultiSkeleton
+      if spineSke then
+        spineSke:Initialize(true)
+        spineSke.AnimationState:SetAnimation(0, Cfg.cfg_only_assistant[skinID].SpineAnim, true)
       end
     end
   end
-end
-
-CgPosEditorRefreshUIUpLevelInterfaceController = function(checkcg, skinID, offset, scale)
-  -- function num : 0_13 , upvalues : _ENV
-  if skinID ~= nil then
-    (((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex]):LoadCgSync(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+  if widget._cgGo.activeSelf then
+    widget._cgGo.transform.anchoredPosition = offset
+    widget._cgGo.transform.localScale = Vector3(scale, scale, scale)
+  else
+    widget._spineGo.transform.anchoredPosition = offset
+    widget._spineGo.transform.localScale = Vector3(scale, scale, scale)
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).localScale = Vector3(scale, scale, scale)
 end
 
-CgPosEditorRefreshUIGradeInterfaceController = function(checkcg, skinID, offset, scale)
-  -- function num : 0_14 , upvalues : _ENV
-  if skinID ~= nil then
-    (((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex]):LoadCgSync(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+function CgPosEditorRefreshUIPetDetailItem(checkcg, skinID, offset, scale, l2d)
+  if checkcg ~= nil then
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo:SetActive(checkcg)
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._spineGo:SetActive(not checkcg)
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).localScale = Vector3(scale, scale, scale)
-end
-
-CgPosEditorRefreshUIGradeInterfaceController_color = function(checkcg, skinID, offset, scale)
-  -- function num : 0_15 , upvalues : _ENV
   if skinID ~= nil then
-    ((CheckCgPosEditor.CurController)._bgCgCenter):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+    if checkcg then
+      CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]:LoadCgSync(Cfg.cfg_pet_skin[skinID].StaticBody, true)
+    elseif l2d then
+      CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]:LoadSpineSync(Cfg.cfg_pet_skin[skinID].Spine, true)
+    elseif string.startwith(Cfg.cfg_pet_skin[skinID].Spine, "l2d_") then
+      local spineRes = DynamicCG.ReplaceL2D(Cfg.cfg_pet_skin[skinID].Spine, true)
+      CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]:LoadSpineSync(spineRes, true)
+    else
+      CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]:LoadSpineSync(Cfg.cfg_pet_skin[skinID].Spine, true)
+    end
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._bgCgCenter).transform).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._bgCgCenter).transform).localScale = Vector3(scale, scale, scale)
+  if CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.activeSelf then
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.anchoredPosition = offset
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.localScale = Vector3(scale, scale, scale)
+  else
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._spineGo.transform.anchoredPosition = offset
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._spineGo.transform.localScale = Vector3(scale, scale, scale)
+  end
 end
 
-CgPosEditorRefreshUIBreakController = function(checkcg, skinID, offset, scale)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : _ENV, skinID, offset, scale
-    if not (CheckCgPosEditor.CurController)._itemTable then
+function CgPosEditorRefreshUIUpLevelInterfaceController(checkcg, skinID, offset, scale)
+  if skinID ~= nil then
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]:LoadCgSync(Cfg.cfg_pet_skin[skinID].StaticBody)
+  end
+  CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.localScale = Vector3(scale, scale, scale)
+end
+
+function CgPosEditorRefreshUIGradeInterfaceController(checkcg, skinID, offset, scale)
+  if skinID ~= nil then
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]:LoadCgSync(Cfg.cfg_pet_skin[skinID].StaticBody)
+  end
+  CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.localScale = Vector3(scale, scale, scale)
+end
+
+function CgPosEditorRefreshUIGradeInterfaceController_color(checkcg, skinID, offset, scale)
+  if skinID ~= nil then
+    CheckCgPosEditor.CurController._bgCgCenter:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
+  end
+  CheckCgPosEditor.CurController._bgCgCenter.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._bgCgCenter.transform.localScale = Vector3(scale, scale, scale)
+end
+
+function CgPosEditorRefreshUIBreakController(checkcg, skinID, offset, scale)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    if not CheckCgPosEditor.CurController._itemTable then
       YIELD(TT)
       YIELD(TT)
       YIELD(TT)
     end
     if skinID ~= nil then
-      (((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex]):LoadCgSync(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+      CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]:LoadCgSync(Cfg.cfg_pet_skin[skinID].StaticBody)
     end
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).anchoredPosition = offset
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).localScale = Vector3(scale, scale, scale)
-  end
-)
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.anchoredPosition = offset
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.localScale = Vector3(scale, scale, scale)
+  end)
 end
 
-CgPosEditorRefreshUIHelpPetInfoController = function(checkcg, skinID, offset, scale)
-  -- function num : 0_17 , upvalues : _ENV
+function CgPosEditorRefreshUIHelpPetInfoController(checkcg, skinID, offset, scale)
   if skinID ~= nil then
-    ((CheckCgPosEditor.CurController).cgNormal):Load(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+    CheckCgPosEditor.CurController.cgNormal:Load(Cfg.cfg_pet_skin[skinID].StaticBody)
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((CheckCgPosEditor.CurController).cgRect).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((CheckCgPosEditor.CurController).cgRect).localScale = Vector3(scale, scale, scale)
+  CheckCgPosEditor.CurController.cgRect.anchoredPosition = offset
+  CheckCgPosEditor.CurController.cgRect.localScale = Vector3(scale, scale, scale)
 end
 
-CgPosEditorRefreshUIBattleResultComplete = function(checkcg, skinID, offset, scale)
-  -- function num : 0_18 , upvalues : _ENV
-  ((CheckCgPosEditor.CurController)._dialogLeftGO):SetActive(false)
-  ;
-  ((CheckCgPosEditor.CurController)._dialogRightGO):SetActive(false)
-  do
-    if skinID ~= nil then
-      local cg = ((Cfg.cfg_pet_skin)[skinID]).SimpleCG
-      if not cg then
-        cg = ((Cfg.cfg_pet_skin)[skinID]).StaticBody
-      end
-      ;
-      (((CheckCgPosEditor.CurController)._imgRoleList)[1]):LoadImage(cg)
-      ;
-      (((CheckCgPosEditor.CurController)._imgShadowList)[1]):LoadImage(cg)
-    end
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (((((CheckCgPosEditor.CurController)._imgRoleList)[1]).gameObject).transform).anchoredPosition = offset
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (((((CheckCgPosEditor.CurController)._imgShadowList)[1]).gameObject).transform).anchoredPosition = offset
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (((((CheckCgPosEditor.CurController)._imgRoleList)[1]).gameObject).transform).localScale = Vector3(scale, scale, scale)
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (((((CheckCgPosEditor.CurController)._imgShadowList)[1]).gameObject).transform).localScale = Vector3(scale, scale, scale)
-  end
-end
-
-CgPosEditorRefreshUIAircraftEnterBuildController = function(checkcg, skinID, offset, scale)
-  -- function num : 0_19 , upvalues : _ENV
+function CgPosEditorRefreshUIBattleResultComplete(checkcg, skinID, offset, scale)
+  CheckCgPosEditor.CurController._dialogLeftGO:SetActive(false)
+  CheckCgPosEditor.CurController._dialogRightGO:SetActive(false)
   if skinID ~= nil then
-    ((CheckCgPosEditor.CurController)._imgPetBig):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+    local cg = Cfg.cfg_pet_skin[skinID].SimpleCG
+    cg = cg or Cfg.cfg_pet_skin[skinID].StaticBody
+    CheckCgPosEditor.CurController._imgRoleList[1]:LoadImage(cg)
+    CheckCgPosEditor.CurController._imgShadowList[1]:LoadImage(cg)
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._imgPetBig).transform).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._imgPetBig).transform).localScale = Vector3(scale, scale, scale)
+  CheckCgPosEditor.CurController._imgRoleList[1].gameObject.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._imgShadowList[1].gameObject.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._imgRoleList[1].gameObject.transform.localScale = Vector3(scale, scale, scale)
+  CheckCgPosEditor.CurController._imgShadowList[1].gameObject.transform.localScale = Vector3(scale, scale, scale)
 end
 
-CgPosEditorRefreshUIGradeSkillPanelController = function(checkcg, skinID, offset, scale)
-  -- function num : 0_20 , upvalues : _ENV
-  ((CheckCgPosEditor.CurController)._cgImgGo):SetActive(true)
-  ;
-  ((CheckCgPosEditor.CurController)._cgTipGo):SetActive(true)
+function CgPosEditorRefreshUIAircraftEnterBuildController(checkcg, skinID, offset, scale)
   if skinID ~= nil then
-    ((CheckCgPosEditor.CurController)._cgImg):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+    CheckCgPosEditor.CurController._imgPetBig:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
   end
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._cgImgGo).transform).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._cgImgGo).transform).localScale = Vector3(scale, scale, scale)
+  CheckCgPosEditor.CurController._imgPetBig.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._imgPetBig.transform.localScale = Vector3(scale, scale, scale)
 end
 
-CgPosEditorRefreshUIPetObtain = function(checkcg, skinID, offset, scale, l2d)
-  -- function num : 0_21 , upvalues : _ENV
+function CgPosEditorRefreshUIGradeSkillPanelController(checkcg, skinID, offset, scale)
+  CheckCgPosEditor.CurController._cgImgGo:SetActive(true)
+  CheckCgPosEditor.CurController._cgTipGo:SetActive(true)
+  if skinID ~= nil then
+    CheckCgPosEditor.CurController._cgImg:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
+  end
+  CheckCgPosEditor.CurController._cgImgGo.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._cgImgGo.transform.localScale = Vector3(scale, scale, scale)
+end
+
+function CgPosEditorRefreshUIPetObtain(checkcg, skinID, offset, scale, l2d)
   if checkcg ~= nil then
-    ((CheckCgPosEditor.CurController)._cgRoot):SetActive(checkcg)
-    ;
-    (((CheckCgPosEditor.CurController)._spine).gameObject):SetActive(not checkcg)
+    CheckCgPosEditor.CurController._cgRoot:SetActive(checkcg)
+    CheckCgPosEditor.CurController._spine.gameObject:SetActive(not checkcg)
   end
   if skinID ~= nil then
     if checkcg then
-      ((CheckCgPosEditor.CurController)._cgNormal):Load(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+      CheckCgPosEditor.CurController._cgNormal:Load(Cfg.cfg_pet_skin[skinID].StaticBody)
+    elseif l2d then
+      CheckCgPosEditor.CurController._spine:DestroyCurrentSpine()
+      CheckCgPosEditor.CurDynamicCGHandle = DynamicCG.SyncLoad(Cfg.cfg_pet_skin[skinID].Spine, CheckCgPosEditor.CurController._spine)
+    elseif string.startwith(Cfg.cfg_pet_skin[skinID].Spine, "l2d_") then
+      local spineRes = DynamicCG.ReplaceL2D(Cfg.cfg_pet_skin[skinID].Spine, true)
+      CheckCgPosEditor.CurController._spine:LoadSpine(spineRes)
     else
-      if l2d then
-        ((CheckCgPosEditor.CurController)._spine):DestroyCurrentSpine()
-        -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-        CheckCgPosEditor.CurDynamicCGHandle = (DynamicCG.SyncLoad)(((Cfg.cfg_pet_skin)[skinID]).Spine, (CheckCgPosEditor.CurController)._spine)
-      else
-        if (string.startwith)(((Cfg.cfg_pet_skin)[skinID]).Spine, "l2d_") then
-          local spineRes = (DynamicCG.ReplaceL2D)(((Cfg.cfg_pet_skin)[skinID]).Spine, true)
-          ;
-          ((CheckCgPosEditor.CurController)._spine):LoadSpine(spineRes)
-        else
-          do
-            ;
-            ((CheckCgPosEditor.CurController)._spine):LoadSpine(((Cfg.cfg_pet_skin)[skinID]).Spine)
-            -- DECOMPILER ERROR at PC92: Confused about usage of register: R5 in 'UnsetPending'
-
-            if ((CheckCgPosEditor.CurController)._cgRoot).activeSelf then
-              ((CheckCgPosEditor.CurController)._cgRect).anchoredPosition = offset
-              -- DECOMPILER ERROR at PC101: Confused about usage of register: R5 in 'UnsetPending'
-
-              ;
-              ((CheckCgPosEditor.CurController)._cgRect).localScale = Vector3(scale, scale, scale)
-            else
-              -- DECOMPILER ERROR at PC108: Confused about usage of register: R5 in 'UnsetPending'
-
-              ;
-              ((((CheckCgPosEditor.CurController)._spine).gameObject).transform).anchoredPosition = offset
-              -- DECOMPILER ERROR at PC119: Confused about usage of register: R5 in 'UnsetPending'
-
-              ;
-              ((((CheckCgPosEditor.CurController)._spine).gameObject).transform).localScale = Vector3(scale, scale, scale)
-            end
-          end
-        end
-      end
+      CheckCgPosEditor.CurController._spine:LoadSpine(Cfg.cfg_pet_skin[skinID].Spine)
     end
   end
-end
-
-CgPosEditorRefreshUIPetObtain_mid = function(checkcg, skinID, offset, scale)
-  -- function num : 0_22 , upvalues : _ENV
-  if skinID ~= nil then
-    ((CheckCgPosEditor.CurController)._cg_mid):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+  if CheckCgPosEditor.CurController._cgRoot.activeSelf then
+    CheckCgPosEditor.CurController._cgRect.anchoredPosition = offset
+    CheckCgPosEditor.CurController._cgRect.localScale = Vector3(scale, scale, scale)
+  else
+    CheckCgPosEditor.CurController._spine.gameObject.transform.anchoredPosition = offset
+    CheckCgPosEditor.CurController._spine.gameObject.transform.localScale = Vector3(scale, scale, scale)
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._cg_mid).transform).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._cg_mid).transform).localScale = Vector3(scale, scale, scale)
 end
 
-CgPosEditorRefreshUIWidgetPetInfo = function(checkcg, skinID, offset, scale)
-  -- function num : 0_23 , upvalues : _ENV
-  (CheckCgPosEditor.CurController):_ShowHideUIBattle(true)
+function CgPosEditorRefreshUIPetObtain_mid(checkcg, skinID, offset, scale)
+  if skinID ~= nil then
+    CheckCgPosEditor.CurController._cg_mid:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
+  end
+  CheckCgPosEditor.CurController._cg_mid.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._cg_mid.transform.localScale = Vector3(scale, scale, scale)
+end
+
+function CgPosEditorRefreshUIWidgetPetInfo(checkcg, skinID, offset, scale)
+  CheckCgPosEditor.CurController:_ShowHideUIBattle(true)
   if skinID ~= nil then
     local tempData = pet_data:New()
-    tempData.template_id = ((Cfg.cfg_pet_skin)[skinID]).PetId
+    tempData.template_id = Cfg.cfg_pet_skin[skinID].PetId
     tempData.current_skin = skinID
     local pet = Pet:New(tempData)
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.CurController)._petInfoPool = (CheckCgPosEditor.CurController):GetUIComponent("UISelectObjectPath", "PetInfoPool")
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.CurController)._petInfoUI = ((CheckCgPosEditor.CurController)._petInfoPool):SpawnObject("UIWidgetPetInfo")
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (CheckCgPosEditor.CurController)._petInfoPoolGameObject = (CheckCgPosEditor.CurController):GetGameObject("PetInfoPool")
-    ;
-    ((CheckCgPosEditor.CurController)._petInfoPoolGameObject):SetActive(true)
-    ;
-    ((CheckCgPosEditor.CurController)._petInfoUI):Init(pet)
-    ;
-    (((CheckCgPosEditor.CurController)._petInfoUI):GetGameObject()):SetActive(true)
-    ;
-    (((CheckCgPosEditor.CurController)._petInfoUI)._roleStaticBody):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+    CheckCgPosEditor.CurController._petInfoPool = CheckCgPosEditor.CurController:GetUIComponent("UISelectObjectPath", "PetInfoPool")
+    CheckCgPosEditor.CurController._petInfoUI = CheckCgPosEditor.CurController._petInfoPool:SpawnObject("UIWidgetPetInfo")
+    CheckCgPosEditor.CurController._petInfoPoolGameObject = CheckCgPosEditor.CurController:GetGameObject("PetInfoPool")
+    CheckCgPosEditor.CurController._petInfoPoolGameObject:SetActive(true)
+    CheckCgPosEditor.CurController._petInfoUI:Init(pet)
+    CheckCgPosEditor.CurController._petInfoUI:GetGameObject():SetActive(true)
+    CheckCgPosEditor.CurController._petInfoUI._roleStaticBody:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
   end
-  do
-    -- DECOMPILER ERROR at PC80: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (((CheckCgPosEditor.CurController)._petInfoUI)._cg).anchoredPosition = offset
-    -- DECOMPILER ERROR at PC90: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (((CheckCgPosEditor.CurController)._petInfoUI)._cg).localScale = Vector3(scale, scale, scale)
-  end
+  CheckCgPosEditor.CurController._petInfoUI._cg.anchoredPosition = offset
+  CheckCgPosEditor.CurController._petInfoUI._cg.localScale = Vector3(scale, scale, scale)
 end
 
-CgPosEditorRefreshUISpineContainer = function(checkcg, skinID, offset, scale)
-  -- function num : 0_24 , upvalues : _ENV
+function CgPosEditorRefreshUISpineContainer(checkcg, skinID, offset, scale)
   if skinID ~= nil then
-    (((CheckCgPosEditor.CurController).spineContainer)._img):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+    CheckCgPosEditor.CurController.spineContainer._img:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((((CheckCgPosEditor.CurController).spineContainer)._img).transform).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((((CheckCgPosEditor.CurController).spineContainer)._img).transform).localScale = Vector3(scale, scale, scale)
+  CheckCgPosEditor.CurController.spineContainer._img.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController.spineContainer._img.transform.localScale = Vector3(scale, scale, scale)
 end
 
-CgPosEditorRefreshUIChooseAssistantController = function(checkcg, skinID, offset, scale, l2d)
-  -- function num : 0_25 , upvalues : _ENV
+function CgPosEditorRefreshUIChooseAssistantController(checkcg, skinID, offset, scale, l2d)
   if checkcg ~= nil then
-    ((CheckCgPosEditor.CurController)._cgGo):SetActive(checkcg)
-    ;
-    ((CheckCgPosEditor.CurController)._CgObj):SetActive(checkcg)
-    ;
-    (((CheckCgPosEditor.CurController)._spineObj).gameObject):SetActive(not checkcg)
+    CheckCgPosEditor.CurController._cgGo:SetActive(checkcg)
+    CheckCgPosEditor.CurController._CgObj:SetActive(checkcg)
+    CheckCgPosEditor.CurController._spineObj.gameObject:SetActive(not checkcg)
   end
   if skinID ~= nil then
     if checkcg then
-      if (Cfg.cfg_pet_skin)[skinID] and ((Cfg.cfg_pet_skin)[skinID]).StaticBody then
-        ((CheckCgPosEditor.CurController)._cg):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+      if Cfg.cfg_pet_skin[skinID] and Cfg.cfg_pet_skin[skinID].StaticBody then
+        CheckCgPosEditor.CurController._cg:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
       else
-        ;
-        ((CheckCgPosEditor.CurController)._cg):LoadImage(((Cfg.cfg_only_assistant)[skinID]).CG)
+        CheckCgPosEditor.CurController._cg:LoadImage(Cfg.cfg_only_assistant[skinID].CG)
+      end
+    elseif Cfg.cfg_pet_skin[skinID] and Cfg.cfg_pet_skin[skinID].Spine then
+      if l2d then
+        CheckCgPosEditor.CurController._spine:DestroyCurrentSpine()
+        CheckCgPosEditor.CurDynamicCGHandle = DynamicCG.SyncLoad(Cfg.cfg_pet_skin[skinID].Spine, CheckCgPosEditor.CurController._spine)
+      elseif string.startwith(Cfg.cfg_pet_skin[skinID].Spine, "l2d_") then
+        local spineRes = DynamicCG.ReplaceL2D(Cfg.cfg_pet_skin[skinID].Spine, true)
+        CheckCgPosEditor.CurController._spine:LoadSpine(spineRes)
+      else
+        CheckCgPosEditor.CurController._spine:LoadSpine(Cfg.cfg_pet_skin[skinID].Spine)
       end
     else
-      if (Cfg.cfg_pet_skin)[skinID] and ((Cfg.cfg_pet_skin)[skinID]).Spine then
-        if l2d then
-          ((CheckCgPosEditor.CurController)._spine):DestroyCurrentSpine()
-          -- DECOMPILER ERROR at PC85: Confused about usage of register: R5 in 'UnsetPending'
-
-          CheckCgPosEditor.CurDynamicCGHandle = (DynamicCG.SyncLoad)(((Cfg.cfg_pet_skin)[skinID]).Spine, (CheckCgPosEditor.CurController)._spine)
-        else
-          if (string.startwith)(((Cfg.cfg_pet_skin)[skinID]).Spine, "l2d_") then
-            local spineRes = (DynamicCG.ReplaceL2D)(((Cfg.cfg_pet_skin)[skinID]).Spine, true)
-            ;
-            ((CheckCgPosEditor.CurController)._spine):LoadSpine(spineRes)
-          else
-            do
-              ;
-              ((CheckCgPosEditor.CurController)._spine):LoadSpine(((Cfg.cfg_pet_skin)[skinID]).Spine)
-              ;
-              ((CheckCgPosEditor.CurController)._spine):LoadSpine(((Cfg.cfg_only_assistant)[skinID]).Spine)
-              do
-                local spineSke = ((CheckCgPosEditor.CurController)._spine).CurrentSkeleton
-                if not spineSke then
-                  spineSke = ((CheckCgPosEditor.CurController)._spine).CurrentMultiSkeleton
-                end
-                if spineSke then
-                  spineSke:Initialize(true)
-                  ;
-                  (spineSke.AnimationState):SetAnimation(0, ((Cfg.cfg_only_assistant)[skinID]).SpineAnim, true)
-                end
-                -- DECOMPILER ERROR at PC165: Confused about usage of register: R5 in 'UnsetPending'
-
-                if ((CheckCgPosEditor.CurController)._cgGo).activeSelf then
-                  (((CheckCgPosEditor.CurController)._cg).transform).anchoredPosition = offset
-                  -- DECOMPILER ERROR at PC175: Confused about usage of register: R5 in 'UnsetPending'
-
-                  ;
-                  (((CheckCgPosEditor.CurController)._cg).transform).localScale = Vector3(scale, scale, scale)
-                else
-                  -- DECOMPILER ERROR at PC182: Confused about usage of register: R5 in 'UnsetPending'
-
-                  ;
-                  ((((CheckCgPosEditor.CurController)._spine).gameObject).transform).anchoredPosition = offset
-                  -- DECOMPILER ERROR at PC193: Confused about usage of register: R5 in 'UnsetPending'
-
-                  ;
-                  ((((CheckCgPosEditor.CurController)._spine).gameObject).transform).localScale = Vector3(scale, scale, scale)
-                end
-              end
-            end
-          end
-        end
+      CheckCgPosEditor.CurController._spine:LoadSpine(Cfg.cfg_only_assistant[skinID].Spine)
+      local spineSke = CheckCgPosEditor.CurController._spine.CurrentSkeleton
+      spineSke = spineSke or CheckCgPosEditor.CurController._spine.CurrentMultiSkeleton
+      if spineSke then
+        spineSke:Initialize(true)
+        spineSke.AnimationState:SetAnimation(0, Cfg.cfg_only_assistant[skinID].SpineAnim, true)
       end
     end
   end
-end
-
-CgPosEditorRefreshUIPetIntimacyMainController = function(checkcg, skinID, offset, scale)
-  -- function num : 0_26 , upvalues : _ENV
-  if skinID ~= nil then
-    (((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex]):LoadCgSync(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+  if CheckCgPosEditor.CurController._cgGo.activeSelf then
+    CheckCgPosEditor.CurController._cg.transform.anchoredPosition = offset
+    CheckCgPosEditor.CurController._cg.transform.localScale = Vector3(scale, scale, scale)
+  else
+    CheckCgPosEditor.CurController._spine.gameObject.transform.anchoredPosition = offset
+    CheckCgPosEditor.CurController._spine.gameObject.transform.localScale = Vector3(scale, scale, scale)
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((((CheckCgPosEditor.CurController)._itemTable)[(CheckCgPosEditor.CurController)._currIndex])._cgGo).transform).localScale = Vector3(scale, scale, scale)
 end
 
-CgPosEditorRefreshUIStoryBanner = function(checkcg, skinID, offset, scale, l2d)
-  -- function num : 0_27 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_27_0 , upvalues : _ENV, skinID, l2d, offset, scale
+function CgPosEditorRefreshUIPetIntimacyMainController(checkcg, skinID, offset, scale)
+  if skinID ~= nil then
+    CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]:LoadCgSync(Cfg.cfg_pet_skin[skinID].StaticBody)
+  end
+  CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._itemTable[CheckCgPosEditor.CurController._currIndex]._cgGo.transform.localScale = Vector3(scale, scale, scale)
+end
+
+function CgPosEditorRefreshUIStoryBanner(checkcg, skinID, offset, scale, l2d)
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
     YIELD(TT)
     YIELD(TT)
     if skinID ~= nil then
       if l2d then
-        ((CheckCgPosEditor.CurController)._spineLoader):DestroyCurrentSpine()
-        -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-        CheckCgPosEditor.CurDynamicCGHandle = (DynamicCG.SyncLoad)(((Cfg.cfg_pet_skin)[skinID]).Spine, (CheckCgPosEditor.CurController)._spineLoader)
+        CheckCgPosEditor.CurController._spineLoader:DestroyCurrentSpine()
+        CheckCgPosEditor.CurDynamicCGHandle = DynamicCG.SyncLoad(Cfg.cfg_pet_skin[skinID].Spine, CheckCgPosEditor.CurController._spineLoader)
+      elseif string.startwith(Cfg.cfg_pet_skin[skinID].Spine, "l2d_") then
+        local spineRes = DynamicCG.ReplaceL2D(Cfg.cfg_pet_skin[skinID].Spine, true)
+        CheckCgPosEditor.CurController._spineLoader:LoadSpine(spineRes)
       else
-        if (string.startwith)(((Cfg.cfg_pet_skin)[skinID]).Spine, "l2d_") then
-          local spineRes = (DynamicCG.ReplaceL2D)(((Cfg.cfg_pet_skin)[skinID]).Spine, true)
-          ;
-          ((CheckCgPosEditor.CurController)._spineLoader):LoadSpine(spineRes)
-        else
-          do
-            ;
-            ((CheckCgPosEditor.CurController)._spineLoader):LoadSpine(((Cfg.cfg_pet_skin)[skinID]).Spine)
-            -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (((CheckCgPosEditor.CurController)._spineLoaderGO).transform).anchoredPosition = offset
-            -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (((CheckCgPosEditor.CurController)._spineLoaderGO).transform).localScale = Vector3(scale, scale, scale)
-          end
-        end
+        CheckCgPosEditor.CurController._spineLoader:LoadSpine(Cfg.cfg_pet_skin[skinID].Spine)
       end
     end
-  end
-)
+    CheckCgPosEditor.CurController._spineLoaderGO.transform.anchoredPosition = offset
+    CheckCgPosEditor.CurController._spineLoaderGO.transform.localScale = Vector3(scale, scale, scale)
+  end)
 end
 
-CgPosEditorRefreshUIPetSkinsMainController = function(checkcg, skinID, offset, scale, l2d)
-  -- function num : 0_28 , upvalues : _ENV
+function CgPosEditorRefreshUIPetSkinsMainController(checkcg, skinID, offset, scale, l2d)
   if checkcg ~= nil then
-    ((CheckCgPosEditor.CurController)._cgRoot):SetActive(checkcg)
-    ;
-    ((CheckCgPosEditor.CurController)._spineRoot):SetActive(not checkcg)
+    CheckCgPosEditor.CurController._cgRoot:SetActive(checkcg)
+    CheckCgPosEditor.CurController._spineRoot:SetActive(not checkcg)
   end
-  if (CheckCgPosEditor.CurController)._dcgHandle then
-    ((CheckCgPosEditor.CurController)._dcgHandle):DestroyCurrentCG()
+  if CheckCgPosEditor.CurController._dcgHandle then
+    CheckCgPosEditor.CurController._dcgHandle:DestroyCurrentCG()
   end
   if skinID ~= nil then
     if checkcg then
-      ((CheckCgPosEditor.CurController)._cgNormal):Load(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+      CheckCgPosEditor.CurController._cgNormal:Load(Cfg.cfg_pet_skin[skinID].StaticBody)
     else
-      local spineLoader = ((CheckCgPosEditor.CurController)._spineRoot):GetComponent("SpineLoader")
+      local spineLoader = CheckCgPosEditor.CurController._spineRoot:GetComponent("SpineLoader")
       if l2d then
         spineLoader:DestroyCurrentSpine()
-        -- DECOMPILER ERROR at PC57: Confused about usage of register: R6 in 'UnsetPending'
-
-        CheckCgPosEditor.CurDynamicCGHandle = (DynamicCG.SyncLoad)(((Cfg.cfg_pet_skin)[skinID]).Spine, spineLoader)
+        CheckCgPosEditor.CurDynamicCGHandle = DynamicCG.SyncLoad(Cfg.cfg_pet_skin[skinID].Spine, spineLoader)
+      elseif string.startwith(Cfg.cfg_pet_skin[skinID].Spine, "l2d_") then
+        local spineRes = DynamicCG.ReplaceL2D(Cfg.cfg_pet_skin[skinID].Spine, true)
+        spineLoader:LoadSpine(spineRes)
       else
-        if (string.startwith)(((Cfg.cfg_pet_skin)[skinID]).Spine, "l2d_") then
-          local spineRes = (DynamicCG.ReplaceL2D)(((Cfg.cfg_pet_skin)[skinID]).Spine, true)
-          spineLoader:LoadSpine(spineRes)
-        else
-          do
-            do
-              spineLoader:DestroyCurrentSpine()
-              spineLoader:LoadSpine(((Cfg.cfg_pet_skin)[skinID]).Spine)
-              -- DECOMPILER ERROR at PC98: Confused about usage of register: R5 in 'UnsetPending'
-
-              if ((CheckCgPosEditor.CurController)._cgRoot).activeSelf then
-                ((CheckCgPosEditor.CurController)._cgRect).anchoredPosition = offset
-                -- DECOMPILER ERROR at PC107: Confused about usage of register: R5 in 'UnsetPending'
-
-                ;
-                ((CheckCgPosEditor.CurController)._cgRect).localScale = Vector3(scale, scale, scale)
-              else
-                -- DECOMPILER ERROR at PC113: Confused about usage of register: R5 in 'UnsetPending'
-
-                ;
-                (((CheckCgPosEditor.CurController)._spineRoot).transform).anchoredPosition = offset
-                -- DECOMPILER ERROR at PC123: Confused about usage of register: R5 in 'UnsetPending'
-
-                ;
-                (((CheckCgPosEditor.CurController)._spineRoot).transform).localScale = Vector3(scale, scale, scale)
-              end
-            end
-          end
-        end
+        spineLoader:DestroyCurrentSpine()
+        spineLoader:LoadSpine(Cfg.cfg_pet_skin[skinID].Spine)
       end
     end
   end
+  if CheckCgPosEditor.CurController._cgRoot.activeSelf then
+    CheckCgPosEditor.CurController._cgRect.anchoredPosition = offset
+    CheckCgPosEditor.CurController._cgRect.localScale = Vector3(scale, scale, scale)
+  else
+    CheckCgPosEditor.CurController._spineRoot.transform.anchoredPosition = offset
+    CheckCgPosEditor.CurController._spineRoot.transform.localScale = Vector3(scale, scale, scale)
+  end
 end
 
-CgPosEditorRefreshUIPetSkinsMainController_mid = function(checkcg, skinID, offset, scale)
-  -- function num : 0_29 , upvalues : _ENV
+function CgPosEditorRefreshUIPetSkinsMainController_mid(checkcg, skinID, offset, scale)
   if skinID ~= nil then
-    ((CheckCgPosEditor.CurController)._cg_mid):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+    CheckCgPosEditor.CurController._cg_mid:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._cg_mid).transform).anchoredPosition = offset
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (((CheckCgPosEditor.CurController)._cg_mid).transform).localScale = Vector3(scale, scale, scale)
+  CheckCgPosEditor.CurController._cg_mid.transform.anchoredPosition = offset
+  CheckCgPosEditor.CurController._cg_mid.transform.localScale = Vector3(scale, scale, scale)
 end
 
-CgPosEditorRefreshUIPlayerInfoController = function(checkcg, skinID, offset, scale, l2d)
-  -- function num : 0_30 , upvalues : _ENV
-  local widget = (CheckCgPosEditor.CurController)._main_lobby_bg
-  local spineSke = (widget._spine).CurrentSkeleton
-  if not spineSke then
-    spineSke = (widget._spine).CurrentMultiSkeleton
-  end
+function CgPosEditorRefreshUIPlayerInfoController(checkcg, skinID, offset, scale, l2d)
+  local widget = CheckCgPosEditor.CurController._main_lobby_bg
+  local spineSke = widget._spine.CurrentSkeleton
+  spineSke = spineSke or widget._spine.CurrentMultiSkeleton
   if checkcg ~= nil then
-    (widget._cgGo):SetActive(checkcg)
-    ;
-    (widget._spineGo):SetActive(not checkcg)
+    widget._cgGo:SetActive(checkcg)
+    widget._spineGo:SetActive(not checkcg)
   end
   if skinID ~= nil then
     if checkcg then
-      if (Cfg.cfg_pet_skin)[skinID] and ((Cfg.cfg_pet_skin)[skinID]).StaticBody then
-        (widget._cg):LoadImage(((Cfg.cfg_pet_skin)[skinID]).StaticBody)
+      if Cfg.cfg_pet_skin[skinID] and Cfg.cfg_pet_skin[skinID].StaticBody then
+        widget._cg:LoadImage(Cfg.cfg_pet_skin[skinID].StaticBody)
       else
-        ;
-        (widget._cg):LoadImage(((Cfg.cfg_only_assistant)[skinID]).CG)
+        widget._cg:LoadImage(Cfg.cfg_only_assistant[skinID].CG)
+      end
+    elseif Cfg.cfg_pet_skin[skinID] and Cfg.cfg_pet_skin[skinID].Spine then
+      if l2d then
+        widget._spine:DestroyCurrentSpine()
+        CheckCgPosEditor.CurDynamicCGHandle = DynamicCG.SyncLoad(Cfg.cfg_pet_skin[skinID].Spine, widget._spine)
+      elseif string.startwith(Cfg.cfg_pet_skin[skinID].Spine, "l2d_") then
+        local spineRes = DynamicCG.ReplaceL2D(Cfg.cfg_pet_skin[skinID].Spine, true)
+        widget._spine:LoadSpine(spineRes)
+      else
+        widget._spine:LoadSpine(Cfg.cfg_pet_skin[skinID].Spine)
       end
     else
-      if (Cfg.cfg_pet_skin)[skinID] and ((Cfg.cfg_pet_skin)[skinID]).Spine then
-        if l2d then
-          (widget._spine):DestroyCurrentSpine()
-          -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-          CheckCgPosEditor.CurDynamicCGHandle = (DynamicCG.SyncLoad)(((Cfg.cfg_pet_skin)[skinID]).Spine, widget._spine)
-        else
-          if (string.startwith)(((Cfg.cfg_pet_skin)[skinID]).Spine, "l2d_") then
-            local spineRes = (DynamicCG.ReplaceL2D)(((Cfg.cfg_pet_skin)[skinID]).Spine, true)
-            ;
-            (widget._spine):LoadSpine(spineRes)
-          else
-            do
-              ;
-              (widget._spine):LoadSpine(((Cfg.cfg_pet_skin)[skinID]).Spine)
-              ;
-              (widget._spine):LoadSpine(((Cfg.cfg_only_assistant)[skinID]).Spine)
-              do
-                local spineSke = (widget._spine).CurrentSkeleton
-                if not spineSke then
-                  spineSke = (widget._spine).CurrentMultiSkeleton
-                end
-                if spineSke then
-                  spineSke:Initialize(true)
-                  ;
-                  (spineSke.AnimationState):SetAnimation(0, ((Cfg.cfg_only_assistant)[skinID]).SpineAnim, true)
-                end
-                -- DECOMPILER ERROR at PC141: Confused about usage of register: R7 in 'UnsetPending'
-
-                if (widget._cgGo).activeSelf then
-                  ((widget._cgGo).transform).anchoredPosition = offset
-                  -- DECOMPILER ERROR at PC149: Confused about usage of register: R7 in 'UnsetPending'
-
-                  ;
-                  ((widget._cgGo).transform).localScale = Vector3(scale, scale, scale)
-                else
-                  -- DECOMPILER ERROR at PC153: Confused about usage of register: R7 in 'UnsetPending'
-
-                  ;
-                  ((widget._spineGo).transform).anchoredPosition = offset
-                  -- DECOMPILER ERROR at PC161: Confused about usage of register: R7 in 'UnsetPending'
-
-                  ;
-                  ((widget._spineGo).transform).localScale = Vector3(scale, scale, scale)
-                end
-              end
-            end
-          end
-        end
+      widget._spine:LoadSpine(Cfg.cfg_only_assistant[skinID].Spine)
+      local spineSke = widget._spine.CurrentSkeleton
+      spineSke = spineSke or widget._spine.CurrentMultiSkeleton
+      if spineSke then
+        spineSke:Initialize(true)
+        spineSke.AnimationState:SetAnimation(0, Cfg.cfg_only_assistant[skinID].SpineAnim, true)
       end
     end
   end
+  if widget._cgGo.activeSelf then
+    widget._cgGo.transform.anchoredPosition = offset
+    widget._cgGo.transform.localScale = Vector3(scale, scale, scale)
+  else
+    widget._spineGo.transform.anchoredPosition = offset
+    widget._spineGo.transform.localScale = Vector3(scale, scale, scale)
+  end
 end
-
-

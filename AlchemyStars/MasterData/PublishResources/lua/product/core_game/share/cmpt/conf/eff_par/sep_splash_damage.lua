@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_splash_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamSplashDamage", SkillDamageEffectParam)
 SkillEffectParamSplashDamage = SkillEffectParamSplashDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSplashDamage.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSplashDamage:Constructor(t)
   self._splashRate = t.splashRate
   self._splashScopeType = t.splashScopeType
   self._splashScopeParam = t.splashScopeParam
   self._baseDamageStageIndex = t.baseDamageStageIndex or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSplashDamage:GetEffectType()
   return SkillEffectType.SplashDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamage.GetSplashRate = function(self)
-  -- function num : 0_2
+function SkillEffectParamSplashDamage:GetSplashRate()
   return self._splashRate
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamage.GetSplashScopeType = function(self)
-  -- function num : 0_3
+function SkillEffectParamSplashDamage:GetSplashScopeType()
   return self._splashScopeType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamage.GetSplashScopeParam = function(self)
-  -- function num : 0_4
+function SkillEffectParamSplashDamage:GetSplashScopeParam()
   return self._splashScopeParam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSplashDamage.GetBaseDamageStageIndex = function(self)
-  -- function num : 0_5
+function SkillEffectParamSplashDamage:GetBaseDamageStageIndex()
   return self._baseDamageStageIndex
 end
-
-

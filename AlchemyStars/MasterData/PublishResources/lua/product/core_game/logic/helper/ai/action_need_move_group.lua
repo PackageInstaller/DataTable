@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_need_move_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsNeedMoveGroup", AINewNode)
 ActionIsNeedMoveGroup = ActionIsNeedMoveGroup
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsNeedMoveGroup.OnBegin = function(self)
-  -- function num : 0_0
+function ActionIsNeedMoveGroup:OnBegin()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsNeedMoveGroup.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionIsNeedMoveGroup.super).Reset)(self)
+function ActionIsNeedMoveGroup:Reset()
+  ActionIsNeedMoveGroup.super.Reset(self)
   self:GetAllGroupMonster()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsNeedMoveGroup.FindGroupMoveEntity = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local maxGroupMoveMonsterEntity = nil
+function ActionIsNeedMoveGroup:FindGroupMoveEntity()
+  local maxGroupMoveMonsterEntity
   local maxGroupMoveCount = 0
-  local aiRecorderCmpt = ((self._world):GetBoardEntity()):AIRecorder()
+  local aiRecorderCmpt = self._world:GetBoardEntity():AIRecorder()
   local isSameStep = true
   local firstStep = -1
   local noMoveCount = 0
-  for _,monster in ipairs(self._sameGroupMonsterList) do
+  for _, monster in ipairs(self._sameGroupMonsterList) do
     local collection = aiRecorderCmpt:FindWalkResultByCasterID(monster:GetID())
     if collection then
       if maxGroupMoveCount < #collection:GetWalkResultList() then
@@ -39,35 +26,28 @@ ActionIsNeedMoveGroup.FindGroupMoveEntity = function(self)
       end
       if firstStep == -1 then
         firstStep = #collection:GetWalkResultList()
-      else
-        if firstStep ~= #collection:GetWalkResultList() then
-          (Log.fatal)("全都动过,有一个多走一格")
-          isSameStep = false
-        end
+      elseif firstStep ~= #collection:GetWalkResultList() then
+        Log.fatal("全都动过,有一个多走一格")
+        isSameStep = false
       end
     else
       noMoveCount = noMoveCount + 1
     end
   end
   if isSameStep and noMoveCount ~= 0 and noMoveCount ~= #self._sameGroupMonsterList then
-    (Log.fatal)("有动过有没动")
+    Log.fatal("有动过有没动")
     isSameStep = false
   end
   if isSameStep then
-    return 
+    return
   end
   return maxGroupMoveMonsterEntity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsNeedMoveGroup.OnUpdate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ActionIsNeedMoveGroup:OnUpdate()
   local sameMoveEntity = self:FindGroupMoveEntity()
-  if sameMoveEntity and sameMoveEntity:GetID() ~= (self.m_entityOwn):GetID() then
+  if sameMoveEntity and sameMoveEntity:GetID() ~= self.m_entityOwn:GetID() then
     return AINewNodeStatus.Success
   end
   return AINewNodeStatus.Failure
 end
-
-

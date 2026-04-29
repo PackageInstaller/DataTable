@@ -1,102 +1,599 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/event_trailer/cfg_event_trailer_campaign.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, CampaignType = 2, CampaignID = 3, ComponentID = 4, OpenOrder = 5, Order = 6, JumpID = 7, JumpParams = 8, SeasonJumpID = 9, Title = 10, Name = 11, Intro = 12, Pic = 13, HasIntro = 14, StartTime = 15, EndTime = 16}
-local common = {"str_event_trailer_type_3", "str_event_trailer_type_2", "str_event_trailer_type_4", "str_event_trailer_type_7", "str_event_trailer_name_17", "str_event_trailer_name_18", "str_event_trailer_name_19"}
+local key = {
+  ID = 1,
+  CampaignType = 2,
+  CampaignID = 3,
+  ComponentID = 4,
+  OpenOrder = 5,
+  Order = 6,
+  JumpID = 7,
+  JumpParams = 8,
+  SeasonJumpID = 9,
+  Title = 10,
+  Name = 11,
+  Intro = 12,
+  Pic = 13,
+  HasIntro = 14,
+  StartTime = 15,
+  EndTime = 16
+}
+local common = {
+  "str_event_trailer_type_3",
+  "str_event_trailer_type_2",
+  "str_event_trailer_type_4",
+  "str_event_trailer_type_7",
+  "str_event_trailer_name_17",
+  "str_event_trailer_name_18",
+  "str_event_trailer_name_19"
+}
 local config = {
-{1, 1, 1145, 114500504, 5, 2, 81, nil, nil, common[1], "str_event_trailer_name_1"}
-, 
-{2, 1, 1145, 114510702, 6, 1, 134, nil, nil, common[2], "str_event_trailer_name_2"}
-, 
-{3, 1, 1145, 114500505, 4, 3, 133, 
-{-1, 1}
-, nil, common[1], "str_event_trailer_name_3"}
-, 
-{4, 1, 1145, 114500506, 3, 4, 133, nil, nil, common[1], "str_event_trailer_name_4"}
-, 
-{5, 1, 1144, 114411008, 1, 6, nil, nil, nil, common[2], "str_event_trailer_name_5"}
-, 
-{6, 1, 8005, 800507201, 2, 5, nil, nil, 2, common[3], "str_event_trailer_name_6"}
-, 
-{7, 2, nil, nil, 4, 1, 1, nil, nil, "str_event_trailer_type_6", "str_event_trailer_name_7", nil, nil, nil, "2024-03-20 05:00:00", "2024-04-10 04:00:00"}
-, 
-{8, 1, 8005, 800500515, 3, 2, nil, nil, 1, common[3], "str_event_trailer_name_8"}
-, 
-{9, 1, 1150, 115000501, 2, 3, nil, nil, nil, common[1], "str_event_trailer_name_9"}
-, 
-{10, 1, 5143, 514311101, 1, 4, nil, nil, nil, common[2], "str_event_trailer_name_10"}
-, 
-{11, 1, 9001, 900108001, 6, 2, nil, nil, 204, common[3], "str_event_trailer_name_11"}
-, 
-{12, 1, 1212, 121200504, 7, 1, 75, nil, nil, common[1], "str_event_trailer_name_12"}
-, 
-{13, 1, 1212, 121200505, 5, 3, 1002501, 
-{1}
-, nil, common[1], "str_event_trailer_name_13"}
-, 
-{14, 1, 1212, 121210808, 4, 4, 1002502, nil, nil, common[2], "str_event_trailer_name_14"}
-, 
-{15, 2, 1212, nil, 3, 5, 1002501, 
-{2}
-, nil, common[1], "str_event_trailer_name_15", nil, nil, nil, "2024-04-19 09:00:00", "2024-04-29 09:00:00"}
-, 
-{16, 1, 1212, 121202607, 2, 6, 2501, nil, nil, common[1], "str_event_trailer_name_16"}
-, 
-{17, 1, 5048, 504800501, 1, 7, nil, nil, nil, common[4], common[5]}
-, 
-{18, 1, 5048, 504800501, 1, 7, nil, nil, nil, common[4], common[5]}
-, 
-{19, 1, 8006, 800607201, 6, 2, nil, nil, 202, common[3], common[6]}
-, 
-{20, 1, 8006, 800600515, 7, 1, nil, nil, 203, common[3], common[7]}
-, 
-{21, 1, 5050, 505000503, 2, 6, 1164501, nil, nil, common[1], "str_event_trailer_name_20"}
-, 
-{22, 1, 7011, 701111901, 3, 5, nil, nil, nil, common[2], "str_event_trailer_name_21"}
-, 
-{23, 1, 5050, 505002804, 4, 4, 1164502, nil, nil, common[1], "str_event_trailer_name_22"}
-, 
-{24, 1, 1152, 115200501, 5, 3, nil, nil, nil, common[1], "str_event_trailer_name_23"}
-, 
-{25, 1, 8006, 800607201, 7, 1, nil, nil, 202, common[3], common[6]}
-, 
-{26, 1, 8006, 800600515, 6, 2, nil, nil, 203, common[3], common[7]}
-, 
-{27, 1, 5053, 505300503, 5, 3, 1174601, nil, nil, common[1], "str_event_trailer_name_24"}
-, 
-{28, 1, 5053, 505302804, 2, 6, 1174602, nil, nil, common[1], "str_event_trailer_name_25"}
-, 
-{29, 1, 5020, 502001901, 4, 4, nil, nil, nil, common[1], "str_event_trailer_name_26"}
-, 
-{30, 1, 7012, 701210001, 3, 5, nil, nil, nil, common[2], "str_event_trailer_name_27"}
-, 
-{31, 1, 7006, 700612101, 1, 7, nil, nil, nil, common[2], "str_event_trailer_name_28"}
-, 
-{32, 1, 5059, 505900503, 3, 1, 1184701, nil, nil, common[1], "str_event_trailer_name_29"}
-, 
-{33, 1, 5059, 505902804, 2, 2, 1184702, nil, nil, common[1], "str_event_trailer_name_30"}
-, 
-{34, 1, 7014, 701412001, 1, 3, nil, nil, nil, common[2], "str_event_trailer_name_31"}
-, 
-{35, 1, 8007, 800707201, 4, 3, nil, nil, 202, common[3], "str_event_trailer_name_32"}
-, 
-{36, 1, 8007, 800700515, 1, 6, nil, nil, 203, common[3], "str_event_trailer_name_33"}
-, 
-{37, 1, 1221, 122100503, 6, 1, 141, nil, nil, common[1], "str_event_trailer_name_34"}
-, 
-{38, 1, 1221, 122102804, 5, 2, 142, nil, nil, common[1], "str_event_trailer_name_35"}
-, 
-{39, 1, 1221, 122110007, 3, 4, 30, nil, nil, common[2], "str_event_trailer_name_36"}
-, 
-{40, 1, 5063, 506300501, 2, 5, nil, nil, nil, common[1], "str_event_trailer_name_37"}
-; 
-[44] = {44, 1, 5068, 506800502, 3, 1, 1200001, nil, nil, common[1], "str_cn20_n49_shop_activity3"}
-, 
-[45] = {45, 1, 5070, 507002801, 2, 2, nil, nil, nil, common[1], "str_cn20_n49_shop_activity2"}
-, 
-[46] = {46, 1, 5069, 506900501, 1, 3, nil, nil, nil, common[4], "str_cn20_n49_shop_activity1"}
+  {
+    1,
+    1,
+    1145,
+    114500504,
+    5,
+    2,
+    81,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_1"
+  },
+  {
+    2,
+    1,
+    1145,
+    114510702,
+    6,
+    1,
+    134,
+    nil,
+    nil,
+    common[2],
+    "str_event_trailer_name_2"
+  },
+  {
+    3,
+    1,
+    1145,
+    114500505,
+    4,
+    3,
+    133,
+    {-1, 1},
+    nil,
+    common[1],
+    "str_event_trailer_name_3"
+  },
+  {
+    4,
+    1,
+    1145,
+    114500506,
+    3,
+    4,
+    133,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_4"
+  },
+  {
+    5,
+    1,
+    1144,
+    114411008,
+    1,
+    6,
+    nil,
+    nil,
+    nil,
+    common[2],
+    "str_event_trailer_name_5"
+  },
+  {
+    6,
+    1,
+    8005,
+    800507201,
+    2,
+    5,
+    nil,
+    nil,
+    2,
+    common[3],
+    "str_event_trailer_name_6"
+  },
+  {
+    7,
+    2,
+    nil,
+    nil,
+    4,
+    1,
+    1,
+    nil,
+    nil,
+    "str_event_trailer_type_6",
+    "str_event_trailer_name_7",
+    nil,
+    nil,
+    nil,
+    "2024-03-20 05:00:00",
+    "2024-04-10 04:00:00"
+  },
+  {
+    8,
+    1,
+    8005,
+    800500515,
+    3,
+    2,
+    nil,
+    nil,
+    1,
+    common[3],
+    "str_event_trailer_name_8"
+  },
+  {
+    9,
+    1,
+    1150,
+    115000501,
+    2,
+    3,
+    nil,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_9"
+  },
+  {
+    10,
+    1,
+    5143,
+    514311101,
+    1,
+    4,
+    nil,
+    nil,
+    nil,
+    common[2],
+    "str_event_trailer_name_10"
+  },
+  {
+    11,
+    1,
+    9001,
+    900108001,
+    6,
+    2,
+    nil,
+    nil,
+    204,
+    common[3],
+    "str_event_trailer_name_11"
+  },
+  {
+    12,
+    1,
+    1212,
+    121200504,
+    7,
+    1,
+    75,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_12"
+  },
+  {
+    13,
+    1,
+    1212,
+    121200505,
+    5,
+    3,
+    1002501,
+    {1},
+    nil,
+    common[1],
+    "str_event_trailer_name_13"
+  },
+  {
+    14,
+    1,
+    1212,
+    121210808,
+    4,
+    4,
+    1002502,
+    nil,
+    nil,
+    common[2],
+    "str_event_trailer_name_14"
+  },
+  {
+    15,
+    2,
+    1212,
+    nil,
+    3,
+    5,
+    1002501,
+    {2},
+    nil,
+    common[1],
+    "str_event_trailer_name_15",
+    nil,
+    nil,
+    nil,
+    "2024-04-19 09:00:00",
+    "2024-04-29 09:00:00"
+  },
+  {
+    16,
+    1,
+    1212,
+    121202607,
+    2,
+    6,
+    2501,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_16"
+  },
+  {
+    17,
+    1,
+    5048,
+    504800501,
+    1,
+    7,
+    nil,
+    nil,
+    nil,
+    common[4],
+    common[5]
+  },
+  {
+    18,
+    1,
+    5048,
+    504800501,
+    1,
+    7,
+    nil,
+    nil,
+    nil,
+    common[4],
+    common[5]
+  },
+  {
+    19,
+    1,
+    8006,
+    800607201,
+    6,
+    2,
+    nil,
+    nil,
+    202,
+    common[3],
+    common[6]
+  },
+  {
+    20,
+    1,
+    8006,
+    800600515,
+    7,
+    1,
+    nil,
+    nil,
+    203,
+    common[3],
+    common[7]
+  },
+  {
+    21,
+    1,
+    5050,
+    505000503,
+    2,
+    6,
+    1164501,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_20"
+  },
+  {
+    22,
+    1,
+    7011,
+    701111901,
+    3,
+    5,
+    nil,
+    nil,
+    nil,
+    common[2],
+    "str_event_trailer_name_21"
+  },
+  {
+    23,
+    1,
+    5050,
+    505002804,
+    4,
+    4,
+    1164502,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_22"
+  },
+  {
+    24,
+    1,
+    1152,
+    115200501,
+    5,
+    3,
+    nil,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_23"
+  },
+  {
+    25,
+    1,
+    8006,
+    800607201,
+    7,
+    1,
+    nil,
+    nil,
+    202,
+    common[3],
+    common[6]
+  },
+  {
+    26,
+    1,
+    8006,
+    800600515,
+    6,
+    2,
+    nil,
+    nil,
+    203,
+    common[3],
+    common[7]
+  },
+  {
+    27,
+    1,
+    5053,
+    505300503,
+    5,
+    3,
+    1174601,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_24"
+  },
+  {
+    28,
+    1,
+    5053,
+    505302804,
+    2,
+    6,
+    1174602,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_25"
+  },
+  {
+    29,
+    1,
+    5020,
+    502001901,
+    4,
+    4,
+    nil,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_26"
+  },
+  {
+    30,
+    1,
+    7012,
+    701210001,
+    3,
+    5,
+    nil,
+    nil,
+    nil,
+    common[2],
+    "str_event_trailer_name_27"
+  },
+  {
+    31,
+    1,
+    7006,
+    700612101,
+    1,
+    7,
+    nil,
+    nil,
+    nil,
+    common[2],
+    "str_event_trailer_name_28"
+  },
+  {
+    32,
+    1,
+    5059,
+    505900503,
+    3,
+    1,
+    1184701,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_29"
+  },
+  {
+    33,
+    1,
+    5059,
+    505902804,
+    2,
+    2,
+    1184702,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_30"
+  },
+  {
+    34,
+    1,
+    7014,
+    701412001,
+    1,
+    3,
+    nil,
+    nil,
+    nil,
+    common[2],
+    "str_event_trailer_name_31"
+  },
+  {
+    35,
+    1,
+    8007,
+    800707201,
+    4,
+    3,
+    nil,
+    nil,
+    202,
+    common[3],
+    "str_event_trailer_name_32"
+  },
+  {
+    36,
+    1,
+    8007,
+    800700515,
+    1,
+    6,
+    nil,
+    nil,
+    203,
+    common[3],
+    "str_event_trailer_name_33"
+  },
+  {
+    37,
+    1,
+    1221,
+    122100503,
+    6,
+    1,
+    141,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_34"
+  },
+  {
+    38,
+    1,
+    1221,
+    122102804,
+    5,
+    2,
+    142,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_35"
+  },
+  {
+    39,
+    1,
+    1221,
+    122110007,
+    3,
+    4,
+    30,
+    nil,
+    nil,
+    common[2],
+    "str_event_trailer_name_36"
+  },
+  {
+    40,
+    1,
+    5063,
+    506300501,
+    2,
+    5,
+    nil,
+    nil,
+    nil,
+    common[1],
+    "str_event_trailer_name_37"
+  },
+  [44] = {
+    44,
+    1,
+    5068,
+    506800502,
+    3,
+    1,
+    1200001,
+    nil,
+    nil,
+    common[1],
+    "str_cn20_n49_shop_activity3"
+  },
+  [45] = {
+    45,
+    1,
+    5070,
+    507002801,
+    2,
+    2,
+    nil,
+    nil,
+    nil,
+    common[1],
+    "str_cn20_n49_shop_activity2"
+  },
+  [46] = {
+    46,
+    1,
+    5069,
+    506900501,
+    1,
+    3,
+    nil,
+    nil,
+    nil,
+    common[4],
+    "str_cn20_n49_shop_activity1"
+  }
 }
 return config, "ID", key
-

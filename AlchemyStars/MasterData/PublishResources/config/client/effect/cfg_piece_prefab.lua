@@ -1,20 +1,161 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/effect/cfg_piece_prefab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Base = 2, Birth = 3, Blue = 4, Red = 5, Green = 6, Yellow = 7, Any = 8, Gray = 9, PrismGray = 10, CrossPrismGray = 11, DeepGray = 12, MoveDone = 13, UltReflash = 14, UltBlack = 15, UltSliver = 16, UltGray = 17, UltColorBlue = 18, UltColorRed = 19, UltColorGreen = 20, UltColorYellow = 21, UltColorAny = 22, UltAtkColor = 23, PrismBlue = 24, PrismRed = 25, PrismGreen = 26, PrismYellow = 27, PrismAny = 28, CrossPrismBlue = 29, CrossPrismRed = 30, CrossPrismGreen = 31, CrossPrismYellow = 32, CrossPrismAny = 33, DeepBlue = 34, DeepRed = 35, DeepGreen = 36, DeepYellow = 37, DeepAny = 38, LinkInBlue = 39, LinkInRed = 40, LinkInGreen = 41, LinkInYellow = 42, LinkInAny = 43}
-local common = {"gezi_1001_blue.prefab", "gezi_1001_red.prefab", "gezi_1001_green.prefab", "gezi_1001_yellow.prefab", "gezi_1001_any.prefab", "gezi_1001_gray.prefab", "gezi_1001_movedown.prefab", "gezi_1002_gray.prefab", "gezi_1003_gray.prefab", "gezi_1004_gray.prefab"}
+local key = {
+  ID = 1,
+  Base = 2,
+  Birth = 3,
+  Blue = 4,
+  Red = 5,
+  Green = 6,
+  Yellow = 7,
+  Any = 8,
+  Gray = 9,
+  PrismGray = 10,
+  CrossPrismGray = 11,
+  DeepGray = 12,
+  MoveDone = 13,
+  UltReflash = 14,
+  UltBlack = 15,
+  UltSliver = 16,
+  UltGray = 17,
+  UltColorBlue = 18,
+  UltColorRed = 19,
+  UltColorGreen = 20,
+  UltColorYellow = 21,
+  UltColorAny = 22,
+  UltAtkColor = 23,
+  PrismBlue = 24,
+  PrismRed = 25,
+  PrismGreen = 26,
+  PrismYellow = 27,
+  PrismAny = 28,
+  CrossPrismBlue = 29,
+  CrossPrismRed = 30,
+  CrossPrismGreen = 31,
+  CrossPrismYellow = 32,
+  CrossPrismAny = 33,
+  DeepBlue = 34,
+  DeepRed = 35,
+  DeepGreen = 36,
+  DeepYellow = 37,
+  DeepAny = 38,
+  LinkInBlue = 39,
+  LinkInRed = 40,
+  LinkInGreen = 41,
+  LinkInYellow = 42,
+  LinkInAny = 43
+}
+local common = {
+  "gezi_1001_blue.prefab",
+  "gezi_1001_red.prefab",
+  "gezi_1001_green.prefab",
+  "gezi_1001_yellow.prefab",
+  "gezi_1001_any.prefab",
+  "gezi_1001_gray.prefab",
+  "gezi_1001_movedown.prefab",
+  "gezi_1002_gray.prefab",
+  "gezi_1003_gray.prefab",
+  "gezi_1004_gray.prefab"
+}
 local config = {
-{1, "gezi_base.prefab", "gezi_birth_all.prefab", common[1], common[2], common[3], common[4], common[5], common[6], common[6], common[6], common[6], common[7], common[7], "gezi_1001_ult_black.prefab", "gezi_1001_ult_sliver.prefab", "gezi_1001_ult_gray.prefab", "gezi_ult_color_blue.prefab", "gezi_ult_color_red.prefab", "gezi_ult_color_green.prefab", "gezi_ult_color_yellow.prefab", "gezi_ult_color_any.prefab", "gezi_ult_preview_atk+coloring_all.prefab", "gezi_1001_prism_blue.prefab", "gezi_1001_prism_red.prefab", "gezi_1001_prism_green.prefab", "gezi_1001_prism_yellow.prefab", "gezi_1001_prism_any.prefab", "gezi_1001_crossprism_blue.prefab", "gezi_1001_crossprism_red.prefab", "gezi_1001_crossprism_green.prefab", "gezi_1001_crossprism_yellow.prefab", "gezi_1001_crossprism_any.prefab", "gezi_1001_darkprism_blue.prefab", "gezi_1001_darkprism_red.prefab", "gezi_1001_darkprism_green.prefab", "gezi_1001_darkprism_yellow.prefab", "gezi_1001_darkprism_any.prefab", "gezi_1001_linkin_blue.prefab", "gezi_1001_linkin_red.prefab", "gezi_1001_linkin_green.prefab", "gezi_1001_linkin_yellow.prefab", "gezi_1001_linkin_any.prefab"}
-; 
-[1001] = {1001, nil, nil, common[1], common[2], common[3], common[4], common[5], common[6], common[6], common[6], common[6]}
-, 
-[1002] = {1002, nil, nil, "gezi_1002_blue.prefab", "gezi_1002_red.prefab", "gezi_1002_green.prefab", "gezi_1002_yellow.prefab", "gezi_1002_any.prefab", common[8], common[8], common[8], common[8]}
-, 
-[1003] = {1003, nil, nil, "gezi_1003_blue.prefab", "gezi_1003_red.prefab", "gezi_1003_green.prefab", "gezi_1003_yellow.prefab", "gezi_1003_any.prefab", common[9], common[9], common[9], common[9]}
-, 
-[1004] = {1004, nil, nil, "gezi_1004_blue.prefab", "gezi_1004_red.prefab", "gezi_1004_green.prefab", "gezi_1004_yellow.prefab", "gezi_1004_any.prefab", common[10], common[10], common[10], common[10]}
+  {
+    1,
+    "gezi_base.prefab",
+    "gezi_birth_all.prefab",
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5],
+    common[6],
+    common[6],
+    common[6],
+    common[6],
+    common[7],
+    common[7],
+    "gezi_1001_ult_black.prefab",
+    "gezi_1001_ult_sliver.prefab",
+    "gezi_1001_ult_gray.prefab",
+    "gezi_ult_color_blue.prefab",
+    "gezi_ult_color_red.prefab",
+    "gezi_ult_color_green.prefab",
+    "gezi_ult_color_yellow.prefab",
+    "gezi_ult_color_any.prefab",
+    "gezi_ult_preview_atk+coloring_all.prefab",
+    "gezi_1001_prism_blue.prefab",
+    "gezi_1001_prism_red.prefab",
+    "gezi_1001_prism_green.prefab",
+    "gezi_1001_prism_yellow.prefab",
+    "gezi_1001_prism_any.prefab",
+    "gezi_1001_crossprism_blue.prefab",
+    "gezi_1001_crossprism_red.prefab",
+    "gezi_1001_crossprism_green.prefab",
+    "gezi_1001_crossprism_yellow.prefab",
+    "gezi_1001_crossprism_any.prefab",
+    "gezi_1001_darkprism_blue.prefab",
+    "gezi_1001_darkprism_red.prefab",
+    "gezi_1001_darkprism_green.prefab",
+    "gezi_1001_darkprism_yellow.prefab",
+    "gezi_1001_darkprism_any.prefab",
+    "gezi_1001_linkin_blue.prefab",
+    "gezi_1001_linkin_red.prefab",
+    "gezi_1001_linkin_green.prefab",
+    "gezi_1001_linkin_yellow.prefab",
+    "gezi_1001_linkin_any.prefab"
+  },
+  [1001] = {
+    1001,
+    nil,
+    nil,
+    common[1],
+    common[2],
+    common[3],
+    common[4],
+    common[5],
+    common[6],
+    common[6],
+    common[6],
+    common[6]
+  },
+  [1002] = {
+    1002,
+    nil,
+    nil,
+    "gezi_1002_blue.prefab",
+    "gezi_1002_red.prefab",
+    "gezi_1002_green.prefab",
+    "gezi_1002_yellow.prefab",
+    "gezi_1002_any.prefab",
+    common[8],
+    common[8],
+    common[8],
+    common[8]
+  },
+  [1003] = {
+    1003,
+    nil,
+    nil,
+    "gezi_1003_blue.prefab",
+    "gezi_1003_red.prefab",
+    "gezi_1003_green.prefab",
+    "gezi_1003_yellow.prefab",
+    "gezi_1003_any.prefab",
+    common[9],
+    common[9],
+    common[9],
+    common[9]
+  },
+  [1004] = {
+    1004,
+    nil,
+    nil,
+    "gezi_1004_blue.prefab",
+    "gezi_1004_red.prefab",
+    "gezi_1004_green.prefab",
+    "gezi_1004_yellow.prefab",
+    "gezi_1004_any.prefab",
+    common[10],
+    common[10],
+    common[10],
+    common[10]
+  }
 }
 return config, "ID", key
-

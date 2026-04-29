@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_rand_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_RandAttackData", Object)
 SkillEffectResult_RandAttackData = SkillEffectResult_RandAttackData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_RandAttackData.Constructor = function(self, entityDefenter, damageInfo, index)
-  -- function num : 0_0
+function SkillEffectResult_RandAttackData:Constructor(entityDefenter, damageInfo, index)
   self.m_entityDefenter = entityDefenter
   self.m_damageData = damageInfo
   self._index = index
@@ -17,10 +10,8 @@ end
 
 _class("SkillEffectResult_RandAttack", SkillEffectResultBase)
 SkillEffectResult_RandAttack = SkillEffectResult_RandAttack
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_RandAttack.Constructor = function(self, nTimes, listDefender, listDeath, listDeathPos, listAlive)
-  -- function num : 0_1
+function SkillEffectResult_RandAttack:Constructor(nTimes, listDefender, listDeath, listDeathPos, listAlive)
   self.m_nAttackTimes = nTimes
   self.m_listDefender = listDefender
   self.m_listDeath = listDeath
@@ -28,67 +19,38 @@ SkillEffectResult_RandAttack.Constructor = function(self, nTimes, listDefender, 
   self.m_listDeathPos = listDeathPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RandAttack.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectResult_RandAttack:GetEffectType()
   return SkillEffectType.RandAttack
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RandAttack.GetAttackTimes = function(self)
-  -- function num : 0_3
+function SkillEffectResult_RandAttack:GetAttackTimes()
   return self.m_nAttackTimes
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RandAttack.GetListDefenderCount = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return (table.count)(self.m_listDefender)
+function SkillEffectResult_RandAttack:GetListDefenderCount()
+  return table.count(self.m_listDefender)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RandAttack.GetListAliveCount = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (table.count)(self.m_listAlive)
+function SkillEffectResult_RandAttack:GetListAliveCount()
+  return table.count(self.m_listAlive)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RandAttack.GetListDeadCount = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return (table.count)(self.m_listDeath)
+function SkillEffectResult_RandAttack:GetListDeadCount()
+  return table.count(self.m_listDeath)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RandAttack.GetListDefender = function(self)
-  -- function num : 0_7
+function SkillEffectResult_RandAttack:GetListDefender()
   return self.m_listDefender
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RandAttack.GetDefenderData = function(self, nIndex)
-  -- function num : 0_8
-  return (self.m_listDefender)[nIndex]
+function SkillEffectResult_RandAttack:GetDefenderData(nIndex)
+  return self.m_listDefender[nIndex]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RandAttack.GetListDeath = function(self)
-  -- function num : 0_9
+function SkillEffectResult_RandAttack:GetListDeath()
   return self.m_listDeath
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_RandAttack.GetListDeathPos = function(self)
-  -- function num : 0_10
+function SkillEffectResult_RandAttack:GetListDeathPos()
   return self.m_listDeathPos
 end
-
-

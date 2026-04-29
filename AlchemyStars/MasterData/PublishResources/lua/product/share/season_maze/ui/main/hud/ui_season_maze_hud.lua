@@ -1,357 +1,238 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/hud/ui_season_maze_hud.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeHud", UICustomWidget)
 UISeasonMazeHud = UISeasonMazeHud
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeHud.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeHud:InitWidget()
   self._root = self:GetUIComponent("RectTransform", "UISeasonMazeHud")
   self._atlas = self:GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHud.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonMazeHud:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHud.SetData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeHud:SetData()
   self._isPlaying = false
-  self._uiCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self.uiOwner):GetName())
-  self._worldCamera = (SMazeAdaptor.MainCam)()
+  self._uiCamera = GameGlobal.UIStateManager():GetControllerCamera(self.uiOwner:GetName())
+  self._worldCamera = SMazeAdaptor.MainCam()
   self._reqList = {}
   self._unitPool = {}
   self._unitName = "UISeasonMazeHudObj.prefab"
-  self._sp_exp = (self._atlas):GetSprite("season_maze_map_toptoon_attr_02")
-  self._sp_ms = (self._atlas):GetSprite("season_maze_map_toptoon_attr_03")
-  self._sp_add = (self._atlas):GetSprite("season_maze_map_toptoon_attr_06")
-  self._sp_money = (self._atlas):GetSprite("season_maze_map_toptoon_attr_01")
-  self._sp_card = (self._atlas):GetSprite("season_maze_map_toptoon_attr_11")
-  self._sp_auto = (self._atlas):GetSprite("season_maze_map_toptoon_item_02")
+  self._sp_exp = self._atlas:GetSprite("season_maze_map_toptoon_attr_02")
+  self._sp_ms = self._atlas:GetSprite("season_maze_map_toptoon_attr_03")
+  self._sp_add = self._atlas:GetSprite("season_maze_map_toptoon_attr_06")
+  self._sp_money = self._atlas:GetSprite("season_maze_map_toptoon_attr_01")
+  self._sp_card = self._atlas:GetSprite("season_maze_map_toptoon_attr_11")
+  self._sp_auto = self._atlas:GetSprite("season_maze_map_toptoon_item_02")
   self._sp_item_tab = {}
-  local obj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
-  local cfgid = (obj:GetMazeComponent()):GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_season_maze_once)({ComponentID = cfgid})
-  for k,v in pairs(cfgs) do
+  local obj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
+  local cfgid = obj:GetMazeComponent():GetComponentCfgId()
+  local cfgs = Cfg.cfg_component_season_maze_once({ComponentID = cfgid})
+  for k, v in pairs(cfgs) do
     local spname = v.ToptoonIcon
-    local sp = (self._atlas):GetSprite(spname)
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._sp_item_tab)[v.OnceID] = sp
+    local sp = self._atlas:GetSprite(spname)
+    self._sp_item_tab[v.OnceID] = sp
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHud.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeHud:OnHide()
   if self._reqList then
-    for k,v in pairs(self._reqList) do
+    for k, v in pairs(self._reqList) do
       v:Dispose()
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHud.GetHudUnit = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = nil
-  for k,v in pairs(self._unitPool) do
+function UISeasonMazeHud:GetHudUnit()
+  local ret
+  for k, v in pairs(self._unitPool) do
     if not v:GetUsing() then
       ret = v
     end
   end
   if not ret then
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset(self._unitName, LoadType.GameObject)
-    ;
-    (table.insert)(self._reqList, req)
+    local req = ResourceManager:GetInstance():SyncLoadAsset(self._unitName, LoadType.GameObject)
+    table.insert(self._reqList, req)
     local go = req.Obj
     go:SetActive(false)
-    ;
-    (go.transform):SetParent(self._root)
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (go.transform).localScale = Vector3(1, 1, 1)
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (go.transform).localRotation = Quaternion.identity
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (go.transform).localPosition = Vector3(0, 0, 0)
+    go.transform:SetParent(self._root)
+    go.transform.localScale = Vector3(1, 1, 1)
+    go.transform.localRotation = Quaternion.identity
+    go.transform.localPosition = Vector3(0, 0, 0)
     ret = UISeasonMazeHudObj:New(go, self._uiCamera, self._root, function(asset)
-    -- function num : 0_4_0 , upvalues : self
-    return self:GetSpriteByType(asset)
+      return self:GetSpriteByType(asset)
+    end)
+    table.insert(self._unitPool, ret)
   end
-)
-    ;
-    (table.insert)(self._unitPool, ret)
-  end
-  do
-    ret:SetUsing(true)
-    return ret
-  end
+  ret:SetUsing(true)
+  return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHud.GetSpriteByType = function(self, asset)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeHud:GetSpriteByType(asset)
   if asset._type == SeasonMazeEffectType.SMET_Pro then
     if asset._subParam == SeasonMazeAttrType.SMAT_Gold then
       return self._sp_money
-    else
-      if asset._subParam == SeasonMazeAttrType.SMAT_Exp then
-        return self._sp_exp
-      else
-        if asset._subParam == SeasonMazeAttrType.SMAT_Ms then
-          return self._sp_ms
-        else
-          if asset._subParam == SeasonMazeAttrType.SMAT_Gold_Round_Add then
-            return self._sp_add
-          end
-        end
-      end
+    elseif asset._subParam == SeasonMazeAttrType.SMAT_Exp then
+      return self._sp_exp
+    elseif asset._subParam == SeasonMazeAttrType.SMAT_Ms then
+      return self._sp_ms
+    elseif asset._subParam == SeasonMazeAttrType.SMAT_Gold_Round_Add then
+      return self._sp_add
     end
-  else
-    if asset._type == SeasonMazeEffectType.SMET_Bead then
-      return self._sp_auto
-    else
-      if asset._type == SeasonMazeEffectType.SMET_Relic then
-        return nil
-      else
-        if asset._type == SeasonMazeEffectType.SMET_Hand then
-          return self._sp_card
-        else
-          if asset._type == SeasonMazeEffectType.SMET_Once then
-            return (self._sp_item_tab)[asset._subParam]
-          end
-        end
-      end
-    end
+  elseif asset._type == SeasonMazeEffectType.SMET_Bead then
+    return self._sp_auto
+  elseif asset._type == SeasonMazeEffectType.SMET_Relic then
+    return nil
+  elseif asset._type == SeasonMazeEffectType.SMET_Hand then
+    return self._sp_card
+  elseif asset._type == SeasonMazeEffectType.SMET_Once then
+    return self._sp_item_tab[asset._subParam]
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHud.StackAssets = function(self, assets_p)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMazeHud:StackAssets(assets_p)
   local assets = {}
-  local beadList, handList = nil, nil
-  for i,v in ipairs(assets_p) do
+  local beadList, handList
+  for i, v in ipairs(assets_p) do
     if v._type == SeasonMazeEffectType.SMET_Bead then
       if not beadList then
         beadList = v
       else
         beadList._count = beadList._count + v._count
       end
-    else
-      if v._type == SeasonMazeEffectType.SMET_Hand then
-        if not handList then
-          handList = v
-        else
-          handList._count = handList._count + v._count
-        end
+    elseif v._type == SeasonMazeEffectType.SMET_Hand then
+      if not handList then
+        handList = v
       else
-        if v._type == SeasonMazeEffectType.SMET_Relic or v._type == SeasonMazeEffectType.SMET_Once or v._type == SeasonMazeEffectType.SMET_Pro and (v._subParam == SeasonMazeAttrType.SMAT_Gold or v._subParam == SeasonMazeAttrType.SMAT_Exp or v._subParam == SeasonMazeAttrType.SMAT_Ms or v._subParam == SeasonMazeAttrType.SMAT_Gold_Round_Add) then
-          (table.insert)(assets, v)
-        end
+        handList._count = handList._count + v._count
       end
+    elseif v._type == SeasonMazeEffectType.SMET_Relic or v._type == SeasonMazeEffectType.SMET_Once or v._type == SeasonMazeEffectType.SMET_Pro and (v._subParam == SeasonMazeAttrType.SMAT_Gold or v._subParam == SeasonMazeAttrType.SMAT_Exp or v._subParam == SeasonMazeAttrType.SMAT_Ms or v._subParam == SeasonMazeAttrType.SMAT_Gold_Round_Add) then
+      table.insert(assets, v)
     end
     if v._subParam == SeasonMazeAttrType.SMAT_Gold then
-      (Log.error)("todo:llldd")
+      Log.error("todo:llldd")
     end
   end
   if handList then
-    (table.insert)(assets, handList)
+    table.insert(assets, handList)
   end
   if beadList then
-    (table.insert)(assets, beadList)
+    table.insert(assets, beadList)
   end
-  if (table.count)(assets) > 0 then
-    (SeasonMazeTool:GetInstance()):SortAsset(assets)
+  if table.count(assets) > 0 then
+    SeasonMazeTool:GetInstance():SortAsset(assets)
   end
   return assets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHud.CheckCacheList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if self._cacheList and (table.count)(self._cacheList) > 0 then
-    local tmp = (self._cacheList)[1]
-    ;
-    (table.remove)(self._cacheList, 1)
+function UISeasonMazeHud:CheckCacheList()
+  if self._cacheList and table.count(self._cacheList) > 0 then
+    local tmp = self._cacheList[1]
+    table.remove(self._cacheList, 1)
     self:GetToastTimeline(tmp)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHud.InsertCacheList = function(self, assets_p)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeHud:InsertCacheList(assets_p)
   if not self._cacheList then
     self._cacheList = {}
   end
-  ;
-  (table.insert)(self._cacheList, assets_p)
+  table.insert(self._cacheList, assets_p)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHud.GetToastTimeline = function(self, assets_p)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMazeHud:GetToastTimeline(assets_p)
   if self._isPlaying then
     self:InsertCacheList(assets_p)
-    return 
+    return
   end
   local assets = self:StackAssets(assets_p)
-  if (table.count)(assets) == 0 then
-    return 
+  if table.count(assets) == 0 then
+    return
   end
   local tls = {}
   local lock = EZTL_Callback:New(function()
-    -- function num : 0_9_0 , upvalues : self
     self._isPlaying = true
-  end
-, "播放中开始")
-  ;
-  (table.insert)(tls, lock)
-  for idx,asset in ipairs(assets) do
+  end, "播放中开始")
+  table.insert(tls, lock)
+  for idx, asset in ipairs(assets) do
     local tmp_tls = {}
     local wait = EZTL_Wait:New((idx - 1) * 300, "smaze wait anim")
-    ;
-    (table.insert)(tmp_tls, wait)
+    table.insert(tmp_tls, wait)
     local unit = self:GetHudUnit()
     unit:SetUI(asset)
     local tl = EZTL_SMaze_PlayerToast:New(unit, 1000)
-    ;
-    (table.insert)(tmp_tls, tl)
+    table.insert(tmp_tls, tl)
     local seq = EZTL_Sequence:New(tmp_tls)
-    ;
-    (table.insert)(tls, seq)
+    table.insert(tls, seq)
   end
   local endTls = {}
   local waitTime = #assets * 300
   local waitEnd = EZTL_Wait:New(waitTime, "smaze wait anim end")
   local unlock = EZTL_Callback:New(function()
-    -- function num : 0_9_1 , upvalues : self
     self._isPlaying = false
     self:CheckCacheList()
-  end
-, "播放中结束")
-  ;
-  (table.insert)(endTls, waitEnd)
-  ;
-  (table.insert)(endTls, unlock)
+  end, "播放中结束")
+  table.insert(endTls, waitEnd)
+  table.insert(endTls, unlock)
   local endSeq = EZTL_Sequence:New(endTls)
-  ;
-  (table.insert)(tls, endSeq)
+  table.insert(tls, endSeq)
   local playTl = EZTL_Parallel:New(tls, nil, nil, "赛季秘境头顶飘字总时间线串行")
-  ;
-  (((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()):PlayEZTL(playTl)
+  GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager():PlayEZTL(playTl)
 end
 
 _class("UISeasonMazeHudObj", Object)
 UISeasonMazeHudObj = UISeasonMazeHudObj
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeHudObj.Constructor = function(self, go, uiCamera, parent, getSpriteCb)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMazeHudObj:Constructor(go, uiCamera, parent, getSpriteCb)
   self._using = false
   self._uiCamera = uiCamera
-  self._worldCamera = (SMazeAdaptor.MainCam)()
+  self._worldCamera = SMazeAdaptor.MainCam()
   self._parent = parent
   self._go = go
   self._getSpriteCb = getSpriteCb
-  self._pos = (self._go):GetComponent(typeof(UnityEngine.RectTransform))
-  self._img = (self._go):GetComponentInChildren(typeof((UnityEngine.UI).Image))
-  self._tex = (self._go):GetComponentInChildren(typeof(UILocalizationText))
+  self._pos = self._go:GetComponent(typeof(UnityEngine.RectTransform))
+  self._img = self._go:GetComponentInChildren(typeof(UnityEngine.UI.Image))
+  self._tex = self._go:GetComponentInChildren(typeof(UILocalizationText))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHudObj.SetUI = function(self, asset)
-  -- function num : 0_11 , upvalues : _ENV
-  local sp = (self._getSpriteCb)(asset)
-  ;
-  ((self._img).gameObject):SetActive(sp ~= nil)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
+function UISeasonMazeHudObj:SetUI(asset)
+  local sp = self._getSpriteCb(asset)
+  self._img.gameObject:SetActive(sp ~= nil)
   if sp then
-    (self._img).sprite = sp
+    self._img.sprite = sp
   end
   if asset._type == SeasonMazeEffectType.SMET_Relic then
-    (self._tex):SetText((StringTable.Get)(asset._name))
+    self._tex:SetText(StringTable.Get(asset._name))
   else
-    (self._tex):SetText(asset._count)
+    self._tex:SetText(asset._count)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHudObj.SetPos = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local pos = (SMazeAdaptor.PlayerHeadPos)()
-  local screenPos = (self._worldCamera):WorldToScreenPoint(pos)
-  local res, uipos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self._parent, screenPos, self._uiCamera, nil)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._pos).anchoredPosition = uipos
+function UISeasonMazeHudObj:SetPos()
+  local pos = SMazeAdaptor.PlayerHeadPos()
+  local screenPos = self._worldCamera:WorldToScreenPoint(pos)
+  local res, uipos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self._parent, screenPos, self._uiCamera, nil)
+  self._pos.anchoredPosition = uipos
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHudObj.Update = function(self, dms)
-  -- function num : 0_13
+function UISeasonMazeHudObj:Update(dms)
   self:SetPos()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHudObj.GetUsing = function(self)
-  -- function num : 0_14
+function UISeasonMazeHudObj:GetUsing()
   return self._using
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHudObj.SetUsing = function(self, using)
-  -- function num : 0_15
+function UISeasonMazeHudObj:SetUsing(using)
   self._using = using
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHudObj.Start = function(self)
-  -- function num : 0_16
+function UISeasonMazeHudObj:Start()
   self._using = true
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self:SetPos()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeHudObj.Stop = function(self)
-  -- function num : 0_17
+function UISeasonMazeHudObj:Stop()
   self._using = false
-  ;
-  (self._go):SetActive(false)
+  self._go:SetActive(false)
 end
-
-

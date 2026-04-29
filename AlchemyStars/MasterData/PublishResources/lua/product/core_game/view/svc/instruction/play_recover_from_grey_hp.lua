@@ -1,39 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_recover_from_grey_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayRecoverFromGreyHPInstruction", BaseInstruction)
 PlayRecoverFromGreyHPInstruction = PlayRecoverFromGreyHPInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRecoverFromGreyHPInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayRecoverFromGreyHPInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.RecoverFromGreyHP)
   if not resultArray then
-    return 
+    return
   end
   local tTaskID = {}
   local playDamageService = world:GetService("PlayDamage")
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local addHpDamageInfo = result:GetDamageInfo()
     casterEntity:ReplaceGreyHP(result:GetCurrentGreyVal())
     local tid = playDamageService:AsyncUpdateHPAndDisplayDamage(casterEntity, addHpDamageInfo)
     if tid then
-      (table.insert)(tTaskID, tid)
+      table.insert(tTaskID, tid)
     end
   end
   local cHP = casterEntity:HP()
   local greyVal = cHP:GetGreyHP()
   local redhp = cHP:GetRedHP()
   local maxhp = cHP:GetMaxHP()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBossGreyHP, casterEntity:GetID(), greyVal, redhp, maxhp)
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(tTaskID) do
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBossGreyHP, casterEntity:GetID(), greyVal, redhp, maxhp)
+  while not TaskHelper:GetInstance():IsAllTaskFinished(tTaskID) do
     YIELD(TT)
   end
 end
-
-

@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_coffin_musume_set_candle_light.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_CoffinMusumeSetCandleLight", SkillEffectCalc_Base)
 SkillEffectCalc_CoffinMusumeSetCandleLight = SkillEffectCalc_CoffinMusumeSetCandleLight
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_CoffinMusumeSetCandleLight.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_CoffinMusumeSetCandleLight:DoSkillEffectCalculator(skillEffectCalcParam)
   local param = skillEffectCalcParam.skillEffectParam
-  return {SkillEffectResult_CoffinMusumeSetCandleLight:New(skillEffectCalcParam.casterEntityID, param:IsLight())}
+  return {
+    SkillEffectResult_CoffinMusumeSetCandleLight:New(skillEffectCalcParam.casterEntityID, param:IsLight())
+  }
 end
-
-

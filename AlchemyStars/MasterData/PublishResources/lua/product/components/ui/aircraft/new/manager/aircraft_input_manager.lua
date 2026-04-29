@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_input_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftInputManager", Object)
 AircraftInputManager = AircraftInputManager
-local unityInput, currentEvent, scrollAxis = nil, nil, nil
--- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
+local unityInput, currentEvent, scrollAxis
 
-AircraftInputManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : unityInput, _ENV, currentEvent, scrollAxis
-  unityInput = (GameGlobal.EngineInput)()
-  currentEvent = ((UnityEngine.EventSystems).EventSystem).current
+function AircraftInputManager:Constructor()
+  unityInput = GameGlobal.EngineInput()
+  currentEvent = UnityEngine.EventSystems.EventSystem.current
   scrollAxis = "Mouse ScrollWheel"
   self._enabled = true
   self._mousePresent = nil
@@ -30,42 +23,28 @@ AircraftInputManager.Constructor = function(self)
   self._longPressing = false
   self.longPressTime = 0
   self.longPresingPos = nil
-  self._touchScaleRatio = ((Cfg.cfg_aircraft_camera).scaleRatio).Value
-  self.longPressCheckTime = ((Cfg.cfg_aircraft_camera).longPressCheckTime).Value
-  local pixels = ((Cfg.cfg_aircraft_camera).clickAndDragPixelLength).Value
+  self._touchScaleRatio = Cfg.cfg_aircraft_camera.scaleRatio.Value
+  self.longPressCheckTime = Cfg.cfg_aircraft_camera.longPressCheckTime.Value
+  local pixels = Cfg.cfg_aircraft_camera.clickAndDragPixelLength.Value
   pixels = 10
   self.clickDragPixelLengthMag = pixels * pixels
   self.longPressTimer = 0
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.Init = function(self)
-  -- function num : 0_1 , upvalues : unityInput, _ENV
+function AircraftInputManager:Init()
   self._mousePresent = unityInput.mousePresent
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = true
+  UnityEngine.Input.multiTouchEnabled = true
   return true
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV, unityInput, currentEvent, scrollAxis
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (UnityEngine.Input).multiTouchEnabled = false
+function AircraftInputManager:Dispose()
+  UnityEngine.Input.multiTouchEnabled = false
   unityInput = nil
   currentEvent = nil
   scrollAxis = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.SetEnable = function(self, enable)
-  -- function num : 0_3
+function AircraftInputManager:SetEnable(enable)
   self._enabled = enable
   if not enable then
     self:_ResetInputData()
@@ -74,13 +53,10 @@ AircraftInputManager.SetEnable = function(self, enable)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.MouseInput = function(self, deltaTime)
-  -- function num : 0_4 , upvalues : unityInput, currentEvent, scrollAxis
-  local down = (unityInput.GetMouseButtonDown)(0)
-  local hold = (unityInput.GetMouseButton)(0)
-  local up = (unityInput.GetMouseButtonUp)(0)
+function AircraftInputManager:MouseInput(deltaTime)
+  local down = unityInput.GetMouseButtonDown(0)
+  local hold = unityInput.GetMouseButton(0)
+  local up = unityInput.GetMouseButtonUp(0)
   local mousePos = unityInput.mousePosition
   local onUI = currentEvent:IsPointerOverGameObject()
   self._clicked = false
@@ -92,30 +68,29 @@ AircraftInputManager.MouseInput = function(self, deltaTime)
   self._longPressing = false
   self.longPressTime = 0
   self.longPresingPos = nil
-  if not self._dragging and hold and not onUI and self.mouseDown then
-    if (mousePos - self.downPos).sqrMagnitude < self.clickDragPixelLengthMag then
-      self.longPressTimer = self.longPressTimer + deltaTime
-      if self.longPressCheckTime < self.longPressTimer then
-        self._longPressing = true
-        self.longPressTime = self.longPressTimer - self.longPressCheckTime
-        self.longPresingPos = mousePos
+  if not self._dragging and hold and not onUI then
+    if self.mouseDown then
+      if (mousePos - self.downPos).sqrMagnitude < self.clickDragPixelLengthMag then
+        self.longPressTimer = self.longPressTimer + deltaTime
+        if self.longPressTimer > self.longPressCheckTime then
+          self._longPressing = true
+          self.longPressTime = self.longPressTimer - self.longPressCheckTime
+          self.longPresingPos = mousePos
+        end
+      else
+        self._longPressing = false
+        self.longPressTime = 0
+        self.longPressTimer = 0
+        self.longPresingPos = nil
       end
-    else
-      self._longPressing = false
-      self.longPressTime = 0
-      self.longPressTimer = 0
-      self.longPresingPos = nil
     end
-  end
-  if down then
+  elseif down then
     self.longPressTimer = 0
-  else
-    if up then
-      self._longPressing = false
-      self.longPressTime = 0
-      self.longPressTimer = 0
-      self.longPresingPos = nil
-    end
+  elseif up then
+    self._longPressing = false
+    self.longPressTime = 0
+    self.longPressTimer = 0
+    self.longPresingPos = nil
   end
   if self._dragging then
     if onUI or up then
@@ -126,61 +101,52 @@ AircraftInputManager.MouseInput = function(self, deltaTime)
       self._dragStartPos = self.lastMousePos
       self._dragEndPos = mousePos
     end
-  else
-    if hold and not onUI and self.mouseDown and self.lastMousePos and not self.downOnUI and self.clickDragPixelLengthMag < (mousePos - self.downPos).sqrMagnitude then
-      self._dragging = true
-      self._dragStartPos = self.lastMousePos
-      self._dragEndPos = mousePos
-    end
+  elseif hold and not onUI and self.mouseDown and self.lastMousePos and not self.downOnUI and (mousePos - self.downPos).sqrMagnitude > self.clickDragPixelLengthMag then
+    self._dragging = true
+    self._dragStartPos = self.lastMousePos
+    self._dragEndPos = mousePos
   end
   self._scaleLength = 0
   self._scaling = false
   self._scaleCenterPos = nil
-  if not down and not up and not hold then
-    if onUI then
-      self._scaleLength = (unityInput.GetAxis)(scrollAxis)
-      self._scaling = self._scaleLength ~= 0
-      self._scaleCenterPos = mousePos
-      if down and not up and not self.mouseDown then
-        self.mouseDown = true
-        self.downPos = mousePos
-        self.downOnUI = onUI
-      elseif up and not down and self.mouseDown then
-        self.mouseDown = false
-        self.downPos = nil
-        self.downOnUI = false
-      end
-      self._down = down and ((not onUI and not up))
-      if up then
-        self._up = not down
-        if up then
-          self._upPos = mousePos
-        end
-        self.lastMousePos = mousePos
-        -- DECOMPILER ERROR: 8 unprocessed JMP targets
-      end
-    end
+  if down or up or hold or onUI then
+  else
+    self._scaleLength = unityInput.GetAxis(scrollAxis)
+    self._scaling = self._scaleLength ~= 0
+    self._scaleCenterPos = mousePos
   end
+  if down and not up and not self.mouseDown then
+    self.mouseDown = true
+    self.downPos = mousePos
+    self.downOnUI = onUI
+  elseif up and not down and self.mouseDown then
+    self.mouseDown = false
+    self.downPos = nil
+    self.downOnUI = false
+  end
+  self._down = down and not onUI and not up
+  self._up = up and not down
+  if up then
+    self._upPos = mousePos
+  end
+  self.lastMousePos = mousePos
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.TouchInput = function(self, deltaTime)
-  -- function num : 0_5 , upvalues : unityInput, currentEvent, _ENV
+function AircraftInputManager:TouchInput(deltaTime)
   local touchCount = unityInput.touchCount
-  local touch0 = nil
-  if touchCount > 0 then
-    touch0 = (unityInput.GetTouch)(0)
+  local touch0
+  if 0 < touchCount then
+    touch0 = unityInput.GetTouch(0)
   end
-  local mousePos = nil
+  local mousePos
   local touch0OnUI = false
   if touch0 then
     touch0OnUI = currentEvent:IsPointerOverGameObject(touch0.fingerId)
     mousePos = touch0.position
   end
-  local touch1 = nil
-  if touchCount > 1 then
-    touch1 = (unityInput.GetTouch)(1)
+  local touch1
+  if 1 < touchCount then
+    touch1 = unityInput.GetTouch(1)
   end
   local touch1OnUI = false
   if touch1 then
@@ -201,29 +167,25 @@ AircraftInputManager.TouchInput = function(self, deltaTime)
       self.longPressTimer = 0
       self.longPressTime = 0
       self.longPresingPos = nil
-    else
-      if (touch0.phase == TouchPhase.Moved or touch0.phase == TouchPhase.Stationary) and self.mouseDown then
-        if (self.downPos - touch0.position).sqrMagnitude < self.clickDragPixelLengthMag then
-          self.longPressTimer = self.longPressTimer + deltaTime
-          if self.longPressCheckTime < self.longPressTimer then
-            self._longPressing = true
-            self.longPressTime = self.longPressTimer - self.longPressCheckTime
-            self.longPresingPos = Vector3((touch0.position).x, (touch0.position).y, 0)
-          end
-        else
-          self._longPressing = false
-          self.longPressTime = 0
-          self.longPressTimer = 0
-          self.longPresingPos = nil
+    elseif (touch0.phase == TouchPhase.Moved or touch0.phase == TouchPhase.Stationary) and self.mouseDown then
+      if (self.downPos - touch0.position).sqrMagnitude < self.clickDragPixelLengthMag then
+        self.longPressTimer = self.longPressTimer + deltaTime
+        if self.longPressTimer > self.longPressCheckTime then
+          self._longPressing = true
+          self.longPressTime = self.longPressTimer - self.longPressCheckTime
+          self.longPresingPos = Vector3(touch0.position.x, touch0.position.y, 0)
         end
       else
-        if touch0.phase == TouchPhase.Ended then
-          self._longPressing = false
-          self.longPressTime = 0
-          self.longPressTimer = 0
-          self.longPresingPos = nil
-        end
+        self._longPressing = false
+        self.longPressTime = 0
+        self.longPressTimer = 0
+        self.longPresingPos = nil
       end
+    elseif touch0.phase == TouchPhase.Ended then
+      self._longPressing = false
+      self.longPressTime = 0
+      self.longPressTimer = 0
+      self.longPresingPos = nil
     end
   end
   if touch0 then
@@ -231,23 +193,19 @@ AircraftInputManager.TouchInput = function(self, deltaTime)
       self._dragging = false
       self._dragStartPos = nil
       self._dragEndPos = nil
-    else
-      if self._dragging then
-        if touch0OnUI or touch0.phase == TouchPhase.Ended then
-          self._dragging = false
-          self._dragStartPos = nil
-          self._dragEndPos = nil
-        else
-          self._dragStartPos = Vector3((touch0.position).x - (touch0.deltaPosition).x, (touch0.position).y - (touch0.deltaPosition).y, 0)
-          self._dragEndPos = Vector3((touch0.position).x, (touch0.position).y, 0)
-        end
+    elseif self._dragging then
+      if touch0OnUI or touch0.phase == TouchPhase.Ended then
+        self._dragging = false
+        self._dragStartPos = nil
+        self._dragEndPos = nil
       else
-        if (touch0.phase == TouchPhase.Moved or touch0.phase == TouchPhase.Stationary) and not touch0OnUI and self.mouseDown and not self.downOnUI and self.clickDragPixelLengthMag < (mousePos - self.downPos).sqrMagnitude then
-          self._dragging = true
-          self._dragStartPos = Vector3((touch0.position).x - (touch0.deltaPosition).x, (touch0.position).y - (touch0.deltaPosition).y, 0)
-          self._dragEndPos = Vector3((touch0.position).x, (touch0.position).y, 0)
-        end
+        self._dragStartPos = Vector3(touch0.position.x - touch0.deltaPosition.x, touch0.position.y - touch0.deltaPosition.y, 0)
+        self._dragEndPos = Vector3(touch0.position.x, touch0.position.y, 0)
       end
+    elseif (touch0.phase == TouchPhase.Moved or touch0.phase == TouchPhase.Stationary) and not touch0OnUI and self.mouseDown and not self.downOnUI and (mousePos - self.downPos).sqrMagnitude > self.clickDragPixelLengthMag then
+      self._dragging = true
+      self._dragStartPos = Vector3(touch0.position.x - touch0.deltaPosition.x, touch0.position.y - touch0.deltaPosition.y, 0)
+      self._dragEndPos = Vector3(touch0.position.x, touch0.position.y, 0)
     end
   end
   self._scaleLength = 0
@@ -255,43 +213,35 @@ AircraftInputManager.TouchInput = function(self, deltaTime)
   self._scaleCenterPos = nil
   local onui = touch0OnUI or touch1OnUI
   if touch0 and touch1 and not onui and (touch0.phase == TouchPhase.Moved or touch1.phase == TouchPhase.Moved) then
-    local lastLength = (Vector2.Distance)(touch0.position - touch0.deltaPosition, touch1.position - touch1.deltaPosition)
-    local length = (Vector2.Distance)(touch0.position, touch1.position)
+    local lastLength = Vector2.Distance(touch0.position - touch0.deltaPosition, touch1.position - touch1.deltaPosition)
+    local length = Vector2.Distance(touch0.position, touch1.position)
     self._scaleLength = (length - lastLength) * self._touchScaleRatio
     local centerPos = (touch0.position + touch1.position) / 2
     self._scaleCenterPos = Vector3(centerPos.x, centerPos.y, 0)
     self._scaling = true
   end
-  do
-    if touch0 then
-      if touch0.phase == TouchPhase.Began and not self.mouseDown then
-        self.mouseDown = true
-        self.downPos = touch0.position
-        self.downOnUI = touch0OnUI
-      else
-        if (touch0.phase == TouchPhase.Ended or touch0.phase == TouchPhase.Canceled) and self.mouseDown then
-          self.mouseDown = false
-          self.downPos = nil
-          self.downOnUI = false
-        end
-      end
+  if touch0 then
+    if touch0.phase == TouchPhase.Began and not self.mouseDown then
+      self.mouseDown = true
+      self.downPos = touch0.position
+      self.downOnUI = touch0OnUI
+    elseif (touch0.phase == TouchPhase.Ended or touch0.phase == TouchPhase.Canceled) and self.mouseDown then
+      self.mouseDown = false
+      self.downPos = nil
+      self.downOnUI = false
     end
-    self._down = touch0 and ((touch0.phase == TouchPhase.Began and not touch0OnUI))
-    self._up = not touch0 or touch0.phase == TouchPhase.Ended
-    if self._up then
-      self._upPos = touch0.position
-    end
-    self.lastMousePos = mousePos
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
   end
+  self._down = touch0 and touch0.phase == TouchPhase.Began and not touch0OnUI
+  self._up = touch0 and touch0.phase == TouchPhase.Ended
+  if self._up then
+    self._upPos = touch0.position
+  end
+  self.lastMousePos = mousePos
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_6
+function AircraftInputManager:Update(deltaTimeMS)
   if not self._enabled then
-    return 
+    return
   end
   if self._mousePresent then
     self:MouseInput(deltaTimeMS / 1000)
@@ -300,10 +250,7 @@ AircraftInputManager.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager._ResetInputData = function(self)
-  -- function num : 0_7
+function AircraftInputManager:_ResetInputData()
   self._clicked = false
   self._clickPos = nil
   self._dragging = false
@@ -322,46 +269,26 @@ AircraftInputManager._ResetInputData = function(self)
   self.lastMousePos = nil
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.GetClick = function(self)
-  -- function num : 0_8
+function AircraftInputManager:GetClick()
   return self._clicked, self._clickPos
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.GetDrag = function(self)
-  -- function num : 0_9
+function AircraftInputManager:GetDrag()
   return self._dragging, self._dragStartPos, self._dragEndPos
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.GetScale = function(self)
-  -- function num : 0_10
+function AircraftInputManager:GetScale()
   return self._scaling, self._scaleLength, self._scaleCenterPos
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.GetLongPress = function(self)
-  -- function num : 0_11
+function AircraftInputManager:GetLongPress()
   return self._longPressing, self.longPressTime, self.longPresingPos
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.GetMouseDown = function(self)
-  -- function num : 0_12
+function AircraftInputManager:GetMouseDown()
   return self._down, self.downPos
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftInputManager.GetMouseUp = function(self)
-  -- function num : 0_13
+function AircraftInputManager:GetMouseUp()
   return self._up, self._upPos
 end
-
-

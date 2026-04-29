@@ -1,92 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/dispatch_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("DispatchComponent", ICampaignComponent)
 DispatchComponent = DispatchComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DispatchComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DispatchComponent:Constructor()
   self.m_component_info = DispatchComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DispatchComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function DispatchComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = DispatchComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DispatchComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function DispatchComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DispatchComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function DispatchComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_DISPATCH
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DispatchComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function DispatchComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DispatchComponent.HandleDispatch = function(self, TT, asyncRes, arch_id)
-  -- function num : 0_5 , upvalues : _ENV
+function DispatchComponent:HandleDispatch(TT, asyncRes, arch_id)
   local request = DispatchReq:New()
   request.arch_id = arch_id
   local response = DispatchReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DispatchComponent] HandleDispatch ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DispatchComponent] HandleDispatch ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    ((self.m_component_info).dispatch_infos)[(response.info).arch_id] = response.info
+    self.m_component_info.dispatch_infos[response.info.arch_id] = response.info
   end
   return response.ret, response.suc
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DispatchComponent.HandleGetDispatchRewards = function(self, TT, asyncRes, arch_id)
-  -- function num : 0_6 , upvalues : _ENV
+function DispatchComponent:HandleGetDispatchRewards(TT, asyncRes, arch_id)
   local request = GetDispatchRewardsReq:New()
   request.arch_id = arch_id
   local response = GetDispatchRewardsReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][DispatchComponent] HandleGetDispatchRewards ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][DispatchComponent] HandleGetDispatchRewards ret:", asyncRes.m_result)
     return asyncRes
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
   if response.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    ((self.m_component_info).dispatch_infos)[(response.info).arch_id] = response.info
+    self.m_component_info.dispatch_infos[response.info.arch_id] = response.info
   end
   return response.ret, response.rewards
 end
-
-

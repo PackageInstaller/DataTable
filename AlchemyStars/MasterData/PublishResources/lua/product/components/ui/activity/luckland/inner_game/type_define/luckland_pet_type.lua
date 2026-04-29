@@ -1,14 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/type_define/luckland_pet_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local LLPetElementType = {None = 0, Blue = 1, Red = 2, Green = 3, Yellow = 4}
+local LLPetElementType = {
+  None = 0,
+  Blue = 1,
+  Red = 2,
+  Green = 3,
+  Yellow = 4
+}
 _enum("LLPetElementType", LLPetElementType)
-local LLPetLevelType = {StarOne = 1, StarTwo = 2, StarThree = 3}
+local LLPetLevelType = {
+  StarOne = 1,
+  StarTwo = 2,
+  StarThree = 3
+}
 _enum("LLPetLevelType", LLPetLevelType)
-local LLPetCampType = {None = 1000, BAIYE = 1001, YINGZHEN = 1002, QIGUANG = 1003, BEIJING = 1004, HONGYOU = 1005, ZHENLI = 1006, LONGZHOU = 1007}
+local LLPetCampType = {
+  None = 1000,
+  BAIYE = 1001,
+  YINGZHEN = 1002,
+  QIGUANG = 1003,
+  BEIJING = 1004,
+  HONGYOU = 1005,
+  ZHENLI = 1006,
+  LONGZHOU = 1007
+}
 _enum("LLPetCampType", LLPetCampType)
-local LLPetTagType = {None = 0, Element = 1, Camp = 2, Level = 3, Res = 4, ElementOrCamp = 5, Pos = 6}
+local LLPetTagType = {
+  None = 0,
+  Element = 1,
+  Camp = 2,
+  Level = 3,
+  Res = 4,
+  ElementOrCamp = 5,
+  Pos = 6
+}
 _enum("LLPetTagType", LLPetTagType)
-

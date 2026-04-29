@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_random_story_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftRandomStoryManager", Object)
 AircraftRandomStoryManager = AircraftRandomStoryManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftRandomStoryManager.Constructor = function(self, aircraftMain)
-  -- function num : 0_0
+function AircraftRandomStoryManager:Constructor(aircraftMain)
   self._main = aircraftMain
   self._inStoryPets = {}
   self._showStory = {}
@@ -17,138 +10,52 @@ AircraftRandomStoryManager.Constructor = function(self, aircraftMain)
   self._pet2action = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.GetStoryIDByPetID = function(self, petid)
-  -- function num : 0_1 , upvalues : _ENV
-  for key,value in pairs(self._pet2action) do
+function AircraftRandomStoryManager:GetStoryIDByPetID(petid)
+  for key, value in pairs(self._pet2action) do
     if petid == value.petid then
       return key
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local AirModule = (GameGlobal.GetModule)(AircraftModule)
-  local questChatModule = (GameGlobal.GetModule)(QuestChatModule)
+function AircraftRandomStoryManager:Init()
+  local AirModule = GameGlobal.GetModule(AircraftModule)
+  local questChatModule = GameGlobal.GetModule(QuestChatModule)
   self._inStoryPets = {}
   local roomStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.UnlockRoom)
-  if roomStory and (table.count)(roomStory) > 0 then
-    for key,value in pairs(roomStory) do
-      for index,var in ipairs(value.story_event_id_list) do
-        if var > 0 then
-          local cfg_story = (Cfg.cfg_aircraft_pet_stroy_refresh)[var]
+  if roomStory and table.count(roomStory) > 0 then
+    for key, value in pairs(roomStory) do
+      for index, var in ipairs(value.story_event_id_list) do
+        if 0 < var then
+          local cfg_story = Cfg.cfg_aircraft_pet_stroy_refresh[var]
           if not cfg_story then
-            (Log.error)("cfg_aircraft_pet_stroy_refresh 表中没有这个 id --> ", var)
+            Log.error("cfg_aircraft_pet_stroy_refresh 表中没有这个 id --> ", var)
           end
           local cid = cfg_story.StoryEventChatID
           if cid and cid ~= 0 then
             local isEnd = questChatModule:UI_IsChatEnd(cid)
             if isEnd then
-              (table.insert)(self._inStoryPets, var)
+              table.insert(self._inStoryPets, var)
             end
           end
         end
       end
     end
   end
-  do
-    local addPetStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.AddPet)
-    if addPetStory and (table.count)(addPetStory) > 0 then
-      for key,value in pairs(addPetStory) do
-        for index,var in ipairs(value.story_event_id_list) do
-          if var > 0 then
-            local cfg_story = (Cfg.cfg_aircraft_pet_stroy_refresh)[var]
-            if not cfg_story then
-              (Log.error)("cfg_aircraft_pet_stroy_refresh 表中没有这个 id --> ", var)
-            else
-              local cid = cfg_story.StoryEventChatID
-              if cid and cid ~= 0 then
-                local isEnd = questChatModule:UI_IsChatEnd(cid)
-                if isEnd then
-                  (table.insert)(self._inStoryPets, var)
-                end
-              end
-            end
-          end
-        end
-      end
-    end
-    do
-      local loginStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.LoginGame)
-      if loginStory and (table.count)(loginStory) > 0 then
-        for key,value in pairs(loginStory) do
-          for index,var in ipairs(value.story_event_id_list) do
-            if var > 0 then
-              local cfg_story = (Cfg.cfg_aircraft_pet_stroy_refresh)[var]
-              if not cfg_story then
-                (Log.error)("cfg_aircraft_pet_stroy_refresh 表中没有这个 id --> ", var)
-              else
-                local cid = cfg_story.StoryEventChatID
-                if cid and cid ~= 0 then
-                  local isEnd = questChatModule:UI_IsChatEnd(cid)
-                  if isEnd then
-                    (table.insert)(self._inStoryPets, var)
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-      do
-        local MultPetsStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.EnterAircraftSection)
-        if MultPetsStory and (table.count)(MultPetsStory) > 0 then
-          for key,value in pairs(MultPetsStory) do
-            for index,var in ipairs(value.story_event_id_list) do
-              if var > 0 then
-                (table.insert)(self._inStoryPets, var)
-              end
-            end
-          end
-        end
-        do
-          local missionStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.PassMission)
-          if missionStory and (table.count)(missionStory) > 0 then
-            for key,value in pairs(missionStory) do
-              for index,var in ipairs(value.story_event_id_list) do
-                if var > 0 then
-                  (table.insert)(self._inStoryPets, var)
-                end
-              end
-            end
-          end
-          do
-            local giftStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.GiveGift)
-            if giftStory and (table.count)(giftStory) > 0 then
-              for key,value in pairs(giftStory) do
-                for index,var in ipairs(value.story_event_id_list) do
-                  if var > 0 then
-                    (table.insert)(self._inStoryPets, var)
-                  end
-                end
-              end
-            end
-            do
-              local enterStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.EnterAircraft)
-              if enterStory and (table.count)(enterStory) > 0 then
-                for key,value in pairs(enterStory) do
-                  for index,var in ipairs(value.story_event_id_list) do
-                    if var > 0 then
-                      (table.insert)(self._inStoryPets, var)
-                    end
-                  end
-                end
-              end
-              do
-                if (table.count)(self._inStoryPets) > 0 then
-                  (Log.debug)("###random 有剧情，开启", (table.count)(self._inStoryPets), "个")
-                  self:StartStory()
-                end
-                AirLog("AircraftRandomStoryManager Init Done")
+  local addPetStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.AddPet)
+  if addPetStory and table.count(addPetStory) > 0 then
+    for key, value in pairs(addPetStory) do
+      for index, var in ipairs(value.story_event_id_list) do
+        if 0 < var then
+          local cfg_story = Cfg.cfg_aircraft_pet_stroy_refresh[var]
+          if not cfg_story then
+            Log.error("cfg_aircraft_pet_stroy_refresh 表中没有这个 id --> ", var)
+          else
+            local cid = cfg_story.StoryEventChatID
+            if cid and cid ~= 0 then
+              local isEnd = questChatModule:UI_IsChatEnd(cid)
+              if isEnd then
+                table.insert(self._inStoryPets, var)
               end
             end
           end
@@ -156,103 +63,137 @@ AircraftRandomStoryManager.Init = function(self)
       end
     end
   end
+  local loginStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.LoginGame)
+  if loginStory and table.count(loginStory) > 0 then
+    for key, value in pairs(loginStory) do
+      for index, var in ipairs(value.story_event_id_list) do
+        if 0 < var then
+          local cfg_story = Cfg.cfg_aircraft_pet_stroy_refresh[var]
+          if not cfg_story then
+            Log.error("cfg_aircraft_pet_stroy_refresh 表中没有这个 id --> ", var)
+          else
+            local cid = cfg_story.StoryEventChatID
+            if cid and cid ~= 0 then
+              local isEnd = questChatModule:UI_IsChatEnd(cid)
+              if isEnd then
+                table.insert(self._inStoryPets, var)
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  local MultPetsStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.EnterAircraftSection)
+  if MultPetsStory and table.count(MultPetsStory) > 0 then
+    for key, value in pairs(MultPetsStory) do
+      for index, var in ipairs(value.story_event_id_list) do
+        if 0 < var then
+          table.insert(self._inStoryPets, var)
+        end
+      end
+    end
+  end
+  local missionStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.PassMission)
+  if missionStory and table.count(missionStory) > 0 then
+    for key, value in pairs(missionStory) do
+      for index, var in ipairs(value.story_event_id_list) do
+        if 0 < var then
+          table.insert(self._inStoryPets, var)
+        end
+      end
+    end
+  end
+  local giftStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.GiveGift)
+  if giftStory and table.count(giftStory) > 0 then
+    for key, value in pairs(giftStory) do
+      for index, var in ipairs(value.story_event_id_list) do
+        if 0 < var then
+          table.insert(self._inStoryPets, var)
+        end
+      end
+    end
+  end
+  local enterStory = AirModule:GetStoryEventDicByTriggerType(EStoryTriggerType.EnterAircraft)
+  if enterStory and table.count(enterStory) > 0 then
+    for key, value in pairs(enterStory) do
+      for index, var in ipairs(value.story_event_id_list) do
+        if 0 < var then
+          table.insert(self._inStoryPets, var)
+        end
+      end
+    end
+  end
+  if table.count(self._inStoryPets) > 0 then
+    Log.debug("###random 有剧情，开启", table.count(self._inStoryPets), "个")
+    self:StartStory()
+  end
+  AirLog("AircraftRandomStoryManager Init Done")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.GetRandomStoryTriggerCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (table.count)(self._pet2action)
+function AircraftRandomStoryManager:GetRandomStoryTriggerCount()
+  return table.count(self._pet2action)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.CheckPetInRandomStory = function(self, pet)
-  -- function num : 0_4
+function AircraftRandomStoryManager:CheckPetInRandomStory(pet)
   local pid = pet:TemplateID()
-  if (self._pet2action)[pid] then
+  if self._pet2action[pid] then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.TriggerRandomStory = function(self, storyid, gotReward, gotAffinity)
-  -- function num : 0_5 , upvalues : _ENV
-  local petid = ((self._pet2action)[storyid]).petid
-  local pet = (self._main):GetPetByTmpID(petid)
+function AircraftRandomStoryManager:TriggerRandomStory(storyid, gotReward, gotAffinity)
+  local petid = self._pet2action[storyid].petid
+  local pet = self._main:GetPetByTmpID(petid)
   pet:StopMatAnim()
-  local needpets = ((self._pet2action)[storyid]).needPets
-  if needpets and (table.count)(needpets) > 0 then
+  local needpets = self._pet2action[storyid].needPets
+  if needpets and table.count(needpets) > 0 then
     for i = 1, #needpets do
-      local needpet = (self._main):GetPetByTmpID(needpets[i])
+      local needpet = self._main:GetPetByTmpID(needpets[i])
       needpet:StopMatAnim()
     end
   end
-  do
-    local action_rs_look = AirAction_RS_Look:New(pet, self._main, storyid, gotReward, gotAffinity)
-    pet:StartMainAction(action_rs_look)
-    action_rs_look:ReadyPlayStory()
-    pet:SetEffectCollider(nil)
-  end
+  local action_rs_look = AirAction_RS_Look:New(pet, self._main, storyid, gotReward, gotAffinity)
+  pet:StartMainAction(action_rs_look)
+  action_rs_look:ReadyPlayStory()
+  pet:SetEffectCollider(nil)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.StartStory = function(self)
-  -- function num : 0_6
+function AircraftRandomStoryManager:StartStory()
   for i = 1, #self._inStoryPets do
-    local storyid = (self._inStoryPets)[i]
+    local storyid = self._inStoryPets[i]
     self:StartOneRandomEvent(storyid)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_7
+function AircraftRandomStoryManager:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.CheckPetWithRandomStory = function(self, withPets)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftRandomStoryManager:CheckPetWithRandomStory(withPets)
   for i = 1, #withPets do
-    for key,value in pairs(self._showStory) do
-      if (self._pet2action)[value] then
-        local storyItem = (self._pet2action)[value]
+    for key, value in pairs(self._showStory) do
+      if self._pet2action[value] then
+        local storyItem = self._pet2action[value]
         local withs = {}
         local needPets = storyItem.needPets
         local petid = storyItem.petid
-        ;
-        (table.insert)(withs, petid)
-        if needPets and (table.count)(needPets) > 0 then
+        table.insert(withs, petid)
+        if needPets and table.count(needPets) > 0 then
           for i = 1, #needPets do
             local pid = needPets[i]
-            ;
-            (table.insert)(withs, pid)
+            table.insert(withs, pid)
           end
         end
-        do
-          for k,v in pairs(withs) do
-            if v == withPets[i] then
-              return true
-            end
+        for k, v in pairs(withs) do
+          if v == withPets[i] then
+            return true
           end
-          do
-            local inner = (HelperProxy:GetInstance()):CheckBinderID(withs, withPets[i])
-            if inner then
-              (Log.debug)("###[AircraftRandomStoryManager] sp星灵已在剧情中,id", withPets[i])
-              return true
-            end
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        end
+        local inner = HelperProxy:GetInstance():CheckBinderID(withs, withPets[i])
+        if inner then
+          Log.debug("###[AircraftRandomStoryManager] sp星灵已在剧情中,id", withPets[i])
+          return true
         end
       end
     end
@@ -260,401 +201,301 @@ AircraftRandomStoryManager.CheckPetWithRandomStory = function(self, withPets)
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.StartOneRandomEvent = function(self, storyid, noMove)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.debug)("###random 准备开启一个剧情-id-->", storyid)
-  local cfg_aircraft_pet_stroy_refresh = (Cfg.cfg_aircraft_pet_stroy_refresh)[storyid]
+function AircraftRandomStoryManager:StartOneRandomEvent(storyid, noMove)
+  Log.debug("###random 准备开启一个剧情-id-->", storyid)
+  local cfg_aircraft_pet_stroy_refresh = Cfg.cfg_aircraft_pet_stroy_refresh[storyid]
   if not cfg_aircraft_pet_stroy_refresh then
-    (Log.error)("###[RandomStory]cfg_aircraft_pet_stroy_refresh is nil ! id -- ", storyid)
-    return 
+    Log.error("###[RandomStory]cfg_aircraft_pet_stroy_refresh is nil ! id -- ", storyid)
+    return
   end
   local triggerType = cfg_aircraft_pet_stroy_refresh.TriggerType
   local petid = cfg_aircraft_pet_stroy_refresh.PetID
   local needpetids = cfg_aircraft_pet_stroy_refresh.EnterTriggerNeedPetsArray
   local withPets = {}
-  ;
-  (table.insert)(withPets, petid)
-  if needpetids and (table.count)(needpetids) > 0 then
+  table.insert(withPets, petid)
+  if needpetids and table.count(needpetids) > 0 then
     for i = 1, #needpetids do
-      (table.insert)(withPets, needpetids[i])
+      table.insert(withPets, needpetids[i])
     end
   end
-  do
-    if self:CheckPetWithRandomStory(withPets) and not (table.icontains)(self._hideStory, storyid) then
-      (table.insert)(self._hideStory, storyid)
+  if self:CheckPetWithRandomStory(withPets) then
+    if not table.icontains(self._hideStory, storyid) then
+      table.insert(self._hideStory, storyid)
     end
-    do return  end
-    local storyParam, floor, pointid, randomPointHolder = self:GetRandomStoryPoint(storyid)
-    if not noMove and storyParam == nil then
-      (Log.debug)("###[AircraftRandomStoryManager] storyid-->", storyid, "触发失败,原因没有点")
-      return 
-    end
-    local pet = (self._main):GetPetByTmpID(petid)
-    local sp = false
+    return
+  end
+  local storyParam, floor, pointid, randomPointHolder = self:GetRandomStoryPoint(storyid)
+  if not noMove and storyParam == nil then
+    Log.debug("###[AircraftRandomStoryManager] storyid-->", storyid, "触发失败,原因没有点")
+    return
+  end
+  local pet = self._main:GetPetByTmpID(petid)
+  local sp = false
+  if not pet then
+    pet, sp = self._main:AddPet(petid)
     if not pet then
-      pet = (self._main):AddPet(petid)
-      if not pet and sp then
-        (Log.debug)("###[AircraftRandomStoryManager] sp星灵已存在,sp:", sp, ",petid:", petid)
+      if sp then
+        Log.debug("###[AircraftRandomStoryManager] sp星灵已存在,sp:", sp, ",petid:", petid)
       end
-      return 
-    end
-    local action_rs_wait = AirAction_RS_Wait:New(pet, self._main, storyid, storyParam, floor, pointid, randomPointHolder, noMove)
-    pet:SetState(AirPetState.RandomEvent)
-    pet:SetAsObstacle()
-    pet:StartMainAction(action_rs_wait)
-    action_rs_wait:StartWaitBubble()
-    local needPetList = {}
-    if needpetids and #needpetids > 0 then
-      for i = 1, #needpetids do
-        local tempid = needpetids[i]
-        local otherPet = (self._main):GetPetByTmpID(tempid)
-        -- DECOMPILER ERROR at PC143: Overwrote pending register: R13 in 'AssignReg'
-
-        if not otherPet then
-          otherPet = (self._main):AddPet(tempid)
-          if not pet and sp then
-            (Log.debug)("###[AircraftRandomStoryManager] sp星灵已存在,sp:", sp, ",petid:", tempid)
-          end
-          return 
-        end
-        local storyParam, floor, pointid, randomPointHolder = self:GetRandomStoryPoint(storyid, true)
-        local action_rs_with = AirActionRandomStoryWith:New(otherPet, self._main, storyid, storyParam, floor, pointid, randomPointHolder, noMove)
-        otherPet:SetState(AirPetState.RandomEventWith)
-        otherPet:SetAsObstacle()
-        otherPet:StartMainAction(action_rs_with)
-      end
-    end
-    do
-      ;
-      (table.insert)(self._removeStoryIDs, storyid)
-      local storyItem = AircraftRandomStoryItem:New(storyid, petid, needpetids, triggerType)
-      -- DECOMPILER ERROR at PC195: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (self._pet2action)[storyid] = storyItem
-      ;
-      (table.insert)(self._showStory, storyid)
+      return
     end
   end
+  local action_rs_wait = AirAction_RS_Wait:New(pet, self._main, storyid, storyParam, floor, pointid, randomPointHolder, noMove)
+  pet:SetState(AirPetState.RandomEvent)
+  pet:SetAsObstacle()
+  pet:StartMainAction(action_rs_wait)
+  action_rs_wait:StartWaitBubble()
+  local needPetList = {}
+  if needpetids and 0 < #needpetids then
+    for i = 1, #needpetids do
+      local tempid = needpetids[i]
+      local otherPet = self._main:GetPetByTmpID(tempid)
+      if not otherPet then
+        otherPet, sp = self._main:AddPet(tempid)
+        if not pet then
+          if sp then
+            Log.debug("###[AircraftRandomStoryManager] sp星灵已存在,sp:", sp, ",petid:", tempid)
+          end
+          return
+        end
+      end
+      local storyParam, floor, pointid, randomPointHolder = self:GetRandomStoryPoint(storyid, true)
+      local action_rs_with = AirActionRandomStoryWith:New(otherPet, self._main, storyid, storyParam, floor, pointid, randomPointHolder, noMove)
+      otherPet:SetState(AirPetState.RandomEventWith)
+      otherPet:SetAsObstacle()
+      otherPet:StartMainAction(action_rs_with)
+    end
+  end
+  table.insert(self._removeStoryIDs, storyid)
+  local storyItem = AircraftRandomStoryItem:New(storyid, petid, needpetids, triggerType)
+  self._pet2action[storyid] = storyItem
+  table.insert(self._showStory, storyid)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.GetRandomStoryPoint = function(self, storyid, noRemoveFurniturePet)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.debug)("###[AircraftRandomStoryManager] 获取剧情触发数据 storyid --> ", storyid)
-  local cfg = (Cfg.cfg_aircraft_pet_stroy_refresh)[storyid]
+function AircraftRandomStoryManager:GetRandomStoryPoint(storyid, noRemoveFurniturePet)
+  Log.debug("###[AircraftRandomStoryManager] 获取剧情触发数据 storyid --> ", storyid)
+  local cfg = Cfg.cfg_aircraft_pet_stroy_refresh[storyid]
   if not cfg then
-    (Log.error)("###[AircraftRandomStoryManager]cfg_aircraft_pet_stroy_refresh is nil ! id --> ", storyid)
-    return 
+    Log.error("###[AircraftRandomStoryManager]cfg_aircraft_pet_stroy_refresh is nil ! id --> ", storyid)
+    return
   end
   local randomStoryAreaType = cfg.RandomStoryAreaType
-  local storyParam, floor, pointid, randomPointHolder = nil, nil, nil, nil
+  local storyParam, floor, pointid, randomPointHolder
   if randomStoryAreaType == 1 then
     local posids = cfg.RandomStoryPosIDs
-    storyParam = self:GetRandomStoryPos(storyid, posids)
+    storyParam, floor, pointid, randomPointHolder = self:GetRandomStoryPos(storyid, posids)
   else
-    do
-      local furnitureType = cfg.RandomStoryFurnitureType
-      -- DECOMPILER ERROR at PC35: Overwrote pending register: R6 in 'AssignReg'
-
-      storyParam = self:GetRandomStoryFurniture(furnitureType, noRemoveFurniturePet)
-      do
-        if storyParam == nil then
-          local posids = cfg.RandomStoryPosIDs
-          -- DECOMPILER ERROR at PC44: Overwrote pending register: R8 in 'AssignReg'
-
-          -- DECOMPILER ERROR at PC45: Overwrote pending register: R7 in 'AssignReg'
-
-          -- DECOMPILER ERROR at PC46: Overwrote pending register: R6 in 'AssignReg'
-
-          storyParam = self:GetRandomStoryPos(storyid, posids)
-        end
-        if storyParam == nil then
-          (Log.debug)("###[AircraftRandomStoryManager] 如果点也没找到，触发失败")
-          return 
-        else
-          ;
-          (Log.debug)("###[AircraftRandomStoryManager] 触发")
-          return storyParam, floor, pointid, randomPointHolder
-        end
-      end
+    local furnitureType = cfg.RandomStoryFurnitureType
+    storyParam, floor = self:GetRandomStoryFurniture(furnitureType, noRemoveFurniturePet)
+    if storyParam == nil then
+      local posids = cfg.RandomStoryPosIDs
+      storyParam, floor, pointid, randomPointHolder = self:GetRandomStoryPos(storyid, posids)
     end
+  end
+  if storyParam == nil then
+    Log.debug("###[AircraftRandomStoryManager] 如果点也没找到，触发失败")
+    return
+  else
+    Log.debug("###[AircraftRandomStoryManager] 触发")
+    return storyParam, floor, pointid, randomPointHolder
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.GetRandomStoryPos = function(self, storyid, RandomStoryPosIDs)
-  -- function num : 0_11 , upvalues : _ENV
-  local storyParam, floor, pointid, randomPointHolder = nil, nil, nil, nil
+function AircraftRandomStoryManager:GetRandomStoryPos(storyid, RandomStoryPosIDs)
+  local storyParam, floor, pointid, randomPointHolder
   local storyParams = RandomStoryPosIDs
-  ;
-  (Log.debug)("###[AircraftRandomStoryManager] 检查没用到的剧情点")
+  Log.debug("###[AircraftRandomStoryManager] 检查没用到的剧情点")
   for i = 1, #storyParams do
-    local area = (storyParams[i])[1]
-    pointid = (storyParams[i])[2]
-    ;
-    (Log.debug)("###[AircraftRandomStoryManager] 开始找点 area --> ", area, "| pointid --> ", pointid)
+    local area = storyParams[i][1]
+    pointid = storyParams[i][2]
+    Log.debug("###[AircraftRandomStoryManager] 开始找点 area --> ", area, "| pointid --> ", pointid)
     if area == AirRestAreaType.Board3 or area == AirRestAreaType.Board4 then
-      randomPointHolder = (self._main):GetRandomStoryPointHolder(area)
+      randomPointHolder = self._main:GetRandomStoryPointHolder(area)
     else
-      local room = (self._main):GetRoomByArea(area)
+      local room = self._main:GetRoomByArea(area)
       if room == nil then
-        (Log.debug)("###[AircraftRandomStoryManager] 找不到房间：", area, "|storyid-->", storyid)
+        Log.debug("###[AircraftRandomStoryManager] 找不到房间：", area, "|storyid-->", storyid)
       else
         randomPointHolder = room:GetRandomStoryPointHolder()
       end
     end
-    do
-      do
-        if not randomPointHolder:CheckPointOccupy(pointid, storyid) then
-          storyParam = randomPointHolder:GetPoint(pointid, storyid)
-          floor = randomPointHolder:Floor(pointid)
-          ;
-          (Log.debug)("###[AircraftRandomStoryManager]找到一个点,id", pointid)
-          ;
-          (Log.debug)("###[AircraftRandomStoryManager]找到楼层，", floor)
-          break
-        end
-        -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if not randomPointHolder:CheckPointOccupy(pointid, storyid) then
+      storyParam = randomPointHolder:GetPoint(pointid, storyid)
+      floor = randomPointHolder:Floor(pointid)
+      Log.debug("###[AircraftRandomStoryManager]找到一个点,id", pointid)
+      Log.debug("###[AircraftRandomStoryManager]找到楼层，", floor)
+      break
     end
   end
   if not storyParam or not floor then
-    (Log.debug)("###[AircraftRandomStoryManager]检查完毕没找到")
-    return 
+    Log.debug("###[AircraftRandomStoryManager]检查完毕没找到")
+    return
   end
   return storyParam, floor, pointid, randomPointHolder
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.GetRandomStoryFurniture = function(self, furnitureType, noRemoveFurniturePet)
-  -- function num : 0_12 , upvalues : _ENV
-  local furniture = ((self._main):GetFurnitureByID(furnitureType))
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R4 in 'AssignReg'
-
-  local storyParam, floor = .end, nil
+function AircraftRandomStoryManager:GetRandomStoryFurniture(furnitureType, noRemoveFurniturePet)
+  local furniture = self._main:GetFurnitureByID(furnitureType)
+  local storyParam, floor
   if furniture then
     if noRemoveFurniturePet then
-      (Log.debug)("###[AircraftRandomStoryManager] 伴随星灵 - 不移除家具上的星灵")
+      Log.debug("###[AircraftRandomStoryManager] 伴随星灵 - 不移除家具上的星灵")
     else
-      ;
-      (Log.debug)("###[AircraftRandomStoryManager] 主星灵 - 移除家具上的星灵")
+      Log.debug("###[AircraftRandomStoryManager] 主星灵 - 移除家具上的星灵")
       local pets = furniture:GetPets()
-      for _,petid in pairs(pets) do
-        local pet = (self._main):GetPetByTmpID(petid)
-        ;
-        (self._main):RandomActionForPet(pet)
+      for _, petid in pairs(pets) do
+        local pet = self._main:GetPetByTmpID(petid)
+        self._main:RandomActionForPet(pet)
       end
     end
-    do
-      floor = furniture:Floor()
-      storyParam = furnitureType
-      ;
-      (Log.debug)("###[AircraftRandomStoryManager]设置了家具的楼层 furnitureType-->", furnitureType, "|floor-->", floor)
-      do return storyParam, floor end
-      ;
-      (Log.debug)("###[AircraftRandomStoryManager] 没找到家具,普通触发")
-      do return nil end
-    end
+    floor = furniture:Floor()
+    storyParam = furnitureType
+    Log.debug("###[AircraftRandomStoryManager]设置了家具的楼层 furnitureType-->", furnitureType, "|floor-->", floor)
+    return storyParam, floor
+  else
+    Log.debug("###[AircraftRandomStoryManager] 没找到家具,普通触发")
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.RemoveOneRandomEvent = function(self, storyid)
-  -- function num : 0_13 , upvalues : _ENV
+function AircraftRandomStoryManager:RemoveOneRandomEvent(storyid)
   local storyPets = {}
-  local petid = ((self._pet2action)[storyid]).petid
-  local triggerType = ((self._pet2action)[storyid]).triggerType
-  local storyID = ((self._pet2action)[storyid]).storyid
+  local petid = self._pet2action[storyid].petid
+  local triggerType = self._pet2action[storyid].triggerType
+  local storyID = self._pet2action[storyid].storyid
   AirLog("结束剧情，星灵：", petid)
-  ;
-  (table.insert)(storyPets, petid)
-  local needPets = ((self._pet2action)[storyid]).needPets
-  if needPets and (table.count)(needPets) > 0 then
-    for _,p in pairs(needPets) do
-      (table.insert)(storyPets, p)
+  table.insert(storyPets, petid)
+  local needPets = self._pet2action[storyid].needPets
+  if needPets and table.count(needPets) > 0 then
+    for _, p in pairs(needPets) do
+      table.insert(storyPets, p)
     end
   end
-  do
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._pet2action)[storyid] then
-      (self._pet2action)[storyid] = nil
-    end
-    for i = 1, #storyPets do
-      local itemPetid = storyPets[i]
-      AirLog("随机行为，星灵：", petid)
-      ;
-      (self._main):OnPetFinishStory(itemPetid, triggerType, storyID)
-    end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshNavMenuData)
+  if self._pet2action[storyid] then
+    self._pet2action[storyid] = nil
   end
+  for i = 1, #storyPets do
+    local itemPetid = storyPets[i]
+    AirLog("随机行为，星灵：", petid)
+    self._main:OnPetFinishStory(itemPetid, triggerType, storyID)
+  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshNavMenuData)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.CheckHideStory = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  for key,value in pairs(self._hideStory) do
+function AircraftRandomStoryManager:CheckHideStory()
+  for key, value in pairs(self._hideStory) do
     self:StartOneRandomEvent(value)
   end
   for i = 1, #self._removeStoryIDs do
-    local id = (self._removeStoryIDs)[i]
+    local id = self._removeStoryIDs[i]
     for j = 1, #self._hideStory do
-      if (self._hideStory)[j] == (self._removeStoryIDs)[i] then
-        (table.remove)(self._hideStory, j)
+      if self._hideStory[j] == self._removeStoryIDs[i] then
+        table.remove(self._hideStory, j)
         break
       end
     end
   end
-  ;
-  (table.clear)(self._removeStoryIDs)
+  table.clear(self._removeStoryIDs)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.Dispose = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function AircraftRandomStoryManager:Dispose()
   if self._pet2action then
-    (table.clear)(self._pet2action)
+    table.clear(self._pet2action)
     self._pet2action = nil
   end
   if self._inStoryPets then
-    (table.clear)(self._inStoryPets)
+    table.clear(self._inStoryPets)
     self._inStoryPets = nil
   end
   self._main = nil
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.GetRandomStoryPets = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftRandomStoryManager:GetRandomStoryPets()
   local pets = {}
-  if (table.count)(self._pet2action) then
-    for key,value in pairs(self._pet2action) do
+  if table.count(self._pet2action) then
+    for key, value in pairs(self._pet2action) do
       pets[#pets + 1] = value
     end
   end
-  do
-    return pets
-  end
+  return pets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.GetStoryPetByNeedPet = function(self, needpet)
-  -- function num : 0_17 , upvalues : _ENV
+function AircraftRandomStoryManager:GetStoryPetByNeedPet(needpet)
   local needpetid = needpet:TemplateID()
-  for key,value in pairs(self._pet2action) do
+  for key, value in pairs(self._pet2action) do
     local item = value
     local needPets = item.needPets
     local inner = false
-    if needPets and (table.count)(needPets) > 0 then
-      for key,value in pairs(needPets) do
+    if needPets and table.count(needPets) > 0 then
+      for key, value in pairs(needPets) do
         if value == needpetid then
           inner = true
           break
         end
       end
     end
-    do
-      do
-        if inner then
-          local petid = item.petid
-          return petid
-        end
-        -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if inner then
+      local petid = item.petid
+      return petid
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftRandomStoryManager.GetNeedPetByStoryPet = function(self, pet)
-  -- function num : 0_18 , upvalues : _ENV
+function AircraftRandomStoryManager:GetNeedPetByStoryPet(pet)
   local petState = pet:GetState()
-  local _petid = (pet:TemplateID())
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R4 in 'AssignReg'
-
-  local pets, storyid = .end, nil
+  local _petid = pet:TemplateID()
+  local pets, storyid
   if petState == AirPetState.RandomEvent then
     pets = {}
-    for key,value in pairs(self._pet2action) do
+    for key, value in pairs(self._pet2action) do
       if value.petid == _petid then
         storyid = key
         break
       end
     end
-    do
-      local data = (self._pet2action)[storyid]
-      ;
-      (table.insert)(pets, data.petid)
-      if data.needPets and (table.count)(data.needPets) > 0 then
-        for i = 1, #data.needPets do
-          local needPet = (data.needPets)[i]
-          ;
-          (table.insert)(pets, needPet)
+    local data = self._pet2action[storyid]
+    table.insert(pets, data.petid)
+    if data.needPets and table.count(data.needPets) > 0 then
+      for i = 1, #data.needPets do
+        local needPet = data.needPets[i]
+        table.insert(pets, needPet)
+      end
+    end
+  elseif petState == AirPetState.RandomEventWith then
+    pets = {}
+    for key, value in pairs(self._pet2action) do
+      local _needPets = value.needPets
+      if _needPets then
+        for i = 1, #_needPets do
+          local _needPet = _needPets[i]
+          if _needPet == _petid then
+            storyid = key
+            break
+          end
         end
       end
-      do
-        if petState == AirPetState.RandomEventWith then
-          pets = {}
-          for key,value in pairs(self._pet2action) do
-            local _needPets = value.needPets
-            if _needPets then
-              for i = 1, #_needPets do
-                local _needPet = _needPets[i]
-                if _needPet == _petid then
-                  storyid = key
-                  break
-                end
-              end
-            end
-          end
-          do
-            if not storyid then
-              local data = (self._pet2action)[storyid]
-              ;
-              (table.insert)(pets, data.petid)
-              if data.needPets and (table.count)(data.needPets) > 0 then
-                for i = 1, #data.needPets do
-                  local needPet = (data.needPets)[i]
-                  ;
-                  (table.insert)(pets, needPet)
-                end
-              end
-              do
-                return pets
-              end
-            end
-          end
-        end
+      if storyid then
+        break
+      end
+    end
+    local data = self._pet2action[storyid]
+    table.insert(pets, data.petid)
+    if data.needPets and table.count(data.needPets) > 0 then
+      for i = 1, #data.needPets do
+        local needPet = data.needPets[i]
+        table.insert(pets, needPet)
       end
     end
   end
+  return pets
 end
 
 _class("AircraftRandomStoryItem", Object)
 AircraftRandomStoryItem = AircraftRandomStoryItem
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftRandomStoryItem.Constructor = function(self, storyid, petid, needPets, triggerType)
-  -- function num : 0_19
+function AircraftRandomStoryItem:Constructor(storyid, petid, needPets, triggerType)
   self.storyid = storyid
   self.petid = petid
   self.needPets = needPets
   self.triggerType = triggerType
 end
-
-

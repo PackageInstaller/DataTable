@@ -1,112 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/common/ui_n28_avg_actor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGActor", UICustomWidget)
 UIN28AVGActor = UIN28AVGActor
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGActor.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGActor:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
   self.effAnimTask = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGActor.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGActor:OnShow()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.anim = self:GetUIComponent("Animation", "anim")
   self.htRoot = self:GetGameObject("value")
   if self.htRoot then
     self.htObjList = {}
-    for i = 0, ((self.htRoot).transform).childCount - 1 do
-      local trans = ((self.htRoot).transform):GetChild(i)
-      ;
-      (table.insert)(self.htObjList, (trans:Find("full")).gameObject)
+    for i = 0, self.htRoot.transform.childCount - 1 do
+      local trans = self.htRoot.transform:GetChild(i)
+      table.insert(self.htObjList, trans:Find("full").gameObject)
     end
   end
-  do
-    self.txtValue = self:GetUIComponent("UILocalizationText", "txtValue")
-    self.eff = self:GetGameObject("eff")
-  end
+  self.txtValue = self:GetUIComponent("UILocalizationText", "txtValue")
+  self.eff = self:GetGameObject("eff")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGActor.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.imgIcon):DestoryLastImage()
+function UIN28AVGActor:OnHide()
+  self.imgIcon:DestoryLastImage()
   if self.effAnimTask > 0 then
-    ((GameGlobal.TaskManager)()):KillTask(self.effAnimTask)
+    GameGlobal.TaskManager():KillTask(self.effAnimTask)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGActor.Flush = function(self, index, value, anim)
-  -- function num : 0_3 , upvalues : _ENV
-  local actor = (self.data):GetActorByIndex(index)
+function UIN28AVGActor:Flush(index, value, anim)
+  local actor = self.data:GetActorByIndex(index)
   self:FlushIcon(actor)
   if self.txtValue then
-    local curValue = tonumber((self.txtValue).text)
-    if not curValue or ((value >= curValue or curValue < value)) then
-      do
-        (self.txtValue):SetText(value)
-        if self.htRoot then
-          for i = 1, #self.htObjList do
-            local hasHeart = i <= value
-            local heartObj = (self.htObjList)[i]
-            -- DECOMPILER ERROR at PC50: Confused about usage of register: R11 in 'UnsetPending'
-
-            if not hasHeart and heartObj.activeSelf and anim then
-              ((self.eff).transform).position = (heartObj.transform).position
-              ;
-              (self.eff):SetActive(true)
-              ;
-              (self.anim):Play("uieff_UIN28AVGActorLeader2_heart_root")
-              ;
-              (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28AVGHpReduce)
-              self.effAnimTask = self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    YIELD(TT, 500)
-    ;
-    (self.eff):SetActive(false)
-    self.effAnimTask = 0
+    local curValue = tonumber(self.txtValue.text)
+    if not curValue or value < curValue then
+    elseif value > curValue then
+    end
+    self.txtValue:SetText(value)
   end
-, self)
-            end
-            heartObj:SetActive(hasHeart)
-          end
-        end
-        -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if self.htRoot then
+    for i = 1, #self.htObjList do
+      local hasHeart = value >= i
+      local heartObj = self.htObjList[i]
+      if not hasHeart and heartObj.activeSelf and anim then
+        self.eff.transform.position = heartObj.transform.position
+        self.eff:SetActive(true)
+        self.anim:Play("uieff_UIN28AVGActorLeader2_heart_root")
+        AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28AVGHpReduce)
+        self.effAnimTask = self:StartTask(function(TT)
+          YIELD(TT, 500)
+          self.eff:SetActive(false)
+          self.effAnimTask = 0
+        end, self)
       end
+      heartObj:SetActive(hasHeart)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGActor.FlushIcon = function(self, actor)
-  -- function num : 0_4
-  (self.imgIcon):LoadImage(actor.icon)
+function UIN28AVGActor:FlushIcon(actor)
+  self.imgIcon:LoadImage(actor.icon)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGActor.PlayAnim = function(self, change)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28AVGActor:PlayAnim(change)
   if change == 0 then
-    return 
+    return
   end
-  local id = change > 0 and 1 or 2
-  local animName = {"uieff_UIN28AVGActorLeader2_up", "uieff_UIN28AVGActorLeader2_down"}
+  local id = 0 < change and 1 or 2
+  local animName = {
+    "uieff_UIN28AVGActorLeader2_up",
+    "uieff_UIN28AVGActorLeader2_down"
+  }
   local animTime = {2000, 1500}
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "anim", animName[id], animTime[id])
+  UIWidgetHelper.PlayAnimation(self, "anim", animName[id], animTime[id])
 end
-
-

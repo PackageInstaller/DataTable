@@ -1,106 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/game_logic/game_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameModule", Object)
 GameModule = GameModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GameModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function GameModule:Constructor()
   self.logic = nil
   self.caller = nil
-  self.autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
+  self.autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.AttachEvent = function(self, gameEventType, func)
-  -- function num : 0_1
-  (self.autoBinder):BindEvent(gameEventType, self, func)
+function GameModule:AttachEvent(gameEventType, func)
+  self.autoBinder:BindEvent(gameEventType, self, func)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.DetachEvent = function(self, gameEventType)
-  -- function num : 0_2
-  (self.autoBinder):UnBindEvent(gameEventType)
+function GameModule:DetachEvent(gameEventType)
+  self.autoBinder:UnBindEvent(gameEventType)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.Init = function(self)
-  -- function num : 0_3
+function GameModule:Init()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.Dispose = function(self)
-  -- function num : 0_4
+function GameModule:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.DetachAllEvents = function(self)
-  -- function num : 0_5
-  (self.autoBinder):UnBindAllEvents()
+function GameModule:DetachAllEvents()
+  self.autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.Update = function(self, cur_tick)
-  -- function num : 0_6
+function GameModule:Update(cur_tick)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.GetModule = function(self, type)
-  -- function num : 0_7
-  return (self.logic):GetModule(type)
+function GameModule:GetModule(type)
+  return self.logic:GetModule(type)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.GetUIModule = function(self, type)
-  -- function num : 0_8 , upvalues : _ENV
+function GameModule:GetUIModule(type)
   if type == nil then
     type = self
   end
-  return (GameGlobal.GetUIModule)(type)
+  return GameGlobal.GetUIModule(type)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.Call = function(self, TT, request, sync, timeout)
-  -- function num : 0_9 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
-  do
-    if guideModule then
-      local lastGuideid = guideModule:GetLastCompleteGuide()
-      if lastGuideid ~= 0 then
-        request.flag = lastGuideid
-        guideModule:ReportCompleteGuide(lastGuideid)
-      end
-    end
-    -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P3
-
-    -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P3
-
-    if (((sync == nil and true) or timeout == nil) and not sync) or GameSingle then
-      timeout = 0.1
-    end
-    if not (self.caller):Call(TT, request, sync, timeout) then
-      return ReplyInfo:New()
+function GameModule:Call(TT, request, sync, timeout)
+  local guideModule = GameGlobal.GetModule(GuideModule)
+  if guideModule then
+    local lastGuideid = guideModule:GetLastCompleteGuide()
+    if lastGuideid ~= 0 then
+      request.flag = lastGuideid
+      guideModule:ReportCompleteGuide(lastGuideid)
     end
   end
+  sync = sync == nil and true or sync
+  timeout = timeout == nil and (sync and 10000 or 15000) or timeout
+  if GameSingle then
+    timeout = 0.1
+  end
+  return self.caller:Call(TT, request, sync, timeout) or ReplyInfo:New()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.Push = function(self, msg)
-  -- function num : 0_10
-  (self.caller):Push(msg)
+function GameModule:Push(msg)
+  self.caller:Push(msg)
 end
-
-

@@ -1,40 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_next_damage_info_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectNextDamageInfoInstruction", BaseInstruction)
 DataSelectNextDamageInfoInstruction = DataSelectNextDamageInfoInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectNextDamageInfoInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function DataSelectNextDamageInfoInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectNextDamageInfoInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectNextDamageInfoInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, damageStageIndex)
   local damageIndex = phaseContext:GetCurDamageResultIndex()
-  if #damageResultArray < damageIndex or #damageResultArray == 0 then
+  if damageIndex > #damageResultArray or #damageResultArray == 0 then
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   local damageResult = damageResultArray[damageIndex]
   local damageInfoArray = damageResult:GetDamageInfoArray()
   local damageInfoIndex = phaseContext:GetCurDamageInfoIndex()
   damageInfoIndex = damageInfoIndex + 1
   phaseContext:SetCurDamageInfoIndex(damageInfoIndex)
-  if #damageInfoArray < damageInfoIndex or #damageInfoArray == 0 then
+  if damageInfoIndex > #damageInfoArray or #damageInfoArray == 0 then
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   local targetEntityID = damageResult:GetTargetID()
   phaseContext:SetCurTargetEntityID(targetEntityID)
 end
-
-

@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/goldberg_event/stn_ge_summerii_enter_battle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("GoldbergEvent_SummerII_EnterBattle", Common_AsyncBase)
 GoldbergEvent_SummerII_EnterBattle = GoldbergEvent_SummerII_EnterBattle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GoldbergEvent_SummerII_EnterBattle.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function GoldbergEvent_SummerII_EnterBattle:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
   local params = runData:GetEnterMatchParam()
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+  local game = GameGlobal.GetModule(GameMatchModule)
   local createInfo = game:GetMatchCreateInfo(MatchType.MT_Campaign, params)
   for i = 1, 3 do
     local res = game:StartMatchTask(TT, MatchType.MT_Campaign, TestConst.MissionTeamIndex, createInfo)
     if res:GetSucc() then
       status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-      return 
+      return
     end
     YIELD(TT, 10000)
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-  ;
-  (self._manager):Exception_DeclareExceptionThrew("对局创建失败")
+  self._manager:Exception_DeclareExceptionThrew("对局创建失败")
 end
-
-

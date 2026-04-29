@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/hard_level/ui_activity_hard_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNHardLevelNode", UICustomWidget)
 UIActivityNHardLevelNode = UIActivityNHardLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNHardLevelNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityNHardLevelNode:OnShow(uiParams)
   self:InitWidget()
   self:OnInit()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.InitWidget = function(self)
-  -- function num : 0_1
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UIActivityNHardLevelNode:InitWidget()
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self.name = self:GetUIComponent("UILocalizationText", "Name")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._lock = self:GetGameObject("Lock")
@@ -27,139 +17,90 @@ UIActivityNHardLevelNode.InitWidget = function(self)
   self._lockTips1 = self:GetUIComponent("UILocalizationText", "LockTips1")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.SetData = function(self, lineCfg, isOpen, hasPass, cb, idx)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._go):SetActive(true)
+function UIActivityNHardLevelNode:SetData(lineCfg, isOpen, hasPass, cb, idx)
+  self._go:SetActive(true)
   self._isOpen = isOpen
   self._hasPass = hasPass
   self._missionID = lineCfg.CampaignMissionId
   self._onClick = cb
   self._idx = idx
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  self._rectTransform.anchorMax = Vector2(0.5, 0.5)
+  self._rectTransform.anchorMin = Vector2(0.5, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
-    return 
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
+    return
   end
   self._needMissionName = ""
-  ;
-  (self.name):SetText((StringTable.Get)(missionCfg.Name))
+  self.name:SetText(StringTable.Get(missionCfg.Name))
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-  local clientCfg = (Cfg.cfg_component_line_mission_client)[self._missionID]
-  do
-    if lineCfg.NeedMissionId and lineCfg.NeedMissionId ~= 0 then
-      local needMissionCfg = (Cfg.cfg_campaign_mission)[lineCfg.NeedMissionId]
-      self._needMissionName = (StringTable.Get)(needMissionCfg.Name)
-    end
-    if self._lockTips then
-      (self._lockTips):SetText((StringTable.Get)(self:GetLockTipsString(), self._needMissionName))
-    end
-    if self._lockTips1 then
-      (self._lockTips1):SetText((StringTable.Get)(self:GetLockTipsString(), self._needMissionName))
-    end
-    if isOpen then
-      if self._hasPass then
-        self:OnLevelComplete(clientCfg)
-      else
-        self:OnLevelOpen(clientCfg)
-      end
+  local clientCfg = Cfg.cfg_component_line_mission_client[self._missionID]
+  if lineCfg.NeedMissionId and lineCfg.NeedMissionId ~= 0 then
+    local needMissionCfg = Cfg.cfg_campaign_mission[lineCfg.NeedMissionId]
+    self._needMissionName = StringTable.Get(needMissionCfg.Name)
+  end
+  if self._lockTips then
+    self._lockTips:SetText(StringTable.Get(self:GetLockTipsString(), self._needMissionName))
+  end
+  if self._lockTips1 then
+    self._lockTips1:SetText(StringTable.Get(self:GetLockTipsString(), self._needMissionName))
+  end
+  if isOpen then
+    if self._hasPass then
+      self:OnLevelComplete(clientCfg)
     else
-      self:OnLevelLock(clientCfg)
+      self:OnLevelOpen(clientCfg)
     end
-    self:PlayAnimation()
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  else
+    self:OnLevelLock(clientCfg)
   end
+  self:PlayAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityNHardLevelNode:BtnOnClick(go)
   if not self._isOpen then
-    (ToastManager.ShowToast)((StringTable.Get)(self:GetLockTipsString(), self._needMissionName))
-    return 
+    ToastManager.ShowToast(StringTable.Get(self:GetLockTipsString(), self._needMissionName))
+    return
   end
-  ;
-  (self._onClick)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+  self._onClick(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.SetVisible = function(self, status)
-  -- function num : 0_4
-  (self._go):SetActive(status)
+function UIActivityNHardLevelNode:SetVisible(status)
+  self._go:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.OnInit = function(self)
-  -- function num : 0_5
+function UIActivityNHardLevelNode:OnInit()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.GetLockTipsString = function(self)
-  -- function num : 0_6
+function UIActivityNHardLevelNode:GetLockTipsString()
   return ""
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.PlayAnimation = function(self)
-  -- function num : 0_7
+function UIActivityNHardLevelNode:PlayAnimation()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.OnLevelOpen = function(self, clientCfg)
-  -- function num : 0_8
-  (self._lock):SetActive(false)
-  ;
-  (self._complete):SetActive(false)
+function UIActivityNHardLevelNode:OnLevelOpen(clientCfg)
+  self._lock:SetActive(false)
+  self._complete:SetActive(false)
   if clientCfg then
-    (self._iconLoader):LoadImage(clientCfg.Icon)
+    self._iconLoader:LoadImage(clientCfg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.OnLevelLock = function(self, clientCfg)
-  -- function num : 0_9
-  (self._lock):SetActive(true)
-  ;
-  (self._complete):SetActive(false)
+function UIActivityNHardLevelNode:OnLevelLock(clientCfg)
+  self._lock:SetActive(true)
+  self._complete:SetActive(false)
   if clientCfg then
-    (self._iconLoader):LoadImage(clientCfg.CloseIcon)
+    self._iconLoader:LoadImage(clientCfg.CloseIcon)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNHardLevelNode.OnLevelComplete = function(self, clientCfg)
-  -- function num : 0_10
-  (self._lock):SetActive(false)
-  ;
-  (self._complete):SetActive(true)
+function UIActivityNHardLevelNode:OnLevelComplete(clientCfg)
+  self._lock:SetActive(false)
+  self._complete:SetActive(true)
   if clientCfg then
-    (self._iconLoader):LoadImage(clientCfg.CompleteIcon)
+    self._iconLoader:LoadImage(clientCfg.CompleteIcon)
   end
 end
-
-

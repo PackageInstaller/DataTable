@@ -1,91 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/body_area_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BodyAreaComponent", Object)
 BodyAreaComponent = BodyAreaComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BodyAreaComponent.Constructor = function(self, area)
-  -- function num : 0_0
+function BodyAreaComponent:Constructor(area)
   self._area = area
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BodyAreaComponent.SetArea = function(self, area)
-  -- function num : 0_1
+function BodyAreaComponent:SetArea(area)
   self._area = area
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BodyAreaComponent.GetArea = function(self)
-  -- function num : 0_2
+function BodyAreaComponent:GetArea()
   return self._area
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BodyAreaComponent.GetAreaCount = function(self)
-  -- function num : 0_3
+function BodyAreaComponent:GetAreaCount()
   return #self._area
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BodyAreaComponent.SetPreviewArea = function(self, previewArea)
-  -- function num : 0_4
+function BodyAreaComponent:SetPreviewArea(previewArea)
   self._previewArea = previewArea
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BodyAreaComponent.GetPreviewArea = function(self)
-  -- function num : 0_5
+function BodyAreaComponent:GetPreviewArea()
   return self._previewArea
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BodyArea = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).BodyArea)
+function Entity:BodyArea()
+  return self:GetComponent(self.WEComponentsEnum.BodyArea)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBodyArea = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).BodyArea)
+function Entity:HasBodyArea()
+  return self:HasComponent(self.WEComponentsEnum.BodyArea)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBodyArea = function(self, area)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BodyArea
+function Entity:AddBodyArea(area)
+  local index = self.WEComponentsEnum.BodyArea
   local component = BodyAreaComponent:New(area)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceBodyArea = function(self, area)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BodyArea
+function Entity:ReplaceBodyArea(area)
+  local index = self.WEComponentsEnum.BodyArea
   local component = BodyAreaComponent:New(area)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBodyArea = function(self)
-  -- function num : 0_10
+function Entity:RemoveBodyArea()
   if self:HasBodyArea() then
-    self:RemoveComponent((self.WEComponentsEnum).BodyArea)
+    self:RemoveComponent(self.WEComponentsEnum.BodyArea)
   end
 end
-
-

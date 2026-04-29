@@ -1,21 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/trap/7777777/cfg_skill_view_583232.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterLegacyAnimation,animNames=eff_2800221_huode; PlayAudio,audioID = 8000,audioType=1; PauseMove, matchers=MonsterID|PetPstID, moveAnim=1; Wait,waitTime=100; "}
-}
-, 
-{2, 2, 0, 1, 1, 100, 
-{"DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=1401,turnToTarget=1,deathClear=0, label=doAgain; Wait,waitTime=100; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "}
-}
-, 
-{3, 3, 0, 2, 2, 0, 
-{"ResumeMove, matchers=MonsterID|PetPstID, moveAnim=1; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterLegacyAnimation,animNames=eff_2800221_huode; PlayAudio,audioID = 8000,audioType=1; PauseMove, matchers=MonsterID|PetPstID, moveAnim=1; Wait,waitTime=100; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    100,
+    {
+      "DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=1401,turnToTarget=1,deathClear=0, label=doAgain; Wait,waitTime=100; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    2,
+    2,
+    0,
+    {
+      "ResumeMove, matchers=MonsterID|PetPstID, moveAnim=1; "
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,68 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/layer/season_scene_layer_ambient_map.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("season_scene_layer_base")
 _class("SeasonSceneLayerAmbientMap", SeasonSceneLayerBase)
 SeasonSceneLayerAmbientMap = SeasonSceneLayerAmbientMap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneLayerAmbientMap.Constructor = function(self, sceneRoot)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonSceneLayerAmbientMap:Constructor(sceneRoot)
   self._time = 1
-  self._ambientLayer = (self._sceneRootTransform):Find(SeasonSceneLayer.AmbientMap)
+  self._ambientLayer = self._sceneRootTransform:Find(SeasonSceneLayer.AmbientMap)
   self:_CacheAmbientMap()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerAmbientMap.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((SeasonSceneLayerAmbientMap.super).Dispose)(self)
-  ;
-  (table.clear)(self._map)
+function SeasonSceneLayerAmbientMap:Dispose()
+  SeasonSceneLayerAmbientMap.super.Dispose(self)
+  table.clear(self._map)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerAmbientMap.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_2
+function SeasonSceneLayerAmbientMap:UnLock(zoneMask, zoneID2Animation)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerAmbientMap.ChangeMap = function(self, ids, openingID, closeID)
-  -- function num : 0_3 , upvalues : _ENV
-  local mapCount = (table.count)(self._map)
-  if mapCount > 0 then
-    for id,effect in pairs(self._map) do
+function SeasonSceneLayerAmbientMap:ChangeMap(ids, openingID, closeID)
+  local mapCount = table.count(self._map)
+  if 0 < mapCount then
+    for id, effect in pairs(self._map) do
       if id == closeID then
         effect:SetActive(false)
       else
-        effect:SetActive((table.icontains)(ids, id))
+        effect:SetActive(table.icontains(ids, id))
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerAmbientMap._CacheAmbientMap = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonSceneLayerAmbientMap:_CacheAmbientMap()
   if self._ambientLayer then
-    local mapCount = (self._ambientLayer).childCount
-    if mapCount > 0 then
+    local mapCount = self._ambientLayer.childCount
+    if 0 < mapCount then
       for i = 1, self._maxMapCount do
-        local map = (self._ambientLayer):Find(tostring(i))
-        -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
+        local map = self._ambientLayer:Find(tostring(i))
         if map then
-          (self._map)[i] = map.gameObject
+          self._map[i] = map.gameObject
         end
       end
     end
   end
 end
-
-

@@ -1,8 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/pt/str_story.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_story_btn_hide = "Esconder", str_story_btn_review = "Recap.", str_story_btn_auto = "Auto", str_story_btn_skip = "Pular", str_story_skip_confirm = "Pular Cena?", str_story_skip_affinity_confirm = "Essa História pode ensinar mais sobre os Aurorians. Pular?  \n(Histórias podem ser recapituladas em Arquivo)", str_story_add_affinity = "Afinidade +{1}"}
+local config = {
+  str_story_btn_hide = "Esconder",
+  str_story_btn_review = "Recap.",
+  str_story_btn_auto = "Auto",
+  str_story_btn_skip = "Pular",
+  str_story_skip_confirm = "Pular Cena?",
+  str_story_skip_affinity_confirm = "Essa História pode ensinar mais sobre os Aurorians. Pular?  \n(Histórias podem ser recapituladas em Arquivo)",
+  str_story_add_affinity = "Afinidade +{1}"
+}
 return config
-

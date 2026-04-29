@@ -1,115 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/input/homeland_input_controller_char_pc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_input_controller_char_base")
 _class("HomelandInputControllerCharPC", HomelandInputControllerCharBase)
 HomelandInputControllerCharPC = HomelandInputControllerCharPC
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandInputControllerCharPC.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandInputControllerCharPC:Constructor()
   self._inputX = 0
   self._inputZ = 0
-  self._input = (GameGlobal.EngineInput)()
-  self._currentEvent = ((UnityEngine.EventSystems).EventSystem).current
-  self._ignoreControllers = {"UIFindTreasureMain"}
+  self._input = GameGlobal.EngineInput()
+  self._currentEvent = UnityEngine.EventSystems.EventSystem.current
+  self._ignoreControllers = {
+    "UIFindTreasureMain"
+  }
   self._guideLock = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharPC.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandInputControllerCharPC:OnUpdate(deltaTimeMS)
   self._inputX = 0
   self._inputZ = 0
   if self._guideLock then
-    return 
+    return
   end
-  if ((self._input).GetKey)((UnityEngine.KeyCode).W) then
+  if self._input.GetKey(UnityEngine.KeyCode.W) then
     self._inputZ = 1
-  else
-    if ((self._input).GetKey)((UnityEngine.KeyCode).S) then
-      self._inputZ = -1
-    end
+  elseif self._input.GetKey(UnityEngine.KeyCode.S) then
+    self._inputZ = -1
   end
-  if ((self._input).GetKey)((UnityEngine.KeyCode).A) then
+  if self._input.GetKey(UnityEngine.KeyCode.A) then
     self._inputX = -1
-  else
-    if ((self._input).GetKey)((UnityEngine.KeyCode).D) then
-      self._inputX = 1
+  elseif self._input.GetKey(UnityEngine.KeyCode.D) then
+    self._inputX = 1
+  end
+  if (self._inputX ~= 0 or self._inputZ ~= 0) and self._mainCharacterController:CanReceiveMoveInput() then
+    local movement = self._followCameraController:CalcMovement(Vector3(self._inputX, 0, self._inputZ)):SetNormalize()
+    if self:IsRushing() then
+      self._mainCharacterController:Move(movement, HomelandCharMoveType.Rush, deltaTimeMS)
+    else
+      self._mainCharacterController:Move(movement, HomelandCharMoveType.Run, deltaTimeMS)
     end
   end
-  do
-    if (self._inputX ~= 0 or self._inputZ ~= 0) and (self._mainCharacterController):CanReceiveMoveInput() then
-      local movement = ((self._followCameraController):CalcMovement(Vector3(self._inputX, 0, self._inputZ))):SetNormalize()
-      if self:IsRushing() then
-        (self._mainCharacterController):Move(movement, HomelandCharMoveType.Rush, deltaTimeMS)
-      else
-        ;
-        (self._mainCharacterController):Move(movement, HomelandCharMoveType.Run, deltaTimeMS)
-      end
+  if self._input.GetMouseButton(0) and not self._currentEvent:IsPointerOverGameObject() and (1 > GameGlobal.UIStateManager().uiControllerManager:TopDepth() or self:IsIgnoreControllersShow()) then
+    local mx = self._input.GetAxis("Mouse X")
+    local my = self._input.GetAxis("Mouse Y")
+    self._followCameraController:HandleRotate(mx, my)
+  end
+  local mouseWheel = self._input.GetAxis("Mouse ScrollWheel")
+  if mouseWheel ~= 0 then
+    self._followCameraController:HandleScale(mouseWheel)
+  end
+  if self._input.GetKey(UnityEngine.KeyCode.UpArrow) or self._input.GetKey(UnityEngine.KeyCode.DownArrow) or self._input.GetKey(UnityEngine.KeyCode.LeftArrow) or self._input.GetKey(UnityEngine.KeyCode.RightArrow) then
+    local mx = 0
+    local my = 0
+    if self._input.GetKey(UnityEngine.KeyCode.UpArrow) then
+      my = 0.1
+    elseif self._input.GetKey(UnityEngine.KeyCode.DownArrow) then
+      my = -0.1
     end
-    if ((self._input).GetMouseButton)(0) and not (self._currentEvent):IsPointerOverGameObject() and ((((GameGlobal.UIStateManager)()).uiControllerManager):TopDepth() < 1 or self:IsIgnoreControllersShow()) then
-      local mx = ((self._input).GetAxis)("Mouse X")
-      local my = ((self._input).GetAxis)("Mouse Y")
-      ;
-      (self._followCameraController):HandleRotate(mx, my)
+    if self._input.GetKey(UnityEngine.KeyCode.RightArrow) then
+      mx = 0.1
+    elseif self._input.GetKey(UnityEngine.KeyCode.LeftArrow) then
+      mx = -0.1
     end
-    do
-      local mouseWheel = ((self._input).GetAxis)("Mouse ScrollWheel")
-      if mouseWheel ~= 0 then
-        (self._followCameraController):HandleScale(mouseWheel)
-      end
-      if ((self._input).GetKey)((UnityEngine.KeyCode).UpArrow) or ((self._input).GetKey)((UnityEngine.KeyCode).DownArrow) or ((self._input).GetKey)((UnityEngine.KeyCode).LeftArrow) or ((self._input).GetKey)((UnityEngine.KeyCode).RightArrow) then
-        local mx = 0
-        local my = 0
-        if ((self._input).GetKey)((UnityEngine.KeyCode).UpArrow) then
-          my = 0.1
-        else
-          if ((self._input).GetKey)((UnityEngine.KeyCode).DownArrow) then
-            my = -0.1
-          end
-        end
-        if ((self._input).GetKey)((UnityEngine.KeyCode).RightArrow) then
-          mx = 0.1
-        else
-          if ((self._input).GetKey)((UnityEngine.KeyCode).LeftArrow) then
-            mx = -0.1
-          end
-        end
-        ;
-        (self._followCameraController):HandleRotate(mx, my)
-      end
-    end
+    self._followCameraController:HandleRotate(mx, my)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharPC.HandleRotateInInteract = function(self, v2)
-  -- function num : 0_2
-  (self._followCameraController):HandleRotate(v2.x, v2.y)
+function HomelandInputControllerCharPC:HandleRotateInInteract(v2)
+  self._followCameraController:HandleRotate(v2.x, v2.y)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharPC.IsIgnoreControllersShow = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandInputControllerCharPC:IsIgnoreControllersShow()
   for i = 1, #self._ignoreControllers do
-    if (((GameGlobal.UIStateManager)()).uiControllerManager):IsShow((self._ignoreControllers)[i]) then
+    if GameGlobal.UIStateManager().uiControllerManager:IsShow(self._ignoreControllers[i]) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerCharPC.SetGuideLock = function(self, guideLock)
-  -- function num : 0_4
+function HomelandInputControllerCharPC:SetGuideLock(guideLock)
   self._guideLock = guideLock
 end
-
-

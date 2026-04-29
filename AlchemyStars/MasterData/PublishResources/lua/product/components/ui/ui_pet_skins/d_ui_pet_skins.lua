@@ -1,22 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_skins/d_ui_pet_skins.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local PetSkinFlag = {PSF_NORMAL = 1, PSF_COLLECTION = 2, PSF_MEMORY = 4, PSF_WISH = 5}
+local PetSkinFlag = {
+  PSF_NORMAL = 1,
+  PSF_COLLECTION = 2,
+  PSF_MEMORY = 4,
+  PSF_WISH = 5
+}
 _enum("PetSkinFlag", PetSkinFlag)
-local PetSkinUiOpenType = {PSUOT_SHOW_LIST = 1, PSUT_SHOP_DETAIL = 2, PSUOT_TIPS = 3, PSUT_ACTIVITY_DETAIL = 4, PSUOT_SEASON_SKIN = 5}
+local PetSkinUiOpenType = {
+  PSUOT_SHOW_LIST = 1,
+  PSUT_SHOP_DETAIL = 2,
+  PSUOT_TIPS = 3,
+  PSUT_ACTIVITY_DETAIL = 4,
+  PSUOT_SEASON_SKIN = 5
+}
 _enum("PetSkinUiOpenType", PetSkinUiOpenType)
-local PetSkinStateType = {PSST_CUR_SKIN = 1, PSST_CAN_USE = 2, PSST_NOT_OBTAIN = 3, PSST_SHOP_BUY = 4, PSST_SHOP_OBTAINED = 5}
+local PetSkinStateType = {
+  PSST_CUR_SKIN = 1,
+  PSST_CAN_USE = 2,
+  PSST_NOT_OBTAIN = 3,
+  PSST_SHOP_BUY = 4,
+  PSST_SHOP_OBTAINED = 5
+}
 _enum("PetSkinStateType", PetSkinStateType)
-local PetSkinUnlockType = {PSUT_BASE = 1, PSUT_GRADE = 2, PSUT_SHOP = 3, PSUT_HauteCouture = 4, PSUT_BattlePass = 5, PSUT_Dream = 6}
+local PetSkinUnlockType = {
+  PSUT_BASE = 1,
+  PSUT_GRADE = 2,
+  PSUT_SHOP = 3,
+  PSUT_HauteCouture = 4,
+  PSUT_BattlePass = 5,
+  PSUT_Dream = 6
+}
 _enum("PetSkinUnlockType", PetSkinUnlockType)
 _class("DPetSkinDetailCard", Object)
 DPetSkinDetailCard = DPetSkinDetailCard
--- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
 
-DPetSkinDetailCard.Constructor = function(self, cfg)
-  -- function num : 0_0
+function DPetSkinDetailCard:Constructor(cfg)
   self.cfg = cfg
   self.unlock_CG = 0
   self.is_onbody = false
@@ -25,85 +42,49 @@ DPetSkinDetailCard.Constructor = function(self, cfg)
   self.is_tips_detail = false
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.GetSkinId = function(self)
-  -- function num : 0_1
+function DPetSkinDetailCard:GetSkinId()
   if self.cfg then
-    return (self.cfg).id
+    return self.cfg.id
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.SetIsTipsDetail = function(self, inShop)
-  -- function num : 0_2
+function DPetSkinDetailCard:SetIsTipsDetail(inShop)
   self.is_tips_detail = inShop
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.IsTipsDetail = function(self)
-  -- function num : 0_3
+function DPetSkinDetailCard:IsTipsDetail()
   return self.is_tips_detail
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.SetIsShopDetail = function(self, inShop)
-  -- function num : 0_4
+function DPetSkinDetailCard:SetIsShopDetail(inShop)
   self.is_shop_detail = inShop
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.IsShopDetail = function(self)
-  -- function num : 0_5
+function DPetSkinDetailCard:IsShopDetail()
   return self.is_shop_detail
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.SetObtained = function(self, obtained)
-  -- function num : 0_6
+function DPetSkinDetailCard:SetObtained(obtained)
   self.obtained = obtained
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.IsObtained = function(self)
-  -- function num : 0_7
+function DPetSkinDetailCard:IsObtained()
   return self.obtained
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.SetIsCurrentSkin = function(self, isCurrent)
-  -- function num : 0_8
+function DPetSkinDetailCard:SetIsCurrentSkin(isCurrent)
   self.is_onbody = isCurrent
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.IsCurrentSkin = function(self)
-  -- function num : 0_9
+function DPetSkinDetailCard:IsCurrentSkin()
   return self.is_onbody
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.SetUnlockCg = function(self, unlockCg)
-  -- function num : 0_10
+function DPetSkinDetailCard:SetUnlockCg(unlockCg)
   self.unlock_CG = unlockCg
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R4 in 'UnsetPending'
-
-DPetSkinDetailCard.IsUnlockCg = function(self)
-  -- function num : 0_11
-  do return self.unlock_CG == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DPetSkinDetailCard:IsUnlockCg()
+  return self.unlock_CG == 1
 end
-
-

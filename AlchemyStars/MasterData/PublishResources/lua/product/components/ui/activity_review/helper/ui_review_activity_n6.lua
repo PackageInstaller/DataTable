@@ -1,55 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/helper/ui_review_activity_n6.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewActivityN6", UIReviewActivityBase)
 UIReviewActivityN6 = UIReviewActivityN6
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewActivityN6.Constructor = function(self, id, sample)
-  -- function num : 0_0
+function UIReviewActivityN6:Constructor(id, sample)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN6.AssetPackageID = function(self)
-  -- function num : 0_1
+function UIReviewActivityN6:AssetPackageID()
   return 6
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN6.ActivityOnOpen = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(self.OpenActivity, self)
+function UIReviewActivityN6:ActivityOnOpen()
+  TaskManager:GetInstance():StartTask(self.OpenActivity, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN6.OpenActivity = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIN6MainController_Review)
+function UIReviewActivityN6:OpenActivity(TT)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIN6MainController_Review)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN6.GetBattleExitParam = function(self, comID, missionCreateInfo, isWin, battleresultRt)
-  -- function num : 0_4 , upvalues : _ENV
+function UIReviewActivityN6:GetBattleExitParam(comID, missionCreateInfo, isWin, battleresultRt)
   if comID == ECampaignReviewN6ComponentID.LINE_MISSION then
     return UIStateType.UIActivityN6LineMissionReview, nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN6.IsFinished = function(self)
-  -- function num : 0_5
-  if self:ProgressPercent() < 100 then
-    do return not self:IsUnlock() end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIReviewActivityN6:IsFinished()
+  if self:IsUnlock() then
+    return self:ProgressPercent() >= 100
   end
+  return false
 end
-
-

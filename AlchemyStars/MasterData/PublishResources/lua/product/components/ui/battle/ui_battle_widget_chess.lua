@@ -1,198 +1,125 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_widget_chess.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ChessPanelState = {Move = 1, Attack = 2, Skip = 3, FinishTurnOnly = 4, HideAll = 5, Recover = 6, MAX = 9}
+local ChessPanelState = {
+  Move = 1,
+  Attack = 2,
+  Skip = 3,
+  FinishTurnOnly = 4,
+  HideAll = 5,
+  Recover = 6,
+  MAX = 9
+}
 _enum("UIBattleWidgetChessState", ChessPanelState)
 _class("UIBattleWidgetChess", UICustomWidget)
 UIBattleWidgetChess = UIBattleWidgetChess
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-UIBattleWidgetChess._SubscribeGameEvent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleWidgetChess:_SubscribeGameEvent()
   self:AttachEvent(GameEventType.ChessUIStateTransit, self._OnStateTransit)
   self:AttachEvent(GameEventType.ChessUIStateBlockRaycast, self._OnBlockRaycast)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess._UnsubscribeGameEvent = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattleWidgetChess:_UnsubscribeGameEvent()
   self:DetachEvent(GameEventType.ChessUIStateTransit, self._OnStateTransit)
   self:DetachEvent(GameEventType.ChessUIStateBlockRaycast, self._OnBlockRaycast)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess.FetchGameObjects = function(self)
-  -- function num : 0_2
+function UIBattleWidgetChess:FetchGameObjects()
   self._goMoveBtn = self:GetGameObject("MoveBtn")
   self._goAttackBtn = self:GetGameObject("AttackBtn")
   self._goSkipBtn = self:GetGameObject("SkipBtn")
   self._goFinishTurnBtn = self:GetGameObject("FinishTurnBtn")
-  self._csCanvasGroup = (self:GetGameObject()):GetComponent("CanvasGroup")
+  self._csCanvasGroup = self:GetGameObject():GetComponent("CanvasGroup")
   self._goTextAttack = self:GetGameObject("TextAttack")
   self._goTextRecover = self:GetGameObject("TextRecover")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess.MoveBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBattleWidgetChess:MoveBtnOnClick()
   if not self._responseClickEvent then
-    (Log.info)(self._className, "MoveBtnOnClick skipped because self._responseClickEvent is false. ")
-    return 
+    Log.info(self._className, "MoveBtnOnClick skipped because self._responseClickEvent is false. ")
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChessUIInputMoveAction)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChessUIInputMoveAction)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess.AttackBtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBattleWidgetChess:AttackBtnOnClick()
   if not self._responseClickEvent then
-    (Log.info)(self._className, "AttackBtnOnClick skipped because self._responseClickEvent is false. ")
-    return 
+    Log.info(self._className, "AttackBtnOnClick skipped because self._responseClickEvent is false. ")
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChessUIInputAttackAction)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChessUIInputAttackAction)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess.SkipBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBattleWidgetChess:SkipBtnOnClick()
   if not self._responseClickEvent then
-    (Log.info)(self._className, "SkipBtnOnClick skipped because self._responseClickEvent is false. ")
-    return 
+    Log.info(self._className, "SkipBtnOnClick skipped because self._responseClickEvent is false. ")
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChessUIInputSkipAction)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChessUIInputSkipAction)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess.FinishTurnBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBattleWidgetChess:FinishTurnBtnOnClick()
   if not self._responseClickEvent then
-    (Log.info)(self._className, "FinishTurnBtnOnClick skipped because self._responseClickEvent is false. ")
-    return 
+    Log.info(self._className, "FinishTurnBtnOnClick skipped because self._responseClickEvent is false. ")
+    return
   end
-  ;
-  (PopupManager.Alert)("UIChessEndRoundMessageBox", PopupPriority.Normal, function()
-    -- function num : 0_6_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChessUIInputFinishTurnAction)
-  end
-)
+  PopupManager.Alert("UIChessEndRoundMessageBox", PopupPriority.Normal, function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ChessUIInputFinishTurnAction)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess._OnStateTransit = function(self, state)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBattleWidgetChess:_OnStateTransit(state)
   if state == UIBattleWidgetChessState.Move then
-    (self._goMoveBtn):SetActive(true)
-    ;
-    (self._goAttackBtn):SetActive(false)
-    ;
-    (self._goSkipBtn):SetActive(false)
-    ;
-    (self._goFinishTurnBtn):SetActive(true)
-  else
-    if state == UIBattleWidgetChessState.Attack then
-      (self._goMoveBtn):SetActive(false)
-      ;
-      (self._goAttackBtn):SetActive(true)
-      ;
-      (self._goSkipBtn):SetActive(false)
-      ;
-      (self._goFinishTurnBtn):SetActive(true)
-      ;
-      (self._goTextAttack):SetActive(true)
-      ;
-      (self._goTextRecover):SetActive(false)
-    else
-      if state == UIBattleWidgetChessState.Recover then
-        (self._goMoveBtn):SetActive(false)
-        ;
-        (self._goAttackBtn):SetActive(true)
-        ;
-        (self._goSkipBtn):SetActive(false)
-        ;
-        (self._goFinishTurnBtn):SetActive(true)
-        ;
-        (self._goTextAttack):SetActive(false)
-        ;
-        (self._goTextRecover):SetActive(true)
-      else
-        if state == UIBattleWidgetChessState.Skip then
-          (self._goMoveBtn):SetActive(false)
-          ;
-          (self._goAttackBtn):SetActive(false)
-          ;
-          (self._goSkipBtn):SetActive(true)
-          ;
-          (self._goFinishTurnBtn):SetActive(true)
-        else
-          if state == UIBattleWidgetChessState.FinishTurnOnly then
-            (self._goMoveBtn):SetActive(false)
-            ;
-            (self._goAttackBtn):SetActive(false)
-            ;
-            (self._goSkipBtn):SetActive(false)
-            ;
-            (self._goFinishTurnBtn):SetActive(true)
-          else
-            if state == UIBattleWidgetChessState.HideAll then
-              (self._goMoveBtn):SetActive(false)
-              ;
-              (self._goAttackBtn):SetActive(false)
-              ;
-              (self._goSkipBtn):SetActive(false)
-              ;
-              (self._goFinishTurnBtn):SetActive(false)
-            end
-          end
-        end
-      end
-    end
+    self._goMoveBtn:SetActive(true)
+    self._goAttackBtn:SetActive(false)
+    self._goSkipBtn:SetActive(false)
+    self._goFinishTurnBtn:SetActive(true)
+  elseif state == UIBattleWidgetChessState.Attack then
+    self._goMoveBtn:SetActive(false)
+    self._goAttackBtn:SetActive(true)
+    self._goSkipBtn:SetActive(false)
+    self._goFinishTurnBtn:SetActive(true)
+    self._goTextAttack:SetActive(true)
+    self._goTextRecover:SetActive(false)
+  elseif state == UIBattleWidgetChessState.Recover then
+    self._goMoveBtn:SetActive(false)
+    self._goAttackBtn:SetActive(true)
+    self._goSkipBtn:SetActive(false)
+    self._goFinishTurnBtn:SetActive(true)
+    self._goTextAttack:SetActive(false)
+    self._goTextRecover:SetActive(true)
+  elseif state == UIBattleWidgetChessState.Skip then
+    self._goMoveBtn:SetActive(false)
+    self._goAttackBtn:SetActive(false)
+    self._goSkipBtn:SetActive(true)
+    self._goFinishTurnBtn:SetActive(true)
+  elseif state == UIBattleWidgetChessState.FinishTurnOnly then
+    self._goMoveBtn:SetActive(false)
+    self._goAttackBtn:SetActive(false)
+    self._goSkipBtn:SetActive(false)
+    self._goFinishTurnBtn:SetActive(true)
+  elseif state == UIBattleWidgetChessState.HideAll then
+    self._goMoveBtn:SetActive(false)
+    self._goAttackBtn:SetActive(false)
+    self._goSkipBtn:SetActive(false)
+    self._goFinishTurnBtn:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess._OnBlockRaycast = function(self, isBlockRaycast)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBattleWidgetChess:_OnBlockRaycast(isBlockRaycast)
   if not self._csCanvasGroup then
-    return 
+    return
   end
   self._responseClickEvent = isBlockRaycast
-  ;
-  (Log.info)(self._className, "responseClickEvent changed from ", tostring(self._responseClickEvent), " to ", tostring(isBlockRaycast))
+  Log.info(self._className, "responseClickEvent changed from ", tostring(self._responseClickEvent), " to ", tostring(isBlockRaycast))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess.OnShow = function(self, params)
-  -- function num : 0_9
+function UIBattleWidgetChess:OnShow(params)
   self:FetchGameObjects()
   self:_SubscribeGameEvent()
-  ;
-  (self._goMoveBtn):SetActive(false)
-  ;
-  (self._goAttackBtn):SetActive(false)
-  ;
-  (self._goSkipBtn):SetActive(false)
+  self._goMoveBtn:SetActive(false)
+  self._goAttackBtn:SetActive(false)
+  self._goSkipBtn:SetActive(false)
   self._responseClickEvent = true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattleWidgetChess.OnHide = function(self)
-  -- function num : 0_10
+function UIBattleWidgetChess:OnHide()
   self:_UnsubscribeGameEvent()
 end
-
-

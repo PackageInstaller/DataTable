@@ -1,84 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/drop_asset_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DropAssetComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-DropAssetComponent.Constructor = function(self)
-  -- function num : 0_0
+function DropAssetComponent:Constructor()
   self._hasDoDrop = false
   self._dropAsset = nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-DropAssetComponent.SetDoDrop = function(self, doDrop)
-  -- function num : 0_1
+function DropAssetComponent:SetDoDrop(doDrop)
   self._hasDoDrop = doDrop
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-DropAssetComponent.SetDropAsset = function(self, dropAsset)
-  -- function num : 0_2
+function DropAssetComponent:SetDropAsset(dropAsset)
   self._dropAsset = dropAsset
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-DropAssetComponent.GetDropAsset = function(self)
-  -- function num : 0_3
+function DropAssetComponent:GetDropAsset()
   return self._dropAsset
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-DropAssetComponent.HasDoDrop = function(self)
-  -- function num : 0_4
+function DropAssetComponent:HasDoDrop()
   return self._hasDoDrop
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.DropAsset = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).DropAsset)
+function Entity:DropAsset()
+  return self:GetComponent(self.WEComponentsEnum.DropAsset)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasDropAsset = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).DropAsset)
+function Entity:HasDropAsset()
+  return self:HasComponent(self.WEComponentsEnum.DropAsset)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddDropAsset = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).DropAsset
+function Entity:AddDropAsset()
+  local index = self.WEComponentsEnum.DropAsset
   local component = DropAssetComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceDropAsset = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).DropAsset
+function Entity:ReplaceDropAsset()
+  local index = self.WEComponentsEnum.DropAsset
   local component = DropAssetComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveDropAsset = function(self)
-  -- function num : 0_9
+function Entity:RemoveDropAsset()
   if self:HasDropAsset() then
-    self:RemoveComponent((self.WEComponentsEnum).DropAsset)
+    self:RemoveComponent(self.WEComponentsEnum.DropAsset)
   end
 end
-
-

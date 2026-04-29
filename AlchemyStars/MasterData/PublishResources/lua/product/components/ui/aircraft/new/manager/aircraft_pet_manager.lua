@@ -1,142 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_pet_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftPetManager", Object)
 AircraftPetManager = AircraftPetManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetManager.Constructor = function(self, main)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftPetManager:Constructor(main)
   self._main = main
   self._pets = {}
   self._petCount = 0
   self._visitPets = {}
-  self.petScale = ((Cfg.cfg_aircraft_camera).petScale).Value
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self.petScale = Cfg.cfg_aircraft_camera.petScale.Value
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._petLoader = AircraftPetLoader:New()
-  local lodlevel = (LODManager.Instance):GetLODLevel()
+  local lodlevel = LODManager.Instance:GetLODLevel()
   if lodlevel == 0 then
-    self._petCeiling = ((Cfg.cfg_aircraft_const).aircraft_pet_ceiling_0).IntValue
+    self._petCeiling = Cfg.cfg_aircraft_const.aircraft_pet_ceiling_0.IntValue
+  elseif lodlevel == 1 then
+    self._petCeiling = Cfg.cfg_aircraft_const.aircraft_pet_ceiling_1.IntValue
   else
-    if lodlevel == 1 then
-      self._petCeiling = ((Cfg.cfg_aircraft_const).aircraft_pet_ceiling_1).IntValue
-    else
-      self._petCeiling = ((Cfg.cfg_aircraft_const).aircraft_pet_ceiling_2).IntValue
-    end
+    self._petCeiling = Cfg.cfg_aircraft_const.aircraft_pet_ceiling_2.IntValue
   end
   self._shownPets = {}
   self._shownPetCount = 0
   self._cacheArray = SortedArray:New(Algorithm.COMPARE_CUSTOM, function(p1, p2)
-    -- function num : 0_0_0 , upvalues : self
     local pet1 = p1
     local pet2 = p2
-    local pos1 = (pet1:WorldPosition()):Clone()
-    local pos2 = (pet2:WorldPosition()):Clone()
+    local pos1 = pet1:WorldPosition():Clone()
+    local pos2 = pet2:WorldPosition():Clone()
     pos1.z = 0
     pos2.z = 0
-    local target = (self._main):CameraFocusPoint()
+    local target = self._main:CameraFocusPoint()
     local d1 = (pos1 - target):SqrMagnitude()
     local d2 = (pos2 - target):SqrMagnitude()
     if d1 < d2 then
       return 1
+    elseif d1 > d2 then
+      return -1
     else
-      if d2 < d1 then
-        return -1
-      else
-        return 0
-      end
+      return 0
     end
-  end
-)
-  ;
-  (self._cacheArray):AllowDuplicate()
+  end)
+  self._cacheArray:AllowDuplicate()
   if false then
-    self._testReq = (ResourceManager:GetInstance()):SyncLoadAsset("AircraftTestPanel.prefab", LoadType.GameObject)
-    local view = ((self._testReq).Obj):GetComponent(typeof(UIView))
+    self._testReq = ResourceManager:GetInstance():SyncLoadAsset("AircraftTestPanel.prefab", LoadType.GameObject)
+    local view = self._testReq.Obj:GetComponent(typeof(UIView))
     self._totalT = view:GetUIComponent("UILocalizationText", "value1")
     self._ceilingT = view:GetUIComponent("UILocalizationText", "value2")
-    ;
-    (self._ceilingT):SetText(self._petCeiling)
+    self._ceilingT:SetText(self._petCeiling)
     self._shownT = view:GetUIComponent("UILocalizationText", "value3")
     self._loadingT = view:GetUIComponent("UILocalizationText", "value4")
-    ;
-    ((self._testReq).Obj):SetActive(true)
+    self._testReq.Obj:SetActive(true)
     self._test = true
   end
-  do
-    self._timer = 1000
-    self._showPetDistance = ((Cfg.cfg_aircraft_const).aircraft_show_pet_distance).FloatValue
-  end
+  self._timer = 1000
+  self._showPetDistance = Cfg.cfg_aircraft_const.aircraft_show_pet_distance.FloatValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.forceShow = function(self, pet)
-  -- function num : 0_1 , upvalues : _ENV
-  do return (pet:GetState() == AirPetState.RandomEvent or pet:GetState() == AirPetState.RandomEventWith or not pet:IsVisitPet()) and pet:IsGiftPet() end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function AircraftPetManager:forceShow(pet)
+  return pet:GetState() == AirPetState.RandomEvent or pet:GetState() == AirPetState.RandomEventWith or pet:IsVisitPet() or pet:IsGiftPet()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.Init = function(self)
-  -- function num : 0_2
-  self.camera = (self._main):GetMainCamera()
-  self._cameraT = (self.camera).transform
-  ;
-  (self._petLoader):Init(function(count)
-    -- function num : 0_2_0 , upvalues : self
+function AircraftPetManager:Init()
+  self.camera = self._main:GetMainCamera()
+  self._cameraT = self.camera.transform
+  self._petLoader:Init(function(count)
     self:onLoadingCountChanged(count)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.ForceShowPetAfterInit = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for id,pet in pairs(self._pets) do
+function AircraftPetManager:ForceShowPetAfterInit()
+  for id, pet in pairs(self._pets) do
     if self:forceShow(pet) then
-      (self._petLoader):SyncLoadePet(pet)
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._shownPets)[pet:PstID()] = pet
+      self._petLoader:SyncLoadePet(pet)
+      self._shownPets[pet:PstID()] = pet
       self._shownPetCount = self._shownPetCount + 1
     end
   end
-  for id,pet in pairs(self._visitPets) do
+  for id, pet in pairs(self._visitPets) do
     if self:forceShow(pet) then
-      (self._petLoader):SyncLoadePet(pet)
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._shownPets)[pet:PstID()] = pet
+      self._petLoader:SyncLoadePet(pet)
+      self._shownPets[pet:PstID()] = pet
       self._shownPetCount = self._shownPetCount + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_4 , upvalues : _ENV
-  for id,pet in pairs(self._pets) do
+function AircraftPetManager:Update(deltaTimeMS)
+  for id, pet in pairs(self._pets) do
     pet:Update(deltaTimeMS)
     if pet:IsAlive() and pet:IsMainActionOver() then
-      (self._main):RandomActionForPet(pet)
+      self._main:RandomActionForPet(pet)
     end
   end
-  for id,pet in pairs(self._visitPets) do
+  for id, pet in pairs(self._visitPets) do
     pet:Update(deltaTimeMS)
     if pet:IsMainActionOver() then
-      (self._main):RandomActionForPet(pet)
+      self._main:RandomActionForPet(pet)
     end
   end
-  ;
-  (self._petLoader):Update()
+  self._petLoader:Update()
   self._timer = self._timer - deltaTimeMS
   if self._timer < 0 then
     self:CalShowPet()
@@ -144,150 +103,118 @@ AircraftPetManager.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.AddPet = function(self, tmpID)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._pets)[tmpID] then
-    (Log.fatal)("[AircraftPet] 星灵已经出现在风船中，ID：", tmpID)
-    return 
+function AircraftPetManager:AddPet(tmpID)
+  if self._pets[tmpID] then
+    Log.fatal("[AircraftPet] 星灵已经出现在风船中，ID：", tmpID)
+    return
   end
-  if (table.count)(self._pets) > 0 then
+  if table.count(self._pets) > 0 then
     local pets = {}
-    for key,value in pairs(self._pets) do
-      (table.insert)(pets, key)
+    for key, value in pairs(self._pets) do
+      table.insert(pets, key)
     end
-    local inner, sp = (HelperProxy:GetInstance()):CheckBinderID(pets, tmpID)
+    local inner, sp = HelperProxy:GetInstance():CheckBinderID(pets, tmpID)
     if inner then
       return nil, sp
     end
   end
-  do
-    local data = (self._petModule):GetPetByTemplateId(tmpID)
-    if data == nil then
-      (Log.exception)("[AircraftPet] 严重错误，星灵不在背包中，不能进入娱乐区：", tmpID)
-    end
-    local pstID = data:GetPstID()
-    local level = data:GetPetLevel()
-    local awake = data:GetPetGrade()
-    local skinId = data:GetSkinId()
-    local pdata = AircraftPetData:New(tmpID, pstID, level, awake, nil, skinId)
-    local pet = self:_createPet(pdata)
-    if pet == nil then
-      return 
-    end
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._pets)[tmpID] = pet
-    self._petCount = self._petCount + 1
-    self:onPetCountChanged()
-    return pet
+  local data = self._petModule:GetPetByTemplateId(tmpID)
+  if data == nil then
+    Log.exception("[AircraftPet] 严重错误，星灵不在背包中，不能进入娱乐区：", tmpID)
   end
+  local pstID = data:GetPstID()
+  local level = data:GetPetLevel()
+  local awake = data:GetPetGrade()
+  local skinId = data:GetSkinId()
+  local pdata = AircraftPetData:New(tmpID, pstID, level, awake, nil, skinId)
+  local pet = self:_createPet(pdata)
+  if pet == nil then
+    return
+  end
+  self._pets[tmpID] = pet
+  self._petCount = self._petCount + 1
+  self:onPetCountChanged()
+  return pet
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.RemovePet = function(self, tmpID)
-  -- function num : 0_6 , upvalues : _ENV
-  local pet = (self._pets)[tmpID]
+function AircraftPetManager:RemovePet(tmpID)
+  local pet = self._pets[tmpID]
   if not pet then
-    (Log.fatal)("[AircraftPet] 星灵不在风船内，ID：", tmpID)
+    Log.fatal("[AircraftPet] 星灵不在风船内，ID：", tmpID)
     return false
   end
   local pstID = pet:PstID()
-  if (self._shownPets)[pstID] then
+  if self._shownPets[pstID] then
     self._shownPetCount = self._shownPetCount - 1
     self:onShownPetCountChanged()
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._shownPets)[pstID] = nil
+    self._shownPets[pstID] = nil
   end
   pet:Dispose()
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._pets)[tmpID] = nil
-  ;
-  (Log.fatal)("[AircraftPet] 星灵销毁：", tmpID)
+  self._pets[tmpID] = nil
+  Log.fatal("[AircraftPet] 星灵销毁：", tmpID)
   self._petCount = self._petCount - 1
   self:onPetCountChanged()
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.CalShowPet = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AircraftPetManager:CalShowPet()
   if self._petCount <= self._shownPetCount then
-    return 
+    return
   end
   local pets = self:getShowPets()
-  ;
-  (self._cacheArray):Clear()
+  self._cacheArray:Clear()
   self._shownPetCount = 0
-  for _,pet in pairs(self._shownPets) do
+  for _, pet in pairs(self._shownPets) do
     local id = pet:PstID()
     if pets[id] then
       self._shownPetCount = self._shownPetCount + 1
       pets[id] = nil
     else
       pet:Hide()
-      ;
-      (self._petLoader):TryDelPet(pet)
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._shownPets)[id] = nil
+      self._petLoader:TryDelPet(pet)
+      self._shownPets[id] = nil
     end
   end
-  for _,pet in pairs(pets) do
-    (self._petLoader):AsyncLoadPet(pet)
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._shownPets)[pet:PstID()] = pet
+  for _, pet in pairs(pets) do
+    self._petLoader:AsyncLoadPet(pet)
+    self._shownPets[pet:PstID()] = pet
     self._shownPetCount = self._shownPetCount + 1
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.getShowPets = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftPetManager:getShowPets()
   local pets = {}
   local count = 0
-  for _,pet in pairs(self._pets) do
+  for _, pet in pairs(self._pets) do
     if self:forceShow(pet) then
       pets[pet:PstID()] = pet
       count = count + 1
-      if self._petCeiling <= count then
+      if count >= self._petCeiling then
         return pets
       end
     end
   end
-  for _,pet in pairs(self._visitPets) do
+  for _, pet in pairs(self._visitPets) do
     pets[pet:PstID()] = pet
     count = count + 1
-    if self._petCeiling <= count then
+    if count >= self._petCeiling then
       return pets
     end
   end
-  if self._showPetDistance < ((self._cameraT).position).z then
-    (self._cacheArray):Clear()
-    for _,pet in pairs(self._pets) do
-      (self._cacheArray):Insert(pet)
+  if self._cameraT.position.z > self._showPetDistance then
+    self._cacheArray:Clear()
+    for _, pet in pairs(self._pets) do
+      self._cacheArray:Insert(pet)
     end
-    for _,pet in pairs(self._visitPets) do
-      (self._cacheArray):Insert(pet)
+    for _, pet in pairs(self._visitPets) do
+      self._cacheArray:Insert(pet)
     end
-    for i = 1, (self._cacheArray):Size() do
-      local pet = (self._cacheArray):GetAt(i)
+    for i = 1, self._cacheArray:Size() do
+      local pet = self._cacheArray:GetAt(i)
       if pets[pet:PstID()] == nil then
         pets[pet:PstID()] = pet
         count = count + 1
-        if self._petCeiling <= count then
+        if count >= self._petCeiling then
           return pets
         end
       end
@@ -298,80 +225,63 @@ AircraftPetManager.getShowPets = function(self)
     local restPets = {}
     local workingPetCount = 0
     local restPetCount = 0
-    for _,pet in pairs(self._pets) do
-      do
-        do
-          -- DECOMPILER ERROR at PC109: Unhandled construct in 'MakeBoolean' P1
-
-          if pet:IsWorkingPet() and pets[pet:PstID()] == nil then
-            local spaceID = pet:GetSpace()
-            if workingPets[spaceID] == nil then
-              workingPets[spaceID] = {}
-            end
-            ;
-            (table.insert)(workingPets[spaceID], pet)
-            workingPetCount = workingPetCount + 1
+    for _, pet in pairs(self._pets) do
+      if pet:IsWorkingPet() then
+        if pets[pet:PstID()] == nil then
+          local spaceID = pet:GetSpace()
+          if workingPets[spaceID] == nil then
+            workingPets[spaceID] = {}
           end
-          if pets[pet:PstID()] == nil then
-            (table.insert)(restPets, pet)
-            restPetCount = restPetCount + 1
-          end
-          -- DECOMPILER ERROR at PC132: LeaveBlock: unexpected jumping out DO_STMT
-
+          table.insert(workingPets[spaceID], pet)
+          workingPetCount = workingPetCount + 1
         end
+      elseif pets[pet:PstID()] == nil then
+        table.insert(restPets, pet)
+        restPetCount = restPetCount + 1
       end
     end
-    if workingPetCount + (restPetCount) == 0 then
+    if workingPetCount + restPetCount == 0 then
       return pets
     end
-    local needCount = self._petCeiling - (count)
-    local total = restPetCount + (workingPetCount)
-    if total < needCount then
+    local needCount = self._petCeiling - count
+    local total = restPetCount + workingPetCount
+    if needCount > total then
       total = needCount
     end
-    local restCount = (math.ceil)(needCount * (restPetCount) / total)
+    local restCount = math.ceil(needCount * restPetCount / total)
     local workCount = needCount - restCount
     for i = 1, restCount do
       local pet = restPets[i]
       pets[pet:PstID()] = pet
       count = count + 1
     end
-    do
-      while workingPetCount > 0 do
-        for space,workingPets in pairs(workingPets) do
-          if #workingPets > 0 then
-            local pet = workingPets[1]
-            ;
-            (table.remove)(workingPets, 1)
-            workingPetCount = workingPetCount - 1
-            pets[pet:PstID()] = pet
-            count = count + 1
-            if self._petCeiling <= count then
-              return pets
-            else
-            end
+    while 0 < workingPetCount do
+      for space, workingPets in pairs(workingPets) do
+        if 0 < #workingPets then
+          local pet = workingPets[1]
+          table.remove(workingPets, 1)
+          workingPetCount = workingPetCount - 1
+          pets[pet:PstID()] = pet
+          count = count + 1
+          if count >= self._petCeiling then
+            return pets
+          elseif workingPetCount <= 0 then
+            break
           end
         end
       end
-      do
-        if workingPetCount > 0 then
-          do return pets end
-        end
-      end
     end
+    return pets
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.GetPetByCollider = function(self, collider)
-  -- function num : 0_9 , upvalues : _ENV
-  for key,pet in pairs(self._pets) do
+function AircraftPetManager:GetPetByCollider(collider)
+  for key, pet in pairs(self._pets) do
     if pet:CheckCollider(collider) then
       return pet
     end
   end
-  for key,pet in pairs(self._visitPets) do
+  for key, pet in pairs(self._visitPets) do
     if pet:CheckCollider(collider) then
       return pet
     end
@@ -379,220 +289,151 @@ AircraftPetManager.GetPetByCollider = function(self, collider)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.Dispose = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for id,pet in pairs(self._pets) do
+function AircraftPetManager:Dispose()
+  for id, pet in pairs(self._pets) do
     pet:Dispose()
   end
   self._pets = {}
-  for id,pet in pairs(self._visitPets) do
+  for id, pet in pairs(self._visitPets) do
     pet:Dispose()
   end
   self._visitPets = {}
   self._petCount = 0
-  ;
-  (self._petLoader):Dispose()
+  self._petLoader:Dispose()
   if self._testReq then
-    (self._testReq):Dispose()
+    self._testReq:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.GetPet = function(self, tmpID)
-  -- function num : 0_11
-  return (self._pets)[tmpID]
+function AircraftPetManager:GetPet(tmpID)
+  return self._pets[tmpID]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.HasPet = function(self, id)
-  -- function num : 0_12
-  do return (self._pets)[id] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPetManager:HasPet(id)
+  return self._pets[id] ~= nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.GetPets = function(self, filter, includeVisitPet)
-  -- function num : 0_13 , upvalues : _ENV
+function AircraftPetManager:GetPets(filter, includeVisitPet)
   if filter == nil then
-    (Log.fatal)("[AircraftPet] filter is nil")
+    Log.fatal("[AircraftPet] filter is nil")
     return nil
   end
   local pets = {}
-  for _,pet in pairs(self._pets) do
+  for _, pet in pairs(self._pets) do
     if filter(pet) then
       pets[#pets + 1] = pet
     end
   end
   if includeVisitPet then
-    for _,pet in pairs(self._visitPets) do
+    for _, pet in pairs(self._visitPets) do
       if filter(pet) then
         pets[#pets + 1] = pet
       end
     end
   end
-  do
-    return pets
-  end
+  return pets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.GetVisitPet = function(self, tmpID)
-  -- function num : 0_14
-  return (self._visitPets)[tmpID]
+function AircraftPetManager:GetVisitPet(tmpID)
+  return self._visitPets[tmpID]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager._createPet = function(self, _data)
-  -- function num : 0_15 , upvalues : _ENV
+function AircraftPetManager:_createPet(_data)
   local pet = AircraftPet:New(_data, self._main)
   return pet
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.AddVisitPet = function(self, pet)
-  -- function num : 0_16 , upvalues : _ENV
-  local tmpid = (pet.pet_info).pet_template_id
-  if (self._visitPets)[tmpid] then
-    (Log.exception)("[AircraftPet] 拜访星灵已经出现在风船中:", tmpid)
-    return 
+function AircraftPetManager:AddVisitPet(pet)
+  local tmpid = pet.pet_info.pet_template_id
+  if self._visitPets[tmpid] then
+    Log.exception("[AircraftPet] 拜访星灵已经出现在风船中:", tmpid)
+    return
   end
-  local pstid = (pet.pet_info).pet_pst_id
-  local level = (pet.pet_info).level
-  local awake = (pet.pet_info).grade
-  local skin = (pet.pet_info).skin_id
+  local pstid = pet.pet_info.pet_pst_id
+  local level = pet.pet_info.level
+  local awake = pet.pet_info.grade
+  local skin = pet.pet_info.skin_id
   local data = AircraftPetData:New(tmpid, pstid, level, awake, nil, skin)
   local airPet = self:_createPet(data)
   if airPet == nil then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._visitPets)[tmpid] = airPet
+  self._visitPets[tmpid] = airPet
   airPet:SetAsVisitPet()
   self._petCount = self._petCount + 1
   self:onPetCountChanged()
   return airPet
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.RemoveVisitPet = function(self, tmpID)
-  -- function num : 0_17 , upvalues : _ENV
-  local pet = (self._visitPets)[tmpID]
+function AircraftPetManager:RemoveVisitPet(tmpID)
+  local pet = self._visitPets[tmpID]
   if not pet then
-    (Log.fatal)("[AircraftPet] 拜访星灵不在风船内，ID：", tmpID)
+    Log.fatal("[AircraftPet] 拜访星灵不在风船内，ID：", tmpID)
     return false
   end
   local pstID = pet:PstID()
-  if (self._shownPets)[pstID] then
+  if self._shownPets[pstID] then
     self._shownPetCount = self._shownPetCount - 1
     self:onShownPetCountChanged()
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._shownPets)[pstID] = nil
+    self._shownPets[pstID] = nil
   end
   pet:Dispose()
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._visitPets)[tmpID] = nil
+  self._visitPets[tmpID] = nil
   AirLog("拜访星灵销毁：", tmpID)
   self._petCount = self._petCount - 1
   self:onPetCountChanged()
   return true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.onPetCountChanged = function(self)
-  -- function num : 0_18
+function AircraftPetManager:onPetCountChanged()
   if self._test then
-    (self._totalT):SetText(self._petCount)
+    self._totalT:SetText(self._petCount)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.onLoadingCountChanged = function(self, count)
-  -- function num : 0_19
+function AircraftPetManager:onLoadingCountChanged(count)
   if self._test then
-    (self._loadingT):SetText(count)
-    ;
-    (self._shownT):SetText(self._shownPetCount - count)
+    self._loadingT:SetText(count)
+    self._shownT:SetText(self._shownPetCount - count)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.onShownPetCountChanged = function(self)
-  -- function num : 0_20
-  self:onLoadingCountChanged((self._petLoader):LoadingCount())
+function AircraftPetManager:onShownPetCountChanged()
+  self:onLoadingCountChanged(self._petLoader:LoadingCount())
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetManager.IsVisitPet = function(self)
-  -- function num : 0_21
+function AircraftPetManager:IsVisitPet()
 end
 
 _class("AircraftPetData", Object)
 AircraftPetData = AircraftPetData
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetData.Constructor = function(self, tmpID, pstID, level, awake, breakL, skin)
-  -- function num : 0_22 , upvalues : _ENV
+function AircraftPetData:Constructor(tmpID, pstID, level, awake, breakL, skin)
   self._tmpID = tmpID
   self._pstID = pstID
   self._awake = awake
   self._level = level
   self._break = breakL
   self._skin = skin
-  self._prefab = (HelperProxy:GetInstance()):GetPetPrefab(tmpID, awake, skin, PetSkinEffectPath.MODEL_AIRCRAFT)
+  self._prefab = HelperProxy:GetInstance():GetPetPrefab(tmpID, awake, skin, PetSkinEffectPath.MODEL_AIRCRAFT)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetData.TmpID = function(self)
-  -- function num : 0_23
+function AircraftPetData:TmpID()
   return self._tmpID
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetData.PstID = function(self)
-  -- function num : 0_24
+function AircraftPetData:PstID()
   return self._pstID
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetData.Awake = function(self)
-  -- function num : 0_25
+function AircraftPetData:Awake()
   return self._awake
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetData.SkinID = function(self)
-  -- function num : 0_26
+function AircraftPetData:SkinID()
   return self._skin
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetData.Prefab = function(self)
-  -- function num : 0_27
+function AircraftPetData:Prefab()
   return self._prefab
 end
-
-

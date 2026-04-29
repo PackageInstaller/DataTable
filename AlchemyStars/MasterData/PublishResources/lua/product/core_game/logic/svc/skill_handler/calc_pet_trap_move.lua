@@ -1,282 +1,217 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_pet_trap_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_PetTrapMove", SkillEffectCalc_Base)
 SkillEffectCalc_PetTrapMove = SkillEffectCalc_PetTrapMove
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_PetTrapMove.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_PetTrapMove:Constructor(world)
   self._world = world
   self.m_nextPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
-  ;
-  (self.m_nextPosList):AllowDuplicate()
+  self.m_nextPosList:AllowDuplicate()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_PetTrapMove:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   self.casterEntity = casterEntity
   local casterPos = casterEntity:GetGridPosition()
-  local targetIDList = (skillEffectCalcParam:GetTargetEntityIDs())
-  local targetID = nil
-  if (table.count)(targetIDList) >= 1 then
+  local targetIDList = skillEffectCalcParam:GetTargetEntityIDs()
+  local targetID
+  if table.count(targetIDList) >= 1 then
     targetID = targetIDList[1]
   end
-  local targetEntity = (self._world):GetEntityByID(targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   local skillParam = skillEffectCalcParam.skillEffectParam
   local moveStep = skillParam:GetMoveStep()
   local moveType = skillParam:GetMoveType()
   local moveParam = skillParam:GetMoveParam()
   local canMoveTrapLevel = skillParam:GetCanMoveTrapLevel()
   local targetCenterPos = targetEntity:GetGridPosition()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local teamPos = teamEntity:GetGridPosition()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   self._needBypassPosList = {}
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  for _,e in ipairs(trapGroup:GetEntities()) do
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  for _, e in ipairs(trapGroup:GetEntities()) do
     if not e:HasDeadMark() then
       local trapCmpt = e:Trap()
       local level = trapCmpt:GetTrapLevel()
-      if not (table.intable)(canMoveTrapLevel, level) and e:GetID() ~= casterEntityID then
-        local bodyArea = (e:BodyArea()):GetArea()
+      if not table.intable(canMoveTrapLevel, level) and e:GetID() ~= casterEntityID then
+        local bodyArea = e:BodyArea():GetArea()
         local gridPos = e:GetGridPosition()
-        for _,v in ipairs(bodyArea) do
-          (table.insert)(self._needBypassPosList, gridPos + v)
+        for _, v in ipairs(bodyArea) do
+          table.insert(self._needBypassPosList, gridPos + v)
         end
       end
     end
   end
   local posWalkResultList = {}
   local isCasterDead = false
-  ;
-  (self.m_nextPosList):Clear()
+  self.m_nextPosList:Clear()
   local resultList = {}
   self._lastPos = casterPos
   if moveType == PetTrapMoveType.CloseToTeam then
     local previewRange = self:_CalcPreviewRange(casterPos, moveStep)
-    ;
-    (table.removev)(previewRange, casterPos)
+    table.removev(previewRange, casterPos)
     for i = 1, #previewRange do
       local posWork = previewRange[i]
-      ;
-      (AINewNode.InsertSortedArray)(self.m_nextPosList, teamPos, posWork, i)
+      AINewNode.InsertSortedArray(self.m_nextPosList, teamPos, posWork, i)
     end
     for i = 1, moveStep do
       local posWalk = self:_CalcMovePos(casterEntity, moveStep - i + 1)
-      if posWalk == nil and (table.count)(resultList) == 0 then
+      if posWalk == nil and table.count(resultList) == 0 then
         posWalk = self._lastPos
       end
       if posWalk ~= nil then
-        local posOld = (self._lastPos):Clone()
+        local posOld = self._lastPos:Clone()
         local dirNew = posWalk - posOld
         local result = SkillEffectResultPetTrapMove:New(casterEntityID, posOld, posWalk, dirNew, moveType)
         result:SetPreviewRange(previewRange)
         self._lastPos = posWalk
-        ;
-        (table.insert)(resultList, result)
+        table.insert(resultList, result)
       end
     end
-  else
-    do
-      if moveType == PetTrapMoveType.AwayFromTeam then
-        local previewRange = self:_CalcPreviewRange(casterPos, moveStep)
-        ;
-        (table.removev)(previewRange, casterPos)
-        local bExcludeSelf = moveParam or 0
-        self.m_nextPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByFar)
-        ;
-        (self.m_nextPosList):AllowDuplicate()
-        for i = 1, moveStep do
-          local walkRange = self:ComputeWalkRange(self._lastPos, 1, true)
-          if bExcludeSelf == 0 then
-            (AINewNode.InsertSortedArray)(self.m_nextPosList, teamPos, self._lastPos, 0)
-          end
-          for i = 1, #walkRange do
-            local posData = walkRange[i]
-            local posWalk = posData:GetPos()
-            if self:IsPosAccessible(posWalk) and (bExcludeSelf == 0 or bExcludeSelf <= 0 or posWalk ~= casterPos) then
-              (AINewNode.InsertSortedArray)(self.m_nextPosList, teamPos, posWalk, i)
-            end
-          end
-          local posFind = self:FindPosValid(self.m_nextPosList, self._lastPos)
-          local posOld = (self._lastPos):Clone()
-          local dirNew = posFind - posOld
-          local result = SkillEffectResultPetTrapMove:New(casterEntityID, posOld, posFind, dirNew, moveType)
-          result:SetPreviewRange(previewRange)
-          self._lastPos = posFind
-          ;
-          (table.insert)(resultList, result)
-        end
-      else
-        do
-          if moveType == PetTrapMoveType.FixedPos then
-            local targetPos = Vector2((moveParam[1])[1], (moveParam[1])[2])
-            if targetPos == casterPos then
-              return 
-            end
-            for i = 1, moveStep do
-              local walkRange = self:ComputeWalkRange(self._lastPos, 1, true)
-              ;
-              (AINewNode.InsertSortedArray)(self.m_nextPosList, targetPos, self._lastPos, 0)
-              for i = 1, #walkRange do
-                local posData = walkRange[i]
-                local posWalk = posData:GetPos()
-                if self:IsPosAccessible(posWalk) then
-                  (AINewNode.InsertSortedArray)(self.m_nextPosList, targetPos, posWalk, i)
-                end
-              end
-              local posFind = self:FindPosValid(self.m_nextPosList, self._lastPos)
-              local posOld = (self._lastPos):Clone()
-              local dirNew = posFind - posOld
-              local result = SkillEffectResultPetTrapMove:New(casterEntityID, posOld, posFind, dirNew, moveType)
-              result:SetPreviewRange(posFind)
-              self._lastPos = posFind
-              ;
-              (table.insert)(resultList, result)
-            end
-          else
-            do
-              if moveType == PetTrapMoveType.SkillPos then
-                local previewRange = self:_CalcPreviewRange(casterPos, moveStep)
-                ;
-                (table.removev)(previewRange, casterPos)
-                local skillID = moveParam
-                local bodyAreaCmpt = targetEntity:BodyArea()
-                local walkRange = self:_ComputeSkillRange(skillID, targetCenterPos, bodyAreaCmpt:GetArea())
-                for i = 1, #walkRange do
-                  local posWork = walkRange[i]
-                  if self:IsPosAccessible(posWork) then
-                    (AINewNode.InsertSortedArray)(self.m_nextPosList, casterPos, posWork, i)
-                  end
-                end
-                self._lastPos = casterPos
-                local isCasterDead = false
-                local posWalkResultList = {}
-                for i = 1, moveStep do
-                  local posWalk = self:_CalcMovePos(casterEntity, moveStep - i + 1)
-                  if posWalk == nil and (table.count)(resultList) == 0 then
-                    posWalk = self._lastPos
-                  end
-                  if posWalk ~= nil then
-                    local posOld = (self._lastPos):Clone()
-                    local dirNew = posWalk - posOld
-                    local result = SkillEffectResultPetTrapMove:New(casterEntityID, posOld, posWalk, dirNew, moveType)
-                    result:SetPreviewRange(previewRange)
-                    self._lastPos = posWalk
-                    ;
-                    (table.insert)(resultList, result)
-                  end
-                end
-              else
-                do
-                  if moveType == PetTrapMoveType.Loop then
-                    local posList = {}
-                    for _,param in ipairs(moveParam) do
-                      local pos = Vector2(param[1], param[2])
-                      ;
-                      (table.insert)(posList, pos)
-                    end
-                    local canMoveSetp = 0
-                    for i = 1, moveStep do
-                      local addPos = posList[i]
-                      ;
-                      (table.insert)(posList, addPos)
-                    end
-                    local calcPosList = {}
-                    for _,pos in ipairs(posList) do
-                      if canMoveSetp > 0 then
-                        canMoveSetp = canMoveSetp - 1
-                        ;
-                        (table.insert)(calcPosList, pos)
-                      end
-                      if canMoveSetp ~= 0 then
-                        do
-                          if pos == casterPos then
-                            canMoveSetp = moveStep
-                          end
-                          -- DECOMPILER ERROR at PC486: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC486: LeaveBlock: unexpected jumping out IF_STMT
-
-                        end
-                      end
-                    end
-                    for _,pos in ipairs(calcPosList) do
-                      if not boardServiceLogic:IsPosBlock(pos, BlockFlag.MonsterLand) and not (table.intable)(self._needBypassPosList, pos) then
-                        local posOld = (self._lastPos):Clone()
-                        local dirNew = pos - posOld
-                        do
-                          local result = SkillEffectResultPetTrapMove:New(casterEntityID, posOld, pos, dirNew, moveType)
-                          result:SetPreviewRange(pos)
-                          self._lastPos = pos
-                          ;
-                          (table.insert)(resultList, result)
-                          -- DECOMPILER ERROR at PC527: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC527: LeaveBlock: unexpected jumping out IF_STMT
-
-                        end
-                      end
-                    end
-                  end
-                  do
-                    return resultList
-                  end
-                end
-              end
-            end
-          end
+  elseif moveType == PetTrapMoveType.AwayFromTeam then
+    local previewRange = self:_CalcPreviewRange(casterPos, moveStep)
+    table.removev(previewRange, casterPos)
+    local bExcludeSelf = moveParam or 0
+    self.m_nextPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByFar)
+    self.m_nextPosList:AllowDuplicate()
+    for i = 1, moveStep do
+      local walkRange = self:ComputeWalkRange(self._lastPos, 1, true)
+      if bExcludeSelf == 0 then
+        AINewNode.InsertSortedArray(self.m_nextPosList, teamPos, self._lastPos, 0)
+      end
+      for i = 1, #walkRange do
+        local posData = walkRange[i]
+        local posWalk = posData:GetPos()
+        if self:IsPosAccessible(posWalk) and (0 == bExcludeSelf or 0 < bExcludeSelf and posWalk ~= casterPos) then
+          AINewNode.InsertSortedArray(self.m_nextPosList, teamPos, posWalk, i)
         end
       end
+      local posFind = self:FindPosValid(self.m_nextPosList, self._lastPos)
+      local posOld = self._lastPos:Clone()
+      local dirNew = posFind - posOld
+      local result = SkillEffectResultPetTrapMove:New(casterEntityID, posOld, posFind, dirNew, moveType)
+      result:SetPreviewRange(previewRange)
+      self._lastPos = posFind
+      table.insert(resultList, result)
+    end
+  elseif moveType == PetTrapMoveType.FixedPos then
+    local targetPos = Vector2(moveParam[1][1], moveParam[1][2])
+    if targetPos == casterPos then
+      return
+    end
+    for i = 1, moveStep do
+      local walkRange = self:ComputeWalkRange(self._lastPos, 1, true)
+      AINewNode.InsertSortedArray(self.m_nextPosList, targetPos, self._lastPos, 0)
+      for i = 1, #walkRange do
+        local posData = walkRange[i]
+        local posWalk = posData:GetPos()
+        if self:IsPosAccessible(posWalk) then
+          AINewNode.InsertSortedArray(self.m_nextPosList, targetPos, posWalk, i)
+        end
+      end
+      local posFind = self:FindPosValid(self.m_nextPosList, self._lastPos)
+      local posOld = self._lastPos:Clone()
+      local dirNew = posFind - posOld
+      local result = SkillEffectResultPetTrapMove:New(casterEntityID, posOld, posFind, dirNew, moveType)
+      result:SetPreviewRange(posFind)
+      self._lastPos = posFind
+      table.insert(resultList, result)
+    end
+  elseif moveType == PetTrapMoveType.SkillPos then
+    local previewRange = self:_CalcPreviewRange(casterPos, moveStep)
+    table.removev(previewRange, casterPos)
+    local skillID = moveParam
+    local bodyAreaCmpt = targetEntity:BodyArea()
+    local walkRange = self:_ComputeSkillRange(skillID, targetCenterPos, bodyAreaCmpt:GetArea())
+    for i = 1, #walkRange do
+      local posWork = walkRange[i]
+      if self:IsPosAccessible(posWork) then
+        AINewNode.InsertSortedArray(self.m_nextPosList, casterPos, posWork, i)
+      end
+    end
+    self._lastPos = casterPos
+    local isCasterDead = false
+    local posWalkResultList = {}
+    for i = 1, moveStep do
+      local posWalk = self:_CalcMovePos(casterEntity, moveStep - i + 1)
+      if posWalk == nil and table.count(resultList) == 0 then
+        posWalk = self._lastPos
+      end
+      if posWalk ~= nil then
+        local posOld = self._lastPos:Clone()
+        local dirNew = posWalk - posOld
+        local result = SkillEffectResultPetTrapMove:New(casterEntityID, posOld, posWalk, dirNew, moveType)
+        result:SetPreviewRange(previewRange)
+        self._lastPos = posWalk
+        table.insert(resultList, result)
+      end
+    end
+  elseif moveType == PetTrapMoveType.Loop then
+    local posList = {}
+    for _, param in ipairs(moveParam) do
+      local pos = Vector2(param[1], param[2])
+      table.insert(posList, pos)
+    end
+    local canMoveSetp = 0
+    for i = 1, moveStep do
+      local addPos = posList[i]
+      table.insert(posList, addPos)
+    end
+    local calcPosList = {}
+    for _, pos in ipairs(posList) do
+      if 0 < canMoveSetp then
+        canMoveSetp = canMoveSetp - 1
+        table.insert(calcPosList, pos)
+        if canMoveSetp == 0 then
+          break
+        end
+      end
+      if pos == casterPos then
+        canMoveSetp = moveStep
+      end
+    end
+    for _, pos in ipairs(calcPosList) do
+      if boardServiceLogic:IsPosBlock(pos, BlockFlag.MonsterLand) or table.intable(self._needBypassPosList, pos) then
+        break
+      end
+      local posOld = self._lastPos:Clone()
+      local dirNew = pos - posOld
+      local result = SkillEffectResultPetTrapMove:New(casterEntityID, posOld, pos, dirNew, moveType)
+      result:SetPreviewRange(pos)
+      self._lastPos = pos
+      table.insert(resultList, result)
     end
   end
+  return resultList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove._CalcPreviewRange = function(self, casterPos, moveStep)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_PetTrapMove:_CalcPreviewRange(casterPos, moveStep)
   local previewRange = {}
   local walkRange = self:ComputeWalkRange(casterPos, moveStep, true)
   for i = 1, #walkRange do
     local posData = walkRange[i]
     local posWalk = posData:GetPos()
-    ;
-    (table.insert)(previewRange, posWalk)
+    table.insert(previewRange, posWalk)
   end
   return previewRange
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove._OnArrivePos = function(self, casterPos, moveStep)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_PetTrapMove:_OnArrivePos(casterPos, moveStep)
   local previewRange = {}
   local walkRange = self:ComputeWalkRange(casterPos, moveStep, true)
   for i = 1, #walkRange do
     local posData = walkRange[i]
     local posWalk = posData:GetPos()
-    ;
-    (table.insert)(previewRange, posWalk)
+    table.insert(previewRange, posWalk)
   end
   return previewRange
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove._OnArrivePos = function(self, casterEntity, walkRes, skillParam)
-  -- function num : 0_4 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function SkillEffectCalc_PetTrapMove:_OnArrivePos(casterEntity, walkRes, skillParam)
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local listTrapWork, listTrapResult = trapServiceLogic:TriggerTrapByEntity(casterEntity, TrapTriggerOrigin.Move)
-  for i,e in ipairs(listTrapWork) do
+  for i, e in ipairs(listTrapWork) do
     local trapEntity = e
     local skillEffectResultContainer = listTrapResult[i]
     local aiResult = AISkillResult:New()
@@ -285,10 +220,7 @@ SkillEffectCalc_PetTrapMove._OnArrivePos = function(self, casterEntity, walkRes,
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.CalMoveResultList = function(self, casterEntity, targetEntity, skillParam)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_PetTrapMove:CalMoveResultList(casterEntity, targetEntity, skillParam)
   local moveStep = skillParam:GetMoveStep()
   local moveType = skillParam:GetMoveType()
   local moveParam = skillParam:GetMoveParam()
@@ -296,16 +228,15 @@ SkillEffectCalc_PetTrapMove.CalMoveResultList = function(self, casterEntity, tar
   local targetCenterPos = targetEntity:GetGridPosition()
   local casterPos = casterEntity:GetGridPosition()
   local bodyAreaCmpt = targetEntity:BodyArea()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local sBoard = (self._world):GetService("BoardLogic")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local sBoard = self._world:GetService("BoardLogic")
   local listPosTarget = {targetCenterPos}
-  ;
-  (self.m_nextPosList):Clear()
+  self.m_nextPosList:Clear()
   local walkRange = self:_ComputeSkillRange(skillID, targetCenterPos, bodyAreaCmpt:GetArea())
   for i = 1, #walkRange do
     local posWork = walkRange[i]
     if self:IsPosAccessible(posWork) then
-      (AINewNode.InsertSortedArray)(self.m_nextPosList, casterPos, posWork, i)
+      AINewNode.InsertSortedArray(self.m_nextPosList, casterPos, posWork, i)
     end
   end
   self._lastPos = casterPos
@@ -316,17 +247,13 @@ SkillEffectCalc_PetTrapMove.CalMoveResultList = function(self, casterEntity, tar
     if posWalk ~= nil then
       local posSelf = casterEntity:GetGridPosition()
       self._lastPos = posWalk
-      ;
-      (table.insert)(posWalkResultList, posWalk)
+      table.insert(posWalkResultList, posWalk)
     end
   end
   return posWalkResultList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove._CalcMovePos = function(self, entityWork, nWalkTotal)
-  -- function num : 0_6
+function SkillEffectCalc_PetTrapMove:_CalcMovePos(entityWork, nWalkTotal)
   local posSelf = self._lastPos
   local posTarget = self:FindNewTargetPos(posSelf)
   if posSelf == posTarget then
@@ -340,18 +267,12 @@ SkillEffectCalc_PetTrapMove._CalcMovePos = function(self, entityWork, nWalkTotal
   return posWalk
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.FindNewTargetPos = function(self, posDefault)
-  -- function num : 0_7
+function SkillEffectCalc_PetTrapMove:FindNewTargetPos(posDefault)
   return self:FindPosValid(self.m_nextPosList, posDefault)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.FindPosValid = function(self, planPosList, defPos)
-  -- function num : 0_8
-  if planPosList == nil or planPosList:Size() <= 0 then
+function SkillEffectCalc_PetTrapMove:FindPosValid(planPosList, defPos)
+  if nil == planPosList or planPosList:Size() <= 0 then
     return defPos
   end
   local posSelf = defPos
@@ -360,89 +281,71 @@ SkillEffectCalc_PetTrapMove.FindPosValid = function(self, planPosList, defPos)
   for i = 1, nPosCount do
     local posWork = planPosList:GetAt(i)
     local bAccessible = self:IsPosAccessible(posWork.data)
-    if bAccessible == true then
+    if true == bAccessible then
       posReturn = posWork.data
       break
     end
   end
-  do
-    return posReturn
-  end
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.IsPosAccessible = function(self, pos)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self.casterEntity):HasBodyArea() == false then
+function SkillEffectCalc_PetTrapMove:IsPosAccessible(pos)
+  if false == self.casterEntity:HasBodyArea() then
     return true
   end
-  if (table.intable)(self._needBypassPosList, pos) then
+  if table.intable(self._needBypassPosList, pos) then
     return false
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local blockFlag = BlockFlag.MonsterLand
-  local coverList = (self.casterEntity):GetCoverAreaList(pos)
-  local coverListSelf = (self.casterEntity):GetCoverAreaList(self._lastPos)
+  local coverList = self.casterEntity:GetCoverAreaList(pos)
+  local coverListSelf = self.casterEntity:GetCoverAreaList(self._lastPos)
   for i = 1, #coverList do
     local posWork = coverList[i]
-    if not (table.icontains)(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, blockFlag) then
+    if not table.icontains(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, blockFlag) then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.ComputeWalkRange = function(self, centerPos, nWalkStep, bFilter)
-  -- function num : 0_10 , upvalues : _ENV
-  if not bFilter then
-    bFilter = false
-  end
-  local cbFilter = nil
+function SkillEffectCalc_PetTrapMove:ComputeWalkRange(centerPos, nWalkStep, bFilter)
+  bFilter = bFilter or false
+  local cbFilter
   if bFilter then
     cbFilter = Callback:New(1, self.IsPosAccessible, self)
   end
-  return (ComputeScopeRange.ComputeRange_WalkMathPos)(centerPos, 1, nWalkStep, cbFilter)
+  return ComputeScopeRange.ComputeRange_WalkMathPos(centerPos, 1, nWalkStep, cbFilter)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.FindNewWalkPos = function(self, walkRange, posCenter, posDef)
-  -- function num : 0_11
+function SkillEffectCalc_PetTrapMove:FindNewWalkPos(walkRange, posCenter, posDef)
   return self:FindPosByNearCenter(walkRange, posCenter, posDef, 1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.FindPosByNearCenter = function(self, listPlanPos, posCenter, posDef, nCheckStep)
-  -- function num : 0_12 , upvalues : _ENV
-  if listPlanPos == nil or (table.count)(listPlanPos) <= 0 then
+function SkillEffectCalc_PetTrapMove:FindPosByNearCenter(listPlanPos, posCenter, posDef, nCheckStep)
+  if nil == listPlanPos or table.count(listPlanPos) <= 0 then
     return posDef
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local listWalk = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
   listWalk:AllowDuplicate()
   local lastMovePos = self._lastPos
   for i = 1, #listPlanPos do
     local posData = listPlanPos[i]
     local posWalk = posData:GetPos()
-    if posWalk ~= posDef and (nCheckStep == nil or nCheckStep == posData:GetStep()) then
+    if posWalk ~= posDef and (nil == nCheckStep or nCheckStep == posData:GetStep()) then
       local isBlockMoveWithTrapWall = utilDataSvc:IsBlockMoveWithTrapWall(posDef, posWalk, self.casterEntity)
       if posWalk ~= lastMovePos and isBlockMoveWithTrapWall == false then
-        (AINewNode.InsertSortedArray)(listWalk, posCenter, posWalk, i)
+        AINewNode.InsertSortedArray(listWalk, posCenter, posWalk, i)
+      else
       end
     end
   end
   return self:FindPosValid(listWalk, posDef)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.ComputeSkillRange = function(self, skillID, centerPos, bodyArea, dir)
-  -- function num : 0_13 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function SkillEffectCalc_PetTrapMove:ComputeSkillRange(skillID, centerPos, bodyArea, dir)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local scopeType = skillConfigData:GetSkillScopeType()
   if scopeType == SkillScopeType.DirectLineExpand then
@@ -451,44 +354,30 @@ SkillEffectCalc_PetTrapMove.ComputeSkillRange = function(self, skillID, centerPo
     local ret3 = self:_ComputeSkillRange(skillID, centerPos, bodyArea, Vector2(1, 0))
     local ret4 = self:_ComputeSkillRange(skillID, centerPos, bodyArea, Vector2(-1, 0))
     local ret = {}
-    ;
-    (table.appendArray)(ret, ret1)
-    ;
-    (table.appendArray)(ret, ret2)
-    ;
-    (table.appendArray)(ret, ret3)
-    ;
-    (table.appendArray)(ret, ret4)
+    table.appendArray(ret, ret1)
+    table.appendArray(ret, ret2)
+    table.appendArray(ret, ret3)
+    table.appendArray(ret, ret4)
     return ret
   else
-    do
-      do return self:_ComputeSkillRange(skillID, centerPos, bodyArea, dir) end
-    end
+    return self:_ComputeSkillRange(skillID, centerPos, bodyArea, dir)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove._ComputeSkillRange = function(self, nSkillID, posCenter, bodyArea, dir)
-  -- function num : 0_14 , upvalues : _ENV
+function SkillEffectCalc_PetTrapMove:_ComputeSkillRange(nSkillID, posCenter, bodyArea, dir)
   if nSkillID == 0 then
     return {}
   end
   local workCenter = posCenter
-  if #bodyArea == 4 then
+  if 4 == #bodyArea then
     workCenter = workCenter + Vector2(-1, -1)
-  else
-    if #bodyArea == 9 then
-      workCenter = workCenter + Vector2(-2, -2)
-    end
+  elseif 9 == #bodyArea then
+    workCenter = workCenter + Vector2(-2, -2)
   end
   return self:CalculateSkillRange(nSkillID, workCenter, dir, bodyArea)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove.CalculateSkillRange = function(self, skillID, centerPos, dir, bodyAreaList)
-  -- function num : 0_15 , upvalues : _ENV
+function SkillEffectCalc_PetTrapMove:CalculateSkillRange(skillID, centerPos, dir, bodyAreaList)
   local skillResult = self:_CalculateSkillScope(skillID, centerPos, dir, bodyAreaList)
   if not skillResult then
     return {}
@@ -497,26 +386,19 @@ SkillEffectCalc_PetTrapMove.CalculateSkillRange = function(self, skillID, center
   local listReturn = {}
   for i = 1, #skillRange do
     local posWork = skillRange[i]
-    if (table.icontains)(listReturn, posWork) == false then
-      (table.insert)(listReturn, posWork)
+    if false == table.icontains(listReturn, posWork) then
+      table.insert(listReturn, posWork)
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PetTrapMove._CalculateSkillScope = function(self, skillID, centerPos, dir, bodyAreaList, entityCaster)
-  -- function num : 0_16 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function SkillEffectCalc_PetTrapMove:_CalculateSkillScope(skillID, centerPos, dir, bodyAreaList, entityCaster)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = utilScopeSvc:GetSkillScopeCalc()
-  if not dir then
-    dir = Vector2(0, 1)
-  end
+  dir = dir or Vector2(0, 1)
   local skillResult = skillCalculater:CalcSkillScope(skillConfigData, centerPos, dir, bodyAreaList, entityCaster)
   return skillResult
 end
-
-

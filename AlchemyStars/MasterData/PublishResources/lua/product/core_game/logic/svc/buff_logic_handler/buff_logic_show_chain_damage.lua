@@ -1,45 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_show_chain_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicShowChainDamage", BuffLogicBase)
 BuffLogicShowChainDamage = BuffLogicShowChainDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicShowChainDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicShowChainDamage:Constructor(buffInstance, logicParam)
   self._show = logicParam.show
   self._lineEffectID = logicParam.lineEffectID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicShowChainDamage.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
-  local context = (self._buffInstance):Context()
+function BuffLogicShowChainDamage:DoLogic(notify)
+  local entity = self._buffInstance:Entity()
+  local context = self._buffInstance:Context()
   if not context then
-    return 
+    return
   end
   local casterEntity = context.casterEntity
   if casterEntity:HasSuperEntity() then
     casterEntity = casterEntity:GetSuperEntity()
   end
   if not casterEntity then
-    return 
+    return
   end
-  local attacker = (self._world):GetEntityByID(casterEntity:GetID())
+  local attacker = self._world:GetEntityByID(casterEntity:GetID())
   if not attacker then
-    return 
+    return
   end
   if attacker:HasDeadMark() then
-    return 
+    return
   end
   local isShow = self._show == 1
   local buffResult = BuffResultShowChainDamage:New(casterEntity:GetID(), entity:GetID(), self._lineEffectID, isShow)
-  do return buffResult end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return buffResult
 end
-
-

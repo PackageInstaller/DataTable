@@ -1,85 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn21_n50/entry/ui_cn21_n50_main_lobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_main_campaign_base")
 _class("UICN21N50MainLobbyEntry", UIMainLobbyMainCampaignBase)
 UICN21N50MainLobbyEntry = UICN21N50MainLobbyEntry
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN21N50MainLobbyEntry.GetComponent = function(self)
-  -- function num : 0_0
+function UICN21N50MainLobbyEntry:GetComponent()
   self._redGo = self:GetGameObject("red")
   self._newGo = self:GetGameObject("new")
   self._diffOpenGo = self:GetGameObject("diffOpen")
   self._shopOpenGo = self:GetGameObject("shopOpen")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50MainLobbyEntry.RefreshView = function(self)
-  -- function num : 0_1
+function UICN21N50MainLobbyEntry:RefreshView()
   self:RedAndNew()
   self:DiffOpen()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50MainLobbyEntry.BtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((UICN21N50MainLobbyEntry.super).BtnOnClick)(self)
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UICN21N50MainController, true)
+function UICN21N50MainLobbyEntry:BtnOnClick()
+  UICN21N50MainLobbyEntry.super.BtnOnClick(self)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UICN21N50MainController, true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50MainLobbyEntry.RedAndNew = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN21N50MainLobbyEntry:RedAndNew()
   local new = false
-  local mainNewVal = (UICN21N50Helper.LocalDB_Has)("main", "New")
+  local mainNewVal = UICN21N50Helper.LocalDB_Has("main", "New")
   if not mainNewVal then
     new = true
   end
   local mainNew = false
   local blackNew = false
-  local blackNewVal = not (UICN21N50Helper.LocalDB_Has)("black", "New")
-  local blackOpen = (self.sampleInfo).m_is_component_open >> (UICN21N50Helper.GetComponentId)("black") & 1 == 1
+  local blackNewVal = not UICN21N50Helper.LocalDB_Has("black", "New")
+  local blackOpen = self.sampleInfo.m_is_component_open >> UICN21N50Helper.GetComponentId("black") & 1 == 1
   if blackOpen and blackNewVal then
     blackNew = true
   end
   mainNew = new or blackNew
   local mainRed = false
-  local shopRed = (self.sampleInfo):IsCompRed((UICN21N50Helper.GetComponentId)("exchange"))
-  local blackKey = (UICN21N50Helper._LocalDB_GetKey)("black", "Red")
-  if (self.sampleInfo):IsCompRed((UICN21N50Helper.GetComponentId)("black")) then
-    local blackRed = not (UIActivityHelper.HasCmptRedViewed)(blackKey)
-  end
-  local lineKey = (UICN21N50Helper._LocalDB_GetKey)("line", "Red")
-  if (self.sampleInfo):IsCompRed((UICN21N50Helper.GetComponentId)("line")) then
-    local lineRed = not (UIActivityHelper.HasCmptRedViewed)(lineKey)
-  end
-  local signRed = (self.sampleInfo):IsCompRed((UICN21N50Helper.GetComponentId)("login"))
+  local shopRed = self.sampleInfo:IsCompRed(UICN21N50Helper.GetComponentId("exchange"))
+  local blackKey = UICN21N50Helper._LocalDB_GetKey("black", "Red")
+  local blackRed = self.sampleInfo:IsCompRed(UICN21N50Helper.GetComponentId("black")) and not UIActivityHelper.HasCmptRedViewed(blackKey)
+  local lineKey = UICN21N50Helper._LocalDB_GetKey("line", "Red")
+  local lineRed = self.sampleInfo:IsCompRed(UICN21N50Helper.GetComponentId("line")) and not UIActivityHelper.HasCmptRedViewed(lineKey)
+  local signRed = self.sampleInfo:IsCompRed(UICN21N50Helper.GetComponentId("login"))
   mainRed = shopRed or blackRed or lineRed or signRed
-  ;
-  (self._newGo):SetActive(mainNew)
-  if mainRed then
-    (self._redGo):SetActive(not (mainNew))
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
-  end
+  self._newGo:SetActive(mainNew)
+  self._redGo:SetActive(mainRed and not mainNew)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50MainLobbyEntry.DiffOpen = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local battleFieldOpen = (self.sampleInfo).m_is_component_open >> (UICN21N50Helper.GetComponentId)("black") & 1 == 1
-  ;
-  (self._diffOpenGo):SetActive(battleFieldOpen)
-  ;
-  (self._shopOpenGo):SetActive(not battleFieldOpen)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICN21N50MainLobbyEntry:DiffOpen()
+  local battleFieldOpen = self.sampleInfo.m_is_component_open >> UICN21N50Helper.GetComponentId("black") & 1 == 1
+  self._diffOpenGo:SetActive(battleFieldOpen)
+  self._shopOpenGo:SetActive(not battleFieldOpen)
 end
-
-

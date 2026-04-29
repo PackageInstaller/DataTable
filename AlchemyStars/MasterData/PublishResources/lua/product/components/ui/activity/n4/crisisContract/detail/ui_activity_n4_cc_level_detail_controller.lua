@@ -1,42 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/detail/ui_activity_n4_cc_level_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCLevelDetailController", UIController)
 UIActivityN4CCLevelDetailController = UIActivityN4CCLevelDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCLevelDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN4CCLevelDetailController:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._context = uiParams[2]
   self._closeCb = uiParams[3]
-  self._campaign = (self._context):GetCampaign()
+  self._campaign = self._context:GetCampaign()
   self:InitWidget()
   self:Refresh()
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN4CCLevelDetailController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.InitWidget = function(self)
-  -- function num : 0_2
+function UIActivityN4CCLevelDetailController:InitWidget()
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseWithAni()
-  end
-)
+  end)
   self.bossFrame = self:GetUIComponent("Image", "bossFrame")
   self.imgBoss = self:GetUIComponent("RawImageLoader", "imgBoss")
   self.txtBossName = self:GetUIComponent("UILocalizationText", "txtBossName")
@@ -44,16 +28,13 @@ UIActivityN4CCLevelDetailController.InitWidget = function(self)
   local tabPool = self:GetUIComponent("UISelectObjectPath", "tab")
   self.tabItems = tabPool:SpawnObjects("UIActivityN4CCLevelDetailTab", 3)
   for i = 1, 3 do
-    ((self.tabItems)[i]):SetData((self._levelData)[i], self._context, function(item)
-    -- function num : 0_2_1 , upvalues : self
-    self:OnTabItemClicked(item)
-  end
-)
+    self.tabItems[i]:SetData(self._levelData[i], self._context, function(item)
+      self:OnTabItemClicked(item)
+    end)
   end
   local tabInfoPool = self:GetUIComponent("UISelectObjectPath", "tabInfo")
   self.tabInfo = tabInfoPool:SpawnObject("UIActivityN4CCLevelDetailTabInfo")
-  ;
-  (self.tabInfo):Init(self._context)
+  self.tabInfo:Init(self._context)
   self.txtRecommend = self:GetUIComponent("UILocalizationText", "txtRecommend")
   local elementPool = self:GetUIComponent("UISelectObjectPath", "element")
   self.element = elementPool:SpawnObject("UIActivityN4CCLevelElement")
@@ -62,41 +43,29 @@ UIActivityN4CCLevelDetailController.InitWidget = function(self)
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.CloseWithAni = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN4CCLevelDetailController:CloseWithAni()
   self:Lock("UIActivityN4CCLevelDetailController_Close_Ani")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    (self.animation):Play("uianim_UIActivityN4CCLevelDetailController_out")
+    self.animation:Play("uianim_UIActivityN4CCLevelDetailController_out")
     YIELD(TT, 500)
     self:CloseDialog()
     if self._closeCb then
-      (self._closeCb)()
+      self._closeCb()
     end
     self:UnLock("UIActivityN4CCLevelDetailController_Close_Ani")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.Refresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local easyCfg = (self._levelData)[1]
+function UIActivityN4CCLevelDetailController:Refresh()
+  local easyCfg = self._levelData[1]
   self.easyCfg = easyCfg
-  ;
-  (self.imgBoss):LoadImage(easyCfg.MonsterIcon3)
-  ;
-  (self.txtBossName):SetText((StringTable.Get)(easyCfg.MissionName))
-  ;
-  (self.txtBossName2):SetText((StringTable.Get)(easyCfg.MissionName))
-  ;
-  (self.element):SetData((self.easyCfg).ElementIcon1, (self.easyCfg).ElementIcon2)
+  self.imgBoss:LoadImage(easyCfg.MonsterIcon3)
+  self.txtBossName:SetText(StringTable.Get(easyCfg.MissionName))
+  self.txtBossName2:SetText(StringTable.Get(easyCfg.MissionName))
+  self.element:SetData(self.easyCfg.ElementIcon1, self.easyCfg.ElementIcon2)
   self:_RefreshRed()
   for i = 3, 1, -1 do
-    local tabItem = (self.tabItems)[i]
+    local tabItem = self.tabItems[i]
     if not tabItem:IsLock() then
       self:OnTabItemClicked(tabItem)
       break
@@ -104,94 +73,65 @@ UIActivityN4CCLevelDetailController.Refresh = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController._RefreshRed = function(self)
-  -- function num : 0_5
-  local red = (self._context):CheckTaskRed(self.easyCfg)
-  ;
-  (self.taskRedGo):SetActive(red)
+function UIActivityN4CCLevelDetailController:_RefreshRed()
+  local red = self._context:CheckTaskRed(self.easyCfg)
+  self.taskRedGo:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.RefreshTabInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (self.lastSelectItem):GetCfg()
-  ;
-  (self.tabInfo):SetData(cfg)
+function UIActivityN4CCLevelDetailController:RefreshTabInfo()
+  local cfg = self.lastSelectItem:GetCfg()
+  self.tabInfo:SetData(cfg)
   local level = cfg.RecommendLV
   local awake = cfg.RecommendAwaken
-  ;
-  (self.txtRecommend):SetText((StringTable.Get)("str_crisis_contract_level_detail_recommend", awake, level))
+  self.txtRecommend:SetText(StringTable.Get("str_crisis_contract_level_detail_recommend", awake, level))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.OnTabItemClicked = function(self, tabItem)
-  -- function num : 0_7
+function UIActivityN4CCLevelDetailController:OnTabItemClicked(tabItem)
   if self.lastSelectItem == tabItem then
-    return 
+    return
   end
   if self.lastSelectItem then
-    (self.lastSelectItem):SetSelect(false)
+    self.lastSelectItem:SetSelect(false)
   end
   self.lastSelectItem = tabItem
-  ;
-  (self.lastSelectItem):SetSelect(true)
+  self.lastSelectItem:SetSelect(true)
   self:RefreshTabInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.BtnDialogBackOnClick = function(self, go)
-  -- function num : 0_8
-  (self.conformGo):SetActive(false)
+function UIActivityN4CCLevelDetailController:BtnDialogBackOnClick(go)
+  self.conformGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.BtnDialogContinueOnClick = function(self, go)
-  -- function num : 0_9
-  (self.conformGo):SetActive(false)
+function UIActivityN4CCLevelDetailController:BtnDialogContinueOnClick(go)
+  self.conformGo:SetActive(false)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self
     self:_StartFight(TT)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.BtnFightOnClick = function(self, go)
-  -- function num : 0_10
+function UIActivityN4CCLevelDetailController:BtnFightOnClick(go)
   if self.lastSelectItem == nil then
-    return 
+    return
   end
-  local cfg = (self.lastSelectItem):GetCfg()
+  local cfg = self.lastSelectItem:GetCfg()
   local missionId = cfg.CampaignMissionId
-  local affix = (self._context):GetAffix(missionId)
-  if not affix or #affix == 0 or #affix < cfg.AffixNum then
-    (self.conformGo):SetActive(true)
-    return 
+  local affix = self._context:GetAffix(missionId)
+  if not affix or #affix == 0 or cfg.AffixNum > #affix then
+    self.conformGo:SetActive(true)
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self
     self:_StartFight(TT)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController._StartFight = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (self.lastSelectItem):GetCfg()
+function UIActivityN4CCLevelDetailController:_StartFight(TT)
+  local cfg = self.lastSelectItem:GetCfg()
   local missionId = cfg.CampaignMissionId
-  local affix = (self._context):GetAffix(missionId)
+  local affix = self._context:GetAffix(missionId)
   local levelIndex = cfg.LeveIndex
-  local component = (self._context):GetComponent()
-  local componentInfo = (self._context):GetComponentInfo()
+  local component = self._context:GetComponent()
+  local componentInfo = self._context:GetComponentInfo()
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   if not affix or #affix <= 0 then
@@ -200,10 +140,10 @@ UIActivityN4CCLevelDetailController._StartFight = function(self, TT)
     res = component:HandleSelectAffix(TT, res, missionId, affix)
   end
   if res:GetSucc() then
-    local missiontModule = (GameGlobal.GetModule)(MissionModule)
+    local missiontModule = GameGlobal.GetModule(MissionModule)
     local ctx = missiontModule:TeamCtx()
     local formationList = componentInfo.formation_list
-    local team = nil
+    local team
     for i = 1, #formationList do
       local formation = formationList[i]
       if formation.id == levelIndex then
@@ -211,95 +151,75 @@ UIActivityN4CCLevelDetailController._StartFight = function(self, TT)
         break
       end
     end
-    do
-      ctx:InitN21CCTeams(team, levelIndex)
-      local level = cfg.RecommendLV
-      local awake = cfg.RecommendAwaken
-      do
-        local param = {missionId, component:GetCampaignMissionComponentId(), component:GetCampaignMissionParamKeyMap(), 
-{true, level, awake}
-}
-        ctx:Init(TeamOpenerType.N21CC, param)
-        ctx:ShowDialogUITeams(false)
-        local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-        campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id)
-      end
-    end
+    ctx:InitN21CCTeams(team, levelIndex)
+    local level = cfg.RecommendLV
+    local awake = cfg.RecommendAwaken
+    local param = {
+      missionId,
+      component:GetCampaignMissionComponentId(),
+      component:GetCampaignMissionParamKeyMap(),
+      {
+        true,
+        level,
+        awake
+      }
+    }
+    ctx:Init(TeamOpenerType.N21CC, param)
+    ctx:ShowDialogUITeams(false)
+  else
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.BtnTaskOnClick = function(self, go)
-  -- function num : 0_12
-  self:ShowDialog("UIN4CCTaskController", self._context, (self.easyCfg).Quest, function()
-    -- function num : 0_12_0 , upvalues : self
+function UIActivityN4CCLevelDetailController:BtnTaskOnClick(go)
+  self:ShowDialog("UIN4CCTaskController", self._context, self.easyCfg.Quest, function()
     self:_RefreshRed()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.BtnRestrainOnClick = function(self, go)
-  -- function num : 0_13
+function UIActivityN4CCLevelDetailController:BtnRestrainOnClick(go)
   self:ShowDialog("UIRestrainTips")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController.BtnBossDetailOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN4CCLevelDetailController:BtnBossDetailOnClick(go)
   if self.lastSelectItem == nil then
-    return 
+    return
   end
-  local cfg = (self.lastSelectItem):GetCfg()
+  local cfg = self.lastSelectItem:GetCfg()
   local missionId = cfg.CampaignMissionId
-  local cfgs = (Cfg.cfg_campaign_mission)({CampaignMissionId = missionId})
-  if cfgs and #cfgs > 0 then
+  local cfgs = Cfg.cfg_campaign_mission({CampaignMissionId = missionId})
+  if cfgs and 0 < #cfgs then
     local ids = {}
     local misionCfg = cfgs[1]
     local fightID = misionCfg.FightLevel
-    local monsterIDs = (UICommonHelper:GetInstance()):GetOptimalEnemys(fightID)
+    local monsterIDs = UICommonHelper:GetInstance():GetOptimalEnemys(fightID)
     if monsterIDs == nil or #monsterIDs == 0 then
-      (Log.fatal)("UIActivityN4CCLevelDetailController [Enemy] 怪物id列表为空")
+      Log.fatal("UIActivityN4CCLevelDetailController [Enemy] 怪物id列表为空")
     else
-      local count = (table.count)(monsterIDs)
+      local count = table.count(monsterIDs)
       for i = 1, count do
-        (table.insert)(ids, monsterIDs[i])
+        table.insert(ids, monsterIDs[i])
       end
     end
-    do
-      if #ids <= 0 then
-        (Log.debug)("UIActivityN4CCLevelDetailController monster list is empty")
-        return 
-      end
-      self:ShowDialog("UIEnemyTip", ids, 1)
+    if #ids <= 0 then
+      Log.debug("UIActivityN4CCLevelDetailController monster list is empty")
+      return
     end
+    self:ShowDialog("UIEnemyTip", ids, 1)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController._AttachEvents = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN4CCLevelDetailController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController._DetachEvents = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityN4CCLevelDetailController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailController._CheckActivityClose = function(self, id)
-  -- function num : 0_17
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityN4CCLevelDetailController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:CloseDialog()
   end
 end
-
-

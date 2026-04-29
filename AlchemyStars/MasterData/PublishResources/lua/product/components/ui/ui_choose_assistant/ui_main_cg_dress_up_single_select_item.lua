@@ -1,94 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_main_cg_dress_up_single_select_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainCgDressUpSingleSelectItem", UICustomWidget)
 UIMainCgDressUpSingleSelectItem = UIMainCgDressUpSingleSelectItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainCgDressUpSingleSelectItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIMainCgDressUpSingleSelectItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainCgDressUpSingleSelectItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIMainCgDressUpSingleSelectItem:InitWidget()
   self.selectBG = self:GetUIComponent("Image", "SelectBG")
   self.title = self:GetUIComponent("UILocalizationText", "Title")
   self.openToggle = self:GetUIComponent("Toggle", "OpenToggle")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainCgDressUpSingleSelectItem.SetData = function(self, index, curSelectIndex, isopen, selectDressCb, toggleCb)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.title):SetText((StringTable.Get)("str_assistant_main_cg_dressup_single_name_" .. index))
+function UIMainCgDressUpSingleSelectItem:SetData(index, curSelectIndex, isopen, selectDressCb, toggleCb)
+  self.title:SetText(StringTable.Get("str_assistant_main_cg_dressup_single_name_" .. index))
   self.index = index
   self.selectDressCb = selectDressCb
   self.toggleCb = toggleCb
   if curSelectIndex ~= index then
-    ((self.selectBG).gameObject):SetActive(false)
+    self.selectBG.gameObject:SetActive(false)
   else
-    ;
-    ((self.selectBG).gameObject):SetActive(true)
+    self.selectBG.gameObject:SetActive(true)
   end
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R6 in 'UnsetPending'
-
   if isopen == 1 then
-    (self.openToggle).isOn = true
+    self.openToggle.isOn = true
   else
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.openToggle).isOn = false
+    self.openToggle.isOn = false
   end
-  ;
-  ((self.openToggle).onValueChanged):AddListener(function(value)
-    -- function num : 0_2_0 , upvalues : self
+  self.openToggle.onValueChanged:AddListener(function(value)
     if self.toggleCb then
-      (self.toggleCb)(self.index, value)
+      self.toggleCb(self.index, value)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainCgDressUpSingleSelectItem.RefreshSelect = function(self, selectIndex)
-  -- function num : 0_3
+function UIMainCgDressUpSingleSelectItem:RefreshSelect(selectIndex)
   if selectIndex == self.index then
-    ((self.selectBG).gameObject):SetActive(true)
+    self.selectBG.gameObject:SetActive(true)
   else
-    ;
-    ((self.selectBG).gameObject):SetActive(false)
+    self.selectBG.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainCgDressUpSingleSelectItem.SetToggleOpen = function(self, isopen)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.openToggle).isOn = isopen
+function UIMainCgDressUpSingleSelectItem:SetToggleOpen(isopen)
+  self.openToggle.isOn = isopen
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainCgDressUpSingleSelectItem.selectTogOnClick = function(self, go)
-  -- function num : 0_5
+function UIMainCgDressUpSingleSelectItem:selectTogOnClick(go)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainCgDressUpSingleSelectItem.SelectBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIMainCgDressUpSingleSelectItem:SelectBtnOnClick(go)
   if self.selectDressCb then
-    (self.selectDressCb)(self.index)
+    self.selectDressCb(self.index)
   end
 end
-
-

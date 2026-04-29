@@ -1,22 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/level/ui_activity_n33_level_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33LevelDetail", UIController)
 UIActivityN33LevelDetail = UIActivityN33LevelDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33LevelDetail.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN33LevelDetail:OnShow(uiParams)
   self:AttachEvent(GameEventType.UIActivityN33LevelRefresh, self.RefreshHandle)
   self._data = uiParams[1]
   self._lineComponent = uiParams[2]
   self._lineComponentInfo = uiParams[3]
   self._levelController = uiParams[4]
   self._componentId = uiParams[5]
-  ;
-  (self._levelController):FocusBuild((self._data):BuildId())
+  self._levelController:FocusBuild(self._data:BuildId())
   self._normal = self:GetGameObject("NormalBG")
   self._normalNameLabel = self:GetUIComponent("UILocalizationText", "NormalName")
   self._normalDesLabel = self:GetUIComponent("UILocalizationText", "NormalDes")
@@ -33,149 +25,103 @@ UIActivityN33LevelDetail.OnShow = function(self, uiParams)
   self._spine = self:GetUIComponent("SpineLoader", "Spine")
   self._bossStarLabel = self:GetUIComponent("UILocalizationText", "BossStar")
   self._bossNameLabel = self:GetUIComponent("UILocalizationText", "BossName")
-  local levelType = (self._levelController):GetLevelType()
+  local levelType = self._levelController:GetLevelType()
   if levelType == 1 then
-    (self._normal):SetActive(true)
-    ;
-    (self._normal1):SetActive(true)
-    ;
-    (self._hard):SetActive(false)
-    ;
-    (self._hard1):SetActive(false)
-    ;
-    (self._normalNameLabel):SetText((self._data):GetName())
-    ;
-    (self._normalDesLabel):SetText((self._data):GetDes())
+    self._normal:SetActive(true)
+    self._normal1:SetActive(true)
+    self._hard:SetActive(false)
+    self._hard1:SetActive(false)
+    self._normalNameLabel:SetText(self._data:GetName())
+    self._normalDesLabel:SetText(self._data:GetDes())
   else
-    ;
-    (self._normal):SetActive(false)
-    ;
-    (self._normal1):SetActive(false)
-    ;
-    (self._hard):SetActive(true)
-    ;
-    (self._hard1):SetActive(true)
-    ;
-    (self._hardNameLabel):SetText((self._data):GetName())
-    ;
-    (self._hardDesLabel):SetText((self._data):GetDes())
+    self._normal:SetActive(false)
+    self._normal1:SetActive(false)
+    self._hard:SetActive(true)
+    self._hard1:SetActive(true)
+    self._hardNameLabel:SetText(self._data:GetName())
+    self._hardDesLabel:SetText(self._data:GetDes())
   end
   self._loader = self:GetUIComponent("UISelectObjectPath", "Levels")
   self._scrollRect = self:GetUIComponent("ScrollRect", "Scroll View")
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN33LevelDetail:OnHide()
   self:DetachEvent(GameEventType.UIActivityN33LevelRefresh, self.RefreshHandle)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.RefreshBuildInfo = function(self)
-  -- function num : 0_2
-  (self._iconLoader):LoadImage((self._data):GetSelectIcon())
-  ;
-  (self._buildNameLabel):SetText((self._data):GetName())
-  ;
-  (self._buildStarLabel):SetText((self._data):GetStar() .. "/" .. (self._data):TotalStar())
-  ;
-  (self._build):SetActive(true)
-  ;
-  (self._boss):SetActive(false)
-  local currentLevel = (self._data):GetCurrentLevel()
+function UIActivityN33LevelDetail:RefreshBuildInfo()
+  self._iconLoader:LoadImage(self._data:GetSelectIcon())
+  self._buildNameLabel:SetText(self._data:GetName())
+  self._buildStarLabel:SetText(self._data:GetStar() .. "/" .. self._data:TotalStar())
+  self._build:SetActive(true)
+  self._boss:SetActive(false)
+  local currentLevel = self._data:GetCurrentLevel()
   if currentLevel then
     local boss = currentLevel:GetBoss()
     if boss then
-      (self._boss):SetActive(true)
-      ;
-      (self._build):SetActive(false)
-      ;
-      (self._bossNameLabel):SetText(boss:GetName())
-      ;
-      (self._bossStarLabel):SetText((self._data):GetStar() .. "/" .. (self._data):TotalStar())
-      ;
-      (self._spine):LoadSpine(boss:GetSpine())
+      self._boss:SetActive(true)
+      self._build:SetActive(false)
+      self._bossNameLabel:SetText(boss:GetName())
+      self._bossStarLabel:SetText(self._data:GetStar() .. "/" .. self._data:TotalStar())
+      self._spine:LoadSpine(boss:GetSpine())
       self:PlaySpine(boss:GetIdleAnim())
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.PlaySpine = function(self, animName)
-  -- function num : 0_3
-  self._spineSke = (self._spine).CurrentSkeleton
+function UIActivityN33LevelDetail:PlaySpine(animName)
+  self._spineSke = self._spine.CurrentSkeleton
   if not self._spineSke then
-    self._spineSke = (self._spine).CurrentMultiSkeleton
+    self._spineSke = self._spine.CurrentMultiSkeleton
   end
   if self._spineSke then
-    ((self._spineSke).AnimationState):SetAnimation(0, animName, true)
+    self._spineSke.AnimationState:SetAnimation(0, animName, true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.RefreshHandle = function(self)
-  -- function num : 0_4
-  local builds = (self._levelController):GetCurrentBuildDatas()
+function UIActivityN33LevelDetail:RefreshHandle()
+  local builds = self._levelController:GetCurrentBuildDatas()
   for i = 1, #builds do
     local build = builds[i]
-    if build:BuildId() == (self._data):BuildId() then
+    if build:BuildId() == self._data:BuildId() then
       self._data = build
       break
     end
   end
-  do
-    self:Refresh()
-  end
+  self:Refresh()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.Refresh = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local missions = (self._data):GetMissions()
-  ;
-  (self._loader):SpawnObjects("UIActivityN33LevelListItem", #missions)
-  local levels = (self._loader):GetAllSpawnList()
+function UIActivityN33LevelDetail:Refresh()
+  local missions = self._data:GetMissions()
+  self._loader:SpawnObjects("UIActivityN33LevelListItem", #missions)
+  local levels = self._loader:GetAllSpawnList()
   for i = 1, #levels do
-    (levels[i]):SetData((self._data):GetCurrentLevel(), missions[i], function(data)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    if not (self._levelController):CheckButtonStatus(self._componentId) then
-      return 
-    end
-    self:EnterLevel(data)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    UIActivityN33LevelController.FromLevelList = false
-    ;
-    (self._levelController):CacheCurrentLevelId()
-  end
-)
+    levels[i]:SetData(self._data:GetCurrentLevel(), missions[i], function(data)
+      if not self._levelController:CheckButtonStatus(self._componentId) then
+        return
+      end
+      self:EnterLevel(data)
+      UIActivityN33LevelController.FromLevelList = false
+      self._levelController:CacheCurrentLevelId()
+    end)
   end
   self:MoveToLast()
   self:RefreshBuildInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.MoveToLast = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local missions = (self._data):GetMissions()
+function UIActivityN33LevelDetail:MoveToLast()
+  local missions = self._data:GetMissions()
   local height = 119
   local space = 5
   local totalHeight = #missions * (height + space) + 7
-  if #missions >= 1 then
+  if 1 <= #missions then
     totalHeight = totalHeight - space
   end
   local go = self:GetGameObject("Scroll View")
-  ;
-  (UIHelper.RefreshLayout)(go:GetComponent("RectTransform"))
-  local viewport = (self._scrollRect).viewport
-  local heightDelta = totalHeight - (viewport.rect).height
+  UIHelper.RefreshLayout(go:GetComponent("RectTransform"))
+  local viewport = self._scrollRect.viewport
+  local heightDelta = totalHeight - viewport.rect.height
   local lastIndex = 0
   for i = 1, #missions do
     local mission = missions[i]
@@ -183,148 +129,104 @@ UIActivityN33LevelDetail.MoveToLast = function(self)
       lastIndex = i
     end
   end
-  local currentHeight = lastIndex * (height + space) - (viewport.rect).height + 7
+  local currentHeight = lastIndex * (height + space) - viewport.rect.height + 7
   local percent = currentHeight / heightDelta
   if percent < 0 then
     percent = 0
   end
-  if percent > 1 then
+  if 1 < percent then
     percent = 1
   end
   percent = 1 - percent
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._scrollRect).verticalNormalizedPosition = percent
+  self._scrollRect.verticalNormalizedPosition = percent
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.EnterLevel = function(self, data)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN33LevelDetail:EnterLevel(data)
   if data:GetLevelType() == DiscoveryStageType.Plot then
-    local missionCfg = (Cfg.cfg_campaign_mission)[data:GetMissionId()]
-    local titleId = (StringTable.Get)(missionCfg.Title)
-    local titleName = (StringTable.Get)(missionCfg.Name)
-    local missionModule = (GameGlobal.GetModule)(MissionModule)
+    local missionCfg = Cfg.cfg_campaign_mission[data:GetMissionId()]
+    local titleId = StringTable.Get(missionCfg.Title)
+    local titleName = StringTable.Get(missionCfg.Name)
+    local missionModule = GameGlobal.GetModule(MissionModule)
     local storyId = missionModule:GetStoryByStageIdStoryType(data:GetMissionId(), StoryTriggerType.Node)
     if not storyId then
-      (Log.exception)("配置错误,找不到剧情,关卡id:", data:GetMissionId())
-      return 
+      Log.exception("配置错误,找不到剧情,关卡id:", data:GetMissionId())
+      return
     end
     self:ShowDialog("UIActivityPlotEnter", titleId, titleName, storyId, function()
-    -- function num : 0_7_0 , upvalues : self, data
-    self:PlotEndCallback(data:GetMissionId())
+      self:PlotEndCallback(data:GetMissionId())
+    end)
+    return
   end
-)
-    return 
-  end
-  do
-    local missionCfg = (Cfg.cfg_campaign_mission)[data:GetMissionId()]
-    local autoFightShow = self:CheckSerialAutoFightShow(missionCfg.Type, data:GetMissionId())
-    self:ShowDialog("UIActivityLevelStageNew", data:GetMissionId(), ((self._lineComponentInfo).m_pass_mission_info)[data:GetMissionId()], self._lineComponent, autoFightShow, nil, nil, nil, nil, nil, false, true)
-  end
+  local missionCfg = Cfg.cfg_campaign_mission[data:GetMissionId()]
+  local autoFightShow = self:CheckSerialAutoFightShow(missionCfg.Type, data:GetMissionId())
+  self:ShowDialog("UIActivityLevelStageNew", data:GetMissionId(), self._lineComponentInfo.m_pass_mission_info[data:GetMissionId()], self._lineComponent, autoFightShow, nil, nil, nil, nil, nil, false, true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.CheckSerialAutoFightShow = function(self, stageType, stageId)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN33LevelDetail:CheckSerialAutoFightShow(stageType, stageId)
   local autoFightShow = false
   if stageType == DiscoveryStageType.Plot then
     autoFightShow = false
   else
-    local missionCfg = (Cfg.cfg_campaign_mission)[stageId]
+    local missionCfg = Cfg.cfg_campaign_mission[stageId]
     if missionCfg then
       local enableParam = missionCfg.EnableSerialAutoFight
       if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_DISABLE then
         autoFightShow = false
-      else
-        if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
-          autoFightShow = true
-        end
+      elseif enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE or enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
+        autoFightShow = true
       end
     end
   end
-  do
-    return autoFightShow
-  end
+  return autoFightShow
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.PlotEndCallback = function(self, stageId)
-  -- function num : 0_9 , upvalues : _ENV
-  local isActive = (self._lineComponent):IsPassCamMissionID(stageId)
+function UIActivityN33LevelDetail:PlotEndCallback(stageId)
+  local isActive = self._lineComponent:IsPassCamMissionID(stageId)
   if isActive then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, stageId, _ENV
-    (self._lineComponent):SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    self._lineComponent:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
-    local award = (self._lineComponent):HandleCompleteStoryMission(TT, res, stageId)
+    local award = self._lineComponent:HandleCompleteStoryMission(TT, res, stageId)
     if not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
+      local campModule = GameGlobal.GetModule(CampaignModule)
     else
-      do
-        ;
-        (self._levelController):LoadData(TT)
-        if (table.count)(award) ~= 0 then
-          self:ShowDialog("UIGetItemController", award, function()
-      -- function num : 0_9_0_0 , upvalues : self
-      self:PlayPlotComplete()
-    end
-)
-        else
+      self._levelController:LoadData(TT)
+      if table.count(award) ~= 0 then
+        self:ShowDialog("UIGetItemController", award, function()
           self:PlayPlotComplete()
-        end
+        end)
+      else
+        self:PlayPlotComplete()
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.PlayPlotComplete = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIActivityN33LevelRefresh)
+function UIActivityN33LevelDetail:PlayPlotComplete()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIActivityN33LevelRefresh)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.ClosBtnOnClick = function(self)
-  -- function num : 0_11
-  if not (self._levelController):CheckButtonStatus(self._componentId) then
-    return 
+function UIActivityN33LevelDetail:ClosBtnOnClick()
+  if not self._levelController:CheckButtonStatus(self._componentId) then
+    return
   end
-  ;
-  (self._levelController):SetBtnsStatus(true)
-  ;
-  (self._levelController):CancelFocusBuild()
+  self._levelController:SetBtnsStatus(true)
+  self._levelController:CancelFocusBuild()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.BtnLevelsOnClick = function(self)
-  -- function num : 0_12
-  if not (self._levelController):CheckButtonStatus(self._componentId) then
+function UIActivityN33LevelDetail:BtnLevelsOnClick()
+  if not self._levelController:CheckButtonStatus(self._componentId) then
     self:CloseDialog()
-    return 
+    return
   end
-  ;
-  (self._levelController):CancelFocusBuild()
+  self._levelController:CancelFocusBuild()
   self:CloseDialog()
   self:ShowDialog("UIActivityN33LevelList", self._levelController)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelDetail.MaskOnClick = function(self)
-  -- function num : 0_13
+function UIActivityN33LevelDetail:MaskOnClick()
   self:ClosBtnOnClick()
 end
-
-

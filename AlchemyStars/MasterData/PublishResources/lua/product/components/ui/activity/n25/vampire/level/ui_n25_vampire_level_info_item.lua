@@ -1,49 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/level/ui_n25_vampire_level_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireLevelInfoItem", UICustomWidget)
 UIN25VampireLevelInfoItem = UIN25VampireLevelInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireLevelInfoItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireLevelInfoItem:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireLevelInfoItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25VampireLevelInfoItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIN25VampireTaskAndLevel.spriteatlas", LoadType.SpriteAtlas)
   self.iconimg = self:GetUIComponent("Image", "icon")
   self.contenttxt = self:GetUIComponent("UILocalizationText", "contenttxt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireLevelInfoItem.OnHide = function(self)
-  -- function num : 0_2
+function UIN25VampireLevelInfoItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireLevelInfoItem.Flush = function(self, data, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25VampireLevelInfoItem:Flush(data, callback)
   self.callback = callback
   self.data = data
-  ;
-  (self.contenttxt):SetText((StringTable.Get)((self.data).MissionDec))
+  self.contenttxt:SetText(StringTable.Get(self.data.MissionDec))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireLevelInfoItem.IconOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25VampireLevelInfoItem:IconOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
-
-

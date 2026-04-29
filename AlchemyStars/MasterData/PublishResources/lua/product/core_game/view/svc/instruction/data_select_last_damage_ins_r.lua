@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_last_damage_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectLastDamageInstruction", BaseInstruction)
 DataSelectLastDamageInstruction = DataSelectLastDamageInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectLastDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function DataSelectLastDamageInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectLastDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectLastDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if damageResultArray == nil then
-    (Log.fatal)("[ins] caster has no damage")
+    Log.fatal("[ins] caster has no damage")
     return InstructionConst.PhaseEnd
   end
   local damageIndex = #damageResultArray
@@ -27,11 +17,9 @@ DataSelectLastDamageInstruction.DoInstruction = function(self, TT, casterEntity,
   if damageResult == nil then
     phaseContext:SetCurDamageResultIndex(-1)
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   local targetEntityID = damageResult:GetTargetID()
   phaseContext:SetCurDamageResultIndex(damageIndex)
   phaseContext:SetCurTargetEntityID(targetEntityID)
 end
-
-

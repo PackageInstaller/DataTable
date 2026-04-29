@@ -1,46 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/h3dmobile/group_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GroupToken", Object)
 GroupToken = GroupToken
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GroupToken.Constructor = function(self)
-  -- function num : 0_0
+function GroupToken:Constructor()
   self.group_type = 0
   self.server_id = 0
   self.group_id = 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
 GroupToken._proto = {
-[1] = {"group_type", "short"}
-, 
-[2] = {"server_id", "short"}
-, 
-[3] = {"group_id", "int64"}
+  [1] = {"group_type", "short"},
+  [2] = {"server_id", "short"},
+  [3] = {"group_id", "int64"}
 }
 _class("GroupAuthInfo", Object)
 GroupAuthInfo = GroupAuthInfo
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-GroupAuthInfo.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function GroupAuthInfo:Constructor()
   self.player_id = 0
   self.token = GroupToken:New()
   self.vkey = 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
 GroupAuthInfo._proto = {
-[1] = {"player_id", "int64"}
-, 
-[2] = {"token", "GroupToken"}
-, 
-[3] = {"vkey", "int"}
+  [1] = {"player_id", "int64"},
+  [2] = {"token", "GroupToken"},
+  [3] = {"vkey", "int"}
 }
-

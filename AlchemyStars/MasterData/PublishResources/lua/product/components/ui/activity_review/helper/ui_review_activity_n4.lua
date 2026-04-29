@@ -1,93 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/helper/ui_review_activity_n4.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewActivityN4", UIReviewActivityBase)
 UIReviewActivityN4 = UIReviewActivityN4
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewActivityN4.Constructor = function(self, id, sample)
-  -- function num : 0_0
+function UIReviewActivityN4:Constructor(id, sample)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN4.AssetPackageID = function(self)
-  -- function num : 0_1
+function UIReviewActivityN4:AssetPackageID()
   return 4
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN4.HasRedPoint = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIReviewActivityN4:HasRedPoint()
   if self:IsUnlock() then
-    local sampleInfo = (self._campObj):GetSampleInfo()
-    local key = (sampleInfo.m_extend_info)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_COMPLETE_COND]
+    local sampleInfo = self._campObj:GetSampleInfo()
+    local key = sampleInfo.m_extend_info[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_COMPLETE_COND]
     if key ~= 1 then
       return false
     end
     return sampleInfo:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN4.ActivityOnOpen = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(self.OpenActivity, self)
+function UIReviewActivityN4:ActivityOnOpen()
+  TaskManager:GetInstance():StartTask(self.OpenActivity, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN4.OpenActivity = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UIReviewActivityN4_OpenActivity")
+function UIReviewActivityN4:OpenActivity(TT)
+  GameGlobal.UIStateManager():Lock("UIReviewActivityN4_OpenActivity")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   local campaign = UIActivityCampaign:New()
   campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N4, ECampaignReviewN4ComponentID.ECAMPAIGN_REVIEW_ReviewN4_STORY)
   if res and not res:GetSucc() then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIReviewUnlockTip", self, {(StringTable.Get)("str_summer_review_n4_open_tips"), "100%"})
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UIReviewActivityN4_OpenActivity")
-    return 
+    GameGlobal.UIStateManager():ShowDialog("UIReviewUnlockTip", self, {
+      StringTable.Get("str_summer_review_n4_open_tips"),
+      "100%"
+    })
+    GameGlobal.UIStateManager():UnLock("UIReviewActivityN4_OpenActivity")
+    return
   end
   campaign:ReLoadCampaignInfo_Force(TT, res)
   local sample = campaign:GetSample()
-  local key = (sample.m_extend_info)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_COMPLETE_COND]
+  local key = sample.m_extend_info[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_COMPLETE_COND]
   if key ~= 1 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIReviewUnlockTip", self, {(StringTable.Get)("str_summer_review_n4_open_tips"), "100%"})
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UIReviewActivityN4_OpenActivity")
-    return 
+    GameGlobal.UIStateManager():ShowDialog("UIReviewUnlockTip", self, {
+      StringTable.Get("str_summer_review_n4_open_tips"),
+      "100%"
+    })
+    GameGlobal.UIStateManager():UnLock("UIReviewActivityN4_OpenActivity")
+    return
   end
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIActivityReview")
+  local controller = GameGlobal.UIStateManager():GetController("UIActivityReview")
   local rt = controller:GetShotImage()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, rt, cache_rt
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UISummer2MainControllerReview, cache_rt)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UIReviewActivityN4_OpenActivity")
-  end
-)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UISummer2MainControllerReview, cache_rt)
+    GameGlobal.UIStateManager():UnLock("UIReviewActivityN4_OpenActivity")
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN4.GetBattleExitParam = function(self, comID, missionCreateInfo, isWin, battleresultRt)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.error)("UIReviewActivityN4:GetBattleExitParam")
+function UIReviewActivityN4:GetBattleExitParam(comID, missionCreateInfo, isWin, battleresultRt)
+  Log.error("UIReviewActivityN4:GetBattleExitParam")
 end
-
-

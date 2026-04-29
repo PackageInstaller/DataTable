@@ -1,115 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_buff_layer_most_and_highest_hp_and_nearest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_BuffLayerMostAndHighestHPAndNearest", SkillScopeCalculator_Base)
 SkillScopeCalculator_BuffLayerMostAndHighestHPAndNearest = SkillScopeCalculator_BuffLayerMostAndHighestHPAndNearest
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_BuffLayerMostAndHighestHPAndNearest.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_BuffLayerMostAndHighestHPAndNearest:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local targetBuffEffect = scopeParam[1]
-  local world = ((self._hub)._gridFilter)._world
+  local world = self._hub._gridFilter._world
   local targetEntityList = {}
   local es = {}
-  local monsters = world:GetGroupEntities((world.BW_WEMatchers).AliveMonster)
-  do
-    for _,monster in ipairs(monsters) do
-      local buffComponent = monster:BuffComponent()
-      if buffComponent and buffComponent:HasBuffEffect(targetBuffEffect) then
-        (table.insert)(es, monster)
-      end
+  local monsters = world:GetGroupEntities(world.BW_WEMatchers.AliveMonster)
+  for _, monster in ipairs(monsters) do
+    local buffComponent = monster:BuffComponent()
+    if buffComponent and buffComponent:HasBuffEffect(targetBuffEffect) then
+      table.insert(es, monster)
     end
   end
   local utilScopeSvc = world:GetService("UtilScopeCalc")
-  if (table.count)(es) > 0 then
+  if table.count(es) > 0 then
     local buffLogicService = world:GetService("BuffLogic")
-    ;
-    (table.sort)(es, function(a, b)
-    -- function num : 0_0_0 , upvalues : buffLogicService, targetBuffEffect
-    local buffLayerA = buffLogicService:GetBuffLayer(a, targetBuffEffect)
-    local buffLayerB = buffLogicService:GetBuffLayer(b, targetBuffEffect)
-    if buffLayerA == buffLayerB then
-      local hpA = (a:Attributes()):GetCurrentHP()
-      local hpB = (b:Attributes()):GetCurrentHP()
-      return hpB < hpA
-    end
-    do return buffLayerB < buffLayerA end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
-)
+    table.sort(es, function(a, b)
+      local buffLayerA = buffLogicService:GetBuffLayer(a, targetBuffEffect)
+      local buffLayerB = buffLogicService:GetBuffLayer(b, targetBuffEffect)
+      if buffLayerA == buffLayerB then
+        local hpA = a:Attributes():GetCurrentHP()
+        local hpB = b:Attributes():GetCurrentHP()
+        return hpA > hpB
+      end
+      return buffLayerA > buffLayerB
+    end)
     local mostBuffLayer = 0
     local randomEntityList = {}
-    for i,e in ipairs(es) do
+    for i, e in ipairs(es) do
       local curBuffLayer = buffLogicService:GetBuffLayer(e, targetBuffEffect)
-      -- DECOMPILER ERROR at PC61: Unhandled construct in 'MakeBoolean' P1
-
-      if i == 1 and curBuffLayer ~= 0 then
-        do
-          mostBuffLayer = curBuffLayer
-          if mostBuffLayer == curBuffLayer then
-            (table.insert)(targetEntityList, e)
+      if i == 1 then
+        if curBuffLayer == 0 then
+          break
+        end
+        mostBuffLayer = curBuffLayer
+      end
+      if mostBuffLayer == curBuffLayer then
+        table.insert(targetEntityList, e)
+      end
+    end
+    if table.count(targetEntityList) == 1 then
+    else
+      do
+        local mostHP = 0
+        for i, e in ipairs(es) do
+          local curHP = e:Attributes():GetCurrentHP()
+          if i == 1 then
+            mostHP = curHP
           end
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_STMT
-
+          if mostHP == curHP then
+            table.insert(randomEntityList, e)
+          end
         end
+        table.sort(randomEntityList, function(a, b)
+          local distanceA = Vector2.Distance(a:GetGridPosition(), centerPos)
+          local distanceB = Vector2.Distance(b:GetGridPosition(), centerPos)
+          return distanceA < distanceB
+        end)
+        targetEntityList = {}
+        table.insert(targetEntityList, randomEntityList[1])
       end
     end
   end
-  if (table.count)(targetEntityList) == 1 then
-    do
-      local mostHP = 0
-      for i,e in ipairs(es) do
-        local curHP = (e:Attributes()):GetCurrentHP()
-        if i == 1 then
-          mostHP = curHP
-        end
-        if mostHP == curHP then
-          (table.insert)(randomEntityList, e)
-        end
-      end
-      ;
-      (table.sort)(randomEntityList, function(a, b)
-    -- function num : 0_0_1 , upvalues : _ENV, centerPos
-    local distanceA = (Vector2.Distance)(a:GetGridPosition(), centerPos)
-    local distanceB = (Vector2.Distance)(b:GetGridPosition(), centerPos)
-    do return distanceA < distanceB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if table.count(targetEntityList) == 0 then
+    table.sort(monsters, function(a, b)
+      local distanceA = Vector2.Distance(a:GetGridPosition(), centerPos)
+      local distanceB = Vector2.Distance(b:GetGridPosition(), centerPos)
+      return distanceA < distanceB
+    end)
+    table.insert(targetEntityList, monsters[1])
   end
-)
-      targetEntityList = {}
-      ;
-      (table.insert)(targetEntityList, randomEntityList[1])
-      if (table.count)(targetEntityList) == 0 then
-        (table.sort)(monsters, function(a, b)
-    -- function num : 0_0_2 , upvalues : _ENV, centerPos
-    local distanceA = (Vector2.Distance)(a:GetGridPosition(), centerPos)
-    local distanceB = (Vector2.Distance)(b:GetGridPosition(), centerPos)
-    do return distanceA < distanceB end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-        ;
-        (table.insert)(targetEntityList, monsters[1])
-      end
-      local scopeList = {}
-      for _,targetEntity in ipairs(targetEntityList) do
-        local targetGridPos = (targetEntity:GridLocation()):GetGridPos()
-        local targetBodyArea = (targetEntity:BodyArea()):GetArea()
-        for i,area in ipairs(targetBodyArea) do
-          local posWork = targetGridPos + area
-          ;
-          (table.insert)(scopeList, posWork)
-        end
-      end
-      local result = SkillScopeResult:New(SkillScopeType.BuffLayerMostAndHighestHPAndNearest, casterPos, scopeList, scopeList)
-      return result
+  local scopeList = {}
+  for _, targetEntity in ipairs(targetEntityList) do
+    local targetGridPos = targetEntity:GridLocation():GetGridPos()
+    local targetBodyArea = targetEntity:BodyArea():GetArea()
+    for i, area in ipairs(targetBodyArea) do
+      local posWork = targetGridPos + area
+      table.insert(scopeList, posWork)
     end
   end
+  local result = SkillScopeResult:New(SkillScopeType.BuffLayerMostAndHighestHPAndNearest, casterPos, scopeList, scopeList)
+  return result
 end
-
-

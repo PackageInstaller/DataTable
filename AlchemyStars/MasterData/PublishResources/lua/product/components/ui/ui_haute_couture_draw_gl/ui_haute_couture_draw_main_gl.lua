@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_gl/ui_haute_couture_draw_main_gl.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawMainGL", UIHauteCoutureDrawBase)
 UIHauteCoutureDrawMainGL = UIHauteCoutureDrawMainGL
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawMainGL.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawMainGL:Constructor()
   self._allPrizes = {}
   self._EnterAniKey = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawMainGL:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
   self:AttachEvent(GameEventType.ItemCountChanged, self.ItemCountChanged)
@@ -25,45 +15,29 @@ UIHauteCoutureDrawMainGL.OnShow = function(self, uiParams)
   self:StartTask(self.CheckAndDoEnterAni, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBgGL.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHauteCoutureDrawBgGL:OnHide()
   self:DetachEvent(GameEventType.ItemCountChanged, self.ItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.GetEnterAniKey = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHauteCoutureDrawMainGL:GetEnterAniKey()
   if not self._EnterAniKey then
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local pstId = roleModule:GetPstId()
     self._EnterAniKey = pstId .. "senior_enter_gl_review2"
   end
-  do
-    return self._EnterAniKey
-  end
+  return self._EnterAniKey
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.GetAutoDuplicateTipsKey = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHauteCoutureDrawMainGL:GetAutoDuplicateTipsKey()
   if not self._duplicateTipsKey then
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local pstId = roleModule:GetPstId()
     self._duplicateTipsKey = pstId .. "duplicate_tips_gl2"
   end
-  do
-    return self._duplicateTipsKey
-  end
+  return self._duplicateTipsKey
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.InitWidgets = function(self)
-  -- function num : 0_5
+function UIHauteCoutureDrawMainGL:InitWidgets()
   self:InitWidgetsBase()
   self._prizeTop = self:GetUIComponent("UISelectObjectPath", "PrizeListTop")
   self._prizeBottom = self:GetUIComponent("UISelectObjectPath", "PrizeListBottom")
@@ -77,11 +51,9 @@ UIHauteCoutureDrawMainGL.InitWidgets = function(self)
   self._spineBg = spineBgPool:SpawnObject("UISpineBg")
   local itemInfo = self:GetUIComponent("UISelectObjectPath", "selectinfo")
   self._selectInfo = itemInfo:SpawnObject("UISelectInfo")
-  ;
-  (self._selectInfo):SetType(3)
-  local detailObj = (self._selectInfo):GetG3CustomPool()
-  ;
-  (detailObj.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawGetItemCellDetailGL.prefab")
+  self._selectInfo:SetType(3)
+  local detailObj = self._selectInfo:GetG3CustomPool()
+  detailObj.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawGetItemCellDetailGL.prefab")
   self._selectDetail = detailObj:SpawnObject("UIHauteCoutureDrawGetItemCellDetailGL")
   self._eff2Go = self:GetGameObject("eff2")
   self._eff3Go = self:GetGameObject("eff3")
@@ -90,495 +62,363 @@ UIHauteCoutureDrawMainGL.InitWidgets = function(self)
   self._eff2Ani = self:GetUIComponent("Animation", "eff2")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.GetCoinId = function(self)
-  -- function num : 0_6
+function UIHauteCoutureDrawMainGL:GetCoinId()
   return 3000342
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL._OnValue = function(self)
-  -- function num : 0_7
-  (self._spineBg):SetData(self:GetSkinId())
+function UIHauteCoutureDrawMainGL:_OnValue()
+  self._spineBg:SetData(self:GetSkinId())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.GetSkinId = function(self)
-  -- function num : 0_8
+function UIHauteCoutureDrawMainGL:GetSkinId()
   return 90384
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL._LoadVideo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local url = (ResourceManager:GetInstance()):GetAssetPath(((self.controller)._cfg).VideoName .. ".mp4", LoadType.VideoClip)
+function UIHauteCoutureDrawMainGL:_LoadVideo()
+  local url = ResourceManager:GetInstance():GetAssetPath(self.controller._cfg.VideoName .. ".mp4", LoadType.VideoClip)
   self:LoadVideo(url)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL._LoadPrize = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIHauteCoutureDrawMainGL:_LoadPrize()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local ctx = campaignModule:GetCurHauteCouture_Review()
-  self._componentId = (self.controller)._componentId
-  self._componentInfo = (self.controller)._componentInfo
-  self._prizes = (Cfg.cfg_component_senior_skin_weight)({ComponentID = self._componentId})
-  ;
-  (table.sort)(self._prizes, function(a, b)
-    -- function num : 0_10_0
-    do return b.RewardSortOrder < a.RewardSortOrder end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  self._componentId = self.controller._componentId
+  self._componentInfo = self.controller._componentInfo
+  self._prizes = Cfg.cfg_component_senior_skin_weight({
+    ComponentID = self._componentId
+  })
+  table.sort(self._prizes, function(a, b)
+    return a.RewardSortOrder > b.RewardSortOrder
+  end)
   self._replaceIdxs = campaignModule:GetSeniorSkinDuplicateRewardIndexs(self._prizes, self._componentInfo)
   local specialIndex = 1
-  local prizes = (self.controller)._prizes
+  local prizes = self.controller._prizes
   local idList = {}
-  for i = 1, (table.count)(prizes) do
+  for i = 1, table.count(prizes) do
     local prize = prizes[i]
     local specailPrizeOrder = 10
     if specailPrizeOrder ~= prize.RewardSortOrder then
-      (table.insert)(idList, prize.RewardSortOrder)
+      table.insert(idList, prize.RewardSortOrder)
     end
   end
   local topItemNum = 3
-  ;
-  (self._prizeTop):SpawnObjects("UIHauteCoutureDrawPrizeItemGL", topItemNum)
-  ;
-  (self._prizeBottom):SpawnObjects("UIHauteCoutureDrawPrizeItemGL", #idList - topItemNum)
-  local topPools = (self._prizeTop):GetAllSpawnList()
+  self._prizeTop:SpawnObjects("UIHauteCoutureDrawPrizeItemGL", topItemNum)
+  self._prizeBottom:SpawnObjects("UIHauteCoutureDrawPrizeItemGL", #idList - topItemNum)
+  local topPools = self._prizeTop:GetAllSpawnList()
   for i = 1, #topPools do
     local item = topPools[i]
     local sortOrder = idList[i]
     local idx = 10 - sortOrder + 1
-    item:SetData(sortOrder, (self.controller)._componentId, false, ctx, (table.icontains)(self._replaceIdxs, idx))
+    item:SetData(sortOrder, self.controller._componentId, false, ctx, table.icontains(self._replaceIdxs, idx))
     item:SetClickCb(function(itemId, pos)
-    -- function num : 0_10_1 , upvalues : self
-    self:ShowItemInfo(itemId, pos)
+      self:ShowItemInfo(itemId, pos)
+    end)
+    table.insert(self._allPrizes, item)
   end
-)
-    ;
-    (table.insert)(self._allPrizes, item)
-  end
-  local bottomPoos = (self._prizeBottom):GetAllSpawnList()
+  local bottomPoos = self._prizeBottom:GetAllSpawnList()
   for i = 1, #bottomPoos do
     local item = bottomPoos[i]
     local sortOrder = idList[i + topItemNum]
     local idx = 10 - sortOrder + 1
-    item:SetData(sortOrder, (self.controller)._componentId, false, ctx, (table.icontains)(self._replaceIdxs, idx))
+    item:SetData(sortOrder, self.controller._componentId, false, ctx, table.icontains(self._replaceIdxs, idx))
     item:SetClickCb(function(itemId, pos)
-    -- function num : 0_10_2 , upvalues : self
-    self:ShowItemInfo(itemId, pos)
-  end
-)
-    ;
-    (table.insert)(self._allPrizes, item)
+      self:ShowItemInfo(itemId, pos)
+    end)
+    table.insert(self._allPrizes, item)
   end
   if specialIndex then
-    local item = (self._specialItem):SpawnObject("UIHauteCoutureDrawPrizeItemGL")
+    local item = self._specialItem:SpawnObject("UIHauteCoutureDrawPrizeItemGL")
     local sortOrder = 10
-    item:SetData(sortOrder, (self.controller)._componentId, true, ctx, (table.icontains)(self._replaceIdxs, specialIndex))
+    item:SetData(sortOrder, self.controller._componentId, true, ctx, table.icontains(self._replaceIdxs, specialIndex))
     item:SetClickCb(function(itemId, pos)
-    -- function num : 0_10_3 , upvalues : self
-    self:ShowItemInfo(itemId, pos)
+      self:ShowItemInfo(itemId, pos)
+    end)
+    table.insert(self._allPrizes, item)
   end
-)
-    ;
-    (table.insert)(self._allPrizes, item)
-  end
-  do
-    self:_RefreshReward()
-    self.hasDuplicate = #self._replaceIdxs > 0
-    ;
-    (self:GetGameObject("duplicateTip")):SetActive(self.hasDuplicate)
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  self:_RefreshReward()
+  self.hasDuplicate = #self._replaceIdxs > 0
+  self:GetGameObject("duplicateTip"):SetActive(self.hasDuplicate)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL._CheckDuplicateAutoTip = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHauteCoutureDrawMainGL:_CheckDuplicateAutoTip()
   if self.hasDuplicate then
     local key = self:GetAutoDuplicateTipsKey()
-    if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
-      ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+    if not UnityEngine.PlayerPrefs.HasKey(key) then
+      UnityEngine.PlayerPrefs.SetInt(key, 1)
       self:DuplicateTipOnClick()
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL._RefreshReward = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHauteCoutureDrawMainGL:_RefreshReward()
   if self._allPrizes then
-    for k,v in pairs(self._allPrizes) do
+    for k, v in pairs(self._allPrizes) do
       local itemId = v:GetCfgID()
-      local state = (table.icontains)(((self.controller)._componentInfo).shake_win_ids, itemId)
+      local state = table.icontains(self.controller._componentInfo.shake_win_ids, itemId)
       v:Flush(state)
       v:SetGray(false)
     end
   end
-  do
-    if self:IsAllAwardCollected() then
-      (self._drawBtnOj):SetActive(false)
-      ;
-      (self._redGo):SetActive(false)
-    else
-      local tmp = (Cfg.cfg_component_senior_skin_cost)({ComponentID = (self.controller)._componentId, SeqID = ((self.controller)._componentInfo).shake_num + 1})
-      if not tmp then
-        return 
-      end
-      local curDrawCost = tmp[1]
-      local itemModule = (GameGlobal.GetModule)(ItemModule)
-      local count = itemModule:GetItemCount(curDrawCost.CostItemID)
-      if count < curDrawCost.CostItemCount then
-        (self._moneyNum):SetText("<color=#cf1c29>" .. curDrawCost.CostItemCount .. "</color>")
-        ;
-        (self._moneyNumBg):SetText("<color=#cf1c29>" .. curDrawCost.CostItemCount .. "</color>")
-      else
-        ;
-        (self._moneyNum):SetText(curDrawCost.CostItemCount)
-        ;
-        (self._moneyNumBg):SetText(curDrawCost.CostItemCount)
-      end
-      ;
-      (self._freeGo):SetActive(curDrawCost.CostItemCount <= 0)
-      ;
-      (self._redGo):SetActive(curDrawCost.CostItemCount <= count)
-      ;
-      (self._countParent):SetActive(curDrawCost.CostItemCount > 0)
+  if self:IsAllAwardCollected() then
+    self._drawBtnOj:SetActive(false)
+    self._redGo:SetActive(false)
+  else
+    local tmp = Cfg.cfg_component_senior_skin_cost({
+      ComponentID = self.controller._componentId,
+      SeqID = self.controller._componentInfo.shake_num + 1
+    })
+    if not tmp then
+      return
     end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    local curDrawCost = tmp[1]
+    local itemModule = GameGlobal.GetModule(ItemModule)
+    local count = itemModule:GetItemCount(curDrawCost.CostItemID)
+    if count < curDrawCost.CostItemCount then
+      self._moneyNum:SetText("<color=#cf1c29>" .. curDrawCost.CostItemCount .. "</color>")
+      self._moneyNumBg:SetText("<color=#cf1c29>" .. curDrawCost.CostItemCount .. "</color>")
+    else
+      self._moneyNum:SetText(curDrawCost.CostItemCount)
+      self._moneyNumBg:SetText(curDrawCost.CostItemCount)
+    end
+    self._freeGo:SetActive(curDrawCost.CostItemCount <= 0)
+    self._redGo:SetActive(count >= curDrawCost.CostItemCount)
+    self._countParent:SetActive(curDrawCost.CostItemCount > 0)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.ItemCountChanged = function(self)
-  -- function num : 0_13
+function UIHauteCoutureDrawMainGL:ItemCountChanged()
   self:_RefreshReward()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.IsAllAwardCollected = function(self)
-  -- function num : 0_14
-  do return #((self.controller)._componentInfo).shake_win_ids == #self._allPrizes end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHauteCoutureDrawMainGL:IsAllAwardCollected()
+  return #self.controller._componentInfo.shake_win_ids == #self._allPrizes
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.HandleDrawBtnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self.controller)._closed then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+function UIHauteCoutureDrawMainGL:HandleDrawBtnClick()
+  if self.controller._closed then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
-  local nextDraw = ((Cfg.cfg_component_senior_skin_cost)({ComponentID = (self.controller)._componentId, SeqID = ((self.controller)._componentInfo).shake_num + 1}))[1]
+  local nextDraw = Cfg.cfg_component_senior_skin_cost({
+    ComponentID = self.controller._componentId,
+    SeqID = self.controller._componentInfo.shake_num + 1
+  })[1]
   local id = nextDraw.CostItemID
-  if (self:GetModule(RoleModule)):GetAssetCount(id) < nextDraw.CostItemCount then
-    (ToastManager.ShowToast)((StringTable.Get)("str_item_not_enough_gl"))
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIHauteCoutureDrawChargeV2Controller", (self.controller).hcType, (self.controller)._buyComponet, (self.controller).CtxData)
-    return 
+  if self:GetModule(RoleModule):GetAssetCount(id) < nextDraw.CostItemCount then
+    ToastManager.ShowToast(StringTable.Get("str_item_not_enough_gl"))
+    GameGlobal.UIStateManager():ShowDialog("UIHauteCoutureDrawChargeV2Controller", self.controller.hcType, self.controller._buyComponet, self.controller.CtxData)
+    return
   end
   self:StartTask(self.DrawAnim, self)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.CanDrawSpecialAward = function(self)
-  -- function num : 0_16
-  do return ((self.controller)._componentInfo).shake_num >= 5 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHauteCoutureDrawMainGL:CanDrawSpecialAward()
+  return self.controller._componentInfo.shake_num >= 5
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.DrawAnim = function(self, TT)
-  -- function num : 0_17 , upvalues : _ENV
+function UIHauteCoutureDrawMainGL:DrawAnim(TT)
   self:Lock("UIHauteCoutureDrawMainGL:drawBtnOnClick")
   local res = AsyncRequestRes:New()
-  local result, rewards = ((self.controller)._component):HandleApplySeniorSkin(TT, res)
+  local result, rewards = self.controller._component:HandleApplySeniorSkin(TT, res)
   if not result or not result:GetSucc() then
     self:UnLock("UIHauteCoutureDrawMainGL:drawBtnOnClick")
-    return 
+    return
   end
-  ;
-  (Log.debug)("高级时装抽奖结果:", rewards)
+  Log.debug("高级时装抽奖结果:", rewards)
   local targetid = rewards
   local collectedAwards = {}
-  for _,id in pairs(((self.controller)._componentInfo).shake_win_ids) do
+  for _, id in pairs(self.controller._componentInfo.shake_win_ids) do
     collectedAwards[id] = true
   end
-  local targetidx = nil
+  local targetidx
   local idxs = {}
-  do
-    for idx,item in ipairs(self._allPrizes) do
-      local id = item:GetCfgID()
-      if not collectedAwards[id] then
-        if id == targetid then
-          targetidx = idx
-        else
-          if idx == (self.controller)._specialIdx and self:CanDrawSpecialAward() then
-            (table.insert)(idxs, idx)
-          end
+  for idx, item in ipairs(self._allPrizes) do
+    local id = item:GetCfgID()
+    if not collectedAwards[id] then
+      if id == targetid then
+        targetidx = idx
+      elseif idx == self.controller._specialIdx then
+        if self:CanDrawSpecialAward() then
+          table.insert(idxs, idx)
         end
-        ;
-        (table.insert)(idxs, idx)
-        item:SetGray(false)
       else
-        item:SetGray(false)
+        table.insert(idxs, idx)
       end
+      item:SetGray(false)
+    else
+      item:SetGray(false)
     end
   end
-  ;
-  (self._eff2Go):SetActive(true)
+  self._eff2Go:SetActive(true)
   if #idxs == 0 then
-    (table.shuffle)(idxs)
-    ;
-    (table.insert)(idxs, 1, targetidx)
+  else
+    table.shuffle(idxs)
+    table.insert(idxs, 1, targetidx)
     local rdmIdx = {}
     local count = #idxs
     local flashCount = 18
     for i = 1, flashCount do
-      (table.insert)(rdmIdx, idxs[(Mathf.Repeat)(i - 1, count) + 1])
+      table.insert(rdmIdx, idxs[Mathf.Repeat(i - 1, count) + 1])
     end
-    local last = nil
+    local last
     for i = 1, flashCount do
       local idx = rdmIdx[flashCount - i + 1]
       if last then
-        ((self._allPrizes)[last]):SetGray(false)
+        self._allPrizes[last]:SetGray(false)
       end
-      ;
-      ((self._allPrizes)[idx]):SetGray(true)
+      self._allPrizes[idx]:SetGray(true)
       last = idx
       if i == flashCount then
         YIELD(TT, 100)
+      elseif i > flashCount - 2 then
+        YIELD(TT, 500)
+      elseif i > flashCount - 3 then
+        YIELD(TT, 280)
+      elseif i == 2 then
+        YIELD(TT, 200)
+      elseif i == 1 then
+        YIELD(TT, 400)
       else
-        if flashCount - 2 < i then
-          YIELD(TT, 500)
-        else
-          if flashCount - 3 < i then
-            YIELD(TT, 280)
-          else
-            if i == 2 then
-              YIELD(TT, 200)
-            else
-              if i == 1 then
-                YIELD(TT, 400)
-              else
-                YIELD(TT, 100)
-              end
-            end
-          end
-        end
+        YIELD(TT, 100)
       end
     end
-    do
-      local isTargetReward = (self.controller)._specialIdx == targetidx
-      if isTargetReward then
-        (self._eff3Go):SetActive(true)
-      else
-        -- DECOMPILER ERROR at PC201: Confused about usage of register: R10 in 'UnsetPending'
-
-        (self._prizeEff).position = ((((self._allPrizes)[targetidx]):GetGameObject()).transform).position
-        ;
-        ((self._prizeEff).gameObject):SetActive(true)
-      end
-      YIELD(TT, 700)
-      ;
-      (self._eff2Ani):Play("uieff_UIHauteCoutureDrawMainGL_eff2out")
-      YIELD(TT, 900)
-      if isTargetReward then
-        (self._eff3Go):SetActive(false)
-      else
-        ((self._prizeEff).gameObject):SetActive(false)
-      end
-      ;
-      (self._eff2Go):SetActive(false)
-      -- DECOMPILER ERROR at PC239: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.controller)._campaign = UIActivityCampaign:New()
-      local resC = AsyncRequestRes:New()
-      ;
-      ((self.controller)._campaign):LoadCampaignInfo(TT, resC, ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN_COPY, ECampaignSeniorSkinComponentID.ECAMPAIGN_BUY_GIFT, ECampaignSeniorSkinComponentID.ECAMPAIGN_SENIOR_SKIN)
-      ;
-      ((self.controller)._campaign):ReLoadCampaignInfo_Force(TT, resC)
-      -- DECOMPILER ERROR at PC267: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self.controller)._buyComponet = (((self.controller)._campaign):GetLocalProcess())._buyGiftComponent
-      -- DECOMPILER ERROR at PC274: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self.controller)._buyComponetInfo = (((self.controller)._campaign):GetLocalProcess())._buyGiftComponentInfo
-      -- DECOMPILER ERROR at PC281: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self.controller)._component = (((self.controller)._campaign):GetLocalProcess())._seniorSkinComponent
-      -- DECOMPILER ERROR at PC288: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self.controller)._componentInfo = (((self.controller)._campaign):GetLocalProcess())._seniorSkinComponentInfo
-      if ((self.controller)._componentInfo).shake_num == 1 then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestUpdate)
-      end
-      local weightCfg = (Cfg.cfg_component_senior_skin_weight)[rewards]
-      if not weightCfg then
-        (Log.error)("###[UIHauteCoutureDrawController] cfg is nil ! id --> ", rewards)
-        return 
-      end
-      local reawrdList = ((self._allPrizes)[targetidx])._assetList
-      local specialInclude = false
-      for key,value in pairs(self._replaceIdxs) do
-        if value == 1 then
-          specialInclude = true
-          break
+  end
+  local isTargetReward = self.controller._specialIdx == targetidx
+  if isTargetReward then
+    self._eff3Go:SetActive(true)
+  else
+    self._prizeEff.position = self._allPrizes[targetidx]:GetGameObject().transform.position
+    self._prizeEff.gameObject:SetActive(true)
+  end
+  YIELD(TT, 700)
+  self._eff2Ani:Play("uieff_UIHauteCoutureDrawMainGL_eff2out")
+  YIELD(TT, 900)
+  if isTargetReward then
+    self._eff3Go:SetActive(false)
+  else
+    self._prizeEff.gameObject:SetActive(false)
+  end
+  self._eff2Go:SetActive(false)
+  self.controller._campaign = UIActivityCampaign:New()
+  local resC = AsyncRequestRes:New()
+  self.controller._campaign:LoadCampaignInfo(TT, resC, ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN_COPY, ECampaignSeniorSkinComponentID.ECAMPAIGN_BUY_GIFT, ECampaignSeniorSkinComponentID.ECAMPAIGN_SENIOR_SKIN)
+  self.controller._campaign:ReLoadCampaignInfo_Force(TT, resC)
+  self.controller._buyComponet = self.controller._campaign:GetLocalProcess()._buyGiftComponent
+  self.controller._buyComponetInfo = self.controller._campaign:GetLocalProcess()._buyGiftComponentInfo
+  self.controller._component = self.controller._campaign:GetLocalProcess()._seniorSkinComponent
+  self.controller._componentInfo = self.controller._campaign:GetLocalProcess()._seniorSkinComponentInfo
+  if self.controller._componentInfo.shake_num == 1 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestUpdate)
+  end
+  local weightCfg = Cfg.cfg_component_senior_skin_weight[rewards]
+  if not weightCfg then
+    Log.error("###[UIHauteCoutureDrawController] cfg is nil ! id --> ", rewards)
+    return
+  end
+  local reawrdList = self._allPrizes[targetidx]._assetList
+  local specialInclude = false
+  for key, value in pairs(self._replaceIdxs) do
+    if value == 1 then
+      specialInclude = true
+      break
+    end
+  end
+  if self.controller._specialIdx == targetidx and not specialInclude then
+    local skin = RoleAsset:New()
+    skin.assetid = weightCfg.RewardID - 4000000
+    skin.count = weightCfg.RewardCount
+    local unlockCgId
+    local skinCfg = Cfg.cfg_pet_skin[skin.assetid]
+    if skinCfg then
+      unlockCgId = skinCfg.ImmediateCgId
+    end
+    self:ShowDialog("UIPetSkinObtainController", skin, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetSkinObtainController")
+      self:ShowDialog("UIHauteCoutureDrawGetItemV2Controller", reawrdList, nil, true, function()
+        self:_RefreshReward()
+        self:CheckAllPrizeCollected()
+        if unlockCgId then
+          local cfg_cg = Cfg.cfg_cg_book[unlockCgId]
+          if cfg_cg then
+            self:ShowDialog("UIPetSkinsGetCgController", cfg_cg.StaticPic, false)
+          end
+          ToastManager.ShowToast(StringTable.Get("str_senior_skin_draw_new_cg_tips"))
         end
-      end
-      if (self.controller)._specialIdx == targetidx and not specialInclude then
-        local skin = RoleAsset:New()
-        skin.assetid = weightCfg.RewardID - 4000000
-        skin.count = weightCfg.RewardCount
-        local unlockCgId = nil
-        local skinCfg = (Cfg.cfg_pet_skin)[skin.assetid]
-        if skinCfg then
-          unlockCgId = skinCfg.ImmediateCgId
-        end
-        self:ShowDialog("UIPetSkinObtainController", skin, function()
-    -- function num : 0_17_0 , upvalues : _ENV, self, reawrdList, unlockCgId
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetSkinObtainController")
+      end, self.controller.CtxData)
+    end)
+  else
     self:ShowDialog("UIHauteCoutureDrawGetItemV2Controller", reawrdList, nil, true, function()
-      -- function num : 0_17_0_0 , upvalues : self, unlockCgId, _ENV
       self:_RefreshReward()
       self:CheckAllPrizeCollected()
-      if unlockCgId then
-        local cfg_cg = (Cfg.cfg_cg_book)[unlockCgId]
-        if cfg_cg then
-          self:ShowDialog("UIPetSkinsGetCgController", cfg_cg.StaticPic, false)
-        end
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_senior_skin_draw_new_cg_tips"))
-      end
-    end
-, (self.controller).CtxData)
+    end, self.controller.CtxData)
   end
-)
-      else
-        self:ShowDialog("UIHauteCoutureDrawGetItemV2Controller", reawrdList, nil, true, function()
-    -- function num : 0_17_1 , upvalues : self
-    self:_RefreshReward()
-    self:CheckAllPrizeCollected()
-  end
-, (self.controller).CtxData)
-      end
-      self:UnLock("UIHauteCoutureDrawMainGL:drawBtnOnClick")
-      -- DECOMPILER ERROR: 12 unprocessed JMP targets
-    end
-  end
+  self:UnLock("UIHauteCoutureDrawMainGL:drawBtnOnClick")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.CheckAllPrizeCollected = function(self)
-  -- function num : 0_18
+function UIHauteCoutureDrawMainGL:CheckAllPrizeCollected()
   if self:IsAllAwardCollected() then
-    local currency = (self._topTips):GetItemByTypeId(self:GetCoinId())
+    local currency = self._topTips:GetItemByTypeId(self:GetCoinId())
     currency:CloseAddBtn()
-    ;
-    (self._drawBtnOj):SetActive(false)
-    ;
-    (self._probalityBtn):SetActive(false)
-    ;
-    (self._buyBtn):SetActive(false)
+    self._drawBtnOj:SetActive(false)
+    self._probalityBtn:SetActive(false)
+    self._buyBtn:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.CheckAndDoEnterAni = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function UIHauteCoutureDrawMainGL:CheckAndDoEnterAni(TT)
   local key = self:GetEnterAniKey()
-  if ((UnityEngine.PlayerPrefs).HasKey)(key) then
-    local lastShow = ((UnityEngine.PlayerPrefs).GetFloat)(key)
-    local nextRefresh = ((GameGlobal.GetModule)(LoginModule)):GetSignRefreshTime()
+  if UnityEngine.PlayerPrefs.HasKey(key) then
+    local lastShow = UnityEngine.PlayerPrefs.GetFloat(key)
+    local nextRefresh = GameGlobal.GetModule(LoginModule):GetSignRefreshTime()
     if nextRefresh - lastShow < 86400 then
-      (self._enterAniGo):SetActive(false)
+      self._enterAniGo:SetActive(false)
       self:_EnterRoot()
-      return 
+      return
     end
   end
-  do
-    local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-    ;
-    ((UnityEngine.PlayerPrefs).SetFloat)(key, now)
-    ;
-    (self._rootGo):SetActive(false)
-    local enterAni = (self._enterAniPool):SpawnObject("UIHauteCoutureDrawEnterAni")
-    local clipLength = enterAni:GetClipLength()
-    YIELD(TT, clipLength * 1000 - 400)
-    self:_EnterRoot()
-    YIELD(400)
-    ;
-    (self._enterAniGo):SetActive(false)
-  end
+  local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+  UnityEngine.PlayerPrefs.SetFloat(key, now)
+  self._rootGo:SetActive(false)
+  local enterAni = self._enterAniPool:SpawnObject("UIHauteCoutureDrawEnterAni")
+  local clipLength = enterAni:GetClipLength()
+  YIELD(TT, clipLength * 1000 - 400)
+  self:_EnterRoot()
+  YIELD(400)
+  self._enterAniGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL._EnterRoot = function(self)
-  -- function num : 0_20
-  (self._rootGo):SetActive(true)
-  ;
-  (self._rootAni):Play("UIHauteCoutureDrawMainGL_new")
+function UIHauteCoutureDrawMainGL:_EnterRoot()
+  self._rootGo:SetActive(true)
+  self._rootAni:Play("UIHauteCoutureDrawMainGL_new")
   self:_LoadVideo()
   self:_CheckDuplicateAutoTip()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.GetEndTimeColor = function(self)
-  -- function num : 0_21
+function UIHauteCoutureDrawMainGL:GetEndTimeColor()
   return "#f2c60e"
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.ShowItemInfo = function(self, item, pos)
-  -- function num : 0_22 , upvalues : _ENV
+function UIHauteCoutureDrawMainGL:ShowItemInfo(item, pos)
   if self._selectInfo then
     local itemId = item.assetid
-    local cfg = (Cfg.cfg_item)[itemId]
-    local info = {item_id = itemId, item_count = item.count, icon = cfg.Icon, item_name = cfg.Name, simple_desc = cfg.RpIntro, color = cfg.Color}
-    ;
-    (self._selectDetail):SetData(info)
-    ;
-    (self._selectInfo):OnlyShow(pos)
+    local cfg = Cfg.cfg_item[itemId]
+    local info = {
+      item_id = itemId,
+      item_count = item.count,
+      icon = cfg.Icon,
+      item_name = cfg.Name,
+      simple_desc = cfg.RpIntro,
+      color = cfg.Color
+    }
+    self._selectDetail:SetData(info)
+    self._selectInfo:OnlyShow(pos)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.SpineAreaOnClick = function(self, go)
-  -- function num : 0_23
-  (self._spineBg):PlayClickAni()
+function UIHauteCoutureDrawMainGL:SpineAreaOnClick(go)
+  self._spineBg:PlayClickAni()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawMainGL.DuplicateTipOnClick = function(self)
-  -- function num : 0_24
+function UIHauteCoutureDrawMainGL:DuplicateTipOnClick()
   self:ShowDialog("UIHauteCoutureDuplicateReward", self._prizes, self._replaceIdxs)
 end
-
-

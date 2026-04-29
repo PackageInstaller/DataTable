@@ -1,11 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/chess/cfg_chess.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ChessIntroTitle = 2, ChessContent = 3, ChessIntro = 4, picture = 5}
+local key = {
+  ID = 1,
+  ChessIntroTitle = 2,
+  ChessContent = 3,
+  ChessIntro = 4,
+  picture = 5
+}
 local config = {
-{1, "str_chess_title", "str_chess_content", "str_chess_intro"}
+  {
+    1,
+    "str_chess_title",
+    "str_chess_content",
+    "str_chess_intro"
+  }
 }
 return config, "ID", key
-

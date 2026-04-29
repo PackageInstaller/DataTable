@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/manager/aircraft_social_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftSocialManager", Object)
 AircraftSocialManager = AircraftSocialManager
 local SOCIAL_DISPATCH = true
 local SOCIAL_OPEN = true
 local CHECK_TIME = 300000
--- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
 
-AircraftSocialManager.Constructor = function(self, aircraftMain)
-  -- function num : 0_0
+function AircraftSocialManager:Constructor(aircraftMain)
   self.m_AirMain = aircraftMain
   self.m_Areas = {}
   self.m_Executors = {}
@@ -23,77 +16,52 @@ AircraftSocialManager.Constructor = function(self, aircraftMain)
   self.m_SocialCamNearby = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.InitParams = function(self)
-  -- function num : 0_1 , upvalues : _ENV, SOCIAL_OPEN, CHECK_TIME
-  local open = (Cfg.cfg_aircraft_const).aircraft_social_open
+function AircraftSocialManager:InitParams()
+  local open = Cfg.cfg_aircraft_const.aircraft_social_open
   SOCIAL_OPEN = open and open.IntValue or 1
   if SOCIAL_OPEN == 1 then
     SOCIAL_OPEN = true
   else
     SOCIAL_OPEN = false
   end
-  local time = (Cfg.cfg_aircraft_const).aircraft_social_check_time
+  local time = Cfg.cfg_aircraft_const.aircraft_social_check_time
   CHECK_TIME = time and time.IntValue or 300000
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.AddListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self.cb = (GameHelper:GetInstance()):CreateCallback(self.ExecuteSocialAction, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.AirForceTriggerSocialAction, self.cb)
+function AircraftSocialManager:AddListener()
+  self.cb = GameHelper:GetInstance():CreateCallback(self.ExecuteSocialAction, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.AirForceTriggerSocialAction, self.cb)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.RemoveListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.AirForceTriggerSocialAction, self.cb)
+function AircraftSocialManager:RemoveListener()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.AirForceTriggerSocialAction, self.cb)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.Dispose = function(self)
-  -- function num : 0_4
+function AircraftSocialManager:Dispose()
   self:RemoveListener()
   self:DisposeExecutors(false)
   self:StopTimer()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.DisposeExecutors = function(self, needRandom)
-  -- function num : 0_5 , upvalues : _ENV
+function AircraftSocialManager:DisposeExecutors(needRandom)
   if self.m_Executors then
-    for _,e in ipairs(self.m_Executors) do
+    for _, e in ipairs(self.m_Executors) do
       e:Dispose(needRandom, true)
     end
   end
-  do
-    self.m_Executors = {}
-  end
+  self.m_Executors = {}
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.StartTimer = function(self)
-  -- function num : 0_6 , upvalues : _ENV, CHECK_TIME
-  self.timer = ((GameGlobal.Timer)()):AddEventTimes(CHECK_TIME, TimerTriggerCount.Infinite, self.CheckTrigger, self)
+function AircraftSocialManager:StartTimer()
+  self.timer = GameGlobal.Timer():AddEventTimes(CHECK_TIME, TimerTriggerCount.Infinite, self.CheckTrigger, self)
   self:CheckTrigger()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.CheckTrigger = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AircraftSocialManager:CheckTrigger()
   if self.m_SerializeIng == true then
-    return 
+    return
   end
-  local pets = (self.m_AirMain):GetPets(function(_pet)
-    -- function num : 0_7_0 , upvalues : _ENV, self
+  local pets = self.m_AirMain:GetPets(function(_pet)
     local pet = _pet
     if pet:IsAlive() then
       local state = pet:GetState()
@@ -103,165 +71,138 @@ AircraftSocialManager.CheckTrigger = function(self)
       local can = self:Filter(pet)
       return true
     end
-  end
-, true)
-  if pets and #pets > 1 then
+  end, true)
+  if pets and 1 < #pets then
     local areas = self:Match(pets)
-    if areas and #areas > 0 then
+    if areas and 0 < #areas then
       self:Dispatch(areas)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.StopTimer = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AircraftSocialManager:StopTimer()
   if self.timer then
-    ((GameGlobal.Timer)()):CancelEvent(self.timer)
+    GameGlobal.Timer():CancelEvent(self.timer)
     self.timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.Init = function(self)
-  -- function num : 0_9 , upvalues : SOCIAL_OPEN
+function AircraftSocialManager:Init()
   if not SOCIAL_OPEN then
-    return 
+    return
   end
   self:StartTimer()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_10
+function AircraftSocialManager:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.InitFilter = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self.filters = {SocialWeightFilter:New(), AreaFilter:New()}
+function AircraftSocialManager:InitFilter()
+  self.filters = {
+    SocialWeightFilter:New(),
+    AreaFilter:New()
+  }
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.InitMatcher = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self.matchers = {InitAreaMatcher:New(), RelationMatcher:New(), AddLibMatcher:New(), FilterLibMatcher:New(), FilterLibPetMatcher:New(), FilterAreaMatcher:New(), InitLibMakerMatcher:New()}
+function AircraftSocialManager:InitMatcher()
+  self.matchers = {
+    InitAreaMatcher:New(),
+    RelationMatcher:New(),
+    AddLibMatcher:New(),
+    FilterLibMatcher:New(),
+    FilterLibPetMatcher:New(),
+    FilterAreaMatcher:New(),
+    InitLibMakerMatcher:New()
+  }
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-AircraftSocialManager.Filter = function(self, pet)
-  -- function num : 0_13 , upvalues : _ENV
+function AircraftSocialManager:Filter(pet)
   local count = 0
-  for _,filter in ipairs(self.filters) do
+  for _, filter in ipairs(self.filters) do
     local can = filter:Filter(pet)
     if can then
       count = count + 1
     end
   end
-  do return count == #self.filters end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return count == #self.filters
 end
 
-local AirRestAreaTypeName = {[AirRestAreaType.RestRoom] = "休息室", [AirRestAreaType.CoffeeHouse] = "咖啡厅", [AirRestAreaType.Bar] = "酒吧", [AirRestAreaType.EntertainmentRoom] = "娱乐室", [AirRestAreaType.Board3] = "3层甲板", [AirRestAreaType.Board4] = "4层甲板", [AirRestAreaType.CenterRoom] = "主控室"}
--- DECOMPILER ERROR at PC75: Confused about usage of register: R4 in 'UnsetPending'
+local AirRestAreaTypeName = {
+  [AirRestAreaType.RestRoom] = "休息室",
+  [AirRestAreaType.CoffeeHouse] = "咖啡厅",
+  [AirRestAreaType.Bar] = "酒吧",
+  [AirRestAreaType.EntertainmentRoom] = "娱乐室",
+  [AirRestAreaType.Board3] = "3层甲板",
+  [AirRestAreaType.Board4] = "4层甲板",
+  [AirRestAreaType.CenterRoom] = "主控室"
+}
 
-AircraftSocialManager.Match = function(self, pets)
-  -- function num : 0_14 , upvalues : _ENV, AirRestAreaTypeName
-  local areas = ((self.matchers)[1]):Match(pets, self.m_AirMain)
-  ;
-  (Log.error)("社交匹配@@@第1阶段：初始化所有区域和人")
-  ;
-  (Log.error)("社交匹配@@@1.当前区域个数", #areas)
-  for index,area in ipairs(areas) do
+function AircraftSocialManager:Match(pets)
+  local areas = self.matchers[1]:Match(pets, self.m_AirMain)
+  Log.error("社交匹配@@@第1阶段：初始化所有区域和人")
+  Log.error("社交匹配@@@1.当前区域个数", #areas)
+  for index, area in ipairs(areas) do
     self.log1 = ""
     self.log1 = self.log1 .. "社交匹配@@@1.区域类型:" .. AirRestAreaTypeName[area:GetRestAreaType()] .. "  "
-    for index,pet in pairs(area:GetPets()) do
+    for index, pet in pairs(area:GetPets()) do
       self.log1 = self.log1 .. pet:PetName() .. ","
     end
-    ;
-    (Log.error)(self.log1)
+    Log.error(self.log1)
   end
   for index = 2, #self.matchers do
-    areas = ((self.matchers)[index]):Match(areas, self.m_AirMain)
-    ;
-    (Log.error)("社交匹配@@@第", index, "阶段：", ((self.matchers)[index])._className)
-    ;
-    (Log.error)("社交匹配@@@", index, ".当前区域个数", #areas)
-    for _,area in ipairs(areas) do
+    areas = self.matchers[index]:Match(areas, self.m_AirMain)
+    Log.error("社交匹配@@@第", index, "阶段：", self.matchers[index]._className)
+    Log.error("社交匹配@@@", index, ".当前区域个数", #areas)
+    for _, area in ipairs(areas) do
       self.log2 = ""
-      -- DECOMPILER ERROR at PC92: Overwrote pending register: R14 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC92: Overwrote pending register: R13 in 'AssignReg'
-
-      for _,pet in pairs(index(".区域类型:" .. AirRestAreaTypeName[area:GetRestAreaType()] .. "  ")) do
+      self.log2 = self.log2 .. "社交匹配@@@", index, ".区域类型:" .. AirRestAreaTypeName[area:GetRestAreaType()] .. "  "
+      for _, pet in pairs(area:GetPets()) do
         self.log2 = self.log2 .. pet:PetName() .. ","
       end
-      ;
-      (Log.error)(self.log2)
+      Log.error(self.log2)
     end
   end
   return areas
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.Dispatch = function(self, areas)
-  -- function num : 0_15 , upvalues : SOCIAL_DISPATCH, _ENV
+function AircraftSocialManager:Dispatch(areas)
   if not SOCIAL_DISPATCH then
-    return 
+    return
   end
-  for key,area in pairs(areas) do
+  for key, area in pairs(areas) do
     area:SetAllPetSocialState()
     local executor = AirGroupActionExecutor:New(self.m_AirMain, area, function(executor)
-    -- function num : 0_15_0 , upvalues : _ENV, self
-    if executor then
-      executor:Dispose(true)
-      ;
-      (table.removev)(self.m_Executors, executor)
-    end
-  end
-)
-    ;
-    (table.insert)(self.m_Executors, executor)
+      if executor then
+        executor:Dispose(true)
+        table.removev(self.m_Executors, executor)
+      end
+    end)
+    table.insert(self.m_Executors, executor)
   end
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.DecodeFinish = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftSocialManager:DecodeFinish()
   self.m_SerializeIng = false
   local removeIndex = {}
-  for index,area in ipairs(self.m_Areas) do
+  for index, area in ipairs(self.m_Areas) do
     local remove = area:InitLibMaker(true)
     if remove then
-      (table.insert)(removeIndex, index)
+      table.insert(removeIndex, index)
     end
   end
-  if #removeIndex > 0 then
+  if 0 < #removeIndex then
     for i = #removeIndex, 1, -1 do
-      (table.remove)(self.m_Areas, removeIndex[i])
+      table.remove(self.m_Areas, removeIndex[i])
     end
   end
-  do
-    self:Dispatch(self.m_Areas)
-  end
+  self:Dispatch(self.m_Areas)
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.ExecuteSocialAction = function(self, _pet)
-  -- function num : 0_17 , upvalues : _ENV
+function AircraftSocialManager:ExecuteSocialAction(_pet)
   self.m_SerializeIng = true
   local pet = _pet
   if not pet then
-    return 
+    return
   end
   local airSocialActionType = pet:GetSocialActionType()
   local round = pet:GetSocialRound()
@@ -269,29 +210,24 @@ AircraftSocialManager.ExecuteSocialAction = function(self, _pet)
   local furnitureKey = pet:GetSocialFurnitureKey()
   local restType = pet:GetSocialAreaType()
   local allPetCount = pet:GetSocialPetCount()
-  local area = (AirHelper.GetArea)(pet, self.m_Areas, self.m_AirMain, restType)
+  local area = AirHelper.GetArea(pet, self.m_Areas, self.m_AirMain, restType)
   area:AddPet(pet:TemplateID(), pet)
   area:AddLib(airSocialActionType)
-  do
-    if furnitureKey and not area:GetFurniture() then
-      local furniture = (self.m_AirMain):GetFurnitureByKey(furnitureKey)
-      area:SetFurniture(furniture)
-    end
-    area:SetSocialRound(round)
-    area:SetSocialPointHolderIndex(pointHolderIndex)
-    area:SetSocialPetCount(allPetCount)
+  if furnitureKey and not area:GetFurniture() then
+    local furniture = self.m_AirMain:GetFurnitureByKey(furnitureKey)
+    area:SetFurniture(furniture)
   end
+  area:SetSocialRound(round)
+  area:SetSocialPointHolderIndex(pointHolderIndex)
+  area:SetSocialPetCount(allPetCount)
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.StopSocialByPet = function(self, targetPet)
-  -- function num : 0_18 , upvalues : _ENV
+function AircraftSocialManager:StopSocialByPet(targetPet)
   if targetPet and targetPet:GetState() == AirPetState.Social then
     local targetExecutor = false
-    for index,group in ipairs(self.m_Executors) do
+    for index, group in ipairs(self.m_Executors) do
       local pets = group:GetPets()
-      for key,pet in pairs(pets) do
+      for key, pet in pairs(pets) do
         if pet == targetPet then
           targetExecutor = group
           break
@@ -301,71 +237,54 @@ AircraftSocialManager.StopSocialByPet = function(self, targetPet)
     if targetExecutor then
       local log = ""
       local pets = targetExecutor:GetPets()
-      for index,pet in pairs(pets) do
+      for index, pet in pairs(pets) do
         if pet ~= targetPet then
-          (self.m_AirMain):RandomActionForPet(pet)
+          self.m_AirMain:RandomActionForPet(pet)
           log = log .. pet:TemplateID() .. "，"
         end
       end
       targetExecutor:Dispose(false)
-      ;
-      (table.removev)(self.m_Executors, targetExecutor)
+      table.removev(self.m_Executors, targetExecutor)
       AirLog("1个星灵打断社交行为:", targetPet:TemplateID(), "，其余星灵：", log)
     end
   end
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.StopSocialByFurniture = function(self, furID)
-  -- function num : 0_19 , upvalues : _ENV
+function AircraftSocialManager:StopSocialByFurniture(furID)
   local needRemove = {}
-  for index,group in ipairs(self.m_Executors) do
+  for index, group in ipairs(self.m_Executors) do
     local targetFur = group:GetAreaFurniture()
     if targetFur and targetFur:InstanceID() == furID then
       needRemove[#needRemove + 1] = group
     end
   end
-  for _,group in ipairs(needRemove) do
-    for index,pet in pairs(group:GetPets()) do
-      (self.m_AirMain):RandomActionForPet(pet)
+  for _, group in ipairs(needRemove) do
+    for index, pet in pairs(group:GetPets()) do
+      self.m_AirMain:RandomActionForPet(pet)
     end
     group:Dispose(false)
-    ;
-    (table.removev)(self.m_Executors, group)
+    table.removev(self.m_Executors, group)
   end
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.SetCamNearbyState = function(self, state)
-  -- function num : 0_20
+function AircraftSocialManager:SetCamNearbyState(state)
   self.m_SocialCamNearby = state
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.GetCamNearbyState = function(self)
-  -- function num : 0_21
+function AircraftSocialManager:GetCamNearbyState()
   return self.m_SocialCamNearby
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.OnPetDestroy = function(self, pet)
-  -- function num : 0_22
+function AircraftSocialManager:OnPetDestroy(pet)
   self:StopSocialByPet(pet)
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.GetSocialGroupPets = function(self, pet)
-  -- function num : 0_23 , upvalues : _ENV
+function AircraftSocialManager:GetSocialGroupPets(pet)
   if pet and pet:GetState() == AirPetState.Social then
-    local targetExecutor = nil
-    for index,group in ipairs(self.m_Executors) do
+    local targetExecutor
+    for index, group in ipairs(self.m_Executors) do
       local pets = group:GetPets()
-      for key,p in pairs(pets) do
+      for key, p in pairs(pets) do
         if p:TemplateID() == pet:TemplateID() then
           return pets
         end
@@ -374,16 +293,8 @@ AircraftSocialManager.GetSocialGroupPets = function(self, pet)
   end
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.OnFurnitureActionStart = function(self, pet, fur, action)
-  -- function num : 0_24
+function AircraftSocialManager:OnFurnitureActionStart(pet, fur, action)
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R4 in 'UnsetPending'
-
-AircraftSocialManager.OnFurnitureActionStop = function(self)
-  -- function num : 0_25
+function AircraftSocialManager:OnFurnitureActionStop()
 end
-
-

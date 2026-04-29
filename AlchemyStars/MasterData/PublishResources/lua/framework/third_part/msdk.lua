@@ -1,54 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/third_part/msdk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CallbackRet", Object)
 CallbackRet = CallbackRet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CallbackRet.Constructor = function(self)
-  -- function num : 0_0
+function CallbackRet:Constructor()
   self.flag = -1
   self.desc = ""
   self.platform = 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
 CallbackRet._proto = {
-[1] = {"flag", "int"}
-, 
-[2] = {"desc", "string"}
-, 
-[3] = {"platform", "int"}
+  [1] = {"flag", "int"},
+  [2] = {"desc", "string"},
+  [3] = {"platform", "int"}
 }
 _class("TokenRet", Object)
 TokenRet = TokenRet
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-TokenRet.Constructor = function(self)
-  -- function num : 0_1
+function TokenRet:Constructor()
   self.type = 0
   self.value = ""
   self.expiration = 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
 TokenRet._proto = {
-[1] = {"type", "int"}
-, 
-[2] = {"value", "string"}
-, 
-[3] = {"expiration", "int64"}
+  [1] = {"type", "int"},
+  [2] = {"value", "string"},
+  [3] = {"expiration", "int64"}
 }
 _class("LoginRet", CallbackRet)
 LoginRet = LoginRet
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-LoginRet.Constructor = function(self)
-  -- function num : 0_2
+function LoginRet:Constructor()
   self.open_id = ""
   self.user_id = ""
   self.pf = ""
@@ -56,17 +37,13 @@ LoginRet.Constructor = function(self)
   self.token = {}
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R0 in 'UnsetPending'
-
 LoginRet._proto = {
-[10] = {"open_id", "string"}
-, 
-[11] = {"user_id", "string"}
-, 
-[12] = {"pf", "string"}
-, 
-[13] = {"pf_key", "string"}
-, 
-[14] = {"token", "list<TokenRet>"}
+  [10] = {"open_id", "string"},
+  [11] = {"user_id", "string"},
+  [12] = {"pf", "string"},
+  [13] = {"pf_key", "string"},
+  [14] = {
+    "token",
+    "list<TokenRet>"
+  }
 }
-

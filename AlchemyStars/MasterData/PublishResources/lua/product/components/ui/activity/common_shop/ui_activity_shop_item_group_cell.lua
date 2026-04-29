@@ -1,81 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_shop/ui_activity_shop_item_group_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityShopItemGroupCell", UICustomWidget)
 UIActivityShopItemGroupCell = UIActivityShopItemGroupCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityShopItemGroupCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityShopItemGroupCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroupCell.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityShopItemGroupCell:InitWidget()
   self._smallBoxGen = self:GetUIComponent("UISelectObjectPath", "SmallBoxGen")
   self._bigItemGen = self:GetUIComponent("UISelectObjectPath", "BigItemGen")
   self._rootLayout = self:GetUIComponent("LayoutElement", "Root")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroupCell.SetData = function(self)
-  -- function num : 0_2
+function UIActivityShopItemGroupCell:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroupCell.InitData = function(self, data)
-  -- function num : 0_3 , upvalues : _ENV
-  local item, campaignId = nil, nil
+function UIActivityShopItemGroupCell:InitData(data)
+  local item, campaignId
   if data.exchangeCmpt then
-    campaignId = ((data.exchangeCmpt):GetComponentInfo()).m_campaign_id
+    campaignId = data.exchangeCmpt:GetComponentInfo().m_campaign_id
   else
     local data1 = data[1]
     if data1 and data1.exchangeCmpt then
-      campaignId = ((data1.exchangeCmpt):GetComponentInfo()).m_campaign_id
+      campaignId = data1.exchangeCmpt:GetComponentInfo().m_campaign_id
     end
   end
-  do
-    local commonCfg = nil
-    if campaignId then
-      commonCfg = (Cfg.cfg_activity_shop_common_client)[campaignId]
-    end
-    local spWidth = 400
-    local normalWidth = 350
-    if commonCfg then
-      spWidth = commonCfg.SpecialCellWidth
-      normalWidth = commonCfg.NormalCellWidth
-    end
-    if data.GetIsSpecial and data:GetIsSpecial() then
-      item = (self._bigItemGen):SpawnObject("UIActivityShopItemBig")
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._rootLayout).minWidth = spWidth
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._rootLayout).preferredWidth = spWidth
-    else
-      item = (self._smallBoxGen):SpawnObject("UIActivityShopSmallItemBox")
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._rootLayout).minWidth = normalWidth
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._rootLayout).preferredWidth = normalWidth
-    end
-    if item then
-      item:InitData(data)
-    end
+  local commonCfg
+  if campaignId then
+    commonCfg = Cfg.cfg_activity_shop_common_client[campaignId]
+  end
+  local spWidth = 400
+  local normalWidth = 350
+  if commonCfg then
+    spWidth = commonCfg.SpecialCellWidth
+    normalWidth = commonCfg.NormalCellWidth
+  end
+  if data.GetIsSpecial and data:GetIsSpecial() then
+    item = self._bigItemGen:SpawnObject("UIActivityShopItemBig")
+    self._rootLayout.minWidth = spWidth
+    self._rootLayout.preferredWidth = spWidth
+  else
+    item = self._smallBoxGen:SpawnObject("UIActivityShopSmallItemBox")
+    self._rootLayout.minWidth = normalWidth
+    self._rootLayout.preferredWidth = normalWidth
+  end
+  if item then
+    item:InitData(data)
   end
 end
-
-

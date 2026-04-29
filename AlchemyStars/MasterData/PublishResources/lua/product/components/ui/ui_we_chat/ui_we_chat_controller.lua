@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/ui_we_chat_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeChatController", UIController)
 UIWeChatController = UIWeChatController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWeChatController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWeChatController:Constructor()
   self._uiMainModule = self:GetUIModule(SignInModule)
   self._roleModule = self:GetModule(RoleModule)
   self:CreateUnLockBGMs()
   self.module = self:GetModule(QuestChatModule)
-  self.weChatProxy = (self.module):GetWeChatProxy()
+  self.weChatProxy = self.module:GetWeChatProxy()
   self.speakerId = 0
   self._groupid = 0
   self.roleCell = {}
@@ -23,21 +16,18 @@ UIWeChatController.Constructor = function(self)
   self.atlas = self:GetAsset("UIWeChat.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.CreateUnLockBGMs = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWeChatController:CreateUnLockBGMs()
   self._unlockBGMs = {}
-  local cfgs = (Cfg.cfg_role_music)({Tag = 3})
+  local cfgs = Cfg.cfg_role_music({Tag = 3})
   if cfgs and next(cfgs) then
     for i = 1, #cfgs do
       local cfg = cfgs[i]
       if cfg.LockCondition then
-        local condType = (cfg.LockCondition)[1]
+        local condType = cfg.LockCondition[1]
         if condType == ConditionType.CT_QuestChatIsReaded then
-          local lock = (self._roleModule):UI_CheckMusicLock(cfg)
+          local lock = self._roleModule:UI_CheckMusicLock(cfg)
           if lock then
-            (table.insert)(self._unlockBGMs, cfg.ID)
+            table.insert(self._unlockBGMs, cfg.ID)
           end
         end
       end
@@ -45,12 +35,9 @@ UIWeChatController.CreateUnLockBGMs = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2
+function UIWeChatController:LoadDataOnEnter(TT, res, uiParams)
   self.params = uiParams
-  local result = (self.module):Request_GetActiveChat(TT)
+  local result = self.module:Request_GetActiveChat(TT)
   if result:GetSucc() then
     res:SetSucc(true)
   else
@@ -58,25 +45,16 @@ UIWeChatController.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWeChatController:OnShow(uiParams)
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   self.roleScrollView = self:GetUIComponent("UIDynamicScrollView", "groupscrollview")
-  ;
-  (self.roleScrollView):InitListView(0, function(_groupScrollView, index)
-    -- function num : 0_3_1 , upvalues : self
+  self.roleScrollView:InitListView(0, function(_groupScrollView, index)
     return self:CreateRoleItem(_groupScrollView, index)
-  end
-)
+  end)
   self.replyBtnGO = self:GetGameObject("replybtn")
   self.replyRedGO = self:GetGameObject("replyred")
   self.replyBtnIcon = self:GetUIComponent("Image", "replybtn")
@@ -86,27 +64,15 @@ UIWeChatController.OnShow = function(self, uiParams)
   self.replyMenuGO = self:GetGameObject("replymenu")
   self.replyChooseGO = self:GetGameObject("replychoose")
   self.replyMenuBgGO = self:GetGameObject("menubg")
-  ;
-  (self.replyMenuBgGO):SetActive(false)
+  self.replyMenuBgGO:SetActive(false)
   self.debugTxt = self:GetUIComponent("UILocalizationText", "debugtxt")
   self.animation = self:GetUIComponent("Animation", "uiAnim")
   self.replyMenuItem = {}
   for index = 1, 3 do
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self.replyMenuItem)[index] = {}
-    -- DECOMPILER ERROR at PC94: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self.replyMenuItem)[index]).go = self:GetGameObject("replymenubtn" .. index)
-    -- DECOMPILER ERROR at PC103: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self.replyMenuItem)[index]).txt = self:GetUIComponent("UILocalizationText", "replymenubtntxt" .. index)
-    -- DECOMPILER ERROR at PC112: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self.replyMenuItem)[index]).txt = self:GetUIComponent("UILocalizationText", "replymenubtntxt" .. index)
+    self.replyMenuItem[index] = {}
+    self.replyMenuItem[index].go = self:GetGameObject("replymenubtn" .. index)
+    self.replyMenuItem[index].txt = self:GetUIComponent("UILocalizationText", "replymenubtntxt" .. index)
+    self.replyMenuItem[index].txt = self:GetUIComponent("UILocalizationText", "replymenubtntxt" .. index)
   end
   self.scrollView = self:GetUIComponent("ScrollRect", "chatscrollview")
   self.sop = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -120,85 +86,54 @@ UIWeChatController.OnShow = function(self, uiParams)
   self._affinityPetHead = self:GetUIComponent("RawImageLoader", "Icon")
   self._petNameTxt = self:GetUIComponent("UILocalizationText", "PetName")
   self._affinityTxt = self:GetUIComponent("UILocalizationText", "Affinity")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.contentRect)
-  ;
-  (AudioHelperController.RequestUISound)(CriAudioIDConst.WeChatSwitchWindow)
-  ;
-  (AudioHelperController.RequestUISound)(CriAudioIDConst.WeChatSendMessage)
-  ;
-  (AudioHelperController.RequestUISound)(CriAudioIDConst.WeChatRecvMessage)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.contentRect)
+  AudioHelperController.RequestUISound(CriAudioIDConst.WeChatSwitchWindow)
+  AudioHelperController.RequestUISound(CriAudioIDConst.WeChatSendMessage)
+  AudioHelperController.RequestUISound(CriAudioIDConst.WeChatRecvMessage)
   self:AddListener()
-  local gid, sid = (self.weChatProxy):GetFirstSpeakerId()
+  local gid, sid = self.weChatProxy:GetFirstSpeakerId()
   self:OnClickRoleCell(gid, sid)
   self:RefreshRoleScroll()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.UI_TestDebug = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWeChatController:UI_TestDebug()
   local nSpeakerID = 2100106
   local nChatID = 30302
   local nFindTalkID = 30302001
   local listTalkID = {}
-  while 1 do
-    if nFindTalkID > 0 then
-      (table.insert)(listTalkID, nFindTalkID)
-      local pFindTalk = (Cfg.cfg_quest_talk)[nFindTalkID]
-      if pFindTalk ~= nil then
-        do
-          nFindTalkID = pFindTalk.NextWord
-          -- DECOMPILER ERROR at PC19: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC19: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC19: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC19: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while 0 < nFindTalkID do
+    table.insert(listTalkID, nFindTalkID)
+    local pFindTalk = Cfg.cfg_quest_talk[nFindTalkID]
+    if nil == pFindTalk then
+      break
+    end
+    nFindTalkID = pFindTalk.NextWord
+    if nil == nFindTalkID then
+      break
     end
   end
-  if nFindTalkID ~= nil then
-    do
-      for i = 1, #listTalkID do
-        local nTalkID = listTalkID[i]
-        ;
-        (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, nSpeakerID, nChatID, nTalkID, i
-    (self.module):Request_SetTalkReaded(TT, nSpeakerID, nChatID, nTalkID, i)
-  end
-)
-      end
-    end
+  for i = 1, #listTalkID do
+    local nTalkID = listTalkID[i]
+    TaskManager:GetInstance():StartTask(function(TT)
+      self.module:Request_SetTalkReaded(TT, nSpeakerID, nChatID, nTalkID, i)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWeChatController:OnHide()
   self:StopAudio()
-  if (GameGlobal:GetInstance()).gameLogic then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateWeChatRed)
+  if GameGlobal:GetInstance().gameLogic then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateWeChatRed)
   end
-  ;
-  (AudioHelperController.ReleaseUISoundById)(CriAudioIDConst.WeChatSwitchWindow)
-  ;
-  (AudioHelperController.ReleaseUISoundById)(CriAudioIDConst.WeChatSendMessage)
-  ;
-  (AudioHelperController.ReleaseUISoundById)(CriAudioIDConst.WeChatRecvMessage)
+  AudioHelperController.ReleaseUISoundById(CriAudioIDConst.WeChatSwitchWindow)
+  AudioHelperController.ReleaseUISoundById(CriAudioIDConst.WeChatSendMessage)
+  AudioHelperController.ReleaseUISoundById(CriAudioIDConst.WeChatRecvMessage)
   if self.weChatProxy then
-    (self.weChatProxy):CancelSaveData()
+    self.weChatProxy:CancelSaveData()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.AddListener = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWeChatController:AddListener()
   self:AttachEvent(GameEventType.WeChatNormalState, self.OnWeChatNormalState)
   self:AttachEvent(GameEventType.WeChatReplyState, self.OnWeChatReplyState)
   self:AttachEvent(GameEventType.WeChatAddAnswerState, self.OnWeChatAddAnswerState)
@@ -212,344 +147,223 @@ UIWeChatController.AddListener = function(self)
   self:AttachEvent(GameEventType.PetDataChangeEvent, self.ObservationRefresh)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.RefreshRoleScroll = function(self, speakerid)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWeChatController:RefreshRoleScroll(speakerid)
   self.roleCell = {}
   self._groups = self:GetAndSortGroups(speakerid)
-  if (self:GetModule(GuideModule)):IsGuideProcessKey("guide_wechat") then
-    local cfg = (Cfg.cfg_guide_const).guide_wechat
-    local temp = nil
+  if self:GetModule(GuideModule):IsGuideProcessKey("guide_wechat") then
+    local cfg = Cfg.cfg_guide_const.guide_wechat
+    local temp
     for i = 1, #self._groups do
       local find = false
-      for j = 1, ((self._groups)[i]):RoleCount() do
-        if ((((self._groups)[i])._roleList)[j]).speakerId == (cfg.ArrayValue)[1] then
+      for j = 1, self._groups[i]:RoleCount() do
+        if self._groups[i]._roleList[j].speakerId == cfg.ArrayValue[1] then
           find = true
-          temp = (self._groups)[i]
-          ;
-          (table.removev)(self._groups, (self._groups)[i])
+          temp = self._groups[i]
+          table.removev(self._groups, self._groups[i])
           break
         end
       end
-    end
-    do
-      do
-        if find or temp then
-          (table.insert)(self._groups, 1, temp)
-        end
-        ;
-        (self.roleScrollView):SetListItemCount(#self._groups, false)
-        ;
-        (self.roleScrollView):RefreshAllShownItem()
+      if find then
+        break
       end
     end
+    if temp then
+      table.insert(self._groups, 1, temp)
+    end
   end
+  self.roleScrollView:SetListItemCount(#self._groups, false)
+  self.roleScrollView:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.RefreshChatScroll = function(self, addOne)
-  -- function num : 0_8
-  local talks = (self.weChatProxy):GetTalks(self.speakerId)
-  local role = (self.weChatProxy):GetRole(self.speakerId)
+function UIWeChatController:RefreshChatScroll(addOne)
+  local talks = self.weChatProxy:GetTalks(self.speakerId)
+  local role = self.weChatProxy:GetRole(self.speakerId)
   self:UpdateChatItems(talks, role, addOne)
   self:ChangeBgm(talks)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnClickRoleCell = function(self, groupid, speakerId)
-  -- function num : 0_9 , upvalues : _ENV
+function UIWeChatController:OnClickRoleCell(groupid, speakerId)
   if self.speakerId == speakerId then
-    return 
+    return
   end
   self:SwitchAnim()
   self:Select(groupid, speakerId)
   self:ShowReplyMenuGO(false)
-  ;
-  (self.weChatProxy):SendAllTalkReaded(speakerId)
-  ;
-  (self.weChatProxy):SetInitState(speakerId, true)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.contentRect).anchoredPosition = Vector2.zero
+  self.weChatProxy:SendAllTalkReaded(speakerId)
+  self.weChatProxy:SetInitState(speakerId, true)
+  self.contentRect.anchoredPosition = Vector2.zero
   self:StopAudio()
-  ;
-  (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.WeChatSwitchWindow)
+  AudioHelperController.PlayRequestedUISound(CriAudioIDConst.WeChatSwitchWindow)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.SwitchAnim = function(self)
-  -- function num : 0_10
-  (self.animation):Play("Uieff_WeChat_Switch")
+function UIWeChatController:SwitchAnim()
+  self.animation:Play("Uieff_WeChat_Switch")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.Select = function(self, groupid, speakerid, force)
-  -- function num : 0_11
+function UIWeChatController:Select(groupid, speakerid, force)
   if not force and self.speakerId == speakerid then
-    return 
+    return
   end
-  if (self.roleCell)[self._groupid] then
-    ((self.roleCell)[self._groupid]):Select(false)
+  if self.roleCell[self._groupid] then
+    self.roleCell[self._groupid]:Select(false)
   end
-  ;
-  (self.weChatProxy):EndCurWaitStat()
+  self.weChatProxy:EndCurWaitStat()
   self._groupid = groupid
   self.speakerId = speakerid
-  if (self.roleCell)[self._groupid] then
-    ((self.roleCell)[self._groupid]):Select(true)
+  if self.roleCell[self._groupid] then
+    self.roleCell[self._groupid]:Select(true)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.SetChoose = function(self, speakerId)
-  -- function num : 0_12
+function UIWeChatController:SetChoose(speakerId)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_13 , upvalues : _ENV
+function UIWeChatController:OnUpdate(deltaTimeMS)
   if self.mCurVoiceId == nil then
-    return 
+    return
   end
-  local isPlaying = (AudioHelperController.CheckUIVoicePlaying)(self.mCurVoiceId)
+  local isPlaying = AudioHelperController.CheckUIVoicePlaying(self.mCurVoiceId)
   if isPlaying ~= false then
-    return 
+    return
   end
   self.mCurVoiceId = nil
   self:StopVoiceAni()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.CreateRoleItem = function(self, _groupScrollView, _index)
-  -- function num : 0_14
+function UIWeChatController:CreateRoleItem(_groupScrollView, _index)
   if _index < 0 then
-    return 
+    return
   end
   _index = _index + 1
   local item = _groupScrollView:NewListViewItem("item")
   local pool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   local widget = pool:SpawnObject("UIWeChatRoleCell")
-  local group = (self._groups)[_index]
+  local group = self._groups[_index]
   self._tmpHeight = widget:SetData(group, function(weChatRole)
-    -- function num : 0_14_0 , upvalues : self
     local groupid = weChatRole:GetGroupId()
     local speakerid = weChatRole:GetSpeakerId()
     self:OnClickRoleCell(groupid, speakerid)
-  end
-, function(weChatRole)
-    -- function num : 0_14_1 , upvalues : self
+  end, function(weChatRole)
     self:ShowDialog("UIWeChatChangeNameController", weChatRole)
-  end
-, self.speakerId)
+  end, self.speakerId)
   local role = group:CurrentRole()
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.roleCell)[role:GetGroupId()] = widget
+  self.roleCell[role:GetGroupId()] = widget
   return item
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.RefreshReplyBtn = function(self, enable)
-  -- function num : 0_15 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIWeChatController:RefreshReplyBtn(enable)
   if enable then
-    (self.replyBtnIcon).sprite = (self.atlas):GetSprite("terminal_zhongduan_btn3")
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.replyBtnTxt).color = Color(0.99607843137255, 0.99607843137255, 0.99607843137255)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.msgTex).color = Color(0.99607843137255, 0.99607843137255, 0.99607843137255)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.replyBtnIcon).raycastTarget = true
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.replyBtnBtn).enabled = true
+    self.replyBtnIcon.sprite = self.atlas:GetSprite("terminal_zhongduan_btn3")
+    self.replyBtnTxt.color = Color(0.996078431372549, 0.996078431372549, 0.996078431372549)
+    self.msgTex.color = Color(0.996078431372549, 0.996078431372549, 0.996078431372549)
+    self.replyBtnIcon.raycastTarget = true
+    self.replyBtnBtn.enabled = true
     self:RefreshReplyRed(true)
   else
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.replyBtnIcon).sprite = (self.atlas):GetSprite("terminal_zhongduan_btn4")
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.replyBtnTxt).color = Color(0.31372549019608, 0.31372549019608, 0.31372549019608)
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.msgTex).color = Color(0.31372549019608, 0.31372549019608, 0.31372549019608)
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.replyBtnIcon).raycastTarget = false
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.replyBtnBtn).enabled = false
+    self.replyBtnIcon.sprite = self.atlas:GetSprite("terminal_zhongduan_btn4")
+    self.replyBtnTxt.color = Color(0.3137254901960784, 0.3137254901960784, 0.3137254901960784)
+    self.msgTex.color = Color(0.3137254901960784, 0.3137254901960784, 0.3137254901960784)
+    self.replyBtnIcon.raycastTarget = false
+    self.replyBtnBtn.enabled = false
     self:RefreshReplyRed(false)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.RefreshReplyRed = function(self, red)
-  -- function num : 0_16
-  (self.replyRedGO):SetActive(red)
+function UIWeChatController:RefreshReplyRed(red)
+  self.replyRedGO:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.ShowReplyMenuGO = function(self, show)
-  -- function num : 0_17 , upvalues : _ENV
+function UIWeChatController:ShowReplyMenuGO(show)
   if self.replyMenuGO then
-    (self.replyMenuGO):SetActive(show)
-    ;
-    (self.replyChooseGO):SetActive(show)
-    ;
-    (self.replyMenuBgGO):SetActive(show)
+    self.replyMenuGO:SetActive(show)
+    self.replyChooseGO:SetActive(show)
+    self.replyMenuBgGO:SetActive(show)
     if show then
-      (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.replyBgRect)
-      ;
-      (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.replyBtn1Rect)
-      ;
-      (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.replyBtn2Rect)
-      ;
-      (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.replyBtn3Rect)
+      UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.replyBgRect)
+      UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.replyBtn1Rect)
+      UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.replyBtn2Rect)
+      UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.replyBtn3Rect)
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.RefreshReplyMenu = function(self)
-  -- function num : 0_18
-  local talk = (self.weChatProxy):GetLastTalk(self.speakerId)
+function UIWeChatController:RefreshReplyMenu()
+  local talk = self.weChatProxy:GetLastTalk(self.speakerId)
   if not talk.options then
-    return 
+    return
   end
   for index = 1, 3 do
-    local option = (talk.options)[index]
+    local option = talk.options[index]
     if option then
-      (((self.replyMenuItem)[index]).go):SetActive(true)
-      ;
-      (((self.replyMenuItem)[index]).txt):SetText(self:_DoEscape(option.txt))
+      self.replyMenuItem[index].go:SetActive(true)
+      self.replyMenuItem[index].txt:SetText(self:_DoEscape(option.txt))
     else
-      ;
-      (((self.replyMenuItem)[index]).go):SetActive(false)
+      self.replyMenuItem[index].go:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController._DoEscape = function(self, strContent)
-  -- function num : 0_19 , upvalues : _ENV
-  if (string.isnullorempty)(self.roleName) then
-    self.roleName = ((GameGlobal.GetModule)(RoleModule)):GetName()
+function UIWeChatController:_DoEscape(strContent)
+  if string.isnullorempty(self.roleName) then
+    self.roleName = GameGlobal.GetModule(RoleModule):GetName()
   end
-  strContent = (string.gsub)(strContent, "PlayerName", self.roleName)
+  strContent = string.gsub(strContent, "PlayerName", self.roleName)
   return strContent
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.replybtnOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self.weChatProxy):GetCurStateType() == WeChatState.Reply then
+function UIWeChatController:replybtnOnClick(go)
+  if self.weChatProxy:GetCurStateType() == WeChatState.Reply then
     self:RefreshReplyMenu()
     self:ShowReplyMenuGO(true)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.replymenubtn1OnClick = function(self, go)
-  -- function num : 0_21
+function UIWeChatController:replymenubtn1OnClick(go)
   self:_ReplyMenuBtnOnClick(1)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.replymenubtn2OnClick = function(self, go)
-  -- function num : 0_22
+function UIWeChatController:replymenubtn2OnClick(go)
   self:_ReplyMenuBtnOnClick(2)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.replymenubtn3OnClick = function(self, go)
-  -- function num : 0_23
+function UIWeChatController:replymenubtn3OnClick(go)
   self:_ReplyMenuBtnOnClick(3)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController._ReplyMenuBtnOnClick = function(self, index)
-  -- function num : 0_24 , upvalues : _ENV
-  (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.WeChatSendMessage)
+function UIWeChatController:_ReplyMenuBtnOnClick(index)
+  AudioHelperController.PlayRequestedUISound(CriAudioIDConst.WeChatSendMessage)
   self:ShowReplyMenuGO(false)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.contentRect).anchoredPosition = Vector3.zero
-  ;
-  (self.weChatProxy):Reply(self.speakerId, index)
+  self.contentRect.anchoredPosition = Vector3.zero
+  self.weChatProxy:Reply(self.speakerId, index)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.menubgOnClick = function(self)
-  -- function num : 0_25
+function UIWeChatController:menubgOnClick()
   self:ShowReplyMenuGO(false)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnWeChatNormalState = function(self, speakerId)
-  -- function num : 0_26 , upvalues : _ENV
+function UIWeChatController:OnWeChatNormalState(speakerId)
   self:SetDebugText()
   if speakerId ~= self.speakerId then
-    return 
+    return
   end
-  for key,roleCell in pairs(self.roleCell) do
+  for key, roleCell in pairs(self.roleCell) do
     roleCell:SetData(nil, nil, nil, self.speakerId)
   end
   self:RefreshChatScroll()
   self:RefreshReplyBtn(false)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnWeChatReplyState = function(self, speakerId)
-  -- function num : 0_27 , upvalues : _ENV
+function UIWeChatController:OnWeChatReplyState(speakerId)
   self:SetDebugText()
   if speakerId ~= self.speakerId then
-    return 
+    return
   end
-  for key,roleCell in pairs(self.roleCell) do
+  for key, roleCell in pairs(self.roleCell) do
     roleCell:SetData(nil, nil, nil, self.speakerId)
   end
   self:RefreshChatScroll()
   local btnState = true
-  local role = (self.weChatProxy):GetRole(self.speakerId)
+  local role = self.weChatProxy:GetRole(self.speakerId)
   local chats = role.chats
   local currentChat = chats[#chats]
   local talks = currentChat.talks
@@ -560,121 +374,95 @@ UIWeChatController.OnWeChatReplyState = function(self, speakerId)
       break
     end
   end
-  do
-    self:RefreshReplyBtn(btnState)
-  end
+  self:RefreshReplyBtn(btnState)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnWeChatAddAnswerState = function(self, data)
-  -- function num : 0_28 , upvalues : _ENV
+function UIWeChatController:OnWeChatAddAnswerState(data)
   self:SetDebugText()
   if data.speakerId ~= self.speakerId then
-    (Log.error)("Find SpeakerID Not Match In UIWeChatController:OnWeChatAddAnswerState : ", "data.speakerId[", data.speakerId, "] ~= self.speakerId[", self.speakerId, "]")
-    return 
+    Log.error("Find SpeakerID Not Match In UIWeChatController:OnWeChatAddAnswerState : ", "data.speakerId[", data.speakerId, "] ~= self.speakerId[", self.speakerId, "]")
+    return
   end
   local groupid = self:GetGroupIDFromSpeakerID(data.speakerId)
-  if (self.roleCell)[groupid] then
-    ((self.roleCell)[groupid]):SetData(nil, nil, nil, self.speakerId)
+  if self.roleCell[groupid] then
+    self.roleCell[groupid]:SetData(nil, nil, nil, self.speakerId)
   end
   self:RefreshChatScroll()
   self:Select(groupid, self.speakerId)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.GetGroupIDFromSpeakerID = function(self, sid)
-  -- function num : 0_29 , upvalues : _ENV
-  local cfg_pet = (Cfg.cfg_pet)[sid]
+function UIWeChatController:GetGroupIDFromSpeakerID(sid)
+  local cfg_pet = Cfg.cfg_pet[sid]
   if cfg_pet and cfg_pet.BinderPetID then
     return cfg_pet.BinderPetID
   end
   return sid
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnWeChatWaitState = function(self, data)
-  -- function num : 0_30 , upvalues : _ENV
+function UIWeChatController:OnWeChatWaitState(data)
   self:SetDebugText()
   if data.speakerId ~= self.speakerId then
-    (Log.error)("Find SpeakerID Not Match In UIWeChatController:OnWeChatWaitState : ", "data.speakerId[", data.speakerId, "] ~= self.speakerId[", self.speakerId, "]")
-    return 
+    Log.error("Find SpeakerID Not Match In UIWeChatController:OnWeChatWaitState : ", "data.speakerId[", data.speakerId, "] ~= self.speakerId[", self.speakerId, "]")
+    return
   end
   self:RefreshReplyBtn(false)
   self:RefreshChatScroll(true)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnWeChatWaitEndState = function(self, data, count)
-  -- function num : 0_31 , upvalues : _ENV
+function UIWeChatController:OnWeChatWaitEndState(data, count)
   self:SetDebugText()
   if data.speakerId ~= self.speakerId then
-    (Log.error)("Find SpeakerID Not Match In UIWeChatController:OnWeChatWaitEndState : ", "data.speakerId[", data.speakerId, "] ~= self.speakerId[", self.speakerId, "]")
-    return 
+    Log.error("Find SpeakerID Not Match In UIWeChatController:OnWeChatWaitEndState : ", "data.speakerId[", data.speakerId, "] ~= self.speakerId[", self.speakerId, "]")
+    return
   end
-  local talk = (self.weChatProxy):GetTalk(data.speakerId, data.chatId, data.talkId, data.triggerIndex)
+  local talk = self.weChatProxy:GetTalk(data.speakerId, data.chatId, data.talkId, data.triggerIndex)
   self:UpdateItem(talk)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnWeChatReaded = function(self, speakerId, chatId, talkId, triggerIndex)
-  -- function num : 0_32
+function UIWeChatController:OnWeChatReaded(speakerId, chatId, talkId, triggerIndex)
   if speakerId ~= self.speakerId then
-    return 
+    return
   end
   local groupid = self:GetGroupIDFromSpeakerID(speakerId)
-  local roleList = (self._groups)[groupid]
-  if (self.roleCell)[groupid] then
-    ((self.roleCell)[groupid]):SetData(roleList, nil, nil, self.speakerId)
+  local roleList = self._groups[groupid]
+  if self.roleCell[groupid] then
+    self.roleCell[groupid]:SetData(roleList, nil, nil, self.speakerId)
   end
-  local talk = (self.weChatProxy):GetTalk(speakerId, chatId, talkId, triggerIndex)
+  local talk = self.weChatProxy:GetTalk(speakerId, chatId, talkId, triggerIndex)
   self:UpdateItem(talk)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnWeChatChangeName = function(self, speakerId)
-  -- function num : 0_33 , upvalues : _ENV
+function UIWeChatController:OnWeChatChangeName(speakerId)
   if speakerId ~= self.speakerId then
-    return 
+    return
   end
-  local talks = (self.weChatProxy):GetTalks(speakerId)
-  for _,talk in ipairs(talks) do
+  local talks = self.weChatProxy:GetTalks(speakerId)
+  for _, talk in ipairs(talks) do
     self:UpdateItem(talk)
   end
   local groupid = self:GetGroupIDFromSpeakerID(speakerId)
-  if (self.roleCell)[groupid] then
-    ((self.roleCell)[groupid]):ChangeName()
+  if self.roleCell[groupid] then
+    self.roleCell[groupid]:ChangeName()
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnWeChatUpdateRole = function(self, speakerid)
-  -- function num : 0_34
+function UIWeChatController:OnWeChatUpdateRole(speakerid)
   self:RefreshRoleScroll(speakerid)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.WeChatUpdateLastTime = function(self, speakerid)
-  -- function num : 0_35 , upvalues : _ENV
+function UIWeChatController:WeChatUpdateLastTime(speakerid)
   local group2idx = {}
   for i = 1, #self._groups do
-    local group = (self._groups)[i]
-    if group:CurrentIdx() > 1 then
-      local groupid = ((group:RoleList())[1]):GetGroupId()
+    local group = self._groups[i]
+    if 1 < group:CurrentIdx() then
+      local groupid = group:RoleList()[1]:GetGroupId()
       group2idx[groupid] = group:CurrentIdx()
     end
   end
   self._groups = self:GetAndSortGroups(speakerid)
   for i = 1, #self._groups do
-    local group = (self._groups)[i]
-    if group:RoleCount() > 1 then
+    local group = self._groups[i]
+    if 1 < group:RoleCount() then
       local gid = group:GroupID()
       local idx = group2idx[gid]
       if idx then
@@ -682,18 +470,11 @@ UIWeChatController.WeChatUpdateLastTime = function(self, speakerid)
       end
     end
   end
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.contentRect).anchoredPosition = Vector2.zero
-  ;
-  (self.roleScrollView):MovePanelToItemIndex(0, 0)
+  self.contentRect.anchoredPosition = Vector2.zero
+  self.roleScrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.OnWeChatPlayVoice = function(self, voiceId, chatCell)
-  -- function num : 0_36
+function UIWeChatController:OnWeChatPlayVoice(voiceId, chatCell)
   local oid = self:PlayAudio(voiceId)
   if oid == nil then
     return nil
@@ -703,115 +484,74 @@ UIWeChatController.OnWeChatPlayVoice = function(self, voiceId, chatCell)
   self.mCurVoiceId = oid
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.AddVoiceAniTimer = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UIWeChatController:AddVoiceAniTimer()
   if self.curPlayVoiceAniChatCell then
-    self.timer = ((GameGlobal.Timer)()):AddEventTimes(500, TimerTriggerCount.Infinite, (self.curPlayVoiceAniChatCell).OnVoiceAniLoop, self.curPlayVoiceAniChatCell)
-    ;
-    (self.curPlayVoiceAniChatCell):StartVoiceAni()
+    self.timer = GameGlobal.Timer():AddEventTimes(500, TimerTriggerCount.Infinite, self.curPlayVoiceAniChatCell.OnVoiceAniLoop, self.curPlayVoiceAniChatCell)
+    self.curPlayVoiceAniChatCell:StartVoiceAni()
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.StopVoiceAni = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UIWeChatController:StopVoiceAni()
   if self.timer then
-    ((GameGlobal.Timer)()):CancelEvent(self.timer)
+    GameGlobal.Timer():CancelEvent(self.timer)
     self.timer = nil
   end
   if self.curPlayVoiceAniChatCell then
-    (self.curPlayVoiceAniChatCell):StopVoiceAni()
+    self.curPlayVoiceAniChatCell:StopVoiceAni()
   end
   self.curPlayVoiceAniChatCell = nil
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.PlayAudio = function(self, audioResId)
-  -- function num : 0_39 , upvalues : _ENV
+function UIWeChatController:PlayAudio(audioResId)
   if audioResId == nil then
     return nil
   end
   self:StopAudio()
-  local id = (AudioHelperController.RequestAndPlayUIVoiceAutoRelease)(audioResId)
+  local id = AudioHelperController.RequestAndPlayUIVoiceAutoRelease(audioResId)
   return id
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.StopAudio = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function UIWeChatController:StopAudio()
   if self.mCurVoiceId ~= nil then
-    (AudioHelperController.StopUIVoice)(self.mCurVoiceId, 0)
+    AudioHelperController.StopUIVoice(self.mCurVoiceId, 0)
     self.mCurVoiceId = nil
   end
   self:StopVoiceAni()
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.SetDebugText = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  (self.debugTxt):SetText(WeChatStateName[(self.weChatProxy):GetCurStateType()])
+function UIWeChatController:SetDebugText()
+  self.debugTxt:SetText(WeChatStateName[self.weChatProxy:GetCurStateType()])
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.UpdateChatItems = function(self, talks, weChatRole, addOne)
-  -- function num : 0_42 , upvalues : _ENV
+function UIWeChatController:UpdateChatItems(talks, weChatRole, addOne)
   self.heights = {}
   if addOne then
     self.count = self.count + 1
   else
     self.count = #talks
   end
-  ;
-  (self.sop):SpawnObjects("UIWeChatCell", self.count)
-  self.chatCells = (self.sop):GetAllSpawnList()
-  for index,cell in ipairs(self.chatCells) do
+  self.sop:SpawnObjects("UIWeChatCell", self.count)
+  self.chatCells = self.sop:GetAllSpawnList()
+  for index, cell in ipairs(self.chatCells) do
     if index <= self.count then
       local talk = talks[index]
       if talk then
         cell:Enable(true)
         local height = cell:SetData(talk, weChatRole, nil, self.speakerId)
-        ;
-        (table.insert)(self.heights, height)
+        table.insert(self.heights, height)
       else
-        do
-          do
-            do
-              cell:Enable(false)
-              cell:Enable(false)
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+        cell:Enable(false)
       end
+    else
+      cell:Enable(false)
     end
   end
   self:UpdateContentHeight()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.ChangeBgm = function(self, talks)
-  -- function num : 0_43 , upvalues : _ENV
+function UIWeChatController:ChangeBgm(talks)
   local ts = talks
-  local playid = nil
+  local playid
   for i = 1, #ts do
     local talk = ts[i]
     if talk.readed then
@@ -825,125 +565,86 @@ UIWeChatController.ChangeBgm = function(self, talks)
     end
   end
   if playid then
-    local cfg = (Cfg.cfg_role_music)[playid]
+    local cfg = Cfg.cfg_role_music[playid]
     if not cfg then
-      (Log.error)("###[UIWeChatCell] cfg_role_music is nil ! id --> ", playid)
+      Log.error("###[UIWeChatCell] cfg_role_music is nil ! id --> ", playid)
     end
-    ;
-    (AudioHelperController.PlayBGM)(cfg.AudioID)
+    AudioHelperController.PlayBGM(cfg.AudioID)
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.AddUnLockBGM = function(self, id)
-  -- function num : 0_44 , upvalues : _ENV
-  if (table.icontains)(self._unlockBGMs, id) then
-    (self._uiMainModule):AddBGM(id)
+function UIWeChatController:AddUnLockBGM(id)
+  if table.icontains(self._unlockBGMs, id) then
+    self._uiMainModule:AddBGM(id)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.GetItem = function(self, talk)
-  -- function num : 0_45 , upvalues : _ENV
-  for index,cell in ipairs(self.chatCells) do
-    if (cell.talk).talkId == talk.talkId and (cell.talk).triggerIndex == talk.triggerIndex then
+function UIWeChatController:GetItem(talk)
+  for index, cell in ipairs(self.chatCells) do
+    if cell.talk.talkId == talk.talkId and cell.talk.triggerIndex == talk.triggerIndex then
       return cell, index
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.UpdateItem = function(self, talk)
-  -- function num : 0_46
+function UIWeChatController:UpdateItem(talk)
   local cell, index = self:GetItem(talk)
   if cell then
     local height = cell:SetData(talk, nil, nil, self.speakerId)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.heights)[index] = height
+    self.heights[index] = height
     self:UpdateContentHeight()
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.UpdateContentHeight = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UIWeChatController:UpdateContentHeight()
   local contentHeight = 0
-  for index,height in ipairs(self.heights) do
+  for index, height in ipairs(self.heights) do
     contentHeight = contentHeight + height
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.contentRect).sizeDelta = Vector2(1227, contentHeight)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.contentRect)
+  self.contentRect.sizeDelta = Vector2(1227, contentHeight)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.contentRect)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.GetWeChatRoleBtn = function(self, petTempId)
-  -- function num : 0_48
+function UIWeChatController:GetWeChatRoleBtn(petTempId)
   local groupid = self:GetGroupIDFromSpeakerID(petTempId)
-  if self.roleCell and (self.roleCell)[groupid] then
-    return ((self.roleCell)[groupid]):GetGameObject("bgbtn")
-  end
+  return self.roleCell and self.roleCell[groupid] and self.roleCell[groupid]:GetGameObject("bgbtn")
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.ShowAddAffinity = function(self, petID, affinity)
-  -- function num : 0_49 , upvalues : _ENV
+function UIWeChatController:ShowAddAffinity(petID, affinity)
   if not self._tweenQueue then
-    local pet = (self:GetModule(PetModule)):GetPetByTemplateId(petID)
+    local pet = self:GetModule(PetModule):GetPetByTemplateId(petID)
     if not pet then
-      (Log.fatal)("[story] missing pet info, tplid:" .. petID)
-      return 
+      Log.fatal("[story] missing pet info, tplid:" .. petID)
+      return
     end
-    ;
-    (self._affinityPetHead):LoadImage(pet:GetPetHead(PetSkinEffectPath.HEAD_ICON_WE_CHAT))
-    ;
-    (self._petNameTxt):SetText((StringTable.Get)(pet:GetPetName()))
-    ;
-    (self._affinityTxt):SetText((StringTable.Get)("str_story_add_affinity", affinity))
-    ;
-    (self._affinityWnd):SetActive(true)
+    self._affinityPetHead:LoadImage(pet:GetPetHead(PetSkinEffectPath.HEAD_ICON_WE_CHAT))
+    self._petNameTxt:SetText(StringTable.Get(pet:GetPetName()))
+    self._affinityTxt:SetText(StringTable.Get("str_story_add_affinity", affinity))
+    self._affinityWnd:SetActive(true)
     if self._tweenQueue then
-      (self._tweenQueue):Complete(false)
+      self._tweenQueue:Complete(false)
       self._tweenQueue = nil
     end
-    self._tweenQueue = (((DG.Tweening).DOTween).Sequence)()
-    ;
-    (self._tweenQueue):Append(((self._affinityWnd).transform):DOAnchorPosX(0, 0.2))
-    ;
-    (self._tweenQueue):AppendInterval(3)
+    self._tweenQueue = DG.Tweening.DOTween.Sequence()
+    self._tweenQueue:Append(self._affinityWnd.transform:DOAnchorPosX(0, 0.2))
+    self._tweenQueue:AppendInterval(3)
     if self._affinityWnd then
-      ((self._tweenQueue):Append(((self._affinityWnd).transform):DOAnchorPosX(600, 0.2))):AppendCallback(function()
-    -- function num : 0_49_0 , upvalues : self
-    if self._affinityWnd then
-      (self._affinityWnd):SetActive(false)
-    end
-    self._tweenQueue = nil
-  end
-)
+      self._tweenQueue:Append(self._affinityWnd.transform:DOAnchorPosX(600, 0.2)):AppendCallback(function()
+        if self._affinityWnd then
+          self._affinityWnd:SetActive(false)
+        end
+        self._tweenQueue = nil
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.ObservationRefresh = function(self, pstid_list)
-  -- function num : 0_50 , upvalues : _ENV
+function UIWeChatController:ObservationRefresh(pstid_list)
   if pstid_list then
-    local pet = (self:GetModule(PetModule)):GetPetByTemplateId(self.speakerId)
+    local pet = self:GetModule(PetModule):GetPetByTemplateId(self.speakerId)
     if pet then
-      for key,value in pairs(pstid_list) do
+      for key, value in pairs(pstid_list) do
         if value == pet:GetPstID() then
           self:ShowAddAffinity(self.speakerId, 5)
           break
@@ -953,47 +654,32 @@ UIWeChatController.ObservationRefresh = function(self, pstid_list)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatController.GetAndSortGroups = function(self, speakerid)
-  -- function num : 0_51 , upvalues : _ENV
+function UIWeChatController:GetAndSortGroups(speakerid)
   if speakerid and self._groups then
     local tmpGroups = {}
-    local tmpGroup = nil
-    for index,value in ipairs(self._groups) do
+    local tmpGroup
+    for index, value in ipairs(self._groups) do
       local roleList = value:RoleList()
       local isit_idx = false
-      for _,role in pairs(roleList) do
+      for _, role in pairs(roleList) do
         local spid = role:GetSpeakerId()
         if spid == speakerid then
           isit_idx = index
           break
         end
       end
-      do
-        do
-          if isit_idx then
-            tmpGroup = (self._groups)[isit_idx]
-            ;
-            (table.remove)(self._groups, isit_idx)
-            break
-          end
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if isit_idx then
+        tmpGroup = self._groups[isit_idx]
+        table.remove(self._groups, isit_idx)
+        break
       end
     end
-    ;
-    (table.insert)(tmpGroups, tmpGroup)
-    for index,value in ipairs(self._groups) do
-      (table.insert)(tmpGroups, value)
+    table.insert(tmpGroups, tmpGroup)
+    for index, value in ipairs(self._groups) do
+      table.insert(tmpGroups, value)
     end
     return tmpGroups
   else
-    do
-      do return (self.weChatProxy):GetSortedGroup(speakerid) end
-    end
+    return self.weChatProxy:GetSortedGroup(speakerid)
   end
 end
-
-

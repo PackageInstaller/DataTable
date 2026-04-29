@@ -1,109 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_enhance_occupied_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_EnhanceOccupiedGrid", SkillEffectCalc_Base)
 SkillEffectCalc_EnhanceOccupiedGrid = SkillEffectCalc_EnhanceOccupiedGrid
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_EnhanceOccupiedGrid.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_EnhanceOccupiedGrid:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.appendArray)(results, result)
+      table.appendArray(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_EnhanceOccupiedGrid._CalculateSingleTarget = function(self, calcParam, nTargetID)
-  -- function num : 0_1 , upvalues : _ENV
-  local eTarget = (self._world):GetEntityByID(nTargetID)
+function SkillEffectCalc_EnhanceOccupiedGrid:_CalculateSingleTarget(calcParam, nTargetID)
+  local eTarget = self._world:GetEntityByID(nTargetID)
   if not eTarget then
     return {}
   end
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local v2PosTarget = eTarget:GetGridPosition()
-  local cBodyArea = (eTarget:BodyArea())
-  local tv2RelativeBody = nil
+  local cBodyArea = eTarget:BodyArea()
+  local tv2RelativeBody
   if not cBodyArea then
-    tv2RelativeBody = {Vector2.zero}
+    tv2RelativeBody = {
+      Vector2.zero
+    }
   else
     tv2RelativeBody = cBodyArea:GetArea()
   end
   local tv2AbsBody = {}
-  for _,v2Relative in ipairs(tv2RelativeBody) do
-    (table.insert)(tv2AbsBody, v2Relative + v2PosTarget)
+  for _, v2Relative in ipairs(tv2RelativeBody) do
+    table.insert(tv2AbsBody, v2Relative + v2PosTarget)
   end
   local rangeMap = self:GetRangeMap(calcParam.skillRange)
-  local filter = function(e)
-    -- function num : 0_1_0
-    do return not e:HasTrap() or (e:Trap()):GetTrapLevel() == 0 end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  
+  local function filter(e)
+    return e:HasTrap() and e:Trap():GetTrapLevel() == 0
   end
-
+  
   local tv2Candidates = {}
-  for _,v2Abs in ipairs(tv2AbsBody) do
-    if rangeMap[v2Abs.x] and (rangeMap[v2Abs.x])[v2Abs.y] then
+  for _, v2Abs in ipairs(tv2AbsBody) do
+    if rangeMap[v2Abs.x] and rangeMap[v2Abs.x][v2Abs.y] then
       local es = boardCmpt:GetPieceEntities(v2Abs, filter)
       if #es == 0 then
-        (table.insert)(tv2Candidates, v2Abs)
+        table.insert(tv2Candidates, v2Abs)
       end
     end
   end
   local effectParam = calcParam.skillEffectParam
   local limit = effectParam:GetMaxCountPerTarget()
   local tv2FinalPos = {}
-  if #tv2Candidates <= limit then
+  if limit >= #tv2Candidates then
     tv2FinalPos = tv2Candidates
   else
-    local randomSvc = (self._world):GetService("RandomLogic")
-    while #tv2Candidates > 0 and limit > 0 do
+    local randomSvc = self._world:GetService("RandomLogic")
+    while 0 < #tv2Candidates and 0 < limit do
       local max = #tv2Candidates
       local rand = randomSvc:LogicRand(1, max)
-      local v2Selected = (table.remove)(tv2Candidates, rand)
-      ;
-      (table.insert)(tv2FinalPos, v2Selected)
+      local v2Selected = table.remove(tv2Candidates, rand)
+      table.insert(tv2FinalPos, v2Selected)
       limit = limit - 1
     end
   end
-  do
-    local tResults = {}
-    if #tv2FinalPos == 0 then
-      return tResults
-    end
-    for _,v2 in ipairs(tv2FinalPos) do
-      local result = SkillSummonTrapEffectResult:New(effectParam:GetTrapID(), v2)
-      ;
-      (table.insert)(tResults, result)
-    end
+  local tResults = {}
+  if #tv2FinalPos == 0 then
     return tResults
   end
+  for _, v2 in ipairs(tv2FinalPos) do
+    local result = SkillSummonTrapEffectResult:New(effectParam:GetTrapID(), v2)
+    table.insert(tResults, result)
+  end
+  return tResults
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_EnhanceOccupiedGrid.GetRangeMap = function(self, skillRange)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_EnhanceOccupiedGrid:GetRangeMap(skillRange)
   local t = {}
-  for _,v2 in ipairs(skillRange) do
+  for _, v2 in ipairs(skillRange) do
     local x = v2.x
     local y = v2.y
     if not t[x] then
       t[x] = {}
     end
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (t[x])[y] = true
+    t[x][y] = true
   end
   return t
 end
-
-

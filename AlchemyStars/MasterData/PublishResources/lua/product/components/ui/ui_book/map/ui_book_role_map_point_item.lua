@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/map/ui_book_role_map_point_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleMapPointItem", UICustomWidget)
 UIBookRoleMapPointItem = UIBookRoleMapPointItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleMapPointItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBookRoleMapPointItem:Constructor()
   self._isSelect = false
-  self._size = {Vector2(280, 280), Vector2(280, 280)}
+  self._size = {
+    Vector2(280, 280),
+    Vector2(280, 280)
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapPointItem.OnShow = function(self)
-  -- function num : 0_1
+function UIBookRoleMapPointItem:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapPointItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIBookRoleMapPointItem:_GetComponents()
   self._pointIcon = self:GetUIComponent("RawImageLoader", "PointIcon")
   self._name = self:GetUIComponent("UILocalizedTMP", "Name")
   self._rect = self:GetUIComponent("RectTransform", "rect")
@@ -32,111 +22,57 @@ UIBookRoleMapPointItem._GetComponents = function(self)
   self._txtBg = self:GetUIComponent("Image", "txtBg")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._owner = self:RootUIOwner()
-  self._altas = (self._owner).altas
+  self._altas = self._owner.altas
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapPointItem.SetData = function(self, pointData, callback)
-  -- function num : 0_3
+function UIBookRoleMapPointItem:SetData(pointData, callback)
   self._pointData = pointData
   self._callback = callback
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapPointItem._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._pointData).type == BookRoleMapPointType.ClassA then
-    self._cfg = (Cfg.cfg_force_book)[(self._pointData).id]
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._rect).sizeDelta = (self._size)[1]
+function UIBookRoleMapPointItem:_InitComponents()
+  if self._pointData.type == BookRoleMapPointType.ClassA then
+    self._cfg = Cfg.cfg_force_book[self._pointData.id]
+    self._rect.sizeDelta = self._size[1]
   else
-    self._cfg = (Cfg.cfg_force_book_second)[(self._pointData).id]
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._rect).sizeDelta = (self._size)[2]
+    self._cfg = Cfg.cfg_force_book_second[self._pointData.id]
+    self._rect.sizeDelta = self._size[2]
   end
-  ;
-  (self._pointIcon):LoadImage((self._cfg).MapIcon)
-  ;
-  (self._name):SetText((StringTable.Get)((self._cfg).Name))
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(((self._cfg).Pos)[1] / 100, ((self._cfg).Pos)[2] / 100)
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset("ui_book_role_map_font.mat", LoadType.Mat)
-  if self._req and (self._req).Obj then
-    self.material = (self._req).Obj
-    local oldMaterial = (self._name).fontMaterial
-    -- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._name).fontMaterial = self.material
-    ;
-    ((self._name).fontMaterial):SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
+  self._pointIcon:LoadImage(self._cfg.MapIcon)
+  self._name:SetText(StringTable.Get(self._cfg.Name))
+  self._rect.anchorMax = Vector2(0.5, 0.5)
+  self._rect.anchorMin = Vector2(0.5, 0.5)
+  self._rect.anchoredPosition = Vector2(self._cfg.Pos[1] / 100, self._cfg.Pos[2] / 100)
+  self._req = ResourceManager:GetInstance():SyncLoadAsset("ui_book_role_map_font.mat", LoadType.Mat)
+  if self._req and self._req.Obj then
+    self.material = self._req.Obj
+    local oldMaterial = self._name.fontMaterial
+    self._name.fontMaterial = self.material
+    self._name.fontMaterial:SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapPointItem.SetSelect = function(self, isSelect)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBookRoleMapPointItem:SetSelect(isSelect)
   if self._isSelect == isSelect then
-    return 
+    return
   end
   self._isSelect = isSelect
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
   if isSelect then
-    (self._bg).sprite = (self._altas):GetSprite("n9_rsqb_di06")
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtBg).sprite = (self._altas):GetSprite("n9_rsqb_di12")
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rect).localScale = Vector3(1.1, 1.1, 1.1)
-    ;
-    (self._anim):Play("uianim_UIBookRoleMapPointItem_xuanze_in")
+    self._bg.sprite = self._altas:GetSprite("n9_rsqb_di06")
+    self._txtBg.sprite = self._altas:GetSprite("n9_rsqb_di12")
+    self._rect.localScale = Vector3(1.1, 1.1, 1.1)
+    self._anim:Play("uianim_UIBookRoleMapPointItem_xuanze_in")
   else
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._bg).sprite = (self._altas):GetSprite("n9_rsqb_di05")
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._txtBg).sprite = (self._altas):GetSprite("n9_rsqb_di11")
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rect).localScale = Vector3(1, 1, 1)
-    ;
-    (self._anim):Play("uianim_UIBookRoleMapPointItem_xuanze_out")
+    self._bg.sprite = self._altas:GetSprite("n9_rsqb_di05")
+    self._txtBg.sprite = self._altas:GetSprite("n9_rsqb_di11")
+    self._rect.localScale = Vector3(1, 1, 1)
+    self._anim:Play("uianim_UIBookRoleMapPointItem_xuanze_out")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapPointItem.FullBtnOnClick = function(self)
-  -- function num : 0_6
+function UIBookRoleMapPointItem:FullBtnOnClick()
   if self._callback then
-    (self._callback)(self._cfg, self)
+    self._callback(self._cfg, self)
   end
 end
-
-

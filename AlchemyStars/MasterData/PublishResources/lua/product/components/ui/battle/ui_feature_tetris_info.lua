@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_feature_tetris_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFeatureTetrisInfo", UIController)
 UIFeatureTetrisInfo = UIFeatureTetrisInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFeatureTetrisInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIFeatureTetrisInfo:OnShow(uiParams)
   self._data = uiParams[1]
   self:Init()
   self:_RefreshContent(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIFeatureTetrisInfo:OnHide()
   self:DetachEvent(GameEventType.TetrisFeatureRandom, self._RefreshData)
   self:DetachEvent(GameEventType.TetrisFeatureLock, self._RefreshLock)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFeatureTetrisInfo:Init()
   self._tetrisIconAtlas = self:GetAsset("UIFeatureSkill.spriteatlas", LoadType.SpriteAtlas)
   self._tetrisIcon = self:GetUIComponent("Image", "TetrisIcon")
   self._tetrisAnim = self:GetUIComponent("Animation", "TetrisIcon")
@@ -39,231 +26,152 @@ UIFeatureTetrisInfo.Init = function(self)
   self._mainColorCountAnimList = {}
   self._mainColorCountStateList = {}
   self._allAnim = self:GetUIComponent("Animation", "UICanvas")
-  local mainColorCount = (self._data):GetMainColorMaxCount()
+  local mainColorCount = self._data:GetMainColorMaxCount()
   self._enableMainColorIcon = "n46_blj_di18"
   self._disEnableMainColorIcon = "n46_blj_di19"
   for i = 1, mainColorCount do
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._mainColorCountGOList)[i] = self:GetGameObject("MainColor_" .. i)
-    ;
-    ((self._mainColorCountGOList)[i]):SetActive((self._data):GetMainColorEnable())
-    -- DECOMPILER ERROR at PC80: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._mainColorCountAnimList)[i] = self:GetUIComponent("Animation", "MainColor_" .. i)
-    -- DECOMPILER ERROR at PC88: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._mainColorCountIconList)[i] = self:GetUIComponent("Image", "MainColor_" .. i)
+    self._mainColorCountGOList[i] = self:GetGameObject("MainColor_" .. i)
+    self._mainColorCountGOList[i]:SetActive(self._data:GetMainColorEnable())
+    self._mainColorCountAnimList[i] = self:GetUIComponent("Animation", "MainColor_" .. i)
+    self._mainColorCountIconList[i] = self:GetUIComponent("Image", "MainColor_" .. i)
   end
-  ;
-  (self._powerTxtGO):SetActive((self._data):GetPowerEnable())
-  ;
-  (self._reRollBtnGO):SetActive((self._data):GetReRollEnable())
-  ;
-  (self._lockBtnGO):SetActive((self._data):GetLockEnable())
-  ;
-  (self._lockStateGO):SetActive((self._data):GetLockEnable())
+  self._powerTxtGO:SetActive(self._data:GetPowerEnable())
+  self._reRollBtnGO:SetActive(self._data:GetReRollEnable())
+  self._lockBtnGO:SetActive(self._data:GetLockEnable())
+  self._lockStateGO:SetActive(self._data:GetLockEnable())
   self:AttachEvent(GameEventType.TetrisFeatureRandom, self._RefreshData)
   self:AttachEvent(GameEventType.TetrisFeatureLock, self._RefreshLock)
   self._isPlayReRoll = false
   self:_PlayOpenAnim()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo._RefreshData = function(self)
-  -- function num : 0_3
+function UIFeatureTetrisInfo:_RefreshData()
   self:_RefreshContent(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo._PlayOpenAnim = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(160229105)
+function UIFeatureTetrisInfo:_PlayOpenAnim()
+  AudioHelperController.PlayUISoundAutoRelease(160229105)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo._PlayBtnAudio = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(160229106)
+function UIFeatureTetrisInfo:_PlayBtnAudio()
+  AudioHelperController.PlayUISoundAutoRelease(160229106)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo._RefreshLock = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local tetrisIndex, tetrisLock, tetrisPower, tetrisMainColorCount, tetrisCostPower = (InnerGameHelperRender.GetFeatureTetrisInfo)()
-  if (self._data):GetLockEnable() then
+function UIFeatureTetrisInfo:_RefreshLock()
+  local tetrisIndex, tetrisLock, tetrisPower, tetrisMainColorCount, tetrisCostPower = InnerGameHelperRender.GetFeatureTetrisInfo()
+  if self._data:GetLockEnable() then
     self._lockState = tetrisLock
-    ;
-    (self._lockStateGO):SetActive(tetrisLock)
+    self._lockStateGO:SetActive(tetrisLock)
   end
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UIFeatureTetrisInfo:LockBtnOnClick")
+  GameGlobal.UIStateManager():UnLock("UIFeatureTetrisInfo:LockBtnOnClick")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo._PlayTetrisIconChange = function(self, init, tetrisIndex)
-  -- function num : 0_7 , upvalues : _ENV
-  return ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, init, _ENV, tetrisIndex
+function UIFeatureTetrisInfo:_PlayTetrisIconChange(init, tetrisIndex)
+  return GameGlobal.TaskManager():StartTask(function(TT)
     if self._lockState then
-      return 
+      return
     end
     if not init then
-      (self._tetrisAnim):Play("uieff_UIFeatureTetrisInfo_TetrisIcon_out")
+      self._tetrisAnim:Play("uieff_UIFeatureTetrisInfo_TetrisIcon_out")
       YIELD(TT, 200)
     end
-    local iconName = (self._data):GetTetrisIconByIndex(tetrisIndex)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._tetrisIcon).sprite = (self._tetrisIconAtlas):GetSprite(iconName)
+    local iconName = self._data:GetTetrisIconByIndex(tetrisIndex)
+    self._tetrisIcon.sprite = self._tetrisIconAtlas:GetSprite(iconName)
     if not init then
       YIELD(TT)
-      ;
-      (self._tetrisAnim):Play("uieff_UIFeatureTetrisInfo_TetrisIcon_in")
+      self._tetrisAnim:Play("uieff_UIFeatureTetrisInfo_TetrisIcon_in")
       YIELD(TT, 267)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo._PlayMainColorChange = function(self, init, tetrisMainColorCount)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self._data):GetMainColorEnable() then
-    return ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, tetrisMainColorCount, init, _ENV
-    self._isFullMainColor = (self._data):GetMainColorMaxCount() <= tetrisMainColorCount
-    for i = 1, (self._data):GetMainColorMaxCount() do
-      if i <= tetrisMainColorCount and (init or (self._mainColorCountStateList)[i] == false) then
-        ((self._mainColorCountAnimList)[i]):Play("uieff_UIFeatureTetrisInfo_MainColor_in")
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._mainColorCountStateList)[i] = true
-      elseif tetrisMainColorCount < i and (init or (self._mainColorCountStateList)[i] == true) then
-        ((self._mainColorCountAnimList)[i]):Play("uieff_UIFeatureTetrisInfo_MainColor_out")
-        -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._mainColorCountStateList)[i] = false
+function UIFeatureTetrisInfo:_PlayMainColorChange(init, tetrisMainColorCount)
+  if self._data:GetMainColorEnable() then
+    return GameGlobal.TaskManager():StartTask(function(TT)
+      self._isFullMainColor = tetrisMainColorCount >= self._data:GetMainColorMaxCount()
+      for i = 1, self._data:GetMainColorMaxCount() do
+        if i <= tetrisMainColorCount and (init or self._mainColorCountStateList[i] == false) then
+          self._mainColorCountAnimList[i]:Play("uieff_UIFeatureTetrisInfo_MainColor_in")
+          self._mainColorCountStateList[i] = true
+        elseif i > tetrisMainColorCount and (init or self._mainColorCountStateList[i] == true) then
+          self._mainColorCountAnimList[i]:Play("uieff_UIFeatureTetrisInfo_MainColor_out")
+          self._mainColorCountStateList[i] = false
+        end
+        if not init then
+          YIELD(TT, 200)
+        end
       end
-      if not init then
-        YIELD(TT, 200)
-      end
-    end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo._RefreshContent = function(self, init)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self, init
+function UIFeatureTetrisInfo:_RefreshContent(init)
+  GameGlobal.TaskManager():StartTask(function(TT)
     local allTaskID = {}
-    local tetrisIndex, tetrisLock, tetrisPower, tetrisMainColorCount, tetrisCostPower = (InnerGameHelperRender.GetFeatureTetrisInfo)()
+    local tetrisIndex, tetrisLock, tetrisPower, tetrisMainColorCount, tetrisCostPower = InnerGameHelperRender.GetFeatureTetrisInfo()
     local taskID = self:_PlayTetrisIconChange(init, tetrisIndex)
-    ;
-    (table.insert)(allTaskID, taskID)
-    if (self._data):GetLockEnable() then
+    table.insert(allTaskID, taskID)
+    if self._data:GetLockEnable() then
       self._lockState = tetrisLock
-      ;
-      (self._lockStateGO):SetActive(tetrisLock)
+      self._lockStateGO:SetActive(tetrisLock)
     end
-    if (self._data):GetPowerEnable() then
-      if (self._data):GetMaxShowPower() < tetrisPower then
-        tetrisPower = (self._data):GetMaxShowPower()
+    if self._data:GetPowerEnable() then
+      if tetrisPower > self._data:GetMaxShowPower() then
+        tetrisPower = self._data:GetMaxShowPower()
       end
-      ;
-      (self._powerText):SetText(tetrisPower)
+      self._powerText:SetText(tetrisPower)
       self._power = tetrisPower
       self._costPower = tetrisCostPower
     end
     taskID = self:_PlayMainColorChange(init, tetrisMainColorCount)
-    ;
-    (table.insert)(allTaskID, taskID)
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(allTaskID) do
+    table.insert(allTaskID, taskID)
+    while not TaskHelper:GetInstance():IsAllTaskFinished(allTaskID) do
       YIELD(TT)
     end
     if not init then
       self._isPlayReRoll = false
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("UIFeatureTetrisInfo:ReRollBtnOnClick")
+      GameGlobal.UIStateManager():UnLock("UIFeatureTetrisInfo:ReRollBtnOnClick")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo.BeforeHide = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._allAnim):Play("uieff_UIFeatureTetrisInfo_out")
+function UIFeatureTetrisInfo:BeforeHide(TT)
+  self._allAnim:Play("uieff_UIFeatureTetrisInfo_out")
   YIELD(TT, 200)
   self._isClosing = true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo.DotBGOnClick = function(self, go)
-  -- function num : 0_11
+function UIFeatureTetrisInfo:DotBGOnClick(go)
   if not self._isClosing then
     self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo.GuideExitbuttonOnClick = function(self, go)
-  -- function num : 0_12
+function UIFeatureTetrisInfo:GuideExitbuttonOnClick(go)
   self:DotBGOnClick(go)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo.ReRollBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UIFeatureTetrisInfo:ReRollBtnOnClick(go)
   if self._isPlayReRoll then
-    return 
+    return
   end
-  if self._costPower <= self._power then
+  if self._power >= self._costPower then
     if self._isFullMainColor and self._lockState then
-      (ToastManager.ShowToast)((StringTable.Get)("str_battle_tetris_desc_1"))
+      ToastManager.ShowToast(StringTable.Get("str_battle_tetris_desc_1"))
     else
-      ;
-      ((GameGlobal.UIStateManager)()):Lock("UIFeatureTetrisInfo:ReRollBtnOnClick")
+      GameGlobal.UIStateManager():Lock("UIFeatureTetrisInfo:ReRollBtnOnClick")
       self._isPlayReRoll = true
       self._power = self._power - self._costPower
       self:_PlayBtnAudio()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UITetrisOP, TetrisFeatureCmdOPType.ReRoll)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UITetrisOP, TetrisFeatureCmdOPType.ReRoll)
     end
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_battle_tetris_desc_0"))
+    ToastManager.ShowToast(StringTable.Get("str_battle_tetris_desc_0"))
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureTetrisInfo.LockBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UIFeatureTetrisInfo:LockBtnOnClick")
+function UIFeatureTetrisInfo:LockBtnOnClick(go)
+  GameGlobal.UIStateManager():Lock("UIFeatureTetrisInfo:LockBtnOnClick")
   self:_PlayBtnAudio()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UITetrisOP, TetrisFeatureCmdOPType.Lock, not self._lockState)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UITetrisOP, TetrisFeatureCmdOPType.Lock, not self._lockState)
 end
-
-

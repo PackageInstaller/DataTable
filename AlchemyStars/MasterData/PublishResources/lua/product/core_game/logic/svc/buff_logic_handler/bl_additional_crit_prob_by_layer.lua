@@ -1,37 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_additional_crit_prob_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAdditionalCritProbByLayer", BuffLogicBase)
 BuffLogicChangeAdditionalCritProbByLayer = BuffLogicChangeAdditionalCritProbByLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAdditionalCritProbByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._unitVal = logicParam.unitVal
-  end
+function BuffLogicChangeAdditionalCritProbByLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._unitVal = logicParam.unitVal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAdditionalCritProbByLayer.DoLogic = function(self)
-  -- function num : 0_1
-  local curMarkLayer = (self._buffLogicService):GetBuffLayer(self._entity, self._layerType)
+function BuffLogicChangeAdditionalCritProbByLayer:DoLogic()
+  local curMarkLayer = self._buffLogicService:GetBuffLayer(self._entity, self._layerType)
   local val = self._unitVal * curMarkLayer
-  ;
-  (self._buffLogicService):ChangeAdditionalCritProb(self._entity, self:GetBuffSeq(), val)
+  self._buffLogicService:ChangeAdditionalCritProb(self._entity, self:GetBuffSeq(), val)
 end
 
 _class("BuffLogicRevertAdditionalCritProbByLayer", BuffLogicBase)
 BuffLogicRevertAdditionalCritProbByLayer = BuffLogicRevertAdditionalCritProbByLayer
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertAdditionalCritProbByLayer.DoLogic = function(self)
-  -- function num : 0_2
-  (self._buffLogicService):RemoveAdditionalCritProb(self._entity, self:GetBuffSeq())
+function BuffLogicRevertAdditionalCritProbByLayer:DoLogic()
+  self._buffLogicService:RemoveAdditionalCritProb(self._entity, self:GetBuffSeq())
 end
-
-

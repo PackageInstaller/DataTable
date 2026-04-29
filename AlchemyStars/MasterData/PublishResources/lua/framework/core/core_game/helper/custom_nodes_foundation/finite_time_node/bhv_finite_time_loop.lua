@@ -1,125 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/custom_nodes_foundation/finite_time_node/bhv_finite_time_loop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
-CustomNodeConfigStatic.Check_BhvFiniteTimeLoop = function(nodeCfg)
-  -- function num : 0_0
+function CustomNodeConfigStatic.Check_BhvFiniteTimeLoop(nodeCfg)
   if nodeCfg.Node then
     return true
   end
   return false
 end
 
-;
-(CustomNodeConfigStatic.AddChecker)("BhvFiniteTimeLoop", CustomNodeConfigStatic.Check_BhvFiniteTimeLoop)
+CustomNodeConfigStatic.AddChecker("BhvFiniteTimeLoop", CustomNodeConfigStatic.Check_BhvFiniteTimeLoop)
 _class("BhvFiniteTimeLoop", FiniteTimeBhv)
 BhvFiniteTimeLoop = BhvFiniteTimeLoop
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BhvFiniteTimeLoop.Constructor = function(self)
-  -- function num : 0_1
+function BhvFiniteTimeLoop:Constructor()
   self.Node = nil
   self.IsFinished = false
   self.RemainTimeToNextExcute = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvFiniteTimeLoop.InitializeNode = function(self, cfg, context)
-  -- function num : 0_2 , upvalues : _ENV
-  ((BhvFiniteTimeLoop.super).InitializeNode)(self, cfg, context)
+function BhvFiniteTimeLoop:InitializeNode(cfg, context)
+  BhvFiniteTimeLoop.super.InitializeNode(self, cfg, context)
   local logic = context.Logic
   self.Node = logic:CreateNode(cfg.Node, context)
-  ;
-  (self.Node):Deactivate()
+  self.Node:Deactivate()
   self.Interval = self:Parse(cfg.Interval)
   local duration = self:Parse(cfg.Duration)
   self:InitDuration(duration)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvFiniteTimeLoop.Activate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((BhvFiniteTimeLoop.super).Activate)(self)
+function BhvFiniteTimeLoop:Activate()
+  BhvFiniteTimeLoop.super.Activate(self)
   if self.Node then
-    (self.Node):Activate()
+    self.Node:Activate()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvFiniteTimeLoop.Deactivate = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((BhvFiniteTimeLoop.super).Deactivate)(self)
-  ;
-  (self.Node):Deactivate()
+function BhvFiniteTimeLoop:Deactivate()
+  BhvFiniteTimeLoop.super.Deactivate(self)
+  self.Node:Deactivate()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvFiniteTimeLoop.Destroy = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self.Node):Destroy()
-  ;
-  ((BhvFiniteTimeLoop.super).Destroy)(self)
+function BhvFiniteTimeLoop:Destroy()
+  self.Node:Destroy()
+  BhvFiniteTimeLoop.super.Destroy(self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvFiniteTimeLoop.Reset = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((BhvFiniteTimeLoop.super).Reset)(self)
+function BhvFiniteTimeLoop:Reset()
+  BhvFiniteTimeLoop.super.Reset(self)
   self.IsFinished = false
   self.RemainTimeToNextExcute = nil
-  local duration = self:Parse((self.Config).Duration)
+  local duration = self:Parse(self.Config.Duration)
   self:InitDuration(duration)
-  ;
-  (self.Node):Reset()
+  self.Node:Reset()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvFiniteTimeLoop.OnUpdate = function(self, dt)
-  -- function num : 0_7 , upvalues : _ENV
+function BhvFiniteTimeLoop:OnUpdate(dt)
   if not self.RemainTimeToNextExcute then
     self.RemainTimeToNextExcute = self.Interval
   else
     self.RemainTimeToNextExcute = self.RemainTimeToNextExcute - dt
   end
   if self.RemainTimeToNextExcute <= 0 then
-    if (self.Node):CanStop() == false then
-      (Log.fatal)("BhvFiniteTimeLoop node duration longer than Interval Type=", (self.Logic).CustomLogicType, " id=", (self.Logic).CustomLogicID)
+    if self.Node:CanStop() == false then
+      Log.fatal("BhvFiniteTimeLoop node duration longer than Interval Type=", self.Logic.CustomLogicType, " id=", self.Logic.CustomLogicID)
       dump(self.Config)
-      ;
-      (Log.fatal)((Log.traceback)())
+      Log.fatal(Log.traceback())
     else
-      ;
-      (self.Node):Reset()
+      self.Node:Reset()
       self.RemainTimeToNextExcute = self.Interval + self.RemainTimeToNextExcute
     end
   end
-  ;
-  (self.Node):Update(dt)
+  self.Node:Update(dt)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvFiniteTimeLoop.CanStop = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if ((BhvFiniteTimeLoop.super).CanStop)(self) then
-    return (self.Node):CanStop()
-  end
+function BhvFiniteTimeLoop:CanStop()
+  return BhvFiniteTimeLoop.super.CanStop(self) and self.Node:CanStop()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BhvFiniteTimeLoop.CollectInterfaceInChildren = function(self, interfaceList, funcName)
-  -- function num : 0_9 , upvalues : _ENV
-  (CustomNodeStatic.TraverseCollectInterface)(interfaceList, funcName, self.Node)
+function BhvFiniteTimeLoop:CollectInterfaceInChildren(interfaceList, funcName)
+  CustomNodeStatic.TraverseCollectInterface(interfaceList, funcName, self.Node)
 end
-
-

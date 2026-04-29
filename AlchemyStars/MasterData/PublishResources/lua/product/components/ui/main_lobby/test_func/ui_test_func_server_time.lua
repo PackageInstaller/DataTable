@@ -1,96 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_server_time.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncServerTime", UICustomWidget)
 UITestFuncServerTime = UITestFuncServerTime
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncServerTime.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITestFuncServerTime:OnShow(uiParams)
   self._root = self:GetGameObject("_root")
   self._adjust = self:GetUIComponent("UILocalizationText", "_adjust")
   self._text = self:GetUIComponent("UILocalizationText", "_text")
   self._btns = UITestFuncBtnManager:New(self, "Content", nil)
   self:_SetContent(self._btns)
-  ;
-  (self._btns):SpawnBtns()
+  self._btns:SpawnBtns()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime.OnHide = function(self)
-  -- function num : 0_1
+function UITestFuncServerTime:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime._SetContent = function(self, manager)
-  -- function num : 0_2
+function UITestFuncServerTime:_SetContent(manager)
   self:_AddBtn_Sample(manager, "S4", 8004, "BeginTime")
   self:_AddBtn_Sample(manager, "N40", 1136, "BeginTime")
   self:_AddBtn_Component(manager, "N40 掉落", 113602102, "CloseTime")
   self:_AddBtn_Sample(manager, "N40", 1136, "EndTime")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime._AddBtn_TimeText = function(self, manager, title, text)
-  -- function num : 0_3
+function UITestFuncServerTime:_AddBtn_TimeText(manager, title, text)
   manager:AddBtn_Default(title, function()
-    -- function num : 0_3_0 , upvalues : self, text
-    (self._text):SetText(text)
-  end
-)
+    self._text:SetText(text)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime._AddBtn_Sample = function(self, manager, title, campaignId, key)
-  -- function num : 0_4 , upvalues : _ENV
-  title = (string.format)("%s %d %s", title, campaignId, key)
+function UITestFuncServerTime:_AddBtn_Sample(manager, title, campaignId, key)
+  title = string.format("%s %d %s", title, campaignId, key)
   manager:AddBtn_Default(title, function()
-    -- function num : 0_4_0 , upvalues : self, campaignId, key
     local text = self:_GetSampleInfo(campaignId, key)
-    ;
-    (self._text):SetText(text)
-  end
-)
+    self._text:SetText(text)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime._AddBtn_Component = function(self, manager, title, cmptCfgId, key)
-  -- function num : 0_5 , upvalues : _ENV
-  title = (string.format)("%s %s", title, key)
+function UITestFuncServerTime:_AddBtn_Component(manager, title, cmptCfgId, key)
+  title = string.format("%s %s", title, key)
   manager:AddBtn_Default(title, function()
-    -- function num : 0_5_0 , upvalues : self, cmptCfgId, key
     local text = self:_GetCmptInfo(cmptCfgId, key)
-    ;
-    (self._text):SetText(text)
-  end
-)
+    self._text:SetText(text)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime._GetSampleInfo = function(self, campaignId, key)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[campaignId]
+function UITestFuncServerTime:_GetSampleInfo(campaignId, key)
+  local cfg = Cfg.cfg_campaign[campaignId]
   if cfg then
     return cfg[key]
   end
   return ""
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime._GetCmptInfo = function(self, cmptCfgId, key)
-  -- function num : 0_7
+function UITestFuncServerTime:_GetCmptInfo(cmptCfgId, key)
   local tb = {
-[113602102] = {UnlockTime = "2024-01-10 05:00:00", CloseTime = "2024-01-29 09:00:00"}
-}
+    [113602102] = {
+      UnlockTime = "2024-01-10 05:00:00",
+      CloseTime = "2024-01-29 09:00:00"
+    }
+  }
   local cfg = tb[cmptCfgId]
   if cfg then
     return cfg[key]
@@ -98,49 +64,39 @@ UITestFuncServerTime._GetCmptInfo = function(self, cmptCfgId, key)
   return ""
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime.GoToTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local text = (self._text).text
-  if (string.isnullorempty)(text) then
-    return 
+function UITestFuncServerTime:GoToTime()
+  local text = self._text.text
+  if string.isnullorempty(text) then
+    return
   end
-  local adjust = (self._adjust).text
-  if (string.isnullorempty)(text) then
+  local adjust = self._adjust.text
+  if string.isnullorempty(text) then
     adjust = 0
   end
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local target = loginModule:GetTimeStampByTimeStr(text, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local t = target + tonumber(adjust)
-  ;
-  (UIGMHelper.GotoTime)(t)
+  UIGMHelper.GotoTime(t)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime.ExitBtnOnClick = function(self)
-  -- function num : 0_9
-  (self._root):SetActive(false)
+function UITestFuncServerTime:ExitBtnOnClick()
+  self._root:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime.AdjustBtnOnClick = function(self)
-  -- function num : 0_10
-  local tb = {0, -15, -30, -60, -180}
+function UITestFuncServerTime:AdjustBtnOnClick()
+  local tb = {
+    0,
+    -15,
+    -30,
+    -60,
+    -180
+  }
   self._index = self._index or 0
   self._index = (self._index + 1) % #tb
   local index = self._index + 1
-  ;
-  (self._adjust):SetText(tb[index])
+  self._adjust:SetText(tb[index])
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncServerTime.GoToBtnOnClick = function(self)
-  -- function num : 0_11
+function UITestFuncServerTime:GoToBtnOnClick()
   self:GoToTime()
 end
-
-

@@ -1,81 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/ui_haute_couture_get_item_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureGetItemCell", UICustomWidget)
 UIHauteCoutureGetItemCell = UIHauteCoutureGetItemCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureGetItemCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHauteCoutureGetItemCell:OnShow(uiParams)
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._anim = self:GetUIComponent("Animation", "rect")
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIHauteItem")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureGetItemCell.SetData = function(self, itemInfo, clickCallback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureGetItemCell:SetData(itemInfo, clickCallback)
   self._templateData = itemInfo
-  self._item_id = (self._templateData).item_id
-  local text2 = "<color=#847e7e>" .. (StringTable.Get)((self._templateData).item_name) .. "</color>"
-  local quality = (self._templateData).color
-  self._itemCount = (self._templateData).item_count
-  local icon = (self._templateData).icon
+  self._item_id = self._templateData.item_id
+  local text2 = "<color=#847e7e>" .. StringTable.Get(self._templateData.item_name) .. "</color>"
+  local quality = self._templateData.color
+  self._itemCount = self._templateData.item_count
+  local icon = self._templateData.icon
   local tex = self:FormatItemCount(self._itemCount)
   local text1 = tex
-  local itemId = (self._templateData).item_id
-  local des = (self._templateData).item_des
-  local awardType = (self._templateData).award_type
+  local itemId = self._templateData.item_id
+  local des = self._templateData.item_des
+  local awardType = self._templateData.award_type
   self._clickCallback = clickCallback
   local activityText = ""
   if awardType and awardType == StageAwardType.Activity then
-    activityText = (StringTable.Get)("str_item_xianshi")
+    activityText = StringTable.Get("str_item_xianshi")
   end
   local roleAsset = RoleAsset:New()
   roleAsset.assetid = self._item_id
   roleAsset.count = self._itemCount
-  ;
-  (self.uiItem):Flush(roleAsset, function(go)
-    -- function num : 0_1_0 , upvalues : self
+  self.uiItem:Flush(roleAsset, function(go)
     self:itemOnClick(go)
-  end
-, itemInfo.showTag)
+  end, itemInfo.showTag)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureGetItemCell.itemOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIHauteCoutureGetItemCell:itemOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if not self._templateData then
-    return 
+    return
   end
   if self._clickCallback then
-    (self._clickCallback)(self._item_id, (go.transform).position)
+    self._clickCallback(self._item_id, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureGetItemCell.FormatItemCount = function(self, count)
-  -- function num : 0_3 , upvalues : _ENV
-  local tex = (HelperProxy:GetInstance()):FormatItemCount(count)
+function UIHauteCoutureGetItemCell:FormatItemCount(count)
+  local tex = HelperProxy:GetInstance():FormatItemCount(count)
   return tex
 end
 
 _class("KLRoleAsset", Object)
 KLRoleAsset = KLRoleAsset
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-KLRoleAsset.Constructor = function(self)
-  -- function num : 0_4
+function KLRoleAsset:Constructor()
   self.assetid = 0
   self.count = 0
   self.goumai = false
 end
-
-

@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/conveyor_arrow_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("ConveyorArrowInstruction", BaseInstruction)
 ConveyorArrowInstruction = ConveyorArrowInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ConveyorArrowInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function ConveyorArrowInstruction:Constructor(paramList)
   self._effId = tonumber(paramList.effId)
   self._endEffID = tonumber(paramList.endEffID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ConveyorArrowInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function ConveyorArrowInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   if not casterEntity:HasTrapID() then
-    return 
+    return
   end
   local trapRenderCmpt = casterEntity:TrapRender()
   if trapRenderCmpt:GetTrapType() ~= TrapType.Conveyor then
-    return 
+    return
   end
   local cEffectHolder = casterEntity:EffectHolder()
   if not cEffectHolder then
@@ -32,16 +22,16 @@ ConveyorArrowInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
   end
   cEffectHolder = casterEntity:EffectHolder()
   local sEffect = world:GetService("Effect")
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local bodyArea = casterEntity:BodyArea():GetArea()
   local cGridLocation = casterEntity:GridLocation()
   local pos, dir = cGridLocation.Position, cGridLocation.Direction
-  local len = (table.count)(bodyArea)
+  local len = table.count(bodyArea)
   local arrows = {}
   local key = "ConveyorArrow"
   local effID = self._effId
   for i = 1, len do
     local newPos = bodyArea[i] + pos
-    local newDir = nil
+    local newDir
     if i == len then
       if self._endEffID and self._endEffID > 0 then
         effID = self._endEffID
@@ -57,23 +47,19 @@ ConveyorArrowInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
     cEffectHolder:AttachEffect(key, effEntityId)
     effEntity:SetGridLocation(newPos, newDir)
     effEntity:SetLocation(newPos, newDir)
-    ;
-    (table.insert)(arrows, effEntity)
+    table.insert(arrows, effEntity)
   end
   self:_ConveyorClockwise(TT, arrows)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ConveyorArrowInstruction._ConveyorClockwise = function(self, TT, arrows)
-  -- function num : 0_2 , upvalues : _ENV
+function ConveyorArrowInstruction:_ConveyorClockwise(TT, arrows)
   if not arrows then
-    return 
+    return
   end
   local isClockwise = true
-  local dir = ((arrows[1]):GridLocation()).Direction
-  for i = 2, (table.count)(arrows) do
-    local dirTmp = ((arrows[i]):GridLocation()).Direction
+  local dir = arrows[1]:GridLocation().Direction
+  for i = 2, table.count(arrows) do
+    local dirTmp = arrows[i]:GridLocation().Direction
     if dir ~= dirTmp then
       if dir == Vector2(dirTmp.y, -dirTmp.x) then
         isClockwise = false
@@ -85,35 +71,29 @@ ConveyorArrowInstruction._ConveyorClockwise = function(self, TT, arrows)
       break
     end
   end
-  do
-    for _,e in ipairs(arrows) do
-      local go = (e:View()):GetGameObject()
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R11 in 'UnsetPending'
-
-      if isClockwise then
-        (go.transform).localScale = Vector3(-1, 1, 1)
-      else
-        -- DECOMPILER ERROR at PC61: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (go.transform).localScale = Vector3.one
-      end
+  for _, e in ipairs(arrows) do
+    local go = e:View():GetGameObject()
+    if isClockwise then
+      go.transform.localScale = Vector3(-1, 1, 1)
+    else
+      go.transform.localScale = Vector3.one
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ConveyorArrowInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ConveyorArrowInstruction:GetCacheResource()
   local t = {}
   if self._effId and self._effId > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effId]).ResPath, 4})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effId].ResPath,
+      4
+    })
   end
-  if self._endEffID and self._endEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._endEffID]).ResPath, 1})
+  if self._endEffID and 0 < self._endEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._endEffID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

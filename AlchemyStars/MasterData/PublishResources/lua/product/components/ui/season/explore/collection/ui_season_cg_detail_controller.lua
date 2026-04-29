@@ -1,97 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/explore/collection/ui_season_cg_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonCgDetailController", UIController)
 UISeasonCgDetailController = UISeasonCgDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonCgDetailController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonCgDetailController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonCgDetailController:OnShow(uiParams)
   self:InitWidget()
   local cfg = uiParams[1]
   self._cpt = uiParams[2]
   self._cfg = cfg
   if cfg then
     if cfg.Spine then
-      (self._staticPicGO):SetActive(false)
-      ;
-      (self._spine1Go):SetActive(true)
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      ((self._spine1Go).transform).localScale = Vector3(cfg.SpineScale, cfg.SpineScale, cfg.SpineScale)
-      local spineName1 = (cfg.Spine)[1]
-      ;
-      (self._spine1):LoadSpine(spineName1)
-      local spineName2 = (cfg.Spine)[2]
+      self._staticPicGO:SetActive(false)
+      self._spine1Go:SetActive(true)
+      self._spine1Go.transform.localScale = Vector3(cfg.SpineScale, cfg.SpineScale, cfg.SpineScale)
+      local spineName1 = cfg.Spine[1]
+      self._spine1:LoadSpine(spineName1)
+      local spineName2 = cfg.Spine[2]
       if spineName2 then
-        (self._spine2Go):SetActive(true)
-        ;
-        (self._spine2):LoadSpine(spineName2)
-        -- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        ((self._spine2Go).transform).localScale = Vector3(cfg.SpineScale, cfg.SpineScale, cfg.SpineScale)
+        self._spine2Go:SetActive(true)
+        self._spine2:LoadSpine(spineName2)
+        self._spine2Go.transform.localScale = Vector3(cfg.SpineScale, cfg.SpineScale, cfg.SpineScale)
       end
       self:_SetPicFullScreen(self._staticPicRect)
     else
-      do
-        ;
-        (self._spine1Go):SetActive(false)
-        ;
-        (self._spine2Go):SetActive(false)
-        ;
-        (self._staticPicGO):SetActive(true)
-        ;
-        (self._staticPic):LoadImage(cfg.StaticPic)
-        self:_SetPicFullScreen(self._staticPicRect)
-        ;
-        (self.txtTitle):SetText((StringTable.Get)(cfg.name))
-        ;
-        (self.txtDesc):SetText((StringTable.Get)(cfg.info))
-        self.onlyShowCg = false
-        local count = 0
-        do
-          if (self:GetModule(ShareModule)):CanShare() and cfg.SeasonShareStoryID and not (self._cpt):IsStoryReceived(cfg.SeasonShareStoryID) then
-            local storyCfg = (Cfg.cfg_campaign_story)[cfg.SeasonShareStoryID]
-            count = ((storyCfg.RewardList)[1])[2]
-          end
-          self._shareBtn = (self.shareBtnPool):SpawnObject("UISeasonShareBtn")
-          ;
-          (self._shareBtn):SetData(count, function()
-    -- function num : 0_1_0 , upvalues : self
-    self:_OnShare()
-  end
-)
-          ;
-          ((self._shareBtn):GetGameObject()):SetActive(((GameGlobal.GetModule)(ShareModule)):CanShare())
-        end
-      end
+      self._spine1Go:SetActive(false)
+      self._spine2Go:SetActive(false)
+      self._staticPicGO:SetActive(true)
+      self._staticPic:LoadImage(cfg.StaticPic)
+      self:_SetPicFullScreen(self._staticPicRect)
     end
+    self.txtTitle:SetText(StringTable.Get(cfg.name))
+    self.txtDesc:SetText(StringTable.Get(cfg.info))
   end
+  self.onlyShowCg = false
+  local count = 0
+  if self:GetModule(ShareModule):CanShare() and cfg.SeasonShareStoryID and not self._cpt:IsStoryReceived(cfg.SeasonShareStoryID) then
+    local storyCfg = Cfg.cfg_campaign_story[cfg.SeasonShareStoryID]
+    count = storyCfg.RewardList[1][2]
+  end
+  self._shareBtn = self.shareBtnPool:SpawnObject("UISeasonShareBtn")
+  self._shareBtn:SetData(count, function()
+    self:_OnShare()
+  end)
+  self._shareBtn:GetGameObject():SetActive(GameGlobal.GetModule(ShareModule):CanShare())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgDetailController.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonCgDetailController:InitWidget()
   local topBtns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtns = topBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self._uiCanvasRect = self:GetUIComponent("RectTransform", "UICanvas")
   self._spine1 = self:GetUIComponent("SpineLoader", "spine1")
   self._spine1Go = self:GetGameObject("spine1")
@@ -108,82 +69,55 @@ UISeasonCgDetailController.InitWidget = function(self)
   self.root = self:GetGameObject("Root")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgDetailController.ImgCgOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonCgDetailController:ImgCgOnClick(go)
   self.onlyShowCg = not self.onlyShowCg
-  ;
-  (self.exclueCgGo):SetActive(not self.onlyShowCg)
-  ;
-  (self.exclueCgGo2):SetActive(not self.onlyShowCg)
+  self.exclueCgGo:SetActive(not self.onlyShowCg)
+  self.exclueCgGo2:SetActive(not self.onlyShowCg)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgDetailController._OnShare = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self:GetModule(SeasonModule)):CheckSeasonClose_ShowClientError() then
-    return 
+function UISeasonCgDetailController:_OnShare()
+  if self:GetModule(SeasonModule):CheckSeasonClose_ShowClientError() then
+    return
   end
-  ;
-  (self.exclueCgGo):SetActive(false)
-  ;
-  (self.exclueCgGo2):SetActive(false)
+  self.exclueCgGo:SetActive(false)
+  self.exclueCgGo2:SetActive(false)
   self:AttachEvent(GameEventType.OnFocusAfterShareBack, self._OnShareFinish)
   self:Lock("UISeasonShareCG")
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     YIELD(TT)
     YIELD(TT)
     self:ShowDialog("UIShare", self:GetName(), ShareAnchorType.BottomRight, function()
-      -- function num : 0_4_0_0 , upvalues : self
-      (self.exclueCgGo):SetActive(true)
-      ;
-      (self.exclueCgGo2):SetActive(true)
-    end
-, nil, nil, nil, ShareSceneType.Common, nil, nil)
+      self.exclueCgGo:SetActive(true)
+      self.exclueCgGo2:SetActive(true)
+    end, nil, nil, nil, ShareSceneType.Common, nil, nil)
     self:UnLock("UISeasonShareCG")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgDetailController._OnShareFinish = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonCgDetailController:_OnShareFinish()
   self:DetachEvent(GameEventType.OnFocusAfterShareBack, self._OnShareFinish)
-  if not (self._cpt):IsStoryReceived((self._cfg).SeasonShareStoryID) then
+  if not self._cpt:IsStoryReceived(self._cfg.SeasonShareStoryID) then
     self:StartTask(self._ReqCompleteStory, self)
   else
-    ;
-    (Log.error)("cg分享奖励已经领过了")
+    Log.error("cg分享奖励已经领过了")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgDetailController._ReqCompleteStory = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonCgDetailController:_ReqCompleteStory(TT)
   local res = AsyncRequestRes:New()
   self:Lock("RequestCollectShareCgAward")
-  local assets = (self._cpt):HandleStoryTake(TT, res, (self._cfg).SeasonShareStoryID)
+  local assets = self._cpt:HandleStoryTake(TT, res, self._cfg.SeasonShareStoryID)
   self:UnLock("RequestCollectShareCgAward")
   if res:GetSucc() then
-    (UISeasonHelper.ShowUIGetRewards)(assets)
-    ;
-    ((self._shareBtn):GetGameObject()):SetActive(false)
-    self:DispatchEvent(GameEventType.OnSeasonShareCgFinished, (self._cfg).ID)
+    UISeasonHelper.ShowUIGetRewards(assets)
+    self._shareBtn:GetGameObject():SetActive(false)
+    self:DispatchEvent(GameEventType.OnSeasonShareCgFinished, self._cfg.ID)
   else
-    ;
-    (Log.error)("cg分享奖励领取错误:", res:GetResult())
+    Log.error("cg分享奖励领取错误:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgDetailController._SetPicFullScreen = function(self, rectTrans)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonCgDetailController:_SetPicFullScreen(rectTrans)
   local fullPicWidth = 2048
   local fullPicHeight = 946
   local screenWidth, screenHeight = self:GetCanvasSize()
@@ -193,14 +127,9 @@ UISeasonCgDetailController._SetPicFullScreen = function(self, rectTrans)
   local blackSideWidth = 0
   local picHeight = fullPicHeight * screenWidth / fullPicWidth
   rectTrans.sizeDelta = Vector2(screenWidth, picHeight)
-  blackSideHeight = (math.abs)(screenHeight - picHeight) / 2
+  blackSideHeight = math.abs(screenHeight - picHeight) / 2
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCgDetailController.GetCanvasSize = function(self)
-  -- function num : 0_8
-  return ((self._uiCanvasRect).sizeDelta).x, ((self._uiCanvasRect).sizeDelta).y
+function UISeasonCgDetailController:GetCanvasSize()
+  return self._uiCanvasRect.sizeDelta.x, self._uiCanvasRect.sizeDelta.y
 end
-
-

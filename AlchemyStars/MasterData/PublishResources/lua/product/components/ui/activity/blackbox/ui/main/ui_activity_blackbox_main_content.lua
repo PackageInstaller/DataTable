@@ -1,163 +1,104 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/blackbox/ui/main/ui_activity_blackbox_main_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBlackBoxMainContent", UISideEnterCenterContentBase)
 UIActivityBlackBoxMainContent = UIActivityBlackBoxMainContent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBlackBoxMainContent.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityBlackBoxMainContent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent.DoInit = function(self, params)
-  -- function num : 0_1 , upvalues : _ENV
-  if params then
-    self._campaignType = params.campaign_type
-    if not params or not params.component_ids then
-      self._componentIds = {}
-      if params then
-        self._campaignId = params.campaign_id
-        self._componentId = ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION
-        self._campaign = self._data
-        ;
-        (UIActivityDiffLevelCupData.CreateEntiesDesc)()
-      end
-    end
-  end
+function UIActivityBlackBoxMainContent:DoInit(params)
+  self._campaignType = params and params.campaign_type
+  self._componentIds = params and params.component_ids or {}
+  self._campaignId = params and params.campaign_id
+  self._componentId = ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION
+  self._campaign = self._data
+  UIActivityDiffLevelCupData.CreateEntiesDesc()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent.DoShow = function(self, params)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityBlackBoxMainContent:DoShow(params)
   self._createInfo = params
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   self._blackHardComponent = localProcess:GetComponent(self._componentId)
   self._blackHardCompInfo = localProcess:GetComponentInfo(self._componentId)
-  self._cfg = ((Cfg.cfg_blackbox_main)({ComponentID = (self._blackHardComponent):GetComponentCfgId()}))[1]
+  self._cfg = Cfg.cfg_blackbox_main({
+    ComponentID = self._blackHardComponent:GetComponentCfgId()
+  })[1]
   self:_GetComponent()
-  local isNew = (self._campaign):CheckCampaignNew()
+  local isNew = self._campaign:CheckCampaignNew()
   if isNew then
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-, self)
-    self:ShowDialog("UIIntroLoader", (self._cfg).IntroPage, MaskType.MT_BlurMask)
+      self._campaign:ClearCampaignNew(TT)
+    end, self)
+    self:ShowDialog("UIIntroLoader", self._cfg.IntroPage, MaskType.MT_BlurMask)
   end
   self:AttachEvent(GameEventType.OnCampDiffTeamReset, self.OnTeamReset)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent.DoHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityBlackBoxMainContent:DoHide()
   self:DetachEvent(GameEventType.OnCampDiffTeamReset, self.OnTeamReset)
   self:StartTask(self._CloseAnim, self)
   if self._diffLevel then
-    (self._diffLevel):Destroy()
+    self._diffLevel:Destroy()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent.DoDestroy = function(self)
-  -- function num : 0_4
+function UIActivityBlackBoxMainContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent._CloseAnim = function(self, TT)
-  -- function num : 0_5
+function UIActivityBlackBoxMainContent:_CloseAnim(TT)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent._GetComponent = function(self)
-  -- function num : 0_6
+function UIActivityBlackBoxMainContent:_GetComponent()
   self._bg = self:GetUIComponent("RawImageLoader", "BG")
   self._titlePic = self:GetUIComponent("RawImageLoader", "TitlePic")
   self._intro = self:GetUIComponent("UILocalizationText", "intro")
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent.InitComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityBlackBoxMainContent:InitComponent()
   if self._cfg then
-    (self._bg):LoadImage((self._cfg).BG)
-    ;
-    (self._titlePic):LoadImage((self._cfg).Title)
-    ;
-    (self._intro):SetText((StringTable.Get)((self._cfg).Intro))
+    self._bg:LoadImage(self._cfg.BG)
+    self._titlePic:LoadImage(self._cfg.Title)
+    self._intro:SetText(StringTable.Get(self._cfg.Intro))
   else
-    ;
-    (Log.fatal)("未配置本次活动信息，请配cfg_blackbox_main")
+    Log.fatal("未配置本次活动信息，请配cfg_blackbox_main")
   end
   self._diffLevel = UIActivityBlackBoxMainDiffLevel:New(self)
-  ;
-  (self._diffLevel):SetData(self._campaign, self._blackHardComponent, self._blackHardCompInfo)
-  ;
-  (self._diffLevel):SetActive(true)
+  self._diffLevel:SetData(self._campaign, self._blackHardComponent, self._blackHardCompInfo)
+  self._diffLevel:SetActive(true)
   if self._createInfo then
-    (self._diffLevel):OpenLevel(self._createInfo)
+    self._diffLevel:OpenLevel(self._createInfo)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent.OnTeamReset = function(self)
-  -- function num : 0_8
+function UIActivityBlackBoxMainContent:OnTeamReset()
   self:StartTask(self.OnTeamResetCoro, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent.OnTeamResetCoro = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityBlackBoxMainContent:OnTeamResetCoro(TT)
   self:Lock("UIActivityBlackBoxMainContent_OnTeamResetCoro")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_DIFFICULTY_WEEK_TOWER, ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_DIFFICULTY_WEEK_TOWER, ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION)
   if res and not res:GetSucc() then
-    (self._campModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    ;
-    (CutsceneManager.ExcuteCutsceneOut_Shot)()
-    return 
+    self._campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    CutsceneManager.ExcuteCutsceneOut_Shot()
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._campaignID = (self._campaign)._id
-  local localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._campaignID = self._campaign._id
+  local localProcess = self._campaign:GetLocalProcess()
   self._blackHardComponent = localProcess:GetComponent(ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION)
   self._blackHardCompInfo = localProcess:GetComponentInfo(ECampaignDiffcultyWeekTowerComponentID.ECAMPAIGN_WEEK_TOWER_DIFFICULT_MISSION)
-  ;
-  (self._diffLevel):Refresh(self._campaign, self._blackHardComponent, self._blackHardCompInfo)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCampDiffTeamResetInternal)
+  self._diffLevel:Refresh(self._campaign, self._blackHardComponent, self._blackHardCompInfo)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCampDiffTeamResetInternal)
   self:UnLock("UIActivityBlackBoxMainContent_OnTeamResetCoro")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent.GetCampaign = function(self)
-  -- function num : 0_10
+function UIActivityBlackBoxMainContent:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBlackBoxMainContent.IntroBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self:ShowDialog("UIIntroLoader", (self._cfg).IntroPage, MaskType.MT_BlurMask)
+function UIActivityBlackBoxMainContent:IntroBtnOnClick()
+  self:ShowDialog("UIIntroLoader", self._cfg.IntroPage, MaskType.MT_BlurMask)
 end
-
-

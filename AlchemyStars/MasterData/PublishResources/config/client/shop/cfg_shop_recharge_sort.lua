@@ -1,15 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/shop/cfg_shop_recharge_sort.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, Sort = 2}
 local config = {
-{1, 1}
-, 
-{2, 2}
-, 
-{3, 3}
+  {1, 1},
+  {2, 2},
+  {3, 3}
 }
 return config, "ID", key
-

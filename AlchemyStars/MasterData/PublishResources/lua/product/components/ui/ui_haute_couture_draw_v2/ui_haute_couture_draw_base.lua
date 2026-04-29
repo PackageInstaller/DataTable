@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawBase", UICustomWidget)
 UIHauteCoutureDrawBase = UIHauteCoutureDrawBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHauteCoutureDrawBase:Constructor()
   self.controller = nil
   self._uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.InitWidgetsBase = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawBase:InitWidgetsBase()
   self.controller = self.uiOwner
   self._videoPlayer = self:GetGameObject("VideoPlayer")
   self._endtime = self:GetUIComponent("UILocalizationText", "endtime")
@@ -28,200 +18,123 @@ UIHauteCoutureDrawBase.InitWidgetsBase = function(self)
   self._probalityBtn = self:GetGameObject("probabilityBtn")
   self._buyBtn = self:GetGameObject("buybtn")
   self._prizeEff = self:GetUIComponent("Transform", "PrizeEff")
-  ;
-  ((self._prizeEff).gameObject):SetActive(false)
+  self._prizeEff.gameObject:SetActive(false)
   local currency = self:GetUIComponent("UISelectObjectPath", "currencyMenu")
   self._topTips = currency:SpawnObject("UINewCurrencyMenu")
-  ;
-  (self._topTips):SetData({self:GetCoinId()}, false)
-  self._seniorSkinItem = (self._topTips):GetItemByTypeId(self:GetCoinId())
-  ;
-  (self._seniorSkinItem):SetAddCallBack(function(id, go)
-    -- function num : 0_1_0 , upvalues : self
+  self._topTips:SetData({
+    self:GetCoinId()
+  }, false)
+  self._seniorSkinItem = self._topTips:GetItemByTypeId(self:GetCoinId())
+  self._seniorSkinItem:SetAddCallBack(function(id, go)
     self:BuyBtnOnClick()
-  end
-)
+  end)
   local btns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtn = btns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_1 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseSelf()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.CloseSelf = function(self)
-  -- function num : 0_2
-  (self.controller):CloseDialog()
+function UIHauteCoutureDrawBase:CloseSelf()
+  self.controller:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.GetCoinId = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.error)("UIHauteCoutureDrawBase:GetCoinId should be inherited")
+function UIHauteCoutureDrawBase:GetCoinId()
+  Log.error("UIHauteCoutureDrawBase:GetCoinId should be inherited")
   return -1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.OnHide = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDrawBase:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.SetEndTime = function(self, timeStr)
-  -- function num : 0_5
+function UIHauteCoutureDrawBase:SetEndTime(timeStr)
   if self._endtime then
-    (self._endtime):SetText(timeStr)
+    self._endtime:SetText(timeStr)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.CheckEndTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local time = ((self.controller)._componentInfo).m_close_time
-  local now = (math.floor)((self:GetModule(SvrTimeModule)):GetServerTime() / 1000)
+function UIHauteCoutureDrawBase:CheckEndTime()
+  local time = self.controller._componentInfo.m_close_time
+  local now = math.floor(self:GetModule(SvrTimeModule):GetServerTime() / 1000)
   if time < now then
-    local timeStr = (StringTable.Get)("str_activity_finished")
+    local timeStr = StringTable.Get("str_activity_finished")
     self:SetEndTime(timeStr)
     self._timeStr = timeStr
     return true
   else
-    do
-      do
-        local timeStr = (HelperProxy:GetInstance()):FormatTime_3(time - now, "#ffd009")
-        if self._timeStr ~= timeStr then
-          self:SetEndTime((StringTable.Get)("str_senior_skin_draw_end_time", timeStr))
-          self._timeStr = timeStr
-        end
-        do return false end
-        return true
-      end
+    local timeStr = HelperProxy:GetInstance():FormatTime_3(time - now, "#ffd009")
+    if self._timeStr ~= timeStr then
+      self:SetEndTime(StringTable.Get("str_senior_skin_draw_end_time", timeStr))
+      self._timeStr = timeStr
     end
+    return false
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.LoadVideo = function(self, url)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("[guide movie] move url ", url)
+function UIHauteCoutureDrawBase:LoadVideo(url)
+  Log.debug("[guide movie] move url ", url)
   self._vp = self:GetUIComponent("VideoPlayer", "VideoPlayer")
-  ;
-  ((self._vp).gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).url = url
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  if ((self.controller).CtxData):IsReview() then
-    (self._vp).targetCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIHauteCoutureDrawV2ReviewController")
+  self._vp.gameObject:SetActive(true)
+  self._vp.url = url
+  if self.controller.CtxData:IsReview() then
+    self._vp.targetCamera = GameGlobal.UIStateManager():GetControllerCamera("UIHauteCoutureDrawV2ReviewController")
   else
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._vp).targetCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIHauteCoutureDrawV2Controller")
+    self._vp.targetCamera = GameGlobal.UIStateManager():GetControllerCamera("UIHauteCoutureDrawV2Controller")
   end
-  ;
-  (self._vp):Play()
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._vp).loopPointReached = (self._vp).loopPointReached + self._LoopPointReached
+  self._vp:Play()
+  self._vp.loopPointReached = self._vp.loopPointReached + self._LoopPointReached
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.RuleBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIHauteCoutureDrawBase:RuleBtnOnClick(go)
   self:HandleRuleBtnClick()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.HandleRuleBtnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self.controller)._closed then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+function UIHauteCoutureDrawBase:HandleRuleBtnClick()
+  if self.controller._closed then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
-  self:ShowDialog("UIHauteCoutureDrawRulesV2Controller", (self.controller).CtxData)
+  self:ShowDialog("UIHauteCoutureDrawRulesV2Controller", self.controller.CtxData)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.BuyBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIHauteCoutureDrawBase:BuyBtnOnClick(go)
   self:HandleBuyBtnClick()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.HandleBuyBtnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self.controller)._closed then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-    return 
+function UIHauteCoutureDrawBase:HandleBuyBtnClick()
+  if self.controller._closed then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIHauteCoutureDrawChargeV2Controller", (self.controller).hcType, (self.controller)._buyComponet, (self.controller).CtxData)
+  GameGlobal.UIStateManager():ShowDialog("UIHauteCoutureDrawChargeV2Controller", self.controller.hcType, self.controller._buyComponet, self.controller.CtxData)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.DrawBtnOnClick = function(self, go)
-  -- function num : 0_12
+function UIHauteCoutureDrawBase:DrawBtnOnClick(go)
   self:HandleDrawBtnClick()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.HandleDrawBtnClick = function(self)
-  -- function num : 0_13
+function UIHauteCoutureDrawBase:HandleDrawBtnClick()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.ProbabilityBtnOnClick = function(self, go)
-  -- function num : 0_14
+function UIHauteCoutureDrawBase:ProbabilityBtnOnClick(go)
   self:HandleProbabilityBtnClick()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.HandleProbabilityBtnClick = function(self)
-  -- function num : 0_15
-  self:ShowDialog("UIHauteCoutureDrawDynamicProbablityV2Controller", (self.controller).hcType, (self.controller)._prizes, ((self.controller)._componentInfo).shake_num, ((self.controller)._componentInfo).shake_win_ids, (self.controller)._componentId, (self.controller).CtxData)
+function UIHauteCoutureDrawBase:HandleProbabilityBtnClick()
+  self:ShowDialog("UIHauteCoutureDrawDynamicProbablityV2Controller", self.controller.hcType, self.controller._prizes, self.controller._componentInfo.shake_num, self.controller._componentInfo.shake_win_ids, self.controller._componentId, self.controller.CtxData)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.FgOnClick = function(self, go)
-  -- function num : 0_16
+function UIHauteCoutureDrawBase:FgOnClick(go)
   self:HandleFgBtnClick()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.HandleFgBtnClick = function(self)
-  -- function num : 0_17
-  self:ShowDialog("UIHauteCoutureDrawVideoV2Controller", (self.controller).CtxData)
+function UIHauteCoutureDrawBase:HandleFgBtnClick()
+  self:ShowDialog("UIHauteCoutureDrawVideoV2Controller", self.controller.CtxData)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawBase.OnRootActiveChange = function(self, flag)
-  -- function num : 0_18
+function UIHauteCoutureDrawBase:OnRootActiveChange(flag)
   if flag and self._LoadVideo then
     self:_LoadVideo()
   end
 end
-
-

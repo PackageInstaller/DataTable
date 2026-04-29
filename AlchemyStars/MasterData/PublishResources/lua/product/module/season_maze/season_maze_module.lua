@@ -1,147 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/season_maze/season_maze_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeModule", GameModule)
 SeasonMazeModule = SeasonMazeModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazeModule:Constructor()
   self.uiModule = self.uiModule
   self._mazeCampaignType = ECampaignType.CAMPAIGN_TYPE_SEASON_MAZE
   self._attrReason = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.UIModule = function(self)
-  -- function num : 0_1
+function SeasonMazeModule:UIModule()
   return self.uiModule
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+function SeasonMazeModule:Init()
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   self._seasonMazeObj = nil
   self._seasonMazeCollageDataMgr = SeasonMazeCollageDataMgr:New()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.Update = function(self, dt)
-  -- function num : 0_3
-  (self.uiModule):Update(dt)
+function SeasonMazeModule:Update(dt)
+  self.uiModule:Update(dt)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.GetLocalProcess = function(self, type, id)
-  -- function num : 0_4
-  if not (self._campModule):IsDisposed() then
-    return (self._campModule):GetCampaignLocalProcessByCampaignId_Local(type, id)
+function SeasonMazeModule:GetLocalProcess(type, id)
+  if not self._campModule:IsDisposed() then
+    return self._campModule:GetCampaignLocalProcessByCampaignId_Local(type, id)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.CheckErrorCode = function(self, result)
-  -- function num : 0_5
-  if not (self._campModule):IsDisposed() then
-    return (self._campModule):CheckErrorCode(result, nil, nil, nil)
+function SeasonMazeModule:CheckErrorCode(result)
+  if not self._campModule:IsDisposed() then
+    return self._campModule:CheckErrorCode(result, nil, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.GetSeasonMazeCollageDataMgr = function(self)
-  -- function num : 0_6
+function SeasonMazeModule:GetSeasonMazeCollageDataMgr()
   return self._seasonMazeCollageDataMgr
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.ReqCurSeasonMazeDetailInfo = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonMazeModule:ReqCurSeasonMazeDetailInfo(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
   local sample = self:GetCurSample()
   if not sample then
-    (Log.error)("没有简易数据,无法请求赛季秘境玩法详细数据")
+    Log.error("没有简易数据,无法请求赛季秘境玩法详细数据")
     res:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN)
     return res
   end
   local id = sample.id
-  ;
-  (Log.info)("请求赛季秘境详细数据:", id)
-  ;
-  (self._campModule):CampaignComProtoLoadInfo(TT, res, id)
+  Log.info("请求赛季秘境详细数据:", id)
+  self._campModule:CampaignComProtoLoadInfo(TT, res, id)
   if not res:GetSucc() then
-    (Log.error)("获取赛季秘境详细数据失败:", res:GetResult())
+    Log.error("获取赛季秘境详细数据失败:", res:GetResult())
     return res
   end
-  if (self._campModule):IsDisposed() then
-    (Log.error)("活动数据已经析构 无法获取赛季秘境详细数据:", id)
+  if self._campModule:IsDisposed() then
+    Log.error("活动数据已经析构 无法获取赛季秘境详细数据:", id)
     res:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN)
     return res
   end
-  local obj = (self._campModule):GetCampaignObj(id)
+  local obj = self._campModule:GetCampaignObj(id)
   if not obj then
-    (Log.error)("强制拉取赛季秘境数据成功 但无法获取详细数据:", id)
+    Log.error("强制拉取赛季秘境数据成功 但无法获取详细数据:", id)
     res:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN)
     return res
   end
-  local localProcess = (self._campModule):GetCampaignLocalProcessByCampaignId_Local(self._mazeCampaignType, id)
+  local localProcess = self._campModule:GetCampaignLocalProcessByCampaignId_Local(self._mazeCampaignType, id)
   if not localProcess then
-    (Log.error)("强制拉取赛季秘境数据成功 无法获取赛季秘境 LocalProcess:", id)
+    Log.error("强制拉取赛季秘境数据成功 无法获取赛季秘境 LocalProcess:", id)
     res:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN)
     return res
   end
   localProcess:InitComponent(obj)
   self._seasonMazeObj = UISeasonMazeObj:New(sample, self)
-  local comp = (self._seasonMazeObj):GetMazeComponent()
+  local comp = self._seasonMazeObj:GetMazeComponent()
   self._seasonMazeComponent = comp
   if comp then
     local compInfo = comp:GetComponentInfo()
-    local compId = (UIActivityHelper.GetComponentID)(compInfo)
+    local compId = UIActivityHelper.GetComponentID(compInfo)
     self._seasonMazeComponentId = compId
-    ;
-    (self._seasonMazeCollageDataMgr):Init(compId)
-    local moneyLv = (compInfo.save_info).lv
-    ;
-    (self._seasonMazeCollageDataMgr):Refresh(moneyLv)
+    self._seasonMazeCollageDataMgr:Init(compId)
+    local moneyLv = compInfo.save_info.lv
+    self._seasonMazeCollageDataMgr:Refresh(moneyLv)
   else
-    do
-      self._seasonMazeComponentId = -1
-      ;
-      (self._seasonMazeCollageDataMgr):Init(0)
-      return res
-    end
+    self._seasonMazeComponentId = -1
+    self._seasonMazeCollageDataMgr:Init(0)
   end
+  return res
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.GetSeasonMazeComponentId = function(self)
-  -- function num : 0_8
+function SeasonMazeModule:GetSeasonMazeComponentId()
   return self._seasonMazeComponentId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.GetSeasonMazeComponent = function(self)
-  -- function num : 0_9
+function SeasonMazeModule:GetSeasonMazeComponent()
   return self._seasonMazeComponent
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.ReqSeasonMazeChangeFormationInfo = function(self, TT, id, name, pets)
-  -- function num : 0_10 , upvalues : _ENV
-  local seasonMazeComponent = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+function SeasonMazeModule:ReqSeasonMazeChangeFormationInfo(TT, id, name, pets)
+  local seasonMazeComponent = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
   local reqRes = AsyncRequestRes:New()
   local formation = SeasonMazeFormationItem:New()
   formation.id = id
@@ -154,34 +110,23 @@ SeasonMazeModule.ReqSeasonMazeChangeFormationInfo = function(self, TT, id, name,
   return reqRes, response
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.GetCurSample = function(self)
-  -- function num : 0_11
-  if not (self._campModule):IsDisposed() then
-    return (self._campModule):GetSampleByType(self._mazeCampaignType)
+function SeasonMazeModule:GetCurSample()
+  if not self._campModule:IsDisposed() then
+    return self._campModule:GetSampleByType(self._mazeCampaignType)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.GetPetDispatchData = function(self, petID)
-  -- function num : 0_12 , upvalues : _ENV
-  local seasonMazeComponent = (self._seasonMazeObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+function SeasonMazeModule:GetPetDispatchData(petID)
+  local seasonMazeComponent = self._seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
   if seasonMazeComponent then
     local compInfo = seasonMazeComponent:GetComponentInfo()
     local map = compInfo.occupy_ore
     return map[petID]
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.CurSeasonMazeID = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function SeasonMazeModule:CurSeasonMazeID()
   local sample = self:GetCurSample()
   if sample then
     return sample.id
@@ -189,125 +134,81 @@ SeasonMazeModule.CurSeasonMazeID = function(self)
   return UISeasonMazeID.SM1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.CurSeasonObj = function(self)
-  -- function num : 0_14
+function SeasonMazeModule:CurSeasonObj()
   return self._seasonMazeObj
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.CheckCanAutoFight = function(self, matchInfo)
-  -- function num : 0_15
+function SeasonMazeModule:CheckCanAutoFight(matchInfo)
   return true, ""
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.SetAttrReason = function(self, attId, reason, old_info, new_info)
-  -- function num : 0_16
+function SeasonMazeModule:SetAttrReason(attId, reason, old_info, new_info)
   if not reason then
-    return 
+    return
   end
-  if not old_info then
-    old_info = 0
+  old_info = old_info or 0
+  if not self._attrReason[reason] then
+    self._attrReason[reason] = {}
   end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R5 in 'UnsetPending'
-
-  if not (self._attrReason)[reason] then
-    (self._attrReason)[reason] = {}
-  end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._attrReason)[reason])[attId] = {old_info, new_info}
-  ;
-  (self:UIModule()):OnAttrChanged(attId, reason, old_info, new_info)
+  self._attrReason[reason][attId] = {old_info, new_info}
+  self:UIModule():OnAttrChanged(attId, reason, old_info, new_info)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.GetLevelMonsterList = function(self, levelID, waveRandoms)
-  -- function num : 0_17 , upvalues : _ENV
-  local cfg = (Cfg.cfg_level)[levelID]
+function SeasonMazeModule:GetLevelMonsterList(levelID, waveRandoms)
+  local cfg = Cfg.cfg_level[levelID]
   if cfg == nil then
-    (Log.exception)("找不到关卡：", levelID)
+    Log.exception("找不到关卡：", levelID)
   end
   local waveArr = cfg.MonsterWave
   local ret = {}
-  for i,wave in ipairs(waveArr) do
-    local wavecfg = (Cfg.cfg_monster_wave)[wave]
-    local refreshcfg = (Cfg.cfg_refresh)[wavecfg.WaveBeginRefreshID]
+  for i, wave in ipairs(waveArr) do
+    local wavecfg = Cfg.cfg_monster_wave[wave]
+    local refreshcfg = Cfg.cfg_refresh[wavecfg.WaveBeginRefreshID]
     local monsterWeight = refreshcfg.MonsterWeight
     local monsterRIds = refreshcfg.MonsterRefreshIDList
     local totalw = 0
-    for _,w in ipairs(monsterWeight) do
+    for _, w in ipairs(monsterWeight) do
       totalw = totalw + w
     end
     local monsterRefreshId = 0
-    local ww = waveRandoms[2 * i - 1] * (totalw)
-    for j,w in ipairs(monsterWeight) do
+    local ww = waveRandoms[2 * i - 1] * totalw
+    for j, w in ipairs(monsterWeight) do
       ww = ww - w
       if ww <= 0 then
         monsterRefreshId = monsterRIds[j]
         break
       end
     end
-    do
-      local monsters = nil
-      local refreshMonsterCfg = (Cfg.cfg_refresh_monster)[monsterRefreshId]
-      if refreshMonsterCfg.RandomMonsterIDList then
-        local monsterList = (table.cloneconf)(refreshMonsterCfg.RandomMonsterIDList)
-        local weightList = (table.cloneconf)(refreshMonsterCfg.RandomWeightList)
-        if not weightList then
-          weightList = self:_MakeDefaultRandomWeightList(monsterList)
-        end
-        monsters = self:_ParseRandomMonsterID(monsterList, weightList, waveRandoms)
-      else
-        do
-          do
-            monsters = (table.cloneconf)(refreshMonsterCfg.MonsterIDList)
-            ;
-            (table.appendArray)(ret, monsters)
-            -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC87: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
-      end
+    local monsters
+    local refreshMonsterCfg = Cfg.cfg_refresh_monster[monsterRefreshId]
+    if refreshMonsterCfg.RandomMonsterIDList then
+      local monsterList = table.cloneconf(refreshMonsterCfg.RandomMonsterIDList)
+      local weightList = table.cloneconf(refreshMonsterCfg.RandomWeightList)
+      weightList = weightList or self:_MakeDefaultRandomWeightList(monsterList)
+      monsters = self:_ParseRandomMonsterID(monsterList, weightList, waveRandoms)
+    else
+      monsters = table.cloneconf(refreshMonsterCfg.MonsterIDList)
     end
+    table.appendArray(ret, monsters)
   end
-  ret = (table.unique)(ret)
+  ret = table.unique(ret)
   return ret
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule._MakeDefaultRandomWeightList = function(self, monsterList)
-  -- function num : 0_18 , upvalues : _ENV
+function SeasonMazeModule:_MakeDefaultRandomWeightList(monsterList)
   local weightList = {}
-  for index,value in ipairs(monsterList) do
+  for index, value in ipairs(monsterList) do
     local monsterGroup = value
     local weightGroup = {}
-    for groupIndex,monsterID in ipairs(monsterGroup) do
-      (table.insert)(weightGroup, 1)
+    for groupIndex, monsterID in ipairs(monsterGroup) do
+      table.insert(weightGroup, 1)
     end
-    ;
-    (table.insert)(weightList, weightGroup)
+    table.insert(weightList, weightGroup)
   end
   return weightList
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule._ParseRandomMonsterID = function(self, monsterList, weightList, waveRandoms)
-  -- function num : 0_19 , upvalues : _ENV
+function SeasonMazeModule:_ParseRandomMonsterID(monsterList, weightList, waveRandoms)
   local monsterIDList = {}
   if #monsterList ~= #weightList then
     return monsterIDList
@@ -316,16 +217,16 @@ SeasonMazeModule._ParseRandomMonsterID = function(self, monsterList, weightList,
     local monsterGroup = monsterList[i]
     local weightGroup = weightList[i]
     local totalWeight = 0
-    for _,w in ipairs(weightGroup) do
+    for _, w in ipairs(weightGroup) do
       totalWeight = totalWeight + w
     end
-    local index = (math.fmod)(i - 1, #waveRandoms) + 1
+    local index = math.fmod(i - 1, #waveRandoms) + 1
     local rand = waveRandoms[index]
-    local curWeight = rand * (totalWeight)
-    for i,w in ipairs(weightGroup) do
+    local curWeight = rand * totalWeight
+    for i, w in ipairs(weightGroup) do
       curWeight = curWeight - w
       if curWeight <= 0 then
-        (table.insert)(monsterIDList, monsterGroup[i])
+        table.insert(monsterIDList, monsterGroup[i])
         break
       end
     end
@@ -333,41 +234,30 @@ SeasonMazeModule._ParseRandomMonsterID = function(self, monsterList, weightList,
   return monsterIDList
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.GetAttrsByReason = function(self, reason)
-  -- function num : 0_20 , upvalues : _ENV
-  local attrs = (self._attrReason)[reason]
+function SeasonMazeModule:GetAttrsByReason(reason)
+  local attrs = self._attrReason[reason]
   if not attrs or not next(attrs) then
     return nil
   end
   local result = {}
-  for key,value in pairs(attrs) do
+  for key, value in pairs(attrs) do
     result[key] = value[2] - value[1]
   end
   return result
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeModule.CheckSeasonMazeClose = function(self, res)
-  -- function num : 0_21 , upvalues : _ENV
-  do
-    if res and not res:GetSucc() then
-      local result = res:GetResult()
-      if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED or result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE then
-        self:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
-        if (self.uiModule):IsRunning() then
-          (self.uiModule):ExitTo(UIStateType.UIMain)
-        else
-          ;
-          ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-        end
-        return true
+function SeasonMazeModule:CheckSeasonMazeClose(res)
+  if res and not res:GetSucc() then
+    local result = res:GetResult()
+    if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED or result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE then
+      self:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
+      if self.uiModule:IsRunning() then
+        self.uiModule:ExitTo(UIStateType.UIMain)
+      else
+        GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
       end
+      return true
     end
-    return false
   end
+  return false
 end
-
-

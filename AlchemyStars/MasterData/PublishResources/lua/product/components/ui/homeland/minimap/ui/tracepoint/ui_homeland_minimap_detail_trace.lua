@@ -1,57 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/tracepoint/ui_homeland_minimap_detail_trace.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailTrace", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailTrace = UIHomelandMinimapDetailTrace
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailTrace.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapDetailTrace:OnShow()
   self._nameTxt = self:GetUIComponent("UILocalizationText", "NameTxt")
   self._contentTxt = self:GetUIComponent("UILocalizationText", "ContentTxt")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailTrace.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.birthId = (self:GetIconData()):GetIndex()
-  self.homeMD = (GameGlobal.GetModule)(HomelandModule)
-  self.info = (self.homeMD):GetTreasureBirthInfo(self.birthId)
+function UIHomelandMinimapDetailTrace:OnInitDone()
+  self.birthId = self:GetIconData():GetIndex()
+  self.homeMD = GameGlobal.GetModule(HomelandModule)
+  self.info = self.homeMD:GetTreasureBirthInfo(self.birthId)
   if self.info == nil then
-    (self._nameTxt):SetText("")
-    ;
-    (self._contentTxt):SetText("")
+    self._nameTxt:SetText("")
+    self._contentTxt:SetText("")
   end
   self._titleRect = self:GetUIComponent("RectTransform", "Title")
   if self._titleRect then
-    local titleWidth = (self._nameTxt).preferredWidth
-    if titleWidth > 350 then
+    local titleWidth = self._nameTxt.preferredWidth
+    if 350 < titleWidth then
       titleWidth = 350
     end
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailTrace.ExitOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailTrace:ExitOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailTrace.BtnBGOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailTrace:BtnBGOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
-
-

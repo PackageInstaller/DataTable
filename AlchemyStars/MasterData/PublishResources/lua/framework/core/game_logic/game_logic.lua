@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/game_logic/game_logic.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameLogic", Object)
 GameLogic = GameLogic
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GameLogic.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.CallCenter = (NetCallCenter.GetInstance)()
+function GameLogic:Constructor()
+  self.CallCenter = NetCallCenter.GetInstance()
   self.ClientInfo = MobileClientInfo:New()
   self.msdkAuthorityInfo = MSDKAuthInfo:New()
   self.NetworkMonitor = NetworkMonitor:New()
@@ -20,94 +13,63 @@ GameLogic.Constructor = function(self)
   self.last_time = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GameLogic.Dispose = function(self)
-  -- function num : 0_1
-  (self.NetworkMonitor):Dispose()
+function GameLogic:Dispose()
+  self.NetworkMonitor:Dispose()
   self:Reset("GameLogic:Dispose")
   self.NetworkMonitor = nil
   self.CallCenter = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GameLogic.BackToLogin = function(self, bAutoAuthority, moudle, reason, popup, errcode, ...)
-  -- function num : 0_2 , upvalues : _ENV
+function GameLogic:BackToLogin(bAutoAuthority, moudle, reason, popup, errcode, ...)
   if bAutoAuthority == true then
-    (LoginLuaHelper.CancelChannel)()
+    LoginLuaHelper.CancelChannel()
   end
-  ;
-  (TSSSDKProxy:GetInstance()):LogOff()
-  ;
-  (self.NetworkMonitor):LogoutReset(self:GetModule(moudle), reason, popup, errcode, ...)
+  TSSSDKProxy:GetInstance():LogOff()
+  self.NetworkMonitor:LogoutReset(self:GetModule(moudle), reason, popup, errcode, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GameLogic.GoBack = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (HelperProxy:GetInstance()):GetConfig("TMPLoginSwitch", "false") == "true" then
-    (((GameGlobal.GameLogic)()).NetworkMonitor):GoBack(UIStateType.LoginEmpty)
+function GameLogic:GoBack()
+  if HelperProxy:GetInstance():GetConfig("TMPLoginSwitch", "false") == "true" then
+    GameGlobal.GameLogic().NetworkMonitor:GoBack(UIStateType.LoginEmpty)
   else
-    ;
-    (((GameGlobal.GameLogic)()).NetworkMonitor):GoBack(UIStateType.Login)
+    GameGlobal.GameLogic().NetworkMonitor:GoBack(UIStateType.Login)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GameLogic.Reset = function(self, reason)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("GameLogic:Reset")
+function GameLogic:Reset(reason)
+  Log.debug("GameLogic:Reset")
   if not self.inited then
-    return 
+    return
   end
   self.inited = false
   self:ClearAllModule()
-  ;
-  (self.CallCenter):Reset(reason)
+  self.CallCenter:Reset(reason)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GameLogic.Inited = function(self)
-  -- function num : 0_5
+function GameLogic:Inited()
   return self.inited
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GameLogic.Init = function(self, reason)
-  -- function num : 0_6 , upvalues : _ENV
-  if not reason then
-    reason = "GameLogic:Init"
-  end
+function GameLogic:Init(reason)
+  reason = reason or "GameLogic:Init"
   self:Reset(reason)
-  ;
-  (self.CallCenter):Init()
-  ;
-  (NetMessageFactory:GetInstance()):RegisterEvents()
+  self.CallCenter:Init()
+  NetMessageFactory:GetInstance():RegisterEvents()
   NetCallerRegister:RegCallers(self.CallCenter)
-  ;
-  (self.CallCenter):InitCallers()
+  self.CallCenter:InitCallers()
   GameModuleRegister:RegisterModules(self)
   self:InitAllModule()
   if APPVERNETSTAT then
-    ((self.CallCenter):GetCallerLua("game")):RegisterPushHandler(CEventSvrNetworkCfgPush, self.HandleNetworkCfg, self)
+    self.CallCenter:GetCallerLua("game"):RegisterPushHandler(CEventSvrNetworkCfgPush, self.HandleNetworkCfg, self)
   end
   UIModuleRegister:RegisterUIModules(self)
-  ;
-  (Log.debug)("GameLogic:Init")
+  Log.debug("GameLogic:Init")
   self.inited = true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GameLogic.Update = function(self, curTick)
-  -- function num : 0_7 , upvalues : _ENV
+function GameLogic:Update(curTick)
   if not self.inited then
-    return 
+    return
   end
   self:UpdateAllModule(curTick)
   if APPVERNETSTAT then
@@ -116,183 +78,131 @@ GameLogic.Update = function(self, curTick)
 end
 
 local SCENE_LOADER_SUFFIX = ".unity"
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
 
-GameLogic.LoadScene = function(self, TT, sceneName)
-  -- function num : 0_8 , upvalues : _ENV, SCENE_LOADER_SUFFIX
+function GameLogic:LoadScene(TT, sceneName)
   if self.onLoadSceneBegin then
-    (self.onLoadSceneBegin)(sceneName)
+    self.onLoadSceneBegin(sceneName)
   end
-  ;
-  (Log.sys)("GameLogic:LoadScene start: ", sceneName)
-  local scene = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, sceneName .. SCENE_LOADER_SUFFIX, LoadType.Unity)
+  Log.sys("GameLogic:LoadScene start: ", sceneName)
+  local scene = ResourceManager:GetInstance():AsyncLoadAsset(TT, sceneName .. SCENE_LOADER_SUFFIX, LoadType.Unity)
   if not scene and Log.loglevel < ELogLevel.None then
-    (Log.exception)("找不到场景资源：", sceneName)
+    Log.exception("找不到场景资源：", sceneName)
   end
   if self.scene then
-    (self.scene):Dispose()
+    self.scene:Dispose()
   end
   self.scene = scene
   if self.onLoadSceneEnd then
-    (self.onLoadSceneEnd)(sceneName)
+    self.onLoadSceneEnd(sceneName)
   end
-  ;
-  (Log.sys)("GameLogic:LoadScene end: ", sceneName)
+  Log.sys("GameLogic:LoadScene end: ", sceneName)
   return scene
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.AddModule = function(self, type, caller)
-  -- function num : 0_9
+function GameLogic:AddModule(type, caller)
   local module = type:New()
   module.logic = self
   module.caller = caller
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.modules)[type._className] = module
+  self.modules[type._className] = module
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.AddUIModule = function(self, gameModuleType, uiModuleType)
-  -- function num : 0_10 , upvalues : _ENV
+function GameLogic:AddUIModule(gameModuleType, uiModuleType)
   local uiModule = uiModuleType:New()
   local gameModule = self:GetModule(gameModuleType)
   if gameModule then
     gameModule.uiModule = uiModule
   else
-    ;
-    (Log.fatal)("GameLogic:AddUIModule Fail, no game module ", gameModuleType._className, (Log.traceback)())
+    Log.fatal("GameLogic:AddUIModule Fail, no game module ", gameModuleType._className, Log.traceback())
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.GetModule = function(self, type)
-  -- function num : 0_11
-  return (self.modules)[type._className]
+function GameLogic:GetModule(type)
+  return self.modules[type._className]
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.ForModules = function(self, cb)
-  -- function num : 0_12 , upvalues : _ENV
-  for _,v in pairs(self.modules) do
+function GameLogic:ForModules(cb)
+  for _, v in pairs(self.modules) do
     if v then
       cb(v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.ClearAllModule = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  for _,v in pairs(self.modules) do
+function GameLogic:ClearAllModule()
+  for _, v in pairs(self.modules) do
     if v then
       v:DetachAllEvents()
       v:Dispose()
       if v.uiModule then
-        (v.uiModule):DetachAllEvents()
-        ;
-        (v.uiModule):Dispose()
+        v.uiModule:DetachAllEvents()
+        v.uiModule:Dispose()
       end
     end
   end
-  ;
-  (table.clear)(self.modules)
+  table.clear(self.modules)
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.InitAllModule = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  for _,v in pairs(self.modules) do
+function GameLogic:InitAllModule()
+  for _, v in pairs(self.modules) do
     v:Init()
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.UpdateAllModule = function(self, curTick)
-  -- function num : 0_15 , upvalues : _ENV
-  for _,v in pairs(self.modules) do
+function GameLogic:UpdateAllModule(curTick)
+  for _, v in pairs(self.modules) do
     v:Update(curTick)
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.GetReadStrByIdx = function(self, idx)
-  -- function num : 0_16 , upvalues : _ENV
-  local str = ((UnityEngine.PlayerPrefs).GetString)("SingleUserData")
-  local strList = (string.split)(str, "|")
-  if #strList < idx then
+function GameLogic:GetReadStrByIdx(idx)
+  local str = UnityEngine.PlayerPrefs.GetString("SingleUserData")
+  local strList = string.split(str, "|")
+  if idx > #strList then
     return ""
   end
   if idx == 4 then
-    return (GetQR_Local.UnicodeToString)(strList[idx])
+    return GetQR_Local.UnicodeToString(strList[idx])
   end
   return strList[idx]
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.GetOpenId = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function GameLogic:GetOpenId()
   if GameSingle then
-    local singleUserData = ((UnityEngine.PlayerPrefs).GetString)("SingleUserData")
+    local singleUserData = UnityEngine.PlayerPrefs.GetString("SingleUserData")
     local qr_openid = ""
-    if not (string.isnullorempty)(singleUserData) then
+    if not string.isnullorempty(singleUserData) then
       qr_openid = self:GetReadStrByIdx(3)
     end
     return qr_openid
   end
-  do
-    return (self.msdkAuthorityInfo).open_id
-  end
+  return self.msdkAuthorityInfo.open_id
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.GetZoneID = function(self)
-  -- function num : 0_18
+function GameLogic:GetZoneID()
   return self.ZoneId
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.SetZoneID = function(self, zId)
-  -- function num : 0_19
+function GameLogic:SetZoneID(zId)
   self.ZoneId = zId
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.HandleNetworkCfg = function(self, msg)
-  -- function num : 0_20
-  ((self.CallCenter):GetCallerLua("bulletin")):UpdateNetworkCfgInfo(msg.m_net_cfg_info)
+function GameLogic:HandleNetworkCfg(msg)
+  self.CallCenter:GetCallerLua("bulletin"):UpdateNetworkCfgInfo(msg.m_net_cfg_info)
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-GameLogic.NetStat = function(self, curTick)
-  -- function num : 0_21 , upvalues : _ENV
-  if (self.CallCenter):GetCallerLua("bulletin") == nil then
-    return 
+function GameLogic:NetStat(curTick)
+  if self.CallCenter:GetCallerLua("bulletin") == nil then
+    return
   end
-  if curTick - self.last_time < ((self.CallCenter):GetCallerLua("bulletin")).wait_tick4_report then
-    return 
+  if curTick - self.last_time < self.CallCenter:GetCallerLua("bulletin").wait_tick4_report then
+    return
   end
-  ;
-  (Log.debug)("wait_tick4_report:", tostring(((self.CallCenter):GetCallerLua("bulletin")).wait_tick4_report))
+  Log.debug("wait_tick4_report:", tostring(self.CallCenter:GetCallerLua("bulletin").wait_tick4_report))
   self.last_time = curTick
-  local reportData = ((self.CallCenter):GetCallerLua("bulletin")):GetReportData()
+  local reportData = self.CallCenter:GetCallerLua("bulletin"):GetReportData()
   if reportData == nil then
-    (Log.error)("reportData == nil")
-    return 
+    Log.error("reportData == nil")
+    return
   end
   local avgDelay = reportData.avgDelay
   local maxDelay = reportData.maxDelay
@@ -314,10 +224,23 @@ GameLogic.NetStat = function(self, curTick)
   local connectTimeoutCount = reportData.connectTimeoutCount
   local callTimeoutCount = reportData.callTimeoutCount
   local recvTimeoutCount = reportData.recvTimeoutCount
-  ;
-  (Log.debug)("NetworkStatDelay:", tostring(avgDelay), tostring(maxDelay), tostring(minDelay), tostring(rto), tostring(totalSize), tostring(sendSize), tostring(recvSize), tostring(totalCount), tostring(sendCount), tostring(recvCount), tostring(resendCount), tostring(maxResendWaitTick), tostring(repeatCount), tostring(callTimeoutCount), tostring(recvTimeoutCount), tostring(connectTimeoutCount), tostring(lostCount), tostring(rangeCount), tostring(conflictCount), tostring(connFailedCount))
-  ;
-  (GameGlobal.ReportCustomEvent)("NetStat", "NetworkStatDelay", {avgDelay, minDelay, maxDelay, callTimeoutCount, sendSize, recvSize, (math.ceil)(rto), sendCount, sendCount, resendCount, recvTimeoutCount, repeatCount, lostCount, connectTimeoutCount, rangeCount, conflictCount})
+  Log.debug("NetworkStatDelay:", tostring(avgDelay), tostring(maxDelay), tostring(minDelay), tostring(rto), tostring(totalSize), tostring(sendSize), tostring(recvSize), tostring(totalCount), tostring(sendCount), tostring(recvCount), tostring(resendCount), tostring(maxResendWaitTick), tostring(repeatCount), tostring(callTimeoutCount), tostring(recvTimeoutCount), tostring(connectTimeoutCount), tostring(lostCount), tostring(rangeCount), tostring(conflictCount), tostring(connFailedCount))
+  GameGlobal.ReportCustomEvent("NetStat", "NetworkStatDelay", {
+    avgDelay,
+    minDelay,
+    maxDelay,
+    callTimeoutCount,
+    sendSize,
+    recvSize,
+    math.ceil(rto),
+    sendCount,
+    sendCount,
+    resendCount,
+    recvTimeoutCount,
+    repeatCount,
+    lostCount,
+    connectTimeoutCount,
+    rangeCount,
+    conflictCount
+  })
 end
-
-

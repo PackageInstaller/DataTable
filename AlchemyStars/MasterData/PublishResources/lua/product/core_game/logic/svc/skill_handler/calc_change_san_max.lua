@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_change_san_max.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_ChangeSanMax", SkillEffectCalc_Base)
 SkillEffectCalc_ChangeSanMax = SkillEffectCalc_ChangeSanMax
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ChangeSanMax.CalculateOnSingleTarget = function(self, calcParam, targetEntityID)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_ChangeSanMax:CalculateOnSingleTarget(calcParam, targetEntityID)
   if targetEntityID <= 0 then
-    return 
+    return
   end
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.Sanity) then
-    return 
+    return
   end
   local param = calcParam:GetSkillEffectParam()
   local val = param:GetChangeValue()
@@ -29,7 +22,7 @@ SkillEffectCalc_ChangeSanMax.CalculateOnSingleTarget = function(self, calcParam,
   local maxVal = finalMaxVal
   local currentVal = lsvcFeature:GetSanValue()
   local finalVal = currentVal
-  if finalVal < minVal then
+  if minVal > finalVal then
     finalVal = minVal
   end
   if maxVal < finalVal then
@@ -38,5 +31,3 @@ SkillEffectCalc_ChangeSanMax.CalculateOnSingleTarget = function(self, calcParam,
   local delta = finalVal - currentVal
   return SkillEffectResultChangeSanMax:New(deltaMax, delta)
 end
-
-

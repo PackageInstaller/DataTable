@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_skill_final_by_grey_hp_percent.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByGreyHPPercent", BuffLogicBase)
 BuffLogicChangeSkillFinalByGreyHPPercent = BuffLogicChangeSkillFinalByGreyHPPercent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByGreyHPPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillFinalByGreyHPPercent:Constructor(buffInstance, logicParam)
   self._paramA = logicParam.paramA
   self._paramB = logicParam.paramB
   self._paramC = logicParam.paramC
@@ -16,10 +9,7 @@ BuffLogicChangeSkillFinalByGreyHPPercent.Constructor = function(self, buffInstan
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByGreyHPPercent.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillFinalByGreyHPPercent:DoLogic(notify)
   local sourceEntity = self:GetEntity()
   local cAttributes = sourceEntity:Attributes()
   local maxHP = cAttributes:CalcMaxHp()
@@ -27,30 +17,23 @@ BuffLogicChangeSkillFinalByGreyHPPercent.DoLogic = function(self, notify)
   local greyValue = cBuff:GetGreyHPValue(true)
   local promoteRate = greyValue / (maxHP * self._paramA + self._paramB) * self._paramC
   if promoteRate == 0 then
-    return 
+    return
   end
-  for _,paramType in ipairs(self._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, promoteRate)
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, promoteRate)
   end
 end
 
 _class("BuffLogicRemoveSkillFinalByGreyHPPercent", BuffLogicBase)
 BuffLogicRemoveSkillFinalByGreyHPPercent = BuffLogicRemoveSkillFinalByGreyHPPercent
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillFinalByGreyHPPercent.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillFinalByGreyHPPercent:Constructor(buffInstance, logicParam)
   self._entity = buffInstance._entity
   self._effectList = logicParam.effectList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillFinalByGreyHPPercent.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs(self._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveSkillFinalByGreyHPPercent:DoLogic()
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/activity/n33/str_n33_ep.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n33_ep_m_rmtime_title = "Tiempo Restante del Evento:", str_n33_ep_m_locktime_cd = "Desbloqueado después de {1}", str_n33_ep_m_locktime_prompt = "Se desbloquea al llegar al tiempo especificado.", str_n33_ep_m_lock_prompt = "Completa la etapa anterior para desbloquear", str_n33_ep_d_battle_specific = "Características del campo de batalla", str_n33_ep_d_battle_no_specific = "No hay características del campo de batalla", str_n33_ep_d_team_condition = "Requisitos de formación", str_n33_ep_d_team_no_condition = "No hay requisitos de formación", str_n33_ep_d_enemy_information = "Intel enemigo", str_n33_ep_d_restraint_relationship = "Círculo de Contador", str_n33_ep_d_award_title = "Recompensas de exploración", str_n33_ep_d_challenge_btn = "Desafío", str_n33_ep_career_in_team = "No puedes desplegar más de 3 Aurorians de la misma clase.", str_n33_ep_main_title = "Campamento de Entrenamiento del Equipo", str_n33_ep_1_name = "N1 - Golpe de Sofocación", str_n33_ep_2_name = "N2 - Limpieza de Heridas", str_n33_ep_3_name = "N3 - Blitz", str_n33_ep_4_name = "N4 - Erradicación", str_n33_ep_5_name = "N5 - Incineración", str_n33_ep_6_name = "N6 - Espada Llameante", str_n33_ep_7_name = "N7 - Hexburn", str_n33_ep_8_name = "N8 - Abrasar", str_n33_ep_1_name_desc = "Presta atención a los intentos del enemigo de obstaculizar y contraatacar durante la persecución. Nunca actúes imprudentemente.", str_n33_ep_2_name_desc = "Sanar heridas puede ser difícil, especialmente con sangrado continuo. Asegúrate de mantener la línea de vida sin colapsar...", str_n33_ep_3_name_desc = "La caída del enemigo no marca el fin de la batalla, sino el comienzo de los ataques.", str_n33_ep_4_name_desc = "¿Realmente existen enemigos inmortales? ¿O son simplemente un mito? Si existen, su fin podría llegar hoy.", str_n33_ep_5_name_desc = "Enfrentando enjambres interminables de enemigos, necesitamos una espada ardiente para chamuscar e incinerarlos hasta convertirlos en cenizas.", str_n33_ep_6_name_desc = "Enfrentando el peligroso bosque de espadas, la única forma de abrirse paso es incendiándolo.", str_n33_ep_7_name_desc = "Las palabras del enemigo, los ataques del enemigo, todos poseen un poder de sellado formidable...", str_n33_ep_8_name_desc = "El enemigo gana ventaja con el tiempo. Solo un ataque tan feroz como el fuego abrasador puede guiar a la victoria."}
+local config = {
+  str_n33_ep_m_rmtime_title = "Tiempo Restante del Evento:",
+  str_n33_ep_m_locktime_cd = "Desbloqueado después de {1}",
+  str_n33_ep_m_locktime_prompt = "Se desbloquea al llegar al tiempo especificado.",
+  str_n33_ep_m_lock_prompt = "Completa la etapa anterior para desbloquear",
+  str_n33_ep_d_battle_specific = "Características del campo de batalla",
+  str_n33_ep_d_battle_no_specific = "No hay características del campo de batalla",
+  str_n33_ep_d_team_condition = "Requisitos de formación",
+  str_n33_ep_d_team_no_condition = "No hay requisitos de formación",
+  str_n33_ep_d_enemy_information = "Intel enemigo",
+  str_n33_ep_d_restraint_relationship = "Círculo de Contador",
+  str_n33_ep_d_award_title = "Recompensas de exploración",
+  str_n33_ep_d_challenge_btn = "Desafío",
+  str_n33_ep_career_in_team = "No puedes desplegar más de 3 Aurorians de la misma clase.",
+  str_n33_ep_main_title = "Campamento de Entrenamiento del Equipo",
+  str_n33_ep_1_name = "N1 - Golpe de Sofocación",
+  str_n33_ep_2_name = "N2 - Limpieza de Heridas",
+  str_n33_ep_3_name = "N3 - Blitz",
+  str_n33_ep_4_name = "N4 - Erradicación",
+  str_n33_ep_5_name = "N5 - Incineración",
+  str_n33_ep_6_name = "N6 - Espada Llameante",
+  str_n33_ep_7_name = "N7 - Hexburn",
+  str_n33_ep_8_name = "N8 - Abrasar",
+  str_n33_ep_1_name_desc = "Presta atención a los intentos del enemigo de obstaculizar y contraatacar durante la persecución. Nunca actúes imprudentemente.",
+  str_n33_ep_2_name_desc = "Sanar heridas puede ser difícil, especialmente con sangrado continuo. Asegúrate de mantener la línea de vida sin colapsar...",
+  str_n33_ep_3_name_desc = "La caída del enemigo no marca el fin de la batalla, sino el comienzo de los ataques.",
+  str_n33_ep_4_name_desc = "¿Realmente existen enemigos inmortales? ¿O son simplemente un mito? Si existen, su fin podría llegar hoy.",
+  str_n33_ep_5_name_desc = "Enfrentando enjambres interminables de enemigos, necesitamos una espada ardiente para chamuscar e incinerarlos hasta convertirlos en cenizas.",
+  str_n33_ep_6_name_desc = "Enfrentando el peligroso bosque de espadas, la única forma de abrirse paso es incendiándolo.",
+  str_n33_ep_7_name_desc = "Las palabras del enemigo, los ataques del enemigo, todos poseen un poder de sellado formidable...",
+  str_n33_ep_8_name_desc = "El enemigo gana ventaja con el tiempo. Solo un ataque tan feroz como el fuego abrasador puede guiar a la victoria."
+}
 return config
-

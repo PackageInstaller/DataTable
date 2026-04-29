@@ -1,18 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_clear_select_team_pos_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewClearSelectTeamPosInstruction", SkillPreviewBaseInstruction)
 SkillPreviewClearSelectTeamPosInstruction = SkillPreviewClearSelectTeamPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewClearSelectTeamPosInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_0 , upvalues : _ENV
-  local petPstID = (casterEntity:PetPstID()):GetPstID()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClearSelectedTeamOrderPosition, petPstID)
+function SkillPreviewClearSelectTeamPosInstruction:DoInstruction(TT, casterEntity, previewContext)
+  local petPstID = casterEntity:PetPstID():GetPstID()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClearSelectedTeamOrderPosition, petPstID)
 end
-
-

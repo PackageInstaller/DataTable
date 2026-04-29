@@ -1,108 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_tansformation_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_behavior_base")
 _class("MonsterBeHaviorTransformationWithHp", MonsterBeHaviorBase)
 MonsterBeHaviorTransformationWithHp = MonsterBeHaviorTransformationWithHp
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorTransformationWithHp.Constructor = function(self)
-  -- function num : 0_0
+function MonsterBeHaviorTransformationWithHp:Constructor()
   self._sharps = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorTransformationWithHp.Name = function(self)
-  -- function num : 0_1
+function MonsterBeHaviorTransformationWithHp:Name()
   return "MonsterBeHaviorTransformationWithHp"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorTransformationWithHp.FindSharpIdByHp = function(self, hp)
-  -- function num : 0_2
+function MonsterBeHaviorTransformationWithHp:FindSharpIdByHp(hp)
   if self._sharps == nil then
-    return 
+    return
   end
-  local sharpId = nil
+  local sharpId
   for i = 1, #self._sharps do
-    local sharpHp = ((self._sharps)[i]).HP
+    local sharpHp = self._sharps[i].HP
     if hp <= sharpHp then
-      sharpId = ((self._sharps)[i]).ResId
+      sharpId = self._sharps[i].ResId
       break
     end
   end
-  do
-    return sharpId
-  end
+  return sharpId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorTransformationWithHp.CheckTransformation = function(self, hp)
-  -- function num : 0_3 , upvalues : _ENV
+function MonsterBeHaviorTransformationWithHp:CheckTransformation(hp)
   local sharpId = self:FindSharpIdByHp(hp)
   if not sharpId then
-    return 
+    return
   end
   local view = self:GetBehavior("MonsterBeHaviorView")
   if not view then
-    return 
+    return
   end
   local animation = self:GetBehavior("MonsterBeHaviorAnimation")
   if animation then
     animation:PlayAnimation(BounceConst.MonsterBeAttackedAniName)
   end
-  ;
-  (self.monster):SetTransformation(view:GetAttackedLength(), function()
-    -- function num : 0_3_0 , upvalues : view, sharpId
+  self.monster:SetTransformation(view:GetAttackedLength(), function()
     view:ChgRes(sharpId)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorTransformationWithHp.ChgResImmediatelyBy = function(self, hp)
-  -- function num : 0_4
+function MonsterBeHaviorTransformationWithHp:ChgResImmediatelyBy(hp)
   local sharpId = self:FindSharpIdByHp(hp)
   if not sharpId then
-    return 
+    return
   end
   local view = self:GetBehavior("MonsterBeHaviorView")
   if not view then
-    return 
+    return
   end
   view:ChgRes(sharpId)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorTransformationWithHp.OnInit = function(self, param)
-  -- function num : 0_5
+function MonsterBeHaviorTransformationWithHp:OnInit(param)
   self._sharps = param.Sharps
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorTransformationWithHp.OnShow = function(self)
-  -- function num : 0_6
+function MonsterBeHaviorTransformationWithHp:OnShow()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorTransformationWithHp.OnReset = function(self)
-  -- function num : 0_7
+function MonsterBeHaviorTransformationWithHp:OnReset()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorTransformationWithHp.OnRelease = function(self)
-  -- function num : 0_8
+function MonsterBeHaviorTransformationWithHp:OnRelease()
   self._sharps = nil
 end
-
-

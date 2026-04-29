@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_only_team_leader_color_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetOnlyTeamLeaderColorPet", BuffLogicBase)
 BuffLogicSetOnlyTeamLeaderColorPet = BuffLogicSetOnlyTeamLeaderColorPet
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetOnlyTeamLeaderColorPet.Constructor = function(self, buffinstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetOnlyTeamLeaderColorPet:Constructor(buffinstance, logicParam)
   self._val = logicParam.Val or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetOnlyTeamLeaderColorPet.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._buffComponent):SetBuffValue("OnlyTeamLeaderColorPet", self._val)
+function BuffLogicSetOnlyTeamLeaderColorPet:DoLogic(notify)
+  self._buffComponent:SetBuffValue("OnlyTeamLeaderColorPet", self._val)
   local buffResult = BuffResultSetOnlyTeamLeaderColorPet:New(self._val)
   return buffResult
 end
-
-

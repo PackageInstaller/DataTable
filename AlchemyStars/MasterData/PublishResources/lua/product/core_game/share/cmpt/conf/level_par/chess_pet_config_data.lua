@@ -1,424 +1,277 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/chess_pet_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChessPetConfigData", Object)
 ChessPetConfigData = ChessPetConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessPetConfigData.Constructor = function(self, world)
-  -- function num : 0_0
+function ChessPetConfigData:Constructor(world)
   self._world = world
-  self._affixSvc = (self._world):GetService("Affix")
+  self._affixSvc = self._world:GetService("Affix")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetObject = function(self, chessPetID)
-  -- function num : 0_1 , upvalues : _ENV
-  return (Cfg.cfg_chesspet)[chessPetID]
+function ChessPetConfigData:GetChessPetObject(chessPetID)
+  return Cfg.cfg_chesspet[chessPetID]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetClass = function(self, chessPetID)
-  -- function num : 0_2
+function ChessPetConfigData:GetChessPetClass(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return self:GetChessPetClassByChessPetConfig(chessPetConfig)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetClassList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local listConfig = (Cfg.cfg_chesspet_class)()
+function ChessPetConfigData:GetChessPetClassList()
+  local listConfig = Cfg.cfg_chesspet_class()
   local listReturn = {}
-  for key,value in pairs(listConfig) do
-    (table.insert)(listReturn, key)
+  for key, value in pairs(listConfig) do
+    table.insert(listReturn, key)
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetClassByChessPetConfig = function(self, chessPetConfig)
-  -- function num : 0_4 , upvalues : _ENV
-  if chessPetConfig == nil then
+function ChessPetConfigData:GetChessPetClassByChessPetConfig(chessPetConfig)
+  if nil == chessPetConfig then
     return nil
   end
   local chessPetClassID = chessPetConfig.ClassID
-  return (Cfg.cfg_chesspet_class)[chessPetClassID]
+  return Cfg.cfg_chesspet_class[chessPetClassID]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetCacheSkillIds = function(self, chessPetID)
-  -- function num : 0_5
+function ChessPetConfigData:GetChessPetCacheSkillIds(chessPetID)
   local ret = {}
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData._GetChessPetProp = function(self, configData)
-  -- function num : 0_6 , upvalues : _ENV
+function ChessPetConfigData:_GetChessPetProp(configData)
   local nData = 0
   if configData.formula then
-    if configData.formula == 1 then
-      local x = ((self._world).BW_WorldInfo):GetPlayerLevel()
+    if 1 == configData.formula then
+      local x = self._world.BW_WorldInfo:GetPlayerLevel()
       nData = x * x * configData.a + x * configData.b + configData.c
-    else
-      do
-        if configData.formula == 2 then
-          local mz = (self._world):GetService("Maze")
-          local x = mz:GetAvgPetLevel()
-          local y, z = mz:GetMazeLayerFactor()
-          nData = (x * configData.a + y * configData.b + configData.c) * z
-        else
-          do
-            if configData.formula == 3 then
-              local configService = (self._world):GetService("Config")
-              local y, z = configService:GetAffixHardParam(configData.formula)
-              nData = (configData.b * y + configData.c) * z
-            else
-              do
-                if configData.formula == 4 then
-                  local configService = (self._world):GetService("Config")
-                  local y, z = configService:GetAffixHardParam(configData.formula)
-                  nData = (configData.b * y + configData.c) * z
-                end
-                do
-                  nData = configData[1]
-                  return (math.ceil)(nData)
-                end
-              end
-            end
-          end
-        end
-      end
+    elseif 2 == configData.formula then
+      local mz = self._world:GetService("Maze")
+      local x = mz:GetAvgPetLevel()
+      local y, z = mz:GetMazeLayerFactor()
+      nData = (x * configData.a + y * configData.b + configData.c) * z
+    elseif 3 == configData.formula then
+      local configService = self._world:GetService("Config")
+      local y, z = configService:GetAffixHardParam(configData.formula)
+      nData = (configData.b * y + configData.c) * z
+    elseif 4 == configData.formula then
+      local configService = self._world:GetService("Config")
+      local y, z = configService:GetAffixHardParam(configData.formula)
+      nData = (configData.b * y + configData.c) * z
     end
+  else
+    nData = configData[1]
   end
+  return math.ceil(nData)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetAttack = function(self, chessPetID)
-  -- function num : 0_7
+function ChessPetConfigData:GetChessPetAttack(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return self:_GetChessPetProp(chessPetConfig.Attack)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetDefense = function(self, chessPetID)
-  -- function num : 0_8
+function ChessPetConfigData:GetChessPetDefense(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return self:_GetChessPetProp(chessPetConfig.Defense)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetEvade = function(self, chessPetID)
-  -- function num : 0_9
+function ChessPetConfigData:GetChessPetEvade(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return chessPetConfig.Evade
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetHealth = function(self, chessPetID)
-  -- function num : 0_10
+function ChessPetConfigData:GetChessPetHealth(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return self:_GetChessPetProp(chessPetConfig.Health)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetElementType = function(self, chessPetID)
-  -- function num : 0_11
+function ChessPetConfigData:GetChessPetElementType(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return chessPetConfig.ElementType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetAbsorbNormal = function(self, chessPetID)
-  -- function num : 0_12
+function ChessPetConfigData:GetAbsorbNormal(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return chessPetConfig.AbsorbNormal or 1
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetAbsorbChain = function(self, chessPetID)
-  -- function num : 0_13
+function ChessPetConfigData:GetAbsorbChain(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return chessPetConfig.AbsorbChain or 1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetAbsorbActive = function(self, chessPetID)
-  -- function num : 0_14
+function ChessPetConfigData:GetAbsorbActive(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return chessPetConfig.AbsorbActive or 1
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetEliteIDArray = function(self, chessPetID)
-  -- function num : 0_15 , upvalues : _ENV
+function ChessPetConfigData:GetChessPetEliteIDArray(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   local tmpEliteID = {}
   if chessPetConfig.EliteID then
-    for i,buffID in ipairs(chessPetConfig.EliteID) do
-      (table.insert)(tmpEliteID, buffID)
+    for i, buffID in ipairs(chessPetConfig.EliteID) do
+      table.insert(tmpEliteID, buffID)
     end
   end
-  do
-    local retEliteID = (self._affixSvc):ReplaceChessPetEliteBuff(chessPetID, tmpEliteID)
-    retEliteID = (self._affixSvc):AddChessPetEliteBuff(chessPetID, retEliteID)
-    if not retEliteID then
-      return {}
-    end
-  end
+  local retEliteID = self._affixSvc:ReplaceChessPetEliteBuff(chessPetID, tmpEliteID)
+  retEliteID = self._affixSvc:AddChessPetEliteBuff(chessPetID, retEliteID)
+  return retEliteID or {}
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetClassID = function(self, chessPetID)
-  -- function num : 0_16
+function ChessPetConfigData:GetChessPetClassID(chessPetID)
   local chessPetConfig = self:GetChessPetObject(chessPetID)
   return chessPetConfig.ClassID
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetPermanentEffectID = function(self, chessPetID)
-  -- function num : 0_17
+function ChessPetConfigData:GetChessPetPermanentEffectID(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   local effectArray = chessPetConfig.PermanentEffect
   return effectArray
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetIdleEffectID = function(self, chessPetID)
-  -- function num : 0_18
+function ChessPetConfigData:GetChessPetIdleEffectID(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   local effectArray = chessPetConfig.IdleEffect
   return effectArray
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetSkillIDs = function(self, chessPetID)
-  -- function num : 0_19 , upvalues : _ENV
+function ChessPetConfigData:GetChessPetSkillIDs(chessPetID)
   local monsterObject = self:GetChessPetClass(chessPetID)
-  local affixService = (self._world):GetService("Affix")
+  local affixService = self._world:GetService("Affix")
   return affixService:ChangeMonsterSkillID(monsterID, monsterObject.SkillID)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetDropIDs = function(self, chessPetID)
-  -- function num : 0_20
+function ChessPetConfigData:GetChessPetDropIDs(chessPetID)
   local monsterObject = self:GetChessPetObject(chessPetID)
   return monsterObject.DropArray
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.CanMove = function(self, chessPetID)
-  -- function num : 0_21
+function ChessPetConfigData:CanMove(chessPetID)
   local monsterObject = self:GetChessPetClass(chessPetID)
   return monsterObject.CanMove
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.CanTurn = function(self, chessPetID)
-  -- function num : 0_22
+function ChessPetConfigData:CanTurn(chessPetID)
   local monsterObject = self:GetChessPetClass(chessPetID)
   return monsterObject.CanTurn
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetStoryTips = function(self, chessPetID)
-  -- function num : 0_23
+function ChessPetConfigData:GetStoryTips(chessPetID)
   local monsterObject = self:GetChessPetClass(chessPetID)
   return monsterObject.StoryTips
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetDeathShowType = function(self, chessPetID)
-  -- function num : 0_24
+function ChessPetConfigData:GetDeathShowType(chessPetID)
   local monsterObject = self:GetChessPetClass(chessPetID)
   return monsterObject.DeathShowType
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetDeathShowEffectID = function(self, chessPetID)
-  -- function num : 0_25
-  local deathShowParam = (self:GetChessPetClass(chessPetID)).DeathShowParam
+function ChessPetConfigData:GetDeathShowEffectID(chessPetID)
+  local deathShowParam = self:GetChessPetClass(chessPetID).DeathShowParam
   if deathShowParam ~= nil then
     return deathShowParam.deathEffectID
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetDeathAudioID = function(self, chessPetID)
-  -- function num : 0_26
-  local deathShowParam = (self:GetChessPetClass(chessPetID)).DeathAudioParam
+function ChessPetConfigData:GetDeathAudioID(chessPetID)
+  local deathShowParam = self:GetChessPetClass(chessPetID).DeathAudioParam
   if deathShowParam ~= nil then
     return deathShowParam.deathAudioID
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.DeathAudioSyncAnimation = function(self, chessPetID)
-  -- function num : 0_27
-  local deathShowParam = (self:GetChessPetClass(chessPetID)).DeathAudioParam
+function ChessPetConfigData:DeathAudioSyncAnimation(chessPetID)
+  local deathShowParam = self:GetChessPetClass(chessPetID).DeathAudioParam
   if deathShowParam ~= nil then
     return deathShowParam.syncAnimation
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetSkillIDs = function(self, chessPetID)
-  -- function num : 0_28
+function ChessPetConfigData:GetSkillIDs(chessPetID)
   local monsterObject = self:GetChessPetClass(chessPetID)
-  if not monsterObject.SkillIDs then
-    return {}
-  end
+  return monsterObject.SkillIDs or {}
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetAITargetType = function(self, chessPetID)
-  -- function num : 0_29
+function ChessPetConfigData:GetChessPetAITargetType(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   return chessPetConfig.AITargetType
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.ParseChessPetArea = function(self, areaStrArray)
-  -- function num : 0_30 , upvalues : _ENV
+function ChessPetConfigData:ParseChessPetArea(areaStrArray)
   local areaPosArray = {}
   for index = 1, #areaStrArray do
     local posStr = areaStrArray[index]
-    local numStr = (string.split)(posStr, ",")
+    local numStr = string.split(posStr, ",")
     local vec2 = Vector2(tonumber(numStr[1]), tonumber(numStr[2]))
     areaPosArray[#areaPosArray + 1] = vec2
   end
   return areaPosArray
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetArea = function(self, chessPetID)
-  -- function num : 0_31 , upvalues : _ENV
+function ChessPetConfigData:GetChessPetArea(chessPetID)
   local chessPetClass = self:GetChessPetClass(chessPetID)
   if not chessPetClass then
-    (Log.fatal)("No Find Monster ID:", chessPetID)
+    Log.fatal("No Find Monster ID:", chessPetID)
     local areaPosArray = {}
     return areaPosArray
   end
-  do
-    return self:ParseChessPetArea(chessPetClass.Area)
-  end
+  return self:ParseChessPetArea(chessPetClass.Area)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetResPath = function(self, chessPetID)
-  -- function num : 0_32
+function ChessPetConfigData:GetChessPetResPath(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   return chessPetConfig.ResPath
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetCardResPath = function(self, chessPetID)
-  -- function num : 0_33
+function ChessPetConfigData:GetChessPetCardResPath(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   return chessPetConfig.CardResPath
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetWalkStep = function(self, chessPetID)
-  -- function num : 0_34
+function ChessPetConfigData:GetChessPetWalkStep(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   return chessPetConfig.Step
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetMoveSpeed = function(self, chessPetID)
-  -- function num : 0_35
+function ChessPetConfigData:GetChessPetMoveSpeed(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   return chessPetConfig.MoveSpeed
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetOffset = function(self, chessPetID)
-  -- function num : 0_36 , upvalues : _ENV
+function ChessPetConfigData:GetChessPetOffset(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   local offsetStr = chessPetConfig.PositionOffset
-  local strArray = (string.split)(offsetStr, ",")
+  local strArray = string.split(offsetStr, ",")
   local offset = Vector2(tonumber(strArray[1]), tonumber(strArray[2]))
   return offset
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetDamageOffset = function(self, chessPetID)
-  -- function num : 0_37 , upvalues : _ENV
+function ChessPetConfigData:GetChessPetDamageOffset(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   local offsetStr = chessPetConfig.DamageOffset
-  local strArray = (string.split)(offsetStr, ",")
+  local strArray = string.split(offsetStr, ",")
   local offset = Vector2(tonumber(strArray[1]), tonumber(strArray[2]))
   return offset
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetHPHeightOffset = function(self, chessPetID)
-  -- function num : 0_38
+function ChessPetConfigData:GetChessPetHPHeightOffset(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   return chessPetConfig.HeightOffset
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetName = function(self, chessPetID)
-  -- function num : 0_39 , upvalues : _ENV
+function ChessPetConfigData:GetChessPetName(chessPetID)
   local chessPetClass = self:GetChessPetClass(chessPetID)
   if not chessPetClass then
-    (Log.fatal)("### [boss warning]", chessPetID, "not in cfg_monster.")
+    Log.fatal("### [boss warning]", chessPetID, "not in cfg_monster.")
   end
   return chessPetClass.Name
 end
 
 local ChessPetRaceType = {Land = 1, Fly = 2}
 _enum("ChessPetRaceType", ChessPetRaceType)
--- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
 
-ChessPetConfigData.GetChessPetRaceType = function(self, chessPetID)
-  -- function num : 0_40 , upvalues : _ENV
+function ChessPetConfigData:GetChessPetRaceType(chessPetID)
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   if chessPetConfig == nil then
-    (Log.error)("monsterID error ", chessPetID)
+    Log.error("monsterID error ", chessPetID)
   end
   if chessPetConfig.RaceType then
     return chessPetConfig.RaceType
@@ -427,77 +280,49 @@ ChessPetConfigData.GetChessPetRaceType = function(self, chessPetID)
   end
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R1 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetDeathSkillID = function(self, chessPetID)
-  -- function num : 0_41 , upvalues : _ENV
+function ChessPetConfigData:GetChessPetDeathSkillID(chessPetID)
   local skills = self:GetSkillIDs(chessPetID)
-  return (self._affixSvc):ReplaceMonsterSpSkill(chessPetID, skills.Die, ReplaceMonsterSpSkillType.Die)
+  return self._affixSvc:ReplaceMonsterSpSkill(chessPetID, skills.Die, ReplaceMonsterSpSkillType.Die)
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-ChessPetConfigData.GetBornBuffList = function(self, chessPetID)
-  -- function num : 0_42 , upvalues : _ENV
+function ChessPetConfigData:GetBornBuffList(chessPetID)
   local buffList = {}
   local chessPetConfig = self:GetChessPetClass(chessPetID)
   if not chessPetConfig then
-    (Log.fatal)("[ChessPetConfig] chess pet class not found: ", chessPetID)
-  else
-    if chessPetConfig.BornBuffs then
-      (table.appendArray)(buffList, chessPetConfig.BornBuffs)
-    end
+    Log.fatal("[ChessPetConfig] chess pet class not found: ", chessPetID)
+  elseif chessPetConfig.BornBuffs then
+    table.appendArray(buffList, chessPetConfig.BornBuffs)
   end
   local objectConfig = self:GetChessPetObject(chessPetID)
   local tmpBuffList = {}
   if objectConfig.BuffList then
-    for i,buffID in ipairs(objectConfig.BuffList) do
-      (table.insert)(buffList, buffID)
+    for i, buffID in ipairs(objectConfig.BuffList) do
+      table.insert(buffList, buffID)
     end
   end
-  do
-    return buffList
-  end
+  return buffList
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R1 in 'UnsetPending'
-
-ChessPetConfigData.GetChessPetShaderEffect = function(self, chessPetID)
-  -- function num : 0_43
+function ChessPetConfigData:GetChessPetShaderEffect(chessPetID)
   local configData = self:GetChessPetClass(chessPetID)
   return configData.ShaderEffect
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R1 in 'UnsetPending'
-
-ChessPetConfigData.Block = function(self, chessPetID)
-  -- function num : 0_44
+function ChessPetConfigData:Block(chessPetID)
   local configData = self:GetChessPetClass(chessPetID)
   return configData.Block or 1
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R1 in 'UnsetPending'
-
-ChessPetConfigData.GetHybridSkillPreviewMode = function(self, chessPetID)
-  -- function num : 0_45
+function ChessPetConfigData:GetHybridSkillPreviewMode(chessPetID)
   local configData = self:GetChessPetClass(chessPetID)
   return configData.HybridSkillPreviewMode or 0, configData.HybridSkillPreviewParam
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R1 in 'UnsetPending'
-
-ChessPetConfigData.IsEliteMonster = function(self, chessPetID)
-  -- function num : 0_46
-  do return #self:GetChessPetEliteIDArray(chessPetID) > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function ChessPetConfigData:IsEliteMonster(chessPetID)
+  return #self:GetChessPetEliteIDArray(chessPetID) > 0
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-ChessPetConfigData.GetTipsOffset = function(self, chessPetID)
-  -- function num : 0_47
+function ChessPetConfigData:GetTipsOffset(chessPetID)
   local configData = self:GetChessPetClass(chessPetID)
   return configData.TipsOffset or 0
 end
-
-

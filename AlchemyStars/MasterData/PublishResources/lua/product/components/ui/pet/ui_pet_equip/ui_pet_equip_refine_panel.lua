@@ -1,29 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_refine_panel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipRefinePanel", UICustomWidget)
 UIPetEquipRefinePanel = UIPetEquipRefinePanel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipRefinePanel.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetEquipRefinePanel:OnShow(uiParams)
   self:InitWidget()
   self._btnCfg = {
-[1] = {bg = "spirit_lg_icon08"}
-, 
-[2] = {bg = "spirit_lg_icon10"}
-, 
-[3] = {bg = "spirit_lg_icon11"}
-}
+    [1] = {
+      bg = "spirit_lg_icon08"
+    },
+    [2] = {
+      bg = "spirit_lg_icon10"
+    },
+    [3] = {
+      bg = "spirit_lg_icon11"
+    }
+  }
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.InitWidget = function(self)
-  -- function num : 0_1
+function UIPetEquipRefinePanel:InitWidget()
   self.lockedPool = self:GetUIComponent("UISelectObjectPath", "locked")
   self.unlockedPool = self:GetUIComponent("UISelectObjectPath", "unlocked")
   self.lockedPoolGo = self:GetGameObject("locked")
@@ -32,342 +26,253 @@ UIPetEquipRefinePanel.InitWidget = function(self)
   self.tipsImgGo = self:GetGameObject("tipsImg")
   self.tipsImgRt = self:GetUIComponent("RectTransform", "tipsImg")
   self.closeTipsBtnGo = self:GetGameObject("CloseTipsBtn")
-  ;
-  (self.closeTipsBtnGo):SetActive(false)
-  ;
-  (self.tipsImgGo):SetActive(false)
+  self.closeTipsBtnGo:SetActive(false)
+  self.tipsImgGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel._OnValue = function(self)
-  -- function num : 0_2
+function UIPetEquipRefinePanel:_OnValue()
   self.selectBtnIndex = 1
   self.selectBtnView = nil
   local len = #self._btnCfg
-  self.btnViews = (self.refineLevelBtnPool):SpawnObjects("UIPetEquipRefineLevelBtn", len)
+  self.btnViews = self.refineLevelBtnPool:SpawnObjects("UIPetEquipRefineLevelBtn", len)
   for i = 1, len do
-    do
-      local bgName = ((self._btnCfg)[i]).bg
-      local btnView = (self.btnViews)[i]
-      btnView:SetData(bgName, function()
-    -- function num : 0_2_0 , upvalues : self, i, btnView
-    self:OnLevelBtnClicked(i, btnView)
-  end
-)
-      if i == self.selectBtnIndex then
-        self.selectBtnView = btnView
-      end
+    local bgName = self._btnCfg[i].bg
+    local btnView = self.btnViews[i]
+    btnView:SetData(bgName, function()
+      self:OnLevelBtnClicked(i, btnView)
+    end)
+    if i == self.selectBtnIndex then
+      self.selectBtnView = btnView
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.OnLevelBtnClicked = function(self, index, btnView, isInit)
-  -- function num : 0_3
+function UIPetEquipRefinePanel:OnLevelBtnClicked(index, btnView, isInit)
   if index == self.selectBtnIndex then
-    return 
+    return
   end
   if not isInit then
     local nextRefineIndex = 0
-    do
-      do
-        if self.isRefineUnlock then
-          local refineLv = (self._petData):GetEquipRefineLv()
-          nextRefineIndex = refineLv + 1
-        end
-        if self.selectBtnView then
-          if self.selectBtnIndex < nextRefineIndex then
-            (self.selectBtnView):PlayAni("uieff_UIPetEquipRefineLevelBtn_unselectedin_01")
-          else
-            ;
-            (self.selectBtnView):PlayAni("uieff_UIPetEquipRefineLevelBtn_unselectedin_02")
-          end
-        end
-        self.selectBtnIndex = index
-        self.selectBtnView = btnView
-        ;
-        (self.selectBtnView):PlayAni("uieff_UIPetEquipRefineLevelBtn_select")
-        self.selectBtnIndex = index
-        self.selectBtnView = btnView
-        self:ShowRefineInfo(true)
+    if self.isRefineUnlock then
+      local refineLv = self._petData:GetEquipRefineLv()
+      nextRefineIndex = refineLv + 1
+    end
+    if self.selectBtnView then
+      if nextRefineIndex > self.selectBtnIndex then
+        self.selectBtnView:PlayAni("uieff_UIPetEquipRefineLevelBtn_unselectedin_01")
+      else
+        self.selectBtnView:PlayAni("uieff_UIPetEquipRefineLevelBtn_unselectedin_02")
       end
     end
+    self.selectBtnIndex = index
+    self.selectBtnView = btnView
+    self.selectBtnView:PlayAni("uieff_UIPetEquipRefineLevelBtn_select")
+  else
+    self.selectBtnIndex = index
+    self.selectBtnView = btnView
   end
+  self:ShowRefineInfo(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.OnRefineSucc = function(self)
-  -- function num : 0_4
+function UIPetEquipRefinePanel:OnRefineSucc()
   if self.selectBtnIndex < #self.btnViews then
     local nextIndex = self.selectBtnIndex + 1
-    local nextBtn = (self.btnViews)[nextIndex]
+    local nextBtn = self.btnViews[nextIndex]
     self:OnLevelBtnClicked(nextIndex, nextBtn)
   else
-    do
-      self:RefreshCurSelectBtnState()
-    end
+    self:RefreshCurSelectBtnState()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.SetData = function(self, petData, petEquipController)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetEquipRefinePanel:SetData(petData, petEquipController)
   self.petEquipController = petEquipController
   self._petData = petData
-  self._petId = (self._petData):GetTemplateID()
-  self._pstId = (self._petData):GetPstID()
-  self._currentEquipLv = (self._petData):GetEquipLv()
-  self._elem = (self._petData):GetPetFirstElement()
+  self._petId = self._petData:GetTemplateID()
+  self._pstId = self._petData:GetPstID()
+  self._currentEquipLv = self._petData:GetEquipLv()
+  self._elem = self._petData:GetPetFirstElement()
   self._equipMaxLv = 0
-  local cfg_equip = (Cfg.cfg_pet_equip)({PetID = self._petId})
-  if cfg_equip and #cfg_equip > 0 then
-    for k,subCfg in pairs(cfg_equip) do
-      if self._equipMaxLv < subCfg.Level then
+  local cfg_equip = Cfg.cfg_pet_equip({
+    PetID = self._petId
+  })
+  if cfg_equip and 0 < #cfg_equip then
+    for k, subCfg in pairs(cfg_equip) do
+      if subCfg.Level > self._equipMaxLv then
         self._equipMaxLv = subCfg.Level
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("###[UIPetEquipDetailPanel] cfg_pet_equip is nil ! id --> ", self._petId)
-      local btnIndex = (self._petData):GetEquipRefineLv() + 1
-      if btnIndex > 3 then
-        btnIndex = 3
-      end
-      local nextBtn = (self.btnViews)[btnIndex]
-      self:OnLevelBtnClicked(btnIndex, nextBtn, true)
-      self.isRefineUnlock = self:CheckCondition()
-      self:ShowRefineInfo()
-      if (UIPetEquipHelper.CheckRefineRed)(self._petData) then
-        (UIPetEquipHelper.SetRefineRed)(self._petData)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetAwakenEvent)
-      end
-    end
+    Log.fatal("###[UIPetEquipDetailPanel] cfg_pet_equip is nil ! id --> ", self._petId)
+  end
+  local btnIndex = self._petData:GetEquipRefineLv() + 1
+  if 3 < btnIndex then
+    btnIndex = 3
+  end
+  local nextBtn = self.btnViews[btnIndex]
+  self:OnLevelBtnClicked(btnIndex, nextBtn, true)
+  self.isRefineUnlock = self:CheckCondition()
+  self:ShowRefineInfo()
+  if UIPetEquipHelper.CheckRefineRed(self._petData) then
+    UIPetEquipHelper.SetRefineRed(self._petData)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PetAwakenEvent)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.CheckCondition = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local refineStatus = (self._petData):GetEquipRefineStatus()
-  do return refineStatus == PetEquipRefineStatus.UNLOCK end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIPetEquipRefinePanel:CheckCondition()
+  local refineStatus = self._petData:GetEquipRefineStatus()
+  return refineStatus == PetEquipRefineStatus.UNLOCK
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.ShowRefineInfo = function(self, withAni)
-  -- function num : 0_7 , upvalues : _ENV
-  do
-    if withAni then
-      local lockName = "UIPetEquipRefinePanel_RefineContentChgAni"
-      do
-        self:Lock(lockName)
-        self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, lockName
-    if self.isRefineUnlock then
-      if self.unLockedView then
-        (self.unLockedView):PLayOutAni()
-        YIELD(TT, 200)
+function UIPetEquipRefinePanel:ShowRefineInfo(withAni)
+  if withAni then
+    local lockName = "UIPetEquipRefinePanel_RefineContentChgAni"
+    self:Lock(lockName)
+    self:StartTask(function(TT)
+      if self.isRefineUnlock then
+        if self.unLockedView then
+          self.unLockedView:PLayOutAni()
+          YIELD(TT, 200)
+        end
+        self:ShowUnLockedByIndex(self.selectBtnIndex)
+        self.unLockedView:PLayInAni()
+      else
+        if self.lockedView then
+          self:_LockedViewPlayAni("out")
+          YIELD(TT, 200)
+        end
+        self:ShowLockedByIndex(self.selectBtnIndex)
+        self:_LockedViewPlayAni("in")
       end
-      self:ShowUnLockedByIndex(self.selectBtnIndex)
-      ;
-      (self.unLockedView):PLayInAni()
-    else
-      if self.lockedView then
-        self:_LockedViewPlayAni("out")
-        YIELD(TT, 200)
-      end
-      self:ShowLockedByIndex(self.selectBtnIndex)
-      self:_LockedViewPlayAni("in")
-    end
-    self:UnLock(lockName)
+      self:UnLock(lockName)
+    end, self)
+    return
   end
-, self)
-        return 
-      end
-    end
-    ;
-    (self.lockedPoolGo):SetActive(not self.isRefineUnlock)
-    ;
-    (self.unlockedPoolGo):SetActive(self.isRefineUnlock)
-    if self.isRefineUnlock then
-      self:ShowUnLockedByIndex(self.selectBtnIndex)
-    else
-      self:ShowLockedByIndex(self.selectBtnIndex)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.ShowLockedByIndex = function(self, index)
-  -- function num : 0_8
-  if not self.lockedView then
-    self.lockedView = (self.lockedPool):SpawnObject("UIPetEquipRefinePanelLock")
-  end
-  ;
-  (self.lockedView):SetData(index, self._petData, self)
-end
-
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.ShowUnLockedByIndex = function(self, index)
-  -- function num : 0_9
-  if not self.unLockedView then
-    self.unLockedView = (self.unlockedPool):SpawnObject("UIPetEquipRefinePanelUnLock")
-  end
-  ;
-  (self.unLockedView):SetData(index, self._petData, function()
-    -- function num : 0_9_0 , upvalues : self
-    self:OnRefineSucc()
-  end
-, self.petEquipController, self)
-end
-
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.RefreshCurSelectBtnState = function(self)
-  -- function num : 0_10
-  local maxHightIndex = self:GetHightLightMaxIndex()
-  if self.selectBtnIndex <= maxHightIndex then
-    (self.selectBtnView):PlayAni("uieff_UIPetEquipRefineLevelBtn_selectedin_01")
+  self.lockedPoolGo:SetActive(not self.isRefineUnlock)
+  self.unlockedPoolGo:SetActive(self.isRefineUnlock)
+  if self.isRefineUnlock then
+    self:ShowUnLockedByIndex(self.selectBtnIndex)
   else
-    ;
-    (self.selectBtnView):PlayAni("uieff_UIPetEquipRefineLevelBtn_selectedin_02")
+    self:ShowLockedByIndex(self.selectBtnIndex)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
+function UIPetEquipRefinePanel:ShowLockedByIndex(index)
+  if not self.lockedView then
+    self.lockedView = self.lockedPool:SpawnObject("UIPetEquipRefinePanelLock")
+  end
+  self.lockedView:SetData(index, self._petData, self)
+end
 
-UIPetEquipRefinePanel.PlayTabInAni = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIPetEquipRefinePanel:ShowUnLockedByIndex(index)
+  if not self.unLockedView then
+    self.unLockedView = self.unlockedPool:SpawnObject("UIPetEquipRefinePanelUnLock")
+  end
+  self.unLockedView:SetData(index, self._petData, function()
+    self:OnRefineSucc()
+  end, self.petEquipController, self)
+end
+
+function UIPetEquipRefinePanel:RefreshCurSelectBtnState()
+  local maxHightIndex = self:GetHightLightMaxIndex()
+  if maxHightIndex >= self.selectBtnIndex then
+    self.selectBtnView:PlayAni("uieff_UIPetEquipRefineLevelBtn_selectedin_01")
+  else
+    self.selectBtnView:PlayAni("uieff_UIPetEquipRefineLevelBtn_selectedin_02")
+  end
+end
+
+function UIPetEquipRefinePanel:PlayTabInAni(TT)
   if self.isRefineUnlock then
     self:_UnLockedViewPlayAni("in")
   else
     self:_LockedViewPlayAni("in")
   end
   local nextRefineIndex = 0
-  do
-    if self.isRefineUnlock then
-      local refineLv = (self._petData):GetEquipRefineLv()
-      nextRefineIndex = refineLv + 1
-    end
-    for i,v in ipairs(self.btnViews) do
-      if i == self.selectBtnIndex then
-        if i < nextRefineIndex then
-          v:PlayAni("uieff_UIPetEquipRefineLevelBtn_selectedin_01")
-        else
-          v:PlayAni("uieff_UIPetEquipRefineLevelBtn_selectedin_02")
-        end
+  if self.isRefineUnlock then
+    local refineLv = self._petData:GetEquipRefineLv()
+    nextRefineIndex = refineLv + 1
+  end
+  for i, v in ipairs(self.btnViews) do
+    if i == self.selectBtnIndex then
+      if i < nextRefineIndex then
+        v:PlayAni("uieff_UIPetEquipRefineLevelBtn_selectedin_01")
       else
-        if i < nextRefineIndex then
-          v:PlayAni("uieff_UIPetEquipRefineLevelBtn_in_01")
-        else
-          v:PlayAni("uieff_UIPetEquipRefineLevelBtn_in_02")
-        end
+        v:PlayAni("uieff_UIPetEquipRefineLevelBtn_selectedin_02")
       end
-      YIELD(TT, 60)
+    elseif i < nextRefineIndex then
+      v:PlayAni("uieff_UIPetEquipRefineLevelBtn_in_01")
+    else
+      v:PlayAni("uieff_UIPetEquipRefineLevelBtn_in_02")
     end
+    YIELD(TT, 60)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.GetHightLightMaxIndex = function(self)
-  -- function num : 0_12
+function UIPetEquipRefinePanel:GetHightLightMaxIndex()
   local maxIndex = 0
-  do
-    if self.isRefineUnlock then
-      local refineLv = (self._petData):GetEquipRefineLv()
-      if refineLv > 0 then
-        maxIndex = refineLv
-      else
-        maxIndex = 1
-      end
+  if self.isRefineUnlock then
+    local refineLv = self._petData:GetEquipRefineLv()
+    if 0 < refineLv then
+      maxIndex = refineLv
+    else
+      maxIndex = 1
     end
-    return maxIndex
   end
+  return maxIndex
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.PlayTabOutAni = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function UIPetEquipRefinePanel:PlayTabOutAni(TT)
   if self.isRefineUnlock then
     self:_UnLockedViewPlayAni("out")
   else
     self:_LockedViewPlayAni("out")
   end
-  for i,v in ipairs(self.btnViews) do
+  for i, v in ipairs(self.btnViews) do
     v:PlayAni("uieff_UIPetEquipRefineLevelBtn_out")
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.CheckGuide = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if (self._petData):GetPetGrade() < 3 then
-    return 
+function UIPetEquipRefinePanel:CheckGuide()
+  if self._petData:GetPetGrade() < 3 then
+    return
   end
   if self.isRefineUnlock then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIPetEquipControllerUnLock)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIPetEquipControllerUnLock)
   else
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIPetEquipControllerLock)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIPetEquipControllerLock)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.ShowTips = function(self, go)
-  -- function num : 0_15
-  (self.tipsImgGo):SetActive(true)
-  ;
-  (self.closeTipsBtnGo):SetActive(true)
+function UIPetEquipRefinePanel:ShowTips(go)
+  self.tipsImgGo:SetActive(true)
+  self.closeTipsBtnGo:SetActive(true)
   if go then
-    local position = (go.transform).position
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.tipsImgRt).position = position
+    local position = go.transform.position
+    self.tipsImgRt.position = position
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel.CloseTipsBtnOnClick = function(self, go)
-  -- function num : 0_16
-  (self.tipsImgGo):SetActive(false)
-  ;
-  (self.closeTipsBtnGo):SetActive(false)
+function UIPetEquipRefinePanel:CloseTipsBtnOnClick(go)
+  self.tipsImgGo:SetActive(false)
+  self.closeTipsBtnGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel._LockedViewPlayAni = function(self, type)
-  -- function num : 0_17
-  local tb = {["in"] = "uieff_UIPetEquipRefinePanelLock_in", out = "uieff_UIPetEquipRefinePanelLock_out"}
+function UIPetEquipRefinePanel:_LockedViewPlayAni(type)
+  local tb = {
+    ["in"] = "uieff_UIPetEquipRefinePanelLock_in",
+    out = "uieff_UIPetEquipRefinePanelLock_out"
+  }
   if self.lockedView then
-    (self.lockedView):PlayAni(tb[type])
+    self.lockedView:PlayAni(tb[type])
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefinePanel._UnLockedViewPlayAni = function(self, type)
-  -- function num : 0_18
-  local tb = {["in"] = "uieff_UIPetEquipRefinePanelUnLock_in", out = "uieff_UIPetEquipRefinePanelUnLock_out"}
+function UIPetEquipRefinePanel:_UnLockedViewPlayAni(type)
+  local tb = {
+    ["in"] = "uieff_UIPetEquipRefinePanelUnLock_in",
+    out = "uieff_UIPetEquipRefinePanelUnLock_out"
+  }
   if self.unLockedView then
-    (self.unLockedView):PlayAni(tb[type])
+    self.unLockedView:PlayAni(tb[type])
   end
 end
-
-

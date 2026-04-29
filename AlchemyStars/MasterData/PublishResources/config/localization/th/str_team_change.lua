@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/th/str_team_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_team_change_no_choose = "ลบออโรเรียน", str_team_change_lv = "LV.", str_team_change_binder_toast_tips = "{1}เข้าสู่ขบวนทัพ {2}ออกจากขบวนทัพแล้ว!", str_team_change_binder_item_tex = "<color=#ffdc62>{1}</color>อยู่ในขบวนทัพแล้ว"}
+local config = {
+  str_team_change_no_choose = "ลบออโรเรียน",
+  str_team_change_lv = "LV.",
+  str_team_change_binder_toast_tips = "{1}เข้าสู่ขบวนทัพ {2}ออกจากขบวนทัพแล้ว!",
+  str_team_change_binder_item_tex = "<color=#ffdc62>{1}</color>อยู่ในขบวนทัพแล้ว"
+}
 return config
-

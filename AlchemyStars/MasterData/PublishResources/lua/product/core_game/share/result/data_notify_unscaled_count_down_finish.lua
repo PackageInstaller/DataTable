@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_notify_unscaled_count_down_finish.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataUnscaledCountDownFinish", Object)
 DataUnscaledCountDownFinish = DataUnscaledCountDownFinish
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataUnscaledCountDownFinish.Constructor = function(self, flagID)
-  -- function num : 0_0
+function DataUnscaledCountDownFinish:Constructor(flagID)
   self._flagID = flagID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataUnscaledCountDownFinish.GetFlagID = function(self)
-  -- function num : 0_1
+function DataUnscaledCountDownFinish:GetFlagID()
   return self._flagID
 end
-
-

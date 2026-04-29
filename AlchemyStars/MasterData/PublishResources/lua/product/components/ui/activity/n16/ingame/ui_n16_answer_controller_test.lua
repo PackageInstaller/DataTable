@@ -1,41 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/ingame/ui_n16_answer_controller_test.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16AnswerControllerTest", UIController)
 UIN16AnswerControllerTest = UIN16AnswerControllerTest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16AnswerControllerTest.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN16AnswerControllerTest:OnShow(uiParams)
   self._storyIDTxt = self:GetUIComponent("Text", "Text")
   self._debugModeToggle = self:GetUIComponent("Toggle", "Toggle")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerControllerTest.EnterStoryBtnOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local idStr = (self._storyIDTxt).text
+function UIN16AnswerControllerTest:EnterStoryBtnOnClick()
+  local idStr = self._storyIDTxt.text
   local idNumber = tonumber(idStr)
-  local debug = (self._debugModeToggle).isOn
+  local debug = self._debugModeToggle.isOn
   if idNumber then
-    (UIN16Const.SetCheckIds)({idNumber})
+    UIN16Const.SetCheckIds({idNumber})
+  else
   end
-  local levelconfig = (UIN16Const.GetLevelConfig)()
+  local levelconfig = UIN16Const.GetLevelConfig()
   local data = UIN16SubjectLevelGradeData:New(levelconfig[1], {
-rewarded_levels = {}
-})
+    rewarded_levels = {}
+  })
   data.isGm = true
   self:ShowDialog("UIN16AnswerController", data)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerControllerTest.ExitBtnOnClick = function(self)
-  -- function num : 0_2
+function UIN16AnswerControllerTest:ExitBtnOnClick()
   self:CloseDialog()
 end
-
-

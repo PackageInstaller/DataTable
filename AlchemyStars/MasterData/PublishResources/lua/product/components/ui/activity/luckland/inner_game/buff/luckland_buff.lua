@@ -1,95 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/luckland_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandBuff", Object)
 LuckLandBuff = LuckLandBuff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandBuff.Constructor = function(self, buffSeqID, buffID, entity)
-  -- function num : 0_0
+function LuckLandBuff:Constructor(buffSeqID, buffID, entity)
   self._buffSeq = buffSeqID
   self._buffID = buffID
   self._entity = entity
-  self._module = (self._entity):GetLuckLandModule()
-  local cfgMng = (self._module):GetConfigMng()
+  self._module = self._entity:GetLuckLandModule()
+  local cfgMng = self._module:GetConfigMng()
   self._buffCfgData = cfgMng:GetBuffConfigData(buffID)
-  local notifyCfg = (self._buffCfgData):GetNotifyCfgData()
-  local triggerCfg = (self._buffCfgData):GetTriggerCfgData()
-  local triggerMng = (self._module):GetTriggerMng()
+  local notifyCfg = self._buffCfgData:GetNotifyCfgData()
+  local triggerCfg = self._buffCfgData:GetTriggerCfgData()
+  local triggerMng = self._module:GetTriggerMng()
   self._trigger = triggerMng:CreateTrigger(self, notifyCfg, triggerCfg)
-  local logicCfg = (self._buffCfgData):GetLogicCfgData()
-  self._buffMng = (self._module):GetBuffMng()
-  self._logicArray = (self._buffMng):CreateBuffLogic(self, logicCfg)
+  local logicCfg = self._buffCfgData:GetLogicCfgData()
+  self._buffMng = self._module:GetBuffMng()
+  self._logicArray = self._buffMng:CreateBuffLogic(self, logicCfg)
   self._targetList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuff.BuffSeqID = function(self)
-  -- function num : 0_1
+function LuckLandBuff:BuffSeqID()
   return self._buffSeq
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuff.BuffID = function(self)
-  -- function num : 0_2
+function LuckLandBuff:BuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuff.BuffConfigData = function(self)
-  -- function num : 0_3
+function LuckLandBuff:BuffConfigData()
   return self._buffCfgData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuff.Entity = function(self)
-  -- function num : 0_4
+function LuckLandBuff:Entity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuff.GetTargets = function(self)
-  -- function num : 0_5
+function LuckLandBuff:GetTargets()
   return self._targetList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuff.IsTriggerSatisfied = function(self, notify)
-  -- function num : 0_6
+function LuckLandBuff:IsTriggerSatisfied(notify)
   local notifyType = notify:GetNotifyType()
-  if (self._trigger):IsNotifyMatch(notifyType) then
-    return (self._trigger):IsSatisfied(notify)
+  if self._trigger:IsNotifyMatch(notifyType) then
+    return self._trigger:IsSatisfied(notify)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandBuff.OnTrigger = function(self, notify)
-  -- function num : 0_7 , upvalues : _ENV
-  local targetType = (self._buffCfgData):GetTargetType()
-  local targetParam = (self._buffCfgData):GetTargetParam()
-  self._targetList = (self._buffMng):CalculateBuffTarget(targetType, targetParam, self._entity)
+function LuckLandBuff:OnTrigger(notify)
+  local targetType = self._buffCfgData:GetTargetType()
+  local targetParam = self._buffCfgData:GetTargetParam()
+  self._targetList = self._buffMng:CalculateBuffTarget(targetType, targetParam, self._entity)
   if #self._targetList < 1 then
-    return 
+    return
   end
   if self._logicArray then
-    for _,logic in ipairs(self._logicArray) do
+    for _, logic in ipairs(self._logicArray) do
       local buffResult = logic:DoLogic(notify)
-    end
-  end
-  do
-    if not notify or buffResult then
+      if not notify or buffResult then
+      end
     end
   end
 end
-
-

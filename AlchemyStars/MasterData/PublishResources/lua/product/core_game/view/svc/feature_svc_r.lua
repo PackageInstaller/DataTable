@@ -1,68 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/feature_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureServiceRender", BaseService)
 FeatureServiceRender = FeatureServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureServiceRender.Dispose = function(self)
-  -- function num : 0_0
+function FeatureServiceRender:Dispose()
   self:_ResetDayNightShaderParam()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.OnBattleEnter = function(self, TT)
-  -- function num : 0_1
+function FeatureServiceRender:OnBattleEnter(TT)
   self:_ResetDayNightShaderParam()
   self:_InitUIFeatureList(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender._InitUIFeatureList = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureServiceRender:_InitUIFeatureList(TT)
   local featureInitList = {}
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   featureInitList = utilData:GetFeatureUiInitData()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureListInit, featureInitList)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureListInit, featureInitList)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.DoFeatureOnRoundEnter = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function FeatureServiceRender:DoFeatureOnRoundEnter(TT)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     local info = renderFeature:GetCurRoundDecreaseSanValue(1)
     if info then
       self:NotifySanValueChange(info.cur, info.old, info.modify)
-      local svcPlayBuff = (self._world):GetService("PlayBuff")
+      local svcPlayBuff = self._world:GetService("PlayBuff")
       svcPlayBuff:PlayBuffView(TT, NTSanValueChange:New(info.cur, info.old, info.debt, info._modifyTimes))
     end
-    do
-      local dayNightInfo = renderFeature:GetCurRoundDayNightRouncChangeValue(1)
-      if dayNightInfo then
-        self:NotifyDayNightDataChange(dayNightInfo._curState, dayNightInfo._restRound)
-        local svcPlayBuff = (self._world):GetService("PlayBuff")
-        if dayNightInfo._curState ~= dayNightInfo._oldState then
-          self:_DoSceneSwitchDayNight(TT, dayNightInfo._curState)
-          svcPlayBuff:PlayBuffView(TT, NTDayNightStateChange:New(dayNightInfo._curState, dayNightInfo._oldState))
-        end
+    local dayNightInfo = renderFeature:GetCurRoundDayNightRouncChangeValue(1)
+    if dayNightInfo then
+      self:NotifyDayNightDataChange(dayNightInfo._curState, dayNightInfo._restRound)
+      local svcPlayBuff = self._world:GetService("PlayBuff")
+      if dayNightInfo._curState ~= dayNightInfo._oldState then
+        self:_DoSceneSwitchDayNight(TT, dayNightInfo._curState)
+        svcPlayBuff:PlayBuffView(TT, NTDayNightStateChange:New(dayNightInfo._curState, dayNightInfo._oldState))
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.DoFeatureOnRoundEnterEarly = function(self, TT)
-  -- function num : 0_4
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function FeatureServiceRender:DoFeatureOnRoundEnterEarly(TT)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     local info = renderFeature:GetCurRoundChangeStepPoint(1)
@@ -73,18 +51,15 @@ FeatureServiceRender.DoFeatureOnRoundEnterEarly = function(self, TT)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender._DoSceneSwitchDayNight = function(self, TT, toState)
-  -- function num : 0_5 , upvalues : _ENV
-  local goRenderSetting = ((UnityEngine.GameObject).Find)("[H3DRenderSetting]")
+function FeatureServiceRender:_DoSceneSwitchDayNight(TT, toState)
+  local goRenderSetting = UnityEngine.GameObject.Find("[H3DRenderSetting]")
   if goRenderSetting then
     local anim = goRenderSetting:GetComponent("Animation")
     local animName = "anim_jdzz_daylight"
     local duration = 1
     local oldVal = 0
     local newVal = 1
-    local effId = nil
+    local effId
     if toState == FeatureDayNightState.Day then
       animName = "anim_jdzz_daylight"
       oldVal = 0
@@ -96,336 +71,229 @@ FeatureServiceRender._DoSceneSwitchDayNight = function(self, TT, toState)
       newVal = 0
       effId = BattleConst.DayNightToNightDefaultEffID
     end
-    local utilDataSvc = (self._world):GetService("UtilData")
+    local utilDataSvc = self._world:GetService("UtilData")
     local posCenter = utilDataSvc:GetBoardCenterPos()
-    local serEffect = (self._world):GetService("Effect")
+    local serEffect = self._world:GetService("Effect")
     serEffect:CreateWorldPositionEffect(effId, posCenter, true)
     YIELD(TT, 500)
     if anim then
       anim:Play(animName)
     end
-    ;
-    (DoTweenHelper.DoUpdateFloat)(oldVal, newVal, duration, function(percent)
-    -- function num : 0_5_0 , upvalues : _ENV
-    ((UnityEngine.Shader).SetGlobalFloat)("_LightmapSwitch", percent)
-  end
-)
+    DoTweenHelper.DoUpdateFloat(oldVal, newVal, duration, function(percent)
+      UnityEngine.Shader.SetGlobalFloat("_LightmapSwitch", percent)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.ModifyDayNightData = function(self, TT, oldState, newState, restRound)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("Feature render,buff modify dayNight, oldState:", oldState, " newState:", newState, " restRound:", restRound)
+function FeatureServiceRender:ModifyDayNightData(TT, oldState, newState, restRound)
+  Log.debug("Feature render,buff modify dayNight, oldState:", oldState, " newState:", newState, " restRound:", restRound)
   self:NotifyDayNightDataChange(newState, restRound)
-  local svcPlayBuff = (self._world):GetService("PlayBuff")
+  local svcPlayBuff = self._world:GetService("PlayBuff")
   if newState ~= oldState then
     self:_DoSceneSwitchDayNight(TT, newState)
     svcPlayBuff:PlayBuffView(TT, NTDayNightStateChange:New(newState, oldState))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender._ResetDayNightShaderParam = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((UnityEngine.Shader).SetGlobalFloat)("_LightmapSwitch", 1)
+function FeatureServiceRender:_ResetDayNightShaderParam()
+  UnityEngine.Shader.SetGlobalFloat("_LightmapSwitch", 1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifySanValueChange = function(self, curValue, oldValue, modifyValue, forceRefresh)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureSanValueChange, curValue, oldValue, modifyValue, forceRefresh)
+function FeatureServiceRender:NotifySanValueChange(curValue, oldValue, modifyValue, forceRefresh)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureSanValueChange, curValue, oldValue, modifyValue, forceRefresh)
   self:_SanScreenEffOnValueChange(curValue, oldValue, modifyValue)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifySanMaxValueChange = function(self, curValue, oldValue, modifyValue, curMaxVal)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureSanMaxValueChange, curValue, oldValue, modifyValue, curMaxVal)
+function FeatureServiceRender:NotifySanMaxValueChange(curValue, oldValue, modifyValue, curMaxVal)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureSanMaxValueChange, curValue, oldValue, modifyValue, curMaxVal)
   self:_SanScreenEffOnValueChange(curValue, oldValue, modifyValue)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender._SanScreenEffOnValueChange = function(self, curValue, oldValue, modifyValue)
-  -- function num : 0_10
+function FeatureServiceRender:_SanScreenEffOnValueChange(curValue, oldValue, modifyValue)
   local effStartSan = self:_GetSanViewEffStartVal()
-  -- DECOMPILER ERROR at PC13: Unhandled construct in 'MakeBoolean' P1
-
-  if self._sanScreenEffEntity and effStartSan < curValue and self._sanScreenEffGo then
-    (self._sanScreenEffGo):SetActive(false)
-  end
-  self:_UpdateSanScreenEff(curValue)
-  if curValue <= effStartSan then
+  if self._sanScreenEffEntity then
+    if curValue > effStartSan then
+      if self._sanScreenEffGo then
+        self._sanScreenEffGo:SetActive(false)
+      end
+    else
+      self:_UpdateSanScreenEff(curValue)
+    end
+  elseif curValue <= effStartSan then
     self:_CreateSanScreenEff()
     self:_UpdateSanScreenEff(curValue)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender._CreateSanScreenEff = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function FeatureServiceRender:_CreateSanScreenEff()
   if self._sanScreenEffEntity then
-    return 
+    return
   end
-  local serEffect = (self._world):GetService("Effect")
+  local serEffect = self._world:GetService("Effect")
   self._sanScreenEffEntity = serEffect:CreateScreenEffPointEffect(BattleConst.SanCameraEffID)
   if self._sanScreenEffEntity then
-    self._sanScreenEffGo = ((self._sanScreenEffEntity):View()):GetGameObject()
-    self._sanEffAnim = (self._sanScreenEffGo):GetComponent("Animation")
+    self._sanScreenEffGo = self._sanScreenEffEntity:View():GetGameObject()
+    self._sanEffAnim = self._sanScreenEffGo:GetComponent("Animation")
     if self._sanEffAnim then
-      self._sanEffAnimState = (self._sanEffAnim):get_Item("uieffanim_FeatureSan_Camera")
+      self._sanEffAnimState = self._sanEffAnim:get_Item("uieffanim_FeatureSan_Camera")
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender._UpdateSanScreenEff = function(self, curVal)
-  -- function num : 0_12
+function FeatureServiceRender:_UpdateSanScreenEff(curVal)
   local topVal = self:_GetSanViewEffStartVal()
   local bottomVal = 0
   local rangeVal = topVal - bottomVal
   if rangeVal < 0 then
-    return 
+    return
   end
   if self._sanScreenEffGo then
-    (self._sanScreenEffGo):SetActive(true)
+    self._sanScreenEffGo:SetActive(true)
   end
   if self._sanEffAnim and self._sanEffAnimState then
     local percent = curVal / rangeVal
     local animPercent = 1 - percent
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._sanEffAnimState).enabled = true
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._sanEffAnimState).normalizedTime = animPercent
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._sanEffAnimState).weight = 1
-    ;
-    (self._sanEffAnim):Sample()
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._sanEffAnimState).enabled = false
+    self._sanEffAnimState.enabled = true
+    self._sanEffAnimState.normalizedTime = animPercent
+    self._sanEffAnimState.weight = 1
+    self._sanEffAnim:Sample()
+    self._sanEffAnimState.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender._GetSanViewEffStartVal = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function FeatureServiceRender:_GetSanViewEffStartVal()
   if not self._sanViewEffStartVal then
-    local sanData = (FeatureServiceHelper.GetFeatureData)(FeatureType.Sanity)
+    local sanData = FeatureServiceHelper.GetFeatureData(FeatureType.Sanity)
     if sanData then
       local sanityParam = sanData:GetSanityParam()
       if sanityParam then
         local viewStartVal = sanityParam.viewEffStartVal
-        if not viewStartVal then
-          viewStartVal = BattleConst.SanViewEffDefaultStartVal
-        end
+        viewStartVal = viewStartVal or BattleConst.SanViewEffDefaultStartVal
         self._sanViewEffStartVal = viewStartVal
       end
     end
   end
-  do
-    return self._sanViewEffStartVal
-  end
+  return self._sanViewEffStartVal
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyDayNightDataChange = function(self, state, restRound)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureDayNightRefresh, state, restRound)
+function FeatureServiceRender:NotifyDayNightDataChange(state, restRound)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureDayNightRefresh, state, restRound)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyDayNightUIStyleChange = function(self, uiStyle)
-  -- function num : 0_15 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureDayNightChangeUIStyle, uiStyle)
+function FeatureServiceRender:NotifyDayNightUIStyleChange(uiStyle)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureDayNightChangeUIStyle, uiStyle)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.IsActiveSkillCanCastInPreview = function(self, casterEntity, skillID, previewContext)
-  -- function num : 0_16 , upvalues : _ENV
+function FeatureServiceRender:IsActiveSkillCanCastInPreview(casterEntity, skillID, previewContext)
   local context = {}
-  if not previewContext:GetScopeResult() then
-    local previewAttackGridList = {}
-  end
+  local previewAttackGridList = previewContext:GetScopeResult() or {}
   context.scopeGridCount = #previewAttackGridList
-  return (FeatureServiceHelper.IsActiveSkillCanCast)(casterEntity, skillID, context)
+  return FeatureServiceHelper.IsActiveSkillCanCast(casterEntity, skillID, context)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyFeatureSkillPowerChange = function(self, featureType, curPower, curReady)
-  -- function num : 0_17 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PersonaPowerChange, featureType, curPower, curReady)
+function FeatureServiceRender:NotifyFeatureSkillPowerChange(featureType, curPower, curReady)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PersonaPowerChange, featureType, curPower, curReady)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyShopCoinCountChange = function(self, curValue, oldValue, modifyValue)
-  -- function num : 0_18 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureCoinCountChange, curValue, oldValue, modifyValue)
+function FeatureServiceRender:NotifyShopCoinCountChange(curValue, oldValue, modifyValue)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureCoinCountChange, curValue, oldValue, modifyValue)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyStepPointChange = function(self, curValue, oldValue, isRoundRecover)
-  -- function num : 0_19 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureStepPointRefresh, curValue, oldValue, isRoundRecover)
+function FeatureServiceRender:NotifyStepPointChange(curValue, oldValue, isRoundRecover)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureStepPointRefresh, curValue, oldValue, isRoundRecover)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyMaxStepPointChange = function(self, curValue, oldValue)
-  -- function num : 0_20 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureMaxStepPointRefresh, curValue, oldValue)
+function FeatureServiceRender:NotifyMaxStepPointChange(curValue, oldValue)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureMaxStepPointRefresh, curValue, oldValue)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyRecoverStepPointChange = function(self, curValue, oldValue)
-  -- function num : 0_21 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureRecoverStepPointRefresh, curValue, oldValue)
+function FeatureServiceRender:NotifyRecoverStepPointChange(curValue, oldValue)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureRecoverStepPointRefresh, curValue, oldValue)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.DoFeatureOnRoleMoveEnter = function(self, TT)
-  -- function num : 0_22 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function FeatureServiceRender:DoFeatureOnRoleMoveEnter(TT)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     local info = renderFeature:GetMoveCostStepPoint(1)
     if info then
       self:NotifyStepPointChange(info.cur, info.old)
       local costVal = info.cur - info.old
-      local svcPlayBuff = (self._world):GetService("PlayBuff")
-      local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+      local svcPlayBuff = self._world:GetService("PlayBuff")
+      local teamEntity = self._world:Player():GetCurrentTeamEntity()
       svcPlayBuff:PlayBuffView(TT, NTFeatureStepPointMoveCost:New(teamEntity, info.cur, info.old, costVal))
       renderFeature:ClearMoveCostStepPoint()
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.OnLinkLineChainPathChange = function(self, chainPath, isCancel)
-  -- function num : 0_23 , upvalues : _ENV
-  if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+function FeatureServiceRender:OnLinkLineChainPathChange(chainPath, isCancel)
+  if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
     local extraRecover = self:CalcExtraRecoverStepPointForLinkUI(chainPath)
     local playLongAnim = false
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureStepPointRefreshByLink, chainPath, extraRecover, playLongAnim)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureStepPointRefreshByLink, chainPath, extraRecover, playLongAnim)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.AddExtraRecoverStepPointForLinkUI = function(self, flagID, stepMin, stepMax, modifyValue)
-  -- function num : 0_24
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function FeatureServiceRender:AddExtraRecoverStepPointForLinkUI(flagID, stepMin, stepMax, modifyValue)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     renderFeature:AddExtraRecoverStepPointForLinkUI(flagID, stepMin, stepMax, modifyValue)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.RemoveExtraRecoverStepPointForLinkUI = function(self, flagID)
-  -- function num : 0_25
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function FeatureServiceRender:RemoveExtraRecoverStepPointForLinkUI(flagID)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     renderFeature:RemoveExtraRecoverStepPointForLinkUI(flagID)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.ClearExtraRecoverStepPointForLinkUI = function(self)
-  -- function num : 0_26
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function FeatureServiceRender:ClearExtraRecoverStepPointForLinkUI()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     renderFeature:ClearExtraRecoverStepPointForLinkUI()
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.CalcExtraRecoverStepPointForLinkUI = function(self, chainPath)
-  -- function num : 0_27
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function FeatureServiceRender:CalcExtraRecoverStepPointForLinkUI(chainPath)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderFeature = renderBoardEntity:RenderFeature()
   if renderFeature then
     return renderFeature:CalcExtraRecoverStepPointForLinkUI(chainPath)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyAUOEValueChange = function(self, curValue)
-  -- function num : 0_28 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureAUOEValueChange, curValue)
+function FeatureServiceRender:NotifyAUOEValueChange(curValue)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureAUOEValueChange, curValue)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyAlchemyAPChange = function(self, TT, ap, level, addAP)
-  -- function num : 0_29 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FeatureAddAlchemyAP, ap, level, addAP)
+function FeatureServiceRender:NotifyAlchemyAPChange(TT, ap, level, addAP)
+  local utilData = self._world:GetService("UtilData")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FeatureAddAlchemyAP, ap, level, addAP)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyTetrisOP = function(self, opType, opValue)
-  -- function num : 0_30 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_30_0 , upvalues : opType, _ENV, opValue, self
+function FeatureServiceRender:NotifyTetrisOP(opType, opValue)
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     if opType == TetrisFeatureCmdOPType.Lock then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TetrisFeatureLock, opValue)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.TetrisFeatureLock, opValue)
     end
     if opType == TetrisFeatureCmdOPType.ReRoll then
-      local svcPlayBuff = (self._world):GetService("PlayBuff")
+      local svcPlayBuff = self._world:GetService("PlayBuff")
       svcPlayBuff:PlayBuffView(TT, NTRandomTetrisEnd:New(nil, opValue[1], opValue[2]))
       self:NotifyTetrisRandom(TT, opValue[1], opValue[2])
       self:NotifyTetrisPower(TT, opValue[3])
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyTetrisRandom = function(self, TT, tetrisIndex, tetrisType)
-  -- function num : 0_31 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TetrisFeatureRandom, tetrisIndex, tetrisType)
+function FeatureServiceRender:NotifyTetrisRandom(TT, tetrisIndex, tetrisType)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TetrisFeatureRandom, tetrisIndex, tetrisType)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceRender.NotifyTetrisPower = function(self, TT, newPower)
-  -- function num : 0_32 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TetrisFeatureChangePower, newPower)
+function FeatureServiceRender:NotifyTetrisPower(TT, newPower)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TetrisFeatureChangePower, newPower)
 end
-
-

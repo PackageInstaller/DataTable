@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_on_furniture.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionOnFurniture", AirActionBase)
 AirActionOnFurniture = AirActionOnFurniture
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionOnFurniture.Constructor = function(self, pet, furniture, point, cond, duration, isInit)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionOnFurniture:Constructor(pet, furniture, point, cond, duration, isInit)
   if pet == nil then
-    return 
+    return
   end
   if point == nil then
-    (Log.fatal)("[AircraftFurniture] 家具点为空", (debug.traceback)())
+    Log.fatal("[AircraftFurniture] 家具点为空", debug.traceback())
   end
   self._pet = pet
   self._furniture = furniture
@@ -24,97 +17,62 @@ AirActionOnFurniture.Constructor = function(self, pet, furniture, point, cond, d
   self._triggerSocial = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionOnFurniture.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local pos, rot = (self._point):InteractionPoint()
-  ;
-  (self._pet):SetPosition(pos)
-  ;
-  (self._pet):SetRotation(rot)
+function AirActionOnFurniture:Start()
+  local pos, rot = self._point:InteractionPoint()
+  self._pet:SetPosition(pos)
+  self._pet:SetRotation(rot)
   self._curTime = 0
   self._running = true
-  ;
-  (self._furniture):OnPetArrive(self._pet)
-  ;
-  (self._pet):SetFurnitureType((self._furniture):Type())
-  ;
-  (self._pet):SetNaviEnable(false)
-  local cfg = (self._furniture):GetPetActionCfg((self._pet):SkinID())
+  self._furniture:OnPetArrive(self._pet)
+  self._pet:SetFurnitureType(self._furniture:Type())
+  self._pet:SetNaviEnable(false)
+  local cfg = self._furniture:GetPetActionCfg(self._pet:SkinID())
   self._behaviour = AirActionBehaviour:New(self._furniture, self._pet, cfg, self._duration, self._isInit)
-  ;
-  (self._behaviour):Start()
+  self._behaviour:Start()
   self._excuted = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionOnFurniture.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function AirActionOnFurniture:Update(deltaTimeMS)
   if self._running then
     self._curTime = self._curTime + deltaTimeMS
-    if self._duration < self._curTime then
+    if self._curTime > self._duration then
       self._running = false
       self:Stop()
     else
-      ;
-      (self._behaviour):Update(deltaTimeMS)
+      self._behaviour:Update(deltaTimeMS)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionOnFurniture.IsOver = function(self)
-  -- function num : 0_3
+function AirActionOnFurniture:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionOnFurniture.StartSocial = function(self)
-  -- function num : 0_4
+function AirActionOnFurniture:StartSocial()
   self._triggerSocial = true
   return self._point, self._cond
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionOnFurniture.Stop = function(self)
-  -- function num : 0_5
+function AirActionOnFurniture:Stop()
   if self._running then
     self._running = false
   end
-  ;
-  (self._cond):ReleasePointOnStop()
-  ;
-  (self._pet):SetFurnitureType(0)
-  ;
-  (self._pet):SetPosition((self._point):MovePoint())
-  ;
-  (self._behaviour):Stop()
-  ;
-  (self._behaviour):Dispose()
-  ;
-  (self._furniture):OnPetLeave(self._pet)
-  ;
-  (self._pet):Anim_Stand()
+  self._cond:ReleasePointOnStop()
+  self._pet:SetFurnitureType(0)
+  self._pet:SetPosition(self._point:MovePoint())
+  self._behaviour:Stop()
+  self._behaviour:Dispose()
+  self._furniture:OnPetLeave(self._pet)
+  self._pet:Anim_Stand()
   self._point = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionOnFurniture.GetPets = function(self)
-  -- function num : 0_6
-  return {self._pet}
+function AirActionOnFurniture:GetPets()
+  return {
+    self._pet
+  }
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionOnFurniture.GetEncodeInfo = function(self)
-  -- function num : 0_7
-  return (self._furniture):GetPstKey(), (self._point):Index()
+function AirActionOnFurniture:GetEncodeInfo()
+  return self._furniture:GetPstKey(), self._point:Index()
 end
-
-

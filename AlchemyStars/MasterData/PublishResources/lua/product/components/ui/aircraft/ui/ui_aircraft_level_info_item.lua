@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_level_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftLevelInfoItem", UICustomWidget)
 UIAircraftLevelInfoItem = UIAircraftLevelInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftLevelInfoItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftLevelInfoItem:OnShow(uiParams)
   self._titleOnly = self:GetGameObject("titleOnly")
   self._single = self:GetGameObject("single")
   self._double = self:GetGameObject("double")
@@ -26,63 +19,36 @@ UIAircraftLevelInfoItem.OnShow = function(self, uiParams)
   self._levelDownColor = Color(22, 171, 255)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftLevelInfoItem.OnHide = function(self)
-  -- function num : 0_1
+function UIAircraftLevelInfoItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftLevelInfoItem.SetData = function(self, title, isLevelUp, first, second)
-  -- function num : 0_2
-  (self._titleOnly):SetActive(false)
-  ;
-  (self._single):SetActive(false)
-  ;
-  (self._double):SetActive(false)
+function UIAircraftLevelInfoItem:SetData(title, isLevelUp, first, second)
+  self._titleOnly:SetActive(false)
+  self._single:SetActive(false)
+  self._double:SetActive(false)
   if second then
-    (self._double):SetActive(true)
-    ;
-    (self._title2):RefreshText(title)
-    ;
-    (self._from):SetText(first)
-    ;
-    (self._to):SetText(second)
+    self._double:SetActive(true)
+    self._title2:RefreshText(title)
+    self._from:SetText(first)
+    self._to:SetText(second)
     if isLevelUp then
-      (self._to):CrossFadeColor(self._levelUpColor, 0, true, false)
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._arrow).sprite = self._levelUpArrow
+      self._to:CrossFadeColor(self._levelUpColor, 0, true, false)
+      self._arrow.sprite = self._levelUpArrow
     else
-      ;
-      (self._to):CrossFadeColor(self._levelDownColor, 0, true, false)
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._arrow).sprite = self._levelDownArrow
+      self._to:CrossFadeColor(self._levelDownColor, 0, true, false)
+      self._arrow.sprite = self._levelDownArrow
+    end
+  elseif first then
+    self._single:SetActive(true)
+    self._title1:RefreshText(title)
+    self._singleText:SetText(first)
+    if isLevelUp then
+      self._singleText:CrossFadeColor(self._levelUpColor, 0, true, false)
+    else
+      self._singleText:CrossFadeColor(self._levelDownColor, 0, true, false)
     end
   else
-    if first then
-      (self._single):SetActive(true)
-      ;
-      (self._title1):RefreshText(title)
-      ;
-      (self._singleText):SetText(first)
-      if isLevelUp then
-        (self._singleText):CrossFadeColor(self._levelUpColor, 0, true, false)
-      else
-        ;
-        (self._singleText):CrossFadeColor(self._levelDownColor, 0, true, false)
-      end
-    else
-      ;
-      (self._titleOnly):SetActive(true)
-      ;
-      (self._title):RefreshText(title)
-    end
+    self._titleOnly:SetActive(true)
+    self._title:RefreshText(title)
   end
 end
-
-

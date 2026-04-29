@@ -1,62 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/core/bounce_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local BounceCamp = {Player = 0, Monster = 1}
 _enum("BounceCamp", BounceCamp)
 local BounceMoveDirection = {ToLeft = 0, ToRight = 1}
 _enum("BounceMoveDirection", BounceMoveDirection)
-local BounceObjState = {Alive = 0, Deading = 1, Deaded = 2, Transformation = 3}
+local BounceObjState = {
+  Alive = 0,
+  Deading = 1,
+  Deaded = 2,
+  Transformation = 3
+}
 _enum("BounceObjState", BounceObjState)
 _class("BounceConst", Object)
 BounceConst = BounceConst
--- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.CanvasMinX = -1300
--- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.CanvasMaxX = 1500
--- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.MonsterBeAttackedAniName = "beAttacked"
--- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.MonsterAttackAniName = "attack"
--- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.MonsterDeadAniName = "dead"
--- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.MonsterWalkName = "walk"
--- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.MonsterAudioTypeDead = 1
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.MonsterAudioTypeBeAttacked = 2
--- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.GuideFirst = 542008
--- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.GuideSecond = 542009
--- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.GuideBoss1 = 542010
--- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.GuideBoss2 = 542011
--- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.GuideBoss3 = 542012
--- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.GuideBoss2_BulletPos1 = 400
--- DECOMPILER ERROR at PC58: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.GuideBoss2_BulletPosKey1 = "guide5420111"
--- DECOMPILER ERROR at PC60: Confused about usage of register: R3 in 'UnsetPending'
-
 BounceConst.GuideBoss3_BulletPosKey1 = "guide5420121"
-

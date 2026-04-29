@@ -1,7 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/buff_replace_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-BuffReplaceType = {Exclusive = 1, CoExist = 2, RoundOverlap = 3, EffectOverlap = 4, Replace = 5, LayerLimit = 6}
-
+BuffReplaceType = {
+  Exclusive = 1,
+  CoExist = 2,
+  RoundOverlap = 3,
+  EffectOverlap = 4,
+  Replace = 5,
+  LayerLimit = 6
+}

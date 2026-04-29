@@ -1,52 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_inner_auto_bead_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetInnerAutoBeadItem", UICustomWidget)
 UIWidgetInnerAutoBeadItem = UIWidgetInnerAutoBeadItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetInnerAutoBeadItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetInnerAutoBeadItem:OnShow(uiParams)
   self._atlas = self:GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
   self._controller = self.uiOwner
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.InitWidget = function(self)
-  -- function num : 0_1
-  self._gameObject = (self.view):GetGameObject()
-  self._transform = (self._gameObject).transform
+function UIWidgetInnerAutoBeadItem:InitWidget()
+  self._gameObject = self.view:GetGameObject()
+  self._transform = self._gameObject.transform
   self._bg = self:GetUIComponent("Image", "Bg")
   self._root = self:GetGameObject("Type")
   self._type = self:GetUIComponent("Image", "Type")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._star = self:GetGameObject("Star")
   self._starGO = {}
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._starGO)[1] = self:GetGameObject("Star1")
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._starGO)[2] = self:GetGameObject("Star2")
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._starGO)[3] = self:GetGameObject("Star3")
+  self._starGO[1] = self:GetGameObject("Star1")
+  self._starGO[2] = self:GetGameObject("Star2")
+  self._starGO[3] = self:GetGameObject("Star3")
   self._iconGO = self:GetGameObject("Icon")
   self._selected = self:GetGameObject("Selected")
   self._tagLock = self:GetUIComponent("Image", "TagLock")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.SetData = function(self, index, data, callBack, totalTagDic)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetInnerAutoBeadItem:SetData(index, data, callBack, totalTagDic)
   self._index = index
   self._data = data
   self._uid = data.unique_id
@@ -54,47 +32,38 @@ UIWidgetInnerAutoBeadItem.SetData = function(self, index, data, callBack, totalT
   self._callBack = callBack
   if self._data then
     if self:IsEmptySlot() then
-      (self._root):SetActive(false)
+      self._root:SetActive(false)
     else
-      self._cfg = (Cfg.cfg_component_season_maze_autobead)[self._cfgID]
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
+      self._cfg = Cfg.cfg_component_season_maze_autobead[self._cfgID]
       if self._cfg then
-        (self._type).sprite = (self._atlas):GetSprite(self:_GetTypeSprite(self._cfg))
-        ;
-        ((self._icon).gameObject):SetActive(true)
-        ;
-        (self._icon):LoadImage((self._cfg).Icon)
-        for key,value in ipairs(self._starGO) do
-          value:SetActive(key < (self._cfg).Lv)
+        self._type.sprite = self._atlas:GetSprite(self:_GetTypeSprite(self._cfg))
+        self._icon.gameObject:SetActive(true)
+        self._icon:LoadImage(self._cfg.Icon)
+        for key, value in ipairs(self._starGO) do
+          value:SetActive(key < self._cfg.Lv)
         end
-        local isLock = not self:_ContainTag((self._cfg).NeedTag)
+        local isLock = not self:_ContainTag(self._cfg.NeedTag)
         self:TagLock(isLock)
       end
-      ;
-      (self._root):SetActive(true)
+      self._root:SetActive(true)
     end
   else
-    (self._root):SetActive(false)
+    self._root:SetActive(false)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem._ContainTag = function(self, tags)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetInnerAutoBeadItem:_ContainTag(tags)
   if not tags then
     return true
   end
   local contain = false
-  local beadList = (InnerGameHelperRender.GetAutoBeadList)()
+  local beadList = InnerGameHelperRender.GetAutoBeadList()
   if beadList then
-    for _,info in ipairs(beadList) do
-      local cfg = (Cfg.cfg_component_season_maze_autobead)[info.bead_id]
+    for _, info in ipairs(beadList) do
+      local cfg = Cfg.cfg_component_season_maze_autobead[info.bead_id]
       if cfg and cfg.Tag then
-        for _,_tag in ipairs(cfg.Tag) do
-          if (table.icontains)(tags, _tag) then
+        for _, _tag in ipairs(cfg.Tag) do
+          if table.icontains(tags, _tag) then
             contain = true
             break
           end
@@ -102,102 +71,60 @@ UIWidgetInnerAutoBeadItem._ContainTag = function(self, tags)
       end
     end
   end
-  do
-    return contain
-  end
+  return contain
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.IsEmptySlot = function(self)
-  -- function num : 0_4
-  do return self._cfgID == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIWidgetInnerAutoBeadItem:IsEmptySlot()
+  return self._cfgID == 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.IconOnClick = function(self, go)
-  -- function num : 0_5
+function UIWidgetInnerAutoBeadItem:IconOnClick(go)
   if self._data and not self:IsEmptySlot() and self._callBack then
-    (self._callBack)(self._uid, self._cfgID, self._data, (go.transform).position)
+    self._callBack(self._uid, self._cfgID, self._data, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem._GetTypeSprite = function(self, cfg)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetInnerAutoBeadItem:_GetTypeSprite(cfg)
   if cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Skill then
     return "thread_junei_zdz01"
-  else
-    if cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Strong then
-      return "thread_junei_zdz02"
-    else
-      if cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Energy then
-        return "thread_junei_zdz03"
-      end
-    end
+  elseif cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Strong then
+    return "thread_junei_zdz02"
+  elseif cfg.Type == ESeasonMazeAutoBeadType.ESeasonMazeAutoBeadType_Energy then
+    return "thread_junei_zdz03"
   end
   return "cn14_sjmj_xdjmk_di12"
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.Transform = function(self)
-  -- function num : 0_7
+function UIWidgetInnerAutoBeadItem:Transform()
   return self._transform
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.Index = function(self)
-  -- function num : 0_8
+function UIWidgetInnerAutoBeadItem:Index()
   return self._index
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.Data = function(self)
-  -- function num : 0_9
+function UIWidgetInnerAutoBeadItem:Data()
   return self._data
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.Level = function(self)
-  -- function num : 0_10
+function UIWidgetInnerAutoBeadItem:Level()
   if self._cfg then
-    return (self._cfg).Lv
+    return self._cfg.Lv
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.IsMax = function(self)
-  -- function num : 0_11
-  if (self._cfg).Lv ~= 4 then
-    do return not self._cfg end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIWidgetInnerAutoBeadItem:IsMax()
+  if self._cfg then
+    return self._cfg.Lv == 4
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.OnSelect = function(self, select)
-  -- function num : 0_12
-  (self._selected):SetActive(select)
+function UIWidgetInnerAutoBeadItem:OnSelect(select)
+  self._selected:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetInnerAutoBeadItem.TagLock = function(self, lock)
-  -- function num : 0_13
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._tagLock).enabled = lock
+function UIWidgetInnerAutoBeadItem:TagLock(lock)
+  self._tagLock.enabled = lock
 end
-
-

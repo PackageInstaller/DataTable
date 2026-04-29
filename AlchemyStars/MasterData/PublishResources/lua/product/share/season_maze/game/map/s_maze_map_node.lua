@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeMapNode", Object)
 SMazeMapNode = SMazeMapNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapNode.Constructor = function(self, smazeID, id)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeMapNode:Constructor(smazeID, id)
   self._id = id
-  local cfg = (Cfg.cfg_component_season_maze_point)[self._id]
+  local cfg = Cfg.cfg_component_season_maze_point[self._id]
   self._transportID = cfg.TansportID
   self._branchIdx = cfg.BranchIndex
   self._forceSettle = cfg.IsForceSettle
@@ -18,214 +11,129 @@ SMazeMapNode.Constructor = function(self, smazeID, id)
   self._isDumpLinePoint = cfg.IsDumpLinePoint
   self._room = nil
   self._nexts = nil
-  self._pos = Vector3((cfg.XYZ)[1], (cfg.XYZ)[2], (cfg.XYZ)[3])
+  self._pos = Vector3(cfg.XYZ[1], cfg.XYZ[2], cfg.XYZ[3])
   self._isTransfortPoint = cfg.IsTransportPoint == true
   if self._isTransfortPoint then
     self._transfortPoint = SMazeMapTransportPoint:New(self)
   end
   self._state = SMazeNodeState.None
   self._dumpLinePoints = {}
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.AddDumpLinePoint = function(self, point)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._dumpLinePoints, point)
+function SMazeMapNode:AddDumpLinePoint(point)
+  table.insert(self._dumpLinePoints, point)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.GetDumpLinePoint = function(self)
-  -- function num : 0_2
+function SMazeMapNode:GetDumpLinePoint()
   return self._dumpLinePoints
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.ID = function(self)
-  -- function num : 0_3
+function SMazeMapNode:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.Dispose = function(self)
-  -- function num : 0_4
+function SMazeMapNode:Dispose()
   if self._room then
-    (self._room):Dispose()
+    self._room:Dispose()
     self._room = nil
   end
   if self._transfortPoint then
-    (self._transfortPoint):Dispose()
+    self._transfortPoint:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode._Link = function(self, nexts, transportPoint)
-  -- function num : 0_5
+function SMazeMapNode:_Link(nexts, transportPoint)
   self._nexts = nexts
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode._SetRoom = function(self, room)
-  -- function num : 0_6
+function SMazeMapNode:_SetRoom(room)
   self._room = room
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.Room = function(self)
-  -- function num : 0_7
+function SMazeMapNode:Room()
   return self._room
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.IsTransfortPoint = function(self)
-  -- function num : 0_8
+function SMazeMapNode:IsTransfortPoint()
   return self._isTransfortPoint
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.GetTransfortPoint = function(self)
-  -- function num : 0_9
+function SMazeMapNode:GetTransfortPoint()
   return self._transfortPoint
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.Position = function(self)
-  -- function num : 0_10
+function SMazeMapNode:Position()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.NextPoints = function(self)
-  -- function num : 0_11
+function SMazeMapNode:NextPoints()
   return self._nexts
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.IsFinalOne = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  do return not self:IsTransfortPoint() and next(self._nexts) == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SMazeMapNode:IsFinalOne()
+  return not self:IsTransfortPoint() and next(self._nexts) == nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.OnCross = function(self)
-  -- function num : 0_13
+function SMazeMapNode:OnCross()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.TransportID = function(self)
-  -- function num : 0_14
+function SMazeMapNode:TransportID()
   return self._transportID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.TransRoomTargetID = function(self)
-  -- function num : 0_15
+function SMazeMapNode:TransRoomTargetID()
   return self._transRoomTargetID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.SetState = function(self, state, onInit)
-  -- function num : 0_16 , upvalues : _ENV
-  if onInit then
-    if state ~= SMazeNodeState.Reachable and state ~= SMazeNodeState.StayTemp then
-      do
-        local reachable = not self._isTransfortPoint
-        ;
-        (self._transfortPoint):Anim_Reachable(reachable, true)
-        if (self._state == SMazeNodeState.Reachable or self._state == SMazeNodeState.StayTemp) and state == SMazeNodeState.UnReachable then
-          (self._transfortPoint):Anim_Reachable(false, false)
-        end
-        if onInit then
-          (self._room):Anim_Init(state)
-        else
-          (self._room):Anim_State(self._state, state)
-        end
-        self._state = state
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
-      end
+function SMazeMapNode:SetState(state, onInit)
+  if self._isTransfortPoint then
+    if onInit then
+      local reachable = state == SMazeNodeState.Reachable or state == SMazeNodeState.StayTemp
+      self._transfortPoint:Anim_Reachable(reachable, true)
+    elseif (self._state == SMazeNodeState.Reachable or self._state == SMazeNodeState.StayTemp) and state == SMazeNodeState.UnReachable then
+      self._transfortPoint:Anim_Reachable(false, false)
     end
+  elseif onInit then
+    self._room:Anim_Init(state)
+  else
+    self._room:Anim_State(self._state, state)
   end
+  self._state = state
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.Reachable = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  do return self._state == SMazeNodeState.Reachable end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SMazeMapNode:Reachable()
+  return self._state == SMazeNodeState.Reachable
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.GetState = function(self)
-  -- function num : 0_18
+function SMazeMapNode:GetState()
   return self._state
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.ReachableForTranspoint = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function SMazeMapNode:ReachableForTranspoint()
   local reachable = self._state == SMazeNodeState.Reachable or self._state == SMazeNodeState.StayTemp
-  do return reachable end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return reachable
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.SetHighLight = function(self, highLight)
-  -- function num : 0_20
+function SMazeMapNode:SetHighLight(highLight)
   if self._highLight ~= highLight then
-    (self._room):Anim_HighLight(highLight)
+    self._room:Anim_HighLight(highLight)
     self._highLight = highLight
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.BranchIdx = function(self)
-  -- function num : 0_21
+function SMazeMapNode:BranchIdx()
   return self._branchIdx
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.ForceSettle = function(self)
-  -- function num : 0_22
+function SMazeMapNode:ForceSettle()
   return self._forceSettle
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.PlayHighLightForce = function(self)
-  -- function num : 0_23
+function SMazeMapNode:PlayHighLightForce()
   self._highLight = true
-  ;
-  (self._room):Anim_HighLight(true)
+  self._room:Anim_HighLight(true)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapNode.IsDumpLinePoint = function(self)
-  -- function num : 0_24
+function SMazeMapNode:IsDumpLinePoint()
   return self._isDumpLinePoint
 end
-
-

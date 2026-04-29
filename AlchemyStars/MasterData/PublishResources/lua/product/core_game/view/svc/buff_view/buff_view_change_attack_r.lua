@@ -1,44 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_attack_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeAttack", BuffViewBase)
 BuffViewChangeAttack = BuffViewChangeAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeAttack.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeAttack:PlayView(TT)
   local entity = self._entity
   if entity:HasMaterialAnimationComponent() then
-    (entity:MaterialAnimationComponent()):PlayAtkup()
+    entity:MaterialAnimationComponent():PlayAtkup()
   end
-  local cfg = (self._viewInstance):BuffConfigData()
+  local cfg = self._viewInstance:BuffConfigData()
   local effectID = cfg:GetExecEffectID()
   if effectID then
-    ((self._world):GetService("Effect")):CreateEffect(effectID, self._entity)
+    self._world:GetService("Effect"):CreateEffect(effectID, self._entity)
   end
   local result = self._buffResult
   if result:GetIsLight() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((self._entity):PetPstID()):GetPstID(), true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, self._entity:PetPstID():GetPstID(), true)
   end
 end
 
 _class("BuffViewChangeAttackUndo", BuffViewBase)
 BuffViewChangeAttackUndo = BuffViewChangeAttackUndo
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeAttackUndo.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewChangeAttackUndo:PlayView(TT)
   local result = self._buffResult
   if result:GetIsBlack() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((self._entity):PetPstID()):GetPstID(), false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, self._entity:PetPstID():GetPstID(), false)
   end
   local casterId = result:GetCasterID()
-  local caster = (self._world):GetEntityByID(casterId)
+  local caster = self._world:GetEntityByID(casterId)
   if result:GetCasterBlack() and caster and caster:HasPetPstID() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, (caster:PetPstID()):GetPstID(), false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, caster:PetPstID():GetPstID(), false)
   end
 end
-
-

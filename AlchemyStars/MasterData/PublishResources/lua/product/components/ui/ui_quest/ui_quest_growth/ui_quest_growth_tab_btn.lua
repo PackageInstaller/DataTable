@@ -1,108 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_growth/ui_quest_growth_tab_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestGrowthTabBtn", UICustomWidget)
 UIQuestGrowthTabBtn = UIQuestGrowthTabBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestGrowthTabBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIQuestGrowthTabBtn:OnShow(uiParams)
   self._unLockDay = self:GetUIComponent("Text", "unlockDay")
   self._lockDay = self:GetUIComponent("Text", "lockDay")
   self._doneGO = self:GetGameObject("done")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthTabBtn.SetData = function(self, index, lock, done, clickCallback, lockClickCallback)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R6 in 'UnsetPending'
-
+function UIQuestGrowthTabBtn:SetData(index, lock, done, clickCallback, lockClickCallback)
   if lock then
-    (self._lockDay).text = index
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._unLockDay).text = ""
+    self._lockDay.text = index
+    self._unLockDay.text = ""
   else
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._unLockDay).text = index
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._lockDay).text = ""
+    self._unLockDay.text = index
+    self._lockDay.text = ""
   end
   self._index = index
   self._lock = lock
   self._done = done
   self._clickCallback = clickCallback
   self._lockClickCallback = lockClickCallback
-  ;
-  (self._doneGO):SetActive(done)
+  self._doneGO:SetActive(done)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthTabBtn.IsLock = function(self)
-  -- function num : 0_2
+function UIQuestGrowthTabBtn:IsLock()
   return self._lock
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthTabBtn.Unlock = function(self)
-  -- function num : 0_3
+function UIQuestGrowthTabBtn:Unlock()
   self._lock = false
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._unLockDay).text = self._index
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._lockDay).text = ""
+  self._unLockDay.text = self._index
+  self._lockDay.text = ""
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthTabBtn.IsDone = function(self)
-  -- function num : 0_4
+function UIQuestGrowthTabBtn:IsDone()
   return self._done
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthTabBtn.Done = function(self)
-  -- function num : 0_5
+function UIQuestGrowthTabBtn:Done()
   self._done = true
-  ;
-  (self._doneGO):SetActive(true)
+  self._doneGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthTabBtn.UnSelect = function(self)
-  -- function num : 0_6
+function UIQuestGrowthTabBtn:UnSelect()
   if self._anim then
-    (self._anim):Play("uianim_UIQuestGrowthTabBtn2_up")
+    self._anim:Play("uianim_UIQuestGrowthTabBtn2_up")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestGrowthTabBtn.BtnOnClick = function(self)
-  -- function num : 0_7
+function UIQuestGrowthTabBtn:BtnOnClick()
   if self._lock then
-    (self._lockClickCallback)(self._index)
+    self._lockClickCallback(self._index)
   else
-    ;
-    (self._clickCallback)(self._index)
+    self._clickCallback(self._index)
   end
 end
-
-

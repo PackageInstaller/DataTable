@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_story/ui_quest_story_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestStoryListItem", UICustomWidget)
 UIQuestStoryListItem = UIQuestStoryListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestStoryListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestStoryListItem:OnShow(uiParams)
   self._state = 0
-  self._atlas = (self:RootUIOwner()):GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
+  self._atlas = self:RootUIOwner():GetAsset("UIQuest.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.QuestUpdate, self.CheckQuestRedPoint)
   self:AttachEvent(GameEventType.RolePropertyChanged, self.CheckQuestRedPoint)
   self:AttachEvent(GameEventType.ItemCountChanged, self.CheckQuestRedPoint)
@@ -20,56 +13,42 @@ UIQuestStoryListItem.OnShow = function(self, uiParams)
   self._animation = self:GetUIComponent("Animation", "UIQuestStoryListItem")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem.AnimatedNormal = function(self)
-  -- function num : 0_1
-  (self._animation):Play("uieff_Quest_StoryListItem_Back")
+function UIQuestStoryListItem:AnimatedNormal()
+  self._animation:Play("uieff_Quest_StoryListItem_Back")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem.SetData = function(self, index, currentChapterIndex, callback)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._animation):Play("uieff_Quest_StoryListItem_In")
+function UIQuestStoryListItem:SetData(index, currentChapterIndex, callback)
+  self._animation:Play("uieff_Quest_StoryListItem_In")
   self:_GetComponents()
   self._index = index
   self._callback = callback
   self._currentChapterIndex = currentChapterIndex
-  self._cfg_chapter = (Cfg.cfg_chapter)[self._index]
+  self._cfg_chapter = Cfg.cfg_chapter[self._index]
   if self._cfg_chapter == nil then
-    (Log.fatal)("[quest] error --> cfg_chapter is nil !index--> " .. self._index)
-    return 
+    Log.fatal("[quest] error --> cfg_chapter is nil !index--> " .. self._index)
+    return
   end
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   if self._questModule == nil then
-    (Log.fatal)("[quest] error --> questModule is nil !")
-    return 
+    Log.fatal("[quest] error --> questModule is nil !")
+    return
   end
   self:_GetChaperState()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem._GetChaperState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIQuestStoryListItem:_GetChaperState()
   self._state = QuestStatus.QUEST_Taken
   if self._index < self._currentChapterIndex then
     self._state = QuestStatus.QUEST_Taken
+  elseif self._index == self._currentChapterIndex then
+    self._state = QuestStatus.QUEST_Accepted
   else
-    if self._index == self._currentChapterIndex then
-      self._state = QuestStatus.QUEST_Accepted
-    else
-      self._state = QuestStatus.QUEST_NotStart
-    end
+    self._state = QuestStatus.QUEST_NotStart
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem.OnHide = function(self)
-  -- function num : 0_4
+function UIQuestStoryListItem:OnHide()
   self._state = 0
   self._index = 0
   self._id = 0
@@ -84,10 +63,7 @@ UIQuestStoryListItem.OnHide = function(self)
   self._redGo = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem._GetComponents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIQuestStoryListItem:_GetComponents()
   self._nameTex = self:GetUIComponent("UILocalizationText", "nameTex")
   self._doingGo = self:GetGameObject("doingGo")
   self._finishGo = self:GetGameObject("finishGo")
@@ -96,115 +72,73 @@ UIQuestStoryListItem._GetComponents = function(self)
   self._redGo = self:GetGameObject("red")
   self._bg = self:GetGameObject("bg")
   self._select = self:GetGameObject("select")
-  ;
-  (self._select):SetActive(false)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bg), UIEvent.Press, function(go)
-    -- function num : 0_5_0 , upvalues : self
-    (self._select):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._bg), UIEvent.Release, function(go)
-    -- function num : 0_5_1 , upvalues : self
-    (self._select):SetActive(false)
-  end
-)
+  self._select:SetActive(false)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bg), UIEvent.Press, function(go)
+    self._select:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._bg), UIEvent.Release, function(go)
+    self._select:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._nameTex):SetText((StringTable.Get)((self._cfg_chapter).QuestShowName))
-  ;
-  (self._redGo):SetActive(self:CheckRed(self._index))
-  ;
-  (self._doingGo):SetActive(false)
-  ;
-  (self._finishGo):SetActive(false)
-  ;
-  (self._lockGo):SetActive(false)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIQuestStoryListItem:_OnValue()
+  self._nameTex:SetText(StringTable.Get(self._cfg_chapter.QuestShowName))
+  self._redGo:SetActive(self:CheckRed(self._index))
+  self._doingGo:SetActive(false)
+  self._finishGo:SetActive(false)
+  self._lockGo:SetActive(false)
   if self._state == QuestStatus.QUEST_Accepted then
-    (self._nameTex).color = Color(1, 1, 1)
-    ;
-    (self._doingGo):SetActive(true)
+    self._nameTex.color = Color(1, 1, 1)
+    self._doingGo:SetActive(true)
+  elseif self._state < QuestStatus.QUEST_Accepted then
+    self._lockGo:SetActive(true)
   else
-    if self._state < QuestStatus.QUEST_Accepted then
-      (self._lockGo):SetActive(true)
-    else
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._nameTex).color = Color(1, 1, 1)
-      ;
-      (self._finishGo):SetActive(true)
-    end
+    self._nameTex.color = Color(1, 1, 1)
+    self._finishGo:SetActive(true)
   end
   if self._state == QuestStatus.QUEST_NotStart then
-    (self._cgImg):LoadImage((self._cfg_chapter).BackgroundLock)
+    self._cgImg:LoadImage(self._cfg_chapter.BackgroundLock)
   else
-    ;
-    (self._cgImg):LoadImage((self._cfg_chapter).Background)
+    self._cgImg:LoadImage(self._cfg_chapter.Background)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem.CheckQuestRedPoint = function(self)
-  -- function num : 0_7
-  (self._redGo):SetActive(self:CheckRed(self._index))
+function UIQuestStoryListItem:CheckQuestRedPoint()
+  self._redGo:SetActive(self:CheckRed(self._index))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem.LockQuest = function(self, idx)
-  -- function num : 0_8 , upvalues : _ENV
+function UIQuestStoryListItem:LockQuest(idx)
   if idx == self._index then
     self._state = QuestStatus.QUEST_NotStart
     self:_OnValue()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem.OnNewStoryQuestUnLock = function(self, idx)
-  -- function num : 0_9
+function UIQuestStoryListItem:OnNewStoryQuestUnLock(idx)
   if idx == self._index then
-    (self._animation):Play("uieff_Quest_StoryListItem_Unlock")
+    self._animation:Play("uieff_Quest_StoryListItem_Unlock")
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem.bgOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIQuestStoryListItem:bgOnClick()
   if self._callback then
-    (self._callback)(self._index, self._state)
+    self._callback(self._index, self._state)
   end
   if self._state == QuestStatus.QUEST_NotStart then
-    (self._animation):Play("uieff_Quest_StoryListItem_Lock")
+    self._animation:Play("uieff_Quest_StoryListItem_Lock")
   else
-    ;
-    (self._animation):Play("uieff_Quest_StoryListItem_Click")
+    self._animation:Play("uieff_Quest_StoryListItem_Click")
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestStoryListItem.CheckRed = function(self, enum)
-  -- function num : 0_11 , upvalues : _ENV
-  local redInfo = (self._questModule):GetRedPoint()
-  if (table.count)(redInfo[QuestType.QT_Main]) > 0 then
-    for i = 1, (table.count)(redInfo[QuestType.QT_Main]) do
-      if (redInfo[QuestType.QT_Main])[i] == enum then
+function UIQuestStoryListItem:CheckRed(enum)
+  local redInfo = self._questModule:GetRedPoint()
+  if table.count(redInfo[QuestType.QT_Main]) > 0 then
+    for i = 1, table.count(redInfo[QuestType.QT_Main]) do
+      if redInfo[QuestType.QT_Main][i] == enum then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
-
-

@@ -1,86 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/prepare/selectItem/ui_homeland_movie_prepare_selectitem.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMoviePrepareSelectItem", UIHomelandMoviePrepareBase)
 UIHomelandMoviePrepareSelectItem = UIHomelandMoviePrepareSelectItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMoviePrepareSelectItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMoviePrepareSelectItem:Constructor()
   self._movieCfgData = MovieDataHelper:New()
   self._phaseBtns = {}
-  self._operateBuilding = (MoviePrepareData:GetInstance()):GetFatherBuild()
+  self._operateBuilding = MoviePrepareData:GetInstance():GetFatherBuild()
   self._moviePrepareManager = HomelandMoviePrepareManager:GetInstance()
-  ;
-  (self._moviePrepareManager):Init(self._operateBuilding, self._movieCfgData)
-  self._movieImgSp = {[MoviePrepareType.PT_Scene] = "dy_qqzb_tu01", [MoviePrepareType.PT_Prop] = "dy_qqzb_tu02", [MoviePrepareType.PT_Actor] = "dy_qqzb_tu03"}
+  self._moviePrepareManager:Init(self._operateBuilding, self._movieCfgData)
+  self._movieImgSp = {
+    [MoviePrepareType.PT_Scene] = "dy_qqzb_tu01",
+    [MoviePrepareType.PT_Prop] = "dy_qqzb_tu02",
+    [MoviePrepareType.PT_Actor] = "dy_qqzb_tu03"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.SetPhasePanel = function(self, panel, phasePanelRect)
-  -- function num : 0_1
+function UIHomelandMoviePrepareSelectItem:SetPhasePanel(panel, phasePanelRect)
   self._phasePanel = panel
   self._phasePanelRect = phasePanelRect
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.Refresh = function(self, prepareType)
-  -- function num : 0_2 , upvalues : _ENV
-  (HomelandMoviePrepareManager:GetInstance()):SetPhaseType(prepareType)
-  self._movieId = (MoviePrepareData:GetInstance()):GetMovieId()
+function UIHomelandMoviePrepareSelectItem:Refresh(prepareType)
+  HomelandMoviePrepareManager:GetInstance():SetPhaseType(prepareType)
+  self._movieId = MoviePrepareData:GetInstance():GetMovieId()
   self._selectTitleId = nil
   self._selectItemId = nil
   self._prepareType = prepareType
-  self._selectTitleId = (self._moviePrepareManager):GetFirstTitleAndItem(self._prepareType)
+  self._selectTitleId, self._selectItemId = self._moviePrepareManager:GetFirstTitleAndItem(self._prepareType)
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.CheckExit = function(self, prepareType)
-  -- function num : 0_3 , upvalues : _ENV
-  local actorCfg = (self._movieCfgData):GetMovieItemTitleById(self._movieId, MoviePrepareType.PT_Actor)
-  local actors = (self._moviePrepareManager):GetSelectedData(MoviePrepareType.PT_Actor)
-  if #actorCfg <= #actors then
+function UIHomelandMoviePrepareSelectItem:CheckExit(prepareType)
+  local actorCfg = self._movieCfgData:GetMovieItemTitleById(self._movieId, MoviePrepareType.PT_Actor)
+  local actors = self._moviePrepareManager:GetSelectedData(MoviePrepareType.PT_Actor)
+  if #actors >= #actorCfg then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.Clear = function(self, prepareType)
-  -- function num : 0_4
+function UIHomelandMoviePrepareSelectItem:Clear(prepareType)
   if prepareType == self._prepareType then
-    (self._moviePrepareManager):ClearAll(self._prepareType)
+    self._moviePrepareManager:ClearAll(self._prepareType)
     self:RefreshUI()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.OnExit = function(self)
-  -- function num : 0_5
-  (self._moviePrepareManager):ClearShadowObject()
-  ;
-  (self._moviePrepareManager):HideAllOutline(self._prepareType)
+function UIHomelandMoviePrepareSelectItem:OnExit()
+  self._moviePrepareManager:ClearShadowObject()
+  self._moviePrepareManager:HideAllOutline(self._prepareType)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.SetCamera = function(self, camera)
-  -- function num : 0_6
+function UIHomelandMoviePrepareSelectItem:SetCamera(camera)
   self._camera = camera
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.OnShow = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandMoviePrepareSelectItem:OnShow()
   self:AttachEvent(GameEventType.UIHomelandMoviePrepareItemSelect, self.RefreshUI)
   self:AttachEvent(GameEventType.UIHomelandMoviePrepareTitleBtnClick, self.TitleBtnOnClick)
   self:AttachEvent(GameEventType.UIHomelandMoviePrepareItemBtnClick, self.SelectItemBtnOnClick)
@@ -89,10 +63,7 @@ UIHomelandMoviePrepareSelectItem.OnShow = function(self)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.OnHide = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHomelandMoviePrepareSelectItem:OnHide()
   self:DetachEvent(GameEventType.UIHomelandMoviePrepareItemSelect, self.RefreshUI)
   self:DetachEvent(GameEventType.UIHomelandMoviePrepareTitleBtnClick, self.TitleBtnOnClick)
   self:DetachEvent(GameEventType.UIHomelandMoviePrepareItemBtnClick, self.SelectItemBtnOnClick)
@@ -102,10 +73,7 @@ UIHomelandMoviePrepareSelectItem.OnHide = function(self)
   self._movieCfgData = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.InitWidget = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandMoviePrepareSelectItem:InitWidget()
   self._atlas = self:GetAsset("UIHomelandMovie.spriteatlas", LoadType.SpriteAtlas)
   self._dynamictitles = self:GetUIComponent("UISelectObjectPath", "TitleItem")
   self._dynamicitems = self:GetUIComponent("UISelectObjectPath", "RowItem")
@@ -114,152 +82,108 @@ UIHomelandMoviePrepareSelectItem.InitWidget = function(self)
   self._empthImage = self:GetGameObject("empthImage")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem._GetShowData = function(self)
-  -- function num : 0_10
-  self._itemTitles = (self._movieCfgData):GetMovieItemTitleById(self._movieId, self._prepareType)
+function UIHomelandMoviePrepareSelectItem:_GetShowData()
+  self._itemTitles = self._movieCfgData:GetMovieItemTitleById(self._movieId, self._prepareType)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.RefreshUI = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandMoviePrepareSelectItem:RefreshUI()
   self:_GetShowData()
   self:RefreshItemTitle()
   self:RefreshItems()
   local id = self._movieId
-  local cfg = (Cfg.cfg_homeland_movice)({})
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (cfg[id]).DecorativePic then
-    (self._movieImg).sprite = (self._atlas):GetSprite((cfg[id]).DecorativePic)
+  local cfg = Cfg.cfg_homeland_movice({})
+  if cfg[id].DecorativePic then
+    self._movieImg.sprite = self._atlas:GetSprite(cfg[id].DecorativePic)
   else
-    ;
-    (Log.fatal)("cfg_homeland_movice中未配置电影装饰图")
+    Log.fatal("cfg_homeland_movice中未配置电影装饰图")
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.RefreshItemTitle = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandMoviePrepareSelectItem:RefreshItemTitle()
   if self._itemTitles == nil or #self._itemTitles == 0 then
-    (self._dynamictitles):SpawnObjects("UIHomelandMoviePrepareTitleBtn", 0)
+    self._dynamictitles:SpawnObjects("UIHomelandMoviePrepareTitleBtn", 0)
   else
-    if self._selectTitleId ~= nil or not (self._itemTitles)[1] then
-      self._selectTitleId = self._selectTitleId
-      ;
-      (self._dynamictitles):SpawnObjects("UIHomelandMoviePrepareTitleBtn", #self._itemTitles)
-      self._titlesItems = (self._dynamictitles):GetAllSpawnList()
-      for index,item in pairs(self._titlesItems) do
-        local uiNode = (self._titlesItems)[index]
-        local data = (self._movieCfgData):GetMovieItemByItemId((self._itemTitles)[index])
-        uiNode:SetData(index, data, self._prepareType, self._selectTitleId, self._atlas)
-      end
+    self._selectTitleId = self._selectTitleId == nil and self._itemTitles[1] or self._selectTitleId
+    self._dynamictitles:SpawnObjects("UIHomelandMoviePrepareTitleBtn", #self._itemTitles)
+    self._titlesItems = self._dynamictitles:GetAllSpawnList()
+    for index, item in pairs(self._titlesItems) do
+      local uiNode = self._titlesItems[index]
+      local data = self._movieCfgData:GetMovieItemByItemId(self._itemTitles[index])
+      uiNode:SetData(index, data, self._prepareType, self._selectTitleId, self._atlas)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.RefreshSelectBtns = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandMoviePrepareSelectItem:RefreshSelectBtns()
   if not self._itemTitles then
-    return 
+    return
   end
   if self._itemTitles == nil or #self._itemTitles == 0 or self._prepareType == MoviePrepareType.PT_Scene then
-    (self._phasePanel):SpawnObjects("UIHomelandMovieSelectBtn", 0)
+    self._phasePanel:SpawnObjects("UIHomelandMovieSelectBtn", 0)
   else
-    self._globalCamera = (((((GameGlobal.GetUIModule)(HomelandModule)):GetClient()):CameraManager()):GlobalCameraController()):CameraCmp()
-    ;
-    (self._phasePanel):SpawnObjects("UIHomelandMovieSelectBtn", #self._itemTitles)
-    self._itemSelectbtns = (self._phasePanel):GetAllSpawnList()
-    for index,item in pairs(self._itemTitles) do
-      local uiNode = (self._itemSelectbtns)[index]
-      local data = (self._movieCfgData):GetMovieItemByItemId((self._itemTitles)[index])
-      local pathRoot = ((self._operateBuilding):Transform()):Find("MoviePath")
+    self._globalCamera = GameGlobal.GetUIModule(HomelandModule):GetClient():CameraManager():GlobalCameraController():CameraCmp()
+    self._phasePanel:SpawnObjects("UIHomelandMovieSelectBtn", #self._itemTitles)
+    self._itemSelectbtns = self._phasePanel:GetAllSpawnList()
+    for index, item in pairs(self._itemTitles) do
+      local uiNode = self._itemSelectbtns[index]
+      local data = self._movieCfgData:GetMovieItemByItemId(self._itemTitles[index])
+      local pathRoot = self._operateBuilding:Transform():Find("MoviePath")
       if not data then
-        (Log.fatal)("RefreshSelectBtns()" .. (self._itemTitles)[index])
+        Log.fatal("RefreshSelectBtns()" .. self._itemTitles[index])
       end
       local posinfo = data.HangPoint
       local parent = pathRoot:Find(posinfo)
-      local sceenPos = (self._moviePrepareManager):WorldToScreenPoint(self._globalCamera, parent.position)
+      local sceenPos = self._moviePrepareManager:WorldToScreenPoint(self._globalCamera, parent.position)
       local targevec = Vector2(sceenPos.x, sceenPos.y)
-      local res, rectPos = (self._moviePrepareManager):ScreenPointToLocalPointInRectangle(self._phasePanelRect, self._camera, targevec)
+      local res, rectPos = self._moviePrepareManager:ScreenPointToLocalPointInRectangle(self._phasePanelRect, self._camera, targevec)
       uiNode:SetData(index, data, self._prepareType, rectPos, self._selectTitleId, self._atlas)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.ClearSelectBtns = function(self)
-  -- function num : 0_14
+function UIHomelandMoviePrepareSelectItem:ClearSelectBtns()
   if self._phasePanel then
-    (self._phasePanel):SpawnObjects("UIHomelandMovieSelectBtn", 0)
+    self._phasePanel:SpawnObjects("UIHomelandMovieSelectBtn", 0)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.RefreshItems = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._showitem = (self._movieCfgData):GetMovieItemByItemId(self._selectTitleId)
+function UIHomelandMoviePrepareSelectItem:RefreshItems()
+  self._showitem = self._movieCfgData:GetMovieItemByItemId(self._selectTitleId)
   if self._showitem == nil or #self._showitem == 0 then
-    (self._dynamicitems):SpawnObjects("UIHomelandMoviePrepareItem", 0)
-    ;
-    (self._infoText):SetText("<color=#F9F8F0>_____</color>" .. (StringTable.Get)("str_movie_item_null"))
-    ;
-    (self._empthImage):SetActive(true)
+    self._dynamicitems:SpawnObjects("UIHomelandMoviePrepareItem", 0)
+    self._infoText:SetText("<color=#F9F8F0>_____</color>" .. StringTable.Get("str_movie_item_null"))
+    self._empthImage:SetActive(true)
   else
-    ;
-    (self._empthImage):SetActive(false)
-    local selectables = (self._showitem).SelectList
-    if self._selectItemId ~= nil or not selectables[1] then
-      self._selectItemId = self._selectItemId
-      ;
-      (self._dynamicitems):SpawnObjects("UIHomelandMoviePrepareItem", #selectables)
-      self._items = (self._dynamicitems):GetAllSpawnList()
-      for index,item in pairs(self._items) do
-        local uiNode = (self._items)[index]
-        uiNode:SetData(index, selectables[index], self._prepareType, self._selectItemId, self._selectTitleId, self._movieCfgData, self._atlas)
-      end
-      ;
-      (self._infoText):SetText("<color=#F9F8F0>_____</color>" .. (StringTable.Get)((self._showitem).Introduction))
+    self._empthImage:SetActive(false)
+    local selectables = self._showitem.SelectList
+    self._selectItemId = self._selectItemId == nil and selectables[1] or self._selectItemId
+    self._dynamicitems:SpawnObjects("UIHomelandMoviePrepareItem", #selectables)
+    self._items = self._dynamicitems:GetAllSpawnList()
+    for index, item in pairs(self._items) do
+      local uiNode = self._items[index]
+      uiNode:SetData(index, selectables[index], self._prepareType, self._selectItemId, self._selectTitleId, self._movieCfgData, self._atlas)
     end
+    self._infoText:SetText("<color=#F9F8F0>_____</color>" .. StringTable.Get(self._showitem.Introduction))
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.OnSwitchTitleId = function(self, selectTitleId)
-  -- function num : 0_16
+function UIHomelandMoviePrepareSelectItem:OnSwitchTitleId(selectTitleId)
   self._selectTitleId = selectTitleId
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.OnSelectSceneObject = function(self, selectTitleId, itemId)
-  -- function num : 0_17
+function UIHomelandMoviePrepareSelectItem:OnSelectSceneObject(selectTitleId, itemId)
   self._selectTitleId = selectTitleId
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.TitleBtnOnClick = function(self, selectTitleId, prepareType)
-  -- function num : 0_18
+function UIHomelandMoviePrepareSelectItem:TitleBtnOnClick(selectTitleId, prepareType)
   self._selectTitleId = selectTitleId
   self:RefreshUI()
   self:RefreshSelectBtns()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.SelectItemBtnOnClick = function(self, isAdd, prepareType, selectTilleId, data)
-  -- function num : 0_19
+function UIHomelandMoviePrepareSelectItem:SelectItemBtnOnClick(isAdd, prepareType, selectTilleId, data)
   if isAdd then
     self._selectItemId = data[1]
   else
@@ -268,33 +192,19 @@ UIHomelandMoviePrepareSelectItem.SelectItemBtnOnClick = function(self, isAdd, pr
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.OnPrepareItemsSelected = function(self, prepareType, selectTilleId, itemId)
-  -- function num : 0_20
+function UIHomelandMoviePrepareSelectItem:OnPrepareItemsSelected(prepareType, selectTilleId, itemId)
   self._selectTitleId = selectTilleId
   self._selectItemId = itemId
   self:RefreshUI()
   self:RefreshSelectBtns()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.CreateShadowObject = function(self, movieId, prepareType, title)
-  -- function num : 0_21
+function UIHomelandMoviePrepareSelectItem:CreateShadowObject(movieId, prepareType, title)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.ClearAll = function(self)
-  -- function num : 0_22
-  (self._moviePrepareManager):ClearAll()
+function UIHomelandMoviePrepareSelectItem:ClearAll()
+  self._moviePrepareManager:ClearAll()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMoviePrepareSelectItem.BtnBackOnClick = function(self)
-  -- function num : 0_23
+function UIHomelandMoviePrepareSelectItem:BtnBackOnClick()
 end
-
-

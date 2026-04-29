@@ -1,112 +1,109 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_shield_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 BuffLogicAddDamageShield_ShieldLimitType = {LowerThanOwnerHP = 0, BuffOwnerAttackPercent = 1}
 _enum("BuffLogicAddDamageShield_ShieldLimitType", BuffLogicAddDamageShield_ShieldLimitType)
 _class("BuffLogicAddDamageShield", BuffLogicBase)
 BuffLogicAddDamageShield = BuffLogicAddDamageShield
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddDamageShield.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicAddDamageShield:Constructor(buffInstance, logicParam)
   self._shieldPercent = logicParam.shieldPercent
   self._maxPercent = logicParam.maxPercent
   self._minPercent = logicParam.minPercent
-  if not logicParam.shieldLimitType then
-    self._shieldLimitType = BuffLogicAddDamageShield_ShieldLimitType.LowerThanOwnerHP
-  end
+  self._shieldLimitType = logicParam.shieldLimitType or BuffLogicAddDamageShield_ShieldLimitType.LowerThanOwnerHP
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddDamageShield.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function BuffLogicAddDamageShield:DoLogic(notify)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local buffCom = teamEntity:BuffComponent()
   if not buffCom then
-    return 
+    return
   end
   local damage = notify:GetDamage()
   if damage <= 0 then
-    return 
+    return
   end
   local addShield = self._shieldPercent * damage
-  addShield = (math.floor)(addShield)
-  ;
-  (Log.info)((table.concat)({"BuffLogicAddDamageShield: ", "shieldPercent=", tostring(self._shieldPercent), "damage=", tostring(damage), "round val=", addShield}, " "))
+  addShield = math.floor(addShield)
+  Log.info(table.concat({
+    "BuffLogicAddDamageShield: ",
+    "shieldPercent=",
+    tostring(self._shieldPercent),
+    "damage=",
+    tostring(damage),
+    "round val=",
+    addShield
+  }, " "))
   addShield = self:LimitShieldMinMax(addShield)
-  local shield = (self._buffLogicService):AddHPShield(teamEntity, addShield)
+  local shield = self._buffLogicService:AddHPShield(teamEntity, addShield)
   return BuffResultAddDamageShield:New(shield)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddDamageShield.LimitShieldMinMax = function(self, val)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicAddDamageShield:LimitShieldMinMax(val)
   if self._shieldLimitType == BuffLogicAddDamageShield_ShieldLimitType.LowerThanOwnerHP then
-    local pstId = ((self._entity):PetPstID()):GetPstID()
-    local petData = (self._world):GetPetData(pstId)
+    local pstId = self._entity:PetPstID():GetPstID()
+    local petData = self._world:GetPetData(pstId)
     local hp = petData:GetPetHealth()
     local addShield = val
-    local maxHp = (math.floor)(hp * self._maxPercent)
-    if maxHp < addShield then
+    local maxHp = math.floor(hp * self._maxPercent)
+    if addShield > maxHp then
       addShield = maxHp
     end
     return addShield
-  else
-    do
-      if self._shieldLimitType == BuffLogicAddDamageShield_ShieldLimitType.BuffOwnerAttackPercent then
-        local eOwner = self._entity
-        local cAttributes = eOwner:Attributes()
-        if not cAttributes then
-          (Log.fatal)("BuffLogicAddDamageShield: shieldLimitType=", self._shieldLimitType, " owner has no AttributesComponent. ")
-          return val
-        end
-        local baseAttack = (cAttributes:GetAttack())
-        local min, max = nil, nil
-        if self._minPercent then
-          min = baseAttack * self._minPercent
-        end
-        if self._maxPercent then
-          max = baseAttack * self._maxPercent
-        end
-        local finalVal = val
-        if min and val < min then
-          finalVal = min
-        end
-        if max and max < val then
-          finalVal = max
-        end
-        ;
-        (Log.info)((table.concat)({"BuffLogicAddDamageShield: shieldLimitType =", self._shieldLimitType, "damageShieldVal =", val, "baseAttack =", baseAttack, "limitMinPercent =", tostring(self._minPercent), "maxPercent =", tostring(self._maxPercent), "min =", tostring(min), "max =", tostring(max), "finalVal =", finalVal, "floor =", (math.floor)(finalVal)}, " "))
-        return (math.floor)(finalVal)
-      end
-      do
-        return val
-      end
+  elseif self._shieldLimitType == BuffLogicAddDamageShield_ShieldLimitType.BuffOwnerAttackPercent then
+    local eOwner = self._entity
+    local cAttributes = eOwner:Attributes()
+    if not cAttributes then
+      Log.fatal("BuffLogicAddDamageShield: shieldLimitType=", self._shieldLimitType, " owner has no AttributesComponent. ")
+      return val
     end
+    local baseAttack = cAttributes:GetAttack()
+    local min, max
+    if self._minPercent then
+      min = baseAttack * self._minPercent
+    end
+    if self._maxPercent then
+      max = baseAttack * self._maxPercent
+    end
+    local finalVal = val
+    if min and val < min then
+      finalVal = min
+    end
+    if max and val > max then
+      finalVal = max
+    end
+    Log.info(table.concat({
+      "BuffLogicAddDamageShield: shieldLimitType =",
+      self._shieldLimitType,
+      "damageShieldVal =",
+      val,
+      "baseAttack =",
+      baseAttack,
+      "limitMinPercent =",
+      tostring(self._minPercent),
+      "maxPercent =",
+      tostring(self._maxPercent),
+      "min =",
+      tostring(min),
+      "max =",
+      tostring(max),
+      "finalVal =",
+      finalVal,
+      "floor =",
+      math.floor(finalVal)
+    }, " "))
+    return math.floor(finalVal)
   end
+  return val
 end
 
 _class("BuffLogicRemoveDamageShield", BuffLogicBase)
 BuffLogicRemoveDamageShield = BuffLogicRemoveDamageShield
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveDamageShield.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicRemoveDamageShield:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveDamageShield.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local player = ((self._world):Player()):GetCurrentTeamEntity()
-  if not (player:BuffComponent()):HasBuffEffect(BuffEffectType.ShieldToHP) then
-    (player:BuffComponent()):SetBuffValue("HPShield", 0)
+function BuffLogicRemoveDamageShield:DoLogic()
+  local player = self._world:Player():GetCurrentTeamEntity()
+  if not player:BuffComponent():HasBuffEffect(BuffEffectType.ShieldToHP) then
+    player:BuffComponent():SetBuffValue("HPShield", 0)
   end
   return true
 end
-
-

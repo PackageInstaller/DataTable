@@ -1,93 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/effect/grid_effect_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GridEffectComponent", Object)
 GridEffectComponent = GridEffectComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GridEffectComponent.Constructor = function(self, gridEffectType)
-  -- function num : 0_0
+function GridEffectComponent:Constructor(gridEffectType)
   self._gridEffectType = gridEffectType
   self._pieceType = nil
   self._pathIndex = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GridEffectComponent.GetGridEffectType = function(self)
-  -- function num : 0_1
+function GridEffectComponent:GetGridEffectType()
   return self._gridEffectType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GridEffectComponent.SetPieceType = function(self, pieceType)
-  -- function num : 0_2
+function GridEffectComponent:SetPieceType(pieceType)
   self._pieceType = pieceType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GridEffectComponent.GetPieceType = function(self)
-  -- function num : 0_3
+function GridEffectComponent:GetPieceType()
   return self._pieceType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GridEffectComponent.SetPathIndex = function(self, pathIndex)
-  -- function num : 0_4
+function GridEffectComponent:SetPathIndex(pathIndex)
   self._pathIndex = pathIndex
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GridEffectComponent.GetPathIndex = function(self)
-  -- function num : 0_5
+function GridEffectComponent:GetPathIndex()
   return self._pathIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GridEffect = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).GridEffect)
+function Entity:GridEffect()
+  return self:GetComponent(self.WEComponentsEnum.GridEffect)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGridEffect = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).GridEffect)
+function Entity:HasGridEffect()
+  return self:HasComponent(self.WEComponentsEnum.GridEffect)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGridEffect = function(self, gridEffectType)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GridEffect
+function Entity:AddGridEffect(gridEffectType)
+  local index = self.WEComponentsEnum.GridEffect
   local component = GridEffectComponent:New(gridEffectType)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGridEffect = function(self, gridEffectType)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GridEffect
+function Entity:ReplaceGridEffect(gridEffectType)
+  local index = self.WEComponentsEnum.GridEffect
   local component = GridEffectComponent:New(gridEffectType)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGridEffect = function(self)
-  -- function num : 0_10
+function Entity:RemoveGridEffect()
   if self:HasGridEffect() then
-    self:RemoveComponent((self.WEComponentsEnum).GridEffect)
+    self:RemoveComponent(self.WEComponentsEnum.GridEffect)
   end
 end
-
-

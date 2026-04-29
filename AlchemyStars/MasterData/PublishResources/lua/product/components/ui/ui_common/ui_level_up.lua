@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_common/ui_level_up.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILevelUp", UIController)
 UILevelUp = UILevelUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILevelUp.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UILevelUp:LoadDataOnEnter(TT, res, uiParams)
   local serialautofightmodule = self:GetModule(SerialAutoFightModule)
   local running = serialautofightmodule:IsRunning()
   if running then
@@ -18,10 +11,7 @@ UILevelUp.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILevelUp.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UILevelUp:OnShow(uiParams)
   self._lvText = self:GetUIComponent("UILocalizationText", "Lv")
   self._newLvText = self:GetUIComponent("UILocalizationText", "NewLv")
   self._maxGO = self:GetGameObject("Max")
@@ -34,21 +24,16 @@ UILevelUp.OnShow = function(self, uiParams)
   self.orgLvPhyMax = matchResRoleInfo.max_phy_before
   self.newgLvPhyMax = matchResRoleInfo.max_phy_after
   self.recPhy = matchResRoleInfo.phy_add
-  ;
-  (self._lvText):SetText(orgLv)
-  ;
-  (self._newLvText):SetText(newLv)
-  local maxLv = (HelperProxy:GetInstance()):GetMaxLevel()
+  self._lvText:SetText(orgLv)
+  self._newLvText:SetText(newLv)
+  local maxLv = HelperProxy:GetInstance():GetMaxLevel()
   if newLv == maxLv then
-    (self._maxGO):SetActive(true)
+    self._maxGO:SetActive(true)
   end
-  ;
-  (self._phyRecText):SetText(0)
-  ;
-  (self._maxPhyOrg):SetText(self.orgLvPhyMax)
-  ;
-  (self._maxPhyNew):SetText(self.orgLvPhyMax)
-  local frameTime = 16.666666666667
+  self._phyRecText:SetText(0)
+  self._maxPhyOrg:SetText(self.orgLvPhyMax)
+  self._maxPhyNew:SetText(self.orgLvPhyMax)
+  local frameTime = 16.666666666666668
   self.phyRecStartTime = frameTime * 133
   self.phyRecEndTime = frameTime * 171
   self.phyRecTotalTime = self.phyRecEndTime - self.phyRecStartTime
@@ -62,53 +47,38 @@ UILevelUp.OnShow = function(self, uiParams)
   if uiParams[4] then
     self._closeCallBack = uiParams[4]
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundPlayerUpLevel)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundPlayerUpLevel)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILevelUp.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
+function UILevelUp:OnUpdate(deltaTimeMS)
   self.accTime = self.accTime + deltaTimeMS
   if self.accTime < self.phyRecStartTime or self.newPhyAnimDone then
-    return 
+    return
   end
   if not self.phyRecAnimDone then
     local percent = (self.accTime - self.phyRecStartTime) / self.phyRecTotalTime
-    if self.phyRecEndTime < self.accTime then
+    if self.accTime > self.phyRecEndTime then
       self.phyRecAnimDone = true
       percent = 1
     end
-    local phyRec = (((DG.Tweening).DOVirtual).EasedValue)(0, self.recPhy, percent, ((DG.Tweening).Ease).OutQuad)
-    ;
-    (self._phyRecText):SetText((math.floor)(phyRec))
-  else
-    do
-      if self.newPhyStartTime < self.accTime then
-        local percent = (self.accTime - self.newPhyStartTime) / self.newPhyTotalTime
-        if self.newPhyEndTime < self.accTime then
-          self.newPhyAnimDone = true
-          percent = 1
-        end
-        local newPhy = (((DG.Tweening).DOVirtual).EasedValue)(self.orgLvPhyMax, self.newgLvPhyMax, percent, ((DG.Tweening).Ease).Linear)
-        ;
-        (self._maxPhyNew):SetText((math.floor)(newPhy))
-      end
+    local phyRec = DG.Tweening.DOVirtual.EasedValue(0, self.recPhy, percent, DG.Tweening.Ease.OutQuad)
+    self._phyRecText:SetText(math.floor(phyRec))
+  elseif self.accTime > self.newPhyStartTime then
+    local percent = (self.accTime - self.newPhyStartTime) / self.newPhyTotalTime
+    if self.accTime > self.newPhyEndTime then
+      self.newPhyAnimDone = true
+      percent = 1
     end
+    local newPhy = DG.Tweening.DOVirtual.EasedValue(self.orgLvPhyMax, self.newgLvPhyMax, percent, DG.Tweening.Ease.Linear)
+    self._maxPhyNew:SetText(math.floor(newPhy))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILevelUp.FullScreenBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UILevelUp:FullScreenBtnOnClick(go)
   if self.newPhyAnimDone then
     self:CloseDialog()
     if self._closeCallBack then
-      (self._closeCallBack)()
+      self._closeCallBack()
     end
   end
 end
-
-

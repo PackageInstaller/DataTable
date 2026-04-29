@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_rotate_result_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayRotateResultInstruction", BaseInstruction)
 PlayRotateResultInstruction = PlayRotateResultInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRotateResultInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayRotateResultInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRotateResultInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayRotateResultInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Rotate)
   if resultArray == nil then
-    (Log.fatal)("PlayRotateResultInstruction, result is nil.")
-    return 
+    Log.fatal("PlayRotateResultInstruction, result is nil.")
+    return
   end
-  local dirNew = (resultArray[1]):GetDirNew()
+  local dirNew = resultArray[1]:GetDirNew()
   casterEntity:SetDirection(dirNew)
 end
-
-

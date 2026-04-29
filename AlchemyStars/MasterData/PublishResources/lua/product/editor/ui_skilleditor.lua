@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/ui_skilleditor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISkillEditorController", UIController)
 UISkillEditorController = UISkillEditorController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISkillEditorController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  (Editor.Enter)()
+function UISkillEditorController:OnShow(uiParams)
+  Editor.Enter()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillEditorController.BtnBackOnClick = function(self, go)
-  -- function num : 0_1 , upvalues : _ENV
-  (Editor.Enter)()
+function UISkillEditorController:BtnBackOnClick(go)
+  Editor.Enter()
   self:CloseDialog()
 end
-
-

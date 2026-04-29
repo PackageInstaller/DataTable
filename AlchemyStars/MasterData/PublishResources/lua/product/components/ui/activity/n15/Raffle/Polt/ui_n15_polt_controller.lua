@@ -1,51 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n15/Raffle/Polt/ui_n15_polt_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN15PoltController", UIController)
 UIN15PoltController = UIN15PoltController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN15PoltController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN15PoltController:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN15PoltController:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  if (self._campaign)._type == -1 or (self._campaign)._id == -1 then
-    (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N15)
+  if self._campaign._type == -1 or self._campaign._id == -1 then
+    self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N15)
   else
-    ;
-    (self.activityCampaign):ReLoadCampaignInfo_Force(TT, res)
+    self.activityCampaign:ReLoadCampaignInfo_Force(TT, res)
   end
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._process = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N15)
-  self._draw_cpt = (self._campaign):GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY)
-  self._draw_info = (self._campaign):GetComponentInfo(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY)
+  self._process = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N15)
+  self._draw_cpt = self._campaign:GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY)
+  self._draw_info = self._campaign:GetComponentInfo(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN15PoltController:OnShow(uiParams)
   self:_InitParams(uiParams)
   self:_InitPage()
   self:_InitWidget()
   self:_RefView()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController._InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN15PoltController:_InitWidget()
   self._polt_bg_i_raw = self:GetUIComponent("RawImageLoader", "_polt_bg_i")
   self._polt_title_i_txt = self:GetUIComponent("UILocalizationText", "_polt_title_i")
   self._polt_content_i_txt = self:GetUIComponent("UILocalizationText", "_polt_content_i")
@@ -72,257 +55,179 @@ UIN15PoltController._InitWidget = function(self)
   self._polt_ii_obj = self:GetGameObject("_polt_ii")
   local back_btn = self:GetUIComponent("UISelectObjectPath", "_back_btn")
   self._commonTopBtn = back_btn:SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    if not (self._campaign):CheckComponentOpen(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY) then
-      (ToastManager.ShowToast)((StringTable.Get)("str_n15_over_activity"))
+  self._commonTopBtn:SetData(function()
+    if not self._campaign:CheckComponentOpen(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY) then
+      ToastManager.ShowToast(StringTable.Get("str_n15_over_activity"))
       self:SwitchState(UIStateType.UIMain)
-      return 
+      return
     end
     self:CloseDialog()
-  end
-, nil, nil, false)
-  ;
-  (self._commonTopBtn):HideHomeBtn()
-  self._anim = ((self.view).gameObject):GetComponent("Animation")
+  end, nil, nil, false)
+  self._commonTopBtn:HideHomeBtn()
+  self._anim = self.view.gameObject:GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController._InitParams = function(self, Params)
-  -- function num : 0_4 , upvalues : _ENV
-  self._polt_cfg = (Cfg.cfg_n15_polt_event)({})
+function UIN15PoltController:_InitParams(Params)
+  self._polt_cfg = Cfg.cfg_n15_polt_event({})
   self._page = 1
   self._page_tab = {}
   self._polt_tab = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController._InitPage = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._polt_tab = (self._draw_cpt):RandEventInfo()
+function UIN15PoltController:_InitPage()
+  self._polt_tab = self._draw_cpt:RandEventInfo()
   local polt_idx = 1
   for i = 1, #self._polt_tab // 2 do
     local page_data = {}
-    page_data[1] = (self._polt_tab)[polt_idx]
-    page_data[2] = (self._polt_tab)[polt_idx + 1]
+    page_data[1] = self._polt_tab[polt_idx]
+    page_data[2] = self._polt_tab[polt_idx + 1]
     polt_idx = polt_idx + 2
-    ;
-    (table.insert)(self._page_tab, page_data)
+    table.insert(self._page_tab, page_data)
   end
   if #self._polt_tab % 2 == 1 then
     local page_data = {}
-    page_data[1] = (self._polt_tab)[#self._polt_tab]
-    ;
-    (table.insert)(self._page_tab, page_data)
+    page_data[1] = self._polt_tab[#self._polt_tab]
+    table.insert(self._page_tab, page_data)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController._PlayPolt = function(self, polt_id)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n15_over_activity"))
+function UIN15PoltController:_PlayPolt(polt_id)
+  if not self._campaign:CheckComponentOpen(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY) then
+    ToastManager.ShowToast(StringTable.Get("str_n15_over_activity"))
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   self:ShowDialog("UIStoryController", polt_id, function()
-    -- function num : 0_6_0 , upvalues : _ENV, polt_id, self
-    local dbstr = (N15ToolFunctions.GetLocalPoltNewName)(polt_id)
-    ;
-    (LocalDB.SetInt)(dbstr, 1)
+    local dbstr = N15ToolFunctions.GetLocalPoltNewName(polt_id)
+    LocalDB.SetInt(dbstr, 1)
     self:_RefView()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController._GetPoltCount = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN15PoltController:_GetPoltCount()
   local total = #self._polt_tab
   local unlock = 0
-  for idx,polt in ipairs(self._polt_tab) do
+  for idx, polt in ipairs(self._polt_tab) do
     if polt.is_unlock then
       unlock = unlock + 1
     end
   end
-  local lock = total - (unlock)
+  local lock = total - unlock
   return total, unlock, lock
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController._RefView = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local page_date = (self._page_tab)[self._page]
+function UIN15PoltController:_RefView()
+  local page_date = self._page_tab[self._page]
   if self._page == 1 then
     self:_RefLRBtn(false, true)
+  elseif self._page == #self._page_tab then
+    self:_RefLRBtn(true, false)
   else
-    if self._page == #self._page_tab then
-      self:_RefLRBtn(true, false)
-    else
-      self:_RefLRBtn(true, true)
-    end
+    self:_RefLRBtn(true, true)
   end
-  local dbstr = (N15ToolFunctions.GetLocalPoltNewName)((page_date[1]).event_id)
-  local polt_has = (LocalDB.HasKey)(dbstr)
-  ;
-  (self._polt_new_i_obj):SetActive((not polt_has and (page_date[1]).is_unlock))
-  if (page_date[1]).is_unlock then
-    (self._polt_lock_i_obj):SetActive(false)
+  local dbstr = N15ToolFunctions.GetLocalPoltNewName(page_date[1].event_id)
+  local polt_has = LocalDB.HasKey(dbstr)
+  self._polt_new_i_obj:SetActive(not polt_has and page_date[1].is_unlock)
+  if page_date[1].is_unlock then
+    self._polt_lock_i_obj:SetActive(false)
   else
-    (self._polt_lock_i_obj):SetActive(true)
+    self._polt_lock_i_obj:SetActive(true)
   end
   if page_date[2] then
-    dbstr = (N15ToolFunctions.GetLocalPoltNewName)((page_date[2]).event_id)
-    polt_has = (LocalDB.HasKey)(dbstr)
-    ;
-    (self._polt_new_ii_obj):SetActive((not polt_has and (page_date[2]).is_unlock))
-    if (page_date[2]).is_unlock then
-      (self._polt_lock_ii_obj):SetActive(false)
+    dbstr = N15ToolFunctions.GetLocalPoltNewName(page_date[2].event_id)
+    polt_has = LocalDB.HasKey(dbstr)
+    self._polt_new_ii_obj:SetActive(not polt_has and page_date[2].is_unlock)
+    if page_date[2].is_unlock then
+      self._polt_lock_ii_obj:SetActive(false)
     else
-      (self._polt_lock_ii_obj):SetActive(true)
+      self._polt_lock_ii_obj:SetActive(true)
     end
-    ;
-    (self._polt_ii_obj):SetActive(true)
+    self._polt_ii_obj:SetActive(true)
   else
-    (self._polt_ii_obj):SetActive(false)
+    self._polt_ii_obj:SetActive(false)
   end
   self:_RefTxt()
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController._RefLRBtn = function(self, left, right)
-  -- function num : 0_9
-  (self._left_btn_obj):SetActive(left)
-  ;
-  (self._right_btn_obj):SetActive(right)
+function UIN15PoltController:_RefLRBtn(left, right)
+  self._left_btn_obj:SetActive(left)
+  self._right_btn_obj:SetActive(right)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController._RefTxt = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local data = (self._page_tab)[self._page]
-  local cfg = (self._polt_cfg)[(data[1]).event_id]
+function UIN15PoltController:_RefTxt()
+  local data = self._page_tab[self._page]
+  local cfg = self._polt_cfg[data[1].event_id]
   local total, unlock, lock = self:_GetPoltCount()
-  ;
-  (self._polt_title_txt):SetText((StringTable.Get)("str_n15_polt_title", unlock .. "/" .. total))
-  ;
-  (self._polt_bg_i_raw):LoadImage(cfg.Icon)
-  ;
-  (self._polt_title_i_txt):SetText((StringTable.Get)(cfg.Title))
-  ;
-  (self._polt_content_i_txt):SetText((StringTable.Get)(cfg.Content))
-  ;
-  (self._txtContenti1):SetText((StringTable.Get)(cfg.Visibility))
-  ;
-  (self._txtContenti2):SetText((StringTable.Get)(cfg.Weather))
-  ;
-  (self._txtContenti3):SetText((StringTable.Get)(cfg.WindSpeed))
-  ;
-  (self._txtContenti4):SetText((StringTable.Get)(cfg.Temperature))
-  ;
-  (self._polt_condition_i_txt):SetText((StringTable.Get)("str_n15_polt_condition", (self._draw_info).m_cost_count * (data[1]).lottery_times))
+  self._polt_title_txt:SetText(StringTable.Get("str_n15_polt_title", unlock .. "/" .. total))
+  self._polt_bg_i_raw:LoadImage(cfg.Icon)
+  self._polt_title_i_txt:SetText(StringTable.Get(cfg.Title))
+  self._polt_content_i_txt:SetText(StringTable.Get(cfg.Content))
+  self._txtContenti1:SetText(StringTable.Get(cfg.Visibility))
+  self._txtContenti2:SetText(StringTable.Get(cfg.Weather))
+  self._txtContenti3:SetText(StringTable.Get(cfg.WindSpeed))
+  self._txtContenti4:SetText(StringTable.Get(cfg.Temperature))
+  self._polt_condition_i_txt:SetText(StringTable.Get("str_n15_polt_condition", self._draw_info.m_cost_count * data[1].lottery_times))
   if data[2] then
-    cfg = (self._polt_cfg)[(data[2]).event_id]
-    ;
-    (self._polt_bg_ii_raw):LoadImage(cfg.Icon)
-    ;
-    (self._polt_title_ii_txt):SetText((StringTable.Get)(cfg.Title))
-    ;
-    (self._polt_content_ii_txt):SetText((StringTable.Get)(cfg.Content))
-    ;
-    (self._txtContentii1):SetText((StringTable.Get)(cfg.Visibility))
-    ;
-    (self._txtContentii2):SetText((StringTable.Get)(cfg.Weather))
-    ;
-    (self._txtContentii3):SetText((StringTable.Get)(cfg.WindSpeed))
-    ;
-    (self._txtContentii4):SetText((StringTable.Get)(cfg.Temperature))
-    ;
-    (self._polt_condition_ii_txt):SetText((StringTable.Get)("str_n15_polt_condition", (self._draw_info).m_cost_count * (data[2]).lottery_times))
+    cfg = self._polt_cfg[data[2].event_id]
+    self._polt_bg_ii_raw:LoadImage(cfg.Icon)
+    self._polt_title_ii_txt:SetText(StringTable.Get(cfg.Title))
+    self._polt_content_ii_txt:SetText(StringTable.Get(cfg.Content))
+    self._txtContentii1:SetText(StringTable.Get(cfg.Visibility))
+    self._txtContentii2:SetText(StringTable.Get(cfg.Weather))
+    self._txtContentii3:SetText(StringTable.Get(cfg.WindSpeed))
+    self._txtContentii4:SetText(StringTable.Get(cfg.Temperature))
+    self._polt_condition_ii_txt:SetText(StringTable.Get("str_n15_polt_condition", self._draw_info.m_cost_count * data[2].lottery_times))
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController.LeftBtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n15_over_activity"))
+function UIN15PoltController:LeftBtnOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY) then
+    ToastManager.ShowToast(StringTable.Get("str_n15_over_activity"))
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   if self._page > 1 then
     self._page = self._page - 1
     local lockName = "UIN15PoltController:_PageL"
-    do
-      self:Lock(lockName)
-      self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV, lockName
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uieffanim_N15_Polt_in")
-    self:_RefView()
-    YIELD(TT, 733)
-    self:UnLock(lockName)
-  end
-, self)
-    end
+    self:Lock(lockName)
+    self:StartTask(function(TT)
+      self._anim:Stop()
+      self._anim:Play("uieffanim_N15_Polt_in")
+      self:_RefView()
+      YIELD(TT, 733)
+      self:UnLock(lockName)
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController.RightBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n15_over_activity"))
+function UIN15PoltController:RightBtnOnClick(go)
+  if not self._campaign:CheckComponentOpen(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY) then
+    ToastManager.ShowToast(StringTable.Get("str_n15_over_activity"))
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
   if self._page < #self._page_tab then
     self._page = self._page + 1
     local lockName = "UIN15PoltController:_PageR"
-    do
-      self:Lock(lockName)
-      self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV, lockName
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uieffanim_N15_Polt_in")
-    self:_RefView()
-    YIELD(TT, 733)
-    self:UnLock(lockName)
-  end
-, self)
-    end
+    self:Lock(lockName)
+    self:StartTask(function(TT)
+      self._anim:Stop()
+      self._anim:Play("uieffanim_N15_Polt_in")
+      self:_RefView()
+      YIELD(TT, 733)
+      self:UnLock(lockName)
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController.PoltPlayIBtnOnClick = function(self, go)
-  -- function num : 0_13
-  if (((self._page_tab)[self._page])[1]).is_unlock then
-    self:_PlayPolt((((self._page_tab)[self._page])[1]).event_id)
+function UIN15PoltController:PoltPlayIBtnOnClick(go)
+  if self._page_tab[self._page][1].is_unlock then
+    self:_PlayPolt(self._page_tab[self._page][1].event_id)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15PoltController.PoltPlayIIBtnOnClick = function(self, go)
-  -- function num : 0_14
-  if (((self._page_tab)[self._page])[2]).is_unlock then
-    self:_PlayPolt((((self._page_tab)[self._page])[2]).event_id)
+function UIN15PoltController:PoltPlayIIBtnOnClick(go)
+  if self._page_tab[self._page][2].is_unlock then
+    self:_PlayPolt(self._page_tab[self._page][2].event_id)
   end
 end
-
-

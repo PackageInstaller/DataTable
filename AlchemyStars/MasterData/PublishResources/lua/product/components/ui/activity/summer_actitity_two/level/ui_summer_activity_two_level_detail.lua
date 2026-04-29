@@ -1,35 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/level/ui_summer_activity_two_level_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoLevelDetail", UIController)
 UISummerActivityTwoLevelDetail = UISummerActivityTwoLevelDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoLevelDetail.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UISummerActivityTwoLevelDetail:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SUMMER_II, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_STORY, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_CUMULATIVE_LOGIN, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_1, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_2, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_3, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_4, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_5, ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_PERSON_PROGRESS_6)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._missionComponent = (self._localProcess):GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+  self._missionComponent = self._localProcess:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoLevelDetail:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._bossIconImg = self:GetUIComponent("RawImageLoader", "BossIcon")
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
@@ -42,94 +31,57 @@ UISummerActivityTwoLevelDetail.OnShow = function(self, uiParams)
   self._iconGo = self:GetGameObject("Icon")
   self._scoreTitleGo = self:GetGameObject("ScoreTitle")
   self._anim = self:GetUIComponent("Animation", "Anim")
-  self._typeToScoreColor = {[UISummerActivity2LevelType.Boss] = Color(0.53333333333333, 0, 0, 1), [UISummerActivity2LevelType.Affix] = Color(0.53333333333333, 0, 0, 1)}
+  self._typeToScoreColor = {
+    [UISummerActivity2LevelType.Boss] = Color(0.5333333333333333, 0, 0, 1),
+    [UISummerActivity2LevelType.Affix] = Color(0.5333333333333333, 0, 0, 1)
+  }
   self._ids = {}
-  local monsterIDs = (UICommonHelper:GetInstance()):GetOptimalEnemys((self._levelData):GetFightId())
+  local monsterIDs = UICommonHelper:GetInstance():GetOptimalEnemys(self._levelData:GetFightId())
   if monsterIDs == nil or #monsterIDs == 0 then
-    (Log.fatal)("[Enemy] 怪物id列表为空")
+    Log.fatal("[Enemy] 怪物id列表为空")
   else
-    local count = (table.count)(monsterIDs)
+    local count = table.count(monsterIDs)
     for i = 1, count do
-      (table.insert)(self._ids, monsterIDs[i])
+      table.insert(self._ids, monsterIDs[i])
     end
   end
-  do
-    local type = (self._levelData):GetLevelType()
-    ;
-    (self._bossIconImg):LoadImage((self._levelData):GetMonsterIcon())
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._nameLabel).text = (self._levelData):GetName()
-    -- DECOMPILER ERROR at PC125: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._desLabel).text = (self._levelData):GetDes()
-    -- DECOMPILER ERROR at PC130: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._scoreLabel).text = (self._levelData):GetMaxScore()
-    -- DECOMPILER ERROR at PC135: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._scoreShadoweLabel).text = (self._levelData):GetMaxScore()
-    ;
-    (self._IconImg):LoadImage(UISummerActivityTwoConst.EntryIcon)
-    -- DECOMPILER ERROR at PC144: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._scoreShadoweLabel).color = (self._typeToScoreColor)[type]
-  end
+  local type = self._levelData:GetLevelType()
+  self._bossIconImg:LoadImage(self._levelData:GetMonsterIcon())
+  self._nameLabel.text = self._levelData:GetName()
+  self._desLabel.text = self._levelData:GetDes()
+  self._scoreLabel.text = self._levelData:GetMaxScore()
+  self._scoreShadoweLabel.text = self._levelData:GetMaxScore()
+  self._IconImg:LoadImage(UISummerActivityTwoConst.EntryIcon)
+  self._scoreShadoweLabel.color = self._typeToScoreColor[type]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelDetail.OnHide = function(self)
-  -- function num : 0_2
+function UISummerActivityTwoLevelDetail:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelDetail.MaskOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
+function UISummerActivityTwoLevelDetail:MaskOnClick()
+  GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelDetail.StartBattleBtnOnClick = function(self)
-  -- function num : 0_4
+function UISummerActivityTwoLevelDetail:StartBattleBtnOnClick()
   self:ShowDialog("UISummerActivityTwoSelectEntryController", self._levelData)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelDetail.DesBtnOnClick = function(self)
-  -- function num : 0_5
+function UISummerActivityTwoLevelDetail:DesBtnOnClick()
   self:ShowDialog("UIRestrainTips")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelDetail.BossIconOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISummerActivityTwoLevelDetail:BossIconOnClick()
   if #self._ids <= 0 then
-    (Log.debug)("monster list is empty")
-    return 
+    Log.debug("monster list is empty")
+    return
   end
   self:ShowDialog("UIEnemyTip", self._ids, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoLevelDetail.CloseCoro = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UISummerActivityTwoLevelDetail:CloseCoro(TT)
   self:Lock("UISummerActivityTwoLevelDetail_CloseCoro")
-  ;
-  (self._anim):Play("uieff_Summer2_Level_Detail_Out")
+  self._anim:Play("uieff_Summer2_Level_Detail_Out")
   YIELD(TT, 270)
   self:CloseDialog()
   self:UnLock("UISummerActivityTwoLevelDetail_CloseCoro")
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/psparam_trajectory_hit_on_own_trap_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseTrajectoryHitOnOwnTrapPosParam", SkillPhaseParamBase)
 SkillPhaseTrajectoryHitOnOwnTrapPosParam = SkillPhaseTrajectoryHitOnOwnTrapPosParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:Constructor(t)
   self._hitAnim = t.hitAnim
   self._hitDelayTime = t.hitDelayTime
   self._hitEffectID = t.hitEffectID
@@ -23,88 +16,50 @@ SkillPhaseTrajectoryHitOnOwnTrapPosParam.Constructor = function(self, t)
   self._totalTime = t.totalTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetPhaseType()
   return SkillViewPhaseType.TrajectoryHitOnOwnTrapPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetCasterAnim = function(self)
-  -- function num : 0_2
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetCasterAnim()
   return self._casterAnim
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetCasterEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetCasterEffectID()
   return self._casterEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetBulletStartDelay = function(self)
-  -- function num : 0_4
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetBulletStartDelay()
   return self._bulletStartDelay
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetBulletEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetBulletEffectID()
   return self._bulletEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetBulletBeginBindBone = function(self)
-  -- function num : 0_6
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetBulletBeginBindBone()
   return self._bulletBeginBindBone
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetBulletEndBindBone = function(self)
-  -- function num : 0_7
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetBulletEndBindBone()
   return self._bulletEndBindBone
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetBulletFlyTotalTime = function(self)
-  -- function num : 0_8
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetBulletFlyTotalTime()
   return self._bulletFlyTotalTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetHitAnim = function(self)
-  -- function num : 0_9
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetHitAnim()
   return self._hitAnim
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetHitEffectID = function(self)
-  -- function num : 0_10
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetHitDelayTime = function(self)
-  -- function num : 0_11
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetHitDelayTime()
   return self._hitDelayTime
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrajectoryHitOnOwnTrapPosParam.GetTotalTime = function(self)
-  -- function num : 0_12
+function SkillPhaseTrajectoryHitOnOwnTrapPosParam:GetTotalTime()
   return self._totalTime
 end
-
-

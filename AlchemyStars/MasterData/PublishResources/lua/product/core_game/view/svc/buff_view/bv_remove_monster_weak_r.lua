@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_remove_monster_weak_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewRemoveMonsterWeak", BuffViewBase)
 BuffViewRemoveMonsterWeak = BuffViewRemoveMonsterWeak
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveMonsterWeak.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewRemoveMonsterWeak:PlayView(TT)
   local ownerEntity = self:Entity()
   if not ownerEntity then
-    return 
+    return
   end
-  local monsterRSvc = (self._world):GetService("MonsterShowRender")
+  local monsterRSvc = self._world:GetService("MonsterShowRender")
   monsterRSvc:RemoveMonsterWeak(ownerEntity)
 end
-
-

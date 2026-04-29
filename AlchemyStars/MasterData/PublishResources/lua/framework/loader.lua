@@ -1,123 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local oldloader = GroupLoader.New
-local callFinish = function(ldr)
-  -- function num : 0_0 , upvalues : _ENV
+
+local function callFinish(ldr)
   if ldr.__mdelay then
-    (Timer.del)(ldr.__mdelay)
+    Timer.del(ldr.__mdelay)
   end
   if ldr.__delay then
-    (Timer.del)(ldr.__delay)
+    Timer.del(ldr.__delay)
   end
   local fincall = ldr.__fincall
   if not fincall then
-    return 
+    return
   end
   for ii = 1, #fincall do
-    (fincall[ii])()
+    fincall[ii]()
   end
   ldr.__fincall = nil
 end
 
-local maxTime = function(ldr, t)
-  -- function num : 0_1 , upvalues : _ENV, callFinish
+local function maxTime(ldr, t)
   ldr.__max = t + 30
-  if not ldr.__startt then
-    ldr.__startt = (os.time)()
-    ldr.__mdelay = (Timer.add)(t + (ldr.__startt - _now()), function()
-    -- function num : 0_1_0 , upvalues : ldr, callFinish
+  ldr.__startt = ldr.__startt or os.time()
+  ldr.__mdelay = Timer.add(t + (ldr.__startt - _now()), function()
     ldr.__mdelay = nil
     callFinish(ldr)
-  end
-)
-  end
+  end)
 end
 
-local leastTime = function(ldr, t)
-  -- function num : 0_2 , upvalues : _ENV, callFinish
+local function leastTime(ldr, t)
   ldr.__least = t + 30
-  if not ldr.__startt then
-    ldr.__startt = (os.time)()
-    ldr.__delay = ((GameGlobal.Timer)()):AddEventTimes(t + (ldr.__startt - _now()), TimerTriggerCount.Once, function()
-    -- function num : 0_2_0 , upvalues : ldr, callFinish
+  ldr.__startt = ldr.__startt or os.time()
+  ldr.__delay = GameGlobal.Timer():AddEventTimes(t + (ldr.__startt - _now()), TimerTriggerCount.Once, function()
     ldr.__delay = nil
     if ldr.__finished then
       callFinish(ldr)
     end
-  end
-)
+  end)
+end
+
+local function OnFinish(ldr, fincall)
+  ldr.__fincall = ldr.__fincall or {}
+  table.insert(ldr.__fincall, fincall)
+  local onfinish = ldr.__onFinish
+  if onfinish then
+    onfinish(ldr.loader, function()
+      ldr.__finished = true
+      if not ldr.__delay then
+        callFinish(ldr)
+      end
+    end)
+    ldr.__onFinish = nil
   end
 end
 
-local OnFinish = function(ldr, fincall)
-  -- function num : 0_3 , upvalues : _ENV, callFinish
-  if not ldr.__fincall then
-    ldr.__fincall = {}
-    ;
-    (table.insert)(ldr.__fincall, fincall)
-    local onfinish = ldr.__onFinish
-    if onfinish then
-      onfinish(ldr.loader, function()
-    -- function num : 0_3_0 , upvalues : ldr, callFinish
-    ldr.__finished = true
-    if not ldr.__delay then
-      callFinish(ldr)
-    end
-  end
-)
-      ldr.__onFinish = nil
-    end
-  end
-end
-
-local onProgress = function(ldr, procall)
-  -- function num : 0_4
+local function onProgress(ldr, procall)
   ldr.__procall = procall
   ldr:__onProgress(function(percent)
-    -- function num : 0_4_0 , upvalues : ldr
-    (ldr.__procall)(ldr:GetProgress())
-  end
-)
+    ldr.__procall(ldr:GetProgress())
+  end)
 end
 
-local smooth = function(ldr)
-  -- function num : 0_5
+local function smooth(ldr)
   ldr.__smooth = true
 end
 
-local GetProgress = function(ldr)
-  -- function num : 0_6 , upvalues : _ENV
+local function GetProgress(ldr)
   local leastt = ldr.__least
-  local progress = (ldr.__GetProgress)(ldr.loader)
+  local progress = ldr.__GetProgress(ldr.loader)
   local maxt = ldr.__max
-  local minpro = nil
-  local nowt = (os.time)()
+  local minpro
+  local nowt = os.time()
   if maxt then
     minpro = (nowt - ldr.__startt) / maxt
   end
-  if not minpro then
-    do return (math.max)(leastt or 0, progress) end
-    return (math.max)(minpro or 0, (math.min)(progress, (nowt - ldr.__startt) / leastt))
+  if not leastt then
+    return math.max(minpro or 0, progress)
   end
+  return math.max(minpro or 0, math.min(progress, (nowt - ldr.__startt) / leastt))
 end
 
-local stop = function(ldr)
-  -- function num : 0_7 , upvalues : _ENV
+local function stop(ldr)
   local delay = ldr.__delay
   if delay then
-    (Timer.del)(delay)
+    Timer.del(delay)
   end
-  ;
-  (ldr.__stop)(ldr)
+  ldr.__stop(ldr)
 end
 
-local safeload = function(self, ...)
-  -- function num : 0_8 , upvalues : _ENV
+local function safeload(self, ...)
   if CatchResError then
-    return (self.__loadAsync)(self.loader, ...)
+    return self.__loadAsync(self.loader, ...)
   else
     local ok, err = pcall(self.__loadAsync, self.loader, ...)
     if ok then
@@ -126,10 +97,9 @@ local safeload = function(self, ...)
   end
 end
 
-local safeloadSync = function(self, ...)
-  -- function num : 0_9 , upvalues : _ENV
+local function safeloadSync(self, ...)
   if CatchResError then
-    return (self.__loadSync)(self.loader, ...)
+    return self.__loadSync(self.loader, ...)
   else
     local ok, err = pcall(self.__loadSync, self.loader, ...)
     if ok then
@@ -138,38 +108,31 @@ local safeloadSync = function(self, ...)
   end
 end
 
-local UnLoad = function(self, ...)
-  -- function num : 0_10
-  (self.__UnLoad)(self.loader, ...)
+local function UnLoad(self, ...)
+  self.__UnLoad(self.loader, ...)
 end
 
-local BeginRecord = function(self)
-  -- function num : 0_11
-  (self.__BeginRecord)(self.loader)
+local function BeginRecord(self)
+  self.__BeginRecord(self.loader)
 end
 
-local EndRecord = function(self)
-  -- function num : 0_12
-  (self.__EndRecord)(self.loader)
+local function EndRecord(self)
+  self.__EndRecord(self.loader)
 end
 
-local Dispose = function(self)
-  -- function num : 0_13
-  (self.__Dispose)(self.loader)
+local function Dispose(self)
+  self.__Dispose(self.loader)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R15 in 'UnsetPending'
-
-GroupLoader.New = function(self, name)
-  -- function num : 0_14 , upvalues : _ENV, oldloader, leastTime, maxTime, smooth, OnFinish, GetProgress, safeload, safeloadSync, UnLoad, BeginRecord, EndRecord, Dispose
+function GroupLoader:New(name)
   if not PUBLIC and not name then
-    name = (debug.traceback)()
+    name = debug.traceback()
   end
   local loader = oldloader(self, name or "empty")
   local instance = {}
   instance.__name = name
   if not PUBLIC then
-    instance.__trace = (debug.traceback)("GroupLoader.new")
+    instance.__trace = debug.traceback("GroupLoader.new")
   end
   instance.leastTime = leastTime
   instance.maxTime = maxTime
@@ -194,8 +157,7 @@ GroupLoader.New = function(self, name)
   return instance
 end
 
-LoadAsync = function(TT, name, loadType, loader)
-  -- function num : 0_15 , upvalues : _ENV
+function LoadAsync(TT, name, loadType, loader)
   local outLoader = true
   if not loader then
     loader = GroupLoader:New()
@@ -204,17 +166,13 @@ LoadAsync = function(TT, name, loadType, loader)
   local request = loader:LoadAsync(name, loadType)
   local id = GetCurTaskId()
   loader:OnFinish(function()
-    -- function num : 0_15_0 , upvalues : outLoader, loader, _ENV, TT, id
     if not outLoader then
       loader:Dispose()
     end
     RESUME(TT, id)
-  end
-)
+  end)
   if not loader.__finished then
     SUSPEND(TT)
   end
   return request
 end
-
-

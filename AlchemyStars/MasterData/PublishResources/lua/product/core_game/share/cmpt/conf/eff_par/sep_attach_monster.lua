@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_attach_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectAttachMonsterParam", SkillEffectParamBase)
 SkillEffectAttachMonsterParam = SkillEffectAttachMonsterParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectAttachMonsterParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectAttachMonsterParam:Constructor(t)
   self._element = t.element
   self._addElite = t.addElite or false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAttachMonsterParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectAttachMonsterParam:GetEffectType()
   return SkillEffectType.AttachMonster
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAttachMonsterParam.GetElement = function(self)
-  -- function num : 0_2
+function SkillEffectAttachMonsterParam:GetElement()
   return self._element
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectAttachMonsterParam.IsAddElite = function(self)
-  -- function num : 0_3
+function SkillEffectAttachMonsterParam:IsAddElite()
   return self._addElite
 end
-
-

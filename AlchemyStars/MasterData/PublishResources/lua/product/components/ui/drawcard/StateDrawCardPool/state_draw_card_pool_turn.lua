@@ -1,78 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/StateDrawCardPool/state_draw_card_pool_turn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateDrawCardPoolTurn", State)
 StateDrawCardPoolTurn = StateDrawCardPoolTurn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateDrawCardPoolTurn.Init = function(self)
-  -- function num : 0_0
+function StateDrawCardPoolTurn:Init()
   self._fsm = self:GetFsm()
-  self._ui = (self._fsm):GetData()
+  self._ui = self._fsm:GetData()
   self.lockKey = "StateDrawCardPoolTurn"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolTurn.OnEnter = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function StateDrawCardPoolTurn:OnEnter(TT, ...)
   self:Init()
   if self._ui then
-    (self._ui):Lock(self.lockKey)
+    self._ui:Lock(self.lockKey)
   end
-  local idx = (table.unpack)({...})
+  local idx = table.unpack({
+    ...
+  })
   if self._ui then
-    local tPet, len = (self._ui):GetPetsByIndex(idx)
-    local anim, animName = (self._ui):GetAnimNameSwitchPool(len)
+    local tPet, len = self._ui:GetPetsByIndex(idx)
+    local anim, animName = self._ui:GetAnimNameSwitchPool(len)
     anim:Play(animName)
-    ;
-    (self._ui):DoIndexerTween(idx)
+    self._ui:DoIndexerTween(idx)
   end
-  do
-    self.isPlaying = true
-    ;
-    ((GameGlobal.Timer)()):AddEventTimes(417, TimerTriggerCount.Once, function()
-    -- function num : 0_1_0 , upvalues : self
+  self.isPlaying = true
+  GameGlobal.Timer():AddEventTimes(417, TimerTriggerCount.Once, function()
     self.isPlaying = false
-  end
-)
-    while self.isPlaying do
-      if self._ui then
-        (self._ui):OnBGLogoMoving()
-      end
-      YIELD(TT)
-    end
+  end)
+  while self.isPlaying do
     if self._ui then
-      (self._ui):Refresh(idx)
+      self._ui:OnBGLogoMoving()
     end
-    if self._fsm then
-      (self._fsm):ChangeState(StateDrawCardPool.TurnNext)
-    end
+    YIELD(TT)
   end
-end
-
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolTurn.OnExit = function(self, TT)
-  -- function num : 0_2
   if self._ui then
-    (self._ui):UnLock(self.lockKey)
+    self._ui:Refresh(idx)
+  end
+  if self._fsm then
+    self._fsm:ChangeState(StateDrawCardPool.TurnNext)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolTurn.Destroy = function(self)
-  -- function num : 0_3
-  if self._ui == nil or self._fsm == nil then
-    return 
+function StateDrawCardPoolTurn:OnExit(TT)
+  if self._ui then
+    self._ui:UnLock(self.lockKey)
   end
-  ;
-  (self._ui):UnLock(self.lockKey)
+end
+
+function StateDrawCardPoolTurn:Destroy()
+  if self._ui == nil or self._fsm == nil then
+    return
+  end
+  self._ui:UnLock(self.lockKey)
   self._fsm = nil
   self._ui = nil
 end
-
-

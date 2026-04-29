@@ -1,29 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_steal_pet_attributes.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewStealPetAttributes", BuffViewBase)
 BuffViewStealPetAttributes = BuffViewStealPetAttributes
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewStealPetAttributes.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewStealPetAttributes:PlayView(TT)
   local result = self:GetBuffResult()
-  local playDamageService = (self._world):GetService("PlayDamage")
+  local playDamageService = self._world:GetService("PlayDamage")
   local hp = result:GetHp()
   local hpMax = result:GetHpMax()
-  do
-    if hp then
-      local entity = self._entity
-      entity:ReplaceRedAndMaxHP(hp, hpMax)
-      playDamageService:_RefreshTeamHP(TT, entity)
-    end
-    local hpCaster = result:GetHpCaster()
-    local hpMaxCaster = result:GetHpMaxCaster()
-    if not (self._viewInstance):GetBuffViewContext() or not ((self._viewInstance):GetBuffViewContext()).casterEntity then
-      local casterEntity = not hpCaster or nil
-    end
+  if hp then
+    local entity = self._entity
+    entity:ReplaceRedAndMaxHP(hp, hpMax)
+    playDamageService:_RefreshTeamHP(TT, entity)
+  end
+  local hpCaster = result:GetHpCaster()
+  local hpMaxCaster = result:GetHpMaxCaster()
+  if hpCaster then
+    local casterEntity = self._viewInstance:GetBuffViewContext() and self._viewInstance:GetBuffViewContext().casterEntity or nil
     casterEntity:ReplaceRedAndMaxHP(hpCaster, hpMaxCaster)
     playDamageService:_RefreshTeamHP(TT, casterEntity)
   end
@@ -31,28 +22,22 @@ end
 
 _class("BuffViewResetStealPetAttributes", BuffViewBase)
 BuffViewResetStealPetAttributes = BuffViewResetStealPetAttributes
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewResetStealPetAttributes.PlayView = function(self, TT)
-  -- function num : 0_1
+function BuffViewResetStealPetAttributes:PlayView(TT)
   local result = self:GetBuffResult()
-  local playDamageService = (self._world):GetService("PlayDamage")
+  local playDamageService = self._world:GetService("PlayDamage")
   local hp = result:GetHp()
   local hpMax = result:GetHpMax()
-  do
-    if hp then
-      local entity = self._entity
-      entity:ReplaceRedAndMaxHP(hp, hpMax)
-      playDamageService:_RefreshTeamHP(TT, entity)
-    end
-    local hpCaster = result:GetHpCaster()
-    local hpMaxCaster = result:GetHpMaxCaster()
-    if not (self._viewInstance):GetBuffViewContext() or not ((self._viewInstance):GetBuffViewContext()).casterEntity then
-      local casterEntity = not hpCaster or nil
-    end
+  if hp then
+    local entity = self._entity
+    entity:ReplaceRedAndMaxHP(hp, hpMax)
+    playDamageService:_RefreshTeamHP(TT, entity)
+  end
+  local hpCaster = result:GetHpCaster()
+  local hpMaxCaster = result:GetHpMaxCaster()
+  if hpCaster then
+    local casterEntity = self._viewInstance:GetBuffViewContext() and self._viewInstance:GetBuffViewContext().casterEntity or nil
     casterEntity:ReplaceRedAndMaxHP(hpCaster, hpMaxCaster)
     playDamageService:_RefreshTeamHP(TT, casterEntity)
   end
 end
-
-

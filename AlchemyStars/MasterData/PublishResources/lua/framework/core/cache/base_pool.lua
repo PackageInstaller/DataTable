@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/cache/base_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BasePool", Object)
 BasePool = BasePool
 local STRING_FORMAT = string.format
 local TABLE_INSERT = table.insert
 local TABLE_CONCAT = table.concat
--- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
 
-BasePool.Constructor = function(self, poolType, limit)
-  -- function num : 0_0
+function BasePool:Constructor(poolType, limit)
   self.poolType = poolType
   self.limitn = limit
   self.queue = {}
@@ -22,41 +15,28 @@ BasePool.Constructor = function(self, poolType, limit)
   self.nameToMaxUsedCount = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Dispose = function(self)
-  -- function num : 0_1
+function BasePool:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Clear = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function BasePool:Clear()
   for i = 1, #self.queue do
-    local cacheObj = (self.queue)[i]
+    local cacheObj = self.queue[i]
     if cacheObj then
       cacheObj:Dispose()
       cacheObj = nil
     end
   end
-  ;
-  (table.clear)(self.queue)
+  table.clear(self.queue)
   self.maxUsedCount = 0
   self.curUseCount = 0
   self.hit = 0
   self.total = 0
-  ;
-  (table.clear)(self.nameToMaxUsedCount)
+  table.clear(self.nameToMaxUsedCount)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Spawn = function(self, name, loadType, onSpawned)
-  -- function num : 0_3 , upvalues : _ENV
+function BasePool:Spawn(name, loadType, onSpawned)
   local r = self:Pop(name)
-  if not r then
-    r = (ResourceManager:GetInstance()):SyncLoadAsset(name, loadType)
-  end
+  r = r or ResourceManager:GetInstance():SyncLoadAsset(name, loadType)
   if r then
     self:Use(name)
     if onSpawned then
@@ -66,14 +46,9 @@ BasePool.Spawn = function(self, name, loadType, onSpawned)
   return r
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.AsyncSpawn = function(self, TT, name, loadType, onSpawned)
-  -- function num : 0_4 , upvalues : _ENV
+function BasePool:AsyncSpawn(TT, name, loadType, onSpawned)
   local r = self:Pop(name)
-  if not r then
-    r = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, name, loadType)
-  end
+  r = r or ResourceManager:GetInstance():AsyncLoadAsset(TT, name, loadType)
   if r then
     self:Use(name)
     if onSpawned then
@@ -83,13 +58,10 @@ BasePool.AsyncSpawn = function(self, TT, name, loadType, onSpawned)
   return r
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.DeSpawn = function(self, resRequest, onDeSpawned)
-  -- function num : 0_5 , upvalues : _ENV
+function BasePool:DeSpawn(resRequest, onDeSpawned)
   if not resRequest then
-    (Log.fatal)("[Pool] DeSpawn Error,resRequest is nil")
-    return 
+    Log.fatal("[Pool] DeSpawn Error,resRequest is nil")
+    return
   end
   local name = resRequest.m_Name
   if onDeSpawned then
@@ -104,228 +76,159 @@ BasePool.DeSpawn = function(self, resRequest, onDeSpawned)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.SetLimit = function(self, limitn)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("[Pool] poolType=", self.poolType, ",SetLimit, old=", self.limitn, ", new=", limitn)
+function BasePool:SetLimit(limitn)
+  Log.debug("[Pool] poolType=", self.poolType, ",SetLimit, old=", self.limitn, ", new=", limitn)
   self.limitn = limitn
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.PreLoad = function(self, name, loadType, preloadAmount)
-  -- function num : 0_7 , upvalues : _ENV
+function BasePool:PreLoad(name, loadType, preloadAmount)
   if NoCache then
-    return 
+    return
   end
   local hadCount = self:GetCount(name)
   local loadCount = preloadAmount - hadCount
-  local moveCount = hadCount <= preloadAmount and hadCount or preloadAmount
-  if moveCount > 0 then
-    (Log.debug)("[Pool] PreLoad,", name, ", moveCount=", moveCount)
+  local moveCount = preloadAmount >= hadCount and hadCount or preloadAmount
+  if 0 < moveCount then
+    Log.debug("[Pool] PreLoad,", name, ", moveCount=", moveCount)
     self:Move(name, moveCount)
   end
-  ;
-  (Log.debug)("[Pool] PreLoad,", name, ", loadCount=", loadCount)
+  Log.debug("[Pool] PreLoad,", name, ", loadCount=", loadCount)
   for i = 1, loadCount do
-    local resRequest = (ResourceManager:GetInstance()):SyncLoadAsset(name, loadType)
+    local resRequest = ResourceManager:GetInstance():SyncLoadAsset(name, loadType)
     self:Push(name, resRequest)
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R12 in 'UnsetPending'
-
     if loadType == LoadType.GameObject and resRequest and resRequest.Obj then
-      ((resRequest.Obj).transform).parent = self:Root()
+      resRequest.Obj.transform.parent = self:Root()
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.AsyncPreLoad = function(self, TT, name, loadType, preloadAmount)
-  -- function num : 0_8 , upvalues : _ENV
+function BasePool:AsyncPreLoad(TT, name, loadType, preloadAmount)
   if NoCache then
-    return 
+    return
   end
   local hadCount = self:GetCount(name)
   local loadCount = preloadAmount - hadCount
-  local moveCount = hadCount <= preloadAmount and hadCount or preloadAmount
-  if moveCount > 0 then
-    (Log.debug)("[Pool] PreLoad,", name, ", moveCount=", moveCount)
+  local moveCount = preloadAmount >= hadCount and hadCount or preloadAmount
+  if 0 < moveCount then
+    Log.debug("[Pool] PreLoad,", name, ", moveCount=", moveCount)
     self:Move(name, moveCount)
   end
-  ;
-  (Log.debug)("[Pool] PreLoad,", name, ", loadCount=", loadCount)
+  Log.debug("[Pool] PreLoad,", name, ", loadCount=", loadCount)
   for i = 1, loadCount do
-    local resRequest = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, name, loadType)
+    local resRequest = ResourceManager:GetInstance():AsyncLoadAsset(TT, name, loadType)
     self:Push(name, resRequest)
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R13 in 'UnsetPending'
-
     if loadType == LoadType.GameObject and resRequest and resRequest.Obj then
-      ((resRequest.Obj).transform).parent = self:Root()
+      resRequest.Obj.transform.parent = self:Root()
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.ConcPreLoad = function(self, name, loadType, preloadAmount)
-  -- function num : 0_9 , upvalues : _ENV
+function BasePool:ConcPreLoad(name, loadType, preloadAmount)
   if NoCache then
-    return 
+    return
   end
   local hadCount = self:GetCount(name)
   local loadCount = preloadAmount - hadCount
-  local moveCount = hadCount <= preloadAmount and hadCount or preloadAmount
-  if moveCount > 0 then
-    (Log.debug)("[Pool] PreLoad,", name, ", moveCount=", moveCount)
+  local moveCount = preloadAmount >= hadCount and hadCount or preloadAmount
+  if 0 < moveCount then
+    Log.debug("[Pool] PreLoad,", name, ", moveCount=", moveCount)
     self:Move(name, moveCount)
   end
-  ;
-  (Log.debug)("[Pool] PreLoad,", name, ", loadCount=", loadCount)
+  Log.debug("[Pool] PreLoad,", name, ", loadCount=", loadCount)
   for i = 1, loadCount do
-    (TaskManager:GetInstance()):StartTask(self.AsyncLoad, self, name, loadType)
+    TaskManager:GetInstance():StartTask(self.AsyncLoad, self, name, loadType)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.AsyncLoad = function(self, TT, name, loadType)
-  -- function num : 0_10 , upvalues : _ENV
-  local resRequest = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, name, loadType)
+function BasePool:AsyncLoad(TT, name, loadType)
+  local resRequest = ResourceManager:GetInstance():AsyncLoadAsset(TT, name, loadType)
   self:Push(name, resRequest)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
   if loadType == LoadType.GameObject and resRequest and resRequest.Obj then
-    ((resRequest.Obj).transform).parent = self:Root()
+    resRequest.Obj.transform.parent = self:Root()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Count = function(self)
-  -- function num : 0_11
+function BasePool:Count()
   return #self.queue
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.GetCount = function(self, name)
-  -- function num : 0_12
+function BasePool:GetCount(name)
   return 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.LogMessages = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (Log.sys)(self:Message())
+function BasePool:LogMessages()
+  Log.sys(self:Message())
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Message = function(self)
-  -- function num : 0_14 , upvalues : _ENV, TABLE_INSERT, STRING_FORMAT, TABLE_CONCAT
+function BasePool:Message()
   local messageTable = {}
   local t1, t2 = {}, {}
   local cnt = 0
-  for k,v in pairs(self.nameToMaxUsedCount) do
+  for k, v in pairs(self.nameToMaxUsedCount) do
     cnt = cnt + v.maxUsedCount
     TABLE_INSERT(t1, STRING_FORMAT("Res name[%s], maxUsedCount[%d]", k, v.maxUsedCount))
     TABLE_INSERT(t2, STRING_FORMAT("Res name[%s], PreLoadAmount[%d]", k, v.maxUsedCount))
   end
   TABLE_INSERT(messageTable, STRING_FORMAT("--------------------Pool[%s]--------------------", self.poolType))
-  if self.total ~= 0 or not 0 then
-    TABLE_INSERT(messageTable, STRING_FORMAT("maxUsedCount[%d],limitn[%d],curCount[%d],hit[%d], total[%d], hitRate[%f%%]", self.maxUsedCount, self.limitn, self:Count(), self.hit, self.total, self.hit * 100 / self.total))
-    TABLE_INSERT(messageTable, TABLE_CONCAT(t1, "\n"))
-    TABLE_INSERT(messageTable, "\nPool limit suggest: ")
-    TABLE_INSERT(messageTable, STRING_FORMAT("limit[%d]", cnt))
-    if #t2 > 0 then
-      TABLE_INSERT(messageTable, "Pool PreLoad suggest: ")
-      TABLE_INSERT(messageTable, STRING_FORMAT("%s", TABLE_CONCAT(t2, "\n")))
-    end
-    TABLE_INSERT(messageTable, "\n")
-    return TABLE_CONCAT(messageTable, "\n")
+  TABLE_INSERT(messageTable, STRING_FORMAT("maxUsedCount[%d],limitn[%d],curCount[%d],hit[%d], total[%d], hitRate[%f%%]", self.maxUsedCount, self.limitn, self:Count(), self.hit, self.total, self.total == 0 and 0 or self.hit * 100 / self.total))
+  TABLE_INSERT(messageTable, TABLE_CONCAT(t1, "\n"))
+  TABLE_INSERT(messageTable, [[
+
+Pool limit suggest: ]])
+  TABLE_INSERT(messageTable, STRING_FORMAT("limit[%d]", cnt))
+  if 0 < #t2 then
+    TABLE_INSERT(messageTable, "Pool PreLoad suggest: ")
+    TABLE_INSERT(messageTable, STRING_FORMAT("%s", TABLE_CONCAT(t2, "\n")))
   end
+  TABLE_INSERT(messageTable, "\n")
+  return TABLE_CONCAT(messageTable, "\n")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Root = function(self)
-  -- function num : 0_15
-  return 
+function BasePool:Root()
+  return
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Use = function(self, name)
-  -- function num : 0_16
+function BasePool:Use(name)
   self.curUseCount = self.curUseCount + 1
-  if self.maxUsedCount < self.curUseCount then
+  if self.curUseCount > self.maxUsedCount then
     self.maxUsedCount = self.curUseCount
   end
-  local t = (self.nameToMaxUsedCount)[name]
+  local t = self.nameToMaxUsedCount[name]
   if not t then
     t = {curUseCount = 0, maxUsedCount = 0}
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.nameToMaxUsedCount)[name] = t
+    self.nameToMaxUsedCount[name] = t
   end
   t.curUseCount = t.curUseCount + 1
-  if t.maxUsedCount < t.curUseCount then
+  if t.curUseCount > t.maxUsedCount then
     t.maxUsedCount = t.curUseCount
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.UnUse = function(self, name)
-  -- function num : 0_17 , upvalues : _ENV
+function BasePool:UnUse(name)
   self.curUseCount = self.curUseCount - 1
-  local t = (self.nameToMaxUsedCount)[name]
+  local t = self.nameToMaxUsedCount[name]
   if t then
     t.curUseCount = t.curUseCount - 1
   else
-    ;
-    (Log.fatal)("[Pool] UnUse, cannot find name=", name, " in self.nameToMaxUsedCount")
+    Log.fatal("[Pool] UnUse, cannot find name=", name, " in self.nameToMaxUsedCount")
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Move = function(self, name, moveCount)
-  -- function num : 0_18
+function BasePool:Move(name, moveCount)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Pop = function(self, name)
-  -- function num : 0_19
-  return 
+function BasePool:Pop(name)
+  return
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.Push = function(self, name, resRequest)
-  -- function num : 0_20
+function BasePool:Push(name, resRequest)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.RemoveFromCacheTable = function(self, name)
-  -- function num : 0_21
+function BasePool:RemoveFromCacheTable(name)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.OnCreated = function(self)
-  -- function num : 0_22
+function BasePool:OnCreated()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-BasePool.OnDestroyed = function(self)
-  -- function num : 0_23
+function BasePool:OnDestroyed()
 end
-
-

@@ -1,95 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recommend_icon_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopRecommendIconBtn", UICustomWidget)
 UIShopRecommendIconBtn = UIShopRecommendIconBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopRecommendIconBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIShopRecommendIconBtn:OnShow()
   self._isSelected = false
   self.nameSelect = self:GetUIComponent("UILocalizedTMP", "nameSelect")
   self.nameNormal = self:GetUIComponent("UILocalizationText", "nameNormal")
   self.normalImg = self:GetGameObject("normalImg")
   self.selectImg = self:GetGameObject("selectImg")
-  self.animation = (self:GetGameObject()):GetComponent("Animation")
+  self.animation = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendIconBtn.Init = function(self, index, shopRecommendTabDataGroup, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopRecommendIconBtn:Init(index, shopRecommendTabDataGroup, callback)
   self.index = index
   self.shopRecommendTabDataGroup = shopRecommendTabDataGroup
   self.callback = callback
-  ;
-  (self.nameSelect):SetText((StringTable.Get)((self.shopRecommendTabDataGroup):GetGroupName()))
-  ;
-  (self.nameNormal):SetText((StringTable.Get)((self.shopRecommendTabDataGroup):GetGroupName()))
+  self.nameSelect:SetText(StringTable.Get(self.shopRecommendTabDataGroup:GetGroupName()))
+  self.nameNormal:SetText(StringTable.Get(self.shopRecommendTabDataGroup:GetGroupName()))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendIconBtn.Select = function(self, select, playAnimation)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopRecommendIconBtn:Select(select, playAnimation)
   local preSelected = self._isSelected
   self._isSelected = select
-  ;
-  (self.normalImg):SetActive(not select)
-  ;
-  (self.selectImg):SetActive(select)
-  ;
-  ((self.nameSelect).gameObject):SetActive(select)
-  ;
-  ((self.nameNormal).gameObject):SetActive(not select)
+  self.normalImg:SetActive(not select)
+  self.selectImg:SetActive(select)
+  self.nameSelect.gameObject:SetActive(select)
+  self.nameNormal.gameObject:SetActive(not select)
   if playAnimation and preSelected ~= self._isSelected then
     if self._isSelected then
-      (self.animation):Play("uianim_UIShopRecommendIconBtn_in")
+      self.animation:Play("uianim_UIShopRecommendIconBtn_in")
     else
-      ;
-      (self.selectImg):SetActive(true)
-      ;
-      (self.animation):Play("uianim_UIShopRecommendIconBtn_out")
+      self.selectImg:SetActive(true)
+      self.animation:Play("uianim_UIShopRecommendIconBtn_out")
       local animLength = 250
-      do
-        self:StartSafeTask("UIShopRecommendIconBtn::PlayOutAnimation", function(lockName, TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV, animLength
-    self:Lock(lockName)
-    YIELD(TT, animLength)
-    self:UnLock(lockName)
-    ;
-    (self.selectImg):SetActive(self._isSelected)
-  end
-)
-      end
+      self:StartSafeTask("UIShopRecommendIconBtn::PlayOutAnimation", function(lockName, TT)
+        self:Lock(lockName)
+        YIELD(TT, animLength)
+        self:UnLock(lockName)
+        self.selectImg:SetActive(self._isSelected)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendIconBtn.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIShopRecommendIconBtn:BtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self.callback then
-    (self.callback)(self.index)
+    self.callback(self.index)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendIconBtn.IsSelected = function(self)
-  -- function num : 0_4
+function UIShopRecommendIconBtn:IsSelected()
   return self._isSelected
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendIconBtn.PlayAnimation = function(self, animName)
-  -- function num : 0_5
-  (self.animation):Play(animName)
+function UIShopRecommendIconBtn:PlayAnimation(animName)
+  self.animation:Play(animName)
 end
-
-

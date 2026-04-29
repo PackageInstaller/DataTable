@@ -1,336 +1,239 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_dispatch_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDispatchDetailController", UIController)
 UIDispatchDetailController = UIDispatchDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDispatchDetailController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-  self._roomData = (self._aircraftModule):GetRoomByRoomType(AirRoomType.DispatchRoom)
+function UIDispatchDetailController:LoadDataOnEnter(TT, res, uiParams)
+  self._aircraftModule = GameGlobal.GetModule(AircraftModule)
+  self._roomData = self._aircraftModule:GetRoomByRoomType(AirRoomType.DispatchRoom)
   self._pointDatas = {}
-  self._petModule = (GameGlobal.GetModule)(PetModule)
-  local maxPointCount = (self._roomData):GetSiteMaxNum()
+  self._petModule = GameGlobal.GetModule(PetModule)
+  local maxPointCount = self._roomData:GetSiteMaxNum()
   for i = 1, maxPointCount do
-    local siteInfo = (self._roomData):GetSiteInfo(i - 1)
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R10 in 'UnsetPending'
-
+    local siteInfo = self._roomData:GetSiteInfo(i - 1)
     if siteInfo and (siteInfo.state == DispatchTaskStateType.DTST_New or siteInfo.state == DispatchTaskStateType.DTST_Doing) then
-      (self._pointDatas)[#self._pointDatas + 1] = i - 1
+      self._pointDatas[#self._pointDatas + 1] = i - 1
     end
   end
   self._maxPointCount = #self._pointDatas
   self._dispatchPets = {}
   for i = 1, maxPointCount do
     local pointIndex = i - 1
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R10 in 'UnsetPending'
-
-    if (self._dispatchPets)[pointIndex] == nil then
-      (self._dispatchPets)[pointIndex] = {}
+    if self._dispatchPets[pointIndex] == nil then
+      self._dispatchPets[pointIndex] = {}
     end
-    local siteInfo = (self._roomData):GetSiteInfo(pointIndex)
+    local siteInfo = self._roomData:GetSiteInfo(pointIndex)
     if siteInfo then
       local teamMembers = siteInfo.teamMember
       if teamMembers then
         for j = 1, #teamMembers do
-          local pet = (self._petModule):GetPet(teamMembers[j])
-          -- DECOMPILER ERROR at PC88: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          ((self._dispatchPets)[pointIndex])[#(self._dispatchPets)[pointIndex] + 1] = pet
+          local pet = self._petModule:GetPet(teamMembers[j])
+          self._dispatchPets[pointIndex][#self._dispatchPets[pointIndex] + 1] = pet
         end
       end
     end
   end
   self._workingPets = {}
-  local spaces = (Cfg.cfg_aircraft_space)({})
+  local spaces = Cfg.cfg_aircraft_space({})
   for i = 1, #spaces do
-    local room = (self._aircraftModule):GetRoom(i)
+    local room = self._aircraftModule:GetRoom(i)
     if room then
       local pets = room:GetPets()
       if pets then
-        for _,pet in pairs(pets) do
-          -- DECOMPILER ERROR at PC118: Confused about usage of register: R17 in 'UnsetPending'
-
-          (self._workingPets)[pet:GetPstID()] = i
+        for _, pet in pairs(pets) do
+          self._workingPets[pet:GetPstID()] = i
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDispatchDetailController:OnShow(uiParams)
   self._leftBtnGo = self:GetGameObject("LeftBtn")
   self._rightBtnGo = self:GetGameObject("RightBtn")
   self._suggestDesPanel = self:GetGameObject("SuggestDesPanel")
   self._topBarLoader = self:GetUIComponent("UISelectObjectPath", "TopBarLoader")
-  self.topButtonWidget = (self._topBarLoader):SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self.topButtonWidget = self._topBarLoader:SpawnObject("UICommonTopButton")
+  self.topButtonWidget:SetData(function()
     self:OnBack()
-  end
-, function()
-    -- function num : 0_1_1 , upvalues : self
+  end, function()
     self:OnHelp()
-  end
-, function()
-    -- function num : 0_1_2 , upvalues : self
+  end, function()
     self:OnHome()
-  end
-)
+  end)
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
   local pointIndex = uiParams[1]
   for i = 1, self._maxPointCount do
-    if (self._pointDatas)[i] == pointIndex then
+    if self._pointDatas[i] == pointIndex then
       self._currentIndex = i
       break
     end
   end
-  do
-    if not self._currentIndex then
-      return 
-    end
-    self._scrollViewHelper = H3DScrollViewHelper:New(self, "InfoScroll", "UIDispatchDetailItem", function(index, uiwidget, currentIndex)
-    -- function num : 0_1_3 , upvalues : self
+  if not self._currentIndex then
+    return
+  end
+  self._scrollViewHelper = H3DScrollViewHelper:New(self, "InfoScroll", "UIDispatchDetailItem", function(index, uiwidget, currentIndex)
     return self:OnShowItem(index, uiwidget, currentIndex)
-  end
-)
-    ;
-    (self._scrollViewHelper):Init(self._maxPointCount, self._currentIndex, Vector2(0, 0))
-    self._isMoving = false
-    self:_RefreshButtonStatus()
-  end
+  end)
+  self._scrollViewHelper:Init(self._maxPointCount, self._currentIndex, Vector2(0, 0))
+  self._isMoving = false
+  self:_RefreshButtonStatus()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.OnHide = function(self)
-  -- function num : 0_2
+function UIDispatchDetailController:OnHide()
   if self._scrollViewHelper then
-    (self._scrollViewHelper):Dispose()
+    self._scrollViewHelper:Dispose()
   end
   self._isMoving = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.OnShowItem = function(self, index, uiwidget, currentIndex)
-  -- function num : 0_3
-  uiwidget:Refresh((self._pointDatas)[index], self)
+function UIDispatchDetailController:OnShowItem(index, uiwidget, currentIndex)
+  uiwidget:Refresh(self._pointDatas[index], self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController._RefreshButtonStatus = function(self)
-  -- function num : 0_4
+function UIDispatchDetailController:_RefreshButtonStatus()
   if self._currentIndex == 1 then
-    (self._leftBtnGo):SetActive(false)
+    self._leftBtnGo:SetActive(false)
   else
-    ;
-    (self._leftBtnGo):SetActive(true)
+    self._leftBtnGo:SetActive(true)
   end
   if self._currentIndex == self._maxPointCount then
-    (self._rightBtnGo):SetActive(false)
+    self._rightBtnGo:SetActive(false)
   else
-    ;
-    (self._rightBtnGo):SetActive(true)
+    self._rightBtnGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UIDispatchDetailController:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.LeftBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIDispatchDetailController:LeftBtnOnClick(go)
   if self._isMoving then
-    return 
+    return
   end
   if not self._currentIndex then
-    return 
+    return
   end
   if self._currentIndex > 1 then
     self._isMoving = true
     local tempIndex = self._currentIndex - 1
-    ;
-    (self._scrollViewHelper):MovePanelToIndex(tempIndex, function()
-    -- function num : 0_6_0 , upvalues : self
-    self:ResetDispatchPets()
-    self._currentIndex = self._currentIndex - 1
-    self:_RefreshButtonStatus()
-    self._isMoving = false
-  end
-)
+    self._scrollViewHelper:MovePanelToIndex(tempIndex, function()
+      self:ResetDispatchPets()
+      self._currentIndex = self._currentIndex - 1
+      self:_RefreshButtonStatus()
+      self._isMoving = false
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.RightBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIDispatchDetailController:RightBtnOnClick(go)
   if self._isMoving then
-    return 
+    return
   end
   if not self._currentIndex then
-    return 
+    return
   end
   if self._currentIndex < self._maxPointCount then
     self._isMoving = true
     local tempIndex = self._currentIndex + 1
-    ;
-    (self._scrollViewHelper):MovePanelToIndex(tempIndex, function()
-    -- function num : 0_7_0 , upvalues : self
-    self._currentIndex = self._currentIndex + 1
-    self:ResetDispatchPets()
-    self:_RefreshButtonStatus()
-    self._isMoving = false
-  end
-)
+    self._scrollViewHelper:MovePanelToIndex(tempIndex, function()
+      self._currentIndex = self._currentIndex + 1
+      self:ResetDispatchPets()
+      self:_RefreshButtonStatus()
+      self._isMoving = false
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.ShowTips = function(self, itemId, pos, des)
-  -- function num : 0_8
-  (self._tips):SetData(itemId, pos, des)
+function UIDispatchDetailController:ShowTips(itemId, pos, des)
+  self._tips:SetData(itemId, pos, des)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.GetDispatchPets = function(self, index)
-  -- function num : 0_9
-  return (self._dispatchPets)[index]
+function UIDispatchDetailController:GetDispatchPets(index)
+  return self._dispatchPets[index]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.ResetDispatchPets = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local maxPointCount = (self._roomData):GetSiteMaxNum()
+function UIDispatchDetailController:ResetDispatchPets()
+  local maxPointCount = self._roomData:GetSiteMaxNum()
   self._dispatchPets = {}
   for i = 1, maxPointCount do
     local pointIndex = i - 1
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._dispatchPets)[pointIndex] == nil then
-      (self._dispatchPets)[pointIndex] = {}
+    if self._dispatchPets[pointIndex] == nil then
+      self._dispatchPets[pointIndex] = {}
     end
-    local siteInfo = (self._roomData):GetSiteInfo(pointIndex)
+    local siteInfo = self._roomData:GetSiteInfo(pointIndex)
     if siteInfo then
       local teamMembers = siteInfo.teamMember
       if teamMembers then
         for j = 1, #teamMembers do
-          local pet = (self._petModule):GetPet(teamMembers[j])
-          -- DECOMPILER ERROR at PC40: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          ((self._dispatchPets)[pointIndex])[#(self._dispatchPets)[pointIndex] + 1] = pet
+          local pet = self._petModule:GetPet(teamMembers[j])
+          self._dispatchPets[pointIndex][#self._dispatchPets[pointIndex] + 1] = pet
         end
       end
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateDispatchPetList)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateDispatchPetList)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.GetExcludePets = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIDispatchDetailController:GetExcludePets()
   local pets = {}
-  for _,v in pairs(self._dispatchPets) do
-    for _,pet in pairs(v) do
+  for _, v in pairs(self._dispatchPets) do
+    for _, pet in pairs(v) do
       pets[#pets + 1] = pet
     end
   end
   return pets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.GetWorkingPets = function(self)
-  -- function num : 0_12
+function UIDispatchDetailController:GetWorkingPets()
   return self._workingPets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.OnBack = function(self)
-  -- function num : 0_13
+function UIDispatchDetailController:OnBack()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.OnHome = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveAircraft)
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
+function UIDispatchDetailController:OnHome()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveAircraft)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.OnHelp = function(self)
-  -- function num : 0_15
+function UIDispatchDetailController:OnHelp()
   self:ShowDialog("UIHelpController", "UIDispatchDetailController")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.Close = function(self)
-  -- function num : 0_16
+function UIDispatchDetailController:Close()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.SuggestDesPanelOnClick = function(self, go)
-  -- function num : 0_17
-  (self._suggestDesPanel):SetActive(false)
+function UIDispatchDetailController:SuggestDesPanelOnClick(go)
+  self._suggestDesPanel:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchDetailController.ShowSuggestDesPanel = function(self)
-  -- function num : 0_18
-  (self._suggestDesPanel):SetActive(true)
+function UIDispatchDetailController:ShowSuggestDesPanel()
+  self._suggestDesPanel:SetActive(true)
 end
 
-local id2name = {"StarPanel", "RewardGuideFrame", "SuggestPetGuideFrame", "TaskTimePanel", "AutoSelectBtn", "DispatchtBtn"}
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
+local id2name = {
+  "StarPanel",
+  "RewardGuideFrame",
+  "SuggestPetGuideFrame",
+  "TaskTimePanel",
+  "AutoSelectBtn",
+  "DispatchtBtn"
+}
 
-UIDispatchDetailController.GetCurrentItemGameObject = function(self, name)
-  -- function num : 0_19 , upvalues : id2name
-  local curWidget = (self._scrollViewHelper):GetUseItem(self._currentIndex)
+function UIDispatchDetailController:GetCurrentItemGameObject(name)
+  local curWidget = self._scrollViewHelper:GetUseItem(self._currentIndex)
   if curWidget then
     local uiName = id2name[name]
     return curWidget:GetGameObject(uiName)
   end
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UIDispatchDetailController.GetCurrentItemExtraRewardItem = function(self)
-  -- function num : 0_20
-  local curWidget = (self._scrollViewHelper):GetUseItem(self._currentIndex)
+function UIDispatchDetailController:GetCurrentItemExtraRewardItem()
+  local curWidget = self._scrollViewHelper:GetUseItem(self._currentIndex)
   if curWidget then
-    return (curWidget:GetExtraRewardItem()):GetGameObject("Mask_Guide")
+    return curWidget:GetExtraRewardItem():GetGameObject("Mask_Guide")
   end
 end
-
-

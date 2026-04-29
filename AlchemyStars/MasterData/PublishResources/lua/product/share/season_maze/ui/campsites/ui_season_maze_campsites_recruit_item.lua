@@ -1,56 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_recruit_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMaze_Campsites_Recruit_Item", UICustomWidget)
 UISeasonMaze_Campsites_Recruit_Item = UISeasonMaze_Campsites_Recruit_Item
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_Recruit_Item.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMaze_Campsites_Recruit_Item:InitWidget()
   self._SelectedAreaGo = self:GetGameObject("SelectedArea")
   self._SelectedOtherAreaGo = self:GetGameObject("SelectedOtherArea")
   self._card = self:GetUIComponent("UISelectObjectPath", "card")
   self._cardGo = self:GetGameObject("card")
   self._cardAreaGo = self:GetGameObject("cardarea")
   self._imgBG = self:GetGameObject("imgBG")
-  ;
-  (self._imgBG):SetActive(false)
+  self._imgBG:SetActive(false)
   self._interactableImg = self:GetUIComponent("Image", "imgBG")
   self._imgMask = self:GetGameObject("imgMask")
-  ;
-  (self._imgMask):SetActive(false)
-  self._tran = (self:GetGameObject()):GetComponent("RectTransform")
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._imgMask:SetActive(false)
+  self._tran = self:GetGameObject():GetComponent("RectTransform")
+  self._anim = self:GetGameObject():GetComponent("Animation")
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Recruit_Item.Flush = function(self)
-  -- function num : 0_1
-  (self._cardGo):SetActive(true)
+function UISeasonMaze_Campsites_Recruit_Item:Flush()
+  self._cardGo:SetActive(true)
   self:Select()
-  local uiItem = (self._card):SpawnObject("UISeasonMaze_Campsites_RecruitPetItem")
+  local uiItem = self._card:SpawnObject("UISeasonMaze_Campsites_RecruitPetItem")
   self._itemTemp = uiItem
   uiItem:SetData(self._petInfo, self._petInfoList)
-  return 
+  return
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Recruit_Item.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UISeasonMaze_Campsites_Recruit_Item:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Recruit_Item.SetData = function(self, idx, petInfo, petInfoList, callback)
-  -- function num : 0_3
+function UISeasonMaze_Campsites_Recruit_Item:SetData(idx, petInfo, petInfoList, callback)
   if not petInfo then
-    return 
+    return
   end
   self._idx = idx
   self._petInfo = petInfo
@@ -59,83 +41,58 @@ UISeasonMaze_Campsites_Recruit_Item.SetData = function(self, idx, petInfo, petIn
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Recruit_Item.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMaze_Campsites_Recruit_Item:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Recruit_Item.BtnOnClick = function(self)
-  -- function num : 0_5
+function UISeasonMaze_Campsites_Recruit_Item:BtnOnClick()
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Recruit_Item.Select = function(self, index)
-  -- function num : 0_6
+function UISeasonMaze_Campsites_Recruit_Item:Select(index)
   if not index then
-    (self._SelectedAreaGo):SetActive(false)
-    ;
-    (self._SelectedOtherAreaGo):SetActive(false)
-    return 
+    self._SelectedAreaGo:SetActive(false)
+    self._SelectedOtherAreaGo:SetActive(false)
+    return
   end
-  ;
-  (self._SelectedAreaGo):SetActive(self._idx == index)
-  ;
-  (self._SelectedOtherAreaGo):SetActive(self._idx ~= index)
-  if self._idx == index and self._anim then
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uianim_UISeasonMaze_Campsites_RecruitItem_Selected")
+  self._SelectedAreaGo:SetActive(self._idx == index)
+  self._SelectedOtherAreaGo:SetActive(self._idx ~= index)
+  if self._idx == index then
+    if self._anim then
+      self._anim:Stop()
+      self._anim:Play("uianim_UISeasonMaze_Campsites_RecruitItem_Selected")
+    end
+  elseif self._anim then
+    self._anim:Stop()
+    self._anim:Play("uianim_UISeasonMaze_Campsites_RecruitItem_mask")
   end
-  if self._anim then
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uianim_UISeasonMaze_Campsites_RecruitItem_mask")
-  end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Recruit_Item.PlayShowInAnim = function(self, delay)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMaze_Campsites_Recruit_Item:PlayShowInAnim(delay)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
-    ;
-    (self._cardAreaGo):SetActive(true)
+    GameGlobal.Timer():CancelEvent(self._timer)
+    self._cardAreaGo:SetActive(true)
   end
-  if delay and delay > 0 then
-    (self._cardAreaGo):SetActive(false)
-    self._timer = ((GameGlobal.Timer)()):AddEvent(delay, function()
-    -- function num : 0_7_0 , upvalues : self
-    (self._cardAreaGo):SetActive(true)
-    if self._anim then
-      (self._anim):Play("uianim_UISeasonMaze_Campsites_RecruitItem_in")
-    end
-  end
-)
+  if delay and 0 < delay then
+    self._cardAreaGo:SetActive(false)
+    self._timer = GameGlobal.Timer():AddEvent(delay, function()
+      self._cardAreaGo:SetActive(true)
+      if self._anim then
+        self._anim:Play("uianim_UISeasonMaze_Campsites_RecruitItem_in")
+      end
+    end)
   else
-    ;
-    (self._cardAreaGo):SetActive(false)
-    self._timer = ((GameGlobal.Timer)()):AddEvent(delay, function()
-    -- function num : 0_7_1 , upvalues : self
-    (self._cardAreaGo):SetActive(true)
-    if self._anim then
-      (self._anim):Play("uianim_UISeasonMaze_Campsites_RecruitItem_in")
-    end
-  end
-)
+    self._cardAreaGo:SetActive(false)
+    self._timer = GameGlobal.Timer():AddEvent(delay, function()
+      self._cardAreaGo:SetActive(true)
+      if self._anim then
+        self._anim:Play("uianim_UISeasonMaze_Campsites_RecruitItem_in")
+      end
+    end)
   end
 end
-
-

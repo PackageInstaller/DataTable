@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/result/play_normal_attack_result_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayNormalAttackResultComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayNormalAttackResultComponent.Constructor = function(self)
-  -- function num : 0_0
+function PlayNormalAttackResultComponent:Constructor()
   self._playNormalSkillSequence = {}
   self._chainPathTriggerTrapDic = {}
   self._normalAttackResultList = {}
@@ -15,60 +8,40 @@ PlayNormalAttackResultComponent.Constructor = function(self)
   self._isFinalAtk = false
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.ClearNormalAttackResult = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.clear)(self._playNormalSkillSequence)
-  ;
-  (table.clear)(self._chainPathTriggerTrapDic)
-  ;
-  (table.clear)(self._normalAttackResultList)
+function PlayNormalAttackResultComponent:ClearNormalAttackResult()
+  table.clear(self._playNormalSkillSequence)
+  table.clear(self._chainPathTriggerTrapDic)
+  table.clear(self._normalAttackResultList)
   self._petRoundTeam = {}
   self._isFinalAtk = false
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.SetPlayNormalAttackFinalAttack = function(self, finalAtk)
-  -- function num : 0_2
+function PlayNormalAttackResultComponent:SetPlayNormalAttackFinalAttack(finalAtk)
   self._isFinalAtk = finalAtk
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.SetCurPlayNormalSkillPlayStartTime = function(self, order, currentTimeMs)
-  -- function num : 0_3
-  local cur = (self._playNormalSkillSequence)[order]
+function PlayNormalAttackResultComponent:SetCurPlayNormalSkillPlayStartTime(order, currentTimeMs)
+  local cur = self._playNormalSkillSequence[order]
   cur.playStartTime = currentTimeMs
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.SetPlayNormalSkillSequence = function(self, playNormalSkillSequence)
-  -- function num : 0_4
+function PlayNormalAttackResultComponent:SetPlayNormalSkillSequence(playNormalSkillSequence)
   self._playNormalSkillSequence = playNormalSkillSequence
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.GetNormalSkillSequenceWithAttackGridData = function(self, skillID, beAttackPos, attackPos)
-  -- function num : 0_5
+function PlayNormalAttackResultComponent:GetNormalSkillSequenceWithAttackGridData(skillID, beAttackPos, attackPos)
   for i = 1, #self._playNormalSkillSequence do
-    local playNormalSkill = (self._playNormalSkillSequence)[i]
-    if playNormalSkill.skillID == skillID and (playNormalSkill.beAttackPos).x == beAttackPos.x and (playNormalSkill.beAttackPos).y == beAttackPos.y and (playNormalSkill.attackPos).x == attackPos.x and (playNormalSkill.attackPos).y == attackPos.y then
+    local playNormalSkill = self._playNormalSkillSequence[i]
+    if playNormalSkill.skillID == skillID and playNormalSkill.beAttackPos.x == beAttackPos.x and playNormalSkill.beAttackPos.y == beAttackPos.y and playNormalSkill.attackPos.x == attackPos.x and playNormalSkill.attackPos.y == attackPos.y then
       return playNormalSkill
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.GetNormalSkillSequenceWithOrder = function(self, order)
-  -- function num : 0_6
+function PlayNormalAttackResultComponent:GetNormalSkillSequenceWithOrder(order)
   for i = 1, #self._playNormalSkillSequence do
-    local playNormalSkill = (self._playNormalSkillSequence)[i]
+    local playNormalSkill = self._playNormalSkillSequence[i]
     if playNormalSkill.order == order then
       return playNormalSkill
     end
@@ -76,141 +49,82 @@ PlayNormalAttackResultComponent.GetNormalSkillSequenceWithOrder = function(self,
   return nil
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.GetPlayNormalSkillSequence = function(self)
-  -- function num : 0_7
+function PlayNormalAttackResultComponent:GetPlayNormalSkillSequence()
   return self._playNormalSkillSequence
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.SetChainPathTriggerTrap = function(self, trapsDic)
-  -- function num : 0_8
+function PlayNormalAttackResultComponent:SetChainPathTriggerTrap(trapsDic)
   self._chainPathTriggerTrapDic = trapsDic
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.GetChainPathTriggerTrap = function(self, pathIndex)
-  -- function num : 0_9
-  return (self._chainPathTriggerTrapDic)[pathIndex]
+function PlayNormalAttackResultComponent:GetChainPathTriggerTrap(pathIndex)
+  return self._chainPathTriggerTrapDic[pathIndex]
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.SetNormalSkillWaitTimeDic = function(self, dic)
-  -- function num : 0_10
+function PlayNormalAttackResultComponent:SetNormalSkillWaitTimeDic(dic)
   self._normalSkillWaitTimeDic = dic
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.GetNormalSkillWaitTimeDic = function(self, petIndex, chainIndex)
-  -- function num : 0_11
-  return ((self._normalSkillWaitTimeDic)[petIndex])[chainIndex]
+function PlayNormalAttackResultComponent:GetNormalSkillWaitTimeDic(petIndex, chainIndex)
+  return self._normalSkillWaitTimeDic[petIndex][chainIndex]
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.SetPathMoveStartWaitTime = function(self, pathMoveStartWaitTime)
-  -- function num : 0_12
+function PlayNormalAttackResultComponent:SetPathMoveStartWaitTime(pathMoveStartWaitTime)
   self._pathMoveStartWaitTime = pathMoveStartWaitTime
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.GetPathMoveStartWaitTime = function(self)
-  -- function num : 0_13
+function PlayNormalAttackResultComponent:GetPathMoveStartWaitTime()
   return self._pathMoveStartWaitTime
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.GetPetNormalAttackResult = function(self, petEntityID)
-  -- function num : 0_14
-  return (self._normalAttackResultList)[petEntityID]
+function PlayNormalAttackResultComponent:GetPetNormalAttackResult(petEntityID)
+  return self._normalAttackResultList[petEntityID]
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.SetPetNormalAttackResultList = function(self, dataList)
-  -- function num : 0_15
+function PlayNormalAttackResultComponent:SetPetNormalAttackResultList(dataList)
   self._normalAttackResultList = dataList
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.GetPetRoundTeam = function(self)
-  -- function num : 0_16
+function PlayNormalAttackResultComponent:GetPetRoundTeam()
   return self._petRoundTeam
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.SetPetRoundTeam = function(self, petRoundTeam)
-  -- function num : 0_17
+function PlayNormalAttackResultComponent:SetPetRoundTeam(petRoundTeam)
   self._petRoundTeam = petRoundTeam
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.GetPlayNormalAttackFinalAttack = function(self)
-  -- function num : 0_18
+function PlayNormalAttackResultComponent:GetPlayNormalAttackFinalAttack()
   return self._isFinalAtk
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_19
+function PlayNormalAttackResultComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayNormalAttackResultComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_20
+function PlayNormalAttackResultComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PlayNormalAttackResult = function(self)
-  -- function num : 0_21
-  return self:GetComponent((self.WEComponentsEnum).PlayNormalAttackResult)
+function Entity:PlayNormalAttackResult()
+  return self:GetComponent(self.WEComponentsEnum.PlayNormalAttackResult)
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPlayNormalAttackResult = function(self)
-  -- function num : 0_22
-  return self:HasComponent((self.WEComponentsEnum).PlayNormalAttackResult)
+function Entity:HasPlayNormalAttackResult()
+  return self:HasComponent(self.WEComponentsEnum.PlayNormalAttackResult)
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPlayNormalAttackResult = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PlayNormalAttackResult
+function Entity:AddPlayNormalAttackResult()
+  local index = self.WEComponentsEnum.PlayNormalAttackResult
   local component = PlayNormalAttackResultComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePlayNormalAttackResult = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PlayNormalAttackResult
+function Entity:ReplacePlayNormalAttackResult()
+  local index = self.WEComponentsEnum.PlayNormalAttackResult
   local component = PlayNormalAttackResultComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePlayNormalAttackResult = function(self)
-  -- function num : 0_25
+function Entity:RemovePlayNormalAttackResult()
   if self:HasPlayNormalAttackResult() then
-    self:RemoveComponent((self.WEComponentsEnum).PlayNormalAttackResult)
+    self:RemoveComponent(self.WEComponentsEnum.PlayNormalAttackResult)
   end
 end
-
-

@@ -1,98 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/trigger/luckland_trigger_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("luckland_trigger_type")
 _class("LuckLandTriggerBase", Object)
 LuckLandTriggerBase = LuckLandTriggerBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandTriggerBase.Constructor = function(self, owner, triggerType, param)
-  -- function num : 0_0
+function LuckLandTriggerBase:Constructor(owner, triggerType, param)
   self._owner = owner
   self._triggerType = triggerType
   self._param = param
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerBase.GetNotifyType = function(self)
-  -- function num : 0_1
-  return (self._owner):GetNotifyType()
+function LuckLandTriggerBase:GetNotifyType()
+  return self._owner:GetNotifyType()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerBase.GetTriggerType = function(self)
-  -- function num : 0_2
+function LuckLandTriggerBase:GetTriggerType()
   return self._triggerType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerBase.OnNotify = function(self, notify)
-  -- function num : 0_3
+function LuckLandTriggerBase:OnNotify(notify)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerBase.IsSatisfied = function(self, notify)
-  -- function num : 0_4
+function LuckLandTriggerBase:IsSatisfied(notify)
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTriggerBase.GetTriggerParamByIndex = function(self, paramIndex)
-  -- function num : 0_5
+function LuckLandTriggerBase:GetTriggerParamByIndex(paramIndex)
   local paramCount = #self._param
-  if paramCount < paramIndex then
+  if paramIndex > paramCount then
     return nil
   end
-  return (self._param)[paramIndex]
+  return self._param[paramIndex]
 end
 
 _class("LLCombinedTrigger", Object)
 LLCombinedTrigger = LLCombinedTrigger
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-LLCombinedTrigger.Constructor = function(self, triggerOwner, notifyTypes)
-  -- function num : 0_6
+function LLCombinedTrigger:Constructor(triggerOwner, notifyTypes)
   self._triggers = {}
   self._triggerOwner = triggerOwner
   self._notifyTypes = notifyTypes
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LLCombinedTrigger.IsNotifyMatch = function(self, notifyType)
-  -- function num : 0_7 , upvalues : _ENV
-  if (table.icontains)(self._notifyTypes, notifyType) then
+function LLCombinedTrigger:IsNotifyMatch(notifyType)
+  if table.icontains(self._notifyTypes, notifyType) then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LLCombinedTrigger.AddTrigger = function(self, trigger)
-  -- function num : 0_8 , upvalues : _ENV
-  (table.insert)(self._triggers, trigger)
+function LLCombinedTrigger:AddTrigger(trigger)
+  table.insert(self._triggers, trigger)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LLCombinedTrigger.GetTriggers = function(self)
-  -- function num : 0_9
+function LLCombinedTrigger:GetTriggers()
   return self._triggers
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LLCombinedTrigger.IsSatisfied = function(self, notify)
-  -- function num : 0_10 , upvalues : _ENV
-  for i,trigger in ipairs(self._triggers) do
+function LLCombinedTrigger:IsSatisfied(notify)
+  for i, trigger in ipairs(self._triggers) do
     if not trigger:IsSatisfied(notify) then
       return false
     end
@@ -100,25 +64,14 @@ LLCombinedTrigger.IsSatisfied = function(self, notify)
   return true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LLCombinedTrigger.OnTrigger = function(self, notify)
-  -- function num : 0_11
-  (self._triggerOwner):OnTrigger(notify)
+function LLCombinedTrigger:OnTrigger(notify)
+  self._triggerOwner:OnTrigger(notify)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LLCombinedTrigger.SetActive = function(self, active)
-  -- function num : 0_12
+function LLCombinedTrigger:SetActive(active)
   self._active = active
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LLCombinedTrigger.IsActive = function(self)
-  -- function num : 0_13
+function LLCombinedTrigger:IsActive()
   return self._active
 end
-
-

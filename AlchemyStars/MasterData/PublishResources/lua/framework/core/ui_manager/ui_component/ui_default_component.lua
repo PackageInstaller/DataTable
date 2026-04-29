@@ -1,41 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_component/ui_default_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDefaultComponent", UIComponent)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDefaultComponent.Constructor = function(self)
-  -- function num : 0_0
+function UIDefaultComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDefaultComponent.Show = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local keepVoice = (self.uiController):GetComponentSharedParam(UIComponentParamType.KeepVoice)
+function UIDefaultComponent:Show(uiParams)
+  local keepVoice = self.uiController:GetComponentSharedParam(UIComponentParamType.KeepVoice)
   if not keepVoice then
-    ((GameGlobal.GetModule)(PetAudioModule)):StopAll()
+    GameGlobal.GetModule(PetAudioModule):StopAll()
   end
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDefaultComponent.AfterShow = function(self, TT)
-  -- function num : 0_2
+function UIDefaultComponent:AfterShow(TT)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDefaultComponent.BeforeHide = function(self, TT)
-  -- function num : 0_3
+function UIDefaultComponent:BeforeHide(TT)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDefaultComponent.Hide = function(self)
-  -- function num : 0_4
+function UIDefaultComponent:Hide()
 end
-
-

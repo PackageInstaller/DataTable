@@ -1,143 +1,90 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cutscene_world.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_world")
 _class("CutsceneWorld", BaseWorld)
 CutsceneWorld = CutsceneWorld
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneWorld.Constructor = function(self, worldInfo)
-  -- function num : 0_0
+function CutsceneWorld:Constructor(worldInfo)
   self._id = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.GetRunningPosition = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneWorld:GetRunningPosition()
   return WorldRunPostion.Cutscene
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.GetService = function(self, service_name)
-  -- function num : 0_2
+function CutsceneWorld:GetService(service_name)
   if self.BW_Services then
-    return (self.BW_Services):GetService(service_name)
+    return self.BW_Services:GetService(service_name)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.Internal_CreateComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (CutsceneWorldAssembler.AssembleCutsceneWorldComponentsBase)(self)
-  ;
-  (CutsceneWorldAssembler.AssembleCutsceneWorldComponents)(self)
+function CutsceneWorld:Internal_CreateComponents()
+  CutsceneWorldAssembler.AssembleCutsceneWorldComponentsBase(self)
+  CutsceneWorldAssembler.AssembleCutsceneWorldComponents(self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.Internal_CreateSystems = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CutsceneWorld:Internal_CreateSystems()
   self.BW_Systems = Systems:New()
   local systemList = {}
   local systemIndexList = {}
   local gamemode_config = CutsceneModeConfig
   for i = 1, #gamemode_config.Systems do
-    local system_config = (gamemode_config.Systems)[i]
+    local system_config = gamemode_config.Systems[i]
     local system_type = system_config.Type
-    local new_system = (Classes[system_type]):New(self)
-    ;
-    (self.BW_Systems):Add(new_system)
+    local new_system = Classes[system_type]:New(self)
+    self.BW_Systems:Add(new_system)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.Internal_CreateServices = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CutsceneWorld:Internal_CreateServices()
   self.BW_Services = ServicesProvider:New()
   local gamemode_config = CutsceneModeConfig
   for i = 1, #gamemode_config.Services do
-    local service_config = (gamemode_config.Services)[i]
+    local service_config = gamemode_config.Services[i]
     local newService = self:_CreateCutsceneService(service_config)
     if newService then
-      (self.BW_Services):AddService(service_config.Name, newService)
+      self.BW_Services:AddService(service_config.Name, newService)
     end
   end
-  ;
-  (self.BW_Services):InitServices()
+  self.BW_Services:InitServices()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld._CreateCutsceneService = function(self, serviceTypeConfig)
-  -- function num : 0_6 , upvalues : _ENV
+function CutsceneWorld:_CreateCutsceneService(serviceTypeConfig)
   local service_type = serviceTypeConfig.Type
   local service_name = serviceTypeConfig.Name
-  local newService = nil
+  local newService
   local pClass = Classes[service_type]
-  if pClass == nil then
-    (Log.error)("-----------Services:Error, Add Service = ", service_type)
+  if nil == pClass then
+    Log.error("-----------Services:Error, Add Service = ", service_type)
   end
   newService = pClass:New(self)
   return newService
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.IDGenerator = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (GameGlobal.GameEventListenerIDGenerator)()
+function CutsceneWorld:IDGenerator()
+  return GameGlobal.GameEventListenerIDGenerator()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.UpdateWorld = function(self, deltaTimeMS)
-  -- function num : 0_8 , upvalues : _ENV
-  ((CutsceneWorld.super).UpdateWorld)(self, deltaTimeMS)
+function CutsceneWorld:UpdateWorld(deltaTimeMS)
+  CutsceneWorld.super.UpdateWorld(self, deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.GetWorldTimer = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  return (GameGlobal.Timer)()
+function CutsceneWorld:GetWorldTimer()
+  return GameGlobal.Timer()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.IsDevelopEnv = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  do return Log.loglevel < ELogLevel.None end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function CutsceneWorld:IsDevelopEnv()
+  return Log.loglevel < ELogLevel.None
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.SetEntityIdByEntityConfigId = function(self, entity, entityConfigId)
-  -- function num : 0_11
+function CutsceneWorld:SetEntityIdByEntityConfigId(entity, entityConfigId)
   self._id = self._id + 1
   entity:SetID(self._id)
-  ;
-  (self._entities):Insert(self._id, entity)
+  self._entities:Insert(self._id, entity)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.SetRenderBoardEntity = function(self, e)
-  -- function num : 0_12
+function CutsceneWorld:SetRenderBoardEntity(e)
   self._renderBoardEntity = e
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneWorld.GetRenderBoardEntity = function(self)
-  -- function num : 0_13
+function CutsceneWorld:GetRenderBoardEntity()
   return self._renderBoardEntity
 end
-
-

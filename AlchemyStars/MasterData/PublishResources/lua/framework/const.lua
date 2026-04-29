@@ -1,35 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
 _G.SECOND = 1000
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
 _G.MINUTE = 60 * SECOND
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 _G.HOUR = 60 * MINUTE
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
 _G.DAY = 24 * HOUR
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
 
-_G.FUNCTION = function()
-  -- function num : 0_0
+function _G.FUNCTION()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-_G.FUNCTIONTABLE = setmetatable({}, {__index = function(t, k)
-  -- function num : 0_1 , upvalues : _ENV
-  return FUNCTION
-end
-, __newindex = function(t, k, v)
-  -- function num : 0_2 , upvalues : _ENV
-  error("readonly!")
-end
+_G.FUNCTIONTABLE = setmetatable({}, {
+  __index = function(t, k)
+    return FUNCTION
+  end,
+  __newindex = function(t, k, v)
+    error("readonly!")
+  end
 })
-

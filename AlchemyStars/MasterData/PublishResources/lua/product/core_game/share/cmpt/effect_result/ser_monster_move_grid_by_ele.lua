@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_monster_move_grid_by_ele.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectMonsterMoveGridByElementResult", SkillEffectResultBase)
 SkillEffectMonsterMoveGridByElementResult = SkillEffectMonsterMoveGridByElementResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMonsterMoveGridByElementResult.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectMonsterMoveGridByElementResult:GetEffectType()
   return SkillEffectType.MonsterMoveGridByMonsterElement
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridByElementResult.Constructor = function(self, walkResultList, isDead)
-  -- function num : 0_1
+function SkillEffectMonsterMoveGridByElementResult:Constructor(walkResultList, isDead)
   self._walkResultList = walkResultList
   self._isDead = isDead
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridByElementResult.GetWalkResultList = function(self)
-  -- function num : 0_2
+function SkillEffectMonsterMoveGridByElementResult:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridByElementResult.IsCasterDead = function(self)
-  -- function num : 0_3
+function SkillEffectMonsterMoveGridByElementResult:IsCasterDead()
   return self._isDead
 end
-
-

@@ -1,21 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2902001/cfg_skill_view_290200101.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterTurnToPlayer; PlayCasterBindEffect,effectID=3371; PlayAudio,audioID=6170,audioType=1; Wait,waitTime=300; PlayRoleTeleport,type=3; PlayFlyEffectCasterToTarget,flyEffectID=3373,flyTime=500,flyTrace=1,teleportPosAsTarget=1; PlayRoleTeleport,type=5; PlayCasterTurnToPlayer; PlayRoleTeleport,type=6; PlayCasterBindEffect,effectID=3372; "}
-}
-, 
-{2, 2, 0, 2, 0, 300, 
-{" DataSelectSummonThing,index=1; ShowSummonThing,label=redoShow; DataSelectNextSummonThing; Jump,condition=CheckSummonThingValid,goto=redoShow; "}
-}
-, 
-{3, 3, 27, 2, 2, 0, 
-{hitAnim = "Hit", hitEffectID = 0, turnToTarget = 1}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterTurnToPlayer; PlayCasterBindEffect,effectID=3371; PlayAudio,audioID=6170,audioType=1; Wait,waitTime=300; PlayRoleTeleport,type=3; PlayFlyEffectCasterToTarget,flyEffectID=3373,flyTime=500,flyTrace=1,teleportPosAsTarget=1; PlayRoleTeleport,type=5; PlayCasterTurnToPlayer; PlayRoleTeleport,type=6; PlayCasterBindEffect,effectID=3372; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    0,
+    300,
+    {
+      " DataSelectSummonThing,index=1; ShowSummonThing,label=redoShow; DataSelectNextSummonThing; Jump,condition=CheckSummonThingValid,goto=redoShow; "
+    }
+  },
+  {
+    3,
+    3,
+    27,
+    2,
+    2,
+    0,
+    {
+      hitAnim = "Hit",
+      hitEffectID = 0,
+      turnToTarget = 1
+    }
+  }
 }
 return config, "ID", key
-

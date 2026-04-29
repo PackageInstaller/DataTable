@@ -1,28 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/hard_level/ui_activity_n32_hard_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN32HardLevel", UIActivityHardLevel)
 UIActivityN32HardLevel = UIActivityN32HardLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN32HardLevel.GetTimeDownString = function(self)
-  -- function num : 0_0
+function UIActivityN32HardLevel:GetTimeDownString()
   return "str_n32_hard_level_remain_time"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevel.NodePlayAnimationInterval = function(self, TT)
-  -- function num : 0_1
+function UIActivityN32HardLevel:NodePlayAnimationInterval(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN32HardLevel.GetLevelNodeName = function(self)
-  -- function num : 0_2
+function UIActivityN32HardLevel:GetLevelNodeName()
   return "UIActivityN32NHardLevelNode"
 end
-
-

@@ -1,158 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/cls/ui_n25_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N25Data", CampaignDataBase)
 N25Data = N25Data
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N25Data.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function N25Data:Constructor()
   self.replays = {}
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
   self.componentIdShop = ECampaignN25ComponentID.ECAMPAIGN_N25_SHOP
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.Init = function(self)
-  -- function num : 0_1
+function N25Data:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetEggCount = function(self)
-  -- function num : 0_2
+function N25Data:GetEggCount()
   return 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetPstId = function()
-  -- function num : 0_3 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function N25Data.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetPrefsKey = function(str)
-  -- function num : 0_4 , upvalues : _ENV
-  local playerPrefsKey = (N25Data.GetPstId)() .. str .. "fk"
+function N25Data.GetPrefsKey(str)
+  local playerPrefsKey = N25Data.GetPstId() .. str .. "fk"
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.HasPrefs = function(key)
-  -- function num : 0_5 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)(key)
+function N25Data.HasPrefs(key)
+  return UnityEngine.PlayerPrefs.HasKey(key)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.SetPrefsKey = function(key)
-  -- function num : 0_6 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+function N25Data.SetPrefsKey(key)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetPrefsKeyMain = function()
-  -- function num : 0_7 , upvalues : _ENV
-  return (N25Data.GetPrefsKey)("UIN25DataPrefsKeyMain_fk")
+function N25Data.GetPrefsKeyMain()
+  return N25Data.GetPrefsKey("UIN25DataPrefsKeyMain_fk")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetPrefsKeyShop = function()
-  -- function num : 0_8 , upvalues : _ENV
-  return (N25Data.GetPrefsKey)("UIN25DataPrefsKeyShop_fk")
+function N25Data.GetPrefsKeyShop()
+  return N25Data.GetPrefsKey("UIN25DataPrefsKeyShop_fk")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetPrefsKeyLine = function()
-  -- function num : 0_9 , upvalues : _ENV
-  return (N25Data.GetPrefsKey)("UIN25DataPrefsKeyNormal_fk")
+function N25Data.GetPrefsKeyLine()
+  return N25Data.GetPrefsKey("UIN25DataPrefsKeyNormal_fk")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetPrefsKeyHard = function()
-  -- function num : 0_10 , upvalues : _ENV
-  return (N25Data.GetPrefsKey)("UIN25DataPrefsKeyHard_fk")
+function N25Data.GetPrefsKeyHard()
+  return N25Data.GetPrefsKey("UIN25DataPrefsKeyHard_fk")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetPrefsKeyGameIdol = function()
-  -- function num : 0_11 , upvalues : _ENV
-  return (N25Data.GetPrefsKey)("UIN25DataPrefsKeyIdol_fk")
+function N25Data.GetPrefsKeyGameIdol()
+  return N25Data.GetPrefsKey("UIN25DataPrefsKeyIdol_fk")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.GetPrefsKeyGameBloodSucker = function()
-  -- function num : 0_12 , upvalues : _ENV
-  return (N25Data.GetPrefsKey)("UIN25DataPrefsKeyBloodSucker_fk")
+function N25Data.GetPrefsKeyGameBloodSucker()
+  return N25Data.GetPrefsKey("UIN25DataPrefsKeyBloodSucker_fk")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.HasPrefsMain = function()
-  -- function num : 0_13 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N25Data.GetPrefsKeyMain)())
+function N25Data.HasPrefsMain()
+  return UnityEngine.PlayerPrefs.HasKey(N25Data.GetPrefsKeyMain())
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.SetPrefsMain = function()
-  -- function num : 0_14 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N25Data.GetPrefsKeyMain)(), 1)
+function N25Data.SetPrefsMain()
+  UnityEngine.PlayerPrefs.SetInt(N25Data.GetPrefsKeyMain(), 1)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.HasPrefsShop = function()
-  -- function num : 0_15 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N25Data.GetPrefsKeyShop)())
+function N25Data.HasPrefsShop()
+  return UnityEngine.PlayerPrefs.HasKey(N25Data.GetPrefsKeyShop())
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.SetPrefsShop = function()
-  -- function num : 0_16 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N25Data.GetPrefsKeyShop)(), 1)
+function N25Data.SetPrefsShop()
+  UnityEngine.PlayerPrefs.SetInt(N25Data.GetPrefsKeyShop(), 1)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.SetPrefsLine = function()
-  -- function num : 0_17 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N25Data.GetPrefsKeyLine)(), 1)
+function N25Data.SetPrefsLine()
+  UnityEngine.PlayerPrefs.SetInt(N25Data.GetPrefsKeyLine(), 1)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.SetPrefsHard = function()
-  -- function num : 0_18 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N25Data.GetPrefsKeyHard)(), 1)
+function N25Data.SetPrefsHard()
+  UnityEngine.PlayerPrefs.SetInt(N25Data.GetPrefsKeyHard(), 1)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.SetPrefsGameIdol = function()
-  -- function num : 0_19 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N25Data.GetPrefsKeyGameIdol)(), 1)
+function N25Data.SetPrefsGameIdol()
+  UnityEngine.PlayerPrefs.SetInt(N25Data.GetPrefsKeyGameIdol(), 1)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N25Data.SetPrefsGameBloodSucker = function()
-  -- function num : 0_20 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N25Data.GetPrefsKeyGameBloodSucker)(), 1)
+function N25Data.SetPrefsGameBloodSucker()
+  UnityEngine.PlayerPrefs.SetInt(N25Data.GetPrefsKeyGameBloodSucker(), 1)
 end
-
-

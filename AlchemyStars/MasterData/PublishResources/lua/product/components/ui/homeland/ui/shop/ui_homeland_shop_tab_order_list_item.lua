@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_tab_order_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopTabOrderListItem", UICustomWidget)
 UIHomelandShopTabOrderListItem = UIHomelandShopTabOrderListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopTabOrderListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandShopTabOrderListItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandShopTabOrderListItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem.SetData = function(self, index, goods_info)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandShopTabOrderListItem:SetData(index, goods_info)
   self._index = index
   self._cfg_id = goods_info.cfg_id
-  self._cfg = (Cfg.cfg_homeland_goods)[goods_info.cfg_id]
+  self._cfg = Cfg.cfg_homeland_goods[goods_info.cfg_id]
   self._infos = goods_info.item_info
   self:_SetRewardIconCount()
   self:_SetRewardCountBg()
@@ -36,228 +23,155 @@ UIHomelandShopTabOrderListItem.SetData = function(self, index, goods_info)
   self:_SetSubmitBtn()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._SetRewardIconCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandShopTabOrderListItem:_SetRewardIconCount()
   local reward = self:_CalcReward()
-  local url = (UIHomelandShopHelper.GetItemIconName)(reward.assetid)
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_rewardIcon", url)
+  local url = UIHomelandShopHelper.GetItemIconName(reward.assetid)
+  UIWidgetHelper.SetRawImage(self, "_rewardIcon", url)
   local text = "x" .. reward.count
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_rewardCount_shop", text)
+  UIWidgetHelper.SetLocalizationText(self, "_rewardCount_shop", text)
   local color = "#3790F5"
-  do
-    if self:_IsExtraReward() then
-      local count = self:_GetExtraCount()
-      color = (UIHomelandShopHelper.GetGoodsExtraColor)(count)
-    end
-    local s = (string.format)("<color=%s>%s</color>", color, text)
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_rewardCount_minimap", s)
+  if self:_IsExtraReward() then
+    local count = self:_GetExtraCount()
+    color = UIHomelandShopHelper.GetGoodsExtraColor(count)
   end
+  local s = string.format("<color=%s>%s</color>", color, text)
+  UIWidgetHelper.SetLocalizationText(self, "_rewardCount_minimap", s)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._SetRewardCountBg = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandShopTabOrderListItem:_SetRewardCountBg()
   local color = "#3790F5"
-  do
-    if self:_IsExtraReward() then
-      local count = self:_GetExtraCount()
-      color = (UIHomelandShopHelper.GetGoodsExtraColor)(count)
-    end
-    local bg = self:GetUIComponent("Image", "_rewardCountBg_shop")
-    bg.color = (UIHomelandShopHelper.Hex2Color)(color)
+  if self:_IsExtraReward() then
+    local count = self:_GetExtraCount()
+    color = UIHomelandShopHelper.GetGoodsExtraColor(count)
   end
+  local bg = self:GetUIComponent("Image", "_rewardCountBg_shop")
+  bg.color = UIHomelandShopHelper.Hex2Color(color)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._SetTypeIcon = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local url = (self._cfg).TypeIcon
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_typeIcon", url)
+function UIHomelandShopTabOrderListItem:_SetTypeIcon()
+  local url = self._cfg.TypeIcon
+  UIWidgetHelper.SetRawImage(self, "_typeIcon", url)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._SetTitle = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local text = (StringTable.Get)((self._cfg).Title)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTitle", text)
+function UIHomelandShopTabOrderListItem:_SetTitle()
+  local text = StringTable.Get(self._cfg.Title)
+  UIWidgetHelper.SetLocalizationText(self, "_txtTitle", text)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._SetDesc = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local text = (StringTable.Get)((self._cfg).Desc)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtDesc", text)
+function UIHomelandShopTabOrderListItem:_SetDesc()
+  local text = StringTable.Get(self._cfg.Desc)
+  UIWidgetHelper.SetLocalizationText(self, "_txtDesc", text)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._SetExtra = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHomelandShopTabOrderListItem:_SetExtra()
   local isExtra = self:_IsExtraReward()
   if isExtra then
     local count = self:_GetExtraCount()
-    local text = (StringTable.Get)("str_homeland_shop_tab_order_extra_reward", count)
-    local color = (UIHomelandShopHelper.GetGoodsExtraColor)(count)
-    local s = (string.format)("<color=%s>%s</color>", color, text)
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_txtExtra", s)
+    local text = StringTable.Get("str_homeland_shop_tab_order_extra_reward", count)
+    local color = UIHomelandShopHelper.GetGoodsExtraColor(count)
+    local s = string.format("<color=%s>%s</color>", color, text)
+    UIWidgetHelper.SetLocalizationText(self, "_txtExtra", s)
   end
-  do
-    ;
-    (self:GetGameObject("_txtExtra")):SetActive(isExtra)
-  end
+  self:GetGameObject("_txtExtra"):SetActive(isExtra)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._SetDynamicList = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandShopTabOrderListItem:_SetDynamicList()
   if not self._dynamicListHelper then
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self:GetUIComponent("UIDynamicScrollView", "_dynamicList"), "UIHomelandShopTabOrderItem", function(listItem, itemIndex)
-    -- function num : 0_9_0 , upvalues : self
-    listItem:SetData((self._infos)[itemIndex], "#e43131", "#747474")
-  end
-)
+      listItem:SetData(self._infos[itemIndex], "#e43131", "#747474")
+    end)
   end
   local itemCount = #self._infos
   local itemCountPerRow = 1
-  ;
-  (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._SetRefreshBtn = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandShopTabOrderListItem:_SetRefreshBtn()
   if not self._refreshBtnObj then
-    self._refreshBtnObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"RefreshBtn"}
-, 
-{"RefreshBtn_Disable"}
-})
+    self._refreshBtnObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+      {"RefreshBtn"},
+      {
+        "RefreshBtn_Disable"
+      }
+    })
   end
-  local mode = (self._cfg).Type ~= HomelandGoodsType.HGT_INITFIX and 1 or 2
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._refreshBtnObj, mode)
+  local mode = self._cfg.Type ~= HomelandGoodsType.HGT_INITFIX and 1 or 2
+  UIWidgetHelper.SetObjGroupShow(self._refreshBtnObj, mode)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._SetSubmitBtn = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandShopTabOrderListItem:_SetSubmitBtn()
   if not self._submitBtnObj then
-    self._submitBtnObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"SubmitBtn"}
-, 
-{"SubmitBtn_Disable"}
-})
+    self._submitBtnObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+      {"SubmitBtn"},
+      {
+        "SubmitBtn_Disable"
+      }
+    })
   end
-  local mode = (UIHomelandShopHelper.CheckOrderRequire)(self._infos) and 1 or 2
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._submitBtnObj, mode)
+  local mode = UIHomelandShopHelper.CheckOrderRequire(self._infos) and 1 or 2
+  UIWidgetHelper.SetObjGroupShow(self._submitBtnObj, mode)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._CalcReward = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandShopTabOrderListItem:_CalcReward()
   local roleAsset = RoleAsset:New()
-  roleAsset.assetid = (UIHomelandShopHelper.GetCoinItemId)()
+  roleAsset.assetid = UIHomelandShopHelper.GetCoinItemId()
   roleAsset.count = 0
-  for _,v in ipairs(self._infos) do
-    local cfg = (Cfg.cfg_homeland_univalence)[v.assetid]
+  for _, v in ipairs(self._infos) do
+    local cfg = Cfg.cfg_homeland_univalence[v.assetid]
     if not cfg then
-      (Log.exception)("UIHomelandShopTabOrderListItem:_CalcReward() cfg_homeland_univalence[", v.assetid, "] = nil")
+      Log.exception("UIHomelandShopTabOrderListItem:_CalcReward() cfg_homeland_univalence[", v.assetid, "] = nil")
     end
     roleAsset.count = roleAsset.count + cfg.Goods * v.count
   end
-  do
-    if self:_IsExtraReward() then
-      local extra = (self._cfg).Extra
-      roleAsset.count = (Mathf.Floor)(roleAsset.count * (1 + extra))
-    end
-    return roleAsset
+  if self:_IsExtraReward() then
+    local extra = self._cfg.Extra
+    roleAsset.count = Mathf.Floor(roleAsset.count * (1 + extra))
   end
+  return roleAsset
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._IsExtraReward = function(self)
-  -- function num : 0_13
-  local extra = (self._cfg).Extra
-  do return extra ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomelandShopTabOrderListItem:_IsExtraReward()
+  local extra = self._cfg.Extra
+  return extra ~= nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._GetExtraCount = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local extra = (self._cfg).Extra
+function UIHomelandShopTabOrderListItem:_GetExtraCount()
+  local extra = self._cfg.Extra
   if extra ~= nil then
-    return (math.floor)(extra * 100)
+    return math.floor(extra * 100)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem.RefreshBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  local itemCount, maxCount = (UIHomelandShopHelper.GetGoodsRefreshCount)()
+function UIHomelandShopTabOrderListItem:RefreshBtnOnClick(go)
+  local itemCount, maxCount = UIHomelandShopHelper.GetGoodsRefreshCount()
   if itemCount == 0 then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_shop_tab_order_confirm_desc_3"))
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_shop_tab_order_confirm_desc_3"))
   else
     self:_ShowDialog_Confirm()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem.SubmitBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UIHomelandShopTabOrderListItem:SubmitBtnOnClick(go)
   local reward = self:_CalcReward()
-  ;
-  (UIHomelandShopHelper.CheckCoinOverflow)(reward.count, function()
-    -- function num : 0_16_0 , upvalues : _ENV, self, reward
-    (UIHomelandShopHelper.Start_HomelandGoodReq)(self._index, true, {reward})
-  end
-)
+  UIHomelandShopHelper.CheckCoinOverflow(reward.count, function()
+    UIHomelandShopHelper.Start_HomelandGoodReq(self._index, true, {reward})
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem._ShowDialog_Confirm = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local descs = {"str_homeland_shop_tab_order_confirm_desc_1", "str_homeland_shop_tab_order_confirm_desc_2"}
+function UIHomelandShopTabOrderListItem:_ShowDialog_Confirm()
+  local descs = {
+    "str_homeland_shop_tab_order_confirm_desc_1",
+    "str_homeland_shop_tab_order_confirm_desc_2"
+  }
   local type = self:_IsExtraReward() and 2 or 1
-  local title = (StringTable.Get)("str_homeland_shop_tab_order_confirm_title")
-  local desc = (StringTable.Get)(descs[type])
-  ;
-  (UIHomelandShopHelper.ShowHomelandMessageBox_OK_Cancel)(title, desc, function()
-    -- function num : 0_17_0 , upvalues : _ENV, self
-    (UIHomelandShopHelper.Start_HomelandGoodReq)(self._index, false)
-  end
-)
+  local title = StringTable.Get("str_homeland_shop_tab_order_confirm_title")
+  local desc = StringTable.Get(descs[type])
+  UIHomelandShopHelper.ShowHomelandMessageBox_OK_Cancel(title, desc, function()
+    UIHomelandShopHelper.Start_HomelandGoodReq(self._index, false)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabOrderListItem.GetSubmitBtn = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local mode = (UIHomelandShopHelper.CheckOrderRequire)(self._infos) and 1 or 2
-  return (self._submitBtnObj)[mode]
+function UIHomelandShopTabOrderListItem:GetSubmitBtn()
+  local mode = UIHomelandShopHelper.CheckOrderRequire(self._infos) and 1 or 2
+  return self._submitBtnObj[mode]
 end
-
-

@@ -1,54 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/level_story_banner_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LevelStoryBannerParam", Object)
 LevelStoryBannerParam = LevelStoryBannerParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelStoryBannerParam.Constructor = function(self, t)
-  -- function num : 0_0
+function LevelStoryBannerParam:Constructor(t)
   self._type = t.Type
   self._param = t.Param
   self._bannerID = t.BannerID
   self._showType = t.ShowType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelStoryBannerParam.GetType = function(self)
-  -- function num : 0_1
+function LevelStoryBannerParam:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelStoryBannerParam.GetParam = function(self)
-  -- function num : 0_2
+function LevelStoryBannerParam:GetParam()
   return self._param
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelStoryBannerParam.GetID = function(self)
-  -- function num : 0_3
+function LevelStoryBannerParam:GetID()
   return self._bannerID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelStoryBannerParam.GetShowType = function(self)
-  -- function num : 0_4
+function LevelStoryBannerParam:GetShowType()
   return self._showType
 end
 
 _class("StoryBannerParam", Object)
 StoryBannerParam = StoryBannerParam
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryBannerParam.Constructor = function(self, t)
-  -- function num : 0_5
+function StoryBannerParam:Constructor(t)
   self._text = t.Text
   self._speaker = t.Speaker
   self._speakerName = t.SpeakerName
@@ -59,101 +38,62 @@ StoryBannerParam.Constructor = function(self, t)
   self._spineAnim = t.SpineAnim
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryBannerParam.GetText = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local text = (StringTable.Get)(self._text)
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function StoryBannerParam:GetText()
+  local text = StringTable.Get(self._text)
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  text = (string.gsub)(text, "PlayerName", name)
+  text = string.gsub(text, "PlayerName", name)
   return text
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryBannerParam.GetSpeakerName = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local speakerName = (StringTable.Get)(self._speakerName)
+function StoryBannerParam:GetSpeakerName()
+  local speakerName = StringTable.Get(self._speakerName)
   return speakerName
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryBannerParam.GetHeadIconName = function(self)
-  -- function num : 0_8
+function StoryBannerParam:GetHeadIconName()
   return self._headIcon
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryBannerParam.GetSpeaker = function(self)
-  -- function num : 0_9
+function StoryBannerParam:GetSpeaker()
   return self._speaker
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryBannerParam.GetSpeakerNameLineType = function(self)
-  -- function num : 0_10
+function StoryBannerParam:GetSpeakerNameLineType()
   return self._speakerNameLineType
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryBannerParam.IsSameSpeaker = function(self, speaker)
-  -- function num : 0_11
-  do return self._speaker == speaker end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function StoryBannerParam:IsSameSpeaker(speaker)
+  return self._speaker == speaker
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryBannerParam.IsSpine = function(self)
-  -- function num : 0_12
-  do return self._spineName ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function StoryBannerParam:IsSpine()
+  return self._spineName ~= nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryBannerParam.GetSpineName = function(self)
-  -- function num : 0_13
+function StoryBannerParam:GetSpineName()
   return self._spineName
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryBannerParam.GetSpineAnim = function(self)
-  -- function num : 0_14
+function StoryBannerParam:GetSpineAnim()
   return self._spineAnim
 end
 
 _class("LevelCutsceneParam", Object)
 LevelCutsceneParam = LevelCutsceneParam
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelCutsceneParam.Constructor = function(self, t)
-  -- function num : 0_15
+function LevelCutsceneParam:Constructor(t)
   self._type = t.Type
   self._param = t.Param
   self._cutsceneID = t.CutsceneID
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCutsceneParam.GetID = function(self)
-  -- function num : 0_16
+function LevelCutsceneParam:GetID()
   return self._cutsceneID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCutsceneParam.GetType = function(self)
-  -- function num : 0_17
+function LevelCutsceneParam:GetType()
   return self._type
 end
-
-

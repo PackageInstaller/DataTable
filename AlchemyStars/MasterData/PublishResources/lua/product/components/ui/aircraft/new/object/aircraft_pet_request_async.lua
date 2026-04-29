@@ -1,98 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_pet_request_async.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_pet_request_base")
 _class("AircraftPetRequestAsync", AircraftPetRequestBase)
 AircraftPetRequestAsync = AircraftPetRequestAsync
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetRequestAsync.Constructor = function(self, petID, pstID, assetName, clickAnimClip)
-  -- function num : 0_0 , upvalues : _ENV
-  self._animName = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(assetName, PetAnimatorControllerType.Aircraft)
+function AircraftPetRequestAsync:Constructor(petID, pstID, assetName, clickAnimClip)
+  self._animName = HelperProxy:GetInstance():GetPetAnimatorControllerName(assetName, PetAnimatorControllerType.Aircraft)
   self._reqs = {}
   self._state = AircraftPetLoadState.Wait
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestAsync.ID = function(self)
-  -- function num : 0_1
+function AircraftPetRequestAsync:ID()
   return self._pstID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestAsync.State = function(self)
-  -- function num : 0_2
+function AircraftPetRequestAsync:State()
   return self._state
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestAsync.PetGameObject = function(self)
-  -- function num : 0_3
+function AircraftPetRequestAsync:PetGameObject()
   return self._petGameObject
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestAsync.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,req in pairs(self._reqs) do
+function AircraftPetRequestAsync:Dispose()
+  for _, req in pairs(self._reqs) do
     req:Dispose()
   end
   self._reqs = {}
   self._state = AircraftPetLoadState.Closed
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestAsync.Load = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function AircraftPetRequestAsync:Load()
   self._state = AircraftPetLoadState.Loading
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
+  GameGlobal.TaskManager():StartTask(function(TT)
     AirLog("开始异步加载星灵:", self._petID)
-    local req1 = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, self._assetName, LoadType.GameObject)
+    local req1 = ResourceManager:GetInstance():AsyncLoadAsset(TT, self._assetName, LoadType.GameObject)
     if not req1 then
-      (Log.exception)("加载星灵模型失败,可能是账号中包含没有资源的星灵:", self._assetName)
+      Log.exception("加载星灵模型失败,可能是账号中包含没有资源的星灵:", self._assetName)
     end
-    ;
-    (table.insert)(self._reqs, req1)
+    table.insert(self._reqs, req1)
     if self._state == AircraftPetLoadState.Invalid then
       self:Dispose()
-      return 
+      return
     end
-    local req2 = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, self._animName, LoadType.GameObject)
+    local req2 = ResourceManager:GetInstance():AsyncLoadAsset(TT, self._animName, LoadType.GameObject)
     if not req2 then
-      (Log.exception)("加载星灵的风船动作失败,可能是策划漏提了资源:", self._animName)
+      Log.exception("加载星灵的风船动作失败,可能是策划漏提了资源:", self._animName)
     end
-    ;
-    (table.insert)(self._reqs, req2)
+    table.insert(self._reqs, req2)
     if self._state == AircraftPetLoadState.Invalid then
       self:Dispose()
-      return 
+      return
     end
     self._petGameObject = req1.Obj
-    self._petAnimation = (req2.Obj):GetComponent("Animation")
+    self._petAnimation = req2.Obj:GetComponent("Animation")
     self:makePet()
     self._state = AircraftPetLoadState.Finish
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetRequestAsync.Close = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function AircraftPetRequestAsync:Close()
   if self._state == AircraftPetLoadState.Loading then
     self._state = AircraftPetLoadState.Invalid
   else
     self._state = AircraftPetLoadState.Closed
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_business.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignInlandBusiness", ICampaignComponentLocalProcessBase)
 CCampaignInlandBusiness = CCampaignInlandBusiness
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignInlandBusiness.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignInlandBusiness:Constructor()
   self._businessComponet = nil
   self._businessComponetInfo = nil
   self._totalProgressComponent = nil
@@ -18,67 +11,46 @@ CCampaignInlandBusiness.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandBusiness.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignInlandBusiness:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_BUSINESS
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandBusiness.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignInlandBusiness:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandBusiness.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignInlandBusiness:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetBusinessCommonComponent()
   self:_GetTotalProgressComponent()
   self:_GetTalentProgressComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandBusiness._GetBusinessCommonComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._businessComponet = (self._campaignObj):GetComponent(ECampaignBusinessComponentID.BUSINESS)
+function CCampaignInlandBusiness:_GetBusinessCommonComponent()
+  self._businessComponet = self._campaignObj:GetComponent(ECampaignBusinessComponentID.BUSINESS)
   if not self._businessComponet then
-    return 
+    return
   end
-  self._businessComponetInfo = (self._businessComponet):ComponentInfo()
+  self._businessComponetInfo = self._businessComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandBusiness._GetTotalProgressComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._totalProgressComponent = (self._campaignObj):GetComponent(ECampaignBusinessComponentID.TOTAL_PROCESS)
+function CCampaignInlandBusiness:_GetTotalProgressComponent()
+  self._totalProgressComponent = self._campaignObj:GetComponent(ECampaignBusinessComponentID.TOTAL_PROCESS)
   if not self._totalProgressComponent then
-    return 
+    return
   end
-  self._totalProgressComponentInfo = (self._totalProgressComponent):ComponentInfo()
+  self._totalProgressComponentInfo = self._totalProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandBusiness._GetTalentProgressComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._talentProgressComponent = (self._campaignObj):GetComponent(ECampaignBusinessComponentID.REWARD_PROCESS)
+function CCampaignInlandBusiness:_GetTalentProgressComponent()
+  self._talentProgressComponent = self._campaignObj:GetComponent(ECampaignBusinessComponentID.REWARD_PROCESS)
   if not self._talentProgressComponent then
-    return 
+    return
   end
-  self._talentProgressComponentInfo = (self._talentProgressComponent):ComponentInfo()
+  self._talentProgressComponentInfo = self._talentProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandBusiness.GetComponent = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignInlandBusiness:GetComponent(componentID)
   if ECampaignBusinessComponentID.BUSINESS == componentID then
     return self._businessComponet
   end
@@ -91,10 +63,7 @@ CCampaignInlandBusiness.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandBusiness.GetComponentInfo = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignInlandBusiness:GetComponentInfo(componentID)
   if ECampaignBusinessComponentID.BUSINESS == componentID then
     return self._businessComponetInfo
   end
@@ -106,5 +75,3 @@ CCampaignInlandBusiness.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

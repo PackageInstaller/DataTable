@@ -1,76 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n26/mission/ui_n26_line_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN26LineMapLine", UICustomWidget)
 UIN26LineMapLine = UIN26LineMapLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN26LineMapLine.OnShow = function(self)
-  -- function num : 0_0
+function UIN26LineMapLine:OnShow()
   self._shape = self:GetUIComponent("RectTransform", "shape")
   self._line = self:GetUIComponent("Image", "line")
   self._atlas = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26LineMapLine.OnHide = function(self)
-  -- function num : 0_1
+function UIN26LineMapLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26LineMapLine.LineCfg = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN26LineMapLine:LineCfg()
   local cfg = {
-[1] = {url = "n26_xxg_xian01", offset = Vector2(0, 20), rotation = 25}
-, 
-[2] = {url = "n26_xxg_xian02", offset = Vector2(0, 0), rotation = -33}
-}
+    [1] = {
+      url = "n26_xxg_xian01",
+      offset = Vector2(0, 20),
+      rotation = 25
+    },
+    [2] = {
+      url = "n26_xxg_xian02",
+      offset = Vector2(0, 0),
+      rotation = -33
+    }
+  }
   return cfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26LineMapLine.SetAtlas = function(self, atlas)
-  -- function num : 0_3
+function UIN26LineMapLine:SetAtlas(atlas)
   self._atlas = atlas
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26LineMapLine.Flush = function(self, from, to)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = nil
-  if from.y < to.y then
-    cfg = (self:LineCfg())[1]
+function UIN26LineMapLine:Flush(from, to)
+  local cfg
+  if to.y > from.y then
+    cfg = self:LineCfg()[1]
   else
-    cfg = (self:LineCfg())[2]
+    cfg = self:LineCfg()[2]
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._line).sprite = (self._atlas):GetSprite(cfg.url)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._line).transform).anchoredPosition = cfg.offset
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._line).transform).localEulerAngles = Vector3(0, 0, cfg.rotation)
+  self._line.sprite = self._atlas:GetSprite(cfg.url)
+  self._line.transform.anchoredPosition = cfg.offset
+  self._line.transform.localEulerAngles = Vector3(0, 0, cfg.rotation)
   local anchoredPosition = (from + to) * 0.5
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._shape).anchoredPosition = anchoredPosition
+  self._shape.anchoredPosition = anchoredPosition
   local v = from - to
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shape).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._shape.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
-
-

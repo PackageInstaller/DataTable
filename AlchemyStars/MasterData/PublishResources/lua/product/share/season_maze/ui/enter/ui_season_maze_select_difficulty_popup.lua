@@ -1,46 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/enter/ui_season_maze_select_difficulty_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeSelectDifficultyPopup", UIController)
 UISeasonMazeSelectDifficultyPopup = UISeasonMazeSelectDifficultyPopup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeSelectDifficultyPopup.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeSelectDifficultyPopup:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UISeasonMazeSelectDifficultyPopup:OnShow(uiParams)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self:InitWidget()
   self:InitUI()
   self:Lock("UISeasonMazeSelectDifficultyPopup_EnterAni")
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     self:UnLock("UISeasonMazeSelectDifficultyPopup_EnterAni")
     self:_CheckGuide()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup._CheckGuide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeSelectDifficultyPopup)
+function UISeasonMazeSelectDifficultyPopup:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeSelectDifficultyPopup)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.backBtns = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+function UISeasonMazeSelectDifficultyPopup:InitWidget()
+  self.backBtns = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
   self.titleText = self:GetUIComponent("RawImageLoader", "TitleText")
   self.bossRedPoint = self:GetUIComponent("UISelectObjectPath", "BossRedPoint")
   self.adventurePool = self:GetUIComponent("UISelectObjectPath", "AdventurePool")
@@ -51,266 +33,186 @@ UISeasonMazeSelectDifficultyPopup.InitWidget = function(self)
   self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self.contentRectTf = self:GetUIComponent("RectTransform", "Content")
   self._scrollView = self:GetUIComponent("ScrollRect", "ScrollView")
-  ;
-  (self._scrollView):DOHorizontalNormalizedPos(0, 0.1, false)
+  self._scrollView:DOHorizontalNormalizedPos(0, 0.1, false)
   self._grid = self:GetUIComponent("GridLayoutGroup", "AdventurePool")
-  self.etl = (UICustomUIEventListener.Get)((self._scrollView).gameObject)
+  self.etl = UICustomUIEventListener.Get(self._scrollView.gameObject)
   self:RegUIEventTriggerListener(function(ped)
-    -- function num : 0_3_0 , upvalues : self
     self:OnBeginDrag(ped)
-  end
-, function(ped)
-    -- function num : 0_3_1 , upvalues : self
+  end, function(ped)
     self:OnDrag(ped)
-  end
-, function(ped)
-    -- function num : 0_3_2 , upvalues : self
+  end, function(ped)
     self:OnEndDrag(ped)
-  end
-)
-  local delta = (self.adventurePoolRectTf).anchoredPosition
-  delta.x = ((self.centerAnchorRectTf).rect).width / 2
+  end)
+  local delta = self.adventurePoolRectTf.anchoredPosition
+  delta.x = self.centerAnchorRectTf.rect.width / 2
   self.curHalfX = delta.x
-  -- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.adventurePoolRectTf).anchoredPosition = delta
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.adventurePoolRectTf).sizeDelta = Vector2(((self.centerAnchorRectTf).rect).width, ((self.adventurePoolRectTf).sizeDelta).y)
-  local ceil = (self._grid).cellSize
-  ceil.x = ((self.centerAnchorRectTf).rect).width
-  -- DECOMPILER ERROR at PC105: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._grid).cellSize = ceil
+  self.adventurePoolRectTf.anchoredPosition = delta
+  self.adventurePoolRectTf.sizeDelta = Vector2(self.centerAnchorRectTf.rect.width, self.adventurePoolRectTf.sizeDelta.y)
+  local ceil = self._grid.cellSize
+  ceil.x = self.centerAnchorRectTf.rect.width
+  self._grid.cellSize = ceil
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.InitUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeSelectDifficultyPopup:InitUI()
   self:_InitBackBtn()
-  self.seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self.seasonMazeObj = (self.seasonMazeModule):CurSeasonObj()
-  self.cmptInfo = (self.seasonMazeObj):GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  self.cmptId = ((self.seasonMazeObj):GetMazeComponent()):GetComponentCfgId()
-  self.cfgs = (Cfg.cfg_component_season_maze)({ComponentID = self.cmptId})
+  self.seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self.seasonMazeObj = self.seasonMazeModule:CurSeasonObj()
+  self.cmptInfo = self.seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self.cmptId = self.seasonMazeObj:GetMazeComponent():GetComponentCfgId()
+  self.cfgs = Cfg.cfg_component_season_maze({
+    ComponentID = self.cmptId
+  })
   self.cfgs = self:_SortCfg(self.cfgs)
-  self.hard_completeInfo = (self.cmptInfo).hard_num
+  self.hard_completeInfo = self.cmptInfo.hard_num
   self.curSelectHard = #self.hard_completeInfo
   if self.curSelectHard == 0 then
     self.curSelectHard = 1
   end
-  do
-    if #self.hard_completeInfo > 0 then
-      local curHard = (self.hard_completeInfo)[#self.hard_completeInfo]
-      if curHard.vic_count > 0 then
-        self.curSelectHard = self.curSelectHard + 1
-        if (table.count)(self.cfgs) < self.curSelectHard then
-          self.curSelectHard = (table.count)(self.cfgs)
-        end
+  if #self.hard_completeInfo > 0 then
+    local curHard = self.hard_completeInfo[#self.hard_completeInfo]
+    if 0 < curHard.vic_count then
+      self.curSelectHard = self.curSelectHard + 1
+      if self.curSelectHard > table.count(self.cfgs) then
+        self.curSelectHard = table.count(self.cfgs)
       end
     end
-    self.selectCfg = (self.cfgs)[self.curSelectHard]
-    self.adventureItemPools = (self.adventurePool):SpawnObjects("UISeasonMazeSingleAdvenItem", (table.count)(self.cfgs))
-    self.curValue = 0
-    self.singleValue = 1 / ((table.count)(self.cfgs) - 1)
-    self.curValue = self.singleValue * (self.curSelectHard - 1)
-    self._itemCountPerRow = 1
-    self._dynamicListSize = (table.count)(self.cfgs)
-    -- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.contentRectTf).sizeDelta = Vector2((self._dynamicListSize - 1) * ((self.centerAnchorRectTf).rect).width, 0)
-    ;
-    (self._scrollView):DOHorizontalNormalizedPos(self.curValue, 0, false)
-    self:RefreshCurDiff()
-    if self.taskId == nil then
-      self:RefreshItemTask()
-    end
+  end
+  self.selectCfg = self.cfgs[self.curSelectHard]
+  self.adventureItemPools = self.adventurePool:SpawnObjects("UISeasonMazeSingleAdvenItem", table.count(self.cfgs))
+  self.curValue = 0
+  self.singleValue = 1 / (table.count(self.cfgs) - 1)
+  self.curValue = self.singleValue * (self.curSelectHard - 1)
+  self._itemCountPerRow = 1
+  self._dynamicListSize = table.count(self.cfgs)
+  self.contentRectTf.sizeDelta = Vector2((self._dynamicListSize - 1) * self.centerAnchorRectTf.rect.width, 0)
+  self._scrollView:DOHorizontalNormalizedPos(self.curValue, 0, false)
+  self:RefreshCurDiff()
+  if self.taskId == nil then
+    self:RefreshItemTask()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeSelectDifficultyPopup:OnHide()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.RefreshItemTask = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMazeSelectDifficultyPopup:RefreshItemTask()
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    while 1 do
+    while true do
       for i = 1, #self.adventureItemPools do
-        local item = (self.adventureItemPools)[i]
-        if not ((GameGlobal.UIStateManager)()):IsShow("UISeasonMazePetsTeamsPrimary") then
+        local item = self.adventureItemPools[i]
+        if not GameGlobal.UIStateManager():IsShow("UISeasonMazePetsTeamsPrimary") then
           item:RefreshItemTask()
         end
       end
       YIELD(TT, 1000)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup._SortCfg = function(self, items)
-  -- function num : 0_7 , upvalues : _ENV
-  (table.sort)(items, function(a, b)
-    -- function num : 0_7_0
-    do return a.Hard < b.Hard end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UISeasonMazeSelectDifficultyPopup:_SortCfg(items)
+  table.sort(items, function(a, b)
+    return a.Hard < b.Hard
+  end)
   return items
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.OnBeginDrag = function(self, ped)
-  -- function num : 0_8
+function UISeasonMazeSelectDifficultyPopup:OnBeginDrag(ped)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.OnDrag = function(self, ped)
-  -- function num : 0_9
+function UISeasonMazeSelectDifficultyPopup:OnDrag(ped)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.OnEndDrag = function(self, ped)
-  -- function num : 0_10 , upvalues : _ENV
-  local totalHard = (table.count)(self.cfgs)
-  local hoPos = (self._scrollView).horizontalNormalizedPosition
+function UISeasonMazeSelectDifficultyPopup:OnEndDrag(ped)
+  local totalHard = table.count(self.cfgs)
+  local hoPos = self._scrollView.horizontalNormalizedPosition
   local curOriginPos = self.singleValue * (self.curSelectHard - 1)
   local halfSingleValue = self.singleValue / 4
   if self.curSelectHard == 1 then
     local delatPos = hoPos - curOriginPos
-    do
-      do
-        if delatPos > 0 then
-          local add = (math.floor)(delatPos / halfSingleValue)
-          self.curSelectHard = self.curSelectHard + 1
-          if totalHard < self.curSelectHard then
-            self.curSelectHard = totalHard
-          end
-          self:RefreshCurDiff()
+    if 0 < delatPos then
+      local add = math.floor(delatPos / halfSingleValue)
+      self.curSelectHard = self.curSelectHard + 1
+      if totalHard < self.curSelectHard then
+        self.curSelectHard = totalHard
+      end
+      self:RefreshCurDiff()
+    end
+    self:RefreshCurDiff()
+    return
+  end
+  if self.curSelectHard == totalHard then
+    local delatPos = curOriginPos - hoPos
+    if 0 < delatPos then
+      local delta = math.floor(delatPos / halfSingleValue)
+      if 0 < delta then
+        self.curSelectHard = self.curSelectHard - 1
+        if totalHard < self.curSelectHard then
+          self.curSelectHard = totalHard
         end
         self:RefreshCurDiff()
-        do return  end
-        if self.curSelectHard == totalHard then
-          local delatPos = curOriginPos - hoPos
-          do
-            do
-              if delatPos > 0 then
-                local delta = (math.floor)(delatPos / halfSingleValue)
-                if delta > 0 then
-                  self.curSelectHard = self.curSelectHard - 1
-                  if totalHard < self.curSelectHard then
-                    self.curSelectHard = totalHard
-                  end
-                  self:RefreshCurDiff()
-                end
-                self:RefreshCurDiff()
-              end
-              do return  end
-              local delatPos = hoPos - curOriginPos
-              if delatPos > 0 then
-                local add = (math.floor)(delatPos / halfSingleValue)
-                if add > 0 then
-                  self.curSelectHard = self.curSelectHard + 1
-                  if totalHard < self.curSelectHard then
-                    self.curSelectHard = totalHard
-                  end
-                  if self.curSelectHard < 1 then
-                    self.curSelectHard = 1
-                  end
-                  self:RefreshCurDiff()
-                end
-              else
-                do
-                  do
-                    if delatPos < 0 then
-                      local delta = (math.ceil)(delatPos / halfSingleValue)
-                      if delta < 0 then
-                        self.curSelectHard = self.curSelectHard - 1
-                        if totalHard < self.curSelectHard then
-                          self.curSelectHard = totalHard
-                        end
-                        if self.curSelectHard < 1 then
-                          self.curSelectHard = 1
-                        end
-                        self:RefreshCurDiff()
-                      end
-                    end
-                    self:RefreshCurDiff()
-                  end
-                end
-              end
-            end
-          end
-        end
       end
+      self:RefreshCurDiff()
+    end
+    return
+  end
+  local delatPos = hoPos - curOriginPos
+  if 0 < delatPos then
+    local add = math.floor(delatPos / halfSingleValue)
+    if 0 < add then
+      self.curSelectHard = self.curSelectHard + 1
+      if totalHard < self.curSelectHard then
+        self.curSelectHard = totalHard
+      end
+      if self.curSelectHard < 1 then
+        self.curSelectHard = 1
+      end
+      self:RefreshCurDiff()
+    end
+  elseif delatPos < 0 then
+    local delta = math.ceil(delatPos / halfSingleValue)
+    if delta < 0 then
+      self.curSelectHard = self.curSelectHard - 1
+      if totalHard < self.curSelectHard then
+        self.curSelectHard = totalHard
+      end
+      if self.curSelectHard < 1 then
+        self.curSelectHard = 1
+      end
+      self:RefreshCurDiff()
     end
   end
+  self:RefreshCurDiff()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.RegUIEventTriggerListener = function(self, onBeginDrag, onDrag, onEndDrag)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeSelectDifficultyPopup:RegUIEventTriggerListener(onBeginDrag, onDrag, onEndDrag)
   self:AddUICustomEventListener(self.etl, UIEvent.BeginDrag, onBeginDrag)
   self:AddUICustomEventListener(self.etl, UIEvent.Drag, onDrag)
   self:AddUICustomEventListener(self.etl, UIEvent.EndDrag, onEndDrag)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup._InitBackBtn = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (self.backBtns):SetData(function()
-    -- function num : 0_12_0 , upvalues : self, _ENV
-    (self._anim):Play("uieffanim_UISeasonMazeSelectDifficultyPopup_out")
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(200, TimerTriggerCount.Once, function()
-      -- function num : 0_12_0_0 , upvalues : self
+function UISeasonMazeSelectDifficultyPopup:_InitBackBtn()
+  self.backBtns:SetData(function()
+    self._anim:Play("uieffanim_UISeasonMazeSelectDifficultyPopup_out")
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(200, TimerTriggerCount.Once, function()
       self:CloseDialog()
-    end
-)
-  end
-, function()
-    -- function num : 0_12_1 , upvalues : _ENV
-    (UISeasonMazeModule.OpenHelpUI)(UISeasonMazeHelperTabIndex.Temp3, 1)
-  end
-, nil, false, nil, false, nil)
+    end)
+  end, function()
+    UISeasonMazeModule.OpenHelpUI(UISeasonMazeHelperTabIndex.Temp3, 1)
+  end, nil, false, nil, false, nil)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup._InitDynamicList = function(self)
-  -- function num : 0_13
-  (self._dynamicList):InitListView(self._dynamicListSize, function(scrollView, index)
-    -- function num : 0_13_0 , upvalues : self
+function UISeasonMazeSelectDifficultyPopup:_InitDynamicList()
+  self._dynamicList:InitListView(self._dynamicListSize, function(scrollView, index)
     return self:_SpawnListItem(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_14
+function UISeasonMazeSelectDifficultyPopup:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -329,113 +231,81 @@ UISeasonMazeSelectDifficultyPopup._SpawnListItem = function(self, scrollView, in
   return item
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup._SetListItemData = function(self, listItem, index)
-  -- function num : 0_15
-  local hardInfo = (self.cmptInfo).hard_num
-  local info = (self.cfgs)[index]
-  ;
-  (listItem:GetGameObject()):SetActive(true)
+function UISeasonMazeSelectDifficultyPopup:_SetListItemData(listItem, index)
+  local hardInfo = self.cmptInfo.hard_num
+  local info = self.cfgs[index]
+  listItem:GetGameObject():SetActive(true)
   if info ~= nil then
-    listItem:SetData(index, hardInfo, (self.cfgs)[index], self.cfgs)
+    listItem:SetData(index, hardInfo, self.cfgs[index], self.cfgs)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.RefreshCurDiff = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local hardInfo = (self.cmptInfo).hard_num
-  local curOpenHard = (table.count)((self.cmptInfo).hard_num)
+function UISeasonMazeSelectDifficultyPopup:RefreshCurDiff()
+  local hardInfo = self.cmptInfo.hard_num
+  local curOpenHard = table.count(self.cmptInfo.hard_num)
   if curOpenHard == 0 then
     curOpenHard = 1
   end
-  do
-    if (self.cmptInfo).hard_num then
-      local curHard = ((self.cmptInfo).hard_num)[curOpenHard]
-      if curHard ~= nil and curHard.vic_count > 0 then
-        curOpenHard = curOpenHard + 1
-        if (table.count)(self.cfgs) < curOpenHard then
-          curOpenHard = (table.count)(self.cfgs)
-        end
+  if self.cmptInfo.hard_num then
+    local curHard = self.cmptInfo.hard_num[curOpenHard]
+    if curHard ~= nil and 0 < curHard.vic_count then
+      curOpenHard = curOpenHard + 1
+      if curOpenHard > table.count(self.cfgs) then
+        curOpenHard = table.count(self.cfgs)
       end
     end
-    self.selectCfg = (self.cfgs)[self.curSelectHard]
-    for i = 1, #self.adventureItemPools do
-      local item = (self.adventureItemPools)[i]
-      item:SetData(i, hardInfo, (self.cfgs)[i], self.cfgs, function(ped)
-    -- function num : 0_16_0 , upvalues : self
-    self:OnBeginDrag(ped)
   end
-, function(ped)
-    -- function num : 0_16_1 , upvalues : self
-    self:OnDrag(ped)
+  self.selectCfg = self.cfgs[self.curSelectHard]
+  for i = 1, #self.adventureItemPools do
+    local item = self.adventureItemPools[i]
+    item:SetData(i, hardInfo, self.cfgs[i], self.cfgs, function(ped)
+      self:OnBeginDrag(ped)
+    end, function(ped)
+      self:OnDrag(ped)
+    end, function(ped)
+      self:OnEndDrag(ped)
+    end)
   end
-, function(ped)
-    -- function num : 0_16_2 , upvalues : self
-    self:OnEndDrag(ped)
+  self.curValue = self.singleValue * (self.curSelectHard - 1)
+  self._scrollView:DOHorizontalNormalizedPos(self.curValue, 0.25, false)
+  self.LeftChangeBtnObj:SetActive(true)
+  self.RightChangeBtnObj:SetActive(true)
+  if self.curSelectHard == 1 then
+    self.LeftChangeBtnObj:SetActive(false)
   end
-)
-    end
-    self.curValue = self.singleValue * (self.curSelectHard - 1)
-    ;
-    (self._scrollView):DOHorizontalNormalizedPos(self.curValue, 0.25, false)
-    ;
-    (self.LeftChangeBtnObj):SetActive(true)
-    ;
-    (self.RightChangeBtnObj):SetActive(true)
-    if self.curSelectHard == 1 then
-      (self.LeftChangeBtnObj):SetActive(false)
-    end
-    local hardSize = #self.cfgs
-    if self.curSelectHard == hardSize then
-      (self.RightChangeBtnObj):SetActive(false)
-    end
+  local hardSize = #self.cfgs
+  if self.curSelectHard == hardSize then
+    self.RightChangeBtnObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.LeftChangeBtnOnClick = function(self, go)
-  -- function num : 0_17
+function UISeasonMazeSelectDifficultyPopup:LeftChangeBtnOnClick(go)
   local hardSize = #self.cfgs
   if self.curSelectHard == 1 then
-    return 
+    return
   end
   if hardSize == 1 then
-    return 
+    return
   end
   self.curSelectHard = self.curSelectHard - 1
   self:RefreshCurDiff()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.RightChangeBtnOnClick = function(self, go)
-  -- function num : 0_18
+function UISeasonMazeSelectDifficultyPopup:RightChangeBtnOnClick(go)
   local hardSize = #self.cfgs
   if self.curSelectHard == hardSize then
-    return 
+    return
   end
   if hardSize == 1 then
-    return 
+    return
   end
   self.curSelectHard = self.curSelectHard + 1
   self:RefreshCurDiff()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup.BgOnClick = function(self, go)
-  -- function num : 0_19
+function UISeasonMazeSelectDifficultyPopup:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeSelectDifficultyPopup._ReqSelectDiff = function(self, TT, diff)
-  -- function num : 0_20
+function UISeasonMazeSelectDifficultyPopup:_ReqSelectDiff(TT, diff)
 end
-
-

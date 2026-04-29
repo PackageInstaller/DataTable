@@ -1,88 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_chess.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignChess", ICampaignComponentLocalProcessBase)
 CCampaignChess = CCampaignChess
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignChess.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignChess:Constructor()
   self._chessComponent = nil
   self._chessCompInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignChess.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignChess:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_CHESS
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignChess.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignChess:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignChess.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignChess:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetChessComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignChess._GetChessComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._chessComponent = (self._campaignObj):GetComponent(ECampaignChessComponentID.ECAMPAIGN_CHESS_MISSION)
+function CCampaignChess:_GetChessComponent()
+  self._chessComponent = self._campaignObj:GetComponent(ECampaignChessComponentID.ECAMPAIGN_CHESS_MISSION)
   if not self._chessComponent then
-    return 
+    return
   end
-  self._chessCompInfo = (self._chessComponent):ComponentInfo()
+  self._chessCompInfo = self._chessComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignChess.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignChess:GetComponent(componentID)
   if ECampaignChessComponentID.ECAMPAIGN_CHESS_MISSION == componentID then
     return self._chessComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignChess.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignChess:GetComponentInfo(componentID)
   if ECampaignChessComponentID.ECAMPAIGN_CHESS_MISSION == componentID then
     return self._chessCompInfo
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignChess.GetStepStatusNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignChess:GetStepStatusNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_CHESS)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignChess.GetEntryRedDot = function(self)
-  -- function num : 0_8
+function CCampaignChess:GetEntryRedDot()
   return false
 end
-
-

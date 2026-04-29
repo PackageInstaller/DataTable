@@ -1,202 +1,137 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_monster_move_longest_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectMonsterMoveLongestGridParam", SkillDamageEffectParam)
 SkillEffectMonsterMoveLongestGridParam = SkillEffectMonsterMoveLongestGridParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMonsterMoveLongestGridParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  if not t.findType then
-    self._findType = MonsterMoveLongestGridFindType.Normal
-    self._resetGrid = t.resetGrid or 1
-    if self._findType == MonsterMoveLongestGridFindType.Spiral then
-      self._runCountList = t.runCountList
-      if not self._runCountList and type(self._runCountList) ~= "table" then
-        (Log.fatal)("Need runCountList Param")
-      end
-      self._beginLineCount = t.beginLineCount
-      if not self._beginLineCount then
-        (Log.fatal)("Need beginLineCount Param")
-      end
+function SkillEffectMonsterMoveLongestGridParam:Constructor(t)
+  self._findType = t.findType or MonsterMoveLongestGridFindType.Normal
+  self._resetGrid = t.resetGrid or 1
+  if self._findType == MonsterMoveLongestGridFindType.Spiral then
+    self._runCountList = t.runCountList
+    if not self._runCountList and type(self._runCountList) ~= "table" then
+      Log.fatal("Need runCountList Param")
     end
-    if self._findType == MonsterMoveLongestGridFindType.MoreSpTraps then
-      self._lineCount = t.lineCount
-      self._lineNeedTrapID = t.lineNeedTrapID
-      if not self._lineCount or not self._lineNeedTrapID or type(self._lineNeedTrapID) == "table" then
-        (Log.fatal)("Need LineCount Param")
-      end
+    self._beginLineCount = t.beginLineCount
+    if not self._beginLineCount then
+      Log.fatal("Need beginLineCount Param")
     end
-    if not t.arrivePosType then
-      self._arrivePosType = MonsterMoveLongestGridArrivePosType.Normal
-      self._flushTrapIDs = {}
-      for _,id in ipairs(t.flushTrapIDs) do
-        -- DECOMPILER ERROR at PC76: Confused about usage of register: R7 in 'UnsetPending'
-
-        (self._flushTrapIDs)[id] = true
-      end
-      local disableDieSkill = t.disableDieSkill or 1
-      if disableDieSkill == 1 then
-        self._disableDieSkill = true
-      else
-        self._disableDieSkill = false
-      end
-      if self._arrivePosType == MonsterMoveLongestGridArrivePosType.NormalAndAttackAtSpTraps then
-        self._attackTrapIDs = {}
-        for _,id in ipairs(t.attackTrapIDs) do
-          -- DECOMPILER ERROR at PC100: Confused about usage of register: R8 in 'UnsetPending'
-
-          (self._attackTrapIDs)[id] = true
-        end
-      end
-      do
-        if not t.finishType then
-          self._finishType = MonsterMoveLongestGridMoveFinishType.None
-          if self._finishType == MonsterMoveLongestGridMoveFinishType.ResetGridAndSummonTraps then
-            self._finalAttackPercent = t.finalAttackPercent
-          end
-          if self._finishType == MonsterMoveLongestGridMoveFinishType.ResetGridAndSummonTraps or self._finishType == MonsterMoveLongestGridMoveFinishType.NoTrapsSummonTraps then
-            self._summonTrapID = t.summonTrapID
-            self._transferDisabled = t.transferDisabled == 1
-          end
-          if self._finishType == MonsterMoveLongestGridMoveFinishType.NoTrapsSummonTraps then
-            self._summonTrapCount = t.summonTrapCount
-            self._summonScopeRingCount = t.summonScopeRingCount
-          end
-          -- DECOMPILER ERROR: 3 unprocessed JMP targets
-        end
-      end
+  end
+  if self._findType == MonsterMoveLongestGridFindType.MoreSpTraps then
+    self._lineCount = t.lineCount
+    self._lineNeedTrapID = t.lineNeedTrapID
+    if not (self._lineCount and self._lineNeedTrapID) or type(self._lineNeedTrapID) == "table" then
+      Log.fatal("Need LineCount Param")
     end
+  end
+  self._arrivePosType = t.arrivePosType or MonsterMoveLongestGridArrivePosType.Normal
+  self._flushTrapIDs = {}
+  for _, id in ipairs(t.flushTrapIDs) do
+    self._flushTrapIDs[id] = true
+  end
+  local disableDieSkill = t.disableDieSkill or 1
+  if disableDieSkill == 1 then
+    self._disableDieSkill = true
+  else
+    self._disableDieSkill = false
+  end
+  if self._arrivePosType == MonsterMoveLongestGridArrivePosType.NormalAndAttackAtSpTraps then
+    self._attackTrapIDs = {}
+    for _, id in ipairs(t.attackTrapIDs) do
+      self._attackTrapIDs[id] = true
+    end
+  end
+  self._finishType = t.finishType or MonsterMoveLongestGridMoveFinishType.None
+  if self._finishType == MonsterMoveLongestGridMoveFinishType.ResetGridAndSummonTraps then
+    self._finalAttackPercent = t.finalAttackPercent
+  end
+  if self._finishType == MonsterMoveLongestGridMoveFinishType.ResetGridAndSummonTraps or self._finishType == MonsterMoveLongestGridMoveFinishType.NoTrapsSummonTraps then
+    self._summonTrapID = t.summonTrapID
+    self._transferDisabled = t.transferDisabled == 1
+  end
+  if self._finishType == MonsterMoveLongestGridMoveFinishType.NoTrapsSummonTraps then
+    self._summonTrapCount = t.summonTrapCount
+    self._summonScopeRingCount = t.summonScopeRingCount
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.IsTransferDisabled = function(self)
-  -- function num : 0_1
+function SkillEffectMonsterMoveLongestGridParam:IsTransferDisabled()
   return self._transferDisabled
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetSummonTrapCount = function(self)
-  -- function num : 0_2
+function SkillEffectMonsterMoveLongestGridParam:GetSummonTrapCount()
   return self._summonTrapCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetArrivePosType = function(self)
-  -- function num : 0_3
+function SkillEffectMonsterMoveLongestGridParam:GetArrivePosType()
   return self._arrivePosType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetFindType = function(self)
-  -- function num : 0_4
+function SkillEffectMonsterMoveLongestGridParam:GetFindType()
   return self._findType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetAttackTrapIDs = function(self)
-  -- function num : 0_5
+function SkillEffectMonsterMoveLongestGridParam:GetAttackTrapIDs()
   return self._attackTrapIDs
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetFinishType = function(self)
-  -- function num : 0_6
+function SkillEffectMonsterMoveLongestGridParam:GetFinishType()
   return self._finishType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetSummonTrapID = function(self)
-  -- function num : 0_7
+function SkillEffectMonsterMoveLongestGridParam:GetSummonTrapID()
   return self._summonTrapID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetFlushTrapIDs = function(self)
-  -- function num : 0_8
+function SkillEffectMonsterMoveLongestGridParam:GetFlushTrapIDs()
   return self._flushTrapIDs
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetEffectType = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillEffectMonsterMoveLongestGridParam:GetEffectType()
   return SkillEffectType.MonsterMoveLongestGrid
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetLineCount = function(self)
-  -- function num : 0_10
+function SkillEffectMonsterMoveLongestGridParam:GetLineCount()
   return self._lineCount
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetLineNeedTrapID = function(self)
-  -- function num : 0_11
+function SkillEffectMonsterMoveLongestGridParam:GetLineNeedTrapID()
   return self._lineNeedTrapID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetDisableDieSkill = function(self)
-  -- function num : 0_12
+function SkillEffectMonsterMoveLongestGridParam:GetDisableDieSkill()
   return self._disableDieSkill
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.IsResetGrid = function(self)
-  -- function num : 0_13
-  do return self._resetGrid == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillEffectMonsterMoveLongestGridParam:IsResetGrid()
+  return self._resetGrid == 1
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetRunCountList = function(self)
-  -- function num : 0_14
+function SkillEffectMonsterMoveLongestGridParam:GetRunCountList()
   return self._runCountList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetFinalAttackPercent = function(self)
-  -- function num : 0_15
+function SkillEffectMonsterMoveLongestGridParam:GetFinalAttackPercent()
   return self._finalAttackPercent
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetSummonScopeRingCount = function(self)
-  -- function num : 0_16
+function SkillEffectMonsterMoveLongestGridParam:GetSummonScopeRingCount()
   return self._summonScopeRingCount
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveLongestGridParam.GetBeginLineCount = function(self)
-  -- function num : 0_17
+function SkillEffectMonsterMoveLongestGridParam:GetBeginLineCount()
   return self._beginLineCount
 end
 
-local MonsterMoveLongestGridFindType = {Normal = 1, MoreSpTraps = 2, Spiral = 3}
+local MonsterMoveLongestGridFindType = {
+  Normal = 1,
+  MoreSpTraps = 2,
+  Spiral = 3
+}
 _enum("MonsterMoveLongestGridFindType", MonsterMoveLongestGridFindType)
 local MonsterMoveLongestGridArrivePosType = {Normal = 1, NormalAndAttackAtSpTraps = 2}
 _enum("MonsterMoveLongestGridArrivePosType", MonsterMoveLongestGridArrivePosType)
-local MonsterMoveLongestGridMoveFinishType = {None = 1, ResetGridAndSummonTraps = 2, NoTrapsSummonTraps = 3}
+local MonsterMoveLongestGridMoveFinishType = {
+  None = 1,
+  ResetGridAndSummonTraps = 2,
+  NoTrapsSummonTraps = 3
+}
 _enum("MonsterMoveLongestGridMoveFinishType", MonsterMoveLongestGridMoveFinishType)
-

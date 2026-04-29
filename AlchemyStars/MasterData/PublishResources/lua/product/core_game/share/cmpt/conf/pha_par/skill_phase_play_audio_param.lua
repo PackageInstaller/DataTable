@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_play_audio_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhasePlayAudioParam", SkillPhaseParamBase)
 SkillPhasePlayAudioParam = SkillPhasePlayAudioParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhasePlayAudioParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhasePlayAudioParam:Constructor(t)
   self._audioType = t.audioType
   self._audioID = t.audioID
   self._atkSoundDelay = t.atkSoundDelay or 0
@@ -27,90 +20,67 @@ SkillPhasePlayAudioParam.Constructor = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhasePlayAudioParam:GetPhaseType()
   return SkillViewPhaseType.PlayAudio
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.GetAudioID = function(self, isSlantAttack)
-  -- function num : 0_2
+function SkillPhasePlayAudioParam:GetAudioID(isSlantAttack)
   if isSlantAttack then
     return self._slantAudioID
   end
   return self._audioID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.GetSlantAudioID = function(self)
-  -- function num : 0_3
+function SkillPhasePlayAudioParam:GetSlantAudioID()
   return self._slantAudioID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.GetAudioType = function(self)
-  -- function num : 0_4
+function SkillPhasePlayAudioParam:GetAudioType()
   return self._audioType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.IsLoopSkillAudio = function(self)
-  -- function num : 0_5
+function SkillPhasePlayAudioParam:IsLoopSkillAudio()
   return self._isLoop
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.IsPlaySkillAudio = function(self)
-  -- function num : 0_6
+function SkillPhasePlayAudioParam:IsPlaySkillAudio()
   return self._isPlay
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.GetSoundCacheTable = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillPhasePlayAudioParam:GetSoundCacheTable()
   if not self._audioID or self._audioID <= 0 then
-    return 
+    return
   end
   if self._audioType == SkillAudioType.Cast or self._audioType == SkillAudioType.Hit then
     if self._slantAudioID then
-      return {self._audioID, self._slantAudioID}
+      return {
+        self._audioID,
+        self._slantAudioID
+      }
     else
-      return {self._audioID}
+      return {
+        self._audioID
+      }
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.GetVoiceCacheTable = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillPhasePlayAudioParam:GetVoiceCacheTable()
   if not self._audioID or self._audioID <= 0 then
-    return 
+    return
   end
   if self._audioType == SkillAudioType.Voice then
-    return {self._audioID}
+    return {
+      self._audioID
+    }
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.GetCacheTable = function(self)
-  -- function num : 0_9
+function SkillPhasePlayAudioParam:GetCacheTable()
   return {}
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhasePlayAudioParam.GetSoundDelay = function(self, isFinalAttack, isSlantAttack)
-  -- function num : 0_10
+function SkillPhasePlayAudioParam:GetSoundDelay(isFinalAttack, isSlantAttack)
   if isSlantAttack then
     if isFinalAttack then
       return self._slantLongAtkSoundDelay
@@ -124,5 +94,3 @@ SkillPhasePlayAudioParam.GetSoundDelay = function(self, isFinalAttack, isSlantAt
     return self._atkSoundDelay
   end
 end
-
-

@@ -1,50 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/ride_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("RideServiceLogic", BaseService)
 RideServiceLogic = RideServiceLogic
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RideServiceLogic.Constructor = function(self, world)
-  -- function num : 0_0
+function RideServiceLogic:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  self._boardSvc = (self._world):GetService("BoardLogic")
+  self._configService = self._world:GetService("Config")
+  self._boardSvc = self._world:GetService("BoardLogic")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceLogic.RideTrap = function(self, rideID, mountID, height)
-  -- function num : 0_1 , upvalues : _ENV
-  local rideEntity = (self._world):GetEntityByID(rideID)
-  local mountEntity = (self._world):GetEntityByID(mountID)
+function RideServiceLogic:RideTrap(rideID, mountID, height)
+  local rideEntity = self._world:GetEntityByID(rideID)
+  local mountEntity = self._world:GetEntityByID(mountID)
   local mountPos = mountEntity:GetGridPosition()
-  local petEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local petEntity = self._world:Player():GetCurrentTeamEntity()
   local posPet = petEntity:GetGridPosition()
-  local newDir = (GameHelper.ComputeLogicDir)(posPet - mountPos)
-  local blockFlag = (self._boardSvc):GetBlockFlag(rideEntity)
-  ;
-  (self._boardSvc):SetEntityBlockFlag(rideEntity, mountPos, blockFlag)
+  local newDir = GameHelper.ComputeLogicDir(posPet - mountPos)
+  local blockFlag = self._boardSvc:GetBlockFlag(rideEntity)
+  self._boardSvc:SetEntityBlockFlag(rideEntity, mountPos, blockFlag)
   rideEntity:SetGridLocation(mountPos, newDir)
   rideEntity:SetGridHeight(height)
   rideEntity:ReplaceRide(rideID, mountID)
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTRideStateChange:New(rideEntity, true))
+  self._world:GetService("Trigger"):Notify(NTRideStateChange:New(rideEntity, true))
   mountEntity:ReplaceRide(rideID, mountID)
-  ;
-  (Log.debug)("[RideServiceLogic:RideTrap] ride_id = ", rideID, ", trap_id = ", mountID)
+  Log.debug("[RideServiceLogic:RideTrap] ride_id = ", rideID, ", trap_id = ", mountID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceLogic.RideMonster = function(self, rideID, mountID, height, offset, changeBodyArea, onlyRiderCanClick)
-  -- function num : 0_2 , upvalues : _ENV
-  local rideEntity = (self._world):GetEntityByID(rideID)
-  local mountEntity = (self._world):GetEntityByID(mountID)
-  local mountBodyArea = (mountEntity:BodyArea()):GetArea()
+function RideServiceLogic:RideMonster(rideID, mountID, height, offset, changeBodyArea, onlyRiderCanClick)
+  local rideEntity = self._world:GetEntityByID(rideID)
+  local mountEntity = self._world:GetEntityByID(mountID)
+  local mountBodyArea = mountEntity:BodyArea():GetArea()
   local mountPos = mountEntity:GetGridPosition()
   local mountDir = mountEntity:GetGridDirection()
   if changeBodyArea then
@@ -53,118 +37,85 @@ RideServiceLogic.RideMonster = function(self, rideID, mountID, height, offset, c
   rideEntity:SetGridLocationAndOffset(mountPos, mountDir, offset)
   rideEntity:SetGridHeight(height)
   rideEntity:ReplaceRide(rideID, mountID)
-  ;
-  (rideEntity:Ride()):SetOnlyRiderCanClick(onlyRiderCanClick)
+  rideEntity:Ride():SetOnlyRiderCanClick(onlyRiderCanClick)
   local ridGridLocationCmpt = rideEntity:GridLocation()
   ridGridLocationCmpt:SetModifyLocationCallback(function(pos, dir)
-    -- function num : 0_2_0 , upvalues : self, mountEntity
     self:SetTargetLocation(pos, dir, mountEntity)
-  end
-)
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTRideStateChange:New(rideEntity, true))
+  end)
+  self._world:GetService("Trigger"):Notify(NTRideStateChange:New(rideEntity, true))
   mountEntity:ReplaceRide(rideID, mountID)
-  ;
-  (mountEntity:Ride()):SetOnlyRiderCanClick(onlyRiderCanClick)
+  mountEntity:Ride():SetOnlyRiderCanClick(onlyRiderCanClick)
   local mountGridLocationCmpt = mountEntity:GridLocation()
   mountGridLocationCmpt:SetModifyLocationCallback(function(pos, dir)
-    -- function num : 0_2_1 , upvalues : self, rideEntity
     self:SetTargetLocation(pos, dir, rideEntity)
-  end
-)
-  ;
-  (Log.debug)("[RideServiceLogic:RideMonster] ride_id = ", rideID, ", monster_id = ", mountID)
+  end)
+  Log.debug("[RideServiceLogic:RideMonster] ride_id = ", rideID, ", monster_id = ", mountID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceLogic.RemoveRide = function(self, rideID, mountID)
-  -- function num : 0_3 , upvalues : _ENV
-  local rideEntity = (self._world):GetEntityByID(rideID)
-  local mountEntity = (self._world):GetEntityByID(mountID)
-  ;
-  (Log.debug)("[RideServiceLogic:RemoveRide] ride_id = ", rideID, ", mount_id = ", mountID)
+function RideServiceLogic:RemoveRide(rideID, mountID)
+  local rideEntity = self._world:GetEntityByID(rideID)
+  local mountEntity = self._world:GetEntityByID(mountID)
+  Log.debug("[RideServiceLogic:RemoveRide] ride_id = ", rideID, ", mount_id = ", mountID)
   rideEntity:RemoveRide()
   local ridGridLocationCmpt = rideEntity:GridLocation()
   ridGridLocationCmpt:SetModifyLocationCallback(nil)
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTRideStateChange:New(rideEntity, false))
+  self._world:GetService("Trigger"):Notify(NTRideStateChange:New(rideEntity, false))
   mountEntity:RemoveRide()
   local mountGridLocationCmpt = mountEntity:GridLocation()
   mountGridLocationCmpt:SetModifyLocationCallback(nil)
   if mountEntity:HasTrapID() then
-    (self._boardSvc):RemoveEntityBlockFlag(rideEntity, rideEntity:GetGridPosition())
+    self._boardSvc:RemoveEntityBlockFlag(rideEntity, rideEntity:GetGridPosition())
   end
   rideEntity:SetGridHeight(0)
   rideEntity:SetGridOffset(Vector2.zero)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceLogic.ResetBodyArea = function(self, entity)
-  -- function num : 0_4
+function RideServiceLogic:ResetBodyArea(entity)
   if entity:HasMonsterID() then
-    local monsterID = (entity:MonsterID()):GetMonsterID()
-    local monsterConfigData = (self._configService):GetMonsterConfigData()
+    local monsterID = entity:MonsterID():GetMonsterID()
+    local monsterConfigData = self._configService:GetMonsterConfigData()
     local bodyArea = monsterConfigData:GetMonsterArea(monsterID)
     entity:ReplaceBodyArea(bodyArea)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceLogic.SetNoRidePos = function(self, rideID, targetPos, fromTrap)
-  -- function num : 0_5
-  local rideEntity = (self._world):GetEntityByID(rideID)
+function RideServiceLogic:SetNoRidePos(rideID, targetPos, fromTrap)
+  local rideEntity = self._world:GetEntityByID(rideID)
   local oldPos = rideEntity:GetGridPosition()
   rideEntity:SetGridPosition(targetPos)
   if fromTrap then
-    (self._boardSvc):RemoveEntityBlockFlag(rideEntity, oldPos)
+    self._boardSvc:RemoveEntityBlockFlag(rideEntity, oldPos)
   end
-  local blockFlag = (self._boardSvc):GetBlockFlag(rideEntity)
-  ;
-  (self._boardSvc):SetEntityBlockFlag(rideEntity, targetPos, blockFlag)
+  local blockFlag = self._boardSvc:GetBlockFlag(rideEntity)
+  self._boardSvc:SetEntityBlockFlag(rideEntity, targetPos, blockFlag)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceLogic.ReplaceRide = function(self, rideID, mountID, height, offset, changeBodyArea, onlyRiderCanClick)
-  -- function num : 0_6
-  local rideEntity = ((self._world):GetEntityByID(rideID))
-  local oldMountID = nil
+function RideServiceLogic:ReplaceRide(rideID, mountID, height, offset, changeBodyArea, onlyRiderCanClick)
+  local rideEntity = self._world:GetEntityByID(rideID)
+  local oldMountID
   if rideEntity:HasRide() then
     local rideCmpt = rideEntity:Ride()
     oldMountID = rideCmpt:GetMountID()
     if oldMountID == mountID then
-      return 
+      return
     end
     self:RemoveRide(rideID, oldMountID)
   else
-    do
-      ;
-      (self._boardSvc):RemoveEntityBlockFlag(rideEntity, rideEntity:GetGridPosition())
-      self:ResetBodyArea(rideEntity)
-      local mountEntity = (self._world):GetEntityByID(mountID)
-      if mountEntity:HasTrap() then
-        self:RideTrap(rideID, mountID, height)
-      else
-        if mountEntity:HasMonsterID() then
-          self:RideMonster(rideID, mountID, height, offset, changeBodyArea, onlyRiderCanClick)
-        end
-      end
-    end
+    self._boardSvc:RemoveEntityBlockFlag(rideEntity, rideEntity:GetGridPosition())
+  end
+  self:ResetBodyArea(rideEntity)
+  local mountEntity = self._world:GetEntityByID(mountID)
+  if mountEntity:HasTrap() then
+    self:RideTrap(rideID, mountID, height)
+  elseif mountEntity:HasMonsterID() then
+    self:RideMonster(rideID, mountID, height, offset, changeBodyArea, onlyRiderCanClick)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RideServiceLogic.SetTargetLocation = function(self, pos, dir, targetEntity)
-  -- function num : 0_7
+function RideServiceLogic:SetTargetLocation(pos, dir, targetEntity)
   if not targetEntity:HasGridLocation() then
-    return 
+    return
   end
   local gridLocCmpt = targetEntity:GridLocation()
   gridLocCmpt:CallBackModifyLocation(pos, dir)
 end
-
-

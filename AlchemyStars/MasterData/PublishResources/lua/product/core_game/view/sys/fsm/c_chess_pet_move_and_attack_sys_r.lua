@@ -1,42 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_chess_pet_move_and_attack_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("chess_pet_move_and_attack_system")
 _class("ClientChessPetMoveAndAttackSystem_Render", ChessPetMoveAndAttackSystem)
 ClientChessPetMoveAndAttackSystem_Render = ClientChessPetMoveAndAttackSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientChessPetMoveAndAttackSystem_Render._DoRenderChessPetMove = function(self, TT)
-  -- function num : 0_0
-  local chessSvcRender = (self._world):GetService("ChessRender")
+function ClientChessPetMoveAndAttackSystem_Render:_DoRenderChessPetMove(TT)
+  local chessSvcRender = self._world:GetService("ChessRender")
   chessSvcRender:DoRenderChessPetPathMove(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChessPetMoveAndAttackSystem_Render._DoRenderChessPetAttack = function(self, TT)
-  -- function num : 0_1
-  local chessSvcRender = (self._world):GetService("ChessRender")
+function ClientChessPetMoveAndAttackSystem_Render:_DoRenderChessPetAttack(TT)
+  local chessSvcRender = self._world:GetService("ChessRender")
   local waitTaskID = chessSvcRender:DoRenderChessPetAttack(TT)
   return waitTaskID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChessPetMoveAndAttackSystem_Render._DoRenderSetChessPetDir = function(self, TT, chessPetEntity)
-  -- function num : 0_2
+function ClientChessPetMoveAndAttackSystem_Render:_DoRenderSetChessPetDir(TT, chessPetEntity)
   local dir = chessPetEntity:GetGridDirection()
   chessPetEntity:SetDirection(dir)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientChessPetMoveAndAttackSystem_Render._DoRenderChessPetFinishAttack = function(self, TT)
-  -- function num : 0_3
-  local chessSvcRender = (self._world):GetService("ChessRender")
+function ClientChessPetMoveAndAttackSystem_Render:_DoRenderChessPetFinishAttack(TT)
+  local chessSvcRender = self._world:GetService("ChessRender")
   chessSvcRender:ShowCurChessPetEndTurnEffect(TT)
 end
-
-

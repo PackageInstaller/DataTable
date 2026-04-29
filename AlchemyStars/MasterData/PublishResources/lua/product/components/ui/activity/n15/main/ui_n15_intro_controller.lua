@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n15/main/ui_n15_intro_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN15IntroController", UIController)
 UIN15IntroController = UIN15IntroController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN15IntroController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN15IntroController:OnShow(uiParams)
   self:_GetComponent()
   self:_InitParams(uiParams)
   self:_RefView()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15IntroController._GetComponent = function(self)
-  -- function num : 0_1
+function UIN15IntroController:_GetComponent()
   self._title = self:GetUIComponent("UILocalizationText", "_title")
   self._content = self:GetUIComponent("UILocalizationText", "txtDesc")
   self._animation = self:GetUIComponent("Animation", "_uianim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15IntroController._InitParams = function(self, uiParams)
-  -- function num : 0_2
+function UIN15IntroController:_InitParams(uiParams)
   if uiParams[2] then
     self._title_str = uiParams[1]
     self._content_str = uiParams[2]
@@ -36,20 +23,11 @@ UIN15IntroController._InitParams = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15IntroController._RefView = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)(self._title_str))
-  ;
-  (self._content):SetText((StringTable.Get)(self._content_str))
+function UIN15IntroController:_RefView()
+  self._title:SetText(StringTable.Get(self._title_str))
+  self._content:SetText(StringTable.Get(self._content_str))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15IntroController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIN15IntroController:ConfirmBtnOnClick(go)
   self:CloseDialog()
 end
-
-

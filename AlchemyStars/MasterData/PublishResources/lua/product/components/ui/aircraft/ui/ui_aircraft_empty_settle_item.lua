@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_empty_settle_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftEmptySettleItem", UICustomWidget)
 UIAircraftEmptySettleItem = UIAircraftEmptySettleItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftEmptySettleItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAircraftEmptySettleItem:OnShow(uiParams)
   self:InitWidget()
   self._pstid = 0
   self._index = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEmptySettleItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftEmptySettleItem:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEmptySettleItem.SetData = function(self, _roomData, index)
-  -- function num : 0_2
+function UIAircraftEmptySettleItem:SetData(_roomData, index)
   self.roomData = _roomData
   self._index = index
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEmptySettleItem.UIAircraftEmptySettleItemOnClick = function(self, go)
-  -- function num : 0_3
+function UIAircraftEmptySettleItem:UIAircraftEmptySettleItemOnClick(go)
   self:ShowDialog("UIAircraftEnterBuildController", self.roomData, self._pstid, self._index)
 end
-
-

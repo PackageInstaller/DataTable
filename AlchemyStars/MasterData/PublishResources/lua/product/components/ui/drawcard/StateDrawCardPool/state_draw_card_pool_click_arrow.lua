@@ -1,71 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/StateDrawCardPool/state_draw_card_pool_click_arrow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateDrawCardPoolClickArrow", State)
 StateDrawCardPoolClickArrow = StateDrawCardPoolClickArrow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateDrawCardPoolClickArrow.Init = function(self)
-  -- function num : 0_0
+function StateDrawCardPoolClickArrow:Init()
   self._fsm = self:GetFsm()
-  self._ui = (self._fsm):GetData()
+  self._ui = self._fsm:GetData()
   self.lockKey = "StateDrawCardPoolClickArrow"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolClickArrow.OnEnter = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function StateDrawCardPoolClickArrow:OnEnter(TT, ...)
   self:Init()
-  ;
-  (self._ui):Lock(self.lockKey)
-  local isRight, idx, duration = (table.unpack)({...})
+  self._ui:Lock(self.lockKey)
+  local isRight, idx, duration = table.unpack({
+    ...
+  })
   if self._ui then
-    (self._ui):InitLogoPos(isRight)
-    ;
-    (self._ui):FlushLogos(idx)
+    self._ui:InitLogoPos(isRight)
+    self._ui:FlushLogos(idx)
   end
-  if (self._ui).uieff then
-    ((self._ui).uieff):SetActive(true)
+  if self._ui.uieff then
+    self._ui.uieff:SetActive(true)
   end
-  if not duration then
-    duration = 0
-  end
+  duration = duration or 0
   self:PlaySwitchAuto(isRight, idx, duration)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolClickArrow.OnExit = function(self, TT)
-  -- function num : 0_2
-  (self._ui):UnLock(self.lockKey)
+function StateDrawCardPoolClickArrow:OnExit(TT)
+  self._ui:UnLock(self.lockKey)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolClickArrow.Destroy = function(self)
-  -- function num : 0_3
+function StateDrawCardPoolClickArrow:Destroy()
   self._fsm = nil
   self._ui = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolClickArrow.PlaySwitchAuto = function(self, isRight, idx, duration)
-  -- function num : 0_4 , upvalues : _ENV
-  ((((self._ui).bgLogo):DOAnchorPosX(0, duration)):OnUpdate(function()
-    -- function num : 0_4_0 , upvalues : self
+function StateDrawCardPoolClickArrow:PlaySwitchAuto(isRight, idx, duration)
+  self._ui.bgLogo:DOAnchorPosX(0, duration):OnUpdate(function()
     if self._ui then
-      (self._ui):OnBGLogoMoving()
+      self._ui:OnBGLogoMoving()
     end
-  end
-)):OnComplete(function()
-    -- function num : 0_4_1 , upvalues : self, _ENV, idx
-    (self._fsm):ChangeState(StateDrawCardPool.Turn, idx)
-  end
-)
+  end):OnComplete(function()
+    self._fsm:ChangeState(StateDrawCardPool.Turn, idx)
+  end)
 end
-
-

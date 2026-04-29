@@ -1,8 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/activity/eventtrailer/str_event_trailer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_event_trailer_title1 = "아스트라 이슈 속보", str_event_trailer_title2 = "이슈 속보", str_event_trailer_item_btn1 = "개방 임박", str_event_trailer_item_btn2 = "미리보기", str_event_trailer_item_btn3 = "이동", str_event_trailer_item_btn4 = "종료됨", str_event_trailer_timer1 = "이벤트 기간:", str_event_trailer_type_1 = "버전 이벤트", str_event_trailer_type_2 = "캐주얼 콘텐츠", str_event_trailer_type_3 = "도전하기", str_event_trailer_type_4 = "꿈의 세계", str_event_trailer_type_5 = "신규 코스튬", str_event_trailer_type_6 = "신규 메인 스토리", str_event_trailer_type_7 = "빛의 이야기", str_event_trailer_name_1 = "진심 어린 고백", str_event_trailer_name_2 = "러브 저지먼트", str_event_trailer_name_3 = "고갈", str_event_trailer_name_4 = "퇴락", str_event_trailer_name_5 = "두근두근 딜리버리", str_event_trailer_name_6 = "잠든 감시자의 천 년", str_event_trailer_locked_tips_1 = "스테이지 {1} 클리어 필요", str_event_trailer_locked_tips_2 = "{1} 아이템 필요", str_event_trailer_name_7 = "2부 스페셜 챕터 개방", str_event_trailer_name_8 = "꿈을 먹는 폐허", str_event_trailer_name_9 = "별동대 전술 훈련소", str_event_trailer_name_10 = "슈퍼 빌런 그롱켄슈타인누", str_event_trailer_name_11 = "꿈의 잔향", str_event_trailer_name_12 = "천상의 노래", str_event_trailer_name_13 = "꿈의 회상-얕은 잠", str_event_trailer_name_14 = "스타 엔터테인먼트", str_event_trailer_name_15 = "꿈의 회상-깊은 꿈", str_event_trailer_name_16 = "악의 소굴", str_event_trailer_name_17 = "한쪽 날개의 맹세", str_event_trailer_name_18 = "기이한 미식 마을", str_event_trailer_name_19 = "꿈을 먹는 폐허", str_event_trailer_name_20 = "새로운 비행", str_event_trailer_name_21 = "용주 해산지", str_event_trailer_name_22 = "끝없는 사냥", str_event_trailer_name_23 = "별동대 전술 훈련소", str_event_trailer_name_24 = "START", str_event_trailer_name_25 = "HARD", str_event_trailer_name_26 = "위기의 전조", str_event_trailer_name_27 = "낚시의 달인", str_event_trailer_name_28 = "영상 복구 대작전", str_event_trailer_name_29 = "훈련장", str_event_trailer_name_30 = "특훈", str_event_trailer_name_31 = "오로라의 수호자", str_event_trailer_name_32 = "여명을 비추는 별의 밤", str_event_trailer_name_33 = "꿈을 먹는 폐허", str_event_trailer_name_34 = "새겨진 인과", str_event_trailer_name_35 = "뫼비우스", str_event_trailer_name_36 = "여름 음료 대작전", str_event_trailer_name_37 = "별동대 전술 훈련소"}
+local config = {
+  str_event_trailer_title1 = "아스트라 이슈 속보",
+  str_event_trailer_title2 = "이슈 속보",
+  str_event_trailer_item_btn1 = "개방 임박",
+  str_event_trailer_item_btn2 = "미리보기",
+  str_event_trailer_item_btn3 = "이동",
+  str_event_trailer_item_btn4 = "종료됨",
+  str_event_trailer_timer1 = "이벤트 기간:",
+  str_event_trailer_type_1 = "버전 이벤트",
+  str_event_trailer_type_2 = "캐주얼 콘텐츠",
+  str_event_trailer_type_3 = "도전하기",
+  str_event_trailer_type_4 = "꿈의 세계",
+  str_event_trailer_type_5 = "신규 코스튬",
+  str_event_trailer_type_6 = "신규 메인 스토리",
+  str_event_trailer_type_7 = "빛의 이야기",
+  str_event_trailer_name_1 = "진심 어린 고백",
+  str_event_trailer_name_2 = "러브 저지먼트",
+  str_event_trailer_name_3 = "고갈",
+  str_event_trailer_name_4 = "퇴락",
+  str_event_trailer_name_5 = "두근두근 딜리버리",
+  str_event_trailer_name_6 = "잠든 감시자의 천 년",
+  str_event_trailer_locked_tips_1 = "스테이지 {1} 클리어 필요",
+  str_event_trailer_locked_tips_2 = "{1} 아이템 필요",
+  str_event_trailer_name_7 = "2부 스페셜 챕터 개방",
+  str_event_trailer_name_8 = "꿈을 먹는 폐허",
+  str_event_trailer_name_9 = "별동대 전술 훈련소",
+  str_event_trailer_name_10 = "슈퍼 빌런 그롱켄슈타인누",
+  str_event_trailer_name_11 = "꿈의 잔향",
+  str_event_trailer_name_12 = "천상의 노래",
+  str_event_trailer_name_13 = "꿈의 회상-얕은 잠",
+  str_event_trailer_name_14 = "스타 엔터테인먼트",
+  str_event_trailer_name_15 = "꿈의 회상-깊은 꿈",
+  str_event_trailer_name_16 = "악의 소굴",
+  str_event_trailer_name_17 = "한쪽 날개의 맹세",
+  str_event_trailer_name_18 = "기이한 미식 마을",
+  str_event_trailer_name_19 = "꿈을 먹는 폐허",
+  str_event_trailer_name_20 = "새로운 비행",
+  str_event_trailer_name_21 = "용주 해산지",
+  str_event_trailer_name_22 = "끝없는 사냥",
+  str_event_trailer_name_23 = "별동대 전술 훈련소",
+  str_event_trailer_name_24 = "START",
+  str_event_trailer_name_25 = "HARD",
+  str_event_trailer_name_26 = "위기의 전조",
+  str_event_trailer_name_27 = "낚시의 달인",
+  str_event_trailer_name_28 = "영상 복구 대작전",
+  str_event_trailer_name_29 = "훈련장",
+  str_event_trailer_name_30 = "특훈",
+  str_event_trailer_name_31 = "오로라의 수호자",
+  str_event_trailer_name_32 = "여명을 비추는 별의 밤",
+  str_event_trailer_name_33 = "꿈을 먹는 폐허",
+  str_event_trailer_name_34 = "새겨진 인과",
+  str_event_trailer_name_35 = "뫼비우스",
+  str_event_trailer_name_36 = "여름 음료 대작전",
+  str_event_trailer_name_37 = "별동대 전술 훈련소"
+}
 return config
-

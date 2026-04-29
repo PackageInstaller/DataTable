@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/chat/chat_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChatMessage", Object)
 ChatMessage = ChatMessage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChatMessage.Constructor = function(self)
-  -- function num : 0_0
+function ChatMessage:Constructor()
   self.chat_type = 0
   self.send_id = 0
   self.send_nick = ""
@@ -30,61 +23,73 @@ ChatMessage.Constructor = function(self)
   self.military_rank_level = 1
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R0 in 'UnsetPending'
-
 ChatMessage._proto = {
-[1] = {"chat_type", "int"}
-, 
-[2] = {"send_id", "int64"}
-, 
-[3] = {"send_nick", "string"}
-, 
-[4] = {"msg", "string"}
-, 
-[5] = {"send_time", "time"}
-, 
-[6] = {"target_id", "int64"}
-, 
-[7] = {"server_name", "string"}
-, 
-[8] = {"is_same_server", "bool"}
-, 
-[9] = {"speed", "int"}
-, 
-[10] = {"msg_flag", "int"}
-, 
-[11] = {"msg_length", "int"}
-, 
-[12] = {"server_id", "int"}
-, 
-[14] = {"room_id", "int64"}
-, 
-[15] = {"room_show_id", "int"}
-, 
-[16] = {"explore_id", "int"}
-, 
-[17] = {"difficuty", "int"}
-, 
-[18] = {"rate", "int"}
-, 
-[19] = {"mode", "int"}
-, 
-[20] = {"military_rank_level", "int"}
+  [1] = {"chat_type", "int"},
+  [2] = {"send_id", "int64"},
+  [3] = {"send_nick", "string"},
+  [4] = {"msg", "string"},
+  [5] = {"send_time", "time"},
+  [6] = {"target_id", "int64"},
+  [7] = {
+    "server_name",
+    "string"
+  },
+  [8] = {
+    "is_same_server",
+    "bool"
+  },
+  [9] = {"speed", "int"},
+  [10] = {"msg_flag", "int"},
+  [11] = {"msg_length", "int"},
+  [12] = {"server_id", "int"},
+  [14] = {"room_id", "int64"},
+  [15] = {
+    "room_show_id",
+    "int"
+  },
+  [16] = {"explore_id", "int"},
+  [17] = {"difficuty", "int"},
+  [18] = {"rate", "int"},
+  [19] = {"mode", "int"},
+  [20] = {
+    "military_rank_level",
+    "int"
+  }
 }
-local CHAT_CHANNEL_TYPE = {CHAT_CHANNEL_TYPE_UNKONW = 0, CHAT_CHANNEL_TYPE_GROUP = 1, CHAT_CHANNEL_TYPE_STATIC = 2, CHAT_CHANNEL_TYPE_WORLD = 3, CHAT_CHANNEL_TYPE_PRIVATE = 4, CHAT_CHANNEL_TYPE_BACKEND = 5, CHAT_CHANNEL_TYPE_SYSTEM = 6}
+local CHAT_CHANNEL_TYPE = {
+  CHAT_CHANNEL_TYPE_UNKONW = 0,
+  CHAT_CHANNEL_TYPE_GROUP = 1,
+  CHAT_CHANNEL_TYPE_STATIC = 2,
+  CHAT_CHANNEL_TYPE_WORLD = 3,
+  CHAT_CHANNEL_TYPE_PRIVATE = 4,
+  CHAT_CHANNEL_TYPE_BACKEND = 5,
+  CHAT_CHANNEL_TYPE_SYSTEM = 6
+}
 _enum("CHAT_CHANNEL_TYPE", CHAT_CHANNEL_TYPE)
-local CHAT_CHANNEL_CONFIG_TYPE = {CHAT_CHANNEL_CONFIG_TYPE_UNKONW = 0, CHAT_CHANNEL_CONFIG_TYPE_PRIVATE = 1, CHAT_CHANNEL_CONFIG_TYPE_WORLD = 2, CHAT_CHANNEL_CONFIG_TYPE_VIP = 100, CHAT_CHANNEL_CONFIG_TYPE_ROOM = 200, CHAT_CHANNEL_CONFIG_TYPE_MATCH = 201, CHAT_CHANNEL_CONFIG_TYPE_GUILD = 300, CHAT_CHANNEL_CONFIG_TYPE_SYSTEM = 400}
+local CHAT_CHANNEL_CONFIG_TYPE = {
+  CHAT_CHANNEL_CONFIG_TYPE_UNKONW = 0,
+  CHAT_CHANNEL_CONFIG_TYPE_PRIVATE = 1,
+  CHAT_CHANNEL_CONFIG_TYPE_WORLD = 2,
+  CHAT_CHANNEL_CONFIG_TYPE_VIP = 100,
+  CHAT_CHANNEL_CONFIG_TYPE_ROOM = 200,
+  CHAT_CHANNEL_CONFIG_TYPE_MATCH = 201,
+  CHAT_CHANNEL_CONFIG_TYPE_GUILD = 300,
+  CHAT_CHANNEL_CONFIG_TYPE_SYSTEM = 400
+}
 _enum("CHAT_CHANNEL_CONFIG_TYPE", CHAT_CHANNEL_CONFIG_TYPE)
-local SERVER_TYPE = {SERVER_TYPE_GAME = 54, SERVER_TYPE_UNIQUE = 57, SERVER_TYPE_MATCH = 62, SERVER_TYPE_ROOM = 63}
+local SERVER_TYPE = {
+  SERVER_TYPE_GAME = 54,
+  SERVER_TYPE_UNIQUE = 57,
+  SERVER_TYPE_MATCH = 62,
+  SERVER_TYPE_ROOM = 63
+}
 _enum("SERVER_TYPE", SERVER_TYPE)
 local CHAT_STATIC_CHANNEL_ID = {CHAT_STATIC_CHANNEL_ID_UNKONW = 0, CHAT_STATIC_CHANNEL_ID_VIP = 1}
 _enum("CHAT_STATIC_CHANNEL_ID", CHAT_STATIC_CHANNEL_ID)
 _class("ChatChannelConfig", Object)
 ChatChannelConfig = ChatChannelConfig
--- DECOMPILER ERROR at PC156: Confused about usage of register: R4 in 'UnsetPending'
 
-ChatChannelConfig.Constructor = function(self)
-  -- function num : 0_1
+function ChatChannelConfig:Constructor()
   self.config_type = 0
   self.channel_name = ""
   self.chat_frequency_check_interval = 0
@@ -92,87 +97,88 @@ ChatChannelConfig.Constructor = function(self)
   self.chat_length_limit = 0
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R4 in 'UnsetPending'
-
 ChatChannelConfig._proto = {
-[1] = {"config_type", "int"}
-, 
-[2] = {"channel_name", "string"}
-, 
-[3] = {"chat_frequency_check_interval", "int"}
-, 
-[4] = {"chat_frequency_check_count", "int"}
-, 
-[5] = {"chat_length_limit", "int"}
+  [1] = {
+    "config_type",
+    "int"
+  },
+  [2] = {
+    "channel_name",
+    "string"
+  },
+  [3] = {
+    "chat_frequency_check_interval",
+    "int"
+  },
+  [4] = {
+    "chat_frequency_check_count",
+    "int"
+  },
+  [5] = {
+    "chat_length_limit",
+    "int"
+  }
 }
 _class("ChatStatistics", Object)
 ChatStatistics = ChatStatistics
--- DECOMPILER ERROR at PC193: Confused about usage of register: R4 in 'UnsetPending'
 
-ChatStatistics.Constructor = function(self)
-  -- function num : 0_2
+function ChatStatistics:Constructor()
   self.last_send_chat_message = 0
   self.chat_message_count = 0
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R4 in 'UnsetPending'
-
 ChatStatistics._proto = {
-[1] = {"last_send_chat_message", "uint"}
-, 
-[2] = {"chat_message_count", "int"}
+  [1] = {
+    "last_send_chat_message",
+    "uint"
+  },
+  [2] = {
+    "chat_message_count",
+    "int"
+  }
 }
 _class("chat_player_info", Object)
 chat_player_info = chat_player_info
--- DECOMPILER ERROR at PC215: Confused about usage of register: R4 in 'UnsetPending'
 
-chat_player_info.Constructor = function(self)
-  -- function num : 0_3
+function chat_player_info:Constructor()
   self.pstid = 0
   self.nick = ""
   self.level = 0
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R4 in 'UnsetPending'
-
 chat_player_info._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"nick", "string"}
-, 
-[3] = {"level", "int"}
+  [1] = {"pstid", "int64"},
+  [2] = {"nick", "string"},
+  [3] = {"level", "int"}
 }
 _class("chat_channel_token", Object)
 chat_channel_token = chat_channel_token
--- DECOMPILER ERROR at PC242: Confused about usage of register: R4 in 'UnsetPending'
 
-chat_channel_token.Constructor = function(self)
-  -- function num : 0_4
+function chat_channel_token:Constructor()
   self.server_type = 0
   self.server_id = 0
   self.channel_type = 0
   self.channel_id = 0
 end
 
--- DECOMPILER ERROR at PC265: Confused about usage of register: R4 in 'UnsetPending'
-
 chat_channel_token._proto = {
-[1] = {"server_type", "short"}
-, 
-[2] = {"server_id", "short"}
-, 
-[3] = {"channel_type", "short"}
-, 
-[4] = {"channel_id", "int64"}
+  [1] = {
+    "server_type",
+    "short"
+  },
+  [2] = {"server_id", "short"},
+  [3] = {
+    "channel_type",
+    "short"
+  },
+  [4] = {"channel_id", "int64"}
 }
 local FRIEND_CHAT_MSG_TYPE = {FRIEND_CHAT_MSG_TYPE_STR = 0, FRIEND_CHAT_MSG_TYPE_EMOJI = 1}
 _enum("FRIEND_CHAT_MSG_TYPE", FRIEND_CHAT_MSG_TYPE)
 _class("chat_message_info", Object)
 chat_message_info = chat_message_info
--- DECOMPILER ERROR at PC281: Confused about usage of register: R5 in 'UnsetPending'
 
-chat_message_info.Constructor = function(self)
-  -- function num : 0_5 , upvalues : FRIEND_CHAT_MSG_TYPE
+function chat_message_info:Constructor()
   self.chat_time = 0
   self.chat_message = ""
   self.china_chat_message = ""
@@ -181,59 +187,66 @@ chat_message_info.Constructor = function(self)
   self.emoji_id = 0
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R5 in 'UnsetPending'
-
 chat_message_info._proto = {
-[1] = {"chat_time", "time"}
-, 
-[2] = {"chat_message", "string"}
-, 
-[3] = {"china_chat_message", "string"}
-, 
-[4] = {"msg_id", "uint64"}
-, 
-[5] = {"friend_msg_type", "short"}
-, 
-[6] = {"emoji_id", "short"}
+  [1] = {"chat_time", "time"},
+  [2] = {
+    "chat_message",
+    "string"
+  },
+  [3] = {
+    "china_chat_message",
+    "string"
+  },
+  [4] = {"msg_id", "uint64"},
+  [5] = {
+    "friend_msg_type",
+    "short"
+  },
+  [6] = {"emoji_id", "short"}
 }
 _class("ChatChannelMessage", Object)
 ChatChannelMessage = ChatChannelMessage
--- DECOMPILER ERROR at PC323: Confused about usage of register: R5 in 'UnsetPending'
 
-ChatChannelMessage.Constructor = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function ChatChannelMessage:Constructor()
   self.m_sender = chat_player_info:New()
   self.m_channel = chat_channel_token:New()
   self.m_message = chat_message_info:New()
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R5 in 'UnsetPending'
-
 ChatChannelMessage._proto = {
-[1] = {"m_sender", "chat_player_info"}
-, 
-[2] = {"m_channel", "chat_channel_token"}
-, 
-[3] = {"m_message", "chat_message_info"}
+  [1] = {
+    "m_sender",
+    "chat_player_info"
+  },
+  [2] = {
+    "m_channel",
+    "chat_channel_token"
+  },
+  [3] = {
+    "m_message",
+    "chat_message_info"
+  }
 }
 _class("ChatPrivateMessage", Object)
 ChatPrivateMessage = ChatPrivateMessage
--- DECOMPILER ERROR at PC350: Confused about usage of register: R5 in 'UnsetPending'
 
-ChatPrivateMessage.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function ChatPrivateMessage:Constructor()
   self.m_sender = chat_player_info:New()
   self.m_receiver_pstid = 0
   self.m_message = chat_message_info:New()
 end
 
--- DECOMPILER ERROR at PC368: Confused about usage of register: R5 in 'UnsetPending'
-
 ChatPrivateMessage._proto = {
-[1] = {"m_sender", "chat_player_info"}
-, 
-[2] = {"m_receiver_pstid", "int64"}
-, 
-[3] = {"m_message", "chat_message_info"}
+  [1] = {
+    "m_sender",
+    "chat_player_info"
+  },
+  [2] = {
+    "m_receiver_pstid",
+    "int64"
+  },
+  [3] = {
+    "m_message",
+    "chat_message_info"
+  }
 }
-

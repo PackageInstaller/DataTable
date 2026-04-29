@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/pet_interact/ui_home_pet_interact_break_text.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetInteractBreakText", Object)
 UIHomePetInteractBreakText = UIHomePetInteractBreakText
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetInteractBreakText.SetData = function(self, richText, canvas)
-  -- function num : 0_0
+function UIHomePetInteractBreakText:SetData(richText, canvas)
   self._richText = richText
   self._canvas = canvas
   self._startTime = 0
@@ -19,87 +12,42 @@ UIHomePetInteractBreakText.SetData = function(self, richText, canvas)
   self._doing = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInteractBreakText.SetBreakTime = function(self, breakTime)
-  -- function num : 0_1
+function UIHomePetInteractBreakText:SetBreakTime(breakTime)
   self._breakTime = breakTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInteractBreakText.SetActive = function(self, active)
-  -- function num : 0_2
+function UIHomePetInteractBreakText:SetActive(active)
   self._active = active
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInteractBreakText.Stop = function(self)
-  -- function num : 0_3
+function UIHomePetInteractBreakText:Stop()
   self._doing = false
   local showC = self._wordTotalCount
   if self._hideTextAnim then
     showC = -1
   end
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._richText).ShowCharCount = showC
+  self._richText.ShowCharCount = showC
   if self._callback then
-    (self._callback)(self._callbackParams, self._callbackParams2)
+    self._callback(self._callbackParams, self._callbackParams2)
     self._callback = nil
     self._callbackParams = nil
     self._callbackParams2 = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInteractBreakText.SetText = function(self, content, callback)
-  -- function num : 0_4 , upvalues : _ENV
-  self._contentStr = self:_GetContentInfo(content)
-  self._contentStr = (string.gsub)(self._contentStr, "$$", R6_PC4)
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function UIHomePetInteractBreakText:SetText(content, callback)
+  self._contentStr, self._breakIndexList, self._wordTotalCount, self._yieldTime, self._hideTextAnim = self:_GetContentInfo(content)
+  self._contentStr = string.gsub(self._contentStr, "$$", "$")
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  -- DECOMPILER ERROR at PC35: Overwrote pending register: R6 in 'AssignReg'
-
-  self._contentStr = (string.gsub)(self._contentStr, R6_PC4, R7_PC3)
-  -- DECOMPILER ERROR at PC41: Overwrote pending register: R6 in 'AssignReg'
-
-  ;
-  (self._richText):SetText(R6_PC4)
-  -- DECOMPILER ERROR at PC47: Overwrote pending register: R6 in 'AssignReg'
-
-  local newStr = (HomeStoryHelper:GetInstance()):FilterHtml(R6_PC4)
-  -- DECOMPILER ERROR at PC50: Overwrote pending register: R6 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC52: Overwrote pending register: R6 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC53: Overwrote pending register: R7 in 'AssignReg'
-
-  local charIndex = (HomeStoryHelper:GetInstance()):GetstringCount(R7_PC3)
-  -- DECOMPILER ERROR at PC55: Overwrote pending register: R6 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC56: Overwrote pending register: R7 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC56: Overwrote pending register: R6 in 'AssignReg'
-
-  R6_PC4 = R6_PC4(R7_PC3)
-  -- DECOMPILER ERROR at PC58: Overwrote pending register: R7 in 'AssignReg'
-
-  R6_PC4 = R6_PC4:GetEmojiWidth
-  R6_PC4 = R6_PC4(R7_PC3, self._contentStr)
-  local emojiWidth = nil
-  -- DECOMPILER ERROR at PC61: Overwrote pending register: R7 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC62: Overwrote pending register: R7 in 'AssignReg'
-
-  R7_PC3 = R7_PC3(R7_PC3)
-  R7_PC3 = R7_PC3(R7_PC3, self._canvas, self._richText, newStr, charIndex, 3)
-  local endFlagPos = nil
+  self._contentStr = string.gsub(self._contentStr, "PlayerName", name)
+  self._richText:SetText(self._contentStr)
+  local newStr = HomeStoryHelper:GetInstance():FilterHtml(self._contentStr)
+  local charIndex = HomeStoryHelper:GetInstance():GetstringCount(newStr)
+  local emojiWidth = HomeStoryHelper:GetInstance():GetEmojiWidth(self._contentStr)
+  local endFlagPos = HomeStoryHelper:GetInstance():GetPosWithTextIndexVert(self._canvas, self._richText, newStr, charIndex, 3)
   local endFlagOffset = Vector3(emojiWidth, 0, 0)
   if self._active then
     if self._yieldTime > 0 then
@@ -108,95 +56,76 @@ UIHomePetInteractBreakText.SetText = function(self, content, callback)
       if self._hideTextAnim then
         showC = -1
       end
-      -- DECOMPILER ERROR at PC89: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._richText).ShowCharCount = showC
-      self._contentTypeTime = (self._breakIndexList)[1] * self._breakTime
+      self._richText.ShowCharCount = showC
+      self._contentTypeTime = self._breakIndexList[1] * self._breakTime
       self._time = 0
       self._doing = true
       self._callback = callback
       self._callbackParams = endFlagPos
       self._callbackParams2 = endFlagOffset
-    else
-      do
-        if callback then
-          callback(endFlagPos, endFlagOffset)
-        end
-        do return self._yieldTime end
-      end
+    elseif callback then
+      callback(endFlagPos, endFlagOffset)
     end
+    return self._yieldTime
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInteractBreakText.Update = function(self, dms)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomePetInteractBreakText:Update(dms)
   if self._doing then
     self._time = self._time + dms
     local breakPercent = 1
     if self._contentTypeTime > 0 then
       breakPercent = self._time / self._contentTypeTime
-      if breakPercent > 1 then
+      if 1 < breakPercent then
         breakPercent = 1
       end
     end
     local wordCount = -1
     if self._breakIdx == 0 then
-      wordCount = (math.floor)(breakPercent * (self._breakIndexList)[self._breakIdx + 1])
+      wordCount = math.floor(breakPercent * self._breakIndexList[self._breakIdx + 1])
     else
-      do
-        local a = (self._breakIndexList)[self._breakIdx + 1] or 1
-        wordCount = (math.floor)((lmathext.lerp)((self._breakIndexList)[self._breakIdx], (self._breakIndexList)[self._breakIdx + 1], breakPercent))
-        local showC = wordCount
-        if self._hideTextAnim then
-          showC = -1
+      if not self._breakIndexList[self._breakIdx + 1] then
+        local a = 1
+      end
+      wordCount = math.floor(lmathext.lerp(self._breakIndexList[self._breakIdx], self._breakIndexList[self._breakIdx + 1], breakPercent))
+    end
+    local showC = wordCount
+    if self._hideTextAnim then
+      showC = -1
+    end
+    self._richText.ShowCharCount = showC
+    if breakPercent == 1 then
+      self._breakIdx = self._breakIdx + 1
+      if self._breakIdx >= #self._breakIndexList then
+        self._doing = false
+        if self._callback then
+          self._callback(self._callbackParams, self._callbackParams2)
+          self._callback = nil
+          self._callbackParams = nil
+          self._callbackParams2 = nil
         end
-        -- DECOMPILER ERROR at PC58: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._richText).ShowCharCount = showC
-        if breakPercent == 1 then
-          self._breakIdx = self._breakIdx + 1
-          if #self._breakIndexList <= self._breakIdx then
-            self._doing = false
-            if self._callback then
-              (self._callback)(self._callbackParams, self._callbackParams2)
-              self._callback = nil
-              self._callbackParams = nil
-              self._callbackParams2 = nil
-            end
-          else
-            self._contentTypeTime = self._breakTime * ((self._breakIndexList)[self._breakIdx + 1] - (self._breakIndexList)[self._breakIdx])
-          end
-        end
+      else
+        self._contentTypeTime = self._breakTime * (self._breakIndexList[self._breakIdx + 1] - self._breakIndexList[self._breakIdx])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInteractBreakText.Dispose = function(self)
-  -- function num : 0_6
+function UIHomePetInteractBreakText:Dispose()
   self._doing = false
   self._richText = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInteractBreakText._GetContentInfo = function(self, str)
-  -- function num : 0_7 , upvalues : _ENV
-  local plainStr = (string.gsub)(str, "<size=%d*>", "")
-  plainStr = (string.gsub)(plainStr, "</size>", "")
-  plainStr = (string.gsub)(plainStr, "<color=#%x*>", "")
-  plainStr = (string.gsub)(plainStr, "</color>", "")
-  plainStr = (string.gsub)(plainStr, "<sprite.*/>", "a")
-  local finalStr = (string.gsub)(str, self._splitChar, "")
+function UIHomePetInteractBreakText:_GetContentInfo(str)
+  local plainStr = string.gsub(str, "<size=%d*>", "")
+  plainStr = string.gsub(plainStr, "</size>", "")
+  plainStr = string.gsub(plainStr, "<color=#%x*>", "")
+  plainStr = string.gsub(plainStr, "</color>", "")
+  plainStr = string.gsub(plainStr, "<sprite.*/>", "a")
+  local finalStr = string.gsub(str, self._splitChar, "")
   local breakIndexList = {}
   local charCount = 0
-  for uchar in (string.gmatch)(plainStr, "[%z\001-\127\194-\244][\128-\191]*") do
+  for uchar in string.gmatch(plainStr, "[%z\001-\127Â-ô][€-¿]*") do
     if uchar == self._splitChar then
       breakIndexList[#breakIndexList + 1] = charCount
     else
@@ -205,19 +134,14 @@ UIHomePetInteractBreakText._GetContentInfo = function(self, str)
   end
   breakIndexList[#breakIndexList + 1] = charCount
   local yieldTime = 0
-  if #breakIndexList > 0 then
-    yieldTime = (charCount) * self._breakTime
+  if 0 < #breakIndexList then
+    yieldTime = charCount * self._breakTime
   end
   local hideTextAnim = self:CheckHideTextAnim(str)
   return finalStr, breakIndexList, charCount, yieldTime, hideTextAnim
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInteractBreakText.CheckHideTextAnim = function(self, str)
-  -- function num : 0_8 , upvalues : _ENV
-  local hide = (HelperProxy:GetInstance()):CheckTextIncludeImg(str)
+function UIHomePetInteractBreakText:CheckHideTextAnim(str)
+  local hide = HelperProxy:GetInstance():CheckTextIncludeImg(str)
   return hide
 end
-
-

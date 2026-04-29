@@ -1,158 +1,111 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/homeland_find_treasure_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFindTreasureManager", Object)
 HomelandFindTreasureManager = HomelandFindTreasureManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFindTreasureManager.Constructor = function(self, homelandClient)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandFindTreasureManager:Constructor(homelandClient)
   self._homelandClient = homelandClient
-  self._activeRemainTime = (HomelandFindTreasureConst.GetFindTreasureActiveRemainTime)()
+  self._activeRemainTime = HomelandFindTreasureConst.GetFindTreasureActiveRemainTime()
   if self._activeRemainTime then
-    self._activeRemainTimerHandler = ((GameGlobal.Timer)()):AddEventTimes(self._activeRemainTime * 1000, 1, function()
-    -- function num : 0_0_0 , upvalues : self
-    self:ActiveEnd()
-  end
-)
+    self._activeRemainTimerHandler = GameGlobal.Timer():AddEventTimes(self._activeRemainTime * 1000, 1, function()
+      self:ActiveEnd()
+    end)
   end
   self._npc = HomelandFindTreasureNPC:New(self)
   self._find_treasure = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandFindTreasureManager:Destroy()
   self:Release()
-  ;
-  (HomelandFindTreasureConst.Destroy)()
+  HomelandFindTreasureConst.Destroy()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.Release = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandFindTreasureManager:Release()
   if self._activeRemainTimerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._activeRemainTimerHandler)
+    GameGlobal.Timer():CancelEvent(self._activeRemainTimerHandler)
     self._activeRemainTimerHandler = nil
   end
   if self._find_treasure then
-    (self._find_treasure):Destroy()
+    self._find_treasure:Destroy()
     self._find_treasure = nil
   end
   if self._npc then
-    (self._npc):Destroy()
+    self._npc:Destroy()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.IsFindingTreasure = function(self)
-  -- function num : 0_3
+function HomelandFindTreasureManager:IsFindingTreasure()
   if self._find_treasure then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.ActiveEnd = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if self._find_treasure and self._activeRemainTimerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._activeRemainTimerHandler)
-    self._activeRemainTimerHandler = nil
+function HomelandFindTreasureManager:ActiveEnd()
+  if self._find_treasure then
+    if self._activeRemainTimerHandler then
+      GameGlobal.Timer():CancelEvent(self._activeRemainTimerHandler)
+      self._activeRemainTimerHandler = nil
+    end
+    return
   end
-  do return  end
   self:Release()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.EnterFindTreasure = function(self, posId)
-  -- function num : 0_5 , upvalues : _ENV
-  if (HomelandFindTreasureConst.IsGameActivityEnd)() then
+function HomelandFindTreasureManager:EnterFindTreasure(posId)
+  if HomelandFindTreasureConst.IsGameActivityEnd() then
     self:Release()
-    return 
+    return
   end
   if self._npc then
-    (self._npc):SetStatusStatus(false)
+    self._npc:SetStatusStatus(false)
   end
   if self._find_treasure then
-    (self._find_treasure):Destroy()
+    self._find_treasure:Destroy()
   end
   self._find_treasure = HomelandFindTreasure:New(self, posId)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnterFindTreasure)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.EnterFindTreasure)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.AttachModel = function(self)
-  -- function num : 0_6
+function HomelandFindTreasureManager:AttachModel()
   if self._find_treasure then
-    return (self._find_treasure):AttachModel()
+    return self._find_treasure:AttachModel()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.StartFindTreasure = function(self)
-  -- function num : 0_7
+function HomelandFindTreasureManager:StartFindTreasure()
   if self._find_treasure then
-    return (self._find_treasure):Start()
+    return self._find_treasure:Start()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.ExitFindTreasure = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandFindTreasureManager:ExitFindTreasure()
   if self._find_treasure then
-    (self._find_treasure):Destroy()
+    self._find_treasure:Destroy()
     self._find_treasure = nil
   end
   if self._npc then
-    (self._npc):SetStatusStatus(true)
+    self._npc:SetStatusStatus(true)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetInteractPointUIStatus, true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ExitFindTreasure)
-  if (HomelandFindTreasureConst.IsGameActivityEnd)() then
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetInteractPointUIStatus, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ExitFindTreasure)
+  if HomelandFindTreasureConst.IsGameActivityEnd() then
     self:Release()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.Pause = function(self)
-  -- function num : 0_9
+function HomelandFindTreasureManager:Pause()
   if self._find_treasure then
-    (self._find_treasure):Pause()
+    self._find_treasure:Pause()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.Resume = function(self)
-  -- function num : 0_10
+function HomelandFindTreasureManager:Resume()
   if self._find_treasure then
-    (self._find_treasure):Resume()
+    self._find_treasure:Resume()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureManager.GetFindTreasure = function(self)
-  -- function num : 0_11
+function HomelandFindTreasureManager:GetFindTreasure()
   return self._find_treasure
 end
-
-

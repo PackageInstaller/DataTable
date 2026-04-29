@@ -1,84 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/ui_season_obj.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonObj", Object)
 UISeasonObj = UISeasonObj
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonObj.Constructor = function(self, sample, obj)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonObj:Constructor(sample, obj)
   self._sample = sample
   self._campaignObj = obj
-  self._seasonID = (self._sample).id
-  self._seasonType = (self._sample).camp_type
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  self._campaign_module = (GameGlobal.GetModule)(CampaignModule)
+  self._seasonID = self._sample.id
+  self._seasonType = self._sample.camp_type
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  self._campaign_module = GameGlobal.GetModule(CampaignModule)
   self._missionCpt = self:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonObj.GetSeasonType = function(self)
-  -- function num : 0_1
+function UISeasonObj:GetSeasonType()
   return self._seasonType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonObj.GetSeasonID = function(self)
-  -- function num : 0_2
+function UISeasonObj:GetSeasonID()
   return self._seasonID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonObj.GetSeasonMissionComponentCfgID = function(self)
-  -- function num : 0_3
-  return (self._missionCpt):GetComponentCfgId()
+function UISeasonObj:GetSeasonMissionComponentCfgID()
+  return self._missionCpt:GetComponentCfgId()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonObj.GetLocalProcess = function(self)
-  -- function num : 0_4
-  local proccess = (self._seasonModule):GetLocalProcess(self._seasonType, self._seasonID)
+function UISeasonObj:GetLocalProcess()
+  local proccess = self._seasonModule:GetLocalProcess(self._seasonType, self._seasonID)
   return proccess
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonObj.GetComponent = function(self, cptID)
-  -- function num : 0_5
+function UISeasonObj:GetComponent(cptID)
   local proccess = self:GetLocalProcess()
-  if proccess then
-    return proccess:GetComponent(cptID)
-  end
+  return proccess and proccess:GetComponent(cptID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonObj.GetComponentInfo = function(self, cptID)
-  -- function num : 0_6
-  local localProcess = (self._seasonModule):GetLocalProcess(self._seasonType, self._seasonID)
-  if localProcess then
-    return localProcess:GetComponentInfo(cptID)
-  end
+function UISeasonObj:GetComponentInfo(cptID)
+  local localProcess = self._seasonModule:GetLocalProcess(self._seasonType, self._seasonID)
+  return localProcess and localProcess:GetComponentInfo(cptID)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonObj.CheckComponentOpen = function(self, ...)
-  -- function num : 0_7
-  return (self._campaign_module):CheckComponentOpen(self:GetLocalProcess(), ...)
+function UISeasonObj:CheckComponentOpen(...)
+  return self._campaign_module:CheckComponentOpen(self:GetLocalProcess(), ...)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonObj.CheckErrorCode = function(self, result, refreshCallback, closeCallback)
-  -- function num : 0_8
-  (self._campaign_module):CheckErrorCode(result, self._id, refreshCallback, closeCallback)
+function UISeasonObj:CheckErrorCode(result, refreshCallback, closeCallback)
+  self._campaign_module:CheckErrorCode(result, self._id, refreshCallback, closeCallback)
 end
-
-

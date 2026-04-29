@@ -1,76 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_sync_move_with_team_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderSyncMoveWithTeamComponent", Object)
 RenderSyncMoveWithTeamComponent = RenderSyncMoveWithTeamComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderSyncMoveWithTeamComponent.Constructor = function(self, teamEntity)
-  -- function num : 0_0
+function RenderSyncMoveWithTeamComponent:Constructor(teamEntity)
   self._targetTeamEntity = teamEntity
   self._syncMovePath = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderSyncMoveWithTeamComponent.RecordSyncMovePath = function(self, syncMovePath)
-  -- function num : 0_1
+function RenderSyncMoveWithTeamComponent:RecordSyncMovePath(syncMovePath)
   self._syncMovePath = syncMovePath
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderSyncMoveWithTeamComponent.GetSyncMovePath = function(self)
-  -- function num : 0_2
+function RenderSyncMoveWithTeamComponent:GetSyncMovePath()
   return self._syncMovePath
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderSyncMoveWithTeamComponent.SetGhostEntityID = function(self, ghostEntityID)
-  -- function num : 0_3
+function RenderSyncMoveWithTeamComponent:SetGhostEntityID(ghostEntityID)
   self._ghostEntityID = ghostEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderSyncMoveWithTeamComponent.GetGhostEntityID = function(self)
-  -- function num : 0_4
+function RenderSyncMoveWithTeamComponent:GetGhostEntityID()
   return self._ghostEntityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderSyncMoveWithTeam = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).RenderSyncMoveWithTeam)
+function Entity:RenderSyncMoveWithTeam()
+  return self:GetComponent(self.WEComponentsEnum.RenderSyncMoveWithTeam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderSyncMoveWithTeam = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).RenderSyncMoveWithTeam)
+function Entity:HasRenderSyncMoveWithTeam()
+  return self:HasComponent(self.WEComponentsEnum.RenderSyncMoveWithTeam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderSyncMoveWithTeam = function(self, teamEntity)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderSyncMoveWithTeam
+function Entity:AddRenderSyncMoveWithTeam(teamEntity)
+  local index = self.WEComponentsEnum.RenderSyncMoveWithTeam
   local component = RenderSyncMoveWithTeamComponent:New(teamEntity)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderSyncMoveWithTeam = function(self)
-  -- function num : 0_8
+function Entity:RemoveRenderSyncMoveWithTeam()
   if self:HasRenderSyncMoveWithTeam() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderSyncMoveWithTeam)
+    self:RemoveComponent(self.WEComponentsEnum.RenderSyncMoveWithTeam)
   end
 end
-
-

@@ -1,204 +1,134 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/air_action_seq_maker.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionSeqMaker", Object)
 AirActionSeqMaker = AirActionSeqMaker
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionSeqMaker.Constructor = function(self, count, furnitureType)
-  -- function num : 0_0 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_aircraft_action_sequence)({seqType = furnitureType})
+function AirActionSeqMaker:Constructor(count, furnitureType)
+  local cfgs = Cfg.cfg_aircraft_action_sequence({seqType = furnitureType})
   if cfgs then
-    for key,cfg in pairs(cfgs) do
+    for key, cfg in pairs(cfgs) do
       if cfg.peopleCount == count then
         self.m_Cfg = cfg
         break
       end
     end
   end
-  do
-    if self.m_Cfg then
-      self:InitBeginSeq()
-      self:InitLoopSeq()
-      self:InitFinishSeq()
-    end
+  if self.m_Cfg then
+    self:InitBeginSeq()
+    self:InitLoopSeq()
+    self:InitFinishSeq()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.InitBeginSeq = function(self)
-  -- function num : 0_1
-  self.m_BeginSeq = (self.m_Cfg).beginSequence
+function AirActionSeqMaker:InitBeginSeq()
+  self.m_BeginSeq = self.m_Cfg.beginSequence
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.HasBegin = function(self)
-  -- function num : 0_2
-  do return self.m_BeginSeq ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AirActionSeqMaker:HasBegin()
+  return self.m_BeginSeq ~= nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.GetBeginSeq = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return {(self.m_BeginSeq)[1], tonumber((self.m_BeginSeq)[2])}
+function AirActionSeqMaker:GetBeginSeq()
+  return {
+    self.m_BeginSeq[1],
+    tonumber(self.m_BeginSeq[2])
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.InitLoopSeq = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AirActionSeqMaker:InitLoopSeq()
   self.m_LoopSeq = {}
-  if (self.m_Cfg).loopCount and (self.m_Cfg).loopCount > 0 then
+  if self.m_Cfg.loopCount and self.m_Cfg.loopCount > 0 then
     local round = 0
-    for index,str in ipairs((self.m_Cfg).loopSequence) do
+    for index, str in ipairs(self.m_Cfg.loopSequence) do
       round = round + 1
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R7 in 'UnsetPending'
-
-      if not (self.m_LoopSeq)[round] then
-        (self.m_LoopSeq)[round] = {}
+      if not self.m_LoopSeq[round] then
+        self.m_LoopSeq[round] = {}
       end
-      local b = (string.split)(str, ";")
-      if b and (table.count)(b) >= 2 then
-        for i = 1, (self.m_Cfg).peopleCount do
-          local c = (string.split)(b[i], ",")
-          -- DECOMPILER ERROR at PC55: Confused about usage of register: R13 in 'UnsetPending'
-
-          ;
-          ((self.m_LoopSeq)[round])[i] = {c[1], tonumber(c[2])}
+      local b = string.split(str, ";")
+      if b and table.count(b) >= 2 then
+        for i = 1, self.m_Cfg.peopleCount do
+          local c = string.split(b[i], ",")
+          self.m_LoopSeq[round][i] = {
+            c[1],
+            tonumber(c[2])
+          }
         end
       else
-        do
-          do
-            local c = (string.split)(str, ",")
-            -- DECOMPILER ERROR at PC71: Confused about usage of register: R9 in 'UnsetPending'
-
-            ;
-            ((self.m_LoopSeq)[round])[1] = {c[1], tonumber(c[2])}
-            -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        local c = string.split(str, ",")
+        self.m_LoopSeq[round][1] = {
+          c[1],
+          tonumber(c[2])
+        }
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.GetLoopCount = function(self)
-  -- function num : 0_5
-  return (self.m_Cfg).loopCount
+function AirActionSeqMaker:GetLoopCount()
+  return self.m_Cfg.loopCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.GetTotalLoopTime = function(self, index)
-  -- function num : 0_6
+function AirActionSeqMaker:GetTotalLoopTime(index)
   return self:GetLoopTime(self:GetLoopCount(), index)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.GetLoopTime = function(self, round, index)
-  -- function num : 0_7
+function AirActionSeqMaker:GetLoopTime(round, index)
   local time = 0
-  if round and round > 0 then
+  if round and 0 < round then
     for i = 1, round do
       for j = 1, self:GetOnceLoopCount() do
-        time = time + (((self.m_LoopSeq)[j])[index])[2]
+        time = time + self.m_LoopSeq[j][index][2]
       end
     end
-  end
-  do
-    return time
-  end
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.GetRemainTime = function(self, round, index)
-  -- function num : 0_8
-  return self:GetTotalLoopTime(index) - self:GetLoopTime(round, index) + self:GetFinishTime(index)
-end
-
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.HasLoop = function(self)
-  -- function num : 0_9
-  do return self:GetLoopCount() > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.GetLoopSeq = function(self, round, index)
-  -- function num : 0_10
-  return ((self.m_LoopSeq)[round])[index]
-end
-
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.GetOnceLoopCount = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  return (table.count)(self.m_LoopSeq)
-end
-
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.InitFinishSeq = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self.m_FinishSeq = {}
-  if (self.m_Cfg).finishSequence then
-    for index,value in ipairs((self.m_Cfg).finishSequence) do
-      local d = (string.split)(value, ",")
-      ;
-      (table.insert)(self.m_FinishSeq, {d[1], tonumber(d[2])})
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.GetFinishSeq = function(self, index)
-  -- function num : 0_13
-  return (self.m_FinishSeq)[index]
-end
-
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.GetFinishTime = function(self, index)
-  -- function num : 0_14
-  local time = 0
-  if time and self.m_FinishSeq and (self.m_FinishSeq)[index] then
-    time = ((self.m_FinishSeq)[index])[2]
   end
   return time
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSeqMaker.HasFinish = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  return (table.count)(self.m_FinishSeq)
+function AirActionSeqMaker:GetRemainTime(round, index)
+  return self:GetTotalLoopTime(index) - self:GetLoopTime(round, index) + self:GetFinishTime(index)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
+function AirActionSeqMaker:HasLoop()
+  return self:GetLoopCount() > 0
+end
 
-AirActionSeqMaker.Dispose = function(self)
-  -- function num : 0_16
+function AirActionSeqMaker:GetLoopSeq(round, index)
+  return self.m_LoopSeq[round][index]
+end
+
+function AirActionSeqMaker:GetOnceLoopCount()
+  return table.count(self.m_LoopSeq)
+end
+
+function AirActionSeqMaker:InitFinishSeq()
+  self.m_FinishSeq = {}
+  if self.m_Cfg.finishSequence then
+    for index, value in ipairs(self.m_Cfg.finishSequence) do
+      local d = string.split(value, ",")
+      table.insert(self.m_FinishSeq, {
+        d[1],
+        tonumber(d[2])
+      })
+    end
+  end
+end
+
+function AirActionSeqMaker:GetFinishSeq(index)
+  return self.m_FinishSeq[index]
+end
+
+function AirActionSeqMaker:GetFinishTime(index)
+  local time = 0
+  if time and self.m_FinishSeq and self.m_FinishSeq[index] then
+    time = self.m_FinishSeq[index][2]
+  end
+  return time
+end
+
+function AirActionSeqMaker:HasFinish()
+  return table.count(self.m_FinishSeq)
+end
+
+function AirActionSeqMaker:Dispose()
   self.m_BeginSeq = nil
   self.m_LoopSeq = {}
   self.m_FinishSeq = {}
 end
-
-

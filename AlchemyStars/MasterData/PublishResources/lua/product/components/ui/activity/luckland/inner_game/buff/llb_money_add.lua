@@ -1,45 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_money_add.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLBuffLogicAddMoney", LLBuffLogicBase)
 LLBuffLogicAddMoney = LLBuffLogicAddMoney
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicAddMoney.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicAddMoney:Constructor(buffObj, logicParam)
   self._fixVal = logicParam.fixVal
   self._addToTotal = logicParam.addToTotal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicAddMoney.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicAddMoney:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
-  local targets = (self._buffObj):GetTargets()
-  for _,target in ipairs(targets) do
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
     self:DoLogicSingle(target)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicAddMoney.DoLogicSingle = function(self, target)
-  -- function num : 0_2 , upvalues : _ENV
+function LLBuffLogicAddMoney:DoLogicSingle(target)
   if target:GetEntityType() == LuckLandEntityType.Pet then
     if self._addToTotal then
       local module = GameGlobal:GetLuckLandModule()
       module:AddGold(self._fixVal)
     else
-      do
-        target:AddDirectGold(self._fixVal)
-        if target:GetEntityType() == LuckLandEntityType.Monster then
-        end
-      end
+      target:AddDirectGold(self._fixVal)
     end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster then
   end
 end
-
-

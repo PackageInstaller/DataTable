@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_control_monster_teleport_and_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamControlMonsterTeleportAndAttack", SkillEffectParamBase)
 SkillEffectParamControlMonsterTeleportAndAttack = SkillEffectParamControlMonsterTeleportAndAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamControlMonsterTeleportAndAttack.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamControlMonsterTeleportAndAttack:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   self._moveDis = t.moveDis
@@ -18,53 +11,30 @@ SkillEffectParamControlMonsterTeleportAndAttack.Constructor = function(self, t)
   self._attackScopeParam = t.attackScopeParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamControlMonsterTeleportAndAttack.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamControlMonsterTeleportAndAttack:GetEffectType()
   return SkillEffectType.ControlMonsterTeleportAndAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamControlMonsterTeleportAndAttack.GetDamageFormulaID = function(self)
-  -- function num : 0_2
+function SkillEffectParamControlMonsterTeleportAndAttack:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamControlMonsterTeleportAndAttack.GetDamagePercent = function(self)
-  -- function num : 0_3
+function SkillEffectParamControlMonsterTeleportAndAttack:GetDamagePercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamControlMonsterTeleportAndAttack.GetMoveDis = function(self)
-  -- function num : 0_4
+function SkillEffectParamControlMonsterTeleportAndAttack:GetMoveDis()
   return self._moveDis
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamControlMonsterTeleportAndAttack.GetMonsterClassID = function(self)
-  -- function num : 0_5
+function SkillEffectParamControlMonsterTeleportAndAttack:GetMonsterClassID()
   return self._monsterClassID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamControlMonsterTeleportAndAttack.GetAttackScopeType = function(self)
-  -- function num : 0_6
+function SkillEffectParamControlMonsterTeleportAndAttack:GetAttackScopeType()
   return self._attackScopeType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamControlMonsterTeleportAndAttack.GetAttackScopeParam = function(self)
-  -- function num : 0_7
+function SkillEffectParamControlMonsterTeleportAndAttack:GetAttackScopeParam()
   return self._attackScopeParam
 end
-
-

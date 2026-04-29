@@ -1,131 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n39/main/ui_n39_time_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN39TimeBase", UICustomWidget)
 UIN39TimeBase = UIN39TimeBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39TimeBase.SetData = function(self, endTime, callback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN39TimeBase:SetData(endTime, callback)
   self._timeTex = self:GetUIComponent("UILocalizationText", "txtTime")
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self._endTime = endTime
   self._callback = callback
   self:ShowTex()
   self:AddTimer()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeBase.ShowTex = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local nowTime = (math.ceil)((self._svrTimeModule):GetServerTime() * 0.001)
+function UIN39TimeBase:ShowTex()
+  local nowTime = math.ceil(self._svrTimeModule:GetServerTime() * 0.001)
   local gap = self._endTime - nowTime
   local timeTex = ""
-  if gap >= 0 then
+  if 0 <= gap then
     local minAll = gap // 60
     local min = minAll % 60
     local hourAll = minAll // 60
     local hour = hourAll % 24
     local day = hourAll // 24
-    if day and day > 0 then
-      if hour and hour > 0 then
-        timeTex = (StringTable.Get)("str_n39_exchange_time_day_hour", self:RichTextTag_Num_Left(), day, self:RichTextTag_Num_Right(), self:RichTextTag_Num_Left(), hour, self:RichTextTag_Num_Right())
+    if day and 0 < day then
+      if hour and 0 < hour then
+        timeTex = StringTable.Get("str_n39_exchange_time_day_hour", self:RichTextTag_Num_Left(), day, self:RichTextTag_Num_Right(), self:RichTextTag_Num_Left(), hour, self:RichTextTag_Num_Right())
       else
-        timeTex = (StringTable.Get)("str_n39_exchange_time_day", self:RichTextTag_Num_Left(), day, self:RichTextTag_Num_Right())
+        timeTex = StringTable.Get("str_n39_exchange_time_day", self:RichTextTag_Num_Left(), day, self:RichTextTag_Num_Right())
       end
+    elseif hour and 0 < hour then
+      if min and 0 < min then
+        timeTex = StringTable.Get("str_n39_exchange_time_hour_min", self:RichTextTag_Num_Left(), hour, self:RichTextTag_Num_Right(), self:RichTextTag_Num_Left(), min, self:RichTextTag_Num_Left())
+      else
+        timeTex = StringTable.Get("str_n39_exchange_time_hour", self:RichTextTag_Num_Left(), hour, self:RichTextTag_Num_Right())
+      end
+    elseif min and 0 < min then
+      timeTex = StringTable.Get("str_n39_exchange_time_min", self:RichTextTag_Num_Left(), min, self:RichTextTag_Num_Right())
     else
-      if hour and hour > 0 then
-        if min and min > 0 then
-          timeTex = (StringTable.Get)("str_n39_exchange_time_hour_min", self:RichTextTag_Num_Left(), hour, self:RichTextTag_Num_Right(), self:RichTextTag_Num_Left(), min, self:RichTextTag_Num_Left())
-        else
-          timeTex = (StringTable.Get)("str_n39_exchange_time_hour", self:RichTextTag_Num_Left(), hour, self:RichTextTag_Num_Right())
-        end
-      else
-        if min and min > 0 then
-          timeTex = (StringTable.Get)("str_n39_exchange_time_min", self:RichTextTag_Num_Left(), min, self:RichTextTag_Num_Right())
-        else
-          timeTex = (StringTable.Get)("str_n39_exchange_time_less_min", self:RichTextTag_Num_Left(), self:RichTextTag_Num_Right())
-        end
-      end
+      timeTex = StringTable.Get("str_n39_exchange_time_less_min", self:RichTextTag_Num_Left(), self:RichTextTag_Num_Right())
     end
   else
-    do
-      timeTex = (StringTable.Get)("str_n39_exchange_time_less_min", self:RichTextTag_Num_Left(), self:RichTextTag_Num_Right())
-      if self._callback then
-        (self._callback)()
-      end
-      local showTex = (StringTable.Get)(self:Time_Tex(), self:RichTextTag_Out_Left(), timeTex, self:RichTextTag_Out_Right())
-      ;
-      (self._timeTex):SetText(showTex)
+    timeTex = StringTable.Get("str_n39_exchange_time_less_min", self:RichTextTag_Num_Left(), self:RichTextTag_Num_Right())
+    if self._callback then
+      self._callback()
     end
   end
+  local showTex = StringTable.Get(self:Time_Tex(), self:RichTextTag_Out_Left(), timeTex, self:RichTextTag_Out_Right())
+  self._timeTex:SetText(showTex)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeBase.AddTimer = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN39TimeBase:AddTimer()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
-  self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:ShowTex()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeBase.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN39TimeBase:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeBase.RichTextTag_Out_Left = function(self)
-  -- function num : 0_4
+function UIN39TimeBase:RichTextTag_Out_Left()
   return ""
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeBase.RichTextTag_Out_Right = function(self)
-  -- function num : 0_5
+function UIN39TimeBase:RichTextTag_Out_Right()
   return ""
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeBase.RichTextTag_Num_Left = function(self)
-  -- function num : 0_6
+function UIN39TimeBase:RichTextTag_Num_Left()
   return ""
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeBase.RichTextTag_Num_Right = function(self)
-  -- function num : 0_7
+function UIN39TimeBase:RichTextTag_Num_Right()
   return ""
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeBase.Set_Time_Tex = function(self, texStr)
-  -- function num : 0_8
+function UIN39TimeBase:Set_Time_Tex(texStr)
   self._timeTexStr = texStr
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeBase.Time_Tex = function(self)
-  -- function num : 0_9
+function UIN39TimeBase:Time_Tex()
   if self._timeTexStr then
     return self._timeTexStr
   end
@@ -134,48 +91,30 @@ end
 
 _class("UIN39TimeLine", UIN39TimeBase)
 UIN39TimeLine = UIN39TimeLine
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39TimeLine.RichTextTag_Out_Left = function(self)
-  -- function num : 0_10
+function UIN39TimeLine:RichTextTag_Out_Left()
   return "<color=#cb9d8f>"
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeLine.RichTextTag_Out_Right = function(self)
-  -- function num : 0_11
+function UIN39TimeLine:RichTextTag_Out_Right()
   return "</color>"
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeLine.Time_Tex = function(self)
-  -- function num : 0_12
+function UIN39TimeLine:Time_Tex()
   return "str_n39_line_remain_time"
 end
 
 _class("UIN39TimeExchange", UIN39TimeBase)
 UIN39TimeExchange = UIN39TimeExchange
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39TimeExchange.RichTextTag_Num_Left = function(self)
-  -- function num : 0_13
+function UIN39TimeExchange:RichTextTag_Num_Left()
   return "<size=34><color=#9fafee>"
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeExchange.RichTextTag_Num_Right = function(self)
-  -- function num : 0_14
+function UIN39TimeExchange:RichTextTag_Num_Right()
   return "</color></size>"
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39TimeExchange.Time_Tex = function(self)
-  -- function num : 0_15
+function UIN39TimeExchange:Time_Tex()
   return "str_n39_exchange_remain_time"
 end
-
-

@@ -1,32 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_have_less_mobility.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionIs_HaveLessMobility", ActionIsBase)
 ActionIs_HaveLessMobility = ActionIs_HaveLessMobility
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIs_HaveLessMobility.Constructor = function(self)
-  -- function num : 0_0
+function ActionIs_HaveLessMobility:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIs_HaveLessMobility.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionIs_HaveLessMobility:OnUpdate()
   local nConfigMobility = self:GetLogicData(-1)
-  local aiCmpt = (self.m_entityOwn):AI()
+  local aiCmpt = self.m_entityOwn:AI()
   local nMobilityValid = aiCmpt:GetMobilityValid()
   local totalMobility = aiCmpt:GetMobilityConfig()
   local nReturn = AINewNodeStatus.Failure
-  if nMobilityValid <= nConfigMobility then
+  if nConfigMobility >= nMobilityValid then
     nReturn = AINewNodeStatus.Success
   end
   self:PrintLog("检测剩余行动力 nMobilityValid = ", nMobilityValid, "TotalMobility =", totalMobility)
   self:PrintDebugLog("检测剩余行动力 nMobilityValid = ", nMobilityValid, "TotalMobility =", totalMobility)
   return nReturn
 end
-
-

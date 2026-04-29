@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/task/ui_activity_evesinsa_task_quest_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaTaskQuestListItem", UICustomWidget)
 UIActivityEveSinsaTaskQuestListItem = UIActivityEveSinsaTaskQuestListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaTaskQuestListItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityEveSinsaTaskQuestListItem:_GetComponents()
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._list = self:GetUIComponent("UIDynamicScrollView", "rewardList")
   self._desTex = self:GetUIComponent("UILocalizationText", "desTex")
@@ -24,23 +17,17 @@ UIActivityEveSinsaTaskQuestListItem._GetComponents = function(self)
   self._stateReceivedTexEnObj = self:GetGameObject("stateReceivedTexEn")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskQuestListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityEveSinsaTaskQuestListItem:OnShow(uiParams)
   self._isFirst = true
-  self._module = (GameGlobal.GetModule)(QuestModule)
+  self._module = GameGlobal.GetModule(QuestModule)
   if self._module == nil then
-    (Log.fatal)("[quest] erro --> module is nil !")
-    return 
+    Log.fatal("[quest] erro --> module is nil !")
+    return
   end
   self._itemCountPerRow = 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskQuestListItem.SetData = function(self, index, quest, callback, itemCallback, gotStr, canGetStr, bgNotFinish, bgFinish)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityEveSinsaTaskQuestListItem:SetData(index, quest, callback, itemCallback, gotStr, canGetStr, bgNotFinish, bgFinish)
   self:_GetComponents()
   self._index = index
   self._quest = quest:QuestInfo()
@@ -50,108 +37,70 @@ UIActivityEveSinsaTaskQuestListItem.SetData = function(self, index, quest, callb
   self._canGetStr = canGetStr
   self._bgNotFinish = bgNotFinish
   self._bgFinish = bgFinish
-  self._rewardCount = (table.count)((self._quest).rewards)
+  self._rewardCount = table.count(self._quest.rewards)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskQuestListItem.OnHide = function(self)
-  -- function num : 0_3
+function UIActivityEveSinsaTaskQuestListItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskQuestListItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._desTex):SetText((StringTable.Get)((self._quest).CondDesc))
+function UIActivityEveSinsaTaskQuestListItem:_OnValue()
+  self._desTex:SetText(StringTable.Get(self._quest.CondDesc))
   local progress = ""
-  if (self._quest).ShowType == 1 then
-    local c, d = (math.modf)((self._quest).cur_progress * 100 / (self._quest).total_progress)
-    if c < 1 and d > 0 then
+  if self._quest.ShowType == 1 then
+    local c, d = math.modf(self._quest.cur_progress * 100 / self._quest.total_progress)
+    if c < 1 and 0 < d then
       c = 1
     end
     progress = c .. "%"
   else
-    do
-      progress = (self._quest).cur_progress .. "/" .. (self._quest).total_progress
-      ;
-      (self._progressValueTex):SetText(progress)
-      local rate = (self._quest).cur_progress / (self._quest).total_progress
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._progressValueImg).fillAmount = rate
-      local EnglishFlag = (HelperProxy:GetInstance()):IsInEnglish()
-      ;
-      (self._stateCanGetTexEnObj):SetActive(EnglishFlag)
-      ;
-      (self._stateReceivedTexEnObj):SetActive(EnglishFlag)
-      ;
-      (self._stateCanGetTex):SetText((StringTable.Get)(self._canGetStr))
-      ;
-      (self._stateCanGetTexEn):SetText((StringTable.Get)(self._canGetStr))
-      ;
-      (self._stateReceivedTex):SetText((StringTable.Get)(self._gotStr))
-      ;
-      (self._stateReceivedTexEn):SetText((StringTable.Get)(self._gotStr))
-      local urlBg = self._bgFinish
-      if (self._quest).status <= QuestStatus.QUEST_Accepted then
-        urlBg = self._bgNotFinish
-        ;
-        (self._stateCanGetObj):SetActive(false)
-        ;
-        (self._stateReceivedObj):SetActive(false)
-      else
-        if (self._quest).status == QuestStatus.QUEST_Completed then
-          (self._stateCanGetObj):SetActive(true)
-          ;
-          (self._stateReceivedObj):SetActive(false)
-        else
-          if (self._quest).status == QuestStatus.QUEST_Taken then
-            (self._stateCanGetObj):SetActive(false)
-            ;
-            (self._stateReceivedObj):SetActive(true)
-          end
-        end
-      end
-      if self._bg then
-        (self._bg):LoadImage(urlBg)
-      end
-      if self._isFirst then
-        self._isFirst = false
-        ;
-        (self._list):InitListView(self._rewardCount, function(scrollView, index)
-    -- function num : 0_4_0 , upvalues : self
-    return self:_InitScrollViewList(scrollView, index)
+    progress = self._quest.cur_progress .. "/" .. self._quest.total_progress
   end
-)
-      else
-        self:_RefreshList((self._quest).rewards, self._list)
-      end
-    end
+  self._progressValueTex:SetText(progress)
+  local rate = self._quest.cur_progress / self._quest.total_progress
+  self._progressValueImg.fillAmount = rate
+  local EnglishFlag = HelperProxy:GetInstance():IsInEnglish()
+  self._stateCanGetTexEnObj:SetActive(EnglishFlag)
+  self._stateReceivedTexEnObj:SetActive(EnglishFlag)
+  self._stateCanGetTex:SetText(StringTable.Get(self._canGetStr))
+  self._stateCanGetTexEn:SetText(StringTable.Get(self._canGetStr))
+  self._stateReceivedTex:SetText(StringTable.Get(self._gotStr))
+  self._stateReceivedTexEn:SetText(StringTable.Get(self._gotStr))
+  local urlBg = self._bgFinish
+  if self._quest.status <= QuestStatus.QUEST_Accepted then
+    urlBg = self._bgNotFinish
+    self._stateCanGetObj:SetActive(false)
+    self._stateReceivedObj:SetActive(false)
+  elseif self._quest.status == QuestStatus.QUEST_Completed then
+    self._stateCanGetObj:SetActive(true)
+    self._stateReceivedObj:SetActive(false)
+  elseif self._quest.status == QuestStatus.QUEST_Taken then
+    self._stateCanGetObj:SetActive(false)
+    self._stateReceivedObj:SetActive(true)
+  end
+  if self._bg then
+    self._bg:LoadImage(urlBg)
+  end
+  if self._isFirst then
+    self._isFirst = false
+    self._list:InitListView(self._rewardCount, function(scrollView, index)
+      return self:_InitScrollViewList(scrollView, index)
+    end)
+  else
+    self:_RefreshList(self._quest.rewards, self._list)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskQuestListItem._RefreshList = function(self, info, list)
-  -- function num : 0_5 , upvalues : _ENV
-  local count = (table.count)(info)
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityEveSinsaTaskQuestListItem:_RefreshList(info, list)
+  local count = table.count(info)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
   list:RefreshAllShownItem()
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskQuestListItem._InitScrollViewList = function(self, scrollView, index)
-  -- function num : 0_6
+function UIActivityEveSinsaTaskQuestListItem:_InitScrollViewList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -161,30 +110,23 @@ UIActivityEveSinsaTaskQuestListItem._InitScrollViewList = function(self, scrollV
     item.IsInitHandlerCalled = true
     rowPool:SpawnObjects("UIActivityEveSinsaTaskRewardItem", self._itemCountPerRow)
   end
-  local rewardList = (self._quest).rewards
+  local rewardList = self._quest.rewards
   local rewardCount = #rewardList
   local rowList = rowPool:GetAllSpawnList()
   for i = 1, self._itemCountPerRow do
     local itemIndex = index * self._itemCountPerRow + i
     if rewardCount < itemIndex then
-      ((rowList[i]):GetGameObject()):SetActive(false)
+      rowList[i]:GetGameObject():SetActive(false)
     else
-      ;
-      ((rowList[i]):GetGameObject()):SetActive(true)
-      ;
-      (rowList[i]):SetData(itemIndex, rewardList[itemIndex], self._itemCallback)
+      rowList[i]:GetGameObject():SetActive(true)
+      rowList[i]:SetData(itemIndex, rewardList[itemIndex], self._itemCallback)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaTaskQuestListItem.getRewardBtnOnClick = function(self)
-  -- function num : 0_7
+function UIActivityEveSinsaTaskQuestListItem:getRewardBtnOnClick()
   if self._callback then
-    (self._callback)(self._quest)
+    self._callback(self._quest)
   end
 end
-
-

@@ -1,68 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/n5_conquest_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N5ConquestRunData", TestRobotRunData)
 N5ConquestRunData = N5ConquestRunData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N5ConquestRunData.Constructor = function(self)
-  -- function num : 0_0
+function N5ConquestRunData:Constructor()
   self._battleFieldCount = 4
   self._battleFieldIndex = 1
   self._dayCount = 60
   self._curDay = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N5ConquestRunData.GetCurBattleFieldIndex = function(self)
-  -- function num : 0_1
+function N5ConquestRunData:GetCurBattleFieldIndex()
   return self._battleFieldIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N5ConquestRunData.MoveToNextBattleField = function(self)
-  -- function num : 0_2
+function N5ConquestRunData:MoveToNextBattleField()
   self._battleFieldIndex = self._battleFieldIndex + 1
-  if self._battleFieldCount <= self._battleFieldIndex then
+  if self._battleFieldIndex >= self._battleFieldCount then
     self._battleFieldIndex = 1
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N5ConquestRunData.IsLastBattleField = function(self)
-  -- function num : 0_3
-  do return self._battleFieldCount <= self._battleFieldIndex end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function N5ConquestRunData:IsLastBattleField()
+  return self._battleFieldIndex >= self._battleFieldCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N5ConquestRunData.GetCurDay = function(self)
-  -- function num : 0_4
+function N5ConquestRunData:GetCurDay()
   return self._curDay
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N5ConquestRunData.MoveToNextDay = function(self)
-  -- function num : 0_5
+function N5ConquestRunData:MoveToNextDay()
   self._curDay = self._curDay + 1
-  if self._dayCount <= self._curDay then
+  if self._curDay >= self._dayCount then
     self._curDay = 1
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N5ConquestRunData.IsLastDay = function(self)
-  -- function num : 0_6
-  do return self._dayCount <= self._curDay end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function N5ConquestRunData:IsLastDay()
+  return self._curDay >= self._dayCount
 end
-
-

@@ -1,74 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/StateAVGStory/state_avg_story_over.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateAVGStoryOver", StateAVGStoryBase)
 StateAVGStoryOver = StateAVGStoryOver
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateAVGStoryOver.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateAVGStoryOver:OnEnter(TT, ...)
   self.key = "StateAVGStoryOverOnEnter"
   self:Init()
   local nodeId = self:NodeId()
-  local node = (self.data):GetNodeById(nodeId)
+  local node = self.data:GetNodeById(nodeId)
   AVGLog("------------Story end------------", nodeId, node.storyId)
   local nextNodeId = self:NextNodeId()
-  local com = (self.data):GetComponentAVG()
+  local com = self.data:GetComponentAVG()
   local res = AsyncRequestRes:New()
   self:HandleUpdateNodeData(TT, com, res, node.id, nextNodeId)
   if node:IsEnd() then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIN20AVGEnding", node.endId)
-  else
-    if nextNodeId < 0 then
-      if ((GameGlobal.UIStateManager)()):IsShow("UIN20AVGEnding") then
-        return 
-      else
-        ;
-        ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIN20AVGMain)
-      end
+    GameGlobal.UIStateManager():ShowDialog("UIN20AVGEnding", node.endId)
+  elseif nextNodeId < 0 then
+    if GameGlobal.UIStateManager():IsShow("UIN20AVGEnding") then
+      return
     else
-      ;
-      ((GameGlobal.UIStateManager)()):CallUIMethod("UIN20AVGStory", "PlayFromBegain", nextNodeId)
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIN20AVGMain)
     end
+  else
+    GameGlobal.UIStateManager():CallUIMethod("UIN20AVGStory", "PlayFromBegain", nextNodeId)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryOver.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateAVGStoryOver:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateAVGStoryOver.HandleUpdateNodeData = function(self, TT, com, res, nodeId, nextNodeId)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock(self.key)
-  if nextNodeId >= 0 or not 0 then
-    local avgStoryMissionInfo = (self.data):GetServerNodeDataByNodeId(nextNodeId)
-    if not avgStoryMissionInfo then
-      avgStoryMissionInfo = AVGStoryMissionInfo:New()
-      avgStoryMissionInfo.mission_id = nextNodeId
-      avgStoryMissionInfo.end_formation_info = AVGStoryFormationInfo:New()
-    end
-    if not (table.icontains)(avgStoryMissionInfo.from_nodes, nodeId) then
-      (table.insert)(avgStoryMissionInfo.from_nodes, nodeId)
-    end
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R8 in 'UnsetPending'
-
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (avgStoryMissionInfo.end_formation_info).leader_hp = self:CalcCurData()
-    local ret = com:HandleUpdateNodeData(TT, res, avgStoryMissionInfo, nodeId)
-    if (N20AVGData.CheckCode)(res) then
-      (self.data):Update()
-    end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(self.key)
+function StateAVGStoryOver:HandleUpdateNodeData(TT, com, res, nodeId, nextNodeId)
+  GameGlobal.UIStateManager():Lock(self.key)
+  nextNodeId = nextNodeId < 0 and 0 or nextNodeId
+  local avgStoryMissionInfo = self.data:GetServerNodeDataByNodeId(nextNodeId)
+  if not avgStoryMissionInfo then
+    avgStoryMissionInfo = AVGStoryMissionInfo:New()
+    avgStoryMissionInfo.mission_id = nextNodeId
+    avgStoryMissionInfo.end_formation_info = AVGStoryFormationInfo:New()
   end
+  if not table.icontains(avgStoryMissionInfo.from_nodes, nodeId) then
+    table.insert(avgStoryMissionInfo.from_nodes, nodeId)
+  end
+  avgStoryMissionInfo.end_formation_info.leader_hp, avgStoryMissionInfo.end_formation_info.teammate_affinity = self:CalcCurData()
+  local ret = com:HandleUpdateNodeData(TT, res, avgStoryMissionInfo, nodeId)
+  if N20AVGData.CheckCode(res) then
+    self.data:Update()
+  end
+  GameGlobal.UIStateManager():UnLock(self.key)
 end
-
-

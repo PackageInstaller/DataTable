@@ -1,28 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_unlock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryUnlock", UIController)
 UIDiscoveryUnlock = UIDiscoveryUnlock
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryUnlock.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDiscoveryUnlock:OnShow(uiParams)
   self._goOffset = self:GetGameObject("offset")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._goOffset).transform).localScale = Vector3(1, 0, 1)
-  ;
-  ((self._goOffset).transform):DOScale(Vector3.one, 0.4)
+  self._goOffset.transform.localScale = Vector3(1, 0, 1)
+  self._goOffset.transform:DOScale(Vector3.one, 0.4)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryUnlock.OnHide = function(self)
-  -- function num : 0_1
+function UIDiscoveryUnlock:OnHide()
   self._goOffset = nil
 end
-
-

@@ -1,29 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/StateDiscovery/state_discovery_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateDiscoveryInit", StateDiscoveryBase)
 StateDiscoveryInit = StateDiscoveryInit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateDiscoveryInit.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
-  (StateDiscoveryInit.super):OnEnter(TT, ...)
+function StateDiscoveryInit:OnEnter(TT, ...)
+  StateDiscoveryInit.super:OnEnter(TT, ...)
   self:Init()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._imgSR).raycastTarget = true
+  self._imgSR.raycastTarget = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDiscoveryInit.OnExit = function(self, TT)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._imgSR).raycastTarget = false
+function StateDiscoveryInit:OnExit(TT)
+  self._imgSR.raycastTarget = false
 end
-
-

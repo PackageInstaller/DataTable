@@ -1,22 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ui/ui_caller_return.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("CTestRobot_UICallerReturn", CTestRobot_UICaller)
 CTestRobot_UICallerReturn = CTestRobot_UICallerReturn
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CTestRobot_UICallerReturn.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CTestRobot_UICallerReturn:OnWorking()
   local bCheckTeam = self:_CallFunction()
   if not bCheckTeam then
     self.m_nLogicResult = 0
   else
     self.m_nLogicResult = 1
   end
-  return ((CTestRobot_UICallerReturn.super).OnWorking)(self)
+  return CTestRobot_UICallerReturn.super.OnWorking(self)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_spirit_sort_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseSpiritSortItem", UICustomWidget)
 UIChooseSpiritSortItem = UIChooseSpiritSortItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseSpiritSortItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChooseSpiritSortItem:Constructor()
   self._itemCountPerRow = 6
   self._listShowItemCount = 0
   self._AsyncLoadFlagMap = {}
@@ -17,53 +10,48 @@ UIChooseSpiritSortItem.Constructor = function(self)
   self._firstIn = true
   self._uiHeartAtlas = self:GetAsset("UIChangeAssistant.spriteatlas", LoadType.SpriteAtlas)
   self._items = {}
-  self._elementSortTypeOrder = {[1] = PetSortType.WaterFirst, [2] = PetSortType.FireFirst, [3] = PetSortType.SenFirst, [4] = PetSortType.ElectricityFirst, [5] = PetSortType.NoneElementFirst}
+  self._elementSortTypeOrder = {
+    [1] = PetSortType.WaterFirst,
+    [2] = PetSortType.FireFirst,
+    [3] = PetSortType.SenFirst,
+    [4] = PetSortType.ElectricityFirst,
+    [5] = PetSortType.NoneElementFirst
+  }
   self._currentElementSortTypeOrder = 0
   self._sortFilterActiveStatus = false
   self._petHeartItemList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIChooseSpiritSortItem:GetComponents()
   self._sortBtns = self:GetUIComponent("UISelectObjectPath", "sortBtns")
   self._curSortStateIcon = self:GetUIComponent("Image", "btnFiltrate")
   self._curSortObj = self:GetGameObject("btnFiltrate")
-  ;
-  (self._curSortObj):SetActive(true)
+  self._curSortObj:SetActive(true)
   self._sortFilterLoader = self:GetUIComponent("UISelectObjectPath", "sortFilter")
   self._clearFilterBtn = self:GetGameObject("clearFilterBtn")
-  ;
-  (self._clearFilterBtn):SetActive(false)
+  self._clearFilterBtn:SetActive(false)
   self._clearFilterBtnTrans = self:GetUIComponent("RectTransform", "clearFilterBtn")
   self._topRightTrans = self:GetUIComponent("RectTransform", "TopRightAnchor")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.OnValue = function(self)
-  -- function num : 0_2
+function UIChooseSpiritSortItem:OnValue()
   self:SetClearBtnStatus()
   self:InitTopBtns()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIChooseSpiritSortItem:OnShow(uiParams)
   self:GetComponents()
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   local sortFilterCfg = UISortFilterCfg.ChooseSortItem
   local sortCfg = {}
-  for idx,value in ipairs(sortFilterCfg.Sort) do
-    sortCfg[idx] = (Cfg.cfg_client_pet_sort)[value]
+  for idx, value in ipairs(sortFilterCfg.Sort) do
+    sortCfg[idx] = Cfg.cfg_client_pet_sort[value]
   end
   local filterCfg = {}
-  for tag,filters in pairs(sortFilterCfg.Filter) do
+  for tag, filters in pairs(sortFilterCfg.Filter) do
     local cfgs = {}
-    for idx,value in ipairs(filters) do
-      cfgs[idx] = (Cfg.cfg_client_pet_filter)[value]
+    for idx, value in ipairs(filters) do
+      cfgs[idx] = Cfg.cfg_client_pet_filter[value]
     end
     filterCfg[tag] = cfgs
   end
@@ -73,56 +61,40 @@ UIChooseSpiritSortItem.OnShow = function(self, uiParams)
   self._sortOrder = PetSortOrder.Descending
   self._filterParams = {}
   self:AttacEvents()
-  local sortParams = (PetDefaulSort[self._sortType])[self._sortOrder]
-  self._pets = (self._petModule):_SortPets((self._petModule):GetPets(), self._filterParams, sortParams, (self._petModule).PetSortChooseSecondAttribute)
+  local sortParams = PetDefaulSort[self._sortType][self._sortOrder]
+  self._pets = self._petModule:_SortPets(self._petModule:GetPets(), self._filterParams, sortParams, self._petModule.PetSortChooseSecondAttribute)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.InitTopBtns = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("ghzl_main_di14")
-  if (self._petModule).PetSortElementIndex ~= 0 then
-    self._currentElementSortTypeOrder = (self._petModule).PetSortElementIndex
+function UIChooseSpiritSortItem:InitTopBtns()
+  self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("ghzl_main_di14")
+  if self._petModule.PetSortElementIndex ~= 0 then
+    self._currentElementSortTypeOrder = self._petModule.PetSortElementIndex
   end
-  ;
-  (self._sortBtns):SpawnObjects("UIChooseSortBtnItem", self._btnCount)
-  self._sortBtnsPool = (self._sortBtns):GetAllSpawnList()
+  self._sortBtns:SpawnObjects("UIChooseSortBtnItem", self._btnCount)
+  self._sortBtnsPool = self._sortBtns:GetAllSpawnList()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):SetData(i, (self._sortCfg)[i], self._sortType, self._sortOrder, function(idx)
-    -- function num : 0_4_0 , upvalues : self
-    self:ChangeSortParams(idx)
+    self._sortBtnsPool[i]:SetData(i, self._sortCfg[i], self._sortType, self._sortOrder, function(idx)
+      self:ChangeSortParams(idx)
+    end, self._currentElementSortTypeOrder)
   end
-, self._currentElementSortTypeOrder)
-  end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._topRightTrans)
-  local topBtnsWidth = ((self._topRightTrans).rect).width
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._topRightTrans)
+  local topBtnsWidth = self._topRightTrans.rect.width
   local sub = 145
-  local targetPos = Vector2(-topBtnsWidth + sub, (((self._clearFilterBtn).transform).localPosition).y)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._clearFilterBtn).transform).localPosition = targetPos
+  local targetPos = Vector2(-topBtnsWidth + sub, self._clearFilterBtn.transform.localPosition.y)
+  self._clearFilterBtn.transform.localPosition = targetPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.ChangeSortParams = function(self, idx)
-  -- function num : 0_5 , upvalues : _ENV
-  local tp = ((self._sortCfg)[idx]).Type
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIPetViewClick", {((self._sortCfg)[idx]).Name}, true)
+function UIChooseSpiritSortItem:ChangeSortParams(idx)
+  local tp = self._sortCfg[idx].Type
+  GameGlobal.UAReportForceGuideEvent("UIPetViewClick", {
+    self._sortCfg[idx].Name
+  }, true)
   if self._sortType == tp then
     if self._sortOrder == PetSortOrder.Ascending then
       self._sortOrder = PetSortOrder.Descending
-    else
-      if self._sortOrder == PetSortOrder.Descending then
-        self._sortOrder = PetSortOrder.Ascending
-      end
+    elseif self._sortOrder == PetSortOrder.Descending then
+      self._sortOrder = PetSortOrder.Ascending
     end
   else
     self._sortType = tp
@@ -131,72 +103,48 @@ UIChooseSpiritSortItem.ChangeSortParams = function(self, idx)
   self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.FlushTopBtnState = function(self)
-  -- function num : 0_6
+function UIChooseSpiritSortItem:FlushTopBtnState()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):Flush(self._sortType, self._sortOrder, (self._petModule).PetSortElementIndex)
+    self._sortBtnsPool[i]:Flush(self._sortType, self._sortOrder, self._petModule.PetSortElementIndex)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.AttacEvents = function(self)
-  -- function num : 0_7
+function UIChooseSpiritSortItem:AttacEvents()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.DetachEvents = function(self)
-  -- function num : 0_8
+function UIChooseSpiritSortItem:DetachEvents()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.CheckCardAwakeRedPoint = function(self)
-  -- function num : 0_9
+function UIChooseSpiritSortItem:CheckCardAwakeRedPoint()
   self:RefrenshPetList(0, true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.OnHide = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,v in pairs(self._TaskList) do
+function UIChooseSpiritSortItem:OnHide()
+  for _, v in pairs(self._TaskList) do
     if v then
-      ((GameGlobal.TaskManager)()):KillTask(v)
+      GameGlobal.TaskManager():KillTask(v)
       v = nil
     end
   end
   self:DetachEvents()
-  ;
-  (self._petModule):ClearAllPetSortInfo()
+  self._petModule:ClearAllPetSortInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.RefrenshPetList = function(self, pstid, stay)
-  -- function num : 0_11 , upvalues : _ENV
+function UIChooseSpiritSortItem:RefrenshPetList(pstid, stay)
   self._items = {}
-  local sortParams = nil
+  local sortParams
   if self._sortType == PetSortType.Element then
-    self._currentElementSortTypeOrder = (self._petModule).PetSortElementIndex
-    sortParams = (PetDefaulSort[(self._elementSortTypeOrder)[self._currentElementSortTypeOrder]])[PetSortOrder.Descending]
+    self._currentElementSortTypeOrder = self._petModule.PetSortElementIndex
+    sortParams = PetDefaulSort[self._elementSortTypeOrder[self._currentElementSortTypeOrder]][PetSortOrder.Descending]
   else
-    sortParams = (PetDefaulSort[self._sortType])[self._sortOrder]
+    sortParams = PetDefaulSort[self._sortType][self._sortOrder]
   end
-  self._pets = (self._petModule):_SortPets((self._petModule):GetPets(), self._filterParams, sortParams, (self._petModule).PetSortChooseSecondAttribute)
-  ;
-  (self._petModule):SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType)
-  ;
-  (self.uiOwner):_OnValue()
+  self._pets = self._petModule:_SortPets(self._petModule:GetPets(), self._filterParams, sortParams, self._petModule.PetSortChooseSecondAttribute)
+  self._petModule:SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType)
+  self.uiOwner:_OnValue()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.OnSortFilterChanged = function(self, sortType, sortOrder, filterParams)
-  -- function num : 0_12
+function UIChooseSpiritSortItem:OnSortFilterChanged(sortType, sortOrder, filterParams)
   self._sortType = sortType
   self._sortOrder = sortOrder
   self._filterParams = filterParams
@@ -204,99 +152,60 @@ UIChooseSpiritSortItem.OnSortFilterChanged = function(self, sortType, sortOrder,
   self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.btnFiltrateOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIPetViewClick", {"shaixuankai"}, true)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("ghzl_main_di15")
+function UIChooseSpiritSortItem:btnFiltrateOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIPetViewClick", {
+    "shaixuankai"
+  }, true)
+  self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("ghzl_main_di15")
   self._sortFilterActiveStatus = true
   if self._sortFilter == nil then
-    self._sortFilter = (self._sortFilterLoader):SpawnObject("UIChooseSortFilterItem")
+    self._sortFilter = self._sortFilterLoader:SpawnObject("UIChooseSortFilterItem")
   end
-  ;
-  (self._sortFilter):SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
-    -- function num : 0_13_0 , upvalues : self
+  self._sortFilter:SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
     self:OnSortFilterChanged(sortType, sortOrder, filterParams)
-  end
-, function()
-    -- function num : 0_13_1 , upvalues : self
+  end, function()
     self:CloseFiterCallBack()
-  end
-)
-  ;
-  (self._clearFilterBtn):SetActive(true)
-  ;
-  ((self._sortFilter):GetGameObject()):SetActive(true)
-  ;
-  (self._curSortObj):SetActive(false)
-  ;
-  (self.uiOwner):SetSaveAndCancelObj(false)
+  end)
+  self._clearFilterBtn:SetActive(true)
+  self._sortFilter:GetGameObject():SetActive(true)
+  self._curSortObj:SetActive(false)
+  self.uiOwner:SetSaveAndCancelObj(false)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.ClearFilterBtnOnClick = function(self)
-  -- function num : 0_14
+function UIChooseSpiritSortItem:ClearFilterBtnOnClick()
   if self._sortFilterActiveStatus == false then
-    (self._clearFilterBtn):SetActive(false)
-    ;
-    (self._curSortObj):SetActive(true)
-    ;
-    (self.uiOwner):SetSaveAndCancelObj(true)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("ghzl_main_di14")
+    self._clearFilterBtn:SetActive(false)
+    self._curSortObj:SetActive(true)
+    self.uiOwner:SetSaveAndCancelObj(true)
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("ghzl_main_di14")
   end
-  ;
-  (self._petModule):ClearPetSortFilterInfo()
+  self._petModule:ClearPetSortFilterInfo()
   self._filterParams = {}
   self:FlushTopBtnState()
   self:RefrenshPetList()
   if self._sortFilter then
-    (self._sortFilter):ClearFilters()
+    self._sortFilter:ClearFilters()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.CloseFiterCallBack = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIPetViewClick", {"shaixuanguan"}, true)
+function UIChooseSpiritSortItem:CloseFiterCallBack()
+  GameGlobal.UAReportForceGuideEvent("UIPetViewClick", {
+    "shaixuanguan"
+  }, true)
   self._sortFilterActiveStatus = false
   self:SetClearBtnStatus()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseSpiritSortItem.SetClearBtnStatus = function(self)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  if not (self._petModule):CheckHasCachePetSortInfo() then
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("ghzl_main_di14")
-    ;
-    (self._clearFilterBtn):SetActive(false)
-    ;
-    (self._curSortObj):SetActive(true)
-    ;
-    (self.uiOwner):SetSaveAndCancelObj(true)
+function UIChooseSpiritSortItem:SetClearBtnStatus()
+  if not self._petModule:CheckHasCachePetSortInfo() then
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("ghzl_main_di14")
+    self._clearFilterBtn:SetActive(false)
+    self._curSortObj:SetActive(true)
+    self.uiOwner:SetSaveAndCancelObj(true)
   else
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("ghzl_main_di15")
-    ;
-    (self._clearFilterBtn):SetActive(true)
-    ;
-    (self._curSortObj):SetActive(false)
-    ;
-    (self.uiOwner):SetSaveAndCancelObj(false)
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("ghzl_main_di15")
+    self._clearFilterBtn:SetActive(true)
+    self._curSortObj:SetActive(false)
+    self.uiOwner:SetSaveAndCancelObj(false)
   end
 end
-
-

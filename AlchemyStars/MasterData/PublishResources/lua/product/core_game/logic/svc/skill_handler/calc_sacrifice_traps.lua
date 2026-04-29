@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_sacrifice_traps.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SacrificeTraps", Object)
 SkillEffectCalc_SacrificeTraps = SkillEffectCalc_SacrificeTraps
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SacrificeTraps.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SacrificeTraps:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SacrificeTraps.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SacrificeTraps:DoSkillEffectCalculator(skillEffectCalcParam)
   local param = skillEffectCalcParam.skillEffectParam
   local trapID = param:GetTrapID()
-  local utilSvc = (self._world):GetService("UtilData")
-  local triggerSvc = (self._world):GetService("Trigger")
+  local utilSvc = self._world:GetService("UtilData")
+  local triggerSvc = self._world:GetService("Trigger")
   local traps = {}
-  for _,pos in ipairs(skillEffectCalcParam.skillRange) do
+  for _, pos in ipairs(skillEffectCalcParam.skillRange) do
     local entities = utilSvc:GetTrapsAtPos(pos)
-    for _,entity in ipairs(entities) do
+    for _, entity in ipairs(entities) do
       local trapComponent = entity:Trap()
       if trapID[trapComponent:GetTrapID()] then
         triggerSvc:Notify(NTMinosAbsorbTrap:New(entity))
-        ;
-        (table.insert)(traps, entity:GetID())
+        table.insert(traps, entity:GetID())
       end
     end
   end
   local result = SkillEffectResultSacrificeTraps:New(traps)
   return {result}
 end
-
-

@@ -1,54 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/ui_n29_detective_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UIN29DetectiveType = {Person = 0, Suspect = 1}
 _enum("UIN29DetectiveType", UIN29DetectiveType)
 _class("UIN29DetectiveHelper", Object)
 UIN29DetectiveHelper = UIN29DetectiveHelper
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN29DetectiveHelper.Constructor = function(self)
-  -- function num : 0_0
+function UIN29DetectiveHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN29DetectiveHelper.BuildOpenIdKey = function(psdId, str)
-  -- function num : 0_1 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN29DetectiveHelper.BuildOpenIdKey(psdId, str)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local key = psdId .. openID .. str
   return key
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN29DetectiveHelper.CheckOpenIdKey = function(psdId, str)
-  -- function num : 0_2 , upvalues : _ENV
-  local key = (UIN29DetectiveHelper.BuildOpenIdKey)(psdId, str)
-  local value = (LocalDB.GetInt)(key)
+function UIN29DetectiveHelper.CheckOpenIdKey(psdId, str)
+  local key = UIN29DetectiveHelper.BuildOpenIdKey(psdId, str)
+  local value = LocalDB.GetInt(key)
   if value == 1 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN29DetectiveHelper.SetOpenIdKey = function(psdId, str)
-  -- function num : 0_3 , upvalues : _ENV
-  local key = (UIN29DetectiveHelper.BuildOpenIdKey)(psdId, str)
-  ;
-  (LocalDB.SetInt)(key, 1)
+function UIN29DetectiveHelper.SetOpenIdKey(psdId, str)
+  local key = UIN29DetectiveHelper.BuildOpenIdKey(psdId, str)
+  LocalDB.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN29DetectiveHelper.Contain = function(tb, item)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,v in pairs(tb) do
+function UIN29DetectiveHelper.Contain(tb, item)
+  for _, v in pairs(tb) do
     if v == item then
       return true
     end
@@ -56,46 +36,35 @@ UIN29DetectiveHelper.Contain = function(tb, item)
   return false
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN29DetectiveHelper.IsLock = function(value, severlist)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN29DetectiveHelper.IsLock(value, severlist)
   local severlist = severlist
-  local NeedClue = ((Cfg.cfg_component_detective_talk)[value]).NeedClue
-  local Clue = ((Cfg.cfg_component_detective_talk)[value]).ClueId
+  local NeedClue = Cfg.cfg_component_detective_talk[value].NeedClue
+  local Clue = Cfg.cfg_component_detective_talk[value].ClueId
   if not NeedClue then
     return false
+  elseif UIN29DetectiveHelper.Judge(NeedClue, severlist) and UIN29DetectiveHelper.IsInList(Clue, severlist) then
+    return false
   else
-    if (UIN29DetectiveHelper.Judge)(NeedClue, severlist) and (UIN29DetectiveHelper.IsInList)(Clue, severlist) then
-      return false
-    else
-      return true
-    end
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN29DetectiveHelper.IsShow = function(id, severlist)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN29DetectiveHelper.IsShow(id, severlist)
   local severlist = severlist
-  local Clue = ((Cfg.cfg_component_detective_talk)[id]).ClueId
-  local NeedClue = ((Cfg.cfg_component_detective_talk)[id]).NeedClue
+  local Clue = Cfg.cfg_component_detective_talk[id].ClueId
+  local NeedClue = Cfg.cfg_component_detective_talk[id].NeedClue
   if not NeedClue then
     return false
   else
-    return (UIN29DetectiveHelper.Judge)(NeedClue, severlist)
+    return UIN29DetectiveHelper.Judge(NeedClue, severlist)
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN29DetectiveHelper.IsInList = function(id, list)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN29DetectiveHelper.IsInList(id, list)
   if not id then
     return false
   end
-  for _,value in ipairs(list) do
+  for _, value in ipairs(list) do
     if id == value then
       return true
     end
@@ -103,16 +72,13 @@ UIN29DetectiveHelper.IsInList = function(id, list)
   return false
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN29DetectiveHelper.Judge = function(needlist, havelist)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN29DetectiveHelper.Judge(needlist, havelist)
   local tmp = {}
-  for _,need in ipairs(needlist) do
-    for _,have in ipairs(havelist) do
+  for _, need in ipairs(needlist) do
+    for _, have in ipairs(havelist) do
       for i = 1, #needlist do
         if need == have then
-          (table.insert)(tmp, need)
+          table.insert(tmp, need)
           break
         end
       end
@@ -124,5 +90,3 @@ UIN29DetectiveHelper.Judge = function(needlist, havelist)
     return false, tmp
   end
 end
-
-

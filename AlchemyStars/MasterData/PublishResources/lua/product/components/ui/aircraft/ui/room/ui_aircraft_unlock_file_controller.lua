@@ -1,35 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/room/ui_aircraft_unlock_file_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftUnlockFileController", UIController)
 UIAircraftUnlockFileController = UIAircraftUnlockFileController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftUnlockFileController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftUnlockFileController:OnShow(uiParams)
   self:InitWidget()
-  ;
-  (self._title):SetText(uiParams[1])
-  ;
-  (self._title_en):SetText(uiParams[2])
+  self._title:SetText(uiParams[1])
+  self._title_en:SetText(uiParams[2])
   self._autoHide = uiParams[3]
   if self._autoHide then
-    ((GameGlobal.Timer)()):AddEvent(2600, function()
-    -- function num : 0_0_0 , upvalues : self
-    self:CloseDialog()
-  end
-)
+    GameGlobal.Timer():AddEvent(2600, function()
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftUnlockFileController.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftUnlockFileController:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._title_en = self:GetUIComponent("UILocalizationText", "title_en")
 end
-
-

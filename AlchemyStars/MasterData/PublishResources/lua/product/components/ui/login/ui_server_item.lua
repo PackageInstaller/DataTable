@@ -1,52 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/login/ui_server_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIServerItem", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIServerItem.OnShow = function(self)
-  -- function num : 0_0
-  (self:GetUIComponent("Text", "Text")).text = ""
+function UIServerItem:OnShow()
+  self:GetUIComponent("Text", "Text").text = ""
   self._chooseImage = self:GetGameObject("chooseImage")
-  ;
-  (self._chooseImage):SetActive(false)
+  self._chooseImage:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIServerItem.SetData = function(self, serverid, bulletinConfig, clickCallback)
-  -- function num : 0_1
+function UIServerItem:SetData(serverid, bulletinConfig, clickCallback)
   self._config = bulletinConfig
   self._clickCallback = clickCallback
   self._serverid = serverid
-  ;
-  (self:GetUIComponent("Text", "Text")).text = (self._config).name
+  self:GetUIComponent("Text", "Text").text = self._config.name
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIServerItem.ImageOnClick = function(self, go)
-  -- function num : 0_2
+function UIServerItem:ImageOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)(self._serverid)
+    self._clickCallback(self._serverid)
   end
   self:SetChoose(true)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIServerItem.SetChoose = function(self, bchoose)
-  -- function num : 0_3
-  (self._chooseImage):SetActive(bchoose)
+function UIServerItem:SetChoose(bchoose)
+  self._chooseImage:SetActive(bchoose)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIServerItem.GetServerID = function(self)
-  -- function num : 0_4
+function UIServerItem:GetServerID()
   return self._serverid
 end
-
-

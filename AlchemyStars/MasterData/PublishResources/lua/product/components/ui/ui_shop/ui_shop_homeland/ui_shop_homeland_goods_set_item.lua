@@ -1,144 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_goods_set_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopHomelandGoodsSetItem", UICustomWidget)
 UIShopHomelandGoodsSetItem = UIShopHomelandGoodsSetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopHomelandGoodsSetItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopHomelandGoodsSetItem:Constructor()
   self._shopModule = self:GetModule(ShopModule)
-  self._clientShop = (self._shopModule):GetClientShop()
-  self._shopData = (self._clientShop):GetHomelandShopData()
+  self._clientShop = self._shopModule:GetClientShop()
+  self._shopData = self._clientShop:GetHomelandShopData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsSetItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopHomelandGoodsSetItem:OnShow(uiParams)
   self:_GetComponents()
   self:AttachEvent(GameEventType.ShopBuySuccess, self._OnBuySuccess)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsSetItem._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopHomelandGoodsSetItem:_GetComponents()
   self._grid = self:GetUIComponent("UISelectObjectPath", "Grid")
   self._backGround = self:GetGameObject("Backgound")
   self._uiDrag = self:GetUIComponent("UIDrag", "Backgound")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._backGround), UIEvent.BeginDrag, function(pointData)
-    -- function num : 0_2_0 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._backGround), UIEvent.BeginDrag, function(pointData)
     self:OnBeginDrag(pointData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._backGround), UIEvent.Drag, function(pointData)
-    -- function num : 0_2_1 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._backGround), UIEvent.Drag, function(pointData)
     self:OnDragEvent(pointData)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._backGround), UIEvent.EndDrag, function(pointData)
-    -- function num : 0_2_2 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._backGround), UIEvent.EndDrag, function(pointData)
     self:OnEndDrag(pointData)
-  end
-)
+  end)
   self._dragState = 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsSetItem.SetData = function(self, data, goods, marketType, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIShopHomelandGoodsSetItem:SetData(data, goods, marketType, callBack)
   self._data = data
   self._goods = goods
   self._goodsCount = #self._goods
   self._marketType = marketType
   self._callBack = callBack
-  ;
-  (self._grid):SpawnObjects("UIShopHomelandGoodsItem", self._goodsCount)
-  self._goodsWidgets = (self._grid):GetAllSpawnList()
-  for key,widget in pairs(self._goodsWidgets) do
+  self._grid:SpawnObjects("UIShopHomelandGoodsItem", self._goodsCount)
+  self._goodsWidgets = self._grid:GetAllSpawnList()
+  for key, widget in pairs(self._goodsWidgets) do
     local valid = key <= self._goodsCount
-    ;
-    ((widget.view).gameObject):SetActive(valid)
+    widget.view.gameObject:SetActive(valid)
     if valid then
-      widget:SetData(key, (self._goods)[key], self._marketType)
+      widget:SetData(key, self._goods[key], self._marketType)
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsSetItem._OnBuySuccess = function(self, goodsID)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopHomelandGoodsSetItem:_OnBuySuccess(goodsID)
   local refresh = false
   if self._goods then
-    for _,goods in pairs(self._goods) do
+    for _, goods in pairs(self._goods) do
       if goods:GetGoodId() == goodsID then
         refresh = true
         break
       end
     end
   end
-  do
-    if not refresh then
-      return 
-    end
-    self:Lock("UIShopHomelandGoodsSetItem_OnBuySuccess")
-    self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV, goodsID
-    do
-      if (self._clientShop):SendProtocal(TT, ShopMainTabType.Homeland) then
-        local goods = (self._shopData):GetGoodsByGoodsId(goodsID)
-        ;
-        (self._data):UpdateGoods(goods)
-        if self._callBack then
-          (self._callBack)()
-        end
+  if not refresh then
+    return
+  end
+  self:Lock("UIShopHomelandGoodsSetItem_OnBuySuccess")
+  self._refreshTaskID = self:StartTask(function(TT)
+    if self._clientShop:SendProtocal(TT, ShopMainTabType.Homeland) then
+      local goods = self._shopData:GetGoodsByGoodsId(goodsID)
+      self._data:UpdateGoods(goods)
+      if self._callBack then
+        self._callBack()
       end
-      self:UnLock("UIShopHomelandGoodsSetItem_OnBuySuccess")
     end
-  end
-, self)
-  end
+    self:UnLock("UIShopHomelandGoodsSetItem_OnBuySuccess")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsSetItem.OnBeginDrag = function(self, pointData)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopHomelandGoodsSetItem:OnBeginDrag(pointData)
   local delta = pointData.delta
   local d_x = delta.x
   local d_y = delta.y
-  if (math.abs)(d_y) < (math.abs)(d_x) then
+  if math.abs(d_x) > math.abs(d_y) then
     self._dragState = 2
-    ;
-    (self._uiDrag):OnBeginDrag(pointData)
+    self._uiDrag:OnBeginDrag(pointData)
   else
     self._dragState = 1
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsSetItem.OnDragEvent = function(self, pointData)
-  -- function num : 0_6
+function UIShopHomelandGoodsSetItem:OnDragEvent(pointData)
   if self._dragState == 2 and self._uiDrag then
-    (self._uiDrag):OnDrag(pointData)
+    self._uiDrag:OnDrag(pointData)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsSetItem.OnEndDrag = function(self, pointData)
-  -- function num : 0_7
+function UIShopHomelandGoodsSetItem:OnEndDrag(pointData)
   if self._dragState == 2 and self._uiDrag then
-    (self._uiDrag):OnEndDrag(pointData)
+    self._uiDrag:OnEndDrag(pointData)
   end
   self._dragState = 0
 end
-
-

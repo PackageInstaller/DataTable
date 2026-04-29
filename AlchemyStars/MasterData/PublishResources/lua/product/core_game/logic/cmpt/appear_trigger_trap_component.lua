@@ -1,75 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/appear_trigger_trap_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AppearTriggerTrapComponent", Object)
 AppearTriggerTrapComponent = AppearTriggerTrapComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AppearTriggerTrapComponent.Constructor = function(self, tEntities, tResults)
-  -- function num : 0_0
-  if not tEntities then
-    self._triggeredTrapEntity = {}
-    if not tResults then
-      self._triggeredSkillResult = {}
-    end
-  end
+function AppearTriggerTrapComponent:Constructor(tEntities, tResults)
+  self._triggeredTrapEntity = tEntities or {}
+  self._triggeredSkillResult = tResults or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AppearTriggerTrapComponent.GetData = function(self)
-  -- function num : 0_1
+function AppearTriggerTrapComponent:GetData()
   return self._triggeredTrapEntity, self._triggeredSkillResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AppearTriggerTrapComponent.Clear = function(self)
-  -- function num : 0_2
+function AppearTriggerTrapComponent:Clear()
   self._triggeredTrapEntity = {}
   self._triggeredSkillResult = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAppearTriggerTrap = function(self)
-  -- function num : 0_3
-  return self:HasComponent((self.WEComponentsEnum).AppearTriggerTrap)
+function Entity:HasAppearTriggerTrap()
+  return self:HasComponent(self.WEComponentsEnum.AppearTriggerTrap)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAppearTriggerTrap = function(self, tEntities, tResults)
-  -- function num : 0_4 , upvalues : _ENV
+function Entity:AddAppearTriggerTrap(tEntities, tResults)
   local component = AppearTriggerTrapComponent:New(tEntities, tResults)
-  self:AddComponent((self.WEComponentsEnum).AppearTriggerTrap, component)
+  self:AddComponent(self.WEComponentsEnum.AppearTriggerTrap, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AppearTriggerTrap = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).AppearTriggerTrap)
+function Entity:AppearTriggerTrap()
+  return self:GetComponent(self.WEComponentsEnum.AppearTriggerTrap)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceAppearTriggerTrap = function(self, tEntities, tResults)
-  -- function num : 0_6 , upvalues : _ENV
+function Entity:ReplaceAppearTriggerTrap(tEntities, tResults)
   local component = AppearTriggerTrapComponent:New(tEntities, tResults)
-  self:ReplaceComponent((self.WEComponentsEnum).AppearTriggerTrap, component)
+  self:ReplaceComponent(self.WEComponentsEnum.AppearTriggerTrap, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAppearTriggerTrap = function(self)
-  -- function num : 0_7
+function Entity:RemoveAppearTriggerTrap()
   if not self:HasAppearTriggerTrap() then
-    return 
+    return
   end
-  self:RemoveComponent((self.WEComponentsEnum).AppearTriggerTrap)
+  self:RemoveComponent(self.WEComponentsEnum.AppearTriggerTrap)
 end
-
-

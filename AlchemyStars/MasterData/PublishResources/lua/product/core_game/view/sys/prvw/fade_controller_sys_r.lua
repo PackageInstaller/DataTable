@@ -1,58 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/fade_controller_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FadeControllerSystem_Render", ReactiveSystem)
 FadeControllerSystem_Render = FadeControllerSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FadeControllerSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function FadeControllerSystem_Render:Constructor(world)
   self.world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeControllerSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).FadeController)
+function FadeControllerSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.FadeController)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeControllerSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
-  if entity:HasFadeController() then
-    return entity:HasView()
-  end
+function FadeControllerSystem_Render:Filter(entity)
+  return entity:HasFadeController() and entity:HasView()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeControllerSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function FadeControllerSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     local e = entities[i]
     self:HandleEntity(e)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeControllerSystem_Render.HandleEntity = function(self, e)
-  -- function num : 0_4 , upvalues : _ENV
+function FadeControllerSystem_Render:HandleEntity(e)
   local fadeCom = e:FadeController()
   local fade = fadeCom:Fade()
-  if not fadeCom:IsFlash() or not ActorViewType.DotSelected then
-    fade.viewType = ActorViewType.Normal
-    if not fadeCom:IsTransparent() then
-      local transparentValue = fadeCom:GetTransparentValue()
-      fade.Alpha = fadeCom:IsGhost() and transparentValue or 1
-    end
+  fade.viewType = fadeCom:IsFlash() and ActorViewType.DotSelected or ActorViewType.Normal
+  if not fadeCom:IsTransparent() then
+    local transparentValue = fadeCom:GetTransparentValue()
+    fade.Alpha = fadeCom:IsGhost() and transparentValue or 1
   end
 end
-
-

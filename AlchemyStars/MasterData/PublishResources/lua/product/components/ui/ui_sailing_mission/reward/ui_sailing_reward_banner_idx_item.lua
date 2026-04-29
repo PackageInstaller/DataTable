@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/reward/ui_sailing_reward_banner_idx_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingRewardBannerIdxItem", UICustomWidget)
 UISailingRewardBannerIdxItem = UISailingRewardBannerIdxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingRewardBannerIdxItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISailingRewardBannerIdxItem:OnShow()
   self._atlas = self:GetAsset("UISailingReward.spriteatlas", LoadType.SpriteAtlas)
   self._img = self:GetUIComponent("Image", "img")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerIdxItem.OnHide = function(self)
-  -- function num : 0_1
+function UISailingRewardBannerIdxItem:OnHide()
   self._idx = nil
   self._atlas = nil
   self._img = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerIdxItem.SetData = function(self, idx, currIdx)
-  -- function num : 0_2
+function UISailingRewardBannerIdxItem:SetData(idx, currIdx)
   self._idx = idx
   self:Flush(currIdx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerIdxItem.Flush = function(self, currIdx)
-  -- function num : 0_3
+function UISailingRewardBannerIdxItem:Flush(currIdx)
   if not self._atlas then
-    return 
+    return
   end
   if not self._img then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._idx == currIdx then
-    (self._img).sprite = (self._atlas):GetSprite("N22_dhh_jlts_ym02")
+    self._img.sprite = self._atlas:GetSprite("N22_dhh_jlts_ym02")
   else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._img).sprite = (self._atlas):GetSprite("N22_dhh_jlts_ym01")
+    self._img.sprite = self._atlas:GetSprite("N22_dhh_jlts_ym01")
   end
 end
-
-

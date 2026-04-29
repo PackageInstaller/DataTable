@@ -1,37 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_scan.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureScan", UICustomWidget)
 UIWidgetFeatureScan = UIWidgetFeatureScan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureScan.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureScan:OnShow(uiParams)
   self.enableFakeInput = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureScan.SetData = function(self)
-  -- function num : 0_1
+function UIWidgetFeatureScan:SetData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureScan.UIWidgetFeatureScanButtonOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (InnerGameHelperRender.IsPuzzleState)() or (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+function UIWidgetFeatureScan:UIWidgetFeatureScanButtonOnClick()
+  if InnerGameHelperRender.IsPuzzleState() or InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
-  local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
+  local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
   if coreGameStateID ~= GameStateID.WaitInput then
-    return 
+    return
   end
-  local scanTrap = (FeatureServiceHelper.FeatureScanGetScanTrapIDList)()
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIFeatureScanController", scanTrap)
+  local scanTrap = FeatureServiceHelper.FeatureScanGetScanTrapIDList()
+  GameGlobal.UIStateManager():ShowDialog("UIFeatureScanController", scanTrap)
 end
-
-

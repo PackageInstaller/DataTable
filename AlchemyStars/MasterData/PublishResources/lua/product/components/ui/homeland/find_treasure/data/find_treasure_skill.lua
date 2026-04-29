@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/data/find_treasure_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FindTreasureSkill", Object)
 FindTreasureSkill = FindTreasureSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FindTreasureSkill.Constructor = function(self, id)
-  -- function num : 0_0 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_find_treasure_const)[1]
+function FindTreasureSkill:Constructor(id)
+  local cfg = Cfg.cfg_homeland_find_treasure_const[1]
   self._minDistance = cfg.SkillMinDistance / 1000
   self._maxDistance = cfg.SkillMaxDistance / 1000
   self._maxEffect = cfg.MaxDistanceEffect
@@ -22,45 +15,35 @@ FindTreasureSkill.Constructor = function(self, id)
   self._forwardDis = cfg.ForwardDistance / 1000
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FindTreasureSkill.ReleaseSkill = function(self, personTran, targetPos)
-  -- function num : 0_1 , upvalues : _ENV
-  local dis = ((Vector3.Distance)(personTran.position, targetPos))
-  local model = nil
+function FindTreasureSkill:ReleaseSkill(personTran, targetPos)
+  local dis = Vector3.Distance(personTran.position, targetPos)
+  local model
   local angle = 0
-  if self._maxDistance <= dis then
+  if dis >= self._maxDistance then
     model = self._maxEffect
     angle = self._maxAngle
+  elseif dis > self._minDistance and dis < self._maxDistance then
+    model = self._middleEffect
+    angle = self._middleAngle
   else
-    if self._minDistance < dis and dis < self._maxDistance then
-      model = self._middleEffect
-      angle = self._middleAngle
-    else
-      model = self._minEffect
-      angle = self._minAngle
-    end
+    model = self._minEffect
+    angle = self._minAngle
   end
-  self._effectModelReq = (ResourceManager:GetInstance()):SyncLoadAsset(model, LoadType.GameObject)
-  local go = (self._effectModelReq).Obj
+  self._effectModelReq = ResourceManager:GetInstance():SyncLoadAsset(model, LoadType.GameObject)
+  local go = self._effectModelReq.Obj
   go:SetActive(true)
   local tran = go.transform
   local pos = personTran.position + personTran.forward * self._forwardDis
-  local dir = (Quaternion.LookRotation)((targetPos - personTran.position).normalized)
+  local dir = Quaternion.LookRotation((targetPos - personTran.position).normalized)
   tran.position = pos
   tran.rotation = dir
-  local rotateAngle = (math.random)(-angle, angle)
+  local rotateAngle = math.random(-angle, angle)
   tran:Rotate(Vector3.up, rotateAngle)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FindTreasureSkill.Destroy = function(self)
-  -- function num : 0_2
+function FindTreasureSkill:Destroy()
   if self._effectModelReq then
-    (self._effectModelReq):Dispose()
+    self._effectModelReq:Dispose()
     self._effectModelReq = nil
   end
 end
-
-

@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_relic_href_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local SeasonMazeRelicHrefInfoType = {Default = 1}
 _enum("SeasonMazeRelicHrefInfoType", SeasonMazeRelicHrefInfoType)
 _class("UISeasonMaze_RelicHrefInfo", UIController)
 UISeasonMaze_RelicHrefInfo = UISeasonMaze_RelicHrefInfo
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-UISeasonMaze_RelicHrefInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMaze_RelicHrefInfo:OnShow(uiParams)
   self._offset = self:GetGameObject("offset")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
@@ -18,50 +11,34 @@ UISeasonMaze_RelicHrefInfo.OnShow = function(self, uiParams)
   self:Flush(uiParams[1])
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonMaze_RelicHrefInfo.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonMaze_RelicHrefInfo:OnHide()
   self._offset = nil
   self._txtName = nil
   self._imgIcon = nil
   self._txtDesc = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonMaze_RelicHrefInfo.Flush = function(self, hrefName)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMaze_RelicHrefInfo:Flush(hrefName)
   if not hrefName then
     self:CloseSelfDialog()
-    return 
+    return
   end
   local id = tonumber(hrefName)
-  local cfgv = (Cfg.cfg_season_maze_relic_href_desc)[id]
+  local cfgv = Cfg.cfg_season_maze_relic_href_desc[id]
   if not cfgv then
     self:CloseSelfDialog()
-    return 
+    return
   end
-  local name = (StringTable.Get)(cfgv.Name)
-  ;
-  (self._txtName):SetText(name)
-  local desc = (StringTable.Get)(cfgv.Desc)
-  ;
-  (self._txtDesc):SetText(desc)
+  local name = StringTable.Get(cfgv.Name)
+  self._txtName:SetText(name)
+  local desc = StringTable.Get(cfgv.Desc)
+  self._txtDesc:SetText(desc)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonMaze_RelicHrefInfo.BgOnClick = function(self)
-  -- function num : 0_3
+function UISeasonMaze_RelicHrefInfo:BgOnClick()
   self:CloseSelfDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonMaze_RelicHrefInfo.CloseSelfDialog = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog(self:GetName())
+function UISeasonMaze_RelicHrefInfo:CloseSelfDialog()
+  GameGlobal.UIStateManager():CloseDialog(self:GetName())
 end
-
-

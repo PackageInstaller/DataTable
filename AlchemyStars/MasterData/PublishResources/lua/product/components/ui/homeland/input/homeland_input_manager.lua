@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/input/homeland_input_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandInputManager", Object)
 HomelandInputManager = HomelandInputManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandInputManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandInputManager:Constructor()
   self._lastTick = 0
   self._useMobileController = true
   self._inputControllerChar = nil
@@ -20,15 +13,12 @@ HomelandInputManager.Constructor = function(self)
   self._resetCallback = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandInputManager:Init(homelandClient)
   self._homelandClient = homelandClient
-  local mainCharCon = (homelandClient:CharacterManager()):MainCharacterController()
-  local followCamCon = (homelandClient:CameraManager()):FollowCameraController()
-  local globalCamCon = (homelandClient:CameraManager()):GlobalCameraController()
-  local medalWallCamCon = (homelandClient:CameraManager()):MedalWallCameraController()
+  local mainCharCon = homelandClient:CharacterManager():MainCharacterController()
+  local followCamCon = homelandClient:CameraManager():FollowCameraController()
+  local globalCamCon = homelandClient:CameraManager():GlobalCameraController()
+  local medalWallCamCon = homelandClient:CameraManager():MedalWallCameraController()
   if EDITOR or IsPc() then
     self._useMobileController = false
     self._inputControllerChar = HomelandInputControllerCharPC:New(homelandClient)
@@ -36,170 +26,102 @@ HomelandInputManager.Init = function(self, homelandClient)
     self._inputControllerStory = HomelandInputControllerStoryPC:New(homelandClient)
     self._inputControllerMedalWall = HomelandInputControllerMedalWallPC:New(homelandClient)
   else
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (UnityEngine.Input).multiTouchEnabled = true
+    UnityEngine.Input.multiTouchEnabled = true
     self._useMobileController = true
     self._inputControllerChar = HomelandInputControllerCharMobile:New(homelandClient)
     self._inputControllerBuild = HomelandInputControllerBuildMobile:New(homelandClient)
     self._inputControllerStory = HomelandInputControllerStoryMobile:New(homelandClient)
     self._inputControllerMedalWall = HomelandInputControllerMedalWallMobile:New(homelandClient)
   end
-  ;
-  (self._inputControllerChar):Init(mainCharCon, followCamCon)
-  ;
-  (self._inputControllerBuild):Init(mainCharCon, globalCamCon)
-  ;
-  (self._inputControllerStory):Init(mainCharCon, globalCamCon)
-  ;
-  (self._inputControllerMedalWall):Init(mainCharCon, medalWallCamCon)
+  self._inputControllerChar:Init(mainCharCon, followCamCon)
+  self._inputControllerBuild:Init(mainCharCon, globalCamCon)
+  self._inputControllerStory:Init(mainCharCon, globalCamCon)
+  self._inputControllerMedalWall:Init(mainCharCon, medalWallCamCon)
   self._currentInputController = self._inputControllerChar
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
-  (self._currentInputController):Update(deltaTimeMS)
+function HomelandInputManager:Update(deltaTimeMS)
+  self._currentInputController:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._inputControllerChar):Dispose()
-  ;
-  (self._inputControllerBuild):Dispose()
-  ;
-  (self._inputControllerStory):Dispose()
-  ;
-  (self._inputControllerMedalWall):Dispose()
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+function HomelandInputManager:Dispose()
+  self._inputControllerChar:Dispose()
+  self._inputControllerBuild:Dispose()
+  self._inputControllerStory:Dispose()
+  self._inputControllerMedalWall:Dispose()
+  UnityEngine.Input.multiTouchEnabled = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.ResetCurController = function(self)
-  -- function num : 0_4
-  if (self._currentInputController).Reset then
-    (self._currentInputController):Reset()
+function HomelandInputManager:ResetCurController()
+  if self._currentInputController.Reset then
+    self._currentInputController:Reset()
   end
   for i = 1, #self._resetCallback do
-    ((self._resetCallback)[i])()
+    self._resetCallback[i]()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.AddResetCallback = function(self, callback)
-  -- function num : 0_5 , upvalues : _ENV
-  (table.insert)(self._resetCallback, callback)
+function HomelandInputManager:AddResetCallback(callback)
+  table.insert(self._resetCallback, callback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.RemoveResetCallback = function(self, callback)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.removev)(self._resetCallback, callback)
+function HomelandInputManager:RemoveResetCallback(callback)
+  table.removev(self._resetCallback, callback)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.UseMobileController = function(self)
-  -- function num : 0_7
+function HomelandInputManager:UseMobileController()
   return self._useMobileController
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.GetControllerChar = function(self)
-  -- function num : 0_8
+function HomelandInputManager:GetControllerChar()
   return self._inputControllerChar
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.GetControllerBuild = function(self)
-  -- function num : 0_9
+function HomelandInputManager:GetControllerBuild()
   return self._inputControllerBuild
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.GetControllerStory = function(self)
-  -- function num : 0_10
+function HomelandInputManager:GetControllerStory()
   return self._inputControllerStory
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.GetControllerMedalWall = function(self)
-  -- function num : 0_11
+function HomelandInputManager:GetControllerMedalWall()
   return self._inputControllerMedalWall
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.OnModeChanged = function(self, mode)
-  -- function num : 0_12 , upvalues : _ENV
-  if self._currentInputController and (self._currentInputController).Leave then
-    (self._currentInputController):Leave()
+function HomelandInputManager:OnModeChanged(mode)
+  if self._currentInputController and self._currentInputController.Leave then
+    self._currentInputController:Leave()
   end
   self._mode = mode
   if mode == HomelandMode.Normal then
     self._currentInputController = self._inputControllerChar
-    ;
-    (self._currentInputController):Enter()
-  else
-    if mode == HomelandMode.Build then
-      self._currentInputController = self._inputControllerBuild
-      ;
-      (self._currentInputController):Enter()
-    else
-      if mode == HomelandMode.Story then
-        self._currentInputController = self._inputControllerStory
-        ;
-        (self._currentInputController):Enter()
-      end
-    end
+    self._currentInputController:Enter()
+  elseif mode == HomelandMode.Build then
+    self._currentInputController = self._inputControllerBuild
+    self._currentInputController:Enter()
+  elseif mode == HomelandMode.Story then
+    self._currentInputController = self._inputControllerStory
+    self._currentInputController:Enter()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.HandleRotateInInteract = function(self, v2)
-  -- function num : 0_13
-  (self._inputControllerChar):HandleRotateInInteract(v2)
+function HomelandInputManager:HandleRotateInInteract(v2)
+  self._inputControllerChar:HandleRotateInInteract(v2)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputManager.ChangeMedalWallController = function(self, isMedalWall, cameraTransform)
-  -- function num : 0_14 , upvalues : _ENV
-  if self._currentInputController and (self._currentInputController).Leave then
-    (self._currentInputController):Leave()
+function HomelandInputManager:ChangeMedalWallController(isMedalWall, cameraTransform)
+  if self._currentInputController and self._currentInputController.Leave then
+    self._currentInputController:Leave()
   end
   if isMedalWall then
     self._currentInputController = self._inputControllerMedalWall
-  else
-    if self._mode == HomelandMode.Normal then
-      self._currentInputController = self._inputControllerChar
-    else
-      if self._mode == HomelandMode.Build then
-        self._currentInputController = self._inputControllerBuild
-      else
-        if self._mode == HomelandMode.Story then
-          self._currentInputController = self._inputControllerStory
-        end
-      end
-    end
+  elseif self._mode == HomelandMode.Normal then
+    self._currentInputController = self._inputControllerChar
+  elseif self._mode == HomelandMode.Build then
+    self._currentInputController = self._inputControllerBuild
+  elseif self._mode == HomelandMode.Story then
+    self._currentInputController = self._inputControllerStory
   end
-  ;
-  (self._currentInputController):Enter(cameraTransform)
+  self._currentInputController:Enter(cameraTransform)
 end
-
-

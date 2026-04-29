@@ -1,80 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/diary/ui_homeland_dairy_tipitem.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeLandDiaryTipItem", UICustomWidget)
 UIHomeLandDiaryTipItem = UIHomeLandDiaryTipItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeLandDiaryTipItem.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomeLandDiaryTipItem:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryTipItem._InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeLandDiaryTipItem:_InitWidget()
   self.iconLoader = self:GetUIComponent("RawImageLoader", "icon")
   self.msgText = self:GetUIComponent("UILocalizationText", "msgText")
   self.contentImg = self:GetUIComponent("Image", "content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryTipItem.SetData = function(self, data, atlas)
-  -- function num : 0_2
+function UIHomeLandDiaryTipItem:SetData(data, atlas)
   self._data = data
   self._pageIndex = 1
   local timerName = "UIHomeLandDiaryTipItem"
-  ;
-  (self._timerHolder):StartTimer(timerName, 3000, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self:GetGameObject()):SetActive(false)
-  end
-)
+  self._timerHolder:StartTimer(timerName, 3000, function()
+    self:GetGameObject():SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryTipItem.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomeLandDiaryTipItem:OnShow(uiParams)
   self._timerHolder = UITimerHolder:New()
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryTipItem.Refresh = function(self)
-  -- function num : 0_4
+function UIHomeLandDiaryTipItem:Refresh()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryTipItem.OnHide = function(self)
-  -- function num : 0_5
+function UIHomeLandDiaryTipItem:OnHide()
   if self._timerHolder then
-    (self._timerHolder):Dispose()
+    self._timerHolder:Dispose()
     self._timerHolder = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryTipItem._AttachEvents = function(self)
-  -- function num : 0_6
+function UIHomeLandDiaryTipItem:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryTipItem._DetachEvents = function(self)
-  -- function num : 0_7
+function UIHomeLandDiaryTipItem:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryTipItem.btnOnClick = function(self)
-  -- function num : 0_8
+function UIHomeLandDiaryTipItem:btnOnClick()
 end
-
-

@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_refresh_grid_by_board_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectRefreshGridByBoardIDParam", SkillEffectParamBase)
 SkillEffectRefreshGridByBoardIDParam = SkillEffectRefreshGridByBoardIDParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectRefreshGridByBoardIDParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectRefreshGridByBoardIDParam:Constructor(t)
   self._boardID = t.boardID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRefreshGridByBoardIDParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectRefreshGridByBoardIDParam:GetEffectType()
   return SkillEffectType.RefreshGridByBoardID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRefreshGridByBoardIDParam.GetBoardID = function(self)
-  -- function num : 0_2
+function SkillEffectRefreshGridByBoardIDParam:GetBoardID()
   return self._boardID
 end
-
-

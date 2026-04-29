@@ -1,80 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/animator_controller_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("reactive_system")
 _class("AnimatorControllerSystem_Render", ReactiveSystem)
 AnimatorControllerSystem_Render = AnimatorControllerSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AnimatorControllerSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function AnimatorControllerSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimatorControllerSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).AnimatorController)
+function AnimatorControllerSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.AnimatorController)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimatorControllerSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
-  if entity:HasAnimatorController() then
-    return entity:HasView()
-  end
+function AnimatorControllerSystem_Render:Filter(entity)
+  return entity:HasAnimatorController() and entity:HasView()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimatorControllerSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function AnimatorControllerSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     local e = entities[i]
     self:HandleEntity(e)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimatorControllerSystem_Render.HandleEntity = function(self, e)
-  -- function num : 0_4 , upvalues : _ENV
+function AnimatorControllerSystem_Render:HandleEntity(e)
   local cAnimatorController = e:AnimatorController()
-  local gameObject = ((e:View()).ViewWrapper).GameObject
+  local gameObject = e:View().ViewWrapper.GameObject
   local specialRoot = cAnimatorController.specialAnimRoot
   local rootName = "Root"
   if specialRoot then
     rootName = specialRoot
   end
-  local rootTF = (gameObject.transform):Find(rootName)
+  local rootTF = gameObject.transform:Find(rootName)
   if rootTF == nil then
-    (Log.fatal)("[animator] AnimatorControllerSystem_Render find root error ", ((e:View()):GetResRequest()).m_Name)
+    Log.fatal("[animator] AnimatorControllerSystem_Render find root error ", e:View():GetResRequest().m_Name)
     cAnimatorController.AniTriggerTable = {}
-    return 
+    return
   end
   local animator = rootTF:GetComponent("Animator")
+  animator = animator or gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
   if not animator then
-    animator = gameObject:GetComponentInChildren(typeof(UnityEngine.Animator))
-  end
-  if not animator then
-    (Log.fatal)("[animator] AnimatorControllerSystem_Render find Animator error ", ((e:View()):GetResRequest()).m_Name)
+    Log.fatal("[animator] AnimatorControllerSystem_Render find Animator error ", e:View():GetResRequest().m_Name)
     cAnimatorController.AniTriggerTable = {}
     cAnimatorController.AnimatorLayerWeightTable = {}
-    return 
+    return
   end
-  for layerIndex,weight in pairs(cAnimatorController.AnimatorLayerWeightTable) do
+  for layerIndex, weight in pairs(cAnimatorController.AnimatorLayerWeightTable) do
     animator:SetLayerWeight(layerIndex, weight)
   end
   if not cAnimatorController.bKeepAnimatorLayerWeight then
     cAnimatorController.AnimatorLayerWeightTable = {}
   end
-  for param,value in pairs(cAnimatorController.AniBoolTable) do
+  for param, value in pairs(cAnimatorController.AniBoolTable) do
     animator:SetBool(param, value)
     if e:HasAttachmentController() and param == "Move" then
       e:SetAttachmentAnimationBool(param, value)
@@ -82,39 +59,29 @@ AnimatorControllerSystem_Render.HandleEntity = function(self, e)
   end
   local triggerTable = cAnimatorController.AniTriggerTable
   for i = 1, #triggerTable do
-    do
-      do
-        if triggerTable[i] == "Hit" and e:HasPetPstID() then
-          local hittime = (GameObjectHelper.GetActorAnimationLength)(rootTF.gameObject, "hit")
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(self.SetHitFace, self, e, rootTF, hittime * 1000)
-        end
-        animator:SetTrigger(triggerTable[i])
-        if e:HasAttachmentController() and (triggerTable[i] == "Hit" or triggerTable[i] == "Death" or triggerTable[i] == "Move") then
-          e:SetAttachmentAnimationTrigger(triggerTable[i])
-        end
-        -- DECOMPILER ERROR at PC138: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if triggerTable[i] == "Hit" and e:HasPetPstID() then
+      local hittime = GameObjectHelper.GetActorAnimationLength(rootTF.gameObject, "hit")
+      GameGlobal.TaskManager():CoreGameStartTask(self.SetHitFace, self, e, rootTF, hittime * 1000)
+    end
+    animator:SetTrigger(triggerTable[i])
+    if e:HasAttachmentController() and (triggerTable[i] == "Hit" or triggerTable[i] == "Death" or triggerTable[i] == "Move") then
+      e:SetAttachmentAnimationTrigger(triggerTable[i])
     end
   end
   cAnimatorController.AniTriggerTable = {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimatorControllerSystem_Render.SetHitFace = function(self, TT, entity, rootTF, hittime)
-  -- function num : 0_5 , upvalues : _ENV
+function AnimatorControllerSystem_Render:SetHitFace(TT, entity, rootTF, hittime)
   if not entity:HasPetPstID() then
-    return 
+    return
   end
-  local templateid = (entity:PetPstID()):GetTemplateID()
+  local templateid = entity:PetPstID():GetTemplateID()
   local face_name = tostring(templateid) .. "_face"
-  local face = (GameObjectHelper.FindChild)(rootTF, face_name)
+  local face = GameObjectHelper.FindChild(rootTF, face_name)
   if not face then
-    return 
+    return
   end
-  local render = (face.gameObject):GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
+  local render = face.gameObject:GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
   if render then
     local faceMat = render.material
     faceMat:SetInt("_Frame", 6)
@@ -123,20 +90,17 @@ AnimatorControllerSystem_Render.SetHitFace = function(self, TT, entity, rootTF, 
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimatorControllerSystem_Render.SetAnimatorLayerWeight = function(self, TT, entity, rootTF, hittime)
-  -- function num : 0_6 , upvalues : _ENV
+function AnimatorControllerSystem_Render:SetAnimatorLayerWeight(TT, entity, rootTF, hittime)
   if not entity:HasPetPstID() then
-    return 
+    return
   end
-  local templateid = (entity:PetPstID()):GetTemplateID()
+  local templateid = entity:PetPstID():GetTemplateID()
   local face_name = tostring(templateid) .. "_face"
-  local face = (GameObjectHelper.FindChild)(rootTF, face_name)
+  local face = GameObjectHelper.FindChild(rootTF, face_name)
   if not face then
-    return 
+    return
   end
-  local render = (face.gameObject):GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
+  local render = face.gameObject:GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
   if render then
     local faceMat = render.material
     faceMat:SetInt("_Frame", 6)
@@ -144,5 +108,3 @@ AnimatorControllerSystem_Render.SetAnimatorLayerWeight = function(self, TT, enti
     faceMat:SetInt("_Frame", 1)
   end
 end
-
-

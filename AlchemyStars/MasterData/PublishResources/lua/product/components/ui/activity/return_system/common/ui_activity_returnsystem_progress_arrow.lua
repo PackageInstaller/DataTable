@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/common/ui_activity_returnsystem_progress_arrow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemProgressArrow", UICustomWidget)
 UIActivityReturnSystemProgressArrow = UIActivityReturnSystemProgressArrow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemProgressArrow.SetData = function(self, text, state)
-  -- function num : 0_0 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_txt", text)
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_state_1"}
-, 
-{"_state_2"}
-, 
-{"_state_2"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIActivityReturnSystemProgressArrow:SetData(text, state)
+  UIWidgetHelper.SetLocalizationText(self, "_txt", text)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"_state_1"},
+    {"_state_2"},
+    {"_state_2"}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
-
-

@@ -1,30 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/challenges/ui_n12_challenges_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12ChallengesContorl", UIController)
 UIN12ChallengesContorl = UIN12ChallengesContorl
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12ChallengesContorl.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12ChallengesContorl:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION, ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N12, ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION, ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
   end
-  self._challengeMissionComponent = (self._campaign):GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
-  self._challengeMissionInfo = (self._campaign):GetComponentInfo(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
-  self._quest_component = (self._campaign):GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION)
-  self._questInfo = (self._campaign):GetComponentInfo(ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION)
+  self._challengeMissionComponent = self._campaign:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
+  self._challengeMissionInfo = self._campaign:GetComponentInfo(ECampaignN12ComponentID.ECAMPAIGN_N12_CHALLENGE_MISSION)
+  self._quest_component = self._campaign:GetComponent(ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION)
+  self._questInfo = self._campaign:GetComponentInfo(ECampaignN12ComponentID.ECAMPAIGN_N12_QUEST_MISSION)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12ChallengesContorl:OnShow(uiParams)
   self:_SetValue(uiParams)
   self:_GetComponents()
   self:_SetShow()
@@ -32,13 +21,10 @@ UIN12ChallengesContorl.OnShow = function(self, uiParams)
   self:_SetItemDate()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._SetValue = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN12ChallengesContorl:_SetValue(uiParams)
   self._levelData = uiParams[1]
-  self._challenges_task_cfg = (Cfg.cfg_n12_challenges_task)()
-  self._questlist = (self._quest_component):GetQuestInfo()
+  self._challenges_task_cfg = Cfg.cfg_n12_challenges_task()
+  self._questlist = self._quest_component:GetQuestInfo()
   self._taskCfg = nil
   self._bossCfg = nil
   self._commonTopBtn = nil
@@ -46,7 +32,7 @@ UIN12ChallengesContorl._SetValue = function(self, uiParams)
   self._items = {}
   self._quest_date_list = {}
   self._curidx = 1
-  self._cur_mission = ((self._challenges_task_cfg)[self._curidx]).LevelIndex
+  self._cur_mission = self._challenges_task_cfg[self._curidx].LevelIndex
   self._taskcount = 0
   self._globalDelayTime = 0
   self._firstIn = true
@@ -54,10 +40,7 @@ UIN12ChallengesContorl._SetValue = function(self, uiParams)
   self:_SetDate()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._GetComponents = function(self)
-  -- function num : 0_3
+function UIN12ChallengesContorl:_GetComponents()
   self._bg = self:GetUIComponent("RawImageLoader", "_bg")
   self._cg = self:GetUIComponent("RawImageLoader", "_cg")
   self._cgRaw = self:GetUIComponent("RawImage", "_cg")
@@ -67,145 +50,93 @@ UIN12ChallengesContorl._GetComponents = function(self)
   self._animation = self:GetUIComponent("Animation", "UIN12ChallengesContorl")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._SetDate = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12ChallengesContorl:_SetDate()
   local indextab = {}
   local index = 0
-  for _,task_cfg in pairs(self._challenges_task_cfg) do
+  for _, task_cfg in pairs(self._challenges_task_cfg) do
     local idtab = {}
-    for _,quest_id in pairs(task_cfg.QuestIDs) do
+    for _, quest_id in pairs(task_cfg.QuestIDs) do
       local quest = self:_CheckTask(quest_id[1])
       if quest then
-        (table.insert)(idtab, quest)
+        table.insert(idtab, quest)
       end
     end
-    ;
-    (self._quest_component):SortQuestInfoByCampaignQuestStatus(idtab)
+    self._quest_component:SortQuestInfoByCampaignQuestStatus(idtab)
     local dates = {}
-    for _,quest in pairs(idtab) do
+    for _, quest in pairs(idtab) do
       local questinfo = quest:QuestInfo()
       local date = {}
       date.quest_id = questinfo.quest_id
-      date.score = (quest:ParseParams(questinfo.Cond))[2]
+      date.score = quest:ParseParams(questinfo.Cond)[2]
       date.rewards = questinfo.rewards
       date.status = quest:Status()
-      ;
-      (table.insert)(dates, date)
+      table.insert(dates, date)
     end
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._quest_date_list)[task_cfg.LevelIndex] = dates
+    self._quest_date_list[task_cfg.LevelIndex] = dates
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._CheckTask = function(self, quest_id)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,quest in pairs(self._questlist) do
+function UIN12ChallengesContorl:_CheckTask(quest_id)
+  for _, quest in pairs(self._questlist) do
     if quest:ID() == quest_id then
       return quest
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._SetShow = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._cg):LoadImage(((self._challenges_task_cfg)[self._curidx]).BoosPicture)
-  local cfg_task = ((Cfg.cfg_n12_challenges_task)())[self._curidx]
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._cgRaw).transform).localPosition = Vector3((cfg_task.Tranceform)[1], (cfg_task.Tranceform)[2], 0)
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._cgRaw).transform).localScale = Vector3((cfg_task.Tranceform)[3], (cfg_task.Tranceform)[3], 1)
-  self:_SetScore(((self._challengeMissionInfo).m_max_score)[self._curidx])
+function UIN12ChallengesContorl:_SetShow()
+  self._cg:LoadImage(self._challenges_task_cfg[self._curidx].BoosPicture)
+  local cfg_task = Cfg.cfg_n12_challenges_task()[self._curidx]
+  self._cgRaw.transform.localPosition = Vector3(cfg_task.Tranceform[1], cfg_task.Tranceform[2], 0)
+  self._cgRaw.transform.localScale = Vector3(cfg_task.Tranceform[3], cfg_task.Tranceform[3], 1)
+  self:_SetScore(self._challengeMissionInfo.m_max_score[self._curidx])
   local backBtn = self:GetUIComponent("UISelectObjectPath", "_backBtn")
   self._commonTopBtn = backBtn:SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_6_0 , upvalues : self
+  self._commonTopBtn:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   local btns = self:GetUIComponent("UISelectObjectPath", "_btns")
   btns:SpawnObjects("UIN12ChallengesbtnItem", #self._challenges_task_cfg)
   self._btns = btns:GetAllSpawnList()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._SetItemDate = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  for idx,value in ipairs(self._btns) do
-    value:SetData(((self._challengeMissionInfo).m_max_score)[idx], idx, function(idx)
-    -- function num : 0_7_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._cgRaw).color = Color(1, 1, 1, 0)
-    local cfg_task = ((Cfg.cfg_n12_challenges_task)())[idx]
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._cgRaw).transform).localPosition = Vector3((cfg_task.Tranceform)[1], (cfg_task.Tranceform)[2], 0)
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._cgRaw).transform).localScale = Vector3((cfg_task.Tranceform)[3], (cfg_task.Tranceform)[3], 1)
-    ;
-    (self._animation):Stop()
-    ;
-    (self._animation):Play("uieff_N12_Hard_Challenges_Switch")
-    self._curidx = idx
-    self._cur_mission = ((self._challenges_task_cfg)[idx]).LevelIndex
-    self:_RefTask()
-    self:_SetScore(((self._challengeMissionInfo).m_max_score)[idx])
-    for _,v in ipairs(self._btns) do
-      v:SetSelect(false)
-    end
-    ;
-    ((self._btns)[idx]):SetSelect(true)
-    ;
-    (self._cg):LoadImage(((self._challenges_task_cfg)[self._curidx]).BoosPicture)
-  end
-, (self._levelData)[idx], self._curidx)
+function UIN12ChallengesContorl:_SetItemDate()
+  for idx, value in ipairs(self._btns) do
+    value:SetData(self._challengeMissionInfo.m_max_score[idx], idx, function(idx)
+      self._cgRaw.color = Color(1, 1, 1, 0)
+      local cfg_task = Cfg.cfg_n12_challenges_task()[idx]
+      self._cgRaw.transform.localPosition = Vector3(cfg_task.Tranceform[1], cfg_task.Tranceform[2], 0)
+      self._cgRaw.transform.localScale = Vector3(cfg_task.Tranceform[3], cfg_task.Tranceform[3], 1)
+      self._animation:Stop()
+      self._animation:Play("uieff_N12_Hard_Challenges_Switch")
+      self._curidx = idx
+      self._cur_mission = self._challenges_task_cfg[idx].LevelIndex
+      self:_RefTask()
+      self:_SetScore(self._challengeMissionInfo.m_max_score[idx])
+      for _, v in ipairs(self._btns) do
+        v:SetSelect(false)
+      end
+      self._btns[idx]:SetSelect(true)
+      self._cg:LoadImage(self._challenges_task_cfg[self._curidx].BoosPicture)
+    end, self._levelData[idx], self._curidx)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._InitSrollView = function(self)
-  -- function num : 0_8
+function UIN12ChallengesContorl:_InitSrollView()
   self:_GetTaskNum(self._curidx)
-  ;
-  (self._scrollview):InitListView(self._taskcount, function(scrollView, idx)
-    -- function num : 0_8_0 , upvalues : self
+  self._scrollview:InitListView(self._taskcount, function(scrollView, idx)
     return self:_InitSpritListInfo(scrollView, idx)
-  end
-, self:_GetScrollViewParam())
+  end, self:_GetScrollViewParam())
   self._firstIn = false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._GetScrollViewParam = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN12ChallengesContorl:_GetScrollViewParam()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 150
   return param
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._InitSpritListInfo = function(self, scrollView, idx)
-  -- function num : 0_10
+function UIN12ChallengesContorl:_InitSpritListInfo(scrollView, idx)
   if idx < 0 then
     return nil
   end
@@ -218,38 +149,26 @@ UIN12ChallengesContorl._InitSpritListInfo = function(self, scrollView, idx)
   local rowList = rowPool:GetAllSpawnList()
   local taskItem = rowList[1]
   local itemidx = idx
-  if self._taskcount < itemidx then
-    (taskItem:GetGameObject()):SetActive(false)
+  if itemidx > self._taskcount then
+    taskItem:GetGameObject():SetActive(false)
   else
     self:_ShowTaskItem(taskItem, itemidx)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._items)[itemidx] = taskItem
+    self._items[itemidx] = taskItem
   end
   return item
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._ShowTaskItem = function(self, taskItem, idx)
-  -- function num : 0_11
-  local date = ((self._quest_date_list)[self._cur_mission])[idx + 1]
-  ;
-  (taskItem:GetGameObject()):SetActive(true)
+function UIN12ChallengesContorl:_ShowTaskItem(taskItem, idx)
+  local date = self._quest_date_list[self._cur_mission][idx + 1]
+  taskItem:GetGameObject():SetActive(true)
   if date ~= nil then
-    taskItem:SetData(self._campaign, date, (self._levelData)[self._curidx], idx, function(deltaTime)
-    -- function num : 0_11_0 , upvalues : self
-    return self:_GlobalDelayTimeFunc(deltaTime)
-  end
-)
+    taskItem:SetData(self._campaign, date, self._levelData[self._curidx], idx, function(deltaTime)
+      return self:_GlobalDelayTimeFunc(deltaTime)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._GlobalDelayTimeFunc = function(self, deltaTime)
-  -- function num : 0_12
+function UIN12ChallengesContorl:_GlobalDelayTimeFunc(deltaTime)
   if not self._playItemAnimation then
     return -1
   end
@@ -258,55 +177,34 @@ UIN12ChallengesContorl._GlobalDelayTimeFunc = function(self, deltaTime)
   return delayTime
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._SetScore = function(self, score)
-  -- function num : 0_13
-  (self._score):SetText(score)
-  ;
-  (self._score_shade):SetText(score)
+function UIN12ChallengesContorl:_SetScore(score)
+  self._score:SetText(score)
+  self._score_shade:SetText(score)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._GetTaskNum = function(self, idx)
-  -- function num : 0_14
-  self._taskcount = #(self._quest_date_list)[self._cur_mission]
+function UIN12ChallengesContorl:_GetTaskNum(idx)
+  self._taskcount = #self._quest_date_list[self._cur_mission]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl._RefTask = function(self)
-  -- function num : 0_15
+function UIN12ChallengesContorl:_RefTask()
   self._globalDelayTime = 0
   local idx = self._curidx
   self._items = {}
   self:_GetTaskNum(idx)
-  ;
-  (self._scrollview):SetListItemCount(self._taskcount)
-  ;
-  (self._scrollview):MovePanelToItemIndex(0, 0)
+  self._scrollview:SetListItemCount(self._taskcount)
+  self._scrollview:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesContorl.SetIconGrey = function(objs, gray)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN12ChallengesContorl.SetIconGrey(objs, gray)
   if not objs then
-    return 
+    return
   end
-  for _,obj in pairs(objs) do
-    local rawimg = (obj.gameObject):GetComponent("RawImage")
-    local emiMat = (UnityEngine.Material):New(rawimg.material)
-    local texture = (rawimg.material).mainTexture
+  for _, obj in pairs(objs) do
+    local rawimg = obj.gameObject:GetComponent("RawImage")
+    local emiMat = UnityEngine.Material:New(rawimg.material)
+    local texture = rawimg.material.mainTexture
     rawimg.material = emiMat
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (rawimg.material).mainTexture = texture
-    ;
-    (rawimg.material):SetFloat("_LuminosityAmount", gray)
+    rawimg.material.mainTexture = texture
+    rawimg.material:SetFloat("_LuminosityAmount", gray)
   end
 end
-
-

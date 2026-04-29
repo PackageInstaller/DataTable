@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_state_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStateManager", Object)
 UIStateManager = UIStateManager
 local UI_STATE_SWITCH_LOCK_NAME = "UIStateSwitch"
@@ -10,10 +5,8 @@ local OPEN_DIALOG_LOCK_NAME = "OpenDialog"
 local CLOSE_DIALOG_LOCK_NAME = "CloseDialog"
 local OPEN_POPUP_LOCK_NAME = "OpenPopup"
 local CLOSE_POPUP_LOCK_NAME = "ClosePopup"
--- DECOMPILER ERROR at PC13: Confused about usage of register: R5 in 'UnsetPending'
 
-UIStateManager.Constructor = function(self, request)
-  -- function num : 0_0 , upvalues : _ENV
+function UIStateManager:Constructor(request)
   local uiControllerMng = UIControllerManager:New(request)
   self.uiControllerManager = uiControllerMng
   self.registeredStateDic = {}
@@ -25,541 +18,367 @@ UIStateManager.Constructor = function(self, request)
   self.uiParams = nil
   self.nextDialogListInfo = nil
   self.stackStateInfoCache = Stack:New()
-  self.clearCacheUIList = {"UIAircraftController", "UIBattle", "UIHomelandMain", "UILoginEmpty"}
-  for k,v in pairs(UIRegister.registeredUIs) do
+  self.clearCacheUIList = {
+    "UIAircraftController",
+    "UIBattle",
+    "UIHomelandMain",
+    "UILoginEmpty"
+  }
+  for k, v in pairs(UIRegister.registeredUIs) do
     uiControllerMng:RegisterUI(k, v.uiPrefab, v.maskType, v.hideUnderLayer, v.loadDataBeforeSwitch, v.uiComponents)
   end
-  ;
-  (UIStateRegister.Register)(self)
+  UIStateRegister.Register(self)
   UIExtendManagerRegister:RegisterUIExtendManagers(uiControllerMng)
   self.logouting = false
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.Reset = function(self)
-  -- function num : 0_1
+function UIStateManager:Reset()
   self:ClearState()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.Dispose = function(self)
-  -- function num : 0_2
+function UIStateManager:Dispose()
   if self.curState then
-    (self.curState):Dispose()
+    self.curState:Dispose()
   end
-  ;
-  (self.uiControllerManager):Dispose()
+  self.uiControllerManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.RegisterUIState = function(self, uiStateType, uiState, bScreenshot)
-  -- function num : 0_3
-  if (self.registeredStateDic)[uiStateType] == nil then
+function UIStateManager:RegisterUIState(uiStateType, uiState, bScreenshot)
+  if self.registeredStateDic[uiStateType] == nil then
     uiState:Init(uiStateType, self.uiControllerManager)
     if bScreenshot == true then
       uiState:SetExitScreenShot(true)
     end
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.registeredStateDic)[uiStateType] = uiState
+    self.registeredStateDic[uiStateType] = uiState
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.GetUIRegisterInfo = function(self, ui_name)
-  -- function num : 0_4
-  return (self.uiControllerManager):GetUIRegisterInfo(ui_name)
+function UIStateManager:GetUIRegisterInfo(ui_name)
+  return self.uiControllerManager:GetUIRegisterInfo(ui_name)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.GetLastStateType = function(self)
-  -- function num : 0_5
+function UIStateManager:GetLastStateType()
   return self.lastStateType
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.Lock = function(self, name)
-  -- function num : 0_6
-  (self.uiControllerManager):Lock(name)
+function UIStateManager:Lock(name)
+  self.uiControllerManager:Lock(name)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.UnLock = function(self, name)
-  -- function num : 0_7
-  (self.uiControllerManager):UnLock(name)
+function UIStateManager:UnLock(name)
+  self.uiControllerManager:UnLock(name)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ExpirationLock = function(self, name, lockMs)
-  -- function num : 0_8
-  (self.uiControllerManager):ExpirationLock(name, lockMs)
+function UIStateManager:ExpirationLock(name, lockMs)
+  self.uiControllerManager:ExpirationLock(name, lockMs)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.CancelExpirationLock = function(self, name)
-  -- function num : 0_9
-  (self.uiControllerManager):CancelExpirationLock(name)
+function UIStateManager:CancelExpirationLock(name)
+  self.uiControllerManager:CancelExpirationLock(name)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ShowBusy = function(self, flag)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.debug)("[busy] ShowBusy", flag, (Log.traceback)())
-  ;
-  (self.uiControllerManager):ShowBusy(flag)
+function UIStateManager:ShowBusy(flag)
+  Log.debug("[busy] ShowBusy", flag, Log.traceback())
+  self.uiControllerManager:ShowBusy(flag)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ClearBusy = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.debug)("[busy] ClearBusy", (Log.traceback)())
-  ;
-  (self.uiControllerManager):ClearBusy()
+function UIStateManager:ClearBusy()
+  Log.debug("[busy] ClearBusy", Log.traceback())
+  self.uiControllerManager:ClearBusy()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.UnLockAll = function(self)
-  -- function num : 0_12
-  (self.uiControllerManager):UnLockAll()
+function UIStateManager:UnLockAll()
+  self.uiControllerManager:UnLockAll()
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.IsLocked = function(self)
-  -- function num : 0_13
-  return (self.uiControllerManager):IsLocked()
+function UIStateManager:IsLocked()
+  return self.uiControllerManager:IsLocked()
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.GetSwitchLock = function(self)
-  -- function num : 0_14
-  return (self.uiControllerManager):GetSwitchLock()
+function UIStateManager:GetSwitchLock()
+  return self.uiControllerManager:GetSwitchLock()
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.LockedSize = function(self)
-  -- function num : 0_15
-  return (self.uiControllerManager):LockedSize()
+function UIStateManager:LockedSize()
+  return self.uiControllerManager:LockedSize()
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.SetBlackSideVisible = function(self, visible, force)
-  -- function num : 0_16
-  (self.uiControllerManager):SetBlackSideVisible(visible, force)
+function UIStateManager:SetBlackSideVisible(visible, force)
+  self.uiControllerManager:SetBlackSideVisible(visible, force)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.SetForceCloseBlackSideVisible = function(self, visible)
-  -- function num : 0_17
-  (self.uiControllerManager):SetForceCloseBlackSideVisible(visible)
+function UIStateManager:SetForceCloseBlackSideVisible(visible)
+  self.uiControllerManager:SetForceCloseBlackSideVisible(visible)
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.SetForceCloseBlackSideVisible = function(self, visible)
-  -- function num : 0_18
-  (self.uiControllerManager):SetForceCloseBlackSideVisible(visible)
+function UIStateManager:SetForceCloseBlackSideVisible(visible)
+  self.uiControllerManager:SetForceCloseBlackSideVisible(visible)
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.PreLoadState = function(self, TT, uiStateType)
-  -- function num : 0_19
-  local state = (self.registeredStateDic)[uiStateType]
+function UIStateManager:PreLoadState(TT, uiStateType)
+  local state = self.registeredStateDic[uiStateType]
   if state then
     state:PreLoad(TT)
   end
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.PushAndSwitchState = function(self, uiStateType, ...)
-  -- function num : 0_20 , upvalues : _ENV, UI_STATE_SWITCH_LOCK_NAME
+function UIStateManager:PushAndSwitchState(uiStateType, ...)
   if self.nextState ~= nil then
-    (Log.warn)("[UI] UIStateManager:PushAndSwitchState ", uiStateType, " Error, UIState ", (self.nextState):GetType(), " is switching")
-    return 
+    Log.warn("[UI] UIStateManager:PushAndSwitchState ", uiStateType, " Error, UIState ", self.nextState:GetType(), " is switching")
+    return
   end
   if uiStateType == self:CurUIStateType() then
     self:SwitchState(uiStateType, ...)
-    return 
+    return
   end
   if self:IsInStateStackBottom(uiStateType) then
     self:ClearState()
     self:SwitchState(uiStateType, ...)
-    return 
+    return
   end
-  ;
-  (Log.sys)("[UI] UIStateManager:PushAndSwitchState: ", uiStateType)
-  self.nextState = (self.registeredStateDic)[uiStateType]
+  Log.sys("[UI] UIStateManager:PushAndSwitchState: ", uiStateType)
+  self.nextState = self.registeredStateDic[uiStateType]
   if self.nextState then
     self:Lock(UI_STATE_SWITCH_LOCK_NAME)
     if self.curState then
       local curStateInfo = StateStackInfo:New(self.curState, self.uiParams)
-      local nextStateType = (self.nextState):GetType()
+      local nextStateType = self.nextState:GetType()
       self.isStateStackDirty = true
       if self:ContainsUIState(nextStateType) then
-        (self.stackStateInfoCache):Clear()
-        while 1 do
-          if (self.stateStack):Size() > 0 then
-            local popState = (self.stateStack):Pop()
-            if (popState.uiState):GetType() ~= nextStateType then
-              do
-                (self.stackStateInfoCache):Push(popState)
-                -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+        self.stackStateInfoCache:Clear()
+        while self.stateStack:Size() > 0 do
+          local popState = self.stateStack:Pop()
+          if popState.uiState:GetType() == nextStateType then
+            break
           end
+          self.stackStateInfoCache:Push(popState)
         end
-        do
-          do
-            while (self.stackStateInfoCache):Size() > 0 do
-              local info = (self.stackStateInfoCache):Pop()
-              ;
-              (self.stateStack):Push(info)
-            end
-            self:PushToStateStack(curStateInfo)
-            self:PushToStateStack(curStateInfo)
-            self.uiParams = {...}
-          end
+        while self.stackStateInfoCache:Size() > 0 do
+          local info = self.stackStateInfoCache:Pop()
+          self.stateStack:Push(info)
         end
+        self:PushToStateStack(curStateInfo)
+      else
+        self:PushToStateStack(curStateInfo)
       end
     end
+    self.uiParams = {
+      ...
+    }
   end
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.SwitchState = function(self, uiStateType, ...)
-  -- function num : 0_21 , upvalues : _ENV, UI_STATE_SWITCH_LOCK_NAME
+function UIStateManager:SwitchState(uiStateType, ...)
   if self.nextState then
-    (Log.warn)("[UI] UIStateManager:SwitchState ", uiStateType, " Error, UIState ", (self.nextState):GetType(), " is switching")
-    return 
+    Log.warn("[UI] UIStateManager:SwitchState ", uiStateType, " Error, UIState ", self.nextState:GetType(), " is switching")
+    return
   end
-  ;
-  (Log.sys)("[UI] UIStateManager:SwitchState, ", uiStateType)
+  Log.sys("[UI] UIStateManager:SwitchState, ", uiStateType)
   if self:ContainsUIState(uiStateType) then
     self:PopStateTo(uiStateType, true)
-    return 
+    return
   end
-  self.nextState = (self.registeredStateDic)[uiStateType]
+  self.nextState = self.registeredStateDic[uiStateType]
   if self.nextState then
     self:Lock(UI_STATE_SWITCH_LOCK_NAME)
-    self.uiParams = {...}
+    self.uiParams = {
+      ...
+    }
   end
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.SwitchStateWithDialogList = function(self, uiStateType, dialogList, ...)
-  -- function num : 0_22 , upvalues : _ENV, UI_STATE_SWITCH_LOCK_NAME
+function UIStateManager:SwitchStateWithDialogList(uiStateType, dialogList, ...)
   if self.nextState then
-    (Log.warn)("[UI] UIStateManager:SwitchState ", uiStateType, " Error, UIState ", (self.nextState):GetType(), " is switching")
-    return 
+    Log.warn("[UI] UIStateManager:SwitchState ", uiStateType, " Error, UIState ", self.nextState:GetType(), " is switching")
+    return
   end
-  ;
-  (Log.sys)("[UI] UIStateManager:SwitchState, ", uiStateType)
+  Log.sys("[UI] UIStateManager:SwitchState, ", uiStateType)
   if self:ContainsUIState(uiStateType) then
     self:PopStateTo(uiStateType, true)
-    return 
+    return
   end
-  self.nextState = (self.registeredStateDic)[uiStateType]
+  self.nextState = self.registeredStateDic[uiStateType]
   if self.nextState then
     self.nextDialogListInfo = dialogList
     self:Lock(UI_STATE_SWITCH_LOCK_NAME)
-    self.uiParams = {...}
+    self.uiParams = {
+      ...
+    }
   end
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ForceSwitchState = function(self, TT, uiStateType, ...)
-  -- function num : 0_23 , upvalues : _ENV, UI_STATE_SWITCH_LOCK_NAME
-  (Log.sys)("[UI] UIStateManager:ForceSwitchState, ", uiStateType)
+function UIStateManager:ForceSwitchState(TT, uiStateType, ...)
+  Log.sys("[UI] UIStateManager:ForceSwitchState, ", uiStateType)
   self.logouting = true
   while self.nextState do
     YIELD(TT)
   end
-  self.nextState = (self.registeredStateDic)[uiStateType]
+  self.nextState = self.registeredStateDic[uiStateType]
   if self.nextState then
     self:Lock(UI_STATE_SWITCH_LOCK_NAME)
-    self.uiParams = {...}
+    self.uiParams = {
+      ...
+    }
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.PopState = function(self, ...)
-  -- function num : 0_24 , upvalues : _ENV, UI_STATE_SWITCH_LOCK_NAME
+function UIStateManager:PopState(...)
   if self.nextState then
-    (Log.warn)("[UI] UIStateManager:PopState Error, UIState ", (self.nextState):GetType(), " is switching")
-    return 
+    Log.warn("[UI] UIStateManager:PopState Error, UIState ", self.nextState:GetType(), " is switching")
+    return
   end
-  ;
-  (Log.sys)("[UI] UIStateManager:PopState")
-  if (self.stateStack):Size() > 0 then
+  Log.sys("[UI] UIStateManager:PopState")
+  if self.stateStack:Size() > 0 then
     self.isStateStackDirty = true
-    local stateInfo = (self.stateStack):Pop()
+    local stateInfo = self.stateStack:Pop()
     self.nextState = stateInfo.uiState
-    if not (GameHelper.IsNull)(...) or not stateInfo.uiParams then
-      do
-        self.uiParams = {...}
-        self:Lock(UI_STATE_SWITCH_LOCK_NAME)
-        ;
-        (Log.fatal)("[UI] UIStateManager:PopState Error, Stack is empty")
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC88: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.PopStateTo = function(self, uiStateType, doSwitch, ...)
-  -- function num : 0_25 , upvalues : _ENV
-  return ((GameGlobal.TaskManager)()):StartTask(UIStateManager.PopStateToImp, self, uiStateType, doSwitch, ...)
-end
-
--- DECOMPILER ERROR at PC91: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ClearState = function(self)
-  -- function num : 0_26
-  self.isStateStackDirty = true
-  ;
-  (self.stateStack):Clear()
-end
-
--- DECOMPILER ERROR at PC94: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ShowDialog = function(self, uiName, ...)
-  -- function num : 0_27 , upvalues : _ENV
-  return ((GameGlobal.TaskManager)()):StartTask(UIStateManager.ShowDialogImp, self, uiName, ...)
-end
-
--- DECOMPILER ERROR at PC97: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.CloseDialog = function(self, uiName)
-  -- function num : 0_28 , upvalues : _ENV
-  return ((GameGlobal.TaskManager)()):StartTask(UIStateManager.CloseDialogImp, self, uiName)
-end
-
--- DECOMPILER ERROR at PC100: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.GetUIMessageBox = function(self, TT, uiMsgBoxName, isShow)
-  -- function num : 0_29
-  return (self.uiControllerManager):GetUIMessageBox(TT, uiMsgBoxName, isShow)
-end
-
--- DECOMPILER ERROR at PC103: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.CheckMessageBoxCameraStatus = function(self, isShow)
-  -- function num : 0_30
-  (self.uiControllerManager):CheckMessageBoxCameraStatus(isShow)
-end
-
--- DECOMPILER ERROR at PC106: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.SetGuideMessageBoxParent = function(self, view, uiName)
-  -- function num : 0_31
-  (self.uiControllerManager):SetGuideMessageBoxParent(view, uiName)
-end
-
--- DECOMPILER ERROR at PC109: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.HasPopup = function(self)
-  -- function num : 0_32
-  return (self.uiControllerManager):HasPopup()
-end
-
--- DECOMPILER ERROR at PC112: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.GetCurShowingPriority = function(self)
-  -- function num : 0_33
-  return (self.uiControllerManager):GetCurShowingPriority()
-end
-
--- DECOMPILER ERROR at PC115: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ClearPopup = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  return ((GameGlobal.TaskManager)()):StartTask(UIControllerManager.ClearPopup, self.uiControllerManager)
-end
-
--- DECOMPILER ERROR at PC118: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.PopupPriorityFilter = function(self, value, bOnlyFilter)
-  -- function num : 0_35 , upvalues : _ENV
-  if not bOnlyFilter then
-    bOnlyFilter = false
-  end
-  if value then
-    ((GameGlobal.TaskManager)()):StartTask(UIControllerManager.SetPopupPriorityFilter, self.uiControllerManager, value, bOnlyFilter)
+    self.uiParams = GameHelper.IsNull(...) and stateInfo.uiParams or {
+      ...
+    }
+    self:Lock(UI_STATE_SWITCH_LOCK_NAME)
   else
-    return (self.uiControllerManager):GetPopupPriorityFilter()
+    Log.fatal("[UI] UIStateManager:PopState Error, Stack is empty")
   end
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ShowPopup = function(self, popup)
-  -- function num : 0_36 , upvalues : _ENV
-  local uiMsgBoxName = popup.uiMsgBoxName
-  ;
-  (Log.debug)("[UIPopup] UIStateManager:ShowPopup,", uiMsgBoxName)
-  return ((GameGlobal.TaskManager)()):StartTask(UIStateManager.ShowPopupImp, self, uiMsgBoxName, popup)
+function UIStateManager:PopStateTo(uiStateType, doSwitch, ...)
+  return GameGlobal.TaskManager():StartTask(UIStateManager.PopStateToImp, self, uiStateType, doSwitch, ...)
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ClosePopup = function(self, popup)
-  -- function num : 0_37 , upvalues : _ENV
-  local uiMsgBoxName = popup.uiMsgBoxName
-  ;
-  (Log.debug)("[UIPopup] UIStateManager:ClosePopup,", uiMsgBoxName)
-  return ((GameGlobal.TaskManager)()):StartTask(UIStateManager.ClosePopupImp, self, uiMsgBoxName, popup)
+function UIStateManager:ClearState()
+  self.isStateStackDirty = true
+  self.stateStack:Clear()
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R5 in 'UnsetPending'
+function UIStateManager:ShowDialog(uiName, ...)
+  return GameGlobal.TaskManager():StartTask(UIStateManager.ShowDialogImp, self, uiName, ...)
+end
 
-UIStateManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_38 , upvalues : UI_STATE_SWITCH_LOCK_NAME, _ENV
-  do
-    if self.nextState and not (self.uiControllerManager):GetSwitchLock() then
-      local targetState = self.nextState
-      self:UnLock(UI_STATE_SWITCH_LOCK_NAME)
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(UIStateManager.DoSwitchState, self, targetState, self.uiParams)
-    end
-    ;
-    (self.uiControllerManager):Update(deltaTimeMS)
+function UIStateManager:CloseDialog(uiName)
+  return GameGlobal.TaskManager():StartTask(UIStateManager.CloseDialogImp, self, uiName)
+end
+
+function UIStateManager:GetUIMessageBox(TT, uiMsgBoxName, isShow)
+  return self.uiControllerManager:GetUIMessageBox(TT, uiMsgBoxName, isShow)
+end
+
+function UIStateManager:CheckMessageBoxCameraStatus(isShow)
+  self.uiControllerManager:CheckMessageBoxCameraStatus(isShow)
+end
+
+function UIStateManager:SetGuideMessageBoxParent(view, uiName)
+  self.uiControllerManager:SetGuideMessageBoxParent(view, uiName)
+end
+
+function UIStateManager:HasPopup()
+  return self.uiControllerManager:HasPopup()
+end
+
+function UIStateManager:GetCurShowingPriority()
+  return self.uiControllerManager:GetCurShowingPriority()
+end
+
+function UIStateManager:ClearPopup()
+  return GameGlobal.TaskManager():StartTask(UIControllerManager.ClearPopup, self.uiControllerManager)
+end
+
+function UIStateManager:PopupPriorityFilter(value, bOnlyFilter)
+  bOnlyFilter = bOnlyFilter or false
+  if value then
+    GameGlobal.TaskManager():StartTask(UIControllerManager.SetPopupPriorityFilter, self.uiControllerManager, value, bOnlyFilter)
+  else
+    return self.uiControllerManager:GetPopupPriorityFilter()
   end
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R5 in 'UnsetPending'
+function UIStateManager:ShowPopup(popup)
+  local uiMsgBoxName = popup.uiMsgBoxName
+  Log.debug("[UIPopup] UIStateManager:ShowPopup,", uiMsgBoxName)
+  return GameGlobal.TaskManager():StartTask(UIStateManager.ShowPopupImp, self, uiMsgBoxName, popup)
+end
 
-UIStateManager.CurUIStateType = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function UIStateManager:ClosePopup(popup)
+  local uiMsgBoxName = popup.uiMsgBoxName
+  Log.debug("[UIPopup] UIStateManager:ClosePopup,", uiMsgBoxName)
+  return GameGlobal.TaskManager():StartTask(UIStateManager.ClosePopupImp, self, uiMsgBoxName, popup)
+end
+
+function UIStateManager:Update(deltaTimeMS)
+  if self.nextState and not self.uiControllerManager:GetSwitchLock() then
+    local targetState = self.nextState
+    self:UnLock(UI_STATE_SWITCH_LOCK_NAME)
+    GameGlobal.TaskManager():StartTask(UIStateManager.DoSwitchState, self, targetState, self.uiParams)
+  end
+  self.uiControllerManager:Update(deltaTimeMS)
+end
+
+function UIStateManager:CurUIStateType()
   if self.curState ~= nil then
-    return (self.curState):GetType()
+    return self.curState:GetType()
   end
   return UIStateType.Invalid
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ShowCurUIState = function(self, flag)
-  -- function num : 0_40
+function UIStateManager:ShowCurUIState(flag)
   if self.curState then
-    (self.curState):Show(flag)
+    self.curState:Show(flag)
   end
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.IsShow = function(self, uiName)
-  -- function num : 0_41
-  return (self.uiControllerManager):IsShow(uiName)
+function UIStateManager:IsShow(uiName)
+  return self.uiControllerManager:IsShow(uiName)
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.IsTopUI = function(self, uiName)
-  -- function num : 0_42
-  return (self.uiControllerManager):IsTopUI(uiName)
+function UIStateManager:IsTopUI(uiName)
+  return self.uiControllerManager:IsTopUI(uiName)
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.GetController = function(self, uiName)
-  -- function num : 0_43
-  return (self.uiControllerManager):GetController(uiName)
+function UIStateManager:GetController(uiName)
+  return self.uiControllerManager:GetController(uiName)
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.GetControllerCamera = function(self, uiName)
-  -- function num : 0_44
-  return (self.uiControllerManager):GetControllerCamera(uiName)
+function UIStateManager:GetControllerCamera(uiName)
+  return self.uiControllerManager:GetControllerCamera(uiName)
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.SetTopParent = function(self, ui)
-  -- function num : 0_45
-  return (self.uiControllerManager):SetTopParent(ui)
+function UIStateManager:SetTopParent(ui)
+  return self.uiControllerManager:SetTopParent(ui)
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.SetHighParent = function(self, ui)
-  -- function num : 0_46
-  return (self.uiControllerManager):SetHighParent(ui)
+function UIStateManager:SetHighParent(ui)
+  return self.uiControllerManager:SetHighParent(ui)
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.GetExtendManager = function(self, type)
-  -- function num : 0_47
-  return (self.uiControllerManager):GetExtendManager(type)
+function UIStateManager:GetExtendManager(type)
+  return self.uiControllerManager:GetExtendManager(type)
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.CallUIMethod = function(self, uiName, methodName, ...)
-  -- function num : 0_48
-  return (self.uiControllerManager):CallUIMethod(uiName, methodName, ...)
+function UIStateManager:CallUIMethod(uiName, methodName, ...)
+  return self.uiControllerManager:CallUIMethod(uiName, methodName, ...)
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.DoSwitchState = function(self, TT, nextState, params)
-  -- function num : 0_49 , upvalues : _ENV
-  while (self.uiControllerManager):GetSwitchLock() do
+function UIStateManager:DoSwitchState(TT, nextState, params)
+  while self.uiControllerManager:GetSwitchLock() do
     YIELD(TT)
   end
   local bScreenShot = false
-  ;
-  (self.uiControllerManager):SetSwitchLock(true)
+  self.uiControllerManager:SetSwitchLock(true)
   if self.curState ~= nil then
-    self.lastStateType = (self.curState):GetType()
-    bScreenShot = (self.curState):GetExitScreenShot()
+    self.lastStateType = self.curState:GetType()
+    bScreenShot = self.curState:GetExitScreenShot()
   else
     self.lastStateType = UIStateType.Invalid
   end
   if bScreenShot then
-    (UISwitchImgManager.Show)()
+    UISwitchImgManager.Show()
   end
-  ;
-  (GameObjectHelper.UnLoadUnUsedAsset)()
+  GameObjectHelper.UnLoadUnUsedAsset()
   local res = UIStateSwitchReq:New()
-  ;
-  (self.uiControllerManager):ResetAllLayerVisble()
+  self.uiControllerManager:ResetAllLayerVisble()
   nextState:TryEnter(TT, self.curState, res, params, self.nextDialogListInfo)
   if res:GetSucc() then
     local forceClearCache = false
-    for _,clearCacheUIName in pairs(self.clearCacheUIList) do
+    for _, clearCacheUIName in pairs(self.clearCacheUIList) do
       local defaultUIList = nextState:GetDefaultUIList()
       for i = 1, #defaultUIList do
         local name = defaultUIList[i]
@@ -569,392 +388,265 @@ UIStateManager.DoSwitchState = function(self, TT, nextState, params)
         end
       end
     end
-    ;
-    (self.uiControllerManager):SetForceClearCache(forceClearCache)
+    self.uiControllerManager:SetForceClearCache(forceClearCache)
     if self.curState then
-      (self.curState):Exit(TT, nextState)
+      self.curState:Exit(TT, nextState)
     end
-    ;
-    (self.uiControllerManager):SetForceClearCache(false)
+    self.uiControllerManager:SetForceClearCache(false)
     local nextSceneName = nextState:GetSceneName()
-    do
-      do
-        if not (string.isnullorempty)(nextSceneName) and (UIHelper.GetActiveSceneName)() ~= nextSceneName then
-          local scene = ((GameGlobal.GameLogic)()):LoadScene(TT, nextSceneName)
-          nextState:SetScene(scene)
-          YIELD(TT)
-        end
-        nextState:Enter(self.curState, res, params, self.nextDialogListInfo)
-        ;
-        (UISwitchImgManager.Hide)()
-        nextState:AfterEnter(TT, self.curState, res, params, self.nextDialogListInfo)
-        if self.curState then
-          (self.curState):Dispose()
-        end
-        self.curState = nextState
-        if (table.icontains)(GCStateList, nextState:GetType()) or (table.icontains)(GCStateList, self.lastStateType) then
-          (HelperProxy:GetInstance()):GCCollect()
-          collectgarbage("collect")
-          ;
-          (HelperProxy:GetInstance()):GCCollect()
-          collectgarbage("collect")
-        end
-        if res:GetSucc() then
-          (Log.debug)("[UI] UIStateManager:DoSwitchState, EnterState success, ", nextState:GetType())
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SwitchUIStateFinish, nextState:GetType())
-        else
-          ;
-          (Log.fatal)("[UI] UIStateManager:DoSwitchState, EnterState false: ", nextState:GetType())
-        end
-        ;
-        (UISwitchImgManager.Hide)()
-        self.nextState = nil
-        self.nextDialogListInfo = nil
-        ;
-        (self.uiControllerManager):SetSwitchLock(false)
-      end
+    if not string.isnullorempty(nextSceneName) and UIHelper.GetActiveSceneName() ~= nextSceneName then
+      local scene = GameGlobal.GameLogic():LoadScene(TT, nextSceneName)
+      nextState:SetScene(scene)
+      YIELD(TT)
     end
+    nextState:Enter(self.curState, res, params, self.nextDialogListInfo)
+    UISwitchImgManager.Hide()
+    nextState:AfterEnter(TT, self.curState, res, params, self.nextDialogListInfo)
+    if self.curState then
+      self.curState:Dispose()
+    end
+    self.curState = nextState
+    if table.icontains(GCStateList, nextState:GetType()) or table.icontains(GCStateList, self.lastStateType) then
+      HelperProxy:GetInstance():GCCollect()
+      collectgarbage("collect")
+      HelperProxy:GetInstance():GCCollect()
+      collectgarbage("collect")
+    end
+    if res:GetSucc() then
+      Log.debug("[UI] UIStateManager:DoSwitchState, EnterState success, ", nextState:GetType())
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.SwitchUIStateFinish, nextState:GetType())
+    else
+      Log.fatal("[UI] UIStateManager:DoSwitchState, EnterState false: ", nextState:GetType())
+    end
+  else
+    UISwitchImgManager.Hide()
   end
+  self.nextState = nil
+  self.nextDialogListInfo = nil
+  self.uiControllerManager:SetSwitchLock(false)
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.PopStateToImp = function(self, TT, uiStateType, doSwitch, ...)
-  -- function num : 0_50 , upvalues : _ENV, UI_STATE_SWITCH_LOCK_NAME
+function UIStateManager:PopStateToImp(TT, uiStateType, doSwitch, ...)
   doSwitch = doSwitch ~= false
   if self.nextState then
-    (Log.warn)("[UI] UIStateManager:PopStateToImp ", uiStateType, " Error, UIState ", (self.nextState):GetType(), " is switching")
-    return 
+    Log.warn("[UI] UIStateManager:PopStateToImp ", uiStateType, " Error, UIState ", self.nextState:GetType(), " is switching")
+    return
   end
-  ;
-  (Log.sys)("[UI] UIStateManager:PopStateToImp: ", uiStateType)
+  Log.sys("[UI] UIStateManager:PopStateToImp: ", uiStateType)
   if not self:ContainsUIState(uiStateType) then
-    (Log.fatal)("[UI] UIStateManager:PopStateToImp Error, cannot find type, ", uiStateType)
-    return 
+    Log.fatal("[UI] UIStateManager:PopStateToImp Error, cannot find type, ", uiStateType)
+    return
   end
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  local t = (self.stateStack):ToArray()
+  local t = self.stateStack:ToArray()
   for i = 1, #t do
     local dest = t[i]
-    if (dest.uiState):GetType() == uiStateType then
+    if dest.uiState:GetType() == uiStateType then
       for j = 1, i do
-        ((t[j]).uiState):UnloadInvisibleUI()
+        t[j].uiState:UnloadInvisibleUI()
       end
       if doSwitch then
         self.nextState = dest.uiState
-        if not (GameHelper.IsNull)(...) or not dest.uiParams then
-          do
-            self.uiParams = {...}
-            self:Lock(UI_STATE_SWITCH_LOCK_NAME)
-            self.isStateStackDirty = true
-            ;
-            (self.stateStack):Clear()
-            for j = #t, i + 1, -1 do
-              (self.stateStack):Push(t[j])
-            end
-            do return  end
-            ;
-            (dest.uiState):RevertState(TT, res)
-            if not res:GetSucc() then
-              return 
-            end
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        self.uiParams = GameHelper.IsNull(...) and dest.uiParams or {
+          ...
+        }
+        self:Lock(UI_STATE_SWITCH_LOCK_NAME)
+      end
+      self.isStateStackDirty = true
+      self.stateStack:Clear()
+      for j = #t, i + 1, -1 do
+        self.stateStack:Push(t[j])
+      end
+      return
+    else
+      dest.uiState:RevertState(TT, res)
+      if not res:GetSucc() then
+        return
       end
     end
   end
-  ;
-  (Log.fatal)("[UI] UIStateManager:PopStateToImp Error, ", uiStateType)
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  Log.fatal("[UI] UIStateManager:PopStateToImp Error, ", uiStateType)
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.ContainsUIState = function(self, uiStateType)
-  -- function num : 0_51
-  local t = (self.stateStack):ToArray()
+function UIStateManager:ContainsUIState(uiStateType)
+  local t = self.stateStack:ToArray()
   for i = 1, #t do
-    if uiStateType == ((t[i]).uiState):GetType() then
+    if uiStateType == t[i].uiState:GetType() then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.PushToStateStack = function(self, stateInfo)
-  -- function num : 0_52 , upvalues : _ENV
+function UIStateManager:PushToStateStack(stateInfo)
   if not stateInfo then
-    return 
+    return
   end
-  local curStateType = (stateInfo.uiState):GetType()
+  local curStateType = stateInfo.uiState:GetType()
   if self:ContainsUIState(curStateType) then
-    local targetState = nil
+    local targetState
     local tmpStateStack = Stack:New()
-    while 1 do
-      while 1 do
-        if (self.stateStack):Size() > 0 then
-          local popState = (self.stateStack):Pop()
-          if (popState.uiState):GetType() == curStateType then
-            targetState = popState
-            -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      tmpStateStack:Push(popState)
-    end
-    do
-      do
-        do
-          while tmpStateStack:Size() > 0 do
-            local info = tmpStateStack:Pop()
-            ;
-            (self.stateStack):Push(info)
-          end
-          ;
-          (self.stateStack):Push(targetState)
-          ;
-          (self.stateStack):Push(stateInfo)
-        end
+    while self.stateStack:Size() > 0 do
+      local popState = self.stateStack:Pop()
+      if popState.uiState:GetType() == curStateType then
+        targetState = popState
+        break
+      else
+        tmpStateStack:Push(popState)
       end
     end
+    while tmpStateStack:Size() > 0 do
+      local info = tmpStateStack:Pop()
+      self.stateStack:Push(info)
+    end
+    self.stateStack:Push(targetState)
+  else
+    self.stateStack:Push(stateInfo)
   end
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R5 in 'UnsetPending'
-
-UIStateManager.IsInStateStackBottom = function(self, uiStateType)
-  -- function num : 0_53
-  local t = (self.stateStack):ToArray()
+function UIStateManager:IsInStateStackBottom(uiStateType)
+  local t = self.stateStack:ToArray()
   if t then
     local count = #t
-    if ((t[count]).uiState):GetType() ~= uiStateType then
-      do
-        do return count <= 0 end
-        do return false end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+    if 0 < count then
+      return t[count].uiState:GetType() == uiStateType
     end
   end
+  return false
 end
 
-local oldStr = nil
--- DECOMPILER ERROR at PC176: Confused about usage of register: R6 in 'UnsetPending'
+local oldStr
 
-UIStateManager.LogUIStateStackWhenDirty = function(self)
-  -- function num : 0_54 , upvalues : oldStr, _ENV
+function UIStateManager:LogUIStateStackWhenDirty()
   if self.isStateStackDirty then
     local str = ""
-    local t = (self.stateStack):ToArray()
+    local t = self.stateStack:ToArray()
     for i = 1, #t do
       local value = t[i]
-      str = str .. (value.uiState):GetType() .. ","
+      str = str .. value.uiState:GetType() .. ","
     end
     if oldStr ~= str then
       oldStr = str
-      ;
-      (Log.fatal)("------------------ ", str)
+      Log.fatal("------------------ ", str)
     end
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R6 in 'UnsetPending'
-
-UIStateManager.ShowDialogImp = function(self, TT, uiName, ...)
-  -- function num : 0_55 , upvalues : OPEN_DIALOG_LOCK_NAME, _ENV
+function UIStateManager:ShowDialogImp(TT, uiName, ...)
   local lockName = OPEN_DIALOG_LOCK_NAME .. uiName
   self:Lock(lockName)
-  while (self.uiControllerManager):GetSwitchLock() do
+  while self.uiControllerManager:GetSwitchLock() do
     if self.logouting then
       self:UnLock(lockName)
-      return 
+      return
     end
     YIELD(TT)
   end
   self:UnLock(lockName)
   if self.curState then
-    return (self.curState):ShowDialog(TT, uiName, ...)
+    return self.curState:ShowDialog(TT, uiName, ...)
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R6 in 'UnsetPending'
-
-UIStateManager.CloseDialogImp = function(self, TT, uiName)
-  -- function num : 0_56 , upvalues : CLOSE_DIALOG_LOCK_NAME, _ENV
+function UIStateManager:CloseDialogImp(TT, uiName)
   local lockName = CLOSE_DIALOG_LOCK_NAME .. uiName
   self:Lock(lockName)
-  while (self.uiControllerManager):GetSwitchLock() do
+  while self.uiControllerManager:GetSwitchLock() do
     if self.logouting then
       self:UnLock(lockName)
-      return 
+      return
     end
     YIELD(TT)
   end
   self:UnLock(lockName)
   if self.curState then
-    return (self.curState):CloseDialog(TT, uiName)
+    return self.curState:CloseDialog(TT, uiName)
   end
 end
 
 local popupRequestID = 0
--- DECOMPILER ERROR at PC186: Confused about usage of register: R7 in 'UnsetPending'
 
-UIStateManager.ShowPopupImp = function(self, TT, uiMsgBoxName, popup)
-  -- function num : 0_57 , upvalues : popupRequestID, OPEN_POPUP_LOCK_NAME, _ENV
+function UIStateManager:ShowPopupImp(TT, uiMsgBoxName, popup)
   popupRequestID = popupRequestID + 1
   local lockName = OPEN_POPUP_LOCK_NAME .. uiMsgBoxName .. popupRequestID
   self:Lock(lockName)
-  while 1 do
-    if (PopupManager:GetInstance()):GetSwitchLock() or popup.priority < PopupPriority.Network and (self.uiControllerManager):GetSwitchLock() then
-      YIELD(TT)
-      -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_STMT
-
-    end
+  while PopupManager:GetInstance():GetSwitchLock() or popup.priority < PopupPriority.Network and self.uiControllerManager:GetSwitchLock() do
+    YIELD(TT)
   end
-  ;
-  (PopupManager:GetInstance()):SetSwitchLock(true)
-  ;
-  (PopupManager:GetInstance()):OpenPopup(TT, popup)
-  ;
-  (PopupManager:GetInstance()):SetSwitchLock(false)
+  PopupManager:GetInstance():SetSwitchLock(true)
+  PopupManager:GetInstance():OpenPopup(TT, popup)
+  PopupManager:GetInstance():SetSwitchLock(false)
   self:UnLock(lockName)
 end
 
 local closePopupRequestID = 0
--- DECOMPILER ERROR at PC190: Confused about usage of register: R8 in 'UnsetPending'
 
-UIStateManager.ClosePopupImp = function(self, TT, uiMsgBoxName, popup)
-  -- function num : 0_58 , upvalues : closePopupRequestID, CLOSE_POPUP_LOCK_NAME, _ENV
+function UIStateManager:ClosePopupImp(TT, uiMsgBoxName, popup)
   closePopupRequestID = closePopupRequestID + 1
   local lockName = CLOSE_POPUP_LOCK_NAME .. uiMsgBoxName .. closePopupRequestID
   self:Lock(lockName)
-  while 1 do
-    if (PopupManager:GetInstance()):GetSwitchLock() or popup.priority < PopupPriority.Network and (self.uiControllerManager):GetSwitchLock() then
-      YIELD(TT)
-      -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_STMT
-
-    end
+  while PopupManager:GetInstance():GetSwitchLock() or popup.priority < PopupPriority.Network and self.uiControllerManager:GetSwitchLock() do
+    YIELD(TT)
   end
-  ;
-  (PopupManager:GetInstance()):SetSwitchLock(true)
-  ;
-  (PopupManager:GetInstance()):ClosePopup(TT, popup)
-  ;
-  (PopupManager:GetInstance()):SetSwitchLock(false)
+  PopupManager:GetInstance():SetSwitchLock(true)
+  PopupManager:GetInstance():ClosePopup(TT, popup)
+  PopupManager:GetInstance():SetSwitchLock(false)
   self:UnLock(lockName)
 end
 
--- DECOMPILER ERROR at PC193: Confused about usage of register: R8 in 'UnsetPending'
-
-UIStateManager.IsLogouting = function(self)
-  -- function num : 0_59
+function UIStateManager:IsLogouting()
   return self.logouting
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R8 in 'UnsetPending'
-
-UIStateManager.SetIsLogouting = function(self, value)
-  -- function num : 0_60
+function UIStateManager:SetIsLogouting(value)
   self.logouting = value
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R8 in 'UnsetPending'
-
-UIStateManager.GetMessageBoxCamera = function(self)
-  -- function num : 0_61
-  return (self.uiControllerManager):GetMessageBoxCamera()
+function UIStateManager:GetMessageBoxCamera()
+  return self.uiControllerManager:GetMessageBoxCamera()
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R8 in 'UnsetPending'
-
-UIStateManager.GetUICameraByDepth = function(self, depth)
-  -- function num : 0_62
-  return (self.uiControllerManager):GetUICameraByDepth(depth)
+function UIStateManager:GetUICameraByDepth(depth)
+  return self.uiControllerManager:GetUICameraByDepth(depth)
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R8 in 'UnsetPending'
-
-UIStateManager.SetDepthRaycast = function(self, depth, active)
-  -- function num : 0_63
-  (((self.uiControllerManager).layerManager).layerManagerHelper):SetDepthRaycast(depth, active)
+function UIStateManager:SetDepthRaycast(depth, active)
+  self.uiControllerManager.layerManager.layerManagerHelper:SetDepthRaycast(depth, active)
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R8 in 'UnsetPending'
-
-UIStateManager.CloseAllDialogsExcept = function(self, exceptUIName)
-  -- function num : 0_64
+function UIStateManager:CloseAllDialogsExcept(exceptUIName)
   local uiList = {}
-  for i = 1, ((self.uiControllerManager):VisibleUIList()):Size() do
-    local name = ((self.uiControllerManager):VisibleUIList()):GetAt(i)
+  for i = 1, self.uiControllerManager:VisibleUIList():Size() do
+    local name = self.uiControllerManager:VisibleUIList():GetAt(i)
     if name ~= exceptUIName then
       uiList[#uiList + 1] = name
     end
   end
   for i = 1, #uiList do
-    local uiController = (self.uiControllerManager):GetController(uiList[i])
+    local uiController = self.uiControllerManager:GetController(uiList[i])
     uiController.SkipTransitionAmin = true
     if i == 1 then
-      local underLayerUIName = (self.uiControllerManager):GetUnderLayerUI(uiList[i])
-      ;
-      (self.uiControllerManager):SetUIRootActive(underLayerUIName, true)
+      local underLayerUIName = self.uiControllerManager:GetUnderLayerUI(uiList[i])
+      self.uiControllerManager:SetUIRootActive(underLayerUIName, true)
     else
-      do
-        do
-          uiController:SetHideUnderLayerFlag(false)
-          self:CloseDialog(uiList[i])
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      uiController:SetHideUnderLayerFlag(false)
     end
+    self:CloseDialog(uiList[i])
   end
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R8 in 'UnsetPending'
-
-UIStateManager.CloseAllDialogOverLayerWithName = function(self, uiName, exceptUINameList)
-  -- function num : 0_65 , upvalues : _ENV
-  if not exceptUINameList then
-    exceptUINameList = {}
-  end
-  local underLayer = (self.uiControllerManager):GetDepth(uiName)
+function UIStateManager:CloseAllDialogOverLayerWithName(uiName, exceptUINameList)
+  exceptUINameList = exceptUINameList or {}
+  local underLayer = self.uiControllerManager:GetDepth(uiName)
   local uiList = {}
-  for i = 1, ((self.uiControllerManager):VisibleUIList()):Size() do
-    local name = ((self.uiControllerManager):VisibleUIList()):GetAt(i)
-    local uiLayer = (self.uiControllerManager):GetDepth(name)
+  for i = 1, self.uiControllerManager:VisibleUIList():Size() do
+    local name = self.uiControllerManager:VisibleUIList():GetAt(i)
+    local uiLayer = self.uiControllerManager:GetDepth(name)
     if underLayer < uiLayer then
       local closeDialogFlag = true
-      for _,exceptUIName in pairs(exceptUINameList) do
+      for _, exceptUIName in pairs(exceptUINameList) do
         if name == exceptUIName then
           closeDialogFlag = false
         end
@@ -965,35 +657,22 @@ UIStateManager.CloseAllDialogOverLayerWithName = function(self, uiName, exceptUI
     end
   end
   for i = 1, #uiList do
-    local uiController = (self.uiControllerManager):GetController(uiList[i])
+    local uiController = self.uiControllerManager:GetController(uiList[i])
     uiController.SkipTransitionAmin = true
     if i == 1 then
-      local underLayerUIName = (self.uiControllerManager):GetUnderLayerUI(uiList[i])
-      ;
-      (self.uiControllerManager):SetUIRootActive(underLayerUIName, true)
+      local underLayerUIName = self.uiControllerManager:GetUnderLayerUI(uiList[i])
+      self.uiControllerManager:SetUIRootActive(underLayerUIName, true)
     else
-      do
-        do
-          uiController:SetHideUnderLayerFlag(false)
-          self:CloseDialog(uiList[i])
-          -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      uiController:SetHideUnderLayerFlag(false)
     end
+    self:CloseDialog(uiList[i])
   end
 end
 
 _class("StateStackInfo", Object)
 StateStackInfo = StateStackInfo
--- DECOMPILER ERROR at PC220: Confused about usage of register: R8 in 'UnsetPending'
 
-StateStackInfo.Constructor = function(self, uiState, uiParams)
-  -- function num : 0_66
+function StateStackInfo:Constructor(uiState, uiParams)
   self.uiState = uiState
   self.uiParams = uiParams
 end
@@ -1001,11 +680,7 @@ end
 require("async_request_res")
 _class("UIStateSwitchReq", AsyncRequestRes)
 UIStateSwitchReq = UIStateSwitchReq
--- DECOMPILER ERROR at PC232: Confused about usage of register: R8 in 'UnsetPending'
 
-UIStateSwitchReq.Constructor = function(self)
-  -- function num : 0_67
+function UIStateSwitchReq:Constructor()
   self.loadFromDisk = true
 end
-
-

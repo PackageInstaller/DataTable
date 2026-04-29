@@ -1,236 +1,162 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/StateDrawCardPool/state_draw_card_pool_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateDrawCardPoolInit", State)
 StateDrawCardPoolInit = StateDrawCardPoolInit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateDrawCardPoolInit.Init = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function StateDrawCardPoolInit:Init()
   self._fsm = self:GetFsm()
-  self._ui = (self._fsm):GetData()
+  self._ui = self._fsm:GetData()
   self._maskSpeedTimes = 4
   self:InitDragField()
-  self.selfRect = (self._ui).selfRect
-  self.bgLogo = (self._ui).bgLogo
-  self.layer1Rect = (self._ui).layer1Rect
-  self._half = (self._ui):GetWidthHalf()
-  self._len = (table.count)((self._ui)._poolDataList)
+  self.selfRect = self._ui.selfRect
+  self.bgLogo = self._ui.bgLogo
+  self.layer1Rect = self._ui.layer1Rect
+  self._half = self._ui:GetWidthHalf()
+  self._len = table.count(self._ui._poolDataList)
   if self._len <= 0 then
-    (Log.fatal)("### not data in _poolDataList")
+    Log.fatal("### not data in _poolDataList")
   end
-  self._flipRatio = ((Cfg.cfg_global).ui_draw_card_flip_ratio).FloatValue
-  self._flipRatio = (Mathf.Clamp01)(self._flipRatio)
+  self._flipRatio = Cfg.cfg_global.ui_draw_card_flip_ratio.FloatValue
+  self._flipRatio = Mathf.Clamp01(self._flipRatio)
   self._flipX = self._half * self._flipRatio
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.OnEnter = function(self, TT, ...)
-  -- function num : 0_1
+function StateDrawCardPoolInit:OnEnter(TT, ...)
   self:Init()
   if self._ui then
-    (self._ui):InitLogoPos(true)
-    ;
-    (self._ui):FlushLogos((self._ui):GetIndex() + 1)
+    self._ui:InitLogoPos(true)
+    self._ui:FlushLogos(self._ui:GetIndex() + 1)
   end
   self:ShowHideUIEff(false)
-  ;
-  (self._ui):RegUIEventTriggerListener(function(ped)
-    -- function num : 0_1_0 , upvalues : self
+  self._ui:RegUIEventTriggerListener(function(ped)
     self:OnBeginDrag(ped)
-  end
-, function(ped)
-    -- function num : 0_1_1 , upvalues : self
+  end, function(ped)
     self:OnDrag(ped)
-  end
-, function(ped)
-    -- function num : 0_1_2 , upvalues : self
+  end, function(ped)
     self:OnEndDrag(ped)
-  end
-)
-  ;
-  (self._ui):DOLock(false)
+  end)
+  self._ui:DOLock(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.OnExit = function(self, TT)
-  -- function num : 0_2
-  (self._ui):RegUIEventTriggerListener(function(ped)
-    -- function num : 0_2_0
-  end
-, function(ped)
-    -- function num : 0_2_1
-  end
-, function(ped)
-    -- function num : 0_2_2
-  end
-)
-  ;
-  (self._ui):DOLock(true)
+function StateDrawCardPoolInit:OnExit(TT)
+  self._ui:RegUIEventTriggerListener(function(ped)
+  end, function(ped)
+  end, function(ped)
+  end)
+  self._ui:DOLock(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.Destroy = function(self)
-  -- function num : 0_3
+function StateDrawCardPoolInit:Destroy()
   self._fsm = nil
   self._ui = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.InitDragField = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function StateDrawCardPoolInit:InitDragField()
   self._xBegainDrag = nil
   self._xCurDrag = nil
   self._posBGLogo = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.OnUpdate = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if not self._ui or not ((self._ui).etl).IsDragging then
-    return 
+function StateDrawCardPoolInit:OnUpdate()
+  if not self._ui or not self._ui.etl.IsDragging then
+    return
   end
   if not self._xBegainDrag or not self._xCurDrag then
-    return 
+    return
   end
   local deltaX = self._xCurDrag - self._xBegainDrag
   if deltaX == 0 then
-    return 
+    return
   end
   if self:IsEdge(deltaX) then
-    return 
+    return
   end
   self:UpdateLogoByDelta(deltaX)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._posBGLogo).x = self:ClampBGLogo(self._half - (Mathf.Abs)(deltaX) * self._maskSpeedTimes, deltaX)
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.bgLogo).anchoredPosition = self._posBGLogo
-  ;
-  (self._ui):OnBGLogoMoving()
-  if ((self.bgLogo).anchoredPosition).x <= self._flipX then
+  self._posBGLogo.x = self:ClampBGLogo(self._half - Mathf.Abs(deltaX) * self._maskSpeedTimes, deltaX)
+  self.bgLogo.anchoredPosition = self._posBGLogo
+  self._ui:OnBGLogoMoving()
+  if self.bgLogo.anchoredPosition.x <= self._flipX then
     self:OnEndDrag()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.UpdateLogoByDelta = function(self, deltaX)
-  -- function num : 0_6
-  if deltaX > 0 and not (self._ui):IsFlip() then
-    (self._ui):InitLogoPos(false)
-    ;
-    (self._ui):FlushLogos((self._ui):GetIndex() - 1)
-  end
-  if deltaX < 0 and (self._ui):IsFlip() then
-    (self._ui):InitLogoPos(true)
-    ;
-    (self._ui):FlushLogos((self._ui):GetIndex() + 1)
+function StateDrawCardPoolInit:UpdateLogoByDelta(deltaX)
+  if 0 < deltaX then
+    if not self._ui:IsFlip() then
+      self._ui:InitLogoPos(false)
+      self._ui:FlushLogos(self._ui:GetIndex() - 1)
+    end
+  else
+    if deltaX < 0 and self._ui:IsFlip() then
+      self._ui:InitLogoPos(true)
+      self._ui:FlushLogos(self._ui:GetIndex() + 1)
+    else
+    end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.IsEdge = function(self, deltaX)
-  -- function num : 0_7
-  if deltaX > 0 and (self._ui):GetIndex() == 1 then
+function StateDrawCardPoolInit:IsEdge(deltaX)
+  if 0 < deltaX and self._ui:GetIndex() == 1 then
     return true
   end
-  if deltaX < 0 and (self._ui):GetIndex() == self._len then
+  if deltaX < 0 and self._ui:GetIndex() == self._len then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.ClampBGLogo = function(self, x, deltaX)
-  -- function num : 0_8
+function StateDrawCardPoolInit:ClampBGLogo(x, deltaX)
   if self:IsEdge(deltaX) then
     return self._half
   end
   return x
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.ShowHideUIEff = function(self, isShow)
-  -- function num : 0_9
-  if (self._ui).uieff then
-    ((self._ui).uieff):SetActive(isShow)
+function StateDrawCardPoolInit:ShowHideUIEff(isShow)
+  if self._ui.uieff then
+    self._ui.uieff:SetActive(isShow)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.OnBeginDrag = function(self, ped)
-  -- function num : 0_10 , upvalues : _ENV
-  local deltaX = (ped.delta).x
+function StateDrawCardPoolInit:OnBeginDrag(ped)
+  local deltaX = ped.delta.x
   if self:IsEdge(deltaX) then
-    return 
+    return
   end
   self:ShowHideUIEff(true)
   self:UpdateLogoByDelta(deltaX)
-  local pos = (StateDrawCardPoolInit.ScreenPointToLocalPointInRectangle)(self.selfRect, ped)
+  local pos = StateDrawCardPoolInit.ScreenPointToLocalPointInRectangle(self.selfRect, ped)
   self._xBegainDrag = pos.x
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.OnDrag = function(self, ped)
-  -- function num : 0_11 , upvalues : _ENV
-  local pos = (StateDrawCardPoolInit.ScreenPointToLocalPointInRectangle)(self.selfRect, ped)
+function StateDrawCardPoolInit:OnDrag(ped)
+  local pos = StateDrawCardPoolInit.ScreenPointToLocalPointInRectangle(self.selfRect, ped)
   self._xCurDrag = pos.x
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.OnEndDrag = function(self, ped)
-  -- function num : 0_12 , upvalues : _ENV
+function StateDrawCardPoolInit:OnEndDrag(ped)
   self:InitDragField()
-  if ((self.bgLogo).anchoredPosition).x <= self._flipX then
+  if self.bgLogo.anchoredPosition.x <= self._flipX then
     local idx = 0
     local isRight = false
-    if (self._ui):IsFlip() then
-      idx = (self._ui):GetIndex() - 1
+    if self._ui:IsFlip() then
+      idx = self._ui:GetIndex() - 1
       isRight = false
     else
-      idx = (self._ui):GetIndex() + 1
+      idx = self._ui:GetIndex() + 1
       isRight = true
     end
-    do
-      do
-        if idx > 0 and idx <= self._len then
-          local duration = (self._ui):GetClickArrowDuration()
-          ;
-          (self._fsm):ChangeState(StateDrawCardPool.ClickArrow, isRight, idx, duration * self._flipRatio)
-        end
-        if ped == nil then
-          (self._ui):HideCtrlVedioWidetAndHeart()
-        end
-        ;
-        (self._fsm):ChangeState(StateDrawCardPool.Return)
-      end
+    if 0 < idx and idx <= self._len then
+      local duration = self._ui:GetClickArrowDuration()
+      self._fsm:ChangeState(StateDrawCardPool.ClickArrow, isRight, idx, duration * self._flipRatio)
     end
+    if ped == nil then
+      self._ui:HideCtrlVedioWidetAndHeart()
+    end
+  else
+    self._fsm:ChangeState(StateDrawCardPool.Return)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolInit.ScreenPointToLocalPointInRectangle = function(rect, ped)
-  -- function num : 0_13 , upvalues : _ENV
-  local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rect, ped.position, ped.pressEventCamera, nil)
+function StateDrawCardPoolInit.ScreenPointToLocalPointInRectangle(rect, ped)
+  local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, ped.position, ped.pressEventCamera, nil)
   return pos
 end
-
-

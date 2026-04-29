@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_build_room/aircraft_build_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircrafBuildData", Object)
 AircrafBuildData = AircrafBuildData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircrafBuildData.Constructor = function(self)
-  -- function num : 0_0
+function AircrafBuildData:Constructor()
   self._id = 0
   self._roomType = 0
   self._lv = 0
@@ -28,10 +21,7 @@ AircrafBuildData.Constructor = function(self)
   self._uCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircrafBuildData.Init = function(self, id, roomType, lv, name, icon, des, petCount, moodSpeed, upLvID, downLvID, needBuildCondition, upLvCost, downLvReturn, needPower, upLvTime, nCount, uCount)
-  -- function num : 0_1
+function AircrafBuildData:Init(id, roomType, lv, name, icon, des, petCount, moodSpeed, upLvID, downLvID, needBuildCondition, upLvCost, downLvReturn, needPower, upLvTime, nCount, uCount)
   self._id = id
   self._roomType = roomType
   self._lv = lv
@@ -50,5 +40,3 @@ AircrafBuildData.Init = function(self, id, roomType, lv, name, icon, des, petCou
   self._nCount = nCount
   self._uCount = uCount
 end
-
-

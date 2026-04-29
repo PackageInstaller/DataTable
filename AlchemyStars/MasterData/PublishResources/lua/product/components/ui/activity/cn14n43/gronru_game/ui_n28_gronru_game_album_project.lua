@@ -1,100 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/gronru_game/ui_n28_gronru_game_album_project.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28GronruGameAlbumProject", UICustomWidget)
 UIN28GronruGameAlbumProject = UIN28GronruGameAlbumProject
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28GronruGameAlbumProject.Constructor = function(self)
-  -- function num : 0_0
+function UIN28GronruGameAlbumProject:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbumProject.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN28GronruGameAlbumProject:OnShow(uiParams)
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtSubName = self:GetUIComponent("UILocalizationText", "txtSubName")
   self._uiNormal = self:GetUIComponent("Image", "uiNormal")
   self._uiHighlight = self:GetUIComponent("Image", "uiHighlight")
-  self._uiRed = (self:View()):GetUIComponent("UISelectObjectPath", "uiRed")
+  self._uiRed = self:View():GetUIComponent("UISelectObjectPath", "uiRed")
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbumProject.OnHide = function(self)
-  -- function num : 0_2
+function UIN28GronruGameAlbumProject:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbumProject.BtnProjectOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._cfg).OpenType == UIN28GronruPlatformType.Album_Project_Alarm then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceEmptyFolder)
-  else
-    if (self._cfg).OpenType == UIN28GronruPlatformType.Album_Project_Adventure then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BounceFolder)
-    end
+function UIN28GronruGameAlbumProject:BtnProjectOnClick(go)
+  if self._cfg.OpenType == UIN28GronruPlatformType.Album_Project_Alarm then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceEmptyFolder)
+  elseif self._cfg.OpenType == UIN28GronruPlatformType.Album_Project_Adventure then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BounceFolder)
   end
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     self:Lock("UIN28GronruGameAlbumProject:BtnProjectOnClick")
-    if (self._cfg).OpenType == UIN28GronruPlatformType.Album_Project_Alarm then
-      (self._animation):Play("UIN28GronruGameAlbumProject_alarm")
+    if self._cfg.OpenType == UIN28GronruPlatformType.Album_Project_Alarm then
+      self._animation:Play("UIN28GronruGameAlbumProject_alarm")
       YIELD(TT, 433)
-    else
-      if (self._cfg).OpenType == UIN28GronruPlatformType.Album_Project_Adventure then
-        (self._animation):Play("UIN28GronruGameAlbumProject_click")
-        YIELD(TT, 433)
-        ;
-        (self:RootUIOwner()):ShowGameAdventure()
-      end
+    elseif self._cfg.OpenType == UIN28GronruPlatformType.Album_Project_Adventure then
+      self._animation:Play("UIN28GronruGameAlbumProject_click")
+      YIELD(TT, 433)
+      self:RootUIOwner():ShowGameAdventure()
     end
-    ;
-    (self._parent):OpenProject(self._cfg)
-    ;
-    (self:RootUIOwner()):BrowserPath(false, (StringTable.Get)((self._cfg).Name))
+    self._parent:OpenProject(self._cfg)
+    self:RootUIOwner():BrowserPath(false, StringTable.Get(self._cfg.Name))
     self:UnLock("UIN28GronruGameAlbumProject:BtnProjectOnClick")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbumProject.Flush = function(self, parent, cfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN28GronruGameAlbumProject:Flush(parent, cfg)
   self._parent = parent
   self._cfg = cfg
-  ;
-  (self._txtName):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._txtSubName):SetText((StringTable.Get)(cfg.SubName))
+  self._txtName:SetText(StringTable.Get(cfg.Name))
+  self._txtSubName:SetText(StringTable.Get(cfg.SubName))
   self:ShowRed(false)
-  self:SetHighlight((self._cfg).OpenType == UIN28GronruPlatformType.Album_Project_Adventure)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:SetHighlight(self._cfg.OpenType == UIN28GronruPlatformType.Album_Project_Adventure)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbumProject.SetHighlight = function(self, inShow)
-  -- function num : 0_5
-  ((self._uiNormal).gameObject):SetActive(not inShow)
-  ;
-  ((self._uiHighlight).gameObject):SetActive(inShow)
+function UIN28GronruGameAlbumProject:SetHighlight(inShow)
+  self._uiNormal.gameObject:SetActive(not inShow)
+  self._uiHighlight.gameObject:SetActive(inShow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28GronruGameAlbumProject.ShowRed = function(self, inShow)
-  -- function num : 0_6
-  ((self._uiRed).gameObject):SetActive(inShow)
+function UIN28GronruGameAlbumProject:ShowRed(inShow)
+  self._uiRed.gameObject:SetActive(inShow)
   if inShow then
-    (self._uiRed):SpawnOneObject("ManualLoad0")
+    self._uiRed:SpawnOneObject("ManualLoad0")
   end
 end
-
-

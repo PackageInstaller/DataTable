@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_share_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_controller")
 _class("UIShareController", UIController)
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShareController.InitShare = function(self, storyComponent, shareTipName)
-  -- function num : 0_0
+function UIShareController:InitShare(storyComponent, shareTipName)
   self._isMainShare = false
   self._shareActive = false
   self._shareStoryComponent = storyComponent
@@ -19,76 +12,52 @@ UIShareController.InitShare = function(self, storyComponent, shareTipName)
   self:CheckShareBtnActive()
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareController.GetShareStoryID = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShareController:GetShareStoryID()
   if not self._shareStoryComponent then
-    return 
+    return
   end
-  local comcfgid = (self._shareStoryComponent):GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_story)[comcfgid]
+  local comcfgid = self._shareStoryComponent:GetComponentCfgId()
+  local cfg = Cfg.cfg_component_story[comcfgid]
   if not cfg then
-    (Log.error)("###[UIShareController] cfg is nil ! id --> ", comcfgid)
-    return 
+    Log.error("###[UIShareController] cfg is nil ! id --> ", comcfgid)
+    return
   end
   local storyList = cfg.StoryID
   if not storyList or not next(storyList) then
-    (Log.error)("###[UIShareController] storyList is nil !")
-    return 
+    Log.error("###[UIShareController] storyList is nil !")
+    return
   end
   return storyList[1]
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareController.CheckShareBtnActive = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local dataActive = nil
+function UIShareController:CheckShareBtnActive()
+  local dataActive
   if self._shareStoryComponent then
-    local storyInfo = (self._shareStoryComponent):GetComponentInfo()
+    local storyInfo = self._shareStoryComponent:GetComponentInfo()
     local storyid = self:GetShareStoryID()
-    if storyInfo.m_recieved_reward_story and (table.count)(storyInfo.m_recieved_reward_story) > 0 then
-      dataActive = not (table.icontains)(storyInfo.m_recieved_reward_story, storyid)
+    if storyInfo.m_recieved_reward_story and table.count(storyInfo.m_recieved_reward_story) > 0 then
+      dataActive = not table.icontains(storyInfo.m_recieved_reward_story, storyid)
     else
-      local storyReward = ((Cfg.cfg_campaign_story)[storyid]).RewardList
+      local storyReward = Cfg.cfg_campaign_story[storyid].RewardList
       dataActive = storyReward
     end
   end
-  do
-    if dataActive then
-      self._shareActive = ((GameGlobal.GetModule)(ShareModule)):CanShare()
-      local goShareTip = self:GetGameObject(self._shareTipName)
-      if goShareTip ~= nil then
-        goShareTip:SetActive(self._shareActive)
-      end
-      return self._shareActive
-    end
+  self._shareActive = dataActive and GameGlobal.GetModule(ShareModule):CanShare()
+  local goShareTip = self:GetGameObject(self._shareTipName)
+  if goShareTip ~= nil then
+    goShareTip:SetActive(self._shareActive)
   end
+  return self._shareActive
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareController.OnShare = function(self, beginCB, endCB, shareAnchor, shareScene)
-  -- function num : 0_3
+function UIShareController:OnShare(beginCB, endCB, shareAnchor, shareScene)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareController.OnShareResult = function(self)
-  -- function num : 0_4
+function UIShareController:OnShareResult()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareController.OnFinishShareStory = function(self, TT, storyid)
-  -- function num : 0_5
+function UIShareController:OnFinishShareStory(TT, storyid)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShareController.ShowShareRewards = function(self, rewards)
-  -- function num : 0_6
+function UIShareController:ShowShareRewards(rewards)
 end
-
-

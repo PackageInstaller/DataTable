@@ -1,11 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/monster_hud_hp_bar_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local MonsterHUDHPBarType = {Red = 0, Blue = 1, Purple = 2}
--- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
+local MonsterHUDHPBarType = {
+  Red = 0,
+  Blue = 1,
+  Purple = 2
+}
 _G.MonsterHUDHPBarType = MonsterHUDHPBarType
 _enum("MonsterHUDHPBarType", MonsterHUDHPBarType)
-

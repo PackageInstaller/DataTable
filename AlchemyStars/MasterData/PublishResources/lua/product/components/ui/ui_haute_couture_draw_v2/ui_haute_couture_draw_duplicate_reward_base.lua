@@ -1,92 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_duplicate_reward_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawDuplicateRewardBase", UICustomWidget)
 UIHauteCoutureDrawDuplicateRewardBase = UIHauteCoutureDrawDuplicateRewardBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawDuplicateRewardBase.OnShow = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawDuplicateRewardBase:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardBase.SetData = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawDuplicateRewardBase:SetData(uiParams)
   self._prizeCfgs = uiParams[1]
   self._replaceIdxs = uiParams[2]
   local count = #self._replaceIdxs
   self._itemInfo = {}
-  local items = (self.items):SpawnObjects(self:GetItemClassName(), count)
+  local items = self.items:SpawnObjects(self:GetItemClassName(), count)
   for i = 1, count do
-    (items[i]):SetData((self._prizeCfgs)[(self._replaceIdxs)[i]], function(id, pos, count)
-    -- function num : 0_1_0 , upvalues : self
-    self:OnItemClick(id, pos, count)
-  end
-)
+    items[i]:SetData(self._prizeCfgs[self._replaceIdxs[i]], function(id, pos, count)
+      self:OnItemClick(id, pos, count)
+    end)
   end
   local itemInfo = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
   self._selectInfo = itemInfo:SpawnObject("UISelectInfo")
-  ;
-  (self._selectInfo):SetType(3)
-  local detailObj = (self._selectInfo):GetG3CustomPool()
+  self._selectInfo:SetType(3)
+  local detailObj = self._selectInfo:GetG3CustomPool()
   local prefab, class = self:GetGetItemUIInfo()
-  ;
-  (detailObj.dynamicInfoOfEngine):SetObjectName(prefab)
+  detailObj.dynamicInfoOfEngine:SetObjectName(prefab)
   self._selectDetail = detailObj:SpawnObject(class)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardBase.GetSelectInfoDetailPrefabAndScript = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawDuplicateRewardBase:GetSelectInfoDetailPrefabAndScript()
   return "UIHauteCoutureDrawGetItemCellDetailGL.prefab", "UIHauteCoutureDrawGetItemCellDetailGL"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardBase.InitWidget = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawDuplicateRewardBase:InitWidget()
   self.bg = self:GetUIComponent("RawImageLoader", "bg")
   self.items = self:GetUIComponent("UISelectObjectPath", "items")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardBase.GetItemClassName = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHauteCoutureDrawDuplicateRewardBase:GetItemClassName()
   return UIHauteCoutureDuplicateItem._className
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardBase.GetGetItemUIInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.exception)("子类必须重写此GetGetItemUIInfo方法:", (debug.traceback)())
+function UIHauteCoutureDrawDuplicateRewardBase:GetGetItemUIInfo()
+  Log.exception("子类必须重写此GetGetItemUIInfo方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardBase.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
-  (self.uiOwner):CloseDialog()
+function UIHauteCoutureDrawDuplicateRewardBase:CloseBtnOnClick(go)
+  self.uiOwner:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDuplicateRewardBase.OnItemClick = function(self, id, pos, count)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHauteCoutureDrawDuplicateRewardBase:OnItemClick(id, pos, count)
   if self._selectInfo then
-    local cfg = (Cfg.cfg_item)[id]
-    local info = {item_id = id, item_count = count, icon = cfg.Icon, item_name = cfg.Name, simple_desc = cfg.RpIntro, color = cfg.Color}
-    ;
-    (self._selectDetail):SetData(info)
-    ;
-    (self._selectInfo):OnlyShow(pos)
+    local cfg = Cfg.cfg_item[id]
+    local info = {
+      item_id = id,
+      item_count = count,
+      icon = cfg.Icon,
+      item_name = cfg.Name,
+      simple_desc = cfg.RpIntro,
+      color = cfg.Color
+    }
+    self._selectDetail:SetData(info)
+    self._selectInfo:OnlyShow(pos)
   end
 end
-
-

@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_add_collect_drop_num.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_AddCollectDropNum", Object)
 SkillEffectCalc_AddCollectDropNum = SkillEffectCalc_AddCollectDropNum
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AddCollectDropNum.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_AddCollectDropNum:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_AddCollectDropNum.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_AddCollectDropNum:DoSkillEffectCalculator(skillEffectCalcParam)
   local result = SkillAddCollectDropNumResult:New(1)
   return result
 end
-
-

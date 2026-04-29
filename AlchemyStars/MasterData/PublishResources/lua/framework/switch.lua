@@ -1,143 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/switch.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC4: Confused about usage of register: R0 in 'UnsetPending'
-
-_G.PLATFORM = (UnityEngine.Application).platform
+_G.PLATFORM = UnityEngine.Application.platform
 local RuntimePlatform = UnityEngine.RuntimePlatform
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.PUBLIC = PLATFORM ~= RuntimePlatform.OSXEditor and PLATFORM ~= RuntimePlatform.WindowsEditor
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.EDITOR = PLATFORM == RuntimePlatform.OSXEditor or PLATFORM == RuntimePlatform.WindowsEditor
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.NOGUIDE = false
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.NoCache = false
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
 App.ShowFps = false
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.NoNoticeOut = false
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.NoPopNotice = false
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.IsInland = false
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.EXCEPTION_REPORT_WORKWX = false
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.EnalbeProfLog = false
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
 App.Profiler = false
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
 App.SpeedStatistics = false
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.DEBUG_AUTO_FIGHT = false
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.USEADX2AUDIO = true
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
 App.LodLevel = LodLevel.normal
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.ForceSyncHP = true
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.ENABLE_SYNC_LOG = true
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.ENABLE_MATCH_LOG = true
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.ENABLE_DETAIL_MATCH_LOG = true
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.AUTO_RELOAD_GAME_CFG = false
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
 _G.CHECK_RENDER_ACCESS_LOGIC = true
-IsNewApp = function()
-  -- function num : 0_0 , upvalues : _ENV
-  local appVersion = (EngineGameHelper.CurrentAppVersion)()
+
+function IsNewApp()
+  local appVersion = EngineGameHelper.CurrentAppVersion()
   if not appVersion or appVersion ~= "1.0.2" and appVersion ~= "1.1.0" then
     return true
   end
   return false
 end
 
-local curVer = nil
+local curVer
 if EDITOR then
-  curVer = (System.Version):New("99.99.99")
+  curVer = System.Version:New("99.99.99")
 else
-  curVer = (System.Version):New((EngineGameHelper.CurrentAppVersion)())
+  curVer = System.Version:New(EngineGameHelper.CurrentAppVersion())
 end
--- DECOMPILER ERROR at PC93: Confused about usage of register: R2 in 'UnsetPending'
-
 _G.OPEN_NETSTAT = false
--- DECOMPILER ERROR at PC106: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER125 = curVer:CompareTo((System.Version):New("1.2.5")) > -1
--- DECOMPILER ERROR at PC119: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER130 = curVer:CompareTo((System.Version):New("1.3.0")) > -1
--- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER170 = curVer:CompareTo((System.Version):New("1.7.0")) > -1
--- DECOMPILER ERROR at PC145: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER184 = curVer:CompareTo((System.Version):New("1.8.4")) > -1
--- DECOMPILER ERROR at PC158: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1100 = curVer:CompareTo((System.Version):New("1.10.0")) > -1
--- DECOMPILER ERROR at PC174: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVERNETSTAT = (curVer:CompareTo((System.Version):New("1.11.0")) > -1 and _G.OPEN_NETSTAT)
--- DECOMPILER ERROR at PC187: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1110 = curVer:CompareTo((System.Version):New("1.11.2")) > -1
--- DECOMPILER ERROR at PC200: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1140 = curVer:CompareTo((System.Version):New("1.14.0")) > -1
--- DECOMPILER ERROR at PC213: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1142 = curVer:CompareTo((System.Version):New("1.14.2")) > -1
--- DECOMPILER ERROR at PC226: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1150 = curVer:CompareTo((System.Version):New("1.15.0")) > -1
--- DECOMPILER ERROR at PC239: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1170 = curVer:CompareTo((System.Version):New("1.17.0")) > -1
--- DECOMPILER ERROR at PC252: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1190 = curVer:CompareTo((System.Version):New("1.19.0")) > -1
--- DECOMPILER ERROR at PC265: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1210 = curVer:CompareTo((System.Version):New("1.21.0")) > -1
--- DECOMPILER ERROR at PC278: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1220 = curVer:CompareTo((System.Version):New("1.22.0")) > -1
--- DECOMPILER ERROR at PC291: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER1250 = curVer:CompareTo((System.Version):New("1.25.0")) > -1
--- DECOMPILER ERROR at PC304: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER_LAYERORDER = curVer:CompareTo((System.Version):New("1.21.0")) > -1
--- DECOMPILER ERROR at PC317: Confused about usage of register: R2 in 'UnsetPending'
-
-_G.APPVER_1430 = curVer:CompareTo((System.Version):New("1.43.0")) > -1
--- DECOMPILER ERROR: 22 unprocessed JMP targets
-
+_G.APPVER125 = curVer:CompareTo(System.Version:New("1.2.5")) > -1
+_G.APPVER130 = -1 < curVer:CompareTo(System.Version:New("1.3.0"))
+_G.APPVER170 = -1 < curVer:CompareTo(System.Version:New("1.7.0"))
+_G.APPVER184 = -1 < curVer:CompareTo(System.Version:New("1.8.4"))
+_G.APPVER1100 = -1 < curVer:CompareTo(System.Version:New("1.10.0"))
+_G.APPVERNETSTAT = -1 < curVer:CompareTo(System.Version:New("1.11.0")) and _G.OPEN_NETSTAT
+_G.APPVER1110 = -1 < curVer:CompareTo(System.Version:New("1.11.2"))
+_G.APPVER1140 = -1 < curVer:CompareTo(System.Version:New("1.14.0"))
+_G.APPVER1142 = -1 < curVer:CompareTo(System.Version:New("1.14.2"))
+_G.APPVER1150 = -1 < curVer:CompareTo(System.Version:New("1.15.0"))
+_G.APPVER1170 = -1 < curVer:CompareTo(System.Version:New("1.17.0"))
+_G.APPVER1190 = -1 < curVer:CompareTo(System.Version:New("1.19.0"))
+_G.APPVER1210 = -1 < curVer:CompareTo(System.Version:New("1.21.0"))
+_G.APPVER1220 = -1 < curVer:CompareTo(System.Version:New("1.22.0"))
+_G.APPVER1250 = -1 < curVer:CompareTo(System.Version:New("1.25.0"))
+_G.APPVER_LAYERORDER = -1 < curVer:CompareTo(System.Version:New("1.21.0"))
+_G.APPVER_1430 = -1 < curVer:CompareTo(System.Version:New("1.43.0"))

@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_multi_grid_damage_trace_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillMultiGridDamageTracePhase", PlaySkillPhaseBase)
 PlaySkillMultiGridDamageTracePhase = PlaySkillMultiGridDamageTracePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillMultiGridDamageTracePhase._DoEffect2x2 = function(self, TT, casterEntity, pos, isPlayerIncluded, direction, phaseParam)
-  -- function num : 0_0
-  local effectService = (self._world):GetService("Effect")
+function PlaySkillMultiGridDamageTracePhase:_DoEffect2x2(TT, casterEntity, pos, isPlayerIncluded, direction, phaseParam)
+  local effectService = self._world:GetService("Effect")
   if isPlayerIncluded then
     effectService:CreateWorldPositionDirectionEffect(phaseParam:GetHitEffectID(), pos, direction)
   else
@@ -18,83 +11,64 @@ PlaySkillMultiGridDamageTracePhase._DoEffect2x2 = function(self, TT, casterEntit
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillMultiGridDamageTracePhase._GetEffectPosArray = function(self, casterEntity)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillMultiGridDamageTracePhase:_GetEffectPosArray(casterEntity)
   local gridLocationComponent = casterEntity:GridLocation()
   local gridArray = {}
   local direction = gridLocationComponent:GetGridDir()
   local casterPos = casterEntity:GetGridPosition()
-  local beginPos = (Vector2.New)(casterPos.x, casterPos.y)
-  local bodyArea = (casterEntity:BodyArea()):GetArea()
+  local beginPos = Vector2.New(casterPos.x, casterPos.y)
+  local bodyArea = casterEntity:BodyArea():GetArea()
   local vecMove = direction * 2
   local tmpVecArray = {}
-  for _,areaOffset in ipairs(bodyArea) do
+  for _, areaOffset in ipairs(bodyArea) do
     local areaPos = Vector2(beginPos.x + areaOffset.x, beginPos.y + areaOffset.y)
-    ;
-    (table.insert)(tmpVecArray, areaPos)
+    table.insert(tmpVecArray, areaPos)
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local playerPos = teamEntity:GetGridPosition()
   local effPosArray = {}
   local isBoardEdgeReached = false
-  local utilDataSvc = (self._world):GetService("UtilData")
-  while 1 do
-    if not isBoardEdgeReached then
-      beginPos = beginPos + vecMove
-      local isPosGood = false
-      for index,areaOffset in ipairs(bodyArea) do
-        tmpVecArray[index] = tmpVecArray[index] + vecMove
-        local pos = tmpVecArray[index]
-        if utilDataSvc:IsValidPiecePos(pos) then
-          local isPieceOnBoard = not utilDataSvc:IsPosBlock(pos, BlockFlag.Skill | BlockFlag.SkillSkip)
-        end
-        if not isPosGood then
-          isPosGood = isPieceOnBoard
-        end
-        if not isPieceOnBoard then
-          isBoardEdgeReached = true
-        end
-      end
-      if isPosGood then
-        do
-          (table.insert)(effPosArray, {pos = Vector2(beginPos.x + 0.5, beginPos.y + 0.5), isPlayerIncluded = (table.icontains)(tmpVecArray, playerPos)})
-          -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+  local utilDataSvc = self._world:GetService("UtilData")
+  while not isBoardEdgeReached do
+    beginPos = beginPos + vecMove
+    local isPosGood = false
+    for index, areaOffset in ipairs(bodyArea) do
+      tmpVecArray[index] = tmpVecArray[index] + vecMove
+      local pos = tmpVecArray[index]
+      local isPieceOnBoard = utilDataSvc:IsValidPiecePos(pos) and not utilDataSvc:IsPosBlock(pos, BlockFlag.Skill | BlockFlag.SkillSkip)
+      isPosGood = isPosGood or isPieceOnBoard
+      if not isPieceOnBoard then
+        isBoardEdgeReached = true
       end
     end
+    if not isPosGood then
+      break
+    end
+    table.insert(effPosArray, {
+      pos = Vector2(beginPos.x + 0.5, beginPos.y + 0.5),
+      isPlayerIncluded = table.icontains(tmpVecArray, playerPos)
+    })
   end
   return effPosArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillMultiGridDamageTracePhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillMultiGridDamageTracePhase:PlayFlight(TT, casterEntity, phaseParam)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local damageResult = routineComponent:GetEffectResultByArray(SkillEffectType.Damage)
   if not damageResult or not damageResult:GetTargetID() then
-    return 
+    return
   end
   local hitbackResult = routineComponent:GetEffectResultByArray(SkillEffectType.HitBack)
   local effPosArray = self:_GetEffectPosArray(casterEntity)
   if #effPosArray == 0 then
-    return 
+    return
   end
   local pathFxID = phaseParam:GetPathEffectID()
   local hitFxID = phaseParam:GetHitEffectID()
   local interval = phaseParam:GetInterval()
   local gridLocationComponent = casterEntity:GridLocation()
   local direction = gridLocationComponent:GetGridDir()
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   for i = 1, #effPosArray - 1 do
     local posInfo = effPosArray[i]
     self:_DoEffect2x2(TT, casterEntity, posInfo.pos, posInfo.isPlayerIncluded, direction, phaseParam)
@@ -103,5 +77,3 @@ PlaySkillMultiGridDamageTracePhase.PlayFlight = function(self, TT, casterEntity,
   local lastPosInfo = effPosArray[#effPosArray]
   self:_DoEffect2x2(TT, casterEntity, lastPosInfo.pos, lastPosInfo.isPlayerIncluded, direction, phaseParam)
 end
-
-

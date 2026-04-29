@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_trigger_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultTriggerTrap", SkillEffectResultBase)
 SkillEffectResultTriggerTrap = SkillEffectResultTriggerTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultTriggerTrap.Constructor = function(self, entityID, trapID, pos)
-  -- function num : 0_0
+function SkillEffectResultTriggerTrap:Constructor(entityID, trapID, pos)
   self._entityID = entityID
   self._trapID = trapID
   self._pos = pos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTriggerTrap.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultTriggerTrap:GetEffectType()
   return SkillEffectType.TriggerTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTriggerTrap.GetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultTriggerTrap:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTriggerTrap.GetTrapID = function(self)
-  -- function num : 0_3
+function SkillEffectResultTriggerTrap:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultTriggerTrap.GetPos = function(self)
-  -- function num : 0_4
+function SkillEffectResultTriggerTrap:GetPos()
   return self._pos
 end
-
-

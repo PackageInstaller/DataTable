@@ -1,63 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_level/cls/ui_homeland_level_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandLevelData", Object)
 UIHomelandLevelData = UIHomelandLevelData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandLevelData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandLevelData:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.liveable = (self.mHomeland):GetAmbientValue()
+function UIHomelandLevelData:Init()
+  self.liveable = self.mHomeland:GetAmbientValue()
   self.LiveableExps = {}
-  for liveable,cfgv in pairs((Cfg.cfg_homeland_sign)()) do
+  for liveable, cfgv in pairs(Cfg.cfg_homeland_sign()) do
     local item = HomelandLevelLiveableExpItemData:New(liveable)
-    ;
-    (table.insert)(self.LiveableExps, item)
+    table.insert(self.LiveableExps, item)
   end
   self.expSources = {}
-  for id,cfgv in pairs((Cfg.cfg_homeland_exp_source)()) do
+  for id, cfgv in pairs(Cfg.cfg_homeland_exp_source()) do
     local item = HomelandLevelExpSourceItemData:New(id)
-    ;
-    (table.insert)(self.expSources, item)
+    table.insert(self.expSources, item)
   end
   self:InitLevelData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.InitLevelData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local clientHomelandInfo = (self.mHomeland).m_homeland_info
+function UIHomelandLevelData:InitLevelData()
+  local clientHomelandInfo = self.mHomeland.m_homeland_info
   self.level = clientHomelandInfo.level
   self.exp = clientHomelandInfo.exp
   local sign_info = clientHomelandInfo.sign_info
   self.awardSign = sign_info.cumulative_rewards
   self.signedToday = self.awardSign == nil or #self.awardSign == 0
   self.levels = {}
-  for level,cfgv in ipairs((Cfg.cfg_homeland_level)()) do
+  for level, cfgv in ipairs(Cfg.cfg_homeland_level()) do
     local levelData = HomelandLevelItemData:New(level)
-    ;
-    (table.insert)(self.levels, levelData)
-    local cfgvNext = (Cfg.cfg_homeland_level)[level + 1]
+    table.insert(self.levels, levelData)
+    local cfgvNext = Cfg.cfg_homeland_level[level + 1]
     if cfgvNext then
       levelData.expLow = cfgv.UpgradeCondition
       levelData.expHigh = cfgvNext.UpgradeCondition
     else
-      local cfgvPrev = (Cfg.cfg_homeland_level)[level - 1]
+      local cfgvPrev = Cfg.cfg_homeland_level[level - 1]
       levelData.expLow = cfgvPrev.UpgradeCondition
       levelData.expHigh = cfgv.UpgradeCondition
     end
     local exist = false
-    for _,levelGot in ipairs(sign_info.level_reward_list) do
+    for _, levelGot in ipairs(sign_info.level_reward_list) do
       if level == levelGot then
         exist = true
         break
@@ -72,131 +56,94 @@ UIHomelandLevelData.InitLevelData = function(self)
     end
     levelData.dormitoryLimit = cfgv.ForgeDormitoryLimit
     levelData.landLimit = cfgv.ForgeLandLimit
-    levelData.signReward = ((cfgv.SignRewardList)[1])[2]
-    levelData.furnitureReward = ((cfgv.SignRewardList)[2])[2]
+    levelData.signReward = cfgv.SignRewardList[1][2]
+    levelData.furnitureReward = cfgv.SignRewardList[2][2]
     levelData.livableValueMax = cfgv.LivableValueMax
     levelData.forgeSequenceCount = cfgv.QueueNum
     levelData.awards = {}
     if cfgv.RewardList then
-      for index,award in ipairs(cfgv.RewardList) do
+      for index, award in ipairs(cfgv.RewardList) do
         local ra = RoleAsset:New()
         ra.assetid = award[1]
         ra.count = award[2]
-        ;
-        (table.insert)(levelData.awards, ra)
-        if (Cfg.cfg_item_architecture_skin)[ra.assetid] then
-          (table.insert)(levelData.unlockSkins, ra.assetid)
+        table.insert(levelData.awards, ra)
+        if Cfg.cfg_item_architecture_skin[ra.assetid] then
+          table.insert(levelData.unlockSkins, ra.assetid)
         end
       end
     end
-    ;
-    (table.sort)(levelData.awards, function(a, b)
-    -- function num : 0_2_0 , upvalues : _ENV
-    local colora = ((Cfg.cfg_item)[a.assetid]).Color
-    local colorb = ((Cfg.cfg_item)[b.assetid]).Color
-    if colorb >= colora then
-      do return colora == colorb end
-      do return a.assetid < b.assetid end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
+    table.sort(levelData.awards, function(a, b)
+      local colora = Cfg.cfg_item[a.assetid].Color
+      local colorb = Cfg.cfg_item[b.assetid].Color
+      if colora ~= colorb then
+        return colora > colorb
+      end
+      return a.assetid < b.assetid
+    end)
   end
-)
-  end
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.CheckCode = function(result)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandLevelData.CheckCode(result)
   if result == HomeLandErrorType.E_HOME_LAND_TYPE_SUCCESS then
     return true
   end
-  local msg = (StringTable.Get)("str_homeland_error_code_" .. result)
-  ;
-  (ToastManager.ShowHomeToast)(msg)
+  local msg = StringTable.Get("str_homeland_error_code_" .. result)
+  ToastManager.ShowHomeToast(msg)
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.GetLevelDescs = function(self, level)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandLevelData:GetLevelDescs(level)
   local res = {}
   local levelData = self:GetHomelandLevelItemDataByLevel(level)
-  ;
-  (table.insert)(res, (StringTable.Get)("str_homeland_level_desc_queue_num", levelData.forgeSequenceCount))
-  ;
-  (table.insert)(res, (StringTable.Get)("str_homeland_level_desc_dorm_limit", levelData.dormitoryLimit))
-  ;
-  (table.insert)(res, (StringTable.Get)("str_homeland_level_desc_land_limit", levelData.landLimit))
+  table.insert(res, StringTable.Get("str_homeland_level_desc_queue_num", levelData.forgeSequenceCount))
+  table.insert(res, StringTable.Get("str_homeland_level_desc_dorm_limit", levelData.dormitoryLimit))
+  table.insert(res, StringTable.Get("str_homeland_level_desc_land_limit", levelData.landLimit))
   for i = 1, #levelData.unlockSkins do
-    local skinCfg = (Cfg.cfg_item_architecture_skin)[(levelData.unlockSkins)[i]]
+    local skinCfg = Cfg.cfg_item_architecture_skin[levelData.unlockSkins[i]]
     local skinNameKey = skinCfg.SkinName
-    local archNameKey = ((Cfg.cfg_item_architecture)[skinCfg.architecture_id]).Name
-    ;
-    (table.insert)(res, (StringTable.Get)("str_homeland_level_desc_arch_skin", (StringTable.Get)(archNameKey), (StringTable.Get)(skinNameKey)))
+    local archNameKey = Cfg.cfg_item_architecture[skinCfg.architecture_id].Name
+    table.insert(res, StringTable.Get("str_homeland_level_desc_arch_skin", StringTable.Get(archNameKey), StringTable.Get(skinNameKey)))
   end
   return res
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.GetHomelandLevelLiveableExpItemDataByLiveable = function(self, liveable)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,le in ipairs(self.LiveableExps) do
+function UIHomelandLevelData:GetHomelandLevelLiveableExpItemDataByLiveable(liveable)
+  for _, le in ipairs(self.LiveableExps) do
     if le.liveable == liveable then
       return le
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.GetHomelandLevelExpSourceItemDataById = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
-  for _,source in ipairs(self.expSources) do
+function UIHomelandLevelData:GetHomelandLevelExpSourceItemDataById(id)
+  for _, source in ipairs(self.expSources) do
     if source.id == id then
       return source
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.GetHomelandLevelItemDataByLevel = function(self, level)
-  -- function num : 0_7 , upvalues : _ENV
-  for _,levelData in ipairs(self.levels) do
+function UIHomelandLevelData:GetHomelandLevelItemDataByLevel(level)
+  for _, levelData in ipairs(self.levels) do
     if levelData.level == level then
       return levelData
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.IsLevelMax = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if (Cfg.cfg_homeland_level)[self.level + 1] then
+function UIHomelandLevelData:IsLevelMax()
+  if Cfg.cfg_homeland_level[self.level + 1] then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.HasAward2Get = function(self)
-  -- function num : 0_9
-  if not self:HasLevelAward() then
-    return self:HasSignAward()
-  end
+function UIHomelandLevelData:HasAward2Get()
+  return self:HasLevelAward() or self:HasSignAward()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.HasLevelAward = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,levelData in ipairs(self.levels) do
+function UIHomelandLevelData:HasLevelAward()
+  for _, levelData in ipairs(self.levels) do
     if levelData.state == HomelandLevelItemDataState.CanGet then
       return true
     end
@@ -204,51 +151,34 @@ UIHomelandLevelData.HasLevelAward = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.HasSignAward = function(self)
-  -- function num : 0_11
+function UIHomelandLevelData:HasSignAward()
   local hasAwards = false
   for i = 1, #self.awardSign do
-    if ((self.awardSign)[i]).count > 0 then
+    if self.awardSign[i].count > 0 then
       hasAwards = true
     end
   end
-  do return (not self.signedToday and hasAwards) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return not self.signedToday and hasAwards
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.HasSignedToday = function(self)
-  -- function num : 0_12
+function UIHomelandLevelData:HasSignedToday()
   return self.signedToday
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.CheckSignedToday = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandLevelData:CheckSignedToday()
   if self.signedToday then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_level_has_signed_today"))
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_level_has_signed_today"))
   end
   return self.signedToday
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.OnLevelInfoChange = function(self, deltaLevel)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHomelandLevelData:OnLevelInfoChange(deltaLevel)
   self:InitLevelData()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandLevelOnLevelInfoChange, deltaLevel, self.level)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandLevelOnLevelInfoChange, deltaLevel, self.level)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelData.GetNextSignTime = function(self)
-  -- function num : 0_15
-  local clientHomelandInfo = (self.mHomeland).m_homeland_info
+function UIHomelandLevelData:GetNextSignTime()
+  local clientHomelandInfo = self.mHomeland.m_homeland_info
   local sign_info = clientHomelandInfo.sign_info
   local stampNextSign = sign_info.next_refresh_time
   return stampNextSign
@@ -256,40 +186,33 @@ end
 
 _class("HomelandLevelLiveableExpItemData", Object)
 HomelandLevelLiveableExpItemData = HomelandLevelLiveableExpItemData
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandLevelLiveableExpItemData.Constructor = function(self, liveable)
-  -- function num : 0_16 , upvalues : _ENV
+function HomelandLevelLiveableExpItemData:Constructor(liveable)
   self.liveable = liveable
-  local cfgv = (Cfg.cfg_homeland_sign)[liveable]
+  local cfgv = Cfg.cfg_homeland_sign[liveable]
   self.exp = cfgv.Exp
 end
 
 _class("HomelandLevelExpSourceItemData", Object)
 HomelandLevelExpSourceItemData = HomelandLevelExpSourceItemData
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandLevelExpSourceItemData.Constructor = function(self, id)
-  -- function num : 0_17 , upvalues : _ENV
+function HomelandLevelExpSourceItemData:Constructor(id)
   self.id = id
-  local cfgv = (Cfg.cfg_homeland_exp_source)[id]
-  self.name = (StringTable.Get)(cfgv.Name)
+  local cfgv = Cfg.cfg_homeland_exp_source[id]
+  self.name = StringTable.Get(cfgv.Name)
   self.details = {}
   if cfgv.Params then
-    for _,param in ipairs(cfgv.Params) do
-      local str = (StringTable.Get)(param[1], param[2])
-      ;
-      (table.insert)(self.details, str)
+    for _, param in ipairs(cfgv.Params) do
+      local str = StringTable.Get(param[1], param[2])
+      table.insert(self.details, str)
     end
   end
 end
 
 _class("HomelandLevelItemData", Object)
 HomelandLevelItemData = HomelandLevelItemData
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandLevelItemData.Constructor = function(self, level)
-  -- function num : 0_18 , upvalues : _ENV
+function HomelandLevelItemData:Constructor(level)
   self.level = level
   self.expLow = 0
   self.expHigh = 0
@@ -302,10 +225,9 @@ HomelandLevelItemData.Constructor = function(self, level)
   self.forgeSequenceCount = 0
   self.unlockSkins = {}
   self.awards = {}
-  local mHomeland = (GameGlobal.GetModule)(HomelandModule)
+  local mHomeland = GameGlobal.GetModule(HomelandModule)
   self.data = mHomeland:GetHomelandLevelData()
 end
 
 _enum("HomelandLevelItemDataState", {HasGot = 1, CanGet = 2})
 HomelandLevelItemDataState = HomelandLevelItemDataState
-

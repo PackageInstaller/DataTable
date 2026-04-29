@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_change_body_area_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayChangeBodyAreaInstruction", BaseInstruction)
 PlayChangeBodyAreaInstruction = PlayChangeBodyAreaInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayChangeBodyAreaInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayChangeBodyAreaInstruction:Constructor(paramList)
   self._notRefreshPieceAnimAndOutLine = tonumber(paramList.notRefreshPieceAnimAndOutLine) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayChangeBodyAreaInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayChangeBodyAreaInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ChangeBodyArea)
   if resultArray == nil then
-    (Log.fatal)("PlayChangeBodyAreaInstruction, result is nil.")
-    return 
+    Log.fatal("PlayChangeBodyAreaInstruction, result is nil.")
+    return
   end
   local pieceService = world:GetService("Piece")
   if self._notRefreshPieceAnimAndOutLine == 0 then
@@ -30,11 +20,9 @@ PlayChangeBodyAreaInstruction.DoInstruction = function(self, TT, casterEntity, p
     pieceService:RefreshMonsterAreaOutLine(TT)
   end
   local playBuffSvc = world:GetService("PlayBuff")
-  for _,result in ipairs(resultArray) do
+  for _, result in ipairs(resultArray) do
     local entityID = result:GetChangeBodyAreaEntityID()
     local entity = world:GetEntityByID(entityID)
     playBuffSvc:PlayBuffView(TT, NTBodyAreaChange:New(entity))
   end
 end
-
-

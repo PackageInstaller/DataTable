@@ -1,51 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/ui/view/ui_bounce_prepare.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBouncePrepare", UICustomWidget)
 UIBouncePrepare = UIBouncePrepare
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBouncePrepare.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBouncePrepare:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBouncePrepare.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBouncePrepare:InitWidget()
   self._atlas = self:GetAsset("UIN28MinigameIn.spriteatlas", LoadType.SpriteAtlas)
   self._txt = self:GetUIComponent("Image", "txt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBouncePrepare.Start = function(self, finishCall)
-  -- function num : 0_2
+function UIBouncePrepare:Start(finishCall)
   self._finishCall = finishCall
   self:StartTask(self.StartAni, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBouncePrepare.StartAni = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBouncePrepare:StartAni(TT)
   self:Lock("UIBouncePrepare:StartAni")
   for i = 3, 1, -1 do
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._txt).sprite = (self._atlas):GetSprite("N28_yrj_jngq_countdown0" .. i)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneCounter)
+    self._txt.sprite = self._atlas:GetSprite("N28_yrj_jngq_countdown0" .. i)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneCounter)
     YIELD(TT, 1000)
   end
   YIELD(TT, 500)
   self:UnLock("UIBouncePrepare:StartAni")
   if self._finishCall then
-    (self._finishCall)()
+    self._finishCall()
   end
 end
-
-

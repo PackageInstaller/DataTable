@@ -1,45 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_spread_self_buff_layer_to_other_monsters.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters", BuffResultBase)
 BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters = BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters.Constructor = function(self, ownerEntityID, defenderEntityID)
-  -- function num : 0_0
+function BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters:Constructor(ownerEntityID, defenderEntityID)
   self._ownerEntityID = ownerEntityID
   self._defenderEntityID = defenderEntityID
   self._spreadResults = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters.GetOwnerEntityID = function(self)
-  -- function num : 0_1
+function BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters:GetOwnerEntityID()
   return self._ownerEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters.GetDefenderEntityID = function(self)
-  -- function num : 0_2
+function BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters:GetDefenderEntityID()
   return self._defenderEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters.AddSpreadResult = function(self, targetID, layerBuffEffectType, addLayer, finalLayer, buffSeq, casterEntity)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.insert)(self._spreadResults, {targetID = targetID, layerBuffEffectType = layerBuffEffectType, addLayer = addLayer, finalLayer = finalLayer, buffSeq = buffSeq, casterEntity = casterEntity})
+function BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters:AddSpreadResult(targetID, layerBuffEffectType, addLayer, finalLayer, buffSeq, casterEntity)
+  table.insert(self._spreadResults, {
+    targetID = targetID,
+    layerBuffEffectType = layerBuffEffectType,
+    addLayer = addLayer,
+    finalLayer = finalLayer,
+    buffSeq = buffSeq,
+    casterEntity = casterEntity
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters.GetSpreadResults = function(self)
-  -- function num : 0_4
+function BuffResultSpreadDeadMonsterBuffLayerToOtherMonsters:GetSpreadResults()
   return self._spreadResults
 end
-
-

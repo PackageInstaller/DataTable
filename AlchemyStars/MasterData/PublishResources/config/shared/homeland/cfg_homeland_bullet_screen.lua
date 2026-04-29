@@ -1,858 +1,3272 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/homeland/cfg_homeland_bullet_screen.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ScoreType = 2, ScoreCondition = 3, Type = 4, Content = 5, BodyName = 6}
-local common = {"str_movie_bulletscreen_2001", "str_movie_bulletscreen_2002", "str_movie_bulletscreen_2003", "str_movie_bulletscreen_2004", "str_movie_bulletscreen_2005", "str_movie_bulletscreen_2006", "str_movie_bulletscreen_2007", "str_movie_bulletscreen_2008", "str_movie_bulletscreen_2009", "str_movie_bulletscreen_2010", "str_movie_bulletscreen_2011", "str_movie_bulletscreen_2012", "str_movie_bulletscreen_2013", "str_movie_bulletscreen_2014", "str_movie_bulletscreen_2015", "str_movie_bulletscreen_2016", "str_movie_bulletscreen_2017", "str_movie_bulletscreen_2018", "str_movie_bulletscreen_2019", "str_movie_bulletscreen_2020", "str_movie_bulletscreen_2021", "str_movie_bulletscreen_2022", "str_movie_bulletscreen_2023", "str_movie_bulletscreen_2024", "base_icon_1021001_sad", "str_movie_bulletscreen_2025", "base_icon_1021002_norm", "str_movie_bulletscreen_2026", "base_icon_1021003_norm", "str_movie_bulletscreen_2027", "base_icon_1021004_norm", "str_movie_bulletscreen_2028", "base_icon_1500151_feng_laugh", "str_movie_bulletscreen_2029", "base_icon_1601561_redfacedanger", "str_movie_bulletscreen_2030", "str_movie_bulletscreen_4001", "str_movie_bulletscreen_4002", "str_movie_bulletscreen_4003", "str_movie_bulletscreen_4004", "str_movie_bulletscreen_4005", "str_movie_bulletscreen_4006", "str_movie_bulletscreen_4007", "str_movie_bulletscreen_4008", "str_movie_bulletscreen_4009", "str_movie_bulletscreen_4010", "str_movie_bulletscreen_6001", "str_movie_bulletscreen_6002", "str_movie_bulletscreen_6003", "str_movie_bulletscreen_6004", "str_movie_bulletscreen_6005", "str_movie_bulletscreen_6006", "str_movie_bulletscreen_6007", "str_movie_bulletscreen_6008", "str_movie_bulletscreen_6009", "base_icon_1021003_happy", "str_movie_bulletscreen_6010", "str_movie_bulletscreen_8001", "str_movie_bulletscreen_8002", "str_movie_bulletscreen_8003", "str_movie_bulletscreen_8004", "str_movie_bulletscreen_8005", "str_movie_bulletscreen_8006", "str_movie_bulletscreen_8007", "str_movie_bulletscreen_8008", "base_icon_1021002_sad", "str_movie_bulletscreen_8009", "base_icon_1021004_sad", "str_movie_bulletscreen_8010", "str_movie_bulletscreen_1001", "str_movie_bulletscreen_1002", "str_movie_bulletscreen_1003", "str_movie_bulletscreen_1004", "str_movie_bulletscreen_1005", "str_movie_bulletscreen_1006", "str_movie_bulletscreen_1007", "str_movie_bulletscreen_1008", "str_movie_bulletscreen_1009", "str_movie_bulletscreen_1010", "str_movie_bulletscreen_1011", "str_movie_bulletscreen_1012", "str_movie_bulletscreen_1013", "str_movie_bulletscreen_1014", "str_movie_bulletscreen_1015", "str_movie_bulletscreen_1016", "str_movie_bulletscreen_1017", "str_movie_bulletscreen_1018", "str_movie_bulletscreen_1019", "str_movie_bulletscreen_1020", "str_movie_bulletscreen_1021", "str_movie_bulletscreen_1022", "str_movie_bulletscreen_1023", "str_movie_bulletscreen_1024", "str_movie_bulletscreen_1025", "str_movie_bulletscreen_1026", "str_movie_bulletscreen_1027", "str_movie_bulletscreen_1028", "str_movie_bulletscreen_1029", "str_movie_bulletscreen_1030", "str_movie_bulletscreen_1031", "str_movie_bulletscreen_1032", "str_movie_bulletscreen_1033", "str_movie_bulletscreen_1034", "str_movie_bulletscreen_1035", "str_movie_bulletscreen_1036", "str_movie_bulletscreen_1037", "str_movie_bulletscreen_1038", "str_movie_bulletscreen_1039", "str_movie_bulletscreen_1040", "str_movie_bulletscreen_1041", "str_movie_bulletscreen_1042", "str_movie_bulletscreen_1043", "str_movie_bulletscreen_1044", "str_movie_bulletscreen_1045", "str_movie_bulletscreen_1046", "str_movie_bulletscreen_1047", "str_movie_bulletscreen_1048", "str_movie_bulletscreen_1049", "str_movie_bulletscreen_1050", "str_movie_bulletscreen_1051", "str_movie_bulletscreen_1052", "str_movie_bulletscreen_1053", "str_movie_bulletscreen_1054", "str_movie_bulletscreen_1055", "str_movie_bulletscreen_1056", "str_movie_bulletscreen_1057", "str_movie_bulletscreen_1058", "str_movie_bulletscreen_1059", "str_movie_bulletscreen_1060", "str_movie_bulletscreen_1061", "str_movie_bulletscreen_1062", "str_movie_bulletscreen_1063", "str_movie_bulletscreen_1064", "str_movie_bulletscreen_1065", "str_movie_bulletscreen_1066", "str_movie_bulletscreen_1067", "str_movie_bulletscreen_1068", "str_movie_bulletscreen_1069", "str_movie_bulletscreen_1070", "str_movie_bulletscreen_1071", "str_movie_bulletscreen_1072", "str_movie_bulletscreen_1073", "str_movie_bulletscreen_1074", "str_movie_bulletscreen_1075", "str_movie_bulletscreen_1076", "str_movie_bulletscreen_1077", "str_movie_bulletscreen_1078", "str_movie_bulletscreen_1079", "str_movie_bulletscreen_1080", "base_icon_1601481_smile", "str_movie_bulletscreen_1081", "base_icon_1501491_happy", "str_movie_bulletscreen_1082", "base_icon_1601721_cheerful", "str_movie_bulletscreen_1083", "str_movie_bulletscreen_1084", "base_icon_1500421_angry", "str_movie_bulletscreen_1085", "base_icon_1600301_excited", "str_movie_bulletscreen_1086", "base_icon_1601531_norm", "str_movie_bulletscreen_1087", "base_icon_1201631_serious_1", "str_movie_bulletscreen_1088", "base_icon_1500761_norm", "str_movie_bulletscreen_1089", "str_movie_bulletscreen_1090", "str_movie_bulletscreen_1091", "base_icon_1021002_happy", "str_movie_bulletscreen_1092", "base_icon_1021001_shy", "str_movie_bulletscreen_1093", "str_movie_bulletscreen_1094", "base_icon_1021004_happy", "str_movie_bulletscreen_1095", "base_icon_1500331_smile", "str_movie_bulletscreen_1096", "base_icon_1600101_happy", "str_movie_bulletscreen_1097", "base_icon_1600381_happy", "str_movie_bulletscreen_1098", "base_icon_1600281_think", "str_movie_bulletscreen_1099", "base_icon_1600601_laugh", "str_movie_bulletscreen_1100", "str_movie_bulletscreen_3001", "str_movie_bulletscreen_3002", "str_movie_bulletscreen_3003", "str_movie_bulletscreen_3004", "str_movie_bulletscreen_3005", "str_movie_bulletscreen_3006", "str_movie_bulletscreen_3007", "str_movie_bulletscreen_3008", "str_movie_bulletscreen_3009", "str_movie_bulletscreen_3010", "str_movie_bulletscreen_3011", "str_movie_bulletscreen_3012", "str_movie_bulletscreen_3013", "str_movie_bulletscreen_3014", "str_movie_bulletscreen_3015", "str_movie_bulletscreen_3016", "str_movie_bulletscreen_3017", "str_movie_bulletscreen_3018", "str_movie_bulletscreen_3019", "str_movie_bulletscreen_3020", "str_movie_bulletscreen_5001", "str_movie_bulletscreen_5002", "str_movie_bulletscreen_5003", "str_movie_bulletscreen_5004", "str_movie_bulletscreen_5005", "str_movie_bulletscreen_5006", "str_movie_bulletscreen_5007", "str_movie_bulletscreen_5008", "str_movie_bulletscreen_5009", "str_movie_bulletscreen_5010", "str_movie_bulletscreen_5011", "str_movie_bulletscreen_5012", "str_movie_bulletscreen_7001", "str_movie_bulletscreen_7002", "str_movie_bulletscreen_7003", "str_movie_bulletscreen_7004", "str_movie_bulletscreen_7005", "str_movie_bulletscreen_7006", "str_movie_bulletscreen_7007", "str_movie_bulletscreen_7008", "str_movie_bulletscreen_7009", "str_movie_bulletscreen_7010", "str_movie_bulletscreen_7011", "str_movie_bulletscreen_7012", "str_movie_bulletscreen_7013", "str_movie_bulletscreen_7014", "str_movie_bulletscreen_7015", "str_movie_bulletscreen_7016", "str_movie_bulletscreen_7017", "str_movie_bulletscreen_7018", "str_movie_bulletscreen_7019", "str_movie_bulletscreen_7020"}
+local key = {
+  ID = 1,
+  ScoreType = 2,
+  ScoreCondition = 3,
+  Type = 4,
+  Content = 5,
+  BodyName = 6
+}
+local common = {
+  "str_movie_bulletscreen_2001",
+  "str_movie_bulletscreen_2002",
+  "str_movie_bulletscreen_2003",
+  "str_movie_bulletscreen_2004",
+  "str_movie_bulletscreen_2005",
+  "str_movie_bulletscreen_2006",
+  "str_movie_bulletscreen_2007",
+  "str_movie_bulletscreen_2008",
+  "str_movie_bulletscreen_2009",
+  "str_movie_bulletscreen_2010",
+  "str_movie_bulletscreen_2011",
+  "str_movie_bulletscreen_2012",
+  "str_movie_bulletscreen_2013",
+  "str_movie_bulletscreen_2014",
+  "str_movie_bulletscreen_2015",
+  "str_movie_bulletscreen_2016",
+  "str_movie_bulletscreen_2017",
+  "str_movie_bulletscreen_2018",
+  "str_movie_bulletscreen_2019",
+  "str_movie_bulletscreen_2020",
+  "str_movie_bulletscreen_2021",
+  "str_movie_bulletscreen_2022",
+  "str_movie_bulletscreen_2023",
+  "str_movie_bulletscreen_2024",
+  "base_icon_1021001_sad",
+  "str_movie_bulletscreen_2025",
+  "base_icon_1021002_norm",
+  "str_movie_bulletscreen_2026",
+  "base_icon_1021003_norm",
+  "str_movie_bulletscreen_2027",
+  "base_icon_1021004_norm",
+  "str_movie_bulletscreen_2028",
+  "base_icon_1500151_feng_laugh",
+  "str_movie_bulletscreen_2029",
+  "base_icon_1601561_redfacedanger",
+  "str_movie_bulletscreen_2030",
+  "str_movie_bulletscreen_4001",
+  "str_movie_bulletscreen_4002",
+  "str_movie_bulletscreen_4003",
+  "str_movie_bulletscreen_4004",
+  "str_movie_bulletscreen_4005",
+  "str_movie_bulletscreen_4006",
+  "str_movie_bulletscreen_4007",
+  "str_movie_bulletscreen_4008",
+  "str_movie_bulletscreen_4009",
+  "str_movie_bulletscreen_4010",
+  "str_movie_bulletscreen_6001",
+  "str_movie_bulletscreen_6002",
+  "str_movie_bulletscreen_6003",
+  "str_movie_bulletscreen_6004",
+  "str_movie_bulletscreen_6005",
+  "str_movie_bulletscreen_6006",
+  "str_movie_bulletscreen_6007",
+  "str_movie_bulletscreen_6008",
+  "str_movie_bulletscreen_6009",
+  "base_icon_1021003_happy",
+  "str_movie_bulletscreen_6010",
+  "str_movie_bulletscreen_8001",
+  "str_movie_bulletscreen_8002",
+  "str_movie_bulletscreen_8003",
+  "str_movie_bulletscreen_8004",
+  "str_movie_bulletscreen_8005",
+  "str_movie_bulletscreen_8006",
+  "str_movie_bulletscreen_8007",
+  "str_movie_bulletscreen_8008",
+  "base_icon_1021002_sad",
+  "str_movie_bulletscreen_8009",
+  "base_icon_1021004_sad",
+  "str_movie_bulletscreen_8010",
+  "str_movie_bulletscreen_1001",
+  "str_movie_bulletscreen_1002",
+  "str_movie_bulletscreen_1003",
+  "str_movie_bulletscreen_1004",
+  "str_movie_bulletscreen_1005",
+  "str_movie_bulletscreen_1006",
+  "str_movie_bulletscreen_1007",
+  "str_movie_bulletscreen_1008",
+  "str_movie_bulletscreen_1009",
+  "str_movie_bulletscreen_1010",
+  "str_movie_bulletscreen_1011",
+  "str_movie_bulletscreen_1012",
+  "str_movie_bulletscreen_1013",
+  "str_movie_bulletscreen_1014",
+  "str_movie_bulletscreen_1015",
+  "str_movie_bulletscreen_1016",
+  "str_movie_bulletscreen_1017",
+  "str_movie_bulletscreen_1018",
+  "str_movie_bulletscreen_1019",
+  "str_movie_bulletscreen_1020",
+  "str_movie_bulletscreen_1021",
+  "str_movie_bulletscreen_1022",
+  "str_movie_bulletscreen_1023",
+  "str_movie_bulletscreen_1024",
+  "str_movie_bulletscreen_1025",
+  "str_movie_bulletscreen_1026",
+  "str_movie_bulletscreen_1027",
+  "str_movie_bulletscreen_1028",
+  "str_movie_bulletscreen_1029",
+  "str_movie_bulletscreen_1030",
+  "str_movie_bulletscreen_1031",
+  "str_movie_bulletscreen_1032",
+  "str_movie_bulletscreen_1033",
+  "str_movie_bulletscreen_1034",
+  "str_movie_bulletscreen_1035",
+  "str_movie_bulletscreen_1036",
+  "str_movie_bulletscreen_1037",
+  "str_movie_bulletscreen_1038",
+  "str_movie_bulletscreen_1039",
+  "str_movie_bulletscreen_1040",
+  "str_movie_bulletscreen_1041",
+  "str_movie_bulletscreen_1042",
+  "str_movie_bulletscreen_1043",
+  "str_movie_bulletscreen_1044",
+  "str_movie_bulletscreen_1045",
+  "str_movie_bulletscreen_1046",
+  "str_movie_bulletscreen_1047",
+  "str_movie_bulletscreen_1048",
+  "str_movie_bulletscreen_1049",
+  "str_movie_bulletscreen_1050",
+  "str_movie_bulletscreen_1051",
+  "str_movie_bulletscreen_1052",
+  "str_movie_bulletscreen_1053",
+  "str_movie_bulletscreen_1054",
+  "str_movie_bulletscreen_1055",
+  "str_movie_bulletscreen_1056",
+  "str_movie_bulletscreen_1057",
+  "str_movie_bulletscreen_1058",
+  "str_movie_bulletscreen_1059",
+  "str_movie_bulletscreen_1060",
+  "str_movie_bulletscreen_1061",
+  "str_movie_bulletscreen_1062",
+  "str_movie_bulletscreen_1063",
+  "str_movie_bulletscreen_1064",
+  "str_movie_bulletscreen_1065",
+  "str_movie_bulletscreen_1066",
+  "str_movie_bulletscreen_1067",
+  "str_movie_bulletscreen_1068",
+  "str_movie_bulletscreen_1069",
+  "str_movie_bulletscreen_1070",
+  "str_movie_bulletscreen_1071",
+  "str_movie_bulletscreen_1072",
+  "str_movie_bulletscreen_1073",
+  "str_movie_bulletscreen_1074",
+  "str_movie_bulletscreen_1075",
+  "str_movie_bulletscreen_1076",
+  "str_movie_bulletscreen_1077",
+  "str_movie_bulletscreen_1078",
+  "str_movie_bulletscreen_1079",
+  "str_movie_bulletscreen_1080",
+  "base_icon_1601481_smile",
+  "str_movie_bulletscreen_1081",
+  "base_icon_1501491_happy",
+  "str_movie_bulletscreen_1082",
+  "base_icon_1601721_cheerful",
+  "str_movie_bulletscreen_1083",
+  "str_movie_bulletscreen_1084",
+  "base_icon_1500421_angry",
+  "str_movie_bulletscreen_1085",
+  "base_icon_1600301_excited",
+  "str_movie_bulletscreen_1086",
+  "base_icon_1601531_norm",
+  "str_movie_bulletscreen_1087",
+  "base_icon_1201631_serious_1",
+  "str_movie_bulletscreen_1088",
+  "base_icon_1500761_norm",
+  "str_movie_bulletscreen_1089",
+  "str_movie_bulletscreen_1090",
+  "str_movie_bulletscreen_1091",
+  "base_icon_1021002_happy",
+  "str_movie_bulletscreen_1092",
+  "base_icon_1021001_shy",
+  "str_movie_bulletscreen_1093",
+  "str_movie_bulletscreen_1094",
+  "base_icon_1021004_happy",
+  "str_movie_bulletscreen_1095",
+  "base_icon_1500331_smile",
+  "str_movie_bulletscreen_1096",
+  "base_icon_1600101_happy",
+  "str_movie_bulletscreen_1097",
+  "base_icon_1600381_happy",
+  "str_movie_bulletscreen_1098",
+  "base_icon_1600281_think",
+  "str_movie_bulletscreen_1099",
+  "base_icon_1600601_laugh",
+  "str_movie_bulletscreen_1100",
+  "str_movie_bulletscreen_3001",
+  "str_movie_bulletscreen_3002",
+  "str_movie_bulletscreen_3003",
+  "str_movie_bulletscreen_3004",
+  "str_movie_bulletscreen_3005",
+  "str_movie_bulletscreen_3006",
+  "str_movie_bulletscreen_3007",
+  "str_movie_bulletscreen_3008",
+  "str_movie_bulletscreen_3009",
+  "str_movie_bulletscreen_3010",
+  "str_movie_bulletscreen_3011",
+  "str_movie_bulletscreen_3012",
+  "str_movie_bulletscreen_3013",
+  "str_movie_bulletscreen_3014",
+  "str_movie_bulletscreen_3015",
+  "str_movie_bulletscreen_3016",
+  "str_movie_bulletscreen_3017",
+  "str_movie_bulletscreen_3018",
+  "str_movie_bulletscreen_3019",
+  "str_movie_bulletscreen_3020",
+  "str_movie_bulletscreen_5001",
+  "str_movie_bulletscreen_5002",
+  "str_movie_bulletscreen_5003",
+  "str_movie_bulletscreen_5004",
+  "str_movie_bulletscreen_5005",
+  "str_movie_bulletscreen_5006",
+  "str_movie_bulletscreen_5007",
+  "str_movie_bulletscreen_5008",
+  "str_movie_bulletscreen_5009",
+  "str_movie_bulletscreen_5010",
+  "str_movie_bulletscreen_5011",
+  "str_movie_bulletscreen_5012",
+  "str_movie_bulletscreen_7001",
+  "str_movie_bulletscreen_7002",
+  "str_movie_bulletscreen_7003",
+  "str_movie_bulletscreen_7004",
+  "str_movie_bulletscreen_7005",
+  "str_movie_bulletscreen_7006",
+  "str_movie_bulletscreen_7007",
+  "str_movie_bulletscreen_7008",
+  "str_movie_bulletscreen_7009",
+  "str_movie_bulletscreen_7010",
+  "str_movie_bulletscreen_7011",
+  "str_movie_bulletscreen_7012",
+  "str_movie_bulletscreen_7013",
+  "str_movie_bulletscreen_7014",
+  "str_movie_bulletscreen_7015",
+  "str_movie_bulletscreen_7016",
+  "str_movie_bulletscreen_7017",
+  "str_movie_bulletscreen_7018",
+  "str_movie_bulletscreen_7019",
+  "str_movie_bulletscreen_7020"
+}
 local config = {
-{1, 4, 1, 1, common[1]}
-, 
-{2, 4, 1, 1, common[2]}
-, 
-{3, 4, 1, 1, common[3]}
-, 
-{4, 4, 1, 1, common[4]}
-, 
-{5, 4, 1, 1, common[5]}
-, 
-{6, 4, 1, 1, common[6]}
-, 
-{7, 4, 1, 1, common[7]}
-, 
-{8, 4, 1, 1, common[8]}
-, 
-{9, 4, 1, 1, common[9]}
-, 
-{10, 4, 1, 1, common[10]}
-, 
-{11, 4, 1, 1, common[11]}
-, 
-{12, 4, 1, 1, common[12]}
-, 
-{13, 4, 1, 1, common[13]}
-, 
-{14, 4, 1, 1, common[14]}
-, 
-{15, 4, 1, 1, common[15]}
-, 
-{16, 4, 1, 1, common[16]}
-, 
-{17, 4, 1, 1, common[17]}
-, 
-{18, 4, 1, 1, common[18]}
-, 
-{19, 4, 1, 1, common[19]}
-, 
-{20, 4, 1, 1, common[20]}
-, 
-{21, 4, 1, 1, common[21]}
-, 
-{22, 4, 1, 1, common[22]}
-, 
-{23, 4, 1, 1, common[23]}
-, 
-{24, 4, 1, 1, common[24]}
-, 
-{25, 4, 1, 3, common[26], common[25]}
-, 
-{26, 4, 1, 3, common[28], common[27]}
-, 
-{27, 4, 1, 3, common[30], common[29]}
-, 
-{28, 4, 1, 3, common[32], common[31]}
-, 
-{29, 4, 1, 3, common[34], common[33]}
-, 
-{30, 4, 1, 3, common[36], common[35]}
-, 
-{31, 1, 1, 2, common[37]}
-, 
-{32, 1, 1, 2, common[38]}
-, 
-{33, 1, 1, 2, common[39]}
-, 
-{34, 1, 1, 2, common[40]}
-, 
-{35, 1, 1, 2, common[41]}
-, 
-{36, 1, 1, 2, common[42]}
-, 
-{37, 1, 1, 2, common[43]}
-, 
-{38, 1, 1, 2, common[44]}
-, 
-{39, 1, 1, 2, common[45]}
-, 
-{40, 1, 1, 2, common[46]}
-, 
-{41, 2, 1, 2, common[47]}
-, 
-{42, 2, 1, 2, common[48]}
-, 
-{43, 2, 1, 2, common[49]}
-, 
-{44, 2, 1, 2, common[50]}
-, 
-{45, 2, 1, 2, common[51]}
-, 
-{46, 2, 1, 2, common[52]}
-, 
-{47, 2, 1, 2, common[53]}
-, 
-{48, 2, 1, 2, common[54]}
-, 
-{49, 2, 1, 2, common[55]}
-, 
-{50, 2, 1, 3, common[57], common[56]}
-, 
-{51, 3, 1, 2, common[58]}
-, 
-{52, 3, 1, 2, common[59]}
-, 
-{53, 3, 1, 2, common[60]}
-, 
-{54, 3, 1, 2, common[61]}
-, 
-{55, 3, 1, 2, common[62]}
-, 
-{56, 3, 1, 2, common[63]}
-, 
-{57, 3, 1, 2, common[64]}
-, 
-{58, 3, 1, 2, common[65]}
-, 
-{59, 3, 1, 3, common[67], common[66]}
-, 
-{60, 3, 1, 3, common[69], common[68]}
-, 
-{61, 4, 2, 1, common[70]}
-, 
-{62, 4, 2, 1, common[71]}
-, 
-{63, 4, 2, 1, common[72]}
-, 
-{64, 4, 2, 1, common[73]}
-, 
-{65, 4, 2, 1, common[74]}
-, 
-{66, 4, 2, 1, common[75]}
-, 
-{67, 4, 2, 1, common[76]}
-, 
-{68, 4, 2, 1, common[77]}
-, 
-{69, 4, 2, 1, common[78]}
-, 
-{70, 4, 2, 1, common[79]}
-, 
-{71, 4, 2, 1, common[80]}
-, 
-{72, 4, 2, 1, common[81]}
-, 
-{73, 4, 2, 1, common[82]}
-, 
-{74, 4, 2, 1, common[83]}
-, 
-{75, 4, 2, 1, common[84]}
-, 
-{76, 4, 2, 1, common[85]}
-, 
-{77, 4, 2, 1, common[86]}
-, 
-{78, 4, 2, 1, common[87]}
-, 
-{79, 4, 2, 1, common[88]}
-, 
-{80, 4, 2, 1, common[89]}
-, 
-{81, 4, 2, 1, common[90]}
-, 
-{82, 4, 2, 1, common[91]}
-, 
-{83, 4, 2, 1, common[92]}
-, 
-{84, 4, 2, 1, common[93]}
-, 
-{85, 4, 2, 1, common[94]}
-, 
-{86, 4, 2, 1, common[95]}
-, 
-{87, 4, 2, 1, common[96]}
-, 
-{88, 4, 2, 1, common[97]}
-, 
-{89, 4, 2, 1, common[98]}
-, 
-{90, 4, 2, 1, common[99]}
-, 
-{91, 4, 2, 1, common[100]}
-, 
-{92, 4, 2, 1, common[101]}
-, 
-{93, 4, 2, 1, common[102]}
-, 
-{94, 4, 2, 1, common[103]}
-, 
-{95, 4, 2, 1, common[104]}
-, 
-{96, 4, 2, 1, common[105]}
-, 
-{97, 4, 2, 1, common[106]}
-, 
-{98, 4, 2, 1, common[107]}
-, 
-{99, 4, 2, 1, common[108]}
-, 
-{100, 4, 2, 1, common[109]}
-, 
-{101, 4, 2, 1, common[110]}
-, 
-{102, 4, 2, 1, common[111]}
-, 
-{103, 4, 2, 1, common[112]}
-, 
-{104, 4, 2, 1, common[113]}
-, 
-{105, 4, 2, 1, common[114]}
-, 
-{106, 4, 2, 1, common[115]}
-, 
-{107, 4, 2, 1, common[116]}
-, 
-{108, 4, 2, 1, common[117]}
-, 
-{109, 4, 2, 1, common[118]}
-, 
-{110, 4, 2, 1, common[119]}
-, 
-{111, 4, 2, 1, common[120]}
-, 
-{112, 4, 2, 1, common[121]}
-, 
-{113, 4, 2, 1, common[122]}
-, 
-{114, 4, 2, 1, common[123]}
-, 
-{115, 4, 2, 1, common[124]}
-, 
-{116, 4, 2, 1, common[125]}
-, 
-{117, 4, 2, 1, common[126]}
-, 
-{118, 4, 2, 1, common[127]}
-, 
-{119, 4, 2, 1, common[128]}
-, 
-{120, 4, 2, 1, common[129]}
-, 
-{121, 4, 2, 1, common[130]}
-, 
-{122, 4, 2, 1, common[131]}
-, 
-{123, 4, 2, 1, common[132]}
-, 
-{124, 4, 2, 1, common[133]}
-, 
-{125, 4, 2, 1, common[134]}
-, 
-{126, 4, 2, 1, common[135]}
-, 
-{127, 4, 2, 1, common[136]}
-, 
-{128, 4, 2, 1, common[137]}
-, 
-{129, 4, 2, 1, common[138]}
-, 
-{130, 4, 2, 1, common[139]}
-, 
-{131, 4, 2, 1, common[140]}
-, 
-{132, 4, 2, 1, common[141]}
-, 
-{133, 4, 2, 1, common[142]}
-, 
-{134, 4, 2, 1, common[143]}
-, 
-{135, 4, 2, 1, common[144]}
-, 
-{136, 4, 2, 1, common[145]}
-, 
-{137, 4, 2, 1, common[146]}
-, 
-{138, 4, 2, 1, common[147]}
-, 
-{139, 4, 2, 1, common[148]}
-, 
-{140, 4, 2, 1, common[149]}
-, 
-{141, 4, 2, 3, common[151], common[150]}
-, 
-{142, 4, 2, 3, common[153], common[152]}
-, 
-{143, 4, 2, 3, common[155], common[154]}
-, 
-{144, 4, 2, 2, common[156]}
-, 
-{145, 4, 2, 3, common[158], common[157]}
-, 
-{146, 4, 2, 3, common[160], common[159]}
-, 
-{147, 4, 2, 3, common[162], common[161]}
-, 
-{148, 4, 2, 3, common[164], common[163]}
-, 
-{149, 4, 2, 3, common[166], common[165]}
-, 
-{150, 4, 2, 2, common[167]}
-, 
-{151, 4, 2, 2, common[168]}
-, 
-{152, 4, 2, 3, common[170], common[169]}
-, 
-{153, 4, 2, 3, common[172], common[171]}
-, 
-{154, 4, 2, 3, common[173], common[56]}
-, 
-{155, 4, 2, 3, common[175], common[174]}
-, 
-{156, 4, 2, 3, common[177], common[176]}
-, 
-{157, 4, 2, 3, common[179], common[178]}
-, 
-{158, 4, 2, 3, common[181], common[180]}
-, 
-{159, 4, 2, 3, common[183], common[182]}
-, 
-{160, 4, 2, 3, common[185], common[184]}
-, 
-{161, 4, 2, 1, common[1]}
-, 
-{162, 4, 2, 1, common[2]}
-, 
-{163, 4, 2, 1, common[3]}
-, 
-{164, 4, 2, 1, common[4]}
-, 
-{165, 4, 2, 1, common[5]}
-, 
-{166, 4, 2, 1, common[6]}
-, 
-{167, 4, 2, 1, common[7]}
-, 
-{168, 4, 2, 1, common[8]}
-, 
-{169, 4, 2, 1, common[9]}
-, 
-{170, 4, 2, 1, common[10]}
-, 
-{171, 4, 2, 1, common[11]}
-, 
-{172, 4, 2, 1, common[12]}
-, 
-{173, 4, 2, 1, common[13]}
-, 
-{174, 4, 2, 1, common[14]}
-, 
-{175, 4, 2, 1, common[15]}
-, 
-{176, 4, 2, 1, common[16]}
-, 
-{177, 4, 2, 1, common[17]}
-, 
-{178, 4, 2, 1, common[18]}
-, 
-{179, 4, 2, 1, common[19]}
-, 
-{180, 4, 2, 1, common[20]}
-, 
-{181, 4, 2, 1, common[21]}
-, 
-{182, 4, 2, 1, common[22]}
-, 
-{183, 4, 2, 1, common[23]}
-, 
-{184, 4, 2, 1, common[24]}
-, 
-{185, 4, 2, 3, common[26], common[25]}
-, 
-{186, 4, 2, 3, common[28], common[27]}
-, 
-{187, 4, 2, 3, common[30], common[29]}
-, 
-{188, 4, 2, 3, common[32], common[31]}
-, 
-{189, 4, 2, 3, common[34], common[33]}
-, 
-{190, 4, 2, 3, common[36], common[35]}
-, 
-{191, 1, 2, 2, common[186]}
-, 
-{192, 1, 2, 2, common[187]}
-, 
-{193, 1, 2, 2, common[188]}
-, 
-{194, 1, 2, 2, common[189]}
-, 
-{195, 1, 2, 2, common[190]}
-, 
-{196, 1, 2, 2, common[191]}
-, 
-{197, 1, 2, 2, common[192]}
-, 
-{198, 1, 2, 2, common[193]}
-, 
-{199, 1, 2, 2, common[194]}
-, 
-{200, 1, 2, 2, common[195]}
-, 
-{201, 1, 2, 2, common[196]}
-, 
-{202, 1, 2, 2, common[197]}
-, 
-{203, 1, 2, 2, common[198]}
-, 
-{204, 1, 2, 2, common[199]}
-, 
-{205, 1, 2, 2, common[200]}
-, 
-{206, 1, 2, 2, common[201]}
-, 
-{207, 1, 2, 2, common[202]}
-, 
-{208, 1, 2, 2, common[203]}
-, 
-{209, 1, 2, 2, common[204]}
-, 
-{210, 1, 2, 2, common[205]}
-, 
-{211, 1, 2, 2, common[37]}
-, 
-{212, 1, 2, 2, common[38]}
-, 
-{213, 1, 2, 2, common[39]}
-, 
-{214, 1, 2, 2, common[40]}
-, 
-{215, 1, 2, 2, common[41]}
-, 
-{216, 1, 2, 2, common[42]}
-, 
-{217, 1, 2, 2, common[43]}
-, 
-{218, 1, 2, 2, common[44]}
-, 
-{219, 1, 2, 2, common[45]}
-, 
-{220, 1, 2, 2, common[46]}
-, 
-{221, 2, 2, 2, common[206]}
-, 
-{222, 2, 2, 2, common[207]}
-, 
-{223, 2, 2, 2, common[208]}
-, 
-{224, 2, 2, 2, common[209]}
-, 
-{225, 2, 2, 2, common[210]}
-, 
-{226, 2, 2, 2, common[211]}
-, 
-{227, 2, 2, 2, common[212]}
-, 
-{228, 2, 2, 2, common[213]}
-, 
-{229, 2, 2, 2, common[214]}
-, 
-{230, 2, 2, 2, common[215]}
-, 
-{231, 2, 2, 2, common[216]}
-, 
-{232, 2, 2, 3, common[217], common[56]}
-, 
-{233, 2, 2, 2, common[47]}
-, 
-{234, 2, 2, 2, common[48]}
-, 
-{235, 2, 2, 2, common[49]}
-, 
-{236, 2, 2, 2, common[50]}
-, 
-{237, 2, 2, 2, common[51]}
-, 
-{238, 2, 2, 2, common[52]}
-, 
-{239, 2, 2, 2, common[53]}
-, 
-{240, 2, 2, 2, common[54]}
-, 
-{241, 2, 2, 2, common[55]}
-, 
-{242, 2, 2, 3, common[57], common[56]}
-, 
-{243, 3, 2, 2, common[218]}
-, 
-{244, 3, 2, 2, common[219]}
-, 
-{245, 3, 2, 2, common[220]}
-, 
-{246, 3, 2, 2, common[221]}
-, 
-{247, 3, 2, 2, common[222]}
-, 
-{248, 3, 2, 2, common[223]}
-, 
-{249, 3, 2, 2, common[224]}
-, 
-{250, 3, 2, 2, common[225]}
-, 
-{251, 3, 2, 2, common[226]}
-, 
-{252, 3, 2, 2, common[227]}
-, 
-{253, 3, 2, 2, common[228]}
-, 
-{254, 3, 2, 2, common[229]}
-, 
-{255, 3, 2, 2, common[230]}
-, 
-{256, 3, 2, 2, common[231]}
-, 
-{257, 3, 2, 2, common[232]}
-, 
-{258, 3, 2, 2, common[233]}
-, 
-{259, 3, 2, 2, common[234]}
-, 
-{260, 3, 2, 2, common[235]}
-, 
-{261, 3, 2, 2, common[236]}
-, 
-{262, 3, 2, 2, common[237]}
-, 
-{263, 3, 2, 2, common[58]}
-, 
-{264, 3, 2, 2, common[59]}
-, 
-{265, 3, 2, 2, common[60]}
-, 
-{266, 3, 2, 2, common[61]}
-, 
-{267, 3, 2, 2, common[62]}
-, 
-{268, 3, 2, 2, common[63]}
-, 
-{269, 3, 2, 2, common[64]}
-, 
-{270, 3, 2, 2, common[65]}
-, 
-{271, 3, 2, 3, common[67], common[66]}
-, 
-{272, 3, 2, 3, common[69], common[68]}
-, 
-{273, 4, 3, 1, common[70]}
-, 
-{274, 4, 3, 1, common[71]}
-, 
-{275, 4, 3, 1, common[72]}
-, 
-{276, 4, 3, 1, common[73]}
-, 
-{277, 4, 3, 1, common[74]}
-, 
-{278, 4, 3, 1, common[75]}
-, 
-{279, 4, 3, 1, common[76]}
-, 
-{280, 4, 3, 1, common[77]}
-, 
-{281, 4, 3, 1, common[78]}
-, 
-{282, 4, 3, 1, common[79]}
-, 
-{283, 4, 3, 1, common[80]}
-, 
-{284, 4, 3, 1, common[81]}
-, 
-{285, 4, 3, 1, common[82]}
-, 
-{286, 4, 3, 1, common[83]}
-, 
-{287, 4, 3, 1, common[84]}
-, 
-{288, 4, 3, 1, common[85]}
-, 
-{289, 4, 3, 1, common[86]}
-, 
-{290, 4, 3, 1, common[87]}
-, 
-{291, 4, 3, 1, common[88]}
-, 
-{292, 4, 3, 1, common[89]}
-, 
-{293, 4, 3, 1, common[90]}
-, 
-{294, 4, 3, 1, common[91]}
-, 
-{295, 4, 3, 1, common[92]}
-, 
-{296, 4, 3, 1, common[93]}
-, 
-{297, 4, 3, 1, common[94]}
-, 
-{298, 4, 3, 1, common[95]}
-, 
-{299, 4, 3, 1, common[96]}
-, 
-{300, 4, 3, 1, common[97]}
-, 
-{301, 4, 3, 1, common[98]}
-, 
-{302, 4, 3, 1, common[99]}
-, 
-{303, 4, 3, 1, common[100]}
-, 
-{304, 4, 3, 1, common[101]}
-, 
-{305, 4, 3, 1, common[102]}
-, 
-{306, 4, 3, 1, common[103]}
-, 
-{307, 4, 3, 1, common[104]}
-, 
-{308, 4, 3, 1, common[105]}
-, 
-{309, 4, 3, 1, common[106]}
-, 
-{310, 4, 3, 1, common[107]}
-, 
-{311, 4, 3, 1, common[108]}
-, 
-{312, 4, 3, 1, common[109]}
-, 
-{313, 4, 3, 1, common[110]}
-, 
-{314, 4, 3, 1, common[111]}
-, 
-{315, 4, 3, 1, common[112]}
-, 
-{316, 4, 3, 1, common[113]}
-, 
-{317, 4, 3, 1, common[114]}
-, 
-{318, 4, 3, 1, common[115]}
-, 
-{319, 4, 3, 1, common[116]}
-, 
-{320, 4, 3, 1, common[117]}
-, 
-{321, 4, 3, 1, common[118]}
-, 
-{322, 4, 3, 1, common[119]}
-, 
-{323, 4, 3, 1, common[120]}
-, 
-{324, 4, 3, 1, common[121]}
-, 
-{325, 4, 3, 1, common[122]}
-, 
-{326, 4, 3, 1, common[123]}
-, 
-{327, 4, 3, 1, common[124]}
-, 
-{328, 4, 3, 1, common[125]}
-, 
-{329, 4, 3, 1, common[126]}
-, 
-{330, 4, 3, 1, common[127]}
-, 
-{331, 4, 3, 1, common[128]}
-, 
-{332, 4, 3, 1, common[129]}
-, 
-{333, 4, 3, 1, common[130]}
-, 
-{334, 4, 3, 1, common[131]}
-, 
-{335, 4, 3, 1, common[132]}
-, 
-{336, 4, 3, 1, common[133]}
-, 
-{337, 4, 3, 1, common[134]}
-, 
-{338, 4, 3, 1, common[135]}
-, 
-{339, 4, 3, 1, common[136]}
-, 
-{340, 4, 3, 1, common[137]}
-, 
-{341, 4, 3, 1, common[138]}
-, 
-{342, 4, 3, 1, common[139]}
-, 
-{343, 4, 3, 1, common[140]}
-, 
-{344, 4, 3, 1, common[141]}
-, 
-{345, 4, 3, 1, common[142]}
-, 
-{346, 4, 3, 1, common[143]}
-, 
-{347, 4, 3, 1, common[144]}
-, 
-{348, 4, 3, 1, common[145]}
-, 
-{349, 4, 3, 1, common[146]}
-, 
-{350, 4, 3, 1, common[147]}
-, 
-{351, 4, 3, 1, common[148]}
-, 
-{352, 4, 3, 1, common[149]}
-, 
-{353, 4, 3, 3, common[151], common[150]}
-, 
-{354, 4, 3, 3, common[153], common[152]}
-, 
-{355, 4, 3, 3, common[155], common[154]}
-, 
-{356, 4, 3, 2, common[156]}
-, 
-{357, 4, 3, 3, common[158], common[157]}
-, 
-{358, 4, 3, 3, common[160], common[159]}
-, 
-{359, 4, 3, 3, common[162], common[161]}
-, 
-{360, 4, 3, 3, common[164], common[163]}
-, 
-{361, 4, 3, 3, common[166], common[165]}
-, 
-{362, 4, 3, 2, common[167]}
-, 
-{363, 4, 3, 2, common[168]}
-, 
-{364, 4, 3, 3, common[170], common[169]}
-, 
-{365, 4, 3, 3, common[172], common[171]}
-, 
-{366, 4, 3, 3, common[173], common[56]}
-, 
-{367, 4, 3, 3, common[175], common[174]}
-, 
-{368, 4, 3, 3, common[177], common[176]}
-, 
-{369, 4, 3, 3, common[179], common[178]}
-, 
-{370, 4, 3, 3, common[181], common[180]}
-, 
-{371, 4, 3, 3, common[183], common[182]}
-, 
-{372, 4, 3, 3, common[185], common[184]}
-, 
-{373, 1, 3, 2, common[186]}
-, 
-{374, 1, 3, 2, common[187]}
-, 
-{375, 1, 3, 2, common[188]}
-, 
-{376, 1, 3, 2, common[189]}
-, 
-{377, 1, 3, 2, common[190]}
-, 
-{378, 1, 3, 2, common[191]}
-, 
-{379, 1, 3, 2, common[192]}
-, 
-{380, 1, 3, 2, common[193]}
-, 
-{381, 1, 3, 2, common[194]}
-, 
-{382, 1, 3, 2, common[195]}
-, 
-{383, 1, 3, 2, common[196]}
-, 
-{384, 1, 3, 2, common[197]}
-, 
-{385, 1, 3, 2, common[198]}
-, 
-{386, 1, 3, 2, common[199]}
-, 
-{387, 1, 3, 2, common[200]}
-, 
-{388, 1, 3, 2, common[201]}
-, 
-{389, 1, 3, 2, common[202]}
-, 
-{390, 1, 3, 2, common[203]}
-, 
-{391, 1, 3, 2, common[204]}
-, 
-{392, 1, 3, 2, common[205]}
-, 
-{393, 2, 3, 2, common[206]}
-, 
-{394, 2, 3, 2, common[207]}
-, 
-{395, 2, 3, 2, common[208]}
-, 
-{396, 2, 3, 2, common[209]}
-, 
-{397, 2, 3, 2, common[210]}
-, 
-{398, 2, 3, 2, common[211]}
-, 
-{399, 2, 3, 2, common[212]}
-, 
-{400, 2, 3, 2, common[213]}
-, 
-{401, 2, 3, 2, common[214]}
-, 
-{402, 2, 3, 2, common[215]}
-, 
-{403, 2, 3, 2, common[216]}
-, 
-{404, 2, 3, 3, common[217], common[56]}
-, 
-{405, 3, 3, 2, common[218]}
-, 
-{406, 3, 3, 2, common[219]}
-, 
-{407, 3, 3, 2, common[220]}
-, 
-{408, 3, 3, 2, common[221]}
-, 
-{409, 3, 3, 2, common[222]}
-, 
-{410, 3, 3, 2, common[223]}
-, 
-{411, 3, 3, 2, common[224]}
-, 
-{412, 3, 3, 2, common[225]}
-, 
-{413, 3, 3, 2, common[226]}
-, 
-{414, 3, 3, 2, common[227]}
-, 
-{415, 3, 3, 2, common[228]}
-, 
-{416, 3, 3, 2, common[229]}
-, 
-{417, 3, 3, 2, common[230]}
-, 
-{418, 3, 3, 2, common[231]}
-, 
-{419, 3, 3, 2, common[232]}
-, 
-{420, 3, 3, 2, common[233]}
-, 
-{421, 3, 3, 2, common[234]}
-, 
-{422, 3, 3, 2, common[235]}
-, 
-{423, 3, 3, 2, common[236]}
-, 
-{424, 3, 3, 2, common[237]}
+  {
+    1,
+    4,
+    1,
+    1,
+    common[1]
+  },
+  {
+    2,
+    4,
+    1,
+    1,
+    common[2]
+  },
+  {
+    3,
+    4,
+    1,
+    1,
+    common[3]
+  },
+  {
+    4,
+    4,
+    1,
+    1,
+    common[4]
+  },
+  {
+    5,
+    4,
+    1,
+    1,
+    common[5]
+  },
+  {
+    6,
+    4,
+    1,
+    1,
+    common[6]
+  },
+  {
+    7,
+    4,
+    1,
+    1,
+    common[7]
+  },
+  {
+    8,
+    4,
+    1,
+    1,
+    common[8]
+  },
+  {
+    9,
+    4,
+    1,
+    1,
+    common[9]
+  },
+  {
+    10,
+    4,
+    1,
+    1,
+    common[10]
+  },
+  {
+    11,
+    4,
+    1,
+    1,
+    common[11]
+  },
+  {
+    12,
+    4,
+    1,
+    1,
+    common[12]
+  },
+  {
+    13,
+    4,
+    1,
+    1,
+    common[13]
+  },
+  {
+    14,
+    4,
+    1,
+    1,
+    common[14]
+  },
+  {
+    15,
+    4,
+    1,
+    1,
+    common[15]
+  },
+  {
+    16,
+    4,
+    1,
+    1,
+    common[16]
+  },
+  {
+    17,
+    4,
+    1,
+    1,
+    common[17]
+  },
+  {
+    18,
+    4,
+    1,
+    1,
+    common[18]
+  },
+  {
+    19,
+    4,
+    1,
+    1,
+    common[19]
+  },
+  {
+    20,
+    4,
+    1,
+    1,
+    common[20]
+  },
+  {
+    21,
+    4,
+    1,
+    1,
+    common[21]
+  },
+  {
+    22,
+    4,
+    1,
+    1,
+    common[22]
+  },
+  {
+    23,
+    4,
+    1,
+    1,
+    common[23]
+  },
+  {
+    24,
+    4,
+    1,
+    1,
+    common[24]
+  },
+  {
+    25,
+    4,
+    1,
+    3,
+    common[26],
+    common[25]
+  },
+  {
+    26,
+    4,
+    1,
+    3,
+    common[28],
+    common[27]
+  },
+  {
+    27,
+    4,
+    1,
+    3,
+    common[30],
+    common[29]
+  },
+  {
+    28,
+    4,
+    1,
+    3,
+    common[32],
+    common[31]
+  },
+  {
+    29,
+    4,
+    1,
+    3,
+    common[34],
+    common[33]
+  },
+  {
+    30,
+    4,
+    1,
+    3,
+    common[36],
+    common[35]
+  },
+  {
+    31,
+    1,
+    1,
+    2,
+    common[37]
+  },
+  {
+    32,
+    1,
+    1,
+    2,
+    common[38]
+  },
+  {
+    33,
+    1,
+    1,
+    2,
+    common[39]
+  },
+  {
+    34,
+    1,
+    1,
+    2,
+    common[40]
+  },
+  {
+    35,
+    1,
+    1,
+    2,
+    common[41]
+  },
+  {
+    36,
+    1,
+    1,
+    2,
+    common[42]
+  },
+  {
+    37,
+    1,
+    1,
+    2,
+    common[43]
+  },
+  {
+    38,
+    1,
+    1,
+    2,
+    common[44]
+  },
+  {
+    39,
+    1,
+    1,
+    2,
+    common[45]
+  },
+  {
+    40,
+    1,
+    1,
+    2,
+    common[46]
+  },
+  {
+    41,
+    2,
+    1,
+    2,
+    common[47]
+  },
+  {
+    42,
+    2,
+    1,
+    2,
+    common[48]
+  },
+  {
+    43,
+    2,
+    1,
+    2,
+    common[49]
+  },
+  {
+    44,
+    2,
+    1,
+    2,
+    common[50]
+  },
+  {
+    45,
+    2,
+    1,
+    2,
+    common[51]
+  },
+  {
+    46,
+    2,
+    1,
+    2,
+    common[52]
+  },
+  {
+    47,
+    2,
+    1,
+    2,
+    common[53]
+  },
+  {
+    48,
+    2,
+    1,
+    2,
+    common[54]
+  },
+  {
+    49,
+    2,
+    1,
+    2,
+    common[55]
+  },
+  {
+    50,
+    2,
+    1,
+    3,
+    common[57],
+    common[56]
+  },
+  {
+    51,
+    3,
+    1,
+    2,
+    common[58]
+  },
+  {
+    52,
+    3,
+    1,
+    2,
+    common[59]
+  },
+  {
+    53,
+    3,
+    1,
+    2,
+    common[60]
+  },
+  {
+    54,
+    3,
+    1,
+    2,
+    common[61]
+  },
+  {
+    55,
+    3,
+    1,
+    2,
+    common[62]
+  },
+  {
+    56,
+    3,
+    1,
+    2,
+    common[63]
+  },
+  {
+    57,
+    3,
+    1,
+    2,
+    common[64]
+  },
+  {
+    58,
+    3,
+    1,
+    2,
+    common[65]
+  },
+  {
+    59,
+    3,
+    1,
+    3,
+    common[67],
+    common[66]
+  },
+  {
+    60,
+    3,
+    1,
+    3,
+    common[69],
+    common[68]
+  },
+  {
+    61,
+    4,
+    2,
+    1,
+    common[70]
+  },
+  {
+    62,
+    4,
+    2,
+    1,
+    common[71]
+  },
+  {
+    63,
+    4,
+    2,
+    1,
+    common[72]
+  },
+  {
+    64,
+    4,
+    2,
+    1,
+    common[73]
+  },
+  {
+    65,
+    4,
+    2,
+    1,
+    common[74]
+  },
+  {
+    66,
+    4,
+    2,
+    1,
+    common[75]
+  },
+  {
+    67,
+    4,
+    2,
+    1,
+    common[76]
+  },
+  {
+    68,
+    4,
+    2,
+    1,
+    common[77]
+  },
+  {
+    69,
+    4,
+    2,
+    1,
+    common[78]
+  },
+  {
+    70,
+    4,
+    2,
+    1,
+    common[79]
+  },
+  {
+    71,
+    4,
+    2,
+    1,
+    common[80]
+  },
+  {
+    72,
+    4,
+    2,
+    1,
+    common[81]
+  },
+  {
+    73,
+    4,
+    2,
+    1,
+    common[82]
+  },
+  {
+    74,
+    4,
+    2,
+    1,
+    common[83]
+  },
+  {
+    75,
+    4,
+    2,
+    1,
+    common[84]
+  },
+  {
+    76,
+    4,
+    2,
+    1,
+    common[85]
+  },
+  {
+    77,
+    4,
+    2,
+    1,
+    common[86]
+  },
+  {
+    78,
+    4,
+    2,
+    1,
+    common[87]
+  },
+  {
+    79,
+    4,
+    2,
+    1,
+    common[88]
+  },
+  {
+    80,
+    4,
+    2,
+    1,
+    common[89]
+  },
+  {
+    81,
+    4,
+    2,
+    1,
+    common[90]
+  },
+  {
+    82,
+    4,
+    2,
+    1,
+    common[91]
+  },
+  {
+    83,
+    4,
+    2,
+    1,
+    common[92]
+  },
+  {
+    84,
+    4,
+    2,
+    1,
+    common[93]
+  },
+  {
+    85,
+    4,
+    2,
+    1,
+    common[94]
+  },
+  {
+    86,
+    4,
+    2,
+    1,
+    common[95]
+  },
+  {
+    87,
+    4,
+    2,
+    1,
+    common[96]
+  },
+  {
+    88,
+    4,
+    2,
+    1,
+    common[97]
+  },
+  {
+    89,
+    4,
+    2,
+    1,
+    common[98]
+  },
+  {
+    90,
+    4,
+    2,
+    1,
+    common[99]
+  },
+  {
+    91,
+    4,
+    2,
+    1,
+    common[100]
+  },
+  {
+    92,
+    4,
+    2,
+    1,
+    common[101]
+  },
+  {
+    93,
+    4,
+    2,
+    1,
+    common[102]
+  },
+  {
+    94,
+    4,
+    2,
+    1,
+    common[103]
+  },
+  {
+    95,
+    4,
+    2,
+    1,
+    common[104]
+  },
+  {
+    96,
+    4,
+    2,
+    1,
+    common[105]
+  },
+  {
+    97,
+    4,
+    2,
+    1,
+    common[106]
+  },
+  {
+    98,
+    4,
+    2,
+    1,
+    common[107]
+  },
+  {
+    99,
+    4,
+    2,
+    1,
+    common[108]
+  },
+  {
+    100,
+    4,
+    2,
+    1,
+    common[109]
+  },
+  {
+    101,
+    4,
+    2,
+    1,
+    common[110]
+  },
+  {
+    102,
+    4,
+    2,
+    1,
+    common[111]
+  },
+  {
+    103,
+    4,
+    2,
+    1,
+    common[112]
+  },
+  {
+    104,
+    4,
+    2,
+    1,
+    common[113]
+  },
+  {
+    105,
+    4,
+    2,
+    1,
+    common[114]
+  },
+  {
+    106,
+    4,
+    2,
+    1,
+    common[115]
+  },
+  {
+    107,
+    4,
+    2,
+    1,
+    common[116]
+  },
+  {
+    108,
+    4,
+    2,
+    1,
+    common[117]
+  },
+  {
+    109,
+    4,
+    2,
+    1,
+    common[118]
+  },
+  {
+    110,
+    4,
+    2,
+    1,
+    common[119]
+  },
+  {
+    111,
+    4,
+    2,
+    1,
+    common[120]
+  },
+  {
+    112,
+    4,
+    2,
+    1,
+    common[121]
+  },
+  {
+    113,
+    4,
+    2,
+    1,
+    common[122]
+  },
+  {
+    114,
+    4,
+    2,
+    1,
+    common[123]
+  },
+  {
+    115,
+    4,
+    2,
+    1,
+    common[124]
+  },
+  {
+    116,
+    4,
+    2,
+    1,
+    common[125]
+  },
+  {
+    117,
+    4,
+    2,
+    1,
+    common[126]
+  },
+  {
+    118,
+    4,
+    2,
+    1,
+    common[127]
+  },
+  {
+    119,
+    4,
+    2,
+    1,
+    common[128]
+  },
+  {
+    120,
+    4,
+    2,
+    1,
+    common[129]
+  },
+  {
+    121,
+    4,
+    2,
+    1,
+    common[130]
+  },
+  {
+    122,
+    4,
+    2,
+    1,
+    common[131]
+  },
+  {
+    123,
+    4,
+    2,
+    1,
+    common[132]
+  },
+  {
+    124,
+    4,
+    2,
+    1,
+    common[133]
+  },
+  {
+    125,
+    4,
+    2,
+    1,
+    common[134]
+  },
+  {
+    126,
+    4,
+    2,
+    1,
+    common[135]
+  },
+  {
+    127,
+    4,
+    2,
+    1,
+    common[136]
+  },
+  {
+    128,
+    4,
+    2,
+    1,
+    common[137]
+  },
+  {
+    129,
+    4,
+    2,
+    1,
+    common[138]
+  },
+  {
+    130,
+    4,
+    2,
+    1,
+    common[139]
+  },
+  {
+    131,
+    4,
+    2,
+    1,
+    common[140]
+  },
+  {
+    132,
+    4,
+    2,
+    1,
+    common[141]
+  },
+  {
+    133,
+    4,
+    2,
+    1,
+    common[142]
+  },
+  {
+    134,
+    4,
+    2,
+    1,
+    common[143]
+  },
+  {
+    135,
+    4,
+    2,
+    1,
+    common[144]
+  },
+  {
+    136,
+    4,
+    2,
+    1,
+    common[145]
+  },
+  {
+    137,
+    4,
+    2,
+    1,
+    common[146]
+  },
+  {
+    138,
+    4,
+    2,
+    1,
+    common[147]
+  },
+  {
+    139,
+    4,
+    2,
+    1,
+    common[148]
+  },
+  {
+    140,
+    4,
+    2,
+    1,
+    common[149]
+  },
+  {
+    141,
+    4,
+    2,
+    3,
+    common[151],
+    common[150]
+  },
+  {
+    142,
+    4,
+    2,
+    3,
+    common[153],
+    common[152]
+  },
+  {
+    143,
+    4,
+    2,
+    3,
+    common[155],
+    common[154]
+  },
+  {
+    144,
+    4,
+    2,
+    2,
+    common[156]
+  },
+  {
+    145,
+    4,
+    2,
+    3,
+    common[158],
+    common[157]
+  },
+  {
+    146,
+    4,
+    2,
+    3,
+    common[160],
+    common[159]
+  },
+  {
+    147,
+    4,
+    2,
+    3,
+    common[162],
+    common[161]
+  },
+  {
+    148,
+    4,
+    2,
+    3,
+    common[164],
+    common[163]
+  },
+  {
+    149,
+    4,
+    2,
+    3,
+    common[166],
+    common[165]
+  },
+  {
+    150,
+    4,
+    2,
+    2,
+    common[167]
+  },
+  {
+    151,
+    4,
+    2,
+    2,
+    common[168]
+  },
+  {
+    152,
+    4,
+    2,
+    3,
+    common[170],
+    common[169]
+  },
+  {
+    153,
+    4,
+    2,
+    3,
+    common[172],
+    common[171]
+  },
+  {
+    154,
+    4,
+    2,
+    3,
+    common[173],
+    common[56]
+  },
+  {
+    155,
+    4,
+    2,
+    3,
+    common[175],
+    common[174]
+  },
+  {
+    156,
+    4,
+    2,
+    3,
+    common[177],
+    common[176]
+  },
+  {
+    157,
+    4,
+    2,
+    3,
+    common[179],
+    common[178]
+  },
+  {
+    158,
+    4,
+    2,
+    3,
+    common[181],
+    common[180]
+  },
+  {
+    159,
+    4,
+    2,
+    3,
+    common[183],
+    common[182]
+  },
+  {
+    160,
+    4,
+    2,
+    3,
+    common[185],
+    common[184]
+  },
+  {
+    161,
+    4,
+    2,
+    1,
+    common[1]
+  },
+  {
+    162,
+    4,
+    2,
+    1,
+    common[2]
+  },
+  {
+    163,
+    4,
+    2,
+    1,
+    common[3]
+  },
+  {
+    164,
+    4,
+    2,
+    1,
+    common[4]
+  },
+  {
+    165,
+    4,
+    2,
+    1,
+    common[5]
+  },
+  {
+    166,
+    4,
+    2,
+    1,
+    common[6]
+  },
+  {
+    167,
+    4,
+    2,
+    1,
+    common[7]
+  },
+  {
+    168,
+    4,
+    2,
+    1,
+    common[8]
+  },
+  {
+    169,
+    4,
+    2,
+    1,
+    common[9]
+  },
+  {
+    170,
+    4,
+    2,
+    1,
+    common[10]
+  },
+  {
+    171,
+    4,
+    2,
+    1,
+    common[11]
+  },
+  {
+    172,
+    4,
+    2,
+    1,
+    common[12]
+  },
+  {
+    173,
+    4,
+    2,
+    1,
+    common[13]
+  },
+  {
+    174,
+    4,
+    2,
+    1,
+    common[14]
+  },
+  {
+    175,
+    4,
+    2,
+    1,
+    common[15]
+  },
+  {
+    176,
+    4,
+    2,
+    1,
+    common[16]
+  },
+  {
+    177,
+    4,
+    2,
+    1,
+    common[17]
+  },
+  {
+    178,
+    4,
+    2,
+    1,
+    common[18]
+  },
+  {
+    179,
+    4,
+    2,
+    1,
+    common[19]
+  },
+  {
+    180,
+    4,
+    2,
+    1,
+    common[20]
+  },
+  {
+    181,
+    4,
+    2,
+    1,
+    common[21]
+  },
+  {
+    182,
+    4,
+    2,
+    1,
+    common[22]
+  },
+  {
+    183,
+    4,
+    2,
+    1,
+    common[23]
+  },
+  {
+    184,
+    4,
+    2,
+    1,
+    common[24]
+  },
+  {
+    185,
+    4,
+    2,
+    3,
+    common[26],
+    common[25]
+  },
+  {
+    186,
+    4,
+    2,
+    3,
+    common[28],
+    common[27]
+  },
+  {
+    187,
+    4,
+    2,
+    3,
+    common[30],
+    common[29]
+  },
+  {
+    188,
+    4,
+    2,
+    3,
+    common[32],
+    common[31]
+  },
+  {
+    189,
+    4,
+    2,
+    3,
+    common[34],
+    common[33]
+  },
+  {
+    190,
+    4,
+    2,
+    3,
+    common[36],
+    common[35]
+  },
+  {
+    191,
+    1,
+    2,
+    2,
+    common[186]
+  },
+  {
+    192,
+    1,
+    2,
+    2,
+    common[187]
+  },
+  {
+    193,
+    1,
+    2,
+    2,
+    common[188]
+  },
+  {
+    194,
+    1,
+    2,
+    2,
+    common[189]
+  },
+  {
+    195,
+    1,
+    2,
+    2,
+    common[190]
+  },
+  {
+    196,
+    1,
+    2,
+    2,
+    common[191]
+  },
+  {
+    197,
+    1,
+    2,
+    2,
+    common[192]
+  },
+  {
+    198,
+    1,
+    2,
+    2,
+    common[193]
+  },
+  {
+    199,
+    1,
+    2,
+    2,
+    common[194]
+  },
+  {
+    200,
+    1,
+    2,
+    2,
+    common[195]
+  },
+  {
+    201,
+    1,
+    2,
+    2,
+    common[196]
+  },
+  {
+    202,
+    1,
+    2,
+    2,
+    common[197]
+  },
+  {
+    203,
+    1,
+    2,
+    2,
+    common[198]
+  },
+  {
+    204,
+    1,
+    2,
+    2,
+    common[199]
+  },
+  {
+    205,
+    1,
+    2,
+    2,
+    common[200]
+  },
+  {
+    206,
+    1,
+    2,
+    2,
+    common[201]
+  },
+  {
+    207,
+    1,
+    2,
+    2,
+    common[202]
+  },
+  {
+    208,
+    1,
+    2,
+    2,
+    common[203]
+  },
+  {
+    209,
+    1,
+    2,
+    2,
+    common[204]
+  },
+  {
+    210,
+    1,
+    2,
+    2,
+    common[205]
+  },
+  {
+    211,
+    1,
+    2,
+    2,
+    common[37]
+  },
+  {
+    212,
+    1,
+    2,
+    2,
+    common[38]
+  },
+  {
+    213,
+    1,
+    2,
+    2,
+    common[39]
+  },
+  {
+    214,
+    1,
+    2,
+    2,
+    common[40]
+  },
+  {
+    215,
+    1,
+    2,
+    2,
+    common[41]
+  },
+  {
+    216,
+    1,
+    2,
+    2,
+    common[42]
+  },
+  {
+    217,
+    1,
+    2,
+    2,
+    common[43]
+  },
+  {
+    218,
+    1,
+    2,
+    2,
+    common[44]
+  },
+  {
+    219,
+    1,
+    2,
+    2,
+    common[45]
+  },
+  {
+    220,
+    1,
+    2,
+    2,
+    common[46]
+  },
+  {
+    221,
+    2,
+    2,
+    2,
+    common[206]
+  },
+  {
+    222,
+    2,
+    2,
+    2,
+    common[207]
+  },
+  {
+    223,
+    2,
+    2,
+    2,
+    common[208]
+  },
+  {
+    224,
+    2,
+    2,
+    2,
+    common[209]
+  },
+  {
+    225,
+    2,
+    2,
+    2,
+    common[210]
+  },
+  {
+    226,
+    2,
+    2,
+    2,
+    common[211]
+  },
+  {
+    227,
+    2,
+    2,
+    2,
+    common[212]
+  },
+  {
+    228,
+    2,
+    2,
+    2,
+    common[213]
+  },
+  {
+    229,
+    2,
+    2,
+    2,
+    common[214]
+  },
+  {
+    230,
+    2,
+    2,
+    2,
+    common[215]
+  },
+  {
+    231,
+    2,
+    2,
+    2,
+    common[216]
+  },
+  {
+    232,
+    2,
+    2,
+    3,
+    common[217],
+    common[56]
+  },
+  {
+    233,
+    2,
+    2,
+    2,
+    common[47]
+  },
+  {
+    234,
+    2,
+    2,
+    2,
+    common[48]
+  },
+  {
+    235,
+    2,
+    2,
+    2,
+    common[49]
+  },
+  {
+    236,
+    2,
+    2,
+    2,
+    common[50]
+  },
+  {
+    237,
+    2,
+    2,
+    2,
+    common[51]
+  },
+  {
+    238,
+    2,
+    2,
+    2,
+    common[52]
+  },
+  {
+    239,
+    2,
+    2,
+    2,
+    common[53]
+  },
+  {
+    240,
+    2,
+    2,
+    2,
+    common[54]
+  },
+  {
+    241,
+    2,
+    2,
+    2,
+    common[55]
+  },
+  {
+    242,
+    2,
+    2,
+    3,
+    common[57],
+    common[56]
+  },
+  {
+    243,
+    3,
+    2,
+    2,
+    common[218]
+  },
+  {
+    244,
+    3,
+    2,
+    2,
+    common[219]
+  },
+  {
+    245,
+    3,
+    2,
+    2,
+    common[220]
+  },
+  {
+    246,
+    3,
+    2,
+    2,
+    common[221]
+  },
+  {
+    247,
+    3,
+    2,
+    2,
+    common[222]
+  },
+  {
+    248,
+    3,
+    2,
+    2,
+    common[223]
+  },
+  {
+    249,
+    3,
+    2,
+    2,
+    common[224]
+  },
+  {
+    250,
+    3,
+    2,
+    2,
+    common[225]
+  },
+  {
+    251,
+    3,
+    2,
+    2,
+    common[226]
+  },
+  {
+    252,
+    3,
+    2,
+    2,
+    common[227]
+  },
+  {
+    253,
+    3,
+    2,
+    2,
+    common[228]
+  },
+  {
+    254,
+    3,
+    2,
+    2,
+    common[229]
+  },
+  {
+    255,
+    3,
+    2,
+    2,
+    common[230]
+  },
+  {
+    256,
+    3,
+    2,
+    2,
+    common[231]
+  },
+  {
+    257,
+    3,
+    2,
+    2,
+    common[232]
+  },
+  {
+    258,
+    3,
+    2,
+    2,
+    common[233]
+  },
+  {
+    259,
+    3,
+    2,
+    2,
+    common[234]
+  },
+  {
+    260,
+    3,
+    2,
+    2,
+    common[235]
+  },
+  {
+    261,
+    3,
+    2,
+    2,
+    common[236]
+  },
+  {
+    262,
+    3,
+    2,
+    2,
+    common[237]
+  },
+  {
+    263,
+    3,
+    2,
+    2,
+    common[58]
+  },
+  {
+    264,
+    3,
+    2,
+    2,
+    common[59]
+  },
+  {
+    265,
+    3,
+    2,
+    2,
+    common[60]
+  },
+  {
+    266,
+    3,
+    2,
+    2,
+    common[61]
+  },
+  {
+    267,
+    3,
+    2,
+    2,
+    common[62]
+  },
+  {
+    268,
+    3,
+    2,
+    2,
+    common[63]
+  },
+  {
+    269,
+    3,
+    2,
+    2,
+    common[64]
+  },
+  {
+    270,
+    3,
+    2,
+    2,
+    common[65]
+  },
+  {
+    271,
+    3,
+    2,
+    3,
+    common[67],
+    common[66]
+  },
+  {
+    272,
+    3,
+    2,
+    3,
+    common[69],
+    common[68]
+  },
+  {
+    273,
+    4,
+    3,
+    1,
+    common[70]
+  },
+  {
+    274,
+    4,
+    3,
+    1,
+    common[71]
+  },
+  {
+    275,
+    4,
+    3,
+    1,
+    common[72]
+  },
+  {
+    276,
+    4,
+    3,
+    1,
+    common[73]
+  },
+  {
+    277,
+    4,
+    3,
+    1,
+    common[74]
+  },
+  {
+    278,
+    4,
+    3,
+    1,
+    common[75]
+  },
+  {
+    279,
+    4,
+    3,
+    1,
+    common[76]
+  },
+  {
+    280,
+    4,
+    3,
+    1,
+    common[77]
+  },
+  {
+    281,
+    4,
+    3,
+    1,
+    common[78]
+  },
+  {
+    282,
+    4,
+    3,
+    1,
+    common[79]
+  },
+  {
+    283,
+    4,
+    3,
+    1,
+    common[80]
+  },
+  {
+    284,
+    4,
+    3,
+    1,
+    common[81]
+  },
+  {
+    285,
+    4,
+    3,
+    1,
+    common[82]
+  },
+  {
+    286,
+    4,
+    3,
+    1,
+    common[83]
+  },
+  {
+    287,
+    4,
+    3,
+    1,
+    common[84]
+  },
+  {
+    288,
+    4,
+    3,
+    1,
+    common[85]
+  },
+  {
+    289,
+    4,
+    3,
+    1,
+    common[86]
+  },
+  {
+    290,
+    4,
+    3,
+    1,
+    common[87]
+  },
+  {
+    291,
+    4,
+    3,
+    1,
+    common[88]
+  },
+  {
+    292,
+    4,
+    3,
+    1,
+    common[89]
+  },
+  {
+    293,
+    4,
+    3,
+    1,
+    common[90]
+  },
+  {
+    294,
+    4,
+    3,
+    1,
+    common[91]
+  },
+  {
+    295,
+    4,
+    3,
+    1,
+    common[92]
+  },
+  {
+    296,
+    4,
+    3,
+    1,
+    common[93]
+  },
+  {
+    297,
+    4,
+    3,
+    1,
+    common[94]
+  },
+  {
+    298,
+    4,
+    3,
+    1,
+    common[95]
+  },
+  {
+    299,
+    4,
+    3,
+    1,
+    common[96]
+  },
+  {
+    300,
+    4,
+    3,
+    1,
+    common[97]
+  },
+  {
+    301,
+    4,
+    3,
+    1,
+    common[98]
+  },
+  {
+    302,
+    4,
+    3,
+    1,
+    common[99]
+  },
+  {
+    303,
+    4,
+    3,
+    1,
+    common[100]
+  },
+  {
+    304,
+    4,
+    3,
+    1,
+    common[101]
+  },
+  {
+    305,
+    4,
+    3,
+    1,
+    common[102]
+  },
+  {
+    306,
+    4,
+    3,
+    1,
+    common[103]
+  },
+  {
+    307,
+    4,
+    3,
+    1,
+    common[104]
+  },
+  {
+    308,
+    4,
+    3,
+    1,
+    common[105]
+  },
+  {
+    309,
+    4,
+    3,
+    1,
+    common[106]
+  },
+  {
+    310,
+    4,
+    3,
+    1,
+    common[107]
+  },
+  {
+    311,
+    4,
+    3,
+    1,
+    common[108]
+  },
+  {
+    312,
+    4,
+    3,
+    1,
+    common[109]
+  },
+  {
+    313,
+    4,
+    3,
+    1,
+    common[110]
+  },
+  {
+    314,
+    4,
+    3,
+    1,
+    common[111]
+  },
+  {
+    315,
+    4,
+    3,
+    1,
+    common[112]
+  },
+  {
+    316,
+    4,
+    3,
+    1,
+    common[113]
+  },
+  {
+    317,
+    4,
+    3,
+    1,
+    common[114]
+  },
+  {
+    318,
+    4,
+    3,
+    1,
+    common[115]
+  },
+  {
+    319,
+    4,
+    3,
+    1,
+    common[116]
+  },
+  {
+    320,
+    4,
+    3,
+    1,
+    common[117]
+  },
+  {
+    321,
+    4,
+    3,
+    1,
+    common[118]
+  },
+  {
+    322,
+    4,
+    3,
+    1,
+    common[119]
+  },
+  {
+    323,
+    4,
+    3,
+    1,
+    common[120]
+  },
+  {
+    324,
+    4,
+    3,
+    1,
+    common[121]
+  },
+  {
+    325,
+    4,
+    3,
+    1,
+    common[122]
+  },
+  {
+    326,
+    4,
+    3,
+    1,
+    common[123]
+  },
+  {
+    327,
+    4,
+    3,
+    1,
+    common[124]
+  },
+  {
+    328,
+    4,
+    3,
+    1,
+    common[125]
+  },
+  {
+    329,
+    4,
+    3,
+    1,
+    common[126]
+  },
+  {
+    330,
+    4,
+    3,
+    1,
+    common[127]
+  },
+  {
+    331,
+    4,
+    3,
+    1,
+    common[128]
+  },
+  {
+    332,
+    4,
+    3,
+    1,
+    common[129]
+  },
+  {
+    333,
+    4,
+    3,
+    1,
+    common[130]
+  },
+  {
+    334,
+    4,
+    3,
+    1,
+    common[131]
+  },
+  {
+    335,
+    4,
+    3,
+    1,
+    common[132]
+  },
+  {
+    336,
+    4,
+    3,
+    1,
+    common[133]
+  },
+  {
+    337,
+    4,
+    3,
+    1,
+    common[134]
+  },
+  {
+    338,
+    4,
+    3,
+    1,
+    common[135]
+  },
+  {
+    339,
+    4,
+    3,
+    1,
+    common[136]
+  },
+  {
+    340,
+    4,
+    3,
+    1,
+    common[137]
+  },
+  {
+    341,
+    4,
+    3,
+    1,
+    common[138]
+  },
+  {
+    342,
+    4,
+    3,
+    1,
+    common[139]
+  },
+  {
+    343,
+    4,
+    3,
+    1,
+    common[140]
+  },
+  {
+    344,
+    4,
+    3,
+    1,
+    common[141]
+  },
+  {
+    345,
+    4,
+    3,
+    1,
+    common[142]
+  },
+  {
+    346,
+    4,
+    3,
+    1,
+    common[143]
+  },
+  {
+    347,
+    4,
+    3,
+    1,
+    common[144]
+  },
+  {
+    348,
+    4,
+    3,
+    1,
+    common[145]
+  },
+  {
+    349,
+    4,
+    3,
+    1,
+    common[146]
+  },
+  {
+    350,
+    4,
+    3,
+    1,
+    common[147]
+  },
+  {
+    351,
+    4,
+    3,
+    1,
+    common[148]
+  },
+  {
+    352,
+    4,
+    3,
+    1,
+    common[149]
+  },
+  {
+    353,
+    4,
+    3,
+    3,
+    common[151],
+    common[150]
+  },
+  {
+    354,
+    4,
+    3,
+    3,
+    common[153],
+    common[152]
+  },
+  {
+    355,
+    4,
+    3,
+    3,
+    common[155],
+    common[154]
+  },
+  {
+    356,
+    4,
+    3,
+    2,
+    common[156]
+  },
+  {
+    357,
+    4,
+    3,
+    3,
+    common[158],
+    common[157]
+  },
+  {
+    358,
+    4,
+    3,
+    3,
+    common[160],
+    common[159]
+  },
+  {
+    359,
+    4,
+    3,
+    3,
+    common[162],
+    common[161]
+  },
+  {
+    360,
+    4,
+    3,
+    3,
+    common[164],
+    common[163]
+  },
+  {
+    361,
+    4,
+    3,
+    3,
+    common[166],
+    common[165]
+  },
+  {
+    362,
+    4,
+    3,
+    2,
+    common[167]
+  },
+  {
+    363,
+    4,
+    3,
+    2,
+    common[168]
+  },
+  {
+    364,
+    4,
+    3,
+    3,
+    common[170],
+    common[169]
+  },
+  {
+    365,
+    4,
+    3,
+    3,
+    common[172],
+    common[171]
+  },
+  {
+    366,
+    4,
+    3,
+    3,
+    common[173],
+    common[56]
+  },
+  {
+    367,
+    4,
+    3,
+    3,
+    common[175],
+    common[174]
+  },
+  {
+    368,
+    4,
+    3,
+    3,
+    common[177],
+    common[176]
+  },
+  {
+    369,
+    4,
+    3,
+    3,
+    common[179],
+    common[178]
+  },
+  {
+    370,
+    4,
+    3,
+    3,
+    common[181],
+    common[180]
+  },
+  {
+    371,
+    4,
+    3,
+    3,
+    common[183],
+    common[182]
+  },
+  {
+    372,
+    4,
+    3,
+    3,
+    common[185],
+    common[184]
+  },
+  {
+    373,
+    1,
+    3,
+    2,
+    common[186]
+  },
+  {
+    374,
+    1,
+    3,
+    2,
+    common[187]
+  },
+  {
+    375,
+    1,
+    3,
+    2,
+    common[188]
+  },
+  {
+    376,
+    1,
+    3,
+    2,
+    common[189]
+  },
+  {
+    377,
+    1,
+    3,
+    2,
+    common[190]
+  },
+  {
+    378,
+    1,
+    3,
+    2,
+    common[191]
+  },
+  {
+    379,
+    1,
+    3,
+    2,
+    common[192]
+  },
+  {
+    380,
+    1,
+    3,
+    2,
+    common[193]
+  },
+  {
+    381,
+    1,
+    3,
+    2,
+    common[194]
+  },
+  {
+    382,
+    1,
+    3,
+    2,
+    common[195]
+  },
+  {
+    383,
+    1,
+    3,
+    2,
+    common[196]
+  },
+  {
+    384,
+    1,
+    3,
+    2,
+    common[197]
+  },
+  {
+    385,
+    1,
+    3,
+    2,
+    common[198]
+  },
+  {
+    386,
+    1,
+    3,
+    2,
+    common[199]
+  },
+  {
+    387,
+    1,
+    3,
+    2,
+    common[200]
+  },
+  {
+    388,
+    1,
+    3,
+    2,
+    common[201]
+  },
+  {
+    389,
+    1,
+    3,
+    2,
+    common[202]
+  },
+  {
+    390,
+    1,
+    3,
+    2,
+    common[203]
+  },
+  {
+    391,
+    1,
+    3,
+    2,
+    common[204]
+  },
+  {
+    392,
+    1,
+    3,
+    2,
+    common[205]
+  },
+  {
+    393,
+    2,
+    3,
+    2,
+    common[206]
+  },
+  {
+    394,
+    2,
+    3,
+    2,
+    common[207]
+  },
+  {
+    395,
+    2,
+    3,
+    2,
+    common[208]
+  },
+  {
+    396,
+    2,
+    3,
+    2,
+    common[209]
+  },
+  {
+    397,
+    2,
+    3,
+    2,
+    common[210]
+  },
+  {
+    398,
+    2,
+    3,
+    2,
+    common[211]
+  },
+  {
+    399,
+    2,
+    3,
+    2,
+    common[212]
+  },
+  {
+    400,
+    2,
+    3,
+    2,
+    common[213]
+  },
+  {
+    401,
+    2,
+    3,
+    2,
+    common[214]
+  },
+  {
+    402,
+    2,
+    3,
+    2,
+    common[215]
+  },
+  {
+    403,
+    2,
+    3,
+    2,
+    common[216]
+  },
+  {
+    404,
+    2,
+    3,
+    3,
+    common[217],
+    common[56]
+  },
+  {
+    405,
+    3,
+    3,
+    2,
+    common[218]
+  },
+  {
+    406,
+    3,
+    3,
+    2,
+    common[219]
+  },
+  {
+    407,
+    3,
+    3,
+    2,
+    common[220]
+  },
+  {
+    408,
+    3,
+    3,
+    2,
+    common[221]
+  },
+  {
+    409,
+    3,
+    3,
+    2,
+    common[222]
+  },
+  {
+    410,
+    3,
+    3,
+    2,
+    common[223]
+  },
+  {
+    411,
+    3,
+    3,
+    2,
+    common[224]
+  },
+  {
+    412,
+    3,
+    3,
+    2,
+    common[225]
+  },
+  {
+    413,
+    3,
+    3,
+    2,
+    common[226]
+  },
+  {
+    414,
+    3,
+    3,
+    2,
+    common[227]
+  },
+  {
+    415,
+    3,
+    3,
+    2,
+    common[228]
+  },
+  {
+    416,
+    3,
+    3,
+    2,
+    common[229]
+  },
+  {
+    417,
+    3,
+    3,
+    2,
+    common[230]
+  },
+  {
+    418,
+    3,
+    3,
+    2,
+    common[231]
+  },
+  {
+    419,
+    3,
+    3,
+    2,
+    common[232]
+  },
+  {
+    420,
+    3,
+    3,
+    2,
+    common[233]
+  },
+  {
+    421,
+    3,
+    3,
+    2,
+    common[234]
+  },
+  {
+    422,
+    3,
+    3,
+    2,
+    common[235]
+  },
+  {
+    423,
+    3,
+    3,
+    2,
+    common[236]
+  },
+  {
+    424,
+    3,
+    3,
+    2,
+    common[237]
+  }
 }
 return config, "ID", key
-

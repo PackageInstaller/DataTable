@@ -1,70 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/ui_activity_n34_task_infomation_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34TaskInfomationMainController", UIController)
 UIActivityN34TaskInfomationMainController = UIActivityN34TaskInfomationMainController
-local RewardState = {Unlock = 1, CanGet = 2, Got = 3}
+local RewardState = {
+  Unlock = 1,
+  CanGet = 2,
+  Got = 3
+}
 _enum("RewardState", RewardState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityN34TaskInfomationMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIActivityN34TaskInfomationMainController:LoadDataOnEnter(TT, res, uiParams)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UICommonTopButton")
+  self._commonTopBtn:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, false)
+  end, nil, nil, false)
   self._activityConst = UIActivityCustomConst:New(self:GetCampaignType(), self:GetComponentIds())
-  ;
-  (self._activityConst):LoadData(TT, res)
-  do
-    if res and not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
-      campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
-    end
-    self._questComponent = (self._activityConst):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
-    self._component = (self._activityConst):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
+  self._activityConst:LoadData(TT, res)
+  if res and not res:GetSucc() then
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
   end
+  self._questComponent = self._activityConst:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
+  self._component, self._componentInfo = self._activityConst:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN34TaskInfomationMainController:OnShow()
   self._animClip = {
-[1] = {"uieff_UIActivityN34TaskInfomationMainController_in", 667}
-, 
-[2] = {"uieff_UIActivityN34TaskInfomationMainController_in", 700}
-, 
-[3] = {"uieff_UIActivityN34TaskInfomationMainController_in", 700}
-, 
-[4] = {"uieff_UIActivityN34TaskInfomationMainController_in", 700}
-, 
-[5] = {"uieff_UIActivityN34TaskInfomationMainController_in", 700}
-}
+    [1] = {
+      "uieff_UIActivityN34TaskInfomationMainController_in",
+      667
+    },
+    [2] = {
+      "uieff_UIActivityN34TaskInfomationMainController_in",
+      700
+    },
+    [3] = {
+      "uieff_UIActivityN34TaskInfomationMainController_in",
+      700
+    },
+    [4] = {
+      "uieff_UIActivityN34TaskInfomationMainController_in",
+      700
+    },
+    [5] = {
+      "uieff_UIActivityN34TaskInfomationMainController_in",
+      700
+    }
+  }
   self:GetComponents()
   self:Init()
   self:PlayAnimCoro(1)
   self:AttachEvent(GameEventType.OnN34SurveyEvaluateFinish, self.RefreshRewardItem)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN34TaskRefreshEvent)
+function UIActivityN34TaskInfomationMainController:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN34TaskRefreshEvent)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.GetComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN34TaskInfomationMainController:GetComponents()
   self._spine = self:GetUIComponent("SpineLoader", "spine")
   self._rewardImage = self:GetUIComponent("Image", "reward")
   self._plotBtn = self:GetGameObject("Plot")
@@ -75,249 +68,169 @@ UIActivityN34TaskInfomationMainController.GetComponents = function(self)
   self._itemsStar = {}
   local len = #self:GetSurveyCfg()
   for i = 1, len do
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._items)[i] = self:GetUIComponent("UISelectObjectPath", "item" .. i)
+    self._items[i] = self:GetUIComponent("UISelectObjectPath", "item" .. i)
   end
   for i = 1, len do
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._itemsStar)[i] = self:GetGameObject("star" .. i)
+    self._itemsStar[i] = self:GetGameObject("star" .. i)
   end
   self._atlas = self:GetAsset("UIN34Task.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._rewardRedPoint):SetActive(false)
+function UIActivityN34TaskInfomationMainController:Init()
+  self._rewardRedPoint:SetActive(false)
   self:RefreshRewardItem()
-  for index,value in ipairs(self._items) do
+  for index, value in ipairs(self._items) do
     local sp = value:SpawnObject("UIActivityN34TaskInfomationItem")
     sp:SetData(self:GetSurveyCfg(index), self._itemModule, self._component, self._componentInfo)
-    ;
-    (table.insert)(self._itemWeights, sp)
+    table.insert(self._itemWeights, sp)
     local cfg = self:GetSurveyCfg(index)
-    local count = (self._itemModule):GetItemCount(cfg.TrustItem)
-    ;
-    ((self._itemsStar)[index]):SetActive(cfg.TrustTotal <= count)
+    local count = self._itemModule:GetItemCount(cfg.TrustItem)
+    self._itemsStar[index]:SetActive(count >= cfg.TrustTotal)
     self:PlayAnimCoro(index + 1)
   end
-  ;
-  (self._spine):LoadSpine("n34_g_leiting_spine_idle")
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._spine:LoadSpine("n34_g_leiting_spine_idle")
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.RefreshRewardItem = function(self)
-  -- function num : 0_5 , upvalues : RewardState
+function UIActivityN34TaskInfomationMainController:RefreshRewardItem()
   local rewardstate = self:CheckItemState()
   local allFinish = self:CheckAllFinish()
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
   if rewardstate == RewardState.CanGet and allFinish then
-    (self._rewardImage).sprite = (self._atlas):GetSprite("n34_dc_reward1")
-    ;
-    (self._plotBtn):SetActive(false)
-    ;
-    (self._rewardRedPoint):SetActive(true)
-  else
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-    if rewardstate == RewardState.Unlock then
-      (self._rewardImage).sprite = (self._atlas):GetSprite("n34_dc_reward2")
-      ;
-      (self._plotBtn):SetActive(false)
-      ;
-      (self._rewardRedPoint):SetActive(false)
-    else
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-      if rewardstate == RewardState.Got then
-        (self._rewardImage).sprite = (self._atlas):GetSprite("n34_dc_reward3")
-        ;
-        (self._plotBtn):SetActive(true)
-        ;
-        (self._rewardRedPoint):SetActive(false)
-      end
-    end
+    self._rewardImage.sprite = self._atlas:GetSprite("n34_dc_reward1")
+    self._plotBtn:SetActive(false)
+    self._rewardRedPoint:SetActive(true)
+  elseif rewardstate == RewardState.Unlock then
+    self._rewardImage.sprite = self._atlas:GetSprite("n34_dc_reward2")
+    self._plotBtn:SetActive(false)
+    self._rewardRedPoint:SetActive(false)
+  elseif rewardstate == RewardState.Got then
+    self._rewardImage.sprite = self._atlas:GetSprite("n34_dc_reward3")
+    self._plotBtn:SetActive(true)
+    self._rewardRedPoint:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.Refresh = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  for index,value in ipairs(self._itemWeights) do
+function UIActivityN34TaskInfomationMainController:Refresh()
+  for index, value in ipairs(self._itemWeights) do
     value:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.CheckAllFinish = function(self)
-  -- function num : 0_7
+function UIActivityN34TaskInfomationMainController:CheckAllFinish()
   if not self._component then
     return false
   end
-  do return #self:GetSurveyCfg() <= #((self._componentInfo).info).pet_unlock end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return #self._componentInfo.info.pet_unlock >= #self:GetSurveyCfg()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.CheckItemState = function(self)
-  -- function num : 0_8 , upvalues : _ENV, RewardState
-  local questModule = (GameGlobal.GetModule)(QuestModule)
-  local cfg = (Cfg.cfg_global).survey_main_task_id
-  local mainTaskId = nil
+function UIActivityN34TaskInfomationMainController:CheckItemState()
+  local questModule = GameGlobal.GetModule(QuestModule)
+  local cfg = Cfg.cfg_global.survey_main_task_id
+  local mainTaskId
   if cfg and cfg.IntValue then
     mainTaskId = cfg.IntValue
   end
   local state = RewardState.Unlock
   local quest = questModule:GetQuest(mainTaskId)
-  local qState = (self._questComponent):CheckCampaignQuestStatus(quest:QuestInfo())
+  local qState = self._questComponent:CheckCampaignQuestStatus(quest:QuestInfo())
   if qState == CampaignQuestStatus.CQS_Taken then
     state = RewardState.Got
-  else
-    if qState == CampaignQuestStatus.CQS_Completed then
-      state = RewardState.CanGet
-    end
+  elseif qState == CampaignQuestStatus.CQS_Completed then
+    state = RewardState.CanGet
   end
   return state
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.RewardOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV, RewardState
-  local cfg = (Cfg.cfg_global).survey_main_task_id
-  local mainTaskId = nil
+function UIActivityN34TaskInfomationMainController:RewardOnClick()
+  local cfg = Cfg.cfg_global.survey_main_task_id
+  local mainTaskId
   if cfg and cfg.IntValue then
     mainTaskId = cfg.IntValue
   end
   if not mainTaskId then
-    return 
+    return
   end
   local allFinish = self:CheckAllFinish()
   if allFinish and self:CheckItemState() == RewardState.CanGet then
     self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self, mainTaskId
-    local asyncRes = AsyncRequestRes:New()
-    local ret, rewards = (self._questComponent):HandleQuestTake(TT, asyncRes, mainTaskId)
-    if asyncRes:GetSucc() then
-      self:ShowRewards(rewards, function()
-      -- function num : 0_9_0_0 , upvalues : self
-      self:RefreshRewardItem()
-      self:_ShowFinalStory()
-    end
-)
-    end
-  end
-)
+      local asyncRes = AsyncRequestRes:New()
+      local ret, rewards = self._questComponent:HandleQuestTake(TT, asyncRes, mainTaskId)
+      if asyncRes:GetSucc() then
+        self:ShowRewards(rewards, function()
+          self:RefreshRewardItem()
+          self:_ShowFinalStory()
+        end)
+      end
+    end)
   else
-    local questModule = (GameGlobal.GetModule)(QuestModule)
+    local questModule = GameGlobal.GetModule(QuestModule)
     local quest = questModule:GetQuest(mainTaskId)
-    local awards = (quest._questInfo).rewards
+    local awards = quest._questInfo.rewards
     self:ShowDialog("UIActivityN34TaskInfomationAwards", awards)
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.ShowRewards = function(self, rewards, onFinish)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN34TaskInfomationMainController:ShowRewards(rewards, onFinish)
   local petIdList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if petModule:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  local showItem = function()
-    -- function num : 0_10_0 , upvalues : self, rewards, onFinish
+  
+  local function showItem()
     self:ShowDialog("UIGetItemController", rewards, onFinish)
   end
-
-  if (table.count)(petIdList) > 0 then
+  
+  if table.count(petIdList) > 0 then
     self:ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_10_1 , upvalues : _ENV, showItem
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    showItem()
-  end
-)
-    return 
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      showItem()
+    end)
+    return
   end
   showItem()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.CloseOnClick = function(self)
-  -- function num : 0_11
+function UIActivityN34TaskInfomationMainController:CloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.GetSurveyCfg = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityN34TaskInfomationMainController:GetSurveyCfg(index)
   if index then
-    return (Cfg.cfg_component_survey)[index]
+    return Cfg.cfg_component_survey[index]
   end
-  return (Cfg.cfg_component_survey)({})
+  return Cfg.cfg_component_survey({})
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.GetCampaignType = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN34TaskInfomationMainController:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N34
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.GetComponentIds = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN34TaskInfomationMainController:GetComponentIds()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY
   componentIds[#componentIds + 1] = ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST
   return componentIds
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.PlayAnimCoro = function(self, index, callback)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN34TaskInfomationMainController:PlayAnimCoro(index, callback)
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, index, _ENV, callback
     self:Lock("UIActivityN34TaskInfomationMainController:PlayAnimCoro")
-    ;
-    (self._anim):Play(((self._animClip)[index])[1])
-    YIELD(TT, ((self._animClip)[index])[2])
+    self._anim:Play(self._animClip[index][1])
+    YIELD(TT, self._animClip[index][2])
     if callback then
       callback()
     end
     self:UnLock("UIActivityN34TaskInfomationMainController:PlayAnimCoro")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController._ShowFinalStory = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local cfg = (Cfg.cfg_n34_final_story)[1]
+function UIActivityN34TaskInfomationMainController:_ShowFinalStory()
+  local cfg = Cfg.cfg_n34_final_story[1]
   self:ShowDialog("UIStoryController", cfg.StoryID)
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN34TaskInfomationMainController.PlotOnClick = function(self)
-  -- function num : 0_17
+function UIActivityN34TaskInfomationMainController:PlotOnClick()
   self:_ShowFinalStory()
 end
-
-

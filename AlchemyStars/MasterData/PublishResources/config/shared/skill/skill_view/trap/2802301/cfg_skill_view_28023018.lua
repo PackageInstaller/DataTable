@@ -1,33 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/trap/2802301/cfg_skill_view_28023018.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayDeleteWaringArea; "}
-}
-, 
-{2, 2, 60, 1, 1, 0, 
-{
-[1] = {
-gridPos = {x = 5, y = 5}
-, effectID = 280230101}
-}
-}
-, 
-{3, 3, 0, 1, 2, 100, 
-{" PlayDeleteWaringArea; PlayMonster2802301CentralEffect,effectID=280230106,posY=5,offset=0|0.5; PlayAudio,audioID = 8022,audioType=1; Wait,waitTime=1850; "}
-}
-, 
-{4, 4, 0, 1, 2, 100, 
-{" DataSelectScopeGridRange,effectType=1,damageInfoIndex=1; DataSortScopeGridRange,sortType=17; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeEffect,effectID=0,label=playRangeEffect; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=0,deathClear=0; Wait,waitTime=100; DataSelectNextScopeGridRange,label=selectNextGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; "}
-}
-, 
-{5, 5, 0, 1, 1, 1850, 
-{"PlaySummonTrap,trapID=280230111,effectID=741; PlayAudio,audioID = 8023,audioType=1;"}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayDeleteWaringArea; "
+    }
+  },
+  {
+    2,
+    2,
+    60,
+    1,
+    1,
+    0,
+    {
+      [1] = {
+        gridPos = {x = 5, y = 5},
+        effectID = 280230101
+      }
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    2,
+    100,
+    {
+      " PlayDeleteWaringArea; PlayMonster2802301CentralEffect,effectID=280230106,posY=5,offset=0|0.5; PlayAudio,audioID = 8022,audioType=1; Wait,waitTime=1850; "
+    }
+  },
+  {
+    4,
+    4,
+    0,
+    1,
+    2,
+    100,
+    {
+      " DataSelectScopeGridRange,effectType=1,damageInfoIndex=1; DataSortScopeGridRange,sortType=17; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeEffect,effectID=0,label=playRangeEffect; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=0,deathClear=0; Wait,waitTime=100; DataSelectNextScopeGridRange,label=selectNextGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; "
+    }
+  },
+  {
+    5,
+    5,
+    0,
+    1,
+    1,
+    1850,
+    {
+      "PlaySummonTrap,trapID=280230111,effectID=741; PlayAudio,audioID = 8023,audioType=1;"
+    }
+  }
 }
 return config, "ID", key
-

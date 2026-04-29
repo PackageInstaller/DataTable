@@ -1,189 +1,120 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/scene/homeland_scene_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandSceneEffect", Object)
 HomelandSceneEffect = HomelandSceneEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandSceneEffect.Constructor = function(self, ids, effectName, inAni, loopAni, outAni)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandSceneEffect:Constructor(ids, effectName, inAni, loopAni, outAni)
   self._Ids = ids
-  self._Req = (ResourceManager:GetInstance()):SyncLoadAsset(effectName, LoadType.GameObject)
+  self._Req = ResourceManager:GetInstance():SyncLoadAsset(effectName, LoadType.GameObject)
   if self._Req == nil then
-    (Log.error)("HomelandSceneEffect SyncLoadAsset error ", effectName)
+    Log.error("HomelandSceneEffect SyncLoadAsset error ", effectName)
   end
-  self._Obj = (self._Req).Obj
+  self._Obj = self._Req.Obj
   self._visible = false
-  ;
-  (self._Obj):SetActive(self._visible)
+  self._Obj:SetActive(self._visible)
   self._InAni = inAni
   self._LoopAni = loopAni
   self._OutAni = outAni
-  self._EftAni = (self._Obj):GetComponent("Animation")
+  self._EftAni = self._Obj:GetComponent("Animation")
   self._InTimer = nil
   self._LoopTimer = nil
   self._OutTimer = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.SetScale = function(self, value)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._Obj).transform).localScale = value
+function HomelandSceneEffect:SetScale(value)
+  self._Obj.transform.localScale = value
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.SetVisible = function(self, value)
-  -- function num : 0_2
+function HomelandSceneEffect:SetVisible(value)
   if self._visible == value then
-    return 
+    return
   end
   self._visible = value
-  ;
-  (self._Obj):SetActive(self._visible)
+  self._Obj:SetActive(self._visible)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.UpdatePosRota = function(self, pos, rota)
-  -- function num : 0_3
+function HomelandSceneEffect:UpdatePosRota(pos, rota)
   if self._visible == false then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._Obj).transform).position = pos
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._Obj).transform).rotation = rota
+  self._Obj.transform.position = pos
+  self._Obj.transform.rotation = rota
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.SetPos = function(self, pos)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._Obj).transform).position = pos
+function HomelandSceneEffect:SetPos(pos)
+  self._Obj.transform.position = pos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.SetRota = function(self, rota)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._Obj).transform).rotation = rota
+function HomelandSceneEffect:SetRota(rota)
+  self._Obj.transform.rotation = rota
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.Execute = function(self)
-  -- function num : 0_6
+function HomelandSceneEffect:Execute()
   self:SetVisible(true)
   self:PlayIn()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.Exit = function(self)
-  -- function num : 0_7
+function HomelandSceneEffect:Exit()
   if self:PlayOut() == false then
     self:KillSelf()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.KillSelf = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local homeModule = (GameGlobal.GetUIModule)(HomelandModule)
+function HomelandSceneEffect:KillSelf()
+  local homeModule = GameGlobal.GetUIModule(HomelandModule)
   local homeClient = homeModule:GetClient()
   local effMng = homeClient:GetHomelandSceneEffectManager()
   effMng:DeletEffect(self._Ids)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.Dispose = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandSceneEffect:Dispose()
   if self._InTimer ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._InTimer)
+    GameGlobal.Timer():CancelEvent(self._InTimer)
   end
   if self._LoopTimer ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._LoopTimer)
+    GameGlobal.Timer():CancelEvent(self._LoopTimer)
   end
   if self._OutTimer ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._OutTimer)
+    GameGlobal.Timer():CancelEvent(self._OutTimer)
   end
   if self._Req ~= nil then
-    (self._Obj):SetActive(false)
-    ;
-    (self._Req):Dispose()
+    self._Obj:SetActive(false)
+    self._Req:Dispose()
   end
   self._visible = false
   self._Obj = nil
   self._Req = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.PlayIn = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if self._EftAni ~= nil and self._InAni ~= nil and self._InAni ~= "" and (self._EftAni):Play(self._InAni) == true then
-    local tt = ((self._EftAni):GetClip(self._InAni)).length * 1000
-    self._InTimer = ((GameGlobal.Timer)()):AddEvent(tt, function()
-    -- function num : 0_10_0 , upvalues : self
-    self._InTimer = nil
-    self:PlayLoop()
-  end
-)
+function HomelandSceneEffect:PlayIn()
+  if self._EftAni ~= nil and self._InAni ~= nil and self._InAni ~= "" and self._EftAni:Play(self._InAni) == true then
+    local tt = self._EftAni:GetClip(self._InAni).length * 1000
+    self._InTimer = GameGlobal.Timer():AddEvent(tt, function()
+      self._InTimer = nil
+      self:PlayLoop()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.PlayLoop = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if self._EftAni ~= nil and self._LoopAni ~= nil and self._LoopAni ~= "" and (self._EftAni):Play(self._LoopAni) == true then
-    local tt = ((self._EftAni):GetClip(self._LoopAni)).length * 1000
-    self._LoopTimer = ((GameGlobal.Timer)()):AddEvent(tt, function()
-    -- function num : 0_11_0 , upvalues : self
-    self._LoopTimer = nil
-  end
-)
+function HomelandSceneEffect:PlayLoop()
+  if self._EftAni ~= nil and self._LoopAni ~= nil and self._LoopAni ~= "" and self._EftAni:Play(self._LoopAni) == true then
+    local tt = self._EftAni:GetClip(self._LoopAni).length * 1000
+    self._LoopTimer = GameGlobal.Timer():AddEvent(tt, function()
+      self._LoopTimer = nil
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffect.PlayOut = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function HomelandSceneEffect:PlayOut()
   if self._EftAni == nil then
     return false
   end
-  do
-    if self._OutAni ~= nil and self._OutAni ~= "" and (self._EftAni):Play(self._OutAni) == true then
-      local tt = ((self._EftAni):GetClip(self._OutAni)).length * 1000
-      self._OutTimer = ((GameGlobal.Timer)()):AddEvent(tt, function()
-    -- function num : 0_12_0 , upvalues : self
-    self._OutTimer = nil
-    self:KillSelf()
+  if self._OutAni ~= nil and self._OutAni ~= "" and self._EftAni:Play(self._OutAni) == true then
+    local tt = self._EftAni:GetClip(self._OutAni).length * 1000
+    self._OutTimer = GameGlobal.Timer():AddEvent(tt, function()
+      self._OutTimer = nil
+      self:KillSelf()
+    end)
+    return true
   end
-)
-      return true
-    end
-    ;
-    (self._EftAni):Stop()
-    return false
-  end
+  self._EftAni:Stop()
+  return false
 end
-
-

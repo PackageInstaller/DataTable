@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_home_domitory_pet_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeDomitoryPetCard", UICustomWidget)
 UIHomeDomitoryPetCard = UIHomeDomitoryPetCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeDomitoryPetCard.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomeDomitoryPetCard:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryPetCard.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeDomitoryPetCard:InitWidget()
   self.root = self:GetGameObject("root")
   self.info = self:GetUIComponent("UISelectObjectPath", "info")
   self.noinfo = self:GetGameObject("noinfo")
@@ -29,77 +19,63 @@ UIHomeDomitoryPetCard.InitWidget = function(self)
   self._spPet = self:GetUIComponent("UISelectObjectPath", "spPet")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryPetCard.SetData = function(self, pet, removeOne, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomeDomitoryPetCard:SetData(pet, removeOne, onClick)
   self._pet = pet
   self._onClick = onClick
   local spPetActive, tex = self:CheckHomeSpPet()
-  self._spPetItem = (self._spPet):SpawnObject("UIHomeSpPet")
-  ;
-  (self._spPetItem):SetData(spPetActive, tex)
-  self._card = (self.info):SpawnObject("UIHeartItem")
-  ;
-  (self._card):SetData(pet, nil, false, false, nil, nil, false, spPetActive)
-  ;
-  (self._affinity):SetData(pet)
+  self._spPetItem = self._spPet:SpawnObject("UIHomeSpPet")
+  self._spPetItem:SetData(spPetActive, tex)
+  self._card = self.info:SpawnObject("UIHeartItem")
+  self._card:SetData(pet, nil, false, false, nil, nil, false, spPetActive)
+  self._affinity:SetData(pet)
   local module = self:GetModule(HomelandModule)
-  self._canSettle = module:PetCanSettle((self._pet):GetTemplateID())
-  if module:GetPetSettledRoom((self._pet):GetPstID()) == nil then
-    self._isSettled = not self._canSettle
+  self._canSettle = module:PetCanSettle(self._pet:GetTemplateID())
+  if self._canSettle then
+    self._isSettled = module:GetPetSettledRoom(self._pet:GetPstID()) ~= nil
+  else
     self._isSettled = false
-    if removeOne and (self._pet):GetPstID() == removeOne:GetPstID() then
-      (self.noinfo):SetActive(true)
-      ;
-      (self.settled):SetActive(false)
-      ;
-      (self.cantSettle):SetActive(false)
-      self._isRemove = true
-    else
-      (self.noinfo):SetActive(false)
-      self._isRemove = false
-      if self._canSettle then
-        if self._isSettled then
-          (self.settled):SetActive(true)
-          ;
-          (self.cantSettle):SetActive(false)
-        else
-          (self.settled):SetActive(false)
-          ;
-          (self.cantSettle):SetActive(false)
-        end
+  end
+  if removeOne and self._pet:GetPstID() == removeOne:GetPstID() then
+    self.noinfo:SetActive(true)
+    self.settled:SetActive(false)
+    self.cantSettle:SetActive(false)
+    self._isRemove = true
+  else
+    self.noinfo:SetActive(false)
+    self._isRemove = false
+    if self._canSettle then
+      if self._isSettled then
+        self.settled:SetActive(true)
+        self.cantSettle:SetActive(false)
       else
-        (self.settled):SetActive(false)
-        ;
-        (self.cantSettle):SetActive(true)
+        self.settled:SetActive(false)
+        self.cantSettle:SetActive(false)
       end
+    else
+      self.settled:SetActive(false)
+      self.cantSettle:SetActive(true)
     end
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryPetCard.CheckHomeSpPet = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_pet = (Cfg.cfg_pet)[(self._pet):GetTemplateID()]
+function UIHomeDomitoryPetCard:CheckHomeSpPet()
+  local cfg_pet = Cfg.cfg_pet[self._pet:GetTemplateID()]
   if cfg_pet then
     local binderID = cfg_pet.BinderPetID
     if binderID then
-      local petModule = (GameGlobal.GetModule)(PetModule)
-      local homeModule = (GameGlobal.GetModule)(HomelandModule)
-      local cfg_pet = (Cfg.cfg_pet)({})
+      local petModule = GameGlobal.GetModule(PetModule)
+      local homeModule = GameGlobal.GetModule(HomelandModule)
+      local cfg_pet = Cfg.cfg_pet({})
       local innerPets = homeModule:GetAllDomitoryPets()
       if innerPets then
         for i = 1, #innerPets do
           local pet = innerPets[i]
           local petid = pet:GetTemplateID()
           local _cfg = cfg_pet[petid]
-          if _cfg and petid ~= (self._pet):GetTemplateID() then
+          if _cfg and petid ~= self._pet:GetTemplateID() then
             local _binderID = _cfg.BinderPetID
             if _binderID == binderID then
-              local tex = (StringTable.Get)("str_homeland_domitory_sp_pet_tex", (StringTable.Get)(pet:GetPetName()))
+              local tex = StringTable.Get("str_homeland_domitory_sp_pet_tex", StringTable.Get(pet:GetPetName()))
               return true, tex
             end
           end
@@ -107,41 +83,25 @@ UIHomeDomitoryPetCard.CheckHomeSpPet = function(self)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryPetCard.bgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomeDomitoryPetCard:bgOnClick(go)
   if not self._isRemove and self._isSettled then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_domitory_pet_is_settled"))
-    return 
-  else
-    if not self._canSettle then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_domitory_pet_cant_settle"))
-      return 
-    end
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_domitory_pet_is_settled"))
+    return
+  elseif not self._canSettle then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_domitory_pet_cant_settle"))
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ForceFinishGuideStep, GuideType.Button)
-  ;
-  (self._onClick)(self._pet, self._isRemove)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ForceFinishGuideStep, GuideType.Button)
+  self._onClick(self._pet, self._isRemove)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryPetCard.onSelectChanged = function(self, pet)
-  -- function num : 0_5
+function UIHomeDomitoryPetCard:onSelectChanged(pet)
   if not pet then
-    (self.bg):SetActive(false)
-    return 
+    self.bg:SetActive(false)
+    return
   end
-  ;
-  (self.bg):SetActive((self._pet):GetPstID() == pet:GetPstID())
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self.bg:SetActive(self._pet:GetPstID() == pet:GetPstID())
 end
-
-

@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_story_tips_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillStoryTipsPhase", PlaySkillPhaseBase)
 PlaySkillStoryTipsPhase = PlaySkillStoryTipsPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillStoryTipsPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillStoryTipsPhase:PlayFlight(TT, casterEntity, phaseParam)
   local param = phaseParam
   local prob = param:GetProb()
   local tipsList = param:GetTipsList()
-  local rand = (Mathf.Random)(1, 100)
-  if rand <= prob then
-    local index = (Mathf.Random)(1, #tipsList)
-    local monsterTemplateID = (casterEntity:MonsterID()):GetMonsterID()
-    local innerStoryService = (self._world):GetService("InnerStory")
+  local rand = Mathf.Random(1, 100)
+  if prob >= rand then
+    local index = Mathf.Random(1, #tipsList)
+    local monsterTemplateID = casterEntity:MonsterID():GetMonsterID()
+    local innerStoryService = self._world:GetService("InnerStory")
     innerStoryService:DoMonsterStoryTips(monsterTemplateID, casterEntity:GetID(), tonumber(tipsList[index]))
   end
 end
-
-

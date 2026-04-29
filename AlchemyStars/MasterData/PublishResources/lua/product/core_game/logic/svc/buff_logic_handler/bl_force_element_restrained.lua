@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_force_element_restrained.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetForceElementRestrained", BuffLogicBase)
 BuffLogicSetForceElementRestrained = BuffLogicSetForceElementRestrained
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetForceElementRestrained.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetForceElementRestrained:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetForceElementRestrained.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicSetForceElementRestrained:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:SetSimpleAttribute("BuffForceElementRestrained", 1)
   return true
 end
 
 _class("BuffLogicRemoveForceElementRestrained", BuffLogicBase)
 BuffLogicRemoveForceElementRestrained = BuffLogicRemoveForceElementRestrained
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveForceElementRestrained.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveForceElementRestrained:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveForceElementRestrained.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicRemoveForceElementRestrained:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:RemoveSimpleAttribute("BuffForceElementRestrained")
   return true
 end
-
-

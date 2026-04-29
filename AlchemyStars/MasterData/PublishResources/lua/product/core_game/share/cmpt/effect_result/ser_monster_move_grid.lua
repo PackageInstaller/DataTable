@@ -1,61 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_monster_move_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectMonsterMoveGridResult", SkillEffectResultBase)
 SkillEffectMonsterMoveGridResult = SkillEffectMonsterMoveGridResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMonsterMoveGridResult.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectMonsterMoveGridResult:GetEffectType()
   return SkillEffectType.MonsterMoveGrid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridResult.Constructor = function(self, walkResultList, isDead)
-  -- function num : 0_1
+function SkillEffectMonsterMoveGridResult:Constructor(walkResultList, isDead)
   self._walkResultList = walkResultList
   self._isDead = isDead
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridResult.GetWalkResultList = function(self)
-  -- function num : 0_2
+function SkillEffectMonsterMoveGridResult:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridResult.IsCasterDead = function(self)
-  -- function num : 0_3
+function SkillEffectMonsterMoveGridResult:IsCasterDead()
   return self._isDeadss
 end
 
 _class("MonsterMoveGridResult", MonsterWalkResult)
 MonsterMoveGridResult = MonsterMoveGridResult
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterMoveGridResult.Constructor = function(self)
-  -- function num : 0_4
+function MonsterMoveGridResult:Constructor()
   self._newPieceType = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveGridResult.SetNewGridType = function(self, pieceType)
-  -- function num : 0_5
+function MonsterMoveGridResult:SetNewGridType(pieceType)
   self._newPieceType = pieceType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveGridResult.GetNewGridType = function(self)
-  -- function num : 0_6
+function MonsterMoveGridResult:GetNewGridType()
   return self._newPieceType
 end
-
-

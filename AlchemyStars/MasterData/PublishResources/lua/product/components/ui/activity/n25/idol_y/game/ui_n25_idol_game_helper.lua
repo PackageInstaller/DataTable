@@ -1,71 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/game/ui_n25_idol_game_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolGameHelper", Object)
 UIN25IdolGameHelper = UIN25IdolGameHelper
-local IdolGameState = {None = 0, Begin = 1, Train = 2, Agreed = 3, Weekend = 4, Concert = 5, TurnEnd = 6}
+local IdolGameState = {
+  None = 0,
+  Begin = 1,
+  Train = 2,
+  Agreed = 3,
+  Weekend = 4,
+  Concert = 5,
+  TurnEnd = 6
+}
 _enum("IdolGameState", IdolGameState)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN25IdolGameHelper.CheckState = function(component, forceActOpened, froceConcertOpened, callback)
-  -- function num : 0_0 , upvalues : _ENV, IdolGameState
-  local breakInfo = (component.m_component_info).break_info
+function UIN25IdolGameHelper.CheckState(component, forceActOpened, froceConcertOpened, callback)
+  local breakInfo = component.m_component_info.break_info
   local roundState = breakInfo.round_state
-  local state, req = nil, nil
+  local state, req
   if roundState == IdolRoundState.IdolRoundState_None then
-    req = (UIN25IdolGameHelper.CheckState_None)(component)
+    req = UIN25IdolGameHelper.CheckState_None(component)
     state = IdolGameState.None
-  else
-    if roundState == IdolRoundState.IdolRoundState_Begin then
-      (UIN25IdolGameHelper.CheckState_Begin)(component)
-      state = IdolGameState.Begin
+  elseif roundState == IdolRoundState.IdolRoundState_Begin then
+    UIN25IdolGameHelper.CheckState_Begin(component)
+    state = IdolGameState.Begin
+  elseif roundState == IdolRoundState.IdolRoundState_Play then
+    UIN25IdolGameHelper.CheckState_Train(component)
+    state = IdolGameState.Train
+  elseif roundState == IdolRoundState.IdolRoundState_End then
+    if UIN25IdolGameHelper.CheckState_Agreed(component) then
+      state = IdolGameState.Agreed
+    elseif UIN25IdolGameHelper.CheckState_Weekend(component, forceActOpened) then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN25IdolCheckState)
+      state = IdolGameState.Weekend
+    elseif UIN25IdolGameHelper.CheckState_Concert(component, froceConcertOpened) then
+      state = IdolGameState.Concert
     else
-      if roundState == IdolRoundState.IdolRoundState_Play then
-        (UIN25IdolGameHelper.CheckState_Train)(component)
-        state = IdolGameState.Train
-      else
-        if roundState == IdolRoundState.IdolRoundState_End then
-          if (UIN25IdolGameHelper.CheckState_Agreed)(component) then
-            state = IdolGameState.Agreed
-          else
-            if (UIN25IdolGameHelper.CheckState_Weekend)(component, forceActOpened) then
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN25IdolCheckState)
-              state = IdolGameState.Weekend
-            else
-              if (UIN25IdolGameHelper.CheckState_Concert)(component, froceConcertOpened) then
-                state = IdolGameState.Concert
-              else
-                ;
-                ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN25IdolCheckState)
-                req = (UIN25IdolGameHelper.CheckState_TurnEnd)(component)
-                state = IdolGameState.TurnEnd
-              end
-            end
-          end
-        end
-      end
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN25IdolCheckState)
+      req = UIN25IdolGameHelper.CheckState_TurnEnd(component)
+      state = IdolGameState.TurnEnd
     end
   end
   if req then
     component:Start_HandleIdolTrain(req.round, req.state, req.trainType, callback)
     state = state % IdolGameState.TurnEnd + 1
-  else
-    if callback then
-      callback()
-    end
+  elseif callback then
+    callback()
   end
-  ;
-  (Log.info)("UIN25IdolGameHelper.CheckState() state = ", state)
+  Log.info("UIN25IdolGameHelper.CheckState() state = ", state)
   return state
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN25IdolGameHelper.CheckState_None = function(component)
-  -- function num : 0_1 , upvalues : _ENV
-  local breakInfo = (component.m_component_info).break_info
+function UIN25IdolGameHelper.CheckState_None(component)
+  local breakInfo = component.m_component_info.break_info
   local req = {}
   req.round = breakInfo.round_index
   req.state = IdolRoundState.IdolRoundState_Begin
@@ -73,97 +57,67 @@ UIN25IdolGameHelper.CheckState_None = function(component)
   return req
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN25IdolGameHelper.CheckState_Begin = function(component)
-  -- function num : 0_2
+function UIN25IdolGameHelper.CheckState_Begin(component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN25IdolGameHelper.CheckState_Train = function(component)
-  -- function num : 0_3 , upvalues : _ENV
-  local breakInfo = (component.m_component_info).break_info
+function UIN25IdolGameHelper.CheckState_Train(component)
+  local breakInfo = component.m_component_info.break_info
   local trainType = breakInfo.train_type
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN25IdolGameTraining", trainType)
+  GameGlobal.UIStateManager():ShowDialog("UIN25IdolGameTraining", trainType)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN25IdolGameHelper.CheckState_Agreed = function(component)
-  -- function num : 0_4 , upvalues : _ENV
-  local breakInfo = (component.m_component_info).break_info
+function UIN25IdolGameHelper.CheckState_Agreed(component)
+  local breakInfo = component.m_component_info.break_info
   local trainType = breakInfo.train_type
   local eventId = component:UI_CheckAgreedEvent(trainType)
   if eventId then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIN25IdolApController", eventId)
+    GameGlobal.UIStateManager():ShowDialog("UIN25IdolApController", eventId)
     return true
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN25IdolGameHelper.CheckState_Weekend = function(component, forceActOpened)
-  -- function num : 0_5 , upvalues : _ENV
-  local isOpen = (not forceActOpened and component:UI_CheckActOnWeekend())
+function UIN25IdolGameHelper.CheckState_Weekend(component, forceActOpened)
+  local isOpen = not forceActOpened and component:UI_CheckActOnWeekend()
   if isOpen then
-    (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-    -- function num : 0_5_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIN25IdolAct", true)
+    CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
+      GameGlobal.UIStateManager():ShowDialog("UIN25IdolAct", true)
+    end)
   end
-)
-  end
-  do return isOpen end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return isOpen
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN25IdolGameHelper.CheckState_Concert = function(component, froceConcertOpened)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25IdolGameHelper.CheckState_Concert(component, froceConcertOpened)
   if froceConcertOpened then
     return false
   end
-  local breakInfo = (component.m_component_info).break_info
+  local breakInfo = component.m_component_info.break_info
   local isConcertDone = breakInfo.isConcertDone
-  do
-    if isConcertDone then
-      local isOpenNextDay = (UIN25IdolGameHelper.OpenDayState)(component.m_component_info)
-      if not isOpenNextDay then
-        (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-    -- function num : 0_6_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIN25IdolNotOpenNextDay")
-  end
-)
-      end
-      return false
+  if isConcertDone then
+    local isOpenNextDay = UIN25IdolGameHelper.OpenDayState(component.m_component_info)
+    if not isOpenNextDay then
+      CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
+        GameGlobal.UIStateManager():ShowDialog("UIN25IdolNotOpenNextDay")
+      end)
     end
-    local roundIndex = breakInfo.round_index
-    local isToday, fansEnough, gapFans = component:UI_CheckConcert()
-    if isToday then
-      if fansEnough then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN25IdolCheckState)
-        ;
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIN25IdolConcertEnter", roundIndex)
-      else
-        ;
-        (CutsceneManager.ExcuteCutsceneIn)("UIN25Idol_Common_Switch", function()
-    -- function num : 0_6_1 , upvalues : _ENV, roundIndex, gapFans
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIN25IdolConcertResult", false, roundIndex, gapFans)
+    return false
   end
-)
-      end
+  local roundIndex = breakInfo.round_index
+  local isToday, fansEnough, gapFans = component:UI_CheckConcert()
+  if isToday then
+    if fansEnough then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN25IdolCheckState)
+      GameGlobal.UIStateManager():ShowDialog("UIN25IdolConcertEnter", roundIndex)
+    else
+      CutsceneManager.ExcuteCutsceneIn("UIN25Idol_Common_Switch", function()
+        GameGlobal.UIStateManager():ShowDialog("UIN25IdolConcertResult", false, roundIndex, gapFans)
+      end)
     end
-    return isToday
   end
+  return isToday
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN25IdolGameHelper.CheckState_TurnEnd = function(component)
-  -- function num : 0_7 , upvalues : _ENV
-  local breakInfo = (component.m_component_info).break_info
+function UIN25IdolGameHelper.CheckState_TurnEnd(component)
+  local breakInfo = component.m_component_info.break_info
   local req = {}
   req.round = breakInfo.round_index + 1
   req.state = IdolRoundState.IdolRoundState_Begin
@@ -171,60 +125,45 @@ UIN25IdolGameHelper.CheckState_TurnEnd = function(component)
   return req
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN25IdolGameHelper.OpenDayState = function(cInfo)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN25IdolGameHelper.OpenDayState(cInfo)
   local unlockTime = cInfo.m_unlock_time
   local breakInfo = cInfo.break_info
   local nextTurn = breakInfo.round_index + 1
   local secondsPerDay = 86400
-  local state = (UIN25IdolGameHelper.ComponentState)(cInfo)
-  if state ~= UISummerOneEnterBtnState.NotOpen or state == UISummerOneEnterBtnState.Normal then
-    local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-    local curStage = (math.floor)((nowTimestamp - unlockTime) / secondsPerDay) + 1
-    local cfgs = (Cfg.cfg_component_idol_round)({Round = nextTurn})
-    if cfgs and #cfgs > 0 then
+  local state = UIN25IdolGameHelper.ComponentState(cInfo)
+  if state == UISummerOneEnterBtnState.NotOpen then
+  elseif state == UISummerOneEnterBtnState.Normal then
+    local nowTimestamp = UICommonHelper.GetNowTimestamp()
+    local curStage = math.floor((nowTimestamp - unlockTime) / secondsPerDay) + 1
+    local cfgs = Cfg.cfg_component_idol_round({Round = nextTurn})
+    if cfgs and 0 < #cfgs then
       local cfg_round = cfgs[1]
       if cfg_round then
         local day = cfg_round.UnlockTime
-        if day <= curStage then
+        if curStage >= day then
           return true
         end
       end
     end
-  else
+  elseif state == UISummerOneEnterBtnState.Closed then
   end
-  do
-    if state == UISummerOneEnterBtnState.Closed then
-      return false
-    end
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN25IdolGameHelper.ComponentState = function(cInfo)
-  -- function num : 0_9 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function UIN25IdolGameHelper.ComponentState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
-
-

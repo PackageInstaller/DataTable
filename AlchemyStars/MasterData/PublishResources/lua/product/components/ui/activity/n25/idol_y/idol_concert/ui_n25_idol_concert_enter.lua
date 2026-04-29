@@ -1,98 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_concert/ui_n25_idol_concert_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolConcertEnter", UIController)
 UIN25IdolConcertEnter = UIN25IdolConcertEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolConcertEnter.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolConcertEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertEnter.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25IdolConcertEnter:OnShow(uiParams)
   self.currentTurn = uiParams[1]
-  local cfgs = (Cfg.cfg_n25_concert)({Turn = self.currentTurn})
-  ;
-  (Log.debug)("###[UIN25IdolConcert] OnShow ! id --> ", self.currentTurn)
+  local cfgs = Cfg.cfg_n25_concert({
+    Turn = self.currentTurn
+  })
+  Log.debug("###[UIN25IdolConcert] OnShow ! id --> ", self.currentTurn)
   self.cfg = cfgs[1]
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertEnter.GetComponents = function(self)
-  -- function num : 0_2
+function UIN25IdolConcertEnter:GetComponents()
   self.anim = self:GetUIComponent("Animation", "SafeArea")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertEnter.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25IdolConcertEnter:OnHide()
   if self.event then
-    ((GameGlobal.Timer)()):CancelEvent(self.event)
+    GameGlobal.Timer():CancelEvent(self.event)
     self.event = nil
   end
   if self.animEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.animEvent)
+    GameGlobal.Timer():CancelEvent(self.animEvent)
     self.animEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertEnter.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25IdolConcertEnter:OnValue()
   local inAnim = "uieff_UIN25IdolConcertEnter_in"
   local inAnimTime = 500
   local loopAnim = "uieff_UIN25IdolConcertEnter_loading"
   local loopAnimTime = 4000
   self._yieldTime = inAnimTime + loopAnimTime
-  ;
-  (self.anim):Play(inAnim)
-  self.animEvent = ((GameGlobal.Timer)()):AddEvent(inAnimTime, function()
-    -- function num : 0_4_0 , upvalues : self, loopAnim
-    (self.anim):Play(loopAnim)
-  end
-)
+  self.anim:Play(inAnim)
+  self.animEvent = GameGlobal.Timer():AddEvent(inAnimTime, function()
+    self.anim:Play(loopAnim)
+  end)
   if self.event then
-    ((GameGlobal.Timer)()):CancelEvent(self.event)
+    GameGlobal.Timer():CancelEvent(self.event)
     self.event = nil
   end
-  self.event = ((GameGlobal.Timer)()):AddEvent(self._yieldTime, function()
-    -- function num : 0_4_1 , upvalues : self
+  self.event = GameGlobal.Timer():AddEvent(self._yieldTime, function()
     self:PlayEnd()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertEnter.PlayEnd = function(self)
-  -- function num : 0_5
-  local before = (self.cfg).BeforeStory
+function UIN25IdolConcertEnter:PlayEnd()
+  local before = self.cfg.BeforeStory
   if before then
     self:ShowDialog("UIN25IdolStoryController", before, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:CloseEnd()
-  end
-)
+      self:CloseEnd()
+    end)
   else
     self:CloseEnd()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolConcertEnter.CloseEnd = function(self)
-  -- function num : 0_6
+function UIN25IdolConcertEnter:CloseEnd()
   self:CloseDialog()
 end
-
-

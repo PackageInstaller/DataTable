@@ -1,75 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_main_cg_dress_up_group_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainCgDressUpGroupItem", UICustomWidget)
 UIMainCgDressUpGroupItem = UIMainCgDressUpGroupItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainCgDressUpGroupItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIMainCgDressUpGroupItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainCgDressUpGroupItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIMainCgDressUpGroupItem:InitWidget()
   self.pool = self:GetUIComponent("UISelectObjectPath", "Pool")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainCgDressUpGroupItem.SetData = function(self, initIndex, initInfos, setIndexDressCb, toggleOpenCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainCgDressUpGroupItem:SetData(initIndex, initInfos, setIndexDressCb, toggleOpenCb)
   self.setIndexDressCb = setIndexDressCb
   self.toggleOpenCb = toggleOpenCb
-  self.items = (self.pool):SpawnObjects("UIMainCgDressUpSingleSelectItem", 5)
-  self.selectCb = function(index)
-    -- function num : 0_2_0 , upvalues : self
+  self.items = self.pool:SpawnObjects("UIMainCgDressUpSingleSelectItem", 5)
+  
+  function self.selectCb(index)
     for i = 1, #self.items do
-      local item = (self.items)[i]
+      local item = self.items[i]
       item:RefreshSelect(index)
     end
-    ;
-    (self.setIndexDressCb)(index)
+    self.setIndexDressCb(index)
   end
-
-  self.toggleCb = function(index, isopen)
-    -- function num : 0_2_1 , upvalues : self, _ENV
+  
+  function self.toggleCb(index, isopen)
     local OnCount = 0
     for i = 1, #self.items do
-      local item = (self.items)[i]
-      if (item.openToggle).isOn then
+      local item = self.items[i]
+      if item.openToggle.isOn then
         OnCount = OnCount + 1
       end
     end
     if OnCount < 1 then
-      (ToastManager.ShowToast)((StringTable.Get)("str_assistant_main_cg_dressup_warning_un_open"))
-      local item = (self.items)[index]
+      ToastManager.ShowToast(StringTable.Get("str_assistant_main_cg_dressup_warning_un_open"))
+      local item = self.items[index]
       item:SetToggleOpen(true)
-      return 
+      return
     end
-    do
-      ;
-      (self.toggleOpenCb)(index, isopen)
-    end
+    self.toggleOpenCb(index, isopen)
   end
-
+  
   for i = 1, #self.items do
-    local item = (self.items)[i]
-    local isopen = (initInfos[i]).range_select
+    local item = self.items[i]
+    local isopen = initInfos[i].range_select
     item:SetData(i, initIndex, isopen, self.selectCb, self.toggleCb)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainCgDressUpGroupItem.SetToggleOpen = function(self, index, isopen)
-  -- function num : 0_3
-  local item = (self.items)[index]
+function UIMainCgDressUpGroupItem:SetToggleOpen(index, isopen)
+  local item = self.items[index]
   item:SetToggleOpen(isopen)
 end
-
-

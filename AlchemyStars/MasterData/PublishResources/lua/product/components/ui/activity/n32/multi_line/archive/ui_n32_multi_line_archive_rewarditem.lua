@@ -1,58 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/archive/ui_n32_multi_line_archive_rewarditem.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineArchiveRewardItem", UICustomWidget)
 UIN32MultiLineArchiveRewardItem = UIN32MultiLineArchiveRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineArchiveRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN32MultiLineArchiveRewardItem:OnShow(uiParams)
   self:InitComponent()
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveRewardItem.InitComponent = function(self)
-  -- function num : 0_1
+function UIN32MultiLineArchiveRewardItem:InitComponent()
   self._item = self:GetUIComponent("UISelectObjectPath", "item")
   self._done = self:GetGameObject("done")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveRewardItem.InitUI = function(self)
-  -- function num : 0_2
-  (self._done):SetActive(false)
-  self._itemWidget = (self._item):SpawnObject("UIN32MultiLineUIItem")
+function UIN32MultiLineArchiveRewardItem:InitUI()
+  self._done:SetActive(false)
+  self._itemWidget = self._item:SpawnObject("UIN32MultiLineUIItem")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveRewardItem.Refresh = function(self)
-  -- function num : 0_3
+function UIN32MultiLineArchiveRewardItem:Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveRewardItem.SetData = function(self, index, item, received, callBack)
-  -- function num : 0_4
+function UIN32MultiLineArchiveRewardItem:SetData(index, item, received, callBack)
   self._index = index
   self._callBack = callBack
   local rew = {}
   rew.assetid = item[1]
   rew.count = item[2]
   self._received = received
-  ;
-  (self._done):SetActive(self._received)
-  ;
-  (self._itemWidget):Flush(rew, function()
-    -- function num : 0_4_0 , upvalues : self, rew
-    (self._callBack)(rew, (self.view).gameObject)
-  end
-)
+  self._done:SetActive(self._received)
+  self._itemWidget:Flush(rew, function()
+    self._callBack(rew, self.view.gameObject)
+  end)
 end
-
-

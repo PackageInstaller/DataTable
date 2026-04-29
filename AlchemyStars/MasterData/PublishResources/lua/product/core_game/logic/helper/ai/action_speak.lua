@@ -1,45 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_speak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSpeak", AINewNode)
 ActionSpeak = ActionSpeak
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSpeak.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_0 , upvalues : _ENV
-  ((ActionSpeak.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionSpeak:InitializeNode(cfg, context, parentNode, configData)
+  ActionSpeak.super.InitializeNode(self, cfg, context, parentNode, configData)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSpeak.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSpeak.super).Reset)(self)
+function ActionSpeak:Reset()
+  ActionSpeak.super.Reset(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSpeak.OnBegin = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionSpeak:OnBegin()
   local casterEntity = self.m_entityOwn
   local prob = self:GetLogicData(-1)
   local tipsList = self:GetLogicData(-2)
-  local rand = (Mathf.Random)(1, 100)
-  if rand <= prob then
-    local index = (Mathf.Random)(1, #tipsList)
-    local innerStoryService = (self._world):GetService("InnerStory")
-    innerStoryService:DoMonsterStoryTips((casterEntity:MonsterID()):GetMonsterID(), casterEntity:GetID(), tonumber(tipsList[index]))
+  local rand = Mathf.Random(1, 100)
+  if prob >= rand then
+    local index = Mathf.Random(1, #tipsList)
+    local innerStoryService = self._world:GetService("InnerStory")
+    innerStoryService:DoMonsterStoryTips(casterEntity:MonsterID():GetMonsterID(), casterEntity:GetID(), tonumber(tipsList[index]))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSpeak.OnUpdate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ActionSpeak:OnUpdate()
   return AINewNodeStatus.Success
 end
-
-

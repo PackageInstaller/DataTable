@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/closing/ui_homeland_movie_closing_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieClosingController", UIController)
 UIHomelandMovieClosingController = UIHomelandMovieClosingController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieClosingController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMovieClosingController:OnShow(uiParams)
   self._record = uiParams[1]
   self._closingItem = uiParams[2]
   self._scoreList = uiParams[3]
@@ -19,25 +12,19 @@ UIHomelandMovieClosingController.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieClosingController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._bsController):StopShowBulletScreen()
+function UIHomelandMovieClosingController:OnHide()
+  self._bsController:StopShowBulletScreen()
   if self._timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+    GameGlobal.Timer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
   if self._AudioGoodId then
-    (AudioHelperController.StopUISound)(self._AudioGoodId)
+    AudioHelperController.StopUISound(self._AudioGoodId)
     self._AudioGoodId = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieClosingController._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandMovieClosingController:_GetComponents()
   self._totalScoreList = self:GetGameObject("totalScoreList")
   self._actorScoreList = self:GetGameObject("actorScoreList")
   self._sceneScoreList = self:GetGameObject("sceneScoreList")
@@ -48,124 +35,74 @@ UIHomelandMovieClosingController._GetComponents = function(self)
   self._qiubuEvaluateTex = self:GetUIComponent("UILocalizationText", "qiubuEvaluateTex")
   self._qiubuEvaluateIcon = self:GetUIComponent("Image", "qiubuEvaluateIcon")
   self._resultRawImage = {}
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._resultRawImage)[1] = self:GetGameObject("ResultRawImage1")
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._resultRawImage)[2] = self:GetGameObject("ResultRawImage2")
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._resultRawImage)[3] = self:GetGameObject("ResultRawImage3")
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._resultRawImage)[4] = self:GetGameObject("ResultRawImage4")
+  self._resultRawImage[1] = self:GetGameObject("ResultRawImage1")
+  self._resultRawImage[2] = self:GetGameObject("ResultRawImage2")
+  self._resultRawImage[3] = self:GetGameObject("ResultRawImage3")
+  self._resultRawImage[4] = self:GetGameObject("ResultRawImage4")
   self._totalScoreIcon = self:GetGameObject("totalScoreIcon")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieClosingController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._SaveBtnObj):SetActive(not self._record)
-  self:SetScoreStar(self._totalScoreList, (self._scoreList).totalScore, true)
-  self:SetScoreStar(self._actorScoreList, (self._scoreList).actorScore)
-  self:SetScoreStar(self._sceneScoreList, (self._scoreList).itemScore)
-  self:SetScoreStar(self._skillScoreList, (self._scoreList).optionScore)
-  self._bsController = (self._BulletScreen):SpawnObject("UIHomelandBulletScreenController")
-  ;
-  (self._bsController):SetData((self._closingItem).BSRefreshTime, (self._closingItem).BSMoveSpeed, (self._scoreList).actorScore, (self._scoreList).itemScore, (self._scoreList).optionScore, (self._scoreList).totalScore)
-  ;
-  (self._bsController):BeginShowBulletScreen()
-  ;
-  (self._qiubuEvaluateTex):SetText((StringTable.Get)((self._closingItem).Description))
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._qiubuEvaluateIcon).sprite = (self._atlas):GetSprite((self._closingItem).DescIcon)
-  ;
-  ((self._resultRawImage)[(self._closingItem).Condition]):SetActive(true)
-  if (self._closingItem).Condition == 4 then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioCelebrate)
-  else
-    if (self._closingItem).Condition == 3 then
-      (AudioHelperController.RequestUISoundSync)(CriAudioIDConst.HomelandAudioCelebrate)
-      self._AudioGoodId = (AudioHelperController.PlayUISoundResource)(CriAudioIDConst.HomelandAudioCelebrate, true)
-    else
-      if (self._closingItem).Condition == 2 then
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioNormal)
-      else
-        if (self._closingItem).Condition == 1 then
-          (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioLose)
-        end
-      end
-    end
+function UIHomelandMovieClosingController:_OnValue()
+  self._SaveBtnObj:SetActive(not self._record)
+  self:SetScoreStar(self._totalScoreList, self._scoreList.totalScore, true)
+  self:SetScoreStar(self._actorScoreList, self._scoreList.actorScore)
+  self:SetScoreStar(self._sceneScoreList, self._scoreList.itemScore)
+  self:SetScoreStar(self._skillScoreList, self._scoreList.optionScore)
+  self._bsController = self._BulletScreen:SpawnObject("UIHomelandBulletScreenController")
+  self._bsController:SetData(self._closingItem.BSRefreshTime, self._closingItem.BSMoveSpeed, self._scoreList.actorScore, self._scoreList.itemScore, self._scoreList.optionScore, self._scoreList.totalScore)
+  self._bsController:BeginShowBulletScreen()
+  self._qiubuEvaluateTex:SetText(StringTable.Get(self._closingItem.Description))
+  self._qiubuEvaluateIcon.sprite = self._atlas:GetSprite(self._closingItem.DescIcon)
+  self._resultRawImage[self._closingItem.Condition]:SetActive(true)
+  if self._closingItem.Condition == 4 then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioCelebrate)
+  elseif self._closingItem.Condition == 3 then
+    AudioHelperController.RequestUISoundSync(CriAudioIDConst.HomelandAudioCelebrate)
+    self._AudioGoodId = AudioHelperController.PlayUISoundResource(CriAudioIDConst.HomelandAudioCelebrate, true)
+  elseif self._closingItem.Condition == 2 then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioNormal)
+  elseif self._closingItem.Condition == 1 then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioLose)
   end
   if self._AudioGoodId then
-    self._timeEvent = ((GameGlobal.Timer)()):AddEvent(2000, function()
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    (AudioHelperController.StopUISound)(self._AudioGoodId)
-    self._AudioGoodId = nil
-    self._timeEvent = nil
-  end
-)
+    self._timeEvent = GameGlobal.Timer():AddEvent(2000, function()
+      AudioHelperController.StopUISound(self._AudioGoodId)
+      self._AudioGoodId = nil
+      self._timeEvent = nil
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieClosingController.SetScoreStar = function(self, listObj, score, isTotal)
-  -- function num : 0_4 , upvalues : _ENV
-  local integerScore = (math.floor)(score)
-  for i = 0, (listObj.transform).childCount - 1 do
-    local star = (listObj.transform):GetChild(i)
+function UIHomelandMovieClosingController:SetScoreStar(listObj, score, isTotal)
+  local integerScore = math.floor(score)
+  for i = 0, listObj.transform.childCount - 1 do
+    local star = listObj.transform:GetChild(i)
     local sc = i + 1
-    if sc <= integerScore then
-      ((star:Find("Full")).gameObject):SetActive(true)
-    else
-      if i + 0.5 <= score then
-        ((star:Find("Half")).gameObject):SetActive(true)
-      end
+    if integerScore >= sc then
+      star:Find("Full").gameObject:SetActive(true)
+    elseif score >= i + 0.5 then
+      star:Find("Half").gameObject:SetActive(true)
     end
   end
   if isTotal and integerScore == 5 then
-    (self._totalScoreIcon):SetActive(true)
+    self._totalScoreIcon:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieClosingController.OnMovieSaved = function(self)
-  -- function num : 0_5
-  (self._SaveBtnObj):SetActive(false)
-  ;
-  (self._SavedTipObj):SetActive(true)
+function UIHomelandMovieClosingController:OnMovieSaved()
+  self._SaveBtnObj:SetActive(false)
+  self._SavedTipObj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieClosingController.SaveBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self:ShowDialog("UIHomelandMovieSaveName", (MoviePrepareData:GetInstance()):GetPstId())
+function UIHomelandMovieClosingController:SaveBtnOnClick()
+  self:ShowDialog("UIHomelandMovieSaveName", MoviePrepareData:GetInstance():GetPstId())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieClosingController.FinishBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._bsController):StopShowBulletScreen()
-  local mHomeland = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandMovieClosingController:FinishBtnOnClick()
+  self._bsController:StopShowBulletScreen()
+  local mHomeland = GameGlobal.GetModule(HomelandModule)
   local mUIHomeland = mHomeland:GetUIModule()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : mUIHomeland
+  GameGlobal.TaskManager():StartTask(function(TT)
     mUIHomeland:EnterHomelandAfterMovieMaker(TT)
-  end
-)
+  end)
 end
-
-

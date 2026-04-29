@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_flashknifeandline_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseFlashKnifeAndLineParam", SkillPhaseParamBase)
 SkillPhaseFlashKnifeAndLineParam = SkillPhaseFlashKnifeAndLineParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseFlashKnifeAndLineParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseFlashKnifeAndLineParam:Constructor(t)
   self._castEffectFlashKnife = t.effectFlashKnife
   self._castEffectFlashLine = t.effectFlashLine
   self._castAnimationName = t.castAnimationName
@@ -23,114 +16,72 @@ SkillPhaseFlashKnifeAndLineParam.Constructor = function(self, t)
   self._flashOneGridLinePoint = t.flashOneGridLinePoint
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseFlashKnifeAndLineParam:GetCacheTable()
   local t = {
-{((Cfg.cfg_effect)[self._castEffectFlashKnife]).ResPath, 1}
-, 
-{((Cfg.cfg_effect)[self._castEffectFlashLine]).ResPath, 1}
-}
+    {
+      Cfg.cfg_effect[self._castEffectFlashKnife].ResPath,
+      1
+    },
+    {
+      Cfg.cfg_effect[self._castEffectFlashLine].ResPath,
+      1
+    }
+  }
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseFlashKnifeAndLineParam:GetPhaseType()
   return SkillViewPhaseType.FlashKnifeAndLine
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetBodyEffect = function(self)
-  -- function num : 0_3
+function SkillPhaseFlashKnifeAndLineParam:GetBodyEffect()
   return self._castEffectBody
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetFingerEffect = function(self)
-  -- function num : 0_4
+function SkillPhaseFlashKnifeAndLineParam:GetFingerEffect()
   return self._castEffectFinger
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetFlashKnifeEffect = function(self)
-  -- function num : 0_5
+function SkillPhaseFlashKnifeAndLineParam:GetFlashKnifeEffect()
   return self._castEffectFlashKnife
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetFlashLineEffect = function(self)
-  -- function num : 0_6
+function SkillPhaseFlashKnifeAndLineParam:GetFlashLineEffect()
   return self._castEffectFlashLine
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetFinishDelayTime = function(self)
-  -- function num : 0_7
+function SkillPhaseFlashKnifeAndLineParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetAnimationName = function(self)
-  -- function num : 0_8
+function SkillPhaseFlashKnifeAndLineParam:GetAnimationName()
   return self._castAnimationName
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetFlyOneGridMs = function(self)
-  -- function num : 0_9
+function SkillPhaseFlashKnifeAndLineParam:GetFlyOneGridMs()
   return self._knifeFlyOneGridMs
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetHitAnimationName = function(self)
-  -- function num : 0_10
+function SkillPhaseFlashKnifeAndLineParam:GetHitAnimationName()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetHitEffect = function(self)
-  -- function num : 0_11
+function SkillPhaseFlashKnifeAndLineParam:GetHitEffect()
   return self._effectHit
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetLineFlyOneGridMs = function(self)
-  -- function num : 0_12
+function SkillPhaseFlashKnifeAndLineParam:GetLineFlyOneGridMs()
   return self._lineFlyOneGridMs
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetFlashLineWidth = function(self)
-  -- function num : 0_13
+function SkillPhaseFlashKnifeAndLineParam:GetFlashLineWidth()
   return self._flashLineWidth
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetFlashLineHeight = function(self)
-  -- function num : 0_14
+function SkillPhaseFlashKnifeAndLineParam:GetFlashLineHeight()
   return self._flashLineHeight
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlashKnifeAndLineParam.GetFlashOneGridLinePoint = function(self)
-  -- function num : 0_15
+function SkillPhaseFlashKnifeAndLineParam:GetFlashOneGridLinePoint()
   return self._flashOneGridLinePoint
 end
-
-

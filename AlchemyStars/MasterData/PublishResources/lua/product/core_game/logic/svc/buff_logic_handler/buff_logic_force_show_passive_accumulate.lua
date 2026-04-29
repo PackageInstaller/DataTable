@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_force_show_passive_accumulate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicForceShowPassiveAccumulate", BuffLogicBase)
 BuffLogicForceShowPassiveAccumulate = BuffLogicForceShowPassiveAccumulate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicForceShowPassiveAccumulate.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicForceShowPassiveAccumulate:Constructor(buffInstance, logicParam)
   self._buffLayerList = logicParam.buffLayerList
   self._forceInitType = logicParam.forceInitType
   self._maxLayerCount = logicParam.maxLayerCount
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicForceShowPassiveAccumulate.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicForceShowPassiveAccumulate:DoLogic(notify)
   local buffResult = BuffResultForceShowPassiveAccumulate:New(self._buffLayerList, self._forceInitType, self._maxLayerCount)
   return buffResult
 end
-
-

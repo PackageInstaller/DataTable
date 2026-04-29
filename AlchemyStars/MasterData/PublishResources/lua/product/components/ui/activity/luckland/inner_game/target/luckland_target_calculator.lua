@@ -1,34 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/target/luckland_target_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("lltc_base")
 require("luckland_buff_target_type")
 _class("LuckLandTargetCalculator", Object)
 LuckLandTargetCalculator = LuckLandTargetCalculator
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandTargetCalculator.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandTargetCalculator:Constructor()
   self._calculatorDic = {}
-  for k,v in pairs(LuckLandBuffTargetType) do
+  for k, v in pairs(LuckLandBuffTargetType) do
     local clsName = "LLTC" .. k
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._calculatorDic)[v] = Classes[clsName]
+    self._calculatorDic[v] = Classes[clsName]
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandTargetCalculator.CalculateBuffTarget = function(self, targetType, param, buffOwner)
-  -- function num : 0_1
-  local calculatorClass = (self._calculatorDic)[targetType]
+function LuckLandTargetCalculator:CalculateBuffTarget(targetType, param, buffOwner)
+  local calculatorClass = self._calculatorDic[targetType]
   local calculator = calculatorClass:New(param)
   local targets = calculator:CalculateTarget(buffOwner)
   return targets
 end
-
-

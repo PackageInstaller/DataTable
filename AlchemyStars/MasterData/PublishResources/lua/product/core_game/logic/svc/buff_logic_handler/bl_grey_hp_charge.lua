@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_grey_hp_charge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicEnableGreyHPCharge", BuffLogicBase)
 BuffLogicEnableGreyHPCharge = BuffLogicEnableGreyHPCharge
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicEnableGreyHPCharge.DoLogic = function(self, _)
-  -- function num : 0_0
+function BuffLogicEnableGreyHPCharge:DoLogic(_)
   local e = self:GetEntity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
@@ -20,10 +13,8 @@ end
 
 _class("BuffLogicDisableGreyHPCharge", BuffLogicBase)
 BuffLogicDisableGreyHPCharge = BuffLogicDisableGreyHPCharge
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDisableGreyHPCharge.DoLogic = function(self, _)
-  -- function num : 0_1
+function BuffLogicDisableGreyHPCharge:DoLogic(_)
   local e = self:GetEntity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
@@ -31,19 +22,14 @@ BuffLogicDisableGreyHPCharge.DoLogic = function(self, _)
   local cBuff = e:BuffComponent()
   cBuff:SetGreyHPEnable(false)
   cBuff:ClearGreyHPValue()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).__ChargeGreyHPRunCount = nil
+  self._buffInstance.__ChargeGreyHPRunCount = nil
   return {}
 end
 
 _class("BuffLogicSuspendGreyHPCharge", BuffLogicBase)
 BuffLogicSuspendGreyHPCharge = BuffLogicSuspendGreyHPCharge
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSuspendGreyHPCharge.DoLogic = function(self, _)
-  -- function num : 0_2
+function BuffLogicSuspendGreyHPCharge:DoLogic(_)
   local e = self:GetEntity()
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
@@ -54,26 +40,21 @@ end
 
 _class("BuffLogicChargeGreyHP", BuffLogicBase)
 BuffLogicChargeGreyHP = BuffLogicChargeGreyHP
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChargeGreyHP.Constructor = function(self, _, logicParam)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicChargeGreyHP:Constructor(_, logicParam)
   self._chargePercent = logicParam.percent
   assert(type(self._chargePercent) == "number")
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
 local buffLogicChargeGreyHPTag = "BuffLogicChargeGreyHP: "
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChargeGreyHP.DoLogic = function(self, notify)
-  -- function num : 0_4 , upvalues : _ENV, buffLogicChargeGreyHPTag
+function BuffLogicChargeGreyHP:DoLogic(notify)
   local damageVal = 0
   if notify:GetNotifyType() == NotifyType.MonsterHPCChange then
     damageVal = notify:GetChangeHP() * -1
   end
   if damageVal <= 0 then
-    (Log.debug)(buffLogicChargeGreyHPTag, "notify has no damageVal: ", tostring(notify:GetNotifyType()))
+    Log.debug(buffLogicChargeGreyHPTag, "notify has no damageVal: ", tostring(notify:GetNotifyType()))
     damageVal = 0
   end
   local val = damageVal * self._chargePercent
@@ -81,9 +62,7 @@ BuffLogicChargeGreyHP.DoLogic = function(self, notify)
   if e:HasSuperEntity() then
     e = e:GetSuperEntity()
   end
-  local currentVal = (self._buffLogicService):ChangeGreyHP(e, val)
+  local currentVal = self._buffLogicService:ChangeGreyHP(e, val)
   local result = BuffResultChargeGreyHP:New(e:GetID(), currentVal, notify:GetNotifyType(), notify:GetNotifyIndex(), val, notify:GetChangeHP())
   return result
 end
-
-

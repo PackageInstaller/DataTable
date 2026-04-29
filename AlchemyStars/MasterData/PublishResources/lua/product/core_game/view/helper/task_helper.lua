@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/helper/task_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TaskHelper", Singleton)
 TaskHelper = TaskHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TaskHelper.Constructor = function(self)
-  -- function num : 0_0
+function TaskHelper:Constructor()
   self._taskList = {}
   self._exceptionTaskList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TaskHelper.IsAllTaskFinished = function(self, taskIDs, notCheckTimeOut)
-  -- function num : 0_1 , upvalues : _ENV
+function TaskHelper:IsAllTaskFinished(taskIDs, notCheckTimeOut)
   if not taskIDs then
     return true
   end
-  for _,taskID in ipairs(taskIDs) do
+  for _, taskID in ipairs(taskIDs) do
     if not self:IsTaskFinished(taskID, notCheckTimeOut) then
       return false
     end
@@ -28,57 +18,37 @@ TaskHelper.IsAllTaskFinished = function(self, taskIDs, notCheckTimeOut)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TaskHelper.IsTaskFinished = function(self, taskID, notCheckTimeOut)
-  -- function num : 0_2 , upvalues : _ENV
+function TaskHelper:IsTaskFinished(taskID, notCheckTimeOut)
   if taskID and type(taskID) ~= "number" then
-    (Log.fatal)("TaskID Type Invalid ", (Log.traceback)())
+    Log.fatal("TaskID Type Invalid ", Log.traceback())
   end
-  local task = (TaskManager:GetInstance()):FindTask(taskID)
+  local task = TaskManager:GetInstance():FindTask(taskID)
   if task ~= nil then
-    do
-      if not notCheckTimeOut then
-        local timeNow = (GameGlobal:GetInstance()):GetCurrentTime()
-        -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-        if not (self._taskList)[taskID] then
-          (self._taskList)[taskID] = timeNow
-        end
-        -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-        if BattleConst.CoroutineMaxWaitTime < timeNow - (self._taskList)[taskID] and not (self._exceptionTaskList)[taskID] then
-          (self._exceptionTaskList)[taskID] = 1
-          if EDITOR then
-            (Log.exception)("Coroutine ", taskID, "  Wait TimeOut Trace: ", (Log.traceback)())
-          else
-            ;
-            (Log.fatal)("Coroutine ", taskID, "  Wait TimeOut Trace: ", (Log.traceback)())
-          end
-        end
+    if not notCheckTimeOut then
+      local timeNow = GameGlobal:GetInstance():GetCurrentTime()
+      if not self._taskList[taskID] then
+        self._taskList[taskID] = timeNow
       end
-      do return false end
-      if not notCheckTimeOut and (self._taskList)[taskID] then
-        if (self._exceptionTaskList)[taskID] then
-          local timeNow = (GameGlobal:GetInstance()):GetCurrentTime()
-          local duration = timeNow - (self._taskList)[taskID]
-          ;
-          (Log.fatal)("Coroutine :", taskID, " Wait TimeOut  DurationTime:", duration, " Trace:", (Log.traceback)())
-          -- DECOMPILER ERROR at PC103: Confused about usage of register: R6 in 'UnsetPending'
-
-          ;
-          (self._exceptionTaskList)[taskID] = nil
-        end
-        do
-          -- DECOMPILER ERROR at PC105: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._taskList)[taskID] = nil
-          do return true end
+      if timeNow - self._taskList[taskID] > BattleConst.CoroutineMaxWaitTime and not self._exceptionTaskList[taskID] then
+        self._exceptionTaskList[taskID] = 1
+        if EDITOR then
+          Log.exception("Coroutine ", taskID, "  Wait TimeOut Trace: ", Log.traceback())
+        else
+          Log.fatal("Coroutine ", taskID, "  Wait TimeOut Trace: ", Log.traceback())
         end
       end
     end
+    return false
+  else
+    if not notCheckTimeOut and self._taskList[taskID] then
+      if self._exceptionTaskList[taskID] then
+        local timeNow = GameGlobal:GetInstance():GetCurrentTime()
+        local duration = timeNow - self._taskList[taskID]
+        Log.fatal("Coroutine :", taskID, " Wait TimeOut  DurationTime:", duration, " Trace:", Log.traceback())
+        self._exceptionTaskList[taskID] = nil
+      end
+      self._taskList[taskID] = nil
+    end
+    return true
   end
 end
-
-

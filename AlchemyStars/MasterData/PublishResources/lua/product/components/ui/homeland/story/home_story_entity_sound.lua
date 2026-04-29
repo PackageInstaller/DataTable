@@ -1,50 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_entity_sound.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeStoryEntitySound", HomeStoryEntity)
 HomeStoryEntitySound = HomeStoryEntitySound
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeStoryEntitySound.Constructor = function(self, ID, resourceName, storyManager)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomeStoryEntitySound.super).Constructor)(self, ID, nil, nil, storyManager)
+function HomeStoryEntitySound:Constructor(ID, resourceName, storyManager)
+  HomeStoryEntitySound.super.Constructor(self, ID, nil, nil, storyManager)
   self._ID = ID
   self._resName = resourceName
   self._storyManager = storyManager
   self._type = HomeStoryEntityType.Sound
   self._soundPlayingID = -1
   self._loop = false
-  ;
-  (AudioHelperController.RequestUISoundSync)(tonumber(resourceName))
+  AudioHelperController.RequestUISoundSync(tonumber(resourceName))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntitySound.PlaySound = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._soundPlayingID = (AudioHelperController.PlayUISoundResource)(self._resName, self._loop)
+function HomeStoryEntitySound:PlaySound()
+  self._soundPlayingID = AudioHelperController.PlayUISoundResource(self._resName, self._loop)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntitySound.StopSound = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (AudioHelperController.StopUISound)(self._soundPlayingID)
+function HomeStoryEntitySound:StopSound()
+  AudioHelperController.StopUISound(self._soundPlayingID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntitySound.PlayBgm = function(self, bgmFadeTime)
-  -- function num : 0_3 , upvalues : _ENV
-  (AudioHelperController.PlayBGM)(self._resName, bgmFadeTime)
+function HomeStoryEntitySound:PlayBgm(bgmFadeTime)
+  AudioHelperController.PlayBGM(self._resName, bgmFadeTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntitySound._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_4 , upvalues : _ENV
+function HomeStoryEntitySound:_TriggerKeyframe(keyframeData)
   if keyframeData.PlaySound ~= nil then
     if keyframeData.PlaySound == "Loop" then
       self._loop = true
@@ -54,19 +34,12 @@ HomeStoryEntitySound._TriggerKeyframe = function(self, keyframeData)
     self:PlaySound()
   end
   if keyframeData.StopSound ~= nil then
-    (AudioHelperController.StopUISound)(self._soundPlayingID)
+    AudioHelperController.StopUISound(self._soundPlayingID)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntitySound.Destroy = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((HomeStoryEntitySound.super).Destroy)(self)
-  ;
-  (AudioHelperController.StopUISound)(self._soundPlayingID)
-  ;
-  (AudioHelperController.ReleaseUISoundResource)(self._resName)
+function HomeStoryEntitySound:Destroy()
+  HomeStoryEntitySound.super.Destroy(self)
+  AudioHelperController.StopUISound(self._soundPlayingID)
+  AudioHelperController.ReleaseUISoundResource(self._resName)
 end
-
-

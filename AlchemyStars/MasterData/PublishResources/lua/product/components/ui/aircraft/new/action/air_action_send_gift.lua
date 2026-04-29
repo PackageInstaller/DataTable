@@ -1,80 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_send_gift.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionSendGift", AirActionBase)
 AirActionSendGift = AirActionSendGift
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionSendGift.Constructor = function(self, pet, effName, delayTime)
-  -- function num : 0_0
+function AirActionSendGift:Constructor(pet, effName, delayTime)
   self._effName = effName
   self._pet = pet
   self._eff = nil
   self._delayTime = delayTime
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSendGift.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._eff = (ResourceManager:GetInstance()):SyncLoadAsset(self._effName, LoadType.GameObject)
-  local effect = (self._eff).Obj
-  local pos = (self._pet):WorldPosition()
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (effect.transform).position = pos
+function AirActionSendGift:Start()
+  self._eff = ResourceManager:GetInstance():SyncLoadAsset(self._effName, LoadType.GameObject)
+  local effect = self._eff.Obj
+  local pos = self._pet:WorldPosition()
+  effect.transform.position = pos
   effect:SetActive(true)
   self._running = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSendGift.IsOver = function(self)
-  -- function num : 0_2
+function AirActionSendGift:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSendGift.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function AirActionSendGift:Update(deltaTimeMS)
   if self._running then
     self._curTime = self._curTime + deltaTimeMS
-    if self._delayTime <= self._curTime then
+    if self._curTime >= self._delayTime then
       self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSendGift.Stop = function(self)
-  -- function num : 0_4
+function AirActionSendGift:Stop()
   self._running = false
   self._curTime = 0
   self._delayTime = 0
   if self._eff then
-    (self._eff):Dispose()
+    self._eff:Dispose()
     self._eff = nil
     self._effName = nil
     self._pet = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSendGift.GetPets = function(self)
-  -- function num : 0_5
-  return {self._pets}
+function AirActionSendGift:GetPets()
+  return {
+    self._pets
+  }
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionSendGift.Dispose = function(self)
-  -- function num : 0_6
+function AirActionSendGift:Dispose()
 end
-
-

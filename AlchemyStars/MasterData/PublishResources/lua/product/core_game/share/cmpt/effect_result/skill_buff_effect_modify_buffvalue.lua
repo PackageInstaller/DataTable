@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_buff_effect_modify_buffvalue.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillModifyBuffValueResult", SkillEffectResultBase)
 SkillModifyBuffValueResult = SkillModifyBuffValueResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillModifyBuffValueResult.Constructor = function(self, entityId, buffseq, layer)
-  -- function num : 0_0
+function SkillModifyBuffValueResult:Constructor(entityId, buffseq, layer)
   self._entityID = entityId
   self._buffSeq = buffseq
   self._buffLayer = layer
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillModifyBuffValueResult.GetEntityID = function(self)
-  -- function num : 0_1
+function SkillModifyBuffValueResult:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillModifyBuffValueResult.GetBuffSeq = function(self)
-  -- function num : 0_2
+function SkillModifyBuffValueResult:GetBuffSeq()
   return self._buffSeq
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillModifyBuffValueResult.GetBuffLayer = function(self)
-  -- function num : 0_3
+function SkillModifyBuffValueResult:GetBuffLayer()
   return self._buffLayer
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillModifyBuffValueResult.GetEffectType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillModifyBuffValueResult:GetEffectType()
   return SkillEffectType.ModifyBuffValue
 end
-
-

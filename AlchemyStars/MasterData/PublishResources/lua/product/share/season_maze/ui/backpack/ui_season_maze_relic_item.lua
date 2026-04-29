@@ -1,35 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/backpack/ui_season_maze_relic_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRelicItem", UICustomWidget)
 UISeasonMazeRelicItem = UISeasonMazeRelicItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRelicItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
-  self.ItemColorToText = {[ItemColor.ItemColor_White] = "str_item_public_color_white", [ItemColor.ItemColor_Green] = "str_item_public_color_green", [ItemColor.ItemColor_Blue] = "str_item_public_color_blue", [ItemColor.ItemColor_Purple] = "str_item_public_color_purple", [ItemColor.ItemColor_Yellow] = "str_item_public_color_yellow", [ItemColor.ItemColor_Golden] = "str_item_public_color_golden"}
-  self.ItemColorToTextColor = {[ItemColor.ItemColor_White] = Color(0.81176470588235, 0.81176470588235, 0.81176470588235, 1), [ItemColor.ItemColor_Green] = Color(0.12549019607843, 0.84705882352941, 0.64705882352941, 1), [ItemColor.ItemColor_Blue] = Color(0.2156862745098, 0.65882352941176, 1, 1), [ItemColor.ItemColor_Purple] = Color(0.69803921568627, 0.53725490196078, 0.98039215686275, 1), [ItemColor.ItemColor_Yellow] = Color(1, 0.95294117647059, 0.2156862745098, 1), [ItemColor.ItemColor_Golden] = Color(1, 0.55686274509804, 0 / 255, 1)}
-  self._prof2img = {[2001] = "spirit_prof_5", [2002] = "spirit_prof_1", [2003] = "spirit_prof_3", [2004] = "spirit_prof_7"}
+function UISeasonMazeRelicItem:OnShow(uiParam)
+  self.ItemColorToText = {
+    [ItemColor.ItemColor_White] = "str_item_public_color_white",
+    [ItemColor.ItemColor_Green] = "str_item_public_color_green",
+    [ItemColor.ItemColor_Blue] = "str_item_public_color_blue",
+    [ItemColor.ItemColor_Purple] = "str_item_public_color_purple",
+    [ItemColor.ItemColor_Yellow] = "str_item_public_color_yellow",
+    [ItemColor.ItemColor_Golden] = "str_item_public_color_golden"
+  }
+  self.ItemColorToTextColor = {
+    [ItemColor.ItemColor_White] = Color(0.8117647058823529, 0.8117647058823529, 0.8117647058823529, 1),
+    [ItemColor.ItemColor_Green] = Color(0.12549019607843137, 0.8470588235294118, 0.6470588235294118, 1),
+    [ItemColor.ItemColor_Blue] = Color(0.21568627450980393, 0.6588235294117647, 1.0, 1),
+    [ItemColor.ItemColor_Purple] = Color(0.6980392156862745, 0.5372549019607843, 0.9803921568627451, 1),
+    [ItemColor.ItemColor_Yellow] = Color(1.0, 0.9529411764705882, 0.21568627450980393, 1),
+    [ItemColor.ItemColor_Golden] = Color(1.0, 0.5568627450980392, 0 / 255, 1)
+  }
+  self._prof2img = {
+    [2001] = "spirit_prof_5",
+    [2002] = "spirit_prof_1",
+    [2003] = "spirit_prof_3",
+    [2004] = "spirit_prof_7"
+  }
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRelicItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRelicItem:OnHide()
   self.close = true
   if self.timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.timerEvent)
+    GameGlobal.Timer():CancelEvent(self.timerEvent)
     self.timerEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRelicItem.GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeRelicItem:GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._msg1 = self:GetUIComponent("UILocalizedTMP", "msg1")
@@ -45,169 +51,113 @@ UISeasonMazeRelicItem.GetComponents = function(self)
   self._profAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   local passEvent = self:GetUIComponent("PassEventComponent", "Viewport")
   passEvent:SetClickCallback(function()
-    -- function num : 0_2_0 , upvalues : self
     self:BgOnClick()
-  end
-)
+  end)
   self.useendObj = self:GetGameObject("UseEnd")
-  ;
-  (self.useendObj):SetActive(false)
+  self.useendObj:SetActive(false)
   self._anim = self:GetUIComponent("Animation", "anim")
-  ;
-  ((self._anim).gameObject):SetActive(false)
-  ;
-  ((UIEventTriggerListener.Get)(self._msg1Obj)).onClick = function()
-    -- function num : 0_2_1 , upvalues : self
+  self._anim.gameObject:SetActive(false)
+  UIEventTriggerListener.Get(self._msg1Obj).onClick = function()
     self:BgOnClick()
   end
-
   self.contentRectTf = self:GetUIComponent("RectTransform", "Content")
   self.scrollViewRectTf = self:GetUIComponent("RectTransform", "ScrollView")
   self.scrollView = self:GetUIComponent("ScrollRect", "ScrollView")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRelicItem.DisableAnimation = function(self)
-  -- function num : 0_3
+function UISeasonMazeRelicItem:DisableAnimation()
   self._disalbeAnimation = true
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._anim).enabled = false
-  ;
-  ((self._anim).gameObject):SetActive(true)
+  self._anim.enabled = false
+  self._anim.gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRelicItem.Flush = function(self, itemID)
-  -- function num : 0_4 , upvalues : _ENV
-  local item = (Cfg.cfg_item)[itemID]
+function UISeasonMazeRelicItem:Flush(itemID)
+  local item = Cfg.cfg_item[itemID]
   if item == nil then
-    (Log.fatal)("[error] maze --> _cfg == nil ! id --> " .. itemID)
-    return 
+    Log.fatal("[error] maze --> _cfg == nil ! id --> " .. itemID)
+    return
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._colorBg).sprite = (self._atlas):GetSprite("map_tansuo_pinzhi" .. item.Color)
-  ;
-  (self._colorTex):SetText((StringTable.Get)((self.ItemColorToText)[item.Color]))
-  ;
-  (self._icon):LoadImage(item.Icon)
-  ;
-  (self._name):SetText((StringTable.Get)(item.Name))
-  ;
-  (self._msg1):SetText((StringTable.Get)(item.Intro))
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R3 in 'UnsetPending'
-
+  self._colorBg.sprite = self._atlas:GetSprite("map_tansuo_pinzhi" .. item.Color)
+  self._colorTex:SetText(StringTable.Get(self.ItemColorToText[item.Color]))
+  self._icon:LoadImage(item.Icon)
+  self._name:SetText(StringTable.Get(item.Name))
+  self._msg1:SetText(StringTable.Get(item.Intro))
   if self.isInBagInfo then
-    (self._msg1).onHrefClick = function(hrefName)
-    -- function num : 0_4_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonMaze_RelicHrefInfo", hrefName)
-  end
-
+    function self._msg1.onHrefClick(hrefName)
+      GameGlobal.UIStateManager():ShowDialog("UISeasonMaze_RelicHrefInfo", hrefName)
+    end
   end
   if self._index or not self._disalbeAnimation then
-    local delta = (math.ceil)(self._index / 4)
+    local delta = math.ceil(self._index / 4)
     delta = delta * 50
     if delta == 0 then
-      ((self._anim).gameObject):SetActive(true)
+      self._anim.gameObject:SetActive(true)
     else
-      self.timerEvent = ((GameGlobal.Timer)()):AddEventTimes(delta, TimerTriggerCount.Once, function()
-    -- function num : 0_4_1 , upvalues : self
-    if self.close then
-      return 
-    end
-    if self.timerEvent == nil then
-      return 
-    end
-    ;
-    ((self._anim).gameObject):SetActive(true)
-    ;
-    (self._anim):Play("uieffanim_UISeasonMazeBagPetStateItem_in")
-  end
-)
+      self.timerEvent = GameGlobal.Timer():AddEventTimes(delta, TimerTriggerCount.Once, function()
+        if self.close then
+          return
+        end
+        if self.timerEvent == nil then
+          return
+        end
+        self._anim.gameObject:SetActive(true)
+        self._anim:Play("uieffanim_UISeasonMazeBagPetStateItem_in")
+      end)
     end
   else
-    do
-      ;
-      ((self._anim).gameObject):SetActive(true)
-      local cfg_prof = (Cfg.cfg_item_relic)[itemID]
-      if cfg_prof then
-        local prof = cfg_prof.Prof
-        if prof then
-          (self._profGo):SetActive(true)
-          -- DECOMPILER ERROR at PC107: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._profImg).sprite = (self._profAtlas):GetSprite((self._prof2img)[prof])
-        else
-          ;
-          (self._profGo):SetActive(false)
-        end
-        if self._isFromPopStarPro then
-          local tempTime = 0
-          tempTime = (self.uiSeasonMazeModule):GetSeasonMazeRelicCanUseCount(itemID)
-          if self._isInShop then
-            (self.useendObj):SetActive(false)
-          else
-            local leftTime = tempTime
-            if leftTime > 0 then
-              (self.useendObj):SetActive(false)
-            else
-              ;
-              (self._timeObj):SetActive(false)
-              ;
-              (self.useendObj):SetActive(true)
-            end
-            if cfg_prof.OutGameTriggerCount == 0 then
-              (self.useendObj):SetActive(false)
-            end
-          end
-        end
+    self._anim.gameObject:SetActive(true)
+  end
+  local cfg_prof = Cfg.cfg_item_relic[itemID]
+  if cfg_prof then
+    local prof = cfg_prof.Prof
+    if prof then
+      self._profGo:SetActive(true)
+      self._profImg.sprite = self._profAtlas:GetSprite(self._prof2img[prof])
+    else
+      self._profGo:SetActive(false)
+    end
+    if self._isFromPopStarPro then
+      local tempTime = 0
+      tempTime = self.uiSeasonMazeModule:GetSeasonMazeRelicCanUseCount(itemID)
+      if self._isInShop then
+        self.useendObj:SetActive(false)
       else
-        do
-          ;
-          (Log.fatal)("###cfg_item_relic is nil ! id --> ", itemID)
+        local leftTime = tempTime
+        if 0 < leftTime then
+          self.useendObj:SetActive(false)
+        else
+          self._timeObj:SetActive(false)
+          self.useendObj:SetActive(true)
+        end
+        if cfg_prof.OutGameTriggerCount == 0 then
+          self.useendObj:SetActive(false)
         end
       end
     end
+  else
+    Log.fatal("###cfg_item_relic is nil ! id --> ", itemID)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRelicItem.SetData = function(self, index, itemID, _callback, needNew, isFromPopStarPro, innerGame, isInShop, isInBagInfo)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeRelicItem:SetData(index, itemID, _callback, needNew, isFromPopStarPro, innerGame, isInShop, isInBagInfo)
   self._callback = _callback
   self._index = index
-  ;
-  (self._new):SetActive(needNew)
+  self._new:SetActive(needNew)
   self._isFromPopStarPro = isFromPopStarPro
   self._isInnerGame = innerGame
   self._isInShop = isInShop
   self.isInBagInfo = isInBagInfo
-  self.seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self.uiSeasonMazeModule = (self.seasonMazeModule):UIModule()
+  self.seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self.uiSeasonMazeModule = self.seasonMazeModule:UIModule()
   self:Flush(itemID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRelicItem.SetNewVisble = function(self, bNew)
-  -- function num : 0_6
-  (self._new):SetActive(bNew)
+function UISeasonMazeRelicItem:SetNewVisble(bNew)
+  self._new:SetActive(bNew)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRelicItem.BgOnClick = function(self)
-  -- function num : 0_7
+function UISeasonMazeRelicItem:BgOnClick()
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
-
-

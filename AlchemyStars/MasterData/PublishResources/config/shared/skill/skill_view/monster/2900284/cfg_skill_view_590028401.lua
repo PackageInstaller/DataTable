@@ -1,21 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900284/cfg_skill_view_590028401.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterVisible,visible=1; PlayCasterAnimation,animName =Birth; PlayAudio,audioID = 5008,audioType=1; PlayCasterBindEffect,effectID=925; PlayCasterAddBuff, buffEffectType =3022; "}
-}
-, 
-{2, 2, 34, 1, 1, 2000, 
-{gridEffectID = 927, gridEffectDelayTime = 0, gridIntervalTime = 0, showTimeDelay = 300}
-}
-, 
-{3, 3, 0, 1, 1, 2500, 
-{" PlayCasterAttachEffectHolder,effHolderType=Permanent,effId=976; PlayCasterLineRenderer,group=Monster|Trap,targerEffectType=3026,lineEffectID=942,lineTarget=Hit,lineCurrent=Hit; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterVisible,visible=1; PlayCasterAnimation,animName =Birth; PlayAudio,audioID = 5008,audioType=1; PlayCasterBindEffect,effectID=925; PlayCasterAddBuff, buffEffectType =3022; "
+    }
+  },
+  {
+    2,
+    2,
+    34,
+    1,
+    1,
+    2000,
+    {
+      gridEffectID = 927,
+      gridEffectDelayTime = 0,
+      gridIntervalTime = 0,
+      showTimeDelay = 300
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    2500,
+    {
+      " PlayCasterAttachEffectHolder,effHolderType=Permanent,effId=976; PlayCasterLineRenderer,group=Monster|Trap,targerEffectType=3026,lineEffectID=942,lineTarget=Hit,lineCurrent=Hit; "
+    }
+  }
 }
 return config, "ID", key
-

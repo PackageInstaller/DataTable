@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_move_and_furniture.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionMoveAndFurniture", AirActionBase)
 AirActionMoveAndFurniture = AirActionMoveAndFurniture
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionMoveAndFurniture.Constructor = function(self, pet, furniture, point, main, duaration)
-  -- function num : 0_0
+function AirActionMoveAndFurniture:Constructor(pet, furniture, point, main, duaration)
   self._pet = pet
   self._furniture = furniture
   self._point = point
@@ -17,108 +10,77 @@ AirActionMoveAndFurniture.Constructor = function(self, pet, furniture, point, ma
   self._interated = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveAndFurniture.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AirActionMoveAndFurniture:Start()
   if self._point == nil then
-    (Log.fatal)("该家具已没有可用点")
-    return 
+    Log.fatal("该家具已没有可用点")
+    return
   end
-  self._moveAction = AirActionMove:New(self._pet, (self._point):MovePoint(), (self._furniture):Floor(), self._main, "移动-到家具")
+  self._moveAction = AirActionMove:New(self._pet, self._point:MovePoint(), self._furniture:Floor(), self._main, "移动-到家具")
   self._furnAction = AirActionOnFurniture:New(self._pet, self._furniture, self._point, self._duration)
-  ;
-  (self._moveAction):Start()
-  ;
-  (self._pet):SetMovingTargetArea((self._furniture):Area())
-  ;
-  (self._pet):SetState(AirPetState.Transiting)
+  self._moveAction:Start()
+  self._pet:SetMovingTargetArea(self._furniture:Area())
+  self._pet:SetState(AirPetState.Transiting)
   self._running = true
   self:LogStart()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveAndFurniture.Update = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
+function AirActionMoveAndFurniture:Update(deltaTimeMS)
   if self._running then
-    if self._moveAction and (self._moveAction):IsOver() then
-      if (self._furnAction):IsOver() then
+    if self._moveAction and self._moveAction:IsOver() then
+      if self._furnAction:IsOver() then
         self._running = false
         self._interated = true
         self:Stop()
       else
-        ;
-        (self._furnAction):Update(deltaTimeMS)
+        self._furnAction:Update(deltaTimeMS)
       end
     else
-      ;
-      (self._moveAction):Update(deltaTimeMS)
-      if (self._moveAction):IsOver() then
-        (self._pet):SetMovingTargetArea(nil)
-        local random = (AirHelper.RandomRelationPet)(self._main, self._pet)
+      self._moveAction:Update(deltaTimeMS)
+      if self._moveAction:IsOver() then
+        self._pet:SetMovingTargetArea(nil)
+        local random = AirHelper.RandomRelationPet(self._main, self._pet)
         if not random then
-          (self._furnAction):Start()
-          ;
-          (self._pet):SetState(AirPetState.OnFurniture)
+          self._furnAction:Start()
+          self._pet:SetState(AirPetState.OnFurniture)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveAndFurniture.IsOver = function(self)
-  -- function num : 0_3
+function AirActionMoveAndFurniture:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveAndFurniture.Stop = function(self)
-  -- function num : 0_4
+function AirActionMoveAndFurniture:Stop()
   if self._running then
-    if not (self._moveAction):IsOver() then
-      (self._moveAction):Stop()
+    if not self._moveAction:IsOver() then
+      self._moveAction:Stop()
     end
     self._running = false
   else
-    ;
-    (self._main):RandomActionForPet(self._pet)
+    self._main:RandomActionForPet(self._pet)
   end
   if not self._interated then
-    (self._furnAction):Stop()
+    self._furnAction:Stop()
   end
   self:LogStop()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveAndFurniture.Duration = function(self)
-  -- function num : 0_5
-  return (self._furnAction):Duration()
+function AirActionMoveAndFurniture:Duration()
+  return self._furnAction:Duration()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveAndFurniture.CurrentTime = function(self)
-  -- function num : 0_6
-  return (self._furnAction):CurrentTime()
+function AirActionMoveAndFurniture:CurrentTime()
+  return self._furnAction:CurrentTime()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveAndFurniture.GetEncodeInfo = function(self)
-  -- function num : 0_7
-  return (self._furnAction):GetEncodeInfo()
+function AirActionMoveAndFurniture:GetEncodeInfo()
+  return self._furnAction:GetEncodeInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveAndFurniture.GetPets = function(self)
-  -- function num : 0_8
-  return {self._pet}
+function AirActionMoveAndFurniture:GetPets()
+  return {
+    self._pet
+  }
 end
-
-

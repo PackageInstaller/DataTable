@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic/buff_handler_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("trigger_base")
 require("trigger_owner")
 _class("BuffHandlerBase", ITriggerOwner)
 BuffHandlerBase = BuffHandlerBase
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffHandlerBase.Constructor = function(self, buffInstance, triggerCfg, logicCfg)
-  -- function num : 0_0
+function BuffHandlerBase:Constructor(buffInstance, triggerCfg, logicCfg)
   self._buffInstance = buffInstance
   local world = buffInstance:World()
   self._world = world
@@ -21,163 +14,101 @@ BuffHandlerBase.Constructor = function(self, buffInstance, triggerCfg, logicCfg)
   self:Attach()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.Attach = function(self)
-  -- function num : 0_1
-  local svc = ((self._buffInstance):World()):GetService("Trigger")
+function BuffHandlerBase:Attach()
+  local svc = self._buffInstance:World():GetService("Trigger")
   svc:Attach(self._trigger)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.Detach = function(self)
-  -- function num : 0_2
-  local svc = ((self._buffInstance):World()):GetService("Trigger")
+function BuffHandlerBase:Detach()
+  local svc = self._buffInstance:World():GetService("Trigger")
   svc:Detach(self._trigger)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.SetActive = function(self, active)
-  -- function num : 0_3
-  (self._trigger):SetActive(active)
+function BuffHandlerBase:SetActive(active)
+  self._trigger:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.DoOverlap = function(self, logicParam, context)
-  -- function num : 0_4 , upvalues : _ENV
+function BuffHandlerBase:DoOverlap(logicParam, context)
   if self._logic and logicParam then
-    for i,logic in ipairs(self._logic) do
+    for i, logic in ipairs(self._logic) do
       self:PrintBuffHandlerLog("buff logic overlap ---- ", logic:GetLogicName())
-      local logger = (self._world):GetSyncLogger()
-      logger:Trace({key = "buffOverlap", buffID = (self._buffInstance):BuffID(), entityID = (self:GetOwnerEntity()):GetID(), logic = logic:GetLogicName()})
+      local logger = self._world:GetSyncLogger()
+      logger:Trace({
+        key = "buffOverlap",
+        buffID = self._buffInstance:BuffID(),
+        entityID = self:GetOwnerEntity():GetID(),
+        logic = logic:GetLogicName()
+      })
       local buffResult = logic:DoOverlap(logicParam[i], context)
       if buffResult then
-        local res = DataBuffLogicResult:New((self:GetOwnerEntity()):GetID(), (self._buffInstance):BuffSeq(), logic:GetLogicName(), NTBuffLoad:New(), buffResult)
-        res:SetBuffID((self._buffInstance):BuffID())
+        local res = DataBuffLogicResult:New(self:GetOwnerEntity():GetID(), self._buffInstance:BuffSeq(), logic:GetLogicName(), NTBuffLoad:New(), buffResult)
+        res:SetBuffID(self._buffInstance:BuffID())
         res:SetLogicType("Overlap")
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
+        self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.GetTrigger = function(self)
-  -- function num : 0_5
+function BuffHandlerBase:GetTrigger()
   return self._trigger
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.GetTriggerType = function(self)
-  -- function num : 0_6
-  return (self._trigger):GetTriggerType()
+function BuffHandlerBase:GetTriggerType()
+  return self._trigger:GetTriggerType()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.GetNotifyType = function(self)
-  -- function num : 0_7
-  return (self._trigger):GetNotifyType()
+function BuffHandlerBase:GetNotifyType()
+  return self._trigger:GetNotifyType()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.GetOwnerEntity = function(self)
-  -- function num : 0_8
-  return (self._buffInstance):Entity()
+function BuffHandlerBase:GetOwnerEntity()
+  return self._buffInstance:Entity()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.GetWorld = function(self)
-  -- function num : 0_9
-  return (self._buffInstance):World()
+function BuffHandlerBase:GetWorld()
+  return self._buffInstance:World()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffHandlerBase.PrintBuffHandlerLog = function(self, ...)
-  -- function num : 0_10 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() then
-    (Log.debug)(...)
+function BuffHandlerBase:PrintBuffHandlerLog(...)
+  if self._world and self._world:IsDevelopEnv() then
+    Log.debug(...)
   end
 end
 
 _class("BuffLoadHandler", BuffHandlerBase)
 BuffLoadHandler = BuffLoadHandler
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLoadHandler.Constructor = function(self)
-  -- function num : 0_11
+function BuffLoadHandler:Constructor()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLoadHandler.OnTrigger = function(self, notify, triggers)
-  -- function num : 0_12 , upvalues : _ENV
+function BuffLoadHandler:OnTrigger(notify, triggers)
   if self._logic then
-    local detailLogger = (self._world):GetDetailMatchLogger()
+    local detailLogger = self._world:GetDetailMatchLogger()
     detailLogger:BeginTriggerLogic("加载逻辑")
-    detailLogger:RecordBuffInstance(self._buffInstance, (self:GetOwnerEntity()):GetID())
-    for index,logic in ipairs(self._logic) do
+    detailLogger:RecordBuffInstance(self._buffInstance, self:GetOwnerEntity():GetID())
+    for index, logic in ipairs(self._logic) do
       self:PrintBuffHandlerLog("buff load trigger logic ---- ", logic:GetLogicName())
-      local logger = (self._world):GetSyncLogger()
-      logger:Trace({key = "buffLoad", buffID = (self._buffInstance):BuffID(), entityID = (self:GetOwnerEntity()):GetID(), logic = logic:GetLogicName()})
-      detailLogger:RecordTriggerLogic(index, R13_PC47)
-      detailLogger:RecordBuffLogic(R12_PC50)
-      local buffResult = logic:DoLogic(R12_PC50, R13_PC47, index)
-      -- DECOMPILER ERROR at PC59: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC63: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC64: Overwrote pending register: R13 in 'AssignReg'
-
-      if buffResult and type(R12_PC50) == "table" then
-        detailLogger:RecordBuffResult(R13_PC47)
+      local logger = self._world:GetSyncLogger()
+      logger:Trace({
+        key = "buffLoad",
+        buffID = self._buffInstance:BuffID(),
+        entityID = self:GetOwnerEntity():GetID(),
+        logic = logic:GetLogicName()
+      })
+      detailLogger:RecordTriggerLogic(index, logic)
+      detailLogger:RecordBuffLogic(logic)
+      local buffResult = logic:DoLogic(notify, triggers, index)
+      if buffResult and type(buffResult) == "table" then
+        detailLogger:RecordBuffResult(buffResult)
       end
-      -- DECOMPILER ERROR at PC71: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC72: Overwrote pending register: R13 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC74: Overwrote pending register: R13 in 'AssignReg'
-
-      do
-        do
-          if notify and buffResult then
-            local res = DataBuffLogicResult:New(R13_PC47, (self._buffInstance):BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
-            -- DECOMPILER ERROR at PC85: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC85: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC50(R13_PC47, (self._buffInstance):BuffID())
-            -- DECOMPILER ERROR at PC90: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC90: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC50(R13_PC47, "Load")
-            -- DECOMPILER ERROR at PC93: Overwrote pending register: R12 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC94: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC94: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC50 = R12_PC50(R13_PC47)
-            -- DECOMPILER ERROR at PC96: Overwrote pending register: R13 in 'AssignReg'
-
-            R12_PC50 = R12_PC50:Dispatch
-            R12_PC50(R13_PC47, GameEventType.DataLogicResult, 0, res)
-          end
-          detailLogger:EndRecordTriggerLogic()
-          -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if notify and buffResult then
+        local res = DataBuffLogicResult:New(self:GetOwnerEntity():GetID(), self._buffInstance:BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
+        res:SetBuffID(self._buffInstance:BuffID())
+        res:SetLogicType("Load")
+        self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
       end
+      detailLogger:EndRecordTriggerLogic()
     end
     detailLogger:EndTriggerLogic()
   end
@@ -185,152 +116,77 @@ end
 
 _class("BuffUnloadHandler", BuffHandlerBase)
 BuffUnloadHandler = BuffUnloadHandler
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffUnloadHandler.Constructor = function(self)
-  -- function num : 0_13
+function BuffUnloadHandler:Constructor()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffUnloadHandler.OnTrigger = function(self, notify, triggers)
-  -- function num : 0_14 , upvalues : _ENV
-  do
-    if self._logic then
-      local detailLogger = (self._world):GetDetailMatchLogger()
-      detailLogger:BeginTriggerLogic("卸载逻辑")
-      detailLogger:RecordBuffInstance(self._buffInstance, (self:GetOwnerEntity()):GetID())
-      for index,logic in ipairs(self._logic) do
-        self:PrintBuffHandlerLog("buff unload trigger logic ---- ", logic:GetLogicName())
-        local logger = (self._world):GetSyncLogger()
-        logger:Trace({key = "buffUnload", buffID = (self._buffInstance):BuffID(), entityID = (self:GetOwnerEntity()):GetID(), logic = logic:GetLogicName()})
-        detailLogger:RecordTriggerLogic(index, R13_PC47)
-        detailLogger:RecordBuffLogic(R12_PC50)
-        local buffResult = logic:DoLogic(R12_PC50, R13_PC47)
-        -- DECOMPILER ERROR at PC58: Overwrote pending register: R12 in 'AssignReg'
-
-        -- DECOMPILER ERROR at PC62: Overwrote pending register: R12 in 'AssignReg'
-
-        -- DECOMPILER ERROR at PC63: Overwrote pending register: R13 in 'AssignReg'
-
-        if buffResult and type(R12_PC50) == "table" then
-          detailLogger:RecordBuffResult(R13_PC47)
-        end
-        -- DECOMPILER ERROR at PC70: Overwrote pending register: R12 in 'AssignReg'
-
-        -- DECOMPILER ERROR at PC71: Overwrote pending register: R13 in 'AssignReg'
-
-        -- DECOMPILER ERROR at PC73: Overwrote pending register: R13 in 'AssignReg'
-
-        do
-          do
-            if notify and buffResult then
-              local res = DataBuffLogicResult:New(R13_PC47, (self._buffInstance):BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
-              -- DECOMPILER ERROR at PC84: Overwrote pending register: R13 in 'AssignReg'
-
-              -- DECOMPILER ERROR at PC84: Overwrote pending register: R12 in 'AssignReg'
-
-              R12_PC50(R13_PC47, (self._buffInstance):BuffID())
-              -- DECOMPILER ERROR at PC89: Overwrote pending register: R13 in 'AssignReg'
-
-              -- DECOMPILER ERROR at PC89: Overwrote pending register: R12 in 'AssignReg'
-
-              R12_PC50(R13_PC47, "Unload")
-              -- DECOMPILER ERROR at PC92: Overwrote pending register: R12 in 'AssignReg'
-
-              -- DECOMPILER ERROR at PC93: Overwrote pending register: R13 in 'AssignReg'
-
-              -- DECOMPILER ERROR at PC93: Overwrote pending register: R12 in 'AssignReg'
-
-              R12_PC50 = R12_PC50(R13_PC47)
-              -- DECOMPILER ERROR at PC95: Overwrote pending register: R13 in 'AssignReg'
-
-              R12_PC50 = R12_PC50:Dispatch
-              R12_PC50(R13_PC47, GameEventType.DataLogicResult, 0, res)
-            end
-            detailLogger:EndRecordTriggerLogic()
-            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
+function BuffUnloadHandler:OnTrigger(notify, triggers)
+  if self._logic then
+    local detailLogger = self._world:GetDetailMatchLogger()
+    detailLogger:BeginTriggerLogic("卸载逻辑")
+    detailLogger:RecordBuffInstance(self._buffInstance, self:GetOwnerEntity():GetID())
+    for index, logic in ipairs(self._logic) do
+      self:PrintBuffHandlerLog("buff unload trigger logic ---- ", logic:GetLogicName())
+      local logger = self._world:GetSyncLogger()
+      logger:Trace({
+        key = "buffUnload",
+        buffID = self._buffInstance:BuffID(),
+        entityID = self:GetOwnerEntity():GetID(),
+        logic = logic:GetLogicName()
+      })
+      detailLogger:RecordTriggerLogic(index, logic)
+      detailLogger:RecordBuffLogic(logic)
+      local buffResult = logic:DoLogic(notify, triggers)
+      if buffResult and type(buffResult) == "table" then
+        detailLogger:RecordBuffResult(buffResult)
       end
-      detailLogger:EndTriggerLogic()
+      if notify and buffResult then
+        local res = DataBuffLogicResult:New(self:GetOwnerEntity():GetID(), self._buffInstance:BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
+        res:SetBuffID(self._buffInstance:BuffID())
+        res:SetLogicType("Unload")
+        self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
+      end
+      detailLogger:EndRecordTriggerLogic()
     end
-    ;
-    (self._buffInstance):Unload(notify, true)
+    detailLogger:EndTriggerLogic()
   end
+  self._buffInstance:Unload(notify, true)
 end
 
 _class("BuffActiveHandler", BuffHandlerBase)
 BuffActiveHandler = BuffActiveHandler
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffActiveHandler.Constructor = function(self)
-  -- function num : 0_15
+function BuffActiveHandler:Constructor()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffActiveHandler.OnTrigger = function(self, notify, triggers)
-  -- function num : 0_16 , upvalues : _ENV
-  (self._buffInstance):SetActive(true)
+function BuffActiveHandler:OnTrigger(notify, triggers)
+  self._buffInstance:SetActive(true)
   if self._logic then
-    local detailLogger = (self._world):GetDetailMatchLogger()
+    local detailLogger = self._world:GetDetailMatchLogger()
     detailLogger:BeginTriggerLogic("激活逻辑")
-    detailLogger:RecordBuffInstance(self._buffInstance, (self:GetOwnerEntity()):GetID())
-    for index,logic in ipairs(self._logic) do
+    detailLogger:RecordBuffInstance(self._buffInstance, self:GetOwnerEntity():GetID())
+    for index, logic in ipairs(self._logic) do
       self:PrintBuffHandlerLog("buff active trigger logic ---- ", logic:GetLogicName())
-      local logger = (self._world):GetSyncLogger()
-      logger:Trace({key = "buffActive", buffID = (self._buffInstance):BuffID(), entityID = (self:GetOwnerEntity()):GetID(), logic = logic:GetLogicName()})
-      detailLogger:RecordTriggerLogic(index, R13_PC51)
-      detailLogger:RecordBuffLogic(R12_PC54)
-      local buffResult = logic:DoLogic(R12_PC54, R13_PC51)
-      -- DECOMPILER ERROR at PC62: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC66: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC67: Overwrote pending register: R13 in 'AssignReg'
-
-      if buffResult and type(R12_PC54) == "table" then
-        detailLogger:RecordBuffResult(R13_PC51)
+      local logger = self._world:GetSyncLogger()
+      logger:Trace({
+        key = "buffActive",
+        buffID = self._buffInstance:BuffID(),
+        entityID = self:GetOwnerEntity():GetID(),
+        logic = logic:GetLogicName()
+      })
+      detailLogger:RecordTriggerLogic(index, logic)
+      detailLogger:RecordBuffLogic(logic)
+      local buffResult = logic:DoLogic(notify, triggers)
+      if buffResult and type(buffResult) == "table" then
+        detailLogger:RecordBuffResult(buffResult)
       end
-      -- DECOMPILER ERROR at PC74: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC75: Overwrote pending register: R13 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC77: Overwrote pending register: R13 in 'AssignReg'
-
-      do
-        do
-          if notify and buffResult then
-            local res = DataBuffLogicResult:New(R13_PC51, (self._buffInstance):BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
-            -- DECOMPILER ERROR at PC88: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC88: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC54(R13_PC51, (self._buffInstance):BuffID())
-            -- DECOMPILER ERROR at PC93: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC93: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC54(R13_PC51, "Active")
-            -- DECOMPILER ERROR at PC96: Overwrote pending register: R12 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC97: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC97: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC54 = R12_PC54(R13_PC51)
-            -- DECOMPILER ERROR at PC99: Overwrote pending register: R13 in 'AssignReg'
-
-            R12_PC54 = R12_PC54:Dispatch
-            R12_PC54(R13_PC51, GameEventType.DataLogicResult, 0, res)
-          end
-          detailLogger:EndRecordTriggerLogic()
-          -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if notify and buffResult then
+        local res = DataBuffLogicResult:New(self:GetOwnerEntity():GetID(), self._buffInstance:BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
+        res:SetBuffID(self._buffInstance:BuffID())
+        res:SetLogicType("Active")
+        self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
       end
+      detailLogger:EndRecordTriggerLogic()
     end
     detailLogger:EndTriggerLogic()
   end
@@ -338,74 +194,38 @@ end
 
 _class("BuffDeactiveHandler", BuffHandlerBase)
 BuffDeactiveHandler = BuffDeactiveHandler
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffDeactiveHandler.Constructor = function(self)
-  -- function num : 0_17
+function BuffDeactiveHandler:Constructor()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffDeactiveHandler.OnTrigger = function(self, notify, triggers)
-  -- function num : 0_18 , upvalues : _ENV
-  (self._buffInstance):SetActive(false)
+function BuffDeactiveHandler:OnTrigger(notify, triggers)
+  self._buffInstance:SetActive(false)
   if self._logic then
-    local detailLogger = (self._world):GetDetailMatchLogger()
+    local detailLogger = self._world:GetDetailMatchLogger()
     detailLogger:BeginTriggerLogic("失活逻辑")
-    detailLogger:RecordBuffInstance(self._buffInstance, (self:GetOwnerEntity()):GetID())
-    for index,logic in ipairs(self._logic) do
+    detailLogger:RecordBuffInstance(self._buffInstance, self:GetOwnerEntity():GetID())
+    for index, logic in ipairs(self._logic) do
       self:PrintBuffHandlerLog("buff deactive trigger logic ---- ", logic:GetLogicName())
-      local logger = (self._world):GetSyncLogger()
-      logger:Trace({key = "buffDeactive", buffID = (self._buffInstance):BuffID(), entityID = (self:GetOwnerEntity()):GetID(), logic = logic:GetLogicName()})
-      detailLogger:RecordTriggerLogic(index, R13_PC51)
-      detailLogger:RecordBuffLogic(R12_PC54)
-      local buffResult = logic:DoLogic(R12_PC54, R13_PC51)
-      -- DECOMPILER ERROR at PC62: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC66: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC67: Overwrote pending register: R13 in 'AssignReg'
-
-      if buffResult and type(R12_PC54) == "table" then
-        detailLogger:RecordBuffResult(R13_PC51)
+      local logger = self._world:GetSyncLogger()
+      logger:Trace({
+        key = "buffDeactive",
+        buffID = self._buffInstance:BuffID(),
+        entityID = self:GetOwnerEntity():GetID(),
+        logic = logic:GetLogicName()
+      })
+      detailLogger:RecordTriggerLogic(index, logic)
+      detailLogger:RecordBuffLogic(logic)
+      local buffResult = logic:DoLogic(notify, triggers)
+      if buffResult and type(buffResult) == "table" then
+        detailLogger:RecordBuffResult(buffResult)
       end
-      -- DECOMPILER ERROR at PC74: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC75: Overwrote pending register: R13 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC77: Overwrote pending register: R13 in 'AssignReg'
-
-      do
-        do
-          if notify and buffResult then
-            local res = DataBuffLogicResult:New(R13_PC51, (self._buffInstance):BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
-            -- DECOMPILER ERROR at PC88: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC88: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC54(R13_PC51, (self._buffInstance):BuffID())
-            -- DECOMPILER ERROR at PC93: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC93: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC54(R13_PC51, "Deactive")
-            -- DECOMPILER ERROR at PC96: Overwrote pending register: R12 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC97: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC97: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC54 = R12_PC54(R13_PC51)
-            -- DECOMPILER ERROR at PC99: Overwrote pending register: R13 in 'AssignReg'
-
-            R12_PC54 = R12_PC54:Dispatch
-            R12_PC54(R13_PC51, GameEventType.DataLogicResult, 0, res)
-          end
-          detailLogger:EndRecordTriggerLogic()
-          -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if notify and buffResult then
+        local res = DataBuffLogicResult:New(self:GetOwnerEntity():GetID(), self._buffInstance:BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
+        res:SetBuffID(self._buffInstance:BuffID())
+        res:SetLogicType("Deactive")
+        self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
       end
+      detailLogger:EndRecordTriggerLogic()
     end
     detailLogger:EndTriggerLogic()
   end
@@ -413,70 +233,35 @@ end
 
 _class("BuffExecuteHandler", BuffHandlerBase)
 BuffExecuteHandler = BuffExecuteHandler
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffExecuteHandler.OnTrigger = function(self, notify, triggers)
-  -- function num : 0_19 , upvalues : _ENV
+function BuffExecuteHandler:OnTrigger(notify, triggers)
   if self._logic then
-    local detailLogger = (self._world):GetDetailMatchLogger()
+    local detailLogger = self._world:GetDetailMatchLogger()
     detailLogger:BeginTriggerLogic("执行逻辑")
-    detailLogger:RecordBuffInstance(self._buffInstance, (self:GetOwnerEntity()):GetID())
-    for index,logic in ipairs(self._logic) do
+    detailLogger:RecordBuffInstance(self._buffInstance, self:GetOwnerEntity():GetID())
+    for index, logic in ipairs(self._logic) do
       self:PrintBuffHandlerLog("buff exec trigger logic ---- ", logic:GetLogicName())
-      local logger = (self._world):GetSyncLogger()
-      logger:Trace({key = "buffExec", buffID = (self._buffInstance):BuffID(), entityID = (self:GetOwnerEntity()):GetID(), logic = logic:GetLogicName()})
-      detailLogger:RecordTriggerLogic(index, R13_PC47)
-      detailLogger:RecordBuffLogic(R12_PC50)
-      local buffResult = logic:DoLogic(R12_PC50, R13_PC47)
-      -- DECOMPILER ERROR at PC58: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC62: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC63: Overwrote pending register: R13 in 'AssignReg'
-
-      if buffResult and type(R12_PC50) == "table" then
-        detailLogger:RecordBuffResult(R13_PC47)
+      local logger = self._world:GetSyncLogger()
+      logger:Trace({
+        key = "buffExec",
+        buffID = self._buffInstance:BuffID(),
+        entityID = self:GetOwnerEntity():GetID(),
+        logic = logic:GetLogicName()
+      })
+      detailLogger:RecordTriggerLogic(index, logic)
+      detailLogger:RecordBuffLogic(logic)
+      local buffResult = logic:DoLogic(notify, triggers)
+      if buffResult and type(buffResult) == "table" then
+        detailLogger:RecordBuffResult(buffResult)
       end
-      -- DECOMPILER ERROR at PC70: Overwrote pending register: R12 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC71: Overwrote pending register: R13 in 'AssignReg'
-
-      -- DECOMPILER ERROR at PC73: Overwrote pending register: R13 in 'AssignReg'
-
-      do
-        do
-          if notify and buffResult then
-            local res = DataBuffLogicResult:New(R13_PC47, (self._buffInstance):BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
-            -- DECOMPILER ERROR at PC84: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC84: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC50(R13_PC47, (self._buffInstance):BuffID())
-            -- DECOMPILER ERROR at PC89: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC89: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC50(R13_PC47, "Exec")
-            -- DECOMPILER ERROR at PC92: Overwrote pending register: R12 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC93: Overwrote pending register: R13 in 'AssignReg'
-
-            -- DECOMPILER ERROR at PC93: Overwrote pending register: R12 in 'AssignReg'
-
-            R12_PC50 = R12_PC50(R13_PC47)
-            -- DECOMPILER ERROR at PC95: Overwrote pending register: R13 in 'AssignReg'
-
-            R12_PC50 = R12_PC50:Dispatch
-            R12_PC50(R13_PC47, GameEventType.DataLogicResult, 0, res)
-          end
-          detailLogger:EndRecordTriggerLogic()
-          -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if notify and buffResult then
+        local res = DataBuffLogicResult:New(self:GetOwnerEntity():GetID(), self._buffInstance:BuffSeq(), logic:GetLogicName(), notify, buffResult, triggers)
+        res:SetBuffID(self._buffInstance:BuffID())
+        res:SetLogicType("Exec")
+        self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
       end
+      detailLogger:EndRecordTriggerLogic()
     end
     detailLogger:EndTriggerLogic()
   end
 end
-
-

@@ -1,94 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/preview_chain_skill_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewChainSkillComponent", Object)
 PreviewChainSkillComponent = PreviewChainSkillComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewChainSkillComponent.Constructor = function(self, petIds, skillIds, posPickUpSafe, enablePickUp)
-  -- function num : 0_0
+function PreviewChainSkillComponent:Constructor(petIds, skillIds, posPickUpSafe, enablePickUp)
   self._petIds = petIds
   self._skillIds = skillIds
   self._posPickUpSafe = posPickUpSafe
   self._enablePickUp = enablePickUp
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillComponent.SetPickUpTargetEnalbe = function(self, enable)
-  -- function num : 0_1
+function PreviewChainSkillComponent:SetPickUpTargetEnalbe(enable)
   self._enablePickUp = enable
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillComponent.GetPickUpTargetEnalbe = function(self)
-  -- function num : 0_2
+function PreviewChainSkillComponent:GetPickUpTargetEnalbe()
   return self._enablePickUp
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillComponent.GetPetIds = function(self)
-  -- function num : 0_3
+function PreviewChainSkillComponent:GetPetIds()
   return self._petIds
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillComponent.GetSkillIds = function(self)
-  -- function num : 0_4
+function PreviewChainSkillComponent:GetSkillIds()
   return self._skillIds
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSkillComponent.GetPosPickUpSafe = function(self)
-  -- function num : 0_5
+function PreviewChainSkillComponent:GetPosPickUpSafe()
   return self._posPickUpSafe
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewChainSkill = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).PreviewChainSkill)
+function Entity:PreviewChainSkill()
+  return self:GetComponent(self.WEComponentsEnum.PreviewChainSkill)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewChainSkill = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).PreviewChainSkill)
+function Entity:HasPreviewChainSkill()
+  return self:HasComponent(self.WEComponentsEnum.PreviewChainSkill)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewChainSkill = function(self, petIds, skillIds, posPickUpSafe)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewChainSkill
+function Entity:AddPreviewChainSkill(petIds, skillIds, posPickUpSafe)
+  local index = self.WEComponentsEnum.PreviewChainSkill
   local component = PreviewChainSkillComponent:New(petIds, skillIds, posPickUpSafe)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewChainSkill = function(self, petIds, skillIds, posPickUpSafe, enablePickUp)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewChainSkill
+function Entity:ReplacePreviewChainSkill(petIds, skillIds, posPickUpSafe, enablePickUp)
+  local index = self.WEComponentsEnum.PreviewChainSkill
   local component = PreviewChainSkillComponent:New(petIds, skillIds, posPickUpSafe, enablePickUp)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewChainSkill = function(self)
-  -- function num : 0_10
+function Entity:RemovePreviewChainSkill()
   if self:HasPreviewChainSkill() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewChainSkill)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewChainSkill)
   end
 end
-
-

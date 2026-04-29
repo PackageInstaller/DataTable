@@ -1,44 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_pet_sacrifice_super_grid_traps.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultPetSacrificeSuperGridTraps", SkillEffectResultBase)
 SkillEffectResultPetSacrificeSuperGridTraps = SkillEffectResultPetSacrificeSuperGridTraps
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultPetSacrificeSuperGridTraps.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResultPetSacrificeSuperGridTraps:GetEffectType()
   return SkillEffectType.PetSacrificeSuperGridTraps
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetSacrificeSuperGridTraps.Constructor = function(self, trapIDs)
-  -- function num : 0_1
+function SkillEffectResultPetSacrificeSuperGridTraps:Constructor(trapIDs)
   self._trapIDs = trapIDs
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetSacrificeSuperGridTraps.SetExtraGrids = function(self, gridPosList)
-  -- function num : 0_2
+function SkillEffectResultPetSacrificeSuperGridTraps:SetExtraGrids(gridPosList)
   self._extraGirds = gridPosList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetSacrificeSuperGridTraps.GetTrapIDs = function(self)
-  -- function num : 0_3
+function SkillEffectResultPetSacrificeSuperGridTraps:GetTrapIDs()
   return self._trapIDs
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetSacrificeSuperGridTraps.GetExtraGrids = function(self)
-  -- function num : 0_4
+function SkillEffectResultPetSacrificeSuperGridTraps:GetExtraGrids()
   return self._extraGirds
 end
-
-

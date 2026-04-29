@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_cost_hp_by_san_change_debt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultCostHPBySanChangeDebt", BuffResultBase)
 BuffResultCostHPBySanChangeDebt = BuffResultCostHPBySanChangeDebt
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCostHPBySanChangeDebt.Constructor = function(self, damageInfo, notify)
-  -- function num : 0_0
+function BuffResultCostHPBySanChangeDebt:Constructor(damageInfo, notify)
   self._damageInfo = damageInfo
   self._notify = notify
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCostHPBySanChangeDebt.GetDamageInfo = function(self)
-  -- function num : 0_1
+function BuffResultCostHPBySanChangeDebt:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCostHPBySanChangeDebt.GetLogicNotify = function(self)
-  -- function num : 0_2
+function BuffResultCostHPBySanChangeDebt:GetLogicNotify()
   return self._notify
 end
-
-

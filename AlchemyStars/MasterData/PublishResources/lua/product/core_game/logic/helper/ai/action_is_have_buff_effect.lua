@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_have_buff_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsHaveBuffEffect", AINewNode)
 ActionIsHaveBuffEffect = ActionIsHaveBuffEffect
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsHaveBuffEffect.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local com = (self.m_entityOwn):BuffComponent()
+function ActionIsHaveBuffEffect:OnUpdate()
+  local com = self.m_entityOwn:BuffComponent()
   local buffEffect = self:GetLogicData(-1)
   local buffID = self:GetLogicData(-2)
   if com and (com:HasBuffEffect(buffEffect) or com:GetBuffById(buffID)) then
@@ -18,5 +11,3 @@ ActionIsHaveBuffEffect.OnUpdate = function(self)
   end
   return AINewNodeStatus.Failure
 end
-
-

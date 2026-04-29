@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_timelogin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignInlandTimeLogin", ICampaignComponentLocalProcessBase)
 CCampaignInlandTimeLogin = CCampaignInlandTimeLogin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignInlandTimeLogin.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignInlandTimeLogin:Constructor()
   self._timeLoginComponent = nil
   self._timeLoginCompInfo = nil
   self._personProgressComponent = nil
@@ -16,55 +9,37 @@ CCampaignInlandTimeLogin.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandTimeLogin.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignInlandTimeLogin:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_TIMELOGIN
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandTimeLogin.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignInlandTimeLogin:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandTimeLogin.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignInlandTimeLogin:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetTimeLoginComponent()
   self:_GetPersonProgressComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandTimeLogin._GetTimeLoginComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._timeLoginComponent = (self._campaignObj):GetComponent(ECCampaignInlandTimeLoginComponentID.Time_LOGIN)
+function CCampaignInlandTimeLogin:_GetTimeLoginComponent()
+  self._timeLoginComponent = self._campaignObj:GetComponent(ECCampaignInlandTimeLoginComponentID.Time_LOGIN)
   if not self._timeLoginComponent then
-    return 
+    return
   end
-  self._timeLoginCompInfo = (self._timeLoginComponent):ComponentInfo()
+  self._timeLoginCompInfo = self._timeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandTimeLogin._GetPersonProgressComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._personProgressComponent = (self._campaignObj):GetComponent(ECCampaignInlandTimeLoginComponentID.PERSON_PROGRESS)
+function CCampaignInlandTimeLogin:_GetPersonProgressComponent()
+  self._personProgressComponent = self._campaignObj:GetComponent(ECCampaignInlandTimeLoginComponentID.PERSON_PROGRESS)
   if not self._personProgressComponent then
-    return 
+    return
   end
-  self._personProgressCompInfo = (self._personProgressComponent):ComponentInfo()
+  self._personProgressCompInfo = self._personProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandTimeLogin.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignInlandTimeLogin:GetComponent(componentID)
   if ECCampaignInlandTimeLoginComponentID.Time_LOGIN == componentID then
     return self._timeLoginComponent
   end
@@ -74,10 +49,7 @@ CCampaignInlandTimeLogin.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandTimeLogin.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignInlandTimeLogin:GetComponentInfo(componentID)
   if ECCampaignInlandTimeLoginComponentID.Time_LOGIN == componentID then
     return self._timeLoginCompInfo
   end
@@ -86,5 +58,3 @@ CCampaignInlandTimeLogin.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

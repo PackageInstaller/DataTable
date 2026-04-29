@@ -1,10 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/monster_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-MonsterType = {None = 0, Normal = 1, Boss = 2, HitFly = 3, WorldBoss = 4}
+MonsterType = {
+  None = 0,
+  Normal = 1,
+  Boss = 2,
+  HitFly = 3,
+  WorldBoss = 4
+}
 _enum("MonsterType", MonsterType)
 MonsterBornType = MonsterBornType
-_enum("MonsterBornType", {None = 0, Normal = 1, AfterFury = 2})
-
+_enum("MonsterBornType", {
+  None = 0,
+  Normal = 1,
+  AfterFury = 2
+})

@@ -1,115 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/component/homelandpet_component_extra_animation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_component_base")
 _class("HomelandPetComponentExtraAnimation", HomelandPetComponentBase)
 HomelandPetComponentExtraAnimation = HomelandPetComponentExtraAnimation
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetComponentExtraAnimation.Constructor = function(self, componentType, pet, behavior)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetComponentExtraAnimation.super).Constructor)(self, componentType, pet, behavior)
-  self._animation = (self._pet):GetAnimation()
+function HomelandPetComponentExtraAnimation:Constructor(componentType, pet, behavior)
+  HomelandPetComponentExtraAnimation.super.Constructor(self, componentType, pet, behavior)
+  self._animation = self._pet:GetAnimation()
   self._petExtraAnimationCfg = nil
   self._petEffectReqs = {}
   self._petEffectObj = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.ReLoadPetComponent = function(self)
-  -- function num : 0_1
-  self._animation = (self._pet):GetAnimation()
+function HomelandPetComponentExtraAnimation:ReLoadPetComponent()
+  self._animation = self._pet:GetAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.Init = function(self)
-  -- function num : 0_2
+function HomelandPetComponentExtraAnimation:Init()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.FishingManager = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandPetComponentExtraAnimation:FishingManager()
   if not self._fishingManager then
-    local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+    local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
     local homelandClient = homeLandModule:GetClient()
     self._fishingManager = homelandClient:FishingManager()
   end
-  do
-    return self._fishingManager
-  end
+  return self._fishingManager
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.OnExcute = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandPetComponentExtraAnimation:OnExcute()
   if self.state == HomelandPetComponentState.Resting then
     if not self._petExtraAnimationCfg then
-      return 
+      return
     end
     if not self._animation then
-      self._animation = (self._pet):GetAnimation()
+      self._animation = self._pet:GetAnimation()
     end
-    ;
-    (self._pet):SetBipObstacleEnabled(true)
+    self._pet:SetBipObstacleEnabled(true)
     self.state = HomelandPetComponentState.Running
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.Exit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandPetComponentExtraAnimation:Exit()
   local preState = self.state
-  ;
-  ((HomelandPetComponentExtraAnimation.super).Exit)(self)
-  ;
-  (self._pet):SetBipObstacleEnabled(false)
+  HomelandPetComponentExtraAnimation.super.Exit(self)
+  self._pet:SetBipObstacleEnabled(false)
   self._petExtraAnimationCfg = nil
-  for _,_req in pairs(self._petEffectReqs) do
+  for _, _req in pairs(self._petEffectReqs) do
     _req:Dispose()
   end
-  ;
-  (table.clear)(self._petEffectReqs)
-  ;
-  (table.clear)(self._petEffectObj)
+  table.clear(self._petEffectReqs)
+  table.clear(self._petEffectObj)
   self:DestroyFishTools()
   self:_DestroyAnimTask()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.Dispose = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((HomelandPetComponentExtraAnimation.super).Dispose)()
+function HomelandPetComponentExtraAnimation:Dispose()
+  HomelandPetComponentExtraAnimation.super.Dispose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.PlayAnimation = function(self, cfgId, nextCfgId)
-  -- function num : 0_7
+function HomelandPetComponentExtraAnimation:PlayAnimation(cfgId, nextCfgId)
   local data = self:_GetData(cfgId)
-  if data then
-    local anim = data.anim
-  end
+  local anim = data and data.anim
   local nextData = self:_GetData(nextCfgId)
-  if nextData then
-    local nextAnim = nextData.anim
-  end
+  local nextAnim = nextData and nextData.anim
   if data then
     self:_PlayAnimation(anim, nextAnim)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.PlayEffect = function(self, cfgId, show)
-  -- function num : 0_8
+function HomelandPetComponentExtraAnimation:PlayEffect(cfgId, show)
   local data = self:_GetData(cfgId)
   if data then
     if show then
@@ -120,236 +78,154 @@ HomelandPetComponentExtraAnimation.PlayEffect = function(self, cfgId, show)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.GetEffect = function(self, cfgId)
-  -- function num : 0_9
+function HomelandPetComponentExtraAnimation:GetEffect(cfgId)
   local data = self:_GetData(cfgId)
   if data and data.peff then
-    return (self._petEffectObj)[data.peff]
+    return self._petEffectObj[data.peff]
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.StopAllEffect = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,gameObject in pairs(self._petEffectObj) do
+function HomelandPetComponentExtraAnimation:StopAllEffect()
+  for _, gameObject in pairs(self._petEffectObj) do
     gameObject:SetActive(false)
     self:_PlayEffectAnimation(gameObject)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation._GetData = function(self, cfgId)
-  -- function num : 0_11 , upvalues : _ENV
-  self._petExtraAnimationCfg = (Cfg.cfg_homeland_pet_extra_animation)[cfgId]
-  if self._petExtraAnimationCfg then
-    local info = (self._petExtraAnimationCfg).Anim
-  end
+function HomelandPetComponentExtraAnimation:_GetData(cfgId)
+  self._petExtraAnimationCfg = Cfg.cfg_homeland_pet_extra_animation[cfgId]
+  local info = self._petExtraAnimationCfg and self._petExtraAnimationCfg.Anim
   local data = self:_RandomAnimationAndEffect(info)
   return data
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation._RandomAnimationAndEffect = function(self, info)
-  -- function num : 0_12 , upvalues : _ENV
+function HomelandPetComponentExtraAnimation:_RandomAnimationAndEffect(info)
   if not info then
     return nil
   end
-  if (table.count)(info) <= 1 then
+  if table.count(info) <= 1 then
     return info[1]
   end
   local totalWeight = 0
   local weightArray = {}
-  for key,value in pairs(info) do
+  for key, value in pairs(info) do
     if value.weight then
-      weightArray[key] = {totalWeight, value.weight}
+      weightArray[key] = {
+        totalWeight,
+        value.weight
+      }
       totalWeight = totalWeight + value.weight
     end
   end
-  local randomWeight = (math.random)(1, totalWeight)
-  for key,value in pairs(weightArray) do
-    if value[1] < randomWeight and randomWeight <= value[2] then
+  local randomWeight = math.random(1, totalWeight)
+  for key, value in pairs(weightArray) do
+    if randomWeight > value[1] and randomWeight <= value[2] then
       return info[key]
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation._PlayAnimation = function(self, animName, nextAnimName)
-  -- function num : 0_13
-  if not self._animation then
-    self._animation = (self._pet):GetAnimation()
-    if self._animation then
-      (self._pet):LoadExtraAnimation()
-      self:_PlayAnimationOnce(animName, nextAnimName)
-    end
+function HomelandPetComponentExtraAnimation:_PlayAnimation(animName, nextAnimName)
+  self._animation = self._animation or self._pet:GetAnimation()
+  if self._animation then
+    self._pet:LoadExtraAnimation()
+    self:_PlayAnimationOnce(animName, nextAnimName)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation._PlayAnimationOnce = function(self, animName, nextAnimName)
-  -- function num : 0_14 , upvalues : _ENV
+function HomelandPetComponentExtraAnimation:_PlayAnimationOnce(animName, nextAnimName)
   self:_DestroyAnimTask()
-  ;
-  (self._animation):Play(animName)
+  self._animation:Play(animName)
   if not nextAnimName then
-    return 
+    return
   end
-  local state = (self._animation):get_Item(animName)
+  local state = self._animation:get_Item(animName)
   if state then
-    local length = (state.clip).length * 1000
-    do
-      self:_DestroyAnimTask()
-      self._animTask = (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, length, self, nextAnimName
-    YIELD(TT, length)
-    ;
-    (self._animation):Play(nextAnimName)
-  end
-)
-    end
+    local length = state.clip.length * 1000
+    self:_DestroyAnimTask()
+    self._animTask = TaskManager:GetInstance():StartTask(function(TT)
+      YIELD(TT, length)
+      self._animation:Play(nextAnimName)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation._DestroyAnimTask = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandPetComponentExtraAnimation:_DestroyAnimTask()
   if self._animTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._animTask)
+    GameGlobal.TaskManager():KillTask(self._animTask)
     self._animTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation._PlayEffect = function(self, peff, pholder, anim)
-  -- function num : 0_16 , upvalues : _ENV
-  if peff and not (self._petEffectReqs)[peff] then
-    local bone = (self._pet):GetBoneNode(pholder)
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset(peff .. ".prefab", LoadType.GameObject)
+function HomelandPetComponentExtraAnimation:_PlayEffect(peff, pholder, anim)
+  if peff and not self._petEffectReqs[peff] then
+    local bone = self._pet:GetBoneNode(pholder)
+    local req = ResourceManager:GetInstance():SyncLoadAsset(peff .. ".prefab", LoadType.GameObject)
     if req and req.Obj then
       local effect = req.Obj
-      ;
-      (effect.transform):SetParent(bone)
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (effect.transform).localPosition = Vector3.zero
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (effect.transform).localRotation = (Quaternion.Euler)(0, 0, 0)
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._petEffectReqs)[peff] = req
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._petEffectObj)[peff] = req.Obj
+      effect.transform:SetParent(bone)
+      effect.transform.localPosition = Vector3.zero
+      effect.transform.localRotation = Quaternion.Euler(0, 0, 0)
+      self._petEffectReqs[peff] = req
+      self._petEffectObj[peff] = req.Obj
       self:_LoadPetExtraAnimation(effect)
     end
   end
-  do
-    if (self._petEffectObj)[peff] then
-      ((self._petEffectObj)[peff]):SetActive(true)
-      self:_PlayEffectAnimation((self._petEffectObj)[peff], anim)
-    end
+  if self._petEffectObj[peff] then
+    self._petEffectObj[peff]:SetActive(true)
+    self:_PlayEffectAnimation(self._petEffectObj[peff], anim)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation._StopEffect = function(self, peff)
-  -- function num : 0_17
-  if peff and (self._petEffectObj)[peff] then
-    ((self._petEffectObj)[peff]):SetActive(false)
-    self:_PlayEffectAnimation((self._petEffectObj)[peff])
+function HomelandPetComponentExtraAnimation:_StopEffect(peff)
+  if peff and self._petEffectObj[peff] then
+    self._petEffectObj[peff]:SetActive(false)
+    self:_PlayEffectAnimation(self._petEffectObj[peff])
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation._PlayEffectAnimation = function(self, obj, animName)
-  -- function num : 0_18 , upvalues : _ENV
+function HomelandPetComponentExtraAnimation:_PlayEffectAnimation(obj, animName)
   local animation = obj:GetComponentInChildren(typeof(UnityEngine.Animation))
   if animation then
     animation:Play(animName)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation._LoadPetExtraAnimation = function(self, obj)
-  -- function num : 0_19 , upvalues : _ENV
+function HomelandPetComponentExtraAnimation:_LoadPetExtraAnimation(obj)
   local animation = obj:GetComponentInChildren(typeof(UnityEngine.Animation))
   if animation then
-    local extra = (self._pet):GetExtraAnimation()
-    ;
-    (HelperProxy:GetInstance()):AddAnimTo(extra, animation)
+    local extra = self._pet:GetExtraAnimation()
+    HelperProxy:GetInstance():AddAnimTo(extra, animation)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.StartFishTools = function(self, cfgId, delay)
-  -- function num : 0_20 , upvalues : _ENV
-  if not delay then
-    delay = 0
-  end
-  self._startTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : _ENV, delay, self, cfgId
+function HomelandPetComponentExtraAnimation:StartFishTools(cfgId, delay)
+  delay = delay or 0
+  self._startTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, delay)
     local fishRodgo = self:GetEffect(cfgId)
-    if fishRodgo then
-      local fishLine = ((fishRodgo.transform):Find("Line")):GetComponent("LineRenderer")
-    end
-    if fishRodgo then
-      local fishLineFirstPointTran = (fishRodgo.transform):Find("hl_tool_5012001_1/Dummy001/Bone0001/Bone002/Bone003/Bone004/Bone005/Bone006/Bone007")
-    end
-    ;
-    (self:FishingManager()):StartFishTools(self._pet, fishLine, fishLineFirstPointTran)
-  end
-)
+    local fishLine = fishRodgo and fishRodgo.transform:Find("Line"):GetComponent("LineRenderer")
+    local fishLineFirstPointTran = fishRodgo and fishRodgo.transform:Find("hl_tool_5012001_1/Dummy001/Bone0001/Bone002/Bone003/Bone004/Bone005/Bone006/Bone007")
+    self:FishingManager():StartFishTools(self._pet, fishLine, fishLineFirstPointTran)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.StopFishTools = function(self, delay)
-  -- function num : 0_21 , upvalues : _ENV
-  if not delay then
-    delay = 0
-  end
-  self._stopTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : _ENV, delay, self
+function HomelandPetComponentExtraAnimation:StopFishTools(delay)
+  delay = delay or 0
+  self._stopTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, delay)
-    ;
-    (self:FishingManager()):StopFishTools()
-  end
-)
+    self:FishingManager():StopFishTools()
+  end)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentExtraAnimation.DestroyFishTools = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function HomelandPetComponentExtraAnimation:DestroyFishTools()
   if self._startTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._startTask)
+    GameGlobal.TaskManager():KillTask(self._startTask)
     self._startTask = nil
   end
   if self._stopTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._stopTask)
+    GameGlobal.TaskManager():KillTask(self._stopTask)
     self._stopTask = nil
   end
-  ;
-  (self:FishingManager()):DestroyFishTools()
+  self:FishingManager():DestroyFishTools()
 end
-
-

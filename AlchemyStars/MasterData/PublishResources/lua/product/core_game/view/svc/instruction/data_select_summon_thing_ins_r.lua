@@ -1,38 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_summon_thing_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectSummonThingInstruction", BaseInstruction)
 DataSelectSummonThingInstruction = DataSelectSummonThingInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectSummonThingInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSelectSummonThingInstruction:Constructor(paramList)
   self._summonIndex = tonumber(paramList.index)
   assert(self._summonIndex, "DataSelectSummonThing需要配置index")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectSummonThingInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectSummonThingInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if not skillEffectResultContainer then
-    (Log.fatal)("DataSelectSummonThingInstruction error,has no data result container")
-    return 
+    Log.fatal("DataSelectSummonThingInstruction error,has no data result container")
+    return
   end
   local summonEverythingResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
   if not summonEverythingResultArray then
-    (Log.fatal)("### Get SummonEverything result failed.")
-    return 
+    Log.fatal("### Get SummonEverything result failed.")
+    return
   end
-  assert(#summonEverythingResultArray > 0, "DataSelectNextSummonThing目前只对SummonEverything有效")
+  assert(0 < #summonEverythingResultArray, "DataSelectNextSummonThing目前只对SummonEverything有效")
   local result = summonEverythingResultArray[self._summonIndex]
   if not result then
-    (Log.fatal)("### Get SummonEverything invalid index: ", tostring(self._summonIndex))
-    return 
+    Log.fatal("### Get SummonEverything invalid index: ", tostring(self._summonIndex))
+    return
   end
   local tmpData = result:GetMonsterData()
   local entityWorkID = tmpData.m_entityWorkID
@@ -45,13 +35,10 @@ DataSelectSummonThingInstruction.DoInstruction = function(self, TT, casterEntity
   if not entityWork then
     phaseContext:SetCurSummonInEverythingIndex(-1)
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   phaseContext:SetCurSummonInEverythingIndex(self._summonIndex)
   if entityWork then
     phaseContext:SetCurTargetEntityID(entityWorkID)
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
-
-

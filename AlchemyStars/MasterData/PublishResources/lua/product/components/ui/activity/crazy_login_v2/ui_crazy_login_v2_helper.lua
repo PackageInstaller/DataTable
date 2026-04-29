@@ -1,91 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/crazy_login_v2/ui_crazy_login_v2_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICrazyLoginV2Helper", Object)
 UICrazyLoginV2Helper = UICrazyLoginV2Helper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICrazyLoginV2Helper.SafeState = function(state)
-  -- function num : 0_0 , upvalues : _ENV
-  local tb_check = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_UNKNOW] = true, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_Expired] = true}
+function UICrazyLoginV2Helper.SafeState(state)
+  local tb_check = {
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_UNKNOW] = true,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_Expired] = true
+  }
   return tb_check[state] and ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK or state
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.IsStateCanRecv = function(state)
-  -- function num : 0_1 , upvalues : _ENV
-  do return state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICrazyLoginV2Helper.IsStateCanRecv(state)
+  return state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.IsStateRecved = function(state)
-  -- function num : 0_2 , upvalues : _ENV
-  do return state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICrazyLoginV2Helper.IsStateRecved(state)
+  return state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.IsStateLock = function(state)
-  -- function num : 0_3 , upvalues : _ENV
-  do return state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICrazyLoginV2Helper.IsStateLock(state)
+  return state == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.CheckState = function(datas, tb_check)
-  -- function num : 0_4 , upvalues : _ENV
-  for i,v in ipairs(datas) do
+function UICrazyLoginV2Helper.CheckState(datas, tb_check)
+  for i, v in ipairs(datas) do
     if tb_check[v.m_reward_status] then
       return i
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.CheckCanGetIndex = function(datas)
-  -- function num : 0_5 , upvalues : _ENV
-  local tb_check = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = true, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = true}
-  local idx = (UICrazyLoginV2Helper.CheckState)(datas, tb_check)
+function UICrazyLoginV2Helper.CheckCanGetIndex(datas)
+  local tb_check = {
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = true,
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = true
+  }
+  local idx = UICrazyLoginV2Helper.CheckState(datas, tb_check)
   return idx or 1
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.CheckAllUnlocked = function(datas)
-  -- function num : 0_6 , upvalues : _ENV
-  local tb_check = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = true}
-  local idx = (UICrazyLoginV2Helper.CheckState)(datas, tb_check)
-  do return idx == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICrazyLoginV2Helper.CheckAllUnlocked(datas)
+  local tb_check = {
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = true
+  }
+  local idx = UICrazyLoginV2Helper.CheckState(datas, tb_check)
+  return idx == nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper._GetCfg = function(campaign)
-  -- function num : 0_7 , upvalues : _ENV
-  local id = not campaign and ({})._id or 0
-  if not (Cfg.cfg_crazy_login_v2)[id] then
-    local cfg = {}
-  end
+function UICrazyLoginV2Helper._GetCfg(campaign)
+  local id = (campaign or {})._id or 0
+  local cfg = Cfg.cfg_crazy_login_v2[id] or {}
   return cfg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.GetValue = function(campaign, name, key)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg = (UICrazyLoginV2Helper._GetCfg)(campaign)
-  if not name then
-    name = ""
-  end
+function UICrazyLoginV2Helper.GetValue(campaign, name, key)
+  local cfg = UICrazyLoginV2Helper._GetCfg(campaign)
+  name = name or ""
   local value = cfg[name]
   if key then
     value = value[key]
@@ -94,46 +63,32 @@ UICrazyLoginV2Helper.GetValue = function(campaign, name, key)
   return value
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.GetStateValue = function(campaign, state, key)
-  -- function num : 0_9 , upvalues : _ENV
-  local tb = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = "StateCanRecv", [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = "StateRecved", [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = "StateLock"}
-  return (UICrazyLoginV2Helper.GetValue)(campaign, tb[state], key)
+function UICrazyLoginV2Helper.GetStateValue(campaign, state, key)
+  local tb = {
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = "StateCanRecv",
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED] = "StateRecved",
+    [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = "StateLock"
+  }
+  return UICrazyLoginV2Helper.GetValue(campaign, tb[state], key)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.SetTextColorByCfg = function(uiView, widgetName, value)
-  -- function num : 0_10 , upvalues : _ENV
+function UICrazyLoginV2Helper.SetTextColorByCfg(uiView, widgetName, value)
   local style = {textColor = value}
-  ;
-  (UIStyleHelper.FitStyle_Widget_LocalizationText)(style, uiView, widgetName)
+  UIStyleHelper.FitStyle_Widget_LocalizationText(style, uiView, widgetName)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICrazyLoginV2Helper.SetEffByCfg = function(uiView, widgetName, value, res)
-  -- function num : 0_11 , upvalues : _ENV
-  if not res then
-    res = (ResourceManager:GetInstance()):SyncLoadAsset(value, LoadType.GameObject)
-  end
+function UICrazyLoginV2Helper.SetEffByCfg(uiView, widgetName, value, res)
+  res = res or ResourceManager:GetInstance():SyncLoadAsset(value, LoadType.GameObject)
   if res then
     local go = res.Obj
     local eff = uiView:GetGameObject(widgetName)
-    ;
-    (go.transform):SetParent(eff.transform)
+    go.transform:SetParent(eff.transform)
     local rect = go:GetComponent("RectTransform")
     rect.anchoredPosition = Vector2(0, 0)
     rect.localScale = Vector3(1, 1, 1)
     go:SetActive(true)
   else
-    do
-      ;
-      (Log.error)("UICrazyLoginV2Helper.SetEffByCfg() res is nil ! resName = " .. value)
-      return res
-    end
+    Log.error("UICrazyLoginV2Helper.SetEffByCfg() res is nil ! resName = " .. value)
   end
+  return res
 end
-
-

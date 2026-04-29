@@ -1,126 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/cls/ui_teams_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Teams", Object)
 Teams = Teams
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Teams.Constructor = function(self)
-  -- function num : 0_0
+function Teams:Constructor()
   self.list = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams.Init = function(self, serverData)
-  -- function num : 0_1 , upvalues : _ENV
+function Teams:Init(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams._InitDiffTeams = function(self, serverData)
-  -- function num : 0_2 , upvalues : _ENV
+function Teams:_InitDiffTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams._InitCampDiffTeams = function(self, serverData)
-  -- function num : 0_3 , upvalues : _ENV
+function Teams:_InitCampDiffTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams._InitMazeTeams = function(self, serverData)
-  -- function num : 0_4 , upvalues : _ENV
+function Teams:_InitMazeTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams._InitAirTeams = function(self, serverData)
-  -- function num : 0_5 , upvalues : _ENV
+function Teams:_InitAirTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams._InitSeasonTeams = function(self, serverData)
-  -- function num : 0_6 , upvalues : _ENV
+function Teams:_InitSeasonTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams.InitTrailTeams = function(self, serverData)
-  -- function num : 0_7 , upvalues : _ENV
+function Teams:InitTrailTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams.InitN21CCTeams = function(self, serverData, levelIndex)
-  -- function num : 0_8 , upvalues : _ENV
+function Teams:InitN21CCTeams(serverData, levelIndex)
   self.list = {}
   local team = Team:New()
   if serverData then
@@ -128,16 +76,10 @@ Teams.InitN21CCTeams = function(self, serverData, levelIndex)
   else
     team:Init(levelIndex, "", {})
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.list)[levelIndex] = team
+  self.list[levelIndex] = team
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams.InitSailingTeams = function(self, serverData, levelIndex)
-  -- function num : 0_9 , upvalues : _ENV
+function Teams:InitSailingTeams(serverData, levelIndex)
   self.list = {}
   local team = Team:New()
   if serverData then
@@ -145,125 +87,75 @@ Teams.InitSailingTeams = function(self, serverData, levelIndex)
   else
     team:Init(levelIndex, "", {})
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.list)[levelIndex] = team
+  self.list[levelIndex] = team
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams.InitVampireTeams = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function Teams:InitVampireTeams()
   self.list = {}
   local team = Team:New()
   team:Init(1, "", {})
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.list)[1] = team
+  self.list[1] = team
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams._InitSeasonMazeTeams = function(self, serverData)
-  -- function num : 0_11 , upvalues : _ENV
+function Teams:_InitSeasonMazeTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team.teamSlotCount = 8
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[i] = team
+    self.list[i] = team
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams._InitPopStarTeams = function(self, serverData)
-  -- function num : 0_12 , upvalues : _ENV
+function Teams:_InitPopStarTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams._InitAniPopStarTeams = function(self, serverData)
-  -- function num : 0_13 , upvalues : _ENV
+function Teams:_InitAniPopStarTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData.fromation_list) do
+  for i, v in ipairs(serverData.fromation_list) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams._InitSeasonOnceTeams = function(self, serverData)
-  -- function num : 0_14 , upvalues : _ENV
+function Teams:_InitSeasonOnceTeams(serverData)
   self.list = {}
-  for i,v in ipairs(serverData) do
+  for i, v in ipairs(serverData) do
     local team = Team:New()
     team:Init(v.id, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[v.id] = team
+    self.list[v.id] = team
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams.TeamCount = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  return (table.count)(self.list)
+function Teams:TeamCount()
+  return table.count(self.list)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams.Get = function(self, id)
-  -- function num : 0_16
-  return (self.list)[id]
+function Teams:Get(id)
+  return self.list[id]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Teams.UpdateTeam = function(self, team)
-  -- function num : 0_17 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.list)[team.id] = team
+function Teams:UpdateTeam(team)
+  self.list[team.id] = team
   if GameSingle then
     local save = ""
     for i = 1, 8 do
-      if (self.list)[i] == nil then
+      if self.list[i] == nil then
         save = save .. "0,0,0,0,0"
       else
         for j = 1, 5 do
-          save = save .. (((self.list)[i]).pets)[j] .. ","
+          save = save .. self.list[i].pets[j] .. ","
         end
       end
-      do
-        do
-          if i < 8 then
-            save = save .. "|"
-          end
-          -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if i < 8 then
+        save = save .. "|"
       end
     end
     PlayerPrefsSetPersonString("SingleUserFormationInfos", save)
@@ -272,10 +164,8 @@ end
 
 _class("Team", Object)
 Team = Team
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
 
-Team.Constructor = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function Team:Constructor()
   self.teamSlotCount = 5
   self.id = 0
   self.name = ""
@@ -284,131 +174,83 @@ Team.Constructor = function(self)
   self.seasonOnceTeamId = 1
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.Init = function(self, id, name, pets)
-  -- function num : 0_19
+function Team:Init(id, name, pets)
   self.id = id
   self.name = name
   for i = 1, self.teamSlotCount do
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.pets)[i] = pets[i] or 0
+    self.pets[i] = pets[i] or 0
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.UpdateName = function(self, name)
-  -- function num : 0_20
+function Team:UpdateName(name)
   self.name = name
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.HasPet = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  for i,v in ipairs(self.pets) do
-    if v > 0 then
+function Team:HasPet()
+  for i, v in ipairs(self.pets) do
+    if 0 < v then
       return true
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.Swap = function(self, slot1, slot2)
-  -- function num : 0_22
-  local tmp = (self.pets)[slot1]
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.pets)[slot1] = (self.pets)[slot2]
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.pets)[slot2] = tmp
+function Team:Swap(slot1, slot2)
+  local tmp = self.pets[slot1]
+  self.pets[slot1] = self.pets[slot2]
+  self.pets[slot2] = tmp
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.Clone = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function Team:Clone()
   local team = Team:New()
   team.teamSlotCount = self.teamSlotCount
   team:Init(self.id, self.name, self.pets)
   return team
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.ClearPet = function(self)
-  -- function num : 0_24
+function Team:ClearPet()
   for i = 1, self.teamSlotCount do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self.pets)[i] = 0
+    self.pets[i] = 0
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.Get1stPetId = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  for i,v in ipairs(self.pets) do
-    if v > 0 then
+function Team:Get1stPetId()
+  for i, v in ipairs(self.pets) do
+    if 0 < v then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.GetLeaderPetId = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function Team:GetLeaderPetId()
   if self.pets then
-    return (self.pets)[FormationPetLeaderSeat.LeaderSeat]
+    return self.pets[FormationPetLeaderSeat.LeaderSeat]
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.GetID = function(self)
-  -- function num : 0_27
+function Team:GetID()
   return self.id
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.GetName = function(self)
-  -- function num : 0_28
+function Team:GetName()
   return self.name
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-Team.GetPets = function(self)
-  -- function num : 0_29
+function Team:GetPets()
   return self.pets
 end
 
 _class("TeamsTeamId", Object)
 TeamsTeamId = TeamsTeamId
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
 
-TeamsTeamId.Constructor = function(self)
-  -- function num : 0_30
+function TeamsTeamId:Constructor()
   self.teams = {}
   self.teamId = 1
 end
 
 _class("TeamsContext", Object)
 TeamsContext = TeamsContext
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
 
-TeamsContext.Constructor = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function TeamsContext:Constructor()
   self.teamOpenerType = TeamOpenerType.Stage
   self.param = 0
   self.teams = Teams:New()
@@ -453,188 +295,123 @@ TeamsContext.Constructor = function(self)
   self._isFightAgain = false
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitByServerData = function(self, serverData)
-  -- function num : 0_32
-  (self.teams):Init(serverData)
+function TeamsContext:InitByServerData(serverData)
+  self.teams:Init(serverData)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitTowerTeam = function(self, serverData)
-  -- function num : 0_33 , upvalues : _ENV
-  local mapElementPetList = {[TowerElementType.TowerElementType_Blue] = serverData.mul_water_pet_lists, [TowerElementType.TowerElementType_Red] = serverData.mul_fire_pet_lists, [TowerElementType.TowerElementType_Green] = serverData.mul_wood_pet_lists, [TowerElementType.TowerElementType_Yellow] = serverData.mul_thunder_pet_lists, [TowerElementType.TowerElementType_Difficulty_Blue] = serverData.difficulty_mul_water_pet_lists, [TowerElementType.TowerElementType_Difficulty_Red] = serverData.difficulty_mul_fire_pet_lists, [TowerElementType.TowerElementType_Difficulty_Green] = serverData.difficulty_mul_wood_pet_lists, [TowerElementType.TowerElementType_Difficulty_Yellow] = serverData.difficulty_mul_thunder_pet_lists}
-  local len = (table.count)(mapElementPetList)
-  if self.towerTeams and (table.count)(self.towerTeams) == len then
+function TeamsContext:InitTowerTeam(serverData)
+  local mapElementPetList = {
+    [TowerElementType.TowerElementType_Blue] = serverData.mul_water_pet_lists,
+    [TowerElementType.TowerElementType_Red] = serverData.mul_fire_pet_lists,
+    [TowerElementType.TowerElementType_Green] = serverData.mul_wood_pet_lists,
+    [TowerElementType.TowerElementType_Yellow] = serverData.mul_thunder_pet_lists,
+    [TowerElementType.TowerElementType_Difficulty_Blue] = serverData.difficulty_mul_water_pet_lists,
+    [TowerElementType.TowerElementType_Difficulty_Red] = serverData.difficulty_mul_fire_pet_lists,
+    [TowerElementType.TowerElementType_Difficulty_Green] = serverData.difficulty_mul_wood_pet_lists,
+    [TowerElementType.TowerElementType_Difficulty_Yellow] = serverData.difficulty_mul_thunder_pet_lists
+  }
+  local len = table.count(mapElementPetList)
+  if self.towerTeams and table.count(self.towerTeams) == len then
+  else
     self.towerTeams = {}
-    for element,formation_info_towers in pairs(mapElementPetList) do
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R9 in 'UnsetPending'
-
-      (self.towerTeams)[element] = TeamsTeamId:New()
+    for element, formation_info_towers in pairs(mapElementPetList) do
+      self.towerTeams[element] = TeamsTeamId:New()
     end
-    do
-      for element,formation_info_towers in pairs(mapElementPetList) do
-        local teams = Teams:New()
-        local fis = {}
-        for _,formation_info_tower in pairs(formation_info_towers) do
-          local fi = formation_info:New()
-          fi.id = formation_info_tower.id
-          fi.name = formation_info_tower.name
-          fi.pet_list = formation_info_tower.pet_list
-          ;
-          (table.insert)(fis, fi)
-        end
-        teams:Init(fis)
-        -- DECOMPILER ERROR at PC93: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        ((self.towerTeams)[element]).teams = teams
-      end
+  end
+  for element, formation_info_towers in pairs(mapElementPetList) do
+    local teams = Teams:New()
+    local fis = {}
+    for _, formation_info_tower in pairs(formation_info_towers) do
+      local fi = formation_info:New()
+      fi.id = formation_info_tower.id
+      fi.name = formation_info_tower.name
+      fi.pet_list = formation_info_tower.pet_list
+      table.insert(fis, fi)
     end
+    teams:Init(fis)
+    self.towerTeams[element].teams = teams
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitMazeTeam = function(self, serverData)
-  -- function num : 0_34
-  (self.mazeTeam):_InitMazeTeams(serverData.fromation_list)
+function TeamsContext:InitMazeTeam(serverData)
+  self.mazeTeam:_InitMazeTeams(serverData.fromation_list)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitAirTeam = function(self, serverData)
-  -- function num : 0_35
-  (self.airTeam):_InitAirTeams(serverData.tactic_formation_list)
+function TeamsContext:InitAirTeam(serverData)
+  self.airTeam:_InitAirTeams(serverData.tactic_formation_list)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitDiffTeam = function(self, serverData)
-  -- function num : 0_36
-  (self.diffTeam):_InitDiffTeams(serverData)
+function TeamsContext:InitDiffTeam(serverData)
+  self.diffTeam:_InitDiffTeams(serverData)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitCampDiffTeam = function(self, serverData)
-  -- function num : 0_37
-  (self.campDiffTeam):_InitCampDiffTeams(serverData)
+function TeamsContext:InitCampDiffTeam(serverData)
+  self.campDiffTeam:_InitCampDiffTeams(serverData)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitTrailTeam = function(self, serverData)
-  -- function num : 0_38
-  (self.trailTeam):InitTrailTeams(serverData)
+function TeamsContext:InitTrailTeam(serverData)
+  self.trailTeam:InitTrailTeams(serverData)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitWorldBossTeams = function(self, serverData)
-  -- function num : 0_39
-  (self.worldBossTeam):Init(serverData)
+function TeamsContext:InitWorldBossTeams(serverData)
+  self.worldBossTeam:Init(serverData)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitSeasonTeam = function(self, serverData)
-  -- function num : 0_40
-  (self.seasonTeam):_InitSeasonTeams(serverData)
+function TeamsContext:InitSeasonTeam(serverData)
+  self.seasonTeam:_InitSeasonTeams(serverData)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitSeasonMazeTeam = function(self, serverData)
-  -- function num : 0_41
-  (self.seasonMazeTeam):_InitSeasonMazeTeams(serverData)
+function TeamsContext:InitSeasonMazeTeam(serverData)
+  self.seasonMazeTeam:_InitSeasonMazeTeams(serverData)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitPopStarTeam = function(self, serverData)
-  -- function num : 0_42
-  (self.popStarTeam):_InitPopStarTeams(serverData)
+function TeamsContext:InitPopStarTeam(serverData)
+  self.popStarTeam:_InitPopStarTeams(serverData)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitAniPopStarTeam = function(self, serverData)
-  -- function num : 0_43
-  (self.aniPopStarTeam):_InitAniPopStarTeams(serverData)
+function TeamsContext:InitAniPopStarTeam(serverData)
+  self.aniPopStarTeam:_InitAniPopStarTeams(serverData)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitN21CCTeams = function(self, serverData, levelIndex)
-  -- function num : 0_44
+function TeamsContext:InitN21CCTeams(serverData, levelIndex)
   self.n21CCTeamId = levelIndex
-  ;
-  (self.n21CCTeam):InitN21CCTeams(serverData, levelIndex)
+  self.n21CCTeam:InitN21CCTeams(serverData, levelIndex)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitSailingTeams = function(self, serverData)
-  -- function num : 0_45
+function TeamsContext:InitSailingTeams(serverData)
   self.sailingTeamId = 1
-  ;
-  (self.sailingTeam):InitSailingTeams(serverData, self.sailingTeamId)
+  self.sailingTeam:InitSailingTeams(serverData, self.sailingTeamId)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitVampireTeams = function(self)
-  -- function num : 0_46
+function TeamsContext:InitVampireTeams()
   self.vampireTeamId = 1
-  ;
-  (self.vampireTeam):InitVampireTeams()
+  self.vampireTeam:InitVampireTeams()
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitSeasonOnceTeam = function(self, serverData)
-  -- function num : 0_47
-  (self.seasonOnceTeam):_InitSeasonOnceTeams(serverData)
+function TeamsContext:InitSeasonOnceTeam(serverData)
+  self.seasonOnceTeam:_InitSeasonOnceTeams(serverData)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.Init = function(self, teamOpenerType, param)
-  -- function num : 0_48
+function TeamsContext:Init(teamOpenerType, param)
   self.teamOpenerType = teamOpenerType
   self.param = param
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetTeamOpenerType = function(self)
-  -- function num : 0_49
+function TeamsContext:GetTeamOpenerType()
   return self.teamOpenerType
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.CheckTeamOpenerType = function(self, openerType)
-  -- function num : 0_50
-  do return self.teamOpenerType == openerType end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function TeamsContext:CheckTeamOpenerType(openerType)
+  return self.teamOpenerType == openerType
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetParam = function(self)
-  -- function num : 0_51
+function TeamsContext:GetParam()
   return self.param
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.SetTowerContext = function(self, ceiling, element, layerID)
-  -- function num : 0_52
+function TeamsContext:SetTowerContext(ceiling, element, layerID)
   self.towerTeamCeiling = ceiling
-  if element > 4 then
+  if 4 < element then
     self.towerElement = element - 4
   else
     self.towerElement = element
@@ -642,570 +419,340 @@ TeamsContext.SetTowerContext = function(self, ceiling, element, layerID)
   self.towerLayerID = layerID
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetTowerTeamCeiling = function(self)
-  -- function num : 0_53
+function TeamsContext:GetTowerTeamCeiling()
   return self.towerTeamCeiling
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetTowerElement = function(self)
-  -- function num : 0_54
+function TeamsContext:GetTowerElement()
   return self.towerElement
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetTowerLayerID = function(self)
-  -- function num : 0_55
+function TeamsContext:GetTowerLayerID()
   return self.towerLayerID
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitTeamMemberSelect = function(self, curSlot)
-  -- function num : 0_56 , upvalues : _ENV
+function TeamsContext:InitTeamMemberSelect(curSlot)
   self.curSlot = curSlot
   self.fastSelect = false
   if self.teamOpenerType == TeamOpenerType.Tower then
     local teamId = self:GetTowerTeamId(self.towerElement)
-    self.tmpTeam = (self:GetTowerTeam()):Get(teamId)
+    self.tmpTeam = self:GetTowerTeam():Get(teamId)
+  elseif self.teamOpenerType == TeamOpenerType.Maze then
+    self.tmpTeam = self.mazeTeam:Get(self.mazeTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.Trail then
+    self.tmpTeam = self.trailTeam:Get(self.trailTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.Sailing then
+    self.tmpTeam = self.sailingTeam:Get(self.sailingTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.Vampire then
+    self.tmpTeam = self.vampireTeam:Get(self.vampireTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.WorldBoss then
+    self.tmpTeam = self.worldBossTeam:Get(self.worldBossTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.N21CC then
+    self.tmpTeam = self.n21CCTeam:Get(self.n21CCTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.Air then
+    self.tmpTeam = self.airTeam:Get(self.airTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.Diff then
+    self.tmpTeam = self.diffTeam:Get(self.diffTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.Camp_Diff then
+    self.tmpTeam = self.campDiffTeam:Get(self.campDiffTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.EightPets then
+    self.tmpTeam = self.eightPetsTeam:Get(self.eightPetsTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.Season then
+    self.tmpTeam = self.seasonTeam:Get(self.seasonTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.PopStarPro then
+    self.tmpTeam = self.popStarTeam:Get(self.popStarTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.AniPopStar then
+    self.tmpTeam = self.aniPopStarTeam:Get(self.aniPopStarTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
+    self.tmpTeam = self.seasonOnceTeam:Get(self.seasonOnceTeamId):Clone()
+  elseif self.teamOpenerType == TeamOpenerType.SeasonMaze then
+    self.tmpTeam = self.seasonMazeTeam:Get(self.seasonMazeTeamId):Clone()
   else
-    do
-      if self.teamOpenerType == TeamOpenerType.Maze then
-        self.tmpTeam = ((self.mazeTeam):Get(self.mazeTeamId)):Clone()
-      else
-        if self.teamOpenerType == TeamOpenerType.Trail then
-          self.tmpTeam = ((self.trailTeam):Get(self.trailTeamId)):Clone()
-        else
-          if self.teamOpenerType == TeamOpenerType.Sailing then
-            self.tmpTeam = ((self.sailingTeam):Get(self.sailingTeamId)):Clone()
-          else
-            if self.teamOpenerType == TeamOpenerType.Vampire then
-              self.tmpTeam = ((self.vampireTeam):Get(self.vampireTeamId)):Clone()
-            else
-              if self.teamOpenerType == TeamOpenerType.WorldBoss then
-                self.tmpTeam = ((self.worldBossTeam):Get(self.worldBossTeamId)):Clone()
-              else
-                if self.teamOpenerType == TeamOpenerType.N21CC then
-                  self.tmpTeam = ((self.n21CCTeam):Get(self.n21CCTeamId)):Clone()
-                else
-                  if self.teamOpenerType == TeamOpenerType.Air then
-                    self.tmpTeam = ((self.airTeam):Get(self.airTeamId)):Clone()
-                  else
-                    if self.teamOpenerType == TeamOpenerType.Diff then
-                      self.tmpTeam = ((self.diffTeam):Get(self.diffTeamId)):Clone()
-                    else
-                      if self.teamOpenerType == TeamOpenerType.Camp_Diff then
-                        self.tmpTeam = ((self.campDiffTeam):Get(self.campDiffTeamId)):Clone()
-                      else
-                        if self.teamOpenerType == TeamOpenerType.EightPets then
-                          self.tmpTeam = ((self.eightPetsTeam):Get(self.eightPetsTeamId)):Clone()
-                        else
-                          if self.teamOpenerType == TeamOpenerType.Season then
-                            self.tmpTeam = ((self.seasonTeam):Get(self.seasonTeamId)):Clone()
-                          else
-                            if self.teamOpenerType == TeamOpenerType.PopStarPro then
-                              self.tmpTeam = ((self.popStarTeam):Get(self.popStarTeamId)):Clone()
-                            else
-                              if self.teamOpenerType == TeamOpenerType.AniPopStar then
-                                self.tmpTeam = ((self.aniPopStarTeam):Get(self.aniPopStarTeamId)):Clone()
-                              else
-                                if self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
-                                  self.tmpTeam = ((self.seasonOnceTeam):Get(self.seasonOnceTeamId)):Clone()
-                                else
-                                  if self.teamOpenerType == TeamOpenerType.SeasonMaze then
-                                    self.tmpTeam = ((self.seasonMazeTeam):Get(self.seasonMazeTeamId)):Clone()
-                                  else
-                                    local curTeamId = self:GetCurrTeamId()
-                                    self.tmpTeam = ((self.teams):Get(curTeamId)):Clone()
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    local curTeamId = self:GetCurrTeamId()
+    self.tmpTeam = self.teams:Get(curTeamId):Clone()
   end
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.InitTeamFastSelect = function(self)
-  -- function num : 0_57
+function TeamsContext:InitTeamFastSelect()
   self:InitTeamMemberSelect(-1)
   self.fastSelect = true
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.IsFastSelect = function(self)
-  -- function num : 0_58
+function TeamsContext:IsFastSelect()
   return self.fastSelect
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.ClearFastSelect = function(self)
-  -- function num : 0_59
+function TeamsContext:ClearFastSelect()
   self.fastSelect = false
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.Teams = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function TeamsContext:Teams()
   if self.teamOpenerType == TeamOpenerType.Tower then
     local now_type = self.towerElement
-    if now_type > 4 then
+    if 4 < now_type then
       self.towerElement = self.towerElement - 4
     end
     local teamId = self:GetTowerTeamId(self.towerElement)
-    local team = (self:GetTowerTeam()):Get(teamId)
+    local team = self:GetTowerTeam():Get(teamId)
     local teams = self:RawGetTowerTeam(self.towerElement)
     teams:UpdateTeam(team)
     return teams
+  elseif self.teamOpenerType == TeamOpenerType.Maze then
+    return self:GetMazeTeam()
+  elseif self.teamOpenerType == TeamOpenerType.Air then
+    return self.airTeam
+  elseif self.teamOpenerType == TeamOpenerType.Trail then
+    return self.trailTeam
+  elseif self.teamOpenerType == TeamOpenerType.Sailing then
+    return self.sailingTeam
+  elseif self.teamOpenerType == TeamOpenerType.Vampire then
+    return self.vampireTeam
+  elseif self.teamOpenerType == TeamOpenerType.WorldBoss then
+    return self.worldBossTeam
+  elseif self.teamOpenerType == TeamOpenerType.N21CC then
+    return self.n21CCTeam
+  elseif self.teamOpenerType == TeamOpenerType.Diff then
+    return self.diffTeam
+  elseif self.teamOpenerType == TeamOpenerType.Camp_Diff then
+    return self.campDiffTeam
+  elseif self.teamOpenerType == TeamOpenerType.EightPets then
+    return self.eightPetsTeam
+  elseif self.teamOpenerType == TeamOpenerType.Season then
+    return self.seasonTeam
+  elseif self.teamOpenerType == TeamOpenerType.PopStarPro then
+    return self.popStarTeam
+  elseif self.teamOpenerType == TeamOpenerType.AniPopStar then
+    return self.aniPopStarTeam
+  elseif self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
+    return self.seasonOnceTeam
+  elseif self.teamOpenerType == TeamOpenerType.SeasonMaze then
+    return self.seasonMazeTeam
   else
-    do
-      if self.teamOpenerType == TeamOpenerType.Maze then
-        return self:GetMazeTeam()
-      else
-        if self.teamOpenerType == TeamOpenerType.Air then
-          return self.airTeam
-        else
-          if self.teamOpenerType == TeamOpenerType.Trail then
-            return self.trailTeam
-          else
-            if self.teamOpenerType == TeamOpenerType.Sailing then
-              return self.sailingTeam
-            else
-              if self.teamOpenerType == TeamOpenerType.Vampire then
-                return self.vampireTeam
-              else
-                if self.teamOpenerType == TeamOpenerType.WorldBoss then
-                  return self.worldBossTeam
-                else
-                  if self.teamOpenerType == TeamOpenerType.N21CC then
-                    return self.n21CCTeam
-                  else
-                    if self.teamOpenerType == TeamOpenerType.Diff then
-                      return self.diffTeam
-                    else
-                      if self.teamOpenerType == TeamOpenerType.Camp_Diff then
-                        return self.campDiffTeam
-                      else
-                        if self.teamOpenerType == TeamOpenerType.EightPets then
-                          return self.eightPetsTeam
-                        else
-                          if self.teamOpenerType == TeamOpenerType.Season then
-                            return self.seasonTeam
-                          else
-                            if self.teamOpenerType == TeamOpenerType.PopStarPro then
-                              return self.popStarTeam
-                            else
-                              if self.teamOpenerType == TeamOpenerType.AniPopStar then
-                                return self.aniPopStarTeam
-                              else
-                                if self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
-                                  return self.seasonOnceTeam
-                                else
-                                  if self.teamOpenerType == TeamOpenerType.SeasonMaze then
-                                    return self.seasonMazeTeam
-                                  else
-                                    return self.teams
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return self.teams
   end
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetTowerTeam = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function TeamsContext:GetTowerTeam()
   local teams = self:RawGetTowerTeam(self.towerElement)
   local clone = Teams:New()
-  for id,team in pairs(teams.list) do
+  for id, team in pairs(teams.list) do
     local cTeam = Team:New()
     cTeam.id = team.id
     cTeam.name = team.name
     cTeam.teamSlotCount = team.teamSlotCount
     cTeam.pets = {}
     for i = 1, #team.pets do
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R13 in 'UnsetPending'
-
-      if self.towerTeamCeiling < i then
-        (cTeam.pets)[i] = 0
+      if i > self.towerTeamCeiling then
+        cTeam.pets[i] = 0
       else
-        -- DECOMPILER ERROR at PC35: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (cTeam.pets)[i] = (team.pets)[i]
+        cTeam.pets[i] = team.pets[i]
       end
     end
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (clone.list)[id] = cTeam
+    clone.list[id] = cTeam
   end
   return clone
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.RawGetTowerTeam = function(self, element)
-  -- function num : 0_62
-  local teamsTeamId = (self.towerTeams)[element]
+function TeamsContext:RawGetTowerTeam(element)
+  local teamsTeamId = self.towerTeams[element]
   local teams = teamsTeamId.teams
   return teams
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetTowerTeamId = function(self, element)
-  -- function num : 0_63
-  local teamsTeamId = (self.towerTeams)[element]
+function TeamsContext:GetTowerTeamId(element)
+  local teamsTeamId = self.towerTeams[element]
   return teamsTeamId.teamId
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.SetTowerTeamId = function(self, element, teamId)
-  -- function num : 0_64
-  local teamsTeamId = (self.towerTeams)[element]
+function TeamsContext:SetTowerTeamId(element, teamId)
+  local teamsTeamId = self.towerTeams[element]
   teamsTeamId.teamId = teamId
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetMazeTeam = function(self)
-  -- function num : 0_65
+function TeamsContext:GetMazeTeam()
   return self.mazeTeam
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetAirTeam = function(self)
-  -- function num : 0_66
+function TeamsContext:GetAirTeam()
   return self.airTeam
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetSeasonMazeTeam = function(self)
-  -- function num : 0_67
+function TeamsContext:GetSeasonMazeTeam()
   return self.seasonMazeTeam
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetCurrTeamId = function(self)
-  -- function num : 0_68 , upvalues : _ENV
+function TeamsContext:GetCurrTeamId()
   if self.teamOpenerType == TeamOpenerType.Maze then
     return self.mazeTeamId
+  elseif self.teamOpenerType == TeamOpenerType.Air then
+    return self.airTeamId
+  elseif self.teamOpenerType == TeamOpenerType.Tower then
+    local teamId = self:GetTowerTeamId(self.towerElement)
+    return teamId
+  elseif self.teamOpenerType == TeamOpenerType.Trail then
+    local key = self:GetCurrTrailTeamIdKey()
+    local teamId = UnityEngine.PlayerPrefs.GetInt(key, self.trailTeamId)
+    return teamId
+  elseif self.teamOpenerType == TeamOpenerType.Sailing then
+    return self.sailingTeamId
+  elseif self.teamOpenerType == TeamOpenerType.Vampire then
+    return self.vampireTeamId
+  elseif self.teamOpenerType == TeamOpenerType.WorldBoss then
+    return self.worldBossTeamId
+  elseif self.teamOpenerType == TeamOpenerType.N21CC then
+    return self.n21CCTeamId
+  elseif self.teamOpenerType == TeamOpenerType.Diff then
+    return self.diffTeamId
+  elseif self.teamOpenerType == TeamOpenerType.Camp_Diff then
+    return self.campDiffTeamId
+  elseif self.teamOpenerType == TeamOpenerType.EightPets then
+    return self.eightPetsTeamId
+  elseif self.teamOpenerType == TeamOpenerType.Season then
+    return self.seasonTeamId
+  elseif self.teamOpenerType == TeamOpenerType.PopStarPro then
+    return self.popStarTeamId
+  elseif self.teamOpenerType == TeamOpenerType.AniPopStar then
+    return self.aniPopStarTeamId
+  elseif self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
+    return self.seasonOnceTeamId
+  elseif self.teamOpenerType == TeamOpenerType.SeasonMaze then
+    return self.seasonMazeTeamId
   else
-    if self.teamOpenerType == TeamOpenerType.Air then
-      return self.airTeamId
-    else
-      if self.teamOpenerType == TeamOpenerType.Tower then
-        local teamId = self:GetTowerTeamId(self.towerElement)
-        return teamId
-      else
-        do
-          if self.teamOpenerType == TeamOpenerType.Trail then
-            local key = self:GetCurrTrailTeamIdKey()
-            local teamId = ((UnityEngine.PlayerPrefs).GetInt)(key, self.trailTeamId)
-            return teamId
-          else
-            do
-              if self.teamOpenerType == TeamOpenerType.Sailing then
-                return self.sailingTeamId
-              else
-                if self.teamOpenerType == TeamOpenerType.Vampire then
-                  return self.vampireTeamId
-                else
-                  if self.teamOpenerType == TeamOpenerType.WorldBoss then
-                    return self.worldBossTeamId
-                  else
-                    if self.teamOpenerType == TeamOpenerType.N21CC then
-                      return self.n21CCTeamId
-                    else
-                      if self.teamOpenerType == TeamOpenerType.Diff then
-                        return self.diffTeamId
-                      else
-                        if self.teamOpenerType == TeamOpenerType.Camp_Diff then
-                          return self.campDiffTeamId
-                        else
-                          if self.teamOpenerType == TeamOpenerType.EightPets then
-                            return self.eightPetsTeamId
-                          else
-                            if self.teamOpenerType == TeamOpenerType.Season then
-                              return self.seasonTeamId
-                            else
-                              if self.teamOpenerType == TeamOpenerType.PopStarPro then
-                                return self.popStarTeamId
-                              else
-                                if self.teamOpenerType == TeamOpenerType.AniPopStar then
-                                  return self.aniPopStarTeamId
-                                else
-                                  if self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
-                                    return self.seasonOnceTeamId
-                                  else
-                                    if self.teamOpenerType == TeamOpenerType.SeasonMaze then
-                                      return self.seasonMazeTeamId
-                                    else
-                                      local key = self:GetCurrTeamIdKey()
-                                      local teamId = ((UnityEngine.PlayerPrefs).GetInt)(key, self.curTeamId)
-                                      return teamId
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    local key = self:GetCurrTeamIdKey()
+    local teamId = UnityEngine.PlayerPrefs.GetInt(key, self.curTeamId)
+    return teamId
   end
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.SetCurrTeamId = function(self, teamId)
-  -- function num : 0_69 , upvalues : _ENV
+function TeamsContext:SetCurrTeamId(teamId)
   if self.teamOpenerType == TeamOpenerType.Maze then
     self.mazeTeamId = teamId
+  elseif self.teamOpenerType == TeamOpenerType.Air then
+    self.airTeamId = teamId
+  elseif self.teamOpenerType == TeamOpenerType.Tower then
+    self:SetTowerTeamId(self.towerElement, teamId)
+  elseif self.teamOpenerType == TeamOpenerType.WorldBoss then
+  elseif self.teamOpenerType == TeamOpenerType.N21CC then
+  elseif self.teamOpenerType == TeamOpenerType.Diff then
+  elseif self.teamOpenerType == TeamOpenerType.Sailing then
+  elseif self.teamOpenerType == TeamOpenerType.Vampire then
+  elseif self.teamOpenerType == TeamOpenerType.Trail then
+    local key = self:GetCurrTrailTeamIdKey()
+    UnityEngine.PlayerPrefs.SetInt(key, teamId)
+    self.trailTeamId = teamId
+  elseif self.teamOpenerType == TeamOpenerType.Camp_Diff then
+  elseif self.teamOpenerType == TeamOpenerType.EightPets then
+    self.eightPetsTeamId = teamId
+  elseif self.teamOpenerType == TeamOpenerType.Season then
+    self.seasonTeamId = teamId
+  elseif self.teamOpenerType == TeamOpenerType.PopStarPro then
+    self.popStarTeamId = teamId
+  elseif self.teamOpenerType == TeamOpenerType.AniPopStar then
+    self.aniPopStarTeamId = teamId
+  elseif self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
+    self.seasonOnceTeamId = teamId
+  elseif self.teamOpenerType == TeamOpenerType.SeasonMaze then
+    self.seasonMazeTeamId = teamId
   else
-    if self.teamOpenerType == TeamOpenerType.Air then
-      self.airTeamId = teamId
-    else
-      if self.teamOpenerType == TeamOpenerType.Tower then
-        self:SetTowerTeamId(self.towerElement, teamId)
-      else
-      end
-    end
-  end
-  do
-    if ((((self.teamOpenerType ~= TeamOpenerType.WorldBoss or self.teamOpenerType == TeamOpenerType.N21CC) and self.teamOpenerType ~= TeamOpenerType.Diff) or self.teamOpenerType == TeamOpenerType.Sailing) and self.teamOpenerType ~= TeamOpenerType.Vampire) or self.teamOpenerType == TeamOpenerType.Trail then
-      local key = self:GetCurrTrailTeamIdKey()
-      ;
-      ((UnityEngine.PlayerPrefs).SetInt)(key, teamId)
-      self.trailTeamId = teamId
-    else
-    end
-    if self.teamOpenerType ~= TeamOpenerType.Camp_Diff or self.teamOpenerType == TeamOpenerType.EightPets then
-      self.eightPetsTeamId = teamId
-    else
-      if self.teamOpenerType == TeamOpenerType.Season then
-        self.seasonTeamId = teamId
-      else
-        if self.teamOpenerType == TeamOpenerType.PopStarPro then
-          self.popStarTeamId = teamId
-        else
-          if self.teamOpenerType == TeamOpenerType.AniPopStar then
-            self.aniPopStarTeamId = teamId
-          else
-            if self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
-              self.seasonOnceTeamId = teamId
-            else
-              if self.teamOpenerType == TeamOpenerType.SeasonMaze then
-                self.seasonMazeTeamId = teamId
-              else
-                local key = self:GetCurrTeamIdKey()
-                ;
-                ((UnityEngine.PlayerPrefs).SetInt)(key, teamId)
-                self.curTeamId = teamId
-              end
-            end
-          end
-        end
-      end
-    end
+    local key = self:GetCurrTeamIdKey()
+    UnityEngine.PlayerPrefs.SetInt(key, teamId)
+    self.curTeamId = teamId
   end
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetCurrTeamIdKey = function(self)
-  -- function num : 0_70 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function TeamsContext:GetCurrTeamIdKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "CurrTeamId"
   return key
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetCurrTrailTeamIdKey = function(self)
-  -- function num : 0_71 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function TeamsContext:GetCurrTrailTeamIdKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "CurrTrailTeamId"
   return key
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetCurrSummerTwoTeamIdKey = function(self)
-  -- function num : 0_72 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function TeamsContext:GetCurrSummerTwoTeamIdKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "CurrSummerTwoTeamId"
   return key
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.ShowDialogUITeams = function(self, isState, ...)
-  -- function num : 0_73 , upvalues : _ENV
+function TeamsContext:ShowDialogUITeams(isState, ...)
   local teamsName = "UITeams"
   local stateType = UIStateType.UITeams
   local stageId = 0
   if self.teamOpenerType == TeamOpenerType.Stage then
     stageId = self.param
-  else
-    if self.teamOpenerType == TeamOpenerType.ExtMission then
-      stageId = (self.param)[2]
-    else
-      if self.teamOpenerType == TeamOpenerType.Trail then
-        stageId = self.param
-      else
-        if self.teamOpenerType == TeamOpenerType.Sailing then
-          stageId = (self.param)[2]
-        else
-          if self.teamOpenerType == TeamOpenerType.Vampire then
-            stageId = (self.param)[1]
-          else
-            if self.teamOpenerType == TeamOpenerType.Campaign then
-              stageId = (self.param)[1]
-            else
-              if self.teamOpenerType == TeamOpenerType.LostLand then
-                stageId = self.param
-              else
-                if self.teamOpenerType == TeamOpenerType.Conquest then
-                  stageId = (self.param)[1]
-                else
-                  if self.teamOpenerType == TeamOpenerType.WorldBoss then
-                    stageId = (self.param)[1]
-                  else
-                    if self.teamOpenerType == TeamOpenerType.N21CC then
-                      stageId = (self.param)[1]
-                    else
-                      if self.teamOpenerType == TeamOpenerType.Air then
-                        stageId = (self.param)[1]
-                      else
-                        if self.teamOpenerType == TeamOpenerType.Diff then
-                          stageId = (self.param)[2]
-                        else
-                          if self.teamOpenerType == TeamOpenerType.Camp_Diff then
-                            stageId = (self.param)[2]
-                          else
-                            if self.teamOpenerType == TeamOpenerType.Season then
-                              stageId = (self.param)[1]
-                            else
-                              if self.teamOpenerType == TeamOpenerType.PopStarPro then
-                                stageId = (self.param)[1]
-                              else
-                                if self.teamOpenerType == TeamOpenerType.AniPopStar then
-                                  stageId = (self.param)[1]
-                                else
-                                  if self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
-                                    stageId = (self.param)[1]
-                                  else
-                                    if self.teamOpenerType == TeamOpenerType.SeasonMaze then
-                                      stageId = (self.param)[1]
-                                      teamsName = "UISeasonMazePetsTeams"
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif self.teamOpenerType == TeamOpenerType.ExtMission then
+    stageId = self.param[2]
+  elseif self.teamOpenerType == TeamOpenerType.Trail then
+    stageId = self.param
+  elseif self.teamOpenerType == TeamOpenerType.Sailing then
+    stageId = self.param[2]
+  elseif self.teamOpenerType == TeamOpenerType.Vampire then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.Campaign then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.LostLand then
+    stageId = self.param
+  elseif self.teamOpenerType == TeamOpenerType.Conquest then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.WorldBoss then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.N21CC then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.Air then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.Diff then
+    stageId = self.param[2]
+  elseif self.teamOpenerType == TeamOpenerType.Camp_Diff then
+    stageId = self.param[2]
+  elseif self.teamOpenerType == TeamOpenerType.Season then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.PopStarPro then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.AniPopStar then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.SeasonOnceMission then
+    stageId = self.param[1]
+  elseif self.teamOpenerType == TeamOpenerType.SeasonMaze then
+    stageId = self.param[1]
+    teamsName = "UISeasonMazePetsTeams"
   end
-  if (DiscoveryStage.IsGuideStageId)(stageId) then
+  if DiscoveryStage.IsGuideStageId(stageId) then
     teamsName = "UITeamsGuide"
     stateType = UIStateType.UITeamsGuide
   end
   if isState then
-    ((GameGlobal.UIStateManager)()):SwitchState(stateType, ...)
+    GameGlobal.UIStateManager():SwitchState(stateType, ...)
   else
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog(teamsName, ...)
+    GameGlobal.UIStateManager():ShowDialog(teamsName, ...)
   end
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetTeamCount = function(self)
-  -- function num : 0_74 , upvalues : _ENV
+function TeamsContext:GetTeamCount()
   local teamCount = 4
   if self.teamOpenerType == TeamOpenerType.WorldBoss or self.teamOpenerType == TeamOpenerType.Diff or self.teamOpenerType == TeamOpenerType.N21CC or self.teamOpenerType == TeamOpenerType.Sailing or self.teamOpenerType == TeamOpenerType.Vampire or self.teamOpenerType == TeamOpenerType.Camp_Diff then
     teamCount = 1
+  elseif self.teamOpenerType == TeamOpenerType.Tower or self.teamOpenerType == TeamOpenerType.Trail then
+    teamCount = 4
+  elseif self.teamOpenerType == TeamOpenerType.Maze or self.teamOpenerType == TeamOpenerType.Air then
+    teamCount = 8
   else
-    if self.teamOpenerType == TeamOpenerType.Tower or self.teamOpenerType == TeamOpenerType.Trail then
-      teamCount = 4
-    else
-      if self.teamOpenerType == TeamOpenerType.Maze or self.teamOpenerType == TeamOpenerType.Air then
-        teamCount = 8
-      else
-        teamCount = ((Cfg.cfg_global).FormationCount).IntValue
-        if (self.teams):TeamCount() < teamCount then
-          teamCount = (self.teams):TeamCount()
-        end
-      end
+    teamCount = Cfg.cfg_global.FormationCount.IntValue
+    if teamCount > self.teams:TeamCount() then
+      teamCount = self.teams:TeamCount()
     end
   end
   return teamCount
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.ReqTowerChangeMulFormationInfo = function(self, TT, team)
-  -- function num : 0_75 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(TowerModule)
+function TeamsContext:ReqTowerChangeMulFormationInfo(TT, team)
+  local module = GameGlobal.GetModule(TowerModule)
   local nId = self:GetTowerLayerID()
   local reqTeamInfo = each_tower_formation_info:New()
   reqTeamInfo.id = team.id
@@ -1215,19 +762,40 @@ TeamsContext.ReqTowerChangeMulFormationInfo = function(self, TT, team)
   return res, data
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.SetFightAgain = function(self, isFightAgain)
-  -- function num : 0_76
+function TeamsContext:SetFightAgain(isFightAgain)
   self._isFightAgain = isFightAgain
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.GetFightAgain = function(self)
-  -- function num : 0_77
+function TeamsContext:GetFightAgain()
   return self._isFightAgain
 end
 
-TeamOpenerType = {Main = 0, Stage = 1, ExtMission = 3, SmallMap = 4, ResInstance = 5, Maze = 6, Tower = 7, ReFight = 8, Trail = 9, Campaign = 10, LostLand = 11, Conquest = 12, BlackFist = 13, WorldBoss = 14, Air = 15, Diff = 16, N21CC = 17, Sailing = 18, Vampire = 19, Camp_Diff = 20, Season = 21, PopStarPro = 22, SeasonMaze = 23, SeasonOnceMission = 100, AniPopStar = 997, EightPets = 998, NONE = 999}
-
+TeamOpenerType = {
+  Main = 0,
+  Stage = 1,
+  ExtMission = 3,
+  SmallMap = 4,
+  ResInstance = 5,
+  Maze = 6,
+  Tower = 7,
+  ReFight = 8,
+  Trail = 9,
+  Campaign = 10,
+  LostLand = 11,
+  Conquest = 12,
+  BlackFist = 13,
+  WorldBoss = 14,
+  Air = 15,
+  Diff = 16,
+  N21CC = 17,
+  Sailing = 18,
+  Vampire = 19,
+  Camp_Diff = 20,
+  Season = 21,
+  PopStarPro = 22,
+  SeasonMaze = 23,
+  SeasonOnceMission = 100,
+  AniPopStar = 997,
+  EightPets = 998,
+  NONE = 999
+}

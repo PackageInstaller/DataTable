@@ -1,60 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_layer_by_scope_target_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddLayerByScopeTargetCount", BuffLogicBase)
 BuffLogicAddLayerByScopeTargetCount = BuffLogicAddLayerByScopeTargetCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddLayerByScopeTargetCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddLayerByScopeTargetCount:Constructor(buffInstance, logicParam)
   self._skillID = logicParam.skillID
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._buffInstance)._buffLayerName = ((self._buffInstance)._buffsvc):GetBuffLayerName(self._layerType)
-    self._dontDisplay = logicParam.dontDisplay
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._buffInstance._buffLayerName = self._buffInstance._buffsvc:GetBuffLayerName(self._layerType)
+  self._dontDisplay = logicParam.dontDisplay
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddLayerByScopeTargetCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
-  local configService = (self._world):GetService("Config")
+function BuffLogicAddLayerByScopeTargetCount:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(self._skillID)
   local skillTargetType = skillConfigData:GetSkillTargetType()
   local notifyPos = e:GetGridPosition()
   if notify:GetNotifyType() == NotifyType.NormalEachAttackStart or notify:GetNotifyType() == NotifyType.ChainSkillEachAttackStart or notify:GetNotifyType() == NotifyType.ActiveSkillEachAttackStart then
     notifyPos = notify:GetAttackPos()
-  else
-    if notify:GetNotifyType() == NotifyType.PlayerBeHitStart then
-      notifyPos = notify:GetTargetPos()
-    end
+  elseif notify:GetNotifyType() == NotifyType.PlayerBeHitStart then
+    notifyPos = notify:GetTargetPos()
   end
   local scopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, notifyPos, e)
   local targetEntityIDArray = targetSelector:DoSelectSkillTarget(e, skillTargetType, scopeResult, self._skillID)
   local entityIDArray = {}
   for i = 1, #targetEntityIDArray do
-    if not (table.icontains)(entityIDArray, targetEntityIDArray[i]) then
-      (table.insert)(entityIDArray, targetEntityIDArray[i])
+    if not table.icontains(entityIDArray, targetEntityIDArray[i]) then
+      table.insert(entityIDArray, targetEntityIDArray[i])
     end
   end
   local targetEntityCount = 0
-  for _,targetID in ipairs(entityIDArray) do
-    local targetEntity = (self._world):GetEntityByID(targetID)
+  for _, targetID in ipairs(entityIDArray) do
+    local targetEntity = self._world:GetEntityByID(targetID)
     if targetEntity and not targetEntity:HasDeadMark() then
       targetEntityCount = targetEntityCount + 1
     end
   end
-  local svc = (self._world):GetService("BuffLogic")
+  local svc = self._world:GetService("BuffLogic")
   local curMarkLayer = svc:AddBuffLayer(e, self._layerType, targetEntityCount)
   local buffResult = BuffResultAddLayer:New(curMarkLayer, self._dontDisplay)
   if notify:GetNotifyType() == NotifyType.TrapDead or notify:GetNotifyType() == NotifyType.TrapShow then
@@ -66,9 +49,5 @@ BuffLogicAddLayerByScopeTargetCount.DoLogic = function(self, notify)
     end
     buffResult:SetNotifyEntityID(ntEntityID)
   end
-  do
-    return buffResult
-  end
+  return buffResult
 end
-
-

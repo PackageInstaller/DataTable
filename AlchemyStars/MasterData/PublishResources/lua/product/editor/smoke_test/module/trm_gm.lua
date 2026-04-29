@@ -1,371 +1,246 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/module/trm_gm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("test_robot_module")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotModule.__AsyncSendGM = function(self, TT, status, cmd)
-  -- function num : 0_0 , upvalues : _ENV
+function TestRobotModule:__AsyncSendGM(TT, status, cmd)
   self:Log(self, "GMCommand: ", cmd)
-  local gmproxy = (GameGlobal.GetModule)(GMProxyModule)
+  local gmproxy = GameGlobal.GetModule(GMProxyModule)
   local _, reply = gmproxy:SendCmdTask(TT, cmd)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
   YIELD(TT, 5)
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_AddAsset = function(self, TT, status, id, count)
-  -- function num : 0_1 , upvalues : _ENV
+function TestRobotModule:AsyncGM_AddAsset(TT, status, id, count)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("add_asset %s %d %d", self:GetTestAccountOpenID(), id, count)
+  local cmd = string.format("add_asset %s %d %d", self:GetTestAccountOpenID(), id, count)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_AllPetFull = function(self, TT, status)
-  -- function num : 0_2 , upvalues : _ENV
+function TestRobotModule:AsyncGM_AllPetFull(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("all_pet_full %s", self:GetTestAccountOpenID())
+  local cmd = string.format("all_pet_full %s", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_ModifyAllSvcTimeBias = function(self, TT, status, time)
-  -- function num : 0_3 , upvalues : _ENV
+function TestRobotModule:AsyncGM_ModifyAllSvcTimeBias(TT, status, time)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("modify_allsvc_time_bias 54 1 %d", time)
+  local cmd = string.format("modify_allsvc_time_bias 54 1 %d", time)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_RevivePets = function(self, TT, status)
-  -- function num : 0_4 , upvalues : _ENV
+function TestRobotModule:AsyncGM_RevivePets(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("revive_pets %s", self:GetTestAccountOpenID())
+  local cmd = string.format("revive_pets %s", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_TaleCallPet = function(self, TT, status, id)
-  -- function num : 0_5 , upvalues : _ENV
+function TestRobotModule:AsyncGM_TaleCallPet(TT, status, id)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("tale_call_pet %s %d", self:GetTestAccountOpenID(), id)
+  local cmd = string.format("tale_call_pet %s %d", self:GetTestAccountOpenID(), id)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_CompleteAllExtTask = function(self, TT, status)
-  -- function num : 0_6 , upvalues : _ENV
+function TestRobotModule:AsyncGM_CompleteAllExtTask(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("CompleteAllExtTask %s 0", self:GetTestAccountOpenID())
+  local cmd = string.format("CompleteAllExtTask %s 0", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_OpenAllCampaign = function(self, TT, status, campaignID)
-  -- function num : 0_7 , upvalues : _ENV
+function TestRobotModule:AsyncGM_OpenAllCampaign(TT, status, campaignID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("open_all_campaign %s %s", self:GetTestAccountOpenID(), campaignID)
+  local cmd = string.format("open_all_campaign %s %s", self:GetTestAccountOpenID(), campaignID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassTowerLevel = function(self, TT, status, type, level)
-  -- function num : 0_8 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassTowerLevel(TT, status, type, level)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("pass_tower_level %s %d %d", self:GetTestAccountOpenID(), type, level)
+  local cmd = string.format("pass_tower_level %s %d %d", self:GetTestAccountOpenID(), type, level)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_UnlockResdungeonRoom = function(self, TT, status)
-  -- function num : 0_9 , upvalues : _ENV
+function TestRobotModule:AsyncGM_UnlockResdungeonRoom(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("unlock_resdungeonroom %s", self:GetTestAccountOpenID())
+  local cmd = string.format("unlock_resdungeonroom %s", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_ResetMaze = function(self, TT, status)
-  -- function num : 0_10 , upvalues : _ENV
+function TestRobotModule:AsyncGM_ResetMaze(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("reset_maze %s", self:GetTestAccountOpenID())
+  local cmd = string.format("reset_maze %s", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_CompleteAllMission = function(self, TT, status)
-  -- function num : 0_11 , upvalues : _ENV
+function TestRobotModule:AsyncGM_CompleteAllMission(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("CompleteAllMission %s", self:GetTestAccountOpenID())
+  local cmd = string.format("CompleteAllMission %s", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassLineCampMission = function(self, TT, status, componentID, lastMissionID)
-  -- function num : 0_12 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassLineCampMission(TT, status, componentID, lastMissionID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("PassLineCampMission %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
+  local cmd = string.format("PassLineCampMission %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassLineCampMissionSingle = function(self, TT, status, componentID, lastMissionID)
-  -- function num : 0_13 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassLineCampMissionSingle(TT, status, componentID, lastMissionID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("PassLineCampMissionSingle %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
+  local cmd = string.format("PassLineCampMissionSingle %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassCampMission = function(self, TT, status, missionComponentID, componentID, lastMissionID)
-  -- function num : 0_14 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassCampMission(TT, status, missionComponentID, componentID, lastMissionID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("PassCampMission %s %s %s %s", self:GetTestAccountOpenID(), missionComponentID, componentID, lastMissionID)
+  local cmd = string.format("PassCampMission %s %s %s %s", self:GetTestAccountOpenID(), missionComponentID, componentID, lastMissionID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassMultiLineCampMission = function(self, TT, status, componentID, lastMissionID)
-  -- function num : 0_15 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassMultiLineCampMission(TT, status, componentID, lastMissionID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("PassMultiLineCampMission %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
+  local cmd = string.format("PassMultiLineCampMission %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassCampMission = function(self, TT, status, missionComponentID, componentID, lastMissionID)
-  -- function num : 0_16 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassCampMission(TT, status, missionComponentID, componentID, lastMissionID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("PassCampMission %s %s %s %s", self:GetTestAccountOpenID(), missionComponentID, componentID, lastMissionID)
+  local cmd = string.format("PassCampMission %s %s %s %s", self:GetTestAccountOpenID(), missionComponentID, componentID, lastMissionID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassSumIICampMission = function(self, TT, status, componentID, lastMissionID)
-  -- function num : 0_17 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassSumIICampMission(TT, status, componentID, lastMissionID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("PassSumIICampMission %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
+  local cmd = string.format("PassSumIICampMission %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassTreeCampMission = function(self, TT, status, componentID, lastMissionID)
-  -- function num : 0_18 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassTreeCampMission(TT, status, componentID, lastMissionID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("PassTreeCampMission %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
+  local cmd = string.format("PassTreeCampMission %s %s %s", self:GetTestAccountOpenID(), componentID, lastMissionID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_TacticIgnoreFightLimit = function(self, TT, status)
-  -- function num : 0_19 , upvalues : _ENV
+function TestRobotModule:AsyncGM_TacticIgnoreFightLimit(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("tactic_ignore_fight_limit %s", self:GetTestAccountOpenID())
+  local cmd = string.format("tactic_ignore_fight_limit %s", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_UnlockAllRoom = function(self, TT, status)
-  -- function num : 0_20 , upvalues : _ENV
+function TestRobotModule:AsyncGM_UnlockAllRoom(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("unlock_allroom %s", self:GetTestAccountOpenID())
+  local cmd = string.format("unlock_allroom %s", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassAllDifficultyMission = function(self, TT, status)
-  -- function num : 0_21 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassAllDifficultyMission(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("pass_all %s %s", self:GetTestAccountOpenID(), 0)
+  local cmd = string.format("pass_all %s %s", self:GetTestAccountOpenID(), 0)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassAllActivityDifficultyMission = function(self, TT, status)
-  -- function num : 0_22 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassAllActivityDifficultyMission(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("pass_all %s %s", self:GetTestAccountOpenID(), 1)
+  local cmd = string.format("pass_all %s %s", self:GetTestAccountOpenID(), 1)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_SailingPassAll = function(self, TT, status)
-  -- function num : 0_23 , upvalues : _ENV
+function TestRobotModule:AsyncGM_SailingPassAll(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("sailing_pass_all %s", self:GetTestAccountOpenID())
+  local cmd = string.format("sailing_pass_all %s", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_FakeMidasProvide = function(self, TT, status, midas_id)
-  -- function num : 0_24 , upvalues : _ENV
+function TestRobotModule:AsyncGM_FakeMidasProvide(TT, status, midas_id)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("FakeMidasProvide %s %s", self:GetTestAccountOpenID(), midas_id)
+  local cmd = string.format("FakeMidasProvide %s %s", self:GetTestAccountOpenID(), midas_id)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_PassMiniMazeMission = function(self, TT, status, componentID)
-  -- function num : 0_25 , upvalues : _ENV
+function TestRobotModule:AsyncGM_PassMiniMazeMission(TT, status, componentID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("pass_bloodsucker_mission %s %d", self:GetTestAccountOpenID(), componentID)
+  local cmd = string.format("pass_bloodsucker_mission %s %d", self:GetTestAccountOpenID(), componentID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_MiniMazeTalentMax = function(self, TT, status, componentID)
-  -- function num : 0_26 , upvalues : _ENV
+function TestRobotModule:AsyncGM_MiniMazeTalentMax(TT, status, componentID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("talent_max_level %s %d", self:GetTestAccountOpenID(), componentID)
+  local cmd = string.format("talent_max_level %s %d", self:GetTestAccountOpenID(), componentID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_AddAllPet = function(self, TT, status)
-  -- function num : 0_27 , upvalues : _ENV
+function TestRobotModule:AsyncGM_AddAllPet(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("add_all_pet %s", self:GetTestAccountOpenID())
+  local cmd = string.format("add_all_pet %s", self:GetTestAccountOpenID())
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_SetShopWindowsMsgBoxFalse = function(self, TT, status)
-  -- function num : 0_28 , upvalues : _ENV
+function TestRobotModule:AsyncGM_SetShopWindowsMsgBoxFalse(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("modify_game_limit_switch_param 513 1 ShopWindowsMsgBox false")
+  local cmd = string.format("modify_game_limit_switch_param 513 1 ShopWindowsMsgBox false")
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_SetWhiteTestSeasonMazeTrue = function(self, TT, status)
-  -- function num : 0_29 , upvalues : _ENV
+function TestRobotModule:AsyncGM_SetWhiteTestSeasonMazeTrue(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("modify_game_limit_switch_param 513 1 whiteTestSeasonMazeFight true")
+  local cmd = string.format("modify_game_limit_switch_param 513 1 whiteTestSeasonMazeFight true")
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_ChangePet = function(self, TT, status, templateID, level, awakening, grade, intimacy, equip)
-  -- function num : 0_30 , upvalues : _ENV
+function TestRobotModule:AsyncGM_ChangePet(TT, status, templateID, level, awakening, grade, intimacy, equip)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("ChangePet %s %s %s %s %s %s %s", self:GetTestAccountOpenID(), templateID, level, awakening, grade, intimacy, equip)
+  local cmd = string.format("ChangePet %s %s %s %s %s %s %s", self:GetTestAccountOpenID(), templateID, level, awakening, grade, intimacy, equip)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_SeasonSetProcess = function(self, TT, status, campaignID, componentID, progress)
-  -- function num : 0_31 , upvalues : _ENV
+function TestRobotModule:AsyncGM_SeasonSetProcess(TT, status, campaignID, componentID, progress)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("SeasonSetProcess %s %s %s %s", self:GetTestAccountOpenID(), campaignID, componentID, progress)
+  local cmd = string.format("SeasonSetProcess %s %s %s %s", self:GetTestAccountOpenID(), campaignID, componentID, progress)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_UnlockChallengeMission = function(self, TT, status, componentID)
-  -- function num : 0_32 , upvalues : _ENV
+function TestRobotModule:AsyncGM_UnlockChallengeMission(TT, status, componentID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("unlock_challenge_mission %s %s", self:GetTestAccountOpenID(), componentID)
+  local cmd = string.format("unlock_challenge_mission %s %s", self:GetTestAccountOpenID(), componentID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_SetCampaignTalentList = function(self, TT, status, talentList)
-  -- function num : 0_33 , upvalues : _ENV
+function TestRobotModule:AsyncGM_SetCampaignTalentList(TT, status, talentList)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("GMSetTalentSkill %s ", self:GetTestAccountOpenID())
+  local cmd = string.format("GMSetTalentSkill %s ", self:GetTestAccountOpenID())
   if talentList then
-    for index,value in ipairs(talentList) do
+    for index, value in ipairs(talentList) do
       if index ~= 1 then
         cmd = cmd .. ","
       end
       cmd = cmd .. tostring(value)
     end
   end
-  do
-    self:__AsyncSendGM(TT, status, cmd)
-  end
-end
-
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_SeasonMazeLevelDifficulty = function(self, TT, status, componentID, level)
-  -- function num : 0_34 , upvalues : _ENV
-  status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("season_maze_hard %s %s %s", self:GetTestAccountOpenID(), componentID, level)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_ResetCampDat = function(self, TT, status, activityID)
-  -- function num : 0_35 , upvalues : _ENV
+function TestRobotModule:AsyncGM_SeasonMazeLevelDifficulty(TT, status, componentID, level)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("ResetCampData %s %s", self:GetTestAccountOpenID(), activityID)
+  local cmd = string.format("season_maze_hard %s %s %s", self:GetTestAccountOpenID(), componentID, level)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_SeasonMazeAddItem = function(self, TT, status, componentID, itemType, itemID, itemCount)
-  -- function num : 0_36 , upvalues : _ENV
+function TestRobotModule:AsyncGM_ResetCampDat(TT, status, activityID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("add_season_maze_item %s %s %s %s %s", self:GetTestAccountOpenID(), componentID, itemType, itemID, itemCount)
+  local cmd = string.format("ResetCampData %s %s", self:GetTestAccountOpenID(), activityID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_SeasonMazeAddAllRelic = function(self, TT, status, componentID)
-  -- function num : 0_37 , upvalues : _ENV
+function TestRobotModule:AsyncGM_SeasonMazeAddItem(TT, status, componentID, itemType, itemID, itemCount)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("add_season_maze_all_relic %s %s", self:GetTestAccountOpenID(), componentID)
+  local cmd = string.format("add_season_maze_item %s %s %s %s %s", self:GetTestAccountOpenID(), componentID, itemType, itemID, itemCount)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-TestRobotModule.AsyncGM_SeasonMazeAddAllBead = function(self, TT, status, componentID)
-  -- function num : 0_38 , upvalues : _ENV
+function TestRobotModule:AsyncGM_SeasonMazeAddAllRelic(TT, status, componentID)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local cmd = (string.format)("season_maze_all_bead %s %s", self:GetTestAccountOpenID(), componentID)
+  local cmd = string.format("add_season_maze_all_relic %s %s", self:GetTestAccountOpenID(), componentID)
   self:__AsyncSendGM(TT, status, cmd)
 end
 
-
+function TestRobotModule:AsyncGM_SeasonMazeAddAllBead(TT, status, componentID)
+  status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
+  local cmd = string.format("season_maze_all_bead %s %s", self:GetTestAccountOpenID(), componentID)
+  self:__AsyncSendGM(TT, status, cmd)
+end

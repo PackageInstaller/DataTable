@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_common_be_hit_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCommonBeHitInstruction", BaseInstruction)
 PlayCommonBeHitInstruction = PlayCommonBeHitInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCommonBeHitInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCommonBeHitInstruction:Constructor(paramList)
   self._hitAnimName = paramList.hitAnimName
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._turnToTarget = tonumber(paramList.turnToTarget)
@@ -23,17 +16,14 @@ PlayCommonBeHitInstruction.Constructor = function(self, paramList)
   self._hitBackUseDamagePos = tonumber(paramList.hitBackUseDamagePos) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCommonBeHitInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCommonBeHitInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playSkillService = world:GetService("PlaySkill")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   if targetEntityID == nil or targetEntityID < 0 then
-    return 
+    return
   end
   local targetEntity = world:GetEntityByID(targetEntityID)
   local curDamageIndex = phaseContext:GetCurDamageResultIndex()
@@ -44,8 +34,8 @@ PlayCommonBeHitInstruction.DoInstruction = function(self, TT, casterEntity, phas
   local damageResult = damageResultArray[curDamageIndex]
   local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
   if not damageInfo then
-    (Log.fatal)("### damageInfo is nil. curDamageIndex, curDamageInfoIndex=", curDamageIndex, curDamageInfoIndex)
-    return 
+    Log.fatal("### damageInfo is nil. curDamageIndex, curDamageInfoIndex=", curDamageIndex, curDamageInfoIndex)
+    return
   end
   local damageGridPos = damageResult:GetGridPos()
   local playFinalAttack = playSkillService:GetFinalAttack(world, casterEntity, phaseContext)
@@ -53,22 +43,23 @@ PlayCommonBeHitInstruction.DoInstruction = function(self, TT, casterEntity, phas
   if self._trapNotPlayHitEffect == 1 and targetEntity:TrapID() then
     playHitEffectID = 0
   end
-  local beHitParam = ((((((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(playHitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(self._deathClear)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_DamageIndex(curDamageIndex)):SetHandleBeHitParam_HitBackSpeed(self._hitBackSpeed)):SetHandleBeHitParam_HitBackUseDamageIndex(self._hitBackUseDamageIndex)):SetHandleBeHitParam_HitBackUseDamagePos(self._hitBackUseDamagePos)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(playHitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(self._deathClear):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_DamageIndex(curDamageIndex):SetHandleBeHitParam_HitBackSpeed(self._hitBackSpeed):SetHandleBeHitParam_HitBackUseDamageIndex(self._hitBackUseDamageIndex):SetHandleBeHitParam_HitBackUseDamagePos(self._hitBackUseDamagePos)
   if self._waitBeHitFinish == 1 then
     playSkillService:HandleBeHit(TT, beHitParam)
   else
-    local hitBackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(self._HandleBeHitTask, self, playSkillService, beHitParam)
+    local hitBackTaskID = TaskManager:GetInstance():CoreGameStartTask(self._HandleBeHitTask, self, playSkillService, beHitParam)
     phaseContext:AddPhaseTask(hitBackTaskID)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCommonBeHitInstruction._HandleBeHitTask = function(self, TT, playSkillService, beHitParam)
-  -- function num : 0_2
+function PlayCommonBeHitInstruction:_HandleBeHitTask(TT, playSkillService, beHitParam)
   playSkillService:HandleBeHit(TT, beHitParam)
 end
 
-local TurnToTargetType = {None = 0, Caster = 1, PickupPos = 2, Max = 99}
+local TurnToTargetType = {
+  None = 0,
+  Caster = 1,
+  PickupPos = 2,
+  Max = 99
+}
 _enum("TurnToTargetType", TurnToTargetType)
-

@@ -1,28 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_have_camp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckHaveCamp", AINewNode)
 ActionCheckHaveCamp = ActionCheckHaveCamp
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckHaveCamp.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckHaveCamp:OnUpdate()
   local campType = self:GetLogicData(-1)
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return false
   end
-  local monsterEntityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
-  for i,v in ipairs(monsterEntityList) do
-    if not v:HasDeadMark() and v:GetID() ~= entityCaster:GetID() and (v:MonsterID()):GetCampType() == campType then
+  local monsterEntityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
+  for i, v in ipairs(monsterEntityList) do
+    if not v:HasDeadMark() and v:GetID() ~= entityCaster:GetID() and v:MonsterID():GetCampType() == campType then
       return AINewNodeStatus.Success
     end
   end
   return AINewNodeStatus.Failure
 end
-
-

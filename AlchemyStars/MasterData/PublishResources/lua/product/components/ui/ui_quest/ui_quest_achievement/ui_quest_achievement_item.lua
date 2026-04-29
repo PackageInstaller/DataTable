@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achievement/ui_quest_achievement_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIQuestAchievementItem", UICustomWidget)
 UIQuestAchievementItem = UIQuestAchievementItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIQuestAchievementItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIQuestAchievementItem:OnShow(uiParams)
   self._transition = self:GetUIComponent("ATransitionComponent", "UIQuestAchievementItem")
   self._anim = self:GetUIComponent("Animation", "UIQuestAchievementItem")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "UIQuestAchievementItem")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._canvasGroup.blocksRaycasts = false
   self:AttachEvent(GameEventType.QuestUpdate, self.QuestUpdate)
   self:AttachEvent(GameEventType.OnAchievePointFinish, self.QuestUpdate)
   self:AttachEvent(GameEventType.RolePropertyChanged, self.QuestUpdate)
-  self._questModule = (GameGlobal.GetModule)(QuestModule)
+  self._questModule = GameGlobal.GetModule(QuestModule)
   self._itemCountPerRow = 1
   self._enum = 0
   self._allEnum = 1
@@ -27,10 +17,7 @@ UIQuestAchievementItem.OnShow = function(self, uiParams)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.QuestUpdate = function(self)
-  -- function num : 0_1
+function UIQuestAchievementItem:QuestUpdate()
   if self._isOpen then
     self:_InitAchTypePool()
     self:RefreshTypeRate()
@@ -39,60 +26,39 @@ UIQuestAchievementItem.QuestUpdate = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.SetData = function(self, type)
-  -- function num : 0_2 , upvalues : _ENV
+function UIQuestAchievementItem:SetData(type)
   if self._listInitAnimateTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._listInitAnimateTask)
+    GameGlobal.TaskManager():KillTask(self._listInitAnimateTask)
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = true
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 1
-  ;
-  (self._transition):PlayEnterAnimation(true)
+  self._canvasGroup.blocksRaycasts = true
+  self._canvasGroup.alpha = 1
+  self._transition:PlayEnterAnimation(true)
   self._isIntro = not self._isOpen
   self._isOpen = true
   self:_GetComponents()
   self._type = type
-  self._cfg_quest_achieve_type = (Cfg.cfg_quest_achieve_type)({})
+  self._cfg_quest_achieve_type = Cfg.cfg_quest_achieve_type({})
   if self._cfg_quest_achieve_type == nil then
-    (Log.fatal)("[quest] error --> _cfg_quest_achieve_type is nil !")
-    return 
+    Log.fatal("[quest] error --> _cfg_quest_achieve_type is nil !")
+    return
   end
   self:_OnValue()
-  self._listInitAnimateTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
+  self._listInitAnimateTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 500)
     self._isIntro = false
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OnHide = function(self)
-  -- function num : 0_3
+function UIQuestAchievementItem:OnHide()
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.CheckRedState = function(self, enum)
-  -- function num : 0_4
-  local redInfo = (self._questModule):GetAchRedPoint()
+function UIQuestAchievementItem:CheckRedState(enum)
+  local redInfo = self._questModule:GetAchRedPoint()
   return redInfo[enum]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._GetComponents = function(self)
-  -- function num : 0_5
+function UIQuestAchievementItem:_GetComponents()
   self._detailGo = self:GetGameObject("detailGo")
   self._allGo = self:GetGameObject("allGo")
   self._achPointRedPoint = self:GetGameObject("red")
@@ -110,131 +76,95 @@ UIQuestAchievementItem._GetComponents = function(self)
   self._pointAwardComplete = self:GetGameObject("AwardComplete")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.GetCanCollectQuestByAchieveEnum = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIQuestAchievementItem:GetCanCollectQuestByAchieveEnum()
   local ret = {}
   local achieveList = self:GetList()
-  for key,value in pairs(achieveList) do
+  for key, value in pairs(achieveList) do
     if value.status == QuestStatus.QUEST_Completed then
-      (table.insert)(ret, value)
+      table.insert(ret, value)
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.TypeAllBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
+function UIQuestAchievementItem:TypeAllBtnOnClick(go)
   local list = self:GetCanCollectQuestByAchieveEnum()
   if list and next(list) then
     self:Lock("UIQuestAchievementItem:TypeAllBtnOnClick")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnTypeAllBtnOnClick, self, list)
+    GameGlobal.TaskManager():StartTask(self.OnTypeAllBtnOnClick, self, list)
   else
-    ;
-    (Log.debug)("###[UIQuestAchievementItem] no collect achieve quest!")
+    Log.debug("###[UIQuestAchievementItem] no collect achieve quest!")
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OnTypeAllBtnOnClick = function(self, TT, list)
-  -- function num : 0_8 , upvalues : _ENV
+function UIQuestAchievementItem:OnTypeAllBtnOnClick(TT, list)
   local idList = {}
-  for key,value in pairs(list) do
-    (table.insert)(idList, value.quest_id)
+  for key, value in pairs(list) do
+    table.insert(idList, value.quest_id)
   end
-  ;
-  (Log.debug)("###[UIQuestAchievementItem] OnTypeAllBtnOnClick count:", #idList)
-  local res, msg = (self._questModule):TakeOneKeyReward(TT, QuestType.QT_None, idList)
+  Log.debug("###[UIQuestAchievementItem] OnTypeAllBtnOnClick count:", #idList)
+  local res, msg = self._questModule:TakeOneKeyReward(TT, QuestType.QT_None, idList)
   self:UnLock("UIQuestAchievementItem:TypeAllBtnOnClick")
   if res:GetSucc() then
     if self.uiOwner == nil then
-      return 
+      return
     end
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_8_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve + 10000)
-  end
-)
-      else
-        if (table.count)(msg.rewards) > 0 then
-          self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_8_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 10000)
-  end
-)
-        else
-          local tips = (StringTable.Get)("str_physicalpower_error_phy_add_full")
-          ;
-          (ToastManager.ShowToast)(tips)
-        end
-      end
-      do
-        local result = res:GetResult()
-        ;
-        (Log.error)("###[UIQuestAchievementItem] TakeOneKeyReward fail,result:", result)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve + 10000)
+      end)
+    elseif 0 < table.count(msg.rewards) then
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 10000)
+      end)
+    else
+      local tips = StringTable.Get("str_physicalpower_error_phy_add_full")
+      ToastManager.ShowToast(tips)
     end
+  else
+    local result = res:GetResult()
+    Log.error("###[UIQuestAchievementItem] TakeOneKeyReward fail,result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.AllBtnOnClick = function(self)
-  -- function num : 0_9
-  (self._allGo):SetActive(true)
-  ;
-  (self._detailGo):SetActive(false)
+function UIQuestAchievementItem:AllBtnOnClick()
+  self._allGo:SetActive(true)
+  self._detailGo:SetActive(false)
   self._enum = self._allEnum
   self:PlayTypesAnim()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.ShowInfoOfEnum = function(self, enum, startAnim)
-  -- function num : 0_10
+function UIQuestAchievementItem:ShowInfoOfEnum(enum, startAnim)
   if self._enum == enum then
     if startAnim then
-      (self._allGo):SetActive(false)
-      ;
-      (self._allGo):SetActive(true)
+      self._allGo:SetActive(false)
+      self._allGo:SetActive(true)
       self:PlayTypesAnim()
     end
-    return 
+    return
   end
   self._enum = enum
   if self._enum == self._allEnum then
-    (self._allGo):SetActive(false)
-    ;
-    (self._allGo):SetActive(true)
-    ;
-    (self._detailGo):SetActive(false)
+    self._allGo:SetActive(false)
+    self._allGo:SetActive(true)
+    self._detailGo:SetActive(false)
     self:RefreshPointAward()
     self:PlayTypesAnim()
   else
-    ;
-    (self._allGo):SetActive(false)
-    ;
-    (self._detailGo):SetActive(true)
+    self._allGo:SetActive(false)
+    self._detailGo:SetActive(true)
     self._playAnim = true
     self:_RefrenshDetailScrollView(true)
     self:RefreshTopTypePool()
@@ -242,220 +172,155 @@ UIQuestAchievementItem.ShowInfoOfEnum = function(self, enum, startAnim)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.RefreshPointAward = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((Cfg.cfg_achieve_reward)({}))
-  local achievePointCfg = nil
-  local id = nil
-  for index,value in ipairs(achievePointCfg) do
-    local got = (self._questModule):IsGotAchPointReward(value.ID)
+function UIQuestAchievementItem:RefreshPointAward()
+  local achievePointCfg = Cfg.cfg_achieve_reward({})
+  local id
+  for index, value in ipairs(achievePointCfg) do
+    local got = self._questModule:IsGotAchPointReward(value.ID)
     if not got then
       id = value.ID
       break
     end
   end
-  do
-    ;
-    (self._pointAwardItemGo):SetActive(id ~= nil)
-    local allViewType = ((self._cfg_quest_achieve_type)[self._allEnum]).BigTypeEnum
-    local allViewNowValue, allViewAllValue = self:GetCountByType(allViewType)
-    if id then
-      local cfg_award = achievePointCfg[id]
-      local itemid = ((cfg_award.Reward)[1])[1]
-      local cfg_item = (Cfg.cfg_item)[itemid]
-      local params = {}
-      params.quality = cfg_item.Color
-      params.icon = cfg_item.Icon
-      params.text = ((cfg_award.Reward)[1])[2]
-      allViewAllValue = cfg_award.AchPoint
-      ;
-      (self._pointAwardItem):SetData(itemid, params, function(matid, pos)
-    -- function num : 0_11_0 , upvalues : self
-    self:PointItemClick(matid, pos)
+  self._pointAwardItemGo:SetActive(id ~= nil)
+  local allViewType = self._cfg_quest_achieve_type[self._allEnum].BigTypeEnum
+  local allViewNowValue, allViewAllValue = self:GetCountByType(allViewType)
+  if id then
+    local cfg_award = achievePointCfg[id]
+    local itemid = cfg_award.Reward[1][1]
+    local cfg_item = Cfg.cfg_item[itemid]
+    local params = {}
+    params.quality = cfg_item.Color
+    params.icon = cfg_item.Icon
+    params.text = cfg_award.Reward[1][2]
+    allViewAllValue = cfg_award.AchPoint
+    self._pointAwardItem:SetData(itemid, params, function(matid, pos)
+      self:PointItemClick(matid, pos)
+    end)
+    self._pointAwardComplete:SetActive(allViewNowValue >= allViewAllValue)
   end
-)
-      ;
-      (self._pointAwardComplete):SetActive(allViewAllValue <= allViewNowValue)
-    end
-    local rate = allViewNowValue / allViewAllValue
-    if rate > 1 then
-      rate = 1
-    end
-    -- DECOMPILER ERROR at PC70: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._allViewFillAmont).fillAmount = rate
-    ;
-    (self._allViewValue):SetText(allViewNowValue)
-    ;
-    (self._allViewValue2):SetText("/" .. allViewAllValue)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  local rate = allViewNowValue / allViewAllValue
+  if 1 < rate then
+    rate = 1
   end
+  self._allViewFillAmont.fillAmount = rate
+  self._allViewValue:SetText(allViewNowValue)
+  self._allViewValue2:SetText("/" .. allViewAllValue)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.PointItemClick = function(self, matid, pos)
-  -- function num : 0_12 , upvalues : _ENV
-  local achievePointCfg = ((Cfg.cfg_achieve_reward)({}))
-  local id = nil
-  for index,value in ipairs(achievePointCfg) do
-    local got = (self._questModule):IsGotAchPointReward(value.ID)
+function UIQuestAchievementItem:PointItemClick(matid, pos)
+  local achievePointCfg = Cfg.cfg_achieve_reward({})
+  local id
+  for index, value in ipairs(achievePointCfg) do
+    local got = self._questModule:IsGotAchPointReward(value.ID)
     if not got then
       id = value.ID
       break
     end
   end
-  do
-    local allViewType = ((self._cfg_quest_achieve_type)[self._allEnum]).BigTypeEnum
-    local allViewNowValue, allViewAllValue = self:GetCountByType(allViewType)
-    do
-      if id then
-        local cfg_award = achievePointCfg[id]
-        allViewAllValue = cfg_award.AchPoint
-        if allViewAllValue <= allViewNowValue then
-          self:QuickGetAchievePoint(id)
-          return 
-        end
-      end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
+  local allViewType = self._cfg_quest_achieve_type[self._allEnum].BigTypeEnum
+  local allViewNowValue, allViewAllValue = self:GetCountByType(allViewType)
+  if id then
+    local cfg_award = achievePointCfg[id]
+    allViewAllValue = cfg_award.AchPoint
+    if allViewNowValue >= allViewAllValue then
+      self:QuickGetAchievePoint(id)
+      return
     end
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.QuickGetAchievePoint = function(self, id)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+function UIQuestAchievementItem:QuickGetAchievePoint(id)
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self:Lock("UIQuestAchievementItem:QuickGetAchievePoint")
   self:StartTask(self.OnQuickGetAchievePoint, self, id)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OnQuickGetAchievePoint = function(self, TT, id)
-  -- function num : 0_14 , upvalues : _ENV
-  local res, msg = (self._questModule):TakeAchReward(TT, id)
+function UIQuestAchievementItem:OnQuickGetAchievePoint(TT, id)
+  local res, msg = self._questModule:TakeAchReward(TT, id)
   self:UnLock("UIQuestAchievementItem:QuickGetAchievePoint")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      do
-        if #tempPets > 0 then
-          self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_14_0 , upvalues : _ENV, id
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve + 100, id)
-  end
-)
-        else
-          self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_14_1 , upvalues : _ENV, id
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 100, id)
-  end
-)
-        end
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAchievePointFinish)
-        ;
-        (Log.fatal)("###questModule:TakeAchReward - res:", res:GetResult(), " -id --> ", id)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve + 100, id)
+      end)
+    else
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 100, id)
+      end)
     end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAchievePointFinish)
+  else
+    Log.fatal("###questModule:TakeAchReward - res:", res:GetResult(), " -id --> ", id)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.RefreshTypeRate = function(self)
-  -- function num : 0_15
+function UIQuestAchievementItem:RefreshTypeRate()
   local nowValue, allValue = self:GetCountByType(self._enum)
-  ;
-  (self._typeRateValTex):SetText("<color=#bc9a70>" .. nowValue .. "</color>/" .. allValue)
-  local rate = nil
+  self._typeRateValTex:SetText("<color=#bc9a70>" .. nowValue .. "</color>/" .. allValue)
+  local rate
   if allValue == 0 then
     rate = 0
   else
     rate = nowValue / allValue
   end
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._typeRateImg).fillAmount = rate
+  self._typeRateImg.fillAmount = rate
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.RefreshTopTypePool = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local pools = (self._achieveTopTypePool):GetAllSpawnList()
-  for key,value in pairs(pools) do
+function UIQuestAchievementItem:RefreshTopTypePool()
+  local pools = self._achieveTopTypePool:GetAllSpawnList()
+  for key, value in pairs(pools) do
     value:Select(self._enum)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._InitDetailScrollView = function(self)
-  -- function num : 0_17
-  (self._detailScrollView):InitListView(0, function(scrollView, index)
-    -- function num : 0_17_0 , upvalues : self
+function UIQuestAchievementItem:_InitDetailScrollView()
+  self._detailScrollView:InitListView(0, function(scrollView, index)
     return self:_OnInitDetailScrollView(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.GetList = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIQuestAchievementItem:GetList()
   local qlbt = self:GetQuestList()
   local tempList = {}
-  for i = 1, (table.count)(qlbt) do
-    local quest = (qlbt[i]):QuestInfo()
+  for i = 1, table.count(qlbt) do
+    local quest = qlbt[i]:QuestInfo()
     if quest.AchieveType == self._enum then
-      (table.insert)(tempList, quest)
+      table.insert(tempList, quest)
     end
   end
   return tempList
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.GetQuestList = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local taskList = (self._questModule):GetQuestByQuestType(self._type)
+function UIQuestAchievementItem:GetQuestList()
+  local taskList = self._questModule:GetQuestByQuestType(self._type)
   local taskListT = {}
   for i = 1, #taskList do
-    local quest = (taskList[i]):QuestInfo()
+    local quest = taskList[i]:QuestInfo()
     if quest.status ~= QuestStatus.QUEST_NotStart then
-      (table.insert)(taskListT, taskList[i])
+      table.insert(taskListT, taskList[i])
     end
   end
   return taskListT
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._OnInitDetailScrollView = function(self, scrollView, index)
-  -- function num : 0_20
+function UIQuestAchievementItem:_OnInitDetailScrollView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -474,211 +339,145 @@ UIQuestAchievementItem._OnInitDetailScrollView = function(self, scrollView, inde
   return item
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._ShowAchieveItem = function(self, heartItem, itemIndex)
-  -- function num : 0_21 , upvalues : _ENV
-  local data = (self._questDataList)[itemIndex]
-  ;
-  (heartItem:GetGameObject()):SetActive(true)
+function UIQuestAchievementItem:_ShowAchieveItem(heartItem, itemIndex)
+  local data = self._questDataList[itemIndex]
+  heartItem:GetGameObject():SetActive(true)
   if data ~= nil then
     heartItem:SetData(itemIndex, data, function(questInfo)
-    -- function num : 0_21_0 , upvalues : self
-    self:_AchievementClick(questInfo.quest_id)
-  end
-, function(matid, pos)
-    -- function num : 0_21_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
-  end
-, nil, self._playAnim)
+      self:_AchievementClick(questInfo.quest_id)
+    end, function(matid, pos)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.QuestAwardItemClick, matid, pos)
+    end, nil, self._playAnim)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._AchievementClick = function(self, id)
-  -- function num : 0_22 , upvalues : _ENV
+function UIQuestAchievementItem:_AchievementClick(id)
   self:Lock("UIQuestGet")
-  ;
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
   self:StartTask(self._OnGet, self, id)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OnUIPetObtainCloseInQuest = function(self, type)
-  -- function num : 0_23 , upvalues : _ENV
+function UIQuestAchievementItem:OnUIPetObtainCloseInQuest(type)
   if self._isOpen and type == QuestType.QT_Achieve then
     self:ShowDialog("UIGetItemController", self._tempMsgRewards, function()
-    -- function num : 0_23_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve)
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.AttachEvents = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIQuestAchievementItem:AttachEvents()
   self:AttachEvent(GameEventType.RolePropertyChanged, self._OnRedChanged)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.RemoveEvents = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIQuestAchievementItem:RemoveEvents()
   self:DetachEvent(GameEventType.RolePropertyChanged, self._OnRedChanged)
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:DetachEvent(GameEventType.OnUIPetObtainCloseInQuest, self.OnUIPetObtainCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_26 , upvalues : _ENV
+function UIQuestAchievementItem:OnUIGetItemCloseInQuest(type)
   if self._isOpen and type == QuestType.QT_Achieve then
     self:RefrenshList()
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._OnGet = function(self, TT, id)
-  -- function num : 0_27 , upvalues : _ENV
-  local res, msg = (self._questModule):TakeQuestReward(TT, id)
+function UIQuestAchievementItem:_OnGet(TT, id)
+  local res, msg = self._questModule:TakeQuestReward(TT, id)
   self:UnLock("UIQuestGet")
   if self.uiOwner == nil then
-    return 
+    return
   end
   if res:GetSucc() then
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if #pets > 0 then
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_27_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve)
-  end
-)
-      else
-        self:ShowDialog("UIGetItemController", msg.rewards, function()
-    -- function num : 0_27_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve)
-  end
-)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve)
+      end)
+    else
+      self:ShowDialog("UIGetItemController", msg.rewards, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.GetCountByType = function(self, enum)
-  -- function num : 0_28
-  local cur, total, taken = (self._questModule):GetAchieveCount(enum)
+function UIQuestAchievementItem:GetCountByType(enum)
+  local cur, total, taken = self._questModule:GetAchieveCount(enum)
   return taken, total
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._InitAchTypePool = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIQuestAchievementItem:_InitAchTypePool()
   local tempTab = {}
   for i = 1, #self._cfg_quest_achieve_type do
     if i ~= self._allEnum then
-      (table.insert)(tempTab, (self._cfg_quest_achieve_type)[i])
+      table.insert(tempTab, self._cfg_quest_achieve_type[i])
     end
   end
-  local count = (table.count)(tempTab)
-  ;
-  (self._achTypePool):SpawnObjects("UIQuestAchievementAchieveTypeItem", count)
-  local items = (self._achTypePool):GetAllSpawnList()
+  local count = table.count(tempTab)
+  self._achTypePool:SpawnObjects("UIQuestAchievementAchieveTypeItem", count)
+  local items = self._achTypePool:GetAllSpawnList()
   for i = 1, count do
-    local name = (tempTab[i]).BigTypeName
-    local type = (tempTab[i]).BigTypeEnum
+    local name = tempTab[i].BigTypeName
+    local type = tempTab[i].BigTypeEnum
     local nowValue, allValue = self:GetCountByType(type)
-    local sprite = (tempTab[i]).Icon
-    local yieldTime = nil
+    local sprite = tempTab[i].Icon
+    local yieldTime
     if i <= 3 then
       yieldTime = 0
     else
       yieldTime = 50
     end
-    ;
-    (items[i]):SetData(type, sprite, name, nowValue, allValue, function(enum)
-    -- function num : 0_29_0 , upvalues : self
-    self:OnTypeBtnClick(enum)
-  end
-)
+    items[i]:SetData(type, sprite, name, nowValue, allValue, function(enum)
+      self:OnTypeBtnClick(enum)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.PlayTypesAnim = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIQuestAchievementItem:PlayTypesAnim()
   local tempTab = {}
   for i = 1, #self._cfg_quest_achieve_type do
     if i ~= self._allEnum then
-      (table.insert)(tempTab, (self._cfg_quest_achieve_type)[i])
+      table.insert(tempTab, self._cfg_quest_achieve_type[i])
     end
   end
-  local count = (table.count)(tempTab)
-  local items = (self._achTypePool):GetAllSpawnList()
+  local count = table.count(tempTab)
+  local items = self._achTypePool:GetAllSpawnList()
   for i = 1, count do
-    local yieldTime = nil
+    local yieldTime
     if i <= 3 then
       yieldTime = 0
     else
       yieldTime = 100
     end
-    ;
-    (items[i]):PlayAnim(yieldTime)
+    items[i]:PlayAnim(yieldTime)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OnTypeBtnClick = function(self, enum)
-  -- function num : 0_31
+function UIQuestAchievementItem:OnTypeBtnClick(enum)
   self:ShowInfoOfEnum(enum)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OnClose = function(self)
-  -- function num : 0_32
+function UIQuestAchievementItem:OnClose()
   self._isOpen = false
-  ;
-  (self._anim):Stop()
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).blocksRaycasts = false
+  self._anim:Stop()
+  self._canvasGroup.alpha = 0
+  self._canvasGroup.blocksRaycasts = false
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._OnValue = function(self)
-  -- function num : 0_33
+function UIQuestAchievementItem:_OnValue()
   self:_InitAchTypePool()
   self:InitAchTopTypePool()
   self:_InitDetailScrollView()
@@ -686,203 +485,140 @@ UIQuestAchievementItem._OnValue = function(self)
   self:AchievePointRed()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.InitAchTopTypePool = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UIQuestAchievementItem:InitAchTopTypePool()
   local tempTab = {}
   for i = 1, #self._cfg_quest_achieve_type do
     if i ~= self._allEnum then
-      (table.insert)(tempTab, (self._cfg_quest_achieve_type)[i])
+      table.insert(tempTab, self._cfg_quest_achieve_type[i])
     end
   end
-  local count = (table.count)(tempTab)
-  ;
-  (self._achieveTopTypePool):SpawnObjects("UIQuestAchievementTypeListItem", count)
-  local items = (self._achieveTopTypePool):GetAllSpawnList()
+  local count = table.count(tempTab)
+  self._achieveTopTypePool:SpawnObjects("UIQuestAchievementTypeListItem", count)
+  local items = self._achieveTopTypePool:GetAllSpawnList()
   for i = 1, count do
-    local name = (tempTab[i]).BigTypeNameSpace
-    local type = (tempTab[i]).BigTypeEnum
-    local sprite1 = (tempTab[i]).Icon1
-    local sprite2 = (tempTab[i]).Icon2
-    ;
-    (items[i]):SetData(type, sprite1, sprite2, name, function(enum)
-    -- function num : 0_34_0 , upvalues : self
-    self:OnTypeBtnClick(enum)
-  end
-)
+    local name = tempTab[i].BigTypeNameSpace
+    local type = tempTab[i].BigTypeEnum
+    local sprite1 = tempTab[i].Icon1
+    local sprite2 = tempTab[i].Icon2
+    items[i]:SetData(type, sprite1, sprite2, name, function(enum)
+      self:OnTypeBtnClick(enum)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.AchievePointRed = function(self)
-  -- function num : 0_35
-  local achPointRedPoint = (self._questModule):GetUnReceivedAchRewardsBoxNum() > 0
-  ;
-  (self._achPointRedPoint):SetActive(achPointRedPoint)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIQuestAchievementItem:AchievePointRed()
+  local achPointRedPoint = self._questModule:GetUnReceivedAchRewardsBoxNum() > 0
+  self._achPointRedPoint:SetActive(achPointRedPoint)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._OnRedChanged = function(self)
-  -- function num : 0_36
+function UIQuestAchievementItem:_OnRedChanged()
   if self._isOpen then
     self:AchievePointRed()
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.RefrenshList = function(self, movePos)
-  -- function num : 0_37
+function UIQuestAchievementItem:RefrenshList(movePos)
   if self._enum ~= self._allEnum then
-    (self._questModule):SetSortDirty(self._type)
+    self._questModule:SetSortDirty(self._type)
     self:_RefrenshDetailScrollView(movePos)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._RefrenshDetailScrollView = function(self, movePos)
-  -- function num : 0_38 , upvalues : _ENV
+function UIQuestAchievementItem:_RefrenshDetailScrollView(movePos)
   self._questDataList = self:GetList()
-  self._questDataListCount = (table.count)(self._questDataList)
-  local contentPos = (((self._detailScrollView).ScrollRect).content).localPosition
-  ;
-  (self._detailScrollView):SetListItemCount(self._questDataListCount)
-  ;
-  (self._detailScrollView):MovePanelToItemIndex(0, 0)
+  self._questDataListCount = table.count(self._questDataList)
+  local contentPos = self._detailScrollView.ScrollRect.content.localPosition
+  self._detailScrollView:SetListItemCount(self._questDataListCount)
+  self._detailScrollView:MovePanelToItemIndex(0, 0)
   if not movePos then
-    ((self._detailScrollView).ScrollRect):StopMovement()
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((self._detailScrollView).ScrollRect).content).localPosition = contentPos
+    self._detailScrollView.ScrollRect:StopMovement()
+    self._detailScrollView.ScrollRect.content.localPosition = contentPos
   end
   self._playAnim = false
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OpenAchieveMentPointOnClick = function(self)
-  -- function num : 0_39
+function UIQuestAchievementItem:OpenAchieveMentPointOnClick()
   self:ShowDialog("UIQuestAchievementPointAwardsController")
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.AllGetBtnOnClick = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function UIQuestAchievementItem:AllGetBtnOnClick()
   local list = {}
-  local quests = (self._questModule):GetQuestByQuestType(QuestType.QT_Achieve)
-  for _,quest in ipairs(quests) do
+  local quests = self._questModule:GetQuestByQuestType(QuestType.QT_Achieve)
+  for _, quest in ipairs(quests) do
     local qinfo = quest:QuestInfo()
     if qinfo.status == QuestStatus.QUEST_Completed then
-      (table.insert)(list, qinfo)
+      table.insert(list, qinfo)
     end
   end
   if list and next(list) then
     self:Lock("AllGetBtnOnClick")
     self:StartTask(self._OnAllGet, self, list)
   else
-    ;
-    (Log.debug)("###[UIQuestAchievementItem] no quest complete !")
+    Log.debug("###[UIQuestAchievementItem] no quest complete !")
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem._OnAllGet = function(self, TT, list)
-  -- function num : 0_41 , upvalues : _ENV
+function UIQuestAchievementItem:_OnAllGet(TT, list)
   local idList = {}
-  do
-    for key,value in pairs(list) do
-      (table.insert)(idList, value.quest_id)
-    end
+  for key, value in pairs(list) do
+    table.insert(idList, value.quest_id)
   end
-  ;
-  (Log.debug)("###[UIQuestAchievementItem] OnTypeAllBtnOnClick count:", #idList)
-  local res, msg = (self._questModule):TakeOneKeyReward(TT, QuestType.QT_None, idList)
+  Log.debug("###[UIQuestAchievementItem] OnTypeAllBtnOnClick count:", #idList)
+  local res, msg = self._questModule:TakeOneKeyReward(TT, QuestType.QT_None, idList)
   self:UnLock("AllGetBtnOnClick")
   if res:GetSucc() then
     if self.uiOwner == nil then
-      return 
+      return
     end
     local tempPets = {}
     local pets = msg.rewards
     self._tempMsgRewards = msg.rewards
-    if msg.rewards and (table.count)(msg.rewards) > 0 then
+    if msg.rewards and table.count(msg.rewards) > 0 then
       self:ShowDialog("UIQuestAchievementFinishList", list, function()
-    -- function num : 0_41_0 , upvalues : pets, _ENV, tempPets, self, msg
-    if #pets > 0 then
-      for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
-        if ispet then
-          (table.insert)(tempPets, pets[i])
+        if 0 < #pets then
+          for i = 1, #pets do
+            local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
+            if ispet then
+              table.insert(tempPets, pets[i])
+            end
+          end
         end
-      end
-    end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-      -- function num : 0_41_0_0 , upvalues : _ENV
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve + 10000)
-    end
-)
-      else
-        if (table.count)(msg.rewards) > 0 then
+        if 0 < #tempPets then
+          self:ShowDialog("UIPetObtain", tempPets, function()
+            GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIPetObtainCloseInQuest, QuestType.QT_Achieve + 10000)
+          end)
+        elseif 0 < table.count(msg.rewards) then
           self:ShowDialog("UIGetItemController", msg.rewards, function()
-      -- function num : 0_41_0_1 , upvalues : _ENV
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 10000)
-    end
-)
+            GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 10000)
+          end)
         else
-          local tips = (StringTable.Get)("str_physicalpower_error_phy_add_full")
-          ;
-          (ToastManager.ShowToast)(tips)
+          local tips = StringTable.Get("str_physicalpower_error_phy_add_full")
+          ToastManager.ShowToast(tips)
         end
-      end
-    end
-  end
-)
+      end)
     else
-      local tips = (StringTable.Get)("str_physicalpower_error_phy_add_full")
-      ;
-      (ToastManager.ShowToast)(tips)
+      do
+        local tips = StringTable.Get("str_physicalpower_error_phy_add_full")
+        ToastManager.ShowToast(tips)
+      end
     end
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UIQuestAchievementItem] AllGetBtnOnClick fail,result:", result)
-    end
+    local result = res:GetResult()
+    Log.error("###[UIQuestAchievementItem] AllGetBtnOnClick fail,result:", result)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OnUIPetObtainCloseInQuest = function(self, type)
-  -- function num : 0_42 , upvalues : _ENV
+function UIQuestAchievementItem:OnUIPetObtainCloseInQuest(type)
   if type == QuestType.QT_Achieve + 10000 then
     self:ShowDialog("UIGetItemController", self._tempMsgRewards, function()
-    -- function num : 0_42_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 10000)
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, QuestType.QT_Achieve + 10000)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIQuestAchievementItem.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_43 , upvalues : _ENV
+function UIQuestAchievementItem:OnUIGetItemCloseInQuest(type)
   if type == QuestType.QT_Achieve + 10000 then
     self:RefrenshList()
   end
 end
-
-

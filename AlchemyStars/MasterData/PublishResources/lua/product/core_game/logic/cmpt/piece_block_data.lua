@@ -1,148 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/piece_block_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PieceBlockData", Object)
 PieceBlockData = PieceBlockData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PieceBlockData.Constructor = function(self, nX, nY)
-  -- function num : 0_0
+function PieceBlockData:Constructor(nX, nY)
   self.m_listBlock = {}
-  self._x = nX
+  self._x, self._y = nX, nY
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.AddBlock = function(self, nEntityID, nBlockData)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.m_listBlock)[nEntityID] = nBlockData
+function PieceBlockData:AddBlock(nEntityID, nBlockData)
+  self.m_listBlock[nEntityID] = nBlockData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.AddBlockList = function(self, listBlock)
-  -- function num : 0_2 , upvalues : _ENV
-  if listBlock == nil or (table.count)(listBlock) <= 0 then
-    return 
+function PieceBlockData:AddBlockList(listBlock)
+  if nil == listBlock or table.count(listBlock) <= 0 then
+    return
   end
-  for key,value in pairs(listBlock) do
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self.m_listBlock)[key] = value
+  for key, value in pairs(listBlock) do
+    self.m_listBlock[key] = value
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.GetBlockList = function(self)
-  -- function num : 0_3
+function PieceBlockData:GetBlockList()
   return self.m_listBlock
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.GetEntityBlock = function(self, entityID)
-  -- function num : 0_4
-  return (self.m_listBlock)[entityID]
+function PieceBlockData:GetEntityBlock(entityID)
+  return self.m_listBlock[entityID]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.DelBlock = function(self, nEntityID)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_listBlock)[nEntityID] = nil
+function PieceBlockData:DelBlock(nEntityID)
+  self.m_listBlock[nEntityID] = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.GetBlock = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function PieceBlockData:GetBlock()
   local nReturn = 0
-  for key,value in pairs(self.m_listBlock) do
+  for key, value in pairs(self.m_listBlock) do
     nReturn = nReturn | value
   end
   return nReturn
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.CheckBlock = function(self, nBlockData)
-  -- function num : 0_7 , upvalues : _ENV
-  for key,value in pairs(self.m_listBlock) do
-    if value & nBlockData > 0 then
+function PieceBlockData:CheckBlock(nBlockData)
+  for key, value in pairs(self.m_listBlock) do
+    if 0 < value & nBlockData then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.IsEnumMatch = function(entityWork, enumEntityType, nTypeParam)
-  -- function num : 0_8 , upvalues : _ENV
-  if (EnumTargetEntity.IsEnumMatch)(enumEntityType, EnumTargetEntity.Pet) and (entityWork:HasPetPstID() or entityWork:HasTeam()) then
+function PieceBlockData.IsEnumMatch(entityWork, enumEntityType, nTypeParam)
+  if EnumTargetEntity.IsEnumMatch(enumEntityType, EnumTargetEntity.Pet) and (entityWork:HasPetPstID() or entityWork:HasTeam()) then
     return true
   end
-  do
-    if (EnumTargetEntity.IsEnumMatch)(enumEntityType, EnumTargetEntity.Monster) then
-      local cmptMonsterID = entityWork:MonsterID()
-      if (nTypeParam and nTypeParam == (cmptMonsterID.GetMonsterID)()) or nTypeParam == nil then
-        return true
-      end
-    end
-    do
-      if (EnumTargetEntity.IsEnumMatch)(enumEntityType, EnumTargetEntity.Trap) then
-        local cmptTrap = entityWork:Trap()
-        if (nTypeParam and nTypeParam == cmptTrap:GetTrapType()) or nTypeParam == nil then
-          return true
-        end
-      end
-      do
-        if (EnumTargetEntity.IsEnumMatch)(enumEntityType, EnumTargetEntity.ChessPet) then
-          local chessPetCmpt = entityWork:ChessPet()
-          if (nTypeParam and nTypeParam == chessPetCmpt:GetChessPetID()) or nTypeParam == nil then
-            return true
-          end
-        end
-        return false
-      end
+  if EnumTargetEntity.IsEnumMatch(enumEntityType, EnumTargetEntity.Monster) then
+    local cmptMonsterID = entityWork:MonsterID()
+    if cmptMonsterID and (nTypeParam and nTypeParam == cmptMonsterID.GetMonsterID() or nil == nTypeParam) then
+      return true
     end
   end
+  if EnumTargetEntity.IsEnumMatch(enumEntityType, EnumTargetEntity.Trap) then
+    local cmptTrap = entityWork:Trap()
+    if cmptTrap and (nTypeParam and nTypeParam == cmptTrap:GetTrapType() or nil == nTypeParam) then
+      return true
+    end
+  end
+  if EnumTargetEntity.IsEnumMatch(enumEntityType, EnumTargetEntity.ChessPet) then
+    local chessPetCmpt = entityWork:ChessPet()
+    if chessPetCmpt and (nTypeParam and nTypeParam == chessPetCmpt:GetChessPetID() or nil == nTypeParam) then
+      return true
+    end
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.FindEntity = function(self, world, enumEntityType, nTypeParam)
-  -- function num : 0_9 , upvalues : _ENV
+function PieceBlockData:FindEntity(world, enumEntityType, nTypeParam)
   local listFindEntity = {}
-  for nEntityID,value in pairs(self.m_listBlock) do
+  for nEntityID, value in pairs(self.m_listBlock) do
     local entityWork = world:GetEntityByID(nEntityID)
     if entityWork then
-      local bFind = (PieceBlockData.IsEnumMatch)(entityWork, enumEntityType, nTypeParam)
+      local bFind = PieceBlockData.IsEnumMatch(entityWork, enumEntityType, nTypeParam)
       if bFind then
-        (table.insert)(listFindEntity, nEntityID)
+        table.insert(listFindEntity, nEntityID)
       end
     end
   end
   return listFindEntity
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceBlockData.IsExistNegative = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for key,value in pairs(self.m_listBlock) do
+function PieceBlockData:IsExistNegative()
+  for key, value in pairs(self.m_listBlock) do
     if key < 0 then
       return true
     end
   end
   return false
 end
-
-

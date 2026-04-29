@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_hiiro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignHiiro", ICampaignComponentLocalProcessBase)
 CCampaignHiiro = CCampaignHiiro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignHiiro.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignHiiro:Constructor()
   self._lotteryComponent = nil
   self._lotteryCompInfo = nil
   self._personProgressComponent = nil
@@ -22,24 +15,15 @@ CCampaignHiiro.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignHiiro:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_HIIRO
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignHiiro:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignHiiro:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLotteryComponent()
   self:_GetPersonProgressComponent()
@@ -48,65 +32,47 @@ CCampaignHiiro.InitComponent = function(self, campaignObj)
   self:_GetCumulativeLoginComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro._GetLotteryComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._lotteryComponent = (self._campaignObj):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
+function CCampaignHiiro:_GetLotteryComponent()
+  self._lotteryComponent = self._campaignObj:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY)
   if not self._lotteryComponent then
-    return 
+    return
   end
-  self._lotteryCompInfo = (self._lotteryComponent):ComponentInfo()
+  self._lotteryCompInfo = self._lotteryComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro._GetPersonProgressComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._personProgressComponent = (self._campaignObj):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_PERSON_PROGRESS)
+function CCampaignHiiro:_GetPersonProgressComponent()
+  self._personProgressComponent = self._campaignObj:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_PERSON_PROGRESS)
   if not self._personProgressComponent then
-    return 
+    return
   end
-  self._personProgressCompInfo = (self._personProgressComponent):ComponentInfo()
+  self._personProgressCompInfo = self._personProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro._GetCamQuestComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._camQuestComponet = (self._campaignObj):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_QUEST)
+function CCampaignHiiro:_GetCamQuestComponent()
+  self._camQuestComponet = self._campaignObj:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_QUEST)
   if not self._camQuestComponet then
-    return 
+    return
   end
-  self._camQuestComponetInfo = (self._camQuestComponet):ComponentInfo()
+  self._camQuestComponetInfo = self._camQuestComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro._GetStoryComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._storyComponent = (self._campaignObj):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_STORY)
+function CCampaignHiiro:_GetStoryComponent()
+  self._storyComponent = self._campaignObj:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_STORY)
   if not self._storyComponent then
-    return 
+    return
   end
-  self._storyComponentInfo = (self._storyComponent):ComponentInfo()
+  self._storyComponentInfo = self._storyComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_CUMULATIVE_LOGIN)
+function CCampaignHiiro:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginComponentInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginComponentInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro.GetComponent = function(self, componentID)
-  -- function num : 0_9 , upvalues : _ENV
+function CCampaignHiiro:GetComponent(componentID)
   if ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY == componentID then
     return self._lotteryComponent
   end
@@ -125,10 +91,7 @@ CCampaignHiiro.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignHiiro.GetComponentInfo = function(self, componentID)
-  -- function num : 0_10 , upvalues : _ENV
+function CCampaignHiiro:GetComponentInfo(componentID)
   if ECampaignHiiroComponentID.ECAMPAIGN_HIIRO_LOTTERY == componentID then
     return self._lotteryCompInfo
   end
@@ -146,5 +109,3 @@ CCampaignHiiro.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

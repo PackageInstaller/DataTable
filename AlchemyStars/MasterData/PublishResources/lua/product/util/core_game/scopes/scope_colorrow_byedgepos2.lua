@@ -1,36 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_colorrow_byedgepos2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_ColOrRowFinalByEdgePos", SkillScopeCalculator_Base)
 SkillScopeCalculator_ColOrRowFinalByEdgePos = SkillScopeCalculator_ColOrRowFinalByEdgePos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_ColOrRowFinalByEdgePos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local boardSvc = ((self._gridFilter)._world):GetService("BoardLogic")
+function SkillScopeCalculator_ColOrRowFinalByEdgePos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local boardSvc = self._gridFilter._world:GetService("BoardLogic")
   local ret = {}
   local maxY = boardSvc:GetCurBoardMaxY()
   local maxX = boardSvc:GetCurBoardMaxX()
   if casterPos.y == maxY then
     boardSvc:InsertListValidPos(ret, Vector2(casterPos.x, 1))
-  else
-    if casterPos.y == 1 then
-      boardSvc:InsertListValidPos(ret, Vector2(casterPos.x, maxY))
-    else
-      if casterPos.x == 1 then
-        boardSvc:InsertListValidPos(ret, Vector2(maxX, casterPos.y))
-      else
-        if casterPos.x == maxX then
-          boardSvc:InsertListValidPos(ret, Vector2(1, casterPos.y))
-        end
-      end
-    end
+  elseif casterPos.y == 1 then
+    boardSvc:InsertListValidPos(ret, Vector2(casterPos.x, maxY))
+  elseif casterPos.x == 1 then
+    boardSvc:InsertListValidPos(ret, Vector2(maxX, casterPos.y))
+  elseif casterPos.x == maxX then
+    boardSvc:InsertListValidPos(ret, Vector2(1, casterPos.y))
   end
   local result = SkillScopeResult:New(SkillScopeType.ColOrRowFinalByEdgePos, casterPos, ret, ret)
   return result
 end
-
-

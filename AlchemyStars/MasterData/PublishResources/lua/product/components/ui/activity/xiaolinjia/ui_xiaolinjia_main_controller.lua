@@ -1,59 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaMainController", UIController)
 UIXiaoLinJiaMainController = UIXiaoLinJiaMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaMainController.Constructor = function(self)
-  -- function num : 0_0
+function UIXiaoLinJiaMainController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIXiaoLinJiaMainController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_N7, ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST, ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_INLAND_N7, ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST, ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
-  self._testComponent = (self._localProcess):GetComponent(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
-  self._testComponentInfo = (self._localProcess):GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
-  self._questComponent = (self._localProcess):GetComponent(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
-  self._questComponentInfo = (self._localProcess):GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
+  self._testComponent = self._localProcess:GetComponent(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
+  self._testComponentInfo = self._localProcess:GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST)
+  self._questComponent = self._localProcess:GetComponent(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
+  self._questComponentInfo = self._localProcess:GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXiaoLinJiaMainController:OnShow(uiParams)
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self.anim = self:GetUIComponent("Animation", "anim")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:Lock("UIXiaoLinJiaMainController_Close")
-    ;
-    (self.anim):Play("uieffanim_UIXiaoLinJiaMainController_out")
+    self.anim:Play("uieffanim_UIXiaoLinJiaMainController_out")
     self:StartTask(function(TT)
-      -- function num : 0_2_0_0 , upvalues : _ENV, self
       YIELD(TT, 500)
       self:CloseDialog()
       self:UnLock("UIXiaoLinJiaMainController_Close")
-    end
-)
-  end
-, nil, nil, false, nil, nil, nil)
+    end)
+  end, nil, nil, false, nil, nil, nil)
   self.atlas = self:GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
   self.missionTitle = self:GetUIComponent("UILocalizationText", "missionTitle")
   self.missionContent = self:GetUIComponent("UILocalizationText", "missionContent")
@@ -76,205 +56,153 @@ UIXiaoLinJiaMainController.OnShow = function(self, uiParams)
   self.questRed = self:GetGameObject("questRed")
   self.collectionRed = self:GetGameObject("collectionRed")
   self.missionsRootTrans = self:GetUIComponent("RectTransform", "missions")
-  self.loginModule = (GameGlobal.GetModule)(LoginModule)
-  self.svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self.MissionPos = {[1] = 540, [2] = 540, [3] = 1028, [4] = 1340, [5] = 1600, [6] = 1690}
+  self.loginModule = GameGlobal.GetModule(LoginModule)
+  self.svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self.MissionPos = {
+    [1] = 540,
+    [2] = 540,
+    [3] = 1028,
+    [4] = 1340,
+    [5] = 1600,
+    [6] = 1690
+  }
   self:Refresh()
   self:AttachEvent(GameEventType.OnXiaoLinJiaMainPanelRefresh, self.Refresh)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   local mission = self:GetCurUnlockMission()
   mission:OnSelect()
-  ;
-  (self.anim):Play("uieffanim_UIXiaoLinJiaMainController_in")
+  self.anim:Play("uieffanim_UIXiaoLinJiaMainController_in")
   self:StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : self, _ENV
     self:Lock("UIXiaoLinJiaMainController_firstIn")
     YIELD(TT, 700)
     self:UnLock("UIXiaoLinJiaMainController_firstIn")
-    ;
-    (UIActivityHelper.PlayFirstPlot_Component)(self._campaign, ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST, false)
-  end
-)
+    UIActivityHelper.PlayFirstPlot_Component(self._campaign, ECampaignCN7ComponentID.ECAMPAIGN_N7_TACIT_TEST, false)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController._CheckActivityClose = function(self, id)
-  -- function num : 0_3 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIXiaoLinJiaMainController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.OnRootActiveChange = function(self, flag)
-  -- function num : 0_4
+function UIXiaoLinJiaMainController:OnRootActiveChange(flag)
   if flag then
-    (self.anim):Play("uieffanim_UIXiaoLinJiaMainController_in")
+    self.anim:Play("uieffanim_UIXiaoLinJiaMainController_in")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.SetRemainTime = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local closeTime = (self._testComponentInfo).m_close_time
-  local curTime = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
+function UIXiaoLinJiaMainController:SetRemainTime()
+  local closeTime = self._testComponentInfo.m_close_time
+  local curTime = self:GetModule(SvrTimeModule):GetServerTime() / 1000
   local diff = closeTime - curTime
-  ;
-  (self.remainTimeText):SetText((StringTable.Get)("str_xiaolinjia_entry_7", (UIActivityHelper.GetFormatTimerStr)(diff)))
+  self.remainTimeText:SetText(StringTable.Get("str_xiaolinjia_entry_7", UIActivityHelper.GetFormatTimerStr(diff)))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetEvaluate = function(self, star)
-  -- function num : 0_6
+function UIXiaoLinJiaMainController:GetEvaluate(star)
   return "str_xiaolinjia_rank_" .. star
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.Refresh = function(self, force)
-  -- function num : 0_7
+function UIXiaoLinJiaMainController:Refresh(force)
   self:RefreshMissionData()
   self:SetRemainTime()
   self:RefreshRed()
   if force then
     local tmpId = self.curSelectMissionID
     self.curSelectMissionID = 0
-    ;
-    ((self.missionList)[tmpId]):OnSelect()
+    self.missionList[tmpId]:OnSelect()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.RefreshRed = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local questHasRed = (self._campaign):CheckComponentRed(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
-  ;
-  (self.questRed):SetActive(questHasRed)
-  local collectionCfg = (Cfg.cfg_xiaolinjia_collection)({ComponentID = self:GetTacitTestComponentCfgId()})
+function UIXiaoLinJiaMainController:RefreshRed()
+  local questHasRed = self._campaign:CheckComponentRed(ECampaignCN7ComponentID.ECAMPAIGN_N7_QUEST)
+  self.questRed:SetActive(questHasRed)
+  local collectionCfg = Cfg.cfg_xiaolinjia_collection({
+    ComponentID = self:GetTacitTestComponentCfgId()
+  })
   local hasNew = false
-  for _,v in pairs(collectionCfg) do
-    self.itemModule = (GameGlobal.GetModule)(ItemModule)
-    local items = (self.itemModule):GetItemByTempId(v.ItemID)
-    for _,v in pairs(items) do
+  for _, v in pairs(collectionCfg) do
+    self.itemModule = GameGlobal.GetModule(ItemModule)
+    local items = self.itemModule:GetItemByTempId(v.ItemID)
+    for _, v in pairs(items) do
       if v:IsNewOverlay() then
         hasNew = true
       end
     end
   end
-  ;
-  (self.collectionRed):SetActive(hasNew)
+  self.collectionRed:SetActive(hasNew)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetTacitTestComponentCfgId = function(self)
-  -- function num : 0_9
-  return (self._testComponent):GetComponentCfgId()
+function UIXiaoLinJiaMainController:GetTacitTestComponentCfgId()
+  return self._testComponent:GetComponentCfgId()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetQuestComponentCfgId = function(self)
-  -- function num : 0_10
-  return (self._questComponent):GetComponentCfgId()
+function UIXiaoLinJiaMainController:GetQuestComponentCfgId()
+  return self._questComponent:GetComponentCfgId()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetHasHideMissionUnLock = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIXiaoLinJiaMainController:GetHasHideMissionUnLock()
   local componentID = self:GetTacitTestComponentCfgId()
-  local serverMissionCfg = (Cfg.cfg_component_tacit_test_mission)({ComponentID = componentID})
+  local serverMissionCfg = Cfg.cfg_component_tacit_test_mission({ComponentID = componentID})
   local unLock = true
   for i = 1, #serverMissionCfg do
-    if ((self._testComponentInfo).m_pass_mission_info)[i] == nil and i ~= #serverMissionCfg then
+    if self._testComponentInfo.m_pass_mission_info[i] == nil and i ~= #serverMissionCfg then
       unLock = false
     end
   end
   return unLock
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetMissionList = function(self)
-  -- function num : 0_12
+function UIXiaoLinJiaMainController:GetMissionList()
   return self.missionList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.RefreshMissionData = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIXiaoLinJiaMainController:RefreshMissionData()
   self.missionList = {}
   local componentID = self:GetTacitTestComponentCfgId()
-  local serverMissionCfg = (Cfg.cfg_component_tacit_test_mission)({ComponentID = componentID})
+  local serverMissionCfg = Cfg.cfg_component_tacit_test_mission({ComponentID = componentID})
   if serverMissionCfg then
-    for _,v in pairs(serverMissionCfg) do
+    for _, v in pairs(serverMissionCfg) do
       local clientData = self:GetClientMissionCfg(v.CampaignMissionId)
-      local uiView = ((((self.missionsRoot).transform):Find(v.CampaignMissionId .. "")).gameObject):GetComponent("UIView")
+      local uiView = self.missionsRoot.transform:Find(v.CampaignMissionId .. "").gameObject:GetComponent("UIView")
       local missionItem = UIXiaoLinJiaMissionItem:New(uiView, self)
-      missionItem:SetData(clientData, v, ((self._testComponentInfo).m_pass_mission_info)[v.CampaignMissionId])
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self.missionList)[v.CampaignMissionId] = missionItem
+      missionItem:SetData(clientData, v, self._testComponentInfo.m_pass_mission_info[v.CampaignMissionId])
+      self.missionList[v.CampaignMissionId] = missionItem
     end
   end
-  do
-    self:RefreshCurAndNextUnlockMission()
-    for _,missionItem in pairs(self.missionList) do
-      missionItem:Refresh()
-    end
+  self:RefreshCurAndNextUnlockMission()
+  for _, missionItem in pairs(self.missionList) do
+    missionItem:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.RefreshCurAndNextUnlockMission = function(self)
-  -- function num : 0_14
+function UIXiaoLinJiaMainController:RefreshCurAndNextUnlockMission()
   for i = 1, #self.missionList do
-    if ((self.missionList)[i]):GetIsLock() then
-      self.nextUnlockMission = (self.missionList)[i]
+    if self.missionList[i]:GetIsLock() then
+      self.nextUnlockMission = self.missionList[i]
       break
     else
-      self.curUnlockMission = (self.missionList)[i]
+      self.curUnlockMission = self.missionList[i]
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetComponentID = function(self)
-  -- function num : 0_15
-  return (self._testComponentInfo).m_component_id
+function UIXiaoLinJiaMainController:GetComponentID()
+  return self._testComponentInfo.m_component_id
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetCurUnlockMission = function(self)
-  -- function num : 0_16
+function UIXiaoLinJiaMainController:GetCurUnlockMission()
   return self.curUnlockMission
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetNextUnlockMission = function(self)
-  -- function num : 0_17
+function UIXiaoLinJiaMainController:GetNextUnlockMission()
   return self.nextUnlockMission
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetClientMissionCfg = function(self, missionID)
-  -- function num : 0_18 , upvalues : _ENV
+function UIXiaoLinJiaMainController:GetClientMissionCfg(missionID)
   local componentID = self:GetTacitTestComponentCfgId()
-  local missionCfg = (Cfg.cfg_xiaolinjia_mission)({ComponentID = componentID})
-  for _,v in pairs(missionCfg) do
+  local missionCfg = Cfg.cfg_xiaolinjia_mission({ComponentID = componentID})
+  for _, v in pairs(missionCfg) do
     if v.ID == missionID then
       return v
     end
@@ -282,291 +210,187 @@ UIXiaoLinJiaMainController.GetClientMissionCfg = function(self, missionID)
   return nil
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetCheckTimeIsUnlock = function(self, timeStr)
-  -- function num : 0_19 , upvalues : _ENV
-  local startTime = (self.loginModule):GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  local curTime = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
+function UIXiaoLinJiaMainController:GetCheckTimeIsUnlock(timeStr)
+  local startTime = self.loginModule:GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  local curTime = self:GetModule(SvrTimeModule):GetServerTime() / 1000
   return startTime - curTime
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.ShowMissionInfo = function(self, missionID, title, content, isLock, isHide, star, diff)
-  -- function num : 0_20 , upvalues : _ENV
+function UIXiaoLinJiaMainController:ShowMissionInfo(missionID, title, content, isLock, isHide, star, diff)
   if self.curSelectMissionID == missionID then
-    return 
+    return
   end
   local clientData = self:GetClientMissionCfg(missionID)
   self.curSelectMissionID = missionID
-  ;
-  (self.missionTitle):SetText((StringTable.Get)(title))
-  ;
-  (self.missionContent):SetText((StringTable.Get)(content))
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self.missionIcon).sprite = (self.atlas):GetSprite(clientData.LevelIcon)
+  self.missionTitle:SetText(StringTable.Get(title))
+  self.missionContent:SetText(StringTable.Get(content))
+  self.missionIcon.sprite = self.atlas:GetSprite(clientData.LevelIcon)
   if isHide then
-    (self.hideNode):SetActive(true)
-    ;
-    (self.lockNode):SetActive(false)
-    ;
-    (self.finishNode):SetActive(false)
+    self.hideNode:SetActive(true)
+    self.lockNode:SetActive(false)
+    self.finishNode:SetActive(false)
+  elseif isLock then
+    local str = StringTable.Get("str_xiaolinjia_level_countdown_1", UIActivityHelper.GetFormatTimerStr(diff))
+    self.missionLockIcon.sprite = self.atlas:GetSprite(clientData.LockIcon)
+    self.lockText:SetText(str)
+    self.lockNode:SetActive(true)
+    self.hideNode:SetActive(false)
+    self.finishNode:SetActive(false)
   else
-    if isLock then
-      local str = (StringTable.Get)("str_xiaolinjia_level_countdown_1", (UIActivityHelper.GetFormatTimerStr)(diff))
-      -- DECOMPILER ERROR at PC58: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self.missionLockIcon).sprite = (self.atlas):GetSprite(clientData.LockIcon)
-      ;
-      (self.lockText):SetText(str)
-      ;
-      (self.lockNode):SetActive(true)
-      ;
-      (self.hideNode):SetActive(false)
-      ;
-      (self.finishNode):SetActive(false)
+    self.canOpenQuestionDB = star ~= nil
+    self.canPlayMissionVideo = star == 3
+    self.startBtnHeadIcon.sprite = self.atlas:GetSprite(clientData.ClosingHeadIcon)
+    local roleName = StringTable.Get(clientData.RoleName)
+    if star then
+      if star == 3 then
+        self.videoPanel:SetActive(true)
+        self.videoText:RefreshText(StringTable.Get("str_xiaolinjia_story_unlock"))
+      else
+        self.videoPanel:SetActive(false)
+        self.videoText:RefreshText(StringTable.Get("str_xiaolinjia_story_lock", roleName))
+      end
+      self.resultText:SetText(StringTable.Get(self:GetEvaluate(star)))
+      for i = 1, 3 do
+        local trans = self.starRoot.transform:GetChild(i - 1)
+        trans:Find("full").gameObject:SetActive(star >= i)
+      end
     else
-      do
-        self.canOpenQuestionDB = star ~= nil
-        self.canPlayMissionVideo = star == 3
-        -- DECOMPILER ERROR at PC91: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.startBtnHeadIcon).sprite = (self.atlas):GetSprite(clientData.ClosingHeadIcon)
-        do
-          local roleName = (StringTable.Get)(clientData.RoleName)
-          if star then
-            if star == 3 then
-              (self.videoPanel):SetActive(true)
-              ;
-              (self.videoText):RefreshText((StringTable.Get)("str_xiaolinjia_story_unlock"))
-            else
-              (self.videoPanel):SetActive(false)
-              ;
-              (self.videoText):RefreshText((StringTable.Get)("str_xiaolinjia_story_lock", roleName))
-            end
-            ;
-            (self.resultText):SetText((StringTable.Get)(self:GetEvaluate(star)))
-            for i = 1, 3 do
-              local trans = ((self.starRoot).transform):GetChild(i - 1)
-              ;
-              ((trans:Find("full")).gameObject):SetActive(i <= star)
-            end
-          else
-            (self.resultText):SetText((StringTable.Get)("str_xiaolinjia_no_test"))
-            ;
-            (self.videoPanel):SetActive(false)
-            ;
-            (self.videoText):RefreshText((StringTable.Get)("str_xiaolinjia_story_lock", roleName))
-            ;
-            (self.videoPanel):SetActive(false)
-            ;
-            (self.videoText):RefreshText((StringTable.Get)("str_xiaolinjia_story_lock", roleName))
-            for i = 1, 3 do
-              local trans = ((self.starRoot).transform):GetChild(i - 1)
-              ;
-              ((trans:Find("full")).gameObject):SetActive(false)
-            end
-          end
-          -- DECOMPILER ERROR at PC207: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self.resultHead).sprite = (self.atlas):GetSprite(clientData.ClosingHeadIcon)
-          ;
-          (self.finishNode):SetActive(true)
-          ;
-          (self.lockNode):SetActive(false)
-          ;
-          (self.hideNode):SetActive(false)
-          for _,v in pairs(self.missionList) do
-            v:ShowSelectIcon(missionID)
-          end
-          ;
-          (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.missionsRootTrans)
-          local pos = (self.missionsRootTrans).anchoredPosition
-          local sizeY = ((self.missionsRootTrans).sizeDelta).y - 560
-          if sizeY >= (self.MissionPos)[self.curSelectMissionID] or not sizeY then
-            local posY = (self.MissionPos)[self.curSelectMissionID]
-          end
-          -- DECOMPILER ERROR at PC256: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self.missionsRootTrans).anchoredPosition = Vector2(pos.x, posY)
-          -- DECOMPILER ERROR: 11 unprocessed JMP targets
-        end
+      self.resultText:SetText(StringTable.Get("str_xiaolinjia_no_test"))
+      self.videoPanel:SetActive(false)
+      self.videoText:RefreshText(StringTable.Get("str_xiaolinjia_story_lock", roleName))
+      self.videoPanel:SetActive(false)
+      self.videoText:RefreshText(StringTable.Get("str_xiaolinjia_story_lock", roleName))
+      for i = 1, 3 do
+        local trans = self.starRoot.transform:GetChild(i - 1)
+        trans:Find("full").gameObject:SetActive(false)
       end
     end
+    self.resultHead.sprite = self.atlas:GetSprite(clientData.ClosingHeadIcon)
+    self.finishNode:SetActive(true)
+    self.lockNode:SetActive(false)
+    self.hideNode:SetActive(false)
   end
+  for _, v in pairs(self.missionList) do
+    v:ShowSelectIcon(missionID)
+  end
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.missionsRootTrans)
+  local pos = self.missionsRootTrans.anchoredPosition
+  local sizeY = self.missionsRootTrans.sizeDelta.y - 560
+  local posY = sizeY < self.MissionPos[self.curSelectMissionID] and sizeY or self.MissionPos[self.curSelectMissionID]
+  self.missionsRootTrans.anchoredPosition = Vector2(pos.x, posY)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetCampaign = function(self)
-  -- function num : 0_21
+function UIXiaoLinJiaMainController:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.PlayStoryBtnOnClick = function(self)
-  -- function num : 0_22
+function UIXiaoLinJiaMainController:PlayStoryBtnOnClick()
   self:ShowDialog("UIXiaoLinJiaStoryController", self.curSelectMissionID, self)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.PlayHideBtnOnClick = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIXiaoLinJiaMainController:PlayHideBtnOnClick()
   local clientData = self:GetClientMissionCfg(self.curSelectMissionID)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", clientData.EndingStory, function()
-    -- function num : 0_23_0 , upvalues : self, _ENV, clientData
+  GameGlobal.UIStateManager():ShowDialog("UIStoryController", clientData.EndingStory, function()
     self:SaveTacitTestResult(self.curSelectMissionID, 3, function(reward)
-      -- function num : 0_23_0_0 , upvalues : _ENV, self, clientData
-      if reward and #reward > 0 then
-        local id = (reward[1]).assetid
-        local cfg = nil
-        local collectionCfg = (Cfg.cfg_xiaolinjia_collection)({ComponentID = self:GetTacitTestComponentCfgId()})
-        for _,v in pairs(collectionCfg) do
+      if reward and 0 < #reward then
+        local id = reward[1].assetid
+        local cfg
+        local collectionCfg = Cfg.cfg_xiaolinjia_collection({
+          ComponentID = self:GetTacitTestComponentCfgId()
+        })
+        for _, v in pairs(collectionCfg) do
           if v.ItemID == id then
             cfg = v
           end
         end
-        local roleName = (StringTable.Get)(clientData.RoleName)
+        local roleName = StringTable.Get(clientData.RoleName)
         self:ShowDialog("UIXiaoLinJiaGetCollectionController", function()
-        -- function num : 0_23_0_0_0
+        end, cfg, clientData.ClosingHeadIcon, roleName)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
       end
-, cfg, clientData.ClosingHeadIcon, roleName)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnXiaoLinJiaMainPanelRefresh, true)
-      end
-    end
-)
-  end
-, true)
+    end)
+  end, true)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.IntroBtnOnClick = function(self)
-  -- function num : 0_24
+function UIXiaoLinJiaMainController:IntroBtnOnClick()
   self:ShowDialog("UIXiaoLinJiaIntroController")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.ReviewBtnOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", (self._testComponentInfo).m_first_story_id, nil, true)
+function UIXiaoLinJiaMainController:ReviewBtnOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIStoryController", self._testComponentInfo.m_first_story_id, nil, true)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.QuestionDBBtnOnClick = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIXiaoLinJiaMainController:QuestionDBBtnOnClick()
   if self.canOpenQuestionDB then
     local record = self:GetMissionQuestionRecord(self.curSelectMissionID)
     self:ShowDialog("UIXiaoLinJiaQuestionDBController", self.curSelectMissionID, record)
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_xiaolinjia_text_qa_2"))
-    end
+    ToastManager.ShowToast(StringTable.Get("str_xiaolinjia_text_qa_2"))
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GiftBtnOnClick = function(self)
-  -- function num : 0_27
+function UIXiaoLinJiaMainController:GiftBtnOnClick()
   self:ShowDialog("UIXiaoLinJiaRewardController", self._campaign, self.missionList)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.CollectionBtnOnClick = function(self)
-  -- function num : 0_28
+function UIXiaoLinJiaMainController:CollectionBtnOnClick()
   self:ShowDialog("UIXiaoLinJiaCollectionController", self)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.VideoRecordBtnOnClick = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIXiaoLinJiaMainController:VideoRecordBtnOnClick()
   if self.canPlayMissionVideo then
     local clientData = self:GetClientMissionCfg(self.curSelectMissionID)
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", clientData.EndingStory, nil, true)
+    GameGlobal.UIStateManager():ShowDialog("UIStoryController", clientData.EndingStory, nil, true)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetMissionQuestionRecord = function(self, missionId)
-  -- function num : 0_30
-  local missionInfo = ((self._testComponentInfo).m_pass_mission_info)[missionId]
+function UIXiaoLinJiaMainController:GetMissionQuestionRecord(missionId)
+  local missionInfo = self._testComponentInfo.m_pass_mission_info[missionId]
   if missionInfo then
     return missionInfo.answer_record, missionInfo.star
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.SaveTacitTestResult = function(self, missionId, star, callback)
-  -- function num : 0_31 , upvalues : _ENV
+function UIXiaoLinJiaMainController:SaveTacitTestResult(missionId, star, callback)
   self:Lock("UIXiaoLinJiaMainController_SaveTacitTestResult")
   self:StartTask(function(TT)
-    -- function num : 0_31_0 , upvalues : _ENV, self, missionId, star, callback
     local res = AsyncRequestRes:New()
-    local ret, reward = (self._testComponent):HandleCompleteTacitTestMission(TT, res, missionId, star)
+    local ret, reward = self._testComponent:HandleCompleteTacitTestMission(TT, res, missionId, star)
     self:UnLock("UIXiaoLinJiaMainController_SaveTacitTestResult")
     if not res:GetSucc() then
-      (self._campaign):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      self._campaign:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     else
       callback(reward)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.UpdateTacitTestAnswer = function(self, missionId, answerRecord)
-  -- function num : 0_32 , upvalues : _ENV
-  if (table.count)(answerRecord) == 0 then
-    return 
+function UIXiaoLinJiaMainController:UpdateTacitTestAnswer(missionId, answerRecord)
+  if table.count(answerRecord) == 0 then
+    return
   end
   self:Lock("UIXiaoLinJiaMainController_UpdateTacitTestAnswer")
   self:StartTask(function(TT)
-    -- function num : 0_32_0 , upvalues : _ENV, self, missionId, answerRecord
     local res = AsyncRequestRes:New()
-    local ret = (self._testComponent):HandleUpdateTacitTestAnswer(TT, res, missionId, answerRecord)
+    local ret = self._testComponent:HandleUpdateTacitTestAnswer(TT, res, missionId, answerRecord)
     self:UnLock("UIXiaoLinJiaMainController_UpdateTacitTestAnswer")
     if not res:GetSucc() then
-      (self._campaign):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      self._campaign:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaMainController.GetMainActivityEntryState = function(component)
-  -- function num : 0_33 , upvalues : _ENV
+function UIXiaoLinJiaMainController.GetMainActivityEntryState(component)
   local componentCfgId = component:GetComponentCfgId()
-  local serverMissionCfg = (Cfg.cfg_component_tacit_test_mission)({ComponentID = componentCfgId})
+  local serverMissionCfg = Cfg.cfg_component_tacit_test_mission({ComponentID = componentCfgId})
   local missionList = {}
-  for _,v in pairs(serverMissionCfg) do
+  for _, v in pairs(serverMissionCfg) do
     missionList[v.CampaignMissionId] = v
   end
-  local serverPassMissionData = (component:GetComponentInfo()).m_pass_mission_info
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local serverPassMissionData = component:GetComponentInfo().m_pass_mission_info
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   local curTime = svrTimeModule:GetServerTime() / 1000
   local curUnlockMissionId = 1
   local curNextUnlockMissionId = 1
@@ -575,8 +399,8 @@ UIXiaoLinJiaMainController.GetMainActivityEntryState = function(component)
   local passHide = true
   local passCurrent = true
   for i = 1, #missionList do
-    local unlockTime = loginModule:GetTimeStampByTimeStr((missionList[i]).UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-    if unlockTime < curTime then
+    local unlockTime = loginModule:GetTimeStampByTimeStr(missionList[i].UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    if curTime > unlockTime then
       curUnlockMissionId = i
     else
       curNextUnlockMissionId = i
@@ -584,22 +408,19 @@ UIXiaoLinJiaMainController.GetMainActivityEntryState = function(component)
       break
     end
   end
-  do
-    for i = 1, #missionList do
-      if i ~= #missionList and not serverPassMissionData[i] then
+  for i = 1, #missionList do
+    if i ~= #missionList then
+      if not serverPassMissionData[i] then
         passAll = false
       end
-      if not serverPassMissionData[i] then
-        passHide = false
-      end
+    elseif not serverPassMissionData[i] then
+      passHide = false
     end
-    if serverPassMissionData[curUnlockMissionId] then
-      passCurrent = true
-    else
-      passCurrent = false
-    end
-    return passAll, passHide, passCurrent, diffTime, curUnlockMissionId, curNextUnlockMissionId
   end
+  if serverPassMissionData[curUnlockMissionId] then
+    passCurrent = true
+  else
+    passCurrent = false
+  end
+  return passAll, passHide, passCurrent, diffTime, curUnlockMissionId, curNextUnlockMissionId
 end
-
-

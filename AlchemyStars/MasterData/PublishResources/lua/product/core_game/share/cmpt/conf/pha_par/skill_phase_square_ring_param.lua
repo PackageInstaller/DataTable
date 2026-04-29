@@ -1,64 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_square_ring_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseSquareRingParam", SkillPhaseParamBase)
 SkillPhaseSquareRingParam = SkillPhaseSquareRingParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseSquareRingParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseSquareRingParam:Constructor(t)
   self._gridEffectID = t.gridEffectID
   self._ringInternalTime = t.ringInternalTime
   self._bestEffectTime = t.bestEffectTime
   self._finishDelayTime = t.finishDelayTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSquareRingParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseSquareRingParam:GetCacheTable()
   local t = {
-{((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 1}
-}
+    {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      1
+    }
+  }
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSquareRingParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseSquareRingParam:GetPhaseType()
   return SkillViewPhaseType.SquareRing
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSquareRingParam.GetGridEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseSquareRingParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSquareRingParam.GetRingInternalTime = function(self)
-  -- function num : 0_4
+function SkillPhaseSquareRingParam:GetRingInternalTime()
   return self._ringInternalTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSquareRingParam.GetBestEffectTime = function(self)
-  -- function num : 0_5
+function SkillPhaseSquareRingParam:GetBestEffectTime()
   return self._bestEffectTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSquareRingParam.GetFinishDelayTime = function(self)
-  -- function num : 0_6
+function SkillPhaseSquareRingParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
-
-

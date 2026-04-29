@@ -1,47 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/pop_star/pop_star_trap_turn_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pop_star_trap_turn_system")
 _class("PopStarTrapTurnSystem_Render", PopStarTrapTurnSystem)
 PopStarTrapTurnSystem_Render = PopStarTrapTurnSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarTrapTurnSystem_Render._DoRenderTrapState = function(self, TT, calcStateTraps)
-  -- function num : 0_0 , upvalues : _ENV
-  local trapServiceRender = (self._world):GetService("TrapRender")
+function PopStarTrapTurnSystem_Render:_DoRenderTrapState(TT, calcStateTraps)
+  local trapServiceRender = self._world:GetService("TrapRender")
   trapServiceRender:RenderTrapState(TT, TrapDestroyType.DestroyByRound, calcStateTraps)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem_Render._DoRenderTrapBeforeMonster = function(self, TT)
-  -- function num : 0_1
-  local playAISvc = (self._world):GetService("PlayAI")
+function PopStarTrapTurnSystem_Render:_DoRenderTrapBeforeMonster(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem_Render._DoRenderTrapAfterMonster = function(self, TT)
-  -- function num : 0_2
-  local playAISvc = (self._world):GetService("PlayAI")
+function PopStarTrapTurnSystem_Render:_DoRenderTrapAfterMonster(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarTrapTurnSystem_Render._UpdateTrapGridRound = function(self, TT)
-  -- function num : 0_3
-  local svc = (self._world):GetService("TrapRender")
+function PopStarTrapTurnSystem_Render:_UpdateTrapGridRound(TT)
+  local svc = self._world:GetService("TrapRender")
   svc:UpdateTrapGridRound()
 end
-
-

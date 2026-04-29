@@ -1,74 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21/ui_n21_intr_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN21IntrController", UIController)
 UIN21IntrController = UIN21IntrController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN21IntrController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN21IntrController:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UIN21IntrController] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UIN21IntrController] self._cfg is nil. param --> ", self._param)
   end
   self:InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21IntrController.InitWidget = function(self)
-  -- function num : 0_1
+function UIN21IntrController:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21IntrController.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN21IntrController:Flush()
   if not self._cfg then
-    return 
+    return
   end
-  local key = (self._cfg).Title
+  local key = self._cfg.Title
   local n = 0
-  while 1 do
+  while true do
     n = n + 1
-    local keyHead = (StringTable.Has)(key .. "head_" .. n)
+    local keyHead = StringTable.Has(key .. "head_" .. n)
     if not keyHead then
       n = n - 1
       break
     end
   end
-  do
-    if n <= 0 then
-      (Log.fatal)("### no [" .. key .. "head_n] in str_n21.xlsx")
-      return 
-    end
-    local uis = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIN21IntrItem", n)
-    for i,ui in ipairs(uis) do
-      local head = (StringTable.Get)(key .. "head_" .. i)
-      local body = (StringTable.Get)(key .. "body_" .. i)
-      ui:Flush(head, body)
-    end
+  if n <= 0 then
+    Log.fatal("### no [" .. key .. "head_n] in str_n21.xlsx")
+    return
+  end
+  local uis = UIWidgetHelper.SpawnObjects(self, "Content", "UIN21IntrItem", n)
+  for i, ui in ipairs(uis) do
+    local head = StringTable.Get(key .. "head_" .. i)
+    local body = StringTable.Get(key .. "body_" .. i)
+    ui:Flush(head, body)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21IntrController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)((self._cfg).Title))
+function UIN21IntrController:_OnValue()
+  self._title:SetText(StringTable.Get(self._cfg.Title))
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21IntrController.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIN21IntrController:BtnCloseOnClick(go)
   self:CloseDialog()
 end
-
-

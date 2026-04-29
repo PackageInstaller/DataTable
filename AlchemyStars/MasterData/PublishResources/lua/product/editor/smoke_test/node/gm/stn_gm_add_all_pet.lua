@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/gm/stn_gm_add_all_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_AddAllPet", Common_AsyncBase)
 GM_AddAllPet = GM_AddAllPet
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_AddAllPet.TaskFunc = function(self, TT, status)
-  -- function num : 0_0
-  (self.m_pManager):AsyncGM_AddAllPet(TT, status)
+function GM_AddAllPet:TaskFunc(TT, status)
+  self.m_pManager:AsyncGM_AddAllPet(TT, status)
 end
-
-

@@ -1,98 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/ui_season_s1_collage_collection_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonS1CollageCollectionItem", UICustomWidget)
 UISeasonS1CollageCollectionItem = UISeasonS1CollageCollectionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonS1CollageCollectionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonS1CollageCollectionItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollageCollectionItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonS1CollageCollectionItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.unlockIcon = self:GetGameObject("unlockIcon")
   self.new = self:GetGameObject("new")
   self.iconImage = self:GetUIComponent("RawImage", "icon")
   self.select = self:GetGameObject("select")
   self.root = self:GetUIComponent("RectTransform", "Root")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollageCollectionItem.SetData = function(self, data, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonS1CollageCollectionItem:SetData(data, onClick)
   self._data = data
   self._onClick = onClick
   self:SetNew(data:IsNew())
-  local cfg = (Cfg.cfg_item_season_collection)[data:ID()]
-  ;
-  (self.icon):LoadImage(cfg.HdImage)
+  local cfg = Cfg.cfg_item_season_collection[data:ID()]
+  self.icon:LoadImage(cfg.HdImage)
   if data:IsGot() then
-    (self.icon):SetColor(Color.white)
-    ;
-    (self.unlockIcon):SetActive(false)
+    self.icon:SetColor(Color.white)
+    self.unlockIcon:SetActive(false)
     if data:IsComposeUsed() then
-      (self.icon):SetColor(Color(0.32941176470588, 0.2078431372549, 0.12549019607843, 0.7))
+      self.icon:SetColor(Color(0.32941176470588235, 0.20784313725490197, 0.12549019607843137, 0.7))
     end
   else
-    ;
-    (self.icon):SetColor(Color(0, 0, 0, 0.8))
-    ;
-    (self.unlockIcon):SetActive(true)
+    self.icon:SetColor(Color(0, 0, 0, 0.8))
+    self.unlockIcon:SetActive(true)
   end
   self:SetSelect(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollageCollectionItem.RootOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onClick)(self._data)
+function UISeasonS1CollageCollectionItem:RootOnClick(go)
+  self._onClick(self._data)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollageCollectionItem.SetNew = function(self, new)
-  -- function num : 0_4
+function UISeasonS1CollageCollectionItem:SetNew(new)
   self._isNew = new
-  ;
-  (self.new):SetActive(new)
+  self.new:SetActive(new)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollageCollectionItem.SetSelect = function(self, select)
-  -- function num : 0_5
-  (self._anim):Stop()
+function UISeasonS1CollageCollectionItem:SetSelect(select)
+  self._anim:Stop()
   if select then
-    (self.select):SetActive(true)
-    ;
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uieffanim_UISeasonS1CollageCollectionItem_in")
+    self.select:SetActive(true)
+    self._anim:Stop()
+    self._anim:Play("uieffanim_UISeasonS1CollageCollectionItem_in")
   else
-    ;
-    (self.select):SetActive(false)
-    ;
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uieffanim_UISeasonS1CollageCollectionItem_out")
+    self.select:SetActive(false)
+    self._anim:Stop()
+    self._anim:Play("uieffanim_UISeasonS1CollageCollectionItem_out")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS1CollageCollectionItem.PlayExitAnim = function(self)
-  -- function num : 0_6
-  (self._anim):Play("uieffanim_UISeasonS1CollageCollectionItem_out")
+function UISeasonS1CollageCollectionItem:PlayExitAnim()
+  self._anim:Play("uieffanim_UISeasonS1CollageCollectionItem_out")
 end
-
-

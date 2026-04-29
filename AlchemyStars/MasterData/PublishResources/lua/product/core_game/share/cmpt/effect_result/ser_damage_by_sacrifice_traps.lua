@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_damage_by_sacrifice_traps.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectDamageBySacrificeTraps", SkillEffectResultBase)
 SkillEffectDamageBySacrificeTraps = SkillEffectDamageBySacrificeTraps
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDamageBySacrificeTraps.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectDamageBySacrificeTraps:GetEffectType()
   return SkillEffectType.DamageBySacrificeTraps
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDamageBySacrificeTraps.Constructor = function(self)
-  -- function num : 0_1
+function SkillEffectDamageBySacrificeTraps:Constructor()
 end
-
-

@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/l2r_mirage_move_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("L2RMirageMoveResult", Object)
 L2RMirageMoveResult = L2RMirageMoveResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-L2RMirageMoveResult.Constructor = function(self, mirageWalkRes)
-  -- function num : 0_0
+function L2RMirageMoveResult:Constructor(mirageWalkRes)
   self._mirageWalkRes = mirageWalkRes
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RMirageMoveResult.GetWalkResult = function(self)
-  -- function num : 0_1
+function L2RMirageMoveResult:GetWalkResult()
   return self._mirageWalkRes
 end
 
 _class("L2RMirageWarningResult", Object)
 L2RMirageWarningResult = L2RMirageWarningResult
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-L2RMirageWarningResult.Constructor = function(self, warningPosList)
-  -- function num : 0_2
+function L2RMirageWarningResult:Constructor(warningPosList)
   self._warningPosList = warningPosList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RMirageWarningResult.GetWarningPosList = function(self)
-  -- function num : 0_3
+function L2RMirageWarningResult:GetWarningPosList()
   return self._warningPosList
 end
-
-

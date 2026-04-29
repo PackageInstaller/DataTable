@@ -1,41 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_layer_by_team_hp_lose.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetLayerByTeamHpLose", BuffLogicBase)
 BuffLogicSetLayerByTeamHpLose = BuffLogicSetLayerByTeamHpLose
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetLayerByTeamHpLose.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetLayerByTeamHpLose:Constructor(buffInstance, logicParam)
   self._eachTeamHpLose = logicParam.eachTeamHpLose
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._entity = buffInstance._entity
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetLayerByTeamHpLose.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-  local calcDamageService = (self._world):GetService("CalcDamage")
+function BuffLogicSetLayerByTeamHpLose:DoLogic()
+  local teamEntity = self._entity:Pet():GetOwnerTeamEntity()
+  local calcDamageService = self._world:GetService("CalcDamage")
   local curHp, maxHp = calcDamageService:GetTeamLogicHP(teamEntity)
-  do
-    if (self._world):MatchType() == MatchType.MT_Maze or (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-      local attrCmpt = (self._entity):Attributes()
-      maxHp = attrCmpt:CalcMaxHp()
-      curHp = attrCmpt:GetCurrentHP()
-    end
-    local losePercent = 1 - curHp / maxHp
-    local layerCount = (math.floor)(losePercent / self._eachTeamHpLose)
-    local svc = (self._world):GetService("BuffLogic")
-    svc:SetBuffLayer(self._entity, self._layerType, layerCount)
-    local buffResult = BuffResultAddLayer:New(layerCount)
-    return buffResult
+  if self._world:MatchType() == MatchType.MT_Maze or self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local attrCmpt = self._entity:Attributes()
+    maxHp = attrCmpt:CalcMaxHp()
+    curHp = attrCmpt:GetCurrentHP()
   end
+  local losePercent = 1 - curHp / maxHp
+  local layerCount = math.floor(losePercent / self._eachTeamHpLose)
+  local svc = self._world:GetService("BuffLogic")
+  svc:SetBuffLayer(self._entity, self._layerType, layerCount)
+  local buffResult = BuffResultAddLayer:New(layerCount)
+  return buffResult
 end
-
-

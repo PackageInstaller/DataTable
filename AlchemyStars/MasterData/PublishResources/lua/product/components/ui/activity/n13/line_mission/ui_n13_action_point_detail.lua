@@ -1,38 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/line_mission/ui_n13_action_point_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13ActionPointDetail", UIController)
 UIN13ActionPointDetail = UIN13ActionPointDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13ActionPointDetail._SetIcon = function(self, widgetName, icon)
-  -- function num : 0_0
-  if not widgetName then
-    widgetName = "icon"
-  end
+function UIN13ActionPointDetail:_SetIcon(widgetName, icon)
+  widgetName = widgetName or "icon"
   local obj = self:GetUIComponent("RawImageLoader", widgetName)
   obj:LoadImage(icon)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13ActionPointDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN13ActionPointDetail:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13ActionPointDetail.OnHide = function(self)
-  -- function num : 0_2
+function UIN13ActionPointDetail:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13ActionPointDetail.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIN13ActionPointDetail:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

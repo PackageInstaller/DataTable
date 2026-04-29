@@ -1,184 +1,120 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/fsm_state_machine.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FSMStateMachine", Object)
 FSMStateMachine = FSMStateMachine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FSMStateMachine.Constructor = function(self, owner)
-  -- function num : 0_0 , upvalues : _ENV
+function FSMStateMachine:Constructor(owner)
   self.owner = owner
   self.curState = nil
   self.states = {}
   self:OnInit()
-  self.timer = ((GameGlobal.Timer)()):AddEventTimes(0, TimerTriggerCount.Infinite, self.Excute, self)
+  self.timer = GameGlobal.Timer():AddEventTimes(0, TimerTriggerCount.Infinite, self.Excute, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function FSMStateMachine:Dispose()
   if self.timer then
-    ((GameGlobal.Timer)()):CancelEvent(self.timer)
+    GameGlobal.Timer():CancelEvent(self.timer)
     self.timer = nil
   end
   self:OnDispose()
   if self.curState then
-    (self.curState):Exit()
+    self.curState:Exit()
     self.curState = nil
   end
-  for k,v in pairs(self.states) do
+  for k, v in pairs(self.states) do
     v:Dispose()
     v = nil
   end
   self.states = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.OnInit = function(self)
-  -- function num : 0_2
+function FSMStateMachine:OnInit()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.OnDispose = function(self)
-  -- function num : 0_3
+function FSMStateMachine:OnDispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.IsCurrent = function(self, stateType)
-  -- function num : 0_4
+function FSMStateMachine:IsCurrent(stateType)
   if not stateType or stateType == "" then
     return false
   end
   local curStateType = self:GetCurStateType()
-  do return curStateType == stateType end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return curStateType == stateType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.GetCurState = function(self)
-  -- function num : 0_5
+function FSMStateMachine:GetCurState()
   return self.curState
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.GetCurStateType = function(self)
-  -- function num : 0_6
-  return self.curState and (self.curState):GetStateType() or ""
+function FSMStateMachine:GetCurStateType()
+  return self.curState and self.curState:GetStateType() or ""
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.SetOwner = function(self, owner)
-  -- function num : 0_7
+function FSMStateMachine:SetOwner(owner)
   self.owner = owner
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.GetOwner = function(self)
-  -- function num : 0_8
+function FSMStateMachine:GetOwner()
   return self.owner
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.Add = function(self, state)
-  -- function num : 0_9
+function FSMStateMachine:Add(state)
   if not state then
-    return 
+    return
   end
   local stateType = state:GetStateType()
-  if (self.states)[stateType] then
-    return 
+  if self.states[stateType] then
+    return
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.states)[stateType] = state
+  self.states[stateType] = state
   state:SetMachine(self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.SetDefault = function(self, stateType)
-  -- function num : 0_10
+function FSMStateMachine:SetDefault(stateType)
   if not stateType then
-    return 
+    return
   end
   self:_ChangeState(stateType)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.ForceChangeState = function(self, stateType, ...)
-  -- function num : 0_11
+function FSMStateMachine:ForceChangeState(stateType, ...)
   self:_ChangeState(stateType, ...)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.ChangeState = function(self, stateType, ...)
-  -- function num : 0_12
+function FSMStateMachine:ChangeState(stateType, ...)
   if self:IsCurrent(stateType) then
-    return 
+    return
   end
   self:_ChangeState(stateType, ...)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine._ChangeState = function(self, stateType, ...)
-  -- function num : 0_13
-  local nextState = (self.states)[stateType]
-  if nextState then
-    local canEnter = nextState:TryEnter(...)
-  end
+function FSMStateMachine:_ChangeState(stateType, ...)
+  local nextState = self.states[stateType]
+  local canEnter = nextState and nextState:TryEnter(...)
   if not canEnter then
-    return 
+    return
   end
   if self.curState then
-    (self.curState):Exit()
+    self.curState:Exit()
     self.curState = nil
   end
-  local state = (self.states)[stateType]
+  local state = self.states[stateType]
   if state then
     self.curState = state
-    ;
-    (self.curState):Enter(...)
+    self.curState:Enter(...)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.Excute = function(self)
-  -- function num : 0_14
+function FSMStateMachine:Excute()
   if not self.curState then
-    return 
+    return
   end
-  ;
-  (self.curState):Excute()
+  self.curState:Excute()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-FSMStateMachine.SetStateFinishCallback = function(self, callback, sender)
-  -- function num : 0_15 , upvalues : _ENV
+function FSMStateMachine:SetStateFinishCallback(callback, sender)
   local curState = self:GetCurState()
   if curState then
     curState:SetStateFinishCallback(callback, sender)
-  else
-    if error then
-      error("SetStepOverCallback(...) but current state is null!")
-    end
+  elseif error then
+    error("SetStepOverCallback(...) but current state is null!")
   end
 end
-
-

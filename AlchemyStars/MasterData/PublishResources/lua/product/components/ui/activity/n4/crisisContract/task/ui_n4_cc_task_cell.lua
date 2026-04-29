@@ -1,101 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/task/ui_n4_cc_task_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN4CCTaskCell", UICustomWidget)
 UIN4CCTaskCell = UIN4CCTaskCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN4CCTaskCell.SetData = function(self, index, component, quest, questState, claimCallback, tipsCallback)
-  -- function num : 0_0
+function UIN4CCTaskCell:SetData(index, component, quest, questState, claimCallback, tipsCallback)
   self._component = component
   self._quest = quest:QuestInfo()
   self._questState = questState
   self._claimCallback = claimCallback
   self._tipsCallback = tipsCallback
-  self._roleAssets = (self._quest).rewards
+  self._roleAssets = self._quest.rewards
   self:_SetState(questState)
   self:_SetDesc()
   self:_SetItem()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskCell.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN4CCTaskCell:PlayAnimationInSequence(index)
   local animName, duration = "uianim_UIN4CCTask_Cell_in", 500
   local delay = (index - 1) * 70
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", animName, delay, duration, nil, true)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", animName, delay, duration, nil, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskCell.PlayAnimOut = function(self, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN4CCTaskCell:PlayAnimOut(callback)
   local animName, duration = "uianim_UIN4CCTask_Cell_out", 500
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, duration, callback)
+  UIWidgetHelper.PlayAnimation(self, "_anim", animName, duration, callback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskCell._SetState = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN4CCTaskCell:_SetState(state)
   local tb = {
-[CampaignQuestStatus.CQS_NotStart] = {"_state_NotStart"}
-, 
-[CampaignQuestStatus.CQS_Accepted] = {"_state_Accepted", "_descBg"}
-, 
-[CampaignQuestStatus.CQS_Completed] = {"_state_Completed", "_descBg"}
-, 
-[CampaignQuestStatus.CQS_Taken] = {"_state_Taken", "_descBg_Taken", "_bg_Mask"}
-, 
-[CampaignQuestStatus.CQS_Over] = {"_state_Over"}
-}
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, tb)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+    [CampaignQuestStatus.CQS_NotStart] = {
+      "_state_NotStart"
+    },
+    [CampaignQuestStatus.CQS_Accepted] = {
+      "_state_Accepted",
+      "_descBg"
+    },
+    [CampaignQuestStatus.CQS_Completed] = {
+      "_state_Completed",
+      "_descBg"
+    },
+    [CampaignQuestStatus.CQS_Taken] = {
+      "_state_Taken",
+      "_descBg_Taken",
+      "_bg_Mask"
+    },
+    [CampaignQuestStatus.CQS_Over] = {
+      "_state_Over"
+    }
+  }
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, tb)
+  UIWidgetHelper.SetObjGroupShow(objs, state)
   local alpha = state == CampaignQuestStatus.CQS_Taken and 0.8 or 1
   self:_SetAlpha(alpha)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskCell._SetDesc = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local desc = (StringTable.Get)((self._quest).CondDesc)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_descText", desc)
+function UIN4CCTaskCell:_SetDesc()
+  local desc = StringTable.Get(self._quest.CondDesc)
+  UIWidgetHelper.SetLocalizationText(self, "_descText", desc)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskCell._SetItem = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_item", "UIN4CCTaskItem", #self._roleAssets)
-  for i,v in ipairs(objs) do
-    local roleAsset = (self._roleAssets)[i]
+function UIN4CCTaskCell:_SetItem()
+  local objs = UIWidgetHelper.SpawnObjects(self, "_item", "UIN4CCTaskItem", #self._roleAssets)
+  for i, v in ipairs(objs) do
+    local roleAsset = self._roleAssets[i]
     v:SetData(roleAsset, self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskCell._SetAlpha = function(self, alpha)
-  -- function num : 0_6
+function UIN4CCTaskCell:_SetAlpha(alpha)
   local obj = self:GetUIComponent("CanvasGroup", "_alphaGroup")
   obj.alpha = alpha
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN4CCTaskCell.ClaimBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIN4CCTaskCell:ClaimBtnOnClick(go)
   if self._claimCallback then
-    (self._claimCallback)(self._quest)
+    self._claimCallback(self._quest)
   end
 end
-
-

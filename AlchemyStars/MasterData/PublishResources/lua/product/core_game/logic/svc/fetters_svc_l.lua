@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/fetters_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("FettersService", BaseService)
 FettersService = FettersService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-FettersService.Constructor = function(self, world)
-  -- function num : 0_0
+function FettersService:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersService.InitFetters = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.PopStarProNoRelic) ~= MatchType.MT_PopStarPro then
-    return 
+function FettersService:InitFetters()
+  if self._world:MatchType(GetMatchTypeType.PopStarProNoRelic) ~= MatchType.MT_PopStarPro then
+    return
   end
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  for _,petEntity in ipairs(teamMembers) do
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  for _, petEntity in ipairs(teamMembers) do
     local cPetPstID = petEntity:PetPstID()
     local petTemplateID = cPetPstID:GetTemplateID()
     local fettersPetEntity = self:GetFettersPetEntity(teamMembers, petTemplateID)
@@ -32,15 +22,12 @@ FettersService.InitFetters = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersService.GetFettersPetEntity = function(self, teamMembers, petTemplateID)
-  -- function num : 0_2 , upvalues : _ENV
-  local createInfo = ((((self._world).BW_WorldInfo).clientCreateInfo).anipop_mission_info)[1]
+function FettersService:GetFettersPetEntity(teamMembers, petTemplateID)
+  local createInfo = self._world.BW_WorldInfo.clientCreateInfo.anipop_mission_info[1]
   local fettersID = createInfo.fetters_id
   local fettersPetTmpID = self:GetFettersPetTemplateID(fettersID, petTemplateID)
   if fettersPetTmpID then
-    for _,petEntity in ipairs(teamMembers) do
+    for _, petEntity in ipairs(teamMembers) do
       local cPetPstID = petEntity:PetPstID()
       local tmpID = cPetPstID:GetTemplateID()
       if tmpID == fettersPetTmpID then
@@ -50,38 +37,26 @@ FettersService.GetFettersPetEntity = function(self, teamMembers, petTemplateID)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersService.GetFettersPetTemplateID = function(self, fettersID, petID)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (Cfg.cfg_anipop_fetters)({FettersID = fettersID, PetAID = petID}) then
-    local fetterAInfos = {}
-  end
-  if not (Cfg.cfg_anipop_fetters)({FettersID = fettersID, PetBID = petID}) then
-    local fetterBInfos = {}
-  end
+function FettersService:GetFettersPetTemplateID(fettersID, petID)
+  local fetterAInfos = Cfg.cfg_anipop_fetters({FettersID = fettersID, PetAID = petID}) or {}
+  local fetterBInfos = Cfg.cfg_anipop_fetters({FettersID = fettersID, PetBID = petID}) or {}
   local fettersPetTemplateIDList = {}
-  for _,fetterAInfo in pairs(fetterAInfos) do
-    (table.insert)(fettersPetTemplateIDList, fetterAInfo.PetBID)
+  for _, fetterAInfo in pairs(fetterAInfos) do
+    table.insert(fettersPetTemplateIDList, fetterAInfo.PetBID)
   end
-  for _,fetterBInfo in pairs(fetterBInfos) do
-    (table.insert)(fettersPetTemplateIDList, fetterBInfo.PetAID)
+  for _, fetterBInfo in pairs(fetterBInfos) do
+    table.insert(fettersPetTemplateIDList, fetterBInfo.PetAID)
   end
-  if #fettersPetTemplateIDList > 1 then
-    (Log.error)("Fetters count error, pet template id = ", petID, ", fettersID = ", fettersID)
-    return 
-  else
-    if #fettersPetTemplateIDList == 0 then
-      return 
-    end
+  if 1 < #fettersPetTemplateIDList then
+    Log.error("Fetters count error, pet template id = ", petID, ", fettersID = ", fettersID)
+    return
+  elseif #fettersPetTemplateIDList == 0 then
+    return
   end
   return fettersPetTemplateIDList[1]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersService.InitFettersComponent = function(self, petEntity, fettersPetEntity)
-  -- function num : 0_4
+function FettersService:InitFettersComponent(petEntity, fettersPetEntity)
   if petEntity:HasFetters() then
     petEntity:RemoveFetters()
   end
@@ -92,21 +67,15 @@ FettersService.InitFettersComponent = function(self, petEntity, fettersPetEntity
   fettersCmpt:SetFettersData(fettersPetEntity:GetID(), primaryType)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersService.GetFettersPrimaryType = function(self, petEntity)
-  -- function num : 0_5
+function FettersService:GetFettersPrimaryType(petEntity)
   if not petEntity:HasFetters() then
-    return 
+    return
   end
   local fettersCmpt = petEntity:Fetters()
   return fettersCmpt:GetFettersPrimaryType()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersService.IsFettersActive = function(self, petEntity)
-  -- function num : 0_6
+function FettersService:IsFettersActive(petEntity)
   if not petEntity:HasFetters() then
     return false
   end
@@ -114,10 +83,7 @@ FettersService.IsFettersActive = function(self, petEntity)
   return fettersCmpt:IsActive()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersService.SetFettersActive = function(self, petEntity, isActive)
-  -- function num : 0_7
+function FettersService:SetFettersActive(petEntity, isActive)
   if not petEntity:HasFetters() then
     return false
   end
@@ -125,11 +91,8 @@ FettersService.SetFettersActive = function(self, petEntity, isActive)
   return fettersCmpt:SetActive(isActive)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FettersService.IsMatchPieceType = function(self, petEntityID, pieceType, needSet)
-  -- function num : 0_8 , upvalues : _ENV
-  local petEntity = (self._world):GetEntityByID(petEntityID)
+function FettersService:IsMatchPieceType(petEntityID, pieceType, needSet)
+  local petEntity = self._world:GetEntityByID(petEntityID)
   if petEntity and not petEntity:HasPetDeadMark() then
     local elementCmpt = petEntity:Element()
     local primaryType = elementCmpt:GetPrimaryType()
@@ -147,9 +110,5 @@ FettersService.IsMatchPieceType = function(self, petEntityID, pieceType, needSet
       return isMatch, isMatch
     end
   end
-  do
-    return false, false
-  end
+  return false, false
 end
-
-

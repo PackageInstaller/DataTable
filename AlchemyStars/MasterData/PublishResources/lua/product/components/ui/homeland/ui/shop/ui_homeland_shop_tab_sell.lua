@@ -1,117 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_tab_sell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopTabSell", UICustomWidget)
 UIHomelandShopTabSell = UIHomelandShopTabSell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopTabSell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandShopTabSell:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSell.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandShopTabSell:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSell.SetData = function(self, shop_info)
-  -- function num : 0_2
+function UIHomelandShopTabSell:SetData(shop_info)
   self._itemIndex = 1
   self:_SetItemSelect(self._itemIndex)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSell._SetItemSelect = function(self, index)
-  -- function num : 0_3
+function UIHomelandShopTabSell:_SetItemSelect(index)
   self._itemIndex = index
   self._infos = self:_GetDynamicListData()
   self:_SetDynamicList()
   self:_SetPanel()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSell._GetDynamicListData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandShopTabSell:_GetDynamicListData()
   local tb = {}
-  local cfgs = (Cfg.cfg_homeland_univalence)({})
-  for k,v in pairs(cfgs) do
-    if (UIHomelandShopHelper.GetItemCount_ForSale)(k) > 0 then
-      (table.insert)(tb, v)
+  local cfgs = Cfg.cfg_homeland_univalence({})
+  for k, v in pairs(cfgs) do
+    if UIHomelandShopHelper.GetItemCount_ForSale(k) > 0 then
+      table.insert(tb, v)
     end
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSell._SetDynamicList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandShopTabSell:_SetDynamicList()
   if not self._dynamicListHelper then
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self:GetUIComponent("UIDynamicScrollView", "_dynamicList"), "UIHomelandShopTabSellItem", function(listItem, itemIndex)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    local itemId = ((self._infos)[itemIndex]).ID
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
-    local count = (UIHomelandShopHelper.GetItemCount_ForSale)(itemId)
-    local roleAsset = RoleAsset:New()
-    roleAsset.assetid = itemId
-    roleAsset.count = count
-    listItem:SetData(roleAsset, function()
-      -- function num : 0_5_0_0 , upvalues : self, itemIndex
-      self:_SetItemSelect(itemIndex)
-    end
-, true)
-    listItem:SetSelected(self._itemIndex == itemIndex)
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+      local itemId = self._infos[itemIndex].ID
+      local itemModule = GameGlobal.GetModule(ItemModule)
+      local count = UIHomelandShopHelper.GetItemCount_ForSale(itemId)
+      local roleAsset = RoleAsset:New()
+      roleAsset.assetid = itemId
+      roleAsset.count = count
+      listItem:SetData(roleAsset, function()
+        self:_SetItemSelect(itemIndex)
+      end, true)
+      listItem:SetSelected(self._itemIndex == itemIndex)
+    end)
   end
   local itemCount = #self._infos
   local itemCountPerRow = 4
-  ;
-  (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSell._SetPanel = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_detailPanel", "UIHomelandShopTabSellDetailPanel")
+function UIHomelandShopTabSell:_SetPanel()
+  local obj = UIWidgetHelper.SpawnObject(self, "_detailPanel", "UIHomelandShopTabSellDetailPanel")
   local itemId = self:_GetMainItemId()
   obj:SetData(itemId, function(itemId, count)
-    -- function num : 0_6_0 , upvalues : _ENV
-    local id_num = {[itemId] = count}
-    local reward = (UIHomelandShopHelper.CalcItemSellPrice)(itemId, count)
-    ;
-    (UIHomelandShopHelper.CheckSellRare)(itemId, function()
-      -- function num : 0_6_0_0 , upvalues : _ENV, reward, id_num
-      (UIHomelandShopHelper.CheckCoinOverflow)(reward.count, function()
-        -- function num : 0_6_0_0_0 , upvalues : _ENV, id_num, reward
-        (UIHomelandShopHelper.Start_HomelandSellReq)(id_num, {reward})
-      end
-)
-    end
-)
-  end
-)
+    local id_num = {
+      [itemId] = count
+    }
+    local reward = UIHomelandShopHelper.CalcItemSellPrice(itemId, count)
+    UIHomelandShopHelper.CheckSellRare(itemId, function()
+      UIHomelandShopHelper.CheckCoinOverflow(reward.count, function()
+        UIHomelandShopHelper.Start_HomelandSellReq(id_num, {reward})
+      end)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSell._GetMainItemId = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._itemIndex = (Mathf.Clamp)(self._itemIndex, 0, #self._infos)
-  if (self._infos)[self._itemIndex] then
-    return ((self._infos)[self._itemIndex]).ID
-  end
+function UIHomelandShopTabSell:_GetMainItemId()
+  self._itemIndex = Mathf.Clamp(self._itemIndex, 0, #self._infos)
+  return self._infos[self._itemIndex] and self._infos[self._itemIndex].ID
 end
-
-

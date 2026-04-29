@@ -1,77 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_storehouse_operator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeStorehouseOperator", UICustomWidget)
 UIHomeStorehouseOperator = UIHomeStorehouseOperator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeStorehouseOperator.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeStorehouseOperator:OnShow(uiParams)
   self:InitWidget()
   self._countPerRaw = 4
-  local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-  self._buildMng = (uiModule:GetClient()):BuildManager()
+  local uiModule = GameGlobal.GetUIModule(HomelandModule)
+  self._buildMng = uiModule:GetClient():BuildManager()
   self._itemModule = self:GetModule(ItemModule)
-  local listAll = ((GameGlobal.GetModule)(ItemModule)):GetAllItemInfos()
+  local listAll = GameGlobal.GetModule(ItemModule):GetAllItemInfos()
   self._minCount = 20
   self._itemData = {}
-  for _,item in ipairs(listAll) do
+  for _, item in ipairs(listAll) do
     local tpl = item:GetTemplate()
     local showType = tpl.ShowType or 1
     local tplId = item:GetTemplateID()
     local filter = tpl.TabType
-    local giftCfg = (Cfg.cfg_homeland_gift_item)[tplId]
-    if (Cfg.cfg_item_architecture)[tplId] == nil then
-      do
-        local isBuilding = not giftCfg
-        if isBuilding then
-          local count = self:_GetItemCount(tplId)
-          if count > 0 then
-            (table.insert)(self._itemData, item)
-          end
-        else
-          (table.insert)(self._itemData, item)
+    local giftCfg = Cfg.cfg_homeland_gift_item[tplId]
+    if giftCfg then
+      local isBuilding = Cfg.cfg_item_architecture[tplId] ~= nil
+      if isBuilding then
+        local count = self:_GetItemCount(tplId)
+        if 0 < count then
+          table.insert(self._itemData, item)
         end
-        -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
+      else
+        table.insert(self._itemData, item)
       end
     end
   end
-  ;
-  (table.sort)(self._itemData, function(a, b)
-    -- function num : 0_0_0
+  table.sort(self._itemData, function(a, b)
     local cfga = a:GetTemplate()
     local cfgb = b:GetTemplate()
-    if cfgb.BagSortIndex >= cfga.BagSortIndex then
-      do return cfga.BagSortIndex == b.BagSortIndex end
-      if cfgb.Color >= cfga.Color then
-        do return cfga.Color == b.Color end
-        do return cfga.ID < cfgb.ID end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+    if cfga.BagSortIndex ~= b.BagSortIndex then
+      return cfga.BagSortIndex > cfgb.BagSortIndex
     end
-  end
-)
-  local count = (math.max)(#self._itemData, self._minCount)
-  local raws = (math.ceil)(count / self._countPerRaw)
-  ;
-  (self.list):InitListView(raws, function(scrollview, index)
-    -- function num : 0_0_1 , upvalues : self
+    if cfga.Color ~= b.Color then
+      return cfga.Color > cfgb.Color
+    end
+    return cfga.ID < cfgb.ID
+  end)
+  local count = math.max(#self._itemData, self._minCount)
+  local raws = math.ceil(count / self._countPerRaw)
+  self.list:InitListView(raws, function(scrollview, index)
     return self:_NewItem(scrollview, index)
-  end
-)
+  end)
   self:AttachEvent(GameEventType.HomeStorehouseGiftItemOnSelect, self._OnSelectGift)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeStorehouseOperator:InitWidget()
   self.list = self:GetUIComponent("UIDynamicScrollView", "list")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.giftName = self:GetUIComponent("UILocalizationText", "giftName")
@@ -82,139 +58,92 @@ UIHomeStorehouseOperator.InitWidget = function(self)
   self._cur = self:GetGameObject("cur")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator.SetData = function(self, onConfirm)
-  -- function num : 0_2
+function UIHomeStorehouseOperator:SetData(onConfirm)
   self._onConfirm = onConfirm
   if #self._itemData > 0 then
     self._curGiftIdx = 1
   end
-  ;
-  (self.list):RefreshAllShownItem()
+  self.list:RefreshAllShownItem()
   self:_ResetCur()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator._NewItem = function(self, scrollview, idx)
-  -- function num : 0_3
+function UIHomeStorehouseOperator:_NewItem(scrollview, idx)
   if idx < 0 then
-    return 
+    return
   end
   local rowItem = scrollview:NewListViewItem("item")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", rowItem.gameObject)
   local gifts = rowPool:SpawnObjects("UIHomeStorehouseGiftItem", self._countPerRaw)
   for i = 1, self._countPerRaw do
     local index = idx * self._countPerRaw + i
-    ;
-    (gifts[i]):SetData(index, (self._itemData)[index], self._curGiftIdx, index <= self._minCount)
+    gifts[i]:SetData(index, self._itemData[index], self._curGiftIdx, index <= self._minCount)
   end
-  do return rowItem end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return rowItem
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator._OnSelectGift = function(self, idx)
-  -- function num : 0_4
+function UIHomeStorehouseOperator:_OnSelectGift(idx)
   if self._curGiftIdx == idx then
-    return 
+    return
   end
   self._curGiftIdx = idx
   self:_ResetCur()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator._ResetCur = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomeStorehouseOperator:_ResetCur()
   if self._curGiftIdx then
-    local data = (self._itemData)[self._curGiftIdx]
+    local data = self._itemData[self._curGiftIdx]
     local id = data:GetTemplateID()
     local cfg = data:GetTemplate()
-    ;
-    (self.icon):LoadImage(cfg.Icon)
-    ;
-    (self.giftName):SetText((StringTable.Get)(cfg.Name))
+    self.icon:LoadImage(cfg.Icon)
+    self.giftName:SetText(StringTable.Get(cfg.Name))
     local have = self:_GetItemCount(id)
-    local max = ((Cfg.cfg_homeland_gift_item)[id]).PutMaxNum
-    self._max = (math.min)(have, max)
+    local max = Cfg.cfg_homeland_gift_item[id].PutMaxNum
+    self._max = math.min(have, max)
     self._min = 1
     self._count = 1
-    ;
-    (self._itemCount):SetText(have)
-    ;
-    (self._itemDes):SetText((StringTable.Get)(cfg.Intro))
-    ;
-    (self.count):SetText(self._count)
-    ;
-    (self._empty):SetActive(false)
-    ;
-    (self._cur):SetActive(true)
+    self._itemCount:SetText(have)
+    self._itemDes:SetText(StringTable.Get(cfg.Intro))
+    self.count:SetText(self._count)
+    self._empty:SetActive(false)
+    self._cur:SetActive(true)
   else
-    do
-      ;
-      (self._empty):SetActive(true)
-      ;
-      (self._cur):SetActive(false)
-    end
+    self._empty:SetActive(true)
+    self._cur:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator.AddOnClick = function(self, go)
-  -- function num : 0_6
-  if self._max <= self._count then
-    return 
+function UIHomeStorehouseOperator:AddOnClick(go)
+  if self._count >= self._max then
+    return
   end
   self._count = self._count + 1
-  ;
-  (self.count):SetText(self._count)
+  self.count:SetText(self._count)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator.RemoveOnClick = function(self, go)
-  -- function num : 0_7
+function UIHomeStorehouseOperator:RemoveOnClick(go)
   if self._count <= self._min then
-    return 
+    return
   end
   self._count = self._count - 1
-  ;
-  (self.count):SetText(self._count)
+  self.count:SetText(self._count)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator.MaxOnClick = function(self, go)
-  -- function num : 0_8
-  if self._max <= self._count then
-    return 
+function UIHomeStorehouseOperator:MaxOnClick(go)
+  if self._count >= self._max then
+    return
   end
   self._count = self._max
-  ;
-  (self.count):SetText(self._count)
+  self.count:SetText(self._count)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator.PutOnClick = function(self, go)
-  -- function num : 0_9
-  (self._onConfirm)(((self._itemData)[self._curGiftIdx]):GetTemplateID(), self._count)
+function UIHomeStorehouseOperator:PutOnClick(go)
+  self._onConfirm(self._itemData[self._curGiftIdx]:GetTemplateID(), self._count)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeStorehouseOperator._GetItemCount = function(self, tmpID)
-  -- function num : 0_10 , upvalues : _ENV
-  local isBuilding = (Cfg.cfg_item_architecture)[tmpID] ~= nil
+function UIHomeStorehouseOperator:_GetItemCount(tmpID)
+  local isBuilding = Cfg.cfg_item_architecture[tmpID] ~= nil
   if isBuilding then
-    return (self._buildMng):GetBuildCount(tmpID)
+    return self._buildMng:GetBuildCount(tmpID)
   end
-  do return (self._itemModule):GetItemCount(tmpID) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return self._itemModule:GetItemCount(tmpID)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/team_build_seat_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SmokeTestTeamBuildSeatInfo", Object)
 SmokeTestTeamBuildSeatInfo = SmokeTestTeamBuildSeatInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SmokeTestTeamBuildSeatInfo.Constructor = function(self, conf, index)
-  -- function num : 0_0
+function SmokeTestTeamBuildSeatInfo:Constructor(conf, index)
   self.testTeamBuildID = conf.ID
   self.seatIndex = index
   self.enabled = conf.Enabled
@@ -20,22 +13,30 @@ SmokeTestTeamBuildSeatInfo.Constructor = function(self, conf, index)
   self.refine = conf.EquipRefine
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestTeamBuildSeatInfo.__tostring = function(t)
-  -- function num : 0_1 , upvalues : _ENV
-  return (table.concat)({"config ID:", tostring(t.testTeamBuildID), " seat index:", tostring(t.seatIndex), "; ", " enabled:", tostring(t.enabled), " level:", tostring(t.level), " awakening:", tostring(t.awakening), " grade:", tostring(t.grade), " intimacy:", tostring(t.intimacy), " equip:", tostring(t.equip)})
+function SmokeTestTeamBuildSeatInfo.__tostring(t)
+  return table.concat({
+    "config ID:",
+    tostring(t.testTeamBuildID),
+    " seat index:",
+    tostring(t.seatIndex),
+    "; ",
+    " enabled:",
+    tostring(t.enabled),
+    " level:",
+    tostring(t.level),
+    " awakening:",
+    tostring(t.awakening),
+    " grade:",
+    tostring(t.grade),
+    " intimacy:",
+    tostring(t.intimacy),
+    " equip:",
+    tostring(t.equip)
+  })
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SmokeTestTeamBuildSeatInfo.ExplainSeat = function(confID, index, mute)
-  -- function num : 0_2 , upvalues : _ENV
-  local conf = (Cfg.cfg_level_test_team_build)[confID]
-  if not conf then
-    conf = (Cfg.cfg_level_test_team_build)[-1]
-  end
+function SmokeTestTeamBuildSeatInfo.ExplainSeat(confID, index, mute)
+  local conf = Cfg.cfg_level_test_team_build[confID]
+  conf = conf or Cfg.cfg_level_test_team_build[-1]
   return SmokeTestTeamBuildSeatInfo:New(conf, index)
 end
-
-

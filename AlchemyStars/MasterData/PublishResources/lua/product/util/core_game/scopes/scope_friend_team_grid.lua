@@ -1,38 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_friend_team_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FriendTeamGrid", SkillScopeCalculator_Base)
 SkillScopeCalculator_FriendTeamGrid = SkillScopeCalculator_FriendTeamGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FriendTeamGrid.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_FriendTeamGrid:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local targetArea = {}
   local wholeArea = {}
   if casterEntity:HasSuperEntity() then
-    casterEntity = (casterEntity:SuperEntityComponent()):GetSuperEntity()
+    casterEntity = casterEntity:SuperEntityComponent():GetSuperEntity()
   end
-  local teamEntity = nil
+  local teamEntity
   if casterEntity:HasTeam() then
     teamEntity = casterEntity
+  elseif casterEntity:HasPet() then
+    teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
   else
-    if casterEntity:HasPet() then
-      teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-    else
-      local world = (self._gridFilter)._world
-      teamEntity = (world:Player()):GetCurrentTeamEntity()
-    end
+    local world = self._gridFilter._world
+    teamEntity = world:Player():GetCurrentTeamEntity()
   end
-  do
-    local teamPos = teamEntity:GetGridPosition()
-    local targetIds = {teamEntity:GetID()}
-    self:_InsertTargetGrid(targetArea, teamPos, wholeArea)
-    local result = SkillScopeResult:New(SkillScopeType.FriendTeamGrid, teamPos, targetArea, wholeArea, targetIds)
-    return result
-  end
+  local teamPos = teamEntity:GetGridPosition()
+  local targetIds = {
+    teamEntity:GetID()
+  }
+  self:_InsertTargetGrid(targetArea, teamPos, wholeArea)
+  local result = SkillScopeResult:New(SkillScopeType.FriendTeamGrid, teamPos, targetArea, wholeArea, targetIds)
+  return result
 end
-
-

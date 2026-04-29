@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/petinvite/ui_home_pet_invite_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetInvitePoint", UICustomWidget)
 UIHomePetInvitePoint = UIHomePetInvitePoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetInvitePoint.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomePetInvitePoint:Constructor()
   self._atlas = self:GetAsset("UIHomelandInvite.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomePetInvitePoint:OnShow(uiParams)
   self:_GetComponents()
   self:AttachEvent(GameEventType.OnPetInvitePreview, self.Refresh)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomePetInvitePoint:OnHide()
   self:DetachEvent(GameEventType.OnPetInvitePreview, self.Refresh)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint._GetComponents = function(self)
-  -- function num : 0_3
+function UIHomePetInvitePoint:_GetComponents()
   self._selectImg = self:GetUIComponent("Image", "SelectImg")
   self._invitePointIndex = self:GetUIComponent("UILocalizationText", "InvitePointIndex")
   self._petIcon = self:GetUIComponent("RawImageLoader", "PetIcon")
@@ -38,124 +22,75 @@ UIHomePetInvitePoint._GetComponents = function(self)
   self._removeBtnGo = self:GetGameObject("RemoveBtn")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.SetData = function(self, inviteManager, index, pet, callback)
-  -- function num : 0_4
+function UIHomePetInvitePoint:SetData(inviteManager, index, pet, callback)
   self._inviteManager = inviteManager
   self._index = index
   self._callback = callback
-  ;
-  (self._invitePointIndex):SetText(self._index)
+  self._invitePointIndex:SetText(self._index)
   self:SetPetInfo(pet)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.AddBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomePetInvitePoint:AddBtnOnClick(go)
   if not self._pet then
     self:OnSelect()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.RemoveBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIHomePetInvitePoint:RemoveBtnOnClick(go)
   if self._pet then
-    (self._inviteManager):InviteEnterListPreview(self._pet, false)
+    self._inviteManager:InviteEnterListPreview(self._pet, false)
     self:SetPetInfo(nil)
-    ;
-    (self.uiOwner):DefaultSelect()
-    ;
-    (self._inviteManager):UpdateInvitedPets(self._index, nil)
+    self.uiOwner:DefaultSelect()
+    self._inviteManager:UpdateInvitedPets(self._index, nil)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.Refresh = function(self, pet, enter)
-  -- function num : 0_7
+function UIHomePetInvitePoint:Refresh(pet, enter)
   if not self._pet then
-    return 
+    return
   end
-  if pet and pet:TemplateID() == (self._pet):TemplateID() then
-    if enter then
-      self:SetPetInfo(nil)
-      ;
-      (self.uiOwner):DefaultSelect()
-      ;
-      (self._inviteManager):UpdateInvitedPets(self._index, nil)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.RefreshSelectImg = function(self, selected)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  if selected then
-    (self._selectImg).sprite = (self._atlas):GetSprite("N17_hudong_icon06_02")
+  if not pet or pet:TemplateID() ~= self._pet:TemplateID() or enter then
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._selectImg).sprite = (self._atlas):GetSprite("N17_hudong_icon06_01")
+    self:SetPetInfo(nil)
+    self.uiOwner:DefaultSelect()
+    self._inviteManager:UpdateInvitedPets(self._index, nil)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
+function UIHomePetInvitePoint:RefreshSelectImg(selected)
+  if selected then
+    self._selectImg.sprite = self._atlas:GetSprite("N17_hudong_icon06_02")
+  else
+    self._selectImg.sprite = self._atlas:GetSprite("N17_hudong_icon06_01")
+  end
+end
 
-UIHomePetInvitePoint.SetPetInfo = function(self, pet)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomePetInvitePoint:SetPetInfo(pet)
   self._pet = pet
   if self._pet then
-    local icon = nil
-    if (self._pet)._clothSkinID ~= nil then
-      local headicon = (Cfg.cfg_pet_skin)[(self._pet)._clothSkinID]
+    local icon
+    if self._pet._clothSkinID ~= nil then
+      local headicon = Cfg.cfg_pet_skin[self._pet._clothSkinID]
       icon = headicon.Head
     else
-      do
-        do
-          icon = "head1_" .. (self._pet)._tmpID
-          ;
-          (self._petIcon):LoadImage(icon)
-          local selected = self._pet ~= nil
-          ;
-          (self._petIconGo):SetActive(selected)
-          ;
-          (self._removeBtnGo):SetActive(selected)
-          -- DECOMPILER ERROR: 1 unprocessed JMP targets
-        end
-      end
+      icon = "head1_" .. self._pet._tmpID
     end
+    self._petIcon:LoadImage(icon)
   end
+  local selected = self._pet ~= nil
+  self._petIconGo:SetActive(selected)
+  self._removeBtnGo:SetActive(selected)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.GetPet = function(self)
-  -- function num : 0_10
+function UIHomePetInvitePoint:GetPet()
   return self._pet
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.GetIndex = function(self)
-  -- function num : 0_11
+function UIHomePetInvitePoint:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetInvitePoint.OnSelect = function(self)
-  -- function num : 0_12
+function UIHomePetInvitePoint:OnSelect()
   self:RefreshSelectImg(true)
-  ;
-  (self._callback)(self)
+  self._callback(self)
 end
-
-

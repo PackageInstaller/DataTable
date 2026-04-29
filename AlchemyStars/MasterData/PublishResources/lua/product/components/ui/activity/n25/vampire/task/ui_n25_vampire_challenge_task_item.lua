@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/task/ui_n25_vampire_challenge_task_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireChallengeTaskItem", UICustomWidget)
 UIN25VampireChallengeTaskItem = UIN25VampireChallengeTaskItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireChallengeTaskItem.Constructor = function(self)
-  -- function num : 0_0
+function UIN25VampireChallengeTaskItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN25VampireChallengeTaskItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIN25VampireTaskAndLevel.spriteatlas", LoadType.SpriteAtlas)
   self.bgimg = self:GetUIComponent("Image", "bg")
   self.iconimg = self:GetUIComponent("RawImageLoader", "icon")
@@ -30,56 +20,40 @@ UIN25VampireChallengeTaskItem.OnShow = function(self, uiParams)
   self.talentimg = self:GetUIComponent("Image", "talent")
   self.canGainGo = self:GetGameObject("canGain")
   self.cantGainGo = self:GetGameObject("cantGain")
-  ;
-  (self.cantGainGo):SetActive(false)
+  self.cantGainGo:SetActive(false)
   self.gotGo = self:GetGameObject("got")
   self.exp = self:GetGameObject("exp")
   self.talent = self:GetGameObject("talent")
   self.rootGo = self:GetGameObject("root")
   self.anim = self:GetUIComponent("Animation", "ani")
-  ;
-  (self.rootGo):SetActive(false)
+  self.rootGo:SetActive(false)
   self.eff = self:GetGameObject("eff")
   self.canvasGroup = self:GetUIComponent("CanvasGroup", "root")
   self.redBgGo = self:GetGameObject("redBg")
-  ;
-  (self.redBgGo):SetActive(false)
+  self.redBgGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskItem.OnHide = function(self)
-  -- function num : 0_2
+function UIN25VampireChallengeTaskItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskItem.Flush = function(self, data, manager, playAni)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.rootGo):SetActive(true)
+function UIN25VampireChallengeTaskItem:Flush(data, manager, playAni)
+  self.rootGo:SetActive(true)
   if playAni then
-    (self.anim):Play("uieffanim_UIN25VampireChallengeTaskItem_in")
+    self.anim:Play("uieffanim_UIN25VampireChallengeTaskItem_in")
   else
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.canvasGroup).alpha = 1
+    self.canvasGroup.alpha = 1
   end
   self.manager = manager
   self.quest = data
-  self.questInfo = (self.quest):QuestInfo()
-  local reward = (self.questInfo).rewards
-  ;
-  (self.eff):SetActive((self.quest):Status() < QuestStatus.QUEST_Completed)
-  ;
-  (self.canGainGo):SetActive((self.quest):Status() == QuestStatus.QUEST_Completed)
-  ;
-  (self.cantGainGo):SetActive((self.quest):Status() < QuestStatus.QUEST_Completed)
-  if (self.canGainGo).activeSelf then
-    (self.cantGainGo):SetActive(false)
+  self.questInfo = self.quest:QuestInfo()
+  local reward = self.questInfo.rewards
+  self.eff:SetActive(self.quest:Status() < QuestStatus.QUEST_Completed)
+  self.canGainGo:SetActive(self.quest:Status() == QuestStatus.QUEST_Completed)
+  self.cantGainGo:SetActive(self.quest:Status() < QuestStatus.QUEST_Completed)
+  if self.canGainGo.activeSelf then
+    self.cantGainGo:SetActive(false)
   end
-  ;
-  (self.gotGo):SetActive(false)
+  self.gotGo:SetActive(false)
   local bg = "N25_mcwf_di1"
   local sliderBg = "N25_mcwf_progressbar2"
   local sliderFill = "N25_mcwf_progressbar1"
@@ -89,14 +63,14 @@ UIN25VampireChallengeTaskItem.Flush = function(self, data, manager, playAni)
   local talentColor = "<color=#fff4ed>%s</color><color=#f7c058>+%s</color>"
   local percentColor = "<color=#6e4c10>%s</color>/<color=#000000>%s</color>"
   local titleColor = "<color=#ffffff>%s</color>"
-  if (self.quest):Status() < QuestStatus.QUEST_Completed then
+  if self.quest:Status() < QuestStatus.QUEST_Completed then
     bg = "N25_mcwf_di2"
     sliderBg = "N25_mcwf_progressbar2"
     sliderFill = "N25_mcwf_progressbar1"
     expimg = "N25_mcwf_di6"
     talentimg = "N25_mcwf_di6"
     percentColor = "<color=#ffffff>%s</color>/<color=#a58b72>%s</color>"
-  elseif (self.quest):Status() == QuestStatus.QUEST_Completed then
+  elseif self.quest:Status() == QuestStatus.QUEST_Completed then
     bg = "N25_mcwf_di1"
     sliderBg = "N25_mcwf_progressbar2"
     sliderFill = "N25_mcwf_progressbar1"
@@ -114,77 +88,43 @@ UIN25VampireChallengeTaskItem.Flush = function(self, data, manager, playAni)
     percentColor = "<color=#b99d83>%s</color>/<color=#9b826b>%s</color>"
     titleColor = "<color=#9b826b>%s</color>"
   end
-  local itemStr = (reward[1]).assetid == 3000290 and "str_n25_task_talentpoint" or "str_n25_task_exp"
-  local str = (string.format)(expColor, (StringTable.Get)(itemStr), (reward[1]).count)
-  ;
-  (self.txtExptxt):SetText(str)
-  ;
-  (self.talent):SetActive(false)
-  if (reward[2]).assetid ~= 3000290 or not "str_n25_task_talentpoint" then
-    itemStr = not reward[2] or "str_n25_task_exp"
+  local itemStr = reward[1].assetid == 3000290 and "str_n25_task_talentpoint" or "str_n25_task_exp"
+  local str = string.format(expColor, StringTable.Get(itemStr), reward[1].count)
+  self.txtExptxt:SetText(str)
+  self.talent:SetActive(false)
+  if reward[2] then
+    itemStr = reward[2].assetid == 3000290 and "str_n25_task_talentpoint" or "str_n25_task_exp"
+    str = string.format(talentColor, StringTable.Get(itemStr), reward[2].count)
+    self.talent:SetActive(true)
+    self.txtTalenttxt:SetText(str)
   end
-  str = (string.format)(talentColor, (StringTable.Get)(itemStr), (reward[2]).count)
-  ;
-  (self.talent):SetActive(true)
-  ;
-  (self.txtTalenttxt):SetText(str)
-  str = (string.format)(percentColor, (self.questInfo).cur_progress, (self.questInfo).total_progress)
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self.slider).value = (self.questInfo).cur_progress / (self.questInfo).total_progress
-  ;
-  (self.percenttxt):SetText(str)
-  str = (string.format)(titleColor, (StringTable.Get)((self.questInfo).QuestDesc))
-  ;
-  (self.txtTitle):SetText(str)
-  -- DECOMPILER ERROR at PC210: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self.bgimg).sprite = (self._atlas):GetSprite(bg)
-  self.backgroundimg = (self._atlas):GetSprite(sliderBg)
-  self.fillimg = (self._atlas):GetSprite(sliderFill)
-  -- DECOMPILER ERROR at PC226: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self.expimg).sprite = (self._atlas):GetSprite(expimg)
-  -- DECOMPILER ERROR at PC232: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self.talentimg).sprite = (self._atlas):GetSprite(talentimg)
-  -- DECOMPILER ERROR: 12 unprocessed JMP targets
+  str = string.format(percentColor, self.questInfo.cur_progress, self.questInfo.total_progress)
+  self.slider.value = self.questInfo.cur_progress / self.questInfo.total_progress
+  self.percenttxt:SetText(str)
+  str = string.format(titleColor, StringTable.Get(self.questInfo.QuestDesc))
+  self.txtTitle:SetText(str)
+  self.bgimg.sprite = self._atlas:GetSprite(bg)
+  self.backgroundimg = self._atlas:GetSprite(sliderBg)
+  self.fillimg = self._atlas:GetSprite(sliderFill)
+  self.expimg.sprite = self._atlas:GetSprite(expimg)
+  self.talentimg.sprite = self._atlas:GetSprite(talentimg)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskItem.CanGainOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25VampireChallengeTaskItem:CanGainOnClick(go)
   if self.manager then
-    (self.manager):ReqAwards((self.questInfo).quest_id)
+    self.manager:ReqAwards(self.questInfo.quest_id)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskItem.CantGainOnClick = function(self, go)
-  -- function num : 0_5
+function UIN25VampireChallengeTaskItem:CantGainOnClick(go)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskItem.GotOnClick = function(self, go)
-  -- function num : 0_6
+function UIN25VampireChallengeTaskItem:GotOnClick(go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireChallengeTaskItem.PlayOutAni = function(self, taskId)
-  -- function num : 0_7
-  if (self.questInfo).quest_id == taskId then
-    (self.cantGainGo):SetActive(false)
-    ;
-    (self.anim):Play("uieffanim_UIN25VampireChallengeTaskItem_out")
+function UIN25VampireChallengeTaskItem:PlayOutAni(taskId)
+  if self.questInfo.quest_id == taskId then
+    self.cantGainGo:SetActive(false)
+    self.anim:Play("uieffanim_UIN25VampireChallengeTaskItem_out")
   end
 end
-
-

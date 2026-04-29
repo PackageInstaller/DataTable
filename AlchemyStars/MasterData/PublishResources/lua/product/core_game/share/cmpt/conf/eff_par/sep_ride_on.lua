@@ -1,65 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_ride_on.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectRideOnParam", SkillEffectParamBase)
 SkillEffectRideOnParam = SkillEffectRideOnParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectRideOnParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectRideOnParam:Constructor(t)
   self._trapID = t.trapID
   self._trapHeight = t.trapHeight or 0
   self._monsterClassID = t.monsterClassID
   self._monsterHeight = t.monsterHeight or 0
   self._monsterOffset = Vector2.zero
   if t.offset and #t.offset == 2 then
-    self._monsterOffset = Vector2((t.offset)[1], (t.offset)[2])
+    self._monsterOffset = Vector2(t.offset[1], t.offset[2])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectRideOnParam:GetEffectType()
   return SkillEffectType.RideOn
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnParam.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectRideOnParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnParam.GetTrapHeight = function(self)
-  -- function num : 0_3
+function SkillEffectRideOnParam:GetTrapHeight()
   return self._trapHeight
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnParam.GetMonsterClassID = function(self)
-  -- function num : 0_4
+function SkillEffectRideOnParam:GetMonsterClassID()
   return self._monsterClassID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnParam.GetMonsterHeight = function(self)
-  -- function num : 0_5
+function SkillEffectRideOnParam:GetMonsterHeight()
   return self._monsterHeight
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnParam.GetMonsterOffset = function(self)
-  -- function num : 0_6
+function SkillEffectRideOnParam:GetMonsterOffset()
   return self._monsterOffset
 end
-
-

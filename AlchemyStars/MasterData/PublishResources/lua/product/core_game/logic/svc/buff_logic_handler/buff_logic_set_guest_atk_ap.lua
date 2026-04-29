@@ -1,45 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_guest_atk_ap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetGuestAttackAppointChain", BuffLogicBase)
 BuffLogicSetGuestAttackAppointChain = BuffLogicSetGuestAttackAppointChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetGuestAttackAppointChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetGuestAttackAppointChain:Constructor(buffInstance, logicParam)
   self._rate = logicParam.rate or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetGuestAttackAppointChain.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local guestAttack = ((self._entity):BuffComponent()):GetBuffValue("GuestAttackAppointChain")
+function BuffLogicSetGuestAttackAppointChain:DoLogic()
+  local guestAttack = self._entity:BuffComponent():GetBuffValue("GuestAttackAppointChain")
   if guestAttack == nil then
-    (Log.notice)("Haven\'t guestAttack, SetGuestAttack Error!")
-    return 
+    Log.notice("Haven't guestAttack, SetGuestAttack Error!")
+    return
   end
-  ;
-  (self._buffLogicService):ChangeBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.Attack, guestAttack * self._rate)
+  self._buffLogicService:ChangeBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.Attack, guestAttack * self._rate)
 end
 
 _class("BuffLogicResetGuestAttackAppointChain", BuffLogicBase)
 BuffLogicResetGuestAttackAppointChain = BuffLogicResetGuestAttackAppointChain
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetGuestAttackAppointChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetGuestAttackAppointChain:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetGuestAttackAppointChain.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.notice)("BuffLogicResetGuestAttackAppointChain")
-  ;
-  (self._buffLogicService):RemoveBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.Attack)
+function BuffLogicResetGuestAttackAppointChain:DoLogic()
+  Log.notice("BuffLogicResetGuestAttackAppointChain")
+  self._buffLogicService:RemoveBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.Attack)
 end
-
-

@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/str_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_condition_312 = "光霊が覚醒{1} Lv{2}に到達する", str_condition_313 = "光霊が突破{1}に到達する", str_condition_314 = "光霊の親密度が{1}に到達する", str_condition_318 = "光霊の装備レベルが{1}に到達する"}
+local config = {
+  str_condition_312 = "光霊が覚醒{1} Lv{2}に到達する",
+  str_condition_313 = "光霊が突破{1}に到達する",
+  str_condition_314 = "光霊の親密度が{1}に到達する",
+  str_condition_318 = "光霊の装備レベルが{1}に到達する"
+}
 return config
-

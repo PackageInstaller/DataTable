@@ -1,39 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_concert/ui_n25_idol_not_open_next_day.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolNotOpenNextDay", UIController)
 UIN25IdolNotOpenNextDay = UIN25IdolNotOpenNextDay
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolNotOpenNextDay.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolNotOpenNextDay:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolNotOpenNextDay.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+function UIN25IdolNotOpenNextDay:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_1_0
+    self._campaign:CheckErrorCode(res.m_result, function()
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
-, function()
-    -- function num : 0_1_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
-  end
-  self.component = (self._campaign):GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
-  local breakInfo = ((self.component).m_component_info).break_info
+  self.component = self._campaign:GetComponent(ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL)
+  local breakInfo = self.component.m_component_info.break_info
   local round_index = breakInfo.round_index
-  local cfgs = (Cfg.cfg_component_idol_round)({Round = round_index})
+  local cfgs = Cfg.cfg_component_idol_round({Round = round_index})
   self._day = 1
-  if cfgs and #cfgs > 0 then
+  if cfgs and 0 < #cfgs then
     local cfg_round = cfgs[1]
     if cfg_round then
       self._day = cfg_round.UnlockTime
@@ -41,55 +26,34 @@ UIN25IdolNotOpenNextDay.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolNotOpenNextDay.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN25IdolNotOpenNextDay:OnShow(uiParams)
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolNotOpenNextDay.GetComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25IdolNotOpenNextDay:GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtn")
   self.backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self.backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self.backBtns:SetData(function()
     self:Close()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self._tex = self:GetUIComponent("UILocalizationText", "tex")
-  local tips = nil
+  local tips
   if self._day == 1 then
     tips = "str_n25_idol_y_not_open_next_day_tips_1"
   else
     tips = "str_n25_idol_y_not_open_next_day_tips_2"
   end
-  ;
-  (self._tex):SetText((StringTable.Get)(tips))
+  self._tex:SetText(StringTable.Get(tips))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolNotOpenNextDay.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneOut)()
+function UIN25IdolNotOpenNextDay:OnValue()
+  CutsceneManager.ExcuteCutsceneOut()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolNotOpenNextDay.Close = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN25IdolNotOpenNextDay:Close()
   self:SwitchState(UIStateType.UIN25IdolLogin)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolNotOpenNextDay.OnHide = function(self)
-  -- function num : 0_6
+function UIN25IdolNotOpenNextDay:OnHide()
 end
-
-

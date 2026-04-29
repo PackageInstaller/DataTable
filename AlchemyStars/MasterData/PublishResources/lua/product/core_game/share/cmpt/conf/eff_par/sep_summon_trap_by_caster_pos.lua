@@ -1,68 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_summon_trap_by_caster_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSummonTrapByCasterPos", SkillEffectParamBase)
 SkillEffectParamSummonTrapByCasterPos = SkillEffectParamSummonTrapByCasterPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSummonTrapByCasterPos.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSummonTrapByCasterPos:Constructor(t)
   self._rangeAndCount = t.rangeAndCount
   self._trapID = t.trapID
   self:ParseConfig()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonTrapByCasterPos.ParseConfig = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for i,param in ipairs(self._rangeAndCount) do
+function SkillEffectParamSummonTrapByCasterPos:ParseConfig()
+  for i, param in ipairs(self._rangeAndCount) do
     local range = param.range
     param.vectorRange = {}
-    for _,v in ipairs(range) do
+    for _, v in ipairs(range) do
       local pos = Vector2(v[1], v[2])
-      ;
-      (table.insert)(param.vectorRange, pos)
+      table.insert(param.vectorRange, pos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonTrapByCasterPos.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectParamSummonTrapByCasterPos:GetEffectType()
   return SkillEffectType.SummonTrapByCasterPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonTrapByCasterPos.GetTrapID = function(self)
-  -- function num : 0_3
+function SkillEffectParamSummonTrapByCasterPos:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonTrapByCasterPos.GetRangeAndCount = function(self)
-  -- function num : 0_4
+function SkillEffectParamSummonTrapByCasterPos:GetRangeAndCount()
   return self._rangeAndCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonTrapByCasterPos.GetMinCount = function(self)
-  -- function num : 0_5
+function SkillEffectParamSummonTrapByCasterPos:GetMinCount()
   return self._minCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonTrapByCasterPos.GetMaxCount = function(self)
-  -- function num : 0_6
+function SkillEffectParamSummonTrapByCasterPos:GetMaxCount()
   return self._minCount
 end
-
-

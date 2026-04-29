@@ -1,32 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_camp_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("UICommonLineMissionCampEnter", MainLobbyCenterCampData)
 UICommonLineMissionCampEnter = UICommonLineMissionCampEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionCampEnter.Constructor = function(self, cfg)
-  -- function num : 0_0 , upvalues : _ENV
-  local sample = ((GameGlobal.GetModule)(CampaignModule)):GetSampleByType(ECampaignType.CAMPAIGN_TYPE_STORY_ACTIVITY)
+function UICommonLineMissionCampEnter:Constructor(cfg)
+  local sample = GameGlobal.GetModule(CampaignModule):GetSampleByType(ECampaignType.CAMPAIGN_TYPE_STORY_ACTIVITY)
   if sample then
-    (UICommonLineMissionConst.InitCampaignID)(sample.id)
+    UICommonLineMissionConst.InitCampaignID(sample.id)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionCampEnter.CheckRed = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local sample = ((GameGlobal.GetModule)(CampaignModule)):GetSampleByType(ECampaignType.CAMPAIGN_TYPE_STORY_ACTIVITY)
-  if (UIActivityHelper.HasCmptRedViewed)((UICommonLineMissionConst.LineMissionDBID)()) then
-    if not sample:IsCompRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK) or not 1 then
-      do return not sample or 0 end
-      do return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD) and 1 or 0 end
+function UICommonLineMissionCampEnter:CheckRed()
+  local sample = GameGlobal.GetModule(CampaignModule):GetSampleByType(ECampaignType.CAMPAIGN_TYPE_STORY_ACTIVITY)
+  if sample then
+    if UIActivityHelper.HasCmptRedViewed(UICommonLineMissionConst.LineMissionDBID()) then
+      return sample:IsCompRed(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK) and 1 or 0
+    else
+      return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD) and 1 or 0
     end
   end
 end
-
-

@@ -1,105 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/resources/ui_season_maze_room_resources.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_maze_room_base")
 _class("UISeasonMazeRoomResources", UISeasonMazeRoomBase)
 UISeasonMazeRoomResources = UISeasonMazeRoomResources
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomResources.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeRoomResources:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomResources.OnShowUI = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoomResources:OnShowUI(uiParams)
   self:AttachEvent(GameEventType.OnSeasonMazeShowRewardsFinish, self.OnSeasonMazeShowRewardsFinish)
   self:ReqFinishRoom()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomResources.ReqFinishRoom = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.OnReqFinishRoom, self)
+function UISeasonMazeRoomResources:ReqFinishRoom()
+  GameGlobal.TaskManager():StartTask(self.OnReqFinishRoom, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomResources.OnReqFinishRoom = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeRoomResources:OnReqFinishRoom(TT)
   local res = AsyncRequestRes:New()
   self:Lock("UISeasonMazeRoomResources:ReqFinishRoom")
-  self._response = (self._component):HandleSeasonMazeResource(TT, res)
+  self._response = self._component:HandleSeasonMazeResource(TT, res)
   self:UnLock("UISeasonMazeRoomResources:ReqFinishRoom")
-  if res and res:GetSucc() and self._response then
-    local rewards = (self._response).reward
-    local reward = SeasonMazeEffect:New()
-    reward.type = (rewards[1]).type
-    reward.id = (rewards[1]).id
-    reward.value_min = 0
-    reward.value_max = 0
-    for _,eft in ipairs(rewards) do
-      if eft.type ~= reward.type then
-        (Log.exception)("宝箱房奖励类型错误 无法显示:", echo(rewards))
-      end
-      reward.value_min = reward.value_min + eft.value_min
-    end
-    local asset = (SeasonMazeTool:GetInstance()):Effect2Asset(reward, reward.value_min)
-    self._asset = asset
-    if reward.type == SeasonMazeEffectType.SMET_Bead then
-      local showRewards = rewards
-      self._waitGetRewardsFinishCb = function()
-    -- function num : 0_3_0 , upvalues : self
-    self:CloseBtnOnClick()
-  end
-
-      ;
-      (SeasonMazeTool:GetInstance()):ShowUIGetRewards(showRewards)
-    else
-      do
-        do
-          self._roomInfo = (((self._component):GetComponentInfo()).rooms)[self._nodeID]
-          self:ShowDialog("UISeasonMazeRoomPopBox", SeasonMazeRoomType.SMRT_Resource, function()
-    -- function num : 0_3_1 , upvalues : self
-    self:CloseBtnOnClick()
-  end
-, reward)
-          local result = res:GetResult()
-          ;
-          (Log.error)("###[UISeasonMazeRoomResources] HandleSeasonMazeResource fail ! result : ", result)
-          if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-            return 
-          end
+  if res and res:GetSucc() then
+    if self._response then
+      local rewards = self._response.reward
+      local reward = SeasonMazeEffect:New()
+      reward.type = rewards[1].type
+      reward.id = rewards[1].id
+      reward.value_min = 0
+      reward.value_max = 0
+      for _, eft in ipairs(rewards) do
+        if eft.type ~= reward.type then
+          Log.exception("宝箱房奖励类型错误 无法显示:", echo(rewards))
         end
+        reward.value_min = reward.value_min + eft.value_min
       end
+      local asset = SeasonMazeTool:GetInstance():Effect2Asset(reward, reward.value_min)
+      self._asset = asset
+      if reward.type == SeasonMazeEffectType.SMET_Bead then
+        local showRewards = rewards
+        
+        function self._waitGetRewardsFinishCb()
+          self:CloseBtnOnClick()
+        end
+        
+        SeasonMazeTool:GetInstance():ShowUIGetRewards(showRewards)
+      else
+        self._roomInfo = self._component:GetComponentInfo().rooms[self._nodeID]
+        self:ShowDialog("UISeasonMazeRoomPopBox", SeasonMazeRoomType.SMRT_Resource, function()
+          self:CloseBtnOnClick()
+        end, reward)
+      end
+    end
+  else
+    local result = res:GetResult()
+    Log.error("###[UISeasonMazeRoomResources] HandleSeasonMazeResource fail ! result : ", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomResources.CloseBtnOnClick = function(self, go)
-  -- function num : 0_4
-  local params = nil
+function UISeasonMazeRoomResources:CloseBtnOnClick(go)
+  local params
   if self._response then
-    params = (self._response).reward
+    params = self._response.reward
   end
   self:OnHideUI(self._asset)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomResources.OnSeasonMazeShowRewardsFinish = function(self, flag)
-  -- function num : 0_5
+function UISeasonMazeRoomResources:OnSeasonMazeShowRewardsFinish(flag)
   if self._waitGetRewardsFinishCb then
-    (self._waitGetRewardsFinishCb)()
+    self._waitGetRewardsFinishCb()
     self._waitGetRewardsFinishCb = nil
   end
 end
-
-

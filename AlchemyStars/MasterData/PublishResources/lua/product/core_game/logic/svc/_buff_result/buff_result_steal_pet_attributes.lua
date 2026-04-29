@@ -1,87 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_steal_pet_attributes.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultStealPetAttributes", BuffResultBase)
 BuffResultStealPetAttributes = BuffResultStealPetAttributes
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultStealPetAttributes.Constructor = function(self, newHp, newHpMax, newHpCaster, newHpMaxCaster)
-  -- function num : 0_0
+function BuffResultStealPetAttributes:Constructor(newHp, newHpMax, newHpCaster, newHpMaxCaster)
   self._newHp = newHp
   self._newHpMax = newHpMax
   self._newHpCaster = newHpCaster
   self._newHpMaxCaster = newHpMaxCaster
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultStealPetAttributes.GetHp = function(self)
-  -- function num : 0_1
+function BuffResultStealPetAttributes:GetHp()
   return self._newHp
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultStealPetAttributes.GetHpMax = function(self)
-  -- function num : 0_2
+function BuffResultStealPetAttributes:GetHpMax()
   return self._newHpMax
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultStealPetAttributes.GetHpCaster = function(self)
-  -- function num : 0_3
+function BuffResultStealPetAttributes:GetHpCaster()
   return self._newHpCaster
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultStealPetAttributes.GetHpMaxCaster = function(self)
-  -- function num : 0_4
+function BuffResultStealPetAttributes:GetHpMaxCaster()
   return self._newHpMaxCaster
 end
 
 _class("BuffResultResetStealPetAttributes", BuffResultBase)
 BuffResultResetStealPetAttributes = BuffResultResetStealPetAttributes
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultResetStealPetAttributes.Constructor = function(self, newHp, newHpMax, newHpCaster, newHpMaxCaster)
-  -- function num : 0_5
+function BuffResultResetStealPetAttributes:Constructor(newHp, newHpMax, newHpCaster, newHpMaxCaster)
   self._newHp = newHp
   self._newHpMax = newHpMax
   self._newHpCaster = newHpCaster
   self._newHpMaxCaster = newHpMaxCaster
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResetStealPetAttributes.GetHp = function(self)
-  -- function num : 0_6
+function BuffResultResetStealPetAttributes:GetHp()
   return self._newHp
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResetStealPetAttributes.GetHpMax = function(self)
-  -- function num : 0_7
+function BuffResultResetStealPetAttributes:GetHpMax()
   return self._newHpMax
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResetStealPetAttributes.GetHpCaster = function(self)
-  -- function num : 0_8
+function BuffResultResetStealPetAttributes:GetHpCaster()
   return self._newHpCaster
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResetStealPetAttributes.GetHpMaxCaster = function(self)
-  -- function num : 0_9
+function BuffResultResetStealPetAttributes:GetHpMaxCaster()
   return self._newHpMaxCaster
 end
-
-

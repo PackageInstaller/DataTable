@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/tetris_feature_cmd.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("match_message")
 _class("TetrisFeatureCommand", IEntityCommand)
 TetrisFeatureCommand = TetrisFeatureCommand
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
 TetrisFeatureCommand.CommandType = "TetrisFeatureCommand"
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
 
-TetrisFeatureCommand.Constructor = function(self, opType, opValue)
-  -- function num : 0_0
+function TetrisFeatureCommand:Constructor(opType, opValue)
   self._opType = opType
   self._opValue = opValue
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_1 , upvalues : _ENV
+function ScanFeatureCommand:GetExecStateID(runAtClient)
   return GameStateID.WaitInput
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-TetrisFeatureCommand.GetOPValue = function(self)
-  -- function num : 0_2
+function TetrisFeatureCommand:GetOPValue()
   return self._opValue
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-TetrisFeatureCommand.GetOPType = function(self)
-  -- function num : 0_3
+function TetrisFeatureCommand:GetOPType()
   return self._opType
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-TetrisFeatureCommand.GetCommandType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function TetrisFeatureCommand:GetCommandType()
   return TetrisFeatureCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-TetrisFeatureCommand.ToNetMessage = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function TetrisFeatureCommand:ToNetMessage()
   local msg = CEventTetrisFeatureCommand:New()
   msg.opType = self._opType
   msg.opValue = self._opValue
@@ -56,10 +32,7 @@ TetrisFeatureCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-TetrisFeatureCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_6
+function TetrisFeatureCommand:FromNetMessage(msg)
   self._opType = msg.opType
   self._opValue = msg.opValue
   self.EntityID = msg.EntityID
@@ -67,4 +40,3 @@ end
 
 local TetrisFeatureCmdOPType = {ReRoll = 1, Lock = 2}
 _enum("TetrisFeatureCmdOPType", TetrisFeatureCmdOPType)
-

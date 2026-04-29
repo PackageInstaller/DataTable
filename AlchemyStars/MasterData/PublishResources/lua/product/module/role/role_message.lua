@@ -1,32 +1,196 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/role/role_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local roleMessageDef = {CLSID_CEventMobileChooseRole = 20000, CLSID_CEventMobileChooseRoleResult = 20001, CLSID_CEventMobileCreateRole = 20002, CLSID_CEventMobileCreateRoleResult = 20003, CLSID_CEventPushPropertyChange = 20004, CLSID_CEventRoleHealthPoint = 20005, CLSID_CEventRoleHealthPointResult = 20006, CLSID_CEventUpdateMSDKAuthInfo = 20007, CLSID_CEventUpdateMSDKAuthInfoResult = 20008, CLSID_CEventMobileGetRandomNick = 20009, CLSID_CEventMobileGetRandomNickResult = 20010, CLSID_CEventRequestLoadCharList = 20011, CLSID_CEventLoadCharListResult = 20012, CLSID_CEventMobileRoleGetCardBaseInfo = 20013, CLSID_CEventMobileRoleGetCardBaseInfoResult = 20014, CLSID_CEventPushLevelChange = 20015, CLSID_CEventPushGuideChange = 20016, CLSID_CEventPushTextChange = 20017, CLSID_CEventPushUnlockCG = 20018, CLSID_CEventMobileRoleGetGuideInfo = 20019, CLSID_CEventMobileRoleGetGuideInfoResult = 20020, CLSID_CEventMobileRoleSetGuideInfo = 20021, CLSID_CEventMobileRoleSetGuideInfoResult = 20022, CLSID_CEventPushTips = 20023, CLSID_CEventPushDiamondChange = 20024, CLSID_CEventQueryQQVip = 20025, CLSID_CEventQueryQQVipResult = 20026, CLSID_CEventPushSyncItem = 20027, CLSID_CEventRequestSendAntiData = 20028, CLSID_CEventReplySendAntiData = 20029, CLSID_CEventPushRecvAntiData = 20030, CLSID_CEventPushStrongerAction = 20031, CLSID_CEventPushModuleCloseInfo = 20032, CLSID_CEventPushMsg = 20033, CLSID_CEventClientResume = 20034, CLSID_CEventClientResumeResult = 20035, CLSID_CEventPlayerShare = 20036, CLSID_CEventPlayerShareResult = 20037, CLSID_CEventChangePlayerName = 20038, CLSID_CEventChangePlayerNameResult = 20039, CLSID_CEventGetRandomSeed = 20040, CLSID_CEventGetRandomSeedResult = 20041, CLSID_CEventSetExtFlag = 20042, CLSID_CEventSetExtFlagResult = 20043, CLSID_CEventSetGuideReq = 20044, CLSID_CEventSetGuideAsw = 20045, CLSID_CEventPushModuleUnlocked = 20046, CLSID_CEventHomePageEnter = 20047, CLSID_CEventSkipStory = 20048, CLSID_CEventSkipStoryResult = 20049, CLSID_CEventEndStory = 20050, CLSID_CEventEndStoryResult = 20051, CLSID_CEventChangeLeader = 20052, CLSID_CEventChoosePainting = 20053, CLSID_CEventChoosePaintingResult = 20054, CLSID_CEventAmendRoleName_Req = 20055, CLSID_CEventAmendRoleName_Asw = 20056, CLSID_CEventAmendSignText_Req = 20057, CLSID_CEventAmendSignText_Asw = 20058, CLSID_CEventAmendHeadImage_Req = 20059, CLSID_CEventAmendHeadImage_Asw = 20060, CLSID_CEventClearHeadImageLock_Req = 20061, CLSID_CEventClearHeadImageLock_Asw = 20062, CLSID_CEventRoleInfo_Req = 20063, CLSID_CEventRoleInfo_Asw = 20064, CLSID_CEventRoleHeadImageLock_Req = 20065, CLSID_CEventRoleHeadImageLock_Asw = 20066, CLSID_CEventTssReportData = 20067, CLSID_CEventStoryAffinity = 20068, CLSID_CEventStoryAffinityResult = 20069, CLSID_CEventAddStoryAffinity = 20070, CLSID_CEventAddStoryAffinityResult = 20071, CLSID_CEventClientSaveLog = 20072, CLSID_CEventPrepareAll = 20073, CLSID_CEventPrepareAllResult = 20074, CLSID_CEventPrepareWork = 20075, CLSID_CEventPrepareWorkResult = 20076, CLSID_CEventEraseAccount = 20077, CLSID_CEventEraseAccountResult = 20078, CLSID_CEventAppHome = 20079, CLSID_CEventAppResume = 20080, CLSID_CEventMobileSettingInfo = 20081, CLSID_CEventAmendHeadFrame_Req = 20082, CLSID_CEventAmendHeadFrame_Asw = 20083, CLSID_CEventClearHeadFrameLock_Req = 20084, CLSID_CEventClearHeadFrameLock_Asw = 20085, CLSID_CEventRoleHeadFrameLock_Req = 20086, CLSID_CEventRoleHeadFrameLock_Asw = 20087, CLSID_CEventChooseBackImage = 20088, CLSID_CEventChooseBackImageResult = 20089, CLSID_CEventMinorChatResult = 20090, CLSID_CEventChooseBgm = 20091, CLSID_CEventChooseBgmResult = 20092, CLSID_CEventChangeTitle = 20093, CLSID_CEventChangeTitleResult = 20094, CLSID_CEventChangeTitleInfoResult = 20095, CLSID_CEventPushLoginComplete = 20096, CLSID_CEventMobileBadgeInfo = 20097, CLSID_CEventSeasonStoryReq = 20098, CLSID_CEventSeasonStoryResult = 20099}
-;
-(table.append)(MessageDef, roleMessageDef)
-local ROLE_RESULT_CODE = {ROLE_TRUE = 0, ROLE_SUCCESS = 0, ROLE_FALSE = 1, ROLE_FAILED = 1, ROLE_PERSIST_ERROR = 2, ROLE_ERROR_NULL_OBJECT = 3, ROLE_ERROR_NULL_PSTID = 4, ROLE_ERROR_ALREADY_HAVE_ROLE = 5, ROLE_ERROR_SEX = 6, ROLE_ERROR_NOT_ROLE = 7, ROLE_ERROR_DUPLICATE_NICK = 8, ROLE_ERROR_DIRTY_NICK = 9, ROLE_ERROR_LONG_NICK = 10, ROLE_ERROR_NOT_OPENID_ACCOUNTID = 11, ROLE_ERROR_ACCOUNT_HAVE_ROLE = 12, ROLE_ERROR_SERVER_MAINTAIN = 13, ROLE_ERROR_MSDK_ERROR = 14, ROLE_ALREADY_LOGIN = 15, ROLE_ERROR_MAX_REGISTER = 16, ROLE_ERROR_SERVERID = 17, ROLE_ERROR_NULL_RANDOMNICK = 18, ROLE_ERROR_NOT_ENOUGH_DIAMOND = 19, ROLE_ERROR_REGISTER_FLOWCONTROL = 20, ROLE_ERROR_CACHE_FAILURE = 21, ROLE_ERROR_CHANGE_NICK_INVALID = 22, ROLE_ERROR_CHANGE_NICK_LIMIT = 23, ROLE_ERROR_CHANGE_NICK_REPEAT = 24, ROLE_ERROR_CHANGE_NICK_SPE = 25, ROLE_CHOOSE_PAINTING_PET_INEXISTENCE = 26, ROLE_CHOOSE_PAINTING_PET_GRADE_TOOLOW = 27, ROLE_ERROR_INVALID_DATA = 28, ROLE_ERROR_HEAD_IMAGE_LOCK = 29, ROLE_ERROR_HEAD_IMAGE_LOCK_CONDITION = 30, ROLE_ERROR_AMEND_NAME_DIAMOND = 31, ROLE_ERROR_CHANGE_SIGN_LIMIT = 32, ROLE_ERROR_AMEND_NAME_BAN = 33, ROLE_ERROR_AMEND_SIGNS_BAN = 34, ROLE_TSSSDK_UIC_FAIL = 35, ROLE_STORYAFFINITY_NO_ID = 36, ROLE_STORYAFFINITY_NO_PET = 37, ROLE_STORYAFFINITY_RECEIVED = 38, ROLE_ERROR_HEAD_FRAME_LOCK = 39, ROLE_ERROR_HEAD_FRAME_LOCK_CONDITION = 40, ROLE_CHOOSE_PAINTING_PET_NO_SKIN = 41, ROLE_CHOOSE_PAINTING_NO_BOARD_PET = 42, ROLE_TITLE_NOT_ACCESS = 43, ROLE_FIFURE_NOT_ACCESS = 44, ROLE_CHOOSE_PAINTING_UNCHANGED = 60, ROLE_CHOOSE_PAINTING_INVALID_DATA = 61, ROLE_CHOOSE_PAINTING_CLEAR = 62, ROLE_ERROR_BANNED_LOGIN = 1000, ROLE_IS_CHOOSING_ROLE = 1001, ROLE_ERROR_CLOSE_REGISTER = 1002}
-;
-(_ENV._enum)("ROLE_RESULT_CODE", ROLE_RESULT_CODE)
+local roleMessageDef = {
+  CLSID_CEventMobileChooseRole = 20000,
+  CLSID_CEventMobileChooseRoleResult = 20001,
+  CLSID_CEventMobileCreateRole = 20002,
+  CLSID_CEventMobileCreateRoleResult = 20003,
+  CLSID_CEventPushPropertyChange = 20004,
+  CLSID_CEventRoleHealthPoint = 20005,
+  CLSID_CEventRoleHealthPointResult = 20006,
+  CLSID_CEventUpdateMSDKAuthInfo = 20007,
+  CLSID_CEventUpdateMSDKAuthInfoResult = 20008,
+  CLSID_CEventMobileGetRandomNick = 20009,
+  CLSID_CEventMobileGetRandomNickResult = 20010,
+  CLSID_CEventRequestLoadCharList = 20011,
+  CLSID_CEventLoadCharListResult = 20012,
+  CLSID_CEventMobileRoleGetCardBaseInfo = 20013,
+  CLSID_CEventMobileRoleGetCardBaseInfoResult = 20014,
+  CLSID_CEventPushLevelChange = 20015,
+  CLSID_CEventPushGuideChange = 20016,
+  CLSID_CEventPushTextChange = 20017,
+  CLSID_CEventPushUnlockCG = 20018,
+  CLSID_CEventMobileRoleGetGuideInfo = 20019,
+  CLSID_CEventMobileRoleGetGuideInfoResult = 20020,
+  CLSID_CEventMobileRoleSetGuideInfo = 20021,
+  CLSID_CEventMobileRoleSetGuideInfoResult = 20022,
+  CLSID_CEventPushTips = 20023,
+  CLSID_CEventPushDiamondChange = 20024,
+  CLSID_CEventQueryQQVip = 20025,
+  CLSID_CEventQueryQQVipResult = 20026,
+  CLSID_CEventPushSyncItem = 20027,
+  CLSID_CEventRequestSendAntiData = 20028,
+  CLSID_CEventReplySendAntiData = 20029,
+  CLSID_CEventPushRecvAntiData = 20030,
+  CLSID_CEventPushStrongerAction = 20031,
+  CLSID_CEventPushModuleCloseInfo = 20032,
+  CLSID_CEventPushMsg = 20033,
+  CLSID_CEventClientResume = 20034,
+  CLSID_CEventClientResumeResult = 20035,
+  CLSID_CEventPlayerShare = 20036,
+  CLSID_CEventPlayerShareResult = 20037,
+  CLSID_CEventChangePlayerName = 20038,
+  CLSID_CEventChangePlayerNameResult = 20039,
+  CLSID_CEventGetRandomSeed = 20040,
+  CLSID_CEventGetRandomSeedResult = 20041,
+  CLSID_CEventSetExtFlag = 20042,
+  CLSID_CEventSetExtFlagResult = 20043,
+  CLSID_CEventSetGuideReq = 20044,
+  CLSID_CEventSetGuideAsw = 20045,
+  CLSID_CEventPushModuleUnlocked = 20046,
+  CLSID_CEventHomePageEnter = 20047,
+  CLSID_CEventSkipStory = 20048,
+  CLSID_CEventSkipStoryResult = 20049,
+  CLSID_CEventEndStory = 20050,
+  CLSID_CEventEndStoryResult = 20051,
+  CLSID_CEventChangeLeader = 20052,
+  CLSID_CEventChoosePainting = 20053,
+  CLSID_CEventChoosePaintingResult = 20054,
+  CLSID_CEventAmendRoleName_Req = 20055,
+  CLSID_CEventAmendRoleName_Asw = 20056,
+  CLSID_CEventAmendSignText_Req = 20057,
+  CLSID_CEventAmendSignText_Asw = 20058,
+  CLSID_CEventAmendHeadImage_Req = 20059,
+  CLSID_CEventAmendHeadImage_Asw = 20060,
+  CLSID_CEventClearHeadImageLock_Req = 20061,
+  CLSID_CEventClearHeadImageLock_Asw = 20062,
+  CLSID_CEventRoleInfo_Req = 20063,
+  CLSID_CEventRoleInfo_Asw = 20064,
+  CLSID_CEventRoleHeadImageLock_Req = 20065,
+  CLSID_CEventRoleHeadImageLock_Asw = 20066,
+  CLSID_CEventTssReportData = 20067,
+  CLSID_CEventStoryAffinity = 20068,
+  CLSID_CEventStoryAffinityResult = 20069,
+  CLSID_CEventAddStoryAffinity = 20070,
+  CLSID_CEventAddStoryAffinityResult = 20071,
+  CLSID_CEventClientSaveLog = 20072,
+  CLSID_CEventPrepareAll = 20073,
+  CLSID_CEventPrepareAllResult = 20074,
+  CLSID_CEventPrepareWork = 20075,
+  CLSID_CEventPrepareWorkResult = 20076,
+  CLSID_CEventEraseAccount = 20077,
+  CLSID_CEventEraseAccountResult = 20078,
+  CLSID_CEventAppHome = 20079,
+  CLSID_CEventAppResume = 20080,
+  CLSID_CEventMobileSettingInfo = 20081,
+  CLSID_CEventAmendHeadFrame_Req = 20082,
+  CLSID_CEventAmendHeadFrame_Asw = 20083,
+  CLSID_CEventClearHeadFrameLock_Req = 20084,
+  CLSID_CEventClearHeadFrameLock_Asw = 20085,
+  CLSID_CEventRoleHeadFrameLock_Req = 20086,
+  CLSID_CEventRoleHeadFrameLock_Asw = 20087,
+  CLSID_CEventChooseBackImage = 20088,
+  CLSID_CEventChooseBackImageResult = 20089,
+  CLSID_CEventMinorChatResult = 20090,
+  CLSID_CEventChooseBgm = 20091,
+  CLSID_CEventChooseBgmResult = 20092,
+  CLSID_CEventChangeTitle = 20093,
+  CLSID_CEventChangeTitleResult = 20094,
+  CLSID_CEventChangeTitleInfoResult = 20095,
+  CLSID_CEventPushLoginComplete = 20096,
+  CLSID_CEventMobileBadgeInfo = 20097,
+  CLSID_CEventSeasonStoryReq = 20098,
+  CLSID_CEventSeasonStoryResult = 20099
+}
+table.append(MessageDef, roleMessageDef)
+local ROLE_RESULT_CODE = {
+  ROLE_TRUE = 0,
+  ROLE_SUCCESS = 0,
+  ROLE_FALSE = 1,
+  ROLE_FAILED = 1,
+  ROLE_PERSIST_ERROR = 2,
+  ROLE_ERROR_NULL_OBJECT = 3,
+  ROLE_ERROR_NULL_PSTID = 4,
+  ROLE_ERROR_ALREADY_HAVE_ROLE = 5,
+  ROLE_ERROR_SEX = 6,
+  ROLE_ERROR_NOT_ROLE = 7,
+  ROLE_ERROR_DUPLICATE_NICK = 8,
+  ROLE_ERROR_DIRTY_NICK = 9,
+  ROLE_ERROR_LONG_NICK = 10,
+  ROLE_ERROR_NOT_OPENID_ACCOUNTID = 11,
+  ROLE_ERROR_ACCOUNT_HAVE_ROLE = 12,
+  ROLE_ERROR_SERVER_MAINTAIN = 13,
+  ROLE_ERROR_MSDK_ERROR = 14,
+  ROLE_ALREADY_LOGIN = 15,
+  ROLE_ERROR_MAX_REGISTER = 16,
+  ROLE_ERROR_SERVERID = 17,
+  ROLE_ERROR_NULL_RANDOMNICK = 18,
+  ROLE_ERROR_NOT_ENOUGH_DIAMOND = 19,
+  ROLE_ERROR_REGISTER_FLOWCONTROL = 20,
+  ROLE_ERROR_CACHE_FAILURE = 21,
+  ROLE_ERROR_CHANGE_NICK_INVALID = 22,
+  ROLE_ERROR_CHANGE_NICK_LIMIT = 23,
+  ROLE_ERROR_CHANGE_NICK_REPEAT = 24,
+  ROLE_ERROR_CHANGE_NICK_SPE = 25,
+  ROLE_CHOOSE_PAINTING_PET_INEXISTENCE = 26,
+  ROLE_CHOOSE_PAINTING_PET_GRADE_TOOLOW = 27,
+  ROLE_ERROR_INVALID_DATA = 28,
+  ROLE_ERROR_HEAD_IMAGE_LOCK = 29,
+  ROLE_ERROR_HEAD_IMAGE_LOCK_CONDITION = 30,
+  ROLE_ERROR_AMEND_NAME_DIAMOND = 31,
+  ROLE_ERROR_CHANGE_SIGN_LIMIT = 32,
+  ROLE_ERROR_AMEND_NAME_BAN = 33,
+  ROLE_ERROR_AMEND_SIGNS_BAN = 34,
+  ROLE_TSSSDK_UIC_FAIL = 35,
+  ROLE_STORYAFFINITY_NO_ID = 36,
+  ROLE_STORYAFFINITY_NO_PET = 37,
+  ROLE_STORYAFFINITY_RECEIVED = 38,
+  ROLE_ERROR_HEAD_FRAME_LOCK = 39,
+  ROLE_ERROR_HEAD_FRAME_LOCK_CONDITION = 40,
+  ROLE_CHOOSE_PAINTING_PET_NO_SKIN = 41,
+  ROLE_CHOOSE_PAINTING_NO_BOARD_PET = 42,
+  ROLE_TITLE_NOT_ACCESS = 43,
+  ROLE_FIFURE_NOT_ACCESS = 44,
+  ROLE_CHOOSE_PAINTING_UNCHANGED = 60,
+  ROLE_CHOOSE_PAINTING_INVALID_DATA = 61,
+  ROLE_CHOOSE_PAINTING_CLEAR = 62,
+  ROLE_ERROR_BANNED_LOGIN = 1000,
+  ROLE_IS_CHOOSING_ROLE = 1001,
+  ROLE_ERROR_CLOSE_REGISTER = 1002
+}
+_enum("ROLE_RESULT_CODE", ROLE_RESULT_CODE)
 local EnumMaxStringLen = {E_MaxString_RoleName = 14, E_MaxString_SignText = 150}
-;
-(_ENV._enum)("EnumMaxStringLen", EnumMaxStringLen)
-local RoleCardMessageError = {RCM_Succ = 0, RCM_NoPlayer = 1, RCM_Unknown = 2}
-;
-(_ENV._enum)("RoleCardMessageError", RoleCardMessageError)
-local CLICKENTRANCE = {CE_TASK = 1, CE_CHANGE_ASSISTANT = 2, CE_ADD_PHY = 3, CE_ADD_DIAMOND = 4, CE_PICTURE = 5, CE_GUILD = 6, CE_EXPLORE = 7, CE_SHOP = 8, CE_SETTING = 10, CE_MAIL = 11, CE_FRIEND = 12, CE_NOTICE = 13, CE_PLAYER_INFO = 14, CE_TEAM = 15, CE_PET = 16, CE_SUMMON = 17, CE_AIRCRAFT = 18, CE_STORE = 19}
-;
-(_ENV._enum)("CLICKENTRANCE", CLICKENTRANCE)
-;
-(_ENV._class)("CEventMobileChooseRole", _ENV.CCallRequestEvent)
-_ENV.CEventMobileChooseRole = _ENV.CEventMobileChooseRole
--- DECOMPILER ERROR at PC300: Confused about usage of register: R5 in 'UnsetPending'
+_enum("EnumMaxStringLen", EnumMaxStringLen)
+local RoleCardMessageError = {
+  RCM_Succ = 0,
+  RCM_NoPlayer = 1,
+  RCM_Unknown = 2
+}
+_enum("RoleCardMessageError", RoleCardMessageError)
+local CLICKENTRANCE = {
+  CE_TASK = 1,
+  CE_CHANGE_ASSISTANT = 2,
+  CE_ADD_PHY = 3,
+  CE_ADD_DIAMOND = 4,
+  CE_PICTURE = 5,
+  CE_GUILD = 6,
+  CE_EXPLORE = 7,
+  CE_SHOP = 8,
+  CE_SETTING = 10,
+  CE_MAIL = 11,
+  CE_FRIEND = 12,
+  CE_NOTICE = 13,
+  CE_PLAYER_INFO = 14,
+  CE_TEAM = 15,
+  CE_PET = 16,
+  CE_SUMMON = 17,
+  CE_AIRCRAFT = 18,
+  CE_STORE = 19
+}
+_enum("CLICKENTRANCE", CLICKENTRANCE)
+_class("CEventMobileChooseRole", CCallRequestEvent)
+CEventMobileChooseRole = CEventMobileChooseRole
 
-;
-(_ENV.CEventMobileChooseRole).Constructor = function(self)
-  -- function num : 0_0
+function CEventMobileChooseRole:Constructor()
   self.server_id = 0
   self.persistid = 0
   self.intl_detect_country = ""
@@ -34,28 +198,26 @@ _ENV.CEventMobileChooseRole = _ENV.CEventMobileChooseRole
   self.client_language_type = ""
 end
 
--- DECOMPILER ERROR at PC330: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileChooseRole)._proto = {
-[1] = {"server_id", "int"}
-, 
-[2] = {"persistid", "int64"}
-, 
-[3] = {"intl_detect_country", "string"}
-, 
-[4] = {"player_choose_country", "string"}
-, 
-[5] = {"client_language_type", "string"}
+CEventMobileChooseRole._proto = {
+  [1] = {"server_id", "int"},
+  [2] = {"persistid", "int64"},
+  [3] = {
+    "intl_detect_country",
+    "string"
+  },
+  [4] = {
+    "player_choose_country",
+    "string"
+  },
+  [5] = {
+    "client_language_type",
+    "string"
+  }
 }
-;
-(_ENV._class)("CEventMobileChooseRoleResult", _ENV.CCallReplyEvent)
-_ENV.CEventMobileChooseRoleResult = _ENV.CEventMobileChooseRoleResult
--- DECOMPILER ERROR at PC345: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventMobileChooseRoleResult", CCallReplyEvent)
+CEventMobileChooseRoleResult = CEventMobileChooseRoleResult
 
-;
-(_ENV.CEventMobileChooseRoleResult).Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventMobileChooseRoleResult:Constructor()
   self.ret = 0
   self.mobile_char_info = MobileCharInfo:New()
   self.item_info_vec = {}
@@ -130,1017 +292,836 @@ _ENV.CEventMobileChooseRoleResult = _ENV.CEventMobileChooseRoleResult
   self.spine_id = 0
 end
 
--- DECOMPILER ERROR at PC759: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileChooseRoleResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"mobile_char_info", "MobileCharInfo"}
-, 
-[3] = {"item_info_vec", "list<item_data_info>"}
-, 
-[4] = {"offline_msg", "list<ChatMessage>"}
-, 
-[5] = {"pet_data_vec", "list<pet_data>"}
-, 
-[6] = {"pass_mission", "list<mission_info>"}
-, 
-[7] = {"already_return_power_mission_list", "list<int>"}
-, 
-[8] = {"m_formation_info", "list<formation_info>"}
-, 
-[9] = {"client_aircraft_info", "aircraft_info"}
-, 
-[10] = {"aircraft_spaces", "map<int,aircraft_space_info>"}
-, 
-[11] = {"missionStoryData", "mission_story_data"}
-, 
-[12] = {"m_maze_info", "maze_info"}
-, 
-[13] = {"resdungeonAllData", "dungeon_all_data"}
-, 
-[14] = {"already_returned_power_resinstance", "list<int>"}
-, 
-[15] = {"missionChapterAwardData", "mission_chapter_award_data"}
-, 
-[16] = {"all_market_info", "all_market_data"}
-, 
-[17] = {"shop_config", "AllShopConfig"}
-, 
-[18] = {"quest_data", "MobileAllQuestData"}
-, 
-[19] = {"new_pet_list", "list<int>"}
-, 
-[20] = {"mobile_choose_painting", "MobileChoosePainting"}
-, 
-[21] = {"bHaveNewMail", "bool"}
-, 
-[22] = {"level_info", "list<int>"}
-, 
-[23] = {"tower_data", "player_tower_data"}
-, 
-[24] = {"ban_info", "idip_ban_msg"}
-, 
-[25] = {"guide", "bool"}
-, 
-[26] = {"bHaveNewMsg", "bool"}
-, 
-[27] = {"story_affinity", "list<int>"}
-, 
-[28] = {"tmMazeInitTime", "time"}
-, 
-[29] = {"gamble_pool_vec", "list<PrizePoolInfo>"}
-, 
-[30] = {"today_first_login", "bool"}
-, 
-[31] = {"zone_id_type", "int"}
-, 
-[32] = {"is_sign_in_today", "bool"}
-, 
-[33] = {"next_sign_in_time", "time"}
-, 
-[34] = {"b_can_re_sign_in_ex_vig", "bool"}
-, 
-[35] = {"nChangeDayLoginDays", "int"}
-, 
-[36] = {"nNextTotalLoginRewardDays", "int"}
-, 
-[37] = {"total_diamond_count_", "int64"}
-, 
-[38] = {"m_extStoryDataList", "DExtStoryDataList"}
-, 
-[39] = {"b_tale_do", "bool"}
-, 
-[40] = {"b_tale_call", "bool"}
-, 
-[41] = {"next_zero_time", "time"}
-, 
-[42] = {"accept_status", "map<int,int>"}
-, 
-[43] = {"reward_cfg", "map<int,list<RoleAsset>>"}
-, 
-[44] = {"tale_stage_reward2accept", "bool"}
-, 
-[45] = {"minor_chat_open", "bool"}
-, 
-[46] = {"return_power_cam_mission_list", "list<int>"}
-, 
-[47] = {"store_review", "bool"}
-, 
-[48] = {"apppublishsubtype", "int"}
-, 
-[49] = {"pet_skin_data_vec", "list<pet_skin_data>"}
-, 
-[50] = {"next_GMT_zero_time", "time"}
-, 
-[51] = {"skin_market_datas", "map<int,SkinMarketGoodsInfo>"}
-, 
-[52] = {"server_time_zone_diff", "time"}
-, 
-[53] = {"area_design_cfg", "map<int,LostAreaDesignConfig>"}
-, 
-[54] = {"area_level_group_cfg", "map<int,LostAreaLevelGroupConfig>"}
-, 
-[55] = {"b_key_switch", "bool"}
-, 
-[56] = {"campaign_refresh_time", "time"}
-, 
-[57] = {"b_tale_task", "bool"}
-, 
-[58] = {"task_group_timeline", "list<homeland_sametime_group>"}
-, 
-[59] = {"task_group_close_timeline", "list<homeland_sametime_group>"}
-, 
-[60] = {"homeland_forge_data", "ForgeQueueInfo"}
-, 
-[61] = {"homeland_cultivation_data", "CultivationInfo"}
-, 
-[62] = {"homeland_visit_help_data", "map<int64,VisitHelpTimeInfo>"}
-, 
-[63] = {"homeland_unlock_functions", "list<int64>"}
-, 
-[64] = {"group_id_set", "list<int>"}
-, 
-[65] = {"is_fix", "bool"}
-, 
-[66] = {"fix_not_enough", "map<int,int64>"}
-, 
-[67] = {"medal_data", "all_medal_data"}
-, 
-[68] = {"movice_info", "MoviceInfo"}
-, 
-[69] = {"equip_refine_new", "bool"}
-, 
-[70] = {"season", "season_ext_info"}
-, 
-[71] = {"is_hand_operate", "bool"}
-, 
-[72] = {"spine_id", "int"}
+CEventMobileChooseRoleResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "mobile_char_info",
+    "MobileCharInfo"
+  },
+  [3] = {
+    "item_info_vec",
+    "list<item_data_info>"
+  },
+  [4] = {
+    "offline_msg",
+    "list<ChatMessage>"
+  },
+  [5] = {
+    "pet_data_vec",
+    "list<pet_data>"
+  },
+  [6] = {
+    "pass_mission",
+    "list<mission_info>"
+  },
+  [7] = {
+    "already_return_power_mission_list",
+    "list<int>"
+  },
+  [8] = {
+    "m_formation_info",
+    "list<formation_info>"
+  },
+  [9] = {
+    "client_aircraft_info",
+    "aircraft_info"
+  },
+  [10] = {
+    "aircraft_spaces",
+    "map<int,aircraft_space_info>"
+  },
+  [11] = {
+    "missionStoryData",
+    "mission_story_data"
+  },
+  [12] = {
+    "m_maze_info",
+    "maze_info"
+  },
+  [13] = {
+    "resdungeonAllData",
+    "dungeon_all_data"
+  },
+  [14] = {
+    "already_returned_power_resinstance",
+    "list<int>"
+  },
+  [15] = {
+    "missionChapterAwardData",
+    "mission_chapter_award_data"
+  },
+  [16] = {
+    "all_market_info",
+    "all_market_data"
+  },
+  [17] = {
+    "shop_config",
+    "AllShopConfig"
+  },
+  [18] = {
+    "quest_data",
+    "MobileAllQuestData"
+  },
+  [19] = {
+    "new_pet_list",
+    "list<int>"
+  },
+  [20] = {
+    "mobile_choose_painting",
+    "MobileChoosePainting"
+  },
+  [21] = {
+    "bHaveNewMail",
+    "bool"
+  },
+  [22] = {"level_info", "list<int>"},
+  [23] = {
+    "tower_data",
+    "player_tower_data"
+  },
+  [24] = {
+    "ban_info",
+    "idip_ban_msg"
+  },
+  [25] = {"guide", "bool"},
+  [26] = {
+    "bHaveNewMsg",
+    "bool"
+  },
+  [27] = {
+    "story_affinity",
+    "list<int>"
+  },
+  [28] = {
+    "tmMazeInitTime",
+    "time"
+  },
+  [29] = {
+    "gamble_pool_vec",
+    "list<PrizePoolInfo>"
+  },
+  [30] = {
+    "today_first_login",
+    "bool"
+  },
+  [31] = {
+    "zone_id_type",
+    "int"
+  },
+  [32] = {
+    "is_sign_in_today",
+    "bool"
+  },
+  [33] = {
+    "next_sign_in_time",
+    "time"
+  },
+  [34] = {
+    "b_can_re_sign_in_ex_vig",
+    "bool"
+  },
+  [35] = {
+    "nChangeDayLoginDays",
+    "int"
+  },
+  [36] = {
+    "nNextTotalLoginRewardDays",
+    "int"
+  },
+  [37] = {
+    "total_diamond_count_",
+    "int64"
+  },
+  [38] = {
+    "m_extStoryDataList",
+    "DExtStoryDataList"
+  },
+  [39] = {"b_tale_do", "bool"},
+  [40] = {
+    "b_tale_call",
+    "bool"
+  },
+  [41] = {
+    "next_zero_time",
+    "time"
+  },
+  [42] = {
+    "accept_status",
+    "map<int,int>"
+  },
+  [43] = {
+    "reward_cfg",
+    "map<int,list<RoleAsset>>"
+  },
+  [44] = {
+    "tale_stage_reward2accept",
+    "bool"
+  },
+  [45] = {
+    "minor_chat_open",
+    "bool"
+  },
+  [46] = {
+    "return_power_cam_mission_list",
+    "list<int>"
+  },
+  [47] = {
+    "store_review",
+    "bool"
+  },
+  [48] = {
+    "apppublishsubtype",
+    "int"
+  },
+  [49] = {
+    "pet_skin_data_vec",
+    "list<pet_skin_data>"
+  },
+  [50] = {
+    "next_GMT_zero_time",
+    "time"
+  },
+  [51] = {
+    "skin_market_datas",
+    "map<int,SkinMarketGoodsInfo>"
+  },
+  [52] = {
+    "server_time_zone_diff",
+    "time"
+  },
+  [53] = {
+    "area_design_cfg",
+    "map<int,LostAreaDesignConfig>"
+  },
+  [54] = {
+    "area_level_group_cfg",
+    "map<int,LostAreaLevelGroupConfig>"
+  },
+  [55] = {
+    "b_key_switch",
+    "bool"
+  },
+  [56] = {
+    "campaign_refresh_time",
+    "time"
+  },
+  [57] = {
+    "b_tale_task",
+    "bool"
+  },
+  [58] = {
+    "task_group_timeline",
+    "list<homeland_sametime_group>"
+  },
+  [59] = {
+    "task_group_close_timeline",
+    "list<homeland_sametime_group>"
+  },
+  [60] = {
+    "homeland_forge_data",
+    "ForgeQueueInfo"
+  },
+  [61] = {
+    "homeland_cultivation_data",
+    "CultivationInfo"
+  },
+  [62] = {
+    "homeland_visit_help_data",
+    "map<int64,VisitHelpTimeInfo>"
+  },
+  [63] = {
+    "homeland_unlock_functions",
+    "list<int64>"
+  },
+  [64] = {
+    "group_id_set",
+    "list<int>"
+  },
+  [65] = {"is_fix", "bool"},
+  [66] = {
+    "fix_not_enough",
+    "map<int,int64>"
+  },
+  [67] = {
+    "medal_data",
+    "all_medal_data"
+  },
+  [68] = {
+    "movice_info",
+    "MoviceInfo"
+  },
+  [69] = {
+    "equip_refine_new",
+    "bool"
+  },
+  [70] = {
+    "season",
+    "season_ext_info"
+  },
+  [71] = {
+    "is_hand_operate",
+    "bool"
+  },
+  [72] = {"spine_id", "int"}
 }
-;
-(_ENV._class)("CEventMobileCreateRole", _ENV.CCallRequestEvent)
-_ENV.CEventMobileCreateRole = _ENV.CEventMobileCreateRole
--- DECOMPILER ERROR at PC774: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventMobileCreateRole", CCallRequestEvent)
+CEventMobileCreateRole = CEventMobileCreateRole
 
-;
-(_ENV.CEventMobileCreateRole).Constructor = function(self)
-  -- function num : 0_2
+function CEventMobileCreateRole:Constructor()
   self.sex = 0
   self.name = ""
 end
 
--- DECOMPILER ERROR at PC789: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileCreateRole)._proto = {
-[1] = {"sex", "int"}
-, 
-[2] = {"name", "string"}
+CEventMobileCreateRole._proto = {
+  [1] = {"sex", "int"},
+  [2] = {"name", "string"}
 }
-;
-(_ENV._class)("CEventMobileCreateRoleResult", _ENV.CCallReplyEvent)
-_ENV.CEventMobileCreateRoleResult = _ENV.CEventMobileCreateRoleResult
--- DECOMPILER ERROR at PC804: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventMobileCreateRoleResult", CCallReplyEvent)
+CEventMobileCreateRoleResult = CEventMobileCreateRoleResult
 
-;
-(_ENV.CEventMobileCreateRoleResult).Constructor = function(self)
-  -- function num : 0_3
+function CEventMobileCreateRoleResult:Constructor()
   self.ret = 0
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC819: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileCreateRoleResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"pstid", "int64"}
+CEventMobileCreateRoleResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"pstid", "int64"}
 }
-;
-(_ENV._class)("CEventPushPropertyChange", _ENV.CSvrPushEvent)
-_ENV.CEventPushPropertyChange = _ENV.CEventPushPropertyChange
--- DECOMPILER ERROR at PC834: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushPropertyChange", CSvrPushEvent)
+CEventPushPropertyChange = CEventPushPropertyChange
 
-;
-(_ENV.CEventPushPropertyChange).Constructor = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CEventPushPropertyChange:Constructor()
   self.info = MobileCharInfo:New()
 end
 
--- DECOMPILER ERROR at PC844: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushPropertyChange)._proto = {
-[1] = {"info", "MobileCharInfo"}
+CEventPushPropertyChange._proto = {
+  [1] = {
+    "info",
+    "MobileCharInfo"
+  }
 }
-;
-(_ENV._class)("CEventRoleHealthPoint", _ENV.CCallRequestEvent)
-_ENV.CEventRoleHealthPoint = _ENV.CEventRoleHealthPoint
--- DECOMPILER ERROR at PC859: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventRoleHealthPoint", CCallRequestEvent)
+CEventRoleHealthPoint = CEventRoleHealthPoint
 
-;
-(_ENV.CEventRoleHealthPoint).Constructor = function(self)
-  -- function num : 0_5
+function CEventRoleHealthPoint:Constructor()
 end
 
--- DECOMPILER ERROR at PC864: Confused about usage of register: R5 in 'UnsetPending'
+CEventRoleHealthPoint._proto = {}
+_class("CEventRoleHealthPointResult", CCallReplyEvent)
+CEventRoleHealthPointResult = CEventRoleHealthPointResult
 
-;
-(_ENV.CEventRoleHealthPoint)._proto = {}
-;
-(_ENV._class)("CEventRoleHealthPointResult", _ENV.CCallReplyEvent)
-_ENV.CEventRoleHealthPointResult = _ENV.CEventRoleHealthPointResult
--- DECOMPILER ERROR at PC879: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventRoleHealthPointResult).Constructor = function(self)
-  -- function num : 0_6
+function CEventRoleHealthPointResult:Constructor()
   self.phy_point = 0
   self.phy_last_time = 0
   self.phy_point_max = 0
   self.phy_point_rate = 0
 end
 
--- DECOMPILER ERROR at PC904: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventRoleHealthPointResult)._proto = {
-[1] = {"phy_point", "int"}
-, 
-[2] = {"phy_last_time", "time"}
-, 
-[3] = {"phy_point_max", "int"}
-, 
-[4] = {"phy_point_rate", "int"}
+CEventRoleHealthPointResult._proto = {
+  [1] = {"phy_point", "int"},
+  [2] = {
+    "phy_last_time",
+    "time"
+  },
+  [3] = {
+    "phy_point_max",
+    "int"
+  },
+  [4] = {
+    "phy_point_rate",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventUpdateMSDKAuthInfo", _ENV.CCallRequestEvent)
-_ENV.CEventUpdateMSDKAuthInfo = _ENV.CEventUpdateMSDKAuthInfo
--- DECOMPILER ERROR at PC919: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventUpdateMSDKAuthInfo", CCallRequestEvent)
+CEventUpdateMSDKAuthInfo = CEventUpdateMSDKAuthInfo
 
-;
-(_ENV.CEventUpdateMSDKAuthInfo).Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CEventUpdateMSDKAuthInfo:Constructor()
   self.auth_info = MSDKAuthInfo:New()
 end
 
--- DECOMPILER ERROR at PC929: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventUpdateMSDKAuthInfo)._proto = {
-[1] = {"auth_info", "MSDKAuthInfo"}
+CEventUpdateMSDKAuthInfo._proto = {
+  [1] = {
+    "auth_info",
+    "MSDKAuthInfo"
+  }
 }
-;
-(_ENV._class)("CEventUpdateMSDKAuthInfoResult", _ENV.CCallReplyEvent)
-_ENV.CEventUpdateMSDKAuthInfoResult = _ENV.CEventUpdateMSDKAuthInfoResult
--- DECOMPILER ERROR at PC944: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventUpdateMSDKAuthInfoResult", CCallReplyEvent)
+CEventUpdateMSDKAuthInfoResult = CEventUpdateMSDKAuthInfoResult
 
-;
-(_ENV.CEventUpdateMSDKAuthInfoResult).Constructor = function(self)
-  -- function num : 0_8
+function CEventUpdateMSDKAuthInfoResult:Constructor()
 end
 
--- DECOMPILER ERROR at PC949: Confused about usage of register: R5 in 'UnsetPending'
+CEventUpdateMSDKAuthInfoResult._proto = {}
+_class("CEventMobileGetRandomNick", CCallRequestEvent)
+CEventMobileGetRandomNick = CEventMobileGetRandomNick
 
-;
-(_ENV.CEventUpdateMSDKAuthInfoResult)._proto = {}
-;
-(_ENV._class)("CEventMobileGetRandomNick", _ENV.CCallRequestEvent)
-_ENV.CEventMobileGetRandomNick = _ENV.CEventMobileGetRandomNick
--- DECOMPILER ERROR at PC964: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileGetRandomNick).Constructor = function(self)
-  -- function num : 0_9
+function CEventMobileGetRandomNick:Constructor()
   self.sex = 0
 end
 
--- DECOMPILER ERROR at PC974: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileGetRandomNick)._proto = {
-[1] = {"sex", "int"}
+CEventMobileGetRandomNick._proto = {
+  [1] = {"sex", "int"}
 }
-;
-(_ENV._class)("CEventMobileGetRandomNickResult", _ENV.CCallReplyEvent)
-_ENV.CEventMobileGetRandomNickResult = _ENV.CEventMobileGetRandomNickResult
--- DECOMPILER ERROR at PC989: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventMobileGetRandomNickResult", CCallReplyEvent)
+CEventMobileGetRandomNickResult = CEventMobileGetRandomNickResult
 
-;
-(_ENV.CEventMobileGetRandomNickResult).Constructor = function(self)
-  -- function num : 0_10
+function CEventMobileGetRandomNickResult:Constructor()
   self.ret = 0
   self.name = ""
 end
 
--- DECOMPILER ERROR at PC1004: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileGetRandomNickResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"name", "string"}
+CEventMobileGetRandomNickResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"name", "string"}
 }
-;
-(_ENV._class)("CEventRequestLoadCharList", _ENV.CCallRequestEvent)
-_ENV.CEventRequestLoadCharList = _ENV.CEventRequestLoadCharList
--- DECOMPILER ERROR at PC1019: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventRequestLoadCharList", CCallRequestEvent)
+CEventRequestLoadCharList = CEventRequestLoadCharList
 
-;
-(_ENV.CEventRequestLoadCharList).Constructor = function(self)
-  -- function num : 0_11
+function CEventRequestLoadCharList:Constructor()
 end
 
--- DECOMPILER ERROR at PC1024: Confused about usage of register: R5 in 'UnsetPending'
+CEventRequestLoadCharList._proto = {}
+_class("CEventLoadCharListResult", CCallReplyEvent)
+CEventLoadCharListResult = CEventLoadCharListResult
 
-;
-(_ENV.CEventRequestLoadCharList)._proto = {}
-;
-(_ENV._class)("CEventLoadCharListResult", _ENV.CCallReplyEvent)
-_ENV.CEventLoadCharListResult = _ENV.CEventLoadCharListResult
--- DECOMPILER ERROR at PC1039: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventLoadCharListResult).Constructor = function(self)
-  -- function num : 0_12
+function CEventLoadCharListResult:Constructor()
   self.char_list = {}
 end
 
--- DECOMPILER ERROR at PC1049: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventLoadCharListResult)._proto = {
-[1] = {"char_list", "map<string,int64>"}
+CEventLoadCharListResult._proto = {
+  [1] = {
+    "char_list",
+    "map<string,int64>"
+  }
 }
-;
-(_ENV._class)("CEventMobileRoleGetCardBaseInfo", _ENV.CCallRequestEvent)
-_ENV.CEventMobileRoleGetCardBaseInfo = _ENV.CEventMobileRoleGetCardBaseInfo
--- DECOMPILER ERROR at PC1064: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventMobileRoleGetCardBaseInfo", CCallRequestEvent)
+CEventMobileRoleGetCardBaseInfo = CEventMobileRoleGetCardBaseInfo
 
-;
-(_ENV.CEventMobileRoleGetCardBaseInfo).Constructor = function(self)
-  -- function num : 0_13
+function CEventMobileRoleGetCardBaseInfo:Constructor()
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC1074: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileRoleGetCardBaseInfo)._proto = {
-[2] = {"pstid", "int64"}
+CEventMobileRoleGetCardBaseInfo._proto = {
+  [2] = {"pstid", "int64"}
 }
-;
-(_ENV._class)("CEventMobileRoleGetCardBaseInfoResult", _ENV.CCallReplyEvent)
-_ENV.CEventMobileRoleGetCardBaseInfoResult = _ENV.CEventMobileRoleGetCardBaseInfoResult
--- DECOMPILER ERROR at PC1089: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventMobileRoleGetCardBaseInfoResult", CCallReplyEvent)
+CEventMobileRoleGetCardBaseInfoResult = CEventMobileRoleGetCardBaseInfoResult
 
-;
-(_ENV.CEventMobileRoleGetCardBaseInfoResult).Constructor = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function CEventMobileRoleGetCardBaseInfoResult:Constructor()
   self.result = 0
   self.contact_type = 0
   self.picture = ""
   self.base_info = base_char_info:New()
 end
 
--- DECOMPILER ERROR at PC1114: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileRoleGetCardBaseInfoResult)._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"contact_type", "int"}
-, 
-[3] = {"picture", "string"}
-, 
-[4] = {"base_info", "base_char_info"}
+CEventMobileRoleGetCardBaseInfoResult._proto = {
+  [1] = {"result", "int"},
+  [2] = {
+    "contact_type",
+    "int"
+  },
+  [3] = {"picture", "string"},
+  [4] = {
+    "base_info",
+    "base_char_info"
+  }
 }
-;
-(_ENV._class)("CEventPushLevelChange", _ENV.CSvrPushEvent)
-_ENV.CEventPushLevelChange = _ENV.CEventPushLevelChange
--- DECOMPILER ERROR at PC1129: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushLevelChange", CSvrPushEvent)
+CEventPushLevelChange = CEventPushLevelChange
 
-;
-(_ENV.CEventPushLevelChange).Constructor = function(self)
-  -- function num : 0_15
+function CEventPushLevelChange:Constructor()
   self.level_id = 0
 end
 
--- DECOMPILER ERROR at PC1139: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushLevelChange)._proto = {
-[1] = {"level_id", "int"}
+CEventPushLevelChange._proto = {
+  [1] = {"level_id", "int"}
 }
-;
-(_ENV._class)("CEventPushGuideChange", _ENV.CSvrPushEvent)
-_ENV.CEventPushGuideChange = _ENV.CEventPushGuideChange
--- DECOMPILER ERROR at PC1154: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushGuideChange", CSvrPushEvent)
+CEventPushGuideChange = CEventPushGuideChange
 
-;
-(_ENV.CEventPushGuideChange).Constructor = function(self)
-  -- function num : 0_16
+function CEventPushGuideChange:Constructor()
   self.values = false
 end
 
--- DECOMPILER ERROR at PC1164: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushGuideChange)._proto = {
-[1] = {"values", "bool"}
+CEventPushGuideChange._proto = {
+  [1] = {"values", "bool"}
 }
-;
-(_ENV._class)("CEventPushTextChange", _ENV.CSvrPushEvent)
-_ENV.CEventPushTextChange = _ENV.CEventPushTextChange
--- DECOMPILER ERROR at PC1179: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushTextChange", CSvrPushEvent)
+CEventPushTextChange = CEventPushTextChange
 
-;
-(_ENV.CEventPushTextChange).Constructor = function(self)
-  -- function num : 0_17
+function CEventPushTextChange:Constructor()
   self.nick = ""
 end
 
--- DECOMPILER ERROR at PC1189: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushTextChange)._proto = {
-[1] = {"nick", "string"}
+CEventPushTextChange._proto = {
+  [1] = {"nick", "string"}
 }
-;
-(_ENV._class)("CEventPushUnlockCG", _ENV.CSvrPushEvent)
-_ENV.CEventPushUnlockCG = _ENV.CEventPushUnlockCG
--- DECOMPILER ERROR at PC1204: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushUnlockCG", CSvrPushEvent)
+CEventPushUnlockCG = CEventPushUnlockCG
 
-;
-(_ENV.CEventPushUnlockCG).Constructor = function(self)
-  -- function num : 0_18
+function CEventPushUnlockCG:Constructor()
 end
 
--- DECOMPILER ERROR at PC1209: Confused about usage of register: R5 in 'UnsetPending'
+CEventPushUnlockCG._proto = {}
+_class("CEventMobileRoleGetGuideInfo", CCallRequestEvent)
+CEventMobileRoleGetGuideInfo = CEventMobileRoleGetGuideInfo
 
-;
-(_ENV.CEventPushUnlockCG)._proto = {}
-;
-(_ENV._class)("CEventMobileRoleGetGuideInfo", _ENV.CCallRequestEvent)
-_ENV.CEventMobileRoleGetGuideInfo = _ENV.CEventMobileRoleGetGuideInfo
--- DECOMPILER ERROR at PC1224: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileRoleGetGuideInfo).Constructor = function(self)
-  -- function num : 0_19
+function CEventMobileRoleGetGuideInfo:Constructor()
 end
 
--- DECOMPILER ERROR at PC1229: Confused about usage of register: R5 in 'UnsetPending'
+CEventMobileRoleGetGuideInfo._proto = {}
+_class("CEventMobileRoleGetGuideInfoResult", CCallReplyEvent)
+CEventMobileRoleGetGuideInfoResult = CEventMobileRoleGetGuideInfoResult
 
-;
-(_ENV.CEventMobileRoleGetGuideInfo)._proto = {}
-;
-(_ENV._class)("CEventMobileRoleGetGuideInfoResult", _ENV.CCallReplyEvent)
-_ENV.CEventMobileRoleGetGuideInfoResult = _ENV.CEventMobileRoleGetGuideInfoResult
--- DECOMPILER ERROR at PC1244: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileRoleGetGuideInfoResult).Constructor = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function CEventMobileRoleGetGuideInfoResult:Constructor()
   self.result = 0
   self.guide_info = GuideInfo:New()
 end
 
--- DECOMPILER ERROR at PC1259: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileRoleGetGuideInfoResult)._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"guide_info", "GuideInfo"}
+CEventMobileRoleGetGuideInfoResult._proto = {
+  [1] = {"result", "int"},
+  [2] = {"guide_info", "GuideInfo"}
 }
-;
-(_ENV._class)("CEventMobileRoleSetGuideInfo", _ENV.CCallRequestEvent)
-_ENV.CEventMobileRoleSetGuideInfo = _ENV.CEventMobileRoleSetGuideInfo
--- DECOMPILER ERROR at PC1274: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventMobileRoleSetGuideInfo", CCallRequestEvent)
+CEventMobileRoleSetGuideInfo = CEventMobileRoleSetGuideInfo
 
-;
-(_ENV.CEventMobileRoleSetGuideInfo).Constructor = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function CEventMobileRoleSetGuideInfo:Constructor()
   self.guide_info = GuideInfo:New()
   self.cur_guide_id = 0
   self.force = 0
 end
 
--- DECOMPILER ERROR at PC1294: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileRoleSetGuideInfo)._proto = {
-[1] = {"guide_info", "GuideInfo"}
-, 
-[2] = {"cur_guide_id", "int"}
-, 
-[3] = {"force", "int"}
+CEventMobileRoleSetGuideInfo._proto = {
+  [1] = {"guide_info", "GuideInfo"},
+  [2] = {
+    "cur_guide_id",
+    "int"
+  },
+  [3] = {"force", "int"}
 }
-;
-(_ENV._class)("CEventMobileRoleSetGuideInfoResult", _ENV.CCallReplyEvent)
-_ENV.CEventMobileRoleSetGuideInfoResult = _ENV.CEventMobileRoleSetGuideInfoResult
--- DECOMPILER ERROR at PC1309: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventMobileRoleSetGuideInfoResult", CCallReplyEvent)
+CEventMobileRoleSetGuideInfoResult = CEventMobileRoleSetGuideInfoResult
 
-;
-(_ENV.CEventMobileRoleSetGuideInfoResult).Constructor = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function CEventMobileRoleSetGuideInfoResult:Constructor()
   self.result = 0
   self.guide_info = GuideInfo:New()
 end
 
--- DECOMPILER ERROR at PC1324: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileRoleSetGuideInfoResult)._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"guide_info", "GuideInfo"}
+CEventMobileRoleSetGuideInfoResult._proto = {
+  [1] = {"result", "int"},
+  [2] = {"guide_info", "GuideInfo"}
 }
-;
-(_ENV._class)("CEventPushTips", _ENV.CSvrPushEvent)
-_ENV.CEventPushTips = _ENV.CEventPushTips
--- DECOMPILER ERROR at PC1339: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushTips", CSvrPushEvent)
+CEventPushTips = CEventPushTips
 
-;
-(_ENV.CEventPushTips).Constructor = function(self)
-  -- function num : 0_23
+function CEventPushTips:Constructor()
   self.tips_flag = 0
 end
 
--- DECOMPILER ERROR at PC1349: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushTips)._proto = {
-[1] = {"tips_flag", "int64"}
+CEventPushTips._proto = {
+  [1] = {"tips_flag", "int64"}
 }
-;
-(_ENV._class)("CEventPushDiamondChange", _ENV.CSvrPushEvent)
-_ENV.CEventPushDiamondChange = _ENV.CEventPushDiamondChange
--- DECOMPILER ERROR at PC1364: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushDiamondChange", CSvrPushEvent)
+CEventPushDiamondChange = CEventPushDiamondChange
 
-;
-(_ENV.CEventPushDiamondChange).Constructor = function(self)
-  -- function num : 0_24
+function CEventPushDiamondChange:Constructor()
   self.balance = 0
 end
 
--- DECOMPILER ERROR at PC1374: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushDiamondChange)._proto = {
-[1] = {"balance", "int"}
+CEventPushDiamondChange._proto = {
+  [1] = {"balance", "int"}
 }
-;
-(_ENV._class)("CEventQueryQQVip", _ENV.CCallRequestEvent)
-_ENV.CEventQueryQQVip = _ENV.CEventQueryQQVip
--- DECOMPILER ERROR at PC1389: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventQueryQQVip", CCallRequestEvent)
+CEventQueryQQVip = CEventQueryQQVip
 
-;
-(_ENV.CEventQueryQQVip).Constructor = function(self)
-  -- function num : 0_25
+function CEventQueryQQVip:Constructor()
 end
 
--- DECOMPILER ERROR at PC1394: Confused about usage of register: R5 in 'UnsetPending'
+CEventQueryQQVip._proto = {}
+_class("CEventQueryQQVipResult", CCallReplyEvent)
+CEventQueryQQVipResult = CEventQueryQQVipResult
 
-;
-(_ENV.CEventQueryQQVip)._proto = {}
-;
-(_ENV._class)("CEventQueryQQVipResult", _ENV.CCallReplyEvent)
-_ENV.CEventQueryQQVipResult = _ENV.CEventQueryQQVipResult
--- DECOMPILER ERROR at PC1409: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventQueryQQVipResult).Constructor = function(self)
-  -- function num : 0_26
+function CEventQueryQQVipResult:Constructor()
   self.result = -1
   self.qq_wx_vip = 0
 end
 
--- DECOMPILER ERROR at PC1424: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventQueryQQVipResult)._proto = {
-[1] = {"result", "int"}
-, 
-[2] = {"qq_wx_vip", "int"}
+CEventQueryQQVipResult._proto = {
+  [1] = {"result", "int"},
+  [2] = {"qq_wx_vip", "int"}
 }
-;
-(_ENV._class)("CEventPushSyncItem", _ENV.CSvrPushEvent)
-_ENV.CEventPushSyncItem = _ENV.CEventPushSyncItem
--- DECOMPILER ERROR at PC1439: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushSyncItem", CSvrPushEvent)
+CEventPushSyncItem = CEventPushSyncItem
 
-;
-(_ENV.CEventPushSyncItem).Constructor = function(self)
-  -- function num : 0_27
+function CEventPushSyncItem:Constructor()
   self.reason = 0
   self.remove_items = {}
 end
 
--- DECOMPILER ERROR at PC1454: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushSyncItem)._proto = {
-[1] = {"reason", "int"}
-, 
-[2] = {"remove_items", "list<int64>"}
+CEventPushSyncItem._proto = {
+  [1] = {"reason", "int"},
+  [2] = {
+    "remove_items",
+    "list<int64>"
+  }
 }
-;
-(_ENV._class)("CEventRequestSendAntiData", _ENV.CCallRequestEvent)
-_ENV.CEventRequestSendAntiData = _ENV.CEventRequestSendAntiData
--- DECOMPILER ERROR at PC1469: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventRequestSendAntiData", CCallRequestEvent)
+CEventRequestSendAntiData = CEventRequestSendAntiData
 
-;
-(_ENV.CEventRequestSendAntiData).Constructor = function(self)
-  -- function num : 0_28
+function CEventRequestSendAntiData:Constructor()
   self.anti_data = ""
 end
 
--- DECOMPILER ERROR at PC1479: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestSendAntiData)._proto = {
-[1] = {"anti_data", "buffer"}
+CEventRequestSendAntiData._proto = {
+  [1] = {"anti_data", "buffer"}
 }
-;
-(_ENV._class)("CEventReplySendAntiData", _ENV.CCallReplyEvent)
-_ENV.CEventReplySendAntiData = _ENV.CEventReplySendAntiData
--- DECOMPILER ERROR at PC1494: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventReplySendAntiData", CCallReplyEvent)
+CEventReplySendAntiData = CEventReplySendAntiData
 
-;
-(_ENV.CEventReplySendAntiData).Constructor = function(self)
-  -- function num : 0_29
+function CEventReplySendAntiData:Constructor()
 end
 
--- DECOMPILER ERROR at PC1499: Confused about usage of register: R5 in 'UnsetPending'
+CEventReplySendAntiData._proto = {}
+_class("CEventPushRecvAntiData", CSvrPushEvent)
+CEventPushRecvAntiData = CEventPushRecvAntiData
 
-;
-(_ENV.CEventReplySendAntiData)._proto = {}
-;
-(_ENV._class)("CEventPushRecvAntiData", _ENV.CSvrPushEvent)
-_ENV.CEventPushRecvAntiData = _ENV.CEventPushRecvAntiData
--- DECOMPILER ERROR at PC1514: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushRecvAntiData).Constructor = function(self)
-  -- function num : 0_30
+function CEventPushRecvAntiData:Constructor()
   self.anti_data = ""
 end
 
--- DECOMPILER ERROR at PC1524: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushRecvAntiData)._proto = {
-[1] = {"anti_data", "buffer"}
+CEventPushRecvAntiData._proto = {
+  [1] = {"anti_data", "buffer"}
 }
-;
-(_ENV._class)("CEventPushStrongerAction", _ENV.CSvrPushEvent)
-_ENV.CEventPushStrongerAction = _ENV.CEventPushStrongerAction
--- DECOMPILER ERROR at PC1539: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushStrongerAction", CSvrPushEvent)
+CEventPushStrongerAction = CEventPushStrongerAction
 
-;
-(_ENV.CEventPushStrongerAction).Constructor = function(self)
-  -- function num : 0_31
+function CEventPushStrongerAction:Constructor()
   self.tips_flag = {}
 end
 
--- DECOMPILER ERROR at PC1549: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushStrongerAction)._proto = {
-[1] = {"tips_flag", "map<int,int>"}
+CEventPushStrongerAction._proto = {
+  [1] = {
+    "tips_flag",
+    "map<int,int>"
+  }
 }
-;
-(_ENV._class)("CEventPushModuleCloseInfo", _ENV.CSvrPushEvent)
-_ENV.CEventPushModuleCloseInfo = _ENV.CEventPushModuleCloseInfo
--- DECOMPILER ERROR at PC1564: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushModuleCloseInfo", CSvrPushEvent)
+CEventPushModuleCloseInfo = CEventPushModuleCloseInfo
 
-;
-(_ENV.CEventPushModuleCloseInfo).Constructor = function(self)
-  -- function num : 0_32
+function CEventPushModuleCloseInfo:Constructor()
   self.info = {}
   self.func_status = {}
 end
 
--- DECOMPILER ERROR at PC1579: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushModuleCloseInfo)._proto = {
-[1] = {"info", "list<int>"}
-, 
-[2] = {"func_status", "map<int,int>"}
+CEventPushModuleCloseInfo._proto = {
+  [1] = {"info", "list<int>"},
+  [2] = {
+    "func_status",
+    "map<int,int>"
+  }
 }
-;
-(_ENV._class)("CEventPushMsg", _ENV.CSvrPushEvent)
-_ENV.CEventPushMsg = _ENV.CEventPushMsg
--- DECOMPILER ERROR at PC1594: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPushMsg", CSvrPushEvent)
+CEventPushMsg = CEventPushMsg
 
-;
-(_ENV.CEventPushMsg).Constructor = function(self)
-  -- function num : 0_33
+function CEventPushMsg:Constructor()
   self.m_content = ""
 end
 
--- DECOMPILER ERROR at PC1604: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPushMsg)._proto = {
-[1] = {"m_content", "string"}
+CEventPushMsg._proto = {
+  [1] = {"m_content", "string"}
 }
-;
-(_ENV._class)("CEventClientResume", _ENV.CCallRequestEvent)
-_ENV.CEventClientResume = _ENV.CEventClientResume
--- DECOMPILER ERROR at PC1619: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventClientResume", CCallRequestEvent)
+CEventClientResume = CEventClientResume
 
-;
-(_ENV.CEventClientResume).Constructor = function(self)
-  -- function num : 0_34
+function CEventClientResume:Constructor()
   self.activity_pause_time = 0
 end
 
--- DECOMPILER ERROR at PC1629: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventClientResume)._proto = {
-[1] = {"activity_pause_time", "int"}
+CEventClientResume._proto = {
+  [1] = {
+    "activity_pause_time",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventClientResumeResult", _ENV.CCallReplyEvent)
-_ENV.CEventClientResumeResult = _ENV.CEventClientResumeResult
--- DECOMPILER ERROR at PC1644: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventClientResumeResult", CCallReplyEvent)
+CEventClientResumeResult = CEventClientResumeResult
 
-;
-(_ENV.CEventClientResumeResult).Constructor = function(self)
-  -- function num : 0_35
+function CEventClientResumeResult:Constructor()
   self.result = 0
 end
 
--- DECOMPILER ERROR at PC1654: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventClientResumeResult)._proto = {
-[1] = {"result", "int"}
+CEventClientResumeResult._proto = {
+  [1] = {"result", "int"}
 }
-;
-(_ENV._class)("CEventPlayerShare", _ENV.CCallRequestEvent)
-_ENV.CEventPlayerShare = _ENV.CEventPlayerShare
--- DECOMPILER ERROR at PC1669: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventPlayerShare", CCallRequestEvent)
+CEventPlayerShare = CEventPlayerShare
 
-;
-(_ENV.CEventPlayerShare).Constructor = function(self)
-  -- function num : 0_36
+function CEventPlayerShare:Constructor()
 end
 
--- DECOMPILER ERROR at PC1674: Confused about usage of register: R5 in 'UnsetPending'
+CEventPlayerShare._proto = {}
+_class("CEventPlayerShareResult", CCallReplyEvent)
+CEventPlayerShareResult = CEventPlayerShareResult
 
-;
-(_ENV.CEventPlayerShare)._proto = {}
-;
-(_ENV._class)("CEventPlayerShareResult", _ENV.CCallReplyEvent)
-_ENV.CEventPlayerShareResult = _ENV.CEventPlayerShareResult
--- DECOMPILER ERROR at PC1689: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPlayerShareResult).Constructor = function(self)
-  -- function num : 0_37
+function CEventPlayerShareResult:Constructor()
   self.result = 0
 end
 
--- DECOMPILER ERROR at PC1699: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventPlayerShareResult)._proto = {
-[1] = {"result", "int"}
+CEventPlayerShareResult._proto = {
+  [1] = {"result", "int"}
 }
-;
-(_ENV._class)("CEventChangePlayerName", _ENV.CCallRequestEvent)
-_ENV.CEventChangePlayerName = _ENV.CEventChangePlayerName
--- DECOMPILER ERROR at PC1714: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventChangePlayerName", CCallRequestEvent)
+CEventChangePlayerName = CEventChangePlayerName
 
-;
-(_ENV.CEventChangePlayerName).Constructor = function(self)
-  -- function num : 0_38
+function CEventChangePlayerName:Constructor()
   self.new_name = ""
 end
 
--- DECOMPILER ERROR at PC1724: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventChangePlayerName)._proto = {
-[1] = {"new_name", "string"}
+CEventChangePlayerName._proto = {
+  [1] = {"new_name", "string"}
 }
-;
-(_ENV._class)("CEventChangePlayerNameResult", _ENV.CCallReplyEvent)
-_ENV.CEventChangePlayerNameResult = _ENV.CEventChangePlayerNameResult
--- DECOMPILER ERROR at PC1739: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventChangePlayerNameResult", CCallReplyEvent)
+CEventChangePlayerNameResult = CEventChangePlayerNameResult
 
-;
-(_ENV.CEventChangePlayerNameResult).Constructor = function(self)
-  -- function num : 0_39
+function CEventChangePlayerNameResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1749: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventChangePlayerNameResult)._proto = {
-[1] = {"ret", "int"}
+CEventChangePlayerNameResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventGetRandomSeed", _ENV.CCallRequestEvent)
-_ENV.CEventGetRandomSeed = _ENV.CEventGetRandomSeed
--- DECOMPILER ERROR at PC1764: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventGetRandomSeed", CCallRequestEvent)
+CEventGetRandomSeed = CEventGetRandomSeed
 
-;
-(_ENV.CEventGetRandomSeed).Constructor = function(self)
-  -- function num : 0_40
+function CEventGetRandomSeed:Constructor()
 end
 
--- DECOMPILER ERROR at PC1769: Confused about usage of register: R5 in 'UnsetPending'
+CEventGetRandomSeed._proto = {}
+_class("CEventGetRandomSeedResult", CCallReplyEvent)
+CEventGetRandomSeedResult = CEventGetRandomSeedResult
 
-;
-(_ENV.CEventGetRandomSeed)._proto = {}
-;
-(_ENV._class)("CEventGetRandomSeedResult", _ENV.CCallReplyEvent)
-_ENV.CEventGetRandomSeedResult = _ENV.CEventGetRandomSeedResult
--- DECOMPILER ERROR at PC1784: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventGetRandomSeedResult).Constructor = function(self)
-  -- function num : 0_41
+function CEventGetRandomSeedResult:Constructor()
   self.ret = 0
-  self.seed = 0
+  self.seed = 0.0
 end
 
--- DECOMPILER ERROR at PC1799: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventGetRandomSeedResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"seed", "double"}
+CEventGetRandomSeedResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"seed", "double"}
 }
-;
-(_ENV._class)("CEventSetExtFlag", _ENV.CCallRequestEvent)
-_ENV.CEventSetExtFlag = _ENV.CEventSetExtFlag
--- DECOMPILER ERROR at PC1814: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventSetExtFlag", CCallRequestEvent)
+CEventSetExtFlag = CEventSetExtFlag
 
-;
-(_ENV.CEventSetExtFlag).Constructor = function(self)
-  -- function num : 0_42
+function CEventSetExtFlag:Constructor()
   self.ext_flag = 0
   self.value = false
 end
 
--- DECOMPILER ERROR at PC1829: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventSetExtFlag)._proto = {
-[1] = {"ext_flag", "int"}
-, 
-[2] = {"value", "bool"}
+CEventSetExtFlag._proto = {
+  [1] = {"ext_flag", "int"},
+  [2] = {"value", "bool"}
 }
-;
-(_ENV._class)("CEventSetExtFlagResult", _ENV.CCallReplyEvent)
-_ENV.CEventSetExtFlagResult = _ENV.CEventSetExtFlagResult
--- DECOMPILER ERROR at PC1844: Confused about usage of register: R5 in 'UnsetPending'
+_class("CEventSetExtFlagResult", CCallReplyEvent)
+CEventSetExtFlagResult = CEventSetExtFlagResult
 
-;
-(_ENV.CEventSetExtFlagResult).Constructor = function(self)
-  -- function num : 0_43
+function CEventSetExtFlagResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1854: Confused about usage of register: R5 in 'UnsetPending'
-
-;
-(_ENV.CEventSetExtFlagResult)._proto = {
-[1] = {"ret", "int"}
+CEventSetExtFlagResult._proto = {
+  [1] = {"ret", "int"}
 }
 local EnumRoleGuideType = {E_RoleGuide_ExtMission = 9}
-;
-(_ENV._enum)("EnumRoleGuideType", EnumRoleGuideType)
-;
-(_ENV._class)("CEventSetGuideReq", _ENV.CCallRequestEvent)
-_ENV.CEventSetGuideReq = _ENV.CEventSetGuideReq
--- DECOMPILER ERROR at PC1877: Confused about usage of register: R6 in 'UnsetPending'
+_enum("EnumRoleGuideType", EnumRoleGuideType)
+_class("CEventSetGuideReq", CCallRequestEvent)
+CEventSetGuideReq = CEventSetGuideReq
 
-;
-(_ENV.CEventSetGuideReq).Constructor = function(self)
-  -- function num : 0_44
+function CEventSetGuideReq:Constructor()
   self.m_nGuideKey = 0
   self.m_nGuideData = 0
 end
 
--- DECOMPILER ERROR at PC1892: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventSetGuideReq)._proto = {
-[1] = {"m_nGuideKey", "int"}
-, 
-[2] = {"m_nGuideData", "int"}
+CEventSetGuideReq._proto = {
+  [1] = {
+    "m_nGuideKey",
+    "int"
+  },
+  [2] = {
+    "m_nGuideData",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventSetGuideAsw", _ENV.CCallReplyEvent)
-_ENV.CEventSetGuideAsw = _ENV.CEventSetGuideAsw
--- DECOMPILER ERROR at PC1907: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventSetGuideAsw", CCallReplyEvent)
+CEventSetGuideAsw = CEventSetGuideAsw
 
-;
-(_ENV.CEventSetGuideAsw).Constructor = function(self)
-  -- function num : 0_45
+function CEventSetGuideAsw:Constructor()
   self.m_nResult = 0
   self.m_nGuideData = 0
 end
 
--- DECOMPILER ERROR at PC1922: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventSetGuideAsw)._proto = {
-[1] = {"m_nResult", "int"}
-, 
-[2] = {"m_nGuideData", "int"}
+CEventSetGuideAsw._proto = {
+  [1] = {"m_nResult", "int"},
+  [2] = {
+    "m_nGuideData",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventPushModuleUnlocked", _ENV.CSvrPushEvent)
-_ENV.CEventPushModuleUnlocked = _ENV.CEventPushModuleUnlocked
--- DECOMPILER ERROR at PC1937: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventPushModuleUnlocked", CSvrPushEvent)
+CEventPushModuleUnlocked = CEventPushModuleUnlocked
 
-;
-(_ENV.CEventPushModuleUnlocked).Constructor = function(self)
-  -- function num : 0_46
+function CEventPushModuleUnlocked:Constructor()
   self.unlock_modules = 0
   self.unlock_module_id = 0
 end
 
--- DECOMPILER ERROR at PC1952: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventPushModuleUnlocked)._proto = {
-[1] = {"unlock_modules", "int64"}
-, 
-[2] = {"unlock_module_id", "int"}
+CEventPushModuleUnlocked._proto = {
+  [1] = {
+    "unlock_modules",
+    "int64"
+  },
+  [2] = {
+    "unlock_module_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventHomePageEnter", _ENV.CCliPushEvent)
-_ENV.CEventHomePageEnter = _ENV.CEventHomePageEnter
--- DECOMPILER ERROR at PC1967: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventHomePageEnter", CCliPushEvent)
+CEventHomePageEnter = CEventHomePageEnter
 
-;
-(_ENV.CEventHomePageEnter).Constructor = function(self)
-  -- function num : 0_47
+function CEventHomePageEnter:Constructor()
   self.entrance_id = 0
 end
 
--- DECOMPILER ERROR at PC1977: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventHomePageEnter)._proto = {
-[1] = {"entrance_id", "int"}
+CEventHomePageEnter._proto = {
+  [1] = {
+    "entrance_id",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventSkipStory", _ENV.CCallRequestEvent)
-_ENV.CEventSkipStory = _ENV.CEventSkipStory
--- DECOMPILER ERROR at PC1992: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventSkipStory", CCallRequestEvent)
+CEventSkipStory = CEventSkipStory
 
-;
-(_ENV.CEventSkipStory).Constructor = function(self)
-  -- function num : 0_48
+function CEventSkipStory:Constructor()
   self.skip_id = 0
 end
 
--- DECOMPILER ERROR at PC2002: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventSkipStory)._proto = {
-[1] = {"skip_id", "int"}
+CEventSkipStory._proto = {
+  [1] = {"skip_id", "int"}
 }
-;
-(_ENV._class)("CEventSkipStoryResult", _ENV.CCallReplyEvent)
-_ENV.CEventSkipStoryResult = _ENV.CEventSkipStoryResult
--- DECOMPILER ERROR at PC2017: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventSkipStoryResult", CCallReplyEvent)
+CEventSkipStoryResult = CEventSkipStoryResult
 
-;
-(_ENV.CEventSkipStoryResult).Constructor = function(self)
-  -- function num : 0_49
+function CEventSkipStoryResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2027: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventSkipStoryResult)._proto = {
-[1] = {"ret", "int"}
+CEventSkipStoryResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventEndStory", _ENV.CCallRequestEvent)
-_ENV.CEventEndStory = _ENV.CEventEndStory
--- DECOMPILER ERROR at PC2042: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventEndStory", CCallRequestEvent)
+CEventEndStory = CEventEndStory
 
-;
-(_ENV.CEventEndStory).Constructor = function(self)
-  -- function num : 0_50
+function CEventEndStory:Constructor()
   self.story_id = 0
   self.paragraph_id = 0
   self.section_id = 0
@@ -1149,47 +1130,34 @@ _ENV.CEventEndStory = _ENV.CEventEndStory
   self.be_mission = 0
 end
 
--- DECOMPILER ERROR at PC2077: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventEndStory)._proto = {
-[1] = {"story_id", "int"}
-, 
-[2] = {"paragraph_id", "int"}
-, 
-[3] = {"section_id", "int"}
-, 
-[4] = {"cost_second", "time"}
-, 
-[5] = {"be_skipped", "int"}
-, 
-[6] = {"be_mission", "int"}
+CEventEndStory._proto = {
+  [1] = {"story_id", "int"},
+  [2] = {
+    "paragraph_id",
+    "int"
+  },
+  [3] = {"section_id", "int"},
+  [4] = {
+    "cost_second",
+    "time"
+  },
+  [5] = {"be_skipped", "int"},
+  [6] = {"be_mission", "int"}
 }
-;
-(_ENV._class)("CEventEndStoryResult", _ENV.CCallReplyEvent)
-_ENV.CEventEndStoryResult = _ENV.CEventEndStoryResult
--- DECOMPILER ERROR at PC2092: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventEndStoryResult", CCallReplyEvent)
+CEventEndStoryResult = CEventEndStoryResult
 
-;
-(_ENV.CEventEndStoryResult).Constructor = function(self)
-  -- function num : 0_51
+function CEventEndStoryResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2102: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventEndStoryResult)._proto = {
-[1] = {"ret", "int"}
+CEventEndStoryResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventChangeLeader", _ENV.CCliPushEvent)
-_ENV.CEventChangeLeader = _ENV.CEventChangeLeader
--- DECOMPILER ERROR at PC2117: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventChangeLeader", CCliPushEvent)
+CEventChangeLeader = CEventChangeLeader
 
-;
-(_ENV.CEventChangeLeader).Constructor = function(self)
-  -- function num : 0_52
+function CEventChangeLeader:Constructor()
   self.battle_type = 0
   self.mission_id = 0
   self.pets_ids = {}
@@ -1200,236 +1168,167 @@ _ENV.CEventChangeLeader = _ENV.CEventChangeLeader
   self.be_active_change = false
 end
 
--- DECOMPILER ERROR at PC2162: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventChangeLeader)._proto = {
-[1] = {"battle_type", "int"}
-, 
-[2] = {"mission_id", "int"}
-, 
-[3] = {"pets_ids", "list<int>"}
-, 
-[4] = {"change_leader_times", "int"}
-, 
-[5] = {"before_leader_id", "int"}
-, 
-[6] = {"after_leader_id", "int"}
-, 
-[7] = {"remain_change_time", "int"}
-, 
-[8] = {"be_active_change", "bool"}
+CEventChangeLeader._proto = {
+  [1] = {
+    "battle_type",
+    "int"
+  },
+  [2] = {"mission_id", "int"},
+  [3] = {"pets_ids", "list<int>"},
+  [4] = {
+    "change_leader_times",
+    "int"
+  },
+  [5] = {
+    "before_leader_id",
+    "int"
+  },
+  [6] = {
+    "after_leader_id",
+    "int"
+  },
+  [7] = {
+    "remain_change_time",
+    "int"
+  },
+  [8] = {
+    "be_active_change",
+    "bool"
+  }
 }
-;
-(_ENV._class)("CEventChoosePainting", _ENV.CCallRequestEvent)
-_ENV.CEventChoosePainting = _ENV.CEventChoosePainting
--- DECOMPILER ERROR at PC2177: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventChoosePainting", CCallRequestEvent)
+CEventChoosePainting = CEventChoosePainting
 
-;
-(_ENV.CEventChoosePainting).Constructor = function(self)
-  -- function num : 0_53
+function CEventChoosePainting:Constructor()
   self.pet_template_id = 0
   self.pet_grade = 0
   self.skin_id = 0
   self.board_pet = 0
 end
 
--- DECOMPILER ERROR at PC2202: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventChoosePainting)._proto = {
-[1] = {"pet_template_id", "int"}
-, 
-[2] = {"pet_grade", "int"}
-, 
-[3] = {"skin_id", "int"}
-, 
-[4] = {"board_pet", "int"}
+CEventChoosePainting._proto = {
+  [1] = {
+    "pet_template_id",
+    "int"
+  },
+  [2] = {"pet_grade", "int"},
+  [3] = {"skin_id", "int"},
+  [4] = {"board_pet", "int"}
 }
-;
-(_ENV._class)("CEventChoosePaintingResult", _ENV.CCallReplyEvent)
-_ENV.CEventChoosePaintingResult = _ENV.CEventChoosePaintingResult
--- DECOMPILER ERROR at PC2217: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventChoosePaintingResult", CCallReplyEvent)
+CEventChoosePaintingResult = CEventChoosePaintingResult
 
-;
-(_ENV.CEventChoosePaintingResult).Constructor = function(self)
-  -- function num : 0_54
+function CEventChoosePaintingResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2227: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventChoosePaintingResult)._proto = {
-[1] = {"ret", "int"}
+CEventChoosePaintingResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventAmendRoleName_Req", _ENV.CCallRequestEvent)
-_ENV.CEventAmendRoleName_Req = _ENV.CEventAmendRoleName_Req
--- DECOMPILER ERROR at PC2242: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventAmendRoleName_Req", CCallRequestEvent)
+CEventAmendRoleName_Req = CEventAmendRoleName_Req
 
-;
-(_ENV.CEventAmendRoleName_Req).Constructor = function(self)
-  -- function num : 0_55
+function CEventAmendRoleName_Req:Constructor()
   self.m_stRoleName = ""
 end
 
--- DECOMPILER ERROR at PC2252: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventAmendRoleName_Req)._proto = {
-[1] = {"m_stRoleName", "string"}
+CEventAmendRoleName_Req._proto = {
+  [1] = {
+    "m_stRoleName",
+    "string"
+  }
 }
-;
-(_ENV._class)("CEventAmendRoleName_Asw", _ENV.CCallReplyEvent)
-_ENV.CEventAmendRoleName_Asw = _ENV.CEventAmendRoleName_Asw
--- DECOMPILER ERROR at PC2267: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventAmendRoleName_Asw", CCallReplyEvent)
+CEventAmendRoleName_Asw = CEventAmendRoleName_Asw
 
-;
-(_ENV.CEventAmendRoleName_Asw).Constructor = function(self)
-  -- function num : 0_56
+function CEventAmendRoleName_Asw:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2277: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventAmendRoleName_Asw)._proto = {
-[1] = {"ret", "int"}
+CEventAmendRoleName_Asw._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventAmendSignText_Req", _ENV.CCallRequestEvent)
-_ENV.CEventAmendSignText_Req = _ENV.CEventAmendSignText_Req
--- DECOMPILER ERROR at PC2292: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventAmendSignText_Req", CCallRequestEvent)
+CEventAmendSignText_Req = CEventAmendSignText_Req
 
-;
-(_ENV.CEventAmendSignText_Req).Constructor = function(self)
-  -- function num : 0_57
+function CEventAmendSignText_Req:Constructor()
   self.m_stSignText = ""
 end
 
--- DECOMPILER ERROR at PC2302: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventAmendSignText_Req)._proto = {
-[1] = {"m_stSignText", "string"}
+CEventAmendSignText_Req._proto = {
+  [1] = {
+    "m_stSignText",
+    "string"
+  }
 }
-;
-(_ENV._class)("CEventAmendSignText_Asw", _ENV.CCallReplyEvent)
-_ENV.CEventAmendSignText_Asw = _ENV.CEventAmendSignText_Asw
--- DECOMPILER ERROR at PC2317: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventAmendSignText_Asw", CCallReplyEvent)
+CEventAmendSignText_Asw = CEventAmendSignText_Asw
 
-;
-(_ENV.CEventAmendSignText_Asw).Constructor = function(self)
-  -- function num : 0_58
+function CEventAmendSignText_Asw:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2327: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventAmendSignText_Asw)._proto = {
-[1] = {"ret", "int"}
+CEventAmendSignText_Asw._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventAmendHeadImage_Req", _ENV.CCallRequestEvent)
-_ENV.CEventAmendHeadImage_Req = _ENV.CEventAmendHeadImage_Req
--- DECOMPILER ERROR at PC2342: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventAmendHeadImage_Req", CCallRequestEvent)
+CEventAmendHeadImage_Req = CEventAmendHeadImage_Req
 
-;
-(_ENV.CEventAmendHeadImage_Req).Constructor = function(self)
-  -- function num : 0_59
+function CEventAmendHeadImage_Req:Constructor()
   self.m_nImageID = 0
   self.m_nColorID = 0
   self.m_nFrameID = 0
 end
 
--- DECOMPILER ERROR at PC2362: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventAmendHeadImage_Req)._proto = {
-[1] = {"m_nImageID", "int"}
-, 
-[2] = {"m_nColorID", "int"}
-, 
-[3] = {"m_nFrameID", "int"}
+CEventAmendHeadImage_Req._proto = {
+  [1] = {"m_nImageID", "int"},
+  [2] = {"m_nColorID", "int"},
+  [3] = {"m_nFrameID", "int"}
 }
-;
-(_ENV._class)("CEventAmendHeadImage_Asw", _ENV.CCallReplyEvent)
-_ENV.CEventAmendHeadImage_Asw = _ENV.CEventAmendHeadImage_Asw
--- DECOMPILER ERROR at PC2377: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventAmendHeadImage_Asw", CCallReplyEvent)
+CEventAmendHeadImage_Asw = CEventAmendHeadImage_Asw
 
-;
-(_ENV.CEventAmendHeadImage_Asw).Constructor = function(self)
-  -- function num : 0_60
+function CEventAmendHeadImage_Asw:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2387: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventAmendHeadImage_Asw)._proto = {
-[1] = {"ret", "int"}
+CEventAmendHeadImage_Asw._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventClearHeadImageLock_Req", _ENV.CCallRequestEvent)
-_ENV.CEventClearHeadImageLock_Req = _ENV.CEventClearHeadImageLock_Req
--- DECOMPILER ERROR at PC2402: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventClearHeadImageLock_Req", CCallRequestEvent)
+CEventClearHeadImageLock_Req = CEventClearHeadImageLock_Req
 
-;
-(_ENV.CEventClearHeadImageLock_Req).Constructor = function(self)
-  -- function num : 0_61
+function CEventClearHeadImageLock_Req:Constructor()
   self.m_nImageID = 0
 end
 
--- DECOMPILER ERROR at PC2412: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventClearHeadImageLock_Req)._proto = {
-[1] = {"m_nImageID", "int"}
+CEventClearHeadImageLock_Req._proto = {
+  [1] = {"m_nImageID", "int"}
 }
-;
-(_ENV._class)("CEventClearHeadImageLock_Asw", _ENV.CCallReplyEvent)
-_ENV.CEventClearHeadImageLock_Asw = _ENV.CEventClearHeadImageLock_Asw
--- DECOMPILER ERROR at PC2427: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventClearHeadImageLock_Asw", CCallReplyEvent)
+CEventClearHeadImageLock_Asw = CEventClearHeadImageLock_Asw
 
-;
-(_ENV.CEventClearHeadImageLock_Asw).Constructor = function(self)
-  -- function num : 0_62
+function CEventClearHeadImageLock_Asw:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2437: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventClearHeadImageLock_Asw)._proto = {
-[1] = {"ret", "int"}
+CEventClearHeadImageLock_Asw._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventRoleInfo_Req", _ENV.CCallRequestEvent)
-_ENV.CEventRoleInfo_Req = _ENV.CEventRoleInfo_Req
--- DECOMPILER ERROR at PC2452: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventRoleInfo_Req", CCallRequestEvent)
+CEventRoleInfo_Req = CEventRoleInfo_Req
 
-;
-(_ENV.CEventRoleInfo_Req).Constructor = function(self)
-  -- function num : 0_63
+function CEventRoleInfo_Req:Constructor()
   self.m_nPstID = 0
 end
 
--- DECOMPILER ERROR at PC2462: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventRoleInfo_Req)._proto = {
-[1] = {"m_nPstID", "int64"}
+CEventRoleInfo_Req._proto = {
+  [1] = {"m_nPstID", "int64"}
 }
-;
-(_ENV._class)("CEventRoleInfo_Asw", _ENV.CCallReplyEvent)
-_ENV.CEventRoleInfo_Asw = _ENV.CEventRoleInfo_Asw
--- DECOMPILER ERROR at PC2477: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventRoleInfo_Asw", CCallReplyEvent)
+CEventRoleInfo_Asw = CEventRoleInfo_Asw
 
-;
-(_ENV.CEventRoleInfo_Asw).Constructor = function(self)
-  -- function num : 0_64
+function CEventRoleInfo_Asw:Constructor()
   self.ret = 0
   self.m_nPstID = 0
   self.m_nHeadImageID = 0
@@ -1443,512 +1342,379 @@ _ENV.CEventRoleInfo_Asw = _ENV.CEventRoleInfo_Asw
   self.m_vecCanUnlockFrame = {}
 end
 
--- DECOMPILER ERROR at PC2537: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventRoleInfo_Asw)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_nPstID", "int64"}
-, 
-[3] = {"m_nHeadImageID", "int"}
-, 
-[4] = {"m_nHeadColorID", "int"}
-, 
-[5] = {"m_stRoleName", "string"}
-, 
-[6] = {"m_stSignText", "string"}
-, 
-[7] = {"m_mapImageData", "map<int,int>"}
-, 
-[8] = {"m_vecCanUnlockImage", "list<int  >"}
-, 
-[9] = {"m_nHeadFrameID", "int"}
-, 
-[10] = {"m_mapImageFrame", "map<int,int>"}
-, 
-[11] = {"m_vecCanUnlockFrame", "list<int  >"}
+CEventRoleInfo_Asw._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"m_nPstID", "int64"},
+  [3] = {
+    "m_nHeadImageID",
+    "int"
+  },
+  [4] = {
+    "m_nHeadColorID",
+    "int"
+  },
+  [5] = {
+    "m_stRoleName",
+    "string"
+  },
+  [6] = {
+    "m_stSignText",
+    "string"
+  },
+  [7] = {
+    "m_mapImageData",
+    "map<int,int>"
+  },
+  [8] = {
+    "m_vecCanUnlockImage",
+    "list<int  >"
+  },
+  [9] = {
+    "m_nHeadFrameID",
+    "int"
+  },
+  [10] = {
+    "m_mapImageFrame",
+    "map<int,int>"
+  },
+  [11] = {
+    "m_vecCanUnlockFrame",
+    "list<int  >"
+  }
 }
-;
-(_ENV._class)("CEventRoleHeadImageLock_Req", _ENV.CCallRequestEvent)
-_ENV.CEventRoleHeadImageLock_Req = _ENV.CEventRoleHeadImageLock_Req
--- DECOMPILER ERROR at PC2552: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventRoleHeadImageLock_Req", CCallRequestEvent)
+CEventRoleHeadImageLock_Req = CEventRoleHeadImageLock_Req
 
-;
-(_ENV.CEventRoleHeadImageLock_Req).Constructor = function(self)
-  -- function num : 0_65
+function CEventRoleHeadImageLock_Req:Constructor()
   self.m_nImageID = 0
 end
 
--- DECOMPILER ERROR at PC2562: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventRoleHeadImageLock_Req)._proto = {
-[1] = {"m_nImageID", "int"}
+CEventRoleHeadImageLock_Req._proto = {
+  [1] = {"m_nImageID", "int"}
 }
-;
-(_ENV._class)("CEventRoleHeadImageLock_Asw", _ENV.CCallReplyEvent)
-_ENV.CEventRoleHeadImageLock_Asw = _ENV.CEventRoleHeadImageLock_Asw
--- DECOMPILER ERROR at PC2577: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventRoleHeadImageLock_Asw", CCallReplyEvent)
+CEventRoleHeadImageLock_Asw = CEventRoleHeadImageLock_Asw
 
-;
-(_ENV.CEventRoleHeadImageLock_Asw).Constructor = function(self)
-  -- function num : 0_66
+function CEventRoleHeadImageLock_Asw:Constructor()
   self.ret = 0
   self.m_nImageID = 0
   self.m_bLock = false
   self.m_vecLockCondition = {}
 end
 
--- DECOMPILER ERROR at PC2602: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventRoleHeadImageLock_Asw)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_nImageID", "int"}
-, 
-[3] = {"m_bLock", "bool"}
-, 
-[4] = {"m_vecLockCondition", "list<int>"}
+CEventRoleHeadImageLock_Asw._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"m_nImageID", "int"},
+  [3] = {"m_bLock", "bool"},
+  [4] = {
+    "m_vecLockCondition",
+    "list<int>"
+  }
 }
-;
-(_ENV._class)("CEventTssReportData", _ENV.CCliPushEvent)
-_ENV.CEventTssReportData = _ENV.CEventTssReportData
--- DECOMPILER ERROR at PC2617: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventTssReportData", CCliPushEvent)
+CEventTssReportData = CEventTssReportData
 
-;
-(_ENV.CEventTssReportData).Constructor = function(self)
-  -- function num : 0_67
+function CEventTssReportData:Constructor()
   self.pst_ID = 0
   self.report_data = ""
 end
 
--- DECOMPILER ERROR at PC2622: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventTssReportData).Reliable = function(self)
-  -- function num : 0_68
+function CEventTssReportData:Reliable()
   return false
 end
 
--- DECOMPILER ERROR at PC2637: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventTssReportData)._proto = {
-[1] = {"pst_ID", "int64"}
-, 
-[2] = {"report_data", "string"}
+CEventTssReportData._proto = {
+  [1] = {"pst_ID", "int64"},
+  [2] = {
+    "report_data",
+    "string"
+  }
 }
-;
-(_ENV._class)("CEventStoryAffinity", _ENV.CCallRequestEvent)
-_ENV.CEventStoryAffinity = _ENV.CEventStoryAffinity
--- DECOMPILER ERROR at PC2652: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventStoryAffinity", CCallRequestEvent)
+CEventStoryAffinity = CEventStoryAffinity
 
-;
-(_ENV.CEventStoryAffinity).Constructor = function(self)
-  -- function num : 0_69
+function CEventStoryAffinity:Constructor()
 end
 
--- DECOMPILER ERROR at PC2657: Confused about usage of register: R6 in 'UnsetPending'
+CEventStoryAffinity._proto = {}
+_class("CEventStoryAffinityResult", CCallReplyEvent)
+CEventStoryAffinityResult = CEventStoryAffinityResult
 
-;
-(_ENV.CEventStoryAffinity)._proto = {}
-;
-(_ENV._class)("CEventStoryAffinityResult", _ENV.CCallReplyEvent)
-_ENV.CEventStoryAffinityResult = _ENV.CEventStoryAffinityResult
--- DECOMPILER ERROR at PC2672: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventStoryAffinityResult).Constructor = function(self)
-  -- function num : 0_70
+function CEventStoryAffinityResult:Constructor()
   self.ret = 0
   self.ids = {}
 end
 
--- DECOMPILER ERROR at PC2687: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventStoryAffinityResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"ids", "list<int>"}
+CEventStoryAffinityResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"ids", "list<int>"}
 }
-;
-(_ENV._class)("CEventAddStoryAffinity", _ENV.CCallRequestEvent)
-_ENV.CEventAddStoryAffinity = _ENV.CEventAddStoryAffinity
--- DECOMPILER ERROR at PC2702: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventAddStoryAffinity", CCallRequestEvent)
+CEventAddStoryAffinity = CEventAddStoryAffinity
 
-;
-(_ENV.CEventAddStoryAffinity).Constructor = function(self)
-  -- function num : 0_71
+function CEventAddStoryAffinity:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC2712: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventAddStoryAffinity)._proto = {
-[1] = {"id", "int"}
+CEventAddStoryAffinity._proto = {
+  [1] = {"id", "int"}
 }
-;
-(_ENV._class)("CEventAddStoryAffinityResult", _ENV.CCallReplyEvent)
-_ENV.CEventAddStoryAffinityResult = _ENV.CEventAddStoryAffinityResult
--- DECOMPILER ERROR at PC2727: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventAddStoryAffinityResult", CCallReplyEvent)
+CEventAddStoryAffinityResult = CEventAddStoryAffinityResult
 
-;
-(_ENV.CEventAddStoryAffinityResult).Constructor = function(self)
-  -- function num : 0_72
+function CEventAddStoryAffinityResult:Constructor()
   self.ret = 0
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC2742: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventAddStoryAffinityResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"id", "int"}
+CEventAddStoryAffinityResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"id", "int"}
 }
-;
-(_ENV._class)("CEventClientSaveLog", _ENV.CCliPushEvent)
-_ENV.CEventClientSaveLog = _ENV.CEventClientSaveLog
--- DECOMPILER ERROR at PC2757: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventClientSaveLog", CCliPushEvent)
+CEventClientSaveLog = CEventClientSaveLog
 
-;
-(_ENV.CEventClientSaveLog).Constructor = function(self)
-  -- function num : 0_73
+function CEventClientSaveLog:Constructor()
   self.m_stKey = ""
   self.m_stValue = ""
 end
 
--- DECOMPILER ERROR at PC2772: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventClientSaveLog)._proto = {
-[1] = {"m_stKey", "string"}
-, 
-[2] = {"m_stValue", "string"}
+CEventClientSaveLog._proto = {
+  [1] = {"m_stKey", "string"},
+  [2] = {"m_stValue", "string"}
 }
-;
-(_ENV._class)("CEventPrepareAll", _ENV.CCallRequestEvent)
-_ENV.CEventPrepareAll = _ENV.CEventPrepareAll
--- DECOMPILER ERROR at PC2787: Confused about usage of register: R6 in 'UnsetPending'
+_class("CEventPrepareAll", CCallRequestEvent)
+CEventPrepareAll = CEventPrepareAll
 
-;
-(_ENV.CEventPrepareAll).Constructor = function(self)
-  -- function num : 0_74
+function CEventPrepareAll:Constructor()
 end
 
--- DECOMPILER ERROR at PC2792: Confused about usage of register: R6 in 'UnsetPending'
+CEventPrepareAll._proto = {}
+_class("CEventPrepareAllResult", CCallReplyEvent)
+CEventPrepareAllResult = CEventPrepareAllResult
 
-;
-(_ENV.CEventPrepareAll)._proto = {}
-;
-(_ENV._class)("CEventPrepareAllResult", _ENV.CCallReplyEvent)
-_ENV.CEventPrepareAllResult = _ENV.CEventPrepareAllResult
--- DECOMPILER ERROR at PC2807: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventPrepareAllResult).Constructor = function(self)
-  -- function num : 0_75
+function CEventPrepareAllResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2817: Confused about usage of register: R6 in 'UnsetPending'
-
-;
-(_ENV.CEventPrepareAllResult)._proto = {
-[1] = {"ret", "int"}
+CEventPrepareAllResult._proto = {
+  [1] = {"ret", "int"}
 }
-local EnumPrepareWorkType = {E_PrepareWork_No = 0, E_PrepareWork_UnlockModule = 1, E_PrepareWork_PassMission = 2, E_PrepareWork_AddPetAll = 3, E_PrepareWork_SetPetData = 4, E_PrepareWork_AddItemAll = 5, E_PrepareWork_AddServerTime = 6, E_PrepareWork_Campaign_LvReward_UnlockAdvance = 7, E_PrepareWork_Campaign_LvReward_UnlockLuxury = 8, E_PrepareWork_Campaign_LvReward_UnlockAdditional = 9, E_PrepareWork_Campaign_PassLineMission = 10, E_PrepareWork_Campaign_PassTreeMission = 11, E_PrepareWork_Campaign_PassSummerIIMission = 12, E_PrepareWork_Campaign_PassMission = 13, E_PrepareWork_Campaign_ResetAccumulateLogin = 14, E_PrepareWork_Campaign_ResetPersonProgress = 15, E_PrepareWork_UnlockAllAircraftRooms = 16, E_PrepareWork_UnlockMazeRoom = 17, E_PrepareWork_HomeLand_Event = 18, E_PrepareWork_HomeLand_SetLevel = 19, E_PrepareWork_PointProgress = 20, E_PrepareWork_CompleteCondition = 21, E_PrepareWork_IDOLAddValue = 22, E_PrepareWork_READONEMAILBYID = 23, E_PrepareWork_SkipShakeCheck = 24, E_PrepareWork_EquipRefine = 25, E_PrepareWork_Campaign_PassSeasonMission = 26}
-;
-(_ENV._enum)("EnumPrepareWorkType", EnumPrepareWorkType)
-;
-(_ENV._class)("CEventPrepareWork", _ENV.CCallRequestEvent)
-_ENV.CEventPrepareWork = _ENV.CEventPrepareWork
--- DECOMPILER ERROR at PC2896: Confused about usage of register: R7 in 'UnsetPending'
+local EnumPrepareWorkType = {
+  E_PrepareWork_No = 0,
+  E_PrepareWork_UnlockModule = 1,
+  E_PrepareWork_PassMission = 2,
+  E_PrepareWork_AddPetAll = 3,
+  E_PrepareWork_SetPetData = 4,
+  E_PrepareWork_AddItemAll = 5,
+  E_PrepareWork_AddServerTime = 6,
+  E_PrepareWork_Campaign_LvReward_UnlockAdvance = 7,
+  E_PrepareWork_Campaign_LvReward_UnlockLuxury = 8,
+  E_PrepareWork_Campaign_LvReward_UnlockAdditional = 9,
+  E_PrepareWork_Campaign_PassLineMission = 10,
+  E_PrepareWork_Campaign_PassTreeMission = 11,
+  E_PrepareWork_Campaign_PassSummerIIMission = 12,
+  E_PrepareWork_Campaign_PassMission = 13,
+  E_PrepareWork_Campaign_ResetAccumulateLogin = 14,
+  E_PrepareWork_Campaign_ResetPersonProgress = 15,
+  E_PrepareWork_UnlockAllAircraftRooms = 16,
+  E_PrepareWork_UnlockMazeRoom = 17,
+  E_PrepareWork_HomeLand_Event = 18,
+  E_PrepareWork_HomeLand_SetLevel = 19,
+  E_PrepareWork_PointProgress = 20,
+  E_PrepareWork_CompleteCondition = 21,
+  E_PrepareWork_IDOLAddValue = 22,
+  E_PrepareWork_READONEMAILBYID = 23,
+  E_PrepareWork_SkipShakeCheck = 24,
+  E_PrepareWork_EquipRefine = 25,
+  E_PrepareWork_Campaign_PassSeasonMission = 26
+}
+_enum("EnumPrepareWorkType", EnumPrepareWorkType)
+_class("CEventPrepareWork", CCallRequestEvent)
+CEventPrepareWork = CEventPrepareWork
 
-;
-(_ENV.CEventPrepareWork).Constructor = function(self)
-  -- function num : 0_76
+function CEventPrepareWork:Constructor()
   self.m_mapWrok = {}
   self.int_param = 0
   self.str_param = ""
 end
 
--- DECOMPILER ERROR at PC2916: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventPrepareWork)._proto = {
-[1] = {"m_mapWrok", "map<int,int>"}
-, 
-[2] = {"int_param", "int"}
-, 
-[3] = {"str_param", "string"}
+CEventPrepareWork._proto = {
+  [1] = {
+    "m_mapWrok",
+    "map<int,int>"
+  },
+  [2] = {"int_param", "int"},
+  [3] = {"str_param", "string"}
 }
-;
-(_ENV._class)("CEventPrepareWorkResult", _ENV.CCallReplyEvent)
-_ENV.CEventPrepareWorkResult = _ENV.CEventPrepareWorkResult
--- DECOMPILER ERROR at PC2931: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventPrepareWorkResult", CCallReplyEvent)
+CEventPrepareWorkResult = CEventPrepareWorkResult
 
-;
-(_ENV.CEventPrepareWorkResult).Constructor = function(self)
-  -- function num : 0_77
+function CEventPrepareWorkResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2941: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventPrepareWorkResult)._proto = {
-[1] = {"ret", "int"}
+CEventPrepareWorkResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventEraseAccount", _ENV.CCallRequestEvent)
-_ENV.CEventEraseAccount = _ENV.CEventEraseAccount
--- DECOMPILER ERROR at PC2956: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventEraseAccount", CCallRequestEvent)
+CEventEraseAccount = CEventEraseAccount
 
-;
-(_ENV.CEventEraseAccount).Constructor = function(self)
-  -- function num : 0_78
+function CEventEraseAccount:Constructor()
 end
 
--- DECOMPILER ERROR at PC2961: Confused about usage of register: R7 in 'UnsetPending'
+CEventEraseAccount._proto = {}
+_class("CEventEraseAccountResult", CCallReplyEvent)
+CEventEraseAccountResult = CEventEraseAccountResult
 
-;
-(_ENV.CEventEraseAccount)._proto = {}
-;
-(_ENV._class)("CEventEraseAccountResult", _ENV.CCallReplyEvent)
-_ENV.CEventEraseAccountResult = _ENV.CEventEraseAccountResult
--- DECOMPILER ERROR at PC2976: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventEraseAccountResult).Constructor = function(self)
-  -- function num : 0_79
+function CEventEraseAccountResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC2986: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventEraseAccountResult)._proto = {
-[1] = {"ret", "int"}
+CEventEraseAccountResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventAppHome", _ENV.CCliPushEvent)
-_ENV.CEventAppHome = _ENV.CEventAppHome
--- DECOMPILER ERROR at PC3001: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventAppHome", CCliPushEvent)
+CEventAppHome = CEventAppHome
 
-;
-(_ENV.CEventAppHome).Constructor = function(self)
-  -- function num : 0_80
+function CEventAppHome:Constructor()
   self.log_data = ""
 end
 
--- DECOMPILER ERROR at PC3006: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventAppHome).Reliable = function(self)
-  -- function num : 0_81
+function CEventAppHome:Reliable()
   return false
 end
 
--- DECOMPILER ERROR at PC3016: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventAppHome)._proto = {
-[1] = {"log_data", "string"}
+CEventAppHome._proto = {
+  [1] = {"log_data", "string"}
 }
-;
-(_ENV._class)("CEventAppResume", _ENV.CCliPushEvent)
-_ENV.CEventAppResume = _ENV.CEventAppResume
--- DECOMPILER ERROR at PC3031: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventAppResume", CCliPushEvent)
+CEventAppResume = CEventAppResume
 
-;
-(_ENV.CEventAppResume).Constructor = function(self)
-  -- function num : 0_82
+function CEventAppResume:Constructor()
   self.log_data = ""
 end
 
--- DECOMPILER ERROR at PC3036: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventAppResume).Reliable = function(self)
-  -- function num : 0_83
+function CEventAppResume:Reliable()
   return false
 end
 
--- DECOMPILER ERROR at PC3046: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventAppResume)._proto = {
-[1] = {"log_data", "string"}
+CEventAppResume._proto = {
+  [1] = {"log_data", "string"}
 }
-;
-(_ENV._class)("CEventMobileSettingInfo", _ENV.CCliPushEvent)
-_ENV.CEventMobileSettingInfo = _ENV.CEventMobileSettingInfo
--- DECOMPILER ERROR at PC3061: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventMobileSettingInfo", CCliPushEvent)
+CEventMobileSettingInfo = CEventMobileSettingInfo
 
-;
-(_ENV.CEventMobileSettingInfo).Constructor = function(self)
-  -- function num : 0_84
-  self.bgmVolume = 0
-  self.soundVolume = 0
-  self.voiceVolume = 0
+function CEventMobileSettingInfo:Constructor()
+  self.bgmVolume = 0.0
+  self.soundVolume = 0.0
+  self.voiceVolume = 0.0
   self.bgmMute = false
   self.soundMute = false
   self.voiceMute = false
   self.GraphicsLevel = 0
   self.skillAnmiIndex = 0
-  self.BangWidth = 0
+  self.BangWidth = 0.0
   self.danSwitch = false
 end
 
--- DECOMPILER ERROR at PC3116: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileSettingInfo)._proto = {
-[1] = {"bgmVolume", "float"}
-, 
-[2] = {"soundVolume", "float"}
-, 
-[3] = {"voiceVolume", "float"}
-, 
-[4] = {"bgmMute", "bool"}
-, 
-[5] = {"soundMute", "bool"}
-, 
-[6] = {"voiceMute", "bool"}
-, 
-[7] = {"GraphicsLevel", "int"}
-, 
-[8] = {"skillAnmiIndex", "int"}
-, 
-[9] = {"BangWidth", "float"}
-, 
-[10] = {"danSwitch", "bool"}
+CEventMobileSettingInfo._proto = {
+  [1] = {"bgmVolume", "float"},
+  [2] = {
+    "soundVolume",
+    "float"
+  },
+  [3] = {
+    "voiceVolume",
+    "float"
+  },
+  [4] = {"bgmMute", "bool"},
+  [5] = {"soundMute", "bool"},
+  [6] = {"voiceMute", "bool"},
+  [7] = {
+    "GraphicsLevel",
+    "int"
+  },
+  [8] = {
+    "skillAnmiIndex",
+    "int"
+  },
+  [9] = {"BangWidth", "float"},
+  [10] = {"danSwitch", "bool"}
 }
-;
-(_ENV._class)("CEventAmendHeadFrame_Req", _ENV.CCallRequestEvent)
-_ENV.CEventAmendHeadFrame_Req = _ENV.CEventAmendHeadFrame_Req
--- DECOMPILER ERROR at PC3131: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventAmendHeadFrame_Req", CCallRequestEvent)
+CEventAmendHeadFrame_Req = CEventAmendHeadFrame_Req
 
-;
-(_ENV.CEventAmendHeadFrame_Req).Constructor = function(self)
-  -- function num : 0_85
+function CEventAmendHeadFrame_Req:Constructor()
   self.m_nFrameID = 0
 end
 
--- DECOMPILER ERROR at PC3141: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventAmendHeadFrame_Req)._proto = {
-[1] = {"m_nFrameID", "int"}
+CEventAmendHeadFrame_Req._proto = {
+  [1] = {"m_nFrameID", "int"}
 }
-;
-(_ENV._class)("CEventAmendHeadFrame_Asw", _ENV.CCallReplyEvent)
-_ENV.CEventAmendHeadFrame_Asw = _ENV.CEventAmendHeadFrame_Asw
--- DECOMPILER ERROR at PC3156: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventAmendHeadFrame_Asw", CCallReplyEvent)
+CEventAmendHeadFrame_Asw = CEventAmendHeadFrame_Asw
 
-;
-(_ENV.CEventAmendHeadFrame_Asw).Constructor = function(self)
-  -- function num : 0_86
+function CEventAmendHeadFrame_Asw:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC3166: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventAmendHeadFrame_Asw)._proto = {
-[1] = {"ret", "int"}
+CEventAmendHeadFrame_Asw._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventClearHeadFrameLock_Req", _ENV.CCallRequestEvent)
-_ENV.CEventClearHeadFrameLock_Req = _ENV.CEventClearHeadFrameLock_Req
--- DECOMPILER ERROR at PC3181: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventClearHeadFrameLock_Req", CCallRequestEvent)
+CEventClearHeadFrameLock_Req = CEventClearHeadFrameLock_Req
 
-;
-(_ENV.CEventClearHeadFrameLock_Req).Constructor = function(self)
-  -- function num : 0_87
+function CEventClearHeadFrameLock_Req:Constructor()
   self.m_nFrameID = 0
 end
 
--- DECOMPILER ERROR at PC3191: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventClearHeadFrameLock_Req)._proto = {
-[1] = {"m_nFrameID", "int"}
+CEventClearHeadFrameLock_Req._proto = {
+  [1] = {"m_nFrameID", "int"}
 }
-;
-(_ENV._class)("CEventClearHeadFrameLock_Asw", _ENV.CCallReplyEvent)
-_ENV.CEventClearHeadFrameLock_Asw = _ENV.CEventClearHeadFrameLock_Asw
--- DECOMPILER ERROR at PC3206: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventClearHeadFrameLock_Asw", CCallReplyEvent)
+CEventClearHeadFrameLock_Asw = CEventClearHeadFrameLock_Asw
 
-;
-(_ENV.CEventClearHeadFrameLock_Asw).Constructor = function(self)
-  -- function num : 0_88
+function CEventClearHeadFrameLock_Asw:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC3216: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventClearHeadFrameLock_Asw)._proto = {
-[1] = {"ret", "int"}
+CEventClearHeadFrameLock_Asw._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventRoleHeadFrameLock_Req", _ENV.CCallRequestEvent)
-_ENV.CEventRoleHeadFrameLock_Req = _ENV.CEventRoleHeadFrameLock_Req
--- DECOMPILER ERROR at PC3231: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventRoleHeadFrameLock_Req", CCallRequestEvent)
+CEventRoleHeadFrameLock_Req = CEventRoleHeadFrameLock_Req
 
-;
-(_ENV.CEventRoleHeadFrameLock_Req).Constructor = function(self)
-  -- function num : 0_89
+function CEventRoleHeadFrameLock_Req:Constructor()
   self.m_nFrameID = 0
 end
 
--- DECOMPILER ERROR at PC3241: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventRoleHeadFrameLock_Req)._proto = {
-[1] = {"m_nFrameID", "int"}
+CEventRoleHeadFrameLock_Req._proto = {
+  [1] = {"m_nFrameID", "int"}
 }
-;
-(_ENV._class)("CEventRoleHeadFrameLock_Asw", _ENV.CCallReplyEvent)
-_ENV.CEventRoleHeadFrameLock_Asw = _ENV.CEventRoleHeadFrameLock_Asw
--- DECOMPILER ERROR at PC3256: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventRoleHeadFrameLock_Asw", CCallReplyEvent)
+CEventRoleHeadFrameLock_Asw = CEventRoleHeadFrameLock_Asw
 
-;
-(_ENV.CEventRoleHeadFrameLock_Asw).Constructor = function(self)
-  -- function num : 0_90
+function CEventRoleHeadFrameLock_Asw:Constructor()
   self.ret = 0
   self.m_nFrameID = 0
   self.m_bLock = false
   self.m_vecLockCondition = {}
 end
 
--- DECOMPILER ERROR at PC3281: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventRoleHeadFrameLock_Asw)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_nFrameID", "int"}
-, 
-[3] = {"m_bLock", "bool"}
-, 
-[4] = {"m_vecLockCondition", "list<int>"}
+CEventRoleHeadFrameLock_Asw._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"m_nFrameID", "int"},
+  [3] = {"m_bLock", "bool"},
+  [4] = {
+    "m_vecLockCondition",
+    "list<int>"
+  }
 }
-;
-(_ENV._class)("CEventChooseBackImage", _ENV.CCallRequestEvent)
-_ENV.CEventChooseBackImage = _ENV.CEventChooseBackImage
--- DECOMPILER ERROR at PC3296: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventChooseBackImage", CCallRequestEvent)
+CEventChooseBackImage = CEventChooseBackImage
 
-;
-(_ENV.CEventChooseBackImage).Constructor = function(self)
-  -- function num : 0_91
+function CEventChooseBackImage:Constructor()
   self.m_nBackImageID = 0
   self.m_background_type = 1
   self.m_background_x = 0
@@ -1958,221 +1724,160 @@ _ENV.CEventChooseBackImage = _ENV.CEventChooseBackImage
   self.spine_id = 0
 end
 
--- DECOMPILER ERROR at PC3337: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventChooseBackImage)._proto = {
-[1] = {"m_nBackImageID", "int"}
-, 
-[2] = {"m_background_type", "int"}
-, 
-[3] = {"m_background_x", "float"}
-, 
-[4] = {"m_background_y", "float"}
-, 
-[5] = {"m_background_scale", "float"}
-, 
-[6] = {"is_hand_operate", "bool"}
-, 
-[7] = {"spine_id", "int"}
+CEventChooseBackImage._proto = {
+  [1] = {
+    "m_nBackImageID",
+    "int"
+  },
+  [2] = {
+    "m_background_type",
+    "int"
+  },
+  [3] = {
+    "m_background_x",
+    "float"
+  },
+  [4] = {
+    "m_background_y",
+    "float"
+  },
+  [5] = {
+    "m_background_scale",
+    "float"
+  },
+  [6] = {
+    "is_hand_operate",
+    "bool"
+  },
+  [7] = {"spine_id", "int"}
 }
-;
-(_ENV._class)("CEventChooseBackImageResult", _ENV.CCallReplyEvent)
-_ENV.CEventChooseBackImageResult = _ENV.CEventChooseBackImageResult
--- DECOMPILER ERROR at PC3352: Confused about usage of register: R7 in 'UnsetPending'
+_class("CEventChooseBackImageResult", CCallReplyEvent)
+CEventChooseBackImageResult = CEventChooseBackImageResult
 
-;
-(_ENV.CEventChooseBackImageResult).Constructor = function(self)
-  -- function num : 0_92
+function CEventChooseBackImageResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC3363: Confused about usage of register: R7 in 'UnsetPending'
-
-;
-(_ENV.CEventChooseBackImageResult)._proto = {
-[1] = {"ret", "int"}
+CEventChooseBackImageResult._proto = {
+  [1] = {"ret", "int"}
 }
-local EnumBgmType = {E_Bgm_Main = 0, E_Bgm_AirCraft = 1, E_Bgm_Homeland = 2}
-;
-(_ENV._enum)("EnumBgmType", EnumBgmType)
-;
-(_ENV._class)("CEventMinorChatResult", _ENV.CSvrPushEvent)
-_ENV.CEventMinorChatResult = _ENV.CEventMinorChatResult
--- DECOMPILER ERROR at PC3392: Confused about usage of register: R8 in 'UnsetPending'
+local EnumBgmType = {
+  E_Bgm_Main = 0,
+  E_Bgm_AirCraft = 1,
+  E_Bgm_Homeland = 2
+}
+_enum("EnumBgmType", EnumBgmType)
+_class("CEventMinorChatResult", CSvrPushEvent)
+CEventMinorChatResult = CEventMinorChatResult
 
-;
-(_ENV.CEventMinorChatResult).Constructor = function(self)
-  -- function num : 0_93
+function CEventMinorChatResult:Constructor()
   self.minor_chat_open = true
 end
 
--- DECOMPILER ERROR at PC3403: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventMinorChatResult)._proto = {
-[1] = {"minor_chat_open", "bool"}
+CEventMinorChatResult._proto = {
+  [1] = {
+    "minor_chat_open",
+    "bool"
+  }
 }
-;
-(_ENV._class)("CEventChooseBgm", _ENV.CCallRequestEvent)
-_ENV.CEventChooseBgm = _ENV.CEventChooseBgm
--- DECOMPILER ERROR at PC3418: Confused about usage of register: R8 in 'UnsetPending'
+_class("CEventChooseBgm", CCallRequestEvent)
+CEventChooseBgm = CEventChooseBgm
 
-;
-(_ENV.CEventChooseBgm).Constructor = function(self)
-  -- function num : 0_94
+function CEventChooseBgm:Constructor()
   self.m_nBgmType = 0
   self.m_nBgmID = 0
 end
 
--- DECOMPILER ERROR at PC3434: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventChooseBgm)._proto = {
-[1] = {"m_nBgmType", "int"}
-, 
-[2] = {"m_nBgmID", "int"}
+CEventChooseBgm._proto = {
+  [1] = {"m_nBgmType", "int"},
+  [2] = {"m_nBgmID", "int"}
 }
-;
-(_ENV._class)("CEventChooseBgmResult", _ENV.CCallReplyEvent)
-_ENV.CEventChooseBgmResult = _ENV.CEventChooseBgmResult
--- DECOMPILER ERROR at PC3449: Confused about usage of register: R8 in 'UnsetPending'
+_class("CEventChooseBgmResult", CCallReplyEvent)
+CEventChooseBgmResult = CEventChooseBgmResult
 
-;
-(_ENV.CEventChooseBgmResult).Constructor = function(self)
-  -- function num : 0_95
+function CEventChooseBgmResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC3460: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventChooseBgmResult)._proto = {
-[1] = {"ret", "int"}
+CEventChooseBgmResult._proto = {
+  [1] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventChangeTitle", _ENV.CCallRequestEvent)
-_ENV.CEventChangeTitle = _ENV.CEventChangeTitle
--- DECOMPILER ERROR at PC3475: Confused about usage of register: R8 in 'UnsetPending'
+_class("CEventChangeTitle", CCallRequestEvent)
+CEventChangeTitle = CEventChangeTitle
 
-;
-(_ENV.CEventChangeTitle).Constructor = function(self)
-  -- function num : 0_96
+function CEventChangeTitle:Constructor()
   self.type = 0
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC3491: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventChangeTitle)._proto = {
-[1] = {"type", "int"}
-, 
-[2] = {"id", "int"}
+CEventChangeTitle._proto = {
+  [1] = {"type", "int"},
+  [2] = {"id", "int"}
 }
-;
-(_ENV._class)("CEventChangeTitleResult", _ENV.CCallReplyEvent)
-_ENV.CEventChangeTitleResult = _ENV.CEventChangeTitleResult
--- DECOMPILER ERROR at PC3506: Confused about usage of register: R8 in 'UnsetPending'
+_class("CEventChangeTitleResult", CCallReplyEvent)
+CEventChangeTitleResult = CEventChangeTitleResult
 
-;
-(_ENV.CEventChangeTitleResult).Constructor = function(self)
-  -- function num : 0_97
+function CEventChangeTitleResult:Constructor()
   self.type = 0
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC3522: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventChangeTitleResult)._proto = {
-[1] = {"type", "int"}
-, 
-[2] = {"ret", "int"}
+CEventChangeTitleResult._proto = {
+  [1] = {"type", "int"},
+  [2] = {"ret", "int"}
 }
-;
-(_ENV._class)("CEventChangeTitleInfoResult", _ENV.CSvrPushEvent)
-_ENV.CEventChangeTitleInfoResult = _ENV.CEventChangeTitleInfoResult
--- DECOMPILER ERROR at PC3537: Confused about usage of register: R8 in 'UnsetPending'
+_class("CEventChangeTitleInfoResult", CSvrPushEvent)
+CEventChangeTitleInfoResult = CEventChangeTitleInfoResult
 
-;
-(_ENV.CEventChangeTitleInfoResult).Constructor = function(self)
-  -- function num : 0_98
+function CEventChangeTitleInfoResult:Constructor()
   self.title_used = 0
   self.fifure_used = 0
 end
 
--- DECOMPILER ERROR at PC3553: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventChangeTitleInfoResult)._proto = {
-[1] = {"title_used", "int"}
-, 
-[2] = {"fifure_used", "int"}
+CEventChangeTitleInfoResult._proto = {
+  [1] = {"title_used", "int"},
+  [2] = {
+    "fifure_used",
+    "int"
+  }
 }
-;
-(_ENV._class)("CEventPushLoginComplete", _ENV.CCliPushEvent)
-_ENV.CEventPushLoginComplete = _ENV.CEventPushLoginComplete
--- DECOMPILER ERROR at PC3568: Confused about usage of register: R8 in 'UnsetPending'
+_class("CEventPushLoginComplete", CCliPushEvent)
+CEventPushLoginComplete = CEventPushLoginComplete
 
-;
-(_ENV.CEventPushLoginComplete).Constructor = function(self)
-  -- function num : 0_99
+function CEventPushLoginComplete:Constructor()
 end
 
--- DECOMPILER ERROR at PC3573: Confused about usage of register: R8 in 'UnsetPending'
+CEventPushLoginComplete._proto = {}
+_class("CEventMobileBadgeInfo", CCliPushEvent)
+CEventMobileBadgeInfo = CEventMobileBadgeInfo
 
-;
-(_ENV.CEventPushLoginComplete)._proto = {}
-;
-(_ENV._class)("CEventMobileBadgeInfo", _ENV.CCliPushEvent)
-_ENV.CEventMobileBadgeInfo = _ENV.CEventMobileBadgeInfo
--- DECOMPILER ERROR at PC3588: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileBadgeInfo).Constructor = function(self)
-  -- function num : 0_100
+function CEventMobileBadgeInfo:Constructor()
   self.badgeSwitch = false
 end
 
--- DECOMPILER ERROR at PC3599: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventMobileBadgeInfo)._proto = {
-[1] = {"badgeSwitch", "bool"}
+CEventMobileBadgeInfo._proto = {
+  [1] = {
+    "badgeSwitch",
+    "bool"
+  }
 }
-;
-(_ENV._class)("CEventSeasonStoryReq", _ENV.CCallRequestEvent)
-_ENV.CEventSeasonStoryReq = _ENV.CEventSeasonStoryReq
--- DECOMPILER ERROR at PC3614: Confused about usage of register: R8 in 'UnsetPending'
+_class("CEventSeasonStoryReq", CCallRequestEvent)
+CEventSeasonStoryReq = CEventSeasonStoryReq
 
-;
-(_ENV.CEventSeasonStoryReq).Constructor = function(self)
-  -- function num : 0_101
+function CEventSeasonStoryReq:Constructor()
   self.mask = 0
 end
 
--- DECOMPILER ERROR at PC3625: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventSeasonStoryReq)._proto = {
-[1] = {"mask", "int"}
+CEventSeasonStoryReq._proto = {
+  [1] = {"mask", "int"}
 }
-;
-(_ENV._class)("CEventSeasonStoryResult", _ENV.CCallReplyEvent)
-_ENV.CEventSeasonStoryResult = _ENV.CEventSeasonStoryResult
--- DECOMPILER ERROR at PC3640: Confused about usage of register: R8 in 'UnsetPending'
+_class("CEventSeasonStoryResult", CCallReplyEvent)
+CEventSeasonStoryResult = CEventSeasonStoryResult
 
-;
-(_ENV.CEventSeasonStoryResult).Constructor = function(self)
-  -- function num : 0_102
+function CEventSeasonStoryResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC3651: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CEventSeasonStoryResult)._proto = {
-[1] = {"ret", "int"}
+CEventSeasonStoryResult._proto = {
+  [1] = {"ret", "int"}
 }
-

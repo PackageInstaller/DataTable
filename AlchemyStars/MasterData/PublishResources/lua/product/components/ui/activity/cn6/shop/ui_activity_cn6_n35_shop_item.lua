@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn6/shop/ui_activity_cn6_n35_shop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCN6N35ShopItem", UICustomWidget)
 UIActivityCN6N35ShopItem = UIActivityCN6N35ShopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCN6N35ShopItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityCN6N35ShopItem:OnShow()
   self._petIcon = self:GetGameObject("PetIcon")
   self._petIconLoader = self:GetUIComponent("RawImageLoader", "PetIcon")
   self._petIconRect = self:GetUIComponent("RectTransform", "PetIcon")
@@ -26,113 +19,77 @@ UIActivityCN6N35ShopItem.OnShow = function(self)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN6N35ShopItem.SetVisible = function(self, status)
-  -- function num : 0_1
-  (self._go):SetActive(status)
+function UIActivityCN6N35ShopItem:SetVisible(status)
+  self._go:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN6N35ShopItem.Refresh = function(self, itemInfo, comp, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityCN6N35ShopItem:Refresh(itemInfo, comp, callback)
   if itemInfo == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._itemInfo = itemInfo
   self._callback = callback
-  if (self._itemInfo).m_exchange_limit_count == -1 then
-    (self._empty):SetActive(false)
-    ;
-    ((self._reamainCountLabel).gameObject):SetActive(false)
-    ;
-    (self._remainTitle):SetActive(false)
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
+  if self._itemInfo.m_exchange_limit_count == -1 then
+    self._empty:SetActive(false)
+    self._reamainCountLabel.gameObject:SetActive(false)
+    self._remainTitle:SetActive(false)
     if self._costRect then
-      (self._costRect).anchoredPosition = Vector2(-40, 0)
+      self._costRect.anchoredPosition = Vector2(-40, 0)
     end
   else
-    ;
-    (self._reamainCountLabel):SetText("x" .. (self._itemInfo).m_can_exchange_count)
-    if (self._itemInfo).m_can_exchange_count == 0 then
-      (self._empty):SetActive(true)
+    self._reamainCountLabel:SetText("x" .. self._itemInfo.m_can_exchange_count)
+    if self._itemInfo.m_can_exchange_count == 0 then
+      self._empty:SetActive(true)
     else
-      ;
-      (self._empty):SetActive(false)
+      self._empty:SetActive(false)
     end
   end
-  local itemId = ((self._itemInfo).m_reward).assetid
-  local count = ((self._itemInfo).m_reward).count
-  ;
-  (self._counttLabel):SetText("x" .. count)
-  local cfgItem = (Cfg.cfg_item)[itemId]
+  local itemId = self._itemInfo.m_reward.assetid
+  local count = self._itemInfo.m_reward.count
+  self._counttLabel:SetText("x" .. count)
+  local cfgItem = Cfg.cfg_item[itemId]
   if not cfgItem then
-    return 
+    return
   end
-  ;
-  (self._nameLabel):SetText((StringTable.Get)(cfgItem.Name))
-  local specialIconCfg = (Cfg.cfg_activity_shop_special_item_icon_client)[itemId]
+  self._nameLabel:SetText(StringTable.Get(cfgItem.Name))
+  local specialIconCfg = Cfg.cfg_activity_shop_special_item_icon_client[itemId]
   if specialIconCfg and specialIconCfg.UseInBigCell then
-    (self._petIconLoader):LoadImage(specialIconCfg.SpecialIcon)
-    ;
-    (self._icon):SetActive(false)
-    ;
-    (self._petIcon):SetActive(true)
+    self._petIconLoader:LoadImage(specialIconCfg.SpecialIcon)
+    self._icon:SetActive(false)
+    self._petIcon:SetActive(true)
     if specialIconCfg.PosInBigCell then
-      local b = (string.split)(specialIconCfg.PosInBigCell, "|")
+      local b = string.split(specialIconCfg.PosInBigCell, "|")
       local posX = tonumber(b[1])
       local posY = tonumber(b[2])
-      -- DECOMPILER ERROR at PC124: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._petIconRect).anchoredPosition = Vector2(posX, posY)
+      self._petIconRect.anchoredPosition = Vector2(posX, posY)
     end
-    do
-      if specialIconCfg.SizeInBigCell then
-        local b = (string.split)(specialIconCfg.SizeInBigCell, "|")
-        local w = tonumber(b[1])
-        local h = tonumber(b[2])
-        -- DECOMPILER ERROR at PC144: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._petIconRect).sizeDelta = Vector2(w, h)
-      end
-      do
-        ;
-        (self._icon):SetActive(true)
-        ;
-        (self._petIcon):SetActive(false)
-        ;
-        (self._iconLoader):LoadImage(cfgItem.Icon)
-        local icon1, realCount = comp:GetCostItemIconText()
-        ;
-        (self._costIconLoader):LoadImage(icon1)
-        if (self._itemInfo).m_cost_count <= realCount then
-          (self._costLabel):SetText((UIActivityCustomHelper.GetItemCountStr)(6, (self._itemInfo).m_cost_count, "#ffffff", "#ffffff"))
-        else
-          ;
-          (self._costLabel):SetText((UIActivityCustomHelper.GetItemCountStr)(6, (self._itemInfo).m_cost_count, "#ffffff", "#5df9ff"))
-        end
-      end
+    if specialIconCfg.SizeInBigCell then
+      local b = string.split(specialIconCfg.SizeInBigCell, "|")
+      local w = tonumber(b[1])
+      local h = tonumber(b[2])
+      self._petIconRect.sizeDelta = Vector2(w, h)
     end
+  else
+    self._icon:SetActive(true)
+    self._petIcon:SetActive(false)
+    self._iconLoader:LoadImage(cfgItem.Icon)
+  end
+  local icon1, realCount = comp:GetCostItemIconText()
+  self._costIconLoader:LoadImage(icon1)
+  if realCount >= self._itemInfo.m_cost_count then
+    self._costLabel:SetText(UIActivityCustomHelper.GetItemCountStr(6, self._itemInfo.m_cost_count, "#ffffff", "#ffffff"))
+  else
+    self._costLabel:SetText(UIActivityCustomHelper.GetItemCountStr(6, self._itemInfo.m_cost_count, "#ffffff", "#5df9ff"))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN6N35ShopItem.BGOnClick = function(self)
-  -- function num : 0_3
-  if (self._itemInfo).m_exchange_limit_count ~= -1 and (self._itemInfo).m_can_exchange_count == 0 then
-    return 
+function UIActivityCN6N35ShopItem:BGOnClick()
+  if self._itemInfo.m_exchange_limit_count ~= -1 and self._itemInfo.m_can_exchange_count == 0 then
+    return
   end
   if self._callback then
-    (self._callback)(self._itemInfo)
+    self._callback(self._itemInfo)
   end
 end
-
-

@@ -1,62 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/startup_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TestStartupParam", Object)
 TestStartupParam = TestStartupParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TestStartupParam.Constructor = function(self)
-  -- function num : 0_0
+function TestStartupParam:Constructor()
   self._taskTicketArray = {}
   self._currentTaskIndex = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TestStartupParam.AddTask = function(self, missionID, formationOption)
-  -- function num : 0_1 , upvalues : _ENV
+function TestStartupParam:AddTask(missionID, formationOption)
   local ticket = {missionID = missionID}
-  if type(formationOption) == "table" and #formationOption > 0 then
+  if type(formationOption) == "table" and 0 < #formationOption then
     local formations = {}
-    for optionIndex,raw in ipairs(formationOption) do
-      local options = (string.split)(raw, ",")
+    for optionIndex, raw in ipairs(formationOption) do
+      local options = string.split(raw, ",")
       if not options or #options < 6 then
-        (Log.error)(self._className, (string.format)("invalid formation option on %s: missing one or more argument(s): %s", tostring(optionIndex), tostring(raw)))
-        return 
+        Log.error(self._className, string.format("invalid formation option on %s: missing one or more argument(s): %s", tostring(optionIndex), tostring(raw)))
+        return
       end
-      local petBuildData = TestRobotPetBuildData:New((table.unpack)(options))
+      local petBuildData = TestRobotPetBuildData:New(table.unpack(options))
       petBuildData:SanityFix()
-      ;
-      (table.insert)(formations, petBuildData)
+      table.insert(formations, petBuildData)
     end
   end
-  do
-    ;
-    (table.insert)(self._taskTicketArray, ticket)
-  end
+  table.insert(self._taskTicketArray, ticket)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TestStartupParam.GetCurrentTask = function(self)
-  -- function num : 0_2
-  return (self._taskTicketArray)[self._currentTaskIndex]
+function TestStartupParam:GetCurrentTask()
+  return self._taskTicketArray[self._currentTaskIndex]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TestStartupParam.TickTaskTicketIndex = function(self)
-  -- function num : 0_3
+function TestStartupParam:TickTaskTicketIndex()
   self._currentTaskIndex = self._currentTaskIndex + 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TestStartupParam.GetProgressRawPercentage = function(self)
-  -- function num : 0_4
+function TestStartupParam:GetProgressRawPercentage()
   return self._currentTaskIndex / #self._taskTicketArray
 end
-
-

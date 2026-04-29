@@ -1,92 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_story_small_point_holder.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftStorySmallPointHolder", Object)
 AircraftStorySmallPointHolder = AircraftStorySmallPointHolder
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftStorySmallPointHolder.Constructor = function(self, trans, floor)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftStorySmallPointHolder:Constructor(trans, floor)
   self._point = {}
   if trans == nil then
-    (Log.fatal)("###父节点空")
+    Log.fatal("###父节点空")
   end
   if trans.childCount > 0 then
     for i = 1, trans.childCount do
       local petCount = i
       local petCountRoot = trans:GetChild(i - 1)
       if petCountRoot.childCount <= 0 then
-        (Log.fatal)("###[AircraftStorySmallPointHolder]  petCountRoot.childCount <= 0 !")
+        Log.fatal("###[AircraftStorySmallPointHolder]  petCountRoot.childCount <= 0 !")
       end
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._point)[i] = {}
+      self._point[i] = {}
       for j = 1, petCountRoot.childCount do
         local point = petCountRoot:GetChild(j - 1)
-        ;
-        (point.gameObject):SetActive(false)
-        -- DECOMPILER ERROR at PC43: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        ((self._point)[i])[j] = {}
-        -- DECOMPILER ERROR at PC47: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (((self._point)[i])[j]).occupy = false
-        -- DECOMPILER ERROR at PC51: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (((self._point)[i])[j]).floor = floor
-        -- DECOMPILER ERROR at PC55: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (((self._point)[i])[j]).point = point
+        point.gameObject:SetActive(false)
+        self._point[i][j] = {}
+        self._point[i][j].occupy = false
+        self._point[i][j].floor = floor
+        self._point[i][j].point = point
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("###[AircraftStorySmallPointHolder] :AddPoint --> trans.childCount <= 0 !")
-    end
+    Log.fatal("###[AircraftStorySmallPointHolder] :AddPoint --> trans.childCount <= 0 !")
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftStorySmallPointHolder.GetPoint = function(self, petCount)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._point)[petCount] then
-    for i = 1, #(self._point)[petCount] do
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R6 in 'UnsetPending'
-
-      if not (((self._point)[petCount])[i]).occupy then
-        (((self._point)[petCount])[i]).occupy = true
-        return (((self._point)[petCount])[i]).point
+function AircraftStorySmallPointHolder:GetPoint(petCount)
+  if self._point[petCount] then
+    for i = 1, #self._point[petCount] do
+      if not self._point[petCount][i].occupy then
+        self._point[petCount][i].occupy = true
+        return self._point[petCount][i].point
       end
     end
   else
-    do
-      ;
-      (Log.debug)("###[AircraftStorySmallPointHolder] 没有找到该人数的点 , petCount --> ", petCount)
-      return nil
-    end
+    Log.debug("###[AircraftStorySmallPointHolder] 没有找到该人数的点 , petCount --> ", petCount)
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftStorySmallPointHolder.ReleasePoint = function(self)
-  -- function num : 0_2
+function AircraftStorySmallPointHolder:ReleasePoint()
   for i = 1, #self._point do
-    for j = 1, #(self._point)[i] do
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R9 in 'UnsetPending'
-
-      (((self._point)[i])[j]).occupy = false
+    for j = 1, #self._point[i] do
+      self._point[i][j].occupy = false
     end
   end
 end
-
-

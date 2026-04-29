@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_appoint_chain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamAppointChain", SkillDamageEffectParam)
 SkillEffectParamAppointChain = SkillEffectParamAppointChain
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamAppointChain.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamAppointChain:Constructor(t)
   self._baseValue = t.baseValue
   self._mulValue = t.mulValue
   self._trapBuffID = t.trapBuffID
@@ -17,46 +10,26 @@ SkillEffectParamAppointChain.Constructor = function(self, t)
   self._addCount = t.addCount or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAppointChain.GetAddCount = function(self)
-  -- function num : 0_1
+function SkillEffectParamAppointChain:GetAddCount()
   return self._addCount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAppointChain.GetBaseValue = function(self)
-  -- function num : 0_2
+function SkillEffectParamAppointChain:GetBaseValue()
   return self._baseValue
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAppointChain.GetMulValue = function(self)
-  -- function num : 0_3
+function SkillEffectParamAppointChain:GetMulValue()
   return self._mulValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAppointChain.GetEffectType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectParamAppointChain:GetEffectType()
   return SkillEffectType.AppointCastChain
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAppointChain.GetTrapBuffID = function(self)
-  -- function num : 0_5
+function SkillEffectParamAppointChain:GetTrapBuffID()
   return self._trapBuffID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAppointChain.GetPetBuffID = function(self)
-  -- function num : 0_6
+function SkillEffectParamAppointChain:GetPetBuffID()
   return self._petBuffID
 end
-
-

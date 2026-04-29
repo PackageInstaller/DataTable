@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build_plot/ui_n13_build_plot_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildPlotListItem", UICustomWidget)
 UIN13BuildPlotListItem = UIN13BuildPlotListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13BuildPlotListItem._GetComponents = function(self)
-  -- function num : 0_0
+function UIN13BuildPlotListItem:_GetComponents()
   self._selectBg = self:GetGameObject("state_Select_bg")
   self._lockBg = self:GetGameObject("state_Lock_bg")
   self._desc = self:GetUIComponent("UILocalizationText", "descTex")
@@ -16,45 +9,27 @@ UIN13BuildPlotListItem._GetComponents = function(self)
   self._rollingText = self:GetUIComponent("RollingText", "condition")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN13BuildPlotListItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotListItem.OnHide = function(self, stamp)
-  -- function num : 0_2
+function UIN13BuildPlotListItem:OnHide(stamp)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotListItem.SetData = function(self, idx, select, lock, title, condition, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN13BuildPlotListItem:SetData(idx, select, lock, title, condition, callback)
   self._idx = idx
   self._callback = callback
-  ;
-  (self._selectBg):SetActive(select)
-  ;
-  (self._lockBg):SetActive(lock)
-  ;
-  (self._desc):SetText(title)
-  ;
-  (self._conditionTex):SetText(condition)
-  if not (string.isnullorempty)(condition) then
-    (self._rollingText):RefreshText(nil)
+  self._selectBg:SetActive(select)
+  self._lockBg:SetActive(lock)
+  self._desc:SetText(title)
+  self._conditionTex:SetText(condition)
+  if not string.isnullorempty(condition) then
+    self._rollingText:RefreshText(nil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotListItem.dragOnClick = function(self, go)
-  -- function num : 0_4
+function UIN13BuildPlotListItem:dragOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
-
-

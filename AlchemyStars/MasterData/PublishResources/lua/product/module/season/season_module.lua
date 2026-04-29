@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/season/season_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonModule", GameModule)
 SeasonModule = SeasonModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonModule:Constructor()
   self._seasonCampaignType = ECampaignType.CAMPAIGN_TYPE_INLAND_SEASON
   self._levelExpress = nil
   self.uiModule = self.uiModule
@@ -17,11 +10,8 @@ SeasonModule.Constructor = function(self)
   self._onceMissionData = SeasonOnceMissionData:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+function SeasonModule:Init()
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   self._seasonObj = nil
   self._ext_info = nil
   self._debris_mission = nil
@@ -29,247 +19,160 @@ SeasonModule.Init = function(self)
   self._waitShowCollectionRewards = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.Update = function(self, deltaTime)
-  -- function num : 0_2
+function SeasonModule:Update(deltaTime)
   if self.uiModule then
-    (self.uiModule):Update(deltaTime)
+    self.uiModule:Update(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.Dispose = function(self)
-  -- function num : 0_3
+function SeasonModule:Dispose()
   if self.uiModule then
-    (self.uiModule):Dispose()
+    self.uiModule:Dispose()
   end
   self:ClearLevelExpress()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.UIModule = function(self)
-  -- function num : 0_4
+function SeasonModule:UIModule()
   return self.uiModule
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.RecordLevelExpress = function(self, eventPointID, groupID, expressType)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.debug)("SeasonModule:RecordLevelExpress ", eventPointID, groupID, expressType)
+function SeasonModule:RecordLevelExpress(eventPointID, groupID, expressType)
+  Log.debug("SeasonModule:RecordLevelExpress ", eventPointID, groupID, expressType)
   self:ClearLevelExpress()
   self._levelExpress = {}
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._levelExpress).eventPointID = eventPointID
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._levelExpress).groupID = groupID
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._levelExpress).expressType = expressType
+  self._levelExpress.eventPointID = eventPointID
+  self._levelExpress.groupID = groupID
+  self._levelExpress.expressType = expressType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetLevelExpress = function(self)
-  -- function num : 0_6
+function SeasonModule:GetLevelExpress()
   return self._levelExpress
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.ClearLevelExpress = function(self)
-  -- function num : 0_7
+function SeasonModule:ClearLevelExpress()
   self._levelExpress = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.SetExtData = function(self, info)
-  -- function num : 0_8
+function SeasonModule:SetExtData(info)
   self._ext_info = info
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckExtMask = function(self, state)
-  -- function num : 0_9
-  local mask = (self._ext_info).mask
+function SeasonModule:CheckExtMask(state)
+  local mask = self._ext_info.mask
   mask = mask & state
-  do return mask == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return mask == 1
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.AppendExtMaskData = function(self, state)
-  -- function num : 0_10
-  local mask = (self._ext_info).mask
+function SeasonModule:AppendExtMaskData(state)
+  local mask = self._ext_info.mask
   mask = mask | state
   return mask
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetCurSeasonSample = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local curSample = nil
-  if not (self._campModule):IsDisposed() then
-    curSample = (self._campModule):GetOpenSampleByType(self._seasonCampaignType)
+function SeasonModule:GetCurSeasonSample()
+  local curSample
+  if not self._campModule:IsDisposed() then
+    curSample = self._campModule:GetOpenSampleByType(self._seasonCampaignType)
   end
   if not curSample then
-    (Log.info)("无法获取当前赛季sample数据")
+    Log.info("无法获取当前赛季sample数据")
     return nil
   end
   return curSample
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.ForceRequestCurSeasonData = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonModule:ForceRequestCurSeasonData(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(false)
   local sample = self:GetCurSeasonSample()
   if not sample then
-    (Log.error)("没有简易数据,无法请求赛季玩法详细数据")
+    Log.error("没有简易数据,无法请求赛季玩法详细数据")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
     return res
   end
   local id = sample.id
-  ;
-  (Log.info)("请求赛季详细数据:", id)
-  ;
-  (self._campModule):CampaignComProtoLoadInfo(TT, res, id)
+  Log.info("请求赛季详细数据:", id)
+  self._campModule:CampaignComProtoLoadInfo(TT, res, id)
   if res:GetSucc() then
-    local obj = (self._campModule):GetCampaignObj(id)
+    local obj = self._campModule:GetCampaignObj(id)
     if not obj then
-      (Log.exception)("强制拉取赛季数据成功 但无法获取详细数据:", id)
+      Log.exception("强制拉取赛季数据成功 但无法获取详细数据:", id)
     end
     local localProcess = self:GetLocalProcess(self._seasonCampaignType, id)
     localProcess:InitComponent(obj)
     self._seasonObj = UISeasonObj:New(sample, obj)
   else
-    do
-      ;
-      (Log.error)("获取赛季详细数据失败:", res:GetResult())
-      ;
-      (self._onceMissionData):RefreshData()
-      return res
-    end
+    Log.error("获取赛季详细数据失败:", res:GetResult())
   end
+  self._onceMissionData:RefreshData()
+  return res
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetOnceMissionData = function(self)
-  -- function num : 0_13
+function SeasonModule:GetOnceMissionData()
   return self._onceMissionData
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetLocalProcess = function(self, type, id)
-  -- function num : 0_14
-  if not type then
-    type = self._seasonCampaignType
-  end
-  if not id then
-    id = self:GetCurSeasonID()
-  end
-  if not (self._campModule):IsDisposed() then
-    return (self._campModule):GetCampaignLocalProcessByCampaignId_Local(type, id)
+function SeasonModule:GetLocalProcess(type, id)
+  type = type or self._seasonCampaignType
+  id = id or self:GetCurSeasonID()
+  if not self._campModule:IsDisposed() then
+    return self._campModule:GetCampaignLocalProcessByCampaignId_Local(type, id)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetCurSeasonObj = function(self)
-  -- function num : 0_15
+function SeasonModule:GetCurSeasonObj()
   return self._seasonObj
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.IsOpen = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  do
-    if self._seasonObj then
-      local seasonMissionComponent = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
-      return seasonMissionComponent:ComponentIsOpen()
-    end
-    return false
+function SeasonModule:IsOpen()
+  if self._seasonObj then
+    local seasonMissionComponent = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+    return seasonMissionComponent:ComponentIsOpen()
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetCurSeasonID = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
+function SeasonModule:GetCurSeasonID()
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
   local sample = self:GetCurSeasonSample()
   return sample and sample:IsShow(svrTime) and sample.id or -1
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckSeasonClose = function(self, res)
-  -- function num : 0_18 , upvalues : _ENV
+function SeasonModule:CheckSeasonClose(res)
   if res and not res:GetSucc() then
     local result = res:GetResult()
     if result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED or result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE then
       self:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
       local seasonId = self:GetCurSeasonID()
-      if seasonId > 0 then
-        (self.uiModule):ExitSeasonToSeasonMain(seasonId)
+      if 0 < seasonId then
+        self.uiModule:ExitSeasonToSeasonMain(seasonId)
       else
-        ;
-        (self.uiModule):ExitSeasonTo(UIStateType.UIMain)
+        self.uiModule:ExitSeasonTo(UIStateType.UIMain)
       end
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckSeasonClose_ShowClientError = function(self, seasonId)
-  -- function num : 0_19 , upvalues : _ENV
+function SeasonModule:CheckSeasonClose_ShowClientError(seasonId)
   local id = self:GetCurSeasonID()
-  do
-    if id == -1 then
-      local result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-      self:CheckErrorCode(result, seasonId)
-      return true
-    end
-    return false
+  if id == -1 then
+    local result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
+    self:CheckErrorCode(result, seasonId)
+    return true
+  end
+  return false
+end
+
+function SeasonModule:CheckErrorCode(result, id, refreshCallback, closeCallback)
+  if not self._campModule:IsDisposed() then
+    self._campModule:CheckErrorCode(result, id, refreshCallback, closeCallback)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckErrorCode = function(self, result, id, refreshCallback, closeCallback)
-  -- function num : 0_20
-  if not (self._campModule):IsDisposed() then
-    (self._campModule):CheckErrorCode(result, id, refreshCallback, closeCallback)
-  end
-end
-
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.ReqSeasonChangeFormationInfo = function(self, TT, id, name, pets)
-  -- function num : 0_21 , upvalues : _ENV
-  local seasonMissionComponent = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+function SeasonModule:ReqSeasonChangeFormationInfo(TT, id, name, pets)
+  local seasonMissionComponent = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   local reqRes = AsyncRequestRes:New()
   local formation = SeasonFormationItem:New()
   formation.id = id
@@ -280,174 +183,119 @@ SeasonModule.ReqSeasonChangeFormationInfo = function(self, TT, id, name, pets)
   return reqRes, response
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetSeasonMissionComponent = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function SeasonModule:GetSeasonMissionComponent()
   if self._seasonObj then
-    local seasonMissionComponent = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+    local seasonMissionComponent = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
     return seasonMissionComponent
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HandleCompleteStoryMission = function(self, TT, missionId)
-  -- function num : 0_23 , upvalues : _ENV
-  local seasonMissionComponent = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+function SeasonModule:HandleCompleteStoryMission(TT, missionId)
+  local seasonMissionComponent = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   local reqRes = AsyncRequestRes:New()
   local ret = seasonMissionComponent:HandleCompleteStoryMission(TT, reqRes, missionId)
   self:CheckSeasonClose(reqRes)
   return reqRes, ret
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HandleSeasonClientDataPoint = function(self, TT, x, y, z)
-  -- function num : 0_24 , upvalues : _ENV
-  local seasonMissionComponent = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+function SeasonModule:HandleSeasonClientDataPoint(TT, x, y, z)
+  local seasonMissionComponent = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   local reqRes = AsyncRequestRes:New()
   local ret = seasonMissionComponent:HandleSeasonClientDataPoint(TT, reqRes, x, y, z)
   self:CheckSeasonClose(reqRes)
   return reqRes, ret
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HandleSeasonClientDataExt = function(self, TT, tables)
-  -- function num : 0_25 , upvalues : _ENV
-  local seasonMissionComponent = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+function SeasonModule:HandleSeasonClientDataExt(TT, tables)
+  local seasonMissionComponent = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   local reqRes = AsyncRequestRes:New()
   local ret = seasonMissionComponent:HandleSeasonClientDataExt(TT, reqRes, tables)
   self:CheckSeasonClose(reqRes)
   return reqRes, ret
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HandleSeasonClientStageData = function(self, TT, id, type)
-  -- function num : 0_26 , upvalues : _ENV
-  local seasonMissionComponent = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+function SeasonModule:HandleSeasonClientStageData(TT, id, type)
+  local seasonMissionComponent = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   local reqRes = AsyncRequestRes:New()
   local ret = seasonMissionComponent:HandleSeasonClientStageData(TT, reqRes, id, type)
   self:CheckSeasonClose(reqRes)
   return reqRes, ret
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HandleSeasonPointClientData = function(self, TT, point_info)
-  -- function num : 0_27 , upvalues : _ENV
-  local seasonMissionComponent = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+function SeasonModule:HandleSeasonPointClientData(TT, point_info)
+  local seasonMissionComponent = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   local reqRes = AsyncRequestRes:New()
   local ret = seasonMissionComponent:HandleSeasonPointClientData(TT, reqRes, point_info)
   self:CheckSeasonClose(reqRes)
   return reqRes, ret
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HandleMissionTeamRecord = function(self, TT, asyncRes, num, mission)
-  -- function num : 0_28 , upvalues : _ENV
-  local seasonMissionComponent = (self._seasonObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+function SeasonModule:HandleMissionTeamRecord(TT, asyncRes, num, mission)
+  local seasonMissionComponent = self._seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   local reqRes = AsyncRequestRes:New()
   local ret = seasonMissionComponent:HandleMissionTeamRecord(TT, asyncRes, num, mission)
   self:CheckSeasonClose(reqRes)
   return reqRes, ret
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.ExitBattle = function(self, missionCreateInfo, isWin, battleresultRt, dialogName)
-  -- function num : 0_29 , upvalues : _ENV
-  local seasonID = (self.uiModule):GetSeasonID()
-  local cfg = (Cfg.cfg_season_map)[seasonID]
-  if cfg then
-    local mapRes = cfg.MapRes
-  end
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Season_Enter, mapRes, missionCreateInfo, isWin, dialogName)
+function SeasonModule:ExitBattle(missionCreateInfo, isWin, battleresultRt, dialogName)
+  local seasonID = self.uiModule:GetSeasonID()
+  local cfg = Cfg.cfg_season_map[seasonID]
+  local mapRes = cfg and cfg.MapRes
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Season_Enter, mapRes, missionCreateInfo, isWin, dialogName)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.Has3StarCondition = function(self, mission_id)
-  -- function num : 0_30
+function SeasonModule:Has3StarCondition(mission_id)
   return self:IsFightMission(mission_id)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.IsFightMission = function(self, missionID)
-  -- function num : 0_31 , upvalues : _ENV
-  local config = (Cfg.cfg_season_mission)[missionID]
+function SeasonModule:IsFightMission(missionID)
+  local config = Cfg.cfg_season_mission[missionID]
   if config then
     return config.IsFightLevel
   end
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.Get3StarConditionDesc = function(self, condition_id, colorStr)
-  -- function num : 0_32 , upvalues : _ENV
-  local star_condition = (Cfg.cfg_threestarcondition)[condition_id]
+function SeasonModule:Get3StarConditionDesc(condition_id, colorStr)
+  local star_condition = Cfg.cfg_threestarcondition[condition_id]
   if not star_condition then
     return nil
   else
     local paramStrArray = star_condition.ConditionNumber
     local paramCount = #paramStrArray
     local ret = "no condition"
-    if not colorStr then
-      colorStr = "FFFFFF"
-    end
+    colorStr = colorStr or "FFFFFF"
     if paramCount == 1 then
-      ret = (StringTable.Get)(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
+      ret = StringTable.Get(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
+    elseif paramCount == 2 then
+      ret = StringTable.Get(star_condition.Name, tonumber(paramStrArray[2]), colorStr)
     else
-      if paramCount == 2 then
-        ret = (StringTable.Get)(star_condition.Name, tonumber(paramStrArray[2]), colorStr)
-      else
-        ret = (StringTable.Get)(star_condition.Name)
-      end
+      ret = StringTable.Get(star_condition.Name)
     end
     return ret
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetRecordBuffLevel = function(self)
-  -- function num : 0_33
+function SeasonModule:GetRecordBuffLevel()
   if not self._oldBuffLevelInfo then
     return -1, 0
   end
-  return (self._oldBuffLevelInfo).level, (self._oldBuffLevelInfo).progress
+  return self._oldBuffLevelInfo.level, self._oldBuffLevelInfo.progress
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.RecordBuffLevel = function(self, buffLevel, progress)
-  -- function num : 0_34
+function SeasonModule:RecordBuffLevel(buffLevel, progress)
   if not self._oldBuffLevelInfo then
     self._oldBuffLevelInfo = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._oldBuffLevelInfo).level = buffLevel
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._oldBuffLevelInfo).progress = progress
+  self._oldBuffLevelInfo.level = buffLevel
+  self._oldBuffLevelInfo.progress = progress
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.ProcressPetEnhance = function(self, oriPet, seasonMissionId)
-  -- function num : 0_35 , upvalues : _ENV
+function SeasonModule:ProcressPetEnhance(oriPet, seasonMissionId)
   local hasEnhance = false
-  local enhanceGrade, enhanceEquip, enhanceLv = nil, nil, nil
-  local missionCfg = (Cfg.cfg_season_mission)[seasonMissionId]
+  local enhanceGrade, enhanceEquip, enhanceLv
+  local missionCfg = Cfg.cfg_season_mission[seasonMissionId]
   if missionCfg then
     if missionCfg.PetGrade and missionCfg.PetLv then
       local oriValue = oriPet:GetPetGrade()
@@ -462,103 +310,85 @@ SeasonModule.ProcressPetEnhance = function(self, oriPet, seasonMissionId)
         hasEnhance = true
         enhanceGrade = toGrade
         local maxLvValue = self:_CalcPetMaxLevel(oriPet:GetTemplateID(), toGrade)
-        if maxLvValue < toLv then
+        if toLv > maxLvValue then
           toLv = maxLvValue
         end
         enhanceLv = toLv
-      else
-        do
-          if toGrade == oriValue then
-            local oriLvValue = oriPet:GetPetLevel()
-            local maxLvValue = self:_CalcPetMaxLevel(oriPet:GetTemplateID(), toGrade)
-            if maxLvValue < toLv then
-              toLv = maxLvValue
-            end
-            if oriLvValue < toLv then
-              hasEnhance = true
-              enhanceLv = toLv
-            end
-          end
-          do
-            if missionCfg.PetEquip then
-              local oriValue = oriPet:GetEquipLv()
-              local maxValue = 0
-              local petId = oriPet:GetTemplateID()
-              local cfg_equip = (Cfg.cfg_pet_equip)({PetID = petId})
-              if cfg_equip and #cfg_equip > 0 then
-                maxValue = (cfg_equip[#cfg_equip]).Level
-              end
-              if maxValue > 0 then
-                local toEquipLv = missionCfg.PetEquip
-                if maxValue < missionCfg.PetEquip then
-                  toEquipLv = maxValue
-                end
-                if oriValue < toEquipLv then
-                  hasEnhance = true
-                  enhanceEquip = toEquipLv
-                end
-              end
-            end
-            do
-              if hasEnhance then
-                local codeCheckPetData = _G.pet_data
-                local tempData = codeCheckPetData:New()
-                tempData.template_id = oriPet:GetTemplateID()
-                local tmpPet = Pet:New(tempData)
-                tempData.pet_pstid = oriPet:GetPstID()
-                if not enhanceGrade or not enhanceGrade then
-                  tempData.grade = oriPet:GetPetGrade()
-                  if not enhanceLv or not enhanceLv then
-                    tempData.level = oriPet:GetPetLevel()
-                    tempData.awakening = oriPet:GetPetAwakening()
-                    tempData.awake_lock = oriPet:GetAwakeLock()
-                    if not enhanceEquip or not enhanceEquip then
-                      do
-                        tempData.equip_lv = oriPet:GetEquipLv()
-                        tempData.affinity_level = oriPet:GetPetAffinityLevel()
-                        tempData.b_pet_like = oriPet:IsLike()
-                        tempData.equip_refine_lv = oriPet:GetEquipRefineLv()
-                        tmpPet:SetData(tempData)
-                        tmpPet:CalAttr()
-                        tmpPet:SetFastTeamMemID(oriPet:FastTeamMemID())
-                        do return tmpPet, hasEnhance end
-                        local codeCheckPetData = _G.pet_data
-                        local tempData = codeCheckPetData:New()
-                        tempData.template_id = oriPet:GetTemplateID()
-                        local tmpPet = Pet:New(tempData)
-                        tempData.pet_pstid = oriPet:GetPstID()
-                        tempData.grade = oriPet:GetPetGrade()
-                        tempData.level = oriPet:GetPetLevel()
-                        tempData.awakening = oriPet:GetPetAwakening()
-                        tempData.awake_lock = oriPet:GetAwakeLock()
-                        tempData.equip_lv = oriPet:GetEquipLv()
-                        tempData.affinity_level = oriPet:GetPetAffinityLevel()
-                        tempData.b_pet_like = oriPet:IsLike()
-                        tempData.equip_refine_lv = oriPet:GetEquipRefineLv()
-                        tmpPet:SetData(tempData)
-                        tmpPet:CalAttr()
-                        tmpPet:SetFastTeamMemID(oriPet:FastTeamMemID())
-                        do return tmpPet, hasEnhance end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+      elseif toGrade == oriValue then
+        local oriLvValue = oriPet:GetPetLevel()
+        local maxLvValue = self:_CalcPetMaxLevel(oriPet:GetTemplateID(), toGrade)
+        if toLv > maxLvValue then
+          toLv = maxLvValue
+        end
+        if oriLvValue < toLv then
+          hasEnhance = true
+          enhanceLv = toLv
+        end
+      end
+    end
+    if missionCfg.PetEquip then
+      local oriValue = oriPet:GetEquipLv()
+      local maxValue = 0
+      local petId = oriPet:GetTemplateID()
+      local cfg_equip = Cfg.cfg_pet_equip({PetID = petId})
+      if cfg_equip and 0 < #cfg_equip then
+        maxValue = cfg_equip[#cfg_equip].Level
+      end
+      if 0 < maxValue then
+        local toEquipLv = missionCfg.PetEquip
+        if maxValue < missionCfg.PetEquip then
+          toEquipLv = maxValue
+        end
+        if oriValue < toEquipLv then
+          hasEnhance = true
+          enhanceEquip = toEquipLv
         end
       end
     end
   end
+  if hasEnhance then
+    local codeCheckPetData = _G.pet_data
+    local tempData = codeCheckPetData:New()
+    tempData.template_id = oriPet:GetTemplateID()
+    local tmpPet = Pet:New(tempData)
+    tempData.pet_pstid = oriPet:GetPstID()
+    tempData.grade = enhanceGrade and enhanceGrade or oriPet:GetPetGrade()
+    tempData.level = enhanceLv and enhanceLv or oriPet:GetPetLevel()
+    tempData.awakening = oriPet:GetPetAwakening()
+    tempData.awake_lock = oriPet:GetAwakeLock()
+    tempData.equip_lv = enhanceEquip and enhanceEquip or oriPet:GetEquipLv()
+    tempData.affinity_level = oriPet:GetPetAffinityLevel()
+    tempData.b_pet_like = oriPet:IsLike()
+    tempData.equip_refine_lv = oriPet:GetEquipRefineLv()
+    tmpPet:SetData(tempData)
+    tmpPet:CalAttr()
+    tmpPet:SetFastTeamMemID(oriPet:FastTeamMemID())
+    return tmpPet, hasEnhance
+  else
+    local codeCheckPetData = _G.pet_data
+    local tempData = codeCheckPetData:New()
+    tempData.template_id = oriPet:GetTemplateID()
+    local tmpPet = Pet:New(tempData)
+    tempData.pet_pstid = oriPet:GetPstID()
+    tempData.grade = oriPet:GetPetGrade()
+    tempData.level = oriPet:GetPetLevel()
+    tempData.awakening = oriPet:GetPetAwakening()
+    tempData.awake_lock = oriPet:GetAwakeLock()
+    tempData.equip_lv = oriPet:GetEquipLv()
+    tempData.affinity_level = oriPet:GetPetAffinityLevel()
+    tempData.b_pet_like = oriPet:IsLike()
+    tempData.equip_refine_lv = oriPet:GetEquipRefineLv()
+    tmpPet:SetData(tempData)
+    tmpPet:CalAttr()
+    tmpPet:SetFastTeamMemID(oriPet:FastTeamMemID())
+    return tmpPet, hasEnhance
+  end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule._CalcPetMaxLevel = function(self, templateId, grade)
-  -- function num : 0_36 , upvalues : _ENV
-  local cfgs = (Cfg["cfg_pet_level_" .. templateId .. "_" .. grade])()
+function SeasonModule:_CalcPetMaxLevel(templateId, grade)
+  local cfgs = Cfg["cfg_pet_level_" .. templateId .. "_" .. grade]()
   local max = 1
-  for _,c in pairs(cfgs) do
+  for _, c in pairs(cfgs) do
     if max < c.Level then
       max = c.Level
     end
@@ -566,138 +396,99 @@ SeasonModule._CalcPetMaxLevel = function(self, templateId, grade)
   return max
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.AppendWaitShowCollectionRewards = function(self, reward)
-  -- function num : 0_37 , upvalues : _ENV
+function SeasonModule:AppendWaitShowCollectionRewards(reward)
   if not self._waitShowCollectionRewards then
     self._waitShowCollectionRewards = {}
   end
-  ;
-  (table.insert)(self._waitShowCollectionRewards, reward)
+  table.insert(self._waitShowCollectionRewards, reward)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.EraseFirstWaitShowCollectionRewards = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  (table.remove)(self._waitShowCollectionRewards, 1)
+function SeasonModule:EraseFirstWaitShowCollectionRewards()
+  table.remove(self._waitShowCollectionRewards, 1)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.ClearWaitShowCollectionRewards = function(self)
-  -- function num : 0_39
+function SeasonModule:ClearWaitShowCollectionRewards()
   self._waitShowCollectionRewards = {}
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetWaitShowCollectionRewards = function(self)
-  -- function num : 0_40
+function SeasonModule:GetWaitShowCollectionRewards()
   return self._waitShowCollectionRewards
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetHasPassedDebris = function(self, missionId)
-  -- function num : 0_41 , upvalues : _ENV
-  local info = (self._debris_mission)[missionId]
+function SeasonModule:GetHasPassedDebris(missionId)
+  local info = self._debris_mission[missionId]
   if info == nil then
     return false
   end
-  local cfg = (Cfg.cfg_season_debris_mission)[missionId]
+  local cfg = Cfg.cfg_season_debris_mission[missionId]
   if cfg == nil then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetCastleLv = function(self, seasonID)
-  -- function num : 0_42
-  local info = (self._castle_lv)[seasonID]
+function SeasonModule:GetCastleLv(seasonID)
+  local info = self._castle_lv[seasonID]
   if info == nil then
     return 1
   end
   return info
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetCurSeasonQuestComponent = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function SeasonModule:GetCurSeasonQuestComponent()
   local componentId = ECCampaignSeasonComponentID.QUEST
   local proccess = self:GetLocalProcess()
-  if proccess then
-    return proccess:GetComponent(componentId)
-  end
+  return proccess and proccess:GetComponent(componentId)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetCurSeasonExchangeComponent = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function SeasonModule:GetCurSeasonExchangeComponent()
   local componentId = ECCampaignSeasonComponentID.EXCHANGE_SHOP
   local proccess = self:GetLocalProcess()
-  if proccess then
-    return proccess:GetComponent(componentId)
-  end
+  return proccess and proccess:GetComponent(componentId)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetCurSeasonActionPointComponent = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function SeasonModule:GetCurSeasonActionPointComponent()
   local componentId = ECCampaignSeasonComponentID.ACTION_POINT
   local proccess = self:GetLocalProcess()
-  if proccess then
-    return proccess:GetComponent(componentId)
-  end
+  return proccess and proccess:GetComponent(componentId)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckMissionCanAutoFight = function(self, missionCreateInfo)
-  -- function num : 0_46 , upvalues : _ENV
-  local cfg = (Cfg.cfg_global).auto_fight_can_not_use
+function SeasonModule:CheckMissionCanAutoFight(missionCreateInfo)
+  local cfg = Cfg.cfg_global.auto_fight_can_not_use
   local errorStr = ""
   if cfg and cfg.StrValue then
     errorStr = cfg.StrValue
   end
-  local missionCfg = (Cfg.cfg_season_mission)[missionCreateInfo.mission_id]
+  local missionCfg = Cfg.cfg_season_mission[missionCreateInfo.mission_id]
   if not missionCfg then
     return false, errorStr
   end
   local enableParam = missionCfg.EnableAutoFight
   if enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_DISABLE then
     return false, errorStr
-  else
-    if enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_ENABLE then
-      return true
-    end
+  elseif enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_ENABLE then
+    return true
   end
   if missionCfg.Type == SeasonEventPointType.DailyLevel then
     return true
   end
   local seasonObj = self:GetCurSeasonObj()
   if seasonObj then
-    cfg = (Cfg.cfg_global).auto_fight_need_3_star
+    cfg = Cfg.cfg_global.auto_fight_need_3_star
     errorStr = cfg.StrValue
     local cmptInfo = seasonObj:GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
     if cmptInfo and cmptInfo and cmptInfo.m_pass_mission_info then
       local checkMissionCfgs = {}
       local missionGroupId = missionCfg.GroupID
-      local missionGroupCfgs = (Cfg.cfg_season_mission)({GroupID = missionGroupId})
-      if #missionGroupCfgs > 0 then
-        for index,value in ipairs(missionGroupCfgs) do
-          if missionCfg.OrderID <= value.OrderID then
-            (table.insert)(checkMissionCfgs, value)
+      local missionGroupCfgs = Cfg.cfg_season_mission({GroupID = missionGroupId})
+      if 0 < #missionGroupCfgs then
+        for index, value in ipairs(missionGroupCfgs) do
+          if value.OrderID >= missionCfg.OrderID then
+            table.insert(checkMissionCfgs, value)
           end
         end
-        for index,harderMissionCfg in ipairs(checkMissionCfgs) do
-          local harderPassInfo = (cmptInfo.m_pass_mission_info)[harderMissionCfg.ID]
+        for index, harderMissionCfg in ipairs(checkMissionCfgs) do
+          local harderPassInfo = cmptInfo.m_pass_mission_info[harderMissionCfg.ID]
           if harderPassInfo then
             local passThreeStar = self:HasPassThreeStar(harderMissionCfg, harderPassInfo)
             if passThreeStar then
@@ -708,15 +499,10 @@ SeasonModule.CheckMissionCanAutoFight = function(self, missionCreateInfo)
       end
     end
   end
-  do
-    return false, errorStr
-  end
+  return false, errorStr
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HasPassThreeStar = function(self, missionCfg, passInfo)
-  -- function num : 0_47
+function SeasonModule:HasPassThreeStar(missionCfg, passInfo)
   local missionFinishInfo = passInfo
   if missionCfg.ThreeStarCondition1 and missionFinishInfo.star & 1 == 0 then
     return false
@@ -730,29 +516,20 @@ SeasonModule.HasPassThreeStar = function(self, missionCfg, passInfo)
   return true
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.ReqCEventSeasonStory = function(self, TT, mask)
-  -- function num : 0_48 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSeasonStoryReq)
+function SeasonModule:ReqCEventSeasonStory(TT, mask)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSeasonStoryReq)
   request.mask = mask
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return ROLE_RESULT_CODE.ROLE_FAILED, _
   end
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._ext_info).mask = mask
+  self._ext_info.mask = mask
   return reply.msg
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckUISatisfy = function(self, cfgId, progress, dataInfo)
-  -- function num : 0_49 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_mission)[cfgId]
+function SeasonModule:CheckUISatisfy(cfgId, progress, dataInfo)
+  local cfg = Cfg.cfg_season_mission[cfgId]
   if cfg == nil then
     return false
   end
@@ -760,34 +537,26 @@ SeasonModule.CheckUISatisfy = function(self, cfgId, progress, dataInfo)
   return self:CheckCondition(conStr, dataInfo)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckCondition = function(self, conditionStr, map)
-  -- function num : 0_50 , upvalues : _ENV
-  if (string.isnullorempty)(conditionStr) then
+function SeasonModule:CheckCondition(conditionStr, map)
+  if string.isnullorempty(conditionStr) then
     return true
   end
-  local cb = function(cfgInfo)
-    -- function num : 0_50_0 , upvalues : map
+  
+  local function cb(cfgInfo)
     local infoIt = map[cfgInfo[1]]
     if infoIt == nil then
       return false
-    else
-      if infoIt ~= cfgInfo[2] then
-        return false
-      end
+    elseif infoIt ~= cfgInfo[2] then
+      return false
     end
     return true
   end
-
-  return (ResourceHelper:GetInstance()):CheckTermSatisfy(conditionStr, CfgTermEntity:New(), cb)
+  
+  return ResourceHelper:GetInstance():CheckTermSatisfy(conditionStr, CfgTermEntity:New(), cb)
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckMissionSatisfy = function(self, cfgId, dataInfo)
-  -- function num : 0_51 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_mission)[cfgId]
+function SeasonModule:CheckMissionSatisfy(cfgId, dataInfo)
+  local cfg = Cfg.cfg_season_mission[cfgId]
   if cfg == nil then
     return false
   end
@@ -795,24 +564,21 @@ SeasonModule.CheckMissionSatisfy = function(self, cfgId, dataInfo)
   if conStr == nil or conStr == "" then
     return true
   end
-  local cb = function(cfgInfo)
-    -- function num : 0_51_0 , upvalues : dataInfo
+  
+  local function cb(cfgInfo)
     local infoIt = dataInfo[cfgInfo[1]]
     if infoIt == nil then
       return false
     end
     return true
   end
-
+  
   local tt = CfgTermEntity:New()
-  return (ResourceHelper:GetInstance()):CheckTermSatisfy(conStr, tt, cb)
+  return ResourceHelper:GetInstance():CheckTermSatisfy(conStr, tt, cb)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HandleSeasonMiniGameInfoReq = function(self, TT)
-  -- function num : 0_52 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSeasonMiniGameInfoReq)
+function SeasonModule:HandleSeasonMiniGameInfoReq(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSeasonMiniGameInfoReq)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -821,16 +587,13 @@ SeasonModule.HandleSeasonMiniGameInfoReq = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  self._debris_mission = (reply.msg).debris_mission
-  self._castle_lv = (reply.msg).castle_lv
+  self._debris_mission = reply.msg.debris_mission
+  self._castle_lv = reply.msg.castle_lv
   return reply.msg
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HandleSeasonCastleReq = function(self, TT, cfgId)
-  -- function num : 0_53 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSeasonCastleReq)
+function SeasonModule:HandleSeasonCastleReq(TT, cfgId)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSeasonCastleReq)
   request.id = cfgId
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -840,31 +603,21 @@ SeasonModule.HandleSeasonCastleReq = function(self, TT, cfgId)
     return res
   end
   res:SetSucc(true)
-  do
-    if (reply.msg).ret == SeasonTaskErrorType.E_SEASONTASK_ERROR_TYPE_SUCCESS then
-      local cfg = (Cfg.cfg_season_castle)[cfgId]
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R7 in 'UnsetPending'
-
-      if cfg ~= nil then
-        if (self._castle_lv)[cfg.SeasonID] == nil then
-          (self._castle_lv)[cfg.SeasonID] = 2
-        else
-          -- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self._castle_lv)[cfg.SeasonID] = cfg.Lv + 1
-        end
+  if reply.msg.ret == SeasonTaskErrorType.E_SEASONTASK_ERROR_TYPE_SUCCESS then
+    local cfg = Cfg.cfg_season_castle[cfgId]
+    if cfg ~= nil then
+      if self._castle_lv[cfg.SeasonID] == nil then
+        self._castle_lv[cfg.SeasonID] = 2
+      else
+        self._castle_lv[cfg.SeasonID] = cfg.Lv + 1
       end
     end
-    return res, reply.msg
   end
+  return res, reply.msg
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.HandleSeasonDebrisMissionReq = function(self, TT, cfgId, score)
-  -- function num : 0_54 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventSeasonDebrisMissionReq)
+function SeasonModule:HandleSeasonDebrisMissionReq(TT, cfgId, score)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventSeasonDebrisMissionReq)
   request.mission_id = cfgId
   request.score = score
   local res = AsyncRequestRes:New()
@@ -875,132 +628,94 @@ SeasonModule.HandleSeasonDebrisMissionReq = function(self, TT, cfgId, score)
     return res
   end
   res:SetSucc(true)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
-  if (reply.msg).ret == SeasonTaskErrorType.E_SEASONTASK_ERROR_TYPE_SUCCESS then
-    (self._debris_mission)[cfgId] = score
+  if reply.msg.ret == SeasonTaskErrorType.E_SEASONTASK_ERROR_TYPE_SUCCESS then
+    self._debris_mission[cfgId] = score
   end
   return reply.msg
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.GetSeasonBuildContext = function(self)
-  -- function num : 0_55
+function SeasonModule:GetSeasonBuildContext()
   return self._seasonBuildContext
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.SetSeasonBuildContext = function(self, context)
-  -- function num : 0_56
+function SeasonModule:SetSeasonBuildContext(context)
   self._seasonBuildContext = context
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckSeasonBuildOpen = function(self)
-  -- function num : 0_57 , upvalues : _ENV
+function SeasonModule:CheckSeasonBuildOpen()
   local seasonId = self:GetCurSeasonID()
   if not seasonId or seasonId == -1 then
     return false
   end
-  local id = (math.ceil)(seasonId * 1000)
-  local cfg = (Cfg.cfg_common_activity_time)[id]
+  local id = math.ceil(seasonId * 1000)
+  local cfg = Cfg.cfg_common_activity_time[id]
   if not cfg then
     return false
   end
   local missionId = cfg.SeasonMissionID
-  do
-    if missionId and missionId > 0 then
-      local missionComponnet = self:GetSeasonMissionComponent()
-      if not missionComponnet or not missionComponnet:IsPassCamMissionID(missionId) then
-        return false
-      end
+  if missionId and 0 < missionId then
+    local missionComponnet = self:GetSeasonMissionComponent()
+    if not missionComponnet or not missionComponnet:IsPassCamMissionID(missionId) then
+      return false
     end
-    local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-    local tmNowTime = (math.modf)(time_mod:GetServerTime() / 1000)
-    local timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
-    if cfg.TimeTransform == 1 then
-      timeType = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
-    end
-    local loginModule = ((GameGlobal.GameLogic)()):GetModule(LoginModule)
-    local beginTime = loginModule:GetTimeStampByTimeStr(cfg.DateTimeBegin, timeType)
-    local endTime = loginModule:GetTimeStampByTimeStr(cfg.DateTimeEnd, timeType)
-    if beginTime < tmNowTime and tmNowTime < endTime then
-      return true
-    end
-    return false
   end
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmNowTime = math.modf(time_mod:GetServerTime() / 1000)
+  local timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
+  if cfg.TimeTransform == 1 then
+    timeType = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
+  end
+  local loginModule = GameGlobal.GameLogic():GetModule(LoginModule)
+  local beginTime = loginModule:GetTimeStampByTimeStr(cfg.DateTimeBegin, timeType)
+  local endTime = loginModule:GetTimeStampByTimeStr(cfg.DateTimeEnd, timeType)
+  if tmNowTime > beginTime and tmNowTime < endTime then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckSeasonAndMissionCoseAndJump = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function SeasonModule:CheckSeasonAndMissionCoseAndJump()
   return self:CheckSeasonAndComponentCloseAndJump(ECCampaignSeasonComponentID.SEASON_MISSION)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckSeasonCloseAndJump = function(self)
-  -- function num : 0_59
+function SeasonModule:CheckSeasonCloseAndJump()
   return self:CheckSeasonAndComponentCloseAndJump()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckSeasonAndComponentCloseAndJump = function(self, cptID)
-  -- function num : 0_60 , upvalues : _ENV
+function SeasonModule:CheckSeasonAndComponentCloseAndJump(cptID)
   if self:IsSeaonActivityClosed() then
     self:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
-    ;
-    (self.uiModule):ExitSeasonTo(UIStateType.UIMain)
+    self.uiModule:ExitSeasonTo(UIStateType.UIMain)
     return false
   end
-  do
-    if cptID and self:IsComponentClosed(cptID) then
-      local seaonId = self:GetCurSeasonID()
-      self:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
-      ;
-      (self._uiModule):ExitSeasonToSeasonMain(seaonId)
-      return false
-    end
-    return true
-  end
-end
-
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.CheckComCloseAndTips = function(self, cptID, tipsKey)
-  -- function num : 0_61 , upvalues : _ENV
-  local key = tipsKey
-  if not key then
-    key = "str_activity_error_109"
-  end
-  if self:IsSeaonActivityClosed() then
-    (ToastManager.ShowToast)((StringTable.Get)(key))
-    return false
-  end
-  if self:IsComponentClosed(cptID) then
-    (ToastManager.ShowToast)((StringTable.Get)(key))
+  if cptID and self:IsComponentClosed(cptID) then
+    local seaonId = self:GetCurSeasonID()
+    self:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED)
+    self._uiModule:ExitSeasonToSeasonMain(seaonId)
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonModule.IsSeaonActivityClosed = function(self)
-  -- function num : 0_62
-  do return self:GetCurSeasonID() < 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonModule:CheckComCloseAndTips(cptID, tipsKey)
+  local key = tipsKey
+  key = key or "str_activity_error_109"
+  if self:IsSeaonActivityClosed() then
+    ToastManager.ShowToast(StringTable.Get(key))
+    return false
+  end
+  if self:IsComponentClosed(cptID) then
+    ToastManager.ShowToast(StringTable.Get(key))
+    return false
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
+function SeasonModule:IsSeaonActivityClosed()
+  return self:GetCurSeasonID() < 0
+end
 
-SeasonModule.IsComponentClosed = function(self, cptID)
-  -- function num : 0_63 , upvalues : _ENV
+function SeasonModule:IsComponentClosed(cptID)
   local seasonObj = self:GetCurSeasonObj()
   if not seasonObj then
     return true
@@ -1009,13 +724,11 @@ SeasonModule.IsComponentClosed = function(self, cptID)
   if not comInfo then
     return true
   end
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local closeTime = comInfo.m_close_time
-  if closeTime < curTime then
+  if curTime > closeTime then
     return true
   end
   return false
 end
-
-

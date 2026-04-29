@@ -1,84 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_stage_base_word_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStageBaseWordBuff", UICustomWidget)
 UIStageBaseWordBuff = UIStageBaseWordBuff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStageBaseWordBuff.OnShow = function(self)
-  -- function num : 0_0
+function UIStageBaseWordBuff:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageBaseWordBuff.SetData = function(self, cfg)
-  -- function num : 0_1 , upvalues : _ENV
+function UIStageBaseWordBuff:SetData(cfg)
   local tb = {}
   local buff = cfg.BaseWordBuff
   if buff then
-    if type(buff) ~= "table" or not buff then
-      local words = {buff}
-    end
-    for _,wordId in ipairs(buff) do
-      (table.insert)(tb, self:_GetWordDesc(cfg.ID, wordId))
+    local words = type(buff) == "table" and buff or {buff}
+    for _, wordId in ipairs(buff) do
+      table.insert(tb, self:_GetWordDesc(cfg.ID, wordId))
     end
   end
-  do
-    local show = #tb ~= 0
-    ;
-    (self:GetGameObject("_root")):SetActive(show)
-    self._desc = tb
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  local show = #tb ~= 0
+  self:GetGameObject("_root"):SetActive(show)
+  self._desc = tb
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageBaseWordBuff._GetWordDesc = function(self, levelId, wordId)
-  -- function num : 0_2 , upvalues : _ENV
-  local word = (Cfg.cfg_word_buff)[wordId]
+function UIStageBaseWordBuff:_GetWordDesc(levelId, wordId)
+  local word = Cfg.cfg_word_buff[wordId]
   if not word then
-    (Log.exception)("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
+    Log.exception("cfg_word_buff 中找不到词缀:", wordId, "levelId:", levelId)
   end
-  return (StringTable.Get)(word.Desc)
+  return StringTable.Get(word.Desc)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageBaseWordBuff._ShowPanel = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIStageBaseWordBuff:_ShowPanel()
   local constMaxWidth = 910
   local constPaddingWidth = 40
   local maxWidth = 0
   local filter = self:GetUIComponent("ContentSizeFitter", "_panel")
   local layoutRect = self:GetUIComponent("RectTransform", "_panel")
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_panel", "UIStageBaseWordBuffItem", #self._desc)
-  for i,v in ipairs(objs) do
-    v:SetData((self._desc)[i])
-    local rect = (v:GetGameObject()):GetComponent("RectTransform")
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(layoutRect)
-    local width = (rect.sizeDelta).x
-    maxWidth = (math.max)(maxWidth, width)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_panel", "UIStageBaseWordBuffItem", #self._desc)
+  for i, v in ipairs(objs) do
+    v:SetData(self._desc[i])
+    local rect = v:GetGameObject():GetComponent("RectTransform")
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(layoutRect)
+    local width = rect.sizeDelta.x
+    maxWidth = math.max(maxWidth, width)
   end
-  if constMaxWidth - constPaddingWidth < maxWidth then
-    filter.horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).Unconstrained
-    layoutRect.sizeDelta = Vector2(constMaxWidth, (layoutRect.sizeDelta).y)
+  if maxWidth > constMaxWidth - constPaddingWidth then
+    filter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained
+    layoutRect.sizeDelta = Vector2(constMaxWidth, layoutRect.sizeDelta.y)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageBaseWordBuff.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIStageBaseWordBuff:BtnOnClick(go)
   self._show = not self._show
-  ;
-  (self:GetGameObject("_panel")):SetActive(self._show)
+  self:GetGameObject("_panel"):SetActive(self._show)
   if self._show then
     self:_ShowPanel()
   end
 end
-
-

@@ -1,88 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeStoryHelper", Singleton)
 HomeStoryHelper = HomeStoryHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeStoryHelper.Constructor = function(self)
-  -- function num : 0_0
+function HomeStoryHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryHelper.GetPosWithTextIndexVert = function(self, canvas, text, content, charIndex, dir)
-  -- function num : 0_1 , upvalues : _ENV
+function HomeStoryHelper:GetPosWithTextIndexVert(canvas, text, content, charIndex, dir)
   local textStr = content
   local charPos = Vector3(0, 0, 0)
-  if charIndex <= (HomeStoryHelper:GetInstance()):GetstringCount(textStr) and charIndex > 0 then
+  if charIndex <= HomeStoryHelper:GetInstance():GetstringCount(textStr) and 0 < charIndex then
     local textGen = text.cachedTextGenerator
-    local extents = (((text.gameObject):GetComponent("RectTransform")).rect).size
+    local extents = text.gameObject:GetComponent("RectTransform").rect.size
     textGen:Populate(textStr, text:GetGenerationSettings(extents))
-    local str1 = (string.sub)(textStr, 1, charIndex)
-    local str2 = (string.split)(str1, "\n")
+    local str1 = string.sub(textStr, 1, charIndex)
+    local str2 = string.split(str1, "\n")
     local newLine = #str2 - 1
-    local whiteSpace = #(string.split)((string.sub)(textStr, 1, charIndex), " ") - 1
+    local whiteSpace = #string.split(string.sub(textStr, 1, charIndex), " ") - 1
     local indexOfTextQuad = charIndex * 4 + newLine * 4 - 4
     if indexOfTextQuad < textGen.vertexCount then
       if dir == 1 then
-        charPos = ((textGen.verts)[indexOfTextQuad]).position
+        charPos = textGen.verts[indexOfTextQuad].position
+      elseif dir == 2 then
+        charPos = textGen.verts[indexOfTextQuad + 1].position
+      elseif dir == 3 then
+        charPos = textGen.verts[indexOfTextQuad + 2].position
+      elseif dir == 4 then
+        charPos = textGen.verts[indexOfTextQuad + 3].position
       else
-        if dir == 2 then
-          charPos = ((textGen.verts)[indexOfTextQuad + 1]).position
-        else
-          if dir == 3 then
-            charPos = ((textGen.verts)[indexOfTextQuad + 2]).position
-          else
-            if dir == 4 then
-              charPos = ((textGen.verts)[indexOfTextQuad + 3]).position
-            else
-              charPos = (((textGen.verts)[indexOfTextQuad]).position + ((textGen.verts)[indexOfTextQuad + 1]).position + ((textGen.verts)[indexOfTextQuad + 2]).position + ((textGen.verts)[indexOfTextQuad + 3]).position) / 4
-            end
-          end
-        end
+        charPos = (textGen.verts[indexOfTextQuad].position + textGen.verts[indexOfTextQuad + 1].position + textGen.verts[indexOfTextQuad + 2].position + textGen.verts[indexOfTextQuad + 3].position) / 4
       end
     end
   end
-  do
-    charPos = charPos / canvas.scaleFactor
-    charPos = (text.transform):TransformPoint(charPos)
-    return charPos
-  end
+  charPos = charPos / canvas.scaleFactor
+  charPos = text.transform:TransformPoint(charPos)
+  return charPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryHelper.GetstringCount = function(self, str)
-  -- function num : 0_2 , upvalues : _ENV
-  local _, count = (string.gsub)(str, "[^\128-\193]", "")
+function HomeStoryHelper:GetstringCount(str)
+  local _, count = string.gsub(str, "[^€-Á]", "")
   return count
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryHelper.GetEmojiWidth = function(self, str)
-  -- function num : 0_3 , upvalues : _ENV
+function HomeStoryHelper:GetEmojiWidth(str)
   local width = 64
-  local strs = (string.split)(str, "<sprite.*/>")
+  local strs = string.split(str, "<sprite.*/>")
   local times = #strs - 1
   local allWidth = width * times
   return allWidth
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryHelper.FilterHtml = function(self, str)
-  -- function num : 0_4 , upvalues : _ENV
-  local plainStr = (string.gsub)(str, "<size=%d*>", "")
-  plainStr = (string.gsub)(plainStr, "</size>", "")
-  plainStr = (string.gsub)(plainStr, "<color=#%x*>", "")
-  plainStr = (string.gsub)(plainStr, "</color>", "")
-  plainStr = (string.gsub)(plainStr, "<sprite.*/>", "")
-  local finalStr = (string.gsub)(plainStr, "|", "")
+function HomeStoryHelper:FilterHtml(str)
+  local plainStr = string.gsub(str, "<size=%d*>", "")
+  plainStr = string.gsub(plainStr, "</size>", "")
+  plainStr = string.gsub(plainStr, "<color=#%x*>", "")
+  plainStr = string.gsub(plainStr, "</color>", "")
+  plainStr = string.gsub(plainStr, "<sprite.*/>", "")
+  local finalStr = string.gsub(plainStr, "|", "")
   return finalStr
 end
-
-

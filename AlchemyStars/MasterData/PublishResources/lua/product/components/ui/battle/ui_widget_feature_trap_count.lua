@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_trap_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureTrapCount", UICustomWidget)
 UIWidgetFeatureTrapCount = UIWidgetFeatureTrapCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureTrapCount.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureTrapCount:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapCount.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetFeatureTrapCount:InitWidget()
   self._uiAtlas = self:GetAsset("UIBattle.spriteatlas", LoadType.SpriteAtlas)
   self._offSetGo = self:GetGameObject("OffSet")
   self._titleText = self:GetUIComponent("UILocalizationText", "Title")
@@ -23,76 +13,55 @@ UIWidgetFeatureTrapCount.InitWidget = function(self)
   self._iconImage = self:GetUIComponent("Image", "Icon")
   self._bgImage = self:GetUIComponent("Image", "Bg")
   self:RegisterEvent()
-  ;
-  (self._offSetGo):SetActive(false)
+  self._offSetGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapCount.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureTrapCount:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureListInit, self._OnFeatureListInit)
   self:AttachEvent(GameEventType.TrapRenderShow, self._OnTrapRenderShow)
   self:AttachEvent(GameEventType.TrapRenderDestroy, self._OnTrapRenderDestroy)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapCount.SetData = function(self, initData)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._offSetGo):SetActive(true)
+function UIWidgetFeatureTrapCount:SetData(initData)
+  self._offSetGo:SetActive(true)
   self._initData = initData
-  self._maxCount = (self._initData):GetMaxCount()
-  local titleStr = (self._initData):GetTitleStr()
-  self._targetTrapIDList = (self._initData):GetTargetTrapIDList()
-  local icon = (self._initData):GetIcon()
+  self._maxCount = self._initData:GetMaxCount()
+  local titleStr = self._initData:GetTitleStr()
+  self._targetTrapIDList = self._initData:GetTargetTrapIDList()
+  local icon = self._initData:GetIcon()
   if icon then
-    (self._titleText):SetText((StringTable.Get)(titleStr))
-    self._count = 0
-    self:_RefreshCount()
   end
+  self._titleText:SetText(StringTable.Get(titleStr))
+  self._count = 0
+  self:_RefreshCount()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapCount._RefreshCount = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetFeatureTrapCount:_RefreshCount()
   local uiCount = self._count
-  if self._maxCount < uiCount then
+  if uiCount > self._maxCount then
     uiCount = self._maxCount
   end
   if uiCount < 0 then
     uiCount = 0
   end
-  local countStr = nil
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
+  local countStr
   if uiCount == self._maxCount then
-    (self._bgImage).sprite = (self._uiAtlas):GetSprite("thread_ztz_di02")
+    self._bgImage.sprite = self._uiAtlas:GetSprite("thread_ztz_di02")
     countStr = "(" .. tostring(uiCount) .. "/" .. tostring(self._maxCount) .. ")"
   else
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._bgImage).sprite = (self._uiAtlas):GetSprite("thread_ztz_di01")
+    self._bgImage.sprite = self._uiAtlas:GetSprite("thread_ztz_di01")
     local strCurCount = "<color=#561804>" .. tostring(uiCount) .. "</color>"
     countStr = "(" .. strCurCount .. "/" .. tostring(self._maxCount) .. ")"
   end
-  do
-    ;
-    (self._countInfoText):SetText(countStr)
-  end
+  self._countInfoText:SetText(countStr)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapCount._OnFeatureListInit = function(self, featureListInfo)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetFeatureTrapCount:_OnFeatureListInit(featureListInfo)
   if self._initData then
-    return 
+    return
   end
   if featureListInfo then
-    for i,v in ipairs(featureListInfo) do
+    for i, v in ipairs(featureListInfo) do
       local featureType = v:GetFeatureType()
       if featureType == FeatureType.TrapCount then
         self:SetData(v)
@@ -102,21 +71,15 @@ UIWidgetFeatureTrapCount._OnFeatureListInit = function(self, featureListInfo)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapCount._OnTrapRenderShow = function(self, trapID)
-  -- function num : 0_6 , upvalues : _ENV
-  if (table.icontains)(self._targetTrapIDList, trapID) then
+function UIWidgetFeatureTrapCount:_OnTrapRenderShow(trapID)
+  if table.icontains(self._targetTrapIDList, trapID) then
     self._count = self._count + 1
     self:_RefreshCount()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapCount._OnTrapRenderDestroy = function(self, trapID)
-  -- function num : 0_7 , upvalues : _ENV
-  if (table.icontains)(self._targetTrapIDList, trapID) then
+function UIWidgetFeatureTrapCount:_OnTrapRenderDestroy(trapID)
+  if table.icontains(self._targetTrapIDList, trapID) then
     self._count = self._count - 1
     if self._count < 0 then
       self._count = 0
@@ -124,5 +87,3 @@ UIWidgetFeatureTrapCount._OnTrapRenderDestroy = function(self, trapID)
     self:_RefreshCount()
   end
 end
-
-

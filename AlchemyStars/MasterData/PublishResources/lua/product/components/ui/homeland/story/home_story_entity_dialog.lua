@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_entity_dialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeStoryEntityDialog", HomeStoryEntity)
 HomeStoryEntityDialog = HomeStoryEntityDialog
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeStoryEntityDialog.Constructor = function(self, ID, gameObject, resRequest, storyManager, uiController)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomeStoryEntityDialog.super).Constructor)(self, ID, gameObject, resRequest, storyManager)
+function HomeStoryEntityDialog:Constructor(ID, gameObject, resRequest, storyManager, uiController)
+  HomeStoryEntityDialog.super.Constructor(self, ID, gameObject, resRequest, storyManager)
   self._uiController = uiController
   self._type = HomeStoryEntityType.Dialog
   self.newName = ""
@@ -21,121 +14,87 @@ HomeStoryEntityDialog.Constructor = function(self, ID, gameObject, resRequest, s
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.InitUIComponents = function(self, gameObject)
-  -- function num : 0_1 , upvalues : _ENV
+function HomeStoryEntityDialog:InitUIComponents(gameObject)
   local _dialogUIView = gameObject:GetComponent("UIView")
   self._customWidget = UICustomWidget:New()
-  ;
-  (self._customWidget):Load(_dialogUIView, self._uiController)
-  ;
-  (self._customWidget):SetName("HomeStoryDialogUIView")
+  self._customWidget:Load(_dialogUIView, self._uiController)
+  self._customWidget:SetName("HomeStoryDialogUIView")
   self._dialogUIView = self._customWidget
-  self._canvas = (self._uiController):GetUIComponent("Canvas", "UICanvas")
-  self._contentBG1 = (self._dialogUIView):GetUIComponent("Animation", "DialogBG1")
-  self._contentBG2 = (self._dialogUIView):GetUIComponent("Animation", "DialogBG2")
-  self._dialogLayout1 = (self._dialogUIView):GetGameObject("DialogLayout1")
-  self._dialogLayout2 = (self._dialogUIView):GetGameObject("DialogLayout2")
-  self._speakerGOLeft = (self._dialogUIView):GetGameObject("DialogSpeaker1")
-  self._speakerGORight = (self._dialogUIView):GetGameObject("DialogSpeaker2")
-  self._contentTextLeft = (self._dialogUIView):GetUIComponent("UIRichText", "Content1")
-  self._contentTextRight = (self._dialogUIView):GetUIComponent("UIRichText", "Content2")
-  self._speakerTextLeft = (self._dialogUIView):GetUIComponent("UILocalizedTMP", "SpeakerName1")
-  self._speakerTextRight = (self._dialogUIView):GetUIComponent("UILocalizedTMP", "SpeakerName2")
-  self._matReq1 = (UIWidgetHelper.SetLocalizedTMPMaterial)(self._dialogUIView, "SpeakerName1", "UIHomeStorySpeakerName.mat", self._matReq1)
-  self._matReq2 = (UIWidgetHelper.SetLocalizedTMPMaterial)(self._dialogUIView, "SpeakerName2", "UIHomeStorySpeakerName.mat", self._matReq2)
-  ;
-  (self._dialogLayout1):SetActive(false)
-  ;
-  (self._dialogLayout2):SetActive(false)
-  self._endFlag = (self._dialogUIView):GetGameObject("EndFlag")
-  self._fullscreenBtn = (self._dialogUIView):GetGameObject("FullScreenBtn")
-  self._cancelAutoButton = (self._dialogUIView):GetGameObject("CancelAutoButton")
-  self._cancelHideButton = (self._dialogUIView):GetGameObject("CancelHideButton")
-  self._buttonReview = (self._dialogUIView):GetGameObject("ButtonReview")
-  self._buttonHide = (self._dialogUIView):GetGameObject("ButtonHide")
-  self._buttonAuto = (self._dialogUIView):GetGameObject("ButtonAuto")
-  self._dialogReviewScrollView = (self._dialogUIView):GetUIComponent("UIDynamicScrollView", "ReviewPanel")
+  self._canvas = self._uiController:GetUIComponent("Canvas", "UICanvas")
+  self._contentBG1 = self._dialogUIView:GetUIComponent("Animation", "DialogBG1")
+  self._contentBG2 = self._dialogUIView:GetUIComponent("Animation", "DialogBG2")
+  self._dialogLayout1 = self._dialogUIView:GetGameObject("DialogLayout1")
+  self._dialogLayout2 = self._dialogUIView:GetGameObject("DialogLayout2")
+  self._speakerGOLeft = self._dialogUIView:GetGameObject("DialogSpeaker1")
+  self._speakerGORight = self._dialogUIView:GetGameObject("DialogSpeaker2")
+  self._contentTextLeft = self._dialogUIView:GetUIComponent("UIRichText", "Content1")
+  self._contentTextRight = self._dialogUIView:GetUIComponent("UIRichText", "Content2")
+  self._speakerTextLeft = self._dialogUIView:GetUIComponent("UILocalizedTMP", "SpeakerName1")
+  self._speakerTextRight = self._dialogUIView:GetUIComponent("UILocalizedTMP", "SpeakerName2")
+  self._matReq1 = UIWidgetHelper.SetLocalizedTMPMaterial(self._dialogUIView, "SpeakerName1", "UIHomeStorySpeakerName.mat", self._matReq1)
+  self._matReq2 = UIWidgetHelper.SetLocalizedTMPMaterial(self._dialogUIView, "SpeakerName2", "UIHomeStorySpeakerName.mat", self._matReq2)
+  self._dialogLayout1:SetActive(false)
+  self._dialogLayout2:SetActive(false)
+  self._endFlag = self._dialogUIView:GetGameObject("EndFlag")
+  self._fullscreenBtn = self._dialogUIView:GetGameObject("FullScreenBtn")
+  self._cancelAutoButton = self._dialogUIView:GetGameObject("CancelAutoButton")
+  self._cancelHideButton = self._dialogUIView:GetGameObject("CancelHideButton")
+  self._buttonReview = self._dialogUIView:GetGameObject("ButtonReview")
+  self._buttonHide = self._dialogUIView:GetGameObject("ButtonHide")
+  self._buttonAuto = self._dialogUIView:GetGameObject("ButtonAuto")
+  self._dialogReviewScrollView = self._dialogUIView:GetUIComponent("UIDynamicScrollView", "ReviewPanel")
   self:AddListener()
-  self._optRoot = (self._dialogUIView):GetGameObject("Options")
-  self._choosePool = (self._dialogUIView):GetUIComponent("UISelectObjectPath", "choosePool")
-  self._bodyLeft = (self._dialogUIView):GetUIComponent("RawImageLoader", "body1")
-  self._bodyRight = (self._dialogUIView):GetUIComponent("RawImageLoader", "body2")
-  self._bodyRawImageLeft = (self._dialogUIView):GetUIComponent("RawImage", "body1")
-  self._bodyRawImageRight = (self._dialogUIView):GetUIComponent("RawImage", "body2")
+  self._optRoot = self._dialogUIView:GetGameObject("Options")
+  self._choosePool = self._dialogUIView:GetUIComponent("UISelectObjectPath", "choosePool")
+  self._bodyLeft = self._dialogUIView:GetUIComponent("RawImageLoader", "body1")
+  self._bodyRight = self._dialogUIView:GetUIComponent("RawImageLoader", "body2")
+  self._bodyRawImageLeft = self._dialogUIView:GetUIComponent("RawImage", "body1")
+  self._bodyRawImageRight = self._dialogUIView:GetUIComponent("RawImage", "body2")
   self._optionParagraphIDDic = {}
   self._dialogSpeakerBGBlue = "plot_juqing_xian0"
   self._dialogSpeakerBGRed = "plot_juqing_xian1"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.AddListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._fullscreenBtn), UIEvent.Click, function(go)
-    -- function num : 0_2_0 , upvalues : self
+function HomeStoryEntityDialog:AddListener()
+  self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._fullscreenBtn), UIEvent.Click, function(go)
     self:FullScreenBtnOnClick(go)
-  end
-)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelAutoButton), UIEvent.Click, function(go)
-    -- function num : 0_2_1 , upvalues : self
+  end)
+  self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelAutoButton), UIEvent.Click, function(go)
     self:CancelAutoButtonOnClick(go)
-  end
-)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelHideButton), UIEvent.Click, function(go)
-    -- function num : 0_2_2 , upvalues : self
+  end)
+  self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelHideButton), UIEvent.Click, function(go)
     self:CancelHideButtonOnClick(go)
-  end
-)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._buttonReview), UIEvent.Click, function(go)
-    -- function num : 0_2_3 , upvalues : self
+  end)
+  self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._buttonReview), UIEvent.Click, function(go)
     self:ButtonReviewOnClick(go)
-  end
-)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._buttonHide), UIEvent.Click, function(go)
-    -- function num : 0_2_4 , upvalues : self
+  end)
+  self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._buttonHide), UIEvent.Click, function(go)
     self:ButtonHideOnClick(go)
-  end
-)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._buttonAuto), UIEvent.Click, function(go)
-    -- function num : 0_2_5 , upvalues : self
+  end)
+  self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._buttonAuto), UIEvent.Click, function(go)
     self:ButtonAutoOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomeStoryEntityDialog:Destroy()
   if self._resumeCallBack then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.AppResume, self._resumeCallBack)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.AppResume, self._resumeCallBack)
   end
-  ;
-  (self.uiCustomEventListener):RemoveAllCustomEventListener()
+  self.uiCustomEventListener:RemoveAllCustomEventListener()
   if self._customWidget then
-    (self._customWidget):Dispose()
+    self._customWidget:Dispose()
     self._customWidget = nil
   end
-  self._matReq1 = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq1)
-  self._matReq2 = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq2)
+  self._matReq1 = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq1)
+  self._matReq2 = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq2)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.InitData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomeStoryEntityDialog:InitData()
   self._inSpeakerNameFadeIn = false
   self._speakerNameFadeInStartTime = 0
   self._speakerNameFadeInDuration = 0
-  self._speakerNameFadeInColor = (Color.New)(0.27058823529412, 0.26274509803922, 0.26274509803922, 1)
-  self._bodyFadeInColor = (Color.New)(1, 1, 1, 1)
+  self._speakerNameFadeInColor = Color.New(0.27058823529411763, 0.2627450980392157, 0.2627450980392157, 1)
+  self._bodyFadeInColor = Color.New(1, 1, 1, 1)
   self._speakerNameStr = ""
   self._isPlayer = false
   self._contentStartShow = false
@@ -164,17 +123,12 @@ HomeStoryEntityDialog.InitData = function(self)
   self._colorPattern = "<color=#%x*"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.SectionStart = function(self, trackData)
-  -- function num : 0_5 , upvalues : _ENV
-  ((HomeStoryEntityDialog.super).SectionStart)(self, trackData)
-  ;
-  (self._dialogLayout1):SetActive(false)
-  ;
-  (self._dialogLayout2):SetActive(false)
-  local body, speakerText, contentText = nil, nil, nil
-  if (self._currentTrackData).DialogDir == 1 then
+function HomeStoryEntityDialog:SectionStart(trackData)
+  HomeStoryEntityDialog.super.SectionStart(self, trackData)
+  self._dialogLayout1:SetActive(false)
+  self._dialogLayout2:SetActive(false)
+  local body, speakerText, contentText
+  if self._currentTrackData.DialogDir == 1 then
     body = self._bodyLeft
     speakerText = self._speakerTextLeft
     contentText = self._contentTextLeft
@@ -183,127 +137,105 @@ HomeStoryEntityDialog.SectionStart = function(self, trackData)
     speakerText = self._speakerTextRight
     contentText = self._contentTextRight
   end
-  if (self._currentTrackData).SpeakerNameStr ~= "ui_story_name_you" then
-    self._isPlayer = not (self._currentTrackData).SpeakerNameStr
-    self._speakerNameStr = (StringTable.Get)((self._currentTrackData).SpeakerNameStr)
+  if self._currentTrackData.SpeakerNameStr then
+    self._isPlayer = self._currentTrackData.SpeakerNameStr == "ui_story_name_you"
+    self._speakerNameStr = StringTable.Get(self._currentTrackData.SpeakerNameStr)
     self._speakerNameStr = self:_DoEscape(self._speakerNameStr)
     speakerText:SetText(self._speakerNameStr)
+  else
     speakerText:SetText("")
-    self._contentStr = (StringTable.Get)((self._currentTrackData).DialogContentStr)
-    self._contentStr = self:_DoEscape(self._contentStr)
-    self._contentStr = self:_GetContentInfo(self._contentStr)
-    if (self._currentTrackData).ContentAlignment then
-      if (self._currentTrackData).ContentAlignment == 1 then
-        contentText.alignment = (UnityEngine.TextAnchor).UpperLeft
-      elseif (self._currentTrackData).ContentAlignment == 2 then
-        contentText.alignment = (UnityEngine.TextAnchor).UpperCenter
-      elseif (self._currentTrackData).ContentAlignment == 3 then
-        contentText.alignment = (UnityEngine.TextAnchor).UpperRight
-      elseif (self._currentTrackData).ContentAlignment == 4 then
-        contentText.alignment = (UnityEngine.TextAnchor).MiddleLeft
-      elseif (self._currentTrackData).ContentAlignment == 5 then
-        contentText.alignment = (UnityEngine.TextAnchor).MiddleCenter
-      elseif (self._currentTrackData).ContentAlignment == 6 then
-        contentText.alignment = (UnityEngine.TextAnchor).MiddleRight
-      elseif (self._currentTrackData).ContentAlignment == 7 then
-        contentText.alignment = (UnityEngine.TextAnchor).LowerLeft
-      elseif (self._currentTrackData).ContentAlignment == 8 then
-        contentText.alignment = (UnityEngine.TextAnchor).LowerCenter
-      elseif (self._currentTrackData).ContentAlignment == 9 then
-        contentText.alignment = (UnityEngine.TextAnchor).LowerRight
-      elseif (self._currentTrackData).DialogDir == 1 then
-        contentText.alignment = (UnityEngine.TextAnchor).MiddleCenter
-      else
-        contentText.alignment = (UnityEngine.TextAnchor).MiddleCenter
-      end
-    elseif (self._currentTrackData).DialogDir == 1 then
-      contentText.alignment = (UnityEngine.TextAnchor).MiddleCenter
-    else
-      contentText.alignment = (UnityEngine.TextAnchor).MiddleCenter
-    end
-    contentText:SetText(self._contentStr)
-    self._richText = contentText
-    self._contentStartShow = false
-    self._contentShown = false
-    self._contentTypeStartTime = 0
-    if (self._currentTrackData).Body then
-      (body.gameObject):SetActive(true)
-      body:LoadImage((self._currentTrackData).Body)
-    else
-      (body.gameObject):SetActive(false)
-    end
-    local transparent = (Color.New)(1, 1, R8_PC67, 0)
-    speakerText.color = transparent
-    -- DECOMPILER ERROR at PC216: Overwrote pending register: R8 in 'AssignReg'
-
-    self:ActiveEndFlag(R8_PC67)
-    self._inContentEnding = false
-    self._endClick = false
-    self._autoWaitStartTime = 0
-    -- DECOMPILER ERROR at PC224: Overwrote pending register: R8 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC229: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._fullscreenBtn).transform).position = ((((self._storyManager):GetStoryUIRoot()).transform).parent).position
-    self._optionShown = false
-    self._forceAutoDialog = ((self._storyManager):GetCurParagraph()).ForceAutoDialog
-    self:ShowChoose()
-    -- DECOMPILER ERROR: 18 unprocessed JMP targets
   end
+  self._contentStr = StringTable.Get(self._currentTrackData.DialogContentStr)
+  self._contentStr = self:_DoEscape(self._contentStr)
+  self._contentStr, self._breakIndexList, self._wordTotalCount, self._hideTextAnim = self:_GetContentInfo(self._contentStr)
+  if self._currentTrackData.ContentAlignment then
+    if self._currentTrackData.ContentAlignment == 1 then
+      contentText.alignment = UnityEngine.TextAnchor.UpperLeft
+    elseif self._currentTrackData.ContentAlignment == 2 then
+      contentText.alignment = UnityEngine.TextAnchor.UpperCenter
+    elseif self._currentTrackData.ContentAlignment == 3 then
+      contentText.alignment = UnityEngine.TextAnchor.UpperRight
+    elseif self._currentTrackData.ContentAlignment == 4 then
+      contentText.alignment = UnityEngine.TextAnchor.MiddleLeft
+    elseif self._currentTrackData.ContentAlignment == 5 then
+      contentText.alignment = UnityEngine.TextAnchor.MiddleCenter
+    elseif self._currentTrackData.ContentAlignment == 6 then
+      contentText.alignment = UnityEngine.TextAnchor.MiddleRight
+    elseif self._currentTrackData.ContentAlignment == 7 then
+      contentText.alignment = UnityEngine.TextAnchor.LowerLeft
+    elseif self._currentTrackData.ContentAlignment == 8 then
+      contentText.alignment = UnityEngine.TextAnchor.LowerCenter
+    elseif self._currentTrackData.ContentAlignment == 9 then
+      contentText.alignment = UnityEngine.TextAnchor.LowerRight
+    elseif self._currentTrackData.DialogDir == 1 then
+      contentText.alignment = UnityEngine.TextAnchor.MiddleCenter
+    else
+      contentText.alignment = UnityEngine.TextAnchor.MiddleCenter
+    end
+  elseif self._currentTrackData.DialogDir == 1 then
+    contentText.alignment = UnityEngine.TextAnchor.MiddleCenter
+  else
+    contentText.alignment = UnityEngine.TextAnchor.MiddleCenter
+  end
+  contentText:SetText(self._contentStr)
+  self._richText = contentText
+  self._contentStartShow = false
+  self._contentShown = false
+  self._contentTypeStartTime = 0
+  if self._currentTrackData.Body then
+    body.gameObject:SetActive(true)
+    body:LoadImage(self._currentTrackData.Body)
+  else
+    body.gameObject:SetActive(false)
+  end
+  local transparent = Color.New(1, 1, 1, 0)
+  speakerText.color = transparent
+  self:ActiveEndFlag(false)
+  self._inContentEnding = false
+  self._endClick = false
+  self._autoWaitStartTime = 0
+  self._fullscreenBtn.transform.position = self._storyManager:GetStoryUIRoot().transform.parent.position
+  self._optionShown = false
+  self._forceAutoDialog = self._storyManager:GetCurParagraph().ForceAutoDialog
+  self:ShowChoose()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.ShowChoose = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._currentTrackData).Options ~= nil then
-    local optionData = (self._currentTrackData).Options
+function HomeStoryEntityDialog:ShowChoose()
+  if self._currentTrackData.Options ~= nil then
+    local optionData = self._currentTrackData.Options
     for i = 1, #optionData do
       local _data = optionData[i]
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._optionParagraphIDDic)[i] = _data.NextParagraphID
+      self._optionParagraphIDDic[i] = _data.NextParagraphID
     end
     local count = #optionData
-    ;
-    (self._choosePool):SpawnObjects("UIHomeStoryChooseItem", count)
-    local pools = (self._choosePool):GetAllSpawnList()
+    self._choosePool:SpawnObjects("UIHomeStoryChooseItem", count)
+    local pools = self._choosePool:GetAllSpawnList()
     for i = 1, #pools do
       local item = pools[i]
-      local txt = (StringTable.Get)((optionData[i]).Content)
+      local txt = StringTable.Get(optionData[i].Content)
       item:SetData(i, txt, function(idx)
-    -- function num : 0_6_0 , upvalues : self
-    self:ChooseItemClick(idx)
-  end
-)
+        self:ChooseItemClick(idx)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.ChooseItemClick = function(self, idx)
-  -- function num : 0_7
-  local optionData = (self._currentTrackData).Options
+function HomeStoryEntityDialog:ChooseItemClick(idx)
+  local optionData = self._currentTrackData.Options
   local _data = optionData[idx]
   self:_ChooseOption(idx)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog._GetContentInfo = function(self, str)
-  -- function num : 0_8 , upvalues : _ENV
-  local plainStr = (string.gsub)(str, "<size=%d*>", "")
-  plainStr = (string.gsub)(plainStr, "</size>", "")
-  plainStr = (string.gsub)(plainStr, "<color=#%x*>", "")
-  plainStr = (string.gsub)(plainStr, "</color>", "")
-  plainStr = (string.gsub)(plainStr, "<sprite.*/>", "a")
-  local finalStr = (string.gsub)(str, self._splitChar, "")
+function HomeStoryEntityDialog:_GetContentInfo(str)
+  local plainStr = string.gsub(str, "<size=%d*>", "")
+  plainStr = string.gsub(plainStr, "</size>", "")
+  plainStr = string.gsub(plainStr, "<color=#%x*>", "")
+  plainStr = string.gsub(plainStr, "</color>", "")
+  plainStr = string.gsub(plainStr, "<sprite.*/>", "a")
+  local finalStr = string.gsub(str, self._splitChar, "")
   local breakIndexList = {}
   local charCount = 0
-  for uchar in (string.gmatch)(plainStr, "[%z\001-\127\194-\244][\128-\191]*") do
+  for uchar in string.gmatch(plainStr, "[%z\001-\127Â-ô][€-¿]*") do
     if uchar == self._splitChar then
       breakIndexList[#breakIndexList + 1] = charCount
     else
@@ -315,44 +247,32 @@ HomeStoryEntityDialog._GetContentInfo = function(self, str)
   return finalStr, breakIndexList, charCount, hideTextAnim
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.CheckHideTextAnim = function(self, str)
-  -- function num : 0_9 , upvalues : _ENV
-  local hide = (HelperProxy:GetInstance()):CheckTextIncludeImg(str)
+function HomeStoryEntityDialog:CheckHideTextAnim(str)
+  local hide = HelperProxy:GetInstance():CheckTextIncludeImg(str)
   return hide
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog._DoEscape = function(self, strContent)
-  -- function num : 0_10 , upvalues : _ENV
-  strContent = (string.gsub)(strContent, "$$", "$")
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function HomeStoryEntityDialog:_DoEscape(strContent)
+  strContent = string.gsub(strContent, "$$", "$")
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  strContent = (string.gsub)(strContent, "PlayerName", name)
+  strContent = string.gsub(strContent, "PlayerName", name)
   return strContent
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog._GetColorMarkPos = function(self, str)
-  -- function num : 0_11
+function HomeStoryEntityDialog:_GetColorMarkPos(str)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_12
-  ((self._dialogUIView):GetGameObject()):SetActive(true)
+function HomeStoryEntityDialog:_TriggerKeyframe(keyframeData)
+  self._dialogUIView:GetGameObject():SetActive(true)
   self._showUI = true
   if self._hideUI then
-    ((self._dialogUIView):GetGameObject()):SetActive(false)
+    self._dialogUIView:GetGameObject():SetActive(false)
   end
-  local speakerGo, speakerText, bodyRawImage, contentText, contentBg, contentGo = nil, nil, nil, nil, nil, nil
-  if (self._currentTrackData).DialogDir == 1 then
+  local speakerGo, speakerText, bodyRawImage, contentText, contentBg, contentGo
+  if self._currentTrackData.DialogDir == 1 then
     speakerGo = self._speakerGOLeft
     speakerText = self._speakerTextLeft
     bodyRawImage = self._bodyRawImageLeft
@@ -374,7 +294,7 @@ HomeStoryEntityDialog._TriggerKeyframe = function(self, keyframeData)
     end
     contentText.ShowCharCount = showC
     contentGo:SetActive(true)
-    local anim = nil
+    local anim
     if keyframeData.ContentBGVisible == true then
       anim = "story_home_content_bg_anim_in"
     else
@@ -384,81 +304,62 @@ HomeStoryEntityDialog._TriggerKeyframe = function(self, keyframeData)
       contentBg:Play(anim)
     end
   end
-  do
-    if keyframeData.ShowSpeakerName then
-      speakerGo:SetActive(true)
-      local showSpeakerNameTime = keyframeData.ShowSpeakerName
-      if showSpeakerNameTime > 0 then
-        self._inSpeakerNameFadeIn = true
-        self._speakerNameFadeInStartTime = keyframeData.Time
-        self._speakerNameFadeInDuration = showSpeakerNameTime
-      else
-        -- DECOMPILER ERROR at PC73: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self._speakerNameFadeInColor).a = 1
-        speakerText.color = self._speakerNameFadeInColor
-      end
+  if keyframeData.ShowSpeakerName then
+    speakerGo:SetActive(true)
+    local showSpeakerNameTime = keyframeData.ShowSpeakerName
+    if 0 < showSpeakerNameTime then
+      self._inSpeakerNameFadeIn = true
+      self._speakerNameFadeInStartTime = keyframeData.Time
+      self._speakerNameFadeInDuration = showSpeakerNameTime
+    else
+      self._speakerNameFadeInColor.a = 1
+      speakerText.color = self._speakerNameFadeInColor
     end
-    do
-      do
-        if keyframeData.BodyAlpha then
-          local showBodyAlphaTime = keyframeData.BodyAlpha
-          if showBodyAlphaTime > 0 then
-            self._inBodyFadeIn = true
-            self._bodyFadeInStartTime = keyframeData.Time
-            self._bodyFadeInDuration = showBodyAlphaTime
-          else
-            -- DECOMPILER ERROR at PC88: Confused about usage of register: R9 in 'UnsetPending'
-
-            ;
-            (self._bodyFadeInColor).a = 1
-            bodyRawImage.color = self._bodyFadeInColor
-          end
-        end
-        if keyframeData.ShowContent then
-          self._contentStartShow = true
-          if not keyframeData.TypeTimeList then
-            self._contentTypeTimeList = {}
-            self._curBreakIndex = 0
-            self._inContentTyping = true
-            self._contentTypeStartTime = keyframeData.Time
-            self._contentTypeTime = keyframeData.ShowContent * (self._breakIndexList)[1]
-            local showC = 0
-            if self._hideTextAnim then
-              showC = -1
-            end
-            contentText.ShowCharCount = showC
-            if (self._currentTrackData).VoiceRefID then
-              (self._storyManager):PlaySound((self._currentTrackData).VoiceRefID)
-            end
-            if (self._currentTrackData).SpeakerRefID then
-              (self._storyManager):SetSpeakState((self._currentTrackData).SpeakerRefID, true)
-            end
-            if self._forceAutoDialog and not keyframeData.ForceWaitTimeList then
-              do
-                self._forceWaitTime = {}
-                if keyframeData.HideFullScreenBtn ~= nil then
-                  (self._fullscreenBtn):SetActive(not keyframeData.HideFullScreenBtn)
-                end
-              end
-            end
-          end
-        end
-      end
+  end
+  if keyframeData.BodyAlpha then
+    local showBodyAlphaTime = keyframeData.BodyAlpha
+    if 0 < showBodyAlphaTime then
+      self._inBodyFadeIn = true
+      self._bodyFadeInStartTime = keyframeData.Time
+      self._bodyFadeInDuration = showBodyAlphaTime
+    else
+      self._bodyFadeInColor.a = 1
+      bodyRawImage.color = self._bodyFadeInColor
     end
+  end
+  if keyframeData.ShowContent then
+    self._contentStartShow = true
+    self._contentTypeTimeList = keyframeData.TypeTimeList or {}
+    self._curBreakIndex = 0
+    self._inContentTyping = true
+    self._contentTypeStartTime = keyframeData.Time
+    self._contentTypeTime = keyframeData.ShowContent * self._breakIndexList[1]
+    local showC = 0
+    if self._hideTextAnim then
+      showC = -1
+    end
+    contentText.ShowCharCount = showC
+    if self._currentTrackData.VoiceRefID then
+      self._storyManager:PlaySound(self._currentTrackData.VoiceRefID)
+    end
+    if self._currentTrackData.SpeakerRefID then
+      self._storyManager:SetSpeakState(self._currentTrackData.SpeakerRefID, true)
+    end
+    if self._forceAutoDialog then
+      self._forceWaitTime = keyframeData.ForceWaitTimeList or {}
+    end
+  end
+  if keyframeData.HideFullScreenBtn ~= nil then
+    self._fullscreenBtn:SetActive(not keyframeData.HideFullScreenBtn)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog._UpdateAnimation = function(self, time)
-  -- function num : 0_13 , upvalues : _ENV
+function HomeStoryEntityDialog:_UpdateAnimation(time)
   if not self._showUI then
     return false
   end
-  local speakerText, bodyRawImage, contentText = nil, nil, nil
-  if (self._currentTrackData).DialogDir == 1 then
+  local speakerText, bodyRawImage, contentText
+  if self._currentTrackData.DialogDir == 1 then
     speakerText = self._speakerTextLeft
     bodyRawImage = self._bodyRawImageLeft
     contentText = self._contentTextLeft
@@ -469,61 +370,50 @@ HomeStoryEntityDialog._UpdateAnimation = function(self, time)
   end
   if self._inSpeakerNameFadeIn then
     local alpha = (time - self._speakerNameFadeInStartTime) / self._speakerNameFadeInDuration
-    do
-      if alpha >= 1 then
-        alpha = 1
-        self._inSpeakerNameFadeIn = false
-        speakerText:SetText(self._speakerNameStr)
-      end
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._speakerNameFadeInColor).a = alpha
-      speakerText.color = self._speakerNameFadeInColor
-      local colorStr = (string.format)("%02x", (math.floor)(alpha * 255))
-      local str = (string.gsub)(self._speakerNameStr, self._colorPattern, function(s)
-    -- function num : 0_13_0 , upvalues : colorStr
-    return s .. colorStr
-  end
-)
-      speakerText:SetText(str)
+    if 1 <= alpha then
+      alpha = 1
+      self._inSpeakerNameFadeIn = false
+      speakerText:SetText(self._speakerNameStr)
     end
+    self._speakerNameFadeInColor.a = alpha
+    speakerText.color = self._speakerNameFadeInColor
+    local colorStr = string.format("%02x", math.floor(alpha * 255))
+    local str = string.gsub(self._speakerNameStr, self._colorPattern, function(s)
+      return s .. colorStr
+    end)
+    speakerText:SetText(str)
   end
-  do
-    do
-      if self._inBodyFadeIn then
-        local alpha = (time - self._bodyFadeInStartTime) / self._bodyFadeInDuration
-        if alpha >= 1 then
-          alpha = 1
-          self._inBodyFadeIn = false
-        end
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._bodyFadeInColor).a = alpha
-        bodyRawImage.color = self._bodyFadeInColor
-      end
-      -- DECOMPILER ERROR at PC79: Unhandled construct in 'MakeBoolean' P1
-
-      if self._inContentTyping and self._inContentEnding and self._contentEndingTime < time - self._contentEndStartTime then
+  if self._inBodyFadeIn then
+    local alpha = (time - self._bodyFadeInStartTime) / self._bodyFadeInDuration
+    if 1 <= alpha then
+      alpha = 1
+      self._inBodyFadeIn = false
+    end
+    self._bodyFadeInColor.a = alpha
+    bodyRawImage.color = self._bodyFadeInColor
+  end
+  if self._inContentTyping then
+    if self._inContentEnding then
+      if time - self._contentEndStartTime > self._contentEndingTime then
         self._inContentTyping = false
         self._contentShown = true
         self:ActiveEndFlag(true)
       end
+    else
       self._autoWaitStartTime = 0
       local breakPercent = 1
-      if self._contentTypeTime > 0 and not self._typeClickEnd then
+      if 0 < self._contentTypeTime and not self._typeClickEnd then
         breakPercent = (time - self._contentTypeStartTime) / self._contentTypeTime
-        if breakPercent > 1 then
+        if 1 < breakPercent then
           breakPercent = 1
         end
       end
       self._typeClickEnd = false
       local wordCount = -1
       if self._curBreakIndex == 0 then
-        wordCount = (math.floor)(breakPercent * (self._breakIndexList)[self._curBreakIndex + 1])
+        wordCount = math.floor(breakPercent * self._breakIndexList[self._curBreakIndex + 1])
       else
-        wordCount = (math.floor)((lmathext.lerp)((self._breakIndexList)[self._curBreakIndex], (self._breakIndexList)[self._curBreakIndex + 1], breakPercent))
+        wordCount = math.floor(lmathext.lerp(self._breakIndexList[self._curBreakIndex], self._breakIndexList[self._curBreakIndex + 1], breakPercent))
       end
       local showC = wordCount
       if self._hideTextAnim then
@@ -532,218 +422,153 @@ HomeStoryEntityDialog._UpdateAnimation = function(self, time)
       contentText.ShowCharCount = showC
       if breakPercent == 1 then
         self._curBreakIndex = self._curBreakIndex + 1
-        if #self._breakIndexList <= self._curBreakIndex then
+        if self._curBreakIndex >= #self._breakIndexList then
           self._inContentEnding = true
           self._contentEndStartTime = time
         else
           self._inContentTyping = false
-          if not (self._contentTypeTimeList)[self._curBreakIndex] then
-            do
-              self._contentTypeTime = self._defaultBreakTypeTime * ((self._breakIndexList)[self._curBreakIndex + 1] - (self._breakIndexList)[self._curBreakIndex])
-              if self._contentStartShow and (self._auto or self._forceAutoDialog) and not self._endClick then
-                if (self._contentShown or not self._inContentTyping) and self._autoWaitStartTime == 0 then
-                  self._autoWaitStartTime = time
-                  if self._forceAutoDialog then
-                    self._autoWaitTime = (self._forceWaitTime)[self._curBreakIndex]
-                  else
-                    if self._curBreakIndex == 1 then
-                      self._autoWaitTime = 1 + (self._breakIndexList)[self._curBreakIndex] * 0.075
-                    else
-                      self._autoWaitTime = 1 + ((self._breakIndexList)[self._curBreakIndex] - (self._breakIndexList)[self._curBreakIndex - 1]) * 0.075
-                    end
-                  end
-                end
-                -- DECOMPILER ERROR at PC230: Unhandled construct in 'MakeBoolean' P1
-
-                -- DECOMPILER ERROR at PC230: Unhandled construct in 'MakeBoolean' P1
-
-                if self._contentShown and (self._currentTrackData).Options == nil and self._autoWaitTime <= time - self._autoWaitStartTime then
-                  self:_DialogEnd()
-                end
-              end
-              if self._autoWaitOptionTime <= time - self._autoWaitStartTime and not self._optionShown then
-                self:_ShowOption()
-                self._optionShown = true
-              end
-              if not self._inContentTyping and self._autoWaitTime <= time - self._autoWaitStartTime then
-                self._contentTypeStartTime = (self._storyManager):GetCurrentTime()
-                self._inContentTyping = true
-                self:ActiveEndFlag(false)
-              end
-              if self._contentShown and self._endClick then
-                ((self._dialogUIView):GetGameObject()):SetActive(false)
-                self._showUI = false
-                return true
-              else
-                return false
-              end
-            end
-          end
+          self._contentTypeTime = (self._contentTypeTimeList[self._curBreakIndex] or self._defaultBreakTypeTime) * (self._breakIndexList[self._curBreakIndex + 1] - self._breakIndexList[self._curBreakIndex])
         end
       end
     end
   end
+  if self._contentStartShow and (self._auto or self._forceAutoDialog) and not self._endClick then
+    if (self._contentShown or not self._inContentTyping) and self._autoWaitStartTime == 0 then
+      self._autoWaitStartTime = time
+      if self._forceAutoDialog then
+        self._autoWaitTime = self._forceWaitTime[self._curBreakIndex]
+      elseif self._curBreakIndex == 1 then
+        self._autoWaitTime = 1 + self._breakIndexList[self._curBreakIndex] * 0.075
+      else
+        self._autoWaitTime = 1 + (self._breakIndexList[self._curBreakIndex] - self._breakIndexList[self._curBreakIndex - 1]) * 0.075
+      end
+    end
+    if self._contentShown then
+      if self._currentTrackData.Options == nil then
+        if time - self._autoWaitStartTime >= self._autoWaitTime then
+          self:_DialogEnd()
+        end
+      elseif time - self._autoWaitStartTime >= self._autoWaitOptionTime and not self._optionShown then
+        self:_ShowOption()
+        self._optionShown = true
+      end
+    elseif not self._inContentTyping and time - self._autoWaitStartTime >= self._autoWaitTime then
+      self._contentTypeStartTime = self._storyManager:GetCurrentTime()
+      self._inContentTyping = true
+      self:ActiveEndFlag(false)
+    end
+  end
+  if self._contentShown and self._endClick then
+    self._dialogUIView:GetGameObject():SetActive(false)
+    self._showUI = false
+    return true
+  else
+    return false
+  end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog._DialogEnd = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function HomeStoryEntityDialog:_DialogEnd()
   self._endClick = true
-  if (self._currentTrackData).VoiceRefID then
-    (self._storyManager):StopSound((self._currentTrackData).VoiceRefID)
+  if self._currentTrackData.VoiceRefID then
+    self._storyManager:StopSound(self._currentTrackData.VoiceRefID)
   end
-  local contentText, speakerText = nil, nil
-  if (self._currentTrackData).DialogDir == 1 then
+  local contentText, speakerText
+  if self._currentTrackData.DialogDir == 1 then
     contentText = self._contentTextLeft
     speakerText = self._speakerTextLeft
   else
     contentText = self._contentTextRight
     speakerText = self._speakerTextRight
   end
-  ;
-  (self._storyManager):AddDialogRecord(speakerText.text, contentText.text, self._isPlayer, (self._currentTrackData).Body)
-  if (self._currentTrackData).Options then
-    local playerName = self:_DoEscape((StringTable.Get)("ui_story_name_you"))
-    local optionContent = (((self._currentTrackData).Options)[self._selectedOptionIndex]).Content
-    ;
-    (self._storyManager):AddDialogRecord(playerName, optionContent, true, nil)
+  self._storyManager:AddDialogRecord(speakerText.text, contentText.text, self._isPlayer, self._currentTrackData.Body)
+  if self._currentTrackData.Options then
+    local playerName = self:_DoEscape(StringTable.Get("ui_story_name_you"))
+    local optionContent = self._currentTrackData.Options[self._selectedOptionIndex].Content
+    self._storyManager:AddDialogRecord(playerName, optionContent, true, nil)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.FullScreenBtnOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function HomeStoryEntityDialog:FullScreenBtnOnClick()
   if self._endClick or self._forceAutoDialog or not self._contentStartShow then
-    return 
+    return
   end
   if self._contentShown then
-    (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundStoryClick)
+    AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundStoryClick)
     self:_ShowOption()
+  elseif self._inContentTyping then
+    AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundStoryClick)
+    self._typeClickEnd = true
   else
-    if self._inContentTyping then
-      (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundStoryClick)
-      self._typeClickEnd = true
-    else
-      ;
-      (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundStoryClick)
-      self._contentTypeStartTime = (self._storyManager):GetCurrentTime()
-      self._inContentTyping = true
-      self:ActiveEndFlag(false)
+    AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundStoryClick)
+    self._contentTypeStartTime = self._storyManager:GetCurrentTime()
+    self._inContentTyping = true
+    self:ActiveEndFlag(false)
+  end
+end
+
+function HomeStoryEntityDialog:ActiveEndFlag(active)
+  self._endFlag:SetActive(active)
+end
+
+function HomeStoryEntityDialog:CancelHideButtonOnClcik()
+  self._storyManager:HideUI(false)
+  self._cancelHideButton:SetActive(false)
+end
+
+function HomeStoryEntityDialog:ButtonHideOnClick(go)
+  self._storyManager:HideUI(true)
+  self._cancelHideButton:SetActive(true)
+end
+
+function HomeStoryEntityDialog:CancelAutoButtonOnClick()
+  self._storyManager:SetAuto(false)
+  self._cancelAutoButton:SetActive(false)
+end
+
+function HomeStoryEntityDialog:ButtonAutoOnClick()
+  self._storyManager:SetAuto(true)
+  self._cancelAutoButton:SetActive(true)
+end
+
+function HomeStoryEntityDialog:ButtonReviewOnClick(go)
+  self._dialogReviewScrollView.gameObject:SetActive(true)
+  local dialogRecord = self._storyManager:GetDialogRecord()
+  self._dialogReviewScrollView:SetListItemCount(#dialogRecord, true)
+  self._dialogReviewScrollView:MovePanelToItemIndex(#dialogRecord - 1, 0)
+end
+
+function HomeStoryEntityDialog:SectionEnd()
+  HomeStoryEntityDialog.super.SectionEnd(self)
+  self._endClick = true
+end
+
+function HomeStoryEntityDialog:_ShowOption()
+  if self._currentTrackData.Options == nil then
+    self:_DialogEnd()
+  else
+    self._optRoot:SetActive(true)
+    if self._auto or self._forceAutoDialog then
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.ActiveEndFlag = function(self, active)
-  -- function num : 0_16
-  (self._endFlag):SetActive(active)
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.CancelHideButtonOnClcik = function(self)
-  -- function num : 0_17
-  (self._storyManager):HideUI(false)
-  ;
-  (self._cancelHideButton):SetActive(false)
-end
-
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.ButtonHideOnClick = function(self, go)
-  -- function num : 0_18
-  (self._storyManager):HideUI(true)
-  ;
-  (self._cancelHideButton):SetActive(true)
-end
-
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.CancelAutoButtonOnClick = function(self)
-  -- function num : 0_19
-  (self._storyManager):SetAuto(false)
-  ;
-  (self._cancelAutoButton):SetActive(false)
-end
-
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.ButtonAutoOnClick = function(self)
-  -- function num : 0_20
-  (self._storyManager):SetAuto(true)
-  ;
-  (self._cancelAutoButton):SetActive(true)
-end
-
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.ButtonReviewOnClick = function(self, go)
-  -- function num : 0_21
-  ((self._dialogReviewScrollView).gameObject):SetActive(true)
-  local dialogRecord = (self._storyManager):GetDialogRecord()
-  ;
-  (self._dialogReviewScrollView):SetListItemCount(#dialogRecord, true)
-  ;
-  (self._dialogReviewScrollView):MovePanelToItemIndex(#dialogRecord - 1, 0)
-end
-
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.SectionEnd = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  ((HomeStoryEntityDialog.super).SectionEnd)(self)
-  self._endClick = true
-end
-
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog._ShowOption = function(self)
-  -- function num : 0_23
-  if (self._currentTrackData).Options == nil then
-    self:_DialogEnd()
-  else
-    ;
-    (self._optRoot):SetActive(true)
-  end
-  if self._auto or self._forceAutoDialog then
-  end
-end
-
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog._ChooseOption = function(self, index)
-  -- function num : 0_24 , upvalues : _ENV
-  (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundStoryClick)
+function HomeStoryEntityDialog:_ChooseOption(index)
+  AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundStoryClick)
   self._selectedOptionIndex = index
-  ;
-  (self._storyManager):SetNextParagraphID((self._optionParagraphIDDic)[index])
-  ;
-  (self._optRoot):SetActive(false)
+  self._storyManager:SetNextParagraphID(self._optionParagraphIDDic[index])
+  self._optRoot:SetActive(false)
   if self._auto then
-    self._optionParagraphIDDic = {}
-    self:_DialogEnd()
   end
+  self._optionParagraphIDDic = {}
+  self:_DialogEnd()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.HideUI = function(self, hide)
-  -- function num : 0_25
+function HomeStoryEntityDialog:HideUI(hide)
   self._hideUI = hide
-  if self._showUI then
-    ((self._dialogUIView):GetGameObject()):SetActive(not hide)
-  end
+  self._dialogUIView:GetGameObject():SetActive(self._showUI and not hide)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeStoryEntityDialog.SetAuto = function(self, auto)
-  -- function num : 0_26
+function HomeStoryEntityDialog:SetAuto(auto)
   self._auto = auto
   self._autoWaitStartTime = 0
 end
-
-

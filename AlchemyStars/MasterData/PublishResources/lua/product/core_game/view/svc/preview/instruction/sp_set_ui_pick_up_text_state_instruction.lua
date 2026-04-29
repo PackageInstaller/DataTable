@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_set_ui_pick_up_text_state_instruction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewSetUiPickUpTextStateInstruction", SkillPreviewBaseInstruction)
 SkillPreviewSetUiPickUpTextStateInstruction = SkillPreviewSetUiPickUpTextStateInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewSetUiPickUpTextStateInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewSetUiPickUpTextStateInstruction:Constructor(params)
   self._textState = tonumber(params.TextState)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewSetUiPickUpTextStateInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangePickUpText, self._textState)
+function SkillPreviewSetUiPickUpTextStateInstruction:DoInstruction(TT, casterEntity, previewContext)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangePickUpText, self._textState)
 end
-
-

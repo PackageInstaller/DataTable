@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_turn_to_target_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterTurnToTargetGridInstruction", BaseInstruction)
 PlayCasterTurnToTargetGridInstruction = PlayCasterTurnToTargetGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterTurnToTargetGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterTurnToTargetGridInstruction:Constructor(paramList)
   local x = tonumber(paramList.dirOffsetX)
   local y = tonumber(paramList.dirOffsetY)
   if x and y then
@@ -17,15 +10,10 @@ PlayCasterTurnToTargetGridInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterTurnToTargetGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterTurnToTargetGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local world = casterEntity:GetOwnerWorld()
   local targetEntity = world:GetEntityByID(targetEntityID)
   local resvc = world:GetService("RenderEntity")
   resvc:TurnToTargetGrid(casterEntity, targetEntity, self._dirOffset)
 end
-
-

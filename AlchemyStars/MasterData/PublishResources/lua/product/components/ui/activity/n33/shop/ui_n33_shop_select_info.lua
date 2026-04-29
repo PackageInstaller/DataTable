@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/shop/ui_n33_shop_select_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN33ShopSelectInfo", UICustomWidget)
 UIN33ShopSelectInfo = UIN33ShopSelectInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33ShopSelectInfo.OnShow = function(self)
-  -- function num : 0_0
+function UIN33ShopSelectInfo:OnShow()
   self._pos = self:GetGameObject("Pos")
   local rowPool = self:GetUIComponent("UISelectObjectPath", "ItemSelectObject")
   self._awardCell = rowPool:SpawnObject("UIN33ShopAwardCell")
@@ -17,43 +10,28 @@ UIN33ShopSelectInfo.OnShow = function(self)
   self._isDispose = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33ShopSelectInfo.SetData = function(self, data, itemInfoCallback, unlock, yieldTime, isTips)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN33ShopSelectInfo:SetData(data, itemInfoCallback, unlock, yieldTime, isTips)
   if self._isDispose then
-    return 
+    return
   end
-  ;
-  (self._pos):SetActive(true)
-  ;
-  (self._awardCell):InitN33ShopAwardCellData(data, itemInfoCallback, unlock, yieldTime, isTips)
-  local itemConfig = (Cfg.cfg_item)[data.m_item_id]
+  self._pos:SetActive(true)
+  self._awardCell:InitN33ShopAwardCellData(data, itemInfoCallback, unlock, yieldTime, isTips)
+  local itemConfig = Cfg.cfg_item[data.m_item_id]
   if not itemConfig then
-    return 
+    return
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   if not itemModule then
-    return 
+    return
   end
-  ;
-  (self._itemInfoName):SetText((StringTable.Get)(itemConfig.Name))
-  ;
-  (self._itemInfoDesc):SetText((StringTable.Get)(itemConfig.Intro))
+  self._itemInfoName:SetText(StringTable.Get(itemConfig.Name))
+  self._itemInfoDesc:SetText(StringTable.Get(itemConfig.Intro))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33ShopSelectInfo.PosOnClick = function(self)
-  -- function num : 0_2
-  (self._pos):SetActive(false)
+function UIN33ShopSelectInfo:PosOnClick()
+  self._pos:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33ShopSelectInfo.OnHide = function(self)
-  -- function num : 0_3
+function UIN33ShopSelectInfo:OnHide()
   self._isDispose = true
 end
-
-

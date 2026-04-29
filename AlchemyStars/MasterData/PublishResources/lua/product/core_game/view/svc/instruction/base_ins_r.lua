@@ -1,98 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/base_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BaseInstruction", Object)
 BaseInstruction = BaseInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BaseInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function BaseInstruction:Constructor(params)
   self._label = params.label
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.GetInstructionType = function(self)
-  -- function num : 0_1
+function BaseInstruction:GetInstructionType()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.GetInstructionLabel = function(self)
-  -- function num : 0_2
+function BaseInstruction:GetInstructionLabel()
   return self._label
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_3
+function BaseInstruction:DoInstruction(TT, casterEntity, phaseContext)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.GetCacheResource = function(self, skillConfig, skinId)
-  -- function num : 0_4
+function BaseInstruction:GetCacheResource(skillConfig, skinId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.GetCacheAudio = function(self)
-  -- function num : 0_5
+function BaseInstruction:GetCacheAudio()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.GetCacheVoice = function(self)
-  -- function num : 0_6
+function BaseInstruction:GetCacheVoice()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.GetSkillID = function(self, casterEntity)
-  -- function num : 0_7
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function BaseInstruction:GetSkillID(casterEntity)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   return skillID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.PlaySkillInstruction = function(self, casterEntity)
-  -- function num : 0_8
+function BaseInstruction:PlaySkillInstruction(casterEntity)
   local world = casterEntity:GetOwnerWorld()
   local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
   return sPlaySkillInstruction
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.GetEffectResCacheInfo = function(self, effectID, count)
-  -- function num : 0_9 , upvalues : _ENV
-  if not count then
-    count = 1
-  end
+function BaseInstruction:GetEffectResCacheInfo(effectID, count)
+  count = count or 1
   if not effectID then
     return nil
   end
-  if not (Cfg.cfg_effect)[effectID] then
-    (Log.exception)(self._className, "effectID not found: ", tostring(effectID))
+  if not Cfg.cfg_effect[effectID] then
+    Log.exception(self._className, "effectID not found: ", tostring(effectID))
     return nil
   end
-  local resPath = ((Cfg.cfg_effect)[effectID]).ResPath
-  if not (ResourceManager:GetInstance()):HasResource(resPath) then
-    (Log.exception)(self._className, "res not found: ", tostring(resPath))
+  local resPath = Cfg.cfg_effect[effectID].ResPath
+  if not ResourceManager:GetInstance():HasResource(resPath) then
+    Log.exception(self._className, "res not found: ", tostring(resPath))
     return nil
   end
   return {resPath, count}
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseInstruction.CreateInstructionEnv = function(self, anyEntity)
-  -- function num : 0_10
+function BaseInstruction:CreateInstructionEnv(anyEntity)
   if not anyEntity then
     return {}
   end
@@ -102,7 +63,12 @@ BaseInstruction.CreateInstructionEnv = function(self, anyEntity)
   local rsvcEffect = world:GetService("Effect")
   local rsvcBuff = world:GetService("PlayBuff")
   local rsvcDamage = world:GetService("PlayDamage")
-  return {world = world, utilData = utilData, utilCalc = utilCalc, effectService = rsvcEffect, playBuffService = rsvcBuff, playDamageService = rsvcDamage}
+  return {
+    world = world,
+    utilData = utilData,
+    utilCalc = utilCalc,
+    effectService = rsvcEffect,
+    playBuffService = rsvcBuff,
+    playDamageService = rsvcDamage
+  }
 end
-
-

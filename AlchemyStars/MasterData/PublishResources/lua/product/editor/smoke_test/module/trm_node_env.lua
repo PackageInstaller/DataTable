@@ -1,14 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/module/trm_node_env.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("test_robot_module")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-TestRobotModule.GetNodeEnv = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TestRobotModule:GetNodeEnv()
   return setmetatable({}, _G)
 end
-
-

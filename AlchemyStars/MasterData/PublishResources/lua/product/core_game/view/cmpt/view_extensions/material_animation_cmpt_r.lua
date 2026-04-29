@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/view_extensions/material_animation_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MaterialAnimationComponent", Object)
 MaterialAnimationComponent = MaterialAnimationComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MaterialAnimationComponent.Constructor = function(self, entity)
-  -- function num : 0_0
+function MaterialAnimationComponent:Constructor(entity)
   local world = entity:GetOwnerWorld()
   self._isDevelopEnv = world:IsDevelopEnv()
   self._MaterialAnimationContainer = nil
@@ -20,322 +13,197 @@ MaterialAnimationComponent.Constructor = function(self, entity)
   self.linkMaterialAnimEntityArray = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.SetMaterialAnimationController = function(self, csMaterialAnimation)
-  -- function num : 0_1
+function MaterialAnimationComponent:SetMaterialAnimationController(csMaterialAnimation)
   self._MaterialAnimation = csMaterialAnimation
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.SetAttachmentMaterialAnimation = function(self, csAttachMatAni)
-  -- function num : 0_2
+function MaterialAnimationComponent:SetAttachmentMaterialAnimation(csAttachMatAni)
   self._attachmentMaterialAnimation = csAttachMatAni
   if self._MaterialAnimationContainer then
-    (self._attachmentMaterialAnimation):AddClips((self._MaterialAnimationContainer).Obj)
+    self._attachmentMaterialAnimation:AddClips(self._MaterialAnimationContainer.Obj)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.LoadContainer = function(self, container)
-  -- function num : 0_3
+function MaterialAnimationComponent:LoadContainer(container)
   self._MaterialAnimationContainer = container
-  ;
-  (self._MaterialAnimation):AddClips((self._MaterialAnimationContainer).Obj)
+  self._MaterialAnimation:AddClips(self._MaterialAnimationContainer.Obj)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.AddContainer = function(self, container)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self._otherMaterialAnimationContainer, container)
-  ;
-  (self._MaterialAnimation):AddClips(container.Obj)
+function MaterialAnimationComponent:AddContainer(container)
+  table.insert(self._otherMaterialAnimationContainer, container)
+  self._MaterialAnimation:AddClips(container.Obj)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function MaterialAnimationComponent:Dispose()
   if self._ownContainer then
-    (self._MaterialAnimationContainer):Dispose()
-    for i,container in ipairs(self._otherMaterialAnimationContainer) do
+    self._MaterialAnimationContainer:Dispose()
+    for i, container in ipairs(self._otherMaterialAnimationContainer) do
       container:Dispose()
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.MaterialAnimation = function(self)
-  -- function num : 0_6
+function MaterialAnimationComponent:MaterialAnimation()
   return self._MaterialAnimation
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayAlpha = function(self)
-  -- function num : 0_7
+function MaterialAnimationComponent:PlayAlpha()
   self:Play("common_alpha")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingAlpha = function(self)
-  -- function num : 0_8
-  return (self._MaterialAnimation):IsPlaying("common_alpha")
+function MaterialAnimationComponent:IsPlayingAlpha()
+  return self._MaterialAnimation:IsPlaying("common_alpha")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayAlphaLoop = function(self)
-  -- function num : 0_9
+function MaterialAnimationComponent:PlayAlphaLoop()
   self:Play("common_alpha_loop")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingAlphaLoop = function(self)
-  -- function num : 0_10
-  return (self._MaterialAnimation):IsPlaying("common_alpha_loop")
+function MaterialAnimationComponent:IsPlayingAlphaLoop()
+  return self._MaterialAnimation:IsPlaying("common_alpha_loop")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayAtkup = function(self)
-  -- function num : 0_11
+function MaterialAnimationComponent:PlayAtkup()
   self:Play("common_atkup")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingAtkup = function(self)
-  -- function num : 0_12
-  return (self._MaterialAnimation):IsPlaying("common_atkup")
+function MaterialAnimationComponent:IsPlayingAtkup()
+  return self._MaterialAnimation:IsPlaying("common_atkup")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayBlood = function(self)
-  -- function num : 0_13
+function MaterialAnimationComponent:PlayBlood()
   self:Play("common_blood")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingBlood = function(self)
-  -- function num : 0_14
-  return (self._MaterialAnimation):IsPlaying("common_blood")
+function MaterialAnimationComponent:IsPlayingBlood()
+  return self._MaterialAnimation:IsPlaying("common_blood")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayCure = function(self)
-  -- function num : 0_15
+function MaterialAnimationComponent:PlayCure()
   self:Play("common_cure")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingCure = function(self)
-  -- function num : 0_16
-  return (self._MaterialAnimation):IsPlaying("common_cure")
+function MaterialAnimationComponent:IsPlayingCure()
+  return self._MaterialAnimation:IsPlaying("common_cure")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayDefup = function(self)
-  -- function num : 0_17
+function MaterialAnimationComponent:PlayDefup()
   self:Play("common_defup")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingDefup = function(self)
-  -- function num : 0_18
-  return (self._MaterialAnimation):IsPlaying("common_defup")
+function MaterialAnimationComponent:IsPlayingDefup()
+  return self._MaterialAnimation:IsPlaying("common_defup")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayFire = function(self)
-  -- function num : 0_19
+function MaterialAnimationComponent:PlayFire()
   self:Play("common_fire")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayHit = function(self)
-  -- function num : 0_20
+function MaterialAnimationComponent:PlayHit()
   self:Play("common_hit")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayInvalid = function(self)
-  -- function num : 0_21
+function MaterialAnimationComponent:PlayInvalid()
   self:Play("common_invalid")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.StopInvalid = function(self)
-  -- function num : 0_22
+function MaterialAnimationComponent:StopInvalid()
   self:StopMaterialAnim("common_invalid")
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingCommonInvalid = function(self)
-  -- function num : 0_23
-  return (self._MaterialAnimation):IsPlaying("common_invalid")
+function MaterialAnimationComponent:IsPlayingCommonInvalid()
+  return self._MaterialAnimation:IsPlaying("common_invalid")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayPoison = function(self)
-  -- function num : 0_24
+function MaterialAnimationComponent:PlayPoison()
   self:Play("common_poison")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlaySelect = function(self)
-  -- function num : 0_25
+function MaterialAnimationComponent:PlaySelect()
   self:Play("common_select")
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingSelect = function(self)
-  -- function num : 0_26
-  return (self._MaterialAnimation):IsPlaying("common_select")
+function MaterialAnimationComponent:IsPlayingSelect()
+  return self._MaterialAnimation:IsPlaying("common_select")
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlaySelectAlpha = function(self)
-  -- function num : 0_27
+function MaterialAnimationComponent:PlaySelectAlpha()
   self:Play("common_select_alpha")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingSelectAlpha = function(self)
-  -- function num : 0_28
-  return (self._MaterialAnimation):IsPlaying("common_select_alpha")
+function MaterialAnimationComponent:IsPlayingSelectAlpha()
+  return self._MaterialAnimation:IsPlaying("common_select_alpha")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayShadoweff = function(self)
-  -- function num : 0_29
+function MaterialAnimationComponent:PlayShadoweff()
   self:Play("common_shadoweff")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayShield = function(self)
-  -- function num : 0_30
+function MaterialAnimationComponent:PlayShield()
   self:Play("common_shield")
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayDeathFire = function(self)
-  -- function num : 0_31
+function MaterialAnimationComponent:PlayDeathFire()
   self:Play("Monster_Death_Fire")
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayDeathForest = function(self)
-  -- function num : 0_32
+function MaterialAnimationComponent:PlayDeathForest()
   self:Play("Monster_Death_Forest")
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayDeathLight = function(self)
-  -- function num : 0_33
+function MaterialAnimationComponent:PlayDeathLight()
   self:Play("Monster_Death_Flash")
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayImmuneAD = function(self)
-  -- function num : 0_34
+function MaterialAnimationComponent:PlayImmuneAD()
   self:Play("common_immune_ad")
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayImmuneAP = function(self)
-  -- function num : 0_35
+function MaterialAnimationComponent:PlayImmuneAP()
   self:Play("common_immune_ap")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayCurePre = function(self)
-  -- function num : 0_36
+function MaterialAnimationComponent:PlayCurePre()
   self:Play("common_cure_pre")
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayingCurePre = function(self)
-  -- function num : 0_37
-  return (self._MaterialAnimation):IsPlaying("common_cure_pre")
+function MaterialAnimationComponent:IsPlayingCurePre()
+  return self._MaterialAnimation:IsPlaying("common_cure_pre")
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayN15Cure = function(self)
-  -- function num : 0_38
+function MaterialAnimationComponent:PlayN15Cure()
   self:Play("effanim_N15_cure")
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.IsPlayN15Cure = function(self)
-  -- function num : 0_39
-  return (self._MaterialAnimation):IsPlaying("effanim_N15_cure")
+function MaterialAnimationComponent:IsPlayN15Cure()
+  return self._MaterialAnimation:IsPlaying("effanim_N15_cure")
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.AddLinkMaterialAnimEntity = function(self, e)
-  -- function num : 0_40 , upvalues : _ENV
-  (table.insert)(self.linkMaterialAnimEntityArray, e)
+function MaterialAnimationComponent:AddLinkMaterialAnimEntity(e)
+  table.insert(self.linkMaterialAnimEntityArray, e)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.Play = function(self, anim)
-  -- function num : 0_41 , upvalues : _ENV
+function MaterialAnimationComponent:Play(anim)
   if self._MaterialAnimation == nil or tostring(self._MaterialAnimation) == "null" then
-    (Log.fatal)(self._className, "material animation is nil")
-    return 
+    Log.fatal(self._className, "material animation is nil")
+    return
   end
-  local config = (Cfg.cfg_materialanim_layer)[anim]
-  local success = nil
+  local config = Cfg.cfg_materialanim_layer[anim]
+  local success
   if config then
-    success = (self._MaterialAnimation):Play(anim, config.Layer)
+    success = self._MaterialAnimation:Play(anim, config.Layer)
   else
-    success = (self._MaterialAnimation):Play(anim, 9)
+    success = self._MaterialAnimation:Play(anim, 9)
   end
   if not success and self._isDevelopEnv then
-    (Log.error)("MaterialAnimationComponent: failed on playing material animation: ", tostring(anim), " object: ", ((self._MaterialAnimation).gameObject).name)
+    Log.error("MaterialAnimationComponent: failed on playing material animation: ", tostring(anim), " object: ", self._MaterialAnimation.gameObject.name)
   end
   local layerCount = config and config.Layer or 9
   if self._attachmentMaterialAnimation then
-    (self._attachmentMaterialAnimation):Play(anim, layerCount)
+    self._attachmentMaterialAnimation:Play(anim, layerCount)
   end
   if #self.linkMaterialAnimEntityArray > 0 then
-    for _,e in ipairs(self.linkMaterialAnimEntityArray) do
+    for _, e in ipairs(self.linkMaterialAnimEntityArray) do
       local cmpt = e:MaterialAnimationComponent()
       if cmpt then
         cmpt:Play(anim)
@@ -344,59 +212,43 @@ MaterialAnimationComponent.Play = function(self, anim)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayLayer = function(self, anim, layer)
-  -- function num : 0_42
-  (self._MaterialAnimation):Play(anim, layer)
+function MaterialAnimationComponent:PlayLayer(anim, layer)
+  self._MaterialAnimation:Play(anim, layer)
   if self._attachmentMaterialAnimation then
-    (self._attachmentMaterialAnimation):Play(anim, layer)
+    self._attachmentMaterialAnimation:Play(anim, layer)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.GetMaterialAnimationLayer = function(self, anim)
-  -- function num : 0_43 , upvalues : _ENV
-  local config = (Cfg.cfg_materialanim_layer)[anim]
+function MaterialAnimationComponent:GetMaterialAnimationLayer(anim)
+  local config = Cfg.cfg_materialanim_layer[anim]
   if config then
     return config.Layer
   end
-  ;
-  (Log.fatal)("Can\'t find MaterialAnimation AnimName:", anim)
+  Log.fatal("Can't find MaterialAnimation AnimName:", anim)
   return nil
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.PlayDeathWater = function(self)
-  -- function num : 0_44
+function MaterialAnimationComponent:PlayDeathWater()
   self:Play("Monster_Death_Water")
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.StopAll = function(self)
-  -- function num : 0_45 , upvalues : _ENV
-  (self._MaterialAnimation):StopAll()
+function MaterialAnimationComponent:StopAll()
+  self._MaterialAnimation:StopAll()
   if self._attachmentMaterialAnimation then
-    (self._attachmentMaterialAnimation):StopAll()
+    self._attachmentMaterialAnimation:StopAll()
   end
   if #self.linkMaterialAnimEntityArray > 0 then
-    for _,e in ipairs(self.linkMaterialAnimEntityArray) do
+    for _, e in ipairs(self.linkMaterialAnimEntityArray) do
       local cmpt = e:MaterialAnimationComponent()
       if cmpt then
-        (cmpt._MaterialAnimation):StopAll()
+        cmpt._MaterialAnimation:StopAll()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.StopMaterialAnim = function(self, anim)
-  -- function num : 0_46
-  if (self._MaterialAnimation):IsPlaying(anim) then
+function MaterialAnimationComponent:StopMaterialAnim(anim)
+  if self._MaterialAnimation:IsPlaying(anim) then
     local layer = self:GetMaterialAnimationLayer(anim)
     if layer then
       self:StopLayer(layer)
@@ -404,60 +256,43 @@ MaterialAnimationComponent.StopMaterialAnim = function(self, anim)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.StopLayer = function(self, layer)
-  -- function num : 0_47 , upvalues : _ENV
-  (self._MaterialAnimation):StopLayer(layer)
+function MaterialAnimationComponent:StopLayer(layer)
+  self._MaterialAnimation:StopLayer(layer)
   if self._attachmentMaterialAnimation then
-    (self._attachmentMaterialAnimation):StopLayer(layer)
+    self._attachmentMaterialAnimation:StopLayer(layer)
   end
   if #self.linkMaterialAnimEntityArray > 0 then
-    for _,e in ipairs(self.linkMaterialAnimEntityArray) do
+    for _, e in ipairs(self.linkMaterialAnimEntityArray) do
       local cmpt = e:MaterialAnimationComponent()
       if cmpt then
-        (cmpt._MaterialAnimation):StopLayer(layer)
+        cmpt._MaterialAnimation:StopLayer(layer)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.AddSubMaterialAnimation = function(self, nodeName, csAttachMatAni)
-  -- function num : 0_48
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._subMaterialAnimations)[nodeName] = csAttachMatAni
+function MaterialAnimationComponent:AddSubMaterialAnimation(nodeName, csAttachMatAni)
+  self._subMaterialAnimations[nodeName] = csAttachMatAni
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.GetSubMaterialAnimation = function(self, nodeName)
-  -- function num : 0_49
-  return (self._subMaterialAnimations)[nodeName]
+function MaterialAnimationComponent:GetSubMaterialAnimation(nodeName)
+  return self._subMaterialAnimations[nodeName]
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.SubLoadContainer = function(self, nodeName, container)
-  -- function num : 0_50
+function MaterialAnimationComponent:SubLoadContainer(nodeName, container)
   self._subMaterialAnimationContainer = container
-  local ma = (self._subMaterialAnimations)[nodeName]
+  local ma = self._subMaterialAnimations[nodeName]
   if ma then
-    ma:AddClips((self._subMaterialAnimationContainer).Obj)
+    ma:AddClips(self._subMaterialAnimationContainer.Obj)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.SubPlay = function(self, nodeName, anim)
-  -- function num : 0_51 , upvalues : _ENV
+function MaterialAnimationComponent:SubPlay(nodeName, anim)
   local ma = self:GetSubMaterialAnimation(nodeName)
   if ma == nil or tostring(ma) == "null" then
-    return 
+    return
   end
-  local config = (Cfg.cfg_materialanim_layer)[anim]
+  local config = Cfg.cfg_materialanim_layer[anim]
   if config then
     ma:Play(anim, config.Layer)
   else
@@ -465,275 +300,198 @@ MaterialAnimationComponent.SubPlay = function(self, nodeName, anim)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.StopSubLayer = function(self, nodeName, layer)
-  -- function num : 0_52 , upvalues : _ENV
+function MaterialAnimationComponent:StopSubLayer(nodeName, layer)
   local ma = self:GetSubMaterialAnimation(nodeName)
   if ma == nil or tostring(ma) == "null" then
-    return 
+    return
   end
   ma:StopLayer(layer)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-MaterialAnimationComponent.StopSubMaterialAnim = function(self, nodeName, anim)
-  -- function num : 0_53 , upvalues : _ENV
+function MaterialAnimationComponent:StopSubMaterialAnim(nodeName, anim)
   local ma = self:GetSubMaterialAnimation(nodeName)
   if ma == nil or tostring(ma) == "null" then
-    return 
+    return
   end
   if ma:IsPlaying(anim) then
     local layer = self:GetMaterialAnimationLayer(anim)
-    if not layer then
-      layer = 9
-    end
+    layer = layer or 9
     self:StopSubLayer(nodeName, layer)
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.MaterialAnimationComponent = function(self)
-  -- function num : 0_54
-  return self:GetComponent((self.WEComponentsEnum).MaterialAnimation)
+function Entity:MaterialAnimationComponent()
+  return self:GetComponent(self.WEComponentsEnum.MaterialAnimation)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasMaterialAnimationComponent = function(self)
-  -- function num : 0_55
-  return self:HasComponent((self.WEComponentsEnum).MaterialAnimation)
+function Entity:HasMaterialAnimationComponent()
+  return self:HasComponent(self.WEComponentsEnum.MaterialAnimation)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddMaterialAnimationComponent = function(self, container, csMaterialAnimation)
-  -- function num : 0_56 , upvalues : _ENV
+function Entity:AddMaterialAnimationComponent(container, csMaterialAnimation)
   assert(container)
-  local index = (self.WEComponentsEnum).MaterialAnimation
+  local index = self.WEComponentsEnum.MaterialAnimation
   local component = MaterialAnimationComponent:New(self)
   component:SetMaterialAnimationController(csMaterialAnimation)
   component:LoadContainer(container)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveMaterialAnimationComponent = function(self)
-  -- function num : 0_57
+function Entity:RemoveMaterialAnimationComponent()
   if self:HasMaterialAnimationComponent() then
-    self:RemoveComponent((self.WEComponentsEnum).MaterialAnimation)
+    self:RemoveComponent(self.WEComponentsEnum.MaterialAnimation)
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StopAnimTransparent = function(self)
-  -- function num : 0_58
+function Entity:StopAnimTransparent()
   if not self:MaterialAnimationComponent() then
-    return 
+    return
   end
-  ;
-  (self:MaterialAnimationComponent()):StopMaterialAnim("common_alpha_loop")
+  self:MaterialAnimationComponent():StopMaterialAnim("common_alpha_loop")
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.NewEnableTransparent = function(self)
-  -- function num : 0_59
+function Entity:NewEnableTransparent()
   if not self:MaterialAnimationComponent() then
-    return 
+    return
   end
-  ;
-  (self:MaterialAnimationComponent()):PlayAlphaLoop()
+  self:MaterialAnimationComponent():PlayAlphaLoop()
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StopAnimFlash = function(self)
-  -- function num : 0_60
+function Entity:StopAnimFlash()
   if not self:MaterialAnimationComponent() then
-    return 
+    return
   end
-  ;
-  (self:MaterialAnimationComponent()):StopMaterialAnim("common_select")
+  self:MaterialAnimationComponent():StopMaterialAnim("common_select")
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.NewEnableFlash = function(self)
-  -- function num : 0_61
+function Entity:NewEnableFlash()
   if not self:MaterialAnimationComponent() then
-    return 
+    return
   end
-  ;
-  (self:MaterialAnimationComponent()):PlaySelect()
+  self:MaterialAnimationComponent():PlaySelect()
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StopAnimFlashAlpha = function(self)
-  -- function num : 0_62
+function Entity:StopAnimFlashAlpha()
   if not self:MaterialAnimationComponent() then
-    return 
+    return
   end
-  ;
-  (self:MaterialAnimationComponent()):StopMaterialAnim("common_select_alpha")
+  self:MaterialAnimationComponent():StopMaterialAnim("common_select_alpha")
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.NewEnableFlashAlpha = function(self)
-  -- function num : 0_63 , upvalues : _ENV
+function Entity:NewEnableFlashAlpha()
   local matAnimCmpt = self:MaterialAnimationComponent()
   if matAnimCmpt then
     matAnimCmpt:PlaySelectAlpha()
   else
     local hasPstID = self:HasPetPstID()
     if hasPstID then
-      (Log.fatal)("can not select pet as flash target")
+      Log.fatal("can not select pet as flash target")
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StopGhostAnim = function(self)
-  -- function num : 0_64
+function Entity:StopGhostAnim()
   local ani = self:MaterialAnimationComponent()
   if ani then
     ani:StopMaterialAnim("common_alpha")
   end
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.NewEnableGhost = function(self)
-  -- function num : 0_65
+function Entity:NewEnableGhost()
   local ani = self:MaterialAnimationComponent()
   if ani and not ani:IsPlayingAlpha() then
     ani:PlayAlpha()
   end
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.NewPlayDeadDark = function(self)
-  -- function num : 0_66
+function Entity:NewPlayDeadDark()
   local ani = self:MaterialAnimationComponent()
   if ani then
     ani:Play("monster_death_dark")
   end
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.NewPlayDeadLight = function(self)
-  -- function num : 0_67
+function Entity:NewPlayDeadLight()
   local ani = self:MaterialAnimationComponent()
   if ani then
     ani:Play("monster_death_light")
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PlayMaterialAnim = function(self, anim)
-  -- function num : 0_68
+function Entity:PlayMaterialAnim(anim)
   local ani = self:MaterialAnimationComponent()
   if ani then
     ani:Play(anim)
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StopMaterialAnim = function(self, anim)
-  -- function num : 0_69
+function Entity:StopMaterialAnim(anim)
   local ani = self:MaterialAnimationComponent()
   if ani then
     ani:StopMaterialAnim(anim)
   end
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StopMaterialAnimLayer = function(self, layer)
-  -- function num : 0_70
+function Entity:StopMaterialAnimLayer(layer)
   local ani = self:MaterialAnimationComponent()
   if ani then
     ani:StopLayer(layer)
   end
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PlayCurePreMaterialAnim = function(self)
-  -- function num : 0_71
+function Entity:PlayCurePreMaterialAnim()
   if not self:MaterialAnimationComponent() then
-    return 
+    return
   end
-  ;
-  (self:MaterialAnimationComponent()):PlayCurePre()
+  self:MaterialAnimationComponent():PlayCurePre()
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StopCurePreAnim = function(self)
-  -- function num : 0_72
+function Entity:StopCurePreAnim()
   if not self:MaterialAnimationComponent() then
-    return 
+    return
   end
-  if (self:MaterialAnimationComponent()):IsPlayingCurePre() then
-    (self:MaterialAnimationComponent()):StopMaterialAnim("common_cure_pre")
+  if self:MaterialAnimationComponent():IsPlayingCurePre() then
+    self:MaterialAnimationComponent():StopMaterialAnim("common_cure_pre")
   end
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PlayN15CureMaterialAnim = function(self)
-  -- function num : 0_73
+function Entity:PlayN15CureMaterialAnim()
   if not self:MaterialAnimationComponent() then
-    return 
+    return
   end
-  ;
-  (self:MaterialAnimationComponent()):PlayN15Cure()
+  self:MaterialAnimationComponent():PlayN15Cure()
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StopN15CureAnim = function(self)
-  -- function num : 0_74
+function Entity:StopN15CureAnim()
   if not self:MaterialAnimationComponent() then
-    return 
+    return
   end
-  if (self:MaterialAnimationComponent()):IsPlayN15Cure() then
-    (self:MaterialAnimationComponent()):StopMaterialAnim("effanim_N15_cure")
+  if self:MaterialAnimationComponent():IsPlayN15Cure() then
+    self:MaterialAnimationComponent():StopMaterialAnim("effanim_N15_cure")
   end
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PlaySubMaterialAnim = function(self, nodeName, anim)
-  -- function num : 0_75
+function Entity:PlaySubMaterialAnim(nodeName, anim)
   local ani = self:MaterialAnimationComponent()
   if ani then
     ani:SubPlay(nodeName, anim)
   end
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.StopSubMaterialAnim = function(self, nodeName, anim)
-  -- function num : 0_76
+function Entity:StopSubMaterialAnim(nodeName, anim)
   local ani = self:MaterialAnimationComponent()
   if ani then
     ani:StopSubMaterialAnim(nodeName, anim)
   end
 end
 
-local MaterialAnimLayer = {Death = 2, irresistible = 3, SkillPreview = 4, Shield = 5, Hit = 6, Dot = 7}
+local MaterialAnimLayer = {
+  Death = 2,
+  irresistible = 3,
+  SkillPreview = 4,
+  Shield = 5,
+  Hit = 6,
+  Dot = 7
+}
 _enum("MaterialAnimLayer", MaterialAnimLayer)
-

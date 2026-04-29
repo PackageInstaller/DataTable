@@ -1,31 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_monster_dead_anim_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneMonsterDeadAnimationInstruction", CutsceneBaseInstruction)
 CutsceneMonsterDeadAnimationInstruction = CutsceneMonsterDeadAnimationInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneMonsterDeadAnimationInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneMonsterDeadAnimationInstruction:Constructor(paramList)
   self._name = paramList.name
   self._monsterDeadType = tonumber(paramList.monsterDeadType)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterDeadAnimationInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneMonsterDeadAnimationInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
   local cutsceneServiceRender = world:GetService("Cutscene")
-  for i,entity in ipairs(cutsceneServiceRender:GetCutsceneMonsterGroupEntity()) do
+  for i, entity in ipairs(cutsceneServiceRender:GetCutsceneMonsterGroupEntity()) do
     local cutsceneMonsterComponent = entity:CutsceneMonster()
     if cutsceneMonsterComponent:GetCutsceneMonsterName() == self._name then
       cutsceneServiceRender:PlayCutsceneMonsterDead(TT, entity, self._monsterDeadType)
     end
   end
 end
-
-

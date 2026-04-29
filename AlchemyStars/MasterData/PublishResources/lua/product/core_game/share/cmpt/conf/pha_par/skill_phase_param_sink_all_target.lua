@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_sink_all_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseParamSinkAllTarget", SkillPhaseParamBase)
 SkillPhaseParamSinkAllTarget = SkillPhaseParamSinkAllTarget
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParamSinkAllTarget.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseParamSinkAllTarget:Constructor(t)
   self._effectId = t.effectID
   self._intervalTime = t.intervalTime
   self._effectScale = t.effectScale
@@ -22,108 +15,63 @@ SkillPhaseParamSinkAllTarget.Constructor = function(self, t)
   self._hitEffectId = t.hitEffectID
   self._hitAnimName = t.hitAnimName
   self._doNotHideTarget = tonumber(t.doNotHideTarget) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseParamSinkAllTarget:GetCacheTable()
   local listID = {}
   self:AddEffectIDToListID(listID, self._effectId)
   self:AddEffectIDToListID(listID, self._hitEffectId)
   return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseParamSinkAllTarget:GetPhaseType()
   return SkillViewPhaseType.SinkAllTarget
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetEffectId = function(self)
-  -- function num : 0_3
+function SkillPhaseParamSinkAllTarget:GetEffectId()
   return self._effectId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetIntervalTime = function(self)
-  -- function num : 0_4
+function SkillPhaseParamSinkAllTarget:GetIntervalTime()
   return self._intervalTime
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetEffectScale = function(self)
-  -- function num : 0_5
+function SkillPhaseParamSinkAllTarget:GetEffectScale()
   return self._effectScale
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetWaitDownTime = function(self)
-  -- function num : 0_6
+function SkillPhaseParamSinkAllTarget:GetWaitDownTime()
   return self._waitDownTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetDownDistance = function(self)
-  -- function num : 0_7
+function SkillPhaseParamSinkAllTarget:GetDownDistance()
   return self._downDis
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetDownTime = function(self)
-  -- function num : 0_8
+function SkillPhaseParamSinkAllTarget:GetDownTime()
   return self._downTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetWaitTime = function(self)
-  -- function num : 0_9
+function SkillPhaseParamSinkAllTarget:GetWaitTime()
   return self._waitTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetUpTime = function(self)
-  -- function num : 0_10
+function SkillPhaseParamSinkAllTarget:GetUpTime()
   return self._upTime
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetWaitDamageTime = function(self)
-  -- function num : 0_11
+function SkillPhaseParamSinkAllTarget:GetWaitDamageTime()
   return self._waitDamageTime
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetHitEffectId = function(self)
-  -- function num : 0_12
+function SkillPhaseParamSinkAllTarget:GetHitEffectId()
   return self._hitEffectId
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.GetHitAnimName = function(self)
-  -- function num : 0_13
+function SkillPhaseParamSinkAllTarget:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamSinkAllTarget.DoNotHideTarget = function(self)
-  -- function num : 0_14
+function SkillPhaseParamSinkAllTarget:DoNotHideTarget()
   return self._doNotHideTarget
 end
-
-

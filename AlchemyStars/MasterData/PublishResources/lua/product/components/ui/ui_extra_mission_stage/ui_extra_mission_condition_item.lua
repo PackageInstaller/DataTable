@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission_stage/ui_extra_mission_condition_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtraMissionStageConditionItem", UICustomWidget)
 UIExtraMissionStageConditionItem = UIExtraMissionStageConditionItem
 local ATLAS_NAME = "UIExtraMissionStage.spriteatlas"
 local BG_NAME = "map_guanqia_tiao"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
 
-UIExtraMissionStageConditionItem.OnShow = function(self)
-  -- function num : 0_0
+function UIExtraMissionStageConditionItem:OnShow()
   self._imgStar = self:GetGameObject("imgStar")
   self._grayImgStar = self:GetGameObject("imgGrayStar")
   self._txt = self:GetUIComponent("UILocalizationText", "txt")
@@ -18,38 +11,21 @@ UIExtraMissionStageConditionItem.OnShow = function(self)
   self._bgImage = self:GetUIComponent("Image", "bg")
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-UIExtraMissionStageConditionItem.Init = function(self, index, id, desc, pass)
-  -- function num : 0_1 , upvalues : ATLAS_NAME, _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R5 in 'UnsetPending'
-
-  (self._title).text = index
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._txt).text = desc
-  ;
-  ((self._imgStar).gameObject):SetActive(pass)
-  ;
-  ((self._grayImgStar).gameObject):SetActive(not pass)
+function UIExtraMissionStageConditionItem:Init(index, id, desc, pass)
+  self._title.text = index
+  self._txt.text = desc
+  self._imgStar.gameObject:SetActive(pass)
+  self._grayImgStar.gameObject:SetActive(not pass)
   local atlas = self:GetAsset(ATLAS_NAME, LoadType.SpriteAtlas)
   if atlas then
     self:RefreshBg(atlas, index)
   end
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-UIExtraMissionStageConditionItem.RefreshBg = function(self, atlas, index)
-  -- function num : 0_2 , upvalues : BG_NAME
+function UIExtraMissionStageConditionItem:RefreshBg(atlas, index)
   local spriteName = BG_NAME .. index
   local sprite = atlas:GetSprite(spriteName)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
   if sprite then
-    (self._bgImage).sprite = sprite
+    self._bgImage.sprite = sprite
   end
 end
-
-

@@ -1,37 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/new_year_luck_bag/ui_activity_new_year_luck_bag_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNewYearLuckBagAwardItem", UICustomWidget)
 UIActivityNewYearLuckBagAwardItem = UIActivityNewYearLuckBagAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNewYearLuckBagAwardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityNewYearLuckBagAwardItem:OnShow()
   self._assetParent = self:GetUIComponent("UISelectObjectPath", "Asset")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagAwardItem.SetData = function(self, tb, clickCallback)
-  -- function num : 0_1
+function UIActivityNewYearLuckBagAwardItem:SetData(tb, clickCallback)
   self._tb = tb
   self._clickCallback = clickCallback
-  self._asset = (self._assetParent):SpawnObject("UIAsset")
-  ;
-  (self._asset):SetData(tb.assetid)
-  ;
-  (self._asset):SetItemData({showBG = true, icon = tb.icon, text = tb.count, quality = tb.quality})
+  self._asset = self._assetParent:SpawnObject("UIAsset")
+  self._asset:SetData(tb.assetid)
+  self._asset:SetItemData({
+    showBG = true,
+    icon = tb.icon,
+    text = tb.count,
+    quality = tb.quality
+  })
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNewYearLuckBagAwardItem.EmptyBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIActivityNewYearLuckBagAwardItem:EmptyBtnOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)((self._tb).assetid, (go.transform).position)
+    self._clickCallback(self._tb.assetid, go.transform.position)
   end
 end
-
-

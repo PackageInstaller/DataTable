@@ -1,78 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/treasure/home_treasure_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandTreasureBoard", Object)
 HomelandTreasureBoard = HomelandTreasureBoard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandTreasureBoard.Constructor = function(self, interactPointManager)
-  -- function num : 0_0
+function HomelandTreasureBoard:Constructor(interactPointManager)
   self._interactPointManager = interactPointManager
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureBoard.Show = function(self, parent, assPos, parentPos, tipsid)
-  -- function num : 0_1 , upvalues : _ENV
-  local prefab = ((Cfg.cfg_homeland_global).TreasureBoardPrefab).StrValue
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset(prefab, LoadType.GameObject)
+function HomelandTreasureBoard:Show(parent, assPos, parentPos, tipsid)
+  local prefab = Cfg.cfg_homeland_global.TreasureBoardPrefab.StrValue
+  self._req = ResourceManager:GetInstance():SyncLoadAsset(prefab, LoadType.GameObject)
   if not self._req then
-    (Log.error)("找不到木牌模型:", prefab)
+    Log.error("找不到木牌模型:", prefab)
   end
-  self._go = (self._req).Obj
-  self._transform = (self._go).transform
-  ;
-  (self._transform):SetParent(parent)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._transform).position = assPos
-  ;
-  (self._go):SetActive(true)
+  self._go = self._req.Obj
+  self._transform = self._go.transform
+  self._transform:SetParent(parent)
+  self._transform.position = assPos
+  self._go:SetActive(true)
   self._tipsid = tipsid
   local vvv = parentPos - assPos
   vvv.y = 0
-  local rota = (Quaternion.FromToRotation)((self._transform).forward, vvv)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._transform).rotation = rota
-  self._interactPoint = (self._interactPointManager):AddBuildInteractPoint(self, tipsid, InteractPointType.TreasureBoard)
+  local rota = Quaternion.FromToRotation(self._transform.forward, vvv)
+  self._transform.rotation = rota
+  self._interactPoint = self._interactPointManager:AddBuildInteractPoint(self, tipsid, InteractPointType.TreasureBoard)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureBoard.Dispose = function(self)
-  -- function num : 0_2
+function HomelandTreasureBoard:Dispose()
   if self._interactPoint then
-    (self._interactPointManager):RemoveBuildInteractPoint(self._interactPoint)
+    self._interactPointManager:RemoveBuildInteractPoint(self._interactPoint)
   end
-  ;
-  (self._req):Dispose()
+  self._req:Dispose()
   self._req = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureBoard.GetInteractPosition = function(self, index)
-  -- function num : 0_3
-  return (self._transform).position
+function HomelandTreasureBoard:GetInteractPosition(index)
+  return self._transform.position
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureBoard.GetInteractRedStatus = function(self)
-  -- function num : 0_4
+function HomelandTreasureBoard:GetInteractRedStatus()
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTreasureBoard.Interact = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal:GetInstance()):EventDispatcher()):Dispatch(GameEventType.ShowTreasureBoardUI, self._tipsid)
+function HomelandTreasureBoard:Interact()
+  GameGlobal:GetInstance():EventDispatcher():Dispatch(GameEventType.ShowTreasureBoardUI, self._tipsid)
 end
-
-

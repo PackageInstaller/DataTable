@@ -1,267 +1,192 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/main/ui_activity_n34_task_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34DelegateTaskData", Object)
 UIActivityN34DelegateTaskData = UIActivityN34DelegateTaskData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34DelegateTaskData.Constructor = function(self, personData, quest)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN34DelegateTaskData:Constructor(personData, quest)
   self._personData = personData
   self._quest = quest
-  local questInfo = (self._quest):QuestInfo()
-  self._name = (StringTable.Get)(questInfo.QuestName) or ""
-  self._des = (StringTable.Get)(questInfo.QuestDesc) or ""
+  local questInfo = self._quest:QuestInfo()
+  self._name = StringTable.Get(questInfo.QuestName) or ""
+  self._des = StringTable.Get(questInfo.QuestDesc) or ""
   self._rewards = questInfo.rewards
   self._icon = questInfo.Icon
-  local trustItemId = (self._personData):GetTrustItemId()
+  local trustItemId = self._personData:GetTrustItemId()
   for i = 1, #self._rewards do
-    if ((self._rewards)[i]).assetid == trustItemId then
-      self._trustValue = ((self._rewards)[i]).count
+    if self._rewards[i].assetid == trustItemId then
+      self._trustValue = self._rewards[i].count
       break
     end
   end
-  do
-    self._questId = questInfo.quest_id
-    local cfgs = (Cfg.cfg_component_quest)({QuestID = self._questId})
-    self._cost = (((cfgs[1]).CostItems)[1])[2]
-    self._complete = false
-  end
+  self._questId = questInfo.quest_id
+  local cfgs = Cfg.cfg_component_quest({
+    QuestID = self._questId
+  })
+  self._cost = cfgs[1].CostItems[1][2]
+  self._complete = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateTaskData.Refresh = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN34DelegateTaskData:Refresh()
   self._complete = false
-  local state = (self._quest):Status()
+  local state = self._quest:Status()
   if state == QuestStatus.QUEST_Taken then
     self._complete = true
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateTaskData.GetQuestId = function(self)
-  -- function num : 0_2
+function UIActivityN34DelegateTaskData:GetQuestId()
   return self._questId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateTaskData.GetName = function(self)
-  -- function num : 0_3
+function UIActivityN34DelegateTaskData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateTaskData.GetIcon = function(self)
-  -- function num : 0_4
+function UIActivityN34DelegateTaskData:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateTaskData.GetCost = function(self)
-  -- function num : 0_5
+function UIActivityN34DelegateTaskData:GetCost()
   return self._cost
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateTaskData.GetTrustValue = function(self)
-  -- function num : 0_6
+function UIActivityN34DelegateTaskData:GetTrustValue()
   return self._trustValue
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateTaskData.GetRewards = function(self)
-  -- function num : 0_7
+function UIActivityN34DelegateTaskData:GetRewards()
   return self._rewards
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateTaskData.IsComplete = function(self)
-  -- function num : 0_8
+function UIActivityN34DelegateTaskData:IsComplete()
   return self._complete
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateTaskData.GetDes = function(self)
-  -- function num : 0_9
+function UIActivityN34DelegateTaskData:GetDes()
   return self._des
 end
 
 _class("UIActivityN34DelegateProgressData", Object)
 UIActivityN34DelegateProgressData = UIActivityN34DelegateProgressData
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34DelegateProgressData.Constructor = function(self, personData, quest)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityN34DelegateProgressData:Constructor(personData, quest)
   self._personData = personData
   self._quest = quest
-  local questInfo = (self._quest):QuestInfo()
-  self._des = (StringTable.Get)(questInfo.QuestDesc) or ""
+  local questInfo = self._quest:QuestInfo()
+  self._des = StringTable.Get(questInfo.QuestDesc) or ""
   self._rewards = questInfo.rewards
   self._questId = questInfo.quest_id
   self._status = 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateProgressData.Refresh = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local state = (self._quest):Status()
+function UIActivityN34DelegateProgressData:Refresh()
+  local state = self._quest:Status()
   if state == QuestStatus.QUEST_Completed then
     self._status = 1
+  elseif state == QuestStatus.QUEST_Taken then
+    self._status = 2
   else
-    if state == QuestStatus.QUEST_Taken then
-      self._status = 2
-    else
-      self._status = 0
-    end
+    self._status = 0
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateProgressData.GetQuestId = function(self)
-  -- function num : 0_12
+function UIActivityN34DelegateProgressData:GetQuestId()
   return self._questId
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateProgressData.GetDes = function(self)
-  -- function num : 0_13
+function UIActivityN34DelegateProgressData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateProgressData.GetRewards = function(self)
-  -- function num : 0_14
+function UIActivityN34DelegateProgressData:GetRewards()
   return self._rewards
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegateProgressData.GetStatus = function(self)
-  -- function num : 0_15
+function UIActivityN34DelegateProgressData:GetStatus()
   return self._status
 end
 
 _class("UIActivityN34DelegatePersonTips", Object)
 UIActivityN34DelegatePersonTips = UIActivityN34DelegatePersonTips
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34DelegatePersonTips.Constructor = function(self, id, content, length, interval)
-  -- function num : 0_16
+function UIActivityN34DelegatePersonTips:Constructor(id, content, length, interval)
   self._tips = content
   self._length = length
   self._interval = interval
   self._id = id
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonTips.GetId = function(self)
-  -- function num : 0_17
+function UIActivityN34DelegatePersonTips:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonTips.GetTips = function(self)
-  -- function num : 0_18
+function UIActivityN34DelegatePersonTips:GetTips()
   return self._tips
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonTips.GetLength = function(self)
-  -- function num : 0_19
+function UIActivityN34DelegatePersonTips:GetLength()
   return self._length
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonTips.GetInterval = function(self)
-  -- function num : 0_20
+function UIActivityN34DelegatePersonTips:GetInterval()
   return self._interval
 end
 
 _class("UIActivityN34DelegatePersonData", Object)
 UIActivityN34DelegatePersonData = UIActivityN34DelegatePersonData
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34DelegatePersonData.Constructor = function(self, taskData, cfg)
-  -- function num : 0_21 , upvalues : _ENV
+function UIActivityN34DelegatePersonData:Constructor(taskData, cfg)
   self._taskData = taskData
-  self._campaign = (self._taskData):GetCampaign()
-  self._surveyComponent = (self._taskData):GetSurveyComponent()
-  self._surveyComponentInfo = (self._taskData):GetSurveyComponentInfo()
-  self._questComponent = (self._taskData):GetQuestComponent()
-  self._questComponentInfo = (self._taskData):GetQuestComponentInfo()
+  self._campaign = self._taskData:GetCampaign()
+  self._surveyComponent = self._taskData:GetSurveyComponent()
+  self._surveyComponentInfo = self._taskData:GetSurveyComponentInfo()
+  self._questComponent = self._taskData:GetQuestComponent()
+  self._questComponentInfo = self._taskData:GetQuestComponentInfo()
   self._personId = cfg.PetID
-  self._name = (StringTable.Get)(cfg.Name)
-  self._des = (StringTable.Get)(cfg.Des)
+  self._name = StringTable.Get(cfg.Name)
+  self._des = StringTable.Get(cfg.Des)
   self._spine = cfg.Spine
   self._trustItemId = cfg.TrustItem
   self._nextPetId = cfg.NextPetID
   self._tips = {}
-  local tipsCfgs = (Cfg.cfg_n34_delegate_person_tips)({PersonId = self._personId})
-  for k,v in pairs(tipsCfgs) do
+  local tipsCfgs = Cfg.cfg_n34_delegate_person_tips({
+    PersonId = self._personId
+  })
+  for k, v in pairs(tipsCfgs) do
     local tips = {}
     for i = 1, #v.Tips do
-      local content = (StringTable.Get)((v.Tips)[i])
-      local length = (v.Length)[i]
-      local interval = (v.Interval)[i]
+      local content = StringTable.Get(v.Tips[i])
+      local length = v.Length[i]
+      local interval = v.Interval[i]
       tips[#tips + 1] = UIActivityN34DelegatePersonTips:New(v.ID * 100 + i, content, length, interval)
     end
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._tips)[#self._tips + 1] = {min = v.Min / 1000, max = v.Max / 1000, tips = tips}
+    self._tips[#self._tips + 1] = {
+      min = v.Min / 1000,
+      max = v.Max / 1000,
+      tips = tips
+    }
   end
   self._totalTrust = cfg.TrustTotal
   self._finalRewardIcon = cfg.FinalRewardIcon
   self._finalRewardDes = cfg.FinalRewardDes
   self._progress = {}
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+  local questModule = GameGlobal.GetModule(QuestModule)
   local progressTasks = cfg.RewardTaskList
   for i = 1, #progressTasks do
     local quest = questModule:GetQuest(progressTasks[i])
-    -- DECOMPILER ERROR at PC123: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._progress)[#self._progress + 1] = UIActivityN34DelegateProgressData:New(self, quest)
+    self._progress[#self._progress + 1] = UIActivityN34DelegateProgressData:New(self, quest)
   end
   self._tasks = {}
   local tasks = cfg.TaskList
   for i = 1, #tasks do
     local quest = questModule:GetQuest(tasks[i])
-    -- DECOMPILER ERROR at PC144: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._tasks)[#self._tasks + 1] = UIActivityN34DelegateTaskData:New(self, quest)
+    self._tasks[#self._tasks + 1] = UIActivityN34DelegateTaskData:New(self, quest)
   end
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.Refresh = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIActivityN34DelegatePersonData:Refresh()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   self._trustValue = itemModule:GetItemCount(self._trustItemId)
-  local unlockPets = ((self._surveyComponentInfo).info).pet_unlock
+  local unlockPets = self._surveyComponentInfo.info.pet_unlock
   self._paste = false
   for i = 1, #unlockPets do
     if self._personId == unlockPets[i] then
@@ -269,279 +194,188 @@ UIActivityN34DelegatePersonData.Refresh = function(self)
       break
     end
   end
-  do
-    for i = 1, #self._progress do
-      ((self._progress)[i]):Refresh()
+  for i = 1, #self._progress do
+    self._progress[i]:Refresh()
+  end
+  for i = 1, #self._tasks do
+    self._tasks[i]:Refresh()
+  end
+  self._complete = true
+  for i = 1, #self._tasks do
+    if self._tasks[i]:IsComplete() == false then
+      self._complete = false
+      break
     end
-    for i = 1, #self._tasks do
-      ((self._tasks)[i]):Refresh()
+  end
+  self._finalRewardStatus = 0
+  if self._paste then
+    self._finalRewardStatus = 2
+  elseif self._complete then
+    if self:CanGetFinalReward() then
+      self._finalRewardStatus = 1
+    else
+      self._finalRewardStatus = 2
     end
-    self._complete = true
-    for i = 1, #self._tasks do
-      if ((self._tasks)[i]):IsComplete() == false then
-        self._complete = false
-        break
-      end
-    end
-    do
-      self._finalRewardStatus = 0
-      if self._paste then
-        self._finalRewardStatus = 2
-      else
-        if self._complete then
-          if self:CanGetFinalReward() then
-            self._finalRewardStatus = 1
-          else
-            self._finalRewardStatus = 2
-          end
-        else
-          self._finalRewardStatus = 0
-        end
-      end
-    end
+  else
+    self._finalRewardStatus = 0
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetNextPetId = function(self)
-  -- function num : 0_23
+function UIActivityN34DelegatePersonData:GetNextPetId()
   return self._nextPetId
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.HasCanGetProgressReward = function(self)
-  -- function num : 0_24
+function UIActivityN34DelegatePersonData:HasCanGetProgressReward()
   for i = 1, #self._progress do
-    if ((self._progress)[i]):GetStatus() == 1 then
+    if self._progress[i]:GetStatus() == 1 then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.ShowAcceptAllRed = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIActivityN34DelegatePersonData:ShowAcceptAllRed()
   local tasks = self:GetShowTask(3)
   if #tasks <= 0 then
     return false
   end
   local totalCost = 0
   for i = 1, #tasks do
-    local cost = (tasks[i]):GetCost()
+    local cost = tasks[i]:GetCost()
     totalCost = totalCost + cost
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local num = itemModule:GetItemCount((self._taskData):GetItemId())
-  if num < totalCost then
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local num = itemModule:GetItemCount(self._taskData:GetItemId())
+  if totalCost > num then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.ShowAcceptOneRed = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityN34DelegatePersonData:ShowAcceptOneRed()
   local tasks = self:GetShowTask(3)
   if #tasks <= 0 then
     return false
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local num = itemModule:GetItemCount((self._taskData):GetItemId())
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local num = itemModule:GetItemCount(self._taskData:GetItemId())
   for i = 1, #tasks do
-    local cost = (tasks[i]):GetCost()
-    if cost <= num then
+    local cost = tasks[i]:GetCost()
+    if num >= cost then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetPersonId = function(self)
-  -- function num : 0_27
+function UIActivityN34DelegatePersonData:GetPersonId()
   return self._personId
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetTrustItemId = function(self)
-  -- function num : 0_28
+function UIActivityN34DelegatePersonData:GetTrustItemId()
   return self._trustItemId
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetTaskData = function(self)
-  -- function num : 0_29
+function UIActivityN34DelegatePersonData:GetTaskData()
   return self._taskData
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetDes = function(self)
-  -- function num : 0_30
+function UIActivityN34DelegatePersonData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetProgress = function(self)
-  -- function num : 0_31
+function UIActivityN34DelegatePersonData:GetProgress()
   return self._progress
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetFinaleRewardIcon = function(self)
-  -- function num : 0_32
+function UIActivityN34DelegatePersonData:GetFinaleRewardIcon()
   return self._finalRewardIcon
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetFinaleRewardDes = function(self)
-  -- function num : 0_33
+function UIActivityN34DelegatePersonData:GetFinaleRewardDes()
   return self._finalRewardDes
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetFinaleRewardStatus = function(self)
-  -- function num : 0_34
+function UIActivityN34DelegatePersonData:GetFinaleRewardStatus()
   return self._finalRewardStatus
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetAllTask = function(self)
-  -- function num : 0_35
+function UIActivityN34DelegatePersonData:GetAllTask()
   return self._tasks
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetAllTaskCount = function(self)
-  -- function num : 0_36
+function UIActivityN34DelegatePersonData:GetAllTaskCount()
   return #self._tasks
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetCompleteTaskCount = function(self)
-  -- function num : 0_37
+function UIActivityN34DelegatePersonData:GetCompleteTaskCount()
   local count = 0
   for i = 1, #self._tasks do
-    if ((self._tasks)[i]):IsComplete() then
+    if self._tasks[i]:IsComplete() then
       count = count + 1
     end
   end
   return count
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetShowTask = function(self, count)
-  -- function num : 0_38
+function UIActivityN34DelegatePersonData:GetShowTask(count)
   local result = {}
   for i = 1, #self._tasks do
-    if count > 0 then
-      do
-        if ((self._tasks)[i]):IsComplete() == false then
-          count = count - 1
-          result[#result + 1] = (self._tasks)[i]
-        end
-        -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if count <= 0 then
+      break
+    end
+    if self._tasks[i]:IsComplete() == false then
+      count = count - 1
+      result[#result + 1] = self._tasks[i]
     end
   end
   return result
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.IsPaste = function(self)
-  -- function num : 0_39
+function UIActivityN34DelegatePersonData:IsPaste()
   return self._paste
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.IsComplete = function(self)
-  -- function num : 0_40
+function UIActivityN34DelegatePersonData:IsComplete()
   return self._complete
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetTips = function(self)
-  -- function num : 0_41
+function UIActivityN34DelegatePersonData:GetTips()
   return self._tips
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetTrustValue = function(self)
-  -- function num : 0_42
+function UIActivityN34DelegatePersonData:GetTrustValue()
   return self._trustValue
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetTotalTrust = function(self)
-  -- function num : 0_43
+function UIActivityN34DelegatePersonData:GetTotalTrust()
   return self._totalTrust
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetName = function(self)
-  -- function num : 0_44
+function UIActivityN34DelegatePersonData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetSpine = function(self)
-  -- function num : 0_45
+function UIActivityN34DelegatePersonData:GetSpine()
   return self._spine
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.CanGetFinalReward = function(self)
-  -- function num : 0_46 , upvalues : _ENV
+function UIActivityN34DelegatePersonData:CanGetFinalReward()
   local key = self:GetCustomFlagKey("N34_TASK_FINAL_REWARD" .. self._personId)
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetFinalReward = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UIActivityN34DelegatePersonData:GetFinalReward()
   local key = self:GetCustomFlagKey("N34_TASK_FINAL_REWARD" .. self._personId)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34DelegatePersonData.GetCustomFlagKey = function(self, id)
-  -- function num : 0_48 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN34DelegatePersonData:GetCustomFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. id
   return key
@@ -549,32 +383,30 @@ end
 
 _class("UIActivityN34TaskData", Object)
 UIActivityN34TaskData = UIActivityN34TaskData
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34TaskData.Constructor = function(self, campaign, surveyComponent, surveyComponentInfo, questComponent, camQuestComponentInfo)
-  -- function num : 0_49 , upvalues : _ENV
+function UIActivityN34TaskData:Constructor(campaign, surveyComponent, surveyComponentInfo, questComponent, camQuestComponentInfo)
   self._campaign = campaign
   self._surveyComponent = surveyComponent
   self._surveyComponentInfo = surveyComponentInfo
   self._questComponent = questComponent
   self._questComponentInfo = camQuestComponentInfo
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._plotId = (self._surveyComponentInfo).m_first_story_id
-  local str = ((Cfg.cfg_global).survey_tokens_item).StrValue
-  local a, b = (string.match)(str, "(.*)%|(.*)")
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._plotId = self._surveyComponentInfo.m_first_story_id
+  local str = Cfg.cfg_global.survey_tokens_item.StrValue
+  local a, b = string.match(str, "(.*)%|(.*)")
   self._itemId = tonumber(a)
   self._rewardCount = tonumber(b)
-  self._spineName = ((Cfg.cfg_global).survey_boss_spine_name).StrValue
-  self._idleAnim = ((Cfg.cfg_global).survey_boss_idle_animation).StrValue
-  self._randomAnim = ((Cfg.cfg_global).survey_boss_random_animation).StrValue
-  self._idleAnimLength = ((Cfg.cfg_global).survey_boss_idle_length).IntValue
-  self._randomAnimLength = ((Cfg.cfg_global).survey_boss_random_length).IntValue
+  self._spineName = Cfg.cfg_global.survey_boss_spine_name.StrValue
+  self._idleAnim = Cfg.cfg_global.survey_boss_idle_animation.StrValue
+  self._randomAnim = Cfg.cfg_global.survey_boss_random_animation.StrValue
+  self._idleAnimLength = Cfg.cfg_global.survey_boss_idle_length.IntValue
+  self._randomAnimLength = Cfg.cfg_global.survey_boss_random_length.IntValue
   self._delegatePersons = {}
-  local cfgs = (Cfg.cfg_component_survey)({ComponentID = (self._surveyComponent):GetComponentCfgId()})
-  for k,cfg in pairs(cfgs) do
-    -- DECOMPILER ERROR at PC78: Confused about usage of register: R15 in 'UnsetPending'
-
-    (self._delegatePersons)[#self._delegatePersons + 1] = UIActivityN34DelegatePersonData:New(self, cfg)
+  local cfgs = Cfg.cfg_component_survey({
+    ComponentID = self._surveyComponent:GetComponentCfgId()
+  })
+  for k, cfg in pairs(cfgs) do
+    self._delegatePersons[#self._delegatePersons + 1] = UIActivityN34DelegatePersonData:New(self, cfg)
   end
   self._currentDelegatePerson = nil
   self:RefreshRewardInfo()
@@ -582,172 +414,110 @@ UIActivityN34TaskData.Constructor = function(self, campaign, surveyComponent, su
   self:RefreshCurrentPerson()
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.Refresh = function(self)
-  -- function num : 0_50
+function UIActivityN34TaskData:Refresh()
   self:RefreshRewardInfo()
   self:RefreshPersonInfo()
   self:RefreshCurrentPerson()
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.RefreshPersonInfo = function(self)
-  -- function num : 0_51
+function UIActivityN34TaskData:RefreshPersonInfo()
   for i = 1, #self._delegatePersons do
-    ((self._delegatePersons)[i]):Refresh()
+    self._delegatePersons[i]:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.RefreshCurrentPerson = function(self)
-  -- function num : 0_52
-  local curId = ((self._surveyComponentInfo).info).cur_pet_id
+function UIActivityN34TaskData:RefreshCurrentPerson()
+  local curId = self._surveyComponentInfo.info.cur_pet_id
   if curId == nil or curId <= 0 then
     self._currentDelegatePerson = nil
   else
     for i = 1, #self._delegatePersons do
-      if ((self._delegatePersons)[i]):GetPersonId() == curId then
-        self._currentDelegatePerson = (self._delegatePersons)[i]
+      if self._delegatePersons[i]:GetPersonId() == curId then
+        self._currentDelegatePerson = self._delegatePersons[i]
         break
       end
     end
   end
-  do
-    if self._currentDelegatePerson then
-      (self._currentDelegatePerson):Refresh()
-      if (self._currentDelegatePerson):IsPaste() and (self._currentDelegatePerson):HasCanGetProgressReward() == false then
-        local nextPetId = (self._currentDelegatePerson):GetNextPetId()
-        if nextPetId == nil or nextPetId <= 0 then
-          self._currentDelegatePerson = nil
-        end
+  if self._currentDelegatePerson then
+    self._currentDelegatePerson:Refresh()
+    if self._currentDelegatePerson:IsPaste() and self._currentDelegatePerson:HasCanGetProgressReward() == false then
+      local nextPetId = self._currentDelegatePerson:GetNextPetId()
+      if nextPetId == nil or nextPetId <= 0 then
+        self._currentDelegatePerson = nil
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.RefreshRewardInfo = function(self)
-  -- function num : 0_53 , upvalues : _ENV
-  local maxCount = ((Cfg.cfg_global).survey_tokens_MaxNum).IntValue
-  self._remainRewardCount = maxCount - ((self._surveyComponentInfo).info).tokens_get_num
-  local timeLength = ((Cfg.cfg_global).survey_tokens_time).IntValue
-  self._rewardRemainTime = ((self._surveyComponentInfo).info).tokens_get_time + timeLength
+function UIActivityN34TaskData:RefreshRewardInfo()
+  local maxCount = Cfg.cfg_global.survey_tokens_MaxNum.IntValue
+  self._remainRewardCount = maxCount - self._surveyComponentInfo.info.tokens_get_num
+  local timeLength = Cfg.cfg_global.survey_tokens_time.IntValue
+  self._rewardRemainTime = self._surveyComponentInfo.info.tokens_get_time + timeLength
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetCampaign = function(self)
-  -- function num : 0_54
+function UIActivityN34TaskData:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetSurveyComponent = function(self)
-  -- function num : 0_55
+function UIActivityN34TaskData:GetSurveyComponent()
   return self._surveyComponent
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetSurveyComponentInfo = function(self)
-  -- function num : 0_56
+function UIActivityN34TaskData:GetSurveyComponentInfo()
   return self._surveyComponentInfo
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetQuestComponent = function(self)
-  -- function num : 0_57
+function UIActivityN34TaskData:GetQuestComponent()
   return self._questComponent
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetQuestComponentInfo = function(self)
-  -- function num : 0_58
+function UIActivityN34TaskData:GetQuestComponentInfo()
   return self._questComponentInfo
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetDelegatePersons = function(self)
-  -- function num : 0_59
+function UIActivityN34TaskData:GetDelegatePersons()
   return self._delegatePersons
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetCurrentDelegatePerson = function(self)
-  -- function num : 0_60
+function UIActivityN34TaskData:GetCurrentDelegatePerson()
   return self._currentDelegatePerson
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetSpineName = function(self)
-  -- function num : 0_61
+function UIActivityN34TaskData:GetSpineName()
   return self._spineName
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetIdleAnim = function(self)
-  -- function num : 0_62
+function UIActivityN34TaskData:GetIdleAnim()
   return self._idleAnim
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetRandomAnim = function(self)
-  -- function num : 0_63
+function UIActivityN34TaskData:GetRandomAnim()
   return self._randomAnim
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetIdleAnimLength = function(self)
-  -- function num : 0_64
+function UIActivityN34TaskData:GetIdleAnimLength()
   return self._idleAnimLength
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetRandomAnimLenth = function(self)
-  -- function num : 0_65
+function UIActivityN34TaskData:GetRandomAnimLenth()
   return self._randomAnimLength
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetItemId = function(self)
-  -- function num : 0_66
+function UIActivityN34TaskData:GetItemId()
   return self._itemId
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetRemainRewardCount = function(self)
-  -- function num : 0_67
+function UIActivityN34TaskData:GetRemainRewardCount()
   return self._remainRewardCount
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetRewardCount = function(self)
-  -- function num : 0_68
+function UIActivityN34TaskData:GetRewardCount()
   return self._rewardCount
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetRewardRemainTime = function(self)
-  -- function num : 0_69
-  local nowTime = (self._timeModule):GetServerTime() / 1000
+function UIActivityN34TaskData:GetRewardRemainTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
   local time = self._rewardRemainTime - nowTime
   if time < 0 then
     time = 0
@@ -755,65 +525,41 @@ UIActivityN34TaskData.GetRewardRemainTime = function(self)
   return time
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.CanPlayPlot = function(self)
-  -- function num : 0_70 , upvalues : _ENV
+function UIActivityN34TaskData:CanPlayPlot()
   local key = self:GetCustomFlagKey("N34_TASK_PLOT_PLAY")
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.PlayPlot = function(self)
-  -- function num : 0_71 , upvalues : _ENV
+function UIActivityN34TaskData:PlayPlot()
   local key = self:GetCustomFlagKey("N34_TASK_PLOT_PLAY")
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetPlotId = function(self)
-  -- function num : 0_72
+function UIActivityN34TaskData:GetPlotId()
   return self._plotId
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.GetCustomFlagKey = function(self, id)
-  -- function num : 0_73 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityN34TaskData:GetCustomFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. id
   return key
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.CanPlayCompleteAnimation = function(self, index)
-  -- function num : 0_74 , upvalues : _ENV
+function UIActivityN34TaskData:CanPlayCompleteAnimation(index)
   local key = self:GetCustomFlagKey("N34_COMPLETE_ANIMATION" .. index)
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskData.PlayCompleteAnimation = function(self, index)
-  -- function num : 0_75 , upvalues : _ENV
+function UIActivityN34TaskData:PlayCompleteAnimation(index)
   local key = self:GetCustomFlagKey("N34_COMPLETE_ANIMATION" .. index)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
-
-

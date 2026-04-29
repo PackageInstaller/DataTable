@@ -1,14 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_component/ui_switch_bgm_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISwitchBGMComponent", UIComponent)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UISwitchBGMComponent.AfterShow = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  (AudioHelperController.PlayBGMById)(self.registerInfo, AudioConstValue.BGMCrossFadeTime)
+function UISwitchBGMComponent:AfterShow(TT)
+  AudioHelperController.PlayBGMById(self.registerInfo, AudioConstValue.BGMCrossFadeTime)
 end
-
-

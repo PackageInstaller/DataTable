@@ -1,9 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/components_lookup_test.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-_autoEnum("WEComponents_Test", {"CommandReceiver", "CommandSender", "Attributes", "Location", "Movement", "Spawn", "MainFSM", "Abilities", "Asset", "View", "TotalComponents"})
-_autoEnum("WUniqueComponentsEnum_Test", {"SpawnMng", "TotalComponents"})
-_enum("BW_WEMatchers_Test", {Asset = Matcher:New({WEComponents_Test.Asset}, {}, {}), Location = Matcher:New({WEComponents_Test.Location}, {}, {}), Spawn = Matcher:New({WEComponents_Test.Spawn}, {}, {}), View = Matcher:New({WEComponents_Test.View}, {}, {}), CanMove = Matcher:New({WEComponents_Test.Movement, WEComponents_Test.Location}, {}, {}), CommandReceiver = Matcher:New({WEComponents_Test.CommandReceiver}, {}, {}), CommandSender = Matcher:New({WEComponents_Test.CommandSender}, {}, {}), MainFSM = Matcher:New({WEComponents_Test.MainFSM}, {}, {})})
-
+_autoEnum("WEComponents_Test", {
+  "CommandReceiver",
+  "CommandSender",
+  "Attributes",
+  "Location",
+  "Movement",
+  "Spawn",
+  "MainFSM",
+  "Abilities",
+  "Asset",
+  "View",
+  "TotalComponents"
+})
+_autoEnum("WUniqueComponentsEnum_Test", {
+  "SpawnMng",
+  "TotalComponents"
+})
+_enum("BW_WEMatchers_Test", {
+  Asset = Matcher:New({
+    WEComponents_Test.Asset
+  }, {}, {}),
+  Location = Matcher:New({
+    WEComponents_Test.Location
+  }, {}, {}),
+  Spawn = Matcher:New({
+    WEComponents_Test.Spawn
+  }, {}, {}),
+  View = Matcher:New({
+    WEComponents_Test.View
+  }, {}, {}),
+  CanMove = Matcher:New({
+    WEComponents_Test.Movement,
+    WEComponents_Test.Location
+  }, {}, {}),
+  CommandReceiver = Matcher:New({
+    WEComponents_Test.CommandReceiver
+  }, {}, {}),
+  CommandSender = Matcher:New({
+    WEComponents_Test.CommandSender
+  }, {}, {}),
+  MainFSM = Matcher:New({
+    WEComponents_Test.MainFSM
+  }, {}, {})
+})

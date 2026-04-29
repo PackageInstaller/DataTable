@@ -1,109 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_destroy_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectDestroyTrapParam", SkillEffectParamBase)
 SkillEffectDestroyTrapParam = SkillEffectDestroyTrapParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDestroyTrapParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectDestroyTrapParam:Constructor(t)
   self._trapID = {}
   if t.trapID then
-    for _,id in ipairs(t.trapID) do
-      -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-      (self._trapID)[id] = true
+    for _, id in ipairs(t.trapID) do
+      self._trapID[id] = true
     end
   end
-  do
-    self._protectTrapID = {}
-    if t.protectTrapID then
-      for _,id in ipairs(t.protectTrapID) do
-        -- DECOMPILER ERROR at PC23: Confused about usage of register: R7 in 'UnsetPending'
-
-        (self._protectTrapID)[id] = true
-      end
-    end
-    do
-      self._trapType = {}
-      if t.trapType then
-        for _,id in ipairs(t.trapType) do
-          -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-          (self._trapType)[id] = true
-        end
-      end
-      do
-        if not t.destroyType then
-          self._destroyType = SkillEffectDestroyTrapType.Range
-          self._disableDieSkill = t.disableDieSkill
-          self._special = t.special or 0
-          self._stageIndex = t.stageIndex or 1
-        end
-      end
+  self._protectTrapID = {}
+  if t.protectTrapID then
+    for _, id in ipairs(t.protectTrapID) do
+      self._protectTrapID[id] = true
     end
   end
+  self._trapType = {}
+  if t.trapType then
+    for _, id in ipairs(t.trapType) do
+      self._trapType[id] = true
+    end
+  end
+  self._destroyType = t.destroyType or SkillEffectDestroyTrapType.Range
+  self._disableDieSkill = t.disableDieSkill
+  self._special = t.special or 0
+  self._stageIndex = t.stageIndex or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectDestroyTrapParam:GetEffectType()
   return SkillEffectType.DestroyTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapParam.IsDestroyTrap = function(self, trapID)
-  -- function num : 0_2
-  return (self._trapID)[trapID]
+function SkillEffectDestroyTrapParam:IsDestroyTrap(trapID)
+  return self._trapID[trapID]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapParam.IsDestroyTrapWithType = function(self, trapType)
-  -- function num : 0_3
-  return (self._trapType)[trapType]
+function SkillEffectDestroyTrapParam:IsDestroyTrapWithType(trapType)
+  return self._trapType[trapType]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapParam.IsProtectTrap = function(self, trapID)
-  -- function num : 0_4
-  return (self._protectTrapID)[trapID]
+function SkillEffectDestroyTrapParam:IsProtectTrap(trapID)
+  return self._protectTrapID[trapID]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapParam.GetDestroyType = function(self)
-  -- function num : 0_5
+function SkillEffectDestroyTrapParam:GetDestroyType()
   return self._destroyType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapParam.GetDisableDieSkill = function(self)
-  -- function num : 0_6
+function SkillEffectDestroyTrapParam:GetDisableDieSkill()
   return self._disableDieSkill
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapParam.GetSpecial = function(self)
-  -- function num : 0_7
+function SkillEffectDestroyTrapParam:GetSpecial()
   return self._special
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapParam.GetStageIndex = function(self)
-  -- function num : 0_8
+function SkillEffectDestroyTrapParam:GetStageIndex()
   return self._stageIndex
 end
 
-local SkillEffectDestroyTrapType = {Self = 1, Other = 2, Range = 3, RangeExceptConfig = 4, Sticker = 5, RangeSelectTrapType = 6, MySummonTrap = 7, RangeAll = 8, SelfSummonDone = 9, HitBackRange = 10}
+local SkillEffectDestroyTrapType = {
+  Self = 1,
+  Other = 2,
+  Range = 3,
+  RangeExceptConfig = 4,
+  Sticker = 5,
+  RangeSelectTrapType = 6,
+  MySummonTrap = 7,
+  RangeAll = 8,
+  SelfSummonDone = 9,
+  HitBackRange = 10
+}
 _enum("SkillEffectDestroyTrapType", SkillEffectDestroyTrapType)
-

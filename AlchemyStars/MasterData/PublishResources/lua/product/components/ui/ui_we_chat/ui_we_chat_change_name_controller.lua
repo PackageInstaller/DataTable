@@ -1,112 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/ui_we_chat_change_name_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWeChatChangeNameController", UIController)
 UIWeChatChangeNameController = UIWeChatChangeNameController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWeChatChangeNameController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWeChatChangeNameController:OnShow(uiParams)
   self.weChatRole = uiParams[1]
   self._module = self:GetModule(QuestChatModule)
   self._iptName = self:GetUIComponent("EmojiFilteredInputField", "iptName")
   local max = 10
-  self.OnIptValueChanged = function()
-    -- function num : 0_0_0 , upvalues : self, _ENV, max
-    local s = (self._iptName).text
-    if (string.isnullorempty)(s) then
-      return 
+  
+  function self.OnIptValueChanged()
+    local s = self._iptName.text
+    if string.isnullorempty(s) then
+      return
     end
-    if (string.match)(s, " ") then
-      (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
-      s = (string.gsub)(s, " ", "")
+    if string.match(s, " ") then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
+      s = string.gsub(s, " ", "")
     end
-    local showStr = (HelperProxy:GetInstance()):GetSubStringByWordsNum(s, max)
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iptName).text = showStr
+    local showStr = HelperProxy:GetInstance():GetSubStringByWordsNum(s, max)
+    self._iptName.text = showStr
   end
-
-  ;
-  ((self._iptName).onValueChanged):AddListener(self.OnIptValueChanged)
+  
+  self._iptName.onValueChanged:AddListener(self.OnIptValueChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatChangeNameController.OnHide = function(self)
-  -- function num : 0_1
-  ((self._iptName).onValueChanged):RemoveListener(self.OnIptValueChanged)
+function UIWeChatChangeNameController:OnHide()
+  self._iptName.onValueChanged:RemoveListener(self.OnIptValueChanged)
   self.OnIptValueChanged = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatChangeNameController.GetCharSize = function(self, char)
-  -- function num : 0_2
+function UIWeChatChangeNameController:GetCharSize(char)
   if not char then
     return 0
+  elseif 240 < char then
+    return 4
+  elseif 225 < char then
+    return 3
+  elseif 192 < char then
+    return 2
   else
-    if char > 240 then
-      return 4
-    else
-      if char > 225 then
-        return 3
-      else
-        if char > 192 then
-          return 2
-        else
-          return 1
-        end
-      end
-    end
+    return 1
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatChangeNameController.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UIWeChatChangeNameController:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatChangeNameController.btnCancelOnClick = function(self, go)
-  -- function num : 0_4
+function UIWeChatChangeNameController:btnCancelOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWeChatChangeNameController.btnEnsureOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if (string.isnullorempty)((self._iptName).text) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_quest_chat_gaiming_kong"))
-    return 
+function UIWeChatChangeNameController:btnEnsureOnClick(go)
+  if string.isnullorempty(self._iptName.text) then
+    ToastManager.ShowToast(StringTable.Get("str_quest_chat_gaiming_kong"))
+    return
   end
-  if (self._iptName).text == (self.weChatRole):GetName() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_NEWNAME_THE_SAME_AS_OLD"))
-    return 
+  if self._iptName.text == self.weChatRole:GetName() then
+    ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_NEWNAME_THE_SAME_AS_OLD"))
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    local result, nErrorCode = (self._module):Request_UpdateSpeakerName(TT, (self.weChatRole):GetSpeakerId(), (self._iptName).text)
+    local result, nErrorCode = self._module:Request_UpdateSpeakerName(TT, self.weChatRole:GetSpeakerId(), self._iptName.text)
     if result:GetSucc() then
       if nErrorCode == 0 then
-        (self.weChatRole):UpdateName((self._iptName).text)
+        self.weChatRole:UpdateName(self._iptName.text)
         self:CloseDialog()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.WeChatChangeName, (self.weChatRole):GetSpeakerId())
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.WeChatChangeName, self.weChatRole:GetSpeakerId())
       else
-        ;
-        (ToastManager.ShowToast)((self._module):GetErrorMsg(nErrorCode))
+        ToastManager.ShowToast(self._module:GetErrorMsg(nErrorCode))
       end
     end
-  end
-)
+  end)
 end
-
-

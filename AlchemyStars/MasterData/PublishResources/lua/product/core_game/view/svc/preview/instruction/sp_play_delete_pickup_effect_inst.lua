@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_delete_pickup_effect_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayDeletePickUpEffectInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayDeletePickUpEffectInstruction = SkillPreviewPlayDeletePickUpEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayDeletePickUpEffectInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayDeletePickUpEffectInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayDeletePickUpEffectInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local previewActiveSkillService = (previewContext:GetWorld()):GetService("PreviewActiveSkill")
+function SkillPreviewPlayDeletePickUpEffectInstruction:DoInstruction(TT, casterEntity, previewContext)
+  local previewActiveSkillService = previewContext:GetWorld():GetService("PreviewActiveSkill")
   local world = casterEntity:GetOwnerWorld()
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   if not previewPickUpComponent then
-    return 
+    return
   end
   local entityIDs = previewPickUpComponent:GetPickUpEffectEntityIDArray()
   local world = casterEntity:GetOwnerWorld()
-  for _,id in ipairs(entityIDs) do
+  for _, id in ipairs(entityIDs) do
     local e = world:GetEntityByID(id)
     if e then
       world:DestroyEntity(e)
@@ -32,5 +22,3 @@ SkillPreviewPlayDeletePickUpEffectInstruction.DoInstruction = function(self, TT,
   end
   previewPickUpComponent:ClearPickUpEffectEntityIDArray()
 end
-
-

@@ -1,36 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_save_convert_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSaveConvertValue", BuffLogicBase)
 BuffLogicSaveConvertValue = BuffLogicSaveConvertValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSaveConvertValue.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.resetEffectType then
-    self._resetEffectType = {}
-    if not logicParam.convertEffectType then
-      self._convertEffectType = {}
-    end
-  end
+function BuffLogicSaveConvertValue:Constructor(buffInstance, logicParam)
+  self._resetEffectType = logicParam.resetEffectType or {}
+  self._convertEffectType = logicParam.convertEffectType or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSaveConvertValue.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicSaveConvertValue:DoLogic(notify)
+  local buffComponent = self._entity:BuffComponent()
   if not buffComponent then
-    return 
+    return
   end
   if notify:GetNotifyType() ~= NotifyType.GridConvert then
-    return 
+    return
   end
   local entity = notify:GetNotifyEntity()
   if not entity then
-    return 
+    return
   end
   local convertInfoArray = notify:GetConvertInfoArray()
   if not buffComponent:GetBuffValue("SaveConvertInfo") then
@@ -39,19 +25,13 @@ BuffLogicSaveConvertValue.DoLogic = function(self, notify)
   if not buffComponent:GetBuffValue("SaveResetConvertInfo") then
     buffComponent:SetBuffValue("SaveResetConvertInfo", {})
   end
-  do
-    if (table.icontains)(self._resetEffectType, notify:GetConvertEffectType()) then
-      local saveResetConvertInfo = buffComponent:GetBuffValue("SaveResetConvertInfo")
-      ;
-      (table.appendArray)(saveResetConvertInfo, convertInfoArray)
-      return 
-    end
-    if (table.icontains)(self._convertEffectType, notify:GetConvertEffectType()) then
-      local saveConvertInfo = buffComponent:GetBuffValue("SaveConvertInfo")
-      ;
-      (table.appendArray)(saveConvertInfo, convertInfoArray)
-    end
+  if table.icontains(self._resetEffectType, notify:GetConvertEffectType()) then
+    local saveResetConvertInfo = buffComponent:GetBuffValue("SaveResetConvertInfo")
+    table.appendArray(saveResetConvertInfo, convertInfoArray)
+    return
+  end
+  if table.icontains(self._convertEffectType, notify:GetConvertEffectType()) then
+    local saveConvertInfo = buffComponent:GetBuffValue("SaveConvertInfo")
+    table.appendArray(saveConvertInfo, convertInfoArray)
   end
 end
-
-

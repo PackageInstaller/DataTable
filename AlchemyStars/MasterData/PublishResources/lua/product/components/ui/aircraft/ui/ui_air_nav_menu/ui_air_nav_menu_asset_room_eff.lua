@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_air_nav_menu/ui_air_nav_menu_asset_room_eff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAirNavMenuAssetRoomEff", UICustomWidget)
 UIAirNavMenuAssetRoomEff = UIAirNavMenuAssetRoomEff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAirNavMenuAssetRoomEff.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAirNavMenuAssetRoomEff:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuAssetRoomEff.OnHide = function(self)
-  -- function num : 0_1
+function UIAirNavMenuAssetRoomEff:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuAssetRoomEff.SetData = function(self, pos, size, data, callback)
-  -- function num : 0_2
+function UIAirNavMenuAssetRoomEff:SetData(pos, size, data, callback)
   self:GetComponents()
   self._size = size
   self._data = data
@@ -29,33 +16,17 @@ UIAirNavMenuAssetRoomEff.SetData = function(self, pos, size, data, callback)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuAssetRoomEff.OnValue = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = self._pos
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = self._size
+function UIAirNavMenuAssetRoomEff:OnValue()
+  self._rect.anchoredPosition = self._pos
+  self._rect.sizeDelta = self._size
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuAssetRoomEff.GetComponents = function(self)
-  -- function num : 0_4
+function UIAirNavMenuAssetRoomEff:GetComponents()
   self._rect = self:GetUIComponent("RectTransform", "pos")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuAssetRoomEff.btnOnClick = function(self, go)
-  -- function num : 0_5
+function UIAirNavMenuAssetRoomEff:btnOnClick(go)
   if self._callback then
-    (self._callback)(self._data)
+    self._callback(self._data)
   end
 end
-
-

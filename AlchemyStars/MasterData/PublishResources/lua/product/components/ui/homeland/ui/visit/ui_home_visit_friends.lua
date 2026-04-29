@@ -1,26 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_visit_friends.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeVisitFriends", UIController)
 UIHomeVisitFriends = UIHomeVisitFriends
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeVisitFriends.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeVisitFriends:LoadDataOnEnter(TT, res, uiParams)
   self._friends = nil
   self._logs = nil
   self:Lock("ReqHomeFriendList")
-  self._friends = ((GameGlobal.GetUIModule)(HomelandModule)):ReqFriendList(TT)
+  self._friends, self._logs = GameGlobal.GetUIModule(HomelandModule):ReqFriendList(TT)
   self:UnLock("ReqHomeFriendList")
   if not self._friends or not self._logs then
     res:SetSucc(false)
-    return 
+    return
   end
-  ;
-  (table.sort)(self._friends, function(a, b)
-    -- function num : 0_0_0
+  table.sort(self._friends, function(a, b)
     if a:CanGetGift() ~= b:CanGetGift() then
       return a:CanGetGift()
     end
@@ -30,70 +21,70 @@ UIHomeVisitFriends.LoadDataOnEnter = function(self, TT, res, uiParams)
     if a:CanWater() ~= b:CanWater() then
       return a:CanWater()
     end
-    if b:Level() > a:Level() then
-      do return a:Level() == b:Level() end
-      do return a:PstID() < b:PstID() end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if a:Level() ~= b:Level() then
+      return a:Level() >= b:Level()
     end
-  end
-)
-  ;
-  (table.sort)(self._logs, function(a, b)
-    -- function num : 0_0_1
-    do return b:Time() < a:Time() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    return a:PstID() < b:PstID()
+  end)
+  table.sort(self._logs, function(a, b)
+    return a:Time() > b:Time()
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomeVisitFriends:OnShow(uiParams)
   self:InitWidget()
-  ;
-  (self.friendList):InitListView(#self._friends, function(scrollView, idx)
-    -- function num : 0_1_0 , upvalues : self
+  self.friendList:InitListView(#self._friends, function(scrollView, idx)
     return self:_NewFriendItem(scrollView, idx)
-  end
-)
-  ;
-  (self.logList):InitListView(#self._logs, function(scrollView, idx)
-    -- function num : 0_1_1 , upvalues : self
+  end)
+  self.logList:InitListView(#self._logs, function(scrollView, idx)
     return self:_NewLogItem(scrollView, idx)
-  end
-)
+  end)
   local atlas = self:GetAsset("UIHomelandVisit.spriteatlas", LoadType.SpriteAtlas)
   local friendImage = self:GetUIComponent("Image", "FriendBtn")
   local friendText = self:GetUIComponent("UILocalizationText", "FriendBtnText")
   local logImage = self:GetUIComponent("Image", "LogBtn")
   local logText = self:GetUIComponent("UILocalizationText", "LogBtnText")
   self._friendBtn = UIHomeStateWidget:New({
-{UI = friendImage, Type = UIHomeStateWidgetType.SpriteSwap, 
-States = {[1] = atlas:GetSprite("n17_homie_btn1"), [2] = atlas:GetSprite("n17_homie_btn2")}
-}
-, 
-{UI = friendText, Type = UIHomeStateWidgetType.ColorTint, 
-States = {[1] = Color.white, [2] = Color(0.28627450980392, 0.28627450980392, 0.28627450980392)}
-}
-})
+    {
+      UI = friendImage,
+      Type = UIHomeStateWidgetType.SpriteSwap,
+      States = {
+        [1] = atlas:GetSprite("n17_homie_btn1"),
+        [2] = atlas:GetSprite("n17_homie_btn2")
+      }
+    },
+    {
+      UI = friendText,
+      Type = UIHomeStateWidgetType.ColorTint,
+      States = {
+        [1] = Color.white,
+        [2] = Color(0.28627450980392155, 0.28627450980392155, 0.28627450980392155)
+      }
+    }
+  })
   self._logBtn = UIHomeStateWidget:New({
-{UI = logImage, Type = UIHomeStateWidgetType.SpriteSwap, 
-States = {[1] = atlas:GetSprite("n17_homie_btn1"), [2] = atlas:GetSprite("n17_homie_btn2")}
-}
-, 
-{UI = logText, Type = UIHomeStateWidgetType.ColorTint, 
-States = {[1] = Color.white, [2] = Color(0.28627450980392, 0.28627450980392, 0.28627450980392)}
-}
-})
+    {
+      UI = logImage,
+      Type = UIHomeStateWidgetType.SpriteSwap,
+      States = {
+        [1] = atlas:GetSprite("n17_homie_btn1"),
+        [2] = atlas:GetSprite("n17_homie_btn2")
+      }
+    },
+    {
+      UI = logText,
+      Type = UIHomeStateWidgetType.ColorTint,
+      States = {
+        [1] = Color.white,
+        [2] = Color(0.28627450980392155, 0.28627450980392155, 0.28627450980392155)
+      }
+    }
+  })
   self:_ShowLogs(false)
   self:_ShowFriends(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomeVisitFriends:InitWidget()
   self.friendList = self:GetUIComponent("UIDynamicScrollView", "friendList")
   self.logList = self:GetUIComponent("UIDynamicScrollView", "logList")
   self.friendBtn = self:GetUIComponent("Button", "FriendBtn")
@@ -106,107 +97,74 @@ UIHomeVisitFriends.InitWidget = function(self)
   self:ShowHelpTip()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends._ShowFriends = function(self, show)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._friendsListGo):SetActive(show)
+function UIHomeVisitFriends:_ShowFriends(show)
+  self._friendsListGo:SetActive(show)
   if show then
-    (self._friendBtn):ChangeState(1)
-    ;
-    (self._title):SetText((StringTable.Get)("str_homeland_visit_friend_list"))
+    self._friendBtn:ChangeState(1)
+    self._title:SetText(StringTable.Get("str_homeland_visit_friend_list"))
     if #self._friends == 0 then
-      (self._empty):SetText((StringTable.Get)("str_homeland_visit_no_friend"))
+      self._empty:SetText(StringTable.Get("str_homeland_visit_no_friend"))
     else
-      ;
-      (self._empty):SetText("")
+      self._empty:SetText("")
     end
   else
-    ;
-    (self._friendBtn):ChangeState(2)
+    self._friendBtn:ChangeState(2)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends._ShowLogs = function(self, show)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._logListGo):SetActive(show)
+function UIHomeVisitFriends:_ShowLogs(show)
+  self._logListGo:SetActive(show)
   if show then
-    (self._logBtn):ChangeState(1)
-    ;
-    (self._title):SetText((StringTable.Get)("str_homeland_visit_log_title"))
+    self._logBtn:ChangeState(1)
+    self._title:SetText(StringTable.Get("str_homeland_visit_log_title"))
     if #self._logs == 0 then
-      (self._empty):SetText((StringTable.Get)("str_homeland_visit_no_log"))
+      self._empty:SetText(StringTable.Get("str_homeland_visit_no_log"))
     else
-      ;
-      (self._empty):SetText("")
+      self._empty:SetText("")
     end
   else
-    ;
-    (self._logBtn):ChangeState(2)
+    self._logBtn:ChangeState(2)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends._NewFriendItem = function(self, scrollview, idx)
-  -- function num : 0_5
+function UIHomeVisitFriends:_NewFriendItem(scrollview, idx)
   if idx < 0 then
-    return 
+    return
   end
   local item = scrollview:NewListViewItem("item")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   local friend = rowPool:SpawnObject("UIHomeVisitFriendItem")
-  friend:SetData((self._friends)[idx + 1])
+  friend:SetData(self._friends[idx + 1])
   return item
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends._NewLogItem = function(self, scrollview, idx)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomeVisitFriends:_NewLogItem(scrollview, idx)
   if idx < 0 then
-    return 
+    return
   end
   local item = scrollview:NewListViewItem("item")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   local log = rowPool:SpawnObject("UIHomeVisitLogItem")
-  log:SetData((self._logs)[idx + 1])
-  ;
-  (UIHelper.RefreshLayout)((item.gameObject):GetComponent("RectTransform"))
+  log:SetData(self._logs[idx + 1])
+  UIHelper.RefreshLayout(item.gameObject:GetComponent("RectTransform"))
   return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends.FriendBtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIHomeVisitFriends:FriendBtnOnClick(go)
   self:_ShowLogs(false)
   self:_ShowFriends(true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends.LogBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIHomeVisitFriends:LogBtnOnClick(go)
   self:_ShowFriends(false)
   self:_ShowLogs(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends.BackBtnOnClick = function(self)
-  -- function num : 0_9
+function UIHomeVisitFriends:BackBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeVisitFriends.ShowHelpTip = function(self)
-  -- function num : 0_10
-  local tip = (self._helpTip):SpawnObject("UIHomelandCommonHelp")
+function UIHomeVisitFriends:ShowHelpTip()
+  local tip = self._helpTip:SpawnObject("UIHomelandCommonHelp")
   tip:SetData("UIHomeVisitFriends")
 end
-
-

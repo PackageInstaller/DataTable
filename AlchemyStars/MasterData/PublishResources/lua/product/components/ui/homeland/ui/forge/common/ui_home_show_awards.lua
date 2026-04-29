@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/common/ui_home_show_awards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeShowAwards", UIController)
 UIHomeShowAwards = UIHomeShowAwards
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeShowAwards.GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeShowAwards:GetComponents()
   self._listPerPageCount = 5
   self._curItemPage = 1
   self._curPageFirstIndex = 1
@@ -19,124 +12,97 @@ UIHomeShowAwards.GetComponents = function(self)
   self._itemList = {}
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ItemList")
   self._bg = self:GetUIComponent("RectTransform", "canvasGroup")
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._bg).localScale = Vector3(1, 1, 1)
+  self._bg.localScale = Vector3(1, 1, 1)
   self._titleText = self:GetUIComponent("UILocalizationText", "txt_title")
   self._titleTextGo = self:GetGameObject("txt_title")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeShowAwards.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomeShowAwards:OnShow(uiParams)
   self._closeCallback = uiParams[2]
   self:GetComponents()
   if self._titleText then
     if uiParams[4] then
       local txt = uiParams[4]
       if txt == "" then
-        (self._titleText):SetText("")
+        self._titleText:SetText("")
       else
-        ;
-        (self._titleText):SetText(txt)
+        self._titleText:SetText(txt)
       end
     else
-      do
-        ;
-        (self._titleText):SetText((StringTable.Get)("str_common_gift_get_item"))
-        local item_module = ((GameGlobal.GetModule)(ItemModule))
-        -- DECOMPILER ERROR at PC34: Overwrote pending register: R3 in 'AssignReg'
-
-        local itemlist = .end
-        -- DECOMPILER ERROR at PC47: Unhandled construct in 'MakeBoolean' P1
-
-        if uiParams[1] and (table.count)(uiParams[1]) == 0 then
-          (Log.fatal)("###[UIHomeShowAwards] table.count(uiParams[1]) == 0 !")
-        end
-        ;
-        (Log.fatal)("###[UIHomeShowAwards] uiParams[1] is nil !")
-        if uiParams[3] then
-          itemlist = uiParams[1]
-        else
-          itemlist = item_module:SortRoleAsset(uiParams[1])
-        end
-        self:CreateData(itemlist)
-        self._listItemTotalCount = (table.count)(self._itemList)
-        self:CalcPage()
-        self._selectItemIndex = -1
-        if self._scrollView then
-          (self._scrollView):InitListView(1, function(scrollView, index)
-    -- function num : 0_1_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
-          self._inited = true
-        end
-        ;
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
-      end
+      self._titleText:SetText(StringTable.Get("str_common_gift_get_item"))
     end
   end
+  local item_module = GameGlobal.GetModule(ItemModule)
+  local itemlist
+  if uiParams[1] then
+    if table.count(uiParams[1]) == 0 then
+      Log.fatal("###[UIHomeShowAwards] table.count(uiParams[1]) == 0 !")
+    end
+  else
+    Log.fatal("###[UIHomeShowAwards] uiParams[1] is nil !")
+  end
+  if uiParams[3] then
+    itemlist = uiParams[1]
+  else
+    itemlist = item_module:SortRoleAsset(uiParams[1])
+  end
+  self:CreateData(itemlist)
+  self._listItemTotalCount = table.count(self._itemList)
+  self:CalcPage()
+  self._selectItemIndex = -1
+  if self._scrollView then
+    self._scrollView:InitListView(1, function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
+    self._inited = true
+  end
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeShowAwards.CreateData = function(self, itemlist)
-  -- function num : 0_2 , upvalues : _ENV
-  for i = 1, (table.count)(itemlist) do
-    local _ItemTempleate = (Cfg.cfg_item)[(itemlist[i]).assetid]
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
+function UIHomeShowAwards:CreateData(itemlist)
+  for i = 1, table.count(itemlist) do
+    local _ItemTempleate = Cfg.cfg_item[itemlist[i].assetid]
     if _ItemTempleate then
-      (self._itemList)[i] = {item_id = (itemlist[i]).assetid, item_count = (itemlist[i]).count, item_des = (itemlist[i]).des, award_type = (itemlist[i]).type, icon = _ItemTempleate.Icon, item_name = _ItemTempleate.Name, simple_desc = _ItemTempleate.RpIntro, color = _ItemTempleate.Color}
+      self._itemList[i] = {
+        item_id = itemlist[i].assetid,
+        item_count = itemlist[i].count,
+        item_des = itemlist[i].des,
+        award_type = itemlist[i].type,
+        icon = _ItemTempleate.Icon,
+        item_name = _ItemTempleate.Name,
+        simple_desc = _ItemTempleate.RpIntro,
+        color = _ItemTempleate.Color
+      }
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeShowAwards.DoAnimation = function(self)
-  -- function num : 0_3
+function UIHomeShowAwards:DoAnimation()
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "canvasGroup")
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
-  self._tweener = (self._canvasGroup):DOFade(1, 0.02)
+  self._canvasGroup.alpha = 0
+  self._tweener = self._canvasGroup:DOFade(1, 0.02)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeShowAwards.ClosePanel = function(self)
-  -- function num : 0_4
+function UIHomeShowAwards:ClosePanel()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeShowAwards.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomeShowAwards:OnHide()
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIForgeCreateDomitory)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIForgeCreateDomitory)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeShowAwards._InitListView = function(self, scrollView, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomeShowAwards:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
-  local count = nil
-  if (table.count)(self._itemList) > 5 then
+  local count
+  if table.count(self._itemList) > 5 then
     count = 5
   else
-    count = (table.count)(self._itemList)
+    count = table.count(self._itemList)
   end
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
@@ -148,8 +114,8 @@ UIHomeShowAwards._InitListView = function(self, scrollView, index)
   for i = 1, count do
     local giftItem = rowList[i]
     local itemIndex = self:_GetCurPageFirstIndex() + i - 1
-    if self._listItemTotalCount < itemIndex then
-      (giftItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._listItemTotalCount then
+      giftItem:GetGameObject():SetActive(false)
     else
       self:_ShowItem(giftItem, itemIndex, i)
     end
@@ -157,10 +123,7 @@ UIHomeShowAwards._InitListView = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeShowAwards._ShowItem = function(self, giftItem, index, tweenIdx)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomeShowAwards:_ShowItem(giftItem, index, tweenIdx)
   local beforeTime = 0
   if not self._inited then
     beforeTime = self._beforeTime
@@ -168,46 +131,32 @@ UIHomeShowAwards._ShowItem = function(self, giftItem, index, tweenIdx)
   local item_data = self:_GetItemDataByIndex(index)
   if item_data then
     giftItem:SetData(item_data, index, function(id, go)
-    -- function num : 0_7_0 , upvalues : self
-    self:OnItemSelect(id, go)
-  end
-, Color(1, 1, 1, 1), tweenIdx, beforeTime)
-    ;
-    (giftItem:GetGameObject()):SetActive(true)
+      self:OnItemSelect(id, go)
+    end, Color(1, 1, 1, 1), tweenIdx, beforeTime)
+    giftItem:GetGameObject():SetActive(true)
   else
-    ;
-    (giftItem:GetGameObject()):SetActive(false)
+    giftItem:GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeShowAwards.OnItemSelect = function(self, id, go)
-  -- function num : 0_8
+function UIHomeShowAwards:OnItemSelect(id, go)
   self:ShowDialog("UIItemTipsHomeland", id, go)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeShowAwards.NextOnClick = function(self, go)
-  -- function num : 0_9
+function UIHomeShowAwards:NextOnClick(go)
   if self._selectItemIndex ~= -1 then
     self._selectItemIndex = -1
+  elseif self:_GetNextPageIndex() ~= -1 then
+    self._scrollView:RefreshAllShownItem()
+    self._selectItemIndex = -1
   else
-    if self:_GetNextPageIndex() ~= -1 then
-      (self._scrollView):RefreshAllShownItem()
-      self._selectItemIndex = -1
-    else
-      self:ClosePanel()
-    end
+    self:ClosePanel()
   end
 end
 
 local modf = math.modf
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomeShowAwards.CalcPage = function(self)
-  -- function num : 0_10 , upvalues : modf
+function UIHomeShowAwards:CalcPage()
   local pageCount, mod = modf(self._listItemTotalCount / self._listPerPageCount)
   if mod ~= 0 then
     pageCount = pageCount + 1
@@ -215,10 +164,7 @@ UIHomeShowAwards.CalcPage = function(self)
   self._listPageCount = pageCount
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeShowAwards._GetNextPageIndex = function(self)
-  -- function num : 0_11
+function UIHomeShowAwards:_GetNextPageIndex()
   local index = self._curItemPage * self._listPerPageCount + 1
   if index <= self._listItemTotalCount then
     self._curItemPage = self._curItemPage + 1
@@ -228,28 +174,17 @@ UIHomeShowAwards._GetNextPageIndex = function(self)
   return -1
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeShowAwards._GetCurPageFirstIndex = function(self)
-  -- function num : 0_12
+function UIHomeShowAwards:_GetCurPageFirstIndex()
   return self._curPageFirstIndex
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeShowAwards._GetItemDataByIndex = function(self, index)
-  -- function num : 0_13
-  if #self._itemList < index then
+function UIHomeShowAwards:_GetItemDataByIndex(index)
+  if index > #self._itemList then
     return nil
   end
-  return (self._itemList)[index]
+  return self._itemList[index]
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeShowAwards._FormatItemCount = function(self, itemCount)
-  -- function num : 0_14 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIHomeShowAwards:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
-
-

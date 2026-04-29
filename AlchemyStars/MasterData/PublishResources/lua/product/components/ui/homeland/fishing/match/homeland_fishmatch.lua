@@ -1,332 +1,250 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/match/homeland_fishmatch.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFishMatch", Object)
 HomelandFishMatch = HomelandFishMatch
-local FishMatchEndType = {MATCHEND_CLOSE = 1, MATCHEND_WIN = 2, MATCHEND_LOSE = 3, MATCHEND_COMPLETE = 4}
+local FishMatchEndType = {
+  MATCHEND_CLOSE = 1,
+  MATCHEND_WIN = 2,
+  MATCHEND_LOSE = 3,
+  MATCHEND_COMPLETE = 4
+}
 _enum("FishMatchEndType", FishMatchEndType)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandFishMatch.Constructor = function(self, mainCfg, pet, istask)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandFishMatch:Constructor(mainCfg, pet, istask)
   self._mainCfg = mainCfg
   self._matchID = mainCfg.MatchID
-  self._matchcfg = (Cfg.cfg_homeland_fishmatch_match)[mainCfg.MatchID]
+  self._matchcfg = Cfg.cfg_homeland_fishmatch_match[mainCfg.MatchID]
   self._pet = pet
-  self._petID = (self._mainCfg).PetID
+  self._petID = self._mainCfg.PetID
   self._posIndex = 1
   self._isTempPet = false
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   if self._cbFishMatchEnd == nil then
-    self._cbFishMatchEnd = (GameHelper:GetInstance()):CreateCallback(self.FishMatchEnd, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishMatchEnd, self._cbFishMatchEnd)
+    self._cbFishMatchEnd = GameHelper:GetInstance():CreateCallback(self.FishMatchEnd, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishMatchEnd, self._cbFishMatchEnd)
   end
   self.istask = istask
   self:_CreatePet(self._pet)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandFishMatch:Dispose()
   if self._cbFishMatchEnd then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishMatchEnd, self._cbFishMatchEnd)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishMatchEnd, self._cbFishMatchEnd)
     self._cbFishMatchEnd = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetMainID = function(self)
-  -- function num : 0_2
-  return (self._mainCfg).ID
+function HomelandFishMatch:GetMainID()
+  return self._mainCfg.ID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetMatchID = function(self)
-  -- function num : 0_3
+function HomelandFishMatch:GetMatchID()
   return self._matchID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetMatchCfg = function(self)
-  -- function num : 0_4
+function HomelandFishMatch:GetMatchCfg()
   return self._matchcfg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetCancelChatID = function(self)
-  -- function num : 0_5
-  return (self._matchcfg).CancelChatID
+function HomelandFishMatch:GetCancelChatID()
+  return self._matchcfg.CancelChatID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetChatID = function(self)
-  -- function num : 0_6
-  local homelandInfo = (self._homelandModule):GetHomelandInfo()
-  local times = ((homelandInfo.fishing_data).challenge_pet_times)[(self._mainCfg).PetID]
-  local isWin = not times or times > 0
+function HomelandFishMatch:GetChatID()
+  local homelandInfo = self._homelandModule:GetHomelandInfo()
+  local times = homelandInfo.fishing_data.challenge_pet_times[self._mainCfg.PetID]
+  local isWin = times and 0 < times
   if isWin then
-    return (self._matchcfg).WinChatID
+    return self._matchcfg.WinChatID
   else
-    return (self._matchcfg).NormalChatID
+    return self._matchcfg.NormalChatID
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetSecChatID = function(self)
-  -- function num : 0_7
-  local homelandInfo = (self._homelandModule):GetHomelandInfo()
-  local times = ((homelandInfo.fishing_data).challenge_pet_times)[(self._mainCfg).PetID]
-  local isWin = not times or times > 0
+function HomelandFishMatch:GetSecChatID()
+  local homelandInfo = self._homelandModule:GetHomelandInfo()
+  local times = homelandInfo.fishing_data.challenge_pet_times[self._mainCfg.PetID]
+  local isWin = times and 0 < times
   if isWin then
-    return (self._matchcfg).SecWinChatID
+    return self._matchcfg.SecWinChatID
   else
-    return (self._matchcfg).SecChatID
+    return self._matchcfg.SecChatID
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetFishMatchInteractTitle = function(self)
-  -- function num : 0_8
-  local homelandInfo = (self._homelandModule):GetHomelandInfo()
-  local times = ((homelandInfo.fishing_data).challenge_pet_times)[(self._mainCfg).PetID]
-  local isWin = not times or times > 0
+function HomelandFishMatch:GetFishMatchInteractTitle()
+  local homelandInfo = self._homelandModule:GetHomelandInfo()
+  local times = homelandInfo.fishing_data.challenge_pet_times[self._mainCfg.PetID]
+  local isWin = times and 0 < times
   if isWin then
-    return (self._matchcfg).WinInteractTxt
+    return self._matchcfg.WinInteractTxt
   else
-    return (self._matchcfg).NormalInteractTxt
+    return self._matchcfg.NormalInteractTxt
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetFishMatchPlayInteractTitle = function(self)
-  -- function num : 0_9
-  local homelandInfo = (self._homelandModule):GetHomelandInfo()
-  local times = ((homelandInfo.fishing_data).challenge_pet_times)[(self._mainCfg).PetID]
-  local isWin = not times or times > 0
+function HomelandFishMatch:GetFishMatchPlayInteractTitle()
+  local homelandInfo = self._homelandModule:GetHomelandInfo()
+  local times = homelandInfo.fishing_data.challenge_pet_times[self._mainCfg.PetID]
+  local isWin = times and 0 < times
   if isWin then
-    return (self._matchcfg).SecWinInteractTxt
+    return self._matchcfg.SecWinInteractTxt
   else
-    return (self._matchcfg).SecInteractTxt
+    return self._matchcfg.SecInteractTxt
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetCancelFishMatchInteractTitle = function(self)
-  -- function num : 0_10
-  local homelandInfo = (self._homelandModule):GetHomelandInfo()
-  local times = ((homelandInfo.fishing_data).challenge_pet_times)[(self._mainCfg).PetID]
-  local isWin = not times or times > 0
+function HomelandFishMatch:GetCancelFishMatchInteractTitle()
+  local homelandInfo = self._homelandModule:GetHomelandInfo()
+  local times = homelandInfo.fishing_data.challenge_pet_times[self._mainCfg.PetID]
+  local isWin = times and 0 < times
   if isWin then
-    return (self._matchcfg).SecWinCancelTxt
+    return self._matchcfg.SecWinCancelTxt
   else
-    return (self._matchcfg).SecCancelTxt
+    return self._matchcfg.SecCancelTxt
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetByeFishMatchInteractTitle = function(self)
-  -- function num : 0_11
-  return (self._matchcfg).SecByeTxt
+function HomelandFishMatch:GetByeFishMatchInteractTitle()
+  return self._matchcfg.SecByeTxt
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.GetWinTimes = function(self)
-  -- function num : 0_12
-  local homelandInfo = (self._homelandModule):GetHomelandInfo()
-  local times = ((homelandInfo.fishing_data).challenge_pet_times)[(self._mainCfg).PetID]
+function HomelandFishMatch:GetWinTimes()
+  local homelandInfo = self._homelandModule:GetHomelandInfo()
+  local times = homelandInfo.fishing_data.challenge_pet_times[self._mainCfg.PetID]
   return times
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.PetMatchCancel = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local behaviour = (self._pet):GetPetBehavior()
+function HomelandFishMatch:PetMatchCancel()
+  local behaviour = self._pet:GetPetBehavior()
   if behaviour:GetHasBehaviors() then
-    (self._pet):SetOccupied(HomelandPetOccupiedType.None)
-    ;
-    (self._pet):BreakUpMatch()
+    self._pet:SetOccupied(HomelandPetOccupiedType.None)
+    self._pet:BreakUpMatch()
     behaviour:ChangeBehavior(HomelandPetBehaviorType.Roam)
     self:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.PetSetBornPos = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local behaviour = (self._pet):GetPetBehavior()
+function HomelandFishMatch:PetSetBornPos()
+  local behaviour = self._pet:GetPetBehavior()
   if behaviour:GetHasBehaviors() then
-    (self._pet):SetPosition(Vector3(0, 0, 0))
+    self._pet:SetPosition(Vector3(0, 0, 0))
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.EndTalkCallback = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._ChangeBothPos, self)
+function HomelandFishMatch:EndTalkCallback()
+  GameGlobal.TaskManager():CoreGameStartTask(self._ChangeBothPos, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch._ChangeBothPos = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeStoryController .. "DirectIn")
+function HomelandFishMatch:_ChangeBothPos(TT)
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeStoryController .. "DirectIn")
   YIELD(TT, 1000)
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)()
+  CutsceneManager.ExcuteCutsceneOut()
   local petPos, playerPos = self:_GetCloesestPos()
-  local tmpPetRot = ((self._mainCfg).PetRotList)[self._posIndex]
-  local petRot = (Quaternion.Euler)(Vector3(tmpPetRot[1], tmpPetRot[2], tmpPetRot[3]))
-  local tmpPlayerRot = ((self._mainCfg).RotList)[self._posIndex]
-  local playerRot = (Quaternion.Euler)(Vector3(tmpPlayerRot[1], tmpPlayerRot[2], tmpPlayerRot[3]))
-  ;
-  (self._pet):SetPosition(petPos)
-  ;
-  (self._pet):SetRotation(petRot)
-  local homelandInfo = (self._homelandModule):GetHomelandInfo()
-  local times = ((homelandInfo.fishing_data).challenge_pet_times)[(self._mainCfg).PetID]
-  local isWin = not times or times > 0
-  if not self.istask or isWin then
-    (self._pet):SetMatchChatID((self._matchcfg).SecWinChatID)
+  local tmpPetRot = self._mainCfg.PetRotList[self._posIndex]
+  local petRot = Quaternion.Euler(Vector3(tmpPetRot[1], tmpPetRot[2], tmpPetRot[3]))
+  local tmpPlayerRot = self._mainCfg.RotList[self._posIndex]
+  local playerRot = Quaternion.Euler(Vector3(tmpPlayerRot[1], tmpPlayerRot[2], tmpPlayerRot[3]))
+  self._pet:SetPosition(petPos)
+  self._pet:SetRotation(petRot)
+  local homelandInfo = self._homelandModule:GetHomelandInfo()
+  local times = homelandInfo.fishing_data.challenge_pet_times[self._mainCfg.PetID]
+  local isWin = times and 0 < times
+  if self.istask then
+  elseif isWin then
+    self._pet:SetMatchChatID(self._matchcfg.SecWinChatID)
   else
-    (self._pet):SetMatchChatID((self._matchcfg).SecChatID)
+    self._pet:SetMatchChatID(self._matchcfg.SecChatID)
   end
-  local homelandClient = ((self._homelandModule):GetUIModule()):GetClient()
-  local character = (homelandClient:CharacterManager()):MainCharacterController()
+  local homelandClient = self._homelandModule:GetUIModule():GetClient()
+  local character = homelandClient:CharacterManager():MainCharacterController()
   character:SetLocation(playerPos, playerRot)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch._GetCloesestPos = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local posList = (self._mainCfg).PetPosList
+function HomelandFishMatch:_GetCloesestPos()
+  local posList = self._mainCfg.PetPosList
   local minDis = math.maxinteger
-  for i,v in pairs(posList) do
+  for i, v in pairs(posList) do
     local cal = v[1] ^ 2 + v[2] ^ 2 + v[3] ^ 2
-    if cal < minDis then
+    if minDis > cal then
       self._posIndex = i
       minDis = cal
     end
   end
   local tmpPetRot = posList[self._posIndex]
-  local tmpPlayerRot = ((self._mainCfg).PosList)[self._posIndex]
+  local tmpPlayerRot = self._mainCfg.PosList[self._posIndex]
   local petPos = Vector3(tmpPetRot[1] / 1000, tmpPetRot[2] / 1000, tmpPetRot[3] / 1000)
   local playerPos = Vector3(tmpPlayerRot[1] / 1000, tmpPlayerRot[2] / 1000, tmpPlayerRot[3] / 1000)
   return petPos, playerPos
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.StartMatchTalkCallBack = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local homelandClient = ((self._homelandModule):GetUIModule()):GetClient()
-  local character = (homelandClient:CharacterManager()):MainCharacterController()
+function HomelandFishMatch:StartMatchTalkCallBack()
+  local homelandClient = self._homelandModule:GetUIModule():GetClient()
+  local character = homelandClient:CharacterManager():MainCharacterController()
   character:SetForbiddenMove(true, HomelandActorStateType.Idle)
   character:SetIsFishMach(true)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._StartMatch, self)
+  GameGlobal.TaskManager():CoreGameStartTask(self._StartMatch, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch._StartMatch = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIHomeStoryController .. "DirectIn")
+function HomelandFishMatch:_StartMatch(TT)
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIHomeStoryController .. "DirectIn")
   YIELD(TT, 500)
   self:OnStart()
   local petPos, playerPos = self:_GetCloesestPos()
-  local tmpPlayerRot = ((self._mainCfg).RotList)[self._posIndex]
-  local playerRot = (Quaternion.Euler)(Vector3(tmpPlayerRot[1], tmpPlayerRot[2], tmpPlayerRot[3]))
-  local homelandClient = ((self._homelandModule):GetUIModule()):GetClient()
-  local character = (homelandClient:CharacterManager()):MainCharacterController()
+  local tmpPlayerRot = self._mainCfg.RotList[self._posIndex]
+  local playerRot = Quaternion.Euler(Vector3(tmpPlayerRot[1], tmpPlayerRot[2], tmpPlayerRot[3]))
+  local homelandClient = self._homelandModule:GetUIModule():GetClient()
+  local character = homelandClient:CharacterManager():MainCharacterController()
   character:SetLocation(playerPos, playerRot)
   character:SetCameraForward()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FishMatchReady, (self._mainCfg).ID, self)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FishMatchReady, self._mainCfg.ID, self)
   YIELD(TT, 500)
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)()
+  CutsceneManager.ExcuteCutsceneOut()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.FishMatchEnd = function(self, resType)
-  -- function num : 0_20 , upvalues : _ENV
+function HomelandFishMatch:FishMatchEnd(resType)
   local endScale = -5
-  local homelandClient = ((self._homelandModule):GetUIModule()):GetClient()
-  local character = (homelandClient:CharacterManager()):MainCharacterController()
+  local homelandClient = self._homelandModule:GetUIModule():GetClient()
+  local character = homelandClient:CharacterManager():MainCharacterController()
   character:SetIsFishMach(false)
-  local homelandClient = ((self._homelandModule):GetUIModule()):GetClient()
-  local cameraCtl = (homelandClient:CameraManager()):FollowCameraController()
+  local homelandClient = self._homelandModule:GetUIModule():GetClient()
+  local cameraCtl = homelandClient:CameraManager():FollowCameraController()
   self._curScale = cameraCtl:CurrentScale()
   self._curXAngle = cameraCtl:NowXAngle()
   self._curRot = cameraCtl:Rotation()
-  local cameraPos = ((self._mainCfg).EndCameraPosList)[self._posIndex]
-  local cameraRot = ((self._mainCfg).EndCameraRotList)[self._posIndex]
+  local cameraPos = self._mainCfg.EndCameraPosList[self._posIndex]
+  local cameraRot = self._mainCfg.EndCameraRotList[self._posIndex]
   cameraCtl:UpdatePos(Vector3(cameraPos[1] / 1000, cameraPos[2] / 1000, cameraPos[3] / 1000))
   cameraCtl:SetCamLocation(cameraRot[1] / 100, cameraRot[2] / 100, cameraRot[3])
   cameraCtl:StopCameraScale(true)
   cameraCtl:HandleScaleForStory(endScale)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.FishMatchEndReset = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local homelandClient = ((self._homelandModule):GetUIModule()):GetClient()
-  local character = (homelandClient:CharacterManager()):MainCharacterController()
+function HomelandFishMatch:FishMatchEndReset()
+  local homelandClient = self._homelandModule:GetUIModule():GetClient()
+  local character = homelandClient:CharacterManager():MainCharacterController()
   if self._curScale then
     local charaTr = character:Transform()
-    local cameraCtl = (homelandClient:CameraManager()):FollowCameraController()
+    local cameraCtl = homelandClient:CameraManager():FollowCameraController()
     cameraCtl:UpdatePos(charaTr.position)
     cameraCtl:SetXRotation(self._curXAngle)
     cameraCtl:SetRotation(self._curRot)
     cameraCtl:StopCameraScale(false)
     cameraCtl:HandleScaleForStory(self._curScale)
   end
-  do
-    if not self._isTempPet then
-      ((self._pet):GetPetBehavior()):ChangeBehavior(HomelandPetBehaviorType.FishingPrepare)
-    end
-    if self._isNpcPet then
-      (HomelandFishMatchManager:GetInstance()):ChangeMatch(nil)
-    end
-    character:SetForbiddenMove(false, HomelandActorStateType.Idle)
-    self:OnEnd()
+  if not self._isTempPet then
+    self._pet:GetPetBehavior():ChangeBehavior(HomelandPetBehaviorType.FishingPrepare)
   end
+  if self._isNpcPet then
+    HomelandFishMatchManager:GetInstance():ChangeMatch(nil)
+  end
+  character:SetForbiddenMove(false, HomelandActorStateType.Idle)
+  self:OnEnd()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch._CreatePet = function(self, pet)
-  -- function num : 0_22 , upvalues : _ENV
-  if not HomelandPet:IsInstanceOfType(pet) or HomelandTaskNPC:IsInstanceOfType(pet) then
+function HomelandFishMatch:_CreatePet(pet)
+  if HomelandPet:IsInstanceOfType(pet) then
+  elseif HomelandTaskNPC:IsInstanceOfType(pet) then
     self._isNpcPet = true
-    local homelandClient = ((self._homelandModule):GetUIModule()):GetClient()
+    local homelandClient = self._homelandModule:GetUIModule():GetClient()
     local petMgr = homelandClient:PetManager()
     local petId = pet:PetID()
     local pet, isTemp = petMgr:GetTempPet(petId)
@@ -335,74 +253,47 @@ HomelandFishMatch._CreatePet = function(self, pet)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch._GetRunningTask = function(self)
-  -- function num : 0_23
-  local homelandClient = ((self._homelandModule):GetUIModule()):GetClient()
-  local task = (homelandClient:GetHomelandTaskManager()):GetRuningTask()
-  if not task then
-    task = ((homelandClient:GetHomelandTaskManager()):GetHomelandStoryTaskManager()):GetRuningTaskItem()
-  end
+function HomelandFishMatch:_GetRunningTask()
+  local homelandClient = self._homelandModule:GetUIModule():GetClient()
+  local task = homelandClient:GetHomelandTaskManager():GetRuningTask()
+  task = task or homelandClient:GetHomelandTaskManager():GetHomelandStoryTaskManager():GetRuningTaskItem()
   return task
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.OnStart = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function HomelandFishMatch:OnStart()
   if self._isNpcPet then
     self._task = self:_GetRunningTask()
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
     if self._task then
-      ((self._pet)._fadeCpt).Alpha = 1
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._pet)._finalVisible = true
-      ;
-      (self._pet):_EnableSkinnedMeshRender(true)
-      ;
-      (self._pet):SetOccupied(HomelandPetOccupiedType.FishingMatch)
-      ;
-      ((self._pet):GetPetBehavior()):StartBehavior(HomelandPetBehaviorType.FishingMatch)
-      ;
-      (self._task):DisposeTrace()
-      ;
-      (self._task):DestroyNpcs()
+      self._pet._fadeCpt.Alpha = 1
+      self._pet._finalVisible = true
+      self._pet:_EnableSkinnedMeshRender(true)
+      self._pet:SetOccupied(HomelandPetOccupiedType.FishingMatch)
+      self._pet:GetPetBehavior():StartBehavior(HomelandPetBehaviorType.FishingMatch)
+      self._task:DisposeTrace()
+      self._task:DestroyNpcs()
     end
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.OnEnd = function(self)
-  -- function num : 0_25
+function HomelandFishMatch:OnEnd()
   if self._isNpcPet then
     if self._isTempPet then
-      local homelandClient = ((self._homelandModule):GetUIModule()):GetClient()
+      local homelandClient = self._homelandModule:GetUIModule():GetClient()
       local petMgr = homelandClient:PetManager()
-      petMgr:DeleteTempPet((self._pet):TemplateID())
+      petMgr:DeleteTempPet(self._pet:TemplateID())
+    else
     end
-    do
-      if not self._task then
-        return 
-      end
-      local task = self:_GetRunningTask()
-      if task then
-        task:CreateTaskNpc()
-      end
-      self._task = nil
+    if not self._task then
+      return
     end
+    local task = self:_GetRunningTask()
+    if task then
+      task:CreateTaskNpc()
+    end
+    self._task = nil
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandFishMatch.IsTask = function(self)
-  -- function num : 0_26
+function HomelandFishMatch:IsTask()
   return self.istask
 end
-
-

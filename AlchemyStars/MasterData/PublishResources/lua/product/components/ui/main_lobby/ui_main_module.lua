@@ -1,108 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainModule", UIModule)
 UIMainModule = UIMainModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainModule.Dispose = function(self)
-  -- function num : 0_0
+function UIMainModule:Dispose()
   self._openIdx = nil
   self._openList = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.Constructor = function(self)
-  -- function num : 0_1
+function UIMainModule:Constructor()
   self._openList = {}
   self._openIdx = 1
   self:RegisterAllOpenList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.GetOpenIdx = function(self)
-  -- function num : 0_2
+function UIMainModule:GetOpenIdx()
   return self._openIdx
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.SetOpenIdx = function(self, idx)
-  -- function num : 0_3
+function UIMainModule:SetOpenIdx(idx)
   self._openIdx = idx
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.GetOpenList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMainModule:GetOpenList()
   local retList = {}
-  if self._openList and (table.count)(self._openList) > 0 then
+  if self._openList and table.count(self._openList) > 0 then
     for i = 1, #self._openList do
-      local _data = (self._openList)[i]
-      ;
-      (table.insert)(retList, _data)
+      local _data = self._openList[i]
+      table.insert(retList, _data)
     end
   end
-  do
-    return retList
-  end
+  return retList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.RegisertOpenData = function(self, data)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMainModule:RegisertOpenData(data)
   if not self._openList then
     self._openList = {}
   end
-  if (table.count)(self._openList) > 0 then
+  if table.count(self._openList) > 0 then
     for i = 1, #self._openList do
-      local _data = (self._openList)[i]
+      local _data = self._openList[i]
       if _data.ID == data.ID then
-        (Log.error)("###[UIMainModule] RegisertOpenData -- regisert a same data ! id --> ", data.ID)
-        return 
+        Log.error("###[UIMainModule] RegisertOpenData -- regisert a same data ! id --> ", data.ID)
+        return
       end
     end
   end
-  do
-    local _data = data
-    ;
-    (table.insert)(self._openList, _data)
-    ;
-    (Log.debug)("###[UIMainModule] register one data ! id --> ", data.ID)
-  end
+  local _data = data
+  table.insert(self._openList, _data)
+  Log.debug("###[UIMainModule] register one data ! id --> ", data.ID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.RemoveOpenData = function(self, data)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._openList and (table.count)(self._openList) > 0 then
+function UIMainModule:RemoveOpenData(data)
+  if self._openList and table.count(self._openList) > 0 then
     for i = 1, #self._openList do
-      local _data = (self._openList)[i]
+      local _data = self._openList[i]
       if _data.ID == data.ID then
-        (table.remove)(self._openList, i)
+        table.remove(self._openList, i)
         break
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.RegisterAllOpenList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMainModule:RegisterAllOpenList()
   self:RegisterSignInOpen()
   if not NoNoticeOut then
     self:RegisterNoticeOpen()
   end
-  local regCampaignCfgList = (Cfg.cfg_main_open_list)({NormalAndActivity = 1, Reg = true})
-  if regCampaignCfgList and #regCampaignCfgList > 0 then
+  local regCampaignCfgList = Cfg.cfg_main_open_list({NormalAndActivity = 1, Reg = true})
+  if regCampaignCfgList and 0 < #regCampaignCfgList then
     for i = 1, #regCampaignCfgList do
       local cfg = regCampaignCfgList[i]
       self:RegisterActivityTotalLoginOpen(cfg.UIType)
@@ -110,52 +75,38 @@ UIMainModule.RegisterAllOpenList = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.RegisterSignInOpen = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMainModule:RegisterSignInOpen()
   local uIMainOpenData = UIMainOpenData:New(UIMainOpenType.SignIn, function()
-    -- function num : 0_8_0 , upvalues : _ENV
-    local isPassMissionID = ((Cfg.cfg_global).signInPassMissionID).IntValue
-    local missionModule = (GameGlobal.GetModule)(MissionModule)
+    local isPassMissionID = Cfg.cfg_global.signInPassMissionID.IntValue
+    local missionModule = GameGlobal.GetModule(MissionModule)
     local isPass = missionModule:IsPassMissionID(isPassMissionID)
     if not isPass then
       return false
     end
-    local signInModule = (GameGlobal.GetModule)(SignInModule)
+    local signInModule = GameGlobal.GetModule(SignInModule)
     local todaySignIn = signInModule:IsSignInToday()
     if not todaySignIn then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UISignInController")
+      GameGlobal.UIStateManager():ShowDialog("UISignInController")
       return true
     end
     return false
-  end
-, UIMainOpenState.DayOnce)
+  end, UIMainOpenState.DayOnce)
   self:RegisertOpenData(uIMainOpenData)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.RegisterPetOpen = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIMainModule:RegisterPetOpen()
   local uiMainOpenData = UIMainOpenData:New(UIMainOpenType.Pet, function()
-    -- function num : 0_9_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIHeartSpiritController")
+    GameGlobal.UIStateManager():ShowDialog("UIHeartSpiritController")
     return true
-  end
-, UIMainOpenState.DayOnce)
+  end, UIMainOpenState.DayOnce)
   self:RegisertOpenData(uiMainOpenData)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.RegisterNoticeOpen = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIMainModule:RegisterNoticeOpen()
   local uIMainOpenData = UIMainOpenData:New(UIMainOpenType.Notice, function()
-    -- function num : 0_10_0 , upvalues : _ENV
-    local noticeData = ((GameGlobal.GetModule)(LoginModule)):GetNoticeData()
+    local noticeData = GameGlobal.GetModule(LoginModule):GetNoticeData()
     if noticeData == nil then
-      (Log.debug)("###[UIMainModule] noticeData == nil!")
+      Log.debug("###[UIMainModule] noticeData == nil!")
       return false
     end
     local systemState = noticeData:GetNoticeNewStateWithGroup(NoticeType.System)
@@ -164,50 +115,48 @@ UIMainModule.RegisterNoticeOpen = function(self)
     local activeCount = noticeData:GetNoticeCountStateWithGroup(NoticeType.Active)
     local systemState = noticeData:GetNoticeNewStateWithGroup(NoticeType.System)
     local ret = false
-    local noticeOpen = ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_Notify)
-    if noticeOpen and systemState and not noticeData._firstLogin and not NoPopNotice then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UINoticeController", NoticeType.System)
-      ret = true
-    end
-    if activeState and not noticeData._firstLogin and not NoPopNotice then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UINoticeController", NoticeType.Active)
-      ret = true
+    local noticeOpen = GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_Notify)
+    if noticeOpen then
+      if systemState then
+        if not noticeData._firstLogin and not NoPopNotice then
+          GameGlobal.UIStateManager():ShowDialog("UINoticeController", NoticeType.System)
+          ret = true
+        end
+      elseif activeState and not noticeData._firstLogin and not NoPopNotice then
+        GameGlobal.UIStateManager():ShowDialog("UINoticeController", NoticeType.Active)
+        ret = true
+      end
     end
     if not noticeData._firstLogin then
       noticeData:ChangeFirstLogin()
     end
     if not ret then
-      (Log.debug)("###[UIMainModule] notice no pop !")
+      Log.debug("###[UIMainModule] notice no pop !")
     end
     return ret
-  end
-, UIMainOpenState.Once)
+  end, UIMainOpenState.Once)
   self:RegisertOpenData(uIMainOpenData)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.RegisterActivityTotalLoginOpen = function(self, openType)
-  -- function num : 0_11 , upvalues : _ENV
+function UIMainModule:RegisterActivityTotalLoginOpen(openType)
   local componentType = 0
-  local open_cfg = (Cfg.cfg_main_open_list)({UIType = openType})
-  if open_cfg and #open_cfg > 0 then
-    componentType = (open_cfg[1]).RegParam
+  local open_cfg = Cfg.cfg_main_open_list({UIType = openType})
+  if open_cfg and 0 < #open_cfg then
+    componentType = open_cfg[1].RegParam
     if not componentType then
-      return 
+      return
     end
   else
-    return 
+    return
   end
   local campaignType = openType
   local uIMainOpenData = UIMainOpenData:New(openType, function()
-    -- function num : 0_11_0 , upvalues : _ENV, campaignType, openType, componentType
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
     if not campaignModule then
       return false
     end
     local isCmptOpened = false
-    local sampleInfo = (campaignModule.m_campaign_manager):GetSampleByType(campaignType)
+    local sampleInfo = campaignModule.m_campaign_manager:GetSampleByType(campaignType)
     if not sampleInfo then
       return false
     end
@@ -217,129 +166,127 @@ UIMainModule.RegisterActivityTotalLoginOpen = function(self, openType)
     if not isCmptOpened then
       return false
     end
-    do
-      if openType == ECampaignType.CAMPAIGN_TYPE_COLLECT_FROG then
-        local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
-        uiModule:ShowCollectFrogGuide()
-      end
-      local complateFlag = (sampleInfo.m_extend_info)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
-      if complateFlag and complateFlag == 1 then
+    if openType == ECampaignType.CAMPAIGN_TYPE_COLLECT_FROG then
+      local uiModule = GameGlobal.GetUIModule(CampaignModule)
+      uiModule:ShowCollectFrogGuide()
+    end
+    local complateFlag = sampleInfo.m_extend_info[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_CUMULATIVE_LOGIN_COMPLATE]
+    if complateFlag and complateFlag == 1 then
+      return false
+    end
+    if openType == ECampaignType.CAMPAIGN_TYPE_N10 then
+      GameGlobal.UIStateManager():ShowDialog("UIN10TotalLoginAwardController", true, campaignType, componentType)
+    elseif openType == ECampaignType.CAMPAIGN_TYPE_N19_P5 then
+      GameGlobal.UIStateManager():ShowDialog("UIN19P5SignInController", true)
+    elseif openType == ECampaignType.CAMPAIGN_TYPE_N25_NEW_YEAR then
+      GameGlobal.UIStateManager():ShowDialog("UIN25NewYear", true)
+    elseif openType == ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY then
+      local campaign = UIActivityCampaign:New()
+      campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY)
+      local show = UIN31SecondAnniversaryContent.CheckAutoPop(campaign)
+      if show then
+        GameGlobal.UIStateManager():ShowDialog("UISideEnterCenterController", {
+          campaign_type = 10045,
+          params = {true},
+          single_mode = true
+        })
+      else
         return false
       end
-      if openType == ECampaignType.CAMPAIGN_TYPE_N10 then
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIN10TotalLoginAwardController", true, campaignType, componentType)
-      else
-        if openType == ECampaignType.CAMPAIGN_TYPE_N19_P5 then
-          ((GameGlobal.UIStateManager)()):ShowDialog("UIN19P5SignInController", true)
-        else
-          if openType == ECampaignType.CAMPAIGN_TYPE_N25_NEW_YEAR then
-            ((GameGlobal.UIStateManager)()):ShowDialog("UIN25NewYear", true)
-          else
-            if openType == ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY then
-              local campaign = UIActivityCampaign:New()
-              campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY)
-              local show = (UIN31SecondAnniversaryContent.CheckAutoPop)(campaign)
-              if show then
-                ((GameGlobal.UIStateManager)()):ShowDialog("UISideEnterCenterController", {campaign_type = 10045, 
-params = {true}
-, single_mode = true})
-              else
-                return false
-              end
-            else
-              do
-                if openType == ECampaignType.CAMPAIGN_TYPE_INLAND_N7 then
-                  ((GameGlobal.UIStateManager)()):ShowDialog("UICN7N36TotalLoginAwardController", true, ECampaignType.CAMPAIGN_TYPE_INLAND_N7, ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN)
-                else
-                  ;
-                  ((GameGlobal.UIStateManager)()):ShowDialog("UIActivityTotalLoginAwardController", true, campaignType, componentType)
-                end
-                return true
-              end
-            end
-          end
-        end
-      end
+    elseif openType == ECampaignType.CAMPAIGN_TYPE_INLAND_N7 then
+      GameGlobal.UIStateManager():ShowDialog("UICN7N36TotalLoginAwardController", true, ECampaignType.CAMPAIGN_TYPE_INLAND_N7, ECampaignCN7ComponentID.ECAMPAIGN_N7_CUMULATIVE_LOGIN)
+    else
+      GameGlobal.UIStateManager():ShowDialog("UIActivityTotalLoginAwardController", true, campaignType, componentType)
     end
-  end
-, UIMainOpenState.DayOnce)
+    return true
+  end, UIMainOpenState.DayOnce)
   self:RegisertOpenData(uIMainOpenData)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.GetUnLockBGMs = function(self)
-  -- function num : 0_12
+function UIMainModule:GetUnLockBGMs()
   return self._unlockBgms
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.RemoveBGM1 = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIMainModule:RemoveBGM1()
   if self._unlockBgms and next(self._unlockBgms) then
-    (table.remove)(self._unlockBgms, 1)
+    table.remove(self._unlockBgms, 1)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.AddBGM = function(self, id)
-  -- function num : 0_14 , upvalues : _ENV
+function UIMainModule:AddBGM(id)
   if not self._unlockBgms then
     self._unlockBgms = {}
   end
-  if not (table.icontains)(self._unlockBgms, id) then
-    (table.insert)(self._unlockBgms, id)
+  if not table.icontains(self._unlockBgms, id) then
+    table.insert(self._unlockBgms, id)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.CheckEventOpen = function(self, eventType)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_common_event)({Type = eventType})
+function UIMainModule:CheckEventOpen(eventType)
+  local cfgs = Cfg.cfg_common_event({Type = eventType})
   if #cfgs == 0 then
     return false
   end
   local cfg = cfgs[1]
-  local startTime = (HelperProxy:GetInstance()):FormatGMTDateTime(cfg.DateTimeBegin)
-  local endTime = (HelperProxy:GetInstance()):FormatGMTDateTime(cfg.DateTimeEnd)
-  local svrTime = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-  do return startTime <= svrTime and svrTime <= endTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local startTime = HelperProxy:GetInstance():FormatGMTDateTime(cfg.DateTimeBegin)
+  local endTime = HelperProxy:GetInstance():FormatGMTDateTime(cfg.DateTimeEnd)
+  local svrTime = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+  return startTime <= svrTime and endTime >= svrTime
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.SetMainLobbyButtomCloseState = function(self, state)
-  -- function num : 0_16
+function UIMainModule:SetMainLobbyButtomCloseState(state)
   self._close = state
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainModule.GetMainLobbyButtomCloseState = function(self)
-  -- function num : 0_17
+function UIMainModule:GetMainLobbyButtomCloseState()
   return self._close or false
 end
 
 _class("UIMainOpenData", Object)
 UIMainOpenData = UIMainOpenData
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainOpenData.Constructor = function(self, ID, checkFunc, openState)
-  -- function num : 0_18
+function UIMainOpenData:Constructor(ID, checkFunc, openState)
   self.ID = ID
   self.CheckFunc = checkFunc
   self.OpenState = openState
   self.OpenTimes = 0
 end
 
-local UIMainOpenType = {Notice = 1, SignIn = 2, Pet = 3, TempSignIn = 104, YFXS = 10003, FEI = 10004, XIAHUO1 = 10005, XIAHUO2 = 10006, N5 = 10008, HOLLOWEEN = 10009, N7 = 10013, N8 = 10014, N9 = 10015, N10 = 10016, N11 = 10017, N12 = 10018, N13 = 10019, N14 = 10020, N15 = 10021, N16 = 10022, N17 = 10023, N18 = 10024, N19P5 = 10026, N20 = 10027, N21 = 10029, N22 = 10030, N25 = 10034}
+local UIMainOpenType = {
+  Notice = 1,
+  SignIn = 2,
+  Pet = 3,
+  TempSignIn = 104,
+  YFXS = 10003,
+  FEI = 10004,
+  XIAHUO1 = 10005,
+  XIAHUO2 = 10006,
+  N5 = 10008,
+  HOLLOWEEN = 10009,
+  N7 = 10013,
+  N8 = 10014,
+  N9 = 10015,
+  N10 = 10016,
+  N11 = 10017,
+  N12 = 10018,
+  N13 = 10019,
+  N14 = 10020,
+  N15 = 10021,
+  N16 = 10022,
+  N17 = 10023,
+  N18 = 10024,
+  N19P5 = 10026,
+  N20 = 10027,
+  N21 = 10029,
+  N22 = 10030,
+  N25 = 10034
+}
 _enum("UIMainOpenType", UIMainOpenType)
-local UIMainOpenState = {DayOnce = 0, Once = 1, Times = 99}
+local UIMainOpenState = {
+  DayOnce = 0,
+  Once = 1,
+  Times = 99
+}
 _enum("UIMainOpenState", UIMainOpenState)
 local CommonEventType = {LimitedTimeRecharge = 1}
 _enum("CommonEventType", CommonEventType)
-

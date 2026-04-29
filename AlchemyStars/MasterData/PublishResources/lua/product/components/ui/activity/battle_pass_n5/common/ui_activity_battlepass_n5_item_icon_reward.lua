@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/common/ui_activity_battlepass_n5_item_icon_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5ItemIconReward", UICustomWidget)
 UIActivityBattlePassN5ItemIconReward = UIActivityBattlePassN5ItemIconReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5ItemIconReward._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityBattlePassN5ItemIconReward:_GetComponents()
   self._iconObj = self:GetGameObject("icon")
   self._fixedStandardObj = self:GetGameObject("fixedStandard")
   self._fixedEliteObj = self:GetGameObject("fixedElite")
@@ -18,134 +11,105 @@ UIActivityBattlePassN5ItemIconReward._GetComponents = function(self)
   self._state_Taken = self:GetGameObject("state_Taken")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIconReward.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityBattlePassN5ItemIconReward:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIconReward._SetDefault = function(self)
-  -- function num : 0_2
-  (self._iconObj):SetActive(false)
-  ;
-  (self._fixedStandardObj):SetActive(false)
-  ;
-  (self._fixedEliteObj):SetActive(false)
-  ;
-  (self._fixedEliteLockObj):SetActive(false)
-  ;
-  (self._state_NotStart):SetActive(false)
-  ;
-  (self._state_Completed):SetActive(false)
-  ;
-  (self._state_Taken):SetActive(false)
+function UIActivityBattlePassN5ItemIconReward:_SetDefault()
+  self._iconObj:SetActive(false)
+  self._fixedStandardObj:SetActive(false)
+  self._fixedEliteObj:SetActive(false)
+  self._fixedEliteLockObj:SetActive(false)
+  self._state_NotStart:SetActive(false)
+  self._state_Completed:SetActive(false)
+  self._state_Taken:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIconReward.SetData_Fixed = function(self, adv, component)
-  -- function num : 0_3
+function UIActivityBattlePassN5ItemIconReward:SetData_Fixed(adv, component)
   self:_GetComponents()
   self._adv = adv
   self._component = component
   self._info = component:ComponentInfo()
   self:_SetDefault()
-  if not adv or not self._fixedEliteObj then
-    local obj = self._fixedStandardObj
-  end
+  local obj = adv and self._fixedEliteObj or self._fixedStandardObj
   obj:SetActive(true)
-  if adv then
-    (self._fixedEliteLockObj):SetActive(not (self._info).m_unlock_advanced_reward)
-  end
+  self._fixedEliteLockObj:SetActive(adv and not self._info.m_unlock_advanced_reward)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIconReward.SetData = function(self, index, adv, component, clickCallback, tipCallback)
-  -- function num : 0_4 , upvalues : _ENV
-  if not scale then
-    self._scale = UIItemScale.Level2
-    self:_GetComponents()
-    self._index = index
-    self._adv = adv
-    self._component = component
-    self._info = component:ComponentInfo()
-    self._clickCallback = clickCallback
-    self._tipCallback = tipCallback
-    self._state = self:_CheckState(adv)
-    local rewards = {}
-    if not adv then
-      rewards = (self._component):GetNormalRewards()
-    else
-      rewards = (self._component):GetAdvancedRewards()
-    end
-    self._roleAsset = rewards[self._index]
-    self._cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
-    if self._cfg_item == nil then
-      (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._roleAsset).assetid)
-      return 
-    end
-    local cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
-    if cfg_item == nil then
-      (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._roleAsset).assetid)
-      return 
-    end
-    self._cg = cfg_item.Icon
-    self._colorEnum = cfg_item.Color
-    self:_SetState()
-    self:_SetIcon()
-    if adv then
-      (self._fixedEliteLockObj):SetActive(not (self._info).m_unlock_advanced_reward)
-    end
+function UIActivityBattlePassN5ItemIconReward:SetData(index, adv, component, clickCallback, tipCallback)
+  self._scale = scale or UIItemScale.Level2
+  self:_GetComponents()
+  self._index = index
+  self._adv = adv
+  self._component = component
+  self._info = component:ComponentInfo()
+  self._clickCallback = clickCallback
+  self._tipCallback = tipCallback
+  self._state = self:_CheckState(adv)
+  local rewards = {}
+  if not adv then
+    rewards = self._component:GetNormalRewards()
+  else
+    rewards = self._component:GetAdvancedRewards()
   end
+  self._roleAsset = rewards[self._index]
+  self._cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
+  if self._cfg_item == nil then
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._roleAsset.assetid)
+    return
+  end
+  local cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
+  if cfg_item == nil then
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._roleAsset.assetid)
+    return
+  end
+  self._cg = cfg_item.Icon
+  self._colorEnum = cfg_item.Color
+  self:_SetState()
+  self:_SetIcon()
+  self._fixedEliteLockObj:SetActive(adv and not self._info.m_unlock_advanced_reward)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIconReward.OnHide = function(self)
-  -- function num : 0_5
+function UIActivityBattlePassN5ItemIconReward:OnHide()
   self._cg = nil
   self._index = nil
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIconReward._SetIcon = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityBattlePassN5ItemIconReward:_SetIcon()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   local uiItem = sop:SpawnObject("UIItem")
   uiItem:SetForm(UIItemForm.Base, self._scale)
   uiItem:SetClickCallBack(function(go)
-    -- function num : 0_6_0 , upvalues : self
     self:bgOnClick(go)
-  end
-)
+  end)
   local _icon = self._cg
   local _quality = self._colorEnum
-  local _text1 = (self._roleAsset).count
-  local _itemId = (self._roleAsset).assetid
-  uiItem:SetData({icon = _icon, quality = _quality, text1 = _text1, itemId = _itemId})
+  local _text1 = self._roleAsset.count
+  local _itemId = self._roleAsset.assetid
+  uiItem:SetData({
+    icon = _icon,
+    quality = _quality,
+    text1 = _text1,
+    itemId = _itemId
+  })
 end
 
-local UIActivityBattlePassN5ItemIconRewardState = {EState_Lock = 1, EState_Claim = 2, EState_Received = 3}
+local UIActivityBattlePassN5ItemIconRewardState = {
+  EState_Lock = 1,
+  EState_Claim = 2,
+  EState_Received = 3
+}
 _enum("UIActivityBattlePassN5ItemIconRewardState", UIActivityBattlePassN5ItemIconRewardState)
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityBattlePassN5ItemIconReward._CheckState = function(self, adv)
-  -- function num : 0_7 , upvalues : UIActivityBattlePassN5ItemIconRewardState, _ENV
-  if adv and not (self._info).m_unlock_advanced_reward then
+function UIActivityBattlePassN5ItemIconReward:_CheckState(adv)
+  if adv and not self._info.m_unlock_advanced_reward then
     return UIActivityBattlePassN5ItemIconRewardState.EState_Lock
   end
-  if (self._info).m_current_level < self._index then
+  if self._index > self._info.m_current_level then
     return UIActivityBattlePassN5ItemIconRewardState.EState_Lock
   end
-  if not adv or not (self._info).m_received_advanced_lv then
-    local received = (self._info).m_received_normal_lv
-  end
-  for _,v in ipairs(received) do
+  local received = adv and self._info.m_received_advanced_lv or self._info.m_received_normal_lv
+  for _, v in ipairs(received) do
     if v == self._index then
       return UIActivityBattlePassN5ItemIconRewardState.EState_Received
     end
@@ -153,28 +117,18 @@ UIActivityBattlePassN5ItemIconReward._CheckState = function(self, adv)
   return UIActivityBattlePassN5ItemIconRewardState.EState_Claim
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIconReward._SetState = function(self)
-  -- function num : 0_8 , upvalues : UIActivityBattlePassN5ItemIconRewardState
-  (self._state_NotStart):SetActive(self._state == UIActivityBattlePassN5ItemIconRewardState.EState_Lock)
-  ;
-  (self._state_Completed):SetActive(self._state == UIActivityBattlePassN5ItemIconRewardState.EState_Claim)
-  ;
-  (self._state_Taken):SetActive(self._state == UIActivityBattlePassN5ItemIconRewardState.EState_Received)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIActivityBattlePassN5ItemIconReward:_SetState()
+  self._state_NotStart:SetActive(self._state == UIActivityBattlePassN5ItemIconRewardState.EState_Lock)
+  self._state_Completed:SetActive(self._state == UIActivityBattlePassN5ItemIconRewardState.EState_Claim)
+  self._state_Taken:SetActive(self._state == UIActivityBattlePassN5ItemIconRewardState.EState_Received)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIconReward.bgOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : UIActivityBattlePassN5ItemIconRewardState
-  if self._state == UIActivityBattlePassN5ItemIconRewardState.EState_Claim and self._clickCallback then
-    (self._clickCallback)(self._index, self._adv)
-  end
-  if self._tipCallback then
-    (self._tipCallback)((self._roleAsset).assetid, (go.transform).position)
+function UIActivityBattlePassN5ItemIconReward:bgOnClick(go)
+  if self._state == UIActivityBattlePassN5ItemIconRewardState.EState_Claim then
+    if self._clickCallback then
+      self._clickCallback(self._index, self._adv)
+    end
+  elseif self._tipCallback then
+    self._tipCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
-
-

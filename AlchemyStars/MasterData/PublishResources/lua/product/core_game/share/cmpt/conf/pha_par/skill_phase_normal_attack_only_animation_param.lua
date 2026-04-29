@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_normal_attack_only_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseNormalAttackOnlyAnimationParam", SkillPhaseParamBase)
 SkillPhaseNormalAttackOnlyAnimationParam = SkillPhaseNormalAttackOnlyAnimationParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseNormalAttackOnlyAnimationParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseNormalAttackOnlyAnimationParam:Constructor(t)
   self._castTotalTime = t.castTotalTime
   self._longCastTotalTime = t.longCastTotalTime
   self._nDamageIndex = t.damageIndex or 1
@@ -24,24 +17,15 @@ SkillPhaseNormalAttackOnlyAnimationParam.Constructor = function(self, t)
   self._normalDoubleHitAnimation = t.normalDoubleHitAnimation
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseNormalAttackOnlyAnimationParam:GetPhaseType()
   return SkillViewPhaseType.NormalAttackOnlyAnimation
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetCastEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseNormalAttackOnlyAnimationParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetAnimationName = function(self, isFinalAttack)
-  -- function num : 0_3
+function SkillPhaseNormalAttackOnlyAnimationParam:GetAnimationName(isFinalAttack)
   if isFinalAttack and self._castLongAnimation then
     return self._castLongAnimation
   else
@@ -49,10 +33,7 @@ SkillPhaseNormalAttackOnlyAnimationParam.GetAnimationName = function(self, isFin
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetHitPointDelay = function(self, isFinalAttack)
-  -- function num : 0_4
+function SkillPhaseNormalAttackOnlyAnimationParam:GetHitPointDelay(isFinalAttack)
   if isFinalAttack and self._longHitPointDelay then
     return self._longHitPointDelay
   else
@@ -60,10 +41,7 @@ SkillPhaseNormalAttackOnlyAnimationParam.GetHitPointDelay = function(self, isFin
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetCastTotalTime = function(self, isFinalAttack)
-  -- function num : 0_5
+function SkillPhaseNormalAttackOnlyAnimationParam:GetCastTotalTime(isFinalAttack)
   if isFinalAttack and self._longCastTotalTime then
     return self._longCastTotalTime
   else
@@ -71,21 +49,18 @@ SkillPhaseNormalAttackOnlyAnimationParam.GetCastTotalTime = function(self, isFin
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetCacheTable = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillPhaseNormalAttackOnlyAnimationParam:GetCacheTable()
   local t = {}
   if self._castEffectID and self._castEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetHitEffectDelay = function(self, isFinalAttack)
-  -- function num : 0_7
+function SkillPhaseNormalAttackOnlyAnimationParam:GetHitEffectDelay(isFinalAttack)
   if isFinalAttack and self._longAtkEffectDelay then
     return self._longAtkEffectDelay
   else
@@ -93,25 +68,14 @@ SkillPhaseNormalAttackOnlyAnimationParam.GetHitEffectDelay = function(self, isFi
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetDamageIndex = function(self)
-  -- function num : 0_8
+function SkillPhaseNormalAttackOnlyAnimationParam:GetDamageIndex()
   return self._nDamageIndex
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetNormalDoubleHitEffectID = function(self)
-  -- function num : 0_9
+function SkillPhaseNormalAttackOnlyAnimationParam:GetNormalDoubleHitEffectID()
   return self._normalDoubleHitEffectID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackOnlyAnimationParam.GetNormalDoubleHitAnimation = function(self)
-  -- function num : 0_10
+function SkillPhaseNormalAttackOnlyAnimationParam:GetNormalDoubleHitAnimation()
   return self._normalDoubleHitAnimation
 end
-
-

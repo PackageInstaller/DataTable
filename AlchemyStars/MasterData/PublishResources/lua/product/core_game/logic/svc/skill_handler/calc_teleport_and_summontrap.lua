@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_teleport_and_summontrap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_TeleportAndSummonTrap", Object)
 SkillEffectCalc_TeleportAndSummonTrap = SkillEffectCalc_TeleportAndSummonTrap
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_TeleportAndSummonTrap.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_TeleportAndSummonTrap:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TeleportAndSummonTrap.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_TeleportAndSummonTrap:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
   self._trapPosList = {}
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local attrCmpt = casterEntity:Attributes()
   local hp = attrCmpt:GetCurrentHP()
   local maxHP = attrCmpt:CalcMaxHp()
@@ -32,103 +22,72 @@ SkillEffectCalc_TeleportAndSummonTrap.DoSkillEffectCalculator = function(self, s
   end
   local gridAreaList = effectParam:GetGridAreaArray()
   local tmpList = {}
-  for i,_ in ipairs(gridAreaList) do
-    (table.insert)(tmpList, i)
+  for i, _ in ipairs(gridAreaList) do
+    table.insert(tmpList, i)
   end
-  local randomServiceLogic = (self._world):GetService("RandomLogic")
+  local randomServiceLogic = self._world:GetService("RandomLogic")
   for i = 1, telePortCount do
     local index = randomServiceLogic:LogicRand(1, #tmpList)
     local randAreaIndex = tmpList[index]
-    ;
-    (Log.debug)("TeleportIndex:", randAreaIndex)
+    Log.debug("TeleportIndex:", randAreaIndex)
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, i == telePortCount, randAreaIndex)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
-    ;
-    (table.removev)(tmpList, randAreaIndex)
+    table.removev(tmpList, randAreaIndex)
   end
-  do return results end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TeleportAndSummonTrap._CalculateSingleTarget = function(self, skillEffectCalcParam, isLast, randAreaIndex)
-  -- function num : 0_2 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+function SkillEffectCalc_TeleportAndSummonTrap:_CalculateSingleTarget(skillEffectCalcParam, isLast, randAreaIndex)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local effectParam = skillEffectCalcParam:GetSkillEffectParam()
   local trapCount = effectParam:GetTrapCount()
   local gridAreaList = effectParam:GetGridAreaArray()
-  local trapSvc = (self._world):GetService("TrapLogic")
-  local randomServiceLogic = (self._world):GetService("RandomLogic")
+  local trapSvc = self._world:GetService("TrapLogic")
+  local randomServiceLogic = self._world:GetService("RandomLogic")
   local tempGridList = {}
   local teleportGridList = {}
   local gridArea = gridAreaList[randAreaIndex]
-  for i,pos in ipairs(gridArea) do
-    (table.insert)(tempGridList, pos:Clone())
-    ;
-    (table.insert)(teleportGridList, pos:Clone())
+  for i, pos in ipairs(gridArea) do
+    table.insert(tempGridList, pos:Clone())
+    table.insert(teleportGridList, pos:Clone())
   end
   if teleportGridList == {} then
-    (Log.fatal)("teleportGridList is empty Index:", randAreaIndex)
+    Log.fatal("teleportGridList is empty Index:", randAreaIndex)
   end
   local bFind = false
   local monsterIDCmpt = casterEntity:MonsterID()
-  local utilDataSvc = ((self._world):GetService("UtilData"))
-  local teleportPos = nil
-  while 1 do
-    if not bFind or #tempGridList == 0 then
-      local index = randomServiceLogic:LogicRand(1, #teleportGridList)
-      do
-        local pos = teleportGridList[index]
-        ;
-        (table.remove)(teleportGridList, index)
-        if not utilDataSvc:IsPosBlock(pos, monsterIDCmpt:GetMonsterBlockData()) then
-          teleportPos = pos
-          bFind = true
-        end
-        -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC80: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  local utilDataSvc = self._world:GetService("UtilData")
+  local teleportPos
+  while not bFind or #tempGridList == 0 do
+    local index = randomServiceLogic:LogicRand(1, #teleportGridList)
+    local pos = teleportGridList[index]
+    table.remove(teleportGridList, index)
+    if not utilDataSvc:IsPosBlock(pos, monsterIDCmpt:GetMonsterBlockData()) then
+      teleportPos = pos
+      bFind = true
     end
   end
   local trapID = effectParam:GetTrapID()
   local trapPosList = {}
-  while 1 do
-    if trapCount > 0 or #tempGridList == 0 then
-      local index = randomServiceLogic:LogicRand(1, #tempGridList)
-      do
-        local pos = tempGridList[index]
-        ;
-        (table.remove)(tempGridList, index)
-        if not trapSvc:CanSummonTrapOnPos(pos, trapID) or not (table.Vector2Include)(self._trapPosList, pos) then
-          (table.insert)(trapPosList, pos)
-          ;
-          (table.insert)(self._trapPosList, pos)
-          trapCount = trapCount - 1
-        end
-        -- DECOMPILER ERROR at PC123: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC123: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  while 0 < trapCount or #tempGridList == 0 do
+    local index = randomServiceLogic:LogicRand(1, #tempGridList)
+    local pos = tempGridList[index]
+    table.remove(tempGridList, index)
+    if trapSvc:CanSummonTrapOnPos(pos, trapID) and not table.Vector2Include(self._trapPosList, pos) then
+      table.insert(trapPosList, pos)
+      table.insert(self._trapPosList, pos)
+      trapCount = trapCount - 1
     end
   end
-  do
-    if isLast then
-      local pos = teleportPos
-      if trapSvc:CanSummonTrapOnPos(pos, trapID) and not (table.Vector2Include)(self._trapPosList, pos) then
-        (table.insert)(trapPosList, pos)
-        ;
-        (table.insert)(self._trapPosList, pos)
-      end
+  if isLast then
+    local pos = teleportPos
+    if trapSvc:CanSummonTrapOnPos(pos, trapID) and not table.Vector2Include(self._trapPosList, pos) then
+      table.insert(trapPosList, pos)
+      table.insert(self._trapPosList, pos)
     end
-    local result = SkillEffectTeleportAndSummonTrapResult:New(trapPosList, teleportPos)
-    return result
   end
+  local result = SkillEffectTeleportAndSummonTrapResult:New(trapPosList, teleportPos)
+  return result
 end
-
-

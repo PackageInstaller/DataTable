@@ -1,170 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/logic_trap_wall_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LogicTrapWallComponent", Object)
 LogicTrapWallComponent = LogicTrapWallComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicTrapWallComponent.Constructor = function(self)
-  -- function num : 0_0
+function LogicTrapWallComponent:Constructor()
   self._wallDataList = {}
   self._trapWallPosListWithEntity = {}
   self._trapWallPosList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicTrapWallComponent.GetWallList = function(self)
-  -- function num : 0_1
+function LogicTrapWallComponent:GetWallList()
   return self._wallDataList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicTrapWallComponent.GetTrapWallPosList = function(self)
-  -- function num : 0_2
+function LogicTrapWallComponent:GetTrapWallPosList()
   return self._trapWallPosList
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicTrapWallComponent.AddTrapWall = function(self, casterEntityID, pos, dir)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._wallDataList)[pos.x] then
-    (self._wallDataList)[pos.x] = {}
+function LogicTrapWallComponent:AddTrapWall(casterEntityID, pos, dir)
+  if not self._wallDataList[pos.x] then
+    self._wallDataList[pos.x] = {}
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._wallDataList)[pos.x])[pos.y] = LogicTrapWallData:New(casterEntityID, pos, dir)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._trapWallPosListWithEntity)[casterEntityID] then
-    (self._trapWallPosListWithEntity)[casterEntityID] = {}
+  self._wallDataList[pos.x][pos.y] = LogicTrapWallData:New(casterEntityID, pos, dir)
+  if not self._trapWallPosListWithEntity[casterEntityID] then
+    self._trapWallPosListWithEntity[casterEntityID] = {}
   end
-  ;
-  (table.insert)((self._trapWallPosListWithEntity)[casterEntityID], pos)
-  if not (table.icontains)(self._trapWallPosList, pos) then
-    (table.insert)(self._trapWallPosList, pos)
+  table.insert(self._trapWallPosListWithEntity[casterEntityID], pos)
+  if not table.icontains(self._trapWallPosList, pos) then
+    table.insert(self._trapWallPosList, pos)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicTrapWallComponent.RemoveTrapWall = function(self, pos)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (self._wallDataList)[pos.x] then
-    return 
+function LogicTrapWallComponent:RemoveTrapWall(pos)
+  if not self._wallDataList[pos.x] then
+    return
   end
-  local wallData = ((self._wallDataList)[pos.x])[pos.y]
+  local wallData = self._wallDataList[pos.x][pos.y]
   local casterEntityID = wallData:GetCasterEntityID()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._wallDataList)[pos.x])[pos.y] = nil
-  ;
-  (table.removev)(self._trapWallPosList, pos)
-  if (self._trapWallPosListWithEntity)[casterEntityID] then
-    (table.removev)((self._trapWallPosListWithEntity)[casterEntityID], pos)
+  self._wallDataList[pos.x][pos.y] = nil
+  table.removev(self._trapWallPosList, pos)
+  if self._trapWallPosListWithEntity[casterEntityID] then
+    table.removev(self._trapWallPosListWithEntity[casterEntityID], pos)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicTrapWallComponent.GetTrapWall = function(self, pos)
-  -- function num : 0_5
-  if not (self._wallDataList)[pos.x] then
+function LogicTrapWallComponent:GetTrapWall(pos)
+  if not self._wallDataList[pos.x] then
     return nil
   end
-  local wall = ((self._wallDataList)[pos.x])[pos.y]
+  local wall = self._wallDataList[pos.x][pos.y]
   return wall
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicTrapWallComponent.GetTrapWallPosListByEntityID = function(self, casterEntityID)
-  -- function num : 0_6
-  local wallPosList = (self._trapWallPosListWithEntity)[casterEntityID]
+function LogicTrapWallComponent:GetTrapWallPosListByEntityID(casterEntityID)
+  local wallPosList = self._trapWallPosListWithEntity[casterEntityID]
   return wallPosList
 end
 
 _class("LogicTrapWallData", Object)
 LogicTrapWallData = LogicTrapWallData
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicTrapWallData.Constructor = function(self, casterEntityID, pos, dir)
-  -- function num : 0_7 , upvalues : _ENV
+function LogicTrapWallData:Constructor(casterEntityID, pos, dir)
   self._casterEntityID = casterEntityID
   self._pos = pos
-  if not dir then
-    self._dir = Vector2(0, 0)
-  end
+  self._dir = dir or Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicTrapWallData.GetCasterEntityID = function(self)
-  -- function num : 0_8
+function LogicTrapWallData:GetCasterEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicTrapWallData.GetPos = function(self)
-  -- function num : 0_9
+function LogicTrapWallData:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicTrapWallData.GetDir = function(self)
-  -- function num : 0_10
+function LogicTrapWallData:GetDir()
   return self._dir
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicTrapWall = function(self)
-  -- function num : 0_11
-  return self:GetComponent((self.WEComponentsEnum).LogicTrapWall)
+function Entity:LogicTrapWall()
+  return self:GetComponent(self.WEComponentsEnum.LogicTrapWall)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicTrapWall = function(self)
-  -- function num : 0_12
-  return self:HasComponent((self.WEComponentsEnum).LogicTrapWall)
+function Entity:HasLogicTrapWall()
+  return self:HasComponent(self.WEComponentsEnum.LogicTrapWall)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicTrapWall = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicTrapWall
+function Entity:AddLogicTrapWall()
+  local index = self.WEComponentsEnum.LogicTrapWall
   local component = LogicTrapWallComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLogicTrapWall = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicTrapWall
+function Entity:ReplaceLogicTrapWall()
+  local index = self.WEComponentsEnum.LogicTrapWall
   local component = LogicTrapWallComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicTrapWall = function(self)
-  -- function num : 0_15
+function Entity:RemoveLogicTrapWall()
   if self:HasLogicTrapWall() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicTrapWall)
+    self:RemoveComponent(self.WEComponentsEnum.LogicTrapWall)
   end
 end
-
-

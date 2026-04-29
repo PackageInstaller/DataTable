@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_medical_money.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMaze_Campsites_Medical_Money", UICustomWidget)
 UISeasonMaze_Campsites_Medical_Money = UISeasonMaze_Campsites_Medical_Money
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_Medical_Money.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMaze_Campsites_Medical_Money:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical_Money.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMaze_Campsites_Medical_Money:InitWidget()
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical_Money.SetData = function(self, count, clickCb)
-  -- function num : 0_2
-  (self.txtCount):SetText(count)
+function UISeasonMaze_Campsites_Medical_Money:SetData(count, clickCb)
+  self.txtCount:SetText(count)
   self._clickCb = clickCb
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_Medical_Money.IconOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonMaze_Campsites_Medical_Money:IconOnClick(go)
   if self._clickCb then
-    (self._clickCb)()
+    self._clickCb()
   end
 end
-
-

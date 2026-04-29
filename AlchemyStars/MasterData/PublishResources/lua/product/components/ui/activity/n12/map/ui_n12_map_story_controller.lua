@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/map/ui_n12_map_story_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_n12_map_controller")
 _class("UIN12MapStoryController", UIN12MapController)
 UIN12MapStoryController = UIN12MapStoryController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12MapStoryController.GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12MapStoryController:GetComponents()
   self._descTex = self:GetUIComponent("UILocalizationText", "desc")
   self._btnTex = self:GetUIComponent("UILocalizedTMP", "btnTex")
   self._passGo = self:GetGameObject("pass")
@@ -21,57 +14,40 @@ UIN12MapStoryController.GetComponents = function(self)
   self._atlas = self:GetAsset("UIN12_Entrust.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapStoryController.OnValue = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN12MapStoryController:OnValue()
   local cfg = self:Cfg()
-  local params = (cfg.Params)[1]
+  local params = cfg.Params[1]
   self._storyID = params.StoryID
   self._desc = params.Desc
   self:SetPass()
-  local title = nil
+  local title
   if self._pass then
-    title = (StringTable.Get)("str_n12_map_story_look_again")
+    title = StringTable.Get("str_n12_map_story_look_again")
   else
-    title = (StringTable.Get)("str_n12_map_story_look")
+    title = StringTable.Get("str_n12_map_story_look")
   end
   self:SetTextMat()
-  ;
-  (self._btnTex):SetText(title)
+  self._btnTex:SetText(title)
   self:ChangeTextWidth(self._btnTex)
-  ;
-  (self._descTex):SetText((StringTable.Get)(self._desc))
+  self._descTex:SetText(StringTable.Get(self._desc))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapStoryController.btnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIStoryController", self._storyID, function()
-    -- function num : 0_2_0 , upvalues : self
+function UIN12MapStoryController:btnOnClick(go)
+  GameGlobal.UIStateManager():ShowDialog("UIStoryController", self._storyID, function()
     if not self._pass then
       self:RequestFinishEvent()
     else
       self:CloseDialog()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapStoryController.OnFinishEvent = function(self, rewards)
-  -- function num : 0_3 , upvalues : _ENV
-  if rewards and (table.count)(rewards) > 0 then
-    self:ShowDialog("UIN12MapGetRewardsController", (StringTable.Get)("str_activity_battlepass_buy_deluxe_claim"), rewards, function()
-    -- function num : 0_3_0 , upvalues : self
-    self:CloseDialog()
-  end
-)
+function UIN12MapStoryController:OnFinishEvent(rewards)
+  if rewards and table.count(rewards) > 0 then
+    self:ShowDialog("UIN12MapGetRewardsController", StringTable.Get("str_activity_battlepass_buy_deluxe_claim"), rewards, function()
+      self:CloseDialog()
+    end)
   else
     self:CloseDialog()
   end
 end
-
-

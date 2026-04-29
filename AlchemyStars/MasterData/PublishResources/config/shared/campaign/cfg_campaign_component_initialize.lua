@@ -1,19 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_campaign_component_initialize.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ComponentID = 1, Type = 2, ParamIDs = 3}
+local key = {
+  ComponentID = 1,
+  Type = 2,
+  ParamIDs = 3
+}
 local config = {
-[506808108] = {506808108, 1, 
-{
-{8800101, 1}
-, 
-{8800201, 2}
-, 
-{8800401, 2}
-}
-}
+  [506808108] = {
+    506808108,
+    1,
+    {
+      {8800101, 1},
+      {8800201, 2},
+      {8800401, 2}
+    }
+  }
 }
 return config, "ComponentID", key
-

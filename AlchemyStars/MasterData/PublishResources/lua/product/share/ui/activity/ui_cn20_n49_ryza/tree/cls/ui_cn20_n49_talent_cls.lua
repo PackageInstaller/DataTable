@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/tree/cls/ui_cn20_n49_talent_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CN20N49Tree_Skill", Object)
 CN20N49Tree_Skill = CN20N49Tree_Skill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CN20N49Tree_Skill.Constructor = function(self, rootid, type, lock, canBuy, level, using, costCount, comCfgId)
-  -- function num : 0_0
+function CN20N49Tree_Skill:Constructor(rootid, type, lock, canBuy, level, using, costCount, comCfgId)
   self.rootid = rootid
   self.type = type
   self.lock = lock
@@ -19,93 +12,82 @@ CN20N49Tree_Skill.Constructor = function(self, rootid, type, lock, canBuy, level
   self.comCfgId = comCfgId
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_Skill.GetSkillType = function(self)
-  -- function num : 0_1
+function CN20N49Tree_Skill:GetSkillType()
   return self.type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_Skill.GetCfg = function(self, lv)
-  -- function num : 0_2 , upvalues : _ENV
-  local tempLv = nil
+function CN20N49Tree_Skill:GetCfg(lv)
+  local tempLv
   if lv then
     tempLv = lv
   else
     tempLv = self.level
   end
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgId, SkillTypeID = self.rootid, Level = tempLv})
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgId,
+    SkillTypeID = self.rootid,
+    Level = tempLv
+  })
   return cfgs[1]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_Skill.GetLevelMax = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgId, SkillTypeID = self.rootid})
+function CN20N49Tree_Skill:GetLevelMax()
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgId,
+    SkillTypeID = self.rootid
+  })
   return #cfgs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_Skill.Enough = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CN20N49Tree_Skill:Enough()
   if self:LvMax() then
     return nil
   end
-  ;
-  (self:GetCfg(self.level + 1))
-  local cfg = nil
-  local costNumber = nil
+  local cfg = self:GetCfg(self.level + 1)
+  local costNumber
   if self.level > 0 then
     local costid = cfg.CostItemId
-    local haveCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(costid)
-    costNumber = (self:GetCfg(self.level + 1)).UpgradeCost
-    return costNumber <= haveCount
+    local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(costid)
+    costNumber = self:GetCfg(self.level + 1).UpgradeCost
+    return haveCount >= costNumber
   else
-    local priceId = (cfg.Price)[1]
-    local priceCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(priceId)
-    costNumber = ((self:GetCfg(1)).Price)[2]
-    return costNumber <= priceCount
+    local priceId = cfg.Price[1]
+    local priceCount = GameGlobal.GetModule(ItemModule):GetItemCount(priceId)
+    costNumber = self:GetCfg(1).Price[2]
+    return priceCount >= costNumber
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_Skill.LvMax = function(self)
-  -- function num : 0_5
+function CN20N49Tree_Skill:LvMax()
   local lvMax = self:GetLevelMax()
-  do return lvMax <= self.level end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return lvMax <= self.level
 end
 
 _class("CN20N49Tree_SkillCfg", Object)
 CN20N49Tree_SkillCfg = CN20N49Tree_SkillCfg
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-CN20N49Tree_SkillCfg.Constructor = function(self, com)
-  -- function num : 0_6 , upvalues : _ENV
+function CN20N49Tree_SkillCfg:Constructor(com)
   self.talentTreeCom = com
-  self._comCfgId = (self.talentTreeCom):GetComponentCfgId()
-  self.talentTreeComInfo = (self.talentTreeCom):GetComponentInfo()
+  self._comCfgId = self.talentTreeCom:GetComponentCfgId()
+  self.talentTreeComInfo = self.talentTreeCom:GetComponentInfo()
   self._passiveCfgList = {}
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self._comCfgId, Type = SeasonTalentSkillType.Passive, Level = 1})
-  for key,value in pairs(cfgs) do
-    (table.insert)(self._passiveCfgList, value)
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self._comCfgId,
+    Type = SeasonTalentSkillType.Passive,
+    Level = 1
+  })
+  for key, value in pairs(cfgs) do
+    table.insert(self._passiveCfgList, value)
   end
-  ;
-  (table.sort)(self._passiveCfgList, function(a, b)
-    -- function num : 0_6_0
-    do return a.OrderId < b.OrderId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._passiveCfgList, function(a, b)
+    return a.OrderId < b.OrderId
+  end)
   self._skillDataMap = {}
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self._comCfgId, Level = 1})
-  for key,value in pairs(cfgs) do
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self._comCfgId,
+    Level = 1
+  })
+  for key, value in pairs(cfgs) do
     local rootid = value.SkillTypeID
     local type = self:GetRootIDType(rootid)
     local using = self:GetSkillUsing(rootid)
@@ -114,38 +96,23 @@ CN20N49Tree_SkillCfg.Constructor = function(self, com)
     local lock = self:GetSkillLock(rootid, type, level, costCount)
     local canBuy = self:GetSkillCanBuy(rootid, lock, type, level)
     local obj = CN20N49Tree_Skill:New(rootid, type, lock, canBuy, level, using, costCount, self._comCfgId)
-    -- DECOMPILER ERROR at PC88: Confused about usage of register: R17 in 'UnsetPending'
-
-    ;
-    (self._skillDataMap)[rootid] = obj
+    self._skillDataMap[rootid] = obj
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.PassiveCfgList = function(self)
-  -- function num : 0_7
+function CN20N49Tree_SkillCfg:PassiveCfgList()
   return self._passiveCfgList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.RootIDMap = function(self)
-  -- function num : 0_8
+function CN20N49Tree_SkillCfg:RootIDMap()
   return self._skillDataMap
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.ComCfgID = function(self)
-  -- function num : 0_9
+function CN20N49Tree_SkillCfg:ComCfgID()
   return self._comCfgId
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.GetSkillLock = function(self, rootid, type, level, costCount)
-  -- function num : 0_10 , upvalues : _ENV
+function CN20N49Tree_SkillCfg:GetSkillLock(rootid, type, level, costCount)
   local lock = false
   local idx, pre = self:GetSkillIdxAndPreSkill(rootid)
   if type == SeasonTalentSkillType.Passive then
@@ -154,80 +121,60 @@ CN20N49Tree_SkillCfg.GetSkillLock = function(self, rootid, type, level, costCoun
     else
       local preRoot = pre[#pre]
       local level = self:GetSkillLevel(preRoot)
-      if level > 0 then
+      if 0 < level then
         lock = false
       else
         lock = true
       end
     end
   else
-    do
-      do
-        local level = self:GetSkillLevel(pre)
-        if level > 0 then
-          lock = false
-        else
-          lock = true
-        end
-        return lock
-      end
+    local level = self:GetSkillLevel(pre)
+    if 0 < level then
+      lock = false
+    else
+      lock = true
     end
   end
+  return lock
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.GetSkillLevel = function(self, rootid)
-  -- function num : 0_11
-  local info = (self.talentTreeComInfo).m_talent_info
+function CN20N49Tree_SkillCfg:GetSkillLevel(rootid)
+  local info = self.talentTreeComInfo.m_talent_info
   local level = 0
-  if (info.m_skill_list)[rootid] then
-    level = (info.m_skill_list)[rootid]
+  if info.m_skill_list[rootid] then
+    level = info.m_skill_list[rootid]
   end
   return level
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.GetSkillUsing = function(self, rootid)
-  -- function num : 0_12 , upvalues : _ENV
-  local info = (self.talentTreeComInfo).m_talent_info
+function CN20N49Tree_SkillCfg:GetSkillUsing(rootid)
+  local info = self.talentTreeComInfo.m_talent_info
   if info.m_skill_solt then
-    for key,value in pairs(info.m_skill_solt) do
+    for key, value in pairs(info.m_skill_solt) do
       if value == rootid then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.GetSkillCostCount = function(self, rootid, type)
-  -- function num : 0_13 , upvalues : _ENV
-  local costCount = nil
-  do
-    if type == SeasonTalentSkillType.Passive then
-      local info = (self.talentTreeComInfo).m_talent_info
-      if (info.m_skill_cost)[rootid] then
-        costCount = (info.m_skill_cost)[rootid]
-      else
-        costCount = 0
-      end
+function CN20N49Tree_SkillCfg:GetSkillCostCount(rootid, type)
+  local costCount
+  if type == SeasonTalentSkillType.Passive then
+    local info = self.talentTreeComInfo.m_talent_info
+    if info.m_skill_cost[rootid] then
+      costCount = info.m_skill_cost[rootid]
+    else
+      costCount = 0
     end
-    return costCount
   end
+  return costCount
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.GetSkillCanBuy = function(self, rootid, lock, type, level)
-  -- function num : 0_14 , upvalues : _ENV
+function CN20N49Tree_SkillCfg:GetSkillCanBuy(rootid, lock, type, level)
   local maxLv = self:GetRootIDMaxLv(rootid)
-  if maxLv and maxLv <= level then
+  if maxLv and level >= maxLv then
     return false
   end
   if type == SeasonTalentSkillType.Passive then
@@ -238,115 +185,101 @@ CN20N49Tree_SkillCfg.GetSkillCanBuy = function(self, rootid, lock, type, level)
       else
         return false
       end
-    else
-      if ((self._skillDataMap)[pre[#pre]]).level > 0 then
-        local allCost = 0
-        for index,preRoot in ipairs(pre) do
-          local tempCost = self:GetSkillCostCount(preRoot, SeasonTalentSkillType.Passive)
-          allCost = allCost + tempCost
-        end
-        local needCost = self:GetBuyNeedCost(rootid)
-        if needCost <= allCost then
-          if self:CheckCostEnough(rootid, level) then
-            return true
-          else
-            return false
-          end
+    elseif self._skillDataMap[pre[#pre]].level > 0 then
+      local allCost = 0
+      for index, preRoot in ipairs(pre) do
+        local tempCost = self:GetSkillCostCount(preRoot, SeasonTalentSkillType.Passive)
+        allCost = allCost + tempCost
+      end
+      local needCost = self:GetBuyNeedCost(rootid)
+      if allCost >= needCost then
+        if self:CheckCostEnough(rootid, level) then
+          return true
         else
           return false
         end
       else
-        do
-          do
-            do return false end
-            if lock then
-              return false
-            else
-              if self:CheckCostEnough(rootid, level) then
-                return true
-              else
-                return false
-              end
-            end
-          end
-        end
+        return false
       end
+    else
+      return false
     end
+  elseif lock then
+    return false
+  elseif self:CheckCostEnough(rootid, level) then
+    return true
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.CheckCostEnough = function(self, rootid, level)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self._comCfgId, SkillTypeID = rootid, Level = level + 1})
+function CN20N49Tree_SkillCfg:CheckCostEnough(rootid, level)
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self._comCfgId,
+    SkillTypeID = rootid,
+    Level = level + 1
+  })
   local cfg = cfgs[1]
-  local costCount = nil
+  local costCount
   if level == 0 then
-    local priceId = (cfg.Price)[1]
-    local priceCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(priceId)
-    costCount = (cfg.Price)[2]
-    return costCount <= priceCount
+    local priceId = cfg.Price[1]
+    local priceCount = GameGlobal.GetModule(ItemModule):GetItemCount(priceId)
+    costCount = cfg.Price[2]
+    return priceCount >= costCount
   else
     local costid = cfg.CostItemId
-    local haveCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(costid)
+    local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(costid)
     costCount = cfg.UpgradeCost
-    return costCount <= haveCount
+    return haveCount >= costCount
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.GetRootIDType = function(self, rootid)
-  -- function num : 0_16 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self._comCfgId, SkillTypeID = rootid, Level = 1})
+function CN20N49Tree_SkillCfg:GetRootIDType(rootid)
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self._comCfgId,
+    SkillTypeID = rootid,
+    Level = 1
+  })
   local cfg = cfgs[1]
   return cfg.Type
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.GetRootIDMaxLv = function(self, rootid)
-  -- function num : 0_17 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self._comCfgId, SkillTypeID = rootid})
+function CN20N49Tree_SkillCfg:GetRootIDMaxLv(rootid)
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self._comCfgId,
+    SkillTypeID = rootid
+  })
   return #cfgs
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.GetSkillIdxAndPreSkill = function(self, rootid)
-  -- function num : 0_18 , upvalues : _ENV
+function CN20N49Tree_SkillCfg:GetSkillIdxAndPreSkill(rootid)
   local type = self:GetRootIDType(rootid)
   if type == SeasonTalentSkillType.Passive then
     local preList = {}
-    for index,value in ipairs(self._passiveCfgList) do
+    for index, value in ipairs(self._passiveCfgList) do
       if value.SkillTypeID ~= rootid then
-        (table.insert)(preList, value.SkillTypeID)
+        table.insert(preList, value.SkillTypeID)
       else
         return index, preList
       end
     end
   else
-    do
-      for index,value in ipairs(self._passiveCfgList) do
-        for index2,childid in ipairs(value.ChildSkill) do
-          if childid == rootid then
-            return 1, value.SkillTypeID
-          end
+    for index, value in ipairs(self._passiveCfgList) do
+      for index2, childid in ipairs(value.ChildSkill) do
+        if childid == rootid then
+          return 1, value.SkillTypeID
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-CN20N49Tree_SkillCfg.GetBuyNeedCost = function(self, rootid)
-  -- function num : 0_19 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self._comCfgId, SkillTypeID = rootid, Level = 1})
+function CN20N49Tree_SkillCfg:GetBuyNeedCost(rootid)
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self._comCfgId,
+    SkillTypeID = rootid,
+    Level = 1
+  })
   local cfg = cfgs[1]
   return cfg.NeedCost
 end
-
-

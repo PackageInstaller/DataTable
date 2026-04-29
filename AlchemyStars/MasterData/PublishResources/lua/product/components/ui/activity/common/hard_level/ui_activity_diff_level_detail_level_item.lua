@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/hard_level/ui_activity_diff_level_detail_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityDiffLevelDetailLevelItem", UICustomWidget)
 UIActivityDiffLevelDetailLevelItem = UIActivityDiffLevelDetailLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDiffLevelDetailLevelItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityDiffLevelDetailLevelItem:OnShow(uiParam)
   self._atlas = self:GetAsset("UIDiffMission.spriteatlas", LoadType.SpriteAtlas)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelDetailLevelItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIActivityDiffLevelDetailLevelItem:GetComponents()
   self._nameTex = self:GetUIComponent("UILocalizationText", "name")
   self._finishGo = self:GetGameObject("finish")
   self._teamPool = self:GetUIComponent("UISelectObjectPath", "team")
@@ -24,68 +14,49 @@ UIActivityDiffLevelDetailLevelItem.GetComponents = function(self)
   self._typeImg = self:GetUIComponent("Image", "type")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelDetailLevelItem.SetData = function(self, data, cb)
-  -- function num : 0_2 , upvalues : _ENV
-  do
-    if data == nil then
-      local pools = (self._teamPool):GetAllSpawnList()
-      for i = 1, #pools do
-        local item = pools[i]
-        item:SetData(0)
-      end
-      return 
-    end
-    self._data = data
-    self._cb = cb
-    ;
-    (self._nameTex):SetText((self._data):GetName())
-    ;
-    (self._finishGo):SetActive((self._data):IsComplete())
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rect).anchoredPosition = (self._data):GetPosition()
-    local sprite = nil
-    if (self._data):GetLevelType() == DiffMissionType.Boss then
-      sprite = (self._atlas):GetSprite("map_black_icon15")
-    else
-      sprite = (self._atlas):GetSprite("map_black_icon12")
-    end
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._typeImg).sprite = sprite
-    local team = (self._data):GetTeam()
-    ;
-    (self._teamPool):SpawnObjects("UIActivityDiffLevelDetailTeamItem", 5)
-    local pools = (self._teamPool):GetAllSpawnList()
-    if not (self._data):IsComplete() then
-      for i = 1, #pools do
-        local item = pools[i]
-        item:SetData(0)
-      end
-      return 
-    end
+function UIActivityDiffLevelDetailLevelItem:SetData(data, cb)
+  if data == nil then
+    local pools = self._teamPool:GetAllSpawnList()
     for i = 1, #pools do
       local item = pools[i]
-      local pstid = team[i]
-      if pstid == nil then
-        pstid = 0
-      end
-      item:SetData(pstid)
+      item:SetData(0)
     end
+    return
+  end
+  self._data = data
+  self._cb = cb
+  self._nameTex:SetText(self._data:GetName())
+  self._finishGo:SetActive(self._data:IsComplete())
+  self._rect.anchoredPosition = self._data:GetPosition()
+  local sprite
+  if self._data:GetLevelType() == DiffMissionType.Boss then
+    sprite = self._atlas:GetSprite("map_black_icon15")
+  else
+    sprite = self._atlas:GetSprite("map_black_icon12")
+  end
+  self._typeImg.sprite = sprite
+  local team = self._data:GetTeam()
+  self._teamPool:SpawnObjects("UIActivityDiffLevelDetailTeamItem", 5)
+  local pools = self._teamPool:GetAllSpawnList()
+  if not self._data:IsComplete() then
+    for i = 1, #pools do
+      local item = pools[i]
+      item:SetData(0)
+    end
+    return
+  end
+  for i = 1, #pools do
+    local item = pools[i]
+    local pstid = team[i]
+    if pstid == nil then
+      pstid = 0
+    end
+    item:SetData(pstid)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelDetailLevelItem.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityDiffLevelDetailLevelItem:BgOnClick(go)
   if self._cb then
-    (self._cb)(self._data)
+    self._cb(self._data)
   end
 end
-
-

@@ -1,40 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state_swim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_actor_state")
 _class("HomelandActorStateSwim", HomelandActorState)
 HomelandActorStateSwim = HomelandActorStateSwim
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandActorStateSwim.Constructor = function(self)
-  -- function num : 0_0
+function HomelandActorStateSwim:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateSwim.GetType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandActorStateSwim:GetType()
   return HomelandActorStateType.Swim
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateSwim.Enter = function(self)
-  -- function num : 0_2
+function HomelandActorStateSwim:Enter()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateSwim.Exit = function(self)
-  -- function num : 0_3
+function HomelandActorStateSwim:Exit()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateSwim.Update = function(self, deltaTimeMS)
-  -- function num : 0_4
+function HomelandActorStateSwim:Update(deltaTimeMS)
 end
-
-

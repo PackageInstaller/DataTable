@@ -1,107 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/component/command_receiver_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IEntityCommandDispatcher", Object)
 IEntityCommandDispatcher = IEntityCommandDispatcher
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IEntityCommandDispatcher.BindOwner = function(self, owner)
-  -- function num : 0_0
+function IEntityCommandDispatcher:BindOwner(owner)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommandDispatcher.UnBindOwner = function(self)
-  -- function num : 0_1
+function IEntityCommandDispatcher:UnBindOwner()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommandDispatcher.HandleCommand = function(self, cmd)
-  -- function num : 0_2
+function IEntityCommandDispatcher:HandleCommand(cmd)
 end
 
 _class("CommandReceiverComponent", Object)
 CommandReceiverComponent = CommandReceiverComponent
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-CommandReceiverComponent.Constructor = function(self, dispatcher)
-  -- function num : 0_3 , upvalues : _ENV
+function CommandReceiverComponent:Constructor(dispatcher)
   self.ReceiveQueue = ArrayList:New()
   self.Dispatcher = dispatcher
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandReceiverComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_4
-  (self.Dispatcher):BindOwner(owner)
+function CommandReceiverComponent:WEC_PostInitialize(owner)
+  self.Dispatcher:BindOwner(owner)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandReceiverComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_5
-  (self.Dispatcher):UnBindOwner()
+function CommandReceiverComponent:WEC_PostRemoved()
+  self.Dispatcher:UnBindOwner()
   self.Dispatcher = nil
-  ;
-  (self.ReceiveQueue):Clear()
+  self.ReceiveQueue:Clear()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandReceiverComponent.Dispatch = function(self)
-  -- function num : 0_6
-  for i = 1, (self.ReceiveQueue):Size() do
-    local cmd = (self.ReceiveQueue):GetAt(i)
-    ;
-    (self.Dispatcher):HandleCommand(cmd)
+function CommandReceiverComponent:Dispatch()
+  for i = 1, self.ReceiveQueue:Size() do
+    local cmd = self.ReceiveQueue:GetAt(i)
+    self.Dispatcher:HandleCommand(cmd)
   end
-  ;
-  (self.ReceiveQueue):Clear()
+  self.ReceiveQueue:Clear()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.CommandReceiver = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).CommandReceiver)
+function Entity:CommandReceiver()
+  return self:GetComponent(self.WEComponentsEnum.CommandReceiver)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasCommandReceiver = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).CommandReceiver)
+function Entity:HasCommandReceiver()
+  return self:HasComponent(self.WEComponentsEnum.CommandReceiver)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddCommandReceiver = function(self, dispatcher)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).CommandReceiver
+function Entity:AddCommandReceiver(dispatcher)
+  local index = self.WEComponentsEnum.CommandReceiver
   local component = CommandReceiverComponent:New(dispatcher)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReceiveCommand = function(self, cmd)
-  -- function num : 0_10 , upvalues : _ENV
+function Entity:ReceiveCommand(cmd)
   if not self:HasCommandReceiver() then
-    (Log.fatal)("Entity:ReceiveCommand must have CommandReceiverComponent!")
-    return 
+    Log.fatal("Entity:ReceiveCommand must have CommandReceiverComponent!")
+    return
   end
-  if cmd:GetCommandType() ~= "BattleSync" and self:GetOwnerWorld() and (self:GetOwnerWorld()):IsDevelopEnv() then
-    (Log.info)("[LuaCommand] recieve command ", echo_one_line(ELogLevel.Info, cmd))
+  if cmd:GetCommandType() ~= "BattleSync" and self:GetOwnerWorld() and self:GetOwnerWorld():IsDevelopEnv() then
+    Log.info("[LuaCommand] recieve command ", echo_one_line(ELogLevel.Info, cmd))
   end
-  local index = (self.WEComponentsEnum).CommandReceiver
+  local index = self.WEComponentsEnum.CommandReceiver
   local component = self:CommandReceiver()
-  ;
-  (component.ReceiveQueue):PushBack(cmd)
+  component.ReceiveQueue:PushBack(cmd)
   self:ReplaceComponent(index, component)
 end
-
-

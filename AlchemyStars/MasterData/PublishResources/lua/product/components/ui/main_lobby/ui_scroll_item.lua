@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_scroll_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIScrollItem", UICustomWidget)
 UIScrollItem = UIScrollItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIScrollItem.OnShow = function(self)
-  -- function num : 0_0
-  self._uiPrice = (self:GetGameObject("uiPrice")):GetComponent("UIView")
-  self._uiBuy = (self._uiPrice):GetUIComponent("RectTransform", "uiBuy")
-  self._uiDay = (self._uiPrice):GetUIComponent("RectTransform", "uiDay")
-  self._uiActiveNon = (self._uiPrice):GetUIComponent("RectTransform", "uiActiveNon")
-  self._uiActiveNor = (self._uiPrice):GetUIComponent("RectTransform", "uiActiveNor")
-  self._uiActiveLux = (self._uiPrice):GetUIComponent("RectTransform", "uiActiveLux")
-  self._txtBuyValue = (self._uiPrice):GetUIComponent("UILocalizationText", "txtBuyValue")
-  self._txtDayValue = (self._uiPrice):GetUIComponent("UILocalizationText", "txtDayValue")
+function UIScrollItem:OnShow()
+  self._uiPrice = self:GetGameObject("uiPrice"):GetComponent("UIView")
+  self._uiBuy = self._uiPrice:GetUIComponent("RectTransform", "uiBuy")
+  self._uiDay = self._uiPrice:GetUIComponent("RectTransform", "uiDay")
+  self._uiActiveNon = self._uiPrice:GetUIComponent("RectTransform", "uiActiveNon")
+  self._uiActiveNor = self._uiPrice:GetUIComponent("RectTransform", "uiActiveNor")
+  self._uiActiveLux = self._uiPrice:GetUIComponent("RectTransform", "uiActiveLux")
+  self._txtBuyValue = self._uiPrice:GetUIComponent("UILocalizationText", "txtBuyValue")
+  self._txtDayValue = self._uiPrice:GetUIComponent("UILocalizationText", "txtDayValue")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIScrollItem.SetData = function(self, cfg, callbcak, begindrag, drag, enddrag)
-  -- function num : 0_1 , upvalues : _ENV
+function UIScrollItem:SetData(cfg, callbcak, begindrag, drag, enddrag)
   self._cfg = cfg
   self._callback = callbcak
   self._beginDrag = begindrag
@@ -32,40 +22,28 @@ UIScrollItem.SetData = function(self, cfg, callbcak, begindrag, drag, enddrag)
   self._icon = self:GetUIComponent("RawImageLoader", "ad")
   self._descGo = self:GetGameObject("descGo")
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
-  ;
-  (self._icon):LoadImage(((self._cfg).data).Icon)
+  self._icon:LoadImage(self._cfg.data.Icon)
   self._imgNew = self:GetGameObject("imgNew")
-  ;
-  (self._imgNew):SetActive(false)
-  if ((self._cfg).data).Desc then
-    (self._descGo):SetActive(true)
-    ;
-    (self._desc):SetText((StringTable.Get)(((self._cfg).data).Desc))
+  self._imgNew:SetActive(false)
+  if self._cfg.data.Desc then
+    self._descGo:SetActive(true)
+    self._desc:SetText(StringTable.Get(self._cfg.data.Desc))
   else
-    ;
-    (self._descGo):SetActive(false)
+    self._descGo:SetActive(false)
   end
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.BeginDrag, self._beginDrag)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.Drag, self._drag)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.EndDrag, self._endDrag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.BeginDrag, self._beginDrag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.Drag, self._drag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.EndDrag, self._endDrag)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIScrollItem.btnOnClick = function(self)
-  -- function num : 0_2
+function UIScrollItem:btnOnClick()
   if self._callback then
-    (self._callback)((self._cfg).idx)
+    self._callback(self._cfg.idx)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIScrollItem.Dispose = function(self)
-  -- function num : 0_3
+function UIScrollItem:Dispose()
   self._cfg = nil
   self._callback = nil
   self._icon = nil
 end
-
-

@@ -1,157 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/can_move_arrow_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CanMoveArrowService", Object)
 CanMoveArrowService = CanMoveArrowService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CanMoveArrowService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function CanMoveArrowService:Constructor(world)
   self._world = world
   self._arrowOffsetList = {}
   self._arrowEntityList = {}
-  self.autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
-  ;
-  (self.autoBinder):BindEvent(GameEventType.ShowCanMoveArrow, self, self.ShowCanMoveArrowCallBack)
-  ;
-  (self.autoBinder):BindEvent(GameEventType.HideCanMoveArrow, self, self.HideCanMoveArrowCallBack)
+  self.autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
+  self.autoBinder:BindEvent(GameEventType.ShowCanMoveArrow, self, self.ShowCanMoveArrowCallBack)
+  self.autoBinder:BindEvent(GameEventType.HideCanMoveArrow, self, self.HideCanMoveArrowCallBack)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CanMoveArrowService.Dispose = function(self)
-  -- function num : 0_1
-  (self.autoBinder):UnBindAllEvents()
+function CanMoveArrowService:Dispose()
+  self.autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CanMoveArrowService.Initialize = function(self)
-  -- function num : 0_2
+function CanMoveArrowService:Initialize()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CanMoveArrowService.InitArrows = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CanMoveArrowService:InitArrows()
   local upPos = Vector2(0, 1)
   local upDir = Vector2(0, 1)
   local arrowEntity = self:_CreateArrow(upPos, upDir)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._arrowOffsetList)[#self._arrowOffsetList + 1] = upPos
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._arrowEntityList)[#self._arrowEntityList + 1] = arrowEntity
+  self._arrowOffsetList[#self._arrowOffsetList + 1] = upPos
+  self._arrowEntityList[#self._arrowEntityList + 1] = arrowEntity
   local downPos = Vector2(0, -1)
   local downDir = Vector2(0, -1)
   arrowEntity = self:_CreateArrow(downPos, downDir)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._arrowOffsetList)[#self._arrowOffsetList + 1] = downPos
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._arrowEntityList)[#self._arrowEntityList + 1] = arrowEntity
+  self._arrowOffsetList[#self._arrowOffsetList + 1] = downPos
+  self._arrowEntityList[#self._arrowEntityList + 1] = arrowEntity
   local leftPos = Vector2(-1, 0)
   local leftDir = Vector2(-1, 0)
   arrowEntity = self:_CreateArrow(leftPos, leftDir)
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._arrowOffsetList)[#self._arrowOffsetList + 1] = leftPos
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._arrowEntityList)[#self._arrowEntityList + 1] = arrowEntity
+  self._arrowOffsetList[#self._arrowOffsetList + 1] = leftPos
+  self._arrowEntityList[#self._arrowEntityList + 1] = arrowEntity
   local rightPos = Vector2(1, 0)
   local rightDir = Vector2(1, 0)
   arrowEntity = self:_CreateArrow(rightPos, rightDir)
-  -- DECOMPILER ERROR at PC85: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._arrowOffsetList)[#self._arrowOffsetList + 1] = rightPos
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._arrowEntityList)[#self._arrowEntityList + 1] = arrowEntity
+  self._arrowOffsetList[#self._arrowOffsetList + 1] = rightPos
+  self._arrowEntityList[#self._arrowEntityList + 1] = arrowEntity
   local upLeftPos = Vector2(-1, 1)
   local upLeftDir = Vector2(-1, 1)
   arrowEntity = self:_CreateArrow(upLeftPos, upLeftDir)
-  -- DECOMPILER ERROR at PC108: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._arrowOffsetList)[#self._arrowOffsetList + 1] = upLeftPos
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._arrowEntityList)[#self._arrowEntityList + 1] = arrowEntity
+  self._arrowOffsetList[#self._arrowOffsetList + 1] = upLeftPos
+  self._arrowEntityList[#self._arrowEntityList + 1] = arrowEntity
   local upRightPos = Vector2(1, 1)
   local upRightDir = Vector2(1, 1)
   arrowEntity = self:_CreateArrow(upRightPos, upRightDir)
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self._arrowOffsetList)[#self._arrowOffsetList + 1] = upRightPos
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self._arrowEntityList)[#self._arrowEntityList + 1] = arrowEntity
+  self._arrowOffsetList[#self._arrowOffsetList + 1] = upRightPos
+  self._arrowEntityList[#self._arrowEntityList + 1] = arrowEntity
   local downLeftPos = Vector2(-1, -1)
   local downLeftDir = Vector2(-1, -1)
   arrowEntity = self:_CreateArrow(downLeftPos, downLeftDir)
-  -- DECOMPILER ERROR at PC154: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self._arrowOffsetList)[#self._arrowOffsetList + 1] = downLeftPos
-  -- DECOMPILER ERROR at PC159: Confused about usage of register: R16 in 'UnsetPending'
-
-  ;
-  (self._arrowEntityList)[#self._arrowEntityList + 1] = arrowEntity
+  self._arrowOffsetList[#self._arrowOffsetList + 1] = downLeftPos
+  self._arrowEntityList[#self._arrowEntityList + 1] = arrowEntity
   local downRightPos = Vector2(1, -1)
   local downRightDir = Vector2(1, -1)
   arrowEntity = self:_CreateArrow(downRightPos, downRightDir)
-  -- DECOMPILER ERROR at PC177: Confused about usage of register: R18 in 'UnsetPending'
-
-  ;
-  (self._arrowOffsetList)[#self._arrowOffsetList + 1] = downRightPos
-  -- DECOMPILER ERROR at PC182: Confused about usage of register: R18 in 'UnsetPending'
-
-  ;
-  (self._arrowEntityList)[#self._arrowEntityList + 1] = arrowEntity
+  self._arrowOffsetList[#self._arrowOffsetList + 1] = downRightPos
+  self._arrowEntityList[#self._arrowEntityList + 1] = arrowEntity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CanMoveArrowService.ShowCanMoveArrowCallBack = function(self)
-  -- function num : 0_4
+function CanMoveArrowService:ShowCanMoveArrowCallBack()
   self:ShowCanMoveArrow(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CanMoveArrowService.HideCanMoveArrowCallBack = function(self)
-  -- function num : 0_5
+function CanMoveArrowService:HideCanMoveArrowCallBack()
   self:ShowCanMoveArrow(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CanMoveArrowService.ShowCanMoveArrow = function(self, isShow)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_PopStar or (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+function CanMoveArrowService:ShowCanMoveArrow(isShow)
+  if self._world:MatchType() == MatchType.MT_PopStar or self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
     isShow = false
   end
   if isShow then
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local playerPos = (((self._world):Player()):GetLocalTeamEntity()):GetGridPosition()
-    for k,arrowEntity in ipairs(self._arrowEntityList) do
-      local arrowPos = (self._arrowOffsetList)[k] + playerPos
+    local utilDataSvc = self._world:GetService("UtilData")
+    local playerPos = self._world:Player():GetLocalTeamEntity():GetGridPosition()
+    for k, arrowEntity in ipairs(self._arrowEntityList) do
+      local arrowPos = self._arrowOffsetList[k] + playerPos
       if utilDataSvc:IsValidPiecePos(arrowPos) and not utilDataSvc:IsPosBlockLinkLineForChain(arrowPos) and not utilDataSvc:IsPosBlockMoveForTrapWall(playerPos, arrowPos) then
         self:_ShowArrow(arrowEntity, true)
         arrowEntity:SetPosition(arrowPos)
@@ -160,41 +85,29 @@ CanMoveArrowService.ShowCanMoveArrow = function(self, isShow)
       end
     end
   else
-    do
-      for _,arrowEntity in ipairs(self._arrowEntityList) do
-        self:_ShowArrow(R9_PC75, false)
-      end
+    for _, arrowEntity in ipairs(self._arrowEntityList) do
+      self:_ShowArrow(arrowEntity, false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CanMoveArrowService._CreateArrow = function(self, pos, dir)
-  -- function num : 0_7 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function CanMoveArrowService:_CreateArrow(pos, dir)
+  local sEntity = self._world:GetService("RenderEntity")
   local arrowEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.CanMoveArrow)
   arrowEntity:SetLocation(pos, dir)
-  ;
-  ((arrowEntity:View()):GetGameObject()):SetActive(false)
+  arrowEntity:View():GetGameObject():SetActive(false)
   return arrowEntity
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CanMoveArrowService._ShowArrow = function(self, arrowEntity, isShow)
-  -- function num : 0_8
+function CanMoveArrowService:_ShowArrow(arrowEntity, isShow)
   local viewCmpt = arrowEntity:View()
   if viewCmpt == nil then
-    return 
+    return
   end
-  local arrowTransform = (viewCmpt:GetGameObject()).transform
+  local arrowTransform = viewCmpt:GetGameObject().transform
   if isShow == true then
-    ((arrowEntity:View()):GetGameObject()):SetActive(true)
+    arrowEntity:View():GetGameObject():SetActive(true)
   else
-    ;
-    ((arrowEntity:View()):GetGameObject()):SetActive(false)
+    arrowEntity:View():GetGameObject():SetActive(false)
   end
 end
-
-

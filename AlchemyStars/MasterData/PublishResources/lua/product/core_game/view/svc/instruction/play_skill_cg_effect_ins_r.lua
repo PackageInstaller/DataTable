@@ -1,166 +1,128 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_skill_cg_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySkillCGEffectInstruction", BaseInstruction)
 PlaySkillCGEffectInstruction = PlaySkillCGEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillCGEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillCGEffectInstruction:Constructor(paramList)
   self._waitTime = tonumber(paramList.waitTime)
   self._offsetPos = Vector2.zero
   self._offsetScale = 1
   self._cfgPetID = tonumber(paramList.petID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillCGEffectInstruction._InitCgData = function(self, ePet)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillCGEffectInstruction:_InitCgData(ePet)
   local world = ePet:GetOwnerWorld()
   local cPetPstID = ePet:PetPstID()
   if not cPetPstID then
-    return 
+    return
   end
   local pstID = cPetPstID:GetPstID()
   self._petID = cPetPstID:GetTemplateID()
   local matchPet = world:GetPetData(pstID)
   if not matchPet then
-    (Log.fatal)("###[PlaySkillCGEffectInstruction]InitCgData GetPetData is nil ! id --> ", pstID)
-    return 
+    Log.fatal("###[PlaySkillCGEffectInstruction]InitCgData GetPetData is nil ! id --> ", pstID)
+    return
   end
   local skinId = matchPet:GetSkinId()
-  local cfg = (Cfg.cfg_pet_skin)[skinId]
+  local cfg = Cfg.cfg_pet_skin[skinId]
   if not cfg then
-    (Log.fatal)("### no skinId in cfg_pet_skin. skinId=", skinId)
-    return 
+    Log.fatal("### no skinId in cfg_pet_skin. skinId=", skinId)
+    return
   end
   self._effectRes = cfg.ActiveSkillEff .. ".prefab"
   local petCG = cfg.SimpleCG
-  if not petCG then
-    petCG = cfg.StaticBody
-  end
+  petCG = petCG or cfg.StaticBody
   self._petCGMat = petCG .. ".mat"
   local logo = matchPet:GetPetLogo()
   self._petIconMat = logo .. ".mat"
-  local cfg = (Cfg.pet_cg_transform)({ResName = petCG, UIName = "ActiveSkill"})
-  if not cfg then
-    cfg = (Cfg.pet_cg_transform)({ResName = petCG, UIName = "UIBattleResultComplete"})
-  end
+  local cfg = Cfg.pet_cg_transform({
+    ResName = petCG,
+    UIName = "ActiveSkill"
+  })
+  cfg = cfg or Cfg.pet_cg_transform({
+    ResName = petCG,
+    UIName = "UIBattleResultComplete"
+  })
   if cfg then
     local v = cfg[1]
     if v then
       local offposOri = Vector2(0, 400)
       local scaleOri = 1
-      -- DECOMPILER ERROR at PC87: Confused about usage of register: R14 in 'UnsetPending'
-
       if v.CGTransform then
-        (self._offsetPos).x = offposOri.x + (v.CGTransform)[1]
-        -- DECOMPILER ERROR at PC93: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (self._offsetPos).y = offposOri.y + (v.CGTransform)[2]
-        self._offsetScale = scaleOri * (v.CGTransform)[3]
+        self._offsetPos.x = offposOri.x + v.CGTransform[1]
+        self._offsetPos.y = offposOri.y + v.CGTransform[2]
+        self._offsetScale = scaleOri * v.CGTransform[3]
       else
-        -- DECOMPILER ERROR at PC101: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (self._offsetPos).x = offposOri.x
-        -- DECOMPILER ERROR at PC104: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (self._offsetPos).y = offposOri.y
+        self._offsetPos.x = offposOri.x
+        self._offsetPos.y = offposOri.y
         self._offsetScale = scaleOri
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillCGEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillCGEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   if not self:_InitCgData(casterEntity) then
-    return 
+    return
   end
   local cBattleRenderConfig = world:BattleRenderConfig()
   local canPlayCG = cBattleRenderConfig:GetCanPlaySkillSpineInBattle(self._effectRes, self._petID)
   if not canPlayCG then
-    return 
+    return
   end
-  if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    return 
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    return
   end
   local skillID = self:GetSkillID(casterEntity)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIBattleUltraSkillCG", {effectRes = self._effectRes, petCGMat = self._petCGMat, offsetPos = self._offsetPos, offsetScale = self._offsetScale, petIconMat = self._petIconMat, skillID = skillID})
+  GameGlobal.UIStateManager():ShowDialog("UIBattleUltraSkillCG", {
+    effectRes = self._effectRes,
+    petCGMat = self._petCGMat,
+    offsetPos = self._offsetPos,
+    offsetScale = self._offsetScale,
+    petIconMat = self._petIconMat,
+    skillID = skillID
+  })
   YIELD(TT, self._waitTime)
-  ;
-  ((GameGlobal.UIStateManager)()):CloseDialog("UIBattleUltraSkillCG")
+  GameGlobal.UIStateManager():CloseDialog("UIBattleUltraSkillCG")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillCGEffectInstruction.GetCacheResource = function(self, skillConfig, skinId)
-  -- function num : 0_3
+function PlaySkillCGEffectInstruction:GetCacheResource(skillConfig, skinId)
   local t = {}
-  do
-    if self._cfgPetID then
-      local curSkinId = 0
-      if skinId and skinId > 0 then
-        curSkinId = skinId
-      end
-      self:_CollectRes(t, self._cfgPetID, curSkinId)
+  if self._cfgPetID then
+    local curSkinId = 0
+    if skinId and 0 < skinId then
+      curSkinId = skinId
     end
-    return t
+    self:_CollectRes(t, self._cfgPetID, curSkinId)
   end
+  return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillCGEffectInstruction._CollectRes = function(self, t, petTemplateId, skinId)
-  -- function num : 0_4 , upvalues : _ENV
-  if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    return 
+function PlaySkillCGEffectInstruction:_CollectRes(t, petTemplateId, skinId)
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    return
   end
-  local cfg = (Cfg.cfg_pet_skin)[skinId]
+  local cfg = Cfg.cfg_pet_skin[skinId]
   if not cfg then
-    return 
+    return
   end
-  do
-    if cfg.ActiveSkillEff then
-      local effectRes = cfg.ActiveSkillEff .. ".prefab"
-      ;
-      (table.insert)(t, {effectRes, 1})
-    end
-    local petCG = cfg.SimpleCG
-    if not petCG then
-      petCG = cfg.StaticBody
-    end
-    do
-      if petCG then
-        local petCGMat = petCG .. ".mat"
-        ;
-        (table.insert)(t, {petCGMat, 1})
-      end
-      local cfg_pet = (Cfg.cfg_pet)[petTemplateId]
-      if cfg_pet then
-        local logo = cfg_pet.Logo
-        if logo then
-          local petIconMat = logo .. ".mat"
-          ;
-          (table.insert)(t, {petIconMat, 1})
-        end
-      end
+  if cfg.ActiveSkillEff then
+    local effectRes = cfg.ActiveSkillEff .. ".prefab"
+    table.insert(t, {effectRes, 1})
+  end
+  local petCG = cfg.SimpleCG
+  petCG = petCG or cfg.StaticBody
+  if petCG then
+    local petCGMat = petCG .. ".mat"
+    table.insert(t, {petCGMat, 1})
+  end
+  local cfg_pet = Cfg.cfg_pet[petTemplateId]
+  if cfg_pet then
+    local logo = cfg_pet.Logo
+    if logo then
+      local petIconMat = logo .. ".mat"
+      table.insert(t, {petIconMat, 1})
     end
   end
 end
-
-

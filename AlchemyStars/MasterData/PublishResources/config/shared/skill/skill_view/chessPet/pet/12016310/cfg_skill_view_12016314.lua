@@ -1,21 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/chessPet/pet/12016310/cfg_skill_view_12016314.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName=Skill04; PlayCasterBindEffect,effectID =3468; PlayAudio,audioID = 2432; Wait,waitTime=6000; "}
-, 
-{"", "1,-1"}
-}
-, 
-{2, 2, 45, 1, 0, 0, 
-{prob = 30, 
-tipsList = {12016314}
-}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName=Skill04; PlayCasterBindEffect,effectID =3468; PlayAudio,audioID = 2432; Wait,waitTime=6000; "
+    },
+    {"", "1,-1"}
+  },
+  {
+    2,
+    2,
+    45,
+    1,
+    0,
+    0,
+    {
+      prob = 30,
+      tipsList = {12016314}
+    }
+  }
 }
 return config, "ID", key
-

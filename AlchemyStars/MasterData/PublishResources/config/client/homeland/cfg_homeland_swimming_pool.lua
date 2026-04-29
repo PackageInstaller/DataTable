@@ -1,13 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/homeland/cfg_homeland_swimming_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, PetCountMax = 2, WaterHeight = 3, Range = 4, PetSkinIDs = 5}
-local config = {
-[5271001] = {5271001, 5, 1.1, 99999999, 
-{1500333, 1400863, 1600063, 1601033, 1500763, 1500703, 1400813, 1601113, 1500873, 1400413, 1601293, 1600384, 1501681, 1501682, 1601483, 1601483, 1601214, 1601153, 1400793, 1601403, 1600774, 1601783}
+local key = {
+  ID = 1,
+  PetCountMax = 2,
+  WaterHeight = 3,
+  Range = 4,
+  PetSkinIDs = 5
 }
+local config = {
+  [5271001] = {
+    5271001,
+    5,
+    1.1,
+    99999999,
+    {
+      1500333,
+      1400863,
+      1600063,
+      1601033,
+      1500763,
+      1500703,
+      1400813,
+      1601113,
+      1500873,
+      1400413,
+      1601293,
+      1600384,
+      1501681,
+      1501682,
+      1601483,
+      1601483,
+      1601214,
+      1601153,
+      1400793,
+      1601403,
+      1600774,
+      1601783
+    }
+  }
 }
 return config, "ID", key
-

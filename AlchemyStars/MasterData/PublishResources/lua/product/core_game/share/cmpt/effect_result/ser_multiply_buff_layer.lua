@@ -1,65 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_multiply_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_type")
 require("skill_effect_result_base")
 _class("SkillEffectResult_MultiplyBuffLayer", SkillEffectResultBase)
 SkillEffectResult_MultiplyBuffLayer = SkillEffectResult_MultiplyBuffLayer
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResult_MultiplyBuffLayer.__EFFECT_TYPE = SkillEffectType.MultiplyBuffLayer
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_MultiplyBuffLayer.Constructor = function(self, targetID, buffEffectType, val, buffSeq)
-  -- function num : 0_0
+function SkillEffectResult_MultiplyBuffLayer:Constructor(targetID, buffEffectType, val, buffSeq)
   self._targetID = targetID
   self._buffEffectType = buffEffectType
   self._val = val
   self._seq = buffSeq
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MultiplyBuffLayer.GetTargetID = function(self)
-  -- function num : 0_1
+function SkillEffectResult_MultiplyBuffLayer:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MultiplyBuffLayer.GetLayerBuffEffectType = function(self)
-  -- function num : 0_2
+function SkillEffectResult_MultiplyBuffLayer:GetLayerBuffEffectType()
   return self._buffEffectType
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MultiplyBuffLayer.GetExpectFinalLayer = function(self)
-  -- function num : 0_3
+function SkillEffectResult_MultiplyBuffLayer:GetExpectFinalLayer()
   return self._val
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MultiplyBuffLayer.GetLayerBuffSeq = function(self)
-  -- function num : 0_4
+function SkillEffectResult_MultiplyBuffLayer:GetLayerBuffSeq()
   return self._seq
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MultiplyBuffLayer.SetFinalLayerCount = function(self, v)
-  -- function num : 0_5
+function SkillEffectResult_MultiplyBuffLayer:SetFinalLayerCount(v)
   self._finalLayerCount = v
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MultiplyBuffLayer.GetFinalLayerCount = function(self)
-  -- function num : 0_6
+function SkillEffectResult_MultiplyBuffLayer:GetFinalLayerCount()
   return self._finalLayerCount
 end
-
-

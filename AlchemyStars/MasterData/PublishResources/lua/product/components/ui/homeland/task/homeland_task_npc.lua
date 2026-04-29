@@ -1,24 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/task/homeland_task_npc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandTaskNPC", Object)
 HomelandTaskNPC = HomelandTaskNPC
 local TaskNpcType = {Role = 1, Pet = 2}
 _enum("TaskNpcType", TaskNpcType)
-local TaskNpcPetSkinType = {Base = 1, Player = 2, Appointed = 3}
+local TaskNpcPetSkinType = {
+  Base = 1,
+  Player = 2,
+  Appointed = 3
+}
 _enum("TaskNpcPetSkinType", TaskNpcPetSkinType)
--- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
 
-HomelandTaskNPC.Constructor = function(self, cfg, homelandClient)
-  -- function num : 0_0 , upvalues : _ENV, TaskNpcType
+function HomelandTaskNPC:Constructor(cfg, homelandClient)
   self.npcID = cfg.Id
   self.cfg = cfg
   self.homelandClient = homelandClient
   self.interactPointManager = homelandClient:InteractPointManager()
   self.taskManager = homelandClient:GetHomelandTaskManager()
-  self._homelandPetManager = (self.homelandClient):PetManager()
+  self._homelandPetManager = self.homelandClient:PetManager()
   self.npcType = cfg.Type
   self.task = nil
   self.chatID = nil
@@ -34,544 +31,373 @@ HomelandTaskNPC.Constructor = function(self, cfg, homelandClient)
   self._holdBuilding = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.InitPet = function(self)
-  -- function num : 0_1 , upvalues : TaskNpcPetSkinType, _ENV
-  local resName = (self.cfg).PetId .. ".prefab"
-  if (self.cfg).PetSkinType == TaskNpcPetSkinType.Appointed then
-    (Log.fatal)("暂不支持指定皮肤")
-  else
-    if (self.cfg).PetSkinType == TaskNpcPetSkinType.Player then
-      local pet = ((GameGlobal.GetModule)(PetModule)):GetPetByTemplateId((self.cfg).PetId)
-      if pet then
-        resName = pet:GetPetPrefab()
-      end
-      if (self._homelandPetManager):HasPet((self.cfg).PetId) then
-        local pet = (self._homelandPetManager):GetPet((self.cfg).PetId)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeInteractFollow, false, pet)
-      end
+function HomelandTaskNPC:InitPet()
+  local resName = self.cfg.PetId .. ".prefab"
+  if self.cfg.PetSkinType == TaskNpcPetSkinType.Appointed then
+    Log.fatal("暂不支持指定皮肤")
+  elseif self.cfg.PetSkinType == TaskNpcPetSkinType.Player then
+    local pet = GameGlobal.GetModule(PetModule):GetPetByTemplateId(self.cfg.PetId)
+    if pet then
+      resName = pet:GetPetPrefab()
+    end
+    if self._homelandPetManager:HasPet(self.cfg.PetId) then
+      local pet = self._homelandPetManager:GetPet(self.cfg.PetId)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeInteractFollow, false, pet)
+    end
+  elseif self.cfg.PetSkinType == TaskNpcPetSkinType.Base then
+  end
+  local petReq = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.GameObject)
+  local petAirPrefab = HelperProxy:GetInstance():GetPetAnimatorControllerName(resName, PetAnimatorControllerType.Aircraft)
+  local petAnimReq = ResourceManager:GetInstance():SyncLoadAsset(petAirPrefab, LoadType.GameObject)
+  local petHomePrefab = HelperProxy:GetInstance():GetPetAnimatorControllerName(resName, PetAnimatorControllerType.Homeland)
+  local petHomelandAnimReq = ResourceManager:GetInstance():SyncLoadAsset(petHomePrefab, LoadType.GameObject)
+  table.insert(self.resReqList, petReq)
+  table.insert(self.resReqList, petAnimReq)
+  table.insert(self.resReqList, petHomelandAnimReq)
+  local petGameObject = petReq.Obj
+  petGameObject:SetActive(true)
+  self.transform = petGameObject.transform
+  self.transform:SetParent(self.homelandClient:SceneManager():RuntimeRootTrans())
+  local rootTrans = self.transform:Find("Root")
+  local root = rootTrans.gameObject
+  for i = 0, rootTrans.childCount - 1 do
+    local child = rootTrans:GetChild(i)
+    if string.find(child.name, "weapon") then
+      child.gameObject:SetActive(false)
+    end
+  end
+  local animator = root:GetComponent(typeof(UnityEngine.Animator))
+  if animator then
+    UnityEngine.Object.Destroy(animator)
+  end
+  local petAnim = root:AddComponent(typeof(UnityEngine.Animation))
+  local aircraftAnimation = petAnimReq.Obj:GetComponent("Animation")
+  local clips = HelperProxy:GetInstance():GetAllAnimationClip(aircraftAnimation)
+  for i = 0, clips.Length - 1 do
+    if clips[i] == nil then
+      Log.error("Pet animation is null:", self._petID, ", index:", i)
     else
+      petAnim:AddClip(clips[i], clips[i].name)
     end
   end
-  do
-    if (self.cfg).PetSkinType == TaskNpcPetSkinType.Base then
-      local petReq = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.GameObject)
-      local petAirPrefab = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(resName, PetAnimatorControllerType.Aircraft)
-      local petAnimReq = (ResourceManager:GetInstance()):SyncLoadAsset(petAirPrefab, LoadType.GameObject)
-      local petHomePrefab = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(resName, PetAnimatorControllerType.Homeland)
-      local petHomelandAnimReq = (ResourceManager:GetInstance()):SyncLoadAsset(petHomePrefab, LoadType.GameObject)
-      ;
-      (table.insert)(self.resReqList, petReq)
-      ;
-      (table.insert)(self.resReqList, petAnimReq)
-      ;
-      (table.insert)(self.resReqList, petHomelandAnimReq)
-      local petGameObject = petReq.Obj
-      petGameObject:SetActive(true)
-      self.transform = petGameObject.transform
-      ;
-      (self.transform):SetParent(((self.homelandClient):SceneManager()):RuntimeRootTrans())
-      local rootTrans = (self.transform):Find("Root")
-      local root = rootTrans.gameObject
-      for i = 0, rootTrans.childCount - 1 do
-        local child = rootTrans:GetChild(i)
-        if (string.find)(child.name, "weapon") then
-          (child.gameObject):SetActive(false)
-        end
-      end
-      local animator = root:GetComponent(typeof(UnityEngine.Animator))
-      if animator then
-        ((UnityEngine.Object).Destroy)(animator)
-      end
-      local petAnim = root:AddComponent(typeof(UnityEngine.Animation))
-      local aircraftAnimation = (petAnimReq.Obj):GetComponent("Animation")
-      local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(aircraftAnimation)
-      for i = 0, clips.Length - 1 do
-        if clips[i] == nil then
-          (Log.error)("Pet animation is null:", self._petID, ", index:", i)
-        else
-          petAnim:AddClip(clips[i], (clips[i]).name)
-        end
-      end
-      local homelandAnimation = (petHomelandAnimReq.Obj):GetComponent("Animation")
-      clips = (HelperProxy:GetInstance()):GetAllAnimationClip(homelandAnimation)
-      for i = 0, clips.Length - 1 do
-        if clips[i] == nil then
-          (Log.error)("Pet animation is null:", self._petID, ", index:", i)
-        else
-          petAnim:AddClip(clips[i], (clips[i]).name)
-        end
-      end
-      petAnim.clip = aircraftAnimation.clip
-      petAnim:Play(HomelandPetAnimName.Stand)
-      self.npcAnim = petAnim
-      ;
-      (self.taskManager):AddNpcOccupyingPet((self.cfg).PetId)
+  local homelandAnimation = petHomelandAnimReq.Obj:GetComponent("Animation")
+  clips = HelperProxy:GetInstance():GetAllAnimationClip(homelandAnimation)
+  for i = 0, clips.Length - 1 do
+    if clips[i] == nil then
+      Log.error("Pet animation is null:", self._petID, ", index:", i)
+    else
+      petAnim:AddClip(clips[i], clips[i].name)
     end
   end
+  petAnim.clip = aircraftAnimation.clip
+  petAnim:Play(HomelandPetAnimName.Stand)
+  self.npcAnim = petAnim
+  self.taskManager:AddNpcOccupyingPet(self.cfg.PetId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.InitRole = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local rolePrefab = (self.cfg).Res
-  local roleReq = (ResourceManager:GetInstance()):SyncLoadAsset(rolePrefab, LoadType.GameObject)
-  ;
-  (table.insert)(self.resReqList, roleReq)
+function HomelandTaskNPC:InitRole()
+  local rolePrefab = self.cfg.Res
+  local roleReq = ResourceManager:GetInstance():SyncLoadAsset(rolePrefab, LoadType.GameObject)
+  table.insert(self.resReqList, roleReq)
   local roleGameObject = roleReq.Obj
   roleGameObject:SetActive(true)
   self.transform = roleGameObject.transform
-  ;
-  (self.transform):SetParent(((self.homelandClient):SceneManager()):RuntimeRootTrans())
-  local root = ((self.transform):Find("Root")).gameObject
+  self.transform:SetParent(self.homelandClient:SceneManager():RuntimeRootTrans())
+  local root = self.transform:Find("Root").gameObject
   local roleAnim = root:GetComponent(typeof(UnityEngine.Animation))
   self.npcAnim = roleAnim
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV, TaskNpcType
+function HomelandTaskNPC:Destroy()
   self:ResetInteractPoint()
-  for _,req in ipairs(self.resReqList) do
+  for _, req in ipairs(self.resReqList) do
     req:Dispose()
   end
   self.resReqList = {}
   if self.npcType == TaskNpcType.Pet then
-    (self.taskManager):RemoveNpcOccupyingPet((self.cfg).PetId)
+    self.taskManager:RemoveNpcOccupyingPet(self.cfg.PetId)
   end
   if self._onTalkCheck then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnTalkCheck, self._onTalkCheck)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnTalkCheck, self._onTalkCheck)
     self._onTalkCheck = nil
   end
   if self._onUIHomePetInteractTaskClose then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnUIHomePetInteractTaskClose, self._onUIHomePetInteractTaskClose)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnUIHomePetInteractTaskClose, self._onUIHomePetInteractTaskClose)
     self._onUIHomePetInteractTaskClose = nil
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.SetTask = function(self, task)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandTaskNPC:SetTask(task)
   self.task = task
-  self._onTalkCheck = (GameHelper:GetInstance()):CreateCallback(self.OnTalkCheck, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnTalkCheck, self._onTalkCheck)
-  self._onUIHomePetInteractTaskClose = (GameHelper:GetInstance()):CreateCallback(self.OnUIHomePetInteractTaskClose, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnUIHomePetInteractTaskClose, self._onUIHomePetInteractTaskClose)
+  self._onTalkCheck = GameHelper:GetInstance():CreateCallback(self.OnTalkCheck, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnTalkCheck, self._onTalkCheck)
+  self._onUIHomePetInteractTaskClose = GameHelper:GetInstance():CreateCallback(self.OnUIHomePetInteractTaskClose, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnUIHomePetInteractTaskClose, self._onUIHomePetInteractTaskClose)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.OnTalkCheck = function(self, checkNpcId, chatId, talkId)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandTaskNPC:OnTalkCheck(checkNpcId, chatId, talkId)
   if checkNpcId ~= self.npcID then
-    return 
+    return
   end
-  local conditionInfo = (self.task):GetConditionInfo()
+  local conditionInfo = self.task:GetConditionInfo()
   if conditionInfo.FinishType == FinishConditionEnum.Dialog and self.checkchatId == chatId and self.checktalkId == talkId then
-    (self.task):StartSubmitTaskImmediatelyCoro()
+    self.task:StartSubmitTaskImmediatelyCoro()
   end
-  if conditionInfo.FinishType == FinishConditionEnum.PetSearch and (self.task):CheckPetSearch() and self.checkchatId == chatId and self.checktalkId == talkId then
-    (self.task):StartSubmitTaskImmediatelyCoro()
+  if conditionInfo.FinishType == FinishConditionEnum.PetSearch and self.task:CheckPetSearch() and self.checkchatId == chatId and self.checktalkId == talkId then
+    self.task:StartSubmitTaskImmediatelyCoro()
   end
-  if conditionInfo.FinishType == FinishConditionEnum.PetNeed and (self.task):CheckPetNeed() and self.checkchatId == chatId and self.checktalkId == talkId then
-    (self.task):StartSubmitTaskImmediatelyCoro()
+  if conditionInfo.FinishType == FinishConditionEnum.PetNeed and self.task:CheckPetNeed() and self.checkchatId == chatId and self.checktalkId == talkId then
+    self.task:StartSubmitTaskImmediatelyCoro()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.OnUIHomePetInteractTaskClose = function(self, checkNpcId, chatId, talkId)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandTaskNPC:OnUIHomePetInteractTaskClose(checkNpcId, chatId, talkId)
   if self.npcID ~= checkNpcId then
-    return 
+    return
   end
-  local conditionInfo = (self.task):GetConditionInfo()
+  local conditionInfo = self.task:GetConditionInfo()
   if conditionInfo.FinishType == FinishConditionEnum.Dialog and self.checkchatId == chatId and self.checktalkId == talkId then
-    (self.task):GetRewardsImmediately(self)
+    self.task:GetRewardsImmediately(self)
   end
   if conditionInfo.FinishType == FinishConditionEnum.PetSearch and self.checkchatId == chatId and self.checktalkId == talkId then
-    (self.task):GetRewardsImmediately(self)
+    self.task:GetRewardsImmediately(self)
   end
   if conditionInfo.FinishType == FinishConditionEnum.PetNeed and self.checkchatId == chatId and self.checktalkId == talkId then
-    (self.task):GetRewardsImmediately(self)
+    self.task:GetRewardsImmediately(self)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.ApplicationQuit = function(self, talkId)
-  -- function num : 0_7 , upvalues : _ENV
-  local conditionInfo = (self.task):GetConditionInfo()
+function HomelandTaskNPC:ApplicationQuit(talkId)
+  local conditionInfo = self.task:GetConditionInfo()
   if conditionInfo.FinishType == FinishConditionEnum.Dialog then
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.SetParent = function(self, parent)
-  -- function num : 0_8
-  (self.transform):SetParent(parent)
+function HomelandTaskNPC:SetParent(parent)
+  self.transform:SetParent(parent)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.SetHoldBuilding = function(self, building)
-  -- function num : 0_9
+function HomelandTaskNPC:SetHoldBuilding(building)
   self._holdBuilding = building
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.SetLocation = function(self, x, y, z, rotationY, isLocal)
-  -- function num : 0_10 , upvalues : _ENV
+function HomelandTaskNPC:SetLocation(x, y, z, rotationY, isLocal)
   local vec = Vector3(x, y, z)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R7 in 'UnsetPending'
-
   if isLocal then
-    (self.transform).localPosition = vec
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.transform).localEulerAngles = Vector3(0, rotationY, 0)
-    self.position = (self.transform).position
-    self.eulerAngles = (self.transform).eulerAngles
+    self.transform.localPosition = vec
+    self.transform.localEulerAngles = Vector3(0, rotationY, 0)
+    self.position = self.transform.position
+    self.eulerAngles = self.transform.eulerAngles
   else
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.transform).position = vec
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.transform).eulerAngles = Vector3(0, rotationY, 0)
-    self.position = (self.transform).position
-    self.eulerAngles = (self.transform).eulerAngles
+    self.transform.position = vec
+    self.transform.eulerAngles = Vector3(0, rotationY, 0)
+    self.position = self.transform.position
+    self.eulerAngles = self.transform.eulerAngles
   end
   if not self.navMeshAgent then
-    self.navMeshAgent = ((self.transform).gameObject):AddComponent(typeof((UnityEngine.AI).NavMeshAgent))
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.navMeshAgent).agentTypeID = (HelperProxy:GetInstance()):GetNavAgentID(AircraftNavAgent.Normal)
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.navMeshAgent).avoidancePriority = 30
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.navMeshAgent).radius = 0.2
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.navMeshAgent).areaMask = 1
+    self.navMeshAgent = self.transform.gameObject:AddComponent(typeof(UnityEngine.AI.NavMeshAgent))
+    self.navMeshAgent.agentTypeID = HelperProxy:GetInstance():GetNavAgentID(AircraftNavAgent.Normal)
+    self.navMeshAgent.avoidancePriority = 30
+    self.navMeshAgent.radius = 0.2
+    self.navMeshAgent.areaMask = 1
   end
-  local hit, navMeshHit = (((UnityEngine.AI).NavMesh).SamplePosition)((self.transform).position, nil, 10, 1)
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R9 in 'UnsetPending'
-
+  local hit, navMeshHit = UnityEngine.AI.NavMesh.SamplePosition(self.transform.position, nil, 10, 1)
   if hit then
-    (self.transform).position = navMeshHit.position
-    -- DECOMPILER ERROR at PC82: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.navMeshAgent).enabled = false
-    -- DECOMPILER ERROR at PC84: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.navMeshAgent).enabled = true
+    self.transform.position = navMeshHit.position
+    self.navMeshAgent.enabled = false
+    self.navMeshAgent.enabled = true
   end
-  ;
-  (self.npcAnim):Play(HomelandPetAnimName.Stand)
-  self.position = (self.transform).position
-  local navMeshObstacle = ((self.transform).gameObject):GetComponent(typeof((UnityEngine.AI).NavMeshObstacle))
+  self.npcAnim:Play(HomelandPetAnimName.Stand)
+  self.position = self.transform.position
+  local navMeshObstacle = self.transform.gameObject:GetComponent(typeof(UnityEngine.AI.NavMeshObstacle))
   if navMeshObstacle then
     navMeshObstacle.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.SetChatID = function(self, chatID)
-  -- function num : 0_11
+function HomelandTaskNPC:SetChatID(chatID)
   self.chatID = chatID
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.SetCheckTalkID = function(self, chatId, talkId)
-  -- function num : 0_12
+function HomelandTaskNPC:SetCheckTalkID(chatId, talkId)
   self.checkchatId = chatId
   self.checktalkId = talkId
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.InitInteract = function(self)
-  -- function num : 0_13
+function HomelandTaskNPC:InitInteract()
   self:RefreshInteractPoint()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.SetVisible = function(self, visible)
-  -- function num : 0_14 , upvalues : _ENV
+function HomelandTaskNPC:SetVisible(visible)
   if self.transform then
-    ((self.transform).gameObject):SetActive(visible)
+    self.transform.gameObject:SetActive(visible)
   end
   if visible then
-    local hit, navMeshHit = (((UnityEngine.AI).NavMesh).SamplePosition)((self.transform).position, nil, 10, 1)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
+    local hit, navMeshHit = UnityEngine.AI.NavMesh.SamplePosition(self.transform.position, nil, 10, 1)
     if hit then
-      (self.transform).position = navMeshHit.position
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.navMeshAgent).enabled = false
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.navMeshAgent).enabled = true
+      self.transform.position = navMeshHit.position
+      self.navMeshAgent.enabled = false
+      self.navMeshAgent.enabled = true
     end
-    ;
-    (self.npcAnim):Play(HomelandPetAnimName.Stand)
-    self.position = (self.transform).position
+    self.npcAnim:Play(HomelandPetAnimName.Stand)
+    self.position = self.transform.position
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.GetInteractPosition = function(self)
-  -- function num : 0_15
-  return (self.transform).position
+function HomelandTaskNPC:GetInteractPosition()
+  return self.transform.position
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.GetName = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  return (StringTable.Get)((self.cfg).Name)
+function HomelandTaskNPC:GetName()
+  return StringTable.Get(self.cfg.Name)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.RefreshInteractPoint = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function HomelandTaskNPC:RefreshInteractPoint()
   if self.interactPoint then
-    (self.interactPointManager):RemoveBuildInteractPoint(self.interactPoint)
+    self.interactPointManager:RemoveBuildInteractPoint(self.interactPoint)
   end
-  self.interactPoint = (self.interactPointManager):AddBuildInteractPoint(self, nil, InteractPointType.TaskNpc)
+  self.interactPoint = self.interactPointManager:AddBuildInteractPoint(self, nil, InteractPointType.TaskNpc)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.ResetInteractPoint = function(self)
-  -- function num : 0_18
+function HomelandTaskNPC:ResetInteractPoint()
   if not self.interactPoint then
-    return 
+    return
   end
   if self.interactPoint then
-    (self.interactPointManager):RemoveBuildInteractPoint(self.interactPoint)
+    self.interactPointManager:RemoveBuildInteractPoint(self.interactPoint)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.Interact = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local custom = {[FinishConditionEnum.PetInteraction] = self.Interact_PetInteraction, [FinishConditionEnum.NpcInteraction] = self.Interact_NpcInteraction}
-  local conditionInfo = (self.task):GetConditionInfo()
+function HomelandTaskNPC:Interact()
+  local custom = {
+    [FinishConditionEnum.PetInteraction] = self.Interact_PetInteraction,
+    [FinishConditionEnum.NpcInteraction] = self.Interact_NpcInteraction
+  }
+  local conditionInfo = self.task:GetConditionInfo()
   local func = custom[conditionInfo.FinishType]
   if func then
     func(self, conditionInfo)
-    if conditionInfo.FinishType == FinishConditionEnum.PetInteraction and self.npcID == (conditionInfo.ChatTargetId)[1] then
-      return 
+    if conditionInfo.FinishType == FinishConditionEnum.PetInteraction and self.npcID == conditionInfo.ChatTargetId[1] then
+      return
     end
   end
   if self.chatID then
-    local args = {self.npcID, self.checkchatId, self.checktalkId}
-    do
-      if conditionInfo.FinishType == FinishConditionEnum.PetSearch or conditionInfo.FinishType == FinishConditionEnum.PetNeed then
-        local item, itemcount = (self.task):GetCheckItem()
-        args[4] = item
-        args[5] = itemcount
-      end
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIHomePetInteract", self, nil, self.chatID, args)
+    local args = {
+      self.npcID,
+      self.checkchatId,
+      self.checktalkId
+    }
+    if conditionInfo.FinishType == FinishConditionEnum.PetSearch or conditionInfo.FinishType == FinishConditionEnum.PetNeed then
+      local item, itemcount = self.task:GetCheckItem()
+      args[4] = item
+      args[5] = itemcount
     end
+    GameGlobal.UIStateManager():ShowDialog("UIHomePetInteract", self, nil, self.chatID, args)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.Interact_PetInteraction = function(self, conditionInfo)
-  -- function num : 0_20 , upvalues : _ENV
-  if self.npcID == (conditionInfo.ChatTargetId)[1] then
-    local charTrans = ((self.homelandClient):CharacterManager()):GetCharacterTransform()
-    local toward = charTrans.position - (self.transform).position
+function HomelandTaskNPC:Interact_PetInteraction(conditionInfo)
+  if self.npcID == conditionInfo.ChatTargetId[1] then
+    local charTrans = self.homelandClient:CharacterManager():GetCharacterTransform()
+    local toward = charTrans.position - self.transform.position
     toward.y = 0
-    ;
-    (self.transform):DORotate(((Quaternion.LookRotation)(toward)).eulerAngles, 0.1)
-    ;
-    (self.task):SubmitTask(true, self)
+    self.transform:DORotate(Quaternion.LookRotation(toward).eulerAngles, 0.1)
+    self.task:SubmitTask(true, self)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.Interact_NpcInteraction = function(self, conditionInfo)
-  -- function num : 0_21 , upvalues : _ENV
-  if self.npcID == (conditionInfo.ChatTargetId)[1] then
+function HomelandTaskNPC:Interact_NpcInteraction(conditionInfo)
+  if self.npcID == conditionInfo.ChatTargetId[1] then
     local id = conditionInfo.FinishEffectId
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIHomelandTaskFinishEffect", id, self.transform, (self.transform).position, function()
-    -- function num : 0_21_0 , upvalues : self
-    (self.task):SubmitTask(true, self)
-  end
-)
+    GameGlobal.UIStateManager():ShowDialog("UIHomelandTaskFinishEffect", id, self.transform, self.transform.position, function()
+      self.task:SubmitTask(true, self)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.GetInteractRedStatus = function(self, pointType, index)
-  -- function num : 0_22
+function HomelandTaskNPC:GetInteractRedStatus(pointType, index)
   return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.AgentTransform = function(self)
-  -- function num : 0_23
+function HomelandTaskNPC:AgentTransform()
   return self.transform
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.GetRotation = function(self)
-  -- function num : 0_24
-  return (self.transform).rotation
+function HomelandTaskNPC:GetRotation()
+  return self.transform.rotation
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.SetRotation = function(self, rotation)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.transform).rotation = rotation
+function HomelandTaskNPC:SetRotation(rotation)
+  self.transform.rotation = rotation
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.PetName = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  return (StringTable.Get)((self.cfg).Name)
+function HomelandTaskNPC:PetName()
+  return StringTable.Get(self.cfg.Name)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.GetBody = function(self, face)
-  -- function num : 0_27 , upvalues : TaskNpcType, _ENV, TaskNpcPetSkinType
+function HomelandTaskNPC:GetBody(face)
   if self.npcType == TaskNpcType.Pet then
-    local lFace = nil
+    local lFace
     if face then
       lFace = face
     else
       lFace = "Norm"
     end
     local icon = ""
-    local tid = (self.cfg).PetId
-    local skinid = ((Cfg.cfg_pet)[tid]).SkinId
-    if (self.cfg).PetSkinType == TaskNpcPetSkinType.Appointed then
-      (Log.fatal)("暂不支持指定皮肤")
+    local tid = self.cfg.PetId
+    local skinid = Cfg.cfg_pet[tid].SkinId
+    if self.cfg.PetSkinType == TaskNpcPetSkinType.Appointed then
+      Log.fatal("暂不支持指定皮肤")
+    elseif self.cfg.PetSkinType == TaskNpcPetSkinType.Player then
+      local pet = GameGlobal.GetModule(PetModule):GetPetByTemplateId(self.cfg.PetId)
+      if pet then
+        skinid = pet:GetSkinId()
+      end
+    elseif self.cfg.PetSkinType == TaskNpcPetSkinType.Base then
+    end
+    local cfg = Cfg.cfg_home_pet_story_face[skinid]
+    if cfg then
+      icon = cfg[lFace]
+      if not icon then
+        icon = ""
+        Log.error("###[HomelandTaskNPC] icon is nil ! id --> ", skinid, ",_face --> ", lFace)
+      end
     else
-      if (self.cfg).PetSkinType == TaskNpcPetSkinType.Player then
-        local pet = ((GameGlobal.GetModule)(PetModule)):GetPetByTemplateId((self.cfg).PetId)
-        if pet then
-          skinid = pet:GetSkinId()
-        end
-      else
-      end
+      icon = "base_icon_" .. tid
+      Log.error("###[HomelandTaskNPC] cfg is nil ! id --> ", skinid)
     end
-    do
-      if (self.cfg).PetSkinType == TaskNpcPetSkinType.Base then
-        do
-          local cfg = (Cfg.cfg_home_pet_story_face)[skinid]
-          if cfg then
-            icon = cfg[lFace]
-            if not icon then
-              icon = ""
-              ;
-              (Log.error)("###[HomelandTaskNPC] icon is nil ! id --> ", skinid, ",_face --> ", lFace)
-            end
-          else
-            icon = "base_icon_" .. tid
-            ;
-            (Log.error)("###[HomelandTaskNPC] cfg is nil ! id --> ", skinid)
-          end
-          do return icon end
-          do return (self.cfg).ResIcon end
-        end
-      end
-    end
+    return icon
+  else
+    return self.cfg.ResIcon
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.PlayAnimAndReturnTime = function(self, animName)
-  -- function num : 0_28
+function HomelandTaskNPC:PlayAnimAndReturnTime(animName)
   local time = 0
-  local clip = (self.npcAnim):GetClip(animName)
+  local clip = self.npcAnim:GetClip(animName)
   if clip then
     time = clip.length
   end
-  ;
-  (self.npcAnim):CrossFade(animName, 0.2)
+  self.npcAnim:CrossFade(animName, 0.2)
   return time
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.GetPetConfig = function(self)
-  -- function num : 0_29
+function HomelandTaskNPC:GetPetConfig()
   return self.cfg
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.PlayBubble = function(self)
-  -- function num : 0_30
+function HomelandTaskNPC:PlayBubble()
   return 0
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.NpcID = function(self)
-  -- function num : 0_31
+function HomelandTaskNPC:NpcID()
   return self.npcID
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.PetID = function(self)
-  -- function num : 0_32
-  return (self.cfg).PetId
+function HomelandTaskNPC:PetID()
+  return self.cfg.PetId
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandTaskNPC.GetTask = function(self)
-  -- function num : 0_33
+function HomelandTaskNPC:GetTask()
   return self.task
 end
-
-

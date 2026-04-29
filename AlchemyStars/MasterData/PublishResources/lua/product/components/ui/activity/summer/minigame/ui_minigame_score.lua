@@ -1,55 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/minigame/ui_minigame_score.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMiniGameScore", UICustomWidget)
 UIMiniGameScore = UIMiniGameScore
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMiniGameScore.Constructor = function(self)
-  -- function num : 0_0
+function UIMiniGameScore:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameScore.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMiniGameScore:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameScore._GetComponents = function(self)
-  -- function num : 0_2
+function UIMiniGameScore:_GetComponents()
   self.score = self:GetUIComponent("UILocalizationText", "Score")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameScore.SetData = function(self, score)
-  -- function num : 0_3
-  (self.score):SetText("+" .. score)
+function UIMiniGameScore:SetData(score)
+  self.score:SetText("+" .. score)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameScore.SetPosition = function(self, position, offset)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ((self.view).transform).position = position
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self.view).transform).localPosition = ((self.view).transform).localPosition + offset
+function UIMiniGameScore:SetPosition(position, offset)
+  self.view.transform.position = position
+  self.view.transform.localPosition = self.view.transform.localPosition + offset
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameScore.SetActive = function(self, active)
-  -- function num : 0_5
-  ((self.view).gameObject):SetActive(active)
+function UIMiniGameScore:SetActive(active)
+  self.view.gameObject:SetActive(active)
 end
-
-

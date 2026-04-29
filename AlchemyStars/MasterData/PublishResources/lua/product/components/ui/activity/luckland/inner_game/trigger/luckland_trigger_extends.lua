@@ -1,66 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/trigger/luckland_trigger_extends.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("luckland_trigger_base")
 _class("LLTTNone", LuckLandTriggerBase)
 LLTTNone = LLTTNone
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTNone.IsSatisfied = function(self, notify)
-  -- function num : 0_0
+function LLTTNone:IsSatisfied(notify)
   return false
 end
 
 _class("LLTTAlways", LuckLandTriggerBase)
 LLTTAlways = LLTTAlways
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTAlways.IsSatisfied = function(self, notify)
-  -- function num : 0_1
+function LLTTAlways:IsSatisfied(notify)
   return true
 end
 
 _class("LLTTProb", LuckLandTriggerBase)
 LLTTProb = LLTTProb
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTProb.IsSatisfied = function(self, notify)
-  -- function num : 0_2 , upvalues : _ENV
-  local prob = (self._param)[1]
-  local r = (math.random)(1, 100)
-  do return r < prob end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function LLTTProb:IsSatisfied(notify)
+  local prob = self._param[1]
+  local r = math.random(1, 100)
+  return prob > r
 end
 
 _class("LLTTPetIDCount", LuckLandTriggerBase)
 LLTTPetIDCount = LLTTPetIDCount
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTPetIDCount.IsSatisfied = function(self, notify)
-  -- function num : 0_3 , upvalues : _ENV
+function LLTTPetIDCount:IsSatisfied(notify)
   local templateID = self:GetTriggerParamByIndex(1)
   local compareType = self:GetTriggerParamByIndex(2)
   local count = self:GetTriggerParamByIndex(3)
   local petCount = 0
-  do
-    if templateID then
-      local pets = (LuckLandInnerGameHelper.GetFightPetsDataByTemplateID)(templateID)
-      if pets then
-        petCount = #pets
-      end
+  if templateID then
+    local pets = LuckLandInnerGameHelper.GetFightPetsDataByTemplateID(templateID)
+    if pets then
+      petCount = #pets
     end
-    return (LuckLandTriggerTool.Compare)(compareType, petCount, count)
   end
+  return LuckLandTriggerTool.Compare(compareType, petCount, count)
 end
 
 _class("LLTTPetTagCount", LuckLandTriggerBase)
 LLTTPetTagCount = LLTTPetTagCount
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTPetTagCount.IsSatisfied = function(self, notify)
-  -- function num : 0_4 , upvalues : _ENV
+function LLTTPetTagCount:IsSatisfied(notify)
   local tagType = self:GetTriggerParamByIndex(1)
   local tagTypeParam = self:GetTriggerParamByIndex(2)
   local operateType = self:GetTriggerParamByIndex(3)
@@ -75,20 +57,18 @@ LLTTPetTagCount.IsSatisfied = function(self, notify)
       compareType = self:GetTriggerParamByIndex(5)
       count = self:GetTriggerParamByIndex(6)
     end
-    return (LuckLandTriggerTool.TagCheck)(tagType, tagTypeParam, compareType, count)
+    return LuckLandTriggerTool.TagCheck(tagType, tagTypeParam, compareType, count)
   end
   return false
 end
 
 _class("LLTTDisNPetTagCount", LuckLandTriggerBase)
 LLTTDisNPetTagCount = LLTTDisNPetTagCount
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTDisNPetTagCount.IsSatisfied = function(self, notify)
-  -- function num : 0_5 , upvalues : _ENV
+function LLTTDisNPetTagCount:IsSatisfied(notify)
   local entity = notify:GetNotifyEntity()
   if not entity then
-    return 
+    return
   end
   local tagType = self:GetTriggerParamByIndex(1)
   local tagTypeParam = self:GetTriggerParamByIndex(2)
@@ -106,34 +86,27 @@ LLTTDisNPetTagCount.IsSatisfied = function(self, notify)
       count = self:GetTriggerParamByIndex(6)
       distance = self:GetTriggerParamByIndex(7)
     end
-    return (LuckLandTriggerTool.TagCheck)(tagType, tagTypeParam, compareType, count, entity, distance)
+    return LuckLandTriggerTool.TagCheck(tagType, tagTypeParam, compareType, count, entity, distance)
   end
   return false
 end
 
 _class("LLTTMonsterCount", LuckLandTriggerBase)
 LLTTMonsterCount = LLTTMonsterCount
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTMonsterCount.IsSatisfied = function(self, notify)
-  -- function num : 0_6 , upvalues : _ENV
-  local monsters = (LuckLandInnerGameHelper.GetFightMonsterData)()
-  do
-    if monsters then
-      local count = self:GetTriggerParamByIndex(1)
-      return count < #monsters
-    end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function LLTTMonsterCount:IsSatisfied(notify)
+  local monsters = LuckLandInnerGameHelper.GetFightMonsterData()
+  if monsters then
+    local count = self:GetTriggerParamByIndex(1)
+    return count < #monsters
   end
+  return false
 end
 
 _class("LLTTPetPos", LuckLandTriggerBase)
 LLTTPetPos = LLTTPetPos
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTPetPos.IsSatisfied = function(self, notify)
-  -- function num : 0_7 , upvalues : _ENV
+function LLTTPetPos:IsSatisfied(notify)
   local entity = notify:GetNotifyEntity()
   if entity and entity:GetEntityType() == LuckLandEntityType.Pet then
     local pos = entity:GetPos()
@@ -141,135 +114,106 @@ LLTTPetPos.IsSatisfied = function(self, notify)
       local PosType = self:GetTriggerParamByIndex(1)
       if PosType then
         if PosType == LuckLandTriggerPosType.Morning then
-          return (table.icontains)(LuckLandConst.MorningPosList, pos)
-        else
-          if PosType == LuckLandTriggerPosType.Midday then
-            return (table.icontains)(LuckLandConst.MiddayPosList, pos)
-          else
-            if PosType == LuckLandTriggerPosType.Night then
-              return (table.icontains)(LuckLandConst.NightPosList, pos)
-            else
-              if (LuckLandInnerGameHelper.GetBackpackPetDataByID)(entity:ID()) == nil then
-                do
-                  do return PosType ~= LuckLandTriggerPosType.Bag end
-                  do return false end
-                  -- DECOMPILER ERROR: 2 unprocessed JMP targets
-                end
-              end
-            end
-          end
+          return table.icontains(LuckLandConst.MorningPosList, pos)
+        elseif PosType == LuckLandTriggerPosType.Midday then
+          return table.icontains(LuckLandConst.MiddayPosList, pos)
+        elseif PosType == LuckLandTriggerPosType.Night then
+          return table.icontains(LuckLandConst.NightPosList, pos)
+        elseif PosType == LuckLandTriggerPosType.Bag then
+          return LuckLandInnerGameHelper.GetBackpackPetDataByID(entity:ID()) ~= nil
         end
       end
     end
   end
+  return false
 end
 
 _class("LLTTIsLeader", LuckLandTriggerBase)
 LLTTIsLeader = LLTTIsLeader
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTIsLeader.IsSatisfied = function(self, notify)
-  -- function num : 0_8 , upvalues : _ENV
-  local entity = notify:GetNotifyEntity()
-  if entity then
-    local pos = entity:GetPos()
-    if pos ~= (LuckLandConst.MorningPosList)[1] then
-      do
-        do return not pos end
-        do return false end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
-    end
-  end
-end
-
-_class("LLTTIsTail", LuckLandTriggerBase)
-LLTTIsTail = LLTTIsTail
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-LLTTIsTail.IsSatisfied = function(self, notify)
-  -- function num : 0_9 , upvalues : _ENV
+function LLTTIsLeader:IsSatisfied(notify)
   local entity = notify:GetNotifyEntity()
   if entity then
     local pos = entity:GetPos()
     if pos then
-      local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+      return pos == LuckLandConst.MorningPosList[1]
+    end
+  end
+  return false
+end
+
+_class("LLTTIsTail", LuckLandTriggerBase)
+LLTTIsTail = LLTTIsTail
+
+function LLTTIsTail:IsSatisfied(notify)
+  local entity = notify:GetNotifyEntity()
+  if entity then
+    local pos = entity:GetPos()
+    if pos then
+      local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
       if entityMgr then
         local fightPets = entityMgr:GetFightPets()
-        if fightPets and #fightPets > 1 then
+        if fightPets and 1 < #fightPets then
           local lastPet = fightPets[#fightPets]
-          if pos ~= lastPet:GetPos() then
-            do
-              do return not lastPet end
-              do return false end
-              -- DECOMPILER ERROR: 2 unprocessed JMP targets
-            end
+          if lastPet then
+            return pos == lastPet:GetPos()
           end
         end
       end
     end
   end
+  return false
 end
 
 _class("LLTTIsSameElementLT", LuckLandTriggerBase)
 LLTTIsSameElementLT = LLTTIsSameElementLT
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTIsSameElementLT.IsSatisfied = function(self, notify)
-  -- function num : 0_10 , upvalues : _ENV
-  local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+function LLTTIsSameElementLT:IsSatisfied(notify)
+  local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
   if entityMgr then
     local fightPets = entityMgr:GetFightPets()
-    if fightPets and #fightPets > 1 then
+    if fightPets and 1 < #fightPets then
       local firstPet = fightPets[1]
       local lastPet = fightPets[#fightPets]
-      if firstPet:Element() ~= lastPet:Element() then
-        do
-          do return not firstPet or not lastPet end
-          do return false end
-          -- DECOMPILER ERROR: 2 unprocessed JMP targets
-        end
+      if firstPet and lastPet then
+        return firstPet:Element() == lastPet:Element()
       end
     end
   end
+  return false
 end
 
 _class("LLTTIsElementTriplet", LuckLandTriggerBase)
 LLTTIsElementTriplet = LLTTIsElementTriplet
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTIsElementTriplet.IsSatisfied = function(self, notify)
-  -- function num : 0_11 , upvalues : _ENV
-  local module = (LuckLandInnerGameHelper.GetLuckLandGameModule)()
+function LLTTIsElementTriplet:IsSatisfied(notify)
+  local module = LuckLandInnerGameHelper.GetLuckLandGameModule()
   if module then
     local mgr = module:GetEntityMng()
     if mgr then
       local fightPets = mgr:GetFightPets()
       if fightPets then
         local elements = {}
-        for _,petEntity in ipairs(fightPets) do
+        for _, petEntity in ipairs(fightPets) do
           local element = petEntity:Element()
           local pos = petEntity:GetPos()
           if not elements[element] then
             elements[element] = {}
           end
-          ;
-          (table.insert)(elements[element], pos)
+          table.insert(elements[element], pos)
         end
-        for _,posList in pairs(elements) do
-          if #posList >= 3 then
+        for _, posList in pairs(elements) do
+          if 3 <= #posList then
             local linkCount = 1
             local prePos = posList[1]
             for i = 2, #posList do
               if posList[i] - prePos == 1 then
                 linkCount = linkCount + 1
-              else
-                if linkCount < 3 then
-                  linkCount = 1
-                end
+              elseif linkCount < 3 then
+                linkCount = 1
               end
               prePos = posList[i]
-              if linkCount >= 3 then
+              if 3 <= linkCount then
                 return true
               end
             end
@@ -278,81 +222,63 @@ LLTTIsElementTriplet.IsSatisfied = function(self, notify)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
 _class("LLTTIsDeletingSelf", LuckLandTriggerBase)
 LLTTIsDeletingSelf = LLTTIsDeletingSelf
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTIsDeletingSelf.IsSatisfied = function(self, notify)
-  -- function num : 0_12 , upvalues : _ENV
+function LLTTIsDeletingSelf:IsSatisfied(notify)
   local params = notify:GetNotifyParams()
   if not LLNTDeletePet:IsInstanceOfType(notify) or not params then
     return false
   end
   local notifyEntity = notify:GetNotifyEntity()
-  local isSelf = (self._param)[1]
-  if notifyEntity ~= params[1] then
-    do return isSelf ~= LuckLandTriggerIsSelf.True end
-    if notifyEntity == params[1] then
-      do return isSelf ~= LuckLandTriggerIsSelf.False end
-      do return false end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
+  local isSelf = self._param[1]
+  if isSelf == LuckLandTriggerIsSelf.True then
+    return notifyEntity == params[1]
+  elseif isSelf == LuckLandTriggerIsSelf.False then
+    return notifyEntity ~= params[1]
   end
+  return false
 end
 
 _class("LLTTElementCount", LuckLandTriggerBase)
 LLTTElementCount = LLTTElementCount
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTElementCount.IsSatisfied = function(self, notify)
-  -- function num : 0_13 , upvalues : _ENV
+function LLTTElementCount:IsSatisfied(notify)
   local compareType = self:GetTriggerParamByIndex(1)
   local count = self:GetTriggerParamByIndex(2)
   local elementCount = 0
-  local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+  local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
   if entityMgr then
     local elementTable = {}
     local fightPets = entityMgr:GetFightPets()
     if fightPets then
-      for _,pet in pairs(fightPets) do
-        if not (table.icontains)(elementTable, pet:Element()) then
-          (table.insert)(elementTable, pet:Element())
+      for _, pet in pairs(fightPets) do
+        if not table.icontains(elementTable, pet:Element()) then
+          table.insert(elementTable, pet:Element())
         end
       end
     end
-    do
-      do
-        elementCount = #elementTable
-        return (LuckLandTriggerTool.Compare)(compareType, elementCount, count)
-      end
-    end
+    elementCount = #elementTable
   end
+  return LuckLandTriggerTool.Compare(compareType, elementCount, count)
 end
 
 _class("LLTTPosHasPet", LuckLandTriggerBase)
 LLTTPosHasPet = LLTTPosHasPet
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
 
-LLTTPosHasPet.IsSatisfied = function(self, notify)
-  -- function num : 0_14 , upvalues : _ENV
+function LLTTPosHasPet:IsSatisfied(notify)
   local posType = self:GetTriggerParamByIndex(1)
-  local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+  local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
   if entityMgr then
     local fightPets = entityMgr:GetFightPets()
-    for _,pet in pairs(fightPets) do
-      if (LuckLandTriggerTool.CheckPetPos)(posType, pet) then
+    for _, pet in pairs(fightPets) do
+      if LuckLandTriggerTool.CheckPetPos(posType, pet) then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
-
-

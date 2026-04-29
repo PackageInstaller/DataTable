@@ -1,18 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_change_team_leader_count_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddChangeTeamLeaderCount", BuffViewBase)
 BuffViewAddChangeTeamLeaderCount = BuffViewAddChangeTeamLeaderCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddChangeTeamLeaderCount.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddChangeTeamLeaderCount:PlayView(TT)
   local result = self:GetBuffResult()
   local newCount = result:GetNewCount()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIChangeTeamLeaderLeftCount, newCount)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIChangeTeamLeaderLeftCount, newCount)
 end
-
-

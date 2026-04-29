@@ -1,9 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/cfg_pet_limit_tag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {}
 local config = {}
 return config, "ID", key
-

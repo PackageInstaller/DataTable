@@ -1,47 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/dialogue/ui_n32_multiline_dialogue.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineDialogue", UIController)
 UIN32MultiLineDialogue = UIN32MultiLineDialogue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineDialogue.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._padding = {l = 10, r = 10, t = 10, b = 120, s = 14, h = 0, viewport = 0}
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._padding).t = (self._padding).t - (self._padding).s
+function UIN32MultiLineDialogue:Constructor()
+  self._padding = {
+    l = 10,
+    r = 10,
+    t = 10,
+    b = 120,
+    s = 14,
+    h = 0,
+    viewport = 0
+  }
+  self._padding.t = self._padding.t - self._padding.s
   self._textAnchor = UnityEngine.TextAnchor
   self._autoChat = nil
   self._optionID = -1
   self._pauseDialogue = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN32MultiLineDialogue:LoadDataOnEnter(TT, res, uiParams)
   self._missionId = uiParams[1]
   self._endCB = uiParams[2]
-  self._cfgChat = (Cfg.cfg_mission_multiline_chat)[self._missionId]
-  self._curTalk = (Cfg.cfg_mission_multiline_talk)[(self._cfgChat).StartTalk]
+  self._cfgChat = Cfg.cfg_mission_multiline_chat[self._missionId]
+  self._curTalk = Cfg.cfg_mission_multiline_talk[self._cfgChat.StartTalk]
   self._roleModule = self:GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN32MultiLineDialogue:OnShow(uiParams)
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
   self._bgImageLoader = self:GetUIComponent("RawImageLoader", "bgImage")
   self._btnSkip = self:GetUIComponent("Button", "btnSkip")
   self._btnCancel = self:GetUIComponent("Button", "btnCancel")
   self._sr = self:GetUIComponent("ScrollRect", "Scroll View")
   self._preScrollPosition = -1
-  self._srContent = (self._sr).content
+  self._srContent = self._sr.content
   self._txtPlace = self:GetUIComponent("UILocalizationText", "txtPlace")
   self._txtPlaceDesc = self:GetUIComponent("UILocalizationText", "txtPlaceDesc")
   self._txtChatDesc = self:GetUIComponent("UILocalizationText", "txtChatDesc")
@@ -56,12 +48,9 @@ UIN32MultiLineDialogue.OnShow = function(self, uiParams)
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN32MultiLineDialogue:OnHide()
   self:ReleaseAutoChat()
-  for k,v in pairs(self._common) do
+  for k, v in pairs(self._common) do
     v:UnLoad()
     v:Dispose()
   end
@@ -71,351 +60,220 @@ UIN32MultiLineDialogue.OnHide = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.BtnSkipOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_n32_multiline_dialogue_skip_popup"), function(param)
-    -- function num : 0_4_0 , upvalues : self
+function UIN32MultiLineDialogue:BtnSkipOnClick(go)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_n32_multiline_dialogue_skip_popup"), function(param)
     self:OutAnimation()
-  end
-, nil, function(param)
-    -- function num : 0_4_1 , upvalues : self
+  end, nil, function(param)
     self._pauseDialogue = false
-  end
-, nil)
+  end, nil)
   self._pauseDialogue = true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.BtnCancelOnClick = function(self, go)
-  -- function num : 0_5
+function UIN32MultiLineDialogue:BtnCancelOnClick(go)
   self:OutAnimation()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.CreateAnimTalk = function(self, TT, talkName, cfgTalk, layout, widgetAnim, animCb, widgetCb)
-  -- function num : 0_6 , upvalues : _ENV
-  local txtWord = (StringTable.Get)(cfgTalk.ChatWord)
-  local len = (string.len)(txtWord)
+function UIN32MultiLineDialogue:CreateAnimTalk(TT, talkName, cfgTalk, layout, widgetAnim, animCb, widgetCb)
+  local txtWord = StringTable.Get(cfgTalk.ChatWord)
+  local len = string.len(txtWord)
   local delayMs = 500
-  for k,v in pairs(self._preAnimation) do
-    if v.Min <= len then
+  for k, v in pairs(self._preAnimation) do
+    if len >= v.Min then
       delayMs = v.Duration
       break
     end
   end
-  do
-    ;
-    (widgetAnim:GetGameObject()):SetActive(true)
-    widgetAnim:SetData(cfgTalk)
-    self:TalkLayout(widgetAnim, layout, true)
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._padding).h = (self._padding).h - (self._padding).s - widgetAnim:PreferredHeight()
-    local widgetTalk = self:Spawn(talkName, (string.format)("%s.prefab", talkName))
-    widgetTalk:SetData(cfgTalk)
-    ;
-    (table.insert)(self._talk, widgetTalk)
-    self:TalkLayout(widgetTalk, layout, false)
-    ;
-    (widgetTalk:GetGameObject()):SetActive(false)
-    self:ScrollBottom(false, TT, 333, widgetAnim)
-    if animCb ~= nil then
-      animCb(widgetAnim)
-    end
-    YIELD(TT, delayMs)
-    ;
-    (widgetAnim:GetGameObject()):SetActive(false)
-    ;
-    (widgetTalk:GetGameObject()):SetActive(true)
-    if widgetCb ~= nil then
-      widgetCb(widgetTalk)
-    end
+  widgetAnim:GetGameObject():SetActive(true)
+  widgetAnim:SetData(cfgTalk)
+  self:TalkLayout(widgetAnim, layout, true)
+  self._padding.h = self._padding.h - self._padding.s - widgetAnim:PreferredHeight()
+  local widgetTalk = self:Spawn(talkName, string.format("%s.prefab", talkName))
+  widgetTalk:SetData(cfgTalk)
+  table.insert(self._talk, widgetTalk)
+  self:TalkLayout(widgetTalk, layout, false)
+  widgetTalk:GetGameObject():SetActive(false)
+  self:ScrollBottom(false, TT, 333, widgetAnim)
+  if animCb ~= nil then
+    animCb(widgetAnim)
+  end
+  YIELD(TT, delayMs)
+  widgetAnim:GetGameObject():SetActive(false)
+  widgetTalk:GetGameObject():SetActive(true)
+  if widgetCb ~= nil then
+    widgetCb(widgetTalk)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.CreateOptionTalk = function(self, TT, talkName, cfgTalk, layout, widgetAnim, animCb, widgetCb)
-  -- function num : 0_7 , upvalues : _ENV
-  (widgetAnim:GetGameObject()):SetActive(true)
+function UIN32MultiLineDialogue:CreateOptionTalk(TT, talkName, cfgTalk, layout, widgetAnim, animCb, widgetCb)
+  widgetAnim:GetGameObject():SetActive(true)
   widgetAnim:SetData(cfgTalk)
   widgetAnim:SetFramePosition()
   self:TalkLayout(widgetAnim, layout, true)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._padding).h = (self._padding).h - (self._padding).s - widgetAnim:PreferredHeight()
-  local cfgOption = nil
+  self._padding.h = self._padding.h - self._padding.s - widgetAnim:PreferredHeight()
+  local cfgOption
   local optionWordLen = 0
-  for k,v in pairs(cfgTalk.AnswerID) do
-    local optionTalk = (Cfg.cfg_mission_multiline_talk)[v]
-    local txtWord = (StringTable.Get)(optionTalk.ChatWord)
-    local len = (string.len)(txtWord)
+  for k, v in pairs(cfgTalk.AnswerID) do
+    local optionTalk = Cfg.cfg_mission_multiline_talk[v]
+    local txtWord = StringTable.Get(optionTalk.ChatWord)
+    local len = string.len(txtWord)
     if optionWordLen < len then
       optionWordLen = len
       cfgOption = optionTalk
     end
   end
-  local widgetTalk = self:Spawn(talkName, (string.format)("%s.prefab", talkName))
+  local widgetTalk = self:Spawn(talkName, string.format("%s.prefab", talkName))
   widgetTalk:SetData(cfgOption)
-  ;
-  (table.insert)(self._talk, widgetTalk)
+  table.insert(self._talk, widgetTalk)
   self:TalkLayout(widgetTalk, layout, false)
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._padding).h = (self._padding).h - (self._padding).s - widgetTalk:PreferredHeight()
-  ;
-  (widgetTalk:GetGameObject()):SetActive(false)
+  self._padding.h = self._padding.h - self._padding.s - widgetTalk:PreferredHeight()
+  widgetTalk:GetGameObject():SetActive(false)
   self:ScrollBottom(true, TT, 333, widgetAnim)
-  do
-    if animCb ~= nil then
-      local lockName = "UIN32MultiLineDialogue:TalkOptionTT -- inAnimation"
-      self:Lock(lockName)
-      animCb(widgetAnim)
-      self:UnLock(lockName)
-    end
-    self._optionID = -1
-    while self._optionID == -1 do
-      YIELD(TT)
-    end
-    ;
-    (widgetAnim:GetGameObject()):SetActive(false)
-    local idOptionTalk = (cfgTalk.AnswerID)[self._optionID]
-    cfgOption = (Cfg.cfg_mission_multiline_talk)[idOptionTalk]
-    self._curTalk = (Cfg.cfg_mission_multiline_talk)[cfgOption.NextWord]
-    ;
-    (widgetTalk:GetGameObject()):SetActive(true)
-    widgetTalk:SetData(cfgOption)
-    self:TalkLayout(widgetTalk, layout, false)
-    if widgetCb ~= nil then
-      widgetCb(widgetTalk)
-    end
+  if animCb ~= nil then
+    local lockName = "UIN32MultiLineDialogue:TalkOptionTT -- inAnimation"
+    self:Lock(lockName)
+    animCb(widgetAnim)
+    self:UnLock(lockName)
+  end
+  self._optionID = -1
+  while self._optionID == -1 do
+    YIELD(TT)
+  end
+  widgetAnim:GetGameObject():SetActive(false)
+  local idOptionTalk = cfgTalk.AnswerID[self._optionID]
+  cfgOption = Cfg.cfg_mission_multiline_talk[idOptionTalk]
+  self._curTalk = Cfg.cfg_mission_multiline_talk[cfgOption.NextWord]
+  widgetTalk:GetGameObject():SetActive(true)
+  widgetTalk:SetData(cfgOption)
+  self:TalkLayout(widgetTalk, layout, false)
+  if widgetCb ~= nil then
+    widgetCb(widgetTalk)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.OptionOnClick = function(self, id, go)
-  -- function num : 0_8
+function UIN32MultiLineDialogue:OptionOnClick(id, go)
   self._optionID = id
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.ScrollBottom = function(self, force, TT, blendMs, widget)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN32MultiLineDialogue:ScrollBottom(force, TT, blendMs, widget)
   local threshold = 1
   if force then
     threshold = threshold + threshold
   else
     local maxPixel = 10
-    local sizeDelta = (self._srContent).sizeDelta
-    if sizeDelta.y <= ((self._padding).viewport).y then
+    local sizeDelta = self._srContent.sizeDelta
+    if sizeDelta.y <= self._padding.viewport.y then
       threshold = 1
     else
-      threshold = maxPixel / (sizeDelta.y - ((self._padding).viewport).y)
+      threshold = maxPixel / (sizeDelta.y - self._padding.viewport.y)
     end
   end
-  do
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-    if threshold == 1 then
-      (self._sr).verticalNormalizedPosition = 0
-    else
-      if self._preScrollPosition <= threshold and TT ~= nil and blendMs ~= nil then
-        if widget ~= nil then
-          (widget:GetGameObject()):SetActive(false)
-        end
-        local position = (self._sr).verticalNormalizedPosition
-        local speed = position / blendMs
-        local deltaMs = 0
-        do
-          do
-            while deltaMs <= blendMs do
-              local dt = (GameGlobal:GetInstance()):GetDeltaTime()
-              deltaMs = deltaMs + dt
-              position = position - speed * dt
-              position = (math.max)(position, 0)
-              -- DECOMPILER ERROR at PC62: Confused about usage of register: R10 in 'UnsetPending'
-
-              ;
-              (self._sr).verticalNormalizedPosition = position
-              YIELD(TT)
-            end
-            -- DECOMPILER ERROR at PC68: Confused about usage of register: R9 in 'UnsetPending'
-
-            ;
-            (self._sr).verticalNormalizedPosition = 0
-            if widget ~= nil then
-              (widget:GetGameObject()):SetActive(true)
-            end
-            -- DECOMPILER ERROR at PC81: Confused about usage of register: R6 in 'UnsetPending'
-
-            if self._preScrollPosition <= threshold then
-              (self._sr).verticalNormalizedPosition = 0
-            end
-          end
-        end
-      end
+  if threshold == 1 then
+    self._sr.verticalNormalizedPosition = 0
+  elseif threshold >= self._preScrollPosition and TT ~= nil and blendMs ~= nil then
+    if widget ~= nil then
+      widget:GetGameObject():SetActive(false)
     end
+    local position = self._sr.verticalNormalizedPosition
+    local speed = position / blendMs
+    local deltaMs = 0
+    while blendMs >= deltaMs do
+      local dt = GameGlobal:GetInstance():GetDeltaTime()
+      deltaMs = deltaMs + dt
+      position = position - speed * dt
+      position = math.max(position, 0)
+      self._sr.verticalNormalizedPosition = position
+      YIELD(TT)
+    end
+    self._sr.verticalNormalizedPosition = 0
+    if widget ~= nil then
+      widget:GetGameObject():SetActive(true)
+    end
+  elseif threshold >= self._preScrollPosition then
+    self._sr.verticalNormalizedPosition = 0
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.Flush = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._bgImageLoader):LoadImage((self._cfgChat).Background)
-  ;
-  (self._txtPlace):SetText((StringTable.Get)((self._cfgChat).Place))
-  ;
-  (self._txtPlaceDesc):SetText((StringTable.Get)((self._cfgChat).PlaceDescribe))
-  ;
-  (self._txtChatDesc):SetText((StringTable.Get)((self._cfgChat).ChatDescribe))
-  ;
-  (self._txtChatTitle):SetText((StringTable.Get)((self._cfgChat).ChatTitle))
+function UIN32MultiLineDialogue:Flush()
+  self._bgImageLoader:LoadImage(self._cfgChat.Background)
+  self._txtPlace:SetText(StringTable.Get(self._cfgChat.Place))
+  self._txtPlaceDesc:SetText(StringTable.Get(self._cfgChat.PlaceDescribe))
+  self._txtChatDesc:SetText(StringTable.Get(self._cfgChat.ChatDescribe))
+  self._txtChatTitle:SetText(StringTable.Get(self._cfgChat.ChatTitle))
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.AutoChat = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN32MultiLineDialogue:AutoChat()
   if self._curTalk == nil then
-    return 
+    return
   end
-  ;
-  ((self._btnSkip).gameObject):SetActive(true)
-  ;
-  ((self._btnCancel).gameObject):SetActive(false)
+  self._btnSkip.gameObject:SetActive(true)
+  self._btnCancel.gameObject:SetActive(false)
   self._autoChat = self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : _ENV, self
     YIELD(TT, 1000)
     self:ScrollBottom(true)
-    while 1 do
-      while 1 do
-        while 1 do
-          while 1 do
-            if self._curTalk ~= nil then
-              local curTalk = self._curTalk
-              self._curTalk = (Cfg.cfg_mission_multiline_talk)[(self._curTalk).NextWord]
-              while self._pauseDialogue do
-                YIELD(TT)
-              end
-              if curTalk.TalkType == UIN32MultiLineDialogueType.Npc then
-                local layout = (self._textAnchor).LowerLeft
-                do
-                  local talkName = "UIN32MultiLineDialogueNpc"
-                  self:CreateAnimTalk(TT, talkName, curTalk, layout, self._npcAnim, function(widget)
-      -- function num : 0_11_0_0 , upvalues : TT
-      widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialogueNpcAnim_in", 333)
-    end
-, function(widget)
-      -- function num : 0_11_0_1 , upvalues : TT
-      widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialogueNpc_word_in", 233)
-    end
-)
-                  YIELD(TT, 1000)
-                  -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-          end
-          if curTalk.TalkType == UIN32MultiLineDialogueType.Player and curTalk.AnswerID ~= nil then
-            local layout = (self._textAnchor).LowerRight
-            do
-              local talkName = "UIN32MultiLineDialoguePlayer"
-              self:CreateOptionTalk(TT, talkName, curTalk, layout, self._playerOption, function(widget)
-      -- function num : 0_11_0_2 , upvalues : TT
-      widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialoguePlayerOption_in", 767)
-    end
-, function(widget)
-      -- function num : 0_11_0_3 , upvalues : TT
-      widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialogueNpc_word_in", 233)
-    end
-)
-              YIELD(TT, 1000)
-              -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-        if curTalk.TalkType == UIN32MultiLineDialogueType.Player then
-          self:CreateTalk(TT, "UIN32MultiLineDialoguePlayer", curTalk, (self._textAnchor).LowerRight, function(widget)
-      -- function num : 0_11_0_4 , upvalues : TT
-      widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialoguePlayer_head_in", 700)
-    end
-)
-          YIELD(TT, 1000)
-          -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    while self._curTalk ~= nil do
+      local curTalk = self._curTalk
+      self._curTalk = Cfg.cfg_mission_multiline_talk[self._curTalk.NextWord]
+      while self._pauseDialogue do
+        YIELD(TT)
       end
-      if curTalk.TalkType == UIN32MultiLineDialogueType.Comment then
-        self:CreateTalk(TT, "UIN32MultiLineDialogueComment", curTalk, (self._textAnchor).LowerCenter, function(widget)
-      -- function num : 0_11_0_5 , upvalues : TT
-      widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialogueComment_in", 200)
-    end
-)
+      if curTalk.TalkType == UIN32MultiLineDialogueType.Npc then
+        local layout = self._textAnchor.LowerLeft
+        local talkName = "UIN32MultiLineDialogueNpc"
+        self:CreateAnimTalk(TT, talkName, curTalk, layout, self._npcAnim, function(widget)
+          widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialogueNpcAnim_in", 333)
+        end, function(widget)
+          widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialogueNpc_word_in", 233)
+        end)
+        YIELD(TT, 1000)
+      elseif curTalk.TalkType == UIN32MultiLineDialogueType.Player and curTalk.AnswerID ~= nil then
+        local layout = self._textAnchor.LowerRight
+        local talkName = "UIN32MultiLineDialoguePlayer"
+        self:CreateOptionTalk(TT, talkName, curTalk, layout, self._playerOption, function(widget)
+          widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialoguePlayerOption_in", 767)
+        end, function(widget)
+          widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialogueNpc_word_in", 233)
+        end)
+        YIELD(TT, 1000)
+      elseif curTalk.TalkType == UIN32MultiLineDialogueType.Player then
+        self:CreateTalk(TT, "UIN32MultiLineDialoguePlayer", curTalk, self._textAnchor.LowerRight, function(widget)
+          widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialoguePlayer_head_in", 700)
+        end)
+        YIELD(TT, 1000)
+      elseif curTalk.TalkType == UIN32MultiLineDialogueType.Comment then
+        self:CreateTalk(TT, "UIN32MultiLineDialogueComment", curTalk, self._textAnchor.LowerCenter, function(widget)
+          widget:PlayAnimation(TT, "uieff_UIN32MultiLineDialogueComment_in", 200)
+        end)
         YIELD(TT, 1000)
       end
     end
-    do
-      self:ScrollBottom(true, TT, 333)
-      ;
-      ((self._btnSkip).gameObject):SetActive(false)
-      ;
-      ((self._btnCancel).gameObject):SetActive(true)
-      ;
-      (self._btnCancelAnimation):Play("uieff_UIN32MultiLineDialogue_Btn")
-      local lockName = "UIN32MultiLineDialogue:AutoChat -- btnCancelAnimation"
-      self:Lock(lockName)
-      YIELD(TT, 333)
-      self:UnLock(lockName)
-    end
-  end
-)
+    self:ScrollBottom(true, TT, 333)
+    self._btnSkip.gameObject:SetActive(false)
+    self._btnCancel.gameObject:SetActive(true)
+    self._btnCancelAnimation:Play("uieff_UIN32MultiLineDialogue_Btn")
+    local lockName = "UIN32MultiLineDialogue:AutoChat -- btnCancelAnimation"
+    self:Lock(lockName)
+    YIELD(TT, 333)
+    self:UnLock(lockName)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.ReleaseAutoChat = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local task = nil
+function UIN32MultiLineDialogue:ReleaseAutoChat()
+  local task
   if self._autoChat ~= nil then
-    task = ((GameGlobal.TaskManager)()):FindTask(self._autoChat)
+    task = GameGlobal.TaskManager():FindTask(self._autoChat)
   end
   if task and task.state ~= TaskState.Stop then
-    ((GameGlobal.TaskManager)()):KillTask(self._autoChat)
+    GameGlobal.TaskManager():KillTask(self._autoChat)
     self._autoChat = nil
   end
-  for k,v in pairs(self._talk) do
+  for k, v in pairs(self._talk) do
     v:UnLoad()
     v:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.Spawn = function(self, luaClass, prefabName)
-  -- function num : 0_13 , upvalues : _ENV
-  local widgetGo = (UIHelper.GetGameObject)(prefabName)
+function UIN32MultiLineDialogue:Spawn(luaClass, prefabName)
+  local widgetGo = UIHelper.GetGameObject(prefabName)
   local uiWidgetName = luaClass
   local widget = _createInstance(uiWidgetName)
   widget:SetName(uiWidgetName)
@@ -428,33 +286,23 @@ UIN32MultiLineDialogue.Spawn = function(self, luaClass, prefabName)
   return widget
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.UpdateContentSize = function(self, record)
-  -- function num : 0_14 , upvalues : _ENV
-  local sizeDelta = (self._srContent).sizeDelta
+function UIN32MultiLineDialogue:UpdateContentSize(record)
+  local sizeDelta = self._srContent.sizeDelta
   if record then
-    if sizeDelta.y <= ((self._padding).viewport).y then
+    if sizeDelta.y <= self._padding.viewport.y then
       self._preScrollPosition = -1
     else
-      self._preScrollPosition = (self._sr).verticalNormalizedPosition
+      self._preScrollPosition = self._sr.verticalNormalizedPosition
     end
   end
-  sizeDelta.y = (math.max)((self._padding).h, sizeDelta.y)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._srContent).sizeDelta = sizeDelta
+  sizeDelta.y = math.max(self._padding.h, sizeDelta.y)
+  self._srContent.sizeDelta = sizeDelta
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.CreateTalk = function(self, TT, talkName, cfgTalk, layout, animCb)
-  -- function num : 0_15 , upvalues : _ENV
-  local widget = self:Spawn(talkName, (string.format)("%s.prefab", talkName))
+function UIN32MultiLineDialogue:CreateTalk(TT, talkName, cfgTalk, layout, animCb)
+  local widget = self:Spawn(talkName, string.format("%s.prefab", talkName))
   widget:SetData(cfgTalk)
-  ;
-  (table.insert)(self._talk, widget)
+  table.insert(self._talk, widget)
   self:TalkLayout(widget, layout, true)
   self:ScrollBottom(false, TT, 333, widget)
   if animCb ~= nil then
@@ -463,135 +311,88 @@ UIN32MultiLineDialogue.CreateTalk = function(self, TT, talkName, cfgTalk, layout
   return widget
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.TalkLayout = function(self, widget, layout, record)
-  -- function num : 0_16 , upvalues : _ENV
-  local widgetRt = (widget:GetGameObject()).transform
+function UIN32MultiLineDialogue:TalkLayout(widget, layout, record)
+  local widgetRt = widget:GetGameObject().transform
   local widgetSizeDelta = widget:SizeDelta()
-  if layout == (self._textAnchor).LowerLeft then
+  if layout == self._textAnchor.LowerLeft then
     local anchoredPosition = Vector2.zero
-    anchoredPosition.x = (self._padding).l + widgetSizeDelta.x * 0.5
-    anchoredPosition.y = (self._padding).h - (self._padding).b + (self._padding).s + widgetSizeDelta.y * 0.5
+    anchoredPosition.x = self._padding.l + widgetSizeDelta.x * 0.5
+    anchoredPosition.y = self._padding.h - self._padding.b + self._padding.s + widgetSizeDelta.y * 0.5
     anchoredPosition.y = -anchoredPosition.y
     widgetRt.anchoredPosition = anchoredPosition
-  else
-    do
-      if layout == (self._textAnchor).LowerCenter then
-        local anchoredPosition = Vector2.zero
-        anchoredPosition.x = ((self._padding).viewport).x * 0.5
-        anchoredPosition.y = (self._padding).h - (self._padding).b + (self._padding).s + widgetSizeDelta.y * 0.5
-        anchoredPosition.y = -anchoredPosition.y
-        widgetRt.anchoredPosition = anchoredPosition
-      else
-        do
-          do
-            if layout == (self._textAnchor).LowerRight then
-              local anchoredPosition = Vector2.zero
-              anchoredPosition.x = ((self._padding).viewport).x - ((self._padding).r + widgetSizeDelta.x * 0.5)
-              anchoredPosition.y = (self._padding).h - (self._padding).b + (self._padding).s + widgetSizeDelta.y * 0.5
-              anchoredPosition.y = -anchoredPosition.y
-              widgetRt.anchoredPosition = anchoredPosition
-            end
-            -- DECOMPILER ERROR at PC103: Confused about usage of register: R6 in 'UnsetPending'
-
-            ;
-            (self._padding).h = (self._padding).h + (self._padding).s + widget:PreferredHeight()
-            self:UpdateContentSize(record)
-            return widget
-          end
-        end
-      end
-    end
+  elseif layout == self._textAnchor.LowerCenter then
+    local anchoredPosition = Vector2.zero
+    anchoredPosition.x = self._padding.viewport.x * 0.5
+    anchoredPosition.y = self._padding.h - self._padding.b + self._padding.s + widgetSizeDelta.y * 0.5
+    anchoredPosition.y = -anchoredPosition.y
+    widgetRt.anchoredPosition = anchoredPosition
+  elseif layout == self._textAnchor.LowerRight then
+    local anchoredPosition = Vector2.zero
+    anchoredPosition.x = self._padding.viewport.x - (self._padding.r + widgetSizeDelta.x * 0.5)
+    anchoredPosition.y = self._padding.h - self._padding.b + self._padding.s + widgetSizeDelta.y * 0.5
+    anchoredPosition.y = -anchoredPosition.y
+    widgetRt.anchoredPosition = anchoredPosition
   end
+  self._padding.h = self._padding.h + self._padding.s + widget:PreferredHeight()
+  self:UpdateContentSize(record)
+  return widget
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.InitPadding = function(self)
-  -- function num : 0_17
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._padding).viewport = ((self._sr).transform).sizeDelta
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._padding).h = (self._padding).t + (self._padding).b
+function UIN32MultiLineDialogue:InitPadding()
+  self._padding.viewport = self._sr.transform.sizeDelta
+  self._padding.h = self._padding.t + self._padding.b
   self:UpdateContentSize(false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.InitTalkAnimation = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN32MultiLineDialogue:InitTalkAnimation()
   self._preAnimation = {}
-  local language = (Localization.GetCurLanguage)()
-  local cfgGroup = (Cfg.cfg_mission_multiline_talk_anim)({Language = language})
-  for k,v in pairs(cfgGroup) do
-    (table.insert)(self._preAnimation, v)
+  local language = Localization.GetCurLanguage()
+  local cfgGroup = Cfg.cfg_mission_multiline_talk_anim({Language = language})
+  for k, v in pairs(cfgGroup) do
+    table.insert(self._preAnimation, v)
   end
-  ;
-  (table.sort)(self._preAnimation, function(a, b)
-    -- function num : 0_18_0
-    do return b.ID < a.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._preAnimation, function(a, b)
+    return a.ID > b.ID
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.CreateCommon = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN32MultiLineDialogue:CreateCommon()
   self._npcAnim = self:Spawn("UIN32MultiLineDialogueNpc", "UIN32MultiLineDialogueNpcAnim.prefab")
   self._playerAnim = self:Spawn("UIN32MultiLineDialoguePlayer", "UIN32MultiLineDialoguePlayerAnim.prefab")
   self._playerOption = self:Spawn("UIN32MultiLineDialoguePlayerOption", "UIN32MultiLineDialoguePlayerOption.prefab")
-  ;
-  (self._npcAnim):SetAnim(true)
-  ;
-  (self._playerAnim):SetAnim(true)
-  self._common = {self._npcAnim, self._playerAnim, self._playerOption}
+  self._npcAnim:SetAnim(true)
+  self._playerAnim:SetAnim(true)
+  self._common = {
+    self._npcAnim,
+    self._playerAnim,
+    self._playerOption
+  }
   self._talk = {}
-  for k,v in pairs(self._common) do
+  for k, v in pairs(self._common) do
     v:SetFramePosition()
-    ;
-    (v:GetGameObject()):SetActive(false)
+    v:GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.RoleModule = function(self)
-  -- function num : 0_20
+function UIN32MultiLineDialogue:RoleModule()
   return self._roleModule
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.InAnimation = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN32MultiLineDialogue:InAnimation()
   local lockName = "UIN32MultiLineDialogue:InAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN32MultiLineDialogue_in")
+    self._animation:Play("uieff_UIN32MultiLineDialogue_in")
     YIELD(TT, 433)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogue.OutAnimation = function(self, cbFinish)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN32MultiLineDialogue:OutAnimation(cbFinish)
   local lockName = "UIN32MultiLineDialogue:OutAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : self, lockName, _ENV, cbFinish
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN32MultiLineDialogue_out")
+    self._animation:Play("uieff_UIN32MultiLineDialogue_out")
     YIELD(TT, 233)
     self:CloseDialog()
     self:UnLock(lockName)
@@ -599,71 +400,52 @@ UIN32MultiLineDialogue.OutAnimation = function(self, cbFinish)
       cbFinish()
     end
     self:CallUIMethod("UIN32MultiLineMapController", "CheckComponentTime")
-  end
-)
+  end)
 end
 
-local UIN32MultiLineDialogueType = {Player = 1, Npc = 2, Comment = 3}
+local UIN32MultiLineDialogueType = {
+  Player = 1,
+  Npc = 2,
+  Comment = 3
+}
 _enum("UIN32MultiLineDialogueType", UIN32MultiLineDialogueType)
 _class("UIN32MultiLineDialogueItem", UICustomWidget)
 UIN32MultiLineDialogueItem = UIN32MultiLineDialogueItem
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN32MultiLineDialogueItem.Constructor = function(self)
-  -- function num : 0_23
+function UIN32MultiLineDialogueItem:Constructor()
   self._nameH = 55.5
   self._bottom = 45
   self._frameH = 2
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueItem.SizeDelta = function(self)
-  -- function num : 0_24
-  return ((self:GetGameObject()).transform).sizeDelta
+function UIN32MultiLineDialogueItem:SizeDelta()
+  return self:GetGameObject().transform.sizeDelta
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueItem.SetFramePosition = function(self)
-  -- function num : 0_25
+function UIN32MultiLineDialogueItem:SetFramePosition()
   local preferredHeight = self:PreferredHeight()
-  local anchoredPosition = ((self._imgFrame).transform).anchoredPosition
-  anchoredPosition.y = preferredHeight - ((self:SizeDelta()).y + self._frameH) * 0.5
+  local anchoredPosition = self._imgFrame.transform.anchoredPosition
+  anchoredPosition.y = preferredHeight - (self:SizeDelta().y + self._frameH) * 0.5
   anchoredPosition.y = -anchoredPosition.y
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._imgFrame).transform).anchoredPosition = anchoredPosition
+  self._imgFrame.transform.anchoredPosition = anchoredPosition
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueItem.SetData = function(self, cfgTalk)
-  -- function num : 0_26
+function UIN32MultiLineDialogueItem:SetData(cfgTalk)
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueItem.PlayAnimation = function(self, TT, animName, durationMs)
-  -- function num : 0_27 , upvalues : _ENV
-  (self._animation):Play(animName)
+function UIN32MultiLineDialogueItem:PlayAnimation(TT, animName, durationMs)
+  self._animation:Play(animName)
   YIELD(TT, durationMs)
 end
 
 _class("UIN32MultiLineDialogueNpc", UIN32MultiLineDialogueItem)
 UIN32MultiLineDialogueNpc = UIN32MultiLineDialogueNpc
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN32MultiLineDialogueNpc.Constructor = function(self)
-  -- function num : 0_28
+function UIN32MultiLineDialogueNpc:Constructor()
   self._isAnim = false
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueNpc.OnShow = function(self, uiParams)
-  -- function num : 0_29
+function UIN32MultiLineDialogueNpc:OnShow(uiParams)
   self._headFrame = self:GetUIComponent("RectTransform", "headFrame")
   self._headLoader = self:GetUIComponent("RawImageLoader", "head")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -674,71 +456,47 @@ UIN32MultiLineDialogueNpc.OnShow = function(self, uiParams)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueNpc.OnHide = function(self)
-  -- function num : 0_30
+function UIN32MultiLineDialogueNpc:OnHide()
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueNpc.SetAnim = function(self, isAnim)
-  -- function num : 0_31
+function UIN32MultiLineDialogueNpc:SetAnim(isAnim)
   self._isAnim = isAnim
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueNpc.SetData = function(self, cfgTalk)
-  -- function num : 0_32 , upvalues : _ENV
+function UIN32MultiLineDialogueNpc:SetData(cfgTalk)
   self._cfgTalk = cfgTalk
-  local cfgNpc = (Cfg.cfg_mission_multiline_npc)[(self._cfgTalk).Npc]
+  local cfgNpc = Cfg.cfg_mission_multiline_npc[self._cfgTalk.Npc]
   if cfgNpc ~= nil and cfgNpc.Icon ~= nil then
-    (self._headLoader):LoadImage(cfgNpc.Icon)
-    ;
-    (self._txtName):SetText((StringTable.Get)(cfgNpc.Name))
+    self._headLoader:LoadImage(cfgNpc.Icon)
+    self._txtName:SetText(StringTable.Get(cfgNpc.Name))
   end
   if not self._isAnim then
-    local txtWord = (StringTable.Get)((self._cfgTalk).ChatWord)
-    ;
-    (self._txtWord):SetText(txtWord)
-    local padding = (self._imgWordLayout).padding
-    local sizeDelta = ((self._imgWord).transform).sizeDelta
-    sizeDelta.x = (self._txtWord).preferredWidth
-    sizeDelta.x = (math.min)(sizeDelta.x, (((self._txtWord).transform).sizeDelta).x)
+    local txtWord = StringTable.Get(self._cfgTalk.ChatWord)
+    self._txtWord:SetText(txtWord)
+    local padding = self._imgWordLayout.padding
+    local sizeDelta = self._imgWord.transform.sizeDelta
+    sizeDelta.x = self._txtWord.preferredWidth
+    sizeDelta.x = math.min(sizeDelta.x, self._txtWord.transform.sizeDelta.x)
     sizeDelta.x = sizeDelta.x + padding.left + padding.right
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._imgWord).transform).sizeDelta = sizeDelta
+    self._imgWord.transform.sizeDelta = sizeDelta
   end
-  do
-    self:SetFramePosition()
-  end
+  self:SetFramePosition()
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueNpc.PreferredHeight = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local padding = (self._imgWordLayout).padding
-  local wordHeight = self._nameH + padding.top + padding.bottom + (self._txtWord).preferredHeight
-  return (math.max)(wordHeight, (((self._headFrame).transform).sizeDelta).y) + self._bottom + self._frameH
+function UIN32MultiLineDialogueNpc:PreferredHeight()
+  local padding = self._imgWordLayout.padding
+  local wordHeight = self._nameH + padding.top + padding.bottom + self._txtWord.preferredHeight
+  return math.max(wordHeight, self._headFrame.transform.sizeDelta.y) + self._bottom + self._frameH
 end
 
 _class("UIN32MultiLineDialoguePlayer", UIN32MultiLineDialogueItem)
 UIN32MultiLineDialoguePlayer = UIN32MultiLineDialoguePlayer
--- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN32MultiLineDialoguePlayer.Constructor = function(self)
-  -- function num : 0_34
+function UIN32MultiLineDialoguePlayer:Constructor()
   self._isAnim = false
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayer.OnShow = function(self, uiParams)
-  -- function num : 0_35
+function UIN32MultiLineDialoguePlayer:OnShow(uiParams)
   self._headFrame = self:GetUIComponent("RectTransform", "headFrame")
   self._headLoader = self:GetUIComponent("RawImageLoader", "head")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -749,72 +507,47 @@ UIN32MultiLineDialoguePlayer.OnShow = function(self, uiParams)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayer.OnHide = function(self)
-  -- function num : 0_36
+function UIN32MultiLineDialoguePlayer:OnHide()
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayer.SetAnim = function(self, isAnim)
-  -- function num : 0_37
+function UIN32MultiLineDialoguePlayer:SetAnim(isAnim)
   self._isAnim = isAnim
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayer.SetData = function(self, cfgTalk)
-  -- function num : 0_38 , upvalues : _ENV
+function UIN32MultiLineDialoguePlayer:SetData(cfgTalk)
   self._cfgTalk = cfgTalk
-  local cfgNpc = (Cfg.cfg_mission_multiline_npc)[(self._cfgTalk).Npc]
+  local cfgNpc = Cfg.cfg_mission_multiline_npc[self._cfgTalk.Npc]
   if cfgNpc ~= nil and cfgNpc.Icon ~= nil then
-    (self._headLoader):LoadImage(cfgNpc.Icon)
-    ;
-    (self._txtName):SetText((StringTable.Get)(cfgNpc.Name))
-    ;
-    (self._txtName):SetText(((self:RootUIOwner()):RoleModule()):GetName())
+    self._headLoader:LoadImage(cfgNpc.Icon)
+    self._txtName:SetText(StringTable.Get(cfgNpc.Name))
+    self._txtName:SetText(self:RootUIOwner():RoleModule():GetName())
   end
   if not self._isAnim then
-    local txtWord = (StringTable.Get)((self._cfgTalk).ChatWord)
-    ;
-    (self._txtWord):SetText(txtWord)
-    local padding = (self._imgWordLayout).padding
-    local sizeDelta = ((self._imgWord).transform).sizeDelta
-    sizeDelta.x = (self._txtWord).preferredWidth
-    sizeDelta.x = (math.min)(sizeDelta.x, (((self._txtWord).transform).sizeDelta).x)
+    local txtWord = StringTable.Get(self._cfgTalk.ChatWord)
+    self._txtWord:SetText(txtWord)
+    local padding = self._imgWordLayout.padding
+    local sizeDelta = self._imgWord.transform.sizeDelta
+    sizeDelta.x = self._txtWord.preferredWidth
+    sizeDelta.x = math.min(sizeDelta.x, self._txtWord.transform.sizeDelta.x)
     sizeDelta.x = sizeDelta.x + padding.left + padding.right
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._imgWord).transform).sizeDelta = sizeDelta
+    self._imgWord.transform.sizeDelta = sizeDelta
   end
-  do
-    self:SetFramePosition()
-  end
+  self:SetFramePosition()
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayer.PreferredHeight = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local padding = (self._imgWordLayout).padding
-  local wordHeight = self._nameH + padding.top + padding.bottom + (self._txtWord).preferredHeight
-  return (math.max)(wordHeight, (((self._headFrame).transform).sizeDelta).y) + self._bottom + self._frameH
+function UIN32MultiLineDialoguePlayer:PreferredHeight()
+  local padding = self._imgWordLayout.padding
+  local wordHeight = self._nameH + padding.top + padding.bottom + self._txtWord.preferredHeight
+  return math.max(wordHeight, self._headFrame.transform.sizeDelta.y) + self._bottom + self._frameH
 end
 
 _class("UIN32MultiLineDialoguePlayerOption", UIN32MultiLineDialogueItem)
 UIN32MultiLineDialoguePlayerOption = UIN32MultiLineDialoguePlayerOption
--- DECOMPILER ERROR at PC160: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN32MultiLineDialoguePlayerOption.Constructor = function(self)
-  -- function num : 0_40
+function UIN32MultiLineDialoguePlayerOption:Constructor()
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayerOption.OnShow = function(self, uiParams)
-  -- function num : 0_41 , upvalues : _ENV
+function UIN32MultiLineDialoguePlayerOption:OnShow(uiParams)
   self._headFrame = self:GetUIComponent("RectTransform", "headFrame")
   self._headLoader = self:GetUIComponent("RawImageLoader", "head")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -822,164 +555,120 @@ UIN32MultiLineDialoguePlayerOption.OnShow = function(self, uiParams)
   self._imgWordLayout = self:GetUIComponent("HorizontalOrVerticalLayoutGroup", "imgWord")
   self._imgFrame = self:GetUIComponent("Image", "imgFrame")
   self._animation = self:GetUIComponent("Animation", "animation")
-  self._options = {self:GetUIComponent("Animation", "option1"), self:GetUIComponent("Animation", "option2"), self:GetUIComponent("Animation", "option3")}
-  self._optionsText = {UIN29DetectiveLogin:GetChildComponent((self._options)[1], "UILocalizationText", "optionBtn/txtOption"), UIN29DetectiveLogin:GetChildComponent((self._options)[2], "UILocalizationText", "optionBtn/txtOption"), UIN29DetectiveLogin:GetChildComponent((self._options)[3], "UILocalizationText", "optionBtn/txtOption")}
+  self._options = {
+    self:GetUIComponent("Animation", "option1"),
+    self:GetUIComponent("Animation", "option2"),
+    self:GetUIComponent("Animation", "option3")
+  }
+  self._optionsText = {
+    UIN29DetectiveLogin:GetChildComponent(self._options[1], "UILocalizationText", "optionBtn/txtOption"),
+    UIN29DetectiveLogin:GetChildComponent(self._options[2], "UILocalizationText", "optionBtn/txtOption"),
+    UIN29DetectiveLogin:GetChildComponent(self._options[3], "UILocalizationText", "optionBtn/txtOption")
+  }
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayerOption.OnHide = function(self)
-  -- function num : 0_42
+function UIN32MultiLineDialoguePlayerOption:OnHide()
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayerOption.PreferredHeight = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function UIN32MultiLineDialoguePlayerOption:PreferredHeight()
   local optionCount = 0
-  for k,v in pairs(self._options) do
-    if (v.gameObject).activeSelf then
+  for k, v in pairs(self._options) do
+    if v.gameObject.activeSelf then
       optionCount = optionCount + 1
     end
   end
   local optionButtonHeight = 69
-  local padding = (self._imgWordLayout).padding
-  local spacing = (self._imgWordLayout).spacing * (optionCount - 1)
-  local optionH = optionButtonHeight * (optionCount)
+  local padding = self._imgWordLayout.padding
+  local spacing = self._imgWordLayout.spacing * (optionCount - 1)
+  local optionH = optionButtonHeight * optionCount
   local wordHeight = self._nameH + padding.top + padding.bottom + spacing + optionH
-  return (math.max)(wordHeight, (((self._headFrame).transform).sizeDelta).y) + self._bottom + self._frameH
+  return math.max(wordHeight, self._headFrame.transform.sizeDelta.y) + self._bottom + self._frameH
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayerOption.Option1OnClick = function(self, go)
-  -- function num : 0_44
+function UIN32MultiLineDialoguePlayerOption:Option1OnClick(go)
   self:OptionAnimation(1, go)
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayerOption.Option2OnClick = function(self, go)
-  -- function num : 0_45
+function UIN32MultiLineDialoguePlayerOption:Option2OnClick(go)
   self:OptionAnimation(2, go)
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayerOption.Option3OnClick = function(self, go)
-  -- function num : 0_46
+function UIN32MultiLineDialoguePlayerOption:Option3OnClick(go)
   self:OptionAnimation(3, go)
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayerOption.OptionAnimation = function(self, id, go)
-  -- function num : 0_47 , upvalues : _ENV
+function UIN32MultiLineDialoguePlayerOption:OptionAnimation(id, go)
   local lockName = "UIN32MultiLineDialoguePlayerOption:OptionAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_47_0 , upvalues : self, lockName, id, _ENV, go
     self:Lock(lockName)
-    ;
-    ((self._options)[id]):Play("uieff_UIN32MultiLineDialoguePlayerOption_option")
+    self._options[id]:Play("uieff_UIN32MultiLineDialoguePlayerOption_option")
     YIELD(TT, 300)
-    ;
-    (self._animation):Play("uieff_UIN32MultiLineDialoguePlayerOption_out")
+    self._animation:Play("uieff_UIN32MultiLineDialoguePlayerOption_out")
     YIELD(TT, 300)
     self:UnLock(lockName)
-    ;
-    (self:RootUIOwner()):OptionOnClick(id, go)
-  end
-)
+    self:RootUIOwner():OptionOnClick(id, go)
+  end)
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialoguePlayerOption.SetData = function(self, cfgTalk)
-  -- function num : 0_48 , upvalues : _ENV
+function UIN32MultiLineDialoguePlayerOption:SetData(cfgTalk)
   self._cfgTalk = cfgTalk
-  local cfgNpc = (Cfg.cfg_mission_multiline_npc)[(self._cfgTalk).Npc]
+  local cfgNpc = Cfg.cfg_mission_multiline_npc[self._cfgTalk.Npc]
   if cfgNpc ~= nil and cfgNpc.Icon ~= nil then
-    (self._headLoader):LoadImage(cfgNpc.Icon)
-    ;
-    (self._txtName):SetText((StringTable.Get)(cfgNpc.Name))
-    ;
-    (self._txtName):SetText(((self:RootUIOwner()):RoleModule()):GetName())
+    self._headLoader:LoadImage(cfgNpc.Icon)
+    self._txtName:SetText(StringTable.Get(cfgNpc.Name))
+    self._txtName:SetText(self:RootUIOwner():RoleModule():GetName())
   end
-  local count = #(self._cfgTalk).AnswerID
-  for k,v in pairs(self._options) do
-    (v.gameObject):SetActive(k <= count)
+  local count = #self._cfgTalk.AnswerID
+  for k, v in pairs(self._options) do
+    v.gameObject:SetActive(k <= count)
   end
-  for k,v in pairs((self._cfgTalk).AnswerID) do
-    local cfgTalk = (Cfg.cfg_mission_multiline_talk)[v]
-    local optionText = (StringTable.Get)(cfgTalk.OptionWord)
-    ;
-    ((self._optionsText)[k]):SetText(optionText)
+  for k, v in pairs(self._cfgTalk.AnswerID) do
+    local cfgTalk = Cfg.cfg_mission_multiline_talk[v]
+    local optionText = StringTable.Get(cfgTalk.OptionWord)
+    self._optionsText[k]:SetText(optionText)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
 _class("UIN32MultiLineDialogueComment", UIN32MultiLineDialogueItem)
 UIN32MultiLineDialogueComment = UIN32MultiLineDialogueComment
--- DECOMPILER ERROR at PC193: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN32MultiLineDialogueComment.Constructor = function(self)
-  -- function num : 0_49
+function UIN32MultiLineDialogueComment:Constructor()
   self._bottom = 14
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueComment.OnShow = function(self, uiParams)
-  -- function num : 0_50
+function UIN32MultiLineDialogueComment:OnShow(uiParams)
   self._txtWord = self:GetUIComponent("UILocalizationText", "txtWord")
-  self._txtWidth = (((self._txtWord).rectTransform).sizeDelta).x
+  self._txtWidth = self._txtWord.rectTransform.sizeDelta.x
   self._imgFrame = self:GetUIComponent("Image", "imgFrame")
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueComment.OnHide = function(self)
-  -- function num : 0_51
+function UIN32MultiLineDialogueComment:OnHide()
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueComment.SetData = function(self, cfgTalk)
-  -- function num : 0_52 , upvalues : _ENV
+function UIN32MultiLineDialogueComment:SetData(cfgTalk)
   self._cfgTalk = cfgTalk
-  local txtWord = (StringTable.Get)((self._cfgTalk).ChatWord)
-  ;
-  (self._txtWord):SetText(txtWord)
-  local wordRt = (self._txtWord).rectTransform
-  local txtWidth = (wordRt.sizeDelta).x
-  local preferredWidth = (self._txtWord).preferredWidth
-  do
-    if preferredWidth < txtWidth then
-      local anchoredPosition = wordRt.anchoredPosition
-      anchoredPosition.x = (txtWidth - preferredWidth) * 0.5
-      wordRt.anchoredPosition = anchoredPosition
-    end
-    self:SetFramePosition()
+  local txtWord = StringTable.Get(self._cfgTalk.ChatWord)
+  self._txtWord:SetText(txtWord)
+  local wordRt = self._txtWord.rectTransform
+  local txtWidth = wordRt.sizeDelta.x
+  local preferredWidth = self._txtWord.preferredWidth
+  if txtWidth > preferredWidth then
+    local anchoredPosition = wordRt.anchoredPosition
+    anchoredPosition.x = (txtWidth - preferredWidth) * 0.5
+    wordRt.anchoredPosition = anchoredPosition
   end
+  self:SetFramePosition()
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueComment.SizeDelta = function(self)
-  -- function num : 0_53
-  local preferredHeight = (self._txtWord).preferredHeight
-  local sizeDelta = ((self:GetGameObject()).transform).sizeDelta
+function UIN32MultiLineDialogueComment:SizeDelta()
+  local preferredHeight = self._txtWord.preferredHeight
+  local sizeDelta = self:GetGameObject().transform.sizeDelta
   sizeDelta.y = preferredHeight
   return sizeDelta
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN32MultiLineDialogueComment.PreferredHeight = function(self)
-  -- function num : 0_54
-  local preferredHeight = (self._txtWord).preferredHeight
+function UIN32MultiLineDialogueComment:PreferredHeight()
+  local preferredHeight = self._txtWord.preferredHeight
   return preferredHeight + self._bottom + self._frameH
 end
-
-

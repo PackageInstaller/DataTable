@@ -1,48 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_asheep_mission_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, EntiesID = 3, ScoreLimit = 4, Rewards = 5}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  EntiesID = 3,
+  ScoreLimit = 4,
+  Rewards = 5
+}
 local common = {
-{
-{3440013, 2}
-}
-, 
-{
-{3000003, 30}
-, 
-{3440019, 2}
-}
-, 
-{
-{3440019, 2}
-}
+  {
+    {3440013, 2}
+  },
+  {
+    {3000003, 30},
+    {3440019, 2}
+  },
+  {
+    {3440019, 2}
+  }
 }
 local config = {
-{1, 112911901, 1, 4000, 
-{
-{3000003, 50}
-, 
-{3440013, 2}
-}
-}
-, 
-{2, 112911901, 2, 6000, common[1]}
-, 
-{3, 112911901, 3, 8000, common[1]}
-, 
-{4, 701111901, 1, 5000, common[2]}
-, 
-{5, 701111901, 2, 8000, common[3]}
-, 
-{6, 701111901, 3, 10000, common[3]}
-, 
-{7, 701811901, 1, 5000, common[2]}
-, 
-{8, 701811901, 2, 8000, common[3]}
-, 
-{9, 701811901, 3, 10000, common[3]}
+  {
+    1,
+    112911901,
+    1,
+    4000,
+    {
+      {3000003, 50},
+      {3440013, 2}
+    }
+  },
+  {
+    2,
+    112911901,
+    2,
+    6000,
+    common[1]
+  },
+  {
+    3,
+    112911901,
+    3,
+    8000,
+    common[1]
+  },
+  {
+    4,
+    701111901,
+    1,
+    5000,
+    common[2]
+  },
+  {
+    5,
+    701111901,
+    2,
+    8000,
+    common[3]
+  },
+  {
+    6,
+    701111901,
+    3,
+    10000,
+    common[3]
+  },
+  {
+    7,
+    701811901,
+    1,
+    5000,
+    common[2]
+  },
+  {
+    8,
+    701811901,
+    2,
+    8000,
+    common[3]
+  },
+  {
+    9,
+    701811901,
+    3,
+    10000,
+    common[3]
+  }
 }
 return config, "ID", key
-

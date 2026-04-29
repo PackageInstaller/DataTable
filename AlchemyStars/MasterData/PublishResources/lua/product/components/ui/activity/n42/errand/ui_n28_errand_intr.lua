@@ -1,74 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/errand/ui_n28_errand_intr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28ErrandIntr", UIController)
 UIN28ErrandIntr = UIN28ErrandIntr
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28ErrandIntr.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN28ErrandIntr:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UIN28ErrandIntr] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UIN28ErrandIntr] self._cfg is nil. param --> ", self._param)
   end
   self:InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandIntr.InitWidget = function(self)
-  -- function num : 0_1
+function UIN28ErrandIntr:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandIntr.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN28ErrandIntr:Flush()
   if not self._cfg then
-    return 
+    return
   end
-  local key = (self._cfg).Title
+  local key = self._cfg.Title
   local n = 0
-  while 1 do
+  while true do
     n = n + 1
-    local keyHead = (StringTable.Has)(key .. "head_" .. n)
+    local keyHead = StringTable.Has(key .. "head_" .. n)
     if not keyHead then
       n = n - 1
       break
     end
   end
-  do
-    if n <= 0 then
-      (Log.fatal)("### no [" .. key .. "head_n] in str_n28_errand.xlsx")
-      return 
-    end
-    local uis = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIN28ErrandIntrItem", n)
-    for i,ui in ipairs(uis) do
-      local head = (StringTable.Get)(key .. "head_" .. i)
-      local body = (StringTable.Get)(key .. "body_" .. i)
-      ui:Flush(head, body)
-    end
+  if n <= 0 then
+    Log.fatal("### no [" .. key .. "head_n] in str_n28_errand.xlsx")
+    return
+  end
+  local uis = UIWidgetHelper.SpawnObjects(self, "Content", "UIN28ErrandIntrItem", n)
+  for i, ui in ipairs(uis) do
+    local head = StringTable.Get(key .. "head_" .. i)
+    local body = StringTable.Get(key .. "body_" .. i)
+    ui:Flush(head, body)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandIntr._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)((self._cfg).Title))
+function UIN28ErrandIntr:_OnValue()
+  self._title:SetText(StringTable.Get(self._cfg.Title))
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28ErrandIntr.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIN28ErrandIntr:BtnCloseOnClick(go)
   self:CloseDialog()
 end
-
-

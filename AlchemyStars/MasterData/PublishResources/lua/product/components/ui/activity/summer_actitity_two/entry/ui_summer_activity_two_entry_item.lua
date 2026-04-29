@@ -1,15 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/entry/ui_summer_activity_two_entry_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoEntryItem", UICustomWidget)
 UISummerActivityTwoEntryItem = UISummerActivityTwoEntryItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoEntryItem.OnShow = function(self)
-  -- function num : 0_0
-  self._levelToName = {[1] = "I.", [2] = "II.", [3] = "III.", [4] = "IV.", [5] = "V.", [6] = "VI.", [7] = "VII."}
+function UISummerActivityTwoEntryItem:OnShow()
+  self._levelToName = {
+    [1] = "I.",
+    [2] = "II.",
+    [3] = "III.",
+    [4] = "IV.",
+    [5] = "V.",
+    [6] = "VI.",
+    [7] = "VII."
+  }
   self._selectedBgGo = self:GetGameObject("SelectedBg")
   self._unSelctedGo = self:GetGameObject("UnSelcted")
   self._selectedGo = self:GetGameObject("Selected")
@@ -23,185 +24,88 @@ UISummerActivityTwoEntryItem.OnShow = function(self)
   self._icon = self:GetUIComponent("Image", "LevelIcon")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryItem.Refresh = function(self, entryData, canSelected, clickCallback, isSingle)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummerActivityTwoEntryItem:Refresh(entryData, canSelected, clickCallback, isSingle)
   self._isSingle = isSingle
   self._entryData = entryData
   self._canSelected = canSelected
   self._isSelected = false
   self._groupIsSelected = false
-  ;
-  (self._iconImg):LoadImage(UISummerActivityTwoConst.EntryIcon)
-  ;
-  (self._levelIcon):SetActive(self._isSingle)
-  ;
-  (self._levelGo):SetActive(not self._isSingle)
+  self._iconImg:LoadImage(UISummerActivityTwoConst.EntryIcon)
+  self._levelIcon:SetActive(self._isSingle)
+  self._levelGo:SetActive(not self._isSingle)
   if self._canSelected then
-    (self._unSelctedGo):SetActive(true)
-    ;
-    (self._selectedBtnGo):SetActive(true)
+    self._unSelctedGo:SetActive(true)
+    self._selectedBtnGo:SetActive(true)
     self:RefreshSelectStatus()
   else
-    ;
-    (self._selectedBgGo):SetActive(false)
-    ;
-    (self._unSelctedGo):SetActive(false)
-    ;
-    (self._selectedGo):SetActive(false)
-    ;
-    (self._selectedBtnGo):SetActive(false)
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R5 in 'UnsetPending'
-
+    self._selectedBgGo:SetActive(false)
+    self._unSelctedGo:SetActive(false)
+    self._selectedGo:SetActive(false)
+    self._selectedBtnGo:SetActive(false)
     if self._isSingle then
-      (self._scoreLabel).color = Color(1, 0.8156862745098, 0.18039215686275, 1)
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._nameLabel).color = Color(1, 0.8156862745098, 0.18039215686275, 1)
-      -- DECOMPILER ERROR at PC75: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._icon).color = Color(1, 1, 1, 1)
+      self._scoreLabel.color = Color(1.0, 0.8156862745098039, 0.1803921568627451, 1)
+      self._nameLabel.color = Color(1.0, 0.8156862745098039, 0.1803921568627451, 1)
+      self._icon.color = Color(1, 1, 1, 1)
     else
-      -- DECOMPILER ERROR at PC84: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._scoreLabel).color = Color(0.9921568627451, 0.9921568627451, 0.9921568627451, 1)
-      -- DECOMPILER ERROR at PC92: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._nameLabel).color = Color(0.9921568627451, 0.9921568627451, 0.9921568627451, 1)
-      -- DECOMPILER ERROR at PC100: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._levelLabel).color = Color(0.9921568627451, 0.9921568627451, 0.9921568627451, 1)
+      self._scoreLabel.color = Color(0.9921568627450981, 0.9921568627450981, 0.9921568627450981, 1)
+      self._nameLabel.color = Color(0.9921568627450981, 0.9921568627450981, 0.9921568627450981, 1)
+      self._levelLabel.color = Color(0.9921568627450981, 0.9921568627450981, 0.9921568627450981, 1)
     end
   end
-  ;
-  (self._nameLabel):SetText((self._entryData):GetDes())
+  self._nameLabel:SetText(self._entryData:GetDes())
   local levelText = ""
-  if (self._levelToName)[(self._entryData):GetLevel()] then
-    levelText = (self._levelToName)[(self._entryData):GetLevel()]
+  if self._levelToName[self._entryData:GetLevel()] then
+    levelText = self._levelToName[self._entryData:GetLevel()]
   end
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._levelLabel).text = levelText
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._scoreLabel).text = (self._entryData):GetScroeRatioStr()
+  self._levelLabel.text = levelText
+  self._scoreLabel.text = self._entryData:GetScroeRatioStr()
   self._clickCallback = clickCallback
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryItem.RefreshSelectStatus = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._selectedBgGo):SetActive(self._isSelected)
-  ;
-  (self._selectedGo):SetActive(self._isSelected)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
+function UISummerActivityTwoEntryItem:RefreshSelectStatus()
+  self._selectedBgGo:SetActive(self._isSelected)
+  self._selectedGo:SetActive(self._isSelected)
   if self._isSingle then
     if self._isSelected then
-      (self._scoreLabel).color = Color(0, 0, 0, 1)
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._nameLabel).color = Color(0, 0, 0, 1)
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._icon).color = Color(0, 0, 0, 1)
+      self._scoreLabel.color = Color(0, 0, 0, 1)
+      self._nameLabel.color = Color(0, 0, 0, 1)
+      self._icon.color = Color(0, 0, 0, 1)
     else
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._scoreLabel).color = Color(1, 0.8156862745098, 0.18039215686275, 1)
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._nameLabel).color = Color(1, 0.8156862745098, 0.18039215686275, 1)
-      -- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._icon).color = Color(1, 1, 1, 1)
+      self._scoreLabel.color = Color(1.0, 0.8156862745098039, 0.1803921568627451, 1)
+      self._nameLabel.color = Color(1.0, 0.8156862745098039, 0.1803921568627451, 1)
+      self._icon.color = Color(1, 1, 1, 1)
     end
+  elseif self._isSelected then
+    self._scoreLabel.color = Color(0, 0, 0, 1)
+    self._nameLabel.color = Color(0, 0, 0, 1)
+    self._levelLabel.color = Color(0, 0, 0, 1)
+  elseif self._groupIsSelected then
+    self._scoreLabel.color = Color(0.5019607843137255, 0.4980392156862745, 0.4980392156862745, 1)
+    self._nameLabel.color = Color(0.5019607843137255, 0.4980392156862745, 0.4980392156862745, 1)
+    self._levelLabel.color = Color(0.5019607843137255, 0.4980392156862745, 0.4980392156862745, 1)
   else
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-    if self._isSelected then
-      (self._scoreLabel).color = Color(0, 0, 0, 1)
-      -- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._nameLabel).color = Color(0, 0, 0, 1)
-      -- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._levelLabel).color = Color(0, 0, 0, 1)
-    else
-      -- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-      if self._groupIsSelected then
-        (self._scoreLabel).color = Color(0.50196078431373, 0.49803921568627, 0.49803921568627, 1)
-        -- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._nameLabel).color = Color(0.50196078431373, 0.49803921568627, 0.49803921568627, 1)
-        -- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._levelLabel).color = Color(0.50196078431373, 0.49803921568627, 0.49803921568627, 1)
-      else
-        -- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._scoreLabel).color = Color(0.9921568627451, 0.9921568627451, 0.9921568627451, 1)
-        -- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._nameLabel).color = Color(0.9921568627451, 0.9921568627451, 0.9921568627451, 1)
-        -- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._levelLabel).color = Color(0.9921568627451, 0.9921568627451, 0.9921568627451, 1)
-      end
-    end
+    self._scoreLabel.color = Color(0.9921568627450981, 0.9921568627450981, 0.9921568627450981, 1)
+    self._nameLabel.color = Color(0.9921568627450981, 0.9921568627450981, 0.9921568627450981, 1)
+    self._levelLabel.color = Color(0.9921568627450981, 0.9921568627450981, 0.9921568627450981, 1)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryItem.SetSelectStatus = function(self, isSelected, groupIsSelected)
-  -- function num : 0_3
+function UISummerActivityTwoEntryItem:SetSelectStatus(isSelected, groupIsSelected)
   self._isSelected = isSelected
   self._groupIsSelected = groupIsSelected
-  ;
-  (self._entryData):SetSelectedStatus(self._isSelected)
+  self._entryData:SetSelectedStatus(self._isSelected)
   self:RefreshSelectStatus()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryItem.GetEntryData = function(self)
-  -- function num : 0_4
+function UISummerActivityTwoEntryItem:GetEntryData()
   return self._entryData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoEntryItem.SelectedBtnOnClick = function(self)
-  -- function num : 0_5
+function UISummerActivityTwoEntryItem:SelectedBtnOnClick()
   if not self._canSelected then
-    return 
+    return
   end
   if self._clickCallback then
-    (self._clickCallback)()
+    self._clickCallback()
   end
 end
-
-

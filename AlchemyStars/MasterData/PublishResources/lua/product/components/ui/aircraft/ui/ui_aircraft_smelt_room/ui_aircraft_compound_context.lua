@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_aircraft_compound_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftCompoundContext", Object)
 UIAircraftCompoundContext = UIAircraftCompoundContext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftCompoundContext.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftCompoundContext:Constructor()
   self.maxLimit = 999
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext.Clear = function(self)
-  -- function num : 0_1
+function UIAircraftCompoundContext:Clear()
   self.maxComNum = 0
   self.curComNum = 1
   self.materialTypesNum = 1
@@ -29,53 +19,38 @@ UIAircraftCompoundContext.Clear = function(self)
   self.coinNotEntenough = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext.InitIdMap = function(self, idMap)
-  -- function num : 0_2
+function UIAircraftCompoundContext:InitIdMap(idMap)
   self.idMap = idMap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext.InitWithTargetItem = function(self, targetCfg, atomDiscount)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftCompoundContext:InitWithTargetItem(targetCfg, atomDiscount)
   self:Clear()
   self.targetCfg = targetCfg
   self._atomDiscount = atomDiscount
   self:_AddMaterialData(1, targetCfg.Input, targetCfg.SInput)
   self.materialTypesNum = #self.materialData
-  local mid = (math.ceil)(self.maxLimit / 2)
+  local mid = math.ceil(self.maxLimit / 2)
   local left = 1
   local right = self.maxLimit
-  do
-    while mid >= left and right >= mid do
-      local nextIndex = 0
-      if self:CalcWithTargetNum(mid) then
-        nextIndex = mid + (math.ceil)((right - mid) / 2)
-        left = mid + 1
-        self.maxComNum = mid
-      else
-        nextIndex = mid - (math.ceil)((mid - (left)) / 2)
-        right = mid - 1
-      end
-      mid = nextIndex
+  while not (mid < left) and not (mid > right) do
+    local nextIndex = 0
+    if self:CalcWithTargetNum(mid) then
+      nextIndex = mid + math.ceil((right - mid) / 2)
+      left = mid + 1
+      self.maxComNum = mid
+    else
+      nextIndex = mid - math.ceil((mid - left) / 2)
+      right = mid - 1
     end
-    ;
-    (Log.debug)("UIAircraftCompoundContext , maxComNum", self.maxComNum)
+    mid = nextIndex
   end
+  Log.debug("UIAircraftCompoundContext , maxComNum", self.maxComNum)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext._AddMaterialData = function(self, typeLevel, input, sInput)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftCompoundContext:_AddMaterialData(typeLevel, input, sInput)
   local inputCfg = {}
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.materialData)[typeLevel] = inputCfg
-  for i,v in ipairs(input) do
+  self.materialData[typeLevel] = inputCfg
+  for i, v in ipairs(input) do
     local mat = {}
     mat.ID = v[1]
     mat.NeedNum = v[2]
@@ -83,9 +58,9 @@ UIAircraftCompoundContext._AddMaterialData = function(self, typeLevel, input, sI
     mat.HaveNum = 0
     inputCfg[mat.ID] = mat
     if i == 1 then
-      local nextCfgId = (self.idMap)[mat.ID]
+      local nextCfgId = self.idMap[mat.ID]
       if nextCfgId then
-        local cfg_smelt = (Cfg.cfg_item_smelt)[nextCfgId]
+        local cfg_smelt = Cfg.cfg_item_smelt[nextCfgId]
         if cfg_smelt and cfg_smelt.Input then
           self:_AddMaterialData(typeLevel + 1, cfg_smelt.Input, cfg_smelt.SInput)
         end
@@ -94,70 +69,55 @@ UIAircraftCompoundContext._AddMaterialData = function(self, typeLevel, input, sI
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext.CalcWithTargetNum = function(self, num, continueCalWhenCostNotEnough)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftCompoundContext:CalcWithTargetNum(num, continueCalWhenCostNotEnough)
   self._continueCalWhenCostNotEnough = continueCalWhenCostNotEnough
   self._cost = 0
-  ;
-  (table.clear)(self.comList)
+  table.clear(self.comList)
   self.coinNotEntenough = false
   self.materailNotEnough = false
-  for level,matList in ipairs(self.materialData) do
-    for k,mat in pairs(matList) do
-      mat.HaveNum = (self.itemModule):GetItemCount(mat.ID)
+  for level, matList in ipairs(self.materialData) do
+    for k, mat in pairs(matList) do
+      mat.HaveNum = self.itemModule:GetItemCount(mat.ID)
       mat.SelectNum = 0
     end
   end
-  return self:_CheckComTarget((self.targetCfg).ID, 1, num)
+  return self:_CheckComTarget(self.targetCfg.ID, 1, num)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext._CheckComTarget = function(self, targetCfgId, level, comNum)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg_smelt = (Cfg.cfg_item_smelt)[targetCfgId]
+function UIAircraftCompoundContext:_CheckComTarget(targetCfgId, level, comNum)
+  local cfg_smelt = Cfg.cfg_item_smelt[targetCfgId]
   local targetCost = 0
-  if cfg_smelt and #cfg_smelt.SInput > 0 then
-    targetCost = ((cfg_smelt.SInput)[1])[2]
+  if cfg_smelt and 0 < #cfg_smelt.SInput then
+    targetCost = cfg_smelt.SInput[1][2]
   end
-  local matList = (self.materialData)[level]
-  self._cost = self._cost + (math.ceil)(comNum * targetCost * self._atomDiscount)
-  for k,mat in pairs(matList) do
+  local matList = self.materialData[level]
+  self._cost = self._cost + math.ceil(comNum * targetCost * self._atomDiscount)
+  for k, mat in pairs(matList) do
     if not self:_CheckMaterial(mat.ID, level, mat.NeedNum * comNum) then
       return false
     end
   end
-  if (self._roleModule):GetAssetCount(RoleAssetID.RoleAssetAtom) < self._cost then
+  if self._roleModule:GetAssetCount(RoleAssetID.RoleAssetAtom) < self._cost then
     self.coinNotEntenough = true
     if not self._continueCalWhenCostNotEnough then
       return false
     end
   end
-  local hasComNum = (self.comList)[targetCfgId]
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R8 in 'UnsetPending'
-
+  local hasComNum = self.comList[targetCfgId]
   if hasComNum then
-    (self.comList)[targetCfgId] = hasComNum + comNum
+    self.comList[targetCfgId] = hasComNum + comNum
   else
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.comList)[targetCfgId] = comNum
+    self.comList[targetCfgId] = comNum
   end
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext._CheckMaterial = function(self, targetGoodsId, level, needNum)
-  -- function num : 0_7 , upvalues : _ENV
-  local matList = (self.materialData)[level]
+function UIAircraftCompoundContext:_CheckMaterial(targetGoodsId, level, needNum)
+  local matList = self.materialData[level]
   if not matList then
     return false
   end
-  local targetCfgId = (self.idMap)[targetGoodsId]
+  local targetCfgId = self.idMap[targetGoodsId]
   local mat = matList[targetGoodsId]
   local remainNum = mat.HaveNum - mat.SelectNum
   local needAppend = 0
@@ -168,89 +128,61 @@ UIAircraftCompoundContext._CheckMaterial = function(self, targetGoodsId, level, 
   needAppend = needNum - remainNum
   mat.SelectNum = mat.HaveNum
   local nextLevel = level + 1
-  local nextMatList = (self.materialData)[nextLevel]
+  local nextMatList = self.materialData[nextLevel]
   if not nextMatList then
     self.materailNotEnough = true
     return false
   end
-  local cfg_smelt = (Cfg.cfg_item_smelt)[targetCfgId]
-  for k,v in pairs(cfg_smelt.Input) do
+  local cfg_smelt = Cfg.cfg_item_smelt[targetCfgId]
+  for k, v in pairs(cfg_smelt.Input) do
     local mat = nextMatList[v[1]]
     mat.NeedNum = v[2]
   end
   return self:_CheckComTarget(targetCfgId, nextLevel, needAppend)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext.GetComListData = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftCompoundContext:GetComListData()
   local id_num_list = {}
-  for id,count in pairs(self.comList) do
+  for id, count in pairs(self.comList) do
     local asset = RoleAsset:New()
     asset.assetid = id
     asset.count = count
-    ;
-    (table.insert)(id_num_list, asset)
+    table.insert(id_num_list, asset)
   end
   return id_num_list
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext.GetCost = function(self)
-  -- function num : 0_9
+function UIAircraftCompoundContext:GetCost()
   return self._cost
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext.IsCostEnough = function(self)
-  -- function num : 0_10
+function UIAircraftCompoundContext:IsCostEnough()
   return not self.coinNotEntenough
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext.IsMaterialEnough = function(self)
-  -- function num : 0_11
+function UIAircraftCompoundContext:IsMaterialEnough()
   return not self.materailNotEnough
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCompoundContext.ReCalcOnlyUseBaseMaterial = function(self, count)
-  -- function num : 0_12 , upvalues : _ENV
-  for i,input in ipairs(self.materialData) do
+function UIAircraftCompoundContext:ReCalcOnlyUseBaseMaterial(count)
+  for i, input in ipairs(self.materialData) do
     if i == 1 then
-      for k,mat in pairs(input) do
+      for k, mat in pairs(input) do
         mat.SelectNum = mat.NeedNum * count
       end
     else
-      do
-        for k,mat in pairs(input) do
-          mat.SelectNum = 0
-        end
-        do
-          -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      for k, mat in pairs(input) do
+        mat.SelectNum = 0
       end
     end
   end
-  local cfg_smelt = (Cfg.cfg_item_smelt)[(self.targetCfg).ID]
+  local cfg_smelt = Cfg.cfg_item_smelt[self.targetCfg.ID]
   local targetCost = 0
-  if cfg_smelt and #cfg_smelt.SInput > 0 then
-    targetCost = ((cfg_smelt.SInput)[1])[2]
+  if cfg_smelt and 0 < #cfg_smelt.SInput then
+    targetCost = cfg_smelt.SInput[1][2]
   end
-  self._cost = (math.ceil)(count * targetCost * self._atomDiscount)
-  if (self._roleModule):GetAssetCount(RoleAssetID.RoleAssetAtom) < self._cost then
+  self._cost = math.ceil(count * targetCost * self._atomDiscount)
+  if self._roleModule:GetAssetCount(RoleAssetID.RoleAssetAtom) < self._cost then
     self.coinNotEntenough = true
   end
 end
-
-

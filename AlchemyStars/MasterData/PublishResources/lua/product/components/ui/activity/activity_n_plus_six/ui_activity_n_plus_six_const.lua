@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/ui_activity_n_plus_six_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixConst", Object)
 UIActivityNPlusSixConst = UIActivityNPlusSixConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixConst.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityNPlusSixConst:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixConst.GetCoinItemId = function()
-  -- function num : 0_1
+function UIActivityNPlusSixConst.GetCoinItemId()
   return 3000214
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixConst.GetItemIconName = function()
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[(UIActivityNPlusSixConst.GetCoinItemId)()]
+function UIActivityNPlusSixConst.GetItemIconName()
+  local cfg = Cfg.cfg_item[UIActivityNPlusSixConst.GetCoinItemId()]
   if not cfg then
     return nil
   end
   return cfg.Icon
 end
-
-

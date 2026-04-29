@@ -1,28 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_ui_skill_passive_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterUISkillPassiveInstruction", BaseInstruction)
 PlayCasterUISkillPassiveInstruction = PlayCasterUISkillPassiveInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterUISkillPassiveInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterUISkillPassiveInstruction:Constructor(paramList)
   self._active = tonumber(paramList.active)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterUISkillPassiveInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterUISkillPassiveInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if not casterEntity:PetPstID() then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, (casterEntity:PetPstID()):GetPstID(), self._active == 1)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, casterEntity:PetPstID():GetPstID(), self._active == 1)
 end
-
-

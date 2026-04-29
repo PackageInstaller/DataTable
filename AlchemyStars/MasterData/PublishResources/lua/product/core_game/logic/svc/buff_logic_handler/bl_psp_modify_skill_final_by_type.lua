@@ -1,56 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_psp_modify_skill_final_by_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPSPModifySkillFinalByType", BuffLogicBase)
 BuffLogicPSPModifySkillFinalByType = BuffLogicPSPModifySkillFinalByType
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPSPModifySkillFinalByType.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPSPModifySkillFinalByType:Constructor(buffInstance, logicParam)
   self._modifyValue = logicParam.modifyValue or 0
   self._modifyType = logicParam.modifyType or 0
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = logicParam.effectList
+  self._buffInstance._effectList = logicParam.effectList
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPModifySkillFinalByType.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local popStarProSvc = (self._world):GetService("PopStarProLogic")
+function BuffLogicPSPModifySkillFinalByType:DoLogic()
+  local popStarProSvc = self._world:GetService("PopStarProLogic")
   if not popStarProSvc then
-    return 
+    return
   end
   local count = popStarProSvc:GetCountByModifyType(self._modifyType)
   local val = self._modifyValue * count
-  local curModifyVal = (self._buffLogicService):GetModifyValueByID(self._entity, "CampSkillFinalParam", self:GetBuffSeq())
+  local curModifyVal = self._buffLogicService:GetModifyValueByID(self._entity, "CampSkillFinalParam", self:GetBuffSeq())
   val = val + curModifyVal
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), R14_PC32, val)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, val)
   end
 end
 
 _class("BuffLogicUndoPSPModifySkillFinalByType", BuffLogicBase)
 BuffLogicUndoPSPModifySkillFinalByType = BuffLogicUndoPSPModifySkillFinalByType
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoPSPModifySkillFinalByType.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicUndoPSPModifySkillFinalByType:Constructor(buffInstance, logicParam)
   self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoPSPModifySkillFinalByType.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicUndoPSPModifySkillFinalByType:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

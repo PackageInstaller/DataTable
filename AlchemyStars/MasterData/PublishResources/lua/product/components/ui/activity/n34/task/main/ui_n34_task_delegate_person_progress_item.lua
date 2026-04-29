@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/main/ui_n34_task_delegate_person_progress_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34TaskDelegatePersonProgressItem", UICustomWidget)
 UIN34TaskDelegatePersonProgressItem = UIN34TaskDelegatePersonProgressItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34TaskDelegatePersonProgressItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN34TaskDelegatePersonProgressItem:OnShow(uiParams)
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
   self._rewardLoader = self:GetUIComponent("UISelectObjectPath", "Rewards")
   self._rewardGetBtn = self:GetGameObject("RewardGetBtn")
@@ -21,86 +14,54 @@ UIN34TaskDelegatePersonProgressItem.OnShow = function(self, uiParams)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonProgressItem.SetData = function(self, data, callback, itemClickCallback)
-  -- function num : 0_1
+function UIN34TaskDelegatePersonProgressItem:SetData(data, callback, itemClickCallback)
   if not data then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._data = data
   self._callback = callback
-  ;
-  (self._desLabel):SetText(data:GetDes())
-  local status = (self._data):GetStatus()
-  ;
-  (self._rewardGetBtn):SetActive(false)
-  ;
-  (self._rewardUnComplete):SetActive(false)
-  ;
-  (self._rewardHasGet):SetActive(false)
-  ;
-  (self._rewardHasGetBG):SetActive(false)
-  ;
-  (self._rewardGetBg):SetActive(false)
-  ;
-  (self._rewardUnCompleteBG):SetActive(false)
+  self._desLabel:SetText(data:GetDes())
+  local status = self._data:GetStatus()
+  self._rewardGetBtn:SetActive(false)
+  self._rewardUnComplete:SetActive(false)
+  self._rewardHasGet:SetActive(false)
+  self._rewardHasGetBG:SetActive(false)
+  self._rewardGetBg:SetActive(false)
+  self._rewardUnCompleteBG:SetActive(false)
   if status == 0 then
-    (self._rewardUnComplete):SetActive(true)
-    ;
-    (self._rewardUnCompleteBG):SetActive(true)
-  else
-    if status == 1 then
-      (self._rewardGetBtn):SetActive(true)
-      ;
-      (self._rewardGetBg):SetActive(true)
-    else
-      if status == 2 then
-        (self._rewardHasGet):SetActive(true)
-        ;
-        (self._rewardHasGetBG):SetActive(true)
-      end
-    end
+    self._rewardUnComplete:SetActive(true)
+    self._rewardUnCompleteBG:SetActive(true)
+  elseif status == 1 then
+    self._rewardGetBtn:SetActive(true)
+    self._rewardGetBg:SetActive(true)
+  elseif status == 2 then
+    self._rewardHasGet:SetActive(true)
+    self._rewardHasGetBG:SetActive(true)
   end
-  local rewards = (self._data):GetRewards()
-  ;
-  (self._rewardLoader):SpawnObjects("UIN34TaskDelegatePersonProgressReward", #rewards)
-  local items = (self._rewardLoader):GetAllSpawnList()
+  local rewards = self._data:GetRewards()
+  self._rewardLoader:SpawnObjects("UIN34TaskDelegatePersonProgressReward", #rewards)
+  local items = self._rewardLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetData(rewards[i], function(id, pos)
-    -- function num : 0_1_0 , upvalues : itemClickCallback
-    if itemClickCallback then
-      itemClickCallback(id, pos)
-    end
-  end
-)
+    items[i]:SetData(rewards[i], function(id, pos)
+      if itemClickCallback then
+        itemClickCallback(id, pos)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonProgressItem.RewardGetBtnOnClick = function(self)
-  -- function num : 0_2
+function UIN34TaskDelegatePersonProgressItem:RewardGetBtnOnClick()
   if self._callback then
-    (self._callback)(self._data)
+    self._callback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonProgressItem.PlayAnimation = function(self)
-  -- function num : 0_3
-  (self._anim):Play("uieff_UIN34TaskDelegatePersonProgressItem_in")
+function UIN34TaskDelegatePersonProgressItem:PlayAnimation()
+  self._anim:Play("uieff_UIN34TaskDelegatePersonProgressItem_in")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePersonProgressItem.SetActive = function(self, status)
-  -- function num : 0_4
-  (self._go):SetActive(status)
+function UIN34TaskDelegatePersonProgressItem:SetActive(status)
+  self._go:SetActive(status)
 end
-
-

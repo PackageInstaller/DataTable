@@ -1,71 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/level/ui_activity_n21cc_level_affix_unopen_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCLevelAffixUnOpenItem", UICustomWidget)
 UIActivityN21CCLevelAffixUnOpenItem = UIActivityN21CCLevelAffixUnOpenItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCLevelAffixUnOpenItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN21CCLevelAffixUnOpenItem:OnShow()
   self._go = self:GetGameObject()
   self._titleLabel = self:GetUIComponent("UILocalizationText", "Title")
   self._affixGroupLoader = self:GetUIComponent("UISelectObjectPath", "AffixGroups")
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixUnOpenItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN21CCLevelAffixUnOpenItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixUnOpenItem.Refresh = function(self, affixGroupDatas, isOpen, playAnim, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN21CCLevelAffixUnOpenItem:Refresh(affixGroupDatas, isOpen, playAnim, callback)
   if affixGroupDatas == nil or #affixGroupDatas <= 0 then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
   if not playAnim then
-    (self._anim):Play("UIActivityN21CCLevelAffixUnOpenItem")
+    self._anim:Play("UIActivityN21CCLevelAffixUnOpenItem")
   end
-  ;
-  (self._go):SetActive(true)
-  ;
-  (self._titleLabel):SetText((StringTable.Get)("str_n20_crisis_contract_unopen_affix_groups_title", (affixGroupDatas[1]):GetUnLockScore()))
-  ;
-  (self._affixGroupLoader):SpawnObjects("UIActivityN21CCLevelAffixGroupItem", #affixGroupDatas)
-  self._items = (self._affixGroupLoader):GetAllSpawnList()
+  self._go:SetActive(true)
+  self._titleLabel:SetText(StringTable.Get("str_n20_crisis_contract_unopen_affix_groups_title", affixGroupDatas[1]:GetUnLockScore()))
+  self._affixGroupLoader:SpawnObjects("UIActivityN21CCLevelAffixGroupItem", #affixGroupDatas)
+  self._items = self._affixGroupLoader:GetAllSpawnList()
   for i = 1, #self._items do
-    local item = (self._items)[i]
+    local item = self._items[i]
     item:Refresh(affixGroupDatas[i], isOpen, playAnim, callback)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixUnOpenItem.RefreshData = function(self, selectScore)
-  -- function num : 0_3
+function UIActivityN21CCLevelAffixUnOpenItem:RefreshData(selectScore)
   if self._items then
     for i = 1, #self._items do
-      local item = (self._items)[i]
+      local item = self._items[i]
       item:RefreshData(selectScore)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCLevelAffixUnOpenItem.PlayAnim = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._anim):Play("UIActivityN21CCLevelAffixUnOpenItem")
+function UIActivityN21CCLevelAffixUnOpenItem:PlayAnim(TT)
+  self._anim:Play("UIActivityN21CCLevelAffixUnOpenItem")
   YIELD(TT, 100)
   for i = 1, #self._items do
-    ((self._items)[i]):PlayAnim(TT)
+    self._items[i]:PlayAnim(TT)
   end
 end
-
-

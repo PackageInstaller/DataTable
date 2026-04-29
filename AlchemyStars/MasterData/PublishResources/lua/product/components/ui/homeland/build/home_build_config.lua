@@ -1,37 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/home_build_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 BuildConfig = {}
--- DECOMPILER ERROR at PC4: Confused about usage of register: R0 in 'UnsetPending'
-
 BuildConfig.MaxCircle = {}
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(BuildConfig.MaxCircle).Center = Vector2(5, 25)
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(BuildConfig.MaxCircle).Radius = 111
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
+BuildConfig.MaxCircle.Center = Vector2(5, 25)
+BuildConfig.MaxCircle.Radius = 111
 BuildConfig.Camera = {}
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(BuildConfig.Camera).ScaleMin = -50
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(BuildConfig.Camera).ScaleMax = -10
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(BuildConfig.Camera).SpeedMin = 5
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-;
-(BuildConfig.Camera).SpeedMax = 50
-
+BuildConfig.Camera.ScaleMin = -50
+BuildConfig.Camera.ScaleMax = -10
+BuildConfig.Camera.SpeedMin = 5
+BuildConfig.Camera.SpeedMax = 50

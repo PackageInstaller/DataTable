@@ -1,43 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/item/core/item_ext.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ItemExt", Object)
 ItemExt = ItemExt
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ItemExt.Constructor = function(self)
-  -- function num : 0_0
+function ItemExt:Constructor()
 end
 
 _class("ItemExtFactory", Object)
 ItemExtFactory = ItemExtFactory
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-ItemExtFactory.Constructor = function(self)
-  -- function num : 0_1
+function ItemExtFactory:Constructor()
   self._regster = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemExtFactory.Register = function(self, item_sub_type, item_ext_type)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._regster)[item_sub_type] = item_ext_type
+function ItemExtFactory:Register(item_sub_type, item_ext_type)
+  self._regster[item_sub_type] = item_ext_type
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ItemExtFactory.Alloc = function(self, item_sub_type)
-  -- function num : 0_3
-  local Ext = (self._regster)[item_sub_type]
+function ItemExtFactory:Alloc(item_sub_type)
+  local Ext = self._regster[item_sub_type]
   if Ext == nil then
     return nil
   end
   return Ext:New()
 end
-
-

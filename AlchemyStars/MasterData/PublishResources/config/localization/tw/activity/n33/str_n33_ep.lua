@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/n33/str_n33_ep.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n33_ep_m_rmtime_title = "活動剩餘時間：", str_n33_ep_m_locktime_cd = "{1}後解鎖", str_n33_ep_m_locktime_prompt = "到達解鎖時間後解鎖", str_n33_ep_m_lock_prompt = "完成前置關卡解鎖", str_n33_ep_d_battle_specific = "戰場特性", str_n33_ep_d_battle_no_specific = "無戰場特性", str_n33_ep_d_team_condition = "編隊要求", str_n33_ep_d_team_no_condition = "無編隊要求", str_n33_ep_d_enemy_information = "敵方情報", str_n33_ep_d_restraint_relationship = "剋制關係", str_n33_ep_d_award_title = "探索獎勵", str_n33_ep_d_challenge_btn = "挑戰關卡", str_n33_ep_career_in_team = "同職業光靈上陣不能超過3名", str_n33_ep_main_title = "集團戰術訓練營", str_n33_ep_1_name = "N1-弭消", str_n33_ep_2_name = "N2-清愈", str_n33_ep_3_name = "N3-潰速", str_n33_ep_4_name = "N4-沒絕", str_n33_ep_5_name = "N5-進熾", str_n33_ep_6_name = "N6-刃焚", str_n33_ep_7_name = "N7-咒灼", str_n33_ep_8_name = "N8-荼火", str_n33_ep_1_name_desc = "追擊敵人的過程中也要注意對方的牽制反擊，千萬不可魯莽。", str_n33_ep_2_name_desc = "傷口很難癒合，不斷失血的情況下，一定要保證生命線不能崩潰……", str_n33_ep_3_name_desc = "對手的死亡並不是戰鬥的結束，而是進攻的開始。", str_n33_ep_4_name_desc = "不會死亡的敵人真的存在嗎？亦或那只是一個傳說？如果真的存在，或許也將在今日結束。", str_n33_ep_5_name_desc = "敵人多如毛髮，那麼就需要一把熾烈的刀來將他們燒斷、燃盡。", str_n33_ep_6_name_desc = "面對刀刃的危險叢林，突破的方法就只有將其焚毀。", str_n33_ep_7_name_desc = "敵人的言語、敵人的攻擊都擁有強大的「封印」之力……", str_n33_ep_8_name_desc = "時間的流逝將讓敵人逐漸佔據上風，唯有使盡全力進攻才是取勝之道。"}
+local config = {
+  str_n33_ep_m_rmtime_title = "活動剩餘時間：",
+  str_n33_ep_m_locktime_cd = "{1}後解鎖",
+  str_n33_ep_m_locktime_prompt = "到達解鎖時間後解鎖",
+  str_n33_ep_m_lock_prompt = "完成前置關卡解鎖",
+  str_n33_ep_d_battle_specific = "戰場特性",
+  str_n33_ep_d_battle_no_specific = "無戰場特性",
+  str_n33_ep_d_team_condition = "編隊要求",
+  str_n33_ep_d_team_no_condition = "無編隊要求",
+  str_n33_ep_d_enemy_information = "敵方情報",
+  str_n33_ep_d_restraint_relationship = "剋制關係",
+  str_n33_ep_d_award_title = "探索獎勵",
+  str_n33_ep_d_challenge_btn = "挑戰關卡",
+  str_n33_ep_career_in_team = "同職業光靈上陣不能超過3名",
+  str_n33_ep_main_title = "集團戰術訓練營",
+  str_n33_ep_1_name = "N1-弭消",
+  str_n33_ep_2_name = "N2-清愈",
+  str_n33_ep_3_name = "N3-潰速",
+  str_n33_ep_4_name = "N4-沒絕",
+  str_n33_ep_5_name = "N5-進熾",
+  str_n33_ep_6_name = "N6-刃焚",
+  str_n33_ep_7_name = "N7-咒灼",
+  str_n33_ep_8_name = "N8-荼火",
+  str_n33_ep_1_name_desc = "追擊敵人的過程中也要注意對方的牽制反擊，千萬不可魯莽。",
+  str_n33_ep_2_name_desc = "傷口很難癒合，不斷失血的情況下，一定要保證生命線不能崩潰……",
+  str_n33_ep_3_name_desc = "對手的死亡並不是戰鬥的結束，而是進攻的開始。",
+  str_n33_ep_4_name_desc = "不會死亡的敵人真的存在嗎？亦或那只是一個傳說？如果真的存在，或許也將在今日結束。",
+  str_n33_ep_5_name_desc = "敵人多如毛髮，那麼就需要一把熾烈的刀來將他們燒斷、燃盡。",
+  str_n33_ep_6_name_desc = "面對刀刃的危險叢林，突破的方法就只有將其焚毀。",
+  str_n33_ep_7_name_desc = "敵人的言語、敵人的攻擊都擁有強大的「封印」之力……",
+  str_n33_ep_8_name_desc = "時間的流逝將讓敵人逐漸佔據上風，唯有使盡全力進攻才是取勝之道。"
+}
 return config
-

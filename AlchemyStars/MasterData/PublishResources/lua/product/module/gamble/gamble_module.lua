@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/gamble/gamble_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GambleModule", GameModule)
 GambleModule = GambleModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GambleModule.Constructor = function(self)
-  -- function num : 0_0
+function GambleModule:Constructor()
   self._prizePoolList = {}
   self._uiContext = nil
   self._gambleConfig = {}
@@ -19,25 +12,16 @@ GambleModule.Constructor = function(self)
   self.pool_five_star = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetPrizePools = function(self)
-  -- function num : 0_1
+function GambleModule:GetPrizePools()
   return self._prizePoolList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetPoolDrawTimes = function(self, poolId)
-  -- function num : 0_2
-  return (self.pool_2_times)[poolId]
+function GambleModule:GetPoolDrawTimes(poolId)
+  return self.pool_2_times[poolId]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.CheckAlreadyGainFiveStarCard = function(self, poolId)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,v in pairs(self.pool_five_star) do
+function GambleModule:CheckAlreadyGainFiveStarCard(poolId)
+  for _, v in pairs(self.pool_five_star) do
     if poolId == v then
       return true
     end
@@ -45,23 +29,20 @@ GambleModule.CheckAlreadyGainFiveStarCard = function(self, poolId)
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetPrizePoolExtandData = function(self, poolID)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self._prizePoolList) do
+function GambleModule:GetPrizePoolExtandData(poolID)
+  for k, v in pairs(self._prizePoolList) do
     if poolID == v.prize_pool_id then
-      return {v.close_type, v.extend_data}
+      return {
+        v.close_type,
+        v.extend_data
+      }
     end
   end
   return {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule._GetPrizePoolExternInfo = function(self, index, ext_info_type)
-  -- function num : 0_5
-  local l_pool_extern_map = (self._gambleExternInfo)[index]
+function GambleModule:_GetPrizePoolExternInfo(index, ext_info_type)
+  local l_pool_extern_map = self._gambleExternInfo[index]
   if not l_pool_extern_map then
     return nil
   end
@@ -72,10 +53,7 @@ GambleModule._GetPrizePoolExternInfo = function(self, index, ext_info_type)
   return l_extern_info
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetNotIncludePetPoolGambleTimes = function(self, index)
-  -- function num : 0_6 , upvalues : _ENV
+function GambleModule:GetNotIncludePetPoolGambleTimes(index)
   local l_nipp_extern_info = self:_GetPrizePoolExternInfo(index, EPrizePoolExtInfoType.EPPEIT_NIPP)
   if not l_nipp_extern_info then
     return -1
@@ -83,10 +61,7 @@ GambleModule.GetNotIncludePetPoolGambleTimes = function(self, index)
   return l_nipp_extern_info.times
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetNotIncludePetPool = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
+function GambleModule:GetNotIncludePetPool(index)
   local l_nipp_extern_info = self:_GetPrizePoolExternInfo(index, EPrizePoolExtInfoType.EPPEIT_NIPP)
   if not l_nipp_extern_info then
     return {}
@@ -94,10 +69,7 @@ GambleModule.GetNotIncludePetPool = function(self, index)
   return l_nipp_extern_info.param_pool
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetCfgOptionalPoolId = function(self, index)
-  -- function num : 0_8 , upvalues : _ENV
+function GambleModule:GetCfgOptionalPoolId(index)
   local l_op_extern_info = self:_GetPrizePoolExternInfo(index, EPrizePoolExtInfoType.EPPEIT_OPP)
   if not l_op_extern_info then
     return -1
@@ -105,10 +77,7 @@ GambleModule.GetCfgOptionalPoolId = function(self, index)
   return l_op_extern_info.id
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetOptionalPool = function(self, index)
-  -- function num : 0_9 , upvalues : _ENV
+function GambleModule:GetOptionalPool(index)
   local l_op_extern_info = self:_GetPrizePoolExternInfo(index, EPrizePoolExtInfoType.EPPEIT_OPP)
   if not l_op_extern_info then
     return {}
@@ -116,159 +85,115 @@ GambleModule.GetOptionalPool = function(self, index)
   local l_ret_map = {}
   for i = ElementType.ElementType_Blue, ElementType.ElementType_Yellow do
     l_ret_map[i] = 0
-    if (l_op_extern_info.param_pool)[i] ~= nil then
-      l_ret_map[i] = (l_op_extern_info.param_pool)[i]
+    if l_op_extern_info.param_pool[i] ~= nil then
+      l_ret_map[i] = l_op_extern_info.param_pool[i]
     end
   end
   return l_ret_map
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.IsOpenOptional = function(self, index)
-  -- function num : 0_10 , upvalues : _ENV
+function GambleModule:IsOpenOptional(index)
   local idOptional = self:GetCfgOptionalPoolId(index)
-  local cfgOptional = (Cfg.cfg_optional_pool)[idOptional]
+  local cfgOptional = Cfg.cfg_optional_pool[idOptional]
   local selCount = ElementType.ElementType_Yellow
   if cfgOptional ~= nil then
     selCount = 0
     local selWish = self:GetOptionalPool(index)
-    for sk,sv in pairs(selWish) do
+    for sk, sv in pairs(selWish) do
       if sv ~= 0 then
         selCount = selCount + 1
       end
     end
   end
-  do
-    do return cfgOptional ~= nil, selCount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  return cfgOptional ~= nil, selCount
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.CheckOptionalRed = function(self, index)
-  -- function num : 0_11 , upvalues : _ENV
+function GambleModule:CheckOptionalRed(index)
   local isOpenOptional = false
   local selCount = ElementType.ElementType_Yellow
-  isOpenOptional = self:IsOpenOptional(index)
-  do return selCount ~= ElementType.ElementType_Yellow end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  isOpenOptional, selCount = self:IsOpenOptional(index)
+  return selCount ~= ElementType.ElementType_Yellow
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetOptionalPoolComfirmDBKey = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function GambleModule:GetOptionalPoolComfirmDBKey()
   local dbKey = "GambleModule::OptionalPoolComfirm"
   local roleModule = self:GetModule(RoleModule)
   dbKey = roleModule:GetPstId() .. dbKey
   return dbKey
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.OptionalPoolComfirmLoadDB = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function GambleModule:OptionalPoolComfirmLoadDB()
   local dbKey = self:GetOptionalPoolComfirmDBKey()
-  local content = (LocalDB.GetString)(dbKey, "")
-  local fnString = (string.format)("return {%s}", content)
+  local content = LocalDB.GetString(dbKey, "")
+  local fnString = string.format("return {%s}", content)
   local fnTable = load(fnString)
   local dbData = fnTable()
   self._optionalPoolComfirm = {}
-  for k,v in pairs(dbData) do
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R11 in 'UnsetPending'
-
-    (self._optionalPoolComfirm)[v] = v
+  for k, v in pairs(dbData) do
+    self._optionalPoolComfirm[v] = v
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.OptionalPoolComfirmSaveDB = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function GambleModule:OptionalPoolComfirmSaveDB()
   local content = ""
-  for k,v in pairs(self._optionalPoolComfirm) do
-    content = content .. (string.format)("%d, ", v)
+  for k, v in pairs(self._optionalPoolComfirm) do
+    content = content .. string.format("%d, ", v)
   end
   local dbKey = self:GetOptionalPoolComfirmDBKey()
-  ;
-  (LocalDB.SetString)(dbKey, content)
+  LocalDB.SetString(dbKey, content)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.OptionalPoolAlert = function(self, poolIndex, comfirmCB, cancelCB)
-  -- function num : 0_15 , upvalues : _ENV
-  local idRecruit = nil
+function GambleModule:OptionalPoolAlert(poolIndex, comfirmCB, cancelCB)
+  local idRecruit
   local isOpenOptional = false
   local wishCount = 0
-  isOpenOptional = self:IsOpenOptional(poolIndex)
+  isOpenOptional, wishCount = self:IsOpenOptional(poolIndex)
   if not isOpenOptional then
     cancelCB()
     return false
-  else
-    if isOpenOptional and wishCount == ElementType.ElementType_Yellow then
-      cancelCB()
-      return false
-    else
-      local awardPools = self:GetPrizePools()
-      idRecruit = (awardPools[poolIndex]).performance_id
-    end
-  end
-  do
-    if self._optionalPoolComfirm == nil then
-      self:OptionalPoolComfirmLoadDB()
-    end
-    if (self._optionalPoolComfirm)[idRecruit] ~= nil then
-      cancelCB()
-    else
-      local allOpenPool = {}
-      local awardPools = self:GetPrizePools()
-      for k,v in pairs(awardPools) do
-        allOpenPool[v.performance_id] = v.performance_id
-      end
-      local rmList = {}
-      for k,v in pairs(self._optionalPoolComfirm) do
-        if allOpenPool[v] == nil then
-          (table.insert)(rmList, v)
-        end
-      end
-      for k,v in pairs(rmList) do
-        -- DECOMPILER ERROR at PC74: Confused about usage of register: R15 in 'UnsetPending'
-
-        (self._optionalPoolComfirm)[v] = nil
-      end
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._optionalPoolComfirm)[idRecruit] = idRecruit
-      self:OptionalPoolComfirmSaveDB()
-      ;
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_draw_card_wishsel_drawcomfirm"), function(param)
-    -- function num : 0_15_0 , upvalues : comfirmCB
-    comfirmCB()
-  end
-, nil, function(param)
-    -- function num : 0_15_1 , upvalues : cancelCB
+  elseif isOpenOptional and wishCount == ElementType.ElementType_Yellow then
     cancelCB()
+    return false
+  else
+    local awardPools = self:GetPrizePools()
+    idRecruit = awardPools[poolIndex].performance_id
   end
-, nil)
-      return true
-    end
-    do
-      return false
-    end
+  if self._optionalPoolComfirm == nil then
+    self:OptionalPoolComfirmLoadDB()
   end
+  if self._optionalPoolComfirm[idRecruit] ~= nil then
+    cancelCB()
+  else
+    local allOpenPool = {}
+    local awardPools = self:GetPrizePools()
+    for k, v in pairs(awardPools) do
+      allOpenPool[v.performance_id] = v.performance_id
+    end
+    local rmList = {}
+    for k, v in pairs(self._optionalPoolComfirm) do
+      if allOpenPool[v] == nil then
+        table.insert(rmList, v)
+      end
+    end
+    for k, v in pairs(rmList) do
+      self._optionalPoolComfirm[v] = nil
+    end
+    self._optionalPoolComfirm[idRecruit] = idRecruit
+    self:OptionalPoolComfirmSaveDB()
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_draw_card_wishsel_drawcomfirm"), function(param)
+      comfirmCB()
+    end, nil, function(param)
+      cancelCB()
+    end, nil)
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetProbs = function(self, index)
-  -- function num : 0_16 , upvalues : _ENV
-  local state = (self._gambleConfig)[index]
+function GambleModule:GetProbs(index)
+  local state = self._gambleConfig[index]
   if state == nil or next(state) == nil then
-    (Log.fatal)("haven\'t prob config when calculate prob")
+    Log.fatal("haven't prob config when calculate prob")
     return 0, 0
   end
   local prob_01 = tonumber(state[FishForStateType.FFST_Inirate])
@@ -278,38 +203,30 @@ GambleModule.GetProbs = function(self, index)
   local step = tonumber(state[FishForStateType.FFST_Step])
   local addRate = tonumber(state[FishForStateType.FFST_AddRate])
   local active = tonumber(state[FishForStateType.FFST_Active])
-  do
-    if active <= counter then
-      local redouble = (counter - active) // step
-      redouble = redouble + 1
-      prob_02 = (redouble) * addRate
-    end
-    if counter == maxTime then
-      prob_01 = 1000
-      prob_02 = 0
-    end
-    return prob_01 / 10, prob_02 / 10
+  if counter >= active then
+    local redouble = (counter - active) // step
+    redouble = redouble + 1
+    prob_02 = redouble * addRate
   end
+  if counter == maxTime then
+    prob_01 = 1000
+    prob_02 = 0
+  end
+  return prob_01 / 10, prob_02 / 10
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-GameModule.GetCounterNum = function(self, index)
-  -- function num : 0_17 , upvalues : _ENV
-  local state = (self._gambleConfig)[index]
+function GameModule:GetCounterNum(index)
+  local state = self._gambleConfig[index]
   if state == nil or next(state) == nil then
-    (Log.fatal)("haven\'t prob config when calculate prob")
+    Log.fatal("haven't prob config when calculate prob")
     return -1
   end
   return tonumber(state[FishForStateType.FFST_NormalCounter])
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.ApplyAllPoolInfo = function(self, TT)
-  -- function num : 0_18 , upvalues : _ENV
+function GambleModule:ApplyAllPoolInfo(TT)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyAllPoolInfo)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyAllPoolInfo)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     res:SetSucc(false)
@@ -319,28 +236,23 @@ GambleModule.ApplyAllPoolInfo = function(self, TT)
   res:SetSucc(true)
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
-  self._prizePoolList = (reply.msg).all_prize_pool
-  self._gambleConfig = (reply.msg).state_info
+  self._prizePoolList = reply.msg.all_prize_pool
+  self._gambleConfig = reply.msg.state_info
   self._gambleExternInfo = {}
-  for key,value in pairs((reply.msg).pool_extern_info) do
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R11 in 'UnsetPending'
-
-    (self._gambleExternInfo)[key + 1] = value
+  for key, value in pairs(reply.msg.pool_extern_info) do
+    self._gambleExternInfo[key + 1] = value
   end
-  self.pool_2_times = (reply.msg).pool_2_times
-  self.pool_five_star = (reply.msg).pool_five_star
+  self.pool_2_times = reply.msg.pool_2_times
+  self.pool_five_star = reply.msg.pool_five_star
   return res
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.HandleOptionalPoolReq = function(self, TT, index, pet_element, nOptionalVec)
-  -- function num : 0_19 , upvalues : _ENV
+function GambleModule:HandleOptionalPoolReq(TT, index, pet_element, nOptionalVec)
   local l_optional_pool_ex_info = self:_GetPrizePoolExternInfo(index, EPrizePoolExtInfoType.EPPEIT_OPP)
   if not l_optional_pool_ex_info then
     return GAMBLE_CODE.GAMBLE_OPTIONAL_POOL_INVALID
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventOptionalPoolReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventOptionalPoolReq)
   request.nIndex = pet_element
   request.nOptionalPoolId = l_optional_pool_ex_info.id
   request.nOptionalVec = nOptionalVec
@@ -349,28 +261,20 @@ GambleModule.HandleOptionalPoolReq = function(self, TT, index, pet_element, nOpt
     return GAMBLE_CODE.GAMBLE_SERVER_NORESPONSE
   end
   local replyEvent = reply.msg
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R9 in 'UnsetPending'
-
   if replyEvent.nRet == COMMON_RANDOM_CODE.COMMON_RANDOM_SUCCESS then
-    (l_optional_pool_ex_info.param_pool)[pet_element] = nOptionalVec[1]
+    l_optional_pool_ex_info.param_pool[pet_element] = nOptionalVec[1]
     return GAMBLE_CODE.GAMBLE_SUCCESS
   end
   return replyEvent.nRet + 100
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.SetAllPoolInfo = function(self, all_prize_pool)
-  -- function num : 0_20
+function GambleModule:SetAllPoolInfo(all_prize_pool)
   self._prizePoolList = all_prize_pool
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.Shake = function(self, TT, shakeType, prizePoolId, costId, costCount)
-  -- function num : 0_21 , upvalues : _ENV
+function GambleModule:Shake(TT, shakeType, prizePoolId, costId, costCount)
   local res = AsyncRequestRes:New()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventShake)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventShake)
   request.shake_type = shakeType
   request.prize_pool_id = prizePoolId
   request.cost_id = costId
@@ -385,7 +289,7 @@ GambleModule.Shake = function(self, TT, shakeType, prizePoolId, costId, costCoun
   local replyEvent = reply.msg
   res:SetResult(replyEvent.ret)
   local award_role_asset = {}
-  for k,v in pairs(replyEvent.award_cards) do
+  for k, v in pairs(replyEvent.award_cards) do
     local tmp_role_asset = RoleAsset:New()
     tmp_role_asset.assetid = v
     tmp_role_asset.count = 1
@@ -394,73 +298,52 @@ GambleModule.Shake = function(self, TT, shakeType, prizePoolId, costId, costCoun
   return res, award_role_asset, replyEvent.exchange_mark, replyEvent.fixed_reward
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetReasonByErrorCode = function(self, code)
-  -- function num : 0_22 , upvalues : _ENV
+function GambleModule:GetReasonByErrorCode(code)
   if code == GAMBLE_CODE.GAMBLE_SERVER_NORESPONSE then
-    return (StringTable.Get)("str_draw_card_gamble_server_noresponse")
+    return StringTable.Get("str_draw_card_gamble_server_noresponse")
   end
   if code == GAMBLE_CODE.GAMBLE_SUCCESS then
-    return (StringTable.Get)("str_draw_card_gamble_success")
+    return StringTable.Get("str_draw_card_gamble_success")
   end
   if code == GAMBLE_CODE.GAMBLE_POOL_UNEXIST then
-    return (StringTable.Get)("str_draw_card_gamble_pool_unexist")
+    return StringTable.Get("str_draw_card_gamble_pool_unexist")
   end
   if code == GAMBLE_CODE.GAMBLE_COST_UNENOUGH then
-    return (StringTable.Get)("str_draw_card_gameble_cost_unenough")
+    return StringTable.Get("str_draw_card_gameble_cost_unenough")
   end
   if code == GAMBLE_CODE.GAMBLE_SHAKETYPE_ERROR then
-    return (StringTable.Get)("str_draw_card_gameble_shaketype_error")
+    return StringTable.Get("str_draw_card_gameble_shaketype_error")
   end
   if code == GAMBLE_CODE.GAMBLE_COST_ERROR then
-    return (StringTable.Get)("str_draw_card_gameble_cost_error")
+    return StringTable.Get("str_draw_card_gameble_cost_error")
   end
   return "gamble error"
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.InitContext = function(self, sceneReq)
-  -- function num : 0_23 , upvalues : _ENV
+function GambleModule:InitContext(sceneReq)
   self._uiContext = DrawCardUIContext:New(sceneReq)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.ClearContext = function(self)
-  -- function num : 0_24
-  (self._uiContext):Dispose()
+function GambleModule:ClearContext()
+  self._uiContext:Dispose()
   self._uiContext = nil
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.Context = function(self)
-  -- function num : 0_25
+function GambleModule:Context()
   return self._uiContext
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.SetShowPoolCountCalc = function(self, value)
-  -- function num : 0_26
+function GambleModule:SetShowPoolCountCalc(value)
   self._showPoolCountCalc = value
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetShowPoolCountCalc = function(self)
-  -- function num : 0_27
+function GambleModule:GetShowPoolCountCalc()
   return self._showPoolCountCalc
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.HasFreeDraw_Multi = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function GambleModule:HasFreeDraw_Multi()
   local pools = self:GetPrizePools()
-  for _,pool in ipairs(pools) do
+  for _, pool in ipairs(pools) do
     if pool.mul_remain_free_count > 0 then
       return true
     end
@@ -468,25 +351,18 @@ GambleModule.HasFreeDraw_Multi = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.IsNewPool = function(self, pool)
-  -- function num : 0_29 , upvalues : _ENV
+function GambleModule:IsNewPool(pool)
   local newKey = self:_GetNewPoolLocalDBKey(pool)
-  local new = (LocalDB.GetInt)(newKey, 0) == 0
-  do return new end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local new = LocalDB.GetInt(newKey, 0) == 0
+  return new
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.HasNewPool = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function GambleModule:HasNewPool()
   local pools = self:GetPrizePools()
-  for _,pool in ipairs(pools) do
-    local cfg = (Cfg.cfg_recruit_pool_view)[pool.performance_id]
+  for _, pool in ipairs(pools) do
+    local cfg = Cfg.cfg_recruit_pool_view[pool.performance_id]
     if not cfg then
-      (Log.exception)("cfg_recruit_pool_view中缺少配置:", pool.performance_id)
+      Log.exception("cfg_recruit_pool_view中缺少配置:", pool.performance_id)
     end
     local startTime = self:GetIntervalStartTime(cfg)
     if self:IsNewPool(pool) and startTime ~= -1 then
@@ -496,52 +372,40 @@ GambleModule.HasNewPool = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule._GetNewPoolLocalDBKey = function(self, pool)
-  -- function num : 0_31 , upvalues : _ENV
+function GambleModule:_GetNewPoolLocalDBKey(pool)
   local id = pool.prize_pool_id
-  local openId = ((GameGlobal.GameLogic)()):GetOpenId()
-  local cfg = (Cfg.cfg_recruit_pool_view)[pool.performance_id]
+  local openId = GameGlobal.GameLogic():GetOpenId()
+  local cfg = Cfg.cfg_recruit_pool_view[pool.performance_id]
   if not cfg then
-    (Log.exception)("cfg_recruit_pool_view中缺少配置:", pool.performance_id)
+    Log.exception("cfg_recruit_pool_view中缺少配置:", pool.performance_id)
   end
   local startTime = self:GetIntervalStartTime(cfg)
   local newKey = openId .. "_RecruitPoolNew_" .. id .. startTime
   return newKey
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.GetIntervalStartTime = function(self, cfg)
-  -- function num : 0_32 , upvalues : _ENV
-  local poolCfg = (Cfg.cfg_gamble_pool_putaway)[cfg.ID]
+function GambleModule:GetIntervalStartTime(cfg)
+  local poolCfg = Cfg.cfg_gamble_pool_putaway[cfg.ID]
   if not poolCfg then
     return 0
   end
   if not poolCfg.OpenTimeInterval then
     return 0
   end
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = svrTimeModule and (math.floor)(svrTimeModule:GetServerTime() * 0.001) or 0
-  for _,timePairArray in pairs(poolCfg.OpenTimeInterval) do
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = svrTimeModule and math.floor(svrTimeModule:GetServerTime() * 0.001) or 0
+  for _, timePairArray in pairs(poolCfg.OpenTimeInterval) do
     local startTime = loginModule:GetTimeStampByTimeStr(timePairArray[1], Enum_DateTimeZoneType.E_ZoneType_GMT)
     local endTime = loginModule:GetTimeStampByTimeStr(timePairArray[2], Enum_DateTimeZoneType.E_ZoneType_GMT)
-    if curTime < endTime and startTime < curTime then
+    if curTime < endTime and curTime > startTime then
       return startTime
     end
   end
   return -1
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-GambleModule.CancelPoolNew = function(self, pool)
-  -- function num : 0_33 , upvalues : _ENV
+function GambleModule:CancelPoolNew(pool)
   local newKey = self:_GetNewPoolLocalDBKey(pool)
-  ;
-  (LocalDB.SetInt)(newKey, 1)
+  LocalDB.SetInt(newKey, 1)
 end
-
-

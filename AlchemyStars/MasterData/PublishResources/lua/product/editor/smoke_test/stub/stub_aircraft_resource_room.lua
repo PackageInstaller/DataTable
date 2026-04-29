@@ -1,17 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/stub/stub_aircraft_resource_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not SMOKE_TEST_ENABLED then
-  return 
+  return
 end
-;
-(Log.warn)("TestRobotModule: AircraftResourceRoom stub!")
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
+Log.warn("TestRobotModule: AircraftResourceRoom stub!")
 
-AircraftResourceRoom.SetClientData = function(self, client_data)
-  -- function num : 0_0
+function AircraftResourceRoom:SetClientData(client_data)
   self._room_cd = client_data[1] or 0
   self._pet_cd = client_data[2] or 0
   self._room_limit = client_data[3] or 0
@@ -19,5 +11,3 @@ AircraftResourceRoom.SetClientData = function(self, client_data)
   self._total_limit = self._pet_limit + self._room_limit
   self._total_cd = self._pet_cd + self._room_cd
 end
-
-

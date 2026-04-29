@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/tasklist/ui_s3_task_list_navi.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_task_list_navi")
 _class("UIS3TaskListNavi", UISeasonTaskListNavi)
 UIS3TaskListNavi = UIS3TaskListNavi
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS3TaskListNavi._GetAnimInfo = function(self, key)
-  -- function num : 0_0
-  return 
+function UIS3TaskListNavi:_GetAnimInfo(key)
+  return
 end
-
-

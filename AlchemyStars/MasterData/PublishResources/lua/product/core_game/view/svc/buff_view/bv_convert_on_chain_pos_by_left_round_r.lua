@@ -1,43 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_convert_on_chain_pos_by_left_round_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_view_base_r")
 _class("BuffViewConvertOnChainPosByLeftRound", BuffViewBase)
 BuffViewConvertOnChainPosByLeftRound = BuffViewConvertOnChainPosByLeftRound
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewConvertOnChainPosByLeftRound.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  do
-    if (self._entity):Pet() then
-      local ownerTeamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-      if teamEntity:GetID() ~= ownerTeamEntity:GetID() then
-        return false
-      end
+function BuffViewConvertOnChainPosByLeftRound:IsNotifyMatch(notify)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  if self._entity:Pet() then
+    local ownerTeamEntity = self._entity:Pet():GetOwnerTeamEntity()
+    if teamEntity:GetID() ~= ownerTeamEntity:GetID() then
+      return false
     end
-    return true
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewConvertOnChainPosByLeftRound.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewConvertOnChainPosByLeftRound:PlayView(TT)
   local buffRes = self._buffResult
   local buffViewParam = self:ViewParams()
-  local pieceSvc = (self._world):GetService("Piece")
-  local boardRSvc = (self._world):GetService("BoardRender")
-  local effectSvc = (self._world):GetService("Effect")
+  local pieceSvc = self._world:GetService("Piece")
+  local boardRSvc = self._world:GetService("BoardRender")
+  local effectSvc = self._world:GetService("Effect")
   local gridPos = buffRes:GetGridPos()
   local oldPieceType = buffRes:GetOldPieceType()
   local newPieceType = buffRes:GetNewPieceType()
   local convertInfo = NTGridConvert_ConvertInfo:New(gridPos, oldPieceType, newPieceType)
   local tConvertInfo = {}
-  ;
-  (table.insert)(tConvertInfo, convertInfo)
+  table.insert(tConvertInfo, convertInfo)
   effectSvc:CreateWorldPositionEffect(buffViewParam.ConvertEffectID, gridPos)
   if buffViewParam.ConvertDelayTime then
     YIELD(TT, buffViewParam.ConvertDelayTime)
@@ -47,8 +34,6 @@ BuffViewConvertOnChainPosByLeftRound.PlayView = function(self, TT)
   gridEntity:SetViewVisible(true)
   pieceSvc:RefreshPieceAnim()
   local nt = NTGridConvert:New(self._entity, tConvertInfo)
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, nt)
 end
-
-

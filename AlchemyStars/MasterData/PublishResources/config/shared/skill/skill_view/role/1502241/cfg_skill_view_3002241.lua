@@ -1,21 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1502241/cfg_skill_view_3002241.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{"PlayAudio,audioID = 9037,audioType=1; PlaySkillCGEffect,effectRes = eff_ui_cutin_red.prefab,petID = 1502241,waitTime = 2000;"}
-}
-, 
-{2, 2, 0, 2, 1, 0, 
-{" PlayAudio,audioID = 150224104,audioType=1; PlayCasterAnimation,animName = AtkUlt2; PlayCasterBindEffect,effectID =150224111; PlayCasterBindEffect,effectID =150224112; PlayCasterBindEffect,effectID =150224113; Wait,waitTime=1800; "}
-}
-, 
-{3, 3, 0, 2, 1, 1500, 
-{" DataSelectBuff,buffIndex=1; Jump,condition=CheckBuffIndexValid,result=0,goto=phaseEnd; PlayTargetAddBuff,buffID=420224,label=buffAgain; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=buffAgain; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      "PlayAudio,audioID = 9037,audioType=1; PlaySkillCGEffect,effectRes = eff_ui_cutin_red.prefab,petID = 1502241,waitTime = 2000;"
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    0,
+    {
+      " PlayAudio,audioID = 150224104,audioType=1; PlayCasterAnimation,animName = AtkUlt2; PlayCasterBindEffect,effectID =150224111; PlayCasterBindEffect,effectID =150224112; PlayCasterBindEffect,effectID =150224113; Wait,waitTime=1800; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    2,
+    1,
+    1500,
+    {
+      " DataSelectBuff,buffIndex=1; Jump,condition=CheckBuffIndexValid,result=0,goto=phaseEnd; PlayTargetAddBuff,buffID=420224,label=buffAgain; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=buffAgain; "
+    }
+  }
 }
 return config, "ID", key
-

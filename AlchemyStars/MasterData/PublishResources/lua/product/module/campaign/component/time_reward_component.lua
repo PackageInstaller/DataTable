@@ -1,131 +1,90 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/time_reward_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TimeRewardComponent", ICampaignComponent)
 TimeRewardComponent = TimeRewardComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TimeRewardComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TimeRewardComponent:Constructor()
   self._componentInfo = TimeRewardComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function TimeRewardComponent:ComponentInfo()
   if not self._componentInfo then
     self._componentInfo = TimeRewardComponentInfo:New()
   end
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function TimeRewardComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function TimeRewardComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_TIME_REWARD
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self._componentInfo)
+function TimeRewardComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self._componentInfo)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.HandleTakeTimeRewardReward = function(self, TT, asyncRes, rewardID)
-  -- function num : 0_5 , upvalues : _ENV
+function TimeRewardComponent:HandleTakeTimeRewardReward(TT, asyncRes, rewardID)
   local request = TakeRewardReq:New()
   request.reward_id = rewardID
   local response = TakeRewardRep:New()
   local componentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, componentInfo.m_campaign_id, componentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][TimeRewardComponent] HandleTakeTimeRewardReward ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][TimeRewardComponent] HandleTakeTimeRewardReward ret:", asyncRes.m_result)
     return nil
   end
-  local timeRewardInfo = ((self._componentInfo).m_reward_info)[rewardID]
+  local timeRewardInfo = self._componentInfo.m_reward_info[rewardID]
   if not timeRewardInfo then
-    (Log.error)("[CampaignCom][TimeRewardComponent] no reward info, reward id: ", rewardID)
+    Log.error("[CampaignCom][TimeRewardComponent] no reward info, reward id: ", rewardID)
     return nil
   end
   timeRewardInfo.rec_reward_status = ETimeRewardRewardStatus.E_TIME_REWARD_RECVED
   return response.m_rewards
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.Start_HandleTakeTimeRewardReward = function(self, rewardID, callback)
-  -- function num : 0_6 , upvalues : _ENV
+function TimeRewardComponent:Start_HandleTakeTimeRewardReward(rewardID, callback)
   local lockName = "Start_HandleTakeTimeRewardReward"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self, rewardID, lockName, callback
+  GameGlobal.UIStateManager():Lock(lockName)
+  TaskManager:GetInstance():StartTask(function(TT)
     local res = AsyncRequestRes:New()
     local rewards = self:HandleTakeTimeRewardReward(TT, res, rewardID)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     callback(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.GetReviewRewards = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function TimeRewardComponent:GetReviewRewards()
   local tb = {}
   local info = self:GetComponentInfo()
-  for _,v in pairs(info.m_reward_info) do
-    for __,vv in pairs(v.rewards) do
+  for _, v in pairs(info.m_reward_info) do
+    for __, vv in pairs(v.rewards) do
       tb[vv.assetid] = tb[vv.assetid] or 0
       tb[vv.assetid] = tb[vv.assetid] + vv.count
     end
   end
   local ra = {}
-  for k,v in pairs(tb) do
+  for k, v in pairs(tb) do
     local roleAsset = RoleAsset:New()
     roleAsset.assetid = k
     roleAsset.count = v
-    ;
-    (table.insert)(ra, roleAsset)
+    table.insert(ra, roleAsset)
   end
   return ra
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.GetTimeRewards = function(self)
-  -- function num : 0_8
+function TimeRewardComponent:GetTimeRewards()
   local info = self:GetComponentInfo()
   return info.m_reward_info
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.ClientRefreshRewards = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function TimeRewardComponent:ClientRefreshRewards()
   local info = self:GetComponentInfo()
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local srvTime = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(srvTime:GetServerTime() * 0.001)
-  for _,v in pairs(info.m_reward_info) do
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local srvTime = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(srvTime:GetServerTime() * 0.001)
+  for _, v in pairs(info.m_reward_info) do
     local unlock_time = loginModule:GetTimeStampByTimeStr(v.unlock_time, Enum_DateTimeZoneType.E_ZoneType_GMT)
     if v.rec_reward_status == ETimeRewardRewardStatus.E_TIME_REWARD_LOCK and curTime <= unlock_time then
       v.rec_reward_status = ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV
@@ -134,38 +93,27 @@ TimeRewardComponent.ClientRefreshRewards = function(self)
   return info.m_reward_info
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.GetTimeRewardsList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function TimeRewardComponent:GetTimeRewardsList()
   local info = self:GetComponentInfo()
-  local tb = (table.collect)(info.m_reward_info)
+  local tb = table.collect(info.m_reward_info)
   if #tb == 0 then
-    (Log.error)("TimeRewardComponent:GetTimeRewardsList() TimeRewardComponentInfo.m_reward_info = nil")
+    Log.error("TimeRewardComponent:GetTimeRewardsList() TimeRewardComponentInfo.m_reward_info = nil")
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.GetTimeRewardState = function(self, index)
-  -- function num : 0_11 , upvalues : _ENV
+function TimeRewardComponent:GetTimeRewardState(index)
   local list = self:GetTimeRewardsList()
   if not list[index] then
-    (Log.error)("TimeRewardComponent:GetTimeRewardState() list[index] = nil, index = ", index)
+    Log.error("TimeRewardComponent:GetTimeRewardState() list[index] = nil, index = ", index)
   end
-  return list[index] and (list[index]).rec_reward_status or 0
+  return list[index] and list[index].rec_reward_status or 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TimeRewardComponent.GetTimeRewardId = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
+function TimeRewardComponent:GetTimeRewardId(index)
   local list = self:GetTimeRewardsList()
   if not list[index] then
-    (Log.error)("TimeRewardComponent:GetTimeRewardId() list[index] = nil, index = ", index)
+    Log.error("TimeRewardComponent:GetTimeRewardId() list[index] = nil, index = ", index)
   end
-  return list[index] and (list[index]).reward_id or 0
+  return list[index] and list[index].reward_id or 0
 end
-
-

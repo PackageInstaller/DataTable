@@ -1,197 +1,137 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/find_treasure/homeland_find_treasure_npc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandFindTreasureNPC", Object)
 HomelandFindTreasureNPC = HomelandFindTreasureNPC
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandFindTreasureNPC.Constructor = function(self, findTreasureManager)
-  -- function num : 0_0 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function HomelandFindTreasureNPC:Constructor(findTreasureManager)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   self._homelandClient = homeLandModule:GetClient()
-  self._interactPointManager = (self._homelandClient):InteractPointManager()
+  self._interactPointManager = self._homelandClient:InteractPointManager()
   self._findTreasureManager = findTreasureManager
-  local characterManager = (self._homelandClient):CharacterManager()
+  local characterManager = self._homelandClient:CharacterManager()
   self._characterTran = characterManager:GetCharacterTransform()
-  self._rotateSpeed = (HomelandFindTreasureConst.GetNPCRotateTime)()
+  self._rotateSpeed = HomelandFindTreasureConst.GetNPCRotateTime()
   self._timer = 0
   self:CreateModel()
   self:RefreshInteractPoint()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapAddIcon, HomelandMapIconType.FindTreasureNPC, 0, self._transform, self)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapAddIcon, HomelandMapIconType.FindTreasureNPC, 0, self._transform, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.SetStatusStatus = function(self, status)
-  -- function num : 0_1
+function HomelandFindTreasureNPC:SetStatusStatus(status)
   if self._npcGo then
-    (self._npcGo):SetActive(status)
+    self._npcGo:SetActive(status)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.Update = function(self, deltaTime)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandFindTreasureNPC:Update(deltaTime)
   if not self._targetDir or self._npcGo == nil then
-    return 
+    return
   end
   self._timer = self._timer + deltaTime
-  local tran = (self._npcGo).transform
-  tran.rotation = (Quaternion.Lerp)(tran.rotation, self._targetDir, self._timer / self._rotateSpeed)
-  if self._rotateSpeed <= self._timer and self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+  local tran = self._npcGo.transform
+  tran.rotation = Quaternion.Lerp(tran.rotation, self._targetDir, self._timer / self._rotateSpeed)
+  if self._timer >= self._rotateSpeed and self._timerHandler then
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.FindTreasureNPC, 0)
+function HomelandFindTreasureNPC:Destroy()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.FindTreasureNPC, 0)
   self:ResetInteractPoint()
   if self._npcRreq then
-    ((self._homelandClient):CharacterManager()):UnRegisterNpc(self._npcGO)
-    ;
-    (self._npcRreq):Dispose()
+    self._homelandClient:CharacterManager():UnRegisterNpc(self._npcGO)
+    self._npcRreq:Dispose()
     self._npcRreq = nil
     self._npcGo = nil
   end
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.CreateModel = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._npcRreq = (ResourceManager:GetInstance()):SyncLoadAsset((HomelandFindTreasureConst.GetNPCAsset)(), LoadType.GameObject)
-  self._npcGo = (self._npcRreq).Obj
-  ;
-  (self._npcGo):SetActive(true)
-  self._transform = (self._npcGo).transform
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._transform).position = (HomelandFindTreasureConst.GetNPCPosition)()
-  ;
-  ((self._homelandClient):CharacterManager()):RegisterNpc(self._npcGo)
-  ;
-  ((self._homelandClient):Home3DUIManager()):AddNameBoard((self._transform):Find("NameRoot"), "N17_base_npc_treasure", "str_homeland_npc_find_treasure")
+function HomelandFindTreasureNPC:CreateModel()
+  self._npcRreq = ResourceManager:GetInstance():SyncLoadAsset(HomelandFindTreasureConst.GetNPCAsset(), LoadType.GameObject)
+  self._npcGo = self._npcRreq.Obj
+  self._npcGo:SetActive(true)
+  self._transform = self._npcGo.transform
+  self._transform.position = HomelandFindTreasureConst.GetNPCPosition()
+  self._homelandClient:CharacterManager():RegisterNpc(self._npcGo)
+  self._homelandClient:Home3DUIManager():AddNameBoard(self._transform:Find("NameRoot"), "N17_base_npc_treasure", "str_homeland_npc_find_treasure")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.StartRotation = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandFindTreasureNPC:StartRotation()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  local playerPos = (self._characterTran).position
-  local npcPos = ((self._npcGo).transform).position
+  local playerPos = self._characterTran.position
+  local npcPos = self._npcGo.transform.position
   local targetDir = playerPos - npcPos
   targetDir.y = 0
-  self._targetDir = (Quaternion.LookRotation)(targetDir)
+  self._targetDir = Quaternion.LookRotation(targetDir)
   self._timer = 0
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1, TimerTriggerCount.Infinite, function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    self:Update((UnityEngine.Time).deltaTime)
-  end
-)
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1, TimerTriggerCount.Infinite, function()
+    self:Update(UnityEngine.Time.deltaTime)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.RefreshInteractPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandFindTreasureNPC:RefreshInteractPoint()
   if not self._transform then
-    return 
+    return
   end
-  self._interactParent = (self._transform):Find("Interact")
+  self._interactParent = self._transform:Find("Interact")
   if not self._interactParent then
-    return 
+    return
   end
   self._interactPoints = {}
-  for i = 0, (self._interactParent).childCount - 1 do
-    local interactPoint = (self._interactParent):GetChild(i)
+  for i = 0, self._interactParent.childCount - 1 do
+    local interactPoint = self._interactParent:GetChild(i)
     local name = interactPoint.name
-    local cfgs = (Cfg.cfg_building_interact_point)({PointName = name})
-    if cfgs and (table.count)(cfgs) > 0 then
+    local cfgs = Cfg.cfg_building_interact_point({PointName = name})
+    if cfgs and 0 < table.count(cfgs) then
       local cfg = cfgs[1]
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._interactPoints)[#self._interactPoints + 1] = (self._interactPointManager):AddBuildInteractPoint(self, i, cfg.ID)
+      self._interactPoints[#self._interactPoints + 1] = self._interactPointManager:AddBuildInteractPoint(self, i, cfg.ID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.ResetInteractPoint = function(self)
-  -- function num : 0_7
+function HomelandFindTreasureNPC:ResetInteractPoint()
   if not self._interactPoints then
-    return 
+    return
   end
   if self._interactPoints then
     for i = 1, #self._interactPoints do
-      (self._interactPointManager):RemoveBuildInteractPoint((self._interactPoints)[i])
+      self._interactPointManager:RemoveBuildInteractPoint(self._interactPoints[i])
       self._interactpos = {}
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.GetInteractPosition = function(self, index)
-  -- function num : 0_8
+function HomelandFindTreasureNPC:GetInteractPosition(index)
   if not self._interactParent then
-    return 
+    return
   end
   if self._interactpos == nil then
     self._interactpos = {}
   end
-  do
-    if (self._interactpos)[index] == nil then
-      local tran = (self._interactParent):GetChild(index)
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._interactpos)[index] = tran.position
-    end
-    return (self._interactpos)[index]
+  if self._interactpos[index] == nil then
+    local tran = self._interactParent:GetChild(index)
+    self._interactpos[index] = tran.position
   end
+  return self._interactpos[index]
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.Interact = function(self, pointType, index)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandFindTreasureNPC:Interact(pointType, index)
   if pointType == InteractPointType.FindTreasure then
     self:StartRotation()
     self:ShowDialog("UIFindTreasureInteractMain")
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.ShowDialog = function(self, name, ...)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(name, ...)
+function HomelandFindTreasureNPC:ShowDialog(name, ...)
+  GameGlobal.UIStateManager():ShowDialog(name, ...)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandFindTreasureNPC.GetInteractRedStatus = function(self, pointType, index)
-  -- function num : 0_11
+function HomelandFindTreasureNPC:GetInteractRedStatus(pointType, index)
   return false
 end
-
-

@@ -1,57 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_secret_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSecretTab", UICustomWidget)
 UIShopSecretTab = UIShopSecretTab
 local modf = math.modf
 local BattlePassMarketType = {Shop_BattlePass_Pay = 1, Shop_BattlePass_Free = 2}
 _enum("BattlePassMarketType", BattlePassMarketType)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
 
-UIShopSecretTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV, BattlePassMarketType
-  self.tabNames = {[MarketType.Shop_BlackMarket] = (StringTable.Get)("str_shop_secret_black_name"), [MarketType.Shop_MysteryMarket] = (StringTable.Get)("str_shop_secret_secret_name"), [MarketType.Shop_WorldBoss] = (StringTable.Get)("str_shop_secret_worldboss_name"), [MarketType.Shop_BattlePass] = (StringTable.Get)("str_shop_bp_name"), [MarketType.Shop_Season] = (StringTable.Get)("str_shop_season")}
-  self.battlePassTabNames = {[BattlePassMarketType.Shop_BattlePass_Pay] = (StringTable.Get)("str_shop_bp_name2"), [BattlePassMarketType.Shop_BattlePass_Free] = (StringTable.Get)("str_shop_bp_name")}
+function UIShopSecretTab:Constructor()
+  self.tabNames = {
+    [MarketType.Shop_BlackMarket] = StringTable.Get("str_shop_secret_black_name"),
+    [MarketType.Shop_MysteryMarket] = StringTable.Get("str_shop_secret_secret_name"),
+    [MarketType.Shop_WorldBoss] = StringTable.Get("str_shop_secret_worldboss_name"),
+    [MarketType.Shop_BattlePass] = StringTable.Get("str_shop_bp_name"),
+    [MarketType.Shop_Season] = StringTable.Get("str_shop_season")
+  }
+  self.battlePassTabNames = {
+    [BattlePassMarketType.Shop_BattlePass_Pay] = StringTable.Get("str_shop_bp_name2"),
+    [BattlePassMarketType.Shop_BattlePass_Free] = StringTable.Get("str_shop_bp_name")
+  }
   self.nestSubTabNames = {}
   self.nestSubTabCont = {}
-  self.SortTab = ((Cfg.cfg_shop_main_tab)[ShopMainTabType.Secret]).SubTab
-  for k,v in pairs(self.SortTab) do
-    if MarketType.Shop_CampaignMarket <= v then
+  self.SortTab = Cfg.cfg_shop_main_tab[ShopMainTabType.Secret].SubTab
+  for k, v in pairs(self.SortTab) do
+    if v >= MarketType.Shop_CampaignMarket then
       local tabName = ""
-      local cfgTab = (Cfg.cfg_shop_campaign_secret_tab)[v]
+      local cfgTab = Cfg.cfg_shop_campaign_secret_tab[v]
       if cfgTab.TabName ~= nil then
-        tabName = (StringTable.Get)(cfgTab.TabName)
+        tabName = StringTable.Get(cfgTab.TabName)
       end
-      -- DECOMPILER ERROR at PC83: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self.tabNames)[v] = tabName
+      self.tabNames[v] = tabName
     end
-    do
-      do
-        -- DECOMPILER ERROR at PC90: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self.nestSubTabCont)[v] = (self.nestSubTabCont)[v] or 0
-        -- DECOMPILER ERROR at PC97: Confused about usage of register: R6 in 'UnsetPending'
-
-        if (self.nestSubTabNames)[v] == nil then
-          (self.nestSubTabNames)[v] = {}
-        end
-        -- DECOMPILER ERROR at PC106: Confused about usage of register: R6 in 'UnsetPending'
-
-        if v == MarketType.Shop_BattlePass then
-          (self.nestSubTabCont)[v] = (self.nestSubTabCont)[v] + 1
-          -- DECOMPILER ERROR at PC115: Confused about usage of register: R6 in 'UnsetPending'
-
-          ;
-          ((self.nestSubTabNames)[v])[(self.nestSubTabCont)[v]] = (self.battlePassTabNames)[(self.nestSubTabCont)[v]]
-        end
-        -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    self.nestSubTabCont[v] = self.nestSubTabCont[v] or 0
+    if self.nestSubTabNames[v] == nil then
+      self.nestSubTabNames[v] = {}
+    end
+    if v == MarketType.Shop_BattlePass then
+      self.nestSubTabCont[v] = self.nestSubTabCont[v] + 1
+      self.nestSubTabNames[v][self.nestSubTabCont[v]] = self.battlePassTabNames[self.nestSubTabCont[v]]
     end
   end
   self.subTabType = 1
@@ -75,65 +58,43 @@ UIShopSecretTab.Constructor = function(self)
   self.uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.SetData = function(self, param)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopSecretTab:SetData(param)
   self:FlushTab()
   self:ResetTogglePos()
   self.show = true
-  if param then
-    self.gotoType = param[1]
-    if param then
-      local mainTabType = param[2]
-    end
-    if not param or not param[3] then
-      local subTabType = (self.visibleSortTab)[1]
-    end
-    if param then
-      self.targetShopId = param[4]
-      if subTabType and subTabType == MarketType.Shop_BattlePass and param then
-        self.nestSubTabType = (self.nestSubTabCont)[MarketType.Shop_BattlePass]
-      end
-      self:OnClickTabBtn(subTabType, self.nestSubTabType, true)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeShopBg, ShopMainTabType.Secret)
-      self:AddListener()
-      self:CheckCampaignOpen(subTabType)
-    end
+  self.gotoType = param and param[1]
+  local mainTabType = param and param[2]
+  local subTabType = param and param[3] or self.visibleSortTab[1]
+  self.targetShopId = param and param[4]
+  if subTabType and subTabType == MarketType.Shop_BattlePass and param then
+    self.nestSubTabType = self.nestSubTabCont[MarketType.Shop_BattlePass]
   end
+  self:OnClickTabBtn(subTabType, self.nestSubTabType, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeShopBg, ShopMainTabType.Secret)
+  self:AddListener()
+  self:CheckCampaignOpen(subTabType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.ResetTogglePos = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIShopSecretTab:ResetTogglePos()
   if self._toggleRect then
-    (self._toggleRect).anchoredPosition = Vector2(0, 0)
+    self._toggleRect.anchoredPosition = Vector2(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.ExcuteHideLogic = function(self, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIShopSecretTab:ExcuteHideLogic(callBack)
   self.show = false
   if callBack then
     callBack(self)
   end
   self:ClearFlag()
-  for i,toggle in ipairs(self.allToggle) do
+  for i, toggle in ipairs(self.allToggle) do
     if i == 1 then
-      self.subTabType = (self.visibleSortTab)[1]
+      self.subTabType = self.visibleSortTab[1]
       if toggle then
         toggle:Select(true)
       end
-    else
-      if toggle then
-        toggle:Select(false)
-      end
+    elseif toggle then
+      toggle:Select(false)
     end
   end
   self:DetachEvent(GameEventType.ShopBuySuccess, self.ShopBuySuccess)
@@ -143,13 +104,10 @@ UIShopSecretTab.ExcuteHideLogic = function(self, callBack)
   self:DetachEvent(GameEventType.UpdateExchangeSeasonShop, self.ShopBuySuccess)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.Update = function(self, deltaTimeMS)
-  -- function num : 0_4
+function UIShopSecretTab:Update(deltaTimeMS)
   if self.startTime then
     if self._isCutting then
-      return 
+      return
     end
     self._countdownTimer = self._countdownTimer + deltaTimeMS
     if self._countdownTimer > 20 then
@@ -159,35 +117,28 @@ UIShopSecretTab.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.IsCampaignMarket = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do return MarketType.Shop_CampaignMarket <= self.subTabType end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIShopSecretTab:IsCampaignMarket()
+  return self.subTabType >= MarketType.Shop_CampaignMarket
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.IsBattlePass = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  do return self.subTabType == MarketType.Shop_BattlePass end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIShopSecretTab:IsBattlePass()
+  return self.subTabType == MarketType.Shop_BattlePass
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.IsSeason = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  do return self.subTabType == MarketType.Shop_Season end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIShopSecretTab:IsSeason()
+  return self.subTabType == MarketType.Shop_Season
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.GetFormatTimerStr = function(self, deltaTime, txtColor)
-  -- function num : 0_8 , upvalues : _ENV
-  local id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107", format = "%s%s", clrFormat = "<color=#%s>%s</color>"}
+function UIShopSecretTab:GetFormatTimerStr(deltaTime, txtColor)
+  local id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107",
+    format = "%s%s",
+    clrFormat = "<color=#%s>%s</color>"
+  }
   local clrFormat = id.clrFormat
   if txtColor == nil then
     clrFormat = id.format
@@ -197,96 +148,72 @@ UIShopSecretTab.GetFormatTimerStr = function(self, deltaTime, txtColor)
   local hour = 0
   local min = 0
   local second = 0
-  if deltaTime >= 0 then
-    day = (UIActivityHelper.Time2Str)(deltaTime)
+  if 0 <= deltaTime then
+    day, hour, min, second = UIActivityHelper.Time2Str(deltaTime)
   end
-  local timeStr = nil
-  if day > 0 and hour > 0 then
-    timeStr = (string.format)(clrFormat, txtColor, day) .. (StringTable.Get)(id.day)
-    timeStr = timeStr .. (string.format)(clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
+  local timeStr
+  if 0 < day and 0 < hour then
+    timeStr = string.format(clrFormat, txtColor, day) .. StringTable.Get(id.day)
+    timeStr = timeStr .. string.format(clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+  elseif 0 < day then
+    timeStr = string.format(clrFormat, txtColor, day) .. StringTable.Get(id.day)
+  elseif 0 < hour and 0 < min then
+    timeStr = string.format(clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+    timeStr = timeStr .. string.format(clrFormat, txtColor, min) .. StringTable.Get(id.min)
+  elseif 0 < hour then
+    timeStr = string.format(clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+  elseif 0 < min then
+    timeStr = string.format(clrFormat, txtColor, min) .. StringTable.Get(id.min)
   else
-    if day > 0 then
-      timeStr = (string.format)(clrFormat, txtColor, day) .. (StringTable.Get)(id.day)
-    else
-      if hour > 0 and min > 0 then
-        timeStr = (string.format)(clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
-        timeStr = timeStr .. (string.format)(clrFormat, txtColor, min) .. (StringTable.Get)(id.min)
-      else
-        if hour > 0 then
-          timeStr = (string.format)(clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
-        else
-          if min > 0 then
-            timeStr = (string.format)(clrFormat, txtColor, min) .. (StringTable.Get)(id.min)
-          else
-            timeStr = (string.format)(clrFormat, txtColor, (StringTable.Get)(id.zero))
-          end
-        end
-      end
-    end
+    timeStr = string.format(clrFormat, txtColor, StringTable.Get(id.zero))
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.CountDown = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIShopSecretTab:CountDown()
   if self:IsCampaignMarket() then
-    local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-    local curTime = svrTimeModule and (math.floor)(svrTimeModule:GetServerTime() * 0.001) or 0
+    local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+    local curTime = svrTimeModule and math.floor(svrTimeModule:GetServerTime() * 0.001) or 0
     local end_time = self._endtimeCampaignMarket
     local time = end_time - curTime
-    if time >= 0 then
-      local timeStr = self:GetFormatTimerStr((math.max)(time, 0))
-      timeStr = (string.format)("<color=#00FFEA>%s</color>", timeStr)
-      ;
-      (self.timeTxt):SetText((StringTable.Get)("str_shop_buy_refresh_time_campaigntips", timeStr))
+    if 0 <= time then
+      local timeStr = self:GetFormatTimerStr(math.max(time, 0))
+      timeStr = string.format("<color=#00FFEA>%s</color>", timeStr)
+      self.timeTxt:SetText(StringTable.Get("str_shop_buy_refresh_time_campaigntips", timeStr))
     else
-      do
-        do
-          local timeStr = (StringTable.Get)("str_activity_error_107")
-          timeStr = (string.format)("<color=#00FFEA>%s</color>", timeStr)
-          ;
-          (self.timeTxt):SetText(timeStr)
-          if self.data ~= nil then
-            local remainTime = (self.data):GetRemainSecond()
-            if not remainTime then
-              return 
-            end
-            local time = remainTime + 1
-            local timeStr = (UIShopToolFunctions.GetRemainTime)(time)
-            timeStr = (string.format)("<color=#00FFEA>%s</color>", timeStr)
-            ;
-            (self.timeTxt):SetText((StringTable.Get)("str_shop_buy_refresh_time_tips", timeStr))
-            if time <= 0 then
-              self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    if not (self.clientShop):SendProtocal(TT, ShopMainTabType.Secret, self.subTabType) then
-      return 
+      local timeStr = StringTable.Get("str_activity_error_107")
+      timeStr = string.format("<color=#00FFEA>%s</color>", timeStr)
+      self.timeTxt:SetText(timeStr)
     end
-    self:RefreshPanel()
-  end
-)
-            end
-          end
+  elseif self.data ~= nil then
+    local remainTime = self.data:GetRemainSecond()
+    if not remainTime then
+      return
+    end
+    local time = remainTime + 1
+    local timeStr = UIShopToolFunctions.GetRemainTime(time)
+    timeStr = string.format("<color=#00FFEA>%s</color>", timeStr)
+    self.timeTxt:SetText(StringTable.Get("str_shop_buy_refresh_time_tips", timeStr))
+    if time <= 0 then
+      self:StartTask(function(TT)
+        if not self.clientShop:SendProtocal(TT, ShopMainTabType.Secret, self.subTabType) then
+          return
         end
-      end
+        self:RefreshPanel()
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.FlushTab = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIShopSecretTab:FlushTab()
   self.visibleSortTab = {}
-  local shopCampaign, shopCampaignCfg = (self.clientShop):GetSecretCampaign()
-  for k,v in pairs(shopCampaignCfg) do
-    (table.insert)(self.visibleSortTab, v.ID)
+  local shopCampaign, shopCampaignCfg = self.clientShop:GetSecretCampaign()
+  for k, v in pairs(shopCampaignCfg) do
+    table.insert(self.visibleSortTab, v.ID)
   end
-  for k,v in pairs(self.SortTab) do
+  for k, v in pairs(self.SortTab) do
     if v < MarketType.Shop_CampaignMarket then
-      (table.insert)(self.visibleSortTab, v)
+      table.insert(self.visibleSortTab, v)
     end
   end
   local toggle = self:GetUIComponent("UISelectObjectPath", "toggle")
@@ -294,41 +221,23 @@ UIShopSecretTab.FlushTab = function(self)
   local len = #self.visibleSortTab
   self.allToggle = toggle:SpawnObjects("UIShopSecretTabBtn", len)
   self.allToggleNestIndex = {}
-  for i,v in ipairs(self.allToggle) do
-    local subTabInex = (self.visibleSortTab)[i]
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R11 in 'UnsetPending'
-
-    if (self.nestSubTabCont)[subTabInex] ~= nil and (self.nestSubTabCont)[subTabInex] > 0 then
-      if (self.allToggleNestIndex)[subTabInex] == nil then
-        (self.allToggleNestIndex)[subTabInex] = 1
+  for i, v in ipairs(self.allToggle) do
+    local subTabInex = self.visibleSortTab[i]
+    if self.nestSubTabCont[subTabInex] ~= nil and self.nestSubTabCont[subTabInex] > 0 then
+      if self.allToggleNestIndex[subTabInex] == nil then
+        self.allToggleNestIndex[subTabInex] = 1
       else
-        -- DECOMPILER ERROR at PC74: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self.allToggleNestIndex)[subTabInex] = (self.allToggleNestIndex)[subTabInex] + 1
+        self.allToggleNestIndex[subTabInex] = self.allToggleNestIndex[subTabInex] + 1
       end
-      local nestIndex = (self.allToggleNestIndex)[subTabInex]
-      v:Init(subTabInex, ((self.nestSubTabNames)[subTabInex])[nestIndex], nestIndex, self.OnClickTabBtn, self)
+      local nestIndex = self.allToggleNestIndex[subTabInex]
+      v:Init(subTabInex, self.nestSubTabNames[subTabInex][nestIndex], nestIndex, self.OnClickTabBtn, self)
     else
-      do
-        do
-          v:Init(subTabInex, (self.tabNames)[subTabInex], 1, self.OnClickTabBtn, self)
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      v:Init(subTabInex, self.tabNames[subTabInex], 1, self.OnClickTabBtn, self)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.OnShow = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIShopSecretTab:OnShow()
   self._anim = self:GetUIComponent("Animation", "UIShopSecretTab")
   self._refreshTaskID = nil
   self.timeTxt = self:GetUIComponent("UILocalizationText", "time")
@@ -346,51 +255,33 @@ UIShopSecretTab.OnShow = function(self)
   self.btnRefreshGO = self:GetGameObject("btnrefresh")
   self.reftimeGO = self:GetGameObject("reftime")
   self.countTxtGO = self:GetGameObject("refcount")
-  ;
-  (self.scrollView):InitListView(5, function(scrollView, index)
-    -- function num : 0_11_0 , upvalues : self
+  self.scrollView:InitListView(5, function(scrollView, index)
     return self:CreateItem(scrollView, index)
-  end
-)
-  ;
-  (self.scrollViewCampaign):InitListView(5, function(scrollView, index)
-    -- function num : 0_11_1 , upvalues : self
+  end)
+  self.scrollViewCampaign:InitListView(5, function(scrollView, index)
     return self:CreateItemCampaign(scrollView, index)
-  end
-)
-  ;
-  (self.scrollViewBattlePass):InitListView(5, function(scrollView, index)
-    -- function num : 0_11_2 , upvalues : self
+  end)
+  self.scrollViewBattlePass:InitListView(5, function(scrollView, index)
     return self:CreateItemBattlePass(scrollView, index)
-  end
-)
+  end)
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
+  self.clientShop = self.shopModule:GetClientShop()
   self.itemCountPerSeasonRow = 1
   self.scrollSeasonGo = self:GetGameObject("ScrollViewSeason")
   self.scrollViewSeason = self:GetUIComponent("UIDynamicScrollView", "ScrollViewSeason")
-  ;
-  (self.scrollViewSeason):InitListView(0, function(_scrollView, index)
-    -- function num : 0_11_3 , upvalues : self
+  self.scrollViewSeason:InitListView(0, function(_scrollView, index)
     return self:createItemSeason(_scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.OnHide = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIShopSecretTab:OnHide()
   if self._refreshTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshTaskID)
+    GameGlobal.TaskManager():KillTask(self._refreshTaskID)
     self._refreshTaskID = nil
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.AddListener = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIShopSecretTab:AddListener()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.OnComponentStepChange)
   self:AttachEvent(GameEventType.ShopBuySuccess, self.ShopBuySuccess)
   self:AttachEvent(GameEventType.ActivityShopBuySuccess, self.ActivityShopBuySuccess)
@@ -398,11 +289,8 @@ UIShopSecretTab.AddListener = function(self)
   self:AttachEvent(GameEventType.UpdateExchangeSeasonShop, self.ShopBuySuccess)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.GetTabBtnBySubType = function(self, subTabType)
-  -- function num : 0_14 , upvalues : _ENV
-  for k,v in pairs(self.allToggle) do
+function UIShopSecretTab:GetTabBtnBySubType(subTabType)
+  for k, v in pairs(self.allToggle) do
     if v:GetSubType() == subTabType then
       return v
     end
@@ -410,553 +298,369 @@ UIShopSecretTab.GetTabBtnBySubType = function(self, subTabType)
   return nil
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.OnClickTabBtn = function(self, subTabType, nestSubTabType, force, noAni)
-  -- function num : 0_15 , upvalues : _ENV
+function UIShopSecretTab:OnClickTabBtn(subTabType, nestSubTabType, force, noAni)
   if not force and self.subTabType == subTabType and self.nestSubTabType == nestSubTabType then
-    return 
+    return
   end
   self.subTabType = subTabType
   self.nestSubTabType = nestSubTabType
   self._isCutting = true
-  for k,v in pairs(self.allToggle) do
+  for k, v in pairs(self.allToggle) do
     v:Select(v:GetSubType() == subTabType and v:GetNestSubType() == nestSubTabType)
   end
   local bSendCampaign = false
-  do
-    if self:IsCampaignMarket() then
-      local shopCampaign, shopCampaignCfg = (self.clientShop):GetSecretCampaign(self.subTabType)
-      if shopCampaign == nil or not shopCampaign:CheckCampaignOpen() then
-        local msg = (StringTable.Get)("str_activity_error_109")
-        ;
-        (ToastManager.ShowToast)(msg)
-        bSendCampaign = true
-      else
-        self._endtimeCampaignMarket = (shopCampaign:GetSample()).end_time
-      end
-    end
-    self.buyState = self:RefreshBattlePassInfo()
-    local bSendBattlePass = false
-    if self:IsBattlePass() then
-      bSendBattlePass = true
-    end
-    if bSendCampaign then
-      self.first = false
-      self:SendProtocal(subTabType, bSendCampaign)
-    elseif bSendBattlePass then
-      self.first = false
-      self:SendProtocal(subTabType, bSendCampaign)
-    elseif self.first then
-      self.first = false
-      self:RefreshPanel(subTabType)
+  if self:IsCampaignMarket() then
+    local shopCampaign, shopCampaignCfg = self.clientShop:GetSecretCampaign(self.subTabType)
+    if shopCampaign == nil or not shopCampaign:CheckCampaignOpen() then
+      local msg = StringTable.Get("str_activity_error_109")
+      ToastManager.ShowToast(msg)
+      bSendCampaign = true
     else
-      self:SendProtocal(subTabType, bSendCampaign)
+      self._endtimeCampaignMarket = shopCampaign:GetSample().end_time
     end
-    -- DECOMPILER ERROR: 10 unprocessed JMP targets
+  end
+  self.buyState = self:RefreshBattlePassInfo()
+  local bSendBattlePass = false
+  if self:IsBattlePass() then
+    bSendBattlePass = true
+  end
+  if bSendCampaign then
+    self.first = false
+    self:SendProtocal(subTabType, bSendCampaign)
+  elseif bSendBattlePass then
+    self.first = false
+    self:SendProtocal(subTabType, bSendCampaign)
+  elseif self.first then
+    self.first = false
+    self:RefreshPanel(subTabType)
+  else
+    self:SendProtocal(subTabType, bSendCampaign)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.SendProtocal = function(self, subTabType, bSendCampaign, nestSubTabType)
-  -- function num : 0_16 , upvalues : _ENV
+function UIShopSecretTab:SendProtocal(subTabType, bSendCampaign, nestSubTabType)
   self:Lock("UIShopSecretTab_OnClickTabBtn")
   self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : bSendCampaign, _ENV, subTabType, self, nestSubTabType
-    do
-      if bSendCampaign then
-        local mainTabType = ShopMainTabType.Secret
-        subTabType = (self.clientShop):SendCampaign(TT, mainTabType, subTabType)
-        self.subTabType = subTabType
-      end
-      if not (self.clientShop):SendProtocal(TT, ShopMainTabType.Secret, subTabType) then
-        self:UnLock("UIShopSecretTab_OnClickTabBtn")
-        return 
-      end
-      if bSendCampaign then
-        (self:RootUIOwner()):FlushCampaignLimitedTime()
-        self:FlushTab()
-        for k,v in pairs(self.allToggle) do
-          if v:GetSubType() ~= subTabType or nestSubTabType ~= v:GetNestSubType() then
-            do
-              v:Select(not nestSubTabType)
-              v:Select(v:GetSubType() == subTabType)
-              -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+    if bSendCampaign then
+      local mainTabType = ShopMainTabType.Secret
+      subTabType = self.clientShop:SendCampaign(TT, mainTabType, subTabType)
+      self.subTabType = subTabType
+    end
+    if not self.clientShop:SendProtocal(TT, ShopMainTabType.Secret, subTabType) then
+      self:UnLock("UIShopSecretTab_OnClickTabBtn")
+      return
+    end
+    if bSendCampaign then
+      self:RootUIOwner():FlushCampaignLimitedTime()
+      self:FlushTab()
+      for k, v in pairs(self.allToggle) do
+        if nestSubTabType then
+          v:Select(v:GetSubType() == subTabType and nestSubTabType == v:GetNestSubType())
+        else
+          v:Select(v:GetSubType() == subTabType)
         end
       end
-      self:RefreshPanel(subTabType)
-      self:UnLock("UIShopSecretTab_OnClickTabBtn")
-      -- DECOMPILER ERROR: 5 unprocessed JMP targets
     end
-  end
-, self)
+    self:RefreshPanel(subTabType)
+    self:UnLock("UIShopSecretTab_OnClickTabBtn")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.CheckCampaignOpen = function(self, subTabType)
-  -- function num : 0_17 , upvalues : _ENV
-  (self:RootUIOwner()):FlushCampaignLimitedTime()
-  if MarketType.Shop_CampaignMarket <= subTabType then
-    return 
+function UIShopSecretTab:CheckCampaignOpen(subTabType)
+  self:RootUIOwner():FlushCampaignLimitedTime()
+  if subTabType >= MarketType.Shop_CampaignMarket then
+    return
   end
-  if (self.clientShop):HaveShopCampaignEnd() then
-    local msg = (StringTable.Get)("str_activity_error_109")
-    ;
-    (ToastManager.ShowToast)(msg)
+  if self.clientShop:HaveShopCampaignEnd() then
+    local msg = StringTable.Get("str_activity_error_109")
+    ToastManager.ShowToast(msg)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.RefreshPanel = function(self, subTabType)
-  -- function num : 0_18 , upvalues : _ENV
+function UIShopSecretTab:RefreshPanel(subTabType)
   self._isCutting = false
   if self.subTabType == MarketType.Shop_BlackMarket then
-    ((self.scrollView).gameObject):SetActive(true)
-    ;
-    (self.scrollViewCampaign):ResetListView()
-    ;
-    ((self.scrollViewCampaign).gameObject):SetActive(false)
-    ;
-    (self.scrollViewBattlePass):ResetListView()
-    ;
-    ((self.scrollViewBattlePass).gameObject):SetActive(false)
-    ;
-    (self.scrollViewSeason):ResetListView()
-    ;
-    ((self.scrollViewSeason).gameObject):SetActive(false)
-    ;
-    (self.btnRefreshGO):SetActive(true)
-    ;
-    (self.reftimeGO):SetActive(true)
-    ;
-    (self.countTxtGO):SetActive(true)
-  else
-    if self.subTabType == MarketType.Shop_MysteryMarket then
-      ((self.scrollView).gameObject):SetActive(true)
-      ;
-      (self.scrollViewCampaign):ResetListView()
-      ;
-      ((self.scrollViewCampaign).gameObject):SetActive(false)
-      ;
-      (self.scrollViewBattlePass):ResetListView()
-      ;
-      ((self.scrollViewBattlePass).gameObject):SetActive(false)
-      ;
-      (self.scrollViewSeason):ResetListView()
-      ;
-      ((self.scrollViewSeason).gameObject):SetActive(false)
-      ;
-      (self.btnRefreshGO):SetActive(false)
-      ;
-      (self.reftimeGO):SetActive(true)
-      ;
-      (self.countTxtGO):SetActive(false)
-    else
-      if self.subTabType == MarketType.Shop_WorldBoss then
-        ((self.scrollView).gameObject):SetActive(true)
-        ;
-        (self.scrollViewCampaign):ResetListView()
-        ;
-        ((self.scrollViewCampaign).gameObject):SetActive(false)
-        ;
-        (self.scrollViewBattlePass):ResetListView()
-        ;
-        ((self.scrollViewBattlePass).gameObject):SetActive(false)
-        ;
-        (self.scrollViewSeason):ResetListView()
-        ;
-        ((self.scrollViewSeason).gameObject):SetActive(false)
-        ;
-        (self.btnRefreshGO):SetActive(false)
-        ;
-        (self.reftimeGO):SetActive(false)
-        ;
-        (self.countTxtGO):SetActive(false)
-      else
-        if self.subTabType == MarketType.Shop_BattlePass then
-          ((self.scrollView).gameObject):SetActive(false)
-          ;
-          (self.scrollViewCampaign):ResetListView()
-          ;
-          ((self.scrollViewCampaign).gameObject):SetActive(false)
-          ;
-          ((self.scrollViewBattlePass).gameObject):SetActive(true)
-          ;
-          (self.scrollViewSeason):ResetListView()
-          ;
-          ((self.scrollViewSeason).gameObject):SetActive(false)
-          ;
-          (self.btnRefreshGO):SetActive(false)
-          ;
-          (self.reftimeGO):SetActive(false)
-          ;
-          (self.countTxtGO):SetActive(false)
-        else
-          if self.subTabType == MarketType.Shop_Season then
-            ((self.scrollView).gameObject):SetActive(false)
-            ;
-            ((self.scrollViewCampaign).gameObject):SetActive(false)
-            ;
-            ((self.scrollViewBattlePass).gameObject):SetActive(false)
-            ;
-            ((self.scrollViewSeason).gameObject):SetActive(true)
-            ;
-            (self.btnRefreshGO):SetActive(false)
-            ;
-            (self.reftimeGO):SetActive(false)
-            ;
-            (self.countTxtGO):SetActive(false)
-          else
-            if MarketType.Shop_CampaignMarket <= self.subTabType then
-              ((self.scrollView).gameObject):SetActive(false)
-              ;
-              ((self.scrollViewCampaign).gameObject):SetActive(true)
-              ;
-              ((self.scrollViewBattlePass).gameObject):SetActive(false)
-              ;
-              (self.scrollViewSeason):ResetListView()
-              ;
-              ((self.scrollViewSeason).gameObject):SetActive(false)
-              ;
-              (self.btnRefreshGO):SetActive(false)
-              ;
-              (self.reftimeGO):SetActive(true)
-              ;
-              (self.countTxtGO):SetActive(false)
-            end
-          end
-        end
-      end
-    end
+    self.scrollView.gameObject:SetActive(true)
+    self.scrollViewCampaign:ResetListView()
+    self.scrollViewCampaign.gameObject:SetActive(false)
+    self.scrollViewBattlePass:ResetListView()
+    self.scrollViewBattlePass.gameObject:SetActive(false)
+    self.scrollViewSeason:ResetListView()
+    self.scrollViewSeason.gameObject:SetActive(false)
+    self.btnRefreshGO:SetActive(true)
+    self.reftimeGO:SetActive(true)
+    self.countTxtGO:SetActive(true)
+  elseif self.subTabType == MarketType.Shop_MysteryMarket then
+    self.scrollView.gameObject:SetActive(true)
+    self.scrollViewCampaign:ResetListView()
+    self.scrollViewCampaign.gameObject:SetActive(false)
+    self.scrollViewBattlePass:ResetListView()
+    self.scrollViewBattlePass.gameObject:SetActive(false)
+    self.scrollViewSeason:ResetListView()
+    self.scrollViewSeason.gameObject:SetActive(false)
+    self.btnRefreshGO:SetActive(false)
+    self.reftimeGO:SetActive(true)
+    self.countTxtGO:SetActive(false)
+  elseif self.subTabType == MarketType.Shop_WorldBoss then
+    self.scrollView.gameObject:SetActive(true)
+    self.scrollViewCampaign:ResetListView()
+    self.scrollViewCampaign.gameObject:SetActive(false)
+    self.scrollViewBattlePass:ResetListView()
+    self.scrollViewBattlePass.gameObject:SetActive(false)
+    self.scrollViewSeason:ResetListView()
+    self.scrollViewSeason.gameObject:SetActive(false)
+    self.btnRefreshGO:SetActive(false)
+    self.reftimeGO:SetActive(false)
+    self.countTxtGO:SetActive(false)
+  elseif self.subTabType == MarketType.Shop_BattlePass then
+    self.scrollView.gameObject:SetActive(false)
+    self.scrollViewCampaign:ResetListView()
+    self.scrollViewCampaign.gameObject:SetActive(false)
+    self.scrollViewBattlePass.gameObject:SetActive(true)
+    self.scrollViewSeason:ResetListView()
+    self.scrollViewSeason.gameObject:SetActive(false)
+    self.btnRefreshGO:SetActive(false)
+    self.reftimeGO:SetActive(false)
+    self.countTxtGO:SetActive(false)
+  elseif self.subTabType == MarketType.Shop_Season then
+    self.scrollView.gameObject:SetActive(false)
+    self.scrollViewCampaign.gameObject:SetActive(false)
+    self.scrollViewBattlePass.gameObject:SetActive(false)
+    self.scrollViewSeason.gameObject:SetActive(true)
+    self.btnRefreshGO:SetActive(false)
+    self.reftimeGO:SetActive(false)
+    self.countTxtGO:SetActive(false)
+  elseif self.subTabType >= MarketType.Shop_CampaignMarket then
+    self.scrollView.gameObject:SetActive(false)
+    self.scrollViewCampaign.gameObject:SetActive(true)
+    self.scrollViewBattlePass.gameObject:SetActive(false)
+    self.scrollViewSeason:ResetListView()
+    self.scrollViewSeason.gameObject:SetActive(false)
+    self.btnRefreshGO:SetActive(false)
+    self.reftimeGO:SetActive(true)
+    self.countTxtGO:SetActive(false)
   end
   if self.subTabType == MarketType.Shop_BlackMarket then
     self.startTime = true
     self:RefreshStore()
     self:CountDown()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_BlackMarket)
-  else
-    if self.subTabType == MarketType.Shop_MysteryMarket then
-      self.startTime = true
-      self:RefreshStore()
-      self:CountDown()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_MysteryMarket)
-    else
-      if self.subTabType == MarketType.Shop_WorldBoss then
-        self.startTime = false
-        self:RefreshStore()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_WorldBoss)
-      else
-        if self.subTabType == MarketType.Shop_BattlePass then
-          self.startTime = false
-          self:RefreshStoreBattlePass()
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_BattlePass)
-        else
-          if self.subTabType == MarketType.Shop_Season then
-            self.startTime = false
-            self:RefreshStoreSeason()
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_Season)
-          else
-            if MarketType.Shop_CampaignMarket <= self.subTabType then
-              self.startTime = true
-              self:RefreshStoreCampaign()
-              self:CountDown()
-              ;
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, self.subTabType)
-            end
-          end
-        end
-      end
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_BlackMarket)
+  elseif self.subTabType == MarketType.Shop_MysteryMarket then
+    self.startTime = true
+    self:RefreshStore()
+    self:CountDown()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_MysteryMarket)
+  elseif self.subTabType == MarketType.Shop_WorldBoss then
+    self.startTime = false
+    self:RefreshStore()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_WorldBoss)
+  elseif self.subTabType == MarketType.Shop_BattlePass then
+    self.startTime = false
+    self:RefreshStoreBattlePass()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_BattlePass)
+  elseif self.subTabType == MarketType.Shop_Season then
+    self.startTime = false
+    self:RefreshStoreSeason()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, MarketType.Shop_Season)
+  elseif self.subTabType >= MarketType.Shop_CampaignMarket then
+    self.startTime = true
+    self:RefreshStoreCampaign()
+    self:CountDown()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Secret, self.subTabType)
   end
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.RefreshStore = function(self, noResetTime)
-  -- function num : 0_19 , upvalues : _ENV
+function UIShopSecretTab:RefreshStore(noResetTime)
   if self.gotoType == ShopGotoType.SortGoods then
-    (self.clientShop):ReSortSecretGoods(self.subTabType, self.targetShopId)
+    self.clientShop:ReSortSecretGoods(self.subTabType, self.targetShopId)
     self:ClearFlag()
   end
-  self.data = (self.clientShop):GetSecretTabData(self.subTabType)
+  self.data = self.clientShop:GetSecretTabData(self.subTabType)
   if self.data then
     if not noResetTime then
-      self.remainSecond = (self.data):GetRemainSecond()
+      self.remainSecond = self.data:GetRemainSecond()
       if not self.remainSecond then
         self.remainSecond = 0
       end
     end
-    ;
-    (self.curCountTxt):SetText((self.data):GetMaxCount() - (self.data):GetCurCount())
-    ;
-    (self.maxCountTxt):SetText((self.data):GetMaxCount())
-    ;
-    (self.priceTxt):SetText((self.data):GetConsume())
-    ;
-    (self.priceLayout):SetText((self.data):GetConsume())
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.contentRect)
-    self.uiGoods = (self.data):SortSecretGoods(self.subTabType, self.buyState)
-    local _cfg = (Cfg.cfg_top_tips)[(self.data):GetCostType()]
-    -- DECOMPILER ERROR at PC81: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.moneyIcon).sprite = (self.uiCommonAtlas):GetSprite(_cfg.Icon)
+    self.curCountTxt:SetText(self.data:GetMaxCount() - self.data:GetCurCount())
+    self.maxCountTxt:SetText(self.data:GetMaxCount())
+    self.priceTxt:SetText(self.data:GetConsume())
+    self.priceLayout:SetText(self.data:GetConsume())
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.contentRect)
+    self.uiGoods = self.data:SortSecretGoods(self.subTabType, self.buyState)
+    local _cfg = Cfg.cfg_top_tips[self.data:GetCostType()]
+    self.moneyIcon.sprite = self.uiCommonAtlas:GetSprite(_cfg.Icon)
     self:RefreshScroll()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.RefreshStoreCampaign = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local shopCampaign, shopCampaignCfg = (self.clientShop):GetSecretCampaign(self.subTabType)
+function UIShopSecretTab:RefreshStoreCampaign()
+  local shopCampaign, shopCampaignCfg = self.clientShop:GetSecretCampaign(self.subTabType)
   local itemComponent = shopCampaign:GetComponent(shopCampaignCfg.ComponentID)
   local itemComponentInfo = itemComponent:GetComponentInfo()
   self.bigCampaignList = {}
   self.smallCampaignList = {}
-  for k,itemInfo in ipairs(itemComponentInfo.m_exchange_item_list) do
+  for k, itemInfo in ipairs(itemComponentInfo.m_exchange_item_list) do
     local isSpecial = itemInfo.m_is_special
     if isSpecial then
-      (table.insert)(self.bigCampaignList, itemInfo)
+      table.insert(self.bigCampaignList, itemInfo)
     else
-      ;
-      (table.insert)(self.smallCampaignList, itemInfo)
+      table.insert(self.smallCampaignList, itemInfo)
     end
   end
   self._poolItems = {}
   self._listItemTotalCount = #self.smallCampaignList
   local bigRow = #self.bigCampaignList
   local smallRow = self:_CalcTotalRow(self._listItemTotalCount)
-  ;
-  (self.scrollViewCampaign):SetListItemCount(bigRow + smallRow)
-  ;
-  (self.scrollViewCampaign):RefreshAllShownItem()
+  self.scrollViewCampaign:SetListItemCount(bigRow + smallRow)
+  self.scrollViewCampaign:RefreshAllShownItem()
   if self.dontMove then
     self.dontMove = false
   else
-    ;
-    (self.scrollViewCampaign):MovePanelToItemIndex(0, 0)
+    self.scrollViewCampaign:MovePanelToItemIndex(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.RefreshStoreBattlePass = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  self.data = (self.clientShop):GetSecretTabData(self.subTabType)
-  local uigoods = (self.data):SortSecretGoods(self.subTabType, self.nestSubTabType, self.buyState)
+function UIShopSecretTab:RefreshStoreBattlePass()
+  self.data = self.clientShop:GetSecretTabData(self.subTabType)
+  local uigoods = self.data:SortSecretGoods(self.subTabType, self.nestSubTabType, self.buyState)
   if uigoods then
     self.bigBattlePassList = {}
     self.smallBattlePassList = {}
-    for k,goodInfo in ipairs(uigoods) do
-      local itemid = (goodInfo.cfg)[ConfigKey.ConfigKey_ItemId]
-      if RoleAssetID.RoleAssetPetSkinBegin <= itemid and itemid <= RoleAssetID.RoleAssetPetSkinEnd then
+    for k, goodInfo in ipairs(uigoods) do
+      local itemid = goodInfo.cfg[ConfigKey.ConfigKey_ItemId]
+      if itemid >= RoleAssetID.RoleAssetPetSkinBegin and itemid <= RoleAssetID.RoleAssetPetSkinEnd then
         local skinid = itemid - RoleAssetID.RoleAssetPetSkinBegin
-        local petModule = (GameGlobal.GetModule)(PetModule)
+        local petModule = GameGlobal.GetModule(PetModule)
         local haveSkin = petModule:HaveSkin(skinid)
         if haveSkin then
-          (Log.debug)("###[UIShopSecretTab] season his shop have skin , skinid:", skinid)
+          Log.debug("###[UIShopSecretTab] season his shop have skin , skinid:", skinid)
         else
-          ;
-          (table.insert)(self.bigBattlePassList, goodInfo)
-          ;
-          (self.shopModule):SetBattlePassTabNew(goodInfo.goodId)
+          table.insert(self.bigBattlePassList, goodInfo)
+          self.shopModule:SetBattlePassTabNew(goodInfo.goodId)
         end
       else
-        do
-          do
-            ;
-            (table.insert)(self.smallBattlePassList, goodInfo)
-            ;
-            (self.shopModule):SetBattlePassTabNew(goodInfo.goodId)
-            -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        table.insert(self.smallBattlePassList, goodInfo)
+        self.shopModule:SetBattlePassTabNew(goodInfo.goodId)
       end
     end
-    ;
-    (self:RootUIOwner()):CoFlushTabNew()
-    for k,v in pairs(self.allToggle) do
+    self:RootUIOwner():CoFlushTabNew()
+    for k, v in pairs(self.allToggle) do
       if v:GetSubType() == self.subTabType then
         v:ShopNew()
       end
     end
-    ;
-    (self:RootUIOwner()):FlushCampaignLimitedTime()
+    self:RootUIOwner():FlushCampaignLimitedTime()
     self._poolItems = {}
     self._listItemTotalCount = #self.smallBattlePassList
     local bigRow = #self.bigBattlePassList
     local smallRow = self:_CalcTotalRow(self._listItemTotalCount)
-    ;
-    (self.scrollViewBattlePass):SetListItemCount(bigRow + smallRow)
-    ;
-    (self.scrollViewBattlePass):RefreshAllShownItem()
+    self.scrollViewBattlePass:SetListItemCount(bigRow + smallRow)
+    self.scrollViewBattlePass:RefreshAllShownItem()
     if self.dontMove then
       self.dontMove = false
     else
-      ;
-      (self.scrollViewBattlePass):MovePanelToItemIndex(0, 0)
+      self.scrollViewBattlePass:MovePanelToItemIndex(0, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.BtnRefreshOnClick = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local cur = (self.data):GetCurCount()
-  local max = (self.data):GetMaxCount()
-  if max <= cur then
-    (ToastManager.ShowToast)((StringTable.Get)("str_shop_black_refresh_no_count"))
-    return 
+function UIShopSecretTab:BtnRefreshOnClick()
+  local cur = self.data:GetCurCount()
+  local max = self.data:GetMaxCount()
+  if cur >= max then
+    ToastManager.ShowToast(StringTable.Get("str_shop_black_refresh_no_count"))
+    return
   end
-  local consume = (self.data):GetConsume()
-  local costType = (self.data):GetCostType()
-  local ownMoney = (ClientShop.GetMoney)(costType)
-  do
-    if ownMoney == 0 then
-      local itemMd = (GameGlobal.GetModule)(ItemModule)
-      ownMoney = itemMd:GetItemCount(costType) or 0
-    end
-    if ownMoney < consume then
-      if costType == RoleAssetID.RoleAssetGlow then
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIShopCurrency1To2", consume - (ownMoney))
-      else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_shop_black_refresh_no_diamond"))
-      end
-      return 
-    end
-    local moneyCfg = (Cfg.cfg_top_tips)[costType]
-    local str = nil
-    if self.subTabType == MarketType.Shop_BlackMarket then
-      str = (StringTable.Get)("str_shop_black_refresh_box", consume, (StringTable.Get)(moneyCfg.Title))
+  local consume = self.data:GetConsume()
+  local costType = self.data:GetCostType()
+  local ownMoney = ClientShop.GetMoney(costType)
+  if ownMoney == 0 then
+    local itemMd = GameGlobal.GetModule(ItemModule)
+    ownMoney = itemMd:GetItemCount(costType) or 0
+  end
+  if consume > ownMoney then
+    if costType == RoleAssetID.RoleAssetGlow then
+      GameGlobal.UIStateManager():ShowDialog("UIShopCurrency1To2", consume - ownMoney)
     else
-      if self.subTabType == MarketType.Shop_MysteryMarket then
-        str = (StringTable.Get)("str_shop_maze_refresh_box", consume, (StringTable.Get)(moneyCfg.Title))
-      else
-        if self.subTabType == MarketType.Shop_WorldBoss then
-          str = (StringTable.Get)("str_shop_maze_refresh_box", consume, (StringTable.Get)(moneyCfg.Title))
-        end
-      end
+      ToastManager.ShowToast(StringTable.Get("str_shop_black_refresh_no_diamond"))
     end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", str, function(param)
-    -- function num : 0_22_0 , upvalues : self, _ENV
+    return
+  end
+  local moneyCfg = Cfg.cfg_top_tips[costType]
+  local str
+  if self.subTabType == MarketType.Shop_BlackMarket then
+    str = StringTable.Get("str_shop_black_refresh_box", consume, StringTable.Get(moneyCfg.Title))
+  elseif self.subTabType == MarketType.Shop_MysteryMarket then
+    str = StringTable.Get("str_shop_maze_refresh_box", consume, StringTable.Get(moneyCfg.Title))
+  elseif self.subTabType == MarketType.Shop_WorldBoss then
+    str = StringTable.Get("str_shop_maze_refresh_box", consume, StringTable.Get(moneyCfg.Title))
+  end
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", str, function(param)
     self:StartTask(function(TT)
-      -- function num : 0_22_0_0 , upvalues : self, _ENV
       self:Lock("UIShopSecretTab.Refresh")
-      local shopCode, marketinfo = nil, nil
+      local shopCode, marketinfo
       if self.subTabType == MarketType.Shop_BlackMarket then
-        shopCode = (self.shopModule):ApplyRefreshBlackMarket(TT)
-      else
-        -- DECOMPILER ERROR at PC26: Overwrote pending register: R2 in 'AssignReg'
-
-        if self.subTabType == MarketType.Shop_MysteryMarket then
-          shopCode = (self.shopModule):ApplyRefreshMysteryMarket(TT)
-        else
-        end
+        shopCode, marketinfo = self.shopModule:ApplyRefreshBlackMarket(TT)
+      elseif self.subTabType == MarketType.Shop_MysteryMarket then
+        shopCode, marketinfo = self.shopModule:ApplyRefreshMysteryMarket(TT)
+      elseif self.subTabType == MarketType.Shop_WorldBoss then
       end
-      if self.subTabType == MarketType.Shop_WorldBoss then
-        self:UnLock("UIShopSecretTab.Refresh")
-        if marketinfo ~= {} and marketinfo ~= nil then
-          local result = (ClientShop.CheckShopCode)(shopCode)
-          if result then
-            local goodsconfig = nil
-            if self.subTabType == MarketType.Shop_BlackMarket then
-              goodsconfig = (self.shopModule):GetBlackMarketConfig()
-            else
-              if self.subTabType == MarketType.Shop_MysteryMarket then
-                goodsconfig = (self.shopModule):GetMysteryMarketConfig()
-              else
-                if self.subTabType == MarketType.Shop_WorldBoss then
-                  goodsconfig = (self.shopModule):RequestWorldBossMarket()
-                end
-              end
-            end
-            ;
-            (self.clientShop):SetSecretTabData(marketinfo, goodsconfig, self.subTabType)
-            self:RefreshStore(true)
+      self:UnLock("UIShopSecretTab.Refresh")
+      if marketinfo ~= {} and marketinfo ~= nil then
+        local result = ClientShop.CheckShopCode(shopCode)
+        if result then
+          local goodsconfig
+          if self.subTabType == MarketType.Shop_BlackMarket then
+            goodsconfig = self.shopModule:GetBlackMarketConfig()
+          elseif self.subTabType == MarketType.Shop_MysteryMarket then
+            goodsconfig = self.shopModule:GetMysteryMarketConfig()
+          elseif self.subTabType == MarketType.Shop_WorldBoss then
+            goodsconfig = self.shopModule:RequestWorldBossMarket()
           end
+          self.clientShop:SetSecretTabData(marketinfo, goodsconfig, self.subTabType)
+          self:RefreshStore(true)
         end
       end
-    end
-, self)
-  end
-, nil, function(param)
-    -- function num : 0_22_1 , upvalues : _ENV
-    (Log.debug)("sale cancel. .")
-  end
-, nil)
-  end
+    end, self)
+  end, nil, function(param)
+    Log.debug("sale cancel. .")
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.RefreshBattlePassInfo = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIShopSecretTab:RefreshBattlePassInfo()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
-  if not (self._campaign):CheckCampaignOpen() then
+  self._campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
+  if not self._campaign:CheckCampaignOpen() then
     return 0
   end
-  self._buyGiftComponentInfo = (self._campaign):GetComponentInfo(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
-  return (self._buyGiftComponentInfo).m_buy_state
+  self._buyGiftComponentInfo = self._campaign:GetComponentInfo(ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
+  return self._buyGiftComponentInfo.m_buy_state
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.RefreshScroll = function(self)
-  -- function num : 0_24
+function UIShopSecretTab:RefreshScroll()
   self._poolItems = {}
   self._listItemTotalCount = #self.uiGoods
   local row = self:_CalcTotalRow(self._listItemTotalCount)
-  ;
-  (self.scrollView):SetListItemCount(row)
-  ;
-  (self.scrollView):RefreshAllShownItem()
+  self.scrollView:SetListItemCount(row)
+  self.scrollView:RefreshAllShownItem()
   if self.dontMove then
     self.dontMove = false
   else
-    ;
-    (self.scrollView):MovePanelToItemIndex(0, 0)
+    self.scrollView:MovePanelToItemIndex(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.CreateItem = function(self, scrollView, index)
-  -- function num : 0_25 , upvalues : _ENV
+function UIShopSecretTab:CreateItem(scrollView, index)
   if index < 0 then
     return nil
   end
   local item = scrollView:NewListViewItem("item")
   local pool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
   if self._poolItems ~= nil then
-    (self._poolItems)[index] = pool
+    self._poolItems[index] = pool
   end
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
@@ -966,47 +670,31 @@ UIShopSecretTab.CreateItem = function(self, scrollView, index)
   for i = 1, self.itemCountPerRow do
     local item = rowList[i]
     local itemIndex = index * self.itemCountPerRow + i
-    local data = (self.uiGoods)[itemIndex]
+    local data = self.uiGoods[itemIndex]
     if data then
       item:Enable(true)
-      local targetShopId = nil
+      local targetShopId
       if self.gotoType == ShopGotoType.OpenShopConfirm then
         targetShopId = self.targetShopId
         self:ClearFlag()
       end
       item:Refresh(self.subTabType, data, targetShopId)
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.itemTable)[itemIndex] = item
+      self.itemTable[itemIndex] = item
     else
-      do
-        do
-          item:Enable(false)
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      item:Enable(false)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.CreateItemCampaign = function(self, scrollView, index)
-  -- function num : 0_26 , upvalues : _ENV, BattlePassMarketType
+function UIShopSecretTab:CreateItemCampaign(scrollView, index)
   if index < 0 then
     return nil
   end
   if not self:IsCampaignMarket() then
     return nil
   end
-  local item = nil
+  local item
   local spawnCount = 0
   local bigRow = #self.bigCampaignList
   local smallRow = self:_CalcTotalRow(self._listItemTotalCount)
@@ -1018,10 +706,8 @@ UIShopSecretTab.CreateItemCampaign = function(self, scrollView, index)
     item = scrollView:NewListViewItem("item")
   end
   local pool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R8 in 'UnsetPending'
-
   if self._poolItems ~= nil then
-    (self._poolItems)[index] = pool
+    self._poolItems[index] = pool
   end
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
@@ -1030,27 +716,22 @@ UIShopSecretTab.CreateItemCampaign = function(self, scrollView, index)
   local rowList = pool:GetAllSpawnList()
   for i = 1, spawnCount do
     local item = rowList[i]
-    local data = nil
+    local data
     local itemIndex = 0
     if index < bigRow then
       itemIndex = index + 1
-      data = (self.bigCampaignList)[index + 1]
+      data = self.bigCampaignList[index + 1]
     else
       itemIndex = bigRow + (index - bigRow) * self.itemCountPerRow + i
-      data = (self.smallCampaignList)[(index - bigRow) * self.itemCountPerRow + i]
+      data = self.smallCampaignList[(index - bigRow) * self.itemCountPerRow + i]
     end
     if data then
       item:Enable(true)
       item:Refresh(self.subTabType, data, targetShopId)
       item:ActivityEndCb(function(subTabType)
-    -- function num : 0_26_0 , upvalues : self, BattlePassMarketType
-    self:SendProtocal(subTabType, true, BattlePassMarketType.Shop_BattlePass_Pay)
-  end
-)
-      -- DECOMPILER ERROR at PC88: Confused about usage of register: R16 in 'UnsetPending'
-
-      ;
-      (self.itemTable)[itemIndex] = item
+        self:SendProtocal(subTabType, true, BattlePassMarketType.Shop_BattlePass_Pay)
+      end)
+      self.itemTable[itemIndex] = item
     else
       item:Enable(false)
     end
@@ -1058,14 +739,11 @@ UIShopSecretTab.CreateItemCampaign = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.CreateItemBattlePass = function(self, scrollView, index)
-  -- function num : 0_27 , upvalues : _ENV
+function UIShopSecretTab:CreateItemBattlePass(scrollView, index)
   if index < 0 then
     return nil
   end
-  local item = nil
+  local item
   local spawnCount = 0
   local bigRow = #self.bigBattlePassList
   if index < bigRow then
@@ -1076,10 +754,8 @@ UIShopSecretTab.CreateItemBattlePass = function(self, scrollView, index)
     item = scrollView:NewListViewItem("item")
   end
   local pool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
   if self._poolItems ~= nil then
-    (self._poolItems)[index] = pool
+    self._poolItems[index] = pool
   end
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
@@ -1088,14 +764,14 @@ UIShopSecretTab.CreateItemBattlePass = function(self, scrollView, index)
   local rowList = pool:GetAllSpawnList()
   for i = 1, spawnCount do
     local item = rowList[i]
-    local data = nil
+    local data
     local itemIndex = 0
     if index < bigRow then
       itemIndex = index + 1
-      data = (self.bigBattlePassList)[index + 1]
+      data = self.bigBattlePassList[index + 1]
     else
       itemIndex = bigRow + (index - bigRow) * self.itemCountPerRow + i
-      data = (self.smallBattlePassList)[(index - bigRow) * self.itemCountPerRow + i]
+      data = self.smallBattlePassList[(index - bigRow) * self.itemCountPerRow + i]
     end
     if data then
       item:Enable(true)
@@ -1107,55 +783,29 @@ UIShopSecretTab.CreateItemBattlePass = function(self, scrollView, index)
         item:RefreshSkin()
       end
       local lockText = "str_shop_bp_tips1"
-      if self.buyState + 1 < (data.cfg)[ConfigKey.ConfigKey_BattleType] then
+      if data.cfg[ConfigKey.ConfigKey_BattleType] > self.buyState + 1 then
         local lockText = "str_shop_bp_tips1"
-        if (data.cfg)[ConfigKey.ConfigKey_BattleType] == 3 then
+        if data.cfg[ConfigKey.ConfigKey_BattleType] == 3 then
           lockText = "str_shop_bp_tips2"
         end
         item:RefreshLock(true, lockText)
       else
-        do
-          do
-            do
-              item:RefreshLock(false)
-              -- DECOMPILER ERROR at PC114: Confused about usage of register: R16 in 'UnsetPending'
-
-              ;
-              (self.itemTable)[itemIndex] = item
-              item:Enable(false)
-              -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+        item:RefreshLock(false)
       end
+      self.itemTable[itemIndex] = item
+    else
+      item:Enable(false)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.GetSkinItem = function(self, goodId)
-  -- function num : 0_28
-  local item = (self._skinData):GetGoodById(goodId)
+function UIShopSecretTab:GetSkinItem(goodId)
+  local item = self._skinData:GetGoodById(goodId)
   return item
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab._CalcTotalRow = function(self, itemTotalCount)
-  -- function num : 0_29 , upvalues : modf
+function UIShopSecretTab:_CalcTotalRow(itemTotalCount)
   local row, mod = modf(itemTotalCount / self.itemCountPerRow)
   if mod ~= 0 then
     row = row + 1
@@ -1164,36 +814,28 @@ UIShopSecretTab._CalcTotalRow = function(self, itemTotalCount)
   return self._listItemTotalRow
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.ShopBuySuccess = function(self)
-  -- function num : 0_30
+function UIShopSecretTab:ShopBuySuccess()
   self.dontMove = true
   self:OnClickTabBtn(self.subTabType, self.nestSubTabType, true, true)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_31
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIShopSecretTab:OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:RefreshPanel()
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.ActivityShopBuySuccess = function(self)
-  -- function num : 0_32
+function UIShopSecretTab:ActivityShopBuySuccess()
   self.dontMove = true
   self:OnClickTabBtn(self.subTabType, self.nestSubTabType, true, true)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.ChangeSecondToTime = function(self, second)
-  -- function num : 0_33 , upvalues : modf
-  local timeTable = {hour = 0, min = 0, sec = 0}
+function UIShopSecretTab:ChangeSecondToTime(second)
+  local timeTable = {
+    hour = 0,
+    min = 0,
+    sec = 0
+  }
   if second == 0 then
     return timeTable
   end
@@ -1216,50 +858,33 @@ UIShopSecretTab.ChangeSecondToTime = function(self, second)
   return timeTable
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.ClearFlag = function(self)
-  -- function num : 0_34
+function UIShopSecretTab:ClearFlag()
   self.gotoType = nil
   self.targetShopId = nil
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.GetGood = function(self, index)
-  -- function num : 0_35
-  if self.uiGoods then
-    return ((self.uiGoods)[index]):GetGameObject("bg")
-  end
+function UIShopSecretTab:GetGood(index)
+  return self.uiGoods and self.uiGoods[index]:GetGameObject("bg")
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.GetNestSubTab = function(self)
-  -- function num : 0_36
+function UIShopSecretTab:GetNestSubTab()
   return self.nestSubTabType
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.InAnimation = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UIShopSecretTab:InAnimation()
   if self._poolItems == nil then
-    return 
+    return
   end
   for index = 0, math.maxinteger do
-    local pool = (self._poolItems)[index]
-    if pool ~= nil then
-      local rowList = pool:GetAllSpawnList()
-      for ik,item in pairs(rowList) do
-        if item ~= nil then
-          (item:GetGameObject()):SetActive(false)
-        end
+    local pool = self._poolItems[index]
+    if pool == nil then
+      break
+    end
+    local rowList = pool:GetAllSpawnList()
+    for ik, item in pairs(rowList) do
+      if item ~= nil then
+        item:GetGameObject():SetActive(false)
       end
-      -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_STMT
-
     end
   end
   if self._taskID then
@@ -1267,126 +892,75 @@ UIShopSecretTab.InAnimation = function(self)
     self._taskID = nil
   end
   self._taskID = self:StartSafeTask("UIShopSecretTab::InAnimation", function(lockName, TT)
-    -- function num : 0_37_0 , upvalues : _ENV, self
     YIELD(TT)
     local animLength = 0
     for index = 0, math.maxinteger do
       if not self._poolItems then
-        (Log.debug)("###[UIShopSecretTab] play anim , pools is reset , wait next play .")
+        Log.debug("###[UIShopSecretTab] play anim , pools is reset , wait next play .")
         self._poolItems = nil
-        return 
+        return
       end
-      local pool = (self._poolItems)[index]
-      if pool ~= nil then
-        do
-          local rowList = pool:GetAllSpawnList()
-          for ik,item in pairs(rowList) do
-            local data = nil
-            if self:IsCampaignMarket() then
-              local bigRow = #self.bigCampaignList
-              if index < bigRow then
-                data = (self.bigCampaignList)[index + 1]
-              else
-                data = (self.smallCampaignList)[(index - bigRow) * self.itemCountPerRow + ik]
-              end
-            else
-              do
-                if self:IsBattlePass() then
-                  local bigRow = #self.bigBattlePassList
-                  if index < bigRow then
-                    data = (self.bigBattlePassList)[index + 1]
-                  else
-                    data = (self.smallBattlePassList)[(index - bigRow) * self.itemCountPerRow + ik]
-                  end
-                else
-                  do
-                    if self:IsSeason() then
-                      local idx = index * self.itemCountPerSeasonRow + 1
-                      local dataList = (self._showSeasonDataList)[idx]
-                      if dataList then
-                        data = (dataList.list)[ik]
-                      end
-                    else
-                      do
-                        do
-                          do
-                            local itemIndex = index * self.itemCountPerRow + ik
-                            data = (self.uiGoods)[itemIndex]
-                            if data then
-                              (item:GetGameObject()):SetActive(true)
-                              animLength = (math.max)(animLength, item:PlayInAnimation())
-                            end
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_STMT
-
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                            -- DECOMPILER ERROR at PC103: LeaveBlock: unexpected jumping out IF_STMT
-
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+      local pool = self._poolItems[index]
+      if pool == nil then
+        break
+      end
+      local rowList = pool:GetAllSpawnList()
+      for ik, item in pairs(rowList) do
+        local data
+        if self:IsCampaignMarket() then
+          local bigRow = #self.bigCampaignList
+          if index < bigRow then
+            data = self.bigCampaignList[index + 1]
+          else
+            data = self.smallCampaignList[(index - bigRow) * self.itemCountPerRow + ik]
           end
-          YIELD(TT)
-          -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_STMT
-
+        elseif self:IsBattlePass() then
+          local bigRow = #self.bigBattlePassList
+          if index < bigRow then
+            data = self.bigBattlePassList[index + 1]
+          else
+            data = self.smallBattlePassList[(index - bigRow) * self.itemCountPerRow + ik]
+          end
+        elseif self:IsSeason() then
+          local idx = index * self.itemCountPerSeasonRow + 1
+          local dataList = self._showSeasonDataList[idx]
+          if dataList then
+            data = dataList.list[ik]
+          end
+        else
+          local itemIndex = index * self.itemCountPerRow + ik
+          data = self.uiGoods[itemIndex]
+        end
+        if data then
+          item:GetGameObject():SetActive(true)
+          animLength = math.max(animLength, item:PlayInAnimation())
         end
       end
+      YIELD(TT)
     end
-    if animLength > 0 then
+    if 0 < animLength then
       YIELD(TT, animLength)
     end
     self._taskID = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.ShowSelf = function(self)
-  -- function num : 0_38
-  (self._anim):Stop()
-  ;
-  (self._anim):Play()
+function UIShopSecretTab:ShowSelf()
+  self._anim:Stop()
+  self._anim:Play()
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.HideSelf = function(self)
-  -- function num : 0_39
+function UIShopSecretTab:HideSelf()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.createItemSeason = function(self, _scrollView, _index)
-  -- function num : 0_40
+function UIShopSecretTab:createItemSeason(_scrollView, _index)
   if _index < 0 or not self.subTabType then
     return nil
   end
   local count = 1
   local idx = _index * self.itemCountPerSeasonRow + 1
-  local data = (self._showSeasonDataList)[idx]
-  local itemName = nil
+  local data = self._showSeasonDataList[idx]
+  local itemName
   local isSpecial = false
   if data.sin then
     isSpecial = true
@@ -1399,10 +973,8 @@ UIShopSecretTab.createItemSeason = function(self, _scrollView, _index)
   end
   local item = _scrollView:NewListViewItem(itemName)
   local pool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R10 in 'UnsetPending'
-
   if self._poolItems ~= nil then
-    (self._poolItems)[_index] = pool
+    self._poolItems[_index] = pool
   end
   pool:SpawnObjects("UIShopExchangeSeasonItem", count)
   if item.IsInitHandlerCalled == false then
@@ -1411,7 +983,7 @@ UIShopSecretTab.createItemSeason = function(self, _scrollView, _index)
   local rowList = pool:GetAllSpawnList()
   for i = 1, count do
     local widget = rowList[i]
-    local singleData = (data.list)[i]
+    local singleData = data.list[i]
     if singleData then
       widget:Enable(true)
       widget:Special(isSpecial)
@@ -1423,137 +995,85 @@ UIShopSecretTab.createItemSeason = function(self, _scrollView, _index)
   return item
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R2 in 'UnsetPending'
-
-UIShopSecretTab.RefreshStoreSeason = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  (self.shopModule):ClearExchangeTab_SeasonNew()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopNew)
+function UIShopSecretTab:RefreshStoreSeason()
+  self.shopModule:ClearExchangeTab_SeasonNew()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopNew)
   self._showSeasonDataList = {}
-  self.data = (self.clientShop):GetSecretTabData(self.subTabType)
-  local uigoods = (self.data):SortSecretGoods(self.subTabType, self.nestSubTabType, self.buyState)
+  self.data = self.clientShop:GetSecretTabData(self.subTabType)
+  local uigoods = self.data:SortSecretGoods(self.subTabType, self.nestSubTabType, self.buyState)
   local filterList = {}
   if uigoods then
     self.bigBattlePassList = {}
     self.smallBattlePassList = {}
-    for k,value in ipairs(uigoods) do
+    for k, value in ipairs(uigoods) do
       if value:GetRemainCount() > 0 then
         local AddBagNum = value:AddBagNum()
         if AddBagNum and AddBagNum == 1 then
           local itemid = value:GetItemId()
-          if RoleAssetID.RoleAssetPetSkinBegin <= itemid and itemid <= RoleAssetID.RoleAssetPetSkinEnd then
+          if itemid >= RoleAssetID.RoleAssetPetSkinBegin and itemid <= RoleAssetID.RoleAssetPetSkinEnd then
             local skinid = itemid - RoleAssetID.RoleAssetPetSkinBegin
-            local petModule = (GameGlobal.GetModule)(PetModule)
+            local petModule = GameGlobal.GetModule(PetModule)
             local haveSkin = petModule:HaveSkin(skinid)
             if haveSkin then
-              (Log.debug)("###[UIShopSecretTab] season his shop have skin , skinid:", skinid)
+              Log.debug("###[UIShopSecretTab] season his shop have skin , skinid:", skinid)
             else
-              ;
-              (table.insert)(filterList, value)
+              table.insert(filterList, value)
+            end
+          elseif itemid >= RoleAssetID.RoleAssetPetBegin and itemid <= RoleAssetID.RoleAssetPetEnd then
+            local petModule = GameGlobal.GetModule(PetModule)
+            local have = petModule:GetPetByTemplateId(itemid)
+            if have then
+              Log.debug("###[UIShopSecretTab] season his shop have pet , petid:", itemid)
+            else
+              table.insert(filterList, value)
             end
           else
-            do
-              if RoleAssetID.RoleAssetPetBegin <= itemid and itemid <= RoleAssetID.RoleAssetPetEnd then
-                local petModule = (GameGlobal.GetModule)(PetModule)
-                local have = petModule:GetPetByTemplateId(itemid)
-                if have then
-                  (Log.debug)("###[UIShopSecretTab] season his shop have pet , petid:", itemid)
-                else
-                  ;
-                  (table.insert)(filterList, value)
-                end
-              else
-                do
-                  do
-                    do
-                      local haveCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(itemid)
-                      if value:GetRemainCount() - haveCount > 0 then
-                        (table.insert)(filterList, value)
-                      end
-                      ;
-                      (table.insert)(filterList, value)
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out DO_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out IF_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                      -- DECOMPILER ERROR at PC130: LeaveBlock: unexpected jumping out IF_STMT
-
-                    end
-                  end
-                end
-              end
+            local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(itemid)
+            if value:GetRemainCount() - haveCount > 0 then
+              table.insert(filterList, value)
             end
           end
+        else
+          table.insert(filterList, value)
         end
       end
     end
     local insertIdx = 0
-    local insertData = nil
+    local insertData
     local goOn = false
-    for index,value in ipairs(filterList) do
+    for index, value in ipairs(filterList) do
       if value:GrandPrize() then
         insertIdx = insertIdx + 1
         insertData = ExchangeSeasonShopViewData:New()
         insertData:AddData(value)
         insertData.sin = true
-        -- DECOMPILER ERROR at PC153: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._showSeasonDataList)[insertIdx] = insertData
+        self._showSeasonDataList[insertIdx] = insertData
+        goOn = false
+      elseif goOn then
+        insertData:AddData(value)
         goOn = false
       else
-        if goOn then
-          insertData:AddData(value)
-          goOn = false
-        else
-          insertIdx = insertIdx + 1
-          insertData = ExchangeSeasonShopViewData:New()
-          insertData:AddData(value)
-          insertData.sin = false
-          -- DECOMPILER ERROR at PC173: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (self._showSeasonDataList)[insertIdx] = insertData
-          goOn = true
-        end
+        insertIdx = insertIdx + 1
+        insertData = ExchangeSeasonShopViewData:New()
+        insertData:AddData(value)
+        insertData.sin = false
+        self._showSeasonDataList[insertIdx] = insertData
+        goOn = true
       end
     end
   end
-  do
-    self._poolItems = {}
-    local reScroll = false
-    if self.dontMove then
-      self.dontMove = false
-    else
-      reScroll = true
-    end
-    local row = #self._showSeasonDataList
-    ;
-    (self.scrollViewSeason):SetListItemCount(row)
-    if reScroll then
-      (self.scrollViewSeason):MovePanelToItemIndex(0, 0)
-    else
-      ;
-      (self.scrollViewSeason):RefreshAllShownItem()
-    end
+  self._poolItems = {}
+  local reScroll = false
+  if self.dontMove then
+    self.dontMove = false
+  else
+    reScroll = true
+  end
+  local row = #self._showSeasonDataList
+  self.scrollViewSeason:SetListItemCount(row)
+  if reScroll then
+    self.scrollViewSeason:MovePanelToItemIndex(0, 0)
+  else
+    self.scrollViewSeason:RefreshAllShownItem()
   end
 end
-
-

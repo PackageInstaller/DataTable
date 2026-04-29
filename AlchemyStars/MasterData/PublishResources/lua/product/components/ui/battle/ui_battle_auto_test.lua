@@ -1,76 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_auto_test.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleAutoTest", UIController)
 UIBattleAutoTest = UIBattleAutoTest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleAutoTest.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleAutoTest:OnShow()
   self._infoPanelGo = self:GetGameObject("InfoPanel")
   self._infoContent = self:GetGameObject("Content")
   self._infoLabel = self:GetGameObject("InfoLabel")
-  self._infoLabels = {self._infoLabel}
-  self._logs = ((GameGlobal.GetModule)(AutoTestModule)):GetResultLogs()
+  self._infoLabels = {
+    self._infoLabel
+  }
+  self._logs = GameGlobal.GetModule(AutoTestModule):GetResultLogs()
   self._logIndex = 1
   self:_ShowLog()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleAutoTest.PrevLogOnClick = function(self)
-  -- function num : 0_1
+function UIBattleAutoTest:PrevLogOnClick()
   if self._logIndex > 1 then
     self._logIndex = self._logIndex - 1
   end
   self:_ShowLog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleAutoTest.NextLogOnClick = function(self)
-  -- function num : 0_2
+function UIBattleAutoTest:NextLogOnClick()
   if self._logIndex < #self._logs then
     self._logIndex = self._logIndex + 1
   end
   self:_ShowLog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleAutoTest._ShowLog = function(self)
-  -- function num : 0_3
-  local log = (self._logs)[self._logIndex] or ""
-  ;
-  ((self._infoLabel):GetComponent("UILocalizationText")):SetText(log)
+function UIBattleAutoTest:_ShowLog()
+  local log = self._logs[self._logIndex] or ""
+  self._infoLabel:GetComponent("UILocalizationText"):SetText(log)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleAutoTest.CloseOnClick = function(self)
-  -- function num : 0_4
+function UIBattleAutoTest:CloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleAutoTest.OutPutOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBattleAutoTest:OutPutOnClick()
   local dir = EngineGameHelper.StoragePath .. "AutoTestLog/"
-  ;
-  (App.MakeDir)(dir)
-  local _filePath = dir .. "AutoTestLog" .. (os.date)("%y%m%d%H%M%S") .. ".log"
-  local file = (io.open)(_filePath, "w")
-  for i,log in ipairs(self._logs) do
+  App.MakeDir(dir)
+  local _filePath = dir .. "AutoTestLog" .. os.date("%y%m%d%H%M%S") .. ".log"
+  local file = io.open(_filePath, "w")
+  for i, log in ipairs(self._logs) do
     file:write(log)
     file:write("\n")
   end
-  ;
-  (io.close)(file)
-  ;
-  (SmokingTestHub.OpenLogFile)(_filePath)
+  io.close(file)
+  SmokingTestHub.OpenLogFile(_filePath)
 end
-
-

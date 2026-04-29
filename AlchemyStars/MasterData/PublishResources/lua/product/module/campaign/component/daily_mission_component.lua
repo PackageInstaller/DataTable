@@ -1,71 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/daily_mission_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DailyMissionComponent", ICampaignComponent)
 DailyMissionComponent = DailyMissionComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DailyMissionComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DailyMissionComponent:Constructor()
   self.m_component_info = DailyMissionComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DailyMissionComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function DailyMissionComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = DailyMissionComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DailyMissionComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function DailyMissionComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DailyMissionComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function DailyMissionComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_DAILY_MISSION
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DailyMissionComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function DailyMissionComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DailyMissionComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function DailyMissionComponent:GetCampaignMissionComponentId()
   return ECampaignMissionComponentId.ECampaignMissionComponentId_DailyMission
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DailyMissionComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function DailyMissionComponent:GetCampaignMissionParamKeyMap()
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId
+  }
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DailyMissionComponent.HaveRedPoint = function(self)
-  -- function num : 0_7
-  do return (self.m_component_info).m_today_score == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DailyMissionComponent:HaveRedPoint()
+  return self.m_component_info.m_today_score == 0
 end
-
-

@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_kill_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_KillPlayer", Object)
 SkillEffectCalc_KillPlayer = SkillEffectCalc_KillPlayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_KillPlayer.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_KillPlayer:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_KillPlayer.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_KillPlayer:DoSkillEffectCalculator(skillEffectCalcParam)
   local range = skillEffectCalcParam.skillRange
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local gridPos = teamEntity:GetGridPosition()
-  if (table.Vector2Include)(range, gridPos) then
+  if table.Vector2Include(range, gridPos) then
     local attributeCmpt = teamEntity:Attributes()
     attributeCmpt:Modify("HP", 0)
     teamEntity:AddTeamDeadMark()
   end
 end
-
-

@@ -1,50 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/layer/season_maze_scene_layer_ground.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeSceneLayerGround", SeasonMazeSceneLayerBase)
 SeasonMazeSceneLayerGround = SeasonMazeSceneLayerGround
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeSceneLayerGround.Constructor = function(self, sceneRoot)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazeSceneLayerGround:Constructor(sceneRoot)
   self._time = 1
   self._mapTime = 3
   self._zoneMask = nil
-  self._groundLayer = (self._sceneRootTransform):Find(SeasonSceneLayer.Ground)
+  self._groundLayer = self._sceneRootTransform:Find(SeasonSceneLayer.Ground)
   self:_CacheGroundMap()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerGround.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((SeasonMazeSceneLayerGround.super).Dispose)(self)
+function SeasonMazeSceneLayerGround:Dispose()
+  SeasonMazeSceneLayerGround.super.Dispose(self)
   if self._tweenTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._tweenTask)
+    GameGlobal.TaskManager():KillTask(self._tweenTask)
     self._tweenTask = nil
   end
   if self._showTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._showTask)
+    GameGlobal.TaskManager():KillTask(self._showTask)
     self._showTask = nil
   end
-  ;
-  (table.clear)(self._map)
+  table.clear(self._map)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerGround.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_2 , upvalues : _ENV
-  local v4 = (SeasonMazeTool:GetInstance()):GetV4ByZoneMask(zoneMask, zoneID2Animation)
-  for _,renderer in pairs(self._renderers) do
+function SeasonMazeSceneLayerGround:UnLock(zoneMask, zoneID2Animation)
+  local v4 = SeasonMazeTool:GetInstance():GetV4ByZoneMask(zoneMask, zoneID2Animation)
+  for _, renderer in pairs(self._renderers) do
     if renderer and renderer.material then
-      if (renderer.material):HasProperty("_AreaUnlockMask") then
-        (renderer.material):SetVector("_AreaUnlockMask", v4)
+      if renderer.material:HasProperty("_AreaUnlockMask") then
+        renderer.material:SetVector("_AreaUnlockMask", v4)
       end
-      if (renderer.material):HasProperty("_AreaUnlockMask1") then
-        (renderer.material):SetVector("_AreaUnlockMask1", v4)
+      if renderer.material:HasProperty("_AreaUnlockMask1") then
+        renderer.material:SetVector("_AreaUnlockMask1", v4)
       end
     end
   end
@@ -52,30 +38,25 @@ SeasonMazeSceneLayerGround.UnLock = function(self, zoneMask, zoneID2Animation)
   self:TweenV4()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerGround.ChangeMap = function(self, ids, openingID, closeID)
-  -- function num : 0_3 , upvalues : _ENV
-  local mapCount = (table.count)(self._map)
-  if mapCount > 0 then
+function SeasonMazeSceneLayerGround:ChangeMap(ids, openingID, closeID)
+  local mapCount = table.count(self._map)
+  if 0 < mapCount then
     for i = 1, mapCount do
-      local show = (table.icontains)(ids, i)
+      local show = table.icontains(ids, i)
       if openingID then
         if i == openingID then
-          self:OpenMapAlpha((self._map)[openingID])
+          self:OpenMapAlpha(self._map[openingID])
         else
-          ;
-          ((self._map)[i]):SetActive(show)
+          self._map[i]:SetActive(show)
         end
       else
-        ;
-        ((self._map)[i]):SetActive(show)
+        self._map[i]:SetActive(show)
         if show then
-          local renderers = (((self._map)[i]).gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
-          if renderers.Length > 0 then
+          local renderers = self._map[i].gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
+          if 0 < renderers.Length then
             for i = 0, renderers.Length - 1 do
-              if ((renderers[i]).material):HasProperty("_AlphaValue") then
-                ((renderers[i]).material):SetFloat("_AlphaValue", 1)
+              if renderers[i].material:HasProperty("_AlphaValue") then
+                renderers[i].material:SetFloat("_AlphaValue", 1)
               end
             end
           end
@@ -85,27 +66,22 @@ SeasonMazeSceneLayerGround.ChangeMap = function(self, ids, openingID, closeID)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerGround._CacheGroundMap = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonMazeSceneLayerGround:_CacheGroundMap()
   if self._groundLayer then
-    local mapCount = (self._groundLayer).childCount
-    if mapCount > 0 then
+    local mapCount = self._groundLayer.childCount
+    if 0 < mapCount then
       for i = 1, self._maxMapCount do
-        local map = (self._groundLayer):Find(tostring(i))
-        -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
+        local map = self._groundLayer:Find(tostring(i))
         if map then
-          (self._map)[i] = map.gameObject
+          self._map[i] = map.gameObject
           local pieceCount = map.childCount
-          if pieceCount > 0 then
+          if 0 < pieceCount then
             for j = 0, pieceCount - 1 do
               local piece = map:GetChild(j)
               if piece then
-                local pieceRenderer = (piece.gameObject):GetComponent(typeof(UnityEngine.Renderer))
+                local pieceRenderer = piece.gameObject:GetComponent(typeof(UnityEngine.Renderer))
                 if pieceRenderer then
-                  (table.insert)(self._renderers, pieceRenderer)
+                  table.insert(self._renderers, pieceRenderer)
                 end
               end
             end
@@ -116,52 +92,39 @@ SeasonMazeSceneLayerGround._CacheGroundMap = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerGround.TweenV4 = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._tweenTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
+function SeasonMazeSceneLayerGround:TweenV4()
+  self._tweenTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
-    local v4 = (SeasonMazeTool:GetInstance()):GetV4ByZoneMask(self._zoneMask)
-    for _,renderer in pairs(self._renderers) do
+    local v4 = SeasonMazeTool:GetInstance():GetV4ByZoneMask(self._zoneMask)
+    for _, renderer in pairs(self._renderers) do
       if renderer and renderer.material then
-        if (renderer.material):HasProperty("_AreaUnlockMask") then
-          (renderer.material):DOVector(v4, "_AreaUnlockMask", self._time)
+        if renderer.material:HasProperty("_AreaUnlockMask") then
+          renderer.material:DOVector(v4, "_AreaUnlockMask", self._time)
         end
-        if (renderer.material):HasProperty("_AreaUnlockMask1") then
-          (renderer.material):DOVector(v4, "_AreaUnlockMask1", self._time)
+        if renderer.material:HasProperty("_AreaUnlockMask1") then
+          renderer.material:DOVector(v4, "_AreaUnlockMask1", self._time)
         end
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerGround.OpenMapAlpha = function(self, map)
-  -- function num : 0_6 , upvalues : _ENV
-  self._showTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, map, self
+function SeasonMazeSceneLayerGround:OpenMapAlpha(map)
+  self._showTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 500)
     map:SetActive(true)
-    local renderers = (map.gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
+    local renderers = map.gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
     if renderers.Length > 0 then
-      local v4 = (SeasonMazeTool:GetInstance()):GetV4ByZoneMask(self._zoneMask)
+      local v4 = SeasonMazeTool:GetInstance():GetV4ByZoneMask(self._zoneMask)
       for i = 0, renderers.Length - 1 do
-        if ((renderers[i]).material):HasProperty("_AreaUnlockMask1") then
-          ((renderers[i]).material):SetVector("_AreaUnlockMask1", v4)
+        if renderers[i].material:HasProperty("_AreaUnlockMask1") then
+          renderers[i].material:SetVector("_AreaUnlockMask1", v4)
         end
-        if ((renderers[i]).material):HasProperty("_AlphaValue") then
-          ((renderers[i]).material):SetFloat("_AlphaValue", 0)
-          ;
-          ((renderers[i]).material):DOFloat(1, "_AlphaValue", self._mapTime)
+        if renderers[i].material:HasProperty("_AlphaValue") then
+          renderers[i].material:SetFloat("_AlphaValue", 0)
+          renderers[i].material:DOFloat(1, "_AlphaValue", self._mapTime)
         end
       end
     end
-  end
-)
+  end)
 end
-
-

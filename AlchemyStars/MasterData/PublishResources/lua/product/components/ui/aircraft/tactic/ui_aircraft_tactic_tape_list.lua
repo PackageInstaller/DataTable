@@ -1,124 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_aircraft_tactic_tape_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftTacticTapeList", UICustomWidget)
 UIAircraftTacticTapeList = UIAircraftTacticTapeList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftTacticTapeList.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIAircraftTacticTapeList:OnShow(uiParams)
   self:InitWidget()
-  ;
-  (self.scrollView):InitListView(0, function(scrollview, index)
-    -- function num : 0_0_0 , upvalues : self
+  self.scrollView:InitListView(0, function(scrollview, index)
     return self:_newItem(scrollview, index)
-  end
-)
+  end)
   self._tipIsShown = false
-  ;
-  (self._scrollTip):SetActive(false)
+  self._scrollTip:SetActive(false)
   self._isInit = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeList.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftTacticTapeList:InitWidget()
   self.scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._scrollRect = self:GetUIComponent("ScrollRect", "ScrollView")
-  self._content = (self._scrollRect).content
-  self._scrollWidth = (((self._scrollRect).viewport).rect).width
+  self._content = self._scrollRect.content
+  self._scrollWidth = self._scrollRect.viewport.rect.width
   self._scrollTip = self:GetGameObject("tip")
-  ;
-  ((self._scrollRect).onValueChanged):AddListener(function(pos)
-    -- function num : 0_1_0 , upvalues : self
+  self._scrollRect.onValueChanged:AddListener(function(pos)
     self:onScroll(pos)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeList.SetData = function(self, tapeList, packCount, activityN8)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftTacticTapeList:SetData(tapeList, packCount, activityN8)
   self._activityN8 = activityN8
   self._packCount = packCount
   self._tapeList = tapeList
-  self._onClick = function(data, index)
-    -- function num : 0_2_0 , upvalues : self
+  
+  function self._onClick(data, index)
     self:StartTask(self.tryScroll, self, index, data)
   end
-
+  
   local count = #self._tapeList + packCount
-  ;
-  (self.scrollView):SetListItemCount(count, false)
-  ;
-  (self.scrollView):RefreshAllShownItem()
+  self.scrollView:SetListItemCount(count, false)
+  self.scrollView:RefreshAllShownItem()
   if self._curSelct then
     local found = false
-    for i,data in ipairs(tapeList) do
+    for i, data in ipairs(tapeList) do
       if self._curSelct == data then
         found = true
         break
       end
     end
-    do
-      do
-        if not found then
-          self._curSelct = nil
-        end
-        self._showTip = self._scrollWidth < ((self._content).rect).width and count > 0
-        if not self._showTip and self._tipIsShown then
-          (self._scrollTip):SetActive(false)
-          self._tipIsShown = false
-        elseif self._showTip and not self._tipIsShown then
-          (self._scrollTip):SetActive(true)
-          self._tipIsShown = true
-        end
-        self:onScroll((self._scrollRect).normalizedPosition)
-        if self._isInit then
-          self._isInit = false
-        end
-        -- DECOMPILER ERROR: 4 unprocessed JMP targets
-      end
+    if not found then
+      self._curSelct = nil
     end
+  end
+  self._showTip = self._content.rect.width > self._scrollWidth and 0 < count
+  if not self._showTip and self._tipIsShown then
+    self._scrollTip:SetActive(false)
+    self._tipIsShown = false
+  elseif self._showTip and not self._tipIsShown then
+    self._scrollTip:SetActive(true)
+    self._tipIsShown = true
+  end
+  self:onScroll(self._scrollRect.normalizedPosition)
+  if self._isInit then
+    self._isInit = false
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeList.playBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftTacticTapeList:playBtnOnClick(go)
   if not self._curSelct then
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_tactic_select_tape_first"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_tactic_select_tape_first"))
+    return
   end
   self:ShowDialog("UITacticTapeInfo", self._curSelct, self._activityN8)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8DefaultClick)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8DefaultClick)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeList.onScroll = function(self, pos)
-  -- function num : 0_4
+function UIAircraftTacticTapeList:onScroll(pos)
   if self._showTip and pos.x > 0.9995 and self._tipIsShown then
-    (self._scrollTip):SetActive(false)
+    self._scrollTip:SetActive(false)
     self._tipIsShown = false
-  else
-    if self._showTip and pos.x < 0.9995 and not self._tipIsShown then
-      (self._scrollTip):SetActive(true)
-      self._tipIsShown = true
-    end
+  elseif self._showTip and pos.x < 0.9995 and not self._tipIsShown then
+    self._scrollTip:SetActive(true)
+    self._tipIsShown = true
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeList._newItem = function(self, scrollview, index)
-  -- function num : 0_5
+function UIAircraftTacticTapeList:_newItem(scrollview, index)
   if index < 0 then
     return nil
   end
@@ -132,63 +93,55 @@ UIAircraftTacticTapeList._newItem = function(self, scrollview, index)
   if index <= self._packCount then
     itemWidget:SetData(nil, index, self._onClick, false, self._isInit)
   else
-    local data = (self._tapeList)[index - self._packCount]
+    local data = self._tapeList[index - self._packCount]
     itemWidget:SetData(data, index, self._onClick, self._curSelct == data, self._isInit)
   end
-  if (itemWidget:GetGameObject()).activeSelf then
-    local anim = (itemWidget:GetGameObject()):GetComponent("Animation")
+  if itemWidget:GetGameObject().activeSelf then
+    local anim = itemWidget:GetGameObject():GetComponent("Animation")
     anim:Play("uieff_Tape_In")
     anim:Stop()
   else
-    (itemWidget:GetGameObject()):SetActive(true)
-    local anim = (itemWidget:GetGameObject()):GetComponent("Animation")
+    itemWidget:GetGameObject():SetActive(true)
+    local anim = itemWidget:GetGameObject():GetComponent("Animation")
     anim:Play("uieff_Tape_In")
     anim:Stop()
-    ;
-    (itemWidget:GetGameObject()):SetActive(false)
+    itemWidget:GetGameObject():SetActive(false)
   end
-  do return item end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return item
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeList.tryScroll = function(self, TT, idx, data)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._scrollRect):StopMovement()
+function UIAircraftTacticTapeList:tryScroll(TT, idx, data)
+  self._scrollRect:StopMovement()
   local tapeWidth = 504
   local padding = 0
   local left = -(idx - 1) * (tapeWidth + padding)
   local right = self._scrollWidth - (idx * (tapeWidth + padding) - padding)
-  local x = ((self._content).anchoredPosition).x
-  local target = nil
+  local x = self._content.anchoredPosition.x
+  local target
   if x - left < -1 then
     target = left
   else
-    if x - right > 1 then
+    if 1 < x - right then
       target = right
+    else
     end
   end
   if target then
     self:Lock("FocusTape")
-    ;
-    (self._content):DOLocalMoveX(target, 0.5, true)
+    self._content:DOLocalMoveX(target, 0.5, true)
     YIELD(TT, 500)
     self:UnLock("FocusTape")
   end
   if data then
-    (Log.fatal)("点击1个卡带")
+    Log.fatal("点击1个卡带")
     if self._curSelct == data then
-      return 
+      return
     end
-    ;
-    (self._scrollRect):StopMovement()
+    self._scrollRect:StopMovement()
     self._curSelct = data
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftTacticOnSelectItemChanged, data)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftTacticOnSelectItemChanged, data)
   else
-    ;
-    (Log.fatal)("点击1个礼包")
+    Log.fatal("点击1个礼包")
     if self._activityN8 then
       self:StartTask(self.openGiftN8, self)
     else
@@ -197,65 +150,43 @@ UIAircraftTacticTapeList.tryScroll = function(self, TT, idx, data)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeList.openGift = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIAircraftTacticTapeList:openGift(TT)
   local module = self:GetModule(AircraftModule)
   self:Lock("ReqOpenTacticGift")
   AirLog("打开礼包")
   local ack, msg = module:RequestOpenCartridgeGift(TT)
   self:UnLock("ReqOpenTacticGift")
   if ack:GetSucc() then
-    self:ShowDialog("UITacticTapeObtain", (msg.m_reward_list)[1])
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftTacticRefreshTapeList)
+    self:ShowDialog("UITacticTapeObtain", msg.m_reward_list[1])
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftTacticRefreshTapeList)
     local room = module:GetRoomByRoomType(AirRoomType.TacticRoom)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshRoomUI, room:SpaceId())
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshNavMenuData)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshRoomUI, room:SpaceId())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshNavMenuData)
   else
-    do
-      ;
-      (ToastManager.ShowToast)(module:GetErrorMsg(ack:GetResult()))
-    end
+    ToastManager.ShowToast(module:GetErrorMsg(ack:GetResult()))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftTacticTapeList.openGiftN8 = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftTacticTapeList:openGiftN8(TT)
   if not self._campaign then
     self._campaign = UIActivityCampaign:New()
-    ;
-    (self._campaign):LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N8)
+    self._campaign:LoadCampaignInfo_Local(ECampaignType.CAMPAIGN_TYPE_N8)
   end
-  local component = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
+  local component = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_CombatSimulator, 1)
   self:Lock("ReqOpenTacticGift")
   local res = AsyncRequestRes:New()
   local id = component:HandleCombatSimulatorComponentOpenGift(TT, res)
-  ;
-  (Log.info)("UIAircraftTacticTapeList:openGiftN8() 打开礼包N8, id = ", id)
+  Log.info("UIAircraftTacticTapeList:openGiftN8() 打开礼包N8, id = ", id)
   self:UnLock("ReqOpenTacticGift")
   if res:GetSucc() then
     local roleAsset = RoleAsset:New()
     roleAsset.assetid = id
     roleAsset.count = 1
     self:ShowDialog("UITacticTapeObtain", roleAsset)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftTacticRefreshTapeList)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftTacticRefreshTapeList)
   else
-    do
-      ;
-      (self._campaign):CheckErrorCode(res.m_result, nil, function()
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    ((self._campaign)._campaign_module):CampaignSwitchState(true, UIStateType.UIActivityN8MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-)
-    end
+    self._campaign:CheckErrorCode(res.m_result, nil, function()
+      self._campaign._campaign_module:CampaignSwitchState(true, UIStateType.UIActivityN8MainController, UIStateType.UIMain, nil, self._campaign._id)
+    end)
   end
 end
-
-

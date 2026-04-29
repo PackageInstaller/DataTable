@@ -1,75 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_activity_common_rawimage_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCommonRawImageBtn", UICustomWidget)
 UIActivityCommonRawImageBtn = UIActivityCommonRawImageBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCommonRawImageBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityCommonRawImageBtn:OnShow()
   self._root = self:GetGameObject("_root")
   self._normal = self:GetGameObject("_normal")
   self._click = self:GetGameObject("_click")
-  ;
-  (self._normal):SetActive(true)
-  ;
-  (self._click):SetActive(false)
+  self._normal:SetActive(true)
+  self._click:SetActive(false)
   self:_AddUIEvent(self._root)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRawImageBtn.SetData = function(self, size, urlNormal, urlClick, callback)
-  -- function num : 0_1
+function UIActivityCommonRawImageBtn:SetData(size, urlNormal, urlClick, callback)
   self:_SetSize(size)
   self:_SetRawImage("_normal", urlNormal)
   self:_SetRawImage("_click", urlClick)
   self._callback = callback
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRawImageBtn._SetSize = function(self, size)
-  -- function num : 0_2
+function UIActivityCommonRawImageBtn:_SetSize(size)
   local obj = self:GetUIComponent("RectTransform", "_root")
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (obj.transform).sizeDelta = size
+  obj.transform.sizeDelta = size
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRawImageBtn._SetRawImage = function(self, widgetName, url)
-  -- function num : 0_3
+function UIActivityCommonRawImageBtn:_SetRawImage(widgetName, url)
   local obj = self:GetUIComponent("RawImageLoader", widgetName)
   obj:LoadImage(url)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonRawImageBtn._AddUIEvent = function(self, btn)
-  -- function num : 0_4 , upvalues : _ENV
-  ((UIEventTriggerListener.Get)(btn)).onDown = function(go)
-    -- function num : 0_4_0 , upvalues : self
-    (self._normal):SetActive(false)
-    ;
-    (self._click):SetActive(true)
+function UIActivityCommonRawImageBtn:_AddUIEvent(btn)
+  UIEventTriggerListener.Get(btn).onDown = function(go)
+    self._normal:SetActive(false)
+    self._click:SetActive(true)
   end
-
-  ;
-  ((UIEventTriggerListener.Get)(btn)).onUp = function(go)
-    -- function num : 0_4_1 , upvalues : self
-    (self._normal):SetActive(true)
-    ;
-    (self._click):SetActive(false)
+  UIEventTriggerListener.Get(btn).onUp = function(go)
+    self._normal:SetActive(true)
+    self._click:SetActive(false)
     if self._callback then
-      (self._callback)()
+      self._callback()
     end
   end
-
 end
-
-

@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_pet_1702361_anim_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayPet1702361AnimInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayPet1702361AnimInstruction = SkillPreviewPlayPet1702361AnimInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayPet1702361AnimInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayPet1702361AnimInstruction:Constructor(params)
   self._animNotTeamLeader = params.animNotTeamLeader
   self._animTeamLeader = params.animTeamLeader
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayPet1702361AnimInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewPlayPet1702361AnimInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
-  local sPreviewSkill = (self._world):GetService("PreviewActiveSkill")
+  local sPreviewSkill = self._world:GetService("PreviewActiveSkill")
   local playerAnimEntity, isTeamLeader, hasTrap = sPreviewSkill:GetPet1702361Entity(casterEntity, previewContext)
-  local playAnim = nil
+  local playAnim
   if isTeamLeader then
     playAnim = self._animTeamLeader
   else
@@ -29,5 +19,3 @@ SkillPreviewPlayPet1702361AnimInstruction.DoInstruction = function(self, TT, cas
   end
   playerAnimEntity:SetAnimatorControllerTriggers({playAnim})
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_build_room/ui_aircraft_build_room_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftBuildRoomController", UIController)
 UIAircraftBuildRoomController = UIAircraftBuildRoomController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftBuildRoomController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftBuildRoomController:OnShow(uiParams)
   self._spaceID = uiParams[1]
   self._topBar = self:GetUIComponent("UISelectObjectPath", "Topbar")
   self._matsPool = self:GetUIComponent("UISelectObjectPath", "matsPool")
@@ -21,47 +14,32 @@ UIAircraftBuildRoomController.OnShow = function(self, uiParams)
   self._time = self:GetUIComponent("UILocalizationText", "time")
   self._des = self:GetUIComponent("UILocalizationText", "roomDes")
   self._powerBg = self:GetUIComponent("Image", "powerBg")
-  local topBar = (self._topBar):SpawnObject("UIAircraftTopBarItem")
+  local topBar = self._topBar:SpawnObject("UIAircraftTopBarItem")
   topBar:SetData(true, function()
-    -- function num : 0_0_0 , upvalues : self
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
-  self._buildArray = (self._module):GetBuildTypeSorted(self._spaceID)
-  local buildID = self:BuildType2BuildID(((self._buildArray)[1]).BuildType)
-  self._room_cfg = (Cfg.cfg_aircraft_room)({})
-  self._build = self:GetBuildCls((self._room_cfg)[buildID], ((self._buildArray)[1]).Count, ((self._buildArray)[1]).MaxNum)
+  self._buildArray = self._module:GetBuildTypeSorted(self._spaceID)
+  local buildID = self:BuildType2BuildID(self._buildArray[1].BuildType)
+  self._room_cfg = Cfg.cfg_aircraft_room({})
+  self._build = self:GetBuildCls(self._room_cfg[buildID], self._buildArray[1].Count, self._buildArray[1].MaxNum)
   self._atlas = self:GetAsset("UIAircraftBuildRoom.spriteatlas", LoadType.SpriteAtlas)
   self:OnValue()
   self:InitMatsList()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.OnValue = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._icon):LoadImage((self._build)._icon)
-  ;
-  (self._power):SetText((StringTable.Get)("str_aircraft_tip_build_room_need_power") .. (self._build)._needPower)
-  ;
-  (self._buildName):SetText((StringTable.Get)((self._build)._name))
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._buildCount).text = "<color=#ffffff>" .. (self._build)._nCount .. "</color><color=#ff6b0d>/</color><color=#d5d5d5>" .. (self._build)._uCount .. "</color>"
-  ;
-  (self._time):SetText(self:GetBuildTime((self._build)._upLvTime))
-  ;
-  (self._des):SetText((self._build)._des)
+function UIAircraftBuildRoomController:OnValue()
+  self._icon:LoadImage(self._build._icon)
+  self._power:SetText(StringTable.Get("str_aircraft_tip_build_room_need_power") .. self._build._needPower)
+  self._buildName:SetText(StringTable.Get(self._build._name))
+  self._buildCount.text = "<color=#ffffff>" .. self._build._nCount .. "</color><color=#ff6b0d>/</color><color=#d5d5d5>" .. self._build._uCount .. "</color>"
+  self._time:SetText(self:GetBuildTime(self._build._upLvTime))
+  self._des:SetText(self._build._des)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.GetBuildTime = function(self, min)
-  -- function num : 0_2
+function UIAircraftBuildRoomController:GetBuildTime(min)
   local timeStr = ""
-  if min > 60 then
+  if 60 < min then
     local hourStr = ""
     if min / 60 >= 10 then
       hourStr = min / 60
@@ -76,35 +54,25 @@ UIAircraftBuildRoomController.GetBuildTime = function(self, min)
     end
     timeStr = hourStr .. ":" .. minStr .. ":" .. "00"
   else
-    do
-      do
-        local minStr = ""
-        if min >= 10 then
-          minStr = min
-        else
-          minStr = "0" .. min
-        end
-        timeStr = minStr .. ":" .. "00"
-        return timeStr
-      end
+    local minStr = ""
+    if 10 <= min then
+      minStr = min
+    else
+      minStr = "0" .. min
     end
+    timeStr = minStr .. ":" .. "00"
   end
+  return timeStr
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.BuildType2BuildID = function(self, type)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_room)({RoomType = type, Level = 1})
+function UIAircraftBuildRoomController:BuildType2BuildID(type)
+  local cfg = Cfg.cfg_aircraft_room({RoomType = type, Level = 1})
   if cfg then
-    return (cfg[1]).ID
+    return cfg[1].ID
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftBuildRoomController:OnHide()
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
   self._spaceID = nil
   self._topBar = nil
@@ -123,244 +91,166 @@ UIAircraftBuildRoomController.OnHide = function(self)
   self._module = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.OnItemCountChanged = function(self)
-  -- function num : 0_5
+function UIAircraftBuildRoomController:OnItemCountChanged()
   self:InitMatsList()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.InitMatsList = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local len = (table.count)((self._build)._upLvCost)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  if len > 4 then
-    (self._matsPoolScrollRect).inertia = false
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._matsPoolGrid).childAlignment = (UnityEngine.TextAnchor).MiddleLeft
+function UIAircraftBuildRoomController:InitMatsList()
+  local len = table.count(self._build._upLvCost)
+  if 4 < len then
+    self._matsPoolScrollRect.inertia = false
+    self._matsPoolGrid.childAlignment = UnityEngine.TextAnchor.MiddleLeft
   else
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._matsPoolGrid).childAlignment = (UnityEngine.TextAnchor).MiddleCenter
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._matsPoolScrollRect).inertia = true
+    self._matsPoolGrid.childAlignment = UnityEngine.TextAnchor.MiddleCenter
+    self._matsPoolScrollRect.inertia = true
   end
-  ;
-  (self._matsPool):SpawnObjects("UIAircraftMatPrefab", len)
-  self._matItems = (self._matsPool):GetAllSpawnList()
+  self._matsPool:SpawnObjects("UIAircraftMatPrefab", len)
+  self._matItems = self._matsPool:GetAllSpawnList()
   for i = 1, len do
-    ((self._matItems)[i]):SetData(i, ((self._build)._upLvCost)[i], function(matid, pos)
-    -- function num : 0_6_0 , upvalues : self
-    self:ShowDialog("UIItemGetPathController", matid)
+    self._matItems[i]:SetData(i, self._build._upLvCost[i], function(matid, pos)
+      self:ShowDialog("UIItemGetPathController", matid)
+    end)
   end
-)
-  end
-  local tmpPower = (self._module):GetPower()
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R3 in 'UnsetPending'
-
-  if tmpPower < (self._build)._needPower then
-    (self._powerBg).sprite = (self._atlas):GetSprite("wind_jianzao_di3")
+  local tmpPower = self._module:GetPower()
+  if tmpPower < self._build._needPower then
+    self._powerBg.sprite = self._atlas:GetSprite("wind_jianzao_di3")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(AircraftModule)
+function UIAircraftBuildRoomController:Constructor()
+  self._module = GameGlobal.GetModule(AircraftModule)
   if not self._module then
-    (ToastManager.ShowToast)("module is nil!")
+    ToastManager.ShowToast("module is nil!")
   end
-  self._centralRoomID = ((self._module):GetCentralRoom()):RoomId()
+  self._centralRoomID = self._module:GetCentralRoom():RoomId()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.GetBuildCls = function(self, v, nCount, uCount)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftBuildRoomController:GetBuildCls(v, nCount, uCount)
   local build = AircrafBuildData:New()
   local needBuildCondition = {}
-  for i = 1, (table.count)(v.NeedRoom) do
+  for i = 1, table.count(v.NeedRoom) do
     local condition = AircrafBuildNeedCondition:New()
-    condition:Init(((v.NeedRoom)[i])[1], ((v.NeedRoom)[i])[2], ((v.NeedRoom)[i])[3])
+    condition:Init(v.NeedRoom[i][1], v.NeedRoom[i][2], v.NeedRoom[i][3])
     needBuildCondition[i] = condition
   end
   local upNeedMat = {}
-  for i = 1, (table.count)(v.Need) do
+  for i = 1, table.count(v.Need) do
     local need = AircrafBuildNeedMat:New()
-    need:Init(((v.Need)[i])[1], ((v.Need)[i])[2])
+    need:Init(v.Need[i][1], v.Need[i][2])
     upNeedMat[i] = need
   end
   local downReturnMat = {}
-  local des = nil
-  local cfgs = (Cfg.cfg_aircraft_room)({RoomType = v.RoomType})
-  if cfgs and (table.count)(cfgs) > 0 then
-    des = (StringTable.Get)((cfgs[1]).SimpleDes)
+  local des
+  local cfgs = Cfg.cfg_aircraft_room({
+    RoomType = v.RoomType
+  })
+  if cfgs and table.count(cfgs) > 0 then
+    des = StringTable.Get(cfgs[1].SimpleDes)
   end
   build:Init(v.ID, v.RoomType, v.Level, v.Name, v.RoomTypeIcon2, des, v.PetNum, v.ChangeMood, v.PrevLevelID, v.NextLevelID, needBuildCondition, upNeedMat, downReturnMat, v.NeedPower, v.LevelUpTime, nCount, uCount)
   return build
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.sureOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local tmpPower = (self._module):GetPower()
-  if tmpPower < (self._build)._needPower then
-    (ToastManager.ShowToast)((StringTable.Get)("str_toast_manager_star_power_is_not_enough"))
-    return 
+function UIAircraftBuildRoomController:sureOnClick()
+  local tmpPower = self._module:GetPower()
+  if tmpPower < self._build._needPower then
+    ToastManager.ShowToast(StringTable.Get("str_toast_manager_star_power_is_not_enough"))
+    return
   end
   local enough = true
   local idx = 0
   for i = 1, #self._matItems do
-    if ((self._matItems)[i]):CheckCountEnough() == false then
+    if false == self._matItems[i]:CheckCountEnough() then
       enough = false
       idx = i
       break
     end
   end
-  do
-    if enough then
-      ((GameGlobal.TaskManager)()):StartTask(self.BuildBuilding, self, (self._build)._id)
-    else
-      ;
-      ((self._matItems)[idx]):Blink()
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_tip_mat_not_enough"))
-    end
+  if enough then
+    GameGlobal.TaskManager():StartTask(self.BuildBuilding, self, self._build._id)
+  else
+    self._matItems[idx]:Blink()
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_tip_mat_not_enough"))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.BuildBuilding = function(self, TT, buildID)
-  -- function num : 0_10 , upvalues : _ENV
+function UIAircraftBuildRoomController:BuildBuilding(TT, buildID)
   self:Lock(self:GetName())
   local needClean = true
-  local spaceData = (self._module):GetSpaceInfo(self._spaceID)
+  local spaceData = self._module:GetSpaceInfo(self._spaceID)
   if spaceData then
     local spaceState = spaceData.space_status
     if spaceState == SpaceState.SpaceStateNeedClean then
       needClean = true
+    elseif spaceState == SpaceState.SpaceStateEmpty then
+      needClean = false
     else
-      if spaceState == SpaceState.SpaceStateEmpty then
-        needClean = false
-      else
-        ;
-        (Log.exception)("空间状态错误，不能建造：", spaceState)
-      end
+      Log.exception("空间状态错误，不能建造：", spaceState)
     end
   else
-    do
-      ;
-      (Log.exception)("空间数据为空，不能建造，spaceid：", self._spaceID)
-      if needClean then
-        local cleanRes, msg = (self._module):RequestCleanAndBuild(TT, self._spaceID, buildID)
-        if not cleanRes:GetSucc() then
-          (Log.error)("RequestCleanAndBuild空间失败：", self._spaceID)
-          ;
-          (ToastManager.ShowToast)((self._module):GetErrorMsg(cleanRes:GetResult()))
-          self:UnLock(self:GetName())
-          return 
-        end
-      else
-        do
-          do
-            local res = (self._module):RequestBuildRoom(TT, self._spaceID, buildID)
-            if not res:GetSucc() then
-              (Log.error)("RequestBuildRoom空间失败：", self._spaceID)
-              ;
-              (ToastManager.ShowToast)((self._module):GetErrorMsg(res:GetResult()))
-              self:UnLock(self:GetName())
-              return 
-            end
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftPlayDoorAnim, AircraftDoorAnim.BuildRoom, self._spaceID)
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRequestDataAndRefreshMainUI)
-            self:CloseDialog()
-            ;
-            (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_build_success"))
-            self:UnLock(self:GetName())
-          end
-        end
-      end
+    Log.exception("空间数据为空，不能建造，spaceid：", self._spaceID)
+  end
+  if needClean then
+    local cleanRes, msg = self._module:RequestCleanAndBuild(TT, self._spaceID, buildID)
+    if not cleanRes:GetSucc() then
+      Log.error("RequestCleanAndBuild空间失败：", self._spaceID)
+      ToastManager.ShowToast(self._module:GetErrorMsg(cleanRes:GetResult()))
+      self:UnLock(self:GetName())
+      return
+    end
+  else
+    local res = self._module:RequestBuildRoom(TT, self._spaceID, buildID)
+    if not res:GetSucc() then
+      Log.error("RequestBuildRoom空间失败：", self._spaceID)
+      ToastManager.ShowToast(self._module:GetErrorMsg(res:GetResult()))
+      self:UnLock(self:GetName())
+      return
     end
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftPlayDoorAnim, AircraftDoorAnim.BuildRoom, self._spaceID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRequestDataAndRefreshMainUI)
+  self:CloseDialog()
+  ToastManager.ShowToast(StringTable.Get("str_aircraft_build_success"))
+  self:UnLock(self:GetName())
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.cancelOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIAircraftBuildRoomController:cancelOnClick()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._powerBg).sprite = (self._atlas):GetSprite("wind_jianzao_di3")
+  self._powerBg.sprite = self._atlas:GetSprite("wind_jianzao_di3")
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.infoBtnOnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIAircraftBuildRoomController:infoBtnOnClick()
   if not self._build then
-    return 
+    return
   end
-  local roomType = (self._build)._roomType
-  if roomType ~= AirRoomType.AisleRoom or roomType == AirRoomType.CentralRoom then
+  local roomType = self._build._roomType
+  if roomType == AirRoomType.AisleRoom then
+  elseif roomType == AirRoomType.CentralRoom then
     self:ShowDialog("UIHelpController", "UIAircraftCentralRoom")
-  else
-    if roomType == AirRoomType.PowerRoom then
-      self:ShowDialog("UIHelpController", "UIAircraftPowerRoom")
-    else
-      if roomType == AirRoomType.MazeRoom then
-        self:ShowDialog("UIHelpController", "UIAircraftMazeRoom")
-      else
-        if roomType == AirRoomType.ResourceRoom then
-          self:ShowDialog("UIHelpController", "UIAircraftResourceRoom")
-        else
-          if roomType == AirRoomType.PrismRoom then
-            self:ShowDialog("UIHelpController", "UIAircraftPrismRoom")
-          else
-            if roomType == AirRoomType.TowerRoom then
-              self:ShowDialog("UIHelpController", "UIAircraftTowerRoom")
-            else
-            end
-          end
-        end
-      end
-    end
-  end
-  if (roomType == AirRoomType.EvilRoom and roomType ~= AirRoomType.PurifyRoom) or roomType == AirRoomType.DispatchRoom then
+  elseif roomType == AirRoomType.PowerRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftPowerRoom")
+  elseif roomType == AirRoomType.MazeRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftMazeRoom")
+  elseif roomType == AirRoomType.ResourceRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftResourceRoom")
+  elseif roomType == AirRoomType.PrismRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftPrismRoom")
+  elseif roomType == AirRoomType.TowerRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftTowerRoom")
+  elseif roomType == AirRoomType.EvilRoom then
+  elseif roomType == AirRoomType.PurifyRoom then
+  elseif roomType == AirRoomType.DispatchRoom then
     self:ShowDialog("UIHelpController", "UIDispatchDetailController")
-  else
-    if roomType == AirRoomType.SmeltRoom then
-      self:ShowDialog("UIHelpController", "UIAircraftSmeltRoom")
-    else
-      if roomType == AirRoomType.TacticRoom then
-        self:ShowDialog("UIHelpController", "UIAircraftTactic")
-      end
-    end
+  elseif roomType == AirRoomType.SmeltRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftSmeltRoom")
+  elseif roomType == AirRoomType.TacticRoom then
+    self:ShowDialog("UIHelpController", "UIAircraftTactic")
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftBuildRoomController.maskOnClick = function(self)
-  -- function num : 0_13
+function UIAircraftBuildRoomController:maskOnClick()
   self:cancelOnClick()
 end
-
-

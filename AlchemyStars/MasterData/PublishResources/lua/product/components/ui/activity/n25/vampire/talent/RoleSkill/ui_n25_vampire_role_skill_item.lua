@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/talent/RoleSkill/ui_n25_vampire_role_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireRoleSkillItem", UICustomWidget)
 UIN25VampireRoleSkillItem = UIN25VampireRoleSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireRoleSkillItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireRoleSkillItem:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
+  self.data = self.mCampaign:GetN25Data()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkillItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25VampireRoleSkillItem:OnShow(uiParams)
   self.Icon = self:GetUIComponent("RawImageLoader", "Icon")
   self.cur = self:GetGameObject("cur")
   self.lock = self:GetGameObject("lock")
@@ -24,65 +14,42 @@ UIN25VampireRoleSkillItem.OnShow = function(self, uiParams)
   self:Select(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkillItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.Icon):DestoryLastImage()
+function UIN25VampireRoleSkillItem:OnHide()
+  self.Icon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkillItem.Flush = function(self, skill, ui, callback)
-  -- function num : 0_3
+function UIN25VampireRoleSkillItem:Flush(skill, ui, callback)
   self.skill = skill
   self.ui = ui
   self.callback = callback
-  ;
-  (self.cur):SetActive(false)
-  ;
-  (self.lock):SetActive(false)
+  self.cur:SetActive(false)
+  self.lock:SetActive(false)
   if skill then
     local icon, name, desc = skill:IconNameDesc()
-    ;
-    (self.Icon):LoadImage(icon)
-    if (self.ui):IsRoleSkillLock(skill.skillId) then
-      (self.lock):SetActive(true)
+    self.Icon:LoadImage(icon)
+    if self.ui:IsRoleSkillLock(skill.skillId) then
+      self.lock:SetActive(true)
     else
-      local roleSkill = (self.data):GetCurRoleSkill()
+      local roleSkill = self.data:GetCurRoleSkill()
       if roleSkill and roleSkill.skillId == skill.skillId then
-        (self.cur):SetActive(true)
+        self.cur:SetActive(true)
       end
     end
   else
-    do
-      ;
-      (self.lock):SetActive(true)
-    end
+    self.lock:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkillItem.SkillId = function(self)
-  -- function num : 0_4
-  return (self.skill).skillId
+function UIN25VampireRoleSkillItem:SkillId()
+  return self.skill.skillId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkillItem.Select = function(self, isSelect)
-  -- function num : 0_5
-  (self.select):SetActive(isSelect)
+function UIN25VampireRoleSkillItem:Select(isSelect)
+  self.select:SetActive(isSelect)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkillItem.IconOnClick = function(self, go)
-  -- function num : 0_6
+function UIN25VampireRoleSkillItem:IconOnClick(go)
   if self.callback then
-    (self.callback)()
+    self.callback()
   end
 end
-
-

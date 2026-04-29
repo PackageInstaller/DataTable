@@ -1,142 +1,96 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/ui_book_role_relation_show_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleRelationShowController", UIController)
 UIBookRoleRelationShowController = UIBookRoleRelationShowController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleRelationShowController.Constructor = function(self)
-  -- function num : 0_0
+function UIBookRoleRelationShowController:Constructor()
   self.showBtns = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationShowController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBookRoleRelationShowController:OnShow(uiParams)
   local data = uiParams[1]
   local shiLiTag = uiParams[2]
   local friendTag = uiParams[3]
   local dataList = {}
-  for index,value in ipairs(data) do
-    local cfg = (Cfg.cfg_pet)[value.petTempId]
+  for index, value in ipairs(data) do
+    local cfg = Cfg.cfg_pet[value.petTempId]
     local param = {}
     param.pic = cfg.BookStaticBody
     param.active = value.petPsdId > 0
-    ;
-    (table.insert)(dataList, param)
+    table.insert(dataList, param)
   end
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, nil, nil)
+  end, nil, nil, nil, nil)
   self.topLeftAnchor = self:GetGameObject("TopLeftAnchor")
   self.bottomAnchor = self:GetGameObject("BottomAnchor")
   self.nameTxt = self:GetUIComponent("UILocalizationText", "name")
   self.descTxt = self:GetUIComponent("UILocalizationText", "desc")
-  local friendCfg = (Cfg.cfg_pet_tags)[friendTag]
-  local shiLiCfg = (Cfg.cfg_pet_tags)[shiLiTag]
-  ;
-  (self.nameTxt):SetText((StringTable.Get)(friendCfg.Name))
-  ;
-  (self.descTxt):SetText((StringTable.Get)(friendCfg.Desc))
+  local friendCfg = Cfg.cfg_pet_tags[friendTag]
+  local shiLiCfg = Cfg.cfg_pet_tags[shiLiTag]
+  self.nameTxt:SetText(StringTable.Get(friendCfg.Name))
+  self.descTxt:SetText(StringTable.Get(friendCfg.Desc))
   self.pic = {}
   self.picRect = {}
   self.picGO = {}
-  local count = (table.count)(dataList)
+  local count = table.count(dataList)
   for index = 1, 7 do
-    -- DECOMPILER ERROR at PC99: Confused about usage of register: R14 in 'UnsetPending'
-
-    (self.picGO)[index] = self:GetGameObject("pic" .. index)
-    if count < index then
-      ((self.picGO)[index]):SetActive(false)
+    self.picGO[index] = self:GetGameObject("pic" .. index)
+    if index > count then
+      self.picGO[index]:SetActive(false)
     else
-      -- DECOMPILER ERROR at PC115: Confused about usage of register: R14 in 'UnsetPending'
-
-      (self.pic)[index] = self:GetUIComponent("RawImageLoader", "pic" .. index)
-      -- DECOMPILER ERROR at PC123: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.picRect)[index] = self:GetUIComponent("RectTransform", "pic" .. index)
-      ;
-      ((self.picGO)[index]):SetActive(true)
+      self.pic[index] = self:GetUIComponent("RawImageLoader", "pic" .. index)
+      self.picRect[index] = self:GetUIComponent("RectTransform", "pic" .. index)
+      self.picGO[index]:SetActive(true)
     end
   end
-  if count < 7 or not 7 then
-    local scale = (ResolutionManager.RealWidth)() / 2048
-    for index = 1, count do
-      if (dataList[index]).active then
-        ((self.picGO)[index]):SetActive(false)
-      else
-        ((self.pic)[index]):LoadImage((dataList[index]).pic)
-        ;
-        ((self.picGO)[index]):SetActive(true)
-      end
-    end
-    self.bigImage = self:GetUIComponent("RawImageLoader", "bigimage")
-    ;
-    (self.bigImage):LoadImage(friendCfg.GroupPhoto)
-    self._cgRt = self:GetUIComponent("RectTransform", "bigimage")
-    local cgRate = 1.764
-    local screenWidth = (ResolutionManager.RealWidth)()
-    local blackWidth = (ResolutionManager.BangWidth)()
-    local nowWidth = screenWidth - blackWidth * 2
-    local screenHeight = (ResolutionManager.RealHeight)()
-    ;
-    (Log.debug)("###[UIBookRoleRelationShowController] nowWidth --> ", nowWidth, "| screenHeight --> ", screenHeight)
-    local screenRate = nowWidth / screenHeight
-    ;
-    (Log.debug)("###[UIBookRoleRelationShowController] screenRate --> ", screenRate)
-    local setVector2 = nil
-    if cgRate < screenRate then
-      local setWidth = screenHeight * cgRate
-      setVector2 = Vector2(setWidth, screenHeight)
+  count = 7 <= count and 7 or count
+  local scale = ResolutionManager.RealWidth() / 2048
+  for index = 1, count do
+    if dataList[index].active then
+      self.picGO[index]:SetActive(false)
     else
-      local setHeight = nowWidth / cgRate
-      setVector2 = Vector2(nowWidth, setHeight)
+      self.pic[index]:LoadImage(dataList[index].pic)
+      self.picGO[index]:SetActive(true)
     end
-    -- DECOMPILER ERROR at PC221: Confused about usage of register: R18 in 'UnsetPending'
-
-    ;
-    (self._cgRt).sizeDelta = setVector2
-    for index = 1, count do
-      -- DECOMPILER ERROR at PC232: Confused about usage of register: R22 in 'UnsetPending'
-
-      if (self.picRect)[index] then
-        ((self.picRect)[index]).sizeDelta = setVector2
-      end
+  end
+  self.bigImage = self:GetUIComponent("RawImageLoader", "bigimage")
+  self.bigImage:LoadImage(friendCfg.GroupPhoto)
+  self._cgRt = self:GetUIComponent("RectTransform", "bigimage")
+  local cgRate = 1.764
+  local screenWidth = ResolutionManager.RealWidth()
+  local blackWidth = ResolutionManager.BangWidth()
+  local nowWidth = screenWidth - blackWidth * 2
+  local screenHeight = ResolutionManager.RealHeight()
+  Log.debug("###[UIBookRoleRelationShowController] nowWidth --> ", nowWidth, "| screenHeight --> ", screenHeight)
+  local screenRate = nowWidth / screenHeight
+  Log.debug("###[UIBookRoleRelationShowController] screenRate --> ", screenRate)
+  local setVector2
+  if cgRate < screenRate then
+    local setWidth = screenHeight * cgRate
+    setVector2 = Vector2(setWidth, screenHeight)
+  else
+    local setHeight = nowWidth / cgRate
+    setVector2 = Vector2(nowWidth, setHeight)
+  end
+  self._cgRt.sizeDelta = setVector2
+  for index = 1, count do
+    if self.picRect[index] then
+      self.picRect[index].sizeDelta = setVector2
     end
-    -- DECOMPILER ERROR: 10 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationShowController.OnHide = function(self)
-  -- function num : 0_2
+function UIBookRoleRelationShowController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleRelationShowController.bgbtnOnClick = function(self)
-  -- function num : 0_3
+function UIBookRoleRelationShowController:bgbtnOnClick()
   self.showBtns = not self.showBtns
   if self.showBtns then
-    (self.topLeftAnchor):SetActive(true)
-    ;
-    (self.bottomAnchor):SetActive(true)
+    self.topLeftAnchor:SetActive(true)
+    self.bottomAnchor:SetActive(true)
   else
-    ;
-    (self.topLeftAnchor):SetActive(false)
-    ;
-    (self.bottomAnchor):SetActive(false)
+    self.topLeftAnchor:SetActive(false)
+    self.bottomAnchor:SetActive(false)
   end
 end
-
-

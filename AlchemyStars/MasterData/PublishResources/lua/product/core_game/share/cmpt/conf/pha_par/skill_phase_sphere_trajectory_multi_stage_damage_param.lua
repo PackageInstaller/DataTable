@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_sphere_trajectory_multi_stage_damage_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseSphereTrajectoryMultiStageDamageParam", SkillPhaseParamBase)
 SkillPhaseSphereTrajectoryMultiStageDamageParam = SkillPhaseSphereTrajectoryMultiStageDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseSphereTrajectoryMultiStageDamageParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:Constructor(t)
   self._eftID = t.effectID
   self._trajectoryCount = t.trajectoryCount
   self._sphereRadius = t.sphereRadius or 5
@@ -25,116 +18,75 @@ SkillPhaseSphereTrajectoryMultiStageDamageParam.Constructor = function(self, t)
   self._randomPercent = t.randomPercent or 10
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetCacheTable()
   local t = {}
   if self._eftID and self._eftID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._eftID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._eftID].ResPath,
+      1
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetPhaseType()
   return SkillViewPhaseType.SphereTrajectoryMultiStageDamage
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetEftID = function(self)
-  -- function num : 0_3
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetEftID()
   return self._eftID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetTrajectoryCount = function(self)
-  -- function num : 0_4
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetTrajectoryCount()
   return self._trajectoryCount
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetSphereRadius = function(self)
-  -- function num : 0_5
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetSphereRadius()
   return self._sphereRadius
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetStartWait = function(self)
-  -- function num : 0_6
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetStartWait()
   return self._startWait
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetMoveSpeed = function(self)
-  -- function num : 0_7
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetMoveSpeed()
   return self._moveSpeed
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetRotateSpeed = function(self)
-  -- function num : 0_8
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetRotateSpeed()
   return self._rotateSpeed
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetTurnToTarget = function(self)
-  -- function num : 0_9
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetTurnToTarget()
   return self._turnToTarget
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetHitAnimName = function(self)
-  -- function num : 0_10
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetHitEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetHitSoundID = function(self)
-  -- function num : 0_12
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetHitSoundID()
   return self._hitSoundID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetIntervalTime = function(self)
-  -- function num : 0_13
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetIntervalTime()
   return self._intervalTime
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetRandom = function(self)
-  -- function num : 0_14
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetRandom()
   return self._random
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSphereTrajectoryMultiStageDamageParam.GetRandomPercent = function(self)
-  -- function num : 0_15
+function SkillPhaseSphereTrajectoryMultiStageDamageParam:GetRandomPercent()
   return self._randomPercent
 end
-
-

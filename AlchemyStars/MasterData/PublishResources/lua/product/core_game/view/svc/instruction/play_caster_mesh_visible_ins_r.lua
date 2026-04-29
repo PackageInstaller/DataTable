@@ -1,36 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_mesh_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterMeshVisibleInstruction", BaseInstruction)
 PlayCasterMeshVisibleInstruction = PlayCasterMeshVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterMeshVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterMeshVisibleInstruction:Constructor(paramList)
   self._visible = tonumber(paramList.visible)
-  self._objs = (string.split)(paramList.objs, "|")
+  self._objs = string.split(paramList.objs, "|")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterMeshVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  for i,objName in ipairs(self._objs) do
-    local tf = (GameObjectHelper.FindChild)((((casterEntity:View()).ViewWrapper).GameObject).transform, objName)
-    if self._visible ~= 1 then
-      do
-        (tf.gameObject):SetActive(not tf)
-        -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+function PlayCasterMeshVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  for i, objName in ipairs(self._objs) do
+    local tf = GameObjectHelper.FindChild(casterEntity:View().ViewWrapper.GameObject.transform, objName)
+    if tf then
+      tf.gameObject:SetActive(self._visible == 1)
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

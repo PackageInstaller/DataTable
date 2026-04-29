@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/ui_activity_n21cc_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCItem", UICustomWidget)
 UIActivityN21CCItem = UIActivityN21CCItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN21CCItem:OnShow()
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._scoreLabel = self:GetUIComponent("UILocalizationText", "Score")
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
@@ -23,119 +16,75 @@ UIActivityN21CCItem.OnShow = function(self)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN21CCItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCItem.PlayAnim = function(self)
-  -- function num : 0_2
-  (self._anim):Play("UIActivityN21CCItem_in")
+function UIActivityN21CCItem:PlayAnim()
+  self._anim:Play("UIActivityN21CCItem_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCItem.Refresh = function(self, levelGroupData, onlyShow, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN21CCItem:Refresh(levelGroupData, onlyShow, callback)
   self._levelGroupData = levelGroupData
   if not self._levelGroupData then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
   self._callback = callback
-  ;
-  (self._go):SetActive(true)
-  ;
-  (self._iconLoader):LoadImage((self._levelGroupData):GetIcon())
-  ;
-  (self._nameLabel):SetText((self._levelGroupData):GetName())
-  ;
-  (self._scoreLabel):SetText((self._levelGroupData):GetMaxScore())
-  local elementIcon1 = (self._levelGroupData):GetElementIcon1()
-  if (string.isnullorempty)(elementIcon1) then
-    (self._element1Go):SetActive(false)
+  self._go:SetActive(true)
+  self._iconLoader:LoadImage(self._levelGroupData:GetIcon())
+  self._nameLabel:SetText(self._levelGroupData:GetName())
+  self._scoreLabel:SetText(self._levelGroupData:GetMaxScore())
+  local elementIcon1 = self._levelGroupData:GetElementIcon1()
+  if string.isnullorempty(elementIcon1) then
+    self._element1Go:SetActive(false)
   else
-    ;
-    (self._element1Go):SetActive(true)
-    ;
-    (self._element1Loader):LoadImage(elementIcon1)
+    self._element1Go:SetActive(true)
+    self._element1Loader:LoadImage(elementIcon1)
   end
-  local elementIcon2 = (self._levelGroupData):GetElementIcon2()
-  if (string.isnullorempty)(elementIcon2) then
-    (self._element2Go):SetActive(false)
+  local elementIcon2 = self._levelGroupData:GetElementIcon2()
+  if string.isnullorempty(elementIcon2) then
+    self._element2Go:SetActive(false)
   else
-    ;
-    (self._element2Go):SetActive(true)
-    ;
-    (self._element2Loader):LoadImage(elementIcon2)
+    self._element2Go:SetActive(true)
+    self._element2Loader:LoadImage(elementIcon2)
   end
-  local isShowRed = (self._levelGroupData):IsShowRed()
-  local isShowNew = (self._levelGroupData):IsShowNew()
+  local isShowRed = self._levelGroupData:IsShowRed()
+  local isShowNew = self._levelGroupData:IsShowNew()
   if onlyShow then
-    (self._new):SetActive(false)
-    ;
-    (self._red):SetActive(false)
-    -- DECOMPILER ERROR at PC93: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._btn).raycastTarget = false
+    self._new:SetActive(false)
+    self._red:SetActive(false)
+    self._btn.raycastTarget = false
   else
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._btn).raycastTarget = true
-    ;
-    (self._new):SetActive(false)
-    ;
-    (self._red):SetActive(false)
+    self._btn.raycastTarget = true
+    self._new:SetActive(false)
+    self._red:SetActive(false)
     if isShowNew then
-      (self._new):SetActive(true)
-    else
-      if isShowRed then
-        (self._red):SetActive(true)
-      end
+      self._new:SetActive(true)
+    elseif isShowRed then
+      self._red:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCItem.SetTransform = function(self, localPosition, angle, scale)
-  -- function num : 0_4 , upvalues : _ENV
-  local tran = (self._go).transform
+function UIActivityN21CCItem:SetTransform(localPosition, angle, scale)
+  local tran = self._go.transform
   tran.localPosition = localPosition
   tran.localEulerAngles = Vector3(0, 0, angle)
   tran.localScale = Vector3(scale, scale, scale)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCItem.BtnOnClick = function(self)
-  -- function num : 0_5
+function UIActivityN21CCItem:BtnOnClick()
   if self._callback then
-    (self._callback)(self._levelGroupData)
+    self._callback(self._levelGroupData)
   end
-  ;
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
+  self._new:SetActive(false)
+  self._red:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCItem.PlayEnterAnim = function(self, count, index)
-  -- function num : 0_6
-  (self._anim):Play("UIActivityN21CCItem_" .. count .. "_" .. index)
+function UIActivityN21CCItem:PlayEnterAnim(count, index)
+  self._anim:Play("UIActivityN21CCItem_" .. count .. "_" .. index)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCItem.SetStatus = function(self, status)
-  -- function num : 0_7
-  (self._go):SetActive(status)
+function UIActivityN21CCItem:SetStatus(status)
+  self._go:SetActive(status)
 end
-
-

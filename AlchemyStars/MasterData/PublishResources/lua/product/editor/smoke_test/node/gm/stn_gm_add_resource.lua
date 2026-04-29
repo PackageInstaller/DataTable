@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/gm/stn_gm_add_resource.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("GM_AddResource", Common_AsyncBase)
 GM_AddResource = GM_AddResource
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-GM_AddResource.Constructor = function(self, _manager, resourceId, count)
-  -- function num : 0_0
+function GM_AddResource:Constructor(_manager, resourceId, count)
   self.m_resourceId = resourceId
   self.m_count = count
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GM_AddResource.TaskFunc = function(self, TT, status)
-  -- function num : 0_1
-  (self._manager):AsyncGM_AddAsset(TT, status, self.m_resourceId, self.m_count)
+function GM_AddResource:TaskFunc(TT, status)
+  self._manager:AsyncGM_AddAsset(TT, status, self.m_resourceId, self.m_count)
 end
-
-

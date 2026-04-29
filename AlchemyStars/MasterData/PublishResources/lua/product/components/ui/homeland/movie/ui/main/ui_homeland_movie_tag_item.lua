@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_tag_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieTagItem", UICustomWidget)
 UIHomelandMovieTagItem = UIHomelandMovieTagItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieTagItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMovieTagItem:Constructor()
   self._data = nil
   self._callBack = nil
   self._isLocked = true
@@ -20,38 +13,23 @@ UIHomelandMovieTagItem.Constructor = function(self)
   self._atlas = self:GetAsset("UIMovieSecond.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMovieTagItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMovieTagItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMovieTagItem:InitWidget()
   self._text = self:GetUIComponent("UILocalizationText", "Text")
   self._tag = self:GetUIComponent("Image", "Tag")
   self._redPoint = self:GetGameObject("redPoint")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.Dispose = function(self)
-  -- function num : 0_4
+function UIHomelandMovieTagItem:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.SetData = function(self, data, index, callback)
-  -- function num : 0_5
+function UIHomelandMovieTagItem:SetData(data, index, callback)
   self._data = data
   self.index = index
   self._callBack = callback
@@ -59,93 +37,59 @@ UIHomelandMovieTagItem.SetData = function(self, data, index, callback)
   self:SetRed()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.SetInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._tag).sprite = (self._atlas):GetSprite("dy_xzjb_di17")
-  if (self._data).Title then
-    (self._text):SetText((StringTable.Get)((self._data).Title))
+function UIHomelandMovieTagItem:SetInfo()
+  self._tag.sprite = self._atlas:GetSprite("dy_xzjb_di17")
+  if self._data.Title then
+    self._text:SetText(StringTable.Get(self._data.Title))
   else
-    ;
-    (Log.fatal)("未配置标签")
+    Log.fatal("未配置标签")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.SetRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_homeland_movice)({})
-  local id = (self._data).MovieId
-  for _,v in ipairs(id) do
+function UIHomelandMovieTagItem:SetRed()
+  local cfg = Cfg.cfg_homeland_movice({})
+  local id = self._data.MovieId
+  for _, v in ipairs(id) do
     if self:CheckRed(cfg[v]) then
-      (self._redPoint):SetActive(true)
+      self._redPoint:SetActive(true)
       break
     else
-      ;
-      (self._redPoint):SetActive(false)
+      self._redPoint:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.TagOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHomelandMovieTagItem:TagOnClick()
   if self._callBack then
-    (self._callBack)(self)
+    self._callBack(self)
   end
-  local cfg = (Cfg.cfg_homeland_movice)({})
+  local cfg = Cfg.cfg_homeland_movice({})
   local a = self.index
-  ;
-  (Log.fatal)("点击" .. a)
-  local id = (self._data).MovieId
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIHomelandMovieMainController")
+  Log.fatal("点击" .. a)
+  local id = self._data.MovieId
+  local controller = GameGlobal.UIStateManager():GetController("UIHomelandMovieMainController")
   controller:InitDramaList(id)
-  for _,v in ipairs(id) do
+  for _, v in ipairs(id) do
     if self:CheckRed(cfg[v]) then
-      (self._redPoint):SetActive(true)
+      self._redPoint:SetActive(true)
       break
     else
-      ;
-      (self._redPoint):SetActive(false)
+      self._redPoint:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.SetSelected = function(self, isSelected)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIHomelandMovieTagItem:SetSelected(isSelected)
   if isSelected then
-    (self._tag).sprite = (self._atlas):GetSprite("dy_xzjb_di16")
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._text).color = Color(1, 1, 1)
+    self._tag.sprite = self._atlas:GetSprite("dy_xzjb_di16")
+    self._text.color = Color(1.0, 1.0, 1.0)
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._tag).sprite = (self._atlas):GetSprite("dy_xzjb_di17")
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._text).color = Color(0.41960784313725, 0.41960784313725, 0.41960784313725)
+    self._tag.sprite = self._atlas:GetSprite("dy_xzjb_di17")
+    self._text.color = Color(0.4196078431372549, 0.4196078431372549, 0.4196078431372549)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieTagItem.CheckRed = function(self, data)
-  -- function num : 0_10 , upvalues : _ENV
-  self._redState = (MovieDataManager:GetInstance()):CheckMovieNew(data)
+function UIHomelandMovieTagItem:CheckRed(data)
+  self._redState = MovieDataManager:GetInstance():CheckMovieNew(data)
   return self._redState
 end
-
-

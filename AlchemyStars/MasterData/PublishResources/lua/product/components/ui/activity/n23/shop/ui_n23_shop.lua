@@ -1,55 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n23/shop/ui_n23_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN23Shop", UIActivityShopControllerBase)
 UIN23Shop = UIN23Shop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN23Shop.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((UIN23Shop.super).Constructor)(self)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN23Shop:Constructor()
+  UIN23Shop.super.Constructor(self)
   UIActivityShopControllerBase.ItemGroupHeight = 682
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN23Data()
-  self.strsLeftTime = {"str_n23_shop_open_left_time_d_h", "str_n23_shop_open_left_time_d", "str_n23_shop_open_left_time_h_m", "str_n23_shop_open_left_time_h", "str_n23_shop_open_left_time_m"}
-  self._animInfo = {name = "uieff_UIN23Shop_out", len = 167}
+  self.data = self.mCampaign:GetN23Data()
+  self.strsLeftTime = {
+    "str_n23_shop_open_left_time_d_h",
+    "str_n23_shop_open_left_time_d",
+    "str_n23_shop_open_left_time_h_m",
+    "str_n23_shop_open_left_time_h",
+    "str_n23_shop_open_left_time_m"
+  }
+  self._animInfo = {
+    name = "uieff_UIN23Shop_out",
+    len = 167
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  (N23Data.SetPrefsShop)()
+function UIN23Shop:OnShow(uiParams)
+  N23Data.SetPrefsShop()
   self.txtEggCount = self:GetUIComponent("RollingText", "txtEggCount")
   self.txtCountLow = self:GetUIComponent("UILocalizationText", "txtCountLow")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self.info = self:GetGameObject("info")
-  ;
-  (self.info):SetActive(false)
-  ;
-  ((UIN23Shop.super).OnShow)(self, uiParams)
+  self.info:SetActive(false)
+  UIN23Shop.super.OnShow(self, uiParams)
   self:LoadSpine()
   self:ReplayIdle()
   self:FlushEgg()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN23Shop:OnHide()
   self._endTimeText = nil
-  ;
-  ((UIN23Shop.super).OnHide)(self)
+  UIN23Shop.super.OnHide(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop._OnGetShopItemGroupCell = function(self, scrollview, index)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN23Shop:_OnGetShopItemGroupCell(scrollview, index)
   local item = scrollview:NewListViewItem("CellItem")
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -58,200 +46,133 @@ UIN23Shop._OnGetShopItemGroupCell = function(self, scrollview, index)
   end
   local rowList = cellPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      itemWidget:InitData((self._showShopItemGroupData)[itemIndex])
-      if self._itemGroupCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      end
-      ;
-      (item:GetComponent("RectTransform")).sizeDelta = itemWidget:GetRealSize() + Vector2(150, 0)
+  if itemWidget then
+    local itemIndex = index + 1
+    itemWidget:InitData(self._showShopItemGroupData[itemIndex])
+    if itemIndex > self._itemGroupCount then
+      itemWidget:GetGameObject():SetActive(false)
     end
-    return item
+    item:GetComponent("RectTransform").sizeDelta = itemWidget:GetRealSize() + Vector2(150, 0)
   end
+  return item
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.DefaultBackFunc = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self.mCampaign):CampaignSwitchState(true, UIStateType.UIN23Main, UIStateType.UIMain, nil, (self._campaign)._id)
+function UIN23Shop:DefaultBackFunc()
+  self.mCampaign:CampaignSwitchState(true, UIStateType.UIN23Main, UIStateType.UIMain, nil, self._campaign._id)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop._RefreshCurrency = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN23Shop:_RefreshCurrency()
   if not self._currencyId then
-    self._currencyId = (self._commonCfg).CurrencyId
+    self._currencyId = self._commonCfg.CurrencyId
   end
-  local count = (self:GetModule(ItemModule)):GetItemCount(self._currencyId) or 0
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(7, count)
-  local fmtStr = (string.format)("<color=#827B78>%s</color><color=#FFE65A>%s</color>", preZero, tostring(count))
-  ;
-  (self.txtCountLow):SetText(preZero .. count)
-  ;
-  (self.txtCount):SetText(fmtStr)
+  local count = self:GetModule(ItemModule):GetItemCount(self._currencyId) or 0
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(7, count)
+  local fmtStr = string.format("<color=#827B78>%s</color><color=#FFE65A>%s</color>", preZero, tostring(count))
+  self.txtCountLow:SetText(preZero .. count)
+  self.txtCount:SetText(fmtStr)
   if self.pointIcon then
     local currencyIcon = ""
-    local cfgItem = (Cfg.cfg_item)[self._currencyId]
+    local cfgItem = Cfg.cfg_item[self._currencyId]
     if cfgItem then
       currencyIcon = cfgItem.Icon
-      ;
-      (self.pointIcon):LoadImage(currencyIcon)
+      self.pointIcon:LoadImage(currencyIcon)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop._ShowRemainingTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN23Shop:_ShowRemainingTime()
   if self._endTimeText then
-    (UIForge.FlushCDText)(self._endTimeText, self._shopCloseTime, self.strsLeftTime, true)
+    UIForge.FlushCDText(self._endTimeText, self._shopCloseTime, self.strsLeftTime, true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.FlushEgg = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local unlockCount, total = (self.data):GetEggCount()
-  ;
-  (self.txtEggCount):RefreshText((StringTable.Get)("str_n23_strange_replay_count", unlockCount, total))
+function UIN23Shop:FlushEgg()
+  local unlockCount, total = self.data:GetEggCount()
+  self.txtEggCount:RefreshText(StringTable.Get("str_n23_strange_replay_count", unlockCount, total))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.BtnBackOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN23Shop:BtnBackOnClick(go)
   self:BackBtnFunc()
-  ;
-  (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+  AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.BtnHomeOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN23Shop:BtnHomeOnClick(go)
   self:SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.BtnInfoOnClick = function(self, go)
-  -- function num : 0_10
-  (self.info):SetActive(true)
+function UIN23Shop:BtnInfoOnClick(go)
+  self.info:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.ImgInfoOnClick = function(self, go)
-  -- function num : 0_11
-  (self.info):SetActive(false)
+function UIN23Shop:ImgInfoOnClick(go)
+  self.info:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.BtnReplayOnClick = function(self, go)
-  -- function num : 0_12
+function UIN23Shop:BtnReplayOnClick(go)
   self:ShowDialog("UIN23Replay", self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.OnActivityShopBuySuccess = function(self, exchangeId)
-  -- function num : 0_13 , upvalues : _ENV
-  ((UIN23Shop.super).OnActivityShopBuySuccess)(self, exchangeId)
-  local replay = (self.data):GetReplayByExchangeId(exchangeId)
+function UIN23Shop:OnActivityShopBuySuccess(exchangeId)
+  UIN23Shop.super.OnActivityShopBuySuccess(self, exchangeId)
+  local replay = self.data:GetReplayByExchangeId(exchangeId)
   if replay then
     self:Replay(replay.id)
   end
   self:FlushEgg()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.LoadSpine = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN23Shop:LoadSpine()
   self.spines = {}
-  for index,replay in ipairs((self.data).replays) do
+  for index, replay in ipairs(self.data.replays) do
     local viewSpine = replay:ViewSpine()
     local spineLoader = self:GetUIComponent("SpineLoader", viewSpine)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.spines)[viewSpine] = spineLoader
+    self.spines[viewSpine] = spineLoader
     if replay:ViewHideOnLoad() then
-      (spineLoader.gameObject):SetActive(false)
+      spineLoader.gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.Replay = function(self, id)
-  -- function num : 0_15
-  local replay = (self.data):GetReplayById(id)
+function UIN23Shop:Replay(id)
+  local replay = self.data:GetReplayById(id)
   local viewSpine = replay:ViewSpine()
-  local spineLoader = (self.spines)[viewSpine]
+  local spineLoader = self.spines[viewSpine]
   local viewPlaySequence = replay:ViewPlaySequence()
   self:ReplayAnim(viewSpine, viewPlaySequence)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.ReplayAnim = function(self, spineName, viewPlaySequence)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN23Shop:ReplayAnim(spineName, viewPlaySequence)
   local spineLoader = self:GetUIComponent("SpineLoader", spineName)
   self:StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : spineName, self, _ENV, viewPlaySequence, spineLoader
     local key = "UIN23ShopReplayAnim" .. spineName
     self:Lock(key)
-    for index,data in ipairs(viewPlaySequence) do
+    for index, data in ipairs(viewPlaySequence) do
       if data.ShowSpine then
-        (spineLoader.gameObject):SetActive(true)
+        spineLoader.gameObject:SetActive(true)
       end
-      do
-        do
-          if data.anim then
-            local spineSkeleton = spineLoader.CurrentSkeleton
-            if not spineSkeleton then
-              spineSkeleton = spineLoader.CurrentMultiSkeleton
-            end
-            if spineSkeleton then
-              (spineSkeleton.AnimationState):SetAnimation(0, data.anim, false)
-            end
-            if data.time then
-              YIELD(TT, data.time)
-            end
-          end
-          if data.HideSpine then
-            (spineLoader.gameObject):SetActive(false)
-          end
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
+      if data.anim then
+        local spineSkeleton = spineLoader.CurrentSkeleton
+        spineSkeleton = spineSkeleton or spineLoader.CurrentMultiSkeleton
+        if spineSkeleton then
+          spineSkeleton.AnimationState:SetAnimation(0, data.anim, false)
         end
+        if data.time then
+          YIELD(TT, data.time)
+        end
+      end
+      if data.HideSpine then
+        spineLoader.gameObject:SetActive(false)
       end
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Shop.ReplayIdle = function(self)
-  -- function num : 0_17
+function UIN23Shop:ReplayIdle()
   local spineName = "n23_store_1_spine_idle"
   local spineLoader = self:GetUIComponent("SpineLoader", spineName)
   local spineSkeleton = spineLoader.CurrentSkeleton
-  if not spineSkeleton then
-    spineSkeleton = spineLoader.CurrentMultiSkeleton
-  end
-  local entry = (spineSkeleton.AnimationState):SetAnimation(0, "door_idle", false)
+  spineSkeleton = spineSkeleton or spineLoader.CurrentMultiSkeleton
+  local entry = spineSkeleton.AnimationState:SetAnimation(0, "door_idle", false)
   entry.MixDuration = 0
 end
-
-

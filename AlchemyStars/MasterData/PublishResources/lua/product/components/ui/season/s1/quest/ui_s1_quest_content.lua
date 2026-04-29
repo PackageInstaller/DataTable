@@ -1,224 +1,158 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/quest/ui_s1_quest_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS1QuestContent", UICustomWidget)
 UIS1QuestContent = UIS1QuestContent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS1QuestContent.CloseDialogWithAnim = function(self, callback)
-  -- function num : 0_0
+function UIS1QuestContent:CloseDialogWithAnim(callback)
   self:_PlayAnim(3, callback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS1QuestContent:OnShow(uiParams)
   self._responseEvent = true
   self._claimItems = {}
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  self._seasonId = (self._seasonModule):GetCurSeasonID()
-  self._seasonObj = (self._seasonModule):GetCurSeasonObj()
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  self._seasonId = self._seasonModule:GetCurSeasonID()
+  self._seasonObj = self._seasonModule:GetCurSeasonObj()
   self._componentId = ECCampaignSeasonComponentID.QUEST
-  self._component = (self._seasonObj):GetComponent(self._componentId)
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+  self._component = self._seasonObj:GetComponent(self._componentId)
+  
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-
+  
   self:_Attach()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent.OnHide = function(self)
-  -- function num : 0_2
+function UIS1QuestContent:OnHide()
   self:_Detach()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent.SetData = function(self, params)
-  -- function num : 0_3 , upvalues : _ENV
-  if params then
-    self._ownerName = params.ownerName
-    if params then
-      self._closeCallback = params.closeCallback
-      local type = self._ownerName == "UISeasonQuestController" and 1 or 2
-      local isZh = (UIActivityZhHelper.IsZh)()
-      if not isZh or not type then
-        type = 1
-      end
-      self._type = type
-      self:_SetScrollView_Bg()
-      self:_Refresh(true)
-      local first = self:_CalcFirstShowIndex()
-      self:_SetScrollViewPosByIndex(first)
-      self:_SetType(type)
-      self:_PlayAnim(type)
-      self:_CellListPlayAnim(first)
-    end
-  end
+function UIS1QuestContent:SetData(params)
+  self._ownerName = params and params.ownerName
+  self._closeCallback = params and params.closeCallback
+  local type = self._ownerName == "UISeasonQuestController" and 1 or 2
+  local isZh = UIActivityZhHelper.IsZh()
+  type = isZh and type or 1
+  self._type = type
+  self:_SetScrollView_Bg()
+  self:_Refresh(true)
+  local first = self:_CalcFirstShowIndex()
+  self:_SetScrollViewPosByIndex(first)
+  self:_SetType(type)
+  self:_PlayAnim(type)
+  self:_CellListPlayAnim(first)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._Refresh = function(self, isFirst)
-  -- function num : 0_4
+function UIS1QuestContent:_Refresh(isFirst)
   self:_SetCellList()
   self:_SetClaimAllBtn()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._SetType = function(self, type)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS1QuestContent:_SetType(type)
   if type == 1 then
-    return 
+    return
   end
   local offset = 180
-  ;
-  (UIWidgetHelper.SetAnchoredPosition)(self, "ScrollView_Bg", offset, 0)
-  ;
-  (UIWidgetHelper.SetAnchoredPosition)(self, "_nextPageHint", offset, 0)
-  ;
-  (UIWidgetHelper.SetAnchoredPosition)(self, "ScrollView_Item", offset, 0)
-  ;
-  (UIWidgetHelper.SetAnchoredPosition)(self, "_desc", offset, 0)
+  UIWidgetHelper.SetAnchoredPosition(self, "ScrollView_Bg", offset, 0)
+  UIWidgetHelper.SetAnchoredPosition(self, "_nextPageHint", offset, 0)
+  UIWidgetHelper.SetAnchoredPosition(self, "ScrollView_Item", offset, 0)
+  UIWidgetHelper.SetAnchoredPosition(self, "_desc", offset, 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._PlayAnim = function(self, type, callback)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS1QuestContent:_PlayAnim(type, callback)
   local tb = {
-{animName = "uieffanim_UIS1QuestContent_in", duration = 1333}
-, 
-{animName = "uieffanim_UIS1QuestContent_in2", duration = 1333}
-, 
-{animName = "uieffanim_UIS1QuestContent_out", duration = 200}
-}
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[type]).animName, (tb[type]).duration, callback, true)
+    {
+      animName = "uieffanim_UIS1QuestContent_in",
+      duration = 1333
+    },
+    {
+      animName = "uieffanim_UIS1QuestContent_in2",
+      duration = 1333
+    },
+    {
+      animName = "uieffanim_UIS1QuestContent_out",
+      duration = 200
+    }
+  }
+  UIWidgetHelper.PlayAnimation(self, "_anim", tb[type].animName, tb[type].duration, callback, true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._SetClaimAllBtn = function(self)
-  -- function num : 0_7
-  local isShow = (self._component):HasQuestCanClaim(self._cellDatas)
-  ;
-  (self:GetGameObject("ClaimAllBtn")):SetActive(isShow)
+function UIS1QuestContent:_SetClaimAllBtn()
+  local isShow = self._component:HasQuestCanClaim(self._cellDatas)
+  self:GetGameObject("ClaimAllBtn"):SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._SetScrollView_Bg = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIS1QuestContent:_SetScrollView_Bg()
   local nextPageHint = self:GetGameObject("_nextPageHint")
   local svBg = self:GetUIComponent("ScrollRect", "ScrollView_Bg")
   local svItem = self:GetUIComponent("ScrollRect", "ScrollView_Item")
-  ;
-  (svItem.onValueChanged):AddListener(function(value)
-    -- function num : 0_8_0 , upvalues : _ENV, svBg, nextPageHint
-    local y = (Mathf.Clamp)(value.y, 0, 1)
+  svItem.onValueChanged:AddListener(function(value)
+    local y = Mathf.Clamp(value.y, 0, 1)
     svBg.verticalNormalizedPosition = y
-    local isShow = y > 0.05 and true or false
+    local isShow = 0.05 < y and true or false
     nextPageHint:SetActive(isShow)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._SetCellListData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._cellDatas = (UIS1Helper.GetQuestInfo_BySeasonFilter)(self._component)
-  self._questStatus = (self._component):GetCampaignQuestStatus(self._cellDatas)
+function UIS1QuestContent:_SetCellListData()
+  self._cellDatas = UIS1Helper.GetQuestInfo_BySeasonFilter(self._component)
+  self._questStatus = self._component:GetCampaignQuestStatus(self._cellDatas)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._SetCellList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIS1QuestContent:_SetCellList()
   self:_SetCellListData()
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIS1QuestCell", #self._cellDatas)
-  for i,v in ipairs(objs) do
-    local quest = (self._cellDatas)[i]
-    local state = (self._questStatus)[quest]
+  local objs = UIWidgetHelper.SpawnObjects(self, "Content", "UIS1QuestCell", #self._cellDatas)
+  for i, v in ipairs(objs) do
+    local quest = self._cellDatas[i]
+    local state = self._questStatus[quest]
     v:SetData(self._type, i, self._component, quest, state, function(uiView, questInfo)
-    -- function num : 0_10_0 , upvalues : self
-    self:_ClaimOneBtn(uiView, questInfo)
-  end
-, self._tipsCallback)
+      self:_ClaimOneBtn(uiView, questInfo)
+    end, self._tipsCallback)
   end
   self._cells = objs
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._CellListPlayAnim = function(self, first)
-  -- function num : 0_11 , upvalues : _ENV
+function UIS1QuestContent:_CellListPlayAnim(first)
   local offset = 4
-  local start = (Mathf.Max)(first - offset, 1)
+  local start = Mathf.Max(first - offset, 1)
   local stop = #self._cells
   for i = start, stop do
-    local v = (self._cells)[i]
+    local v = self._cells[i]
     if v then
       v:PlayAnimationInSequence(i - start + 1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._CalcFirstShowIndex = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIS1QuestContent:_CalcFirstShowIndex()
   local count = #self._cellDatas
   local offset_center = -2
   local offset_top = 0
-  local index = nil
-  for i,v in ipairs(self._cellDatas) do
-    if not index then
-      do
-        if (self._questStatus)[v] == CampaignQuestStatus.CQS_Completed then
-          index = i + offset_center
-        end
-        -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  local index
+  for i, v in ipairs(self._cellDatas) do
+    if index then
+      break
+    end
+    if self._questStatus[v] == CampaignQuestStatus.CQS_Completed then
+      index = i + offset_center
     end
   end
   if not index then
-    for i,v in ipairs(self._cellDatas) do
-      if (self._questStatus)[v] ~= CampaignQuestStatus.CQS_Taken then
+    for i, v in ipairs(self._cellDatas) do
+      if self._questStatus[v] ~= CampaignQuestStatus.CQS_Taken then
         index = i + offset_top
         break
       end
     end
   end
-  do
-    return index or 1
-  end
+  return index or 1
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._SetScrollViewPosByIndex = function(self, index)
-  -- function num : 0_13 , upvalues : _ENV
+function UIS1QuestContent:_SetScrollViewPosByIndex(index)
   local count = #self._cellDatas
-  local pos = (Mathf.Clamp)((count - index) / (count - 1), 0, 1)
+  local pos = Mathf.Clamp((count - index) / (count - 1), 0, 1)
   self:_SetScrollViewPos(false, pos)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._SetScrollViewPos = function(self, hor, normalizedPos)
-  -- function num : 0_14
+function UIS1QuestContent:_SetScrollViewPos(hor, normalizedPos)
   local svItem = self:GetUIComponent("ScrollRect", "ScrollView_Item")
   if hor then
     svItem.horizontalNormalizedPosition = normalizedPos
@@ -227,91 +161,59 @@ UIS1QuestContent._SetScrollViewPos = function(self, hor, normalizedPos)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent.ClaimAllBtnOnClick = function(self, go)
-  -- function num : 0_15
-  self._claimItems = (self._component):GetQuestCanClaim(self._cellDatas)
-  ;
-  (self._component):Start_HandleOneKeyTakeQuest(function(res, rewards)
-    -- function num : 0_15_0 , upvalues : self
+function UIS1QuestContent:ClaimAllBtnOnClick(go)
+  self._claimItems = self._component:GetQuestCanClaim(self._cellDatas)
+  self._component:Start_HandleOneKeyTakeQuest(function(res, rewards)
     self:_OnRecvRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._ClaimOneBtn = function(self, uiView, questInfo)
-  -- function num : 0_16
-  self._claimItems = {questInfo.quest_id}
-  ;
-  (self._component):Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
-    -- function num : 0_16_0 , upvalues : self
+function UIS1QuestContent:_ClaimOneBtn(uiView, questInfo)
+  self._claimItems = {
+    questInfo.quest_id
+  }
+  self._component:Start_HandleQuestTake(questInfo.quest_id, function(res, rewards)
     self:_OnRecvRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._OnRecvRewards = function(self, res, rewards)
-  -- function num : 0_17 , upvalues : _ENV
+function UIS1QuestContent:_OnRecvRewards(res, rewards)
   if not self.view then
-    return 
+    return
   end
   if res and res:GetSucc() then
-    (UISeasonHelper.ShowUIGetRewards)(rewards)
+    UISeasonHelper.ShowUIGetRewards(rewards)
     self:DispatchEvent(GameEventType.OnSeasonQuestAwardCollected)
   else
-    ;
-    (self._seasonModule):CheckErrorCode(res.m_result, self._seasonId, function()
-    -- function num : 0_17_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_17_1 , upvalues : self
-    if self._closeCallback then
-      (self._closeCallback)()
-    end
-  end
-)
+    self._seasonModule:CheckErrorCode(res.m_result, self._seasonId, function()
+      self:_Refresh()
+    end, function()
+      if self._closeCallback then
+        self._closeCallback()
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._Attach = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIS1QuestContent:_Attach()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent._Detach = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIS1QuestContent:_Detach()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent.OnUIGetItemCloseInQuest = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIS1QuestContent:OnUIGetItemCloseInQuest()
   if self._ownerName ~= "UISeasonQuestController" and not self._responseEvent then
-    return 
+    return
   end
-  if (table.count)(self._claimItems) ~= 0 then
+  if table.count(self._claimItems) ~= 0 then
     self:ShowDialog("UISeasonQuestDetail", self._claimItems)
     self._claimItems = {}
   end
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1QuestContent.SetResponseEvent = function(self, val)
-  -- function num : 0_21
+function UIS1QuestContent:SetResponseEvent(val)
   self._responseEvent = val
 end
-
-

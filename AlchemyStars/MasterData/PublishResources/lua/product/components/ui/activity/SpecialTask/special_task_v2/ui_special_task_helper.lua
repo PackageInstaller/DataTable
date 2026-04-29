@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/SpecialTask/special_task_v2/ui_special_task_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISpecialTaskHelper", Object)
 UISpecialTaskHelper = UISpecialTaskHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISpecialTaskHelper.GetStrIdInCampaign = function(campaign, strId)
-  -- function num : 0_0
+function UISpecialTaskHelper.GetStrIdInCampaign(campaign, strId)
   return strId .. "_campaignid_" .. campaign._id
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISpecialTaskHelper.QuestSort = function(tb)
-  -- function num : 0_1 , upvalues : _ENV
+function UISpecialTaskHelper.QuestSort(tb)
   local val = {}
   val[QuestStatus.QUEST_Completed] = 0
   val[QuestStatus.QUEST_Accepted] = 1
   val[QuestStatus.QUEST_Taken] = 2
   val[QuestStatus.QUEST_NotStart] = 3
-  ;
-  (table.sort)(tb, function(a, b)
-    -- function num : 0_1_0 , upvalues : val
+  table.sort(tb, function(a, b)
     local a_status = a:Status()
     local b_status = b:Status()
-    if a:ID() >= b:ID() then
-      do return val[a_status] ~= val[b_status] end
-      do return val[a_status] < val[b_status] end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+    if val[a_status] == val[b_status] then
+      return a:ID() < b:ID()
     end
-  end
-)
+    return val[a_status] < val[b_status]
+  end)
 end
-
-

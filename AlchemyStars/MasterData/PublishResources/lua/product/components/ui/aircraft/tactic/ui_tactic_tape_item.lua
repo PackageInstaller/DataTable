@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_tactic_tape_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITacticTapeItem", UICustomWidget)
 UITacticTapeItem = UITacticTapeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITacticTapeItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITacticTapeItem:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.AircraftTacticOnSelectItemChanged, self.onSelect)
   self:AttachEvent(GameEventType.AircraftTacticTapeCancelNew, self.cancelNew)
   self._timerHolder = UITimerHolder:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UITacticTapeItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.tape = self:GetGameObject("tape")
   self.pack = self:GetGameObject("pack")
@@ -30,138 +20,86 @@ UITacticTapeItem.InitWidget = function(self)
   self._shadow = self:GetUIComponent("UILocalizationText", "name_shadow")
   self._icon_eff = self:GetUIComponent("RawImageLoader", "icon_eff")
   self._quality_eff = self:GetUIComponent("UILocalizationText", "quality_eff")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
-  self._selectState = (self._anim):get_Item("uieff_Tape_Select")
-  self._cancelState = (self._anim):get_Item("uieff_Tape_Select_Cancel")
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
+  self._selectState = self._anim:get_Item("uieff_Tape_Select")
+  self._cancelState = self._anim:get_Item("uieff_Tape_Select_Cancel")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeItem.OnHide = function(self)
-  -- function num : 0_2
-  (self._timerHolder):Dispose()
+function UITacticTapeItem:OnHide()
+  self._timerHolder:Dispose()
   self._timerHolder = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeItem.SetData = function(self, tapeData, index, onClick, selected, isInit)
-  -- function num : 0_3 , upvalues : _ENV
+function UITacticTapeItem:SetData(tapeData, index, onClick, selected, isInit)
   self._data = tapeData
   self._index = index
   self._onClick = onClick
   if self._data then
-    (self.icon):LoadImage(((self._data):GetTemplate()).Icon)
-    ;
-    (self._icon_eff):LoadImage(((self._data):GetTemplate()).Icon)
-    ;
-    (self.pack):SetActive(false)
-    ;
-    (self.tape):SetActive(true)
-    ;
-    (self.select):SetActive(selected)
-    local name = (StringTable.Get)(((self._data):GetTemplate()).Name)
-    ;
-    (self.name):SetText(name)
-    ;
-    (self._shadow):SetText(name)
-    ;
-    (self.new):SetActive((self._data):IsNewOverlay())
-    local cfg = (Cfg.cfg_item_cartridge)[(self._data):GetTemplateID()]
-    ;
-    (self._quality):SetText(cfg.Quality)
-    ;
-    (self._quality_eff):SetText(cfg.Quality)
+    self.icon:LoadImage(self._data:GetTemplate().Icon)
+    self._icon_eff:LoadImage(self._data:GetTemplate().Icon)
+    self.pack:SetActive(false)
+    self.tape:SetActive(true)
+    self.select:SetActive(selected)
+    local name = StringTable.Get(self._data:GetTemplate().Name)
+    self.name:SetText(name)
+    self._shadow:SetText(name)
+    self.new:SetActive(self._data:IsNewOverlay())
+    local cfg = Cfg.cfg_item_cartridge[self._data:GetTemplateID()]
+    self._quality:SetText(cfg.Quality)
+    self._quality_eff:SetText(cfg.Quality)
     if selected then
-      (self._anim):Play("uieff_Tape_Select")
-      -- DECOMPILER ERROR at PC74: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._selectState).normalizedTime = 1
-      ;
-      (self._anim):Sample()
-      ;
-      (self._anim):Stop()
+      self._anim:Play("uieff_Tape_Select")
+      self._selectState.normalizedTime = 1
+      self._anim:Sample()
+      self._anim:Stop()
       self._isSelect = true
     else
-      ;
-      (self._anim):Play("uieff_Tape_Select_Cancel")
-      -- DECOMPILER ERROR at PC88: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._cancelState).normalizedTime = 1
-      ;
-      (self._anim):Sample()
-      ;
-      (self._anim):Stop()
+      self._anim:Play("uieff_Tape_Select_Cancel")
+      self._cancelState.normalizedTime = 1
+      self._anim:Sample()
+      self._anim:Stop()
       self._isSelect = false
     end
   else
-    do
-      ;
-      (self.pack):SetActive(true)
-      ;
-      (self.tape):SetActive(false)
-      ;
-      (self.select):SetActive(false)
-      ;
-      (self.new):SetActive(false)
-      if isInit then
-        (self._anim):Stop()
-        ;
-        (self:GetGameObject()):SetActive(false)
-        ;
-        (self._timerHolder):StartTimer("uieff_Tape_In", 33 * (index - 1) + 1066, function()
-    -- function num : 0_3_0 , upvalues : self
-    (self:GetGameObject()):SetActive(true)
-    ;
-    (self._anim):Play("uieff_Tape_In")
+    self.pack:SetActive(true)
+    self.tape:SetActive(false)
+    self.select:SetActive(false)
+    self.new:SetActive(false)
   end
-)
-      end
-    end
+  if isInit then
+    self._anim:Stop()
+    self:GetGameObject():SetActive(false)
+    self._timerHolder:StartTimer("uieff_Tape_In", 33 * (index - 1) + 1066, function()
+      self:GetGameObject():SetActive(true)
+      self._anim:Play("uieff_Tape_In")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeItem.itemOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._onClick)(self._data, self._index)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8DefaultClick)
+function UITacticTapeItem:itemOnClick(go)
+  self._onClick(self._data, self._index)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8DefaultClick)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeItem.onSelect = function(self, data)
-  -- function num : 0_5
-  if self._data ~= data then
-    (self.select):SetActive(not self._data)
+function UITacticTapeItem:onSelect(data)
+  if self._data then
+    self.select:SetActive(self._data == data)
     if self._data == data then
-      (self._anim):Stop()
-      ;
-      (self._anim):Play("uieff_Tape_Select")
+      self._anim:Stop()
+      self._anim:Play("uieff_Tape_Select")
       self._isSelect = true
     else
       if self._isSelect then
-        (self._anim):Stop()
-        ;
-        (self._anim):Play("uieff_Tape_Select_Cancel")
+        self._anim:Stop()
+        self._anim:Play("uieff_Tape_Select_Cancel")
       end
       self._isSelect = false
     end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticTapeItem.cancelNew = function(self, pstID)
-  -- function num : 0_6
-  if self._data and (self._data):GetID() == pstID then
-    (self.new):SetActive(false)
+function UITacticTapeItem:cancelNew(pstID)
+  if self._data and self._data:GetID() == pstID then
+    self.new:SetActive(false)
   end
 end
-
-

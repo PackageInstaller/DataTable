@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/layer/season_maze_scene_layer_high_building.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeSceneLayerHighBuilding", SeasonMazeSceneLayerBase)
 SeasonMazeSceneLayerHighBuilding = SeasonMazeSceneLayerHighBuilding
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeSceneLayerHighBuilding.Constructor = function(self, sceneRoot)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazeSceneLayerHighBuilding:Constructor(sceneRoot)
   self._time = 1
   self._zoneMask = nil
-  self._highBuildingLayer = (self._sceneRootTransform):Find(SeasonSceneLayer.HighBuilding)
+  self._highBuildingLayer = self._sceneRootTransform:Find(SeasonSceneLayer.HighBuilding)
   self:_CacheHighBuildingRenderer()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerHighBuilding.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((SeasonMazeSceneLayerHighBuilding.super).Dispose)(self)
+function SeasonMazeSceneLayerHighBuilding:Dispose()
+  SeasonMazeSceneLayerHighBuilding.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerHighBuilding.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_2 , upvalues : _ENV
-  local v4 = (SeasonMazeTool:GetInstance()):GetV4ByZoneMask(zoneMask, zoneID2Animation)
-  for zoneID,zoneRenderers in pairs(self._renderers) do
-    for _,renderer in pairs(zoneRenderers) do
+function SeasonMazeSceneLayerHighBuilding:UnLock(zoneMask, zoneID2Animation)
+  local v4 = SeasonMazeTool:GetInstance():GetV4ByZoneMask(zoneMask, zoneID2Animation)
+  for zoneID, zoneRenderers in pairs(self._renderers) do
+    for _, renderer in pairs(zoneRenderers) do
       if renderer.material then
-        (renderer.material):SetVector("_AreaUnlockMask", v4)
+        renderer.material:SetVector("_AreaUnlockMask", v4)
       end
     end
   end
@@ -38,22 +25,19 @@ SeasonMazeSceneLayerHighBuilding.UnLock = function(self, zoneMask, zoneID2Animat
   self:TweenV4()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerHighBuilding._CacheHighBuildingRenderer = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMazeSceneLayerHighBuilding:_CacheHighBuildingRenderer()
   if self._highBuildingLayer then
-    local zoneCount = (self._highBuildingLayer).childCount
-    if zoneCount > 0 then
+    local zoneCount = self._highBuildingLayer.childCount
+    if 0 < zoneCount then
       for i = 0, zoneCount - 1 do
-        local zone = (self._highBuildingLayer):GetChild(i)
+        local zone = self._highBuildingLayer:GetChild(i)
         if zone then
           local zoneid = i + 1
           local childCount = zone.childCount
           for j = 0, childCount - 1 do
             local building = zone:GetChild(j)
-            local renderers = (building.gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
-            if renderers.Length > 0 then
+            local renderers = building.gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
+            if 0 < renderers.Length then
               for k = 0, renderers.Length - 1 do
                 self:InsertMeshRender(zoneid, renderers[k])
               end
@@ -65,23 +49,16 @@ SeasonMazeSceneLayerHighBuilding._CacheHighBuildingRenderer = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayerHighBuilding.TweenV4 = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._tweenTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
+function SeasonMazeSceneLayerHighBuilding:TweenV4()
+  self._tweenTask = GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
-    local v4 = (SeasonMazeTool:GetInstance()):GetV4ByZoneMask(self._zoneMask)
-    for zoneID,zoneRenderers in pairs(self._renderers) do
-      for _,renderer in pairs(zoneRenderers) do
+    local v4 = SeasonMazeTool:GetInstance():GetV4ByZoneMask(self._zoneMask)
+    for zoneID, zoneRenderers in pairs(self._renderers) do
+      for _, renderer in pairs(zoneRenderers) do
         if renderer.material then
-          (renderer.material):DOVector(v4, "_AreaUnlockMask", self._time)
+          renderer.material:DOVector(v4, "_AreaUnlockMask", self._time)
         end
       end
     end
-  end
-)
+  end)
 end
-
-

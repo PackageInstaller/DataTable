@@ -1,92 +1,235 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n34/cfg_n34_delegate_person_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, PersonId = 2, Tips = 3, Length = 4, Interval = 5, Min = 6, Max = 7}
+local key = {
+  ID = 1,
+  PersonId = 2,
+  Tips = 3,
+  Length = 4,
+  Interval = 5,
+  Min = 6,
+  Max = 7
+}
 local common = {
-{5000}
+  {5000}
 }
 local config = {
-{1, 1500421, 
-{"str_n34_task_main_self_talk_1500421_1"}
-, common[1], common[1], 0, 200}
-, 
-{2, 1500421, 
-{"str_n34_task_main_self_talk_1500421_2"}
-, common[1], common[1], 200, 400}
-, 
-{3, 1500421, 
-{"str_n34_task_main_self_talk_1500421_3"}
-, common[1], common[1], 400, 600}
-, 
-{4, 1500421, 
-{"str_n34_task_main_self_talk_1500421_4"}
-, common[1], common[1], 600, 800}
-, 
-{5, 1500421, 
-{"str_n34_task_main_self_talk_1500421_5"}
-, common[1], common[1], 800, 1100}
-, 
-{6, 1600021, 
-{"str_n34_task_main_self_talk_1600021_1"}
-, common[1], common[1], 0, 200}
-, 
-{7, 1600021, 
-{"str_n34_task_main_self_talk_1600021_2"}
-, common[1], common[1], 200, 400}
-, 
-{8, 1600021, 
-{"str_n34_task_main_self_talk_1600021_3"}
-, common[1], common[1], 400, 600}
-, 
-{9, 1600021, 
-{"str_n34_task_main_self_talk_1600021_4"}
-, common[1], common[1], 600, 800}
-, 
-{10, 1600021, 
-{"str_n34_task_main_self_talk_1600021_5"}
-, common[1], common[1], 800, 1100}
-, 
-{11, 1400441, 
-{"str_n34_task_main_self_talk_1400441_1"}
-, common[1], common[1], 0, 200}
-, 
-{12, 1400441, 
-{"str_n34_task_main_self_talk_1400441_2"}
-, common[1], common[1], 200, 400}
-, 
-{13, 1400441, 
-{"str_n34_task_main_self_talk_1400441_3"}
-, common[1], common[1], 400, 600}
-, 
-{14, 1400441, 
-{"str_n34_task_main_self_talk_1400441_4"}
-, common[1], common[1], 600, 800}
-, 
-{15, 1400441, 
-{"str_n34_task_main_self_talk_1400441_5"}
-, common[1], common[1], 800, 1100}
-, 
-{16, 1600111, 
-{"str_n34_task_main_self_talk_1600111_1"}
-, common[1], common[1], 0, 200}
-, 
-{17, 1600111, 
-{"str_n34_task_main_self_talk_1600111_2"}
-, common[1], common[1], 200, 400}
-, 
-{18, 1600111, 
-{"str_n34_task_main_self_talk_1600111_3"}
-, common[1], common[1], 400, 600}
-, 
-{19, 1600111, 
-{"str_n34_task_main_self_talk_1600111_4"}
-, common[1], common[1], 600, 800}
-, 
-{20, 1600111, 
-{"str_n34_task_main_self_talk_1600111_5"}
-, common[1], common[1], 800, 1100}
+  {
+    1,
+    1500421,
+    {
+      "str_n34_task_main_self_talk_1500421_1"
+    },
+    common[1],
+    common[1],
+    0,
+    200
+  },
+  {
+    2,
+    1500421,
+    {
+      "str_n34_task_main_self_talk_1500421_2"
+    },
+    common[1],
+    common[1],
+    200,
+    400
+  },
+  {
+    3,
+    1500421,
+    {
+      "str_n34_task_main_self_talk_1500421_3"
+    },
+    common[1],
+    common[1],
+    400,
+    600
+  },
+  {
+    4,
+    1500421,
+    {
+      "str_n34_task_main_self_talk_1500421_4"
+    },
+    common[1],
+    common[1],
+    600,
+    800
+  },
+  {
+    5,
+    1500421,
+    {
+      "str_n34_task_main_self_talk_1500421_5"
+    },
+    common[1],
+    common[1],
+    800,
+    1100
+  },
+  {
+    6,
+    1600021,
+    {
+      "str_n34_task_main_self_talk_1600021_1"
+    },
+    common[1],
+    common[1],
+    0,
+    200
+  },
+  {
+    7,
+    1600021,
+    {
+      "str_n34_task_main_self_talk_1600021_2"
+    },
+    common[1],
+    common[1],
+    200,
+    400
+  },
+  {
+    8,
+    1600021,
+    {
+      "str_n34_task_main_self_talk_1600021_3"
+    },
+    common[1],
+    common[1],
+    400,
+    600
+  },
+  {
+    9,
+    1600021,
+    {
+      "str_n34_task_main_self_talk_1600021_4"
+    },
+    common[1],
+    common[1],
+    600,
+    800
+  },
+  {
+    10,
+    1600021,
+    {
+      "str_n34_task_main_self_talk_1600021_5"
+    },
+    common[1],
+    common[1],
+    800,
+    1100
+  },
+  {
+    11,
+    1400441,
+    {
+      "str_n34_task_main_self_talk_1400441_1"
+    },
+    common[1],
+    common[1],
+    0,
+    200
+  },
+  {
+    12,
+    1400441,
+    {
+      "str_n34_task_main_self_talk_1400441_2"
+    },
+    common[1],
+    common[1],
+    200,
+    400
+  },
+  {
+    13,
+    1400441,
+    {
+      "str_n34_task_main_self_talk_1400441_3"
+    },
+    common[1],
+    common[1],
+    400,
+    600
+  },
+  {
+    14,
+    1400441,
+    {
+      "str_n34_task_main_self_talk_1400441_4"
+    },
+    common[1],
+    common[1],
+    600,
+    800
+  },
+  {
+    15,
+    1400441,
+    {
+      "str_n34_task_main_self_talk_1400441_5"
+    },
+    common[1],
+    common[1],
+    800,
+    1100
+  },
+  {
+    16,
+    1600111,
+    {
+      "str_n34_task_main_self_talk_1600111_1"
+    },
+    common[1],
+    common[1],
+    0,
+    200
+  },
+  {
+    17,
+    1600111,
+    {
+      "str_n34_task_main_self_talk_1600111_2"
+    },
+    common[1],
+    common[1],
+    200,
+    400
+  },
+  {
+    18,
+    1600111,
+    {
+      "str_n34_task_main_self_talk_1600111_3"
+    },
+    common[1],
+    common[1],
+    400,
+    600
+  },
+  {
+    19,
+    1600111,
+    {
+      "str_n34_task_main_self_talk_1600111_4"
+    },
+    common[1],
+    common[1],
+    600,
+    800
+  },
+  {
+    20,
+    1600111,
+    {
+      "str_n34_task_main_self_talk_1600111_5"
+    },
+    common[1],
+    common[1],
+    800,
+    1100
+  }
 }
 return config, "ID", key
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_home_sp_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeSpPet", UICustomWidget)
 UIHomeSpPet = UIHomeSpPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeSpPet.SetData = function(self, active, tex)
-  -- function num : 0_0
+function UIHomeSpPet:SetData(active, tex)
   self._tex = self:GetUIComponent("RollingText", "spPetTex")
   self._go = self:GetGameObject()
-  ;
-  (self._go):SetActive(active)
+  self._go:SetActive(active)
   if active then
-    (self._tex):RefreshText(tex)
+    self._tex:RefreshText(tex)
   end
 end
-
-

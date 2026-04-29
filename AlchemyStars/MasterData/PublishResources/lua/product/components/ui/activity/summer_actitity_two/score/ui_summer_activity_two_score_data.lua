@@ -1,97 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/score/ui_summer_activity_two_score_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UISummerActivityTwoScoreRewardStatus = {UnComplete = 1, HasGet = 2, UnGet = 3}
+local UISummerActivityTwoScoreRewardStatus = {
+  UnComplete = 1,
+  HasGet = 2,
+  UnGet = 3
+}
 _enum("UISummerActivityTwoScoreRewardStatus", UISummerActivityTwoScoreRewardStatus)
-local UISummerActivityTwoScoreType = {Shui = 1, Huo = 2, Sen = 3, Lei = 4, Total = 5}
+local UISummerActivityTwoScoreType = {
+  Shui = 1,
+  Huo = 2,
+  Sen = 3,
+  Lei = 4,
+  Total = 5
+}
 _enum("UISummerActivityTwoScoreType", UISummerActivityTwoScoreType)
 _class("UISummerActivityTwoScoreRewardData", Object)
 UISummerActivityTwoScoreRewardData = UISummerActivityTwoScoreRewardData
--- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
 
-UISummerActivityTwoScoreRewardData.Constructor = function(self, data)
-  -- function num : 0_0
+function UISummerActivityTwoScoreRewardData:Constructor(data)
   self._reachScoreValue = data.progress
   self._status = data.status
   self._rewards = data.rewards
   self._type = data.type
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardData.GetScoreValue = function(self)
-  -- function num : 0_1
+function UISummerActivityTwoScoreRewardData:GetScoreValue()
   return self._reachScoreValue
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardData.GetStatus = function(self)
-  -- function num : 0_2
+function UISummerActivityTwoScoreRewardData:GetStatus()
   return self._status
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardData.SetStatus = function(self, status)
-  -- function num : 0_3
+function UISummerActivityTwoScoreRewardData:SetStatus(status)
   self._status = status
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardData.GetRewards = function(self)
-  -- function num : 0_4
+function UISummerActivityTwoScoreRewardData:GetRewards()
   return self._rewards
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardData.GetType = function(self)
-  -- function num : 0_5
+function UISummerActivityTwoScoreRewardData:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardData.GetPriority = function(self)
-  -- function num : 0_6 , upvalues : UISummerActivityTwoScoreRewardStatus
+function UISummerActivityTwoScoreRewardData:GetPriority()
   local priority = self._reachScoreValue
   local weight = 1000000
   if self._status == UISummerActivityTwoScoreRewardStatus.UnComplete then
     priority = priority + 2 * weight
-  else
-    if self._status == UISummerActivityTwoScoreRewardStatus.HasGet then
-      priority = priority + 3 * weight
-    else
-      if self._status == UISummerActivityTwoScoreRewardStatus.UnGet then
-        priority = priority + weight
-      end
-    end
+  elseif self._status == UISummerActivityTwoScoreRewardStatus.HasGet then
+    priority = priority + 3 * weight
+  elseif self._status == UISummerActivityTwoScoreRewardStatus.UnGet then
+    priority = priority + weight
   end
   return priority
 end
 
 _class("UISummerActivityTwoScoreData", Object)
 UISummerActivityTwoScoreData = UISummerActivityTwoScoreData
--- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
 
-UISummerActivityTwoScoreData.Constructor = function(self, progressComponentInfo)
-  -- function num : 0_7 , upvalues : _ENV, UISummerActivityTwoScoreRewardStatus, UISummerActivityTwoScoreType
+function UISummerActivityTwoScoreData:Constructor(progressComponentInfo)
   self._rewardDatas = {}
   local progressRewards = progressComponentInfo.m_progress_rewards
   local currentProgress = progressComponentInfo.m_current_progress
   local receivedProgress = progressComponentInfo.m_received_progress
-  for k,v in pairs(progressRewards) do
+  for k, v in pairs(progressRewards) do
     local progress = k
     local rewards = v
     local data = {}
     data.progress = progress
     data.rewards = rewards
-    local status = nil
-    if progress <= currentProgress then
+    local status
+    if currentProgress >= progress then
       status = UISummerActivityTwoScoreRewardStatus.UnGet
       for i = 1, #receivedProgress do
         if progress == receivedProgress[i] then
@@ -100,56 +79,47 @@ UISummerActivityTwoScoreData.Constructor = function(self, progressComponentInfo)
         end
       end
     else
-      do
-        do
-          status = UISummerActivityTwoScoreRewardStatus.UnComplete
-          data.status = status
-          -- DECOMPILER ERROR at PC39: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._rewardDatas)[#self._rewardDatas + 1] = UISummerActivityTwoScoreRewardData:New(data)
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      status = UISummerActivityTwoScoreRewardStatus.UnComplete
     end
+    data.status = status
+    self._rewardDatas[#self._rewardDatas + 1] = UISummerActivityTwoScoreRewardData:New(data)
   end
   self._totalScore = currentProgress
-  self._typeToIconImg = {[UISummerActivityTwoScoreType.Shui] = "toptoon_3000205", [UISummerActivityTwoScoreType.Huo] = "toptoon_3000206", [UISummerActivityTwoScoreType.Sen] = "toptoon_3000207", [UISummerActivityTwoScoreType.Lei] = "toptoon_3000208", 
-[UISummerActivityTwoScoreType.Total] = {"toptoon_3000205", "toptoon_3000206", "toptoon_3000207", "toptoon_3000208"}
-}
-  self._typeToName = {[UISummerActivityTwoScoreType.Shui] = (StringTable.Get)("str_summer_activity_two_score_type_name_shui"), [UISummerActivityTwoScoreType.Huo] = (StringTable.Get)("str_summer_activity_two_score_type_name_huo"), [UISummerActivityTwoScoreType.Sen] = (StringTable.Get)("str_summer_activity_two_score_type_name_sen"), [UISummerActivityTwoScoreType.Lei] = (StringTable.Get)("str_summer_activity_two_score_type_name_lei"), [UISummerActivityTwoScoreType.Total] = (StringTable.Get)("str_summer_activity_two_score_type_name_total")}
+  self._typeToIconImg = {
+    [UISummerActivityTwoScoreType.Shui] = "toptoon_3000205",
+    [UISummerActivityTwoScoreType.Huo] = "toptoon_3000206",
+    [UISummerActivityTwoScoreType.Sen] = "toptoon_3000207",
+    [UISummerActivityTwoScoreType.Lei] = "toptoon_3000208",
+    [UISummerActivityTwoScoreType.Total] = {
+      "toptoon_3000205",
+      "toptoon_3000206",
+      "toptoon_3000207",
+      "toptoon_3000208"
+    }
+  }
+  self._typeToName = {
+    [UISummerActivityTwoScoreType.Shui] = StringTable.Get("str_summer_activity_two_score_type_name_shui"),
+    [UISummerActivityTwoScoreType.Huo] = StringTable.Get("str_summer_activity_two_score_type_name_huo"),
+    [UISummerActivityTwoScoreType.Sen] = StringTable.Get("str_summer_activity_two_score_type_name_sen"),
+    [UISummerActivityTwoScoreType.Lei] = StringTable.Get("str_summer_activity_two_score_type_name_lei"),
+    [UISummerActivityTwoScoreType.Total] = StringTable.Get("str_summer_activity_two_score_type_name_total")
+  }
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-UISummerActivityTwoScoreData.GetRewardDatas = function(self)
-  -- function num : 0_8
+function UISummerActivityTwoScoreData:GetRewardDatas()
   return self._rewardDatas
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-UISummerActivityTwoScoreData.GetTotalScore = function(self)
-  -- function num : 0_9
+function UISummerActivityTwoScoreData:GetTotalScore()
   return self._totalScore
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-UISummerActivityTwoScoreData.HasCanGetReward = function(self)
-  -- function num : 0_10 , upvalues : UISummerActivityTwoScoreRewardStatus
+function UISummerActivityTwoScoreData:HasCanGetReward()
   for i = 1, #self._rewardDatas do
-    local rewardData = (self._rewardDatas)[i]
+    local rewardData = self._rewardDatas[i]
     if rewardData:GetStatus() == UISummerActivityTwoScoreRewardStatus.UnGet then
       return true
     end
   end
   return false
 end
-
-

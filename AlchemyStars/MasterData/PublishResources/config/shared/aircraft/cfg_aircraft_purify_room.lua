@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/aircraft/cfg_aircraft_purify_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, DecrTime = 2}
 local config = {
-[7108001] = {7108001, 5}
-, 
-[7108002] = {7108002, 15}
-, 
-[7108003] = {7108003, 25}
-, 
-[7108004] = {7108004, 30}
-, 
-[7108005] = {7108005, 35}
+  [7108001] = {7108001, 5},
+  [7108002] = {7108002, 15},
+  [7108003] = {7108003, 25},
+  [7108004] = {7108004, 30},
+  [7108005] = {7108005, 35}
 }
 return config, "ID", key
-

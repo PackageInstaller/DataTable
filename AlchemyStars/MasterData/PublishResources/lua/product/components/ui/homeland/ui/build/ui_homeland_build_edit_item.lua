@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build/ui_homeland_build_edit_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBuildEditItem", UICustomWidget)
 UIHomelandBuildEditItem = UIHomelandBuildEditItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBuildEditItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
-  self.homeBuildManager = (self.homelandClient):BuildManager()
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
+function UIHomelandBuildEditItem:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
+  self.homeBuildManager = self.homelandClient:BuildManager()
+  self.mItem = GameGlobal.GetModule(ItemModule)
   self._isInit = nil
   self.beginPos = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.OnShow = function(self)
-  -- function num : 0_1
+function UIHomelandBuildEditItem:OnShow()
   self.bg = self:GetGameObject("bg")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtLiveable = self:GetUIComponent("UILocalizationText", "txtLiveable")
@@ -29,8 +19,7 @@ UIHomelandBuildEditItem.OnShow = function(self)
   self.txtUsing = self:GetUIComponent("UILocalizationText", "txtUsing")
   self.countGo = self:GetGameObject("count")
   self.using = self:GetGameObject("using")
-  ;
-  (self.using):SetActive(false)
+  self.using:SetActive(false)
   self.new = self:GetGameObject("new")
   self.parent = self:GetGameObject("parent")
   self.child = self:GetGameObject("child")
@@ -38,210 +27,139 @@ UIHomelandBuildEditItem.OnShow = function(self)
   self.pstID = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.Init = function(self, camera, listType)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandBuildEditItem:Init(camera, listType)
   if self._isInit then
-    return 
+    return
   end
   self._isInit = true
   self.camera = camera
   self.listType = listType
-  local etl = (UICustomUIEventListener.Get)(self.bg)
+  local etl = UICustomUIEventListener.Get(self.bg)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_2_0 , upvalues : self
     self:SetPosDragItem(eventData.position)
     self.beginPos = eventData.position
     self:ClearNew()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(eventData)
-    -- function num : 0_2_1 , upvalues : self, _ENV
-    if (self.goDragItem).activeInHierarchy and self:CheckBlack() then
-      self:SetPosDragItem(eventData.position)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DragBuildingIntoScene, self.id, eventData.pointerId, eventData.position)
-    end
-    if (self.beginPos).y < (eventData.position).y then
+    if self.goDragItem.activeInHierarchy then
+      if self:CheckBlack() then
+        self:SetPosDragItem(eventData.position)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.DragBuildingIntoScene, self.id, eventData.pointerId, eventData.position)
+      end
+    elseif eventData.position.y > self.beginPos.y then
       local v2 = eventData.position - self.beginPos
       if self:CheckBlack() then
         self:ShowHideDragItem(true)
         self:FlushDragItem(self.id)
       end
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_2_2 , upvalues : self
     self:ShowHideDragItem(false)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_2_3 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
-    do
-      if self:CheckBlack() then
-        local cfg = (Cfg.cfg_item_architecture)[self.id]
-        if cfg.SubType == ArchitectureSubType.Father_Architecture and (self.homeBuildManager):GetBuildCount(self.id) <= 0 then
-          (self.homeBuildManager):FocusAndOutline(self.id)
-        else
-          ;
-          (self.homeBuildManager):Add(self.id)
-        end
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
+    if self:CheckBlack() then
+      local cfg = Cfg.cfg_item_architecture[self.id]
+      if cfg.SubType == ArchitectureSubType.Father_Architecture and self.homeBuildManager:GetBuildCount(self.id) <= 0 then
+        self.homeBuildManager:FocusAndOutline(self.id)
+      else
+        self.homeBuildManager:Add(self.id)
       end
-      self:ClearNew()
     end
-  end
-)
+    self:ClearNew()
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.CheckBlack = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandBuildEditItem:CheckBlack()
   if self.isBlack and self.listType == BuildEditListType.BT_MakeMovie then
-    (ToastManager.ShowToast)((StringTable.Get)("str_movie_build_is_black"))
+    ToastManager.ShowToast(StringTable.Get("str_movie_build_is_black"))
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.OnHide = function(self)
-  -- function num : 0_4
-  (self.imgIcon):DestoryLastImage()
+function UIHomelandBuildEditItem:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.Flush = function(self, id, isBlack)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBuildEditItem:Flush(id, isBlack)
   local inUsing = false
   self.id = id
   self.isBlack = isBlack
-  local tpl = (UIHomelandBuildEdit.GetItemTemplate)(id)
-  ;
-  (self.imgIcon):LoadImage(tpl.Icon)
-  ;
-  (self.txtLiveable):SetText("+" .. (UIHomelandBuildEdit.GetBuildingLiveable)(id))
-  local cfg = (Cfg.cfg_item_architecture)[id]
+  local tpl = UIHomelandBuildEdit.GetItemTemplate(id)
+  self.imgIcon:LoadImage(tpl.Icon)
+  self.txtLiveable:SetText("+" .. UIHomelandBuildEdit.GetBuildingLiveable(id))
+  local cfg = Cfg.cfg_item_architecture[id]
   if cfg.SubType == ArchitectureSubType.Father_Architecture then
-    (self.countGo):SetActive(false)
-    ;
-    (self.parent):SetActive(true)
-    ;
-    (self.child):SetActive(false)
-    if (self.homeBuildManager):GetBuildCount(self.id) <= 0 then
+    self.countGo:SetActive(false)
+    self.parent:SetActive(true)
+    self.child:SetActive(false)
+    if self.homeBuildManager:GetBuildCount(self.id) <= 0 then
       inUsing = true
-      ;
-      (self.txtUsing):SetText((StringTable.Get)("str_homeland_build_placed"))
+      self.txtUsing:SetText(StringTable.Get("str_homeland_build_placed"))
     end
+  elseif cfg.SubType == ArchitectureSubType.Son_Architecture then
+    self.parent:SetActive(false)
+    self.child:SetActive(true)
+    self.txtCount:SetText(StringTable.Get("str_homeland_build_mul_count", self.homeBuildManager:GetBuildCount(id)))
   else
-    if cfg.SubType == ArchitectureSubType.Son_Architecture then
-      (self.parent):SetActive(false)
-      ;
-      (self.child):SetActive(true)
-      ;
-      (self.txtCount):SetText((StringTable.Get)("str_homeland_build_mul_count", (self.homeBuildManager):GetBuildCount(id)))
-    else
-      ;
-      (self.countGo):SetActive(true)
-      ;
-      (self.parent):SetActive(false)
-      ;
-      (self.child):SetActive(false)
-      ;
-      (self.txtCount):SetText((StringTable.Get)("str_homeland_build_mul_count", (self.homeBuildManager):GetBuildCount(id)))
-    end
+    self.countGo:SetActive(true)
+    self.parent:SetActive(false)
+    self.child:SetActive(false)
+    self.txtCount:SetText(StringTable.Get("str_homeland_build_mul_count", self.homeBuildManager:GetBuildCount(id)))
   end
-  ;
-  (self.using):SetActive(inUsing)
+  self.using:SetActive(inUsing)
   self:FlushNew()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.FlushNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local items = (self.mItem):GetItemByTempId(self.id)
+function UIHomelandBuildEditItem:FlushNew()
+  local items = self.mItem:GetItemByTempId(self.id)
   self.bNew = false
-  for _,v in pairs(items) do
+  for _, v in pairs(items) do
     if v:IsNewOverlay() then
       self.bNew = true
       self.pstID = v:GetID()
       break
     end
   end
-  do
-    ;
-    (self.new):SetActive(self.bNew)
-  end
+  self.new:SetActive(self.bNew)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.ClearNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandBuildEditItem:ClearNew()
   if self.bNew then
     self:Lock("UIHomelandBuildEditItemClearNew")
     self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
-    (self.mItem):SetItemUnnewOverlay(TT, self.pstID)
-    ;
-    (self.new):SetActive(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandRefreshBuildFilterNew)
-    self:UnLock("UIHomelandBuildEditItemClearNew")
-  end
-)
+      self.mItem:SetItemUnnewOverlay(TT, self.pstID)
+      self.new:SetActive(false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandRefreshBuildFilterNew)
+      self:UnLock("UIHomelandBuildEditItemClearNew")
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.SetDragItem = function(self, goDragItem, poolDragItem, dragItem)
-  -- function num : 0_8
+function UIHomelandBuildEditItem:SetDragItem(goDragItem, poolDragItem, dragItem)
   self.goDragItem = goDragItem
   self.poolDragItem = poolDragItem
   self.dragItem = dragItem
-  self.dragItemParent = ((self.dragItem).parent):GetComponent("RectTransform")
+  self.dragItemParent = self.dragItem.parent:GetComponent("RectTransform")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.ShowHideDragItem = function(self, isShow)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.goDragItem):SetActive(isShow)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandShowHideDragItem, isShow)
+function UIHomelandBuildEditItem:ShowHideDragItem(isShow)
+  self.goDragItem:SetActive(isShow)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandShowHideDragItem, isShow)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.FlushDragItem = function(self, tplId)
-  -- function num : 0_10
-  local ui = (self.poolDragItem):SpawnObject("UIHomelandBuildEditDragItem")
+function UIHomelandBuildEditItem:FlushDragItem(tplId)
+  local ui = self.poolDragItem:SpawnObject("UIHomelandBuildEditDragItem")
   ui:Flush(self.id)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.SetPosDragItem = function(self, posScreen)
-  -- function num : 0_11 , upvalues : _ENV
-  local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self.dragItemParent, posScreen, self.camera, nil)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.dragItem).anchoredPosition = pos
+function UIHomelandBuildEditItem:SetPosDragItem(posScreen)
+  local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.dragItemParent, posScreen, self.camera, nil)
+  self.dragItem.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBuildEditItem.GetBg = function(self)
-  -- function num : 0_12
+function UIHomelandBuildEditItem:GetBg()
   return self.bg
 end
-
-

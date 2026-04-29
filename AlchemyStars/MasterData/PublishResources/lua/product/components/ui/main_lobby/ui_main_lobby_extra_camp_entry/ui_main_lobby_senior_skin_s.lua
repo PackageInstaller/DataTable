@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_extra_camp_entry/ui_main_lobby_senior_skin_s.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_extra_base")
 _class("UIMainLobbySeniorSkinS", UIMainLobbyExtraBase)
 UIMainLobbySeniorSkinS = UIMainLobbySeniorSkinS
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbySeniorSkinS.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbySeniorSkinS:OnShow()
   self._costItemID = 7000520
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   self:AttachEvent(GameEventType.RefreshSeniorSkinRedPoint, self.RefreshSampleData)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinS.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbySeniorSkinS:OnHide()
   self:DetachEvent(GameEventType.RefreshSeniorSkinRedPoint, self.RefreshSampleData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinS.RefreshView = function(self)
-  -- function num : 0_2
+function UIMainLobbySeniorSkinS:RefreshView()
   self:SetRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinS.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIMainLobbySeniorSkinS:BtnOnClick(go)
   if self:CheckCampaignOpen() then
     self:ShowDialog("UISimpleHauteCoutureMainController")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinS.SetRed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMainLobbySeniorSkinS:SetRed()
   local redGo = self:GetGameObject("redGo")
-  if self._sample_info then
-    local red = (self._sample_info):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local red = self._sample_info and self._sample_info:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   red = red or itemModule:GetItemCount(self._costItemID) > 0
   redGo:SetActive(red)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

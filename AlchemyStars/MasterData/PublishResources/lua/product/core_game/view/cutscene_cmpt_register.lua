@@ -1,9 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cutscene_cmpt_register.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("enum_lookup")
-CutsceneComponentsRegister = ComponentsLookup:New({"RenderStartIndex", "EntityType", "CutscenePlayer", "CutsceneMonster", "Asset", "View", "Location", "GridMove", "BodyArea", "Hitback", "RenderBoard", "AnimatorController", "LegacyAnimation", "MaterialAnimation", "TrailEffectEx", "ArchivedEffect", "EffectController", "EffectHolder", "GridEffect", "TotalRenderComponents"})
-CutsceneUniqueComponentsRegister = ComponentsLookup:New({"RenderUniqueStartIndex", "LocalPlayer", "TotalRenderUniqueComponents"})
-
+CutsceneComponentsRegister = ComponentsLookup:New({
+  "RenderStartIndex",
+  "EntityType",
+  "CutscenePlayer",
+  "CutsceneMonster",
+  "Asset",
+  "View",
+  "Location",
+  "GridMove",
+  "BodyArea",
+  "Hitback",
+  "RenderBoard",
+  "AnimatorController",
+  "LegacyAnimation",
+  "MaterialAnimation",
+  "TrailEffectEx",
+  "ArchivedEffect",
+  "EffectController",
+  "EffectHolder",
+  "GridEffect",
+  "TotalRenderComponents"
+})
+CutsceneUniqueComponentsRegister = ComponentsLookup:New({
+  "RenderUniqueStartIndex",
+  "LocalPlayer",
+  "TotalRenderUniqueComponents"
+})

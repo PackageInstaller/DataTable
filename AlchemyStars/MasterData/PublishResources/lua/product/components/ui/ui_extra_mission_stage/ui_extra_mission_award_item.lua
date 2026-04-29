@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission_stage/ui_extra_mission_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtraMisionAwardItem", UICustomWidget)
 UIExtraMisionAwardItem = UIExtraMisionAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtraMisionAwardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIExtraMisionAwardItem:OnShow()
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._qualityIcon = self:GetUIComponent("Image", "qualityIcon")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -18,72 +11,44 @@ UIExtraMisionAwardItem.OnShow = function(self)
   self._trans = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMisionAwardItem.Flush = function(self, v)
-  -- function num : 0_1 , upvalues : _ENV
+function UIExtraMisionAwardItem:Flush(v)
   if not v then
-    return 
+    return
   end
   self._v = v
-  ;
-  (self._imgIcon):LoadImage(v.icon)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
+  self._imgIcon:LoadImage(v.icon)
   if self._txtName then
-    (self._txtName).text = v.name
+    self._txtName.text = v.name
   end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._txtCount then
-    (self._txtCount).text = "X" .. v.count
+    self._txtCount.text = "X" .. v.count
   end
-  do
-    if self._txt3Star then
-      local strKey = ""
-      if v.type == StageAwardType.Star then
-        strKey = "str_discovery_3star_award"
-      else
-        strKey = "str_discovery_normal_award"
-      end
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._txt3Star).text = (StringTable.Get)(strKey)
+  if self._txt3Star then
+    local strKey = ""
+    if v.type == StageAwardType.Star then
+      strKey = "str_discovery_3star_award"
+    else
+      strKey = "str_discovery_normal_award"
     end
-    if self._qualityIcon then
-      local frameName = (UIEnum.ItemColorFrame)(v.color)
-      if frameName ~= "" then
-        local _uiItemAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-        ;
-        ((self._qualityIcon).gameObject):SetActive(true)
-        -- DECOMPILER ERROR at PC63: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._qualityIcon).sprite = _uiItemAtlas:GetSprite(frameName)
-      else
-        do
-          do
-            ;
-            ((self._qualityIcon).gameObject):SetActive(false)
-            if v.type == StageAwardType.Normal then
-              (self._imgType):SetActive(not self._imgType)
-              -- DECOMPILER ERROR: 2 unprocessed JMP targets
-            end
-          end
-        end
-      end
+    self._txt3Star.text = StringTable.Get(strKey)
+  end
+  if self._qualityIcon then
+    local frameName = UIEnum.ItemColorFrame(v.color)
+    if frameName ~= "" then
+      local _uiItemAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
+      self._qualityIcon.gameObject:SetActive(true)
+      self._qualityIcon.sprite = _uiItemAtlas:GetSprite(frameName)
+    else
+      self._qualityIcon.gameObject:SetActive(false)
     end
+  end
+  if self._imgType then
+    self._imgType:SetActive(v.type ~= StageAwardType.Normal)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMisionAwardItem.bgOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
+function UIExtraMisionAwardItem:bgOnClick(go)
   if self._v then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, (self._v).id, ((self._trans).transform).position)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, self._v.id, self._trans.transform.position)
   end
 end
-
-

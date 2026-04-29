@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_multi_random_trajectory_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillMultiRandomTrajectoryPhase", PlaySkillPhaseBase)
 PlaySkillMultiRandomTrajectoryPhase = PlaySkillMultiRandomTrajectoryPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillMultiRandomTrajectoryPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillMultiRandomTrajectoryPhase:PlayFlight(TT, casterEntity, phaseParam)
   local effectParam = phaseParam
   self._startPosEffectID = effectParam:GetStartPosEffectID()
   self._bulletEffectID = effectParam:GetBulletEffectID()
@@ -29,173 +22,149 @@ PlaySkillMultiRandomTrajectoryPhase.PlayFlight = function(self, TT, casterEntity
   self._hitSoundID = effectParam:GetHitSoundID()
   local listTask = {}
   local castPos = casterEntity:GetRenderGridPosition()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   if damageResultArray == nil then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local playSkillService = world:GetService("PlaySkill")
-  local timeService = (self._world):GetService("Time")
+  local timeService = self._world:GetService("Time")
   local startTime = timeService:GetCurrentTimeMs()
   self._flyTaskIDList = {}
   if not self._startPosList then
-    self._startPosList = {Vector2(2, 2), Vector2(1, 6), Vector2(5, 9), Vector2(9, 4), Vector2(8, 8)}
+    self._startPosList = {
+      Vector2(2, 2),
+      Vector2(1, 6),
+      Vector2(5, 9),
+      Vector2(9, 4),
+      Vector2(8, 8)
+    }
   end
   local posStartIndex = 1
-  for i,v in ipairs(damageResultArray) do
-    do
-      local format = {}
-      local damageResult = v
-      local targetEntityID = damageResult:GetTargetID()
-      local targetEntity = world:GetEntityByID(targetEntityID)
-      if targetEntity then
-        local targetEntityPos = targetEntity:GetGridPosition()
-        if i ~= 1 then
-          YIELD(TT, self._intervalTime)
-        end
-        local posStart = (self._startPosList)[posStartIndex]
-        if self:_TooClose(posStart, targetEntityPos) then
-          posStartIndex = posStartIndex + 1
-          posStart = (self._startPosList)[posStartIndex]
-          posStartIndex = posStartIndex + 1
-        else
-          posStartIndex = posStartIndex + 1
-        end
-        if not posStart then
-          posStart = Vector(7, 7)
-        end
-        local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : self, i, v, posStart
-    self:_PlayOneTrajectory(TT, i, v, posStart)
-  end
-)
-        ;
-        (table.insert)(self._flyTaskIDList, taskID)
+  for i, v in ipairs(damageResultArray) do
+    local format = {}
+    local damageResult = v
+    local targetEntityID = damageResult:GetTargetID()
+    local targetEntity = world:GetEntityByID(targetEntityID)
+    if targetEntity then
+      local targetEntityPos = targetEntity:GetGridPosition()
+      if i ~= 1 then
+        YIELD(TT, self._intervalTime)
       end
+      local posStart = self._startPosList[posStartIndex]
+      if self:_TooClose(posStart, targetEntityPos) then
+        posStartIndex = posStartIndex + 1
+        posStart = self._startPosList[posStartIndex]
+        posStartIndex = posStartIndex + 1
+      else
+        posStartIndex = posStartIndex + 1
+      end
+      posStart = posStart or Vector(7, 7)
+      local taskID = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+        self:_PlayOneTrajectory(TT, i, v, posStart)
+      end)
+      table.insert(self._flyTaskIDList, taskID)
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(self._flyTaskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(self._flyTaskIDList) do
     YIELD(TT)
   end
+  YIELD(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillMultiRandomTrajectoryPhase._TooClose = function(self, posA, posB)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillMultiRandomTrajectoryPhase:_TooClose(posA, posB)
   local nearest = posA
   local relative = nearest - posB
-  local distance = (math.max)((math.abs)(relative.x), (math.abs)(relative.y))
+  local distance = math.max(math.abs(relative.x), math.abs(relative.y))
   if distance <= 1 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillMultiRandomTrajectoryPhase._PlayOneTrajectory = function(self, TT, index, damageResult, posStart)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillMultiRandomTrajectoryPhase:_PlayOneTrajectory(TT, index, damageResult, posStart)
   local targetEntityID = damageResult:GetTargetID()
-  local targetEntity = (self._world):GetEntityByID(targetEntityID)
+  local targetEntity = self._world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    return 
+    return
   end
   local targetPos = targetEntity:GetGridPosition()
   local dir = targetPos - posStart
   if targetPos == posStart then
     dir = Vector2(1, 0)
   end
-  local effectService = ((self._world):GetService("Effect"))
-  local startEffect = nil
-  if self._startPosEffectID and self._startPosEffectID > 0 then
+  local effectService = self._world:GetService("Effect")
+  local startEffect
+  if self._startPosEffectID and 0 < self._startPosEffectID then
     startEffect = effectService:CreateWorldPositionDirectionEffect(self._startPosEffectID, posStart, dir)
   end
   if not startEffect then
-    return 
+    return
   end
   local startEffectEntityID = startEffect:GetID()
   YIELD(TT, self._flyDelayTime)
-  local boardServiceRender = ((self._world):GetService("BoardRender"))
-  local bulletEffect = nil
-  if self._bulletEffectID and self._bulletEffectID > 0 then
-    local posBullet = nil
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local bulletEffect
+  if self._bulletEffectID and 0 < self._bulletEffectID then
+    local posBullet
     if self._bulletOffSetV3 then
-      local startEffectEntity = (self._world):GetEntityByID(startEffectEntityID)
+      local startEffectEntity = self._world:GetEntityByID(startEffectEntityID)
       if startEffectEntity then
-        local startEntityTransform = ((startEffect:View()):GetGameObject()).transform
+        local startEntityTransform = startEffect:View():GetGameObject().transform
         posBullet = startEntityTransform:TransformPoint(self._bulletOffSetV3)
       else
-        do
-          do
-            do
-              posBullet = boardServiceRender:GridPos2RenderPos(posStart)
-              posBullet = boardServiceRender:GridPos2RenderPos(posStart)
-              bulletEffect = effectService:CreatePositionEffect(self._bulletEffectID, posBullet)
-              bulletEffect:SetDirection(dir)
-              if not bulletEffect then
-                return 
-              end
-              local bulletEffectEntityID = bulletEffect:GetID()
-              local trajectoryObject = (bulletEffect:View()):GetGameObject()
-              local transWork = trajectoryObject.transform
-              local targetRenderPos = boardServiceRender:GridPos2RenderPos(targetPos)
-              ;
-              (transWork:DOMove(targetRenderPos, self._flyTime / 1000, false)):SetEase(((DG.Tweening).Ease).Linear)
-              YIELD(TT, self._flyTime)
-              self:_OnPlayHit(TT, damageResult, bulletEffectEntityID, targetEntity)
-            end
-          end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillMultiRandomTrajectoryPhase._OnPlayHit = function(self, TT, damageResult, bulletEffectEntityID, targetEntity)
-  -- function num : 0_3 , upvalues : _ENV
-  local effectEntity = (self._world):GetEntityByID(bulletEffectEntityID)
-  if effectEntity then
-    local go = (effectEntity:View()):GetGameObject()
-    local effectPos = (go.transform).position
-    local targetEntityID = targetEntity:GetID()
-    local effectService = (self._world):GetService("Effect")
-  end
-  do
-    local skillEffectResultContainer = ((self._casterEntity):SkillRoutine()):GetResultContainer()
-    local skillID = skillEffectResultContainer:GetSkillID()
-    local damageInfo = damageResult:GetDamageInfo(1)
-    local damageGridPos = damageResult:GetGridPos()
-    local playFinalAttack = false
-    local playSkillService = (self._world):GetService("PlaySkill")
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(self._casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(0)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
-    playSkillService:HandleBeHit(TT, beHitParam)
-    if self._hitSoundID and self._hitSoundID > 0 then
-      (AudioHelperController.PlayInnerGameSfx)(self._hitSoundID)
-    end
-    if self._destroyBulletDelay and self._destroyBulletDelay > 0 then
-      YIELD(TT, self._destroyBulletDelay)
-      local effectEntity = (self._world):GetEntityByID(bulletEffectEntityID)
-      if effectEntity then
-        (self._world):DestroyEntity(effectEntity)
+        posBullet = boardServiceRender:GridPos2RenderPos(posStart)
       end
     else
-      do
-        local effectEntity = (self._world):GetEntityByID(bulletEffectEntityID)
-        if effectEntity then
-          (self._world):DestroyEntity(effectEntity)
-        end
-      end
+      posBullet = boardServiceRender:GridPos2RenderPos(posStart)
+    end
+    bulletEffect = effectService:CreatePositionEffect(self._bulletEffectID, posBullet)
+    bulletEffect:SetDirection(dir)
+  end
+  if not bulletEffect then
+    return
+  end
+  local bulletEffectEntityID = bulletEffect:GetID()
+  local trajectoryObject = bulletEffect:View():GetGameObject()
+  local transWork = trajectoryObject.transform
+  local targetRenderPos = boardServiceRender:GridPos2RenderPos(targetPos)
+  transWork:DOMove(targetRenderPos, self._flyTime / 1000, false):SetEase(DG.Tweening.Ease.Linear)
+  YIELD(TT, self._flyTime)
+  self:_OnPlayHit(TT, damageResult, bulletEffectEntityID, targetEntity)
+end
+
+function PlaySkillMultiRandomTrajectoryPhase:_OnPlayHit(TT, damageResult, bulletEffectEntityID, targetEntity)
+  local effectEntity = self._world:GetEntityByID(bulletEffectEntityID)
+  if effectEntity then
+    local go = effectEntity:View():GetGameObject()
+    local effectPos = go.transform.position
+    local targetEntityID = targetEntity:GetID()
+    local effectService = self._world:GetService("Effect")
+  end
+  local skillEffectResultContainer = self._casterEntity:SkillRoutine():GetResultContainer()
+  local skillID = skillEffectResultContainer:GetSkillID()
+  local damageInfo = damageResult:GetDamageInfo(1)
+  local damageGridPos = damageResult:GetGridPos()
+  local playFinalAttack = false
+  local playSkillService = self._world:GetService("PlaySkill")
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(self._casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(0):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID)
+  playSkillService:HandleBeHit(TT, beHitParam)
+  if self._hitSoundID and 0 < self._hitSoundID then
+    AudioHelperController.PlayInnerGameSfx(self._hitSoundID)
+  end
+  if self._destroyBulletDelay and 0 < self._destroyBulletDelay then
+    YIELD(TT, self._destroyBulletDelay)
+    local effectEntity = self._world:GetEntityByID(bulletEffectEntityID)
+    if effectEntity then
+      self._world:DestroyEntity(effectEntity)
+    end
+  else
+    local effectEntity = self._world:GetEntityByID(bulletEffectEntityID)
+    if effectEntity then
+      self._world:DestroyEntity(effectEntity)
     end
   end
 end
-
-

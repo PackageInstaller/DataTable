@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_in_trap_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterInTrapPosInstruction", BaseInstruction)
 PlayCasterInTrapPosInstruction = PlayCasterInTrapPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterInTrapPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterInTrapPosInstruction:Constructor(paramList)
   self._trapID = tonumber(paramList.trapID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterInTrapPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayCasterInTrapPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local world = casterEntity:GetOwnerWorld()
   self._world = world
   local boardServiceRender = world:GetService("BoardRender")
@@ -25,17 +15,17 @@ PlayCasterInTrapPosInstruction.DoInstruction = function(self, TT, casterEntity, 
   local utilDataSvc = world:GetService("UtilData")
   local trapEntityList = utilDataSvc:FindDontNeedAliveTrapByTrapID(self._trapID)
   if not trapEntityList or #trapEntityList == 0 then
-    return 
+    return
   end
-  local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-  local teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
-  local pets = (teamEntity:Team()):GetTeamPetEntities()
+  local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+  local teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
+  local pets = teamEntity:Team():GetTeamPetEntities()
   local trapEntityID = trapEntityList[#trapEntityList]
-  local trapEntity = (self._world):GetEntityByID(trapEntityID)
+  local trapEntity = self._world:GetEntityByID(trapEntityID)
   local trapPos = boardServiceRender:GetRealEntityGridPos(trapEntity)
   local dir = sourcePos - trapPos
   casterEntity:SetLocation(trapPos, dir)
-  for i,petEntity in ipairs(pets) do
+  for i, petEntity in ipairs(pets) do
     if petEntity:GetID() ~= casterEntity:GetID() then
       petEntity:SetViewVisible(false)
     else
@@ -43,5 +33,3 @@ PlayCasterInTrapPosInstruction.DoInstruction = function(self, TT, casterEntity, 
     end
   end
 end
-
-

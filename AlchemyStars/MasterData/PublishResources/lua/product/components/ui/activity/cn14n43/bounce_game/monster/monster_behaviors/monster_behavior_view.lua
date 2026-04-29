@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_view.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_behavior_base")
 _class("MonsterBeHaviorView", MonsterBeHaviorBase)
 MonsterBeHaviorView = MonsterBeHaviorView
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorView.Constructor = function(self)
-  -- function num : 0_0
+function MonsterBeHaviorView:Constructor()
   self._gameObject = nil
   self._resRequest = nil
   self._gameObjectRt = nil
@@ -17,41 +10,26 @@ MonsterBeHaviorView.Constructor = function(self)
   self._change = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.Name = function(self)
-  -- function num : 0_1
+function MonsterBeHaviorView:Name()
   return "MonsterBeHaviorView"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.GetGameObject = function(self)
-  -- function num : 0_2
+function MonsterBeHaviorView:GetGameObject()
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.OnInit = function(self, param)
-  -- function num : 0_3
+function MonsterBeHaviorView:OnInit(param)
   self.resId = param.ResId
   self._change = false
   self._boxRect = {}
   self:LoadRes(self.resId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.GetAttackedLength = function(self)
-  -- function num : 0_4
-  return (self.resCfg).BeAttackedDuration
+function MonsterBeHaviorView:GetAttackedLength()
+  return self.resCfg.BeAttackedDuration
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.ChgRes = function(self, newResId)
-  -- function num : 0_5 , upvalues : _ENV
+function MonsterBeHaviorView:ChgRes(newResId)
   self:OnRelease()
   self:LoadRes(newResId)
   self:SetParent(self._parent)
@@ -66,12 +44,9 @@ MonsterBeHaviorView.ChgRes = function(self, newResId)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.OnShow = function(self)
-  -- function num : 0_6
+function MonsterBeHaviorView:OnShow()
   if self._gameObject then
-    (self._gameObject):SetActive(true)
+    self._gameObject:SetActive(true)
   end
   if self._change then
     self:Release()
@@ -80,47 +55,35 @@ MonsterBeHaviorView.OnShow = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.OnReset = function(self)
-  -- function num : 0_7
+function MonsterBeHaviorView:OnReset()
   if self._gameObject then
-    (self._gameObject):SetActive(false)
+    self._gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.OnRelease = function(self)
-  -- function num : 0_8
+function MonsterBeHaviorView:OnRelease()
   if self._resRequest then
-    (self._resRequest):Dispose()
+    self._resRequest:Dispose()
     self._resRequest = nil
   end
   self._gameObject = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.GetBox = function(self, name)
-  -- function num : 0_9
+function MonsterBeHaviorView:GetBox(name)
   if self._gameObject == nil then
     return nil
   end
-  local tran = (self._gameObject).transform
+  local tran = self._gameObject.transform
   return tran:Find("box/" .. name)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.GetRect = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local rectData = (self._boxRect).box
+function MonsterBeHaviorView:GetRect()
+  local rectData = self._boxRect.box
   if not rectData then
     local boxRt = self:GetBox("box")
     if not boxRt then
-      (Log.error)("MonsterBeHaviorView no box/box " .. self.resId)
-      return 
+      Log.error("MonsterBeHaviorView no box/box " .. self.resId)
+      return
     end
     rectData = {}
     local originRect = boxRt.rect
@@ -128,114 +91,80 @@ MonsterBeHaviorView.GetRect = function(self)
     rectData[1] = originRect
     rectData[2] = originRect.x + originPos.x
     rectData[3] = originRect.y + originPos.y
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._boxRect).box = rectData
+    self._boxRect.box = rectData
   end
-  do
-    local monserPos = (self._gameObjectRt).anchoredPosition
-    local retRect = rectData[1]
-    retRect.x = rectData[2] + (self._boxRootPos).x + monserPos.x
-    retRect.y = rectData[3] + (self._boxRootPos).y + monserPos.y
-    return retRect
-  end
+  local monserPos = self._gameObjectRt.anchoredPosition
+  local retRect = rectData[1]
+  retRect.x = rectData[2] + self._boxRootPos.x + monserPos.x
+  retRect.y = rectData[3] + self._boxRootPos.y + monserPos.y
+  return retRect
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.GetBounceRect = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function MonsterBeHaviorView:GetBounceRect()
   if not self._gameObjectRt then
-    return 
+    return
   end
   if not self.boucneRect then
-    self.boucneRect = BounceRect:New((self._gameObjectRt).anchoredPosition, (self._gameObjectRt).sizeDelta)
+    self.boucneRect = BounceRect:New(self._gameObjectRt.anchoredPosition, self._gameObjectRt.sizeDelta)
   else
-    ;
-    (self.boucneRect):ChgPosition((self._gameObjectRt).anchoredPosition)
+    self.boucneRect:ChgPosition(self._gameObjectRt.anchoredPosition)
   end
   return self.boucneRect
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.SetPosition = function(self, pos)
-  -- function num : 0_12
+function MonsterBeHaviorView:SetPosition(pos)
   if not self._gameObjectRt then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._gameObjectRt).anchoredPosition = pos
+  self._gameObjectRt.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.GetPosition = function(self)
-  -- function num : 0_13
+function MonsterBeHaviorView:GetPosition()
   if not self._gameObjectRt then
-    return 
+    return
   end
-  return (self._gameObjectRt).anchoredPosition
+  return self._gameObjectRt.anchoredPosition
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.SetParent = function(self, parent)
-  -- function num : 0_14 , upvalues : _ENV
+function MonsterBeHaviorView:SetParent(parent)
   if self._gameObject == nil then
-    return 
+    return
   end
   self._parent = parent
-  ;
-  ((self._gameObject).transform):SetParent(parent)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._gameObject).transform).localScale = Vector3(1, 1, 1)
+  self._gameObject.transform:SetParent(parent)
+  self._gameObject.transform.localScale = Vector3(1, 1, 1)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.LoadRes = function(self, resId)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg = (Cfg.cfg_bounce_monster_res)[resId]
+function MonsterBeHaviorView:LoadRes(resId)
+  local cfg = Cfg.cfg_bounce_monster_res[resId]
   self.resCfg = cfg
   if cfg == nil then
-    (Log.fatal)("[bounce]加载怪物资源配置失败:" .. resId)
-    return 
+    Log.fatal("[bounce]加载怪物资源配置失败:" .. resId)
+    return
   end
-  self._resRequest = (ResourceManager:GetInstance()):SyncLoadAsset(cfg.Name, LoadType.GameObject)
-  if not self._resRequest or not (self._resRequest).Obj then
-    (Log.fatal)("[bounce]加载怪物资源失败" .. resId)
-    return 
+  self._resRequest = ResourceManager:GetInstance():SyncLoadAsset(cfg.Name, LoadType.GameObject)
+  if not self._resRequest or not self._resRequest.Obj then
+    Log.fatal("[bounce]加载怪物资源失败" .. resId)
+    return
   end
-  self._gameObject = (self._resRequest).Obj
-  self._gameObjectRt = (self._gameObject):GetComponent("RectTransform")
-  ;
-  (self._gameObject):SetActive(true)
-  self._boxRootRt = ((self._gameObject).transform):Find("box")
-  self._boxRootPos = (self._boxRootRt).anchoredPosition
+  self._gameObject = self._resRequest.Obj
+  self._gameObjectRt = self._gameObject:GetComponent("RectTransform")
+  self._gameObject:SetActive(true)
+  self._boxRootRt = self._gameObject.transform:Find("box")
+  self._boxRootPos = self._boxRootRt.anchoredPosition
   self._boxRect = {}
   if BounceDebug.ShowObjRect then
     self:InitDebugRect()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorView.InitDebugRect = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function MonsterBeHaviorView:InitDebugRect()
   local rectRt = self:GetBox("box")
   if not rectRt then
-    return 
+    return
   end
-  local image = (rectRt.gameObject):AddComponent(typeof((UnityEngine.UI).Image))
+  local image = rectRt.gameObject:AddComponent(typeof(UnityEngine.UI.Image))
   if image then
     image.color = Color(0, 1, 0, 0.4)
   end
 end
-
-

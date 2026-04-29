@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/common/collages/ui_season_season_collage_music_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonSeasonCollageMusicItem", UICustomWidget)
 UISeasonSeasonCollageMusicItem = UISeasonSeasonCollageMusicItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonSeasonCollageMusicItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonSeasonCollageMusicItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageMusicItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonSeasonCollageMusicItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.musicName = self:GetUIComponent("UILocalizationText", "musicName")
   self.author = self:GetUIComponent("UILocalizationText", "author")
@@ -29,134 +19,72 @@ UISeasonSeasonCollageMusicItem.InitWidget = function(self)
   self._atlas = self:GetAsset("UISeasonCollages.spriteatlas", LoadType.SpriteAtlas)
   self._light = self:GetGameObject("Light")
   self._disc = self:GetUIComponent("RectTransform", "Disc")
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self._playingEff = self:GetUIComponent("RawImage", "eff_yinpu")
-  self._playingMat = (self._playingEff).material
+  self._playingMat = self._playingEff.material
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageMusicItem.SetData = function(self, data, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonSeasonCollageMusicItem:SetData(data, onClick)
   self._data = data
   self._onClick = onClick
-  self:SetNew((self._data):IsNew())
-  if not (self._data):IsValid() then
-    (Log.exception)("音乐未解锁无法显示:", (self._data):ID())
+  self:SetNew(self._data:IsNew())
+  if not self._data:IsValid() then
+    Log.exception("音乐未解锁无法显示:", self._data:ID())
   end
-  local cfg = (Cfg.cfg_role_music)[(self._data):ID()]
-  if (self._data):IsUnlock() then
-    (self.unlock):SetActive(true)
-    ;
-    (self.lock):SetActive(false)
-    ;
-    (self.musicName):SetText((StringTable.Get)(cfg.Name))
-    ;
-    (self.author):SetText((StringTable.Get)(cfg.Author))
-    ;
-    (self.icon):LoadImage(cfg.Icon)
+  local cfg = Cfg.cfg_role_music[self._data:ID()]
+  if self._data:IsUnlock() then
+    self.unlock:SetActive(true)
+    self.lock:SetActive(false)
+    self.musicName:SetText(StringTable.Get(cfg.Name))
+    self.author:SetText(StringTable.Get(cfg.Author))
+    self.icon:LoadImage(cfg.Icon)
   else
-    ;
-    (self.unlock):SetActive(false)
-    ;
-    (self.lock):SetActive(true)
-    ;
-    (self.condition):SetText((StringTable.Get)(cfg.UnLockDes))
+    self.unlock:SetActive(false)
+    self.lock:SetActive(true)
+    self.condition:SetText(StringTable.Get(cfg.UnLockDes))
   end
   self:Deselect()
-  ;
-  (self._anim):Play("uieffanim_UISeasonS3CollageMusicItem_in")
+  self._anim:Play("uieffanim_UISeasonS3CollageMusicItem_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageMusicItem.SetNew = function(self, new)
-  -- function num : 0_3
-  (self.new):SetActive(new)
+function UISeasonSeasonCollageMusicItem:SetNew(new)
+  self.new:SetActive(new)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageMusicItem.Select = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._bg).sprite = (self._atlas):GetSprite("exp_tongyong_book_fengmian_2")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._mask).sprite = (self._atlas):GetSprite("exp_tongyong_book_fengmian_1")
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.musicName).color = Color(1, 1, 1, 1)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.author).color = Color(0.812, 0.702, 0.494, 1)
-  ;
-  (self._light):SetActive(true)
-  ;
-  (self._anim):Stop()
-  ;
-  (self._anim):Play("uieffanim_UISeasonS3CollageMusicItem_play")
+function UISeasonSeasonCollageMusicItem:Select()
+  self._bg.sprite = self._atlas:GetSprite("exp_tongyong_book_fengmian_2")
+  self._mask.sprite = self._atlas:GetSprite("exp_tongyong_book_fengmian_1")
+  self.musicName.color = Color(1.0, 1.0, 1.0, 1)
+  self.author.color = Color(0.812, 0.702, 0.494, 1)
+  self._light:SetActive(true)
+  self._anim:Stop()
+  self._anim:Play("uieffanim_UISeasonS3CollageMusicItem_play")
   self:PlayEft()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageMusicItem.Deselect = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._bg).sprite = (self._atlas):GetSprite("exp_tongyong_book_fengmian_4")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._mask).sprite = (self._atlas):GetSprite("exp_tongyong_book_fengmian_3")
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.musicName).color = Color(0.871, 0.694, 0.494, 1)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.author).color = Color(0.847, 0.847, 0.847, 1)
-  ;
-  (self._light):SetActive(false)
-  ;
-  (self._anim):Stop()
-  ;
-  (self._anim):Play("uieffanim_UISeasonS3CollageMusicItem_stop")
+function UISeasonSeasonCollageMusicItem:Deselect()
+  self._bg.sprite = self._atlas:GetSprite("exp_tongyong_book_fengmian_4")
+  self._mask.sprite = self._atlas:GetSprite("exp_tongyong_book_fengmian_3")
+  self.musicName.color = Color(0.871, 0.694, 0.494, 1)
+  self.author.color = Color(0.847, 0.847, 0.847, 1)
+  self._light:SetActive(false)
+  self._anim:Stop()
+  self._anim:Play("uieffanim_UISeasonS3CollageMusicItem_stop")
   self:PauseEft()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageMusicItem.PlayEft = function(self)
-  -- function num : 0_6
-  (self._playingMat):SetFloat("_Speed", 12)
+function UISeasonSeasonCollageMusicItem:PlayEft()
+  self._playingMat:SetFloat("_Speed", 12)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageMusicItem.PauseEft = function(self)
-  -- function num : 0_7
-  (self._playingMat):SetFloat("_Speed", 0)
+function UISeasonSeasonCollageMusicItem:PauseEft()
+  self._playingMat:SetFloat("_Speed", 0)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageMusicItem.RootOnClick = function(self, go)
-  -- function num : 0_8
-  (self._onClick)(self._data)
+function UISeasonSeasonCollageMusicItem:RootOnClick(go)
+  self._onClick(self._data)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonSeasonCollageMusicItem.PlayExitAnim = function(self)
-  -- function num : 0_9
-  (self._anim):Stop()
+function UISeasonSeasonCollageMusicItem:PlayExitAnim()
+  self._anim:Stop()
 end
-
-

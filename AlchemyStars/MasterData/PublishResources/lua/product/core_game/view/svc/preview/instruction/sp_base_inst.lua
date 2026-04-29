@@ -1,38 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_base_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPreviewBaseInstruction", Object)
 SkillPreviewBaseInstruction = SkillPreviewBaseInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewBaseInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewBaseInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewBaseInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewBaseInstruction:DoInstruction(TT, casterEntity, previewContext)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewBaseInstruction.GetCacheResource = function(self)
-  -- function num : 0_2
+function SkillPreviewBaseInstruction:GetCacheResource()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewBaseInstruction.GetCacheAudio = function(self)
-  -- function num : 0_3
+function SkillPreviewBaseInstruction:GetCacheAudio()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewBaseInstruction.GetCacheVoice = function(self)
-  -- function num : 0_4
+function SkillPreviewBaseInstruction:GetCacheVoice()
 end
-
-

@@ -1,112 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/new/award/ui_draw_card_award_button.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardButton", UICustomWidget)
 UIDrawCardAwardButton = UIDrawCardAwardButton
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardButton.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardAwardButton:OnShow(uiParam)
   self:GetComponents()
   self:AttachEvent(GameEventType.OnDrawCardGetAward, self.RefreshInfo)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardButton.GetComponents = function(self)
-  -- function num : 0_1
+function UIDrawCardAwardButton:GetComponents()
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._num = self:GetUIComponent("UILocalizationText", "num")
   self._rate = self:GetUIComponent("UILocalizationText", "rate")
   self._getEffObj = self:GetGameObject("getEff")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardButton.SetData = function(self, comp)
-  -- function num : 0_2
+function UIDrawCardAwardButton:SetData(comp)
   self._comp = comp
   self:RefreshInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardButton.RefreshInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDrawCardAwardButton:RefreshInfo()
   if not self._comp then
-    return 
+    return
   end
   local curQuest, preQuest = self:GetCurQuest()
-  local curAward = ((curQuest._questInfo).rewards)[1]
+  local curAward = curQuest._questInfo.rewards[1]
   local finalQuest = self:GetFinalQuest()
   if curQuest == preQuest then
-    (self._rate):SetText((StringTable.Get)("str_aircraft_tactic_rank_btn_finish"))
+    self._rate:SetText(StringTable.Get("str_aircraft_tactic_rank_btn_finish"))
   else
-    local finalProgress = (finalQuest._questInfo).cur_progress
-    local targetProgress = (curQuest._questInfo).total_progress
+    local finalProgress = finalQuest._questInfo.cur_progress
+    local targetProgress = curQuest._questInfo.total_progress
     local progress = finalProgress .. "/" .. targetProgress
-    ;
-    (self._rate):SetText(progress)
+    self._rate:SetText(progress)
   end
-  do
-    ;
-    (self._getEffObj):SetActive((curQuest._questInfo).status == QuestStatus.QUEST_Completed)
-    local itemCfg = (Cfg.cfg_item)[curAward.assetid]
-    ;
-    (self._icon):LoadImage(itemCfg.Icon)
-    ;
-    (self._num):SetText("×" .. curAward.count)
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  self._getEffObj:SetActive(curQuest._questInfo.status == QuestStatus.QUEST_Completed)
+  local itemCfg = Cfg.cfg_item[curAward.assetid]
+  self._icon:LoadImage(itemCfg.Icon)
+  self._num:SetText("×" .. curAward.count)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardButton.BtnAwardOnClick = function(self)
-  -- function num : 0_4
-  local questList = (self._comp):GetQuestInfo()
+function UIDrawCardAwardButton:BtnAwardOnClick()
+  local questList = self._comp:GetQuestInfo()
   self:ShowDialog("UIDrawCardAwardController", questList, self._comp)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardButton.GetCurQuest = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local curQuest, preQuest = nil, nil
-  local questList = (self._comp):GetQuestInfo()
-  for _,quest in pairs(questList) do
-    if (quest._questInfo).status < QuestStatus.QUEST_Completed then
+function UIDrawCardAwardButton:GetCurQuest()
+  local curQuest, preQuest
+  local questList = self._comp:GetQuestInfo()
+  for _, quest in pairs(questList) do
+    if quest._questInfo.status < QuestStatus.QUEST_Completed then
+      curQuest = quest
+      break
+    elseif quest._questInfo.status == QuestStatus.QUEST_Completed then
       curQuest = quest
       break
     else
-      if (quest._questInfo).status == QuestStatus.QUEST_Completed then
-        curQuest = quest
-        break
-      else
-        preQuest = quest
-      end
+      preQuest = quest
     end
   end
-  do
-    do
-      if not curQuest then
-        local len = (table.count)(questList)
-        curQuest = questList[len]
-        preQuest = curQuest
-      end
-      return curQuest, preQuest
-    end
+  if not curQuest then
+    local len = table.count(questList)
+    curQuest = questList[len]
+    preQuest = curQuest
   end
+  return curQuest, preQuest
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardButton.GetFinalQuest = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local questList = (self._comp):GetQuestInfo()
-  return questList[(table.count)(questList)]
+function UIDrawCardAwardButton:GetFinalQuest()
+  local questList = self._comp:GetQuestInfo()
+  return questList[table.count(questList)]
 end
-
-

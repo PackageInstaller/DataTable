@@ -1,35 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_isolate_convert.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_IsolateConvert", SkillEffectParamBase)
 SkillEffectParam_IsolateConvert = SkillEffectParam_IsolateConvert
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_IsolateConvert.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  if not t.pattern then
-    self._pattern = {1, 2, 3, 4, 1, 2, 3, 4}
-    if type(self._pattern) ~= "table" or #self._pattern < 8 then
-      (Log.exception)(self._className, "请检查pattern参数")
-    end
+function SkillEffectParam_IsolateConvert:Constructor(t)
+  self._pattern = t.pattern or {
+    1,
+    2,
+    3,
+    4,
+    1,
+    2,
+    3,
+    4
+  }
+  if type(self._pattern) ~= "table" or #self._pattern < 8 then
+    Log.exception(self._className, "请检查pattern参数")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_IsolateConvert.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_IsolateConvert:GetEffectType()
   return SkillEffectType.IsolateConvert
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_IsolateConvert.GetPattern = function(self)
-  -- function num : 0_2
+function SkillEffectParam_IsolateConvert:GetPattern()
   return self._pattern
 end
-
-

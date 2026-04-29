@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_coffin_musume_change_def.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultCoffinMusumeChangeDefenceByCandle", BuffResultBase)
 BuffResultCoffinMusumeChangeDefenceByCandle = BuffResultCoffinMusumeChangeDefenceByCandle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCoffinMusumeChangeDefenceByCandle.Constructor = function(self, tLightCandleID, uiText, val)
-  -- function num : 0_0
+function BuffResultCoffinMusumeChangeDefenceByCandle:Constructor(tLightCandleID, uiText, val)
   self._tLightCandleID = tLightCandleID
   self._uiText = uiText or "str_battle_harm_reduction"
   self._val = val
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeChangeDefenceByCandle.GetLightCandleIDs = function(self)
-  -- function num : 0_1
+function BuffResultCoffinMusumeChangeDefenceByCandle:GetLightCandleIDs()
   return self._tLightCandleID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeChangeDefenceByCandle.GetLightCandleCount = function(self)
-  -- function num : 0_2
+function BuffResultCoffinMusumeChangeDefenceByCandle:GetLightCandleCount()
   return #self._tLightCandleID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeChangeDefenceByCandle.GetHarmReduction = function(self)
-  -- function num : 0_3
+function BuffResultCoffinMusumeChangeDefenceByCandle:GetHarmReduction()
   return self._val
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCoffinMusumeChangeDefenceByCandle.GetUIText = function(self)
-  -- function num : 0_4
+function BuffResultCoffinMusumeChangeDefenceByCandle:GetUIText()
   return self._uiText
 end
-
-

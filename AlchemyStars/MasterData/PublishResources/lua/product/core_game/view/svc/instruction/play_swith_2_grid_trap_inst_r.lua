@@ -1,43 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_swith_2_grid_trap_inst_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySwitch2GridTrapInstruction", BaseInstruction)
 PlaySwitch2GridTrapInstruction = PlaySwitch2GridTrapInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySwitch2GridTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlaySwitch2GridTrapInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySwitch2GridTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySwitch2GridTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playBuffService = world:GetService("PlayBuff")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Switch2GridTrap)
   if resultArray == nil then
-    (Log.fatal)("add buff instruction ,buff result is nil")
-    return 
+    Log.fatal("add buff instruction ,buff result is nil")
+    return
   end
   local trapServiceRender = world:GetService("TrapRender")
   local pieceService = world:GetService("Piece")
   local utilDataSvc = world:GetService("UtilData")
-  for _,v in pairs(resultArray) do
+  for _, v in pairs(resultArray) do
     local data = v:GetData()
-    for i,v in ipairs(data) do
+    for i, v in ipairs(data) do
       local targetEntity = world:GetEntityByID(v.targetID)
       targetEntity:SetPosition(v.posNew)
     end
     local scopeRange = v:GetScopeRange()
-    for _,pos in ipairs(scopeRange) do
+    for _, pos in ipairs(scopeRange) do
       pieceService:ResetPieceEffectRender(pos)
     end
   end
 end
-
-

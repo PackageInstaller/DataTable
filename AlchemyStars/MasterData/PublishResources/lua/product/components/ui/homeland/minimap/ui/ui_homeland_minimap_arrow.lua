@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/ui_homeland_minimap_arrow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapArrow", UICustomWidget)
 UIHomelandMinimapArrow = UIHomelandMinimapArrow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapArrow.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapArrow:OnShow()
   self._go = self:GetGameObject("Arrow")
   self._arrowTran = self:GetUIComponent("RectTransform", "Arrow")
   self._iconArrowTran = self:GetUIComponent("RectTransform", "Icons")
@@ -18,167 +11,100 @@ UIHomelandMinimapArrow.OnShow = function(self)
   self._iconTran = self:GetUIComponent("RectTransform", "Icon")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapArrow.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandMinimapArrow:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapArrow.Update = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMinimapArrow:Update()
   if not self._iconData then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(false)
-  local container = (self._iconData):GetIconContainer()
+  self._go:SetActive(false)
+  local container = self._iconData:GetIconContainer()
   local position = container:GetIconPosition()
-  if (self._iconData):GetMinimapStatus() == MinimapStatus.Big then
-    if not (self._iconData):CanShow((self._iconData):GetMapScale()) then
-      (self._go):SetActive(false)
-      return 
+  if self._iconData:GetMinimapStatus() == MinimapStatus.Big then
+    if not self._iconData:CanShow(self._iconData:GetMapScale()) then
+      self._go:SetActive(false)
+      return
     end
-    local width, height = (self._iconData):GetScreenInfo()
+    local width, height = self._iconData:GetScreenInfo()
     local minBorderPos = Vector2(-width / 2, -height / 2)
     local maxBorderPos = Vector2(width / 2, height / 2)
     local iconWidth = 40
-    if position.x < minBorderPos.x - iconWidth / 2 or maxBorderPos.x + iconWidth / 2 < position.x or position.y < minBorderPos.y - iconWidth / 2 or maxBorderPos.y + iconWidth / 2 < position.y then
-      (self._go):SetActive(true)
-      ;
-      (self:GetGameObject("Bg")):SetActive(true)
-      ;
-      (self._otherArrow):SetActive(true)
+    if position.x < minBorderPos.x - iconWidth / 2 or position.x > maxBorderPos.x + iconWidth / 2 or position.y < minBorderPos.y - iconWidth / 2 or position.y > maxBorderPos.y + iconWidth / 2 then
+      self._go:SetActive(true)
+      self:GetGameObject("Bg"):SetActive(true)
+      self._otherArrow:SetActive(true)
       local pos = Vector2()
       local tan1 = height / width
-      local tan2 = (math.abs)(position.y) / (math.abs)(position.x)
+      local tan2 = math.abs(position.y) / math.abs(position.x)
       if tan1 < tan2 then
-        pos.y = position.y / (math.abs)(position.y) * height / 2
+        pos.y = position.y / math.abs(position.y) * height / 2
         pos.x = pos.y / position.y * position.x
-      else
-        if tan2 <= tan1 then
-          pos.x = position.x / (math.abs)(position.x) * width / 2
-          pos.y = pos.x / position.x * position.y
-        end
+      elseif tan1 >= tan2 then
+        pos.x = position.x / math.abs(position.x) * width / 2
+        pos.y = pos.x / position.x * position.y
       end
-      -- DECOMPILER ERROR at PC137: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._arrowTran).anchoredPosition = pos
-      local rot = (Quaternion.FromToRotation)(Vector3.up, container:GetIconWorldPosition() - (self._arrowTran).position)
-      -- DECOMPILER ERROR at PC149: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._arrowTran).rotation = rot
-      -- DECOMPILER ERROR at PC158: Confused about usage of register: R12 in 'UnsetPending'
-
-      if (self._iconData):IsArrowIconRotation() then
-        (self._iconArrowTran).eulerAngles = container:GetIconRotation()
+      self._arrowTran.anchoredPosition = pos
+      local rot = Quaternion.FromToRotation(Vector3.up, container:GetIconWorldPosition() - self._arrowTran.position)
+      self._arrowTran.rotation = rot
+      if self._iconData:IsArrowIconRotation() then
+        self._iconArrowTran.eulerAngles = container:GetIconRotation()
       else
-        -- DECOMPILER ERROR at PC166: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._iconArrowTran).eulerAngles = Vector3(0, 0, 0)
+        self._iconArrowTran.eulerAngles = Vector3(0, 0, 0)
       end
-      -- DECOMPILER ERROR at PC171: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._iconTran).anchoredPosition = (self._iconData):GetArrowIconOffset()
-      -- DECOMPILER ERROR at PC176: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._iconTran).sizeDelta = (self._iconData):GetArrowIconSize()
+      self._iconTran.anchoredPosition = self._iconData:GetArrowIconOffset()
+      self._iconTran.sizeDelta = self._iconData:GetArrowIconSize()
     else
-      do
-        do
-          ;
-          (self._go):SetActive(false)
-          if (self._iconData):GetMinimapStatus() == MinimapStatus.Mini and (self._iconData):GetId() == HomelandMapIconType.TracePoint then
-            if not (self._iconData):CanShow((self._iconData):GetMapScale()) then
-              (self._go):SetActive(false)
-              return 
-            end
-            local width, height = (self._iconData):GetScreenInfo()
-            local iconWidth = 40
-            if iconWidth / 2 * (iconWidth / 2) < position.x * position.x + position.y * position.y then
-              (self._go):SetActive(true)
-              ;
-              (self:GetGameObject("Bg")):SetActive(false)
-              ;
-              (self._otherArrow):SetActive(false)
-              local rw = width / 2
-              local rh = height / 2
-              local pos = position.normalized
-              if pos then
-                pos.y = pos.y * rw
-                pos.x = pos.x * rh
-              end
-              -- DECOMPILER ERROR at PC251: Confused about usage of register: R9 in 'UnsetPending'
-
-              ;
-              (self._arrowTran).anchoredPosition = pos
-              local rot = (Quaternion.FromToRotation)(Vector3.up, container:GetIconWorldPosition() - (self._arrowTran).position)
-              -- DECOMPILER ERROR at PC263: Confused about usage of register: R10 in 'UnsetPending'
-
-              ;
-              (self._arrowTran).rotation = rot
-              -- DECOMPILER ERROR at PC272: Confused about usage of register: R10 in 'UnsetPending'
-
-              if (self._iconData):IsArrowIconRotation() then
-                (self._iconArrowTran).eulerAngles = container:GetIconRotation()
-              else
-                -- DECOMPILER ERROR at PC280: Confused about usage of register: R10 in 'UnsetPending'
-
-                ;
-                (self._iconArrowTran).eulerAngles = Vector3(0, 0, 0)
-              end
-              -- DECOMPILER ERROR at PC285: Confused about usage of register: R10 in 'UnsetPending'
-
-              ;
-              (self._iconTran).anchoredPosition = (self._iconData):GetArrowIconOffset()
-              -- DECOMPILER ERROR at PC290: Confused about usage of register: R10 in 'UnsetPending'
-
-              ;
-              (self._iconTran).sizeDelta = (self._iconData):GetArrowIconSize()
-            else
-              do
-                ;
-                (self._go):SetActive(false)
-              end
-            end
-          end
-        end
+      self._go:SetActive(false)
+    end
+  end
+  if self._iconData:GetMinimapStatus() == MinimapStatus.Mini and self._iconData:GetId() == HomelandMapIconType.TracePoint then
+    if not self._iconData:CanShow(self._iconData:GetMapScale()) then
+      self._go:SetActive(false)
+      return
+    end
+    local width, height = self._iconData:GetScreenInfo()
+    local iconWidth = 40
+    if position.x * position.x + position.y * position.y > iconWidth / 2 * (iconWidth / 2) then
+      self._go:SetActive(true)
+      self:GetGameObject("Bg"):SetActive(false)
+      self._otherArrow:SetActive(false)
+      local rw = width / 2
+      local rh = height / 2
+      local pos = position.normalized
+      if pos then
+        pos.y = pos.y * rw
+        pos.x = pos.x * rh
       end
+      self._arrowTran.anchoredPosition = pos
+      local rot = Quaternion.FromToRotation(Vector3.up, container:GetIconWorldPosition() - self._arrowTran.position)
+      self._arrowTran.rotation = rot
+      if self._iconData:IsArrowIconRotation() then
+        self._iconArrowTran.eulerAngles = container:GetIconRotation()
+      else
+        self._iconArrowTran.eulerAngles = Vector3(0, 0, 0)
+      end
+      self._iconTran.anchoredPosition = self._iconData:GetArrowIconOffset()
+      self._iconTran.sizeDelta = self._iconData:GetArrowIconSize()
+    else
+      self._go:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapArrow.Refresh = function(self, iconData)
-  -- function num : 0_3
+function UIHomelandMinimapArrow:Refresh(iconData)
   self._iconData = iconData
-  if (self._iconData):IsPlayer() then
-    (self._playerArrow):SetActive(true)
-    ;
-    (self._otherArrow):SetActive(false)
+  if self._iconData:IsPlayer() then
+    self._playerArrow:SetActive(true)
+    self._otherArrow:SetActive(false)
   else
-    ;
-    (self._playerArrow):SetActive(false)
-    ;
-    (self._otherArrow):SetActive(true)
+    self._playerArrow:SetActive(false)
+    self._otherArrow:SetActive(true)
   end
-  ;
-  (self._iconLoader):LoadImage((self._iconData):GetArrowIcon())
+  self._iconLoader:LoadImage(self._iconData:GetArrowIcon())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapArrow.SetStatus = function(self, status)
-  -- function num : 0_4
-  (self._go):SetActive(status)
+function UIHomelandMinimapArrow:SetStatus(status)
+  self._go:SetActive(status)
 end
-
-

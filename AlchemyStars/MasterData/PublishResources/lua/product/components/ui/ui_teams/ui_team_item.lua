@@ -1,29 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_team_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITeamItem", UICustomWidget)
 UITeamItem = UITeamItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITeamItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UITeamItem:OnShow()
   self._card = self:GetUIComponent("UISelectObjectPath", "card")
   self._cardGo = self:GetGameObject("card")
   self._imgBG = self:GetGameObject("imgBG")
   self._interactableImg = self:GetUIComponent("Image", "imgBG")
   self._imgMask = self:GetGameObject("imgMask")
-  ;
-  (self._imgMask):SetActive(false)
-  self._tran = (self:GetGameObject()):GetComponent("RectTransform")
+  self._imgMask:SetActive(false)
+  self._tran = self:GetGameObject():GetComponent("RectTransform")
   self._imgAdd = self:GetGameObject("imgAdd")
   self._imgLock = self:GetGameObject("imgLock")
   self._guideEff = self:GetGameObject("UIWeakKuang")
   self._divider = self:GetGameObject("divider")
   self._helpPetGO = self:GetGameObject("helppet")
-  ;
-  (self._helpPetGO):SetActive(false)
+  self._helpPetGO:SetActive(false)
   self._zhuzhanGO = self:GetGameObject("zhuzhan")
   self._wufazhuzhanGO = self:GetGameObject("wufazhuzhan")
   self._helppetTipsGO = self:GetGameObject("helppetTips")
@@ -35,142 +26,101 @@ UITeamItem.OnShow = function(self)
   self._callback = nil
   self._petModule = self:GetModule(PetModule)
   self.firstTimePlayAnim = true
-  local etl = (UICustomUIEventListener.Get)(self._imgBG)
+  local etl = UICustomUIEventListener.Get(self._imgBG)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(ped)
-    -- function num : 0_0_0 , upvalues : self, _ENV
     if self._slot == 5 then
       local hpm = self:GetModule(HelpPetModule)
       local helpPetKey = hpm:UI_GetHelpPetKey()
-      if helpPetKey and helpPetKey > 0 then
-        (ToastManager.ShowToast)((StringTable.Get)("str_help_pet_weizhi"))
-        return 
+      if helpPetKey and 0 < helpPetKey then
+        ToastManager.ShowToast(StringTable.Get("str_help_pet_weizhi"))
+        return
       end
     end
-    do
-      if self._id == 0 or ((GameGlobal.UIStateManager)()):IsLocked() then
-        return 
-      end
-      ;
-      (self._imgMask):SetActive(true)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamItemLongPress, true, self._slot, self._id)
+    if self._id == 0 or GameGlobal.UIStateManager():IsLocked() then
+      return
     end
-  end
-)
+    self._imgMask:SetActive(true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamItemLongPress, true, self._slot, self._id)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(ped)
-    -- function num : 0_0_1 , upvalues : self, _ENV
     if self._slot == 5 then
       local hpm = self:GetModule(HelpPetModule)
       local helpPetKey = hpm:UI_GetHelpPetKey()
-      if helpPetKey and helpPetKey > 0 then
-        return 
+      if helpPetKey and 0 < helpPetKey then
+        return
       end
     end
-    do
-      if self._id ~= 0 then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamUpdateReplaceCardPos, ped.position)
-      end
+    if self._id ~= 0 then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamUpdateReplaceCardPos, ped.position)
     end
-  end
-)
-  local endDragFunc = function()
-    -- function num : 0_0_2 , upvalues : self, _ENV
+  end)
+  
+  local function endDragFunc()
     if self._slot == 5 then
       local hpm = self:GetModule(HelpPetModule)
       local helpPetKey = hpm:UI_GetHelpPetKey()
-      if helpPetKey and helpPetKey > 0 then
-        return 
+      if helpPetKey and 0 < helpPetKey then
+        return
       end
     end
-    do
-      if self._id == 0 then
-        return 
-      end
-      ;
-      (self._imgMask):SetActive(false)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamItemLongPress, false, self._slot, self._id)
+    if self._id == 0 then
+      return
     end
+    self._imgMask:SetActive(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamItemLongPress, false, self._slot, self._id)
   end
-
+  
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(ped)
-    -- function num : 0_0_3 , upvalues : endDragFunc
     endDragFunc()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_0_4 , upvalues : self, _ENV
-    (self._anim):Play("uianim_UITeamItem_select")
-    ;
-    ((GameGlobal.UIStateManager)()):Lock("UITeamItem_Click")
+    self._anim:Play("uianim_UITeamItem_select")
+    GameGlobal.UIStateManager():Lock("UITeamItem_Click")
     self:StartTask(function(TT)
-      -- function num : 0_0_4_0 , upvalues : _ENV, self
       YIELD(TT, 400)
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("UITeamItem_Click")
+      GameGlobal.UIStateManager():UnLock("UITeamItem_Click")
       if self._callback then
-        (self._callback)()
+        self._callback()
       end
-    end
-)
-  end
-)
+    end)
+  end)
   if not EDITOR then
     self:AddUICustomEventListener(etl, UIEvent.ApplicationFocus, function(b)
-    -- function num : 0_0_5 , upvalues : etl, endDragFunc
-    if not b then
-      if not etl.IsDragging then
-        return 
+      if not b then
+        if not etl.IsDragging then
+          return
+        end
+        etl.IsDragging = false
+        endDragFunc()
       end
-      etl.IsDragging = false
-      endDragFunc()
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.PlayAnimIn = function(self, delay)
-  -- function num : 0_1 , upvalues : _ENV
+function UITeamItem:PlayAnimIn(delay)
   if self.firstTimePlayAnim then
     self.firstTimePlayAnim = false
   else
-    return 
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("UITeamItem_PlayAnimIn" .. delay)
+  GameGlobal.UIStateManager():Lock("UITeamItem_PlayAnimIn" .. delay)
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, delay, self
     YIELD(TT, delay)
-    ;
-    (self._anim):Play("uianim_UITeamItem_in")
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UITeamItem_PlayAnimIn" .. delay)
-  end
-)
+    self._anim:Play("uianim_UITeamItem_in")
+    GameGlobal.UIStateManager():UnLock("UITeamItem_PlayAnimIn" .. delay)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.FlushIdx = function(self, idx)
-  -- function num : 0_2
+function UITeamItem:FlushIdx(idx)
   self._idx = idx
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.FlushTeamMember = function(self, slot, teamId)
-  -- function num : 0_3
+function UITeamItem:FlushTeamMember(slot, teamId)
   self._slot = slot
   self._teamId = teamId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.FlushHelpPetState = function(self, helpPetEnable)
-  -- function num : 0_4 , upvalues : _ENV
+function UITeamItem:FlushHelpPetState(helpPetEnable)
   self._helpPetEnable = helpPetEnable
   if self._slot == 5 then
     local missionModule = self:GetModule(MissionModule)
@@ -178,18 +128,18 @@ UITeamItem.FlushHelpPetState = function(self, helpPetEnable)
     local fromMain = ctx.teamOpenerType == TeamOpenerType.Main
     if fromMain then
       self:FlushHelpPetIcon(1)
-      return 
+      return
     end
     local module = self:GetModule(RoleModule)
     local isLock = not module:CheckModuleUnlock(GameModuleID.MD_HelpPet)
     if isLock then
       self:FlushHelpPetIcon(1)
-      return 
+      return
     end
     local hpm = self:GetModule(HelpPetModule)
     local helpPetKey = hpm:UI_GetHelpPetKey()
     if self._helpPetEnable then
-      if helpPetKey and helpPetKey > 0 then
+      if helpPetKey and 0 < helpPetKey then
         self:FlushHelpPetIcon(2)
       elseif self._id == 0 then
         self:FlushHelpPetIcon(3)
@@ -202,59 +152,41 @@ UITeamItem.FlushHelpPetState = function(self, helpPetEnable)
   else
     self:FlushHelpPetIcon(1)
   end
-  -- DECOMPILER ERROR: 8 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.FlushHelpPetIcon = function(self, state)
-  -- function num : 0_5
+function UITeamItem:FlushHelpPetIcon(state)
   local helpPetGOVisible = false
   local zhuzhanGOVisible = false
   local wufazhuzhanGOVisible = false
   local helppetTipsGOVisible = false
   if state == 1 then
     helpPetGOVisible = false
-  else
-    if state == 2 then
-      helpPetGOVisible = true
-      zhuzhanGOVisible = true
-    else
-      if state == 3 then
-        helpPetGOVisible = true
-        wufazhuzhanGOVisible = true
-        helppetTipsGOVisible = true
-      else
-        if state == 4 then
-          helpPetGOVisible = true
-          wufazhuzhanGOVisible = true
-        end
-      end
-    end
+  elseif state == 2 then
+    helpPetGOVisible = true
+    zhuzhanGOVisible = true
+  elseif state == 3 then
+    helpPetGOVisible = true
+    wufazhuzhanGOVisible = true
+    helppetTipsGOVisible = true
+  elseif state == 4 then
+    helpPetGOVisible = true
+    wufazhuzhanGOVisible = true
   end
-  ;
-  (self._helpPetGO):SetActive(helpPetGOVisible)
-  ;
-  (self._zhuzhanGO):SetActive(zhuzhanGOVisible)
-  ;
-  (self._wufazhuzhanGO):SetActive(wufazhuzhanGOVisible)
+  self._helpPetGO:SetActive(helpPetGOVisible)
+  self._zhuzhanGO:SetActive(zhuzhanGOVisible)
+  self._wufazhuzhanGO:SetActive(wufazhuzhanGOVisible)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.Flush = function(self, id)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._imgAdd):SetActive(true)
-  ;
-  (self._imgLock):SetActive(false)
-  ;
-  (self._divider):SetActive(false)
+function UITeamItem:Flush(id)
+  self._imgAdd:SetActive(true)
+  self._imgLock:SetActive(false)
+  self._divider:SetActive(false)
   if GameSingle and id == 0 then
-    (self._cardGo):SetActive(false)
+    self._cardGo:SetActive(false)
     id = nil
   end
   if not id then
-    return 
+    return
   end
   self._id = id
   self._lock = false
@@ -263,171 +195,116 @@ UITeamItem.Flush = function(self, id)
   if self._slot == 5 then
     local hpm = self:GetModule(HelpPetModule)
     local helpPetKey = hpm:UI_GetHelpPetKey()
-    if helpPetKey and helpPetKey > 0 then
-      (self._guideEff):SetActive(false)
-      ;
-      (self._cardGo):SetActive(true)
-      ;
-      (self._imgAdd):SetActive(false)
-      local uiItem = (self._card):SpawnObject("UIPetMemberItem")
+    if helpPetKey and 0 < helpPetKey then
+      self._guideEff:SetActive(false)
+      self._cardGo:SetActive(true)
+      self._imgAdd:SetActive(false)
+      local uiItem = self._card:SpawnObject("UIPetMemberItem")
       self._itemTemp = uiItem
       local helpPet = hpm:UI_GetSelectConstructHelpPet()
       uiItem:GuideSetData(helpPet, true, self._slot)
-      ;
-      (self._divider):SetActive(true)
-      return 
+      self._divider:SetActive(true)
+      return
     end
   end
-  do
-    if id == 0 then
-      if ctx.teamOpenerType == TeamOpenerType.Tower then
-        if ctx.towerTeamCeiling < self._slot then
-          self:SetLock()
-        end
-        ;
-        (self._cardGo):SetActive(false)
-      else
-        local discoveryData = missionModule:GetDiscoveryData()
-        local chapters = discoveryData:GetVisibleChapters()
-        local needChapter = ((Cfg.cfg_guide_const).guide_team_btn_chapter).IntValue
-        if chapters and (table.count)(chapters) < needChapter then
-          local petModule = self:GetModule(PetModule)
-          local _uiModule = petModule.uiModule
-          local _petIds = _uiModule:RequestPetDatas()
-          local teamid = ctx:GetCurrTeamId()
-          local curPets = (((ctx.teams).list)[teamid]).pets
-          local targetSlot = 1
-          for slot,psdId in ipairs(curPets) do
-            if psdId == 0 then
-              targetSlot = slot
-              break
-            end
-          end
-          do
-            do
-              do
-                for i = #_petIds, 1, -1 do
-                  if (table.icontains)(curPets, _petIds[i]) then
-                    (table.remove)(_petIds, i)
-                  end
-                end
-                if targetSlot == self._slot and #_petIds > 0 then
-                  (self._guideEff):SetActive(true)
-                else
-                  ;
-                  (self._guideEff):SetActive(false)
-                end
-                ;
-                (self._guideEff):SetActive(false)
-                ;
-                (self._cardGo):SetActive(false)
-                ;
-                (self._guideEff):SetActive(false)
-                ;
-                (self._cardGo):SetActive(true)
-                ;
-                (self._imgAdd):SetActive(false)
-                local uiItem = (self._card):SpawnObject("UIPetMemberItem")
-                self._itemTemp = uiItem
-                uiItem:SetData(id, nil, nil, self._slot)
-                ;
-                (self._divider):SetActive(true)
-              end
-            end
-          end
-        end
+  if id == 0 then
+    if ctx.teamOpenerType == TeamOpenerType.Tower then
+      if self._slot > ctx.towerTeamCeiling then
+        self:SetLock()
       end
+      self._cardGo:SetActive(false)
+    else
+      local discoveryData = missionModule:GetDiscoveryData()
+      local chapters = discoveryData:GetVisibleChapters()
+      local needChapter = Cfg.cfg_guide_const.guide_team_btn_chapter.IntValue
+      if chapters and needChapter > table.count(chapters) then
+        local petModule = self:GetModule(PetModule)
+        local _uiModule = petModule.uiModule
+        local _petIds = _uiModule:RequestPetDatas()
+        local teamid = ctx:GetCurrTeamId()
+        local curPets = ctx.teams.list[teamid].pets
+        local targetSlot = 1
+        for slot, psdId in ipairs(curPets) do
+          if psdId == 0 then
+            targetSlot = slot
+            break
+          end
+        end
+        for i = #_petIds, 1, -1 do
+          if table.icontains(curPets, _petIds[i]) then
+            table.remove(_petIds, i)
+          end
+        end
+        if targetSlot == self._slot and 0 < #_petIds then
+          self._guideEff:SetActive(true)
+        else
+          self._guideEff:SetActive(false)
+        end
+      else
+        self._guideEff:SetActive(false)
+      end
+      self._cardGo:SetActive(false)
     end
+  else
+    self._guideEff:SetActive(false)
+    self._cardGo:SetActive(true)
+    self._imgAdd:SetActive(false)
+    local uiItem = self._card:SpawnObject("UIPetMemberItem")
+    self._itemTemp = uiItem
+    uiItem:SetData(id, nil, nil, self._slot)
+    self._divider:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.SetLock = function(self)
-  -- function num : 0_7
+function UITeamItem:SetLock()
   self._lock = true
-  ;
-  (self._imgAdd):SetActive(false)
-  ;
-  (self._imgLock):SetActive(true)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._interactableImg).raycastTarget = false
+  self._imgAdd:SetActive(false)
+  self._imgLock:SetActive(true)
+  self._interactableImg.raycastTarget = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.FlushGuide = function(self, pet, fromGuide)
-  -- function num : 0_8
-  (self._divider):SetActive(false)
+function UITeamItem:FlushGuide(pet, fromGuide)
+  self._divider:SetActive(false)
   self._fromGuide = fromGuide or false
-  ;
-  (self._imgAdd):SetActive(false)
-  ;
-  (self._imgLock):SetActive(true)
+  self._imgAdd:SetActive(false)
+  self._imgLock:SetActive(true)
   if not pet then
-    (self._cardGo):SetActive(false)
-    return 
+    self._cardGo:SetActive(false)
+    return
   end
-  ;
-  (self._cardGo):SetActive(true)
-  local uiItem = (self._card):SpawnObject("UIPetMemberItem")
+  self._cardGo:SetActive(true)
+  local uiItem = self._card:SpawnObject("UIPetMemberItem")
   self._itemTemp = uiItem
   uiItem:GuideSetData(pet, self._fromGuide)
-  ;
-  (self._divider):SetActive(true)
+  self._divider:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.FlushCallback = function(self, callback)
-  -- function num : 0_9
+function UITeamItem:FlushCallback(callback)
   self._callback = callback
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.IsLocked = function(self)
-  -- function num : 0_10
+function UITeamItem:IsLocked()
   return self._lock
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.GetIdx = function(self)
-  -- function num : 0_11
+function UITeamItem:GetIdx()
   return self._idx
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.GetRectTransform = function(self)
-  -- function num : 0_12
+function UITeamItem:GetRectTransform()
   return self._tran
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.GetGB = function(self)
-  -- function num : 0_13
+function UITeamItem:GetGB()
   return self._imgBG
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.GetHelpPetIcon = function(self)
-  -- function num : 0_14
+function UITeamItem:GetHelpPetIcon()
   return self._wufazhuzhanGO
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItem.ShowDetailBtn = function(self, show)
-  -- function num : 0_15
+function UITeamItem:ShowDetailBtn(show)
   if self._itemTemp then
-    (self._itemTemp):ShowDetailBtn(show)
+    self._itemTemp:ShowDetailBtn(show)
   end
 end
-
-

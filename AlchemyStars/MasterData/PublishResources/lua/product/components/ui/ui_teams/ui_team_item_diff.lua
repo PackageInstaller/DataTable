@@ -1,69 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_team_item_diff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITeamItemDiff", UICustomWidget)
 UITeamItemDiff = UITeamItemDiff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITeamItemDiff.Constructor = function(self)
-  -- function num : 0_0
+function UITeamItemDiff:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItemDiff.OnShow = function(self)
-  -- function num : 0_1
+function UITeamItemDiff:OnShow()
   self._diffGo = self:GetGameObject("diffGo")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItemDiff.OnHide = function(self)
-  -- function num : 0_2
+function UITeamItemDiff:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamItemDiff.SetData = function(self, pstID, teamType)
-  -- function num : 0_3 , upvalues : _ENV
+function UITeamItemDiff:SetData(pstID, teamType)
   local show = false
-  if teamType == TeamOpenerType.Diff and pstID > 0 then
-    local module = (GameGlobal.GetUIModule)(DifficultyMissionModule)
+  if teamType == TeamOpenerType.Diff and 0 < pstID then
+    local module = GameGlobal.GetUIModule(DifficultyMissionModule)
     local filterPets = module:GetFilterPets()
     if filterPets[pstID] then
       show = true
     end
-  else
-    do
-      if teamType == TeamOpenerType.Sailing then
-        local sailingMissionModule = (GameGlobal.GetModule)(SailingMissionModule)
-        local filterPets = sailingMissionModule:GetFilterPets()
-        if filterPets[pstID] then
-          show = true
-        end
-      else
-        do
-          if teamType == TeamOpenerType.Vampire then
-            show = false
-          else
-            if teamType == TeamOpenerType.Camp_Diff then
-              local module = (GameGlobal.GetUIModule)(DifficultyMissionModule)
-              local filterPets = module:GetFilterPets()
-              if filterPets[pstID] then
-                show = true
-              end
-            end
-          end
-          do
-            ;
-            (self._diffGo):SetActive(show)
-          end
-        end
-      end
+  elseif teamType == TeamOpenerType.Sailing then
+    local sailingMissionModule = GameGlobal.GetModule(SailingMissionModule)
+    local filterPets = sailingMissionModule:GetFilterPets()
+    if filterPets[pstID] then
+      show = true
+    end
+  elseif teamType == TeamOpenerType.Vampire then
+    show = false
+  elseif teamType == TeamOpenerType.Camp_Diff then
+    local module = GameGlobal.GetUIModule(DifficultyMissionModule)
+    local filterPets = module:GetFilterPets()
+    if filterPets[pstID] then
+      show = true
     end
   end
+  self._diffGo:SetActive(show)
 end
-
-

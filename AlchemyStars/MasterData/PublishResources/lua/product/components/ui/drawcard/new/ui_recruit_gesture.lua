@@ -1,45 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/new/ui_recruit_gesture.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRecruitGesture", Object)
 UIRecruitGesture = UIRecruitGesture
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRecruitGesture.Constructor = function(self, etl, longPressTime, onLongPressBegin, onLongPressing, onLongPressEnd, onDragBegin, onDrag, onDragEnd, onRelease)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRecruitGesture:Constructor(etl, longPressTime, onLongPressBegin, onLongPressing, onLongPressEnd, onDragBegin, onDrag, onDragEnd, onRelease)
   self._uiEventListner = UICustomUIEventListener:New()
-  ;
-  (self._uiEventListner):AddUICustomEventListener(etl, UIEvent.Press, function(e)
-    -- function num : 0_0_0 , upvalues : self
+  self._uiEventListner:AddUICustomEventListener(etl, UIEvent.Press, function(e)
     self:_OnPress(e)
-  end
-)
-  ;
-  (self._uiEventListner):AddUICustomEventListener(etl, UIEvent.Release, function(e)
-    -- function num : 0_0_1 , upvalues : self
+  end)
+  self._uiEventListner:AddUICustomEventListener(etl, UIEvent.Release, function(e)
     self:_OnRelease(e)
-  end
-)
-  ;
-  (self._uiEventListner):AddUICustomEventListener(etl, UIEvent.BeginDrag, function(e)
-    -- function num : 0_0_2 , upvalues : self
+  end)
+  self._uiEventListner:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(e)
     self:_OnDragBegin(e)
-  end
-)
-  ;
-  (self._uiEventListner):AddUICustomEventListener(etl, UIEvent.Drag, function(e)
-    -- function num : 0_0_3 , upvalues : self
+  end)
+  self._uiEventListner:AddUICustomEventListener(etl, UIEvent.Drag, function(e)
     self:_OnDrag(e)
-  end
-)
-  ;
-  (self._uiEventListner):AddUICustomEventListener(etl, UIEvent.EndDrag, function(e)
-    -- function num : 0_0_4 , upvalues : self
+  end)
+  self._uiEventListner:AddUICustomEventListener(etl, UIEvent.EndDrag, function(e)
     self:_OnDragEnd(e)
-  end
-)
+  end)
   self._longPressTime = longPressTime
   self._longPressBegin = onLongPressBegin
   self._longPressing = onLongPressing
@@ -55,141 +33,119 @@ UIRecruitGesture.Constructor = function(self, etl, longPressTime, onLongPressBeg
   self._enable = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture.Update = function(self, dtMS)
-  -- function num : 0_1
+function UIRecruitGesture:Update(dtMS)
   if not self._enable then
-    return 
+    return
   end
-  if not self._isDragging and self._isLongPressing and self._longPressing then
-    (self._longPressing)()
-  end
-  if self._isMouseDown then
-    self._timer = self._timer + dtMS
-    if self._longPressTime < self._timer then
-      self._isLongPressing = true
-      if self._longPressBegin then
-        (self._longPressBegin)()
+  if not self._isDragging then
+    if self._isLongPressing then
+      if self._longPressing then
+        self._longPressing()
+      end
+    elseif self._isMouseDown then
+      self._timer = self._timer + dtMS
+      if self._timer > self._longPressTime then
+        self._isLongPressing = true
+        if self._longPressBegin then
+          self._longPressBegin()
+        end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture.Dispose = function(self)
-  -- function num : 0_2
-  (self._uiEventListner):Dispose()
+function UIRecruitGesture:Dispose()
+  self._uiEventListner:Dispose()
   self._uiEventListner = nil
   self._enable = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture._OnPress = function(self, e)
-  -- function num : 0_3
+function UIRecruitGesture:_OnPress(e)
   if not self._enable then
-    return 
+    return
   end
   self._isMouseDown = true
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture._OnRelease = function(self, e)
-  -- function num : 0_4
+function UIRecruitGesture:_OnRelease(e)
   if not self._enable then
-    return 
+    return
   end
   self._isMouseDown = false
-  if self._isLongPressing and self._longPressEnd then
-    (self._longPressEnd)()
+  if self._isLongPressing then
+    if self._longPressEnd then
+      self._longPressEnd()
+    end
+    self._isLongPressing = false
   end
-  self._isLongPressing = false
   if self._release then
-    (self._release)()
+    self._release()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture._OnDragBegin = function(self, e)
-  -- function num : 0_5
+function UIRecruitGesture:_OnDragBegin(e)
   if not self._enable then
-    return 
+    return
   end
   if not self._isMouseDown then
-    return 
+    return
   end
   self._isDragging = true
-  if self._isLongPressing and self._longPressEnd then
-    (self._longPressEnd)()
+  if self._isLongPressing then
+    if self._longPressEnd then
+      self._longPressEnd()
+    end
+    self._isLongPressing = false
   end
-  self._isLongPressing = false
   if self._dragBegin then
-    (self._dragBegin)()
+    self._dragBegin()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture._OnDrag = function(self, e)
-  -- function num : 0_6
+function UIRecruitGesture:_OnDrag(e)
   if not self._enable then
-    return 
+    return
   end
   if not self._isMouseDown then
-    return 
+    return
   end
   self._isDragging = true
   if self._drag then
-    (self._drag)(e)
+    self._drag(e)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture._OnDragEnd = function(self, e)
-  -- function num : 0_7
+function UIRecruitGesture:_OnDragEnd(e)
   if not self._enable then
-    return 
+    return
   end
   if self._dragEnd then
-    (self._dragEnd)()
+    self._dragEnd()
   end
   self._isDragging = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture.SetEnable = function(self, enable)
-  -- function num : 0_8
+function UIRecruitGesture:SetEnable(enable)
   if enable then
+  else
     self._isMouseDown = false
     self._isDragging = false
     self._timer = 0
-    if self._isLongPressing and self._longPressEnd then
-      (self._longPressEnd)()
+    if self._isLongPressing then
+      if self._longPressEnd then
+        self._longPressEnd()
+      end
+      self._isLongPressing = false
     end
-    self._isLongPressing = false
-    self._enable = enable
   end
+  self._enable = enable
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture.IsDragging = function(self)
-  -- function num : 0_9
+function UIRecruitGesture:IsDragging()
   return self._isDragging
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitGesture.IsLongPressing = function(self)
-  -- function num : 0_10
+function UIRecruitGesture:IsLongPressing()
   return self._isLongPressing
 end
-
-

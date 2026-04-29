@@ -1,31 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_feature_master_skill_extra.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_FeatureMasterSkillExtra", PickUpPolicy_Base)
 PickUpPolicy_FeatureMasterSkillExtra = PickUpPolicy_FeatureMasterSkillExtra
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_FeatureMasterSkillExtra.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_FeatureMasterSkillExtra:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
   local pickPosList, atkPosList, targetIds, extraParam = self:_CalPickPosPolicy_FeatureMasterSkillExtra(activeSkillID, casterPos, validPosIdxList, policyParam)
   return pickPosList, atkPosList, targetIds, extraParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_FeatureMasterSkillExtra._CalPickPosPolicy_FeatureMasterSkillExtra = function(self, activeSkillID, casterPos, validPosIdxList, policyParam)
-  -- function num : 0_1 , upvalues : _ENV
+function PickUpPolicy_FeatureMasterSkillExtra:_CalPickPosPolicy_FeatureMasterSkillExtra(activeSkillID, casterPos, validPosIdxList, policyParam)
   local env = self:_GetPickUpPolicyEnv()
-  local configService = (self._world):GetService("Config")
-  local boardService = (self._world):GetService("BoardLogic")
+  local configService = self._world:GetService("Config")
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
   local ignoreColor = {}
   if policyParam and policyParam.ignoreColor then
@@ -33,40 +23,36 @@ PickUpPolicy_FeatureMasterSkillExtra._CalPickPosPolicy_FeatureMasterSkillExtra =
   end
   local teamPos = casterPos
   local teamEntity = env.TeamEntity
-  do
-    if teamEntity then
-      local teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
-      teamPos = teamEntity:GetGridPosition()
-    end
-    local skillConfigData = configService:GetSkillConfigData(activeSkillID)
-    local pickUpParam = skillConfigData:GetSkillPickParam()
-    local maxPickCount = pickUpParam[1] or 0
-    local casterPosIndex = self:_Pos2Index(teamPos)
-    local pickExtraParam = {}
-    local pickPosList = {}
-    local pickPos = nil
-    if maxPickCount > 0 then
-      for _,off in ipairs(ringMax) do
-        local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
-        if validPosIdxList[posIdx] then
-          local pos = self:_Index2Pos(posIdx)
-          local color = (env.BoardPosPieces)[posIdx]
-          if color and not (table.icontains)(ignoreColor, color) then
-            pickPos = pos
-            ;
-            (table.insert)(pickPosList, pickPos)
+  if teamEntity then
+    local teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
+    teamPos = teamEntity:GetGridPosition()
+  end
+  local skillConfigData = configService:GetSkillConfigData(activeSkillID)
+  local pickUpParam = skillConfigData:GetSkillPickParam()
+  local maxPickCount = pickUpParam[1] or 0
+  local casterPosIndex = self:_Pos2Index(teamPos)
+  local pickExtraParam = {}
+  local pickPosList = {}
+  local pickPos
+  if 0 < maxPickCount then
+    for _, off in ipairs(ringMax) do
+      local posIdx = self:_PosIndexAddOffset(casterPosIndex, off)
+      if validPosIdxList[posIdx] then
+        local pos = self:_Index2Pos(posIdx)
+        local color = env.BoardPosPieces[posIdx]
+        if color and not table.icontains(ignoreColor, color) then
+          pickPos = pos
+          table.insert(pickPosList, pickPos)
+          if maxPickCount <= #pickPosList then
+            break
           end
         end
       end
     end
-    do
-      if (maxPickCount <= #pickPosList or pickPosList) and #pickPosList > 0 then
-        return pickPosList, pickPosList, {}, pickExtraParam
-      else
-        return {}, {}, {}, {}
-      end
-    end
+  end
+  if pickPosList and 0 < #pickPosList then
+    return pickPosList, pickPosList, {}, pickExtraParam
+  else
+    return {}, {}, {}, {}
   end
 end
-
-

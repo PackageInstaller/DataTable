@@ -1,33 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/grid_location_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GridLocationComponent", Object)
 GridLocationComponent = GridLocationComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GridLocationComponent.Constructor = function(self, pos, dir, offset, height, damageOffset)
-  -- function num : 0_0 , upvalues : _ENV
-  if not self:_InitVectorData(pos) then
-    self.Position = Vector2(1, 1)
-    if not self:_InitVectorData(dir) then
-      self.Direction = Vector2(0, 0)
-      if not self:_InitVectorData(offset) then
-        self.Offset = Vector2(0, 0)
-        self.Height = height or 0
-        self.DamageOffset = damageOffset or offset
-        self._moveLastPosition = Vector2(0, 0)
-        self._modifyLocationCallback = nil
-      end
-    end
-  end
+function GridLocationComponent:Constructor(pos, dir, offset, height, damageOffset)
+  self.Position = self:_InitVectorData(pos) or Vector2(1, 1)
+  self.Direction = self:_InitVectorData(dir) or Vector2(0, 0)
+  self.Offset = self:_InitVectorData(offset) or Vector2(0, 0)
+  self.Height = height or 0
+  self.DamageOffset = damageOffset or offset
+  self._moveLastPosition = Vector2(0, 0)
+  self._modifyLocationCallback = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.InitByGridLocResult = function(self, gridLocRes)
-  -- function num : 0_1
+function GridLocationComponent:InitByGridLocResult(gridLocRes)
   self.Position = gridLocRes:GetGridLocResultBornPos()
   self.Direction = gridLocRes:GetGridLocResultBornDir()
   self.Offset = gridLocRes:GetGridLocResultBornOffset()
@@ -35,19 +19,13 @@ GridLocationComponent.InitByGridLocResult = function(self, gridLocRes)
   self.DamageOffset = gridLocRes:GetGridLocResultDamageOffset()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent._InitVectorData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
+function GridLocationComponent:_InitVectorData(data)
   if data then
-    return (Vector2.New)(data.x, data.y)
+    return Vector2.New(data.x, data.y)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.Destructor = function(self)
-  -- function num : 0_3
+function GridLocationComponent:Destructor()
   self.Position = nil
   self.Direction = nil
   self.Offset = nil
@@ -56,174 +34,104 @@ GridLocationComponent.Destructor = function(self)
   self._modifyLocationCallback = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.GetGridPos = function(self)
-  -- function num : 0_4
+function GridLocationComponent:GetGridPos()
   return self.Position
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.GetGridDir = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (Vector2.New)((math.floor)((self.Direction).x), (math.floor)((self.Direction).y))
+function GridLocationComponent:GetGridDir()
+  return Vector2.New(math.floor(self.Direction.x), math.floor(self.Direction.y))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.GetRawGridDir = function(self)
-  -- function num : 0_6
-  return (self.Direction):Clone()
+function GridLocationComponent:GetRawGridDir()
+  return self.Direction:Clone()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.GetGridOffset = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if not self.Offset then
-    return Vector2.zero
-  end
+function GridLocationComponent:GetGridOffset()
+  return self.Offset or Vector2.zero
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.SetMoveLastPosition = function(self, pos)
-  -- function num : 0_8
+function GridLocationComponent:SetMoveLastPosition(pos)
   self._moveLastPosition = pos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.GetMoveLastPosition = function(self)
-  -- function num : 0_9
+function GridLocationComponent:GetMoveLastPosition()
   return self._moveLastPosition
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.Center = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function GridLocationComponent:Center()
   local entityPos = self.Position
-  if not self.Offset then
-    local entityOffset = Vector2.zero
-  end
+  local entityOffset = self.Offset or Vector2.zero
   return entityPos + entityOffset
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.CenterNoOffset = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function GridLocationComponent:CenterNoOffset()
   local entityPos = self.Position
-  if not self.Offset then
-    local entityOffset = Vector2.zero
-  end
+  local entityOffset = self.Offset or Vector2.zero
   return entityPos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.DamageCenter = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function GridLocationComponent:DamageCenter()
   local entityPos = self:_InitVectorData(self.Position)
-  if not self:_InitVectorData(self.DamageOffset) then
-    local entityOffset = Vector2.zero
-  end
+  local entityOffset = self:_InitVectorData(self.DamageOffset) or Vector2.zero
   return entityPos + entityOffset
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.GetDamageOffset = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if not self:_InitVectorData(self.DamageOffset) then
-    local entityOffset = Vector2.zero
-  end
+function GridLocationComponent:GetDamageOffset()
+  local entityOffset = self:_InitVectorData(self.DamageOffset) or Vector2.zero
   return entityOffset
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.SetGridPosCmpt = function(self, pos)
-  -- function num : 0_14 , upvalues : _ENV
-  if pos.x == 0 and pos.y == 0 and (self._entity):HasTeam() then
-    (Log.fatal)("SetGridPos :", tostring(pos), " entity=", (self._entity):GetID(), " ", (Log.traceback)())
+function GridLocationComponent:SetGridPosCmpt(pos)
+  if pos.x == 0 and pos.y == 0 and self._entity:HasTeam() then
+    Log.fatal("SetGridPos :", tostring(pos), " entity=", self._entity:GetID(), " ", Log.traceback())
   end
   self.Position = self:_InitVectorData(pos)
   self:CallBackModify()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.GetGridLocHeight = function(self)
-  -- function num : 0_15
+function GridLocationComponent:GetGridLocHeight()
   return self.Height
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.SetModifyLocationCallback = function(self, callback)
-  -- function num : 0_16
+function GridLocationComponent:SetModifyLocationCallback(callback)
   self._modifyLocationCallback = callback
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.CallBackModify = function(self)
-  -- function num : 0_17
+function GridLocationComponent:CallBackModify()
   if self._modifyLocationCallback then
-    (self._modifyLocationCallback)(self:GetGridPos(), self:GetGridDir())
+    self._modifyLocationCallback(self:GetGridPos(), self:GetGridDir())
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-GridLocationComponent.CallBackModifyLocation = function(self, pos, dir)
-  -- function num : 0_18
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self.Position).x = pos.x
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.Position).y = pos.y
+function GridLocationComponent:CallBackModifyLocation(pos, dir)
+  self.Position.x = pos.x
+  self.Position.y = pos.y
   self.Direction = dir
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GridLocation = function(self)
-  -- function num : 0_19
-  return self:GetComponent((self.WEComponentsEnum).GridLocation)
+function Entity:GridLocation()
+  return self:GetComponent(self.WEComponentsEnum.GridLocation)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGridLocation = function(self)
-  -- function num : 0_20
-  return self:HasComponent((self.WEComponentsEnum).GridLocation)
+function Entity:HasGridLocation()
+  return self:HasComponent(self.WEComponentsEnum.GridLocation)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetGridLocation = function(self, pos, dir)
-  -- function num : 0_21 , upvalues : _ENV
+function Entity:SetGridLocation(pos, dir)
   if pos ~= nil and (pos.x == nil or pos.y == nil) then
-    (Log.error)("SetGridLocation error pos param")
-    ;
-    (Log.error)(pos.x, pos.y)
+    Log.error("SetGridLocation error pos param")
+    Log.error(pos.x, pos.y)
+  else
   end
   if dir ~= nil and (dir.x == nil or dir.y == nil) then
-    (Log.error)("SetGridLocation error dir param")
-    ;
-    (Log.error)(dir.x, dir.y)
+    Log.error("SetGridLocation error dir param")
+    Log.error(dir.x, dir.y)
+  else
   end
-  local index = (self.WEComponentsEnum).GridLocation
+  local index = self.WEComponentsEnum.GridLocation
   if self:HasGridLocation() then
     local cmpt = self:GridLocation()
-    ;
-    ((self:GetOwnerWorld()):GetService("Battle")):RemoveMonsterAuraRange(self)
+    self:GetOwnerWorld():GetService("Battle"):RemoveMonsterAuraRange(self)
     if pos then
       cmpt:SetGridPosCmpt(pos)
     end
@@ -231,47 +139,34 @@ Entity.SetGridLocation = function(self, pos, dir)
       cmpt.Direction = dir
     end
     cmpt:CallBackModify()
-    ;
-    ((self:GetOwnerWorld()):GetService("Battle")):AddMonsterAuraRange(self)
+    self:GetOwnerWorld():GetService("Battle"):AddMonsterAuraRange(self)
     self:ReplaceComponent(index, cmpt)
   else
-    do
-      local component = GridLocationComponent:New(pos, dir)
-      self:ReplaceComponent(index, component)
-    end
+    local component = GridLocationComponent:New(pos, dir)
+    self:ReplaceComponent(index, component)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.CloneOffsetAndDamageOffset = function(self, cloneTargetEntity)
-  -- function num : 0_22
+function Entity:CloneOffsetAndDamageOffset(cloneTargetEntity)
   local cCloneGridLocation = cloneTargetEntity:GridLocation()
   if not cCloneGridLocation then
-    return 
+    return
   end
   local offset = cCloneGridLocation.Offset
   local damageOffset = cCloneGridLocation.DamageOffset
-  if offset then
-    offset = offset:Clone()
-  end
-  if damageOffset then
-    damageOffset = damageOffset:Clone()
-  end
+  offset = offset and offset:Clone()
+  damageOffset = damageOffset and damageOffset:Clone()
   local cSelfGridLocation = self:GridLocation()
   cSelfGridLocation.Offset = offset
   cSelfGridLocation.DamageOffset = damageOffset
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetGridLocationAndOffset = function(self, pos, dir, offset, damageOffset, notRefreshAura)
-  -- function num : 0_23 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GridLocation
+function Entity:SetGridLocationAndOffset(pos, dir, offset, damageOffset, notRefreshAura)
+  local index = self.WEComponentsEnum.GridLocation
   if self:HasGridLocation() then
     local cmpt = self:GridLocation()
     if not notRefreshAura then
-      ((self:GetOwnerWorld()):GetService("Battle")):RemoveMonsterAuraRange(self)
+      self:GetOwnerWorld():GetService("Battle"):RemoveMonsterAuraRange(self)
     end
     cmpt:SetGridPosCmpt(pos)
     cmpt.Direction = dir
@@ -279,166 +174,114 @@ Entity.SetGridLocationAndOffset = function(self, pos, dir, offset, damageOffset,
     cmpt.DamageOffset = damageOffset
     cmpt:CallBackModify()
     if not notRefreshAura then
-      ((self:GetOwnerWorld()):GetService("Battle")):AddMonsterAuraRange(self)
+      self:GetOwnerWorld():GetService("Battle"):AddMonsterAuraRange(self)
     end
     self:ReplaceComponent(index, cmpt)
   else
-    do
-      local component = GridLocationComponent:New(pos, dir, offset, damageOffset)
-      self:ReplaceComponent(index, component)
-    end
+    local component = GridLocationComponent:New(pos, dir, offset, damageOffset)
+    self:ReplaceComponent(index, component)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetGridPosition = function(self, pos)
-  -- function num : 0_24
-  local index = (self.WEComponentsEnum).GridLocation
+function Entity:SetGridPosition(pos)
+  local index = self.WEComponentsEnum.GridLocation
   if self:HasGridLocation() then
     local cmpt = self:GridLocation()
-    ;
-    ((self:GetOwnerWorld()):GetService("Battle")):RemoveMonsterAuraRange(self)
+    self:GetOwnerWorld():GetService("Battle"):RemoveMonsterAuraRange(self)
     cmpt:SetGridPosCmpt(pos)
-    ;
-    ((self:GetOwnerWorld()):GetService("Battle")):AddMonsterAuraRange(self)
+    self:GetOwnerWorld():GetService("Battle"):AddMonsterAuraRange(self)
     self:ReplaceComponent(index, cmpt)
   else
-    do
-      self:SetGridLocation(pos, nil)
-    end
+    self:SetGridLocation(pos, nil)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetGridPosition = function(self)
-  -- function num : 0_25
-  local posReturn = nil
-  do
-    if self:HasGridLocation() then
-      local cmpt = self:GridLocation()
-      posReturn = cmpt:GetGridPos()
-    end
-    return posReturn
+function Entity:GetGridPosition()
+  local posReturn
+  if self:HasGridLocation() then
+    local cmpt = self:GridLocation()
+    posReturn = cmpt:GetGridPos()
   end
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetGridOffset = function(self)
-  -- function num : 0_26
-  local offSet = nil
-  do
-    if self:HasGridLocation() then
-      local cmpt = self:GridLocation()
-      offSet = cmpt:GetGridOffset()
-    end
-    return offSet
+function Entity:GetGridOffset()
+  local offSet
+  if self:HasGridLocation() then
+    local cmpt = self:GridLocation()
+    offSet = cmpt:GetGridOffset()
   end
+  return offSet
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetGridHeight = function(self)
-  -- function num : 0_27
-  local height = nil
-  do
-    if self:HasGridLocation() then
-      local cmpt = self:GridLocation()
-      height = cmpt.Height
-    end
-    return height
+function Entity:GetGridHeight()
+  local height
+  if self:HasGridLocation() then
+    local cmpt = self:GridLocation()
+    height = cmpt.Height
   end
+  return height
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetGridDirection = function(self)
-  -- function num : 0_28
-  local dirReturn = nil
-  do
-    if self:HasGridLocation() then
-      local cmpt = self:GridLocation()
-      dirReturn = cmpt:GetGridDir()
-    end
-    return dirReturn
+function Entity:GetGridDirection()
+  local dirReturn
+  if self:HasGridLocation() then
+    local cmpt = self:GridLocation()
+    dirReturn = cmpt:GetGridDir()
   end
+  return dirReturn
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetGridDirection = function(self, dir)
-  -- function num : 0_29
-  local index = (self.WEComponentsEnum).GridLocation
+function Entity:SetGridDirection(dir)
+  local index = self.WEComponentsEnum.GridLocation
   if self:HasGridLocation() then
     local cmpt = self:GridLocation()
     cmpt.Direction = dir
     cmpt:CallBackModify()
     self:ReplaceComponent(index, cmpt)
   else
-    do
-      self:SetGridLocation(nil, dir)
-    end
+    self:SetGridLocation(nil, dir)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetGridOffset = function(self, offset)
-  -- function num : 0_30 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GridLocation
+function Entity:SetGridOffset(offset)
+  local index = self.WEComponentsEnum.GridLocation
   if self:HasGridLocation() then
     local cmpt = self:GridLocation()
     cmpt.Offset = offset
     self:ReplaceComponent(index, cmpt)
   else
-    do
-      local component = GridLocationComponent:New(nil, nil, offset)
-      self:ReplaceComponent(index, component)
-    end
+    local component = GridLocationComponent:New(nil, nil, offset)
+    self:ReplaceComponent(index, component)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetGridOffsetAndDamageOffset = function(self, gridOffset, damageOffset)
-  -- function num : 0_31 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GridLocation
+function Entity:SetGridOffsetAndDamageOffset(gridOffset, damageOffset)
+  local index = self.WEComponentsEnum.GridLocation
   if self:HasGridLocation() then
     local cmpt = self:GridLocation()
     cmpt.Offset = gridOffset
     cmpt.DamageOffset = damageOffset
     self:ReplaceComponent(index, cmpt)
   else
-    do
-      local component = GridLocationComponent:New(nil, nil, gridOffset, nil, damageOffset)
-      self:ReplaceComponent(index, component)
-    end
+    local component = GridLocationComponent:New(nil, nil, gridOffset, nil, damageOffset)
+    self:ReplaceComponent(index, component)
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetGridHeight = function(self, height)
-  -- function num : 0_32 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GridLocation
+function Entity:SetGridHeight(height)
+  local index = self.WEComponentsEnum.GridLocation
   if self:HasGridLocation() then
     local cmpt = self:GridLocation()
     cmpt.Height = height
     self:ReplaceComponent(index, cmpt)
   else
-    do
-      local component = GridLocationComponent:New(nil, nil, nil, height)
-      self:ReplaceComponent(index, component)
-    end
+    local component = GridLocationComponent:New(nil, nil, nil, height)
+    self:ReplaceComponent(index, component)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.IsOnGridPosition = function(self, pos)
-  -- function num : 0_33 , upvalues : _ENV
+function Entity:IsOnGridPosition(pos)
   if not self:HasGridLocation() then
     return false
   end
@@ -448,17 +291,17 @@ Entity.IsOnGridPosition = function(self, pos)
   if self:HasOffBoardMonster() then
     return false
   end
-  local entityPos = (self:GridLocation()).Position
+  local entityPos = self:GridLocation().Position
   if self:HasBodyArea() then
-    local bodyArea = (self:BodyArea())._area
+    local bodyArea = self:BodyArea()._area
     for i = 1, #bodyArea do
       local bodyPos = entityPos + bodyArea[i]
       if bodyPos == pos then
         return true
       end
     end
-    local previewArea = (self:BodyArea()):GetPreviewArea()
-    if previewArea and (table.count)(previewArea) > 0 then
+    local previewArea = self:BodyArea():GetPreviewArea()
+    if previewArea and table.count(previewArea) > 0 then
       for i = 1, #previewArea do
         local bodyPos = entityPos + previewArea[i]
         if bodyPos == pos then
@@ -466,14 +309,8 @@ Entity.IsOnGridPosition = function(self, pos)
         end
       end
     end
-    do
-      do
-        do return false end
-        do return pos == entityPos end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
-    end
+    return false
+  else
+    return pos == entityPos
   end
 end
-
-

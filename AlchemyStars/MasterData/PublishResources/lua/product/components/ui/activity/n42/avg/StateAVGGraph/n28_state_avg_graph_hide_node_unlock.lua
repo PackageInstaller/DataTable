@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/StateAVGGraph/n28_state_avg_graph_hide_node_unlock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N28StateAVGGraphHideNodeUnlock", N28StateAVGGraphBase)
 N28StateAVGGraphHideNodeUnlock = N28StateAVGGraphHideNodeUnlock
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N28StateAVGGraphHideNodeUnlock.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function N28StateAVGGraphHideNodeUnlock:OnEnter(TT, ...)
   self.key = "N28StateAVGGraphHideNodeUnlockOnEnter"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(self.key)
+  GameGlobal.UIStateManager():Lock(self.key)
   self:Init()
-  local nodeId = (table.unpack)({...})
-  do
-    if nodeId then
-      local ui = (self.ui):GetWidgetHdie(nodeId)
-      if ui then
-        ui:PlayAnim(TT)
-      end
+  local nodeId = table.unpack({
+    ...
+  })
+  if nodeId then
+    local ui = self.ui:GetWidgetHdie(nodeId)
+    if ui then
+      ui:PlayAnim(TT)
     end
-    self:ChangeState(StateAVGGraph.Init)
   end
+  self:ChangeState(StateAVGGraph.Init)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGGraphHideNodeUnlock.OnExit = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock(self.key)
+function N28StateAVGGraphHideNodeUnlock:OnExit(TT)
+  GameGlobal.UIStateManager():UnLock(self.key)
 end
-
-

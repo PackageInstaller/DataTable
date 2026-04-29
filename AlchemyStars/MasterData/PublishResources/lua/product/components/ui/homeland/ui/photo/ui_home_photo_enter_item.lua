@@ -1,148 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/photo/ui_home_photo_enter_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePhotoEnterItem", UICustomWidget)
 UIHomePhotoEnterItem = UIHomePhotoEnterItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePhotoEnterItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomePhotoEnterItem:OnShow(uiParams)
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._count = self:GetUIComponent("UILocalizationText", "count")
   self._rateTex = self:GetUIComponent("UILocalizationText", "rateTex")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._rate = self:GetUIComponent("Image", "rate")
   self._go = self:GetGameObject("rect")
-  self._tr = (self._go).transform
+  self._tr = self._go.transform
   self._selectGo = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoEnterItem.Active = function(self, active)
-  -- function num : 0_1
-  (self._go):SetActive(active)
+function UIHomePhotoEnterItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoEnterItem.SetData = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomePhotoEnterItem:SetData(data)
   self._data = data
-  local title = (self._data).title
-  ;
-  (self._title):SetText((StringTable.Get)(title))
-  local icon = (self._data).icon
-  ;
-  (self._icon):LoadImage(icon)
+  local title = self._data.title
+  self._title:SetText(StringTable.Get(title))
+  local icon = self._data.icon
+  self._icon:LoadImage(icon)
   local count, max = self:GetCount()
-  ;
-  (self._count):SetText(count .. "/" .. max)
-  local rate = nil
+  self._count:SetText(count .. "/" .. max)
+  local rate
   if max <= 0 then
-    (Log.error)("###[UIHomePhotoEnterItem] max == 0 ! title --> ", title)
+    Log.error("###[UIHomePhotoEnterItem] max == 0 ! title --> ", title)
     rate = 0
   else
     rate = count / max
   end
-  local rateTex = (math.floor)(rate * 100 + 0.5)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._rate).fillAmount = rate
-  ;
-  (self._rateTex):SetText(rateTex .. "%")
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._tr).localScale = Vector3(0.9, 0.9, 0.9)
+  local rateTex = math.floor(rate * 100 + 0.5)
+  self._rate.fillAmount = rate
+  self._rateTex:SetText(rateTex .. "%")
+  self._tr.localScale = Vector3(0.9, 0.9, 0.9)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoEnterItem.GetCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomePhotoEnterItem:GetCount()
   local itemModule = self:GetModule(ItemModule)
-  local group = (self._data).group
-  local cfg = (Cfg.cfg_item_photo)({Group = group})
+  local group = self._data.group
+  local cfg = Cfg.cfg_item_photo({Group = group})
   if cfg and next(cfg) then
     local unlockCount = 0
     for i = 1, #cfg do
       local _cfg = cfg[i]
       local itemid = _cfg.ID
       local count = itemModule:GetItemCount(itemid)
-      if count > 0 then
+      if 0 < count then
         unlockCount = unlockCount + 1
       end
     end
     local maxCount = #cfg
     return unlockCount, maxCount
   else
-    do
-      do return 0, 0 end
-    end
+    return 0, 0
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoEnterItem.btnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local group = (self._data).group
+function UIHomePhotoEnterItem:btnOnClick(go)
+  local group = self._data.group
   self:Lock("UIHomePhotoEnterItem:btnOnClick")
   if self._tweener then
-    (self._tweener):Kill(true)
+    self._tweener:Kill(true)
   end
-  ;
-  (self._selectGo):SetActive(true)
-  self._tweener = ((self._tr):DOScale(1, 0.1)):OnComplete(function()
-    -- function num : 0_4_0 , upvalues : self, group, _ENV
+  self._selectGo:SetActive(true)
+  self._tweener = self._tr:DOScale(1, 0.1):OnComplete(function()
     self:UnLock("UIHomePhotoEnterItem:btnOnClick")
     self:ShowDialog("UIHomePhotoInfoController", group, function()
-      -- function num : 0_4_0_0 , upvalues : self
       self:OnDialogClose()
-    end
-)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._tr).localScale = Vector3(1, 1, 1)
-    ;
-    (self._selectGo):SetActive(false)
-  end
-)
+    end)
+    self._tr.localScale = Vector3(1, 1, 1)
+    self._selectGo:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoEnterItem.OnDialogClose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomePhotoEnterItem:OnDialogClose()
   self:Lock("UIHomePhotoEnterItem:_OnDialogClose")
   if self._tweener then
-    (self._tweener):Kill(true)
+    self._tweener:Kill(true)
   end
-  ;
-  ((self._tr):DOScale(0.9, 0.1)):OnComplete(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+  self._tr:DOScale(0.9, 0.1):OnComplete(function()
     self:UnLock("UIHomePhotoEnterItem:_OnDialogClose")
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._tr).localScale = Vector3(0.9, 0.9, 0.9)
-  end
-)
+    self._tr.localScale = Vector3(0.9, 0.9, 0.9)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoEnterItem.OnHide = function(self)
-  -- function num : 0_6
+function UIHomePhotoEnterItem:OnHide()
   if self._tweener then
-    (self._tweener):Kill(true)
+    self._tweener:Kill(true)
     self._tweener = nil
   end
 end
-
-

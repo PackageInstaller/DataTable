@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_set_chain_across_select_monster_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetChainAcrossSelectMonster", BuffViewBase)
 BuffViewSetChainAcrossSelectMonster = BuffViewSetChainAcrossSelectMonster
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetChainAcrossSelectMonster.PlayView = function(self, TT)
-  -- function num : 0_0
+function BuffViewSetChainAcrossSelectMonster:PlayView(TT)
   local result = self._buffResult
   local remove = result:GetRemove()
   local entityID = result:GetEntityID()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderChainPathComponent = renderBoardEntity:RenderChainPath()
   renderChainPathComponent:SetChainAcrossSelectMonster(remove, entityID)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewSetChainAcrossSelectMonster.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewSetChainAcrossSelectMonster:IsNotifyMatch(notify)
   local result = self._buffResult
   return true
 end
-
-

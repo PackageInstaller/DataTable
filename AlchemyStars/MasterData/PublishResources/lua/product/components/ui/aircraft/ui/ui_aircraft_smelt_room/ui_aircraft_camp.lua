@@ -1,131 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_aircraft_camp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftCamp", UICustomWidget)
 UIAircraftCamp = UIAircraftCamp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftCamp.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftCamp:OnShow(uiParams)
   self:InitWidget()
   self._airModule = self:GetModule(AircraftModule)
   self._roleModule = self:GetModule(RoleModule)
-  self._smeltRoom = (self._airModule):GetSmeltRoom()
-  self._atomDiscount = (self._smeltRoom):AtomDiscount()
-  ;
-  ((self.dropdown).onValueChanged):AddListener(function(idx)
-    -- function num : 0_0_0 , upvalues : self
+  self._smeltRoom = self._airModule:GetSmeltRoom()
+  self._atomDiscount = self._smeltRoom:AtomDiscount()
+  self.dropdown.onValueChanged:AddListener(function(idx)
     self:OnDropDownChanged(idx)
-  end
-)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.dropdown).onShow = function()
-    -- function num : 0_0_1 , upvalues : self
+  end)
+  
+  function self.dropdown.onShow()
     self:OnDropdownShow()
   end
-
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.dropdown).onHide = function()
-    -- function num : 0_0_2 , upvalues : self
+  
+  function self.dropdown.onHide()
     self:OnDropdownHide()
   end
-
+  
   self._2edTabData = {}
   self.DropDownContent = {}
   self._totalItems = {}
-  local items = (Cfg.cfg_item_smelt)({})
+  local items = Cfg.cfg_item_smelt({})
   self._lockInfo = {}
-  for _,data in pairs(items) do
-    local lock, param = (self._airModule):GetSmeltLockInfo(data)
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R10 in 'UnsetPending'
-
+  for _, data in pairs(items) do
+    local lock, param = self._airModule:GetSmeltLockInfo(data)
     if lock then
-      (self._lockInfo)[data.ID] = {lock, param}
+      self._lockInfo[data.ID] = {lock, param}
     end
   end
-  local tab1s = (Cfg.cfg_aircraft_smelt_tab1)({})
-  for i,cfg in ipairs(tab1s) do
+  local tab1s = Cfg.cfg_aircraft_smelt_tab1({})
+  for i, cfg in ipairs(tab1s) do
     if cfg.UIType == SmeltRoomUIType.Camp then
       local id = cfg.ID
-      local children = (Cfg.cfg_aircraft_smelt_tab2)({Tab1 = id})
-      ;
-      (table.sort)(children, function(a, b)
-    -- function num : 0_0_3
-    do return a.Index < b.Index end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      -- DECOMPILER ERROR at PC85: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._2edTabData)[id] = children
+      local children = Cfg.cfg_aircraft_smelt_tab2({Tab1 = id})
+      table.sort(children, function(a, b)
+        return a.Index < b.Index
+      end)
+      self._2edTabData[id] = children
       local ss = {}
-      ss[#ss + 1] = (StringTable.Get)("str_aircraft_player_info_all")
-      for _,_2ed in ipairs(children) do
-        ss[#ss + 1] = (StringTable.Get)(_2ed.Name)
+      ss[#ss + 1] = StringTable.Get("str_aircraft_player_info_all")
+      for _, _2ed in ipairs(children) do
+        ss[#ss + 1] = StringTable.Get(_2ed.Name)
       end
-      -- DECOMPILER ERROR at PC108: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self.DropDownContent)[id] = ss
+      self.DropDownContent[id] = ss
       local total = {}
-      for _,value in pairs(items) do
+      for _, value in pairs(items) do
         local contains = false
-        for _,child in ipairs(children) do
+        for _, child in ipairs(children) do
           if value.Tab == child.ID then
             contains = true
             break
           end
         end
-        do
-          do
-            if contains then
-              total[#total + 1] = value
-            end
-            -- DECOMPILER ERROR at PC132: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+        if contains then
+          total[#total + 1] = value
         end
       end
-      self._itemSortFunc = function(a, b)
-    -- function num : 0_0_4 , upvalues : self
-    local locka = (self._lockInfo)[a.ID]
-    local lockb = (self._lockInfo)[b.ID]
-    if locka then
-      locka = 2
-    else
-      locka = 1
-    end
-    if lockb then
-      lockb = 2
-    else
-      lockb = 1
-    end
-    if a.Index == b.Index then
-      if a.ID >= b.ID then
-        do return locka ~= lockb end
-        do return a.Index < b.Index end
-        do return locka < lockb end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
+      
+      function self._itemSortFunc(a, b)
+        local locka = self._lockInfo[a.ID]
+        local lockb = self._lockInfo[b.ID]
+        if locka then
+          locka = 2
+        else
+          locka = 1
+        end
+        if lockb then
+          lockb = 2
+        else
+          lockb = 1
+        end
+        if locka == lockb then
+          if a.Index == b.Index then
+            return a.ID < b.ID
+          end
+          return a.Index < b.Index
+        end
+        return locka < lockb
       end
+      
+      table.sort(total, self._itemSortFunc)
+      self._totalItems[id] = total
     end
   end
-
-      ;
-      (table.sort)(total, self._itemSortFunc)
-      -- DECOMPILER ERROR at PC142: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self._totalItems)[id] = total
-    end
-  end
-  self._stringList = (HelperProxy:GetInstance()):NewStringList()
+  self._stringList = HelperProxy:GetInstance():NewStringList()
   self._tab2 = nil
   self._index = nil
   self._current = nil
@@ -135,24 +95,17 @@ UIAircraftCamp.OnShow = function(self, uiParams)
   self._active = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.OnHide = function(self)
-  -- function num : 0_1
-  (self._addButton):Dispose()
-  ;
-  (self._removeButton):Dispose()
+function UIAircraftCamp:OnHide()
+  self._addButton:Dispose()
+  self._removeButton:Dispose()
   self._active = false
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
     self._tweener = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftCamp:InitWidget()
   self._root = self:GetGameObject("UIAircraftCamp")
   self.scrollView = self:GetUIComponent("Image", "ScrollView")
   self.content = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -165,15 +118,11 @@ UIAircraftCamp.InitWidget = function(self)
   self._currentRoot = self:GetGameObject("Currency")
   self._itemCountTex = self:GetUIComponent("UILocalizationText", "itemCountTex")
   self._addButton = UITouchButton:New(self:GetUIComponent("UIEventTriggerListener", "AddButton"), function()
-    -- function num : 0_2_0 , upvalues : self
     self:AddButtonOnClick()
-  end
-)
+  end)
   self._removeButton = UITouchButton:New(self:GetUIComponent("UIEventTriggerListener", "RemoveButton"), function()
-    -- function num : 0_2_1 , upvalues : self
     self:RemoveButtonOnClick()
-  end
-)
+  end)
   local atlas = self:GetAsset("UIAircraftSmeltRoom.spriteatlas", LoadType.SpriteAtlas)
   self._itemSelectSprite = atlas:GetSprite("wind_ronglian_kuang12")
   self._itemUnSelectSprite = atlas:GetSprite("wind_ronglian_kuang1")
@@ -183,57 +132,48 @@ UIAircraftCamp.InitWidget = function(self)
   local dropTitleIconUnSelect = atlas:GetSprite("wind_ronglian_icon12")
   local dropTitleBtnSelect = atlas:GetSprite("wind_ronglian_btn2")
   local dropTitleBtnUnSelect = atlas:GetSprite("wind_ronglian_btn1")
-  self.dropTitleIcons = {[1] = dropTitleIconSelect, [2] = dropTitleIconUnSelect}
-  self.dropTitleBtns = {[1] = dropTitleBtnSelect, [2] = dropTitleBtnUnSelect}
+  self.dropTitleIcons = {
+    [1] = dropTitleIconSelect,
+    [2] = dropTitleIconUnSelect
+  }
+  self.dropTitleBtns = {
+    [1] = dropTitleBtnSelect,
+    [2] = dropTitleBtnUnSelect
+  }
   self._atomDes = self:GetUIComponent("UILocalizationText", "AtomDes")
   self._atomTip = self:GetUIComponent("Transform", "AtomTip")
   self._atomMask = self:GetGameObject("AtomTipMask")
   local atomIcon = self:GetUIComponent("Image", "AtomIcon")
-  local atomCfg = (Cfg.cfg_top_tips)[RoleAssetID.RoleAssetAtom]
-  atomIcon.sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(atomCfg.Icon)
+  local atomCfg = Cfg.cfg_top_tips[RoleAssetID.RoleAssetAtom]
+  atomIcon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(atomCfg.Icon)
   self._center = self:GetUIComponent("RectTransform", "Center")
   self._needItemWidget = {}
   for i = 1, 7 do
     local mat = self:GetUIComponent("UISelectObjectPath", "mat0" .. i)
-    -- DECOMPILER ERROR at PC167: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (self._needItemWidget)[i] = mat:SpawnObject("UIAircraftCampMatItem")
+    self._needItemWidget[i] = mat:SpawnObject("UIAircraftCampMatItem")
   end
   for i = 1, #self._needItemWidget do
-    ((self._needItemWidget)[i]):Active(false)
+    self._needItemWidget[i]:Active(false)
   end
   self._campTip = self:GetUIComponent("RollingText", "CampTip")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.SetData = function(self, tab1)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftCamp:SetData(tab1)
   self._tab1 = tab1
   self._tab2 = 0
-  ;
-  (self._stringList):Clear()
-  for _,s in ipairs((self.DropDownContent)[self._tab1]) do
-    (self._stringList):Add(s)
+  self._stringList:Clear()
+  for _, s in ipairs(self.DropDownContent[self._tab1]) do
+    self._stringList:Add(s)
   end
-  ;
-  (self.dropdown):ClearOptions()
-  ;
-  (self.dropdown):AddOptions(self._stringList)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.dropdown).value = self._tab2
+  self.dropdown:ClearOptions()
+  self.dropdown:AddOptions(self._stringList)
+  self.dropdown.value = self._tab2
   self:RefreshItems()
   self:OnItemSelected(1)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.SetShow = function(self, show)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._root):SetActive(show)
+function UIAircraftCamp:SetShow(show)
+  self._root:SetActive(show)
   if show then
     self:AttachEvent(GameEventType.ItemCountChanged, self.onItemCountChanged)
   else
@@ -241,13 +181,10 @@ UIAircraftCamp.SetShow = function(self, show)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.JumpTo = function(self, jumpID)
-  -- function num : 0_5 , upvalues : _ENV
-  local changeScrollViewIdx = nil
+function UIAircraftCamp:JumpTo(jumpID)
+  local changeScrollViewIdx
   if jumpID then
-    for idx,value in ipairs(self._items) do
+    for idx, value in ipairs(self._items) do
       if value.ID == jumpID then
         self:OnItemSelected(idx)
         changeScrollViewIdx = idx
@@ -255,572 +192,411 @@ UIAircraftCamp.JumpTo = function(self, jumpID)
       end
     end
   end
-  do
-    if jumpID and changeScrollViewIdx then
-      self:_ChangeScrollViewPos(changeScrollViewIdx)
-    else
-      if jumpID and not changeScrollViewIdx then
-        (Log.exception)("找不到跳转物品：", jumpID)
-      end
-    end
+  if jumpID and changeScrollViewIdx then
+    self:_ChangeScrollViewPos(changeScrollViewIdx)
+  elseif jumpID and not changeScrollViewIdx then
+    Log.exception("找不到跳转物品：", jumpID)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.OnDropDownChanged = function(self, idx)
-  -- function num : 0_6
+function UIAircraftCamp:OnDropDownChanged(idx)
   if self._tab2 == idx then
-    return 
+    return
   end
   self._tab2 = idx
   self:RefreshItems()
   self:OnItemSelected(1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.RefreshItems = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local items = nil
+function UIAircraftCamp:RefreshItems()
+  local items
   if self._tab2 <= 0 then
-    items = (self._totalItems)[self._tab1]
+    items = self._totalItems[self._tab1]
   else
     if self._tab2ItemCache == nil then
       self._tab2ItemCache = {}
     end
-    local tab2 = (((self._2edTabData)[self._tab1])[self._tab2]).ID
-    items = (self._tab2ItemCache)[tab2]
+    local tab2 = self._2edTabData[self._tab1][self._tab2].ID
+    items = self._tab2ItemCache[tab2]
     if items == nil then
-      items = (Cfg.cfg_item_smelt)({Tab = tab2})
-      ;
-      (table.sort)(items, self._itemSortFunc)
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._tab2ItemCache)[tab2] = items
+      items = Cfg.cfg_item_smelt({Tab = tab2})
+      table.sort(items, self._itemSortFunc)
+      self._tab2ItemCache[tab2] = items
     end
   end
-  do
-    self._items = items
-    if #self._items == 0 then
-      (Log.exception)("严重错误，当前筛选条件下没有材料：", self._tab1, self._tab2)
-    end
-    ;
-    (self.content):SpawnObjects("UIAircraftSmeltItem", #self._items)
-    self._itemWidgets = (self.content):GetAllSpawnList()
-    local func = function(i)
-    -- function num : 0_7_0 , upvalues : self
+  self._items = items
+  if #self._items == 0 then
+    Log.exception("严重错误，当前筛选条件下没有材料：", self._tab1, self._tab2)
+  end
+  self.content:SpawnObjects("UIAircraftSmeltItem", #self._items)
+  self._itemWidgets = self.content:GetAllSpawnList()
+  
+  local function func(i)
     self:OnItemSelected(i)
   end
-
-    for idx,data in ipairs(self._items) do
-      ((self._itemWidgets)[idx]):SetData(idx, data, func, (self._lockInfo)[data.ID], self._itemSelectSprite, self._itemUnSelectSprite)
-    end
-    self._index = nil
+  
+  for idx, data in ipairs(self._items) do
+    self._itemWidgets[idx]:SetData(idx, data, func, self._lockInfo[data.ID], self._itemSelectSprite, self._itemUnSelectSprite)
   end
+  self._index = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp._ChangeScrollViewPos = function(self, idx)
-  -- function num : 0_8 , upvalues : _ENV
-  local itemSizeY = ((self.contentGridL).cellSize).y
-  local top = ((self.contentGridL).padding).top
-  local spacingY = ((self.contentGridL).spacing).y
+function UIAircraftCamp:_ChangeScrollViewPos(idx)
+  local itemSizeY = self.contentGridL.cellSize.y
+  local top = self.contentGridL.padding.top
+  local spacingY = self.contentGridL.spacing.y
   local anchorPosY = (idx - 1) * (itemSizeY + spacingY) + top
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.contentRectT).anchoredPosition = Vector2(0, anchorPosY)
+  self.contentRectT.anchoredPosition = Vector2(0, anchorPosY)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.OnItemSelected = function(self, idx)
-  -- function num : 0_9 , upvalues : _ENV
+function UIAircraftCamp:OnItemSelected(idx)
   if self._index == idx then
-    return 
+    return
   end
   if self._index then
-    ((self._itemWidgets)[self._index]):Cancel()
+    self._itemWidgets[self._index]:Cancel()
   end
   self._index = idx
-  self._current = (self._items)[idx]
-  ;
-  ((self._itemWidgets)[self._index]):Select()
-  self._outputID = ((self._current).Output)[1]
-  local cfg = (Cfg.cfg_item)[self._outputID]
+  self._current = self._items[idx]
+  self._itemWidgets[self._index]:Select()
+  self._outputID = self._current.Output[1]
+  local cfg = Cfg.cfg_item[self._outputID]
   local icon = cfg.Icon
   local color = cfg.Color
-  ;
-  (self.icon):LoadImage(icon)
+  self.icon:LoadImage(icon)
   self:FlushCurrentCount()
   self:RefreshItem(1, false)
   local target = 0
-  for idx,input in ipairs((self._current).Input) do
+  for idx, input in ipairs(self._current.Input) do
     local id = input[1]
     local count = input[2]
-    if count <= (self._roleModule):GetAssetCount(id) then
+    if count <= self._roleModule:GetAssetCount(id) then
       target = idx
       break
     end
   end
-  do
-    if target > 0 then
-      self:OnCampItemChanged(target, false, false)
-    else
-      self:ClearItem()
-    end
+  if 0 < target then
+    self:OnCampItemChanged(target, false, false)
+  else
+    self:ClearItem()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.ClearItem = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._campTip):RefreshText((StringTable.Get)("str_aircraft_smelt_camp_tip", (((self._current).Input)[1])[2], ((self._current).Output)[2]))
+function UIAircraftCamp:ClearItem()
+  self._campTip:RefreshText(StringTable.Get("str_aircraft_smelt_camp_tip", self._current.Input[1][2], self._current.Output[2]))
   self._curCampIdx = nil
   for i = 1, #self._needItemWidget do
-    ((self._needItemWidget)[i]):Select(false)
+    self._needItemWidget[i]:Select(false)
   end
   self._count = 0
   self:RefreshItem(self._count, false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.FlushCurrentCount = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local itemCount = (self._roleModule):GetAssetCount(self._outputID)
-  ;
-  (self._itemCountTex):SetText((StringTable.Get)("str_item_owned") .. itemCount)
+function UIAircraftCamp:FlushCurrentCount()
+  local itemCount = self._roleModule:GetAssetCount(self._outputID)
+  self._itemCountTex:SetText(StringTable.Get("str_item_owned") .. itemCount)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.RefreshItem = function(self, count, checkCount)
-  -- function num : 0_12 , upvalues : _ENV
+function UIAircraftCamp:RefreshItem(count, checkCount)
   local code = 0
   if checkCount then
     code = self:CheckCount(self._current, count)
   end
-  if code & ~AirItemErrorCode.FireflyOverflow > 0 then
+  if 0 < code & ~AirItemErrorCode.FireflyOverflow then
     return false
   end
   self._count = count
-  ;
-  (self.count):SetText(self._count * ((self._current).Output)[2])
-  if (self._current).SInput then
-    (self._currentRoot):SetActive(true)
-    ;
-    (self._currencyPool):SpawnObjects("UIAircraftSmeltCurrency", #(self._current).SInput)
-    self._currencyWidgets = (self._currencyPool):GetAllSpawnList()
-    for i,value in ipairs((self._current).SInput) do
+  self.count:SetText(self._count * self._current.Output[2])
+  if self._current.SInput then
+    self._currentRoot:SetActive(true)
+    self._currencyPool:SpawnObjects("UIAircraftSmeltCurrency", #self._current.SInput)
+    self._currencyWidgets = self._currencyPool:GetAllSpawnList()
+    for i, value in ipairs(self._current.SInput) do
       local id = value[1]
       local _count = value[2]
-      local atomClick = nil
+      local atomClick
       if id == RoleAssetID.RoleAssetAtom then
-        _count = (math.ceil)(_count * self._count * self._atomDiscount)
-        atomClick = function(pos)
-    -- function num : 0_12_0 , upvalues : self, _ENV
-    local dis = 1 - self._atomDiscount
-    if dis < 1 then
-      dis = (string.format)("%.2f", dis * 100)
-    else
-      dis = 100
-    end
-    ;
-    (self._atomDes):SetText((StringTable.Get)("str_aircraft_atom_des", dis))
-    ;
-    (self._atomMask):SetActive(true)
-  end
-
+        _count = math.ceil(_count * self._count * self._atomDiscount)
+        
+        function atomClick(pos)
+          local dis = 1 - self._atomDiscount
+          if dis < 1 then
+            dis = string.format("%.2f", dis * 100)
+          else
+            dis = 100
+          end
+          self._atomDes:SetText(StringTable.Get("str_aircraft_atom_des", dis))
+          self._atomMask:SetActive(true)
+        end
       else
         _count = _count * self._count
       end
-      ;
-      ((self._currencyWidgets)[i]):SetData(id, _count, atomClick)
+      self._currencyWidgets[i]:SetData(id, _count, atomClick)
     end
   else
-    do
-      ;
-      (self._currentRoot):SetActive(false)
-      local onClick = function(id, go, idx)
-    -- function num : 0_12_1 , upvalues : self, _ENV
-    local item = ((self._current).Input)[idx]
+    self._currentRoot:SetActive(false)
+  end
+  
+  local function onClick(id, go, idx)
+    local item = self._current.Input[idx]
     local id = item[1]
-    local count = (self._roleModule):GetAssetCount(id)
+    local count = self._roleModule:GetAssetCount(id)
     if count <= 0 then
-      (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_smelt_camp_notenough"))
-      return 
+      ToastManager.ShowToast(StringTable.Get("str_aircraft_smelt_camp_notenough"))
+      return
     end
     self:OnCampItemChanged(idx, true, true)
   end
-
-      for i = 1, #self._needItemWidget do
-        if i <= (table.count)((self._current).Input) then
-          ((self._needItemWidget)[i]):Active(true)
-          local input = ((self._current).Input)[i]
-          local id = input[1]
-          local _count = input[2]
-          if i == self._curCampIdx then
-            ((self._needItemWidget)[i]):SetData(id, _count * self._count, onClick, i)
-          else
-            ;
-            ((self._needItemWidget)[i]):SetData(id, 0, onClick, i)
-          end
-          ;
-          ((self._needItemWidget)[i]):TryStopShake()
-        else
-          do
-            do
-              ;
-              ((self._needItemWidget)[i]):Active(false)
-              ;
-              ((self._needItemWidget)[i]):SetCamp()
-              -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+  
+  for i = 1, #self._needItemWidget do
+    if i <= table.count(self._current.Input) then
+      self._needItemWidget[i]:Active(true)
+      local input = self._current.Input[i]
+      local id = input[1]
+      local _count = input[2]
+      if i == self._curCampIdx then
+        self._needItemWidget[i]:SetData(id, _count * self._count, onClick, i)
+      else
+        self._needItemWidget[i]:SetData(id, 0, onClick, i)
       end
-      return true
+      self._needItemWidget[i]:TryStopShake()
+    else
+      self._needItemWidget[i]:Active(false)
     end
+    self._needItemWidget[i]:SetCamp()
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.OnCampItemChanged = function(self, idx, checkCount, clampCount)
-  -- function num : 0_13 , upvalues : _ENV
+function UIAircraftCamp:OnCampItemChanged(idx, checkCount, clampCount)
   if self._curCampIdx == idx then
-    return 
+    return
   end
   if self._curCampIdx then
-    ((self._needItemWidget)[self._curCampIdx]):ResetCount(0)
-    ;
-    ((self._needItemWidget)[self._curCampIdx]):Select(false)
-    ;
-    ((self._needItemWidget)[self._curCampIdx]):TryStopShake()
+    self._needItemWidget[self._curCampIdx]:ResetCount(0)
+    self._needItemWidget[self._curCampIdx]:Select(false)
+    self._needItemWidget[self._curCampIdx]:TryStopShake()
   end
   self._curCampIdx = idx
-  local input = ((self._current).Input)[idx]
+  local input = self._current.Input[idx]
   local _count = input[2]
-  ;
-  ((self._needItemWidget)[self._curCampIdx]):ResetCount(_count * self._count)
-  ;
-  ((self._needItemWidget)[self._curCampIdx]):Select(true)
+  self._needItemWidget[self._curCampIdx]:ResetCount(_count * self._count)
+  self._needItemWidget[self._curCampIdx]:Select(true)
   local result = 0
   if checkCount then
     result = self:CheckCount(self._current, self._count)
   end
-  if clampCount and result & AirItemErrorCode.NotEnough > 0 then
-    local item = ((self._current).Input)[self._curCampIdx]
+  if clampCount and 0 < result & AirItemErrorCode.NotEnough then
+    local item = self._current.Input[self._curCampIdx]
     local id = item[1]
     local need = item[2]
-    local count = (self._roleModule):GetAssetCount(id)
-    self._count = (math.floor)(count / need)
+    local count = self._roleModule:GetAssetCount(id)
+    self._count = math.floor(count / need)
     self:RefreshItem(self._count, false)
   end
-  do
-    if result & AirItemErrorCode.NotEnough > 0 then
-      ((self._needItemWidget)[self._curCampIdx]):ShakeAndHighlight()
-    end
-    ;
-    (self._campTip):RefreshText((StringTable.Get)("str_aircraft_smelt_camp_tip", _count, ((self._current).Output)[2]))
+  if 0 < result & AirItemErrorCode.NotEnough then
+    self._needItemWidget[self._curCampIdx]:ShakeAndHighlight()
   end
+  self._campTip:RefreshText(StringTable.Get("str_aircraft_smelt_camp_tip", _count, self._current.Output[2]))
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.CheckCount = function(self, cfg, count)
-  -- function num : 0_14 , upvalues : _ENV
+function UIAircraftCamp:CheckCount(cfg, count)
   local result = AirItemErrorCode.None
   if count <= 0 then
     result = result | AirItemErrorCode.Zero
   end
   if cfg.SInput then
-    for idx,value in ipairs(cfg.SInput) do
+    for idx, value in ipairs(cfg.SInput) do
       local id = value[1]
       local need = value[2]
-      local have = (self._roleModule):GetAssetCount(id)
+      local have = self._roleModule:GetAssetCount(id)
       if id == RoleAssetID.RoleAssetAtom then
-        need = (math.ceil)(need * count * self._atomDiscount)
+        need = math.ceil(need * count * self._atomDiscount)
       end
       if have < need then
         result = result | AirItemErrorCode.SNotEnough
-        ;
-        ((self._currencyWidgets)[idx]):Shake()
+        self._currencyWidgets[idx]:Shake()
       else
-        ;
-        ((self._currencyWidgets)[idx]):Reset()
+        self._currencyWidgets[idx]:Reset()
       end
     end
   end
-  do
-    local item = (cfg.Input)[self._curCampIdx]
-    local id = item[1]
-    local need = item[2]
-    if (self._roleModule):GetAssetCount(id) < need * count then
-      result = result | AirItemErrorCode.NotEnough
-      ;
-      ((self._needItemWidget)[self._curCampIdx]):ShakeAndHighlight()
-    end
-    do
-      if (cfg.Output)[1] == RoleAssetID.RoleAssetFirefly then
-        local _count = (cfg.Output)[2]
-        if (self._airModule):GetMaxFirefly() < (self._airModule):GetFirefly() + _count * count then
-          result = result | AirItemErrorCode.FireflyOverflow
-        end
-      end
-      return result
+  local item = cfg.Input[self._curCampIdx]
+  local id = item[1]
+  local need = item[2]
+  if self._roleModule:GetAssetCount(id) < need * count then
+    result = result | AirItemErrorCode.NotEnough
+    self._needItemWidget[self._curCampIdx]:ShakeAndHighlight()
+  end
+  if cfg.Output[1] == RoleAssetID.RoleAssetFirefly then
+    local _count = cfg.Output[2]
+    if self._airModule:GetFirefly() + _count * count > self._airModule:GetMaxFirefly() then
+      result = result | AirItemErrorCode.FireflyOverflow
     end
   end
+  return result
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.AddButtonOnClick = function(self)
-  -- function num : 0_15
+function UIAircraftCamp:AddButtonOnClick()
   if self._curCampIdx == nil or self._curCampIdx == 0 then
-    return 
+    return
   end
   local result = self:RefreshItem(self._count + 1, true)
   if not result then
-    (self._addButton):Cancel()
+    self._addButton:Cancel()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.RemoveButtonOnClick = function(self)
-  -- function num : 0_16
+function UIAircraftCamp:RemoveButtonOnClick()
   if self._curCampIdx == nil or self._curCampIdx == 0 then
-    return 
+    return
   end
   local result = self:RefreshItem(self._count - 1, true)
   if not result then
-    (self._addButton):Cancel()
+    self._addButton:Cancel()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.OnDropdownShow = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.dropdown).interactable = false
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self.dropdown).captionText).color = Color(1, 1, 1)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.dropTitleBtn).sprite = (self.dropTitleBtns)[1]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.dropTitleIcon).sprite = (self.dropTitleIcons)[1]
+function UIAircraftCamp:OnDropdownShow()
+  self.dropdown.interactable = false
+  self.dropdown.captionText.color = Color(1, 1, 1)
+  self.dropTitleBtn.sprite = self.dropTitleBtns[1]
+  self.dropTitleIcon.sprite = self.dropTitleIcons[1]
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.OnDropdownHide = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.dropdown).interactable = true
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self.dropdown).captionText).color = Color(0, 0, 0)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.dropTitleBtn).sprite = (self.dropTitleBtns)[2]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.dropTitleIcon).sprite = (self.dropTitleIcons)[2]
+function UIAircraftCamp:OnDropdownHide()
+  self.dropdown.interactable = true
+  self.dropdown.captionText.color = Color(0, 0, 0)
+  self.dropTitleBtn.sprite = self.dropTitleBtns[2]
+  self.dropTitleIcon.sprite = self.dropTitleIcons[2]
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.SmeltButtonOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
+function UIAircraftCamp:SmeltButtonOnClick(go)
   if self._curCampIdx == nil or self._curCampIdx == 0 then
-    return 
+    return
   end
   local code = self:CheckCount(self._current, self._count)
-  if code > 0 then
-    if code & AirItemErrorCode.FireflyOverflow > 0 then
-      (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_aircraft_firefly_overflow"), function(param)
-    -- function num : 0_19_0 , upvalues : _ENV, self
-    AirLog("分解材料超过萤盏上限：", (self._current).ID, "数量：", self._count, "当前萤盏：", (self._airModule):GetFirefly(), "/", (self._airModule):GetMaxFirefly())
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.Smelt, self, (self._current).ID, self._count)
-  end
-, nil, function(param)
-    -- function num : 0_19_1 , upvalues : _ENV
-    AirLog("取消分解材料")
-  end
-, nil)
-    else
-      if code & ~AirItemErrorCode.FireflyOverflow > 0 then
-        AirLog("不能熔炼，错误码：", code)
-      end
+  if 0 < code then
+    if 0 < code & AirItemErrorCode.FireflyOverflow then
+      PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_aircraft_firefly_overflow"), function(param)
+        AirLog("分解材料超过萤盏上限：", self._current.ID, "数量：", self._count, "当前萤盏：", self._airModule:GetFirefly(), "/", self._airModule:GetMaxFirefly())
+        GameGlobal.TaskManager():StartTask(self.Smelt, self, self._current.ID, self._count)
+      end, nil, function(param)
+        AirLog("取消分解材料")
+      end, nil)
+    elseif 0 < code & ~AirItemErrorCode.FireflyOverflow then
+      AirLog("不能熔炼，错误码：", code)
     end
   else
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.Smelt, self, (self._current).ID, self._count)
+    GameGlobal.TaskManager():StartTask(self.Smelt, self, self._current.ID, self._count)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.AtomTipMaskOnClick = function(self, go)
-  -- function num : 0_20
-  (self._atomMask):SetActive(false)
+function UIAircraftCamp:AtomTipMaskOnClick(go)
+  self._atomMask:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.Smelt = function(self, TT, id, count)
-  -- function num : 0_21 , upvalues : _ENV
+function UIAircraftCamp:Smelt(TT, id, count)
   self:Lock(self:GetName())
-  local item = ((self._current).Input)[self._curCampIdx]
+  local item = self._current.Input[self._curCampIdx]
   local inputid = item[1]
   local inputNeed = item[2]
-  local res, reply = (self._airModule):HandleItemSmelt(TT, id, count, {inputid})
+  local res, reply = self._airModule:HandleItemSmelt(TT, id, count, {inputid})
   if not self._active then
     self:UnLock(self:GetName())
-    return 
+    return
   end
   if res:GetSucc() then
     local asset = ItemAsset:New()
     asset.assetid = reply.id
     asset.count = reply.num
-    local eft1 = (self:getEft("uieff_UIAircraftCamp_trail")):GetComponent(typeof(UnityEngine.RectTransform))
-    local eft2 = (self:getEft("uieff_UIAircraftCamp_glow")):GetComponent(typeof(UnityEngine.RectTransform))
-    local from = ((self:GetUIComponent("RectTransform", "mat0" .. self._curCampIdx)).anchoredPosition):Clone()
-    local to = ((self:GetUIComponent("RectTransform", "icon")).anchoredPosition):Clone()
+    local eft1 = self:getEft("uieff_UIAircraftCamp_trail"):GetComponent(typeof(UnityEngine.RectTransform))
+    local eft2 = self:getEft("uieff_UIAircraftCamp_glow"):GetComponent(typeof(UnityEngine.RectTransform))
+    local from = self:GetUIComponent("RectTransform", "mat0" .. self._curCampIdx).anchoredPosition:Clone()
+    local to = self:GetUIComponent("RectTransform", "icon").anchoredPosition:Clone()
     local time1 = 200
     local time2 = 800
     local time3 = 1000
     eft1.anchoredPosition = from
     eft1.localScale = Vector3.one
     eft1.localRotation = Quaternion.identity
-    ;
-    (eft1.gameObject):SetActive(true)
+    eft1.gameObject:SetActive(true)
     YIELD(TT, time1)
     if not self._active then
       self:UnLock(self:GetName())
-      return 
+      return
     end
     self._tweener = eft1:DOAnchorPos(to, time2 / 1000)
     YIELD(TT, time2)
     YIELD(TT)
-    ;
-    (eft1.gameObject):SetActive(false)
+    eft1.gameObject:SetActive(false)
     self._tweener = nil
     if not self._active then
       self:UnLock(self:GetName())
-      return 
+      return
     end
-    ;
-    (eft2.gameObject):SetActive(false)
+    eft2.gameObject:SetActive(false)
     eft2.anchoredPosition = to
     eft2.localScale = Vector3.one
     eft2.localRotation = Quaternion.identity
-    ;
-    (eft2.gameObject):SetActive(true)
+    eft2.gameObject:SetActive(true)
     YIELD(TT, time3)
     if not self._active then
       self:UnLock(self:GetName())
-      return 
+      return
     end
-    ;
-    (eft2.gameObject):SetActive(false)
-    local curCount = (self._roleModule):GetAssetCount(inputid)
-    local ceiling = (math.floor)(curCount / inputNeed)
-    local newCount = (Mathf.Clamp)(self._count, 0, ceiling)
+    eft2.gameObject:SetActive(false)
+    local curCount = self._roleModule:GetAssetCount(inputid)
+    local ceiling = math.floor(curCount / inputNeed)
+    local newCount = Mathf.Clamp(self._count, 0, ceiling)
     if newCount == 0 then
       local target = 0
-      for idx,input in ipairs((self._current).Input) do
+      for idx, input in ipairs(self._current.Input) do
         local id = input[1]
         local count = input[2]
-        if count <= (self._roleModule):GetAssetCount(id) then
+        if count <= self._roleModule:GetAssetCount(id) then
           target = idx
           break
         end
       end
-      do
-        do
-          do
-            if target > 0 then
-              self:OnCampItemChanged(target, false, false)
-              item = ((self._current).Input)[self._curCampIdx]
-              inputid = item[1]
-              inputNeed = item[2]
-              curCount = (self._roleModule):GetAssetCount(inputid)
-              ceiling = (math.floor)(curCount / inputNeed)
-              newCount = (Mathf.Clamp)(self._count, 0, ceiling)
-            else
-              self:ClearItem()
-              newCount = 0
-            end
-            self:RefreshItem(newCount, false)
-            self:ShowDialog("UIGetItemController", {asset}, function()
-    -- function num : 0_21_0
-  end
-)
-            self:FlushCurrentCount()
-            if reply.id == RoleAssetID.RoleAssetFirefly then
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshMainUI)
-            end
-            ;
-            (ToastManager.ShowToast)((self._airModule):GetErrorMsg(res:GetResult()))
-            self:UnLock(self:GetName())
-          end
-        end
+      if 0 < target then
+        self:OnCampItemChanged(target, false, false)
+        item = self._current.Input[self._curCampIdx]
+        inputid = item[1]
+        inputNeed = item[2]
+        curCount = self._roleModule:GetAssetCount(inputid)
+        ceiling = math.floor(curCount / inputNeed)
+        newCount = Mathf.Clamp(self._count, 0, ceiling)
+      else
+        self:ClearItem()
+        newCount = 0
       end
     end
+    self:RefreshItem(newCount, false)
+    self:ShowDialog("UIGetItemController", {asset}, function()
+    end)
+    self:FlushCurrentCount()
+    if reply.id == RoleAssetID.RoleAssetFirefly then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshMainUI)
+    end
+  else
+    ToastManager.ShowToast(self._airModule:GetErrorMsg(res:GetResult()))
   end
+  self:UnLock(self:GetName())
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.onItemCountChanged = function(self)
-  -- function num : 0_22
+function UIAircraftCamp:onItemCountChanged()
   self:RefreshItem(self._count, false)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftCamp.getEft = function(self, name)
-  -- function num : 0_23 , upvalues : _ENV
+function UIAircraftCamp:getEft(name)
   if self._efts == nil then
     self._efts = {}
   end
-  do
-    if not (self._efts)[name] then
-      local eft = self:GetAsset(name .. ".prefab", LoadType.GameObject)
-      ;
-      (eft.transform):SetParent(self._center)
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._efts)[name] = eft
-    end
-    return (self._efts)[name]
+  if not self._efts[name] then
+    local eft = self:GetAsset(name .. ".prefab", LoadType.GameObject)
+    eft.transform:SetParent(self._center)
+    self._efts[name] = eft
   end
+  return self._efts[name]
 end
-
-

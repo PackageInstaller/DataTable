@@ -1,35 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_extra_skill_ignore_cd_update.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetExtraSkillIgnoreCdUpdate", BuffLogicBase)
 BuffLogicSetExtraSkillIgnoreCdUpdate = BuffLogicSetExtraSkillIgnoreCdUpdate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetExtraSkillIgnoreCdUpdate.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicSetExtraSkillIgnoreCdUpdate:Constructor(buffInstance, logicParam)
   self._extraSkillIndex = tonumber(logicParam.extraSkillIndex)
   self._ignore = tonumber(logicParam.ignore)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetExtraSkillIgnoreCdUpdate.DoLogic = function(self)
-  -- function num : 0_1
+function BuffLogicSetExtraSkillIgnoreCdUpdate:DoLogic()
   local e = self:GetEntity()
   if not e:HasSkillInfo() then
-    return 
+    return
   end
   local cSkillInfo = e:SkillInfo()
-  if self._ignore ~= 1 then
-    do
-      local bIgnore = not cSkillInfo
-      cSkillInfo:SetExtraSkillIgnoreCdUpdate(self._extraSkillIndex, bIgnore)
-      do return  end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
-    end
+  if cSkillInfo then
+    local bIgnore = self._ignore == 1
+    cSkillInfo:SetExtraSkillIgnoreCdUpdate(self._extraSkillIndex, bIgnore)
   end
+  return
 end
-
-

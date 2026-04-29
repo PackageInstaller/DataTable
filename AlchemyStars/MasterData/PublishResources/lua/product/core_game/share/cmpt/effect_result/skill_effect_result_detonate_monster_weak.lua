@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_detonate_monster_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultDetonateMonsterWeak", SkillEffectResultBase)
 SkillEffectResultDetonateMonsterWeak = SkillEffectResultDetonateMonsterWeak
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultDetonateMonsterWeak.Constructor = function(self, entityID, weakResults, damageResults, damageCenters)
-  -- function num : 0_0
+function SkillEffectResultDetonateMonsterWeak:Constructor(entityID, weakResults, damageResults, damageCenters)
   self._entityID = entityID
   self._weakResult = weakResults
   self._damageResult = damageResults
   self._damageCenters = damageCenters
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultDetonateMonsterWeak.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultDetonateMonsterWeak:GetEffectType()
   return SkillEffectType.DetonateMonsterWeak
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultDetonateMonsterWeak.GetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultDetonateMonsterWeak:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultDetonateMonsterWeak.GetWeakResult = function(self)
-  -- function num : 0_3
+function SkillEffectResultDetonateMonsterWeak:GetWeakResult()
   return self._weakResult
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultDetonateMonsterWeak.GetDamageResult = function(self)
-  -- function num : 0_4
+function SkillEffectResultDetonateMonsterWeak:GetDamageResult()
   return self._damageResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultDetonateMonsterWeak.GetDamageCenters = function(self)
-  -- function num : 0_5
+function SkillEffectResultDetonateMonsterWeak:GetDamageCenters()
   return self._damageCenters
 end
-
-

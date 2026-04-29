@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_effect_calc_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalcService", BaseService)
 SkillEffectCalcService = SkillEffectCalcService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcService.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalcService:Constructor(world)
   self._world = world
   self:RegistSkillEffectCalculator()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.Initialize = function(self)
-  -- function num : 0_1
-  self._configService = (self._world):GetService("Config")
-  self._mathService = (self._world):GetService("Math")
-  self._calcDamageService = (self._world):GetService("CalcDamage")
+function SkillEffectCalcService:Initialize()
+  self._configService = self._world:GetService("Config")
+  self._mathService = self._world:GetService("Math")
+  self._calcDamageService = self._world:GetService("CalcDamage")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.CalcSkillEffect_All = function(self, skillEffectCalcParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local svcCfgDeco = (self._world):GetService("ConfigDecoration")
+function SkillEffectCalcService:CalcSkillEffect_All(skillEffectCalcParam)
+  local svcCfgDeco = self._world:GetService("ConfigDecoration")
   local skillEffectArray = svcCfgDeco:GetLatestEffectParamArray(skillEffectCalcParam.casterEntityID, skillEffectCalcParam.skillID)
   local skillEffectResult = {}
   for skillEffectIndex = 1, #skillEffectArray do
@@ -37,7 +24,7 @@ SkillEffectCalcService.CalcSkillEffect_All = function(self, skillEffectCalcParam
       if skillResult._className ~= nil then
         skillEffectResult[#skillEffectResult + 1] = skillResult
       else
-        for _,v in ipairs(skillResult) do
+        for _, v in ipairs(skillResult) do
           skillEffectResult[#skillEffectResult + 1] = v
         end
       end
@@ -47,28 +34,24 @@ SkillEffectCalcService.CalcSkillEffect_All = function(self, skillEffectCalcParam
   return skillEffectResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService._ChangeSkillTargetAndScopeForAddBlood = function(self, skillEffectCalcParam)
-  -- function num : 0_3 , upvalues : _ENV
-  if (skillEffectCalcParam.skillEffectParam):GetEffectType() ~= SkillEffectType.AddBlood then
-    return 
+function SkillEffectCalcService:_ChangeSkillTargetAndScopeForAddBlood(skillEffectCalcParam)
+  if skillEffectCalcParam.skillEffectParam:GetEffectType() ~= SkillEffectType.AddBlood then
+    return
   end
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
   local teamPos = teamEntity:GetGridPosition()
   skillEffectCalcParam:SetGridPos(teamPos)
-  skillEffectCalcParam:SetTargetEntityIDs({teamEntity:GetID()})
+  skillEffectCalcParam:SetTargetEntityIDs({
+    teamEntity:GetID()
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.CalcSkillEffectByType = function(self, skillEffectCalcParam)
-  -- function num : 0_4 , upvalues : _ENV
-  local effectType = (skillEffectCalcParam.skillEffectParam):GetEffectType()
-  local classType = (self._skillEffectCalculatorDic)[effectType]
+function SkillEffectCalcService:CalcSkillEffectByType(skillEffectCalcParam)
+  local effectType = skillEffectCalcParam.skillEffectParam:GetEffectType()
+  local classType = self._skillEffectCalculatorDic[effectType]
   if classType == nil then
-    (Log.exception)("SkillEffectCalcService cant find effectype ", effectType)
+    Log.exception("SkillEffectCalcService cant find effectype ", effectType)
   end
   local skillID = skillEffectCalcParam:GetSkillID()
   self:LogNotice("CalcSkillEffectByType() ", effectType, GetEnumKey("SkillEffectType", effectType), " skillID:", skillID)
@@ -78,10 +61,7 @@ SkillEffectCalcService.CalcSkillEffectByType = function(self, skillEffectCalcPar
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.ComputeSkillDamage = function(self, attacker, attackPos, defender, damagePos, skillID, damageParam, effectType, damageStageIndex, ignoreShield, curSkillDamageIndex, damageGridPos)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalcService:ComputeSkillDamage(attacker, attackPos, defender, damagePos, skillID, damageParam, effectType, damageStageIndex, ignoreShield, curSkillDamageIndex, damageGridPos)
   local percentList = damageParam:GetDamagePercent()
   local damageFormulaID = damageParam:GetDamageFormulaID()
   damageParam.attackPos = attackPos
@@ -91,37 +71,30 @@ SkillEffectCalcService.ComputeSkillDamage = function(self, attacker, attackPos, 
   damageParam.skillEffectType = effectType
   local totalDamage = 0
   local multiDamageInfo = {}
-  for _,percent in ipairs(percentList) do
+  for _, percent in ipairs(percentList) do
     damageParam.percent = percent
     self:NotifyDamageBegin(attacker, defender, attackPos, damagePos, skillID, effectType, damageStageIndex)
-    local damageInfo = (self._calcDamageService):DoCalcDamage(attacker, defender, damageParam, ignoreShield, damageGridPos)
+    local damageInfo = self._calcDamageService:DoCalcDamage(attacker, defender, damageParam, ignoreShield, damageGridPos)
     damageInfo:SetDamageStageIndex(damageStageIndex)
     damageInfo:SetCurSkillDamageIndex(curSkillDamageIndex)
     totalDamage = totalDamage + damageInfo:GetDamageValue()
-    ;
-    (table.insert)(multiDamageInfo, damageInfo)
+    table.insert(multiDamageInfo, damageInfo)
     self:NotifyDamageEnd(attacker, defender, attackPos, damagePos, skillID, damageInfo, effectType, damageStageIndex)
   end
   return totalDamage, multiDamageInfo
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.NewSkillDamageEffectResult = function(self, gridPos, targetid, damage, damageArray, damageStageIndex)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectCalcService:NewSkillDamageEffectResult(gridPos, targetid, damage, damageArray, damageStageIndex)
   local skillResult = SkillDamageEffectResult:New(gridPos, targetid, damage, damageArray, damageStageIndex)
   return skillResult
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.CalcHitbackEffect = function(self, attackerPos, attackerDir, attackerBodyArea, targetID, dirType, pullType, distance, calcType, ignorePlayerBlock, excludeCasterPos, casterEntity, skillRange, notCalcBomb, ignorePathBlock, backupDirectionPlan, interactType, skillType, extraBlockPos)
-  -- function num : 0_7
-  local defender = (self._world):GetEntityByID(targetID)
+function SkillEffectCalcService:CalcHitbackEffect(attackerPos, attackerDir, attackerBodyArea, targetID, dirType, pullType, distance, calcType, ignorePlayerBlock, excludeCasterPos, casterEntity, skillRange, notCalcBomb, ignorePathBlock, backupDirectionPlan, interactType, skillType, extraBlockPos)
+  local defender = self._world:GetEntityByID(targetID)
   local defenderPos = defender:GetGridPosition()
-  local defenderBodyArea = (defender:BodyArea())
-  local dir = nil
-  dir = self:CalHitbackDir(attackerPos, attackerDir, attackerBodyArea, targetID, dirType, pullType, distance, casterEntity, skillRange, backupDirectionPlan)
+  local defenderBodyArea = defender:BodyArea()
+  local dir
+  dir, distance = self:CalHitbackDir(attackerPos, attackerDir, attackerBodyArea, targetID, dirType, pullType, distance, casterEntity, skillRange, backupDirectionPlan)
   local excludePosList = {}
   if excludeCasterPos then
     local casterBodyArea = attackerBodyArea:GetArea()
@@ -131,369 +104,261 @@ SkillEffectCalcService.CalcHitbackEffect = function(self, attackerPos, attackerD
       end
     end
   end
-  do
-    local targetPos, isBlocked, blockMonsterID, realHitBackDistance = self:CalHitbackPosByEntityDir(defenderPos, defenderBodyArea, dir, distance, excludePosList, ignorePlayerBlock, defender, ignorePathBlock, interactType, extraBlockPos)
-    return targetPos, dir, isBlocked, blockMonsterID, realHitBackDistance
-  end
+  local targetPos, isBlocked, blockMonsterID, realHitBackDistance = self:CalHitbackPosByEntityDir(defenderPos, defenderBodyArea, dir, distance, excludePosList, ignorePlayerBlock, defender, ignorePathBlock, interactType, extraBlockPos)
+  return targetPos, dir, isBlocked, blockMonsterID, realHitBackDistance
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.CheckHitbackDefender = function(self, targetID)
-  -- function num : 0_8 , upvalues : _ENV
-  local defender = (self._world):GetEntityByID(targetID)
+function SkillEffectCalcService:CheckHitbackDefender(targetID)
+  local defender = self._world:GetEntityByID(targetID)
   if not defender then
     return false
   end
-  do
-    if defender:HasTrap() then
-      local trapCmp = defender:Trap()
-      if TrapType.BombByHitBack ~= trapCmp:GetTrapType() then
-        return false
-      end
+  if defender:HasTrap() then
+    local trapCmp = defender:Trap()
+    if TrapType.BombByHitBack ~= trapCmp:GetTrapType() then
+      return false
     end
-    local defenderPos = defender:GetGridPosition()
-    local defenderBodyArea = defender:BodyArea()
-    local buffLogicSvc = (self._world):GetService("BuffLogic")
-    if not buffLogicSvc:CheckCanBeHitBack(defender) then
-      return false, SkillHitBackEffectResult:New(targetID, defenderPos, defenderPos)
-    end
-    return true
   end
+  local defenderPos = defender:GetGridPosition()
+  local defenderBodyArea = defender:BodyArea()
+  local buffLogicSvc = self._world:GetService("BuffLogic")
+  if not buffLogicSvc:CheckCanBeHitBack(defender) then
+    return false, SkillHitBackEffectResult:New(targetID, defenderPos, defenderPos)
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.CalcHitbackEffectResult = function(self, attackerPos, attackerDir, attackerBodyArea, targetID, dirType, pullType, distance, calcType, ignorePlayerBlock, excludeCasterPos, casterEntity, skillRange, notCalcBomb, ignorePathBlock, backupDirectionPlan, interactType, skillType, extraBlockPos)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillEffectCalcService:CalcHitbackEffectResult(attackerPos, attackerDir, attackerBodyArea, targetID, dirType, pullType, distance, calcType, ignorePlayerBlock, excludeCasterPos, casterEntity, skillRange, notCalcBomb, ignorePathBlock, backupDirectionPlan, interactType, skillType, extraBlockPos)
   local checkFlag, ret = self:CheckHitbackDefender(targetID)
   if not checkFlag then
     return ret
   end
   local targetPos, dir, isBlocked, blockMonsterID, realHitBackDistance = self:CalcHitbackEffect(attackerPos, attackerDir, attackerBodyArea, targetID, dirType, pullType, distance, calcType, ignorePlayerBlock, excludeCasterPos, casterEntity, skillRange, notCalcBomb, ignorePathBlock, backupDirectionPlan, interactType, skillType, extraBlockPos)
   if not targetPos then
-    return 
+    return
   end
   local hitbackResult = self:CalcHitbackEffectResultProcess(targetID, calcType, casterEntity, dir, targetPos, SkillEffectType.HitBack, notCalcBomb, isBlocked, blockMonsterID, skillType, realHitBackDistance)
   return hitbackResult
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.CalcHitbackEffectResultProcess = function(self, targetID, calcType, casterEntity, dir, targetPos, convertSource, notCalcBomb, isBlocked, blockMonsterID, skillType, realHitBackDistance)
-  -- function num : 0_10 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
-  local triggerService = (self._world):GetService("Trigger")
-  local utilData = (self._world):GetService("UtilData")
-  local defender = (self._world):GetEntityByID(targetID)
+function SkillEffectCalcService:CalcHitbackEffectResultProcess(targetID, calcType, casterEntity, dir, targetPos, convertSource, notCalcBomb, isBlocked, blockMonsterID, skillType, realHitBackDistance)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
+  local triggerService = self._world:GetService("Trigger")
+  local utilData = self._world:GetService("UtilData")
+  local defender = self._world:GetEntityByID(targetID)
   local defenderPos = defender:GetGridPosition()
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local bodyArea, blockFlag = boardServiceLogic:RemoveEntityBlockFlag(defender, defenderPos)
   local tConvertInfo = {}
   local pieceChangeTable = self:_CalcHitbackPieceChangeTable(defenderPos, targetPos, defender)
   if pieceChangeTable ~= nil then
-    for pos,pieceType in pairs(pieceChangeTable) do
+    for pos, pieceType in pairs(pieceChangeTable) do
       boardServiceLogic:SetPieceTypeLogic(pieceType, pos)
       local convertInfo = NTGridConvert_ConvertInfo:New(pos, PieceType.None, pieceType)
-      ;
-      (table.insert)(tConvertInfo, convertInfo)
+      table.insert(tConvertInfo, convertInfo)
     end
   end
-  do
-    local ntGridConvert = NTGridConvert:New(boardEntity, tConvertInfo)
-    ntGridConvert:SetConvertEffectType(convertSource)
-    ntGridConvert:SetSkillType(skillType)
-    ;
-    ((self._world):GetService("Trigger")):Notify(ntGridConvert)
-    defender:SetGridPosition(targetPos)
-    ;
-    (Log.info)("HitBackData Defender:", defender:GetID(), " NewPos:", targetPos)
-    if defender:HasTeam() then
-      local pets = (defender:Team()):GetTeamPetEntities()
-      for i,petEntity in ipairs(pets) do
-        petEntity:SetGridPosition(targetPos)
-        ;
-        (petEntity:GridLocation()):SetMoveLastPosition(targetPos)
-      end
-    end
-    do
-      local trapIds = {}
-      if targetPos ~= defenderPos then
-        local triggerTraps = trapServiceLogic:TriggerTrapByEntity(defender, TrapTriggerOrigin.Hitback)
-        for i,e in ipairs(triggerTraps) do
-          trapIds[#trapIds + 1] = e:GetID()
-        end
-      end
-      do
-        local colorNew = utilData:FindPieceElement(targetPos)
-        if defender:HasTeam() and boardServiceLogic:GetCanConvertGridElementForTeamPos(targetPos) then
-          colorNew = PieceType.None
-        end
-        boardServiceLogic:SetPieceTypeLogic(colorNew, defender:GetGridPosition())
-        boardServiceLogic:SetEntityBlockFlag(defender, targetPos, blockFlag)
-        local bombPos = targetPos
-        if defender:HasTeam() or defender:HasMonsterID() then
-          bombPos = targetPos + dir
-        end
-        local trapEntity = nil
-        if notCalcBomb == nil then
-          trapEntity = trapServiceLogic:TriggerBomb(bombPos, defender)
-        end
-        if trapEntity then
-          local trapCmpt = trapEntity:Trap()
-          ;
-          (trapEntity:Attributes()):Modify("HP", 0)
-          trapServiceLogic:AddTrapDeadMark(trapEntity)
-          local notifyTrapAction = NTTrapAction:New(nil, defenderPos)
-          triggerService:Notify(notifyTrapAction)
-        end
-        do
-          local sTrigger = (self._world):GetService("Trigger")
-          sTrigger:Notify(NTHitBackEnd:New(casterEntity, defender, defenderPos, targetPos, dir))
-          local hitbackResult = SkillHitBackEffectResult:New(targetID, defenderPos, targetPos, pieceChangeTable, calcType, dir, colorNew)
-          hitbackResult:SetTriggerTrapIds(trapIds)
-          if trapEntity then
-            hitbackResult:SetBombTrapEntityID(trapEntity:GetID())
-          end
-          if isBlocked ~= nil then
-            hitbackResult:SetIsBlocked(isBlocked)
-          end
-          if blockMonsterID then
-            hitbackResult:SetBlockMonsterID(blockMonsterID)
-          end
-          return hitbackResult
-        end
-      end
+  local ntGridConvert = NTGridConvert:New(boardEntity, tConvertInfo)
+  ntGridConvert:SetConvertEffectType(convertSource)
+  ntGridConvert:SetSkillType(skillType)
+  self._world:GetService("Trigger"):Notify(ntGridConvert)
+  defender:SetGridPosition(targetPos)
+  Log.info("HitBackData Defender:", defender:GetID(), " NewPos:", targetPos)
+  if defender:HasTeam() then
+    local pets = defender:Team():GetTeamPetEntities()
+    for i, petEntity in ipairs(pets) do
+      petEntity:SetGridPosition(targetPos)
+      petEntity:GridLocation():SetMoveLastPosition(targetPos)
     end
   end
+  local trapIds = {}
+  if targetPos ~= defenderPos then
+    local triggerTraps = trapServiceLogic:TriggerTrapByEntity(defender, TrapTriggerOrigin.Hitback)
+    for i, e in ipairs(triggerTraps) do
+      trapIds[#trapIds + 1] = e:GetID()
+    end
+  end
+  local colorNew = utilData:FindPieceElement(targetPos)
+  if defender:HasTeam() and boardServiceLogic:GetCanConvertGridElementForTeamPos(targetPos) then
+    colorNew = PieceType.None
+  end
+  boardServiceLogic:SetPieceTypeLogic(colorNew, defender:GetGridPosition())
+  boardServiceLogic:SetEntityBlockFlag(defender, targetPos, blockFlag)
+  local bombPos = targetPos
+  if defender:HasTeam() or defender:HasMonsterID() then
+    bombPos = targetPos + dir
+  end
+  local trapEntity
+  if notCalcBomb == nil then
+    trapEntity = trapServiceLogic:TriggerBomb(bombPos, defender)
+  end
+  if trapEntity then
+    local trapCmpt = trapEntity:Trap()
+    trapEntity:Attributes():Modify("HP", 0)
+    trapServiceLogic:AddTrapDeadMark(trapEntity)
+    local notifyTrapAction = NTTrapAction:New(nil, defenderPos)
+    triggerService:Notify(notifyTrapAction)
+  end
+  local sTrigger = self._world:GetService("Trigger")
+  sTrigger:Notify(NTHitBackEnd:New(casterEntity, defender, defenderPos, targetPos, dir))
+  local hitbackResult = SkillHitBackEffectResult:New(targetID, defenderPos, targetPos, pieceChangeTable, calcType, dir, colorNew)
+  hitbackResult:SetTriggerTrapIds(trapIds)
+  if trapEntity then
+    hitbackResult:SetBombTrapEntityID(trapEntity:GetID())
+  end
+  if isBlocked ~= nil then
+    hitbackResult:SetIsBlocked(isBlocked)
+  end
+  if blockMonsterID then
+    hitbackResult:SetBlockMonsterID(blockMonsterID)
+  end
+  return hitbackResult
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.CalHitbackDir = function(self, attackerPos, attackerDir, attackerBodyArea, targetID, dirType, pullType, distance, casterEntity, skillRange, backupDirectionPlan)
-  -- function num : 0_11 , upvalues : _ENV
-  local defender = (self._world):GetEntityByID(targetID)
+function SkillEffectCalcService:CalHitbackDir(attackerPos, attackerDir, attackerBodyArea, targetID, dirType, pullType, distance, casterEntity, skillRange, backupDirectionPlan)
+  local defender = self._world:GetEntityByID(targetID)
   local defenderPos = defender:GetGridPosition()
   local defenderBodyArea = defender:BodyArea()
-  local utilCalcSvc = ((self._world):GetService("UtilCalc"))
-  local dir = nil
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local dir
   if dirType == HitBackDirectionType.Cross then
-    dir = (GameHelper.ComputeLogicDir)(attackerDir)
+    dir = GameHelper.ComputeLogicDir(attackerDir)
+  elseif dirType == HitBackDirectionType.SelectCanUseDir then
+    dir, distance = utilCalcSvc:_CalCanUseHitBackDir(defender, distance)
+  elseif dirType == HitBackDirectionType.SelectSquareRingFarest then
+    dir = utilCalcSvc:_CalSelectSquareRingFarest(defender, casterEntity)
+  elseif dirType == HitBackDirectionType.SelectCanUse8Dir then
+    local tmpDir = GameHelper.ComputeLogicDir(attackerDir)
+    dir, distance = utilCalcSvc:_CalCanUseHitBackDir8(tmpDir, defender, distance)
+  elseif dirType == HitBackDirectionType.SelectNearestOutOfRange then
+    dir, distance = utilCalcSvc:_CalcNearestPosOutOfRange(skillRange, defender)
+  elseif dirType == HitBackDirectionType.SelectCanUseDirAndDis then
+    dir, distance = utilCalcSvc:CalSelectCanUseDirAndDis(attackerDir, defender, distance)
+  elseif dirType == HitBackDirectionType.CoffinMusume then
+    dir, distance = utilCalcSvc:CalCoffinMusumeHitbackDirAndDis(attackerPos, attackerDir, defender, distance, casterEntity)
+  elseif dirType == HitBackDirectionType.CasterDir2Edge then
+    dir = attackerDir
+  elseif dirType == HitBackDirectionType.Front3Dir then
+    dir = utilCalcSvc:CalcHitBackFront3Dir(attackerPos, attackerDir, defender, distance, casterEntity)
+  elseif dirType == HitBackDirectionType.AttackFront2Edge then
+    dir = utilCalcSvc:CalcHitBackAttackFront2Edge(attackerPos, attackerBodyArea, defenderPos)
+  elseif dirType == HitBackDirectionType.EightDirAndCasterAround then
+    dir, distance = utilCalcSvc:CalEightDirAndCasterAround(casterEntity, defender, distance)
+  elseif dirType == HitBackDirectionType.Butterfly then
+    dir, distance = utilCalcSvc:CalButterflyHitBackDirAndDistance(casterEntity, defender)
+  elseif dirType == HitBackDirectionType.BossCarrot then
+    local casterCenterPos = casterEntity:GetGridPosition()
+    local casterBodyArea = casterEntity:BodyArea():GetArea()
+    local clockWiseRate = BattleConst.BossCarrotHitBackClockWiseRate
+    dir, distance = utilCalcSvc:_CalcHitBackDirBossCarrot(casterCenterPos, casterBodyArea, defenderPos, casterEntity, defender, clockWiseRate)
+  elseif dirType == HitBackDirectionType.Scorpion then
+    dir, distance = utilCalcSvc:_CalcHitBackScorpion(casterEntity, defender, distance)
   else
-    if dirType == HitBackDirectionType.SelectCanUseDir then
-      dir = utilCalcSvc:_CalCanUseHitBackDir(defender, distance)
-    else
-      if dirType == HitBackDirectionType.SelectSquareRingFarest then
-        dir = utilCalcSvc:_CalSelectSquareRingFarest(defender, casterEntity)
-      else
-        if dirType == HitBackDirectionType.SelectCanUse8Dir then
-          local tmpDir = (GameHelper.ComputeLogicDir)(attackerDir)
-          -- DECOMPILER ERROR at PC57: Overwrote pending register: R7 in 'AssignReg'
-
-          dir = utilCalcSvc:_CalCanUseHitBackDir8(tmpDir, defender, distance)
-        else
-          do
-            -- DECOMPILER ERROR at PC68: Overwrote pending register: R7 in 'AssignReg'
-
-            if dirType == HitBackDirectionType.SelectNearestOutOfRange then
-              dir = utilCalcSvc:_CalcNearestPosOutOfRange(skillRange, defender)
-            else
-              -- DECOMPILER ERROR at PC80: Overwrote pending register: R7 in 'AssignReg'
-
-              if dirType == HitBackDirectionType.SelectCanUseDirAndDis then
-                dir = utilCalcSvc:CalSelectCanUseDirAndDis(attackerDir, defender, distance)
-              else
-                -- DECOMPILER ERROR at PC94: Overwrote pending register: R7 in 'AssignReg'
-
-                if dirType == HitBackDirectionType.CoffinMusume then
-                  dir = utilCalcSvc:CalCoffinMusumeHitbackDirAndDis(attackerPos, attackerDir, defender, distance, casterEntity)
-                else
-                  if dirType == HitBackDirectionType.CasterDir2Edge then
-                    dir = attackerDir
-                  else
-                    if dirType == HitBackDirectionType.Front3Dir then
-                      dir = utilCalcSvc:CalcHitBackFront3Dir(attackerPos, attackerDir, defender, distance, casterEntity)
-                    else
-                      if dirType == HitBackDirectionType.AttackFront2Edge then
-                        dir = utilCalcSvc:CalcHitBackAttackFront2Edge(attackerPos, attackerBodyArea, defenderPos)
-                      else
-                        -- DECOMPILER ERROR at PC136: Overwrote pending register: R7 in 'AssignReg'
-
-                        if dirType == HitBackDirectionType.EightDirAndCasterAround then
-                          dir = utilCalcSvc:CalEightDirAndCasterAround(casterEntity, defender, distance)
-                        else
-                          -- DECOMPILER ERROR at PC147: Overwrote pending register: R7 in 'AssignReg'
-
-                          if dirType == HitBackDirectionType.Butterfly then
-                            dir = utilCalcSvc:CalButterflyHitBackDirAndDistance(casterEntity, defender)
-                          else
-                            if dirType == HitBackDirectionType.BossCarrot then
-                              local casterCenterPos = casterEntity:GetGridPosition()
-                              local casterBodyArea = (casterEntity:BodyArea()):GetArea()
-                              local clockWiseRate = BattleConst.BossCarrotHitBackClockWiseRate
-                              -- DECOMPILER ERROR at PC170: Overwrote pending register: R7 in 'AssignReg'
-
-                              dir = utilCalcSvc:_CalcHitBackDirBossCarrot(casterCenterPos, casterBodyArea, defenderPos, casterEntity, defender, clockWiseRate)
-                            else
-                              do
-                                -- DECOMPILER ERROR at PC182: Overwrote pending register: R7 in 'AssignReg'
-
-                                if dirType == HitBackDirectionType.Scorpion then
-                                  dir = utilCalcSvc:_CalcHitBackScorpion(casterEntity, defender, distance)
-                                else
-                                  dir = utilCalcSvc:_CalcHitBackDir(dirType, attackerPos, defenderPos, attackerBodyArea, defenderBodyArea)
-                                end
-                                -- DECOMPILER ERROR at PC206: Unhandled construct in 'MakeBoolean' P1
-
-                                if (dir == nil or dir == Vector2.zero) and backupDirectionPlan and backupDirectionPlan == HitBackDirectionBackupPlan.AlwaysUp then
-                                  dir = Vector2.up
-                                end
-                                do return Vector2.zero, 0 end
-                                if pullType == HitBackType.PullBack then
-                                  dir = -dir
-                                end
-                                return dir, distance
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+    dir = utilCalcSvc:_CalcHitBackDir(dirType, attackerPos, defenderPos, attackerBodyArea, defenderBodyArea)
+  end
+  if dir == nil or dir == Vector2.zero then
+    if backupDirectionPlan then
+      if backupDirectionPlan == HitBackDirectionBackupPlan.AlwaysUp then
+        dir = Vector2.up
       end
+    else
+      return Vector2.zero, 0
     end
   end
+  if pullType == HitBackType.PullBack then
+    dir = -dir
+  end
+  return dir, distance
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.CalHitbackPosByEntityDir = function(self, pos, bodyArea, dir, distance, exceptPosList, ignorePlayerBlock, entity, ignorePathBlock, interactType, extraBlockPos)
-  -- function num : 0_12 , upvalues : _ENV
-  if not extraBlockPos then
-    extraBlockPos = {}
-  end
+function SkillEffectCalcService:CalHitbackPosByEntityDir(pos, bodyArea, dir, distance, exceptPosList, ignorePlayerBlock, entity, ignorePathBlock, interactType, extraBlockPos)
+  extraBlockPos = extraBlockPos or {}
   local targetPos = pos:Clone()
   local isBlocked = false
-  local blockMonsterID = nil
+  local blockMonsterID
   local defenderBodyArea = bodyArea
-  if not exceptPosList then
-    local exceptPosList = {}
-  end
+  local exceptPosList = exceptPosList or {}
   local bodyArea = defenderBodyArea:GetArea()
   for i = 1, #bodyArea do
     exceptPosList[#exceptPosList + 1] = pos + bodyArea[i]
   end
   local useCheckBlockFlag = BlockFlag.HitBack
-  do
-    if entity:HasMonsterID() then
-      local raceType = (entity:MonsterID()):GetMonsterRaceType()
-      if MonsterRaceType.Fly == raceType then
-        useCheckBlockFlag = BlockFlag.HitBackFly
-      end
-    end
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-    local realHitBackDistance = 0
-    for i = 1, distance do
-      local tempPos = targetPos + dir
-      local needBreak = false
-      for j = 1, #bodyArea do
-        local tempBodyPos = tempPos + bodyArea[j]
-        if (table.Vector2Include)(extraBlockPos, tempBodyPos) then
-          needBreak = true
-          break
-        else
-          if not (table.icontains)(exceptPosList, tempBodyPos) then
-            if not utilDataSvc:IsValidPiecePos(tempBodyPos) then
-              if interactType == HitBackInteractnWithBoardType.OutBoardEdge then
-                targetPos = tempPos
-                realHitBackDistance = i
-              end
-              needBreak = true
-              break
-            end
-            if not ignorePathBlock then
-              do
-                if utilDataSvc:IsPosBlock(tempBodyPos, useCheckBlockFlag) or utilDataSvc:IsPosBlockWithEntityRace(tempBodyPos, useCheckBlockFlag, entity) then
-                  local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(tempBodyPos)
-                  if isHasMonster then
-                    blockMonsterID = monsterID
-                  end
-                  needBreak = true
-                  break
-                end
-                local checkTrapWallPosStart = tempBodyPos - dir
-                do
-                  local trapWallBlock = utilDataSvc:CalcHitbackForTrapWallBlock(checkTrapWallPosStart, tempBodyPos, useCheckBlockFlag)
-                  if trapWallBlock then
-                    needBreak = true
-                    break
-                  end
-                  -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-          end
-        end
-      end
-      local trapWallBlock = utilDataSvc:CalcHitbackForTrapWallBlockMultiBodyArea(tempPos, bodyArea)
-      if trapWallBlock then
-        needBreak = true
-        break
-      end
-      local extraBoardPosRange = utilDataSvc:GetExtraBoardPosList()
-      if (table.icontains)(extraBoardPosRange, tempPos) then
-        needBreak = true
-        break
-      end
-      if needBreak then
-        isBlocked = true
-        break
-      end
-      targetPos = tempPos
-      realHitBackDistance = i
-    end
-    do
-      local cmptTrap = entity:Trap()
-      do
-        if cmptTrap and TrapType.BombByHitBack == cmptTrap:GetTrapType() then
-          local posNext = targetPos + dir
-          if utilDataSvc:IsHaveEntity(posNext, EnumTargetEntity.Pet | EnumTargetEntity.Monster) then
-            targetPos = posNext
-          end
-        end
-        return targetPos, isBlocked, blockMonsterID, realHitBackDistance
-      end
+  if entity:HasMonsterID() then
+    local raceType = entity:MonsterID():GetMonsterRaceType()
+    if MonsterRaceType.Fly == raceType then
+      useCheckBlockFlag = BlockFlag.HitBackFly
     end
   end
+  local utilDataSvc = self._world:GetService("UtilData")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local realHitBackDistance = 0
+  for i = 1, distance do
+    local tempPos = targetPos + dir
+    local needBreak = false
+    for j = 1, #bodyArea do
+      local tempBodyPos = tempPos + bodyArea[j]
+      if table.Vector2Include(extraBlockPos, tempBodyPos) then
+        needBreak = true
+        break
+      elseif not table.icontains(exceptPosList, tempBodyPos) then
+        if not utilDataSvc:IsValidPiecePos(tempBodyPos) then
+          if interactType == HitBackInteractnWithBoardType.OutBoardEdge then
+            targetPos = tempPos
+            realHitBackDistance = i
+          end
+          needBreak = true
+          break
+        end
+        if not ignorePathBlock then
+          if utilDataSvc:IsPosBlock(tempBodyPos, useCheckBlockFlag) or utilDataSvc:IsPosBlockWithEntityRace(tempBodyPos, useCheckBlockFlag, entity) then
+            local isHasMonster, monsterID = utilScopeSvc:IsPosHasMonster(tempBodyPos)
+            if isHasMonster then
+              blockMonsterID = monsterID
+            end
+            needBreak = true
+            break
+          end
+          local checkTrapWallPosStart = tempBodyPos - dir
+          local trapWallBlock = utilDataSvc:CalcHitbackForTrapWallBlock(checkTrapWallPosStart, tempBodyPos, useCheckBlockFlag)
+          if trapWallBlock then
+            needBreak = true
+            break
+          end
+        end
+      end
+    end
+    local trapWallBlock = utilDataSvc:CalcHitbackForTrapWallBlockMultiBodyArea(tempPos, bodyArea)
+    if trapWallBlock then
+      needBreak = true
+      break
+    end
+    local extraBoardPosRange = utilDataSvc:GetExtraBoardPosList()
+    if table.icontains(extraBoardPosRange, tempPos) then
+      needBreak = true
+      break
+    end
+    if needBreak then
+      isBlocked = true
+      break
+    end
+    targetPos = tempPos
+    realHitBackDistance = i
+  end
+  local cmptTrap = entity:Trap()
+  if cmptTrap and TrapType.BombByHitBack == cmptTrap:GetTrapType() then
+    local posNext = targetPos + dir
+    if utilDataSvc:IsHaveEntity(posNext, EnumTargetEntity.Pet | EnumTargetEntity.Monster) then
+      targetPos = posNext
+    end
+  end
+  return targetPos, isBlocked, blockMonsterID, realHitBackDistance
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService._CalcHitbackPieceChangeTable = function(self, pos, targetPos, defender)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillEffectCalcService:_CalcHitbackPieceChangeTable(pos, targetPos, defender)
   local pieceChangeTable = {}
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local utilData = (self._world):GetService("UtilData")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local utilData = self._world:GetService("UtilData")
   if pos ~= targetPos then
     local curPieceType = utilData:FindPieceElement(pos)
     if curPieceType == PieceType.None and defender:HasTeam() and pos == defender:GetGridPosition() then
@@ -504,144 +369,115 @@ SkillEffectCalcService._CalcHitbackPieceChangeTable = function(self, pos, target
       end
     end
   end
-  do
-    return pieceChangeTable
-  end
+  return pieceChangeTable
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService._DoCalcSkillConvertGridElementEffect = function(self, skillEffectParam, skillRangePos, casterEntity)
-  -- function num : 0_14 , upvalues : _ENV
+function SkillEffectCalcService:_DoCalcSkillConvertGridElementEffect(skillEffectParam, skillRangePos, casterEntity)
   local skillConvertEffectParam = skillEffectParam
   local sourceArray = skillConvertEffectParam:GetSourceGridElement()
   local targetElementType = skillConvertEffectParam:GetTargetGridElement()
   local useEntityElement = false
-  local elementEntity = nil
+  local elementEntity
   if skillConvertEffectParam:IsConvertToCasterElement() then
     useEntityElement = true
     elementEntity = casterEntity
+  elseif skillConvertEffectParam:IsConvertToTeamLeaderElement() then
+    useEntityElement = true
+    local teamEntity
+    if casterEntity:HasPet() then
+      teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+    elseif casterEntity:HasTeam() then
+      teamEntity = casterEntity
+    else
+      teamEntity = self._world:Player():GetLocalTeamEntity()
+    end
+    elementEntity = teamEntity:GetTeamLeaderPetEntity()
+  end
+  if useEntityElement and elementEntity and elementEntity:Element() ~= nil and elementEntity:Element():GetPrimaryType() ~= nil then
+    local tarElement = elementEntity:Element():GetPrimaryType()
+    targetElementType = tarElement
+    local newSource = {}
+    for _, elementType in ipairs(sourceArray) do
+      if targetElementType ~= elementType then
+        table.insert(newSource, elementType)
+      end
+    end
+    sourceArray = newSource
+  end
+  local targetMaxCount = skillConvertEffectParam:GetTargetGridElementCount()
+  local forceConvert = skillConvertEffectParam:IsIgnoreBlock()
+  local legendPowerCount = skillConvertEffectParam:GetLegendPowerCount()
+  local targetGridDic = {}
+  local hasEnoughTarget = false
+  local currentTargetCount = 0
+  local randomSvc = self._world:GetService("RandomLogic")
+  local skillRangePosList = {}
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  for k, v in pairs(skillRangePos) do
+    local canConverPos = boardServiceLogic:GetCanConvertGridElement(v)
+    if canConverPos then
+      table.insert(skillRangePosList, v)
+    end
+  end
+  if legendPowerCount ~= 0 then
+    local battleStatCmpt = self._world:BattleStat()
+    local skillID = battleStatCmpt:GetLastActiveSkillID()
+    local configService = self._world:GetService("Config")
+    local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
+    local costPower = skillConfigData:GetSkillTriggerParam()
+    local count = math.floor(costPower / legendPowerCount)
+    targetMaxCount = count
+  end
+  if skillConvertEffectParam:IsUseTeamElementCount() then
+    local utilCalcSvc = self._world:GetService("UtilCalc")
+    targetMaxCount = utilCalcSvc:GetTeamPrimaryTypeCount(casterEntity)
+  end
+  if skillConvertEffectParam:NeedRandom() then
+    local cloneTargetGridList = {}
+    for k, v in pairs(skillRangePosList) do
+      local lv = v:Clone()
+      table.insert(cloneTargetGridList, lv)
+    end
+    while currentTargetCount < targetMaxCount and #cloneTargetGridList ~= 0 do
+      local randIndex = randomSvc:LogicRand(1, #cloneTargetGridList)
+      local gridPos = cloneTargetGridList[randIndex]
+      table.remove(cloneTargetGridList, randIndex)
+      local isMatch = self:_IsGridElementMatch(gridPos, sourceArray)
+      if isMatch then
+        currentTargetCount = currentTargetCount + 1
+        targetGridDic[#targetGridDic + 1] = Vector2(gridPos.x, gridPos.y)
+      end
+      if targetMaxCount <= currentTargetCount or #cloneTargetGridList == 0 then
+        hasEnoughTarget = true
+        break
+      end
+    end
   else
-    if skillConvertEffectParam:IsConvertToTeamLeaderElement() then
-      useEntityElement = true
-      local teamEntity = nil
-      if casterEntity:HasPet() then
-        teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-      else
-        if casterEntity:HasTeam() then
-          teamEntity = casterEntity
-        else
-          teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-        end
-      end
-      elementEntity = teamEntity:GetTeamLeaderPetEntity()
-    end
-  end
-  do
-    if useEntityElement and elementEntity and elementEntity:Element() ~= nil and (elementEntity:Element()):GetPrimaryType() ~= nil then
-      local tarElement = (elementEntity:Element()):GetPrimaryType()
-      targetElementType = tarElement
-      local newSource = {}
-      for _,elementType in ipairs(sourceArray) do
-        if targetElementType ~= elementType then
-          (table.insert)(newSource, elementType)
-        end
-      end
-      sourceArray = newSource
-    end
-    do
-      local targetMaxCount = skillConvertEffectParam:GetTargetGridElementCount()
-      local forceConvert = skillConvertEffectParam:IsIgnoreBlock()
-      local legendPowerCount = skillConvertEffectParam:GetLegendPowerCount()
-      local targetGridDic = {}
-      local hasEnoughTarget = false
-      local currentTargetCount = 0
-      local randomSvc = (self._world):GetService("RandomLogic")
-      local skillRangePosList = {}
-      local boardServiceLogic = (self._world):GetService("BoardLogic")
-      for k,v in pairs(skillRangePos) do
-        local canConverPos = boardServiceLogic:GetCanConvertGridElement(v)
-        if canConverPos then
-          (table.insert)(skillRangePosList, v)
-        end
-      end
-      if legendPowerCount ~= 0 then
-        local battleStatCmpt = (self._world):BattleStat()
-        local skillID = battleStatCmpt:GetLastActiveSkillID()
-        local configService = (self._world):GetService("Config")
-        local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
-        local costPower = skillConfigData:GetSkillTriggerParam()
-        local count = (math.floor)(costPower / legendPowerCount)
-        targetMaxCount = count
-      end
-      do
-        do
-          if skillConvertEffectParam:IsUseTeamElementCount() then
-            local utilCalcSvc = (self._world):GetService("UtilCalc")
-            targetMaxCount = utilCalcSvc:GetTeamPrimaryTypeCount(casterEntity)
-          end
-          if skillConvertEffectParam:NeedRandom() then
-            local cloneTargetGridList = {}
-            for k,v in pairs(skillRangePosList) do
-              local lv = v:Clone()
-              ;
-              (table.insert)(cloneTargetGridList, lv)
-            end
-            do
-              while currentTargetCount < targetMaxCount and #cloneTargetGridList ~= 0 do
-                local randIndex = randomSvc:LogicRand(1, #cloneTargetGridList)
-                local gridPos = cloneTargetGridList[randIndex]
-                ;
-                (table.remove)(cloneTargetGridList, randIndex)
-                local isMatch = self:_IsGridElementMatch(gridPos, sourceArray)
-                if isMatch then
-                  currentTargetCount = currentTargetCount + 1
-                  targetGridDic[#targetGridDic + 1] = Vector2(gridPos.x, gridPos.y)
-                end
-                if targetMaxCount <= currentTargetCount or #cloneTargetGridList == 0 then
-                  hasEnoughTarget = true
-                  break
-                end
-              end
-              do
-                for _,gridPos in ipairs(skillRangePosList) do
-                  local isMatch = self:_IsGridElementMatch(gridPos, sourceArray)
-                  if isMatch then
-                    targetGridDic[#targetGridDic + 1] = Vector2(gridPos.x, gridPos.y)
-                    currentTargetCount = currentTargetCount + 1
-                    if targetMaxCount <= currentTargetCount then
-                      hasEnoughTarget = true
-                      break
-                    end
-                  end
-                end
-                do
-                  local skillConvertEffectResult = SkillConvertGridElementEffectResult:New(targetGridDic, targetElementType)
-                  do
-                    if skillConvertEffectParam:IsSaveTetrisIndex() then
-                      local featureSvcL = (self._world):GetService("FeatureLogic")
-                      skillConvertEffectResult:SetSaveTetrisIndex(featureSvcL:GetTetrisIndex())
-                      skillConvertEffectResult:SetSaveTetrisDirType(featureSvcL:GetTetrisDir())
-                    end
-                    return skillConvertEffectResult
-                  end
-                end
-              end
-            end
-          end
+    for _, gridPos in ipairs(skillRangePosList) do
+      local isMatch = self:_IsGridElementMatch(gridPos, sourceArray)
+      if isMatch then
+        targetGridDic[#targetGridDic + 1] = Vector2(gridPos.x, gridPos.y)
+        currentTargetCount = currentTargetCount + 1
+        if targetMaxCount <= currentTargetCount then
+          hasEnoughTarget = true
+          break
         end
       end
     end
   end
+  local skillConvertEffectResult = SkillConvertGridElementEffectResult:New(targetGridDic, targetElementType)
+  if skillConvertEffectParam:IsSaveTetrisIndex() then
+    local featureSvcL = self._world:GetService("FeatureLogic")
+    skillConvertEffectResult:SetSaveTetrisIndex(featureSvcL:GetTetrisIndex())
+    skillConvertEffectResult:SetSaveTetrisDirType(featureSvcL:GetTetrisDir())
+  end
+  return skillConvertEffectResult
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService._IsGridElementMatch = function(self, checkPos, convertGridTypeArray)
-  -- function num : 0_15 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function SkillEffectCalcService:_IsGridElementMatch(checkPos, convertGridTypeArray)
+  local utilData = self._world:GetService("UtilData")
   local checkPosType = utilData:FindPieceElement(checkPos)
-  for k,v in ipairs(convertGridTypeArray) do
+  for k, v in ipairs(convertGridTypeArray) do
     local curGridType = tonumber(v)
     if curGridType == checkPosType then
       return true
@@ -650,197 +486,158 @@ SkillEffectCalcService._IsGridElementMatch = function(self, checkPos, convertGri
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService._TransBlockByRaceType = function(self, nRaceType)
-  -- function num : 0_16 , upvalues : _ENV
+function SkillEffectCalcService:_TransBlockByRaceType(nRaceType)
   if MonsterRaceType.Fly == nRaceType then
     return BlockFlag.MonsterFly
   end
   return BlockFlag.MonsterLand
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService._FindSummonPos = function(self, nSummonType, listPosPlan, nSummonID, listPosHaveDown, blockFlag, searchRing9, bCheckIgnoreBodyArea, noRandom)
-  -- function num : 0_17 , upvalues : _ENV
-  local boardServiceLogic = ((self._world):GetService("BoardLogic"))
-  local bodyArea = nil
+function SkillEffectCalcService:_FindSummonPos(nSummonType, listPosPlan, nSummonID, listPosHaveDown, blockFlag, searchRing9, bCheckIgnoreBodyArea, noRandom)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local bodyArea
   if SkillEffectEnum_SummonType.Monster == nSummonType then
-    local cfgService = (self._world):GetService("Config")
+    local cfgService = self._world:GetService("Config")
     local monsterConfigData = cfgService:GetMonsterConfigData()
     if bCheckIgnoreBodyArea then
-      bodyArea = {Vector2(0, 0)}
+      bodyArea = {
+        Vector2(0, 0)
+      }
     else
       bodyArea = monsterConfigData:GetMonsterArea(nSummonID)
     end
     local raceType = monsterConfigData:GetMonsterRaceType(nSummonID)
-    if not blockFlag then
-      do
-        blockFlag = self:_TransBlockByRaceType(raceType)
-        if SkillEffectEnum_SummonType.Trap == nSummonType then
-          local cfgService = (self._world):GetService("Config")
-          local configTrap = cfgService:GetTrapConfigData()
-          local configData = configTrap:GetTrapData(nSummonID)
-          if bCheckIgnoreBodyArea then
-            bodyArea = {Vector2(0, 0)}
-          else
-            bodyArea = configTrap:ExplainTrapArea(configData.Area)
-          end
-          if not blockFlag then
-            blockFlag = BlockFlag.SummonTrap
-          end
-        end
-        do
-          if bodyArea == nil then
-            return nil
-          end
-          local position = boardServiceLogic:GetValidSummonPos(listPosPlan, bodyArea, listPosHaveDown, blockFlag, searchRing9, noRandom)
-          return position
-        end
-      end
+    blockFlag = blockFlag or self:_TransBlockByRaceType(raceType)
+  elseif SkillEffectEnum_SummonType.Trap == nSummonType then
+    local cfgService = self._world:GetService("Config")
+    local configTrap = cfgService:GetTrapConfigData()
+    local configData = configTrap:GetTrapData(nSummonID)
+    if bCheckIgnoreBodyArea then
+      bodyArea = {
+        Vector2(0, 0)
+      }
+    else
+      bodyArea = configTrap:ExplainTrapArea(configData.Area)
     end
+    blockFlag = blockFlag or BlockFlag.SummonTrap
   end
+  if nil == bodyArea then
+    return nil
+  end
+  local position = boardServiceLogic:GetValidSummonPos(listPosPlan, bodyArea, listPosHaveDown, blockFlag, searchRing9, noRandom)
+  return position
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.CalcSkill_ResetGridElement = function(self, skillRangePos, casterEntity, skillEffectParam, isPreviewing)
-  -- function num : 0_18 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local randomSvc = (self._world):GetService("RandomLogic")
-  local svcTrap = (self._world):GetService("TrapLogic")
+function SkillEffectCalcService:CalcSkill_ResetGridElement(skillRangePos, casterEntity, skillEffectParam, isPreviewing)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local randomSvc = self._world:GetService("RandomLogic")
+  local svcTrap = self._world:GetService("TrapLogic")
   local elementPool = {}
   local targetGridTypeList = {}
-  for i,v in ipairs(skillEffectParam:GetTargetGridTypeList()) do
+  for i, v in ipairs(skillEffectParam:GetTargetGridTypeList()) do
     targetGridTypeList[i] = v
   end
   if skillEffectParam:GetExcludeRangeColor() then
     local pieceType = boardServiceLogic:GetPieceType(skillRangePos[1])
-    for k,v in pairs(targetGridTypeList) do
+    for k, v in pairs(targetGridTypeList) do
       if v == pieceType then
-        (table.remove)(targetGridTypeList, k)
-        ;
-        (table.sort)(targetGridTypeList)
+        table.remove(targetGridTypeList, k)
+        table.sort(targetGridTypeList)
         break
       end
     end
   end
-  do
-    if not isPreviewing then
-      local tmpList = {}
-      local count = #targetGridTypeList
-      for i = 1, count do
-        local index = randomSvc:BoardLogicRandSelectByMatchType(1, #targetGridTypeList)
-        ;
-        (table.insert)(tmpList, targetGridTypeList[index])
-        ;
-        (table.remove)(targetGridTypeList, index)
-      end
-      targetGridTypeList = tmpList
+  if not isPreviewing then
+    local tmpList = {}
+    local count = #targetGridTypeList
+    for i = 1, count do
+      local index = randomSvc:BoardLogicRandSelectByMatchType(1, #targetGridTypeList)
+      table.insert(tmpList, targetGridTypeList[index])
+      table.remove(targetGridTypeList, index)
     end
-    do
-      local convertGray = skillEffectParam:GetConvertGray()
-      local canFlushTrap = skillEffectParam:GetCanFlushTrap()
-      local protectElementTypeMap = skillEffectParam:GetProtectElementType()
-      local ignoreBlock = skillEffectParam:GetIgnoreBlock()
-      local ignoreLockSeed = skillEffectParam:GetIgnoreLockSeed()
-      local rawUseBoardSeed = randomSvc:GetUseBoardSeed()
-      if ignoreLockSeed then
-        randomSvc:SetUseBoardSeed(false)
-      end
-      local utilData = (self._world):GetService("UtilData")
-      local validGridCount = 0
-      for i = 1, #skillRangePos do
-        local posWork = skillRangePos[i]
-        local checkPosType = utilData:FindPieceElement(posWork)
-        if (convertGray or PieceType.None >= checkPosType or checkPosType <= PieceType.Any) and not protectElementTypeMap[checkPosType] then
-          validGridCount = validGridCount + 1
-        end
-      end
-      elementPool = self:_GetAssignElementPool(validGridCount, skillEffectParam, targetGridTypeList)
-      local lenPool = (table.count)(elementPool)
-      local listGridArray = {}
-      local listGridArrayNew = {}
-      local flushTraps = {}
-      local traps = ((self._world):GetGroup(((self._world).BW_WEMatchers).Trap)):GetEntities()
-      local excludeTrapIDList = skillEffectParam:GetExcludeTrapIDList()
-      for i = 1, #skillRangePos do
-        local posWork = skillRangePos[i]
-        local checkPosType = utilData:FindPieceElement(posWork)
-        if canFlushTrap and #traps > 0 then
-          for _,trap in ipairs(traps) do
-            if not trap:HasDeadMark() then
-              local level = (trap:Trap()):GetTrapLevel()
-              local pos = trap:GetGridPosition()
-              local isFlushed = svcTrap:IsTrapFlushable(level)
-              local trapID = (trap:Trap()):GetTrapID()
-              if isFlushed and pos.x == posWork.x and pos.y == posWork.y and not (table.icontains)(excludeTrapIDList, trapID) then
-                (trap:Attributes()):Modify("HP", 0)
-                svcTrap:AddTrapDeadMark(trap, true)
-                flushTraps[#flushTraps + 1] = trap
-              end
-            end
-          end
-        end
-        do
-          if (not boardServiceLogic:IsPosBlock(posWork, BlockFlag.ChangeElement) or ignoreBlock) and (convertGray or PieceType.None >= checkPosType or checkPosType <= PieceType.Any) then
-            local nNewColor = checkPosType
-            if not protectElementTypeMap[checkPosType] then
-              nNewColor = self:_GetAssignNumber(elementPool, isPreviewing) + PieceType.None
-            end
-            local resetGridData = SkillEffectResult_ResetGridData:New(posWork.x, posWork.y, nNewColor)
-            ;
-            (table.insert)(listGridArray, resetGridData)
-            if not listGridArrayNew[posWork.x] then
-              listGridArrayNew[posWork.x] = {}
-            end
-            -- DECOMPILER ERROR at PC263: Confused about usage of register: R32 in 'UnsetPending'
-
-            if not (listGridArrayNew[posWork.x])[posWork.y] then
-              (listGridArrayNew[posWork.x])[posWork.y] = {}
-            end
-            -- DECOMPILER ERROR at PC267: Confused about usage of register: R32 in 'UnsetPending'
-
-            ;
-            (listGridArrayNew[posWork.x])[posWork.y] = nNewColor
-          end
-          do
-            -- DECOMPILER ERROR at PC268: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
-      end
-      randomSvc:SetUseBoardSeed(rawUseBoardSeed)
-      local skillResult = SkillEffectResult_ResetGridElement:New(listGridArray, flushTraps, listGridArrayNew)
-      return skillResult
+    targetGridTypeList = tmpList
+  end
+  local convertGray = skillEffectParam:GetConvertGray()
+  local canFlushTrap = skillEffectParam:GetCanFlushTrap()
+  local protectElementTypeMap = skillEffectParam:GetProtectElementType()
+  local ignoreBlock = skillEffectParam:GetIgnoreBlock()
+  local ignoreLockSeed = skillEffectParam:GetIgnoreLockSeed()
+  local rawUseBoardSeed = randomSvc:GetUseBoardSeed()
+  if ignoreLockSeed then
+    randomSvc:SetUseBoardSeed(false)
+  end
+  local utilData = self._world:GetService("UtilData")
+  local validGridCount = 0
+  for i = 1, #skillRangePos do
+    local posWork = skillRangePos[i]
+    local checkPosType = utilData:FindPieceElement(posWork)
+    if (convertGray or checkPosType > PieceType.None and checkPosType <= PieceType.Any) and not protectElementTypeMap[checkPosType] then
+      validGridCount = validGridCount + 1
     end
   end
+  elementPool = self:_GetAssignElementPool(validGridCount, skillEffectParam, targetGridTypeList)
+  local lenPool = table.count(elementPool)
+  local listGridArray = {}
+  local listGridArrayNew = {}
+  local flushTraps = {}
+  local traps = self._world:GetGroup(self._world.BW_WEMatchers.Trap):GetEntities()
+  local excludeTrapIDList = skillEffectParam:GetExcludeTrapIDList()
+  for i = 1, #skillRangePos do
+    local posWork = skillRangePos[i]
+    local checkPosType = utilData:FindPieceElement(posWork)
+    if canFlushTrap and 0 < #traps then
+      for _, trap in ipairs(traps) do
+        if not trap:HasDeadMark() then
+          local level = trap:Trap():GetTrapLevel()
+          local pos = trap:GetGridPosition()
+          local isFlushed = svcTrap:IsTrapFlushable(level)
+          local trapID = trap:Trap():GetTrapID()
+          if isFlushed and pos.x == posWork.x and pos.y == posWork.y and not table.icontains(excludeTrapIDList, trapID) then
+            trap:Attributes():Modify("HP", 0)
+            svcTrap:AddTrapDeadMark(trap, true)
+            flushTraps[#flushTraps + 1] = trap
+          end
+        end
+      end
+    end
+    if (not boardServiceLogic:IsPosBlock(posWork, BlockFlag.ChangeElement) or ignoreBlock) and (convertGray or checkPosType > PieceType.None and checkPosType <= PieceType.Any) then
+      local nNewColor = checkPosType
+      if not protectElementTypeMap[checkPosType] then
+        nNewColor = self:_GetAssignNumber(elementPool, isPreviewing) + PieceType.None
+      end
+      local resetGridData = SkillEffectResult_ResetGridData:New(posWork.x, posWork.y, nNewColor)
+      table.insert(listGridArray, resetGridData)
+      if not listGridArrayNew[posWork.x] then
+        listGridArrayNew[posWork.x] = {}
+      end
+      if not listGridArrayNew[posWork.x][posWork.y] then
+        listGridArrayNew[posWork.x][posWork.y] = {}
+      end
+      listGridArrayNew[posWork.x][posWork.y] = nNewColor
+    end
+  end
+  randomSvc:SetUseBoardSeed(rawUseBoardSeed)
+  local skillResult = SkillEffectResult_ResetGridElement:New(listGridArray, flushTraps, listGridArrayNew)
+  return skillResult
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.GetFlushTrap = function(self, posList, excludeTrapIDList)
-  -- function num : 0_19 , upvalues : _ENV
-  local traps = ((self._world):GetGroup(((self._world).BW_WEMatchers).Trap)):GetEntities()
+function SkillEffectCalcService:GetFlushTrap(posList, excludeTrapIDList)
+  local traps = self._world:GetGroup(self._world.BW_WEMatchers.Trap):GetEntities()
   local flushTrapList = {}
-  local svcTrap = (self._world):GetService("TrapLogic")
-  for _,trap in ipairs(traps) do
-    local level = (trap:Trap()):GetTrapLevel()
+  local svcTrap = self._world:GetService("TrapLogic")
+  for _, trap in ipairs(traps) do
+    local level = trap:Trap():GetTrapLevel()
     local pos = trap:GetGridPosition()
     local isFlushed = svcTrap:IsTrapFlushable(level)
-    local trapID = (trap:Trap()):GetTrapID()
-    if isFlushed and (table.icontains)(posList, pos) and not (table.icontains)(excludeTrapIDList, trapID) then
+    local trapID = trap:Trap():GetTrapID()
+    if isFlushed and table.icontains(posList, pos) and not table.icontains(excludeTrapIDList, trapID) then
       flushTrapList[#flushTrapList + 1] = trap:GetID()
     end
   end
   return flushTrapList
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService._GetRandomElementPool = function(self, skillEffectParam)
-  -- function num : 0_20 , upvalues : _ENV
+function SkillEffectCalcService:_GetRandomElementPool(skillEffectParam)
   local elementPool = {}
   local element = skillEffectParam:GetElement()
   if element then
@@ -849,120 +646,97 @@ SkillEffectCalcService._GetRandomElementPool = function(self, skillEffectParam)
     for elementIdx = 1, 4 do
       local num = 0
       if element == elementIdx then
-        num = (math.floor)(percent * count)
+        num = math.floor(percent * count)
       else
-        num = (math.floor)((1 - percent) * count / 3)
+        num = math.floor((1 - percent) * count / 3)
       end
       for j = 1, num do
-        (table.insert)(elementPool, elementIdx)
+        table.insert(elementPool, elementIdx)
       end
     end
   else
-    do
-      elementPool = {1, 2, 3, 4}
-      return elementPool
-    end
+    elementPool = {
+      1,
+      2,
+      3,
+      4
+    }
   end
+  return elementPool
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService._GetAssignElementPool = function(self, count, skillEffectParam, elementList)
-  -- function num : 0_21 , upvalues : _ENV
+function SkillEffectCalcService:_GetAssignElementPool(count, skillEffectParam, elementList)
   local elementPool = {}
   local element = skillEffectParam:GetElement()
   local elementCount = #elementList
   if element then
-    local randomSvc = (self._world):GetService("RandomLogic")
-    local percentRange = (skillEffectParam:GetPercent())
-    local percent = nil
+    local randomSvc = self._world:GetService("RandomLogic")
+    local percentRange = skillEffectParam:GetPercent()
+    local percent
     if #percentRange == 1 then
       percent = percentRange[1]
-    else
-      if #percentRange == 2 then
-        local sub = percentRange[2] - percentRange[1]
-        local add = sub * randomSvc:BoardLogicRandSelectByMatchType(0, 10) / 10
-        percent = percentRange[1] + add
+    elseif #percentRange == 2 then
+      local sub = percentRange[2] - percentRange[1]
+      local add = sub * randomSvc:BoardLogicRandSelectByMatchType(0, 10) / 10
+      percent = percentRange[1] + add
+    end
+    local otherElementList = {}
+    for _, elementIdx in ipairs(elementList) do
+      local num = 0
+      if element == elementIdx then
+        num = math.floor(percent * count)
+      else
+        table.insert(otherElementList, elementIdx)
+        num = math.floor((1 - percent) * count / (elementCount - 1))
+      end
+      for j = 1, num do
+        table.insert(elementPool, elementIdx)
       end
     end
-    do
-      local otherElementList = {}
-      for _,elementIdx in ipairs(elementList) do
-        local num = 0
-        if element == elementIdx then
-          num = (math.floor)((percent) * count)
-        else
-          ;
-          (table.insert)(otherElementList, elementIdx)
-          num = (math.floor)((1 - (percent)) * count / (elementCount - 1))
-        end
-        for j = 1, num do
-          (table.insert)(elementPool, elementIdx)
-        end
+    while count > #elementPool do
+      local randIndex = randomSvc:BoardLogicRandSelectByMatchType(1, #otherElementList)
+      table.insert(elementPool, otherElementList[randIndex])
+    end
+    local logTabele = {}
+    for i, v in ipairs(elementPool) do
+      if not logTabele[v] then
+        logTabele[v] = 0
       end
-      do
-        do
-          while #elementPool < count do
-            local randIndex = randomSvc:BoardLogicRandSelectByMatchType(1, #otherElementList)
-            ;
-            (table.insert)(elementPool, otherElementList[randIndex])
-          end
-          local logTabele = {}
-          for i,v in ipairs(elementPool) do
-            if not logTabele[v] then
-              logTabele[v] = 0
-            end
-            logTabele[v] = logTabele[v] + 1
-          end
-          for type,count in pairs(logTabele) do
-            self:LogNotice("ResetGrid PieceType:", type, " Count:", count)
-          end
-          do
-            for elementIdx = 1, count do
-              local mod = (math.fmod)(elementIdx, #elementList)
-              ;
-              (table.insert)(elementPool, elementList[mod + 1])
-            end
-            do
-              return elementPool
-            end
-          end
-        end
-      end
+      logTabele[v] = logTabele[v] + 1
+    end
+    for type, count in pairs(logTabele) do
+      self:LogNotice("ResetGrid PieceType:", type, " Count:", count)
+    end
+  else
+    for elementIdx = 1, count do
+      local mod = math.fmod(elementIdx, #elementList)
+      table.insert(elementPool, elementList[mod + 1])
     end
   end
+  return elementPool
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService._GetAssignNumber = function(self, elementPool, isPreviewing)
-  -- function num : 0_22 , upvalues : _ENV
-  local randomSvc = ((self._world):GetService("RandomLogic"))
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R4 in 'AssignReg'
-
-  local number, random = .end, nil
-  local count = (table.count)(elementPool)
+function SkillEffectCalcService:_GetAssignNumber(elementPool, isPreviewing)
+  local randomSvc = self._world:GetService("RandomLogic")
+  local number, random
+  local count = table.count(elementPool)
   if isPreviewing then
-    random = (math.random)(1, count)
+    random = math.random(1, count)
     number = elementPool[random]
   else
     random = randomSvc:BoardLogicRandSelectByMatchType(1, count)
     number = elementPool[random]
-    ;
-    (table.remove)(elementPool, random)
+    table.remove(elementPool, random)
   end
   return number
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.NotifyDamageBegin = function(self, attacker, defender, attackPos, targetPos, skillID, effectType, damageStageIndex, randHalfDamageIndex)
-  -- function num : 0_23 , upvalues : _ENV
+function SkillEffectCalcService:NotifyDamageBegin(attacker, defender, attackPos, targetPos, skillID, effectType, damageStageIndex, randHalfDamageIndex)
   if not skillID then
-    return 
+    return
   end
-  local triggerSvc = (self._world):GetService("Trigger")
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID, attacker)
+  local triggerSvc = self._world:GetService("Trigger")
+  local skillConfigData = self._configService:GetSkillConfigData(skillID, attacker)
   local skillType = skillConfigData:GetSkillType()
   if attacker:HasPetPstID() then
     if skillType == SkillType.Chain then
@@ -980,81 +754,59 @@ SkillEffectCalcService.NotifyDamageBegin = function(self, attacker, defender, at
       end
       triggerSvc:Notify(nt)
     end
-    do
-      do
-        if skillType == SkillType.Active then
-          local nt = NTActiveSkillEachAttackStart:New(attacker, defender, attackPos, targetPos)
-          nt:SetEffectType(effectType)
-          nt:SetSkillID(skillID)
-          nt:SetSkillType(SkillType.Active)
-          nt:SetSkillStageIndex(damageStageIndex)
-          triggerSvc:Notify(nt)
-        end
-        if attacker:HasMonsterID() then
-          local nt = NTMonsterEachAttackStart:New(attacker, defender, attackPos, targetPos)
-          nt:SetSkillID(skillID)
-          nt:SetSkillType(SkillType.MonsterSkill)
-          triggerSvc:Notify(nt)
-        else
-          do
-            if attacker:HasTrap() then
-              local nt = NTTrapEachAttackStart:New(attacker, defender, attackPos, targetPos)
-              nt:SetSkillID(skillID)
-              nt:SetSkillType(SkillType.TrapSkill)
-              triggerSvc:Notify(nt)
-            else
-              do
-                do
-                  if (attacker:EntityType()):IsSkillHolder() then
-                    local nt = NTBuffCastSkillEachAttackBegin:New(attacker, defender, attackPos, targetPos)
-                    nt:SetEffectType(effectType)
-                    nt:SetSkillID(skillID)
-                    nt:SetSkillType(skillType)
-                    triggerSvc:Notify(nt)
-                  end
-                  do
-                    if skillType == SkillType.AutoBeadSkill then
-                      local nt = NTAutoBeadSkillEachAttackStart:New(attacker, defender, attackPos, targetPos)
-                      nt:SetEffectType(effectType)
-                      nt:SetSkillID(skillID)
-                      nt:SetSkillType(skillType)
-                      triggerSvc:Notify(nt)
-                    end
-                    do
-                      if defender:HasMonsterID() then
-                        local nt = NTMonsterBeHitStart:New(attacker, defender, attackPos, targetPos)
-                        nt:SetSkillID(skillID)
-                        nt:SetSkillType(skillType)
-                        triggerSvc:Notify(nt)
-                      end
-                      if defender:HasPetPstID() or defender:HasTeam() then
-                        local nt = NTPlayerBeHitStart:New(attacker, defender, attackPos, targetPos)
-                        nt:SetSkillID(skillID)
-                        nt:SetSkillType(skillType)
-                        triggerSvc:Notify(nt)
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    if skillType == SkillType.Active then
+      local nt = NTActiveSkillEachAttackStart:New(attacker, defender, attackPos, targetPos)
+      nt:SetEffectType(effectType)
+      nt:SetSkillID(skillID)
+      nt:SetSkillType(SkillType.Active)
+      nt:SetSkillStageIndex(damageStageIndex)
+      triggerSvc:Notify(nt)
     end
+  elseif attacker:HasMonsterID() then
+    local nt = NTMonsterEachAttackStart:New(attacker, defender, attackPos, targetPos)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(SkillType.MonsterSkill)
+    triggerSvc:Notify(nt)
+  elseif attacker:HasTrap() then
+    local nt = NTTrapEachAttackStart:New(attacker, defender, attackPos, targetPos)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(SkillType.TrapSkill)
+    triggerSvc:Notify(nt)
+  elseif attacker:EntityType():IsSkillHolder() then
+    local nt = NTBuffCastSkillEachAttackBegin:New(attacker, defender, attackPos, targetPos)
+    nt:SetEffectType(effectType)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(skillType)
+    triggerSvc:Notify(nt)
+  end
+  if skillType == SkillType.AutoBeadSkill then
+    local nt = NTAutoBeadSkillEachAttackStart:New(attacker, defender, attackPos, targetPos)
+    nt:SetEffectType(effectType)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(skillType)
+    triggerSvc:Notify(nt)
+  end
+  if defender:HasMonsterID() then
+    local nt = NTMonsterBeHitStart:New(attacker, defender, attackPos, targetPos)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(skillType)
+    triggerSvc:Notify(nt)
+  end
+  if defender:HasPetPstID() or defender:HasTeam() then
+    local nt = NTPlayerBeHitStart:New(attacker, defender, attackPos, targetPos)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(skillType)
+    triggerSvc:Notify(nt)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.NotifyDamageEnd = function(self, attacker, defender, attackPos, targetPos, skillID, damageInfo, effectType, damageStageIndex)
-  -- function num : 0_24 , upvalues : _ENV
-  local triggerSvc = (self._world):GetService("Trigger")
-  local battleSvc = (self._world):GetService("Battle")
-  local battleStatComponent = (self._world):BattleStat()
+function SkillEffectCalcService:NotifyDamageEnd(attacker, defender, attackPos, targetPos, skillID, damageInfo, effectType, damageStageIndex)
+  local triggerSvc = self._world:GetService("Trigger")
+  local battleSvc = self._world:GetService("Battle")
+  local battleStatComponent = self._world:BattleStat()
   local damage = damageInfo:GetDamageValue()
   local damageType = damageInfo:GetDamageType()
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID, attacker)
+  local skillConfigData = self._configService:GetSkillConfigData(skillID, attacker)
   local skillType = skillConfigData:GetSkillType()
   if attacker:HasPetPstID() then
     if skillType == SkillType.Chain then
@@ -1068,158 +820,123 @@ SkillEffectCalcService.NotifyDamageEnd = function(self, attacker, defender, atta
       nt:SetDamageValue(damage)
       nt:SetChainSkillTimeIndex(chainTimeIndex)
       nt:SetChainSkillStageIndex(chainStageIndex)
-      do
-        do
-          if damageInfo.GetRandHalfDamageIndex then
-            local randHalfDamageIndex = damageInfo:GetRandHalfDamageIndex()
-            if randHalfDamageIndex then
-              nt:SetRandHalfDamageIndex(randHalfDamageIndex)
-            end
-          end
-          triggerSvc:Notify(nt)
-          do
-            if skillType == SkillType.Active then
-              local nt = NTActiveSkillEachAttackEnd:New(attacker, defender, attackPos, targetPos)
-              nt:SetSkillID(skillID)
-              nt:SetSkillType(SkillType.Active)
-              nt:SetEffectType(effectType)
-              nt:SetDamageValue(damage)
-              nt:SetDamageType(damageType)
-              nt:SetSkillStageIndex(damageStageIndex)
-              triggerSvc:Notify(nt)
-            end
-            if attacker:HasMonsterID() then
-              do
-                if skillType == SkillType.Normal then
-                  local nt = NTMonsterEachAttackEnd:New(attacker, defender, attackPos, targetPos)
-                  nt:SetSkillID(skillID)
-                  nt:SetSkillType(SkillType.MonsterSkill)
-                  nt:SetDamageValue(damage)
-                  nt:SetDamageType(damageType)
-                  triggerSvc:Notify(nt)
-                end
-                do
-                  local nt = NTMonsterEachDamageEnd:New(attacker, defender, attackPos, targetPos)
-                  nt:SetSkillID(skillID)
-                  nt:SetSkillType(SkillType.MonsterSkill)
-                  nt:SetDamageValue(damage)
-                  nt:SetDamageType(damageType)
-                  triggerSvc:Notify(nt)
-                  if attacker:HasTrap() then
-                    local nt = NTTrapEachAttackEnd:New(attacker, defender, attackPos, targetPos)
-                    nt:SetSkillID(skillID)
-                    nt:SetSkillType(SkillType.TrapSkill)
-                    nt:SetDamageValue(damage)
-                    nt:SetDamageType(damageType)
-                    triggerSvc:Notify(nt)
-                  else
-                    do
-                      do
-                        if (attacker:EntityType()):IsSkillHolder() then
-                          local nt = NTBuffCastSkillEachAttackEnd:New(attacker, defender, attackPos, targetPos)
-                          nt:SetEffectType(effectType)
-                          nt:SetSkillID(skillID)
-                          nt:SetSkillType(skillType)
-                          nt:SetDamageValue(damage)
-                          nt:SetDamageType(damageType)
-                          triggerSvc:Notify(nt)
-                        end
-                        if skillType == SkillType.AutoBeadSkill then
-                          local autoBeadSkillIndex = 0
-                          if (attacker:EntityType()):IsAutoBeadSkillHolder() then
-                            local skillAutoBeadData = attacker:SkillAutoBeadAttackData()
-                            if skillAutoBeadData then
-                              local attackDataList = skillAutoBeadData:GetAutoBeadAttackDataList()
-                              if attackDataList then
-                                local attackData = attackDataList[#attackDataList]
-                                if attackData then
-                                  autoBeadSkillIndex = attackData:GetAutoBeadSkillIndex()
-                                end
-                              end
-                            end
-                          end
-                          do
-                            do
-                              local nt = NTAutoBeadSkillEachAttackEnd:New(attacker, defender, attackPos, targetPos)
-                              nt:SetEffectType(effectType)
-                              nt:SetSkillID(skillID)
-                              nt:SetSkillType(skillType)
-                              nt:SetDamageValue(damage)
-                              nt:SetDamageType(damageType)
-                              nt:SetSkillStageIndex(damageStageIndex)
-                              nt:SetAutoBeadSkillIndex(autoBeadSkillIndex)
-                              triggerSvc:Notify(nt)
-                              do
-                                if defender:HasMonsterID() then
-                                  local nt = NTMonsterBeHit:New(attacker, defender, attackPos, targetPos)
-                                  nt:SetSkillID(skillID)
-                                  nt:SetSkillType(skillType)
-                                  nt:SetDamageValue(damage)
-                                  nt:SetDamageType(damageType)
-                                  nt:SetDamageStageIndex(damageInfo:GetDamageStageIndex())
-                                  nt:SetCurSkillDamageIndex(damageInfo:GetCurSkillDamageIndex())
-                                  triggerSvc:Notify(nt)
-                                end
-                                do
-                                  if defender:HasPetPstID() or defender:HasTeam() then
-                                    local nt = NTPlayerBeHit:New(attacker, defender, attackPos, targetPos)
-                                    nt:SetSkillID(skillID)
-                                    nt:SetSkillType(skillType)
-                                    nt:SetDamageValue(damage)
-                                    nt:SetDamageType(damageType)
-                                    nt:SetDamageIndex(damageStageIndex)
-                                    triggerSvc:Notify(nt)
-                                  end
-                                  do
-                                    if defender:HasChessPet() then
-                                      local nt = NTChessBeHit:New(attacker, defender, attackPos, targetPos)
-                                      nt:SetSkillID(skillID)
-                                      nt:SetSkillType(skillType)
-                                      nt:SetDamageValue(damage)
-                                      nt:SetDamageType(damageType)
-                                      triggerSvc:Notify(nt)
-                                    end
-                                    ;
-                                    (Log.info)("Skill Record NotifyDamageEnd, skillID=", skillID, " casterEntityID=", attacker:GetID(), " defenderEntityID=", defender:GetID())
-                                    local uniqueBattleStat = (self._world):BattleStat()
-                                    uniqueBattleStat:AffixRecordSkillDamage(attacker:GetID(), skillID, defender:GetID())
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+      if damageInfo.GetRandHalfDamageIndex then
+        local randHalfDamageIndex = damageInfo:GetRandHalfDamageIndex()
+        if randHalfDamageIndex then
+          nt:SetRandHalfDamageIndex(randHalfDamageIndex)
+        end
+      end
+      triggerSvc:Notify(nt)
+    end
+    if skillType == SkillType.Active then
+      local nt = NTActiveSkillEachAttackEnd:New(attacker, defender, attackPos, targetPos)
+      nt:SetSkillID(skillID)
+      nt:SetSkillType(SkillType.Active)
+      nt:SetEffectType(effectType)
+      nt:SetDamageValue(damage)
+      nt:SetDamageType(damageType)
+      nt:SetSkillStageIndex(damageStageIndex)
+      triggerSvc:Notify(nt)
+    end
+  elseif attacker:HasMonsterID() then
+    if skillType == SkillType.Normal then
+      local nt = NTMonsterEachAttackEnd:New(attacker, defender, attackPos, targetPos)
+      nt:SetSkillID(skillID)
+      nt:SetSkillType(SkillType.MonsterSkill)
+      nt:SetDamageValue(damage)
+      nt:SetDamageType(damageType)
+      triggerSvc:Notify(nt)
+    end
+    local nt = NTMonsterEachDamageEnd:New(attacker, defender, attackPos, targetPos)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(SkillType.MonsterSkill)
+    nt:SetDamageValue(damage)
+    nt:SetDamageType(damageType)
+    triggerSvc:Notify(nt)
+  elseif attacker:HasTrap() then
+    local nt = NTTrapEachAttackEnd:New(attacker, defender, attackPos, targetPos)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(SkillType.TrapSkill)
+    nt:SetDamageValue(damage)
+    nt:SetDamageType(damageType)
+    triggerSvc:Notify(nt)
+  elseif attacker:EntityType():IsSkillHolder() then
+    local nt = NTBuffCastSkillEachAttackEnd:New(attacker, defender, attackPos, targetPos)
+    nt:SetEffectType(effectType)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(skillType)
+    nt:SetDamageValue(damage)
+    nt:SetDamageType(damageType)
+    triggerSvc:Notify(nt)
+  end
+  if skillType == SkillType.AutoBeadSkill then
+    local autoBeadSkillIndex = 0
+    if attacker:EntityType():IsAutoBeadSkillHolder() then
+      local skillAutoBeadData = attacker:SkillAutoBeadAttackData()
+      if skillAutoBeadData then
+        local attackDataList = skillAutoBeadData:GetAutoBeadAttackDataList()
+        if attackDataList then
+          local attackData = attackDataList[#attackDataList]
+          if attackData then
+            autoBeadSkillIndex = attackData:GetAutoBeadSkillIndex()
           end
         end
       end
     end
+    local nt = NTAutoBeadSkillEachAttackEnd:New(attacker, defender, attackPos, targetPos)
+    nt:SetEffectType(effectType)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(skillType)
+    nt:SetDamageValue(damage)
+    nt:SetDamageType(damageType)
+    nt:SetSkillStageIndex(damageStageIndex)
+    nt:SetAutoBeadSkillIndex(autoBeadSkillIndex)
+    triggerSvc:Notify(nt)
   end
+  if defender:HasMonsterID() then
+    local nt = NTMonsterBeHit:New(attacker, defender, attackPos, targetPos)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(skillType)
+    nt:SetDamageValue(damage)
+    nt:SetDamageType(damageType)
+    nt:SetDamageStageIndex(damageInfo:GetDamageStageIndex())
+    nt:SetCurSkillDamageIndex(damageInfo:GetCurSkillDamageIndex())
+    triggerSvc:Notify(nt)
+  end
+  if defender:HasPetPstID() or defender:HasTeam() then
+    local nt = NTPlayerBeHit:New(attacker, defender, attackPos, targetPos)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(skillType)
+    nt:SetDamageValue(damage)
+    nt:SetDamageType(damageType)
+    nt:SetDamageIndex(damageStageIndex)
+    triggerSvc:Notify(nt)
+  end
+  if defender:HasChessPet() then
+    local nt = NTChessBeHit:New(attacker, defender, attackPos, targetPos)
+    nt:SetSkillID(skillID)
+    nt:SetSkillType(skillType)
+    nt:SetDamageValue(damage)
+    nt:SetDamageType(damageType)
+    triggerSvc:Notify(nt)
+  end
+  Log.info("Skill Record NotifyDamageEnd, skillID=", skillID, " casterEntityID=", attacker:GetID(), " defenderEntityID=", defender:GetID())
+  local uniqueBattleStat = self._world:BattleStat()
+  uniqueBattleStat:AffixRecordSkillDamage(attacker:GetID(), skillID, defender:GetID())
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.ResetSkillContext = function(self, entityID)
-  -- function num : 0_25 , upvalues : _ENV
-  local entity = (self._world):GetEntityByID(entityID)
+function SkillEffectCalcService:ResetSkillContext(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   if not entity:HasSkillContext() then
-    (Log.fatal)("该Entity没有SkillContext组件，直接宕机")
+    Log.fatal("该Entity没有SkillContext组件，直接宕机")
   end
   entity:ReplaceSkillContext()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.TriggerTrap = function(self, casterEntity, result)
-  -- function num : 0_26 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function SkillEffectCalcService:TriggerTrap(casterEntity, result)
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local listTrapWork, listTrapResult = trapServiceLogic:TriggerTrapByEntity(casterEntity, TrapTriggerOrigin.Move)
-  for i,e in ipairs(listTrapWork) do
+  for i, e in ipairs(listTrapWork) do
     local trapEntity = e
     local skillEffectResultContainer = listTrapResult[i]
     local aiResult = AISkillResult:New()
@@ -1228,22 +945,18 @@ SkillEffectCalcService.TriggerTrap = function(self, casterEntity, result)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcService.FindSkillRangeFixed4 = function(self, posCaster, skillRangePos)
-  -- function num : 0_27 , upvalues : _ENV
+function SkillEffectCalcService:FindSkillRangeFixed4(posCaster, skillRangePos)
   local spPos = skillRangePos[1]
   local range = {}
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local boardSvc = (self._world):GetService("BoardLogic")
-  local playerPos = (teamEntity:GetGridPosition())
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local boardSvc = self._world:GetService("BoardLogic")
+  local playerPos = teamEntity:GetGridPosition()
   local posWork, dis = nil, 10000
-  for i,v in ipairs(Offset4) do
+  for i, v in ipairs(Offset4) do
     local pos = Vector2(playerPos.x + v[1], playerPos.y + v[2])
-    ;
-    (table.insert)(range, pos)
-    local disTemp = (Vector2.Distance)(pos, spPos)
-    if disTemp < dis then
+    table.insert(range, pos)
+    local disTemp = Vector2.Distance(pos, spPos)
+    if dis > disTemp then
       dis = disTemp
       posWork = pos
     end
@@ -1257,27 +970,24 @@ SkillEffectCalcService.FindSkillRangeFixed4 = function(self, posCaster, skillRan
   dis = 1000
   local maxX = boardSvc:GetCurBoardMaxX()
   local maxY = boardSvc:GetCurBoardMaxY()
-  local len = (math.max)(maxX, maxY)
+  local len = math.max(maxX, maxY)
   posWork = nil
   for i = 1, len do
-    for _,v in ipairs(Offset4) do
+    for _, v in ipairs(Offset4) do
       local pos = Vector2(playerPos.x + v[1] * i, playerPos.y + v[2] * i)
       local disPos = playerPos
       if i == 1 then
         disPos = spPos
       end
-      local disTemp = (Vector2.Distance)(pos, disPos)
-      if disTemp < dis and (not boardSvc:IsPosBlock(pos, BlockFlag.MonsterLand) or pos == posCaster) then
+      local disTemp = Vector2.Distance(pos, disPos)
+      if dis > disTemp and (not boardSvc:IsPosBlock(pos, BlockFlag.MonsterLand) or pos == posCaster) then
         posWork = pos
         dis = disTemp
       end
     end
-  end
-  do
-    if i ~= 1 or not posWork then
-      return posWork, boardSvc:CalcPosRing(posCaster, posWork)
+    if i == 1 and posWork then
+      break
     end
   end
+  return posWork, boardSvc:CalcPosRing(posCaster, posWork)
 end
-
-

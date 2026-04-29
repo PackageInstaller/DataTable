@@ -1,39 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/balance/ui_season_balance_weight_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBalanceWeightItem", UICustomWidget)
 UISeasonBalanceWeightItem = UISeasonBalanceWeightItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBalanceWeightItem.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonBalanceWeightItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceWeightItem.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonBalanceWeightItem:OnShow()
   self._have = self:GetGameObject("img")
   self._not = self:GetGameObject("not")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceWeightItem.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonBalanceWeightItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceWeightItem.SetData = function(self, idx, have, itemid)
-  -- function num : 0_3
+function UISeasonBalanceWeightItem:SetData(idx, have, itemid)
   self._idx = idx
-  ;
-  (self._have):SetActive(have)
-  ;
-  (self._not):SetActive(not have)
+  self._have:SetActive(have)
+  self._not:SetActive(not have)
 end
-
-

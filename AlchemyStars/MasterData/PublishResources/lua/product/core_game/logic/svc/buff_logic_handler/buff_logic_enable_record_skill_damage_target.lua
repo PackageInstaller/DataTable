@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_enable_record_skill_damage_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicEnableRecordSkillDamageTarget", BuffLogicBase)
 BuffLogicEnableRecordSkillDamageTarget = BuffLogicEnableRecordSkillDamageTarget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicEnableRecordSkillDamageTarget.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicEnableRecordSkillDamageTarget:Constructor(buffInstance, logicParam)
   local isEnable = logicParam.enable or 1
   self._isEnable = isEnable == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicEnableRecordSkillDamageTarget.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  local uniqueBattleStat = (self._world):BattleStat()
+function BuffLogicEnableRecordSkillDamageTarget:DoLogic()
+  local e = self._buffInstance:Entity()
+  local uniqueBattleStat = self._world:BattleStat()
   if self._isEnable then
     uniqueBattleStat:EnableAffixUseSkillDamageRecord()
   else
     uniqueBattleStat:DisableAffixUseSkillDamageRecord()
   end
 end
-
-

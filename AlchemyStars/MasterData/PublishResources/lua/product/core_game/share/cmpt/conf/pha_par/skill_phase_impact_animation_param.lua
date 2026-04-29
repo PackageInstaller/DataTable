@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_impact_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseImpactAnimationParam", SkillPhaseParamBase)
 SkillPhaseImpactAnimationParam = SkillPhaseImpactAnimationParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseImpactAnimationParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseImpactAnimationParam:Constructor(t)
   self._showDelay = t.showDelay
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseImpactAnimationParam.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseImpactAnimationParam:GetCacheTable()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseImpactAnimationParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseImpactAnimationParam:GetPhaseType()
   return SkillViewPhaseType.ImpactAnimation
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseImpactAnimationParam.GetShowDelay = function(self)
-  -- function num : 0_3
+function SkillPhaseImpactAnimationParam:GetShowDelay()
   return self._showDelay
 end
-
-

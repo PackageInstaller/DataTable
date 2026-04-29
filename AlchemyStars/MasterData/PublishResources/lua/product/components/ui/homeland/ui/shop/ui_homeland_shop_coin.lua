@@ -1,48 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_coin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopCoin", UICustomWidget)
 UIHomelandShopCoin = UIHomelandShopCoin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopCoin.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandShopCoin:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopCoin.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandShopCoin:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopCoin.SetData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local url = (UIHomelandShopHelper.GetCoinItemIconName)()
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_coinIcon", url)
-  local count = (UIHomelandShopHelper.GetCoinItemCount)(true)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_coinNum", count)
+function UIHomelandShopCoin:SetData()
+  local url = UIHomelandShopHelper.GetCoinItemIconName()
+  UIWidgetHelper.SetRawImage(self, "_coinIcon", url)
+  local count = UIHomelandShopHelper.GetCoinItemCount(true)
+  UIWidgetHelper.SetLocalizationText(self, "_coinNum", count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopCoin.AddCoinBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomelandShopCoin:AddCoinBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopCoin.CoinIconOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local id = (UIHomelandShopHelper.GetCoinItemId)()
+function UIHomelandShopCoin:CoinIconOnClick(go)
+  local id = UIHomelandShopHelper.GetCoinItemId()
   self:ShowDialog("UIItemTipsHomeland", id, go)
 end
-
-

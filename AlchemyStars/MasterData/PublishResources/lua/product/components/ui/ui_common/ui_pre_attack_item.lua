@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_common/ui_pre_attack_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPreAttackItem", UICustomWidget)
 UIPreAttackItem = UIPreAttackItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPreAttackItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPreAttackItem:OnShow()
   self.infoGO = self:GetGameObject("info")
   self:AttachEvent(GameEventType.OnUIEmptyClose, self.OnUIEmptyClose)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPreAttackItem.SetData = function(self, petPstId, skillId, canClick, clientPetInfo, petid, grade, bbreak)
-  -- function num : 0_1
+function UIPreAttackItem:SetData(petPstId, skillId, canClick, clientPetInfo, petid, grade, bbreak)
   self._petPstId = petPstId
   self._skillId = skillId
   self._canClick = canClick
@@ -27,119 +17,98 @@ UIPreAttackItem.SetData = function(self, petPstId, skillId, canClick, clientPetI
   self:ShowPreAttack()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPreAttackItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPreAttackItem:OnHide()
   self:DetachEvent(GameEventType.OnUIEmptyClose, self.OnUIEmptyClose)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPreAttackItem.bgOnClick = function(self)
-  -- function num : 0_3
+function UIPreAttackItem:bgOnClick()
   if self._canClick then
-    (self.infoGO):SetActive(true)
+    self.infoGO:SetActive(true)
     if not self._pos then
       self._pos = self:GetUIComponent("RectTransform", "info")
     end
     if not self._safe then
       self._safe = self:FindParentWithName(self._pos)
     end
-    local posOffset = (self._pos).position - (self._safe).position
-    self:ShowDialog("UIEmptyController", posOffset, (self._pos).sizeDelta)
+    local posOffset = self._pos.position - self._safe.position
+    self:ShowDialog("UIEmptyController", posOffset, self._pos.sizeDelta)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPreAttackItem.OnUIEmptyClose = function(self)
-  -- function num : 0_4
-  (self.infoGO):SetActive(false)
+function UIPreAttackItem:OnUIEmptyClose()
+  self.infoGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPreAttackItem.FindParentWithName = function(self, trans)
-  -- function num : 0_5
-  if (trans.parent).name == "SafeArea" then
+function UIPreAttackItem:FindParentWithName(trans)
+  if trans.parent.name == "SafeArea" then
     return trans.parent
   else
     return self:FindParentWithName(trans.parent)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPreAttackItem._IsPetSkillPreemptive = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if not self._petPstId and self._clientPetInfo then
-    do return (self._clientPetInfo):HasPreEmptiveAttack() end
-    local matchModule = self:GetModule(MatchModule)
-    local enterData = matchModule:GetMatchEnterData()
-    if (GameGlobal:GetInstance()):IsCoreGameRunning() and enterData then
-      local matchPlayerInfo = enterData:GetLocalPlayerInfo()
-      local petList = matchPlayerInfo.pet_list
-      for _,matchPetInfo in ipairs(petList) do
-        if matchPetInfo.pet_pstid == self._petPstId then
-          local resourceHelper = ResourceHelper:GetInstance()
-          local petSkill = resourceHelper:GetPetSKill()
-          local cfgPetSkill = petSkill:GetSKill(matchPetInfo.template_id, matchPetInfo.grade, matchPetInfo.awakening)
-          if not cfgPetSkill.IntensifyBuff then
-            return false
-          end
-          local activeType, activeSkill = self:IsActiveOrExtraSkill(matchPetInfo.template_id, matchPetInfo.grade, matchPetInfo.awakening)
-          if activeType then
-            if activeSkill then
-              return (table.icontains)(cfgPetSkill.IntensifyBuff, BattleConst.PreAttackBuffId)
-            else
-              return (table.icontains)(cfgPetSkill.IntensifyBuff, BattleConst.PreAttackBuffIdForExtra)
-            end
-          end
+function UIPreAttackItem:_IsPetSkillPreemptive()
+  if not self._petPstId then
+    return self._clientPetInfo and self._clientPetInfo:HasPreEmptiveAttack()
+  end
+  local matchModule = self:GetModule(MatchModule)
+  local enterData = matchModule:GetMatchEnterData()
+  if GameGlobal:GetInstance():IsCoreGameRunning() and enterData then
+    local matchPlayerInfo = enterData:GetLocalPlayerInfo()
+    local petList = matchPlayerInfo.pet_list
+    for _, matchPetInfo in ipairs(petList) do
+      if matchPetInfo.pet_pstid == self._petPstId then
+        local resourceHelper = ResourceHelper:GetInstance()
+        local petSkill = resourceHelper:GetPetSKill()
+        local cfgPetSkill = petSkill:GetSKill(matchPetInfo.template_id, matchPetInfo.grade, matchPetInfo.awakening)
+        if not cfgPetSkill.IntensifyBuff then
           return false
         end
-      end
-    end
-    do
-      local petModule = self:GetModule(PetModule)
-      local pet = petModule:GetPet(self._petPstId)
-      if not pet then
-        return false
-      end
-      local tid = pet:GetTemplateID()
-      local grade = pet:GetPetGrade()
-      local awake = pet:GetAwakeMatch()
-      local skillRes = (ResourceHelper:GetInstance()):GetPetSKill()
-      local list = skillRes:GetIntensifyBuffList(tid, grade, awake)
-      local isSkillPreemptive = false
-      if list then
-        local i = nil
-        local activeType, activeSkill = self:IsActiveOrExtraSkill(tid, grade, awake)
+        local activeType, activeSkill = self:IsActiveOrExtraSkill(matchPetInfo.template_id, matchPetInfo.grade, matchPetInfo.awakening)
         if activeType then
           if activeSkill then
-            i = (table.ikey)(list, BattleConst.PreAttackBuffId)
+            return table.icontains(cfgPetSkill.IntensifyBuff, BattleConst.PreAttackBuffId)
           else
-            i = (table.ikey)(list, BattleConst.PreAttackBuffIdForExtra)
+            return table.icontains(cfgPetSkill.IntensifyBuff, BattleConst.PreAttackBuffIdForExtra)
           end
         end
-        if i <= 0 then
-          do
-            isSkillPreemptive = not i
-            isSkillPreemptive = false
-            isSkillPreemptive = false
-            do return isSkillPreemptive end
-            -- DECOMPILER ERROR: 4 unprocessed JMP targets
-          end
-        end
+        return false
       end
     end
   end
+  local petModule = self:GetModule(PetModule)
+  local pet = petModule:GetPet(self._petPstId)
+  if not pet then
+    return false
+  end
+  local tid = pet:GetTemplateID()
+  local grade = pet:GetPetGrade()
+  local awake = pet:GetAwakeMatch()
+  local skillRes = ResourceHelper:GetInstance():GetPetSKill()
+  local list = skillRes:GetIntensifyBuffList(tid, grade, awake)
+  local isSkillPreemptive = false
+  if list then
+    local i
+    local activeType, activeSkill = self:IsActiveOrExtraSkill(tid, grade, awake)
+    if activeType then
+      if activeSkill then
+        i = table.ikey(list, BattleConst.PreAttackBuffId)
+      else
+        i = table.ikey(list, BattleConst.PreAttackBuffIdForExtra)
+      end
+    end
+    if i then
+      isSkillPreemptive = 0 < i
+    else
+      isSkillPreemptive = false
+    end
+  else
+    isSkillPreemptive = false
+  end
+  return isSkillPreemptive
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPreAttackItem.IsActiveOrExtraSkill = function(self, petid, grade, awake)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPreAttackItem:IsActiveOrExtraSkill(petid, grade, awake)
   local cfg = BattleSkillCfg(self._skillId)
   if cfg then
     local type = cfg.Type
@@ -152,49 +121,40 @@ UIPreAttackItem.IsActiveOrExtraSkill = function(self, petid, grade, awake)
       end
     end
   end
-  do
-    return false, false
-  end
+  return false, false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPreAttackItem.ShowPreAttack = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPreAttackItem:ShowPreAttack()
   local isSkillPreemptive = false
   if self._usePetID then
-    local skillRes = (ResourceHelper:GetInstance()):GetPetSKill()
+    local skillRes = ResourceHelper:GetInstance():GetPetSKill()
     local list = skillRes:GetIntensifyBuffList(self._usePetID, self._grade, self._break)
     if list then
-      local i = nil
+      local i
       local activeType, activeSkill = self:IsActiveOrExtraSkill(self._usePetID, self._grade, self._break)
       if activeType then
         if activeSkill then
-          i = (table.ikey)(list, BattleConst.PreAttackBuffId)
+          i = table.ikey(list, BattleConst.PreAttackBuffId)
         else
-          i = (table.ikey)(list, BattleConst.PreAttackBuffIdForExtra)
+          i = table.ikey(list, BattleConst.PreAttackBuffIdForExtra)
         end
       end
-      if i <= 0 then
-        do
-          do
-            isSkillPreemptive = not i
-            isSkillPreemptive = false
-            isSkillPreemptive = false
-            isSkillPreemptive = self:_IsPetSkillPreemptive()
-            local cfg = BattleSkillCfg(self._skillId)
-            local isActive = not cfg or cfg.Type == PetSkillType.SkillType_Active
-            if isActive and isSkillPreemptive then
-              self:Enable(true)
-            else
-              self:Enable(false)
-            end
-            -- DECOMPILER ERROR: 9 unprocessed JMP targets
-          end
-        end
+      if i then
+        isSkillPreemptive = 0 < i
+      else
+        isSkillPreemptive = false
       end
+    else
+      isSkillPreemptive = false
     end
+  else
+    isSkillPreemptive = self:_IsPetSkillPreemptive()
+  end
+  local cfg = BattleSkillCfg(self._skillId)
+  local isActive = cfg and cfg.Type == PetSkillType.SkillType_Active
+  if isActive and isSkillPreemptive then
+    self:Enable(true)
+  else
+    self:Enable(false)
   end
 end
-
-

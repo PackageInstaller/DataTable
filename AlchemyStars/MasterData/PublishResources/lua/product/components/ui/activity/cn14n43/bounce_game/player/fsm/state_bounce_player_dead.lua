@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/fsm/state_bounce_player_dead.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBouncePlayerDead", StateBouncePlayerBase)
 StateBouncePlayerDead = StateBouncePlayerDead
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBouncePlayerDead.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
+function StateBouncePlayerDead:OnEnter(TT, ...)
   self:Init()
   self:PlayAnim()
   if BounceDebug.ShowObjRect then
@@ -16,24 +9,13 @@ StateBouncePlayerDead.OnEnter = function(self, TT, ...)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerDead.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateBouncePlayerDead:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerDead.GetStateType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function StateBouncePlayerDead:GetStateType()
   return StateBouncePlayer.Dead
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerDead.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3
-  (self.player):HandleMove(deltaTimeMS)
+function StateBouncePlayerDead:OnUpdate(deltaTimeMS)
+  self.player:HandleMove(deltaTimeMS)
 end
-
-

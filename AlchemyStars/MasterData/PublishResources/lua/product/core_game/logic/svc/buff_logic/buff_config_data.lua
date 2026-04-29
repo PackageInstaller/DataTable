@@ -1,72 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic/buff_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffConfigData", Object)
 BuffConfigData = BuffConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffConfigData.Constructor = function(self, buffID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_buff)[buffID]
+function BuffConfigData:Constructor(buffID)
+  self._cfg = Cfg.cfg_buff[buffID]
   if not self._cfg then
-    (Log.exception)(self._className, "buff config is nil buff id=", buffID)
+    Log.exception(self._className, "buff config is nil buff id=", buffID)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local viewParams = (self._cfg).ViewParams
+function BuffConfigData:GetCacheTable()
+  local viewParams = self._cfg.ViewParams
   local t = {}
   if viewParams then
     if viewParams.LoadEffectID then
-      (table.insert)(t, {((Cfg.cfg_effect)[viewParams.LoadEffectID]).ResPath, 1})
+      table.insert(t, {
+        Cfg.cfg_effect[viewParams.LoadEffectID].ResPath,
+        1
+      })
     end
     if viewParams.ExecEffectID then
-      (table.insert)(t, {((Cfg.cfg_effect)[viewParams.ExecEffectID]).ResPath, 1})
+      table.insert(t, {
+        Cfg.cfg_effect[viewParams.ExecEffectID].ResPath,
+        1
+      })
     end
     if viewParams.UnloadEffectID then
-      (table.insert)(t, {((Cfg.cfg_effect)[viewParams.UnloadEffectID]).ResPath, 1})
+      table.insert(t, {
+        Cfg.cfg_effect[viewParams.UnloadEffectID].ResPath,
+        1
+      })
     end
     if viewParams.CacheEffectIDList then
-      for index,effectID in ipairs(viewParams.CacheEffectIDList) do
-        (table.insert)(t, {((Cfg.cfg_effect)[effectID]).ResPath, 1})
+      for index, effectID in ipairs(viewParams.CacheEffectIDList) do
+        table.insert(t, {
+          Cfg.cfg_effect[effectID].ResPath,
+          1
+        })
       end
     end
   end
-  do
-    return t
-  end
+  return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetSoundCacheTable = function(self)
-  -- function num : 0_2
+function BuffConfigData:GetSoundCacheTable()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetCacheSkillIds = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffConfigData:GetCacheSkillIds()
   local skillIds = {}
-  local Logics = {(self._cfg).LoadLogic, (self._cfg).ActiveLogic, (self._cfg).DeactiveLogic, (self._cfg).ExecLogic, (self._cfg).UnloadLogic}
-  for i,logics in pairs(Logics) do
-    for _,logic in pairs(logics) do
+  local Logics = {
+    self._cfg.LoadLogic,
+    self._cfg.ActiveLogic,
+    self._cfg.DeactiveLogic,
+    self._cfg.ExecLogic,
+    self._cfg.UnloadLogic
+  }
+  for i, logics in pairs(Logics) do
+    for _, logic in pairs(logics) do
       if logic.logic == "CastSkill" then
-        (table.insert)(skillIds, logic.skillID)
+        table.insert(skillIds, logic.skillID)
       end
       if logic.logic == "ChangePetChainSkill" then
         if logic.type == 1 and logic.skillId then
-          (table.insert)(skillIds, (logic.logic).skillId)
-        else
-          if logic.type == 2 and logic.param then
-            for sourceID,newID in pairs(logic.param) do
-              (table.insert)(skillIds, newID)
-            end
+          table.insert(skillIds, logic.logic.skillId)
+        elseif logic.type == 2 and logic.param then
+          for sourceID, newID in pairs(logic.param) do
+            table.insert(skillIds, newID)
           end
         end
       end
@@ -75,231 +73,143 @@ BuffConfigData.GetCacheSkillIds = function(self)
   return skillIds
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetCacheBuffIds = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function BuffConfigData:GetCacheBuffIds()
   local buffIds = {}
-  local Logics = {(self._cfg).LoadLogic, (self._cfg).ActiveLogic, (self._cfg).DeactiveLogic, (self._cfg).ExecLogic, (self._cfg).UnloadLogic}
-  for i,logics in ipairs(Logics) do
-    for _,logic in ipairs(logics) do
+  local Logics = {
+    self._cfg.LoadLogic,
+    self._cfg.ActiveLogic,
+    self._cfg.DeactiveLogic,
+    self._cfg.ExecLogic,
+    self._cfg.UnloadLogic
+  }
+  for i, logics in ipairs(Logics) do
+    for _, logic in ipairs(logics) do
       if logic.logic == "AddBuff" then
-        (table.insert)(buffIds, logic.buffID)
+        table.insert(buffIds, logic.buffID)
       end
     end
   end
   return buffIds
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffID = function(self)
-  -- function num : 0_5
-  return (self._cfg).ID
+function BuffConfigData:GetBuffID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetLoadLogic = function(self)
-  -- function num : 0_6
-  return (self._cfg).LoadLogic
+function BuffConfigData:GetLoadLogic()
+  return self._cfg.LoadLogic
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetActiveLogic = function(self)
-  -- function num : 0_7
-  return (self._cfg).ActiveLogic
+function BuffConfigData:GetActiveLogic()
+  return self._cfg.ActiveLogic
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetDeactiveLogic = function(self)
-  -- function num : 0_8
-  return (self._cfg).DeactiveLogic
+function BuffConfigData:GetDeactiveLogic()
+  return self._cfg.DeactiveLogic
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetExecLogic = function(self)
-  -- function num : 0_9
-  return (self._cfg).ExecLogic
+function BuffConfigData:GetExecLogic()
+  return self._cfg.ExecLogic
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetUnloadLogic = function(self)
-  -- function num : 0_10
-  return (self._cfg).UnloadLogic
+function BuffConfigData:GetUnloadLogic()
+  return self._cfg.UnloadLogic
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetData = function(self)
-  -- function num : 0_11
+function BuffConfigData:GetData()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffIcon = function(self)
-  -- function num : 0_12
-  return (self._cfg).Icon
+function BuffConfigData:GetBuffIcon()
+  return self._cfg.Icon
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffEffectType = function(self)
-  -- function num : 0_13
-  return (self._cfg).BuffEffectType
+function BuffConfigData:GetBuffEffectType()
+  return self._cfg.BuffEffectType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffName = function(self)
-  -- function num : 0_14
-  return (self._cfg).Name
+function BuffConfigData:GetBuffName()
+  return self._cfg.Name
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffDesc = function(self)
-  -- function num : 0_15
-  return (self._cfg).Desc
+function BuffConfigData:GetBuffDesc()
+  return self._cfg.Desc
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffDescParams = function(self)
-  -- function num : 0_16
-  return (self._cfg).DescParams
+function BuffConfigData:GetBuffDescParams()
+  return self._cfg.DescParams
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffType = function(self)
-  -- function num : 0_17
-  return (self._cfg).BuffType
+function BuffConfigData:GetBuffType()
+  return self._cfg.BuffType
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffPriority = function(self)
-  -- function num : 0_18
-  return (self._cfg).Priority
+function BuffConfigData:GetBuffPriority()
+  return self._cfg.Priority
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.IsDebuff = function(self)
-  -- function num : 0_19
-  return (self._cfg).IsDebuff
+function BuffConfigData:IsDebuff()
+  return self._cfg.IsDebuff
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffShowBuffIcon = function(self)
-  -- function num : 0_20
-  return (self._cfg).ShowBuffIcon
+function BuffConfigData:GetBuffShowBuffIcon()
+  return self._cfg.ShowBuffIcon
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetBuffShowTeamState = function(self)
-  -- function num : 0_21
-  return (self._cfg).ShowTeamState
+function BuffConfigData:GetBuffShowTeamState()
+  return self._cfg.ShowTeamState
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetViewParams = function(self)
-  -- function num : 0_22
-  return (self._cfg).ViewParams
+function BuffConfigData:GetViewParams()
+  return self._cfg.ViewParams
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetLoadEffectID = function(self)
-  -- function num : 0_23
-  if (self._cfg).ViewParams then
-    return ((self._cfg).ViewParams).LoadEffectID
+function BuffConfigData:GetLoadEffectID()
+  if self._cfg.ViewParams then
+    return self._cfg.ViewParams.LoadEffectID
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetEffectLayerAnimList = function(self)
-  -- function num : 0_24
-  if (self._cfg).ViewParams then
-    return ((self._cfg).ViewParams).EffectLayerAnimList
+function BuffConfigData:GetEffectLayerAnimList()
+  if self._cfg.ViewParams then
+    return self._cfg.ViewParams.EffectLayerAnimList
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetUnloadEffectID = function(self)
-  -- function num : 0_25
-  if (self._cfg).ViewParams then
-    return ((self._cfg).ViewParams).UnloadEffectID
+function BuffConfigData:GetUnloadEffectID()
+  if self._cfg.ViewParams then
+    return self._cfg.ViewParams.UnloadEffectID
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetExecEffectID = function(self)
-  -- function num : 0_26
-  if (self._cfg).ViewParams then
-    return ((self._cfg).ViewParams).ExecEffectID
+function BuffConfigData:GetExecEffectID()
+  if self._cfg.ViewParams then
+    return self._cfg.ViewParams.ExecEffectID
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetMaterialAnimation = function(self)
-  -- function num : 0_27
-  if (self._cfg).ViewParams then
-    return ((self._cfg).ViewParams).MaterialAnim
+function BuffConfigData:GetMaterialAnimation()
+  if self._cfg.ViewParams then
+    return self._cfg.ViewParams.MaterialAnim
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
+function BuffConfigData:GetMaterialAnimationMode()
+  return self._cfg.MaterialAnimationMode or BuffMaterialAnimationMode.Normal
+end
 
-BuffConfigData.GetMaterialAnimationMode = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  if not (self._cfg).MaterialAnimationMode then
-    return BuffMaterialAnimationMode.Normal
+function BuffConfigData:IsLayerOneShowNum()
+  if self._cfg.ViewParams then
+    return self._cfg.ViewParams.LayerOneShowNum and self._cfg.ViewParams.LayerOneShowNum == 1
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
+function BuffConfigData:GetMaxLayerCount()
+  return self._cfg.LayerCount
+end
 
-BuffConfigData.IsLayerOneShowNum = function(self)
-  -- function num : 0_29
-  -- DECOMPILER ERROR at PC16: Unhandled construct in 'MakeBoolean' P1
-
-  if ((self._cfg).ViewParams).LayerOneShowNum and ((self._cfg).ViewParams).LayerOneShowNum ~= 1 then
-    do return not (self._cfg).ViewParams end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function BuffConfigData:IsShowRestRound()
+  if self._cfg.ViewParams then
+    return self._cfg.ViewParams.ShowRestRound and self._cfg.ViewParams.ShowRestRound == 1
   end
 end
-
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.GetMaxLayerCount = function(self)
-  -- function num : 0_30
-  return (self._cfg).LayerCount
-end
-
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffConfigData.IsShowRestRound = function(self)
-  -- function num : 0_31
-  -- DECOMPILER ERROR at PC16: Unhandled construct in 'MakeBoolean' P1
-
-  if ((self._cfg).ViewParams).ShowRestRound and ((self._cfg).ViewParams).ShowRestRound ~= 1 then
-    do return not (self._cfg).ViewParams end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
-end
-
-

@@ -1,60 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/psparam_multi_grid_damage_trace.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseMultiGridDamageTraceParam", SkillPhaseParamBase)
 SkillPhaseMultiGridDamageTraceParam = SkillPhaseMultiGridDamageTraceParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseMultiGridDamageTraceParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseMultiGridDamageTraceParam:Constructor(t)
   self._pathEffectID = t.pathEffectID
   self._hitEffectID = t.hitEffectID
   self._interval = t.interval or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiGridDamageTraceParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseMultiGridDamageTraceParam:GetPhaseType()
   return SkillViewPhaseType.MultiGridDamageTrace
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiGridDamageTraceParam.GetPathEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseMultiGridDamageTraceParam:GetPathEffectID()
   return self._pathEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiGridDamageTraceParam.GetHitEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseMultiGridDamageTraceParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiGridDamageTraceParam.GetInterval = function(self)
-  -- function num : 0_4
+function SkillPhaseMultiGridDamageTraceParam:GetInterval()
   return self._interval
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMultiGridDamageTraceParam.GetCacheTable = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillPhaseMultiGridDamageTraceParam:GetCacheTable()
   local t = {}
   if self._pathEffectID and self._pathEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._pathEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._pathEffectID].ResPath,
+      1
+    })
   end
   if self._pathEffectID and self._pathEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._pathEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._pathEffectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

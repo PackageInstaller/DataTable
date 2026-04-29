@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_control_monster_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultControlMonsterMove", SkillEffectResultBase)
 SkillEffectResultControlMonsterMove = SkillEffectResultControlMonsterMove
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultControlMonsterMove.Constructor = function(self, entityID, posStart, posMiddle, posEnd, dir)
-  -- function num : 0_0
+function SkillEffectResultControlMonsterMove:Constructor(entityID, posStart, posMiddle, posEnd, dir)
   self._entityID = entityID
   self._posStart = posStart
   self._posMiddle = posMiddle
@@ -17,46 +10,26 @@ SkillEffectResultControlMonsterMove.Constructor = function(self, entityID, posSt
   self._dir = dir
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultControlMonsterMove.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultControlMonsterMove:GetEffectType()
   return SkillEffectType.ControlMonsterMove
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultControlMonsterMove.GetCasterEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultControlMonsterMove:GetCasterEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultControlMonsterMove.GetPosStart = function(self)
-  -- function num : 0_3
+function SkillEffectResultControlMonsterMove:GetPosStart()
   return self._posStart
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultControlMonsterMove.GetPosMiddle = function(self)
-  -- function num : 0_4
+function SkillEffectResultControlMonsterMove:GetPosMiddle()
   return self._posMiddle
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultControlMonsterMove.GetPosEnd = function(self)
-  -- function num : 0_5
+function SkillEffectResultControlMonsterMove:GetPosEnd()
   return self._posEnd
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultControlMonsterMove.GetDir = function(self)
-  -- function num : 0_6
+function SkillEffectResultControlMonsterMove:GetDir()
   return self._dir
 end
-
-

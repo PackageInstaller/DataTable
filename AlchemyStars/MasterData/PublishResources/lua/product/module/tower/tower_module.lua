@@ -1,16 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/tower/tower_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TowerModule", GameModule)
 TowerModule = TowerModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TowerModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TowerModule:Constructor()
   self.m_tower_data = nil
-  self.m_tower_name = {[TowerElementType.TowerElementType_Blue] = (StringTable.Get)("str_tower_water"), [TowerElementType.TowerElementType_Red] = (StringTable.Get)("str_tower_fire"), [TowerElementType.TowerElementType_Green] = (StringTable.Get)("str_tower_wood"), [TowerElementType.TowerElementType_Yellow] = (StringTable.Get)("str_tower_thunder"), [TowerElementType.TowerElementType_Difficulty_Blue] = (StringTable.Get)("str_tower_water_diffcult"), [TowerElementType.TowerElementType_Difficulty_Red] = (StringTable.Get)("str_tower_fire_diffcult"), [TowerElementType.TowerElementType_Difficulty_Green] = (StringTable.Get)("str_tower_wood_diffcult"), [TowerElementType.TowerElementType_Difficulty_Yellow] = (StringTable.Get)("str_tower_thunder_diffcult")}
+  self.m_tower_name = {
+    [TowerElementType.TowerElementType_Blue] = StringTable.Get("str_tower_water"),
+    [TowerElementType.TowerElementType_Red] = StringTable.Get("str_tower_fire"),
+    [TowerElementType.TowerElementType_Green] = StringTable.Get("str_tower_wood"),
+    [TowerElementType.TowerElementType_Yellow] = StringTable.Get("str_tower_thunder"),
+    [TowerElementType.TowerElementType_Difficulty_Blue] = StringTable.Get("str_tower_water_diffcult"),
+    [TowerElementType.TowerElementType_Difficulty_Red] = StringTable.Get("str_tower_fire_diffcult"),
+    [TowerElementType.TowerElementType_Difficulty_Green] = StringTable.Get("str_tower_wood_diffcult"),
+    [TowerElementType.TowerElementType_Difficulty_Yellow] = StringTable.Get("str_tower_thunder_diffcult")
+  }
   self._tower_ceiling = nil
   self._cfg_tower_detail = nil
   self._next_unlock_tower_time = 0
@@ -18,10 +20,7 @@ TowerModule.Constructor = function(self)
   self._cfg_tower_elemetn_detail = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule._NeedRefreshTowerDetail = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function TowerModule:_NeedRefreshTowerDetail()
   if self._cfg_tower_detail == nil then
     return true
   end
@@ -31,25 +30,22 @@ TowerModule._NeedRefreshTowerDetail = function(self)
   if self._next_unlock_tower_time < 0 then
     return false
   end
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmNowTime = (math.modf)(time_mod:GetServerTime() / 1000)
-  if self._next_unlock_tower_time < tmNowTime then
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmNowTime = math.modf(time_mod:GetServerTime() / 1000)
+  if tmNowTime > self._next_unlock_tower_time then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetCfgTowerDetail = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function TowerModule:GetCfgTowerDetail()
   local l_bNeedRefresh = self:_NeedRefreshTowerDetail()
   if l_bNeedRefresh == false then
     return self._cfg_tower_detail
   end
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmNowTime = (math.modf)(time_mod:GetServerTime() / 1000)
-  local l_detail_cfg = (Cfg.cfg_tower_detail)({})
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmNowTime = math.modf(time_mod:GetServerTime() / 1000)
+  local l_detail_cfg = Cfg.cfg_tower_detail({})
   local l_small_unlock_time = -1
   local loginModule = self:GetModule(LoginModule)
   local l_UnlockTypeStageNum = {}
@@ -57,228 +53,147 @@ TowerModule.GetCfgTowerDetail = function(self)
   self._tower_unlock_time = {}
   self._cfg_tower_detail = {}
   self._cfg_tower_elemetn_detail = {}
-  for key,value in pairs(l_detail_cfg) do
+  for key, value in pairs(l_detail_cfg) do
     local l_OpenTimeStamp = 0
-    if value.OpenGMTTime ~= nil and #value.OpenGMTTime > 0 then
+    if value.OpenGMTTime ~= nil and 0 < #value.OpenGMTTime then
       l_OpenTimeStamp = loginModule:GetTimeStampByTimeStr(value.OpenGMTTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     end
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R14 in 'UnsetPending'
-
-    if (self._tower_ceiling)[value.Type] == nil then
-      (self._tower_ceiling)[value.Type] = 0
+    if self._tower_ceiling[value.Type] == nil then
+      self._tower_ceiling[value.Type] = 0
     end
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (self._tower_unlock_time)[key] = l_OpenTimeStamp
+    self._tower_unlock_time[key] = l_OpenTimeStamp
     if tmNowTime < l_OpenTimeStamp then
       if l_UnlockTypeStageNum[value.Type] == nil or value.stage < l_UnlockTypeStageNum[value.Type] then
         l_UnlockTypeStageNum[value.Type] = value.stage
       end
-      if l_small_unlock_time == -1 or l_OpenTimeStamp < l_small_unlock_time then
+      if l_small_unlock_time == -1 or l_small_unlock_time > l_OpenTimeStamp then
         l_small_unlock_time = l_OpenTimeStamp
       end
     end
   end
-  for key,value in pairs(l_detail_cfg) do
-    local l_OpenTimeStamp = (self._tower_unlock_time)[key]
+  for key, value in pairs(l_detail_cfg) do
+    local l_OpenTimeStamp = self._tower_unlock_time[key]
     local l_nUnlockStage = l_UnlockTypeStageNum[value.Type]
-    -- DECOMPILER ERROR at PC100: Confused about usage of register: R15 in 'UnsetPending'
-
-    if l_OpenTimeStamp <= tmNowTime and (l_nUnlockStage == nil or value.stage < l_nUnlockStage) then
-      (self._cfg_tower_detail)[key] = value
-      -- DECOMPILER ERROR at PC109: Confused about usage of register: R15 in 'UnsetPending'
-
-      if (self._cfg_tower_elemetn_detail)[value.Type] == nil then
-        (self._cfg_tower_elemetn_detail)[value.Type] = {}
+    if tmNowTime >= l_OpenTimeStamp and (l_nUnlockStage == nil or l_nUnlockStage > value.stage) then
+      self._cfg_tower_detail[key] = value
+      if self._cfg_tower_elemetn_detail[value.Type] == nil then
+        self._cfg_tower_elemetn_detail[value.Type] = {}
       end
-      ;
-      (table.insert)((self._cfg_tower_elemetn_detail)[value.Type], value)
-      -- DECOMPILER ERROR at PC123: Confused about usage of register: R15 in 'UnsetPending'
-
-      ;
-      (self._tower_ceiling)[value.Type] = (self._tower_ceiling)[value.Type] + 1
+      table.insert(self._cfg_tower_elemetn_detail[value.Type], value)
+      self._tower_ceiling[value.Type] = self._tower_ceiling[value.Type] + 1
     end
   end
   self._next_unlock_tower_time = l_small_unlock_time
   return self._cfg_tower_detail
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetElementTowerCfg = function(self, element)
-  -- function num : 0_3
+function TowerModule:GetElementTowerCfg(element)
   self:GetCfgTowerDetail()
-  return (self._cfg_tower_elemetn_detail)[element]
+  return self._cfg_tower_elemetn_detail[element]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self.caller):RegisterPushHandler(CEventPushTowerInfo, self.HandleTowerAllData, self)
+function TowerModule:Init()
+  self.caller:RegisterPushHandler(CEventPushTowerInfo, self.HandleTowerAllData, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.HandleTowerAllData = function(self, msg)
-  -- function num : 0_5
+function TowerModule:HandleTowerAllData(msg)
   self.m_tower_data = msg.Data
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.SetTowerAllData = function(self, tower_data)
-  -- function num : 0_6
+function TowerModule:SetTowerAllData(tower_data)
   self.m_tower_data = tower_data
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetCfgTowerLevelInfoById = function(self, nId)
-  -- function num : 0_7 , upvalues : _ENV
-  return (Cfg.cfg_tower_detail)[nId]
+function TowerModule:GetCfgTowerLevelInfoById(nId)
+  return Cfg.cfg_tower_detail[nId]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetPlayerTowerData = function(self)
-  -- function num : 0_8
+function TowerModule:GetPlayerTowerData()
   return self.m_tower_data
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetTowerLayer = function(self, eType)
-  -- function num : 0_9 , upvalues : _ENV
+function TowerModule:GetTowerLayer(eType)
   if eType == TowerElementType.TowerElementType_Blue then
-    return (self.m_tower_data).tower_water
-  else
-    if eType == TowerElementType.TowerElementType_Red then
-      return (self.m_tower_data).tower_fire
-    else
-      if eType == TowerElementType.TowerElementType_Green then
-        return (self.m_tower_data).tower_wood
-      else
-        if eType == TowerElementType.TowerElementType_Yellow then
-          return (self.m_tower_data).tower_thunder
-        else
-          if eType == TowerElementType.TowerElementType_Difficulty_Blue then
-            return (self.m_tower_data).difficulty_tower_water
-          else
-            if eType == TowerElementType.TowerElementType_Difficulty_Red then
-              return (self.m_tower_data).difficulty_tower_fire
-            else
-              if eType == TowerElementType.TowerElementType_Difficulty_Green then
-                return (self.m_tower_data).difficulty_tower_wood
-              else
-                if eType == TowerElementType.TowerElementType_Difficulty_Yellow then
-                  return (self.m_tower_data).difficulty_tower_thunder
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return self.m_tower_data.tower_water
+  elseif eType == TowerElementType.TowerElementType_Red then
+    return self.m_tower_data.tower_fire
+  elseif eType == TowerElementType.TowerElementType_Green then
+    return self.m_tower_data.tower_wood
+  elseif eType == TowerElementType.TowerElementType_Yellow then
+    return self.m_tower_data.tower_thunder
+  elseif eType == TowerElementType.TowerElementType_Difficulty_Blue then
+    return self.m_tower_data.difficulty_tower_water
+  elseif eType == TowerElementType.TowerElementType_Difficulty_Red then
+    return self.m_tower_data.difficulty_tower_fire
+  elseif eType == TowerElementType.TowerElementType_Difficulty_Green then
+    return self.m_tower_data.difficulty_tower_wood
+  elseif eType == TowerElementType.TowerElementType_Difficulty_Yellow then
+    return self.m_tower_data.difficulty_tower_thunder
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.SetPlayerTowerFormationInfo = function(self, formation_info)
-  -- function num : 0_10
+function TowerModule:SetPlayerTowerFormationInfo(formation_info)
   if self.m_tower_data == nil then
     self.m_tower_data = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_tower_data).formation_info = formation_info
+  self.m_tower_data.formation_info = formation_info
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetPlayerTowerFormationInfo = function(self)
-  -- function num : 0_11
+function TowerModule:GetPlayerTowerFormationInfo()
   if self.m_tower_data == nil then
     return {}
   end
-  return (self.m_tower_data).formation_info
+  return self.m_tower_data.formation_info
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.SetPlayerTowerMulFormationInfo = function(self, mul_formations)
-  -- function num : 0_12
+function TowerModule:SetPlayerTowerMulFormationInfo(mul_formations)
   if self.m_tower_data == nil then
     self.m_tower_data = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_tower_data).mul_formations = mul_formations
+  self.m_tower_data.mul_formations = mul_formations
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetPlayerTowerMulFormationInfo = function(self)
-  -- function num : 0_13
+function TowerModule:GetPlayerTowerMulFormationInfo()
   if self.m_tower_data == nil then
     return {}
   end
-  return (self.m_tower_data).mul_formations
+  return self.m_tower_data.mul_formations
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetMatchInfo = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  return (((GameGlobal.GetModule)(MatchModule)):GetMatchEnterData()):GetTowerInfo()
+function TowerModule:GetMatchInfo()
+  return GameGlobal.GetModule(MatchModule):GetMatchEnterData():GetTowerInfo()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetTowerName = function(self, element)
-  -- function num : 0_15
-  return (self.m_tower_name)[element]
+function TowerModule:GetTowerName(element)
+  return self.m_tower_name[element]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetTowerCeiling = function(self, element)
-  -- function num : 0_16
+function TowerModule:GetTowerCeiling(element)
   if self._tower_ceiling == nil or self:_NeedRefreshTowerDetail() then
     self:GetCfgTowerDetail()
   end
-  return (self._tower_ceiling)[element]
+  return self._tower_ceiling[element]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.ReqPlayerTowerData = function(self, TT)
-  -- function num : 0_17 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyTowerInfoReq)
+function TowerModule:ReqPlayerTowerData(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyTowerInfoReq)
   local reply = self:Call(TT, request)
   local AsyncRes = AsyncRequestRes:New()
   if reply.res ~= CallResultType.Normal then
     AsyncRes:SetResult(TOWER_RESULT_CODE.TOWER_INVALID)
     return AsyncRes, nil
   end
-  local nRet = (reply.msg).nRet
+  local nRet = reply.msg.nRet
   AsyncRes:SetResult(nRet)
   if nRet ~= TOWER_RESULT_CODE.TOWER_SUCCEED then
     return AsyncRes, nil
   end
   AsyncRes:SetSucc(true)
-  self.m_tower_data = (reply.msg).Data
+  self.m_tower_data = reply.msg.Data
   return AsyncRes, self.m_tower_data
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.ReqTowerChangeFormationInfo = function(self, TT, nId, formation_pet_list)
-  -- function num : 0_18 , upvalues : _ENV
+function TowerModule:ReqTowerChangeFormationInfo(TT, nId, formation_pet_list)
   local AsyncRes = AsyncRequestRes:New()
   local tower_level_info = self:GetCfgTowerLevelInfoById(nId)
   if tower_level_info == nil then
@@ -289,7 +204,7 @@ TowerModule.ReqTowerChangeFormationInfo = function(self, TT, nId, formation_pet_
     AsyncRes:SetResult(TOWER_RESULT_CODE.TOWER_FORMATION_INVALID_PETCOUNT)
     return AsyncRes
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyChangeTowerFormationReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyChangeTowerFormationReq)
   request.nId = nId
   request.formation_pet_list = formation_pet_list
   local reply = self:Call(TT, request)
@@ -307,10 +222,7 @@ TowerModule.ReqTowerChangeFormationInfo = function(self, TT, nId, formation_pet_
   return AsyncRes, self:GetPlayerTowerFormationInfo()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.ReqTowerChangeMulFormationInfo = function(self, TT, nId, formation_info)
-  -- function num : 0_19 , upvalues : _ENV
+function TowerModule:ReqTowerChangeMulFormationInfo(TT, nId, formation_info)
   local asyncRes = AsyncRequestRes:New()
   local tower_level_info = self:GetCfgTowerLevelInfoById(nId)
   if tower_level_info == nil then
@@ -321,7 +233,7 @@ TowerModule.ReqTowerChangeMulFormationInfo = function(self, TT, nId, formation_i
     asyncRes:SetResult(TOWER_RESULT_CODE.TOWER_FORMATION_INVALID_PETCOUNT)
     return asyncRes
   end
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyChangeTowerFormationReq)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyChangeTowerFormationReq)
   request.nId = nId
   request.formation_info = formation_info
   local reply = self:Call(TT, request)
@@ -339,11 +251,8 @@ TowerModule.ReqTowerChangeMulFormationInfo = function(self, TT, nId, formation_i
   return asyncRes, self:GetPlayerTowerMulFormationInfo()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.ReqTowerPassData = function(self, TT, nId)
-  -- function num : 0_20 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyTowerPassDataReq)
+function TowerModule:ReqTowerPassData(TT, nId)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyTowerPassDataReq)
   request.nId = nId
   local reply = self:Call(TT, request)
   local AsyncRes = AsyncRequestRes:New()
@@ -352,32 +261,24 @@ TowerModule.ReqTowerPassData = function(self, TT, nId)
     return AsyncRes, nil
   end
   AsyncRes:SetSucc(true)
-  return AsyncRes, (reply.msg).info
+  return AsyncRes, reply.msg.info
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.StartMatchTask = function(self, TT, nId)
-  -- function num : 0_21 , upvalues : _ENV
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function TowerModule:StartMatchTask(TT, nId)
+  local game = GameGlobal.GetModule(GameMatchModule)
   local info = TowerCreateInfo:New()
   local cfgTowerLevel = self:GetCfgTowerLevelInfoById(nId)
-  do
-    if not cfgTowerLevel then
-      local AsyncRes = AsyncRequestRes:New()
-      AsyncRes:SetResult(TOWER_RESULT_CODE.TOWER_ID_INVALID)
-      return AsyncRes
-    end
-    info.nId = nId
-    local res = game:StartMatchTask(TT, MatchType.MT_Tower, cfgTowerLevel.Type, info)
-    return res
+  if not cfgTowerLevel then
+    local AsyncRes = AsyncRequestRes:New()
+    AsyncRes:SetResult(TOWER_RESULT_CODE.TOWER_ID_INVALID)
+    return AsyncRes
   end
+  info.nId = nId
+  local res = game:StartMatchTask(TT, MatchType.MT_Tower, cfgTowerLevel.Type, info)
+  return res
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.Module_ConvertMatchResult = function(self, recvResult)
-  -- function num : 0_22 , upvalues : _ENV
+function TowerModule:Module_ConvertMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_Tower
   uiMatchResult.m_nID = recvResult.tower_id
@@ -390,61 +291,35 @@ TowerModule.Module_ConvertMatchResult = function(self, recvResult)
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetErrorMsg = function(self, errno)
-  -- function num : 0_23 , upvalues : _ENV
+function TowerModule:GetErrorMsg(errno)
   if errno == TOWER_RESULT_CODE.TOWER_INVALID then
-    return (StringTable.Get)("str_tower_error_-1")
+    return StringTable.Get("str_tower_error_-1")
+  elseif errno == TOWER_RESULT_CODE.TOWER_PlayerTowerNotOpen then
+    return StringTable.Get("str_tower_error_1")
+  elseif errno == TOWER_RESULT_CODE.TOWER_INVALID_PET then
+    return StringTable.Get("str_tower_error_2")
+  elseif errno == TOWER_RESULT_CODE.TOWER_FORMATION_INVALID_PETCOUNT then
+    return StringTable.Get("str_tower_error_3")
+  elseif errno == TOWER_RESULT_CODE.TOWER_ID_INVALID then
+    return StringTable.Get("str_tower_error_4")
+  elseif errno == TOWER_RESULT_CODE.TOWER_DB_LOAD_ERR then
+    return StringTable.Get("str_tower_error_5")
+  elseif errno == TOWER_RESULT_CODE.TOWER_DB_SAVE_ERR then
+    return StringTable.Get("str_tower_error_6")
+  elseif errno == TOWER_RESULT_CODE.TOWER_FORMATION_INVALID_PETTYPE then
+    return StringTable.Get("str_tower_error_7")
+  elseif errno == TOWER_RESULT_CODE.TOWER_FORMATION_PET_REPEAT then
+    return StringTable.Get("str_tower_error_8")
+  elseif errno == TOWER_RESULT_CODE.TOWER_TYPE_INVALID then
+    return StringTable.Get("str_tower_error_9")
+  elseif errno == TOWER_RESULT_CODE.TOWER_FORMATION_ELEMENT_TYPE_ERR then
+    return StringTable.Get("str_tower_error_10")
   else
-    if errno == TOWER_RESULT_CODE.TOWER_PlayerTowerNotOpen then
-      return (StringTable.Get)("str_tower_error_1")
-    else
-      if errno == TOWER_RESULT_CODE.TOWER_INVALID_PET then
-        return (StringTable.Get)("str_tower_error_2")
-      else
-        if errno == TOWER_RESULT_CODE.TOWER_FORMATION_INVALID_PETCOUNT then
-          return (StringTable.Get)("str_tower_error_3")
-        else
-          if errno == TOWER_RESULT_CODE.TOWER_ID_INVALID then
-            return (StringTable.Get)("str_tower_error_4")
-          else
-            if errno == TOWER_RESULT_CODE.TOWER_DB_LOAD_ERR then
-              return (StringTable.Get)("str_tower_error_5")
-            else
-              if errno == TOWER_RESULT_CODE.TOWER_DB_SAVE_ERR then
-                return (StringTable.Get)("str_tower_error_6")
-              else
-                if errno == TOWER_RESULT_CODE.TOWER_FORMATION_INVALID_PETTYPE then
-                  return (StringTable.Get)("str_tower_error_7")
-                else
-                  if errno == TOWER_RESULT_CODE.TOWER_FORMATION_PET_REPEAT then
-                    return (StringTable.Get)("str_tower_error_8")
-                  else
-                    if errno == TOWER_RESULT_CODE.TOWER_TYPE_INVALID then
-                      return (StringTable.Get)("str_tower_error_9")
-                    else
-                      if errno == TOWER_RESULT_CODE.TOWER_FORMATION_ELEMENT_TYPE_ERR then
-                        return (StringTable.Get)("str_tower_error_10")
-                      else
-                        return (StringTable.Get)("str_tower_error_999") .. errno
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+    return StringTable.Get("str_tower_error_999") .. errno
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.IsTowerPass = function(self, nID)
-  -- function num : 0_24
+function TowerModule:IsTowerPass(nID)
   local cfgTower = self:GetCfgTowerLevelInfoById(nID)
   local nElementType = cfgTower.Type
   local nStage = cfgTower.stage
@@ -454,34 +329,22 @@ TowerModule.IsTowerPass = function(self, nID)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetNextStageCfg = function(self, nID)
-  -- function num : 0_25
+function TowerModule:GetNextStageCfg(nID)
   local cfgTower = self:GetCfgTowerLevelInfoById(nID)
   local nElementType = cfgTower.Type
   local nextStage = cfgTower.stage + 1
-  return ((self._cfg_tower_elemetn_detail)[nElementType])[nextStage]
+  return self._cfg_tower_elemetn_detail[nElementType][nextStage]
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.IsNextStageActive = function(self, nID)
-  -- function num : 0_26
+function TowerModule:IsNextStageActive(nID)
   local cfg = self:GetNextStageCfg(nID)
   local active = cfg ~= nil
-  do return active end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return active
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-TowerModule.GetTowerNameByID = function(self, nID)
-  -- function num : 0_27
+function TowerModule:GetTowerNameByID(nID)
   local cfgTower = self:GetCfgTowerLevelInfoById(nID)
   local nElementType = cfgTower.Type
   local nStage = cfgTower.stage
   return self:GetTowerName(nElementType), nStage
 end
-
-

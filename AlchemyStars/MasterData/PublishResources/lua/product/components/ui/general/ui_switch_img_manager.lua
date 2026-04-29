@@ -1,49 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_switch_img_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISwitchImgManager", Singleton)
 UISwitchImgManager = UISwitchImgManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISwitchImgManager.Show = function()
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("[ui] UISwitchImgManager.Show")
-  ;
-  (UISwitchImgManager:GetInstance()):_Show(true)
+function UISwitchImgManager.Show()
+  Log.debug("[ui] UISwitchImgManager.Show")
+  UISwitchImgManager:GetInstance():_Show(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchImgManager.Hide = function()
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.debug)("[ui] UISwitchImgManager.Hide")
-  ;
-  (UISwitchImgManager:GetInstance()):_Show(false)
+function UISwitchImgManager.Hide()
+  Log.debug("[ui] UISwitchImgManager.Hide")
+  UISwitchImgManager:GetInstance():_Show(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchImgManager.Init = function(self, uiRootGameObject)
-  -- function num : 0_2
-  self._imageRoot = ((uiRootGameObject.transform):Find("UICameras/depth_high/UI/SwitchImgCanvas/RawImage")).gameObject
-  self._blurhelper = (self._imageRoot):GetComponent("H3DUIBlurHelper")
+function UISwitchImgManager:Init(uiRootGameObject)
+  self._imageRoot = uiRootGameObject.transform:Find("UICameras/depth_high/UI/SwitchImgCanvas/RawImage").gameObject
+  self._blurhelper = self._imageRoot:GetComponent("H3DUIBlurHelper")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchImgManager._Show = function(self, bshow)
-  -- function num : 0_3 , upvalues : _ENV
+function UISwitchImgManager:_Show(bshow)
   if bshow then
-    (self._imageRoot):SetActive(true)
-    ;
-    (self._blurhelper):BlurTexture((UnityEngine.Screen).width, (UnityEngine.Screen).height, 0)
-  else
-    if (self._imageRoot).activeSelf then
-      (self._imageRoot):SetActive(false)
-    end
+    self._imageRoot:SetActive(true)
+    self._blurhelper:BlurTexture(UnityEngine.Screen.width, UnityEngine.Screen.height, 0)
+  elseif self._imageRoot.activeSelf then
+    self._imageRoot:SetActive(false)
   end
 end
-
-

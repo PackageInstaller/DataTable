@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_change_pet_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionChangePetState", AirActionBase)
 AirActionChangePetState = AirActionChangePetState
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionChangePetState.Constructor = function(self, pet, state)
-  -- function num : 0_0
+function AirActionChangePetState:Constructor(pet, state)
   self._pet = pet
   self._targetState = state
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionChangePetState.Start = function(self)
-  -- function num : 0_1
-  (self._pet):SetState(self._targetState)
+function AirActionChangePetState:Start()
+  self._pet:SetState(self._targetState)
   self:Stop()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionChangePetState.IsOver = function(self)
-  -- function num : 0_2
+function AirActionChangePetState:IsOver()
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionChangePetState.Stop = function(self)
-  -- function num : 0_3
+function AirActionChangePetState:Stop()
   self._running = false
 end
-
-

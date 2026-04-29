@@ -1,45 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_norm/ui_map_node_item_normal.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapNodeItemNormal", UIMapNodeItemBase)
 UIMapNodeItemNormal = UIMapNodeItemNormal
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapNodeItemNormal.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((UIMapNodeItemNormal.super).OnShow)(self)
+function UIMapNodeItemNormal:OnShow()
+  UIMapNodeItemNormal.super.OnShow(self)
   self._bgImg = self:GetUIComponent("Image", "bgImg")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNormal.FlushGuide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local stage = ((self.nodeInfo).stages)[1]
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIMapNodeItemNormal:FlushGuide()
+  local stage = self.nodeInfo.stages[1]
   if stage and stage:IsGuideStage() then
-    (self._bgImg).sprite = (self._atlasNode):GetSprite("map_guanqia_ludian04")
-    ;
-    (self.txtName):SetText((StringTable.Get)("str_discovery_node_normal_guide"))
+    self._bgImg.sprite = self._atlasNode:GetSprite("map_guanqia_ludian04")
+    self.txtName:SetText(StringTable.Get("str_discovery_node_normal_guide"))
   else
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._bgImg).sprite = (self._atlasNode):GetSprite("map_guanqia_ludian05")
-    ;
-    (self.txtName):SetText((StringTable.Get)("str_discovery_node_normal_record"))
+    self._bgImg.sprite = self._atlasNode:GetSprite("map_guanqia_ludian05")
+    self.txtName:SetText(StringTable.Get("str_discovery_node_normal_record"))
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeItemNormal.GetTipAnimName = function(self)
-  -- function num : 0_2
+function UIMapNodeItemNormal:GetTipAnimName()
   return "uieff_UINormNodeNorm_in"
 end
-
-

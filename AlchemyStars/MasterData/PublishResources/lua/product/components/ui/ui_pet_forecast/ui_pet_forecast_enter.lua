@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UIPetForecastEnter", UISideEnterItem_Base)
 UIPetForecastEnter = UIPetForecastEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetForecastEnter.GetLocalDBKey = function(id)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetForecastEnter.GetLocalDBKey(id)
   local str = "UIPetForecastEnter_New_" .. id
-  local key = (UIActivityHelper.GetLocalDBKeyWithPstId)(str .. "_")
+  local key = UIActivityHelper.GetLocalDBKeyWithPstId(str .. "_")
   return key
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetForecastEnter:OnShow()
   self.mSignIn = self:GetModule(SignInModule)
-  self.data = (self.mSignIn):GetPredictionData()
+  self.data = self.mSignIn:GetPredictionData()
   self.root = self:GetGameObject()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckClose)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnCampaignComponentStepChange)
@@ -31,10 +21,7 @@ UIPetForecastEnter.OnShow = function(self)
   self:_SetTitle()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetForecastEnter:OnHide()
   self.root = nil
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckClose)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnCampaignComponentStepChange)
@@ -45,187 +32,128 @@ UIPetForecastEnter.OnHide = function(self)
   self:CancelTimerEvent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter.CancelTimerEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetForecastEnter:CancelTimerEvent()
   if self.te then
-    ((GameGlobal.Timer)()):CancelEvent(self.te)
+    GameGlobal.Timer():CancelEvent(self.te)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter._CheckOpen = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local res, replyEvent = (self.mSignIn):PredictionReq(TT)
-  if (PetForecastData.CheckCode)(res:GetResult(), false) then
-    (self.data):Init(replyEvent.info)
+function UIPetForecastEnter:_CheckOpen(TT)
+  local res, replyEvent = self.mSignIn:PredictionReq(TT)
+  if PetForecastData.CheckCode(res:GetResult(), false) then
+    self.data:Init(replyEvent.info)
   else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.data).id = 0
+    self.data.id = 0
   end
-  do return self.data and (((self.data).id > 0 and ((self.data).cfg).cg)) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return self.data and self.data.id > 0 and self.data.cfg.cg
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_5
-  return (self.data):GetCfg_cg("enter")
+function UIPetForecastEnter:GetSideEnterRawImage()
+  return self.data:GetCfg_cg("enter")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter.DoShow = function(self)
-  -- function num : 0_6
+function UIPetForecastEnter:DoShow()
   self:_SetTitle()
   self:_SetBg()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter._CalcNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if self.data and (self.data).id > 0 then
-    local id = (self.data).id
-    local key = (UIPetForecastEnter.GetLocalDBKey)(id)
-    return not (LocalDB.HasKey)(key)
+function UIPetForecastEnter:_CalcNew()
+  if self.data and self.data.id > 0 then
+    local id = self.data.id
+    local key = UIPetForecastEnter.GetLocalDBKey(id)
+    return not LocalDB.HasKey(key)
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter._CalcRed = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if self.data and (self.data).pieces then
-    for i,p in ipairs((self.data).pieces) do
+function UIPetForecastEnter:_CalcRed()
+  if self.data and self.data.pieces then
+    for i, p in ipairs(self.data.pieces) do
       if p.state == PredictionStatus.PRES_UnAccept then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter._CheckClose = function(self, id)
-  -- function num : 0_9
+function UIPetForecastEnter:_CheckClose(id)
   if id == -1 then
     self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self
-    local lockName = "UIPetForecastEnter_CheckClose"
-    self:Lock(lockName)
-    local isOpen = self:_CheckOpen(TT)
-    self:UnLock(lockName)
-    if not isOpen then
-      (self._setShowCallback)(false)
-    end
-  end
-)
+      local lockName = "UIPetForecastEnter_CheckClose"
+      self:Lock(lockName)
+      local isOpen = self:_CheckOpen(TT)
+      self:UnLock(lockName)
+      if not isOpen then
+        self._setShowCallback(false)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter._OnCampaignComponentStepChange = function(self, id)
-  -- function num : 0_10
+function UIPetForecastEnter:_OnCampaignComponentStepChange(id)
   if id == -1 then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter._Refresh = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
+function UIPetForecastEnter:_Refresh(TT)
   self:CancelTimerEvent()
   if self._refreshTask then
-    return 
+    return
   end
   self._refreshTask = true
   local lockName = "UIPetForecastEnter_Refresh"
   self:Lock(lockName)
   local isOpen = self:_CheckOpen(TT)
   if isOpen then
-    local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-    if nowTimestamp < (self.data).endTime then
-      self.te = ((GameGlobal.Timer)()):AddEvent(((self.data).endTime - nowTimestamp) * 1000, function()
-    -- function num : 0_11_0 , upvalues : self
-    self:PredictionDataChanged()
-  end
-)
+    local nowTimestamp = UICommonHelper.GetNowTimestamp()
+    if nowTimestamp < self.data.endTime then
+      self.te = GameGlobal.Timer():AddEvent((self.data.endTime - nowTimestamp) * 1000, function()
+        self:PredictionDataChanged()
+      end)
     end
   else
-    do
-      ;
-      (self._setShowCallback)(false)
-      self:_CheckPoint()
-      self:UnLock(lockName)
-      self._refreshTask = false
-    end
+    self._setShowCallback(false)
   end
+  self:_CheckPoint()
+  self:UnLock(lockName)
+  self._refreshTask = false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter.PredictionDataChanged = function(self)
-  -- function num : 0_12
+function UIPetForecastEnter:PredictionDataChanged()
   if not self.root then
-    return 
+    return
   end
-  if (self.data):IsVigorousChanged() then
+  if self.data:IsVigorousChanged() then
     self:StartTask(self._Refresh, self)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter.PredictionDataUpdate = function(self)
-  -- function num : 0_13
+function UIPetForecastEnter:PredictionDataUpdate()
   if not self.root then
-    return 
+    return
   end
   self:StartTask(self._Refresh, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter._SetTitle = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIPetForecastEnter:_SetTitle()
   local widgetName = "txtTitle"
   local strId = "str_prediction_title_2"
   if widgetName and strId then
-    (UIWidgetHelper.SetLocalizationText)(self, widgetName, (StringTable.Get)(strId))
+    UIWidgetHelper.SetLocalizationText(self, widgetName, StringTable.Get(strId))
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter._SetBg = function(self, sideEnterIcon)
-  -- function num : 0_15 , upvalues : _ENV
+function UIPetForecastEnter:_SetBg(sideEnterIcon)
   local widgetName = "bg"
   local sideEnterIcon = self:GetSideEnterRawImage()
   if widgetName and sideEnterIcon then
-    (UIWidgetHelper.SetRawImage)(self, widgetName, sideEnterIcon)
+    UIWidgetHelper.SetRawImage(self, widgetName, sideEnterIcon)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastEnter.BtnOnClick = function(self, go)
-  -- function num : 0_16
-  local prefabName = (self.data).prefab
+function UIPetForecastEnter:BtnOnClick(go)
+  local prefabName = self.data.prefab
   self:ShowDialog(prefabName)
 end
-
-

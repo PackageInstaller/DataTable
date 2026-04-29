@@ -1,87 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n8/review/ui_activity_n8_main_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN8MainController_Review", UIController)
 UIActivityN8MainController_Review = UIActivityN8MainController_Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN8MainController_Review._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_0
+function UIActivityN8MainController_Review:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._PlayAnim = function(self, widgetName, animName, time, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN8MainController_Review:_PlayAnim(widgetName, animName, time, callback)
   local anim = self:GetUIComponent("Animation", widgetName)
   self:Lock(animName)
   anim:Play(animName)
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, time, self, animName, callback
     YIELD(TT, time)
     self:UnLock(animName)
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN8MainController_Review:_InitWidget()
   self._anim = self:GetUIComponent("Animation", "_anim")
   self._mainBg = self:GetUIComponent("RawImageLoader", "_mainBg")
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, false, function()
-    -- function num : 0_2_1 , upvalues : self
+  self._backBtns:SetData(function()
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, false, function()
     self:HideBtnOnClick()
-  end
-)
+  end)
   self._showBtn = self:GetGameObject("_showBtn")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review.CloseCoro = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN8MainController_Review:CloseCoro(TT)
   self:Lock("UIActivityN8MainController_Review_CloseCoro")
   self:SwitchState(UIStateType.UIActivityReview)
   self:UnLock("UIActivityN8MainController_Review_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN8MainController_Review:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_REVIEW_N8
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, ECampaignReviewN8ComponentID.ECAMPAIGN_REVIEW_ReviewN8_LINE_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, ECampaignReviewN8ComponentID.ECAMPAIGN_REVIEW_ReviewN8_LINE_MISSION)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
-  ;
-  (self._campaign):ClearCampaignNew(TT)
+  self._campaign:ClearCampaignNew(TT)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review.OnShow = function(self, uiParams)
-  -- function num : 0_5
+function UIActivityN8MainController_Review:OnShow(uiParams)
   self._isOpen = true
   self:_AttachEvents()
   self:_InitWidget()
@@ -93,177 +62,116 @@ UIActivityN8MainController_Review.OnShow = function(self, uiParams)
     local rt = self:GetUIComponent("RawImage", "rt")
     rt.texture = self.imgRT
     self:_PlayAnim("_anim", "UIActivityN8MainController_Review_in", 1000, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:_CheckGuide()
-  end
-)
-  else
-    do
       self:_CheckGuide()
-    end
+    end)
+  else
+    self:_CheckGuide()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review.OnHide = function(self)
-  -- function num : 0_6
+function UIActivityN8MainController_Review:OnHide()
   if self.imgRT then
-    (self.imgRT):Release()
+    self.imgRT:Release()
     self.imgRT = nil
   end
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review.Destroy = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._lineMatReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._lineMatReq)
-  self._personMatReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._personMatReq)
-  self._bpMatReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._bpMatReq)
-  self._loginMatReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._loginMatReq)
-  self._battleMatReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._battleMatReq)
+function UIActivityN8MainController_Review:Destroy()
+  self._lineMatReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._lineMatReq)
+  self._personMatReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._personMatReq)
+  self._bpMatReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._bpMatReq)
+  self._loginMatReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._loginMatReq)
+  self._battleMatReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._battleMatReq)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._Refresh = function(self)
-  -- function num : 0_8
+function UIActivityN8MainController_Review:_Refresh()
   self:_SetLineMissionBtn()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._SetBg = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local url = (UIActivityHelper.GetCampaignMainBg)(self._campaign, 1)
+function UIActivityN8MainController_Review:_SetBg()
+  local url = UIActivityHelper.GetCampaignMainBg(self._campaign, 1)
   if url then
-    (self._mainBg):LoadImage(url)
+    self._mainBg:LoadImage(url)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._SetSpine = function(self)
-  -- function num : 0_10
+function UIActivityN8MainController_Review:_SetSpine()
   local obj = self:GetUIComponent("SpineLoader", "_spine")
   obj:LoadSpine("n8_kv_spine_idle")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._SetLineMissionBtn = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityN8MainController_Review:_SetLineMissionBtn()
   local componentId = ECampaignReviewN8ComponentID.ECAMPAIGN_REVIEW_ReviewN8_LINE_MISSION
   local obj = self:_SpawnObject("_lineMissionBtn", "UIActivityCommonComponentEnterLock")
-  self._lineMatReq = (UIWidgetHelper.SetLocalizedTMPMaterial)(obj, "titleText", "N8Material_02.mat", self._lineMatReq)
+  self._lineMatReq = UIWidgetHelper.SetLocalizedTMPMaterial(obj, "titleText", "N8Material_02.mat", self._lineMatReq)
   local tb = {
-{"bg_lock"}
-, 
-{"bg_lock"}
-, 
-{"bg_unlock"}
-, 
-{"bg_lock"}
-}
+    {"bg_lock"},
+    {"bg_lock"},
+    {"bg_unlock"},
+    {"bg_lock"}
+  }
   obj:SetWidgetNameGroup(tb)
   obj:SetData(self._campaign, componentId, function()
-    -- function num : 0_11_0 , upvalues : self, _ENV
     self:SwitchState(UIStateType.UIActivityN8LineMissionController_Review)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review.ShowBtnOnClick = function(self)
-  -- function num : 0_12
+function UIActivityN8MainController_Review:ShowBtnOnClick()
   local hideBtn = self:GetGameObject("_backBtns")
   hideBtn:SetActive(true)
   local showBtn = self:GetGameObject("_showBtn")
   showBtn:SetActive(false)
-  ;
-  (self._anim):Play("uieff_N8_Main_Show")
+  self._anim:Play("uieff_N8_Main_Show")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review.HideBtnOnClick = function(self)
-  -- function num : 0_13
+function UIActivityN8MainController_Review:HideBtnOnClick()
   local hideBtn = self:GetGameObject("_backBtns")
   hideBtn:SetActive(false)
   local showBtn = self:GetGameObject("_showBtn")
   showBtn:SetActive(true)
-  ;
-  (self._anim):Play("uieff_N8_Main_Hide")
+  self._anim:Play("uieff_N8_Main_Hide")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review.InfoBtnOnClick = function(self, go)
-  -- function num : 0_14
+function UIActivityN8MainController_Review:InfoBtnOnClick(go)
   self:ShowDialog("UIActivityIntroController", "UIActivityN8MainController_Review")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._AttachEvents = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityN8MainController_Review:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._DetachEvents = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityN8MainController_Review:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._CheckActivityClose = function(self, id)
-  -- function num : 0_17 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityN8MainController_Review:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._SetEffect = function(self)
-  -- function num : 0_18
+function UIActivityN8MainController_Review:_SetEffect()
   self:_SetSpineEffect("_spine")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._SetSpineEffect = function(self, widgetName)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityN8MainController_Review:_SetSpineEffect(widgetName)
   local obj = self:GetGameObject(widgetName)
-  local spineSkeMultipleTex = obj:GetComponentInChildren(typeof(((Spine.Unity).Modules).SkeletonGraphicMultiObject))
+  local spineSkeMultipleTex = obj:GetComponentInChildren(typeof(Spine.Unity.Modules.SkeletonGraphicMultiObject))
   spineSkeMultipleTex.UseInstanceMaterials = true
-  spineSkeMultipleTex.OnInstanceMaterialCreated = function(material)
-    -- function num : 0_19_0 , upvalues : self
+  
+  function spineSkeMultipleTex.OnInstanceMaterialCreated(material)
     self:_HandelSpineMaterial(material)
   end
-
+  
   spineSkeMultipleTex:UpdateMesh()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._HandelSpineMaterial = function(self, material)
-  -- function num : 0_20
+function UIActivityN8MainController_Review:_HandelSpineMaterial(material)
   material:SetFloat("_StencilComp", 3)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8MainController_Review._CheckGuide = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN8MainController_Review)
+function UIActivityN8MainController_Review:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN8MainController_Review)
 end
-
-

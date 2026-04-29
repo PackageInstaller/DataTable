@@ -1,79 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/common/ui_n25_entry_btn_blood_sucker.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25EntryBtnBloodSucker", UIN25EntryBtnBase)
 UIN25EntryBtnBloodSucker = UIN25EntryBtnBloodSucker
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25EntryBtnBloodSucker.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN25EntryBtnBloodSucker:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBloodSucker.OnHide = function(self)
-  -- function num : 0_1
+function UIN25EntryBtnBloodSucker:OnHide()
   self:CancelTimeEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBloodSucker.RefreshState = function(self, activityConst)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25EntryBtnBloodSucker:RefreshState(activityConst)
   self.activityConst = activityConst
   self:RefreshStateInternal()
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     self:RefreshStateInternal()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBloodSucker.RefreshStateInternal = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local c, cInfo = (self.activityConst):GetBloodSuckerComponent()
-  if cInfo == nil then
-    return 
+function UIN25EntryBtnBloodSucker:RefreshStateInternal()
+  local c, cInfo = self.activityConst:GetBloodSuckerComponent()
+  if nil == cInfo then
+    return
   end
-  local red = (self.activityConst):CheckGameBloodSuckerRed()
-  local new = (self.activityConst):CheckGameBloodSuckerNew()
+  local red = self.activityConst:CheckGameBloodSuckerRed()
+  local new = self.activityConst:CheckGameBloodSuckerNew()
   self:SetLock(true)
   self:SetNewAndRed(new, red)
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   local closeTime = cInfo.m_close_time
-  local state = (self.activityConst):GetStateGameBloodSucker()
+  local state = self.activityConst:GetStateGameBloodSucker()
   if state == UISummerOneEnterBtnState.NotOpen then
     local unlockTime = cInfo.m_unlock_time
-    local seconds = (math.floor)(unlockTime - nowTimestamp)
-    local timeStr = (UIActivityN25Const.GetTimeString)(seconds)
-    local timeTips = (StringTable.Get)("str_n25_activity_remain_open_time", timeStr)
+    local seconds = math.floor(unlockTime - nowTimestamp)
+    local timeStr = UIActivityN25Const.GetTimeString(seconds)
+    local timeTips = StringTable.Get("str_n25_activity_remain_open_time", timeStr)
     self:SetLeftTime(timeTips)
-  else
-    do
-      if state == UISummerOneEnterBtnState.Normal then
-        self:SetLock(false)
-        self:SetLeftTimeShow(false)
-        self:CancelTimeEvent()
-      else
-        if state == UISummerOneEnterBtnState.Closed then
-          self:SetLeftTimeShow(false)
-          self:CancelTimeEvent()
-        end
-      end
-    end
+  elseif state == UISummerOneEnterBtnState.Normal then
+    self:SetLock(false)
+    self:SetLeftTimeShow(false)
+    self:CancelTimeEvent()
+  elseif state == UISummerOneEnterBtnState.Closed then
+    self:SetLeftTimeShow(false)
+    self:CancelTimeEvent()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnBloodSucker.CancelTimeEvent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+function UIN25EntryBtnBloodSucker:CancelTimeEvent()
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
 end
-
-

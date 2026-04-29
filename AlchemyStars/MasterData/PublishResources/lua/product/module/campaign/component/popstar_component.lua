@@ -1,111 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/popstar_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("PopStarComponent", ICampaignComponent)
 PopStarComponent = PopStarComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarComponent:Constructor()
   self.m_component_info = PopStarComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PopStarComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = PopStarComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function PopStarComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PopStarComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_POPSTAR_MISSION
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function PopStarComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function PopStarComponent:GetCampaignMissionComponentId()
   return ECampaignMissionComponentId.ECampaignMissionComponentId_PopStar
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function PopStarComponent:GetCampaignMissionParamKeyMap()
   local componentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(componentInfo.m_campaign_id, componentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarComponent.HandlePopStarChangeFormation = function(self, TT, asyncRes, pet_data_list)
-  -- function num : 0_7 , upvalues : _ENV
+function PopStarComponent:HandlePopStarChangeFormation(TT, asyncRes, pet_data_list)
   local request = PopStarChangeFormationReq:New()
   request.formation_pet_list = pet_data_list
   local response = PopStarChangeFormationRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][PopStarComponent] HandlePopStarChangeFormation ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][PopStarComponent] HandlePopStarChangeFormation ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).formation_pet_list = pet_data_list
+  self.m_component_info.formation_pet_list = pet_data_list
   asyncRes:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_8 , upvalues : _ENV
+function PopStarComponent:CampaignComponentPushNotify(notify_data)
   if PopStarComponentNotifyType.PopStarMissionComponentNotifyType_InfoChanged == notify_data.m_notify_type then
     local ev = NotifyPopStarComponentInfoChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
-      (self.m_component_info).m_pass_mission_info = ev.m_update_mission_info
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.m_component_info).m_received = ev.m_received
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.m_component_info).m_max_score = ev.m_max_score
+      self.m_component_info.m_pass_mission_info = ev.m_update_mission_info
+      self.m_component_info.m_received = ev.m_received
+      self.m_component_info.m_max_score = ev.m_max_score
     else
-      ;
-      (Log.error)("[CampaignCom][PopStarComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][PopStarComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
-
-

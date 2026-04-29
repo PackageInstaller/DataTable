@@ -1,150 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/player/season_maze_player_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazePlayerEffect", Object)
 SeasonMazePlayerEffect = SeasonMazePlayerEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazePlayerEffect.Constructor = function(self)
-  -- function num : 0_0
+function SeasonMazePlayerEffect:Constructor()
   self._effCfgs = {
-TransStartPoint = {res = "S4_pfb_chuansong_out.prefab", duration = 1500}
-, 
-TransEndPoint = {res = "S4_pfb_chuansong_in.prefab", duration = 1500}
-, 
-GetGold = {res = "eff_gold_main_01.prefab", duration = 1500}
-}
+    TransStartPoint = {
+      res = "S4_pfb_chuansong_out.prefab",
+      duration = 1500
+    },
+    TransEndPoint = {
+      res = "S4_pfb_chuansong_in.prefab",
+      duration = 1500
+    },
+    GetGold = {
+      res = "eff_gold_main_01.prefab",
+      duration = 1500
+    }
+  }
   self._timers = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerEffect.Init = function(self, rootGo)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMazePlayerEffect:Init(rootGo)
   self._rootTrans = rootGo.transform
   self._effect = {}
-  for k,cfg in pairs(self._effCfgs) do
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset(cfg.res, LoadType.GameObject)
+  for k, cfg in pairs(self._effCfgs) do
+    local req = ResourceManager:GetInstance():SyncLoadAsset(cfg.res, LoadType.GameObject)
     if not req then
-      (Log.error)("SeasonMazePlayerEffect load ClickEffect fail..", cfg.res)
+      Log.error("SeasonMazePlayerEffect load ClickEffect fail..", cfg.res)
     else
       local d = {}
       d.resReq = req
-      d.trans = (req.Obj).transform
-      ;
-      (d.trans):SetParent(self._rootTrans)
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (d.trans).rotation = Vector3(0, 0, 0)
-      ;
-      ((d.trans).gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._effect)[k] = d
+      d.trans = req.Obj.transform
+      d.trans:SetParent(self._rootTrans)
+      d.trans.rotation = Vector3(0, 0, 0)
+      d.trans.gameObject:SetActive(false)
+      self._effect[k] = d
     end
   end
   self._disposed = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerEffect.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMazePlayerEffect:Dispose()
   self._disposed = true
-  for k,eff in pairs(self._effect) do
+  for k, eff in pairs(self._effect) do
     local req = eff.resReq
     req:Dispose()
     req = nil
   end
-  ;
-  (table.clear)(self._effect)
+  table.clear(self._effect)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerEffect.PlayEffect = function(self, key, position)
-  -- function num : 0_3 , upvalues : _ENV
-  local eff = (self._effect)[key]
+function SeasonMazePlayerEffect:PlayEffect(key, position)
+  local eff = self._effect[key]
   if not eff then
-    (Log.error)("SeasonMazePlayerEffect can\'t find eff ", key)
-    return 
+    Log.error("SeasonMazePlayerEffect can't find eff ", key)
+    return
   end
   local trans = eff.trans
-  if (self._timers)[key] then
-    ((GameGlobal.Timer)()):CancelEvent((self._timers)[key])
-    ;
-    (trans.gameObject):SetActive(false)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._timers)[key] = nil
+  if self._timers[key] then
+    GameGlobal.Timer():CancelEvent(self._timers[key])
+    trans.gameObject:SetActive(false)
+    self._timers[key] = nil
   end
-  ;
-  (trans.gameObject):SetActive(true)
+  trans.gameObject:SetActive(true)
   trans:SetParent(self._rootTrans)
   trans.position = position
-  local duration = ((self._effCfgs)[key]).duration
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._timers)[key] = ((GameGlobal.Timer)()):AddEventTimes(duration, TimerTriggerCount.Once, function()
-    -- function num : 0_3_0 , upvalues : self, trans, key
+  local duration = self._effCfgs[key].duration
+  self._timers[key] = GameGlobal.Timer():AddEventTimes(duration, TimerTriggerCount.Once, function()
     if not self._disposed then
-      (trans.gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self._timers)[key] = nil
+      trans.gameObject:SetActive(false)
+      self._timers[key] = nil
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerEffect.PlayEffectWithParent = function(self, key, parent)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonMazePlayerEffect:PlayEffectWithParent(key, parent)
   if self._disposed then
-    return 
+    return
   end
-  local eff = (self._effect)[key]
+  local eff = self._effect[key]
   if not eff then
-    (Log.error)("SeasonMazePlayerEffect can\'t find eff ", key)
-    return 
+    Log.error("SeasonMazePlayerEffect can't find eff ", key)
+    return
   end
   local trans = eff.trans
-  if (self._timers)[key] then
-    ((GameGlobal.Timer)()):CancelEvent((self._timers)[key])
-    ;
-    (trans.gameObject):SetActive(false)
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._timers)[key] = nil
+  if self._timers[key] then
+    GameGlobal.Timer():CancelEvent(self._timers[key])
+    trans.gameObject:SetActive(false)
+    self._timers[key] = nil
   end
   trans:SetParent(parent)
-  ;
-  (trans.gameObject):SetActive(true)
+  trans.gameObject:SetActive(true)
   trans.localPosition = Vector3(0, 0, 0)
-  local duration = ((self._effCfgs)[key]).duration
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._timers)[key] = ((GameGlobal.Timer)()):AddEventTimes(duration, TimerTriggerCount.Once, function()
-    -- function num : 0_4_0 , upvalues : self, trans, key
+  local duration = self._effCfgs[key].duration
+  self._timers[key] = GameGlobal.Timer():AddEventTimes(duration, TimerTriggerCount.Once, function()
     if not self._disposed then
-      (trans.gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (self._timers)[key] = nil
+      trans.gameObject:SetActive(false)
+      self._timers[key] = nil
     end
-  end
-)
+  end)
 end
-
-

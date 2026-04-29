@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/state/s_maze_state_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeStateBase", Object)
 SMazeStateBase = SMazeStateBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeStateBase.Constructor = function(self, si, sm, mn)
-  -- function num : 0_0
+function SMazeStateBase:Constructor(si, sm, mn)
   self._stateID = si
   self._machine = sm
   self._manager = mn
@@ -18,352 +11,220 @@ SMazeStateBase.Constructor = function(self, si, sm, mn)
   self._valid = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.StateID = function(self)
-  -- function num : 0_1
+function SMazeStateBase:StateID()
   return self._stateID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.OnEnter = function(self, ...)
-  -- function num : 0_2
+function SMazeStateBase:OnEnter(...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.OnUpdate = function(self, dt)
-  -- function num : 0_3
+function SMazeStateBase:OnUpdate(dt)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.OnExit = function(self)
-  -- function num : 0_4
+function SMazeStateBase:OnExit()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for k,v in pairs(self._events) do
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(k, v)
+function SMazeStateBase:Dispose()
+  for k, v in pairs(self._events) do
+    GameGlobal.EventDispatcher():RemoveCallbackListener(k, v)
   end
   self._events = nil
-  for _,req in pairs(self._prefabReqs) do
+  for _, req in pairs(self._prefabReqs) do
     req:Dispose()
   end
   self._prefabReqs = nil
   self._machine = nil
-  for _,v in pairs(self._lockList) do
-    (self._manager):UnLock(v)
+  for _, v in pairs(self._lockList) do
+    self._manager:UnLock(v)
   end
   self._lockList = {}
   self._manager = nil
   self._valid = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.ShowDialog = function(self, name, ...)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(name, ...)
+function SMazeStateBase:ShowDialog(name, ...)
+  GameGlobal.UIStateManager():ShowDialog(name, ...)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.StartTask = function(self, func, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(func, ...)
+function SMazeStateBase:StartTask(func, ...)
+  GameGlobal.TaskManager():StartTask(func, ...)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.LoadPrefab = function(self, name)
-  -- function num : 0_8 , upvalues : _ENV
-  if not (string.endwith)(name, ".prefab") then
+function SMazeStateBase:LoadPrefab(name)
+  if not string.endwith(name, ".prefab") then
     name = name .. ".prefab"
   end
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(name, LoadType.GameObject)
-  ;
-  (table.insert)(self._prefabReqs, req)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(name, LoadType.GameObject)
+  table.insert(self._prefabReqs, req)
   local go = req.Obj
   go:SetActive(true)
   return go
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase._Log = function(self, ...)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.debug)("[SMazeClient] ", ...)
+function SMazeStateBase:_Log(...)
+  Log.debug("[SMazeClient] ", ...)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase._LogError = function(self, ...)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.error)("[SMazeClient] ", ...)
+function SMazeStateBase:_LogError(...)
+  Log.error("[SMazeClient] ", ...)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.Lock = function(self, name)
-  -- function num : 0_11 , upvalues : _ENV
+function SMazeStateBase:Lock(name)
   self:_Log("锁定:", name)
-  ;
-  (self._manager):Lock(name)
-  ;
-  (table.insert)(self._lockList, name)
+  self._manager:Lock(name)
+  table.insert(self._lockList, name)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.UnLock = function(self, name)
-  -- function num : 0_12 , upvalues : _ENV
+function SMazeStateBase:UnLock(name)
   if self._manager then
-    (self._manager):UnLock(name)
-    ;
-    (table.removev)(self._lockList, name)
+    self._manager:UnLock(name)
+    table.removev(self._lockList, name)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.Valid = function(self)
-  -- function num : 0_13
+function SMazeStateBase:Valid()
   return self._valid
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.OnObainedRelic = function(self, relicEfts, reason)
-  -- function num : 0_14
+function SMazeStateBase:OnObainedRelic(relicEfts, reason)
   self:StartTask(self._PlayRelicEffect, self, relicEfts, reason)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase._PlayRelicEffect = function(self, TT, relicEfts, reason)
-  -- function num : 0_15 , upvalues : _ENV
+function SMazeStateBase:_PlayRelicEffect(TT, relicEfts, reason)
   local rdmCard = false
-  do
-    for _,eft in ipairs(relicEfts) do
-      if eft.type == SeasonMazeEffectType.SMET_RandomHandGold then
-        rdmCard = true
-      else
-        if eft.type == SeasonMazeEffectType.SMET_Relic then
-          self:AddRelicEft(eft)
-        else
-          if eft.type == SeasonMazeEffectType.SMET_BloodExchangeExp then
-            local expEft = SeasonMazeEffect:New()
-            expEft.type = SeasonMazeEffectType.SMET_Pro
-            expEft.id = SeasonMazeAttrType.SMAT_Exp
-            expEft.value_min = eft.value_min
-            expEft.value_max = eft.value_max
-            self:AddRelicEft(expEft)
-          else
-            do
-              if eft.type == SeasonMazeEffectType.SMET_GoldExchangeExp then
-                do
-                  local goldEft = SeasonMazeEffect:New()
-                  goldEft.type = SeasonMazeEffectType.SMET_Pro
-                  goldEft.id = SeasonMazeAttrType.SMAT_Gold
-                  goldEft.value_min = -eft.value_max
-                  goldEft.value_max = -eft.value_max
-                  self:AddRelicEft(goldEft)
-                  do
-                    local expEft = SeasonMazeEffect:New()
-                    expEft.type = SeasonMazeEffectType.SMET_Pro
-                    expEft.id = SeasonMazeAttrType.SMAT_Exp
-                    expEft.value_min = eft.value_min
-                    expEft.value_max = eft.value_max
-                    self:AddRelicEft(expEft)
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-          end
-        end
+  for _, eft in ipairs(relicEfts) do
+    if eft.type == SeasonMazeEffectType.SMET_RandomHandGold then
+      rdmCard = true
+    elseif eft.type == SeasonMazeEffectType.SMET_Relic then
+      self:AddRelicEft(eft)
+    elseif eft.type == SeasonMazeEffectType.SMET_BloodExchangeExp then
+      local expEft = SeasonMazeEffect:New()
+      expEft.type = SeasonMazeEffectType.SMET_Pro
+      expEft.id = SeasonMazeAttrType.SMAT_Exp
+      expEft.value_min = eft.value_min
+      expEft.value_max = eft.value_max
+      self:AddRelicEft(expEft)
+    elseif eft.type == SeasonMazeEffectType.SMET_GoldExchangeExp then
+      do
+        local goldEft = SeasonMazeEffect:New()
+        goldEft.type = SeasonMazeEffectType.SMET_Pro
+        goldEft.id = SeasonMazeAttrType.SMAT_Gold
+        goldEft.value_min = -eft.value_max
+        goldEft.value_max = -eft.value_max
+        self:AddRelicEft(goldEft)
       end
+      local expEft = SeasonMazeEffect:New()
+      expEft.type = SeasonMazeEffectType.SMET_Pro
+      expEft.id = SeasonMazeAttrType.SMAT_Exp
+      expEft.value_min = eft.value_min
+      expEft.value_max = eft.value_max
+      self:AddRelicEft(expEft)
     end
   end
-  do
-    if rdmCard then
-      local wait = true
-      self:ShowDialog("UISeasonMazeRelicRdmCard", function(count)
-    -- function num : 0_15_0 , upvalues : wait, _ENV, self
-    wait = false
-    local expEft = SeasonMazeEffect:New()
-    expEft.type = SeasonMazeEffectType.SMET_Pro
-    expEft.id = SeasonMazeAttrType.SMAT_Gold_Round_Add
-    expEft.value_min = count
-    expEft.value_max = count
-    self:AddRelicEft(expEft)
-  end
-)
-      while wait do
-        if not self._valid then
-          return 
-        end
-        YIELD(TT)
+  if rdmCard then
+    local wait = true
+    self:ShowDialog("UISeasonMazeRelicRdmCard", function(count)
+      wait = false
+      local expEft = SeasonMazeEffect:New()
+      expEft.type = SeasonMazeEffectType.SMET_Pro
+      expEft.id = SeasonMazeAttrType.SMAT_Gold_Round_Add
+      expEft.value_min = count
+      expEft.value_max = count
+      self:AddRelicEft(expEft)
+    end)
+    while wait do
+      if not self._valid then
+        return
       end
-    end
-    if reason == SMazeRelicReason.ChooseRelicLastTime then
-      if self._stateID == SMazeStateID.ChooseRelic then
-        local state = self
-        state:Finish()
-      else
-        do
-          ;
-          (Log.exception)("选圣物状态错误:", self._stateID)
-          do return  end
-          local cpt = (self._manager):GetMazeComponent()
-          if cpt:CurOperate() == SeasonMazeActionState.SMAS_BreakPet then
-            self:_Log("选完圣物选择满破星灵")
-            ;
-            (self._machine):ChangeStateTo(SMazeState_ChooseFullPet)
-            return 
-          else
-            if cpt:CurOperate() == SeasonMazeActionState.SMAS_NewHand then
-              self:_Log("选完圣物升级了")
-              ;
-              (self._machine):ChangeStateTo(SMazeState_Levelup)
-              return 
-            else
-              if reason == SMazeRelicReason.Box then
-                if self._stateID == SMazeStateID.RoomSettle then
-                  local state = self
-                  state:SettleFinish(state:CurRoom())
-                else
-                  do
-                    ;
-                    (Log.exception)("选圣物状态错误:", self._stateID)
-                    do return  end
-                    self:_Log("圣物表现完成 当前状态:", cpt:CurOperate())
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+      YIELD(TT)
     end
   end
+  if reason == SMazeRelicReason.ChooseRelicLastTime then
+    if self._stateID == SMazeStateID.ChooseRelic then
+      local state = self
+      state:Finish()
+    else
+      Log.exception("选圣物状态错误:", self._stateID)
+    end
+    return
+  end
+  local cpt = self._manager:GetMazeComponent()
+  if cpt:CurOperate() == SeasonMazeActionState.SMAS_BreakPet then
+    self:_Log("选完圣物选择满破星灵")
+    self._machine:ChangeStateTo(SMazeState_ChooseFullPet)
+    return
+  elseif cpt:CurOperate() == SeasonMazeActionState.SMAS_NewHand then
+    self:_Log("选完圣物升级了")
+    self._machine:ChangeStateTo(SMazeState_Levelup)
+    return
+  elseif reason == SMazeRelicReason.Box then
+    if self._stateID == SMazeStateID.RoomSettle then
+      local state = self
+      state:SettleFinish(state:CurRoom())
+    else
+      Log.exception("选圣物状态错误:", self._stateID)
+    end
+    return
+  end
+  self:_Log("圣物表现完成 当前状态:", cpt:CurOperate())
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.AddRelicEft = function(self, eft)
-  -- function num : 0_16
-  (self._machine):_AddRelicEft(eft)
+function SMazeStateBase:AddRelicEft(eft)
+  self._machine:_AddRelicEft(eft)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.GetAndClearRelicAssets = function(self)
-  -- function num : 0_17
-  return (self._machine):_GetAndClearRelicAssets()
+function SMazeStateBase:GetAndClearRelicAssets()
+  return self._machine:_GetAndClearRelicAssets()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.PlayAssetToast = function(self, TT, assets)
-  -- function num : 0_18 , upvalues : _ENV
-  if assets and #assets > 0 then
-    for _,asset in ipairs(assets) do
+function SMazeStateBase:PlayAssetToast(TT, assets)
+  if assets and 0 < #assets then
+    for _, asset in ipairs(assets) do
       if asset:Type() == SeasonMazeEffectType.SMET_Pro then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, asset:SubParam())
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, asset:SubParam())
       end
     end
     local toastAssets = self:_FilterToastAssets(assets)
-    ;
-    (self._manager):PlayToast(toastAssets)
+    self._manager:PlayToast(toastAssets)
   end
-  do
-    local relicAssets = self:GetAndClearRelicAssets()
-    if relicAssets and #relicAssets > 0 then
-      for _,asset in ipairs(relicAssets) do
-        if asset:Type() == SeasonMazeEffectType.SMET_Pro then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, asset:SubParam())
-        end
-      end
-      ;
-      (SeasonMazeTool:GetInstance()):SortAsset(relicAssets)
-      local log = ""
-      for _,asset in ipairs(relicAssets) do
-        local name = asset:Name() or "未知名称"
-        local count = asset:Count() or 0
-        log = log .. name .. ":" .. count .. ","
-      end
-      self:_Log("播放圣物表现:", self._stateID, log)
-      local toastAssets = self:_FilterToastAssets(relicAssets)
-      ;
-      (self._manager):PlayToast(toastAssets)
-    else
-      do
-        self:_Log("无圣物奖励:", self._stateID)
+  local relicAssets = self:GetAndClearRelicAssets()
+  if relicAssets and 0 < #relicAssets then
+    for _, asset in ipairs(relicAssets) do
+      if asset:Type() == SeasonMazeEffectType.SMET_Pro then
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, asset:SubParam())
       end
     end
+    SeasonMazeTool:GetInstance():SortAsset(relicAssets)
+    local log = ""
+    for _, asset in ipairs(relicAssets) do
+      local name = asset:Name() or "未知名称"
+      local count = asset:Count() or 0
+      log = log .. name .. ":" .. count .. ","
+    end
+    self:_Log("播放圣物表现:", self._stateID, log)
+    local toastAssets = self:_FilterToastAssets(relicAssets)
+    self._manager:PlayToast(toastAssets)
+  else
+    self:_Log("无圣物奖励:", self._stateID)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase._FilterToastAssets = function(self, assets)
-  -- function num : 0_19 , upvalues : _ENV
+function SMazeStateBase:_FilterToastAssets(assets)
   local retAssets = {}
-  if assets and #assets > 0 then
-    for index,asset in ipairs(assets) do
-      if asset:Type() ~= SeasonMazeEffectType.SMET_Relic and asset:Type() ~= SeasonMazeEffectType.SMET_Bead and asset:Type() ~= SeasonMazeEffectType.SMET_Bead_LV then
-        if asset:Type() == SeasonMazeEffectType.SMET_RandomRelic then
-          do
-            (table.insert)(retAssets, asset)
-            -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC40: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+  if assets and 0 < #assets then
+    for index, asset in ipairs(assets) do
+      if asset:Type() == SeasonMazeEffectType.SMET_Relic or asset:Type() == SeasonMazeEffectType.SMET_Bead or asset:Type() == SeasonMazeEffectType.SMET_Bead_LV or asset:Type() == SeasonMazeEffectType.SMET_RandomRelic then
+      else
+        table.insert(retAssets, asset)
       end
     end
   end
   return retAssets
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeStateBase.GetNodeState = function(self, node)
-  -- function num : 0_20
-  local svrData = ((((self._manager):GetMazeComponent()):GetComponentInfo()).rooms)[node:ID()]
+function SMazeStateBase:GetNodeState(node)
+  local svrData = self._manager:GetMazeComponent():GetComponentInfo().rooms[node:ID()]
   if svrData then
     return svrData.state
   end
 end
-
-

@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/chess/pick_up_chess_grid_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpChessGridSystem_Render", ReactiveSystem)
 PickUpChessGridSystem_Render = PickUpChessGridSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpChessGridSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PickUpChessGridSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessGridSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PickUpChessResult)}, {"Added"})
+function PickUpChessGridSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PickUpChessResult)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessGridSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function PickUpChessGridSystem_Render:Filter(entity)
   local resCmpt = entity:PickUpChessResult()
   local resType = resCmpt:GetChessPickUpResultType()
   if resType == ChessPickUpTargetType.Grid then
@@ -32,83 +21,59 @@ PickUpChessGridSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessGridSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
-  local chessSvcRender = (self._world):GetService("ChessRender")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function PickUpChessGridSystem_Render:ExecuteEntities(entities)
+  local chessSvcRender = self._world:GetService("ChessRender")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local resCmpt = renderBoardEntity:PickUpChessResult()
   local gridPos = resCmpt:GetCurChessPickUpPos()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local stateId = utilDataSvc:GetCurMainStateID()
   local walkRange = resCmpt:GetChessPetWalkRange()
   if stateId == GameStateID.WaitInput then
     chessSvcRender:ClearChessMonsterPreview()
     chessSvcRender:ClearChessPetPreview()
-  else
-    if stateId == GameStateID.PreviewChessPet then
-      self:_PreviewChessPet(walkRange, gridPos)
-    else
-      if stateId == GameStateID.PickUpChessPet then
-        self:_PickUpChessPet(walkRange, gridPos)
-      end
-    end
+  elseif stateId == GameStateID.PreviewChessPet then
+    self:_PreviewChessPet(walkRange, gridPos)
+  elseif stateId == GameStateID.PickUpChessPet then
+    self:_PickUpChessPet(walkRange, gridPos)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessGridSystem_Render._PreviewChessPet = function(self, walkRange, gridPos)
-  -- function num : 0_4 , upvalues : _ENV
-  local chessSvcRender = (self._world):GetService("ChessRender")
+function PickUpChessGridSystem_Render:_PreviewChessPet(walkRange, gridPos)
+  local chessSvcRender = self._world:GetService("ChessRender")
   local inRange = self:_CheckPickWalkRange(walkRange, gridPos)
   if inRange then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PreviewChessPetFinish, 1)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.Move)
+    self._world:EventDispatcher():Dispatch(GameEventType.PreviewChessPetFinish, 1)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.Move)
     chessSvcRender:ShowChessPetPreviewGhost(gridPos)
     chessSvcRender:HideChessPetSkillTips()
   else
     chessSvcRender:ClearAllChessUnitPreview()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PreviewChessPetFinish, 3)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
+    self._world:EventDispatcher():Dispatch(GameEventType.PreviewChessPetFinish, 3)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessGridSystem_Render._PickUpChessPet = function(self, walkRange, gridPos)
-  -- function num : 0_5 , upvalues : _ENV
-  local chessSvcRender = (self._world):GetService("ChessRender")
+function PickUpChessGridSystem_Render:_PickUpChessPet(walkRange, gridPos)
+  local chessSvcRender = self._world:GetService("ChessRender")
   local inRange = self:_CheckPickWalkRange(walkRange, gridPos)
   if not inRange then
     chessSvcRender:ClearAllChessUnitPreview()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PickUpChessPetFinish, 5)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
+    self._world:EventDispatcher():Dispatch(GameEventType.PickUpChessPetFinish, 5)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.FinishTurnOnly)
   else
     chessSvcRender:ShowChessPetPreviewGhost(gridPos)
     chessSvcRender:HideChessPetSkillTips()
     chessSvcRender:RestartChessPetPreviewAttackRange()
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.Move)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.Move)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessGridSystem_Render._CheckPickWalkRange = function(self, walkRange, gridPos)
-  -- function num : 0_6 , upvalues : _ENV
-  for k,pos in ipairs(walkRange) do
+function PickUpChessGridSystem_Render:_CheckPickWalkRange(walkRange, gridPos)
+  for k, pos in ipairs(walkRange) do
     if pos == gridPos then
       return true
     end
   end
   return false
 end
-
-

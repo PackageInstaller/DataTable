@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/campaign_homeland_group_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("CampaignHomelandGroupTaskComponent", ICampaignComponent)
 CampaignHomelandGroupTaskComponent = CampaignHomelandGroupTaskComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignHomelandGroupTaskComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CampaignHomelandGroupTaskComponent:Constructor()
   self.m_component_info = HomelandGroupTaskComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignHomelandGroupTaskComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CampaignHomelandGroupTaskComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = HomelandGroupTaskComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignHomelandGroupTaskComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function CampaignHomelandGroupTaskComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignHomelandGroupTaskComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CampaignHomelandGroupTaskComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_HOMELAND_GROUP_TASK
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignHomelandGroupTaskComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function CampaignHomelandGroupTaskComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignHomelandGroupTaskComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_5
+function CampaignHomelandGroupTaskComponent:CampaignComponentPushNotify(notify_data)
 end
-
-

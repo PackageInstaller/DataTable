@@ -1,41 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/core/bounce_monster_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BounceMonsterPool", Object)
 BounceMonsterPool = BounceMonsterPool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BounceMonsterPool.Constructor = function(self)
-  -- function num : 0_0
+function BounceMonsterPool:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMonsterPool.PrepareInit = function(self)
-  -- function num : 0_1
+function BounceMonsterPool:PrepareInit()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMonsterPool.Get = function(self, monsterId)
-  -- function num : 0_2 , upvalues : _ENV
-  return (MonsterFactory.Acquire)(monsterId)
+function BounceMonsterPool:Get(monsterId)
+  return MonsterFactory.Acquire(monsterId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMonsterPool.Recyle = function(self, monster)
-  -- function num : 0_3 , upvalues : _ENV
-  (MonsterFactory.Recycle)(monster)
+function BounceMonsterPool:Recyle(monster)
+  MonsterFactory.Recycle(monster)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceMonsterPool.ClearPool = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (MonsterFactory.Destroy)()
+function BounceMonsterPool:ClearPool()
+  MonsterFactory.Destroy()
 end
-
-

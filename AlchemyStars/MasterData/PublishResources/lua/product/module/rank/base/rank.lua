@@ -1,35 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/rank/base/rank.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Rank", Object)
 Rank = Rank
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Rank.RankType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function Rank:RankType()
   return RANK_TYPE.RANK_TYPE_INVALID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Rank.CreateRankData = function(self)
-  -- function num : 0_1
+function Rank:CreateRankData()
   return nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Rank.GetConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return (Cfg.cfg_rank)[self:RankType()]
+function Rank:GetConfig()
+  return Cfg.cfg_rank[self:RankType()]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Rank.CacheTime = function(self)
-  -- function num : 0_3
+function Rank:CacheTime()
   local config = self:GetConfig()
   local CACHE_TIME = 5
   if not config then
@@ -40,5 +24,3 @@ Rank.CacheTime = function(self)
   end
   return config.ClientCacheTime
 end
-
-

@@ -1,18 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/season_maze/cfg_season_maze_camera.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, CameraSizeMax = 2, CameraSizeMin = 3, DefaultSize = 4, CameraSizeChangeSpeed_PC = 5, CameraSizeChangeSpeed_Mobile = 6, PlayerTipHideRange = 7}
+local key = {
+  ID = 1,
+  CameraSizeMax = 2,
+  CameraSizeMin = 3,
+  DefaultSize = 4,
+  CameraSizeChangeSpeed_PC = 5,
+  CameraSizeChangeSpeed_Mobile = 6,
+  PlayerTipHideRange = 7
+}
 local common = {
-{120, 220}
+  {120, 220}
 }
 local config = {
-[9001] = {9001, 5, 2, 3.5, 2, 0.036, common[1]}
-, 
-[9002] = {9002, 5, 2, 3.5, 2, 0.036, common[1]}
-, 
-[9003] = {9003, 5, 2, 3.5, 2, 0.036, common[1]}
+  [9001] = {
+    9001,
+    5,
+    2,
+    3.5,
+    2,
+    0.036,
+    common[1]
+  },
+  [9002] = {
+    9002,
+    5,
+    2,
+    3.5,
+    2,
+    0.036,
+    common[1]
+  },
+  [9003] = {
+    9003,
+    5,
+    2,
+    3.5,
+    2,
+    0.036,
+    common[1]
+  }
 }
 return config, "ID", key
-

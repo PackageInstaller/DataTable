@@ -1,46 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_increase_production_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicIncreaseProductionMonster", LLBuffLogicBase)
 LLBuffLogicIncreaseProductionMonster = LLBuffLogicIncreaseProductionMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicIncreaseProductionMonster.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicIncreaseProductionMonster:Constructor(buffObj, logicParam)
   self._incType = logicParam.incType
   self._fixVal = logicParam.fixVal
   self._perVal = logicParam.perVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionMonster.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicIncreaseProductionMonster:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
   local monsterCount = 0
-  local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+  local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
   local monsters = entityMgr:GetFightMonsters()
   if monsters then
     monsterCount = #monsters
   end
-  local targets = (self._buffObj):GetTargets()
-  for _,target in ipairs(targets) do
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
     self:DoLogicSingle(target, monsterCount)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionMonster.DoLogicSingle = function(self, target, monsterCount)
-  -- function num : 0_2 , upvalues : _ENV
-  if target:GetEntityType() == LuckLandEntityType.Pet and target:HasDeleteFlag() then
-    return 
-  end
-  if target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
-    return 
+function LLBuffLogicIncreaseProductionMonster:DoLogicSingle(target, monsterCount)
+  if target:GetEntityType() == LuckLandEntityType.Pet then
+    if target:HasDeleteFlag() then
+      return
+    end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
+    return
   end
   if self._incType == LuckLandIncType.Accumulate then
     if self._fixVal then
@@ -49,16 +37,12 @@ LLBuffLogicIncreaseProductionMonster.DoLogicSingle = function(self, target, mons
     if self._perVal then
       target:AddAccPerValue(self._perVal * monsterCount)
     end
-  else
-    if self._incType == LuckLandIncType.Temp then
-      if self._fixVal then
-        target:AddTempFixValue(self._fixVal * monsterCount)
-      end
-      if self._perVal then
-        target:AddTempPerValue(self._perVal * monsterCount)
-      end
+  elseif self._incType == LuckLandIncType.Temp then
+    if self._fixVal then
+      target:AddTempFixValue(self._fixVal * monsterCount)
+    end
+    if self._perVal then
+      target:AddTempPerValue(self._perVal * monsterCount)
     end
   end
 end
-
-

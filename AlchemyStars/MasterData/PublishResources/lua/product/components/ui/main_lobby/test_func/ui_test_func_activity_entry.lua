@@ -1,58 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_activity_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncActivityEntry", UICustomWidget)
 UITestFuncActivityEntry = UITestFuncActivityEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncActivityEntry.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITestFuncActivityEntry:OnShow(uiParams)
   self._root = self:GetGameObject("_root")
   self._infos = self:_GetInfos()
   self:_SetList()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncActivityEntry.OnHide = function(self)
-  -- function num : 0_1
+function UITestFuncActivityEntry:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncActivityEntry._GetInfos = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITestFuncActivityEntry:_GetInfos()
   local tb = {}
-  local cfgs = (Cfg.cfg_campaign)({})
-  for id,v in pairs(cfgs) do
-    if v.EntranceIcon and (table.count)(v.EntranceIcon) >= 3 then
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      local campaignObj = (campaignModule.m_campaign_manager):GetCampaignObj(id)
+  local cfgs = Cfg.cfg_campaign({})
+  for id, v in pairs(cfgs) do
+    if v.EntranceIcon and table.count(v.EntranceIcon) >= 3 then
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      local campaignObj = campaignModule.m_campaign_manager:GetCampaignObj(id)
       if campaignObj then
-        (table.insert)(tb, campaignObj)
+        table.insert(tb, campaignObj)
       end
     end
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncActivityEntry._SetList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_entryPool", "UIMainLobbyCampaignEnter", #self._infos)
-  for i,v in ipairs(objs) do
-    v:Flush(nil, (self._infos)[i])
+function UITestFuncActivityEntry:_SetList()
+  local objs = UIWidgetHelper.SpawnObjects(self, "_entryPool", "UIMainLobbyCampaignEnter", #self._infos)
+  for i, v in ipairs(objs) do
+    v:Flush(nil, self._infos[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncActivityEntry.ExitBtnOnClick = function(self)
-  -- function num : 0_4
-  (self._root):SetActive(false)
+function UITestFuncActivityEntry:ExitBtnOnClick()
+  self._root:SetActive(false)
 end
-
-

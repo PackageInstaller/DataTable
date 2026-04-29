@@ -1,73 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_create_caster_ghost_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCreateCasterGhostInstruction", BaseInstruction)
 PlayCreateCasterGhostInstruction = PlayCreateCasterGhostInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCreateCasterGhostInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCreateCasterGhostInstruction:Constructor(params)
   self._type = params.Type
   self._prefab = params.Prefab
   self._anim = params.Anim or "AtkUltPreview"
-  self._disableAlpha = tonumber(params.DisableAlpha or 0) ~= 1 and false
+  self._disableAlpha = tonumber(params.DisableAlpha or 0) == 1 or false
   self._bornEffectID = tonumber(params.BornEffectID)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCreateCasterGhostInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCreateCasterGhostInstruction:GetCacheResource()
   local t = {}
-  if self._bornEffectID and self._bornEffectID > 0 and (Cfg.cfg_effect)[self._bornEffectID] then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._bornEffectID]).ResPath, 1})
+  if self._bornEffectID and self._bornEffectID > 0 and Cfg.cfg_effect[self._bornEffectID] then
+    table.insert(t, {
+      Cfg.cfg_effect[self._bornEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCreateCasterGhostInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCreateCasterGhostInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local entitySvc = world:GetService("RenderEntity")
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
   if not renderPickUpComponent then
-    return 
+    return
   end
   if self._type == "Scope" then
     local scopeList = phaseContext:GetScopeResult()
-    for _,pos in pairs(scopeList) do
+    for _, pos in pairs(scopeList) do
       entitySvc:CreateGhost(pos, casterEntity, self._anim, self._prefab)
     end
-  else
-    do
-      if self._type == "PickUp" then
-        local pickUpPos = renderPickUpComponent:GetLastPickUpGridPos()
-        local ghostEntity = entitySvc:CreateGhost(pickUpPos, casterEntity, self._anim, self._prefab)
-      else
-        do
-          if self._type == "PickUpRotate" then
-            local pickUpPos = renderPickUpComponent:GetLastPickUpGridPos()
-            local ghostEntity = entitySvc:CreateGhost(pickUpPos, casterEntity, self._anim, self._prefab, self._disableAlpha)
-            renderPickUpComponent:SetRotateGhost(ghostEntity)
-            local reflectPos = renderPickUpComponent:GetReflectPos()
-            if reflectPos then
-              ghostEntity:SetDirection(reflectPos - pickUpPos)
-            end
-            if self._bornEffectID then
-              local effSvc = world:GetService("Effect")
-              effSvc:CreateEffect(self._bornEffectID, ghostEntity)
-            end
-          end
-        end
-      end
+  elseif self._type == "PickUp" then
+    local pickUpPos = renderPickUpComponent:GetLastPickUpGridPos()
+    local ghostEntity = entitySvc:CreateGhost(pickUpPos, casterEntity, self._anim, self._prefab)
+  elseif self._type == "PickUpRotate" then
+    local pickUpPos = renderPickUpComponent:GetLastPickUpGridPos()
+    local ghostEntity = entitySvc:CreateGhost(pickUpPos, casterEntity, self._anim, self._prefab, self._disableAlpha)
+    renderPickUpComponent:SetRotateGhost(ghostEntity)
+    local reflectPos = renderPickUpComponent:GetReflectPos()
+    if reflectPos then
+      ghostEntity:SetDirection(reflectPos - pickUpPos)
+    end
+    if self._bornEffectID then
+      local effSvc = world:GetService("Effect")
+      effSvc:CreateEffect(self._bornEffectID, ghostEntity)
     end
   end
 end
-
-

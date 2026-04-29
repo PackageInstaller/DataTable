@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900282/cfg_skill_view_590028206.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterRenderState,renderState=1; PlayCasterAnimation,animName=Skill03_a; PlayCasterBindEffect,effectID=900; PlayAudio,audioID = 5005,audioType=1; Wait,waitTime=2167; PlayCasterBindEffect,effectID=901; PlayCasterBindEffect,effectID=973; PlayCasterAddBuff,buffID=30072; Wait,waitTime=300; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterRenderState,renderState=1; PlayCasterAnimation,animName=Skill03_a; PlayCasterBindEffect,effectID=900; PlayAudio,audioID = 5005,audioType=1; Wait,waitTime=2167; PlayCasterBindEffect,effectID=901; PlayCasterBindEffect,effectID=973; PlayCasterAddBuff,buffID=30072; Wait,waitTime=300; "
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,72 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/ui_activity_valentine_send_letter_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineSendLetterController", UIController)
 UIActivityValentineSendLetterController = UIActivityValentineSendLetterController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineSendLetterController.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityValentineSendLetterController:Constructor()
   self._spineStr = "n27_g_qiche_spine_idle"
   self._closeTime = 3200
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSendLetterController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityValentineSendLetterController:OnShow(uiParams)
   self._callback = uiParams[1]
   self:_GetComponent()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SetSpine, self)
+  GameGlobal.TaskManager():StartTask(self._SetSpine, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSendLetterController.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityValentineSendLetterController:OnHide()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSendLetterController._GetComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityValentineSendLetterController:_GetComponent()
   self._spine = self:GetUIComponent("SpineLoader", "spine")
-  ;
-  (self._spine):LoadSpine(self._spineStr)
+  self._spine:LoadSpine(self._spineStr)
   self._anim = self:GetUIComponent("Animation", "anim")
   self._spineObj = self:GetGameObject("spine")
-  self._spineSkeMultipleTex = (self._spineObj):GetComponentInChildren(typeof(((Spine.Unity).Modules).SkeletonGraphicMultiObject))
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._spineSkeMultipleTex).UseInstanceMaterials = true
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._spineSkeMultipleTex).OnInstanceMaterialCreated = function(material)
-    -- function num : 0_3_0
+  self._spineSkeMultipleTex = self._spineObj:GetComponentInChildren(typeof(Spine.Unity.Modules.SkeletonGraphicMultiObject))
+  self._spineSkeMultipleTex.UseInstanceMaterials = true
+  
+  function self._spineSkeMultipleTex.OnInstanceMaterialCreated(material)
     material:SetFloat("_StencilComp", 3)
   end
-
-  ;
-  (self._spineSkeMultipleTex):UpdateMesh()
+  
+  self._spineSkeMultipleTex:UpdateMesh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSendLetterController._SetSpine = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityValentineSendLetterController:_SetSpine(TT)
   YIELD(TT, self._closeTime)
-  ;
-  (self._anim):Play("uieff_UIActivityValentineSendLetterController_SafeArea_out")
+  self._anim:Play("uieff_UIActivityValentineSendLetterController_SafeArea_out")
   YIELD(TT, 100)
   self:CloseDialog()
 end
-
-

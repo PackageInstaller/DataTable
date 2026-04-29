@@ -1,11 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n34/cfg_n34_final_story.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, StoryID = 2}
 local config = {
-{1, 50620102}
+  {1, 50620102}
 }
 return config, "ID", key
-

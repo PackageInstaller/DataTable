@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/score/ui_summer_activity_two_score_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoScoreItem", UICustomWidget)
 UISummerActivityTwoScoreItem = UISummerActivityTwoScoreItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoScoreItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISummerActivityTwoScoreItem:OnShow()
   self._hasGetGo = self:GetGameObject("HasGet")
   self._canGetGo = self:GetGameObject("CanGet")
   self._unCompleteGo = self:GetGameObject("UnComplete")
@@ -18,162 +11,116 @@ UISummerActivityTwoScoreItem.OnShow = function(self)
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._scrollRect = self:GetUIComponent("ScrollRect", "RewardList")
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
-  self._status2img = {[UISummerActivityTwoScoreRewardStatus.UnComplete] = "summer_xiahuo2_di21", [UISummerActivityTwoScoreRewardStatus.HasGet] = "summer_xiahuo2_di22", [UISummerActivityTwoScoreRewardStatus.UnGet] = "summer_xiahuo2_di20"}
+  self._status2img = {
+    [UISummerActivityTwoScoreRewardStatus.UnComplete] = "summer_xiahuo2_di21",
+    [UISummerActivityTwoScoreRewardStatus.HasGet] = "summer_xiahuo2_di22",
+    [UISummerActivityTwoScoreRewardStatus.UnGet] = "summer_xiahuo2_di20"
+  }
   self:InitList()
   self:AttachEvent(GameEventType.SummerTwoRewardRefresh, self.SummerTwoRewardRefresh)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreItem.SummerTwoRewardRefresh = function(self, idx)
-  -- function num : 0_1
+function UISummerActivityTwoScoreItem:SummerTwoRewardRefresh(idx)
   if idx == self._idx then
     self:RefreshButtonStatus()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreItem.Refresh = function(self, idx, rewardData, itemIcon, callback, showtips, anim, yieldTime)
-  -- function num : 0_2 , upvalues : _ENV
+function UISummerActivityTwoScoreItem:Refresh(idx, rewardData, itemIcon, callback, showtips, anim, yieldTime)
   self._idx = idx
   self._showtips = showtips
   self._callback = callback
   self._rewardData = rewardData
   self._rewards = rewardData:GetRewards()
   self._rewardCount = #self._rewards
-  ;
-  (self._scrollView):SetListItemCount(self._rewardCount, false)
-  ;
-  (self._scrollView):RefreshAllShownItem()
-  ;
-  (self._scrollView):MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R8 in 'UnsetPending'
-
+  self._scrollView:SetListItemCount(self._rewardCount, false)
+  self._scrollView:RefreshAllShownItem()
+  self._scrollView:MovePanelToItemIndex(0, 0)
   if self._rewardCount <= 3 then
-    (self._scrollRect).enabled = false
+    self._scrollRect.enabled = false
   else
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._scrollRect).enabled = true
+    self._scrollRect.enabled = true
   end
   self:RefreshButtonStatus()
-  ;
-  (self._iconImg):LoadImage(itemIcon)
+  self._iconImg:LoadImage(itemIcon)
   if anim then
     local rect = self:GetUIComponent("RectTransform", "rect")
-    ;
-    (rect.gameObject):SetActive(false)
+    rect.gameObject:SetActive(false)
     if self._event then
-      ((GameGlobal.Timer)()):CancelEvent(self._event)
+      GameGlobal.Timer():CancelEvent(self._event)
       self._event = nil
     end
-    self._event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    local anim = self:GetUIComponent("Animation", "UISummerActivityTwoScoreItem")
-    if not self._idx then
-      local lockIdx = not anim or "nil"
-    end
-    self:Lock("UISummerActivityTwoScoreItem_play_anim_" .. lockIdx)
-    local rect = self:GetUIComponent("RectTransform", "rect")
-    ;
-    (rect.gameObject):SetActive(true)
-    anim:Play("uieff_Summer2_Score_ActivityItem_In")
-    if self._event2 then
-      ((GameGlobal.Timer)()):CancelEvent(self._event2)
-      self._event2 = nil
-    end
-    self._event2 = ((GameGlobal.Timer)()):AddEvent(600, function()
-      -- function num : 0_2_0_0 , upvalues : self
-      local lockIdx = self._idx or "nil"
-      self:UnLock("UISummerActivityTwoScoreItem_play_anim_" .. lockIdx)
-    end
-)
-  end
-)
+    self._event = GameGlobal.Timer():AddEvent(yieldTime, function()
+      local anim = self:GetUIComponent("Animation", "UISummerActivityTwoScoreItem")
+      if anim then
+        local lockIdx = self._idx or "nil"
+        self:Lock("UISummerActivityTwoScoreItem_play_anim_" .. lockIdx)
+        local rect = self:GetUIComponent("RectTransform", "rect")
+        rect.gameObject:SetActive(true)
+        anim:Play("uieff_Summer2_Score_ActivityItem_In")
+        if self._event2 then
+          GameGlobal.Timer():CancelEvent(self._event2)
+          self._event2 = nil
+        end
+        self._event2 = GameGlobal.Timer():AddEvent(600, function()
+          local lockIdx = self._idx or "nil"
+          self:UnLock("UISummerActivityTwoScoreItem_play_anim_" .. lockIdx)
+        end)
+      end
+    end)
   else
-    do
-      local rect = self:GetUIComponent("RectTransform", "rect")
-      rect.anchoredPosition = Vector2(0, 0)
-      ;
-      (rect.gameObject):SetActive(true)
-    end
+    local rect = self:GetUIComponent("RectTransform", "rect")
+    rect.anchoredPosition = Vector2(0, 0)
+    rect.gameObject:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreItem.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISummerActivityTwoScoreItem:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   if self._event2 then
-    ((GameGlobal.Timer)()):CancelEvent(self._event2)
+    GameGlobal.Timer():CancelEvent(self._event2)
     self._event2 = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreItem.ShowTips = function(self, itemId, pos)
-  -- function num : 0_4
+function UISummerActivityTwoScoreItem:ShowTips(itemId, pos)
   if self._showtips then
-    (self._showtips)(itemId, pos)
+    self._showtips(itemId, pos)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreItem.RefreshButtonStatus = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._hasGetGo):SetActive(false)
-  ;
-  (self._canGetGo):SetActive(false)
-  ;
-  (self._unCompleteGo):SetActive(false)
-  local score = (self._rewardData):GetScoreValue()
+function UISummerActivityTwoScoreItem:RefreshButtonStatus()
+  self._hasGetGo:SetActive(false)
+  self._canGetGo:SetActive(false)
+  self._unCompleteGo:SetActive(false)
+  local score = self._rewardData:GetScoreValue()
   local scoreStr = ""
-  local status = (self._rewardData):GetStatus()
+  local status = self._rewardData:GetStatus()
   if status == UISummerActivityTwoScoreRewardStatus.UnComplete then
-    (self._unCompleteGo):SetActive(true)
+    self._unCompleteGo:SetActive(true)
     scoreStr = "<color=#ff3e3e>" .. score .. "</color>"
-  else
-    if status == UISummerActivityTwoScoreRewardStatus.HasGet then
-      (self._hasGetGo):SetActive(true)
-      scoreStr = "<color=#fbf6de>" .. score .. "</color>"
-    else
-      if status == UISummerActivityTwoScoreRewardStatus.UnGet then
-        (self._canGetGo):SetActive(true)
-        scoreStr = "<color=#fbf6de>" .. score .. "</color>"
-      end
-    end
+  elseif status == UISummerActivityTwoScoreRewardStatus.HasGet then
+    self._hasGetGo:SetActive(true)
+    scoreStr = "<color=#fbf6de>" .. score .. "</color>"
+  elseif status == UISummerActivityTwoScoreRewardStatus.UnGet then
+    self._canGetGo:SetActive(true)
+    scoreStr = "<color=#fbf6de>" .. score .. "</color>"
   end
-  ;
-  (self._scoreLabel):SetText(scoreStr)
-  ;
-  (self._bg):LoadImage((self._status2img)[status])
+  self._scoreLabel:SetText(scoreStr)
+  self._bg:LoadImage(self._status2img[status])
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreItem.InitList = function(self)
-  -- function num : 0_6
+function UISummerActivityTwoScoreItem:InitList()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "RewardList")
-  ;
-  (self._scrollView):InitListView(0, function(scrollview, index)
-    -- function num : 0_6_0 , upvalues : self
+  self._scrollView:InitListView(0, function(scrollview, index)
     return self:OnGetRewardItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreItem.OnGetRewardItem = function(self, scrollView, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UISummerActivityTwoScoreItem:OnGetRewardItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -182,39 +129,26 @@ UISummerActivityTwoScoreItem.OnGetRewardItem = function(self, scrollView, index)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._rewardCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:RefreshRewardItemInfo(itemWidget, itemIndex)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._rewardCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:RefreshRewardItemInfo(itemWidget, itemIndex)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreItem.RefreshRewardItemInfo = function(self, itemWidget, index)
-  -- function num : 0_8
-  itemWidget:Refresh((self._rewards)[index], function(id, pos)
-    -- function num : 0_8_0 , upvalues : self
+function UISummerActivityTwoScoreItem:RefreshRewardItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._rewards[index], function(id, pos)
     self:ShowTips(id, pos)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreItem.CanGetOnClick = function(self)
-  -- function num : 0_9
+function UISummerActivityTwoScoreItem:CanGetOnClick()
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
-
-

@@ -1,48 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_move_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamMoveTrap", SkillEffectParamBase)
 SkillEffectParamMoveTrap = SkillEffectParamMoveTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamMoveTrap.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamMoveTrap:Constructor(t)
   self._trapID = t.trapID
   self._moveScopeType = t.moveScopeType
-  if not t.moveScopeParam then
-    self._moveScopeParam = {}
-  end
+  self._moveScopeParam = t.moveScopeParam or {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoveTrap.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamMoveTrap:GetEffectType()
   return SkillEffectType.MoveTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoveTrap.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectParamMoveTrap:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoveTrap.GetMoveScopeType = function(self)
-  -- function num : 0_3
+function SkillEffectParamMoveTrap:GetMoveScopeType()
   return self._moveScopeType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamMoveTrap.GetMoveScopeParam = function(self)
-  -- function num : 0_4
+function SkillEffectParamMoveTrap:GetMoveScopeParam()
   return self._moveScopeParam
 end
-
-

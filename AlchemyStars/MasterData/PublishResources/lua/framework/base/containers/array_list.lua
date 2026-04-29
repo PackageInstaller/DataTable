@@ -1,56 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/array_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ArrayList", Object)
 ArrayList = ArrayList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ArrayList.Constructor = function(self)
-  -- function num : 0_0
+function ArrayList:Constructor()
   self.elements = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.Empty = function(self)
-  -- function num : 0_1
-  do return #self.elements == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function ArrayList:Empty()
+  return #self.elements == 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.Size = function(self)
-  -- function num : 0_2
+function ArrayList:Size()
   return #self.elements
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.Clear = function(self)
-  -- function num : 0_3
+function ArrayList:Clear()
   self.elements = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.PushBack = function(self, value)
-  -- function num : 0_4
+function ArrayList:PushBack(value)
   if value == nil then
-    return 
+    return
   end
   local elements = self.elements
   elements[#elements + 1] = value
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.PushFront = function(self, value)
-  -- function num : 0_5
+function ArrayList:PushFront(value)
   if value == nil then
-    return 
+    return
   end
   local elements = self.elements
   for i = #elements, 1, -1 do
@@ -59,23 +36,18 @@ ArrayList.PushFront = function(self, value)
   elements[1] = value
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.Insert = function(self, value, index)
-  -- function num : 0_6
+function ArrayList:Insert(value, index)
   if value == nil then
-    return 
+    return
   end
   local elements = self.elements
   local size = #elements
   if index < 1 then
     self:PushFront(value)
-    return 
-  else
-    if size < index then
-      self:PushBack(value)
-      return 
-    end
+    return
+  elseif index > size then
+    self:PushBack(value)
+    return
   end
   for i = size, index, -1 do
     elements[i + 1] = elements[i]
@@ -83,14 +55,11 @@ ArrayList.Insert = function(self, value, index)
   elements[index] = value
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.MoveToBack = function(self, index)
-  -- function num : 0_7
+function ArrayList:MoveToBack(index)
   local elements = self.elements
   local size = #elements
-  if index < 1 or size <= index then
-    return 
+  if index < 1 or index >= size then
+    return
   end
   local temp = elements[index]
   for i = index, size - 1 do
@@ -99,14 +68,11 @@ ArrayList.MoveToBack = function(self, index)
   elements[size] = temp
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.MoveToFront = function(self, index)
-  -- function num : 0_8
+function ArrayList:MoveToFront(index)
   local elements = self.elements
   local size = #elements
-  if index <= 1 or size < index then
-    return 
+  if index <= 1 or index > size then
+    return
   end
   local temp = elements[index]
   for i = index - 1, 1, -1 do
@@ -115,20 +81,17 @@ ArrayList.MoveToFront = function(self, index)
   elements[1] = temp
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.MoveToIndex = function(self, old_index, new_index)
-  -- function num : 0_9
+function ArrayList:MoveToIndex(old_index, new_index)
   local elements = self.elements
   local size = #elements
-  if old_index < 1 or size < old_index then
-    return 
+  if old_index < 1 or old_index > size then
+    return
   end
-  if new_index < 1 or size < new_index then
-    return 
+  if new_index < 1 or new_index > size then
+    return
   end
   if old_index == new_index then
-    return 
+    return
   end
   local temp = elements[old_index]
   if old_index < new_index then
@@ -136,21 +99,14 @@ ArrayList.MoveToIndex = function(self, old_index, new_index)
       elements[i] = elements[i + 1]
     end
   else
-    do
-      for i = old_index - 1, new_index, -1 do
-        elements[i + 1] = elements[i]
-      end
-      do
-        elements[new_index] = temp
-      end
+    for i = old_index - 1, new_index, -1 do
+      elements[i + 1] = elements[i]
     end
   end
+  elements[new_index] = temp
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.PopBack = function(self)
-  -- function num : 0_10
+function ArrayList:PopBack()
   local elements = self.elements
   local size = #elements
   local temp = elements[size]
@@ -158,14 +114,11 @@ ArrayList.PopBack = function(self)
   return temp
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.RemoveByIndex = function(self, index)
-  -- function num : 0_11
+function ArrayList:RemoveByIndex(index)
   local elements = self.elements
   local size = #elements
-  if index < 1 or size < index then
-    return 
+  if index < 1 or index > size then
+    return
   end
   for i = index, size - 1 do
     elements[i] = elements[i + 1]
@@ -173,28 +126,18 @@ ArrayList.RemoveByIndex = function(self, index)
   elements[size] = nil
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
 ArrayList.RemoveAt = ArrayList.RemoveByIndex
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
 
-ArrayList.RemoveFirst = function(self, value)
-  -- function num : 0_12
+function ArrayList:RemoveFirst(value)
   local index = self:Find(value, 1)
   self:RemoveAt(index)
   return index
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
 ArrayList.Remove = ArrayList.RemoveFirst
--- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
 
-ArrayList.Find = function(self, value, from_index)
-  -- function num : 0_13
-  if not from_index then
-    from_index = 1
-  end
+function ArrayList:Find(value, from_index)
+  from_index = from_index or 1
   local elements = self.elements
   for i = from_index, #elements do
     if elements[i] == value then
@@ -204,10 +147,7 @@ ArrayList.Find = function(self, value, from_index)
   return -1
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.Contains = function(self, value, from_index)
-  -- function num : 0_14
+function ArrayList:Contains(value, from_index)
   local index = self:Find(value, from_index)
   if index == -1 then
     return false
@@ -216,74 +156,51 @@ ArrayList.Contains = function(self, value, from_index)
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.GetAt = function(self, index)
-  -- function num : 0_15
-  return (self.elements)[index]
+function ArrayList:GetAt(index)
+  return self.elements[index]
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.Front = function(self)
-  -- function num : 0_16
-  return (self.elements)[1]
+function ArrayList:Front()
+  return self.elements[1]
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.ForEach = function(self, func)
-  -- function num : 0_17
+function ArrayList:ForEach(func)
   local elements = self.elements
   for i = 1, #elements do
     func(elements[i])
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.HandleForeach = function(self, handler, func, ...)
-  -- function num : 0_18
+function ArrayList:HandleForeach(handler, func, ...)
   local elements = self.elements
   for i = 1, #elements do
     local bSuccess = func(handler, elements[i], ...)
-  end
-  do
-    if bSuccess ~= false and bSuccess ~= 0 then
+    if false == bSuccess or 0 == bSuccess then
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.RemoveByValue = function(self, value)
-  -- function num : 0_19
+function ArrayList:RemoveByValue(value)
   local index = self:Find(value, 1)
-  if index < 1 or #self.elements < index then
+  if index < 1 or index > #self.elements then
     return false
   end
   self:RemoveAt(index)
   return true
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R0 in 'UnsetPending'
-
-ArrayList.Clone = function(self, al)
-  -- function num : 0_20 , upvalues : _ENV
+function ArrayList:Clone(al)
   if al == nil then
-    return 
+    return
   end
   if type(al) ~= "table" then
-    return 
+    return
   end
   if al._className ~= "ArrayList" then
-    return 
+    return
   end
   al:ForEach(function(v)
-    -- function num : 0_20_0 , upvalues : self
     self:PushBack(v)
-  end
-)
+  end)
 end
-
-

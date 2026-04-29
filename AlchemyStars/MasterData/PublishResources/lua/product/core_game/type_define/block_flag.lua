@@ -1,16 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/block_flag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local BlockFlag = {None = 0, LinkLine = 2, MonsterLand = 4, MonsterFly = 8, DropItem = 16, SkillSkip = 32, Skill = 64, HitBack = 128, SummonTrap = 256, ChangeElement = 1024, Transport = 2048, FallGrid = 4096, MoveBoard = 8192, HitBackFly = 16384}
+local BlockFlag = {
+  None = 0,
+  LinkLine = 2,
+  MonsterLand = 4,
+  MonsterFly = 8,
+  DropItem = 16,
+  SkillSkip = 32,
+  Skill = 64,
+  HitBack = 128,
+  SummonTrap = 256,
+  ChangeElement = 1024,
+  Transport = 2048,
+  FallGrid = 4096,
+  MoveBoard = 8192,
+  HitBackFly = 16384
+}
 _enum("BlockFlag", BlockFlag)
-GetBlockFlagByValue = function(value)
-  -- function num : 0_0 , upvalues : BlockFlag
+
+function GetBlockFlagByValue(value)
   if not value or value == 0 then
     return BlockFlag.None
   end
   return 1 << value
 end
-
-

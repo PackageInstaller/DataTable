@@ -1,44 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/world_boss/ui_season_maze_world_boss_tips_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeWorldBossTipsPopUp", UIController)
 UISeasonMazeWorldBossTipsPopUp = UISeasonMazeWorldBossTipsPopUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeWorldBossTipsPopUp.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeWorldBossTipsPopUp:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossTipsPopUp.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeWorldBossTipsPopUp:OnShow(uiParams)
   self:InitWidget()
   self.title = uiParams[1]
   self.tips = uiParams[2]
-  ;
-  (self.titleText):SetText((StringTable.Get)(self.title))
-  ;
-  (self.tipsText):SetText((StringTable.Get)(self.tips) .. "\n\n\n\n\n\n")
+  self.titleText:SetText(StringTable.Get(self.title))
+  self.tipsText:SetText(StringTable.Get(self.tips) .. [[
+
+
+
+
+
+
+]])
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossTipsPopUp.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMazeWorldBossTipsPopUp:InitWidget()
   self._anim = self:GetGameObject("_anim")
   self.titleText = self:GetUIComponent("UILocalizationText", "TitleText")
   self.tipsText = self:GetUIComponent("UILocalizationText", "TipsText")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBossTipsPopUp.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonMazeWorldBossTipsPopUp:BgOnClick(go)
   self:CloseDialog()
 end
-
-

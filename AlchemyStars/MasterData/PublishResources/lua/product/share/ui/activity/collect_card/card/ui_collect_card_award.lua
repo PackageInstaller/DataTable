@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/card/ui_collect_card_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardAward", UICustomWidget)
 UICollectCardAward = UICollectCardAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardAward.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UICollectCardAward:OnShow(uiParam)
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._number = self:GetUIComponent("UILocalizationText", "Number")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardAward.SetData = function(self, id, count, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UICollectCardAward:SetData(id, count, callback)
   self._id = id
   self._callback = callback
   self._count = count
-  local cfg = (Cfg.cfg_item)[self._id]
+  local cfg = Cfg.cfg_item[self._id]
   local icon = cfg.Icon
-  ;
-  (self._icon):LoadImage(icon)
-  ;
-  (self._number):SetText("X " .. self._count)
+  self._icon:LoadImage(icon)
+  self._number:SetText("X " .. self._count)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardAward.IconOnClick = function(self, go)
-  -- function num : 0_2
+function UICollectCardAward:IconOnClick(go)
   if self._callback then
-    (self._callback)(self._id, (go.transform).position)
+    self._callback(self._id, go.transform.position)
   end
 end
-
-

@@ -1,203 +1,147 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/board_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("BoardServiceRender", BaseService)
 BoardServiceRender = BoardServiceRender
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BoardServiceRender.Constructor = function(self, world)
-  -- function num : 0_0
+function BoardServiceRender:Constructor(world)
   self.pieceHeight = 0
   self._gridEntityTable = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.GetEntityRealTimeGridPosByGO = function(self, entity, needOffSet)
-  -- function num : 0_1
-  local go = (entity:View()):GetGameObject()
-  local pos = (go.transform).position
+function BoardServiceRender:GetEntityRealTimeGridPosByGO(entity, needOffSet)
+  local go = entity:View():GetGameObject()
+  local pos = go.transform.position
   return self:_GetEntityRealTimeGridPos(entity, pos, needOffSet)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender._GetEntityRealTimeGridPos = function(self, entity, renderPosition, needOffSet)
-  -- function num : 0_2 , upvalues : _ENV
-  local targetGridPos = nil
+function BoardServiceRender:_GetEntityRealTimeGridPos(entity, renderPosition, needOffSet)
+  local targetGridPos
   if not needOffSet then
     local monster_body_area_cmpt = entity:BodyArea()
     local monster_body_area = {}
     if monster_body_area_cmpt then
       monster_body_area = monster_body_area_cmpt:GetArea()
     end
-    if #monster_body_area > 1 then
+    if 1 < #monster_body_area then
       targetGridPos = self:BoardRenderPos2FloatGridPos_New(renderPosition)
-      local offset = (entity:GridLocation()).Offset
+      local offset = entity:GridLocation().Offset
       targetGridPos = targetGridPos - offset
-      targetGridPos = Vector2((math.floor)(targetGridPos.x), (math.floor)(targetGridPos.y))
+      targetGridPos = Vector2(math.floor(targetGridPos.x), math.floor(targetGridPos.y))
     else
-      do
-        do
-          targetGridPos = self:BoardRenderPos2GridPos(renderPosition)
-          targetGridPos = self:BoardRenderPos2FloatGridPos_New(renderPosition)
-          return targetGridPos
-        end
-      end
+      targetGridPos = self:BoardRenderPos2GridPos(renderPosition)
     end
+  else
+    targetGridPos = self:BoardRenderPos2FloatGridPos_New(renderPosition)
   end
+  return targetGridPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.GetEntityRealTimeGridPos = function(self, entity, needOffSet)
-  -- function num : 0_3
-  return self:_GetEntityRealTimeGridPos(entity, (entity:Location()).Position, needOffSet)
+function BoardServiceRender:GetEntityRealTimeGridPos(entity, needOffSet)
+  return self:_GetEntityRealTimeGridPos(entity, entity:Location().Position, needOffSet)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.BoardRenderPos2FloatGridPos_New = function(self, pos)
-  -- function num : 0_4 , upvalues : _ENV
+function BoardServiceRender:BoardRenderPos2FloatGridPos_New(pos)
   local basePos = self:GetBaseGridRenderPos()
   local render_pos_offset = pos - basePos
   local new_grid_pos = Vector3(1, 0, 1) + render_pos_offset
   return Vector2(new_grid_pos.x, new_grid_pos.z)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.BoardRenderPos2GridPos = function(self, pos)
-  -- function num : 0_5 , upvalues : _ENV
+function BoardServiceRender:BoardRenderPos2GridPos(pos)
   local gridPos = self:BoardRenderPos2FloatGridPos(pos)
-  return Vector2((math.floor)(gridPos.x), (math.floor)(gridPos.y))
+  return Vector2(math.floor(gridPos.x), math.floor(gridPos.y))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.BoardRenderPos2FloatGridPos = function(self, pos)
-  -- function num : 0_6 , upvalues : _ENV
+function BoardServiceRender:BoardRenderPos2FloatGridPos(pos)
   local basePos = self:GetBaseGridRenderPos()
   local render_pos_offset = pos - basePos
   local new_grid_pos = Vector3(1, 0, 1) + render_pos_offset
-  local clamp_x = (math.floor)(new_grid_pos.x + 0.5)
-  local clamp_y = (math.floor)(new_grid_pos.z + 0.5)
+  local clamp_x = math.floor(new_grid_pos.x + 0.5)
+  local clamp_y = math.floor(new_grid_pos.z + 0.5)
   return Vector2(clamp_x, clamp_y)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.GetRealEntityGridPos = function(self, target)
-  -- function num : 0_7 , upvalues : _ENV
-  do
-    if target:HasLocation() then
-      local localPosition = target:GetPosition()
-      return self:BoardRenderPos2FloatGridPos_New(localPosition)
-    end
-    return Vector2(0, 0)
+function BoardServiceRender:GetRealEntityGridPos(target)
+  if target:HasLocation() then
+    local localPosition = target:GetPosition()
+    return self:BoardRenderPos2FloatGridPos_New(localPosition)
   end
+  return Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.IsLeftOrRight = function(self, casterEntity, targetEntity)
-  -- function num : 0_8 , upvalues : _ENV
+function BoardServiceRender:IsLeftOrRight(casterEntity, targetEntity)
   local viewPos = self:GetEntityRealTimeGridPos(casterEntity, true)
   local viewDir = casterEntity:GetDirection()
   local targetPos = self:GetEntityRealTimeGridPos(targetEntity, true)
   if viewPos and targetPos and viewDir then
     local vVT = targetPos - viewPos
-    local v = (Vector3.Cross)(Vector3(viewDir.x, 0, viewDir.z), Vector3(vVT.x, 0, vVT.y))
+    local v = Vector3.Cross(Vector3(viewDir.x, 0, viewDir.z), Vector3(vVT.x, 0, vVT.y))
     if v then
       return v.y
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.GridPos2RenderPos = function(self, gridPos)
-  -- function num : 0_9 , upvalues : _ENV
+function BoardServiceRender:GridPos2RenderPos(gridPos)
   local xOffset = gridPos.x - 1
   local zOffset = gridPos.y - 1
   local basePos = self:GetBaseGridRenderPos()
   return basePos + Vector3(xOffset, self.pieceHeight, zOffset)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.GridPosition2LocationPos = function(self, pos, entity)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Unhandled construct in 'MakeBoolean' P1
-
-  if pos and pos._className ~= "Vector3" then
-    if pos._className == "Vector2" then
-      local height = entity:GetGridHeight()
-      local retPos = self:GridPos2RenderPos(pos)
-      if height then
-        retPos.y = retPos.y + height
-      end
-      return retPos
-    else
-      do
-        ;
-        (Log.fatal)("Param Invalid  TrackBack:", (Log.traceback)())
-        do return nil end
-        do return pos end
+function BoardServiceRender:GridPosition2LocationPos(pos, entity)
+  if pos then
+    if pos._className ~= "Vector3" then
+      if pos._className == "Vector2" then
+        local height = entity:GetGridHeight()
+        local retPos = self:GridPos2RenderPos(pos)
+        if height then
+          retPos.y = retPos.y + height
+        end
+        return retPos
+      else
+        Log.fatal("Param Invalid  TrackBack:", Log.traceback())
         return nil
       end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.GridDir2LocationDir = function(self, dir)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Unhandled construct in 'MakeBoolean' P1
-
-  if dir and dir._className ~= "Vector3" then
-    if dir._className == "Vector2" then
-      return Vector3(dir.x, 0, dir.y)
     else
-      ;
-      (Log.fatal)("Param Invalid  TrackBack:", (Log.traceback)())
-      return nil
+      return pos
     end
-  else
-    return dir
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
+function BoardServiceRender:GridDir2LocationDir(dir)
+  if dir then
+    if dir._className ~= "Vector3" then
+      if dir._className == "Vector2" then
+        return Vector3(dir.x, 0, dir.y)
+      else
+        Log.fatal("Param Invalid  TrackBack:", Log.traceback())
+        return nil
+      end
+    else
+      return dir
+    end
+  end
+  return nil
+end
 
-BoardServiceRender.GetPosListCenter = function(self, posList)
-  -- function num : 0_12 , upvalues : _ENV
+function BoardServiceRender:GetPosListCenter(posList)
   local tmp = Vector2(0, 0)
-  for k,v in pairs(posList) do
+  for k, v in pairs(posList) do
     tmp = tmp + v
   end
   tmp = Vector2(tmp.x / #posList, tmp.y / #posList)
   return tmp
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.BoardGridPosOffset = function(self, pos)
-  -- function num : 0_13 , upvalues : _ENV
-  local roundX = (math.floor)((math.abs)(pos.x) + 0.5)
+function BoardServiceRender:BoardGridPosOffset(pos)
+  local roundX = math.floor(math.abs(pos.x) + 0.5)
   if pos.x < 0 then
     roundX = roundX * -1
   end
-  local roundZ = (math.floor)((math.abs)(pos.z) + 0.5)
-  if pos.z < 0 then
+  local roundZ = math.floor(math.abs(pos.z) + 0.5)
+  if 0 > pos.z then
     roundZ = roundZ * -1
   end
   local decimalX = pos.x - roundX
@@ -206,73 +150,76 @@ BoardServiceRender.BoardGridPosOffset = function(self, pos)
   return offset
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.IsSameCrossPos = function(self, center, pos)
-  -- function num : 0_14
+function BoardServiceRender:IsSameCrossPos(center, pos)
   if center.x == pos.x or center.y == pos.y then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.CheckColumnBoundary = function(self, columnVal, attackArea)
-  -- function num : 0_15
-  if attackArea.minX <= columnVal and columnVal <= attackArea.maxX then
+function BoardServiceRender:CheckColumnBoundary(columnVal, attackArea)
+  if columnVal >= attackArea.minX and columnVal <= attackArea.maxX then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.IsInPlayerArea = function(self, pos)
-  -- function num : 0_16
+function BoardServiceRender:IsInPlayerArea(pos)
   local x, y = pos.x, pos.y
   if x == nil or y == nil then
-    return 
+    return
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local playerArea = utilDataSvc:GetPlayerArea()
   local gridTiles = utilDataSvc:GetGridTiles()
-  do return (playerArea.minX > x or x > playerArea.maxX or playerArea.minY > y or y > playerArea.maxY or gridTiles[x]) and (gridTiles[x])[y] end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return x >= playerArea.minX and x <= playerArea.maxX and y >= playerArea.minY and y <= playerArea.maxY and gridTiles[x] and gridTiles[x][y]
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.GetEdgePosList = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function BoardServiceRender:GetEdgePosList()
+  local utilDataSvc = self._world:GetService("UtilData")
   local edgePosList = {}
-  local left, right, top, down = nil, nil, nil, nil
+  local left, right, top, down
   local playerArea = utilDataSvc:GetPlayerArea()
   for x = playerArea.minX, playerArea.maxX do
     for y = playerArea.minY, playerArea.maxY do
       if self:IsInPlayerArea(Vector2(x, y)) then
-        left = {x - 1, y}
-        right = {x + 1, y}
-        top = {x, y + 1}
-        down = {x, y - 1}
-        local dirs = {left, down, right, top}
+        left = {
+          x - 1,
+          y
+        }
+        right = {
+          x + 1,
+          y
+        }
+        top = {
+          x,
+          y + 1
+        }
+        down = {
+          x,
+          y - 1
+        }
+        local dirs = {
+          left,
+          down,
+          right,
+          top
+        }
         local curDirs = {}
         local isAdd = false
         local data = {}
-        for dir,gridPos in ipairs(dirs) do
+        for dir, gridPos in ipairs(dirs) do
           if not self:IsInPlayerArea(Vector2(gridPos[1], gridPos[2])) then
             if isAdd == false then
               data.pos = Vector2(x, y)
               data.dirs = {}
               isAdd = true
             end
-            ;
-            (table.insert)(data.dirs, dir)
+            table.insert(data.dirs, dir)
           end
         end
         if isAdd then
-          (table.insert)(edgePosList, data)
+          table.insert(edgePosList, data)
         end
       end
     end
@@ -280,83 +227,72 @@ BoardServiceRender.GetEdgePosList = function(self)
   return edgePosList
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.IsPosCanLinkLine = function(self, pos, chainPath)
-  -- function num : 0_18 , upvalues : _ENV
-  local len = (table.count)(chainPath)
+function BoardServiceRender:IsPosCanLinkLine(pos, chainPath)
+  local len = table.count(chainPath)
   if len <= 1 then
     return true
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local lastPos = chainPath[len]
-  if not utilDataSvc:IsPosExit(lastPos) then
-    local isBreakLastPos = utilDataSvc:IsPosDimensionDoor(lastPos)
-  end
-  if isBreakLastPos and not (table.icontains)(chainPath, pos) then
+  local isBreakLastPos = utilDataSvc:IsPosExit(lastPos) or utilDataSvc:IsPosDimensionDoor(lastPos)
+  if isBreakLastPos and not table.icontains(chainPath, pos) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BoardServiceRender.CalcConnectPieces = function(self, chainPath, pieceType, bMoveBack, entityWork)
-  -- function num : 0_19 , upvalues : _ENV
+function BoardServiceRender:CalcConnectPieces(chainPath, pieceType, bMoveBack, entityWork)
   if #chainPath <= 1 or pieceType == PieceType.None or pieceType == PieceType.Any then
     return {}
   end
   local endPos = chainPath[#chainPath]
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local pieces = env:GetAllPieceType()
   local conn = {}
-  for x,v in pairs(pieces) do
+  for x, v in pairs(pieces) do
     conn[x] = {}
   end
   local connect_pieces = {}
-  ;
-  (table.insert)(connect_pieces, endPos)
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (conn[endPos.x])[endPos.y] = true
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local search9 = function(center, next)
-    -- function num : 0_19_0 , upvalues : _ENV, utilDataSvc, env, self, chainPath, pieceType, conn, connect_pieces
+  table.insert(connect_pieces, endPos)
+  conn[endPos.x][endPos.y] = true
+  local utilDataSvc = self._world:GetService("UtilData")
+  
+  local function search9(center, next)
     for i = -1, 1 do
       for j = -1, 1 do
         local pos = Vector2(center.x + i, center.y + j)
         if utilDataSvc:IsValidPiecePos(pos) then
           local piece_type = env:GetPieceType(pos)
-          if self:IsInPlayerArea(pos) and self:IsPosCanLinkLine(pos, chainPath) then
-            local canLinkLine = not utilDataSvc:IsPosBlockLinkLineForChain(pos)
-          end
-          if not CanMatchPieceType(pieceType, piece_type) then
-            local pieceMatch = utilDataSvc:IsPosCanMapOtherPiece(pos, pieceType, piece_type)
-          end
-          if not (conn[pos.x])[pos.y] and pieceMatch and canLinkLine then
-            (table.insert)(connect_pieces, pos)
-            -- DECOMPILER ERROR at PC72: Confused about usage of register: R14 in 'UnsetPending'
-
-            ;
-            (conn[pos.x])[pos.y] = true
+          local canLinkLine = self:IsInPlayerArea(pos) and self:IsPosCanLinkLine(pos, chainPath) and not utilDataSvc:IsPosBlockLinkLineForChain(pos)
+          local pieceMatch = CanMatchPieceType(pieceType, piece_type) or utilDataSvc:IsPosCanMapOtherPiece(pos, pieceType, piece_type)
+          if not conn[pos.x][pos.y] and pieceMatch and canLinkLine then
+            table.insert(connect_pieces, pos)
+            conn[pos.x][pos.y] = true
             next(pos, next)
           end
         end
       end
     end
   end
-
+  
   search9(endPos, search9)
   return connect_pieces
 end
 
-local OutlineDirType = {Up = 1, Down = 2, Left = 3, Right = 4}
-local OutlineType = {Short = 1, LeftShort = 2, RightShort = 3, Long = 4}
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
+local OutlineDirType = {
+  Up = 1,
+  Down = 2,
+  Left = 3,
+  Right = 4
+}
+local OutlineType = {
+  Short = 1,
+  LeftShort = 2,
+  RightShort = 3,
+  Long = 4
+}
 
-BoardServiceRender.GetRoundPosList = function(self, pos)
-  -- function num : 0_20 , upvalues : OutlineDirType, _ENV
+function BoardServiceRender:GetRoundPosList(pos)
   local res = {}
   res[OutlineDirType.Up] = Vector2(pos.x, pos.y + 1)
   res[OutlineDirType.Down] = Vector2(pos.x, pos.y - 1)
@@ -365,65 +301,51 @@ BoardServiceRender.GetRoundPosList = function(self, pos)
   return res
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.GetOutlineDirType = function(self, dir)
-  -- function num : 0_21 , upvalues : OutlineDirType
+function BoardServiceRender:GetOutlineDirType(dir)
   if dir.x > 0 and dir.y == 0 then
     return OutlineDirType.Right
+  elseif dir.x < 0 and dir.y == 0 then
+    return OutlineDirType.Left
+  elseif dir.x == 0 and 0 < dir.y then
+    return OutlineDirType.Up
   else
-    if dir.x < 0 and dir.y == 0 then
-      return OutlineDirType.Left
-    else
-      if dir.x == 0 and dir.y > 0 then
-        return OutlineDirType.Up
-      else
-        return OutlineDirType.Down
-      end
-    end
+    return OutlineDirType.Down
   end
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.GetBoardRect = function(self)
-  -- function num : 0_22
-  local utilDataSvc = (self._world):GetService("UtilData")
+function BoardServiceRender:GetBoardRect()
+  local utilDataSvc = self._world:GetService("UtilData")
   local playerArea = utilDataSvc:GetPlayerArea()
   local basePos = self:GetBaseGridRenderPos()
-  self.boardRect = {x = basePos.x - 0.5, y = basePos.z - 0.5, z = basePos.x - 0.5 + playerArea.maxX - playerArea.minX, w = basePos.z - 0.5 + playerArea.maxY - playerArea.minY}
+  self.boardRect = {
+    x = basePos.x - 0.5,
+    y = basePos.z - 0.5,
+    z = basePos.x - 0.5 + playerArea.maxX - playerArea.minX,
+    w = basePos.z - 0.5 + playerArea.maxY - playerArea.minY
+  }
   return self.boardRect
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.CreateEmptyGridEffectEntity = function(self, gridPos)
-  -- function num : 0_23 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function BoardServiceRender:CreateEmptyGridEffectEntity(gridPos)
+  local sEntity = self._world:GetService("RenderEntity")
   local gridEffectEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.EmptyGridEffect)
   gridEffectEntity:SetGridPosition(gridPos)
   gridEffectEntity:SetPosition(gridPos)
   return gridEffectEntity
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.GetExceptGrids = function(self, curGrids)
-  -- function num : 0_24 , upvalues : _ENV
-  local gridGroup = ((self._world):GetGroup(((self._world).BW_WEMatchers).Piece))
-  -- DECOMPILER ERROR at PC6: Overwrote pending register: R3 in 'AssignReg'
-
-  local targetGridEntity = .end
+function BoardServiceRender:GetExceptGrids(curGrids)
+  local gridGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  local targetGridEntity
   local exceptGrids = {}
-  for _,gridEntity in ipairs(gridGroup:GetEntities()) do
-    local curGridPos = (gridEntity:GridLocation()).Position
-    ;
-    (table.insert)(exceptGrids, curGridPos)
+  for _, gridEntity in ipairs(gridGroup:GetEntities()) do
+    local curGridPos = gridEntity:GridLocation().Position
+    table.insert(exceptGrids, curGridPos)
   end
-  for index,pos in ipairs(curGrids) do
+  for index, pos in ipairs(curGrids) do
     for i = #exceptGrids, 1, -1 do
       if exceptGrids[i] == pos then
-        (table.remove)(exceptGrids, i)
+        table.remove(exceptGrids, i)
         break
       end
     end
@@ -431,103 +353,71 @@ BoardServiceRender.GetExceptGrids = function(self, curGrids)
   return exceptGrids
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.FillChainPathPieces = function(self, fillPieceTable)
-  -- function num : 0_25 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function BoardServiceRender:FillChainPathPieces(fillPieceTable)
+  local pieceService = self._world:GetService("Piece")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
-  for i,grid in ipairs(fillPieceTable) do
+  for i, grid in ipairs(fillPieceTable) do
     local x, y = grid.x, grid.y
     local targetGridColor = grid.color
     local pos = Vector2(x, y)
     local currentPiece = renderBoardCmpt:GetGridRenderEntity(grid)
     if currentPiece then
-      (Log.debug)("FillChainPathPieces() pos=", (Vector2.Pos2Index)(pos), " from=", (currentPiece:Piece()):GetPieceType(), " to=", targetGridColor)
+      Log.debug("FillChainPathPieces() pos=", Vector2.Pos2Index(pos), " from=", currentPiece:Piece():GetPieceType(), " to=", targetGridColor)
       local gridEntity = self:ChangeGridEntity(targetGridColor, pos)
       pieceService:SetPieceEntityBirth(gridEntity)
     else
-      do
-        do
-          local gridEntity = self:CreateGridEntity(targetGridColor, pos)
-          -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      local gridEntity = self:CreateGridEntity(targetGridColor, pos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.ChangeGridEntity = function(self, pieceType, gridPos, isHide)
-  -- function num : 0_26 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
+function BoardServiceRender:ChangeGridEntity(pieceType, gridPos, isHide)
+  local pieceService = self._world:GetService("Piece")
   local modifyEntity = pieceService:FindPieceEntity(gridPos)
   if modifyEntity == nil then
-    (Log.debug)("BoardServiceRender:ChangeGridEntity() pos=", (Vector2.Pos2Index)(gridPos), " not FindPieceEntity")
-    return 
+    Log.debug("BoardServiceRender:ChangeGridEntity() pos=", Vector2.Pos2Index(gridPos), " not FindPieceEntity")
+    return
   end
   pieceService:SetPieceEntityPieceType(modifyEntity, pieceType)
   modifyEntity:SetGridPosition(gridPos)
   modifyEntity:SetPosition(gridPos)
-  ;
-  (Log.debug)("ChangeGridEntity gridPos=", (Vector2.Pos2Index)(gridPos), " pieceType=", pieceType)
+  Log.debug("ChangeGridEntity gridPos=", Vector2.Pos2Index(gridPos), " pieceType=", pieceType)
   return modifyEntity
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender._GetBrokenGridPrefabPath = function(self, gridType)
-  -- function num : 0_27 , upvalues : _ENV
-  if gridType >= 1 and gridType <= 5 then
-    local path = (string.format)("eff_gezi_suilie_0%d.prefab", gridType)
+function BoardServiceRender:_GetBrokenGridPrefabPath(gridType)
+  if 1 <= gridType and gridType <= 5 then
+    local path = string.format("eff_gezi_suilie_0%d.prefab", gridType)
     return path
   end
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender._GetGridConfig = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local levelID = ((self._world).BW_WorldInfo).level_id
-  local levelConfig = (Cfg.cfg_level)[levelID]
+function BoardServiceRender:_GetGridConfig()
+  local levelID = self._world.BW_WorldInfo.level_id
+  local levelConfig = Cfg.cfg_level[levelID]
   local themeID = levelConfig.Theme
-  local cfgThemeData = (Cfg.cfg_theme)[themeID]
+  local cfgThemeData = Cfg.cfg_theme[themeID]
   return cfgThemeData
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.CreateGridEntity = function(self, pieceType, piecePos, isHide, pieceEffectType)
-  -- function num : 0_29 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function BoardServiceRender:CreateGridEntity(pieceType, piecePos, isHide, pieceEffectType)
+  local sEntity = self._world:GetService("RenderEntity")
   local gridEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.Grid)
-  do
-    if pieceEffectType then
-      local pieceComponent = gridEntity:Piece()
-      pieceComponent:SetRenderPieceEffectType(pieceEffectType)
-    end
-    self:_InitGridEntity(gridEntity, pieceType, piecePos, isHide)
-    ;
-    (Log.debug)("CreateGridEntity gridPos=", (Vector2.Pos2Index)(piecePos), " pieceType=", pieceType)
-    return gridEntity
+  if pieceEffectType then
+    local pieceComponent = gridEntity:Piece()
+    pieceComponent:SetRenderPieceEffectType(pieceEffectType)
   end
+  self:_InitGridEntity(gridEntity, pieceType, piecePos, isHide)
+  Log.debug("CreateGridEntity gridPos=", Vector2.Pos2Index(piecePos), " pieceType=", pieceType)
+  return gridEntity
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.ReCreateGridEntity = function(self, pieceType, gridPos, isHide, needBirthEffect, notRefreshPrism)
-  -- function num : 0_30 , upvalues : _ENV
-  local pieceSvc = (self._world):GetService("Piece")
+function BoardServiceRender:ReCreateGridEntity(pieceType, gridPos, isHide, needBirthEffect, notRefreshPrism)
+  local pieceSvc = self._world:GetService("Piece")
   local newGridEntity = pieceSvc:FindPieceEntity(gridPos)
   if newGridEntity == nil then
-    return 
+    return
   end
   self:_InitGridEntity(newGridEntity, pieceType, gridPos, isHide)
   if needBirthEffect then
@@ -535,16 +425,12 @@ BoardServiceRender.ReCreateGridEntity = function(self, pieceType, gridPos, isHid
   else
     pieceSvc:SetPieceEntityAnimNormal(newGridEntity)
   end
-  local brokenTrap = (((self._world):GetPreviewEntity()):PreviewEnv()):GetEntitiesAtPos(gridPos, function(e)
-    -- function num : 0_30_0
-    if e:TrapRender() and (e:TrapRender()):GetTrapRender_IsBrokenGrid() then
-      return not e:HasDeadMark()
-    end
-  end
-)
-  if brokenTrap and #brokenTrap > 0 then
-    local trapSvc = (self._world):GetService("TrapRender")
-    for i,trap in ipairs(brokenTrap) do
+  local brokenTrap = self._world:GetPreviewEntity():PreviewEnv():GetEntitiesAtPos(gridPos, function(e)
+    return e:TrapRender() and e:TrapRender():GetTrapRender_IsBrokenGrid() and not e:HasDeadMark()
+  end)
+  if brokenTrap and 0 < #brokenTrap then
+    local trapSvc = self._world:GetService("TrapRender")
+    for i, trap in ipairs(brokenTrap) do
       local prefabPath = self:_GetBrokenGridPrefabPath(pieceType)
       if prefabPath then
         trap:ReplaceAsset(NativeUnityPrefabAsset:New(prefabPath, not isHide))
@@ -552,139 +438,119 @@ BoardServiceRender.ReCreateGridEntity = function(self, pieceType, gridPos, isHid
       trapSvc:OnCheckTrapViewSetPieceExtraLayer(trap, gridPos)
     end
   end
-  do
-    ;
-    (Log.debug)("ReCreateGridEntity gridPos=", (Vector2.Pos2Index)(gridPos), " pieceType=", pieceType)
-    if ((GameGlobal.GetModule)(SkillPerfModule)):IsPerfCoreGame() then
-      ((GameGlobal.GetModule)(SkillPerfModule)):SetGridEntityScale(newGridEntity)
-    end
-    return newGridEntity
+  Log.debug("ReCreateGridEntity gridPos=", Vector2.Pos2Index(gridPos), " pieceType=", pieceType)
+  if GameGlobal.GetModule(SkillPerfModule):IsPerfCoreGame() then
+    GameGlobal.GetModule(SkillPerfModule):SetGridEntityScale(newGridEntity)
   end
+  return newGridEntity
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender._InitGridEntity = function(self, gridEntity, pieceType, piecePos, isHide)
-  -- function num : 0_31
-  local pieceService = (self._world):GetService("Piece")
+function BoardServiceRender:_InitGridEntity(gridEntity, pieceType, piecePos, isHide)
+  local pieceService = self._world:GetService("Piece")
   pieceService:SetPieceEntityPieceType(gridEntity, pieceType)
   gridEntity:SetGridPosition(piecePos)
   gridEntity:SetPosition(piecePos)
   gridEntity:RemoveOutsideRegion()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
   renderBoardCmpt:SetGridRenderEntityData(piecePos, gridEntity)
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.ApplyPrism = function(self, piecePrePos, piecePos)
-  -- function num : 0_32 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+function BoardServiceRender:ApplyPrism(piecePrePos, piecePos)
+  local pieceService = self._world:GetService("Piece")
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   pieceService:SetPieceRenderEffect(piecePos, PieceEffectType.Normal)
   local changed = self:_ApplyPrismToPreviewEnv(piecePrePos, piecePos)
   local pieceType = env:GetPieceType(piecePos)
-  for posIdx,color in pairs(changed) do
-    local pos = (Vector2.Index2Pos)(posIdx)
+  for posIdx, color in pairs(changed) do
+    local pos = Vector2.Index2Pos(posIdx)
     if color ~= pieceType then
       self:ReCreateGridEntity(pieceType, pos, false, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender._ApplyPrismToPreviewEnv = function(self, prePos, prismPos)
-  -- function num : 0_33 , upvalues : _ENV
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+function BoardServiceRender:_ApplyPrismToPreviewEnv(prePos, prismPos)
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local prismPieceType = env:GetPieceType(prismPos)
   local tTargetPieces = {}
   local prismEntityID = env:GetPrismEntityIDAtPos(prismPos)
-  local scopeType, scopeParam = ((self._world):GetService("UtilData")):GetPrismCustomScopeConfig(prismEntityID)
+  local scopeType, scopeParam = self._world:GetService("UtilData"):GetPrismCustomScopeConfig(prismEntityID)
   if scopeType then
-    local calc = SkillScopeCalculator:New((self._world):GetService("UtilScopeCalc"))
-    local result = calc:ComputeScopeRange(scopeType, scopeParam, prismPos, {Vector2.zero})
-    if not result:GetAttackRange() then
-      local range = {}
-    end
-    for _,v2 in ipairs(range) do
+    local calc = SkillScopeCalculator:New(self._world:GetService("UtilScopeCalc"))
+    local result = calc:ComputeScopeRange(scopeType, scopeParam, prismPos, {
+      Vector2.zero
+    })
+    local range = result:GetAttackRange() or {}
+    for _, v2 in ipairs(range) do
       local targetPieceType = env:GetPieceType(v2)
       local canChange = not env:IsPosBlock(v2, BlockFlag.ChangeElement)
       if targetPieceType and targetPieceType ~= PieceType.None and canChange then
-        (table.insert)(tTargetPieces, {pos = v2, originalPieceType = env:GetPieceType(v2), pieceType = prismPieceType})
+        table.insert(tTargetPieces, {
+          pos = v2,
+          originalPieceType = env:GetPieceType(v2),
+          pieceType = prismPieceType
+        })
       end
     end
   else
-    do
-      local dir = prismPos - prePos
-      for i = 1, BattleConst.PrismEffectPieceCount do
-        local targetPos = prismPos + dir * i
-        local targetPieceType = env:GetPieceType(targetPos)
-        local canChange = not env:IsPosBlock(targetPos, BlockFlag.ChangeElement)
-        if targetPieceType and targetPieceType ~= PieceType.None and canChange then
-          (table.insert)(tTargetPieces, {pos = targetPos, originalPieceType = targetPieceType, pieceType = prismPieceType})
-        end
-      end
-      do
-        local changed = {}
-        for _,data in ipairs(tTargetPieces) do
-          local changedPosIndex = (Vector2.Pos2Index)(data.pos)
-          changed[changedPosIndex] = data.originalPieceType
-          -- DECOMPILER ERROR at PC124: Confused about usage of register: R16 in 'UnsetPending'
-
-          ;
-          (env._pieceTypes)[changedPosIndex] = data.pieceType
-        end
-        local prismPosIndex = (Vector2.Pos2Index)(prismPos)
-        -- DECOMPILER ERROR at PC132: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (env._prismChangedPieces)[prismPosIndex] = changed
-        env:SetNeedUpdateConnectPieces(true)
-        return changed
+    local dir = prismPos - prePos
+    for i = 1, BattleConst.PrismEffectPieceCount do
+      local targetPos = prismPos + dir * i
+      local targetPieceType = env:GetPieceType(targetPos)
+      local canChange = not env:IsPosBlock(targetPos, BlockFlag.ChangeElement)
+      if targetPieceType and targetPieceType ~= PieceType.None and canChange then
+        table.insert(tTargetPieces, {
+          pos = targetPos,
+          originalPieceType = targetPieceType,
+          pieceType = prismPieceType
+        })
       end
     end
   end
+  local changed = {}
+  for _, data in ipairs(tTargetPieces) do
+    local changedPosIndex = Vector2.Pos2Index(data.pos)
+    changed[changedPosIndex] = data.originalPieceType
+    env._pieceTypes[changedPosIndex] = data.pieceType
+  end
+  local prismPosIndex = Vector2.Pos2Index(prismPos)
+  env._prismChangedPieces[prismPosIndex] = changed
+  env:SetNeedUpdateConnectPieces(true)
+  return changed
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.UnapplyPrism = function(self, prismPos)
-  -- function num : 0_34 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+function BoardServiceRender:UnapplyPrism(prismPos)
+  local pieceService = self._world:GetService("Piece")
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   pieceService:ResetPieceEffectRender(prismPos)
   local pieceType = env:GetPieceType(prismPos)
   local changed = env:GetPrismChangedPieces(prismPos)
   if not changed then
-    (Log.error)("[UnapplyPrism]: PreviewEnvComponent:GetPrismChangedPieces(prismPos) == nil.  prismPos=" .. tostring((Vector2.Pos2Index)(prismPos)))
+    Log.error("[UnapplyPrism]: PreviewEnvComponent:GetPrismChangedPieces(prismPos) == nil.  prismPos=" .. tostring(Vector2.Pos2Index(prismPos)))
   end
-  for posIdx,color in pairs(changed) do
-    local pos = (Vector2.Index2Pos)(posIdx)
-    self:ReCreateGridEntity(R14_PC44, pos, false, true)
+  for posIdx, color in pairs(changed) do
+    local pos = Vector2.Index2Pos(posIdx)
+    self:ReCreateGridEntity(color, pos, false, true)
   end
   env:UnapplyPrism(prismPos)
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.RefreshPiece = function(self, targetEntity, bUp, isAI)
-  -- function num : 0_35 , upvalues : _ENV
-  local sPiece = (self._world):GetService("Piece")
-  local sTrapRender = (self._world):GetService("TrapRender")
+function BoardServiceRender:RefreshPiece(targetEntity, bUp, isAI)
+  local sPiece = self._world:GetService("Piece")
+  local sTrapRender = self._world:GetService("TrapRender")
   local curPos = self:GetRealEntityGridPos(targetEntity)
-  local workPos = curPos - (targetEntity:GridLocation()):GetGridOffset()
-  local renderEntityService = (self._world):GetService("RenderEntity")
+  local workPos = curPos - targetEntity:GridLocation():GetGridOffset()
+  local renderEntityService = self._world:GetService("RenderEntity")
   if bUp then
     renderEntityService:DestroyMonsterAreaOutLineEntity(targetEntity)
   else
     renderEntityService:CreateMonsterAreaOutlineEntity(targetEntity)
   end
-  local area = (targetEntity:BodyArea()):GetArea()
-  for i,p in ipairs(area) do
+  local area = targetEntity:BodyArea():GetArea()
+  for i, p in ipairs(area) do
     local posWork = workPos + p
-    if posWork.x == (math.floor)(posWork.x) and posWork.y == (math.floor)(posWork.y) then
+    if posWork.x == math.floor(posWork.x) and posWork.y == math.floor(posWork.y) then
       if bUp then
         sPiece:SetPieceAnimUp(posWork)
         if not isAI then
@@ -700,198 +566,151 @@ BoardServiceRender.RefreshPiece = function(self, targetEntity, bUp, isAI)
   end
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.GetAllTerrainAbyssAreas = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
+function BoardServiceRender:GetAllTerrainAbyssAreas()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
   local eTraps = group:GetEntities()
   local areaList = {}
-  for k,entity in pairs(eTraps) do
+  for k, entity in pairs(eTraps) do
     local trapComponent = entity:Trap()
     if trapComponent:GetTrapType() == TrapType.TerrainAbyss then
       local areaCmpt = entity:BodyArea()
       local areas = areaCmpt:GetArea()
       local basePos = entity:GetGridPosition()
-      for i,offSet in ipairs(areas) do
+      for i, offSet in ipairs(areas) do
         local area = Vector2(basePos.x + offSet.x, basePos.y + offSet.y)
-        ;
-        (table.insert)(areaList, area)
+        table.insert(areaList, area)
       end
     end
   end
   return areaList
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.CreateGridFakeEntity = function(self, pieceType, piecePos, pieceEffectType)
-  -- function num : 0_37 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function BoardServiceRender:CreateGridFakeEntity(pieceType, piecePos, pieceEffectType)
+  local sEntity = self._world:GetService("RenderEntity")
   local gridEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.GridFake)
-  do
-    if pieceEffectType then
-      local pieceFakeComponent = gridEntity:PieceFake()
-      pieceFakeComponent:SetRenderPieceEffectType(pieceEffectType)
-    end
-    local pieceService = (self._world):GetService("Piece")
-    pieceService:SetPieceFakeEntityPieceType(gridEntity, pieceType)
-    gridEntity:SetGridPosition(piecePos)
-    gridEntity:SetPosition(piecePos)
-    gridEntity:RemoveOutsideRegion()
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
-    local renderBoardSpliceComponent = renderBoardEntity:RenderBoardSplice()
-    renderBoardSpliceComponent:SetGridRenderEntityData(piecePos, gridEntity)
-    ;
-    (Log.debug)("CreateGridFakeEntity gridPos=", (Vector2.Pos2Index)(piecePos), " pieceType=", pieceType)
-    return gridEntity
+  if pieceEffectType then
+    local pieceFakeComponent = gridEntity:PieceFake()
+    pieceFakeComponent:SetRenderPieceEffectType(pieceEffectType)
   end
+  local pieceService = self._world:GetService("Piece")
+  pieceService:SetPieceFakeEntityPieceType(gridEntity, pieceType)
+  gridEntity:SetGridPosition(piecePos)
+  gridEntity:SetPosition(piecePos)
+  gridEntity:RemoveOutsideRegion()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local renderBoardSpliceComponent = renderBoardEntity:RenderBoardSplice()
+  renderBoardSpliceComponent:SetGridRenderEntityData(piecePos, gridEntity)
+  Log.debug("CreateGridFakeEntity gridPos=", Vector2.Pos2Index(piecePos), " pieceType=", pieceType)
+  return gridEntity
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.InitBaseGridRenderPos = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function BoardServiceRender:InitBaseGridRenderPos()
   local renderPos = BattleConst.BaseGridRenderPos
   local themeCfg = self:_GetGridConfig()
   if themeCfg then
     if themeCfg.BaseGridRenderPos then
-      renderPos = Vector3((themeCfg.BaseGridRenderPos)[1], (themeCfg.BaseGridRenderPos)[2], (themeCfg.BaseGridRenderPos)[3])
+      renderPos = Vector3(themeCfg.BaseGridRenderPos[1], themeCfg.BaseGridRenderPos[2], themeCfg.BaseGridRenderPos[3])
     else
       renderPos = BattleConst.BaseGridRenderPos
     end
   end
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   if renderBoardEntity then
     local renderBoardCmpt = renderBoardEntity:RenderBoard()
     renderBoardCmpt:SetBaseGridRenderPos(renderPos)
   end
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.GetBaseGridRenderPos = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function BoardServiceRender:GetBaseGridRenderPos()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   if renderBoardEntity then
     local renderBoardCmpt = renderBoardEntity:RenderBoard()
     return renderBoardCmpt:GetBaseGridRenderPos()
   else
-    do
-      do return BattleConst.BaseGridRenderPos end
-    end
+    return BattleConst.BaseGridRenderPos
   end
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.SetBaseGridRenderPos = function(self, renderPos)
-  -- function num : 0_40
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function BoardServiceRender:SetBaseGridRenderPos(renderPos)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   if renderBoardEntity then
     local renderBoardCmpt = renderBoardEntity:RenderBoard()
     renderBoardCmpt:SetBaseGridRenderPos(renderPos)
   end
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.ModifyGridEntity = function(self, modifyEntity, gridPos, pieceType)
-  -- function num : 0_41
-  local pieceService = (self._world):GetService("Piece")
+function BoardServiceRender:ModifyGridEntity(modifyEntity, gridPos, pieceType)
+  local pieceService = self._world:GetService("Piece")
   pieceService:SetPieceEntityPieceType(modifyEntity, pieceType)
   modifyEntity:SetGridPosition(gridPos)
   modifyEntity:SetPosition(gridPos)
   return modifyEntity
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.CreatePushBoardGridFakeEntity = function(self, pieceType, piecePos, isHide)
-  -- function num : 0_42 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function BoardServiceRender:CreatePushBoardGridFakeEntity(pieceType, piecePos, isHide)
+  local sEntity = self._world:GetService("RenderEntity")
   local gridEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.GridFake)
-  local pieceService = (self._world):GetService("Piece")
+  local pieceService = self._world:GetService("Piece")
   pieceService:SetPieceFakeEntityPieceType(gridEntity, pieceType)
   gridEntity:SetGridPosition(piecePos)
   gridEntity:SetPosition(piecePos)
   gridEntity:RemoveOutsideRegion()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardPushComponent = renderBoardEntity:RenderBoardPush()
   renderBoardPushComponent:SetGridRenderEntityData(piecePos, gridEntity)
-  local pieceService = (self._world):GetService("Piece")
+  local pieceService = self._world:GetService("Piece")
   pieceService:SetPieceFakeEntityAnimDark(gridEntity)
-  ;
-  (Log.debug)("CreatePushBoardGridFakeEntity gridPos=", (Vector2.Pos2Index)(piecePos), " pieceType=", pieceType)
+  Log.debug("CreatePushBoardGridFakeEntity gridPos=", Vector2.Pos2Index(piecePos), " pieceType=", pieceType)
   return gridEntity
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender.CalcConnectPiecesMoye = function(self, chainPath, pieceType, skillConfigData)
-  -- function num : 0_43 , upvalues : _ENV
+function BoardServiceRender:CalcConnectPiecesMoye(chainPath, pieceType, skillConfigData)
   if #chainPath <= 0 or pieceType == PieceType.None then
     return {}
   end
   local endPos = chainPath[#chainPath]
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local pieces = env:GetAllPieceType()
   local conn = {}
-  for x,v in pairs(pieces) do
+  for x, v in pairs(pieces) do
     conn[x] = {}
   end
   local connect_pieces = {}
-  ;
-  (table.insert)(connect_pieces, endPos)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (conn[endPos.x])[endPos.y] = true
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local search9 = function(center, next)
-    -- function num : 0_43_0 , upvalues : _ENV, utilDataSvc, env, pieceType, self, skillConfigData, conn, connect_pieces
+  table.insert(connect_pieces, endPos)
+  conn[endPos.x][endPos.y] = true
+  local utilDataSvc = self._world:GetService("UtilData")
+  
+  local function search9(center, next)
     for i = -1, 1 do
       for j = -1, 1 do
         local pos = Vector2(center.x + i, center.y + j)
         if utilDataSvc:IsValidPiecePos(pos) then
           local piece_type = env:GetPieceType(pos)
-          if not CanMatchPieceType(pieceType, piece_type) then
-            local pieceMatch = self:_TrapCheck(utilDataSvc, pos, skillConfigData)
-          end
-          if not (conn[pos.x])[pos.y] and pieceMatch then
-            (table.insert)(connect_pieces, pos)
-            -- DECOMPILER ERROR at PC52: Confused about usage of register: R13 in 'UnsetPending'
-
-            ;
-            (conn[pos.x])[pos.y] = true
+          local pieceMatch = CanMatchPieceType(pieceType, piece_type) or self:_TrapCheck(utilDataSvc, pos, skillConfigData)
+          if not conn[pos.x][pos.y] and pieceMatch then
+            table.insert(connect_pieces, pos)
+            conn[pos.x][pos.y] = true
             next(pos, next)
           end
         end
       end
     end
   end
-
+  
   search9(endPos, search9)
   return connect_pieces
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R2 in 'UnsetPending'
-
-BoardServiceRender._TrapCheck = function(self, utilDataSvc, gridPos, skillConfigData)
-  -- function num : 0_44 , upvalues : _ENV
-  local vaildTrapIDs = (skillConfigData._pickUpParam).trapIdList
-  if vaildTrapIDs and #vaildTrapIDs > 0 then
+function BoardServiceRender:_TrapCheck(utilDataSvc, gridPos, skillConfigData)
+  local vaildTrapIDs = skillConfigData._pickUpParam.trapIdList
+  if vaildTrapIDs and 0 < #vaildTrapIDs then
     local traps = utilDataSvc:GetTrapsAtPos(gridPos)
-    for _,trap in pairs(traps) do
-      local trapId = (trap:TrapRender()):GetTrapID()
-      if (table.icontains)(vaildTrapIDs, trapId) then
+    for _, trap in pairs(traps) do
+      local trapId = trap:TrapRender():GetTrapID()
+      if table.icontains(vaildTrapIDs, trapId) then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
-
-

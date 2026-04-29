@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_guide_lock_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicGuideLockRoundCount", BuffLogicBase)
 BuffLogicGuideLockRoundCount = BuffLogicGuideLockRoundCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicGuideLockRoundCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicGuideLockRoundCount:Constructor(buffInstance, logicParam)
   self._lockRound = logicParam.lockRound
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicGuideLockRoundCount.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("GuideLockRoundCount", self._lockRound)
+function BuffLogicGuideLockRoundCount:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("GuideLockRoundCount", self._lockRound)
   return true
 end
-
-

@@ -1,22 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/task_token.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TaskToken", Object)
 TaskToken = TaskToken
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TaskToken.Constructor = function(self)
-  -- function num : 0_0
+function TaskToken:Constructor()
 end
 
 _class("StoppableTaskToken", TaskToken)
 StoppableTaskToken = StoppableTaskToken
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-StoppableTaskToken.Constructor = function(self)
-  -- function num : 0_1
+function StoppableTaskToken:Constructor()
 end
-
-

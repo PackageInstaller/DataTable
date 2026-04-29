@@ -1,49 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recommend_new/ui_shop_recommend_two.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopRecommendTwo", UICustomWidget)
 UIShopRecommendTwo = UIShopRecommendTwo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopRecommendTwo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._idx2pos = {[1] = Vector2(38, 22), [2] = Vector2(-200, -33)}
+function UIShopRecommendTwo:OnShow()
+  self._idx2pos = {
+    [1] = Vector2(38, 22),
+    [2] = Vector2(-200, -33)
+  }
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendTwo.SetData = function(self, data)
-  -- function num : 0_1
+function UIShopRecommendTwo:SetData(data)
   self.data = data
-  local len = #(self.data).list
-  if len > 2 then
+  local len = #self.data.list
+  if 2 < len then
     len = 2
   end
-  ;
-  (self._pool):SpawnObjects("UIShopRecommendTwoItem", len)
-  local pools = (self._pool):GetAllSpawnList()
+  self._pool:SpawnObjects("UIShopRecommendTwoItem", len)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, len do
     local item = pools[i]
-    local pos = (self._idx2pos)[i]
+    local pos = self._idx2pos[i]
     item:SetData(i, self.data, pos, self.callback)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendTwo.SetCallback = function(self, callback)
-  -- function num : 0_2
+function UIShopRecommendTwo:SetCallback(callback)
   self.callback = callback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRecommendTwo.GetComponents = function(self)
-  -- function num : 0_3
+function UIShopRecommendTwo:GetComponents()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
 end
-
-

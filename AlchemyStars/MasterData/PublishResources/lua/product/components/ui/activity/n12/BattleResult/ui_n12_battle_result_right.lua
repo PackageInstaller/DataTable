@@ -1,84 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/BattleResult/ui_n12_battle_result_right.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12BattleResultRight", UICustomWidget)
 UIN12BattleResultRight = UIN12BattleResultRight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12BattleResultRight.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12BattleResultRight:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleResultRight.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12BattleResultRight:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleResultRight._GetComponent = function(self)
-  -- function num : 0_2
+function UIN12BattleResultRight:_GetComponent()
   self._leftValue = self:GetUIComponent("UILocalizationText", "LeftValue")
   self._rightValue = self:GetUIComponent("UILocalizationText", "RightValue")
   self._arrowRect = self:GetUIComponent("RectTransform", "Arrow")
   self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12BattleResultRight.SetData = function(self, isWin)
-  -- function num : 0_3 , upvalues : _ENV
-  local localProcess = (self._campaignModule):GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N12)
+function UIN12BattleResultRight:SetData(isWin)
+  local localProcess = self._campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N12)
   local leftScore = localProcess:GetCurScore()
   if not isWin then
     leftScore = 0
   end
-  local curLevelIndex = (N12ToolFunctions.GetLocalDBInt)(N12OperationRecordKey.HardLevelIndex, 1)
+  local curLevelIndex = N12ToolFunctions.GetLocalDBInt(N12OperationRecordKey.HardLevelIndex, 1)
   local rightScore = localProcess:GetRecordScore(curLevelIndex)
-  ;
-  (self._leftValue):SetText(leftScore)
-  ;
-  (self._rightValue):SetText(rightScore)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
+  self._leftValue:SetText(leftScore)
+  self._rightValue:SetText(rightScore)
   if leftScore < rightScore then
-    (self._arrowRect).localRotation = (Quaternion.Euler)(0, -180, 0)
+    self._arrowRect.localRotation = Quaternion.Euler(0, -180, 0)
   end
   local oldMaxScore = rightScore
   local newMaxScore = localProcess:GetRecordScore(curLevelIndex)
   self:Lock("ShowChallengeTaskRewards")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, rightScore, leftScore, self, curLevelIndex, newMaxScore, oldMaxScore
     YIELD(TT, 2000)
-    if leftScore < rightScore then
-      (self._animation):Play("uieff_N12_Result_Right")
+    if rightScore > leftScore then
+      self._animation:Play("uieff_N12_Result_Right")
     else
-      ;
-      (self._animation):Play("uieff_N12_Result_Left")
+      self._animation:Play("uieff_N12_Result_Left")
     end
     local key = N12OperationRecordKey.ShowChallengeTaskRewards .. curLevelIndex
-    if oldMaxScore < newMaxScore then
-      (N12ToolFunctions.SetLocalDBInt)(key, 1)
-      ;
-      (N12ToolFunctions.SetLocalDBInt)(N12OperationRecordKey.OldMaxScore, oldMaxScore)
-      ;
-      (N12ToolFunctions.SetLocalDBInt)(N12OperationRecordKey.NewMaxScore, newMaxScore)
+    if newMaxScore > oldMaxScore then
+      N12ToolFunctions.SetLocalDBInt(key, 1)
+      N12ToolFunctions.SetLocalDBInt(N12OperationRecordKey.OldMaxScore, oldMaxScore)
+      N12ToolFunctions.SetLocalDBInt(N12OperationRecordKey.NewMaxScore, newMaxScore)
     else
-      ;
-      (N12ToolFunctions.SetLocalDBInt)(key, 0)
-      ;
-      (N12ToolFunctions.SetLocalDBInt)(N12OperationRecordKey.OldMaxScore, 0)
-      ;
-      (N12ToolFunctions.SetLocalDBInt)(N12OperationRecordKey.NewMaxScore, 0)
+      N12ToolFunctions.SetLocalDBInt(key, 0)
+      N12ToolFunctions.SetLocalDBInt(N12OperationRecordKey.OldMaxScore, 0)
+      N12ToolFunctions.SetLocalDBInt(N12OperationRecordKey.NewMaxScore, 0)
     end
     self:UnLock("ShowChallengeTaskRewards")
-  end
-)
+  end)
 end
-
-

@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/components/logic_extensions/entity_command/operation_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AxisOperationCommand", IEntityCommand)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-AxisOperationCommand.Constructor = function(self)
-  -- function num : 0_0
+function AxisOperationCommand:Constructor()
   self.CommandType = "AxisOperation"
   self.AxisX = 0
   self.AxisY = 0
 end
-
-

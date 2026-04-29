@@ -1,35 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_reset_round_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionResetRoundCount", AINewNode)
 ActionResetRoundCount = ActionResetRoundCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionResetRoundCount.Constructor = function(self)
-  -- function num : 0_0
+function ActionResetRoundCount:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionResetRoundCount.OnBegin = function(self)
-  -- function num : 0_1
+function ActionResetRoundCount:OnBegin()
   local nLoopLimit = self:GetLogicData(-1)
-  nLoopLimit = (nLoopLimit ~= nil and nLoopLimit > 0) or self:GetRuntimeData("SkillCount") or 1
+  if nil == nLoopLimit or nLoopLimit <= 0 then
+    nLoopLimit = self:GetRuntimeData("SkillCount") or 1
+  end
   self:SetRuntimeData("RoundCount", nLoopLimit)
   self:SetRuntimeData("NextRoundCount", 1)
-  ;
-  (self.m_logicOwn):ReSelectWorkSkill()
+  self.m_logicOwn:ReSelectWorkSkill()
   self:PrintLog("重置回合数")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionResetRoundCount.OnUpdate = function(self, dt)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionResetRoundCount:OnUpdate(dt)
   return AINewNodeStatus.Success
 end
-
-

@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_trap_active_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeTrapActiveSkill", BuffLogicBase)
 BuffLogicChangeTrapActiveSkill = BuffLogicChangeTrapActiveSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeTrapActiveSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeTrapActiveSkill:Constructor(buffInstance, logicParam)
   self._targetSkill = logicParam.targetSkill or 0
   self._changeSkill = logicParam.changeSkill or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeTrapActiveSkill.DoLogic = function(self)
-  -- function num : 0_1
-  local trapEntity = (self._buffInstance):Entity()
+function BuffLogicChangeTrapActiveSkill:DoLogic()
+  local trapEntity = self._buffInstance:Entity()
   if not trapEntity then
-    return 
+    return
   end
   local trapCmpt = trapEntity:Trap()
   local activeSkillID = trapCmpt:GetActiveSkillID()
@@ -30,9 +20,5 @@ BuffLogicChangeTrapActiveSkill.DoLogic = function(self)
       break
     end
   end
-  do
-    trapCmpt:SetActiveSkillID(activeSkillID)
-  end
+  trapCmpt:SetActiveSkillID(activeSkillID)
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/sp_tele_and_sum_trap_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseTeleportAndSummonTrapParam", SkillPhaseParamBase)
 SkillPhaseTeleportAndSummonTrapParam = SkillPhaseTeleportAndSummonTrapParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseTeleportAndSummonTrapParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseTeleportAndSummonTrapParam:Constructor(t)
   self._teleportEffectID = t.teleportEffectID
   self._audioID = t.audioID
   self._audioDelay = t.audioDelay
@@ -23,111 +16,75 @@ SkillPhaseTeleportAndSummonTrapParam.Constructor = function(self, t)
   self._teleportOverTriggerName = t.teleportOverTriggerName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseTeleportAndSummonTrapParam:GetCacheTable()
   local t = {}
   if self._teleportEffectID and self._teleportEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._teleportEffectID]).ResPath, 2})
+    table.insert(t, {
+      Cfg.cfg_effect[self._teleportEffectID].ResPath,
+      2
+    })
   end
-  if self._gridEffectID and self._gridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._gridEffectID]).ResPath, 8})
+  if self._gridEffectID and 0 < self._gridEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._gridEffectID].ResPath,
+      8
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetCacheAudio = function(self)
-  -- function num : 0_2
+function SkillPhaseTeleportAndSummonTrapParam:GetCacheAudio()
   if self._audioID and self._audioID > 0 then
-    return {self._audioID}
+    return {
+      self._audioID
+    }
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetPhaseType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPhaseTeleportAndSummonTrapParam:GetPhaseType()
   return SkillViewPhaseType.TeleportAndSummonTrap
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetTeleportEffectPos = function(self)
-  -- function num : 0_4
+function SkillPhaseTeleportAndSummonTrapParam:GetTeleportEffectPos()
   return self._teleportEffectPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetGridEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseTeleportAndSummonTrapParam:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetGridEffectDelay = function(self)
-  -- function num : 0_6
+function SkillPhaseTeleportAndSummonTrapParam:GetGridEffectDelay()
   return self._gridEffectDelay
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetTeleportWaitTime = function(self)
-  -- function num : 0_7
+function SkillPhaseTeleportAndSummonTrapParam:GetTeleportWaitTime()
   return self._teleportWaitTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetTeleportEffectID = function(self)
-  -- function num : 0_8
+function SkillPhaseTeleportAndSummonTrapParam:GetTeleportEffectID()
   return self._teleportEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetTeleportEffectDelay = function(self)
-  -- function num : 0_9
+function SkillPhaseTeleportAndSummonTrapParam:GetTeleportEffectDelay()
   return self._teleportEffectDelay
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetTeleportAnimList = function(self)
-  -- function num : 0_10
+function SkillPhaseTeleportAndSummonTrapParam:GetTeleportAnimList()
   return self._teleportAnimList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetTeleportOverTriggerName = function(self)
-  -- function num : 0_11
+function SkillPhaseTeleportAndSummonTrapParam:GetTeleportOverTriggerName()
   return self._teleportOverTriggerName
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetAudioID = function(self)
-  -- function num : 0_12
+function SkillPhaseTeleportAndSummonTrapParam:GetAudioID()
   return self._audioID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetAudioDelay = function(self)
-  -- function num : 0_13
+function SkillPhaseTeleportAndSummonTrapParam:GetAudioDelay()
   return self._audioDelay
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTeleportAndSummonTrapParam.GetAudioType = function(self)
-  -- function num : 0_14
+function SkillPhaseTeleportAndSummonTrapParam:GetAudioType()
   return self._audioType
 end
-
-

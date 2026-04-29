@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/global_register/net_caller_register.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _staticClass("NetCallerRegister")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-NetCallerRegister.RegCallers = function(self, callCenter)
-  -- function num : 0_0 , upvalues : _ENV
+function NetCallerRegister:RegCallers(callCenter)
   callCenter:AddCallerLua(NetCallerBulletin, "bulletin")
   callCenter:AddCallerLua(NetCallerGateway, "gateway")
   callCenter:AddCallerLua(NetCallerGame, "game")
@@ -15,5 +8,3 @@ NetCallerRegister.RegCallers = function(self, callCenter)
   callCenter:AddCallerLua(NetCallerRoom, "room")
   callCenter:AddCallerLua(NetCallerGMTool, "gm_proxy")
 end
-
-

@@ -1,33 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/maze/ui_maze_quick_fight_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMazeQuickFightItem", UICustomWidget)
 UIMazeQuickFightItem = UIMazeQuickFightItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMazeQuickFightItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMazeQuickFightItem:OnShow()
   self._trans = self:GetGameObject()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base, UIItemScale.Level1)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base, UIItemScale.Level1)
+  self.uiItem:SetClickCallBack(function()
     self:bgOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeQuickFightItem.SetData = function(self, v, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMazeQuickFightItem:SetData(v, callback)
   if not v then
-    return 
+    return
   end
   self._v = v
   self._callback = callback
@@ -40,33 +26,26 @@ UIMazeQuickFightItem.SetData = function(self, v, callback)
   local itemId = v.id
   if awardType == StageAwardType.First then
     strKey = "str_discovery_first_award"
+  elseif awardType == StageAwardType.Star then
+    strKey = "str_discovery_3star_award"
+  elseif awardType == StageAwardType.Activity then
+    strKey = "str_discovery_activity_award"
+    activityText = "str_item_xianshi"
+  elseif awardType == StageAwardType.HasGen then
+    strKey = "str_discovery_already_collect"
   else
-    if awardType == StageAwardType.Star then
-      strKey = "str_discovery_3star_award"
-    else
-      if awardType == StageAwardType.Activity then
-        strKey = "str_discovery_activity_award"
-        activityText = "str_item_xianshi"
-      else
-        if awardType == StageAwardType.HasGen then
-          strKey = "str_discovery_already_collect"
-        else
-          strKey = "str_discovery_normal_award"
-        end
-      end
-    end
+    strKey = "str_discovery_normal_award"
   end
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, itemId = itemId})
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = itemId
+  })
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeQuickFightItem.bgOnClick = function(self, go)
-  -- function num : 0_2
+function UIMazeQuickFightItem:bgOnClick(go)
   if self._callback then
-    (self._callback)((self._v).id, ((self._trans).transform).position)
+    self._callback(self._v.id, self._trans.transform.position)
   end
 end
-
-

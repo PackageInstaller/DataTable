@@ -1,8 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/str_story.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_story_btn_hide = "非表示", str_story_btn_review = "ログ", str_story_btn_auto = "オート", str_story_btn_skip = "スキップ", str_story_skip_confirm = "ストーリーをスキップしますか？", str_story_skip_affinity_confirm = "このストーリーでは光霊との距離を縮められる可能性があります。\nスキップしますか？（ファイルからストーリーをリプレイできます）", str_story_add_affinity = "光の絆 +{1}"}
+local config = {
+  str_story_btn_hide = "非表示",
+  str_story_btn_review = "ログ",
+  str_story_btn_auto = "オート",
+  str_story_btn_skip = "スキップ",
+  str_story_skip_confirm = "ストーリーをスキップしますか？",
+  str_story_skip_affinity_confirm = "このストーリーでは光霊との距離を縮められる可能性があります。\nスキップしますか？（ファイルからストーリーをリプレイできます）",
+  str_story_add_affinity = "光の絆 +{1}"
+}
 return config
-

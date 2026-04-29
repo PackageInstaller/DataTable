@@ -1,67 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/ui_haute_couture_draw_enter_ani_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawEnterAniPLM", UICustomWidget)
 UIHauteCoutureDrawEnterAniPLM = UIHauteCoutureDrawEnterAniPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawEnterAniPLM.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawEnterAniPLM:Constructor()
   self._clipLength = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawEnterAniPLM.OnShow = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawEnterAniPLM:OnShow()
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawEnterAniPLM.InitWidgets = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHauteCoutureDrawEnterAniPLM:InitWidgets()
   self._eff = self:GetGameObject("eff")
   self._eff2 = self:GetGameObject("eff2")
   self._eff3 = self:GetGameObject("eff3")
   self._eff4 = self:GetGameObject("eff4")
   self._eff5 = self:GetGameObject("eff5")
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._eff).layer = 10
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._eff2).layer = 10
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._eff3).layer = 10
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._eff4).layer = 10
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._eff5).layer = 10
+  self._eff.layer = 10
+  self._eff2.layer = 10
+  self._eff3.layer = 10
+  self._eff4.layer = 10
+  self._eff5.layer = 10
   local aniGo = self:GetGameObject("Animation")
   local animation = aniGo:GetComponent("Animation")
-  local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(animation)
+  local clips = HelperProxy:GetInstance():GetAllAnimationClip(animation)
   if clips and clips.Length > 0 then
     local clip = clips[0]
     self._clipLength = clip.length
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawEnterAniPLM.GetClipLength = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawEnterAniPLM:GetClipLength()
   return self._clipLength
 end
-
-

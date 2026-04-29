@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summon_gift/ui_activity_summon_gift_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivitySummonGiftController", UISideEnterCenterContentBase)
 UIActivitySummonGiftController = UIActivitySummonGiftController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivitySummonGiftController._SetRemainingTime = function(self, widgetName, descId, endTime, customTimeStr)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIActivitySummonGiftController:_SetRemainingTime(widgetName, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
   end
@@ -17,53 +10,38 @@ UIActivitySummonGiftController._SetRemainingTime = function(self, widgetName, de
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftController.DoInit = function(self, params)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivitySummonGiftController:DoInit(params)
   local cfg = self:_GetCfg()
-  if cfg then
-    local isOpen = (UISideEnterItem_FixedTime.CheckOpen)(cfg.BeginTime, cfg.EndTime)
-  end
+  local isOpen = cfg and UISideEnterItem_FixedTime.CheckOpen(cfg.BeginTime, cfg.EndTime)
   if not isOpen then
-    local campaign_module = (GameGlobal.GetModule)(CampaignModule)
+    local campaign_module = GameGlobal.GetModule(CampaignModule)
     campaign_module:CheckErrorCode(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, -1)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftController.DoShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  local gambleModule = (GameGlobal.GetModule)(GambleModule)
+function UIActivitySummonGiftController:DoShow(uiParams)
+  local gambleModule = GameGlobal.GetModule(GambleModule)
   local red = gambleModule:HasFreeDraw_Multi()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, 0, red, "", "_red")
+  UIWidgetHelper.SetNewAndReds(self, 0, red, "", "_red")
   local cfg = self:_GetCfg()
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local endTime = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   self:_SetRemainingTime("_timePool_Main", "", endTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftController._GetCfg = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_main_side_enter)({})
-  for _,v in pairs(cfgs) do
+function UIActivitySummonGiftController:_GetCfg()
+  local cfgs = Cfg.cfg_main_side_enter({})
+  for _, v in pairs(cfgs) do
     if v.MainUI == self:GetName() then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftController._GetPrizePoolId = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local gambleModule = (GameGlobal.GetModule)(GambleModule)
+function UIActivitySummonGiftController:_GetPrizePoolId()
+  local gambleModule = GameGlobal.GetModule(GambleModule)
   local pools = gambleModule:GetPrizePools()
-  for _,pool in ipairs(pools) do
+  for _, pool in ipairs(pools) do
     if pool.mul_remain_free_count > 0 then
       return pool.prize_pool_id
     end
@@ -71,40 +49,23 @@ UIActivitySummonGiftController._GetPrizePoolId = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftController.GotoBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local jumpModule = ((GameGlobal.GetModule)(QuestModule)).uiModule
+function UIActivitySummonGiftController:GotoBtnOnClick(go)
+  local jumpModule = GameGlobal.GetModule(QuestModule).uiModule
   local jumpParams = self:_GetPrizePoolId()
   jumpModule:SetJumpUIData(UIJumpType.UI_JumpDraw, {jumpParams})
   jumpModule:Jump()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftController.DoHide = function(self)
-  -- function num : 0_6
+function UIActivitySummonGiftController:DoHide()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftController.DoDestroy = function(self)
-  -- function num : 0_7
+function UIActivitySummonGiftController:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftController.ShowBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIActivitySummonGiftController:ShowBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivitySummonGiftController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UIActivitySummonGiftController:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

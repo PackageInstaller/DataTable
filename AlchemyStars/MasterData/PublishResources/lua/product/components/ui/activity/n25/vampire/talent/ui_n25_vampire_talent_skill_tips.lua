@@ -1,29 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/talent/ui_n25_vampire_talent_skill_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireTalentSkillTips", UIController)
 UIN25VampireTalentSkillTips = UIN25VampireTalentSkillTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireTalentSkillTips.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireTalentSkillTips:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
+  self.data = self.mCampaign:GetN25Data()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillTips.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self.atc = (self:GetGameObject()):GetComponent(typeof(ATransitionComponent))
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.atc).enabled = true
-  ;
-  (self.atc):PlayEnterAnimation(true)
+function UIN25VampireTalentSkillTips:OnShow(uiParams)
+  self.atc = self:GetGameObject():GetComponent(typeof(ATransitionComponent))
+  self.atc.enabled = true
+  self.atc:PlayEnterAnimation(true)
   self.Icon = self:GetUIComponent("RawImageLoader", "Icon")
   self.txtSkillName = self:GetUIComponent("UILocalizationText", "txtSkillName")
   self.txtSkillLevel = self:GetUIComponent("UILocalizationText", "txtSkillLevel")
@@ -33,95 +19,63 @@ UIN25VampireTalentSkillTips.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillTips.OnHide = function(self)
-  -- function num : 0_2
-  (self.Icon):DestoryLastImage()
+function UIN25VampireTalentSkillTips:OnHide()
+  self.Icon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillTips.Flush = function(self)
-  -- function num : 0_3
-  self.skill = (self.data):GetSkillBySkillId(self.skillId)
-  local icon, name, desc = (self.skill):IconNameDesc()
-  ;
-  (self.Icon):LoadImage(icon)
-  local curLevel, maxLevel = (self.skill):CurMaxLevel()
-  ;
-  (self.txtSkillLevel):SetText(curLevel .. "/" .. maxLevel)
-  ;
-  (self.txtSkillName):SetText(name)
-  ;
-  (self.txtSkillDesc):SetText(desc)
-  local tier = (self.data):GetTierBySkillId(self.skillId)
+function UIN25VampireTalentSkillTips:Flush()
+  self.skill = self.data:GetSkillBySkillId(self.skillId)
+  local icon, name, desc = self.skill:IconNameDesc()
+  self.Icon:LoadImage(icon)
+  local curLevel, maxLevel = self.skill:CurMaxLevel()
+  self.txtSkillLevel:SetText(curLevel .. "/" .. maxLevel)
+  self.txtSkillName:SetText(name)
+  self.txtSkillDesc:SetText(desc)
+  local tier = self.data:GetTierBySkillId(self.skillId)
   if tier:IsLock() then
-    (self.goBtnLearn):SetActive(false)
+    self.goBtnLearn:SetActive(false)
+  elseif self.skill:IsLevelMax() then
+    self.goBtnLearn:SetActive(false)
   else
-    if (self.skill):IsLevelMax() then
-      (self.goBtnLearn):SetActive(false)
-    else
-      ;
-      (self.goBtnLearn):SetActive(true)
-    end
+    self.goBtnLearn:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillTips.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25VampireTalentSkillTips:BgOnClick(go)
   self:PlayAnimClose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillTips.BtnLearnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self.data):GetTalentLeft() <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n25_vampire_talent_not_enough"))
-    return 
+function UIN25VampireTalentSkillTips:BtnLearnOnClick(go)
+  if self.data:GetTalentLeft() <= 0 then
+    ToastManager.ShowToast(StringTable.Get("str_n25_vampire_talent_not_enough"))
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local key = "HandleBloodsuckerResetTalentTree"
     self:Lock(key)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    if not (self.skill):IsActive() then
-      (self.data).skillIdToUnlock = self.skillId
+    if not self.skill:IsActive() then
+      self.data.skillIdToUnlock = self.skillId
     end
-    local row, index = (self.data):GetSkillRowIndexBySkillId(self.skillId)
-    local c = (self.data):GetComponentVampire()
+    local row, index = self.data:GetSkillRowIndexBySkillId(self.skillId)
+    local c = self.data:GetComponentVampire()
     local res = AsyncRequestRes:New()
     c:HandleBloodsuckerUpgradeTalentPoint(TT, res, row, index)
-    if (N25Data.CheckCode)(res) then
+    if N25Data.CheckCode(res) then
       self:PlayAnimClose()
       YIELD(TT, 10)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnVampireTalentSkillTipsClose, self.skillId)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnVampireTalentSkillTipsClose, self.skillId)
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentSkillTips.PlayAnimClose = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25VampireTalentSkillTips:PlayAnimClose()
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
     local key = "UIN25VampireTalentSkillTipsPlayAnimClose"
     self:Lock(key)
-    ;
-    (self.atc):PlayLeaveAnimation(true)
+    self.atc:PlayLeaveAnimation(true)
     YIELD(TT, 140)
     self:UnLock(key)
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

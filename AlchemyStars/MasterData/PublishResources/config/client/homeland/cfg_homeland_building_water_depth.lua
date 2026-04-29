@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/homeland/cfg_homeland_building_water_depth.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1}
 local config = {
-[5254001] = {5254001}
-, 
-[5354001] = {5354001}
-, 
-[5271001] = {5271001}
-, 
-[5233005] = {5233005}
-, 
-[5271002] = {5271002}
+  [5254001] = {5254001},
+  [5354001] = {5354001},
+  [5271001] = {5271001},
+  [5233005] = {5233005},
+  [5271002] = {5271002}
 }
 return config, "ID", key
-

@@ -1,9 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/formula_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-FormulaType = {NormalAttack = 1, MonsterAttack = 2, TrapAttack = 3, ChainAttack = 4, ActiveAttack = 5, FloatingThunder = 6, TrapLightning = 7}
+FormulaType = {
+  NormalAttack = 1,
+  MonsterAttack = 2,
+  TrapAttack = 3,
+  ChainAttack = 4,
+  ActiveAttack = 5,
+  FloatingThunder = 6,
+  TrapLightning = 7
+}
 _enum("FormulaType", FormulaType)
 FormulaType = FormulaType
-

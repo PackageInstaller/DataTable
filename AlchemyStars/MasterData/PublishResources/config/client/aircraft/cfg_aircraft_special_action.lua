@@ -1,62 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/aircraft/cfg_aircraft_special_action.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Type = 2, Params = 3}
+local key = {
+  ID = 1,
+  Type = 2,
+  Params = 3
+}
 local common = {
-{
-[1] = {
-points = {"operate02"}
-}
-}
-, 
-{
-[1] = {
-points = {"operate01"}
-}
-}
-, 
-{
-[1] = {
-points = {"operate01", "operate02"}
-}
-}
+  {
+    [1] = {
+      points = {"operate02"}
+    }
+  },
+  {
+    [1] = {
+      points = {"operate01"}
+    }
+  },
+  {
+    [1] = {
+      points = {"operate01", "operate02"}
+    }
+  }
 }
 local config = {
-[2004001] = {2004001, 1, common[1]}
-, 
-[2004002] = {2004002, 1, common[1]}
-, 
-[2004003] = {2004003, 2, common[1]}
-, 
-[2004004] = {2004004, 2, common[1]}
-, 
-[2004005] = {2004005, 2, common[1]}
-, 
-[2004006] = {2004006, 2, common[1]}
-, 
-[4005001] = {4005001, 2, common[1]}
-, 
-[4005002] = {4005002, 2, common[2]}
-, 
-[4005003] = {4005003, 2, common[2]}
-, 
-[4005004] = {4005004, 2, common[1]}
-, 
-[4005005] = {4005005, 2, common[1]}
-, 
-[4005006] = {4005006, 2, common[1]}
-, 
-[4005007] = {4005007, 2, common[1]}
-, 
-[4005008] = {4005008, 2, common[1]}
-, 
-[4005009] = {4005009, 2, common[1]}
-, 
-[3004001] = {3004001, 2, common[3]}
-, 
-[3004002] = {3004002, 2, common[3]}
+  [2004001] = {
+    2004001,
+    1,
+    common[1]
+  },
+  [2004002] = {
+    2004002,
+    1,
+    common[1]
+  },
+  [2004003] = {
+    2004003,
+    2,
+    common[1]
+  },
+  [2004004] = {
+    2004004,
+    2,
+    common[1]
+  },
+  [2004005] = {
+    2004005,
+    2,
+    common[1]
+  },
+  [2004006] = {
+    2004006,
+    2,
+    common[1]
+  },
+  [4005001] = {
+    4005001,
+    2,
+    common[1]
+  },
+  [4005002] = {
+    4005002,
+    2,
+    common[2]
+  },
+  [4005003] = {
+    4005003,
+    2,
+    common[2]
+  },
+  [4005004] = {
+    4005004,
+    2,
+    common[1]
+  },
+  [4005005] = {
+    4005005,
+    2,
+    common[1]
+  },
+  [4005006] = {
+    4005006,
+    2,
+    common[1]
+  },
+  [4005007] = {
+    4005007,
+    2,
+    common[1]
+  },
+  [4005008] = {
+    4005008,
+    2,
+    common[1]
+  },
+  [4005009] = {
+    4005009,
+    2,
+    common[1]
+  },
+  [3004001] = {
+    3004001,
+    2,
+    common[3]
+  },
+  [3004002] = {
+    3004002,
+    2,
+    common[3]
+  }
 }
 return config, "ID", key
-

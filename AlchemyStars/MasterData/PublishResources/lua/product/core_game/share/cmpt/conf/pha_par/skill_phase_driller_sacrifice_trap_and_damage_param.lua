@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_driller_sacrifice_trap_and_damage_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseDrillerSacrificeTrapAndDamageParam", SkillPhaseParamBase)
 SkillPhaseDrillerSacrificeTrapAndDamageParam = SkillPhaseDrillerSacrificeTrapAndDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseDrillerSacrificeTrapAndDamageParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:Constructor(t)
   self.startAction = t.startAction
   self.startEffectID = t.startEffectID
   self.lineDelayMs = t.lineDelayMs or 600
@@ -24,33 +17,27 @@ SkillPhaseDrillerSacrificeTrapAndDamageParam.Constructor = function(self, t)
   self.trapDieDelayMs = t.trapDieDelayMs or 200
   self.hitAnim = t.hitAnim
   self.hitEffectID = t.hitEffectID
-  local off = (string.split)(t.monsterLineOff, ",")
+  local off = string.split(t.monsterLineOff, ",")
   if off[1] and off[2] and off[3] then
     self.monsterLineOff = Vector3(tonumber(off[1]), tonumber(off[2]), tonumber(off[3]))
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetPhaseType()
   return SkillViewPhaseType.DrillerSacrificeTrapAndDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam._CacheEff = function(self, t, effID, count)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:_CacheEff(t, effID, count)
   local cacheCount = count or 1
   if effID and effID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[effID]).ResPath, cacheCount})
+    table.insert(t, {
+      Cfg.cfg_effect[effID].ResPath,
+      cacheCount
+    })
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetCacheTable = function(self)
-  -- function num : 0_3
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetCacheTable()
   local t = {}
   self:_CacheEff(t, self.startEffectID)
   self:_CacheEff(t, self.mainLineEffectID)
@@ -59,109 +46,62 @@ SkillPhaseDrillerSacrificeTrapAndDamageParam.GetCacheTable = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetStartAction = function(self)
-  -- function num : 0_4
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetStartAction()
   return self.startAction
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetStartEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetStartEffectID()
   return self.startEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetLineDelayMs = function(self)
-  -- function num : 0_6
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetLineDelayMs()
   return self.lineDelayMs
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetMainLineEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetMainLineEffectID()
   return self.mainLineEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetMainLineMonsterBone = function(self)
-  -- function num : 0_8
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetMainLineMonsterBone()
   return self.mainLineMonsterBone
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetMainLinePetBone = function(self)
-  -- function num : 0_9
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetMainLinePetBone()
   return self.mainLinePetBone
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetSubLineEffectID = function(self)
-  -- function num : 0_10
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetSubLineEffectID()
   return self.subLineEffectID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetSubLinePetBone = function(self)
-  -- function num : 0_11
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetSubLinePetBone()
   return self.subLinePetBone
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetSubLineTrapBone = function(self)
-  -- function num : 0_12
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetSubLineTrapBone()
   return self.subLineTrapBone
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetHitDelayMs = function(self)
-  -- function num : 0_13
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetHitDelayMs()
   return self.hitDelayMs
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetHitAnim = function(self)
-  -- function num : 0_14
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetHitAnim()
   return self.hitAnim
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetHitEffectID = function(self)
-  -- function num : 0_15
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetHitEffectID()
   return self.hitEffectID
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetTrapPosEffectID = function(self)
-  -- function num : 0_16
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetTrapPosEffectID()
   return self.trapPosEffectID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetMonsterLineOff = function(self)
-  -- function num : 0_17
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetMonsterLineOff()
   return self.monsterLineOff
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDrillerSacrificeTrapAndDamageParam.GetTrapDieDelayMs = function(self)
-  -- function num : 0_18
+function SkillPhaseDrillerSacrificeTrapAndDamageParam:GetTrapDieDelayMs()
   return self.trapDieDelayMs
 end
-
-

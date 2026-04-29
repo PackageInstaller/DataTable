@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_fight_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFightSkillItem", UICustomWidget)
 UIFightSkillItem = UIFightSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFightSkillItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIFightSkillItem:Constructor()
   self._pstId = 0
   self._skillInfo = nil
   self._index = 1
@@ -18,22 +11,16 @@ UIFightSkillItem.Constructor = function(self)
   self._skillConfigHelper = SkillConfigHelper:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIFightSkillItem:OnShow(uiParams)
   self._rectTransform = self:GetUIComponent("RectTransform", "UIFightSkillItem")
   self._showTipBtnImg = self:GetUIComponent("Image", "showTipBtn")
   self._skillIconRawImageLoader = self:GetUIComponent("RawImageLoader", "skillIcon")
   self._txtSkillDes = self:GetUIComponent("UILocalizedTMP", "txtSkillDes")
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._txtSkillDes).onHrefClick = function(hrefName)
-    -- function num : 0_1_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISkillHrefInfo", hrefName)
+  
+  function self._txtSkillDes.onHrefClick(hrefName)
+    GameGlobal.UIStateManager():ShowDialog("UISkillHrefInfo", hrefName)
   end
-
+  
   self._sv = self:GetUIComponent("ScrollRect", "ScrollView")
   self._skillName = self:GetUIComponent("RollingText", "skillName")
   self._skillTypeName = self:GetUIComponent("UILocalizationText", "skillTypeName")
@@ -42,11 +29,9 @@ UIFightSkillItem.OnShow = function(self, uiParams)
   self._rowPool = self:GetUIComponent("UISelectObjectPath", "chainList")
   self._chain = self:GetGameObject("chainList")
   self._power = self:GetGameObject("powerValueBG")
-  ;
-  (self._chain):SetActive(false)
-  ;
-  (self._power):SetActive(false)
-  self._timer = ((Cfg.cfg_global).skill_chain_time).IntValue
+  self._chain:SetActive(false)
+  self._power:SetActive(false)
+  self._timer = Cfg.cfg_global.skill_chain_time.IntValue
   self._tr = self:GetUIComponent("Transform", "showTipBtn")
   self._btnGo = self:GetGameObject("showTipBtn")
   self._btnTex = self:GetUIComponent("UILocalizationText", "btnTex")
@@ -54,51 +39,37 @@ UIFightSkillItem.OnShow = function(self, uiParams)
   self._activeVar = self:GetUIComponent("UISelectObjectPath", "activeVar")
   self._activeVarGo = self:GetGameObject("activeVar")
   self._flagIconBaseGo = self:GetGameObject("flagIconBaseGo")
-  ;
-  (self._flagIconBaseGo):SetActive(false)
+  self._flagIconBaseGo:SetActive(false)
   self._flagIcon = self:GetUIComponent("RawImageLoader", "flagIcon")
   local activeVarTip = self:GetUIComponent("UISelectObjectPath", "activeVarTip")
   self._activeVarTip = activeVarTip:SpawnObject("UIActiveVarTip")
   self._activeVarTipGo = self:GetGameObject("activeVarTip")
   local sop = self:GetUIComponent("UISelectObjectPath", "preattack")
   sop:SpawnObject("UIPreAttackItem")
-  self.preAttackCell = (sop:GetAllSpawnList())[1]
-  ;
-  (self.preAttackCell):Enable(false)
+  self.preAttackCell = sop:GetAllSpawnList()[1]
+  self.preAttackCell:Enable(false)
   self:AttachEvent(GameEventType.CloseSkillScope, self.CloseSkillScope)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFightSkillItem:OnHide()
   self:DetachEvent(GameEventType.CloseSkillScope, self.CloseSkillScope)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.CloseSkillScope = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  if self._isOpenShow and self._canViewSkillScope then
-    (self._showTipBtnImg).sprite = (self._atlas):GetSprite((self._state2sprite)[2])
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._btnTex).color = (self._state2texColor)[1]
+function UIFightSkillItem:CloseSkillScope()
+  if self._isOpenShow then
+    if self._canViewSkillScope then
+      self._showTipBtnImg.sprite = self._atlas:GetSprite(self._state2sprite[2])
+      self._btnTex.color = self._state2texColor[1]
+    end
+    self._isOpenShow = false
   end
-  self._isOpenShow = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.SetData = function(self, skillInfo, petData, idx, hideTop, equipLv, grade, bbreak)
-  -- function num : 0_4
+function UIFightSkillItem:SetData(skillInfo, petData, idx, hideTop, equipLv, grade, bbreak)
   self._petData = petData
   self._equipLv = equipLv
-  self._pstId = (self._petData):GetPstID()
-  self._petId = (self._petData):GetTemplateID()
+  self._pstId = self._petData:GetPstID()
+  self._petId = self._petData:GetTemplateID()
   self._grade = grade
   if self._grade then
     self._usePetID = self._petId
@@ -107,29 +78,23 @@ UIFightSkillItem.SetData = function(self, skillInfo, petData, idx, hideTop, equi
   end
   self._awaking = bbreak
   if skillInfo == nil then
-    return 
+    return
   end
   self._skillInfo = skillInfo
-  self._skillID = ((self._skillInfo).skillList)[1]
+  self._skillID = self._skillInfo.skillList[1]
   self:SetActiveVar()
   self:RefreshData()
   self:ShowPreAttack()
   self._isOpenShow = false
   if idx then
     if idx == 1 then
-      (self._anim):Play("uieff_HelpPet_Skill1")
-    else
-      if idx == 2 then
-        (self._anim):Play("uieff_HelpPet_Skill2")
-      else
-        if idx == 3 then
-          (self._anim):Play("uieff_HelpPet_Skill3")
-        else
-          if idx == 4 then
-            (self._anim):Play("uieff_HelpPet_Skill4")
-          end
-        end
-      end
+      self._anim:Play("uieff_HelpPet_Skill1")
+    elseif idx == 2 then
+      self._anim:Play("uieff_HelpPet_Skill2")
+    elseif idx == 3 then
+      self._anim:Play("uieff_HelpPet_Skill3")
+    elseif idx == 4 then
+      self._anim:Play("uieff_HelpPet_Skill4")
     end
   end
   if hideTop then
@@ -140,259 +105,190 @@ UIFightSkillItem.SetData = function(self, skillInfo, petData, idx, hideTop, equi
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.RefreshData = function(self)
-  -- function num : 0_5
+function UIFightSkillItem:RefreshData()
   self:CanViewSkillScope()
   self:SetText()
   self:ShowChain()
   self:ShowPower()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.CanViewSkillScope = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function UIFightSkillItem:CanViewSkillScope()
+  local petModule = GameGlobal.GetModule(PetModule)
   self._canViewSkillScope = petModule:CanSkillPreview(self._skillID)
-  ;
-  (self._btnGo):SetActive(self._canViewSkillScope or false)
+  self._btnGo:SetActive(self._canViewSkillScope or false)
   if self._canViewSkillScope then
     if not self._atlas then
       self._atlas = self:GetAsset("UIPetDetail.spriteatlas", LoadType.SpriteAtlas)
     end
-    self._state2sprite = {[1] = "spirit_xiangqing_btn4", [2] = "spirit_xiangqing_btn3"}
-    self._state2texColor = {[1] = Color(1, 1, 1, 1), [2] = Color(0.56862745098039, 0.56862745098039, 0.56862745098039, 1)}
+    self._state2sprite = {
+      [1] = "spirit_xiangqing_btn4",
+      [2] = "spirit_xiangqing_btn3"
+    }
+    self._state2texColor = {
+      [1] = Color(1, 1, 1, 1),
+      [2] = Color(0.5686274509803921, 0.5686274509803921, 0.5686274509803921, 1)
+    }
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.SetActiveVar = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._activeVarGo):SetActive(false)
-  ;
-  (self._activeVarTipGo):SetActive(false)
-  local cfg = nil
+function UIFightSkillItem:SetActiveVar()
+  self._activeVarGo:SetActive(false)
+  self._activeVarTipGo:SetActive(false)
+  local cfg
   cfg = BattleSkillCfg(self._skillID)
   if cfg then
     local skillType = cfg.Type
     if skillType == PetSkillType.SkillType_Active then
-      local activeVar = nil
+      local activeVar
       local activeSkillID = self._skillID
-      local activeVarTab = nil
-      if (self._skillInfo).param then
-        activeVarTab = (self._skillInfo).param
+      local activeVarTab
+      if self._skillInfo.param then
+        activeVarTab = self._skillInfo.param
       else
-        activeVarTab = (self._petData):GetPetVariantActiveSkill()
+        activeVarTab = self._petData:GetPetVariantActiveSkill()
       end
-      if activeVarTab and (table.count)(activeVarTab) > 0 then
+      if activeVarTab and table.count(activeVarTab) > 0 then
         activeVar = activeVarTab[activeSkillID]
       end
-      if activeVar and (table.count)(activeVar) > 0 then
+      if activeVar and table.count(activeVar) > 0 then
         self._activeVarIdx = 1
         self._activeVarTab = {}
-        ;
-        (table.insert)(self._activeVarTab, self._skillID)
-        for index,value in ipairs(activeVar) do
-          (table.insert)(self._activeVarTab, value)
+        table.insert(self._activeVarTab, self._skillID)
+        for index, value in ipairs(activeVar) do
+          table.insert(self._activeVarTab, value)
         end
-        ;
-        (self._activeVarTipGo):SetActive(true)
-        ;
-        (self._activeVarGo):SetActive(true)
-        self._activeVarPool = (self._activeVar):SpawnObject("UIFightSkillActiveVar")
+        self._activeVarTipGo:SetActive(true)
+        self._activeVarGo:SetActive(true)
+        self._activeVarPool = self._activeVar:SpawnObject("UIFightSkillActiveVar")
         local count = #self._activeVarTab
-        ;
-        (self._activeVarPool):SetData(count, self._activeVarIdx, function(idx)
-    -- function num : 0_7_0 , upvalues : self
-    self:ChangeVarIdx(idx)
-  end
-, UIFightSkillActiveVarFromType.Detail)
+        self._activeVarPool:SetData(count, self._activeVarIdx, function(idx)
+          self:ChangeVarIdx(idx)
+        end, UIFightSkillActiveVarFromType.Detail)
       end
-    else
-      do
-        if skillType == PetSkillType.SkillType_ChainSkill then
-          local count = (table.count)((self._skillInfo).skillList)
-          if count > 1 then
-            (self._activeVarGo):SetActive(true)
-            self._activeVarPool = (self._activeVar):SpawnObject("UIFightSkillActiveVar")
-            ;
-            (self._activeVarPool):SetData(count, self._index, function(idx)
-    -- function num : 0_7_1 , upvalues : self
-    self:ChangeVarIdx(idx)
-  end
-, UIFightSkillActiveVarFromType.Detail)
-          end
-        end
+    elseif skillType == PetSkillType.SkillType_ChainSkill then
+      local count = table.count(self._skillInfo.skillList)
+      if 1 < count then
+        self._activeVarGo:SetActive(true)
+        self._activeVarPool = self._activeVar:SpawnObject("UIFightSkillActiveVar")
+        self._activeVarPool:SetData(count, self._index, function(idx)
+          self:ChangeVarIdx(idx)
+        end, UIFightSkillActiveVarFromType.Detail)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.ShowPreAttack = function(self)
-  -- function num : 0_8
+function UIFightSkillItem:ShowPreAttack()
   if self.preAttackCell then
-    (self.preAttackCell):SetData(self._pstId, self._skillID, true, nil, self._usePetID, self._grade, self._awaking)
+    self.preAttackCell:SetData(self._pstId, self._skillID, true, nil, self._usePetID, self._grade, self._awaking)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.showTipBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIFightSkillItem:showTipBtnOnClick(go)
   if self._isOpenShow == false then
     self._isOpenShow = true
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
     if self._canViewSkillScope then
-      (self._showTipBtnImg).sprite = (self._atlas):GetSprite((self._state2sprite)[1])
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._btnTex).color = (self._state2texColor)[2]
+      self._showTipBtnImg.sprite = self._atlas:GetSprite(self._state2sprite[1])
+      self._btnTex.color = self._state2texColor[2]
     end
-    local cfg = (BattleSkillCfg(self._skillID))
-    -- DECOMPILER ERROR at PC21: Overwrote pending register: R3 in 'AssignReg'
-
-    local skillID = .end
+    local cfg = BattleSkillCfg(self._skillID)
+    local skillID
     if cfg.Type ~= PetSkillType.SkillType_ChainSkill then
       skillID = self._skillID
     else
-      skillID = ((self._skillInfo).skillList)[self._index]
+      skillID = self._skillInfo.skillList[self._index]
     end
     self:ShowDialog("UISkillScope", skillID, self._pstId, self._tr, self._petData)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.SetText = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local skillTypeStr, cfg = nil, nil
+function UIFightSkillItem:SetText()
+  local skillTypeStr, cfg
   cfg = BattleSkillCfg(self._skillID)
   if cfg then
     local skillType = cfg.Type
     if skillType == PetSkillType.SkillType_ChainSkill then
       skillTypeStr = "str_pet_config_skill_chain"
-    else
-      if skillType == PetSkillType.SkillType_Active then
-        skillTypeStr = "str_pet_config_skill_major"
-      else
-        if skillType == PetSkillType.SkillType_Passive then
-          skillTypeStr = "str_pet_config_skill_equip"
-        end
-      end
+    elseif skillType == PetSkillType.SkillType_Active then
+      skillTypeStr = "str_pet_config_skill_major"
+    elseif skillType == PetSkillType.SkillType_Passive then
+      skillTypeStr = "str_pet_config_skill_equip"
     end
     if skillType == PetSkillType.SkillType_ChainSkill or skillType == PetSkillType.SkillType_Active then
-      local skillConfigData = (self._skillConfigHelper):GetSkillData(self._skillID)
-      ;
-      (self._skillName):RefreshText((StringTable.Get)(skillConfigData:GetSkillName()))
-      ;
-      (self._skillIconRawImageLoader):LoadImage(skillConfigData:GetSkillIcon())
+      local skillConfigData = self._skillConfigHelper:GetSkillData(self._skillID)
+      self._skillName:RefreshText(StringTable.Get(skillConfigData:GetSkillName()))
+      self._skillIconRawImageLoader:LoadImage(skillConfigData:GetSkillIcon())
       if skillType == PetSkillType.SkillType_Active and self._flagIconBaseGo then
-        local variantSkillFlagCfg = (Cfg.cfg_variant_skill_flag_icon)[self._skillID]
+        local variantSkillFlagCfg = Cfg.cfg_variant_skill_flag_icon[self._skillID]
         if variantSkillFlagCfg then
           local flagIconID = variantSkillFlagCfg.FlagIcon
-          ;
-          (self._flagIconBaseGo):SetActive(true)
-          ;
-          (self._flagIcon):LoadImage(flagIconID)
+          self._flagIconBaseGo:SetActive(true)
+          self._flagIcon:LoadImage(flagIconID)
         else
-          do
-            do
-              ;
-              (self._flagIconBaseGo):SetActive(false)
-              if not self:CheckRefineSkillReplace(self._skillID) then
-                local descForceParam = {}
-                if skillType == PetSkillType.SkillType_Active then
-                  local extraParam = skillConfigData:GetSkillTriggerExtraParam()
-                  if extraParam and extraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes] then
-                    local baseCost = extraParam[SkillTriggerTypeExtraParam.SanValue]
-                    local modCost = extraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes]
-                    local curTimes = 0
-                    local curCost = baseCost + modCost * curTimes
-                    ;
-                    (table.insert)(descForceParam, tostring(curCost))
-                  end
-                end
-                do
-                  do
-                    ;
-                    (self._txtSkillDes):SetText(skillConfigData:GetPetSkillDes(descForceParam))
-                    ;
-                    (self._skillName):RefreshText((StringTable.Get)(cfg.Name))
-                    ;
-                    (self._skillIconRawImageLoader):LoadImage(cfg.Icon)
-                    local equipLv = nil
-                    if self._equipLv then
-                      equipLv = self._equipLv
-                    else
-                      equipLv = (self._petData):GetEquipLv()
-                    end
-                    if equipLv == 0 then
-                      equipLv = 1
-                    end
-                    do
-                      do
-                        if not self:CheckRefineSkillReplace(self._skillID) then
-                          local descStr = (HelperProxy:GetInstance()):GetEquipSkillDesc(cfg.Desc, (self._petData):GetTemplateID(), equipLv, self._skillID)
-                          ;
-                          (self._txtSkillDes):SetText(descStr)
-                        end
-                        ;
-                        (self._skillTypeName):SetText((StringTable.Get)(skillTypeStr))
-                        -- DECOMPILER ERROR at PC174: Confused about usage of register: R3 in 'UnsetPending'
-
-                        if self._sv then
-                          (self._sv).verticalNormalizedPosition = 1
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+          self._flagIconBaseGo:SetActive(false)
         end
       end
+      if not self:CheckRefineSkillReplace(self._skillID) then
+        local descForceParam = {}
+        if skillType == PetSkillType.SkillType_Active then
+          local extraParam = skillConfigData:GetSkillTriggerExtraParam()
+          if extraParam and extraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes] then
+            local baseCost = extraParam[SkillTriggerTypeExtraParam.SanValue]
+            local modCost = extraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes]
+            local curTimes = 0
+            local curCost = baseCost + modCost * curTimes
+            table.insert(descForceParam, tostring(curCost))
+          end
+        end
+        self._txtSkillDes:SetText(skillConfigData:GetPetSkillDes(descForceParam))
+      end
+    else
+      self._skillName:RefreshText(StringTable.Get(cfg.Name))
+      self._skillIconRawImageLoader:LoadImage(cfg.Icon)
+      local equipLv
+      if self._equipLv then
+        equipLv = self._equipLv
+      else
+        equipLv = self._petData:GetEquipLv()
+      end
+      if equipLv == 0 then
+        equipLv = 1
+      end
+      if not self:CheckRefineSkillReplace(self._skillID) then
+        local descStr = HelperProxy:GetInstance():GetEquipSkillDesc(cfg.Desc, self._petData:GetTemplateID(), equipLv, self._skillID)
+        self._txtSkillDes:SetText(descStr)
+      end
     end
+    self._skillTypeName:SetText(StringTable.Get(skillTypeStr))
+  end
+  if self._sv then
+    self._sv.verticalNormalizedPosition = 1
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.ChangeVarIdx = function(self, idx)
-  -- function num : 0_11 , upvalues : _ENV
+function UIFightSkillItem:ChangeVarIdx(idx)
   local cfg = BattleSkillCfg(self._skillID)
   if cfg.Type == PetSkillType.SkillType_ChainSkill then
     self._index = idx
     self:TimerEndCallBack()
   else
-    local skillid = (self._activeVarTab)[idx]
+    local skillid = self._activeVarTab[idx]
     self._skillID = skillid
     self:RefreshData()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.ShowChain = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIFightSkillItem:ShowChain()
   local cfg = BattleSkillCfg(self._skillID)
   if cfg == nil then
-    (Log.error)("BattleSkillCfg no skill:" .. self._skillID)
-    return 
+    Log.error("BattleSkillCfg no skill:" .. self._skillID)
+    return
   end
   if cfg.Type ~= PetSkillType.SkillType_ChainSkill then
-    (self._chain):SetActive(false)
+    self._chain:SetActive(false)
   else
-    ;
-    (self._chain):SetActive(true)
-    self._chaincount = (table.count)((self._skillInfo).skillList)
+    self._chain:SetActive(true)
+    self._chaincount = table.count(self._skillInfo.skillList)
     if self._chaincount > 1 then
       self:InitChainItem(true)
     else
@@ -401,17 +297,11 @@ UIFightSkillItem.ShowChain = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.OnHide = function(self)
-  -- function num : 0_13
+function UIFightSkillItem:OnHide()
   self:Release()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.Release = function(self)
-  -- function num : 0_14
+function UIFightSkillItem:Release()
   self._skillInfo = nil
   self._skillIconRawImageLoader = nil
   self._txtSkillDes = nil
@@ -424,17 +314,14 @@ UIFightSkillItem.Release = function(self)
   self._skillChain = nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.InitChainItem = function(self, isMoreThanOne)
-  -- function num : 0_15
+function UIFightSkillItem:InitChainItem(isMoreThanOne)
   if self._rowPool then
-    (self._rowPool):SpawnObjects("UIChainItem", self._chaincount)
-    local rowList = (self._rowPool):GetAllSpawnList()
+    self._rowPool:SpawnObjects("UIChainItem", self._chaincount)
+    local rowList = self._rowPool:GetAllSpawnList()
     for itemIndex = 1, self._chaincount do
       local chainItem = rowList[itemIndex]
-      if self._chaincount < itemIndex then
-        (chainItem:GetGameObject()):SetActive(false)
+      if itemIndex > self._chaincount then
+        chainItem:GetGameObject():SetActive(false)
       else
         self:_ShowChainItem(chainItem, itemIndex, isMoreThanOne)
       end
@@ -442,77 +329,60 @@ UIFightSkillItem.InitChainItem = function(self, isMoreThanOne)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.UpdateChainItem = function(self, cfg)
-  -- function num : 0_16 , upvalues : _ENV
+function UIFightSkillItem:UpdateChainItem(cfg)
   if self._rowPool then
-    local rowList = (self._rowPool):GetAllSpawnList()
+    local rowList = self._rowPool:GetAllSpawnList()
     for itemIndex = 1, self._chaincount do
       local chainItem = rowList[itemIndex]
       chainItem:HideBright(self._index)
     end
     if self._isOpenShow then
-      local skillID = ((self._skillInfo).skillList)[self._index]
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FlushSkillScope, skillID)
+      local skillID = self._skillInfo.skillList[self._index]
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FlushSkillScope, skillID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem._ShowChainItem = function(self, chainItem, itemIndex, isMoreThanOne)
-  -- function num : 0_17
-  local skillID = ((self._skillInfo).skillList)[itemIndex]
+function UIFightSkillItem:_ShowChainItem(chainItem, itemIndex, isMoreThanOne)
+  local skillID = self._skillInfo.skillList[itemIndex]
   chainItem:SetData(skillID, self._index, itemIndex, isMoreThanOne)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.ShowPower = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local cfg = BattleSkillCfg(((self._skillInfo).skillList)[self._index])
+function UIFightSkillItem:ShowPower()
+  local cfg = BattleSkillCfg(self._skillInfo.skillList[self._index])
   if cfg then
-    (self._power):SetActive(false)
-    if cfg.Type == PetSkillType.SkillType_Active and (UILogicPetHelper.ShowSkillEnergy)(cfg.TriggerType) then
-      (self._power):SetActive(true)
-      ;
-      (self._powerText):SetText((StringTable.Get)("str_pet_config_skill_cold_colon") .. cfg.TriggerParam .. (StringTable.Get)("str_pet_config_skill_turn"))
+    self._power:SetActive(false)
+    if cfg.Type == PetSkillType.SkillType_Active then
+      if UILogicPetHelper.ShowSkillEnergy(cfg.TriggerType) then
+        self._power:SetActive(true)
+        self._powerText:SetText(StringTable.Get("str_pet_config_skill_cold_colon") .. cfg.TriggerParam .. StringTable.Get("str_pet_config_skill_turn"))
+      end
+    elseif cfg.Type == PetSkillType.SkillType_Passive then
     end
-  end
-  if cfg.Type == PetSkillType.SkillType_Passive then
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.TimerEndCallBack = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local cfg = BattleSkillCfg(((self._skillInfo).skillList)[self._index])
+function UIFightSkillItem:TimerEndCallBack()
+  local cfg = BattleSkillCfg(self._skillInfo.skillList[self._index])
   if cfg then
     self:UpdateChainItem(cfg)
-    local skillConfigData = (self._skillConfigHelper):GetSkillData(((self._skillInfo).skillList)[self._index])
-    ;
-    (self._skillName):RefreshText((StringTable.Get)(skillConfigData:GetSkillName()))
-    if not self:CheckRefineSkillReplace(((self._skillInfo).skillList)[self._index]) then
-      (self._txtSkillDes):SetText(skillConfigData:GetPetSkillDes())
+    local skillConfigData = self._skillConfigHelper:GetSkillData(self._skillInfo.skillList[self._index])
+    self._skillName:RefreshText(StringTable.Get(skillConfigData:GetSkillName()))
+    if not self:CheckRefineSkillReplace(self._skillInfo.skillList[self._index]) then
+      self._txtSkillDes:SetText(skillConfigData:GetPetSkillDes())
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFightSkillItem.CheckRefineSkillReplace = function(self, skillId)
-  -- function num : 0_20 , upvalues : _ENV
+function UIFightSkillItem:CheckRefineSkillReplace(skillId)
   if not self._petData or not skillId then
     return false
   end
-  local refineLv = (self._petData):GetEquipRefineLv()
+  local refineLv = self._petData:GetEquipRefineLv()
   if refineLv < 1 then
     return false
   end
-  local refineConfig = (UIPetEquipHelper.GetRefineCfg)((self._petData):GetTemplateID(), refineLv)
+  local refineConfig = UIPetEquipHelper.GetRefineCfg(self._petData:GetTemplateID(), refineLv)
   if not refineConfig then
     return false
   end
@@ -520,17 +390,16 @@ UIFightSkillItem.CheckRefineSkillReplace = function(self, skillId)
   if not replaceData then
     return false
   end
-  local newDesc = nil
-  for k,v in pairs(replaceData) do
+  local newDesc
+  for k, v in pairs(replaceData) do
     newDesc = v[skillId]
-  end
-  do
-    if (newDesc and newDesc ~= "") or newDesc then
-      (self._txtSkillDes):SetText((StringTable.Get)(newDesc))
-      return true
+    if newDesc and newDesc ~= "" then
+      break
     end
-    return false
   end
+  if newDesc then
+    self._txtSkillDes:SetText(StringTable.Get(newDesc))
+    return true
+  end
+  return false
 end
-
-

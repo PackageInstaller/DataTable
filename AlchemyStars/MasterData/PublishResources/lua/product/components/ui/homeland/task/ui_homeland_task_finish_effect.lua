@@ -1,48 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/task/ui_homeland_task_finish_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandTaskFinishEffect", UIController)
 UIHomelandTaskFinishEffect = UIHomelandTaskFinishEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandTaskFinishEffect.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandTaskFinishEffect:OnShow(uiParams)
   self._mainCharacter = self:_GetMainCharacterController()
-  ;
-  (self._mainCharacter):SetForbiddenMove(true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayerControllerUIStatus, false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetMinimapStatus, false)
+  self._mainCharacter:SetForbiddenMove(true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayerControllerUIStatus, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetMinimapStatus, false)
   local id = uiParams[1] or 0
-  self._mcTransform = (self._mainCharacter):Transform()
+  self._mcTransform = self._mainCharacter:Transform()
   self._npcTransform = uiParams[2]
   self._targetPos = uiParams[3]
   self._callback = uiParams[4]
-  self._cfg = (Cfg.cfg_homeland_task_finish_effect)[id]
+  self._cfg = Cfg.cfg_homeland_task_finish_effect[id]
   if not self._cfg then
-    (Log.exception)("UIHomelandTaskFinishEffect_OnShow cfg_homeland_task_finish_effect[", id("] = nil"))
+    Log.exception("UIHomelandTaskFinishEffect_OnShow cfg_homeland_task_finish_effect[", id("] = nil"))
     self:CloseDialog()
-    return 
+    return
   end
   self:_SetDebug()
   self:_Play()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandTaskFinishEffect:OnHide()
   self._effectModel = self:_UnLoadEffect(self._effectModel)
-  self._te = (UIActivityHelper.CancelTimerEvent)(self._te)
+  self._te = UIActivityHelper.CancelTimerEvent(self._te)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._Play = function(self)
-  -- function num : 0_2
+function UIHomelandTaskFinishEffect:_Play()
   self:_NpcRotateMc()
   self:_McRotatePosition()
   self:StartTask(self._Play_McAnimation, self)
@@ -50,85 +34,62 @@ UIHomelandTaskFinishEffect._Play = function(self)
   self:StartTask(self._Close, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._Close = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandTaskFinishEffect:_Close(TT)
   self:Lock("UIHomelandTaskFinishEffect_Close")
-  local t = (self._cfg).CloseTime or 10000
+  local t = self._cfg.CloseTime or 10000
   YIELD(TT, t)
-  ;
-  (self._mainCharacter):SetForbiddenMove(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayerControllerUIStatus, true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetMinimapStatus, true)
+  self._mainCharacter:SetForbiddenMove(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayerControllerUIStatus, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetMinimapStatus, true)
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
   self:CloseDialog()
   self:UnLock("UIHomelandTaskFinishEffect_Close")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._NpcRotateMc = function(self)
-  -- function num : 0_4
-  if (self._cfg).NpcRotateMc and self._npcTransform then
-    self:_Rotate(self._npcTransform, (self._mcTransform).position)
+function UIHomelandTaskFinishEffect:_NpcRotateMc()
+  if self._cfg.NpcRotateMc and self._npcTransform then
+    self:_Rotate(self._npcTransform, self._mcTransform.position)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._McRotatePosition = function(self)
-  -- function num : 0_5
-  if (self._cfg).McRotatePosition and self._targetPos then
+function UIHomelandTaskFinishEffect:_McRotatePosition()
+  if self._cfg.McRotatePosition and self._targetPos then
     self:_Rotate(self._mcTransform, self._targetPos)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._Rotate = function(self, transA, posB)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandTaskFinishEffect:_Rotate(transA, posB)
   local toward = posB - transA.position
   toward.y = 0
-  transA:DORotate(((Quaternion.LookRotation)(toward)).eulerAngles, 0.1)
+  transA:DORotate(Quaternion.LookRotation(toward).eulerAngles, 0.1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._Play_McAnimation = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
-  local name = (self._cfg).McAnimation
-  if not name or (string.isnullorempty)(name) then
-    return 
+function UIHomelandTaskFinishEffect:_Play_McAnimation(TT)
+  local name = self._cfg.McAnimation
+  if not name or string.isnullorempty(name) then
+    return
   end
-  local time1 = ((self._cfg).McAnimationTime)[1]
-  local time2 = ((self._cfg).McAnimationTime)[2]
+  local time1 = self._cfg.McAnimationTime[1]
+  local time2 = self._cfg.McAnimationTime[2]
   local lockName = "UIHomelandTaskFinishEffect_Play_McAnimation"
   self:Lock(lockName)
   YIELD(TT, time1)
-  ;
-  (self._mainCharacter):SetAnimatorBool(name, true)
+  self._mainCharacter:SetAnimatorBool(name, true)
   YIELD(TT, time2)
-  ;
-  (self._mainCharacter):SetAnimatorBool(name, false)
+  self._mainCharacter:SetAnimatorBool(name, false)
   self:UnLock(lockName)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._Play_McEffect = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  local name = (self._cfg).McEffectPrefab
-  if not name or (string.isnullorempty)(name) then
-    return 
+function UIHomelandTaskFinishEffect:_Play_McEffect(TT)
+  local name = self._cfg.McEffectPrefab
+  if not name or string.isnullorempty(name) then
+    return
   end
-  local path = (self._cfg).McEffectAttachPath
-  local time1 = ((self._cfg).McEffectTime)[1]
-  local time2 = ((self._cfg).McEffectTime)[2]
+  local path = self._cfg.McEffectAttachPath
+  local time1 = self._cfg.McEffectTime[1]
+  local time2 = self._cfg.McEffectTime[2]
   local lockName = "UIHomelandTaskFinishEffect_Play_McEffect"
   self:Lock(lockName)
   YIELD(TT, time1)
@@ -138,67 +99,43 @@ UIHomelandTaskFinishEffect._Play_McEffect = function(self, TT)
   self:UnLock(lockName)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._LoadEffect = function(self, effName, attachPath)
-  -- function num : 0_9 , upvalues : _ENV
-  local effectModel = (ResourceManager:GetInstance()):SyncLoadAsset(effName, LoadType.GameObject)
+function UIHomelandTaskFinishEffect:_LoadEffect(effName, attachPath)
+  local effectModel = ResourceManager:GetInstance():SyncLoadAsset(effName, LoadType.GameObject)
   if effectModel then
     local go = effectModel.Obj
     go:SetActive(true)
-    local parent = (self._mcTransform):Find(attachPath)
-    ;
-    (go.transform):SetParent(parent, false)
+    local parent = self._mcTransform:Find(attachPath)
+    go.transform:SetParent(parent, false)
   end
-  do
-    return effectModel
-  end
+  return effectModel
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._UnLoadEffect = function(self, effectModel)
-  -- function num : 0_10
+function UIHomelandTaskFinishEffect:_UnLoadEffect(effectModel)
   if effectModel then
     effectModel:Dispose()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._GetMainCharacterController = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIHomelandTaskFinishEffect:_GetMainCharacterController()
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
-  local characterController = (homelandClient:CharacterManager()):MainCharacterController()
+  local characterController = homelandClient:CharacterManager():MainCharacterController()
   return characterController
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect._SetDebug = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local open = (UIActivityHelper.CheckDebugOpen)()
-  ;
-  (self:GetGameObject("_debug")):SetActive(open)
+function UIHomelandTaskFinishEffect:_SetDebug()
+  local open = UIActivityHelper.CheckDebugOpen()
+  self:GetGameObject("_debug"):SetActive(open)
   if open then
     self._t = 0
-    self._te = (UIActivityHelper.StartTimerEvent)(self._te, function()
-    -- function num : 0_12_0 , upvalues : self, _ENV
-    self._t = self._t + 100
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "txtDebug", self._t)
-  end
-, 100)
+    self._te = UIActivityHelper.StartTimerEvent(self._te, function()
+      self._t = self._t + 100
+      UIWidgetHelper.SetLocalizationText(self, "txtDebug", self._t)
+    end, 100)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandTaskFinishEffect.DebugBtnOnClick = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._te = (UIActivityHelper.CancelTimerEvent)(self._te)
+function UIHomelandTaskFinishEffect:DebugBtnOnClick()
+  self._te = UIActivityHelper.CancelTimerEvent(self._te)
 end
-
-

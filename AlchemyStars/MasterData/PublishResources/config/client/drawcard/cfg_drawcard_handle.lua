@@ -1,33 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/drawcard/cfg_drawcard_handle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Rates = 2, Parts = 3}
+local key = {
+  ID = 1,
+  Rates = 2,
+  Parts = 3
+}
 local config = {
-{1, 
-{70}
-, 
-{1}
-}
-, 
-{2, 
-{70, 60}
-, 
-{0.3, 1}
-}
-, 
-{3, 
-{70, 60, 50}
-, 
-{0.2, 0.5, 1}
-}
-, 
-{4, 
-{70, 60, 50, 40}
-, 
-{0.1, 0.3, 0.7, 1}
-}
+  {
+    1,
+    {70},
+    {1}
+  },
+  {
+    2,
+    {70, 60},
+    {0.3, 1}
+  },
+  {
+    3,
+    {
+      70,
+      60,
+      50
+    },
+    {
+      0.2,
+      0.5,
+      1
+    }
+  },
+  {
+    4,
+    {
+      70,
+      60,
+      50,
+      40
+    },
+    {
+      0.1,
+      0.3,
+      0.7,
+      1
+    }
+  }
 }
 return config, "ID", key
-

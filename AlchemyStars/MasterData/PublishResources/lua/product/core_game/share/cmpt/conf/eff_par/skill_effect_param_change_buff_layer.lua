@@ -1,109 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_change_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamChangeBuffLayer", SkillEffectParamBase)
 SkillEffectParamChangeBuffLayer = SkillEffectParamChangeBuffLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamChangeBuffLayer.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamChangeBuffLayer:Constructor(t)
   self._buffID = t.buffID
   self._buffEffectType = t.buffEffectType
   self._checkDamageEffectResultWithStageIndex = t.checkDamageEffectResultWithStageIndex or 1
-  if not t.buffTargetType then
-    self._buffTargetType = BuffTargetType.SkillTarget
-    self._buffTargetParam = t.buffTargetParam
-    self._addToNonMissDamageTarget = t.addToNonMissDamageTarget
-    if not t.changeBuffLayerType then
-      self._changeBuffLayerType = BuffTargetType.Count
-      self._changeBuffLayerParam = t.changeBuffLayerParam
-      self._unloadZeroLayer = t.unloadZeroLayer or 0
-      self._needPickUpDir = t.needPickUpDir or 0
-    end
-  end
+  self._buffTargetType = t.buffTargetType or BuffTargetType.SkillTarget
+  self._buffTargetParam = t.buffTargetParam
+  self._addToNonMissDamageTarget = t.addToNonMissDamageTarget
+  self._changeBuffLayerType = t.changeBuffLayerType or BuffTargetType.Count
+  self._changeBuffLayerParam = t.changeBuffLayerParam
+  self._unloadZeroLayer = t.unloadZeroLayer or 0
+  self._needPickUpDir = t.needPickUpDir or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamChangeBuffLayer:GetEffectType()
   return SkillEffectType.ChangeBuffLayer
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.GetCheckDamageEffectResultWithStageIndex = function(self)
-  -- function num : 0_2
+function SkillEffectParamChangeBuffLayer:GetCheckDamageEffectResultWithStageIndex()
   return self._checkDamageEffectResultWithStageIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.GetBuffID = function(self)
-  -- function num : 0_3
+function SkillEffectParamChangeBuffLayer:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.GetBuffEffectType = function(self)
-  -- function num : 0_4
+function SkillEffectParamChangeBuffLayer:GetBuffEffectType()
   return self._buffEffectType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.GetBuffTargetType = function(self)
-  -- function num : 0_5
+function SkillEffectParamChangeBuffLayer:GetBuffTargetType()
   return self._buffTargetType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.GetBuffTargetParam = function(self)
-  -- function num : 0_6
+function SkillEffectParamChangeBuffLayer:GetBuffTargetParam()
   return self._buffTargetParam
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.CanAddToNonMissDamageTarget = function(self)
-  -- function num : 0_7
+function SkillEffectParamChangeBuffLayer:CanAddToNonMissDamageTarget()
   return self._addToNonMissDamageTarget
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.GetChangeBuffLayerType = function(self)
-  -- function num : 0_8
+function SkillEffectParamChangeBuffLayer:GetChangeBuffLayerType()
   return self._changeBuffLayerType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.GetChangeBuffLayerParam = function(self)
-  -- function num : 0_9
+function SkillEffectParamChangeBuffLayer:GetChangeBuffLayerParam()
   return self._changeBuffLayerParam
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.GetUnloadZeroLayer = function(self)
-  -- function num : 0_10
+function SkillEffectParamChangeBuffLayer:GetUnloadZeroLayer()
   return self._unloadZeroLayer
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeBuffLayer.IsNeedPickUpDir = function(self)
-  -- function num : 0_11
-  do return self._needPickUpDir == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillEffectParamChangeBuffLayer:IsNeedPickUpDir()
+  return self._needPickUpDir == 1
 end
 
-ChangeBuffLayerType = {Percent = 1, Count = 2, Prob = 3}
+ChangeBuffLayerType = {
+  Percent = 1,
+  Count = 2,
+  Prob = 3
+}
 _enum("ChangeBuffLayerType", ChangeBuffLayerType)
-

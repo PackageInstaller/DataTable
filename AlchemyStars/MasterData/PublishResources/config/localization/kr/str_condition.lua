@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/str_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_condition_312 = "오로리안 각성{1} Lv.{2} 달성", str_condition_313 = "오로리안 돌파{1} 달성", str_condition_314 = "오로리안 호감도{1} 달성", str_condition_318 = "오로리안 장비 레벨 {1} 달성"}
+local config = {
+  str_condition_312 = "오로리안 각성{1} Lv.{2} 달성",
+  str_condition_313 = "오로리안 돌파{1} 달성",
+  str_condition_314 = "오로리안 호감도{1} 달성",
+  str_condition_318 = "오로리안 장비 레벨 {1} 달성"
+}
 return config
-

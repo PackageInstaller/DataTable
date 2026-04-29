@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/input/season_input_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonInputManager", Object)
 SeasonInputManager = SeasonInputManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonInputManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonInputManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputManager.OnInit = function(self, seasonID)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonInputManager:OnInit(seasonID)
   if EDITOR or IsPc() then
     self._seasonInput = SeasonInputPc:New(seasonID)
   else
@@ -22,47 +12,27 @@ SeasonInputManager.OnInit = function(self, seasonID)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputManager.Update = function(self, deltaTime)
-  -- function num : 0_2
-  (self._seasonInput):Update(deltaTime)
+function SeasonInputManager:Update(deltaTime)
+  self._seasonInput:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputManager.Dispose = function(self)
-  -- function num : 0_3
-  (self._seasonInput):Dispose()
+function SeasonInputManager:Dispose()
+  self._seasonInput:Dispose()
   self._seasonInput = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputManager.GetInput = function(self)
-  -- function num : 0_4
+function SeasonInputManager:GetInput()
   return self._seasonInput
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputManager.GetClickUnLockZone = function(self)
-  -- function num : 0_5
-  return (self._seasonInput):GetClickUnLockZone()
+function SeasonInputManager:GetClickUnLockZone()
+  return self._seasonInput:GetClickUnLockZone()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputManager.GetClickZoneID = function(self)
-  -- function num : 0_6
-  return (self._seasonInput):GetClickZoneID()
+function SeasonInputManager:GetClickZoneID()
+  return self._seasonInput:GetClickZoneID()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonInputManager.SetClickZoneID = function(self, zoneId)
-  -- function num : 0_7
-  return (self._seasonInput):SetClickZoneID(zoneId)
+function SeasonInputManager:SetClickZoneID(zoneId)
+  return self._seasonInput:SetClickZoneID(zoneId)
 end
-
-

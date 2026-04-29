@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelDetail", UIController)
 UITrailLevelDetail = UITrailLevelDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelDetail.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._talePetModule = (GameGlobal.GetModule)(TalePetModule)
-  ;
-  (self._talePetModule):RequestServerFormationList(TT)
-  local ctx = (self:GetModule(MissionModule)):TeamCtx()
-  ctx:InitTrailTeam((self._talePetModule):GetFormationList())
+function UITrailLevelDetail:LoadDataOnEnter(TT, res, uiParams)
+  self._talePetModule = GameGlobal.GetModule(TalePetModule)
+  self._talePetModule:RequestServerFormationList(TT)
+  local ctx = self:GetModule(MissionModule):TeamCtx()
+  ctx:InitTrailTeam(self._talePetModule:GetFormationList())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UITrailLevelDetail:OnShow(uiParams)
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
   local levelId = uiParams[1]
-  local talePetCfg = (Cfg.cfg_tale_pet)({PracticeLevelId = levelId})
-  if talePetCfg then
-    local cfg = talePetCfg[1]
-  end
+  local talePetCfg = Cfg.cfg_tale_pet({PracticeLevelId = levelId})
+  local cfg = talePetCfg and talePetCfg[1]
   if cfg then
     self:_InitTabBtnsInfo()
     self:_SetTabBtns()
@@ -34,261 +21,190 @@ UITrailLevelDetail.OnShow = function(self, uiParams)
   self:_Refresh(levelId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITrailLevelDetail:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail._Refresh = function(self, levelId)
-  -- function num : 0_3 , upvalues : _ENV
+function UITrailLevelDetail:_Refresh(levelId)
   self._levelId = levelId
   self._levelBg1Img = self:GetUIComponent("RawImageLoader", "LevelBg1")
   self._levelBgGo = self:GetGameObject("LevelPanel")
   self._pet1Img = self:GetUIComponent("RawImageLoader", "Pet1")
   self._pet1Go = self:GetGameObject("Pet1")
-  ;
-  (self._pet1Go):SetActive(false)
+  self._pet1Go:SetActive(false)
   self._pet2Img = self:GetUIComponent("RawImageLoader", "Pet2")
   self._petGo = self:GetGameObject("PetPanel")
   self._enemyMsg = self:GetUIComponent("UISelectObjectPath", "enemyMsg")
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
-  local enemy = (self._enemyMsg):SpawnObject("UIEnemyMsg")
+  local enemy = self._enemyMsg:SpawnObject("UIEnemyMsg")
   self._monsterNameLabel = self:GetUIComponent("UILocalizationText", "MonsterName")
   self._levelStatusGo = self:GetGameObject("LevelStatus")
   self._btnPlot = self:GetGameObject("BtnPlot")
   self._mask = self:GetGameObject("Mask")
-  ;
-  (self._mask):SetActive(false)
-  local cfg = (Cfg.cfg_tale_stage)[self._levelId]
+  self._mask:SetActive(false)
+  local cfg = Cfg.cfg_tale_stage[self._levelId]
   enemy:SetData(cfg.FightLevelid)
   self:InitAwards(cfg.FirstDropId)
   if cfg.Type == 1 then
-    (self._levelBgGo):SetActive(false)
-    ;
-    (self._petGo):SetActive(true)
-    ;
-    (self._pet2Img):LoadImage(cfg.LevelBg)
+    self._levelBgGo:SetActive(false)
+    self._petGo:SetActive(true)
+    self._pet2Img:LoadImage(cfg.LevelBg)
   else
-    ;
-    (self._levelBgGo):SetActive(true)
-    ;
-    (self._petGo):SetActive(false)
-    ;
-    (self._levelBg1Img):LoadImage(cfg.LevelBg)
-    -- DECOMPILER ERROR at PC113: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._monsterNameLabel).text = (StringTable.Get)(cfg.MonsterName)
-    ;
-    (self._levelStatusGo):SetActive((self._talePetModule):HasCompletLevel(self._levelId))
+    self._levelBgGo:SetActive(true)
+    self._petGo:SetActive(false)
+    self._levelBg1Img:LoadImage(cfg.LevelBg)
+    self._monsterNameLabel.text = StringTable.Get(cfg.MonsterName)
+    self._levelStatusGo:SetActive(self._talePetModule:HasCompletLevel(self._levelId))
   end
   self:RefreshPlotBtnStatus()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.RefreshPlotBtnStatus = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (self._talePetModule):HasCompletLevel(self._levelId) then
-    (self._btnPlot):SetActive(false)
-    return 
+function UITrailLevelDetail:RefreshPlotBtnStatus()
+  if not self._talePetModule:HasCompletLevel(self._levelId) then
+    self._btnPlot:SetActive(false)
+    return
   end
-  local mission = (GameGlobal.GetModule)(MissionModule)
+  local mission = GameGlobal.GetModule(MissionModule)
   local afterFightStory = mission:GetStoryByStageIdStoryType(self._levelId, StoryTriggerType.AfterFight)
   local beforeFightStory = mission:GetStoryByStageIdStoryType(self._levelId, StoryTriggerType.BeforeFight)
-  if afterFightStory ~= nil and afterFightStory > 0 then
-    (self._btnPlot):SetActive(true)
+  if afterFightStory ~= nil and 0 < afterFightStory then
+    self._btnPlot:SetActive(true)
+  elseif beforeFightStory ~= nil and 0 < beforeFightStory then
+    self._btnPlot:SetActive(true)
   else
-    if beforeFightStory ~= nil and beforeFightStory > 0 then
-      (self._btnPlot):SetActive(true)
-    else
-      ;
-      (self._btnPlot):SetActive(false)
-    end
+    self._btnPlot:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.ShowTips = function(self, itemId, pos)
-  -- function num : 0_5
-  (self._tips):SetData(itemId, pos)
+function UITrailLevelDetail:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.InitAwards = function(self, dropId)
-  -- function num : 0_6 , upvalues : _ENV
+function UITrailLevelDetail:InitAwards(dropId)
   local awards = {}
   local normalArr = self:GetSortedArr(dropId)
-  local hasCompleteLevel = (self._talePetModule):HasCompletLevel(self._levelId)
+  local hasCompleteLevel = self._talePetModule:HasCompletLevel(self._levelId)
   if normalArr then
-    for i,v in ipairs(normalArr) do
+    for i, v in ipairs(normalArr) do
       if hasCompleteLevel and v.type == StageAwardType.First then
         v:FlushType(StageAwardType.HasGen)
       end
       awards[#awards + 1] = v
     end
   end
-  do
-    local count = (table.count)(awards)
-    local sop = self:GetUIComponent("UISelectObjectPath", "Content")
-    sop:SpawnObjects("UIAwardItem", count)
-    local list = sop:GetAllSpawnList()
-    for i,v in ipairs(list) do
-      v:Flush(awards[i])
-    end
+  local count = table.count(awards)
+  local sop = self:GetUIComponent("UISelectObjectPath", "Content")
+  sop:SpawnObjects("UIAwardItem", count)
+  local list = sop:GetAllSpawnList()
+  for i, v in ipairs(list) do
+    v:Flush(awards[i])
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.GetSortedArr = function(self, dropId)
-  -- function num : 0_7 , upvalues : _ENV
-  local list = (UICommonHelper:GetInstance()):ParseDrop(dropId)
+function UITrailLevelDetail:GetSortedArr(dropId)
+  local list = UICommonHelper:GetInstance():ParseDrop(dropId)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, UIExtraMissionStageController._LessComparer)
   if list then
-    for i,v in ipairs(list) do
+    for i, v in ipairs(list) do
       local award = Award:New()
       award:InitWithCount(v.ItemID, v.Count, v.Type)
       award:FlushType(StageAwardType.First)
       vecSort:Insert(award)
     end
   end
-  do
-    return vecSort.elements
-  end
+  return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail._InitTabBtnsInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self.talePets = (self._talePetModule):GetActivityTalePet()
+function UITrailLevelDetail:_InitTabBtnsInfo()
+  self.talePets = self._talePetModule:GetActivityTalePet()
   self._tabBtnsInfo = {}
   for i = 1, #self.talePets do
-    local cfg = (self.talePets)[i]
-    ;
-    (table.insert)(self._tabBtnsInfo, cfg)
+    local cfg = self.talePets[i]
+    table.insert(self._tabBtnsInfo, cfg)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail._SetTabBtns = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._tabBtns = (UIWidgetHelper.SpawnObjects)(self, "_tabBtns", "UIActivityCommonTextTabBtn", #self._tabBtnsInfo)
-  for i,v in ipairs(self._tabBtns) do
-    local cfg_pet = (Cfg.cfg_pet)[((self._tabBtnsInfo)[i]).ID]
-    if cfg_pet then
-      local name = cfg_pet.Name
-    end
-    local title = name and (StringTable.Get)(name) or ""
+function UITrailLevelDetail:_SetTabBtns()
+  self._tabBtns = UIWidgetHelper.SpawnObjects(self, "_tabBtns", "UIActivityCommonTextTabBtn", #self._tabBtnsInfo)
+  for i, v in ipairs(self._tabBtns) do
+    local cfg_pet = Cfg.cfg_pet[self._tabBtnsInfo[i].ID]
+    local name = cfg_pet and cfg_pet.Name
+    local title = name and StringTable.Get(name) or ""
     v:SetData(i, {
-indexWidgets = {}
-, 
-onoffWidgets = {
-{"OnBtn"}
-, 
-{"OffBtn"}
-}
-, 
-lockWidgets = {
-{"lock"}
-, 
-{}
-}
-, 
-titleWidgets = {"txtTitle_off", "txtTitle_on"}
-, titleText = title, callback = function(index, isOffBtnClick)
-    -- function num : 0_9_0 , upvalues : self
-    if isOffBtnClick then
-      self:_SetTabSelect(index)
-    end
-  end
-})
+      indexWidgets = {},
+      onoffWidgets = {
+        {"OnBtn"},
+        {"OffBtn"}
+      },
+      lockWidgets = {
+        {"lock"},
+        {}
+      },
+      titleWidgets = {
+        "txtTitle_off",
+        "txtTitle_on"
+      },
+      titleText = title,
+      callback = function(index, isOffBtnClick)
+        if isOffBtnClick then
+          self:_SetTabSelect(index)
+        end
+      end
+    })
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail._SetTabSelect = function(self, index)
-  -- function num : 0_10
+function UITrailLevelDetail:_SetTabSelect(index)
   if self._tabIndex == index then
-    return 
+    return
   end
   self._tabIndex = index
   for i = 1, #self._tabBtns do
-    ((self._tabBtns)[i]):SetSelected(i == index)
+    self._tabBtns[i]:SetSelected(i == index)
   end
-  self:_Refresh(((self._tabBtnsInfo)[index]).PracticeLevelId)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:_Refresh(self._tabBtnsInfo[index].PracticeLevelId)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.Close = function(self)
-  -- function num : 0_11
+function UITrailLevelDetail:Close()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.MaskOnClick = function(self)
-  -- function num : 0_12
+function UITrailLevelDetail:MaskOnClick()
   self:Close()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.btnFightOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  local missiontModule = (GameGlobal.GetModule)(MissionModule)
+function UITrailLevelDetail:btnFightOnClick(go)
+  local missiontModule = GameGlobal.GetModule(MissionModule)
   local ctx = missiontModule:TeamCtx()
   ctx:Init(TeamOpenerType.Trail, self._levelId)
   ctx:ShowDialogUITeams(false)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.BtnPlotOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local mission = (GameGlobal.GetModule)(MissionModule)
+function UITrailLevelDetail:BtnPlotOnClick()
+  local mission = GameGlobal.GetModule(MissionModule)
   local afterFightStory = mission:GetStoryByStageIdStoryType(self._levelId, StoryTriggerType.AfterFight)
   local beforeFightStory = mission:GetStoryByStageIdStoryType(self._levelId, StoryTriggerType.BeforeFight)
   local storyIds = {}
-  if beforeFightStory ~= nil and beforeFightStory > 0 then
+  if beforeFightStory ~= nil and 0 < beforeFightStory then
     storyIds[#storyIds + 1] = beforeFightStory
   end
-  if afterFightStory ~= nil and afterFightStory > 0 then
+  if afterFightStory ~= nil and 0 < afterFightStory then
     storyIds[#storyIds + 1] = afterFightStory
   end
   if #storyIds <= 0 then
-    return 
+    return
   end
-  ;
-  (self._mask):SetActive(true)
+  self._mask:SetActive(true)
   self:PlayStory(storyIds, 1)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelDetail.PlayStory = function(self, storyIds, index)
-  -- function num : 0_15
-  if #storyIds < index then
-    (self._mask):SetActive(false)
-    return 
+function UITrailLevelDetail:PlayStory(storyIds, index)
+  if index > #storyIds then
+    self._mask:SetActive(false)
+    return
   end
   self:ShowDialog("UIStoryController", storyIds[index], function()
-    -- function num : 0_15_0 , upvalues : self, storyIds, index
     self:PlayStory(storyIds, index + 1)
-  end
-)
+  end)
 end
-
-

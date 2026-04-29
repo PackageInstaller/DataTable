@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sign_in/ui_sign_in_total_awards_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISignInTotalAwardsItem", UICustomWidget)
 UISignInTotalAwardsItem = UISignInTotalAwardsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISignInTotalAwardsItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISignInTotalAwardsItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalAwardsItem.SetData = function(self, index, data, callback, showName, hideNumber)
-  -- function num : 0_1
+function UISignInTotalAwardsItem:SetData(index, data, callback, showName, hideNumber)
   self._itemid = data.assetid
   self._itemCount = data.count
   local sop = self:GetUIComponent("UISelectObjectPath", "pool")
@@ -25,34 +15,24 @@ UISignInTotalAwardsItem.SetData = function(self, index, data, callback, showName
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalAwardsItem._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg_item = (Cfg.cfg_item)[self._itemid]
+function UISignInTotalAwardsItem:_OnValue()
+  local cfg_item = Cfg.cfg_item[self._itemid]
   local params = {}
   params.quality = cfg_item.Color
   params.icon = cfg_item.Icon
-  local text1 = nil
+  local text1
   if self._hideNumber then
     text1 = ""
   else
     text1 = self._itemCount
   end
   params.text = text1
-  ;
-  (self.item):SetItemData(params)
-  ;
-  (self.item):SetData(self._itemid)
+  self.item:SetItemData(params)
+  self.item:SetData(self._itemid)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInTotalAwardsItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISignInTotalAwardsItem:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._itemid, (go.transform).position)
+    self._callback(self._itemid, go.transform.position)
   end
 end
-
-

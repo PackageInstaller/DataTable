@@ -1,36 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_get_phy_point/ui_get_phy_point_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGetPhyPointController", UIController)
 UIGetPhyPointController = UIGetPhyPointController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGetPhyPointController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._shopModule = (GameGlobal.GetModule)(ShopModule)
+function UIGetPhyPointController:LoadDataOnEnter(TT, res, uiParams)
+  self._shopModule = GameGlobal.GetModule(ShopModule)
   self._roleModule = self:GetModule(RoleModule)
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   res:SetSucc(true)
   self:Lock("_InitRefresh")
   self.loadSuc = false
   self:StartTask(self._InitRefresh, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController._InitRefresh = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local shopModule = (GameGlobal.GetModule)(ShopModule)
+function UIGetPhyPointController:_InitRefresh(TT)
+  local shopModule = GameGlobal.GetModule(ShopModule)
   local req = shopModule:RequestPhysicalData(TT)
   if req:GetSucc() then
     self.loadSuc = true
     self:_OnValue()
     self:RefreshTitle()
     self:UnLock("_InitRefresh")
-    if (self.aircraftModule):GetRoomByRoomType(AirRoomType.PrismRoom) == nil then
+    if self.aircraftModule:GetRoomByRoomType(AirRoomType.PrismRoom) == nil then
       self:LockPhyRoomRefreshGetPanel()
     end
   else
@@ -41,42 +31,32 @@ UIGetPhyPointController._InitRefresh = function(self, TT)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIGetPhyPointController:OnShow(uiParams)
   self._active = true
   self._roleModule = self:GetModule(RoleModule)
-  self.aircraftModule = (GameGlobal.GetModule)(AircraftModule)
+  self.aircraftModule = GameGlobal.GetModule(AircraftModule)
   self.needCheck = true
   self:_GetComponents()
   self._bugState = nil
   self._bugMaxCount = 999
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChange)
   self:AttachEvent(GameEventType.DiamondCountChanged, self.OnItemCountChange)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._newCenterCanvasGroup).alpha = 0
-  ;
-  (self._newCenterCanvasGroup):DOFade(1, 0.3)
+  self._newCenterCanvasGroup.alpha = 0
+  self._newCenterCanvasGroup:DOFade(1, 0.3)
   if not self.loadSuc then
-    return 
+    return
   end
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIGetPhyPointController:OnHide()
   self._active = false
   if self._showTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._showTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._showTimeEvent)
     self._showTimeEvent = nil
   end
   if self._phyEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._phyEvent)
+    GameGlobal.RealTimer():CancelEvent(self._phyEvent)
     self._phyEvent = nil
   end
   if self.checkServerPhyTask then
@@ -84,22 +64,15 @@ UIGetPhyPointController.OnHide = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController._GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._pressTime = ((Cfg.cfg_global).sale_and_use_press_long_deltaTime).IntValue
+function UIGetPhyPointController:_GetComponents()
+  self._pressTime = Cfg.cfg_global.sale_and_use_press_long_deltaTime.IntValue
   self._updateTime = 0
   self:InitNewComponet()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.InitNewComponet = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIGetPhyPointController:InitNewComponet()
   self.newCenter = self:GetGameObject("NewCenter")
-  ;
-  (self.newCenter):SetActive(true)
+  self.newCenter:SetActive(true)
   self.newCenterAnim = self:GetUIComponent("Animation", "NewCenter")
   self.next_recover_txt = self:GetUIComponent("UILocalizationText", "next_recover_txt")
   self.all_recover_txt = self:GetUIComponent("UILocalizationText", "all_recover_txt")
@@ -122,228 +95,194 @@ UIGetPhyPointController.InitNewComponet = function(self)
   self._countDownBg = self:GetUIComponent("Image", "countDownBg")
   self._isSubMouseDown = false
   self._isAddMouseDown = false
-  local useSub = (UILongPressTriggerListener.Get)(self._useSubBtn)
-  useSub.onLongPress = function(go)
-    -- function num : 0_5_0 , upvalues : self
+  local useSub = UILongPressTriggerListener.Get(self._useSubBtn)
+  
+  function useSub.onLongPress(go)
     if self._isSubMouseDown == false then
       self._isSubMouseDown = true
     end
   end
-
-  useSub.onLongPressEnd = function(go)
-    -- function num : 0_5_1 , upvalues : self
+  
+  function useSub.onLongPressEnd(go)
     if self._isSubMouseDown == true then
       self._isSubMouseDown = false
     end
   end
-
-  local useAdd = (UILongPressTriggerListener.Get)(self._useAddBtn)
-  useAdd.onLongPress = function(go)
-    -- function num : 0_5_2 , upvalues : self
+  
+  local useAdd = UILongPressTriggerListener.Get(self._useAddBtn)
+  
+  function useAdd.onLongPress(go)
     if self._isAddMouseDown == false then
       self._isAddMouseDown = true
     end
   end
-
-  useAdd.onLongPressEnd = function(go)
-    -- function num : 0_5_3 , upvalues : self
+  
+  function useAdd.onLongPressEnd(go)
     if self._isAddMouseDown == true then
       self._isAddMouseDown = false
     end
   end
-
-  ;
-  (self.phy_get_panel):SetActive(true)
+  
+  self.phy_get_panel:SetActive(true)
   self.power_rawimg = self:GetUIComponent("RawImageLoader", "Power_rawimg")
-  ;
-  (self.power_rawimg):LoadImage((self.power_rawimg).m_rawimage_name)
+  self.power_rawimg:LoadImage(self.power_rawimg.m_rawimage_name)
   self.cur_have_phy_txt = self:GetUIComponent("UILocalizationText", "cur_have_phy_txt")
   self.air_phy_txt = self:GetUIComponent("UILocalizationText", "air_phy_txt")
   self.effectObj = self:GetGameObject("Effect")
-  ;
-  (self.effectObj):SetActive(false)
+  self.effectObj:SetActive(false)
   if not self.loadSuc then
-    return 
+    return
   end
   self.CurSelectModType = SelectModType.Get
-  if (self.aircraftModule):GetRoomByRoomType(AirRoomType.PrismRoom) == nil then
+  if self.aircraftModule:GetRoomByRoomType(AirRoomType.PrismRoom) == nil then
     self.CurSelectModType = SelectModType.Use
     self:LockPhyRoomRefreshGetPanel()
   end
   self:RefreshPoolsBtn()
-  self.aircaftPhy = (math.floor)((self.aircraftModule):GetPhysicStorage())
+  self.aircaftPhy = math.floor(self.aircraftModule:GetPhysicStorage())
   self:RefreshTitle()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.RefreshTitle = function(self)
-  -- function num : 0_6
+function UIGetPhyPointController:RefreshTitle()
   self:StartTask(self.OnOpenPhyTimer, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.OnOpenPhyTimer = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIGetPhyPointController:OnOpenPhyTimer(TT)
   self:Lock("OnOpenPhyTimer")
-  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = (self._roleModule):GetRecoverData(TT, 0)
+  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = self._roleModule:GetRecoverData(TT, 0)
   if not res:GetSucc() then
-    (Log.fatal)("### request fail -- self._roleModule:GetRecoverData !")
-    return 
+    Log.fatal("### request fail -- self._roleModule:GetRecoverData !")
+    return
   end
   self._gapTimeNum = intervalRecoverTime
   self._nextTimeNum = leftRecoverTime
   self._allTimeNum = allRecoverTime
   self._phyPanelIsOpen = true
   if self._phyEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._phyEvent)
+    GameGlobal.RealTimer():CancelEvent(self._phyEvent)
     self._phyEvent = nil
   end
-  self._phyEvent = ((GameGlobal.RealTimer)()):AddEvent(2000, function()
-    -- function num : 0_7_0
-  end
-)
+  self._phyEvent = GameGlobal.RealTimer():AddEvent(2000, function()
+  end)
   if not self._active or self.has_max_txt_obj == nil then
     YIELD(TT)
   end
-  local nextStr = (StringTable.Get)("str_get_phy_point_next_recover") .. self:Time2Str(self._nextTimeNum)
+  local nextStr = StringTable.Get("str_get_phy_point_next_recover") .. self:Time2Str(self._nextTimeNum)
   if self._allTimeNum == 0 then
-    nextStr = (StringTable.Get)("str_get_phy_point_topmax_tips")
+    nextStr = StringTable.Get("str_get_phy_point_topmax_tips")
     if self.has_max_txt_obj then
-      (self.has_max_txt_obj):SetActive(true)
+      self.has_max_txt_obj:SetActive(true)
     end
-    ;
-    ((self.next_recover_txt).gameObject):SetActive(false)
+    self.next_recover_txt.gameObject:SetActive(false)
   else
     if self.has_max_txt_obj then
-      (self.has_max_txt_obj):SetActive(false)
+      self.has_max_txt_obj:SetActive(false)
     end
-    ;
-    ((self.next_recover_txt).gameObject):SetActive(true)
-    ;
-    (self.next_recover_txt):SetText(nextStr)
+    self.next_recover_txt.gameObject:SetActive(true)
+    self.next_recover_txt:SetText(nextStr)
   end
-  local allStr = (StringTable.Get)("str_get_phy_point_all_recover") .. self:Time2Str(self._allTimeNum)
+  local allStr = StringTable.Get("str_get_phy_point_all_recover") .. self:Time2Str(self._allTimeNum)
   if self._allTimeNum == 0 then
-    allStr = (StringTable.Get)("str_get_phy_point_topmax_tips")
+    allStr = StringTable.Get("str_get_phy_point_topmax_tips")
     if self.has_max_txt_obj then
-      (self.has_max_txt_obj):SetActive(true)
+      self.has_max_txt_obj:SetActive(true)
     end
-    ;
-    ((self.all_recover_txt).gameObject):SetActive(false)
+    self.all_recover_txt.gameObject:SetActive(false)
   else
     if self.has_max_txt_obj then
-      (self.has_max_txt_obj):SetActive(false)
+      self.has_max_txt_obj:SetActive(false)
     end
-    ;
-    ((self.all_recover_txt).gameObject):SetActive(true)
-    ;
-    (self.all_recover_txt):SetText(allStr)
+    self.all_recover_txt.gameObject:SetActive(true)
+    self.all_recover_txt:SetText(allStr)
   end
   if self._showTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._showTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._showTimeEvent)
     self._showTimeEvent = nil
   end
-  self._showTimeEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, self.ShowTime, self)
+  self._showTimeEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, self.ShowTime, self)
   self:UnLock("OnOpenPhyTimer")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.ClosePhyTimer = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIGetPhyPointController:ClosePhyTimer()
   if self._showTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._showTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._showTimeEvent)
     self._showTimeEvent = nil
   end
   if self._phyEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._phyEvent)
+    GameGlobal.RealTimer():CancelEvent(self._phyEvent)
     self._phyEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.ShowTime = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIGetPhyPointController:ShowTime()
   self._nextTimeNum = self._nextTimeNum - 1
   self._allTimeNum = self._allTimeNum - 1
   if self._nextTimeNum < 0 then
     self._nextTimeNum = self._gapTimeNum - 1
     if self._allTimeNum > 0 then
-      self.checkServerPhyTask = ((GameGlobal.TaskManager)()):StartTask(self.CheckServerPhy, self)
+      self.checkServerPhyTask = GameGlobal.TaskManager():StartTask(self.CheckServerPhy, self)
     end
   end
   if self._allTimeNum < 0 then
     self._allTimeNum = 0
     self:ShowPhyPoint()
+    if self._showTimeEvent then
+    end
   end
-  -- DECOMPILER ERROR at PC44: Unhandled construct in 'MakeBoolean' P1
-
-  if not self._showTimeEvent or self._allTimeNum > 0 and self.needCheck then
-    ((GameGlobal.TaskManager)()):StartTask(self.CheckServerTime, self)
+  if self._allTimeNum > 0 and self.needCheck then
+    GameGlobal.TaskManager():StartTask(self.CheckServerTime, self)
   end
-  local currentPhyPower = (self._roleModule):GetHealthPoint()
+  local currentPhyPower = self._roleModule:GetHealthPoint()
   if currentPhyPower == nil then
     currentPhyPower = 0
   end
-  local currentPhysicalPowerUpper = (self._roleModule):GetHpLevelMax()
+  local currentPhysicalPowerUpper = self._roleModule:GetHpLevelMax()
   if currentPhysicalPowerUpper == nil then
     currentPhysicalPowerUpper = 0
   end
-  if currentPhysicalPowerUpper < currentPhyPower then
+  if currentPhyPower > currentPhysicalPowerUpper then
     self._nextTimeNum = 0
     self._allTimeNum = 0
   end
-  local nextStr = (StringTable.Get)("str_get_phy_point_next_recover") .. self:Time2Str(self._nextTimeNum)
+  local nextStr = StringTable.Get("str_get_phy_point_next_recover") .. self:Time2Str(self._nextTimeNum)
   if self._allTimeNum == 0 then
-    nextStr = (StringTable.Get)("str_get_phy_point_topmax_tips")
+    nextStr = StringTable.Get("str_get_phy_point_topmax_tips")
     if self.has_max_txt_obj then
-      (self.has_max_txt_obj):SetActive(true)
+      self.has_max_txt_obj:SetActive(true)
     end
-    ;
-    ((self.next_recover_txt).gameObject):SetActive(false)
+    self.next_recover_txt.gameObject:SetActive(false)
   else
     if self.has_max_txt_obj then
-      (self.has_max_txt_obj):SetActive(false)
+      self.has_max_txt_obj:SetActive(false)
     end
-    ;
-    ((self.next_recover_txt).gameObject):SetActive(true)
-    ;
-    (self.next_recover_txt):SetText(nextStr)
+    self.next_recover_txt.gameObject:SetActive(true)
+    self.next_recover_txt:SetText(nextStr)
   end
-  local allStr = (StringTable.Get)("str_get_phy_point_all_recover") .. self:Time2Str(self._allTimeNum)
+  local allStr = StringTable.Get("str_get_phy_point_all_recover") .. self:Time2Str(self._allTimeNum)
   if self._allTimeNum == 0 then
-    allStr = (StringTable.Get)("str_get_phy_point_topmax_tips")
+    allStr = StringTable.Get("str_get_phy_point_topmax_tips")
     if self.has_max_txt_obj then
-      (self.has_max_txt_obj):SetActive(true)
+      self.has_max_txt_obj:SetActive(true)
     end
-    ;
-    ((self.all_recover_txt).gameObject):SetActive(false)
+    self.all_recover_txt.gameObject:SetActive(false)
   else
     if self.has_max_txt_obj then
-      (self.has_max_txt_obj):SetActive(false)
+      self.has_max_txt_obj:SetActive(false)
     end
-    ;
-    ((self.all_recover_txt).gameObject):SetActive(true)
-    ;
-    (self.all_recover_txt):SetText(allStr)
+    self.all_recover_txt.gameObject:SetActive(true)
+    self.all_recover_txt:SetText(allStr)
   end
   self:RefreshItemSec()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.CheckServerTime = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.debug)("[fx]UIGetPhyPointController  CheckServerTime")
+function UIGetPhyPointController:CheckServerTime(TT)
+  Log.debug("[fx]UIGetPhyPointController  CheckServerTime")
   self.needCheck = false
   self:Lock("CheckServerTime")
-  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = (self._roleModule):GetRecoverData(TT, 0)
+  local res, startTime, intervalRecoverTime, leftRecoverTime, allRecoverTime = self._roleModule:GetRecoverData(TT, 0)
   if not res:GetSucc() then
-    (Log.fatal)("### request fail -- self._roleModule:GetRecoverData !")
-    return 
+    Log.fatal("### request fail -- self._roleModule:GetRecoverData !")
+    return
   end
   self._nextTimeNum = leftRecoverTime
   self._allTimeNum = allRecoverTime
@@ -353,13 +292,10 @@ UIGetPhyPointController.CheckServerTime = function(self, TT)
   self.needCheck = true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.CheckServerPhy = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.debug)("[fx]UIGetPhyPointController  CheckServerPhy")
+function UIGetPhyPointController:CheckServerPhy(TT)
+  Log.debug("[fx]UIGetPhyPointController  CheckServerPhy")
   self:Lock("CheckServerPhy")
-  local req = (self._shopModule):RequestPhysicalData(TT)
+  local req = self._shopModule:RequestPhysicalData(TT)
   if req:GetSucc() then
     YIELD(TT)
     self:OnItemCountChange()
@@ -375,32 +311,26 @@ UIGetPhyPointController.CheckServerPhy = function(self, TT)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.Time2Str = function(self, time)
-  -- function num : 0_12
+function UIGetPhyPointController:Time2Str(time)
   local str = ""
   local timeTab = self:ChangeSecondToTime(time)
   str = self:ChangeTimeTableToStr(timeTab)
   return str
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.ChangeTimeTableToStr = function(self, timeTable)
-  -- function num : 0_13
-  local hourStr, minStr, secStr = nil, nil, nil
+function UIGetPhyPointController:ChangeTimeTableToStr(timeTable)
+  local hourStr, minStr, secStr
   if timeTable.hour > 9 then
     hourStr = timeTable.hour
   else
     hourStr = "0" .. timeTable.hour
   end
-  if timeTable.min > 9 then
+  if 9 < timeTable.min then
     minStr = timeTable.min
   else
     minStr = "0" .. timeTable.min
   end
-  if timeTable.sec > 9 then
+  if 9 < timeTable.sec then
     secStr = timeTable.sec
   else
     secStr = "0" .. timeTable.sec
@@ -408,62 +338,52 @@ UIGetPhyPointController.ChangeTimeTableToStr = function(self, timeTable)
   return hourStr .. ":" .. minStr .. ":" .. secStr
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetPhyPointController.ChangeSecondToTime = function(self, second)
-  -- function num : 0_14 , upvalues : _ENV
-  local timeTable = {hour = 0, min = 0, sec = 0}
+function UIGetPhyPointController:ChangeSecondToTime(second)
+  local timeTable = {
+    hour = 0,
+    min = 0,
+    sec = 0
+  }
   if second == 0 then
     return timeTable
   end
-  local sec = (math.modf)(second % 60)
-  local minAll = (math.modf)((second - sec) / 60)
-  local min = (math.modf)(minAll % 60)
-  local hour = (math.modf)((minAll - min) / 60)
+  local sec = math.modf(second % 60)
+  local minAll = math.modf((second - sec) / 60)
+  local min = math.modf(minAll % 60)
+  local hour = math.modf((minAll - min) / 60)
   timeTable.hour = hour
   timeTable.min = min
   timeTable.sec = sec
   return timeTable
 end
 
-local SelectModType = {Get = 0, Use = 1, Decore = 2}
+local SelectModType = {
+  Get = 0,
+  Use = 1,
+  Decore = 2
+}
 _enum("SelectModType", SelectModType)
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
 
-UIGetPhyPointController.LockPhyRoomRefreshGetPanel = function(self)
-  -- function num : 0_15
-  (self.phy_get_panel):SetActive(false)
+function UIGetPhyPointController:LockPhyRoomRefreshGetPanel()
+  self.phy_get_panel:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGetPhyPointController.UnLockPhyRoomRefreshGetPanel = function(self)
-  -- function num : 0_16
+function UIGetPhyPointController:UnLockPhyRoomRefreshGetPanel()
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGetPhyPointController.RefreshPoolsBtn = function(self)
-  -- function num : 0_17 , upvalues : SelectModType
+function UIGetPhyPointController:RefreshPoolsBtn()
   if not self._active then
-    return 
+    return
   end
-  ;
-  (self.recoverRoot):SetActive(false)
-  ;
-  (self.useRoot):SetActive(false)
-  ;
-  (self.decoreRoot):SetActive(false)
+  self.recoverRoot:SetActive(false)
+  self.useRoot:SetActive(false)
+  self.decoreRoot:SetActive(false)
   if self.CurSelectModType == SelectModType.Get then
-    (self.recoverRoot):SetActive(true)
-  else
-    if self.CurSelectModType == SelectModType.Use then
-      (self.useRoot):SetActive(true)
-    else
-      if self.CurSelectModType == SelectModType.Decore then
-        (self.decoreRoot):SetActive(true)
-      end
-    end
+    self.recoverRoot:SetActive(true)
+  elseif self.CurSelectModType == SelectModType.Use then
+    self.useRoot:SetActive(true)
+  elseif self.CurSelectModType == SelectModType.Decore then
+    self.decoreRoot:SetActive(true)
   end
   self:InitGetPanel()
   self:InitUsePanel()
@@ -471,146 +391,124 @@ UIGetPhyPointController.RefreshPoolsBtn = function(self)
   self:ShowPhyPoint()
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGetPhyPointController.ShowPhyPoint = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local currentPhyPower = (self._roleModule):GetHealthPoint()
+function UIGetPhyPointController:ShowPhyPoint()
+  local currentPhyPower = self._roleModule:GetHealthPoint()
   if currentPhyPower == nil then
     currentPhyPower = 0
   end
-  local currentPhysicalPowerUpper = (self._roleModule):GetHpLevelMax()
+  local currentPhysicalPowerUpper = self._roleModule:GetHpLevelMax()
   if currentPhysicalPowerUpper == nil then
     currentPhysicalPowerUpper = 0
   end
   local moreThan = false
-  if currentPhysicalPowerUpper < currentPhyPower then
+  if currentPhyPower > currentPhysicalPowerUpper then
     moreThan = true
   end
-  if currentPhyPower > 999 then
+  if 999 < currentPhyPower then
     currentPhyPower = "999+"
   end
-  -- DECOMPILER ERROR at PC30: Unhandled construct in 'MakeBoolean' P1
-
-  if not moreThan or self.recodePhyP ~= nil and self.recodePhyP < currentPhyPower then
-    (self.newCenterAnim):Play("uianim_UIGetPhyPointController_add")
-    ;
-    (self.effectObj):SetActive(false)
-    ;
-    (self.effectObj):SetActive(true)
+  if moreThan then
   end
-  ;
-  (self.cur_have_phy_txt):SetText(currentPhyPower .. "/" .. currentPhysicalPowerUpper)
+  if self.recodePhyP ~= nil and currentPhyPower > self.recodePhyP then
+    self.newCenterAnim:Play("uianim_UIGetPhyPointController_add")
+    self.effectObj:SetActive(false)
+    self.effectObj:SetActive(true)
+  end
+  self.cur_have_phy_txt:SetText(currentPhyPower .. "/" .. currentPhysicalPowerUpper)
   self.recodePhyP = currentPhyPower
-  local phy = (self.aircraftModule):GetPhysicStorage()
-  local max = (self.aircraftModule):GetPhysicStorageLimit()
-  local ceiling = (math.floor)(max)
-  local curPhy = (math.floor)(phy)
-  ;
-  (self.air_phy_txt):SetText(curPhy .. "/" .. ceiling)
+  local phy = self.aircraftModule:GetPhysicStorage()
+  local max = self.aircraftModule:GetPhysicStorageLimit()
+  local ceiling = math.floor(max)
+  local curPhy = math.floor(phy)
+  self.air_phy_txt:SetText(curPhy .. "/" .. ceiling)
   self.calcuPhy = curPhy
 end
 
 local toint = math.tointeger
--- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
 
-UIGetPhyPointController.InitGetPanel = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local phy = (math.floor)((self.aircraftModule):GetPhysicStorage())
+function UIGetPhyPointController:InitGetPanel()
+  local phy = math.floor(self.aircraftModule:GetPhysicStorage())
   local curGetPhy = phy
-  local currentPhyPower = (self._roleModule):GetHealthPoint()
+  local currentPhyPower = self._roleModule:GetHealthPoint()
   if currentPhyPower == nil then
     currentPhyPower = 0
   end
-  local currentPhysicalPowerUpper = (self._roleModule):GetHpLevelMax()
+  local currentPhysicalPowerUpper = self._roleModule:GetHpLevelMax()
   if currentPhysicalPowerUpper == nil then
     currentPhysicalPowerUpper = 0
   end
   local delta = currentPhysicalPowerUpper - currentPhyPower
-  if delta < phy then
+  if phy > delta then
     curGetPhy = delta
   end
   local percentValue = curGetPhy / phy
-  local cfg_item = (Cfg.cfg_item)[RoleAssetID.RoleAssetPhyPoint]
-  local name = (StringTable.Get)(cfg_item.Name)
-  local tips = (StringTable.Get)("str_get_phy_point_reply_succ_tips", name, 0)
-  self.calcuPhy = (math.floor)(phy)
+  local cfg_item = Cfg.cfg_item[RoleAssetID.RoleAssetPhyPoint]
+  local name = StringTable.Get(cfg_item.Name)
+  local tips = StringTable.Get("str_get_phy_point_reply_succ_tips", name, 0)
+  self.calcuPhy = math.floor(phy)
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.InitUsePanel = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIGetPhyPointController:InitUsePanel()
   local left_count_now = 0
-  local allValid = (self._shopModule):GetCurExchangePhyValidLeftState()
+  local allValid = self._shopModule:GetCurExchangePhyValidLeftState()
   local targetAllValid = allValid[1]
   local getSuc = false
-  for _,value in pairs(allValid) do
-    left_count_now = left_count_now + (self._roleModule):GetAssetCount(value.cost_id)
-    if not getSuc and left_count_now > 0 then
+  for _, value in pairs(allValid) do
+    left_count_now = left_count_now + self._roleModule:GetAssetCount(value.cost_id)
+    if not getSuc and 0 < left_count_now then
       targetAllValid = value
       getSuc = true
     end
   end
   if allValid == nil then
-    ((((self.can_use_by_day_txt).transform).parent).gameObject):SetActive(false)
-    return 
+    self.can_use_by_day_txt.transform.parent.gameObject:SetActive(false)
+    return
   end
   if targetAllValid == nil then
-    ((((self.can_use_by_day_txt).transform).parent).gameObject):SetActive(false)
-    return 
+    self.can_use_by_day_txt.transform.parent.gameObject:SetActive(false)
+    return
   end
   if not self:CheckHasTimeBack(allValid) then
-    ((((self.can_use_by_day_txt).transform).parent).gameObject):SetActive(false)
-    return 
+    self.can_use_by_day_txt.transform.parent.gameObject:SetActive(false)
+    return
   end
   local itemId = targetAllValid.cost_id
-  local cfg_item = (Cfg.cfg_item)[itemId]
+  local cfg_item = Cfg.cfg_item[itemId]
   if not cfg_item then
-    (Log.error)("###[fx] cfg is nil ! id --> ", itemId)
+    Log.error("###[fx] cfg is nil ! id --> ", itemId)
   end
   self._lessTimeStr = cfg_item.DeadTime
-  if (string.isnullorempty)(self._lessTimeStr) then
+  if string.isnullorempty(self._lessTimeStr) then
     self._lessTimeStr = cfg_item.CompulsiveDeadTime
   end
   self._isTimeItem = true
-  if (string.isnullorempty)(self._lessTimeStr) then
+  if string.isnullorempty(self._lessTimeStr) then
     self._isTimeItem = false
   end
   if self._isTimeItem then
-    ((((self.can_use_by_day_txt).transform).parent).gameObject):SetActive(true)
+    self.can_use_by_day_txt.transform.parent.gameObject:SetActive(true)
     self._timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
-    local lessTime = (math.floor)((self._loginModule):GetTimeStampByTimeStr(self._lessTimeStr, self._timeType))
-    local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+    local lessTime = math.floor(self._loginModule:GetTimeStampByTimeStr(self._lessTimeStr, self._timeType))
+    local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
     local gapTime = lessTime - nowTime
-    if gapTime > 0 then
+    if 0 < gapTime then
       local timeTex = self:Time2Tex(gapTime)
-      ;
-      (self.can_use_by_day_txt):SetText(timeTex)
+      self.can_use_by_day_txt:SetText(timeTex)
     else
-      do
-        do
-          ;
-          (self.can_use_by_day_txt):SetText("已过期")
-          ;
-          ((((self.can_use_by_day_txt).transform).parent).gameObject):SetActive(false)
-          ;
-          (self.can_use_num_count_txt):SetText(left_count_now)
-        end
-      end
+      self.can_use_by_day_txt:SetText("已过期")
     end
+  else
+    self.can_use_by_day_txt.transform.parent.gameObject:SetActive(false)
   end
+  self.can_use_num_count_txt:SetText(left_count_now)
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.CheckHasTimeBack = function(self, allValid)
-  -- function num : 0_21
+function UIGetPhyPointController:CheckHasTimeBack(allValid)
   for i = 1, #allValid do
     local item = allValid[i]
     if item ~= nil then
-      local leftPower = (self._roleModule):GetAssetCount(item.cost_id)
-      if leftPower > 0 then
+      local leftPower = self._roleModule:GetAssetCount(item.cost_id)
+      if 0 < leftPower then
         return true
       end
     end
@@ -618,196 +516,141 @@ UIGetPhyPointController.CheckHasTimeBack = function(self, allValid)
   return false
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.Time2Tex = function(self, sec)
-  -- function num : 0_22 , upvalues : _ENV
+function UIGetPhyPointController:Time2Tex(sec)
   local timeStr = ""
   local minAll = sec // 60
   local min = minAll % 60
   local hourAll = minAll // 60
   local hour = hourAll % 24
   local day = hourAll // 24
-  if day and day > 0 then
-    if hour and hour > 0 then
-      timeStr = (StringTable.Get)("str_week_tower_reset_time_day", day + 1)
+  if day and 0 < day then
+    if hour and 0 < hour then
+      timeStr = StringTable.Get("str_week_tower_reset_time_day", day + 1)
     else
-      timeStr = (StringTable.Get)("str_week_tower_reset_time_day", day)
+      timeStr = StringTable.Get("str_week_tower_reset_time_day", day)
     end
     return timeStr
   end
-  if hour and hour > 0 then
-    if min and min > 0 then
-      timeStr = (StringTable.Get)("str_week_tower_reset_time_hour", hour + 1)
+  if hour and 0 < hour then
+    if min and 0 < min then
+      timeStr = StringTable.Get("str_week_tower_reset_time_hour", hour + 1)
     else
-      timeStr = (StringTable.Get)("str_week_tower_reset_time_hour", hour)
+      timeStr = StringTable.Get("str_week_tower_reset_time_hour", hour)
     end
     return timeStr
   end
-  if min and min > 0 then
-    timeStr = (StringTable.Get)("str_week_tower_reset_time_only_min", min + 1)
+  if min and 0 < min then
+    timeStr = StringTable.Get("str_week_tower_reset_time_only_min", min + 1)
     return timeStr
   end
-  timeStr = (StringTable.Get)("str_week_tower_reset_time_only_sec")
+  timeStr = StringTable.Get("str_week_tower_reset_time_only_sec")
   return timeStr
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.RefreshItemSec = function(self)
-  -- function num : 0_23
+function UIGetPhyPointController:RefreshItemSec()
   self:InitUsePanel()
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.InitDecorePanel = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  self._left_data = (self._shopModule):GetCurExchangePhyState()
-  self._right_cost_id = (self._right_data).cost_id
-  self._right_cost_count = (self._right_data).cost_count
-  self._right_reply_count = (self._right_data).add_phy_count
-  local allValid = (self._shopModule):GetCurExchangePhyValidLeftState()
-  for _,value in ipairs(allValid) do
-    if (self._roleModule):GetAssetCount(value.cost_id) > 0 then
+function UIGetPhyPointController:InitDecorePanel()
+  self._left_data, self._right_data = self._shopModule:GetCurExchangePhyState()
+  self._right_cost_id = self._right_data.cost_id
+  self._right_cost_count = self._right_data.cost_count
+  self._right_reply_count = self._right_data.add_phy_count
+  local allValid = self._shopModule:GetCurExchangePhyValidLeftState()
+  for _, value in ipairs(allValid) do
+    if self._roleModule:GetAssetCount(value.cost_id) > 0 then
       self._left_data = value
       break
     end
   end
-  do
-    local right_have_count = (self._roleModule):GetAssetCount(self._right_cost_id)
-    self._right_reply_count = (self._right_data).add_phy_count
-    local get_count = self._right_reply_count
-    local right_cost_str = 0
-    if right_have_count < self._right_cost_count then
-      right_cost_str = "<color=#CC0000>" .. self._right_cost_count .. "</color>"
-    else
-      right_cost_str = self._right_cost_count
-    end
-    local tips = (StringTable.Get)("str_get_phy_point_decore_tips", right_cost_str, get_count)
-    ;
-    (self.cost_light_cont_txt):SetText("x" .. right_cost_str)
-    ;
-    (self.can_get_phy_cont_txt):SetText("x" .. get_count)
+  local right_have_count = self._roleModule:GetAssetCount(self._right_cost_id)
+  self._right_reply_count = self._right_data.add_phy_count
+  local get_count = self._right_reply_count
+  local right_cost_str = 0
+  if right_have_count < self._right_cost_count then
+    right_cost_str = "<color=#CC0000>" .. self._right_cost_count .. "</color>"
+  else
+    right_cost_str = self._right_cost_count
   end
+  local tips = StringTable.Get("str_get_phy_point_decore_tips", right_cost_str, get_count)
+  self.cost_light_cont_txt:SetText("x" .. right_cost_str)
+  self.can_get_phy_cont_txt:SetText("x" .. get_count)
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.GetPanelClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV, SelectModType
-  if (self.aircraftModule):GetRoomByRoomType(AirRoomType.PrismRoom) == nil then
-    return 
+function UIGetPhyPointController:GetPanelClick()
+  if self.aircraftModule:GetRoomByRoomType(AirRoomType.PrismRoom) == nil then
+    return
   end
   self.CurSelectModType = SelectModType.Get
   self:RefreshPoolsBtn()
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.UsePanelClick = function(self)
-  -- function num : 0_26 , upvalues : SelectModType
+function UIGetPhyPointController:UsePanelClick()
   self.CurSelectModType = SelectModType.Use
   self:RefreshPoolsBtn()
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.DecorePanelClick = function(self)
-  -- function num : 0_27 , upvalues : SelectModType
+function UIGetPhyPointController:DecorePanelClick()
   self.CurSelectModType = SelectModType.Decore
   self:RefreshPoolsBtn()
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.Quick_use_ButtonOnClick = function(self)
-  -- function num : 0_28
+function UIGetPhyPointController:Quick_use_ButtonOnClick()
   self:left_btnOnClick()
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.Quick_decore_ButtonOnClick = function(self)
-  -- function num : 0_29
+function UIGetPhyPointController:Quick_decore_ButtonOnClick()
   self:right_btnOnClick()
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.Quick_get_ButtonOnClick = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIGetPhyPointController:Quick_get_ButtonOnClick()
   if self.calcuPhy > 0 then
-    ((GameGlobal.TaskManager)()):StartTask(self._GetPhy, self)
+    GameGlobal.TaskManager():StartTask(self._GetPhy, self)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_get_phy_point_un_get"))
+    ToastManager.ShowToast(StringTable.Get("str_get_phy_point_un_get"))
   end
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController._GetPhy = function(self, TT)
-  -- function num : 0_31 , upvalues : _ENV
+function UIGetPhyPointController:_GetPhy(TT)
   self:Lock("UIGetPhyPointController_GetPhy")
   local phyCount = self.calcuPhy
-  local res, reply = (self.aircraftModule):HandleCEventCollectPrism(TT, self.calcuPhy)
+  local res, reply = self.aircraftModule:HandleCEventCollectPrism(TT, self.calcuPhy)
   if res:GetSucc() then
     YIELD(TT)
-    ;
-    (Log.debug)("GetSuccess")
+    Log.debug("GetSuccess")
     self:RefreshPoolsBtn()
-    local cfg_item = (Cfg.cfg_item)[RoleAssetID.RoleAssetPhyPoint]
-    local name = (StringTable.Get)(cfg_item.Name)
-    local tips = (StringTable.Get)("str_get_phy_point_reply_succ_tips", name, phyCount)
-    ;
-    (ToastManager.ShowToast)(tips)
+    local cfg_item = Cfg.cfg_item[RoleAssetID.RoleAssetPhyPoint]
+    local name = StringTable.Get(cfg_item.Name)
+    local tips = StringTable.Get("str_get_phy_point_reply_succ_tips", name, phyCount)
+    ToastManager.ShowToast(tips)
   else
-    do
-      ;
-      (ToastManager.ShowToast)((self.aircraftModule):GetErrorMsg(res:GetResult()))
-      self:UnLock("UIGetPhyPointController_GetPhy")
-    end
+    ToastManager.ShowToast(self.aircraftModule:GetErrorMsg(res:GetResult()))
   end
+  self:UnLock("UIGetPhyPointController_GetPhy")
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.Use_subOnClick = function(self)
-  -- function num : 0_32
+function UIGetPhyPointController:Use_subOnClick()
   self:Left_subClick()
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.Use_addOnClick = function(self)
-  -- function num : 0_33
+function UIGetPhyPointController:Use_addOnClick()
   self:Left_addClick()
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.Today_tips_btnOnClick = function(self)
-  -- function num : 0_34
+function UIGetPhyPointController:Today_tips_btnOnClick()
   self:ShowDialog("UIGetPhyPointTipsController", self._right_data)
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.CloseButtonOnClick = function(self)
-  -- function num : 0_35
+function UIGetPhyPointController:CloseButtonOnClick()
   self:bgOnClick()
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_36 , upvalues : _ENV
+function UIGetPhyPointController:OnUpdate(deltaTimeMS)
   if not self.loadSuc then
-    return 
+    return
   end
   self._updateTime = self._updateTime + deltaTimeMS
-  if self._pressTime < self._updateTime then
+  if self._updateTime > self._pressTime then
     self._updateTime = self._updateTime - self._pressTime
     if self._isAddMouseDown then
       self:Left_addClick()
@@ -816,170 +659,144 @@ UIGetPhyPointController.OnUpdate = function(self, deltaTimeMS)
       self:Left_subClick()
     end
   end
-  do
-    if self.aircaftPhy ~= nil then
-      local phy = (math.floor)((self.aircraftModule):GetPhysicStorage())
-      if self.aircaftPhy ~= phy then
-        self:RefreshPoolsBtn()
-        self.aircaftPhy = phy
-      end
+  if self.aircaftPhy ~= nil then
+    local phy = math.floor(self.aircraftModule:GetPhysicStorage())
+    if self.aircaftPhy ~= phy then
+      self:RefreshPoolsBtn()
+      self.aircaftPhy = phy
     end
-    local right_have_count = (self._roleModule):GetAssetCount(self._right_cost_id)
-    local right_cost_str = 0
-    if right_have_count < self._right_cost_count then
-      right_cost_str = "<color=#CC0000>" .. self._right_cost_count .. "</color>"
-    else
-      right_cost_str = self._right_cost_count
-    end
-    ;
-    (self.cost_light_cont_txt):SetText("x" .. right_cost_str)
   end
+  local right_have_count = self._roleModule:GetAssetCount(self._right_cost_id)
+  local right_cost_str = 0
+  if right_have_count < self._right_cost_count then
+    right_cost_str = "<color=#CC0000>" .. self._right_cost_count .. "</color>"
+  else
+    right_cost_str = self._right_cost_count
+  end
+  self.cost_light_cont_txt:SetText("x" .. right_cost_str)
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController._OnValue = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  self._left_data = (self._shopModule):GetCurExchangePhyState()
-  local allValid = (self._shopModule):GetCurExchangePhyValidLeftState()
-  for _,value in ipairs(allValid) do
-    if (self._roleModule):GetAssetCount(value.cost_id) > 0 then
+function UIGetPhyPointController:_OnValue()
+  self._left_data, self._right_data = self._shopModule:GetCurExchangePhyState()
+  local allValid = self._shopModule:GetCurExchangePhyValidLeftState()
+  for _, value in ipairs(allValid) do
+    if self._roleModule:GetAssetCount(value.cost_id) > 0 then
       self._left_data = value
       break
     end
   end
-  do
-    self._leftCostID = (self._left_data).cost_id
-    if not self._leftCostID then
-      (Log.fatal)("###[UIGetPhyPointController] self._leftCostID is nil !")
-    end
-    local cfg_item = (Cfg.cfg_item)[self._leftCostID]
-    if not cfg_item then
-      (Log.fatal)("###[UIGetPhyPointController] cfg_item is nil ! id --> ", self._leftCostID)
-    end
-    local left_count_now = 0
-    for _,value in pairs(allValid) do
-      left_count_now = left_count_now + (self._roleModule):GetAssetCount(value.cost_id)
-    end
-    self._left_cost_count = (self._left_data).cost_count
-    local left_cost_str = nil
-    if left_count_now < self._left_cost_count then
-      left_cost_str = "<color=#CC0000>" .. 0 .. "</color>"
-    else
-      left_cost_str = self._left_cost_count
-    end
-    ;
-    (self.left_use_count):SetText(left_cost_str)
-    self._left_add = (self._left_data).add_phy_count
-    local addstr = self._left_add
-    local str = "<color=#dfb677>" .. (StringTable.Get)("str_get_phy_point_use_somethine_count", addstr) .. "</color>"
-    if left_count_now == 0 then
-      str = "<color=#CC0000>" .. (StringTable.Get)("str_get_phy_point_use_somethine_count", 0) .. "</color>"
-    end
-    ;
-    (self.use_count_txt):SetText(str)
-    local current_phy_point = ((self._roleModule):GetAssetCount(RoleAssetID.RoleAssetPhyPoint))
-    local current_phy_point_str = nil
-    if current_phy_point > 999 then
-      current_phy_point_str = "999+"
-    else
-      if current_phy_point < 0 then
-        current_phy_point_str = "0"
-      else
-        current_phy_point_str = current_phy_point
-      end
-    end
-    local left_after_phy_point = current_phy_point + self._left_add
-    local left_after_phy_point_str = nil
-    if left_after_phy_point > 999 then
-      left_after_phy_point_str = "999+"
-    else
-      if left_after_phy_point < 0 then
-        left_after_phy_point_str = "0"
-      else
-        left_after_phy_point_str = left_after_phy_point
-      end
-    end
-    local left_dead_time = cfg_item.DeadTime
-    if (string.isnullorempty)(left_dead_time) then
-      left_dead_time = cfg_item.CompulsiveDeadTime
-    end
-    if not (string.isnullorempty)(left_dead_time) then
-      local loginModule = self:GetModule(LoginModule)
-      local time = loginModule:GetTimeStampByTimeStr(left_dead_time, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      local deltaTime = time - GetSvrTimeNow()
-      if deltaTime > 0 then
-        if self._refreshTimer then
-          ((GameGlobal.Timer)()):CancelEvent(self._refreshTimer)
-        end
-        self._refreshTimer = ((GameGlobal.Timer)()):AddEvent(deltaTime * 1000, function()
-    -- function num : 0_37_0 , upvalues : self
-    self:StartTask(self._RequestAndRefresh, self)
+  self._leftCostID = self._left_data.cost_id
+  if not self._leftCostID then
+    Log.fatal("###[UIGetPhyPointController] self._leftCostID is nil !")
   end
-)
-      end
-    end
-    do
-      self._getTimes = (self._right_data).max_times - (self._right_data).cur_times
-      local getTimesMax = (self._right_data).max_times
-      self._right_cost_id = (self._right_data).cost_id
-      if not self._right_cost_id then
-        (Log.fatal)("###[UIGetPhyPointController] self._right_cost_id is nil !")
-      end
-      self._right_cost_count = (self._right_data).cost_count
-      self._right_reply_count = (self._right_data).add_phy_count
-      local cfg_item_right = (Cfg.cfg_item)[self._right_cost_id]
-      if not cfg_item_right then
-        (Log.fatal)("###[UIGetPhyPointController] cfg_item_right is nil ! id --> ", self._right_cost_id)
-      end
-      local getTimesStr = nil
-      if self._getTimes <= 0 then
-        getTimesStr = "<color=#CC0000>" .. self._getTimes .. "</color>"
-      else
-        getTimesStr = self._getTimes
-      end
-      local _right_tips = getTimesStr .. "/" .. getTimesMax
-      ;
-      (self.today_can_tip):SetText((StringTable.Get)("str_get_phy_point_today_bug_times", _right_tips))
-      local right_have_count = ((self._roleModule):GetAssetCount(self._right_cost_id))
-      local right_cost_str = nil
-      if right_have_count < self._right_cost_count then
-        right_cost_str = "<color=#CC0000>" .. self._right_cost_count .. "</color>"
-      else
-        right_cost_str = self._right_cost_count
-      end
-      local right_after_phy_point = current_phy_point + self._right_reply_count
-      local right_after_phy_point_str = nil
-      if right_after_phy_point > 999 then
-        right_after_phy_point_str = "999+"
-      else
-        if right_after_phy_point < 0 then
-          right_after_phy_point_str = "0"
-        else
-          right_after_phy_point_str = right_after_phy_point
-        end
-      end
-      self:RefreshPoolsBtn()
-    end
+  local cfg_item = Cfg.cfg_item[self._leftCostID]
+  if not cfg_item then
+    Log.fatal("###[UIGetPhyPointController] cfg_item is nil ! id --> ", self._leftCostID)
   end
-end
-
--- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.OnItemCountChange = function(self)
-  -- function num : 0_38
-  ((self._roleModule):GetAssetCount(self._leftCostID))
-  local left_count_now = nil
-  local left_cost_str = nil
+  local left_count_now = 0
+  for _, value in pairs(allValid) do
+    left_count_now = left_count_now + self._roleModule:GetAssetCount(value.cost_id)
+  end
+  self._left_cost_count = self._left_data.cost_count
+  local left_cost_str
   if left_count_now < self._left_cost_count then
     left_cost_str = "<color=#CC0000>" .. 0 .. "</color>"
   else
     left_cost_str = self._left_cost_count
   end
-  ;
-  (self.left_use_count):SetText(left_cost_str)
-  local right_have_count = ((self._roleModule):GetAssetCount(self._right_cost_id))
-  local right_cost_str = nil
+  self.left_use_count:SetText(left_cost_str)
+  self._left_add = self._left_data.add_phy_count
+  local addstr = self._left_add
+  local str = "<color=#dfb677>" .. StringTable.Get("str_get_phy_point_use_somethine_count", addstr) .. "</color>"
+  if left_count_now == 0 then
+    str = "<color=#CC0000>" .. StringTable.Get("str_get_phy_point_use_somethine_count", 0) .. "</color>"
+  end
+  self.use_count_txt:SetText(str)
+  local current_phy_point = self._roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
+  local current_phy_point_str
+  if 999 < current_phy_point then
+    current_phy_point_str = "999+"
+  elseif current_phy_point < 0 then
+    current_phy_point_str = "0"
+  else
+    current_phy_point_str = current_phy_point
+  end
+  local left_after_phy_point = current_phy_point + self._left_add
+  local left_after_phy_point_str
+  if 999 < left_after_phy_point then
+    left_after_phy_point_str = "999+"
+  elseif left_after_phy_point < 0 then
+    left_after_phy_point_str = "0"
+  else
+    left_after_phy_point_str = left_after_phy_point
+  end
+  local left_dead_time = cfg_item.DeadTime
+  if string.isnullorempty(left_dead_time) then
+    left_dead_time = cfg_item.CompulsiveDeadTime
+  end
+  if not string.isnullorempty(left_dead_time) then
+    local loginModule = self:GetModule(LoginModule)
+    local time = loginModule:GetTimeStampByTimeStr(left_dead_time, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    local deltaTime = time - GetSvrTimeNow()
+    if 0 < deltaTime then
+      if self._refreshTimer then
+        GameGlobal.Timer():CancelEvent(self._refreshTimer)
+      end
+      self._refreshTimer = GameGlobal.Timer():AddEvent(deltaTime * 1000, function()
+        self:StartTask(self._RequestAndRefresh, self)
+      end)
+    end
+  end
+  self._getTimes = self._right_data.max_times - self._right_data.cur_times
+  local getTimesMax = self._right_data.max_times
+  self._right_cost_id = self._right_data.cost_id
+  if not self._right_cost_id then
+    Log.fatal("###[UIGetPhyPointController] self._right_cost_id is nil !")
+  end
+  self._right_cost_count = self._right_data.cost_count
+  self._right_reply_count = self._right_data.add_phy_count
+  local cfg_item_right = Cfg.cfg_item[self._right_cost_id]
+  if not cfg_item_right then
+    Log.fatal("###[UIGetPhyPointController] cfg_item_right is nil ! id --> ", self._right_cost_id)
+  end
+  local getTimesStr
+  if 0 >= self._getTimes then
+    getTimesStr = "<color=#CC0000>" .. self._getTimes .. "</color>"
+  else
+    getTimesStr = self._getTimes
+  end
+  local _right_tips = getTimesStr .. "/" .. getTimesMax
+  self.today_can_tip:SetText(StringTable.Get("str_get_phy_point_today_bug_times", _right_tips))
+  local right_have_count = self._roleModule:GetAssetCount(self._right_cost_id)
+  local right_cost_str
+  if right_have_count < self._right_cost_count then
+    right_cost_str = "<color=#CC0000>" .. self._right_cost_count .. "</color>"
+  else
+    right_cost_str = self._right_cost_count
+  end
+  local right_after_phy_point = current_phy_point + self._right_reply_count
+  local right_after_phy_point_str
+  if 999 < right_after_phy_point then
+    right_after_phy_point_str = "999+"
+  elseif right_after_phy_point < 0 then
+    right_after_phy_point_str = "0"
+  else
+    right_after_phy_point_str = right_after_phy_point
+  end
+  self:RefreshPoolsBtn()
+end
+
+function UIGetPhyPointController:OnItemCountChange()
+  local left_count_now = self._roleModule:GetAssetCount(self._leftCostID)
+  local left_cost_str
+  if left_count_now < self._left_cost_count then
+    left_cost_str = "<color=#CC0000>" .. 0 .. "</color>"
+  else
+    left_cost_str = self._left_cost_count
+  end
+  self.left_use_count:SetText(left_cost_str)
+  local right_have_count = self._roleModule:GetAssetCount(self._right_cost_id)
+  local right_cost_str
   if right_have_count < self._right_cost_count then
     right_cost_str = "<color=#CC0000>" .. self._right_cost_count .. "</color>"
   else
@@ -987,291 +804,222 @@ UIGetPhyPointController.OnItemCountChange = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.bgOnClick = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function UIGetPhyPointController:bgOnClick()
   if self._active then
-    if (self.rootAnim):IsPlaying("uieff_UIGetPhyPointController_in") then
-      (Log.debug)("###[UIGetPhyPointController]  uieff_UIGetPhyPointController_in is playing please close after!")
-      return 
+    if self.rootAnim:IsPlaying("uieff_UIGetPhyPointController_in") then
+      Log.debug("###[UIGetPhyPointController]  uieff_UIGetPhyPointController_in is playing please close after!")
+      return
     end
-    if (self.rootAnim):IsPlaying("uieff_UIGetPhyPointController_out") then
-      (Log.debug)("###[UIGetPhyPointController]  uieff_UIGetPhyPointController_out is playing please close after!")
-      return 
+    if self.rootAnim:IsPlaying("uieff_UIGetPhyPointController_out") then
+      Log.debug("###[UIGetPhyPointController]  uieff_UIGetPhyPointController_out is playing please close after!")
+      return
     end
-    ;
-    (self.rootAnim):Play("uieff_UIGetPhyPointController_out")
-    ;
-    ((GameGlobal.RealTimer)()):AddEvent(200, function()
-    -- function num : 0_39_0 , upvalues : self
-    self:CloseDialog()
-  end
-)
+    self.rootAnim:Play("uieff_UIGetPhyPointController_out")
+    GameGlobal.RealTimer():AddEvent(200, function()
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.right_tips_btnOnClick = function(self)
-  -- function num : 0_40
+function UIGetPhyPointController:right_tips_btnOnClick()
   self:ShowDialog("UIGetPhyPointTipsController", self._right_data)
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.right_btnOnClick = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  local hasCount = (self._roleModule):GetAssetCount(self._right_cost_id)
+function UIGetPhyPointController:right_btnOnClick()
+  local hasCount = self._roleModule:GetAssetCount(self._right_cost_id)
   if hasCount < self._right_cost_count then
     self:ShowDialog("UIShopCurrency1To2", self._right_cost_count - hasCount)
-    return 
+    return
   end
-  do
-    if self._getTimes <= 0 then
-      local tips = (StringTable.Get)("str_get_phy_point_bug_times_nil")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    self._bugState = ExchangePhyPointType.EPPT_RIGHT
-    local costId = self._right_cost_id
-    local costCount = self._right_cost_count
-    local replyId = RoleAssetID.RoleAssetPhyPoint
-    local replyCount = self._right_reply_count
-    self:TipsToast(costId, costCount, replyId, replyCount, 0, 0)
+  if self._getTimes <= 0 then
+    local tips = StringTable.Get("str_get_phy_point_bug_times_nil")
+    ToastManager.ShowToast(tips)
+    return
   end
+  self._bugState = ExchangePhyPointType.EPPT_RIGHT
+  local costId = self._right_cost_id
+  local costCount = self._right_cost_count
+  local replyId = RoleAssetID.RoleAssetPhyPoint
+  local replyCount = self._right_reply_count
+  self:TipsToast(costId, costCount, replyId, replyCount, 0, 0)
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.left_btnOnClick = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function UIGetPhyPointController:left_btnOnClick()
   local left_count_now = 0
-  local allValid = (self._shopModule):GetCurExchangePhyValidLeftState()
-  for _,value in pairs(allValid) do
-    left_count_now = left_count_now + (self._roleModule):GetAssetCount(value.cost_id)
+  local allValid = self._shopModule:GetCurExchangePhyValidLeftState()
+  for _, value in pairs(allValid) do
+    left_count_now = left_count_now + self._roleModule:GetAssetCount(value.cost_id)
   end
-  local not_expire_count = (self._roleModule):GetAssetCount(3400043)
+  local not_expire_count = self._roleModule:GetAssetCount(3400043)
   local other_count = left_count_now - not_expire_count
   if left_count_now < self._left_cost_count then
-    local cfg_item_cost = (Cfg.cfg_item)[self._leftCostID]
-    local costName = (StringTable.Get)(cfg_item_cost.Name)
-    local cfg_item_get = (Cfg.cfg_item)[RoleAssetID.RoleAssetPhyPoint]
-    local getName = (StringTable.Get)(cfg_item_get.Name)
-    local tips = (StringTable.Get)("str_get_phy_point_mat_not_enough", costName, getName)
-    ;
-    (ToastManager.ShowToast)(tips)
-    local str = "<color=#CC0000>" .. (StringTable.Get)("str_get_phy_point_use_somethine_count", 0) .. "</color>"
-    ;
-    (self.use_count_txt):SetText(str)
-    ;
-    (self.can_use_num_count_txt):SetText(left_count_now)
-    ;
-    (self.left_use_count):SetText("<color=#CC0000>" .. 0 .. "</color>")
-    return 
+    local cfg_item_cost = Cfg.cfg_item[self._leftCostID]
+    local costName = StringTable.Get(cfg_item_cost.Name)
+    local cfg_item_get = Cfg.cfg_item[RoleAssetID.RoleAssetPhyPoint]
+    local getName = StringTable.Get(cfg_item_get.Name)
+    local tips = StringTable.Get("str_get_phy_point_mat_not_enough", costName, getName)
+    ToastManager.ShowToast(tips)
+    local str = "<color=#CC0000>" .. StringTable.Get("str_get_phy_point_use_somethine_count", 0) .. "</color>"
+    self.use_count_txt:SetText(str)
+    self.can_use_num_count_txt:SetText(left_count_now)
+    self.left_use_count:SetText("<color=#CC0000>" .. 0 .. "</color>")
+    return
   end
-  do
-    if allValid[1] ~= nil then
-      local itemId = (allValid[1]).cost_id
-      local cfg_item = (Cfg.cfg_item)[itemId]
-      if not cfg_item then
-        (Log.error)("###[fx] cfg is nil ! id --> ", itemId)
-      end
-      self._lessTimeStr = cfg_item.DeadTime
-      if (string.isnullorempty)(self._lessTimeStr) then
-        self._lessTimeStr = cfg_item.CompulsiveDeadTime
-      end
-      self._isTimeItem = true
-      if (string.isnullorempty)(self._lessTimeStr) then
-        self._isTimeItem = false
-      end
-      if self._isTimeItem then
-        self._timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
-        local lessTime = (math.floor)((self._loginModule):GetTimeStampByTimeStr(self._lessTimeStr, self._timeType))
-        local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-        local gapTime = lessTime - nowTime
-        if gapTime < 0 then
-          local tips = (StringTable.Get)("str_get_phy_point_phy_out")
-          ;
-          (ToastManager.ShowToast)(tips)
-          ;
-          ((GameGlobal.TaskManager)()):StartTask(self.ItemTimeOutRefresh, self)
-          return 
-        end
+  if allValid[1] ~= nil then
+    local itemId = allValid[1].cost_id
+    local cfg_item = Cfg.cfg_item[itemId]
+    if not cfg_item then
+      Log.error("###[fx] cfg is nil ! id --> ", itemId)
+    end
+    self._lessTimeStr = cfg_item.DeadTime
+    if string.isnullorempty(self._lessTimeStr) then
+      self._lessTimeStr = cfg_item.CompulsiveDeadTime
+    end
+    self._isTimeItem = true
+    if string.isnullorempty(self._lessTimeStr) then
+      self._isTimeItem = false
+    end
+    if self._isTimeItem then
+      self._timeType = Enum_DateTimeZoneType.E_ZoneType_GMT
+      local lessTime = math.floor(self._loginModule:GetTimeStampByTimeStr(self._lessTimeStr, self._timeType))
+      local nowTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+      local gapTime = lessTime - nowTime
+      if gapTime < 0 then
+        local tips = StringTable.Get("str_get_phy_point_phy_out")
+        ToastManager.ShowToast(tips)
+        GameGlobal.TaskManager():StartTask(self.ItemTimeOutRefresh, self)
+        return
       end
     end
-    do
-      self._bugState = ExchangePhyPointType.EPPT_LEFT
-      local costId = self._leftCostID
-      local costCount = self._left_cost_count
-      local replyId = RoleAssetID.RoleAssetPhyPoint
-      local replyCount = self._left_add
-      self:TipsToast(costId, costCount, replyId, replyCount, not_expire_count, other_count)
-    end
   end
+  self._bugState = ExchangePhyPointType.EPPT_LEFT
+  local costId = self._leftCostID
+  local costCount = self._left_cost_count
+  local replyId = RoleAssetID.RoleAssetPhyPoint
+  local replyCount = self._left_add
+  self:TipsToast(costId, costCount, replyId, replyCount, not_expire_count, other_count)
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.ItemTimeOutRefresh = function(self, TT)
-  -- function num : 0_43 , upvalues : _ENV
-  local req = (self._shopModule):RequestPhysicalData(TT)
+function UIGetPhyPointController:ItemTimeOutRefresh(TT)
+  local req = self._shopModule:RequestPhysicalData(TT)
   if req:GetSucc() then
     YIELD(TT)
     self:RefreshPoolsBtn()
     local left_count_now = 0
-    local allValid = (self._shopModule):GetCurExchangePhyValidLeftState()
-    for _,value in pairs(allValid) do
-      left_count_now = left_count_now + (self._roleModule):GetAssetCount(value.cost_id)
+    local allValid = self._shopModule:GetCurExchangePhyValidLeftState()
+    for _, value in pairs(allValid) do
+      left_count_now = left_count_now + self._roleModule:GetAssetCount(value.cost_id)
     end
     if left_count_now < self._left_cost_count then
-      local str = "<color=#CC0000>" .. (StringTable.Get)("str_get_phy_point_use_somethine_count", 0) .. "</color>"
-      ;
-      (self.use_count_txt):SetText(str)
-      ;
-      (self.can_use_num_count_txt):SetText(left_count_now)
-      ;
-      (self.left_use_count):SetText("<color=#CC0000>" .. 0 .. "</color>")
+      local str = "<color=#CC0000>" .. StringTable.Get("str_get_phy_point_use_somethine_count", 0) .. "</color>"
+      self.use_count_txt:SetText(str)
+      self.can_use_num_count_txt:SetText(left_count_now)
+      self.left_use_count:SetText("<color=#CC0000>" .. 0 .. "</color>")
     end
   else
-    do
-      YIELD(TT)
-      self:RefreshPoolsBtn()
-    end
+    YIELD(TT)
+    self:RefreshPoolsBtn()
   end
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.TipsToast = function(self, cId, cCount, rId, rCount, nCount, oCount)
-  -- function num : 0_44 , upvalues : _ENV
+function UIGetPhyPointController:TipsToast(cId, cCount, rId, rCount, nCount, oCount)
   local type = self._bugState
-  local current_phy_point = (self._roleModule):GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
-  if self._bugMaxCount <= current_phy_point + rCount then
-    local cfg_item = (Cfg.cfg_item)[RoleAssetID.RoleAssetPhyPoint]
-    local name = (StringTable.Get)(cfg_item.Name)
-    local tips = (StringTable.Get)("str_get_phy_point_reply_fail_more_than", name)
-    ;
-    (ToastManager.ShowToast)(tips)
-    return 
+  local current_phy_point = self._roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
+  if current_phy_point + rCount >= self._bugMaxCount then
+    local cfg_item = Cfg.cfg_item[RoleAssetID.RoleAssetPhyPoint]
+    local name = StringTable.Get(cfg_item.Name)
+    local tips = StringTable.Get("str_get_phy_point_reply_fail_more_than", name)
+    ToastManager.ShowToast(tips)
+    return
   end
-  do
-    local cfg_item_cost = (Cfg.cfg_item)[cId]
-    local costName = (StringTable.Get)(cfg_item_cost.Name)
-    local cfg_item_reply = (Cfg.cfg_item)[rId]
-    local replyName = (StringTable.Get)(cfg_item_reply.Name)
-    local cfg_item_not_expire = (Cfg.cfg_item)[3400043]
-    local not_expire_name = (StringTable.Get)(cfg_item_not_expire.Name)
-    local tips = (StringTable.Get)("str_get_phy_point_bug_toast_tips", cCount, costName, rCount, replyName)
-    if type == 1 and oCount < cCount and nCount ~= 0 and oCount ~= 0 then
-      tips = (StringTable.Get)("str_get_phy_point_bug_toast_another_tips", oCount, cCount - oCount, not_expire_name, rCount, replyName)
-    end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", tips, function(param)
-    -- function num : 0_44_0 , upvalues : self, _ENV
+  local cfg_item_cost = Cfg.cfg_item[cId]
+  local costName = StringTable.Get(cfg_item_cost.Name)
+  local cfg_item_reply = Cfg.cfg_item[rId]
+  local replyName = StringTable.Get(cfg_item_reply.Name)
+  local cfg_item_not_expire = Cfg.cfg_item[3400043]
+  local not_expire_name = StringTable.Get(cfg_item_not_expire.Name)
+  local tips = StringTable.Get("str_get_phy_point_bug_toast_tips", cCount, costName, rCount, replyName)
+  if type == 1 and oCount < cCount and nCount ~= 0 and oCount ~= 0 then
+    tips = StringTable.Get("str_get_phy_point_bug_toast_another_tips", oCount, cCount - oCount, not_expire_name, rCount, replyName)
+  end
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", tips, function(param)
     self:Lock("UIGetPhyPointController:TipsToast")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.OnTipsToast, self, param)
-  end
-, rCount, function(param)
-    -- function num : 0_44_1 , upvalues : _ENV
-    (Log.debug)("###[UIGetPhyPointController]TipsToast cancel ..")
-  end
-, nil)
-  end
+    GameGlobal.TaskManager():StartTask(self.OnTipsToast, self, param)
+  end, rCount, function(param)
+    Log.debug("###[UIGetPhyPointController]TipsToast cancel ..")
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.OnTipsToast = function(self, TT, param)
-  -- function num : 0_45 , upvalues : _ENV
+function UIGetPhyPointController:OnTipsToast(TT, param)
   local p = self._bugState
   local count = self._left_cost_count
   if p == 2 then
     count = 0
   end
-  local res = (self._shopModule):BuyPhysicalPower(TT, p, count)
+  local res = self._shopModule:BuyPhysicalPower(TT, p, count)
   if res:GetSucc() then
-    local cfg_item = (Cfg.cfg_item)[RoleAssetID.RoleAssetPhyPoint]
-    local name = (StringTable.Get)(cfg_item.Name)
-    local tips = (StringTable.Get)("str_get_phy_point_reply_succ_tips", name, param)
-    ;
-    (ToastManager.ShowToast)(tips)
-    ;
-    (self._shopModule):RequestPhysicalData(TT)
+    local cfg_item = Cfg.cfg_item[RoleAssetID.RoleAssetPhyPoint]
+    local name = StringTable.Get(cfg_item.Name)
+    local tips = StringTable.Get("str_get_phy_point_reply_succ_tips", name, param)
+    ToastManager.ShowToast(tips)
+    self._shopModule:RequestPhysicalData(TT)
     self:_OnValue()
     self:UnLock("UIGetPhyPointController:TipsToast")
   else
-    do
-      local result = res:GetResult()
-      ;
-      (Log.error)("###[UIGetPhyPointController] OnTipsToast fail -- result --> ", result)
-      local tips = (StringTable.Get)("str_get_phy_point_reply_fail_error_code") .. " - " .. result
-      ;
-      (ToastManager.ShowToast)(tips)
-      self:UnLock("UIGetPhyPointController:TipsToast")
-    end
+    local result = res:GetResult()
+    Log.error("###[UIGetPhyPointController] OnTipsToast fail -- result --> ", result)
+    local tips = StringTable.Get("str_get_phy_point_reply_fail_error_code") .. " - " .. result
+    ToastManager.ShowToast(tips)
+    self:UnLock("UIGetPhyPointController:TipsToast")
   end
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController._RequestAndRefresh = function(self, TT)
-  -- function num : 0_46 , upvalues : _ENV
+function UIGetPhyPointController:_RequestAndRefresh(TT)
   self:Lock("UIGetPhyPointController:_RequestAndRefresh")
-  local req = (self._shopModule):RequestPhysicalData(TT)
+  local req = self._shopModule:RequestPhysicalData(TT)
   self:UnLock("UIGetPhyPointController:_RequestAndRefresh")
   if not self._active then
-    return 
+    return
   end
   if req:GetSucc() then
     self:_OnValue()
   else
-    ;
-    (Log.error)("###[UIGetPhyPointController] request refresh error:", req:GetResult())
+    Log.error("###[UIGetPhyPointController] request refresh error:", req:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.Left_addClick = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UIGetPhyPointController:Left_addClick()
   if self._left_cost_count > 999 then
-    return 
+    return
   end
-  local current_phy_point = (self._roleModule):GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
-  if current_phy_point + self._left_add > 999 then
-    return 
+  local current_phy_point = self._roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
+  if 999 < current_phy_point + self._left_add then
+    return
   end
-  local left_cost_str = nil
+  local left_cost_str
   local left_count_now = 0
-  local allValid = (self._shopModule):GetCurExchangePhyValidLeftState()
-  for _,value in pairs(allValid) do
-    left_count_now = left_count_now + (self._roleModule):GetAssetCount(value.cost_id)
+  local allValid = self._shopModule:GetCurExchangePhyValidLeftState()
+  for _, value in pairs(allValid) do
+    left_count_now = left_count_now + self._roleModule:GetAssetCount(value.cost_id)
   end
   if left_count_now < self._left_cost_count + 1 then
-    return 
+    return
   end
   self._left_cost_count = self._left_cost_count + 1
   left_cost_str = self._left_cost_count
-  ;
-  (self.left_use_count):SetText(left_cost_str)
+  self.left_use_count:SetText(left_cost_str)
   self:LeftValueChange()
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.Left_subClick = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function UIGetPhyPointController:Left_subClick()
   if self._left_cost_count <= 1 then
-    return 
+    return
   end
-  local left_cost_str = nil
+  local left_cost_str
   local left_count_now = 0
-  local allValid = (self._shopModule):GetCurExchangePhyValidLeftState()
-  for _,value in pairs(allValid) do
-    left_count_now = left_count_now + (self._roleModule):GetAssetCount(value.cost_id)
+  local allValid = self._shopModule:GetCurExchangePhyValidLeftState()
+  for _, value in pairs(allValid) do
+    left_count_now = left_count_now + self._roleModule:GetAssetCount(value.cost_id)
   end
   self._left_cost_count = self._left_cost_count - 1
   if left_count_now < self._left_cost_count then
@@ -1279,32 +1027,23 @@ UIGetPhyPointController.Left_subClick = function(self)
   else
     left_cost_str = self._left_cost_count
   end
-  ;
-  (self.left_use_count):SetText(left_cost_str)
+  self.left_use_count:SetText(left_cost_str)
   self:LeftValueChange()
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R2 in 'UnsetPending'
-
-UIGetPhyPointController.LeftValueChange = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  self._left_add = (self._left_data).add_phy_count * self._left_cost_count
+function UIGetPhyPointController:LeftValueChange()
+  self._left_add = self._left_data.add_phy_count * self._left_cost_count
   local addstr = self._left_add
-  local str = "<color=#dfb677>" .. (StringTable.Get)("str_get_phy_point_use_somethine_count", addstr) .. "</color>"
-  ;
-  (self.use_count_txt):SetText(str)
-  local current_phy_point = (self._roleModule):GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
+  local str = "<color=#dfb677>" .. StringTable.Get("str_get_phy_point_use_somethine_count", addstr) .. "</color>"
+  self.use_count_txt:SetText(str)
+  local current_phy_point = self._roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
   local left_after_phy_point = current_phy_point + self._left_add
-  local left_after_phy_point_str = nil
-  if left_after_phy_point > 999 then
+  local left_after_phy_point_str
+  if 999 < left_after_phy_point then
     left_after_phy_point_str = "999+"
+  elseif left_after_phy_point < 0 then
+    left_after_phy_point_str = "0"
   else
-    if left_after_phy_point < 0 then
-      left_after_phy_point_str = "0"
-    else
-      left_after_phy_point_str = left_after_phy_point
-    end
+    left_after_phy_point_str = left_after_phy_point
   end
 end
-
-

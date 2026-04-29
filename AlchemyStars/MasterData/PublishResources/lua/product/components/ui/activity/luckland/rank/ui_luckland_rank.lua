@@ -1,53 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/rank/ui_luckland_rank.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandRank", UIController)
 UILuckLandRank = UILuckLandRank
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandRank.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UILuckLandRank:LoadDataOnEnter(TT, res, uiParams)
   self._component = uiParams[1]
-  self._componentInfo = (self._component):GetComponentInfo()
+  self._componentInfo = self._component:GetComponentInfo()
   self._missionID = uiParams[2]
-  ;
-  (self._component):HandleLuckLandGetRankList(TT, res, self._missionID)
+  self._component:HandleLuckLandGetRankList(TT, res, self._missionID)
   if not res:GetSucc() then
-    (self:GetModule(CampaignModule)):ShowErrorToast(res.m_result, true)
+    self:GetModule(CampaignModule):ShowErrorToast(res.m_result, true)
     self:SwitchState(UIStateType.UIMain)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRank.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_luckland_client_mission)[self._missionID]
+function UILuckLandRank:OnShow(uiParams)
+  self._cfg = Cfg.cfg_luckland_client_mission[self._missionID]
   self._loginModule = self:GetModule(LoginModule)
   self._roleModule = self:GetModule(RoleModule)
-  self._pstID = (self._loginModule).PstID
+  self._pstID = self._loginModule.PstID
   self._animationItems = {}
   self:_InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRank.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandRank:OnHide()
   if self._task then
-    ((GameGlobal.TaskManager)()):KillTask(self._task)
+    GameGlobal.TaskManager():KillTask(self._task)
     self._task = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRank._InitWidget = function(self)
-  -- function num : 0_3
+function UILuckLandRank:_InitWidget()
   self._level = self:GetUIComponent("UILocalizationText", "Level")
   self._rankGO = self:GetGameObject("Rank")
   self._noRankGO = self:GetGameObject("NoRank")
@@ -56,62 +39,40 @@ UILuckLandRank._InitWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRank._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UILuckLandRank:_OnValue()
   self:_SetCommonTopButton()
-  self._rankData = ((self._component).m_rank_top)[self._missionID]
-  ;
-  (self._level):SetText((StringTable.Get)("str_luckland_rank_desc", (StringTable.Get)((self._cfg).Name)))
-  ;
-  (self._bottomImgGO):SetActive(false)
-  if self._rankData and (self._rankData).infos and #(self._rankData).infos > 0 then
-    (self._rankGO):SetActive(true)
-    ;
-    (self._noRankGO):SetActive(false)
+  self._rankData = self._component.m_rank_top[self._missionID]
+  self._level:SetText(StringTable.Get("str_luckland_rank_desc", StringTable.Get(self._cfg.Name)))
+  self._bottomImgGO:SetActive(false)
+  if self._rankData and self._rankData.infos and #self._rankData.infos > 0 then
+    self._rankGO:SetActive(true)
+    self._noRankGO:SetActive(false)
     self:_InitDynamicScrollView()
-    if ((self._componentInfo).m_pass_mission_info)[self._missionID] then
-      self._myRankItem = (UIWidgetHelper.SpawnObjects)(self, "MyRank", "UILuckLandRankItem", 1)
-      local index, info = self:_GetMyRank((self._rankData).infos)
-      ;
-      ((self._myRankItem)[1]):SetData(index, info)
-      ;
-      (self._bottomImgGO):SetActive(true)
+    if self._componentInfo.m_pass_mission_info[self._missionID] then
+      self._myRankItem = UIWidgetHelper.SpawnObjects(self, "MyRank", "UILuckLandRankItem", 1)
+      local index, info = self:_GetMyRank(self._rankData.infos)
+      self._myRankItem[1]:SetData(index, info)
+      self._bottomImgGO:SetActive(true)
     end
   else
-    do
-      ;
-      (self._rankGO):SetActive(false)
-      ;
-      (self._noRankGO):SetActive(true)
-    end
+    self._rankGO:SetActive(false)
+    self._noRankGO:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRank._InitDynamicScrollView = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._scrollView):InitListView(#(self._rankData).infos, function(scrollview, index)
-    -- function num : 0_5_0 , upvalues : self
+function UILuckLandRank:_InitDynamicScrollView()
+  self._scrollView:InitListView(#self._rankData.infos, function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
   self:Lock("UILuckLandRank")
   self._task = self:StartTask(function(TT)
-    -- function num : 0_5_1 , upvalues : self, _ENV
     self:_DynamicListPlayAnimation(TT)
     YIELD(TT, 300)
     self:UnLock("UILuckLandRank")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRank._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_6
+function UILuckLandRank:_OnGetItemByIndex(scrollview, index)
   local item = scrollview:NewListViewItem("UILuckLandRankItem")
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if not item.IsInitHandlerCalled then
@@ -119,106 +80,82 @@ UILuckLandRank._OnGetItemByIndex = function(self, scrollview, index)
     itemPool:SpawnObjects("UILuckLandRankItem", 1)
   end
   local itemWidgets = itemPool:GetAllSpawnList()
-  do
-    if itemWidgets[1] then
-      local rankIndex = index + 1
-      ;
-      (itemWidgets[1]):SetData(rankIndex, ((self._rankData).infos)[rankIndex])
-    end
-    return item
+  if itemWidgets[1] then
+    local rankIndex = index + 1
+    itemWidgets[1]:SetData(rankIndex, self._rankData.infos[rankIndex])
   end
+  return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRank._GetMyRank = function(self, infos)
-  -- function num : 0_7 , upvalues : _ENV
+function UILuckLandRank:_GetMyRank(infos)
   local rankIndex = 101
-  local rankInfo = nil
-  for index,info in pairs(infos) do
+  local rankInfo
+  for index, info in pairs(infos) do
     if info.pstid == self._pstID then
       rankIndex = index
       rankInfo = info
       break
     end
   end
-  do
-    if not rankInfo then
-      local playerInfo = (self._roleModule):UI_GetPlayerInfo()
-      rankInfo = {}
-      rankInfo.pstid = self._pstID
-      rankInfo.head = playerInfo.m_nHeadImageID
-      local passInfo = ((self._componentInfo).m_pass_mission_info)[self._missionID]
-      if passInfo then
-        rankInfo.damage = passInfo.record_score
-      else
-        rankInfo.damage = 0
-      end
-      rankInfo.nick = playerInfo.m_stRoleName
-      rankInfo.head_bg = playerInfo.m_nHeadColorID
-      rankInfo.frame_id = (self._roleModule):GetHeadFrameID()
+  if not rankInfo then
+    local playerInfo = self._roleModule:UI_GetPlayerInfo()
+    rankInfo = {}
+    rankInfo.pstid = self._pstID
+    rankInfo.head = playerInfo.m_nHeadImageID
+    local passInfo = self._componentInfo.m_pass_mission_info[self._missionID]
+    if passInfo then
+      rankInfo.damage = passInfo.record_score
+    else
+      rankInfo.damage = 0
     end
-    do
-      return rankIndex, rankInfo
-    end
+    rankInfo.nick = playerInfo.m_stRoleName
+    rankInfo.head_bg = playerInfo.m_nHeadColorID
+    rankInfo.frame_id = self._roleModule:GetHeadFrameID()
   end
+  return rankIndex, rankInfo
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRank._SetCommonTopButton = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local closeCallback = function()
-    -- function num : 0_8_0 , upvalues : self, _ENV
+function UILuckLandRank:_SetCommonTopButton()
+  local function closeCallback()
     self:Lock("UILuckLandRank")
+    
     self:StartTask(function(TT)
-      -- function num : 0_8_0_0 , upvalues : self, _ENV
-      (self._animation):Play("uieff_UILuckLandRank_out")
+      self._animation:Play("uieff_UILuckLandRank_out")
       YIELD(TT, 333)
       self:CloseDialog()
       self:UnLock("UILuckLandRank")
-    end
-, self)
+    end, self)
   end
-
-  local helpCallBack = function()
-    -- function num : 0_8_1 , upvalues : self
+  
+  local function helpCallBack()
     self:ShowDialog("UIIntroLoader", "UILuckLandRank")
   end
-
-  local obj = (UIWidgetHelper.SpawnObject)(self, "BackBtns", "UINewCommonTopButton")
+  
+  local obj = UIWidgetHelper.SpawnObject(self, "BackBtns", "UINewCommonTopButton")
   obj:SetData(closeCallback, helpCallBack, nil, true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRank._DynamicListPlayAnimation = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
-  local showTabIds = (self._scrollView):GetVisibleItemIDsInScrollView()
+function UILuckLandRank:_DynamicListPlayAnimation(TT)
+  local showTabIds = self._scrollView:GetVisibleItemIDsInScrollView()
   local items = {}
   for index = 0, showTabIds.Count - 1 do
-    local id = (math.floor)(showTabIds[index])
-    local item = (self._scrollView):GetShownItemByItemIndex(id)
+    local id = math.floor(showTabIds[index])
+    local item = self._scrollView:GetShownItemByItemIndex(id)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local rowList = rowPool:GetAllSpawnList()
     if rowList then
       for i = 1, #rowList do
-        (item.gameObject):SetActive(false)
+        item.gameObject:SetActive(false)
         local data = {}
         data.gameObject = item.gameObject
         data.widget = rowList[i]
-        ;
-        (table.insert)(items, data)
+        table.insert(items, data)
       end
     end
   end
   for i = 1, #items do
     YIELD(TT, (i - 1) * 50)
-    ;
-    ((items[i]).gameObject):SetActive(true)
-    ;
-    ((items[i]).widget):PlayAnimation()
+    items[i].gameObject:SetActive(true)
+    items[i].widget:PlayAnimation()
   end
 end
-
-

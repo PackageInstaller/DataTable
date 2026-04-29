@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_coin_and_ms.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddCoinAndMs", BuffLogicBase)
 BuffLogicAddCoinAndMs = BuffLogicAddCoinAndMs
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddCoinAndMs.Constructor = function(self, buffinstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddCoinAndMs:Constructor(buffinstance, logicParam)
   self._addGoldCoin = logicParam.addGoldCoin
   self._addMS = logicParam.addMS
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddCoinAndMs.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function BuffLogicAddCoinAndMs:DoLogic(notify)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local com = teamEntity:BuffComponent()
   com:SetBuffValue("SeasonMazeAddGoldCoin", self._addGoldCoin)
   com:SetBuffValue("SeasonMazeAddMS", self._addMS)
 end
-
-

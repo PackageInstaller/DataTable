@@ -1,49 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/flea/ui_season_maze_room_flea.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomFlea", UISeasonMazeRoomBase)
 UISeasonMazeRoomFlea = UISeasonMazeRoomFlea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomFlea.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(SeasonMazeModule)
+function UISeasonMazeRoomFlea:Constructor()
+  self._module = GameGlobal.GetModule(SeasonMazeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1
+function UISeasonMazeRoomFlea:LoadDataOnEnter(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea.OnShowUI = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeRoomFlea:OnShowUI(uiParams)
   self:InitWidget()
-  local count = (table.count)((self._roomInfo).market)
+  local count = table.count(self._roomInfo.market)
   if count <= 0 then
     self:Lock("HandleSeasonMazeGetMarket")
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    local res = AsyncRequestRes:New()
-    ;
-    (self._component):HandleSeasonMazeGetMarket(TT, res)
-    if not res:GetSucc() then
-      ((self._module):UIModule()):ExitTo(UIStateType.UISeasonMazeMain)
-      self:UnLock("HandleSeasonMazeGetMarket")
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return 
+      local res = AsyncRequestRes:New()
+      self._component:HandleSeasonMazeGetMarket(TT, res)
+      if not res:GetSucc() then
+        self._module:UIModule():ExitTo(UIStateType.UISeasonMazeMain)
+        self:UnLock("HandleSeasonMazeGetMarket")
+        if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+          return
+        end
+        return
       end
-      return 
-    end
-    self:UnLock("HandleSeasonMazeGetMarket")
-    self:_InitData()
-    self:_OnValue()
-  end
-, self)
+      self:UnLock("HandleSeasonMazeGetMarket")
+      self:_InitData()
+      self:_OnValue()
+    end, self)
   else
     self:_InitData()
     self:_OnValue()
@@ -51,21 +35,14 @@ UISeasonMazeRoomFlea.OnShowUI = function(self, uiParams)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea._CheckGuide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeRoomFlea)
+function UISeasonMazeRoomFlea:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeRoomFlea)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea.InitWidget = function(self)
-  -- function num : 0_4
+function UISeasonMazeRoomFlea:InitWidget()
   self._grid = self:GetUIComponent("UISelectObjectPath", "Grid")
   self.tipBtn = self:GetGameObject("TipBtn")
-  ;
-  (self.tipBtn):SetActive(false)
+  self.tipBtn:SetActive(false)
   self.beadTips = self:GetGameObject("BeadTips")
   self.tipsTitle = self:GetUIComponent("UILocalizationText", "TipsTitle")
   self.tipsDesc = self:GetUIComponent("UILocalizationText", "TipsDesc")
@@ -73,170 +50,107 @@ UISeasonMazeRoomFlea.InitWidget = function(self)
   self.canvasGroup = self:GetUIComponent("CanvasGroup", "TipBtn")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea._OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._grid):SpawnObjects("UISeasonMazeRoomFleaItem", 6)
-  self._itemWidgets = (self._grid):GetAllSpawnList()
-  for key,widget in ipairs(self._itemWidgets) do
-    widget:SetData(key, (self._data)[key], function(index)
-    -- function num : 0_5_0 , upvalues : self
-    self:_OnClickBead(index)
-  end
-, function(position, titleStr, descStr)
-    -- function num : 0_5_1 , upvalues : self
-    self:ShowBeadTips(position, titleStr, descStr)
-  end
-)
+function UISeasonMazeRoomFlea:_OnValue()
+  self._grid:SpawnObjects("UISeasonMazeRoomFleaItem", 6)
+  self._itemWidgets = self._grid:GetAllSpawnList()
+  for key, widget in ipairs(self._itemWidgets) do
+    widget:SetData(key, self._data[key], function(index)
+      self:_OnClickBead(index)
+    end, function(position, titleStr, descStr)
+      self:ShowBeadTips(position, titleStr, descStr)
+    end)
   end
   self:_PlayAnimation()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea._PlayAnimation = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMazeRoomFlea:_PlayAnimation()
   self:Lock("UISeasonMazeRoomFleaPlayAnimation")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
-    for index,widget in ipairs(self._itemWidgets) do
+    for index, widget in ipairs(self._itemWidgets) do
       widget:PlayAnimation()
       YIELD(TT, (index - 1) * 15)
     end
     self:UnLock("UISeasonMazeRoomFleaPlayAnimation")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea._InitData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeRoomFlea:_InitData()
   self:RefreshRoomInfo()
   self._data = {}
-  for pstid,roleInfo in pairs((self._roomInfo).market) do
+  for pstid, roleInfo in pairs(self._roomInfo.market) do
     local t = {}
     t.pstid = pstid
     t.roleInfo = roleInfo
-    ;
-    (table.insert)(self._data, t)
+    table.insert(self._data, t)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea.TipsBtnOnClick = function(self, go)
-  -- function num : 0_8
-  self:ShowBeadTips((go.transform).position, "str_season_maze_room_flea_intro_title", "str_season_maze_room_flea_intro_desc")
+function UISeasonMazeRoomFlea:TipsBtnOnClick(go)
+  self:ShowBeadTips(go.transform.position, "str_season_maze_room_flea_intro_title", "str_season_maze_room_flea_intro_desc")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea.ShowBeadTips = function(self, position, titleStr, descStr)
-  -- function num : 0_9
+function UISeasonMazeRoomFlea:ShowBeadTips(position, titleStr, descStr)
   self:Lock("UISeasonMazeRoomFleaTips")
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, position, titleStr, descStr
     self:_ShowBeadTips(TT, position, titleStr, descStr)
     self:UnLock("UISeasonMazeRoomFleaTips")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea._ShowBeadTips = function(self, TT, position, titleStr, descStr)
-  -- function num : 0_10 , upvalues : _ENV
-  (self.tipBtn):SetActive(true)
-  ;
-  (self.tipsTitle):SetText((StringTable.Get)(titleStr))
-  ;
-  (self.tipsDesc):SetText((StringTable.Get)(descStr))
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.canvasGroup).alpha = 0
+function UISeasonMazeRoomFlea:_ShowBeadTips(TT, position, titleStr, descStr)
+  self.tipBtn:SetActive(true)
+  self.tipsTitle:SetText(StringTable.Get(titleStr))
+  self.tipsDesc:SetText(StringTable.Get(descStr))
+  self.canvasGroup.alpha = 0
   YIELD(TT)
   local controllName = self:GetName()
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(controllName)
-  local controller = ((GameGlobal.UIStateManager)()):GetController(controllName)
+  local camera = GameGlobal.UIStateManager():GetControllerCamera(controllName)
+  local controller = GameGlobal.UIStateManager():GetController(controllName)
   local gameObject = controller:GetGameObject()
-  local transform = (gameObject.transform):Find("UICanvas")
+  local transform = gameObject.transform:Find("UICanvas")
   local rectTransform = transform:GetComponent(typeof(UnityEngine.RectTransform))
   local point = camera:WorldToScreenPoint(position)
-  local res, position = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rectTransform, point, camera, nil)
-  if (rectTransform.sizeDelta).x * 0.5 < position.x + ((self.tipsBgRect).sizeDelta).x then
-    position.x = (rectTransform.sizeDelta).x * 0.5 - ((self.tipsBgRect).sizeDelta).x
+  local res, position = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, point, camera, nil)
+  if position.x + self.tipsBgRect.sizeDelta.x > rectTransform.sizeDelta.x * 0.5 then
+    position.x = rectTransform.sizeDelta.x * 0.5 - self.tipsBgRect.sizeDelta.x
   end
-  if position.y + (rectTransform.sizeDelta).y * 0.5 < ((self.tipsBgRect).sizeDelta).y then
-    position.y = ((self.tipsBgRect).sizeDelta).y - (rectTransform.sizeDelta).y * 0.5
+  if position.y + rectTransform.sizeDelta.y * 0.5 < self.tipsBgRect.sizeDelta.y then
+    position.y = self.tipsBgRect.sizeDelta.y - rectTransform.sizeDelta.y * 0.5
   end
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  ((self.beadTips).transform).localPosition = position
-  -- DECOMPILER ERROR at PC100: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self.canvasGroup).alpha = 1
+  self.beadTips.transform.localPosition = position
+  self.canvasGroup.alpha = 1
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea.TipBtnOnClick = function(self, go)
-  -- function num : 0_11
-  (self.tipBtn):SetActive(false)
+function UISeasonMazeRoomFlea:TipBtnOnClick(go)
+  self.tipBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea.CancleBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  (UISeasonMazeModule.PopMsgBox)((StringTable.Get)("str_season_maze_common_tips_title"), (StringTable.Get)("str_season_maze_room_market_giveup"), SeasonMazeMsgBoxType.OkCancel, function()
-    -- function num : 0_12_0 , upvalues : self
+function UISeasonMazeRoomFlea:CancleBtnOnClick(go)
+  UISeasonMazeModule.PopMsgBox(StringTable.Get("str_season_maze_common_tips_title"), StringTable.Get("str_season_maze_room_market_giveup"), SeasonMazeMsgBoxType.OkCancel, function()
     self:OnHideUI()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea._OnClickBead = function(self, index)
-  -- function num : 0_13
-  self:ShowDialog("UISeasonMazeRoomFleaBeadBag", self._component, true, (self._data)[index], function()
-    -- function num : 0_13_0 , upvalues : self
+function UISeasonMazeRoomFlea:_OnClickBead(index)
+  self:ShowDialog("UISeasonMazeRoomFleaBeadBag", self._component, true, self._data[index], function()
     self:_InitData()
     self:_OnValue()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea._CloseAfterToast = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UISeasonMazeRoomFlea:_CloseAfterToast()
   self:Lock("UISeasonMazeRoomFlea")
   self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : _ENV, self
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_maze_room_flea_close_tips"))
+    ToastManager.ShowToast(StringTable.Get("str_season_maze_room_flea_close_tips"))
     YIELD(TT, 1500)
     self:OnHideUI()
     self:UnLock("UISeasonMazeRoomFlea")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomFlea.BackBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
-  ;
-  ((self._seasonMazeModule):UIModule()):SetTempRoom(self:GetName())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTempCloseRoom, true)
+function UISeasonMazeRoomFlea:BackBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
+  self._seasonMazeModule:UIModule():SetTempRoom(self:GetName())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTempCloseRoom, true)
   self:CloseDialog()
 end
-
-

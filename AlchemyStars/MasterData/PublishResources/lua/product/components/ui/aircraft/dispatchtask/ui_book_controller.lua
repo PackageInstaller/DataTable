@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_book_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookController", UIController)
 UIBookController = UIBookController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBookController:OnShow(uiParams)
   self._topBarLoader = self:GetUIComponent("UISelectObjectPath", "TopBarLoader")
-  self.topButtonWidget = (self._topBarLoader):SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.topButtonWidget = self._topBarLoader:SpawnObject("UICommonTopButton")
+  self.topButtonWidget:SetData(function()
     self:OnBack()
-  end
-, nil, function()
-    -- function num : 0_0_1 , upvalues : self
+  end, nil, function()
     self:OnHome()
-  end
-)
+  end)
   self._bookScrollView = self:GetUIComponent("UIDynamicScrollView", "BookList")
   self._chapterScrollView = self:GetUIComponent("UIDynamicScrollView", "ChapterList")
   self._chapterPanel = self:GetGameObject("ChapterPanel")
@@ -30,84 +18,49 @@ UIBookController.OnShow = function(self, uiParams)
   self:_InitUI()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookController.SelectBook = function(self, bookData)
-  -- function num : 0_1
+function UIBookController:SelectBook(bookData)
   if self._currentSelectBook then
-    (self._currentSelectBook):SetSelectedStatus(false)
+    self._currentSelectBook:SetSelectedStatus(false)
   end
   self._currentSelectBook = bookData
-  ;
-  (self._currentSelectBook):SetSelectedStatus(true)
-  ;
-  (self._bookScrollView):RefreshAllShownItem()
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bookNameLabel).text = (self._currentSelectBook):GetName()
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bookDesLabel).text = (self._currentSelectBook):GetDes()
-  ;
-  (self._chapterPanel):SetActive(true)
-  self._chapterCount = (self._currentSelectBook):GetChapterCount()
-  ;
-  (self._chapterScrollView):SetListItemCount(self._chapterCount, true)
-  ;
-  (self._chapterScrollView):RefreshAllShownItem()
+  self._currentSelectBook:SetSelectedStatus(true)
+  self._bookScrollView:RefreshAllShownItem()
+  self._bookNameLabel.text = self._currentSelectBook:GetName()
+  self._bookDesLabel.text = self._currentSelectBook:GetDes()
+  self._chapterPanel:SetActive(true)
+  self._chapterCount = self._currentSelectBook:GetChapterCount()
+  self._chapterScrollView:SetListItemCount(self._chapterCount, true)
+  self._chapterScrollView:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookController._InitData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBookController:_InitData()
   self._currentSelectBook = nil
-  local bookCfg = (Cfg.cfg_book)({})
-  self.bookCount = (table.count)(bookCfg)
+  local bookCfg = Cfg.cfg_book({})
+  self.bookCount = table.count(bookCfg)
   self._bookDatas = {}
   self._chapterCount = 0
-  for k,v in pairs(bookCfg) do
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._bookDatas)[#self._bookDatas + 1] = BookData:New(v)
+  for k, v in pairs(bookCfg) do
+    self._bookDatas[#self._bookDatas + 1] = BookData:New(v)
   end
-  ;
-  (table.sort)(self._bookDatas, function(a, b)
-    -- function num : 0_2_0
-    do return a:GetIndex() < b:GetIndex() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._bookDatas, function(a, b)
+    return a:GetIndex() < b:GetIndex()
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookController._InitUI = function(self)
-  -- function num : 0_3
-  (self._bookScrollView):InitListView(self.bookCount, function(scrollview, index)
-    -- function num : 0_3_0 , upvalues : self
+function UIBookController:_InitUI()
+  self._bookScrollView:InitListView(self.bookCount, function(scrollview, index)
     return self:_OnGetBookItem(scrollview, index)
-  end
-)
-  ;
-  (self._chapterPanel):SetActive(false)
-  ;
-  (self._chapterScrollView):InitListView(self._chapterCount, function(scrollview, index)
-    -- function num : 0_3_1 , upvalues : self
+  end)
+  self._chapterPanel:SetActive(false)
+  self._chapterScrollView:InitListView(self._chapterCount, function(scrollview, index)
     return self:_OnGetChapterItem(scrollview, index)
-  end
-)
+  end)
   if #self._bookDatas > 0 then
-    self:SelectBook((self._bookDatas)[1])
+    self:SelectBook(self._bookDatas[1])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookController._OnGetBookItem = function(self, scrollView, index)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBookController:_OnGetBookItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -116,34 +69,24 @@ UIBookController._OnGetBookItem = function(self, scrollView, index)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self.bookCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:_RefreshBookItemInfo(itemWidget, itemIndex)
-        ;
-        (itemWidget:GetGameObject()):SetActive(true)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self.bookCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:_RefreshBookItemInfo(itemWidget, itemIndex)
+      itemWidget:GetGameObject():SetActive(true)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookController._RefreshBookItemInfo = function(self, itemWidget, index)
-  -- function num : 0_5
-  itemWidget:Refresh(self, (self._bookDatas)[index])
+function UIBookController:_RefreshBookItemInfo(itemWidget, index)
+  itemWidget:Refresh(self, self._bookDatas[index])
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookController._OnGetChapterItem = function(self, scrollView, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBookController:_OnGetChapterItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -155,49 +98,33 @@ UIBookController._OnGetChapterItem = function(self, scrollView, index)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._chapterCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:_RefreshChapterItemInfo(itemWidget, itemIndex)
-        ;
-        (itemWidget:GetGameObject()):SetActive(true)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._chapterCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:_RefreshChapterItemInfo(itemWidget, itemIndex)
+      itemWidget:GetGameObject():SetActive(true)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookController._RefreshChapterItemInfo = function(self, itemWidget, index)
-  -- function num : 0_7
+function UIBookController:_RefreshChapterItemInfo(itemWidget, index)
   if not self._currentSelectBook then
-    return 
+    return
   end
-  local chapters = (self._currentSelectBook):GetChapters()
+  local chapters = self._currentSelectBook:GetChapters()
   itemWidget:Refresh(self._currentSelectBook, chapters[index], index)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookController.OnBack = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBookRedPointStatus)
+function UIBookController:OnBack()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBookRedPointStatus)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookController.OnHome = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveAircraft)
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
+function UIBookController:OnHome()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveAircraft)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
 end
-
-

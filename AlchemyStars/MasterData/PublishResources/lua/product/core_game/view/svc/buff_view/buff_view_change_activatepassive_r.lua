@@ -1,43 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_activatepassive_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeActivatePassive", BuffViewBase)
 BuffViewChangeActivatePassive = BuffViewChangeActivatePassive
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeActivatePassive.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeActivatePassive:IsNotifyMatch(notify)
   local result = self._buffResult
-  do
-    if notify and notify:GetNotifyType() == NotifyType.NotifyLayerChange then
-      local n = notify
-      if notify:GetLayerName() ~= result:GetLayerName() then
-        return false
-      end
-      return result:GetLayer() == n:GetLayer()
+  if notify and notify:GetNotifyType() == NotifyType.NotifyLayerChange then
+    local n = notify
+    if notify:GetLayerName() ~= result:GetLayerName() then
+      return false
     end
-    do return true end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    return result:GetLayer() == n:GetLayer()
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangeActivatePassive.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local light = (self._buffResult):GetLight()
-  local bForceInit = (self._buffResult):GetForceInit()
-  do
-    if bForceInit then
-      local forceInitType = (self._buffResult):GetForceInitType()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ForceInitPassiveIcon, ((self._entity):PetPstID()):GetPstID(), forceInitType)
-    end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((self._entity):PetPstID()):GetPstID(), light)
+function BuffViewChangeActivatePassive:PlayView(TT)
+  local light = self._buffResult:GetLight()
+  local bForceInit = self._buffResult:GetForceInit()
+  if bForceInit then
+    local forceInitType = self._buffResult:GetForceInitType()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ForceInitPassiveIcon, self._entity:PetPstID():GetPstID(), forceInitType)
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, self._entity:PetPstID():GetPstID(), light)
 end
-
-

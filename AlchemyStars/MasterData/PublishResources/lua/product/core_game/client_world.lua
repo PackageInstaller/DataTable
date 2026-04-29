@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/client_world.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_world")
 _class("ClientWorld", MainWorld)
 ClientWorld = ClientWorld
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientWorld.Constructor = function(self, worldInfo)
-  -- function num : 0_0 , upvalues : _ENV
+function ClientWorld:Constructor(worldInfo)
   self._networkMode = worldInfo.network_mode
   if self._networkMode == NetworkMode.StandAlone then
     self.DummyServer = DummyServer:New()
@@ -17,16 +10,13 @@ ClientWorld.Constructor = function(self, worldInfo)
   self._runningPosition = WorldRunPostion.AtClient
   self._aiLogger = AILogger:New(self)
   if EDITOR then
-    self._aiDebugModule = (GameGlobal.GetModule)(AIDebugModule)
+    self._aiDebugModule = GameGlobal.GetModule(AIDebugModule)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWorld.EnterWorld = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ClientWorld.super).EnterWorld)(self)
-  local sev_network = (self.BW_Services):GetService("Network")
+function ClientWorld:EnterWorld()
+  ClientWorld.super.EnterWorld(self)
+  local sev_network = self.BW_Services:GetService("Network")
   if self._networkMode == NetworkMode.StandAlone then
     local server = self.DummyServer
     server:SetNetworkService(sev_network)
@@ -34,57 +24,33 @@ ClientWorld.EnterWorld = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWorld.EventDispatcher = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return (GameGlobal.EventDispatcher)()
+function ClientWorld:EventDispatcher()
+  return GameGlobal.EventDispatcher()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWorld.IDGenerator = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (GameGlobal.GameEventListenerIDGenerator)()
+function ClientWorld:IDGenerator()
+  return GameGlobal.GameEventListenerIDGenerator()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWorld.UpdateWorld = function(self, deltaTimeMS)
-  -- function num : 0_4 , upvalues : _ENV
-  ((ClientWorld.super).UpdateWorld)(self, deltaTimeMS)
+function ClientWorld:UpdateWorld(deltaTimeMS)
+  ClientWorld.super.UpdateWorld(self, deltaTimeMS)
   if self.DummyServer ~= nil then
-    (self.DummyServer):Update(deltaTimeMS)
+    self.DummyServer:Update(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWorld.GetWorldTimer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return (GameGlobal.Timer)()
+function ClientWorld:GetWorldTimer()
+  return GameGlobal.Timer()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWorld.IsDevelopEnv = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  do return Log.loglevel < ELogLevel.None end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function ClientWorld:IsDevelopEnv()
+  return Log.loglevel < ELogLevel.None
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWorld.GetAILogger = function(self)
-  -- function num : 0_7
+function ClientWorld:GetAILogger()
   return self._aiLogger
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWorld.GetAIDebugModule = function(self)
-  -- function num : 0_8
+function ClientWorld:GetAIDebugModule()
   return self._aiDebugModule
 end
-
-

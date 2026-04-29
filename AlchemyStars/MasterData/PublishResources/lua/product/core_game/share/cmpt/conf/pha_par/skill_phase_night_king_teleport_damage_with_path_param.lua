@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_night_king_teleport_damage_with_path_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseNightKingTeleportDamageWithPathParam", SkillPhaseParamBase)
 SkillPhaseNightKingTeleportDamageWithPathParam = SkillPhaseNightKingTeleportDamageWithPathParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseNightKingTeleportDamageWithPathParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseNightKingTeleportDamageWithPathParam:Constructor(t)
   self.startAction = t.startAction
   self.startEffectID = t.startEffectID
   self.hideDelay = t.hideDelay
@@ -28,149 +21,111 @@ SkillPhaseNightKingTeleportDamageWithPathParam.Constructor = function(self, t)
   self.endAction = t.endAction
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetPhaseType()
   return SkillViewPhaseType.NightKingTeleportDamageWithPath
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetCacheTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetCacheTable()
   local t = {}
   if self.startEffectID and self.startEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.startEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.startEffectID].ResPath,
+      1
+    })
   end
   if self.attackEffectID and self.attackEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.attackEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.attackEffectID].ResPath,
+      1
+    })
   end
   if self.attackCameraEffectID and self.attackCameraEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.attackCameraEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.attackCameraEffectID].ResPath,
+      1
+    })
   end
   if self.showEffectID and self.showEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.showEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.showEffectID].ResPath,
+      1
+    })
   end
   if self.beHitEffectID and self.beHitEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.beHitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.beHitEffectID].ResPath,
+      1
+    })
   end
   if self.finalBeHitEffectID and self.finalBeHitEffectID ~= 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.finalBeHitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.finalBeHitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetStartAction = function(self)
-  -- function num : 0_3
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetStartAction()
   return self.startAction
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetEndAction = function(self)
-  -- function num : 0_4
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetEndAction()
   return self.endAction
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetHideDelay = function(self)
-  -- function num : 0_5
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetHideDelay()
   return self.hideDelay
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetStartEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetStartEffectID()
   return self.startEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetAttackEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetAttackEffectID()
   return self.attackEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetAttackCameraEffectID = function(self)
-  -- function num : 0_8
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetAttackCameraEffectID()
   return self.attackCameraEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetDashAudioID = function(self)
-  -- function num : 0_9
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetDashAudioID()
   return self.dashAudioID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetSecondDashDelay = function(self)
-  -- function num : 0_10
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetSecondDashDelay()
   return self.secondDashDelay
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetDashInterval = function(self)
-  -- function num : 0_11
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetDashInterval()
   return self.dashInterval
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetShowEffectDelay = function(self)
-  -- function num : 0_12
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetShowEffectDelay()
   return self.showEffectDelay
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetShowDelay = function(self)
-  -- function num : 0_13
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetShowDelay()
   return self.showDelay
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetShowEffectID = function(self)
-  -- function num : 0_14
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetShowEffectID()
   return self.showEffectID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetBeHitAnimation = function(self)
-  -- function num : 0_15
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetBeHitAnimation()
   return self.beHitAnimation
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetBeHitEffectID = function(self)
-  -- function num : 0_16
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetBeHitEffectID()
   return self.beHitEffectID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetFinalBeHitEffectID = function(self)
-  -- function num : 0_17
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetFinalBeHitEffectID()
   return self.finalBeHitEffectID
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNightKingTeleportDamageWithPathParam.GetFinalDelay = function(self)
-  -- function num : 0_18
+function SkillPhaseNightKingTeleportDamageWithPathParam:GetFinalDelay()
   return self.finalDelay
 end
-
-

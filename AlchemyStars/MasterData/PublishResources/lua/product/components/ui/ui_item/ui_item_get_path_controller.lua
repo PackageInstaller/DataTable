@@ -1,17 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_item/ui_item_get_path_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIItemGetPathController", UIController)
 UIItemGetPathController = UIItemGetPathController
-local GetWayItemType = {Jump = 1, Text = 2, Use = 3, EC = 4, GetWayIntroduce = 5}
+local GetWayItemType = {
+  Jump = 1,
+  Text = 2,
+  Use = 3,
+  EC = 4,
+  GetWayIntroduce = 5
+}
 _enum("GetWayItemType", GetWayItemType)
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-UIItemGetPathController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIItemGetPathController:OnShow(uiParams)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
   self._itemid = uiParams[1]
   self._itemCondition = uiParams[4]
   self._txtItemName = self:GetUIComponent("UILocalizationText", "txt_item_name")
@@ -22,54 +21,38 @@ UIItemGetPathController.OnShow = function(self, uiParams)
   self._noPath = self:GetGameObject("noPath")
   self._poolGo = self:GetGameObject("GetWayList")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "GetWayList")
-  local cfg = (Cfg.cfg_item)[self._itemid]
+  local cfg = Cfg.cfg_item[self._itemid]
   if cfg == nil then
-    (Log.fatal)("[item] error --> cfg_item is nil ! id --> " .. self._itemid)
-    return 
+    Log.fatal("[item] error --> cfg_item is nil ! id --> " .. self._itemid)
+    return
   end
-  ;
-  (self._imageItemIcon):LoadImage(cfg.Icon)
-  ;
-  (self._txtItemName):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._txtItemSimpleDesc):SetText((StringTable.Get)(cfg.Intro))
+  self._imageItemIcon:LoadImage(cfg.Icon)
+  self._txtItemName:SetText(StringTable.Get(cfg.Name))
+  self._txtItemSimpleDesc:SetText(StringTable.Get(cfg.Intro))
   self:AttachEvent(GameEventType.CloseUIBackPackBox, self.OnValue)
   self:AttachEvent(GameEventType.OnSerialAutoFightSweepFinish, self.OnSweepFinish)
   self:OnValue()
-  local jumpData = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetJumpData()
+  local jumpData = GameGlobal.GetModule(SerialAutoFightModule):GetJumpData()
   jumpData:Track_Item(self._itemid, self._itemCondition)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.OnSweepFinish = function(self)
-  -- function num : 0_1
+function UIItemGetPathController:OnSweepFinish()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController._InitSrollView = function(self)
-  -- function num : 0_2
+function UIItemGetPathController:_InitSrollView()
   if self._scrollviewInited then
-    (self._scrollView):SetListItemCount(self._listItemTotalCount)
-    ;
-    (self._scrollView):MovePanelToItemIndex(0, 0)
+    self._scrollView:SetListItemCount(self._listItemTotalCount)
+    self._scrollView:MovePanelToItemIndex(0, 0)
   else
-    ;
-    (self._scrollView):InitListView(self._listItemTotalCount, function(scrollView, index)
-    -- function num : 0_2_0 , upvalues : self
-    return self:InitPathListInfo(scrollView, index)
-  end
-)
+    self._scrollView:InitListView(self._listItemTotalCount, function(scrollView, index)
+      return self:InitPathListInfo(scrollView, index)
+    end)
     self._scrollviewInited = true
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.InitPathListInfo = function(self, scrollView, index)
-  -- function num : 0_3
+function UIItemGetPathController:InitPathListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -83,235 +66,195 @@ UIItemGetPathController.InitPathListInfo = function(self, scrollView, index)
   for i = 1, #rowList do
     local item = rowList[i]
     local itemIndex = index * 1 + i
-    if self._listItemTotalCount < itemIndex then
-      (item:GetGameObject()):SetActive(false)
+    if itemIndex > self._listItemTotalCount then
+      item:GetGameObject():SetActive(false)
     else
-      ;
-      (item:GetGameObject()):SetActive(true)
+      item:GetGameObject():SetActive(true)
       self:ShowPathItem(item, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.ShowPathItem = function(self, item, index)
-  -- function num : 0_4
+function UIItemGetPathController:ShowPathItem(item, index)
   local way = self:_GetGetWay(index)
   if way then
-    if self._needNum ~= nil or not 1 then
-      self._needNum = self._needNum
-      item:SetData(way, index, self._itemid, self._needNum, self._needNumRawData)
-    end
+    self._needNum = self._needNum == nil and 1 or self._needNum
+    item:SetData(way, index, self._itemid, self._needNum, self._needNumRawData)
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIItemGetPathController:OnHide()
   self:DetachEvent(GameEventType.CloseUIBackPackBox, self.OnValue)
-  local jumpData = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetJumpData()
+  local jumpData = GameGlobal.GetModule(SerialAutoFightModule):GetJumpData()
   jumpData:Track_Item()
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController._CalcNeedItem = function(self)
-  -- function num : 0_6
+function UIItemGetPathController:_CalcNeedItem()
   if self._itemCondition then
     self._needNum = self:GetGapValue()
     self._needNumRawData = self._needNum
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.GetTargetItem = function(self)
-  -- function num : 0_7
-  return {self._itemid, self._itemCondition}
+function UIItemGetPathController:GetTargetItem()
+  return {
+    self._itemid,
+    self._itemCondition
+  }
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.OnValue = function(self)
-  -- function num : 0_8 , upvalues : _ENV, GetWayItemType
+function UIItemGetPathController:OnValue()
   self:_CalcNeedItem()
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local c = roleModule:GetAssetCount(self._itemid)
-  ;
-  (self._itemCount):SetText(c)
+  self._itemCount:SetText(c)
   local ways = self:GetWay()
   self._itemGetWay = {}
   for i = 1, #ways do
     local v = ways[i]
     local _useItemId = v.useItemId
     local _useItemCount = v.useItemCount
-    local tmp = (StringTable.Get)(v.desc)
+    local tmp = StringTable.Get(v.desc)
     if v.type == GetWayItemType.EC then
       tmp = v.desc
     else
-      tmp = (StringTable.Get)(v.desc)
+      tmp = StringTable.Get(v.desc)
     end
     local jumpid = v.jumpId
     local tmp_desc = self:CreateGetWayString(tmp, jumpid)
     local _enable, extraStr = self:CheckEnable(jumpid)
-    local randomText = nil
+    local randomText
     if v.type == GetWayItemType.Use or v.type == GetWayItemType.EC then
-      local count = (self._itemModule):GetItemCount(_useItemId)
-      randomText = (StringTable.Get)("str_item_public_get_path_owned", count)
+      local count = self._itemModule:GetItemCount(_useItemId)
+      randomText = StringTable.Get("str_item_public_get_path_owned", count)
     else
-      do
-        randomText = (UIEnum.ItemRandomStr)(v.randomType)
-        if not (string.isnullorempty)(randomText) then
-          randomText = "【" .. randomText .. "】"
-        end
-        local isSmeltRoom, str, conform = self:SpecialGetWayInfo(jumpid, self._itemid)
-        do
-          local smeltRoomInfo = nil
-          if isSmeltRoom then
-            randomText = str
-            _enable = true
-            smeltRoomInfo = {}
-            smeltRoomInfo.isSmeltRoom = isSmeltRoom
-            smeltRoomInfo.conform = conform
-          else
-            tmp_desc = tmp_desc .. extraStr
-          end
-          ;
-          (table.insert)(self._itemGetWay, {way = v.type, useItemId = _useItemId, useItemCount = _useItemCount, desc = tmp_desc, enabled = _enable, jumpId = jumpid, randomText = randomText, smeltRoomInfo = smeltRoomInfo})
-          -- DECOMPILER ERROR at PC113: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC113: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC113: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      randomText = UIEnum.ItemRandomStr(v.randomType)
     end
+    if not string.isnullorempty(randomText) then
+      randomText = "【" .. randomText .. "】"
+    end
+    local isSmeltRoom, str, conform = self:SpecialGetWayInfo(jumpid, self._itemid)
+    local smeltRoomInfo
+    if isSmeltRoom then
+      randomText = str
+      _enable = true
+      smeltRoomInfo = {}
+      smeltRoomInfo.isSmeltRoom = isSmeltRoom
+      smeltRoomInfo.conform = conform
+    else
+      tmp_desc = tmp_desc .. extraStr
+    end
+    table.insert(self._itemGetWay, {
+      way = v.type,
+      useItemId = _useItemId,
+      useItemCount = _useItemCount,
+      desc = tmp_desc,
+      enabled = _enable,
+      jumpId = jumpid,
+      randomText = randomText,
+      smeltRoomInfo = smeltRoomInfo
+    })
   end
-  self._listItemTotalCount = (table.count)(self._itemGetWay)
-  ;
-  (self._noPath):SetActive(self._listItemTotalCount <= 0)
-  ;
-  (self._poolGo):SetActive(self._listItemTotalCount > 0)
+  self._listItemTotalCount = table.count(self._itemGetWay)
+  self._noPath:SetActive(self._listItemTotalCount <= 0)
+  self._poolGo:SetActive(self._listItemTotalCount > 0)
   if self._itemCondition then
     self._needNum = self:GetGapValue()
   end
   self:_InitSrollView()
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.SpecialGetWayInfo = function(self, jumpId, useItemId)
-  -- function num : 0_9 , upvalues : _ENV
+function UIItemGetPathController:SpecialGetWayInfo(jumpId, useItemId)
   local randomText = ""
-  local cfg = (Cfg.cfg_jump)[jumpId]
+  local cfg = Cfg.cfg_jump[jumpId]
   local isSmeltRoom = false
   local conform = false
-  local spaceId = nil
+  local spaceId
   if cfg then
     local jumpType = cfg.JumpID
     if jumpType == UIJumpType.UI_JumpAircraft then
-      local jumpSpace = (cfg.JumpParam)[1]
+      local jumpSpace = cfg.JumpParam[1]
       if jumpSpace == OpenAircraftParamType.Spaceid then
-        spaceId = (cfg.JumpParam)[2]
+        spaceId = cfg.JumpParam[2]
         if spaceId == AircraftLayer.Smelt then
           isSmeltRoom = true
         end
       end
     end
   end
-  do
-    if isSmeltRoom then
-      local aircraftModule = self:GetModule(AircraftModule)
-      local state = aircraftModule:GetSpaceStatus(spaceId)
-      if state and SpaceState.SpaceStateFull <= state then
-        local lv, param = aircraftModule:GetMaterialInfoByOutPutId(useItemId)
-        local room = aircraftModule:GetSmeltRoom()
-        if param ~= nil and room:Level() < param then
-          randomText = (StringTable.Get)("str_item_public_smeltroom_lv_limit", param)
-        else
-          conform = true
-          randomText = (StringTable.Get)("str_item_public_smeltroom_unlock_tip")
-        end
+  if isSmeltRoom then
+    local aircraftModule = self:GetModule(AircraftModule)
+    local state = aircraftModule:GetSpaceStatus(spaceId)
+    if state and state >= SpaceState.SpaceStateFull then
+      local lv, param = aircraftModule:GetMaterialInfoByOutPutId(useItemId)
+      local room = aircraftModule:GetSmeltRoom()
+      if param ~= nil and param > room:Level() then
+        randomText = StringTable.Get("str_item_public_smeltroom_lv_limit", param)
       else
-        do
-          do
-            randomText = (StringTable.Get)("str_item_public_smeltroom_lock_tip")
-            local module = (GameGlobal.GetModule)(RoleModule)
-            local unLock = module:CheckModuleUnlock(GameModuleID.MD_Aircraft)
-            if not unLock then
-              randomText = (StringTable.Get)("str_item_public_aircraft_lock_tip")
-            end
-            return isSmeltRoom, randomText, conform
-          end
-        end
+        conform = true
+        randomText = StringTable.Get("str_item_public_smeltroom_unlock_tip")
       end
+    else
+      randomText = StringTable.Get("str_item_public_smeltroom_lock_tip")
     end
   end
+  local module = GameGlobal.GetModule(RoleModule)
+  local unLock = module:CheckModuleUnlock(GameModuleID.MD_Aircraft)
+  if not unLock then
+    randomText = StringTable.Get("str_item_public_aircraft_lock_tip")
+  end
+  return isSmeltRoom, randomText, conform
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.GetWay = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIItemGetPathController:GetWay()
   local ways = {}
   self:InsertGiftWay(ways)
-  local cfg = (Cfg.cfg_item_getway)[self._itemid]
+  local cfg = Cfg.cfg_item_getway[self._itemid]
   if cfg then
-    local count = (table.count)(cfg)
+    local count = table.count(cfg)
     for i = 1, count - 1 do
       local id = cfg["Getway" .. tostring(i)]
       if id then
         local t = UIItemGetWayData:New()
         t:SetData(id)
         if t:CheckChapter() then
-          (table.insert)(ways, t)
+          table.insert(ways, t)
         end
       end
     end
   end
-  do
-    self:InsertCommonEC(ways)
-    return ways
-  end
+  self:InsertCommonEC(ways)
+  return ways
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.InsertCommonEC = function(self, ways)
-  -- function num : 0_11 , upvalues : _ENV
-  local cfg = (Cfg.cfg_petawakening_common_exchange)[self._itemid]
+function UIItemGetPathController:InsertCommonEC(ways)
+  local cfg = Cfg.cfg_petawakening_common_exchange[self._itemid]
   if cfg then
     local needRoleAsset = cfg.NeedRoleAsset
-    if needRoleAsset and (table.count)(needRoleAsset) > 0 then
+    if needRoleAsset and table.count(needRoleAsset) > 0 then
       for i = 1, #needRoleAsset do
         local data = needRoleAsset[i]
         local id = data[1]
         local count = data[2]
         local t = UIItemGetWayData:New()
         t:SetECWay(id, count)
-        ;
-        (table.insert)(ways, t)
+        table.insert(ways, t)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController.InsertGiftWay = function(self, ways)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg_item_gift = (Cfg.cfg_item_gift)({ItemGiftType = ItemGiftType.ItemGiftType_Choose})
-  if cfg_item_gift and #cfg_item_gift > 0 then
+function UIItemGetPathController:InsertGiftWay(ways)
+  local cfg_item_gift = Cfg.cfg_item_gift({
+    ItemGiftType = ItemGiftType.ItemGiftType_Choose
+  })
+  if cfg_item_gift and 0 < #cfg_item_gift then
     for i = 1, #cfg_item_gift do
       local cfg = cfg_item_gift[i]
       local itemid = cfg.ID
-      local count = (self._itemModule):GetItemCount(itemid)
-      if count > 0 then
+      local count = self._itemModule:GetItemCount(itemid)
+      if 0 < count then
         local itemList = cfg.ItemList
         for j = 1, #itemList do
           local itemListData = itemList[j]
@@ -319,8 +262,7 @@ UIItemGetPathController.InsertGiftWay = function(self, ways)
           if openItemId == self._itemid then
             local t = UIItemGetWayData:New()
             t:SetGiftWay(itemid)
-            ;
-            (table.insert)(ways, t)
+            table.insert(ways, t)
             break
           end
         end
@@ -329,111 +271,85 @@ UIItemGetPathController.InsertGiftWay = function(self, ways)
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-UIItemGetPathController._FormatItemCount = function(self, itemCount)
-  -- function num : 0_13 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIItemGetPathController:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
 
 local random = math.random
--- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
 
-UIItemGetPathController._GetGetWay = function(self, index)
-  -- function num : 0_14
-  if #self._itemGetWay < index then
+function UIItemGetPathController:_GetGetWay(index)
+  if index > #self._itemGetWay then
     return nil
   else
-    return (self._itemGetWay)[index]
+    return self._itemGetWay[index]
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-UIItemGetPathController.bgOnClick = function(self)
-  -- function num : 0_15
+function UIItemGetPathController:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
-UIItemGetPathController.CreateGetWayString = function(self, str, jumpId)
-  -- function num : 0_16 , upvalues : _ENV
-  local cfg = (Cfg.cfg_jump)[jumpId]
+function UIItemGetPathController:CreateGetWayString(str, jumpId)
+  local cfg = Cfg.cfg_jump[jumpId]
   if cfg and cfg.JumpID == UIJumpType.UI_JumpMission then
-    local missionId = (cfg.JumpParam)[1]
-    local cfg_mission = (Cfg.cfg_mission)[missionId]
-    local strStageIdx = (DiscoveryStage.GetStageIndexString)(missionId)
-    local strStageName = (StringTable.Get)(cfg_mission.Name)
-    local args = {strStageIdx .. " " .. strStageName}
+    local missionId = cfg.JumpParam[1]
+    local cfg_mission = Cfg.cfg_mission[missionId]
+    local strStageIdx = DiscoveryStage.GetStageIndexString(missionId)
+    local strStageName = StringTable.Get(cfg_mission.Name)
+    local args = {
+      strStageIdx .. " " .. strStageName
+    }
     if args then
       for i = 1, #args do
         local p = "{" .. tostring(i - 1) .. "}"
-        str = (string.gsub)(str, p, args[i])
+        str = string.gsub(str, p, args[i])
       end
     end
   end
-  do
-    return str
-  end
+  return str
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-UIItemGetPathController.CheckEnable = function(self, jumpId)
-  -- function num : 0_17 , upvalues : _ENV
-  local cfg = (Cfg.cfg_jump)[jumpId]
+function UIItemGetPathController:CheckEnable(jumpId)
+  local cfg = Cfg.cfg_jump[jumpId]
   local unlock = true
   local extraStr = ""
   if cfg then
     local jumpType = cfg.JumpID
     if jumpType == UIJumpType.UI_JumpMission then
-      local missionId = (cfg.JumpParam)[1]
+      local missionId = cfg.JumpParam[1]
       local mission_md = self:GetModule(MissionModule)
       local _, _unlock = mission_md:GetMissionGetWayDetails(missionId)
       unlock = _unlock
     else
-      do
-        local jumpModule = (self:GetModule(QuestModule)).uiModule
-        local unLockIDs = jumpModule:GetUnLockId(jumpType)
-        if unLockIDs then
-          local module = (GameGlobal.GetModule)(RoleModule)
-          for index,unLockID in ipairs(unLockIDs) do
-            local u = module:CheckModuleUnlock(unLockID)
-            if u == false then
-              unlock = false
-              break
-            end
+      local jumpModule = self:GetModule(QuestModule).uiModule
+      local unLockIDs = jumpModule:GetUnLockId(jumpType)
+      if unLockIDs then
+        local module = GameGlobal.GetModule(RoleModule)
+        for index, unLockID in ipairs(unLockIDs) do
+          local u = module:CheckModuleUnlock(unLockID)
+          if u == false then
+            unlock = false
+            break
           end
-          do
-            if unlock and jumpType == UIJumpType.UI_JumpAircraft then
-              local jumpSpace = (cfg.JumpParam)[1]
-              if jumpSpace == OpenAircraftParamType.Spaceid then
-                local spaceId = (cfg.JumpParam)[2]
-                local aircraftModule = self:GetModule(AircraftModule)
-                if spaceId > 0 then
-                  local state = aircraftModule:GetSpaceStatus(spaceId)
-                  if state and state == SpaceState.SpaceStateFull then
-                    local room = aircraftModule:GetRoom(spaceId)
-                    if room and room:GetRoomType() == AirRoomType.SmeltRoom then
-                      local matid = self._itemid
-                      local lock = aircraftModule:IsSmeltItemLock(matid)
-                      if lock then
-                        unlock = false
-                      end
-                    end
-                  else
-                    do
-                      do
-                        unlock = false
-                        if not unlock then
-                          extraStr = (StringTable.Get)("str_item_get_lock")
-                        end
-                        return unlock, extraStr
-                      end
-                    end
+        end
+        if unlock and jumpType == UIJumpType.UI_JumpAircraft then
+          local jumpSpace = cfg.JumpParam[1]
+          if jumpSpace == OpenAircraftParamType.Spaceid then
+            local spaceId = cfg.JumpParam[2]
+            local aircraftModule = self:GetModule(AircraftModule)
+            if 0 < spaceId then
+              local state = aircraftModule:GetSpaceStatus(spaceId)
+              if state and state == SpaceState.SpaceStateFull then
+                local room = aircraftModule:GetRoom(spaceId)
+                if room and room:GetRoomType() == AirRoomType.SmeltRoom then
+                  local matid = self._itemid
+                  local lock = aircraftModule:IsSmeltItemLock(matid)
+                  if lock then
+                    unlock = false
                   end
                 end
+              else
+                unlock = false
               end
             end
           end
@@ -441,84 +357,64 @@ UIItemGetPathController.CheckEnable = function(self, jumpId)
       end
     end
   end
+  if not unlock then
+    extraStr = StringTable.Get("str_item_get_lock")
+  end
+  return unlock, extraStr
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-UIItemGetPathController.GetItemCondition = function(self)
-  -- function num : 0_18
+function UIItemGetPathController:GetItemCondition()
   return self._itemCondition
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-UIItemGetPathController.GetGapValue = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local haveCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(self._itemid)
-  return (math.max)(0, self._itemCondition - haveCount)
+function UIItemGetPathController:GetGapValue()
+  local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(self._itemid)
+  return math.max(0, self._itemCondition - haveCount)
 end
 
 _class("UIItemGetWayData", Object)
 UIItemGetWayData = UIItemGetWayData
--- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
 
-UIItemGetWayData.Constructor = function(self)
-  -- function num : 0_20
+function UIItemGetWayData:Constructor()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-UIItemGetWayData.SetData = function(self, cfg)
-  -- function num : 0_21 , upvalues : _ENV, GetWayItemType
+function UIItemGetWayData:SetData(cfg)
   self.type = tonumber(cfg[1])
   if self.type == GetWayItemType.Text then
     self.desc = cfg[2]
-  else
-    if self.type == GetWayItemType.Jump then
-      self.desc = cfg[2]
-      self.jumpId = tonumber(cfg[3])
-    else
-      if self.type == GetWayItemType.GetWayIntroduce then
-        self.desc = cfg[2]
-      end
-    end
+  elseif self.type == GetWayItemType.Jump then
+    self.desc = cfg[2]
+    self.jumpId = tonumber(cfg[3])
+  elseif self.type == GetWayItemType.GetWayIntroduce then
+    self.desc = cfg[2]
   end
   self.randomType = tonumber(cfg[4])
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R2 in 'UnsetPending'
-
-UIItemGetWayData.SetGiftWay = function(self, giftid)
-  -- function num : 0_22 , upvalues : GetWayItemType, _ENV
+function UIItemGetWayData:SetGiftWay(giftid)
   self.type = GetWayItemType.Use
   self.useItemId = giftid
-  local cfg = (Cfg.cfg_item)[self.useItemId]
+  local cfg = Cfg.cfg_item[self.useItemId]
   if not cfg then
-    (Log.error)("###[UIItemGetWayData] cfg is nil ! id --> ", self.useItemId)
+    Log.error("###[UIItemGetWayData] cfg is nil ! id --> ", self.useItemId)
   end
   self.desc = cfg.Name
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-UIItemGetWayData.SetECWay = function(self, itemid, count)
-  -- function num : 0_23 , upvalues : GetWayItemType, _ENV
+function UIItemGetWayData:SetECWay(itemid, count)
   self.type = GetWayItemType.EC
   self.useItemId = itemid
   self.useItemCount = count
-  local cfg = (Cfg.cfg_item)[self.useItemId]
+  local cfg = Cfg.cfg_item[self.useItemId]
   if not cfg then
-    (Log.error)("###[UIItemGetWayData] cfg is nil ! id --> ", self.useItemId)
+    Log.error("###[UIItemGetWayData] cfg is nil ! id --> ", self.useItemId)
   end
-  self.desc = (StringTable.Get)("str_item_public_exchange_path_desc", (StringTable.Get)(cfg.Name), self.useItemCount)
+  self.desc = StringTable.Get("str_item_public_exchange_path_desc", StringTable.Get(cfg.Name), self.useItemCount)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R2 in 'UnsetPending'
-
-UIItemGetWayData.CheckChapter = function(self)
-  -- function num : 0_24 , upvalues : GetWayItemType, _ENV
+function UIItemGetWayData:CheckChapter()
   if self.type == GetWayItemType.Jump then
-    local mMission = (GameGlobal.GetModule)(MissionModule)
+    local mMission = GameGlobal.GetModule(MissionModule)
     local discoveryData = mMission:GetDiscoveryData()
     if self.desc == "str_item_get_discovery" then
       local chapter = discoveryData:GetChapterByStageId(self.jumpId)
@@ -529,9 +425,5 @@ UIItemGetWayData.CheckChapter = function(self)
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
-
-

@@ -1,101 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_show_atk_or_summon_on_pickup_pos_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction = SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction:Constructor(params)
   local strList = params.trapIDList
-  local strIDs = (string.split)(strList, "|")
+  local strIDs = string.split(strList, "|")
   self._trapIDList = {}
   for i = 1, #strIDs do
     local trapID = tonumber(strIDs[i])
-    ;
-    (table.insert)(self._trapIDList, trapID)
+    table.insert(self._trapIDList, trapID)
   end
   self._effectID = tonumber(params.effectID)
-  self._scopeParam = {TargetType = tonumber(params.scopeTargetType), ScopeType = tonumber(params.scopeType), 
-ScopeParam = {tonumber(params.scopeParam)}
-, ScopeCenterType = tonumber(params.scopeCenterType)}
+  self._scopeParam = {
+    TargetType = tonumber(params.scopeTargetType),
+    ScopeType = tonumber(params.scopeType),
+    ScopeParam = {
+      tonumber(params.scopeParam)
+    },
+    ScopeCenterType = tonumber(params.scopeCenterType)
+  }
   self._matchType = tonumber(params.matchType)
-  self._matchScopeParam = {TargetType = tonumber(params.matchScopeTargetType), ScopeType = tonumber(params.matchScopeType), 
-ScopeParam = {tonumber(params.matchScopeParam)}
-, ScopeCenterType = tonumber(params.matchScopeCenterType)}
+  self._matchScopeParam = {
+    TargetType = tonumber(params.matchScopeTargetType),
+    ScopeType = tonumber(params.matchScopeType),
+    ScopeParam = {
+      tonumber(params.matchScopeParam)
+    },
+    ScopeCenterType = tonumber(params.matchScopeCenterType)
+  }
   self._skinUseEffectMap = {}
   if params.skinUseEffectID then
-    local splitedStrArray = (string.split)(params.skinUseEffectID, "|")
+    local splitedStrArray = string.split(params.skinUseEffectID, "|")
     local keyFlag = 1
-    local key, value = nil, nil
-    for i,v in ipairs(splitedStrArray) do
+    local key, value
+    for i, v in ipairs(splitedStrArray) do
       local num = tonumber(v)
       if keyFlag == 1 then
         key = num
       else
         value = num
-        -- DECOMPILER ERROR at PC94: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (self._skinUseEffectMap)[key] = value
+        self._skinUseEffectMap[key] = value
       end
       keyFlag = keyFlag + 1
-      if keyFlag > 2 then
+      if 2 < keyFlag then
         keyFlag = 1
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction:GetCacheResource()
   local res = {}
-  local effRes = {((Cfg.cfg_effect)[self._effectID]).ResPath, 1}
-  ;
-  (table.insert)(res, effRes)
-  for i,effectID in pairs(self._skinUseEffectMap) do
-    local skinEffRes = {((Cfg.cfg_effect)[effectID]).ResPath, 1}
-    ;
-    (table.insert)(res, skinEffRes)
+  local effRes = {
+    Cfg.cfg_effect[self._effectID].ResPath,
+    1
+  }
+  table.insert(res, effRes)
+  for i, effectID in pairs(self._skinUseEffectMap) do
+    local skinEffRes = {
+      Cfg.cfg_effect[effectID].ResPath,
+      1
+    }
+    table.insert(res, skinEffRes)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local pickUpPos = previewContext:GetPickUpPos()
-  local boardCmpt = (world:GetBoardEntity()):Board()
+  local boardCmpt = world:GetBoardEntity():Board()
   local traps = boardCmpt:GetPieceEntities(pickUpPos, function(e)
-    -- function num : 0_2_0 , upvalues : casterEntity, _ENV, self
     local isOwner = false
     if e:HasSummoner() then
-      local summonEntityID = (e:Summoner()):GetSummonerEntityID()
+      local summonEntityID = e:Summoner():GetSummonerEntityID()
       local summonEntity = e:GetSummonerEntity()
       if summonEntity and summonEntity:HasSuperEntity() and summonEntity:GetSuperEntity() then
-        summonEntityID = (summonEntity:GetSuperEntity()):GetID()
+        summonEntityID = summonEntity:GetSuperEntity():GetID()
       end
       if summonEntityID == casterEntity:GetID() then
         isOwner = true
       end
     else
-      do
-        isOwner = true
-        if isOwner and e:HasTrapRender() and (table.icontains)(self._trapIDList, (e:TrapRender()):GetTrapID()) then
-          return not e:HasDeadMark()
-        end
-      end
+      isOwner = true
     end
-  end
-)
-  if #traps > 0 then
+    return isOwner and e:HasTrapRender() and table.icontains(self._trapIDList, e:TrapRender():GetTrapID()) and not e:HasDeadMark()
+  end)
+  if 0 < #traps then
     local isMatchPieceType = false
     if self._matchType then
       local utilData = world:GetService("UtilData")
@@ -104,36 +95,30 @@ SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction.DoInstruction = function(s
         isMatchPieceType = true
       end
     end
-    do
-      do
-        if isMatchPieceType then
-          self:_CalcSkillScopeAndTarget(self._matchScopeParam, casterEntity, previewContext)
-        else
-          self:_CalcSkillScopeAndTarget(self._scopeParam, casterEntity, previewContext)
-        end
-        local useEffectID = self._effectID
-        local skinId = 1
-        if casterEntity:MatchPet() then
-          skinId = ((casterEntity:MatchPet()):GetMatchPet()):GetSkinId()
-          if skinId and (self._skinUseEffectMap)[skinId] then
-            useEffectID = (self._skinUseEffectMap)[skinId]
-          end
-        end
-        local effectEntity = (world:GetService("Effect")):CreateWorldPositionEffect(useEffectID, pickUpPos)
-        local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
-        previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
-        previewContext:SetScopeResult(nil)
-        local targetList = {}
-        previewContext:SetTargetEntityIDList(targetList)
+    if isMatchPieceType then
+      self:_CalcSkillScopeAndTarget(self._matchScopeParam, casterEntity, previewContext)
+    else
+      self:_CalcSkillScopeAndTarget(self._scopeParam, casterEntity, previewContext)
+    end
+  else
+    local useEffectID = self._effectID
+    local skinId = 1
+    if casterEntity:MatchPet() then
+      skinId = casterEntity:MatchPet():GetMatchPet():GetSkinId()
+      if skinId and self._skinUseEffectMap[skinId] then
+        useEffectID = self._skinUseEffectMap[skinId]
       end
     end
+    local effectEntity = world:GetService("Effect"):CreateWorldPositionEffect(useEffectID, pickUpPos)
+    local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
+    previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
+    previewContext:SetScopeResult(nil)
+    local targetList = {}
+    previewContext:SetTargetEntityIDList(targetList)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction._CalcSkillScopeAndTarget = function(self, scopeParam, casterEntity, previewContext)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction:_CalcSkillScopeAndTarget(scopeParam, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local configSvc = world:GetService("Config")
   local helper = configSvc._skillConfigHelper
@@ -148,5 +133,3 @@ SkillPreviewPlayShowAtkOrSummonOnPickupPosInstruction._CalcSkillScopeAndTarget =
   local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, scopeParam.TargetType, scopeResult)
   previewContext:SetTargetEntityIDList(targetIDList)
 end
-
-

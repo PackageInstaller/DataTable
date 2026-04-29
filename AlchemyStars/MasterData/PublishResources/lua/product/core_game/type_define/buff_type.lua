@@ -1,61 +1,88 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/buff_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-BuffType = {Control = 1, DOT = 2, Positive = 3, Negative = 4, Team = 5, Logic = 6, PopStarStage = 7}
-local ModifySkillIncreaseParamType = {NormalSkill = 1, ChainSkill = 2, ActiveSkill = 3, MonsterDamage = 4, TrapDamage = 5, CampSkill = 6, AutoBeadSkill = 7}
+BuffType = {
+  Control = 1,
+  DOT = 2,
+  Positive = 3,
+  Negative = 4,
+  Team = 5,
+  Logic = 6,
+  PopStarStage = 7
+}
+local ModifySkillIncreaseParamType = {
+  NormalSkill = 1,
+  ChainSkill = 2,
+  ActiveSkill = 3,
+  MonsterDamage = 4,
+  TrapDamage = 5,
+  CampSkill = 6,
+  AutoBeadSkill = 7
+}
 _enum("ModifySkillIncreaseParamType", ModifySkillIncreaseParamType)
-local ModifySkillParamType = {NormalSkill = 1, ChainSkill = 2, ActiveSkill = 3, MonsterDamage = 4, SanSkill = 5, CampSkill = 6, AutoBeadSkill = 7}
+local ModifySkillParamType = {
+  NormalSkill = 1,
+  ChainSkill = 2,
+  ActiveSkill = 3,
+  MonsterDamage = 4,
+  SanSkill = 5,
+  CampSkill = 6,
+  AutoBeadSkill = 7
+}
 _enum("ModifySkillParamType", ModifySkillParamType)
-local MonsterSkillAbsorbType = {NormalSkill = 1, ChainSkill = 2, ActiveSkill = 3}
+local MonsterSkillAbsorbType = {
+  NormalSkill = 1,
+  ChainSkill = 2,
+  ActiveSkill = 3
+}
 _enum("MonsterSkillAbsorbType", MonsterSkillAbsorbType)
-local ModifyBaseDefenceType = {"Defense", "DefencePercentage", "DefenceConstantFix"}
+local ModifyBaseDefenceType = {
+  "Defense",
+  "DefencePercentage",
+  "DefenceConstantFix"
+}
 _autoEnum("ModifyBaseDefenceType", ModifyBaseDefenceType)
-local ModifyBaseAttackType = {"Attack", "AttackPercentage", "AttackConstantFix"}
+local ModifyBaseAttackType = {
+  "Attack",
+  "AttackPercentage",
+  "AttackConstantFix"
+}
 _autoEnum("ModifyBaseAttackType", ModifyBaseAttackType)
-local BuffSourceType = {"Buff", "PassiveSkill", "SkillIntensify", "EquipRefine", "Skill", "Feature"}
+local BuffSourceType = {
+  "Buff",
+  "PassiveSkill",
+  "SkillIntensify",
+  "EquipRefine",
+  "Skill",
+  "Feature"
+}
 _autoEnum("BuffSourceType", BuffSourceType)
-local ModifyBaseMaxHPType = {"MaxHPPercentage", "MaxHPConstantFix"}
+local ModifyBaseMaxHPType = {
+  "MaxHPPercentage",
+  "MaxHPConstantFix"
+}
 _autoEnum("ModifyBaseMaxHPType", ModifyBaseMaxHPType)
 _class("BuffSource", Object)
 BuffSource = BuffSource
--- DECOMPILER ERROR at PC87: Confused about usage of register: R7 in 'UnsetPending'
 
-BuffSource.Constructor = function(self, sourceType, sourceID)
-  -- function num : 0_0
+function BuffSource:Constructor(sourceType, sourceID)
   self._sourceType = sourceType
   self._sourceID = sourceID
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R7 in 'UnsetPending'
-
-BuffSource.IsMe = function(self, sourceType, sourceID)
-  -- function num : 0_1
+function BuffSource:IsMe(sourceType, sourceID)
   if self._sourceType and self._sourceType == sourceType and self._sourceID and self._sourceID == sourceID then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R7 in 'UnsetPending'
-
-BuffSource.GetSourceType = function(self)
-  -- function num : 0_2
+function BuffSource:GetSourceType()
   return self._sourceType
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R7 in 'UnsetPending'
-
-BuffSource.GetSourceID = function(self)
-  -- function num : 0_3
+function BuffSource:GetSourceID()
   return self._sourceID
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R7 in 'UnsetPending'
-
-BuffSource.__eq = function(a, b)
-  -- function num : 0_4
+function BuffSource.__eq(a, b)
   if a._sourceType and b._sourceType and a._sourceType == b._sourceType and a._sourceID and b._sourceID and a._sourceID == b._sourceID then
     return true
   end
@@ -64,10 +91,8 @@ end
 
 _class("BuffIntensifyParam", Object)
 BuffIntensifyParam = BuffIntensifyParam
--- DECOMPILER ERROR at PC108: Confused about usage of register: R7 in 'UnsetPending'
 
-BuffIntensifyParam.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function BuffIntensifyParam:Constructor()
   self.BuffID = nil
   self.value = nil
   self.isShow = true
@@ -77,10 +102,8 @@ end
 
 _class("BuffIntensifyParamKey", Object)
 BuffIntensifyParamKey = BuffIntensifyParamKey
--- DECOMPILER ERROR at PC117: Confused about usage of register: R7 in 'UnsetPending'
 
-BuffIntensifyParamKey.Constructor = function(self)
-  -- function num : 0_6
+function BuffIntensifyParamKey:Constructor()
   self.LogicType = nil
   self.LogicIndex = nil
   self.param = nil
@@ -89,5 +112,3 @@ BuffIntensifyParamKey.Constructor = function(self)
   self.TriggerIndex = nil
   self.TriggerParamIndex = nil
 end
-
-

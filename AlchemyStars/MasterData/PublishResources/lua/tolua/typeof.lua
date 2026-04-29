@@ -1,35 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/typeof.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local type = type
+local type = _ENV.type
 local types = {}
 local _typeof = tolua.typeof
 local _findtype = tolua.findtype
-typeof = function(obj)
-  -- function num : 0_0 , upvalues : type, types, _typeof, _findtype, _ENV
-  (type(obj))
-  local t = nil
-  local ret = nil
+
+function typeof(obj)
+  local t = type(obj)
+  local ret
   if t == "table" then
     ret = types[obj]
     if ret == nil then
       ret = _typeof(obj)
       types[obj] = ret
     end
-  else
-    if t == "string" then
-      ret = types[obj]
-      if ret == nil then
-        ret = _findtype(obj)
-        types[obj] = ret
-      end
-    else
-      error((debug.traceback)("attemp to call typeof on type " .. t))
+  elseif t == "string" then
+    ret = types[obj]
+    if ret == nil then
+      ret = _findtype(obj)
+      types[obj] = ret
     end
+  else
+    error(debug.traceback("attemp to call typeof on type " .. t))
   end
   return ret
 end
-
-

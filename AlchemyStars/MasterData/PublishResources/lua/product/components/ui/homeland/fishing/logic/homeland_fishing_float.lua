@@ -1,27 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/fishing/logic/homeland_fishing_float.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local FishgingFloatType = {Main = 0, Pet = 1}
 _enum("FishgingFloatType", FishgingFloatType)
-local FishgingFloatStatus = {None = 0, Toss = 1, Idle = 2, Offset = 3, Success = 4}
+local FishgingFloatStatus = {
+  None = 0,
+  Toss = 1,
+  Idle = 2,
+  Offset = 3,
+  Success = 4
+}
 _enum("FishgingFloatStatus", FishgingFloatStatus)
 _class("HomelandFishingFloat", Object)
 HomelandFishingFloat = HomelandFishingFloat
--- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
 
-HomelandFishingFloat.Constructor = function(self, type, pos)
-  -- function num : 0_0 , upvalues : _ENV, FishgingFloatStatus
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function HomelandFishingFloat:Constructor(type, pos)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   self._homelandClient = homeLandModule:GetClient()
-  local characterManager = (self._homelandClient):CharacterManager()
+  local characterManager = self._homelandClient:CharacterManager()
   self._characterController = characterManager:MainCharacterController()
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1, TimerTriggerCount.Infinite, function()
-    -- function num : 0_0_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1, TimerTriggerCount.Infinite, function()
     self:Update()
-  end
-)
+  end)
   self._type = type
   self._status = FishgingFloatStatus.None
   self._timer = 0
@@ -33,198 +30,143 @@ HomelandFishingFloat.Constructor = function(self, type, pos)
   self:CreateFloat(pos)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat.Update = function(self)
-  -- function num : 0_1 , upvalues : FishgingFloatStatus, _ENV
+function HomelandFishingFloat:Update()
   if self._status == FishgingFloatStatus.None then
-    return 
+    return
   end
   if self._status == FishgingFloatStatus.Toss then
-    self._timer = self._timer + (UnityEngine.Time).deltaTime
+    self._timer = self._timer + UnityEngine.Time.deltaTime
     if self._timer >= 1 then
       self._status = FishgingFloatStatus.Idle
-      ;
-      (self._animation):Play("anim_5012001_idle")
+      self._animation:Play("anim_5012001_idle")
     end
-    return 
+    return
   end
   if self._status == FishgingFloatStatus.Offset then
     if self._currentFrame == self._targetFrame then
-      return 
+      return
     end
-    if self._targetFrame < self._currentFrame then
+    if self._currentFrame > self._targetFrame then
       self._currentFrame = self._currentFrame - 1
     else
       self._currentFrame = self._currentFrame + 1
     end
     self:PlayAnimationByFrame("anim_5012001_offset", self._totalFrame, self._currentFrame)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat.CreateFloat = function(self, pos)
-  -- function num : 0_2 , upvalues : _ENV, FishgingFloatStatus
-  self._floatReq = (ResourceManager:GetInstance()):SyncLoadAsset("hl_tool_5012001_float.prefab", LoadType.GameObject)
-  if not self._floatReq or not (self._floatReq).Obj then
-    (Log.fatal)("加载鱼漂资源失败")
+function HomelandFishingFloat:CreateFloat(pos)
+  self._floatReq = ResourceManager:GetInstance():SyncLoadAsset("hl_tool_5012001_float.prefab", LoadType.GameObject)
+  if not self._floatReq or not self._floatReq.Obj then
+    Log.fatal("加载鱼漂资源失败")
   end
-  local go = (self._floatReq).Obj
+  local go = self._floatReq.Obj
   go:SetActive(true)
   self._floatTran = go.transform
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._floatTran).position = pos
-  local playerTran = (self._characterController):Transform()
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._floatTran).rotation = playerTran.rotation
+  self._floatTran.position = pos
+  local playerTran = self._characterController:Transform()
+  self._floatTran.rotation = playerTran.rotation
   self._status = FishgingFloatStatus.Toss
   self._timer = 0
   self._animation = go:GetComponent("Animation")
-  self._floatRealTran = (self._floatTran):Find("effect/water_loop")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioThrowFishingRod)
+  self._floatRealTran = self._floatTran:Find("effect/water_loop")
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioThrowFishingRod)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat.Release = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandFishingFloat:Release()
   if self._floatReq then
-    (self._floatReq):Dispose()
+    self._floatReq:Dispose()
     self._floatReq = nil
   end
   self._floatTran = nil
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:_RemoveEvent()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat._AddEvent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandFishingFloat:_AddEvent()
   if self._cbFishingPowerChange == nil then
-    self._cbFishingPowerChange = (GameHelper:GetInstance()):CreateCallback(self.OnFishingPowerChange, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishingPowerChange, self._cbFishingPowerChange)
+    self._cbFishingPowerChange = GameHelper:GetInstance():CreateCallback(self.OnFishingPowerChange, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishingPowerChange, self._cbFishingPowerChange)
   end
   if self._cbChangeFishingStatus == nil then
-    self._cbChangeFishingStatus = (GameHelper:GetInstance()):CreateCallback(self.OnMainChangeFishingStatus, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ChangeFishingStatus, self._cbChangeFishingStatus)
+    self._cbChangeFishingStatus = GameHelper:GetInstance():CreateCallback(self.OnMainChangeFishingStatus, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ChangeFishingStatus, self._cbChangeFishingStatus)
   end
   if self._cbFishMatchPetChangeFishingStatus == nil then
-    self._cbFishMatchPetChangeFishingStatus = (GameHelper:GetInstance()):CreateCallback(self.OnPetChangeFishingStatus, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishMatchPetChangeFishingStatus, self._cbFishMatchPetChangeFishingStatus)
+    self._cbFishMatchPetChangeFishingStatus = GameHelper:GetInstance():CreateCallback(self.OnPetChangeFishingStatus, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishMatchPetChangeFishingStatus, self._cbFishMatchPetChangeFishingStatus)
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat._RemoveEvent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandFishingFloat:_RemoveEvent()
   if self._cbFishingPowerChange then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishingPowerChange, self._cbFishingPowerChange)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishingPowerChange, self._cbFishingPowerChange)
     self._cbFishingPowerChange = nil
   end
   if self._cbChangeFishingStatus then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ChangeFishingStatus, self._cbChangeFishingStatus)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ChangeFishingStatus, self._cbChangeFishingStatus)
     self._cbChangeFishingStatus = nil
   end
   if self._cbFishMatchPetChangeFishingStatus then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishMatchPetChangeFishingStatus, self._cbFishMatchPetChangeFishingStatus)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishMatchPetChangeFishingStatus, self._cbFishMatchPetChangeFishingStatus)
     self._cbFishMatchPetChangeFishingStatus = nil
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat.GetFloatPosition = function(self)
-  -- function num : 0_6
-  return (self._floatRealTran).position
+function HomelandFishingFloat:GetFloatPosition()
+  return self._floatRealTran.position
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat.OnFishingPowerChange = function(self, value, percent)
-  -- function num : 0_7 , upvalues : FishgingFloatType, _ENV
+function HomelandFishingFloat:OnFishingPowerChange(value, percent)
   if self._type == FishgingFloatType.Pet then
-    return 
+    return
   end
   if value == 0 then
     self._targetFrame = self._middleFrame
-  else
-    if value < 0 then
-      self._targetFrame = self._middleFrame + (math.floor)((1 - percent) * (self._totalFrame - self._middleFrame))
-    else
-      if value > 0 then
-        self._targetFrame = (math.floor)((1 - percent) * self._middleFrame)
-      end
-    end
+  elseif value < 0 then
+    self._targetFrame = self._middleFrame + math.floor((1 - percent) * (self._totalFrame - self._middleFrame))
+  elseif 0 < value then
+    self._targetFrame = math.floor((1 - percent) * self._middleFrame)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat.OnChangeFishingStatus = function(self, status)
-  -- function num : 0_8 , upvalues : _ENV, FishgingFloatStatus
+function HomelandFishingFloat:OnChangeFishingStatus(status)
   if status == FishgingStatus.Bite then
     self._status = FishgingFloatStatus.Offset
     self:PlayAnimationByFrame("anim_5012001_offset", self._totalFrame, self._currentFrame)
-    return 
+    return
   end
   if status == FishgingStatus.FishSuccess then
     self._status = FishgingFloatStatus.Success
-    ;
-    (self._animation):Play("anim_5012001_success")
-    return 
+    self._animation:Play("anim_5012001_success")
+    return
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat.OnMainChangeFishingStatus = function(self, status)
-  -- function num : 0_9 , upvalues : FishgingFloatType
+function HomelandFishingFloat:OnMainChangeFishingStatus(status)
   if self._type == FishgingFloatType.Main then
     self:OnChangeFishingStatus(status)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat.OnPetChangeFishingStatus = function(self, status)
-  -- function num : 0_10 , upvalues : FishgingFloatType
+function HomelandFishingFloat:OnPetChangeFishingStatus(status)
   if self._type == FishgingFloatType.Pet then
     self:OnChangeFishingStatus(status)
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-HomelandFishingFloat.PlayAnimationByFrame = function(self, animName, totalFrame, currentFrame)
-  -- function num : 0_11
-  (self._animation):Play(animName)
-  local state = (self._animation):get_Item(animName)
-  do
-    if state then
-      local length = (state.clip).length
-      state.time = length * currentFrame / totalFrame
-      ;
-      (self._animation):Sample()
-      state.enabled = false
-    end
-    ;
-    (self._animation):Stop()
+function HomelandFishingFloat:PlayAnimationByFrame(animName, totalFrame, currentFrame)
+  self._animation:Play(animName)
+  local state = self._animation:get_Item(animName)
+  if state then
+    local length = state.clip.length
+    state.time = length * currentFrame / totalFrame
+    self._animation:Sample()
+    state.enabled = false
   end
+  self._animation:Stop()
 end
-
-

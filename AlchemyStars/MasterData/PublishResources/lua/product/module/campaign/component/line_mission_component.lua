@@ -1,138 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/line_mission_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LineMissionComponent", ICampaignComponent)
 LineMissionComponent = LineMissionComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LineMissionComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LineMissionComponent:Constructor()
   self.m_component_info = LineMissionComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function LineMissionComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = LineMissionComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function LineMissionComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.IsPassCamMissionID = function(self, camMissionId)
-  -- function num : 0_3
-  if ((self.m_component_info).m_pass_mission_info)[camMissionId] then
+function LineMissionComponent:IsPassCamMissionID(camMissionId)
+  if self.m_component_info.m_pass_mission_info[camMissionId] then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.GetComponentType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function LineMissionComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_LINE_MISSION
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.GetLineSubCfg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function LineMissionComponent:GetLineSubCfg()
   local cfgid = self:GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_link_sub)[cfgid]
+  local cfg = Cfg.cfg_component_link_sub[cfgid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_6 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function LineMissionComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function LineMissionComponent:GetCampaignMissionComponentId()
   return ECampaignMissionComponentId.ECampaignMissionComponentId_Line
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function LineMissionComponent:GetCampaignMissionParamKeyMap()
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId
+  }
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_9 , upvalues : _ENV
+function LineMissionComponent:CampaignComponentPushNotify(notify_data)
   if LineMissionComponentNotifyType.LineMissionComponentNotifyType_InfoChanged == notify_data.m_notify_type then
     local ev = NotifyLineMissionComponentInfoChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnUpdateBaseInfo(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][LineMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][LineMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.OnUpdateBaseInfo = function(self, ev)
-  -- function num : 0_10 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_component_info).m_cur_mission = ev.m_cur_mission
-  for key,value in pairs(ev.m_update_mission_info) do
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R7 in 'UnsetPending'
-
-    ((self.m_component_info).m_pass_mission_info)[key] = value
+function LineMissionComponent:OnUpdateBaseInfo(ev)
+  self.m_component_info.m_cur_mission = ev.m_cur_mission
+  for key, value in pairs(ev.m_update_mission_info) do
+    self.m_component_info.m_pass_mission_info[key] = value
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.HandleCompleteStoryMission = function(self, TT, asyncRes, nMissionId)
-  -- function num : 0_11 , upvalues : _ENV
+function LineMissionComponent:HandleCompleteStoryMission(TT, asyncRes, nMissionId)
   local request = CompleteStoryMissionReq:New()
   local response = CompleteStoryMissionRep:New()
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (request.m_create_info).nCampaignMissionId = nMissionId
+  request.m_create_info.nCampaignMissionId = nMissionId
   local ComponentInfo = self:ComponentInfo()
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (request.m_create_info).nMissionComId = self:GetCampaignMissionComponentId()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (request.m_create_info).CampaignMissionParams = self:GetCampaignMissionParamKeyMap()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  request.m_create_info.nMissionComId = self:GetCampaignMissionComponentId()
+  request.m_create_info.CampaignMissionParams = self:GetCampaignMissionParamKeyMap()
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][LineMissionComponent] HandleCompleteStoryMission ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][LineMissionComponent] HandleCompleteStoryMission ret:", asyncRes.m_result)
     return nil
   end
   if response.nErrorCode ~= MatchOpResCode.MATCH_SUCCESS then
@@ -142,85 +89,53 @@ LineMissionComponent.HandleCompleteStoryMission = function(self, TT, asyncRes, n
   return response.reward
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.HandleLineChangeFormationReq = function(self, TT, asyncRes, teamInfo)
-  -- function num : 0_12 , upvalues : _ENV
+function LineMissionComponent:HandleLineChangeFormationReq(TT, asyncRes, teamInfo)
   local request = LineChangeFormationReq:New()
   request.info = teamInfo
   local response = LineChangeFormationReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[LineMissionComponent:HandleLineChangeFormationReq] ret:", asyncRes.m_result)
+    Log.error("[LineMissionComponent:HandleLineChangeFormationReq] ret:", asyncRes.m_result)
   else
     local fid = teamInfo.id
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((ComponentInfo.formation_list)[fid]).id = teamInfo.id
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((ComponentInfo.formation_list)[fid]).name = teamInfo.name
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    ((ComponentInfo.formation_list)[fid]).pet_list = teamInfo.pet_list
+    ComponentInfo.formation_list[fid].id = teamInfo.id
+    ComponentInfo.formation_list[fid].name = teamInfo.name
+    ComponentInfo.formation_list[fid].pet_list = teamInfo.pet_list
   end
-  do
-    return asyncRes, response
-  end
+  return asyncRes, response
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.SetMissionStoryActive = function(self, TT, mission_id, activeStoryType)
-  -- function num : 0_13 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function LineMissionComponent:SetMissionStoryActive(TT, mission_id, activeStoryType)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   return missionModule:SetMissionStoryActive(TT, mission_id, activeStoryType)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.IsMissionStoryActive = function(self, mission_id, activeStoryType)
-  -- function num : 0_14 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function LineMissionComponent:IsMissionStoryActive(mission_id, activeStoryType)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   missionModule:IsMissionStoryActive(mission_id, activeStoryType)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.GetClearProgress = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function LineMissionComponent:GetClearProgress()
   local cfgId = self:GetComponentCfgId()
-  local cfg_component_line_mission = (Cfg.cfg_component_line_mission)({ComponentID = cfgId})
-  local all = (table.count)(cfg_component_line_mission)
+  local cfg_component_line_mission = Cfg.cfg_component_line_mission({ComponentID = cfgId})
+  local all = table.count(cfg_component_line_mission)
   local componentInfo = self:GetComponentInfo()
-  local clear = (table.count)(componentInfo.m_pass_mission_info)
+  local clear = table.count(componentInfo.m_pass_mission_info)
   return clear, all
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LineMissionComponent.Start_HandleCompleteStoryMission = function(self, stageId, callback)
-  -- function num : 0_16 , upvalues : _ENV
+function LineMissionComponent:Start_HandleCompleteStoryMission(stageId, callback)
   local isActive = self:IsPassCamMissionID(stageId)
   if isActive then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_16_0 , upvalues : self, stageId, _ENV, callback
+  GameGlobal.TaskManager():StartTask(function(TT)
     self:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
     local award = self:HandleCompleteStoryMission(TT, res, stageId)
     if callback then
       callback(res, award)
     end
-  end
-)
+  end)
 end
-
-

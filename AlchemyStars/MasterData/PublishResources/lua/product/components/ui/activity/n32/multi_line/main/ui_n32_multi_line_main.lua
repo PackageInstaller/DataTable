@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/main/ui_n32_multi_line_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineMain", UIController)
 UIN32MultiLineMain = UIN32MultiLineMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineMain.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN32MultiLineMain:Constructor()
   self.unlockFolderNum = 0
   self.bUnlockNewFoler = false
   self.bPassedAll = false
@@ -17,124 +10,88 @@ UIN32MultiLineMain.Constructor = function(self)
   self.wayPointWidget = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN32MultiLineMain:LoadDataOnEnter(TT, res)
   local comType = ECampaignType.CAMPAIGN_TYPE_N32
   local comId = ECampaignN32ComponentID.ECAMPAIGN_N32_MULTILINE_MISSION
   self.multiLineData = UIMultiLineData:New()
-  if not (self.multiLineData):LoadData(TT, res, comType, comId) then
-    (self.mCampaignModule):CheckErrorCode(res.m_result, (self.mCampaignModule)._id, nil, nil)
-    return 
+  if not self.multiLineData:LoadData(TT, res, comType, comId) then
+    self.mCampaignModule:CheckErrorCode(res.m_result, self.mCampaignModule._id, nil, nil)
+    return
   end
-  self._component = (self.multiLineData):GetComponent()
+  self._component, self._comInfo = self.multiLineData:GetComponent()
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN32MultiLineMain:OnShow(uiParams)
   self._isMathch = uiParams[1]
   local shotTexture = uiParams[2]
   self:Init()
   self:InitCommonWidget()
   self:CheckData()
-  local playFolderUnlockAni = nil
-  if self._isMathch and UIMultiLineData.lastPassFolderNum and self:GetUnlockFolderNum() < UIMultiLineData.lastPassFolderNum then
+  local playFolderUnlockAni
+  if self._isMathch and UIMultiLineData.lastPassFolderNum and UIMultiLineData.lastPassFolderNum > self:GetUnlockFolderNum() then
     playFolderUnlockAni = true
   end
-  ;
-  ((self._shotTexture).gameObject):SetActive(shotTexture ~= nil)
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
+  self._shotTexture.gameObject:SetActive(shotTexture ~= nil)
   if shotTexture then
-    (self._shotTexture).texture = shotTexture
+    self._shotTexture.texture = shotTexture
   end
   self:RefreshUI(playFolderUnlockAni)
   self:PlayEnterAni()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.OnHide = function(self)
-  -- function num : 0_3
+function UIN32MultiLineMain:OnHide()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.PlayEnterAni = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN32MultiLineMain:PlayEnterAni()
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     local lockName = "UIN32MultiLineMain_Ani"
     self:Lock(lockName)
-    ;
-    (self.animation):Play("uieff_UIN32MultiLineMain_in")
+    self.animation:Play("uieff_UIN32MultiLineMain_in")
     YIELD(TT, 1000)
-    for i,widget in ipairs(self.wayPointWidget) do
+    for i, widget in ipairs(self.wayPointWidget) do
       widget:CheckAndPlayUnReadEff()
     end
     YIELD(TT, 633)
     self:UnLock(lockName)
     self:_CheckGuide()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.PlayOutAni = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN32MultiLineMain:PlayOutAni()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local lockName = "UIN32MultiLineMain_Ani"
     self:Lock(lockName)
-    ;
-    (self.animation):Play("uieff_UIN32MultiLineMain_clickout")
+    self.animation:Play("uieff_UIN32MultiLineMain_clickout")
     YIELD(TT, 600)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.PlayOutAniDirect = function(self)
-  -- function num : 0_6
-  (self.animation):Play("uieff_UIN32MultiLineMain_clickout")
+function UIN32MultiLineMain:PlayOutAniDirect()
+  self.animation:Play("uieff_UIN32MultiLineMain_clickout")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.Init = function(self)
-  -- function num : 0_7
+function UIN32MultiLineMain:Init()
   self:InitCommonCfg()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.InitCommonCfg = function(self)
-  -- function num : 0_8
-  self.commonCfg = {wayPointNum = 3, passDesc = "str_n32_multiline_desc_pass", passBgSpine = "shuijingqiubai_n31_spine_idle"}
+function UIN32MultiLineMain:InitCommonCfg()
+  self.commonCfg = {
+    wayPointNum = 3,
+    passDesc = "str_n32_multiline_desc_pass",
+    passBgSpine = "shuijingqiubai_n31_spine_idle"
+  }
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.GetNodeWigetName = function(self)
-  -- function num : 0_9
+function UIN32MultiLineMain:GetNodeWigetName()
   return "UIN32MultiLineMainNode"
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.InitCommonWidget = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN32MultiLineMain:InitCommonWidget()
   self.spineLoader = self:GetUIComponent("SpineLoader", "spineLoader")
   self.txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self.backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
@@ -143,254 +100,171 @@ UIN32MultiLineMain.InitCommonWidget = function(self)
   self._shotTexture = self:GetUIComponent("RawImage", "shotImage")
   self.wayPointPools = {}
   self.lineGoes = {}
-  local wayPointCount = (self.commonCfg).wayPointNum
+  local wayPointCount = self.commonCfg.wayPointNum
   for i = 1, wayPointCount do
     local wayPointPool = self:GetUIComponent("UISelectObjectPath", "m" .. i)
     local lineGo = self:GetGameObject("line" .. i)
     lineGo:SetActive(false)
-    ;
-    (table.insert)(self.wayPointPools, wayPointPool)
-    ;
-    (table.insert)(self.lineGoes, lineGo)
+    table.insert(self.wayPointPools, wayPointPool)
+    table.insert(self.lineGoes, lineGo)
   end
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_10_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     if self:CheckComponentTime() then
-      (self.mCampaignModule):CampaignSwitchState(true, UIStateType.UIActivityN32MainController, UIStateType.UIMain, nil, (self.multiLineData):GetCampaignId())
+      self.mCampaignModule:CampaignSwitchState(true, UIStateType.UIActivityN32MainController, UIStateType.UIMain, nil, self.multiLineData:GetCampaignId())
     end
-  end
-, function()
-    -- function num : 0_10_1 , upvalues : self
+  end, function()
     if self:CheckComponentTime() then
       self:ShowDialog("UIIntroLoader", "UIN32MultilineMainIntro")
     end
-  end
-, nil, true)
+  end, nil, true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.GetWayPointPool = function(self, index)
-  -- function num : 0_11
-  return (self.wayPointPools)[index]
+function UIN32MultiLineMain:GetWayPointPool(index)
+  return self.wayPointPools[index]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.GetLinePoint = function(self, index)
-  -- function num : 0_12
-  return (self.lineGoes)[index]
+function UIN32MultiLineMain:GetLinePoint(index)
+  return self.lineGoes[index]
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.BtnReviewOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN32MultiLineMain:BtnReviewOnClick(go)
   if not self:CheckComponentTime() then
-    return 
+    return
   end
-  local firstStoryId = (self._comInfo).m_first_story_id
+  local firstStoryId = self._comInfo.m_first_story_id
   if not firstStoryId or firstStoryId < 1 then
-    (Log.error)("UIN32MultiLineMain 未配置firstStoryId")
-    return 
+    Log.error("UIN32MultiLineMain 未配置firstStoryId")
+    return
   end
   self:ShowDialog("UIStoryController", firstStoryId)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.SpineBtnOnClick = function(self, go)
-  -- function num : 0_14
+function UIN32MultiLineMain:SpineBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.GetNodeWigetName = function(self)
-  -- function num : 0_15
+function UIN32MultiLineMain:GetNodeWigetName()
   return "UIN32MultiLineMainNode"
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.CheckData = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN32MultiLineMain:CheckData()
   if self.bPassedAll then
     self.bUnlockNewFoler = false
-    return 
+    return
   end
-  local cfgs = (self.multiLineData):GetMultiLineFolderCfgs()
-  if (self.commonCfg).wayPointNum ~= #cfgs then
-    (Log.error)("err cfg_component_multiline_mission_main 配置表中的数量 是: " .. #cfgs .. "controlle wayPointNum 是 " .. (self.commonCfg).wayPointNum)
+  local cfgs = self.multiLineData:GetMultiLineFolderCfgs()
+  if self.commonCfg.wayPointNum ~= #cfgs then
+    Log.error("err cfg_component_multiline_mission_main 配置表中的数量 是: " .. #cfgs .. "controlle wayPointNum 是 " .. self.commonCfg.wayPointNum)
   end
-  ;
-  (table.clear)(self.unlockCfgs)
-  for k,subCfg in ipairs(cfgs) do
-    if (self.multiLineData):IsMultiLineFolderUnlock(subCfg) then
-      (table.insert)(self.unlockCfgs, subCfg)
+  table.clear(self.unlockCfgs)
+  for k, subCfg in ipairs(cfgs) do
+    if self.multiLineData:IsMultiLineFolderUnlock(subCfg) then
+      table.insert(self.unlockCfgs, subCfg)
     else
       break
     end
   end
-  do
-    self.unlockFolderNum = #self.unlockCfgs
-    self.bPassedAll = false
-    if self.unlockFolderNum == #cfgs then
-      local lastCfg = cfgs[self.unlockFolderNum]
-      local levels = lastCfg.MainMission
-      local lasLevel = levels[#levels]
-      local cfgLevel = (Cfg.cfg_component_multiline_mission)[lasLevel]
-      self.bPassedAll = (self.multiLineData):GetPassMissionInfo(cfgLevel.MissionID) ~= nil
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self.unlockFolderNum = #self.unlockCfgs
+  self.bPassedAll = false
+  if self.unlockFolderNum == #cfgs then
+    local lastCfg = cfgs[self.unlockFolderNum]
+    local levels = lastCfg.MainMission
+    local lasLevel = levels[#levels]
+    local cfgLevel = Cfg.cfg_component_multiline_mission[lasLevel]
+    self.bPassedAll = self.multiLineData:GetPassMissionInfo(cfgLevel.MissionID) ~= nil
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.GetUnlockFolderNum = function(self)
-  -- function num : 0_17
+function UIN32MultiLineMain:GetUnlockFolderNum()
   return self.unlockFolderNum
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.GetUnlockCfgs = function(self)
-  -- function num : 0_18
+function UIN32MultiLineMain:GetUnlockCfgs()
   return self.unlockCfgs
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.IsUnlockNewFoler = function(self)
-  -- function num : 0_19
+function UIN32MultiLineMain:IsUnlockNewFoler()
   return self.bUnlockNewFoler
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.IsPassedAll = function(self)
-  -- function num : 0_20
+function UIN32MultiLineMain:IsPassedAll()
   return self.bPassedAll
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.RefreshUI = function(self, playFolderUnlockAni)
-  -- function num : 0_21
+function UIN32MultiLineMain:RefreshUI(playFolderUnlockAni)
   self:RefreshDescAndBgSpine()
   self:RefreshNodeAndLines()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.RefreshDescAndBgSpine = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN32MultiLineMain:RefreshDescAndBgSpine()
   if self.bPassedAll then
-    (self.txtDesc):SetText((StringTable.Get)((self.commonCfg).passDesc))
-    ;
-    (self.spineLoader):LoadSpine((self.commonCfg).passBgSpine)
+    self.txtDesc:SetText(StringTable.Get(self.commonCfg.passDesc))
+    self.spineLoader:LoadSpine(self.commonCfg.passBgSpine)
   else
-    local lastCfg = (self.unlockCfgs)[self.unlockFolderNum]
-    ;
-    (self.txtDesc):SetText((StringTable.Get)(lastCfg.Desc))
-    ;
-    (self.spineLoader):LoadSpine(lastCfg.BgSpine)
+    local lastCfg = self.unlockCfgs[self.unlockFolderNum]
+    self.txtDesc:SetText(StringTable.Get(lastCfg.Desc))
+    self.spineLoader:LoadSpine(lastCfg.BgSpine)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.RefreshNodeAndLines = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  for i = 1, (self.commonCfg).wayPointNum do
+function UIN32MultiLineMain:RefreshNodeAndLines()
+  for i = 1, self.commonCfg.wayPointNum do
     if i <= self.unlockFolderNum then
-      local cfg = (self.unlockCfgs)[i]
-      local isRead = (self.multiLineData):IsForlderHasRead(cfg.ID)
-      ;
-      ((self.lineGoes)[i]):SetActive(true)
-      self:SetLineState((self.lineGoes)[i], isRead)
-      if (self.wayPointWidget)[i] then
-        ((self.wayPointWidget)[i]):SetData(i, cfg, self.multiLineData, isRead)
+      local cfg = self.unlockCfgs[i]
+      local isRead = self.multiLineData:IsForlderHasRead(cfg.ID)
+      self.lineGoes[i]:SetActive(true)
+      self:SetLineState(self.lineGoes[i], isRead)
+      if self.wayPointWidget[i] then
+        self.wayPointWidget[i]:SetData(i, cfg, self.multiLineData, isRead)
       else
-        local pool = (self.wayPointPools)[i]
+        local pool = self.wayPointPools[i]
         local newWidge = pool:SpawnObject(self:GetNodeWigetName())
-        ;
-        (table.insert)(self.wayPointWidget, newWidge)
+        table.insert(self.wayPointWidget, newWidge)
         newWidge:SetData(i, cfg, self.multiLineData, isRead)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.SetLineState = function(self, go, isRead)
-  -- function num : 0_24
-  local readGo = (go.transform):Find("read")
-  local unReadGo = (go.transform):Find("unRead")
-  ;
-  (readGo.gameObject):SetActive(isRead)
-  ;
-  (unReadGo.gameObject):SetActive(not isRead)
+function UIN32MultiLineMain:SetLineState(go, isRead)
+  local readGo = go.transform:Find("read")
+  local unReadGo = go.transform:Find("unRead")
+  readGo.gameObject:SetActive(isRead)
+  unReadGo.gameObject:SetActive(not isRead)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.CheckComponentTime = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  if (self.multiLineData):IsComponentTimeEnd() then
-    (self.mCampaignModule):CampaignSwitchState(true, UIStateType.UIActivityN32MainController, UIStateType.UIMain, nil, (self.multiLineData):GetCampaignId())
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
+function UIN32MultiLineMain:CheckComponentTime()
+  if self.multiLineData:IsComponentTimeEnd() then
+    self.mCampaignModule:CampaignSwitchState(true, UIStateType.UIActivityN32MainController, UIStateType.UIMain, nil, self.multiLineData:GetCampaignId())
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.GetRenderTexture = function(self, callback)
-  -- function num : 0_26 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-  local rt = (self._shot):RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  cache_rt.format = (UnityEngine.RenderTextureFormat).RGB111110Float
+function UIN32MultiLineMain:GetRenderTexture(callback)
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  local rt = self._shot:RefreshBlurTexture()
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  cache_rt.format = UnityEngine.RenderTextureFormat.RGB111110Float
   self:StartTask(function(TT)
-    -- function num : 0_26_0 , upvalues : _ENV, rt, cache_rt, callback
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
     if callback then
       callback(cache_rt)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.GetName = function(self)
-  -- function num : 0_27
+function UIN32MultiLineMain:GetName()
   return "UIN32MultiLineMain"
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain.GetFirstFolderBtn = function(self)
-  -- function num : 0_28
-  return ((self.wayPointWidget)[1]):GetBtn()
+function UIN32MultiLineMain:GetFirstFolderBtn()
+  return self.wayPointWidget[1]:GetBtn()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMain._CheckGuide = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN32MultiLineMain)
+function UIN32MultiLineMain:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN32MultiLineMain)
 end
-
-

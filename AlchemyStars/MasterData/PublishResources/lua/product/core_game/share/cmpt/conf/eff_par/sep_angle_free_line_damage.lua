@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_angle_free_line_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamAngleFreeDamage", SkillDamageEffectParam)
 SkillEffectParamAngleFreeDamage = SkillEffectParamAngleFreeDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamAngleFreeDamage.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamAngleFreeDamage:Constructor(t)
   self._pickupIndex = t.pickupIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAngleFreeDamage.GetPickupIndex = function(self)
-  -- function num : 0_1
+function SkillEffectParamAngleFreeDamage:GetPickupIndex()
   return self._pickupIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAngleFreeDamage.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectParamAngleFreeDamage:GetEffectType()
   return SkillEffectType.AngleFreeLineDamage
 end
-
-

@@ -1,63 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_activity_dynamic_list_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityDynamicListHelper", Object)
 UIActivityDynamicListHelper = UIActivityDynamicListHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDynamicListHelper.Constructor = function(self, uiView, dynamicList, className, callback)
-  -- function num : 0_0
+function UIActivityDynamicListHelper:Constructor(uiView, dynamicList, className, callback)
   self._uiView = uiView
   self._dynamicList = dynamicList
   self._className = className
   self._setListItemDataCallback = callback
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDynamicListHelper.Refresh = function(self, itemCount, itemCountPerRow, holdPos)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityDynamicListHelper:Refresh(itemCount, itemCountPerRow, holdPos)
   self._dynamicListSize = itemCount
   self._itemCountPerRow = itemCountPerRow
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
   if not self._isDynamicInited then
     self._isDynamicInited = true
-    ;
-    (self._dynamicList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_1_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._dynamicList, holdPos)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDynamicListHelper._RefreshList = function(self, count, list, holdPos)
-  -- function num : 0_2
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIActivityDynamicListHelper:_RefreshList(count, list, holdPos)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
   if holdPos then
-    ((list.ScrollRect).content).localPosition = contentPos
+    list.ScrollRect.content.localPosition = contentPos
   end
   list:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDynamicListHelper._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_3
+function UIActivityDynamicListHelper:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
   local item = scrollView:NewListViewItem("RowItem")
-  local rowPool = (self._uiView):GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
+  local rowPool = self._uiView:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
     rowPool:SpawnObjects(self._className, self._itemCountPerRow)
@@ -66,48 +45,38 @@ UIActivityDynamicListHelper._SpawnListItem = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       if self._setListItemDataCallback then
-        (self._setListItemDataCallback)(listItem, itemIndex)
+        self._setListItemDataCallback(listItem, itemIndex)
       end
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDynamicListHelper.MovePanelToItemIndex = function(self, x, y)
-  -- function num : 0_4
-  (self._dynamicList):MovePanelToItemIndex(x, y)
+function UIActivityDynamicListHelper:MovePanelToItemIndex(x, y)
+  self._dynamicList:MovePanelToItemIndex(x, y)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDynamicListHelper.GetVisibleItem = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityDynamicListHelper:GetVisibleItem()
   local tb_out = {}
-  local showTabIds = (self._dynamicList):GetVisibleItemIDsInScrollView()
+  local showTabIds = self._dynamicList:GetVisibleItemIDsInScrollView()
   if showTabIds == nil then
     return tb_out
   end
   for index = 0, showTabIds.Count - 1 do
-    local id = (math.floor)(showTabIds[index])
-    local item = (self._dynamicList):GetShownItemByItemIndex(id)
-    local rowPool = (self._uiView):GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
+    local id = math.floor(showTabIds[index])
+    local item = self._dynamicList:GetShownItemByItemIndex(id)
+    local rowPool = self._uiView:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local rowList = rowPool:GetAllSpawnList()
     for i = 1, self._itemCountPerRow do
       local listItem = rowList[i]
       local itemIndex = index * self._itemCountPerRow + i
-      ;
-      (table.insert)(tb_out, {item = listItem, index = itemIndex})
+      table.insert(tb_out, {item = listItem, index = itemIndex})
     end
   end
   return tb_out
 end
-
-

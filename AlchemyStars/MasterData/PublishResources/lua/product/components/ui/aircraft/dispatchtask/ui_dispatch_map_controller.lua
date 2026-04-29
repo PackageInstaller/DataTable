@@ -1,49 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_dispatch_map_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDispatchMapController", UIController)
 UIDispatchMapController = UIDispatchMapController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDispatchMapController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-  ;
-  (self._aircraftModule):HandleCEventDispatchSite(TT)
-  ;
-  (self._aircraftModule):HandleCEventDispatchLook(TT)
-  self._roomData = (self._aircraftModule):GetRoomByRoomType(AirRoomType.DispatchRoom)
-  self._maxPointCount = (self._roomData):GetSiteMaxNum()
+function UIDispatchMapController:LoadDataOnEnter(TT, res, uiParams)
+  self._aircraftModule = GameGlobal.GetModule(AircraftModule)
+  self._aircraftModule:HandleCEventDispatchSite(TT)
+  self._aircraftModule:HandleCEventDispatchLook(TT)
+  self._roomData = self._aircraftModule:GetRoomByRoomType(AirRoomType.DispatchRoom)
+  self._maxPointCount = self._roomData:GetSiteMaxNum()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDispatchMapController:OnShow(uiParams)
   self.enterFromEasy = uiParams[1]
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundAircraftDispatchSceneChange)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIDispatchMap)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundAircraftDispatchSceneChange)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIDispatchMap)
   self:AttachEvent(GameEventType.UpdateDispatchTaskSiteInfo, self.RefreshUI)
   self._topBarLoader = self:GetUIComponent("UISelectObjectPath", "TopBarLoader")
-  self.topButtonWidget = (self._topBarLoader):SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self.topButtonWidget = self._topBarLoader:SpawnObject("UICommonTopButton")
+  self.topButtonWidget:SetData(function()
     self:OnBack()
-  end
-, function()
-    -- function num : 0_1_1 , upvalues : self
+  end, function()
     self:OnHelp()
-  end
-, function()
-    -- function num : 0_1_2 , upvalues : self
+  end, function()
     self:OnHome()
-  end
-)
+  end)
   self._dispatchCountLabel = self:GetUIComponent("UILocalizationText", "DispatchCount")
   self._dispatchRevocerTimeLabel = self:GetUIComponent("UILocalizationText", "DispatchRecoverTime")
   self._dispatchTeamCountLabel = self:GetUIComponent("UILocalizationText", "DispatchTeamCount")
@@ -56,146 +35,97 @@ UIDispatchMapController.OnShow = function(self, uiParams)
   for i = 1, self._maxPointCount do
     local taskPointLoader = self:GetUIComponent("UISelectObjectPath", tostring(i))
     local taskIcon = taskPointLoader:SpawnObject("UIDispatchTaskIcon")
-    -- DECOMPILER ERROR at PC92: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._dispatchTaskItemList)[#self._dispatchTaskItemList + 1] = taskIcon
+    self._dispatchTaskItemList[#self._dispatchTaskItemList + 1] = taskIcon
   end
   self._isShowTips = false
   self:RefreshUI()
   self:RefreshTipsPanel()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDispatchMapController:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   self:DetachEvent(GameEventType.UpdateDispatchTaskSiteInfo, self.RefreshUI)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local dispatchCount = (self._roomData):GetDispatchCount()
+function UIDispatchMapController:RefreshUI()
+  local dispatchCount = self._roomData:GetDispatchCount()
   self._currentDispatchCount = dispatchCount
-  local roomCfg = (self._roomData):GetRoomConfig()
-  local dispatchTeamCount = (self._roomData):GetDispatchTeamCount()
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._dispatchCountLabel).text = dispatchCount .. "/" .. roomCfg.DispatchMax
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._dispatchTeamCountLabel).text = dispatchTeamCount .. "/" .. roomCfg.TeamMax
-  local time = (self._roomData):GetSurplusSecond()
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
+  local roomCfg = self._roomData:GetRoomConfig()
+  local dispatchTeamCount = self._roomData:GetDispatchTeamCount()
+  self._dispatchCountLabel.text = dispatchCount .. "/" .. roomCfg.DispatchMax
+  self._dispatchTeamCountLabel.text = dispatchTeamCount .. "/" .. roomCfg.TeamMax
+  local time = self._roomData:GetSurplusSecond()
   if time == -1 then
-    (self._dispatchRevocerTimeLabel).text = (StringTable.Get)("str_dispatch_room_dispatch_stop_recover")
-  else
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R5 in 'UnsetPending'
-
-    if time >= 0 then
-      if time == 0 then
-        (self._dispatchRevocerTimeLabel).text = "00:00:00"
-      else
-        -- DECOMPILER ERROR at PC51: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._dispatchRevocerTimeLabel).text = (HelperProxy:GetInstance()):FormatTime((math.floor)(time))
-      end
-      if self._timer then
-        ((GameGlobal.Timer)()):CancelEvent(self._timer)
-        self._timer = nil
-      end
-      self._timer = ((GameGlobal.Timer)()):AddEventTimes(100, TimerTriggerCount.Infinite, function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    local _text = nil
-    local time = (self._roomData):GetSurplusSecond()
-    if time == -1 then
-      _text = (StringTable.Get)("str_dispatch_room_dispatch_stop_recover")
+    self._dispatchRevocerTimeLabel.text = StringTable.Get("str_dispatch_room_dispatch_stop_recover")
+  elseif 0 <= time then
+    if time == 0 then
+      self._dispatchRevocerTimeLabel.text = "00:00:00"
     else
-      if time == 0 or self._currentDispatchCount ~= (self._roomData):GetDispatchCount() then
+      self._dispatchRevocerTimeLabel.text = HelperProxy:GetInstance():FormatTime(math.floor(time))
+    end
+    if self._timer then
+      GameGlobal.Timer():CancelEvent(self._timer)
+      self._timer = nil
+    end
+    self._timer = GameGlobal.Timer():AddEventTimes(100, TimerTriggerCount.Infinite, function()
+      local _text
+      local time = self._roomData:GetSurplusSecond()
+      if time == -1 then
+        _text = StringTable.Get("str_dispatch_room_dispatch_stop_recover")
+      elseif time == 0 or self._currentDispatchCount ~= self._roomData:GetDispatchCount() then
         if self._timer then
-          ((GameGlobal.Timer)()):CancelEvent(self._timer)
+          GameGlobal.Timer():CancelEvent(self._timer)
           self._timer = nil
         end
         _text = "00:00:00"
         self:ReqDataAndRefreshRoomMsg()
       else
-        _text = (HelperProxy:GetInstance()):FormatTime((math.floor)(time))
+        _text = HelperProxy:GetInstance():FormatTime(math.floor(time))
       end
-    end
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._dispatchRevocerTimeLabel).text = _text
-  end
-)
-    end
+      self._dispatchRevocerTimeLabel.text = _text
+    end)
   end
   self:RefreshTask()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.ReqDataAndRefreshRoomMsg = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._ReqData, self)
+function UIDispatchMapController:ReqDataAndRefreshRoomMsg()
+  GameGlobal.TaskManager():StartTask(self._ReqData, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.RefreshTipsPanel = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._tipsGo):SetActive(self._isShowTips)
-  ;
-  (self._mask):SetActive(self._isShowTips)
-  ;
-  (self._closeTipsBtn):SetActive(self._isShowTips)
-  ;
-  (self._tipsBtn):SetActive(not self._isShowTips)
+function UIDispatchMapController:RefreshTipsPanel()
+  self._tipsGo:SetActive(self._isShowTips)
+  self._mask:SetActive(self._isShowTips)
+  self._closeTipsBtn:SetActive(self._isShowTips)
+  self._tipsBtn:SetActive(not self._isShowTips)
   if self._remaindTimeTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._remaindTimeTimer)
+    GameGlobal.Timer():CancelEvent(self._remaindTimeTimer)
     self._remaindTimeTimer = nil
   end
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._isShowTips then
-    (self._timeRemaindLabel).text = self:GetRemaindTimeStr((self._roomData):GetDispatchRecoverTotalTime())
-    self._remaindTimeTimer = ((GameGlobal.Timer)()):AddEventTimes(100, TimerTriggerCount.Infinite, function()
-    -- function num : 0_5_0 , upvalues : self
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._timeRemaindLabel).text = self:GetRemaindTimeStr((self._roomData):GetDispatchRecoverTotalTime())
-  end
-)
+    self._timeRemaindLabel.text = self:GetRemaindTimeStr(self._roomData:GetDispatchRecoverTotalTime())
+    self._remaindTimeTimer = GameGlobal.Timer():AddEventTimes(100, TimerTriggerCount.Infinite, function()
+      self._timeRemaindLabel.text = self:GetRemaindTimeStr(self._roomData:GetDispatchRecoverTotalTime())
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.GetRemaindTimeStr = function(self, seconds)
-  -- function num : 0_6 , upvalues : _ENV
+function UIDispatchMapController:GetRemaindTimeStr(seconds)
   if seconds <= 0 then
     seconds = 0
-    return (StringTable.Get)("str_dispatch_room_has_recover_complete")
+    return StringTable.Get("str_dispatch_room_has_recover_complete")
   end
-  local day = (math.floor)(seconds / 86400)
+  local day = math.floor(seconds / 86400)
   seconds = seconds - day * 86400
-  local hour = (math.floor)((seconds) / 3600)
+  local hour = math.floor(seconds / 3600)
   seconds = seconds - hour * 3600
   local hourStr = hour
   if hour < 10 then
     hourStr = "0" .. hour
   end
-  local min = (math.floor)((seconds) / 60)
+  local min = math.floor(seconds / 60)
   seconds = seconds - min * 60
   local minStr = min
   if min < 10 then
@@ -209,109 +139,79 @@ UIDispatchMapController.GetRemaindTimeStr = function(self, seconds)
     secondStr = "0" .. seconds
   end
   local timeStr = hourStr .. ":" .. minStr .. ":" .. secondStr
-  if day > 0 then
-    timeStr = (StringTable.Get)("str_dispatch_room_day", day) .. timeStr
+  if 0 < day then
+    timeStr = StringTable.Get("str_dispatch_room_day", day) .. timeStr
   end
-  return (StringTable.Get)("str_dispatch_room_task_remaind_time_tips", timeStr)
+  return StringTable.Get("str_dispatch_room_task_remaind_time_tips", timeStr)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController._ReqData = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIDispatchMapController:_ReqData(TT)
   self:Lock("UIDispatchMapController_ReqData")
-  local ack = (self._aircraftModule):AircraftUpdate(TT)
+  local ack = self._aircraftModule:AircraftUpdate(TT)
   if ack:GetSucc() then
     self:RefreshUI()
   else
-    ;
-    (ToastManager.ShowToast)((self._aircraftModule):GetErrorMsg(ack:GetResult()))
+    ToastManager.ShowToast(self._aircraftModule:GetErrorMsg(ack:GetResult()))
   end
   self:UnLock("UIDispatchMapController_ReqData")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.RefreshTask = function(self)
-  -- function num : 0_8
+function UIDispatchMapController:RefreshTask()
   for i = 1, self._maxPointCount do
-    (((self._dispatchTaskItemList)[i]):GetGameObject()):SetActive(false)
+    self._dispatchTaskItemList[i]:GetGameObject():SetActive(false)
   end
   for i = 1, self._maxPointCount do
-    local dispatchTaskIconItem = (self._dispatchTaskItemList)[i]
+    local dispatchTaskIconItem = self._dispatchTaskItemList[i]
     dispatchTaskIconItem:Refresh(i - 1, self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.GetAllRewards = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local task = nil
+function UIDispatchMapController:GetAllRewards()
+  local task
   local index = 1
-  task = function(TT)
-    -- function num : 0_9_0 , upvalues : index, self, _ENV, task
-    if self._maxPointCount < index then
-      return 
+  
+  function task(TT)
+    if index > self._maxPointCount then
+      return
     end
-    local dispatchTaskIconItem = (self._dispatchTaskItemList)[index]
-    if (dispatchTaskIconItem._siteInfo).state == DispatchTaskStateType.DTST_Complete then
+    local dispatchTaskIconItem = self._dispatchTaskItemList[index]
+    if dispatchTaskIconItem._siteInfo.state == DispatchTaskStateType.DTST_Complete then
       dispatchTaskIconItem:_GetReward(TT, function()
-      -- function num : 0_9_0_0 , upvalues : index, task, TT
-      index = index + 1
-      task(TT)
-    end
-)
+        index = index + 1
+        task(TT)
+      end)
     else
       index = index + 1
       task(TT)
     end
   end
-
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(task)
+  
+  GameGlobal.TaskManager():StartTask(task)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.OnBack = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIDispatchMapController:OnBack()
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshMainUI)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshMainUI)
   if not self.enterFromEasy then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftShowRoomUI, (self._roomData):SpaceId())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftShowRoomUI, self._roomData:SpaceId())
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController._RequestRoomData = function(self, TT)
-  -- function num : 0_11
+function UIDispatchMapController:_RequestRoomData(TT)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.OnHome = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveAircraft)
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
+function UIDispatchMapController:OnHome()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveAircraft)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Exit, "UI")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.OnHelp = function(self)
-  -- function num : 0_13
+function UIDispatchMapController:OnHelp()
   self:ShowDialog("UIHelpController", "UIDispatchMapController")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.GetTaskBtn = function(self, taskLevel)
-  -- function num : 0_14
+function UIDispatchMapController:GetTaskBtn(taskLevel)
   for i = 1, #self._dispatchTaskItemList do
-    local taskUI = (self._dispatchTaskItemList)[i]
+    local taskUI = self._dispatchTaskItemList[i]
     if taskUI:GetStarCount() == taskLevel then
       return taskUI:GetTaskBtn()
     end
@@ -319,47 +219,33 @@ UIDispatchMapController.GetTaskBtn = function(self, taskLevel)
   return nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.TipsBtnOnClick = function(self)
-  -- function num : 0_15
+function UIDispatchMapController:TipsBtnOnClick()
   self._isShowTips = true
   self:RefreshTipsPanel()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.MaskOnClick = function(self)
-  -- function num : 0_16
+function UIDispatchMapController:MaskOnClick()
   self._isShowTips = false
   self:RefreshTipsPanel()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.CloseTipsBtnOnClick = function(self)
-  -- function num : 0_17
+function UIDispatchMapController:CloseTipsBtnOnClick()
   self._isShowTips = false
   self:RefreshTipsPanel()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDispatchMapController.GetRoomInfoGameobject = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIDispatchMapController:GetRoomInfoGameobject()
   local leftBottomRect = self:GetUIComponent("RectTransform", "Info_Guide")
   local countPanelRect = self:GetUIComponent("RectTransform", "DispatchCountPanel")
   local recoverTimePanelRect = self:GetUIComponent("RectTransform", "DispatchRecoverTimePanel")
   local teamPanelRect = self:GetUIComponent("RectTransform", "DispatchTeamPanel")
-  local maxWidth = (countPanelRect.sizeDelta).x
-  if maxWidth < (recoverTimePanelRect.sizeDelta).x then
-    maxWidth = (recoverTimePanelRect.sizeDelta).x
+  local maxWidth = countPanelRect.sizeDelta.x
+  if maxWidth < recoverTimePanelRect.sizeDelta.x then
+    maxWidth = recoverTimePanelRect.sizeDelta.x
   end
-  if maxWidth < (teamPanelRect.sizeDelta).x then
-    maxWidth = (teamPanelRect.sizeDelta).x
+  if maxWidth < teamPanelRect.sizeDelta.x then
+    maxWidth = teamPanelRect.sizeDelta.x
   end
-  leftBottomRect.sizeDelta = Vector2(maxWidth, (leftBottomRect.sizeDelta).y)
+  leftBottomRect.sizeDelta = Vector2(maxWidth, leftBottomRect.sizeDelta.y)
   return leftBottomRect.gameObject
 end
-
-

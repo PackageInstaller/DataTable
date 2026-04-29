@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_part/ui_discovery_part_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryPartItem", UICustomWidget)
 UIDiscoveryPartItem = UIDiscoveryPartItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryPartItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDiscoveryPartItem:Constructor()
   self.module = self:GetModule(MissionModule)
-  self.data = (self.module):GetDiscoveryData()
+  self.data = self.module:GetDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.OnShow = function(self)
-  -- function num : 0_1
+function UIDiscoveryPartItem:OnShow()
   self.normal = self:GetGameObject("normal")
   self.section = self:GetGameObject("section")
   self.lineNormal = self:GetGameObject("lineNormal")
@@ -32,157 +22,99 @@ UIDiscoveryPartItem.OnShow = function(self)
   self.lock = self:GetGameObject("lock")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIconNormal):DestoryLastImage()
-  ;
-  (self.imgIconSection):DestoryLastImage()
+function UIDiscoveryPartItem:OnHide()
+  self.imgIconNormal:DestoryLastImage()
+  self.imgIconSection:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.Flush = function(self, sectionId, curSectionId)
-  -- function num : 0_3
+function UIDiscoveryPartItem:Flush(sectionId, curSectionId)
   self.sectionId = sectionId
   self.curSectionId = curSectionId
-  local section = (self.data):GetDiscoverySectionBySectionId(sectionId)
+  local section = self.data:GetDiscoverySectionBySectionId(sectionId)
   local state, chapterId = section:State()
   self.isLock = state == nil
   if section.isBetween then
-    (self.normal):SetActive(false)
-    ;
-    (self.section):SetActive(true)
+    self.normal:SetActive(false)
+    self.section:SetActive(true)
     self:FlushSection(section)
   else
-    (self.normal):SetActive(true)
-    ;
-    (self.section):SetActive(false)
+    self.normal:SetActive(true)
+    self.section:SetActive(false)
     self:FlushNormal(section)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.FlushNormal = function(self, section)
-  -- function num : 0_4 , upvalues : _ENV
+function UIDiscoveryPartItem:FlushNormal(section)
   self:FlushLastLine(self.lineNormal)
-  ;
-  (self.txtNameNormal):SetText(section.index_name .. (StringTable.Get)("str_common_colon") .. section.name)
-  ;
-  (self.imgIconNormal):LoadImage(section.icon)
+  self.txtNameNormal:SetText(section.index_name .. StringTable.Get("str_common_colon") .. section.name)
+  self.imgIconNormal:LoadImage(section.icon)
   self:FlushCur(section, self.curNormal)
   self:FlushLock(self.rawIconNormal)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.FlushSection = function(self, section)
-  -- function num : 0_5 , upvalues : _ENV
+function UIDiscoveryPartItem:FlushSection(section)
   self:FlushLastLine(self.lineSection)
-  ;
-  (self.txtNameSection):SetText(section.index_name .. (StringTable.Get)("str_common_colon") .. section.name)
-  ;
-  (self.imgIconSection):LoadImage(section.icon)
+  self.txtNameSection:SetText(section.index_name .. StringTable.Get("str_common_colon") .. section.name)
+  self.imgIconSection:LoadImage(section.icon)
   self:FlushCur(section, self.curSection)
   self:FlushLock(self.rawIconSection)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.FlushLastLine = function(self, line)
-  -- function num : 0_6
-  local last = (self.data):GetDiscoveryLastSection()
-  -- DECOMPILER ERROR at PC10: Unhandled construct in 'MakeBoolean' P3
-
-  local isLast = (last and last.id == self.sectionId)
+function UIDiscoveryPartItem:FlushLastLine(line)
+  local last = self.data:GetDiscoveryLastSection()
+  local isLast = last and last.id == self.sectionId or false
   line:SetActive(not isLast)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.FlushCur = function(self, section, cur)
-  -- function num : 0_7
+function UIDiscoveryPartItem:FlushCur(section, cur)
   if self.isLock then
     cur:SetActive(false)
+  elseif self.sectionId == self.curSectionId then
+    cur:SetActive(true)
   else
-    if self.sectionId == self.curSectionId then
-      cur:SetActive(true)
-    else
-      cur:SetActive(false)
-    end
+    cur:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.FlushLock = function(self, rawIcon)
-  -- function num : 0_8 , upvalues : _ENV
-  (self.lock):SetActive(self.isLock)
+function UIDiscoveryPartItem:FlushLock(rawIcon)
+  self.lock:SetActive(self.isLock)
   if not self._EMIMat then
-    self._EMIMat = (UnityEngine.Material):New(rawIcon.material)
+    self._EMIMat = UnityEngine.Material:New(rawIcon.material)
   end
   if self.isLock then
-    local texture = (rawIcon.material).mainTexture
+    local texture = rawIcon.material.mainTexture
     rawIcon.material = self._EMIMat
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (rawIcon.material).mainTexture = texture
-    ;
-    (rawIcon.material):SetFloat("_LuminosityAmount", 1)
+    rawIcon.material.mainTexture = texture
+    rawIcon.material:SetFloat("_LuminosityAmount", 1)
   else
-    do
-      ;
-      (rawIcon.material):SetFloat("_LuminosityAmount", 0)
-    end
+    rawIcon.material:SetFloat("_LuminosityAmount", 0)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.imgIconNormalOnClick = function(self, go)
-  -- function num : 0_9
+function UIDiscoveryPartItem:imgIconNormalOnClick(go)
   self:OnClick(go)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.imgIconSectionOnClick = function(self, go)
-  -- function num : 0_10
+function UIDiscoveryPartItem:imgIconSectionOnClick(go)
   self:OnClick(go)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartItem.OnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  local section = (self.data):GetDiscoverySectionBySectionId(self.sectionId)
+function UIDiscoveryPartItem:OnClick(go)
+  local section = self.data:GetDiscoverySectionBySectionId(self.sectionId)
   local state, chapterId = section:State()
   if state == DiscoveryStageState.CanPlay then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryFlushChapter, chapterId)
-  else
-    if state == DiscoveryStageState.Nomal then
-      for cId,b in pairs(section.chapterIds) do
-        chapterId = cId
-        do break end
-      end
-      do
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryFlushChapter, chapterId)
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_discovery_section_" .. section.id .. "_unlock_condition"))
-        if ((GameGlobal.UIStateManager)()):IsShow("UIChapters") then
-          ((GameGlobal.UIStateManager)()):CloseDialog("UIChapters")
-        end
-        ;
-        ((GameGlobal.UIStateManager)()):CloseDialog("UIDiscoveryPart")
-      end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryFlushChapter, chapterId)
+  elseif state == DiscoveryStageState.Nomal then
+    for cId, b in pairs(section.chapterIds) do
+      chapterId = cId
+      break
     end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryFlushChapter, chapterId)
+  else
+    ToastManager.ShowToast(StringTable.Get("str_discovery_section_" .. section.id .. "_unlock_condition"))
   end
+  if GameGlobal.UIStateManager():IsShow("UIChapters") then
+    GameGlobal.UIStateManager():CloseDialog("UIChapters")
+  end
+  GameGlobal.UIStateManager():CloseDialog("UIDiscoveryPart")
 end
-
-

@@ -1,197 +1,138 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_we_chat/we_chat_local_storage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("WeChatLocalStorage", Object)
 WeChatLocalStorage = WeChatLocalStorage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-WeChatLocalStorage.Constructor = function(self, weChatProxy)
-  -- function num : 0_0
+function WeChatLocalStorage:Constructor(weChatProxy)
   self.weChatProxy = weChatProxy
   self.roleInit = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatLocalStorage.Dispose = function(self)
-  -- function num : 0_1
+function WeChatLocalStorage:Dispose()
   self.weChatProxy = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatLocalStorage._GetChatKey = function(self, speakerId, pstId)
-  -- function num : 0_2 , upvalues : _ENV
+function WeChatLocalStorage:_GetChatKey(speakerId, pstId)
   if not self.pstId then
     self.pstId = pstId
   end
   if not self.pstId or self.pstId <= 0 then
-    self.pstId = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+    self.pstId = GameGlobal.GetModule(RoleModule):GetPstId()
   end
   return "WeChat" .. "|" .. self.pstId .. "|" .. speakerId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatLocalStorage._GetTimeKey = function(self, speakerId)
-  -- function num : 0_3 , upvalues : _ENV
+function WeChatLocalStorage:_GetTimeKey(speakerId)
   if not self.pstId or self.pstId <= 0 then
-    self.pstId = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+    self.pstId = GameGlobal.GetModule(RoleModule):GetPstId()
   end
   return "WeChatTime" .. "|" .. self.pstId .. "|" .. speakerId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatLocalStorage.SaveSpeakerLastTime = function(self, speakerId, time)
-  -- function num : 0_4 , upvalues : _ENV
+function WeChatLocalStorage:SaveSpeakerLastTime(speakerId, time)
   local key = self:_GetTimeKey(speakerId)
-  ;
-  (LocalDB.SetInt)(key, time)
+  LocalDB.SetInt(key, time)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatLocalStorage.GetSpeakerLastTime = function(self, speakerId)
-  -- function num : 0_5 , upvalues : _ENV
+function WeChatLocalStorage:GetSpeakerLastTime(speakerId)
   local key = self:_GetTimeKey(speakerId)
-  return (LocalDB.GetInt)(key, 0)
+  return LocalDB.GetInt(key, 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatLocalStorage.SaveLocalSpeaker = function(self, speakerId, chats)
-  -- function num : 0_6 , upvalues : _ENV
+function WeChatLocalStorage:SaveLocalSpeaker(speakerId, chats)
   local key = self:_GetChatKey(speakerId)
-  ;
-  (LocalDB.Delete)(key)
-  local str = (LocalDB.GetString)(key)
-  for _,chat in ipairs(chats) do
+  LocalDB.Delete(key)
+  local str = LocalDB.GetString(key)
+  for _, chat in ipairs(chats) do
     str = str .. chat.chatId .. "," .. chat.triggerIndex .. ","
-    for index,talk in ipairs(chat.talks) do
-      if talk.talkType ~= WeChatTalkType.Start or index < #chat.talks then
+    for index, talk in ipairs(chat.talks) do
+      if talk.talkType == WeChatTalkType.Start then
+      elseif index < #chat.talks then
         str = str .. talk.talkId .. ","
-      else
-        if index == #chat.talks then
-          str = str .. talk.talkId
-        end
+      elseif index == #chat.talks then
+        str = str .. talk.talkId
       end
     end
     str = str .. "|"
   end
-  ;
-  (LocalDB.SetString)(key, str)
+  LocalDB.SetString(key, str)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatLocalStorage.InitLocalSpeaker = function(self, speakerId, pstId, serverSpeakerData)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self.roleInit)[speakerId] then
+function WeChatLocalStorage:InitLocalSpeaker(speakerId, pstId, serverSpeakerData)
+  if self.roleInit[speakerId] then
     return 0
   end
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.roleInit)[speakerId] = true
+  self.roleInit[speakerId] = true
   local key = self:_GetChatKey(speakerId, pstId)
-  local str = (LocalDB.GetString)(key)
-  if (string.isnullorempty)(str) then
-    return (self.weChatProxy):SendSpeakerHistory(speakerId)
+  local str = LocalDB.GetString(key)
+  if string.isnullorempty(str) then
+    return self.weChatProxy:SendSpeakerHistory(speakerId)
   else
     local speaker = {}
     speaker.m_vecChatData = {}
     speaker.m_nSpeakerID = speakerId
-    local a = (string.split)(str, "|")
-    for i = 1, (table.count)(a) do
-      if not (string.isnullorempty)(a[i]) then
-        local b = (string.split)(a[i], ",")
+    local a = string.split(str, "|")
+    for i = 1, table.count(a) do
+      if not string.isnullorempty(a[i]) then
+        local b = string.split(a[i], ",")
         local chat = {}
         chat.m_vecTalkData = {}
-        for j = 1, (table.count)(b) do
-          do
-            if not (string.isnullorempty)(b[j]) then
-              if j == 1 then
-                local chatId = tonumber(b[1])
-                chat.m_nCount = tonumber(b[2])
-                chat.m_nChatID = chatId
-                chat.m_nStatus = QuestChatStatus.E_ChatState_Completed
-              else
-              end
-            end
-            if j == 2 then
-              do
-                local talk = {}
-                talk.m_nTalkID = tonumber(b[j])
-                talk.m_bReaded = true
-                ;
-                (table.insert)(chat.m_vecTalkData, talk)
-                -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out DO_STMT
-
-              end
+        for j = 1, table.count(b) do
+          if not string.isnullorempty(b[j]) then
+            if j == 1 then
+              local chatId = tonumber(b[1])
+              chat.m_nCount = tonumber(b[2])
+              chat.m_nChatID = chatId
+              chat.m_nStatus = QuestChatStatus.E_ChatState_Completed
+            elseif j == 2 then
+            else
+              local talk = {}
+              talk.m_nTalkID = tonumber(b[j])
+              talk.m_bReaded = true
+              table.insert(chat.m_vecTalkData, talk)
             end
           end
         end
-        ;
-        (table.insert)(speaker.m_vecChatData, chat)
+        table.insert(speaker.m_vecChatData, chat)
       end
     end
     local inner = false
-    for key,value in pairs(speaker.m_vecChatData) do
+    for key, value in pairs(speaker.m_vecChatData) do
       local chatid = value.m_nChatID
-      if (Cfg.cfg_quest_chat)[chatid] then
+      if Cfg.cfg_quest_chat[chatid] then
         inner = true
         break
       end
     end
-    do
-      do
-        if inner then
-          (self.weChatProxy):UpdateRole(speakerId, speaker, true)
-        end
-        local lastTalk = (self.weChatProxy):GetLastTalk(speakerId)
-        if not lastTalk then
-          (Log.fatal)("[WeChat] WeChatLocalStorage:InitLocalSpeaker can not find local talk by speakerID:" .. speakerId)
-          return 0
-        end
-        if #serverSpeakerData.m_vecChatData == 0 and not lastTalk.isEnd then
-          return (self.weChatProxy):SendSpeakerHistory(speakerId)
-        end
-        do
-          local serverLastChatData = (serverSpeakerData.m_vecChatData)[1]
-          if not lastTalk.isEnd and lastTalk.chatId ~= serverLastChatData.m_nChatID then
-            return (self.weChatProxy):SendSpeakerHistory(speakerId)
-          end
-          return 0
-        end
-      end
+    if inner then
+      self.weChatProxy:UpdateRole(speakerId, speaker, true)
     end
   end
+  local lastTalk = self.weChatProxy:GetLastTalk(speakerId)
+  if not lastTalk then
+    Log.fatal("[WeChat] WeChatLocalStorage:InitLocalSpeaker can not find local talk by speakerID:" .. speakerId)
+    return 0
+  end
+  if #serverSpeakerData.m_vecChatData == 0 then
+    if not lastTalk.isEnd then
+      return self.weChatProxy:SendSpeakerHistory(speakerId)
+    end
+  else
+    local serverLastChatData = serverSpeakerData.m_vecChatData[1]
+    if not lastTalk.isEnd and lastTalk.chatId ~= serverLastChatData.m_nChatID then
+      return self.weChatProxy:SendSpeakerHistory(speakerId)
+    end
+  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatLocalStorage.InitAllLocalSpeaker = function(self, pstId)
-  -- function num : 0_8 , upvalues : _ENV
-  local i = (LocalDB.GetInt)("WeChatAllHistory" .. pstId, 0)
+function WeChatLocalStorage:InitAllLocalSpeaker(pstId)
+  local i = LocalDB.GetInt("WeChatAllHistory" .. pstId, 0)
   if i <= 0 then
-    (LocalDB.SetInt)("WeChatAllHistory" .. pstId, 1)
-    return (self.weChatProxy):SendSpeakerAllHistory()
+    LocalDB.SetInt("WeChatAllHistory" .. pstId, 1)
+    return self.weChatProxy:SendSpeakerAllHistory()
   else
     return 0
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-WeChatLocalStorage.ClearLocalSpeaker = function(self, speakerId)
-  -- function num : 0_9
+function WeChatLocalStorage:ClearLocalSpeaker(speakerId)
 end
-
-

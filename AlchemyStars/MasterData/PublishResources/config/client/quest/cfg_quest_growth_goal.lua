@@ -1,16 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/quest/cfg_quest_growth_goal.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Text = 2, Goal = 3}
-local common = {"str_quest_base_growth_tab_goal_title"}
+local key = {
+  ID = 1,
+  Text = 2,
+  Goal = 3
+}
+local common = {
+  "str_quest_base_growth_tab_goal_title"
+}
 local config = {
-{1, common[1], 1}
-, 
-{2, common[1], 2}
-, 
-{3, common[1], 3}
+  {
+    1,
+    common[1],
+    1
+  },
+  {
+    2,
+    common[1],
+    2
+  },
+  {
+    3,
+    common[1],
+    3
+  }
 }
 return config, "ID", key
-

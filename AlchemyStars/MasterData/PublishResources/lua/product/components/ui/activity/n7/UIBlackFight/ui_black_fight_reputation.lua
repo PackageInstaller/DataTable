@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/UIBlackFight/ui_black_fight_reputation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBlackFightReputation", UIController)
 UIBlackFightReputation = UIBlackFightReputation
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBlackFightReputation.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function UIBlackFightReputation:Constructor()
+  local mCampaign = GameGlobal.GetModule(CampaignModule)
   self.data = mCampaign:GetN7BlackFightData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
-  (self.data):RequestCampaign(TT)
+function UIBlackFightReputation:LoadDataOnEnter(TT, res, uiParams)
+  self.data:RequestCampaign(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBlackFightReputation:OnShow(uiParams)
   local btns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._backBtns = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityN7MainRefresh)
+  self._backBtns:SetData(function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityN7MainRefresh)
     self:CloseDialog()
-  end
-)
+  end)
   self.imgBelt = self:GetUIComponent("RawImageLoader", "imgBelt")
   self.txtSalutation = self:GetUIComponent("UILocalizationText", "txtSalutation")
   self.txtSalutationOL = self:GetUIComponent("UILocalizationText", "txtSalutationOL")
@@ -51,156 +35,102 @@ UIBlackFightReputation.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBlackFightReputation:OnHide()
   self:DetachEvent(GameEventType.AircraftInteractiveEventRewardShowItemTips, self.ShowItemInfo)
   self:DetachEvent(GameEventType.BlackFistUpdatePaperRed, self.FlushPaper)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local curSalutation = (self.data):GetCurSalutation()
+function UIBlackFightReputation:Flush()
+  local curSalutation = self.data:GetCurSalutation()
   if curSalutation then
-    (UIBlackFightMain.FlushTextColorOutline)(curSalutation, self.txtSalutation, self.txtSalutationOL, self.txtSalutationGlow, self.imgBelt, 1)
+    UIBlackFightMain.FlushTextColorOutline(curSalutation, self.txtSalutation, self.txtSalutationOL, self.txtSalutationGlow, self.imgBelt, 1)
   end
-  ;
-  (self.txtReputation):SetText((self.data):GetReputation())
+  self.txtReputation:SetText(self.data:GetReputation())
   self:FlushReputationsAndSalutations()
   self:FlushPaper()
   self:Roll2Target()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.FlushReputationsAndSalutations = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local len = (table.count)((self.data).reputations)
-  ;
-  (self.poolContent):SpawnObjects("UIBlackFightReputationItem", len)
-  local uis = (self.poolContent):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
-    do
-      ui:Flush(((self.data).reputations)[i], function()
-    -- function num : 0_5_0 , upvalues : self, ui
-    if self.curSelect then
-      (self.curSelect):FlushSelect(false)
-    end
-    self.curSelect = ui
-    ;
-    (self.curSelect):FlushSelect(true)
+function UIBlackFightReputation:FlushReputationsAndSalutations()
+  local len = table.count(self.data.reputations)
+  self.poolContent:SpawnObjects("UIBlackFightReputationItem", len)
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    ui:Flush(self.data.reputations[i], function()
+      if self.curSelect then
+        self.curSelect:FlushSelect(false)
+      end
+      self.curSelect = ui
+      self.curSelect:FlushSelect(true)
+    end, i)
   end
-, i)
-    end
-  end
-  ;
-  (self.btnGetAll):SetActive((self.data):ExistCanGetAwards())
+  self.btnGetAll:SetActive(self.data:ExistCanGetAwards())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.FlushPaper = function(self)
-  -- function num : 0_6
-  local paper = (self.data):GetPaperByIdx(((self.data).curOverviewPaper).idx)
+function UIBlackFightReputation:FlushPaper()
+  local paper = self.data:GetPaperByIdx(self.data.curOverviewPaper.idx)
   self:FlushElements(paper)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.btnPaper).anchoredPosition = ((self.data).curOverviewPaper).btnPos
-  local existNotReadPaper, _ = (self.data):ExistNotReadPaper()
-  ;
-  (self.redPaper):SetActive(existNotReadPaper)
+  self.btnPaper.anchoredPosition = self.data.curOverviewPaper.btnPos
+  local existNotReadPaper, _ = self.data:ExistNotReadPaper()
+  self.redPaper:SetActive(existNotReadPaper)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.FlushElements = function(self, paper)
-  -- function num : 0_7
-  local ui = (self.poolPaper):SpawnObject("UIBlackFightPaperItem")
+function UIBlackFightReputation:FlushElements(paper)
+  local ui = self.poolPaper:SpawnObject("UIBlackFightPaperItem")
   ui:Flush(paper)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.Roll2Target = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local reputations = (self.data).reputations
+function UIBlackFightReputation:Roll2Target()
+  local reputations = self.data.reputations
   if not reputations then
-    return 
+    return
   end
-  if (table.count)(reputations) <= 0 then
-    return 
+  if table.count(reputations) <= 0 then
+    return
   end
-  local target = nil
-  for i,v in ipairs(reputations) do
+  local target
+  for i, v in ipairs(reputations) do
     if v.gotState == BlackFightReputationState.CanGet then
       target = i
       break
     end
   end
-  do
-    if not target then
-      for i,v in ipairs(reputations) do
-        if v.gotState == nil then
-          target = i
-          break
-        end
-      end
-    end
-    do
-      local uis = (self.poolContent):GetAllSpawnList()
-      if uis then
-        if not target then
-          target = (table.count)(uis)
-        end
-        local ui = uis[target]
-        local rt = (ui:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-        ;
-        ((UnityEngine.Canvas).ForceUpdateCanvases)()
-        local v3 = ((self.rtContent).transform):InverseTransformPoint((self.rtContent).position) - ((self.rtContent).transform):InverseTransformPoint(rt.position)
-        -- DECOMPILER ERROR at PC85: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.rtContent).anchoredPosition = Vector2(0, v3.y - (rt.rect).height * 0.5)
+  if not target then
+    for i, v in ipairs(reputations) do
+      if v.gotState == nil then
+        target = i
+        break
       end
     end
   end
+  local uis = self.poolContent:GetAllSpawnList()
+  if uis then
+    target = target or table.count(uis)
+    local ui = uis[target]
+    local rt = ui:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+    UnityEngine.Canvas.ForceUpdateCanvases()
+    local v3 = self.rtContent.transform:InverseTransformPoint(self.rtContent.position) - self.rtContent.transform:InverseTransformPoint(rt.position)
+    self.rtContent.anchoredPosition = Vector2(0, v3.y - rt.rect.height * 0.5)
+  end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.ShowItemInfo = function(self, matid, pos)
-  -- function num : 0_9
-  (self.tips):SetData(matid, pos)
+function UIBlackFightReputation:ShowItemInfo(matid, pos)
+  self.tips:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.btnGetAllOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UIBlackFightReputation:btnGetAllOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    local c = (self.data):GetComponentReputation()
+    local c = self.data:GetComponentReputation()
     local res = AsyncRequestRes:New()
     local awards = c:HandleOneKeyReceiveRewards(TT, res)
-    if awards and (table.count)(awards) > 0 then
-      (UIBlackFightReputationItem.ShowRewards)(awards)
-      ;
-      (self.data):SetReputationsGot()
+    if awards and table.count(awards) > 0 then
+      UIBlackFightReputationItem.ShowRewards(awards)
+      self.data:SetReputationsGot()
       self:FlushReputationsAndSalutations()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightReputation.btnPaperOnClick = function(self, go)
-  -- function num : 0_11
+function UIBlackFightReputation:btnPaperOnClick(go)
   self:ShowDialog("UIBlackFightPaper")
 end
-
-

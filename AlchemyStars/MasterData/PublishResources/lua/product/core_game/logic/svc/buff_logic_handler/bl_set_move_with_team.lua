@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_move_with_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 BLSetMoveWithTeamTargetTeamType = {OwnerTeam = 1}
 _enum("BLSetMoveWithTeamTargetTeamType", BLSetMoveWithTeamTargetTeamType)
 _class("BuffLogicSetMoveWithTeam", BuffLogicBase)
 BuffLogicSetMoveWithTeam = BuffLogicSetMoveWithTeam
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetMoveWithTeam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicSetMoveWithTeam:Constructor(buffInstance, logicParam)
   local paramSet = tonumber(logicParam.bSet)
   self._bSet = paramSet == 1
   self._targetTeamType = tonumber(logicParam.targetTeamType)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetMoveWithTeam.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local teamEntity = nil
+function BuffLogicSetMoveWithTeam:DoLogic(notify)
+  local teamEntity
   if self._bSet then
-    teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-    do
-      if BLSetMoveWithTeamTargetTeamType.OwnerTeam == self._targetTeamType and (self._entity):HasSummoner() then
-        local ownerPet = (self._entity):GetSummonerEntity()
-        if ownerPet:HasPet() then
-          teamEntity = (ownerPet:Pet()):GetOwnerTeamEntity()
-        end
+    teamEntity = self._world:Player():GetCurrentTeamEntity()
+    if BLSetMoveWithTeamTargetTeamType.OwnerTeam == self._targetTeamType and self._entity:HasSummoner() then
+      local ownerPet = self._entity:GetSummonerEntity()
+      if ownerPet:HasPet() then
+        teamEntity = ownerPet:Pet():GetOwnerTeamEntity()
       end
-      ;
-      (self._entity):AddSyncMoveWithTeam(teamEntity)
-      ;
-      (self._entity):RemoveSyncMoveWithTeam()
-      return BuffResultSetMoveWithTeam:New(self._bSet, teamEntity)
     end
+    self._entity:AddSyncMoveWithTeam(teamEntity)
+  else
+    self._entity:RemoveSyncMoveWithTeam()
   end
+  return BuffResultSetMoveWithTeam:New(self._bSet, teamEntity)
 end
-
-

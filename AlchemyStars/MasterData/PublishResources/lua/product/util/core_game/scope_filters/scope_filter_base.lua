@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scope_filters/scope_filter_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillScopeFilter_Base", Object)
 SkillScopeFilter_Base = SkillScopeFilter_Base
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeFilter_Base.DoModifyRange = function(self, scopeResult, filterParam, passParam)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.exception)(self._className, " NotImplementedException at : ", (Log.traceback)())
+function SkillScopeFilter_Base:DoModifyRange(scopeResult, filterParam, passParam)
+  Log.exception(self._className, " NotImplementedException at : ", Log.traceback())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilter_Base.AddPosToScopeResult = function(self, scopeResult, posArray)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeFilter_Base:AddPosToScopeResult(scopeResult, posArray)
   local attackGridRange = scopeResult:GetAttackRange()
   local wholeGridRange = scopeResult:GetWholeGridRange()
-  for _,gridPos in ipairs(posArray) do
-    if not (table.icontains)(attackGridRange, gridPos) then
-      (table.insert)(attackGridRange, gridPos)
+  for _, gridPos in ipairs(posArray) do
+    if not table.icontains(attackGridRange, gridPos) then
+      table.insert(attackGridRange, gridPos)
     end
-    if not (table.icontains)(wholeGridRange, gridPos) then
-      (table.insert)(wholeGridRange, gridPos)
+    if not table.icontains(wholeGridRange, gridPos) then
+      table.insert(wholeGridRange, gridPos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilter_Base.RemovePosFromScopeResult = function(self, scopeResult, posArray)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillScopeFilter_Base:RemovePosFromScopeResult(scopeResult, posArray)
   local attackGridRange = scopeResult:GetAttackRange()
-  for _,gridPos in ipairs(posArray) do
-    (table.removev)(attackGridRange, gridPos)
+  for _, gridPos in ipairs(posArray) do
+    table.removev(attackGridRange, gridPos)
   end
 end
-
-

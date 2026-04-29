@@ -1,61 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/ui_cutscene_review_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICutsceneReviewController", UIController)
 UICutsceneReviewController = UICutsceneReviewController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICutsceneReviewController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICutsceneReviewController:OnShow(uiParams)
   self:AttachEvent(GameEventType.CutsceneFinish, self.OnCutsceneFinish)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICutsceneReviewController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_1
+function UICutsceneReviewController:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICutsceneReviewController.OnHide = function(self)
-  -- function num : 0_2
+function UICutsceneReviewController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICutsceneReviewController.ButtonSkipOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  local uiStoryModule = ((GameGlobal.GetModule)(StoryModule)):GetUIModule()
+function UICutsceneReviewController:ButtonSkipOnClick(go)
+  local uiStoryModule = GameGlobal.GetModule(StoryModule):GetUIModule()
   if uiStoryModule then
     uiStoryModule:BackFrom3DStory()
   else
-    ;
-    (Log.fatal)("Can not find uiStoryModule")
+    Log.fatal("Can not find uiStoryModule")
     self:SwitchState(UIStateType.UIMain)
   end
-  ;
-  (GameGlobal:GetInstance()):ExitCutsceneGame()
+  GameGlobal:GetInstance():ExitCutsceneGame()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICutsceneReviewController.OnCutsceneFinish = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.fatal)("OnCutsceneFinish----------------")
-  local uiStoryModule = ((GameGlobal.GetModule)(StoryModule)):GetUIModule()
+function UICutsceneReviewController:OnCutsceneFinish()
+  Log.fatal("OnCutsceneFinish----------------")
+  local uiStoryModule = GameGlobal.GetModule(StoryModule):GetUIModule()
   if uiStoryModule then
     uiStoryModule:BackFrom3DStory()
   else
-    ;
-    (Log.fatal)("Can not find uiStoryModule")
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+    Log.fatal("Can not find uiStoryModule")
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
   end
-  ;
-  (GameGlobal:GetInstance()):ExitCutsceneGame()
+  GameGlobal:GetInstance():ExitCutsceneGame()
 end
-
-

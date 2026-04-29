@@ -1,75 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_detail/ui_fight_skill_active_var.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFightSkillActiveVar", UICustomWidget)
 UIFightSkillActiveVar = UIFightSkillActiveVar
-local UIFightSkillActiveVarFromType = {Detail = 0, Shop = 1, Battle = 2}
-_enum("UIFightSkillActiveVarFromType", UIFightSkillActiveVarFromType)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UIFightSkillActiveVar.Constructor = function(self)
-  -- function num : 0_0 , upvalues : UIFightSkillActiveVarFromType, _ENV
-  self._spaceTab = {
-[UIFightSkillActiveVarFromType.Detail] = {[1] = Vector2(25, 0), [2] = Vector2(25, 0), [3] = Vector2(25, 0), [4] = Vector2(6, 0)}
-, 
-[UIFightSkillActiveVarFromType.Shop] = {[1] = Vector2(25, 0), [2] = Vector2(25, 0), [3] = Vector2(15, 0), [4] = Vector2(3, 0)}
-, 
-[UIFightSkillActiveVarFromType.Battle] = {[1] = Vector2(18, 0), [2] = Vector2(18, 0), [3] = Vector2(18, 0), [4] = Vector2(4, 0)}
+local UIFightSkillActiveVarFromType = {
+  Detail = 0,
+  Shop = 1,
+  Battle = 2
 }
+_enum("UIFightSkillActiveVarFromType", UIFightSkillActiveVarFromType)
+
+function UIFightSkillActiveVar:Constructor()
+  self._spaceTab = {
+    [UIFightSkillActiveVarFromType.Detail] = {
+      [1] = Vector2(25, 0),
+      [2] = Vector2(25, 0),
+      [3] = Vector2(25, 0),
+      [4] = Vector2(6, 0)
+    },
+    [UIFightSkillActiveVarFromType.Shop] = {
+      [1] = Vector2(25, 0),
+      [2] = Vector2(25, 0),
+      [3] = Vector2(15, 0),
+      [4] = Vector2(3, 0)
+    },
+    [UIFightSkillActiveVarFromType.Battle] = {
+      [1] = Vector2(18, 0),
+      [2] = Vector2(18, 0),
+      [3] = Vector2(18, 0),
+      [4] = Vector2(4, 0)
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIFightSkillActiveVar.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIFightSkillActiveVar:OnShow(uiParams)
   self._pool = self:GetUIComponent("UISelectObjectPath", "varPointPool")
   self._group = self:GetUIComponent("GridLayoutGroup", "varPointPool")
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIFightSkillActiveVar.SetData = function(self, count, idx, callback, UIFightSkillActiveVarFromType)
-  -- function num : 0_2
+function UIFightSkillActiveVar:SetData(count, idx, callback, UIFightSkillActiveVarFromType)
   self._count = count
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._group).spacing = ((self._spaceTab)[UIFightSkillActiveVarFromType])[count]
+  self._group.spacing = self._spaceTab[UIFightSkillActiveVarFromType][count]
   self._idx = idx
   self._callback = callback
-  ;
-  (self._pool):SpawnObjects("UIFightSkillActiveVarPoint", self._count)
-  self._items = (self._pool):GetAllSpawnList()
+  self._pool:SpawnObjects("UIFightSkillActiveVarPoint", self._count)
+  self._items = self._pool:GetAllSpawnList()
   self:FlushIdx()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIFightSkillActiveVar.FlushIdx = function(self)
-  -- function num : 0_3
+function UIFightSkillActiveVar:FlushIdx()
   if self._items then
     for i = 1, self._count do
-      local item = (self._items)[i]
+      local item = self._items[i]
       item:SetData(i, self._idx)
     end
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIFightSkillActiveVar.BtnOnClick = function(self)
-  -- function num : 0_4
+function UIFightSkillActiveVar:BtnOnClick()
   if self._callback then
     self._idx = self._idx + 1
-    if self._count < self._idx then
+    if self._idx > self._count then
       self._idx = self._idx - self._count
     end
-    ;
-    (self._callback)(self._idx)
+    self._callback(self._idx)
     self:FlushIdx()
   end
 end
-
-

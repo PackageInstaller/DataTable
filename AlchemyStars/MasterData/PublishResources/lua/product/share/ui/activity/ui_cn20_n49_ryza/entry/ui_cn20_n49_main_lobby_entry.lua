@@ -1,43 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/entry/ui_cn20_n49_main_lobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_main_campaign_base")
 _class("UICN20N49MainLobbyEntry", UIMainLobbyMainCampaignBase)
 UICN20N49MainLobbyEntry = UICN20N49MainLobbyEntry
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49MainLobbyEntry.GetComponent = function(self)
-  -- function num : 0_0
+function UICN20N49MainLobbyEntry:GetComponent()
   self._redGo = self:GetGameObject("red")
   self._newGo = self:GetGameObject("new")
   self._line_Tips = self:GetUIComponent("UILocalizationText", "line_Tips")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainLobbyEntry.RefreshView = function(self)
-  -- function num : 0_1
+function UICN20N49MainLobbyEntry:RefreshView()
   self:LineOpen()
   self:RedAndNew()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainLobbyEntry.BtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((UICN20N49MainLobbyEntry.super).BtnOnClick)(self)
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UICN20N49MainController, true)
+function UICN20N49MainLobbyEntry:BtnOnClick()
+  UICN20N49MainLobbyEntry.super.BtnOnClick(self)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UICN20N49MainController, true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainLobbyEntry.RedAndNew = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49MainLobbyEntry:RedAndNew()
   local new = false
-  local mainNewVal = (UICN20N49Helper.LocalDB_Has)("main", "New")
+  local mainNewVal = UICN20N49Helper.LocalDB_Has("main", "New")
   if not mainNewVal then
     new = true
   end
@@ -45,61 +28,49 @@ UICN20N49MainLobbyEntry.RedAndNew = function(self)
   local talentNew = false
   local alchemyNew = false
   local alchemyShopNew = false
-  local talentNewVal = not (UICN20N49Helper.LocalDB_Has)("talent", "New")
-  local talentOpen = (self.sampleInfo).m_is_component_open >> (UICN20N49Helper.GetComponentId)("talent") & 1 == 1
+  local talentNewVal = not UICN20N49Helper.LocalDB_Has("talent", "New")
+  local talentOpen = self.sampleInfo.m_is_component_open >> UICN20N49Helper.GetComponentId("talent") & 1 == 1
   if talentOpen and talentNewVal then
     talentNew = true
   end
-  local alchemyNewVal = not (UICN20N49Helper.LocalDB_Has)("alchemy", "New")
-  local alchemyOpen = (self.sampleInfo).m_is_component_open >> (UICN20N49Helper.GetComponentId)("alchemy") & 1 == 1
+  local alchemyNewVal = not UICN20N49Helper.LocalDB_Has("alchemy", "New")
+  local alchemyOpen = self.sampleInfo.m_is_component_open >> UICN20N49Helper.GetComponentId("alchemy") & 1 == 1
   if alchemyOpen and alchemyNewVal then
     alchemyNew = true
   end
-  local alchemyShopNewVal = not (UICN20N49Helper.LocalDB_Has)("alchemyShop", "New")
-  local alchemyShopOpen = (self.sampleInfo).m_is_component_open >> (UICN20N49Helper.GetComponentId)("alchemyShop") & 1 == 1
+  local alchemyShopNewVal = not UICN20N49Helper.LocalDB_Has("alchemyShop", "New")
+  local alchemyShopOpen = self.sampleInfo.m_is_component_open >> UICN20N49Helper.GetComponentId("alchemyShop") & 1 == 1
   if alchemyShopOpen and alchemyShopNewVal then
     alchemyShopNew = true
   end
   mainNew = new or talentNew or alchemyNew or alchemyShopNew
   local mainRed = false
-  local lineKey = (UICN20N49Helper._LocalDB_GetKey)("line", "Red")
-  if (self.sampleInfo):IsCompRed((UICN20N49Helper.GetComponentId)("line")) then
-    local lineRed = not (UIActivityHelper.HasCmptRedViewed)(lineKey)
-  end
-  local loginRed = (self.sampleInfo):IsCompRed((UICN20N49Helper.GetComponentId)("login"))
-  local talentRed = (UICN20N49Helper.GetActionPointCount)() > 0
+  local lineKey = UICN20N49Helper._LocalDB_GetKey("line", "Red")
+  local lineRed = self.sampleInfo:IsCompRed(UICN20N49Helper.GetComponentId("line")) and not UIActivityHelper.HasCmptRedViewed(lineKey)
+  local loginRed = self.sampleInfo:IsCompRed(UICN20N49Helper.GetComponentId("login"))
+  local talentRed = UICN20N49Helper.GetActionPointCount() > 0
   local treeRed = false
-  local shopRed = (self.sampleInfo):IsCompRed((UICN20N49Helper.GetComponentId)("exchange"))
+  local shopRed = self.sampleInfo:IsCompRed(UICN20N49Helper.GetComponentId("exchange"))
   local alchemyRed = false
-  local alchemyShopRed = (self.sampleInfo):IsCompRed((UICN20N49Helper.GetComponentId)("alchemyShop"))
+  local alchemyShopRed = self.sampleInfo:IsCompRed(UICN20N49Helper.GetComponentId("alchemyShop"))
   mainRed = lineRed or loginRed or talentRed or treeRed or shopRed or alchemyRed or alchemyShopRed
-  ;
-  (self._newGo):SetActive(mainNew)
-  if mainRed then
-    (self._redGo):SetActive(not (mainNew))
-    -- DECOMPILER ERROR: 11 unprocessed JMP targets
-  end
+  self._newGo:SetActive(mainNew)
+  self._redGo:SetActive(mainRed and not mainNew)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainLobbyEntry.LineOpen = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local talentOpen = (self.sampleInfo).m_is_component_open >> (UICN20N49Helper.GetComponentId)("talent") & 1 == 1
-  local lineOpen = (self.sampleInfo).m_is_component_open >> (UICN20N49Helper.GetComponentId)("line") & 1 == 1
+function UICN20N49MainLobbyEntry:LineOpen()
+  local talentOpen = self.sampleInfo.m_is_component_open >> UICN20N49Helper.GetComponentId("talent") & 1 == 1
+  local lineOpen = self.sampleInfo.m_is_component_open >> UICN20N49Helper.GetComponentId("line") & 1 == 1
   if talentOpen then
-    local actionPointCount = (UICN20N49Helper.GetActionPointCount)()
-    if actionPointCount > 0 then
-      (self._line_Tips):SetText((StringTable.Get)("str_cn20_n49_line_talent_open_tips"))
+    local actionPointCount = UICN20N49Helper.GetActionPointCount()
+    if 0 < actionPointCount then
+      self._line_Tips:SetText(StringTable.Get("str_cn20_n49_line_talent_open_tips"))
     else
-      (self._line_Tips):SetText("")
+      self._line_Tips:SetText("")
     end
   elseif lineOpen then
-    (self._line_Tips):SetText((StringTable.Get)("str_cn20_n49_line_level_open_tips"))
+    self._line_Tips:SetText(StringTable.Get("str_cn20_n49_line_level_open_tips"))
   else
-    (self._line_Tips):SetText("")
+    self._line_Tips:SetText("")
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
-
-

@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/event/ui_n30_entrust_event_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local e = require("ui_n30_entrust_event")
 e:Class("N30EntrustEventBox", N30EntrustEvent, EntrustEventType.EntrustEventType_Box)
--- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
 
-N30EntrustEventBox.Constructor = function(self)
-  -- function num : 0_0
+function N30EntrustEventBox:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventBox.DebugName = function(self)
-  -- function num : 0_1
+function N30EntrustEventBox:DebugName()
   return "Box"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventBox.GetIconName = function(self)
-  -- function num : 0_2
+function N30EntrustEventBox:GetIconName()
   if self._isPass then
     return "n30_wt_ld_icon07"
   else
@@ -29,19 +16,13 @@ N30EntrustEventBox.GetIconName = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventBox.GetWidgetName = function(self)
-  -- function num : 0_3
+function N30EntrustEventBox:GetWidgetName()
   return "UIN30EntrustEventBox"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-N30EntrustEventBox.OnArrived = function(self, ui)
-  -- function num : 0_4 , upvalues : _ENV
+function N30EntrustEventBox:OnArrived(ui)
   if self:IsPass() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n30_entrust_event_box_popup"))
+    ToastManager.ShowToast(StringTable.Get("str_n30_entrust_event_box_popup"))
   else
     ui:ShowDialog("UIN30EntrustEvent", self)
   end
@@ -49,58 +30,38 @@ end
 
 _class("UIN30EntrustEventBox", UIN30EntrustEventWidget)
 UIN30EntrustEventBox = UIN30EntrustEventBox
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN30EntrustEventBox.Constructor = function(self)
-  -- function num : 0_5
+function UIN30EntrustEventBox:Constructor()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventBox.OnShow = function(self, uiParams)
-  -- function num : 0_6
+function UIN30EntrustEventBox:OnShow(uiParams)
   self._contentFinishReward = self:GetUIComponent("UISelectObjectPath", "contentFinishReward")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventBox.OnHide = function(self)
-  -- function num : 0_7
+function UIN30EntrustEventBox:OnHide()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventBox.BtnConfirmOnClick = function(self, go)
-  -- function num : 0_8
-  self:CallUIMethod("UIN30EntrustLine", "CompleteEvent", (self._event):ID(), function()
-    -- function num : 0_8_0 , upvalues : self
-    (self:RootUIOwner()):CloseDialogAnimation(function()
-      -- function num : 0_8_0_0 , upvalues : self
-      local entrustData = (self._event):EntrustData()
-      local rewards = entrustData:EventRewardList((self._event):Cfg())
+function UIN30EntrustEventBox:BtnConfirmOnClick(go)
+  self:CallUIMethod("UIN30EntrustLine", "CompleteEvent", self._event:ID(), function()
+    self:RootUIOwner():CloseDialogAnimation(function()
+      local entrustData = self._event:EntrustData()
+      local rewards = entrustData:EventRewardList(self._event:Cfg())
       self:ShowDialog("UIGetItemController", rewards, function()
-        -- function num : 0_8_0_0_0 , upvalues : self
-        self:CallUIMethod("UIN30EntrustLine", "OnEventFinish", {(self._event):ID()})
-      end
-)
-    end
-)
-  end
-)
+        self:CallUIMethod("UIN30EntrustLine", "OnEventFinish", {
+          self._event:ID()
+        })
+      end)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN30EntrustEventBox.Refresh = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (self._event):Cfg()
-  local entrustData = (self._event):EntrustData()
+function UIN30EntrustEventBox:Refresh()
+  local cfg = self._event:Cfg()
+  local entrustData = self._event:EntrustData()
   local rewardFinish = entrustData:EventRewardList(cfg)
-  local widgetFinish = (self._contentFinishReward):SpawnObjects("UIN30EntrustStageReward", #rewardFinish)
-  for k,v in pairs(rewardFinish) do
+  local widgetFinish = self._contentFinishReward:SpawnObjects("UIN30EntrustStageReward", #rewardFinish)
+  for k, v in pairs(rewardFinish) do
     local ui = widgetFinish[k]
     ui:Flush(v)
   end
 end
-
-

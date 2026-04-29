@@ -1,61 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_former_leader_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayFormerLeaderVisibleInstruction", BaseInstruction)
 PlayFormerLeaderVisibleInstruction = PlayFormerLeaderVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayFormerLeaderVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayFormerLeaderVisibleInstruction:Constructor(paramList)
   self._visible = tonumber(paramList.visible) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFormerLeaderVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayFormerLeaderVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local caster = casterEntity
   if caster:HasSuperEntity() then
     caster = caster:GetSuperEntity()
   end
   if not caster:HasPet() then
-    return 
+    return
   end
   local eFormerTeamLeader = self:_GetFormerTeamLeaderFromSkillResult(caster, phaseContext)
   if not eFormerTeamLeader then
-    local teamEntity = (caster:Pet()):GetOwnerTeamEntity()
-    local petEntities = (teamEntity:Team()):GetTeamPetEntities()
-    for _,e in ipairs(petEntities) do
+    local teamEntity = caster:Pet():GetOwnerTeamEntity()
+    local petEntities = teamEntity:Team():GetTeamPetEntities()
+    for _, e in ipairs(petEntities) do
       e:SetViewVisible(false)
     end
-    return 
+    return
   end
-  do
-    eFormerTeamLeader:SetViewVisible(self._visible)
-  end
+  eFormerTeamLeader:SetViewVisible(self._visible)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFormerLeaderVisibleInstruction._GetFormerTeamLeaderFromSkillResult = function(self, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local eTeam = (casterEntity:Pet()):GetOwnerTeamEntity()
-  local routineComponent = ((casterEntity:SkillRoutine()):GetResultContainer())
-  local formerTeamLeaderPstID = nil
+function PlayFormerLeaderVisibleInstruction:_GetFormerTeamLeaderFromSkillResult(casterEntity, phaseContext)
+  local eTeam = casterEntity:Pet():GetOwnerTeamEntity()
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
+  local formerTeamLeaderPstID
   local changePetTeamOrderResult = routineComponent:GetEffectResultByArray(SkillEffectType.ChangePetTeamOrder)
   if changePetTeamOrderResult then
-    formerTeamLeaderPstID = (changePetTeamOrderResult:GetOldTeamOrder())[1]
+    formerTeamLeaderPstID = changePetTeamOrderResult:GetOldTeamOrder()[1]
   end
   local swapPetTeamOrderResult = routineComponent:GetEffectResultByArray(SkillEffectType.SwapPetTeamOrder)
   if swapPetTeamOrderResult then
-    formerTeamLeaderPstID = (swapPetTeamOrderResult:GetOldTeamOrder())[1]
+    formerTeamLeaderPstID = swapPetTeamOrderResult:GetOldTeamOrder()[1]
   end
-  local ePet = (eTeam:Team()):GetPetEntityByPetPstID(formerTeamLeaderPstID)
+  local ePet = eTeam:Team():GetPetEntityByPetPstID(formerTeamLeaderPstID)
   return ePet
 end
-
-

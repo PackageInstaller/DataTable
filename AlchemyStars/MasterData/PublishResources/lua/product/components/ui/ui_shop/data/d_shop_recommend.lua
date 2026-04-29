@@ -1,61 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/d_shop_recommend.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DShopRecommend", Object)
 DShopRecommend = DShopRecommend
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DShopRecommend.Constructor = function(self, cfg, adId)
-  -- function num : 0_0
+function DShopRecommend:Constructor(cfg, adId)
   if not cfg then
-    return 
+    return
   end
   self.cfg = cfg
   self:SetAdGroup(adId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopRecommend.GetId = function(self)
-  -- function num : 0_1
-  return self.cfg and (self.cfg).ID or 0
+function DShopRecommend:GetId()
+  return self.cfg and self.cfg.ID or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopRecommend.GetSubTabType = function(self)
-  -- function num : 0_2
-  return self.cfg and (self.cfg).PageType or 0
+function DShopRecommend:GetSubTabType()
+  return self.cfg and self.cfg.PageType or 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopRecommend.GetName = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return self.cfg and (StringTable.Get)((self.cfg).TabName) or 0
+function DShopRecommend:GetName()
+  return self.cfg and StringTable.Get(self.cfg.TabName) or 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopRecommend.SetAdGroup = function(self, adId)
-  -- function num : 0_4 , upvalues : _ENV
-  self.AdGroup = (Cfg.cfg_shop_recommend_ad)[adId]
+function DShopRecommend:SetAdGroup(adId)
+  self.AdGroup = Cfg.cfg_shop_recommend_ad[adId]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopRecommend.GetAdGroup = function(self)
-  -- function num : 0_5
+function DShopRecommend:GetAdGroup()
   return self.AdGroup
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopRecommend.GetTag = function(self)
-  -- function num : 0_6
-  return self.cfg and (self.cfg).TabType or nil
+function DShopRecommend:GetTag()
+  return self.cfg and self.cfg.TabType or nil
 end
-
-

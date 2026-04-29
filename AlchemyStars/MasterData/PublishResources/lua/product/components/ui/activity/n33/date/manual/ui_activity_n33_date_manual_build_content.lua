@@ -1,50 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/manual/ui_activity_n33_date_manual_build_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateManuaBuildContent", UICustomWidget)
 UIActivityN33DateManuaBuildContent = UIActivityN33DateManuaBuildContent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33DateManuaBuildContent.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN33DateManuaBuildContent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManuaBuildContent.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityN33DateManuaBuildContent:OnShow()
   self:AddEventListener()
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManuaBuildContent.AddEventListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN33DateManuaBuildContent:AddEventListener()
   self:AttachEvent(GameEventType.OnInviteEventEnd, self.OnInviteEventEnd)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManuaBuildContent.OnInviteEventEnd = function(self)
-  -- function num : 0_3
+function UIActivityN33DateManuaBuildContent:OnInviteEventEnd()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManuaBuildContent._GetComponent = function(self)
-  -- function num : 0_4
+function UIActivityN33DateManuaBuildContent:_GetComponent()
   self._content = self:GetUIComponent("UISelectObjectPath", "content")
   self._anim = self:GetUIComponent("Animation", "content")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManuaBuildContent.SetData = function(self, cfgs, data, isShowInvite, storyClickCallback, inviteClickCallback)
-  -- function num : 0_5
+function UIActivityN33DateManuaBuildContent:SetData(cfgs, data, isShowInvite, storyClickCallback, inviteClickCallback)
   self._cfgs = cfgs
   self._activityConst = data
   self._isShowInvite = isShowInvite
@@ -53,56 +31,36 @@ UIActivityN33DateManuaBuildContent.SetData = function(self, cfgs, data, isShowIn
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManuaBuildContent._Init = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._buildItems = (self._content):SpawnObjects("UIActivityN33DateManualBuildItem", 2)
-  for i,v in pairs(self._buildItems) do
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R6 in 'UnsetPending'
-
-    ((v.view).gameObject).name = i - 1
-    v:SetData((self._cfgs)[i], self._activityConst, self._isShowInvite, self._storyClickCallback, self._inviteClickCallback)
+function UIActivityN33DateManuaBuildContent:_Init()
+  self._buildItems = self._content:SpawnObjects("UIActivityN33DateManualBuildItem", 2)
+  for i, v in pairs(self._buildItems) do
+    v.view.gameObject.name = i - 1
+    v:SetData(self._cfgs[i], self._activityConst, self._isShowInvite, self._storyClickCallback, self._inviteClickCallback)
   end
-  local isRead = ((self._buildItems)[1]):GetIsRead()
-  ;
-  ((self._buildItems)[2]):SetActive(isRead)
+  local isRead = self._buildItems[1]:GetIsRead()
+  self._buildItems[2]:SetActive(isRead)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManuaBuildContent.PlayCloseAnim = function(self, callback)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN33DateManuaBuildContent:PlayCloseAnim(callback)
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, callback
     self:Lock("uieffanim_UIActivityN33DateManualBuildContent_out")
-    ;
-    (self._anim):Play("uieffanim_UIActivityN33DateManualBuildContent_out")
+    self._anim:Play("uieffanim_UIActivityN33DateManualBuildContent_out")
     YIELD(TT, 500)
     self:UnLock("uieffanim_UIActivityN33DateManualBuildContent_out")
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManuaBuildContent.PlayInAnim = function(self, callback)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN33DateManuaBuildContent:PlayInAnim(callback)
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV, callback
     self:Lock("uieffanim_UIActivityN33DateManualBuildContent_in")
-    ;
-    (self._anim):Play("uieffanim_UIActivityN33DateManualBuildContent_in")
+    self._anim:Play("uieffanim_UIActivityN33DateManualBuildContent_in")
     YIELD(TT, 500)
     self:UnLock("uieffanim_UIActivityN33DateManualBuildContent_in")
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
-
-

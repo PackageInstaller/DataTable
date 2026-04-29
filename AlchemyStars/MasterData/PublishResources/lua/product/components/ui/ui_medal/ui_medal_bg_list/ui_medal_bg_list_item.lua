@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_bg_list/ui_medal_bg_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalBgListItem", UICustomWidget)
 UIMedalBgListItem = UIMedalBgListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalBgListItem.Constructor = function(self)
-  -- function num : 0_0
+function UIMedalBgListItem:Constructor()
   self.medalData = nil
   self.callBack = nil
   self.select = false
@@ -16,17 +9,11 @@ UIMedalBgListItem.Constructor = function(self)
   self._pstid = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalBgListItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIMedalBgListItem:_GetComponents()
   self.medalBgLoader = self:GetUIComponent("RawImageLoader", "medal_bg")
   self.medalBg = self:GetUIComponent("RawImage", "medal_bg")
   self.medalRedPoiot = self:GetGameObject("medal_redPoiot")
@@ -34,107 +21,73 @@ UIMedalBgListItem._GetComponents = function(self)
   self.medalLockBg = self:GetGameObject("medal_lock_bg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListItem.SetData = function(self, data, callBack)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMedalBgListItem:SetData(data, callBack)
   self.medalData = data
   self.callBack = callBack
   self:CheckLock()
   self:ShowRedPoint()
   self:SetSelect(false)
-  local icon = ((Cfg.cfg_item_medal_board)[(self.medalData).medal_id]).Icon
+  local icon = Cfg.cfg_item_medal_board[self.medalData.medal_id].Icon
   if icon then
-    (self.medalBgLoader):LoadImage(icon)
+    self.medalBgLoader:LoadImage(icon)
   else
-    ;
-    (self.medalBgLoader):LoadImage("icon_item_6000202")
+    self.medalBgLoader:LoadImage("icon_item_6000202")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListItem.GetData = function(self)
-  -- function num : 0_4
+function UIMedalBgListItem:GetData()
   return self.medalData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListItem.GetID = function(self)
-  -- function num : 0_5
-  return (self.medalData).medal_id
+function UIMedalBgListItem:GetID()
+  return self.medalData.medal_id
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListItem.CheckLock = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local locked = (self.medalData).status == RewardStatus.E_MEDAL_REWARD_LOCK
-  ;
-  (self.medalLockBg):SetActive(locked)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIMedalBgListItem:CheckLock()
+  local locked = self.medalData.status == RewardStatus.E_MEDAL_REWARD_LOCK
+  self.medalLockBg:SetActive(locked)
   if locked then
-    (self.medalBg).color = Color(1, 1, 1, 0.7)
+    self.medalBg.color = Color(1, 1, 1, 0.7)
   end
-  do return locked end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return locked
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListItem.ShowRedPoint = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local item_data = nil
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local items = itemModule:GetItemByTempId((self.medalData).medal_id)
-  if items and (table.count)(items) > 0 then
-    for key,value in pairs(items) do
+function UIMedalBgListItem:ShowRedPoint()
+  local item_data
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local items = itemModule:GetItemByTempId(self.medalData.medal_id)
+  if items and table.count(items) > 0 then
+    for key, value in pairs(items) do
       item_data = value
-      do break end
+      break
     end
   end
-  do
-    if item_data then
-      self._redState = item_data:IsNewOverlay()
-      self._pstid = item_data:GetID()
-    end
-    if self:CheckLock() then
-      (self.medalRedPoiot):SetActive(false)
-    else
-      ;
-      (self.medalRedPoiot):SetActive(self._redState)
-    end
+  if item_data then
+    self._redState = item_data:IsNewOverlay()
+    self._pstid = item_data:GetID()
+  end
+  if self:CheckLock() then
+    self.medalRedPoiot:SetActive(false)
+  else
+    self.medalRedPoiot:SetActive(self._redState)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListItem.SetSelect = function(self, bSelect)
-  -- function num : 0_8
-  (self.medalSelectObj):SetActive(bSelect)
+function UIMedalBgListItem:SetSelect(bSelect)
+  self.medalSelectObj:SetActive(bSelect)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalBgListItem.MedalBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIMedalBgListItem:MedalBtnOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    if (self.medalData).medal_id and self._pstid then
-      local itemModule = (GameGlobal.GetModule)(ItemModule)
+    if self.medalData.medal_id and self._pstid then
+      local itemModule = GameGlobal.GetModule(ItemModule)
       itemModule:SetItemUnnewOverlay(TT, self._pstid)
       itemModule:SetItemUnnew(TT, self._pstid)
     end
-  end
-)
+  end)
   self._redState = false
-  ;
-  (self.medalRedPoiot):SetActive(self._redState)
+  self.medalRedPoiot:SetActive(self._redState)
   if self.callBack then
-    (self.callBack)(self)
+    self.callBack(self)
   end
 end
-
-

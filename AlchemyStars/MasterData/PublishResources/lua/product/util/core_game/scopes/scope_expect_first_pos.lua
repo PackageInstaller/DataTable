@@ -1,30 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_expect_first_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_ExpectFirstCenterPos", SkillScopeCalculator_Base)
 SkillScopeCalculator_ExpectFirstCenterPos = SkillScopeCalculator_ExpectFirstCenterPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_ExpectFirstCenterPos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  if not scopeParam then
-    local selectIndex = {}
-  end
+function SkillScopeCalculator_ExpectFirstCenterPos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local selectIndex = scopeParam or {}
   local ret = {}
-  for i,v in ipairs(centerPos) do
-    -- DECOMPILER ERROR at PC25: Unhandled construct in 'MakeBoolean' P1
-
-    if i ~= 1 and #selectIndex > 1 and (table.icontains)(selectIndex, i - 1) then
-      (table.insert)(ret, v:Clone())
+  for i, v in ipairs(centerPos) do
+    if i ~= 1 then
+      if 1 < #selectIndex then
+        if table.icontains(selectIndex, i - 1) then
+          table.insert(ret, v:Clone())
+        end
+      else
+        table.insert(ret, v:Clone())
+      end
     end
-    ;
-    (table.insert)(ret, v:Clone())
   end
   local result = SkillScopeResult:New(SkillScopeType.ExpectedFirstCenterPos, casterPos, ret, ret)
   return result
 end
-
-

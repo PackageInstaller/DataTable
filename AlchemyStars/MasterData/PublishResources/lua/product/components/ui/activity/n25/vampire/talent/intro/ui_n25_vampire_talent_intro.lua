@@ -1,83 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/talent/intro/ui_n25_vampire_talent_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireTalentIntro", UIController)
 UIN25VampireTalentIntro = UIN25VampireTalentIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireTalentIntro.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN25VampireTalentIntro:OnShow(uiParams)
   self.atc = self:GetUIComponent("ATransitionComponent", "_root")
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.atc).enabled = true
-  ;
-  (self.atc):PlayEnterAnimation(true)
+  self.atc.enabled = true
+  self.atc:PlayEnterAnimation(true)
   self.keyTitle = uiParams[1]
   self.keyContentPrefix = uiParams[2]
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentIntro.OnHide = function(self)
-  -- function num : 0_1
+function UIN25VampireTalentIntro:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentIntro.Flush = function(self)
-  -- function num : 0_2
+function UIN25VampireTalentIntro:Flush()
   self:FlushTitle()
   self:FlushIntro()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentIntro.FlushTitle = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_title", (StringTable.Get)(self.keyTitle))
+function UIN25VampireTalentIntro:FlushTitle()
+  UIWidgetHelper.SetLocalizationText(self, "_title", StringTable.Get(self.keyTitle))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentIntro.FlushIntro = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (string.isnullorempty)(self.keyContentPrefix) then
-    local head = (UIActivityHelper.GetStringTableArray)(self.keyContentPrefix .. "head_")
-    local body = (UIActivityHelper.GetStringTableArray)(self.keyContentPrefix .. "body_")
-    local uis = (UIWidgetHelper.SpawnObjects)(self, "_pool", "UIN25VampireTalentIntroItem", #head)
-    for i,ui in ipairs(uis) do
-      ui:Flush((StringTable.Get)(head[i]), (StringTable.Get)(body[i]))
+function UIN25VampireTalentIntro:FlushIntro()
+  if not string.isnullorempty(self.keyContentPrefix) then
+    local head = UIActivityHelper.GetStringTableArray(self.keyContentPrefix .. "head_")
+    local body = UIActivityHelper.GetStringTableArray(self.keyContentPrefix .. "body_")
+    local uis = UIWidgetHelper.SpawnObjects(self, "_pool", "UIN25VampireTalentIntroItem", #head)
+    for i, ui in ipairs(uis) do
+      ui:Flush(StringTable.Get(head[i]), StringTable.Get(body[i]))
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentIntro.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIN25VampireTalentIntro:CloseBtnOnClick(go)
   self:PlayAnimClose()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireTalentIntro.PlayAnimClose = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25VampireTalentIntro:PlayAnimClose()
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
     local key = "UIN25VampireTalentIntroPlayAnimClose"
     self:Lock(key)
-    ;
-    (self.atc):PlayLeaveAnimation(true)
+    self.atc:PlayLeaveAnimation(true)
     YIELD(TT, 140)
     self:CloseDialog()
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
-
-

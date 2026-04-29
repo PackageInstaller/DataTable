@@ -1,72 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/album/ui_homeland_bgm_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 UIHomelandBgmHelper = {}
 local MainDefault = 2
 local AircraftDefault = 4
--- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
 
-UIHomelandBgmHelper.GetDefaultBgm = function(type)
-  -- function num : 0_0 , upvalues : _ENV, MainDefault, AircraftDefault
+function UIHomelandBgmHelper.GetDefaultBgm(type)
   if type == EnumBgmType.E_Bgm_Main then
     return MainDefault
-  else
-    if type == EnumBgmType.E_Bgm_AirCraft then
-      return AircraftDefault
-    end
+  elseif type == EnumBgmType.E_Bgm_AirCraft then
+    return AircraftDefault
   end
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-UIHomelandBgmHelper.PlayMainBgm = function()
-  -- function num : 0_1 , upvalues : _ENV, MainDefault
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIHomelandBgmHelper.PlayMainBgm()
+  local module = GameGlobal.GetModule(RoleModule)
   local id = module:UI_GetMusic(EnumBgmType.E_Bgm_Main)
   if id == 0 then
     id = MainDefault
   end
-  if not (Cfg.cfg_role_music)[id] then
-    (Log.fatal)("找不到主界面bgm配置，播默认bgm:", id)
+  if not Cfg.cfg_role_music[id] then
+    Log.fatal("找不到主界面bgm配置，播默认bgm:", id)
     id = MainDefault
   end
-  ;
-  (AudioHelperController.PlayBGM)(((Cfg.cfg_role_music)[id]).AudioID)
+  AudioHelperController.PlayBGM(Cfg.cfg_role_music[id].AudioID)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-UIHomelandBgmHelper.PlyAircraftBgm = function()
-  -- function num : 0_2 , upvalues : _ENV, AircraftDefault
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIHomelandBgmHelper.PlyAircraftBgm()
+  local module = GameGlobal.GetModule(RoleModule)
   local id = module:UI_GetMusic(EnumBgmType.E_Bgm_AirCraft)
   if id == 0 then
     id = AircraftDefault
   end
-  if not (Cfg.cfg_role_music)[id] then
-    (Log.fatal)("找不到风船bgm配置，播默认bgm:", id)
+  if not Cfg.cfg_role_music[id] then
+    Log.fatal("找不到风船bgm配置，播默认bgm:", id)
     id = AircraftDefault
   end
-  ;
-  (AudioHelperController.PlayBGM)(((Cfg.cfg_role_music)[id]).AudioID)
+  AudioHelperController.PlayBGM(Cfg.cfg_role_music[id].AudioID)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-UIHomelandBgmHelper.FormatTime = function(s)
-  -- function num : 0_3 , upvalues : _ENV
-  local minute = (math.floor)(s / 60)
+function UIHomelandBgmHelper.FormatTime(s)
+  local minute = math.floor(s / 60)
   local second = s % 60
-  return (string.format)("%02d:%02d", minute, second)
+  return string.format("%02d:%02d", minute, second)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-UIHomelandBgmHelper.PlayDrawcardBgm = function()
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMDrawcard, 0)
+function UIHomelandBgmHelper.PlayDrawcardBgm()
+  AudioHelperController.PlayBGM(CriAudioIDConst.BGMDrawcard, 0)
 end
-
-

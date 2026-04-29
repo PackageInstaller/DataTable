@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/game_block/result/ui_s4_trade_game_result_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeGameResultController", UIController)
 UIS4TradeGameResultController = UIS4TradeGameResultController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeGameResultController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIS4TradeGameResultController:OnShow(uiParams)
   self._tradeData = uiParams[1]
   self._optionDataTb = uiParams[2]
   self._income = uiParams[3]
@@ -19,20 +12,14 @@ UIS4TradeGameResultController.OnShow = function(self, uiParams)
   self:_InitComponents()
   self:_AttachEvents()
   self:StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : self, _ENV
     self:Lock("uieff_UIS4TradeGameResultController_in")
-    ;
-    (self._anim):Play("uieff_UIS4TradeGameResultController_in")
+    self._anim:Play("uieff_UIS4TradeGameResultController_in")
     YIELD(TT, 334)
     self:UnLock("uieff_UIS4TradeGameResultController_in")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameResultController._GetComponents = function(self)
-  -- function num : 0_1
+function UIS4TradeGameResultController:_GetComponents()
   self._shipName = self:GetUIComponent("UILocalizationText", "shipName")
   self._chooseInfo = self:GetUIComponent("UILocalizationText", "ChooseInfo")
   self._statueInfo = self:GetUIComponent("UILocalizationText", "StatueInfo")
@@ -41,100 +28,67 @@ UIS4TradeGameResultController._GetComponents = function(self)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameResultController._InitComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4TradeGameResultController:_InitComponents()
   local showIndexGroup = {}
-  local infoGroup = {"", "", ""}
-  ;
-  (self._shipName):SetText((StringTable.Get)("str_season_s4_trade_ship_" .. self._harborID))
+  local infoGroup = {
+    "",
+    "",
+    ""
+  }
+  self._shipName:SetText(StringTable.Get("str_season_s4_trade_ship_" .. self._harborID))
   local canAdd = false
-  for i,data in pairs(self._optionDataTb) do
+  for i, data in pairs(self._optionDataTb) do
     local info = infoGroup[data.index]
-    if (table.icontains)(showIndexGroup, data.index) and canAdd and data.isSuccess then
+    if table.icontains(showIndexGroup, data.index) and canAdd and data.isSuccess then
       info = info .. "      "
       infoGroup[data.index] = info
       canAdd = false
-    else
-      if not (table.icontains)(showIndexGroup, data.index) then
-        info = "#" .. data.index .. " "
-        ;
-        (table.insert)(showIndexGroup, data.index)
-        infoGroup[data.index] = info
-        canAdd = false
-      end
+    elseif not table.icontains(showIndexGroup, data.index) then
+      info = "#" .. data.index .. " "
+      table.insert(showIndexGroup, data.index)
+      infoGroup[data.index] = info
+      canAdd = false
     end
     if data.isSuccess then
       local str = "str_season_s4_trade_game_choice" .. data.valueType
-      if data.value <= 0 or not "+" .. data.value then
-        local txt = data.value
-      end
-      info = info .. (StringTable.Get)(str) .. " <color=#b03d2d>" .. txt .. "</color>" .. "\n"
+      local txt = data.value > 0 and "+" .. data.value or data.value
+      info = info .. StringTable.Get(str) .. " <color=#b03d2d>" .. txt .. "</color>" .. "\n"
       infoGroup[data.index] = info
       canAdd = true
     else
-      do
-        do
-          canAdd = false
-          -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      canAdd = false
     end
   end
   local showInfo = ""
-  for _,txt in pairs(infoGroup) do
-    if (string.len)(txt) <= 3 then
-      showInfo = showInfo .. txt .. (StringTable.Get)("str_season_s4_trade_game_choice_empty") .. "\n"
+  for _, txt in pairs(infoGroup) do
+    if string.len(txt) <= 3 then
+      showInfo = showInfo .. txt .. StringTable.Get("str_season_s4_trade_game_choice_empty") .. "\n"
     else
       showInfo = showInfo .. txt
     end
   end
-  ;
-  (self._resValue):SetText(self._income)
-  ;
-  (self._chooseInfo):SetText(showInfo)
-  ;
-  (self._statueInfo):SetText((math.floor)(self._statue * 100) .. "%")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._infoParentRect)
+  self._resValue:SetText(self._income)
+  self._chooseInfo:SetText(showInfo)
+  self._statueInfo:SetText(math.floor(self._statue * 100) .. "%")
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._infoParentRect)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameResultController._AttachEvents = function(self)
-  -- function num : 0_3
+function UIS4TradeGameResultController:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameResultController._Close = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS4TradeGameResultController:_Close()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     self:Lock("uieff_UIS4TradeGameResultController_out")
-    ;
-    (self._anim):Play("uieff_UIS4TradeGameResultController_out")
+    self._anim:Play("uieff_UIS4TradeGameResultController_out")
     YIELD(TT, 334)
     self:UnLock("uieff_UIS4TradeGameResultController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameResultController.CheckBtnOnClick = function(self)
-  -- function num : 0_5
+function UIS4TradeGameResultController:CheckBtnOnClick()
   self:_Close()
 end
-
-

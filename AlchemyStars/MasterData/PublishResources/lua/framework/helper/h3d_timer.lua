@@ -1,125 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/h3d_timer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local TimerTriggerCount = {Once = 1, Infinite = 99999999}
 _enum("TimerTriggerCount", TimerTriggerCount)
 _class("H3DTimer", Object)
 H3DTimer = H3DTimer
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-H3DTimer.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function H3DTimer:Constructor(world)
   self._world = world
   self.eventQueue = Heap:New(Heap.CPM_CUSTOM, H3DTimerEvent.PriorityComparer)
   self._newEventList = ArrayList:New()
   self._delEventList = ArrayList:New()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimer.AddEvent = function(self, delayMS, func, ...)
-  -- function num : 0_1
+function H3DTimer:AddEvent(delayMS, func, ...)
   return self:AddEventTimes(delayMS, 1, func, ...)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimer.AddEventTimes = function(self, delayMS, times, func, ...)
-  -- function num : 0_2 , upvalues : _ENV
+function H3DTimer:AddEventTimes(delayMS, times, func, ...)
   local curTime = self:_GetCurrentTime()
   local event = H3DTimerEvent:New(curTime, delayMS, times, func, ...)
-  ;
-  (self._newEventList):PushBack(event)
+  self._newEventList:PushBack(event)
   return event
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimer.CancelEvent = function(self, event)
-  -- function num : 0_3 , upvalues : _ENV
+function H3DTimer:CancelEvent(event)
   event:Cancel()
-  if (self._newEventList):Remove(event) == -1 then
+  if self._newEventList:Remove(event) == -1 then
     if event._heap_index < 0 and event._Complete == false then
-      (Log.error)("H3DTimer:CancelEvent _Complete ==false error index ", event._heap_index, (Log.traceback)())
-    else
-      if event._heap_index > 0 and event._Complete == true then
-        (Log.error)("H3DTimer:CancelEvent _Complete ==true error index ", event._heap_index, (Log.traceback)())
-      end
+      Log.error("H3DTimer:CancelEvent _Complete ==false error index ", event._heap_index, Log.traceback())
+    elseif event._heap_index > 0 and event._Complete == true then
+      Log.error("H3DTimer:CancelEvent _Complete ==true error index ", event._heap_index, Log.traceback())
     end
-    ;
-    (self._delEventList):PushBack(event)
+    self._delEventList:PushBack(event)
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimer._GetCurrentTime = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function H3DTimer:_GetCurrentTime()
   if self._world then
-    local timeService = (self._world):GetService("Time")
+    local timeService = self._world:GetService("Time")
     return timeService:GetCurrentTimeMs()
   else
-    do
-      do return (GameGlobal:GetInstance()):GetCurrentTime() end
-    end
+    return GameGlobal:GetInstance():GetCurrentTime()
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimer.Update = function(self, deltaTimeMS)
-  -- function num : 0_5 , upvalues : _ENV
-  local newevent_size = (self._newEventList):Size()
-  if (self._newEventList):Size() > 0 then
-    for i = 1, (self._newEventList):Size() do
-      local con = (self._newEventList):GetAt(i)
+function H3DTimer:Update(deltaTimeMS)
+  local newevent_size = self._newEventList:Size()
+  if self._newEventList:Size() > 0 then
+    for i = 1, self._newEventList:Size() do
+      local con = self._newEventList:GetAt(i)
       if con:IsCancel() == false then
-        (self.eventQueue):Enqueue(con)
+        self.eventQueue:Enqueue(con)
       end
     end
-    ;
-    (self._newEventList):Clear()
+    self._newEventList:Clear()
   end
-  local delevent_size = (self._delEventList):Size()
-  if (self._delEventList):Size() > 0 then
-    for i = 1, (self._delEventList):Size() do
-      local con = (self._delEventList):GetAt(i)
-      ;
-      (self.eventQueue):Remove(con)
+  local delevent_size = self._delEventList:Size()
+  if 0 < self._delEventList:Size() then
+    for i = 1, self._delEventList:Size() do
+      local con = self._delEventList:GetAt(i)
+      self.eventQueue:Remove(con)
     end
-    ;
-    (self._delEventList):Clear()
+    self._delEventList:Clear()
   end
   local queue = self.eventQueue
   local currentTime = self:_GetCurrentTime()
-  local queue_size = (self.eventQueue):Size()
-  while 1 do
-    while 1 do
-      while 1 do
-        local event = queue:Peek()
-        if not event or currentTime < event.nextExecutionTime then
-          return 
-        end
-        queue:Dequeue()
-        if event:IsCancel() == false then
-          event:Complete()
-          event:Call()
-          if event:ReduceTimes() > 0 then
-            event:Reset(self:_GetCurrentTime())
-            ;
-            (self._newEventList):PushBack(event)
-          end
-          -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  local queue_size = self.eventQueue:Size()
+  while true do
+    local event = queue:Peek()
+    if not event or currentTime < event.nextExecutionTime then
+      return
     end
-    ;
-    (Log.error)("H3dTimererror IsCancel true ")
+    queue:Dequeue()
+    if event:IsCancel() == false then
+      event:Complete()
+      event:Call()
+      if 0 < event:ReduceTimes() then
+        event:Reset(self:_GetCurrentTime())
+        self._newEventList:PushBack(event)
+      else
+      end
+    else
+      Log.error("H3dTimererror IsCancel true ")
+    end
   end
   if self._last_update_time == nil then
     self._last_update_time = 0
@@ -128,31 +89,23 @@ H3DTimer.Update = function(self, deltaTimeMS)
     self._cur_time = 0
   end
   self._cur_time = self._cur_time + deltaTimeMS
-  if self._cur_time - self._last_update_time < 0 then
-    return 
+  if 0 > self._cur_time - self._last_update_time then
+    return
   end
   self._last_update_time = self._cur_time
-  ;
-  (Log.debug)("time size queue_size ", queue_size, " newevent_size ", newevent_size, " delevent_size ", delevent_size)
+  Log.debug("time size queue_size ", queue_size, " newevent_size ", newevent_size, " delevent_size ", delevent_size)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimer.Clear = function(self)
-  -- function num : 0_6
-  (self._newEventList):Clear()
-  ;
-  (self._delEventList):Clear()
-  ;
-  (self.eventQueue):Clear()
+function H3DTimer:Clear()
+  self._newEventList:Clear()
+  self._delEventList:Clear()
+  self.eventQueue:Clear()
 end
 
 _class("H3DTimerEvent", Object)
 H3DTimerEvent = H3DTimerEvent
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
 
-H3DTimerEvent.Constructor = function(self, currentTime, delayMS, times, func, ...)
-  -- function num : 0_7 , upvalues : _ENV
+function H3DTimerEvent:Constructor(currentTime, delayMS, times, func, ...)
   self._heap_index = -1
   self._Complete = false
   self._insertion_index = -1
@@ -161,27 +114,18 @@ H3DTimerEvent.Constructor = function(self, currentTime, delayMS, times, func, ..
   self._delayMs = delayMS
   self.nextExecutionTime = currentTime + delayMS or 0
   self._cancel = false
-  self.callback = (GameHelper:GetInstance()):CreateCallback(func, ...)
+  self.callback = GameHelper:GetInstance():CreateCallback(func, ...)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimerEvent.Cancel = function(self)
-  -- function num : 0_8
+function H3DTimerEvent:Cancel()
   self._cancel = true
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimerEvent.IsCancel = function(self)
-  -- function num : 0_9
+function H3DTimerEvent:IsCancel()
   return self._cancel
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimerEvent.Reset = function(self, currentTime)
-  -- function num : 0_10
+function H3DTimerEvent:Reset(currentTime)
   self._heap_index = -1
   self._insertion_index = -1
   self._Complete = false
@@ -189,50 +133,31 @@ H3DTimerEvent.Reset = function(self, currentTime)
   self.nextExecutionTime = currentTime + self._delayMs or 0
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimerEvent.GetTimes = function(self)
-  -- function num : 0_11
+function H3DTimerEvent:GetTimes()
   return self._times
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimerEvent.ReduceTimes = function(self)
-  -- function num : 0_12
+function H3DTimerEvent:ReduceTimes()
   self._times = self._times - 1
   return self._times
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimerEvent.Call = function(self, ...)
-  -- function num : 0_13
+function H3DTimerEvent:Call(...)
   if self.callback then
-    (self.callback):Call(...)
+    self.callback:Call(...)
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimerEvent.Complete = function(self)
-  -- function num : 0_14
+function H3DTimerEvent:Complete()
   self._Complete = true
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-H3DTimerEvent.PriorityComparer = function(a, b)
-  -- function num : 0_15
+function H3DTimerEvent.PriorityComparer(a, b)
   if a.nextExecutionTime < b.nextExecutionTime then
     return 1
+  elseif a.nextExecutionTime > b.nextExecutionTime then
+    return -1
   else
-    if b.nextExecutionTime < a.nextExecutionTime then
-      return -1
-    else
-      return 0
-    end
+    return 0
   end
 end
-
-

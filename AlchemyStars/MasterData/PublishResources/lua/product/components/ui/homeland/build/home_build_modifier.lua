@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/home_build_modifier.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeBuildModifier", Object)
 HomeBuildModifier = HomeBuildModifier
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeBuildModifier.Constructor = function(self, building)
-  -- function num : 0_0 , upvalues : _ENV
+function HomeBuildModifier:Constructor(building)
   self._building = building
   self._buildingParent = building.Parent
   self._insID = building:InsID()
-  self._originPos = (self._building):Pos()
-  self._originRotY = (self._building):RotY()
-  self._originSkin = (self._building):SkinID()
+  self._originPos = self._building:Pos()
+  self._originRotY = self._building:RotY()
+  self._originSkin = self._building:SkinID()
   self._type = HomeBuildEditType.None
   self._isEnd = false
   self._pickUpOffset = Vector3(0, 0, 0)
@@ -23,276 +16,189 @@ HomeBuildModifier.Constructor = function(self, building)
   self._replacedBuilding = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.InsID = function(self)
-  -- function num : 0_1
+function HomeBuildModifier:InsID()
   return self._insID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.Building = function(self)
-  -- function num : 0_2
+function HomeBuildModifier:Building()
   return self._building
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.Type = function(self)
-  -- function num : 0_3
+function HomeBuildModifier:Type()
   return self._type
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.Start = function(self, legal, illegalType)
-  -- function num : 0_4 , upvalues : _ENV
+function HomeBuildModifier:Start(legal, illegalType)
   if self._isEnd then
     BuildError("操作结束，不能开始")
-    return 
+    return
   end
   self._isEnd = false
-  ;
-  (self._building):ShowOutline()
+  self._building:ShowOutline()
   self:SetLegal(legal, illegalType)
   self._originLegal = legal
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._pickUpOffset).y = 0
-  ;
-  (self._building):SetPos((self._building):Pos() + self._pickUpOffset)
-  ;
-  (self._building):ShowArea(true, legal)
+  self._pickUpOffset.y = 0.0
+  self._building:SetPos(self._building:Pos() + self._pickUpOffset)
+  self._building:ShowArea(true, legal)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.StartChangeSkin = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomeBuildModifier:StartChangeSkin()
   if self._isEnd then
     BuildError("操作结束，不能开始")
-    return 
+    return
   end
   self._isEnd = false
   self._originLegal = true
   self._legal = true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.Move = function(self, target)
-  -- function num : 0_6 , upvalues : _ENV
+function HomeBuildModifier:Move(target)
   if self._isEnd then
     BuildError("操作结束，不能移动")
-    return 
+    return
   end
   self._type = self._type | HomeBuildEditType.Move
-  ;
-  (self._building):SetPos(target)
+  self._building:SetPos(target)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.Rotate = function(self, y)
-  -- function num : 0_7 , upvalues : _ENV
+function HomeBuildModifier:Rotate(y)
   if self._isEnd then
     BuildError("操作结束，不能旋转")
-    return 
+    return
   end
   self._type = self._type | HomeBuildEditType.Rotate
-  ;
-  (self._building):SetRotY(y)
+  self._building:SetRotY(y)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.Add = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function HomeBuildModifier:Add()
   if self._isEnd then
     BuildError("操作结束，不能添加")
-    return 
+    return
   end
   self._type = self._type | HomeBuildEditType.Add
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.FixedAdd = function(self, replacedBuilding)
-  -- function num : 0_9
+function HomeBuildModifier:FixedAdd(replacedBuilding)
   self:Add()
   self._replacedBuilding = replacedBuilding
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.Delete = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function HomeBuildModifier:Delete()
   if self._isEnd then
     BuildError("操作结束，不能删除")
-    return 
+    return
   end
   if self._type & HomeBuildEditType.Add > 0 then
     BuildError("新增的建筑不能收纳，只能取消")
   end
   self._type = self._type | HomeBuildEditType.Delete
-  ;
-  (self._building):Delete()
+  self._building:Delete()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.ChangeSkin = function(self, skinID)
-  -- function num : 0_11 , upvalues : _ENV
+function HomeBuildModifier:ChangeSkin(skinID)
   if self._isEnd then
     BuildError("操作结束，不能换肤")
-    return 
+    return
   end
   self._type = self._type | HomeBuildEditType.ChangeSkin
-  ;
-  (self._building):ChangeSkin(skinID)
+  self._building:ChangeSkin(skinID)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.DropDown = function(self)
-  -- function num : 0_12
+function HomeBuildModifier:DropDown()
   if self._replacedBuilding ~= nil then
-    local homelandClient = (self._replacedBuilding):GetHomelandClient()
+    local homelandClient = self._replacedBuilding:GetHomelandClient()
     local buildManager = homelandClient:BuildManager()
-    local pstid = ((self._replacedBuilding):GetArchitecture()).pstid
+    local pstid = self._replacedBuilding:GetArchitecture().pstid
     if buildManager:GetArchitecture(pstid) == nil then
       buildManager:RemoveBuilding(self._replacedBuilding)
-      ;
-      (self._replacedBuilding):Dispose()
+      self._replacedBuilding:Dispose()
     end
     self._replacedBuilding = nil
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.Finish = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function HomeBuildModifier:Finish()
   if self._isEnd then
     BuildError("操作结束，不能完成")
-    return 
+    return
   end
   self._isEnd = true
   BuildLog("操作结束:", self._insID)
-  ;
-  (self._building):SetPos((self._building):Pos() - self._pickUpOffset)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpOffset).y = 0
-  ;
-  (self._building):ShowArea(false)
-  ;
-  (self._building):HideOutline()
+  self._building:SetPos(self._building:Pos() - self._pickUpOffset)
+  self._pickUpOffset.y = 0
+  self._building:ShowArea(false)
+  self._building:HideOutline()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.FinishChangeSkin = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function HomeBuildModifier:FinishChangeSkin()
   if self._isEnd then
     BuildError("操作结束，不能完成")
-    return 
+    return
   end
   self._isEnd = true
   BuildLog("换肤结束:", self._insID)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.Revert = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function HomeBuildModifier:Revert()
   if self._type == HomeBuildEditType.None then
-    return 
+    return
   end
   if self._buildingParent ~= nil then
-    (self._buildingParent):AddChild(self._building)
+    self._buildingParent:AddChild(self._building)
   end
   if self._type & HomeBuildEditType.Add > 0 then
-    do
-      if self._replacedBuilding ~= nil then
-        local parent = (self._replacedBuilding).Parent
-        parent:AddChild(self._replacedBuilding)
-        ;
-        (self._replacedBuilding):ShowBuilding(true)
-        self._replacedBuilding = nil
-      end
-      ;
-      (self._building):Dispose()
-      do return  end
-      if self._type & HomeBuildEditType.Delete > 0 then
-        (self._building):ShowBuilding(true)
-      end
-      if self._type & HomeBuildEditType.Move > 0 then
-        (self._building):SetPos(self._originPos)
-      end
-      if self._type & HomeBuildEditType.Rotate > 0 then
-        (self._building):SetRotY(self._originRotY)
-      end
-      if self._type & HomeBuildEditType.ChangeSkin > 0 then
-        (self._building):RevertSkin(self._originSkin)
-      end
+    if self._replacedBuilding ~= nil then
+      local parent = self._replacedBuilding.Parent
+      parent:AddChild(self._replacedBuilding)
+      self._replacedBuilding:ShowBuilding(true)
+      self._replacedBuilding = nil
     end
+    self._building:Dispose()
+    return
+  end
+  if 0 < self._type & HomeBuildEditType.Delete then
+    self._building:ShowBuilding(true)
+  end
+  if 0 < self._type & HomeBuildEditType.Move then
+    self._building:SetPos(self._originPos)
+  end
+  if 0 < self._type & HomeBuildEditType.Rotate then
+    self._building:SetRotY(self._originRotY)
+  end
+  if 0 < self._type & HomeBuildEditType.ChangeSkin then
+    self._building:RevertSkin(self._originSkin)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.SetLegal = function(self, legal, illegalType)
-  -- function num : 0_16 , upvalues : _ENV
+function HomeBuildModifier:SetLegal(legal, illegalType)
   self._illegalType = illegalType
   if self._legal == legal then
-    return 
+    return
   end
   self._legal = legal
   if self._legal then
-    (self._building):SetOutlineColor(Color(0.23921568627451, 0.58823529411765, 1, 1))
+    self._building:SetOutlineColor(Color(0.23921568627450981, 0.5882352941176471, 1.0, 1))
   else
-    ;
-    (self._building):SetOutlineColor(Color(1, 0 / 255, 0 / 255, 1))
+    self._building:SetOutlineColor(Color(1.0, 0 / 255, 0 / 255, 1))
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.GetIllegalType = function(self)
-  -- function num : 0_17
+function HomeBuildModifier:GetIllegalType()
   return self._illegalType
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.IsLegal = function(self)
-  -- function num : 0_18
+function HomeBuildModifier:IsLegal()
   return self._legal
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.IsOriginLegal = function(self)
-  -- function num : 0_19
+function HomeBuildModifier:IsOriginLegal()
   return self._originLegal
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.SetAdsorb = function(self, adsorb)
-  -- function num : 0_20
+function HomeBuildModifier:SetAdsorb(adsorb)
   self._adsorb = adsorb
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeBuildModifier.IsAdsorb = function(self)
-  -- function num : 0_21
+function HomeBuildModifier:IsAdsorb()
   return self._adsorb
 end
-
-

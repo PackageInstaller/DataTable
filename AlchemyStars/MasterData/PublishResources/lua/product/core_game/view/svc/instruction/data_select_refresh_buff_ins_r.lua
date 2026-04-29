@@ -1,37 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_refresh_buff_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectRefreshBuffInstruction", BaseInstruction)
 DataSelectRefreshBuffInstruction = DataSelectRefreshBuffInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectRefreshBuffInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function DataSelectRefreshBuffInstruction:Constructor(paramList)
   self._Index = tonumber(paramList.Index)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectRefreshBuffInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectRefreshBuffInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local buffResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ModifyBuffValue)
   if buffResultArray == nil then
-    (Log.fatal)("[ins] caster has no buff:", tostring((casterEntity:GridLocation()).Position))
+    Log.fatal("[ins] caster has no buff:", tostring(casterEntity:GridLocation().Position))
     return InstructionConst.HeightWise
   end
   local buffResult = buffResultArray[self._Index]
   if buffResult == nil then
     phaseContext:SetCurBuffResultIndex(self._Index)
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   local targetEntityID = buffResult:GetEntityID()
   phaseContext:SetCurBuffResultIndex(self._Index)
   phaseContext:SetCurTargetEntityID(targetEntityID)
 end
-
-

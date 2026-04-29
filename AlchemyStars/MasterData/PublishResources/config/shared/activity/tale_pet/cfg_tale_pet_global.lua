@@ -1,15 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/activity/tale_pet/cfg_tale_pet_global.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Value = 2, IntValue = 3}
+local key = {
+  ID = 1,
+  Value = 2,
+  IntValue = 3
+}
 local config = {
-TrailLevelRewardIcon = {"TrailLevelRewardIcon", "icon_shengwu_9994016"}
-, 
-TalePetEnterStoryId = {"TalePetEnterStoryId", nil, 60000001}
-, 
-TalePetEmptyBoxIcon = {"TalePetEmptyBoxIcon", "icon_jiangli_open"}
+  TrailLevelRewardIcon = {
+    "TrailLevelRewardIcon",
+    "icon_shengwu_9994016"
+  },
+  TalePetEnterStoryId = {
+    "TalePetEnterStoryId",
+    nil,
+    60000001
+  },
+  TalePetEmptyBoxIcon = {
+    "TalePetEmptyBoxIcon",
+    "icon_jiangli_open"
+  }
 }
 return config, "ID", key
-

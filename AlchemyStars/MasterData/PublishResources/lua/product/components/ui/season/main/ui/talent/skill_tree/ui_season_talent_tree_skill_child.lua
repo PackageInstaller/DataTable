@@ -1,35 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/skill_tree/ui_season_talent_tree_skill_child.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentTreeSkillChild", UICustomWidget)
 UISeasonTalentTreeSkillChild = UISeasonTalentTreeSkillChild
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentTreeSkillChild.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTalentTreeSkillChild:OnShow()
   self.idx2pos = {
-[1] = {[1] = Vector2(-109, 150), [2] = Vector2(-184, 4), [3] = Vector2(-108, -136)}
-, 
-[2] = {[1] = Vector2(-176, -28), [2] = Vector2(-102, -154), [3] = Vector2(61, -163)}
-, 
-[3] = {[1] = Vector2(-50, -166), [2] = Vector2(108, -156), [3] = Vector2(185, -30)}
-, 
-[4] = {[1] = Vector2(116, -137), [2] = Vector2(184, 4), [3] = Vector2(115, 148)}
-, 
-[5] = {[1] = Vector2(145, 101), [2] = Vector2(2, 163), [3] = Vector2(-143, 101)}
-}
+    [1] = {
+      [1] = Vector2(-109, 150),
+      [2] = Vector2(-184, 4),
+      [3] = Vector2(-108, -136)
+    },
+    [2] = {
+      [1] = Vector2(-176, -28),
+      [2] = Vector2(-102, -154),
+      [3] = Vector2(61, -163)
+    },
+    [3] = {
+      [1] = Vector2(-50, -166),
+      [2] = Vector2(108, -156),
+      [3] = Vector2(185, -30)
+    },
+    [4] = {
+      [1] = Vector2(116, -137),
+      [2] = Vector2(184, 4),
+      [3] = Vector2(115, 148)
+    },
+    [5] = {
+      [1] = Vector2(145, 101),
+      [2] = Vector2(2, 163),
+      [3] = Vector2(-143, 101)
+    }
+  }
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._mask = self:GetGameObject("Mask")
   self._using = self:GetGameObject("Using")
   self._light = self:GetGameObject("Light")
   self._buyTips = self:GetGameObject("BuyTips")
   self._select = self:GetUIComponent("CanvasGroup", "Select")
-  -- DECOMPILER ERROR at PC114: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._select).alpha = 0
+  self._select.alpha = 0
   self._power = self:GetGameObject("Power")
   self._normal = self:GetGameObject("Normal")
   self._P_light = self:GetGameObject("P_light")
@@ -55,86 +61,52 @@ UISeasonTalentTreeSkillChild.OnShow = function(self)
   self:EventListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.Get_1P_2N_Icon = function(self)
-  -- function num : 0_1
-  return (self._icon).gameObject
+function UISeasonTalentTreeSkillChild:Get_1P_2N_Icon()
+  return self._icon.gameObject
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.OnSelectSkill = function(self, skillCls)
-  -- function num : 0_2
+function UISeasonTalentTreeSkillChild:OnSelectSkill(skillCls)
   local select = false
-  select = not skillCls or skillCls.rootid == self.rootid
+  if skillCls then
+    select = skillCls.rootid == self.rootid
+  end
   self:Select(select)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.Select = function(self, active)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._N_select):SetActive(not active or (self.cls).type == SeasonTalentSkillType.Normal)
-  ;
-  (self._P_select):SetActive(not active or (self.cls).type == SeasonTalentSkillType.Power)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
+function UISeasonTalentTreeSkillChild:Select(active)
+  self._N_select:SetActive(active and self.cls.type == SeasonTalentSkillType.Normal)
+  self._P_select:SetActive(active and self.cls.type == SeasonTalentSkillType.Power)
   if active then
-    (self._select).alpha = 0
-    ;
-    (self._anim):Stop()
-    ;
-    (self._anim):Play("uianim_UISeasonTalentTree_child_in")
-  else
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self.select then
-      (self._select).alpha = 1
-      ;
-      (self._anim):Stop()
-      ;
-      (self._anim):Play("uianim_UISeasonTalentTree_child_out")
-    end
+    self._select.alpha = 0
+    self._anim:Stop()
+    self._anim:Play("uianim_UISeasonTalentTree_child_in")
+  elseif self.select then
+    self._select.alpha = 1
+    self._anim:Stop()
+    self._anim:Play("uianim_UISeasonTalentTree_child_out")
   end
   self.select = active
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.OnSelectSlot = function(self, slotid)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self.cls).level > 0 and slotid then
-    local cfgs = (Cfg.cfg_component_talent_tree_slot)({SlotID = slotid})
+function UISeasonTalentTreeSkillChild:OnSelectSlot(slotid)
+  if self.cls.level > 0 and slotid then
+    local cfgs = Cfg.cfg_component_talent_tree_slot({SlotID = slotid})
     local slotCfg = cfgs[1]
-    if slotCfg.TypeLimit == (self.cls).type then
+    if slotCfg.TypeLimit == self.cls.type then
       self:SetLight(true)
-      return 
+      return
     end
   end
-  do
-    self:SetLight(false)
-  end
+  self:SetLight(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetLight = function(self, active)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._light):SetActive(active)
-  ;
-  (self._P_light):SetActive(not active or (self.cls).type == SeasonTalentSkillType.Power)
-  ;
-  (self._N_light):SetActive(not active or (self.cls).type == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UISeasonTalentTreeSkillChild:SetLight(active)
+  self._light:SetActive(active)
+  self._P_light:SetActive(active and self.cls.type == SeasonTalentSkillType.Power)
+  self._N_light:SetActive(active and self.cls.type == SeasonTalentSkillType.Normal)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetData = function(self, parentIdx, idx, rootid, map, comCfgID, callback)
-  -- function num : 0_6
+function UISeasonTalentTreeSkillChild:SetData(parentIdx, idx, rootid, map, comCfgID, callback)
   self.parentIdx = parentIdx
   self.idx = idx
   self.rootid = rootid
@@ -144,10 +116,7 @@ UISeasonTalentTreeSkillChild.SetData = function(self, parentIdx, idx, rootid, ma
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.OnValue = function(self)
-  -- function num : 0_7
+function UISeasonTalentTreeSkillChild:OnValue()
   self:SetPos()
   self:SetIcon()
   self:SetMask()
@@ -158,169 +127,112 @@ UISeasonTalentTreeSkillChild.OnValue = function(self)
   self:SetBuyTips()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetMask = function(self)
-  -- function num : 0_8
-  local mask = ((self.cls).level == 0 and not (self.cls).lock)
-  ;
-  (self._mask):SetActive(mask)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonTalentTreeSkillChild:SetMask()
+  local mask = self.cls.level == 0 and not self.cls.lock
+  self._mask:SetActive(mask)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetType = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._power):SetActive((self.cls).type == SeasonTalentSkillType.Power)
-  ;
-  (self._normal):SetActive((self.cls).type == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonTalentTreeSkillChild:SetType()
+  self._power:SetActive(self.cls.type == SeasonTalentSkillType.Power)
+  self._normal:SetActive(self.cls.type == SeasonTalentSkillType.Normal)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetUsing = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._using):SetActive((self.cls).using)
-  ;
-  (self._P_using):SetActive(not (self.cls).using or (self.cls).type == SeasonTalentSkillType.Power)
-  ;
-  (self._N_using):SetActive(not (self.cls).using or (self.cls).type == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UISeasonTalentTreeSkillChild:SetUsing()
+  self._using:SetActive(self.cls.using)
+  self._P_using:SetActive(self.cls.using and self.cls.type == SeasonTalentSkillType.Power)
+  self._N_using:SetActive(self.cls.using and self.cls.type == SeasonTalentSkillType.Normal)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetLv = function(self)
-  -- function num : 0_11
-  local lv = (self.cls).level
-  ;
-  (self._lv):SetActive(lv > 0)
-  do
-    if lv > 0 then
-      local levelMax = self:GetLevelMax()
-      ;
-      (self._lvTex):SetText(lv .. "/" .. levelMax)
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonTalentTreeSkillChild:SetLv()
+  local lv = self.cls.level
+  self._lv:SetActive(0 < lv)
+  if 0 < lv then
+    local levelMax = self:GetLevelMax()
+    self._lvTex:SetText(lv .. "/" .. levelMax)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.GetLevelMax = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = self.rootid})
+function UISeasonTalentTreeSkillChild:GetLevelMax()
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgID,
+    SkillTypeID = self.rootid
+  })
   return #cfgs
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetLock = function(self)
-  -- function num : 0_13
-  (self._lock):SetActive((self.cls).lock)
+function UISeasonTalentTreeSkillChild:SetLock()
+  self._lock:SetActive(self.cls.lock)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetBuyTips = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._buyTips):SetActive((self.cls).canBuy)
-  ;
-  (self._P_tips):SetActive(not (self.cls).canBuy or (self.cls).type == SeasonTalentSkillType.Power)
-  ;
-  (self._N_tips):SetActive(not (self.cls).canBuy or (self.cls).type == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UISeasonTalentTreeSkillChild:SetBuyTips()
+  self._buyTips:SetActive(self.cls.canBuy)
+  self._P_tips:SetActive(self.cls.canBuy and self.cls.type == SeasonTalentSkillType.Power)
+  self._N_tips:SetActive(self.cls.canBuy and self.cls.type == SeasonTalentSkillType.Normal)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetIcon = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = self.rootid, Level = 1})
+function UISeasonTalentTreeSkillChild:SetIcon()
+  local cfgs = Cfg.cfg_component_talent_tree_skill({
+    ComponentID = self.comCfgID,
+    SkillTypeID = self.rootid,
+    Level = 1
+  })
   local cfg = cfgs[1]
   local icon = cfg.Icon
   if icon then
-    (self._icon):LoadImage(icon)
+    self._icon:LoadImage(icon)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.SetPos = function(self)
-  -- function num : 0_16
-  local pos = ((self.idx2pos)[self.parentIdx])[self.idx]
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._root).anchoredPosition = pos
+function UISeasonTalentTreeSkillChild:SetPos()
+  local pos = self.idx2pos[self.parentIdx][self.idx]
+  self._root.anchoredPosition = pos
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.RefreshCls = function(self, map)
-  -- function num : 0_17
+function UISeasonTalentTreeSkillChild:RefreshCls(map)
   self.cls = map[self.rootid]
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentTreeSkillChild.EventListener = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local etl = (UICustomUIEventListener.Get)(self._btn)
+function UISeasonTalentTreeSkillChild:EventListener()
+  local etl = UICustomUIEventListener.Get(self._btn)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_18_0 , upvalues : self, _ENV
-    if (self.cls).level > 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_Begin, self.cls)
+    if self.cls.level > 0 then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_Begin, self.cls)
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(eventData)
-    -- function num : 0_18_1 , upvalues : self, _ENV
-    if (self.cls).level > 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_Drag, eventData.position)
+    if self.cls.level > 0 then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_Drag, eventData.position)
     end
-  end
-)
-  local endDragFunc = function(eventData)
-    -- function num : 0_18_2 , upvalues : self, _ENV
-    if (self.cls).level > 0 then
+  end)
+  
+  local function endDragFunc(eventData)
+    if self.cls.level > 0 then
       if eventData then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_End, eventData.position)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_End, eventData.position)
       else
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_End, nil)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_In_End, nil)
       end
     end
   end
-
+  
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_18_3 , upvalues : endDragFunc
     endDragFunc(eventData)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_18_4 , upvalues : self
     if self.callback then
-      (self.callback)(self.cls)
+      self.callback(self.cls)
     end
-  end
-)
+  end)
   if not EDITOR then
     self:AddUICustomEventListener(etl, UIEvent.ApplicationFocus, function(b)
-    -- function num : 0_18_5 , upvalues : etl, endDragFunc
-    if not b then
-      if not etl.IsDragging then
-        return 
+      if not b then
+        if not etl.IsDragging then
+          return
+        end
+        etl.IsDragging = false
+        endDragFunc()
       end
-      etl.IsDragging = false
-      endDragFunc()
-    end
-  end
-)
+    end)
   end
 end
-
-

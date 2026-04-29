@@ -1,124 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/ui_season_daily.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonDaily", UICustomWidget)
 UISeasonDaily = UISeasonDaily
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonDaily.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonDaily:OnShow(uiParams)
   self:_GetComponents()
   self:AttachEvent(GameEventType.OnEventPointProgressChange, self._DailyGuide)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonDaily._GetComponents = function(self)
-  -- function num : 0_1
+function UISeasonDaily:_GetComponents()
   self._root = self:GetGameObject("Root")
   self._title = self:GetUIComponent("UILocalizedTMP", "Title")
   self._content = self:GetUIComponent("UILocalizationText", "Content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonDaily.SetData = function(self, check)
-  -- function num : 0_2 , upvalues : _ENV
-  self._component = ((self:GetModule(SeasonModule)):GetCurSeasonObj()):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
-  self._componentInfo = (self._component):GetComponentInfo()
+function UISeasonDaily:SetData(check)
+  self._component = self:GetModule(SeasonModule):GetCurSeasonObj():GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+  self._componentInfo = self._component:GetComponentInfo()
   self._uiSeasonModule = self:GetUIModule(SeasonModule)
-  self._daily = (((self._uiSeasonModule):SeasonManager()):SeasonMapManager()):Daily()
+  self._daily = self._uiSeasonModule:SeasonManager():SeasonMapManager():Daily()
   self:_RefreshUI()
   self:_DailyGuide()
   self:_DailyReset(check)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonDaily._RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local state = (self._daily):GetState()
-  local cfg = (self._daily):ComponentCfg()
+function UISeasonDaily:_RefreshUI()
+  local state = self._daily:GetState()
+  local cfg = self._daily:ComponentCfg()
   if state == SeasonDailyState.Lock or state == SeasonDailyState.Time or state == SeasonDailyState.MaxReward then
-    (self._root):SetActive(false)
+    self._root:SetActive(false)
+  elseif state == SeasonDailyState.Mission then
+    self._title:SetText(StringTable.Get(cfg.LockTitle))
+    self._content:SetText(StringTable.Get(cfg.LockContent))
+    self._root:SetActive(true)
+  elseif state == SeasonDailyState.Unlock then
+    self._title:SetText(StringTable.Get(cfg.UnlockTitle))
+    self._content:SetText(StringTable.Get(cfg.UnlockContent, self._componentInfo.m_daily_info.m_progress - 1, cfg.MaxReward))
+    self._root:SetActive(true)
   else
-    if state == SeasonDailyState.Mission then
-      (self._title):SetText((StringTable.Get)(cfg.LockTitle))
-      ;
-      (self._content):SetText((StringTable.Get)(cfg.LockContent))
-      ;
-      (self._root):SetActive(true)
-    else
-      if state == SeasonDailyState.Unlock then
-        (self._title):SetText((StringTable.Get)(cfg.UnlockTitle))
-        ;
-        (self._content):SetText((StringTable.Get)(cfg.UnlockContent, ((self._componentInfo).m_daily_info).m_progress - 1, cfg.MaxReward))
-        ;
-        (self._root):SetActive(true)
-      else
-        ;
-        (self._root):SetActive(false)
-      end
-    end
+    self._root:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonDaily.DailyBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if ((self._uiSeasonModule):SeasonManager()):LockUI() then
-    return 
+function UISeasonDaily:DailyBtnOnClick(go)
+  if self._uiSeasonModule:SeasonManager():LockUI() then
+    return
   end
-  if (self._daily):GetState() ~= SeasonDailyState.Unlock then
-    return 
+  if self._daily:GetState() ~= SeasonDailyState.Unlock then
+    return
   end
-  local cfg = (self._daily):ComponentCfg()
-  do
-    if cfg.MapMode then
-      local curMode = (((self._uiSeasonModule):SeasonManager()):SeasonMapManager()):Mode()
-      if not (table.icontains)(cfg.MapMode, curMode) then
-        (ToastManager.ShowToast)((StringTable.Get)(cfg.SwitchModeText))
-        return 
-      end
+  local cfg = self._daily:ComponentCfg()
+  if cfg.MapMode then
+    local curMode = self._uiSeasonModule:SeasonManager():SeasonMapManager():Mode()
+    if not table.icontains(cfg.MapMode, curMode) then
+      ToastManager.ShowToast(StringTable.Get(cfg.SwitchModeText))
+      return
     end
-    ;
-    (self._daily):MoveToEventPoint()
   end
+  self._daily:MoveToEventPoint()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonDaily._DailyGuide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local state = (self._daily):GetState()
+function UISeasonDaily:_DailyGuide()
+  local state = self._daily:GetState()
   if state == SeasonDailyState.Unlock then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.SeasonDaily)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.SeasonDaily)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonDaily._DailyReset = function(self, check)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonDaily:_DailyReset(check)
   if check then
-    local state = (self._daily):GetState()
-    if state == SeasonDailyState.Unlock and (self._daily):GetServerInfoEmpty() then
-      local record = (SeasonTool:GetInstance()):GetLocalDBFloat("SeasonDailyReset", 0)
-      if record > 0 then
-        local cfg = (self._daily):ComponentCfg()
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)(cfg.RefreshText))
+    local state = self._daily:GetState()
+    if state == SeasonDailyState.Unlock and self._daily:GetServerInfoEmpty() then
+      local record = SeasonTool:GetInstance():GetLocalDBFloat("SeasonDailyReset", 0)
+      if 0 < record then
+        local cfg = self._daily:ComponentCfg()
+        ToastManager.ShowToast(StringTable.Get(cfg.RefreshText))
       else
-        do
-          ;
-          (SeasonTool:GetInstance()):SetLocalDBFloat("SeasonDailyReset", 1)
-        end
+        SeasonTool:GetInstance():SetLocalDBFloat("SeasonDailyReset", 1)
       end
     end
   end
 end
-
-

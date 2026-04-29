@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/book/ui_eliminate_book_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateBookController", UIController)
 UIEliminateBookController = UIEliminateBookController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateBookController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEliminateBookController:Constructor()
   self._pageStatus = nil
   self._itemCountPerRow = 4
   self._isInit = false
@@ -16,29 +9,28 @@ UIEliminateBookController.Constructor = function(self)
   self._spawnItemList = {}
   self._AsyncLoadFlagMap = {}
   self._selectItemID = nil
-  self.ItemColorToText = {[ItemColor.ItemColor_White] = "str_item_public_color_white", [ItemColor.ItemColor_Green] = "str_item_public_color_green", [ItemColor.ItemColor_Blue] = "str_item_public_color_blue", [ItemColor.ItemColor_Purple] = "str_item_public_color_purple", [ItemColor.ItemColor_Yellow] = "str_item_public_color_yellow", [ItemColor.ItemColor_Golden] = "str_item_public_color_golden"}
+  self.ItemColorToText = {
+    [ItemColor.ItemColor_White] = "str_item_public_color_white",
+    [ItemColor.ItemColor_Green] = "str_item_public_color_green",
+    [ItemColor.ItemColor_Blue] = "str_item_public_color_blue",
+    [ItemColor.ItemColor_Purple] = "str_item_public_color_purple",
+    [ItemColor.ItemColor_Yellow] = "str_item_public_color_yellow",
+    [ItemColor.ItemColor_Golden] = "str_item_public_color_golden"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function UIEliminateBookController:OnShow(uiParams)
+  self._anipopModule = GameGlobal.GetModule(AnipopModule)
   self:_GetComponents()
   self:_InitComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEliminateBookController:_GetComponents()
   local topBarPool = self:GetUIComponent("UISelectObjectPath", "CommonTopBar")
   local topBtns = topBarPool:SpawnObject("UINewCommonTopButton")
   topBtns:SetData(function()
-    -- function num : 0_2_0 , upvalues : self
     self:_Close()
-  end
-)
+  end)
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._info = self:GetUIComponent("UILocalizationText", "info")
@@ -52,37 +44,27 @@ UIEliminateBookController._GetComponents = function(self)
   self._eliminateAtlas = self:GetAsset("UIEliminate.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController._InitComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIEliminateBookController:_InitComponent()
   self:SelectPageStatus(EliminateBookStatus.Page1)
   self._isInit = true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController.SelectPageStatus = function(self, status)
-  -- function num : 0_4 , upvalues : _ENV
+function UIEliminateBookController:SelectPageStatus(status)
   if status == self._pageStatus then
-    return 
+    return
   end
   self._spawnItemList = {}
   self._pageStatus = status
   self._selectItemID = nil
   if status == EliminateBookStatus.Page1 then
-    (self._select1Obj):SetActive(true)
-    ;
-    (self._select2Obj):SetActive(false)
-    self._spawnCfgs = (Cfg.cfg_eliminate_relic_book)({Type = 1})
-  else
-    if status == EliminateBookStatus.Page2 then
-      (self._select1Obj):SetActive(false)
-      ;
-      (self._select2Obj):SetActive(true)
-      self._spawnCfgs = (Cfg.cfg_eliminate_relic_book)({Type = 2})
-      self._selectItemID = ((self._spawnCfgs)[1]).ID
-    end
+    self._select1Obj:SetActive(true)
+    self._select2Obj:SetActive(false)
+    self._spawnCfgs = Cfg.cfg_eliminate_relic_book({Type = 1})
+  elseif status == EliminateBookStatus.Page2 then
+    self._select1Obj:SetActive(false)
+    self._select2Obj:SetActive(true)
+    self._spawnCfgs = Cfg.cfg_eliminate_relic_book({Type = 2})
+    self._selectItemID = self._spawnCfgs[1].ID
   end
   if self._isInit then
     self:_ResetListView()
@@ -90,108 +72,72 @@ UIEliminateBookController.SelectPageStatus = function(self, status)
     self:_InitScrollView()
   end
   if not self._selectItemID then
-    local anipopInfo = (self._anipopModule):GetAniPopInfo()
-    local relicID = (anipopInfo.relic_info).init_skill_relic
-    self._selectItemID = (((Cfg.cfg_eliminate_relic_book)({ItemID = relicID}))[1]).ID
+    local anipopInfo = self._anipopModule:GetAniPopInfo()
+    local relicID = anipopInfo.relic_info.init_skill_relic
+    self._selectItemID = Cfg.cfg_eliminate_relic_book({ItemID = relicID})[1].ID
   end
-  do
-    local selectBookItem = self:_GetItemByID(self._selectItemID)
-    selectBookItem:BtnOnClick()
-  end
+  local selectBookItem = self:_GetItemByID(self._selectItemID)
+  selectBookItem:BtnOnClick()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController._Close = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIEliminateBookController:_Close()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     self:Lock("UIEliminateBookController_Close")
-    ;
-    (self._anim):Play("uieff_UIEliminateBookController_out")
+    self._anim:Play("uieff_UIEliminateBookController_out")
     YIELD(TT, 200)
     self:UnLock("UIEliminateBookController_Close")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController.SetInfo = function(self, item)
-  -- function num : 0_6 , upvalues : _ENV
+function UIEliminateBookController:SetInfo(item)
   self._selectItemID = item:GetID()
   local seleftCfg = item:GetCfg()
-  local cfg = (Cfg.cfg_item)[seleftCfg.ItemID]
-  ;
-  (self._icon):LoadImage(cfg.Icon)
-  ;
-  (self._title):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._info):SetText((StringTable.Get)(cfg.Intro))
+  local cfg = Cfg.cfg_item[seleftCfg.ItemID]
+  self._icon:LoadImage(cfg.Icon)
+  self._title:SetText(StringTable.Get(cfg.Name))
+  self._info:SetText(StringTable.Get(cfg.Intro))
   if self._pageStatus == EliminateBookStatus.Page1 then
-    (self._levelTypeObj):SetActive(false)
+    self._levelTypeObj:SetActive(false)
     self:Lock("anipopModule:AnipopChangeSkill")
     self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, seleftCfg, _ENV
-    local res = (self._anipopModule):AnipopChangeSkill(TT, seleftCfg.ItemID)
-    if res:GetSucc() then
-      self:RefreshUsing()
-      self:UnLock("anipopModule:AnipopChangeSkill")
-    else
-      ;
-      (Log.fatal)("装备初始技能失败！！！", res:GetResult())
-      self:UnLock("anipopModule:AnipopChangeSkill")
-    end
-  end
-)
+      local res = self._anipopModule:AnipopChangeSkill(TT, seleftCfg.ItemID)
+      if res:GetSucc() then
+        self:RefreshUsing()
+        self:UnLock("anipopModule:AnipopChangeSkill")
+      else
+        Log.fatal("装备初始技能失败！！！", res:GetResult())
+        self:UnLock("anipopModule:AnipopChangeSkill")
+      end
+    end)
   else
     local levelTypeImgTxt = "qdhl_new_pinji0"
-    ;
-    (self._levelTypeObj):SetActive(true)
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._levelType).sprite = (self._eliminateAtlas):GetSprite(levelTypeImgTxt .. cfg.Color)
-    ;
-    (self._typeTxt):SetText((StringTable.Get)((self.ItemColorToText)[cfg.Color]))
+    self._levelTypeObj:SetActive(true)
+    self._levelType.sprite = self._eliminateAtlas:GetSprite(levelTypeImgTxt .. cfg.Color)
+    self._typeTxt:SetText(StringTable.Get(self.ItemColorToText[cfg.Color]))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController.SelectBtn1OnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIEliminateBookController:SelectBtn1OnClick()
   self:SelectPageStatus(EliminateBookStatus.Page1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController.SelectBtn2OnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIEliminateBookController:SelectBtn2OnClick()
   self:SelectPageStatus(EliminateBookStatus.Page2)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController._InitScrollView = function(self)
-  -- function num : 0_9
+function UIEliminateBookController:_InitScrollView()
   local totalRow = self:GetSpawnRowNum()
   if self._scrollView then
-    (self._scrollView):InitListView(totalRow, function(scrollView, index)
-    -- function num : 0_9_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
-  end
-)
+    self._scrollView:InitListView(totalRow, function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController._InitListView = function(self, scrollView, index)
-  -- function num : 0_10 , upvalues : _ENV
-  local anipopInfo = (self._anipopModule):GetAniPopInfo()
-  local usingID = (anipopInfo.relic_info).init_skill_relic
+function UIEliminateBookController:_InitListView(scrollView, index)
+  local anipopInfo = self._anipopModule:GetAniPopInfo()
+  local usingID = anipopInfo.relic_info.init_skill_relic
   if index < 0 then
     return nil
   end
@@ -202,41 +148,32 @@ UIEliminateBookController._InitListView = function(self, scrollView, index)
     rowPool:SpawnObjects("UIEliminateBookItem", self._itemCountPerRow)
   end
   local rowList = rowPool:GetAllSpawnList()
-  for i = 1, (table.count)(rowList) do
+  for i = 1, table.count(rowList) do
     local bookItem = rowList[i]
-    if bookItem then
-      local itemIndex = index * self._itemCountPerRow + i
-      ;
-      (table.insert)(self._spawnItemList, bookItem)
-      self:_ShowBookItem(bookItem, itemIndex, true)
-      if self._selectItemID and bookItem:GetID() and self._selectItemID == bookItem:GetID() then
-        bookItem:SetSelect(true)
-      else
-        bookItem:SetSelect(false)
-      end
-      bookItem:SetUse(false)
-      do
-        if bookItem:GetID() then
-          local itemCfg = (Cfg.cfg_eliminate_relic_book)[bookItem:GetID()]
-          if itemCfg.ItemID == usingID then
-            bookItem:SetUse(true)
-          end
-        end
-        -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_STMT
-
+    if not bookItem then
+      break
+    end
+    local itemIndex = index * self._itemCountPerRow + i
+    table.insert(self._spawnItemList, bookItem)
+    self:_ShowBookItem(bookItem, itemIndex, true)
+    if self._selectItemID and bookItem:GetID() and self._selectItemID == bookItem:GetID() then
+      bookItem:SetSelect(true)
+    else
+      bookItem:SetSelect(false)
+    end
+    bookItem:SetUse(false)
+    if bookItem:GetID() then
+      local itemCfg = Cfg.cfg_eliminate_relic_book[bookItem:GetID()]
+      if itemCfg.ItemID == usingID then
+        bookItem:SetUse(true)
       end
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController.GetHasItemAsyncLoading = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for _,v in pairs(self._AsyncLoadFlagMap) do
+function UIEliminateBookController:GetHasItemAsyncLoading()
+  for _, v in pairs(self._AsyncLoadFlagMap) do
     if v == 1 then
       return true
     end
@@ -244,11 +181,8 @@ UIEliminateBookController.GetHasItemAsyncLoading = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController._GetItemByID = function(self, id)
-  -- function num : 0_12 , upvalues : _ENV
-  for _,item in pairs(self._spawnItemList) do
+function UIEliminateBookController:_GetItemByID(id)
+  for _, item in pairs(self._spawnItemList) do
     if item:GetID() == id then
       return item
     end
@@ -256,18 +190,13 @@ UIEliminateBookController._GetItemByID = function(self, id)
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController._ShowBookItem = function(self, bookItem, index, anim)
-  -- function num : 0_13
+function UIEliminateBookController:_ShowBookItem(bookItem, index, anim)
   local item_data = self:_GetItemData(index)
   bookItem:SetData(item_data, index, function(item)
-    -- function num : 0_13_0 , upvalues : self
     self._selectItemID = item:GetID()
     self:SetInfo(item)
     self:RefreshSelecting()
-  end
-)
+  end)
   if anim then
     bookItem:PlayFadeInAnim()
   else
@@ -275,18 +204,15 @@ UIEliminateBookController._ShowBookItem = function(self, bookItem, index, anim)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController.RefreshUsing = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local anipopInfo = (self._anipopModule):GetAniPopInfo()
-  local usingID = (anipopInfo.relic_info).init_skill_relic
-  for _,item in pairs(self._spawnItemList) do
+function UIEliminateBookController:RefreshUsing()
+  local anipopInfo = self._anipopModule:GetAniPopInfo()
+  local usingID = anipopInfo.relic_info.init_skill_relic
+  for _, item in pairs(self._spawnItemList) do
     local id = item:GetID()
     if not id then
       item:SetUse(false)
     else
-      local itemCfg = (Cfg.cfg_eliminate_relic_book)[id]
+      local itemCfg = Cfg.cfg_eliminate_relic_book[id]
       if self._pageStatus == EliminateBookStatus.Page1 and itemCfg.ItemID == usingID then
         item:SetUse(true)
       else
@@ -296,54 +222,35 @@ UIEliminateBookController.RefreshUsing = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController.RefreshSelecting = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  for _,item in pairs(self._spawnItemList) do
+function UIEliminateBookController:RefreshSelecting()
+  for _, item in pairs(self._spawnItemList) do
     local id = item:GetID()
     if not id then
       item:SetSelect(false)
+    elseif id == self._selectItemID then
+      item:SetSelect(true)
     else
-      if id == self._selectItemID then
-        item:SetSelect(true)
-      else
-        item:SetSelect(false)
-      end
+      item:SetSelect(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController._GetItemData = function(self, index)
-  -- function num : 0_16
-  return (self._spawnCfgs)[index]
+function UIEliminateBookController:_GetItemData(index)
+  return self._spawnCfgs[index]
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController._ResetListView = function(self)
-  -- function num : 0_17
+function UIEliminateBookController:_ResetListView()
   local totalRow = self:GetSpawnRowNum()
-  ;
-  (self._scrollView):SetListItemCount(totalRow)
-  ;
-  (self._scrollView):ResetListView()
-  ;
-  (self._scrollView):RefreshAllShownItem()
-  ;
-  (self._scrollView):SetListItemCount(totalRow)
+  self._scrollView:SetListItemCount(totalRow)
+  self._scrollView:ResetListView()
+  self._scrollView:RefreshAllShownItem()
+  self._scrollView:SetListItemCount(totalRow)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateBookController.GetSpawnRowNum = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local totalRow = (math.ceil)((table.count)(self._spawnCfgs) / self._itemCountPerRow)
+function UIEliminateBookController:GetSpawnRowNum()
+  local totalRow = math.ceil(table.count(self._spawnCfgs) / self._itemCountPerRow)
   return totalRow
 end
 
 local EliminateBookStatus = {Page1 = 1, Page2 = 2}
 _enum("EliminateBookStatus", EliminateBookStatus)
-

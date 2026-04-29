@@ -1,159 +1,109 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/ui_season_phase_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonPhaseHelper", Object)
 UISeasonPhaseHelper = UISeasonPhaseHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonPhaseHelper._GetCfg = function(seasonId)
-  -- function num : 0_0 , upvalues : _ENV
-  if not (Cfg.cfg_season_campaign_phase)({SeasonId = seasonId}) then
-    local cfgs = {}
-  end
-  ;
-  (table.sort)(cfgs, function(a, b)
-    -- function num : 0_0_0
-    do return a.Phase < b.Phase end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UISeasonPhaseHelper._GetCfg(seasonId)
+  local cfgs = Cfg.cfg_season_campaign_phase({SeasonId = seasonId}) or {}
+  table.sort(cfgs, function(a, b)
+    return a.Phase < b.Phase
+  end)
   return cfgs
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPhaseHelper.CheckPhase = function()
-  -- function num : 0_1 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UISeasonPhaseHelper.CheckPhase()
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   local seasonId = seasonModule:GetCurSeasonID()
   local seasonObj = seasonModule:GetCurSeasonObj()
   if seasonId == -1 or seasonObj == nil then
     return 1
   end
-  local cfgs = (UISeasonPhaseHelper._GetCfg)(seasonId)
-  for i,cfg in ipairs(cfgs) do
-    if (UISeasonPhaseHelper.CheckPhase_Init)(seasonObj, cfg) or not (UISeasonPhaseHelper.CheckPhase_Pass)(seasonObj, cfg) then
+  local cfgs = UISeasonPhaseHelper._GetCfg(seasonId)
+  for i, cfg in ipairs(cfgs) do
+    if not UISeasonPhaseHelper.CheckPhase_Init(seasonObj, cfg) then
+    elseif not UISeasonPhaseHelper.CheckPhase_Pass(seasonObj, cfg) then
       return i - 1
-    else
-      if not (UISeasonPhaseHelper.CheckPhase_Mask)(seasonObj, cfg) then
-        return i - 1
-      else
-        if not (UISeasonPhaseHelper.CheckPhase_Quest)(seasonObj, cfg) then
-          return i - 1
-        end
-      end
+    elseif not UISeasonPhaseHelper.CheckPhase_Mask(seasonObj, cfg) then
+      return i - 1
+    elseif not UISeasonPhaseHelper.CheckPhase_Quest(seasonObj, cfg) then
+      return i - 1
     end
   end
   return #cfgs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPhaseHelper.CheckPhase_Init = function(seasonObj, cfg)
-  -- function num : 0_2
+function UISeasonPhaseHelper.CheckPhase_Init(seasonObj, cfg)
   local checkInit = cfg.CheckInit
   if not checkInit then
     return true
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPhaseHelper.CheckPhase_Pass = function(seasonObj, cfg)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonPhaseHelper.CheckPhase_Pass(seasonObj, cfg)
   local missionId = cfg.MissionId
   local checkPass = cfg.CheckPass
   if not checkPass then
     return true
   end
   local component = seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
-  do
-    if not component then
-      local str = "UISeasonPhaseHelper.CheckPhase_Pass() SeasonMissionComponent = nil"
-      ;
-      (Log.exception)(str)
-      return true
-    end
-    if component:IsPassCamMissionID(missionId) then
-      return true
-    end
+  if not component then
+    local str = "UISeasonPhaseHelper.CheckPhase_Pass() SeasonMissionComponent = nil"
+    Log.exception(str)
+    return true
+  end
+  if component:IsPassCamMissionID(missionId) then
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPhaseHelper.CheckPhase_Mask = function(seasonObj, cfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonPhaseHelper.CheckPhase_Mask(seasonObj, cfg)
   local missionId = cfg.MissionId
   local checkMask = cfg.CheckMask
   if checkMask == nil then
     return true
   end
   local component = seasonObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
-  do
-    if not component then
-      local str = "UISeasonPhaseHelper.CheckPhase_Mask() SeasonMissionComponent = nil"
-      ;
-      (Log.exception)(str)
-      return true
-    end
-    local mask = component:GetMask(missionId)
-    if mask ~= nil and checkMask <= mask then
-      return true
-    end
+  if not component then
+    local str = "UISeasonPhaseHelper.CheckPhase_Mask() SeasonMissionComponent = nil"
+    Log.exception(str)
+    return true
+  end
+  local mask = component:GetMask(missionId)
+  if mask ~= nil and checkMask <= mask then
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPhaseHelper.CheckPhase_Quest = function(seasonObj, cfg)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonPhaseHelper.CheckPhase_Quest(seasonObj, cfg)
   local questId = cfg.QuestId
   local checkQuest = cfg.CheckQuest
   if checkQuest == nil then
     return true
   end
   local component = seasonObj:GetComponent(ECCampaignSeasonComponentID.QUEST_STORY)
-  do
-    if not component then
-      local str = "UISeasonPhaseHelper.CheckPhase_Quest() CampaignQuestComponent = nil"
-      ;
-      (Log.exception)(str)
-      return true
-    end
-    local quest = component:GetQuestInfoById(questId)
-    if not quest then
-      local fmt = "UISeasonPhaseHelper.CheckPhase_Quest() cfg_season_campaign_phase[%s] Quest[%s] = nil"
-      local str = (string.format)(fmt, cfg.ID, questId)
-      ;
-      (Log.exception)(str)
-      return true
-    end
-    do
-      local questStatus = component:CheckCampaignQuestStatus(quest._questInfo)
-      if checkQuest <= questStatus then
-        return true
-      end
-    end
+  if not component then
+    local str = "UISeasonPhaseHelper.CheckPhase_Quest() CampaignQuestComponent = nil"
+    Log.exception(str)
+    return true
+  end
+  local quest = component:GetQuestInfoById(questId)
+  if not quest then
+    local fmt = "UISeasonPhaseHelper.CheckPhase_Quest() cfg_season_campaign_phase[%s] Quest[%s] = nil"
+    local str = string.format(fmt, cfg.ID, questId)
+    Log.exception(str)
+    return true
+  end
+  local questStatus = component:CheckCampaignQuestStatus(quest._questInfo)
+  if checkQuest <= questStatus then
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonPhaseHelper.GetPhaseSpine = function(phase)
-  -- function num : 0_6 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UISeasonPhaseHelper.GetPhaseSpine(phase)
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   local seasonId = seasonModule:GetCurSeasonID()
   if seasonId == -1 then
     return 1
   end
-  local cfgs = (UISeasonPhaseHelper._GetCfg)(seasonId)
-  if cfgs and cfgs[phase] then
-    local spine = (cfgs[phase]).Spine
-  end
+  local cfgs = UISeasonPhaseHelper._GetCfg(seasonId)
+  local spine = cfgs and cfgs[phase] and cfgs[phase].Spine
   return spine
 end
-
-

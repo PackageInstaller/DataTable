@@ -1,104 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/rewards/ui_season_maze_reward_relic_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIseasonMazeRewardRelicItem", UICustomWidget)
 UIseasonMazeRewardRelicItem = UIseasonMazeRewardRelicItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIseasonMazeRewardRelicItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIseasonMazeRewardRelicItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIseasonMazeRewardRelicItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIseasonMazeRewardRelicItem:InitWidget()
   self.relicPool = self:GetUIComponent("UISelectObjectPath", "RelicPool")
   self.select = self:GetUIComponent("Image", "Select")
   self.UIseasonMazeRewardRelicItem = self:GetGameObject("UIseasonMazeSelectRelicItem")
   self.DetailObj = self:GetGameObject("Detail")
-  ;
-  (self.DetailObj):SetActive(false)
+  self.DetailObj:SetActive(false)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIseasonMazeRewardRelicItem.SetData = function(self, relicCfg, selectFunc, index, detailFunc)
-  -- function num : 0_2 , upvalues : _ENV
+function UIseasonMazeRewardRelicItem:SetData(relicCfg, selectFunc, index, detailFunc)
   self.relicItemCfg = relicCfg
   self.selectFunc = selectFunc
   self.detailFunc = detailFunc
   self.index = index
-  self._relic = (UIWidgetHelper.SpawnObject)(self, "RelicPool", "UISeasonMazeRelicItem")
+  self._relic = UIWidgetHelper.SpawnObject(self, "RelicPool", "UISeasonMazeRelicItem")
   local cfg = self.relicItemCfg
-  ;
-  ((self._relic):GetGameObject()):SetActive(true)
+  self._relic:GetGameObject():SetActive(true)
   if cfg ~= nil then
-    (self._relic):SetData(index, cfg, function(tIndex)
-    -- function num : 0_2_0 , upvalues : self
-    if self.selectFunc then
-      (self.selectFunc)(tIndex)
-      self:SelectItem()
-    end
+    self._relic:SetData(index, cfg, function(tIndex)
+      if self.selectFunc then
+        self.selectFunc(tIndex)
+        self:SelectItem()
+      end
+    end, false, true, false, true)
+    self._relic:DisableAnimation()
   end
-, false, true, false, true)
-    ;
-    (self._relic):DisableAnimation()
-  end
-  ;
-  (self.DetailObj):SetActive(false)
-  local itemcfg = (Cfg.cfg_item_relic)[cfg]
+  self.DetailObj:SetActive(false)
+  local itemcfg = Cfg.cfg_item_relic[cfg]
   if itemcfg.DetailPopTips ~= nil then
-    (self.DetailObj):SetActive(true)
+    self.DetailObj:SetActive(true)
   end
-  if itemcfg.SuiteID ~= nil then
-    if itemcfg.SuiteID == 0 then
-      (self.DetailObj):SetActive(true)
-      ;
-      (self.UIseasonMazeRewardRelicItem):SetActive(false)
-      local time = (index - 1) * 50
-      self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(time, TimerTriggerCount.Once, function()
-    -- function num : 0_2_1 , upvalues : self
-    (self.UIseasonMazeRewardRelicItem):SetActive(true)
-    ;
-    (self._anim):Play("uieffanim_UIseasonMazeSelectRelicItem_in")
+  if itemcfg.SuiteID == nil or itemcfg.SuiteID == 0 then
+  else
+    self.DetailObj:SetActive(true)
   end
-)
-    end
-  end
+  self.UIseasonMazeRewardRelicItem:SetActive(false)
+  local time = (index - 1) * 50
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(time, TimerTriggerCount.Once, function()
+    self.UIseasonMazeRewardRelicItem:SetActive(true)
+    self._anim:Play("uieffanim_UIseasonMazeSelectRelicItem_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIseasonMazeRewardRelicItem.SelectItem = function(self)
-  -- function num : 0_3
-  ((self.select).gameObject):SetActive(true)
+function UIseasonMazeRewardRelicItem:SelectItem()
+  self.select.gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIseasonMazeRewardRelicItem.UnSelectItem = function(self)
-  -- function num : 0_4
-  ((self.select).gameObject):SetActive(false)
+function UIseasonMazeRewardRelicItem:UnSelectItem()
+  self.select.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIseasonMazeRewardRelicItem.DetailOnClick = function(self, go)
-  -- function num : 0_5
+function UIseasonMazeRewardRelicItem:DetailOnClick(go)
   if self.detailFunc then
-    (self.detailFunc)(self.index)
+    self.detailFunc(self.index)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIseasonMazeRewardRelicItem.SelectOnClick = function(self, go)
-  -- function num : 0_6
+function UIseasonMazeRewardRelicItem:SelectOnClick(go)
 end
-
-

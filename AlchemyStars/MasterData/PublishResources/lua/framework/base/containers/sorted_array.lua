@@ -1,77 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/sorted_array.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SortedArray", Object)
 SortedArray = SortedArray
 local floor = math.floor
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-SortedArray.Constructor = function(self, compare_method, comparer)
-  -- function num : 0_0 , upvalues : _ENV
+function SortedArray:Constructor(compare_method, comparer)
   self.elements = {}
   if compare_method == Algorithm.COMPARE_LESS then
     self.comparer = Algorithm.LessComparer
+  elseif compare_method == Algorithm.COMPARE_GREATER then
+    self.comparer = Algorithm.GreaterComparer
+  elseif compare_method == Algorithm.COMPARE_CUSTOM then
+    self.comparer = comparer
   else
-    if compare_method == Algorithm.COMPARE_GREATER then
-      self.comparer = Algorithm.GreaterComparer
-    else
-      if compare_method == Algorithm.COMPARE_CUSTOM then
-        self.comparer = comparer
-      else
-        self.comparer = Algorithm.LessComparer
-      end
-    end
+    self.comparer = Algorithm.LessComparer
   end
   self.allow_duplicate = false
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.Empty = function(self)
-  -- function num : 0_1
-  do return #self.elements == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SortedArray:Empty()
+  return #self.elements == 0
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.Size = function(self)
-  -- function num : 0_2
+function SortedArray:Size()
   return #self.elements
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.Clear = function(self)
-  -- function num : 0_3
+function SortedArray:Clear()
   self.elements = {}
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.AllowDuplicate = function(self)
-  -- function num : 0_4
+function SortedArray:AllowDuplicate()
   self.allow_duplicate = true
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.Insert = function(self, value)
-  -- function num : 0_5 , upvalues : _ENV
+function SortedArray:Insert(value)
   if value == nil then
-    return 
+    return
   end
   local index, exist = self:FindInsertIndexInternal(value)
   if exist and not self.allow_duplicate then
     if _DEBUG then
       LogError("SortedArray:Insert, duplicate element")
     end
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.elements)[index] = value
+    self.elements[index] = value
   else
     local elements = self.elements
     for i = #elements, index, -1 do
@@ -81,10 +51,7 @@ SortedArray.Insert = function(self, value)
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.Remove = function(self, value)
-  -- function num : 0_6
+function SortedArray:Remove(value)
   if value == nil then
     return false
   end
@@ -101,16 +68,13 @@ SortedArray.Remove = function(self, value)
   return true
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.RemoveLeft = function(self, nCount)
-  -- function num : 0_7
+function SortedArray:RemoveLeft(nCount)
   if nCount <= 0 then
     return 0
   end
   local elements = self.elements
   local size = #elements
-  if size <= nCount then
+  if nCount >= size then
     self:Clear()
     return size
   end
@@ -125,13 +89,10 @@ SortedArray.RemoveLeft = function(self, nCount)
   return nCount
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.RemoveByIndex = function(self, index)
-  -- function num : 0_8
+function SortedArray:RemoveByIndex(index)
   local elements = self.elements
   local size = #elements
-  if index < 1 or size < index then
+  if index < 1 or index > size then
     return nil
   end
   local temp = elements[index]
@@ -142,62 +103,41 @@ SortedArray.RemoveByIndex = function(self, index)
   return temp
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
 SortedArray.RemoveAt = SortedArray.RemoveByIndex
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
 
-SortedArray.Find = function(self, value)
-  -- function num : 0_9
+function SortedArray:Find(value)
   if value == nil then
     return -1
   end
   return self:BinarySearchInternal(value)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.Contains = function(self, value)
-  -- function num : 0_10
-  do return self:Find(value) > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SortedArray:Contains(value)
+  return self:Find(value) > 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.GetAt = function(self, index)
-  -- function num : 0_11
-  return (self.elements)[index]
+function SortedArray:GetAt(index)
+  return self.elements[index]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.ForEach = function(self, func)
-  -- function num : 0_12
+function SortedArray:ForEach(func)
   local elements = self.elements
   for i = 1, #elements do
     func(elements[i])
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.HandleForeach = function(self, handle, func, ...)
-  -- function num : 0_13
+function SortedArray:HandleForeach(handle, func, ...)
   local elements = self.elements
   for i = 1, #elements do
     local bSuccess = func(handle, elements[i], ...)
-  end
-  do
-    if bSuccess ~= false and bSuccess ~= 0 then
+    if false == bSuccess or 0 == bSuccess then
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.RemoveByCallback = function(self, value, handle, func)
-  -- function num : 0_14
+function SortedArray:RemoveByCallback(value, handle, func)
   if value == nil then
     return false
   end
@@ -206,7 +146,7 @@ SortedArray.RemoveByCallback = function(self, value, handle, func)
   local nWorkIndex = 1
   for i = 1, size do
     local nNeedDel = func(handle, value, elements[i])
-    if nNeedDel == false or nNeedDel == 0 then
+    if false == nNeedDel or 0 == nNeedDel then
       if i ~= nWorkIndex then
         elements[nWorkIndex] = elements[i]
       end
@@ -219,118 +159,65 @@ SortedArray.RemoveByCallback = function(self, value, handle, func)
   return true
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.BinarySearchInternal = function(self, value)
-  -- function num : 0_15 , upvalues : floor
+function SortedArray:BinarySearchInternal(value)
   local elements = self.elements
   local low = 1
   local high = #elements
   local comparer = self.comparer
-  local mid, result = nil, nil
-  while 1 do
-    while 1 do
-      while 1 do
-        if low <= high then
-          mid = floor((low + high) * 0.5)
-          result = comparer(value, elements[mid])
-          if result > 0 then
-            high = mid - 1
-            -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      if result < 0 then
-        low = mid + 1
-        -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  local mid, result
+  while low <= high do
+    mid = floor((low + high) * 0.5)
+    result = comparer(value, elements[mid])
+    if 0 < result then
+      high = mid - 1
+    elseif result < 0 then
+      low = mid + 1
+    else
+      return mid
     end
-    return mid
   end
   return -1
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.FindInsertIndexInternal = function(self, value)
-  -- function num : 0_16 , upvalues : floor
+function SortedArray:FindInsertIndexInternal(value)
   local elements = self.elements
   local low = 1
   local high = #elements
   local comparer = self.comparer
-  local mid, result = nil, nil
-  while 1 do
-    while 1 do
-      while 1 do
-        if low <= high then
-          mid = floor((low + high) * 0.5)
-          result = comparer(value, elements[mid])
-          if result > 0 then
-            high = mid - 1
-            -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      if result < 0 then
-        low = mid + 1
-        -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  local mid, result
+  while low <= high do
+    mid = floor((low + high) * 0.5)
+    result = comparer(value, elements[mid])
+    if 0 < result then
+      high = mid - 1
+    elseif result < 0 then
+      low = mid + 1
+    else
+      return mid, true
     end
-    return mid, true
   end
   return low, false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.IncertionSort = function(self, value)
-  -- function num : 0_17
+function SortedArray:IncertionSort(value)
   local elements = self.elements
   local comparer = self.comparer
   local i = #elements
-  while i > 0 and comparer(value, elements[i]) > 0 do
+  while 0 < i and 0 < comparer(value, elements[i]) do
     elements[i + 1] = elements[i]
     i = i - 1
   end
   elements[i + 1] = value
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.GetFirstElement = function(self)
-  -- function num : 0_18
+function SortedArray:GetFirstElement()
   if #self.elements > 0 then
-    return (self.elements)[1]
+    return self.elements[1]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-SortedArray.GetLastValue = function(self)
-  -- function num : 0_19
+function SortedArray:GetLastValue()
   local elements = self.elements
-  return (self.elements)[#self.elements]
+  return self.elements[#self.elements]
 end
-
-

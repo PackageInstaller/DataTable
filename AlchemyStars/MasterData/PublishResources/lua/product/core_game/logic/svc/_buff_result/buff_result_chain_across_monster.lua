@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_chain_across_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultChainAcrossMonster", BuffResultBase)
 BuffResultChainAcrossMonster = BuffResultChainAcrossMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChainAcrossMonster.Constructor = function(self, entityID, notifyType, chainIndex, pos, show)
-  -- function num : 0_0
+function BuffResultChainAcrossMonster:Constructor(entityID, notifyType, chainIndex, pos, show)
   self._entityID = entityID
   self._notifyType = notifyType
   self._chainIndex = chainIndex
@@ -17,39 +10,22 @@ BuffResultChainAcrossMonster.Constructor = function(self, entityID, notifyType, 
   self._show = show
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChainAcrossMonster.GetEntityID = function(self)
-  -- function num : 0_1
+function BuffResultChainAcrossMonster:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChainAcrossMonster.GetNotifyType = function(self)
-  -- function num : 0_2
+function BuffResultChainAcrossMonster:GetNotifyType()
   return self._notifyType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChainAcrossMonster.GetChainIndex = function(self)
-  -- function num : 0_3
+function BuffResultChainAcrossMonster:GetChainIndex()
   return self._chainIndex
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChainAcrossMonster.GetPos = function(self)
-  -- function num : 0_4
+function BuffResultChainAcrossMonster:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChainAcrossMonster.GetShow = function(self)
-  -- function num : 0_5
+function BuffResultChainAcrossMonster:GetShow()
   return self._show
 end
-
-

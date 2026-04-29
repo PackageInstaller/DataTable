@@ -1,49 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_fullscreen.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FullScreen", SkillScopeCalculator_Base)
 SkillScopeCalculator_FullScreen = SkillScopeCalculator_FullScreen
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FullScreen.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_FullScreen:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local bExcludeSelf = scopeParam
   local casterPos = centerPos
   local target_area_grid = {}
-  if (self._gridFilter)._world then
-    local boardServiceLogic = ((self._gridFilter)._world):GetService("BoardLogic")
-    local board = (((self._gridFilter)._world):GetBoardEntity()):Board()
+  if self._gridFilter._world then
+    local boardServiceLogic = self._gridFilter._world:GetService("BoardLogic")
+    local board = self._gridFilter._world:GetBoardEntity():Board()
     local arr = board:GetBlockFlagArray()
-    for x,col in pairs(arr) do
-      for y,block in pairs(col) do
+    for x, col in pairs(arr) do
+      for y, block in pairs(col) do
         local grid = Vector2(x, y)
         if not boardServiceLogic:IsPosBlock(grid, BlockFlag.SkillSkip) then
-          (table.insert)(target_area_grid, grid)
+          table.insert(target_area_grid, grid)
         end
       end
     end
   else
-    do
-      for x = 1, (self._gridFilter):GetBoardMaxX() do
-        for y = 1, (self._gridFilter):GetBoardMaxY() do
-          local pos = Vector2(x, y)
-          if (self._gridFilter):IsValidPiecePos(pos) then
-            (table.insert)(target_area_grid, pos)
-          end
+    for x = 1, self._gridFilter:GetBoardMaxX() do
+      for y = 1, self._gridFilter:GetBoardMaxY() do
+        local pos = Vector2(x, y)
+        if self._gridFilter:IsValidPiecePos(pos) then
+          table.insert(target_area_grid, pos)
         end
-      end
-      do
-        if bExcludeSelf == 1 then
-          (table.removev)(target_area_grid, casterPos)
-        end
-        local result = SkillScopeResult:New(SkillScopeType.FullScreen, casterPos, target_area_grid, target_area_grid)
-        return result
       end
     end
   end
+  if bExcludeSelf == 1 then
+    table.removev(target_area_grid, casterPos)
+  end
+  local result = SkillScopeResult:New(SkillScopeType.FullScreen, casterPos, target_area_grid, target_area_grid)
+  return result
 end
-
-

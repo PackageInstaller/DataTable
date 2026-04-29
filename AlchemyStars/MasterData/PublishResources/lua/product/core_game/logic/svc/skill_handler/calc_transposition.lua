@@ -1,64 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_transposition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_Transposition", Object)
 SkillEffectCalc_Transposition = SkillEffectCalc_Transposition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_Transposition.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_Transposition:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Transposition.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_Transposition:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   if skillEffectParam:IsUseSuper() and casterEntity:HasSuperEntity() then
     casterEntity = casterEntity:GetSuperEntity()
   end
-  local targetMonsterClassID = (skillEffectParam:GetMonsterClassID())
-  local targetEntity = nil
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local targetMonsterClassID = skillEffectParam:GetMonsterClassID()
+  local targetEntity
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local monsterList, monsterPosList = utilScopeSvc:SelectAllMonster()
-  for i,e in ipairs(monsterList) do
-    local monsterClassID = (e:MonsterID()):GetMonsterClassID()
+  for i, e in ipairs(monsterList) do
+    local monsterClassID = e:MonsterID():GetMonsterClassID()
     if monsterClassID == targetMonsterClassID then
       targetEntity = e
       break
     end
   end
-  do
-    if not targetEntity then
-      return {}
-    end
-    local resultCaster = self:_CalcTeleportResult(casterEntity, targetEntity, skillEffectCalcParam)
-    ;
-    (table.insert)(results, resultCaster)
-    local resultTarget = self:_CalcTeleportResult(targetEntity, casterEntity, skillEffectCalcParam)
-    ;
-    (table.insert)(results, resultTarget)
-    return results
+  if not targetEntity then
+    return {}
   end
+  local resultCaster = self:_CalcTeleportResult(casterEntity, targetEntity, skillEffectCalcParam)
+  table.insert(results, resultCaster)
+  local resultTarget = self:_CalcTeleportResult(targetEntity, casterEntity, skillEffectCalcParam)
+  table.insert(results, resultTarget)
+  return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Transposition._CalcTeleportResult = function(self, entity, targetEntity, skillEffectCalcParam)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_Transposition:_CalcTeleportResult(entity, targetEntity, skillEffectCalcParam)
   local posOld = entity:GetGridPosition()
   local posNew = targetEntity:GetGridPosition()
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local colorOld = utilData:FindPieceElement(posOld)
   local dirNew = posNew - posOld
-  local stageIndex = (skillEffectCalcParam.skillEffectParam):GetSkillEffectDamageStageIndex()
+  local stageIndex = skillEffectCalcParam.skillEffectParam:GetSkillEffectDamageStageIndex()
   local result = SkillEffectResult_Teleport:New(entity:GetID(), posOld, colorOld, posNew, dirNew, stageIndex)
   return result
 end
-
-

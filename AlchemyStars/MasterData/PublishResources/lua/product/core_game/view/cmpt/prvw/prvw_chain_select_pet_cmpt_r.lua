@@ -1,127 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/prvw_chain_select_pet_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewChainSelectPetComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewChainSelectPetComponent.Constructor = function(self)
-  -- function num : 0_0
+function PreviewChainSelectPetComponent:Constructor()
   self._petList = {}
   self._petScopeResultDic = {}
   self._petSkillDic = {}
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSelectPetComponent.AddPreviewChainSelectPet = function(self, petEntityID)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (table.icontains)(self._petList, petEntityID) then
-    (self._petList)[#self._petList + 1] = petEntityID
+function PreviewChainSelectPetComponent:AddPreviewChainSelectPet(petEntityID)
+  if not table.icontains(self._petList, petEntityID) then
+    self._petList[#self._petList + 1] = petEntityID
   end
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSelectPetComponent.AddPreviewChainSelectPetScopeResult = function(self, petEntityID, scopeResult)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._petScopeResultDic)[petEntityID] = scopeResult
+function PreviewChainSelectPetComponent:AddPreviewChainSelectPetScopeResult(petEntityID, scopeResult)
+  self._petScopeResultDic[petEntityID] = scopeResult
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSelectPetComponent.AddPreviewChainSelectPetSkillID = function(self, petEntityID, skillID)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._petSkillDic)[petEntityID] = skillID
+function PreviewChainSelectPetComponent:AddPreviewChainSelectPetSkillID(petEntityID, skillID)
+  self._petSkillDic[petEntityID] = skillID
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSelectPetComponent.GetRenderPetList = function(self)
-  -- function num : 0_4
+function PreviewChainSelectPetComponent:GetRenderPetList()
   return self._petList
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSelectPetComponent.GetPreviewChainSelectPetScopeResult = function(self, petEntityID)
-  -- function num : 0_5
-  return (self._petScopeResultDic)[petEntityID]
+function PreviewChainSelectPetComponent:GetPreviewChainSelectPetScopeResult(petEntityID)
+  return self._petScopeResultDic[petEntityID]
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSelectPetComponent.GetPreviewChainSelectPetSkillID = function(self, petEntityID)
-  -- function num : 0_6
-  return (self._petSkillDic)[petEntityID]
+function PreviewChainSelectPetComponent:GetPreviewChainSelectPetSkillID(petEntityID)
+  return self._petSkillDic[petEntityID]
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSelectPetComponent.ClearPreviewChainSelectPet = function(self)
-  -- function num : 0_7
+function PreviewChainSelectPetComponent:ClearPreviewChainSelectPet()
   self._petList = {}
   self._petScopeResultDic = {}
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSelectPetComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_8
+function PreviewChainSelectPetComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChainSelectPetComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_9
+function PreviewChainSelectPetComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PreviewChainSelectPet = function(self)
-  -- function num : 0_10
-  return self:GetComponent((self.WEComponentsEnum).PreviewChainSelectPet)
+function Entity:PreviewChainSelectPet()
+  return self:GetComponent(self.WEComponentsEnum.PreviewChainSelectPet)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPreviewChainSelectPet = function(self)
-  -- function num : 0_11
-  return self:HasComponent((self.WEComponentsEnum).PreviewChainSelectPet)
+function Entity:HasPreviewChainSelectPet()
+  return self:HasComponent(self.WEComponentsEnum.PreviewChainSelectPet)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPreviewChainSelectPet = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewChainSelectPet
+function Entity:AddPreviewChainSelectPet()
+  local index = self.WEComponentsEnum.PreviewChainSelectPet
   local component = PreviewChainSelectPetComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePreviewChainSelectPet = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PreviewChainSelectPet
+function Entity:ReplacePreviewChainSelectPet()
+  local index = self.WEComponentsEnum.PreviewChainSelectPet
   local component = PreviewChainSelectPetComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePreviewChainSelectPet = function(self)
-  -- function num : 0_14
+function Entity:RemovePreviewChainSelectPet()
   if self:HasPreviewChainSelectPet() then
-    self:RemoveComponent((self.WEComponentsEnum).PreviewChainSelectPet)
+    self:RemoveComponent(self.WEComponentsEnum.PreviewChainSelectPet)
   end
 end
-
-

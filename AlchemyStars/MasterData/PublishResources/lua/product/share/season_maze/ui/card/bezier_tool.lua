@@ -1,49 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/card/bezier_tool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BezierTool", Object)
 BezierTool = BezierTool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BezierTool.BezierCurve1 = function(p0, p1, t)
-  -- function num : 0_0 , upvalues : _ENV
+function BezierTool.BezierCurve1(p0, p1, t)
   local p = Vector3.zero
-  p = (BezierTool.Vector3Mul)(p0, 1 - t) + (BezierTool.Vector3Mul)(p1, t)
+  p = BezierTool.Vector3Mul(p0, 1 - t) + BezierTool.Vector3Mul(p1, t)
   return p
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BezierTool.BezierCurve2 = function(p0, p1, p2, t)
-  -- function num : 0_1 , upvalues : _ENV
+function BezierTool.BezierCurve2(p0, p1, p2, t)
   local p = Vector3.zero
   local t1 = (1 - t) * (1 - t)
   local t2 = 2 * t * (1 - t)
   local t3 = t * t
-  p = (BezierTool.Vector3Mul)(p0, t1) + (BezierTool.Vector3Mul)(p1, t2) + (BezierTool.Vector3Mul)(p2, t3)
+  p = BezierTool.Vector3Mul(p0, t1) + BezierTool.Vector3Mul(p1, t2) + BezierTool.Vector3Mul(p2, t3)
   return p
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BezierTool.BezierCurve3 = function(p0, p1, p2, p3, t)
-  -- function num : 0_2 , upvalues : _ENV
+function BezierTool.BezierCurve3(p0, p1, p2, p3, t)
   local p = Vector3.zero
   local t1 = (1 - t) * (1 - t) * (1 - t)
   local t2 = 3 * t * (1 - t) * (1 - t)
   local t3 = 3 * t * t * (1 - t)
   local t4 = t * t * t
-  p = (BezierTool.Vector3Mul)(p0, t1) + (BezierTool.Vector3Mul)(p1, t2) + (BezierTool.Vector3Mul)(p2, t3) + (BezierTool.Vector3Mul)(p3, t4)
+  p = BezierTool.Vector3Mul(p0, t1) + BezierTool.Vector3Mul(p1, t2) + BezierTool.Vector3Mul(p2, t3) + BezierTool.Vector3Mul(p3, t4)
   return p
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BezierTool.Vector3Mul = function(v3, n)
-  -- function num : 0_3 , upvalues : _ENV
+function BezierTool.Vector3Mul(v3, n)
   return Vector3(v3.x * n, v3.y * n, v3.z)
 end
-
-

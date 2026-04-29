@@ -1,24 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_palsy_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewSetPalsy", BuffViewBase)
 BuffViewSetPalsy = BuffViewSetPalsy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewSetPalsy.PlayView = function(self, TT)
-  -- function num : 0_0
-  (self._entity):SetAnimatorControllerBools({Palsy = true})
+function BuffViewSetPalsy:PlayView(TT)
+  self._entity:SetAnimatorControllerBools({Palsy = true})
 end
 
 _class("BuffViewResetPalsy", BuffViewBase)
 BuffViewResetPalsy = BuffViewResetPalsy
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewResetPalsy.PlayView = function(self, TT)
-  -- function num : 0_1
-  (self._entity):SetAnimatorControllerBools({Palsy = false})
+function BuffViewResetPalsy:PlayView(TT)
+  self._entity:SetAnimatorControllerBools({Palsy = false})
 end
-
-

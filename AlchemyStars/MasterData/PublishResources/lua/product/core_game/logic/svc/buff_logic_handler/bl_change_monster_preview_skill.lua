@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_monster_preview_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local ChangeMonsterPreviewSkillType = {Notify = 1}
 _enum("ChangeMonsterPreviewSkillType", ChangeMonsterPreviewSkillType)
 _class("BuffLogicChangeMonsterPreviewSkill", BuffLogicBase)
 BuffLogicChangeMonsterPreviewSkill = BuffLogicChangeMonsterPreviewSkill
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeMonsterPreviewSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeMonsterPreviewSkill:Constructor(buffInstance, logicParam)
   self._targetSkillID = logicParam.targetSkillID
   self._type = logicParam.type
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeMonsterPreviewSkill.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : ChangeMonsterPreviewSkillType
-  local e = (self._buffInstance):Entity()
+function BuffLogicChangeMonsterPreviewSkill:DoLogic()
+  local e = self._buffInstance:Entity()
   if e:HasMonsterID() then
     local aiCpmt = e:AI()
     local needReplace = false
@@ -34,15 +24,11 @@ end
 
 _class("BuffLogicResetChangePreviewSkill", BuffLogicBase)
 BuffLogicResetChangePreviewSkill = BuffLogicResetChangePreviewSkill
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicResetChangePreviewSkill.DoLogic = function(self)
-  -- function num : 0_2
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetChangePreviewSkill:DoLogic()
+  local e = self._buffInstance:Entity()
   if e:HasMonsterID() then
     local aiCpmt = e:AI()
     aiCpmt:ResetReplacePreviewSkillID()
   end
 end
-
-

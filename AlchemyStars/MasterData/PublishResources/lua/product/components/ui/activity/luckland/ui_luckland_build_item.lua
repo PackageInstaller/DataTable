@@ -1,84 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_build_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandBuildItem", UICustomWidget)
 UILuckLandBuildItem = UILuckLandBuildItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandBuildItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandBuildItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildItem.InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandBuildItem:InitWidget()
   self._guideShow = true
   self.buildIconRawImageLoader = self:GetUIComponent("RawImageLoader", "BuildIcon")
   self.buildLevelText = self:GetUIComponent("UILocalizationText", "BuildLevelText")
   self.canLevelUp = self:GetUIComponent("Image", "CanLevelUp")
-  ;
-  ((self.canLevelUp).gameObject):SetActive(false)
+  self.canLevelUp.gameObject:SetActive(false)
   self.topImg = self:GetGameObject("TopImg")
   self.resRoot = self:GetGameObject("ResRoot")
   self.resDataText = self:GetUIComponent("UILocalizationText", "ResDataText")
-  ;
-  (self.resRoot):SetActive(false)
+  self.resRoot:SetActive(false)
   self._buildIconGO = self:GetGameObject("BuildIcon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildItem.SetData = function(self, data, cb)
-  -- function num : 0_2
+function UILuckLandBuildItem:SetData(data, cb)
   self.data = data
   self.cb = cb
   self:RefreshBuildUI()
   if self.data == nil then
-    (self.topImg):SetActive(true)
+    self.topImg:SetActive(true)
   else
-    ;
-    (self.topImg):SetActive(false)
+    self.topImg:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildItem.RefreshBuildUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UILuckLandBuildItem:RefreshBuildUI()
   if self.data == nil then
-    return 
+    return
   end
-  ;
-  (self.buildIconRawImageLoader):LoadImage((self.data):Icon())
-  ;
-  (self.buildLevelText):SetText("Lv<size=44>" .. (self.data):GetCurLevel() .. "</size>")
-  local MaxLevel = (self.data):MaxLevel()
-  if (self.data):GetCurLevel() == MaxLevel then
-    ((self.canLevelUp).gameObject):SetActive(false)
-    return 
+  self.buildIconRawImageLoader:LoadImage(self.data:Icon())
+  self.buildLevelText:SetText("Lv<size=44>" .. self.data:GetCurLevel() .. "</size>")
+  local MaxLevel = self.data:MaxLevel()
+  if self.data:GetCurLevel() == MaxLevel then
+    self.canLevelUp.gameObject:SetActive(false)
+    return
   end
-  local cost = (self.data):UpgradeCost((self.data):ID())
-  if cost and (LuckLandInnerGameHelper.CanCostMoney)(cost) and self._guideShow then
-    ((self.canLevelUp).gameObject):SetActive(true)
+  local cost = self.data:UpgradeCost(self.data:ID())
+  if cost and LuckLandInnerGameHelper.CanCostMoney(cost) then
+    if self._guideShow then
+      self.canLevelUp.gameObject:SetActive(true)
+    end
+  else
+    self.canLevelUp.gameObject:SetActive(false)
   end
-  ;
-  ((self.canLevelUp).gameObject):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildItem.ShowMoney = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UILuckLandBuildItem:ShowMoney()
   if self.data == nil then
     return false
   end
-  local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+  local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
   if entityMgr then
-    local buildingEntity = entityMgr:GetBuildingByTemplateID((self.data):ID())
+    local buildingEntity = entityMgr:GetBuildingByTemplateID(self.data:ID())
     if buildingEntity then
       local directGold = buildingEntity:GetDirectGold()
       local resGold = buildingEntity:CalculateRes()
@@ -89,77 +67,50 @@ UILuckLandBuildItem.ShowMoney = function(self)
         resGold = 0
       end
       local finGold = resGold + directGold
-      if finGold > 0 then
-        (self.resRoot):SetActive(true)
-        ;
-        (self.resDataText):SetText("" .. finGold)
-        self._fadeInTimer = ((GameGlobal.Timer)()):AddEvent(500, function()
-    -- function num : 0_4_0 , upvalues : self
-    self._fadeInTimer = nil
-    ;
-    (self.resRoot):SetActive(false)
-  end
-)
+      if 0 < finGold then
+        self.resRoot:SetActive(true)
+        self.resDataText:SetText("" .. finGold)
+        self._fadeInTimer = GameGlobal.Timer():AddEvent(500, function()
+          self._fadeInTimer = nil
+          self.resRoot:SetActive(false)
+        end)
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildItem.BgOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UILuckLandBuildItem:BgOnClick(go)
   self:ShowDialog("UILuckLandBuildingLevelUp", self.data, function(levelup)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     if self.cb then
-      local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+      local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
       if entityMgr then
-        local buildingEntity = entityMgr:GetBuildingByTemplateID((self.data):ID())
-        ;
-        (self.cb)(levelup, buildingEntity:GetBuildingType())
+        local buildingEntity = entityMgr:GetBuildingByTemplateID(self.data:ID())
+        self.cb(levelup, buildingEntity:GetBuildingType())
       else
-        do
-          ;
-          (self.cb)(levelup)
-        end
+        self.cb(levelup)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildItem.ShowBuild = function(self, show)
-  -- function num : 0_6
+function UILuckLandBuildItem:ShowBuild(show)
   self._guideShow = show
-  if self.data ~= nil then
-    (self.topImg):SetActive(not show)
-    ;
-    (self._buildIconGO):SetActive(self.data ~= nil)
+  if show then
+    self.topImg:SetActive(self.data == nil)
+    self._buildIconGO:SetActive(self.data ~= nil)
     self:RefreshBuildUI()
-    ;
-    (self.topImg):SetActive(true)
-    ;
-    (self._buildIconGO):SetActive(false)
-    ;
-    ((self.canLevelUp).gameObject):SetActive(false)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  else
+    self.topImg:SetActive(true)
+    self._buildIconGO:SetActive(false)
+    self.canLevelUp.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildItem.OnClose = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UILuckLandBuildItem:OnClose()
   if self._fadeInTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._fadeInTimer)
+    GameGlobal.Timer():CancelEvent(self._fadeInTimer)
     self._fadeInTimer = nil
   end
 end
-
-

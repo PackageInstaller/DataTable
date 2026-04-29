@@ -1,64 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_team_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleTeamState", UIController)
 UIBattleTeamState = UIBattleTeamState
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleTeamState.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleTeamState:OnShow(uiParams)
   local leaderPetData = uiParams[1]
   self.teamStateGO = uiParams[2]
   self._curHp = uiParams[3]
   self._maxHp = uiParams[4]
-  self.teamStateOriParent = (self.teamStateGO).parent
+  self.teamStateOriParent = self.teamStateGO.parent
   self._imgBG = self:GetUIComponent("RawImageLoader", "imgBG")
   local battle_mes = leaderPetData:GetBattleMes(PetSkinEffectPath.BODY_INGAME_TEAM)
-  ;
-  (self._imgBG):LoadImage(battle_mes)
+  self._imgBG:LoadImage(battle_mes)
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
-  local leaderLocalName = (StringTable.Get)(leaderPetData:GetPetName())
-  ;
-  (self._txtName):SetText(leaderLocalName)
+  local leaderLocalName = StringTable.Get(leaderPetData:GetPetName())
+  self._txtName:SetText(leaderLocalName)
   self._hpTxt = self:GetUIComponent("UILocalizationText", "HpValueText")
   self._skillInfo = self:GetGameObject("SkillInfo")
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self.imgElement = self:GetUIComponent("Image", "imgElement")
   self._leaderSkillDescTxt = self:GetUIComponent("UILocalizationText", "SkillDesc")
   self._leaderSkillNameTxt = self:GetUIComponent("UILocalizationText", "SkillName")
-  self.ElementNameTable = {[ElementType.ElementType_Blue] = "str_pet_element_name_blue", [ElementType.ElementType_Red] = "str_pet_element_name_red", [ElementType.ElementType_Green] = "str_pet_element_name_green", [ElementType.ElementType_Yellow] = "str_pet_element_name_yellow", [ElementType.ElementType_AnyNone] = "str_pet_element_name_any_none"}
+  self.ElementNameTable = {
+    [ElementType.ElementType_Blue] = "str_pet_element_name_blue",
+    [ElementType.ElementType_Red] = "str_pet_element_name_red",
+    [ElementType.ElementType_Green] = "str_pet_element_name_green",
+    [ElementType.ElementType_Yellow] = "str_pet_element_name_yellow",
+    [ElementType.ElementType_AnyNone] = "str_pet_element_name_any_none"
+  }
   local firstElement = leaderPetData:GetPetFirstElement()
-  -- DECOMPILER ERROR at PC99: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.imgElement).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[firstElement]).Icon))
-  ;
-  (self._leaderSkillNameTxt):SetText((StringTable.Get)((self.ElementNameTable)[firstElement]))
-  local GetRestrainAndBe = function(ele)
-    -- function num : 0_0_0
+  self.imgElement.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[firstElement].Icon))
+  self._leaderSkillNameTxt:SetText(StringTable.Get(self.ElementNameTable[firstElement]))
+  
+  local function GetRestrainAndBe(ele)
     if ele == 1 then
       return ele + 1, 4
+    elseif ele == 4 then
+      return 1, ele - 1
     else
-      if ele == 4 then
-        return 1, ele - 1
-      else
-        return ele + 1, ele - 1
-      end
+      return ele + 1, ele - 1
     end
   end
-
+  
   local r, b = GetRestrainAndBe(firstElement)
   if firstElement == ElementType.ElementType_AnyNone then
-    (self._leaderSkillDescTxt):SetText("")
+    self._leaderSkillDescTxt:SetText("")
   else
-    ;
-    (self._leaderSkillDescTxt):SetText((StringTable.Get)("str_battle_state_leader_state", (StringTable.Get)((self.ElementNameTable)[r]), (string.format)("%d", BattleConst.Strong * 100), (StringTable.Get)((self.ElementNameTable)[b]), (string.format)("%d", BattleConst.Counter * 100)))
+    self._leaderSkillDescTxt:SetText(StringTable.Get("str_battle_state_leader_state", StringTable.Get(self.ElementNameTable[r]), string.format("%d", BattleConst.Strong * 100), StringTable.Get(self.ElementNameTable[b]), string.format("%d", BattleConst.Counter * 100)))
   end
   self._rightUpAnchor = self:GetGameObject("RightUpAnchor")
-  ;
-  (self.teamStateGO):SetParent((self._rightUpAnchor).transform, false)
+  self.teamStateGO:SetParent(self._rightUpAnchor.transform, false)
   self:RefreshHpTxt()
   self:AttachEvent(GameEventType.TeamHPChange, self.OnTeamHPChange)
   self._teamBuffList = uiParams[5]
@@ -66,35 +55,25 @@ UIBattleTeamState.OnShow = function(self, uiParams)
   self:OnChangeBuff(true, nil)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTeamState.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIBattleTeamState:OnHide()
   if self.imgElement then
-    (self.imgElement).sprite = nil
+    self.imgElement.sprite = nil
     self.imgElement = nil
   end
   self:DetachEvent(GameEventType.TeamHPChange, self.OnTeamHPChange)
-  ;
-  (self.teamStateGO):SetParent(self.teamStateOriParent, false)
+  self.teamStateGO:SetParent(self.teamStateOriParent, false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTeamState.ExitBtnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBattleTeamState", input = "ExitBtnOnClick", 
-args = {}
-})
+function UIBattleTeamState:ExitBtnOnClick(go)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBattleTeamState",
+    input = "ExitBtnOnClick",
+    args = {}
+  })
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTeamState.OnTeamHPChange = function(self, teamHealthBlock)
-  -- function num : 0_3
+function UIBattleTeamState:OnTeamHPChange(teamHealthBlock)
   if teamHealthBlock.isLocalTeam then
     self._curHp = teamHealthBlock.currentHP
     self._maxHp = teamHealthBlock.maxHP
@@ -102,68 +81,48 @@ UIBattleTeamState.OnTeamHPChange = function(self, teamHealthBlock)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTeamState.OnChangeBuff = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBattleTeamState:OnChangeBuff()
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     YIELD(TT)
     if self._sop == nil or tostring(self._sop) == "null" then
-      return 
+      return
     end
     self._teamBuffList = self:OnSortBuffArray(self._teamBuffList)
     local teamBuffCount = #self._teamBuffList
-    ;
-    (self._sop):SpawnObjects("UITeamBuffItem", teamBuffCount)
-    self._buffs = (self._sop):GetAllSpawnList()
-    for i,v in ipairs(self._buffs) do
-      (v:GetGameObject()):SetActive(false)
-      if i <= teamBuffCount then
-        (v:GetGameObject()):SetActive(true)
-        local buffViewInstance = (self._teamBuffList)[i]
+    self._sop:SpawnObjects("UITeamBuffItem", teamBuffCount)
+    self._buffs = self._sop:GetAllSpawnList()
+    for i, v in ipairs(self._buffs) do
+      v:GetGameObject():SetActive(false)
+      if teamBuffCount >= i then
+        v:GetGameObject():SetActive(true)
+        local buffViewInstance = self._teamBuffList[i]
         v:SetData(buffViewInstance)
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTeamState.RefreshHpTxt = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBattleTeamState:RefreshHpTxt()
   local hpPercent = self._curHp / self._maxHp
   if hpPercent <= 0 then
     hpPercent = 0
+  elseif hpPercent <= 0.01 then
+    hpPercent = 1
   else
-    if hpPercent <= 0.01 then
-      hpPercent = 1
-    else
-      hpPercent = (math.floor)(hpPercent * 100 + 0.5)
-    end
+    hpPercent = math.floor(hpPercent * 100 + 0.5)
   end
-  local strCurHp = "<color=#FF6900>" .. (math.modf)(self._curHp) .. "</color>"
-  local strMaxHp = (math.modf)(self._maxHp)
-  local strHpPercent = "<color=#00A1FF>" .. (math.modf)(hpPercent) .. "</color>"
-  ;
-  (self._hpTxt):SetText(strCurHp .. "/" .. strMaxHp .. " (" .. strHpPercent .. "%)")
+  local strCurHp = "<color=#FF6900>" .. math.modf(self._curHp) .. "</color>"
+  local strMaxHp = math.modf(self._maxHp)
+  local strHpPercent = "<color=#00A1FF>" .. math.modf(hpPercent) .. "</color>"
+  self._hpTxt:SetText(strCurHp .. "/" .. strMaxHp .. " (" .. strHpPercent .. "%)")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTeamState.OnSortBuffArray = function(self, buffViewArray)
-  -- function num : 0_6 , upvalues : _ENV
-  (table.sort)(buffViewArray, function(a, b)
-    -- function num : 0_6_0
-    if a:BuffSeq() >= b:BuffSeq() then
-      do return a:BuffID() ~= b:BuffID() end
-      do return a:BuffID() < b:BuffID() end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIBattleTeamState:OnSortBuffArray(buffViewArray)
+  table.sort(buffViewArray, function(a, b)
+    if a:BuffID() == b:BuffID() then
+      return a:BuffSeq() < b:BuffSeq()
     end
-  end
-)
+    return a:BuffID() < b:BuffID()
+  end)
   return buffViewArray
 end
-
-

@@ -1,48 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_pet_backpack/ui_pet_backpack_confirm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetBackPackConfirm", UIController)
 UIPetBackPackConfirm = UIPetBackPackConfirm
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetBackPackConfirm.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetBackPackConfirm:OnShow(uiParams)
   self._titleLabel = self:GetUIComponent("UILocalizationText", "Title")
   self._contentLabel = self:GetUIComponent("UILocalizationText", "Content")
   self._item = uiParams[1]
   self._petId = uiParams[2]
   self._callback = uiParams[3]
   local itemName = ""
-  local itemId = (self._item):GetTemplateID()
-  local itemCfg = (Cfg.cfg_item)[itemId]
+  local itemId = self._item:GetTemplateID()
+  local itemCfg = Cfg.cfg_item[itemId]
   if itemCfg then
-    itemName = (StringTable.Get)(itemCfg.Name)
+    itemName = StringTable.Get(itemCfg.Name)
   end
   local petName = ""
-  local petCfg = (Cfg.cfg_pet)[self._petId]
+  local petCfg = Cfg.cfg_pet[self._petId]
   if petCfg then
-    petName = (StringTable.Get)(petCfg.Name)
+    petName = StringTable.Get(petCfg.Name)
   end
-  ;
-  (self._contentLabel):SetText((StringTable.Get)("str_item_select_pet_tips", itemName, petName))
+  self._contentLabel:SetText(StringTable.Get("str_item_select_pet_tips", itemName, petName))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackConfirm.BtnConfrimOnClick = function(self)
-  -- function num : 0_1
+function UIPetBackPackConfirm:BtnConfrimOnClick()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackConfirm.BtnCancelOnClick = function(self)
-  -- function num : 0_2
+function UIPetBackPackConfirm:BtnCancelOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,82 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/buy/ui_battlepass_cn1_buy_gift_result_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1BuyGiftResultController", UIController)
 UIBattlePassCN1BuyGiftResultController = UIBattlePassCN1BuyGiftResultController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1BuyGiftResultController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaign = (UIActivityBattlePassHelper.LoadDataOnEnter)(TT, res)
+function UIBattlePassCN1BuyGiftResultController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityBattlePassHelper.LoadDataOnEnter(TT, res)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftResultController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._tipsCallback = function(matid, pos)
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+function UIBattlePassCN1BuyGiftResultController:OnShow(uiParams)
+  function self._tipsCallback(matid, pos)
+    UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
   end
-
-  if uiParams then
-    self._type = uiParams[1]
-    if uiParams then
-      self._callback = uiParams[2]
-      ;
-      (UIBattlePassStyleHelper.FitStyle_Widget)(self._campaign, self)
-      self:_SetState(self._type)
-      self:_SetTitle()
-      self:_SetRewards()
-    end
-  end
+  
+  self._type = uiParams and uiParams[1]
+  self._callback = uiParams and uiParams[2]
+  UIBattlePassStyleHelper.FitStyle_Widget(self._campaign, self)
+  self:_SetState(self._type)
+  self:_SetTitle()
+  self:_SetRewards()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftResultController.OnHide = function(self)
-  -- function num : 0_2
+function UIBattlePassCN1BuyGiftResultController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftResultController._SetState = function(self, state)
-  -- function num : 0_3 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-[CampaignGiftType.ECGT_ADVANCED] = {"_Elite"}
-, 
-[CampaignGiftType.ECGT_LUXURY] = {"_Deluxe"}
-, 
-[CampaignGiftType.ECGT_ADDITIONALBUY] = {"_Deluxe"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UIBattlePassCN1BuyGiftResultController:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    [CampaignGiftType.ECGT_ADVANCED] = {"_Elite"},
+    [CampaignGiftType.ECGT_LUXURY] = {"_Deluxe"},
+    [CampaignGiftType.ECGT_ADDITIONALBUY] = {"_Deluxe"}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftResultController._SetTitle = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local tb = {[CampaignGiftType.ECGT_ADVANCED] = "str_activity_battlepass_elite", [CampaignGiftType.ECGT_LUXURY] = "str_activity_battlepass_deluxe", [CampaignGiftType.ECGT_ADDITIONALBUY] = "str_activity_battlepass_deluxe"}
-  local text = (StringTable.Get)(tb[self._type])
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTitle_Elite", text)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTitle_Deluxe", text)
+function UIBattlePassCN1BuyGiftResultController:_SetTitle()
+  local tb = {
+    [CampaignGiftType.ECGT_ADVANCED] = "str_activity_battlepass_elite",
+    [CampaignGiftType.ECGT_LUXURY] = "str_activity_battlepass_deluxe",
+    [CampaignGiftType.ECGT_ADDITIONALBUY] = "str_activity_battlepass_deluxe"
+  }
+  local text = StringTable.Get(tb[self._type])
+  UIWidgetHelper.SetLocalizationText(self, "_txtTitle_Elite", text)
+  UIWidgetHelper.SetLocalizationText(self, "_txtTitle_Deluxe", text)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftResultController._SetRewards = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_BuyGift)(self._campaign)
+function UIBattlePassCN1BuyGiftResultController:_SetRewards()
+  local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_BuyGift(self._campaign)
   local giftId = component:GetFirstGiftIDByType(self._type)
   local rewards = component:GetGiftExtraAwardById(giftId)
-  local items = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIBattlePassCN1ItemIcon", (table.count)(rewards))
-  for i,v in ipairs(items) do
-    local lv = (UIActivityBattlePassHelper.IsExtraLevelReward)(self._campaign, rewards[i])
+  local items = UIWidgetHelper.SpawnObjects(self, "Content", "UIBattlePassCN1ItemIcon", table.count(rewards))
+  for i, v in ipairs(items) do
+    local lv = UIActivityBattlePassHelper.IsExtraLevelReward(self._campaign, rewards[i])
     if lv then
       v:SetData_LvIcon(self._campaign, i, lv)
     else
@@ -85,15 +56,10 @@ UIBattlePassCN1BuyGiftResultController._SetRewards = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1BuyGiftResultController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.info)("UIBattlePassCN1BuyGiftResultController:CloseBtnOnClick")
+function UIBattlePassCN1BuyGiftResultController:CloseBtnOnClick(go)
+  Log.info("UIBattlePassCN1BuyGiftResultController:CloseBtnOnClick")
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
   self:CloseDialog()
 end
-
-

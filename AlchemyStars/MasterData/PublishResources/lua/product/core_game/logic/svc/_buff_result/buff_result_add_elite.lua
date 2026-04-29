@@ -1,39 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_add_elite.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultAddElite", BuffResultBase)
 BuffResultAddElite = BuffResultAddElite
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddElite.Constructor = function(self, eliteIDArray)
-  -- function num : 0_0
+function BuffResultAddElite:Constructor(eliteIDArray)
   self._eliteIDArray = eliteIDArray
   self._newBuffSeqArray = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddElite.GetEliteIDArray = function(self)
-  -- function num : 0_1
+function BuffResultAddElite:GetEliteIDArray()
   return self._eliteIDArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddElite.AddBuffSeq = function(self, buffSeq)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._newBuffSeqArray)[#self._newBuffSeqArray + 1] = buffSeq
+function BuffResultAddElite:AddBuffSeq(buffSeq)
+  self._newBuffSeqArray[#self._newBuffSeqArray + 1] = buffSeq
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddElite.GetAddBuffSeqArray = function(self)
-  -- function num : 0_3
+function BuffResultAddElite:GetAddBuffSeqArray()
   return self._newBuffSeqArray
 end
-
-

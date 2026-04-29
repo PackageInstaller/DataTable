@@ -1,112 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/activity/loginAward/ui_cn7_n36_total_login_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN7N36TotalLoginAwardItem", UICustomWidget)
 UICN7N36TotalLoginAwardItem = UICN7N36TotalLoginAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36TotalLoginAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN7N36TotalLoginAwardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN7N36TotalLoginAwardItem:InitWidget()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._iconRect = self:GetUIComponent("RectTransform", "Icon")
-  self._iconRectDefaultSize = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).y)
+  self._iconRectDefaultSize = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.y)
   self._iconImg = self:GetUIComponent("RawImage", "Icon")
   self._countArea = self:GetUIComponent("Image", "CountArea")
   self._countText = self:GetUIComponent("UILocalizationText", "CountText")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardItem.SetData = function(self, data, itemInfoCallback, ShowLastAward)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN7N36TotalLoginAwardItem:SetData(data, itemInfoCallback, ShowLastAward)
   self._itemId = data.assetid
   self._itemCount = data.count
   self._itemInfoCallback = itemInfoCallback
-  local cfg_item = (Cfg.cfg_item)[self._itemId]
+  local cfg_item = Cfg.cfg_item[self._itemId]
   if not cfg_item then
-    return 
+    return
   end
   local icon = cfg_item.Icon
-  ;
-  (self._icon):LoadImage(icon)
-  ;
-  (self._countText):SetText("x" .. self._itemCount)
-  do
-    if ShowLastAward then
-      local atlas = self:GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._countArea).sprite = atlas:GetSprite("n36_xljqd_di03")
+  self._icon:LoadImage(icon)
+  self._countText:SetText("x" .. self._itemCount)
+  if ShowLastAward then
+    local atlas = self:GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
+    self._countArea.sprite = atlas:GetSprite("n36_xljqd_di03")
+  end
+  local isHead = false
+  if self._itemId >= 3750000 and self._itemId <= 3759999 then
+    isHead = true
+  end
+  if isHead then
+    local whRate = 1
+    if self._itemId >= 3751000 and self._itemId <= 3751999 then
+      whRate = 0.8421052631578947
+    elseif self._itemId >= 3752000 and self._itemId <= 3752999 then
+      whRate = 0.6388888888888888
+    elseif self._itemId >= 3753000 and self._itemId <= 3753999 then
+      whRate = 0.6388888888888888
     end
-    local isHead = false
-    if self._itemId >= 3750000 and self._itemId <= 3759999 then
-      isHead = true
-    end
-    if isHead then
-      local whRate = 1
-      if self._itemId >= 3751000 and self._itemId <= 3751999 then
-        whRate = 0.84210526315789
-      else
-        if self._itemId >= 3752000 and self._itemId <= 3752999 then
-          whRate = 0.63888888888889
-        else
-          if self._itemId >= 3753000 and self._itemId <= 3753999 then
-            whRate = 0.63888888888889
-          end
-        end
-      end
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._iconRect).sizeDelta = Vector2(((self._iconRect).sizeDelta).x, ((self._iconRect).sizeDelta).x * whRate)
-    else
-      do
-        -- DECOMPILER ERROR at PC83: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self._iconRect).sizeDelta = self._iconRectDefaultSize
-      end
-    end
+    self._iconRect.sizeDelta = Vector2(self._iconRect.sizeDelta.x, self._iconRect.sizeDelta.x * whRate)
+  else
+    self._iconRect.sizeDelta = self._iconRectDefaultSize
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardItem._SetAlpha = function(self, alpha)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._iconImg).color = Color(((self._iconImg).color).r, ((self._iconImg).color).g, ((self._iconImg).color).b, alpha)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._countArea).color = Color(((self._countArea).color).r, ((self._countArea).color).g, ((self._countArea).color).b, alpha)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._countText).color = Color(((self._countText).color).r, ((self._countText).color).g, ((self._countText).color).b, alpha)
+function UICN7N36TotalLoginAwardItem:_SetAlpha(alpha)
+  self._iconImg.color = Color(self._iconImg.color.r, self._iconImg.color.g, self._iconImg.color.b, alpha)
+  self._countArea.color = Color(self._countArea.color.r, self._countArea.color.g, self._countArea.color.b, alpha)
+  self._countText.color = Color(self._countText.color.r, self._countText.color.g, self._countText.color.b, alpha)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36TotalLoginAwardItem.IconOnClick = function(self, go)
-  -- function num : 0_4
+function UICN7N36TotalLoginAwardItem:IconOnClick(go)
   if self._itemInfoCallback then
     local tr = go.transform
     local pos = tr.position
-    ;
-    (self._itemInfoCallback)(self._itemId, pos)
+    self._itemInfoCallback(self._itemId, pos)
   end
 end
-
-

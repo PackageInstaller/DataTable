@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/level/ui_n22_entrust_level_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustLevelPlayer", UICustomWidget)
 UIN22EntrustLevelPlayer = UIN22EntrustLevelPlayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustLevelPlayer.PlayAnim = function(self, animName, delay, duration, callback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN22EntrustLevelPlayer:PlayAnim(animName, delay, duration, callback)
   local widgetName = "_anim"
   local hideWidget = "_anim"
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, widgetName, hideWidget, animName, delay, duration, callback)
+  UIWidgetHelper.PlayAnimationInSequence(self, widgetName, hideWidget, animName, delay, duration, callback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelPlayer.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN22EntrustLevelPlayer:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelPlayer.SetShow = function(self, show)
-  -- function num : 0_2
-  (self:GetGameObject()):SetActive(show)
+function UIN22EntrustLevelPlayer:SetShow(show)
+  self:GetGameObject():SetActive(show)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelPlayer.SetData = function(self, component, nodeId)
-  -- function num : 0_3
+function UIN22EntrustLevelPlayer:SetData(component, nodeId)
   self:SetShow(true)
   local flag = self._nodeId ~= nodeId
   self._component = component
   self._nodeId = nodeId
   self:_SetPos(nodeId)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustLevelPlayer._SetPos = function(self, nodeId)
-  -- function num : 0_4 , upvalues : _ENV
-  local pos = (self._component):GetEventPointPos(nodeId)
-  local rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UIN22EntrustLevelPlayer:_SetPos(nodeId)
+  local pos = self._component:GetEventPointPos(nodeId)
+  local rect = self:GetGameObject():GetComponent("RectTransform")
   rect.anchorMax = Vector2(0, 0.5)
   rect.anchorMin = Vector2(0, 0.5)
   rect.sizeDelta = Vector2.zero
   rect.anchoredPosition = pos
 end
-
-

@@ -1,86 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/match/serial_auto_fight_jump_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SerialAutoFightJumpData", Object)
 SerialAutoFightJumpData = SerialAutoFightJumpData
-local SerialAutoFight_JumpTo = {MainLine = 1, Resource = 2, Aircraft = 3, Tower = 4}
+local SerialAutoFight_JumpTo = {
+  MainLine = 1,
+  Resource = 2,
+  Aircraft = 3,
+  Tower = 4
+}
 _enum("SerialAutoFight_JumpTo", SerialAutoFight_JumpTo)
-local SerialAutoFight_TrackStep = {Pet = 1, From = 2, Item = 3, Jump = 4, Stage = 5, Fin = 6}
+local SerialAutoFight_TrackStep = {
+  Pet = 1,
+  From = 2,
+  Item = 3,
+  Jump = 4,
+  Stage = 5,
+  Fin = 6
+}
 _enum("SerialAutoFight_TrackStep", SerialAutoFight_TrackStep)
--- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
 
-SerialAutoFightJumpData.GetModule = function(self, gameModuleProto)
-  -- function num : 0_0 , upvalues : _ENV
-  return (GameGlobal.GetModule)(gameModuleProto)
+function SerialAutoFightJumpData:GetModule(gameModuleProto)
+  return GameGlobal.GetModule(gameModuleProto)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Constructor = function(self)
-  -- function num : 0_1
+function SerialAutoFightJumpData:Constructor()
   self:Jump_Clear()
   self:Track_Init()
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Dispose = function(self)
-  -- function num : 0_2
+function SerialAutoFightJumpData:Dispose()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.JumpBack = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (string.isnullorempty)((self._jumpFrom).fromUi) then
+function SerialAutoFightJumpData:JumpBack()
+  if string.isnullorempty(self._jumpFrom.fromUi) then
     return false
   end
-  local petId = (self._jumpFrom).petId
-  local uiName = (self._jumpFrom).fromUi
-  local uiPetModule = (GameGlobal.GetUIModule)(PetModule)
+  local petId = self._jumpFrom.petId
+  local uiName = self._jumpFrom.fromUi
+  local uiPetModule = GameGlobal.GetUIModule(PetModule)
   uiPetModule:JumpToPetUI(petId, uiName)
-  local str = (UILogHelper.ParamsFormatString)({petId = petId, uiName = uiName})
-  ;
-  (Log.info)("SerialAutoFightJumpData:JumpBack() ", str)
+  local str = UILogHelper.ParamsFormatString({petId = petId, uiName = uiName})
+  Log.info("SerialAutoFightJumpData:JumpBack() ", str)
   return true
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Jump_Clear = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.info)("SerialAutoFightJumpData:Jump_Clear()")
-  self._jumpTo = {toType = 0, 
-data = {}
-}
-  self._jumpFrom = {fromUi = "", petId = 0, itemId = 0, itemCondition = 0}
+function SerialAutoFightJumpData:Jump_Clear()
+  Log.info("SerialAutoFightJumpData:Jump_Clear()")
+  self._jumpTo = {
+    toType = 0,
+    data = {}
+  }
+  self._jumpFrom = {
+    fromUi = "",
+    petId = 0,
+    itemId = 0,
+    itemCondition = 0
+  }
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.IsShowTargetItem = function(self, data)
-  -- function num : 0_5 , upvalues : _ENV
+function SerialAutoFightJumpData:IsShowTargetItem(data)
   if self._bForceShowTarget then
     return true
   end
-  if (self._jumpFrom).itemId == nil or (self._jumpFrom).itemCondition == nil then
+  if self._jumpFrom.itemId == nil or self._jumpFrom.itemCondition == nil then
     return false
   end
   if self._jumpTo == nil then
     return false
   end
-  local targetType = (self._jumpTo).toType
-  local targetData = (self._jumpTo).data
-  local isSame = (table.equal)(targetData, data)
+  local targetType = self._jumpTo.toType
+  local targetData = self._jumpTo.data
+  local isSame = table.equal(targetData, data)
   return isSame
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.SetForceShowTarget = function(self, itemId, itemCondition)
-  -- function num : 0_6
+function SerialAutoFightJumpData:SetForceShowTarget(itemId, itemCondition)
   self._forceShowItmeId = itemId
   self._forceShowItemCondition = itemCondition
   if not itemId or not itemCondition then
@@ -90,197 +82,138 @@ SerialAutoFightJumpData.SetForceShowTarget = function(self, itemId, itemConditio
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.GetTargetItem = function(self)
-  -- function num : 0_7
+function SerialAutoFightJumpData:GetTargetItem()
   if self._bForceShowTarget then
     return self._forceShowItmeId, self._forceShowItemCondition
   end
-  if self._jumpFrom then
-    local itemId = (self._jumpFrom).itemId
-  end
-  if self._jumpFrom then
-    local itemCondition = (self._jumpFrom).itemCondition
-  end
+  local itemId = self._jumpFrom and self._jumpFrom.itemId
+  local itemCondition = self._jumpFrom and self._jumpFrom.itemCondition
   return itemId, itemCondition
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.OpenOptionAgain = function(self, useNew)
-  -- function num : 0_8 , upvalues : _ENV
+function SerialAutoFightJumpData:OpenOptionAgain(useNew)
   local option = self._option
   if option then
     option.toIndex = 2
     local uiName = useNew and "UISerialAutoFightOptionNew" or "UISerialAutoFightOption"
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog(uiName, option)
+    GameGlobal.UIStateManager():ShowDialog(uiName, option)
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Track_Init = function(self)
-  -- function num : 0_9 , upvalues : _ENV, SerialAutoFight_TrackStep
-  (Log.info)("SerialAutoFightJumpData:Track_Init()")
-  self._track = {step = SerialAutoFight_TrackStep.Pet, 
-_jumpFrom = {}
-, 
-_jumpTo = {}
-}
+function SerialAutoFightJumpData:Track_Init()
+  Log.info("SerialAutoFightJumpData:Track_Init()")
+  self._track = {
+    step = SerialAutoFight_TrackStep.Pet,
+    _jumpFrom = {},
+    _jumpTo = {}
+  }
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Track_Pet = function(self, petId)
-  -- function num : 0_10 , upvalues : _ENV, SerialAutoFight_TrackStep
-  local str = (UILogHelper.ParamsFormatString)({petId = petId})
-  ;
-  (Log.info)("SerialAutoFightJumpData:Track_From() ", str)
+function SerialAutoFightJumpData:Track_Pet(petId)
+  local str = UILogHelper.ParamsFormatString({petId = petId})
+  Log.info("SerialAutoFightJumpData:Track_From() ", str)
   local step = SerialAutoFight_TrackStep.Pet
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
   if self:_TrackCheck(step, petId) then
-    ((self._track)._jumpFrom).petId = petId
+    self._track._jumpFrom.petId = petId
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Track_From = function(self, fromUi)
-  -- function num : 0_11 , upvalues : _ENV, SerialAutoFight_TrackStep
-  local str = (UILogHelper.ParamsFormatString)({fromUi = fromUi})
-  ;
-  (Log.info)("SerialAutoFightJumpData:Track_From() ", str)
+function SerialAutoFightJumpData:Track_From(fromUi)
+  local str = UILogHelper.ParamsFormatString({fromUi = fromUi})
+  Log.info("SerialAutoFightJumpData:Track_From() ", str)
   local step = SerialAutoFight_TrackStep.From
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
   if self:_TrackCheck(step, fromUi) then
-    ((self._track)._jumpFrom).fromUi = fromUi
+    self._track._jumpFrom.fromUi = fromUi
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Track_Item = function(self, itemId, itemCondition)
-  -- function num : 0_12 , upvalues : _ENV, SerialAutoFight_TrackStep
+function SerialAutoFightJumpData:Track_Item(itemId, itemCondition)
   if itemId ~= nil and itemCondition == nil then
-    return 
+    return
   end
-  local str = (UILogHelper.ParamsFormatString)({itemId = itemId, itemCondition = itemCondition})
-  ;
-  (Log.info)("SerialAutoFightJumpData:Track_Item() ", str)
+  local str = UILogHelper.ParamsFormatString({itemId = itemId, itemCondition = itemCondition})
+  Log.info("SerialAutoFightJumpData:Track_Item() ", str)
   local step = SerialAutoFight_TrackStep.Item
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
   if self:_TrackCheck(step, itemId) then
-    ((self._track)._jumpFrom).itemId = itemId
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self._track)._jumpFrom).itemCondition = itemCondition
+    self._track._jumpFrom.itemId = itemId
+    self._track._jumpFrom.itemCondition = itemCondition
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Track_Jump = function(self, idJump)
-  -- function num : 0_13 , upvalues : _ENV, SerialAutoFight_TrackStep
-  local str = (UILogHelper.ParamsFormatString)({idJump = idJump})
-  ;
-  (Log.info)("SerialAutoFightJumpData:Track_Jump() ", str)
+function SerialAutoFightJumpData:Track_Jump(idJump)
+  local str = UILogHelper.ParamsFormatString({idJump = idJump})
+  Log.info("SerialAutoFightJumpData:Track_Jump() ", str)
   local toType = self:_CalcJumpType(idJump)
   local step = SerialAutoFight_TrackStep.Jump
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
   if self:_TrackCheck(step, toType) then
-    ((self._track)._jumpTo).toType = toType
+    self._track._jumpTo.toType = toType
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Track_Stage = function(self, data)
-  -- function num : 0_14 , upvalues : _ENV, SerialAutoFight_TrackStep
-  if data then
-    local nodeId = data.nodeId
-  end
-  if data then
-    local mainType = data.mainType
-  end
-  local str = (UILogHelper.ParamsFormatString)({nodeId = nodeId, mainType = mainType})
-  ;
-  (Log.info)("SerialAutoFightJumpData:Track_Stage() ", str)
+function SerialAutoFightJumpData:Track_Stage(data)
+  local nodeId = data and data.nodeId
+  local mainType = data and data.mainType
+  local str = UILogHelper.ParamsFormatString({nodeId = nodeId, mainType = mainType})
+  Log.info("SerialAutoFightJumpData:Track_Stage() ", str)
   local step = SerialAutoFight_TrackStep.Stage
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
   if self:_TrackCheck(step, data) then
-    ((self._track)._jumpTo).data = data
-    self._jumpFrom = (self._track)._jumpFrom
-    self._jumpTo = (self._track)._jumpTo
+    self._track._jumpTo.data = data
+    self._jumpFrom = self._track._jumpFrom
+    self._jumpTo = self._track._jumpTo
     self:Track_Init()
   end
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.Track_Option = function(self, data)
-  -- function num : 0_15
+function SerialAutoFightJumpData:Track_Option(data)
   self._option = data
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.CreateTrackData_MainLine = function(self, nodeId, chapterId, reach, again)
-  -- function num : 0_16
-  return {nodeId = nodeId, chapterId = chapterId, reach = reach, again = again}
+function SerialAutoFightJumpData:CreateTrackData_MainLine(nodeId, chapterId, reach, again)
+  return {
+    nodeId = nodeId,
+    chapterId = chapterId,
+    reach = reach,
+    again = again
+  }
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData.CreateTrackData_Resource = function(self, mainType, gotoSubType)
-  -- function num : 0_17
+function SerialAutoFightJumpData:CreateTrackData_Resource(mainType, gotoSubType)
   return {mainType = mainType, gotoSubType = gotoSubType}
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData._TrackCheck = function(self, step, data)
-  -- function num : 0_18 , upvalues : _ENV
+function SerialAutoFightJumpData:_TrackCheck(step, data)
   local res = false
   local dir = data ~= nil and 1 or 0
-  local forward = dir == 1 and step == (self._track).step
-  local backward = dir == 0 and step == (self._track).step - 1
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R7 in 'UnsetPending'
-
+  local forward = dir == 1 and step == self._track.step
+  local backward = dir == 0 and step == self._track.step - 1
   if forward or backward then
-    (self._track).step = step + dir
+    self._track.step = step + dir
     res = true
   end
-  local str = (UILogHelper.ParamsFormatString)({forward = forward, backward = backward, res = res})
-  ;
-  (Log.info)("SerialAutoFightJumpData:_TrackCheck() ", str)
-  do return res end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  local str = UILogHelper.ParamsFormatString({
+    forward = forward,
+    backward = backward,
+    res = res
+  })
+  Log.info("SerialAutoFightJumpData:_TrackCheck() ", str)
+  return res
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R2 in 'UnsetPending'
-
-SerialAutoFightJumpData._CalcJumpType = function(self, idJump)
-  -- function num : 0_19 , upvalues : _ENV, SerialAutoFight_JumpTo
+function SerialAutoFightJumpData:_CalcJumpType(idJump)
   if not idJump then
-    return 
+    return
   end
-  local cfg = (Cfg.cfg_jump)[idJump]
+  local cfg = Cfg.cfg_jump[idJump]
   if cfg == nil then
-    return 
+    return
   end
   local jumpType = cfg.JumpID
-  ;
-  (Log.info)("SerialAutoFightJumpData:_CalcJumpType() UIJumpType == ", jumpType)
-  local tb = {[UIJumpType.UI_JumpMission] = SerialAutoFight_JumpTo.MainLine, [UIJumpType.UI_JumpResDungeon] = SerialAutoFight_JumpTo.Resource, [UIJumpType.UI_JumpAircraft] = nil, [UIJumpType.UI_JumpTowerLayer] = nil}
+  Log.info("SerialAutoFightJumpData:_CalcJumpType() UIJumpType == ", jumpType)
+  local tb = {
+    [UIJumpType.UI_JumpMission] = SerialAutoFight_JumpTo.MainLine,
+    [UIJumpType.UI_JumpResDungeon] = SerialAutoFight_JumpTo.Resource,
+    [UIJumpType.UI_JumpAircraft] = nil,
+    [UIJumpType.UI_JumpTowerLayer] = nil
+  }
   return tb[jumpType]
 end
-
-

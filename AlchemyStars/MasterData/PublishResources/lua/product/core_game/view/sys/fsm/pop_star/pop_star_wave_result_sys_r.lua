@@ -1,24 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/pop_star/pop_star_wave_result_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pop_star_wave_result_system")
 _class("PopStarWaveResultSystem_Render", PopStarWaveResultSystem)
 PopStarWaveResultSystem_Render = PopStarWaveResultSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarWaveResultSystem_Render._DoRenderNotifyWaveEnd = function(self, TT, waveNum)
-  -- function num : 0_0 , upvalues : _ENV
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTWaveTurnEnd:New(waveNum))
+function PopStarWaveResultSystem_Render:_DoRenderNotifyWaveEnd(TT, waveNum)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTWaveTurnEnd:New(waveNum))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarWaveResultSystem_Render._DoRenderHandleTurnBattleResult = function(self, TT, victory)
-  -- function num : 0_1 , upvalues : _ENV
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("BattleResult", {victory and 1 or 0}, false, true)
+function PopStarWaveResultSystem_Render:_DoRenderHandleTurnBattleResult(TT, victory)
+  GameGlobal.UAReportForceGuideEvent("BattleResult", {
+    victory and 1 or 0
+  }, false, true)
 end
-
-

@@ -1,54 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_credits/ui_credits_eff_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICreditsEffItem", UICustomWidget)
 UICreditsEffItem = UICreditsEffItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICreditsEffItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.tran = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Transform))
+function UICreditsEffItem:OnShow()
+  self.tran = self:GetGameObject():GetComponent(typeof(UnityEngine.Transform))
   self._effectLoader = self:GetUIComponent("EffectLoader", "eff")
-  self.tranEff = (self._effectLoader).transform
+  self.tranEff = self._effectLoader.transform
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICreditsEffItem.OnHide = function(self)
-  -- function num : 0_1
+function UICreditsEffItem:OnHide()
   if self._effectLoader then
-    (self._effectLoader):DestroyCurrentEffect()
+    self._effectLoader:DestroyCurrentEffect()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICreditsEffItem.Flush = function(self, txt)
-  -- function num : 0_2 , upvalues : _ENV
-  if not (string.isnullorempty)(txt.text) or self._effectLoader then
+function UICreditsEffItem:Flush(txt)
+  if string.isnullorempty(txt.text) then
+  elseif self._effectLoader then
     self.txtTran = txt.transform
-    ;
-    (self._effectLoader):LoadEffect("uieff_UICredits_RTMask")
-    if (self.tranEff).childCount > 0 then
-      local rect = ((self.tranEff):GetChild(0)):GetComponent(typeof(UnityEngine.RectTransform))
+    self._effectLoader:LoadEffect("uieff_UICredits_RTMask")
+    if self.tranEff.childCount > 0 then
+      local rect = self.tranEff:GetChild(0):GetComponent(typeof(UnityEngine.RectTransform))
       if rect then
-        rect.sizeDelta = Vector2(txt.preferredWidth * 2 + 250, (rect.sizeDelta).y)
+        rect.sizeDelta = Vector2(txt.preferredWidth * 2 + 250, rect.sizeDelta.y)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICreditsEffItem.OnUpdate = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
+function UICreditsEffItem:OnUpdate()
   if self.txtTran then
-    (self.tran).position = (self.txtTran).position
+    self.tran.position = self.txtTran.position
   end
 end
-
-

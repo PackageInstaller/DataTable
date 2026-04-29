@@ -1,28 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_pet_power_for_overdraw.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangePetPowerForOverdraw", BuffLogicBase)
 BuffLogicChangePetPowerForOverdraw = BuffLogicChangePetPowerForOverdraw
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangePetPowerForOverdraw.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangePetPowerForOverdraw:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
-  if not logicParam.checkSkillIDList then
-    self._checkSkillIDList = {}
-  end
+  self._checkSkillIDList = logicParam.checkSkillIDList or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetPowerForOverdraw.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangePetPowerForOverdraw:DoLogic()
   local petPowerStateList = {}
-  local petEntity = (self._buffInstance):Entity()
+  local petEntity = self._buffInstance:Entity()
   if not petEntity then
-    return 
+    return
   end
   self:_OnChangePetPowerForOverdraw(petEntity, petPowerStateList)
   if next(petPowerStateList) then
@@ -31,10 +19,7 @@ BuffLogicChangePetPowerForOverdraw.DoLogic = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangePetPowerForOverdraw._OnChangePetPowerForOverdraw = function(self, petEntity, petPowerStateList)
-  -- function num : 0_2
+function BuffLogicChangePetPowerForOverdraw:_OnChangePetPowerForOverdraw(petEntity, petPowerStateList)
   local petPstIDComponent = petEntity:PetPstID()
   local petPstID = petPstIDComponent:GetPstID()
   local curAttributeCmpt = petEntity:Attributes()
@@ -44,55 +29,40 @@ BuffLogicChangePetPowerForOverdraw._OnChangePetPowerForOverdraw = function(self,
   local notRefreshView = false
   local ready = false
   local cancelReady = false
-  local blsvc = (self._world):GetService("BuffLogic")
+  local blsvc = self._world:GetService("BuffLogic")
   local requireNTPowerReady = false
   local curRoundHadCastTargetSkill = false
-  local battleStatComponent = (self._world):BattleStat()
+  local battleStatComponent = self._world:BattleStat()
   local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID)
   local curRound = battleStatComponent:GetLevelTotalRoundCount()
   if lastDoActiveSkillRound and lastDoActiveSkillRound == curRound then
     curRoundHadCastTargetSkill = true
   end
   local curRoundDoActiveSkillTimes = battleStatComponent:GetCurRoundDoActiveSkillTimes(petPstID)
-  if curRoundHadCastTargetSkill and curRoundDoActiveSkillTimes >= 2 then
+  if curRoundHadCastTargetSkill and 2 <= curRoundDoActiveSkillTimes then
     notRefreshView = true
   end
-  if curAttributeCmpt:GetAttribute("Ready") == 1 and newPower > 0 then
+  if curAttributeCmpt:GetAttribute("Ready") == 1 and 0 < newPower then
     blsvc:ChangePetActiveSkillReady(petEntity, 0)
     cancelReady = true
   end
   if newPower < 0 then
     newPower = 0
   end
-  ;
-  ((self._world):GetSyncLogger()):Trace({key = "BuffLogicChangePetPowerForOverdraw", petEntityID = petEntity:GetID(), newPower = newPower})
+  self._world:GetSyncLogger():Trace({
+    key = "BuffLogicChangePetPowerForOverdraw",
+    petEntityID = petEntity:GetID(),
+    newPower = newPower
+  })
   if not petPowerStateList[petPstID] then
     petPowerStateList[petPstID] = {}
   end
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (petPowerStateList[petPstID]).petEntityID = petEntity:GetID()
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (petPowerStateList[petPstID]).petPstID = petPstID
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (petPowerStateList[petPstID]).power = newPower
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (petPowerStateList[petPstID]).ready = ready
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (petPowerStateList[petPstID]).cancelReady = cancelReady
-  -- DECOMPILER ERROR at PC88: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (petPowerStateList[petPstID]).requireNTPowerReady = requireNTPowerReady
+  petPowerStateList[petPstID].petEntityID = petEntity:GetID()
+  petPowerStateList[petPstID].petPstID = petPstID
+  petPowerStateList[petPstID].power = newPower
+  petPowerStateList[petPstID].ready = ready
+  petPowerStateList[petPstID].cancelReady = cancelReady
+  petPowerStateList[petPstID].requireNTPowerReady = requireNTPowerReady
   self:PrintBuffLogicLog("ChangePetPowerForOverdraw() pet entity=", petEntity:GetID(), " power=", newPower)
   curAttributeCmpt:Modify("Power", newPower)
   if notRefreshView == true then
@@ -100,5 +70,3 @@ BuffLogicChangePetPowerForOverdraw._OnChangePetPowerForOverdraw = function(self,
   end
   return true
 end
-
-

@@ -1,38 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/act_check_n15_chess_monster_can_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckN15ChessMonsterCanMove", AINewNode)
 ActionCheckN15ChessMonsterCanMove = ActionCheckN15ChessMonsterCanMove
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckN15ChessMonsterCanMove.Constructor = function(self)
-  -- function num : 0_0
+function ActionCheckN15ChessMonsterCanMove:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCheckN15ChessMonsterCanMove.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionCheckN15ChessMonsterCanMove:OnUpdate()
   local ownEntity = self.m_entityOwn
   local bodyArea = ownEntity:BodyArea()
   if bodyArea:GetAreaCount() > 1 then
     return AINewNodeStatus.Failure
   end
-  local element = (ownEntity:Element()):GetPrimaryType()
+  local element = ownEntity:Element():GetPrimaryType()
   local myPos = ownEntity:GetGridPosition()
-  local board = ((self._world):GetBoardEntity()):Board()
+  local board = self._world:GetBoardEntity():Board()
   if board:GetPieceType(myPos) ~= element and board:GetPieceType(myPos) ~= PieceType.Any then
     return AINewNodeStatus.Failure
   end
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local aroundPosList = utilScopeSvc:GetPosAroundSameTypePosList(myPos, element)
   if #aroundPosList == 0 then
     return AINewNodeStatus.Failure
   end
   return AINewNodeStatus.Success
 end
-
-

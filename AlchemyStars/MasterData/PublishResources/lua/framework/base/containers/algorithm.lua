@@ -1,47 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/algorithm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 Algorithm = Algorithm
 _staticClass("Algorithm")
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
-
 Algorithm.COMPARE_LESS = 1
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
 Algorithm.COMPARE_GREATER = 2
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
 Algorithm.COMPARE_CUSTOM = 3
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
 
-Algorithm.LessComparer = function(object1, object2)
-  -- function num : 0_0
+function Algorithm.LessComparer(object1, object2)
   if object1 < object2 then
     return 1
+  elseif object2 < object1 then
+    return -1
   else
-    if object2 < object1 then
-      return -1
-    else
-      return 0
-    end
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-Algorithm.GreaterComparer = function(object1, object2)
-  -- function num : 0_1
+function Algorithm.GreaterComparer(object1, object2)
   if object2 < object1 then
     return 1
+  elseif object1 < object2 then
+    return -1
   else
-    if object1 < object2 then
-      return -1
-    else
-      return 0
-    end
+    return 0
   end
 end
-
-

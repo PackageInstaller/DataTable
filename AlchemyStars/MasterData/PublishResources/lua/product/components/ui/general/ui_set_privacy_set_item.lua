@@ -1,204 +1,128 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_privacy_set_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetPrivacySetItem", UICustomWidget)
 UISetPrivacySetItem = UISetPrivacySetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetPrivacySetItem.OnShow = function(self)
-  -- function num : 0_0
+function UISetPrivacySetItem:OnShow()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._btn = self:GetUIComponent("UILocalizationText", "Btn")
   self._agreeBtn = self:GetGameObject("AgreeBtn")
   self._privacySetType = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetPrivacySetItem.SetData = function(self, privacySetType)
-  -- function num : 0_1 , upvalues : _ENV
+function UISetPrivacySetItem:SetData(privacySetType)
   self._privacySetType = privacySetType
   if not self._privacySetType then
-    return 
+    return
   end
-  ;
-  (self._agreeBtn):SetActive(true)
+  self._agreeBtn:SetActive(true)
   local name = ""
   if self._privacySetType == UISetPrivacySetType.ParentAgree then
-    (self._agreeBtn):SetActive(false)
-    name = (StringTable.Get)("str_set_parent_agree_name")
-  else
-    if self._privacySetType == UISetPrivacySetType.TranlateProto then
-      name = (StringTable.Get)("str_set_translate_proto_name")
-    else
-      if self._privacySetType == UISetPrivacySetType.PrivacyProcy then
-        name = (StringTable.Get)("str_set_privacy_proto_name")
-      else
-        if self._privacySetType == UISetPrivacySetType.UserProcy then
-          name = (StringTable.Get)("str_set_user_proto_name")
-        end
-      end
-    end
+    self._agreeBtn:SetActive(false)
+    name = StringTable.Get("str_set_parent_agree_name")
+  elseif self._privacySetType == UISetPrivacySetType.TranlateProto then
+    name = StringTable.Get("str_set_translate_proto_name")
+  elseif self._privacySetType == UISetPrivacySetType.PrivacyProcy then
+    name = StringTable.Get("str_set_privacy_proto_name")
+  elseif self._privacySetType == UISetPrivacySetType.UserProcy then
+    name = StringTable.Get("str_set_user_proto_name")
   end
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._name).text = name
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._btn).text = (StringTable.Get)("str_set_prvacy_tips1", name)
+  self._name.text = name
+  self._btn.text = StringTable.Get("str_set_prvacy_tips1", name)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetPrivacySetItem.AgreeBtnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISetPrivacySetItem:AgreeBtnOnClick()
   if not self._privacySetType then
-    return 
+    return
   end
   if not self:CanCancelAgree() then
-    return 
+    return
   end
   if self._privacySetType == UISetPrivacySetType.ParentAgree then
-    self:ShowDialog("UISetPrivacySetTipsController", (StringTable.Get)("str_set_privacy_tips_parent_agree_tips"), function()
-    -- function num : 0_2_0 , upvalues : self
-    self:CancelAgree()
-    self:Logout()
-  end
-)
-  else
-    if self._privacySetType == UISetPrivacySetType.TranlateProto then
-      self:ShowDialog("UISetPrivacySetTipsController", (StringTable.Get)("str_set_privacy_tips_translate_proto_tips"), function()
-    -- function num : 0_2_1 , upvalues : self, _ENV
-    self:CancelAgree()
-    ;
-    (SDKProxy:GetInstance()):CancleEEA()
-    self:Logout()
-  end
-)
-    else
-      if self._privacySetType == UISetPrivacySetType.PrivacyProcy then
-        self:ShowDialog("UISetPrivacySetTipsController", (StringTable.Get)("str_set_privacy_tips_privacy_proto_tips"), function()
-    -- function num : 0_2_2 , upvalues : self, _ENV
-    self:CancelAgree()
-    ;
-    (SDKProxy:GetInstance()):CancelPrivacyProto()
-    self:Logout()
-  end
-)
-      else
-        if self._privacySetType == UISetPrivacySetType.UserProcy then
-          self:ShowDialog("UISetPrivacySetTipsController", (StringTable.Get)("str_set_privacy_tips_user_proto_tips"), function()
-    -- function num : 0_2_3 , upvalues : self, _ENV
-    self:CancelAgree()
-    ;
-    (SDKProxy:GetInstance()):CancelUserProto()
-    self:Logout()
-  end
-)
-        end
-      end
-    end
+    self:ShowDialog("UISetPrivacySetTipsController", StringTable.Get("str_set_privacy_tips_parent_agree_tips"), function()
+      self:CancelAgree()
+      self:Logout()
+    end)
+  elseif self._privacySetType == UISetPrivacySetType.TranlateProto then
+    self:ShowDialog("UISetPrivacySetTipsController", StringTable.Get("str_set_privacy_tips_translate_proto_tips"), function()
+      self:CancelAgree()
+      SDKProxy:GetInstance():CancleEEA()
+      self:Logout()
+    end)
+  elseif self._privacySetType == UISetPrivacySetType.PrivacyProcy then
+    self:ShowDialog("UISetPrivacySetTipsController", StringTable.Get("str_set_privacy_tips_privacy_proto_tips"), function()
+      self:CancelAgree()
+      SDKProxy:GetInstance():CancelPrivacyProto()
+      self:Logout()
+    end)
+  elseif self._privacySetType == UISetPrivacySetType.UserProcy then
+    self:ShowDialog("UISetPrivacySetTipsController", StringTable.Get("str_set_privacy_tips_user_proto_tips"), function()
+      self:CancelAgree()
+      SDKProxy:GetInstance():CancelUserProto()
+      self:Logout()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetPrivacySetItem.CancelAgree = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISetPrivacySetItem:CancelAgree()
   local key = self:GetKey()
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local nowTime = (math.floor)(timeModule:GetServerTime() / 1000)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, nowTime)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local nowTime = math.floor(timeModule:GetServerTime() / 1000)
+  UnityEngine.PlayerPrefs.SetInt(key, nowTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetPrivacySetItem.CanCancelAgree = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISetPrivacySetItem:CanCancelAgree()
   local key = self:GetKey()
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local cdTime = ((Cfg.cfg_global).ui_set_cancel_agree_proto_cd).IntValue
-  local startTime = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local nowTime = (math.floor)(timeModule:GetServerTime() / 1000)
+  local cdTime = Cfg.cfg_global.ui_set_cancel_agree_proto_cd.IntValue
+  local startTime = UnityEngine.PlayerPrefs.GetInt(key)
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local nowTime = math.floor(timeModule:GetServerTime() / 1000)
   local seconds = nowTime - startTime
-  local min = (math.floor)(seconds / 60)
+  local min = math.floor(seconds / 60)
   if cdTime <= min then
     return true
   end
   local remaindTime = cdTime - min
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_set_cancel_agree_proto_in_cd", remaindTime))
+  ToastManager.ShowToast(StringTable.Get("str_set_cancel_agree_proto_in_cd", remaindTime))
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetPrivacySetItem.GetKey = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISetPrivacySetItem:GetKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   return "CANCEL_AGREE_SET_PROTOCOL" .. pstId .. self._privacySetType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetPrivacySetItem.BtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISetPrivacySetItem:BtnOnClick()
   if not self._privacySetType then
-    return 
+    return
   end
   if self._privacySetType == UISetPrivacySetType.ParentAgree then
-    ((UnityEngine.Application).OpenURL)((StringTable.Get)("str_set_parent_agree_url"))
-  else
-    if self._privacySetType == UISetPrivacySetType.TranlateProto then
-      ((UnityEngine.Application).OpenURL)((StringTable.Get)("str_set_translate_proto_url"))
+    UnityEngine.Application.OpenURL(StringTable.Get("str_set_parent_agree_url"))
+  elseif self._privacySetType == UISetPrivacySetType.TranlateProto then
+    UnityEngine.Application.OpenURL(StringTable.Get("str_set_translate_proto_url"))
+  elseif self._privacySetType == UISetPrivacySetType.PrivacyProcy then
+    local gv = HelperProxy:GetInstance():GetGameVersion()
+    if gv == GameVersionType.INTL then
+      UnityEngine.Application.OpenURL(StringTable.Get("str_set_privacy_proto_url"))
+    elseif gv == GameVersionType.HMT then
+      UnityEngine.Application.OpenURL(StringTable.Get("str_set_privacy_proto_hmt_url"))
     else
-      if self._privacySetType == UISetPrivacySetType.PrivacyProcy then
-        local gv = (HelperProxy:GetInstance()):GetGameVersion()
-        if gv == GameVersionType.INTL then
-          ((UnityEngine.Application).OpenURL)((StringTable.Get)("str_set_privacy_proto_url"))
-        else
-          if gv == GameVersionType.HMT then
-            ((UnityEngine.Application).OpenURL)((StringTable.Get)("str_set_privacy_proto_hmt_url"))
-          else
-            ;
-            ((UnityEngine.Application).OpenURL)((StringTable.Get)("str_set_privacy_proto_us_url"))
-          end
-        end
-      else
-        do
-          if self._privacySetType == UISetPrivacySetType.UserProcy then
-            local gv = (HelperProxy:GetInstance()):GetGameVersion()
-            if gv == GameVersionType.INTL then
-              ((UnityEngine.Application).OpenURL)((StringTable.Get)("str_set_user_proto_url"))
-            else
-              if gv == GameVersionType.HMT then
-                ((UnityEngine.Application).OpenURL)((StringTable.Get)("str_set_user_proto_hmt_url"))
-              else
-                ;
-                ((UnityEngine.Application).OpenURL)((StringTable.Get)("str_set_user_proto_us_url"))
-              end
-            end
-          end
-        end
-      end
+      UnityEngine.Application.OpenURL(StringTable.Get("str_set_privacy_proto_us_url"))
+    end
+  elseif self._privacySetType == UISetPrivacySetType.UserProcy then
+    local gv = HelperProxy:GetInstance():GetGameVersion()
+    if gv == GameVersionType.INTL then
+      UnityEngine.Application.OpenURL(StringTable.Get("str_set_user_proto_url"))
+    elseif gv == GameVersionType.HMT then
+      UnityEngine.Application.OpenURL(StringTable.Get("str_set_user_proto_hmt_url"))
+    else
+      UnityEngine.Application.OpenURL(StringTable.Get("str_set_user_proto_us_url"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetPrivacySetItem.Logout = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.GameLogic)()):BackToLogin(false, LoginModule, "un agree privacy", false)
+function UISetPrivacySetItem:Logout()
+  GameGlobal.GameLogic():BackToLogin(false, LoginModule, "un agree privacy", false)
 end
-
-

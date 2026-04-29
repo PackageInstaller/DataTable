@@ -1,44 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/season/season_once_mission_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonOnceMissionData", UIController)
 SeasonOnceMissionData = SeasonOnceMissionData
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 SeasonOnceMissionData.ComState_NotOpen = 1
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 SeasonOnceMissionData.ComState_OpenButLock = 2
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
 SeasonOnceMissionData.ComState_Normal = 3
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
 SeasonOnceMissionData.ComState_Closed = 4
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonOnceMissionData.Constructor = function(self)
-  -- function num : 0_0
+function SeasonOnceMissionData:Constructor()
   self._missionCpts = {}
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData.GetMissionComponents = function(self)
-  -- function num : 0_1
+function SeasonOnceMissionData:GetMissionComponents()
   return self._missionCpts
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData.AnyComponentOpening = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonOnceMissionData:AnyComponentOpening()
   if not self._missionCpts then
     return false
   end
-  for _,lineMissionComponent in pairs(self._missionCpts) do
+  for _, lineMissionComponent in pairs(self._missionCpts) do
     local state = self:GetCompState(lineMissionComponent)
     if state == SeasonOnceMissionData.ComState_Normal then
       return true
@@ -47,47 +26,31 @@ SeasonOnceMissionData.AnyComponentOpening = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData.IsComponentOpening = function(self, lineMissionComponent)
-  -- function num : 0_3 , upvalues : _ENV
-  do return self:GetCompState(lineMissionComponent) == SeasonOnceMissionData.ComState_Normal end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonOnceMissionData:IsComponentOpening(lineMissionComponent)
+  return self:GetCompState(lineMissionComponent) == SeasonOnceMissionData.ComState_Normal
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData.GetCompState = function(self, cmpt)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonOnceMissionData:GetCompState(cmpt)
   local cInfo = cmpt:GetComponentInfo()
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return SeasonOnceMissionData.ComState_NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return SeasonOnceMissionData.ComState_Closed
+  elseif cInfo.m_b_unlock then
+    return SeasonOnceMissionData.ComState_Normal
+  elseif cInfo.m_need_mission_id > 0 then
+    return SeasonOnceMissionData.ComState_OpenButLock
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return SeasonOnceMissionData.ComState_Closed
-    else
-      if cInfo.m_b_unlock then
-        return SeasonOnceMissionData.ComState_Normal
-      else
-        if cInfo.m_need_mission_id > 0 then
-          return SeasonOnceMissionData.ComState_OpenButLock
-        else
-          return SeasonOnceMissionData.ComState_Normal
-        end
-      end
-    end
+    return SeasonOnceMissionData.ComState_Normal
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData.HasEntryNew = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonOnceMissionData:HasEntryNew()
   if not self._missionCpts then
     return false
   end
-  for _,lineMissionComponent in pairs(self._missionCpts) do
+  for _, lineMissionComponent in pairs(self._missionCpts) do
     local info = lineMissionComponent:GetComponentInfo()
     if self:IsComponentOpening(lineMissionComponent) then
       local compId = info.m_campaign_id .. info.m_component_id
@@ -99,10 +62,7 @@ SeasonOnceMissionData.HasEntryNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData.HasNewByComp = function(self, comp)
-  -- function num : 0_6
+function SeasonOnceMissionData:HasNewByComp(comp)
   if self:IsComponentOpening(comp) then
     local info = comp:GetComponentInfo()
     local compId = info.m_campaign_id .. info.m_component_id
@@ -110,89 +70,68 @@ SeasonOnceMissionData.HasNewByComp = function(self, comp)
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData.SetNewAsReadBy = function(self, comp)
-  -- function num : 0_7
+function SeasonOnceMissionData:SetNewAsReadBy(comp)
   local info = comp:GetComponentInfo()
   local compId = info.m_campaign_id .. info.m_component_id
   self:_SetReadNew(compId)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData._HasReadNew = function(self, componentId)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonOnceMissionData:_HasReadNew(componentId)
   local key = self:_GetEntryNewKey(componentId)
-  local hasRead = ((UnityEngine.PlayerPrefs).HasKey)(key)
+  local hasRead = UnityEngine.PlayerPrefs.HasKey(key)
   return hasRead
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData._SetReadNew = function(self, componentId)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonOnceMissionData:_SetReadNew(componentId)
   local key = self:_GetEntryNewKey(componentId)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData._GetEntryNewKey = function(self, componentId)
-  -- function num : 0_10 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function SeasonOnceMissionData:_GetEntryNewKey(componentId)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = "season_once_entry_" .. pstId .. componentId
   return key
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData.ForceLoadData = function(self, TT)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.GetModule)(SeasonModule)):ForceRequestCurSeasonData(TT)
+function SeasonOnceMissionData:ForceLoadData(TT)
+  GameGlobal.GetModule(SeasonModule):ForceRequestCurSeasonData(TT)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonOnceMissionData.RefreshData = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonOnceMissionData:RefreshData()
   self._missionCpts = {}
-  local obj = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonObj()
+  local obj = GameGlobal.GetModule(SeasonModule):GetCurSeasonObj()
   if not obj then
-    return 
+    return
   end
-  local cpts = {ECCampaignSeasonComponentID.LINE_MISSION_POPSTAR, ECCampaignSeasonComponentID.LINE_MISSION_BLACKFIST, ECCampaignSeasonComponentID.LINE_MISSION_TALEN}
-  for _,cptID in pairs(cpts) do
+  local cpts = {
+    ECCampaignSeasonComponentID.LINE_MISSION_POPSTAR,
+    ECCampaignSeasonComponentID.LINE_MISSION_BLACKFIST,
+    ECCampaignSeasonComponentID.LINE_MISSION_TALEN
+  }
+  for _, cptID in pairs(cpts) do
     local cpt = obj:GetComponent(cptID)
     if cpt then
-      local missions = (Cfg.cfg_component_line_mission)({ComponentID = cpt:GetComponentCfgId()})
-      if missions and #missions > 0 then
-        (table.insert)(self._missionCpts, cpt)
+      local missions = Cfg.cfg_component_line_mission({
+        ComponentID = cpt:GetComponentCfgId()
+      })
+      if missions and 0 < #missions then
+        table.insert(self._missionCpts, cpt)
       end
     end
   end
   if #self._missionCpts == 0 then
-    return 
+    return
   end
-  ;
-  (table.sort)(self._missionCpts, function(a, b)
-    -- function num : 0_12_0
-    local aTime = (a:GetComponentInfo()).m_unlock_time
-    local bTime = (b:GetComponentInfo()).m_unlock_time
-    if aTime >= bTime then
-      do return aTime == bTime end
-      do return a:GetComponentCfgId() < b:GetComponentCfgId() end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(self._missionCpts, function(a, b)
+    local aTime = a:GetComponentInfo().m_unlock_time
+    local bTime = b:GetComponentInfo().m_unlock_time
+    if aTime ~= bTime then
+      return aTime < bTime
     end
-  end
-)
+    return a:GetComponentCfgId() < b:GetComponentCfgId()
+  end)
 end
-
-

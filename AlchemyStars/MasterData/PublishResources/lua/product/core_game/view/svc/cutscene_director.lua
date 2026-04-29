@@ -1,112 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene_director.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutsceneDirector", Object)
 CutsceneDirector = CutsceneDirector
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneDirector.Constructor = function(self, world)
-  -- function num : 0_0
+function CutsceneDirector:Constructor(world)
   self._world = world
   self._phaseIndex = 0
   self._delayInfo = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneDirector.NextPhaseIndex = function(self, phaseArray)
-  -- function num : 0_1
+function CutsceneDirector:NextPhaseIndex(phaseArray)
   if self._phaseIndex < #phaseArray then
     self._phaseIndex = self._phaseIndex + 1
     return self._phaseIndex
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneDirector.CurPhaseIndex = function(self)
-  -- function num : 0_2
+function CutsceneDirector:CurPhaseIndex()
   return self._phaseIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneDirector.CreateDelayInfo = function(self, index)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._delayInfo)[index] = CutscenePhaseTime:New()
-  return (self._delayInfo)[index]
+function CutsceneDirector:CreateDelayInfo(index)
+  self._delayInfo[index] = CutscenePhaseTime:New()
+  return self._delayInfo[index]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneDirector.DoPlayCutscenePhase = function(self, TT, cutSceneConfigID)
-  -- function num : 0_4 , upvalues : _ENV
-  local configSvc = (self._world):GetService("Config")
+function CutsceneDirector:DoPlayCutscenePhase(TT, cutSceneConfigID)
+  local configSvc = self._world:GetService("Config")
   local cursceneData = configSvc:GetCutsceneConfig(cutSceneConfigID)
   local phaseArray = cursceneData:GetCutscenePhaseArray()
   local phaseTaskIDArray = {}
-  while 1 do
-    while 1 do
-      if self:NextPhaseIndex(phaseArray) then
-        local phaseIndex = self:CurPhaseIndex()
-        do
-          local phaseData = phaseArray[phaseIndex]
-          if phaseData == nil then
-            (Log.fatal)("phase end ---------- phaseIndex= " .. phaseIndex)
-          else
-            while not self:_CheckPhaseCanStart(phaseArray, phaseIndex) do
-              YIELD(TT)
-            end
-            local timeData = self:CreateDelayInfo(phaseIndex)
-            local insParam = phaseData:GetPhaseParam()
-            local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, insParam
-    self:DoCutsceneInstruction(TT, insParam)
-  end
-)
-            ;
-            (table.insert)(phaseTaskIDArray, taskID)
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC53: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+  while self:NextPhaseIndex(phaseArray) do
+    local phaseIndex = self:CurPhaseIndex()
+    local phaseData = phaseArray[phaseIndex]
+    if phaseData == nil then
+      Log.fatal("phase end ---------- phaseIndex= " .. phaseIndex)
+      break
     end
-    -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out WHILE_STMT
-
-    -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out FUNCTION_STMT
-
-    -- DECOMPILER ERROR at PC54: LeaveBlock: cannot find end of DO_STMT , stop at FUNCTION_STMT
-
+    while not self:_CheckPhaseCanStart(phaseArray, phaseIndex) do
+      YIELD(TT)
+    end
+    local timeData = self:CreateDelayInfo(phaseIndex)
+    local insParam = phaseData:GetPhaseParam()
+    local taskID = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      self:DoCutsceneInstruction(TT, insParam)
+    end)
+    table.insert(phaseTaskIDArray, taskID)
   end
-  -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out FUNCTION_STMT
-
-  -- DECOMPILER ERROR at PC54: LeaveBlock: cannot find end of WHILE_STMT , stop at FUNCTION_STMT
-
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(phaseTaskIDArray) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(phaseTaskIDArray) do
     YIELD(TT)
   end
-  local cutsceneSvc = (self._world):GetService("Cutscene")
+  local cutsceneSvc = self._world:GetService("Cutscene")
   cutsceneSvc:ResetSkyBoxColor()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneDirector._CheckPhaseCanStart = function(self, phaseArray, phaseIndex)
-  -- function num : 0_5 , upvalues : _ENV
-  local timeData = (self._delayInfo)[phaseIndex]
+function CutsceneDirector:_CheckPhaseCanStart(phaseArray, phaseIndex)
+  local timeData = self._delayInfo[phaseIndex]
   if timeData ~= nil then
     return false
   end
@@ -114,14 +61,14 @@ CutsceneDirector._CheckPhaseCanStart = function(self, phaseArray, phaseIndex)
   local delayfromPhase = phaseData:GetDelayFromPhase() or 0
   local delayTime = phaseData:GetDelayMS()
   local delayType = phaseData:GetDelayType()
-  local curTick = (GameGlobal:GetInstance()):GetCurrentTime()
+  local curTick = GameGlobal:GetInstance():GetCurrentTime()
   if delayfromPhase <= 0 then
     return true
   end
   if delayfromPhase == phaseIndex then
-    (Log.error)("[skill] delayfromPhase == phaseIndex " .. phaseIndex)
+    Log.error("[skill] delayfromPhase == phaseIndex " .. phaseIndex)
   end
-  local prePhaseRundata = (self._delayInfo)[delayfromPhase]
+  local prePhaseRundata = self._delayInfo[delayfromPhase]
   if prePhaseRundata == nil then
     return false
   end
@@ -131,66 +78,43 @@ CutsceneDirector._CheckPhaseCanStart = function(self, phaseArray, phaseIndex)
     else
       return false
     end
-  else
-    if delayType == CutsceneDelayType.AfterEnd then
-      if prePhaseRundata.EndTick > 0 and delayTime <= curTick - prePhaseRundata.EndTick then
-        return true
-      else
-        return false
-      end
+  elseif delayType == CutsceneDelayType.AfterEnd then
+    if 0 < prePhaseRundata.EndTick and delayTime <= curTick - prePhaseRundata.EndTick then
+      return true
     else
-      ;
-      (Log.error)("[skill] error delaytype")
+      return false
     end
+  else
+    Log.error("[skill] error delaytype")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneDirector.DoCutsceneInstruction = function(self, TT, instructionParam)
-  -- function num : 0_6 , upvalues : _ENV
+function CutsceneDirector:DoCutsceneInstruction(TT, instructionParam)
   local phaseContext = CutscenePhaseContext:New(self._world)
   local insArray = instructionParam:GetInstructionSet()
   local insIndex = 1
-  local insSetCount = (table.count)(insArray)
-  while 1 do
-    while 1 do
-      if insIndex > 0 and insIndex <= insSetCount then
-        local instruction = insArray[insIndex]
-        ;
-        (Log.debug)("play cutscene instruction start:", instruction._className)
-        local nextInsLabel = instruction:DoInstruction(TT, phaseContext)
-        if nextInsLabel then
-          insIndex = self:_CalcNextLabel(insArray, nextInsLabel)
-          -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  local insSetCount = table.count(insArray)
+  while 0 < insIndex and insIndex <= insSetCount do
+    local instruction = insArray[insIndex]
+    Log.debug("play cutscene instruction start:", instruction._className)
+    local nextInsLabel = instruction:DoInstruction(TT, phaseContext)
+    if nextInsLabel then
+      insIndex = self:_CalcNextLabel(insArray, nextInsLabel)
+    else
+      insIndex = insIndex + 1
     end
-    insIndex = insIndex + 1
   end
-  do
-    local phaseTaskList = phaseContext:GetPhaseTaskList()
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(phaseTaskList) do
-      YIELD(TT)
-    end
+  local phaseTaskList = phaseContext:GetPhaseTaskList()
+  while not TaskHelper:GetInstance():IsAllTaskFinished(phaseTaskList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneDirector._CalcNextLabel = function(self, insArray, nextInsLabel)
-  -- function num : 0_7 , upvalues : _ENV
+function CutsceneDirector:_CalcNextLabel(insArray, nextInsLabel)
   if nextInsLabel == InstructionConst.PhaseEnd then
     return -1
   else
-    for k,v in ipairs(insArray) do
+    for k, v in ipairs(insArray) do
       local ins = v
       local insLabel = ins:GetInstructionLabel()
       if insLabel ~= nil and insLabel == nextInsLabel then
@@ -198,11 +122,6 @@ CutsceneDirector._CalcNextLabel = function(self, insArray, nextInsLabel)
       end
     end
   end
-  do
-    ;
-    (Log.fatal)("instruction label not match:", nextInsLabel)
-    return -1
-  end
+  Log.fatal("instruction label not match:", nextInsLabel)
+  return -1
 end
-
-

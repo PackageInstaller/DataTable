@@ -1,140 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/camera_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CameraService", BaseService)
 CameraService = CameraService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CameraService.Constructor = function(self, world)
-  -- function num : 0_0
+function CameraService:Constructor(world)
   self.world = world
-  self._timeService = (self.world):GetService("Time")
+  self._timeService = self.world:GetService("Time")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.PlayCameraShake = function(self, shakeParam)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self.UpdateCameraShake, self, shakeParam)
+function CameraService:PlayCameraShake(shakeParam)
+  GameGlobal.TaskManager():CoreGameStartTask(self.UpdateCameraShake, self, shakeParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.UpdateCameraShake = function(self, TT, shakeParam)
-  -- function num : 0_2 , upvalues : _ENV
+function CameraService:UpdateCameraShake(TT, shakeParam)
   local delay = shakeParam.delay
   local duration = shakeParam.duration
   local timeElapsed = 0
-  while delay > 0 do
-    if delay < (self._timeService):GetDeltaTimeMs() then
+  while 0 < delay do
+    if delay < self._timeService:GetDeltaTimeMs() then
       duration = duration - delay
       timeElapsed = timeElapsed + delay
     end
-    delay = delay - (self._timeService):GetDeltaTimeMs()
+    delay = delay - self._timeService:GetDeltaTimeMs()
     YIELD(TT)
   end
-  local mainCameraCmpt = (self.world):MainCamera()
-  local oriPos = ((mainCameraCmpt:Camera()).transform).position
-  while duration > 0 do
+  local mainCameraCmpt = self.world:MainCamera()
+  local oriPos = mainCameraCmpt:Camera().transform.position
+  while 0 < duration do
     local offset = self:CalcShake(timeElapsed, shakeParam)
     mainCameraCmpt:ShakeCamera(oriPos, offset)
-    timeElapsed = timeElapsed + (self._timeService):GetDeltaTimeMs()
-    duration = duration - (self._timeService):GetDeltaTimeMs()
+    timeElapsed = timeElapsed + self._timeService:GetDeltaTimeMs()
+    duration = duration - self._timeService:GetDeltaTimeMs()
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.CalcShake = function(self, timeElapsed, shakeParam)
-  -- function num : 0_3 , upvalues : _ENV
+function CameraService:CalcShake(timeElapsed, shakeParam)
   local damp = self:Damp(shakeParam, timeElapsed)
   local offset = self:LinearVib(shakeParam.period, timeElapsed)
-  local dir = ((Quaternion.Euler)(0, 0, shakeParam.mainVibAngle)):MulVec3(Vector3(1, 0, 0))
+  local dir = Quaternion.Euler(0, 0, shakeParam.mainVibAngle):MulVec3(Vector3(1, 0, 0))
   local mainVib = dir * shakeParam.intenseRandomness * offset
   local randomVib = Vector3(0, 0, 0)
-  if (Mathf.Abs)(shakeParam.intenseRandomness) > 1e-06 then
+  if Mathf.Abs(shakeParam.intenseRandomness) > 1.0E-6 then
     randomVib = self:EmitRandomVib(shakeParam)
   end
   return (mainVib + randomVib) * damp
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.Damp = function(self, shakeParam, timeElapsed)
-  -- function num : 0_4 , upvalues : _ENV
+function CameraService:Damp(shakeParam, timeElapsed)
   local periodElapsed = 0
-  while shakeParam.period < timeElapsed do
+  while timeElapsed > shakeParam.period do
     timeElapsed = timeElapsed - shakeParam.period
     periodElapsed = periodElapsed + 1
   end
-  return (Mathf.Pow)(1 - shakeParam.decayRate, periodElapsed)
+  return Mathf.Pow(1 - shakeParam.decayRate, periodElapsed)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.LinearVib = function(self, period, timeElapsed)
-  -- function num : 0_5
+function CameraService:LinearVib(period, timeElapsed)
   while period < timeElapsed do
     timeElapsed = timeElapsed - period
   end
-  local offset = nil
+  local offset
   if timeElapsed < 0.25 * period then
-    offset = 4 / period * (timeElapsed)
+    offset = 4 / period * timeElapsed
+  elseif timeElapsed < 0.75 * period then
+    offset = 2 - 4 / period * timeElapsed
   else
-    if timeElapsed < 0.75 * period then
-      offset = 2 - 4 / period * (timeElapsed)
-    else
-      offset = -4 + 4 / period * (timeElapsed)
-    end
+    offset = -4 + 4 / period * timeElapsed
   end
   return offset
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.EmitRandomVib = function(self, shakeParam)
-  -- function num : 0_6 , upvalues : _ENV
-  local randomSvc = (self._world):GetService("RandomRender")
+function CameraService:EmitRandomVib(shakeParam)
+  local randomSvc = self._world:GetService("RandomRender")
   local angle = randomSvc:RenderRand(-shakeParam.angleRandomness, shakeParam.angleRandomness)
   local intense = randomSvc:RenderRand(-shakeParam.intenseRandomness, shakeParam.intenseRandomness)
-  if intense > 0 then
+  if 0 < intense then
     angle = shakeParam.mainVibAngle + 90 + angle
   else
-    angle = shakeParam.mainVibAngle - 90 + (angle)
+    angle = shakeParam.mainVibAngle - 90 + angle
   end
-  return ((Quaternion.Euler)(0, 0, angle)):MulVec3(Vector3(1, 0, 0)) * (Mathf.Abs)(intense)
+  return Quaternion.Euler(0, 0, angle):MulVec3(Vector3(1, 0, 0)) * Mathf.Abs(intense)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService._InitSceneCamera = function(self)
-  -- function num : 0_7
-  local levelConfigData = (self._configService):GetLevelConfigData()
+function CameraService:_InitSceneCamera()
+  local levelConfigData = self._configService:GetLevelConfigData()
   local cameraParam = levelConfigData:GetCameraParam()
-  local camera_cmpt = (self._world):MainCamera()
+  local camera_cmpt = self._world:MainCamera()
   local main_camera = camera_cmpt:Camera()
   main_camera.fieldOfView = cameraParam:GetFov()
   main_camera.nearClipPlane = cameraParam:GetNearClipDistance()
   main_camera.farClipPlane = cameraParam:GetFarClipDistance()
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (main_camera.transform).position = cameraParam:GetCameraPosition()
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (main_camera.transform).rotation = cameraParam:GetCameraRotation()
+  main_camera.transform.position = cameraParam:GetCameraPosition()
+  main_camera.transform.rotation = cameraParam:GetCameraRotation()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.InitializeSceneCamera = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function CameraService:InitializeSceneCamera()
   self:_InitSceneCamera()
-  local mainCameraCmpt = (self._world):MainCamera()
+  local mainCameraCmpt = self._world:MainCamera()
   mainCameraCmpt:LoadHUDCamera()
   mainCameraCmpt:LoadDarkCamera()
   mainCameraCmpt:LoadEffectCamera()
@@ -142,84 +103,65 @@ CameraService.InitializeSceneCamera = function(self)
   mainCameraCmpt:LoadAuroraTimeFx()
   mainCameraCmpt:AttachScreenEffPoint()
   self:ReplacePostProcessingProfile()
-  ;
-  (HelperProxy:GetInstance()):InitCameraShake()
+  HelperProxy:GetInstance():InitCameraShake()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.CameraFollowHero = function(self, oldPos, newPos)
-  -- function num : 0_9 , upvalues : _ENV
-  local camera_cmpt = (self._world):MainCamera()
+function CameraService:CameraFollowHero(oldPos, newPos)
+  local camera_cmpt = self._world:MainCamera()
   local main_camera = camera_cmpt:Camera()
-  local camPos = (main_camera.transform).position
+  local camPos = main_camera.transform.position
   local diff = newPos - oldPos
   local tarPos = Vector3(camPos.x + diff.x, camPos.y, camPos.z + diff.y)
-  ;
-  (Log.error)("board center " .. tostring(oldPos) .. "->" .. tostring(newPos))
-  ;
-  ((self._world):MainCamera()):SetCameraPos(tarPos)
+  Log.error("board center " .. tostring(oldPos) .. "->" .. tostring(newPos))
+  self._world:MainCamera():SetCameraPos(tarPos)
   local trans = main_camera.transform
   trans:DOMove(tarPos, 0.5)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.BlinkMainCamera = function(self, enabled)
-  -- function num : 0_10
-  local cMainCamera = (self._world):MainCamera()
+function CameraService:BlinkMainCamera(enabled)
+  local cMainCamera = self._world:MainCamera()
   local camera = cMainCamera:Camera()
   camera.enabled = enabled
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.ReplacePostProcessingProfile = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CameraService:ReplacePostProcessingProfile()
   local postObjName = "PostTemp"
-  local tmpObj = ((UnityEngine.GameObject).Find)(postObjName)
+  local tmpObj = UnityEngine.GameObject.Find(postObjName)
   if not tmpObj then
-    return 
+    return
   end
   local tmpPostProcessingCmpt = tmpObj:GetComponent("UnityEngine.H3DPostProcessing.PostProcessing")
   local tmpProfile = tmpPostProcessingCmpt.profile
-  local mainCameraCmpt = (self._world):MainCamera()
+  local mainCameraCmpt = self._world:MainCamera()
   mainCameraCmpt:SetPostProcessingProfile(tmpProfile)
-  local goEffRuchangActorpoint = ((UnityEngine.GameObject).Find)(GameResourceConst.EffRuchangActorpoint)
+  local goEffRuchangActorpoint = UnityEngine.GameObject.Find(GameResourceConst.EffRuchangActorpoint)
   if goEffRuchangActorpoint then
     local camera = goEffRuchangActorpoint:GetComponentInChildren(typeof(UnityEngine.Camera), true)
     if camera then
-      local pp = (camera.gameObject):GetComponent("UnityEngine.H3DPostProcessing.PostProcessing")
+      local pp = camera.gameObject:GetComponent("UnityEngine.H3DPostProcessing.PostProcessing")
       if pp then
         pp.profile = tmpProfile
       end
     end
   end
-  do
-    tmpObj:SetActive(false)
-  end
+  tmpObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CameraService.ResetFov_ForFoldableDevice = function(self)
-  -- function num : 0_12
-  local levelConfigData = (self._configService):GetLevelConfigData()
+function CameraService:ResetFov_ForFoldableDevice()
+  local levelConfigData = self._configService:GetLevelConfigData()
   local cameraParam = levelConfigData:GetCameraParam()
   cameraParam:ResetFov()
-  local camera_cmpt = (self._world):MainCamera()
+  local camera_cmpt = self._world:MainCamera()
   local main_camera = camera_cmpt:Camera()
   main_camera.fieldOfView = cameraParam:GetFov()
-  local camera_cmp = (self._world):MainCamera()
+  local camera_cmp = self._world:MainCamera()
   camera_cmp:ResetFov_ForFoldableDevice()
 end
 
 _class("CameraShakeParams", Object)
 CameraShakeParams = CameraShakeParams
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
 
-CameraShakeParams.Constructor = function(self, delay, intensity, mainVibAngle, duration, vibrato, decayRate, angleRandomness, intenseRandomness)
-  -- function num : 0_13
+function CameraShakeParams:Constructor(delay, intensity, mainVibAngle, duration, vibrato, decayRate, angleRandomness, intenseRandomness)
   self.delay = delay
   self.intensity = intensity
   self.mainVibAngle = mainVibAngle
@@ -233,5 +175,3 @@ CameraShakeParams.Constructor = function(self, delay, intensity, mainVibAngle, d
   self.angleRandomness = angleRandomness
   self.intenseRandomness = intenseRandomness
 end
-
-

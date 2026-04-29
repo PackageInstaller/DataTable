@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/chess_pet_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChessPetComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessPetComponent.Constructor = function(self, chessPetID, chessPetClassID, chessPetRaceType)
-  -- function num : 0_0
+function ChessPetComponent:Constructor(chessPetID, chessPetClassID, chessPetRaceType)
   self._chessPetID = chessPetID
   self._chessPetClassID = chessPetClassID
   self._chessPetRaceType = chessPetRaceType
@@ -17,138 +10,85 @@ ChessPetComponent.Constructor = function(self, chessPetID, chessPetClassID, ches
   self._hasFinishTurn = false
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.IsChessPetFinishTurn = function(self)
-  -- function num : 0_1
+function ChessPetComponent:IsChessPetFinishTurn()
   return self._hasFinishTurn
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.SetChessPetFinishTurn = function(self, finishTurn)
-  -- function num : 0_2
+function ChessPetComponent:SetChessPetFinishTurn(finishTurn)
   self._hasFinishTurn = finishTurn
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.GetChessPetID = function(self)
-  -- function num : 0_3
+function ChessPetComponent:GetChessPetID()
   return self._chessPetID
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.GetChessPetClassID = function(self)
-  -- function num : 0_4
+function ChessPetComponent:GetChessPetClassID()
   return self._chessPetClassID
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.GetChessPetRaceType = function(self)
-  -- function num : 0_5
+function ChessPetComponent:GetChessPetRaceType()
   return self._chessPetRaceType
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.GetChessPetBlockData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function ChessPetComponent:GetChessPetBlockData()
   if MonsterRaceType.Fly == self._chessPetRaceType then
     return BlockFlag.MonsterFly
   end
   return BlockFlag.MonsterLand
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.SetSkillID = function(self, skillID)
-  -- function num : 0_7
+function ChessPetComponent:SetSkillID(skillID)
   if not skillID then
-    return 
+    return
   end
   self._attackSkillID = skillID.attack or 0
   self._previewSkillID = skillID.preview or 0
   self._dieSkillID = skillID.die or 0
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.GetAttackSkillID = function(self)
-  -- function num : 0_8
+function ChessPetComponent:GetAttackSkillID()
   return self._attackSkillID
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.GetPreviewSkillID = function(self)
-  -- function num : 0_9
+function ChessPetComponent:GetPreviewSkillID()
   if self._previewSkillID ~= 0 then
     return self._previewSkillID
   end
   return self._attackSkillID
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.GetDieSkillID = function(self)
-  -- function num : 0_10
+function ChessPetComponent:GetDieSkillID()
   return self._dieSkillID
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_11
+function ChessPetComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessPetComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_12
+function ChessPetComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ChessPet = function(self)
-  -- function num : 0_13
-  return self:GetComponent((self.WEComponentsEnum).ChessPet)
+function Entity:ChessPet()
+  return self:GetComponent(self.WEComponentsEnum.ChessPet)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasChessPet = function(self)
-  -- function num : 0_14
-  return self:HasComponent((self.WEComponentsEnum).ChessPet)
+function Entity:HasChessPet()
+  return self:HasComponent(self.WEComponentsEnum.ChessPet)
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddChessPet = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChessPet
+function Entity:AddChessPet()
+  local index = self.WEComponentsEnum.ChessPet
   local component = ChessPetComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceChessPet = function(self, chessPetID, chessPetClassID, chessPetRaceType)
-  -- function num : 0_16 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChessPet
+function Entity:ReplaceChessPet(chessPetID, chessPetClassID, chessPetRaceType)
+  local index = self.WEComponentsEnum.ChessPet
   local component = ChessPetComponent:New(chessPetID, chessPetClassID, chessPetRaceType)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveChessPet = function(self)
-  -- function num : 0_17
+function Entity:RemoveChessPet()
   if self:HasChessPet() then
-    self:RemoveComponent((self.WEComponentsEnum).ChessPet)
+    self:RemoveComponent(self.WEComponentsEnum.ChessPet)
   end
 end
-
-

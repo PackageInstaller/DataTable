@@ -1,71 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_level/ui_homeland_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandLevelItem", UICustomWidget)
 UIHomelandLevelItem = UIHomelandLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandLevelItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetHomelandLevelData()
+function UIHomelandLevelItem:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetHomelandLevelData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandLevelItem:OnShow()
   self.txtLevel = self:GetUIComponent("UILocalizationText", "txtLevel")
   self.canGet = self:GetGameObject("canGet")
   self.btnImage = self:GetUIComponent("Image", "BG")
   self.atlas = self:GetAsset("UIHomelandLevel.spriteatlas", LoadType.SpriteAtlas)
-  self.unselectedTxtColor = Color(0.16862745098039, 0.16862745098039, 0.16862745098039)
+  self.unselectedTxtColor = Color(0.16862745098039217, 0.16862745098039217, 0.16862745098039217)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelItem.Flush = function(self, level)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandLevelItem:Flush(level)
   self.level = level
-  local item = (self.data):GetHomelandLevelItemDataByLevel(level)
-  ;
-  (self.txtLevel):SetText("Lv." .. item.level)
-  ;
-  (self.canGet):SetActive(item.state == HomelandLevelItemDataState.CanGet)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local item = self.data:GetHomelandLevelItemDataByLevel(level)
+  self.txtLevel:SetText("Lv." .. item.level)
+  self.canGet:SetActive(item.state == HomelandLevelItemDataState.CanGet)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelItem.FlushSelect = function(self, level)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIHomelandLevelItem:FlushSelect(level)
   if self.level == level then
-    (self.btnImage).sprite = (self.atlas):GetSprite("n17_level_btn3")
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtLevel).color = Color.white
+    self.btnImage.sprite = self.atlas:GetSprite("n17_level_btn3")
+    self.txtLevel.color = Color.white
   else
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.btnImage).sprite = (self.atlas):GetSprite("n17_level_btn4")
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.txtLevel).color = self.unselectedTxtColor
+    self.btnImage.sprite = self.atlas:GetSprite("n17_level_btn4")
+    self.txtLevel.color = self.unselectedTxtColor
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelItem.BGOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandLevelClickLevelItem, self.level)
+function UIHomelandLevelItem:BGOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandLevelClickLevelItem, self.level)
 end
-
-

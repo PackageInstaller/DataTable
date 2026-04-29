@@ -1,72 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_change_trap_index.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayChangeTrapIndexInstruction", BaseInstruction)
 PlayChangeTrapIndexInstruction = PlayChangeTrapIndexInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayChangeTrapIndexInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayChangeTrapIndexInstruction:Constructor(paramList)
   local str = paramList.trapIDList
-  local sp = (string.split)(str, "|")
+  local sp = string.split(str, "|")
   self._trapID = {}
-  for i,trapID in ipairs(sp) do
-    (table.insert)(self._trapID, tonumber(trapID))
+  for i, trapID in ipairs(sp) do
+    table.insert(self._trapID, tonumber(trapID))
   end
   str = paramList.indexPrefabList
-  self._indexPrefabList = (string.split)(str, "|")
+  self._indexPrefabList = string.split(str, "|")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayChangeTrapIndexInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayChangeTrapIndexInstruction:GetCacheResource()
   local t = {}
-  for i,resPath in ipairs(self._indexPrefabList) do
-    (table.insert)(t, {resPath, 1})
+  for i, resPath in ipairs(self._indexPrefabList) do
+    table.insert(t, {resPath, 1})
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayChangeTrapIndexInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayChangeTrapIndexInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
-  local allTrapEntity = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
+  local allTrapEntity = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
   local choseEntity = {}
-  for i,trapEntity in ipairs(allTrapEntity) do
+  for i, trapEntity in ipairs(allTrapEntity) do
     if not trapEntity:HasDeadMark() then
       local trapRenderCmpt = trapEntity:TrapRender()
       local trapID = trapRenderCmpt:GetTrapID()
-      if (table.icontains)(self._trapID, trapID) then
-        (table.insert)(choseEntity, trapEntity)
+      if table.icontains(self._trapID, trapID) then
+        table.insert(choseEntity, trapEntity)
       end
     end
   end
-  local sortFunc = function(trapA, trapB)
-    -- function num : 0_2_0
+  
+  local function sortFunc(trapA, trapB)
     local trapARenderCmpt = trapA:TrapRender()
     local trapBRenderCmpt = trapB:TrapRender()
     local roundA = trapARenderCmpt:GetTrapBornRound()
     local roundB = trapBRenderCmpt:GetTrapBornRound()
-    do return trapB:GetID() < trapA:GetID() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+    return trapA:GetID() > trapB:GetID()
   end
-
-  ;
-  (table.sort)(choseEntity, sortFunc)
-  for i,entity in ipairs(choseEntity) do
-    local prefab = (self._indexPrefabList)[i]
-    if not (self._indexPrefabList)[i] then
-      prefab = (self._indexPrefabList)[#self._indexPrefabList]
+  
+  table.sort(choseEntity, sortFunc)
+  for i, entity in ipairs(choseEntity) do
+    local prefab = self._indexPrefabList[i]
+    if not self._indexPrefabList[i] then
+      prefab = self._indexPrefabList[#self._indexPrefabList]
     end
     entity:ReplaceAsset(NativeUnityPrefabAsset:New(prefab, true))
   end
 end
-
-

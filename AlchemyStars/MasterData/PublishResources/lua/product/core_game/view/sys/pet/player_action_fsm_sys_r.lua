@@ -1,47 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/pet/player_action_fsm_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayerActionFSMSystem_Render", Object)
 PlayerActionFSMSystem_Render = PlayerActionFSMSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerActionFSMSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayerActionFSMSystem_Render:Constructor(world)
   self._world = world
-  self.group = (self._world):GetGroup((world.BW_WEMatchers).MoveFSM)
-  self.cb = (GameHelper:GetInstance()):CreateCallback(self.OnStateEnter, self)
-  ;
-  ((self._world):EventDispatcher()):AddCallbackListener(GameEventType.PlayerActionEnter, self.cb)
+  self.group = self._world:GetGroup(world.BW_WEMatchers.MoveFSM)
+  self.cb = GameHelper:GetInstance():CreateCallback(self.OnStateEnter, self)
+  self._world:EventDispatcher():AddCallbackListener(GameEventType.PlayerActionEnter, self.cb)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerActionFSMSystem_Render.TearDown = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((self._world):EventDispatcher()):RemoveCallbackListener(GameEventType.PlayerActionEnter, self.cb)
+function PlayerActionFSMSystem_Render:TearDown()
+  self._world:EventDispatcher():RemoveCallbackListener(GameEventType.PlayerActionEnter, self.cb)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerActionFSMSystem_Render.Execute = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local timeService = (self._world):GetService("Time")
+function PlayerActionFSMSystem_Render:Execute()
+  local timeService = self._world:GetService("Time")
   local deltaTimeMS = timeService:GetDeltaTimeMs()
-  for i,e in ipairs((self.group):GetEntities()) do
-    (e:MoveFSM()):Update(deltaTimeMS)
+  for i, e in ipairs(self.group:GetEntities()) do
+    e:MoveFSM():Update(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerActionFSMSystem_Render.OnStateEnter = function(self, entityID)
-  -- function num : 0_3
-  local actorEntity = (self._world):GetEntityByID(entityID)
+function PlayerActionFSMSystem_Render:OnStateEnter(entityID)
+  local actorEntity = self._world:GetEntityByID(entityID)
   if actorEntity then
     actorEntity:ReplaceMoveFSM()
   end
 end
-
-

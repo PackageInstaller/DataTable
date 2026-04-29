@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/helper/auto_pick_check_helper_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AutoPickCheckHelperRender", Object)
 AutoPickCheckHelperRender = AutoPickCheckHelperRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoPickCheckHelperRender.IsAutoFightRunning = function()
-  -- function num : 0_0 , upvalues : _ENV
+function AutoPickCheckHelperRender.IsAutoFightRunning()
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local autoSvc = mainWorld:GetService("AutoFight")
@@ -19,33 +12,22 @@ AutoPickCheckHelperRender.IsAutoFightRunning = function()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoPickCheckHelperRender.ReportAutoFightPickError = function(errorStep, errorType, activeSkillID, curPickPos)
-  -- function num : 0_1 , upvalues : _ENV
-  local cmd = (ClientExceptionReportCommand.CreateAutoFightPickErrorReport)(activeSkillID, errorStep, errorType, nil, nil, curPickPos)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClientExceptionReport, cmd)
+function AutoPickCheckHelperRender.ReportAutoFightPickError(errorStep, errorType, activeSkillID, curPickPos)
+  local cmd = ClientExceptionReportCommand.CreateAutoFightPickErrorReport(activeSkillID, errorStep, errorType, nil, nil, curPickPos)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClientExceptionReport, cmd)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoPickCheckHelperRender.CheckPetSkillReady = function(petEntity, skillID)
-  -- function num : 0_2 , upvalues : _ENV
+function AutoPickCheckHelperRender.CheckPetSkillReady(petEntity, skillID)
   local gameGlobal = GameGlobal:GetInstance()
   local mainWorld = gameGlobal:GetMainWorld()
   local utilDataSvc = mainWorld:GetService("UtilData")
-  do
-    if utilDataSvc and petEntity then
-      local ready = utilDataSvc:GetPetSkillReadyAttr(petEntity, skillID)
-      if ready and ready == 1 then
-        return true
-      else
-        return false
-      end
+  if utilDataSvc and petEntity then
+    local ready = utilDataSvc:GetPetSkillReadyAttr(petEntity, skillID)
+    if ready and ready == 1 then
+      return true
+    else
+      return false
     end
-    return true
   end
+  return true
 end
-
-

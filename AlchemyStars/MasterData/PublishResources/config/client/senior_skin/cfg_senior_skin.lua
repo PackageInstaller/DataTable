@@ -1,22 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/senior_skin/cfg_senior_skin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {id = 1, Spine = 2, EnterAnim = 3, ClickAni = 4}
+local key = {
+  id = 1,
+  Spine = 2,
+  EnterAnim = 3,
+  ClickAni = 4
+}
 local common = {"show"}
 local config = {
-[90384] = {90384, "1600381_2_super_spine_idle", common[1], 
-{"click", "click2"}
-}
-, 
-[91484] = {91484, "N37_qingtong_main_spine_idle"}
-, 
-[90254] = {90254, "1600254_5_cg_spine_idle", common[1], 
-{"click"}
-}
-, 
-[90773] = {90773, "1600773_senior_skin_draw_spine_idle", common[1]}
+  [90384] = {
+    90384,
+    "1600381_2_super_spine_idle",
+    common[1],
+    {"click", "click2"}
+  },
+  [91484] = {
+    91484,
+    "N37_qingtong_main_spine_idle"
+  },
+  [90254] = {
+    90254,
+    "1600254_5_cg_spine_idle",
+    common[1],
+    {"click"}
+  },
+  [90773] = {
+    90773,
+    "1600773_senior_skin_draw_spine_idle",
+    common[1]
+  }
 }
 return config, "id", key
-

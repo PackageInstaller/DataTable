@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/shop/ui_n33_lottery_get_item_ui_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_item")
 require("ui_item_node")
 require("ui_n33_item_normal_node")
 _class("UIN33LotteryGetItemUIItem", UIItem)
 UIN33LotteryGetItemUIItem = UIN33LotteryGetItemUIItem
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33LotteryGetItemUIItem._InitNodes = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN33LotteryGetItemUIItem:_InitNodes()
   self._nodes = {}
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nodes)[UIItemNode.N33Lottery] = UIN33ItemNormalNode:New(self:GetUIComponent("UIView", "g_n33_normal"), self)
+  self._nodes[UIItemNode.N33Lottery] = UIN33ItemNormalNode:New(self:GetUIComponent("UIView", "g_n33_normal"), self)
 end
-
-

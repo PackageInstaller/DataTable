@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_buff_add_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataBuffAddResult", Object)
 DataBuffAddResult = DataBuffAddResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataBuffAddResult.Constructor = function(self, entityID, buffSeq, buffID, context)
-  -- function num : 0_0
+function DataBuffAddResult:Constructor(entityID, buffSeq, buffID, context)
   self._entityID = entityID
   self._buffSeq = buffSeq
   self._buffID = buffID
   self._buffContext = context
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffAddResult.GetEntityID = function(self)
-  -- function num : 0_1
+function DataBuffAddResult:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffAddResult.GetBuffSeq = function(self)
-  -- function num : 0_2
+function DataBuffAddResult:GetBuffSeq()
   return self._buffSeq
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffAddResult.GetBuffID = function(self)
-  -- function num : 0_3
+function DataBuffAddResult:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataBuffAddResult.GetBuffContext = function(self)
-  -- function num : 0_4
+function DataBuffAddResult:GetBuffContext()
   return self._buffContext
 end
-
-

@@ -1,30 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/common/ui_favour_pet_coin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFavourPetCoin", UICustomWidget)
 UIFavourPetCoin = UIFavourPetCoin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetCoin.SetData = function(self, component, tipsCallback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIFavourPetCoin:SetData(component, tipsCallback)
   local itemId = component:GetVoteCostItemId()
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_icon")
-  ;
-  (UIWidgetHelper.SetItemCount)(self, itemId, "_text")
+  UIWidgetHelper.SetItemIcon(self, itemId, "_icon")
+  UIWidgetHelper.SetItemCount(self, itemId, "_text")
   self._itemId = itemId
   self._tipsCallback = tipsCallback
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetCoin.BtnOnClick = function(self, go)
-  -- function num : 0_1
+function UIFavourPetCoin:BtnOnClick(go)
   if self._tipsCallback then
-    (self._tipsCallback)(self._itemId, (go.transform).position)
+    self._tipsCallback(self._itemId, go.transform.position)
   end
 end
-
-

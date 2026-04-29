@@ -1,35 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/match_type2game_mode_cfg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MatchType2GameMode", Object)
 MatchType2GameMode = MatchType2GameMode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MatchType2GameMode.GetGameModeByMatchType = function(matchType)
-  -- function num : 0_0 , upvalues : _ENV
+function MatchType2GameMode.GetGameModeByMatchType(matchType)
   if MatchType.MT_Maze and MatchType.MT_Maze == matchType then
     return GameModeType.MazeBattleMode
+  elseif MatchType.MT_Chess and MatchType.MT_Chess == matchType then
+    return GameModeType.ChessBattleMode
+  elseif MatchType.MT_PopStar and MatchType.MT_PopStar == matchType then
+    return GameModeType.PopStarMode
+  elseif MatchType.MT_PopStarPro and MatchType.MT_PopStarPro == matchType then
+    return GameModeType.PopStarProMode
+  elseif MatchType.MT_SeasonMaze and MatchType.MT_SeasonMaze == matchType then
+    return GameModeType.SeasonMazeBattleMode
   else
-    if MatchType.MT_Chess and MatchType.MT_Chess == matchType then
-      return GameModeType.ChessBattleMode
-    else
-      if MatchType.MT_PopStar and MatchType.MT_PopStar == matchType then
-        return GameModeType.PopStarMode
-      else
-        if MatchType.MT_PopStarPro and MatchType.MT_PopStarPro == matchType then
-          return GameModeType.PopStarProMode
-        else
-          if MatchType.MT_SeasonMaze and MatchType.MT_SeasonMaze == matchType then
-            return GameModeType.SeasonMazeBattleMode
-          else
-            return GameModeType.NormalBattleMode
-          end
-        end
-      end
-    end
+    return GameModeType.NormalBattleMode
   end
 end
-
-

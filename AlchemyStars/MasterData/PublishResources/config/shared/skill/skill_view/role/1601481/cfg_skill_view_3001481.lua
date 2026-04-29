@@ -1,13 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1601481/cfg_skill_view_3001481.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = AtkUlt01; PlayAudio,audioID = 2439,audioType=1; PlayCasterBindEffect,effectID=3502; PlaySummonTrap,trapID=16014811; PlaySummonTrap,trapID=16014812; PlaySummonTrap,trapID=16014813; PlayMoveTrap; DataSelectBuff,buffIndex=1; PlayAddBuffView,buffEffectType=420148; Wait,waitTime=1800; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = AtkUlt01; PlayAudio,audioID = 2439,audioType=1; PlayCasterBindEffect,effectID=3502; PlaySummonTrap,trapID=16014811; PlaySummonTrap,trapID=16014812; PlaySummonTrap,trapID=16014813; PlayMoveTrap; DataSelectBuff,buffIndex=1; PlayAddBuffView,buffEffectType=420148; Wait,waitTime=1800; "
+    }
+  }
 }
 return config, "ID", key
-

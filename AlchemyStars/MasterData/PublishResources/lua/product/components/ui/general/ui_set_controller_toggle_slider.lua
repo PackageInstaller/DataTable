@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_controller_toggle_slider.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetControllerToggleSlider", UICustomWidget)
 UISetControllerToggleSlider = UISetControllerToggleSlider
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetControllerToggleSlider.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISetControllerToggleSlider:OnShow()
   self._isInitOver = false
   self.toggle = self:GetUIComponent("Toggle", "Toggle")
   self.describeText = self:GetUIComponent("UILocalizationText", "LocalizationText")
@@ -21,112 +14,73 @@ UISetControllerToggleSlider.OnShow = function(self)
   self.imageOff = self:GetGameObject("ImageOff")
   self.imageOn = self:GetGameObject("ImageOn")
   self.toggleBG = self:GetGameObject("ToggleBG")
-  self.OnSliderValueChange = function(value)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    local floorValue = (Mathf.Floor)(value)
+  
+  function self.OnSliderValueChange(value)
+    local floorValue = Mathf.Floor(value)
     self.sliderValue = floorValue
     self:OnRefreshSliderValue(false)
   end
-
-  ;
-  ((self.slider).onValueChanged):AddListener(self.OnSliderValueChange)
-  self.OnToggleValueChanged = function(isOn)
-    -- function num : 0_0_1 , upvalues : self, _ENV
+  
+  self.slider.onValueChanged:AddListener(self.OnSliderValueChange)
+  
+  function self.OnToggleValueChanged(isOn)
     if self._isInitOver then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
     end
     self.toggleValue = isOn and 1 or 0
     self:OnRefreshSliderValue(false)
   end
-
-  ;
-  ((self.toggle).onValueChanged):AddListener(self.OnToggleValueChanged)
+  
+  self.toggle.onValueChanged:AddListener(self.OnToggleValueChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetControllerToggleSlider.Init = function(self, index, describeText, sliderLocalDBKey, toggleLocalDBKey, callBack, param)
-  -- function num : 0_1 , upvalues : _ENV
+function UISetControllerToggleSlider:Init(index, describeText, sliderLocalDBKey, toggleLocalDBKey, callBack, param)
   self.index = index
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.describeText).text = (StringTable.Get)(describeText)
+  self.describeText.text = StringTable.Get(describeText)
   self.callBack = callBack
   self.sliderLocalDBKey = sliderLocalDBKey
   self.toggleLocalDBKey = toggleLocalDBKey
   self.param = param
   if sliderLocalDBKey then
-    self.sliderValue = (LocalDB.GetInt)(sliderLocalDBKey, 100)
+    self.sliderValue = LocalDB.GetInt(sliderLocalDBKey, 100)
   end
   if toggleLocalDBKey then
-    self.toggleValue = (LocalDB.GetInt)(toggleLocalDBKey, 1)
+    self.toggleValue = LocalDB.GetInt(toggleLocalDBKey, 1)
   end
   self:OnRefreshSliderValue(true)
   self._isInitOver = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetControllerToggleSlider.OnRefreshSliderValue = function(self, first)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.slider).value = self.sliderValue
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.textSlider).text = self.sliderValue
+function UISetControllerToggleSlider:OnRefreshSliderValue(first)
+  self.slider.value = self.sliderValue
+  self.textSlider.text = self.sliderValue
   local isOn = self.toggleValue > 0
-  ;
-  (self.backgroundOn):SetActive(isOn)
-  ;
-  (self.backgroundOff):SetActive(not isOn)
-  ;
-  (self.fillOn):SetActive(isOn)
-  ;
-  (self.fillOff):SetActive(not isOn)
-  ;
-  (self.imageOn):SetActive(isOn)
-  ;
-  (self.imageOff):SetActive(not isOn)
-  ;
-  (self.toggleBG):SetActive(not isOn)
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.toggle).isOn = isOn
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.slider).enabled = isOn
+  self.backgroundOn:SetActive(isOn)
+  self.backgroundOff:SetActive(not isOn)
+  self.fillOn:SetActive(isOn)
+  self.fillOff:SetActive(not isOn)
+  self.imageOn:SetActive(isOn)
+  self.imageOff:SetActive(not isOn)
+  self.toggleBG:SetActive(not isOn)
+  self.toggle.isOn = isOn
+  self.slider.enabled = isOn
   if self.callBack and not first then
-    (self.callBack)(self.param, self.index, self.sliderValue, self.toggleValue)
+    self.callBack(self.param, self.index, self.sliderValue, self.toggleValue)
   end
   self:OnSetLocalDB()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetControllerToggleSlider.OnHide = function(self)
-  -- function num : 0_3
-  ((self.slider).onValueChanged):RemoveListener(self.OnSliderValueChange)
-  ;
-  ((self.toggle).onValueChanged):RemoveListener(self.OnToggleValueChanged)
+function UISetControllerToggleSlider:OnHide()
+  self.slider.onValueChanged:RemoveListener(self.OnSliderValueChange)
+  self.toggle.onValueChanged:RemoveListener(self.OnToggleValueChanged)
   self:OnSetLocalDB()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetControllerToggleSlider.OnSetLocalDB = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISetControllerToggleSlider:OnSetLocalDB()
   if self.sliderLocalDBKey then
-    (LocalDB.SetInt)(self.sliderLocalDBKey, self.sliderValue)
+    LocalDB.SetInt(self.sliderLocalDBKey, self.sliderValue)
   end
   if self.toggleLocalDBKey then
-    (LocalDB.SetInt)(self.toggleLocalDBKey, self.toggleValue)
+    LocalDB.SetInt(self.toggleLocalDBKey, self.toggleValue)
   end
 end
-
-

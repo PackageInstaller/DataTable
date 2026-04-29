@@ -1,219 +1,133 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n22/entrust/event/ui_n22_entrust_event_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN22EntrustEventBase", UICustomWidget)
 UIN22EntrustEventBase = UIN22EntrustEventBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN22EntrustEventBase.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN22EntrustEventBase:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.OnHide = function(self)
-  -- function num : 0_1
+function UIN22EntrustEventBase:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.CloseDialog = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local pass = (self._component):IsEventPass(self._levelId, self._eventId)
-  local rate = (self._component):GetExplorNum(self._levelId)
-  local show = (self._eventType == EntrustEventType.EntrustEventType_End and not self._passInBegining and pass)
-  show = show or (self._rateInBegining < 100 and rate >= 100)
-  ;
-  (self._uiView):OnLevelClose(show)
-  ;
-  (self._uiView):CloseDialog()
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+function UIN22EntrustEventBase:CloseDialog()
+  local pass = self._component:IsEventPass(self._levelId, self._eventId)
+  local rate = self._component:GetExplorNum(self._levelId)
+  local show = self._eventType == EntrustEventType.EntrustEventType_End and not self._passInBegining and pass
+  show = show or self._rateInBegining < 100 and 100 <= rate
+  self._uiView:OnLevelClose(show)
+  self._uiView:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.SetPlayer = function(self, eventId)
-  -- function num : 0_3
+function UIN22EntrustEventBase:SetPlayer(eventId)
   if eventId then
-    (self._uiView):SetPlayer(eventId)
+    self._uiView:SetPlayer(eventId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.SetData = function(self, uiView, campaign, component, levelId, eventId)
-  -- function num : 0_4
+function UIN22EntrustEventBase:SetData(uiView, campaign, component, levelId, eventId)
   self._uiView = uiView
   self._campaign = campaign
   self._component = component
   self._levelId = levelId
   self._eventId = eventId
-  self._eventType = (self._component):GetEventType(self._eventId)
-  self._passInBegining = (self._component):IsEventPass(self._levelId, self._eventId)
-  self._rateInBegining = (self._component):GetExplorNum(self._levelId)
+  self._eventType = self._component:GetEventType(self._eventId)
+  self._passInBegining = self._component:IsEventPass(self._levelId, self._eventId)
+  self._rateInBegining = self._component:GetExplorNum(self._levelId)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.Refresh = function(self)
-  -- function num : 0_5
+function UIN22EntrustEventBase:Refresh()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetRoot = function(self, show)
-  -- function num : 0_6
-  (self:GetGameObject("_root")):SetActive(show)
+function UIN22EntrustEventBase:_SetRoot(show)
+  self:GetGameObject("_root"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetCloseBtn = function(self)
-  -- function num : 0_7
-  (self:GetGameObject("CloseBtn")):SetActive(true)
+function UIN22EntrustEventBase:_SetCloseBtn()
+  self:GetGameObject("CloseBtn"):SetActive(true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetPass = function(self, show)
-  -- function num : 0_8
-  (self:GetGameObject("_pass")):SetActive(show)
+function UIN22EntrustEventBase:_SetPass(show)
+  self:GetGameObject("_pass"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetMainTitle = function(self, txt)
-  -- function num : 0_9 , upvalues : _ENV
-  (self:GetGameObject("_mainTitle")):SetActive(true)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_mainTitle", txt)
+function UIN22EntrustEventBase:_SetMainTitle(txt)
+  self:GetGameObject("_mainTitle"):SetActive(true)
+  UIWidgetHelper.SetLocalizationText(self, "_mainTitle", txt)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetMainDesc = function(self, txt)
-  -- function num : 0_10 , upvalues : _ENV
-  (self:GetGameObject("_mainDesc")):SetActive(true)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_mainDesc", txt)
+function UIN22EntrustEventBase:_SetMainDesc(txt)
+  self:GetGameObject("_mainDesc"):SetActive(true)
+  UIWidgetHelper.SetLocalizationText(self, "_mainDesc", txt)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetTalkIcon = function(self, url)
-  -- function num : 0_11 , upvalues : _ENV
-  (self:GetGameObject("_talkIcon")):SetActive(true)
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "_talkIcon", url)
+function UIN22EntrustEventBase:_SetTalkIcon(url)
+  self:GetGameObject("_talkIcon"):SetActive(true)
+  UIWidgetHelper.SetRawImage(self, "_talkIcon", url)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetTalkDesc = function(self, txt)
-  -- function num : 0_12 , upvalues : _ENV
-  (self:GetGameObject("_talkDesc")):SetActive(true)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_talkText", txt)
+function UIN22EntrustEventBase:_SetTalkDesc(txt)
+  self:GetGameObject("_talkDesc"):SetActive(true)
+  UIWidgetHelper.SetLocalizationText(self, "_talkText", txt)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetStage = function(self, isChess, fightLevel, missionCfg, recommendAwaken, recommendLV)
-  -- function num : 0_13 , upvalues : _ENV
-  (self:GetGameObject("_stage")):SetActive(true)
+function UIN22EntrustEventBase:_SetStage(isChess, fightLevel, missionCfg, recommendAwaken, recommendLV)
+  self:GetGameObject("_stage"):SetActive(true)
   local noLv = true
-  local enemy = (UIWidgetHelper.SpawnObject)(self, "_enemyMsg", "UIEnemyMsg")
+  local enemy = UIWidgetHelper.SpawnObject(self, "_enemyMsg", "UIEnemyMsg")
   enemy:SetData(fightLevel, nil, self._isChess, noLv)
-  local wordAndElemItem = (UIWidgetHelper.SpawnObject)(self, "_wordAndElem", "UIWordAndElemItem")
+  local wordAndElemItem = UIWidgetHelper.SpawnObject(self, "_wordAndElem", "UIWordAndElemItem")
   wordAndElemItem:SetData(missionCfg)
-  local txt = (StringTable.Get)("str_discovery_node_recommend_lv")
-  local str1 = txt .. " " .. (StringTable.Get)("str_pet_config_common_advance") .. recommendAwaken
-  if not recommendAwaken or recommendAwaken <= 0 or not str1 then
-    local str2 = txt .. " LV." .. recommendLV
-    if not recommendLV or not str2 then
-      (UIWidgetHelper.SetLocalizationText)(self, "_txtRecommendLV", txt)
-    end
-  end
+  local txt = StringTable.Get("str_discovery_node_recommend_lv")
+  local str1 = txt .. " " .. StringTable.Get("str_pet_config_common_advance") .. recommendAwaken
+  txt = recommendAwaken and 0 < recommendAwaken and str1 or txt
+  local str2 = txt .. " LV." .. recommendLV
+  txt = recommendLV and str2 or txt
+  UIWidgetHelper.SetLocalizationText(self, "_txtRecommendLV", txt)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetRewards = function(self, rewards)
-  -- function num : 0_14 , upvalues : _ENV
-  (self:GetGameObject("_desc")):SetActive(true)
+function UIN22EntrustEventBase:_SetRewards(rewards)
+  self:GetGameObject("_desc"):SetActive(true)
   local count = #rewards
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_rewardPool", "UIN22EntrustRewardItem", count)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_rewardPool", "UIN22EntrustRewardItem", count)
   for i = 1, count do
-    (objs[i]):SetData(rewards[i], false, function(matid, pos)
-    -- function num : 0_14_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-)
+    objs[i]:SetData(rewards[i], false, function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetExitBtn = function(self, title, callback)
-  -- function num : 0_15 , upvalues : _ENV
-  (self:GetGameObject("ExitBtn")):SetActive(true)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtExitBtn", title)
+function UIN22EntrustEventBase:_SetExitBtn(title, callback)
+  self:GetGameObject("ExitBtn"):SetActive(true)
+  UIWidgetHelper.SetLocalizationText(self, "_txtExitBtn", title)
   self._exit = callback
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase._SetConfirmBtn = function(self, enable, title, callback)
-  -- function num : 0_16 , upvalues : _ENV
-  (self:GetGameObject("ConfirmBtn")):SetActive(enable)
-  ;
-  (self:GetGameObject("ConfirmBtn_Disable")):SetActive(not enable)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtConfirmBtn", title)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtConfirmBtn_Disable", title)
+function UIN22EntrustEventBase:_SetConfirmBtn(enable, title, callback)
+  self:GetGameObject("ConfirmBtn"):SetActive(enable)
+  self:GetGameObject("ConfirmBtn_Disable"):SetActive(not enable)
+  UIWidgetHelper.SetLocalizationText(self, "_txtConfirmBtn", title)
+  UIWidgetHelper.SetLocalizationText(self, "_txtConfirmBtn_Disable", title)
   self._confirm = callback
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.CloseBtnOnClick = function(self, go)
-  -- function num : 0_17
+function UIN22EntrustEventBase:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.ExitBtnOnClick = function(self, go)
-  -- function num : 0_18
+function UIN22EntrustEventBase:ExitBtnOnClick(go)
   if self._exit then
-    (self._exit)()
+    self._exit()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_19
+function UIN22EntrustEventBase:ConfirmBtnOnClick(go)
   if self._confirm then
-    (self._confirm)()
+    self._confirm()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.RequestEvent = function(self, eventId)
-  -- function num : 0_20 , upvalues : _ENV
-  if not eventId then
-    eventId = self._eventId
-  end
-  ;
-  (self._component):Start_HandleCompleteEvent(self._levelId, eventId, function(res, rewards)
-    -- function num : 0_20_0 , upvalues : eventId, self, _ENV
+function UIN22EntrustEventBase:RequestEvent(eventId)
+  eventId = eventId or self._eventId
+  self._component:Start_HandleCompleteEvent(self._levelId, eventId, function(res, rewards)
     if res:GetSucc() then
       if eventId == self._eventId then
         self:OnEventFinish(rewards)
@@ -221,34 +135,21 @@ UIN22EntrustEventBase.RequestEvent = function(self, eventId)
         self:CloseDialog()
       end
     else
-      ;
-      (self._campaign):ShowErrorToast(res.m_result, true)
-      ;
-      ((self._campaign)._campaign_module):CampaignSwitchState(false, UIStateType.UIActivityN22MainController, UIStateType.UIMain, nil, (self._campaign)._id)
+      self._campaign:ShowErrorToast(res.m_result, true)
+      self._campaign._campaign_module:CampaignSwitchState(false, UIStateType.UIActivityN22MainController, UIStateType.UIMain, nil, self._campaign._id)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.OnEventFinish = function(self, rewards)
-  -- function num : 0_21 , upvalues : _ENV
-  (Log.info)("UIN22EntrustEventBase:OnEventFinish()")
+function UIN22EntrustEventBase:OnEventFinish(rewards)
+  Log.info("UIN22EntrustEventBase:OnEventFinish()")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN22EntrustEventBase.GetCfgCampaignEntrustEvent = function(self, eventId)
-  -- function num : 0_22 , upvalues : _ENV
-  if not eventId then
-    eventId = self._eventId
-  end
-  local cfg = (Cfg.cfg_campaign_entrust_event)[eventId]
+function UIN22EntrustEventBase:GetCfgCampaignEntrustEvent(eventId)
+  eventId = eventId or self._eventId
+  local cfg = Cfg.cfg_campaign_entrust_event[eventId]
   if not cfg then
-    (Log.error)("UIN22EntrustEventBase:GetCfgCampaignEntrustEvent() cfg_campaign_entrust_event[", eventId, "] is nil!")
+    Log.error("UIN22EntrustEventBase:GetCfgCampaignEntrustEvent() cfg_campaign_entrust_event[", eventId, "] is nil!")
   end
   return cfg
 end
-
-

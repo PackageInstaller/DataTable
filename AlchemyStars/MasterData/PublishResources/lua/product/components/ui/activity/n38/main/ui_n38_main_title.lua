@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n38/main/ui_n38_main_title.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN38_Main_Title", UICustomWidget)
 UIN38_Main_Title = UIN38_Main_Title
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN38_Main_Title.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN38_Main_Title:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38_Main_Title.InitWidget = function(self)
-  -- function num : 0_1
+function UIN38_Main_Title:InitWidget()
   self._time = self:GetUIComponent("UILocalizationText", "Time")
   self._subTitle = self:GetGameObject("SubTitle")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38_Main_Title.SetData = function(self)
-  -- function num : 0_2
+function UIN38_Main_Title:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38_Main_Title.SetRemainTime = function(self, remainTimeStr)
-  -- function num : 0_3
-  (self._time):SetText(remainTimeStr)
+function UIN38_Main_Title:SetRemainTime(remainTimeStr)
+  self._time:SetText(remainTimeStr)
 end
-
-

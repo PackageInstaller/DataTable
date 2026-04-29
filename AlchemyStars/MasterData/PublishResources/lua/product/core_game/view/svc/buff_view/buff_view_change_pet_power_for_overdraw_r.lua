@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_pet_power_for_overdraw_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangePetPowerForOverdraw", BuffViewBase)
 BuffViewChangePetPowerForOverdraw = BuffViewChangePetPowerForOverdraw
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangePetPowerForOverdraw.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local petPowerStateList = (self._buffResult):GetPetPowerList()
-  if not petPowerStateList or (table.count)(petPowerStateList) == 0 then
-    return 
+function BuffViewChangePetPowerForOverdraw:PlayView(TT)
+  local petPowerStateList = self._buffResult:GetPetPowerList()
+  if not petPowerStateList or table.count(petPowerStateList) == 0 then
+    return
   end
-  for _,petPowerState in pairs(petPowerStateList) do
+  for _, petPowerState in pairs(petPowerStateList) do
     self:_PlayView(TT, petPowerState)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangePetPowerForOverdraw._PlayView = function(self, TT, petPowerState)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewChangePetPowerForOverdraw:_PlayView(TT, petPowerState)
   local entityID = petPowerState.petEntityID
   local petPstID = petPowerState.petPstID
   local curPower = petPowerState.power
@@ -31,10 +21,6 @@ BuffViewChangePetPowerForOverdraw._PlayView = function(self, TT, petPowerState)
   local requireNTPowerReady = petPowerState.requireNTPowerReady
   local readyNoRemind = petPowerState.readyNoRemind
   local skillID = petPowerState.skillID
-  ;
-  (Log.debug)("BuffViewChangePetPowerForOverdraw() pet entity=", entityID, " power=", curPower, " ready=", ready)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetPowerChange, petPstID, curPower, true)
+  Log.debug("BuffViewChangePetPowerForOverdraw() pet entity=", entityID, " power=", curPower, " ready=", ready)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetPowerChange, petPstID, curPower, true)
 end
-
-

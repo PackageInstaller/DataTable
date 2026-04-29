@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/ui_n27_select_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27SelectItem", UICustomWidget)
 UIN27SelectItem = UIN27SelectItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27SelectItem.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN27SelectItem:InitWidget()
   self._atlas = self:GetAsset("PostInGame.spriteatlas", LoadType.SpriteAtlas)
   self._nameText = self:GetUIComponent("UILocalizationText", "nameText")
   self._countText = self:GetUIComponent("UILocalizationText", "countText")
@@ -16,46 +9,26 @@ UIN27SelectItem.InitWidget = function(self)
   self._thumbImage = self:GetUIComponent("Image", "thumb")
   self._btnObj = self:GetGameObject("btn")
   self._anim = self:GetUIComponent("Animation", "anim")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnObj), UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN27PostGameItemPress, self)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnObj), UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN27PostGameItemRelease, self)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnObj), UIEvent.Press, function(go)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN27PostGameItemPress, self)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnObj), UIEvent.Release, function(go)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN27PostGameItemRelease, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItem.OnValue = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._nameText):SetText((StringTable.Get)(self._name))
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._countText).text = self._count .. ""
-  ;
-  (self._iconRawImage):LoadImage(self._icon)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._thumbImage).sprite = (self._atlas):GetSprite(self._thumbIcon)
+function UIN27SelectItem:OnValue()
+  self._nameText:SetText(StringTable.Get(self._name))
+  self._countText.text = self._count .. ""
+  self._iconRawImage:LoadImage(self._icon)
+  self._thumbImage.sprite = self._atlas:GetSprite(self._thumbIcon)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItem.PlayShowAnimation = function(self)
-  -- function num : 0_2
-  (self._anim):Play("uieff_UIN27SelectItem_in")
+function UIN27SelectItem:PlayShowAnimation()
+  self._anim:Play("uieff_UIN27SelectItem_in")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItem.SetData = function(self, cfg)
-  -- function num : 0_3
+function UIN27SelectItem:SetData(cfg)
   self._cfg = cfg
   self._name = cfg.ItemName
   self._icon = cfg.ItemIcon
@@ -66,18 +39,10 @@ UIN27SelectItem.SetData = function(self, cfg)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItem.GetItemCount = function(self)
-  -- function num : 0_4
+function UIN27SelectItem:GetItemCount()
   return self._count
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27SelectItem.GetItemID = function(self)
-  -- function num : 0_5
+function UIN27SelectItem:GetItemID()
   return self._id
 end
-
-

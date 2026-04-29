@@ -1,99 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/element_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ElementComponent", Object)
 ElementComponent = ElementComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ElementComponent.Constructor = function(self, primaryType, secondaryType)
-  -- function num : 0_0
+function ElementComponent:Constructor(primaryType, secondaryType)
   self._primaryType = primaryType
   self._secondaryType = secondaryType
   self._useSecondaryElement = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementComponent.GetPrimaryType = function(self)
-  -- function num : 0_1
+function ElementComponent:GetPrimaryType()
   return self._primaryType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementComponent.GetSecondaryType = function(self)
-  -- function num : 0_2
+function ElementComponent:GetSecondaryType()
   return self._secondaryType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementComponent.HasSecondaryType = function(self)
-  -- function num : 0_3
-  do return self._secondaryType ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function ElementComponent:HasSecondaryType()
+  return self._secondaryType ~= nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementComponent.IsUseSecondaryType = function(self)
-  -- function num : 0_4
+function ElementComponent:IsUseSecondaryType()
   if self._secondaryType ~= nil then
     return self._useSecondaryElement
   end
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ElementComponent.SetUseSecondaryType = function(self, isEnable)
-  -- function num : 0_5
+function ElementComponent:SetUseSecondaryType(isEnable)
   if self._secondaryType ~= nil then
     self._useSecondaryElement = isEnable
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Element = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).Element)
+function Entity:Element()
+  return self:GetComponent(self.WEComponentsEnum.Element)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasElement = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).Element)
+function Entity:HasElement()
+  return self:HasComponent(self.WEComponentsEnum.Element)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddElement = function(self, primaryType, secondaryType)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Element
+function Entity:AddElement(primaryType, secondaryType)
+  local index = self.WEComponentsEnum.Element
   local component = ElementComponent:New(primaryType, secondaryType)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceElement = function(self, primaryType, secondaryType)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Element
+function Entity:ReplaceElement(primaryType, secondaryType)
+  local index = self.WEComponentsEnum.Element
   local component = ElementComponent:New(primaryType, secondaryType)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveElement = function(self)
-  -- function num : 0_10
+function Entity:RemoveElement()
   if self:HasElement() then
-    self:RemoveComponent((self.WEComponentsEnum).Element)
+    self:RemoveComponent(self.WEComponentsEnum.Element)
   end
 end
-
-

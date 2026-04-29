@@ -1,117 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_draw_shop/client_campaign_draw_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ClientCampaignDrawShop", Object)
 ClientCampaignDrawShop = ClientCampaignDrawShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientCampaignDrawShop.Constructor = function(self)
-  -- function num : 0_0
+function ClientCampaignDrawShop:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignDrawShop.CheckBuy = function(saleType, price, withToast)
-  -- function num : 0_1 , upvalues : _ENV
+function ClientCampaignDrawShop.CheckBuy(saleType, price, withToast)
   local showToast = withToast or false
   local result = true
-  local roleModule = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+  local roleModule = GameGlobal.GameLogic():GetModule(RoleModule)
   if saleType == RoleAssetID.RoleAssetGlow then
     local diamond = roleModule:GetGlow()
-    if diamond < price then
-      (ToastManager.ShowToast)((StringTable.Get)("str_common_stop_pay"))
+    if price > diamond then
+      ToastManager.ShowToast(StringTable.Get("str_common_stop_pay"))
+      result = false
+    end
+  elseif saleType == RoleAssetID.RoleAssetGold then
+    local gold = roleModule:GetGold()
+    if price > gold then
+      if showToast then
+        ToastManager.ShowToast(StringTable.Get("str_shop_buy_no_gold"))
+      end
+      result = false
+    end
+  elseif saleType == RoleAssetID.RoleAssetMazeCoin then
+    local mazeCoin = roleModule:GetMazeCoin()
+    if price > mazeCoin then
+      if showToast then
+        ToastManager.ShowToast(StringTable.Get("str_shop_buy_no_maze"))
+      end
       result = false
     end
   else
-    do
-      if saleType == RoleAssetID.RoleAssetGold then
-        local gold = roleModule:GetGold()
-        if gold < price then
-          if showToast then
-            (ToastManager.ShowToast)((StringTable.Get)("str_shop_buy_no_gold"))
-          end
-          result = false
-        end
-      else
-        do
-          if saleType == RoleAssetID.RoleAssetMazeCoin then
-            local mazeCoin = roleModule:GetMazeCoin()
-            if mazeCoin < price then
-              if showToast then
-                (ToastManager.ShowToast)((StringTable.Get)("str_shop_buy_no_maze"))
-              end
-              result = false
-            end
-          else
-            do
-              local itemMd = ((GameGlobal.GameLogic)()):GetModule(ItemModule)
-              do
-                local money = itemMd:GetItemCount(saleType)
-                if money < price then
-                  if showToast then
-                    (ToastManager.ShowToast)((StringTable.Get)("str_shop_buy_no_maze"))
-                  end
-                  result = false
-                end
-                return result
-              end
-            end
-          end
-        end
+    local itemMd = GameGlobal.GameLogic():GetModule(ItemModule)
+    local money = itemMd:GetItemCount(saleType)
+    if price > money then
+      if showToast then
+        ToastManager.ShowToast(StringTable.Get("str_shop_buy_no_maze"))
       end
+      result = false
     end
   end
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignDrawShop.GetCurrencyImageName = function(saleType)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
+function ClientCampaignDrawShop.GetCurrencyImageName(saleType)
   if not ClientCampaignDrawShop.SaleType2ImageName then
-    ClientCampaignDrawShop.SaleType2ImageName = {[RoleAssetID.RoleAssetGlow] = ((Cfg.cfg_top_tips)[RoleAssetID.RoleAssetGlow]).Icon, [RoleAssetID.RoleAssetGold] = ((Cfg.cfg_top_tips)[RoleAssetID.RoleAssetGold]).Icon, [RoleAssetID.RoleAssetMazeCoin] = ((Cfg.cfg_top_tips)[RoleAssetID.RoleAssetMazeCoin]).Icon}
+    ClientCampaignDrawShop.SaleType2ImageName = {
+      [RoleAssetID.RoleAssetGlow] = Cfg.cfg_top_tips[RoleAssetID.RoleAssetGlow].Icon,
+      [RoleAssetID.RoleAssetGold] = Cfg.cfg_top_tips[RoleAssetID.RoleAssetGold].Icon,
+      [RoleAssetID.RoleAssetMazeCoin] = Cfg.cfg_top_tips[RoleAssetID.RoleAssetMazeCoin].Icon
+    }
   end
-  local icon = (ClientCampaignDrawShop.SaleType2ImageName)[saleType]
+  local icon = ClientCampaignDrawShop.SaleType2ImageName[saleType]
   if icon then
     return icon
   end
-  local cfgItem = (Cfg.cfg_item)[saleType]
+  local cfgItem = Cfg.cfg_item[saleType]
   if cfgItem then
     return cfgItem.Icon
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignDrawShop.GetMoney = function(saleType)
-  -- function num : 0_3 , upvalues : _ENV
-  local roleModule = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+function ClientCampaignDrawShop.GetMoney(saleType)
+  local roleModule = GameGlobal.GameLogic():GetModule(RoleModule)
   local money = 0
   if saleType == RoleAssetID.RoleAssetPhyPoint then
     money = roleModule:GetHealthPoint()
+  elseif saleType == RoleAssetID.RoleAssetGlow then
+    money = roleModule:GetGlow()
+  elseif saleType == RoleAssetID.RoleAssetGold then
+    money = roleModule:GetGold()
+  elseif saleType == RoleAssetID.RoleAssetMazeCoin then
+    money = roleModule:GetMazeCoin()
   else
-    if saleType == RoleAssetID.RoleAssetGlow then
-      money = roleModule:GetGlow()
-    else
-      if saleType == RoleAssetID.RoleAssetGold then
-        money = roleModule:GetGold()
-      else
-        if saleType == RoleAssetID.RoleAssetMazeCoin then
-          money = roleModule:GetMazeCoin()
-        else
-          local itemMd = ((GameGlobal.GameLogic)()):GetModule(ItemModule)
-          money = itemMd:GetItemCount(saleType)
-        end
-      end
-    end
+    local itemMd = GameGlobal.GameLogic():GetModule(ItemModule)
+    money = itemMd:GetItemCount(saleType)
   end
-  do
-    return money
-  end
+  return money
 end
-
-

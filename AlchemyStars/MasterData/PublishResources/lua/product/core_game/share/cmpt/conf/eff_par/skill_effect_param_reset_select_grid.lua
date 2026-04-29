@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_reset_select_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_ResetSelectGridElement", SkillEffectParam_ResetGridElement)
 SkillEffectParam_ResetSelectGridElement = SkillEffectParam_ResetSelectGridElement
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_ResetSelectGridElement.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_ResetSelectGridElement:Constructor(t)
   self._selectCondition = t.selectCondition
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetSelectGridElement.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_ResetSelectGridElement:GetEffectType()
   return SkillEffectType.ResetSelectGridElement
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ResetSelectGridElement.GetSelectConditionSrcElement = function(self)
-  -- function num : 0_2
+function SkillEffectParam_ResetSelectGridElement:GetSelectConditionSrcElement()
   if self._selectCondition ~= nil then
-    return (self._selectCondition).srcElement
+    return self._selectCondition.srcElement
   end
 end
-
-

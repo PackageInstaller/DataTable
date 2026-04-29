@@ -1,67 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_increase_by_target_piece_match_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillIncreaseByTargetPieceMatchCount", BuffLogicBase)
 BuffLogicChangeSkillIncreaseByTargetPieceMatchCount = BuffLogicChangeSkillIncreaseByTargetPieceMatchCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillIncreaseByTargetPieceMatchCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeSkillIncreaseByTargetPieceMatchCount:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._changeValue = logicParam.changeValue or 0
-  if not logicParam.pieceTypeList then
-    self._pieceTypeList = {}
-  end
+  self._pieceTypeList = logicParam.pieceTypeList or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillIncreaseByTargetPieceMatchCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeSkillIncreaseByTargetPieceMatchCount:DoLogic(notify)
   if not notify.GetDefenderEntity then
-    return 
+    return
   end
   local defenderEntity = notify:GetDefenderEntity()
   local defenderPos = defenderEntity:GetGridPosition()
   local bodyAreaCmpt = defenderEntity:BodyArea()
   if not bodyAreaCmpt then
-    return 
+    return
   end
   local bodyArea = bodyAreaCmpt:GetArea()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local count = 0
-  for _,posOffset in ipairs(bodyArea) do
+  for _, posOffset in ipairs(bodyArea) do
     local newPos = defenderPos + posOffset
     local pieceType = utilDataSvc:GetPieceType(newPos)
-    if (table.icontains)(self._pieceTypeList, pieceType) then
+    if table.icontains(self._pieceTypeList, pieceType) then
       count = count + 1
     end
   end
-  local changeValue = self._changeValue * (count)
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, changeValue)
+  local changeValue = self._changeValue * count
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillIncrease(self._entity, self:GetBuffSeq(), paramType, changeValue)
   end
 end
 
 _class("BuffLogicRemoveSkillIncreaseByTargetPieceMatchCount", BuffLogicBase)
 BuffLogicRemoveSkillIncreaseByTargetPieceMatchCount = BuffLogicRemoveSkillIncreaseByTargetPieceMatchCount
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillIncreaseByTargetPieceMatchCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveSkillIncreaseByTargetPieceMatchCount:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillIncreaseByTargetPieceMatchCount.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillIncrease(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveSkillIncreaseByTargetPieceMatchCount:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillIncrease(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

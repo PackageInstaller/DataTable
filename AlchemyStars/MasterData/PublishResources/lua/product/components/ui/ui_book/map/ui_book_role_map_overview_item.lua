@@ -1,104 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_book/map/ui_book_role_map_overview_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookRoleMapOverviewItem", UICustomWidget)
 UIBookRoleMapOverviewItem = UIBookRoleMapOverviewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookRoleMapOverviewItem.Constructor = function(self)
-  -- function num : 0_0
+function UIBookRoleMapOverviewItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapOverviewItem.OnShow = function(self)
-  -- function num : 0_1
+function UIBookRoleMapOverviewItem:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapOverviewItem._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBookRoleMapOverviewItem:_GetComponents()
   self._icon = self:GetUIComponent("Image", "Icon")
   self._name = self:GetUIComponent("UILocalizedTMP", "Name")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "anim")
   self._rect = self:GetUIComponent("RectTransform", "bg")
   self._owner = self:RootUIOwner()
-  self._altas = (self._owner).altas
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset("ui_book_role_map_font.mat", LoadType.Mat)
-  if self._req and (self._req).Obj then
-    self.material = (self._req).Obj
-    local oldMaterial = (self._name).fontMaterial
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._name).fontMaterial = self.material
-    ;
-    ((self._name).fontMaterial):SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
+  self._altas = self._owner.altas
+  self._req = ResourceManager:GetInstance():SyncLoadAsset("ui_book_role_map_font.mat", LoadType.Mat)
+  if self._req and self._req.Obj then
+    self.material = self._req.Obj
+    local oldMaterial = self._name.fontMaterial
+    self._name.fontMaterial = self.material
+    self._name.fontMaterial:SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapOverviewItem.SetData = function(self, cfg, index, callback)
-  -- function num : 0_3
+function UIBookRoleMapOverviewItem:SetData(cfg, index, callback)
   self._cfg = cfg
   self._index = index
   self._callback = callback
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapOverviewItem.PlayInAnimation = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBookRoleMapOverviewItem:PlayInAnimation()
   local yieldTime = 100
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV, yieldTime
     self:Lock("UIBookRoleMapOverviewItem:PlayInAnimation" .. self._index)
     YIELD(TT, (self._index - 1) * yieldTime)
-    ;
-    (self._anim):Play("uianim_UIBookRoleMapOverviewItem_in")
+    self._anim:Play("uianim_UIBookRoleMapOverviewItem_in")
     self:UnLock("UIBookRoleMapOverviewItem:PlayInAnimation" .. self._index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapOverviewItem.ResetAnim = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._canvasGroup).alpha = 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(0, -20)
+function UIBookRoleMapOverviewItem:ResetAnim()
+  self._canvasGroup.alpha = 0
+  self._rect.anchoredPosition = Vector2(0, -20)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapOverviewItem._InitComponents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._icon).sprite = (self._altas):GetSprite((self._cfg).ForceIcon)
-  ;
-  (self._name):SetText((StringTable.Get)((self._cfg).Name))
+function UIBookRoleMapOverviewItem:_InitComponents()
+  self._icon.sprite = self._altas:GetSprite(self._cfg.ForceIcon)
+  self._name:SetText(StringTable.Get(self._cfg.Name))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookRoleMapOverviewItem.GoBtnOnClick = function(self)
-  -- function num : 0_7
+function UIBookRoleMapOverviewItem:GoBtnOnClick()
   if self._callback then
-    (self._callback)((self._cfg).Tags)
+    self._callback(self._cfg.Tags)
   end
 end
-
-

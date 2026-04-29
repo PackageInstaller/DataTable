@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/phantom_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PhantomComponent", Object)
 PhantomComponent = PhantomComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PhantomComponent.Constructor = function(self, ownerID)
-  -- function num : 0_0
+function PhantomComponent:Constructor(ownerID)
   self._ownerID = ownerID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PhantomComponent.GetOwnerEntityID = function(self)
-  -- function num : 0_1
+function PhantomComponent:GetOwnerEntityID()
   return self._ownerID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PhantomComponent = function(self)
-  -- function num : 0_2
-  return self:GetComponent((self.WEComponentsEnum).Phantom)
+function Entity:PhantomComponent()
+  return self:GetComponent(self.WEComponentsEnum.Phantom)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPhantomComponent = function(self, ownerID)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Phantom
+function Entity:AddPhantomComponent(ownerID)
+  local index = self.WEComponentsEnum.Phantom
   local component = PhantomComponent:New(ownerID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPhantomComponent = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).Phantom)
+function Entity:HasPhantomComponent()
+  return self:HasComponent(self.WEComponentsEnum.Phantom)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePhantomComponent = function(self)
-  -- function num : 0_5
+function Entity:RemovePhantomComponent()
   if self:HasPhantomComponent() then
-    self:RemoveComponent((self.WEComponentsEnum).Phantom)
+    self:RemoveComponent(self.WEComponentsEnum.Phantom)
   end
 end
-
-

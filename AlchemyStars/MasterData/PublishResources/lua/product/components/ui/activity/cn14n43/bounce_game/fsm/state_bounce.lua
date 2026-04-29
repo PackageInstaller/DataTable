@@ -1,8 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/fsm/state_bounce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local StateBounce = {Init = 0, Prepare = 1, Battle = 2, Pause = 3, Resume = 4, Over = 5}
+local StateBounce = {
+  Init = 0,
+  Prepare = 1,
+  Battle = 2,
+  Pause = 3,
+  Resume = 4,
+  Over = 5
+}
 _enum("StateBounce", StateBounce)
-

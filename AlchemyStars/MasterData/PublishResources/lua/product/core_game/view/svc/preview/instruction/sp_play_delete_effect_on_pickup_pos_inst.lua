@@ -1,41 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_delete_effect_on_pickup_pos_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayDeleteEffectOnPickUpPosInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayDeleteEffectOnPickUpPosInstruction = SkillPreviewPlayDeleteEffectOnPickUpPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayDeleteEffectOnPickUpPosInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayDeleteEffectOnPickUpPosInstruction:Constructor(params)
   self._effectID = tonumber(params.effectID)
-  assert((Cfg.cfg_effect)[self._effectID], "预览指令PlayEffectOnPickupPos需要有效的effectID")
+  assert(Cfg.cfg_effect[self._effectID], "预览指令PlayEffectOnPickupPos需要有效的effectID")
   self._ignorePos = tonumber(params.ignorePos) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayDeleteEffectOnPickUpPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayDeleteEffectOnPickUpPosInstruction:GetCacheResource()
   return {
-{((Cfg.cfg_effect)[self._effectID]).ResPath, 1}
-}
+    {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayDeleteEffectOnPickUpPosInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayDeleteEffectOnPickUpPosInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   if not previewPickUpComponent then
-    return 
+    return
   end
   local entityIDs = previewPickUpComponent:GetPickUpEffectEntityIDArray()
-  for _,entityID in pairs(entityIDs) do
+  for _, entityID in pairs(entityIDs) do
     if entityID then
       local entity = world:GetEntityByID(entityID)
       if entity then
@@ -47,5 +36,3 @@ SkillPreviewPlayDeleteEffectOnPickUpPosInstruction.DoInstruction = function(self
     end
   end
 end
-
-

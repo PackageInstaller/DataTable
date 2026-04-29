@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_train_convert.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_TrainConvert", SkillScopeCalculator_Base)
 SkillScopeCalculator_TrainConvert = SkillScopeCalculator_TrainConvert
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_TrainConvert.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = (self._gridFilter)._world
+function SkillScopeCalculator_TrainConvert:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local world = self._gridFilter._world
   local boardServiceLogic = world:GetService("BoardLogic")
   local maxX = boardServiceLogic:GetCurBoardMaxX()
   local maxY = boardServiceLogic:GetCurBoardMaxY()
@@ -18,7 +11,7 @@ SkillScopeCalculator_TrainConvert.CalcRange = function(self, scopeType, scopePar
   local attackGridPosList = {}
   local tmpGridPosList = {}
   local convertGridList = {}
-  local attackGridScopeParam, tmpGridScopeParam = nil, nil
+  local attackGridScopeParam, tmpGridScopeParam
   if type == HitBackDirectionType.Down or type == HitBackDirectionType.Up then
     attackGridScopeParam = SkillNRowsMColumnsScopeParam:New(maxY * 2 + 1, 3)
     tmpGridScopeParam = SkillNRowsMColumnsScopeParam:New(maxY * 2 + 1, 1)
@@ -26,15 +19,13 @@ SkillScopeCalculator_TrainConvert.CalcRange = function(self, scopeType, scopePar
     attackGridScopeParam = SkillNRowsMColumnsScopeParam:New(3, maxX * 2 + 1)
     tmpGridScopeParam = SkillNRowsMColumnsScopeParam:New(1, maxX * 2 + 1)
   end
-  attackGridPosList = ((self._hub):ComputeScopeRange(SkillScopeType.NRowsMColumns, attackGridScopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)):GetAttackRange()
-  tmpGridPosList = ((self._hub):ComputeScopeRange(SkillScopeType.NRowsMColumns, tmpGridScopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)):GetAttackRange()
-  for _,pos in pairs(attackGridPosList) do
-    if not (table.icontains)(tmpGridPosList, pos) then
-      (table.insert)(convertGridList, pos)
+  attackGridPosList = self._hub:ComputeScopeRange(SkillScopeType.NRowsMColumns, attackGridScopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos):GetAttackRange()
+  tmpGridPosList = self._hub:ComputeScopeRange(SkillScopeType.NRowsMColumns, tmpGridScopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos):GetAttackRange()
+  for _, pos in pairs(attackGridPosList) do
+    if not table.icontains(tmpGridPosList, pos) then
+      table.insert(convertGridList, pos)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.TrainConvertScope, centerPos, convertGridList, convertGridList)
   return result
 end
-
-

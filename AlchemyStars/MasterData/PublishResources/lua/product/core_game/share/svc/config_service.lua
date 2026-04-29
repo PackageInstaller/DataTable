@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/svc/config_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ConfigService", Object)
 ConfigService = ConfigService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ConfigService.Constructor = function(self, world)
-  -- function num : 0_0
+function ConfigService:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ConfigService:Initialize()
   self._levelConfigData = LevelConfigData:New(self, self._world)
   self._monsterConfigData = MonsterConfigData:New(self._world)
   self._trapConfigData = TrapConfigData:New()
   self._aiConfigData = AiConfigData:New()
   self._chessPetConfigData = ChessPetConfigData:New(self._world)
   local hasViewParser = true
-  local runPos = (self._world):GetRunningPosition()
+  local runPos = self._world:GetRunningPosition()
   if runPos == WorldRunPostion.AtServer then
     hasViewParser = false
   end
@@ -34,171 +24,113 @@ ConfigService.Initialize = function(self)
   self._featureConfigHelper = FeatureConfigHelper:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.InitConfig = function(self)
-  -- function num : 0_2
-  local worldContext = (self._world).BW_WorldInfo
-  ;
-  (self._levelConfigData):ParseLevelConfig(worldContext.level_id)
+function ConfigService:InitConfig()
+  local worldContext = self._world.BW_WorldInfo
+  self._levelConfigData:ParseLevelConfig(worldContext.level_id)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetLevelConfigData = function(self)
-  -- function num : 0_3
+function ConfigService:GetLevelConfigData()
   return self._levelConfigData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetMonsterConfigData = function(self)
-  -- function num : 0_4
+function ConfigService:GetMonsterConfigData()
   return self._monsterConfigData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetTrapConfigData = function(self)
-  -- function num : 0_5
+function ConfigService:GetTrapConfigData()
   return self._trapConfigData
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetAiConfigData = function(self)
-  -- function num : 0_6
+function ConfigService:GetAiConfigData()
   return self._aiConfigData
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.ClearSkillConfigData = function(self)
-  -- function num : 0_7
-  (self._skillConfigHelper):ClearSkillData()
+function ConfigService:ClearSkillConfigData()
+  self._skillConfigHelper:ClearSkillData()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetSkillConfigData = function(self, skillID, casterEntity, forceFetchNew)
-  -- function num : 0_8 , upvalues : _ENV
-  local configData = (self._skillConfigHelper):GetSkillData(skillID, forceFetchNew)
-  if not casterEntity or not casterEntity:HasPetPstID() or configData:GetSkillType() ~= SkillType.Active then
+function ConfigService:GetSkillConfigData(skillID, casterEntity, forceFetchNew)
+  local configData = self._skillConfigHelper:GetSkillData(skillID, forceFetchNew)
+  if not (casterEntity and casterEntity:HasPetPstID()) or configData:GetSkillType() ~= SkillType.Active then
     return configData
   end
   local isSkillReplacedByFeatureScan = casterEntity:HasMatchPet()
   if isSkillReplacedByFeatureScan then
-    local matchPetData = (casterEntity:MatchPet()):GetMatchPet()
-    if not matchPetData:GetFeatureList() then
-      local featureList = {
-feature = {}
-}
-    end
-    isSkillReplacedByFeatureScan = (featureList.feature)[FeatureType.Scan] ~= nil
+    local matchPetData = casterEntity:MatchPet():GetMatchPet()
+    local featureList = matchPetData:GetFeatureList() or {
+      feature = {}
+    }
+    isSkillReplacedByFeatureScan = featureList.feature[FeatureType.Scan] ~= nil
   end
   if not isSkillReplacedByFeatureScan then
     return configData
   else
-    local eBoard = (self._world):GetBoardEntity()
+    local eBoard = self._world:GetBoardEntity()
     local cLogicFeature = eBoard:LogicFeature()
     if not cLogicFeature:GetActiveSkillConfigData() then
       return configData
     end
     return cLogicFeature:GetActiveSkillConfigData()
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetBuffConfigData = function(self, buffID)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self._buffConfigDic)[buffID] ~= nil then
-    return (self._buffConfigDic)[buffID]
+function ConfigService:GetBuffConfigData(buffID)
+  if self._buffConfigDic[buffID] ~= nil then
+    return self._buffConfigDic[buffID]
   end
   local buffConfigData = BuffConfigData:New(buffID)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffConfigDic)[buffID] = buffConfigData
+  self._buffConfigDic[buffID] = buffConfigData
   return buffConfigData
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetMonsterDropConfigData = function(self)
-  -- function num : 0_10
+function ConfigService:GetMonsterDropConfigData()
   return self._dropConfigData
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetMonsterDropItemConfigData = function(self, dropItemID)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self._dropItemConfigDic)[dropItemID] ~= nil then
-    return (self._dropItemConfigDic)[dropItemID]
+function ConfigService:GetMonsterDropItemConfigData(dropItemID)
+  if self._dropItemConfigDic[dropItemID] ~= nil then
+    return self._dropItemConfigDic[dropItemID]
   end
   local dropItemConfigData = MonsterDropItemConfigData:New()
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._dropItemConfigDic)[dropItemID] = dropItemConfigData
+  self._dropItemConfigDic[dropItemID] = dropItemConfigData
   return dropItemConfigData
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetMission3StarCondition = function(self, missionID)
-  -- function num : 0_12 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_mission)[missionID]
+function ConfigService:GetMission3StarCondition(missionID)
+  local mission_config = Cfg.cfg_mission[missionID]
   local condition = {}
   if mission_config then
-    (table.insert)(condition, mission_config.ThreeStarCondition1)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition2)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition3)
+    table.insert(condition, mission_config.ThreeStarCondition1)
+    table.insert(condition, mission_config.ThreeStarCondition2)
+    table.insert(condition, mission_config.ThreeStarCondition3)
   end
   return condition
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetCampaignMission3StarCondition = function(self, missionID)
-  -- function num : 0_13 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_campaign_mission)[missionID]
+function ConfigService:GetCampaignMission3StarCondition(missionID)
+  local mission_config = Cfg.cfg_campaign_mission[missionID]
   local condition = {}
   if mission_config and mission_config.IgnoreThreeStar == 0 then
-    (table.insert)(condition, mission_config.ThreeStarCondition1)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition2)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition3)
+    table.insert(condition, mission_config.ThreeStarCondition1)
+    table.insert(condition, mission_config.ThreeStarCondition2)
+    table.insert(condition, mission_config.ThreeStarCondition3)
   end
   return condition
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetChessMission3StarCondition = function(self, missionID)
-  -- function num : 0_14 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_chess_mission)[missionID]
+function ConfigService:GetChessMission3StarCondition(missionID)
+  local mission_config = Cfg.cfg_chess_mission[missionID]
   local condition = {}
   if mission_config and mission_config.IgnoreThreeStar == 0 then
-    (table.insert)(condition, mission_config.ThreeStarCondition1)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition2)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition3)
+    table.insert(condition, mission_config.ThreeStarCondition1)
+    table.insert(condition, mission_config.ThreeStarCondition2)
+    table.insert(condition, mission_config.ThreeStarCondition3)
   end
   return condition
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetExtMission3StarCondition = function(self, taskID)
-  -- function num : 0_15 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_extra_mission_task)[taskID]
+function ConfigService:GetExtMission3StarCondition(taskID)
+  local mission_config = Cfg.cfg_extra_mission_task[taskID]
   local condition = {}
   if mission_config then
     condition[1] = mission_config.ThreeStarCondition1
@@ -208,269 +140,182 @@ ConfigService.GetExtMission3StarCondition = function(self, taskID)
   return condition
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetPopStar3StarCondition = function(self, missionID)
-  -- function num : 0_16 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_popstar_mission)[missionID]
+function ConfigService:GetPopStar3StarCondition(missionID)
+  local mission_config = Cfg.cfg_popstar_mission[missionID]
   local condition = {}
   if mission_config and mission_config.IgnoreThreeStar == 0 then
-    (table.insert)(condition, mission_config.ThreeStarCondition1)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition2)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition3)
+    table.insert(condition, mission_config.ThreeStarCondition1)
+    table.insert(condition, mission_config.ThreeStarCondition2)
+    table.insert(condition, mission_config.ThreeStarCondition3)
   end
   return condition
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetPopStarPro3StarCondition = function(self, missionID)
-  -- function num : 0_17 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_line_popstar_mission)[missionID]
+function ConfigService:GetPopStarPro3StarCondition(missionID)
+  local mission_config = Cfg.cfg_line_popstar_mission[missionID]
   local condition = {}
   if mission_config and mission_config.IgnoreThreeStar == 0 then
-    (table.insert)(condition, mission_config.ThreeStarCondition1)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition2)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition3)
+    table.insert(condition, mission_config.ThreeStarCondition1)
+    table.insert(condition, mission_config.ThreeStarCondition2)
+    table.insert(condition, mission_config.ThreeStarCondition3)
   end
   return condition
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetSeasonMission3StarCondition = function(self, missionID)
-  -- function num : 0_18 , upvalues : _ENV
-  local mission_config = (Cfg.cfg_season_mission)[missionID]
+function ConfigService:GetSeasonMission3StarCondition(missionID)
+  local mission_config = Cfg.cfg_season_mission[missionID]
   local condition = {}
   if mission_config and mission_config.ShowCondition == 1 then
-    (table.insert)(condition, mission_config.ThreeStarCondition1)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition2)
-    ;
-    (table.insert)(condition, mission_config.ThreeStarCondition3)
+    table.insert(condition, mission_config.ThreeStarCondition1)
+    table.insert(condition, mission_config.ThreeStarCondition2)
+    table.insert(condition, mission_config.ThreeStarCondition3)
   end
   return condition
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetPetPassiveSkill = function(self, passiveSkillID)
-  -- function num : 0_19 , upvalues : _ENV
-  local config = (Cfg.cfg_passive_skill)[passiveSkillID]
+function ConfigService:GetPetPassiveSkill(passiveSkillID)
+  local config = Cfg.cfg_passive_skill[passiveSkillID]
   return config
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetChangeTeamLeaderCount = function(self)
-  -- function num : 0_20
-  local count = (self._levelConfigData):GetChangeTeamLeaderCount()
+function ConfigService:GetChangeTeamLeaderCount()
+  local count = self._levelConfigData:GetChangeTeamLeaderCount()
   return count
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetWaveCompleteConditionType = function(self, waveIndex)
-  -- function num : 0_21
-  local completeConditionType = (self._levelConfigData):GetWaveCompleteConditionType(waveIndex)
+function ConfigService:GetWaveCompleteConditionType(waveIndex)
+  local completeConditionType = self._levelConfigData:GetWaveCompleteConditionType(waveIndex)
   return completeConditionType
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetMonsterHealth = function(self, entity)
-  -- function num : 0_22 , upvalues : _ENV
+function ConfigService:GetMonsterHealth(entity)
   if not entity:HasMonsterID() then
     if EDITOR then
-      (Log.exception)("Func Call Invalid ,Trace:", (Log.traceback)())
+      Log.exception("Func Call Invalid ,Trace:", Log.traceback())
     else
-      ;
-      (Log.fatal)("Func Call Invalid ,Trace:", (Log.traceback)())
+      Log.fatal("Func Call Invalid ,Trace:", Log.traceback())
     end
   end
   local monsterIDCmpt = entity:MonsterID()
   local monsterID = monsterIDCmpt:GetMonsterID()
   if not monsterIDCmpt:IsMultiHPMonster() then
-    return (self._monsterConfigData):GetMonsterHealth(monsterID)
+    return self._monsterConfigData:GetMonsterHealth(monsterID)
   else
-    local multiHPData = (self._monsterConfigData):GetMonsterMultiHealth(monsterID)
+    local multiHPData = self._monsterConfigData:GetMonsterMultiHealth(monsterID)
     local stage = monsterIDCmpt:GetMultiHPStage()
-    if #multiHPData < stage then
+    if stage > #multiHPData then
       return multiHPData[#multiHPData]
     end
     return multiHPData[stage]
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetCutsceneConfig = function(self, cutsceneID)
-  -- function num : 0_23 , upvalues : _ENV
-  if (self._cutsceneDic)[cutsceneID] ~= nil then
-    return (self._cutsceneDic)[cutsceneID]
+function ConfigService:GetCutsceneConfig(cutsceneID)
+  if self._cutsceneDic[cutsceneID] ~= nil then
+    return self._cutsceneDic[cutsceneID]
   end
   local cutsceneCfgData = CutsceneConfigData:New()
   cutsceneCfgData:ParseCutsceneConfig(cutsceneID)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._cutsceneDic)[cutsceneID] = cutsceneCfgData
+  self._cutsceneDic[cutsceneID] = cutsceneCfgData
   return cutsceneCfgData
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetN5CurWaveConfig = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  if (self._world)._matchType == MatchType.MT_Conquest then
-    local levelID = ((self._world).BW_WorldInfo).level_id
-    local waveIndex = ((self._world):BattleStat()):GetCurWaveIndex()
-    local cfg = (Cfg.cfg_conquest_level_wave)({LevelID = levelID, WaveIndex = waveIndex})
+function ConfigService:GetN5CurWaveConfig()
+  if self._world._matchType == MatchType.MT_Conquest then
+    local levelID = self._world.BW_WorldInfo.level_id
+    local waveIndex = self._world:BattleStat():GetCurWaveIndex()
+    local cfg = Cfg.cfg_conquest_level_wave({LevelID = levelID, WaveIndex = waveIndex})
     if not cfg then
-      (Log.fatal)("GetN5CurWaveConfig Failed LevelID:", levelID, "WaveIndex:", waveIndex)
+      Log.fatal("GetN5CurWaveConfig Failed LevelID:", levelID, "WaveIndex:", waveIndex)
     end
     return cfg[1]
   end
-  do
-    ;
-    (Log.fatal)("GetN5CurWaveConfig MatchType", (self._world)._matchType, " Invalid ")
-  end
+  Log.fatal("GetN5CurWaveConfig MatchType", self._world._matchType, " Invalid ")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.N5GetCurWaveScore = function(self)
-  -- function num : 0_25
+function ConfigService:N5GetCurWaveScore()
   local cfg = self:GetN5CurWaveConfig()
   if cfg then
-    return (cfg.WaveFirstPassAward)[2]
+    return cfg.WaveFirstPassAward[2]
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetN5WaveBuff = function(self)
-  -- function num : 0_26
+function ConfigService:GetN5WaveBuff()
   local cfg = self:GetN5CurWaveConfig()
   if cfg then
     return cfg.WavePassBuff
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetCNN5CurWaveConfig = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  if (self._world)._matchType == MatchType.MT_SimpleBattleField then
-    local levelID = ((self._world).BW_WorldInfo).level_id
-    local waveIndex = ((self._world):BattleStat()):GetCurWaveIndex()
-    local cfg = (Cfg.cfg_simple_conquest_level_wave)({LevelID = levelID, WaveIndex = waveIndex})
+function ConfigService:GetCNN5CurWaveConfig()
+  if self._world._matchType == MatchType.MT_SimpleBattleField then
+    local levelID = self._world.BW_WorldInfo.level_id
+    local waveIndex = self._world:BattleStat():GetCurWaveIndex()
+    local cfg = Cfg.cfg_simple_conquest_level_wave({LevelID = levelID, WaveIndex = waveIndex})
     if not cfg then
-      (Log.fatal)("GetCNN5CurWaveConfig Failed LevelID:", levelID, "WaveIndex:", waveIndex)
+      Log.fatal("GetCNN5CurWaveConfig Failed LevelID:", levelID, "WaveIndex:", waveIndex)
     end
     return cfg[1]
   end
-  do
-    ;
-    (Log.fatal)("GetCNN5CurWaveConfig MatchType", (self._world)._matchType, " Invalid ")
-  end
+  Log.fatal("GetCNN5CurWaveConfig MatchType", self._world._matchType, " Invalid ")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.CNCNN5GetCurWaveScore = function(self)
-  -- function num : 0_28
+function ConfigService:CNCNN5GetCurWaveScore()
   local cfg = self:GetCNN5CurWaveConfig()
   if cfg then
-    return (cfg.WaveFirstPassAward)[2]
+    return cfg.WaveFirstPassAward[2]
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetCNN5WaveBuff = function(self)
-  -- function num : 0_29
+function ConfigService:GetCNN5WaveBuff()
   local cfg = self:GetCNN5CurWaveConfig()
   if cfg then
     return cfg.WavePassBuff
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetHardID = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  if (self._world)._matchType == MatchType.MT_Conquest then
+function ConfigService:GetHardID()
+  if self._world._matchType == MatchType.MT_Conquest then
     local cfg = self:GetN5CurWaveConfig()
     return cfg.DiffParamID
+  elseif self._world._matchType == MatchType.MT_MiniMaze then
+    local levelConfigData = self:GetLevelConfigData()
+    local curWaveIndex = self._world:BattleStat():GetCurWaveIndex()
+    local cfgMiniMazeWave = levelConfigData:GetMiniMazeWaveCfg(curWaveIndex)
+    return cfgMiniMazeWave.DiffParamID
+  elseif self._world._matchType == MatchType.MT_SimpleBattleField then
+    local cfg = self:GetCNN5CurWaveConfig()
+    return cfg.DiffParamID
   else
-    do
-      if (self._world)._matchType == MatchType.MT_MiniMaze then
-        local levelConfigData = self:GetLevelConfigData()
-        local curWaveIndex = ((self._world):BattleStat()):GetCurWaveIndex()
-        local cfgMiniMazeWave = levelConfigData:GetMiniMazeWaveCfg(curWaveIndex)
-        return cfgMiniMazeWave.DiffParamID
-      else
-        do
-          if (self._world)._matchType == MatchType.MT_SimpleBattleField then
-            local cfg = self:GetCNN5CurWaveConfig()
-            return cfg.DiffParamID
-          else
-            do
-              do return (self._world):GetHardID() end
-            end
-          end
-        end
-      end
-    end
+    return self._world:GetHardID()
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetAffixHardParam = function(self, attrFormalType)
-  -- function num : 0_31 , upvalues : _ENV
+function ConfigService:GetAffixHardParam(attrFormalType)
   local defY = BattleConst.MonsterADHFormula2ParmaYDefault
   local defZ = BattleConst.MonsterADHFormula2ParmaZDefault
   local hardID = self:GetHardID()
-  local cfg = (Cfg.cfg_affix_hard_param)[hardID]
+  local cfg = Cfg.cfg_affix_hard_param[hardID]
   if cfg then
     if attrFormalType == MonsterADHFormulaType.N4AttackAndDefense then
       return cfg.ParamY, cfg.ParamZ
-    else
-      if attrFormalType == MonsterADHFormulaType.N4HP then
-        return cfg.ParamY2, cfg.ParamZ2
-      else
-        return attrFormalType ~= MonsterADHFormulaType.N25MiniMaze or defY, not cfg.ParamY3 and cfg.ParamZ3 or defZ
-      end
+    elseif attrFormalType == MonsterADHFormulaType.N4HP then
+      return cfg.ParamY2, cfg.ParamZ2
+    elseif attrFormalType == MonsterADHFormulaType.N25MiniMaze then
+      return cfg.ParamY3 or defY, cfg.ParamZ3 or defZ
     end
   end
   return defY, defZ
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetChessPetConfigData = function(self)
-  -- function num : 0_32
+function ConfigService:GetChessPetConfigData()
   return self._chessPetConfigData
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.GetFeatureConfigData = function(self, featureType)
-  -- function num : 0_33
-  return (self._featureConfigHelper):GetFeatureData(featureType)
+function ConfigService:GetFeatureConfigData(featureType)
+  return self._featureConfigHelper:GetFeatureData(featureType)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-ConfigService.ParseCustomFeatureList = function(self, featureCfg)
-  -- function num : 0_34
-  return (self._featureConfigHelper):ParseCustomFeatureList(featureCfg)
+function ConfigService:ParseCustomFeatureList(featureCfg)
+  return self._featureConfigHelper:ParseCustomFeatureList(featureCfg)
 end
-
-

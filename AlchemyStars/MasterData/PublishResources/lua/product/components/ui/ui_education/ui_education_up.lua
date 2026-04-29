@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/ui_education_up.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEducationUp", UIController)
 UIEducationUp = UIEducationUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEducationUp.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEducationUp:Constructor()
   self._enableEducationChanged = true
   self._selElementType = ElementType.ElementType_Blue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIEducationUp:LoadDataOnEnter(TT, res, uiParams)
   self._selElementType = uiParams[1]
   self._inAnimationCB = uiParams[2]
   self._outAnimationCB = uiParams[3]
@@ -28,10 +18,7 @@ UIEducationUp.LoadDataOnEnter = function(self, TT, res, uiParams)
   self._atlasPropertyUnsel = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEducationUp:OnShow(uiParams)
   self:UIWidget()
   self:InitCommonTopButton()
   self:InitMainLobbyTop()
@@ -42,51 +29,35 @@ UIEducationUp.OnShow = function(self, uiParams)
   self:FlushDataLevelNxt()
   self:FlushSelection()
   self:InAnimation()
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:IsGuideProcess(5511) then
-    (self._guideBtnInfo):SetActive(true)
+    self._guideBtnInfo:SetActive(true)
   end
   self:AttachEvent(GameEventType.EducationChanged, self.OnEducationChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.OnHide = function(self)
-  -- function num : 0_3
+function UIEducationUp:OnHide()
   self:StopLackShake()
-  ;
-  ((self._uiCost).uiAsset):Dispose()
+  self._uiCost.uiAsset:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4
-  local shakeTick = (self._shake).tick
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._shake).tick = (self._shake).tick + deltaTimeMS
-  if shakeTick <= (self._shake).period and (self._shake).period < (self._shake).tick then
+function UIEducationUp:OnUpdate(deltaTimeMS)
+  local shakeTick = self._shake.tick
+  self._shake.tick = self._shake.tick + deltaTimeMS
+  if shakeTick <= self._shake.period and self._shake.period < self._shake.tick then
     self:StopLackShake()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.BtnUpstagePreviewOnClick = function(self, go)
-  -- function num : 0_5
-  local selNode = (self._lstNode)[self._selElementType]
+function UIEducationUp:BtnUpstagePreviewOnClick(go)
+  local selNode = self._lstNode[self._selElementType]
   self:ShowDialog("UIEducationUpPreview", go, selNode.element)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.BtnUpgradationOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local needGold = (self._dataLevelNxt):NeedGold()
-  local needAssets = (self._dataLevelNxt):NeedAsset(true)
+function UIEducationUp:BtnUpgradationOnClick(go)
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local needGold = self._dataLevelNxt:NeedGold()
+  local needAssets = self._dataLevelNxt:NeedAsset(true)
   local haveGoldCount = 0
   local needGoldCount = 0
   if needGold ~= nil then
@@ -94,236 +65,182 @@ UIEducationUp.BtnUpgradationOnClick = function(self, go)
     needGoldCount = needGold.count
   end
   local idLackAsset = 0
-  do
-    for k,v in pairs(needAssets) do
-      local haveAssetCount = 0
-      local needAssetCount = 0
-      if v ~= nil then
-        haveAssetCount = itemModule:GetItemCount(v.assetid)
-        needAssetCount = v.count
-      end
-      if haveAssetCount < needAssetCount then
-        idLackAsset = k
-        break
-      end
+  for k, v in pairs(needAssets) do
+    local haveAssetCount = 0
+    local needAssetCount = 0
+    if v ~= nil then
+      haveAssetCount = itemModule:GetItemCount(v.assetid)
+      needAssetCount = v.count
+    end
+    if haveAssetCount < needAssetCount then
+      idLackAsset = k
+      break
     end
   end
-  do
-    local metCondition = (self._dataLevelNxt):IsMetCondition()
-    if not metCondition then
-      (ToastManager.ShowToast)((StringTable.Get)("str_education_upstage_not_meet"))
-    else
-      if idLackAsset > 0 then
-        self:DoLackShake(true, idLackAsset)
+  local metCondition = self._dataLevelNxt:IsMetCondition()
+  if not metCondition then
+    ToastManager.ShowToast(StringTable.Get("str_education_upstage_not_meet"))
+  elseif 0 < idLackAsset then
+    self:DoLackShake(true, idLackAsset)
+  elseif haveGoldCount < needGoldCount then
+    self:DoLackShake(false)
+  else
+    local petModule = self:GetModule(PetModule)
+    local ID = self._dataLevelNxt:GetCfg().ID
+    local idlist = {ID}
+    local smeltlist = {}
+    self:StartSafeTask("UIEducationUp::BtnUpgradationOnClick", function(lockName, TT)
+      self:Lock(lockName)
+      local selNode = self._lstNode[self._selElementType]
+      local selElement = selNode.element
+      local currentLevel = selElement:GetCurrentLevel()
+      local currentMaxLevel = selElement:GetCurrentMaxLevel()
+      local dataLevel = selElement:GetCurrentDataLevel()
+      self._enableEducationChanged = false
+      local res, retMsg = petModule:HandlePropertyCultivateLv(TT, smeltlist, idlist)
+      self._enableEducationChanged = true
+      if res:GetSucc() and retMsg ~= nil and retMsg.ret == PET_RESULT_CODE.PET_SUCCEED then
+        self:OnPlayUpAnimation(currentLevel, currentMaxLevel, dataLevel)
       else
-        if haveGoldCount < needGoldCount then
-          self:DoLackShake(false)
-        else
-          local petModule = self:GetModule(PetModule)
-          local ID = ((self._dataLevelNxt):GetCfg()).ID
-          local idlist = {ID}
-          local smeltlist = {}
-          self:StartSafeTask("UIEducationUp::BtnUpgradationOnClick", function(lockName, TT)
-    -- function num : 0_6_0 , upvalues : self, petModule, smeltlist, idlist, _ENV, ID
-    self:Lock(lockName)
-    local selNode = (self._lstNode)[self._selElementType]
-    local selElement = selNode.element
-    local currentLevel = selElement:GetCurrentLevel()
-    local currentMaxLevel = selElement:GetCurrentMaxLevel()
-    local dataLevel = selElement:GetCurrentDataLevel()
-    self._enableEducationChanged = false
-    local res, retMsg = petModule:HandlePropertyCultivateLv(TT, smeltlist, idlist)
-    self._enableEducationChanged = true
-    if res:GetSucc() and retMsg ~= nil and retMsg.ret == PET_RESULT_CODE.PET_SUCCEED then
-      self:OnPlayUpAnimation(currentLevel, currentMaxLevel, dataLevel)
-    else
-      ;
-      (Log.error)("UIEducationUp:BtnUpgradationOnClick(go) error ->: ", retCode, self._selElementType, ID)
-    end
-    self:UnLock(lockName)
-  end
-)
-        end
+        Log.error("UIEducationUp:BtnUpgradationOnClick(go) error ->: ", retCode, self._selElementType, ID)
       end
-    end
+      self:UnLock(lockName)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.OnPlayUpAnimation = function(self, currentLevel, currentMaxLevel, dataLevel)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R4 in 'UnsetPending'
-
+function UIEducationUp:OnPlayUpAnimation(currentLevel, currentMaxLevel, dataLevel)
   if self._upAnimationName == nil then
-    UIEducationUp._upAnimationName = {"uieff_EducationUp_LevelUp_01_bing", "uieff_EducationUp_LevelUp_01_huo", "uieff_EducationUp_LevelUp_01_sen", "uieff_EducationUp_LevelUp_01_lei"}
+    UIEducationUp._upAnimationName = {
+      "uieff_EducationUp_LevelUp_01_bing",
+      "uieff_EducationUp_LevelUp_01_huo",
+      "uieff_EducationUp_LevelUp_01_sen",
+      "uieff_EducationUp_LevelUp_01_lei"
+    }
   end
   self:StartSafeTask("UIEducationUp::OnPlayUpAnimation", function(lockName, TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, dataLevel
     self:Lock(lockName)
     local period = 267
     local deltaMs = 0
     local alpha = 255
-    local speed = -0.95505617977528
-    while deltaMs <= period do
-      local dt = (GameGlobal:GetInstance()):GetDeltaTime()
+    local speed = -0.9550561797752809
+    while period >= deltaMs do
+      local dt = GameGlobal:GetInstance():GetDeltaTime()
       deltaMs = deltaMs + dt
       alpha = alpha + speed * dt
-      alpha = (math.max)(alpha, 0)
-      local attackText = self:GetAttackUpgrade((dataLevel:GetCfg()).Attack, ((self._dataLevelNxt):GetCfg()).Attack, alpha)
-      local defenceText = self:GetAttackUpgrade((dataLevel:GetCfg()).Defence, ((self._dataLevelNxt):GetCfg()).Defence, alpha)
-      local healthText = self:GetAttackUpgrade((dataLevel:GetCfg()).Health, ((self._dataLevelNxt):GetCfg()).Health, alpha)
-      ;
-      ((self._uiUpgrade).valueAttack):SetText(attackText)
-      ;
-      ((self._uiUpgrade).valueDefence):SetText(defenceText)
-      ;
-      ((self._uiUpgrade).valueHealth):SetText(healthText)
+      alpha = math.max(alpha, 0)
+      local attackText = self:GetAttackUpgrade(dataLevel:GetCfg().Attack, self._dataLevelNxt:GetCfg().Attack, alpha)
+      local defenceText = self:GetAttackUpgrade(dataLevel:GetCfg().Defence, self._dataLevelNxt:GetCfg().Defence, alpha)
+      local healthText = self:GetAttackUpgrade(dataLevel:GetCfg().Health, self._dataLevelNxt:GetCfg().Health, alpha)
+      self._uiUpgrade.valueAttack:SetText(attackText)
+      self._uiUpgrade.valueDefence:SetText(defenceText)
+      self._uiUpgrade.valueHealth:SetText(healthText)
       YIELD()
     end
-    do
-      local period = 700
-      local deltaMs = 0
-      local attackValue = (dataLevel:GetCfg()).Attack
-      local defenceValue = (dataLevel:GetCfg()).Defence
-      local healthValue = (dataLevel:GetCfg()).Health
-      local speedAttack = (((self._dataLevelNxt):GetCfg()).Attack - attackValue) / period
-      local speedDefence = (((self._dataLevelNxt):GetCfg()).Defence - defenceValue) / period
-      local speedHealth = (((self._dataLevelNxt):GetCfg()).Health - healthValue) / period
-      while deltaMs <= period do
-        local dt = (GameGlobal:GetInstance()):GetDeltaTime()
-        deltaMs = deltaMs + dt
-        attackValue = attackValue + speedAttack * dt
-        defenceValue = defenceValue + speedDefence * dt
-        healthValue = healthValue + speedHealth * dt
-        attackValue = (math.min)(attackValue, ((self._dataLevelNxt):GetCfg()).Attack)
-        defenceValue = (math.min)(defenceValue, ((self._dataLevelNxt):GetCfg()).Defence)
-        healthValue = (math.min)(healthValue, ((self._dataLevelNxt):GetCfg()).Health)
-        local attackText = self:GetAttackUpgrade((math.floor)(attackValue))
-        local defenceText = self:GetAttackUpgrade((math.floor)(defenceValue))
-        local healthText = self:GetAttackUpgrade((math.floor)(healthValue))
-        ;
-        ((self._uiUpgrade).valueAttack):SetText(attackText)
-        ;
-        ((self._uiUpgrade).valueDefence):SetText(defenceText)
-        ;
-        ((self._uiUpgrade).valueHealth):SetText(healthText)
-        YIELD()
-      end
-      do
-        self:OnEducationChanged()
-        self:UnLock(lockName)
-      end
+    local period = 700
+    local deltaMs = 0
+    local attackValue = dataLevel:GetCfg().Attack
+    local defenceValue = dataLevel:GetCfg().Defence
+    local healthValue = dataLevel:GetCfg().Health
+    local speedAttack = (self._dataLevelNxt:GetCfg().Attack - attackValue) / period
+    local speedDefence = (self._dataLevelNxt:GetCfg().Defence - defenceValue) / period
+    local speedHealth = (self._dataLevelNxt:GetCfg().Health - healthValue) / period
+    while period >= deltaMs do
+      local dt = GameGlobal:GetInstance():GetDeltaTime()
+      deltaMs = deltaMs + dt
+      attackValue = attackValue + speedAttack * dt
+      defenceValue = defenceValue + speedDefence * dt
+      healthValue = healthValue + speedHealth * dt
+      attackValue = math.min(attackValue, self._dataLevelNxt:GetCfg().Attack)
+      defenceValue = math.min(defenceValue, self._dataLevelNxt:GetCfg().Defence)
+      healthValue = math.min(healthValue, self._dataLevelNxt:GetCfg().Health)
+      local attackText = self:GetAttackUpgrade(math.floor(attackValue))
+      local defenceText = self:GetAttackUpgrade(math.floor(defenceValue))
+      local healthText = self:GetAttackUpgrade(math.floor(healthValue))
+      self._uiUpgrade.valueAttack:SetText(attackText)
+      self._uiUpgrade.valueDefence:SetText(defenceText)
+      self._uiUpgrade.valueHealth:SetText(healthText)
+      YIELD()
     end
-  end
-)
+    self:OnEducationChanged()
+    self:UnLock(lockName)
+  end)
   local showLevel = currentLevel < currentMaxLevel
   if showLevel then
     self:StartSafeTask("UIEducationUp::OnPlayUpAnimation_2", function(lockName, TT)
-    -- function num : 0_7_1 , upvalues : self, _ENV
-    self:Lock(lockName)
-    ;
-    ((self._effLevelloop).gameObject):SetActive(false)
-    local upName = (self._upAnimationName)[self._selElementType]
-    ;
-    (self._upAnimation):Stop()
-    ;
-    (self._upAnimation):Play(upName)
-    YIELD(TT, 1500)
-    ;
-    ((self._effLevelloop).gameObject):SetActive(self._showLevelloop)
-    self:UnLock(lockName)
-  end
-)
+      self:Lock(lockName)
+      self._effLevelloop.gameObject:SetActive(false)
+      local upName = self._upAnimationName[self._selElementType]
+      self._upAnimation:Stop()
+      self._upAnimation:Play(upName)
+      YIELD(TT, 1500)
+      self._effLevelloop.gameObject:SetActive(self._showLevelloop)
+      self:UnLock(lockName)
+    end)
   else
     self:StartSafeTask("UIEducationUp::OnPlayUpAnimation_2", function(lockName, TT)
-    -- function num : 0_7_2 , upvalues : self, _ENV
-    self:Lock(lockName)
-    ;
-    (self._upAnimation):Play("uieff_EducationUp_LevelUp_02")
-    YIELD(TT, 2000)
-    self:UnLock(lockName)
+      self:Lock(lockName)
+      self._upAnimation:Play("uieff_EducationUp_LevelUp_02")
+      YIELD(TT, 2000)
+      self:UnLock(lockName)
+    end)
   end
-)
-  end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.ElementOnClick = function(self, elementType)
-  -- function num : 0_8 , upvalues : _ENV
+function UIEducationUp:ElementOnClick(elementType)
   if self._selElementType == elementType then
-    return 
+    return
   end
   local preElementType = self._selElementType
   self._selElementType = elementType
   self:StopLackShake()
-  local preNode = (self._lstNode)[preElementType]
-  local selNode = (self._lstNode)[self._selElementType]
+  local preNode = self._lstNode[preElementType]
+  local selNode = self._lstNode[self._selElementType]
   local finishCount = 0
-  local cbFinish = function()
-    -- function num : 0_8_0 , upvalues : finishCount, self
+  
+  local function cbFinish()
     finishCount = finishCount + 1
-    if finishCount >= 2 then
+    if 2 <= finishCount then
       self:FlushSelection_Tab()
     end
   end
-
+  
   self:StartSafeTask("UIEducationUp::ElementOnClick anim_1", function(lockName, TT)
-    -- function num : 0_8_1 , upvalues : self, preNode, _ENV, selNode, cbFinish
     self:Lock(lockName)
-    ;
-    (preNode.uiWidget):PlaySel("uieff_UIEducationUpBtn_uiSel_out")
-    ;
-    (preNode.uiWidget):PlayUnsel("uieff_UIEducationUpBtn_uiUnsel_in2")
-    ;
-    (preNode.uiWidget):PlayRed("uieff_UIEducationUpBtn_uired_1")
+    preNode.uiWidget:PlaySel("uieff_UIEducationUpBtn_uiSel_out")
+    preNode.uiWidget:PlayUnsel("uieff_UIEducationUpBtn_uiUnsel_in2")
+    preNode.uiWidget:PlayRed("uieff_UIEducationUpBtn_uired_1")
     YIELD(TT, 267)
-    ;
-    (selNode.uiWidget):PlaySel("uieff_UIEducationUpBtn_uiSel_in2")
-    ;
-    (selNode.uiWidget):PlayUnsel("uieff_UIEducationUpBtn_uiUnsel_out")
-    ;
-    (selNode.uiWidget):PlayRed("uieff_UIEducationUpBtn_uired_2")
+    selNode.uiWidget:PlaySel("uieff_UIEducationUpBtn_uiSel_in2")
+    selNode.uiWidget:PlayUnsel("uieff_UIEducationUpBtn_uiUnsel_out")
+    selNode.uiWidget:PlayRed("uieff_UIEducationUpBtn_uired_2")
     YIELD(TT, 433)
     cbFinish()
     self:UnLock(lockName)
-  end
-)
+  end)
   self:StartSafeTask("UIEducationUp::ElementOnClick anim_2", function(lockName, TT)
-    -- function num : 0_8_2 , upvalues : self, _ENV, cbFinish
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_EducationUp_qiehuan_out")
+    self._animation:Play("uieff_EducationUp_qiehuan_out")
     YIELD(TT, 233)
     self:FlushDataLevelNxt()
     self:FlushSelection_Data()
-    ;
-    (self._animation):Play("uieff_EducationUp_qiehuan_in")
+    self._animation:Play("uieff_EducationUp_qiehuan_in")
     YIELD(TT, 367)
     cbFinish()
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.OnEducationChanged = function(self)
-  -- function num : 0_9
+function UIEducationUp:OnEducationChanged()
   if not self._enableEducationChanged then
-    return 
+    return
   end
   self:FlushElements()
   self:FlushDataLevelNxt()
   self:FlushSelection()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.UIWidget = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIEducationUp:UIWidget()
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
   self._rtLobbyTop = self:GetUIComponent("UISelectObjectPath", "rtLobbyTop")
   self._pathTopTips = self:GetUIComponent("UISelectObjectPath", "topTips")
@@ -347,15 +264,55 @@ UIEducationUp.UIWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
   self._upAnimation = self:GetUIComponent("Animation", "safeArea")
   self._guideBtnInfo = self:GetGameObject("guideBtnInfo")
-  ;
-  (self._guideBtnInfo):SetActive(false)
-  local uiLevel = {root = self._uiLevel, elementName = (self._uiLevel):GetUIComponent("UILocalizedTMP", "elementName"), stageName = (self._uiLevel):GetUIComponent("UILocalizationText", "stageName"), levelUp = (self._uiLevel):GetUIComponent("UILocalizationText", "levelUp")}
-  local uiStage = {root = self._uiStage, elementName = (self._uiStage):GetUIComponent("UILocalizedTMP", "elementName"), stageCur = (self._uiStage):GetUIComponent("UILocalizationText", "stageCur"), stageNxt = (self._uiStage):GetUIComponent("UILocalizationText", "stageNxt")}
-  local uiUpgrade = {root = self._uiUpgrade, txtTitle = (self._uiUpgrade):GetUIComponent("UILocalizationText", "txtTitle"), valueAttack = (self._uiUpgrade):GetUIComponent("UILocalizationText", "valueAttack"), valueDefence = (self._uiUpgrade):GetUIComponent("UILocalizationText", "valueDefence"), valueHealth = (self._uiUpgrade):GetUIComponent("UILocalizationText", "valueHealth"), txtRestrain = (self._uiUpgrade):GetUIComponent("UILocalizationText", "txtRestrain"), txtPositiveSkill = (self._uiUpgrade):GetUIComponent("UILocalizationText", "txtPositiveSkill"), txtCellRate = (self._uiUpgrade):GetUIComponent("UILocalizationText", "txtCellRate")}
-  local uiCondition = {root = self._uiCondition, txtTitle = (self._uiCondition):GetUIComponent("UILocalizationText", "txtTitle"), 
-conditions = {(self._uiCondition):GetUIComponent("UILocalizationText", "txtCondition1"), (self._uiCondition):GetUIComponent("UILocalizationText", "txtCondition2"), (self._uiCondition):GetUIComponent("UILocalizationText", "txtCondition3")}
-}
-  local uiCost = {root = self._uiCost, txtConfirm = (self._uiCost):GetUIComponent("UILocalizationText", "txtConfirm"), assetRoot = (self._uiCost):GetUIComponent("RectTransform", "uiAsset"), uiAsset = (self._uiCost):GetUIComponent("UISelectObjectPath", "uiAsset"), widgetAssets = nil, maxAssetCount = 3, assetBase = nil, assetIcon = nil, assetText = nil, costRoot = (self._uiCost):GetUIComponent("RectTransform", "costRoot"), costTitle = (self._uiCost):GetUIComponent("UILocalizationText", "costTitle"), costIcon = (self._uiCost):GetUIComponent("Image", "costIcon"), costValue = (self._uiCost):GetUIComponent("UILocalizationText", "costValue"), imgLineL = (self._uiCost):GetUIComponent("Image", "imgLineL"), imgLineR = (self._uiCost):GetUIComponent("Image", "imgLineR")}
+  self._guideBtnInfo:SetActive(false)
+  local uiLevel = {
+    root = self._uiLevel,
+    elementName = self._uiLevel:GetUIComponent("UILocalizedTMP", "elementName"),
+    stageName = self._uiLevel:GetUIComponent("UILocalizationText", "stageName"),
+    levelUp = self._uiLevel:GetUIComponent("UILocalizationText", "levelUp")
+  }
+  local uiStage = {
+    root = self._uiStage,
+    elementName = self._uiStage:GetUIComponent("UILocalizedTMP", "elementName"),
+    stageCur = self._uiStage:GetUIComponent("UILocalizationText", "stageCur"),
+    stageNxt = self._uiStage:GetUIComponent("UILocalizationText", "stageNxt")
+  }
+  local uiUpgrade = {
+    root = self._uiUpgrade,
+    txtTitle = self._uiUpgrade:GetUIComponent("UILocalizationText", "txtTitle"),
+    valueAttack = self._uiUpgrade:GetUIComponent("UILocalizationText", "valueAttack"),
+    valueDefence = self._uiUpgrade:GetUIComponent("UILocalizationText", "valueDefence"),
+    valueHealth = self._uiUpgrade:GetUIComponent("UILocalizationText", "valueHealth"),
+    txtRestrain = self._uiUpgrade:GetUIComponent("UILocalizationText", "txtRestrain"),
+    txtPositiveSkill = self._uiUpgrade:GetUIComponent("UILocalizationText", "txtPositiveSkill"),
+    txtCellRate = self._uiUpgrade:GetUIComponent("UILocalizationText", "txtCellRate")
+  }
+  local uiCondition = {
+    root = self._uiCondition,
+    txtTitle = self._uiCondition:GetUIComponent("UILocalizationText", "txtTitle"),
+    conditions = {
+      self._uiCondition:GetUIComponent("UILocalizationText", "txtCondition1"),
+      self._uiCondition:GetUIComponent("UILocalizationText", "txtCondition2"),
+      self._uiCondition:GetUIComponent("UILocalizationText", "txtCondition3")
+    }
+  }
+  local uiCost = {
+    root = self._uiCost,
+    txtConfirm = self._uiCost:GetUIComponent("UILocalizationText", "txtConfirm"),
+    assetRoot = self._uiCost:GetUIComponent("RectTransform", "uiAsset"),
+    uiAsset = self._uiCost:GetUIComponent("UISelectObjectPath", "uiAsset"),
+    widgetAssets = nil,
+    maxAssetCount = 3,
+    assetBase = nil,
+    assetIcon = nil,
+    assetText = nil,
+    costRoot = self._uiCost:GetUIComponent("RectTransform", "costRoot"),
+    costTitle = self._uiCost:GetUIComponent("UILocalizationText", "costTitle"),
+    costIcon = self._uiCost:GetUIComponent("Image", "costIcon"),
+    costValue = self._uiCost:GetUIComponent("UILocalizationText", "costValue"),
+    imgLineL = self._uiCost:GetUIComponent("Image", "imgLineL"),
+    imgLineR = self._uiCost:GetUIComponent("Image", "imgLineR")
+  }
   uiCost.uiAsset = UICustomWidgetPool:New(self, uiCost.uiAsset)
   self._uiLevel = uiLevel
   self._uiStage = uiStage
@@ -363,162 +320,120 @@ conditions = {(self._uiCondition):GetUIComponent("UILocalizationText", "txtCondi
   self._uiCondition = uiCondition
   self._uiCost = uiCost
   self._showLevelP = true
-  ;
-  ((self._eff_levelP).gameObject):SetActive(self._showLevelP)
+  self._eff_levelP.gameObject:SetActive(self._showLevelP)
   self._showLevelloop = false
-  ;
-  ((self._effLevelloop).gameObject):SetActive(self._showLevelloop)
+  self._effLevelloop.gameObject:SetActive(self._showLevelloop)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.InitCommonTopButton = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._backBtns = (self._ltBtn):SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_11_0 , upvalues : self
+function UIEducationUp:InitCommonTopButton()
+  self._backBtns = self._ltBtn:SpawnObject("UINewCommonTopButton")
+  self._backBtns:SetData(function()
     if self._outAnimationCB then
-      (self._outAnimationCB)(self._selElementType)
+      self._outAnimationCB(self._selElementType)
     end
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_11_1 , upvalues : self
+  end, function()
     self:_ShowHelp()
-  end
-, function()
-    -- function num : 0_11_2 , upvalues : _ENV
-    (UICommonHelper:GetInstance()):SwitchToUIMain()
-  end
-, false, nil, false, function()
-    -- function num : 0_11_3 , upvalues : self
+  end, function()
+    UICommonHelper:GetInstance():SwitchToUIMain()
+  end, false, nil, false, function()
     self:EnterFullScreenBg(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.InitMainLobbyTop = function(self)
-  -- function num : 0_12
-  self._topTipsInfo = (self._pathTopTips):SpawnObject("UITopTipsContext")
-  self._widgetLobbyTop = (self._rtLobbyTop):SpawnObject("UIMainLobbyTopIcon")
-  ;
-  (self._widgetLobbyTop):SetData(self._topTipsInfo)
-  ;
-  (self._widgetLobbyTop):SetPanelShow(true, false, false)
+function UIEducationUp:InitMainLobbyTop()
+  self._topTipsInfo = self._pathTopTips:SpawnObject("UITopTipsContext")
+  self._widgetLobbyTop = self._rtLobbyTop:SpawnObject("UIMainLobbyTopIcon")
+  self._widgetLobbyTop:SetData(self._topTipsInfo)
+  self._widgetLobbyTop:SetPanelShow(true, false, false)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.CreateElements = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local lstPath = {self._pathBlue, self._pathRed, self._pathGreen, self._pathYellow}
+function UIEducationUp:CreateElements()
+  local lstPath = {
+    self._pathBlue,
+    self._pathRed,
+    self._pathGreen,
+    self._pathYellow
+  }
   self._lstNode = {}
-  for k,v in pairs(lstPath) do
-    local uiNode = {uiPath = v, uiWidget = (v:SpawnObjects("UIEducationUpBtn", 1))[1], element = (self._data):Get(k)}
-    ;
-    (uiNode.uiWidget):SetData(uiNode.element, self._atlasPropertySel, self._atlasPropertyUnsel, function(elementType)
-    -- function num : 0_13_0 , upvalues : self
-    self:ElementOnClick(elementType)
-  end
-)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._lstNode)[k] = uiNode
+  for k, v in pairs(lstPath) do
+    local uiNode = {
+      uiPath = v,
+      uiWidget = v:SpawnObjects("UIEducationUpBtn", 1)[1],
+      element = self._data:Get(k)
+    }
+    uiNode.uiWidget:SetData(uiNode.element, self._atlasPropertySel, self._atlasPropertyUnsel, function(elementType)
+      self:ElementOnClick(elementType)
+    end)
+    self._lstNode[k] = uiNode
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.CreateCostAsset = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._uiCost).widgetAssets = ((self._uiCost).uiAsset):SpawnObjects("UIAsset", (self._uiCost).maxAssetCount)
-  for k,v in pairs((self._uiCost).widgetAssets) do
+function UIEducationUp:CreateCostAsset()
+  self._uiCost.widgetAssets = self._uiCost.uiAsset:SpawnObjects("UIAsset", self._uiCost.maxAssetCount)
+  for k, v in pairs(self._uiCost.widgetAssets) do
     v:SetData(1)
     v:SetScale(0.8)
     local idTips = k
-    do
-      local eventComponent = v:AddComponent(UIAssetComponentEvent)
-      eventComponent:SetClickCallBack(function(go)
-    -- function num : 0_14_0 , upvalues : self, idTips
-    self:ShowCostItemTips(go, idTips)
-  end
-)
-    end
+    local eventComponent = v:AddComponent(UIAssetComponentEvent)
+    eventComponent:SetClickCallBack(function(go)
+      self:ShowCostItemTips(go, idTips)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.InitLackShake = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local widgetAsset = ((self._uiCost).widgetAssets)[1]
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiCost).assetBase = self:GetChildComponent(widgetAsset:GetGameObject(), "RectTransform", "Base")
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiCost).assetIcon = widgetAsset._icon
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiCost).assetText = widgetAsset._txt
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._uiCost).assetIcon = ((self._uiCost).assetIcon):GetComponent("RawImage")
-  self._shake = {tweer = nil, tick = 0, period = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000, offsetX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10, offsetY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10, assetPosition = ((self._uiCost).assetBase).anchoredPosition, clrAssetIcon = ((self._uiCost).assetIcon).color, clrAssetText = ((self._uiCost).assetText).color, coinPosition = ((self._uiCost).costRoot).anchoredPosition, clrCoinTitle = ((self._uiCost).costTitle).color, clrCoinIcon = ((self._uiCost).costIcon).color, clrCoinValue = ((self._uiCost).costValue).color, clrLineValue = ((self._uiCost).imgLineL).color}
-  -- DECOMPILER ERROR at PC88: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shake).tick = (self._shake).period + 1
+function UIEducationUp:InitLackShake()
+  local widgetAsset = self._uiCost.widgetAssets[1]
+  self._uiCost.assetBase = self:GetChildComponent(widgetAsset:GetGameObject(), "RectTransform", "Base")
+  self._uiCost.assetIcon = widgetAsset._icon
+  self._uiCost.assetText = widgetAsset._txt
+  self._uiCost.assetIcon = self._uiCost.assetIcon:GetComponent("RawImage")
+  self._shake = {
+    tweer = nil,
+    tick = 0,
+    period = Cfg.cfg_global.shakeWaitTime.IntValue or 2000,
+    offsetX = Cfg.cfg_global.shakeOffsetX.IntValue or 10,
+    offsetY = Cfg.cfg_global.shakeOffsetY.IntValue or 10,
+    assetPosition = self._uiCost.assetBase.anchoredPosition,
+    clrAssetIcon = self._uiCost.assetIcon.color,
+    clrAssetText = self._uiCost.assetText.color,
+    coinPosition = self._uiCost.costRoot.anchoredPosition,
+    clrCoinTitle = self._uiCost.costTitle.color,
+    clrCoinIcon = self._uiCost.costIcon.color,
+    clrCoinValue = self._uiCost.costValue.color,
+    clrLineValue = self._uiCost.imgLineL.color
+  }
+  self._shake.tick = self._shake.period + 1
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.ShowCostItemTips = function(self, go, idTips)
-  -- function num : 0_16
-  local clickGo = ((self._uiCost).uiAsset):Engine()
-  local deltaPosition = (clickGo.transform).position - ((self._safeArea).transform).position
-  local needAssets = (self._dataLevelNxt):NeedAsset(true)
+function UIEducationUp:ShowCostItemTips(go, idTips)
+  local clickGo = self._uiCost.uiAsset:Engine()
+  local deltaPosition = clickGo.transform.position - self._safeArea.transform.position
+  local needAssets = self._dataLevelNxt:NeedAsset(true)
   local needAsset = needAssets[idTips]
   if needAsset ~= nil then
-    self:ShowDialog("UICommonItemInfo", {assetid = needAsset.assetid}, deltaPosition)
+    self:ShowDialog("UICommonItemInfo", {
+      assetid = needAsset.assetid
+    }, deltaPosition)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.ShowCostItemTips = function(self, go, idTips)
-  -- function num : 0_17
-  local needAssets = (self._dataLevelNxt):NeedAsset(true)
+function UIEducationUp:ShowCostItemTips(go, idTips)
+  local needAssets = self._dataLevelNxt:NeedAsset(true)
   local needAsset = needAssets[idTips]
   if needAsset ~= nil then
     self:ShowDialog("UIItemGetPathController", needAsset.assetid)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.FlushElements = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  for k,v in pairs(self._lstNode) do
-    (v.uiWidget):Flush()
+function UIEducationUp:FlushElements()
+  for k, v in pairs(self._lstNode) do
+    v.uiWidget:Flush()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.FlushDataLevelNxt = function(self)
-  -- function num : 0_19
-  local selNode = (self._lstNode)[self._selElementType]
+function UIEducationUp:FlushDataLevelNxt()
+  local selNode = self._lstNode[self._selElementType]
   local selElement = selNode.element
   local luaIndex = selElement:GetCurrentLuaIndex()
   local dataLevel = selElement:GetCurrentDataLevel()
@@ -529,385 +444,238 @@ UIEducationUp.FlushDataLevelNxt = function(self)
   self._dataLevelNxt = dataLevelNxt
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.FlushSelection = function(self)
-  -- function num : 0_20
+function UIEducationUp:FlushSelection()
   self:FlushSelection_Tab()
   self:FlushSelection_Data()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.FlushSelection_Tab = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  for k,v in pairs(self._lstNode) do
-    (v.uiWidget):SetSelect(k == self._selElementType)
+function UIEducationUp:FlushSelection_Tab()
+  for k, v in pairs(self._lstNode) do
+    v.uiWidget:SetSelect(k == self._selElementType)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.FlushSelection_Data = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local selNode = (self._lstNode)[self._selElementType]
+function UIEducationUp:FlushSelection_Data()
+  local selNode = self._lstNode[self._selElementType]
   local selElement = selNode.element
   local elementBg = UIEducationMainBtn:GetElementBg(selElement:ElementType())
-  ;
-  (self._displayElementBg):LoadImage(elementBg[1])
-  ;
-  (self._displayElement):LoadImage(elementBg[2])
+  self._displayElementBg:LoadImage(elementBg[1])
+  self._displayElement:LoadImage(elementBg[2])
   local currentStage = selElement:GetCurrentStage()
   local currentLevel = selElement:GetCurrentLevel()
   local currentMaxState = selElement:GetCurrentMaxStage()
   local currentMaxLevel = selElement:GetCurrentMaxLevel()
-  local currentClampStage = (math.min)(currentStage + 1, currentMaxState)
-  local currentClampLevel = (math.min)(currentLevel + 1, currentMaxLevel)
-  ;
-  ((self._uiLevel).elementName):SetText(selElement:GetName())
-  ;
-  ((self._uiLevel).stageName):SetText((StringTable.Get)("str_education_stage_name", currentStage))
-  ;
-  ((self._uiLevel).levelUp):SetText((string.format)("<color=#00FF2A>%d</color>/%d", currentClampLevel, currentMaxLevel))
-  ;
-  ((self._uiStage).elementName):SetText(selElement:GetName())
-  ;
-  ((self._uiStage).stageCur):SetText((StringTable.Get)("str_education_stage_name", currentStage))
-  ;
-  ((self._uiStage).stageNxt):SetText((StringTable.Get)("str_education_stage_name", currentClampStage))
+  local currentClampStage = math.min(currentStage + 1, currentMaxState)
+  local currentClampLevel = math.min(currentLevel + 1, currentMaxLevel)
+  self._uiLevel.elementName:SetText(selElement:GetName())
+  self._uiLevel.stageName:SetText(StringTable.Get("str_education_stage_name", currentStage))
+  self._uiLevel.levelUp:SetText(string.format("<color=#00FF2A>%d</color>/%d", currentClampLevel, currentMaxLevel))
+  self._uiStage.elementName:SetText(selElement:GetName())
+  self._uiStage.stageCur:SetText(StringTable.Get("str_education_stage_name", currentStage))
+  self._uiStage.stageNxt:SetText(StringTable.Get("str_education_stage_name", currentClampStage))
   local showLevel = currentLevel < currentMaxLevel
-  ;
-  (((self._uiLevel).root).gameObject):SetActive(showLevel)
-  ;
-  ((self._btnPreview).gameObject):SetActive(showLevel)
-  ;
-  (((self._uiStage).root).gameObject):SetActive(not showLevel)
-  ;
-  (((self._uiCondition).root).gameObject):SetActive(not showLevel)
+  self._uiLevel.root.gameObject:SetActive(showLevel)
+  self._btnPreview.gameObject:SetActive(showLevel)
+  self._uiStage.root.gameObject:SetActive(not showLevel)
+  self._uiCondition.root.gameObject:SetActive(not showLevel)
   local dataLevel = selElement:GetCurrentDataLevel()
-  local attackText = self:GetAttackUpgrade((dataLevel:GetCfg()).Attack, ((self._dataLevelNxt):GetCfg()).Attack)
-  local defenceText = self:GetAttackUpgrade((dataLevel:GetCfg()).Defence, ((self._dataLevelNxt):GetCfg()).Defence)
-  local healthText = self:GetAttackUpgrade((dataLevel:GetCfg()).Health, ((self._dataLevelNxt):GetCfg()).Health)
-  ;
-  ((self._uiUpgrade).valueAttack):SetText(attackText)
-  ;
-  ((self._uiUpgrade).valueDefence):SetText(defenceText)
-  ;
-  ((self._uiUpgrade).valueHealth):SetText(healthText)
-  ;
-  ((self._uiUpgrade).txtTitle):SetText((StringTable.Get)("str_education_up_pet_upgrade_title", selElement:GetElementName()))
-  local curPropertyRestraint = (dataLevel:GetCfg()).PropertyRestraint
-  local curMainSkillDamage = (dataLevel:GetCfg()).MainSkillDamage
-  local curWeight = (dataLevel:GetCfg()).SupplyPieceWeight
+  local attackText = self:GetAttackUpgrade(dataLevel:GetCfg().Attack, self._dataLevelNxt:GetCfg().Attack)
+  local defenceText = self:GetAttackUpgrade(dataLevel:GetCfg().Defence, self._dataLevelNxt:GetCfg().Defence)
+  local healthText = self:GetAttackUpgrade(dataLevel:GetCfg().Health, self._dataLevelNxt:GetCfg().Health)
+  self._uiUpgrade.valueAttack:SetText(attackText)
+  self._uiUpgrade.valueDefence:SetText(defenceText)
+  self._uiUpgrade.valueHealth:SetText(healthText)
+  self._uiUpgrade.txtTitle:SetText(StringTable.Get("str_education_up_pet_upgrade_title", selElement:GetElementName()))
+  local curPropertyRestraint = dataLevel:GetCfg().PropertyRestraint
+  local curMainSkillDamage = dataLevel:GetCfg().MainSkillDamage
+  local curWeight = dataLevel:GetCfg().SupplyPieceWeight
   local curSupplyPieceWeightChanged = selElement:IsSupplyPieceWeightChanged(curWeight, curWeight)
-  local propertyRestraint = ((self._dataLevelNxt):GetCfg()).PropertyRestraint
-  local propertyStr = (string.format)("+%.1f%%%%", propertyRestraint)
-  ;
-  (((self._uiUpgrade).txtRestrain).gameObject):SetActive(propertyRestraint ~= 0)
-  ;
-  ((self._uiUpgrade).txtRestrain):SetText(self:GetStageUpgrade("str_education_up_restrain", selElement, propertyStr, curPropertyRestraint ~= propertyRestraint))
-  local mainSkillDamage = ((self._dataLevelNxt):GetCfg()).MainSkillDamage
-  local propertyStr = (string.format)("+%.1f%%%%", mainSkillDamage)
-  ;
-  (((self._uiUpgrade).txtPositiveSkill).gameObject):SetActive(mainSkillDamage ~= 0)
-  ;
-  ((self._uiUpgrade).txtPositiveSkill):SetText(self:GetStageUpgrade("str_education_up_positive_skill", selElement, propertyStr, curMainSkillDamage ~= mainSkillDamage))
-  local curWeight = (dataLevel:GetCfg()).SupplyPieceWeight
-  local nxtWeight = ((self._dataLevelNxt):GetCfg()).SupplyPieceWeight
+  local propertyRestraint = self._dataLevelNxt:GetCfg().PropertyRestraint
+  local propertyStr = string.format("+%.1f%%%%", propertyRestraint)
+  self._uiUpgrade.txtRestrain.gameObject:SetActive(propertyRestraint ~= 0)
+  self._uiUpgrade.txtRestrain:SetText(self:GetStageUpgrade("str_education_up_restrain", selElement, propertyStr, curPropertyRestraint ~= propertyRestraint))
+  local mainSkillDamage = self._dataLevelNxt:GetCfg().MainSkillDamage
+  local propertyStr = string.format("+%.1f%%%%", mainSkillDamage)
+  self._uiUpgrade.txtPositiveSkill.gameObject:SetActive(mainSkillDamage ~= 0)
+  self._uiUpgrade.txtPositiveSkill:SetText(self:GetStageUpgrade("str_education_up_positive_skill", selElement, propertyStr, curMainSkillDamage ~= mainSkillDamage))
+  local curWeight = dataLevel:GetCfg().SupplyPieceWeight
+  local nxtWeight = self._dataLevelNxt:GetCfg().SupplyPieceWeight
   local supplyPieceWeightChanged = selElement:IsSupplyPieceWeightChanged(curWeight, nxtWeight)
-  ;
-  (((self._uiUpgrade).txtCellRate).gameObject):SetActive(supplyPieceWeightChanged)
-  ;
-  ((self._uiUpgrade).txtCellRate):SetText(self:GetStageUpgrade("str_education_up_cell_rate", selElement, propertyStr, curSupplyPieceWeightChanged ~= supplyPieceWeightChanged))
+  self._uiUpgrade.txtCellRate.gameObject:SetActive(supplyPieceWeightChanged)
+  self._uiUpgrade.txtCellRate:SetText(self:GetStageUpgrade("str_education_up_cell_rate", selElement, propertyStr, curSupplyPieceWeightChanged ~= supplyPieceWeightChanged))
   self._showLevelP = false
   self._showLevelP = self._showLevelP or curPropertyRestraint ~= propertyRestraint
   self._showLevelP = self._showLevelP or curMainSkillDamage ~= mainSkillDamage
   self._showLevelP = self._showLevelP or curSupplyPieceWeightChanged ~= supplyPieceWeightChanged
-  ;
-  ((self._eff_levelP).gameObject):SetActive(self._showLevelP)
+  self._eff_levelP.gameObject:SetActive(self._showLevelP)
   self._showLevelloop = false
   self._showLevelloop = self._showLevelloop or curPropertyRestraint ~= propertyRestraint
   self._showLevelloop = self._showLevelloop or curMainSkillDamage ~= mainSkillDamage
   self._showLevelloop = self._showLevelloop or curSupplyPieceWeightChanged ~= supplyPieceWeightChanged
-  ;
-  ((self._effLevelloop).gameObject):SetActive(self._showLevelloop)
-  UIEducationUpPreview:FlushCondition((self._uiCondition).conditions, self._dataLevelNxt)
+  self._effLevelloop.gameObject:SetActive(self._showLevelloop)
+  UIEducationUpPreview:FlushCondition(self._uiCondition.conditions, self._dataLevelNxt)
   local preferredHeight = 0
-  for k,v in pairs((self._uiCondition).conditions) do
-    if (v.gameObject).activeSelf then
+  for k, v in pairs(self._uiCondition.conditions) do
+    if v.gameObject.activeSelf then
       preferredHeight = preferredHeight + v.preferredHeight
     end
   end
-  preferredHeight = (math.max)(154, preferredHeight + 58)
-  local trCondition = ((self._uiCondition).root).transform
-  trCondition.sizeDelta = Vector2((trCondition.sizeDelta).x, preferredHeight)
+  preferredHeight = math.max(154, preferredHeight + 58)
+  local trCondition = self._uiCondition.root.transform
+  trCondition.sizeDelta = Vector2(trCondition.sizeDelta.x, preferredHeight)
   local isFullStage = currentStage == currentMaxState
-  local isFullLevel = currentStage == currentMaxState and currentMaxLevel <= currentLevel
-  ;
-  (((self._uiLevel).root).gameObject):SetActive(showLevel or isFullLevel)
-  if showLevel then
-    ((self._btnPreview).gameObject):SetActive(not isFullStage)
-    ;
-    (((self._uiStage).root).gameObject):SetActive((not showLevel and not isFullStage))
-    ;
-    (((self._uiCondition).root).gameObject):SetActive((not showLevel and not isFullStage))
-    ;
-    (((self._uiCost).root).gameObject):SetActive(not isFullLevel)
-    ;
-    ((self._uiFullLevel).gameObject):SetActive(isFullLevel)
-    ;
-    ((self._uiFullLevelRB).gameObject):SetActive(isFullLevel)
-    ;
-    ((self._uiCost).txtConfirm):SetText((StringTable.Get)(showLevel and "str_education_up_level_btn" or "str_education_up_stage_btn"))
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
-    local haveGoldCount = itemModule:GetItemCount(RoleAssetID.RoleAssetGold)
-    local needGold = (self._dataLevelNxt):NeedGold()
-    if needGold == nil then
-      ((self._uiCost).costValue):SetText(0)
-    elseif haveGoldCount < needGold.count then
-      ((self._uiCost).costValue):SetText((string.format)("<color=#FF6652>%d</color>", needGold.count))
-    else
-      ((self._uiCost).costValue):SetText(needGold.count)
+  local isFullLevel = currentStage == currentMaxState and currentLevel >= currentMaxLevel
+  self._uiLevel.root.gameObject:SetActive(showLevel or isFullLevel)
+  self._btnPreview.gameObject:SetActive(showLevel and not isFullStage)
+  self._uiStage.root.gameObject:SetActive(not showLevel and not isFullStage)
+  self._uiCondition.root.gameObject:SetActive(not showLevel and not isFullStage)
+  self._uiCost.root.gameObject:SetActive(not isFullLevel)
+  self._uiFullLevel.gameObject:SetActive(isFullLevel)
+  self._uiFullLevelRB.gameObject:SetActive(isFullLevel)
+  self._uiCost.txtConfirm:SetText(StringTable.Get(showLevel and "str_education_up_level_btn" or "str_education_up_stage_btn"))
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local haveGoldCount = itemModule:GetItemCount(RoleAssetID.RoleAssetGold)
+  local needGold = self._dataLevelNxt:NeedGold()
+  if needGold == nil then
+    self._uiCost.costValue:SetText(0)
+  elseif haveGoldCount < needGold.count then
+    self._uiCost.costValue:SetText(string.format("<color=#FF6652>%d</color>", needGold.count))
+  else
+    self._uiCost.costValue:SetText(needGold.count)
+  end
+  local needAssets = self._dataLevelNxt:NeedAsset(true)
+  for i = 1, self._uiCost.maxAssetCount do
+    local needAsset = needAssets[i]
+    local widgetAsset = self._uiCost.widgetAssets[i]
+    local cfgItem
+    if needAsset ~= nil then
+      cfgItem = Cfg.cfg_item[needAsset.assetid]
     end
-    local needAssets = (self._dataLevelNxt):NeedAsset(true)
-    for i = 1, (self._uiCost).maxAssetCount do
-      local needAsset = needAssets[i]
-      local widgetAsset = ((self._uiCost).widgetAssets)[i]
-      local cfgItem = nil
-      if needAsset ~= nil then
-        cfgItem = (Cfg.cfg_item)[needAsset.assetid]
-      end
-      if cfgItem ~= nil then
-        local haveCount = itemModule:GetItemCount(needAsset.assetid)
-        local icon = cfgItem.Icon
-        local quality = cfgItem.Color
-        local text = nil
-        if haveCount < needAsset.count then
-          text = (string.format)("<color=#FF6652>%d</color>/%d", haveCount, needAsset.count)
-        else
-          text = (string.format)("%d/%d", haveCount, needAsset.count)
-        end
-        ;
-        (widgetAsset:GetGameObject()):SetActive(true)
-        widgetAsset:SetItemData({showBG = true, icon = icon, text = text, quality = quality})
+    if cfgItem ~= nil then
+      local haveCount = itemModule:GetItemCount(needAsset.assetid)
+      local icon = cfgItem.Icon
+      local quality = cfgItem.Color
+      local text
+      if haveCount < needAsset.count then
+        text = string.format("<color=#FF6652>%d</color>/%d", haveCount, needAsset.count)
       else
-        (widgetAsset:GetGameObject()):SetActive(false)
+        text = string.format("%d/%d", haveCount, needAsset.count)
       end
+      widgetAsset:GetGameObject():SetActive(true)
+      widgetAsset:SetItemData({
+        showBG = true,
+        icon = icon,
+        text = text,
+        quality = quality
+      })
+    else
+      widgetAsset:GetGameObject():SetActive(false)
     end
-    -- DECOMPILER ERROR: 38 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.GetAttackUpgrade = function(self, cur, nxt, alpha)
-  -- function num : 0_23 , upvalues : _ENV
+function UIEducationUp:GetAttackUpgrade(cur, nxt, alpha)
   local str = ""
   if cur ~= nil and cur ~= 0 then
-    str = (string.format)("+%d", cur)
+    str = string.format("+%d", cur)
   end
-  if nxt ~= nil and nxt ~= 0 and nxt - cur > 0 then
+  if nxt ~= nil and nxt ~= 0 and 0 < nxt - cur then
     if alpha == nil then
       alpha = 255
     end
-    alpha = (math.floor)(alpha)
-    str = str .. (string.format)("<color=#00FF2A%.2X> +%d</color>", alpha, nxt - cur)
+    alpha = math.floor(alpha)
+    str = str .. string.format("<color=#00FF2A%.2X> +%d</color>", alpha, nxt - cur)
   end
   return str
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.GetStageUpgrade = function(self, strID, selElement, propertyStr, isHighlight)
-  -- function num : 0_24 , upvalues : _ENV
-  local txtUpgrade = (StringTable.Get)(strID, selElement:GetElementName(), propertyStr)
+function UIEducationUp:GetStageUpgrade(strID, selElement, propertyStr, isHighlight)
+  local txtUpgrade = StringTable.Get(strID, selElement:GetElementName(), propertyStr)
   if isHighlight then
-    txtUpgrade = (string.format)("<color=#00FF2A>%s</color>", txtUpgrade)
+    txtUpgrade = string.format("<color=#00FF2A>%s</color>", txtUpgrade)
   end
   return txtUpgrade
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.DoLackShake = function(self, isAsset, idLackAsset)
-  -- function num : 0_25 , upvalues : _ENV
-  if (self._shake).tweer and ((self._shake).tweer):IsPlaying() then
-    return 
+function UIEducationUp:DoLackShake(isAsset, idLackAsset)
+  if self._shake.tweer and self._shake.tweer:IsPlaying() then
+    return
   else
     self:StopLackShake()
   end
   local color = Color(1, 0.4, 0.32)
   if isAsset then
-    local widgetAsset = ((self._uiCost).widgetAssets)[idLackAsset]
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._uiCost).assetBase = self:GetChildComponent(widgetAsset:GetGameObject(), "RectTransform", "Base")
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._uiCost).assetIcon = widgetAsset._icon
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._uiCost).assetText = widgetAsset._txt
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._uiCost).assetIcon = ((self._uiCost).assetIcon):GetComponent("RawImage")
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).assetIcon).color = (self._shake).clrAssetIcon
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).assetText).color = color
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._shake).tweer = ((self._uiCost).assetBase):DOShakePosition(1, Vector3((self._shake).offsetX, (self._shake).offsetY, 0))
+    local widgetAsset = self._uiCost.widgetAssets[idLackAsset]
+    self._uiCost.assetBase = self:GetChildComponent(widgetAsset:GetGameObject(), "RectTransform", "Base")
+    self._uiCost.assetIcon = widgetAsset._icon
+    self._uiCost.assetText = widgetAsset._txt
+    self._uiCost.assetIcon = self._uiCost.assetIcon:GetComponent("RawImage")
+    self._uiCost.assetIcon.color = self._shake.clrAssetIcon
+    self._uiCost.assetText.color = color
+    self._shake.tweer = self._uiCost.assetBase:DOShakePosition(1, Vector3(self._shake.offsetX, self._shake.offsetY, 0))
   else
-    do
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._uiCost).costTitle).color = color
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._uiCost).costIcon).color = color
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._uiCost).costValue).color = color
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._uiCost).imgLineL).color = color
-      -- DECOMPILER ERROR at PC82: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._uiCost).imgLineR).color = color
-      -- DECOMPILER ERROR at PC96: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._shake).tweer = ((self._uiCost).costRoot):DOShakePosition(1, Vector3((self._shake).offsetX, (self._shake).offsetY, 0))
-      ;
-      ((self._shake).tweer):OnComplete(function()
-    -- function num : 0_25_0 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._shake).tick = 0
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).assetBase).anchoredPosition = (self._shake).assetPosition
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).costRoot).anchoredPosition = (self._shake).coinPosition
+    self._uiCost.costTitle.color = color
+    self._uiCost.costIcon.color = color
+    self._uiCost.costValue.color = color
+    self._uiCost.imgLineL.color = color
+    self._uiCost.imgLineR.color = color
+    self._shake.tweer = self._uiCost.costRoot:DOShakePosition(1, Vector3(self._shake.offsetX, self._shake.offsetY, 0))
   end
-)
-    end
+  self._shake.tweer:OnComplete(function()
+    self._shake.tick = 0
+    self._uiCost.assetBase.anchoredPosition = self._shake.assetPosition
+    self._uiCost.costRoot.anchoredPosition = self._shake.coinPosition
+  end)
+end
+
+function UIEducationUp:StopLackShake()
+  if self._shake.tweer ~= nil then
+    self._shake.tweer:Kill()
+    self._shake.tweer = nil
+    self._uiCost.assetIcon.color = self._shake.clrAssetIcon
+    self._uiCost.assetText.color = self._shake.clrAssetText
+    self._uiCost.costTitle.color = self._shake.clrCoinTitle
+    self._uiCost.costIcon.color = self._shake.clrCoinIcon
+    self._uiCost.costValue.color = self._shake.clrCoinValue
+    self._uiCost.imgLineL.color = self._shake.clrLineValue
+    self._uiCost.imgLineR.color = self._shake.clrLineValue
+    self._uiCost.assetBase.anchoredPosition = self._shake.assetPosition
+    self._uiCost.costRoot.anchoredPosition = self._shake.coinPosition
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.StopLackShake = function(self)
-  -- function num : 0_26
-  if (self._shake).tweer ~= nil then
-    ((self._shake).tweer):Kill()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._shake).tweer = nil
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).assetIcon).color = (self._shake).clrAssetIcon
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).assetText).color = (self._shake).clrAssetText
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).costTitle).color = (self._shake).clrCoinTitle
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).costIcon).color = (self._shake).clrCoinIcon
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).costValue).color = (self._shake).clrCoinValue
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).imgLineL).color = (self._shake).clrLineValue
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).imgLineR).color = (self._shake).clrLineValue
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).assetBase).anchoredPosition = (self._shake).assetPosition
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._uiCost).costRoot).anchoredPosition = (self._shake).coinPosition
-  end
-end
-
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.InAnimation = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIEducationUp:InAnimation()
   if self._inAnimationName == nil then
-    UIEducationUp._inAnimationName = {"uieff_EducationUp_shui_in", "uieff_EducationUp_huo_in", "uieff_EducationUp_sen_in", "uieff_EducationUp_lei_in"}
+    UIEducationUp._inAnimationName = {
+      "uieff_EducationUp_shui_in",
+      "uieff_EducationUp_huo_in",
+      "uieff_EducationUp_sen_in",
+      "uieff_EducationUp_lei_in"
+    }
   end
   if self._inAnimationCB then
-    (self._inAnimationCB)(self._selElementType)
+    self._inAnimationCB(self._selElementType)
   end
-  ;
-  (self._animation):Play((self._inAnimationName)[self._selElementType])
-  for k,v in pairs(self._lstNode) do
+  self._animation:Play(self._inAnimationName[self._selElementType])
+  for k, v in pairs(self._lstNode) do
     if k == self._selElementType then
-      (v.uiWidget):PlaySel("uieff_UIEducationUpBtn_uiSel_in")
+      v.uiWidget:PlaySel("uieff_UIEducationUpBtn_uiSel_in")
     else
-      ;
-      (v.uiWidget):PlayUnsel("uieff_UIEducationUpBtn_uiUnsel_in")
+      v.uiWidget:PlayUnsel("uieff_UIEducationUpBtn_uiUnsel_in")
     end
   end
   self:StartSafeTask("UIEducationUp::InAnimation", function(lockName, TT)
-    -- function num : 0_27_0 , upvalues : self, _ENV
     self:Lock(lockName)
     YIELD(TT, 567)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp.GuideBtnInfoOnClick = function(self, go)
-  -- function num : 0_28
+function UIEducationUp:GuideBtnInfoOnClick(go)
   self:_ShowHelp()
-  ;
-  (self._guideBtnInfo):SetActive(false)
+  self._guideBtnInfo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationUp._ShowHelp = function(self)
-  -- function num : 0_29
+function UIEducationUp:_ShowHelp()
   self:ShowDialog("UIHelpController", "UIEducationMain")
 end
-
-

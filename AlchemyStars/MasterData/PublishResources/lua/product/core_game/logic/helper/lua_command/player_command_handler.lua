@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/player_command_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayerCommandHandler", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerCommandHandler.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayerCommandHandler:Constructor(world)
   self._world = world
   self._cmds = {}
   self._handledCmdStates = {}
@@ -34,109 +27,77 @@ PlayerCommandHandler.Constructor = function(self, world)
   self._tetrisFeatureCmdHandler = TetrisFeatureCommandHandler:New(world)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandHandler.AddCommand = function(self, cmd)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._cmds, cmd)
+function PlayerCommandHandler:AddCommand(cmd)
+  table.insert(self._cmds, cmd)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandHandler.ClearHandlerState = function(self)
-  -- function num : 0_2
+function PlayerCommandHandler:ClearHandlerState()
   self._handledCmdStates = {}
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandHandler.HandleCommand = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local hasPreview = not (self._world):RunAtClient() or (self._world):GetGameTurn() == GameTurnType.LocalPlayerTurn
-  local localRoundCount = ((self._world):BattleStat()):GetGameRoundCount()
-  while 1 do
-    while 1 do
-      while 1 do
-        if (self._cmds)[1] then
-          local cmd = (self._cmds)[1]
-          local execStateList = {}
-          local st = cmd:GetExecStateID(hasPreview)
-          if type(st) == "number" then
-            (table.insert)(execStateList, st)
-          elseif type(st) == "table" then
-            (table.appendArray)(execStateList, st)
-          end
-          local exclude = cmd:IsExecExcluded()
-          local cmdType = cmd:GetCommandType()
-          local roundCount = cmd.RoundCount
-          if cmd:DependRoundCount() and roundCount and roundCount ~= localRoundCount then
-            (Log.error)("[HandleCommand] ", cmdType, " command roundCnt=", roundCount, " local roundCnt=", localRoundCount)
-            if roundCount < localRoundCount then
-              (table.remove)(self._cmds, 1)
-              -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-      end
-      do break end
-      local curState = ((self._world):GameFSM()):CurStateID()
-      if (table.icontains)(execStateList, 0) or (table.icontains)(execStateList, curState) then
-        if exclude == 1 then
-          if (self._handledCmdStates)[st] then
-            (Log.error)("[HandleCommand] ", cmdType, " exec excluded!!")
-            break
-          end
-          -- DECOMPILER ERROR at PC115: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self._handledCmdStates)[st] = true
-        end
-        self:_DoHandleCommand(cmd)
-        ;
-        (table.remove)(self._cmds, 1)
-        -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_STMT
-
+function PlayerCommandHandler:HandleCommand()
+  local hasPreview = self._world:RunAtClient() and self._world:GetGameTurn() == GameTurnType.LocalPlayerTurn
+  local localRoundCount = self._world:BattleStat():GetGameRoundCount()
+  while self._cmds[1] do
+    local cmd = self._cmds[1]
+    local execStateList = {}
+    local st = cmd:GetExecStateID(hasPreview)
+    if type(st) == "number" then
+      table.insert(execStateList, st)
+    elseif type(st) == "table" then
+      table.appendArray(execStateList, st)
+    end
+    local exclude = cmd:IsExecExcluded()
+    local cmdType = cmd:GetCommandType()
+    local roundCount = cmd.RoundCount
+    if cmd:DependRoundCount() and roundCount and roundCount ~= localRoundCount then
+      Log.error("[HandleCommand] ", cmdType, " command roundCnt=", roundCount, " local roundCnt=", localRoundCount)
+      if localRoundCount > roundCount then
+        table.remove(self._cmds, 1)
+        goto lbl_127
+      else
+        break
       end
     end
-    break
+    local curState = self._world:GameFSM():CurStateID()
+    if table.icontains(execStateList, 0) or table.icontains(execStateList, curState) then
+      if exclude == 1 then
+        if self._handledCmdStates[st] then
+          Log.error("[HandleCommand] ", cmdType, " exec excluded!!")
+          break
+        end
+        self._handledCmdStates[st] = true
+      end
+      self:_DoHandleCommand(cmd)
+      table.remove(self._cmds, 1)
+    else
+      break
+    end
+    ::lbl_127::
   end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandHandler._DoHandleCommand = function(self, cmd)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayerCommandHandler:_DoHandleCommand(cmd)
   if cmd:GetCommandType() ~= "BattleSync" and cmd:GetCommandType() ~= "AutoFight" and cmd:GetCommandType() ~= "Guide" and cmd:GetCommandType() ~= "ClientExceptionReport" then
-    ((self._world):GetSyncLogger()):Trace({key = "HandleCommand", cmd = cmd:GetCommandType()})
+    self._world:GetSyncLogger():Trace({
+      key = "HandleCommand",
+      cmd = cmd:GetCommandType()
+    })
   end
   if cmd:GetCommandType() == "MovePathDone" then
-    (self._movePathDownCmdHandler):DoHandleCommand(cmd)
+    self._movePathDownCmdHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == "CastActiveSkill" then
-    (self._castActiveSkillCmdHandler):DoHandleCommand(cmd)
+    self._castActiveSkillCmdHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == "CastPickUpActiveSkill" then
-    (self._castPickUpSkillCmdHandler):DoHandleCommand(cmd)
+    self._castPickUpSkillCmdHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == "CancelChainSkill" then
-    (self._cancelChainSkillCmdHandler):DoHandleCommand(cmd)
+    self._cancelChainSkillCmdHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == "CastPickUpChainSkill" then
-    (self._castPickUpChainSkillCmdHandler):DoHandleCommand(cmd)
+    self._castPickUpChainSkillCmdHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == "BattleSync" then
     self:HandleBattleSync(cmd)
@@ -151,92 +112,82 @@ PlayerCommandHandler._DoHandleCommand = function(self, cmd)
     self:HandleGM(cmd)
   end
   if cmd:GetCommandType() == "ChangeTeamLeader" then
-    (self._changeTeamLeaderCmdHandler):DoHandleCommand(cmd)
+    self._changeTeamLeaderCmdHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == "ClientExceptionReport" then
     self:HandleClientExceptionReport(cmd)
   end
   if cmd:GetCommandType() == CastSelectTeamOrderPositionCommand.CommandType then
-    (self._castSelectTeamOrderPositionCommandHandler):DoHandleCommand(cmd)
+    self._castSelectTeamOrderPositionCommandHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == CastClearSelectedTeamOrderPositionCommand.CommandType then
-    (self._castClearSelectedTeamOrderPosCmdHandler):DoHandleCommand(cmd)
+    self._castClearSelectedTeamOrderPosCmdHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == "CastChessPetEndTurn" then
-    (self._chessEndTurnHandler):DoHandleCommand(cmd)
+    self._chessEndTurnHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == "CastChessMove" then
-    (self._castChessMoveCommandHandler):DoHandleCommand(cmd)
+    self._castChessMoveCommandHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == "CastChessPetAttack" then
-    (self._castChessPetAttackCommandHandler):DoHandleCommand(cmd)
+    self._castChessPetAttackCommandHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == ChooseMiniMazeWaveAwardCommand.CommandType then
-    (self._chooseMiniMazeWaveAwardCommandHandler):DoHandleCommand(cmd)
+    self._chooseMiniMazeWaveAwardCommandHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == ScanFeatureCommand.CommandType then
-    (self._scanFeatureCommandHandler):DoHandleCommand(cmd)
+    self._scanFeatureCommandHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == MiragePickUpCommand.CommandType then
-    (self._miragePickUpCommandHandler):DoHandleCommand(cmd)
+    self._miragePickUpCommandHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == MirageForceCloseCommand.CommandType then
-    (self._mirageForceCloseCommandHandler):DoHandleCommand(cmd)
+    self._mirageForceCloseCommandHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == SwitchPetEquipRefineUICommand.CommandType then
-    (self._switchPetEquipRefineUICommandHandler):DoHandleCommand(cmd)
+    self._switchPetEquipRefineUICommandHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == PopStarPickUpCommand.CommandType then
-    if (self._world):MatchType() == MatchType.MT_PopStar then
-      (self._popStarPickUpCommandHandler):DoHandleCommand(cmd)
+    if self._world:MatchType() == MatchType.MT_PopStar then
+      self._popStarPickUpCommandHandler:DoHandleCommand(cmd)
     else
-      ;
-      (self._popStarProPickUpCommandHandler):DoHandleCommand(cmd)
+      self._popStarProPickUpCommandHandler:DoHandleCommand(cmd)
     end
   end
   if cmd:GetCommandType() == SyncClientUnscaledCountDownCommand.CommandType then
-    (self._syncClientUnscaledCountDownCommandHandler):DoHandleCommand(cmd)
+    self._syncClientUnscaledCountDownCommandHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == CastSelectInfoActiveSkillCommand.CommandType then
-    (self._castSelectInfoActiveSkillCmdHandler):DoHandleCommand(cmd)
+    self._castSelectInfoActiveSkillCmdHandler:DoHandleCommand(cmd)
   end
   if cmd:GetCommandType() == TetrisFeatureCommand.CommandType then
-    (self._tetrisFeatureCmdHandler):DoHandleCommand(cmd)
+    self._tetrisFeatureCmdHandler:DoHandleCommand(cmd)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandHandler.HandleBattleSync = function(self, cmd)
-  -- function num : 0_5
-  local syncService = (self._world):GetService("SyncLogic")
+function PlayerCommandHandler:HandleBattleSync(cmd)
+  local syncService = self._world:GetService("SyncLogic")
   syncService:OnRecvSyncCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandHandler.HandleAutoFight = function(self, cmd)
-  -- function num : 0_6
+function PlayerCommandHandler:HandleAutoFight(cmd)
   local enableAutoFight = cmd:GetCmdAutoFight()
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetAutoFight(enableAutoFight)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandHandler.HandleGuide = function(self, cmd)
-  -- function num : 0_7 , upvalues : _ENV
+function PlayerCommandHandler:HandleGuide(cmd)
   local targetPstId = cmd:GetPetPstId()
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local petList = (teamEntity:Team()):GetTeamPetEntities()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local petList = teamEntity:Team():GetTeamPetEntities()
   local skillTriggerType = SkillTriggerType.Energy
-  for _,e in ipairs(petList) do
+  for _, e in ipairs(petList) do
     local petPstIDCmpt = e:PetPstID()
     local pstID = petPstIDCmpt:GetPstID()
     if pstID == targetPstId then
-      local activeSkillID = (e:SkillInfo()):GetActiveSkillID()
-      local configService = (self._world):GetService("Config")
+      local activeSkillID = e:SkillInfo():GetActiveSkillID()
+      local configService = self._world:GetService("Config")
       local skillConfigData = configService:GetSkillConfigData(activeSkillID)
       if skillConfigData then
         skillTriggerType = skillConfigData:GetSkillTriggerType()
@@ -249,26 +200,16 @@ PlayerCommandHandler.HandleGuide = function(self, cmd)
     end
   end
   if skillTriggerType ~= SkillTriggerType.LegendEnergy then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.PetPowerChange, targetPstId, 0, true)
+    self._world:EventDispatcher():Dispatch(GameEventType.PetPowerChange, targetPstId, 0, true)
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PetActiveSkillGetReady, targetPstId, true)
+  self._world:EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, targetPstId, true)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandHandler.HandleGM = function(self, cmd)
-  -- function num : 0_8
+function PlayerCommandHandler:HandleGM(cmd)
   local funcName = cmd:GetFuncName()
   local funcParam = cmd:GetFuncParam()
-  ;
-  (self._world):HandleGM(funcName, funcParam)
+  self._world:HandleGM(funcName, funcParam)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerCommandHandler.HandleClientExceptionReport = function(self, cmd)
-  -- function num : 0_9
+function PlayerCommandHandler:HandleClientExceptionReport(cmd)
 end
-
-

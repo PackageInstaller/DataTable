@@ -1,355 +1,229 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/season_mission_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMissionComponent", ICampaignComponent)
 SeasonMissionComponent = SeasonMissionComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMissionComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMissionComponent:Constructor()
   self._componentInfo = SeasonMissionComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMissionComponent:ComponentInfo()
   if not self._componentInfo then
     self._componentInfo = SeasonMissionComponentInfo:New()
   end
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function SeasonMissionComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMissionComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_SEASON
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self._componentInfo)
+function SeasonMissionComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self._componentInfo)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.IsPassCamMissionID = function(self, camMissionId)
-  -- function num : 0_5
-  if ((self._componentInfo).m_pass_mission_info)[camMissionId] then
+function SeasonMissionComponent:IsPassCamMissionID(camMissionId)
+  if self._componentInfo.m_pass_mission_info[camMissionId] then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.GetMask = function(self, id)
-  -- function num : 0_6
-  return ((self._componentInfo).m_stage_info)[id]
+function SeasonMissionComponent:GetMask(id)
+  return self._componentInfo.m_stage_info[id]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.GetPassStar = function(self, missionID)
-  -- function num : 0_7
+function SeasonMissionComponent:GetPassStar(missionID)
   local star = 0
-  local passInfo = ((self._componentInfo).m_pass_mission_info)[missionID]
+  local passInfo = self._componentInfo.m_pass_mission_info[missionID]
   if passInfo then
     for i = 1, 3 do
-      if passInfo.star & 1 << i - 1 > 0 then
+      if 0 < passInfo.star & 1 << i - 1 then
         star = star + 1
       end
     end
   end
-  do
-    return star
-  end
+  return star
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonMissionComponent:GetCampaignMissionParamKeyMap()
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId, [ECampaignMissionParamKey.ECampaignMissionParamKey_CSHardId] = (ComponentInfo.m_daily_info).m_progress}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId,
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_CSHardId] = ComponentInfo.m_daily_info.m_progress
+  }
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonMissionComponent:GetCampaignMissionComponentId()
   return ECampaignMissionComponentId.ECampaignMissionComponentId_SeasonMission
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_10 , upvalues : _ENV
+function SeasonMissionComponent:CampaignComponentPushNotify(notify_data)
   if SeasonMissionComponentNotifyType.SeasonMissionComponentNotifyType_InfoChanged == notify_data.m_notify_type then
     local ev = NotifySeasonMissionComponentInfoChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnUpdateBaseInfo(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][SeasonMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][SeasonMissionComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
-  do
-    if SeasonMissionComponentNotifyType.SeasonMissionComponentNotifyTypeDaily_InfoChanged == notify_data.m_notify_type then
-      local ev = NotifySeasonMissionDailyComponentInfoChanged:New()
-      local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-      if ret then
-        (self._componentInfo).m_daily_info = ev.m_daily_info
-        if ev.m_is_reset then
-          self:OnReset()
-        end
-      else
-        ;
-        (Log.error)("[CampaignCom][SeasonMissionComponent] CampaignComponentPushNotify2 ParseData error! ret:", ret)
+  if SeasonMissionComponentNotifyType.SeasonMissionComponentNotifyTypeDaily_InfoChanged == notify_data.m_notify_type then
+    local ev = NotifySeasonMissionDailyComponentInfoChanged:New()
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
+    if ret then
+      self._componentInfo.m_daily_info = ev.m_daily_info
+      if ev.m_is_reset then
+        self:OnReset()
       end
+    else
+      Log.error("[CampaignCom][SeasonMissionComponent] CampaignComponentPushNotify2 ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.OnUpdateBaseInfo = function(self, ev)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._componentInfo).m_cur_mission = ev.m_cur_mission
-  for key,value in pairs(ev.m_update_mission_info) do
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R7 in 'UnsetPending'
-
-    ((self._componentInfo).m_pass_mission_info)[key] = value
+function SeasonMissionComponent:OnUpdateBaseInfo(ev)
+  self._componentInfo.m_cur_mission = ev.m_cur_mission
+  for key, value in pairs(ev.m_update_mission_info) do
+    self._componentInfo.m_pass_mission_info[key] = value
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonSceneAwardCollected)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonSceneAwardCollected)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.HandleCompleteStoryMission = function(self, TT, asyncRes, missionId)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonMissionComponent:HandleCompleteStoryMission(TT, asyncRes, missionId)
   local request = CompleteStorySeasonMissionReq:New()
   local response = CompleteStorySeasonMissionRep:New()
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (request.m_create_info).nCampaignMissionId = missionId
+  request.m_create_info.nCampaignMissionId = missionId
   local ComponentInfo = self:ComponentInfo()
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (request.m_create_info).nMissionComId = self:GetCampaignMissionComponentId()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (request.m_create_info).CampaignMissionParams = self:GetCampaignMissionParamKeyMap()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  request.m_create_info.nMissionComId = self:GetCampaignMissionComponentId()
+  request.m_create_info.CampaignMissionParams = self:GetCampaignMissionParamKeyMap()
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE)
-    ;
-    (Log.error)("[CampaignCom][SeasonMissionComponent] HandleCompleteStoryMission ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMissionComponent] HandleCompleteStoryMission ret:", asyncRes.m_result)
     return nil
   end
   return response
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.HandleSeasonChangeFormation = function(self, TT, asyncRes, teamInfo)
-  -- function num : 0_13 , upvalues : _ENV
+function SeasonMissionComponent:HandleSeasonChangeFormation(TT, asyncRes, teamInfo)
   local request = SeasonChangeFormationReq:New()
   local response = SeasonChangeFormationReply:New()
   request.info = teamInfo
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE)
-    ;
-    (Log.error)("[CampaignCom][SeasonMissionComponent] HandleSeasonChangeFormation ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMissionComponent] HandleSeasonChangeFormation ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (ComponentInfo.m_formation_list)[teamInfo.id] = teamInfo
+  ComponentInfo.m_formation_list[teamInfo.id] = teamInfo
   return response
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.HandleSeasonClientDataPoint = function(self, TT, asyncRes, x, y, z)
-  -- function num : 0_14 , upvalues : _ENV
+function SeasonMissionComponent:HandleSeasonClientDataPoint(TT, asyncRes, x, y, z)
   local request = SeasonClientDataPointReq:New()
   local response = SeasonClientDataPointReply:New()
   request.m_x = x
   request.m_y = y
   request.m_z = z
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE)
-    ;
-    (Log.error)("[CampaignCom][SeasonMissionComponent] HandleSeasonClientDataPoint ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMissionComponent] HandleSeasonClientDataPoint ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (ComponentInfo.m_client_info).m_x = x
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (ComponentInfo.m_client_info).m_y = y
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (ComponentInfo.m_client_info).m_z = z
+  ComponentInfo.m_client_info.m_x = x
+  ComponentInfo.m_client_info.m_y = y
+  ComponentInfo.m_client_info.m_z = z
   return response
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.HandleSeasonClientDataExt = function(self, TT, asyncRes, tables)
-  -- function num : 0_15 , upvalues : _ENV
+function SeasonMissionComponent:HandleSeasonClientDataExt(TT, asyncRes, tables)
   local request = SeasonClientDataExtReq:New()
   local response = SeasonClientDataExtReply:New()
-  local tz = (table.count)(tables)
-  if tz >= 100 then
+  local tz = table.count(tables)
+  if 100 <= tz then
     asyncRes:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE)
-    ;
-    (Log.error)("[CampaignCom][SeasonMissionComponent] HandleSeasonClientDataExt ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMissionComponent] HandleSeasonClientDataExt ret:", asyncRes.m_result)
     return nil
   end
   request.ext = tables
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE)
-    ;
-    (Log.error)("[CampaignCom][SeasonMissionComponent] HandleSeasonClientDataExt ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMissionComponent] HandleSeasonClientDataExt ret:", asyncRes.m_result)
     return nil
   end
-  for key,value in pairs(tables) do
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R13 in 'UnsetPending'
-
-    ((ComponentInfo.m_client_info).ext)[key] = value
+  for key, value in pairs(tables) do
+    ComponentInfo.m_client_info.ext[key] = value
   end
   return response
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.HandleSeasonClientStageData = function(self, TT, asyncRes, id, type)
-  -- function num : 0_16 , upvalues : _ENV
+function SeasonMissionComponent:HandleSeasonClientStageData(TT, asyncRes, id, type)
   local request = SeasonClientStageDataReq:New()
   local response = SeasonClientStageDataReply:New()
   request.id = id
   request.type = type
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE)
-    ;
-    (Log.error)("[CampaignCom][SeasonMissionComponent] HandleSeasonClientStageData ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMissionComponent] HandleSeasonClientStageData ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (ComponentInfo.m_stage_info)[id] = type
+  ComponentInfo.m_stage_info[id] = type
   return response
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.HandleSeasonPointClientData = function(self, TT, asyncRes, point_info)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonMissionComponent:HandleSeasonPointClientData(TT, asyncRes, point_info)
   local request = SeasonPointClientDataReq:New()
   local response = SeasonPointClientDataReply:New()
   request.m_save_info = point_info
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE)
-    ;
-    (Log.error)("[CampaignCom][SeasonMissionComponent] HandleSeasonPointClientData ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMissionComponent] HandleSeasonPointClientData ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (ComponentInfo.m_daily_info).m_save_info = point_info
+  ComponentInfo.m_daily_info.m_save_info = point_info
   return response
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.HandleMissionTeamRecord = function(self, TT, asyncRes, num, mission)
-  -- function num : 0_18 , upvalues : _ENV
+function SeasonMissionComponent:HandleMissionTeamRecord(TT, asyncRes, num, mission)
   local request = SeasonMissionTeamRecordReq:New()
   local response = SeasonMissionTeamRecordRes:New()
   request.num = num
   request.mission = mission
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][SeasonMissionComponent] HandleMissionTeamRecord ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][SeasonMissionComponent] HandleMissionTeamRecord ret:", asyncRes.m_result)
     return nil
   end
   return response
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.SetMissionStoryActive = function(self, TT, mission_id, activeStoryType)
-  -- function num : 0_19 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function SeasonMissionComponent:SetMissionStoryActive(TT, mission_id, activeStoryType)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   return missionModule:SetMissionStoryActive(TT, mission_id, activeStoryType)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.IsMissionStoryActive = function(self, mission_id, activeStoryType)
-  -- function num : 0_20 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function SeasonMissionComponent:IsMissionStoryActive(mission_id, activeStoryType)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   missionModule:IsMissionStoryActive(mission_id, activeStoryType)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMissionComponent.OnReset = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonDailyReset)
-  ;
-  (Log.info)("[CampaignCom][SeasonMissionComponent] OnRest")
+function SeasonMissionComponent:OnReset()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonDailyReset)
+  Log.info("[CampaignCom][SeasonMissionComponent] OnRest")
 end
-
-

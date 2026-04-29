@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/ui_simple_haute_couture_top_menu.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureTopMenu", UICustomWidget)
 UISimpleHauteCoutureTopMenu = UISimpleHauteCoutureTopMenu
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureTopMenu.Constructor = function(self)
-  -- function num : 0_0
+function UISimpleHauteCoutureTopMenu:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISimpleHauteCoutureTopMenu:OnShow(uiParams)
   self:_GetComponents()
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
   self:AttachEvent(GameEventType.DiamondCountChanged, self.OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISimpleHauteCoutureTopMenu:_GetComponents()
   self._ticketIcon = self:GetUIComponent("Image", "ticketIcon")
   self._ticketText = self:GetUIComponent("UILocalizationText", "ticketText")
   self._moneyIcon = self:GetUIComponent("Image", "moneyIcon")
@@ -40,155 +27,100 @@ UISimpleHauteCoutureTopMenu._GetComponents = function(self)
   self:ShowHideTSFBtn(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.SetData = function(self, topTipsInfo, ticketID, costID, scoreID, ticketCallback, hideTicket, hideMoney, hideScore)
-  -- function num : 0_3
+function UISimpleHauteCoutureTopMenu:SetData(topTipsInfo, ticketID, costID, scoreID, ticketCallback, hideTicket, hideMoney, hideScore)
   self._topTipsInfo = topTipsInfo
-  self._showExchangeList = {ticketID, costID, scoreID}
+  self._showExchangeList = {
+    ticketID,
+    costID,
+    scoreID
+  }
   self._ticketCallback = ticketCallback
-  ;
-  (self._ticketPanelObj):SetActive(not hideTicket)
-  ;
-  (self._moneyPanelObj):SetActive(not hideMoney)
-  ;
-  (self._scorePanelObj):SetActive(not hideScore)
+  self._ticketPanelObj:SetActive(not hideTicket)
+  self._moneyPanelObj:SetActive(not hideMoney)
+  self._scorePanelObj:SetActive(not hideScore)
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu._Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISimpleHauteCoutureTopMenu:_Init()
   local mShop = self:GetModule(ShopModule)
   local itemModule = self:GetModule(ItemModule)
   local count1, freeCount1 = mShop:GetDiamondCount()
-  ;
-  (self._moneyText):SetText(count1)
-  ;
-  (self._ticketText):SetText(itemModule:GetItemCount((self._showExchangeList)[1]))
-  ;
-  (self._scoreText):SetText(itemModule:GetItemCount((self._showExchangeList)[3]))
-  self._cfg1 = (Cfg.cfg_top_tips)[(self._showExchangeList)[1]]
-  self._cfg2 = (Cfg.cfg_top_tips)[(self._showExchangeList)[2]]
-  self._cfg3 = (Cfg.cfg_top_tips)[(self._showExchangeList)[3]]
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R5 in 'UnsetPending'
-
+  self._moneyText:SetText(count1)
+  self._ticketText:SetText(itemModule:GetItemCount(self._showExchangeList[1]))
+  self._scoreText:SetText(itemModule:GetItemCount(self._showExchangeList[3]))
+  self._cfg1 = Cfg.cfg_top_tips[self._showExchangeList[1]]
+  self._cfg2 = Cfg.cfg_top_tips[self._showExchangeList[2]]
+  self._cfg3 = Cfg.cfg_top_tips[self._showExchangeList[3]]
   if self._cfg1 then
-    (self._ticketIcon).sprite = (self.atlas):GetSprite((self._cfg1).Icon)
+    self._ticketIcon.sprite = self.atlas:GetSprite(self._cfg1.Icon)
   else
-    ;
-    (Log.exception)("请在cfg_top_tips中配置：", (self._showExchangeList)[1])
+    Log.exception("请在cfg_top_tips中配置：", self._showExchangeList[1])
   end
-  -- DECOMPILER ERROR at PC67: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._moneyIcon).sprite = (self.atlas):GetSprite((self._cfg2).Icon)
-  -- DECOMPILER ERROR at PC77: Confused about usage of register: R5 in 'UnsetPending'
-
+  self._moneyIcon.sprite = self.atlas:GetSprite(self._cfg2.Icon)
   if self._cfg3 then
-    (self._scoreIcon).sprite = (self.atlas):GetSprite((self._cfg3).Icon)
+    self._scoreIcon.sprite = self.atlas:GetSprite(self._cfg3.Icon)
   else
-    ;
-    (Log.exception)("请在cfg_top_tips中配置：", (self._showExchangeList)[3])
+    Log.exception("请在cfg_top_tips中配置：", self._showExchangeList[3])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.OnItemCountChanged = function(self)
-  -- function num : 0_5
+function UISimpleHauteCoutureTopMenu:OnItemCountChanged()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.TicketTexBtnOnClick = function(self)
-  -- function num : 0_6
+function UISimpleHauteCoutureTopMenu:TicketTexBtnOnClick()
   if self._topTipsInfo then
     local go = self:GetGameObject("ticketIcon")
-    ;
-    (self._topTipsInfo):SetData((self._showExchangeList)[1], go)
+    self._topTipsInfo:SetData(self._showExchangeList[1], go)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.TicketAddOnClick = function(self)
-  -- function num : 0_7
+function UISimpleHauteCoutureTopMenu:TicketAddOnClick()
   if self._ticketCallback then
-    (self._ticketCallback)()
+    self._ticketCallback()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.MoneyTexBtnOnClick = function(self)
-  -- function num : 0_8
+function UISimpleHauteCoutureTopMenu:MoneyTexBtnOnClick()
   if self._topTipsInfo then
     local go = self:GetGameObject("moneyIcon")
-    ;
-    (self._topTipsInfo):SetData((self._showExchangeList)[2], go)
+    self._topTipsInfo:SetData(self._showExchangeList[2], go)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.MoneyAddOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISimpleHauteCoutureTopMenu:MoneyAddOnClick()
   local mShop = self:GetModule(ShopModule)
   local clientShop = mShop:GetClientShop()
   clientShop:OpenRechargeShop()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.ScoreTexBtnOnClick = function(self)
-  -- function num : 0_10
+function UISimpleHauteCoutureTopMenu:ScoreTexBtnOnClick()
   if self._topTipsInfo then
     local go = self:GetGameObject("scoreIcon")
-    ;
-    (self._topTipsInfo):SetData((self._showExchangeList)[3], go)
+    self._topTipsInfo:SetData(self._showExchangeList[3], go)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.HideTicketAddBtn = function(self)
-  -- function num : 0_11
-  (self._ticketAddObj):SetActive(false)
+function UISimpleHauteCoutureTopMenu:HideTicketAddBtn()
+  self._ticketAddObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.ShowHideTSFBtn = function(self, isShow)
-  -- function num : 0_12 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISimpleHauteCoutureTopMenu:ShowHideTSFBtn(isShow)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local isJapanZone = roleModule:IsJapanZone()
   if isJapanZone then
-    (self._btnZJJSFObj):SetActive(isShow)
-    ;
-    (self._btnTSFObj):SetActive(isShow)
+    self._btnZJJSFObj:SetActive(isShow)
+    self._btnTSFObj:SetActive(isShow)
   else
-    ;
-    (self._btnZJJSFObj):SetActive(false)
-    ;
-    (self._btnTSFObj):SetActive(false)
+    self._btnZJJSFObj:SetActive(false)
+    self._btnTSFObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.BtnZJJSFOnClick = function(self)
-  -- function num : 0_13
+function UISimpleHauteCoutureTopMenu:BtnZJJSFOnClick()
   self:ShowDialog("UIPayLawContentController", 2)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureTopMenu.BtnTSFOnClick = function(self)
-  -- function num : 0_14
+function UISimpleHauteCoutureTopMenu:BtnTSFOnClick()
   self:ShowDialog("UIPayLawContentController", 1)
 end
-
-

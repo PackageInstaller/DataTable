@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_snake_head_move_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlaySnakeHeadMoveInstruction", BaseInstruction)
 PlaySnakeHeadMoveInstruction = PlaySnakeHeadMoveInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySnakeHeadMoveInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlaySnakeHeadMoveInstruction:Constructor(paramList)
   self._moveAnim = paramList.MoveAnim
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeHeadMoveInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
+function PlaySnakeHeadMoveInstruction:GetCacheResource()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeHeadMoveInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySnakeHeadMoveInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SnakeHeadMove)
   if not resultArray then
-    return 
+    return
   end
   local result = resultArray[#resultArray]
   local oldPos = result:GetOldPos()
@@ -37,34 +24,24 @@ PlaySnakeHeadMoveInstruction.DoInstruction = function(self, TT, casterEntity, ph
     local sMonsterShowRender = world:GetService("MonsterShowRender")
     sMonsterShowRender:_DoOneMonsterDead(TT, casterEntity)
   else
-    do
-      local trapResList = result:GetTriggerTrapResult()
-      local moveSpeed = playSkillInstructionSvc:GetMoveSpeed(casterEntity)
-      playSkillInstructionSvc:PlayEntityMove(TT, casterEntity, oldPos, newPos, moveSpeed)
-      playSkillInstructionSvc:PlayArrivePosTriggerTrap(TT, casterEntity, newPos, trapResList)
-      ;
-      (world:GetService("PlayBuff")):PlayBuffView(TT, NTSnakeHeadMoved:New(casterEntity, newPos, oldPos))
-    end
+    local trapResList = result:GetTriggerTrapResult()
+    local moveSpeed = playSkillInstructionSvc:GetMoveSpeed(casterEntity)
+    playSkillInstructionSvc:PlayEntityMove(TT, casterEntity, oldPos, newPos, moveSpeed)
+    playSkillInstructionSvc:PlayArrivePosTriggerTrap(TT, casterEntity, newPos, trapResList)
+    world:GetService("PlayBuff"):PlayBuffView(TT, NTSnakeHeadMoved:New(casterEntity, newPos, oldPos))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySnakeHeadMoveInstruction._PlayArrivePosTriggerTrap = function(self, TT, monsterEntity, pos, trapResList)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,v in ipairs(trapResList) do
+function PlaySnakeHeadMoveInstruction:_PlayArrivePosTriggerTrap(TT, monsterEntity, pos, trapResList)
+  for _, v in ipairs(trapResList) do
     local walkTrapRes = v
     local trapEntityID = walkTrapRes:GetTrapEntityID()
-    local trapEntity = (self._world):GetEntityByID(trapEntityID)
+    local trapEntity = self._world:GetEntityByID(trapEntityID)
     local trapSkillRes = walkTrapRes:GetTrapResult()
     local skillEffectResultContainer = trapSkillRes:GetResultContainer()
-    ;
-    (trapEntity:SkillRoutine()):SetResultContainer(skillEffectResultContainer)
-    ;
-    (Log.debug)("[AIMove] PlayArrivePos() monster=", monsterEntity:GetID(), " pos=", pos, " play trapid=", trapEntity:GetID(), " defender=", ((skillEffectResultContainer:GetScopeResult()):GetTargetIDs())[1])
-    local trapSvc = (self._world):GetService("TrapRender")
+    trapEntity:SkillRoutine():SetResultContainer(skillEffectResultContainer)
+    Log.debug("[AIMove] PlayArrivePos() monster=", monsterEntity:GetID(), " pos=", pos, " play trapid=", trapEntity:GetID(), " defender=", skillEffectResultContainer:GetScopeResult():GetTargetIDs()[1])
+    local trapSvc = self._world:GetService("TrapRender")
     trapSvc:PlayTrapTriggerSkill(TT, trapEntity, false, monsterEntity)
   end
 end
-
-

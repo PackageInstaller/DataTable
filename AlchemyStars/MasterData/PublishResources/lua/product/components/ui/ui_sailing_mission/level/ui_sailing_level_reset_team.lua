@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/level/ui_sailing_level_reset_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingLevelResetTeam", UIController)
 UISailingLevelResetTeam = UISailingLevelResetTeam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingLevelResetTeam.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISailingLevelResetTeam:OnShow(uiParams)
   self._callback = uiParams[1]
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelResetTeam.OnHide = function(self)
-  -- function num : 0_1
+function UISailingLevelResetTeam:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelResetTeam.ConfirmBtnOnClick = function(self)
-  -- function num : 0_2
+function UISailingLevelResetTeam:ConfirmBtnOnClick()
   self:CloseDialog()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingLevelResetTeam.CancelBtnOnClick = function(self)
-  -- function num : 0_3
+function UISailingLevelResetTeam:CancelBtnOnClick()
   self:CloseDialog()
 end
-
-

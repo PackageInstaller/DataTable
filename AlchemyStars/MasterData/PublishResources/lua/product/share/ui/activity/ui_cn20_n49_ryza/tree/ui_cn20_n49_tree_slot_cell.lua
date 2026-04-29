@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/tree/ui_cn20_n49_tree_slot_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49TreeSlotCell", UICustomWidget)
 UICN20N49TreeSlotCell = UICN20N49TreeSlotCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49TreeSlotCell.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN20N49TreeSlotCell:OnShow()
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._light = self:GetGameObject("Light")
   self._P_light = self:GetGameObject("P_light")
@@ -30,64 +23,39 @@ UICN20N49TreeSlotCell.OnShow = function(self)
   self:EventListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.OnSelectSkill = function(self, skillCls)
-  -- function num : 0_1
-  do
-    if self.rootid and skillCls then
-      local type = skillCls.type
-      if type == (self.cfg).TypeLimit and skillCls.level > 0 then
-        self:SetLight(true)
-        return 
-      end
+function UICN20N49TreeSlotCell:OnSelectSkill(skillCls)
+  if self.rootid and skillCls then
+    local type = skillCls.type
+    if type == self.cfg.TypeLimit and skillCls.level > 0 then
+      self:SetLight(true)
+      return
     end
-    self:SetLight(false)
+  end
+  self:SetLight(false)
+end
+
+function UICN20N49TreeSlotCell:OnSelectSlot(id)
+  self:Select(id == self.cfg.SlotID)
+end
+
+function UICN20N49TreeSlotCell:Select(active)
+  self._select:SetActive(active)
+  if self.limitType then
+    self._P_select:SetActive(active and self.limitType == SeasonTalentSkillType.Power)
+    self._N_select:SetActive(active and self.limitType == SeasonTalentSkillType.Normal)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.OnSelectSlot = function(self, id)
-  -- function num : 0_2
-  self:Select(id == (self.cfg).SlotID)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UICN20N49TreeSlotCell:SetLight(active)
+  self._light:SetActive(active)
+  self._P_light:SetActive(active and self.limitType == SeasonTalentSkillType.Power)
+  self._N_light:SetActive(active and self.limitType == SeasonTalentSkillType.Normal)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.Select = function(self, active)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._select):SetActive(active)
-  -- DECOMPILER ERROR at PC18: Unhandled construct in 'MakeBoolean' P1
-
-  if active and self.limitType ~= SeasonTalentSkillType.Power then
-    (self._P_select):SetActive(not self.limitType)
-    ;
-    (self._N_select):SetActive(not active or self.limitType == SeasonTalentSkillType.Normal)
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.SetLight = function(self, active)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._light):SetActive(active)
-  ;
-  (self._P_light):SetActive(not active or self.limitType == SeasonTalentSkillType.Power)
-  ;
-  (self._N_light):SetActive(not active or self.limitType == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.SetData = function(self, idx, cfg, rootid, callback)
-  -- function num : 0_5
+function UICN20N49TreeSlotCell:SetData(idx, cfg, rootid, callback)
   self.idx = idx
   self.cfg = cfg
-  self.limitType = (self.cfg).TypeLimit
+  self.limitType = self.cfg.TypeLimit
   self.rootid = rootid
   self.callback = callback
   self:OnValue()
@@ -95,145 +63,105 @@ UICN20N49TreeSlotCell.SetData = function(self, idx, cfg, rootid, callback)
   return slotRect
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.RefreshData = function(self, rootid)
-  -- function num : 0_6
+function UICN20N49TreeSlotCell:RefreshData(rootid)
   self.rootid = rootid
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.OnValue = function(self)
-  -- function num : 0_7
+function UICN20N49TreeSlotCell:OnValue()
   self:SetIcon()
   self:SetLock()
   self:SetType()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.SetIcon = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN20N49TreeSlotCell:SetIcon()
   if self.rootid and self.rootid > 0 then
-    ((self._icon).gameObject):SetActive(true)
-    local cfgs = (Cfg.cfg_component_talent_tree_skill)({ComponentID = self.comCfgID, SkillTypeID = self.rootid, Level = 1})
+    self._icon.gameObject:SetActive(true)
+    local cfgs = Cfg.cfg_component_talent_tree_skill({
+      ComponentID = self.comCfgID,
+      SkillTypeID = self.rootid,
+      Level = 1
+    })
     local cfg = cfgs[1]
     local icon = cfg.Icon
     if icon then
-      (self._icon):LoadImage(icon)
+      self._icon:LoadImage(icon)
     end
-    ;
-    (self._P_empty):SetActive(false)
-    ;
-    (self._N_empty):SetActive(false)
+    self._P_empty:SetActive(false)
+    self._N_empty:SetActive(false)
   else
-    do
-      ;
-      ((self._icon).gameObject):SetActive(false)
-      ;
-      (self._P_empty):SetActive(self.limitType == SeasonTalentSkillType.Power)
-      ;
-      (self._N_empty):SetActive(self.limitType == SeasonTalentSkillType.Normal)
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
+    self._icon.gameObject:SetActive(false)
+    self._P_empty:SetActive(self.limitType == SeasonTalentSkillType.Power)
+    self._N_empty:SetActive(self.limitType == SeasonTalentSkillType.Normal)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.SetLock = function(self)
-  -- function num : 0_9
-  (self._lock):SetActive(self.rootid == nil)
-  ;
-  (self._unlock):SetActive(self.rootid ~= nil)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UICN20N49TreeSlotCell:SetLock()
+  self._lock:SetActive(self.rootid == nil)
+  self._unlock:SetActive(self.rootid ~= nil)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.SetType = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._power):SetActive(self.limitType == SeasonTalentSkillType.Power)
-  ;
-  (self._normal):SetActive(self.limitType == SeasonTalentSkillType.Normal)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UICN20N49TreeSlotCell:SetType()
+  self._power:SetActive(self.limitType == SeasonTalentSkillType.Power)
+  self._normal:SetActive(self.limitType == SeasonTalentSkillType.Normal)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49TreeSlotCell.EventListener = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local etl = (UICustomUIEventListener.Get)(self._btn)
+function UICN20N49TreeSlotCell:EventListener()
+  local etl = UICustomUIEventListener.Get(self._btn)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(eventData)
-    -- function num : 0_11_0 , upvalues : self, _ENV
     if self.rootid and self.rootid > 0 then
       local params = {}
-      params.slotid = (self.cfg).SlotID
+      params.slotid = self.cfg.SlotID
       params.rootid = self.rootid
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_Out_Begin, params)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_Out_Begin, params)
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(eventData)
-    -- function num : 0_11_1 , upvalues : self, _ENV
     if self.rootid and self.rootid > 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_Out_Drag, eventData.position)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_Out_Drag, eventData.position)
     end
-  end
-)
-  local endDragFunc = function(eventData)
-    -- function num : 0_11_2 , upvalues : self, _ENV
+  end)
+  
+  local function endDragFunc(eventData)
     if self.rootid then
       if eventData then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_Out_End, eventData.position)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_Out_End, eventData.position)
       else
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_Out_End, nil)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTalentDragEvent, TalentTree_FSM_Event_Type.Drag_Out_End, nil)
       end
     end
   end
-
+  
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(eventData)
-    -- function num : 0_11_3 , upvalues : endDragFunc
     endDragFunc(eventData)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_11_4 , upvalues : self, _ENV
-    if self.rootid and self.callback then
-      (self.callback)((self.cfg).SlotID)
-    end
-    local tips = nil
-    if self.idx == 3 then
-      tips = "str_cn20_n49_tree_slot_unlock1"
+    if self.rootid then
+      if self.callback then
+        self.callback(self.cfg.SlotID)
+      end
     else
-      if self.idx == 4 then
+      local tips
+      if self.idx == 3 then
+        tips = "str_cn20_n49_tree_slot_unlock1"
+      elseif self.idx == 4 then
         tips = "str_cn20_n49_tree_slot_unlock2"
       end
+      if tips then
+        ToastManager.ShowToast(StringTable.Get(tips))
+      end
+      Log.debug("###[UICN20N49TreeSlotCell] slot is lock ! idx:", self.idx)
     end
-    if tips then
-      (ToastManager.ShowToast)((StringTable.Get)(tips))
-    end
-    ;
-    (Log.debug)("###[UICN20N49TreeSlotCell] slot is lock ! idx:", self.idx)
-  end
-)
+  end)
   if not EDITOR then
     self:AddUICustomEventListener(etl, UIEvent.ApplicationFocus, function(b)
-    -- function num : 0_11_5 , upvalues : etl, endDragFunc
-    if not b then
-      if not etl.IsDragging then
-        return 
+      if not b then
+        if not etl.IsDragging then
+          return
+        end
+        etl.IsDragging = false
+        endDragFunc()
       end
-      etl.IsDragging = false
-      endDragFunc()
-    end
-  end
-)
+    end)
   end
 end
-
-

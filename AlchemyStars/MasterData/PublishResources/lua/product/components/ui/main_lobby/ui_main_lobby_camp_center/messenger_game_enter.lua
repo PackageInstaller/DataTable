@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/messenger_game_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("MessengerGameEnter", MainLobbyCenterCampData)
 MessengerGameEnter = MessengerGameEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MessengerGameEnter.LoadData = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function MessengerGameEnter:LoadData(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self.N27MinigameHelper = N27MinigameHelper:New()
-  ;
-  (self.N27MinigameHelper):LoadData(TT, res)
-  self._campaign = (self.N27MinigameHelper):GetCampaign()
+  self.N27MinigameHelper:LoadData(TT, res)
+  self._campaign = self.N27MinigameHelper:GetCampaign()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MessengerGameEnter.CheckNew = function(self)
-  -- function num : 0_1
-  return (self.N27MinigameHelper):IsShowMiniGameNew() and 1 or 0
+function MessengerGameEnter:CheckNew()
+  return self.N27MinigameHelper:IsShowMiniGameNew() and 1 or 0
 end
-
-

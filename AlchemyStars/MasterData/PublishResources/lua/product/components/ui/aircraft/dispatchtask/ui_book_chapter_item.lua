@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_book_chapter_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookChapterItem", UICustomWidget)
 UIBookChapterItem = UIBookChapterItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookChapterItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIBookChapterItem:OnShow(uiParam)
   self._nameLabel = self:GetUIComponent("UILocalizationText", "Name")
   self._unOpenLabel = self:GetUIComponent("UILocalizationText", "UnOpen")
   self._lockGo = self:GetGameObject("Lock")
@@ -18,63 +11,35 @@ UIBookChapterItem.OnShow = function(self, uiParam)
   self._newGo = self:GetGameObject("New")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookChapterItem.Refresh = function(self, bookData, chapterData, index)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBookChapterItem:Refresh(bookData, chapterData, index)
   self._chapterData = chapterData
   self._bookData = bookData
   self._index = index
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._nameLabel).text = (StringTable.Get)("str_dispatch_book_chapter" .. self._index) .. (self._chapterData):GetName()
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._unOpenLabel).text = (StringTable.Get)("str_dispatch_book_chapter" .. self._index) .. (StringTable.Get)("str_dispatch_book_uncollect")
-  ;
-  (self._lockGo):SetActive(not (self._chapterData):IsOpen())
-  ;
-  (self._nameGo):SetActive((self._chapterData):IsOpen())
-  ;
-  (self._unOpenGo):SetActive(not (self._chapterData):IsOpen())
-  ;
-  (self._frameGo):SetActive((self._chapterData):IsOpen())
-  ;
-  (self._newGo):SetActive((self._chapterData):IsNew())
+  self._nameLabel.text = StringTable.Get("str_dispatch_book_chapter" .. self._index) .. self._chapterData:GetName()
+  self._unOpenLabel.text = StringTable.Get("str_dispatch_book_chapter" .. self._index) .. StringTable.Get("str_dispatch_book_uncollect")
+  self._lockGo:SetActive(not self._chapterData:IsOpen())
+  self._nameGo:SetActive(self._chapterData:IsOpen())
+  self._unOpenGo:SetActive(not self._chapterData:IsOpen())
+  self._frameGo:SetActive(self._chapterData:IsOpen())
+  self._newGo:SetActive(self._chapterData:IsNew())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookChapterItem.MaskOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  if not (self._chapterData):IsOpen() then
-    return 
+function UIBookChapterItem:MaskOnClick(go)
+  if not self._chapterData:IsOpen() then
+    return
   end
   self:Lock("UIBookChapterItem:MaskOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.SetNewStatusCoro, self)
+  GameGlobal.TaskManager():StartTask(self.SetNewStatusCoro, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookChapterItem.SetNewStatusCoro = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._chapterData):SetNewStatus(TT, false)
-  ;
-  (self._newGo):SetActive((self._chapterData):IsNew())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateBookRedPointStatus)
+function UIBookChapterItem:SetNewStatusCoro(TT)
+  self._chapterData:SetNewStatus(TT, false)
+  self._newGo:SetActive(self._chapterData:IsNew())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateBookRedPointStatus)
   self:ShowDialog("UIBookInfoController", self._bookData, self._index)
   self:UnLock("UIBookChapterItem:MaskOnClick")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookChapterItem.LockOnClick = function(self, go)
-  -- function num : 0_4
+function UIBookChapterItem:LockOnClick(go)
   self:ShowDialog("UIBookInfoController", self._bookData, self._index)
 end
-
-

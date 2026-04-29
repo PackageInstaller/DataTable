@@ -1,72 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_cls/ui_activity_campaign_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCampaign", Object)
 UIActivityCampaign = UIActivityCampaign
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCampaign.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaign_module = (GameGlobal.GetModule)(CampaignModule)
-  self._campaign_manager = (self._campaign_module).m_campaign_manager
+function UIActivityCampaign:Constructor()
+  self._campaign_module = GameGlobal.GetModule(CampaignModule)
+  self._campaign_manager = self._campaign_module.m_campaign_manager
   self._type = -1
   self._id = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.LoadCampaignInfo = function(self, TT, res, campaignType, ...)
-  -- function num : 0_1
+function UIActivityCampaign:LoadCampaignInfo(TT, res, campaignType, ...)
   self._type = campaignType
-  self._id = (self._campaign_module):GetCampaignInfo(TT, res, campaignType, ...)
+  self._id = self._campaign_module:GetCampaignInfo(TT, res, campaignType, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.LoadCampaignInfo_Local = function(self, campaignType, ...)
-  -- function num : 0_2
+function UIActivityCampaign:LoadCampaignInfo_Local(campaignType, ...)
   self._type = campaignType
-  self._id = (self._campaign_module):GetCampaignInfo_Local(campaignType, ...)
+  self._id = self._campaign_module:GetCampaignInfo_Local(campaignType, ...)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.LoadCampaignInfo_Id = function(self, TT, res, campaignId, ...)
-  -- function num : 0_3
+function UIActivityCampaign:LoadCampaignInfo_Id(TT, res, campaignId, ...)
   self._id = campaignId
   self:ReLoadCampaignInfo_Force(TT, res)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.LoadCampaignInfo_Id_Local = function(self, campaignId)
-  -- function num : 0_4
+function UIActivityCampaign:LoadCampaignInfo_Id_Local(campaignId)
   self._id = campaignId
   local sample = self:GetSample()
   if not sample then
-    return 
+    return
   end
   self._type = sample.camp_type
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.ReLoadCampaignInfo_Force = function(self, TT, res)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityCampaign:ReLoadCampaignInfo_Force(TT, res)
   local lockName = "UIActivityCampaign:ReLoadCampaignInfo_Force() id = " .. self._id
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  ;
-  (self._campaign_module):CampaignComProtoLoadInfo(TT, res, self._id)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock(lockName)
+  GameGlobal.UIStateManager():Lock(lockName)
+  self._campaign_module:CampaignComProtoLoadInfo(TT, res, self._id)
+  GameGlobal.UIStateManager():UnLock(lockName)
   if res and res:GetSucc() then
-    local obj = (self._campaign_manager):GetCampaignObj(self._id)
+    local obj = self._campaign_manager:GetCampaignObj(self._id)
     local sample = self:GetSample()
     if not sample then
-      return 
+      return
     end
     self._type = sample.camp_type
     local localProcess = self:GetLocalProcess()
@@ -74,290 +49,189 @@ UIActivityCampaign.ReLoadCampaignInfo_Force = function(self, TT, res)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.GetLocalProcess = function(self)
-  -- function num : 0_6
-  return (self._campaign_module):GetCampaignLocalProcessByCampaignId_Local(self._type, self._id)
+function UIActivityCampaign:GetLocalProcess()
+  return self._campaign_module:GetCampaignLocalProcessByCampaignId_Local(self._type, self._id)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.GetSample = function(self)
-  -- function num : 0_7
+function UIActivityCampaign:GetSample()
   if not self._campaign_manager then
     return nil
   end
   if self._id ~= -1 then
-    return (self._campaign_manager):GetSampleByID(self._id)
+    return self._campaign_manager:GetSampleByID(self._id)
   end
-  if not self._sample then
-    return (self._campaign_manager):GetSampleByType(self._type)
-  end
+  return self._sample or self._campaign_manager:GetSampleByType(self._type)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.GetComponent = function(self, componentId)
-  -- function num : 0_8
+function UIActivityCampaign:GetComponent(componentId)
   local localProcess = self:GetLocalProcess()
-  if localProcess then
-    return localProcess:GetComponent(componentId)
-  end
+  return localProcess and localProcess:GetComponent(componentId)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.GetComponentInfo = function(self, componentId)
-  -- function num : 0_9
+function UIActivityCampaign:GetComponentInfo(componentId)
   local localProcess = self:GetLocalProcess()
-  if localProcess then
-    return localProcess:GetComponentInfo(componentId)
-  end
+  return localProcess and localProcess:GetComponentInfo(componentId)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.GetCampaignType = function(self)
-  -- function num : 0_10
+function UIActivityCampaign:GetCampaignType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.GetCampaignID = function(self)
-  -- function num : 0_11
+function UIActivityCampaign:GetCampaignID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign._GetComponentIdByType = function(self, type, idx)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityCampaign:_GetComponentIdByType(type, idx)
   if not self._componentDict then
     local tb = {}
     local i = 1
-    while 1 do
+    while true do
       local component = self:GetComponent(i)
-      if component ~= nil then
-        do
-          local type = component:GetComponentType()
-          if not tb[type] then
-            tb[type] = {}
-          end
-          ;
-          (table.insert)(tb[type], i)
-          i = i + 1
-          -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if component == nil then
+        break
       end
+      local type = component:GetComponentType()
+      if not tb[type] then
+        tb[type] = {}
+      end
+      table.insert(tb[type], i)
+      i = i + 1
     end
     self._componentDict = tb
   end
-  do
-    if not idx then
-      idx = 1
-    end
-    if (self._componentDict)[type] then
-      return ((self._componentDict)[type])[idx]
-    end
-  end
+  idx = idx or 1
+  return self._componentDict[type] and self._componentDict[type][idx]
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.GetComponentByType = function(self, type, idx)
-  -- function num : 0_13
+function UIActivityCampaign:GetComponentByType(type, idx)
   return self:GetComponent(self:_GetComponentIdByType(type, idx))
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.GetComponentInfoByType = function(self, type, idx)
-  -- function num : 0_14
+function UIActivityCampaign:GetComponentInfoByType(type, idx)
   return self:GetComponentInfo(self:_GetComponentIdByType(type, idx))
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.OpenMainUI = function(self, useStateUI)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[self._id]
-  if cfg then
-    local uiName = cfg.MainUI
-  end
-  if (string.isnullorempty)(uiName) then
-    (Log.error)("UIActivityCampaign:OpenMainUI() uiName == nil")
+function UIActivityCampaign:OpenMainUI(useStateUI)
+  local cfg = Cfg.cfg_campaign[self._id]
+  local uiName = cfg and cfg.MainUI
+  if string.isnullorempty(uiName) then
+    Log.error("UIActivityCampaign:OpenMainUI() uiName == nil")
+  elseif useStateUI then
+    GameGlobal.UIStateManager():SwitchState(uiName)
   else
-    if useStateUI then
-      ((GameGlobal.UIStateManager)()):SwitchState(uiName)
-    else
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog(uiName)
-    end
+    GameGlobal.UIStateManager():ShowDialog(uiName)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.CheckCampaignOpen = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = svrTimeModule and (math.floor)(svrTimeModule:GetServerTime() * 0.001) or 0
+function UIActivityCampaign:CheckCampaignOpen()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = svrTimeModule and math.floor(svrTimeModule:GetServerTime() * 0.001) or 0
   local sample = self:GetSample()
   return sample and sample.is_open and sample:IsShow(curTime) or false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.CheckCampaignRed = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityCampaign:CheckCampaignRed()
   local sample = self:GetSample()
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.CheckCampaignNew = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityCampaign:CheckCampaignNew()
   local sample = self:GetSample()
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.ClearCampaignNew = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityCampaign:ClearCampaignNew(TT)
   if self:CheckCampaignNew() then
     local res = AsyncRequestRes:New()
-    ;
-    (self._campaign_module):CampaignClearNewFlag(TT, res, self._id)
-    ;
-    (Log.info)("UIActivityCampaign:ClearCampaignNew() CampaignClearNewFlag res.m_result = ", res.m_result)
+    self._campaign_module:CampaignClearNewFlag(TT, res, self._id)
+    Log.info("UIActivityCampaign:ClearCampaignNew() CampaignClearNewFlag res.m_result = ", res.m_result)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.CheckComponentOpen = function(self, ...)
-  -- function num : 0_20
-  return (self._campaign_module):CheckComponentOpen(self:GetLocalProcess(), ...)
+function UIActivityCampaign:CheckComponentOpen(...)
+  return self._campaign_module:CheckComponentOpen(self:GetLocalProcess(), ...)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.CheckComponentRed = function(self, ...)
-  -- function num : 0_21
-  return (self._campaign_module):CheckComponentRed(self:GetLocalProcess(), ...)
+function UIActivityCampaign:CheckComponentRed(...)
+  return self._campaign_module:CheckComponentRed(self:GetLocalProcess(), ...)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.ShowErrorToast = function(self, result, hideErrorId)
-  -- function num : 0_22 , upvalues : _ENV
-  (UIActivityErrorHelper.ShowErrorToast)(result, hideErrorId)
+function UIActivityCampaign:ShowErrorToast(result, hideErrorId)
+  UIActivityErrorHelper.ShowErrorToast(result, hideErrorId)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.CheckErrorCode = function(self, result, refreshCallback, closeCallback)
-  -- function num : 0_23 , upvalues : _ENV
-  (UIActivityErrorHelper.CheckErrorCode)(result, self._id, refreshCallback, closeCallback)
+function UIActivityCampaign:CheckErrorCode(result, refreshCallback, closeCallback)
+  UIActivityErrorHelper.CheckErrorCode(result, self._id, refreshCallback, closeCallback)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.CheckCampaignClose_ShowClientError = function(self)
-  -- function num : 0_24
-  do
-    if not self:CheckCampaignOpen() then
-      local result = self:_GetClientError_Campaign()
-      self:CheckErrorCode(result)
-      return true
-    end
-    return false
+function UIActivityCampaign:CheckCampaignClose_ShowClientError()
+  if not self:CheckCampaignOpen() then
+    local result = self:_GetClientError_Campaign()
+    self:CheckErrorCode(result)
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.CheckComponentClose_ShowClientError = function(self, ...)
-  -- function num : 0_25
-  do
-    if not self:CheckComponentOpen(...) then
-      local result = self:_GetClientError_Component(...)
-      self:CheckErrorCode(result)
-      return true
-    end
-    return false
+function UIActivityCampaign:CheckComponentClose_ShowClientError(...)
+  if not self:CheckComponentOpen(...) then
+    local result = self:_GetClientError_Component(...)
+    self:CheckErrorCode(result)
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign._GetClientError_Campaign = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local errorCode = {[0] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, [1] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN, [2] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, [3] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS}
+function UIActivityCampaign:_GetClientError_Campaign()
+  local errorCode = {
+    [0] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED,
+    [1] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN,
+    [2] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED,
+    [3] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS
+  }
   local sample = self:GetSample()
   if sample == nil then
     return errorCode[2]
   end
-  local result = (UIActivityCampaign._CalcClientError_Time)(sample.begin_time, sample.end_time, errorCode)
+  local result = UIActivityCampaign._CalcClientError_Time(sample.begin_time, sample.end_time, errorCode)
   return result
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign._GetClientError_Component = function(self, ...)
-  -- function num : 0_27 , upvalues : _ENV
-  local errorCode = {[0] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_ID_ERROR, [1] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK, [2] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE, [3] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS}
+function UIActivityCampaign:_GetClientError_Component(...)
+  local errorCode = {
+    [0] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_ID_ERROR,
+    [1] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK,
+    [2] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE,
+    [3] = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS
+  }
   local succ = errorCode[3]
-  local args = {...}
-  for _,v in pairs(args) do
+  local args = {
+    ...
+  }
+  for _, v in pairs(args) do
     local componentInfo = self:GetComponentInfo(v)
     if componentInfo then
       local openTime = componentInfo.m_unlock_time
       local closeTime = componentInfo.m_close_time
-      local result = (UIActivityCampaign._CalcClientError_Time)(openTime, closeTime, errorCode)
+      local result = UIActivityCampaign._CalcClientError_Time(openTime, closeTime, errorCode)
       if result ~= succ then
         return result
       end
     else
-      do
-        do
-          local result = errorCode[0]
-          ;
-          (Log.debug)("UIActivityCampaign:CheckComponentOpenClientError() id = ", v, ", result = ", result)
-          do return result end
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      local result = errorCode[0]
+      Log.debug("UIActivityCampaign:CheckComponentOpenClientError() id = ", v, ", result = ", result)
+      return result
     end
   end
   return succ
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign._CalcClientError_Time = function(openTime, closeTime, errorCode)
-  -- function num : 0_28 , upvalues : _ENV
+function UIActivityCampaign._CalcClientError_Time(openTime, closeTime, errorCode)
   if not openTime or not closeTime then
     return errorCode[0]
   end
-  local curTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
-  if curTime < openTime then
+  local curTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
+  if openTime > curTime then
     return errorCode[1]
   end
   if closeTime < curTime then
@@ -366,11 +240,6 @@ UIActivityCampaign._CalcClientError_Time = function(openTime, closeTime, errorCo
   return errorCode[3]
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCampaign.CheckComponentOpenClientError = function(self, ...)
-  -- function num : 0_29
+function UIActivityCampaign:CheckComponentOpenClientError(...)
   return self:_GetClientError_Component(...)
 end
-
-

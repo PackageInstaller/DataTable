@@ -1,40 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_stage/ui_stage_top/ui_stage_top.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStageTop", UICustomWidget)
 UIStageTop = UIStageTop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStageTop.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  self.roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIStageTop:OnShow()
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  self.roleModule = GameGlobal.GetModule(RoleModule)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTop.OnHide = function(self)
-  -- function num : 0_1
+function UIStageTop:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTop.GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIStageTop:GetComponents()
   self.pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self.atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self._power = self:GetUIComponent("Transform", "power")
   self._powerPool = self:GetUIComponent("UISelectObjectPath", "powerpool")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTop.SetData = function(self, idList, iconClick, isBetween)
-  -- function num : 0_3
+function UIStageTop:SetData(idList, iconClick, isBetween)
   self:GetComponents()
   self.idList = idList
   self.iconClick = iconClick
@@ -42,127 +26,86 @@ UIStageTop.SetData = function(self, idList, iconClick, isBetween)
   self:_RefreshUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTop._RefreshUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIStageTop:_RefreshUI()
   if self.iconClick == nil or self.isBetween == nil or self.idList == nil then
-    return 
+    return
   end
-  ;
-  (self.pool):SpawnObjects("UIStageTopItem", #self.idList)
-  local cfg = (Cfg.cfg_top_tips)({})
-  local pools = (self.pool):GetAllSpawnList()
+  self.pool:SpawnObjects("UIStageTopItem", #self.idList)
+  local cfg = Cfg.cfg_top_tips({})
+  local pools = self.pool:GetAllSpawnList()
   for i = 1, #pools do
     local item = pools[i]
-    local id = (self.idList)[i]
+    local id = self.idList[i]
     local cfg_item = cfg[id]
     local icon = cfg_item.Icon
-    local sprite = ((self.atlas):GetSprite(icon))
-    local callback, countStr = nil, nil
+    local sprite = self.atlas:GetSprite(icon)
+    local callback, countStr
     if id == RoleAssetID.RoleAssetPhyPoint then
-      callback = function(id, go)
-    -- function num : 0_4_0 , upvalues : self
-    self:ItemClick(id, go)
-  end
-
-      local currentStr, upperStr = nil, nil
-      local currentPhysicalPower = (self.roleModule):GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
-      local upperPhysicalPower = (self.roleModule):GetHpLevelMax()
-      if currentPhysicalPower > 9999 then
+      function callback(id, go)
+        self:ItemClick(id, go)
+      end
+      
+      local currentStr, upperStr
+      local currentPhysicalPower = self.roleModule:GetAssetCount(RoleAssetID.RoleAssetPhyPoint)
+      local upperPhysicalPower = self.roleModule:GetHpLevelMax()
+      if 9999 < currentPhysicalPower then
         currentStr = "9999+"
       else
         currentStr = currentPhysicalPower .. ""
       end
-      if upperPhysicalPower > 9999 then
+      if 9999 < upperPhysicalPower then
         upperStr = "9999+"
       else
         upperStr = upperPhysicalPower .. ""
       end
       upperStr = "<color=#aeaeae>" .. upperStr .. "</color>"
-      if upperPhysicalPower < currentPhysicalPower then
+      if currentPhysicalPower > upperPhysicalPower then
         currentStr = "<color=#00ffea>" .. currentStr .. "</color>"
       else
         currentStr = "<color=#ffffff>" .. currentStr .. "</color>"
       end
       countStr = currentStr .. "<color=#ffffff>/</color>" .. upperStr
-    else
-      do
-        if id == RoleAssetID.RoleAssetDoubleRes then
-          local resModule = self:GetModule(ResDungeonModule)
-          local count = resModule:GetDoubleResNum()
-          local aircraftModule = self:GetModule(AircraftModule)
-          local room = aircraftModule:GetResRoom()
-          local maxCount = room and (math.floor)(room:GetResCardLimit()) or -1
-          if maxCount <= count then
-            countStr = "<color=#ffffff>" .. (HelperProxy:GetInstance()):Format999(count) .. "/" .. maxCount .. "</color>"
-          else
-            countStr = "<color=#ffffff>" .. count .. "/" .. maxCount .. "</color>"
-          end
-          callback = nil
-        else
-          do
-            do
-              callback = nil
-              item:SetData(id, sprite, countStr, function(id, go)
-    -- function num : 0_4_1 , upvalues : self
-    (self.iconClick)(id, go)
-  end
-, callback, self.isBetween)
-              -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+    elseif id == RoleAssetID.RoleAssetDoubleRes then
+      local resModule = self:GetModule(ResDungeonModule)
+      local count = resModule:GetDoubleResNum()
+      local aircraftModule = self:GetModule(AircraftModule)
+      local room = aircraftModule:GetResRoom()
+      local maxCount = room and math.floor(room:GetResCardLimit()) or -1
+      if count >= maxCount then
+        countStr = "<color=#ffffff>" .. HelperProxy:GetInstance():Format999(count) .. "/" .. maxCount .. "</color>"
+      else
+        countStr = "<color=#ffffff>" .. count .. "/" .. maxCount .. "</color>"
       end
+      callback = nil
+    else
+      callback = nil
     end
+    item:SetData(id, sprite, countStr, function(id, go)
+      self.iconClick(id, go)
+    end, callback, self.isBetween)
   end
   local idx = 1
   for i = 1, #self.idList do
-    if (self.idList)[i] == RoleAssetID.RoleAssetPhyPoint then
+    if self.idList[i] == RoleAssetID.RoleAssetPhyPoint then
       idx = i
       break
     end
   end
-  do
-    local menuItem = pools[idx]
-    self.powerPool = (self._powerPool):SpawnObject("UIPowerInfo")
-    ;
-    (self.powerPool):SetData(self._power, menuItem)
-  end
+  local menuItem = pools[idx]
+  self.powerPool = self._powerPool:SpawnObject("UIPowerInfo")
+  self.powerPool:SetData(self._power, menuItem)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTop.ItemClick = function(self, id, go)
-  -- function num : 0_5
+function UIStageTop:ItemClick(id, go)
   self:ShowDialog("UIGetPhyPointController")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTop._AttachEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIStageTop:_AttachEvents()
   self:AttachEvent(GameEventType.RolePropertyChanged, self._RefreshUI)
   self:AttachEvent(GameEventType.ItemCountChanged, self._RefreshUI)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageTop._DetachEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIStageTop:_DetachEvents()
   self:DetachEvent(GameEventType.RolePropertyChanged, self._RefreshUI)
   self:DetachEvent(GameEventType.ItemCountChanged, self._RefreshUI)
 end
-
-

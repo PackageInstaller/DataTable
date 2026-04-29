@@ -1,50 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_team_pet_member_maze_hp_dialline_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITeamPetMemberMazeHpDialLineItem", UICustomWidget)
 UITeamPetMemberMazeHpDialLineItem = UITeamPetMemberMazeHpDialLineItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITeamPetMemberMazeHpDialLineItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UITeamPetMemberMazeHpDialLineItem:Constructor()
   self._atlas = self:GetAsset("UITeamsNew.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamPetMemberMazeHpDialLineItem.OnShow = function(self)
-  -- function num : 0_1
+function UITeamPetMemberMazeHpDialLineItem:OnShow()
   self._img = self:GetUIComponent("Image", "img")
   self._rect = self:GetUIComponent("RectTransform", "img")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamPetMemberMazeHpDialLineItem.SetData = function(self, idx, posx, middleImg, show)
-  -- function num : 0_2 , upvalues : _ENV
+function UITeamPetMemberMazeHpDialLineItem:SetData(idx, posx, middleImg, show)
   self._index = idx
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(posx, 0)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._img).enabled = show
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
+  self._rect.anchoredPosition = Vector2(posx, 0)
+  self._img.enabled = show
   if middleImg then
-    (self._img).sprite = (self._atlas):GetSprite("team_gl_di019")
+    self._img.sprite = self._atlas:GetSprite("team_gl_di019")
   else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._img).sprite = (self._atlas):GetSprite("team_gl_di018")
+    self._img.sprite = self._atlas:GetSprite("team_gl_di018")
   end
-  ;
-  (self._img):SetNativeSize()
+  self._img:SetNativeSize()
 end
-
-

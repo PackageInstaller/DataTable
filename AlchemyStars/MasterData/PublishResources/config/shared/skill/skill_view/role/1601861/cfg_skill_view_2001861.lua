@@ -1,21 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1601861/cfg_skill_view_2001861.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayTurnToSpecifiedDir,dirX=0,dirY=1; PlayCasterAnimation,animName = AtkChain; PlayCasterSubMaterialAnim,nodeName=1601861_weapon,animName=eff_1601861_atkchain_main_weapon; PlayAudio,audioID = 2609,audioType=1; PlayCasterBindEffect,effectID=160186103; PlayCasterBindEffect,effectID=160186107; Wait,waitTime=1500; PlayEffectAtCasterPos,effectID=160186104,useRenderDir=1; Wait,waitTime=2800; "}
-}
-, 
-{2, 2, 0, 1, 1, 0, 
-{" PlaySkillAttackRange,showTime=500,isEffectRange=0; "}
-}
-, 
-{3, 3, 0, 1, 1, 1780, 
-{"DataSelectScopeGridRange,effectType=1; DataSortScopeGridRange,sortType=3; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=160186106,turnToTarget=1,deathClear=1,label=playRangeEffect; DataSelectNextScopeGridRange,label=selectNextGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayTurnToSpecifiedDir,dirX=0,dirY=1; PlayCasterAnimation,animName = AtkChain; PlayCasterSubMaterialAnim,nodeName=1601861_weapon,animName=eff_1601861_atkchain_main_weapon; PlayAudio,audioID = 2609,audioType=1; PlayCasterBindEffect,effectID=160186103; PlayCasterBindEffect,effectID=160186107; Wait,waitTime=1500; PlayEffectAtCasterPos,effectID=160186104,useRenderDir=1; Wait,waitTime=2800; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    1,
+    1,
+    0,
+    {
+      " PlaySkillAttackRange,showTime=500,isEffectRange=0; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    1780,
+    {
+      "DataSelectScopeGridRange,effectType=1; DataSortScopeGridRange,sortType=3; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeBeHit,hitAnimName=Hit,hitEffectID=160186106,turnToTarget=1,deathClear=1,label=playRangeEffect; DataSelectNextScopeGridRange,label=selectNextGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; "
+    }
+  }
 }
 return config, "ID", key
-

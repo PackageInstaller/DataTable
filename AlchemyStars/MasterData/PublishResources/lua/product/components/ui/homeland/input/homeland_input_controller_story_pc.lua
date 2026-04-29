@@ -1,115 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/input/homeland_input_controller_story_pc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_input_controller_char_base")
 require("homeland_input_controller_char_pc")
 _class("HomelandInputControllerStoryPC", HomelandInputControllerCharPC)
 HomelandInputControllerStoryPC = HomelandInputControllerStoryPC
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandInputControllerStoryPC.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandInputControllerStoryPC.super).Constructor)(self)
+function HomelandInputControllerStoryPC:Constructor()
+  HomelandInputControllerStoryPC.super.Constructor(self)
   self._moveActive = true
   self._rotActive = true
   self._scaleActive = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryPC.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandInputControllerStoryPC:OnUpdate(deltaTimeMS)
   if self._moveActive then
     self._inputX = 0
     self._inputZ = 0
-    if ((self._input).GetKey)((UnityEngine.KeyCode).W) then
+    if self._input.GetKey(UnityEngine.KeyCode.W) then
       self._inputZ = 1
-    else
-      if ((self._input).GetKey)((UnityEngine.KeyCode).S) then
-        self._inputZ = -1
-      end
+    elseif self._input.GetKey(UnityEngine.KeyCode.S) then
+      self._inputZ = -1
     end
-    if ((self._input).GetKey)((UnityEngine.KeyCode).A) then
+    if self._input.GetKey(UnityEngine.KeyCode.A) then
       self._inputX = -1
-    else
-      if ((self._input).GetKey)((UnityEngine.KeyCode).D) then
-        self._inputX = 1
-      end
+    elseif self._input.GetKey(UnityEngine.KeyCode.D) then
+      self._inputX = 1
     end
     if self._inputX ~= 0 or self._inputZ ~= 0 then
-      local movement = ((self._followCameraController):CalcMovement(Vector3(self._inputX, 0, self._inputZ))):SetNormalize()
-      ;
-      (self._mainCharacterController):Move(movement, HomelandCharMoveType.Run, deltaTimeMS)
+      local movement = self._followCameraController:CalcMovement(Vector3(self._inputX, 0, self._inputZ)):SetNormalize()
+      self._mainCharacterController:Move(movement, HomelandCharMoveType.Run, deltaTimeMS)
     end
   end
-  do
-    if self._rotActive and ((self._input).GetMouseButton)(0) and not (self._currentEvent):IsPointerOverGameObject() then
-      local mx = ((self._input).GetAxis)("Mouse X")
-      local my = ((self._input).GetAxis)("Mouse Y")
-      ;
-      (self._followCameraController):HandleRotate(mx, my)
+  if self._rotActive and self._input.GetMouseButton(0) and not self._currentEvent:IsPointerOverGameObject() then
+    local mx = self._input.GetAxis("Mouse X")
+    local my = self._input.GetAxis("Mouse Y")
+    self._followCameraController:HandleRotate(mx, my)
+  end
+  if self._scaleActive then
+    local mouseWheel = self._input.GetAxis("Mouse ScrollWheel")
+    if mouseWheel ~= 0 then
+      self._followCameraController:HandleScale(mouseWheel)
     end
-    do
-      if self._scaleActive then
-        local mouseWheel = ((self._input).GetAxis)("Mouse ScrollWheel")
-        if mouseWheel ~= 0 then
-          (self._followCameraController):HandleScale(mouseWheel)
-        end
-        if ((self._input).GetKey)((UnityEngine.KeyCode).UpArrow) or ((self._input).GetKey)((UnityEngine.KeyCode).DownArrow) or ((self._input).GetKey)((UnityEngine.KeyCode).LeftArrow) or ((self._input).GetKey)((UnityEngine.KeyCode).RightArrow) then
-          local mx = 0
-          local my = 0
-          if ((self._input).GetKey)((UnityEngine.KeyCode).UpArrow) then
-            my = 0.1
-          else
-            if ((self._input).GetKey)((UnityEngine.KeyCode).DownArrow) then
-              my = -0.1
-            end
-          end
-          if ((self._input).GetKey)((UnityEngine.KeyCode).RightArrow) then
-            mx = 0.1
-          else
-            if ((self._input).GetKey)((UnityEngine.KeyCode).LeftArrow) then
-              mx = -0.1
-            end
-          end
-          ;
-          (self._followCameraController):HandleRotate(mx, my)
-        end
+    if self._input.GetKey(UnityEngine.KeyCode.UpArrow) or self._input.GetKey(UnityEngine.KeyCode.DownArrow) or self._input.GetKey(UnityEngine.KeyCode.LeftArrow) or self._input.GetKey(UnityEngine.KeyCode.RightArrow) then
+      local mx = 0
+      local my = 0
+      if self._input.GetKey(UnityEngine.KeyCode.UpArrow) then
+        my = 0.1
+      elseif self._input.GetKey(UnityEngine.KeyCode.DownArrow) then
+        my = -0.1
       end
+      if self._input.GetKey(UnityEngine.KeyCode.RightArrow) then
+        mx = 0.1
+      elseif self._input.GetKey(UnityEngine.KeyCode.LeftArrow) then
+        mx = -0.1
+      end
+      self._followCameraController:HandleRotate(mx, my)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryPC.ActiveMove = function(self, active)
-  -- function num : 0_2
+function HomelandInputControllerStoryPC:ActiveMove(active)
   self._moveActive = active
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryPC.ActiveRot = function(self, active)
-  -- function num : 0_3
+function HomelandInputControllerStoryPC:ActiveRot(active)
   self._rotActive = active
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryPC.ActiveScale = function(self, active)
-  -- function num : 0_4
+function HomelandInputControllerStoryPC:ActiveScale(active)
   self._scaleActive = active
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerStoryPC.HandleRotateInInteract = function(self, v2)
-  -- function num : 0_5
+function HomelandInputControllerStoryPC:HandleRotateInInteract(v2)
   if self._rotActive then
-    (self._followCameraController):HandleRotate(v2.x, v2.y)
+    self._followCameraController:HandleRotate(v2.x, v2.y)
   end
 end
-
-

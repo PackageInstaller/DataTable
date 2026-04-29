@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/tower/stn_tower_enter_battle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Tower_EnterBattle", Common_AsyncBase)
 Tower_EnterBattle = Tower_EnterBattle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Tower_EnterBattle.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
-  local game = (GameGlobal.GetModule)(GameMatchModule)
+function Tower_EnterBattle:TaskFunc(TT, status)
+  local runData = self.m_pManager:GetMissionRunData()
+  local game = GameGlobal.GetModule(GameMatchModule)
   local stage1Id = runData:GetMissionID()
   local createInfo = game:GetMatchCreateInfo(MatchType.MT_Tower, runData:GetMissionID())
   for i = 1, 3 do
@@ -19,14 +12,11 @@ Tower_EnterBattle.TaskFunc = function(self, TT, status)
     if res:GetSucc() then
       status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-      return 
+      return
     end
     YIELD(TT, 10000)
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-  ;
-  (self._manager):Exception_DeclareExceptionThrew("对局创建失败")
+  self._manager:Exception_DeclareExceptionThrew("对局创建失败")
 end
-
-

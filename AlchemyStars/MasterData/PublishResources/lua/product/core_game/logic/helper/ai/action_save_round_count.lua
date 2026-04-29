@@ -1,45 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_save_round_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionRoundBase", AINewNode)
 ActionRoundBase = ActionRoundBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionRoundBase.Constructor = function(self)
-  -- function num : 0_0
+function ActionRoundBase:Constructor()
   self.m_nRoundData = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRoundBase.InitializeNode = function(self, cfg, context, logicOwn, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionRoundBase.super).InitializeNode)(self, cfg, context, logicOwn, configData)
+function ActionRoundBase:InitializeNode(cfg, context, logicOwn, configData)
+  ActionRoundBase.super.InitializeNode(self, cfg, context, logicOwn, configData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRoundBase.Reset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((ActionRoundBase.super).Reset)(self)
+function ActionRoundBase:Reset()
+  ActionRoundBase.super.Reset(self)
   self.m_nRoundData = self:GetRuntimeData("RoundCount") or 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRoundBase._MakeRoundCount = function(self, nRoundData, nLoopLimit)
-  -- function num : 0_3 , upvalues : _ENV
-  local nNewRound = (math.fmod)(nRoundData - 1, nLoopLimit) + 1
+function ActionRoundBase:_MakeRoundCount(nRoundData, nLoopLimit)
+  local nNewRound = math.fmod(nRoundData - 1, nLoopLimit) + 1
   return nNewRound
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRoundBase._SaveRoundCount = function(self, nSaveRound, nLoopLimit)
-  -- function num : 0_4
+function ActionRoundBase:_SaveRoundCount(nSaveRound, nLoopLimit)
   local nRountNow = self:_MakeRoundCount(nSaveRound + 1, nLoopLimit)
   local nRountNext = self:_MakeRoundCount(nRountNow + 1, nLoopLimit)
   self:SetRuntimeData("RoundCount", nRountNow)
@@ -48,13 +29,10 @@ ActionRoundBase._SaveRoundCount = function(self, nSaveRound, nLoopLimit)
   return nRountNow
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRoundBase.TryToSaveRoundCount = function(self, nLoopLimit)
-  -- function num : 0_5
+function ActionRoundBase:TryToSaveRoundCount(nLoopLimit)
   local nGameRound = self:GetGameRountNow()
   local nSaveRound = self:GetRuntimeData("GameRound")
-  if nSaveRound == nil or nSaveRound ~= nGameRound then
+  if nil == nSaveRound or nSaveRound ~= nGameRound then
     self.m_nRoundData = self:_SaveRoundCount(self.m_nRoundData, nLoopLimit)
     self:SetRuntimeData("GameRound", nGameRound)
     return true
@@ -66,28 +44,23 @@ end
 
 _class("ActionRound_SaveOnly", ActionRoundBase)
 ActionRound_SaveOnly = ActionRound_SaveOnly
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionRound_SaveOnly.OnBegin = function(self)
-  -- function num : 0_6
+function ActionRound_SaveOnly:OnBegin()
   local nLoopLimit = self:GetLogicData(-1)
-  nLoopLimit = (nLoopLimit ~= nil and nLoopLimit > 0) or self:GetRuntimeData("SkillCount") or 1
+  if nil == nLoopLimit or nLoopLimit <= 0 then
+    nLoopLimit = self:GetRuntimeData("SkillCount") or 1
+  end
   local nSaveAction = self:TryToSaveRoundCount(nLoopLimit)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRound_SaveOnly.OnUpdate = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function ActionRound_SaveOnly:OnUpdate()
   return AINewNodeStatus.Success
 end
 
 _class("ActionSaveRoundCount", ActionRound_SaveOnly)
 ActionSaveRoundCount = ActionSaveRoundCount
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSaveRoundCount.OnUpdate = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ActionSaveRoundCount:OnUpdate()
   local nRoundCount = self.m_nRoundData
   self:PrintDebugLog("RoundCount = ", nRoundCount)
   return AINewNodeStatus.Other + nRoundCount
@@ -95,10 +68,8 @@ end
 
 _class("ActionRound_GetSave", AINewNode)
 ActionRound_GetSave = ActionRound_GetSave
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionRound_GetSave.OnUpdate = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ActionRound_GetSave:OnUpdate()
   local nRoundLogic = self:GetRuntimeData("RoundCount")
   self:PrintDebugLog("RoundCount = ", nRoundLogic)
   return AINewNodeStatus.Other + nRoundLogic
@@ -106,44 +77,38 @@ end
 
 _class("ActionRound_IsSame", AINewNode)
 ActionRound_IsSame = ActionRound_IsSame
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionRound_IsSame.OnUpdate = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function ActionRound_IsSame:OnUpdate()
   local nConfigData = self:GetLogicData(-1)
   local nGameRound = self:GetGameRountNow()
   local nSaveRound = self:GetRuntimeData("GameRound")
   local nRoundLogic = self:GetRuntimeData("RoundCount") or 0
-  if not self:GetRuntimeData("RoundCount") then
-    nRoundLogic = nGameRound ~= nSaveRound or 0
+  if nGameRound == nSaveRound then
+    nRoundLogic = self:GetRuntimeData("RoundCount") or 0
+  else
     nRoundLogic = self:GetRuntimeData("NextRoundCount") or 0
-    self:PrintLog(" nSaveRound = ", nRoundLogic, ", nConfigData = ", nConfigData)
-    self:PrintDebugLog(" nSaveRound = ", nRoundLogic, ", nConfigData = ", nConfigData)
-    if nConfigData == nRoundLogic then
-      return AINewNodeStatus.Success
-    end
-    return AINewNodeStatus.Failure
   end
+  self:PrintLog(" nSaveRound = ", nRoundLogic, ", nConfigData = ", nConfigData)
+  self:PrintDebugLog(" nSaveRound = ", nRoundLogic, ", nConfigData = ", nConfigData)
+  if nConfigData == nRoundLogic then
+    return AINewNodeStatus.Success
+  end
+  return AINewNodeStatus.Failure
 end
 
 _class("ActionRound_IsLimit", ActionRoundBase)
 ActionRound_IsLimit = ActionRound_IsLimit
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionRound_IsLimit.OnBegin = function(self)
-  -- function num : 0_11
+function ActionRound_IsLimit:OnBegin()
   local nLoopLimit = 10000
   self:TryToSaveRoundCount(nLoopLimit)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionRound_IsLimit.OnUpdate = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function ActionRound_IsLimit:OnUpdate()
   local nRountCount = self.m_nRoundData
   local nLimitCount = self:GetLogicData(-1)
   self:PrintDebugLog("RoundCount = ", nRountCount, " LimitCount = ", nLimitCount)
-  if nLimitCount <= nRountCount then
+  if nRountCount >= nLimitCount then
     return AINewNodeStatus.Success
   end
   return AINewNodeStatus.Failure
@@ -151,26 +116,17 @@ end
 
 _class("ActionSetRoundCount", ActionRoundBase)
 ActionSetRoundCount = ActionSetRoundCount
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSetRoundCount.OnBegin = function(self)
-  -- function num : 0_13
+function ActionSetRoundCount:OnBegin()
   local roundCount = self:GetLogicData(-1)
   local nextRoundCount = self:GetLogicData(-2)
   local gameRound = self:GetLogicData(-3)
   self:SetRuntimeData("RoundCount", roundCount)
   self:SetRuntimeData("NextRoundCount", nextRoundCount)
-  if not gameRound then
-    gameRound = self:GetGameRountNow()
-  end
+  gameRound = gameRound or self:GetGameRountNow()
   self:SetRuntimeData("GameRound", gameRound)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSetRoundCount.OnUpdate = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function ActionSetRoundCount:OnUpdate()
   return AINewNodeStatus.Success
 end
-
-

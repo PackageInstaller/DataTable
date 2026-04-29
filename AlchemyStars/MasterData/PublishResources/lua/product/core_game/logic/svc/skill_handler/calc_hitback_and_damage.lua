@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_hitback_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_HitBackAndDamage", Object)
 SkillEffectCalc_HitBackAndDamage = SkillEffectCalc_HitBackAndDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_HitBackAndDamage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_HitBackAndDamage:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_HitBackAndDamage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_HitBackAndDamage:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterEntityID = skillEffectCalcParam.casterEntityID
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   local skillEffectParam = skillEffectCalcParam:GetSkillEffectParam()
-  local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local attackerPos = (attacker:GridLocation()).Position
-  local attackerDir = (attacker:GridLocation()).Direction
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local attackerPos = attacker:GridLocation().Position
+  local attackerDir = attacker:GridLocation().Direction
   local attackerBodyArea = attacker:BodyArea()
   local targetIDList = skillEffectCalcParam:GetTargetEntityIDs()
   if #targetIDList == 1 and targetIDList[1] == -1 then
@@ -31,9 +21,9 @@ SkillEffectCalc_HitBackAndDamage.DoSkillEffectCalculator = function(self, skillE
   local ignorePlayerBlock = skillEffectParam:GetIgnorePlayerBlock()
   local excludeCasterPos = skillEffectParam:ExcludeCasterPos()
   local beAttackEntityID = targetIDList[1]
-  local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
+  local targetEntity = self._world:GetEntityByID(beAttackEntityID)
   local skillRange = skillEffectCalcParam.skillRange
-  local endPos, dir = (self._skillEffectService):CalcHitbackEffect(attackerPos, attackerDir, attackerBodyArea, beAttackEntityID, HitBackDirectionType.Cross, HitBackType.PushAway, 100, HitBackCalcType.Instant, ignorePlayerBlock, excludeCasterPos, attacker, skillRange, nil, false, nil, HitBackInteractnWithBoardType.None, skillEffectParam:GetSkillType(), {})
+  local endPos, dir = self._skillEffectService:CalcHitbackEffect(attackerPos, attackerDir, attackerBodyArea, beAttackEntityID, HitBackDirectionType.Cross, HitBackType.PushAway, 100, HitBackCalcType.Instant, ignorePlayerBlock, excludeCasterPos, attacker, skillRange, nil, false, nil, HitBackInteractnWithBoardType.None, skillEffectParam:GetSkillType(), {})
   local hitBackCount = 1
   local hitBackDis = 1
   local startPos = targetEntity:GetGridPosition()
@@ -42,19 +32,12 @@ SkillEffectCalc_HitBackAndDamage.DoSkillEffectCalculator = function(self, skillE
   while targetEntity:GetGridPosition() ~= endPos do
     local damageCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam:GetCasterEntityID(), skillEffectCalcParam:GetTargetEntityIDs(), skillEffectParam, skillEffectCalcParam:GetSkillID(), skillEffectCalcParam:GetSkillRange(), skillEffectCalcParam:GetAttackPos(), targetEntity:GetGridPosition())
     local damageResultList = skillEffectCalc:DoSkillEffectCalculator(damageCalcParam)
-    ;
-    (table.appendArray)(resultList, damageResultList)
-    local hitBackEffectResult = (self._skillEffectService):CalcHitbackEffectResult(attackerPos, attackerDir, attackerBodyArea, beAttackEntityID, HitBackDirectionType.Cross, HitBackType.PushAway, hitBackDis, HitBackCalcType.Instant, ignorePlayerBlock, excludeCasterPos, attacker, skillRange, nil, false, nil, HitBackInteractnWithBoardType.None, skillEffectParam:GetSkillType(), {})
-    ;
-    (table.insert)(resultList, hitBackEffectResult)
+    table.appendArray(resultList, damageResultList)
+    local hitBackEffectResult = self._skillEffectService:CalcHitbackEffectResult(attackerPos, attackerDir, attackerBodyArea, beAttackEntityID, HitBackDirectionType.Cross, HitBackType.PushAway, hitBackDis, HitBackCalcType.Instant, ignorePlayerBlock, excludeCasterPos, attacker, skillRange, nil, false, nil, HitBackInteractnWithBoardType.None, skillEffectParam:GetSkillType(), {})
+    table.insert(resultList, hitBackEffectResult)
   end
-  do
-    local damageCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam:GetCasterEntityID(), skillEffectCalcParam:GetTargetEntityIDs(), skillEffectParam, skillEffectCalcParam:GetSkillID(), skillEffectCalcParam:GetSkillRange(), skillEffectCalcParam:GetAttackPos(), targetEntity:GetGridPosition())
-    local damageResultList = skillEffectCalc:DoSkillEffectCalculator(damageCalcParam)
-    ;
-    (table.appendArray)(resultList, damageResultList)
-    return resultList
-  end
+  local damageCalcParam = SkillEffectCalcParam:New(skillEffectCalcParam:GetCasterEntityID(), skillEffectCalcParam:GetTargetEntityIDs(), skillEffectParam, skillEffectCalcParam:GetSkillID(), skillEffectCalcParam:GetSkillRange(), skillEffectCalcParam:GetAttackPos(), targetEntity:GetGridPosition())
+  local damageResultList = skillEffectCalc:DoSkillEffectCalculator(damageCalcParam)
+  table.appendArray(resultList, damageResultList)
+  return resultList
 end
-
-

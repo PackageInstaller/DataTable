@@ -1,44 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_home_domitory_chart_row.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeDomitoryChartRow", UICustomWidget)
 UIHomeDomitoryChartRow = UIHomeDomitoryChartRow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeDomitoryChartRow.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomeDomitoryChartRow:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryChartRow.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeDomitoryChartRow:InitWidget()
   self.bg = self:GetUIComponent("Image", "bg")
   self.text1 = self:GetUIComponent("UILocalizationText", "text1")
   self.text2 = self:GetUIComponent("UILocalizationText", "text2")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeDomitoryChartRow.SetData = function(self, idx, text1, cfg)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
+function UIHomeDomitoryChartRow:SetData(idx, text1, cfg)
   if idx % 2 == 1 then
-    (self.bg).color = Color.white
+    self.bg.color = Color.white
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.bg).color = Color(0.92941176470588, 0.92156862745098, 0.91764705882353)
+    self.bg.color = Color(0.9294117647058824, 0.9215686274509803, 0.9176470588235294)
   end
-  ;
-  (self.text1):SetText(text1)
-  ;
-  (self.text2):SetText(cfg.SinglePetAddValue)
+  self.text1:SetText(text1)
+  self.text2:SetText(cfg.SinglePetAddValue)
 end
-
-

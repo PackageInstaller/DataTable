@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/homeland_pet_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetManager", Object)
 HomelandPetManager = HomelandPetManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetManager:Constructor()
   self._pets = {}
   self._petCount = 0
-  self.petScale = ((Cfg.cfg_aircraft_camera).petScale).Value
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self.petScale = Cfg.cfg_aircraft_camera.petScale.Value
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._petLoader = HomelandPetLoader:New()
   self._homelandPetBehaviorFactory = HomelandPetBehaviorFactory:New()
   self._homelandPetComponentFactory = HomelandPetComponentFactory:New()
@@ -23,63 +16,46 @@ HomelandPetManager.Constructor = function(self)
   self._update_mod = 4
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandPetManager:Init(homelandClient)
   self._homelandClient = homelandClient
-  ;
-  (self._debugPet):Init(homelandClient)
-  ;
-  (self._petLoader):Init()
+  self._debugPet:Init(homelandClient)
+  self._petLoader:Init()
   self:_InitDomitoryPets()
-  self._petShader = (GraphicUtli.FindFromBundle)("H3D/Actor/Common")
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
+  self._petShader = GraphicUtli.FindFromBundle("H3D/Actor/Common")
   if self._petShader then
-    (self._petShader).maximumLOD = 200
+    self._petShader.maximumLOD = 200
   end
   if EDITOR then
-    (HelperProxy:GetInstance()):SetRoleShaderLodLevel(200)
+    HelperProxy:GetInstance():SetRoleShaderLodLevel(200)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandPetManager:Update(deltaTimeMS)
   local index = 0
-  for _,pet in pairs(self._pets) do
+  for _, pet in pairs(self._pets) do
     if index % self._update_mod == self._update_index then
       pet:Update(deltaTimeMS)
     end
     index = index + 1
   end
   if self._tempPets then
-    for _,pet in pairs(self._tempPets) do
+    for _, pet in pairs(self._tempPets) do
       pet:Update(deltaTimeMS)
     end
   end
-  do
-    self._update_index = self._update_index + 1
-    if self._update_index == self._update_mod then
-      self._update_index = 0
-    end
-    ;
-    (self._petLoader):Update()
-    ;
-    (self._debugPet):Update()
+  self._update_index = self._update_index + 1
+  if self._update_index == self._update_mod then
+    self._update_index = 0
   end
+  self._petLoader:Update()
+  self._debugPet:Update()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager._InitDomitoryPets = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._homelandClient):IsVisit() then
-    local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-    local pets = (uiModule:GetVisitInfo()).pet_list
-    for _,pet in ipairs(pets) do
+function HomelandPetManager:_InitDomitoryPets()
+  if self._homelandClient:IsVisit() then
+    local uiModule = GameGlobal.GetUIModule(HomelandModule)
+    local pets = uiModule:GetVisitInfo().pet_list
+    for _, pet in ipairs(pets) do
       local tmpid = pet.pet_template_id
       local pstid = pet.pet_pst_id
       local level = pet.level
@@ -89,17 +65,15 @@ HomelandPetManager._InitDomitoryPets = function(self)
       self:AddVisitPet(data)
     end
   else
-    do
-      local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-      local domitoryData = (homelandModule:GetHomelandInfo()).dormitory_info
-      for _,domitory in pairs(domitoryData.list) do
-        if domitory.bBulid then
-          for _,pstid in pairs(domitory.petList) do
-            if pstid > 0 then
-              local pet = (self._petModule):GetPet(pstid)
-              if pet then
-                self:AddPet(pet:GetTemplateID())
-              end
+    local homelandModule = GameGlobal.GetModule(HomelandModule)
+    local domitoryData = homelandModule:GetHomelandInfo().dormitory_info
+    for _, domitory in pairs(domitoryData.list) do
+      if domitory.bBulid then
+        for _, pstid in pairs(domitory.petList) do
+          if 0 < pstid then
+            local pet = self._petModule:GetPet(pstid)
+            if pet then
+              self:AddPet(pet:GetTemplateID())
             end
           end
         end
@@ -108,69 +82,52 @@ HomelandPetManager._InitDomitoryPets = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.UpdateDomitoryPet = function(self, operation, pstid, oldPstID, spPetPstID)
-  -- function num : 0_4 , upvalues : _ENV
-  local pet = (self._petModule):GetPet(pstid)
+function HomelandPetManager:UpdateDomitoryPet(operation, pstid, oldPstID, spPetPstID)
+  local pet = self._petModule:GetPet(pstid)
   if pet then
     if operation == HomeSettleOperateType.Add then
       self:AddPet(pet:GetTemplateID())
-    else
-      if operation == HomeSettleOperateType.Remove then
-        self:RemoveFollowList(pstid, spPetPstID)
-        self:RemovePet(pet:GetTemplateID())
-      else
-        if operation == HomeSettleOperateType.Replace then
-          self:RemoveFollowList(oldPstID, spPetPstID)
-          local oldPet = (self._petModule):GetPet(oldPstID)
-          if oldPet then
-            self:RemovePet(oldPet:GetTemplateID())
-          end
-          self:AddPet(pet:GetTemplateID())
-        end
+    elseif operation == HomeSettleOperateType.Remove then
+      self:RemoveFollowList(pstid, spPetPstID)
+      self:RemovePet(pet:GetTemplateID())
+    elseif operation == HomeSettleOperateType.Replace then
+      self:RemoveFollowList(oldPstID, spPetPstID)
+      local oldPet = self._petModule:GetPet(oldPstID)
+      if oldPet then
+        self:RemovePet(oldPet:GetTemplateID())
       end
+      self:AddPet(pet:GetTemplateID())
     end
-    do
-      if spPetPstID then
-        local spPet = (self._petModule):GetPet(spPetPstID)
-        if spPet then
-          self:RemoveFollowList(nil, spPetPstID)
-          self:RemovePet(spPet:GetTemplateID())
-        end
+    if spPetPstID then
+      local spPet = self._petModule:GetPet(spPetPstID)
+      if spPet then
+        self:RemoveFollowList(nil, spPetPstID)
+        self:RemovePet(spPet:GetTemplateID())
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.RemoveFollowList = function(self, oldPet, spPet)
-  -- function num : 0_5
-  do
-    if oldPet and oldPet ~= 0 then
-      local pet = self:GetPetByPstID(oldPet)
-      self:OnHomeInteractFollow(false, pet)
-    end
-    if spPet and spPet ~= 0 and spPet ~= oldPet then
-      local pet = self:GetPetByPstID(spPet)
-      self:OnHomeInteractFollow(false, pet)
-    end
+function HomelandPetManager:RemoveFollowList(oldPet, spPet)
+  if oldPet and oldPet ~= 0 then
+    local pet = self:GetPetByPstID(oldPet)
+    self:OnHomeInteractFollow(false, pet)
+  end
+  if spPet and spPet ~= 0 and spPet ~= oldPet then
+    local pet = self:GetPetByPstID(spPet)
+    self:OnHomeInteractFollow(false, pet)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.AddPet = function(self, templateID)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._pets)[templateID] then
-    (Log.fatal)("HomelandPet Is Exist.", templateID)
-    return 
+function HomelandPetManager:AddPet(templateID)
+  if self._pets[templateID] then
+    Log.fatal("HomelandPet Is Exist.", templateID)
+    return
   end
-  local data = (self._petModule):GetPetByTemplateId(templateID)
+  local data = self._petModule:GetPetByTemplateId(templateID)
   if data == nil then
-    (Log.exception)("HomelandPet Not In The Package.", templateID)
-    return 
+    Log.exception("HomelandPet Not In The Package.", templateID)
+    return
   end
   local pstID = data:GetPstID()
   local level = data:GetPetLevel()
@@ -178,66 +135,40 @@ HomelandPetManager.AddPet = function(self, templateID)
   local skinId = data:GetSkinId()
   local petData = HomelandPetData:New(templateID, pstID, level, awake, nil, skinId)
   local pet = self:_CreatePet(petData)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._pets)[templateID] = pet
+  self._pets[templateID] = pet
   self._petCount = self._petCount + 1
-  ;
-  (self._petLoader):AsyncLoadPet(pet)
-  ;
-  (self._debugPet):AddDebugPet(pet)
-  ;
-  (Log.info)("Add HomelandPet." .. templateID)
+  self._petLoader:AsyncLoadPet(pet)
+  self._debugPet:AddDebugPet(pet)
+  Log.info("Add HomelandPet." .. templateID)
   return pet
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.AddVisitPet = function(self, petData)
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandPetManager:AddVisitPet(petData)
   local pet = self:_CreatePet(petData)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._pets)[petData:TmpID()] = pet
+  self._pets[petData:TmpID()] = pet
   self._petCount = self._petCount + 1
-  ;
-  (self._petLoader):AsyncLoadPet(pet)
-  ;
-  (self._debugPet):AddDebugPet(pet)
-  ;
-  (Log.info)("Add HomelandPet." .. petData:TmpID())
+  self._petLoader:AsyncLoadPet(pet)
+  self._debugPet:AddDebugPet(pet)
+  Log.info("Add HomelandPet." .. petData:TmpID())
   return pet
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.RemovePet = function(self, templateID)
-  -- function num : 0_8 , upvalues : _ENV
-  local pet = (self._pets)[templateID]
+function HomelandPetManager:RemovePet(templateID)
+  local pet = self._pets[templateID]
   if not pet then
-    (Log.fatal)("HomelandPet Have\'t Pet.", templateID)
+    Log.fatal("HomelandPet Have't Pet.", templateID)
     return false
   end
   pet:Dispose()
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._pets)[templateID] = nil
+  self._pets[templateID] = nil
   self._petCount = self._petCount - 1
-  ;
-  (self._debugPet):RemoveDebugPet(pet)
-  ;
-  (Log.info)("Remove HomelandPet." .. templateID)
+  self._debugPet:RemoveDebugPet(pet)
+  Log.info("Remove HomelandPet." .. templateID)
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetPetByCollider = function(self, collider)
-  -- function num : 0_9 , upvalues : _ENV
-  for key,pet in pairs(self._pets) do
+function HomelandPetManager:GetPetByCollider(collider)
+  for key, pet in pairs(self._pets) do
     if pet:Collider() == collider then
       return pet
     end
@@ -245,217 +176,159 @@ HomelandPetManager.GetPetByCollider = function(self, collider)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.Dispose = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for id,pet in pairs(self._pets) do
+function HomelandPetManager:Dispose()
+  for id, pet in pairs(self._pets) do
     pet:Dispose()
   end
   self._pets = {}
-  ;
-  (self._petLoader):Dispose()
-  ;
-  (self._debugPet):Dispose()
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
+  self._petLoader:Dispose()
+  self._debugPet:Dispose()
   if self._petShader then
-    (self._petShader).maximumLOD = 300
+    self._petShader.maximumLOD = 300
     self._petShader = nil
   end
   if EDITOR then
-    (HelperProxy:GetInstance()):SetRoleShaderLodLevel(-1)
+    HelperProxy:GetInstance():SetRoleShaderLodLevel(-1)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetPets = function(self, filter)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandPetManager:GetPets(filter)
   local pets = {}
-  for _,pet in pairs(self._pets) do
-    if filter and filter(pet) then
-      (table.insert)(pets, pet)
+  for _, pet in pairs(self._pets) do
+    if filter then
+      if filter(pet) then
+        table.insert(pets, pet)
+      end
+    else
+      table.insert(pets, pet)
     end
-    ;
-    (table.insert)(pets, pet)
   end
   return pets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetPet = function(self, templateID)
-  -- function num : 0_12
-  return (self._pets)[templateID]
+function HomelandPetManager:GetPet(templateID)
+  return self._pets[templateID]
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetPetByPstID = function(self, pstid)
-  -- function num : 0_13
-  local pet = (self._petModule):GetPet(pstid)
+function HomelandPetManager:GetPetByPstID(pstid)
+  local pet = self._petModule:GetPet(pstid)
   if pet then
     return self:GetPet(pet:GetTemplateID())
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetPetSync = function(self, templateID)
-  -- function num : 0_14 , upvalues : _ENV
-  local data = (self._petModule):GetPetByTemplateId(templateID)
+function HomelandPetManager:GetPetSync(templateID)
+  local data = self._petModule:GetPetByTemplateId(templateID)
   if data == nil then
-    (Log.error)("HomelandPet Not In The Package.", templateID)
+    Log.error("HomelandPet Not In The Package.", templateID)
     return nil
   end
-  local pet = (self._pets)[templateID]
+  local pet = self._pets[templateID]
   if not pet then
     return nil
   end
   if pet:IsLoaded() then
     return pet
   else
-    ;
-    (self._petLoader):InterruptAsyncLoad(pet)
-    ;
-    (self._petLoader):SyncLoadePet(pet)
+    self._petLoader:InterruptAsyncLoad(pet)
+    self._petLoader:SyncLoadePet(pet)
     return pet
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.HasPet = function(self, id)
-  -- function num : 0_15
-  do return (self._pets)[id] ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandPetManager:HasPet(id)
+  return self._pets[id] ~= nil
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager._CreatePet = function(self, data)
-  -- function num : 0_16 , upvalues : _ENV
+function HomelandPetManager:_CreatePet(data)
   return HomelandPet:New(data, self._homelandClient)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetBehaviorFactory = function(self)
-  -- function num : 0_17
+function HomelandPetManager:GetBehaviorFactory()
   return self._homelandPetBehaviorFactory
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetComponentFactory = function(self)
-  -- function num : 0_18
+function HomelandPetManager:GetComponentFactory()
   return self._homelandPetComponentFactory
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.OnHomeInteractFollow = function(self, follow, pet)
-  -- function num : 0_19 , upvalues : _ENV
+function HomelandPetManager:OnHomeInteractFollow(follow, pet)
   local behavior = pet:GetPetBehavior()
-  if follow and not (table.icontains)(self._followPets, pet) and behavior:CanChange(HomelandPetBehaviorType.Free) then
-    (table.insert)(self._followPets, pet)
-    behavior:ChangeBehavior(HomelandPetBehaviorType.Following)
-  end
-  if (table.icontains)(self._followPets, pet) and behavior:CanChange(HomelandPetBehaviorType.Free) then
-    (table.removev)(self._followPets, pet)
+  if follow then
+    if not table.icontains(self._followPets, pet) and behavior:CanChange(HomelandPetBehaviorType.Free) then
+      table.insert(self._followPets, pet)
+      behavior:ChangeBehavior(HomelandPetBehaviorType.Following)
+    end
+  elseif table.icontains(self._followPets, pet) and behavior:CanChange(HomelandPetBehaviorType.Free) then
+    table.removev(self._followPets, pet)
     behavior:ChangeBehavior(HomelandPetBehaviorType.Free)
   end
   for i = 1, #self._followPets do
-    local pet = (self._followPets)[i]
+    local pet = self._followPets[i]
     pet:RefreshFollow()
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomePetFollow)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomePetFollow)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.RefreshFollowPets = function(self)
-  -- function num : 0_20
+function HomelandPetManager:RefreshFollowPets()
   if self._followPets and #self._followPets > 0 then
     for i = 1, #self._followPets do
-      local pet = (self._followPets)[i]
+      local pet = self._followPets[i]
       pet:RefreshFollow()
     end
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetFollowPets = function(self)
-  -- function num : 0_21
+function HomelandPetManager:GetFollowPets()
   return self._followPets
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.FollowFull = function(self)
-  -- function num : 0_22
-  do return self._followMax <= #self._followPets end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandPetManager:FollowFull()
+  return #self._followPets >= self._followMax
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.OnModeChanged = function(self, mode)
-  -- function num : 0_23 , upvalues : _ENV
+function HomelandPetManager:OnModeChanged(mode)
   self:SetPetsVisible(mode == HomelandMode.Normal)
-  if (self._homelandClient):LastMode() == HomelandMode.Build and mode == HomelandMode.Normal then
-    for _,pet in pairs(self._pets) do
-      pet:OnClientModeChange((self._homelandClient):LastMode(), mode)
+  if self._homelandClient:LastMode() == HomelandMode.Build and mode == HomelandMode.Normal then
+    for _, pet in pairs(self._pets) do
+      pet:OnClientModeChange(self._homelandClient:LastMode(), mode)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.SetPetsVisible = function(self, visible, pet_id)
-  -- function num : 0_24 , upvalues : _ENV
-  for _,pet in pairs(self._pets) do
+function HomelandPetManager:SetPetsVisible(visible, pet_id)
+  for _, pet in pairs(self._pets) do
     if pet_id == nil or pet:PstID() ~= pet_id then
       pet:SetVisible(visible)
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.RefreshPetVisible = function(self, petTplID)
-  -- function num : 0_25 , upvalues : _ENV
-  for _,pet in pairs(self._pets) do
+function HomelandPetManager:RefreshPetVisible(petTplID)
+  for _, pet in pairs(self._pets) do
     local pet_a_sp = false
     local pet_b_sp = false
     local tmpid_a = pet:TemplateID()
-    local cfg_pet_a = (Cfg.cfg_pet)[tmpid_a]
+    local cfg_pet_a = Cfg.cfg_pet[tmpid_a]
     if cfg_pet_a.BinderPetID then
       pet_a_sp = true
       tmpid_a = cfg_pet_a.BinderPetID
     end
     local tmpid_b = petTplID
-    local cfg_pet_b = (Cfg.cfg_pet)[tmpid_b]
+    local cfg_pet_b = Cfg.cfg_pet[tmpid_b]
     if cfg_pet_b.BinderPetID then
       pet_b_sp = true
       tmpid_b = cfg_pet_b.BinderPetID
     end
     local refresh = false
-    -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P1
-
-    if pet_a_sp and pet_b_sp and tmpid_a == tmpid_b then
+    if pet_a_sp and pet_b_sp then
+      if tmpid_a == tmpid_b then
+        refresh = true
+        Log.debug("###[sp] 2 两个都是sp，并且id相同,tmpid_a ", tmpid_a)
+      end
+    elseif pet:TemplateID() == petTplID then
       refresh = true
-      ;
-      (Log.debug)("###[sp] 2 两个都是sp，并且id相同,tmpid_a ", tmpid_a)
-    end
-    if pet:TemplateID() == petTplID then
-      refresh = true
-      ;
-      (Log.debug)("###[sp] 2 两个都不是sp，但是id相同,petTplID ", petTplID)
+      Log.debug("###[sp] 2 两个都不是sp，但是id相同,petTplID ", petTplID)
     end
     if refresh then
       pet:RefreshVisible()
@@ -463,37 +336,27 @@ HomelandPetManager.RefreshPetVisible = function(self, petTplID)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.PetInRange = function(self, center, range, excludePet)
-  -- function num : 0_26 , upvalues : _ENV
+function HomelandPetManager:PetInRange(center, range, excludePet)
   if self._pets then
-    for _,pet in pairs(self._pets) do
-      if pet:FinalVisible() and (not excludePet or pet ~= excludePet) and (Vector3.Distance)(pet:GetPosition(), center) <= range then
+    for _, pet in pairs(self._pets) do
+      if pet:FinalVisible() and (not excludePet or pet ~= excludePet) and range >= Vector3.Distance(pet:GetPosition(), center) then
         return true
       end
     end
   end
-  do
-    if self._homelandClient and (self._homelandClient):CharacterManager() and ((self._homelandClient):CharacterManager()):MainCharacterController() then
-      local mainCharacterController = ((self._homelandClient):CharacterManager()):MainCharacterController()
-      local playerPosition = mainCharacterController:Position()
-      if (Vector3.Distance)(playerPosition, center) <= range then
-        return true
-      end
-    end
-    do
-      return false
+  if self._homelandClient and self._homelandClient:CharacterManager() and self._homelandClient:CharacterManager():MainCharacterController() then
+    local mainCharacterController = self._homelandClient:CharacterManager():MainCharacterController()
+    local playerPosition = mainCharacterController:Position()
+    if range >= Vector3.Distance(playerPosition, center) then
+      return true
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.MainCharacterInteracting = function(self, pBuilding, pTransform)
-  -- function num : 0_27 , upvalues : _ENV
-  if self._homelandClient and (self._homelandClient):CharacterManager() and ((self._homelandClient):CharacterManager()):MainCharacterController() then
-    local mainCharacterController = ((self._homelandClient):CharacterManager()):MainCharacterController()
+function HomelandPetManager:MainCharacterInteracting(pBuilding, pTransform)
+  if self._homelandClient and self._homelandClient:CharacterManager() and self._homelandClient:CharacterManager():MainCharacterController() then
+    local mainCharacterController = self._homelandClient:CharacterManager():MainCharacterController()
     local state = mainCharacterController:State()
     if state == HomelandActorStateType.Interact then
       local mBuilding = mainCharacterController:GetCurInteractBuilding()
@@ -509,35 +372,23 @@ HomelandPetManager.MainCharacterInteracting = function(self, pBuilding, pTransfo
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetAllPets = function(self)
-  -- function num : 0_28
+function HomelandPetManager:GetAllPets()
   return self._pets
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.ChangePetSkin = function(self, homelandPet, newSkinID, newClothSkinID)
-  -- function num : 0_29
+function HomelandPetManager:ChangePetSkin(homelandPet, newSkinID, newClothSkinID)
   local newSkinPrefabName = newSkinID .. ".prefab"
   homelandPet:SetSkinID(newSkinID)
   homelandPet:SetClothSkinID(newClothSkinID)
   homelandPet:SetPrefabName(newSkinPrefabName)
-  ;
-  (self._petLoader):SyncLoadePetSkinModle(homelandPet)
+  self._petLoader:SyncLoadePetSkinModle(homelandPet)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.RoleAndPetSeparatedBySwimPool = function(self, homelandPet)
-  -- function num : 0_30 , upvalues : _ENV
-  local characterManager = (self._homelandClient):CharacterManager()
+function HomelandPetManager:RoleAndPetSeparatedBySwimPool(homelandPet)
+  local characterManager = self._homelandClient:CharacterManager()
   local characterController = characterManager:MainCharacterController()
   local roleIsSwimming = characterController:IsSwimming()
   if roleIsSwimming and homelandPet:GetMotionType() == HomelandPetMotionType.None then
@@ -549,63 +400,43 @@ HomelandPetManager.RoleAndPetSeparatedBySwimPool = function(self, homelandPet)
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.GetTempPet = function(self, templateID)
-  -- function num : 0_31 , upvalues : _ENV
+function HomelandPetManager:GetTempPet(templateID)
   if not self._tempPets then
     self._tempPets = {}
   end
-  local pet = nil
+  local pet
   local isTemp = false
   pet = self:GetPet(templateID)
   if pet then
     return pet, isTemp
   else
     local petId = templateID
-    local roompet = (((GameGlobal.GetModule)(PetModule)):GetPetByTemplateId(templateID))
-    local skinId = nil
-    local skinIds = (Cfg.cfg_pet_skin)({PetId = petId})
+    local roompet = GameGlobal.GetModule(PetModule):GetPetByTemplateId(templateID)
+    local skinId
+    local skinIds = Cfg.cfg_pet_skin({PetId = petId})
     if roompet then
       skinId = roompet:GetSkinId()
     else
-      skinId = (skinIds[1]).id
+      skinId = skinIds[1].id
     end
     local petData = HomelandPetData:New(templateID, 999999999, 0, 0, nil, skinId)
     pet = self:_CreatePet(petData)
     isTemp = true
   end
-  do
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._tempPets)[templateID] = pet
-    ;
-    (self._petLoader):SyncLoadePet(pet)
-    ;
-    (self._debugPet):AddDebugPet(pet)
-    ;
-    (Log.info)(" GetTempPet." .. templateID)
-    return pet, isTemp
-  end
+  self._tempPets[templateID] = pet
+  self._petLoader:SyncLoadePet(pet)
+  self._debugPet:AddDebugPet(pet)
+  Log.info(" GetTempPet." .. templateID)
+  return pet, isTemp
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetManager.DeleteTempPet = function(self, templateID)
-  -- function num : 0_32
+function HomelandPetManager:DeleteTempPet(templateID)
   if not self._tempPets then
-    return 
+    return
   end
-  if not (self._tempPets)[templateID] then
-    return 
+  if not self._tempPets[templateID] then
+    return
   end
-  ;
-  ((self._tempPets)[templateID]):Dispose()
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._tempPets)[templateID] = nil
+  self._tempPets[templateID]:Dispose()
+  self._tempPets[templateID] = nil
 end
-
-

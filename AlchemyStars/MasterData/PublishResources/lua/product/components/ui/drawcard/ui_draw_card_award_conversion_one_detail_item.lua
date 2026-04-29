@@ -1,57 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_award_conversion_one_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardConversionOneDetailItem", UICustomWidget)
 UIDrawCardAwardConversionOneDetailItem = UIDrawCardAwardConversionOneDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardConversionOneDetailItem.OnShow = function(self)
-  -- function num : 0_0
+function UIDrawCardAwardConversionOneDetailItem:OnShow()
   self.count = self:GetUIComponent("UILocalizationText", "count")
   self.item = self:GetUIComponent("RawImageLoader", "item")
   self.itemObject = self:GetGameObject("item")
   self.pop = self:GetUIComponent("UISelectObjectPath", "item")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionOneDetailItem.SetData = function(self, data)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDrawCardAwardConversionOneDetailItem:SetData(data)
   local cfg = Cfg.cfg_item
   self.itemData = data
-  if (self.itemData)[1] == 0 then
-    (self.item):LoadImage("icon_item_3000020")
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.count).color = Color(0.87058823529412, 0.77647058823529, 0.3843137254902)
+  if self.itemData[1] == 0 then
+    self.item:LoadImage("icon_item_3000020")
+    self.count.color = Color(0.8705882352941177, 0.7764705882352941, 0.3843137254901961)
   else
-    ;
-    (self.item):LoadImage((cfg[(self.itemData)[1]]).Icon)
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.count).color = Color(0.83529411764706, 0.83529411764706, 0.83529411764706)
+    self.item:LoadImage(cfg[self.itemData[1]].Icon)
+    self.count.color = Color(0.8352941176470589, 0.8352941176470589, 0.8352941176470589)
   end
-  ;
-  (self.count):SetText((self.itemData)[2])
+  self.count:SetText(self.itemData[2])
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionOneDetailItem.ItemOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self.itemData)[1] ~= 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, (self.itemData)[1], ((self.itemObject).transform).position)
+function UIDrawCardAwardConversionOneDetailItem:ItemOnClick(go)
+  if self.itemData[1] ~= 0 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, self.itemData[1], self.itemObject.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionOneDetailItem.OnHide = function(self)
-  -- function num : 0_3
+function UIDrawCardAwardConversionOneDetailItem:OnHide()
 end
-
-

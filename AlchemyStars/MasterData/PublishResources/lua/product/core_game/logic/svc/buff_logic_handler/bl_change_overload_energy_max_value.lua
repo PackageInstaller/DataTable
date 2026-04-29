@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_overload_energy_max_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeMaxAUOEValue", BuffLogicBase)
 BuffLogicChangeMaxAUOEValue = BuffLogicChangeMaxAUOEValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeMaxAUOEValue.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeMaxAUOEValue:Constructor(buffInstance, logicParam)
   self._maxValue = logicParam.maxValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeMaxAUOEValue.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local featureSvc = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeMaxAUOEValue:DoLogic(notify)
+  local featureSvc = self._world:GetService("FeatureLogic")
   featureSvc:SetMaxAUOEValue(self._maxValue)
   return true
 end
-
-

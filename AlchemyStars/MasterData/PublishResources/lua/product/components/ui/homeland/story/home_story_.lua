@@ -1,9 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/story/home_story_.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("home_story_entity_type")
 require("home_story_entity")
 require("home_story_entity_movable")
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/collages/ui_season_s2_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonS2CollageBtn", UICustomWidget)
 UISeasonS2CollageBtn = UISeasonS2CollageBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonS2CollageBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonS2CollageBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonS2CollageBtn:InitWidget()
   self.icon = self:GetUIComponent("Image", "Icon")
   self.text = self:GetUIComponent("UILocalizationText", "Text")
   self.count = self:GetUIComponent("UILocalizationText", "Count")
@@ -23,141 +13,73 @@ UISeasonS2CollageBtn.InitWidget = function(self)
   self.newGo = self:GetGameObject("New")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageBtn.SetData = function(self, type, onClick, data)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonS2CollageBtn:SetData(type, onClick, data)
   self._type = type
   self._onClick = onClick
   self._data = data
   self._select = false
   local format = "%s/%s"
   if self._type == 1 then
-    (self.text):SetText((StringTable.Get)("str_season_s1_collection"))
-    local cur, total = (self._data):GetCollectionProgress()
-    ;
-    (self.count):SetText((string.format)(format, cur, total))
-  else
-    do
-      if self._type == 2 then
-        (self.text):SetText((StringTable.Get)("str_season_s1_cg"))
-        local cur, total = (self._data):GetCgProgress()
-        ;
-        (self.count):SetText((string.format)(format, cur, total))
-      else
-        do
-          if self._type == 3 then
-            (self.text):SetText((StringTable.Get)("str_season_s1_music"))
-            local cur, total = (self._data):GetMusicProgress()
-            ;
-            (self.count):SetText((string.format)(format, cur, total))
-          end
-          do
-            self:RefreshNew()
-          end
-        end
-      end
-    end
+    self.text:SetText(StringTable.Get("str_season_s1_collection"))
+    local cur, total = self._data:GetCollectionProgress()
+    self.count:SetText(string.format(format, cur, total))
+  elseif self._type == 2 then
+    self.text:SetText(StringTable.Get("str_season_s1_cg"))
+    local cur, total = self._data:GetCgProgress()
+    self.count:SetText(string.format(format, cur, total))
+  elseif self._type == 3 then
+    self.text:SetText(StringTable.Get("str_season_s1_music"))
+    local cur, total = self._data:GetMusicProgress()
+    self.count:SetText(string.format(format, cur, total))
   end
+  self:RefreshNew()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageBtn.SetSelect = function(self, select)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonS2CollageBtn:SetSelect(select)
   self._select = select
   local atlas = self:GetAsset("UIS2Collages.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
   if self._select then
-    (self.root).sprite = atlas:GetSprite("exp_s2_book_yeqian7")
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.text).color = Color(1, 0.98823529411765, 0.91764705882353)
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.count).color = Color(0.30588235294118, 0.20392156862745, 0.11764705882353)
+    self.root.sprite = atlas:GetSprite("exp_s2_book_yeqian7")
+    self.text.color = Color(1, 0.9882352941176471, 0.9176470588235294)
+    self.count.color = Color(0.3058823529411765, 0.20392156862745098, 0.11764705882352941)
   else
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.root).sprite = atlas:GetSprite("exp_s2_book_yeqian8")
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.text).color = Color(0.30588235294118, 0.20392156862745, 0.11764705882353)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.count).color = Color(1, 0.98823529411765, 0.91764705882353)
+    self.root.sprite = atlas:GetSprite("exp_s2_book_yeqian8")
+    self.text.color = Color(0.3058823529411765, 0.20392156862745098, 0.11764705882352941)
+    self.count.color = Color(1, 0.9882352941176471, 0.9176470588235294)
   end
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R3 in 'UnsetPending'
-
   if self._type == 1 then
     if self._select then
-      (self.icon).sprite = atlas:GetSprite("exp_s2_book_yeqian1")
+      self.icon.sprite = atlas:GetSprite("exp_s2_book_yeqian1")
     else
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.icon).sprite = atlas:GetSprite("exp_s2_book_yeqian4")
+      self.icon.sprite = atlas:GetSprite("exp_s2_book_yeqian4")
     end
-  else
-    -- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
-    if self._type == 2 then
-      if self._select then
-        (self.icon).sprite = atlas:GetSprite("exp_s2_book_yeqian2")
-      else
-        -- DECOMPILER ERROR at PC82: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self.icon).sprite = atlas:GetSprite("exp_s2_book_yeqian5")
-      end
+  elseif self._type == 2 then
+    if self._select then
+      self.icon.sprite = atlas:GetSprite("exp_s2_book_yeqian2")
     else
-      -- DECOMPILER ERROR at PC94: Confused about usage of register: R3 in 'UnsetPending'
-
-      if self._type == 3 then
-        if self._select then
-          (self.icon).sprite = atlas:GetSprite("exp_s2_book_yeqian3")
-        else
-          -- DECOMPILER ERROR at PC100: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self.icon).sprite = atlas:GetSprite("exp_s2_book_yeqian6")
-        end
-      end
+      self.icon.sprite = atlas:GetSprite("exp_s2_book_yeqian5")
+    end
+  elseif self._type == 3 then
+    if self._select then
+      self.icon.sprite = atlas:GetSprite("exp_s2_book_yeqian3")
+    else
+      self.icon.sprite = atlas:GetSprite("exp_s2_book_yeqian6")
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageBtn.RefreshNew = function(self)
-  -- function num : 0_4
+function UISeasonS2CollageBtn:RefreshNew()
   local new = false
   if self._type == 1 then
-    new = (self._data):CollectionHasNew()
-  else
-    if self._type == 2 then
-      new = (self._data):CGHasNew()
-    else
-      if self._type == 3 then
-        new = (self._data):MusicHasNew()
-      end
-    end
+    new = self._data:CollectionHasNew()
+  elseif self._type == 2 then
+    new = self._data:CGHasNew()
+  elseif self._type == 3 then
+    new = self._data:MusicHasNew()
   end
-  ;
-  (self.newGo):SetActive(new)
+  self.newGo:SetActive(new)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonS2CollageBtn.RootOnClick = function(self, go)
-  -- function num : 0_5
-  (self._onClick)()
+function UISeasonS2CollageBtn:RootOnClick(go)
+  self._onClick()
 end
-
-

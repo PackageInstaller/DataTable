@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_damage_based_on_target_attribute_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillDamageBasedOnTargetAttributeEffectParam", SkillEffectParamBase)
 SkillDamageBasedOnTargetAttributeEffectParam = SkillDamageBasedOnTargetAttributeEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillDamageBasedOnTargetAttributeEffectParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillDamageBasedOnTargetAttributeEffectParam:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   self._target = t.target or "SkillTarget"
@@ -22,81 +15,46 @@ SkillDamageBasedOnTargetAttributeEffectParam.Constructor = function(self, t)
   self._preDamageStageIndex = t.preDamageStageIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetTarget = function(self)
-  -- function num : 0_1
+function SkillDamageBasedOnTargetAttributeEffectParam:GetTarget()
   return self._target
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetTargetAttribute = function(self)
-  -- function num : 0_2
+function SkillDamageBasedOnTargetAttributeEffectParam:GetTargetAttribute()
   return self._targetAttribute
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetCompare = function(self)
-  -- function num : 0_3
+function SkillDamageBasedOnTargetAttributeEffectParam:GetCompare()
   return self._compare
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetCompareAttribute = function(self)
-  -- function num : 0_4
+function SkillDamageBasedOnTargetAttributeEffectParam:GetCompareAttribute()
   return self._compareAttribute
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetCompareParam = function(self)
-  -- function num : 0_5
+function SkillDamageBasedOnTargetAttributeEffectParam:GetCompareParam()
   return self._compareParam
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetCompareSymbol = function(self)
-  -- function num : 0_6
+function SkillDamageBasedOnTargetAttributeEffectParam:GetCompareSymbol()
   return self._compareSymbol
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetOwnerBuffEffect = function(self)
-  -- function num : 0_7
+function SkillDamageBasedOnTargetAttributeEffectParam:GetOwnerBuffEffect()
   return self._ownerBuffEffect
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetPreDamageStageIndex = function(self)
-  -- function num : 0_8
+function SkillDamageBasedOnTargetAttributeEffectParam:GetPreDamageStageIndex()
   return self._preDamageStageIndex
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetEffectType = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillDamageBasedOnTargetAttributeEffectParam:GetEffectType()
   return SkillEffectType.DamageBasedOnTargetAttribute
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetDamagePercent = function(self)
-  -- function num : 0_10
+function SkillDamageBasedOnTargetAttributeEffectParam:GetDamagePercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageBasedOnTargetAttributeEffectParam.GetDamageFormulaID = function(self)
-  -- function num : 0_11
+function SkillDamageBasedOnTargetAttributeEffectParam:GetDamageFormulaID()
   return self._formulaID
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/audio/season_audio.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonAudioPlayer", Object)
 SeasonAudioPlayer = SeasonAudioPlayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonAudioPlayer.Constructor = function(self, playerID, distance, audioID, position, startRadiu, endRadiu, highVolume, lowVolume, isAnimationAudio, AnimAudioID)
-  -- function num : 0_0
+function SeasonAudioPlayer:Constructor(playerID, distance, audioID, position, startRadiu, endRadiu, highVolume, lowVolume, isAnimationAudio, AnimAudioID)
   self.playerID = playerID
   self.distance = distance
   self.audioID = audioID
@@ -23,23 +16,21 @@ end
 
 _class("SeasonAudio", Object)
 SeasonAudio = SeasonAudio
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonAudio.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
-  local seasonID = (self._uiSeasonModule):GetSeasonID()
-  self._cfgs = (Cfg.cfg_season_map_audio)({SeasonID = seasonID})
-  self._voiceCfg = (Cfg.cfg_season_map_player_voice)[seasonID]
-  self._seasonManager = (self._uiSeasonModule):SeasonManager()
-  self._player = ((self._seasonManager):SeasonPlayerManager()):GetPlayer()
+function SeasonAudio:Constructor()
+  self._uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
+  local seasonID = self._uiSeasonModule:GetSeasonID()
+  self._cfgs = Cfg.cfg_season_map_audio({SeasonID = seasonID})
+  self._voiceCfg = Cfg.cfg_season_map_player_voice[seasonID]
+  self._seasonManager = self._uiSeasonModule:SeasonManager()
+  self._player = self._seasonManager:SeasonPlayerManager():GetPlayer()
   self._audioPlayers = {}
   if self._cfgs then
-    for _,cfg in pairs(self._cfgs) do
+    for _, cfg in pairs(self._cfgs) do
       local name = cfg.name
-      local audioGO = ((UnityEngine.GameObject).Find)(name)
+      local audioGO = UnityEngine.GameObject.Find(name)
       if audioGO then
-        local position = (audioGO.transform).position
+        local position = audioGO.transform.position
         local startRadius = cfg.startRadius
         local endRadius = cfg.endRadius
         local highVolume = cfg.highVolume
@@ -48,60 +39,43 @@ SeasonAudio.Constructor = function(self)
         local audioID = cfg.audioID
         local AnimAudioID = cfg.AnimAudioID
         local audioPlayer = SeasonAudioPlayer:New(-1, 0, audioID, position, startRadius, endRadius, highVolume, lowVolume, isAnimationAudio, AnimAudioID)
-        ;
-        (table.insert)(self._audioPlayers, audioPlayer)
+        table.insert(self._audioPlayers, audioPlayer)
       end
     end
   end
-  do
-    self._cameraTransform = (((self._seasonManager):SeasonCameraManager()):SeasonCamera()):Transform()
-    local soundOn = (LocalDB.GetInt)("SoundVolumeOnKey", 1) > 0
-    local soundGlobal = ((Cfg.cfg_global).sound_volume).FloatValue
-    self._sound_value = soundOn and (LocalDB.GetInt)("SoundVolumeKey", 100) / 100 * soundGlobal or 0
-    self._stepTimer = 0
-    self._stopAllAudio = false
-    self._curVoice = nil
-    self:_RequestSound()
-    ;
-    (AudioHelperController.SetInnerGameSoundPlaySpeed)((BattleConst.TimeSpeedList)[1])
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
+  self._cameraTransform = self._seasonManager:SeasonCameraManager():SeasonCamera():Transform()
+  local soundOn = 0 < LocalDB.GetInt("SoundVolumeOnKey", 1)
+  local soundGlobal = Cfg.cfg_global.sound_volume.FloatValue
+  self._sound_value = soundOn and LocalDB.GetInt("SoundVolumeKey", 100) / 100 * soundGlobal or 0
+  self._stepTimer = 0
+  self._stopAllAudio = false
+  self._curVoice = nil
+  self:_RequestSound()
+  AudioHelperController.SetInnerGameSoundPlaySpeed(BattleConst.TimeSpeedList[1])
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.OnAfterInit = function(self)
-  -- function num : 0_2
+function SeasonAudio:OnAfterInit()
   self:_RequestEnvSound()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonAudio:Dispose()
   self:_ReleaseAllSound()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   self._hasRequestEnvSound = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.Update = function(self, deltaTime)
-  -- function num : 0_4
+function SeasonAudio:Update(deltaTime)
   if self._hasRequestEnvSound then
     self:_PlayEnvSound()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio._PlayEnvSound = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cameraPos = (self._cameraTransform).position
-  for k,v in ipairs(self._audioPlayers) do
+function SeasonAudio:_PlayEnvSound()
+  local cameraPos = self._cameraTransform.position
+  for k, v in ipairs(self._audioPlayers) do
     if not v.isAnimationAudio then
       v.distance = self:_GetPlaneDistance(v.position, cameraPos)
       self:_PlayRadiuSound(v)
@@ -110,143 +84,92 @@ SeasonAudio._PlayEnvSound = function(self)
   self._hasRequestEnvSound = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio._PlayRadiuSound = function(self, player)
-  -- function num : 0_6 , upvalues : _ENV
-  if not self._stopAllAudio or not 0 then
-    local globalVolume = self._sound_value
-  end
-  if player.distance < player.startRadiu and player.endRadiu < player.distance then
+function SeasonAudio:_PlayRadiuSound(player)
+  local globalVolume = self._stopAllAudio and 0 or self._sound_value
+  if player.distance < player.startRadiu and player.distance > player.endRadiu then
     if player.playerID and player.playerID ~= -1 then
-      local volume = (Mathf.Lerp)(player.lowVolume, player.highVolume, (player.startRadiu - player.distance) / (player.startRadiu - player.endRadiu))
-      ;
-      (AudioHelperController.SetInnerVolumeRuntime)(player.playerID, volume * globalVolume)
+      local volume = Mathf.Lerp(player.lowVolume, player.highVolume, (player.startRadiu - player.distance) / (player.startRadiu - player.endRadiu))
+      AudioHelperController.SetInnerVolumeRuntime(player.playerID, volume * globalVolume)
     else
-      do
-        player.playerID = (AudioHelperController.PlayInnerGameSfx)(player.audioID, true)
-        if player.distance < player.endRadiu and player.playerID and player.playerID ~= -1 then
-          (AudioHelperController.SetInnerVolumeRuntime)(player.playerID, player.highVolume * globalVolume)
-        end
-        if player.playerID and player.playerID ~= -1 then
-          (AudioHelperController.SetInnerVolumeRuntime)(player.playerID, (CriAudioManager.Instance).SoundVolume)
-          ;
-          (AudioHelperController.StopInnerGameSfx)(player.playerID, player.audioID)
-        end
-        player.playerID = -1
-      end
+      player.playerID = AudioHelperController.PlayInnerGameSfx(player.audioID, true)
     end
+  elseif player.distance < player.endRadiu then
+    if player.playerID and player.playerID ~= -1 then
+      AudioHelperController.SetInnerVolumeRuntime(player.playerID, player.highVolume * globalVolume)
+    end
+  else
+    if player.playerID and player.playerID ~= -1 then
+      AudioHelperController.SetInnerVolumeRuntime(player.playerID, CriAudioManager.Instance.SoundVolume)
+      AudioHelperController.StopInnerGameSfx(player.playerID, player.audioID)
+    end
+    player.playerID = -1
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio._GetPlaneDistance = function(self, position1, position2)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonAudio:_GetPlaneDistance(position1, position2)
   position1.y = 0
   position2.y = 0
-  return (Vector3.Distance)(position1, position2)
+  return Vector3.Distance(position1, position2)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio._RequestEnvSound = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  for k,v in ipairs(self._audioPlayers) do
+function SeasonAudio:_RequestEnvSound()
+  for k, v in ipairs(self._audioPlayers) do
     if v.isAnimationAudio then
-      for key,value in pairs(v.AnimAudioID) do
+      for key, value in pairs(v.AnimAudioID) do
         if value ~= -1 then
-          (AudioHelperController.RequestInnerGameSound)(value)
+          AudioHelperController.RequestInnerGameSound(value)
         end
       end
     else
-      do
-        do
-          ;
-          (AudioHelperController.RequestInnerGameSound)(v.audioID)
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      AudioHelperController.RequestInnerGameSound(v.audioID)
     end
   end
   self._hasRequestEnvSound = true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio._RequestSound = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (AudioHelperController.RequestUISound)(SeasonCriAudio.StepDefault)
-  ;
-  (AudioHelperController.RequestUISound)(SeasonCriAudio.StepMetal)
-  ;
-  (AudioHelperController.RequestUISound)(SeasonCriAudio.StepStone)
-  ;
-  (AudioHelperController.RequestUISound)(SeasonCriAudio.StepWater)
+function SeasonAudio:_RequestSound()
+  AudioHelperController.RequestUISound(SeasonCriAudio.StepDefault)
+  AudioHelperController.RequestUISound(SeasonCriAudio.StepMetal)
+  AudioHelperController.RequestUISound(SeasonCriAudio.StepStone)
+  AudioHelperController.RequestUISound(SeasonCriAudio.StepWater)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio._ReleaseAllSound = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (AudioHelperController.StopAllUIVoice)()
-  for k,v in ipairs(self._audioPlayers) do
+function SeasonAudio:_ReleaseAllSound()
+  AudioHelperController.StopAllUIVoice()
+  for k, v in ipairs(self._audioPlayers) do
     self:_ReleaseSound(v)
   end
-  ;
-  (AudioHelperController.ReleaseUISoundById)(SeasonCriAudio.StepDefault)
-  ;
-  (AudioHelperController.ReleaseUISoundById)(SeasonCriAudio.StepMetal)
-  ;
-  (AudioHelperController.ReleaseUISoundById)(SeasonCriAudio.StepStone)
-  ;
-  (AudioHelperController.ReleaseUISoundById)(SeasonCriAudio.StepWater)
+  AudioHelperController.ReleaseUISoundById(SeasonCriAudio.StepDefault)
+  AudioHelperController.ReleaseUISoundById(SeasonCriAudio.StepMetal)
+  AudioHelperController.ReleaseUISoundById(SeasonCriAudio.StepStone)
+  AudioHelperController.ReleaseUISoundById(SeasonCriAudio.StepWater)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio._ReleaseSound = function(self, player)
-  -- function num : 0_11 , upvalues : _ENV
+function SeasonAudio:_ReleaseSound(player)
   if player.playerID and player.playerID ~= -1 then
-    (AudioHelperController.SetInnerVolumeRuntime)(player.playerID, (CriAudioManager.Instance).SoundVolume)
-    ;
-    (AudioHelperController.StopInnerGameSfx)(player.playerID, player.audioID)
+    AudioHelperController.SetInnerVolumeRuntime(player.playerID, CriAudioManager.Instance.SoundVolume)
+    AudioHelperController.StopInnerGameSfx(player.playerID, player.audioID)
   end
-  ;
-  (table.clear)(player)
+  table.clear(player)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.PlayStepSound = function(self, mapMaterial, deltaTime)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonAudio:PlayStepSound(mapMaterial, deltaTime)
   if self._stopAllAudio then
-    return 
+    return
   end
   if self._stepTimer == 0 then
     if mapMaterial == SeasonMapMaterial.Default then
-      (AudioHelperController.PlayUISoundResource)(SeasonCriAudio.StepDefault)
-    else
-      if mapMaterial == SeasonMapMaterial.Metal then
-        (AudioHelperController.PlayUISoundResource)(SeasonCriAudio.StepMetal)
-      else
-        if mapMaterial == SeasonMapMaterial.Stone then
-          (AudioHelperController.PlayUISoundResource)(SeasonCriAudio.StepStone)
-        else
-          if mapMaterial == SeasonMapMaterial.Water then
-            (AudioHelperController.PlayUISoundResource)(SeasonCriAudio.StepWater)
-          end
-        end
-      end
+      AudioHelperController.PlayUISoundResource(SeasonCriAudio.StepDefault)
+    elseif mapMaterial == SeasonMapMaterial.Metal then
+      AudioHelperController.PlayUISoundResource(SeasonCriAudio.StepMetal)
+    elseif mapMaterial == SeasonMapMaterial.Stone then
+      AudioHelperController.PlayUISoundResource(SeasonCriAudio.StepStone)
+    elseif mapMaterial == SeasonMapMaterial.Water then
+      AudioHelperController.PlayUISoundResource(SeasonCriAudio.StepWater)
     end
   end
   if self._voiceCfg then
-    local clock = (self._voiceCfg).stepInterval * 1000
+    local clock = self._voiceCfg.stepInterval * 1000
     self._stepTimer = self._stepTimer + deltaTime
     if clock < self._stepTimer then
       self._stepTimer = 0
@@ -254,130 +177,82 @@ SeasonAudio.PlayStepSound = function(self, mapMaterial, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.PlaySound = function(self, audio_id)
-  -- function num : 0_13 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(audio_id)
+function SeasonAudio:PlaySound(audio_id)
+  AudioHelperController.PlayUISoundAutoRelease(audio_id)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.SetLizardVolume = function(self)
-  -- function num : 0_14
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  if self._daxiyiPlayer and (self._daxiyiPlayer).playerID ~= -1 then
-    (self._daxiyiPlayer).distance = self:_GetPlaneDistance((self._daxiyiPlayer).position, (self._cameraTransform).position)
+function SeasonAudio:SetLizardVolume()
+  if self._daxiyiPlayer and self._daxiyiPlayer.playerID ~= -1 then
+    self._daxiyiPlayer.distance = self:_GetPlaneDistance(self._daxiyiPlayer.position, self._cameraTransform.position)
     self:_PlayRadiuSound(self._daxiyiPlayer)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.PlayLizardAudio = function(self, curName)
-  -- function num : 0_15 , upvalues : _ENV
-  if self._daxiyiPlayer and (self._daxiyiPlayer).playerID ~= -1 then
-    (AudioHelperController.StopInnerGameSfx)((self._daxiyiPlayer).playerID, (self._daxiyiPlayer).audioID)
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._daxiyiPlayer).playerID = -1
+function SeasonAudio:PlayLizardAudio(curName)
+  if self._daxiyiPlayer and self._daxiyiPlayer.playerID ~= -1 then
+    AudioHelperController.StopInnerGameSfx(self._daxiyiPlayer.playerID, self._daxiyiPlayer.audioID)
+    self._daxiyiPlayer.playerID = -1
   end
-  for k,v in ipairs(self._audioPlayers) do
+  for k, v in ipairs(self._audioPlayers) do
     if v.isAnimationAudio then
-      for key,value in pairs(v.AnimAudioID) do
+      for key, value in pairs(v.AnimAudioID) do
         if curName == key then
           self._daxiyiPlayer = v
-          -- DECOMPILER ERROR at PC31: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._daxiyiPlayer).audioID = value
+          self._daxiyiPlayer.audioID = value
           break
         end
       end
     end
   end
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._daxiyiPlayer).audioID ~= -1 then
-    (self._daxiyiPlayer).playerID = (AudioHelperController.PlayInnerGameSfx)((self._daxiyiPlayer).audioID, false)
+  if self._daxiyiPlayer.audioID ~= -1 then
+    self._daxiyiPlayer.playerID = AudioHelperController.PlayInnerGameSfx(self._daxiyiPlayer.audioID, false)
   else
     self._daxiyiPlayer = nil
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.PlayEventAudio = function(self, eventPointType)
-  -- function num : 0_16 , upvalues : _ENV
+function SeasonAudio:PlayEventAudio(eventPointType)
   if eventPointType == SeasonEventPointType.MainLevel then
-    (AudioHelperController.PlayUISoundAutoRelease)(SeasonCriAudio.Monster)
-  else
-    if eventPointType == SeasonEventPointType.Box or eventPointType == SeasonEventPointType.SubBox then
-      local box1Audio = ((self._voiceCfg).box1Audio)[1]
-      do
-        local delay = ((self._voiceCfg).box1Audio)[2] * 1000
-        ;
-        (AudioHelperController.PlayUISoundAutoRelease)(SeasonCriAudio.Box)
-        self._event = ((GameGlobal.Timer)()):AddEvent(delay, function()
-    -- function num : 0_16_0 , upvalues : self, box1Audio
-    if not self._stopAllAudio then
-      self:_PlayVoice(box1Audio)
-    end
-  end
-)
+    AudioHelperController.PlayUISoundAutoRelease(SeasonCriAudio.Monster)
+  elseif eventPointType == SeasonEventPointType.Box or eventPointType == SeasonEventPointType.SubBox then
+    local box1Audio = self._voiceCfg.box1Audio[1]
+    local delay = self._voiceCfg.box1Audio[2] * 1000
+    AudioHelperController.PlayUISoundAutoRelease(SeasonCriAudio.Box)
+    self._event = GameGlobal.Timer():AddEvent(delay, function()
+      if not self._stopAllAudio then
+        self:_PlayVoice(box1Audio)
       end
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio._PlayVoice = function(self, audioID)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonAudio:_PlayVoice(audioID)
   self:StopSeasonUIVoice()
   if not self._stopAllAudio then
-    self._curVoice = (AudioHelperController.PlayUIVoiceByAudioId)(audioID)
+    self._curVoice = AudioHelperController.PlayUIVoiceByAudioId(audioID)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.StopSeasonUIVoice = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function SeasonAudio:StopSeasonUIVoice()
   if self._curVoice then
-    (AudioHelperController.StopUIVoice)(self._curVoice)
+    AudioHelperController.StopUIVoice(self._curVoice)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.StopSeasonSounds = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function SeasonAudio:StopSeasonSounds()
   self._stopAllAudio = true
   self:StopSeasonUIVoice()
-  ;
-  (AudioHelperController.PauseBGM)()
+  AudioHelperController.PauseBGM()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.ResumeSeasonSounds = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function SeasonAudio:ResumeSeasonSounds()
   self._stopAllAudio = false
-  ;
-  (AudioHelperController.UnpauseBGM)()
+  AudioHelperController.UnpauseBGM()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonAudio.PlayVoice = function(self, stop)
-  -- function num : 0_21
+function SeasonAudio:PlayVoice(stop)
   self._stopAllAudio = stop
   if stop then
     self:StopSeasonUIVoice()
   end
 end
-
-

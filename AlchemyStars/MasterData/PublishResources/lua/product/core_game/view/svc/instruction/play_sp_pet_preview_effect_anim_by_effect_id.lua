@@ -1,39 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_sp_pet_preview_effect_anim_by_effect_id.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySPPetPreviewEffectAnimationByEffectIDInstruction", BaseInstruction)
 PlaySPPetPreviewEffectAnimationByEffectIDInstruction = PlaySPPetPreviewEffectAnimationByEffectIDInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySPPetPreviewEffectAnimationByEffectIDInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySPPetPreviewEffectAnimationByEffectIDInstruction:Constructor(paramList)
   self._animName = paramList.anim
   self._petID = tonumber(paramList.petID)
   self._effectID = tonumber(paramList.effectID)
   self._skillID = tonumber(paramList.skillID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySPPetPreviewEffectAnimationByEffectIDInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySPPetPreviewEffectAnimationByEffectIDInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local petEntity = utilDataSvc:GePetEntityByTemplateID(self._petID)
   if petEntity then
     local playEntity = petEntity
     local activeSkillPickUpComponent = playEntity:PreviewPickUpComponent()
     local effectIDList = activeSkillPickUpComponent:GetPickUpEffectEntityIDArrayByEffectID(self._effectID)
-    for i,id in ipairs(effectIDList) do
-      local effectEntity = (self._world):GetEntityByID(id)
-      local effectGO = (effectEntity:View()):GetGameObject()
-      local anim = (effectGO.gameObject):GetComponent("Animation")
+    for i, id in ipairs(effectIDList) do
+      local effectEntity = self._world:GetEntityByID(id)
+      local effectGO = effectEntity:View():GetGameObject()
+      local anim = effectGO.gameObject:GetComponent("Animation")
       anim:Play(self._animName)
     end
   end
 end
-
-

@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n8/common/ui_activity_n8_person_progress_icon_text.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN8PersonProgressIconText", UICustomWidget)
 UIActivityN8PersonProgressIconText = UIActivityN8PersonProgressIconText
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN8PersonProgressIconText.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN8PersonProgressIconText:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressIconText.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN8PersonProgressIconText:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN8PersonProgressIconText.SetData = function(self, campaign, handleMaterial)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN8PersonProgressIconText:SetData(campaign, handleMaterial)
   local component = campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_PERSON_PROGESS, 1)
   local icon = self:GetUIComponent("Image", "_icon")
   local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
@@ -28,9 +15,7 @@ UIActivityN8PersonProgressIconText.SetData = function(self, campaign, handleMate
   icon.sprite = atlas:GetSprite(spriteId)
   local txt = self:GetUIComponent("UILocalizationText", "_text")
   local num = component:GetCurrentProgress()
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(7, num)
-  local fmtStr = (string.format)("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", preZero, tostring(num))
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(7, num)
+  local fmtStr = string.format("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", preZero, tostring(num))
   txt:SetText(fmtStr)
 end
-
-

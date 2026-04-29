@@ -1,69 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5Intro/ui_n5_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5Intro", UIController)
 UIN5Intro = UIN5Intro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5Intro.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN5Intro:OnShow(uiParams)
   self:InitWidget()
   self:Flush()
   self:PlayAnim(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5Intro.InitWidget = function(self)
-  -- function num : 0_1
+function UIN5Intro:InitWidget()
   self.content = self:GetUIComponent("UIRichText", "Content")
   self.scroll = self:GetUIComponent("ScrollRect", "ScrollView")
-  self.anim = (self:GetGameObject()):GetComponent("Animation")
+  self.anim = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5Intro.btnCloseOnClick = function(self, go)
-  -- function num : 0_2
+function UIN5Intro:btnCloseOnClick(go)
   self:PlayAnim(false, function()
-    -- function num : 0_2_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5Intro.Flush = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.scroll).verticalNormalizedPosition = 1
+function UIN5Intro:Flush()
+  self.scroll.verticalNormalizedPosition = 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5Intro.PlayAnim = function(self, isIn, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN5Intro:PlayAnim(isIn, callback)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, isIn, _ENV, callback
     self:Lock("UISummer1IntroPlayAnim")
     if isIn then
-      (self.anim):Play("uieff_Activity_UISummer1Intro_In")
+      self.anim:Play("uieff_Activity_UISummer1Intro_In")
       YIELD(TT, 500)
     else
-      ;
-      (self.anim):Play("uieff_Activity_UISummer1Intro_Out")
+      self.anim:Play("uieff_Activity_UISummer1Intro_Out")
       YIELD(TT, 500)
     end
     self:UnLock("UISummer1IntroPlayAnim")
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
-
-

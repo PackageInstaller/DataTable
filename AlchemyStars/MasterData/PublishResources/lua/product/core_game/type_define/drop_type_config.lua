@@ -1,10 +1,4 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/drop_type_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 DropEffectType = {InBag = 2}
 _enum("DropEffectType", DropEffectType)
 DropPickUpType = {Auto = 3}
 _enum("DropPickUpType", DropPickUpType)
-

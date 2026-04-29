@@ -1,31 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_coffin_musume_set_candle_light.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_CoffinMusumeSetCandleLight", SkillEffectParamBase)
 SkillEffectParam_CoffinMusumeSetCandleLight = SkillEffectParam_CoffinMusumeSetCandleLight
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_CoffinMusumeSetCandleLight.Constructor = function(self, t, petId, effectIndex, skillType, grade, awaking)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_CoffinMusumeSetCandleLight:Constructor(t, petId, effectIndex, skillType, grade, awaking)
   self._isLight = tonumber(t.isLight) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeSetCandleLight.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_CoffinMusumeSetCandleLight:GetEffectType()
   return SkillEffectType.CoffinMusumeSetCandleLight
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_CoffinMusumeSetCandleLight.IsLight = function(self)
-  -- function num : 0_2
+function SkillEffectParam_CoffinMusumeSetCandleLight:IsLight()
   return self._isLight
 end
-
-

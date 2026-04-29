@@ -1,23 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/StatePetForecast/state_pet_forecast_normal.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StatePetForecastNormal", StatePetForecast)
 StatePetForecastNormal = StatePetForecastNormal
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StatePetForecastNormal.OnEnter = function(self, TT)
-  -- function num : 0_0
+function StatePetForecastNormal:OnEnter(TT)
   self:Init()
-  ;
-  (self.ui):Flush(false)
+  self.ui:Flush(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StatePetForecastNormal.OnExit = function(self, TT)
-  -- function num : 0_1
+function StatePetForecastNormal:OnExit(TT)
 end
-
-

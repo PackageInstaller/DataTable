@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_widget_shop_refresh_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetShopRefreshBtn", UICustomWidget)
 UIWidgetShopRefreshBtn = UIWidgetShopRefreshBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetShopRefreshBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIWidgetShopRefreshBtn:OnShow()
   self:InitWidget()
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetShopRefreshBtn.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetShopRefreshBtn:InitWidget()
   self.priceTxt = self:GetUIComponent("UILocalizationText", "price")
   self.moneyIcon = self:GetUIComponent("Image", "moneyicon")
   self.curCountTxt = self:GetUIComponent("UILocalizationText", "curcount")
@@ -24,62 +14,34 @@ UIWidgetShopRefreshBtn.InitWidget = function(self)
   self.uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetShopRefreshBtn.OnHide = function(self)
-  -- function num : 0_2
+function UIWidgetShopRefreshBtn:OnHide()
   self:RemoveListener()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetShopRefreshBtn.AddListener = function(self)
-  -- function num : 0_3
+function UIWidgetShopRefreshBtn:AddListener()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetShopRefreshBtn.RemoveListener = function(self)
-  -- function num : 0_4
+function UIWidgetShopRefreshBtn:RemoveListener()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetShopRefreshBtn.Refresh = function(self, subTabType)
-  -- function num : 0_5
+function UIWidgetShopRefreshBtn:Refresh(subTabType)
   self.subTabType = subTabType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetShopRefreshBtn.SetData = function(self, clickCb)
-  -- function num : 0_6
+function UIWidgetShopRefreshBtn:SetData(clickCb)
   self._clickCb = clickCb
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetShopRefreshBtn.RefreshInfo = function(self, curCount, maxCount, consume, costType)
-  -- function num : 0_7 , upvalues : _ENV
-  (self.curCountTxt):SetText(maxCount - curCount)
-  ;
-  (self.maxCountTxt):SetText(maxCount)
-  ;
-  (self.priceTxt):SetText(consume)
-  local _cfg = (Cfg.cfg_top_tips)[costType]
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.moneyIcon).sprite = (self.uiCommonAtlas):GetSprite(_cfg.Icon)
+function UIWidgetShopRefreshBtn:RefreshInfo(curCount, maxCount, consume, costType)
+  self.curCountTxt:SetText(maxCount - curCount)
+  self.maxCountTxt:SetText(maxCount)
+  self.priceTxt:SetText(consume)
+  local _cfg = Cfg.cfg_top_tips[costType]
+  self.moneyIcon.sprite = self.uiCommonAtlas:GetSprite(_cfg.Icon)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetShopRefreshBtn.BtnRefreshOnClick = function(self, go)
-  -- function num : 0_8
+function UIWidgetShopRefreshBtn:BtnRefreshOnClick(go)
   if self._clickCb then
-    (self._clickCb)()
+    self._clickCb()
   end
 end
-
-

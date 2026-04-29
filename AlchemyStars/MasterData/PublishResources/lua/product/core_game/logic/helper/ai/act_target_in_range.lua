@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/act_target_in_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionTargetInRange", ActionIsBase)
 ActionTargetInRange = ActionTargetInRange
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionTargetInRange.Constructor = function(self)
-  -- function num : 0_0
+function ActionTargetInRange:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTargetInRange.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionTargetInRange:OnUpdate()
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return AINewNodeStatus.Failure
   end
   local targetType = self:GetLogicData(-1)
@@ -35,5 +25,3 @@ ActionTargetInRange.OnUpdate = function(self)
   self:PrintLog("判断技能目标在技能范围内失败")
   return AINewNodeStatus.Failure
 end
-
-

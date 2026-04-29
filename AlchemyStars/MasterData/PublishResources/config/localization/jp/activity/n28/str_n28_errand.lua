@@ -1,8 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/n28/str_n28_errand.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n28_errand_desc = "アストラの盗賊「ラバー」一家が戦利品を持って不定期な「アジトの大移動」を始めました。現在、啓光連邦をはじめとする様々な陣営が彼らの最新情報を収集しており、天空ノ谷付近にある人目に付かない地下洞窟が盗品でいっぱいになっていることが分かっています。洞窟に潜入し、正義の名のもとに盗品を奪還しましょう！", str_n28_errand_remainingtime = "イベント残り時間:{1}", str_n28_errand_ = "盗掘者を追え", str_n28_errand_enter = "盗掘者を追え", str_n28_errand_head_1 = "イベント「盗掘者を追え」について", str_n28_errand_body_1 = "イベント期間中、盗掘者を倒すと豪華報酬を獲得できます。\n前のステージをクリアすると次のステージが開放されます。", str_n28_errand_1_title = "R1-包囲", str_n28_errand_2_title = "R2-解放", str_n28_errand_3_title = "R3-強欲", str_n28_errand_4_title = "R4-追跡", str_n28_errand_5_title = "R5-反撃", str_n28_errand_6_title = "R6-逃亡", str_n28_errand_1_content = "暗鬼たちに囲まれたときは、盗掘者たちの行方にも注意しよう！", str_n28_errand_2_content = "命と宝、どちらが大切か？盗掘者たちは答えを出した。ただし、暗鬼の脅威を前にして、彼らもおじけづいて前に進めなくなっている", str_n28_errand_3_content = "これが強欲な者の末路だ！宝の山のうわさに引き寄せられた盗掘者たちも他人の罠に落ちていくのだった…", str_n28_errand_4_content = "ついに盗掘者たちに追いついた！1人も逃がすわけにはいかない！", str_n28_errand_5_content = "暗鬼の牙を前にしても、盗掘者たちは勇気を失わなかった！追跡者ならなおのこと勇気を出して前に進もう！", str_n28_errand_6_content = "逃走！大捕物だ！止まることのない追跡。墓泥棒にとってはこれが逃げる最後のチャンス。彼らの思い通りにさせてはならない！"}
+local config = {
+  str_n28_errand_desc = "アストラの盗賊「ラバー」一家が戦利品を持って不定期な「アジトの大移動」を始めました。現在、啓光連邦をはじめとする様々な陣営が彼らの最新情報を収集しており、天空ノ谷付近にある人目に付かない地下洞窟が盗品でいっぱいになっていることが分かっています。洞窟に潜入し、正義の名のもとに盗品を奪還しましょう！",
+  str_n28_errand_remainingtime = "イベント残り時間:{1}",
+  str_n28_errand_ = "盗掘者を追え",
+  str_n28_errand_enter = "盗掘者を追え",
+  str_n28_errand_head_1 = "イベント「盗掘者を追え」について",
+  str_n28_errand_body_1 = "イベント期間中、盗掘者を倒すと豪華報酬を獲得できます。\n前のステージをクリアすると次のステージが開放されます。",
+  str_n28_errand_1_title = "R1-包囲",
+  str_n28_errand_2_title = "R2-解放",
+  str_n28_errand_3_title = "R3-強欲",
+  str_n28_errand_4_title = "R4-追跡",
+  str_n28_errand_5_title = "R5-反撃",
+  str_n28_errand_6_title = "R6-逃亡",
+  str_n28_errand_1_content = "暗鬼たちに囲まれたときは、盗掘者たちの行方にも注意しよう！",
+  str_n28_errand_2_content = "命と宝、どちらが大切か？盗掘者たちは答えを出した。ただし、暗鬼の脅威を前にして、彼らもおじけづいて前に進めなくなっている",
+  str_n28_errand_3_content = "これが強欲な者の末路だ！宝の山のうわさに引き寄せられた盗掘者たちも他人の罠に落ちていくのだった…",
+  str_n28_errand_4_content = "ついに盗掘者たちに追いついた！1人も逃がすわけにはいかない！",
+  str_n28_errand_5_content = "暗鬼の牙を前にしても、盗掘者たちは勇気を失わなかった！追跡者ならなおのこと勇気を出して前に進もう！",
+  str_n28_errand_6_content = "逃走！大捕物だ！止まることのない追跡。墓泥棒にとってはこれが逃げる最後のチャンス。彼らの思い通りにさせてはならない！"
+}
 return config
-

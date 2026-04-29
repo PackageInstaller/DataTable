@@ -1,81 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/crew/ui_s4_trade_crew_purchase_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeCrewPurchaseTab", UICustomWidget)
 UIS4TradeCrewPurchaseTab = UIS4TradeCrewPurchaseTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeCrewPurchaseTab.Constructor = function(self)
-  -- function num : 0_0
+function UIS4TradeCrewPurchaseTab:Constructor()
   self._isInit = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewPurchaseTab.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS4TradeCrewPurchaseTab:OnShow(uiParams)
   self:AttachEvent(GameEventType.OnS4TradeCrewChange, self.OnS4TradeCrewChange)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewPurchaseTab._GetComponents = function(self)
-  -- function num : 0_2
+function UIS4TradeCrewPurchaseTab:_GetComponents()
   self._purchaseBlock = self:GetUIComponent("UISelectObjectPath", "purchaseBlock")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewPurchaseTab.SetData = function(self, tradeData, selectID)
-  -- function num : 0_3
+function UIS4TradeCrewPurchaseTab:SetData(tradeData, selectID)
   self._tradeData = tradeData
   self._selectID = selectID
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewPurchaseTab.OnS4TradeCrewChange = function(self)
-  -- function num : 0_4
+function UIS4TradeCrewPurchaseTab:OnS4TradeCrewChange()
   self:_InitComponents()
   self:PlayInAnim()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewPurchaseTab._InitComponents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local noBuyCrews = (self._tradeData):GetAllNoBuyCrews()
-  self._purchaseCrews = (self._purchaseBlock):SpawnObjects("UIS4TradeCrewItem", (table.count)(noBuyCrews))
-  for i,crew in pairs(self._purchaseCrews) do
+function UIS4TradeCrewPurchaseTab:_InitComponents()
+  local noBuyCrews = self._tradeData:GetAllNoBuyCrews()
+  self._purchaseCrews = self._purchaseBlock:SpawnObjects("UIS4TradeCrewItem", table.count(noBuyCrews))
+  for i, crew in pairs(self._purchaseCrews) do
     crew:SetData(self._tradeData, noBuyCrews[i], self._selectID, true, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:_InitComponents()
-  end
-)
+      self:_InitComponents()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewPurchaseTab.SetInit = function(self)
-  -- function num : 0_6
+function UIS4TradeCrewPurchaseTab:SetInit()
   self._isInit = true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewPurchaseTab.PlayInAnim = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIS4TradeCrewPurchaseTab:PlayInAnim()
   if not self._isInit then
-    return 
+    return
   end
-  for i,crew in pairs(self._purchaseCrews) do
+  for i, crew in pairs(self._purchaseCrews) do
     crew:PlayInAnim(i)
   end
 end
-
-

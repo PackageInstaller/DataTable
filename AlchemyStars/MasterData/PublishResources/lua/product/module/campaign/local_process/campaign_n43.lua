@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n43.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN43", ICampaignComponentLocalProcessBase)
 CCampaignN43 = CCampaignN43
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN43.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN43:Constructor()
   self._cumulativeLoginComponent = nil
   self._cumulativeLoginCompInfo = nil
   self._power2itemComponent = nil
@@ -20,67 +13,46 @@ CCampaignN43.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN43:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N43
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN43:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN43:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetCumulativeLoginComponent()
   self:_GetPower2ItemComponent()
   self:_GetShopComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN43ComponentID.ECAMPAIGN_N43_CUMULATIVE_LOGIN)
+function CCampaignN43:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN43ComponentID.ECAMPAIGN_N43_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginComponentInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginComponentInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43._GetPower2ItemComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._power2itemComponent = (self._campaignObj):GetComponent(ECampaignN43ComponentID.ECAMPAIGN_N43_POWER2ITEM)
+function CCampaignN43:_GetPower2ItemComponent()
+  self._power2itemComponent = self._campaignObj:GetComponent(ECampaignN43ComponentID.ECAMPAIGN_N43_POWER2ITEM)
   if not self._power2itemComponent then
-    return 
+    return
   end
-  self._power2itemComponentInfo = (self._power2itemComponent):ComponentInfo()
+  self._power2itemComponentInfo = self._power2itemComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43._GetShopComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._powerShopComponent = (self._campaignObj):GetComponent(ECampaignN43ComponentID.ECAMPAIGN_N43_SHOP)
+function CCampaignN43:_GetShopComponent()
+  self._powerShopComponent = self._campaignObj:GetComponent(ECampaignN43ComponentID.ECAMPAIGN_N43_SHOP)
   if not self._powerShopComponent then
-    return 
+    return
   end
-  self._powerShopCompInfo = (self._powerShopComponent):ComponentInfo()
+  self._powerShopCompInfo = self._powerShopComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43.GetComponent = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignN43:GetComponent(componentID)
   if ECampaignN43ComponentID.ECAMPAIGN_N43_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponent
   end
@@ -93,10 +65,7 @@ CCampaignN43.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43.GetComponentInfo = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignN43:GetComponentInfo(componentID)
   if ECampaignN43ComponentID.ECAMPAIGN_N43_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponentInfo
   end
@@ -109,40 +78,20 @@ CCampaignN43.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43.GetEntryNew = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN43:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N39)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43.GetEntryRedDot = function(self)
-  -- function num : 0_10
-  if not self:ShopReddot() then
-    return self:AccumulateLoginReddot()
-  end
+function CCampaignN43:GetEntryRedDot()
+  return self:ShopReddot() or self:AccumulateLoginReddot()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43.AccumulateLoginReddot = function(self)
-  -- function num : 0_11
-  if self._cumulativeLoginComponent then
-    return (self._cumulativeLoginComponent):HaveRedPoint()
-  end
+function CCampaignN43:AccumulateLoginReddot()
+  return self._cumulativeLoginComponent and self._cumulativeLoginComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN43.BattlePassRedPoint = function(self, battlePassCampaign)
-  -- function num : 0_12 , upvalues : _ENV
-  return (UIActivityBattlePassHelper.CheckCampaignRedPoint)(battlePassCampaign)
+function CCampaignN43:BattlePassRedPoint(battlePassCampaign)
+  return UIActivityBattlePassHelper.CheckCampaignRedPoint(battlePassCampaign)
 end
-
-

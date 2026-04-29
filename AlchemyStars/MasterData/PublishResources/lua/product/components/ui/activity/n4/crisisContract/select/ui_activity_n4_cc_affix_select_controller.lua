@@ -1,234 +1,155 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/select/ui_activity_n4_cc_affix_select_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCAffixSelectController", UIController)
 UIActivityN4CCAffixSelectController = UIActivityN4CCAffixSelectController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCAffixSelectController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN4CCAffixSelectController:OnShow(uiParams)
   self:InitWidget()
   self._context = uiParams[1]
   self._cfg = uiParams[2]
-  self._missionId = (self._cfg).CampaignMissionId
+  self._missionId = self._cfg.CampaignMissionId
   self._selectAffix = {}
   self._curSelectNum = 0
-  self._maxSelectNum = (self._cfg).AffixNum
-  local ids = (self._context):GetAffix(self._missionId)
-  if ids and #ids > 0 then
-    for k,id in pairs(ids) do
-      -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-      if not (self._selectAffix)[id] then
-        (self._selectAffix)[id] = true
+  self._maxSelectNum = self._cfg.AffixNum
+  local ids = self._context:GetAffix(self._missionId)
+  if ids and 0 < #ids then
+    for k, id in pairs(ids) do
+      if not self._selectAffix[id] then
+        self._selectAffix[id] = true
         self._curSelectNum = self._curSelectNum + 1
       end
     end
   end
-  do
-    self:OnValue()
-  end
+  self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectController.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN4CCAffixSelectController:InitWidget()
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, true)
+  end, nil, nil, true)
   self.txtEffValue = self:GetUIComponent("UILocalizationText", "txtEffValue")
   local colPool = self:GetUIComponent("UISelectObjectPath", "cols")
   self.columns = colPool:SpawnObjects("UIActivityN4CCAffixSelectColumn", 3)
   self._guideRow1Btn = self:GetGameObject("GuideRow1Btn")
-  ;
-  (self._guideRow1Btn):SetActive(false)
+  self._guideRow1Btn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN4CCAffixSelectController:OnValue()
   local affixDataArray = {}
   local subArray = {}
-  for i,v in ipairs((self._cfg).Affix) do
+  for i, v in ipairs(self._cfg.Affix) do
     if #subArray == 3 then
       subArray = {}
     end
     if #subArray == 0 then
-      (table.insert)(affixDataArray, subArray)
+      table.insert(affixDataArray, subArray)
     end
-    ;
-    (table.insert)(subArray, v[1])
+    table.insert(subArray, v[1])
   end
-  do
-    if not affixDataArray or #affixDataArray ~= 3 then
-      (Log.fatal)("UIActivityN4CCAffixSelectController cfg_component_challenge_mission  Affix config err : ", (self._cfg).ID)
-      return 
-    end
-    self.affixItems = {}
-    for i,columnItem in ipairs(self.columns) do
-      local data = affixDataArray[i]
-      columnItem:SetData(self.affixItems, data, function(item)
-    -- function num : 0_2_0 , upvalues : self
-    self:OnAffixItemSelected(item)
+  if not affixDataArray or #affixDataArray ~= 3 then
+    Log.fatal("UIActivityN4CCAffixSelectController cfg_component_challenge_mission  Affix config err : ", self._cfg.ID)
+    return
   end
-)
-    end
-    self:_RefreshAffixItemsState()
-    local guideModule = (GameGlobal.GetModule)(GuideModule)
-    if guideModule:IsGuideProcess(8114001) then
-      (self._guideRow1Btn):SetActive(true)
-    end
-    ;
-    (self.Lock)("UIActivityN4CCAffixSelectController_Enter_Ani")
-    self:StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : _ENV, self
-    for i,columnItem in ipairs(self.columns) do
+  self.affixItems = {}
+  for i, columnItem in ipairs(self.columns) do
+    local data = affixDataArray[i]
+    columnItem:SetData(self.affixItems, data, function(item)
+      self:OnAffixItemSelected(item)
+    end)
+  end
+  self:_RefreshAffixItemsState()
+  local guideModule = GameGlobal.GetModule(GuideModule)
+  if guideModule:IsGuideProcess(8114001) then
+    self._guideRow1Btn:SetActive(true)
+  end
+  self.Lock("UIActivityN4CCAffixSelectController_Enter_Ani")
+  self:StartTask(function(TT)
+    for i, columnItem in ipairs(self.columns) do
       columnItem:PlayEnterAni()
       YIELD(TT, 60)
     end
-    ;
-    (self.UnLock)("UIActivityN4CCAffixSelectController_Enter_Ani")
-  end
-)
-  end
+    self.UnLock("UIActivityN4CCAffixSelectController_Enter_Ani")
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectController._RefreshAffixItemsState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for k,affixItem in pairs(self.affixItems) do
+function UIActivityN4CCAffixSelectController:_RefreshAffixItemsState()
+  for k, affixItem in pairs(self.affixItems) do
     local affixId = affixItem:GetAffixId()
-    if (self._selectAffix)[affixId] then
+    if self._selectAffix[affixId] then
       affixItem:SetState(true, true)
+    elseif self._curSelectNum >= self._maxSelectNum then
+      affixItem:SetState(false, false)
     else
-      if self._maxSelectNum <= self._curSelectNum then
-        affixItem:SetState(false, false)
-      else
-        local canSelect = true
-        local cfgs = (Cfg.cfg_component_mission_affix)({AffixID = affixId})
-        do
-          do
-            if cfgs and #cfgs > 0 then
-              local preId = (cfgs[1]).LockID
-              if preId and preId > 0 and not (self._selectAffix)[preId] then
-                canSelect = false
-              end
-            end
-            affixItem:SetState(false, canSelect)
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      local canSelect = true
+      local cfgs = Cfg.cfg_component_mission_affix({AffixID = affixId})
+      if cfgs and 0 < #cfgs then
+        local preId = cfgs[1].LockID
+        if preId and 0 < preId and not self._selectAffix[preId] then
+          canSelect = false
         end
       end
+      affixItem:SetState(false, canSelect)
     end
   end
-  ;
-  (self.txtEffValue):SetText(self._curSelectNum .. "/" .. self._maxSelectNum)
+  self.txtEffValue:SetText(self._curSelectNum .. "/" .. self._maxSelectNum)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectController.OnAffixItemSelected = function(self, item)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN4CCAffixSelectController:OnAffixItemSelected(item)
   local isSelect, canSelect = item:GetState()
   if not canSelect then
-    if self._maxSelectNum <= self._curSelectNum then
-      (ToastManager.ShowToast)((StringTable.Get)("str_crisis_contract_affix_max_limit"))
+    if self._curSelectNum >= self._maxSelectNum then
+      ToastManager.ShowToast(StringTable.Get("str_crisis_contract_affix_max_limit"))
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_crisis_contract_affix_unlock_pre"))
+      ToastManager.ShowToast(StringTable.Get("str_crisis_contract_affix_unlock_pre"))
     end
-    return 
+    return
   end
   local clickId = item:GetAffixId()
-  local isSelect = (self._selectAffix)[clickId]
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R6 in 'UnsetPending'
-
+  local isSelect = self._selectAffix[clickId]
   if not isSelect then
-    (self._selectAffix)[clickId] = true
+    self._selectAffix[clickId] = true
     self._curSelectNum = self._curSelectNum + 1
   else
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._selectAffix)[clickId] = nil
+    self._selectAffix[clickId] = nil
     self._curSelectNum = self._curSelectNum - 1
     local depenList = {clickId}
     self:_RemoveDependency(depenList)
   end
-  do
-    self:_RefreshAffixItemsState()
-  end
+  self:_RefreshAffixItemsState()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectController._RemoveDependency = function(self, depenList)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN4CCAffixSelectController:_RemoveDependency(depenList)
   local len = #depenList
   if len < 1 then
-    return 
+    return
   end
   local depenId = depenList[len]
-  ;
-  (table.remove)(depenList, len)
-  for affixId,v in pairs(self._selectAffix) do
-    local cfgs = (Cfg.cfg_component_mission_affix)({AffixID = affixId})
-    if cfgs and #cfgs > 0 and (cfgs[1]).LockID == depenId then
-      (table.insert)(depenList, affixId)
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._selectAffix)[affixId] = nil
+  table.remove(depenList, len)
+  for affixId, v in pairs(self._selectAffix) do
+    local cfgs = Cfg.cfg_component_mission_affix({AffixID = affixId})
+    if cfgs and 0 < #cfgs and cfgs[1].LockID == depenId then
+      table.insert(depenList, affixId)
+      self._selectAffix[affixId] = nil
       self._curSelectNum = self._curSelectNum - 1
     end
   end
-  if #depenList > 0 then
+  if 0 < #depenList then
     self:_RemoveDependency(depenList)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectController.BtnConformOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN4CCAffixSelectController:BtnConformOnClick(go)
   local ids = {}
-  for k,v in pairs(self._selectAffix) do
-    (table.insert)(ids, k)
+  for k, v in pairs(self._selectAffix) do
+    table.insert(ids, k)
   end
-  ;
-  (table.sort)(ids)
-  ;
-  (self._context):SetAffix(self._missionId, ids)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCCAffixChanged)
+  table.sort(ids)
+  self._context:SetAffix(self._missionId, ids)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCCAffixChanged)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCAffixSelectController.GuideRow1BtnOnClick = function(self, go)
-  -- function num : 0_7
-  local item = (self.affixItems)[1]
+function UIActivityN4CCAffixSelectController:GuideRow1BtnOnClick(go)
+  local item = self.affixItems[1]
   self:OnAffixItemSelected(item)
 end
-
-

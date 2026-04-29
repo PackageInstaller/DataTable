@@ -1,248 +1,207 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/business_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BusinessComponent", ICampaignComponent)
 BusinessComponent = BusinessComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BusinessComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function BusinessComponent:Constructor()
   self._componentInfo = BusinessComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BusinessComponent:ComponentInfo()
   if not self._componentInfo then
     self._componentInfo = BusinessComponentInfo:New()
   end
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function BusinessComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BusinessComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_BUSINESS
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self._componentInfo)
+function BusinessComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self._componentInfo)
   return ret
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.GetInfo = function(self, harbor_id)
-  -- function num : 0_5 , upvalues : _ENV
+function BusinessComponent:GetInfo(harbor_id)
   local ComponentInfo = self:ComponentInfo()
-  local info = (ComponentInfo.harborInfo)[harbor_id]
+  local info = ComponentInfo.harborInfo[harbor_id]
   if info ~= nil then
-    return info, (ComponentInfo.shipInfo)[harbor_id]
+    return info, ComponentInfo.shipInfo[harbor_id]
   end
   local componentId = self:GetComponentCfgId()
-  local cfgHarbor = (Cfg.cfg_component_business_harbor)({ComponentID = componentId, HarborID = harbor_id, Lv = 1})
+  local cfgHarbor = Cfg.cfg_component_business_harbor({
+    ComponentID = componentId,
+    HarborID = harbor_id,
+    Lv = 1
+  })
   if cfgHarbor == nil or cfgHarbor[1] == nil then
-    (Log.exception)("cfg_component_business_harbor 中找不到组件, ID:", componentId)
+    Log.exception("cfg_component_business_harbor 中找不到组件, ID:", componentId)
     return nil, nil
   end
   cfgHarbor = cfgHarbor[1]
-  do
-    if (cfgHarbor.LockItem)[1] > 0 then
-      local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount((cfgHarbor.LockItem)[1])
-      if count <= (cfgHarbor.LockItem)[2] then
-        return nil, nil
-      end
+  if cfgHarbor.LockItem[1] > 0 then
+    local count = GameGlobal.GetModule(ItemModule):GetItemCount(cfgHarbor.LockItem[1])
+    if count <= cfgHarbor.LockItem[2] then
+      return nil, nil
     end
-    local hinfo = BusinessHarborInfo:New()
-    hinfo.lv = 1
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (ComponentInfo.harborInfo)[harbor_id] = hinfo
-    local sinfo = BusinessShipInfo:New()
-    sinfo.lv = 1
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (ComponentInfo.shipInfo)[harbor_id] = sinfo
-    return hinfo, sinfo
   end
+  local hinfo = BusinessHarborInfo:New()
+  hinfo.lv = 1
+  ComponentInfo.harborInfo[harbor_id] = hinfo
+  local sinfo = BusinessShipInfo:New()
+  sinfo.lv = 1
+  ComponentInfo.shipInfo[harbor_id] = sinfo
+  return hinfo, sinfo
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.GetHarborEvent = function(self, harbor_id)
-  -- function num : 0_6 , upvalues : _ENV
+function BusinessComponent:GetHarborEvent(harbor_id)
   local ids = {}
   local ComponentInfo = self:ComponentInfo()
   if self:GetInfo(harbor_id) == nil then
     return ids
   end
   local componentId = self:GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_business_global)[ComponentInfo.globalId]
+  local cfg = Cfg.cfg_component_business_global[ComponentInfo.globalId]
   if cfg == nil or cfg[1] == nil then
-    (Log.exception)("cfg_component_business_global 中找不到, ID:", ComponentInfo.globalId)
+    Log.exception("cfg_component_business_global 中找不到, ID:", ComponentInfo.globalId)
     return ids
   end
-  local ecom = (table.clone)(ComponentInfo.eventIdCom)
-  local cb = function(randomIds)
-    -- function num : 0_6_0 , upvalues : _ENV, ecom, cfg
-    if (table.count)(ecom) == (table.count)(cfg.EventPool) then
+  local ecom = table.clone(ComponentInfo.eventIdCom)
+  
+  local function cb(randomIds)
+    if table.count(ecom) == table.count(cfg.EventPool) then
       ecom = {}
     end
-    for k1,v1 in pairs(cfg.EventPool) do
-      if (table.intable)(ecom, v1) == false then
-        (table.insert)(randomIds, v1)
+    for k1, v1 in pairs(cfg.EventPool) do
+      if table.intable(ecom, v1) == false then
+        table.insert(randomIds, v1)
       end
     end
   end
-
+  
   for i = 1, cfg.OnceRound do
     local randomIds = {}
     cb(randomIds)
     local len = #randomIds
     if len == 0 then
-      (Log.exception)("cfg_component_business_global [table.count(randomIds) == 0] ID:", componentId)
+      Log.exception("cfg_component_business_global [table.count(randomIds) == 0] ID:", componentId)
       return ids
     end
-    local index = (math.random)(1, len)
+    local index = math.random(1, len)
     local newId = randomIds[index]
-    ;
-    (table.insert)(ids, newId)
-    ;
-    (table.insert)(ecom, newId)
+    table.insert(ids, newId)
+    table.insert(ecom, newId)
   end
   return ids
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.GetNeedPro = function(self, harbor_id, harbor_lv, ship_lv)
-  -- function num : 0_7 , upvalues : _ENV
+function BusinessComponent:GetNeedPro(harbor_id, harbor_lv, ship_lv)
   local harborInfo, shipInfo = self:GetInfo(harbor_id)
   if harborInfo == nil or shipInfo == nil then
     return 0
   end
   local componentId = self:GetComponentCfgId()
-  if not harbor_lv or not harbor_lv then
-    local cfgHarbor = (Cfg.cfg_component_business_harbor)({ComponentID = componentId, HarborID = harbor_id, Lv = harborInfo.lv})
-    if cfgHarbor == nil or cfgHarbor[1] == nil then
-      (Log.exception)("cfg_component_business_harbor 中找不到组件, ID:", componentId)
-      return 0
-    end
-    if not ship_lv or not ship_lv then
-      local cfgShip = (Cfg.cfg_component_business_ship)({ComponentID = componentId, ShipID = harbor_id, Lv = shipInfo.lv})
-      if cfgShip == nil or cfgShip[1] == nil then
-        (Log.exception)("cfg_component_business_ship 中找不到组件, ID:", componentId)
-        return 0
-      end
-      cfgHarbor = cfgHarbor[1]
-      cfgShip = cfgShip[1]
-      return (cfgShip.NeedValue)[BusinessProType.BPT_Command + 1], (cfgShip.NeedValue)[BusinessProType.BPT_Sail + 1], (cfgShip.NeedValue)[BusinessProType.BPT_Fix + 1], cfgHarbor.UnloadSpeed, cfgShip.Boatload
-    end
+  local cfgHarbor = Cfg.cfg_component_business_harbor({
+    ComponentID = componentId,
+    HarborID = harbor_id,
+    Lv = harbor_lv and harbor_lv or harborInfo.lv
+  })
+  if cfgHarbor == nil or cfgHarbor[1] == nil then
+    Log.exception("cfg_component_business_harbor 中找不到组件, ID:", componentId)
+    return 0
   end
+  local cfgShip = Cfg.cfg_component_business_ship({
+    ComponentID = componentId,
+    ShipID = harbor_id,
+    Lv = ship_lv and ship_lv or shipInfo.lv
+  })
+  if cfgShip == nil or cfgShip[1] == nil then
+    Log.exception("cfg_component_business_ship 中找不到组件, ID:", componentId)
+    return 0
+  end
+  cfgHarbor = cfgHarbor[1]
+  cfgShip = cfgShip[1]
+  return cfgShip.NeedValue[BusinessProType.BPT_Command + 1], cfgShip.NeedValue[BusinessProType.BPT_Sail + 1], cfgShip.NeedValue[BusinessProType.BPT_Fix + 1], cfgHarbor.UnloadSpeed, cfgShip.Boatload
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.GetFinalPro = function(self, harbor_id, boatloadValue, commandValue, sailValue, fixValue, harbor_lv, ship_lv)
-  -- function num : 0_8 , upvalues : _ENV
+function BusinessComponent:GetFinalPro(harbor_id, boatloadValue, commandValue, sailValue, fixValue, harbor_lv, ship_lv)
   local harborInfo, shipInfo = self:GetInfo(harbor_id)
   if harborInfo == nil or shipInfo == nil then
     return 0
   end
   local componentId = self:GetComponentCfgId()
-  if not harbor_lv or not harbor_lv then
-    local cfgHarbor = (Cfg.cfg_component_business_harbor)({ComponentID = componentId, HarborID = harbor_id, Lv = harborInfo.lv})
-    if cfgHarbor == nil or cfgHarbor[1] == nil then
-      (Log.exception)("cfg_component_business_harbor 中找不到组件, ID:", componentId)
+  local cfgHarbor = Cfg.cfg_component_business_harbor({
+    ComponentID = componentId,
+    HarborID = harbor_id,
+    Lv = harbor_lv and harbor_lv or harborInfo.lv
+  })
+  if cfgHarbor == nil or cfgHarbor[1] == nil then
+    Log.exception("cfg_component_business_harbor 中找不到组件, ID:", componentId)
+    return 0
+  end
+  local cfgShip = Cfg.cfg_component_business_ship({
+    ComponentID = componentId,
+    ShipID = harbor_id,
+    Lv = ship_lv and ship_lv or shipInfo.lv
+  })
+  if cfgShip == nil or cfgShip[1] == nil then
+    Log.exception("cfg_component_business_ship 中找不到组件, ID:", componentId)
+    return 0
+  end
+  cfgHarbor = cfgHarbor[1]
+  cfgShip = cfgShip[1]
+  boatloadValue = boatloadValue and boatloadValue or 0
+  commandValue = commandValue and commandValue or 0
+  sailValue = sailValue and sailValue or 0
+  fixValue = fixValue and fixValue or 0
+  boatloadValue = boatloadValue + cfgShip.Boatload
+  if boatloadValue < 0 then
+    boatloadValue = 0
+  end
+  commandValue = commandValue + cfgShip.BaseValue[BusinessProType.BPT_Command + 1]
+  sailValue = sailValue + cfgShip.BaseValue[BusinessProType.BPT_Sail + 1]
+  fixValue = fixValue + cfgShip.BaseValue[BusinessProType.BPT_Fix + 1]
+  for key, value in pairs(shipInfo.seamans) do
+    local cfgSeaman = Cfg.cfg_component_business_seaman[value]
+    if cfgSeaman == nil then
+      Log.exception("cfg_component_business_seaman 中找不到, ID:", value)
       return 0
     end
-    if not ship_lv or not ship_lv then
-      local cfgShip = (Cfg.cfg_component_business_ship)({ComponentID = componentId, ShipID = harbor_id, Lv = shipInfo.lv})
-      if cfgShip == nil or cfgShip[1] == nil then
-        (Log.exception)("cfg_component_business_ship 中找不到组件, ID:", componentId)
-        return 0
-      end
-      cfgHarbor = cfgHarbor[1]
-      cfgShip = cfgShip[1]
-      if not boatloadValue or not boatloadValue then
-        boatloadValue = 0
-      end
-      if not commandValue or not commandValue then
-        commandValue = 0
-      end
-      if not sailValue or not sailValue then
-        sailValue = 0
-      end
-      if not fixValue or not fixValue then
-        fixValue = 0
-      end
-      boatloadValue = boatloadValue + cfgShip.Boatload
-      if boatloadValue < 0 then
-        boatloadValue = 0
-      end
-      commandValue = commandValue + (cfgShip.BaseValue)[BusinessProType.BPT_Command + 1]
-      sailValue = sailValue + (cfgShip.BaseValue)[BusinessProType.BPT_Sail + 1]
-      fixValue = fixValue + (cfgShip.BaseValue)[BusinessProType.BPT_Fix + 1]
-      for key,value in pairs(shipInfo.seamans) do
-        local cfgSeaman = (Cfg.cfg_component_business_seaman)[value]
-        if cfgSeaman == nil then
-          (Log.exception)("cfg_component_business_seaman 中找不到, ID:", value)
-          return 0
-        end
-        commandValue = commandValue + (cfgSeaman.ProValue)[BusinessProType.BPT_Command + 1]
-        sailValue = sailValue + (cfgSeaman.ProValue)[BusinessProType.BPT_Sail + 1]
-        fixValue = fixValue + (cfgSeaman.ProValue)[BusinessProType.BPT_Fix + 1]
-      end
-      local callBack = function(inValue, inNeed)
-    -- function num : 0_8_0 , upvalues : cfgShip
+    commandValue = commandValue + cfgSeaman.ProValue[BusinessProType.BPT_Command + 1]
+    sailValue = sailValue + cfgSeaman.ProValue[BusinessProType.BPT_Sail + 1]
+    fixValue = fixValue + cfgSeaman.ProValue[BusinessProType.BPT_Fix + 1]
+  end
+  
+  local function callBack(inValue, inNeed)
     if inNeed <= inValue then
-      return (inValue / inNeed - 1) * cfgShip.PassRate + 1
+      return (inValue / inNeed - 1.0) * cfgShip.PassRate + 1.0
     else
-      return inValue / inNeed * (1 - cfgShip.NoPassRate - cfgShip.MinRate) + cfgShip.MinRate
+      return inValue / inNeed * (1.0 - cfgShip.NoPassRate - cfgShip.MinRate) + cfgShip.MinRate
     end
   end
-
-      local a = callBack(commandValue, (cfgShip.NeedValue)[BusinessProType.BPT_Command + 1])
-      a = a + callBack(sailValue, (cfgShip.NeedValue)[BusinessProType.BPT_Sail + 1])
-      a = a + callBack(fixValue, (cfgShip.NeedValue)[BusinessProType.BPT_Fix + 1])
-      local incomeRate = (a) / BusinessProType.BPT_Max
-      local income = incomeRate * (boatloadValue + cfgShip.BaseRewardValue)
-      income = (math.floor)(income)
-      local cdValue = cfgShip.Boatload // cfgHarbor.UnloadSpeed
-      cdValue = (math.floor)(cdValue) * 3600
-      return boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue
-    end
-  end
+  
+  local a = callBack(commandValue, cfgShip.NeedValue[BusinessProType.BPT_Command + 1])
+  a = a + callBack(sailValue, cfgShip.NeedValue[BusinessProType.BPT_Sail + 1])
+  a = a + callBack(fixValue, cfgShip.NeedValue[BusinessProType.BPT_Fix + 1])
+  local incomeRate = a / BusinessProType.BPT_Max
+  local income = incomeRate * (boatloadValue + cfgShip.BaseRewardValue)
+  income = math.floor(income)
+  local cdValue = cfgShip.Boatload // cfgHarbor.UnloadSpeed
+  cdValue = math.floor(cdValue) * 3600
+  return boatloadValue, commandValue, sailValue, fixValue, incomeRate, income, cdValue
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.HandleBusinessSelectReq = function(self, TT, asyncRes, harbor_id)
-  -- function num : 0_9 , upvalues : _ENV
+function BusinessComponent:HandleBusinessSelectReq(TT, asyncRes, harbor_id)
   local request = BusinessSelectReq:New()
   request.harbor_id = harbor_id
   local response = BusinessSelectResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BusinessComponent] HandleBusinessSelectReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BusinessComponent] HandleBusinessSelectReq ret:", asyncRes.m_result)
     return nil
   else
     ComponentInfo.harborId = harbor_id
@@ -250,117 +209,80 @@ BusinessComponent.HandleBusinessSelectReq = function(self, TT, asyncRes, harbor_
   return response
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.HandleBusinessHarborReq = function(self, TT, asyncRes, cfgID)
-  -- function num : 0_10 , upvalues : _ENV
+function BusinessComponent:HandleBusinessHarborReq(TT, asyncRes, cfgID)
   local request = BusinessHarborReq:New()
   request.cfg_id = cfgID
   local response = BusinessHarborResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BusinessComponent] HandleBusinessHarborReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BusinessComponent] HandleBusinessHarborReq ret:", asyncRes.m_result)
     return nil
   else
-    for key,value in pairs(response.info) do
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R12 in 'UnsetPending'
-
-      (ComponentInfo.harborInfo)[key] = value
+    for key, value in pairs(response.info) do
+      ComponentInfo.harborInfo[key] = value
     end
   end
-  do
-    return response
-  end
+  return response
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.HandleBusinessShipReq = function(self, TT, asyncRes, cfgID)
-  -- function num : 0_11 , upvalues : _ENV
+function BusinessComponent:HandleBusinessShipReq(TT, asyncRes, cfgID)
   local request = BusinessShipReq:New()
   request.cfg_id = cfgID
   local response = BusinessShipResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BusinessComponent] HandleBusinessShipReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BusinessComponent] HandleBusinessShipReq ret:", asyncRes.m_result)
     return nil
   else
-    for key,value in pairs(response.info) do
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R12 in 'UnsetPending'
-
-      (ComponentInfo.shipInfo)[key] = value
+    for key, value in pairs(response.info) do
+      ComponentInfo.shipInfo[key] = value
     end
   end
-  do
-    return response
-  end
+  return response
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.HandleBusinessHireSeamanReq = function(self, TT, asyncRes, cfg_id_harbor, cfg_id_seaman)
-  -- function num : 0_12 , upvalues : _ENV
+function BusinessComponent:HandleBusinessHireSeamanReq(TT, asyncRes, cfg_id_harbor, cfg_id_seaman)
   local request = BusinessHireSeamanReq:New()
   request.cfg_id_harbor = cfg_id_harbor
   request.cfg_id_seaman = cfg_id_seaman
   local response = BusinessHireSeamanResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BusinessComponent] HandleBusinessHireSeamanReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BusinessComponent] HandleBusinessHireSeamanReq ret:", asyncRes.m_result)
     return nil
   else
-    for key,value in pairs(response.info) do
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R13 in 'UnsetPending'
-
-      (ComponentInfo.seamanInfo)[key] = value
+    for key, value in pairs(response.info) do
+      ComponentInfo.seamanInfo[key] = value
     end
   end
-  do
-    return response
-  end
+  return response
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.HandleBusinessWorkSeamanReq = function(self, TT, asyncRes, work_id, seamans)
-  -- function num : 0_13 , upvalues : _ENV
+function BusinessComponent:HandleBusinessWorkSeamanReq(TT, asyncRes, work_id, seamans)
   local request = BusinessWorkSeamanReq:New()
   request.work_id = work_id
   request.seamans = seamans
   local response = BusinessWorkSeamanResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BusinessComponent] HandleBusinessWorkSeamanReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BusinessComponent] HandleBusinessWorkSeamanReq ret:", asyncRes.m_result)
     return nil
   else
-    for key,value in pairs(response.shipInfo) do
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R13 in 'UnsetPending'
-
-      (ComponentInfo.shipInfo)[key] = value
+    for key, value in pairs(response.shipInfo) do
+      ComponentInfo.shipInfo[key] = value
     end
-    for key,value in pairs(response.seamanInfo) do
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R13 in 'UnsetPending'
-
-      (ComponentInfo.seamanInfo)[key] = value
+    for key, value in pairs(response.seamanInfo) do
+      ComponentInfo.seamanInfo[key] = value
     end
   end
-  do
-    return response
-  end
+  return response
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.HandleBusinessSailingReq = function(self, TT, asyncRes, harbor_id, event_ids, event_op, income, cd_time)
-  -- function num : 0_14 , upvalues : _ENV
+function BusinessComponent:HandleBusinessSailingReq(TT, asyncRes, harbor_id, event_ids, event_op, income, cd_time)
   local request = BusinessSailingReq:New()
   request.harbor_id = harbor_id
   request.event_ids = event_ids
@@ -369,26 +291,19 @@ BusinessComponent.HandleBusinessSailingReq = function(self, TT, asyncRes, harbor
   request.cd_time = cd_time
   local response = BusinessSailingResult:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][BusinessComponent] HandleBusinessSailingReq ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][BusinessComponent] HandleBusinessSailingReq ret:", asyncRes.m_result)
     return nil
   else
-    for key,value in pairs(response.harborInfo) do
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R16 in 'UnsetPending'
-
-      (ComponentInfo.harborInfo)[key] = value
+    for key, value in pairs(response.harborInfo) do
+      ComponentInfo.harborInfo[key] = value
     end
-    for key,value in pairs(response.globalInfo) do
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R16 in 'UnsetPending'
-
-      (ComponentInfo.globalInfo)[key] = value
+    for key, value in pairs(response.globalInfo) do
+      ComponentInfo.globalInfo[key] = value
     end
-    for key,value in pairs(response.eventInfo) do
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R16 in 'UnsetPending'
-
-      (ComponentInfo.eventInfo)[key] = value
+    for key, value in pairs(response.eventInfo) do
+      ComponentInfo.eventInfo[key] = value
     end
     ComponentInfo.globalId = response.globalId
     ComponentInfo.globalNum = response.globalNum
@@ -397,32 +312,26 @@ BusinessComponent.HandleBusinessSailingReq = function(self, TT, asyncRes, harbor
   return response
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.GetServerTime = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local tmSecond, nMilliSecond = (math.modf)(time_mod:GetServerTime() / 1000)
+function BusinessComponent:GetServerTime()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local tmSecond, nMilliSecond = math.modf(time_mod:GetServerTime() / 1000)
   return tmSecond
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.HasRed = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function BusinessComponent:HasRed()
   local curTime = self:GetServerTime()
   local componentId = self:GetComponentCfgId()
-  local cfgHarbor = (Cfg.cfg_component_business_harbor)({ComponentID = componentId})
+  local cfgHarbor = Cfg.cfg_component_business_harbor({ComponentID = componentId})
   if cfgHarbor == nil then
-    (Log.exception)("cfg_component_business_harbor 中找不到组件, ID:", componentId)
+    Log.exception("cfg_component_business_harbor 中找不到组件, ID:", componentId)
     return false
   end
   local reTab = {}
-  for key,value in pairs(cfgHarbor) do
+  for key, value in pairs(cfgHarbor) do
     if reTab[value.HarborID] == nil then
       reTab[value.HarborID] = true
       local harborInfo, shipInfo = self:GetInfo(value.HarborID)
-      if harborInfo ~= nil and harborInfo.cdEnd <= curTime then
+      if harborInfo ~= nil and curTime >= harborInfo.cdEnd then
         return true
       end
     end
@@ -430,66 +339,45 @@ BusinessComponent.HasRed = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.HasRedHarborLv = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function BusinessComponent:HasRedHarborLv()
   local curTime = self:GetServerTime()
   local componentId = self:GetComponentCfgId()
-  local cfgHarbor = (Cfg.cfg_component_business_harbor)({ComponentID = componentId})
+  local cfgHarbor = Cfg.cfg_component_business_harbor({ComponentID = componentId})
   if cfgHarbor == nil then
-    (Log.exception)("cfg_component_business_harbor 中找不到组件, ID:", componentId)
+    Log.exception("cfg_component_business_harbor 中找不到组件, ID:", componentId)
     return false
   end
   local reTab = {}
-  for key,value in pairs(cfgHarbor) do
+  for key, value in pairs(cfgHarbor) do
     if reTab[value.HarborID] == nil then
       reTab[value.HarborID] = true
       local harborInfo, shipInfo = self:GetInfo(value.HarborID)
       if harborInfo ~= nil then
-        local cfgmap = (Cfg.cfg_component_business_harbor)({ComponentID = componentId, HarborID = value.HarborID, Lv = harborInfo.lv + 1})
+        local cfgmap = Cfg.cfg_component_business_harbor({
+          ComponentID = componentId,
+          HarborID = value.HarborID,
+          Lv = harborInfo.lv + 1
+        })
         if cfgmap ~= nil and cfgmap[1] ~= nil then
           local cfg = cfgmap[1]
           local isen = false
-          if (cfg.LockItem)[1] > 0 then
-            local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount((cfg.LockItem)[1])
-            if (cfg.LockItem)[2] <= count then
+          if cfg.LockItem[1] > 0 then
+            local count = GameGlobal.GetModule(ItemModule):GetItemCount(cfg.LockItem[1])
+            if count >= cfg.LockItem[2] then
               isen = true
             end
           else
-            do
-              isen = true
-              if isen == true then
-                if cfg.CostItem == nil then
+            isen = true
+          end
+          if isen == true then
+            if cfg.CostItem == nil then
+              return true
+            else
+              for senK, sennV in pairs(cfg.CostItem) do
+                local count = GameGlobal.GetModule(ItemModule):GetItemCount(sennV[1])
+                if count >= sennV[2] then
                   return true
-                else
-                  for senK,sennV in pairs(cfg.CostItem) do
-                    local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(sennV[1])
-                    if sennV[2] <= count then
-                      return true
-                    end
-                  end
                 end
-              end
-              do
-                -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC96: LeaveBlock: unexpected jumping out IF_STMT
-
               end
             end
           end
@@ -500,32 +388,33 @@ BusinessComponent.HasRedHarborLv = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BusinessComponent.HasRedShipLv = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function BusinessComponent:HasRedShipLv()
   local curTime = self:GetServerTime()
   local componentId = self:GetComponentCfgId()
-  local cfgShip = (Cfg.cfg_component_business_ship)({ComponentID = componentId})
+  local cfgShip = Cfg.cfg_component_business_ship({ComponentID = componentId})
   if cfgShip == nil then
-    (Log.exception)("cfg_component_business_ship 中找不到组件, ID:", componentId)
+    Log.exception("cfg_component_business_ship 中找不到组件, ID:", componentId)
     return false
   end
   local reTab = {}
-  for key,value in pairs(cfgShip) do
+  for key, value in pairs(cfgShip) do
     if reTab[value.ShipID] == nil then
       reTab[value.ShipID] = true
       local harborInfo, shipInfo = self:GetInfo(value.ShipID)
       if shipInfo ~= nil then
-        local cfgmap = (Cfg.cfg_component_business_ship)({ComponentID = componentId, ShipID = value.ShipID, Lv = shipInfo.lv + 1})
+        local cfgmap = Cfg.cfg_component_business_ship({
+          ComponentID = componentId,
+          ShipID = value.ShipID,
+          Lv = shipInfo.lv + 1
+        })
         if cfgmap ~= nil and cfgmap[1] ~= nil then
           local cfg = cfgmap[1]
           if cfg.CostItem == nil then
             return true
           else
-            for senK,sennV in pairs(cfg.CostItem) do
-              local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(sennV[1])
-              if sennV[2] <= count then
+            for senK, sennV in pairs(cfg.CostItem) do
+              local count = GameGlobal.GetModule(ItemModule):GetItemCount(sennV[1])
+              if count >= sennV[2] then
                 return true
               end
             end
@@ -536,5 +425,3 @@ BusinessComponent.HasRedShipLv = function(self)
   end
   return false
 end
-
-

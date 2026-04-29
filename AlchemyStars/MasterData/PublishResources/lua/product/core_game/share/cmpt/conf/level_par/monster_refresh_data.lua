@@ -1,177 +1,111 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/monster_refresh_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterRefreshData", Object)
 MonsterRefreshData = MonsterRefreshData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterRefreshData.Constructor = function(self, id, type, param, world)
-  -- function num : 0_0 , upvalues : _ENV
+function MonsterRefreshData:Constructor(id, type, param, world)
   self._refreshID = id
   self._refreshType = type
   self._refreshParam = param
   self._hadRefreshRound = {}
   self._refreshCount = 1
   self._waveInternalRefreshParam = LevelMonsterRefreshParam:New(world)
-  local cfg = (Cfg.cfg_refresh)[self._refreshID]
+  local cfg = Cfg.cfg_refresh[self._refreshID]
   if not cfg then
-    (Log.fatal)("Cfg MonsterRefreshData Not Find ID:", self._refreshID)
+    Log.fatal("Cfg MonsterRefreshData Not Find ID:", self._refreshID)
   end
-  local monsterRefreshID = (cfg.MonsterRefreshIDList)[1]
-  local trapRefreshID = (cfg.TrapRefreshIDList)[1]
+  local monsterRefreshID = cfg.MonsterRefreshIDList[1]
+  local trapRefreshID = cfg.TrapRefreshIDList[1]
   self._monsterInternalIDList = {}
   self._trapInternalIDList = {}
   if self._refreshType ~= MonsterWaveInternalRefreshType.None then
-    do
-      if monsterRefreshID > 0 then
-        local monsterRefCfg = (Cfg.cfg_refresh_monster)[monsterRefreshID]
-        if not monsterRefCfg then
-          (Log.fatal)("Cfg monsterWaveConfig.WaveInternalRefreshID Not Find ID:", self._refreshID)
-        end
-        self._monsterInternalIDList = (table.cloneconf)((self._waveInternalRefreshParam):ParseMonsterRefreshParam(monsterRefCfg))
+    if 0 < monsterRefreshID then
+      local monsterRefCfg = Cfg.cfg_refresh_monster[monsterRefreshID]
+      if not monsterRefCfg then
+        Log.fatal("Cfg monsterWaveConfig.WaveInternalRefreshID Not Find ID:", self._refreshID)
       end
-      do
-        if trapRefreshID > 0 then
-          local trapRefCfg = (Cfg.cfg_refresh_trap)[trapRefreshID]
-          if not trapRefCfg then
-            (Log.fatal)("Cfg monsterWaveConfig.WaveInternalRefreshID Not Find ID:", self._refreshID)
-          end
-          self._trapInternalIDList = (table.cloneconf)((self._waveInternalRefreshParam):ParseTrapRefreshParam(trapRefCfg))
-        end
-        local limitCount = nil
-        if self._refreshType == MonsterWaveInternalRefreshType.WatchTarget then
-          limitCount = tonumber((self._refreshParam)[3])
-        else
-          if self._refreshType == MonsterWaveInternalRefreshType.AllMonsterDead then
-            limitCount = tonumber((self._refreshParam)[1])
-          else
-            if self._refreshType == MonsterWaveInternalRefreshType.RoundResultWatchTarget then
-              limitCount = tonumber((self._refreshParam)[3])
-            else
-              if self._refreshType == MonsterWaveInternalRefreshType.RoundResultCheckMonsterCount then
-                limitCount = tonumber((self._refreshParam)[3])
-              end
-            end
-          end
-        end
-        if limitCount and limitCount > 0 then
-          self._refreshCount = limitCount
-        end
-        self._showInterval = 0
+      self._monsterInternalIDList = table.cloneconf(self._waveInternalRefreshParam:ParseMonsterRefreshParam(monsterRefCfg))
+    end
+    if 0 < trapRefreshID then
+      local trapRefCfg = Cfg.cfg_refresh_trap[trapRefreshID]
+      if not trapRefCfg then
+        Log.fatal("Cfg monsterWaveConfig.WaveInternalRefreshID Not Find ID:", self._refreshID)
       end
+      self._trapInternalIDList = table.cloneconf(self._waveInternalRefreshParam:ParseTrapRefreshParam(trapRefCfg))
     end
   end
+  local limitCount
+  if self._refreshType == MonsterWaveInternalRefreshType.WatchTarget then
+    limitCount = tonumber(self._refreshParam[3])
+  elseif self._refreshType == MonsterWaveInternalRefreshType.AllMonsterDead then
+    limitCount = tonumber(self._refreshParam[1])
+  elseif self._refreshType == MonsterWaveInternalRefreshType.RoundResultWatchTarget then
+    limitCount = tonumber(self._refreshParam[3])
+  elseif self._refreshType == MonsterWaveInternalRefreshType.RoundResultCheckMonsterCount then
+    limitCount = tonumber(self._refreshParam[3])
+  end
+  if limitCount and 0 < limitCount then
+    self._refreshCount = limitCount
+  end
+  self._showInterval = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.AddRefreshRound = function(self, key, round)
-  -- function num : 0_1 , upvalues : _ENV
-  local curRefreshRound = (self._hadRefreshRound)[key]
-  if not curRefreshRound then
-    curRefreshRound = {}
+function MonsterRefreshData:AddRefreshRound(key, round)
+  local curRefreshRound = self._hadRefreshRound[key]
+  curRefreshRound = curRefreshRound or {}
+  if not table.intable(curRefreshRound, round) then
+    table.insert(curRefreshRound, round)
   end
-  if not (table.intable)(curRefreshRound, round) then
-    (table.insert)(curRefreshRound, round)
-  end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._hadRefreshRound)[key] = curRefreshRound
+  self._hadRefreshRound[key] = curRefreshRound
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetHadRefreshRound = function(self, key)
-  -- function num : 0_2
-  local curRefreshRound = (self._hadRefreshRound)[key]
+function MonsterRefreshData:GetHadRefreshRound(key)
+  local curRefreshRound = self._hadRefreshRound[key]
   if not curRefreshRound then
     curRefreshRound = {}
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._hadRefreshRound)[key] = curRefreshRound
+    self._hadRefreshRound[key] = curRefreshRound
   end
   return curRefreshRound
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.SetChangeGapTiles = function(self, gapTiles)
-  -- function num : 0_3
+function MonsterRefreshData:SetChangeGapTiles(gapTiles)
   self._newGapTiles = gapTiles
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetGapTiles = function(self)
-  -- function num : 0_4
+function MonsterRefreshData:GetGapTiles()
   return self._newGapTiles
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetInternalRefreshID = function(self)
-  -- function num : 0_5
+function MonsterRefreshData:GetInternalRefreshID()
   return self._refreshID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetInternalRefreshType = function(self)
-  -- function num : 0_6
+function MonsterRefreshData:GetInternalRefreshType()
   return self._refreshType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetInternalRefreshParam = function(self)
-  -- function num : 0_7
+function MonsterRefreshData:GetInternalRefreshParam()
   return self._refreshParam
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetInternalMonsterIDDic = function(self)
-  -- function num : 0_8
+function MonsterRefreshData:GetInternalMonsterIDDic()
   return self._monsterInternalIDList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetInternalTrapIDDic = function(self)
-  -- function num : 0_9
+function MonsterRefreshData:GetInternalTrapIDDic()
   return self._trapInternalIDList
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetMonsterRefreshParam = function(self)
-  -- function num : 0_10
+function MonsterRefreshData:GetMonsterRefreshParam()
   return self._waveInternalRefreshParam
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetMonsterRefreshCount = function(self)
-  -- function num : 0_11
+function MonsterRefreshData:GetMonsterRefreshCount()
   return self._refreshCount
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.SetMonsterRefreshShowInterval = function(self, interval)
-  -- function num : 0_12
+function MonsterRefreshData:SetMonsterRefreshShowInterval(interval)
   self._showInterval = interval
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterRefreshData.GetMonsterRefreshShowInterval = function(self)
-  -- function num : 0_13
+function MonsterRefreshData:GetMonsterRefreshShowInterval()
   return self._showInterval
 end
-
-

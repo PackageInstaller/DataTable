@@ -1,91 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity_spotlight.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryEntitySpotLight", StoryEntityMovable)
 StoryEntitySpotLight = StoryEntitySpotLight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryEntitySpotLight.Constructor = function(self, ID, gameObject, resRequest, storyManager, entityConfig)
-  -- function num : 0_0 , upvalues : _ENV
-  ((StoryEntitySpotLight.super).Constructor)(self, ID, gameObject, resRequest, storyManager)
+function StoryEntitySpotLight:Constructor(ID, gameObject, resRequest, storyManager, entityConfig)
+  StoryEntitySpotLight.super.Constructor(self, ID, gameObject, resRequest, storyManager)
   self._type = StoryEntityType.SpotLight
   self._rawImage = gameObject:GetComponent("RawImage")
-  self._rawImageColor = (self._rawImage).color
+  self._rawImageColor = self._rawImage.color
   self._rectTransform = gameObject:GetComponent("RectTransform")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpotLight._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((StoryEntitySpotLight.super)._TriggerKeyframe)(self, keyframeData)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
+function StoryEntitySpotLight:_TriggerKeyframe(keyframeData)
+  StoryEntitySpotLight.super._TriggerKeyframe(self, keyframeData)
   if keyframeData.WidthHeight then
-    (self._rectTransform).sizeDelta = Vector2((keyframeData.WidthHeight)[1], (keyframeData.WidthHeight)[2])
+    self._rectTransform.sizeDelta = Vector2(keyframeData.WidthHeight[1], keyframeData.WidthHeight[2])
   end
   if keyframeData.FullScreen ~= nil then
     if keyframeData.FullScreen then
       self:_SetPicFullScreen(self._rectTransform)
     else
-      ;
-      (self._storyManager):SetUIBlackSideSize(0, 0)
+      self._storyManager:SetUIBlackSideSize(0, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpotLight._SetPicFullScreen = function(self, rectTransform)
-  -- function num : 0_2 , upvalues : _ENV
+function StoryEntitySpotLight:_SetPicFullScreen(rectTransform)
   local fullPicWidth = 2532
   local fullPicHeight = 1170
-  local screenWidth, screenHeight = (self._storyManager):GetUICanvasSize()
+  local screenWidth, screenHeight = self._storyManager:GetUICanvasSize()
   local picAspect = fullPicWidth / fullPicHeight
   local screenAspect = screenWidth / screenHeight
   local blackSideHeight = 0
   local blackSideWidth = 0
-  if screenAspect < picAspect then
+  if picAspect > screenAspect then
     local picHeight = fullPicHeight * screenWidth / fullPicWidth
     rectTransform.sizeDelta = Vector2(screenWidth, picHeight)
-    blackSideHeight = (math.abs)(screenHeight - picHeight) / 2
+    blackSideHeight = math.abs(screenHeight - picHeight) / 2
+  elseif picAspect < screenAspect then
+    local picWidth = fullPicWidth * screenHeight / fullPicHeight
+    rectTransform.sizeDelta = Vector2(picWidth, screenHeight)
+    blackSideWidth = math.abs(screenWidth - picWidth) / 2
   else
-    do
-      if picAspect < screenAspect then
-        local picWidth = fullPicWidth * screenHeight / fullPicHeight
-        rectTransform.sizeDelta = Vector2(picWidth, screenHeight)
-        blackSideWidth = (math.abs)(screenWidth - picWidth) / 2
-      else
-        do
-          rectTransform.sizeDelta = Vector2(screenWidth, screenHeight)
-          ;
-          (self._storyManager):SetUIBlackSideSize(blackSideWidth, blackSideHeight)
-        end
-      end
-    end
+    rectTransform.sizeDelta = Vector2(screenWidth, screenHeight)
   end
+  self._storyManager:SetUIBlackSideSize(blackSideWidth, blackSideHeight)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpotLight._SetAlpha = function(self, alpha)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rawImageColor).a = alpha
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rawImage).color = self._rawImageColor
+function StoryEntitySpotLight:_SetAlpha(alpha)
+  self._rawImageColor.a = alpha
+  self._rawImage.color = self._rawImageColor
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntitySpotLight.GetMaterial = function(self)
-  -- function num : 0_4
-  return (self._rawImage).material
+function StoryEntitySpotLight:GetMaterial()
+  return self._rawImage.material
 end
-
-

@@ -1,17 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_mirage_role_turn_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("mirage_role_turn_system")
 _class("ClientMirageRoleTurnSystem_Render", MirageRoleTurnSystem)
 ClientMirageRoleTurnSystem_Render = ClientMirageRoleTurnSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientMirageRoleTurnSystem_Render._DoRenderMirageMove = function(self, TT)
-  -- function num : 0_0
-  local mirageSvcRender = (self._world):GetService("MirageRender")
+function ClientMirageRoleTurnSystem_Render:_DoRenderMirageMove(TT)
+  local mirageSvcRender = self._world:GetService("MirageRender")
   mirageSvcRender:DoMiragePlayTeamMove(TT)
 end
-
-

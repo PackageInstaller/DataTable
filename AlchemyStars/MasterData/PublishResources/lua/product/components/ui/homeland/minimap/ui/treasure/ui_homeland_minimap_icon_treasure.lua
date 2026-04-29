@@ -1,118 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/treasure/ui_homeland_minimap_icon_treasure.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconTreasure", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconTreasure = UIHomelandMinimapIconTreasure
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconTreasure.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapIconTreasure:OnShow(uiParams)
   self._selectGO = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTreasure.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._birthId = (self:GetIconData()):GetIndex()
-  self.isFirst = (self:GetIconData()):GetParam()
-  self.homeMD = (GameGlobal.GetModule)(HomelandModule)
-  self.info = (self.homeMD):GetTreasureBirthInfo(self._birthId)
+function UIHomelandMinimapIconTreasure:OnInitDone()
+  self._birthId = self:GetIconData():GetIndex()
+  self.isFirst = self:GetIconData():GetParam()
+  self.homeMD = GameGlobal.GetModule(HomelandModule)
+  self.info = self.homeMD:GetTreasureBirthInfo(self._birthId)
   if self.isFirst == true then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnAddMinimapIconMark, HomelandMapIconType.Treasure, self._birthId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnAddMinimapIconMark, HomelandMapIconType.Treasure, self._birthId)
   else
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnInitMinimapIconMark, HomelandMapIconType.Treasure, self._birthId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnInitMinimapIconMark, HomelandMapIconType.Treasure, self._birthId)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTreasure.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMinimapIconTreasure:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTreasure.OnSelected = function(self)
-  -- function num : 0_3
-  (self._selectGO):SetActive(true)
+function UIHomelandMinimapIconTreasure:OnSelected()
+  self._selectGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTreasure.OnUnSelected = function(self)
-  -- function num : 0_4
-  (self._selectGO):SetActive(false)
+function UIHomelandMinimapIconTreasure:OnUnSelected()
+  self._selectGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTreasure.GetShowIconOffset = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMinimapIconTreasure:GetShowIconOffset()
   return Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTreasure.GetShowName = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMinimapIconTreasure:GetShowName()
   if self.info == nil then
     return ""
   end
-  if (self.info).content_view_id == TreasureViewType.TVT_NULL then
-    return (StringTable.Get)("str_homeland_minimap_treasure_null_title")
-  else
-    if (self.info).content_view_id == TreasureViewType.TVT_SIGN then
-      return (StringTable.Get)("str_homeland_minimap_treasure_sign_title")
-    else
-    end
+  if self.info.content_view_id == TreasureViewType.TVT_NULL then
+    return StringTable.Get("str_homeland_minimap_treasure_null_title")
+  elseif self.info.content_view_id == TreasureViewType.TVT_SIGN then
+    return StringTable.Get("str_homeland_minimap_treasure_sign_title")
+  elseif self.info.content_view_id == TreasureViewType.TVT_ASSO then
   end
-  if (self.info).content_view_id == TreasureViewType.TVT_ASSO then
-    return ""
-  end
+  return ""
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTreasure.GetAnimationName = function(self, animType)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandMinimapIconTreasure:GetAnimationName(animType)
   if not self._animationNames then
     self._animationNames = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.IN] = "UIHomelandMinimapIconTreasure_in"
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.OUT] = "UIHomelandMinimapIconTreasure_out"
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapIconTreasure_Selected_in"
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapIconTreasure_Selected_out"
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapIconTreasure_expansion"
+    self._animationNames[MinimapIconAnimationType.IN] = "UIHomelandMinimapIconTreasure_in"
+    self._animationNames[MinimapIconAnimationType.OUT] = "UIHomelandMinimapIconTreasure_out"
+    self._animationNames[MinimapIconAnimationType.SELECT] = "UIHomelandMinimapIconTreasure_Selected_in"
+    self._animationNames[MinimapIconAnimationType.UNSELECT] = "UIHomelandMinimapIconTreasure_Selected_out"
+    self._animationNames[MinimapIconAnimationType.EXPANSION] = "UIHomelandMinimapIconTreasure_expansion"
   end
-  return (self._animationNames)[animType]
+  return self._animationNames[animType]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconTreasure.IsMarkSelf = function(self, type, id)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHomelandMinimapIconTreasure:IsMarkSelf(type, id)
   if type == HomelandMapIconType.Treasure and id == self._birthId then
     return true
   end
   return false
 end
-
-

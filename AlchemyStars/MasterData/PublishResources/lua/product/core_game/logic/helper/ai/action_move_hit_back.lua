@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_hit_back.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMove_HitBack", ActionMoveBase)
 ActionMove_HitBack = ActionMove_HitBack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMove_HitBack.Constructor = function(self)
-  -- function num : 0_0
+function ActionMove_HitBack:Constructor()
   self:_Reset()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMove_HitBack.super).Reset)(self)
+function ActionMove_HitBack:Reset()
+  ActionMove_HitBack.super.Reset(self)
   self:_Reset()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack._Reset = function(self)
-  -- function num : 0_2
+function ActionMove_HitBack:_Reset()
   self.m_listPos_BombToPlayer = nil
   self.m_listPos_PlayerToBomb = nil
   self.m_listPos_HitPlayer = nil
@@ -32,24 +19,21 @@ ActionMove_HitBack._Reset = function(self)
   self.m_listPos_MoveToBomb = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack.OnBegin = function(self)
-  -- function num : 0_3
+function ActionMove_HitBack:OnBegin()
   local entityCaster = self.m_entityOwn
   local aiCmpt = entityCaster:AI()
-  if aiCmpt:CanMove() == false then
+  if false == aiCmpt:CanMove() then
     self:PrintLog("启动移动<不允许>")
-    return 
+    return
   end
   local targetEntity = aiCmpt:GetTargetEntity()
   if targetEntity and targetEntity:HasGridLocation() then
     local nSkillID = self:GetLogicData(1)
     if nSkillID == 0 then
-      return 
+      return
     end
     local posSelf = entityCaster:GetGridPosition()
-    local selfBodyArea = (entityCaster:BodyArea()):GetArea()
+    local selfBodyArea = entityCaster:BodyArea():GetArea()
     local nValidMobility = aiCmpt:GetMobilityValid()
     local listWalkRange = self:ComputeWalkRange(posSelf, nValidMobility, true)
     local entityPlayer = aiCmpt:GetTargetDefault()
@@ -63,20 +47,15 @@ ActionMove_HitBack.OnBegin = function(self)
     self.m_listPos_HitPlayer = self:_InitBestPos_HitPlayer(listWalkRange, selfBodyArea, nSkillID, posPlayer)
     self.m_listPos_MoveToPlayer = self:_InitBestPos_Target(selfBodyArea, nSkillID, posPlayer)
   else
-    do
-      self:PrintLog("没有找到目标")
-    end
+    self:PrintLog("没有找到目标")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack.FindNewTargetPos = function(self)
-  -- function num : 0_4
+function ActionMove_HitBack:FindNewTargetPos()
   local entityOwn = self.m_entityOwn
   local posSelf = entityOwn:GetGridPosition()
-  local aiCmpt = (entityOwn:AI())
-  local posFind = nil
+  local aiCmpt = entityOwn:AI()
+  local posFind
   posFind = self:FindPosByNearCenter(self.m_listPos_BombToPlayer, posSelf, nil, nil)
   if posFind then
     self:PrintLog("击退炸弹到玩家", self:_MakePosString(posFind))
@@ -106,11 +85,8 @@ ActionMove_HitBack.FindNewTargetPos = function(self)
   return posTarget
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack._FindWalkPosData = function(self, listWalkRange, posBaseWalk)
-  -- function num : 0_5 , upvalues : _ENV
-  for key,value in ipairs(listWalkRange) do
+function ActionMove_HitBack:_FindWalkPosData(listWalkRange, posBaseWalk)
+  for key, value in ipairs(listWalkRange) do
     if value.m_nPos == posBaseWalk then
       return value
     end
@@ -118,28 +94,21 @@ ActionMove_HitBack._FindWalkPosData = function(self, listWalkRange, posBaseWalk)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack._FindHitStartPos = function(self, listWalkRange, listBodyArea, nSkillID, posHit, listTargetPos)
-  -- function num : 0_6 , upvalues : _ENV
+function ActionMove_HitBack:_FindHitStartPos(listWalkRange, listBodyArea, nSkillID, posHit, listTargetPos)
   local listPosPlan = {}
   local listPosAttack = self:_ComputeSkillRange(nSkillID, posHit, listBodyArea)
-  for _,posBaseWalk in ipairs(listPosAttack) do
-    for j,posTarget in ipairs(listTargetPos) do
+  for _, posBaseWalk in ipairs(listPosAttack) do
+    for j, posTarget in ipairs(listTargetPos) do
       for i = 1, #listBodyArea do
         local posWork = posBaseWalk + listBodyArea[i]
-        do
-          do
-            if (posWork.x == posHit.x or posWork.y == posHit.y) and self:_IsOneLine(posWork, posHit, posTarget) then
-              local posDataWalk = self:_FindWalkPosData(listWalkRange, posBaseWalk)
-              if posDataWalk then
-                (table.insert)(listPosPlan, posDataWalk)
-              end
+        if posWork.x == posHit.x or posWork.y == posHit.y then
+          if self:_IsOneLine(posWork, posHit, posTarget) then
+            local posDataWalk = self:_FindWalkPosData(listWalkRange, posBaseWalk)
+            if posDataWalk then
+              table.insert(listPosPlan, posDataWalk)
             end
-            do break end
-            -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
           end
+          break
         end
       end
     end
@@ -147,107 +116,75 @@ ActionMove_HitBack._FindHitStartPos = function(self, listWalkRange, listBodyArea
   return listPosPlan
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack._InitBestPos_BombToPlayer = function(self, listWalkRange, selfBodyArea, nSkillID, posPlayer, posBomb)
-  -- function num : 0_7
+function ActionMove_HitBack:_InitBestPos_BombToPlayer(listWalkRange, selfBodyArea, nSkillID, posPlayer, posBomb)
   return self:_FindHitStartPos(listWalkRange, selfBodyArea, nSkillID, posBomb, {posPlayer})
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack._InitBestPos_PlayerToBomb = function(self, listWalkRange, selfBodyArea, nSkillID, posPlayer)
-  -- function num : 0_8 , upvalues : _ENV
-  local utilSvc = (self._world):GetService("TrapLogic")
+function ActionMove_HitBack:_InitBestPos_PlayerToBomb(listWalkRange, selfBodyArea, nSkillID, posPlayer)
+  local utilSvc = self._world:GetService("TrapLogic")
   local listBomb = utilSvc:FindTrapByType(TrapType.BombByHitBack)
   local listBombPos = {}
   for i = 1, #listBomb do
-    local posBomb = (listBomb[i]):GetGridPosition()
-    ;
-    (table.insert)(listBombPos, posBomb)
+    local posBomb = listBomb[i]:GetGridPosition()
+    table.insert(listBombPos, posBomb)
   end
   return self:_FindHitStartPos(listWalkRange, selfBodyArea, nSkillID, posPlayer, listBombPos)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack._InitBestPos_HitPlayer = function(self, listWalkRange, listBodyArea, nSkillID, posPlayer)
-  -- function num : 0_9 , upvalues : _ENV
+function ActionMove_HitBack:_InitBestPos_HitPlayer(listWalkRange, listBodyArea, nSkillID, posPlayer)
   local listPosPlan = {}
   local listPosAttack = self:_ComputeSkillRange(nSkillID, posPlayer, listBodyArea)
-  for _,posBaseWalk in ipairs(listPosAttack) do
+  for _, posBaseWalk in ipairs(listPosAttack) do
     local posDataWalk = self:_FindWalkPosData(listWalkRange, posBaseWalk)
     if posDataWalk then
-      (table.insert)(listPosPlan, posDataWalk)
+      table.insert(listPosPlan, posDataWalk)
     end
   end
   return listPosPlan
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMove_HitBack._InitBestPos_Target = function(self, listBodyArea, nSkillID, posTarget)
-  -- function num : 0_10 , upvalues : _ENV
+function ActionMove_HitBack:_InitBestPos_Target(listBodyArea, nSkillID, posTarget)
   local listPosPlan = {}
   local listPosAttack = self:_ComputeSkillRange(nSkillID, posTarget, listBodyArea)
-  for _,posBaseWalk in ipairs(listPosAttack) do
+  for _, posBaseWalk in ipairs(listPosAttack) do
     local posData = ComputeWalkPos:New(posBaseWalk, 1)
-    ;
-    (table.insert)(listPosPlan, posData)
+    table.insert(listPosPlan, posData)
   end
   return listPosPlan
 end
 
 _class("PosSortByDir", Object)
 PosSortByDir = PosSortByDir
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
 
-PosSortByDir.Constructor = function(self, posBase, posTarget, posWork, nIndex)
-  -- function num : 0_11
-  self.m_dirBase = (self.ComputeDir_Normalize)(posTarget, posBase)
-  self.m_dirWork = (self.ComputeDir_Normalize)(posBase, posWork)
-  self.m_angle = (self.ComputeAngle)(self.m_dirBase, self.m_dirWork)
+function PosSortByDir:Constructor(posBase, posTarget, posWork, nIndex)
+  self.m_dirBase = self.ComputeDir_Normalize(posTarget, posBase)
+  self.m_dirWork = self.ComputeDir_Normalize(posBase, posWork)
+  self.m_angle = self.ComputeAngle(self.m_dirBase, self.m_dirWork)
   self.m_posWork = posWork
   self.m_nIndex = nIndex
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PosSortByDir.ComputeDir_Normalize = function(posA, posB)
-  -- function num : 0_12
+function PosSortByDir.ComputeDir_Normalize(posA, posB)
   local posDir = posA - posB
   return posDir.normalized
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PosSortByDir.ComputeAngle = function(dirA, dirB)
-  -- function num : 0_13
+function PosSortByDir.ComputeAngle(dirA, dirB)
   return dirA.x * dirB.x + dirA.y * dirB.y
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PosSortByDir.GetPosWork = function(self)
-  -- function num : 0_14
+function PosSortByDir:GetPosWork()
   return self.m_posWork
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PosSortByDir._ComparerByDir = function(dataA, dataB)
-  -- function num : 0_15
+function PosSortByDir._ComparerByDir(dataA, dataB)
   local nDistanceA = dataA.m_angle
   local nDistanceB = dataB.m_angle
-  if nDistanceB < nDistanceA then
+  if nDistanceA > nDistanceB then
     return 1
+  elseif nDistanceA < nDistanceB then
+    return -1
   else
-    if nDistanceA < nDistanceB then
-      return -1
-    else
-      return dataB.m_nIndex - dataA.m_nIndex
-    end
+    return dataB.m_nIndex - dataA.m_nIndex
   end
 end
-
-

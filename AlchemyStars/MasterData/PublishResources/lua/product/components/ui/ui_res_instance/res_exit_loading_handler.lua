@@ -1,40 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/res_exit_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResExitLoadingHandler", LoadingHandler)
 ResExitLoadingHandler = ResExitLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ResExitLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0
+function ResExitLoadingHandler:PreLoadBeforeLoadLevel(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ResExitLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function ResExitLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ResExitLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(ResDungeonModule)
+function ResExitLoadingHandler:OnLoadingFinish(...)
+  local module = GameGlobal.GetModule(ResDungeonModule)
   local clientResInstance = module:GetClientResInstance()
   local instanceId = module:GetEnterInstanceId()
   local mainType = clientResInstance:GetMainTypeByInstanceId(instanceId)
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIResDetailController, mainType)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIResDetailController, mainType)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ResExitLoadingHandler.LoadingType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ResExitLoadingHandler:LoadingType()
   return LoadingType.BOTTOM
 end
-
-

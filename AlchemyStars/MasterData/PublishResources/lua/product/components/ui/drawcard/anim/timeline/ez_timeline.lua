@@ -1,198 +1,145 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/anim/timeline/ez_timeline.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local EZTL_EndTag = {All = 1, Any = 2, SomeOne = 3}
+local EZTL_EndTag = {
+  All = 1,
+  Any = 2,
+  SomeOne = 3
+}
 _enum("EZTL_EndTag", EZTL_EndTag)
 _class("EZTL_Player", Object)
 EZTL_Player = EZTL_Player
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_Player.Constructor = function(self)
-  -- function num : 0_0
+function EZTL_Player:Constructor()
   self._tl = nil
   self._stopped = false
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Player.Play = function(self, tl)
-  -- function num : 0_1 , upvalues : _ENV
+function EZTL_Player:Play(tl)
   if tl == nil then
-    (Log.fatal)("[EZTL] 时间线为空，不能播放")
-    return 
+    Log.fatal("[EZTL] 时间线为空，不能播放")
+    return
   end
-  if self._tl and not (self._tl):Over() then
-    (Log.fatal)("[EZTL] 当前时间线正在播放，不能打断")
-    return 
+  if self._tl and not self._tl:Over() then
+    Log.fatal("[EZTL] 当前时间线正在播放，不能打断")
+    return
   end
-  if not GameSingle and not ((GameGlobal.GetModule)(LoginModule)):IsLogin() then
-    (Log.fatal)("[EZTL] 客户端已离线，不执行播放")
-    return 
+  if not GameSingle and not GameGlobal.GetModule(LoginModule):IsLogin() then
+    Log.fatal("[EZTL] 客户端已离线，不执行播放")
+    return
   end
-  self.callback = (GameHelper:GetInstance()):CreateCallback(EZTL_Player.Stop, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.LoginReset, self.callback)
+  self.callback = GameHelper:GetInstance():CreateCallback(EZTL_Player.Stop, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.LoginReset, self.callback)
   self._tl = tl
-  ;
-  (self._tl):Start()
+  self._tl:Start()
   self._stopped = false
-  self._taskID = ((GameGlobal.TaskManager)()):StartTask(self._Update, self)
+  self._taskID = GameGlobal.TaskManager():StartTask(self._Update, self)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Player._Update = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  while not self._stopped and not (self._tl):Over() do
+function EZTL_Player:_Update(TT)
+  while not self._stopped and not self._tl:Over() do
     YIELD(TT)
     if not self._stopped then
-      local ms = (UnityEngine.Time).deltaTime * 1000
-      ;
-      (self._tl):Update(ms)
+      local ms = UnityEngine.Time.deltaTime * 1000
+      self._tl:Update(ms)
     end
   end
-  do
-    if self.callback then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.LoginReset, self.callback)
-    end
+  if self.callback then
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.LoginReset, self.callback)
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Player.Stop = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (self._tl):Over() then
-    (self._tl):Stop()
+function EZTL_Player:Stop()
+  if not self._tl:Over() then
+    self._tl:Stop()
     self._tl = nil
   end
   self._stopped = true
   if self.callback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.LoginReset, self.callback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.LoginReset, self.callback)
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Player.IsPlaying = function(self)
-  -- function num : 0_4
+function EZTL_Player:IsPlaying()
   if self._tl then
-    return not (self._tl):Over()
+    return not self._tl:Over()
   end
   return false
 end
 
 _class("EZTL_Base", Object)
 EZTL_Base = EZTL_Base
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_Base.Constructor = function(self)
-  -- function num : 0_5
+function EZTL_Base:Constructor()
   self._running = false
   self._des = ""
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Base.Start = function(self)
-  -- function num : 0_6
+function EZTL_Base:Start()
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Base.StartLog = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function EZTL_Base:StartLog()
   if self._des then
-    (Log.debug)("[EZTL] 开始时间线--->", self._des)
+    Log.debug("[EZTL] 开始时间线--->", self._des)
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Base.EndLog = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function EZTL_Base:EndLog()
   if self._des then
-    (Log.debug)("[EZTL] 结束时间线===>", self._des)
+    Log.debug("[EZTL] 结束时间线===>", self._des)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Base.Stop = function(self)
-  -- function num : 0_9
+function EZTL_Base:Stop()
   self._running = false
   self:EndLog()
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Base.Update = function(self, deltaTimeMS)
-  -- function num : 0_10
+function EZTL_Base:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Base.Over = function(self)
-  -- function num : 0_11
+function EZTL_Base:Over()
   return not self._running
 end
 
 _class("EZTL_Sequence", EZTL_Base)
 EZTL_Sequence = EZTL_Sequence
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_Sequence.Constructor = function(self, timelines, des)
-  -- function num : 0_12
+function EZTL_Sequence:Constructor(timelines, des)
   self._timelines = timelines
   self._currentIdx = 0
   self._current = nil
   self._des = des
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Sequence.Start = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function EZTL_Sequence:Start()
   self:StartLog()
   if not self._timelines or #self._timelines == 0 then
-    (Log.fatal)("[Timeline] sequence time line children is null")
-    return 
+    Log.fatal("[Timeline] sequence time line children is null")
+    return
   end
   self._count = #self._timelines
   self._currentIdx = 1
-  self._current = (self._timelines)[1]
-  ;
-  (self._current):Start()
+  self._current = self._timelines[1]
+  self._current:Start()
   self._running = true
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Sequence.Update = function(self, deltaTimeMS)
-  -- function num : 0_14
+function EZTL_Sequence:Update(deltaTimeMS)
   if self._running then
-    (self._current):Update(deltaTimeMS)
-    if (self._current):Over() then
+    self._current:Update(deltaTimeMS)
+    if self._current:Over() then
       self._currentIdx = self._currentIdx + 1
-      if self._count < self._currentIdx then
+      if self._currentIdx > self._count then
         self:Stop()
       else
-        self._current = (self._timelines)[self._currentIdx]
-        ;
-        (self._current):Start()
+        self._current = self._timelines[self._currentIdx]
+        self._current:Start()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Sequence.Stop = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function EZTL_Sequence:Stop()
   self._running = false
-  for _,tl in ipairs(self._timelines) do
+  for _, tl in ipairs(self._timelines) do
     if not tl:Over() then
       tl:Stop()
     end
@@ -202,10 +149,8 @@ end
 
 _class("EZTL_Parallel", EZTL_Base)
 EZTL_Parallel = EZTL_Parallel
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_Parallel.Constructor = function(self, timelines, endTag, endOne, des)
-  -- function num : 0_16 , upvalues : EZTL_EndTag, _ENV
+function EZTL_Parallel:Constructor(timelines, endTag, endOne, des)
   self._timelines = timelines
   self._endTag = endTag or EZTL_EndTag.All
   self._endOne = endOne
@@ -214,59 +159,45 @@ EZTL_Parallel.Constructor = function(self, timelines, endTag, endOne, des)
   self._endFlag = false
   if self._endTag == EZTL_EndTag.All then
     self._endFlag = true
-    self._endFunc = function(_end1, _end2)
-    -- function num : 0_16_0
-    return not _end1 or _end2
-  end
-
-  else
-    if self._endTag == EZTL_EndTag.Any then
-      self._endFlag = false
-      self._endFunc = function(_end1, _end2)
-    -- function num : 0_16_1
-    return _end1 or _end2
-  end
-
-    else
-      if self._endTag == EZTL_EndTag.SomeOne then
-        self._targetOne = (self._timelines)[self._endOne]
-        self._endFunc = function(_end1, _end2)
-    -- function num : 0_16_2 , upvalues : self
-    return (self._targetOne):Over()
-  end
-
-      else
-        ;
-        (Log.fatal)("[Timeline] Parallel timeline tag error：", self._endTag)
-      end
+    
+    function self._endFunc(_end1, _end2)
+      return _end1 and _end2
     end
+  elseif self._endTag == EZTL_EndTag.Any then
+    self._endFlag = false
+    
+    function self._endFunc(_end1, _end2)
+      return _end1 or _end2
+    end
+  elseif self._endTag == EZTL_EndTag.SomeOne then
+    self._targetOne = self._timelines[self._endOne]
+    
+    function self._endFunc(_end1, _end2)
+      return self._targetOne:Over()
+    end
+  else
+    Log.fatal("[Timeline] Parallel timeline tag error：", self._endTag)
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Parallel.Start = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function EZTL_Parallel:Start()
   self:StartLog()
   if not self._timelines or #self._timelines == 0 then
-    (Log.fatal)("[Timeline] parallel time line children is null")
-    return 
+    Log.fatal("[Timeline] parallel time line children is null")
+    return
   end
-  for _,tl in ipairs(self._timelines) do
+  for _, tl in ipairs(self._timelines) do
     tl:Start()
   end
   self._running = true
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Parallel.Update = function(self, deltaTimeMS)
-  -- function num : 0_18 , upvalues : _ENV
+function EZTL_Parallel:Update(deltaTimeMS)
   if self._running then
     local _over = self._endFlag
-    for _,tl in ipairs(self._timelines) do
+    for _, tl in ipairs(self._timelines) do
       tl:Update(deltaTimeMS)
-      _over = (self._endFunc)(_over, tl:Over())
+      _over = self._endFunc(_over, tl:Over())
     end
     if _over then
       self:Stop()
@@ -274,12 +205,9 @@ EZTL_Parallel.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Parallel.Stop = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function EZTL_Parallel:Stop()
   self._running = false
-  for _,tl in ipairs(self._timelines) do
+  for _, tl in ipairs(self._timelines) do
     if not tl:Over() then
       tl:Stop()
     end
@@ -289,35 +217,27 @@ end
 
 _class("EZTL_Wait", EZTL_Base)
 EZTL_Wait = EZTL_Wait
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_Wait.Constructor = function(self, _time, des)
-  -- function num : 0_20
+function EZTL_Wait:Constructor(_time, des)
   self._delayTimeMS = _time
   self._timer = 0
   self._des = des
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Wait.Start = function(self)
-  -- function num : 0_21
+function EZTL_Wait:Start()
   self:StartLog()
   if self._delayTimeMS <= 0 then
     self:Stop()
-    return 
+    return
   end
   self._timer = 0
   self._running = true
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Wait.Update = function(self, deltaTimeMS)
-  -- function num : 0_22
+function EZTL_Wait:Update(deltaTimeMS)
   if self._running then
     self._timer = self._timer + deltaTimeMS
-    if self._delayTimeMS <= self._timer then
+    if self._timer >= self._delayTimeMS then
       self:Stop()
     end
   end
@@ -325,30 +245,22 @@ end
 
 _class("EZTL_Callback", EZTL_Base)
 EZTL_Callback = EZTL_Callback
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_Callback.Constructor = function(self, cb, des)
-  -- function num : 0_23
+function EZTL_Callback:Constructor(cb, des)
   self._callback = cb
   self._des = des
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_Callback.Start = function(self)
-  -- function num : 0_24
+function EZTL_Callback:Start()
   self:StartLog()
-  ;
-  (self._callback)()
+  self._callback()
   self:Stop()
 end
 
 _class("EZTL_DOTweenMove", EZTL_Base)
 EZTL_DOTweenMove = EZTL_DOTweenMove
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_DOTweenMove.Constructor = function(self, transform, endPos, duration, ease, des)
-  -- function num : 0_25
+function EZTL_DOTweenMove:Constructor(transform, endPos, duration, ease, des)
   self.transform = transform
   self.endPos = endPos
   self.duration = duration
@@ -356,36 +268,26 @@ EZTL_DOTweenMove.Constructor = function(self, transform, endPos, duration, ease,
   self._des = des
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_DOTweenMove.Start = function(self)
-  -- function num : 0_26
+function EZTL_DOTweenMove:Start()
   self:StartLog()
-  self._tweener = (((self.transform):DOMove(self.endPos, self.duration)):SetEase(self.ease)):OnComplete(function()
-    -- function num : 0_26_0 , upvalues : self
+  self._tweener = self.transform:DOMove(self.endPos, self.duration):SetEase(self.ease):OnComplete(function()
     self:Stop()
-  end
-)
+  end)
   self._running = true
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_DOTweenMove.Stop = function(self)
-  -- function num : 0_27
+function EZTL_DOTweenMove:Stop()
   self._running = false
-  if (self._tweener):IsPlaying() then
-    (self._tweener):Kill()
+  if self._tweener:IsPlaying() then
+    self._tweener:Kill()
   end
   self:EndLog()
 end
 
 _class("EZTL_DOTweenRotate", EZTL_Base)
 EZTL_DOTweenRotate = EZTL_DOTweenRotate
--- DECOMPILER ERROR at PC142: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_DOTweenRotate.Constructor = function(self, transform, endRot, duration, ease, des)
-  -- function num : 0_28
+function EZTL_DOTweenRotate:Constructor(transform, endRot, duration, ease, des)
   self.transform = transform
   self.endPos = endRot
   self.duration = duration
@@ -393,83 +295,63 @@ EZTL_DOTweenRotate.Constructor = function(self, transform, endRot, duration, eas
   self._des = des
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_DOTweenRotate.Start = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function EZTL_DOTweenRotate:Start()
   self:StartLog()
-  self._tweener = (((self.transform):DORotate(self.endPos, self.duration, ((DG.Tweening).RotateMode).Fast)):SetEase(self.ease)):OnComplete(function()
-    -- function num : 0_29_0 , upvalues : self
+  self._tweener = self.transform:DORotate(self.endPos, self.duration, DG.Tweening.RotateMode.Fast):SetEase(self.ease):OnComplete(function()
     self:Stop()
-  end
-)
+  end)
   self._running = true
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_DOTweenRotate.Stop = function(self)
-  -- function num : 0_30
+function EZTL_DOTweenRotate:Stop()
   self._running = false
-  if (self._tweener):IsPlaying() then
-    (self._tweener):Kill()
+  if self._tweener:IsPlaying() then
+    self._tweener:Kill()
   end
   self:EndLog()
 end
 
 _class("EZTL_PlayAnimation", EZTL_Base)
 EZTL_PlayAnimation = EZTL_PlayAnimation
--- DECOMPILER ERROR at PC157: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_PlayAnimation.Constructor = function(self, animation, name, des)
-  -- function num : 0_31
+function EZTL_PlayAnimation:Constructor(animation, name, des)
   self._anim = animation
   self._name = name
   self._des = des
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayAnimation.Start = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function EZTL_PlayAnimation:Start()
   self:StartLog()
   self._duration = 0
   self._timer = 0
   if not self._anim then
-    (Log.fatal)("[EZTL] Animation 组件为空，不能播放")
-    return 
+    Log.fatal("[EZTL] Animation 组件为空，不能播放")
+    return
   end
   if not self._name then
-    (Log.fatal)("[EZTL] Animation 名称为空，不能播放")
-    return 
+    Log.fatal("[EZTL] Animation 名称为空，不能播放")
+    return
   end
-  local clip = (self._anim):GetClip(self._name)
+  local clip = self._anim:GetClip(self._name)
   if not clip then
-    (Log.fatal)("[EZTL] 找不到AnimationClip: ", self._name)
-    return 
+    Log.fatal("[EZTL] 找不到AnimationClip: ", self._name)
+    return
   end
   self._duration = clip.length * 1000
-  ;
-  (self._anim):Play(self._name)
+  self._anim:Play(self._name)
   self._running = true
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayAnimation.Update = function(self, deltaTimeMS)
-  -- function num : 0_33
+function EZTL_PlayAnimation:Update(deltaTimeMS)
   self._timer = self._timer + deltaTimeMS
-  if self._duration <= self._timer then
+  if self._timer >= self._duration then
     self:Stop()
   end
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayAnimation.Stop = function(self)
-  -- function num : 0_34
+function EZTL_PlayAnimation:Stop()
   if self._running then
-    (self._anim):Stop()
+    self._anim:Stop()
     self._running = false
   end
   self:EndLog()
@@ -477,10 +359,8 @@ end
 
 _class("EZTL_MatColor", EZTL_Base)
 EZTL_MatColor = EZTL_MatColor
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_MatColor.Constructor = function(self, mat, propertyName, fromColor, toColor, duration, des)
-  -- function num : 0_35
+function EZTL_MatColor:Constructor(mat, propertyName, fromColor, toColor, duration, des)
   self._mat = mat
   self._propertyName = propertyName
   self._fromColor = fromColor
@@ -489,43 +369,32 @@ EZTL_MatColor.Constructor = function(self, mat, propertyName, fromColor, toColor
   self._des = des
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_MatColor._setColor = function(self, color)
-  -- function num : 0_36
-  (self._mat):SetColor(self._propertyName, color)
+function EZTL_MatColor:_setColor(color)
+  self._mat:SetColor(self._propertyName, color)
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_MatColor.Start = function(self)
-  -- function num : 0_37
+function EZTL_MatColor:Start()
   self:_setColor(self._fromColor)
   self._timer = 0
   self._running = true
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_MatColor.Update = function(self, deltaTimeMS)
-  -- function num : 0_38 , upvalues : _ENV
+function EZTL_MatColor:Update(deltaTimeMS)
   if self._running then
-    if self._duration < self._timer then
+    if self._timer > self._duration then
       self:_setColor(self._toColor)
       self:Stop()
     else
       self._timer = self._timer + deltaTimeMS
-      self:_setColor((Color.Lerp)(self._fromColor, self._toColor, self._timer / self._duration))
+      self:_setColor(Color.Lerp(self._fromColor, self._toColor, self._timer / self._duration))
     end
   end
 end
 
 _class("EZTL_MatFloat", EZTL_Base)
 EZTL_MatFloat = EZTL_MatFloat
--- DECOMPILER ERROR at PC193: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_MatFloat.Constructor = function(self, mat, propertyName, to, duration, des)
-  -- function num : 0_39
+function EZTL_MatFloat:Constructor(mat, propertyName, to, duration, des)
   self._mat = mat
   self._propertyName = propertyName
   self._from = mat:GetFloat(propertyName)
@@ -534,42 +403,30 @@ EZTL_MatFloat.Constructor = function(self, mat, propertyName, to, duration, des)
   self._des = des
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_MatFloat._setValue = function(self, value)
-  -- function num : 0_40
-  (self._mat):SetFloat(self._propertyName, value)
+function EZTL_MatFloat:_setValue(value)
+  self._mat:SetFloat(self._propertyName, value)
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_MatFloat.Start = function(self)
-  -- function num : 0_41
+function EZTL_MatFloat:Start()
   self._timer = 0
   self._running = true
   self:StartLog()
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_MatFloat.Update = function(self, deltaTimeMS)
-  -- function num : 0_42 , upvalues : _ENV
+function EZTL_MatFloat:Update(deltaTimeMS)
   if self._running then
-    if self._duration < self._timer then
+    if self._timer > self._duration then
       self:_setValue(self._to)
       self._running = false
       self:Stop()
     else
       self._timer = self._timer + deltaTimeMS
-      self:_setValue((Mathf.Lerp)(self._from, self._to, self._timer / self._duration))
+      self:_setValue(Mathf.Lerp(self._from, self._to, self._timer / self._duration))
     end
   end
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_MatFloat.Stop = function(self)
-  -- function num : 0_43
+function EZTL_MatFloat:Stop()
   if self._running then
     self._running = false
   end
@@ -578,22 +435,16 @@ end
 
 _class("EZTL_PlayEffect", EZTL_Base)
 EZTL_PlayEffect = EZTL_PlayEffect
--- DECOMPILER ERROR at PC214: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_PlayEffect.Constructor = function(self, gameObject, duration, des)
-  -- function num : 0_44
+function EZTL_PlayEffect:Constructor(gameObject, duration, des)
   self.eft = gameObject
   self.duration = duration
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayEffect.Start = function(self)
-  -- function num : 0_45
+function EZTL_PlayEffect:Start()
   self._timer = 0
-  ;
-  (self.eft):SetActive(true)
+  self.eft:SetActive(true)
   self._running = true
   self:StartLog()
   if self.duration == nil then
@@ -602,96 +453,72 @@ EZTL_PlayEffect.Start = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayEffect.Update = function(self, deltaTimeMS)
-  -- function num : 0_46
+function EZTL_PlayEffect:Update(deltaTimeMS)
   if not self._running then
-    return 
+    return
   end
   if self.duration then
     self._timer = self._timer + deltaTimeMS
-    if self.duration < self._timer then
+    if self._timer > self.duration then
       self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayEffect.Stop = function(self)
-  -- function num : 0_47
+function EZTL_PlayEffect:Stop()
   self._running = false
-  ;
-  (self.eft):SetActive(false)
+  self.eft:SetActive(false)
   self:EndLog()
 end
 
 _class("EZTL_PlayAudioOnce", EZTL_Base)
 EZTL_PlayAudioOnce = EZTL_PlayAudioOnce
--- DECOMPILER ERROR at PC232: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_PlayAudioOnce.Constructor = function(self, audioName, des)
-  -- function num : 0_48
+function EZTL_PlayAudioOnce:Constructor(audioName, des)
   self.audio = audioName
   self._des = des
 end
 
--- DECOMPILER ERROR at PC235: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayAudioOnce.Start = function(self)
-  -- function num : 0_49 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundResource)(self.audio, false)
+function EZTL_PlayAudioOnce:Start()
+  AudioHelperController.PlayUISoundResource(self.audio, false)
   self._running = false
   self:StartLog()
 end
 
 _class("EZTL_PlayAudioByID", EZTL_Base)
 EZTL_PlayAudioByID = EZTL_PlayAudioByID
--- DECOMPILER ERROR at PC244: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_PlayAudioByID.Constructor = function(self, audioID, delayTime, des)
-  -- function num : 0_50
+function EZTL_PlayAudioByID:Constructor(audioID, delayTime, des)
   self.audio = audioID
   self._des = des
-  if delayTime and delayTime > 0 then
+  if delayTime and 0 < delayTime then
     self._delayTime = delayTime
   end
 end
 
--- DECOMPILER ERROR at PC247: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayAudioByID.Start = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function EZTL_PlayAudioByID:Start()
   if self._delayTime then
     self._timer = 0
     self._running = true
   else
-    ;
-    (AudioHelperController.RequestAndPlayUIVoiceAutoRelease)(self.audio)
+    AudioHelperController.RequestAndPlayUIVoiceAutoRelease(self.audio)
     self._running = false
   end
   self:StartLog()
 end
 
--- DECOMPILER ERROR at PC250: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayAudioByID.Update = function(self, deltaTimeMS)
-  -- function num : 0_52 , upvalues : _ENV
+function EZTL_PlayAudioByID:Update(deltaTimeMS)
   if self._running then
     self._timer = self._timer + deltaTimeMS
-    if self._delayTime < self._timer then
-      (AudioHelperController.RequestAndPlayUIVoiceAutoRelease)(self.audio)
+    if self._timer > self._delayTime then
+      AudioHelperController.RequestAndPlayUIVoiceAutoRelease(self.audio)
       self._running = false
       self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC253: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_PlayAudioByID.Stop = function(self)
-  -- function num : 0_53
+function EZTL_PlayAudioByID:Stop()
   if self._running then
     self._running = false
   end
@@ -700,10 +527,8 @@ end
 
 _class("EZTL_TweenSliderValue", EZTL_Base)
 EZTL_TweenSliderValue = EZTL_TweenSliderValue
--- DECOMPILER ERROR at PC262: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_TweenSliderValue.Constructor = function(self, slider, from, to, duration, des)
-  -- function num : 0_54
+function EZTL_TweenSliderValue:Constructor(slider, from, to, duration, des)
   self._slider = slider
   self._from = from
   self._to = to
@@ -711,32 +536,21 @@ EZTL_TweenSliderValue.Constructor = function(self, slider, from, to, duration, d
   self._des = des
 end
 
--- DECOMPILER ERROR at PC265: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_TweenSliderValue.Start = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function EZTL_TweenSliderValue:Start()
   self:StartLog()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._slider).value = self._from
-  self._tweener = (((self._slider):DOValue(self._to, self._duration, false)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_55_0 , upvalues : self
+  self._slider.value = self._from
+  self._tweener = self._slider:DOValue(self._to, self._duration, false):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
     self._running = false
     self:Stop()
-  end
-)
+  end)
   self._running = true
 end
 
--- DECOMPILER ERROR at PC268: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_TweenSliderValue.Stop = function(self)
-  -- function num : 0_56
+function EZTL_TweenSliderValue:Stop()
   if self._running then
     self._running = false
-    if (self._tweener):IsPlaying() then
-      (self._tweener):Kill()
+    if self._tweener:IsPlaying() then
+      self._tweener:Kill()
     end
   end
   self:EndLog()
@@ -744,10 +558,8 @@ end
 
 _class("EZTL_TextUpAnim", EZTL_Base)
 EZTL_TextUpAnim = EZTL_TextUpAnim
--- DECOMPILER ERROR at PC277: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_TextUpAnim.Constructor = function(self, text, from, to, duration, des)
-  -- function num : 0_57
+function EZTL_TextUpAnim:Constructor(text, from, to, duration, des)
   self._text = text
   self._from = from
   self._to = to
@@ -756,87 +568,65 @@ EZTL_TextUpAnim.Constructor = function(self, text, from, to, duration, des)
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC280: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_TextUpAnim.Start = function(self)
-  -- function num : 0_58
-  (self._text):SetText(self._from)
+function EZTL_TextUpAnim:Start()
+  self._text:SetText(self._from)
   self._running = true
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC283: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_TextUpAnim.Update = function(self, deltaTimeMS)
-  -- function num : 0_59 , upvalues : _ENV
+function EZTL_TextUpAnim:Update(deltaTimeMS)
   if self._running then
     if self._timer < self._duration then
-      local cur = (math.ceil)(self._from + (self._to - self._from) * (self._timer / self._duration))
-      ;
-      (self._text):SetText(cur)
+      local cur = math.ceil(self._from + (self._to - self._from) * (self._timer / self._duration))
+      self._text:SetText(cur)
       self._timer = self._timer + deltaTimeMS
     else
-      do
-        self._running = false
-        self:Stop()
-      end
+      self._running = false
+      self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_TextUpAnim.Stop = function(self)
-  -- function num : 0_60
+function EZTL_TextUpAnim:Stop()
   if self._running then
     self._running = false
     self._timer = 0
   end
-  ;
-  (self._text):SetText(self._to)
+  self._text:SetText(self._to)
   self:EndLog()
 end
 
 _class("EZTL_RandomText", EZTL_Base)
 EZTL_RandomText = EZTL_RandomText
--- DECOMPILER ERROR at PC295: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_RandomText.Constructor = function(self, text, content, duration, des)
-  -- function num : 0_61 , upvalues : _ENV
+function EZTL_RandomText:Constructor(text, content, duration, des)
   self._text = text
   self._duration = duration
   self._content = content
   self._des = des
-  self._childS = (string.split)(self._content, " ")
+  self._childS = string.split(self._content, " ")
   self._charLib = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
   self._libLen = #self._charLib
 end
 
--- DECOMPILER ERROR at PC298: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_RandomText.Start = function(self)
-  -- function num : 0_62
+function EZTL_RandomText:Start()
   self._running = true
   self._timer = 0
-  ;
-  (self._text):SetText(self:_random())
+  self._text:SetText(self:_random())
   self:StartLog()
 end
 
--- DECOMPILER ERROR at PC301: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_RandomText._random = function(self)
-  -- function num : 0_63 , upvalues : _ENV
+function EZTL_RandomText:_random()
   local s = ""
   for i = 1, #self._childS do
-    local child = (self._childS)[i]
+    local child = self._childS[i]
     local c = {}
     for j = 1, #child do
-      local idx = (math.random)(1, self._libLen)
-      local code = (string.byte)(self._charLib, idx)
+      local idx = math.random(1, self._libLen)
+      local code = string.byte(self._charLib, idx)
       c[#c + 1] = code
     end
-    s = s .. (string.char)((table.unpack)(c))
+    s = s .. string.char(table.unpack(c))
     if i < #self._childS then
       s = s .. " "
     end
@@ -844,53 +634,40 @@ EZTL_RandomText._random = function(self)
   return s
 end
 
--- DECOMPILER ERROR at PC304: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_RandomText.Update = function(self, deltaTimeMS)
-  -- function num : 0_64
+function EZTL_RandomText:Update(deltaTimeMS)
   if self._running then
     self._timer = self._timer + deltaTimeMS
-    if self._duration < self._timer then
+    if self._timer > self._duration then
       self._running = false
       self:Stop()
-      return 
+      return
     end
-    ;
-    (self._text):SetText(self:_random())
+    self._text:SetText(self:_random())
   end
 end
 
--- DECOMPILER ERROR at PC307: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_RandomText.Stop = function(self)
-  -- function num : 0_65
+function EZTL_RandomText:Stop()
   if self._running then
     self._running = false
   end
-  ;
-  (self._text):SetText(self._content)
+  self._text:SetText(self._content)
   self:EndLog()
 end
 
 _class("EZTL_AlphaTween", EZTL_Base)
 EZTL_AlphaTween = EZTL_AlphaTween
--- DECOMPILER ERROR at PC316: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_AlphaTween.Constructor = function(self, graphic, target, duration, des)
-  -- function num : 0_66
+function EZTL_AlphaTween:Constructor(graphic, target, duration, des)
   self._graphic = graphic
   self._duration = duration
   self._target = target
   self._des = des
 end
 
--- DECOMPILER ERROR at PC319: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_AlphaTween.Start = function(self)
-  -- function num : 0_67
+function EZTL_AlphaTween:Start()
   self._running = true
   self._timer = 0
-  local color = (self._graphic).color
+  local color = self._graphic.color
   self._r = color.r
   self._g = color.g
   self._b = color.b
@@ -898,100 +675,69 @@ EZTL_AlphaTween.Start = function(self)
   self:StartLog()
 end
 
--- DECOMPILER ERROR at PC322: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_AlphaTween.Update = function(self, deltaTimeMS)
-  -- function num : 0_68 , upvalues : _ENV
+function EZTL_AlphaTween:Update(deltaTimeMS)
   if self._running then
     self._timer = self._timer + deltaTimeMS
-    if self._duration < self._timer then
+    if self._timer > self._duration then
       self._running = false
       self:Stop()
-      return 
+      return
     end
-    local alpha = (Mathf.Lerp)(self._from, self._target, self._timer / self._duration)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._graphic).color = Color(self._r, self._g, self._b, alpha)
+    local alpha = Mathf.Lerp(self._from, self._target, self._timer / self._duration)
+    self._graphic.color = Color(self._r, self._g, self._b, alpha)
   end
 end
 
--- DECOMPILER ERROR at PC325: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_AlphaTween.Stop = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function EZTL_AlphaTween:Stop()
   if self._running then
     self._running = false
   else
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._graphic).color = Color(self._r, self._g, self._b, self._target)
+    self._graphic.color = Color(self._r, self._g, self._b, self._target)
   end
   self:EndLog()
 end
 
 _class("EZTL_AnchorMove", EZTL_Base)
 EZTL_AnchorMove = EZTL_AnchorMove
--- DECOMPILER ERROR at PC334: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_AnchorMove.Constructor = function(self, rect, target, duration, des)
-  -- function num : 0_70
+function EZTL_AnchorMove:Constructor(rect, target, duration, des)
   self._rect = rect
   self._target = target
   self._duration = duration
   self._des = des
 end
 
--- DECOMPILER ERROR at PC337: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_AnchorMove.Start = function(self)
-  -- function num : 0_71
+function EZTL_AnchorMove:Start()
   self._timer = 0
-  self._from = (self._rect).anchoredPosition
+  self._from = self._rect.anchoredPosition
   self._running = true
   self:StartLog()
 end
 
--- DECOMPILER ERROR at PC340: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_AnchorMove.Update = function(self, dt)
-  -- function num : 0_72 , upvalues : _ENV
+function EZTL_AnchorMove:Update(dt)
   if self._running then
     self._timer = self._timer + dt
-    if self._duration < self._timer then
+    if self._timer > self._duration then
       self._running = false
       self:Stop()
     else
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._rect).anchoredPosition = (Vector2.Lerp)(self._from, self._target, self._timer / self._duration)
+      self._rect.anchoredPosition = Vector2.Lerp(self._from, self._target, self._timer / self._duration)
     end
   end
 end
 
--- DECOMPILER ERROR at PC343: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_AnchorMove.Stop = function(self)
-  -- function num : 0_73
+function EZTL_AnchorMove:Stop()
   if self._running then
     self._running = false
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = self._target
+  self._rect.anchoredPosition = self._target
   self:EndLog()
 end
 
 _class("EZTL_TextUpAnimFormat", EZTL_Base)
 EZTL_TextUpAnimFormat = EZTL_TextUpAnimFormat
--- DECOMPILER ERROR at PC352: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_TextUpAnimFormat.Constructor = function(self, text, from, to, duration, format, des)
-  -- function num : 0_74
+function EZTL_TextUpAnimFormat:Constructor(text, from, to, duration, format, des)
   self._text = text
   self._from = from
   self._to = to
@@ -1001,79 +747,56 @@ EZTL_TextUpAnimFormat.Constructor = function(self, text, from, to, duration, for
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC355: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_TextUpAnimFormat.Start = function(self)
-  -- function num : 0_75 , upvalues : _ENV
-  (self._text):SetText((string.format)(self._format, self._from))
+function EZTL_TextUpAnimFormat:Start()
+  self._text:SetText(string.format(self._format, self._from))
   self._running = true
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC358: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_TextUpAnimFormat.Update = function(self, deltaTimeMS)
-  -- function num : 0_76 , upvalues : _ENV
+function EZTL_TextUpAnimFormat:Update(deltaTimeMS)
   if self._running then
     if self._timer < self._duration then
-      local cur = (math.ceil)(self._from + (self._to - self._from) * (self._timer / self._duration))
-      ;
-      (self._text):SetText((string.format)(self._format, cur))
+      local cur = math.ceil(self._from + (self._to - self._from) * (self._timer / self._duration))
+      self._text:SetText(string.format(self._format, cur))
       self._timer = self._timer + deltaTimeMS
     else
-      do
-        self._running = false
-        self:Stop()
-      end
+      self._running = false
+      self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC361: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_TextUpAnimFormat.Stop = function(self)
-  -- function num : 0_77 , upvalues : _ENV
+function EZTL_TextUpAnimFormat:Stop()
   if self._running then
     self._running = false
     self._timer = 0
   end
-  ;
-  (self._text):SetText((string.format)(self._format, self._to))
+  self._text:SetText(string.format(self._format, self._to))
   self:EndLog()
 end
 
 _class("EZTL_CanvasGroupAlpha", EZTL_Base)
 EZTL_CanvasGroupAlpha = EZTL_CanvasGroupAlpha
--- DECOMPILER ERROR at PC370: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_CanvasGroupAlpha.Constructor = function(self, canvasGroup, target, duration, des)
-  -- function num : 0_78
+function EZTL_CanvasGroupAlpha:Constructor(canvasGroup, target, duration, des)
   self._canvasGroup = canvasGroup
   self._target = target
   self._duration = duration
   self._des = des
 end
 
--- DECOMPILER ERROR at PC373: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_CanvasGroupAlpha.Start = function(self)
-  -- function num : 0_79
+function EZTL_CanvasGroupAlpha:Start()
   self:StartLog()
-  self._from = (self._canvasGroup).alpha
+  self._from = self._canvasGroup.alpha
   self._running = true
   self._timer = 0
 end
 
--- DECOMPILER ERROR at PC376: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_CanvasGroupAlpha.Update = function(self, dtMS)
-  -- function num : 0_80 , upvalues : _ENV
+function EZTL_CanvasGroupAlpha:Update(dtMS)
   if self._running then
     self._timer = self._timer + dtMS
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
     if self._timer < self._duration then
-      (self._canvasGroup).alpha = (Mathf.Lerp)(self._from, self._target, self._timer / self._duration)
+      self._canvasGroup.alpha = Mathf.Lerp(self._from, self._target, self._timer / self._duration)
     else
       self._running = false
       self:Stop()
@@ -1081,72 +804,47 @@ EZTL_CanvasGroupAlpha.Update = function(self, dtMS)
   end
 end
 
--- DECOMPILER ERROR at PC379: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_CanvasGroupAlpha.Stop = function(self)
-  -- function num : 0_81
+function EZTL_CanvasGroupAlpha:Stop()
   self:EndLog()
   if self._running then
     self._running = false
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = self._target
+  self._canvasGroup.alpha = self._target
 end
 
 _class("EZTL_LocalScale", EZTL_Base)
 EZTL_LocalScale = EZTL_LocalScale
--- DECOMPILER ERROR at PC388: Confused about usage of register: R1 in 'UnsetPending'
 
-EZTL_LocalScale.Constructor = function(self, transform, to, duration, des)
-  -- function num : 0_82
+function EZTL_LocalScale:Constructor(transform, to, duration, des)
   self._transform = transform
   self._to = to
   self._duration = duration
   self._des = des
 end
 
--- DECOMPILER ERROR at PC391: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_LocalScale.Start = function(self)
-  -- function num : 0_83
-  self._from = ((self._transform).localScale).x
+function EZTL_LocalScale:Start()
+  self._from = self._transform.localScale.x
   self._running = true
   self._timer = 0
   self:StartLog()
 end
 
--- DECOMPILER ERROR at PC394: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_LocalScale.Update = function(self, dtMS)
-  -- function num : 0_84 , upvalues : _ENV
+function EZTL_LocalScale:Update(dtMS)
   if self._running and self._timer < self._duration then
     self._timer = self._timer + dtMS
-    if self._duration <= self._timer then
+    if self._timer >= self._duration then
       self._running = false
       self:Stop()
     else
-      local scale = (Mathf.Lerp)(self._from, self._to, self._timer / self._duration)
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._transform).localScale = Vector3.one * scale
+      local scale = Mathf.Lerp(self._from, self._to, self._timer / self._duration)
+      self._transform.localScale = Vector3.one * scale
     end
   end
 end
 
--- DECOMPILER ERROR at PC397: Confused about usage of register: R1 in 'UnsetPending'
-
-EZTL_LocalScale.Stop = function(self)
-  -- function num : 0_85 , upvalues : _ENV
+function EZTL_LocalScale:Stop()
   if self._running then
     self._running = false
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._transform).localScale = Vector3.one * self._to
+  self._transform.localScale = Vector3.one * self._to
 end
-
-

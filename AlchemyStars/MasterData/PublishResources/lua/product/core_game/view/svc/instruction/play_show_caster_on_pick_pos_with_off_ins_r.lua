@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_show_caster_on_pick_pos_with_off_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayShowCasterOnPickPosWithOffInstruction", BaseInstruction)
 PlayShowCasterOnPickPosWithOffInstruction = PlayShowCasterOnPickPosWithOffInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayShowCasterOnPickPosWithOffInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayShowCasterOnPickPosWithOffInstruction:Constructor(paramList)
   self._reset = tonumber(paramList.reset)
   self._disToPickPos = tonumber(paramList.disToPickPos)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayShowCasterOnPickPosWithOffInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayShowCasterOnPickPosWithOffInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local utilDataSvc = world:GetService("UtilData")
   local boardServiceRender = world:GetService("BoardRender")
@@ -24,31 +14,23 @@ PlayShowCasterOnPickPosWithOffInstruction.DoInstruction = function(self, TT, cas
     local targetGridPos = casterEntity:GetGridPosition()
     casterEntity:SetPosition(targetGridPos)
   else
-    do
-      local entitySvc = world:GetService("RenderEntity")
-      local renderPickUpComponent = casterEntity:RenderPickUpComponent()
-      if not renderPickUpComponent then
-        return 
-      end
-      local pickUpPos = renderPickUpComponent:GetLastPickUpGridPos()
-      if self._disToPickPos and self._disToPickPos ~= 0 then
-        local startGridPos = casterEntity:GetGridPosition()
-        local dir = pickUpPos - startGridPos
-        local v3Dir = boardServiceRender:GridDir2LocationDir(dir)
-        v3Dir = (Vector3.Normalize)(v3Dir)
-        local pickUpRenderPos = boardServiceRender:GridPos2RenderPos(pickUpPos)
-        local targetPos = pickUpRenderPos + v3Dir * self._disToPickPos
-        casterEntity:SetLocation(targetPos, v3Dir)
-      else
-        do
-          do
-            casterEntity:SetPosition(pickUpPos)
-            YIELD(TT)
-          end
-        end
-      end
+    local entitySvc = world:GetService("RenderEntity")
+    local renderPickUpComponent = casterEntity:RenderPickUpComponent()
+    if not renderPickUpComponent then
+      return
+    end
+    local pickUpPos = renderPickUpComponent:GetLastPickUpGridPos()
+    if self._disToPickPos and self._disToPickPos ~= 0 then
+      local startGridPos = casterEntity:GetGridPosition()
+      local dir = pickUpPos - startGridPos
+      local v3Dir = boardServiceRender:GridDir2LocationDir(dir)
+      v3Dir = Vector3.Normalize(v3Dir)
+      local pickUpRenderPos = boardServiceRender:GridPos2RenderPos(pickUpPos)
+      local targetPos = pickUpRenderPos + v3Dir * self._disToPickPos
+      casterEntity:SetLocation(targetPos, v3Dir)
+    else
+      casterEntity:SetPosition(pickUpPos)
     end
   end
+  YIELD(TT)
 end
-
-

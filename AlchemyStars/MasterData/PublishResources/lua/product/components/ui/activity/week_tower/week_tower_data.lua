@@ -1,99 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/week_tower/week_tower_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local WeekTowerMissionBattleStatus = {Pass = 1, Battle = 2, Lock = 3}
+local WeekTowerMissionBattleStatus = {
+  Pass = 1,
+  Battle = 2,
+  Lock = 3
+}
 _enum("WeekTowerMissionBattleStatus", WeekTowerMissionBattleStatus)
 _class("WeekTowerDiffData", Object)
 WeekTowerDiffData = WeekTowerDiffData
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-WeekTowerDiffData.Constructor = function(self, lock, missionList, diff)
-  -- function num : 0_0 , upvalues : _ENV
+function WeekTowerDiffData:Constructor(lock, missionList, diff)
   self._lock = lock
   self._misisonList = missionList
   self._diff = diff
   self._sprites = {}
-  local sprite1, sprite2, sprite3 = nil, nil, nil
+  local sprite1, sprite2, sprite3
   if diff == WeekTowerDiffEnum.Easy then
     sprite1 = "lose_dificultad_btn03"
     sprite2 = "lose_dificultad_btn02"
     sprite3 = "lose_dificultad_btn01"
     self._name = "str_week_tower_easy"
     self._upColor = "#b1ac96"
-  else
-    if diff == WeekTowerDiffEnum.Normal then
-      sprite1 = "lose_dificultad_btn06"
-      sprite2 = "lose_dificultad_btn05"
-      sprite3 = "lose_dificultad_btn04"
-      self._name = "str_week_tower_norm"
-      self._upColor = "#797a7f"
-    else
-      if diff == WeekTowerDiffEnum.Diff then
-        sprite1 = "lose_dificultad_btn09"
-        sprite2 = "lose_dificultad_btn08"
-        sprite3 = "lose_dificultad_btn07"
-        self._name = "str_week_tower_diff"
-        self._upColor = "#867979"
-      end
-    end
+  elseif diff == WeekTowerDiffEnum.Normal then
+    sprite1 = "lose_dificultad_btn06"
+    sprite2 = "lose_dificultad_btn05"
+    sprite3 = "lose_dificultad_btn04"
+    self._name = "str_week_tower_norm"
+    self._upColor = "#797a7f"
+  elseif diff == WeekTowerDiffEnum.Diff then
+    sprite1 = "lose_dificultad_btn09"
+    sprite2 = "lose_dificultad_btn08"
+    sprite3 = "lose_dificultad_btn07"
+    self._name = "str_week_tower_diff"
+    self._upColor = "#867979"
   end
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._sprites)[1] = sprite1
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._sprites)[2] = sprite2
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._sprites)[3] = sprite3
+  self._sprites[1] = sprite1
+  self._sprites[2] = sprite2
+  self._sprites[3] = sprite3
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerDiffData.MissionList = function(self)
-  -- function num : 0_1
+function WeekTowerDiffData:MissionList()
   return self._misisonList
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerDiffData.Lock = function(self)
-  -- function num : 0_2
+function WeekTowerDiffData:Lock()
   return self._lock
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerDiffData.Sprites = function(self)
-  -- function num : 0_3
+function WeekTowerDiffData:Sprites()
   return self._sprites
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerDiffData.Name = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return (StringTable.Get)(self._name)
+function WeekTowerDiffData:Name()
+  return StringTable.Get(self._name)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerDiffData.UpColor = function(self)
-  -- function num : 0_5
+function WeekTowerDiffData:UpColor()
   return self._upColor
 end
 
 _class("WeekTowerMissionData", Object)
 WeekTowerMissionData = WeekTowerMissionData
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
 
-WeekTowerMissionData.Constructor = function(self, cfg, pass, passInfo)
-  -- function num : 0_6 , upvalues : WeekTowerMissionBattleStatus, _ENV
+function WeekTowerMissionData:Constructor(cfg, pass, passInfo)
   if pass then
     self:SetPassState(WeekTowerMissionBattleStatus.Pass)
   else
@@ -101,9 +68,9 @@ WeekTowerMissionData.Constructor = function(self, cfg, pass, passInfo)
   end
   local cfg_line_mission = cfg
   self._id = cfg_line_mission.CampaignMissionId
-  local cfg_campaign_mission = (Cfg.cfg_campaign_mission)[self._id]
+  local cfg_campaign_mission = Cfg.cfg_campaign_mission[self._id]
   if not cfg_campaign_mission then
-    (Log.error)("###[WeekTowerMissionData] cfg_campaign_mission is nil ! id --> ", self._id)
+    Log.error("###[WeekTowerMissionData] cfg_campaign_mission is nil ! id --> ", self._id)
   end
   self._levelid = cfg_campaign_mission.FightLevel
   self._type = cfg_campaign_mission.Type
@@ -111,177 +78,129 @@ WeekTowerMissionData.Constructor = function(self, cfg, pass, passInfo)
   self._award = self:_GetSortedArr(AwardType.First, cfg_campaign_mission, StageAwardType.First)
   local nameStr = cfg.DependName
   if nameStr then
-    local nameStrs = (string.split)(nameStr, "|")
-    self._missionName = (StringTable.Get)(nameStrs[2])
-    self._missionName2 = (StringTable.Get)(nameStrs[1])
+    local nameStrs = string.split(nameStr, "|")
+    self._missionName = StringTable.Get(nameStrs[2])
+    self._missionName2 = StringTable.Get(nameStrs[1])
   else
-    do
-      self._missionName = ""
-      self._missionName2 = ""
-      self._recommendLv = cfg_campaign_mission.RecommendLV
-      self._recommendGrade = cfg_campaign_mission.RecommendAwaken
-      local params = cfg_line_mission.CustomParams
-      if not params or (table.count)(params) <= 0 then
-        (Log.error)("###[WeekTowerMissionData] CustomParams is nil ! id --> ", self._id)
+    self._missionName = ""
+    self._missionName2 = ""
+  end
+  self._recommendLv = cfg_campaign_mission.RecommendLV
+  self._recommendGrade = cfg_campaign_mission.RecommendAwaken
+  local params = cfg_line_mission.CustomParams
+  if not params or table.count(params) <= 0 then
+    Log.error("###[WeekTowerMissionData] CustomParams is nil ! id --> ", self._id)
+  end
+  self._diff = params[1][1]
+  self._groupIdx = params[1][2]
+  self._groupInnerIdx = params[1][3]
+  if not cfg_line_mission.NodePrefabName then
+    Log.error("###[WeekTowerMissionData] NodePrefabName is nil ! id --> ", self._id)
+  end
+  self._widgetName = cfg_line_mission.NodePrefabName
+  self._starCount = 0
+  self._threeStarCondition = {}
+  local ids = {
+    cfg_campaign_mission.ThreeStarCondition1,
+    cfg_campaign_mission.ThreeStarCondition2,
+    cfg_campaign_mission.ThreeStarCondition3
+  }
+  for i, v in ipairs(ids) do
+    local cond = StageCondition:New()
+    cond:Init(i, v)
+    if passInfo then
+      local star = passInfo.star
+      local getStar = star & 1 << i - 1 ~= 0
+      if getStar then
+        self._starCount = self._starCount + 1
+        cond:FlushSatisfy(true)
       end
-      self._diff = (params[1])[1]
-      self._groupIdx = (params[1])[2]
-      self._groupInnerIdx = (params[1])[3]
-      if not cfg_line_mission.NodePrefabName then
-        (Log.error)("###[WeekTowerMissionData] NodePrefabName is nil ! id --> ", self._id)
-      end
-      self._widgetName = cfg_line_mission.NodePrefabName
-      self._starCount = 0
-      self._threeStarCondition = {}
-      local ids = {cfg_campaign_mission.ThreeStarCondition1, cfg_campaign_mission.ThreeStarCondition2, cfg_campaign_mission.ThreeStarCondition3}
-      for i,v in ipairs(ids) do
-        local cond = StageCondition:New()
-        cond:Init(i, v)
-        if passInfo then
-          local star = passInfo.star
-          local getStar = star & 1 << i - 1 ~= 0
-          if getStar then
-            self._starCount = self._starCount + 1
-            cond:FlushSatisfy(true)
-          end
-        end
-        ;
-        (table.insert)(self._threeStarCondition, cond)
-      end
-      local cfg_com_line_mission = (Cfg.cfg_component_line_mission)({CampaignMissionId = self._id})
-      if cfg_com_line_mission and next(cfg_com_line_mission) then
-        local cfg = cfg_com_line_mission[1]
-        local openTime = cfg.OpenTime
-        if openTime then
-          self._openTime = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr(openTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-        end
-      end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    end
+    table.insert(self._threeStarCondition, cond)
+  end
+  local cfg_com_line_mission = Cfg.cfg_component_line_mission({
+    CampaignMissionId = self._id
+  })
+  if cfg_com_line_mission and next(cfg_com_line_mission) then
+    local cfg = cfg_com_line_mission[1]
+    local openTime = cfg.OpenTime
+    if openTime then
+      self._openTime = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(openTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     end
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData._GetSortedArr = function(self, awardType, cfg, stageAwardType)
-  -- function num : 0_7 , upvalues : _ENV
-  local list = (UICommonHelper:GetInstance()):GetDropByAwardType(awardType, cfg)
+function WeekTowerMissionData:_GetSortedArr(awardType, cfg, stageAwardType)
+  local list = UICommonHelper:GetInstance():GetDropByAwardType(awardType, cfg)
   local vecSort = SortedArray:New(Algorithm.COMPARE_CUSTOM, DiscoveryStage._LessComparer)
   if list then
-    for i,v in ipairs(list) do
+    for i, v in ipairs(list) do
       local award = Award:New()
       award:InitWithCount(v.ItemID, v.Count, v.Type)
       award:FlushType(stageAwardType)
       vecSort:Insert(award)
     end
   end
-  do
-    return vecSort.elements
-  end
+  return vecSort.elements
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetDiff = function(self)
-  -- function num : 0_8
+function WeekTowerMissionData:GetDiff()
   return self._diff
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.SetPassState = function(self, state)
-  -- function num : 0_9
+function WeekTowerMissionData:SetPassState(state)
   self._pass = state
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetPassTime = function(self)
-  -- function num : 0_10
+function WeekTowerMissionData:GetPassTime()
   return self._pass
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetLevelID = function(self)
-  -- function num : 0_11
+function WeekTowerMissionData:GetLevelID()
   return self._levelid
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetType = function(self)
-  -- function num : 0_12
+function WeekTowerMissionData:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetID = function(self)
-  -- function num : 0_13
+function WeekTowerMissionData:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetWord = function(self)
-  -- function num : 0_14
+function WeekTowerMissionData:GetWord()
   return self._word
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetAward = function(self)
-  -- function num : 0_15
+function WeekTowerMissionData:GetAward()
   return self._award
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetMissionName = function(self)
-  -- function num : 0_16
+function WeekTowerMissionData:GetMissionName()
   return self._missionName
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetMissionName2 = function(self)
-  -- function num : 0_17
+function WeekTowerMissionData:GetMissionName2()
   return self._missionName2
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetRecommendLv = function(self)
-  -- function num : 0_18
+function WeekTowerMissionData:GetRecommendLv()
   return self._recommendLv
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetRecommendGrade = function(self)
-  -- function num : 0_19
+function WeekTowerMissionData:GetRecommendGrade()
   return self._recommendGrade
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetNodeUpOrDown = function(self)
-  -- function num : 0_20
+function WeekTowerMissionData:GetNodeUpOrDown()
   return self._groupIdx % 2
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetWidgetName = function(self)
-  -- function num : 0_21
+function WeekTowerMissionData:GetWidgetName()
   return self._widgetName
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.ShowLineY = function(self)
-  -- function num : 0_22
+function WeekTowerMissionData:ShowLineY()
   local groupIdx = self._groupIdx
   if groupIdx ~= 1 and self._groupInnerIdx == 1 then
     return true
@@ -289,39 +208,22 @@ WeekTowerMissionData.ShowLineY = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetNodeIcon = function(self)
-  -- function num : 0_23
+function WeekTowerMissionData:GetNodeIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetNodeIconMask = function(self)
-  -- function num : 0_24
+function WeekTowerMissionData:GetNodeIconMask()
   return self._iconMask
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.Get3StarConditions = function(self)
-  -- function num : 0_25
+function WeekTowerMissionData:Get3StarConditions()
   return self._threeStarCondition
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.GetStarCount = function(self)
-  -- function num : 0_26
+function WeekTowerMissionData:GetStarCount()
   return self._starCount
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-WeekTowerMissionData.OpenTime = function(self)
-  -- function num : 0_27
+function WeekTowerMissionData:OpenTime()
   return self._openTime
 end
-
-

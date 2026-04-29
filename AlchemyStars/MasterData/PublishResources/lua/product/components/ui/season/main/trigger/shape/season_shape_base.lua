@@ -1,28 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/trigger/shape/season_shape_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonShapeBase", Object)
 SeasonShapeBase = SeasonShapeBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonShapeBase.Constructor = function(self, seasonID)
-  -- function num : 0_0
+function SeasonShapeBase:Constructor(seasonID)
   self._position = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShapeBase.Dispose = function(self)
-  -- function num : 0_1
+function SeasonShapeBase:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonShapeBase.OnCheck = function(self, position)
-  -- function num : 0_2
+function SeasonShapeBase:OnCheck(position)
   return false
 end
-
-

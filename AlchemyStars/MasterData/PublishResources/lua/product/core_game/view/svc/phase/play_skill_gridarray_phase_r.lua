@@ -1,56 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_gridarray_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillGridArrayPhase", PlaySkillPhaseBase)
 PlaySkillGridArrayPhase = PlaySkillGridArrayPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillGridArrayPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillGridArrayPhase:PlayFlight(TT, casterEntity, phaseParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local gridEffectID = phaseParam:GetGridEffectID()
   local bestEffectTime = phaseParam:GetBestEffectTime()
   if gridEffectID then
     local result = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ConvertGridElement)
     local gridPosArray = result:GetTargetGridArray()
     local targetGridType = result:GetTargetElementType()
-    for _,gridPos in ipairs(gridPosArray) do
-      ((GameGlobal.TaskManager)()):CoreGameStartTask((self:SkillService())._SingleGridEffect, self:SkillService(), gridEffectID, gridPos, bestEffectTime, targetGridType)
+    for _, gridPos in ipairs(gridPosArray) do
+      GameGlobal.TaskManager():CoreGameStartTask(self:SkillService()._SingleGridEffect, self:SkillService(), gridEffectID, gridPos, bestEffectTime, targetGridType)
     end
   end
-  do
-    local scope = skillEffectResultContainer:GetScopeResult()
-    local centerPos = scope:GetCenterPos()
-    if #centerPos == 0 then
-      centerPos = {centerPos}
-    end
-    for k,v in pairs(centerPos) do
-      ((self._world):GetService("Effect")):CreateWorldPositionEffect(phaseParam:GetAtkEffectID(), v, true)
-    end
-    local hitDelay = phaseParam:GetHitDelayTime()
-    YIELD(TT, hitDelay)
-    local damageResult = skillEffectResultContainer:GetEffectResultsAsPosDic(SkillEffectType.Damage)
-    if damageResult then
-      for posIdx,res in pairs(damageResult) do
-        local pos = (Vector2.Index2Pos)(posIdx)
-        local targetEntityID = res:GetTargetID()
-        local targetEntity = (self._world):GetEntityByID(targetEntityID)
-        if targetEntity ~= nil then
-          local targetDamage = res:GetDamageInfo(1)
-          local beHitParam = (((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(phaseParam:GetHitAnimation())):SetHandleBeHitParam_HitEffectID(-1)):SetHandleBeHitParam_DamageInfo(targetDamage)):SetHandleBeHitParam_DamagePos(pos)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack())):SetHandleBeHitParam_SkillID(skillEffectResultContainer:GetSkillID())
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask((self:SkillService()).HandleBeHit, self:SkillService(), beHitParam)
-        end
+  local scope = skillEffectResultContainer:GetScopeResult()
+  local centerPos = scope:GetCenterPos()
+  if #centerPos == 0 then
+    centerPos = {centerPos}
+  end
+  for k, v in pairs(centerPos) do
+    self._world:GetService("Effect"):CreateWorldPositionEffect(phaseParam:GetAtkEffectID(), v, true)
+  end
+  local hitDelay = phaseParam:GetHitDelayTime()
+  YIELD(TT, hitDelay)
+  local damageResult = skillEffectResultContainer:GetEffectResultsAsPosDic(SkillEffectType.Damage)
+  if damageResult then
+    for posIdx, res in pairs(damageResult) do
+      local pos = Vector2.Index2Pos(posIdx)
+      local targetEntityID = res:GetTargetID()
+      local targetEntity = self._world:GetEntityByID(targetEntityID)
+      if targetEntity ~= nil then
+        local targetDamage = res:GetDamageInfo(1)
+        local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(phaseParam:GetHitAnimation()):SetHandleBeHitParam_HitEffectID(-1):SetHandleBeHitParam_DamageInfo(targetDamage):SetHandleBeHitParam_DamagePos(pos):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(skillEffectResultContainer:IsFinalAttack()):SetHandleBeHitParam_SkillID(skillEffectResultContainer:GetSkillID())
+        GameGlobal.TaskManager():CoreGameStartTask(self:SkillService().HandleBeHit, self:SkillService(), beHitParam)
       end
     end
-    do
-      local finishDelayTime = phaseParam:GetFinishTime()
-      YIELD(TT, finishDelayTime)
-    end
   end
+  local finishDelayTime = phaseParam:GetFinishTime()
+  YIELD(TT, finishDelayTime)
 end
-
-

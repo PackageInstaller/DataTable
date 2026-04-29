@@ -1,294 +1,251 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/world_boss/world_boss_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local world_bossMessageDef = {CLSID_CEventApplyWorldBossInfoReq = 38000, CLSID_CEventApplyWorldBossInfoRes = 38001, CLSID_CEventApplyChangeWorldBossFormationReq = 38002, CLSID_CEventApplyChangeWorldBossFormationRes = 38003, CLSID_CEventResetRecordReq = 38004, CLSID_CEventResetRecordRes = 38005, CLSID_CEventGetDanInfoReq = 38006, CLSID_CEventGetDanInfoRes = 38007, CLSID_CEventChoseRecordReq = 38008, CLSID_CEventChoseRecordRes = 38009, CLSID_CEventMobilePushWorldBossRefresh = 38010, CLSID_CEventCreateTeamDamageReq = 38011, CLSID_CEventCreateTeamDamageRes = 38012, CLSID_CEventGetRankDamageListReq = 38013, CLSID_CEventGetRankDamageListRes = 38014, CLSID_CEventGetRankTopNReq = 38015, CLSID_CEventGetRankTopNRes = 38016, CLSID_CEventRankOneDetailReq = 38017, CLSID_CEventRankOneDetailRes = 38018}
-;
-(table.append)(MessageDef, world_bossMessageDef)
+local world_bossMessageDef = {
+  CLSID_CEventApplyWorldBossInfoReq = 38000,
+  CLSID_CEventApplyWorldBossInfoRes = 38001,
+  CLSID_CEventApplyChangeWorldBossFormationReq = 38002,
+  CLSID_CEventApplyChangeWorldBossFormationRes = 38003,
+  CLSID_CEventResetRecordReq = 38004,
+  CLSID_CEventResetRecordRes = 38005,
+  CLSID_CEventGetDanInfoReq = 38006,
+  CLSID_CEventGetDanInfoRes = 38007,
+  CLSID_CEventChoseRecordReq = 38008,
+  CLSID_CEventChoseRecordRes = 38009,
+  CLSID_CEventMobilePushWorldBossRefresh = 38010,
+  CLSID_CEventCreateTeamDamageReq = 38011,
+  CLSID_CEventCreateTeamDamageRes = 38012,
+  CLSID_CEventGetRankDamageListReq = 38013,
+  CLSID_CEventGetRankDamageListRes = 38014,
+  CLSID_CEventGetRankTopNReq = 38015,
+  CLSID_CEventGetRankTopNRes = 38016,
+  CLSID_CEventRankOneDetailReq = 38017,
+  CLSID_CEventRankOneDetailRes = 38018
+}
+table.append(MessageDef, world_bossMessageDef)
 _class("CEventApplyWorldBossInfoReq", CCallRequestEvent)
 CEventApplyWorldBossInfoReq = CEventApplyWorldBossInfoReq
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyWorldBossInfoReq.Constructor = function(self)
-  -- function num : 0_0
+function CEventApplyWorldBossInfoReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventApplyWorldBossInfoReq._proto = {}
 _class("CEventApplyWorldBossInfoRes", CCallReplyEvent)
 CEventApplyWorldBossInfoRes = CEventApplyWorldBossInfoRes
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyWorldBossInfoRes.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventApplyWorldBossInfoRes:Constructor()
   self.nRet = 0
   self.Data = PlayerWorldBossInfo:New()
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplyWorldBossInfoRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"Data", "PlayerWorldBossInfo"}
+  [1] = {"nRet", "int"},
+  [2] = {
+    "Data",
+    "PlayerWorldBossInfo"
+  }
 }
 _class("CEventApplyChangeWorldBossFormationReq", CCallRequestEvent)
 CEventApplyChangeWorldBossFormationReq = CEventApplyChangeWorldBossFormationReq
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyChangeWorldBossFormationReq.Constructor = function(self)
-  -- function num : 0_2
+function CEventApplyChangeWorldBossFormationReq:Constructor()
   self.nId = 0
   self.formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplyChangeWorldBossFormationReq._proto = {
-[1] = {"nId", "int"}
-, 
-[2] = {"formation_pet_list", "list<int64>"}
+  [1] = {"nId", "int"},
+  [2] = {
+    "formation_pet_list",
+    "list<int64>"
+  }
 }
 _class("CEventApplyChangeWorldBossFormationRes", CCallReplyEvent)
 CEventApplyChangeWorldBossFormationRes = CEventApplyChangeWorldBossFormationRes
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventApplyChangeWorldBossFormationRes.Constructor = function(self)
-  -- function num : 0_3
+function CEventApplyChangeWorldBossFormationRes:Constructor()
   self.nFormationRet = 0
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventApplyChangeWorldBossFormationRes._proto = {
-[1] = {"nFormationRet", "int"}
+  [1] = {
+    "nFormationRet",
+    "int"
+  }
 }
 _class("CEventResetRecordReq", CCallRequestEvent)
 CEventResetRecordReq = CEventResetRecordReq
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventResetRecordReq.Constructor = function(self)
-  -- function num : 0_4
+function CEventResetRecordReq:Constructor()
   self.nId = 0
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventResetRecordReq._proto = {
-[1] = {"nId", "int"}
+  [1] = {"nId", "int"}
 }
 _class("CEventResetRecordRes", CCallReplyEvent)
 CEventResetRecordRes = CEventResetRecordRes
--- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventResetRecordRes.Constructor = function(self)
-  -- function num : 0_5
+function CEventResetRecordRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventResetRecordRes._proto = {
-[1] = {"nRet", "int"}
+  [1] = {"nRet", "int"}
 }
 _class("CEventGetDanInfoReq", CCallRequestEvent)
 CEventGetDanInfoReq = CEventGetDanInfoReq
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetDanInfoReq.Constructor = function(self)
-  -- function num : 0_6
+function CEventGetDanInfoReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventGetDanInfoReq._proto = {}
 _class("CEventGetDanInfoRes", CCallReplyEvent)
 CEventGetDanInfoRes = CEventGetDanInfoRes
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetDanInfoRes.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CEventGetDanInfoRes:Constructor()
   self.nRet = 0
   self.dan_info = DanInfo:New()
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetDanInfoRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"dan_info", "DanInfo"}
+  [1] = {"nRet", "int"},
+  [2] = {"dan_info", "DanInfo"}
 }
 _class("CEventChoseRecordReq", CCallRequestEvent)
 CEventChoseRecordReq = CEventChoseRecordReq
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventChoseRecordReq.Constructor = function(self)
-  -- function num : 0_8
+function CEventChoseRecordReq:Constructor()
   self.select_new = true
   self.nId = 0
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventChoseRecordReq._proto = {
-[1] = {"select_new", "bool"}
-, 
-[2] = {"nId", "int"}
+  [1] = {"select_new", "bool"},
+  [2] = {"nId", "int"}
 }
 _class("CEventChoseRecordRes", CCallReplyEvent)
 CEventChoseRecordRes = CEventChoseRecordRes
--- DECOMPILER ERROR at PC199: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventChoseRecordRes.Constructor = function(self)
-  -- function num : 0_9
+function CEventChoseRecordRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventChoseRecordRes._proto = {
-[1] = {"nRet", "int"}
+  [1] = {"nRet", "int"}
 }
 _class("CEventMobilePushWorldBossRefresh", CSvrPushEvent)
 CEventMobilePushWorldBossRefresh = CEventMobilePushWorldBossRefresh
--- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobilePushWorldBossRefresh.Constructor = function(self)
-  -- function num : 0_10
+function CEventMobilePushWorldBossRefresh:Constructor()
 end
-
--- DECOMPILER ERROR at PC219: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventMobilePushWorldBossRefresh._proto = {}
 _class("CEventCreateTeamDamageReq", CCallRequestEvent)
 CEventCreateTeamDamageReq = CEventCreateTeamDamageReq
--- DECOMPILER ERROR at PC228: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCreateTeamDamageReq.Constructor = function(self)
-  -- function num : 0_11
+function CEventCreateTeamDamageReq:Constructor()
   self.team_damage = 0
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC241: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCreateTeamDamageReq._proto = {
-[1] = {"team_damage", "int64"}
-, 
-[2] = {"id", "int"}
+  [1] = {
+    "team_damage",
+    "int64"
+  },
+  [2] = {"id", "int"}
 }
 _class("CEventCreateTeamDamageRes", CCallReplyEvent)
 CEventCreateTeamDamageRes = CEventCreateTeamDamageRes
--- DECOMPILER ERROR at PC250: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCreateTeamDamageRes.Constructor = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function CEventCreateTeamDamageRes:Constructor()
   self.nRet = 0
   self.data = PlayerWorldBossInfo:New()
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCreateTeamDamageRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"data", "PlayerWorldBossInfo"}
+  [1] = {"nRet", "int"},
+  [2] = {
+    "data",
+    "PlayerWorldBossInfo"
+  }
 }
 _class("CEventGetRankDamageListReq", CCallRequestEvent)
 CEventGetRankDamageListReq = CEventGetRankDamageListReq
--- DECOMPILER ERROR at PC272: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetRankDamageListReq.Constructor = function(self)
-  -- function num : 0_13
+function CEventGetRankDamageListReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC275: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventGetRankDamageListReq._proto = {}
 _class("CEventGetRankDamageListRes", CCallReplyEvent)
 CEventGetRankDamageListRes = CEventGetRankDamageListRes
--- DECOMPILER ERROR at PC284: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetRankDamageListRes.Constructor = function(self)
-  -- function num : 0_14
+function CEventGetRankDamageListRes:Constructor()
   self.nRet = 0
   self.damage_list = {}
   self.rank_max_num = 0
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetRankDamageListRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"damage_list", "list<int64>"}
-, 
-[3] = {"rank_max_num", "int"}
+  [1] = {"nRet", "int"},
+  [2] = {
+    "damage_list",
+    "list<int64>"
+  },
+  [3] = {
+    "rank_max_num",
+    "int"
+  }
 }
 _class("CEventGetRankTopNReq", CCallRequestEvent)
 CEventGetRankTopNReq = CEventGetRankTopNReq
--- DECOMPILER ERROR at PC311: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetRankTopNReq.Constructor = function(self)
-  -- function num : 0_15
+function CEventGetRankTopNReq:Constructor()
   self.is_cur_rank = false
 end
 
--- DECOMPILER ERROR at PC319: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetRankTopNReq._proto = {
-[1] = {"is_cur_rank", "bool"}
+  [1] = {
+    "is_cur_rank",
+    "bool"
+  }
 }
 _class("CEventGetRankTopNRes", CCallReplyEvent)
 CEventGetRankTopNRes = CEventGetRankTopNRes
--- DECOMPILER ERROR at PC328: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetRankTopNRes.Constructor = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function CEventGetRankTopNRes:Constructor()
   self.nRet = 0
   self.show_list = RankShowSimpleInfo:New()
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetRankTopNRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"show_list", "RankShowSimpleInfo"}
+  [1] = {"nRet", "int"},
+  [2] = {
+    "show_list",
+    "RankShowSimpleInfo"
+  }
 }
 _class("CEventRankOneDetailReq", CCallRequestEvent)
 CEventRankOneDetailReq = CEventRankOneDetailReq
--- DECOMPILER ERROR at PC350: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRankOneDetailReq.Constructor = function(self)
-  -- function num : 0_17
+function CEventRankOneDetailReq:Constructor()
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC358: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRankOneDetailReq._proto = {
-[1] = {"pstid", "int64"}
+  [1] = {"pstid", "int64"}
 }
 _class("CEventRankOneDetailRes", CCallReplyEvent)
 CEventRankOneDetailRes = CEventRankOneDetailRes
--- DECOMPILER ERROR at PC367: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRankOneDetailRes.Constructor = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function CEventRankOneDetailRes:Constructor()
   self.nRet = 0
   self.detail_info = RankDetailInfo:New()
 end
 
--- DECOMPILER ERROR at PC380: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRankOneDetailRes._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"detail_info", "RankDetailInfo"}
+  [1] = {"nRet", "int"},
+  [2] = {
+    "detail_info",
+    "RankDetailInfo"
+  }
 }
-

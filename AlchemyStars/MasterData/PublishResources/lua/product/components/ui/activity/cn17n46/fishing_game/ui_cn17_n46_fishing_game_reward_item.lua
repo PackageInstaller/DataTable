@@ -1,42 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN17N46FishingGameRewardItem", UICustomWidget)
 UICN17N46FishingGameRewardItem = UICN17N46FishingGameRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingGameRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN17N46FishingGameRewardItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameRewardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UICN17N46FishingGameRewardItem:_GetComponents()
   self._uiItem = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self._lock = self:GetGameObject("Lock")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameRewardItem.SetData = function(self, data, scoretype, missioninfo)
-  -- function num : 0_2 , upvalues : _ENV
-  self._item = (self._uiItem):SpawnObject("UIItem")
-  ;
-  (self._item):SetForm(UIItemForm.Base, 0.6)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._lock).transform).localScale = Vector3.one * 0.6
-  ;
-  (self._item):SetClickCallBack(function(go)
-    -- function num : 0_2_0 , upvalues : self
+function UICN17N46FishingGameRewardItem:SetData(data, scoretype, missioninfo)
+  self._item = self._uiItem:SpawnObject("UIItem")
+  self._item:SetForm(UIItemForm.Base, 0.6)
+  self._lock.transform.localScale = Vector3.one * 0.6
+  self._item:SetClickCallBack(function(go)
     self:ShowTips(go)
-  end
-)
+  end)
   self._itemid = data[1]
   self._itemCount = data[2]
   self._missionInfo = missioninfo
@@ -44,40 +24,30 @@ UICN17N46FishingGameRewardItem.SetData = function(self, data, scoretype, mission
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameRewardItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[self._itemid]
+function UICN17N46FishingGameRewardItem:_OnValue()
+  local cfg = Cfg.cfg_item[self._itemid]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil." .. self._itemid)
+    Log.fatal("cfg_item is nil." .. self._itemid)
   end
   local icon = cfg.Icon
   local quality = cfg.Color
   local text1 = self._itemCount
-  ;
-  (self._item):SetData({icon = icon, quality = quality, text1 = text1, itemId = self._itemid})
+  self._item:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = self._itemid
+  })
   self:RefreshUIInfo(self._missionInfo)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameRewardItem.RefreshUIInfo = function(self, missioninfo)
-  -- function num : 0_4
+function UICN17N46FishingGameRewardItem:RefreshUIInfo(missioninfo)
   self._missionInfo = missioninfo
-  local state = (self._missionInfo).reward_mask & self._scoreType ~= 0 and self._scoreType <= (self._missionInfo).mission_grade
-  ;
-  (self._lock):SetActive(state)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local state = self._missionInfo.reward_mask & self._scoreType ~= 0 and self._missionInfo.mission_grade >= self._scoreType
+  self._lock:SetActive(state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameRewardItem.ShowTips = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local pos = (go.transform).position
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN14FishingGameRewardItemClicked, self._itemid, pos)
+function UICN17N46FishingGameRewardItem:ShowTips(go)
+  local pos = go.transform.position
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN14FishingGameRewardItemClicked, self._itemid, pos)
 end
-
-

@@ -1,29 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_change_model_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterChangeToMonsterInstruction", BaseInstruction)
 PlayCasterChangeToMonsterInstruction = PlayCasterChangeToMonsterInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterChangeToMonsterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterChangeToMonsterInstruction:Constructor(paramList)
   self._monsterID = tonumber(paramList.monsterID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterChangeToMonsterInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterChangeToMonsterInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local configService = world:GetService("Config")
-  local resPath = (configService:GetMonsterConfigData()):GetMonsterResPath(self._monsterID)
+  local resPath = configService:GetMonsterConfigData():GetMonsterResPath(self._monsterID)
   casterEntity:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, true))
   casterEntity:SetLocation(casterEntity:GetGridPosition() + casterEntity:GetGridOffset(), casterEntity:GetGridDirection())
   local sMonsterShowRender = world:GetService("MonsterShowRender")
   sMonsterShowRender:CreateMonsterEffect(casterEntity, self._monsterID)
 end
-
-

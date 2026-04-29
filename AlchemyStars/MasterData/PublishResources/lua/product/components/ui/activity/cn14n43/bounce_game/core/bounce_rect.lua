@@ -1,69 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/core/bounce_rect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BounceRect", Object)
 BounceRect = BounceRect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BounceRect.Constructor = function(self, position, size)
-  -- function num : 0_0
+function BounceRect:Constructor(position, size)
   self.position = position
   self.size = size
   self.halfSize = self.size * 0.5
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceRect.ChgPosition = function(self, position)
-  -- function num : 0_1
+function BounceRect:ChgPosition(position)
   self.position = position
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceRect._Refresh = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function BounceRect:_Refresh()
   local pos = self.position
-  self.min = Vector2(pos.x - (self.halfSize).x, pos.y - (self.halfSize).y)
+  self.min = Vector2(pos.x - self.halfSize.x, pos.y - self.halfSize.y)
   pos = self.position
-  self.max = Vector2(pos.x + (self.halfSize).x, pos.y + (self.halfSize).y)
+  self.max = Vector2(pos.x + self.halfSize.x, pos.y + self.halfSize.y)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceRect.GetMin = function(self)
-  -- function num : 0_3
+function BounceRect:GetMin()
   return self.min
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceRect.GetMax = function(self)
-  -- function num : 0_4
+function BounceRect:GetMax()
   return self.max
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceRect.Contains = function(self, pos)
-  -- function num : 0_5
-  if pos.x < (self.min).x then
+function BounceRect:Contains(pos)
+  if pos.x < self.min.x then
     return false
   end
-  if (self.max).x < pos.x then
+  if pos.x > self.max.x then
     return false
   end
-  if pos.y < (self.min).y then
+  if pos.y < self.min.y then
     return false
   end
-  if (self.max).y < pos.y then
+  if pos.y > self.max.y then
     return false
   end
   return true
 end
-
-

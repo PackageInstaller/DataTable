@@ -1,217 +1,146 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/eight_pets/teams/ui_n33_eight_pets_teams_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_teams_cls")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-Teams.InitEightPetsTeams = function(self, serverData)
-  -- function num : 0_0 , upvalues : _ENV
+function Teams:InitEightPetsTeams(serverData)
   self.list = {}
-  for k,v in pairs(serverData) do
+  for k, v in pairs(serverData) do
     local team = Team:New()
     team.teamSlotCount = 8
     team:Init(k, v.name, v.pet_list)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self.list)[k] = team
+    self.list[k] = team
   end
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.EightPetsContext = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function TeamsContext:EightPetsContext()
   if self._eightPetsContext == nil then
     self._eightPetsContext = UIN33EightPetsTeamsContext:New(self)
   end
   return self._eightPetsContext
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.ShowDialogUIN33EightPetsTeams = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  (self:EightPetsContext()):InitEightPetsTeamCondition()
-  local stateManager = (GameGlobal.UIStateManager)()
+function TeamsContext:ShowDialogUIN33EightPetsTeams(...)
+  self:EightPetsContext():InitEightPetsTeamCondition()
+  local stateManager = GameGlobal.UIStateManager()
   stateManager:Lock("DoEnterEightPetsTeam")
   stateManager:ShowDialog("UIN33EightPetsTeams", ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamsContext.HideDialogUIN33EightPetsTeams = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local stateManager = (GameGlobal.UIStateManager)()
+function TeamsContext:HideDialogUIN33EightPetsTeams()
+  local stateManager = GameGlobal.UIStateManager()
   stateManager:CloseDialog("UIN33EightPetsTeams")
 end
 
 _class("UIN33EightPetsTeamsContext", Object)
 UIN33EightPetsTeamsContext = UIN33EightPetsTeamsContext
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33EightPetsTeamsContext.Constructor = function(self, teamsContext)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN33EightPetsTeamsContext:Constructor(teamsContext)
   self._teamsContext = teamsContext
   self._fastTeamPets = {}
   self._fastTeamPetsLookup = {}
   self._andConditions = {}
   self._orConditions = {}
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N33_EIGHT_PETS)
-  self._eightComponent = (self._localProcess):GetComponent(ECampaignN33EightPetsMissionComponentID.ECAMPAIGN_N33_Eight_Pets_MISSION)
-  local componentInfo = (self._eightComponent):GetComponentInfo()
-  local eightPetsTeam = (self._teamsContext).eightPetsTeam
+  self._eightComponent = self._localProcess:GetComponent(ECampaignN33EightPetsMissionComponentID.ECAMPAIGN_N33_Eight_Pets_MISSION)
+  local componentInfo = self._eightComponent:GetComponentInfo()
+  local eightPetsTeam = self._teamsContext.eightPetsTeam
   eightPetsTeam:InitEightPetsTeams(componentInfo.m_formation_info)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.FastTeamPets = function(self)
-  -- function num : 0_5
+function UIN33EightPetsTeamsContext:FastTeamPets()
   return self._fastTeamPets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.FastTeamPetsLookup = function(self)
-  -- function num : 0_6
+function UIN33EightPetsTeamsContext:FastTeamPetsLookup()
   return self._fastTeamPetsLookup
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.EightPetsContext = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function UIN33EightPetsTeamsContext:EightPetsContext()
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local ctx = missionModule:TeamCtx()
   return ctx:EightPetsContext()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.EightPetsFormationItem = function(self, teamId)
-  -- function num : 0_8 , upvalues : _ENV
-  local teams = (self._teamsContext):Teams()
+function UIN33EightPetsTeamsContext:EightPetsFormationItem(teamId)
+  local teams = self._teamsContext:Teams()
   local tm = teams:Get(teamId)
   local item = EightPetsFormationItem:New()
   item.name = tm:GetName()
-  for k,v in pairs(tm:GetPets()) do
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R10 in 'UnsetPending'
-
-    (item.pet_list)[k] = v
+  for k, v in pairs(tm:GetPets()) do
+    item.pet_list[k] = v
   end
   return item
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.CheckErrorCode = function(self, res)
-  -- function num : 0_9 , upvalues : _ENV
-  local componentInfo = (self._eightComponent):GetComponentInfo()
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN33EightPetsTeamsContext:CheckErrorCode(res)
+  local componentInfo = self._eightComponent:GetComponentInfo()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   campaignModule:CheckErrorCode(res:GetResult(), componentInfo.m_campaign_id, nil)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.InitEightPetsTeamCondition = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN33EightPetsTeamsContext:InitEightPetsTeamCondition()
   local context = self:EightPetsContext()
   if self ~= context then
     return context:InitEightPetsTeamCondition()
   end
   self._andConditions = {}
-  local param = (self._teamsContext):GetParam()
+  local param = self._teamsContext:GetParam()
   local eightID = param[4]
-  local cfgEight = (Cfg.cfg_component_eight_pets_mission)[eightID]
+  local cfgEight = Cfg.cfg_component_eight_pets_mission[eightID]
   if cfgEight.AndCond == nil then
-    return 
+    return
   end
-  local oneLevel = (string.split)(cfgEight.AndCond, "&")
-  for k,v in pairs(oneLevel) do
-    local twoLevel = (string.split)(v, ",")
-    for sk,sv in pairs(twoLevel) do
+  local oneLevel = string.split(cfgEight.AndCond, "&")
+  for k, v in pairs(oneLevel) do
+    local twoLevel = string.split(v, ",")
+    for sk, sv in pairs(twoLevel) do
       twoLevel[sk] = tonumber(sv)
     end
     if #twoLevel == 4 and twoLevel[1] == 3901 then
       local testCondition = UIN33EightPetsTeamsProfUpperLimit:New()
       testCondition:SetCondition(twoLevel[3], twoLevel[2])
-      ;
-      (table.insert)(self._andConditions, testCondition)
+      table.insert(self._andConditions, testCondition)
     else
-      do
-        do
-          ;
-          (Log.exception)("cfg_component_eight_pets_mission.AndCond 八人编队条件未实现 id --> ", eightID, twoLevel[1])
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.exception("cfg_component_eight_pets_mission.AndCond 八人编队条件未实现 id --> ", eightID, twoLevel[1])
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.SetCurrTeamId = function(self, teamId)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN33EightPetsTeamsContext:SetCurrTeamId(teamId)
   local context = self:EightPetsContext()
   if self ~= context then
     return context:SetCurrTeamId(teamId)
   end
-  ;
-  (self._teamsContext):SetCurrTeamId(teamId)
-  ;
-  (self._eightComponent):SetCurrTeamId(teamId)
-  if (self._teamsContext):GetTeamOpenerType() == TeamOpenerType.EightPets then
+  self._teamsContext:SetCurrTeamId(teamId)
+  self._eightComponent:SetCurrTeamId(teamId)
+  if self._teamsContext:GetTeamOpenerType() == TeamOpenerType.EightPets then
     self._fastTeamPets = {}
     self._fastTeamPetsLookup = {}
-    local teams = (self._teamsContext):Teams()
+    local teams = self._teamsContext:Teams()
     local team = teams:Get(teamId)
     local teamPets = team:GetPets()
-    for k,v in pairs(teamPets) do
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R11 in 'UnsetPending'
-
-      (self._fastTeamPets)[k] = v
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._fastTeamPetsLookup)[v] = v
+    for k, v in pairs(teamPets) do
+      self._fastTeamPets[k] = v
+      self._fastTeamPetsLookup[v] = v
     end
   end
-  do
-    for k,v in pairs(self._andConditions) do
-      v:ConditionResult()
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.UpdateTeam = function(self, newTeam)
-  -- function num : 0_12 , upvalues : _ENV
-  local context = self:EightPetsContext()
-  if self ~= context then
-    return context:UpdateTeam(newTeam)
-  end
-  local teams = (self._teamsContext):Teams()
-  teams:UpdateTeam(newTeam)
-  for k,v in pairs(self._andConditions) do
+  for k, v in pairs(self._andConditions) do
     v:ConditionResult()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
+function UIN33EightPetsTeamsContext:UpdateTeam(newTeam)
+  local context = self:EightPetsContext()
+  if self ~= context then
+    return context:UpdateTeam(newTeam)
+  end
+  local teams = self._teamsContext:Teams()
+  teams:UpdateTeam(newTeam)
+  for k, v in pairs(self._andConditions) do
+    v:ConditionResult()
+  end
+end
 
-UIN33EightPetsTeamsContext.UpdateFastTeam = function(self, pstidTab)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN33EightPetsTeamsContext:UpdateFastTeam(pstidTab)
   local context = self:EightPetsContext()
   if self ~= context then
     return context:UpdateFastTeam(pstidTab)
@@ -219,40 +148,29 @@ UIN33EightPetsTeamsContext.UpdateFastTeam = function(self, pstidTab)
   local theMaxID = 0
   self._fastTeamPets = {}
   self._fastTeamPetsLookup = {}
-  for k,v in pairs(pstidTab) do
+  for k, v in pairs(pstidTab) do
     if v.pstid ~= 0 and v.memId ~= nil then
-      theMaxID = (math.max)(theMaxID, v.memId)
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._fastTeamPets)[v.memId] = v.pstid
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._fastTeamPetsLookup)[v.pstid] = v.pstid
+      theMaxID = math.max(theMaxID, v.memId)
+      self._fastTeamPets[v.memId] = v.pstid
+      self._fastTeamPetsLookup[v.pstid] = v.pstid
     end
   end
   for i = 1, theMaxID do
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R8 in 'UnsetPending'
-
-    if (self._fastTeamPets)[i] == nil then
-      (self._fastTeamPets)[i] = 0
+    if self._fastTeamPets[i] == nil then
+      self._fastTeamPets[i] = 0
     end
   end
-  for k,v in pairs(self._andConditions) do
+  for k, v in pairs(self._andConditions) do
     v:ConditionResult()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.TeamConditionTestPet = function(self, petPstId, teamSlot)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN33EightPetsTeamsContext:TeamConditionTestPet(petPstId, teamSlot)
   local context = self:EightPetsContext()
   if self ~= context then
     return context:TeamConditionTestPet(petPstId, teamSlot)
   end
-  for k,v in pairs(self._andConditions) do
+  for k, v in pairs(self._andConditions) do
     local reason, limit = v:TestPet(petPstId, teamSlot)
     if reason ~= 0 then
       return reason, limit
@@ -261,18 +179,12 @@ UIN33EightPetsTeamsContext.TeamConditionTestPet = function(self, petPstId, teamS
   return UIN33EightPetsTeamsReason.SUCCESS, 0
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.TeamConditionTestBattle = function(self)
-  -- function num : 0_15
+function UIN33EightPetsTeamsContext:TeamConditionTestBattle()
   local context = self:EightPetsContext()
   return context:TeamConditionTestPet(nil, -1)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.ReNameTT = function(self, TT, teamId, newName)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN33EightPetsTeamsContext:ReNameTT(TT, teamId, newName)
   local context = self:EightPetsContext()
   if self ~= context then
     return context:ReNameTT(TT, teamId, newName)
@@ -280,36 +192,27 @@ UIN33EightPetsTeamsContext.ReNameTT = function(self, TT, teamId, newName)
   local item = self:EightPetsFormationItem(teamId)
   item.name = newName
   local res = AsyncRequestRes:New()
-  ;
-  (self._eightComponent):HandleEightPetsChangeFormationReq(TT, res, teamId, item)
+  self._eightComponent:HandleEightPetsChangeFormationReq(TT, res, teamId, item)
   if not res:GetSucc() then
     self:CheckErrorCode(res)
   end
   return res
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsTeamsContext.UpdateFormationInfoTT = function(self, TT, teamId, teamName, pets)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN33EightPetsTeamsContext:UpdateFormationInfoTT(TT, teamId, teamName, pets)
   local context = self:EightPetsContext()
   if self ~= context then
     return context:UpdateFormationInfoTT(TT, teamId, teamName, pets)
   end
   local item = self:EightPetsFormationItem(teamId)
   item.name = teamName
-  for k,v in pairs(pets) do
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R12 in 'UnsetPending'
-
-    (item.pet_list)[k] = v
+  for k, v in pairs(pets) do
+    item.pet_list[k] = v
   end
   local res = AsyncRequestRes:New()
-  ;
-  (self._eightComponent):HandleEightPetsChangeFormationReq(TT, res, teamId, item)
+  self._eightComponent:HandleEightPetsChangeFormationReq(TT, res, teamId, item)
   if not res:GetSucc() then
     self:CheckErrorCode(res)
   end
   return res
 end
-
-

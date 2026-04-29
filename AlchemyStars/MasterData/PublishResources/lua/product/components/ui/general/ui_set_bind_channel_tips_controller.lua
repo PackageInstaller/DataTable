@@ -1,99 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_bind_channel_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetBindChannelTipsController", UIController)
 UISetBindChannelTipsController = UISetBindChannelTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetBindChannelTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISetBindChannelTipsController:OnShow(uiParams)
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
   self._channelId = uiParams[1]
   local des = ""
-  if self._channelId == (EngineGameHelper.SAIchannelId)() then
-    des = (StringTable.Get)("str_set_bind_channel_mail_bind_tips")
-  else
-    if self._channelId == MobileClientLoginChannel.MCLC_APPLE then
-      des = (StringTable.Get)("str_set_bind_channel_apple_bind_tips")
-    else
-      if self._channelId == MobileClientLoginChannel.MCLC_GOOGLE_PLAY then
-        des = (StringTable.Get)("str_set_bind_channel_google_bind_tips")
-      else
-        if self._channelId == MobileClientLoginChannel.MCLC_TWITTER then
-          des = (StringTable.Get)("str_set_bind_channel_twitter_bind_tips")
-        else
-          if self._channelId == MobileClientLoginChannel.MCLC_FACEBOOK then
-            des = (StringTable.Get)("str_set_bind_channel_facebook_bind_tips")
-          else
-            if self._channelId == MobileClientLoginChannel.MCLC_LINE then
-              des = (StringTable.Get)("str_set_bind_channel_line_bind_tips")
-            else
-              if self._channelId == MobileClientLoginChannel.MCLC_DMM then
-                des = (StringTable.Get)("str_set_bind_channel_dmm_bind_tips")
-              end
-            end
-          end
-        end
-      end
-    end
+  if self._channelId == EngineGameHelper.SAIchannelId() then
+    des = StringTable.Get("str_set_bind_channel_mail_bind_tips")
+  elseif self._channelId == MobileClientLoginChannel.MCLC_APPLE then
+    des = StringTable.Get("str_set_bind_channel_apple_bind_tips")
+  elseif self._channelId == MobileClientLoginChannel.MCLC_GOOGLE_PLAY then
+    des = StringTable.Get("str_set_bind_channel_google_bind_tips")
+  elseif self._channelId == MobileClientLoginChannel.MCLC_TWITTER then
+    des = StringTable.Get("str_set_bind_channel_twitter_bind_tips")
+  elseif self._channelId == MobileClientLoginChannel.MCLC_FACEBOOK then
+    des = StringTable.Get("str_set_bind_channel_facebook_bind_tips")
+  elseif self._channelId == MobileClientLoginChannel.MCLC_LINE then
+    des = StringTable.Get("str_set_bind_channel_line_bind_tips")
+  elseif self._channelId == MobileClientLoginChannel.MCLC_DMM then
+    des = StringTable.Get("str_set_bind_channel_dmm_bind_tips")
   end
-  ;
-  (self._desLabel):SetText(des)
-  self._oldChannelId = (((GameGlobal.GameLogic)()).ClientInfo).m_login_source
+  self._desLabel:SetText(des)
+  self._oldChannelId = GameGlobal.GameLogic().ClientInfo.m_login_source
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelTipsController.ConfirmBtnOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if self._channelId == (EngineGameHelper.SAIchannelId)() then
+function UISetBindChannelTipsController:ConfirmBtnOnClick()
+  if self._channelId == EngineGameHelper.SAIchannelId() then
     self:ShowDialog("UISetBindMailController")
     self:CloseDialog()
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UISetBindChannelController")
+    GameGlobal.UIStateManager():CloseDialog("UISetBindChannelController")
   else
     self:Lock("UISetBindChannelTipsController_ConfirmBtnOnClick")
     self:SetShowBusy(true)
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.ConfirmBtnOnClickCoro, self)
+    GameGlobal.TaskManager():StartTask(self.ConfirmBtnOnClickCoro, self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelTipsController.ConfirmBtnOnClickCoro = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local channelName = (SDKProxy:GetInstance()):GetIntlChannel(self._channelId)
+function UISetBindChannelTipsController:ConfirmBtnOnClickCoro(TT)
+  local channelName = SDKProxy:GetInstance():GetIntlChannel(self._channelId)
   if channelName == nil then
     self:SetShowBusy(false)
     self:UnLock("UISetBindChannelTipsController_ConfirmBtnOnClick")
-    return 
+    return
   end
-  local ret = (SDKProxy:GetInstance()):BindChannel(TT, channelName)
-  if ret.RetCode == (INTL.INTLErrorCode).SUCCESS then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_bind_bind_success"))
+  local ret = SDKProxy:GetInstance():BindChannel(TT, channelName)
+  if ret.RetCode == INTL.INTLErrorCode.SUCCESS then
+    ToastManager.ShowToast(StringTable.Get("str_set_bind_bind_success"))
     YIELD(TT)
     if self._oldChannelId == MobileClientLoginChannel.MCLC_GUEST then
-      (SDKProxy:GetInstance()):ResetGuest(TT)
+      SDKProxy:GetInstance():ResetGuest(TT)
     end
     self:CloseDialog()
-    ;
-    ((GameGlobal.GameLogic)()):BackToLogin(true, LoginModule, "bind account", false)
+    GameGlobal.GameLogic():BackToLogin(true, LoginModule, "bind account", false)
   else
-    ;
-    (UICommonHelper:GetInstance()):HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
+    UICommonHelper:GetInstance():HandleLoginErrorCode(ret.RetCode, ret.ThirdCode)
   end
   self:SetShowBusy(false)
   self:UnLock("UISetBindChannelTipsController_ConfirmBtnOnClick")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelTipsController.CancelBtnOnClick = function(self)
-  -- function num : 0_3
+function UISetBindChannelTipsController:CancelBtnOnClick()
   self:CloseDialog()
 end
-
-

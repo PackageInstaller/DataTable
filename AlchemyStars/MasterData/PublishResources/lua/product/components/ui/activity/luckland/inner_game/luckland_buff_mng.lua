@@ -1,82 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/luckland_buff_mng.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLBuffMng", Object)
 LLBuffMng = LLBuffMng
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffMng.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LLBuffMng:Constructor()
   self._buffSeqID = 1000
   self._buffTargetCtor = LuckLandTargetCalculator:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffMng.Dispose = function(self)
-  -- function num : 0_1
+function LLBuffMng:Dispose()
   self._buffSeqID = 1000
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffMng.CreateBuff = function(self, buffID, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function LLBuffMng:CreateBuff(buffID, entity)
   self._buffSeqID = self._buffSeqID + 1
   local llBuff = LuckLandBuff:New(self._buffSeqID, buffID, entity)
   return llBuff
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffMng.CreateBuffLogic = function(self, buffObj, logicCfg)
-  -- function num : 0_3 , upvalues : _ENV
+function LLBuffMng:CreateBuffLogic(buffObj, logicCfg)
   if not logicCfg or not next(logicCfg) then
     return nil
   end
   local logicArray = {}
-  for _,cfg in ipairs(logicCfg) do
+  for _, cfg in ipairs(logicCfg) do
     local subLogic = self:CreateLogic(buffObj, cfg)
     logicArray[#logicArray + 1] = subLogic
   end
   return logicArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffMng.CreateLogic = function(self, buffObj, logicParam)
-  -- function num : 0_4 , upvalues : _ENV
-  local logicName = (string.trim)(logicParam.logic)
+function LLBuffMng:CreateLogic(buffObj, logicParam)
+  local logicName = string.trim(logicParam.logic)
   local logicPrototype = Classes["LLBuffLogic" .. logicName]
-  do
-    if not logicPrototype then
-      local buffLogicName = "LLBuffLogic" .. logicParam.logic
-      ;
-      (Log.exception)("LLBuffMng:CreateLogic() not find logic:", buffLogicName, " config Logic:", logicParam.logic)
-      return 
-    end
-    return logicPrototype:New(buffObj, logicParam)
+  if not logicPrototype then
+    local buffLogicName = "LLBuffLogic" .. logicParam.logic
+    Log.exception("LLBuffMng:CreateLogic() not find logic:", buffLogicName, " config Logic:", logicParam.logic)
+    return
   end
+  return logicPrototype:New(buffObj, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffMng.AddBuff = function(self, buffID, entity)
-  -- function num : 0_5 , upvalues : _ENV
+function LLBuffMng:AddBuff(buffID, entity)
   if entity == nil then
-    (Log.fatal)("[LLBuffMng] AddBuff failed, entity is nil. BuffID: ", buffID)
+    Log.fatal("[LLBuffMng] AddBuff failed, entity is nil. BuffID: ", buffID)
   end
   local buff = self:CreateBuff(buffID, entity)
   return buff
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffMng.CalculateBuffTarget = function(self, targetType, targetParam, buffOwner)
-  -- function num : 0_6
-  return (self._buffTargetCtor):CalculateBuffTarget(targetType, targetParam, buffOwner)
+function LLBuffMng:CalculateBuffTarget(targetType, targetParam, buffOwner)
+  return self._buffTargetCtor:CalculateBuffTarget(targetType, targetParam, buffOwner)
 end
-
-

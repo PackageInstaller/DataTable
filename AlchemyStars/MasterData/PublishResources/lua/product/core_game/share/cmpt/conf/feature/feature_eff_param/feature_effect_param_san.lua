@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamSan", FeatureEffectParamBase)
 FeatureEffectParamSan = FeatureEffectParamSan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamSan.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamSan:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan._RefreshData = function(self, t)
-  -- function num : 0_1 , upvalues : _ENV
+function FeatureEffectParamSan:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.EnterSanValue then
     self._enterSanValue = t.EnterSanValue
@@ -35,83 +25,54 @@ FeatureEffectParamSan._RefreshData = function(self, t)
     self._roundDelValue = t.RoundDelValue
   end
   if t.SanSysCfgId then
-    (Log.notice)("SanSysCfgId:", t.SanSysCfgId, " curId:", self._sanSysCfgId)
+    Log.notice("SanSysCfgId:", t.SanSysCfgId, " curId:", self._sanSysCfgId)
     self._sanSysCfgId = t.SanSysCfgId
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan.GetFeatureType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureEffectParamSan:GetFeatureType()
   return FeatureType.Sanity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan.CopyFrom = function(self, param)
-  -- function num : 0_3 , upvalues : _ENV
+function FeatureEffectParamSan:CopyFrom(param)
   if param then
-    for k,v in pairs(param) do
+    for k, v in pairs(param) do
       self[k] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan.CloneSelf = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function FeatureEffectParamSan:CloneSelf()
   local param = FeatureEffectParamSan:New()
   param:CopyFrom(self)
   return param
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan.ReplaceByCustomCfg = function(self, t)
-  -- function num : 0_5
+function FeatureEffectParamSan:ReplaceByCustomCfg(t)
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan.GetSanityParam = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function FeatureEffectParamSan:GetSanityParam()
   if self._sanSysCfgId then
-    local sanityCfg = (Cfg.cfg_sanity)[self._sanSysCfgId]
+    local sanityCfg = Cfg.cfg_sanity[self._sanSysCfgId]
     if sanityCfg then
       return sanityCfg.Param
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan.GetEnterSanValue = function(self)
-  -- function num : 0_7
+function FeatureEffectParamSan:GetEnterSanValue()
   return self._enterSanValue
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan.GetMaxSanValue = function(self)
-  -- function num : 0_8
+function FeatureEffectParamSan:GetMaxSanValue()
   return self._maxSanValue
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan.GetMinSanValue = function(self)
-  -- function num : 0_9
+function FeatureEffectParamSan:GetMinSanValue()
   return self._minSanValue or 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamSan.GetRoundDelValue = function(self)
-  -- function num : 0_10
+function FeatureEffectParamSan:GetRoundDelValue()
   return self._roundDelValue
 end
-
-

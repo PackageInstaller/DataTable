@@ -1,55 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/luckland_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("LuckLandComponent", ICampaignComponent)
 LuckLandComponent = LuckLandComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandComponent:Constructor()
   self.m_component_info = LuckLandComponentInfo:New()
   self.m_rank_top = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function LuckLandComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = LuckLandComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function LuckLandComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function LuckLandComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_LUCK_LAND
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function LuckLandComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandComponent.HandleCompleteLuckLandMission = function(self, TT, asyncRes, mission_id, money, cur_hp, build_map)
-  -- function num : 0_5 , upvalues : _ENV
+function LuckLandComponent:HandleCompleteLuckLandMission(TT, asyncRes, mission_id, money, cur_hp, build_map)
   local request = CompleteLuckLandMissionReq:New()
   request.mission_id = mission_id
   request.money = money
@@ -57,86 +35,57 @@ LuckLandComponent.HandleCompleteLuckLandMission = function(self, TT, asyncRes, m
   request.build_map = build_map
   local response = CompleteLuckLandMissionRep:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][LuckLandComponent] HandleCompleteLuckLandMission ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][LuckLandComponent] HandleCompleteLuckLandMission ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (response.m_info).cur_star = self:CheckGetStar(mission_id, (response.m_result).total_score, build_map, cur_hp)
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).m_pass_mission_info)[mission_id] = response.m_info
+  response.m_info.cur_star = self:CheckGetStar(mission_id, response.m_result.total_score, build_map, cur_hp)
+  self.m_component_info.m_pass_mission_info[mission_id] = response.m_info
   return response.ret, response.reward, response.m_result, response.three_reward
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandComponent.HandleLuckLandGetRankList = function(self, TT, asyncRes, mission_id)
-  -- function num : 0_6 , upvalues : _ENV
+function LuckLandComponent:HandleLuckLandGetRankList(TT, asyncRes, mission_id)
   local request = LuckLandGetRankListReq:New()
   request.mission_id = mission_id
   local response = LuckLandGetRankListRes:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][LuckLandComponent] HandleLuckLandGetRankList ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][LuckLandComponent] HandleLuckLandGetRankList ret:", asyncRes.m_result)
     return nil
   end
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.m_rank_top)[mission_id] = response.show_list
+  self.m_rank_top[mission_id] = response.show_list
   return response.ret
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandComponent.CheckGetStar = function(self, mission_id, score, buildlist, hp)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_luck_land)({MissionID = mission_id})
+function LuckLandComponent:CheckGetStar(mission_id, score, buildlist, hp)
+  local cfgs = Cfg.cfg_component_luck_land({MissionID = mission_id})
   local star = 0
   if cfgs and cfgs[1] then
-    for index = 1, #(cfgs[1]).ThreeCondDesc do
-      local cfg_cond = (Cfg.cfg_luckland_client_threestarcondition)[((cfgs[1]).ThreeCondDesc)[index]]
+    for index = 1, #cfgs[1].ThreeCondDesc do
+      local cfg_cond = Cfg.cfg_luckland_client_threestarcondition[cfgs[1].ThreeCondDesc[index]]
       if cfg_cond and self:CheckCond(cfg_cond, score, buildlist, hp) then
         star = star | 1 << index - 1
       end
     end
   end
-  do
-    return star
-  end
+  return star
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandComponent.CheckCond = function(self, cfg_cond, score, buildlist, hp)
-  -- function num : 0_8 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Unhandled construct in 'MakeBoolean' P1
-
-  if cfg_cond.Type == LuckLandThreeStarType.Score and (cfg_cond.Value)[1] <= score then
-    return true
-  end
-  if cfg_cond.Type == LuckLandThreeStarType.BuildingLevel then
-    local buildingID = (cfg_cond.Value)[1]
-    local buildingLevel = (cfg_cond.Value)[2]
+function LuckLandComponent:CheckCond(cfg_cond, score, buildlist, hp)
+  if cfg_cond.Type == LuckLandThreeStarType.Score then
+    if score >= cfg_cond.Value[1] then
+      return true
+    end
+  elseif cfg_cond.Type == LuckLandThreeStarType.BuildingLevel then
+    local buildingID = cfg_cond.Value[1]
+    local buildingLevel = cfg_cond.Value[2]
     if buildlist and buildlist[buildingID] and buildingLevel <= buildlist[buildingID] then
       return true
     end
-  else
-    do
-      if cfg_cond.Type == LuckLandThreeStarType.HP and (cfg_cond.Value)[1] <= hp then
-        return true
-      end
-      return false
-    end
+  elseif cfg_cond.Type == LuckLandThreeStarType.HP and hp >= cfg_cond.Value[1] then
+    return true
   end
+  return false
 end
-
-

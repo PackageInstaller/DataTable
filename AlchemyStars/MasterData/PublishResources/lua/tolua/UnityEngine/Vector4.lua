@@ -1,18 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/UnityEngine/Vector4.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local clamp = Mathf.Clamp
 local sqrt = Mathf.Sqrt
 local min = Mathf.Min
 local max = Mathf.Max
-local setmetatable = setmetatable
-local rawget = rawget
-local Vector4 = {x = 0, y = 0, z = 0, w = 0, _className = "Vector4"}
-local get = (tolua.initget)(Vector4)
-Vector4.__index = function(t, k)
-  -- function num : 0_0 , upvalues : rawget, Vector4, get
+local setmetatable = _ENV.setmetatable
+local rawget = _ENV.rawget
+local Vector4 = {
+  x = 0,
+  y = 0,
+  z = 0,
+  w = 0,
+  _className = "Vector4"
+}
+local get = tolua.initget(Vector4)
+
+function Vector4.__index(t, k)
   local var = rawget(Vector4, k)
   if var == nil then
     var = rawget(get, k)
@@ -23,37 +24,41 @@ Vector4.__index = function(t, k)
   return var
 end
 
-Vector4.__call = function(t, x, y, z, w)
-  -- function num : 0_1 , upvalues : setmetatable, Vector4
-  return setmetatable({x = x or 0, y = y or 0, z = z or 0, w = w or 0}, Vector4)
+function Vector4.__call(t, x, y, z, w)
+  return setmetatable({
+    x = x or 0,
+    y = y or 0,
+    z = z or 0,
+    w = w or 0
+  }, Vector4)
 end
 
-Vector4.New = function(x, y, z, w)
-  -- function num : 0_2 , upvalues : setmetatable, Vector4
-  return setmetatable({x = x or 0, y = y or 0, z = z or 0, w = w or 0}, Vector4)
+function Vector4.New(x, y, z, w)
+  return setmetatable({
+    x = x or 0,
+    y = y or 0,
+    z = z or 0,
+    w = w or 0
+  }, Vector4)
 end
 
-Vector4.Set = function(self, x, y, z, w)
-  -- function num : 0_3
+function Vector4:Set(x, y, z, w)
   self.x = x or 0
   self.y = y or 0
   self.z = z or 0
   self.w = w or 0
 end
 
-Vector4.Get = function(self)
-  -- function num : 0_4
+function Vector4:Get()
   return self.x, self.y, self.z, self.w
 end
 
-Vector4.Lerp = function(from, to, t)
-  -- function num : 0_5 , upvalues : clamp, Vector4
+function Vector4.Lerp(from, to, t)
   t = clamp(t, 0, 1)
-  return (Vector4.New)(from.x + (to.x - from.x) * t, from.y + (to.y - from.y) * t, from.z + (to.z - from.z) * t, from.w + (to.w - from.w) * t)
+  return Vector4.New(from.x + (to.x - from.x) * t, from.y + (to.y - from.y) * t, from.z + (to.z - from.z) * t, from.w + (to.w - from.w) * t)
 end
 
-Vector4.MoveTowards = function(current, target, maxDistanceDelta)
-  -- function num : 0_6
+function Vector4.MoveTowards(current, target, maxDistanceDelta)
   local vector = target - current
   local magnitude = vector:Magnitude()
   if maxDistanceDelta < magnitude and magnitude ~= 0 then
@@ -65,42 +70,35 @@ Vector4.MoveTowards = function(current, target, maxDistanceDelta)
   return target
 end
 
-Vector4.Scale = function(a, b)
-  -- function num : 0_7 , upvalues : Vector4
-  return (Vector4.New)(a.x * b.x, a.y * b.y, a.z * b.z, a.w * b.w)
+function Vector4.Scale(a, b)
+  return Vector4.New(a.x * b.x, a.y * b.y, a.z * b.z, a.w * b.w)
 end
 
-Vector4.SetScale = function(self, scale)
-  -- function num : 0_8
+function Vector4:SetScale(scale)
   self.x = self.x * scale.x
   self.y = self.y * scale.y
   self.z = self.z * scale.z
   self.w = self.w * scale.w
 end
 
-Vector4.Normalize = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local v = (vector4.New)(self.x, self.y, self.z, self.w)
+function Vector4:Normalize()
+  local v = vector4.New(self.x, self.y, self.z, self.w)
   return v:SetNormalize()
 end
 
-Vector4.SetNormalize = function(self)
-  -- function num : 0_10
+function Vector4:SetNormalize()
   local num = self:Magnitude()
   if num == 1 then
     return self
+  elseif 1.0E-5 < num then
+    self:Div(num)
   else
-    if num > 1e-05 then
-      self:Div(num)
-    else
-      self:Set(0, 0, 0, 0)
-    end
+    self:Set(0, 0, 0, 0)
   end
   return self
 end
 
-Vector4.Div = function(self, d)
-  -- function num : 0_11
+function Vector4:Div(d)
   self.x = self.x / d
   self.y = self.y / d
   self.z = self.z / d
@@ -108,8 +106,7 @@ Vector4.Div = function(self, d)
   return self
 end
 
-Vector4.Mul = function(self, d)
-  -- function num : 0_12
+function Vector4:Mul(d)
   self.x = self.x * d
   self.y = self.y * d
   self.z = self.z * d
@@ -117,8 +114,7 @@ Vector4.Mul = function(self, d)
   return self
 end
 
-Vector4.Add = function(self, b)
-  -- function num : 0_13
+function Vector4:Add(b)
   self.x = self.x + b.x
   self.y = self.y + b.y
   self.z = self.z + b.z
@@ -126,8 +122,7 @@ Vector4.Add = function(self, b)
   return self
 end
 
-Vector4.Sub = function(self, b)
-  -- function num : 0_14
+function Vector4:Sub(b)
   self.x = self.x - b.x
   self.y = self.y - b.y
   self.z = self.z - b.z
@@ -135,100 +130,80 @@ Vector4.Sub = function(self, b)
   return self
 end
 
-Vector4.Dot = function(a, b)
-  -- function num : 0_15
+function Vector4.Dot(a, b)
   return a.x * b.x + a.y * b.y + a.z * b.z + a.w * b.w
 end
 
-Vector4.Project = function(a, b)
-  -- function num : 0_16 , upvalues : Vector4
-  local s = (Vector4.Dot)(a, b) / (Vector4.Dot)(b, b)
+function Vector4.Project(a, b)
+  local s = Vector4.Dot(a, b) / Vector4.Dot(b, b)
   return b * s
 end
 
-Vector4.Distance = function(a, b)
-  -- function num : 0_17 , upvalues : Vector4
+function Vector4.Distance(a, b)
   local v = a - b
-  return (Vector4.Magnitude)(v)
+  return Vector4.Magnitude(v)
 end
 
-Vector4.Magnitude = function(a)
-  -- function num : 0_18 , upvalues : sqrt
+function Vector4.Magnitude(a)
   return sqrt(a.x * a.x + a.y * a.y + a.z * a.z + a.w * a.w)
 end
 
-Vector4.SqrMagnitude = function(a)
-  -- function num : 0_19
+function Vector4.SqrMagnitude(a)
   return a.x * a.x + a.y * a.y + a.z * a.z + a.w * a.w
 end
 
-Vector4.Min = function(lhs, rhs)
-  -- function num : 0_20 , upvalues : Vector4, max
-  return (Vector4.New)(max(lhs.x, rhs.x), max(lhs.y, rhs.y), max(lhs.z, rhs.z), max(lhs.w, rhs.w))
+function Vector4.Min(lhs, rhs)
+  return Vector4.New(max(lhs.x, rhs.x), max(lhs.y, rhs.y), max(lhs.z, rhs.z), max(lhs.w, rhs.w))
 end
 
-Vector4.Max = function(lhs, rhs)
-  -- function num : 0_21 , upvalues : Vector4, min
-  return (Vector4.New)(min(lhs.x, rhs.x), min(lhs.y, rhs.y), min(lhs.z, rhs.z), min(lhs.w, rhs.w))
+function Vector4.Max(lhs, rhs)
+  return Vector4.New(min(lhs.x, rhs.x), min(lhs.y, rhs.y), min(lhs.z, rhs.z), min(lhs.w, rhs.w))
 end
 
-Vector4.__tostring = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  return (string.format)("[%f,%f,%f,%f]", self.x, self.y, self.z, self.w)
+function Vector4:__tostring()
+  return string.format("[%f,%f,%f,%f]", self.x, self.y, self.z, self.w)
 end
 
-Vector4.__div = function(va, d)
-  -- function num : 0_23 , upvalues : Vector4
-  return (Vector4.New)(va.x / d, va.y / d, va.z / d, va.w / d)
+function Vector4.__div(va, d)
+  return Vector4.New(va.x / d, va.y / d, va.z / d, va.w / d)
 end
 
-Vector4.__mul = function(va, d)
-  -- function num : 0_24 , upvalues : Vector4
-  return (Vector4.New)(va.x * d, va.y * d, va.z * d, va.w * d)
+function Vector4.__mul(va, d)
+  return Vector4.New(va.x * d, va.y * d, va.z * d, va.w * d)
 end
 
-Vector4.__add = function(va, vb)
-  -- function num : 0_25 , upvalues : Vector4
-  return (Vector4.New)(va.x + vb.x, va.y + vb.y, va.z + vb.z, va.w + vb.w)
+function Vector4.__add(va, vb)
+  return Vector4.New(va.x + vb.x, va.y + vb.y, va.z + vb.z, va.w + vb.w)
 end
 
-Vector4.__sub = function(va, vb)
-  -- function num : 0_26 , upvalues : Vector4
-  return (Vector4.New)(va.x - vb.x, va.y - vb.y, va.z - vb.z, va.w - vb.w)
+function Vector4.__sub(va, vb)
+  return Vector4.New(va.x - vb.x, va.y - vb.y, va.z - vb.z, va.w - vb.w)
 end
 
-Vector4.__unm = function(va)
-  -- function num : 0_27 , upvalues : Vector4
-  return (Vector4.New)(-va.x, -va.y, -va.z, -va.w)
+function Vector4.__unm(va)
+  return Vector4.New(-va.x, -va.y, -va.z, -va.w)
 end
 
-Vector4.__eq = function(va, vb)
-  -- function num : 0_28 , upvalues : Vector4
+function Vector4.__eq(va, vb)
   if va._className ~= vb._className then
     return false
   end
   local v = va - vb
-  local delta = (Vector4.SqrMagnitude)(v)
-  do return delta < 1e-10 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local delta = Vector4.SqrMagnitude(v)
+  return delta < 1.0E-10
 end
 
-get.zero = function()
-  -- function num : 0_29 , upvalues : Vector4
-  return (Vector4.New)(0, 0, 0, 0)
+function get.zero()
+  return Vector4.New(0, 0, 0, 0)
 end
 
-get.one = function()
-  -- function num : 0_30 , upvalues : Vector4
-  return (Vector4.New)(1, 1, 1, 1)
+function get.one()
+  return Vector4.New(1, 1, 1, 1)
 end
 
 get.magnitude = Vector4.Magnitude
 get.normalized = Vector4.Normalize
 get.sqrMagnitude = Vector4.SqrMagnitude
--- DECOMPILER ERROR at PC89: Confused about usage of register: R8 in 'UnsetPending'
-
 UnityEngine.Vector4 = Vector4
 setmetatable(Vector4, Vector4)
 return Vector4
-

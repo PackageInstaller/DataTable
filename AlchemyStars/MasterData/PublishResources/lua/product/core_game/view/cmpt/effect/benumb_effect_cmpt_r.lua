@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/effect/benumb_effect_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BenumbEffectComponent", Object)
 BenumbEffectComponent = BenumbEffectComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BenumbEffectComponent.Constructor = function(self)
-  -- function num : 0_0
+function BenumbEffectComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BenumbEffect = function(self)
-  -- function num : 0_1
-  return self:GetComponent((self.WEComponentsEnum).BenumbEffect)
+function Entity:BenumbEffect()
+  return self:GetComponent(self.WEComponentsEnum.BenumbEffect)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasBenumbEffect = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).BenumbEffect)
+function Entity:HasBenumbEffect()
+  return self:HasComponent(self.WEComponentsEnum.BenumbEffect)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddBenumbEffect = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).BenumbEffect
+function Entity:AddBenumbEffect()
+  local index = self.WEComponentsEnum.BenumbEffect
   local component = BenumbEffectComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBenumbEffect = function(self)
-  -- function num : 0_4
+function Entity:RemoveBenumbEffect()
   if self:HasBenumbEffect() then
-    self:RemoveComponent((self.WEComponentsEnum).BenumbEffect)
+    self:RemoveComponent(self.WEComponentsEnum.BenumbEffect)
   end
 end
-
-

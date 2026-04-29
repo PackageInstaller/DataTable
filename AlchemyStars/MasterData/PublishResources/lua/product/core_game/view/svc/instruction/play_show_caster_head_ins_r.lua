@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_show_caster_head_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayShowCasterHeadInstruction", BaseInstruction)
 PlayShowCasterHeadInstruction = PlayShowCasterHeadInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayShowCasterHeadInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayShowCasterHeadInstruction:Constructor(paramList)
   self._isShow = paramList.isShow
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayShowCasterHeadInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayShowCasterHeadInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local petPstId = 0
-  if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-    petPstId = ((casterEntity:GetSuperEntity()):PetPstID()):GetPstID()
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    petPstId = casterEntity:GetSuperEntity():PetPstID():GetPstID()
   else
-    petPstId = (casterEntity:PetPstID()):GetPstID()
+    petPstId = casterEntity:PetPstID():GetPstID()
   end
   if self._isShow == "1" then
-    (world:EventDispatcher()):Dispatch(GameEventType.InOutQueue, petPstId, true)
+    world:EventDispatcher():Dispatch(GameEventType.InOutQueue, petPstId, true)
   else
-    ;
-    (world:EventDispatcher()):Dispatch(GameEventType.InOutQueue, petPstId, false)
+    world:EventDispatcher():Dispatch(GameEventType.InOutQueue, petPstId, false)
   end
 end
-
-

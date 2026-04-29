@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_review_n8.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignReviewN8", ICampaignComponentLocalProcessBase)
 CCampaignReviewN8 = CCampaignReviewN8
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignReviewN8.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignReviewN8:Constructor()
   self._lineMissionComponet = nil
   self._lineMissionCompInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN8.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignReviewN8:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_REVIEW_N8
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN8.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignReviewN8:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN8.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignReviewN8:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLineMissionComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN8._GetLineMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._lineMissionComponet = (self._campaignObj):GetComponent(ECampaignReviewN8ComponentID.ECAMPAIGN_REVIEW_ReviewN8_LINE_MISSION)
+function CCampaignReviewN8:_GetLineMissionComponent()
+  self._lineMissionComponet = self._campaignObj:GetComponent(ECampaignReviewN8ComponentID.ECAMPAIGN_REVIEW_ReviewN8_LINE_MISSION)
   if not self._lineMissionComponet then
-    return 
+    return
   end
-  self._lineMissionCompInfo = (self._lineMissionComponet):ComponentInfo()
+  self._lineMissionCompInfo = self._lineMissionComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN8.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignReviewN8:GetComponent(componentID)
   if ECampaignReviewN8ComponentID.ECAMPAIGN_REVIEW_ReviewN8_LINE_MISSION == componentID then
     return self._lineMissionComponet
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignReviewN8.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignReviewN8:GetComponentInfo(componentID)
   if ECampaignReviewN8ComponentID.ECAMPAIGN_REVIEW_ReviewN8_LINE_MISSION == componentID then
     return self._lineMissionCompInfo
   end
   return nil
 end
-
-

@@ -1,109 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionMoveBase", AINewNode)
 ActionMoveBase = ActionMoveBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionMoveBase:Constructor()
   self.m_posMoveTarget = nil
-  self.m_posTarget = (Vector2.New)(0, 0)
+  self.m_posTarget = Vector2.New(0, 0)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveBase.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionMoveBase:InitializeNode(cfg, context, parentNode, configData)
+  ActionMoveBase.super.InitializeNode(self, cfg, context, parentNode, configData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.Reset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((ActionMoveBase.super).Reset)(self)
-  self.m_posTarget = (Vector2.New)(0, 0)
+function ActionMoveBase:Reset()
+  ActionMoveBase.super.Reset(self)
+  self.m_posTarget = Vector2.New(0, 0)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.CheckCanMove = function(self)
-  -- function num : 0_3
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionMoveBase:CheckCanMove()
+  local aiCmpt = self.m_entityOwn:AI()
   return aiCmpt:CanMove()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.OnBegin = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionMoveBase:OnBegin()
+  local aiCmpt = self.m_entityOwn:AI()
   if AIMoveState.MoveEnd == aiCmpt:GetMoveState() then
     self:PrintLog("移动结束等待中")
-    return 
+    return
   end
-  if self:CheckCanMove() == false then
+  if false == self:CheckCanMove() then
     aiCmpt:SetMoveState(AIMoveState.MoveEnd)
     self:PrintLog("启动移动<不允许>")
-    return 
+    return
   end
-  local trapCmpt = (self.m_entityOwn):Trap()
+  local trapCmpt = self.m_entityOwn:Trap()
   if trapCmpt then
     aiCmpt:SetMoveState(AIMoveState.MoveEnd)
     self:PrintLog("机关不能以AI移动")
-    return 
+    return
   end
   aiCmpt:SetMoveState(AIMoveState.Moving)
   local targetEntity = aiCmpt:GetTargetEntity()
   if targetEntity and targetEntity:HasGridLocation() then
     local listPosTarget = targetEntity:GetCoverAreaList()
-    local targetEntityPosCenter = (targetEntity:GridLocation()):Center()
-    local posSelf = (self.m_entityOwn):GetGridPosition()
+    local targetEntityPosCenter = targetEntity:GridLocation():Center()
+    local posSelf = self.m_entityOwn:GetGridPosition()
     self:InitTargetPosList(listPosTarget, targetEntityPosCenter)
   else
-    do
-      self:PrintLog("没有找到目标")
-    end
+    self:PrintLog("没有找到目标")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.BeforeCalcMovePos = function(self)
-  -- function num : 0_5
+function ActionMoveBase:BeforeCalcMovePos()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.AfterCalcMovePos = function(self)
-  -- function num : 0_6
+function ActionMoveBase:AfterCalcMovePos()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.OnUpdate = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function ActionMoveBase:OnUpdate()
   local entityWork = self.m_entityOwn
   local aiComponent = entityWork:AI()
   if AIMoveState.MoveEnd == aiComponent:GetMoveState() then
     self:PrintLog("移动结束等待中")
     return AINewNodeStatus.Success
   end
-  if self:CheckCanMove() == false then
+  if false == self:CheckCanMove() then
     return AINewNodeStatus.Success
   end
-  if (AINewNode.IsEntityDead)(self.m_entityOwn) then
+  if AINewNode.IsEntityDead(self.m_entityOwn) then
     return AINewNodeStatus.Success
   end
-  local sBoard = (self._world):GetService("BoardLogic")
+  local sBoard = self._world:GetService("BoardLogic")
   self:BeforeCalcMovePos()
   local posWalk = self:_CalcMovePos(entityWork)
   self:AfterCalcMovePos()
-  local aiRecorderCmpt = ((self._world):GetBoardEntity()):AIRecorder()
+  local aiRecorderCmpt = self._world:GetBoardEntity():AIRecorder()
   local walkRes = MonsterWalkResult:New()
   if posWalk ~= nil then
     local posSelf = entityWork:GetGridPosition()
@@ -115,33 +85,31 @@ ActionMoveBase.OnUpdate = function(self)
     walkRes:SetWalkPos(posWalk)
     aiRecorderCmpt:AddWalkResult(entityID, walkRes)
     self:_OnArrivePos(walkRes)
-    ;
-    ((self._world):GetSyncLogger()):Trace({key = "AIMove", aiNode = self._className, entityID = entityWork:GetID(), fromTo = tostring(posSelf) .. "->" .. tostring(posWalk), target = tostring(self.m_posTarget)})
+    self._world:GetSyncLogger():Trace({
+      key = "AIMove",
+      aiNode = self._className,
+      entityID = entityWork:GetID(),
+      fromTo = tostring(posSelf) .. "->" .. tostring(posWalk),
+      target = tostring(self.m_posTarget)
+    })
     self:PrintLog("移动位置 " .. self:_MakePosString(posSelf) .. "=>", self:_MakePosString(posWalk), ", 选择目标", self:_MakePosString(self.m_posTarget))
     self:PrintDebugLog("移动位置 " .. self:_MakePosString(posSelf) .. "=>", self:_MakePosString(posWalk), ", 选择目标", self:_MakePosString(self.m_posTarget))
   end
-  do
-    local nMobilityToalRemain = aiComponent:GetMobilityValid()
-    if (AINewNode.IsEntityDead)(self.m_entityOwn) then
-      aiComponent:SetMoveState(AIMoveState.MoveEnd)
-      return AINewNodeStatus.Success
-    else
-      if nMobilityToalRemain > 1 then
-        return AINewNodeStatus.Failure
-      else
-        aiComponent:SetMoveState(AIMoveState.MoveEnd)
-        return AINewNodeStatus.Success
-      end
-    end
+  local nMobilityToalRemain = aiComponent:GetMobilityValid()
+  if AINewNode.IsEntityDead(self.m_entityOwn) then
+    aiComponent:SetMoveState(AIMoveState.MoveEnd)
+    return AINewNodeStatus.Success
+  elseif 1 < nMobilityToalRemain then
+    return AINewNodeStatus.Failure
+  else
+    aiComponent:SetMoveState(AIMoveState.MoveEnd)
+    return AINewNodeStatus.Success
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase._CalcMovePos = function(self, entityWork)
-  -- function num : 0_8
+function ActionMoveBase:_CalcMovePos(entityWork)
   local aiComponent = entityWork:AI()
-  local posSelf = (entityWork:GridLocation()).Position
+  local posSelf = entityWork:GridLocation().Position
   local posTarget = self:FindNewTargetPos()
   self.m_posTarget = posTarget
   if posSelf == posTarget then
@@ -161,124 +129,95 @@ ActionMoveBase._CalcMovePos = function(self, entityWork)
   return posWalk
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.OnEnd = function(self)
-  -- function num : 0_9
+function ActionMoveBase:OnEnd()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase._ComputeSkillRange = function(self, nSkillID, posCenter, bodyArea, dir)
-  -- function num : 0_10 , upvalues : _ENV
+function ActionMoveBase:_ComputeSkillRange(nSkillID, posCenter, bodyArea, dir)
   if nSkillID == 0 then
     return {}
   end
   local workCenter = posCenter
-  if #bodyArea == 4 then
+  if 4 == #bodyArea then
     workCenter = workCenter + Vector2(-1, -1)
-  else
-    if #bodyArea == 9 then
-      workCenter = workCenter + Vector2(-2, -2)
-    end
+  elseif 9 == #bodyArea then
+    workCenter = workCenter + Vector2(-2, -2)
   end
   return self:CalculateSkillRange(nSkillID, workCenter, dir, bodyArea)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.InitTargetPosList = function(self, listPosTarget)
-  -- function num : 0_11
+function ActionMoveBase:InitTargetPosList(listPosTarget)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.FindNewTargetPos = function(self)
-  -- function num : 0_12
-  local posDefault = (self.m_entityOwn):GetGridPosition()
+function ActionMoveBase:FindNewTargetPos()
+  local posDefault = self.m_entityOwn:GetGridPosition()
   return posDefault
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.FindNewWalkPos = function(self, walkRange, posCenter, posDef)
-  -- function num : 0_13
+function ActionMoveBase:FindNewWalkPos(walkRange, posCenter, posDef)
   return self:FindPosByNearCenter(walkRange, posCenter, posDef, 1)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.FindPosByNearCenter = function(self, listPlanPos, posCenter, posDef, nCheckStep)
-  -- function num : 0_14 , upvalues : _ENV
-  if listPlanPos == nil or (table.count)(listPlanPos) <= 0 then
+function ActionMoveBase:FindPosByNearCenter(listPlanPos, posCenter, posDef, nCheckStep)
+  if nil == listPlanPos or table.count(listPlanPos) <= 0 then
     return posDef
   end
   local listWalk = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
   listWalk:AllowDuplicate()
-  local aiCmpt = (self.m_entityOwn):AI()
+  local aiCmpt = self.m_entityOwn:AI()
   local lastMovePos = aiCmpt:GetLastMovePos()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   for i = 1, #listPlanPos do
     local posData = listPlanPos[i]
     local posWalk = posData:GetPos()
-    if posWalk ~= posDef and (nCheckStep == nil or nCheckStep == posData:GetStep()) then
+    if posWalk ~= posDef and (nil == nCheckStep or nCheckStep == posData:GetStep()) then
       local isBlockMoveWithTrapWall = utilDataSvc:IsBlockMoveWithTrapWall(posDef, posWalk, self.m_entityOwn)
       if posWalk ~= lastMovePos and isBlockMoveWithTrapWall == false then
-        (AINewNode.InsertSortedArray)(listWalk, posCenter, posWalk, i)
+        AINewNode.InsertSortedArray(listWalk, posCenter, posWalk, i)
+      else
       end
     end
   end
   return self:FindPosValid(listWalk, posDef)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase._OnArrivePos = function(self, walkRes)
-  -- function num : 0_15 , upvalues : _ENV
-  local world = (self.m_entityOwn):GetOwnerWorld()
-  local skillLogicSvc = (self._world):GetService("SkillLogic")
+function ActionMoveBase:_OnArrivePos(walkRes)
+  local world = self.m_entityOwn:GetOwnerWorld()
+  local skillLogicSvc = self._world:GetService("SkillLogic")
   local trapServiceLogic = world:GetService("TrapLogic")
-  local pos = (self.m_entityOwn):GetGridPosition()
+  local pos = self.m_entityOwn:GetGridPosition()
   local listTrapWork, listTrapResult = trapServiceLogic:TriggerTrapByEntity(self.m_entityOwn, TrapTriggerOrigin.Move)
-  for i,e in ipairs(listTrapWork) do
+  for i, e in ipairs(listTrapWork) do
     local trapEntity = e
     local skillEffectResultContainer = listTrapResult[i]
     local aiResult = AISkillResult:New()
     aiResult:SetResultContainer(skillEffectResultContainer)
     local scopeRes = skillEffectResultContainer:GetScopeResult()
-    ;
-    (Log.debug)("[AIMove] OnArrivePos() monster=", (self.m_entityOwn):GetID(), " pos=", pos, " trigger trapid=", trapEntity:GetID(), " defender=", (scopeRes:GetTargetIDs())[1])
+    Log.debug("[AIMove] OnArrivePos() monster=", self.m_entityOwn:GetID(), " pos=", pos, " trigger trapid=", trapEntity:GetID(), " defender=", scopeRes:GetTargetIDs()[1])
     walkRes:AddWalkTrap(trapEntity:GetID(), aiResult)
   end
-  local nTrapCount = (table.count)(listTrapWork)
+  local nTrapCount = table.count(listTrapWork)
   local passGrids = {}
-  local bodyArea = ((self.m_entityOwn):BodyArea()):GetArea()
-  local dir = ((self.m_entityOwn):GridLocation()):GetGridDir()
-  local curPos = (self.m_entityOwn):GetGridPosition()
-  for _,value in ipairs(bodyArea) do
+  local bodyArea = self.m_entityOwn:BodyArea():GetArea()
+  local dir = self.m_entityOwn:GridLocation():GetGridDir()
+  local curPos = self.m_entityOwn:GetGridPosition()
+  for _, value in ipairs(bodyArea) do
     local pos = curPos + value - dir
-    if not (table.Vector2Include)(passGrids, pos) then
+    if not table.Vector2Include(passGrids, pos) then
       passGrids[#passGrids + 1] = pos
     end
   end
-  local aiCmpt = (self.m_entityOwn):AI()
+  local aiCmpt = self.m_entityOwn:AI()
   local lastMovePos = aiCmpt:GetLastMovePos()
   local nt = NTMonsterMoveOneFinish:New(self.m_entityOwn, passGrids, walkRes:GetWalkPos(), lastMovePos)
-  ;
-  (world:GetService("Trigger")):Notify(nt)
+  world:GetService("Trigger"):Notify(nt)
   walkRes:SetWalkPassedGrid(passGrids)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBase.isDuplicate = function(self, pos, passGrids)
-  -- function num : 0_16 , upvalues : _ENV
-  for _,value in ipairs(passGrids) do
+function ActionMoveBase:isDuplicate(pos, passGrids)
+  for _, value in ipairs(passGrids) do
     if value.x == pos.x and value.y == pos.y then
       return true
     end
   end
   return false
 end
-
-

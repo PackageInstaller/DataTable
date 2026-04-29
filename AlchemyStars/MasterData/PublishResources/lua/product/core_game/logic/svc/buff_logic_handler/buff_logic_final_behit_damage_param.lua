@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_final_behit_damage_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetFinalBehitDamageParam", BuffLogicBase)
 BuffLogicSetFinalBehitDamageParam = BuffLogicSetFinalBehitDamageParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetFinalBehitDamageParam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetFinalBehitDamageParam:Constructor(buffInstance, logicParam)
   self._percent = logicParam.percent
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetFinalBehitDamageParam.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetFinalBehitDamageParam:DoLogic()
+  local e = self._buffInstance:Entity()
   local cpt = e:Attributes()
   cpt:Modify("FinalBehitDamageParam", -self._percent / 100)
 end
-
-

@@ -1,20 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_part/ui_map_node_plot_part.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapNodePlotPart", UIMapNodeBasePart)
 UIMapNodePlotPart = UIMapNodePlotPart
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapNodePlotPart.GetUIComponentStar = function(self)
-  -- function num : 0_0
+function UIMapNodePlotPart:GetUIComponentStar()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodePlotPart.FlushStar = function(self)
-  -- function num : 0_1
+function UIMapNodePlotPart:FlushStar()
 end
-
-

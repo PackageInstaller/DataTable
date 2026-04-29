@@ -1,84 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureConfigData", Object)
 FeatureConfigData = FeatureConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureConfigData.Constructor = function(self, effectParamParser)
-  -- function num : 0_0
+function FeatureConfigData:Constructor(effectParamParser)
   self._effectParamParser = effectParamParser
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigData.ParseFeatureConfig = function(self, featureType)
-  -- function num : 0_1 , upvalues : _ENV
-  local featureConfigGroup = (Cfg.cfg_feature)({FeatureType = featureType})
-  if featureConfigGroup and #featureConfigGroup > 0 then
-    (Log.fatal)("ParseFeatureConfig feature not exist FeatureType=", featureType, " ", (Log.traceback)())
-    do return  end
-    local featureConfig = featureConfigGroup[1]
-    self._featureType = featureType
-    self._featureIndex = featureConfig.ID
-    self._previewType = featureConfig.PreviewType
-    self._previewParam = featureConfig.PreviewParam
-    self._layoutOrder = featureConfig.LayoutOrder or -1
-    self._icon = featureConfig.Icon
-    self._desc = featureConfig.Desc
-    self._effectParam = (self._effectParamParser):ParseFeatureEffectParam(featureType, featureConfig.EffectParam)
+function FeatureConfigData:ParseFeatureConfig(featureType)
+  local featureConfigGroup = Cfg.cfg_feature({FeatureType = featureType})
+  if featureConfigGroup and 0 < #featureConfigGroup then
+  else
+    Log.fatal("ParseFeatureConfig feature not exist FeatureType=", featureType, " ", Log.traceback())
+    return
   end
+  local featureConfig = featureConfigGroup[1]
+  self._featureType = featureType
+  self._featureIndex = featureConfig.ID
+  self._previewType = featureConfig.PreviewType
+  self._previewParam = featureConfig.PreviewParam
+  self._layoutOrder = featureConfig.LayoutOrder or -1
+  self._icon = featureConfig.Icon
+  self._desc = featureConfig.Desc
+  self._effectParam = self._effectParamParser:ParseFeatureEffectParam(featureType, featureConfig.EffectParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigData.GetFeatureType = function(self)
-  -- function num : 0_2
+function FeatureConfigData:GetFeatureType()
   return self._featureType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigData.GetFeatureIcon = function(self)
-  -- function num : 0_3
+function FeatureConfigData:GetFeatureIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigData.GetFeatureDesc = function(self)
-  -- function num : 0_4
+function FeatureConfigData:GetFeatureDesc()
   return self._desc
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigData.GetFeatureEffectParam = function(self)
-  -- function num : 0_5
+function FeatureConfigData:GetFeatureEffectParam()
   return self._effectParam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigData.GetFeaturePreviewType = function(self)
-  -- function num : 0_6
+function FeatureConfigData:GetFeaturePreviewType()
   return self._previewType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigData.GetFeaturePreviewParam = function(self)
-  -- function num : 0_7
+function FeatureConfigData:GetFeaturePreviewParam()
   return self._previewParam
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureConfigData.GetFeaturePreviewParam = function(self)
-  -- function num : 0_8
+function FeatureConfigData:GetFeaturePreviewParam()
   return self._layoutOrder
 end
-
-

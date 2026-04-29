@@ -1,97 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/campaign_fish_game.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignFishGame", ICampaignComponentLocalProcessBase)
 CCampaignFishGame = CCampaignFishGame
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignFishGame.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignFishGame:Constructor()
   self._FishingComponent = nil
   self._FishingComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFishGame.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignFishGame:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_FISH_GAME
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFishGame.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignFishGame:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFishGame.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignFishGame:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetFishingComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFishGame._GetFishingComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._FishingComponent = (self._campaignObj):GetComponent(ECampaignFishGameComponentID.ECAMPAIGN_FISH_GAME)
+function CCampaignFishGame:_GetFishingComponent()
+  self._FishingComponent = self._campaignObj:GetComponent(ECampaignFishGameComponentID.ECAMPAIGN_FISH_GAME)
   if not self._FishingComponent then
-    return 
+    return
   end
-  self._FishingComponentInfo = (self._FishingComponent):ComponentInfo()
+  self._FishingComponentInfo = self._FishingComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFishGame.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignFishGame:GetComponent(componentID)
   if ECampaignFishGameComponentID.ECAMPAIGN_FISH_GAME == componentID then
     return self._FishingComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFishGame.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignFishGame:GetComponentInfo(componentID)
   if ECampaignFishGameComponentID.ECAMPAIGN_FISH_GAME == componentID then
     return self._FishingComponentInfo
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFishGame.GetEntryNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignFishGame:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_FISH_GAME)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFishGame.GetEntryRedDot = function(self)
-  -- function num : 0_8
+function CCampaignFishGame:GetEntryRedDot()
   return self:CampFishReddot()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignFishGame.CampFishReddot = function(self)
-  -- function num : 0_9
-  if self._FishingComponent then
-    return (self._FishingComponent):HaveRedPoint()
-  end
+function CCampaignFishGame:CampFishReddot()
+  return self._FishingComponent and self._FishingComponent:HaveRedPoint()
 end
-
-

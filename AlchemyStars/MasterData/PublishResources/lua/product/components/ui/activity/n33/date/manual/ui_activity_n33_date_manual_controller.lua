@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/manual/ui_activity_n33_date_manual_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateManualController", UIController)
 UIActivityN33DateManualController = UIActivityN33DateManualController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33DateManualController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIActivityN33DateManualController:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityN33DateManualController:OnShow(uiParams)
   self._activityConst = uiParams[1]
-  self._petList = (self._activityConst):GetDateManualList()
+  self._petList = self._activityConst:GetDateManualList()
   self._curPetItem = nil
   self:AttackEvent()
   self:_GetComponent()
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualController.AttackEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN33DateManualController:AttackEvent()
   self:AttachEvent(GameEventType.AircraftInteractiveEventRewardShowItemTips, self._ShowTips)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualController._GetComponent = function(self)
-  -- function num : 0_3
+function UIActivityN33DateManualController:_GetComponent()
   self._petImg = self:GetUIComponent("RawImageLoader", "petImg")
   self._petName = self:GetUIComponent("UILocalizationText", "petName")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -46,145 +30,95 @@ UIActivityN33DateManualController._GetComponent = function(self)
   self._rightArrowObj = self:GetGameObject("rightArrow")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualController._Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._petItems = (self._content):SpawnObjects("UIActivityN33DateManualItem", (table.count)(self._petList))
+function UIActivityN33DateManualController:_Init()
+  self._petItems = self._content:SpawnObjects("UIActivityN33DateManualItem", table.count(self._petList))
   local i = 1
-  for _,v in pairs(self._petList) do
-    local item = (self._petItems)[i]
+  for _, v in pairs(self._petList) do
+    local item = self._petItems[i]
     item:SetData(v, self._activityConst, function(item)
-    -- function num : 0_4_0 , upvalues : self
-    self:PetItemClick(item)
-  end
-)
+      self:PetItemClick(item)
+    end)
     i = i + 1
   end
-  ;
-  ((self._petItems)[1]):ItemBtnOnClick()
-  ;
-  ((self._srMemory).onValueChanged):AddListener(function(ve2)
-    -- function num : 0_4_1 , upvalues : self
-    if ve2.x >= 0.9 and (self._rightArrowObj).activeSelf then
-      (self._rightArrowObj):SetActive(false)
-    else
-      if ve2.x < 0.9 and not (self._rightArrowObj).activeSelf then
-        (self._rightArrowObj):SetActive(true)
-      end
+  self._petItems[1]:ItemBtnOnClick()
+  self._srMemory.onValueChanged:AddListener(function(ve2)
+    if ve2.x >= 0.9 and self._rightArrowObj.activeSelf then
+      self._rightArrowObj:SetActive(false)
+    elseif ve2.x < 0.9 and not self._rightArrowObj.activeSelf then
+      self._rightArrowObj:SetActive(true)
     end
-    if ve2.x <= 0.1 and (self._leftArrowObj).activeSelf then
-      (self._leftArrowObj):SetActive(false)
-    else
-      if ve2.x > 0.1 and not (self._leftArrowObj).activeSelf then
-        (self._leftArrowObj):SetActive(true)
-      end
+    if ve2.x <= 0.1 and self._leftArrowObj.activeSelf then
+      self._leftArrowObj:SetActive(false)
+    elseif ve2.x > 0.1 and not self._leftArrowObj.activeSelf then
+      self._leftArrowObj:SetActive(true)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualController.PetItemClick = function(self, item)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN33DateManualController:PetItemClick(item)
   if self._curPetItem then
-    (self._curPetItem):SetSelect(false)
+    self._curPetItem:SetSelect(false)
   end
   self._curPetItem = item
   if self._building then
-    local cfgs = (self._curPetItem):GetCfgs()
+    local cfgs = self._curPetItem:GetCfgs()
     local cfg = cfgs[1]
-    ;
-    (self._petImg):LoadImage(cfg.PetImg)
-    local petName = ((Cfg.cfg_pet)[cfg.PetId]).Name
-    ;
-    (self._petName):SetText((StringTable.Get)(petName))
-    ;
-    (self._findObj):SetActive((self._curPetItem):IsInMap())
-    self._building = (self._buildingContent):SpawnObject("UIActivityN33DateManuaBuildContent")
-    ;
-    (self._building):SetData(cfgs, self._activityConst, true, nil, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:StartTask(self._CloseAnim, self)
-  end
-)
-    ;
-    (self._building):PlayInAnim()
+    self._petImg:LoadImage(cfg.PetImg)
+    local petName = Cfg.cfg_pet[cfg.PetId].Name
+    self._petName:SetText(StringTable.Get(petName))
+    self._findObj:SetActive(self._curPetItem:IsInMap())
+    self._building = self._buildingContent:SpawnObject("UIActivityN33DateManuaBuildContent")
+    self._building:SetData(cfgs, self._activityConst, true, nil, function()
+      self:StartTask(self._CloseAnim, self)
+    end)
+    self._building:PlayInAnim()
   else
-    do
-      self._building = (self._buildingContent):SpawnObject("UIActivityN33DateManuaBuildContent")
-      local cfgs = (self._curPetItem):GetCfgs()
-      local cfg = cfgs[1]
-      ;
-      (self._petImg):LoadImage(cfg.PetImg)
-      local petName = ((Cfg.cfg_pet)[cfg.PetId]).Name
-      ;
-      (self._petName):SetText((StringTable.Get)(petName))
-      ;
-      (self._findObj):SetActive((self._curPetItem):IsInMap())
-      ;
-      (self._building):SetData(cfgs, self._activityConst, true, function()
-    -- function num : 0_5_1
-  end
-, function()
-    -- function num : 0_5_2 , upvalues : self
-    self:StartTask(self._CloseAnim, self)
-  end
-)
-    end
+    self._building = self._buildingContent:SpawnObject("UIActivityN33DateManuaBuildContent")
+    local cfgs = self._curPetItem:GetCfgs()
+    local cfg = cfgs[1]
+    self._petImg:LoadImage(cfg.PetImg)
+    local petName = Cfg.cfg_pet[cfg.PetId].Name
+    self._petName:SetText(StringTable.Get(petName))
+    self._findObj:SetActive(self._curPetItem:IsInMap())
+    self._building:SetData(cfgs, self._activityConst, true, function()
+    end, function()
+      self:StartTask(self._CloseAnim, self)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualController.FindBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self._activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33DateManualController:FindBtnOnClick()
+  if self._activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   self:StartTask(self._CloseAnim, self, function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    local cfgs = (self._curPetItem):GetCfgs()
+    local cfgs = self._curPetItem:GetCfgs()
     local cfg = cfgs[1]
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN33FindPet, cfg.PetId)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN33FindPet, cfg.PetId)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualController._ShowTips = function(self, itemId, pos)
-  -- function num : 0_7
+function UIActivityN33DateManualController:_ShowTips(itemId, pos)
   if not self._selectInfo then
-    self._selectInfo = (self._selectInfoPool):SpawnObject("UISelectInfo")
+    self._selectInfo = self._selectInfoPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._selectInfo):SetData(itemId, pos)
+  self._selectInfo:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualController.BackBtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self._activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33DateManualController:BackBtnOnClick()
+  if self._activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   self:StartTask(self._CloseAnim, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateManualController._CloseAnim = function(self, TT, callback)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._building):PlayCloseAnim()
-  ;
-  (self._anim):Play("uieffanim_UIActivityN33DateManualController_out")
+function UIActivityN33DateManualController:_CloseAnim(TT, callback)
+  self._building:PlayCloseAnim()
+  self._anim:Play("uieffanim_UIActivityN33DateManualController_out")
   self:Lock("UIActivityN33DateManualController_CloseAnim")
   YIELD(TT, 500)
   self:UnLock("UIActivityN33DateManualController_CloseAnim")
@@ -193,5 +127,3 @@ UIActivityN33DateManualController._CloseAnim = function(self, TT, callback)
   end
   self:CloseDialog()
 end
-
-

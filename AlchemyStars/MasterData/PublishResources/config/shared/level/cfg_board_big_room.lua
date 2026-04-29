@@ -1,34 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/level/cfg_board_big_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, RoomType = 2, Room = 3, TrapRefreshID = 4}
-local common = {
-{
-{1, 1, 1, 1, 1}
-, 
-{1, 1, 1, 1, 1}
-, 
-{1, 1, 1, 1, 1}
-, 
-{1, 1, 1, 1, 1}
-, 
-{1, 1, 1, 1, 1}
+local key = {
+  ID = 1,
+  RoomType = 2,
+  Room = 3,
+  TrapRefreshID = 4
 }
+local common = {
+  {
+    {
+      1,
+      1,
+      1,
+      1,
+      1
+    },
+    {
+      1,
+      1,
+      1,
+      1,
+      1
+    },
+    {
+      1,
+      1,
+      1,
+      1,
+      1
+    },
+    {
+      1,
+      1,
+      1,
+      1,
+      1
+    },
+    {
+      1,
+      1,
+      1,
+      1,
+      1
+    }
+  }
 }
 local config = {
-{1, 1, common[1]}
-, 
-{2, 2, common[1]}
-, 
-{3, 3, common[1]}
-, 
-{4, 4, common[1]}
-, 
-{5, 5, common[1]}
-, 
-{6, 6, common[1]}
+  {
+    1,
+    1,
+    common[1]
+  },
+  {
+    2,
+    2,
+    common[1]
+  },
+  {
+    3,
+    3,
+    common[1]
+  },
+  {
+    4,
+    4,
+    common[1]
+  },
+  {
+    5,
+    5,
+    common[1]
+  },
+  {
+    6,
+    6,
+    common[1]
+  }
 }
 return config, "ID", key
-

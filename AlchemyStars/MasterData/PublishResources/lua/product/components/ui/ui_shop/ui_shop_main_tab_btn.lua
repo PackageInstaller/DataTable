@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_main_tab_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopMainTabBtn", UICustomWidget)
 UIShopMainTabBtn = UIShopMainTabBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopMainTabBtn.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopMainTabBtn:OnShow()
   self._active = true
   self.nameSelect = self:GetUIComponent("UILocalizedTMP", "nameSelect")
   self.nameNormal = self:GetUIComponent("UILocalizedTMP", "nameNormal")
@@ -16,195 +9,127 @@ UIShopMainTabBtn.OnShow = function(self)
   self.iconSelect = self:GetUIComponent("Image", "iconSelect")
   self.lock = self:GetGameObject("lock")
   self.select = self:GetGameObject("select")
-  self.atlas = (self:RootUIOwner()):GetAsset("UIShop.spriteatlas", LoadType.SpriteAtlas)
+  self.atlas = self:RootUIOwner():GetAsset("UIShop.spriteatlas", LoadType.SpriteAtlas)
   self._redpoint = self:GetGameObject("redpoint")
-  ;
-  (self._redpoint):SetActive(false)
+  self._redpoint:SetActive(false)
   self.imgNew = self:GetGameObject("imgNew")
-  ;
-  (self.imgNew):SetActive(false)
+  self.imgNew:SetActive(false)
   self.limitedTime = self:GetGameObject("limitedTime")
-  ;
-  (self.limitedTime):SetActive(false)
+  self.limitedTime:SetActive(false)
   self:AttachEvent(GameEventType.CheckMonthCardRedpoint, self._CheckMonthCardRedpoint)
   self:AttachEvent(GameEventType.ForceShowMainTabBtn, self._ForceShowMainTabBtn)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIShopMainTabBtn:OnHide()
   self.imgNewShop = nil
   self._active = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.Init = function(self, shopMainTabData, onClickTabBtn, param)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopMainTabBtn:Init(shopMainTabData, onClickTabBtn, param)
   self.shopMainTabData = shopMainTabData
   self.onClickTabBtn = onClickTabBtn
   self.shopModule = self:GetModule(ShopModule)
   self.param = param
-  ;
-  (self.nameSelect):SetText((self.shopMainTabData):GetName())
-  ;
-  (self.nameNormal):SetText((self.shopMainTabData):GetName())
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.iconNormal).sprite = (self.atlas):GetSprite((self.shopMainTabData):GetIcon())
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.iconSelect).sprite = (self.atlas):GetSprite((self.shopMainTabData):GetSelectIcon())
-  if not (self.shopMainTabData):IsOpen() then
-    (self.lock):SetActive(true)
+  self.nameSelect:SetText(self.shopMainTabData:GetName())
+  self.nameNormal:SetText(self.shopMainTabData:GetName())
+  self.iconNormal.sprite = self.atlas:GetSprite(self.shopMainTabData:GetIcon())
+  self.iconSelect.sprite = self.atlas:GetSprite(self.shopMainTabData:GetSelectIcon())
+  if not self.shopMainTabData:IsOpen() then
+    self.lock:SetActive(true)
   end
   self:_CheckMonthCardRedpoint()
   self:FlushCampaignLimitedTime()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.Select = function(self, select)
-  -- function num : 0_3
-  ((self.nameSelect).gameObject):SetActive(select)
-  ;
-  ((self.nameNormal).gameObject):SetActive(not select)
-  ;
-  ((self.iconNormal).gameObject):SetActive(not select)
-  ;
-  ((self.iconSelect).gameObject):SetActive(select)
-  ;
-  (self.select):SetActive(select)
+function UIShopMainTabBtn:Select(select)
+  self.nameSelect.gameObject:SetActive(select)
+  self.nameNormal.gameObject:SetActive(not select)
+  self.iconNormal.gameObject:SetActive(not select)
+  self.iconSelect.gameObject:SetActive(select)
+  self.select:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.picOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (self.shopMainTabData):IsOpen() then
-    (ToastManager.ShowLockTip)()
+function UIShopMainTabBtn:picOnClick(go)
+  if not self.shopMainTabData:IsOpen() then
+    ToastManager.ShowLockTip()
   else
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
-    ;
-    (self.onClickTabBtn)(self.param, (self.shopMainTabData):GetMainTab(), false, (self.shopMainTabData):GetUniqueID())
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
+    self.onClickTabBtn(self.param, self.shopMainTabData:GetMainTab(), false, self.shopMainTabData:GetUniqueID())
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.GetTabType = function(self)
-  -- function num : 0_5
-  return (self.shopMainTabData):GetMainTab()
+function UIShopMainTabBtn:GetTabType()
+  return self.shopMainTabData:GetMainTab()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.CheckSkinTabHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIShopMainTabBtn:CheckSkinTabHide()
   if self:GetTabType() == ShopMainTabType.Skins then
     local shopModule = self:GetModule(ShopModule)
     local clientShop = shopModule:GetClientShop()
     local skinsData = clientShop:GetSkinsShopData()
-    if skinsData and skinsData:IsEmpty() then
-      (self:GetGameObject()):SetActive(false)
-    end
-  end
-  ;
-  (self:GetGameObject()):SetActive(false)
-end
-
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.CheckHomelandTabHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  local unlock = homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_SHOP_ARC_UI)
-  ;
-  (self:GetGameObject()):SetActive(unlock)
-end
-
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn._CheckMonthCardRedpoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if self:GetTabType() == ShopMainTabType.MonthCard then
-    local shopModule = (GameGlobal.GetModule)(ShopModule)
-    local red, tips, state = shopModule:ShowMonthCardRedPoint()
-    ;
-    (self._redpoint):SetActive(red)
-  else
-    do
-      if self:GetTabType() == ShopMainTabType.SailingPlan then
-        local helper = UIShopSailingPlanHelper:New()
-        local show = helper:CheckRed()
-        ;
-        (self._redpoint):SetActive(show)
-      else
-        do
-          ;
-          (self._redpoint):SetActive(false)
-        end
+    if skinsData then
+      if skinsData:IsEmpty() then
+        self:GetGameObject():SetActive(false)
       end
+    else
+      self:GetGameObject():SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
+function UIShopMainTabBtn:CheckHomelandTabHide()
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
+  local unlock = homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_SHOP_ARC_UI)
+  self:GetGameObject():SetActive(unlock)
+end
 
-UIShopMainTabBtn._ForceShowMainTabBtn = function(self, mainTabType)
-  -- function num : 0_9
+function UIShopMainTabBtn:_CheckMonthCardRedpoint()
+  if self:GetTabType() == ShopMainTabType.MonthCard then
+    local shopModule = GameGlobal.GetModule(ShopModule)
+    local red, tips, state = shopModule:ShowMonthCardRedPoint()
+    self._redpoint:SetActive(red)
+  elseif self:GetTabType() == ShopMainTabType.SailingPlan then
+    local helper = UIShopSailingPlanHelper:New()
+    local show = helper:CheckRed()
+    self._redpoint:SetActive(show)
+  else
+    self._redpoint:SetActive(false)
+  end
+end
+
+function UIShopMainTabBtn:_ForceShowMainTabBtn(mainTabType)
   if self:GetTabType() == mainTabType then
-    (self:GetGameObject()):SetActive(true)
+    self:GetGameObject():SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.FlushNew = function(self, isShow)
-  -- function num : 0_10
+function UIShopMainTabBtn:FlushNew(isShow)
   if self.imgNew then
-    (self.imgNew):SetActive(isShow)
+    self.imgNew:SetActive(isShow)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.GetUniqueID = function(self)
-  -- function num : 0_11
-  return (self.shopMainTabData):GetUniqueID()
+function UIShopMainTabBtn:GetUniqueID()
+  return self.shopMainTabData:GetUniqueID()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.GetComponentID = function(self)
-  -- function num : 0_12
-  return (self.shopMainTabData):GetComponentID()
+function UIShopMainTabBtn:GetComponentID()
+  return self.shopMainTabData:GetComponentID()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopMainTabBtn.FlushCampaignLimitedTime = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self.shopMainTabData):GetId() == ShopMainTabType.Secret then
+function UIShopMainTabBtn:FlushCampaignLimitedTime()
+  if self.shopMainTabData:GetId() == ShopMainTabType.Secret then
     local shopModule = self:GetModule(ShopModule)
     local clientShop = shopModule:GetClientShop()
     local shopCampaign, shopCampaignCfg = clientShop:GetSecretCampaign()
-    local isNew = (self.shopModule):GetSecretTabNew()
+    local isNew = self.shopModule:GetSecretTabNew()
     if not isNew then
-      if shopCampaign ~= nil and #shopCampaign > 0 then
-        (self.imgNew):SetActive(false)
-        ;
-        (self.limitedTime):SetActive(true)
+      if shopCampaign ~= nil and 0 < #shopCampaign then
+        self.imgNew:SetActive(false)
+        self.limitedTime:SetActive(true)
       else
-        ;
-        (self.limitedTime):SetActive(false)
+        self.limitedTime:SetActive(false)
       end
     end
   end
 end
-
-

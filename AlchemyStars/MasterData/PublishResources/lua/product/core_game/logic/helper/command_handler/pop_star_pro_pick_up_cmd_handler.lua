@@ -1,68 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/pop_star_pro_pick_up_cmd_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 _class("PopStarProPickUpCommandHandler", CommandBaseHandler)
 PopStarProPickUpCommandHandler = PopStarProPickUpCommandHandler
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarProPickUpCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.notice)("Handle PopStarPickUpCommand")
+function PopStarProPickUpCommandHandler:DoHandleCommand(cmd)
+  Log.notice("Handle PopStarPickUpCommand")
   local gridPos = cmd:GetCmdPickUpPos()
   local isValid = self:CheckPickUpPosValid(gridPos)
   if not isValid then
-    return 
+    return
   end
-  local popStarSvc = (self._world):GetService("PopStarProLogic")
+  local popStarSvc = self._world:GetService("PopStarProLogic")
   local connectPieces = popStarSvc:CalculatePopStarConnectPieces(gridPos)
   if connectPieces and #connectPieces == 0 then
-    return 
+    return
   end
   popStarSvc:SetPopConnectPieces(connectPieces)
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local chainPath = {gridPos}
   if utilDataSvc:CanCastChainSkill(teamEntity, gridPos, connectPieces) then
-    (table.appendArray)(chainPath, connectPieces)
+    table.appendArray(chainPath, connectPieces)
   end
   local elementType = utilDataSvc:GetPieceType(gridPos)
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:AddTotalChainNum()
   self:_InitChainPathData(teamEntity, chainPath, elementType)
   self:_UpdateGridLocationByPickUpPos(teamEntity, gridPos)
-  local l2RSvc = (self._world):GetService("L2R")
+  local l2RSvc = self._world:GetService("L2R")
   l2RSvc:L2RNTSelectRoundTeamNormalBefore(elementType, chainPath)
-  local svc = (self._world):GetService("L2R")
+  local svc = self._world:GetService("L2R")
   svc:L2RChainPathData(teamEntity)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 1)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProPickUpCommandHandler.CheckPickUpPosValid = function(self, gridPos)
-  -- function num : 0_1 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PopStarProPickUpCommandHandler:CheckPickUpPosValid(gridPos)
+  local utilDataSvc = self._world:GetService("UtilData")
   local isValid = utilDataSvc:IsValidPiecePos(gridPos)
   if not isValid then
-    (Log.fatal)("PopStarPickUpCommand Invalid pos error, pick pos: ", (Vector2.Pos2Index)(gridPos))
+    Log.fatal("PopStarPickUpCommand Invalid pos error, pick pos: ", Vector2.Pos2Index(gridPos))
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProPickUpCommandHandler._InitChainPathData = function(self, teamEntity, chainPath, elementType)
-  -- function num : 0_2 , upvalues : _ENV
+function PopStarProPickUpCommandHandler:_InitChainPathData(teamEntity, chainPath, elementType)
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   logicChainPathCmpt:SetLogicChainPath(chainPath, elementType)
   local oldPos = teamEntity:GetGridPosition()
   logicChainPathCmpt:SetChainPathStartPos(oldPos)
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   logicChainPathCmpt:SetChainRateAtIndex(1, 0)
   for i = 2, #chainPath do
     local chainRate = utilCalcSvc:GetChainDamageRateAtIndex(chainPath, i)
@@ -71,34 +57,29 @@ PopStarProPickUpCommandHandler._InitChainPathData = function(self, teamEntity, c
   local cr, superGridCount, poorGridCount = utilCalcSvc:GetChainDamageRateAtIndex(chainPath, #chainPath)
   local buffComp = teamEntity:BuffComponent()
   local addCountVal = buffComp:GetBuffValue("PetAbsorbSuperGridCount")
-  do
-    if addCountVal then
-      local addCount = tonumber(addCountVal)
-      if addCount > 0 then
-        superGridCount = superGridCount + addCount
-      end
+  if addCountVal then
+    local addCount = tonumber(addCountVal)
+    if 0 < addCount then
+      superGridCount = superGridCount + addCount
     end
-    logicChainPathCmpt:SetPathSuperGridCount({[#chainPath] = superGridCount})
-    logicChainPathCmpt:SetPathPoorGridCount({[#chainPath] = poorGridCount})
   end
+  logicChainPathCmpt:SetPathSuperGridCount({
+    [#chainPath] = superGridCount
+  })
+  logicChainPathCmpt:SetPathPoorGridCount({
+    [#chainPath] = poorGridCount
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProPickUpCommandHandler._UpdateGridLocationByPickUpPos = function(self, teamEntity, gridPos)
-  -- function num : 0_3 , upvalues : _ENV
+function PopStarProPickUpCommandHandler:_UpdateGridLocationByPickUpPos(teamEntity, gridPos)
   local oldPos = teamEntity:GetGridPosition()
-  local pets = (teamEntity:Team()):GetTeamPetEntities()
-  for _,entityPet in ipairs(pets) do
+  local pets = teamEntity:Team():GetTeamPetEntities()
+  for _, entityPet in ipairs(pets) do
     entityPet:SetGridPosition(gridPos)
-    ;
-    (entityPet:GridLocation()):SetMoveLastPosition(gridPos)
+    entityPet:GridLocation():SetMoveLastPosition(gridPos)
   end
   teamEntity:SetGridLocation(gridPos)
-  ;
-  (teamEntity:GridLocation()):SetMoveLastPosition(gridPos)
-  local boardLSvc = (self._world):GetService("BoardLogic")
+  teamEntity:GridLocation():SetMoveLastPosition(gridPos)
+  local boardLSvc = self._world:GetService("BoardLogic")
   boardLSvc:UpdateEntityBlockFlag(teamEntity, oldPos, gridPos)
 end
-
-

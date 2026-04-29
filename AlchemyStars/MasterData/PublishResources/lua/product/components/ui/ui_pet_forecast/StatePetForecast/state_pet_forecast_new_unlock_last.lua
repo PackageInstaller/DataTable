@@ -1,32 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/StatePetForecast/state_pet_forecast_new_unlock_last.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StatePetForecastNewUnlockLast", StatePetForecast)
 StatePetForecastNewUnlockLast = StatePetForecastNewUnlockLast
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StatePetForecastNewUnlockLast.OnEnter = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function StatePetForecastNewUnlockLast:OnEnter(TT)
   self:Init()
-  if (self.data).last then
-    (self.ui):PlayPetForecastView((self.data).last)
-    while (self.ui):IsPlaying() do
+  if self.data.last then
+    self.ui:PlayPetForecastView(self.data.last)
+    while self.ui:IsPlaying() do
       YIELD(TT)
     end
-    ;
-    (self.fsm):ChangeState(StatePetForecast.NewUnlockNormal)
+    self.fsm:ChangeState(StatePetForecast.NewUnlockNormal)
   else
-    ;
-    (self.fsm):ChangeState(StatePetForecast.Normal)
+    self.fsm:ChangeState(StatePetForecast.Normal)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StatePetForecastNewUnlockLast.OnExit = function(self, TT)
-  -- function num : 0_1
+function StatePetForecastNewUnlockLast:OnExit(TT)
 end
-
-

@@ -1,39 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_monster_doppelganger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetMonsterDoppelganger", BuffLogicBase)
 BuffLogicSetMonsterDoppelganger = BuffLogicSetMonsterDoppelganger
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetMonsterDoppelganger.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetMonsterDoppelganger:Constructor(buffInstance, logicParam)
   self._type = logicParam.type
   self._param = logicParam.param
   self._count = logicParam.count
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetMonsterDoppelganger.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetMonsterDoppelganger:DoLogic()
+  local e = self._buffInstance:Entity()
   local monsterID = e:MonsterID()
   monsterID:SetDoppelgangerValue(0)
-  monsterID:SetDoppelgangerParam({type = self._type, param = self._param, count = self._count})
+  monsterID:SetDoppelgangerParam({
+    type = self._type,
+    param = self._param,
+    count = self._count
+  })
 end
 
 _class("BuffLogicResetMonsterDoppelganger", BuffLogicBase)
 BuffLogicResetMonsterDoppelganger = BuffLogicResetMonsterDoppelganger
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetMonsterDoppelganger.DoLogic = function(self)
-  -- function num : 0_2
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetMonsterDoppelganger:DoLogic()
+  local e = self._buffInstance:Entity()
   local monsterID = e:MonsterID()
   monsterID:SetDoppelgangerValue(nil)
 end
-
-

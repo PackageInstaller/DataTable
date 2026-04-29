@@ -1,66 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_each_grid_add_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultEachGridAddBlood", SkillEffectResultBase)
 SkillEffectResultEachGridAddBlood = SkillEffectResultEachGridAddBlood
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultEachGridAddBlood.Constructor = function(self)
-  -- function num : 0_0
+function SkillEffectResultEachGridAddBlood:Constructor()
   self._targetID = 0
   self._addValue = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachGridAddBlood.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultEachGridAddBlood:GetEffectType()
   return SkillEffectType.EachGridAddBlood
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachGridAddBlood.SetAddData = function(self, targetID, addValue)
-  -- function num : 0_2
+function SkillEffectResultEachGridAddBlood:SetAddData(targetID, addValue)
   self._targetID = targetID
   self._addValue = addValue
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachGridAddBlood.GetTargetID = function(self)
-  -- function num : 0_3
+function SkillEffectResultEachGridAddBlood:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachGridAddBlood.GetAddValue = function(self)
-  -- function num : 0_4
+function SkillEffectResultEachGridAddBlood:GetAddValue()
   return self._addValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachGridAddBlood.SetAddValue = function(self, addValue)
-  -- function num : 0_5
+function SkillEffectResultEachGridAddBlood:SetAddValue(addValue)
   self._addValue = addValue
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachGridAddBlood.SetDamageInfo = function(self, damageInfo)
-  -- function num : 0_6
+function SkillEffectResultEachGridAddBlood:SetDamageInfo(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultEachGridAddBlood.GetDamageInfo = function(self)
-  -- function num : 0_7
+function SkillEffectResultEachGridAddBlood:GetDamageInfo()
   return self._damageInfo
 end
-
-

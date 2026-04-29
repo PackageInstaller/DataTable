@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_auto_bead_power_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamAutoBeadPowerInfo", FeatureEffectParamBase)
 FeatureEffectParamAutoBeadPowerInfo = FeatureEffectParamAutoBeadPowerInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamAutoBeadPowerInfo.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamAutoBeadPowerInfo:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamAutoBeadPowerInfo._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamAutoBeadPowerInfo:_RefreshData(t)
   if not t then
-    return 
+    return
   end
 end
-
-

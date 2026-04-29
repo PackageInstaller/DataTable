@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_make_suc_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20MakeSucItem", UICustomWidget)
 UICN20MakeSucItem = UICN20MakeSucItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20MakeSucItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20MakeSucItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MakeSucItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20MakeSucItem:InitWidget()
   self.itemIcon = self:GetUIComponent("RawImageLoader", "icon")
   self.quilaty = self:GetUIComponent("Image", "quilaty")
   self.nameText = self:GetUIComponent("UILocalizationText", "NameText")
@@ -28,106 +18,69 @@ UICN20MakeSucItem.InitWidget = function(self)
   self.canLevel = self:GetGameObject("CanLevel")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MakeSucItem.SetData = function(self, responese, quickCB, campaign)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20MakeSucItem:SetData(responese, quickCB, campaign)
   self.responese = responese
   self.quickCB = quickCB
-  ;
-  (self.root):SetActive(true)
-  self.makeItemID = (self.responese).item_id
-  local alchemyCfg = (Cfg.cfg_component_alchemy_item)[self.makeItemID]
+  self.root:SetActive(true)
+  self.makeItemID = self.responese.item_id
+  local alchemyCfg = Cfg.cfg_component_alchemy_item[self.makeItemID]
   if alchemyCfg == nil then
-    (Log.error)("alchemyCfg IS zero", self.makeItemID)
+    Log.error("alchemyCfg IS zero", self.makeItemID)
   end
-  local itemCfg = (Cfg.cfg_item)[self.makeItemID]
+  local itemCfg = Cfg.cfg_item[self.makeItemID]
   if not itemCfg then
-    (Log.error)("itemCfg matCfg IS NIL", self.makeItemID)
+    Log.error("itemCfg matCfg IS NIL", self.makeItemID)
   end
-  ;
-  (self.nameText):SetText((StringTable.Get)(itemCfg.Name))
-  ;
-  (self.itemIcon):LoadImage(itemCfg.Icon)
+  self.nameText:SetText(StringTable.Get(itemCfg.Name))
+  self.itemIcon:LoadImage(itemCfg.Icon)
   local color = alchemyCfg.Quality
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R7 in 'UnsetPending'
-
   if color == 3 then
-    (self.quilaty).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi05_01")
+    self.quilaty.sprite = self._atlas:GetSprite("cn20_ljdp_gezi05_01")
+  elseif color == 4 then
+    self.quilaty.sprite = self._atlas:GetSprite("cn20_ljdp_gezi04_01")
+  elseif color == 5 then
+    self.quilaty.sprite = self._atlas:GetSprite("cn20_ljdp_gezi03_01")
   else
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R7 in 'UnsetPending'
-
-    if color == 4 then
-      (self.quilaty).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi04_01")
-    else
-      -- DECOMPILER ERROR at PC68: Confused about usage of register: R7 in 'UnsetPending'
-
-      if color == 5 then
-        (self.quilaty).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi03_01")
-      else
-        -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.quilaty).sprite = (self._atlas):GetSprite("cn20_ljdp_gezi01_01")
-      end
-    end
+    self.quilaty.sprite = self._atlas:GetSprite("cn20_ljdp_gezi01_01")
   end
-  ;
-  (self.moneyText):SetText("00" .. alchemyCfg.Price)
-  ;
-  (self.makeNumText):SetText((StringTable.Get)("str_cn20_ryza_make_num", (self.responese).num))
-  if (self.responese).extra_cnt > 0 then
-    ((self.skillText).gameObject):SetActive(true)
-    ;
-    (self.skillText):SetText((StringTable.Get)("str_cn20_ryza_skill_cast", (self.responese).extra_cnt))
+  self.moneyText:SetText("00" .. alchemyCfg.Price)
+  self.makeNumText:SetText(StringTable.Get("str_cn20_ryza_make_num", self.responese.num))
+  if self.responese.extra_cnt > 0 then
+    self.skillText.gameObject:SetActive(true)
+    self.skillText:SetText(StringTable.Get("str_cn20_ryza_skill_cast", self.responese.extra_cnt))
   else
-    ;
-    ((self.skillText).gameObject):SetActive(false)
+    self.skillText.gameObject:SetActive(false)
   end
   local name = "talent"
-  local num = (self.responese).num + (self.responese).extra_cnt
+  local num = self.responese.num + self.responese.extra_cnt
   local list = {}
-  local data = {[1] = self.makeItemID, [2] = num}
-  ;
-  (table.insert)(list, data)
-  local tree = (UICN20N49Helper.CheckContainTalentTreeCost)(campaign, list)
-  if tree ~= nil and (table.count)(tree) > 0 then
-    (self.canLevel):SetActive(true)
+  local data = {
+    [1] = self.makeItemID,
+    [2] = num
+  }
+  table.insert(list, data)
+  local tree = UICN20N49Helper.CheckContainTalentTreeCost(campaign, list)
+  if tree ~= nil and 0 < table.count(tree) then
+    self.canLevel:SetActive(true)
   else
-    ;
-    (self.canLevel):SetActive(false)
+    self.canLevel:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MakeSucItem.SetPopActive = function(self, active)
-  -- function num : 0_3
-  (self.root):SetActive(active)
+function UICN20MakeSucItem:SetPopActive(active)
+  self.root:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MakeSucItem.QuickBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UICN20MakeSucItem:QuickBtnOnClick(go)
   if self.quickCB then
-    (self.quickCB)()
+    self.quickCB()
   end
-  ;
-  (self.root):SetActive(false)
+  self.root:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MakeSucItem.GotoTreeBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UICN20MakeSucItem:GotoTreeBtnOnClick(go)
   self:ShowDialog("UICN20N49TreeController")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MakeSucItem.ClickBgOnClick = function(self, go)
-  -- function num : 0_6
+function UICN20MakeSucItem:ClickBgOnClick(go)
 end
-
-

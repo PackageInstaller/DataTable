@@ -1,263 +1,178 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/tasklist/ui_season_task_list_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTaskListHelper", Object)
 UISeasonTaskListHelper = UISeasonTaskListHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTaskListHelper.GetNodeCfg = function(node)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTaskListHelper.GetNodeCfg(node)
   local nodeId = node and node.node_id or 0
-  local cfg = (Cfg.cfg_season_task_node)[nodeId]
+  local cfg = Cfg.cfg_season_task_node[nodeId]
   return cfg
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.GetNodeTitle = function(nodes)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonTaskListHelper.GetNodeTitle(nodes)
   local tb = {}
-  for i,v in ipairs(nodes) do
-    local cfg = (UISeasonTaskListHelper.GetNodeCfg)(v)
-    if not cfg then
-      local strId = ({}).Title
-      do
-        local text = strId and (StringTable.Get)(strId) or ""
-        ;
-        (table.insert)(tb, text)
-        -- DECOMPILER ERROR at PC27: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC27: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
+  for i, v in ipairs(nodes) do
+    local cfg = UISeasonTaskListHelper.GetNodeCfg(v)
+    local strId = (cfg or {}).Title
+    local text = strId and StringTable.Get(strId) or ""
+    table.insert(tb, text)
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.GetNodeProgress = function(node)
-  -- function num : 0_2 , upvalues : _ENV
-  local list = (UISeasonTaskListHelper.GetAllQuestId)(node)
-  local curIdx = (UISeasonTaskListHelper.GetCurQuestIndex)(node)
+function UISeasonTaskListHelper.GetNodeProgress(node)
+  local list = UISeasonTaskListHelper.GetAllQuestId(node)
+  local curIdx = UISeasonTaskListHelper.GetCurQuestIndex(node)
   return curIdx - 1, #list
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.GetAllQuestId = function(node)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (UISeasonTaskListHelper.GetNodeCfg)(node)
-  if not cfg or not cfg.Questlist then
-    return {}
-  end
+function UISeasonTaskListHelper.GetAllQuestId(node)
+  local cfg = UISeasonTaskListHelper.GetNodeCfg(node)
+  return cfg and cfg.Questlist or {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.GetCurQuestIndex = function(node)
-  -- function num : 0_4 , upvalues : _ENV
-  local list = (UISeasonTaskListHelper.GetAllQuestId)(node)
-  for i,v in ipairs(list) do
-    if (UISeasonTaskListHelper.CheckQuestFin)(v) == false then
+function UISeasonTaskListHelper.GetCurQuestIndex(node)
+  local list = UISeasonTaskListHelper.GetAllQuestId(node)
+  for i, v in ipairs(list) do
+    if UISeasonTaskListHelper.CheckQuestFin(v) == false then
       return i
     end
   end
   return #list + 1
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.GetCurQuestId = function(node)
-  -- function num : 0_5 , upvalues : _ENV
-  local list = (UISeasonTaskListHelper.GetAllQuestId)(node)
-  local curIdx = (UISeasonTaskListHelper.GetCurQuestIndex)(node)
+function UISeasonTaskListHelper.GetCurQuestId(node)
+  local list = UISeasonTaskListHelper.GetAllQuestId(node)
+  local curIdx = UISeasonTaskListHelper.GetCurQuestIndex(node)
   return list[curIdx] or 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.CheckLastQuestFin = function(node)
-  -- function num : 0_6 , upvalues : _ENV
-  local questList = (UISeasonTaskListHelper.GetAllQuestId)(node)
+function UISeasonTaskListHelper.CheckLastQuestFin(node)
+  local questList = UISeasonTaskListHelper.GetAllQuestId(node)
   local lastQuest = questList[#questList]
-  local isFin = (UISeasonTaskListHelper.CheckQuestFin)(lastQuest)
+  local isFin = UISeasonTaskListHelper.CheckQuestFin(lastQuest)
   return lastQuest, isFin
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.CheckQuestFin = function(questId)
-  -- function num : 0_7 , upvalues : _ENV
-  local questModule = ((GameGlobal.GameLogic)()):GetModule(QuestModule)
+function UISeasonTaskListHelper.CheckQuestFin(questId)
+  local questModule = GameGlobal.GameLogic():GetModule(QuestModule)
   return questModule:IsTakeQuest(questId)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.GetQuestInfo = function(questId, key)
-  -- function num : 0_8 , upvalues : _ENV
-  local questModule = ((GameGlobal.GameLogic)()):GetModule(QuestModule)
+function UISeasonTaskListHelper.GetQuestInfo(questId, key)
+  local questModule = GameGlobal.GameLogic():GetModule(QuestModule)
   local quest = questModule:GetQuest(questId)
-  if not quest or not quest:QuestInfo() then
-    local questInfo = {}
-  end
+  local questInfo = quest and quest:QuestInfo() or {}
   if key then
     return questInfo[key]
   end
   return questInfo
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.GetQuestText = function(questId, key)
-  -- function num : 0_9 , upvalues : _ENV
-  local strId = (UISeasonTaskListHelper.GetQuestInfo)(questId, key)
-  local text = strId and (StringTable.Get)(strId) or ""
+function UISeasonTaskListHelper.GetQuestText(questId, key)
+  local strId = UISeasonTaskListHelper.GetQuestInfo(questId, key)
+  local text = strId and StringTable.Get(strId) or ""
   return text
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.CheckModeValid = function(mode)
-  -- function num : 0_10 , upvalues : _ENV
-  local seasonObj = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonObj()
-  local cfg = (Cfg.cfg_season_map)[seasonObj:GetSeasonID()]
+function UISeasonTaskListHelper.CheckModeValid(mode)
+  local seasonObj = GameGlobal.GetModule(SeasonModule):GetCurSeasonObj()
+  local cfg = Cfg.cfg_season_map[seasonObj:GetSeasonID()]
   if not cfg then
-    (Log.exception)("cfg_season_map 中找不到配置:", seasonObj:GetSeasonID())
+    Log.exception("cfg_season_map 中找不到配置:", seasonObj:GetSeasonID())
     return false
   end
   if cfg.ModeUnlock == nil or next(cfg.ModeUnlock) == nil then
     return false
   end
-  local condition = (cfg.ModeUnlock)[mode]
-  if (string.isnullorempty)(condition) then
+  local condition = cfg.ModeUnlock[mode]
+  if string.isnullorempty(condition) then
     return true
   end
   local componentInfo = seasonObj:GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
-  local valid = ((GameGlobal.GetModule)(SeasonModule)):CheckCondition(condition, componentInfo.m_stage_info)
+  local valid = GameGlobal.GetModule(SeasonModule):CheckCondition(condition, componentInfo.m_stage_info)
   return valid
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.CheckModeTravel = function(setConfirmCallback, closeCallback)
-  -- function num : 0_11 , upvalues : _ENV
-  local mode = ((((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonMapManager()):Mode()
+function UISeasonTaskListHelper.CheckModeTravel(setConfirmCallback, closeCallback)
+  local mode = GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonMapManager():Mode()
   local isTravel = mode == SeasonMapMode.Mode2
   if isTravel then
-    (UISeasonTaskListHelper.GoToTask)(closeCallback)
+    UISeasonTaskListHelper.GoToTask(closeCallback)
   elseif setConfirmCallback then
     setConfirmCallback()
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.SwitchModeTravel = function(closeCallback)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonTaskListHelper.SwitchModeTravel(closeCallback)
   local mode = SeasonMapMode.Mode2
-  local isValid = (UISeasonTaskListHelper.CheckModeValid)(mode)
-  do
-    if isValid then
-      local seasonMapManager = (((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonMapManager()
-      seasonMapManager:SwitchMapMode(mode, function()
-    -- function num : 0_12_0 , upvalues : _ENV, closeCallback
-    (UISeasonTaskListHelper.GoToTask)(closeCallback)
+  local isValid = UISeasonTaskListHelper.CheckModeValid(mode)
+  if isValid then
+    local seasonMapManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonMapManager()
+    seasonMapManager:SwitchMapMode(mode, function()
+      UISeasonTaskListHelper.GoToTask(closeCallback)
+    end)
+    return
   end
-)
-      return 
-    end
-    ;
-    (Log.error)("UIS2TaskListContent:_SwitchMode() 无法切换到对应赛季模式 mode = ", mode)
-    if closeCallback then
-      closeCallback()
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.GoToTask = function(closeCallback)
-  -- function num : 0_13 , upvalues : _ENV
-  ((((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonMapManager()):BrowseTask()
+  Log.error("UIS2TaskListContent:_SwitchMode() 无法切换到对应赛季模式 mode = ", mode)
   if closeCallback then
     closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
+function UISeasonTaskListHelper.GoToTask(closeCallback)
+  GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonMapManager():BrowseTask()
+  if closeCallback then
+    closeCallback()
+  end
+end
 
-UISeasonTaskListHelper.CheckModeValid = function(mode)
-  -- function num : 0_14 , upvalues : _ENV
-  local seasonObj = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonObj()
-  local cfg = (Cfg.cfg_season_map)[seasonObj:GetSeasonID()]
+function UISeasonTaskListHelper.CheckModeValid(mode)
+  local seasonObj = GameGlobal.GetModule(SeasonModule):GetCurSeasonObj()
+  local cfg = Cfg.cfg_season_map[seasonObj:GetSeasonID()]
   if not cfg then
-    (Log.exception)("cfg_season_map 中找不到配置:", seasonObj:GetSeasonID())
+    Log.exception("cfg_season_map 中找不到配置:", seasonObj:GetSeasonID())
     return false
   end
   if cfg.ModeUnlock == nil or next(cfg.ModeUnlock) == nil then
     return false
   end
-  local condition = (cfg.ModeUnlock)[mode]
-  if (string.isnullorempty)(condition) then
+  local condition = cfg.ModeUnlock[mode]
+  if string.isnullorempty(condition) then
     return true
   end
   local componentInfo = seasonObj:GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
-  local valid = ((GameGlobal.GetModule)(SeasonModule)):CheckCondition(condition, componentInfo.m_stage_info)
+  local valid = GameGlobal.GetModule(SeasonModule):CheckCondition(condition, componentInfo.m_stage_info)
   return valid
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.CheckModeTravel = function(setConfirmCallback, closeCallback)
-  -- function num : 0_15 , upvalues : _ENV
-  local mode = ((((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonMapManager()):Mode()
+function UISeasonTaskListHelper.CheckModeTravel(setConfirmCallback, closeCallback)
+  local mode = GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonMapManager():Mode()
   local isTravel = mode == SeasonMapMode.Mode2
   if isTravel then
-    (UISeasonTaskListHelper.GoToTask)(closeCallback)
+    UISeasonTaskListHelper.GoToTask(closeCallback)
   elseif setConfirmCallback then
     setConfirmCallback()
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.SwitchModeTravel = function(closeCallback)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonTaskListHelper.SwitchModeTravel(closeCallback)
   local mode = SeasonMapMode.Mode2
-  local isValid = (UISeasonTaskListHelper.CheckModeValid)(mode)
-  do
-    if isValid then
-      local seasonMapManager = (((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonMapManager()
-      seasonMapManager:SwitchMapMode(mode, function()
-    -- function num : 0_16_0 , upvalues : _ENV, closeCallback
-    (UISeasonTaskListHelper.GoToTask)(closeCallback)
+  local isValid = UISeasonTaskListHelper.CheckModeValid(mode)
+  if isValid then
+    local seasonMapManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonMapManager()
+    seasonMapManager:SwitchMapMode(mode, function()
+      UISeasonTaskListHelper.GoToTask(closeCallback)
+    end)
+    return
   end
-)
-      return 
-    end
-    ;
-    (Log.error)("UIS2TaskListContent:_SwitchMode() 无法切换到对应赛季模式 mode = ", mode)
-    if closeCallback then
-      closeCallback()
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListHelper.GoToTask = function(closeCallback)
-  -- function num : 0_17 , upvalues : _ENV
-  ((((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()):SeasonMapManager()):BrowseTask()
+  Log.error("UIS2TaskListContent:_SwitchMode() 无法切换到对应赛季模式 mode = ", mode)
   if closeCallback then
     closeCallback()
   end
 end
 
-
+function UISeasonTaskListHelper.GoToTask(closeCallback)
+  GameGlobal.GetUIModule(SeasonModule):SeasonManager():SeasonMapManager():BrowseTask()
+  if closeCallback then
+    closeCallback()
+  end
+end

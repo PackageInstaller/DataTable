@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/cn7_n36/str_cn7_n36_blackbox.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn7_n36_blackbox_title = "致命速遞", str_cn7_n36_blackbox_intro = "艾斯特拉大陸的暗鬼活動漸趨頻繁，送貨路程變得危機重重。隨著巨像重見天日，空裔和其夥伴也日益活躍，某些勢力覬覦巨像卓越的飛行能力和長距離機動性，便想委託空裔遞送一些危險的特殊包裹。", str_cn7_n36_blackbox_intro_title = "『致命速遞』玩法說明", str_cn7_n36_blackbox_intro_head_1 = "『黑匣』模式", str_cn7_n36_blackbox_intro_body_1 = "1.『致命速遞』玩法為『黑匣』模式。\n2.『黑匣』模式包含6道黑匣關卡，每道黑匣關卡內含有2～3道子關卡。\n3.黑匣關卡必須依序解鎖，完成黑匣關卡內任意一道子關卡，可以解鎖下一道黑匣關卡。\n4.子關卡無須依序解鎖，可以自由挑戰。\n5.同一黑匣關卡下的子關卡必須使用不同的光靈參與挑戰。", str_cn7_n36_blackbox_intro_head_2 = "挑戰獎盃", str_cn7_n36_blackbox_intro_body_2 = "1.每道黑匣關卡設有3-5個挑戰獎盃。不同的挑戰獎盃所要求的挑戰條件不同。\n2.導航員需依照獎盃內容，使用符合要求的陣容完成指定數量的關卡，才能達成對應獎盃並獲得獎勵。\n3.獎盃之間並無關連與先後次序，導航員可以多次單獨挑戰各個獎盃。\n4.挑戰獎盃一旦達成，將保持達成狀態，即使重設關卡編隊也不會失效。", str_cn7_n36_blackbox_intro_head_3 = "挑戰編隊", str_cn7_n36_blackbox_intro_body_3 = "1.挑戰同一黑匣關卡內的不同子關卡時，使用的的光靈不能重複。\n2.挑戰不同的黑匣關卡則無光靈重複限制。\n3.每道子關卡可使用一支挑戰編隊進入挑戰。\n4.關卡編隊可以重設，重設編隊不會影響已經達成的挑戰獎盃。", str_cn7_n36_blackbox_diff_unlock_tips = "完成{1}關卡任意子關卡後解鎖", str_cn7_n36_blackbox1_name = "EX1-驚霆", str_cn7_n36_blackbox2_name = "EX2-妄圖", str_cn7_n36_blackbox3_name = "EX3-窘困", str_cn7_n36_blackbox4_name = "EX4-更迭", str_cn7_n36_blackbox5_name = "EX5-破毀", str_cn7_n36_blackbox6_name = "EX6-煉獄", str_cn7_n36_blackbox1_sub_name_1 = "EX1-1驚霆·兇雷", str_cn7_n36_blackbox1_sub_name_2 = "EX1-2驚霆·堅石", str_cn7_n36_blackbox2_sub_name_1 = "EX2-1妄圖·傷害", str_cn7_n36_blackbox2_sub_name_2 = "EX2-2妄圖·進攻", str_cn7_n36_blackbox3_sub_name_1 = "EX3-1窘困·邊緣", str_cn7_n36_blackbox3_sub_name_2 = "EX3-2窘困·損傷", str_cn7_n36_blackbox3_sub_name_3 = "EX3-3窘困·禦傷", str_cn7_n36_blackbox4_sub_name_1 = "EX4-1更迭·恢復", str_cn7_n36_blackbox4_sub_name_2 = "EX4-2更迭·增傷", str_cn7_n36_blackbox5_sub_name_1 = "EX5-1破毀·傷痕", str_cn7_n36_blackbox5_sub_name_2 = "EX5-2破毀·污染", str_cn7_n36_blackbox6_sub_name_1 = "EX6-1煉獄·召喚", str_cn7_n36_blackbox6_sub_name_2 = "EX6-2煉獄·生存", str_cn7_n36_blackbox6_sub_name_3 = "EX6-3煉獄·代價"}
+local config = {
+  str_cn7_n36_blackbox_title = "致命速遞",
+  str_cn7_n36_blackbox_intro = "艾斯特拉大陸的暗鬼活動漸趨頻繁，送貨路程變得危機重重。隨著巨像重見天日，空裔和其夥伴也日益活躍，某些勢力覬覦巨像卓越的飛行能力和長距離機動性，便想委託空裔遞送一些危險的特殊包裹。",
+  str_cn7_n36_blackbox_intro_title = "『致命速遞』玩法說明",
+  str_cn7_n36_blackbox_intro_head_1 = "『黑匣』模式",
+  str_cn7_n36_blackbox_intro_body_1 = "1.『致命速遞』玩法為『黑匣』模式。\n2.『黑匣』模式包含6道黑匣關卡，每道黑匣關卡內含有2～3道子關卡。\n3.黑匣關卡必須依序解鎖，完成黑匣關卡內任意一道子關卡，可以解鎖下一道黑匣關卡。\n4.子關卡無須依序解鎖，可以自由挑戰。\n5.同一黑匣關卡下的子關卡必須使用不同的光靈參與挑戰。",
+  str_cn7_n36_blackbox_intro_head_2 = "挑戰獎盃",
+  str_cn7_n36_blackbox_intro_body_2 = "1.每道黑匣關卡設有3-5個挑戰獎盃。不同的挑戰獎盃所要求的挑戰條件不同。\n2.導航員需依照獎盃內容，使用符合要求的陣容完成指定數量的關卡，才能達成對應獎盃並獲得獎勵。\n3.獎盃之間並無關連與先後次序，導航員可以多次單獨挑戰各個獎盃。\n4.挑戰獎盃一旦達成，將保持達成狀態，即使重設關卡編隊也不會失效。",
+  str_cn7_n36_blackbox_intro_head_3 = "挑戰編隊",
+  str_cn7_n36_blackbox_intro_body_3 = "1.挑戰同一黑匣關卡內的不同子關卡時，使用的的光靈不能重複。\n2.挑戰不同的黑匣關卡則無光靈重複限制。\n3.每道子關卡可使用一支挑戰編隊進入挑戰。\n4.關卡編隊可以重設，重設編隊不會影響已經達成的挑戰獎盃。",
+  str_cn7_n36_blackbox_diff_unlock_tips = "完成{1}關卡任意子關卡後解鎖",
+  str_cn7_n36_blackbox1_name = "EX1-驚霆",
+  str_cn7_n36_blackbox2_name = "EX2-妄圖",
+  str_cn7_n36_blackbox3_name = "EX3-窘困",
+  str_cn7_n36_blackbox4_name = "EX4-更迭",
+  str_cn7_n36_blackbox5_name = "EX5-破毀",
+  str_cn7_n36_blackbox6_name = "EX6-煉獄",
+  str_cn7_n36_blackbox1_sub_name_1 = "EX1-1驚霆·兇雷",
+  str_cn7_n36_blackbox1_sub_name_2 = "EX1-2驚霆·堅石",
+  str_cn7_n36_blackbox2_sub_name_1 = "EX2-1妄圖·傷害",
+  str_cn7_n36_blackbox2_sub_name_2 = "EX2-2妄圖·進攻",
+  str_cn7_n36_blackbox3_sub_name_1 = "EX3-1窘困·邊緣",
+  str_cn7_n36_blackbox3_sub_name_2 = "EX3-2窘困·損傷",
+  str_cn7_n36_blackbox3_sub_name_3 = "EX3-3窘困·禦傷",
+  str_cn7_n36_blackbox4_sub_name_1 = "EX4-1更迭·恢復",
+  str_cn7_n36_blackbox4_sub_name_2 = "EX4-2更迭·增傷",
+  str_cn7_n36_blackbox5_sub_name_1 = "EX5-1破毀·傷痕",
+  str_cn7_n36_blackbox5_sub_name_2 = "EX5-2破毀·污染",
+  str_cn7_n36_blackbox6_sub_name_1 = "EX6-1煉獄·召喚",
+  str_cn7_n36_blackbox6_sub_name_2 = "EX6-2煉獄·生存",
+  str_cn7_n36_blackbox6_sub_name_3 = "EX6-3煉獄·代價"
+}
 return config
-

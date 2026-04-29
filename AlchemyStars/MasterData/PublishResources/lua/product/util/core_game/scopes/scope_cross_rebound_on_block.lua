@@ -1,50 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_cross_rebound_on_block.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CrossReboundOnBlock", SkillScopeCalculator_Base)
 SkillScopeCalculator_CrossReboundOnBlock = SkillScopeCalculator_CrossReboundOnBlock
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CrossReboundOnBlock.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_CrossReboundOnBlock:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local attackRange = {}
   local wholeRange = {}
   local size = scopeParam.size
   local blockMonsterMove = scopeParam.blockMonsterMove or 0
   local ignoreCount = scopeParam.ignoreCount or 0
-  local skipBlockPos = scopeParam.skipBlockPos ~= 1 and false
+  local skipBlockPos = scopeParam.skipBlockPos == 1 or false
   local reboundScopeType = scopeParam.reboundScopeType
   local reboundScopeParam = scopeParam.reboundScopeParam
   local target_area_grid = {}
-  for i,p in ipairs(bodyArea) do
+  for i, p in ipairs(bodyArea) do
     local targetPos = casterPos + p
-    ;
-    (table.insert)(target_area_grid, targetPos)
+    table.insert(target_area_grid, targetPos)
   end
-  local blockGridTrapPosList = (self._gridFilter):GetBlockGridTrapPosList()
+  local blockGridTrapPosList = self._gridFilter:GetBlockGridTrapPosList()
   if blockMonsterMove and blockMonsterMove == 1 then
-    blockGridTrapPosList = (self._gridFilter):GetBlockMovePosList()
-    local teamLeader = (((self._gridFilter)._world):Player()):GetCurrentTeamEntity()
+    blockGridTrapPosList = self._gridFilter:GetBlockMovePosList()
+    local teamLeader = self._gridFilter._world:Player():GetCurrentTeamEntity()
     local teamPos = teamLeader:GetGridPosition()
-    ;
-    (table.removev)(blockGridTrapPosList, teamPos)
+    table.removev(blockGridTrapPosList, teamPos)
   end
-  local reboundScopeCalcParam = {scopeType = reboundScopeType, scopeParam = reboundScopeParam, bodyArea = bodyArea, casterDir = casterDir, nTargetType = nTargetType, casterPos = casterPos, casterEntity = casterEntity}
+  local reboundScopeCalcParam = {
+    scopeType = reboundScopeType,
+    scopeParam = reboundScopeParam,
+    bodyArea = bodyArea,
+    casterDir = casterDir,
+    nTargetType = nTargetType,
+    casterPos = casterPos,
+    casterEntity = casterEntity
+  }
   local isUpReboundRequired = true
   local isDownReboundRequired = true
   local isLeftReboundRequired = true
   local isRightReboundRequired = true
-  for _,p in ipairs(target_area_grid) do
+  for _, p in ipairs(target_area_grid) do
     local centerX = p.x
     local centerY = p.y
     for index = 1, size do
-      local upPos = (Vector2.New)(centerX, centerY + index)
-      local downPos = (Vector2.New)(centerX, centerY - index)
-      local leftPos = (Vector2.New)(centerX - index, centerY)
-      local rightPos = (Vector2.New)(centerX + index, centerY)
+      local upPos = Vector2.New(centerX, centerY + index)
+      local downPos = Vector2.New(centerX, centerY - index)
+      local leftPos = Vector2.New(centerX - index, centerY)
+      local rightPos = Vector2.New(centerX + index, centerY)
       if isUpReboundRequired and self:_CalcScopeAtPos(upPos, Vector2.up, blockGridTrapPosList, reboundScopeCalcParam, attackRange, wholeRange, skipBlockPos) then
         isUpReboundRequired = false
       end
@@ -59,31 +58,23 @@ SkillScopeCalculator_CrossReboundOnBlock.CalcRange = function(self, scopeType, s
       end
     end
   end
-  do return SkillScopeResult:New(SkillScopeType.CrossReboundOnBlock, centerPos, attackRange, wholeRange) end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
+  return SkillScopeResult:New(SkillScopeType.CrossReboundOnBlock, centerPos, attackRange, wholeRange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_CrossReboundOnBlock._CalcScopeAtPos = function(self, pos, dir, blockGridTrapPosList, reboundScopeCalcParam, attackRange, wholeRange, skipBlockPos)
-  -- function num : 0_1 , upvalues : _ENV
-  if not (table.icontains)(blockGridTrapPosList, pos) and (self._gridFilter):IsValidPiecePos(pos) then
-    (table.insert)(attackRange, pos)
-    ;
-    (table.insert)(wholeRange, pos)
+function SkillScopeCalculator_CrossReboundOnBlock:_CalcScopeAtPos(pos, dir, blockGridTrapPosList, reboundScopeCalcParam, attackRange, wholeRange, skipBlockPos)
+  if not table.icontains(blockGridTrapPosList, pos) and self._gridFilter:IsValidPiecePos(pos) then
+    table.insert(attackRange, pos)
+    table.insert(wholeRange, pos)
     return false
   end
   local reboundCenterPos = pos - dir
   local scopeCalculator = SkillScopeCalculator:New(self._gridFilter)
   local reboundScopeResult = scopeCalculator:ComputeScopeRange(reboundScopeCalcParam.scopeType, reboundScopeCalcParam.scopeParam, reboundCenterPos, reboundScopeCalcParam.bodyArea, reboundScopeCalcParam.casterDir, reboundScopeCalcParam.nTargetType, reboundScopeCalcParam.casterPos, reboundScopeCalcParam.casterEntity)
-  for _,grid in ipairs(reboundScopeResult:GetAttackRange()) do
-    if (self._gridFilter):IsValidPiecePos(grid) and (not skipBlockPos or not (table.icontains)(blockGridTrapPosList, grid)) then
-      (table.insert)(attackRange, grid)
+  for _, grid in ipairs(reboundScopeResult:GetAttackRange()) do
+    if self._gridFilter:IsValidPiecePos(grid) and (not skipBlockPos or not table.icontains(blockGridTrapPosList, grid)) then
+      table.insert(attackRange, grid)
     end
-    ;
-    (table.insert)(wholeRange, grid)
+    table.insert(wholeRange, grid)
   end
   return true
 end
-
-

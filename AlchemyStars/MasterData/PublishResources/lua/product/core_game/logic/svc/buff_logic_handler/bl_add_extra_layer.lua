@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_extra_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddExtraLayer", BuffLogicBase)
 BuffLogicAddExtraLayer = BuffLogicAddExtraLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddExtraLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddExtraLayer:Constructor(buffInstance, logicParam)
   self._extraProb = logicParam.extraProb * 100
   self._extraRate = logicParam.extraRate
   self._fullProb = logicParam.fullProb * 100
   self._fullVal = logicParam.fullVal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddExtraLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local lsvcRandom = (self._world):GetService("RandomLogic")
+function BuffLogicAddExtraLayer:DoLogic(notify)
+  local lsvcRandom = self._world:GetService("RandomLogic")
   local addedLayer = notify:GetChangeLayer()
   local entity = notify:GetNotifyEntity()
   local finalExtraLayer = 0
@@ -33,20 +23,18 @@ BuffLogicAddExtraLayer.DoLogic = function(self, notify)
     finalExtraLayer = self._fullVal
     isSetInsteadOfAdd = true
   end
-  if finalExtraLayer > 0 then
+  if 0 < finalExtraLayer then
     local lsvcBuff = self._buffLogicService
     local layerType = notify:GetLayerType()
-    local oldBuffLayer = (lsvcBuff:GetBuffLayer(entity, layerType))
-    local finalLayer, instance = nil, nil
+    local oldBuffLayer = lsvcBuff:GetBuffLayer(entity, layerType)
+    local finalLayer, instance
     if isSetInsteadOfAdd then
-      finalLayer = lsvcBuff:SetBuffLayer(entity, layerType, finalExtraLayer)
+      finalLayer, instance = lsvcBuff:SetBuffLayer(entity, layerType, finalExtraLayer)
     else
-      -- DECOMPILER ERROR at PC53: Overwrote pending register: R13 in 'AssignReg'
-
-      finalLayer = lsvcBuff:AddBuffLayer(entity, layerType, finalExtraLayer)
+      finalLayer, instance = lsvcBuff:AddBuffLayer(entity, layerType, finalExtraLayer)
     end
     if not instance then
-      return 
+      return
     end
     local buffSeq = instance:BuffSeq()
     local result = BuffResultAddExtraLayer:New(entity, layerType, finalExtraLayer, finalLayer, buffSeq, oldBuffLayer)
@@ -55,5 +43,3 @@ BuffLogicAddExtraLayer.DoLogic = function(self, notify)
     return result
   end
 end
-
-

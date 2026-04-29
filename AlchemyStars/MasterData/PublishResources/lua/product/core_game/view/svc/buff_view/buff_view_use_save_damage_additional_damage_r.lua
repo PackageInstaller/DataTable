@@ -1,50 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_use_save_damage_additional_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewUseSaveDamageAdditionalDamage", BuffViewBase)
 BuffViewUseSaveDamageAdditionalDamage = BuffViewUseSaveDamageAdditionalDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewUseSaveDamageAdditionalDamage.Constructor = function(self)
-  -- function num : 0_0
+function BuffViewUseSaveDamageAdditionalDamage:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewUseSaveDamageAdditionalDamage.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewUseSaveDamageAdditionalDamage:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewUseSaveDamageAdditionalDamage.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewUseSaveDamageAdditionalDamage:PlayView(TT)
   local entity = self._entity
-  local damageInfo = (self._buffResult):GetDamageInfo()
-  local effectID = (self._buffResult):GetEffectID()
+  local damageInfo = self._buffResult:GetDamageInfo()
+  local effectID = self._buffResult:GetEffectID()
   YIELD(TT)
   local materialEntity = entity
-  if entity:HasSuperEntity() and (entity:EntityType()):IsSkillHolder() then
+  if entity:HasSuperEntity() and entity:EntityType():IsSkillHolder() then
     materialEntity = entity:GetSuperEntity()
   end
   if entity:HasTeam() then
     materialEntity = entity:GetTeamLeaderPetEntity()
   end
   if materialEntity:MaterialAnimationComponent() and damageInfo:GetDamageType() == DamageType.Recover then
-    (materialEntity:MaterialAnimationComponent()):PlayCure()
+    materialEntity:MaterialAnimationComponent():PlayCure()
   end
-  local playDamageService = (self._world):GetService("PlayDamage")
+  local playDamageService = self._world:GetService("PlayDamage")
   playDamageService:AsyncUpdateHPAndDisplayDamage(materialEntity, damageInfo)
   if effectID then
     if entity:HasPet() then
-      entity = (entity:Pet()):GetOwnerTeamEntity()
+      entity = entity:Pet():GetOwnerTeamEntity()
     end
-    local effectService = (self._world):GetService("Effect")
+    local effectService = self._world:GetService("Effect")
     local effectEntity = effectService:CreateEffect(effectID, entity)
   end
 end
-
-

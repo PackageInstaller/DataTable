@@ -1,36 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_nearest_one_by_one.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_NearestOneByOne", SkillScopeCalculator_Base)
 SkillScopeCalculator_NearestOneByOne = SkillScopeCalculator_NearestOneByOne
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_NearestOneByOne.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  if not (self._gridFilter)._world then
+function SkillScopeCalculator_NearestOneByOne:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  if not self._gridFilter._world then
     return SkillScopeResult:New(SkillScopeType.NearestOneByOne, {}, {}, {})
   end
   local targetCount = scopeParam[1]
-  local world = (self._gridFilter)._world
-  local calc = SkillScopeCalculator:New((self._hub)._gridFilter)
+  local world = self._gridFilter._world
+  local calc = SkillScopeCalculator:New(self._hub._gridFilter)
   local platformScopeResult = calc:ComputeScopeRange(SkillScopeType.FullScreen, 1, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local targetSelector = world:GetSkillScopeTargetSelector()
   local targetArrray = targetSelector:DoSelectSkillTarget(casterEntity, SkillTargetType.NearestMonsterOneByOne, platformScopeResult, nil, {targetCount})
   local monsterPosList = {}
-  for i,id in ipairs(targetArrray) do
-    local entity = ((self._gridFilter)._world):GetEntityByID(id)
+  for i, id in ipairs(targetArrray) do
+    local entity = self._gridFilter._world:GetEntityByID(id)
     local bodyAreaCmpt = entity:BodyArea()
     local pos = entity:GetGridPosition()
     local areaArray = bodyAreaCmpt:GetArea()
-    for _,area in ipairs(areaArray) do
-      (table.insert)(monsterPosList, Vector2(pos.x + area.x, pos.y + area.y))
+    for _, area in ipairs(areaArray) do
+      table.insert(monsterPosList, Vector2(pos.x + area.x, pos.y + area.y))
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.NearestOneByOne, centerPos, monsterPosList, monsterPosList, targetArrray)
   return result
 end
-
-

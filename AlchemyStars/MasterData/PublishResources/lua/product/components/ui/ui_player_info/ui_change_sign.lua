@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_change_sign.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChangeSignController", UIController)
 UIChangeSignController = UIChangeSignController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChangeSignController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChangeSignController:OnShow(uiParams)
   self._playerInfo = uiParams[1]
   self._roleModule = self:GetModule(RoleModule)
   self._signUpper = EnumMaxStringLen.E_MaxString_SignText
@@ -16,113 +9,76 @@ UIChangeSignController.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeSignController.OnHide = function(self)
-  -- function num : 0_1
+function UIChangeSignController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeSignController._GetComponents = function(self)
-  -- function num : 0_2
+function UIChangeSignController:_GetComponents()
   self._oldSignTex = self:GetUIComponent("UILocalizationText", "oldSign")
   self._inputField = self:GetUIComponent("InputField", "changeSign")
   self._rulerTex = self:GetUIComponent("UILocalizationText", "ruler")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeSignController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local maxValue = ((Cfg.cfg_global).change_chapter_sign_max_value_view).IntValue or 50
-  ;
-  (self._rulerTex):SetText("")
-  self._oldSign = (self._playerInfo).m_stSignText
-  self._etl = (UICustomUIEventListener.Get)((self._inputField).gameObject)
+function UIChangeSignController:_OnValue()
+  local maxValue = Cfg.cfg_global.change_chapter_sign_max_value_view.IntValue or 50
+  self._rulerTex:SetText("")
+  self._oldSign = self._playerInfo.m_stSignText
+  self._etl = UICustomUIEventListener.Get(self._inputField.gameObject)
   self:AddUICustomEventListener(self._etl, UIEvent.Press, function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    if (self._inputField).touchScreenKeyboard then
+    if self._inputField.touchScreenKeyboard then
       pcall(self.ActiveKeyboard, self, false)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeSignController.ActiveKeyboard = function(self, active)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._inputField).touchScreenKeyboard).active = active
+function UIChangeSignController:ActiveKeyboard(active)
+  self._inputField.touchScreenKeyboard.active = active
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeSignController.backOnClick = function(self)
-  -- function num : 0_5
+function UIChangeSignController:backOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeSignController.changeBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChangeSignController:changeBtnOnClick()
   if self:CheckSignError() then
-    return 
+    return
   end
   local idip_mng = self:GetModule(IdipgameModule)
   if idip_mng:TextBanHandle(IDIPBanType.IDIPBan_Signs) == true then
-    return 
+    return
   end
   self:Lock("UIChangeSignController:changeBtnOnClick")
   self:StartTask(self.OnchangeBtnOnClick, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeSignController.CheckSignError = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self.newSign = (self._inputField).text
-  if self._signUpper < (string.len)(self.newSign) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_player_info_change_sign_chaoguo"))
+function UIChangeSignController:CheckSignError()
+  self.newSign = self._inputField.text
+  if string.len(self.newSign) > self._signUpper then
+    ToastManager.ShowToast(StringTable.Get("str_player_info_change_sign_chaoguo"))
     return true
   end
   if self._oldSign == self.newSign then
-    (ToastManager.ShowToast)((StringTable.Get)("str_player_info_change_sign_same"))
+    ToastManager.ShowToast(StringTable.Get("str_player_info_change_sign_same"))
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeSignController.OnchangeBtnOnClick = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  local res = (self._roleModule):Request_AmendSignText(TT, self.newSign)
+function UIChangeSignController:OnchangeBtnOnClick(TT)
+  local res = self._roleModule:Request_AmendSignText(TT, self.newSign)
   self:UnLock("UIChangeSignController:changeBtnOnClick")
   if res:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnChapcterInfoChanged)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_player_info_change_sign_succ"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnChapcterInfoChanged)
+    ToastManager.ShowToast(StringTable.Get("str_player_info_change_sign_succ"))
     self:CloseDialog()
   else
     local errorCode = res:GetResult()
-    ;
-    (Log.fatal)("###playerinfo - RequestChangeName fail ! result - ", errorCode)
+    Log.fatal("###playerinfo - RequestChangeName fail ! result - ", errorCode)
     if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_INVALID then
-      (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
-    else
-      if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
-        (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_DIRTY_NICK"))
-      else
-        if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_SPE then
-          (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_SPE"))
-        end
-      end
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_DIRTY_NICK"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_SPE then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_SPE"))
     end
   end
 end
-
-

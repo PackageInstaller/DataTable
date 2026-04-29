@@ -1,88 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/build/ui_season_build_plan_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuildPlanS3", UICustomWidget)
 UISeasonBuildPlanS3 = UISeasonBuildPlanS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuildPlanS3.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuildPlanS3:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildPlanS3.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBuildPlanS3:InitWidget()
   self.planContent = self:GetUIComponent("UISelectObjectPath", "planContent")
   self._planScroll = self:GetUIComponent("ScrollRect", "planScroll")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildPlanS3.InitWithRewardClickCb = function(self, cb)
-  -- function num : 0_2
+function UISeasonBuildPlanS3:InitWithRewardClickCb(cb)
   self.rewardClickCb = cb
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildPlanS3.SetData = function(self, context)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonBuildPlanS3:SetData(context)
   self._context = context
-  local curLevel = (self._context):GetCurLevel()
-  local maxLevel = (self._context):GetMaxLevel()
-  local levelCfgs = (self._context):GetLevelCfgs()
+  local curLevel = self._context:GetCurLevel()
+  local maxLevel = self._context:GetMaxLevel()
+  local levelCfgs = self._context:GetLevelCfgs()
   local len = maxLevel - 1
   if not self.planItemsWidget then
-    self.planItemsWidget = (self.planContent):SpawnObjects("UISeasonBuildPlanItemS3", len)
+    self.planItemsWidget = self.planContent:SpawnObjects("UISeasonBuildPlanItemS3", len)
   end
   local index = 1
   if curLevel < maxLevel then
     for i = curLevel, maxLevel - 1 do
-      local subWidget = (self.planItemsWidget)[index]
+      local subWidget = self.planItemsWidget[index]
       index = index + 1
       self:_RefreshItem(subWidget, levelCfgs[i], false)
       subWidget:SetVisible(false)
     end
   end
-  do
-    if curLevel > 1 then
-      for i = 1, curLevel - 1 do
-        local subWidget = (self.planItemsWidget)[index]
-        index = index + 1
-        self:_RefreshItem(subWidget, levelCfgs[i], true)
-        subWidget:SetVisible(false)
-      end
+  if 1 < curLevel then
+    for i = 1, curLevel - 1 do
+      local subWidget = self.planItemsWidget[index]
+      index = index + 1
+      self:_RefreshItem(subWidget, levelCfgs[i], true)
+      subWidget:SetVisible(false)
     end
-    do
-      -- DECOMPILER ERROR at PC58: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._planScroll).verticalNormalizedPosition = 1
-      self:Lock("UISeasonBuildPlanS3_switch")
-      self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    for i,v in ipairs(self.planItemsWidget) do
+  end
+  self._planScroll.verticalNormalizedPosition = 1
+  self:Lock("UISeasonBuildPlanS3_switch")
+  self:StartTask(function(TT)
+    for i, v in ipairs(self.planItemsWidget) do
       v:PlayEnterAni()
       if i < 5 then
         YIELD(TT, 50)
       end
     end
     self:UnLock("UISeasonBuildPlanS3_switch")
-  end
-)
-    end
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildPlanS3._RefreshItem = function(self, planWidget, cfg, finish)
-  -- function num : 0_4
+function UISeasonBuildPlanS3:_RefreshItem(planWidget, cfg, finish)
   planWidget:SetData(cfg, finish, self.rewardClickCb)
 end
-
-

@@ -1,8 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/str_item_public.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_item_public_use_en = "U S E  I T E M S", str_item_public_use = "사용", str_item_public_cantuse = "사용 불가", str_item_public_sale = "판매", str_item_public_cantsale = "판매 불가", str_item_public_all = "모두", str_item_public_cl = "재료", str_item_public_xh = "소모", str_item_public_getway = "획득 방법", str_item_public_owned = "현재 보유: ", str_item_public_maxuse = "최대", str_item_public_currentNull = "해당 분류의 아이템이 없습니다", str_item_public_unit = "만", str_item_public_no_path = "획득 방법 없음", str_item_public_color_white = "C", str_item_public_color_green = "UC", str_item_public_color_blue = "R", str_item_public_color_purple = "SR", str_item_public_color_yellow = "SSR", str_item_public_color_golden = "UR", str_item_public_sale_item_tips = "아이템을 판매하시겠습니까?", str_item_public_select_one_below = "이상의 아이템 중 1개 선택", str_item_public_gain = "획득", str_item_public_time_out = "아이템 기간 만료", str_item_public_time_out_str = "만료 시기: {1}", str_item_public_get_path_owned = "보유: {1}", str_item_public_get_path_not_enough = "부족", str_item_public_exchange_btn_tex = "전환 확인", str_item_public_exchange_btn_tips = "{1} 고급 재료를 소모합니다.\n정말 진행하시겠습니까?", str_item_public_exchange_title = "{1}-{2} 전환", str_item_public_exchange_not_enough = "재료 부족", str_item_public_exchange_path_desc = "{1}*{2}", str_item_public_item_not_exist = "아이템이 존재하지 않습니다.", str_item_public_select_one_usecount = "사용 수량:", str_item_public_smeltroom_lv_limit = "[Lv.{1} 달성 시 제련 가능]", str_item_public_smeltroom_unlock_tip = "[제련 획득]", str_item_public_smeltroom_lock_tip = "[개방 후 제련 가능]", str_item_public_goto_aircraft = "이동", str_item_public_aircraft_lock_tip = "[콜로서스 미개방]", str_item_public_use_phy_more_than_max = "프리즘 수량이 한도에 도달했습니다.", str_item_public_common_conversion_title = "아이템 전환", str_item_public_common_conversion_title2 = "보유한 아이템을 이미 다음 보상으로 전환했습니다."}
+local config = {
+  str_item_public_use_en = "U S E  I T E M S",
+  str_item_public_use = "사용",
+  str_item_public_cantuse = "사용 불가",
+  str_item_public_sale = "판매",
+  str_item_public_cantsale = "판매 불가",
+  str_item_public_all = "모두",
+  str_item_public_cl = "재료",
+  str_item_public_xh = "소모",
+  str_item_public_getway = "획득 방법",
+  str_item_public_owned = "현재 보유: ",
+  str_item_public_maxuse = "최대",
+  str_item_public_currentNull = "해당 분류의 아이템이 없습니다",
+  str_item_public_unit = "만",
+  str_item_public_no_path = "획득 방법 없음",
+  str_item_public_color_white = "C",
+  str_item_public_color_green = "UC",
+  str_item_public_color_blue = "R",
+  str_item_public_color_purple = "SR",
+  str_item_public_color_yellow = "SSR",
+  str_item_public_color_golden = "UR",
+  str_item_public_sale_item_tips = "아이템을 판매하시겠습니까?",
+  str_item_public_select_one_below = "이상의 아이템 중 1개 선택",
+  str_item_public_gain = "획득",
+  str_item_public_time_out = "아이템 기간 만료",
+  str_item_public_time_out_str = "만료 시기: {1}",
+  str_item_public_get_path_owned = "보유: {1}",
+  str_item_public_get_path_not_enough = "부족",
+  str_item_public_exchange_btn_tex = "전환 확인",
+  str_item_public_exchange_btn_tips = "{1} 고급 재료를 소모합니다.\n정말 진행하시겠습니까?",
+  str_item_public_exchange_title = "{1}-{2} 전환",
+  str_item_public_exchange_not_enough = "재료 부족",
+  str_item_public_exchange_path_desc = "{1}*{2}",
+  str_item_public_item_not_exist = "아이템이 존재하지 않습니다.",
+  str_item_public_select_one_usecount = "사용 수량:",
+  str_item_public_smeltroom_lv_limit = "[Lv.{1} 달성 시 제련 가능]",
+  str_item_public_smeltroom_unlock_tip = "[제련 획득]",
+  str_item_public_smeltroom_lock_tip = "[개방 후 제련 가능]",
+  str_item_public_goto_aircraft = "이동",
+  str_item_public_aircraft_lock_tip = "[콜로서스 미개방]",
+  str_item_public_use_phy_more_than_max = "프리즘 수량이 한도에 도달했습니다.",
+  str_item_public_common_conversion_title = "아이템 전환",
+  str_item_public_common_conversion_title2 = "보유한 아이템을 이미 다음 보상으로 전환했습니다."
+}
 return config
-

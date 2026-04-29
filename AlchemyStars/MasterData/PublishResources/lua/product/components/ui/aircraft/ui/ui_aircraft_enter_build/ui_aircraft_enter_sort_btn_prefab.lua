@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_enter_build/ui_aircraft_enter_sort_btn_prefab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftEnterSortBtnPrefab", UICustomWidget)
 UIAircraftEnterSortBtnPrefab = UIAircraftEnterSortBtnPrefab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftEnterSortBtnPrefab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftEnterSortBtnPrefab:OnShow(uiParams)
   self._arrow = self:GetUIComponent("Image", "arrow")
   self._sortText = self:GetUIComponent("UILocalizationText", "Text")
   self._uiAircraftEnterBuildAtlas = self:GetAsset("UIAircraftEnterBuild.spriteatlas", LoadType.SpriteAtlas)
@@ -16,10 +9,7 @@ UIAircraftEnterSortBtnPrefab.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.AircraftEnterBuildChangeSort, self.AircraftEnterBuildChangeSort)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterSortBtnPrefab.AircraftEnterBuildChangeSort = function(self, sort_params)
-  -- function num : 0_1
+function UIAircraftEnterSortBtnPrefab:AircraftEnterBuildChangeSort(sort_params)
   if self._sortType == sort_params._sort_type then
     self:SelectActive(sort_params._sort_order)
   else
@@ -27,28 +17,18 @@ UIAircraftEnterSortBtnPrefab.AircraftEnterBuildChangeSort = function(self, sort_
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterSortBtnPrefab.Constructor = function(self)
-  -- function num : 0_2
+function UIAircraftEnterSortBtnPrefab:Constructor()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterSortBtnPrefab.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftEnterSortBtnPrefab:OnHide()
   self:DetachEvent(GameEventType.AircraftEnterBuildChangeSort, self.AircraftEnterBuildChangeSort)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterSortBtnPrefab.SetData = function(self, index, sortType, sortText, sort_params, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftEnterSortBtnPrefab:SetData(index, sortType, sortText, sort_params, callback)
   self._index = index
   self._callback = callback
   self._sortType = sortType
-  ;
-  (self._sortText):SetText((StringTable.Get)(sortText))
+  self._sortText:SetText(StringTable.Get(sortText))
   if self._sortType == sort_params._sort_type then
     self:SelectActive(sort_params._sort_order)
   else
@@ -56,35 +36,19 @@ UIAircraftEnterSortBtnPrefab.SetData = function(self, index, sortType, sortText,
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterSortBtnPrefab.CancelActive = function(self)
-  -- function num : 0_5
-  (self._select):SetActive(false)
+function UIAircraftEnterSortBtnPrefab:CancelActive()
+  self._select:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterSortBtnPrefab.SelectActive = function(self, up2down)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._select):SetActive(true)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIAircraftEnterSortBtnPrefab:SelectActive(up2down)
+  self._select:SetActive(true)
   if up2down == PetSortOrder.Descending then
-    (self._arrow).sprite = (self._uiAircraftEnterBuildAtlas):GetSprite("spirit_jiantou_w_1_icon")
+    self._arrow.sprite = self._uiAircraftEnterBuildAtlas:GetSprite("spirit_jiantou_w_1_icon")
   else
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._arrow).sprite = (self._uiAircraftEnterBuildAtlas):GetSprite("spirit_jiantou_w_2_icon")
+    self._arrow.sprite = self._uiAircraftEnterBuildAtlas:GetSprite("spirit_jiantou_w_2_icon")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterSortBtnPrefab.selectOnClick = function(self)
-  -- function num : 0_7
-  (self._callback)(self._index, self._sortType)
+function UIAircraftEnterSortBtnPrefab:selectOnClick()
+  self._callback(self._index, self._sortType)
 end
-
-

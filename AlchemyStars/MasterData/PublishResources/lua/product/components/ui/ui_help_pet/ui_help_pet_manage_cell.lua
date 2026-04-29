@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_help_pet/ui_help_pet_manage_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHelpPetManageCell", UICustomWidget)
 UIHelpPetManageCell = UIHelpPetManageCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHelpPetManageCell.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHelpPetManageCell:OnShow()
   self.petModule = self:GetModule(PetModule)
   self.haveGO = self:GetGameObject("have")
   self.haveTopGO = self:GetGameObject("havetop")
@@ -21,38 +14,27 @@ UIHelpPetManageCell.OnShow = function(self)
   self.imgElement2 = self:GetUIComponent("Image", "Attribute2")
   self.defaultElement = self:GetUIComponent("Image", "defaultAttr")
   self._rootAlpha = self:GetUIComponent("CanvasGroup", "root")
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rootAlpha).alpha = 0
+  self._rootAlpha.alpha = 0
   self._rootRect = self:GetUIComponent("RectTransform", "root")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageCell.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHelpPetManageCell:OnHide()
   if self._aTween then
-    (self._aTween):Kill()
+    self._aTween:Kill()
   end
   if self._pTween then
-    (self._pTween):Kill()
+    self._pTween:Kill()
   end
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageCell.InitData = function(self, elementType, callBack, idx)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHelpPetManageCell:InitData(elementType, callBack, idx)
   self.elementType = elementType
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
   if self.elementType then
-    (self.defaultElement).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[self.elementType]).Icon))
+    self.defaultElement.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[self.elementType].Icon))
   end
   self.callBack = callBack
   if idx then
@@ -60,126 +42,84 @@ UIHelpPetManageCell.InitData = function(self, elementType, callBack, idx)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageCell.PlayAnim = function(self, idx)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHelpPetManageCell:PlayAnim(idx)
   local x = -150 - (idx - 1) * 20
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rootRect).anchoredPosition = Vector2(x, 0)
+  self._rootRect.anchoredPosition = Vector2(x, 0)
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
-  self._event = ((GameGlobal.Timer)()):AddEvent(idx * 67, function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    self._aTween = (self._rootAlpha):DOFade(1, 0.5)
-    self._pTween = ((self._rootRect):DOAnchorPosX(0, 0.5)):SetEase(((DG.Tweening).Ease).OutQuint)
-  end
-)
+  self._event = GameGlobal.Timer():AddEvent(idx * 67, function()
+    self._aTween = self._rootAlpha:DOFade(1, 0.5)
+    self._pTween = self._rootRect:DOAnchorPosX(0, 0.5):SetEase(DG.Tweening.Ease.OutQuint)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageCell.GetElementType = function(self)
-  -- function num : 0_4
+function UIHelpPetManageCell:GetElementType()
   return self.elementType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageCell.SetData = function(self, petTempId, elem)
-  -- function num : 0_5
+function UIHelpPetManageCell:SetData(petTempId, elem)
   local have = true
   if not petTempId or petTempId == 0 then
     have = false
   else
     have = true
   end
-  ;
-  (self.haveGO):SetActive(have)
-  ;
-  (self.haveTopGO):SetActive(have)
-  ;
-  (self.addGO):SetActive(not have)
-  ;
-  (self.addTopGO):SetActive(not have)
+  self.haveGO:SetActive(have)
+  self.haveTopGO:SetActive(have)
+  self.addGO:SetActive(not have)
+  self.addTopGO:SetActive(not have)
   if have then
-    local pet = (self.petModule):GetPetByTemplateId(petTempId)
+    local pet = self.petModule:GetPetByTemplateId(petTempId)
     self.pet = pet
     self:SetHaveState()
   else
-    do
-      self:SetAddState(elem)
-    end
+    self:SetAddState(elem)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageCell.SetHaveState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHelpPetManageCell:SetHaveState()
   if not self.pet then
-    return 
+    return
   end
-  local petId = (self.pet):GetTemplateID()
-  local grade = (self.pet):GetPetGrade()
-  local skinId = (self.pet):GetSkinId()
-  local helpIcon = (HelperProxy:GetInstance()):GetPetVideo(petId, grade, skinId, PetSkinEffectPath.CARD_HELP_MANAGER)
+  local petId = self.pet:GetTemplateID()
+  local grade = self.pet:GetPetGrade()
+  local skinId = self.pet:GetSkinId()
+  local helpIcon = HelperProxy:GetInstance():GetPetVideo(petId, grade, skinId, PetSkinEffectPath.CARD_HELP_MANAGER)
   if helpIcon then
-    (self.cgNormal):Load(helpIcon)
+    self.cgNormal:Load(helpIcon)
   else
-    ;
-    (Log.fatal)("### [error] pet [", petId, "] no helpIcon")
+    Log.fatal("### [error] pet [", petId, "] no helpIcon")
   end
   if self.pet then
-    local firstAttr = (self.pet):GetPetFirstElement()
-    local secondAttr = (self.pet):GetPetSecondElement()
+    local firstAttr = self.pet:GetPetFirstElement()
+    local secondAttr = self.pet:GetPetSecondElement()
     self:LoadElement(firstAttr, secondAttr)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageCell.LoadElement = function(self, fstElement, secondElement)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+function UIHelpPetManageCell:LoadElement(fstElement, secondElement)
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if not cfg_pet_element then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
   if fstElement then
-    (self.imgElement1).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[fstElement]).Icon))
+    self.imgElement1.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[fstElement].Icon))
   end
   if secondElement then
-    (self.secondGO):SetActive(true)
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.imgElement2).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[secondElement]).Icon))
+    self.secondGO:SetActive(true)
+    self.imgElement2.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[secondElement].Icon))
   else
-    ;
-    (self.secondGO):SetActive(false)
+    self.secondGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageCell.SetAddState = function(self, elem)
-  -- function num : 0_8
+function UIHelpPetManageCell:SetAddState(elem)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageCell.btngoOnClick = function(self)
-  -- function num : 0_9
+function UIHelpPetManageCell:btngoOnClick()
   if self.callBack then
-    (self.petModule):ClearAllPetSortInfo()
-    ;
-    (self.callBack)(self.elementType)
+    self.petModule:ClearAllPetSortInfo()
+    self.callBack(self.elementType)
   end
 end
-
-

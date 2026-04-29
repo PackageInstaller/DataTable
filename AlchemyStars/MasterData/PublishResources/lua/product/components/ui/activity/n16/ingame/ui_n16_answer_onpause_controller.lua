@@ -1,65 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/ingame/ui_n16_answer_onpause_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16AnswerOnPauseController", UIController)
 UIN16AnswerOnPauseController = UIN16AnswerOnPauseController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16AnswerOnPauseController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN16AnswerOnPauseController:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerOnPauseController.InitWidget = function(self)
-  -- function num : 0_1
+function UIN16AnswerOnPauseController:InitWidget()
   self.contentText = self:GetUIComponent("UILocalizedTMP", "ContentText")
   self:SetFontMat(self.contentText, "uieff_n16_ingame_pause.mat")
   self._transition = self:GetUIComponent("ATransitionComponent", "go")
-  ;
-  (self._transition):PlayEnterAnimation(true)
+  self._transition:PlayEnterAnimation(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerOnPauseController.OnHide = function(self)
-  -- function num : 0_2
+function UIN16AnswerOnPauseController:OnHide()
   self._mat = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerOnPauseController.NextButtonOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN16PauseClick, true)
+function UIN16AnswerOnPauseController:NextButtonOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN16PauseClick, true)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerOnPauseController.QuitButtonOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN16PauseClick, false)
+function UIN16AnswerOnPauseController:QuitButtonOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN16PauseClick, false)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16AnswerOnPauseController.SetFontMat = function(self, lable, resname)
-  -- function num : 0_5 , upvalues : _ENV
-  local res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UIN16AnswerOnPauseController:SetFontMat(lable, resname)
+  local res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not res then
-    return 
+    return
   end
   self._mat = res
   local obj = res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
-
-

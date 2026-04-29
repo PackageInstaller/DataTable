@@ -1,51 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_reset_select_grid_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ResetSelectGridElement", Object)
 SkillEffectCalc_ResetSelectGridElement = SkillEffectCalc_ResetSelectGridElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ResetSelectGridElement.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ResetSelectGridElement:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ResetSelectGridElement.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+function SkillEffectCalc_ResetSelectGridElement:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local realRange = {}
-  local conditionSrcElement = (skillEffectCalcParam.skillEffectParam):GetSelectConditionSrcElement()
+  local conditionSrcElement = skillEffectCalcParam.skillEffectParam:GetSelectConditionSrcElement()
   if type(conditionSrcElement) == "table" then
-    local boardServiceLogic = (self._world):GetService("BoardLogic")
-    local utilData = (self._world):GetService("UtilData")
+    local boardServiceLogic = self._world:GetService("BoardLogic")
+    local utilData = self._world:GetService("UtilData")
     for i = 1, #skillEffectCalcParam.skillRange do
-      local pos = (skillEffectCalcParam.skillRange)[i]
+      local pos = skillEffectCalcParam.skillRange[i]
       local elementType = utilData:FindPieceElement(pos)
       if not boardServiceLogic:IsPosBlock(pos, BlockFlag.ChangeElement) and self:_CheckInTable(conditionSrcElement, elementType) then
-        (table.insert)(realRange, pos)
+        table.insert(realRange, pos)
       end
     end
   end
-  do
-    return (self._skillEffectService):CalcSkill_ResetGridElement(realRange, casterEntity, skillEffectCalcParam.skillEffectParam)
-  end
+  return self._skillEffectService:CalcSkill_ResetGridElement(realRange, casterEntity, skillEffectCalcParam.skillEffectParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ResetSelectGridElement._CheckInTable = function(self, tableName, element)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,v in pairs(tableName) do
+function SkillEffectCalc_ResetSelectGridElement:_CheckInTable(tableName, element)
+  for _, v in pairs(tableName) do
     if v == element then
       return true
     end
   end
   return false
 end
-
-

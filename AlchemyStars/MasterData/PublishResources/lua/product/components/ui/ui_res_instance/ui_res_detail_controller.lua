@@ -1,105 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_res_instance/ui_res_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResDetailController", UIController)
 UIResDetailController = UIResDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIResDetailController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIResDetailController:Constructor()
   self.items = {}
   self.activityawards = {}
-  self.SubType2Order = {[DungeonSubType.DungeonSubType_Blue] = 1, [DungeonSubType.DungeonSubType_Red] = 2, [DungeonSubType.DungeonSubType_Green] = 3, [DungeonSubType.DungeonSubType_Yellow] = 4}
+  self.SubType2Order = {
+    [DungeonSubType.DungeonSubType_Blue] = 1,
+    [DungeonSubType.DungeonSubType_Red] = 2,
+    [DungeonSubType.DungeonSubType_Green] = 3,
+    [DungeonSubType.DungeonSubType_Yellow] = 4
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIResDetailController:LoadDataOnEnter(TT, res, uiParams)
   self.mainType = uiParams[1]
   self.resDungeonModule = self:GetModule(ResDungeonModule)
-  self.clientResInstance = (self.resDungeonModule):GetClientResInstance()
-  if self.mainType ~= nil and DungeonType.DungeonType_Coin <= self.mainType and self.mainType < DungeonType.DungeonType_Max then
+  self.clientResInstance = self.resDungeonModule:GetClientResInstance()
+  if self.mainType ~= nil and self.mainType >= DungeonType.DungeonType_Coin and self.mainType < DungeonType.DungeonType_Max then
     self:_GetActivityAwards(TT)
   end
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._doubleDropValue = campaignModule:GetDoubleDropValue(TT)
   if not self._doubleDropValue then
     self._doubleDropValue = 0
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController._GetActivityAwards = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIResDetailController:_GetActivityAwards(TT)
   local ids = {}
   if self.mainType == DungeonType.DungeonType_Experience then
-    self:_GetStageID((self.clientResInstance):GetExpInstanceList(DungeonSubType.DungeonSubType_Blue), ids)
-    self:_GetStageID((self.clientResInstance):GetExpInstanceList(DungeonSubType.DungeonSubType_Red), ids)
-    self:_GetStageID((self.clientResInstance):GetExpInstanceList(DungeonSubType.DungeonSubType_Green), ids)
-    self:_GetStageID((self.clientResInstance):GetExpInstanceList(DungeonSubType.DungeonSubType_Yellow), ids)
+    self:_GetStageID(self.clientResInstance:GetExpInstanceList(DungeonSubType.DungeonSubType_Blue), ids)
+    self:_GetStageID(self.clientResInstance:GetExpInstanceList(DungeonSubType.DungeonSubType_Red), ids)
+    self:_GetStageID(self.clientResInstance:GetExpInstanceList(DungeonSubType.DungeonSubType_Green), ids)
+    self:_GetStageID(self.clientResInstance:GetExpInstanceList(DungeonSubType.DungeonSubType_Yellow), ids)
   else
-    self:_GetStageID((self.clientResInstance):GetNormalInstanceList(self.mainType), ids)
+    self:_GetStageID(self.clientResInstance:GetNormalInstanceList(self.mainType), ids)
   end
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local res, rewards = campaignModule:HandleCampaignGetMatchMissionArrayExReward(TT, MatchType.MT_ResDungeon, ids)
   if res:GetSucc() then
     local itemcfg = Cfg.cfg_item
-    for key,value in pairs(rewards) do
+    for key, value in pairs(rewards) do
       local awards = {}
-      for i = 1, (table.count)(value) do
+      for i = 1, table.count(value) do
         local _data = {}
-        _data.id = (value[i]).assetid
+        _data.id = value[i].assetid
         local _cfg = itemcfg[_data.id]
         if _cfg then
           _data.icon = _cfg.Icon
           _data.color = _cfg.Color
         end
         _data.type = StageAwardType.Activity
-        _data.count = (value[i]).count
-        ;
-        (table.insert)(awards, _data)
+        _data.count = value[i].count
+        table.insert(awards, _data)
       end
-      -- DECOMPILER ERROR at PC99: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self.activityawards)[key] = awards
+      self.activityawards[key] = awards
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController._GetStageID = function(self, stages, ids)
-  -- function num : 0_3 , upvalues : _ENV
-  if stages and (table.count)(stages) then
-    for key,value in pairs(stages) do
+function UIResDetailController:_GetStageID(stages, ids)
+  if stages and table.count(stages) then
+    for key, value in pairs(stages) do
       if value:GetPower() > 0 then
-        (table.insert)(ids, value:GetId())
+        table.insert(ids, value:GetId())
       end
     end
   end
-  do
-    return ids
-  end
+  return ids
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIResDetailController:OnShow(uiParams)
   local doubleDropTips = self:GetGameObject("DoubleDropTips")
   doubleDropTips:SetActive(self._doubleDropValue > 0)
   self.gotoSubType = uiParams[2]
-  self.entryData = (self.clientResInstance):GetEntryById(self.mainType)
+  self.entryData = self.clientResInstance:GetEntryById(self.mainType)
   if not self.entryData then
-    return 
+    return
   end
   local returnHelpPoolRt = self:GetUIComponent("RectTransform", "returnHelp")
-  local AircraftModule = (GameGlobal.GetModule)(AircraftModule)
+  local AircraftModule = GameGlobal.GetModule(AircraftModule)
   local resourceRoom = AircraftModule:GetRoomByRoomType(AirRoomType.ResourceRoom)
   local pos = Vector2(-990, -58)
   if resourceRoom then
@@ -112,36 +92,31 @@ UIResDetailController.OnShow = function(self, uiParams)
   local returnHelp = returnHelpPool:SpawnObject("UICommonReturnHelp")
   returnHelp:SetData(false)
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
-  local helpCbTab = {[DungeonType.DungeonType_Coin] = function()
-    -- function num : 0_4_0 , upvalues : self
-    self:ShowDialog("UIHelpController", "UIHelpBlackUnderbellyDungeon")
-  end
-, [DungeonType.DungeonType_Experience] = nil, [DungeonType.DungeonType_AircraftMaterial] = nil, [DungeonType.DungeonType_equip] = nil}
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
+  local helpCbTab = {
+    [DungeonType.DungeonType_Coin] = function()
+      self:ShowDialog("UIHelpController", "UIHelpBlackUnderbellyDungeon")
+    end,
+    [DungeonType.DungeonType_Experience] = nil,
+    [DungeonType.DungeonType_AircraftMaterial] = nil,
+    [DungeonType.DungeonType_equip] = nil
+  }
   local helpCb = helpCbTab[self.mainType]
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_4_1 , upvalues : self
+  self._backBtns:SetData(function()
     self:btnbackOnClick()
-  end
-, helpCb, function()
-    -- function num : 0_4_2 , upvalues : self
+  end, helpCb, function()
     self:btnHomeOnClick()
-  end
-)
+  end)
   self.expCellContentGO = self:GetGameObject("expcellcontent")
   self.picGO = self:GetGameObject("pic")
-  local jumpData = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetJumpData()
+  local jumpData = GameGlobal.GetModule(SerialAutoFightModule):GetJumpData()
   local trackData = jumpData:CreateTrackData_Resource(self:GetMainType(), self:GetGotoSubType())
   jumpData:Track_Stage(trackData)
   self._trackData = trackData
   self.scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
-  ;
-  (self.scrollView):InitListView(0, function(_scrollView, index)
-    -- function num : 0_4_3 , upvalues : self
+  self.scrollView:InitListView(0, function(_scrollView, index)
     return self:CreateItem(_scrollView, index)
-  end
-)
+  end)
   local sop = self:GetUIComponent("UISelectObjectPath", "mainstate")
   self.mainStateMenu = sop:SpawnObject("UIMainStateMenu")
   self.bgImg = self:GetUIComponent("RawImageLoader", "bg")
@@ -153,53 +128,37 @@ UIResDetailController.OnShow = function(self, uiParams)
   self._spineLoaderGo = self:GetGameObject("petSpine")
   self.btnWordBgGO = self:GetGameObject("btnwordbg")
   if self.mainType == DungeonType.DungeonType_Coin then
-    (self.btnWordBgGO):SetActive(true)
-    ;
-    (self.titleImagePGO):SetActive(true)
-    ;
-    (self.titleImageRGO):SetActive(false)
-    ;
-    (self.titleImageEGO):SetActive(false)
+    self.btnWordBgGO:SetActive(true)
+    self.titleImagePGO:SetActive(true)
+    self.titleImageRGO:SetActive(false)
+    self.titleImageEGO:SetActive(false)
   elseif self.mainType == DungeonType.DungeonType_AircraftMaterial then
-    (self.btnWordBgGO):SetActive(true)
-    ;
-    (self.titleImagePGO):SetActive(false)
-    ;
-    (self.titleImageRGO):SetActive(true)
-    ;
-    (self.titleImageEGO):SetActive(false)
+    self.btnWordBgGO:SetActive(true)
+    self.titleImagePGO:SetActive(false)
+    self.titleImageRGO:SetActive(true)
+    self.titleImageEGO:SetActive(false)
   elseif self.mainType == DungeonType.DungeonType_equip then
-    (self.btnWordBgGO):SetActive(true)
-    ;
-    (self.titleImagePGO):SetActive(false)
-    ;
-    (self.titleImageRGO):SetActive(false)
-    ;
-    (self.titleImageEGO):SetActive(true)
+    self.btnWordBgGO:SetActive(true)
+    self.titleImagePGO:SetActive(false)
+    self.titleImageRGO:SetActive(false)
+    self.titleImageEGO:SetActive(true)
   else
-    (self.btnWordBgGO):SetActive(false)
+    self.btnWordBgGO:SetActive(false)
   end
-  ;
-  (self.bgImg):LoadImage((self.entryData):GetBgPic())
+  self.bgImg:LoadImage(self.entryData:GetBgPic())
   if self.mainType == DungeonType.DungeonType_Experience then
-    local subKey = (self.clientResInstance).resInstanceSubLocalDBKey
-    if not self.gotoSubType or not self.gotoSubType then
-      local openSubType = (LocalDB.GetInt)(subKey, 0)
-    end
-    ;
-    (self.expCellContentGO):SetActive(true)
-    ;
-    (self.picGO):SetActive(false)
+    local subKey = self.clientResInstance.resInstanceSubLocalDBKey
+    local openSubType = self.gotoSubType and self.gotoSubType or LocalDB.GetInt(subKey, 0)
+    self.expCellContentGO:SetActive(true)
+    self.picGO:SetActive(false)
     self.expCellContent = self:GetUIComponent("UISelectObjectPath", "expcellcontent")
     self:InitExpGroup()
     self:OnClickExpCell(openSubType == 0 and DungeonSubType.DungeonSubType_Blue or openSubType)
   else
-    local key = (self.clientResInstance):GetLocalDBKey(self.mainType)
-    self.curInstanceId = (LocalDB.GetInt)(key)
-    ;
-    (self.expCellContentGO):SetActive(false)
-    ;
-    (self.picGO):SetActive(true)
+    local key = self.clientResInstance:GetLocalDBKey(self.mainType)
+    self.curInstanceId = LocalDB.GetInt(key)
+    self.expCellContentGO:SetActive(false)
+    self.picGO:SetActive(true)
     self.picImg = self:GetUIComponent("RawImageLoader", "pic")
     self.wordPlayerTxt = self:GetUIComponent("UILocalizationText", "wordplayer")
     self.wordTxt = self:GetUIComponent("UILocalizationText", "word")
@@ -214,263 +173,180 @@ UIResDetailController.OnShow = function(self, uiParams)
   local buffTips = self:GetUIComponent("UISelectObjectPath", "BuffTips")
   self._buffTips = buffTips:SpawnObject("UIResBuffDetail")
   self:_PickPetTaskReward()
-  -- DECOMPILER ERROR: 14 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.StartTimer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local waitTime = (self.entryData):GetWaitWordLoopTime()
-  self._currentTimeEvent = ((GameGlobal.Timer)()):AddEventTimes(waitTime, TimerTriggerCount.Infinite, self.OnTimerLoop, self)
+function UIResDetailController:StartTimer()
+  local waitTime = self.entryData:GetWaitWordLoopTime()
+  self._currentTimeEvent = GameGlobal.Timer():AddEventTimes(waitTime, TimerTriggerCount.Infinite, self.OnTimerLoop, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.OnTimerLoop = function(self)
-  -- function num : 0_6
-  if not (self:Manager()):IsTopUI(self.name) then
-    return 
+function UIResDetailController:OnTimerLoop()
+  if not self:Manager():IsTopUI(self.name) then
+    return
   end
-  local waitWord = (self.entryData):GetWaitWord()
-  if (self.wordTxt).text ~= waitWord then
-    (self.wordTxt):SetText(waitWord)
+  local waitWord = self.entryData:GetWaitWord()
+  if self.wordTxt.text ~= waitWord then
+    self.wordTxt:SetText(waitWord)
   end
-  self:OnPlayVoice((self.entryData):GetWaitVoice())
+  self:OnPlayVoice(self.entryData:GetWaitVoice())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.StopTimer = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIResDetailController:StopTimer()
   if self._currentTimeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._currentTimeEvent)
+    GameGlobal.Timer():CancelEvent(self._currentTimeEvent)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.InitNormalGroup = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self.picImg):LoadImage((self.entryData):GetDetailPic())
-  local spine = (self.entryData):GetDetailSpine()
+function UIResDetailController:InitNormalGroup()
+  self.picImg:LoadImage(self.entryData:GetDetailPic())
+  local spine = self.entryData:GetDetailSpine()
   if spine then
-    (self._spineLoaderGo):SetActive(true)
-    ;
-    (self._spineLoader):LoadSpine(spine)
-    local offset_scale = (self.entryData):GetDetailSpineOffsetAndScale()
+    self._spineLoaderGo:SetActive(true)
+    self._spineLoader:LoadSpine(spine)
+    local offset_scale = self.entryData:GetDetailSpineOffsetAndScale()
     if offset_scale then
-      local rt = (self._spineLoaderGo):GetComponent("RectTransform")
+      local rt = self._spineLoaderGo:GetComponent("RectTransform")
       rt.anchoredPosition = Vector2(offset_scale[1], offset_scale[2])
       rt.localScale = Vector3(offset_scale[3], offset_scale[3], offset_scale[3])
     end
   else
-    do
-      ;
-      (self._spineLoaderGo):SetActive(false)
-      ;
-      (self.wordPlayerTxt):SetText((self.entryData):GetWordPlayerName())
-      ;
-      (self.wordTxt):SetText((self.entryData):GetWelWord())
-      self:OnPlayVoice((self.entryData):GetWelVoice())
-    end
+    self._spineLoaderGo:SetActive(false)
+  end
+  self.wordPlayerTxt:SetText(self.entryData:GetWordPlayerName())
+  self.wordTxt:SetText(self.entryData:GetWelWord())
+  self:OnPlayVoice(self.entryData:GetWelVoice())
+end
+
+function UIResDetailController:InitExpGroup()
+  self.expCellContent:SpawnObjects("UIResDetailGroupCell", 4)
+  self.expCellList = self.expCellContent:GetAllSpawnList()
+  for i, v in ipairs(self.expCellList) do
+    v:Init(self.SubType2Order[i], self.OnClickExpCell, self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.InitExpGroup = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.expCellContent):SpawnObjects("UIResDetailGroupCell", 4)
-  self.expCellList = (self.expCellContent):GetAllSpawnList()
-  for i,v in ipairs(self.expCellList) do
-    v:Init((self.SubType2Order)[i], self.OnClickExpCell, self)
-  end
-end
-
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.RefreshExpRight = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local count = (self.clientResInstance):GetExpInstanceListSort(self.subType)
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() then
+function UIResDetailController:RefreshExpRight()
+  local count = self.clientResInstance:GetExpInstanceListSort(self.subType)
+  if EngineGameHelper.EnableAppleVerifyBulletin() then
     count = 1
   end
   self:RefreshScroll(count)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.RefreshNormalRight = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local normalInstanceList = (self.clientResInstance):GetNormalInstanceList(self.mainType)
-  local count = (table.count)(normalInstanceList)
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() then
+function UIResDetailController:RefreshNormalRight()
+  local normalInstanceList = self.clientResInstance:GetNormalInstanceList(self.mainType)
+  local count = table.count(normalInstanceList)
+  if EngineGameHelper.EnableAppleVerifyBulletin() then
     count = 1
   end
   self:RefreshScroll(count)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.RefreshScroll = function(self, count)
-  -- function num : 0_12
+function UIResDetailController:RefreshScroll(count)
   self.items = {}
-  ;
-  (self.scrollView):SetListItemCount(count, false)
-  ;
-  (self.scrollView):RefreshAllShownItem()
+  self.scrollView:SetListItemCount(count, false)
+  self.scrollView:RefreshAllShownItem()
   local index = self:GetItemIndex()
-  ;
-  (self.scrollView):MovePanelToItemIndex(index, 0)
+  self.scrollView:MovePanelToItemIndex(index, 0)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.OnClickExpCell = function(self, subType)
-  -- function num : 0_13 , upvalues : _ENV
-  local key = (self.clientResInstance):GetLocalDBKey(self.mainType, subType)
-  self.curInstanceId = (LocalDB.GetInt)(key)
+function UIResDetailController:OnClickExpCell(subType)
+  local key = self.clientResInstance:GetLocalDBKey(self.mainType, subType)
+  self.curInstanceId = LocalDB.GetInt(key)
   self:SetChoose(subType)
   self:RefreshExpRight()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.SetChoose = function(self, subType)
-  -- function num : 0_14
-  if (self.expCellList)[(self.SubType2Order)[self.subType]] then
-    ((self.expCellList)[(self.SubType2Order)[self.subType]]):Select(false)
+function UIResDetailController:SetChoose(subType)
+  if self.expCellList[self.SubType2Order[self.subType]] then
+    self.expCellList[self.SubType2Order[self.subType]]:Select(false)
   end
   self.subType = subType
-  if (self.expCellList)[(self.SubType2Order)[self.subType]] then
-    ((self.expCellList)[(self.SubType2Order)[self.subType]]):Select(true)
+  if self.expCellList[self.SubType2Order[self.subType]] then
+    self.expCellList[self.SubType2Order[self.subType]]:Select(true)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.OnHide = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIResDetailController:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:DetachEvent(GameEventType.ShowResDetailBuffInfo, self.ShowBuffInfo)
   self:StopTimer()
   self:StopAudio()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.btnHomeOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UIResDetailController:btnHomeOnClick(go)
   local returnHelpPoolRt = self:GetUIComponent("RectTransform", "returnHelp")
   if returnHelpPoolRt and returnHelpPoolRt.gameObject then
-    (returnHelpPoolRt.gameObject):SetActive(false)
+    returnHelpPoolRt.gameObject:SetActive(false)
   end
   self:SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.btnbackOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
-  if ((GameGlobal.UIStateManager)()):IsShow("UIResEntryController") then
+function UIResDetailController:btnbackOnClick(go)
+  if GameGlobal.UIStateManager():IsShow("UIResEntryController") then
     local returnHelpPoolRt = self:GetUIComponent("RectTransform", "returnHelp")
     if returnHelpPoolRt and returnHelpPoolRt.gameObject then
-      (returnHelpPoolRt.gameObject):SetActive(false)
+      returnHelpPoolRt.gameObject:SetActive(false)
     end
     self:CloseDialog()
   else
-    do
-      self:StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : self, _ENV
-    local result = (self.resDungeonModule):GetOpenStatus(TT)
-    if result ~= {} then
-      self:SwitchState(UIStateType.UIResEntryController, nil, nil, true)
-    end
-  end
-)
-    end
+    self:StartTask(function(TT)
+      local result = self.resDungeonModule:GetOpenStatus(TT)
+      if result ~= {} then
+        self:SwitchState(UIStateType.UIResEntryController, nil, nil, true)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.btnpicOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  local interactWord = (self.entryData):GetInteractWord()
-  if (self.wordTxt).text ~= interactWord.word then
+function UIResDetailController:btnpicOnClick(go)
+  local interactWord = self.entryData:GetInteractWord()
+  if self.wordTxt.text ~= interactWord.word then
     self:StopTimer()
     self:StartTimer()
-    ;
-    (self.wordTxt):SetText((StringTable.Get)(interactWord.word))
+    self.wordTxt:SetText(StringTable.Get(interactWord.word))
     self:OnPlayVoice(interactWord.voice)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_19
-  (self._tips):SetData(itemId, pos)
+function UIResDetailController:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.ShowBuffInfo = function(self, buffData, rootWorldPos)
-  -- function num : 0_20 , upvalues : _ENV
-  (self._buffTips):SetData(buffData, rootWorldPos, Vector3(190, -30, 0))
+function UIResDetailController:ShowBuffInfo(buffData, rootWorldPos)
+  self._buffTips:SetData(buffData, rootWorldPos, Vector3(190, -30, 0))
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.CreateItem = function(self, _scrollView, _index)
-  -- function num : 0_21 , upvalues : _ENV
+function UIResDetailController:CreateItem(_scrollView, _index)
   _index = _index + 1
   local item = _scrollView:NewListViewItem("item")
   local pool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  local widget = (pool:SpawnObject("UIResDetailInfoCell"))
-  local data = nil
+  local widget = pool:SpawnObject("UIResDetailInfoCell")
+  local data
   if self.mainType == DungeonType.DungeonType_Experience then
-    local expInstanceList = (self.clientResInstance):GetExpInstanceList(self.subType)
+    local expInstanceList = self.clientResInstance:GetExpInstanceList(self.subType)
     data = expInstanceList[_index]
   else
-    do
-      do
-        local normalInstanceList = (self.clientResInstance):GetNormalInstanceList(self.mainType)
-        data = normalInstanceList[_index]
-        local id = data:GetId()
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self.items)[id] = widget
-        ;
-        ((self.items)[id]):Refresh(data, (self.activityawards)[id], self._trackData)
-        widget.ItemIndex = _index - 1
-        return item
-      end
-    end
+    local normalInstanceList = self.clientResInstance:GetNormalInstanceList(self.mainType)
+    data = normalInstanceList[_index]
   end
+  local id = data:GetId()
+  self.items[id] = widget
+  self.items[id]:Refresh(data, self.activityawards[id], self._trackData)
+  widget.ItemIndex = _index - 1
+  return item
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.GetItemIndex = function(self)
-  -- function num : 0_22
-  local item = (self.items)[self.curInstanceId]
+function UIResDetailController:GetItemIndex()
+  local item = self.items[self.curInstanceId]
   return item and item.ItemIndex or 0
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController._PickPetTaskReward = function(self)
-  -- function num : 0_23
+function UIResDetailController:_PickPetTaskReward()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.GetItem = function(self, id)
-  -- function num : 0_24 , upvalues : _ENV
-  for key,value in pairs(self.items) do
+function UIResDetailController:GetItem(id)
+  for key, value in pairs(self.items) do
     if id == key then
       return value:GetGameObject("btngo")
     end
@@ -478,33 +354,22 @@ UIResDetailController.GetItem = function(self, id)
   return nil
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.GetResItem = function(self)
-  -- function num : 0_25
-  if self.mainStateMenu then
-    return ((self.mainStateMenu).doubleItem):GetGameObject()
-  end
+function UIResDetailController:GetResItem()
+  return self.mainStateMenu and self.mainStateMenu.doubleItem:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_26 , upvalues : _ENV
+function UIResDetailController:OnUpdate(deltaTimeMS)
   if self.mCurVoiceId == nil then
-    return 
+    return
   end
-  local isPlaying = (AudioHelperController.CheckUIVoicePlaying)(self.mCurVoiceId)
+  local isPlaying = AudioHelperController.CheckUIVoicePlaying(self.mCurVoiceId)
   if isPlaying ~= false then
-    return 
+    return
   end
   self.mCurVoiceId = nil
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.OnPlayVoice = function(self, voiceId)
-  -- function num : 0_27
+function UIResDetailController:OnPlayVoice(voiceId)
   local oid = self:PlayAudio(voiceId)
   if oid == nil then
     return nil
@@ -512,47 +377,30 @@ UIResDetailController.OnPlayVoice = function(self, voiceId)
   self.mCurVoiceId = oid
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.PlayAudio = function(self, audioResId)
-  -- function num : 0_28 , upvalues : _ENV
+function UIResDetailController:PlayAudio(audioResId)
   if audioResId == nil then
     return nil
   end
   self:StopAudio()
-  local id = (AudioHelperController.RequestAndPlayUIVoiceAutoRelease)(audioResId, self)
+  local id = AudioHelperController.RequestAndPlayUIVoiceAutoRelease(audioResId, self)
   return id
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.StopAudio = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIResDetailController:StopAudio()
   if self.mCurVoiceId ~= nil then
-    (AudioHelperController.StopUIVoice)(self.mCurVoiceId, 0)
+    AudioHelperController.StopUIVoice(self.mCurVoiceId, 0)
     self.mCurVoiceId = nil
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.ShowSerialRewards = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIResDetailController:ShowSerialRewards()
   self:ShowDialog("UISerialAutoFightInfo", OpenUISerialFightInfoState.Finished)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.GetMainType = function(self)
-  -- function num : 0_31
+function UIResDetailController:GetMainType()
   return self.mainType
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIResDetailController.GetGotoSubType = function(self)
-  -- function num : 0_32
+function UIResDetailController:GetGotoSubType()
   return self.gotoSubType
 end
-
-

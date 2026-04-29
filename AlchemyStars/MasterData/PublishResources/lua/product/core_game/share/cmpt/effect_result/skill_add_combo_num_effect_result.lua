@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_add_combo_num_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillAddComboNumEffectResult", SkillEffectResultBase)
 SkillAddComboNumEffectResult = SkillAddComboNumEffectResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAddComboNumEffectResult.Constructor = function(self)
-  -- function num : 0_0
+function SkillAddComboNumEffectResult:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddComboNumEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillAddComboNumEffectResult:GetEffectType()
   return SkillEffectType.AddComboNum
 end
-
-

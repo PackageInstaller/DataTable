@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_rotate_trajectory_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayEffectRotateTrajectoryInstruction", BaseInstruction)
 PlayEffectRotateTrajectoryInstruction = PlayEffectRotateTrajectoryInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectRotateTrajectoryInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectRotateTrajectoryInstruction:Constructor(paramList)
   self.moveSpeed = tonumber(paramList.moveSpeed)
   self.rotateSpeed = tonumber(paramList.rotateSpeed)
   self.block = tonumber(paramList.block) or 1
@@ -18,70 +11,63 @@ PlayEffectRotateTrajectoryInstruction.Constructor = function(self, paramList)
   self.startWait = tonumber(paramList.startWait) or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectRotateTrajectoryInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEffectRotateTrajectoryInstruction:GetCacheResource()
   local t = {}
   if self.eftID and self.eftID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.eftID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.eftID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectRotateTrajectoryInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectRotateTrajectoryInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self.block == 1 then
     self:_ShowDamageTask(TT, casterEntity, phaseContext)
   else
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(self._ShowDamageTask, self, casterEntity, phaseContext)
+    GameGlobal.TaskManager():CoreGameStartTask(self._ShowDamageTask, self, casterEntity, phaseContext)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectRotateTrajectoryInstruction._ShowDamageTask = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayEffectRotateTrajectoryInstruction:_ShowDamageTask(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local curDamageResultStageIndex = phaseContext:GetCurDamageResultStageIndex()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, curDamageResultStageIndex)
   if damageResultArray == nil then
-    return 
+    return
   end
   local hasTargetDamageResultArray = {}
-  for _,v in ipairs(damageResultArray) do
+  for _, v in ipairs(damageResultArray) do
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
     local targetEntity = world:GetEntityByID(targetEntityID)
     if targetEntity then
-      (table.insert)(hasTargetDamageResultArray, damageResult)
+      table.insert(hasTargetDamageResultArray, damageResult)
     end
   end
-  if (table.count)(hasTargetDamageResultArray) == 0 then
-    return 
+  if table.count(hasTargetDamageResultArray) == 0 then
+    return
   end
   local boardServiceRender = world:GetService("BoardRender")
   local effectService = world:GetService("Effect")
   local _start = self:_GetEntityHitPos(TT, casterEntity, phaseContext, self.startEntity)
   local _end = self:_GetEntityHitPos(TT, casterEntity, phaseContext, self.endEntity)
   if not _start then
-    (Log.exception)("PlayEffectTrajectory not find Entity hit  :", self.startEntity)
-    return 
+    Log.exception("PlayEffectTrajectory not find Entity hit  :", self.startEntity)
+    return
   end
   if not _end then
-    (Log.exception)("PlayEffectTrajectory not find Entity hit  :", self.endEntity)
-    return 
+    Log.exception("PlayEffectTrajectory not find Entity hit  :", self.endEntity)
+    return
   end
   local eftEntity = effectService:CreatePositionEffect(self.eftID, _start)
   if not eftEntity:HasView() then
     YIELD(TT)
   end
-  local eftTansform = ((eftEntity:View()):GetGameObject()).transform
-  local offset = Vector3(0, (math.random)(), 0)
+  local eftTansform = eftEntity:View():GetGameObject().transform
+  local offset = Vector3(0, math.random(), 0)
   local dir = _start - _end + offset
   eftEntity:SetDirection(dir)
   YIELD(TT, self.startWait)
@@ -91,95 +77,63 @@ PlayEffectRotateTrajectoryInstruction._ShowDamageTask = function(self, TT, caste
   local rotateSpeed = self.rotateSpeed / 30
   local lastFrameNormalized = eftTansform.forward
   local finalForwardBefore = (_end - eftTansform.position).normalized
-  local finalAngle = (Vector3.Angle)(eftTansform.forward, finalForwardBefore)
+  local finalAngle = Vector3.Angle(eftTansform.forward, finalForwardBefore)
   local _startHorizontal = Vector3(_start.x, 0, _start.z)
   local _endHorizontal = Vector3(_end.x, 0, _end.z)
-  local endToStartDistance = (Vector3.Distance)(_startHorizontal, _endHorizontal)
+  local endToStartDistance = Vector3.Distance(_startHorizontal, _endHorizontal)
   local move = true
   local frameCount = 0
-  while 1 do
-    if move then
-      local finalForward = (_end - eftTansform.position).normalized
-      if finalForward ~= eftTansform.forward then
-        local angleOffset = (Vector3.Angle)(eftTansform.forward, finalForward)
-        local t = frameCount * rotateSpeed / finalAngle
-        eftTansform.forward = (Vector3.Lerp)(lastFrameNormalized, finalForward, t)
-      else
-        do
-          moveSpeed = moveSpeed + 5
-          local changeSpeed = (moveSpeed) / 30
-          eftTansform.position = eftTansform.position + Vector3((eftTansform.forward).x * changeSpeed, (eftTansform.forward).y * changeSpeed, (eftTansform.forward).z * changeSpeed)
-          lastFrameNormalized = eftTansform.forward
-          frameCount = frameCount + 1
-          YIELD(TT)
-          local currentDist = (Vector3.Distance)(eftTansform.position, _end)
-          do
-            local curPosOverEndPos = self:_CheckEffectPos(_start, _end, eftTansform.position)
-            if currentDist < 0.7 or (eftTansform.position).y < 0 or curPosOverEndPos then
-              move = false
-              break
-            end
-            -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC205: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+  while move do
+    local finalForward = (_end - eftTansform.position).normalized
+    if finalForward ~= eftTansform.forward then
+      local angleOffset = Vector3.Angle(eftTansform.forward, finalForward)
+      local t = frameCount * rotateSpeed / finalAngle
+      eftTansform.forward = Vector3.Lerp(lastFrameNormalized, finalForward, t)
+    else
+      moveSpeed = moveSpeed + 5
+    end
+    local changeSpeed = moveSpeed / 30
+    eftTansform.position = eftTansform.position + Vector3(eftTansform.forward.x * changeSpeed, eftTansform.forward.y * changeSpeed, eftTansform.forward.z * changeSpeed)
+    lastFrameNormalized = eftTansform.forward
+    frameCount = frameCount + 1
+    YIELD(TT)
+    local currentDist = Vector3.Distance(eftTansform.position, _end)
+    local curPosOverEndPos = self:_CheckEffectPos(_start, _end, eftTansform.position)
+    if currentDist < 0.7 or 0 > eftTansform.position.y or curPosOverEndPos then
+      move = false
+      break
     end
   end
   world:DestroyEntity(eftEntity)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectRotateTrajectoryInstruction._GetEntityHitPos = function(self, TT, casterEntity, phaseContext, entityName)
-  -- function num : 0_4
-  local targetEntity = nil
+function PlayEffectRotateTrajectoryInstruction:_GetEntityHitPos(TT, casterEntity, phaseContext, entityName)
+  local targetEntity
   if entityName == "Target" then
     local world = casterEntity:GetOwnerWorld()
     local targetEntityID = phaseContext:GetCurTargetEntityID()
     targetEntity = world:GetEntityByID(targetEntityID)
-  else
-    do
-      if entityName == "Caster" then
-        targetEntity = casterEntity
-      end
-      if not targetEntity then
-        return 
-      end
-      local playSkillService = (targetEntity:GetOwnerWorld()):GetService("PlaySkill")
-      local rootTransform = playSkillService:GetEntityRenderHitTransform(targetEntity)
-      local workPos = rootTransform.position
-      return workPos
-    end
+  elseif entityName == "Caster" then
+    targetEntity = casterEntity
   end
+  if not targetEntity then
+    return
+  end
+  local playSkillService = targetEntity:GetOwnerWorld():GetService("PlaySkill")
+  local rootTransform = playSkillService:GetEntityRenderHitTransform(targetEntity)
+  local workPos = rootTransform.position
+  return workPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectRotateTrajectoryInstruction._CheckEffectPos = function(self, _start, _end, curPos)
-  -- function num : 0_5
-  if _end.x > curPos.x or _end.z > curPos.z then
-    do return _start.x > _end.x or _start.z > _end.z end
-    if _end.x > curPos.x or curPos.z > _end.z then
-      do return _start.x > _end.x or _end.z > _start.z end
-      if curPos.x > _end.x or _end.z > curPos.z then
-        do return _end.x > _start.x or _start.z > _end.z end
-        if curPos.x > _end.x or curPos.z > _end.z then
-          do return _end.x > _start.x or _end.z > _start.z end
-          do return false end
-          -- DECOMPILER ERROR: 11 unprocessed JMP targets
-        end
-      end
-    end
+function PlayEffectRotateTrajectoryInstruction:_CheckEffectPos(_start, _end, curPos)
+  if _start.x <= _end.x and _start.z <= _end.z then
+    return curPos.x >= _end.x and curPos.z >= _end.z
+  elseif _start.x <= _end.x and _start.z >= _end.z then
+    return curPos.x >= _end.x and curPos.z <= _end.z
+  elseif _start.x >= _end.x and _start.z <= _end.z then
+    return curPos.x <= _end.x and curPos.z >= _end.z
+  elseif _start.x >= _end.x and _start.z >= _end.z then
+    return curPos.x <= _end.x and curPos.z <= _end.z
   end
+  return false
 end
-
-

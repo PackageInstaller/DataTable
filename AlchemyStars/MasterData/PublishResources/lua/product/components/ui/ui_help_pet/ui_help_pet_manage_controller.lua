@@ -1,69 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_help_pet/ui_help_pet_manage_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHelpPetManageController", UIController)
 UIHelpPetManageController = UIHelpPetManageController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHelpPetManageController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHelpPetManageController:Constructor()
   self.module = self:GetModule(HelpPetModule)
   self.atlas = self:GetAsset("UIHelpPet.spriteatlas", LoadType.SpriteAtlas)
-  self._elements = {[1] = ElementType.ElementType_Blue, [2] = ElementType.ElementType_Red, [3] = ElementType.ElementType_Green, [4] = ElementType.ElementType_Yellow}
+  self._elements = {
+    [1] = ElementType.ElementType_Blue,
+    [2] = ElementType.ElementType_Red,
+    [3] = ElementType.ElementType_Green,
+    [4] = ElementType.ElementType_Yellow
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIHelpPetManageController:LoadDataOnEnter(TT, res, uiParams)
   self.params = uiParams
-  local res = (self.module):RequestHelpPet_SupportInfo(TT)
+  local res = self.module:RequestHelpPet_SupportInfo(TT)
   if res:GetSucc() then
     self._info = {}
     for i = 1, #self._elements do
-      local elem = (self._elements)[i]
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._info)[i] = (self.module):UI_FindSupportPet(elem)
+      local elem = self._elements[i]
+      self._info[i] = self.module:UI_FindSupportPet(elem)
     end
-    self._supportInfo = (self.module):UI_GetSupportInfo()
+    self._supportInfo = self.module:UI_GetSupportInfo()
     res:SetSucc(true)
   else
     res:SetSucc(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHelpPetManageController:GetComponents()
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
   self._animComp = self:GetUIComponent("ATransitionComponent", "animComp")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    (self:GetModule(PetModule)):ClearAllPetSortInfo()
+  self._backBtns:SetData(function()
+    self:GetModule(PetModule):ClearAllPetSortInfo()
     self:CloseDialog()
     if self.backCallBack then
-      (self.backCallBack)()
+      self.backCallBack()
     end
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", "UIHelpPetManageController")
-  end
-, function()
-    -- function num : 0_2_2 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._animComp).enabled = false
+  end, function()
+    self._animComp.enabled = false
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
   self.leftSop = self:GetUIComponent("UISelectObjectPath", "holder")
   self.totalCount = self:GetUIComponent("UILocalizationText", "zong")
   self.sevenCount = self:GetUIComponent("UILocalizationText", "qitian")
@@ -71,173 +51,108 @@ UIHelpPetManageController.GetComponents = function(self)
   self.haveGO = self:GetGameObject("have")
   self.sliders = {}
   for i = 1, 4 do
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self.sliders)[i] = {}
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self.sliders)[i]).go = self:GetGameObject("slider" .. i)
-    -- DECOMPILER ERROR at PC69: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self.sliders)[i]).name = self:GetUIComponent("UILocalizationText", "name" .. i)
-    -- DECOMPILER ERROR at PC78: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self.sliders)[i]).image = self:GetUIComponent("Image", "tiaofill" .. i)
-    -- DECOMPILER ERROR at PC87: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((self.sliders)[i]).countTxt = self:GetUIComponent("UILocalizationText", "count" .. i)
+    self.sliders[i] = {}
+    self.sliders[i].go = self:GetGameObject("slider" .. i)
+    self.sliders[i].name = self:GetUIComponent("UILocalizationText", "name" .. i)
+    self.sliders[i].image = self:GetUIComponent("Image", "tiaofill" .. i)
+    self.sliders[i].countTxt = self:GetUIComponent("UILocalizationText", "count" .. i)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.OnValue = function(self)
-  -- function num : 0_3
+function UIHelpPetManageController:OnValue()
   self:SetLeft()
   self:SetRight()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHelpPetManageController:OnShow(uiParams)
   self.backCallBack = uiParams[1]
   self:GetComponents()
-  ;
-  (self.leftSop):SpawnObjects("UIHelpPetManageCell", 4)
-  self.items = (self.leftSop):GetAllSpawnList()
-  for i,item in ipairs(self.items) do
-    item:InitData((self._elements)[i], function(elementType)
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    self:ShowDialog("UITeamChangeController", true, function(petTempId, elementType, isAdd)
-      -- function num : 0_4_0_0 , upvalues : self, _ENV
-      self:StartTask(function(TT)
-        -- function num : 0_4_0_0_0 , upvalues : isAdd, _ENV, self, petTempId, elementType
-        local a = 1
-        if isAdd == false then
-          a = 0
-        end
-        if a == 1 then
-          (ToastManager.ShowToast)((StringTable.Get)("str_help_pet_zzszcg"))
-        end
-        local res = (self.module):RequestHelpPet_SupportSet(TT, petTempId, a)
-        if res and res:GetSucc() then
-          ((GameGlobal.UIStateManager)()):CloseDialog("UITeamChangeController")
-          -- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._info)[elementType] = (self.module):UI_FindSupportPet(elementType)
-          self:RefreshOneManageCell(elementType, (self._info)[elementType] and ((self._info)[elementType]).m_nTemplateID or 0)
-        end
-      end
-)
-    end
-, elementType)
-  end
-, i)
+  self.leftSop:SpawnObjects("UIHelpPetManageCell", 4)
+  self.items = self.leftSop:GetAllSpawnList()
+  for i, item in ipairs(self.items) do
+    item:InitData(self._elements[i], function(elementType)
+      self:ShowDialog("UITeamChangeController", true, function(petTempId, elementType, isAdd)
+        self:StartTask(function(TT)
+          local a = 1
+          if isAdd == false then
+            a = 0
+          end
+          if a == 1 then
+            ToastManager.ShowToast(StringTable.Get("str_help_pet_zzszcg"))
+          end
+          local res = self.module:RequestHelpPet_SupportSet(TT, petTempId, a)
+          if res and res:GetSucc() then
+            GameGlobal.UIStateManager():CloseDialog("UITeamChangeController")
+            self._info[elementType] = self.module:UI_FindSupportPet(elementType)
+            self:RefreshOneManageCell(elementType, self._info[elementType] and self._info[elementType].m_nTemplateID or 0)
+          end
+        end)
+      end, elementType)
+    end, i)
   end
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.SetLeft = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for i,item in ipairs(self.items) do
-    item:SetData((self._info)[i] and ((self._info)[i]).m_nTemplateID or 0, (self._elements)[i])
+function UIHelpPetManageController:SetLeft()
+  for i, item in ipairs(self.items) do
+    item:SetData(self._info[i] and self._info[i].m_nTemplateID or 0, self._elements[i])
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.RefreshOneManageCell = function(self, elementType, petTempId)
-  -- function num : 0_6 , upvalues : _ENV
-  for _,item in ipairs(self.items) do
+function UIHelpPetManageController:RefreshOneManageCell(elementType, petTempId)
+  for _, item in ipairs(self.items) do
     if item:GetElementType() == elementType then
       item:SetData(petTempId, elementType)
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.SetRight = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local totalCount = self._supportInfo and (self._supportInfo).m_nFightTotal or 0
-  local sevenCount = self._supportInfo and (self._supportInfo).m_nFightWeek or 0
-  ;
-  (self.totalCount):SetText(totalCount)
-  ;
-  (self.sevenCount):SetText(sevenCount)
-  if self._supportInfo then
-    self.tongjiList = (self._supportInfo).m_listPetState
-    if not self.tongjiList or (table.count)(self.tongjiList) <= 0 then
-      (self.noGO):SetActive(true)
-      ;
-      (self.haveGO):SetActive(false)
-    else
-      ;
-      (self.noGO):SetActive(false)
-      ;
-      (self.haveGO):SetActive(true)
-      local maxCount = sevenCount
-      self._tweenerTab = {}
-      for i = 1, 4 do
-        local data = (self.tongjiList)[i]
-        if data then
-          (((self.sliders)[i]).go):SetActive(true)
-          self:UpdateOneSlider(i, data, maxCount)
-        else
-          ;
-          (((self.sliders)[i]).go):SetActive(false)
-        end
+function UIHelpPetManageController:SetRight()
+  local totalCount = self._supportInfo and self._supportInfo.m_nFightTotal or 0
+  local sevenCount = self._supportInfo and self._supportInfo.m_nFightWeek or 0
+  self.totalCount:SetText(totalCount)
+  self.sevenCount:SetText(sevenCount)
+  self.tongjiList = self._supportInfo and self._supportInfo.m_listPetState
+  if not self.tongjiList or 0 >= table.count(self.tongjiList) then
+    self.noGO:SetActive(true)
+    self.haveGO:SetActive(false)
+  else
+    self.noGO:SetActive(false)
+    self.haveGO:SetActive(true)
+    local maxCount = sevenCount
+    self._tweenerTab = {}
+    for i = 1, 4 do
+      local data = self.tongjiList[i]
+      if data then
+        self.sliders[i].go:SetActive(true)
+        self:UpdateOneSlider(i, data, maxCount)
+      else
+        self.sliders[i].go:SetActive(false)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.UpdateOneSlider = function(self, index, data, maxCount)
-  -- function num : 0_8 , upvalues : _ENV
-  local pet = (self:GetModule(PetModule)):GetPet(data.m_nPetPstID)
-  ;
-  (((self.sliders)[index]).name):SetText((StringTable.Get)(pet:GetPetName()))
+function UIHelpPetManageController:UpdateOneSlider(index, data, maxCount)
+  local pet = self:GetModule(PetModule):GetPet(data.m_nPetPstID)
+  self.sliders[index].name:SetText(StringTable.Get(pet:GetPetName()))
   local fightCount = data.m_nFightCount
   local rate = fightCount / maxCount
-  local tweener = (((self.sliders)[index]).image):DOFillAmount(rate, 0.2)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._tweenerTab)[#self._tweenerTab + 1] = tweener
-  ;
-  (((self.sliders)[index]).countTxt):SetText((StringTable.Get)("str_help_pet_ci", fightCount))
+  local tweener = self.sliders[index].image:DOFillAmount(rate, 0.2)
+  self._tweenerTab[#self._tweenerTab + 1] = tweener
+  self.sliders[index].countTxt:SetText(StringTable.Get("str_help_pet_ci", fightCount))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.OnHide = function(self)
-  -- function num : 0_9
+function UIHelpPetManageController:OnHide()
   if self._tweenerTab and #self._tweenerTab > 0 then
     for i = 1, #self._tweenerTab do
-      local tweener = (self._tweenerTab)[i]
+      local tweener = self._tweenerTab[i]
       tweener:Kill()
     end
   end
-  do
-    self._tweenerTab = nil
-  end
+  self._tweenerTab = nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetManageController.AddListener = function(self)
-  -- function num : 0_10
+function UIHelpPetManageController:AddListener()
 end
-
-

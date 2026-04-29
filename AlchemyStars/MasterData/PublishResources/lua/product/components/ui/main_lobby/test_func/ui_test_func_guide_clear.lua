@@ -1,92 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_guide_clear.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncGuideClear", UICustomWidget)
 UITestFuncGuideClear = UITestFuncGuideClear
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncGuideClear.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UITestFuncGuideClear:OnShow(uiParams)
   self._root = self:GetGameObject("_root")
   self._text = self:GetUIComponent("UILocalizationText", "_text")
   self._btns = UITestFuncBtnManager:New(self, "Content", nil)
   self:_SetContent(self._btns)
-  ;
-  (self._btns):SpawnBtns()
+  self._btns:SpawnBtns()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncGuideClear.OnHide = function(self)
-  -- function num : 0_1
+function UITestFuncGuideClear:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncGuideClear._SetContent = function(self, manager)
-  -- function num : 0_2
+function UITestFuncGuideClear:_SetContent(manager)
   self:_AddBtn(manager, "NExplore", "140001")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncGuideClear._AddBtn = function(self, manager, title, text)
-  -- function num : 0_3
+function UITestFuncGuideClear:_AddBtn(manager, title, text)
   manager:AddBtn_Default(title, function()
-    -- function num : 0_3_0 , upvalues : self, text
-    (self._text):SetText(text)
-  end
-)
+    self._text:SetText(text)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncGuideClear._GetGuideKey = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local text = (self._text).text
-  if (string.isnullorempty)(text) then
-    return 
+function UITestFuncGuideClear:_GetGuideKey()
+  local text = self._text.text
+  if string.isnullorempty(text) then
+    return
   end
   local tb = {}
-  local str = (string.split)(text, "|")
-  for _,v in ipairs(str) do
-    (table.insert)(tb, tonumber(v))
+  local str = string.split(text, "|")
+  for _, v in ipairs(str) do
+    table.insert(tb, tonumber(v))
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncGuideClear.ExitBtnOnClick = function(self)
-  -- function num : 0_5
-  (self._root):SetActive(false)
+function UITestFuncGuideClear:ExitBtnOnClick()
+  self._root:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncGuideClear.ClearBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UITestFuncGuideClear:ClearBtnOnClick()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   local tb = self:_GetGuideKey()
   if tb ~= nil then
-    for _,v in ipairs(tb) do
-      local cfgs = (Cfg.cfg_guide_trigger)({guide = v})
+    for _, v in ipairs(tb) do
+      local cfgs = Cfg.cfg_guide_trigger({guide = v})
       if cfgs then
         local cfg = cfgs[1]
-        -- DECOMPILER ERROR at PC29: Confused about usage of register: R10 in 'UnsetPending'
-
         if cfg then
-          (guideModule.guides)[cfg.guide] = Guide:New(guideModule, cfg)
-          -- DECOMPILER ERROR at PC35: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (guideModule.triggerGuides)[cfg.id] = (guideModule.guides)[cfg.guide]
+          guideModule.guides[cfg.guide] = Guide:New(guideModule, cfg)
+          guideModule.triggerGuides[cfg.id] = guideModule.guides[cfg.guide]
         end
       end
     end
   end
 end
-
-

@@ -1,39 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_caster_dir_to_pick.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCasterDirToPickInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCasterDirToPickInstruction = SkillPreviewPlayCasterDirToPickInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCasterDirToPickInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_0
+function SkillPreviewPlayCasterDirToPickInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
   local gridPos = casterEntity:GetGridPosition()
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   local tv2Pick = previewPickUpComponent:GetAllValidPickUpGridPos()
-  if not tv2Pick[1] then
-    local v2Pickup = casterEntity:GetGridPosition()
-  end
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local v2Pickup = tv2Pick[1] or casterEntity:GetGridPosition()
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local dirNew = v2Pickup - gridPos
   if dirNew.x > 0 then
     dirNew.x = 1
-  else
-    if dirNew.x < 0 then
-      dirNew.x = -1
-    end
+  elseif dirNew.x < 0 then
+    dirNew.x = -1
   end
-  if dirNew.y > 0 then
+  if 0 < dirNew.y then
     dirNew.y = 1
-  else
-    if dirNew.y < 0 then
-      dirNew.y = -1
-    end
+  elseif 0 > dirNew.y then
+    dirNew.y = -1
   end
   casterEntity:SetDirection(dirNew)
 end
-
-

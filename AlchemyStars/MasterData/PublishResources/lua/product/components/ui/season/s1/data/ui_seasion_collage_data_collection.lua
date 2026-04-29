@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/data/ui_seasion_collage_data_collection.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonCollageData_Collection", Object)
 UISeasonCollageData_Collection = UISeasonCollageData_Collection
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonCollageData_Collection.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonCollageData_Collection:Constructor()
   self._Index = nil
   self._ID = nil
   self._IsNew = nil
@@ -18,53 +11,30 @@ UISeasonCollageData_Collection.Constructor = function(self)
   self._IsFinalPlotItem = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Collection.Index = function(self)
-  -- function num : 0_1
+function UISeasonCollageData_Collection:Index()
   return self._Index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Collection.ID = function(self)
-  -- function num : 0_2
+function UISeasonCollageData_Collection:ID()
   return self._ID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Collection.IsNew = function(self)
-  -- function num : 0_3
+function UISeasonCollageData_Collection:IsNew()
   return self._IsNew
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Collection.IsGot = function(self)
-  -- function num : 0_4
+function UISeasonCollageData_Collection:IsGot()
   return self._IsGot
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Collection.IsComposeUsed = function(self)
-  -- function num : 0_5
+function UISeasonCollageData_Collection:IsComposeUsed()
   return self._IsComposeUsed
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Collection.GetTime = function(self)
-  -- function num : 0_6
+function UISeasonCollageData_Collection:GetTime()
   return self._GetTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_Collection.IsFinalPlotItem = function(self)
-  -- function num : 0_7
+function UISeasonCollageData_Collection:IsFinalPlotItem()
   return self._IsFinalPlotItem
 end
-
-

@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_hp_shield_by_notify.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPShieldByNotify", BuffViewBase)
 BuffViewAddHPShieldByNotify = BuffViewAddHPShieldByNotify
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPShieldByNotify.PlayView = function(self, TT)
-  -- function num : 0_0
-  local eid = (self._buffResult):GetEntityID()
-  local entity = (self._world):GetEntityByID(eid)
-  local damageInfo = (self._buffResult):GetDamageInfo()
+function BuffViewAddHPShieldByNotify:PlayView(TT)
+  local eid = self._buffResult:GetEntityID()
+  local entity = self._world:GetEntityByID(eid)
+  local damageInfo = self._buffResult:GetDamageInfo()
   if entity:HasPet() then
-    entity = (entity:Pet()):GetOwnerTeamEntity()
+    entity = entity:Pet():GetOwnerTeamEntity()
   end
   local hpCmpt = entity:HP()
   local curShield = damageInfo:GetHPShield() or 0
   hpCmpt:SetShieldValue(curShield)
-  local playDamageSvc = (self._world):GetService("PlayDamage")
+  local playDamageSvc = self._world:GetService("PlayDamage")
   playDamageSvc:UpdateTargetHPBar(TT, entity, damageInfo)
 end
-
-

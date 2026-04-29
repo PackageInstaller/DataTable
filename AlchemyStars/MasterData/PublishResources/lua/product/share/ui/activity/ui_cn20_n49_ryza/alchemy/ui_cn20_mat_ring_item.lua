@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/alchemy/ui_cn20_mat_ring_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20MatRingItem", UICustomWidget)
 UICN20MatRingItem = UICN20MatRingItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20MatRingItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20MatRingItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN20MatRingItem:InitWidget()
   self.criRingBg = self:GetUIComponent("Image", "CriRingBg")
   self.cubeRingBg = self:GetUIComponent("Image", "CubeRingBg")
   self.lock = self:GetGameObject("lock")
@@ -42,10 +32,7 @@ UICN20MatRingItem.InitWidget = function(self)
   self._atlas = self:GetAsset("UICN20N49.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.SetData = function(self, itemCfgId, isHex, originPos, index, centerRect, clickCB)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN20MatRingItem:SetData(itemCfgId, isHex, originPos, index, centerRect, clickCB)
   self.itemCfgId = itemCfgId
   self.isHex = isHex
   self.putItem = false
@@ -54,360 +41,191 @@ UICN20MatRingItem.SetData = function(self, itemCfgId, isHex, originPos, index, c
   self.index = index
   self.clickCB = clickCB
   self.centerRect = centerRect
-  ;
-  (self.selectImgObj):SetActive(false)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.rootRect).anchoredPosition = self.originPos
-  local itemCfg = (Cfg.cfg_item)[itemCfgId]
+  self.selectImgObj:SetActive(false)
+  self.rootRect.anchoredPosition = self.originPos
+  local itemCfg = Cfg.cfg_item[itemCfgId]
   if not itemCfg then
-    (Log.error)("itemCfg matCfg IS NIL", itemCfgId)
-    return 
+    Log.error("itemCfg matCfg IS NIL", itemCfgId)
+    return
   end
   self.itemCfg = itemCfg
-  local matCfg = (Cfg.cfg_component_alchemy_material)[itemCfgId]
+  local matCfg = Cfg.cfg_component_alchemy_material[itemCfgId]
   if matCfg == nil then
-    (Log.error)("alchemyCfg matCfg IS nil", itemCfgId)
-    return 
+    Log.error("alchemyCfg matCfg IS nil", itemCfgId)
+    return
   end
   self.matCfg = matCfg
-  ;
-  ((self.matItemIcon).gameObject):SetActive(false)
-  ;
-  (self.addImgObj):SetActive(true)
+  self.matItemIcon.gameObject:SetActive(false)
+  self.addImgObj:SetActive(true)
   if self.isHex then
-    ((self.criRingBg).gameObject):SetActive(false)
-    ;
-    ((self.cubeRingBg).gameObject):SetActive(true)
-    ;
-    (self.layout):SetActive(true)
-    ;
-    ((self.needMatNameText).gameObject):SetActive(false)
+    self.criRingBg.gameObject:SetActive(false)
+    self.cubeRingBg.gameObject:SetActive(true)
+    self.layout:SetActive(true)
+    self.needMatNameText.gameObject:SetActive(false)
   else
-    ;
-    ((self.criRingBg).gameObject):SetActive(true)
-    ;
-    ((self.cubeRingBg).gameObject):SetActive(false)
-    ;
-    (self.layout):SetActive(false)
-    ;
-    ((self.needMatNameText).gameObject):SetActive(true)
+    self.criRingBg.gameObject:SetActive(true)
+    self.cubeRingBg.gameObject:SetActive(false)
+    self.layout:SetActive(false)
+    self.needMatNameText.gameObject:SetActive(true)
   end
   self:Refresh_Lock()
   self:Refresh_Attribute()
-  ;
-  (self.matCountText):SetText((self.matCfg).PropertyVal)
-  ;
-  (self.needMatNameText):SetText((StringTable.Get)((self.itemCfg).Name))
-  ;
-  (self.matItemIcon):LoadImage((self.itemCfg).Icon)
-  ;
-  ((self.criFull).gameObject):SetActive(false)
-  ;
-  ((self.hexFull).gameObject):SetActive(false)
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R9 in 'UnsetPending'
-
-  if (self.matCfg).Property == 1 then
-    (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx02")
-    -- DECOMPILER ERROR at PC137: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.criFull).sprite = (self._atlas):GetSprite("cn20_ljjm_yhsx02")
-    -- DECOMPILER ERROR at PC143: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.hexFull).sprite = (self._atlas):GetSprite("cn20_ljjm_lbxsx02")
-    -- DECOMPILER ERROR at PC149: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.full1).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx02")
-    -- DECOMPILER ERROR at PC155: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.full2).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx02")
-    -- DECOMPILER ERROR at PC161: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.full3).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx02")
-  else
-    -- DECOMPILER ERROR at PC172: Confused about usage of register: R9 in 'UnsetPending'
-
-    if (self.matCfg).Property == 2 then
-      (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx01")
-      -- DECOMPILER ERROR at PC178: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.criFull).sprite = (self._atlas):GetSprite("cn20_ljjm_yhsx01")
-      -- DECOMPILER ERROR at PC184: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.hexFull).sprite = (self._atlas):GetSprite("cn20_ljjm_lbxsx01")
-      -- DECOMPILER ERROR at PC190: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.full1).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx01")
-      -- DECOMPILER ERROR at PC196: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.full2).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx01")
-      -- DECOMPILER ERROR at PC202: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.full3).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx01")
-    else
-      -- DECOMPILER ERROR at PC213: Confused about usage of register: R9 in 'UnsetPending'
-
-      if (self.matCfg).Property == 3 then
-        (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx03")
-        -- DECOMPILER ERROR at PC219: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.criFull).sprite = (self._atlas):GetSprite("cn20_ljjm_yhsx03")
-        -- DECOMPILER ERROR at PC225: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.hexFull).sprite = (self._atlas):GetSprite("cn20_ljjm_lbxsx03")
-        -- DECOMPILER ERROR at PC231: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.full1).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx03")
-        -- DECOMPILER ERROR at PC237: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.full2).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx03")
-        -- DECOMPILER ERROR at PC243: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.full3).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx03")
-      else
-        -- DECOMPILER ERROR at PC254: Confused about usage of register: R9 in 'UnsetPending'
-
-        if (self.matCfg).Property == 4 then
-          (self.matIcon).sprite = (self._atlas):GetSprite("cn20_ljjm_ljsx04")
-          -- DECOMPILER ERROR at PC260: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.criFull).sprite = (self._atlas):GetSprite("cn20_ljjm_yhsx04")
-          -- DECOMPILER ERROR at PC266: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.hexFull).sprite = (self._atlas):GetSprite("cn20_ljjm_lbxsx04")
-          -- DECOMPILER ERROR at PC272: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.full1).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx04")
-          -- DECOMPILER ERROR at PC278: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.full2).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx04")
-          -- DECOMPILER ERROR at PC284: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.full3).sprite = (self._atlas):GetSprite("cn20_ljjm_scsx04")
-        end
-      end
-    end
+  self.matCountText:SetText(self.matCfg.PropertyVal)
+  self.needMatNameText:SetText(StringTable.Get(self.itemCfg.Name))
+  self.matItemIcon:LoadImage(self.itemCfg.Icon)
+  self.criFull.gameObject:SetActive(false)
+  self.hexFull.gameObject:SetActive(false)
+  if self.matCfg.Property == 1 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx02")
+    self.criFull.sprite = self._atlas:GetSprite("cn20_ljjm_yhsx02")
+    self.hexFull.sprite = self._atlas:GetSprite("cn20_ljjm_lbxsx02")
+    self.full1.sprite = self._atlas:GetSprite("cn20_ljjm_scsx02")
+    self.full2.sprite = self._atlas:GetSprite("cn20_ljjm_scsx02")
+    self.full3.sprite = self._atlas:GetSprite("cn20_ljjm_scsx02")
+  elseif self.matCfg.Property == 2 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx01")
+    self.criFull.sprite = self._atlas:GetSprite("cn20_ljjm_yhsx01")
+    self.hexFull.sprite = self._atlas:GetSprite("cn20_ljjm_lbxsx01")
+    self.full1.sprite = self._atlas:GetSprite("cn20_ljjm_scsx01")
+    self.full2.sprite = self._atlas:GetSprite("cn20_ljjm_scsx01")
+    self.full3.sprite = self._atlas:GetSprite("cn20_ljjm_scsx01")
+  elseif self.matCfg.Property == 3 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx03")
+    self.criFull.sprite = self._atlas:GetSprite("cn20_ljjm_yhsx03")
+    self.hexFull.sprite = self._atlas:GetSprite("cn20_ljjm_lbxsx03")
+    self.full1.sprite = self._atlas:GetSprite("cn20_ljjm_scsx03")
+    self.full2.sprite = self._atlas:GetSprite("cn20_ljjm_scsx03")
+    self.full3.sprite = self._atlas:GetSprite("cn20_ljjm_scsx03")
+  elseif self.matCfg.Property == 4 then
+    self.matIcon.sprite = self._atlas:GetSprite("cn20_ljjm_ljsx04")
+    self.criFull.sprite = self._atlas:GetSprite("cn20_ljjm_yhsx04")
+    self.hexFull.sprite = self._atlas:GetSprite("cn20_ljjm_lbxsx04")
+    self.full1.sprite = self._atlas:GetSprite("cn20_ljjm_scsx04")
+    self.full2.sprite = self._atlas:GetSprite("cn20_ljjm_scsx04")
+    self.full3.sprite = self._atlas:GetSprite("cn20_ljjm_scsx04")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.GetPos = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local worldPos = ((self.rootRect).transform).position
-  local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UICN20AlchemyMainController")
+function UICN20MatRingItem:GetPos()
+  local worldPos = self.rootRect.transform.position
+  local camera = GameGlobal.UIStateManager():GetControllerCamera("UICN20AlchemyMainController")
   local screenPos = camera:WorldToScreenPoint(worldPos)
-  local res, calcuPos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self.centerRect, screenPos, camera, nil)
+  local res, calcuPos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.centerRect, screenPos, camera, nil)
   return calcuPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.Refresh_Lock = function(self)
-  -- function num : 0_4
+function UICN20MatRingItem:Refresh_Lock()
   if not self.isHex then
     self.isLock = false
-    ;
-    (self.lock):SetActive(false)
-    ;
-    ((self.addBG).gameObject):SetActive(true)
-  else
-    if not self.isLock then
-      if (self.lock).activeSelf then
-        (self._amim):Play("uieff_UICN20MatRingItem_unlock_in")
-      end
-      ;
-      (self.lock):SetActive(false)
-      ;
-      ((self.addBG).gameObject):SetActive(true)
-    else
-      ;
-      (self.lock):SetActive(true)
-      ;
-      ((self.addBG).gameObject):SetActive(false)
+    self.lock:SetActive(false)
+    self.addBG.gameObject:SetActive(true)
+  elseif not self.isLock then
+    if self.lock.activeSelf then
+      self._amim:Play("uieff_UICN20MatRingItem_unlock_in")
     end
+    self.lock:SetActive(false)
+    self.addBG.gameObject:SetActive(true)
+  else
+    self.lock:SetActive(true)
+    self.addBG.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.SetUnLock = function(self)
-  -- function num : 0_5
+function UICN20MatRingItem:SetUnLock()
   self.isLock = false
   self:Refresh_Lock()
   self:Refresh_Attribute()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.Refresh_Attribute = function(self)
-  -- function num : 0_6
+function UICN20MatRingItem:Refresh_Attribute()
   if self.matCfg == nil then
-    return 
+    return
   end
-  ;
-  ((self.full1).gameObject):SetActive(false)
-  ;
-  ((self.full2).gameObject):SetActive(false)
-  ;
-  ((self.full3).gameObject):SetActive(false)
+  self.full1.gameObject:SetActive(false)
+  self.full2.gameObject:SetActive(false)
+  self.full3.gameObject:SetActive(false)
   if self.isLock then
-    ((self.lock1).gameObject):SetActive(true)
-    ;
-    ((self.lock2).gameObject):SetActive(true)
-    ;
-    ((self.lock3).gameObject):SetActive(true)
-    return 
+    self.lock1.gameObject:SetActive(true)
+    self.lock2.gameObject:SetActive(true)
+    self.lock3.gameObject:SetActive(true)
+    return
   end
-  if (self.matCfg).PropertyVal == 1 then
-    ((self.lock1).gameObject):SetActive(false)
-    ;
-    ((self.lock2).gameObject):SetActive(true)
-    ;
-    ((self.lock3).gameObject):SetActive(true)
-  else
-    if (self.matCfg).PropertyVal == 2 then
-      ((self.lock1).gameObject):SetActive(false)
-      ;
-      ((self.lock2).gameObject):SetActive(false)
-      ;
-      ((self.lock3).gameObject):SetActive(true)
-    else
-      if (self.matCfg).PropertyVal == 3 then
-        ((self.lock1).gameObject):SetActive(false)
-        ;
-        ((self.lock2).gameObject):SetActive(false)
-        ;
-        ((self.lock3).gameObject):SetActive(false)
-      end
-    end
+  if self.matCfg.PropertyVal == 1 then
+    self.lock1.gameObject:SetActive(false)
+    self.lock2.gameObject:SetActive(true)
+    self.lock3.gameObject:SetActive(true)
+  elseif self.matCfg.PropertyVal == 2 then
+    self.lock1.gameObject:SetActive(false)
+    self.lock2.gameObject:SetActive(false)
+    self.lock3.gameObject:SetActive(true)
+  elseif self.matCfg.PropertyVal == 3 then
+    self.lock1.gameObject:SetActive(false)
+    self.lock2.gameObject:SetActive(false)
+    self.lock3.gameObject:SetActive(false)
   end
   if self.putItem and not self.isLock then
-    if (self.matCfg).PropertyVal == 1 then
-      ((self.full1).gameObject):SetActive(true)
-    else
-      if (self.matCfg).PropertyVal == 2 then
-        ((self.full1).gameObject):SetActive(true)
-        ;
-        ((self.full2).gameObject):SetActive(true)
-      else
-        if (self.matCfg).PropertyVal == 3 then
-          ((self.full1).gameObject):SetActive(true)
-          ;
-          ((self.full2).gameObject):SetActive(true)
-          ;
-          ((self.full3).gameObject):SetActive(true)
-        end
-      end
+    if self.matCfg.PropertyVal == 1 then
+      self.full1.gameObject:SetActive(true)
+    elseif self.matCfg.PropertyVal == 2 then
+      self.full1.gameObject:SetActive(true)
+      self.full2.gameObject:SetActive(true)
+    elseif self.matCfg.PropertyVal == 3 then
+      self.full1.gameObject:SetActive(true)
+      self.full2.gameObject:SetActive(true)
+      self.full3.gameObject:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.Refresh_PutShow = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN20MatRingItem:Refresh_PutShow()
   self.putItem = true
-  ;
-  (self.addImgObj):SetActive(false)
-  ;
-  ((self.matItemIcon).gameObject):SetActive(true)
+  self.addImgObj:SetActive(false)
+  self.matItemIcon.gameObject:SetActive(true)
   if self.isHex then
-    ((self.needMatNameText).gameObject):SetActive(true)
-    ;
-    (self.layout):SetActive(false)
-    ;
-    ((self.hexFull).gameObject):SetActive(true)
+    self.needMatNameText.gameObject:SetActive(true)
+    self.layout:SetActive(false)
+    self.hexFull.gameObject:SetActive(true)
   else
-    ;
-    ((self.criFull).gameObject):SetActive(true)
+    self.criFull.gameObject:SetActive(true)
   end
-  ;
-  (self._amim):Play("uieff_UICN20MatRingItem_put_in")
-  ;
-  ((GameGlobal.Timer)()):AddEvent(300, function()
-    -- function num : 0_7_0 , upvalues : self
+  self._amim:Play("uieff_UICN20MatRingItem_put_in")
+  GameGlobal.Timer():AddEvent(300, function()
     self:Refresh_Attribute()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.Refresh_HeXPutPop = function(self, active)
-  -- function num : 0_8
-  (self.addImgObj):SetActive(active)
+function UICN20MatRingItem:Refresh_HeXPutPop(active)
+  self.addImgObj:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.Refresh_UnPut = function(self)
-  -- function num : 0_9
+function UICN20MatRingItem:Refresh_UnPut()
   self.putItem = false
-  ;
-  (self.addImgObj):SetActive(true)
-  ;
-  ((self.matItemIcon).gameObject):SetActive(false)
+  self.addImgObj:SetActive(true)
+  self.matItemIcon.gameObject:SetActive(false)
   if self.isHex then
-    ((self.needMatNameText).gameObject):SetActive(false)
-    ;
-    (self.layout):SetActive(true)
+    self.needMatNameText.gameObject:SetActive(false)
+    self.layout:SetActive(true)
+  else
   end
   self:Refresh_Attribute()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.RefreshUnSelect = function(self)
-  -- function num : 0_10
-  if (self.selectImgObj).activeSelf then
-    (self._amim):Play("uieff_UICN20MatRingItem_select_out")
+function UICN20MatRingItem:RefreshUnSelect()
+  if self.selectImgObj.activeSelf then
+    self._amim:Play("uieff_UICN20MatRingItem_select_out")
   end
-  ;
-  (self.selectImgObj):SetActive(false)
+  self.selectImgObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20MatRingItem.AddBGOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UICN20MatRingItem:AddBGOnClick(go)
   if not self.isHex and self.putItem then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.selectImg).color = Color(1, 1, 1, 1)
-  ;
-  (self.selectImgObj):SetActive(true)
-  ;
-  (self.selectImg):DOColor(Color(1, 1, 1, 0), 1)
+  self.selectImg.color = Color(1, 1, 1, 1)
+  self.selectImgObj:SetActive(true)
+  self.selectImg:DOColor(Color(1, 1, 1, 0), 1)
   if self.clickCB then
-    (self.clickCB)(self.index)
+    self.clickCB(self.index)
   end
-  ;
-  (self._amim):Play("uieff_UICN20MatRingItem_select")
+  self._amim:Play("uieff_UICN20MatRingItem_select")
 end
-
-

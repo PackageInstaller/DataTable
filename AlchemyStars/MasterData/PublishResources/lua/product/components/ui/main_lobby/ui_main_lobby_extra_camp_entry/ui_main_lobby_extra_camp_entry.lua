@@ -1,245 +1,184 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_extra_camp_entry/ui_main_lobby_extra_camp_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyExtraCampEntry", UICustomWidget)
 UIMainLobbyExtraCampEntry = UIMainLobbyExtraCampEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyExtraCampEntry.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyExtraCampEntry:OnShow()
   self._max = 2
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self:AttachEvent(GameEventType.OnMainLobbyExtraRefresh, self.RefreshSpawnList)
   self:AttachEvent(GameEventType.OnMainLobbyExtraSampleRequest, self.RequestSampleList)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraCampEntry.OnHide = function(self)
-  -- function num : 0_1
+function UIMainLobbyExtraCampEntry:OnHide()
   self:UnLock("UIMainLobbyExtraCampEntry:RequestSampleList")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraCampEntry.SetData = function(self, extraData)
-  -- function num : 0_2
+function UIMainLobbyExtraCampEntry:SetData(extraData)
   self._extraData = extraData
   self:SetEntrys()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraCampEntry.RequestSampleList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMainLobbyExtraCampEntry:RequestSampleList()
   self:Lock("UIMainLobbyExtraCampEntry:RequestSampleList")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = AsyncRequestRes:New()
-    local campModule = (GameGlobal.GetModule)(CampaignModule)
+    local campModule = GameGlobal.GetModule(CampaignModule)
     campModule:CampaignLoadInfoList(TT, res)
-    ;
-    (self._extraData):RefreshCampaignDic()
+    self._extraData:RefreshCampaignDic()
     self:RefreshSpawnList()
     self:UnLock("UIMainLobbyExtraCampEntry:RequestSampleList")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraCampEntry.RefreshSpawnList = function(self)
-  -- function num : 0_4
-  (self._extraData):RefreshSampleList()
+function UIMainLobbyExtraCampEntry:RefreshSpawnList()
+  self._extraData:RefreshSampleList()
   self:SetEntrys()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraCampEntry.SetEntrys = function(self)
-  -- function num : 0_5
-  self._campList = (self._extraData):GetCampList()
-  ;
-  (self._pool):SpawnObjects("UIMainLobbyExtraCampEntryItem", #self._campList)
-  local pools = (self._pool):GetAllSpawnList()
+function UIMainLobbyExtraCampEntry:SetEntrys()
+  self._campList = self._extraData:GetCampList()
+  self._pool:SpawnObjects("UIMainLobbyExtraCampEntryItem", #self._campList)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self._campList do
     local item = pools[i]
-    local obj = (self._campList)[i]
+    local obj = self._campList[i]
     item:SetData(obj)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraCampEntry.RefreshCampSampleInfo = function(self, extraData)
-  -- function num : 0_6
+function UIMainLobbyExtraCampEntry:RefreshCampSampleInfo(extraData)
   self._campList = extraData:GetCampList()
   self:SetEntrys()
 end
 
 _class("MainLobbyExtraData", Object)
 MainLobbyExtraData = MainLobbyExtraData
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
 
-MainLobbyExtraData.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campModule = (GameGlobal.GetModule)(CampaignModule)
+function MainLobbyExtraData:Constructor()
+  local campModule = GameGlobal.GetModule(CampaignModule)
   local tmpDic = campModule:GetCampaignSampleDic()
   self._openCampDic = tmpDic
   self._campList = {}
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyExtraData.LoadCampaignData = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function MainLobbyExtraData:LoadCampaignData(TT)
   self._campList = {}
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
   local idList = {}
-  if self._openCampDic and (table.count)(self._openCampDic) > 0 then
-    for id,obj in pairs(self._openCampDic) do
-      local cfg = (Cfg.cfg_main_lobby_side_entrys)[id]
+  if self._openCampDic and table.count(self._openCampDic) > 0 then
+    for id, obj in pairs(self._openCampDic) do
+      local cfg = Cfg.cfg_main_lobby_side_entrys[id]
       if cfg then
         local sampleInfo = obj.m_sample_info
         if sampleInfo:IsShow(svrTime) then
-          (table.insert)(idList, id)
+          table.insert(idList, id)
+        end
+        if 2 <= #idList then
+          break
         end
       end
     end
   end
-  do
-    if #idList >= 2 or #idList > 0 then
-      (table.sort)(idList, function(a, b)
-    -- function num : 0_8_0 , upvalues : _ENV
-    local cfg_a = (Cfg.cfg_main_lobby_side_entrys)[a]
-    local cfg_b = (Cfg.cfg_main_lobby_side_entrys)[b]
-    do return cfg_a.Sort < cfg_b.Sort end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      for i = 1, #idList do
-        local obj = (self._openCampDic)[idList[i]]
-        ;
-        (table.insert)(self._campList, obj)
-      end
+  if 0 < #idList then
+    table.sort(idList, function(a, b)
+      local cfg_a = Cfg.cfg_main_lobby_side_entrys[a]
+      local cfg_b = Cfg.cfg_main_lobby_side_entrys[b]
+      return cfg_a.Sort < cfg_b.Sort
+    end)
+    for i = 1, #idList do
+      local obj = self._openCampDic[idList[i]]
+      table.insert(self._campList, obj)
     end
-    do
-      if idList and next(idList) then
-        local campaignMpdul = (GameGlobal.GetModule)(CampaignModule)
-        for index,id in ipairs(idList) do
-          local cfg = (Cfg.cfg_main_lobby_side_entrys)[id]
-          if cfg and cfg.DetailData then
-            local res = AsyncRequestRes:New()
-            res:SetSucc(false)
-            campaignMpdul:CampaignComProtoLoadInfo(TT, res, id)
-            if res:GetSucc() then
-              (Log.debug)("###[MainLobbyExtraData] 侧边栏需要拉详细数据，成功，id:", id)
-            else
-              local result = res:GetResult()
-              ;
-              (Log.error)("###[MainLobbyExtraData] 侧边栏需要拉详细数据，但是失败了，id:", id, "|result:", result)
-            end
-          end
+  end
+  if idList and next(idList) then
+    local campaignMpdul = GameGlobal.GetModule(CampaignModule)
+    for index, id in ipairs(idList) do
+      local cfg = Cfg.cfg_main_lobby_side_entrys[id]
+      if cfg and cfg.DetailData then
+        local res = AsyncRequestRes:New()
+        res:SetSucc(false)
+        campaignMpdul:CampaignComProtoLoadInfo(TT, res, id)
+        if res:GetSucc() then
+          Log.debug("###[MainLobbyExtraData] 侧边栏需要拉详细数据，成功，id:", id)
+        else
+          local result = res:GetResult()
+          Log.error("###[MainLobbyExtraData] 侧边栏需要拉详细数据，但是失败了，id:", id, "|result:", result)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyExtraData.RefreshCampaignDic = function(self, CampDic)
-  -- function num : 0_9
+function MainLobbyExtraData:RefreshCampaignDic(CampDic)
   if CampDic then
     self._openCampDic = CampDic
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyExtraData.RefreshSampleList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function MainLobbyExtraData:RefreshSampleList()
   self._campList = {}
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
   local idList = {}
-  if self._openCampDic and (table.count)(self._openCampDic) > 0 then
-    for id,obj in pairs(self._openCampDic) do
-      local cfg = (Cfg.cfg_main_lobby_side_entrys)[id]
+  if self._openCampDic and table.count(self._openCampDic) > 0 then
+    for id, obj in pairs(self._openCampDic) do
+      local cfg = Cfg.cfg_main_lobby_side_entrys[id]
       if cfg then
         local sampleInfo = obj.m_sample_info
         if sampleInfo:IsShow(svrTime) then
-          (table.insert)(idList, id)
+          table.insert(idList, id)
+        end
+        if 2 <= #idList then
+          break
         end
       end
     end
   end
-  do
-    if #idList >= 2 or #idList > 0 then
-      (table.sort)(idList, function(a, b)
-    -- function num : 0_10_0 , upvalues : _ENV
-    local cfg_a = (Cfg.cfg_main_lobby_side_entrys)[a]
-    local cfg_b = (Cfg.cfg_main_lobby_side_entrys)[b]
-    do return cfg_a.Sort < cfg_b.Sort end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      for i = 1, #idList do
-        local obj = (self._openCampDic)[idList[i]]
-        ;
-        (table.insert)(self._campList, obj)
-      end
+  if 0 < #idList then
+    table.sort(idList, function(a, b)
+      local cfg_a = Cfg.cfg_main_lobby_side_entrys[a]
+      local cfg_b = Cfg.cfg_main_lobby_side_entrys[b]
+      return cfg_a.Sort < cfg_b.Sort
+    end)
+    for i = 1, #idList do
+      local obj = self._openCampDic[idList[i]]
+      table.insert(self._campList, obj)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyExtraData.GetCampList = function(self)
-  -- function num : 0_11
+function MainLobbyExtraData:GetCampList()
   return self._campList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MainLobbyExtraData.RefreshCampSampleInfo = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local campModule = (GameGlobal.GetModule)(CampaignModule)
+function MainLobbyExtraData:RefreshCampSampleInfo()
+  local campModule = GameGlobal.GetModule(CampaignModule)
   local tmpDic = campModule:GetCampaignSampleDic()
   self._openCampDic = tmpDic
   self._campList = {}
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
   local idList = {}
-  if self._openCampDic and (table.count)(self._openCampDic) > 0 then
-    for id,obj in pairs(self._openCampDic) do
-      local cfg = (Cfg.cfg_main_lobby_side_entrys)[id]
+  if self._openCampDic and table.count(self._openCampDic) > 0 then
+    for id, obj in pairs(self._openCampDic) do
+      local cfg = Cfg.cfg_main_lobby_side_entrys[id]
       if cfg then
         local sampleInfo = obj.m_sample_info
         if sampleInfo:IsShow(svrTime) then
-          (table.insert)(idList, id)
+          table.insert(idList, id)
+        end
+        if 2 <= #idList then
+          break
         end
       end
     end
   end
-  do
-    if #idList >= 2 or #idList > 0 then
-      (table.sort)(idList, function(a, b)
-    -- function num : 0_12_0 , upvalues : _ENV
-    local cfg_a = (Cfg.cfg_main_lobby_side_entrys)[a]
-    local cfg_b = (Cfg.cfg_main_lobby_side_entrys)[b]
-    do return cfg_a.Sort < cfg_b.Sort end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      for i = 1, #idList do
-        local obj = (self._openCampDic)[idList[i]]
-        ;
-        (table.insert)(self._campList, obj)
-      end
+  if 0 < #idList then
+    table.sort(idList, function(a, b)
+      local cfg_a = Cfg.cfg_main_lobby_side_entrys[a]
+      local cfg_b = Cfg.cfg_main_lobby_side_entrys[b]
+      return cfg_a.Sort < cfg_b.Sort
+    end)
+    for i = 1, #idList do
+      local obj = self._openCampDic[idList[i]]
+      table.insert(self._campList, obj)
     end
   end
 end
-
-

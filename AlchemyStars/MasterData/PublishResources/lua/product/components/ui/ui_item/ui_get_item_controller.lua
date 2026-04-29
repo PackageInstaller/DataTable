@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_item/ui_get_item_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGetItemController", UIController)
 UIGetItemController = UIGetItemController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGetItemController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIGetItemController:OnShow(uiParams)
   self._closeCallback = uiParams[2]
   self._listPerPageCount = 5
   self._curItemPage = 1
@@ -17,234 +10,198 @@ UIGetItemController.OnShow = function(self, uiParams)
   self._listItemTotalCount = 0
   self._mainBgIcon = self:GetUIComponent("RawImageLoader", "mainBgIcon")
   self._mainBgPanel = self:GetGameObject("mainBgPanel")
-  ;
-  (self._mainBgPanel):SetActive(false)
+  self._mainBgPanel:SetActive(false)
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ItemList")
   self.selectInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
   self._bg = self:GetUIComponent("RectTransform", "canvasGroup")
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._bg).localScale = Vector3(1, 1, 1)
+  self._bg.localScale = Vector3(1, 1, 1)
   self._actTipsText = self:GetUIComponent("RollingText", "txt_activity_tips")
   self._actTipsGo = self:GetGameObject("ActivityTipsArea")
   if self._actTipsGo then
     if uiParams[4] then
       local txt = uiParams[4]
       if txt == "" then
-        (self._actTipsGo):SetActive(false)
+        self._actTipsGo:SetActive(false)
       else
-        ;
-        (self._actTipsGo):SetActive(true)
-        ;
-        (self._actTipsText):RefreshText(txt)
+        self._actTipsGo:SetActive(true)
+        self._actTipsText:RefreshText(txt)
       end
     else
-      do
-        ;
-        (self._actTipsGo):SetActive(false)
-        self._titleText = self:GetUIComponent("UILocalizationText", "txt_title")
-        self._titleText2 = self:GetUIComponent("UILocalizationText", "txt_title2")
-        self._titleText_zh = self:GetUIComponent("UILocalizationText", "txt_title_zh")
-        self._titleText2_zh = self:GetUIComponent("UILocalizationText", "txt_title2_zh")
-        self._titleTextGo = self:GetGameObject("txt_title")
-        self._titleTextGo2 = self:GetGameObject("txt_title2")
-        self._titleTextGo_zh = self:GetGameObject("txt_title_zh")
-        self._titleTextGo2_zh = self:GetGameObject("txt_title2_zh")
-        local en_go = self:GetGameObject("en_title")
-        local zh_go = (self:GetGameObject("zh_title"))
-        local t1, t2, t1go, t2go = nil, nil, nil, nil
-        local type = (Localization.GetCurLanguage)()
-        en_go:SetActive(type == LanguageType.us)
-        zh_go:SetActive(type ~= LanguageType.us)
-        if type == LanguageType.us then
-          t1 = self._titleText
-          t2 = self._titleText2
-          t1go = self._titleTextGo
-          t2go = self._titleTextGo2
-        else
-          t1 = self._titleText_zh
-          t2 = self._titleText2_zh
-          t1go = self._titleTextGo_zh
-          t2go = self._titleTextGo2_zh
-        end
-        do
-          if t1 and uiParams[5] then
-            local txt = uiParams[5]
-            if txt == "" then
-              t1go:SetActive(false)
-              t2go:SetActive(false)
-            else
-              t1go:SetActive(true)
-              t2go:SetActive(true)
-              t1:SetText(txt)
-              t2:SetText(txt)
-            end
-          end
-          self._itemList = {}
-          self._beforeTime = 200
-          self._inited = false
-          local item_module = ((GameGlobal.GetModule)(ItemModule))
-          local itemlist = nil
-          -- DECOMPILER ERROR at PC201: Unhandled construct in 'MakeBoolean' P1
-
-          if uiParams[1] and (table.count)(uiParams[1]) == 0 then
-            (Log.fatal)("###[UIGetItemController] table.count(uiParams[1]) == 0 !")
-          end
-          ;
-          (Log.fatal)("###[UIGetItemController] uiParams[1] is nil !")
-          if uiParams[3] then
-            itemlist = uiParams[1]
-          else
-            itemlist = item_module:SortRoleAsset(uiParams[1])
-          end
-          self:_SortHeartStone(itemlist)
-          self._getMainBgList = {}
-          for i = 1, (table.count)(itemlist) do
-            local itemData = itemlist[i]
-            -- DECOMPILER ERROR at PC255: Confused about usage of register: R16 in 'UnsetPending'
-
-            if itemData.isSeasonMazeAtt then
-              (self._itemList)[i] = {item_id = itemData.attType, item_count = itemData.count, item_des = nil, award_type = itemData.type, heartstone = itemData.heartstone, icon = itemData.icon, item_name = itemData.name, simple_desc = nil, color = itemData.quality, effectType = itemData.effectType, attType = itemData.attType, isSeasonMazeAtt = true}
-            else
-              local ItemTempleate = (Cfg.cfg_item)[itemData.assetid]
-              -- DECOMPILER ERROR at PC283: Confused about usage of register: R17 in 'UnsetPending'
-
-              if ItemTempleate then
-                (self._itemList)[i] = {item_id = itemData.assetid, item_count = itemData.count, item_des = itemData.des, award_type = itemData.type, heartstone = itemData.heartstone, icon = ItemTempleate.Icon, item_name = ItemTempleate.Name, simple_desc = ItemTempleate.RpIntro, color = ItemTempleate.Color}
-                if ItemTempleate.ItemSubType == ItemSubType.ItemSubType_BackGroudPicture then
-                  (table.insert)(self._getMainBgList, itemData.assetid)
-                end
-              end
-            end
-          end
-          self._listItemTotalCount = (table.count)(self._itemList)
-          self:CalcPage()
-          self._selectItemIndex = -1
-          if self._scrollView then
-            (self._scrollView):InitListView(1, function(scrollView, index)
-    -- function num : 0_0_0 , upvalues : self
-    return self:_InitListView(scrollView, index)
+      self._actTipsGo:SetActive(false)
+    end
   end
-)
-            self._inited = true
-          end
-          local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
-          self._blur = self:GetUIComponent("H3DUIBlurHelper", "Blur")
-          -- DECOMPILER ERROR at PC323: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self._blur).OwnerCamera = bgCanvas.worldCamera
-          ;
-          (self._blur):RefreshBlurTexture()
-          ;
-          (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
-          -- DECOMPILER ERROR: 13 unprocessed JMP targets
+  self._titleText = self:GetUIComponent("UILocalizationText", "txt_title")
+  self._titleText2 = self:GetUIComponent("UILocalizationText", "txt_title2")
+  self._titleText_zh = self:GetUIComponent("UILocalizationText", "txt_title_zh")
+  self._titleText2_zh = self:GetUIComponent("UILocalizationText", "txt_title2_zh")
+  self._titleTextGo = self:GetGameObject("txt_title")
+  self._titleTextGo2 = self:GetGameObject("txt_title2")
+  self._titleTextGo_zh = self:GetGameObject("txt_title_zh")
+  self._titleTextGo2_zh = self:GetGameObject("txt_title2_zh")
+  local en_go = self:GetGameObject("en_title")
+  local zh_go = self:GetGameObject("zh_title")
+  local t1, t2, t1go, t2go
+  local type = Localization.GetCurLanguage()
+  en_go:SetActive(type == LanguageType.us)
+  zh_go:SetActive(type ~= LanguageType.us)
+  if type == LanguageType.us then
+    t1 = self._titleText
+    t2 = self._titleText2
+    t1go = self._titleTextGo
+    t2go = self._titleTextGo2
+  else
+    t1 = self._titleText_zh
+    t2 = self._titleText2_zh
+    t1go = self._titleTextGo_zh
+    t2go = self._titleTextGo2_zh
+  end
+  if t1 and uiParams[5] then
+    local txt = uiParams[5]
+    if txt == "" then
+      t1go:SetActive(false)
+      t2go:SetActive(false)
+    else
+      t1go:SetActive(true)
+      t2go:SetActive(true)
+      t1:SetText(txt)
+      t2:SetText(txt)
+    end
+  end
+  self._itemList = {}
+  self._beforeTime = 200
+  self._inited = false
+  local item_module = GameGlobal.GetModule(ItemModule)
+  local itemlist
+  if uiParams[1] then
+    if table.count(uiParams[1]) == 0 then
+      Log.fatal("###[UIGetItemController] table.count(uiParams[1]) == 0 !")
+    end
+  else
+    Log.fatal("###[UIGetItemController] uiParams[1] is nil !")
+  end
+  if uiParams[3] then
+    itemlist = uiParams[1]
+  else
+    itemlist = item_module:SortRoleAsset(uiParams[1])
+  end
+  self:_SortHeartStone(itemlist)
+  self._getMainBgList = {}
+  for i = 1, table.count(itemlist) do
+    local itemData = itemlist[i]
+    if itemData.isSeasonMazeAtt then
+      self._itemList[i] = {
+        item_id = itemData.attType,
+        item_count = itemData.count,
+        item_des = nil,
+        award_type = itemData.type,
+        heartstone = itemData.heartstone,
+        icon = itemData.icon,
+        item_name = itemData.name,
+        simple_desc = nil,
+        color = itemData.quality,
+        effectType = itemData.effectType,
+        attType = itemData.attType,
+        isSeasonMazeAtt = true
+      }
+    else
+      local ItemTempleate = Cfg.cfg_item[itemData.assetid]
+      if ItemTempleate then
+        self._itemList[i] = {
+          item_id = itemData.assetid,
+          item_count = itemData.count,
+          item_des = itemData.des,
+          award_type = itemData.type,
+          heartstone = itemData.heartstone,
+          icon = ItemTempleate.Icon,
+          item_name = ItemTempleate.Name,
+          simple_desc = ItemTempleate.RpIntro,
+          color = ItemTempleate.Color
+        }
+        if ItemTempleate.ItemSubType == ItemSubType.ItemSubType_BackGroudPicture then
+          table.insert(self._getMainBgList, itemData.assetid)
         end
       end
     end
   end
+  self._listItemTotalCount = table.count(self._itemList)
+  self:CalcPage()
+  self._selectItemIndex = -1
+  if self._scrollView then
+    self._scrollView:InitListView(1, function(scrollView, index)
+      return self:_InitListView(scrollView, index)
+    end)
+    self._inited = true
+  end
+  local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
+  self._blur = self:GetUIComponent("H3DUIBlurHelper", "Blur")
+  self._blur.OwnerCamera = bgCanvas.worldCamera
+  self._blur:RefreshBlurTexture()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController._SortHeartStone = function(self, itemlist)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,value in pairs(itemlist) do
+function UIGetItemController:_SortHeartStone(itemlist)
+  for _, value in pairs(itemlist) do
     if value.heartstone then
-      (table.removev)(itemlist, value)
-      ;
-      (table.insert)(itemlist, 1, value)
+      table.removev(itemlist, value)
+      table.insert(itemlist, 1, value)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController.DoAnimation = function(self)
-  -- function num : 0_2
+function UIGetItemController:DoAnimation()
   self._canvasGroup = self:GetUIComponent("CanvasGroup", "canvasGroup")
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvasGroup).alpha = 0
-  self._tweener = (self._canvasGroup):DOFade(1, 0.02)
+  self._canvasGroup.alpha = 0
+  self._tweener = self._canvasGroup:DOFade(1, 0.02)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController.ClosePanel = function(self)
-  -- function num : 0_3
+function UIGetItemController:ClosePanel()
   if #self._getMainBgList > 0 then
-    (self._mainBgPanel):SetActive(true)
+    self._mainBgPanel:SetActive(true)
     self:ShowMainBgList()
   else
     self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController.ShowMainBgList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIGetItemController:ShowMainBgList()
   if #self._getMainBgList > 0 then
-    local mainBgID = (self._getMainBgList)[1]
-    ;
-    (table.remove)(self._getMainBgList, 1)
+    local mainBgID = self._getMainBgList[1]
+    table.remove(self._getMainBgList, 1)
     self:ShowMainBgUnit(mainBgID)
   else
-    do
-      self:CloseDialog()
-    end
+    self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController.ShowMainBgUnit = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg_main_bg = (Cfg.cfg_main_bg)({ItemID = id})
-  if cfg_main_bg and (table.count)(cfg_main_bg) > 0 then
-    local cg = (cfg_main_bg[1]).BG
-    ;
-    (self._mainBgIcon):LoadImage(cg)
+function UIGetItemController:ShowMainBgUnit(id)
+  local cfg_main_bg = Cfg.cfg_main_bg({ItemID = id})
+  if cfg_main_bg and table.count(cfg_main_bg) > 0 then
+    local cg = cfg_main_bg[1].BG
+    self._mainBgIcon:LoadImage(cg)
   else
-    do
-      ;
-      (Log.fatal)("###[UIGetItemController] cfg_main_bg is nil ! itemid --> " .. id)
-    end
+    Log.fatal("###[UIGetItemController] cfg_main_bg is nil ! itemid --> " .. id)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController.mainBgPanelOnClick = function(self, go)
-  -- function num : 0_6
+function UIGetItemController:mainBgPanelOnClick(go)
   self:ShowMainBgList()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("关闭获取物品界面")
+function UIGetItemController:OnHide()
+  Log.debug("关闭获取物品界面")
   if self._closeCallback then
-    (Log.debug)("关闭回调调用")
-    ;
-    (self._closeCallback)()
+    Log.debug("关闭回调调用")
+    self._closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController._InitListView = function(self, scrollView, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UIGetItemController:_InitListView(scrollView, index)
   if index < 0 then
     return nil
   end
-  local count = (table.count)(self._itemList)
-  if count > 5 then
+  local count = table.count(self._itemList)
+  if 5 < count then
     count = 5
   end
   local item = scrollView:NewListViewItem("RowItem")
@@ -257,8 +214,8 @@ UIGetItemController._InitListView = function(self, scrollView, index)
   for i = 1, count do
     local giftItem = rowList[i]
     local itemIndex = self:_GetCurPageFirstIndex() + i - 1
-    if self._listItemTotalCount < itemIndex then
-      (giftItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._listItemTotalCount then
+      giftItem:GetGameObject():SetActive(false)
     else
       self:_ShowItem(giftItem, itemIndex, i)
     end
@@ -266,29 +223,19 @@ UIGetItemController._InitListView = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController._SpawnGetItemControllerItem = function(self, rowPool, count)
-  -- function num : 0_9
+function UIGetItemController:_SpawnGetItemControllerItem(rowPool, count)
   rowPool:SpawnObjects("UIGetItemControllerItem", count)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController._GetItemCallBack = function(self)
-  -- function num : 0_10
-  local callback = function(id, pos)
-    -- function num : 0_10_0 , upvalues : self
+function UIGetItemController:_GetItemCallBack()
+  local function callback(id, pos)
     self:OnItemSelect(id, pos)
   end
-
+  
   return callback
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController._ShowItem = function(self, giftItem, index, tweenIdx)
-  -- function num : 0_11 , upvalues : _ENV
+function UIGetItemController:_ShowItem(giftItem, index, tweenIdx)
   local beforeTime = 0
   if not self._inited then
     beforeTime = self._beforeTime
@@ -296,56 +243,44 @@ UIGetItemController._ShowItem = function(self, giftItem, index, tweenIdx)
   local item_data = self:_GetItemDataByIndex(index)
   if item_data then
     giftItem:SetData(item_data, index, self:_GetItemCallBack(), Color(0.2039, 0.2039, 0.2039, 1), tweenIdx, beforeTime)
-    ;
-    (giftItem:GetGameObject()):SetActive(true)
+    giftItem:GetGameObject():SetActive(true)
   else
-    ;
-    (giftItem:GetGameObject()):SetActive(false)
+    giftItem:GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController.OnItemSelect = function(self, id, pos)
-  -- function num : 0_12 , upvalues : _ENV
+function UIGetItemController:OnItemSelect(id, pos)
   if not self._selectInfo then
-    self._selectInfo = (self.selectInfoPool):SpawnObject("UISelectInfo")
+    self._selectInfo = self.selectInfoPool:SpawnObject("UISelectInfo")
   end
   local isSeasonMazeAtt = false
-  local seasonMazeEffectType, seasonMazeAttrType = nil, nil
-  for _,value in pairs(self._itemList) do
-    if value.item_id == id and value.isSeasonMazeAtt then
-      isSeasonMazeAtt = value.isSeasonMazeAtt
-      seasonMazeEffectType = value.effectType
-      seasonMazeAttrType = value.attType
-    end
-    do break end
-  end
-  do
-    if isSeasonMazeAtt then
-      local effect = SeasonMazeEffect:New()
-      effect.type = seasonMazeEffectType
-      effect.id = seasonMazeAttrType
-      effect.value_min = self:_GetSeasonMazeAttCount(seasonMazeEffectType, seasonMazeAttrType)
-      effect.value_max = effect.value_min
-      ;
-      (self._selectInfo):SetSeasonMazeData(effect, effect.value_min, pos)
-    else
-      do
-        ;
-        (self._selectInfo):SetData(id, pos)
+  local seasonMazeEffectType, seasonMazeAttrType
+  for _, value in pairs(self._itemList) do
+    if value.item_id == id then
+      if value.isSeasonMazeAtt then
+        isSeasonMazeAtt = value.isSeasonMazeAtt
+        seasonMazeEffectType = value.effectType
+        seasonMazeAttrType = value.attType
       end
+      break
     end
+  end
+  if isSeasonMazeAtt then
+    local effect = SeasonMazeEffect:New()
+    effect.type = seasonMazeEffectType
+    effect.id = seasonMazeAttrType
+    effect.value_min = self:_GetSeasonMazeAttCount(seasonMazeEffectType, seasonMazeAttrType)
+    effect.value_max = effect.value_min
+    self._selectInfo:SetSeasonMazeData(effect, effect.value_min, pos)
+  else
+    self._selectInfo:SetData(id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController._GetSeasonMazeAttCount = function(self, effectType, id)
-  -- function num : 0_13 , upvalues : _ENV
+function UIGetItemController:_GetSeasonMazeAttCount(effectType, id)
   local count = 0
   if effectType and id then
-    local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
+    local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
     local seasonMazeObj = seasonMazeModule:CurSeasonObj()
     if seasonMazeObj then
       local component = seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
@@ -354,32 +289,23 @@ UIGetItemController._GetSeasonMazeAttCount = function(self, effectType, id)
       end
     end
   end
-  do
-    return count
-  end
+  return count
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGetItemController.NextOnClick = function(self, go)
-  -- function num : 0_14
+function UIGetItemController:NextOnClick(go)
   if self._selectItemIndex ~= -1 then
     self._selectItemIndex = -1
+  elseif self:_GetNextPageIndex() ~= -1 then
+    self._scrollView:RefreshAllShownItem()
+    self._selectItemIndex = -1
   else
-    if self:_GetNextPageIndex() ~= -1 then
-      (self._scrollView):RefreshAllShownItem()
-      self._selectItemIndex = -1
-    else
-      self:ClosePanel()
-    end
+    self:ClosePanel()
   end
 end
 
 local modf = math.modf
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
 
-UIGetItemController.CalcPage = function(self)
-  -- function num : 0_15 , upvalues : modf
+function UIGetItemController:CalcPage()
   local pageCount, mod = modf(self._listItemTotalCount / self._listPerPageCount)
   if mod ~= 0 then
     pageCount = pageCount + 1
@@ -387,10 +313,7 @@ UIGetItemController.CalcPage = function(self)
   self._listPageCount = pageCount
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGetItemController._GetNextPageIndex = function(self)
-  -- function num : 0_16
+function UIGetItemController:_GetNextPageIndex()
   local index = self._curItemPage * self._listPerPageCount + 1
   if index <= self._listItemTotalCount then
     self._curItemPage = self._curItemPage + 1
@@ -400,28 +323,17 @@ UIGetItemController._GetNextPageIndex = function(self)
   return -1
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGetItemController._GetCurPageFirstIndex = function(self)
-  -- function num : 0_17
+function UIGetItemController:_GetCurPageFirstIndex()
   return self._curPageFirstIndex
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGetItemController._GetItemDataByIndex = function(self, index)
-  -- function num : 0_18
-  if #self._itemList < index then
+function UIGetItemController:_GetItemDataByIndex(index)
+  if index > #self._itemList then
     return nil
   end
-  return (self._itemList)[index]
+  return self._itemList[index]
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIGetItemController._FormatItemCount = function(self, itemCount)
-  -- function num : 0_19 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIGetItemController:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
-
-

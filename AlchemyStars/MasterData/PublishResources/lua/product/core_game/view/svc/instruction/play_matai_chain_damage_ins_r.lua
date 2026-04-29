@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_matai_chain_damage_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayMataiChainDamageInstruction", BaseInstruction)
 PlayMataiChainDamageInstruction = PlayMataiChainDamageInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayMataiChainDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayMataiChainDamageInstruction:Constructor(paramList)
   self._paramList = paramList
   self._casterEffectID = tonumber(paramList.casterEffectID)
   self._defenderEffectDelayMs = tonumber(paramList.defenderEffectDelayMs)
@@ -23,38 +16,30 @@ PlayMataiChainDamageInstruction.Constructor = function(self, paramList)
   self._waitBeHitFinish = tonumber(paramList.waitBeHitFinish) or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMataiChainDamageInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
-  return {self:GetEffectResCacheInfo(self._casterEffectID), self:GetEffectResCacheInfo(self._defenderEffectID)}
+function PlayMataiChainDamageInstruction:GetCacheResource()
+  return {
+    self:GetEffectResCacheInfo(self._casterEffectID),
+    self:GetEffectResCacheInfo(self._defenderEffectID)
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMataiChainDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayMataiChainDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._waitBeHitFinish == 1 then
-    local tid = (TaskManager:GetInstance()):CoreGameStartTask(self._Play, self, casterEntity, phaseContext)
+    local tid = TaskManager:GetInstance():CoreGameStartTask(self._Play, self, casterEntity, phaseContext)
     phaseContext:AddPhaseTask(tid)
   else
-    do
-      self:_Play(TT, casterEntity, phaseContext)
-    end
+    self:_Play(TT, casterEntity, phaseContext)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMataiChainDamageInstruction._Play = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayMataiChainDamageInstruction:_Play(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playSkillService = world:GetService("PlaySkill")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   if targetEntityID == nil or targetEntityID < 0 then
-    return 
+    return
   end
   local targetEntity = world:GetEntityByID(targetEntityID)
   local curDamageIndex = phaseContext:GetCurDamageResultIndex()
@@ -65,8 +50,8 @@ PlayMataiChainDamageInstruction._Play = function(self, TT, casterEntity, phaseCo
   local damageResult = damageResultArray[curDamageIndex]
   local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
   if not damageInfo then
-    (Log.fatal)("### damageInfo is nil. curDamageIndex, curDamageInfoIndex=", curDamageIndex, curDamageInfoIndex)
-    return 
+    Log.fatal("### damageInfo is nil. curDamageIndex, curDamageInfoIndex=", curDamageIndex, curDamageInfoIndex)
+    return
   end
   local damageGridPos = damageResult:GetGridPos()
   local playFinalAttack = playSkillService:GetFinalAttack(world, casterEntity, phaseContext)
@@ -74,7 +59,7 @@ PlayMataiChainDamageInstruction._Play = function(self, TT, casterEntity, phaseCo
   if self._trapNotPlayHitEffect == 1 and targetEntity:TrapID() then
     playHitEffectID = 0
   end
-  local beHitParam = (((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(playHitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(self._deathClear)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_DamageIndex(curDamageIndex)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(playHitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(self._deathClear):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_DamageIndex(curDamageIndex)
   local boardServiceRender = world:GetService("BoardRender")
   local playSkillService = world:GetService("PlaySkill")
   local targetHitObj = playSkillService:GetEntityRenderHitTransform(targetEntity)
@@ -87,5 +72,3 @@ PlayMataiChainDamageInstruction._Play = function(self, TT, casterEntity, phaseCo
   YIELD(TT, self._hitDelayMs)
   playSkillService:HandleBeHit(TT, beHitParam)
 end
-
-

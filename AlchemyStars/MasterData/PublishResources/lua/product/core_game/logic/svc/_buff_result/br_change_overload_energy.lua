@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_change_overload_energy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultChangeAUOEValue", BuffResultBase)
 BuffResultChangeAUOEValue = BuffResultChangeAUOEValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeAUOEValue.Constructor = function(self, curValue, oldValue, realModifyValue)
-  -- function num : 0_0
+function BuffResultChangeAUOEValue:Constructor(curValue, oldValue, realModifyValue)
   self._curValue = curValue
   self._oldValue = oldValue
   self._realModifyValue = realModifyValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAUOEValue.GetCurValue = function(self)
-  -- function num : 0_1
+function BuffResultChangeAUOEValue:GetCurValue()
   return self._curValue
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAUOEValue.GetOldValue = function(self)
-  -- function num : 0_2
+function BuffResultChangeAUOEValue:GetOldValue()
   return self._oldValue
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeAUOEValue.GetRealModifyValue = function(self)
-  -- function num : 0_3
+function BuffResultChangeAUOEValue:GetRealModifyValue()
   return self._realModifyValue
 end
-
-

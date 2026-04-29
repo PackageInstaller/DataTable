@@ -1,138 +1,90 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_set_notename_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatSetNoteNameController", UIController)
 UIChatSetNoteNameController = UIChatSetNoteNameController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatSetNoteNameController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChatSetNoteNameController:OnShow(uiParams)
   self._friendData = uiParams[1]
   self._chatFriendManager = uiParams[2]
   if not self._friendData then
-    return 
+    return
   end
   self._nameInput = self:GetUIComponent("EmojiFilteredInputField", "NameInput")
   self._patcherLabel = self:GetUIComponent("UILocalizationText", "Patcher")
-  self._noteName = (self._friendData):GetName()
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (string.isnullorempty)((self._friendData):GetRemarkName()) then
-    (self._patcherLabel).text = (self._friendData):GetName()
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._nameInput).text = ""
+  self._noteName = self._friendData:GetName()
+  if string.isnullorempty(self._friendData:GetRemarkName()) then
+    self._patcherLabel.text = self._friendData:GetName()
+    self._nameInput.text = ""
   else
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._patcherLabel).text = ""
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._nameInput).text = (self._friendData):GetName()
+    self._patcherLabel.text = ""
+    self._nameInput.text = self._friendData:GetName()
   end
   self._nameMaxLength = 14
-  self.OnIptValueChanged = function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
-    local s = (self._nameInput).text
-    if (string.isnullorempty)(s) then
+  
+  function self.OnIptValueChanged()
+    local s = self._nameInput.text
+    if string.isnullorempty(s) then
       self._noteName = ""
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._patcherLabel).text = (self._friendData):GetOriginalName()
-      return 
+      self._patcherLabel.text = self._friendData:GetOriginalName()
+      return
     end
-    local showStr = (HelperProxy:GetInstance()):GetSubStringByWordsNum(s, self._nameMaxLength)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._nameInput).text = showStr
-    self._noteName = (self._nameInput).text
+    local showStr = HelperProxy:GetInstance():GetSubStringByWordsNum(s, self._nameMaxLength)
+    self._nameInput.text = showStr
+    self._noteName = self._nameInput.text
   end
-
-  ;
-  ((self._nameInput).onValueChanged):AddListener(self.OnIptValueChanged)
+  
+  self._nameInput.onValueChanged:AddListener(self.OnIptValueChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatSetNoteNameController.GetCharSize = function(self, char)
-  -- function num : 0_1
+function UIChatSetNoteNameController:GetCharSize(char)
   if not char then
     return 0
+  elseif 240 < char then
+    return 4
+  elseif 225 < char then
+    return 3
+  elseif 192 < char then
+    return 2
   else
-    if char > 240 then
-      return 4
-    else
-      if char > 225 then
-        return 3
-      else
-        if char > 192 then
-          return 2
-        else
-          return 1
-        end
-      end
-    end
+    return 1
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatSetNoteNameController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChatSetNoteNameController:ConfirmBtnOnClick(go)
   if not self._friendData then
     self:CloseDialog()
-    return 
+    return
   end
-  if self._noteName == (self._friendData):GetName() then
+  if self._noteName == self._friendData:GetName() then
     self:CloseDialog()
-    return 
+    return
   end
   local newName = self._noteName
-  if self._nameMaxLength < (HelperProxy:GetInstance()):GetCharLength(newName) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_chat_set_name_tolong"))
-    return 
+  if HelperProxy:GetInstance():GetCharLength(newName) > self._nameMaxLength then
+    ToastManager.ShowToast(StringTable.Get("str_chat_set_name_tolong"))
+    return
   end
   self:Lock("ConfirmBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._ChangeName, self, newName)
+  GameGlobal.TaskManager():StartTask(self._ChangeName, self, newName)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatSetNoteNameController._ChangeName = function(self, TT, newName)
-  -- function num : 0_3 , upvalues : _ENV
+function UIChatSetNoteNameController:_ChangeName(TT, newName)
   if not self._friendData then
     self:UnLock("ConfirmBtnOnClick")
     self:CloseDialog()
-    return 
+    return
   end
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
-  local res = socialModule:HandleRemark(TT, (self._friendData):GetFriendId(), newName)
+  local socialModule = GameGlobal.GetModule(SocialModule)
+  local res = socialModule:HandleRemark(TT, self._friendData:GetFriendId(), newName)
   if not res:GetSucc() then
-    (self._chatFriendManager):HandleErrorMsgCode(res:GetResult())
+    self._chatFriendManager:HandleErrorMsgCode(res:GetResult())
     self:UnLock("ConfirmBtnOnClick")
-    return 
+    return
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_chat_set_name_success"))
+  ToastManager.ShowToast(StringTable.Get("str_chat_set_name_success"))
   self:UnLock("ConfirmBtnOnClick")
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangeFriendInfoSuccess)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangeFriendInfoSuccess)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatSetNoteNameController.CancelBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIChatSetNoteNameController:CancelBtnOnClick(go)
   self:CloseDialog()
 end
-
-

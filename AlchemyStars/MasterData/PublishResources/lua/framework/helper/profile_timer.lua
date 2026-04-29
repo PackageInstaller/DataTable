@@ -1,56 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/helper/profile_timer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ProfileTimer", Singleton)
 ProfileTimer = ProfileTimer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ProfileTimer.Constructor = function(self)
-  -- function num : 0_0
+function ProfileTimer:Constructor()
   self._startTime = 0
   self._stamps = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ProfileTimer.ResetAndStart = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._startTime = (os.clock)() * 1000
+function ProfileTimer:ResetAndStart()
+  self._startTime = os.clock() * 1000
   self._stamps = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ProfileTimer.TakeStamp = function(self, desc, output)
-  -- function num : 0_2 , upvalues : _ENV
-  local currentTimeStamp = (os.clock)() * 1000 - self._startTime
-  local stampInfo = "[ProfileTimer] " .. " frame:" .. (GameGlobal:GetInstance()):GetCurrentFrameCount() .. "  " .. desc .. " from start:" .. currentTimeStamp
+function ProfileTimer:TakeStamp(desc, output)
+  local currentTimeStamp = os.clock() * 1000 - self._startTime
+  local stampInfo = "[ProfileTimer] " .. " frame:" .. GameGlobal:GetInstance():GetCurrentFrameCount() .. "  " .. desc .. " from start:" .. currentTimeStamp
   if #self._stamps > 0 then
-    stampInfo = stampInfo .. " from last:" .. currentTimeStamp - ((self._stamps)[#self._stamps])[2]
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._stamps)[#self._stamps + 1] = {stampInfo, currentTimeStamp}
+    stampInfo = stampInfo .. " from last:" .. currentTimeStamp - self._stamps[#self._stamps][2]
+    self._stamps[#self._stamps + 1] = {stampInfo, currentTimeStamp}
   else
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._stamps)[1] = {stampInfo, currentTimeStamp}
+    self._stamps[1] = {stampInfo, currentTimeStamp}
   end
   if output then
-    (Log.fatal)(stampInfo)
+    Log.fatal(stampInfo)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ProfileTimer.OutputStamps = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ProfileTimer:OutputStamps()
   for i = 1, #self._stamps do
-    (Log.fatal)(((self._stamps)[i])[1])
+    Log.fatal(self._stamps[i][1])
   end
 end
-
-

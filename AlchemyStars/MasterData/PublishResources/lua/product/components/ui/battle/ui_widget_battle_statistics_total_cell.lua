@@ -1,166 +1,108 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_battle_statistics_total_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetBattleStatisticsTotalCell", UICustomWidget)
 UIWidgetBattleStatisticsTotalCell = UIWidgetBattleStatisticsTotalCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetBattleStatisticsTotalCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetBattleStatisticsTotalCell:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleStatisticsTotalCell.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetBattleStatisticsTotalCell:InitWidget()
   self._petIconAreaGo = self:GetGameObject("PetIconArea")
   self._specialIconAreaGo = self:GetGameObject("SpecialIconArea")
   self._headIconLoader = self:GetUIComponent("RawImageLoader", "HeadIcon")
   self._infoText = self:GetUIComponent("UILocalizationText", "InfoText")
   self._infoText1 = self:GetUIComponent("UILocalizationText", "InfoText1")
   self._damageBarBaseRect = self:GetUIComponent("RectTransform", "DamageBarBase")
-  self._maxBarLength = ((self._damageBarBaseRect).sizeDelta).x
+  self._maxBarLength = self._damageBarBaseRect.sizeDelta.x
   self._minBarLength = 10
-  self._barHeight = ((self._damageBarBaseRect).sizeDelta).y
+  self._barHeight = self._damageBarBaseRect.sizeDelta.y
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleStatisticsTotalCell.SetData = function(self, data)
-  -- function num : 0_2
+function UIWidgetBattleStatisticsTotalCell:SetData(data)
   self._uiData = data
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleStatisticsTotalCell.RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local recordData = (self._uiData):GetRecordData()
-  local petData = (self._uiData):GetMatchPet()
+function UIWidgetBattleStatisticsTotalCell:RefreshUI()
+  local recordData = self._uiData:GetRecordData()
+  local petData = self._uiData:GetMatchPet()
   if petData then
-    (self._petIconAreaGo):SetActive(true)
-    ;
-    (self._specialIconAreaGo):SetActive(false)
-    ;
-    (self._headIconLoader):LoadImage(petData:GetPetHead(PetSkinEffectPath.HEAD_ICON_INGAME))
+    self._petIconAreaGo:SetActive(true)
+    self._specialIconAreaGo:SetActive(false)
+    self._headIconLoader:LoadImage(petData:GetPetHead(PetSkinEffectPath.HEAD_ICON_INGAME))
   else
-    ;
-    (self._petIconAreaGo):SetActive(false)
-    ;
-    (self._specialIconAreaGo):SetActive(true)
+    self._petIconAreaGo:SetActive(false)
+    self._specialIconAreaGo:SetActive(true)
   end
   local allDamageValue = recordData:GetAllDamageValue()
   self._targetDamageValue = allDamageValue
   local percentage = recordData:GetPercentageInt()
   local damageValueStr = self:FormatDamage(allDamageValue)
   local infoStr = damageValueStr
-  local infoStr1 = (string.format)("(%d%%)", percentage)
-  ;
-  (self._infoText):SetText(infoStr)
+  local infoStr1 = string.format("(%d%%)", percentage)
+  self._infoText:SetText(infoStr)
   if self._infoText1 then
-    (self._infoText1):SetText(infoStr1)
+    self._infoText1:SetText(infoStr1)
   end
   self._targetBarLength = self._minBarLength
   local needPlayAnim = false
-  local maxDamage = (self._uiData):GetMaxTotalDamage()
-  if maxDamage > 0 then
+  local maxDamage = self._uiData:GetMaxTotalDamage()
+  if 0 < maxDamage then
     local barLength = allDamageValue / maxDamage * self._maxBarLength
     if barLength < self._minBarLength then
       barLength = self._minBarLength
     end
     self._targetBarLength = barLength
     needPlayAnim = true
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R11 in 'UnsetPending'
-
-    ;
-    (self._damageBarBaseRect).sizeDelta = Vector2(self._minBarLength, self._barHeight)
+    self._damageBarBaseRect.sizeDelta = Vector2(self._minBarLength, self._barHeight)
   else
-    do
-      self._targetBarLength = self._minBarLength
-      needPlayAnim = true
-      -- DECOMPILER ERROR at PC89: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._damageBarBaseRect).sizeDelta = Vector2(self._minBarLength, self._barHeight)
-      if needPlayAnim then
-        self:PlayAnim()
-      end
-    end
+    self._targetBarLength = self._minBarLength
+    needPlayAnim = true
+    self._damageBarBaseRect.sizeDelta = Vector2(self._minBarLength, self._barHeight)
+  end
+  if needPlayAnim then
+    self:PlayAnim()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleStatisticsTotalCell.FormatDamage = function(self, damageValue)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWidgetBattleStatisticsTotalCell:FormatDamage(damageValue)
   local count = damageValue
-  if count >= 10000000 then
-    local c = (math.modf)(count / 100000)
+  if 10000000 <= count then
+    local c = math.modf(count / 100000)
     local str = tostring(c * 0.1) .. "M"
     return str
+  elseif 10000 <= count then
+    local c = math.modf(count / 100)
+    local str = tostring(c * 0.1) .. "K"
+    return str
   else
-    do
-      if count >= 10000 then
-        local c = (math.modf)(count / 100)
-        local str = tostring(c * 0.1) .. "K"
-        return str
-      else
-        do
-          do return tostring(count) end
-        end
-      end
-    end
+    return tostring(count)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetBattleStatisticsTotalCell.PlayAnim = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetBattleStatisticsTotalCell:PlayAnim()
   local barStartVal = self._minBarLength
   local barTargetVal = self._targetBarLength
   local duration = 1
-  ;
-  (DoTweenHelper.DoUpdateFloat)(barStartVal, barTargetVal, duration, function(val)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._damageBarBaseRect).sizeDelta = Vector2(val, self._barHeight)
-  end
-)
+  DoTweenHelper.DoUpdateFloat(barStartVal, barTargetVal, duration, function(val)
+    self._damageBarBaseRect.sizeDelta = Vector2(val, self._barHeight)
+  end)
   local damageStartVal = 0
   local damageTargetVal = self._targetDamageValue
-  ;
-  (DoTweenHelper.DoUpdateInt)(damageStartVal, damageTargetVal, duration, function(val)
-    -- function num : 0_5_1 , upvalues : self
+  DoTweenHelper.DoUpdateInt(damageStartVal, damageTargetVal, duration, function(val)
     local damageValueStr = self:FormatDamage(val)
-    ;
-    (self._infoText):SetText(damageValueStr)
-  end
-)
+    self._infoText:SetText(damageValueStr)
+  end)
   local percentAlphaStart = 0
   local baseAlphaVal = 500
   local percentAlphaTarget = 255 + baseAlphaVal
-  ;
-  (DoTweenHelper.DoUpdateInt)(percentAlphaStart, percentAlphaTarget, duration, function(val)
-    -- function num : 0_5_2 , upvalues : baseAlphaVal, self, _ENV
+  DoTweenHelper.DoUpdateInt(percentAlphaStart, percentAlphaTarget, duration, function(val)
     local alphaVal = val
-    if baseAlphaVal < val then
+    if val > baseAlphaVal then
       alphaVal = alphaVal - baseAlphaVal
     else
       alphaVal = 0
     end
     local alpha = alphaVal / 255
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._infoText1).color = Color(1, 1, 1, alpha)
-  end
-)
+    self._infoText1.color = Color(1, 1, 1, alpha)
+  end)
 end
-
-

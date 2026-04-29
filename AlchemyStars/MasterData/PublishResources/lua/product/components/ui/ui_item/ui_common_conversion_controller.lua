@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_item/ui_common_conversion_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonConversionController", UIController)
 UICommonConversionController = UICommonConversionController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonConversionController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICommonConversionController:OnShow(uiParams)
   self._info = uiParams[1]
   self._closeCallback = uiParams[2]
   self._oriPool = self:GetUIComponent("UISelectObjectPath", "itemPoolOri")
@@ -16,97 +9,70 @@ UICommonConversionController.OnShow = function(self, uiParams)
   self._selectInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
   local bgCanvas = self:GetUIComponent("Canvas", "BGCanvas")
   self._blur = self:GetUIComponent("H3DUIBlurHelper", "Blur")
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._blur).OwnerCamera = bgCanvas.worldCamera
-  ;
-  (self._blur):RefreshBlurTexture()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
+  self._blur.OwnerCamera = bgCanvas.worldCamera
+  self._blur:RefreshBlurTexture()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
   self:SortList()
   self:ShowInfo()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonConversionController.ShowInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local info = (self._sortList)[self._showIdx]
-  self._oriItem = (self._oriPool):SpawnObject("UIItemForConversion")
-  ;
-  (self._oriItem):SetData(info, function(id, pos)
-    -- function num : 0_1_0 , upvalues : self
+function UICommonConversionController:ShowInfo()
+  local info = self._sortList[self._showIdx]
+  self._oriItem = self._oriPool:SpawnObject("UIItemForConversion")
+  self._oriItem:SetData(info, function(id, pos)
     self:ItemClick(id, pos)
-  end
-)
+  end)
   local per = info.count
-  local cfg = (Cfg.cfg_item)[info.assetid]
+  local cfg = Cfg.cfg_item[info.assetid]
   local converAwardList = cfg.ConverAward
-  if converAwardList and #converAwardList > 0 then
+  if converAwardList and 0 < #converAwardList then
     local count = #converAwardList
-    self._tarPools = (self._tarPool):SpawnObjects("UIItemForConversion", count)
+    self._tarPools = self._tarPool:SpawnObjects("UIItemForConversion", count)
     for i = 1, count do
-      local widget = (self._tarPools)[i]
+      local widget = self._tarPools[i]
       local cfg_conversion = converAwardList[i]
       local conversionInfo = RoleAsset:New()
       conversionInfo.assetid = cfg_conversion[1]
       conversionInfo.count = cfg_conversion[2] * per
       widget:SetData(conversionInfo, function(id, pos)
-    -- function num : 0_1_1 , upvalues : self
-    self:ItemClick(id, pos)
-  end
-)
+        self:ItemClick(id, pos)
+      end)
     end
   else
-    do
-      ;
-      (Log.error)("###[UICommonConversionController] converAwardList == 0 ! id --> ", info.assetid)
-    end
+    Log.error("###[UICommonConversionController] converAwardList == 0 ! id --> ", info.assetid)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonConversionController.SortList = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (table.count)(self._info) == 0 then
-    (Log.error)("###[UICommonConversionController] info count == 0 !")
+function UICommonConversionController:SortList()
+  if table.count(self._info) == 0 then
+    Log.error("###[UICommonConversionController] info count == 0 !")
     self:CloseDialog()
-    return 
+    return
   end
   self._showIdx = 1
   self._sortList = {}
-  for id,count in pairs(self._info) do
+  for id, count in pairs(self._info) do
     local info = RoleAsset:New()
     info.assetid = id
     info.count = count
-    ;
-    (table.insert)(self._sortList, info)
+    table.insert(self._sortList, info)
   end
-  ;
-  (table.sort)(self._sortList, function(a, b)
-    -- function num : 0_2_0 , upvalues : _ENV
+  table.sort(self._sortList, function(a, b)
     local a_id = a.assetid
     local b_id = b.assetid
-    local cfg_a = (Cfg.cfg_item)[a_id]
-    local cfg_b = (Cfg.cfg_item)[b_id]
-    if cfg_a.Color == cfg_b.Color then
-      if cfg_a.ID >= cfg_b.ID then
-        do return cfg_a.BagSortIndex ~= cfg_b.BagSortIndex end
-        do return cfg_b.Color < cfg_a.Color end
-        do return cfg_b.BagSortIndex < cfg_a.BagSortIndex end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
+    local cfg_a = Cfg.cfg_item[a_id]
+    local cfg_b = Cfg.cfg_item[b_id]
+    if cfg_a.BagSortIndex == cfg_b.BagSortIndex then
+      if cfg_a.Color == cfg_b.Color then
+        return cfg_a.ID < cfg_b.ID
       end
+      return cfg_a.Color > cfg_b.Color
     end
-  end
-)
+    return cfg_a.BagSortIndex > cfg_b.BagSortIndex
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonConversionController.ImageOnClick = function(self)
-  -- function num : 0_3
+function UICommonConversionController:ImageOnClick()
   if self._showIdx == #self._sortList then
     self:ClosePanel()
   else
@@ -115,34 +81,21 @@ UICommonConversionController.ImageOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonConversionController.ItemClick = function(self, id, pos)
-  -- function num : 0_4
+function UICommonConversionController:ItemClick(id, pos)
   if not self._itemInfo then
-    self._itemInfo = (self._selectInfoPool):SpawnObject("UISelectInfo")
+    self._itemInfo = self._selectInfoPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._itemInfo):SetData(id, pos)
+  self._itemInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonConversionController.ClosePanel = function(self)
-  -- function num : 0_5
+function UICommonConversionController:ClosePanel()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonConversionController.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("关闭转化物品界面")
+function UICommonConversionController:OnHide()
+  Log.debug("关闭转化物品界面")
   if self._closeCallback then
-    (Log.debug)("关闭回调调用")
-    ;
-    (self._closeCallback)()
+    Log.debug("关闭回调调用")
+    self._closeCallback()
   end
 end
-
-

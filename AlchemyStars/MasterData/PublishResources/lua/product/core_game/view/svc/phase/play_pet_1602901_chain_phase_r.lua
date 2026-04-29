@@ -1,43 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_pet_1602901_chain_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlayPet1602901ChainPhase", PlaySkillPhaseBase)
 PlayPet1602901ChainPhase = PlayPet1602901ChainPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPet1602901ChainPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  if not skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DynamicCenterDamage) then
-    local resultArray = {}
-  end
+function PlayPet1602901ChainPhase:PlayFlight(TT, casterEntity, phaseParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DynamicCenterDamage) or {}
   local result = resultArray[1]
   if not result then
-    return 
+    return
   end
-  local fxsvc = (self._world):GetService("Effect")
+  local fxsvc = self._world:GetService("Effect")
   local centerScope = result:GetDamageScope()
   local viewCenterPos = centerScope:GetCenterPos()
   local casterRenderPos = casterEntity:GetRenderGridPosition()
   local viewDir = viewCenterPos - casterRenderPos
   casterEntity:SetDirection(viewDir)
-  casterEntity:SetAnimatorControllerTriggers({phaseParam:GetAnimatorTrigger()})
+  casterEntity:SetAnimatorControllerTriggers({
+    phaseParam:GetAnimatorTrigger()
+  })
   YIELD(TT, phaseParam:GetHighJumpEffectDelay())
   local highJumpEffectEntity = fxsvc:CreateCommonGridEffect(phaseParam:GetHighJumpEffectID(), viewCenterPos, viewDir)
   YIELD(TT, phaseParam:GetDiveDelay())
-  local csCasterGameObject = (casterEntity:View()):GetGameObject()
-  local csCasterHitTransform = (GameObjectHelper.FindChild)(csCasterGameObject.transform, "Hit")
+  local csCasterGameObject = casterEntity:View():GetGameObject()
+  local csCasterHitTransform = GameObjectHelper.FindChild(csCasterGameObject.transform, "Hit")
   local v3TrajectoryBeginPos = csCasterHitTransform.position
-  local boardsvc = (self._world):GetService("BoardRender")
+  local boardsvc = self._world:GetService("BoardRender")
   local v3ViewCenterPos = boardsvc:GridPos2RenderPos(viewCenterPos)
   local v3TrajectoryDir = v3ViewCenterPos - v3TrajectoryBeginPos
   local diveEffectEntity = fxsvc:CreateWorldPositionDirectionEffect(phaseParam:GetDiveTrajectoryEffectID(), v3TrajectoryBeginPos, v3TrajectoryDir)
-  local csDiveEffectTransform = ((diveEffectEntity:View()):GetGameObject()).transform
+  local csDiveEffectTransform = diveEffectEntity:View():GetGameObject().transform
   local tween = csDiveEffectTransform:DOMove(v3ViewCenterPos, phaseParam:GetDiveEffectFlyTime() * 0.001)
-  local distance = (Vector2.Distance)(casterRenderPos, viewCenterPos)
+  local distance = Vector2.Distance(casterRenderPos, viewCenterPos)
   local speed = distance / phaseParam:GetDiveEffectFlyTime() * 1000
   casterEntity:AddGridMove(speed, viewCenterPos, casterRenderPos)
   while casterEntity:HasGridMove() do
@@ -53,16 +46,16 @@ PlayPet1602901ChainPhase.PlayFlight = function(self, TT, casterEntity, phasePara
   local playSkillService = self:SkillService()
   local damageResults = result:GetDamageResults()
   local playFinalAttack = skillEffectResultContainer:IsFinalAttack()
-  for _,damageResult in ipairs(damageResults) do
+  for _, damageResult in ipairs(damageResults) do
     local target = damageResult:GetTargetID()
     local damageInfo = damageResult:GetDamageInfo(1)
-    if target and target > 0 and damageInfo then
-      local eTarget = (self._world):GetEntityByID(target)
+    if target and 0 < target and damageInfo then
+      local eTarget = self._world:GetEntityByID(target)
       local damageGridPos = damageResult:GetGridPos()
-      local beHitParam = (((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(eTarget)):SetHandleBeHitParam_HitAnimName("hit")):SetHandleBeHitParam_HitEffectID(0)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(1)):SetHandleBeHitParam_DeathClear(0)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)):SetHandleBeHitParam_DamageIndex(1)
-      local hitBackTaskID = (TaskManager:GetInstance()):CoreGameStartTask(playSkillService.HandleBeHit, playSkillService, beHitParam)
-      if hitBackTaskID and hitBackTaskID > 0 then
-        (table.insert)(taskids, hitBackTaskID)
+      local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(eTarget):SetHandleBeHitParam_HitAnimName("hit"):SetHandleBeHitParam_HitEffectID(0):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(1):SetHandleBeHitParam_DeathClear(0):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID):SetHandleBeHitParam_DamageIndex(1)
+      local hitBackTaskID = TaskManager:GetInstance():CoreGameStartTask(playSkillService.HandleBeHit, playSkillService, beHitParam)
+      if hitBackTaskID and 0 < hitBackTaskID then
+        table.insert(taskids, hitBackTaskID)
       end
     end
   end
@@ -74,9 +67,7 @@ PlayPet1602901ChainPhase.PlayFlight = function(self, TT, casterEntity, phasePara
   YIELD(TT, phaseParam:GetAppearDelay())
   casterEntity:SetViewVisible(true)
   casterEntity:SetLocation(casterRenderPos)
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskids) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskids) do
     YIELD(TT)
   end
 end
-
-

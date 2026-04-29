@@ -1,44 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncBtn", UICustomWidget)
 UITestFuncBtn = UITestFuncBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncBtn.SetData = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function UITestFuncBtn:SetData(params)
   self._params = params
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_title", params.title)
+  UIWidgetHelper.SetLocalizationText(self, "_title", params.title)
   self._callback = params.callback
-  self:_SetToggle((self._params).toggleValueCallback)
+  self:_SetToggle(self._params.toggleValueCallback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncBtn._SetToggle = function(self, toggleValueCallback)
-  -- function num : 0_1
+function UITestFuncBtn:_SetToggle(toggleValueCallback)
   local isShow = toggleValueCallback ~= nil
-  ;
-  (self:GetGameObject("Toggle")):SetActive(isShow)
+  self:GetGameObject("Toggle"):SetActive(isShow)
   if isShow then
     local obj = self:GetUIComponent("Toggle", "Toggle")
     local value = toggleValueCallback()
     obj.isOn = value
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncBtn.BtnOnClick = function(self)
-  -- function num : 0_2
+function UITestFuncBtn:BtnOnClick()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
-  self:_SetToggle((self._params).toggleValueCallback)
+  self:_SetToggle(self._params.toggleValueCallback)
 end
-
-

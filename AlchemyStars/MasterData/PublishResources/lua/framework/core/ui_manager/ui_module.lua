@@ -1,85 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIModule", Object)
 UIModule = UIModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
+function UIModule:Constructor()
+  self.autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.Dispose = function(self)
-  -- function num : 0_1
-  (self.autoBinder):Dispose()
+function UIModule:Dispose()
+  self.autoBinder:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.AttachEvent = function(self, gameEventType, func)
-  -- function num : 0_2
-  (self.autoBinder):BindEvent(gameEventType, self, func)
+function UIModule:AttachEvent(gameEventType, func)
+  self.autoBinder:BindEvent(gameEventType, self, func)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.DetachEvent = function(self, gameEventType)
-  -- function num : 0_3
-  (self.autoBinder):UnBindEvent(gameEventType)
+function UIModule:DetachEvent(gameEventType)
+  self.autoBinder:UnBindEvent(gameEventType)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.DetachAllEvents = function(self)
-  -- function num : 0_4
-  (self.autoBinder):UnBindAllEvents()
+function UIModule:DetachAllEvents()
+  self.autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.GetModule = function(self, type)
-  -- function num : 0_5 , upvalues : _ENV
-  return (GameGlobal.GetModule)(type)
+function UIModule:GetModule(type)
+  return GameGlobal.GetModule(type)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.GetUIModule = function(self, gameModuleProto)
-  -- function num : 0_6 , upvalues : _ENV
-  return (GameGlobal.GetUIModule)(gameModuleProto)
+function UIModule:GetUIModule(gameModuleProto)
+  return GameGlobal.GetUIModule(gameModuleProto)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.StartTask = function(self, func, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(func, ...)
+function UIModule:StartTask(func, ...)
+  GameGlobal.TaskManager():StartTask(func, ...)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.AttachEvent = function(self, gameEventType, func)
-  -- function num : 0_8
-  (self.autoBinder):BindEvent(gameEventType, self, func)
+function UIModule:AttachEvent(gameEventType, func)
+  self.autoBinder:BindEvent(gameEventType, self, func)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.DetachEvent = function(self, gameEventType)
-  -- function num : 0_9
-  (self.autoBinder):UnBindEvent(gameEventType)
+function UIModule:DetachEvent(gameEventType)
+  self.autoBinder:UnBindEvent(gameEventType)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIModule.DetachAllEvents = function(self)
-  -- function num : 0_10
-  (self.autoBinder):UnBindAllEvents()
+function UIModule:DetachAllEvents()
+  self.autoBinder:UnBindAllEvents()
 end
-
-

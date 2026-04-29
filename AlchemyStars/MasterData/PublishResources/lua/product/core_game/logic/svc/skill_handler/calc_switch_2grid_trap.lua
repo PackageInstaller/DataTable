@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_switch_2grid_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_Switch2GridTrap", Object)
 SkillEffectCalc_Switch2GridTrap = SkillEffectCalc_Switch2GridTrap
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_Switch2GridTrap.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_Switch2GridTrap:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Switch2GridTrap.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_Switch2GridTrap:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParam = skillEffectCalcParam:GetSkillEffectParam()
   local scopeRange = skillEffectCalcParam:GetSkillRange()
-  local sUtilData = (self._world):GetService("UtilData")
+  local sUtilData = self._world:GetService("UtilData")
   local listTrap1 = sUtilData:GetTrapsAtPos(scopeRange[1])
   local listTrap2 = sUtilData:GetTrapsAtPos(scopeRange[2])
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
   local pieceEffectType1 = boardCmpt:GetBoardPieceEffectType(scopeRange[1])
   local prismEntityID1 = boardCmpt:GetPrismEntityIDAtPos(scopeRange[1])
@@ -41,36 +31,40 @@ SkillEffectCalc_Switch2GridTrap.DoSkillEffectCalculator = function(self, skillEf
     boardCmpt:SetBoardPieceEffectType(scopeRange[1], pieceEffectType2, prismEntityID2)
   end
   local trapIDList = skillEffectParam:GetTrapID()
-  local sBoard = (self._world):GetService("BoardLogic")
+  local sBoard = self._world:GetService("BoardLogic")
   local data = {}
   for i = 1, #listTrap1 do
     local targetEntity = listTrap1[i]
-    if (table.icontains)(trapIDList, (targetEntity:TrapID()):GetTrapID()) then
+    if table.icontains(trapIDList, targetEntity:TrapID():GetTrapID()) then
       local posNew = scopeRange[2]
-      local posOld = (targetEntity:GridLocation()):GetGridPos()
+      local posOld = targetEntity:GridLocation():GetGridPos()
       local bodyArea, blockFlag = sBoard:RemoveEntityBlockFlag(targetEntity, posOld)
       targetEntity:SetGridPosition(posNew)
       sBoard:UpdateEntityBlockFlag(targetEntity, posOld, posNew)
       sBoard:SetEntityBlockFlag(targetEntity, posNew, blockFlag)
-      ;
-      (table.insert)(data, {targetID = targetEntity:GetID(), posOld = posOld, posNew = posNew})
+      table.insert(data, {
+        targetID = targetEntity:GetID(),
+        posOld = posOld,
+        posNew = posNew
+      })
     end
   end
   for i = 1, #listTrap2 do
     local targetEntity = listTrap2[i]
-    if (table.icontains)(trapIDList, (targetEntity:TrapID()):GetTrapID()) then
+    if table.icontains(trapIDList, targetEntity:TrapID():GetTrapID()) then
       local posNew = scopeRange[1]
-      local posOld = (targetEntity:GridLocation()):GetGridPos()
+      local posOld = targetEntity:GridLocation():GetGridPos()
       local bodyArea, blockFlag = sBoard:RemoveEntityBlockFlag(targetEntity, posOld)
       targetEntity:SetGridPosition(posNew)
       sBoard:UpdateEntityBlockFlag(targetEntity, posOld, posNew)
       sBoard:SetEntityBlockFlag(targetEntity, posNew, blockFlag)
-      ;
-      (table.insert)(data, {targetID = targetEntity:GetID(), posOld = posOld, posNew = posNew})
+      table.insert(data, {
+        targetID = targetEntity:GetID(),
+        posOld = posOld,
+        posNew = posNew
+      })
     end
   end
   local buffResult = SkillEffectResult_Switch2GridTrap:New(data, scopeRange)
   return buffResult
 end
-
-

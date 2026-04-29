@@ -1,82 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/cls/ui_backpack_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BackPackBoxItem", Object)
 BackPackBoxItem = BackPackBoxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BackPackBoxItem.Constructor = function(self, tplId, count)
-  -- function num : 0_0 , upvalues : _ENV
+function BackPackBoxItem:Constructor(tplId, count)
   self.tplId = tplId
   self.count = count
-  local cfg = (Cfg.cfg_item)[tplId]
+  local cfg = Cfg.cfg_item[tplId]
   if not cfg then
-    (Log.fatal)("### cfg_item not exist ", tplId)
-    return 
+    Log.fatal("### cfg_item not exist ", tplId)
+    return
   end
   self.icon = cfg.Icon
-  self.name = (StringTable.Get)(cfg.Name)
-  self.desc = (StringTable.Get)(cfg.Intro)
-  self.descLong = (StringTable.Get)(cfg.RpIntro)
+  self.name = StringTable.Get(cfg.Name)
+  self.desc = StringTable.Get(cfg.Intro)
+  self.descLong = StringTable.Get(cfg.RpIntro)
   self.color = cfg.Color
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BackPackBoxItem.Init = function(self)
-  -- function num : 0_1
+function BackPackBoxItem:Init()
   return self.tplId
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BackPackBoxItem.GetTplId = function(self)
-  -- function num : 0_2
+function BackPackBoxItem:GetTplId()
   return self.tplId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BackPackBoxItem.GetCount = function(self)
-  -- function num : 0_3
+function BackPackBoxItem:GetCount()
   return self.count
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BackPackBoxItem.GetIcon = function(self)
-  -- function num : 0_4
+function BackPackBoxItem:GetIcon()
   return self.icon
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BackPackBoxItem.GetName = function(self)
-  -- function num : 0_5
+function BackPackBoxItem:GetName()
   return self.name
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BackPackBoxItem.GetDesc = function(self)
-  -- function num : 0_6
+function BackPackBoxItem:GetDesc()
   return self.desc
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BackPackBoxItem.GetDescLong = function(self)
-  -- function num : 0_7
+function BackPackBoxItem:GetDescLong()
   return self.descLong
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BackPackBoxItem.GetColor = function(self)
-  -- function num : 0_8
+function BackPackBoxItem:GetColor()
   return self.color
 end
-
-

@@ -1,57 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_gl/ui_haute_couture_draw_rules_main_gl.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawRulesMainGL", UIHauteCoutureDrawRulesBase)
 UIHauteCoutureDrawRulesMainGL = UIHauteCoutureDrawRulesMainGL
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawRulesMainGL.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawRulesMainGL:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainGL.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawRulesMainGL:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainGL.InitWidgets = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawRulesMainGL:InitWidgets()
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainGL.GetRuleItemPrefab = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawRulesMainGL:GetRuleItemPrefab()
   return "UISeniorSKinProItemsGL.prefab"
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainGL.GetRuleItemScript = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDrawRulesMainGL:GetRuleItemScript()
   return "UISeniorSKinProItems"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainGL.SetReviewRewardContenText = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self:GetUIComponent("UILocalizationText", "RewardContent")):SetText((StringTable.Get)("str_senior_skin_draw_rule_reward_detail_gl_review"))
+function UIHauteCoutureDrawRulesMainGL:SetReviewRewardContenText()
+  self:GetUIComponent("UILocalizationText", "RewardContent"):SetText(StringTable.Get("str_senior_skin_draw_rule_reward_detail_gl_review"))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawRulesMainGL.CloseBtnOnClick = function(self)
-  -- function num : 0_6
-  (self.controller):CloseDialog()
+function UIHauteCoutureDrawRulesMainGL:CloseBtnOnClick()
+  self.controller:CloseDialog()
 end
-
-

@@ -1,69 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_enter_build/ui_aircraft_enter_choose_btn_prefab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftEnterChooseBtnPrefab", UICustomWidget)
 UIAircraftEnterChooseBtnPrefab = UIAircraftEnterChooseBtnPrefab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftEnterChooseBtnPrefab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftEnterChooseBtnPrefab:OnShow(uiParams)
   self._select = self:GetGameObject("select")
   self._chooseText = self:GetUIComponent("UILocalizationText", "Text")
   self._show = false
   self:AttachEvent(GameEventType.AircraftEnterBuildChangeFilter, self.AircraftEnterBuildChangeFilter)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterChooseBtnPrefab.AircraftEnterBuildChangeFilter = function(self, filter_params)
-  -- function num : 0_1
+function UIAircraftEnterChooseBtnPrefab:AircraftEnterBuildChangeFilter(filter_params)
   for i = 1, #filter_params do
-    if (filter_params[i])._filter_type == self._chooseType then
+    if filter_params[i]._filter_type == self._chooseType then
       self._show = true
-      ;
-      (self._select):SetActive(true)
-      return 
+      self._select:SetActive(true)
+      return
     end
   end
-  ;
-  (self._select):SetActive(false)
+  self._select:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterChooseBtnPrefab.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftEnterChooseBtnPrefab:OnHide()
   self:DetachEvent(GameEventType.AircraftEnterBuildChangeFilter, self.AircraftEnterBuildChangeFilter)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterChooseBtnPrefab.itemBtnOnClick = function(self)
-  -- function num : 0_3
-  (self._callback)(self._index, self._chooseType)
+function UIAircraftEnterChooseBtnPrefab:itemBtnOnClick()
+  self._callback(self._index, self._chooseType)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEnterChooseBtnPrefab.SetData = function(self, index, chooseType, chooseText, filter_params, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftEnterChooseBtnPrefab:SetData(index, chooseType, chooseText, filter_params, callback)
   self._callback = callback
   self._index = index
   self._chooseType = chooseType
-  ;
-  (self._chooseText):SetText((StringTable.Get)(chooseText))
+  self._chooseText:SetText(StringTable.Get(chooseText))
   for i = 1, #filter_params do
-    if (filter_params[i])._filter_type == self._chooseType then
+    if filter_params[i]._filter_type == self._chooseType then
       self._show = true
-      ;
-      (self._select):SetActive(true)
-      return 
+      self._select:SetActive(true)
+      return
     end
   end
-  ;
-  (self._select):SetActive(false)
+  self._select:SetActive(false)
 end
-
-

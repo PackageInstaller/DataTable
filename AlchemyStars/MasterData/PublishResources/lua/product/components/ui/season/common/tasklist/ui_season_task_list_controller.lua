@@ -1,43 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/tasklist/ui_season_task_list_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTaskListController", UIController)
 UISeasonTaskListController = UISeasonTaskListController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTaskListController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UISeasonTaskListController:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local className, prefabName = (UISeasonHelper.GetCurSeasonTaskList)("Content")
-  if not (string.isnullorempty)(className) then
-    local closeFunc = function()
-    -- function num : 0_1_0 , upvalues : self
-    self:CloseDialog()
-  end
-
-    local obj = (UIWidgetHelper.SpawnObject)(self, "_pool", className, prefabName)
+function UISeasonTaskListController:OnShow(uiParams)
+  local className, prefabName = UISeasonHelper.GetCurSeasonTaskList("Content")
+  if not string.isnullorempty(className) then
+    local function closeFunc()
+      self:CloseDialog()
+    end
+    
+    local obj = UIWidgetHelper.SpawnObject(self, "_pool", className, prefabName)
     obj:SetData({closeCallback = closeFunc})
   else
-    do
-      local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-      if not seasonModule:IsOpen() then
-        (seasonModule.uiModule):ExitSeasonTo(UIStateType.UIMain)
-      end
+    local seasonModule = GameGlobal.GetModule(SeasonModule)
+    if not seasonModule:IsOpen() then
+      seasonModule.uiModule:ExitSeasonTo(UIStateType.UIMain)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListController.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonTaskListController:OnHide()
 end
-
-

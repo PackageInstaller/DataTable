@@ -1,96 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/guide/guide_piece_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuidePieceComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GuidePieceComponent.Constructor = function(self)
-  -- function num : 0_0
+function GuidePieceComponent:Constructor()
   self.unValidGrids = {}
   self.validGrids = {}
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePieceComponent.SetValidGrids = function(self, grids)
-  -- function num : 0_1
+function GuidePieceComponent:SetValidGrids(grids)
   self.validGrids = grids
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePieceComponent.GetValidGrids = function(self)
-  -- function num : 0_2
+function GuidePieceComponent:GetValidGrids()
   return self.validGrids
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePieceComponent.SetUnValidGrids = function(self, grids)
-  -- function num : 0_3
+function GuidePieceComponent:SetUnValidGrids(grids)
   self.unValidGrids = grids
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePieceComponent.GetUnValidGrids = function(self)
-  -- function num : 0_4
+function GuidePieceComponent:GetUnValidGrids()
   return self.unValidGrids
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePieceComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_5
+function GuidePieceComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-GuidePieceComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_6
+function GuidePieceComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GuidePiece = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).GuidePiece)
+function Entity:GuidePiece()
+  return self:GetComponent(self.WEComponentsEnum.GuidePiece)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGuidePiece = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).GuidePiece)
+function Entity:HasGuidePiece()
+  return self:HasComponent(self.WEComponentsEnum.GuidePiece)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGuidePiece = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuidePiece
+function Entity:AddGuidePiece()
+  local index = self.WEComponentsEnum.GuidePiece
   local component = GuidePieceComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGuidePiece = function(self)
-  -- function num : 0_10
-  local index = (self.WEComponentsEnum).GuidePiece
+function Entity:ReplaceGuidePiece()
+  local index = self.WEComponentsEnum.GuidePiece
   local cmpt = self:GuidePiece()
   self:ReplaceComponent(index, cmpt)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGuidePiece = function(self)
-  -- function num : 0_11
+function Entity:RemoveGuidePiece()
   if self:HasGuidePiece() then
-    self:RemoveComponent((self.WEComponentsEnum).GuidePiece)
+    self:RemoveComponent(self.WEComponentsEnum.GuidePiece)
   end
 end
-
-

@@ -1,96 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/moveto/air_action_move_to_wandering.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionMoveToWandering", AirActionBase)
 AirActionMoveToWandering = AirActionMoveToWandering
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionMoveToWandering.Constructor = function(self, main, pet, holder, point, duration)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionMoveToWandering:Constructor(main, pet, holder, point, duration)
   self._main = main
   self._pet = pet
-  ;
-  (self._pet):SetState(AirPetState.Transiting)
+  self._pet:SetState(AirPetState.Transiting)
   self._holder = holder
   self._point = point
   self._duration = duration
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWandering.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._moveToAction = AirActionMoveToDo:New(self._pet, (self._holder):Floor(), (self._point):Pos(), AircraftPetMoveType.ToWandering, self._main)
-  ;
-  (self._moveToAction):Start()
+function AirActionMoveToWandering:Start()
+  self._moveToAction = AirActionMoveToDo:New(self._pet, self._holder:Floor(), self._point:Pos(), AircraftPetMoveType.ToWandering, self._main)
+  self._moveToAction:Start()
   self._running = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWandering.IsOver = function(self)
-  -- function num : 0_2
+function AirActionMoveToWandering:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWandering.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function AirActionMoveToWandering:Update(deltaTimeMS)
   if self._running then
-    (self._moveToAction):Update(deltaTimeMS)
-    if (self._moveToAction):IsOver() then
+    self._moveToAction:Update(deltaTimeMS)
+    if self._moveToAction:IsOver() then
       self._running = false
       self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWandering.Duration = function(self)
-  -- function num : 0_4
+function AirActionMoveToWandering:Duration()
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWandering.CurrentTime = function(self)
-  -- function num : 0_5
+function AirActionMoveToWandering:CurrentTime()
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWandering.Stop = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function AirActionMoveToWandering:Stop()
   if self._running then
-    (self._moveToAction):Stop()
+    self._moveToAction:Stop()
     self._running = false
   else
     local action = AirActionWandering:New(self._pet, self._holder, self._duration, "开始漫游", self._main)
-    ;
-    (self._pet):StartMainAction(action)
+    self._pet:StartMainAction(action)
   end
-  do
-    ;
-    (self._holder):ReleasePoint(self._point)
-  end
+  self._holder:ReleasePoint(self._point)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWandering.Dispose = function(self)
-  -- function num : 0_7
+function AirActionMoveToWandering:Dispose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWandering.Pets = function(self)
-  -- function num : 0_8
-  return {self._pet}
+function AirActionMoveToWandering:Pets()
+  return {
+    self._pet
+  }
 end
-
-

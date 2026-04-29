@@ -1,109 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopHomelandTab", UICustomWidget)
 UIShopHomelandTab = UIShopHomelandTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopHomelandTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopHomelandTab:Constructor()
   self._shopModule = self:GetModule(ShopModule)
-  self._clientShop = (self._shopModule):GetClientShop()
-  self._shopData = (self._clientShop):GetHomelandShopData()
+  self._clientShop = self._shopModule:GetClientShop()
+  self._shopData = self._clientShop:GetHomelandShopData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopHomelandTab:OnShow(uiParams)
   self:_GetComponents()
   self:_OnValue()
   self:AttachEvent(GameEventType.UpdateHomelandShop, self._RefreshUIInfo)
   self:AttachEvent(GameEventType.ShopBuySuccess, self._OnBuySuccess)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopHomelandTab:OnHide()
   if self._refreshTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshTaskID)
+    GameGlobal.TaskManager():KillTask(self._refreshTaskID)
     self._refreshTaskID = nil
   end
   self:DetachEvent(GameEventType.UpdateHomelandShop, self._RefreshUIInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab._GetComponents = function(self)
-  -- function num : 0_3
+function UIShopHomelandTab:_GetComponents()
   self._emptyTipsGo = self:GetGameObject("EmptyTips")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._anim = self:GetUIComponent("Animation", "UIShopHomelandTab")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab.Update = function(self)
-  -- function num : 0_4
+function UIShopHomelandTab:Update()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab._OnValue = function(self)
-  -- function num : 0_5
+function UIShopHomelandTab:_OnValue()
   self:_ClassifyData()
   self:_InitDynamicScrollView()
   self:_RefreshUIInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab._ClassifyData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIShopHomelandTab:_ClassifyData()
   self._data = {}
-  local matketTypes = {MarketType.Shop_Furniture, MarketType.Shop_Furniture_Precious}
-  for _,marketType in pairs(matketTypes) do
-    if ((self._shopData).goodsSet)[marketType] then
-      for _,furnitureShopType in pairs(FurnitureShopType) do
-        if (((self._shopData).goodsSet)[marketType])[furnitureShopType] then
-          for shopID,goods in pairs((((self._shopData).goodsSet)[marketType])[furnitureShopType]) do
+  local matketTypes = {
+    MarketType.Shop_Furniture,
+    MarketType.Shop_Furniture_Precious
+  }
+  for _, marketType in pairs(matketTypes) do
+    if self._shopData.goodsSet[marketType] then
+      for _, furnitureShopType in pairs(FurnitureShopType) do
+        if self._shopData.goodsSet[marketType][furnitureShopType] then
+          for shopID, goods in pairs(self._shopData.goodsSet[marketType][furnitureShopType]) do
             local shopItemSet = HomelandShopItemSet:New(furnitureShopType, shopID, goods)
-            ;
-            (table.insert)(self._data, shopItemSet)
+            table.insert(self._data, shopItemSet)
           end
         end
       end
     end
   end
-  ;
-  (table.sort)(self._data, function(a, b)
-    -- function num : 0_6_0
-    do return a.sequenceID < b.sequenceID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._data, function(a, b)
+    return a.sequenceID < b.sequenceID
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab._InitDynamicScrollView = function(self)
-  -- function num : 0_7
-  (self._scrollView):InitListView(#self._data, function(scrollview, index)
-    -- function num : 0_7_0 , upvalues : self
+function UIShopHomelandTab:_InitDynamicScrollView()
+  self._scrollView:InitListView(#self._data, function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_8 , upvalues : _ENV
-  local data = (self._data)[index + 1]
-  local item = nil
+function UIShopHomelandTab:_OnGetItemByIndex(scrollview, index)
+  local data = self._data[index + 1]
+  local item
   if data.shopType == FurnitureShopType.FRN_Set and data:IsDiscount() then
     item = scrollview:NewListViewItem("UIShopHomelandItemSet")
   else
@@ -122,66 +87,40 @@ UIShopHomelandTab._OnGetItemByIndex = function(self, scrollview, index)
   return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab._RefreshScrollView = function(self, move)
-  -- function num : 0_9
-  (self._scrollView):SetListItemCount(#self._data)
-  ;
-  (self._scrollView):RefreshAllShownItem()
+function UIShopHomelandTab:_RefreshScrollView(move)
+  self._scrollView:SetListItemCount(#self._data)
+  self._scrollView:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab._RefreshUIInfo = function(self)
-  -- function num : 0_10
-  if (self._shopData):IsEmpty() then
-    (self._emptyTipsGo):SetActive(true)
+function UIShopHomelandTab:_RefreshUIInfo()
+  if self._shopData:IsEmpty() then
+    self._emptyTipsGo:SetActive(true)
   else
-    ;
-    (self._emptyTipsGo):SetActive(false)
+    self._emptyTipsGo:SetActive(false)
   end
   self:_ClassifyData()
   self:_RefreshScrollView()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab.SetData = function(self, param)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Homeland)
+function UIShopHomelandTab:SetData(param)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Homeland)
   self._param = param
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab.RefreshPanel = function(self, subTabType)
-  -- function num : 0_12
+function UIShopHomelandTab:RefreshPanel(subTabType)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab.ExcuteHideLogic = function(self, callBack)
-  -- function num : 0_13
+function UIShopHomelandTab:ExcuteHideLogic(callBack)
   if callBack then
     callBack(self)
   end
   self._param = nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab.ShowSelf = function(self)
-  -- function num : 0_14
-  (self._anim):Stop()
-  ;
-  (self._anim):Play()
+function UIShopHomelandTab:ShowSelf()
+  self._anim:Stop()
+  self._anim:Play()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandTab.HideSelf = function(self)
-  -- function num : 0_15
+function UIShopHomelandTab:HideSelf()
 end
-
-

@@ -1,50 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_pet_hp_atk_def.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_type")
 require("buff_logic_base")
 _class("BuffLogicAddPetHpAtkDef", BuffLogicBase)
 BuffLogicAddPetHpAtkDef = BuffLogicAddPetHpAtkDef
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddPetHpAtkDef.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddPetHpAtkDef:Constructor(buffInstance, logicParam)
   self._addedHPPercent = logicParam.addedHPPercent or 0
   self._addedAtkPercent = logicParam.addedAtkPercent or 0
   self._addedDefPercent = logicParam.addedDefPercent or 0
   self._entity = buffInstance:Entity()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddPetHpAtkDef.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local pstId = ((self._entity):PetPstID()):GetPstID()
-  local petData = (self._world):GetPetData(pstId)
+function BuffLogicAddPetHpAtkDef:DoLogic()
+  local pstId = self._entity:PetPstID():GetPstID()
+  local petData = self._world:GetPetData(pstId)
   local hp = petData:GetPetHealth()
   local atk = petData:GetPetAttack()
   local def = petData:GetPetDefence()
-  local hpAdded = (math.floor)(self._addedHPPercent * hp)
-  local atkAdded = (math.floor)(self._addedAtkPercent * atk)
-  local defAdded = (math.floor)(self._addedDefPercent * def)
-  local teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-  local attributeComponent = (self._entity):Attributes()
+  local hpAdded = math.floor(self._addedHPPercent * hp)
+  local atkAdded = math.floor(self._addedAtkPercent * atk)
+  local defAdded = math.floor(self._addedDefPercent * def)
+  local teamEntity = self._entity:Pet():GetOwnerTeamEntity()
+  local attributeComponent = self._entity:Attributes()
   local targetEntity = self._entity
-  local buffLogicService = (self._world):GetService("BuffLogic")
+  local buffLogicService = self._world:GetService("BuffLogic")
   local buffSeqID = self:GetBuffSeq()
   buffLogicService:ChangeBaseAttack(targetEntity, buffSeqID, ModifyBaseAttackType.AttackPercentage, self._addedAtkPercent)
   buffLogicService:ChangeBaseDefence(targetEntity, buffSeqID, ModifyBaseDefenceType.DefencePercentage, self._addedDefPercent)
   attributeComponent:Modify("MaxHPConstantFix", hpAdded, buffSeqID)
   local damageInfo = DamageInfo:New(hpAdded, DamageType.Recover)
-  local svc = (self._world):GetService("CalcDamage")
+  local svc = self._world:GetService("CalcDamage")
   svc:AddTargetHP(self._entity, damageInfo)
-  local battleService = (self._world):GetService("Battle")
+  local battleService = self._world:GetService("Battle")
   battleService:UpdateTeamHPLogic(teamEntity)
   battleService:UpdateTeamDefenceLogic(teamEntity)
   local buffResult = BuffResultAddPetHpAtkDef:New(hpAdded, atkAdded, defAdded, damageInfo)
   return buffResult
 end
-
-

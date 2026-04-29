@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_collect_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignCollectCard", ICampaignComponentLocalProcessBase)
 CCampaignCollectCard = CCampaignCollectCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignCollectCard.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignCollectCard:Constructor()
   self._collectCardComponent = nil
   self._collectCardCompInfo = nil
   self._questComponent1 = nil
@@ -16,55 +9,37 @@ CCampaignCollectCard.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCollectCard.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignCollectCard:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_COLLECT_CARD
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCollectCard.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignCollectCard:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCollectCard.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignCollectCard:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetVoteComponent()
   self:_GetQuestComponent1()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCollectCard._GetVoteComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._collectCardComponent = (self._campaignObj):GetComponent(ECampaignCollectCardComponentID.COLLECT_CARD)
+function CCampaignCollectCard:_GetVoteComponent()
+  self._collectCardComponent = self._campaignObj:GetComponent(ECampaignCollectCardComponentID.COLLECT_CARD)
   if not self._collectCardComponent then
-    return 
+    return
   end
-  self._collectCardCompInfo = (self._collectCardComponent):GetComponentInfo()
+  self._collectCardCompInfo = self._collectCardComponent:GetComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCollectCard._GetQuestComponent1 = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questComponent1 = (self._campaignObj):GetComponent(ECampaignCollectCardComponentID.QUEST)
+function CCampaignCollectCard:_GetQuestComponent1()
+  self._questComponent1 = self._campaignObj:GetComponent(ECampaignCollectCardComponentID.QUEST)
   if not self._questComponent1 then
-    return 
+    return
   end
-  self._questComponentInfo1 = (self._questComponent1):ComponentInfo()
+  self._questComponentInfo1 = self._questComponent1:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCollectCard.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignCollectCard:GetComponent(componentID)
   if ECampaignCollectCardComponentID.COLLECT_CARD == componentID then
     return self._collectCardComponent
   end
@@ -74,10 +49,7 @@ CCampaignCollectCard.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignCollectCard.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignCollectCard:GetComponentInfo(componentID)
   if ECampaignCollectCardComponentID.COLLECT_CARD == componentID then
     return self._collectCardCompInfo
   end
@@ -86,5 +58,3 @@ CCampaignCollectCard.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

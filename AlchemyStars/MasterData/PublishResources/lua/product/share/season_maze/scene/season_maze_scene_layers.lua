@@ -1,90 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/season_maze_scene_layers.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeSceneLayers", Object)
 SeasonMazeSceneLayers = SeasonMazeSceneLayers
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeSceneLayers.Constructor = function(self, sceenRoot)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazeSceneLayers:Constructor(sceenRoot)
   self._sceenRoot = sceenRoot
   self._layers = {}
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layers)[SeasonSceneLayer.SoundMaterial] = SeasonMazeSceneLayerMaterial:New(self._sceenRoot)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layers)[SeasonSceneLayer.ZoneFlag] = SeasonMazeSceneLayerZoneFlag:New(self._sceenRoot)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layers)[SeasonSceneLayer.Ground] = SeasonMazeSceneLayerGround:New(self._sceenRoot)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layers)[SeasonSceneLayer.Building] = SeasonMazeSceneLayerBuilding:New(self._sceenRoot)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layers)[SeasonSceneLayer.HighBuilding] = SeasonMazeSceneLayerHighBuilding:New(self._sceenRoot)
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layers)[SeasonSceneLayer.FogMask] = SeasonMazeSceneLayerFogMask:New(self._sceenRoot)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layers)[SeasonSceneLayer.Ambient] = SeasonMazeSceneLayerAmbient:New(self._sceenRoot)
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layers)[SeasonSceneLayer.AmbientMap] = SeasonMazeSceneLayerAmbientMap:New(self._sceenRoot)
+  self._layers[SeasonSceneLayer.SoundMaterial] = SeasonMazeSceneLayerMaterial:New(self._sceenRoot)
+  self._layers[SeasonSceneLayer.ZoneFlag] = SeasonMazeSceneLayerZoneFlag:New(self._sceenRoot)
+  self._layers[SeasonSceneLayer.Ground] = SeasonMazeSceneLayerGround:New(self._sceenRoot)
+  self._layers[SeasonSceneLayer.Building] = SeasonMazeSceneLayerBuilding:New(self._sceenRoot)
+  self._layers[SeasonSceneLayer.HighBuilding] = SeasonMazeSceneLayerHighBuilding:New(self._sceenRoot)
+  self._layers[SeasonSceneLayer.FogMask] = SeasonMazeSceneLayerFogMask:New(self._sceenRoot)
+  self._layers[SeasonSceneLayer.Ambient] = SeasonMazeSceneLayerAmbient:New(self._sceenRoot)
+  self._layers[SeasonSceneLayer.AmbientMap] = SeasonMazeSceneLayerAmbientMap:New(self._sceenRoot)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayers.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMazeSceneLayers:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayers.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for key,layer in pairs(self._layers) do
+function SeasonMazeSceneLayers:Dispose()
+  for key, layer in pairs(self._layers) do
     layer:Dispose()
   end
-  ;
-  (table.clear)(self._layers)
+  table.clear(self._layers)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayers.GetLayer = function(self, layerType)
-  -- function num : 0_3
-  return (self._layers)[layerType]
+function SeasonMazeSceneLayers:GetLayer(layerType)
+  return self._layers[layerType]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayers.UnLockZone = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,layer in pairs(self._layers) do
+function SeasonMazeSceneLayers:UnLockZone(zoneMask, zoneID2Animation)
+  for _, layer in pairs(self._layers) do
     layer:UnLock(zoneMask, zoneID2Animation)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeSceneLayers.ChangeMap = function(self, ids, openingID, closeID)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,layer in pairs(self._layers) do
+function SeasonMazeSceneLayers:ChangeMap(ids, openingID, closeID)
+  for _, layer in pairs(self._layers) do
     layer:ChangeMap(ids, openingID, closeID)
   end
 end
-
-

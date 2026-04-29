@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/skill_phase_colume_grid_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseColumeGridParam", SkillPhaseParamBase)
 SkillPhaseColumeGridParam = SkillPhaseColumeGridParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseColumeGridParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseColumeGridParam:Constructor(t)
   self.gridEffectID = t.gridEffectID
   self.columnInternalTime = t.columnInternalTime
   self.hitAnimName = t.hitAnimName
   self.hitEffectID = t.hitEffectID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseColumeGridParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseColumeGridParam:GetPhaseType()
   return SkillViewPhaseType.ColumeWaveGrid
 end
-
-

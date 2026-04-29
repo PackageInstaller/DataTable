@@ -1,69 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/component/homelandpet_component_play_animation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetComponentPlayAnimation", HomelandPetComponentBase)
 HomelandPetComponentPlayAnimation = HomelandPetComponentPlayAnimation
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetComponentPlayAnimation.Constructor = function(self, componentType, pet, behavior)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetComponentPlayAnimation.super).Constructor)(self, componentType, pet, behavior)
-  self._animation = (self._pet):GetAnimation()
+function HomelandPetComponentPlayAnimation:Constructor(componentType, pet, behavior)
+  HomelandPetComponentPlayAnimation.super.Constructor(self, componentType, pet, behavior)
+  self._animation = self._pet:GetAnimation()
   self._animationName = nil
   self._fadeLength = 0.3
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentPlayAnimation.ReLoadPetComponent = function(self)
-  -- function num : 0_1
-  self._animation = (self._pet):GetAnimation()
+function HomelandPetComponentPlayAnimation:ReLoadPetComponent()
+  self._animation = self._pet:GetAnimation()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentPlayAnimation.OnExcute = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandPetComponentPlayAnimation:OnExcute()
   if self.state == HomelandPetComponentState.Resting then
     if not self._animationName then
-      return 
+      return
     end
     if not self._animation or self._animation == null then
-      self._animation = (self._pet):GetAnimation()
+      self._animation = self._pet:GetAnimation()
     end
     if self._animation then
-      (self._animation):CrossFade(self._animationName, self._fadeLength)
+      self._animation:CrossFade(self._animationName, self._fadeLength)
     end
     self.state = HomelandPetComponentState.Success
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentPlayAnimation.Play = function(self, animationName)
-  -- function num : 0_3
+function HomelandPetComponentPlayAnimation:Play(animationName)
   self._animationName = animationName
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentPlayAnimation.PlayStand = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  if (self._pet):GetMotionType() == HomelandPetMotionType.Swim then
+function HomelandPetComponentPlayAnimation:PlayStand()
+  if self._pet:GetMotionType() == HomelandPetMotionType.Swim then
     self._animationName = HomelandPetAnimName.Float
   else
     self._animationName = HomelandPetAnimName.Stand
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentPlayAnimation.Exit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((HomelandPetComponentPlayAnimation.super).Exit)(self)
+function HomelandPetComponentPlayAnimation:Exit()
+  HomelandPetComponentPlayAnimation.super.Exit(self)
   self._animationName = nil
 end
-
-

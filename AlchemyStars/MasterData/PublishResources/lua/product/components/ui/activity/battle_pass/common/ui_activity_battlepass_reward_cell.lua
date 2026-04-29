@@ -1,16 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass/common/ui_activity_battlepass_reward_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassRewardCell", UICustomWidget)
 UIActivityBattlePassRewardCell = UIActivityBattlePassRewardCell
-local UIActivityBattlePassRewardCellState = {EState_Lock = 1, EState_Claim = 2, EState_Received = 3}
+local UIActivityBattlePassRewardCellState = {
+  EState_Lock = 1,
+  EState_Claim = 2,
+  EState_Received = 3
+}
 _enum("UIActivityBattlePassRewardCellState", UIActivityBattlePassRewardCellState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityBattlePassRewardCell._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityBattlePassRewardCell:_GetComponents()
   self._bgStandardObj = self:GetGameObject("bgStandard")
   self._bgEliteObj = self:GetGameObject("bgElite")
   self._bgStandard_PreviewObj = self:GetGameObject("bgStandard_Preview")
@@ -34,63 +31,36 @@ UIActivityBattlePassRewardCell._GetComponents = function(self)
   self._state_Taken = self:GetGameObject("state_Taken")
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell._SetDefault = function(self)
-  -- function num : 0_1
-  (self._bgStandardObj):SetActive(false)
-  ;
-  (self._bgEliteObj):SetActive(false)
-  ;
-  (self._bgStandard_PreviewObj):SetActive(false)
-  ;
-  (self._bgElite_PreviewObj):SetActive(false)
-  ;
-  (self._bgStandard_Preview2Obj):SetActive(false)
-  ;
-  (self._bgElite_Preview2Obj):SetActive(false)
-  ;
-  (self._iconObj):SetActive(false)
-  ;
-  (self._fgSpecial):SetActive(false)
-  ;
-  (self._countTextObj):SetActive(false)
-  ;
-  (self._fixedStandardObj):SetActive(false)
-  ;
-  (self._fixedEliteObj):SetActive(false)
-  ;
-  (self._fixedEliteLockObj):SetActive(false)
-  ;
-  (self._state_NotStart):SetActive(false)
-  ;
-  (self._state_Completed):SetActive(false)
-  ;
-  (self._state_Taken):SetActive(false)
+function UIActivityBattlePassRewardCell:_SetDefault()
+  self._bgStandardObj:SetActive(false)
+  self._bgEliteObj:SetActive(false)
+  self._bgStandard_PreviewObj:SetActive(false)
+  self._bgElite_PreviewObj:SetActive(false)
+  self._bgStandard_Preview2Obj:SetActive(false)
+  self._bgElite_Preview2Obj:SetActive(false)
+  self._iconObj:SetActive(false)
+  self._fgSpecial:SetActive(false)
+  self._countTextObj:SetActive(false)
+  self._fixedStandardObj:SetActive(false)
+  self._fixedEliteObj:SetActive(false)
+  self._fixedEliteLockObj:SetActive(false)
+  self._state_NotStart:SetActive(false)
+  self._state_Completed:SetActive(false)
+  self._state_Taken:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell.SetData_Fixed = function(self, adv, component)
-  -- function num : 0_2
+function UIActivityBattlePassRewardCell:SetData_Fixed(adv, component)
   self:_GetComponents()
   self._adv = adv
   self._component = component
   self._info = component:ComponentInfo()
   self:_SetDefault()
-  if not adv or not self._fixedEliteObj then
-    local obj = self._fixedStandardObj
-  end
+  local obj = adv and self._fixedEliteObj or self._fixedStandardObj
   obj:SetActive(true)
-  if adv then
-    (self._fixedEliteLockObj):SetActive(not (self._info).m_unlock_advanced_reward)
-  end
+  self._fixedEliteLockObj:SetActive(adv and not self._info.m_unlock_advanced_reward)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell.SetData = function(self, index, adv, special, component, clickCallback, tipCallback, matRes)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityBattlePassRewardCell:SetData(index, adv, special, component, clickCallback, tipCallback, matRes)
   self:_GetComponents()
   self._index = index
   self._adv = adv
@@ -101,92 +71,64 @@ UIActivityBattlePassRewardCell.SetData = function(self, index, adv, special, com
   self._state = self:_CheckState(adv)
   local rewards = {}
   if not adv then
-    rewards = (self._component):GetNormalRewards()
+    rewards = self._component:GetNormalRewards()
   else
-    rewards = (self._component):GetAdvancedRewards()
+    rewards = self._component:GetAdvancedRewards()
   end
   self._roleAsset = rewards[self._index]
-  self._cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
+  self._cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
   if self._cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._roleAsset).assetid)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._roleAsset.assetid)
+    return
   end
   self:_SetDefault()
-  if not adv or not self._bgEliteObj then
-    local obj = self._bgStandardObj
-  end
+  local obj = adv and self._bgEliteObj or self._bgStandardObj
   obj:SetActive(true)
-  ;
-  (self._iconObj):SetActive(true)
-  ;
-  (self._countTextObj):SetActive(true)
+  self._iconObj:SetActive(true)
+  self._countTextObj:SetActive(true)
   self:_SetItemIcon()
   self:_SetState()
   self:_SetSpecial(adv, special)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityBattlePassRewardCell:OnShow(uiParams)
   self._atlas = self:GetAsset("UIBattlePass.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell.OnHide = function(self)
-  -- function num : 0_5
+function UIActivityBattlePassRewardCell:OnHide()
   if self._EMIMatResRequest then
     self._EMIMat = nil
-    ;
-    (self._EMIMatResRequest):Dispose()
+    self._EMIMatResRequest:Dispose()
     self._EMIMatResRequest = nil
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell._SetSpecial = function(self, adv, special)
-  -- function num : 0_6 , upvalues : _ENV
-  ;
-  (self._bgStandardObj):SetActive(adv == false and special == false)
-  ;
-  (self._bgEliteObj):SetActive(adv == true and special == false)
-  ;
-  (self._bgStandard_PreviewObj):SetActive(adv == false and special == true)
-  ;
-  (self._bgElite_PreviewObj):SetActive(adv == true and special == true)
-  ;
-  (self._bgStandard_Preview2Obj):SetActive(adv == false and special == true)
-  ;
-  (self._bgElite_Preview2Obj):SetActive(adv == true and special == true)
+function UIActivityBattlePassRewardCell:_SetSpecial(adv, special)
+  self._bgStandardObj:SetActive(adv == false and special == false)
+  self._bgEliteObj:SetActive(adv == true and special == false)
+  self._bgStandard_PreviewObj:SetActive(adv == false and special == true)
+  self._bgElite_PreviewObj:SetActive(adv == true and special == true)
+  self._bgStandard_Preview2Obj:SetActive(adv == false and special == true)
+  self._bgElite_Preview2Obj:SetActive(adv == true and special == true)
   local isSkinBg = false
-  local itemId = (self._roleAsset).assetid
+  local itemId = self._roleAsset.assetid
   local petModule = self:GetModule(PetModule)
   if petModule:IsPetSkinID(itemId) then
     isSkinBg = true
   end
-  ;
-  (self._countBgObj):SetActive(not isSkinBg)
-  ;
-  (self._countBg_SpecialObj):SetActive(isSkinBg)
-  -- DECOMPILER ERROR: 12 unprocessed JMP targets
+  self._countBgObj:SetActive(not isSkinBg)
+  self._countBg_SpecialObj:SetActive(isSkinBg)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell._CheckState = function(self, adv)
-  -- function num : 0_7 , upvalues : UIActivityBattlePassRewardCellState, _ENV
-  if adv and not (self._info).m_unlock_advanced_reward then
+function UIActivityBattlePassRewardCell:_CheckState(adv)
+  if adv and not self._info.m_unlock_advanced_reward then
     return UIActivityBattlePassRewardCellState.EState_Lock
   end
-  if (self._info).m_current_level < self._index then
+  if self._index > self._info.m_current_level then
     return UIActivityBattlePassRewardCellState.EState_Lock
   end
-  if not adv or not (self._info).m_received_advanced_lv then
-    local received = (self._info).m_received_normal_lv
-  end
-  for _,v in ipairs(received) do
+  local received = adv and self._info.m_received_advanced_lv or self._info.m_received_normal_lv
+  for _, v in ipairs(received) do
     if v == self._index then
       return UIActivityBattlePassRewardCellState.EState_Received
     end
@@ -194,149 +136,88 @@ UIActivityBattlePassRewardCell._CheckState = function(self, adv)
   return UIActivityBattlePassRewardCellState.EState_Claim
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell._SetState = function(self)
-  -- function num : 0_8 , upvalues : UIActivityBattlePassRewardCellState
-  (self._state_NotStart):SetActive(self._state == UIActivityBattlePassRewardCellState.EState_Lock)
-  ;
-  (self._state_Completed):SetActive(self._state == UIActivityBattlePassRewardCellState.EState_Claim)
-  ;
-  (self._state_Taken):SetActive(self._state == UIActivityBattlePassRewardCellState.EState_Received)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIActivityBattlePassRewardCell:_SetState()
+  self._state_NotStart:SetActive(self._state == UIActivityBattlePassRewardCellState.EState_Lock)
+  self._state_Completed:SetActive(self._state == UIActivityBattlePassRewardCellState.EState_Claim)
+  self._state_Taken:SetActive(self._state == UIActivityBattlePassRewardCellState.EState_Received)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell._SetItemIcon = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local icon = (self._cfg_item).Icon
-  local count = (self._roleAsset).count
-  local itemId = (self._roleAsset).assetid
+function UIActivityBattlePassRewardCell:_SetItemIcon()
+  local icon = self._cfg_item.Icon
+  local count = self._roleAsset.count
+  local itemId = self._roleAsset.assetid
   self:SetIcon(icon, itemId)
   self:SetCount(count, true)
   local petModule = self:GetModule(PetModule)
   if petModule:IsPetSkinID(itemId) then
-    (self._fgSpecial):SetActive(true)
+    self._fgSpecial:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell.SetIcon = function(self, name, itemId)
-  -- function num : 0_10 , upvalues : _ENV, UIActivityBattlePassRewardCellState
-  if not (string.isnullorempty)(name) then
+function UIActivityBattlePassRewardCell:SetIcon(name, itemId)
+  if not string.isnullorempty(name) then
     self:ShowIcon(true, itemId)
-    ;
-    (self._iconImg):LoadImage(name)
+    self._iconImg:LoadImage(name)
     self:_SetRawImageGray(self._state == UIActivityBattlePassRewardCellState.EState_Received)
   else
     self:ShowIcon(false)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell._SetRawImageGray = function(self, gray)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityBattlePassRewardCell:_SetRawImageGray(gray)
   if not self._EMIMat then
-    self._EMIMat = (UnityEngine.Material):New((self._iconRawImg).material)
+    self._EMIMat = UnityEngine.Material:New(self._iconRawImg.material)
   end
   if gray then
-    local texture = ((self._iconRawImg).material).mainTexture
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._iconRawImg).material = self._EMIMat
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._iconRawImg).material).mainTexture = texture
-    ;
-    ((self._iconRawImg).material):SetFloat("_LuminosityAmount", 1)
+    local texture = self._iconRawImg.material.mainTexture
+    self._iconRawImg.material = self._EMIMat
+    self._iconRawImg.material.mainTexture = texture
+    self._iconRawImg.material:SetFloat("_LuminosityAmount", 1)
   else
-    do
-      ;
-      ((self._iconRawImg).material):SetFloat("_LuminosityAmount", 0)
-      ;
-      (self._iconObj):SetActive(false)
-      ;
-      (self._iconObj):SetActive(true)
-    end
+    self._iconRawImg.material:SetFloat("_LuminosityAmount", 0)
   end
+  self._iconObj:SetActive(false)
+  self._iconObj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell.ShowIcon = function(self, show, itemId)
-  -- function num : 0_12
-  (self._iconObj):SetActive(show)
+function UIActivityBattlePassRewardCell:ShowIcon(show, itemId)
+  self._iconObj:SetActive(show)
   self:SetIconOffset(itemId)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell.SetIconOffset = function(self, itemId)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIActivityBattlePassRewardCell:SetIconOffset(itemId)
   if self:_IsPet(itemId) then
-    (self._iconRect).anchoredPosition = Vector2(0, 0)
+    self._iconRect.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._iconRect).anchoredPosition = Vector2(0, 5)
+    self._iconRect.anchoredPosition = Vector2(0, 5)
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell._IsPet = function(self, id)
-  -- function num : 0_14 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({ID = id})
+function UIActivityBattlePassRewardCell:_IsPet(id)
+  local cfg = Cfg.cfg_pet({ID = id})
   return cfg and true or false
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell.SetCount = function(self, text, showZeroFlag)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityBattlePassRewardCell:SetCount(text, showZeroFlag)
   if text ~= nil then
     local show = false
     if type(text) == "number" then
       local num = text
-      if num <= 0 then
-        do
-          do
-            show = showZeroFlag
-            show = show
-            ;
-            (self._countText):SetText((HelperProxy:GetInstance()):FormatItemCount(num))
-            if type(text) == "string" then
-              show = not (string.isnullorempty)(text)
-              ;
-              (self._countText):SetText(text)
-            end
-            -- DECOMPILER ERROR: 4 unprocessed JMP targets
-          end
-        end
-      end
+      show = 0 < num or showZeroFlag
+      self._countText:SetText(HelperProxy:GetInstance():FormatItemCount(num))
+    elseif type(text) == "string" then
+      show = not string.isnullorempty(text)
+      self._countText:SetText(text)
     end
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityBattlePassRewardCell.bgOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : UIActivityBattlePassRewardCellState
-  if self._state == UIActivityBattlePassRewardCellState.EState_Claim and self._clickCallback then
-    (self._clickCallback)(self._index, self._adv)
-  end
-  if self._tipCallback then
-    (self._tipCallback)((self._roleAsset).assetid, (go.transform).position)
+function UIActivityBattlePassRewardCell:bgOnClick(go)
+  if self._state == UIActivityBattlePassRewardCellState.EState_Claim then
+    if self._clickCallback then
+      self._clickCallback(self._index, self._adv)
+    end
+  elseif self._tipCallback then
+    self._tipCallback(self._roleAsset.assetid, go.transform.position)
   end
 end
-
-

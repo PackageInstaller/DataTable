@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/unique/grid_touch_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GridTouchComponent", Object)
 GridTouchComponent = GridTouchComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GridTouchComponent.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function GridTouchComponent:Constructor(world)
   self.gridTouchBeginPosition = nil
   self.gridTouchCurrentPosition = nil
-  self.gridTouchEndPosition = (UnityEngine.Vector2):New(-1, -1)
+  self.gridTouchEndPosition = UnityEngine.Vector2:New(-1, -1)
   self.gridTouchStateID = GridTouchStateID.Invalid
   self.lastTouchTime = -1
   self.gridTouchOffset = nil
@@ -23,10 +16,7 @@ GridTouchComponent.Constructor = function(self, world)
   self._stayTouchBeginTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.Destructor = function(self)
-  -- function num : 0_1
+function GridTouchComponent:Destructor()
   self.gridTouchBeginPosition = nil
   self.gridTouchCurrentPosition = nil
   self.gridTouchEndPosition = nil
@@ -36,218 +26,124 @@ GridTouchComponent.Destructor = function(self)
   self._gridTouchOffsetArray = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.Initialize = function(self)
-  -- function num : 0_2
+function GridTouchComponent:Initialize()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.SetGridTouchBeginPosition = function(self, position)
-  -- function num : 0_3
+function GridTouchComponent:SetGridTouchBeginPosition(position)
   self.gridTouchBeginPosition = position
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetGridTouchBeginPosition = function(self)
-  -- function num : 0_4
+function GridTouchComponent:GetGridTouchBeginPosition()
   return self.gridTouchBeginPosition
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.SetGridTouchCurrentPosition = function(self, position)
-  -- function num : 0_5
+function GridTouchComponent:SetGridTouchCurrentPosition(position)
   self.gridTouchCurrentPosition = position
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetGridTouchCurrentPosition = function(self)
-  -- function num : 0_6
+function GridTouchComponent:GetGridTouchCurrentPosition()
   return self.gridTouchCurrentPosition
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetGridMovePositionArray = function(self)
-  -- function num : 0_7
+function GridTouchComponent:GetGridMovePositionArray()
   return self._gridTouchPosArray
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetGridMoveOffsetArray = function(self)
-  -- function num : 0_8
+function GridTouchComponent:GetGridMoveOffsetArray()
   return self._gridTouchOffsetArray
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.AddGridMovePosition = function(self, position)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._gridTouchPosArray)[#self._gridTouchPosArray + 1] = position
+function GridTouchComponent:AddGridMovePosition(position)
+  self._gridTouchPosArray[#self._gridTouchPosArray + 1] = position
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.AddGridMoveOffset = function(self, offset)
-  -- function num : 0_10
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._gridTouchOffsetArray)[#self._gridTouchOffsetArray + 1] = offset
+function GridTouchComponent:AddGridMoveOffset(offset)
+  self._gridTouchOffsetArray[#self._gridTouchOffsetArray + 1] = offset
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.ClearGridMove = function(self)
-  -- function num : 0_11
+function GridTouchComponent:ClearGridMove()
   self._gridTouchPosArray = {}
   self._gridTouchOffsetArray = {}
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.SetGridTouchEndPosition = function(self, position)
-  -- function num : 0_12
+function GridTouchComponent:SetGridTouchEndPosition(position)
   self.gridTouchCurrentPosition = position
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetGridTouchEndPosition = function(self)
-  -- function num : 0_13
+function GridTouchComponent:GetGridTouchEndPosition()
   return self.gridTouchCurrentPosition
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetGridTouchStateID = function(self)
-  -- function num : 0_14
+function GridTouchComponent:GetGridTouchStateID()
   return self.gridTouchStateID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.SetGridTouchStateID = function(self, stateID)
-  -- function num : 0_15
+function GridTouchComponent:SetGridTouchStateID(stateID)
   self.gridTouchStateID = stateID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.SetGridTouchOffset = function(self, offset)
-  -- function num : 0_16
+function GridTouchComponent:SetGridTouchOffset(offset)
   self.gridTouchOffset = offset
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetGridTouchOffset = function(self)
-  -- function num : 0_17
+function GridTouchComponent:GetGridTouchOffset()
   return self.gridTouchOffset
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.SetDoubleClickPos = function(self, dbClickPos)
-  -- function num : 0_18
+function GridTouchComponent:SetDoubleClickPos(dbClickPos)
   self.doubleClickPos = dbClickPos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetDoubleClickPos = function(self)
-  -- function num : 0_19
+function GridTouchComponent:GetDoubleClickPos()
   return self.doubleClickPos
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.IsTouchPlayer = function(self)
-  -- function num : 0_20
+function GridTouchComponent:IsTouchPlayer()
   return self._isTouchPlayer
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.SetTouchPlayer = function(self, isTouchPlayer)
-  -- function num : 0_21
+function GridTouchComponent:SetTouchPlayer(isTouchPlayer)
   self._isTouchPlayer = isTouchPlayer
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.SetLastTouchTime = function(self, time)
-  -- function num : 0_22
+function GridTouchComponent:SetLastTouchTime(time)
   self.lastTouchTime = time
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetLastTouchGridPos = function(self)
-  -- function num : 0_23
-  return (self._gridTouchPosArray)[#self._gridTouchPosArray]
+function GridTouchComponent:GetLastTouchGridPos()
+  return self._gridTouchPosArray[#self._gridTouchPosArray]
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.SetStayTouchGridPos = function(self, gridPos, timeNow)
-  -- function num : 0_24 , upvalues : _ENV
+function GridTouchComponent:SetStayTouchGridPos(gridPos, timeNow)
   self._stayTouchBeginTime = timeNow
   self._stayTouchGridPos = Vector2(gridPos.x, gridPos.y)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetStayTouchPos = function(self)
-  -- function num : 0_25
+function GridTouchComponent:GetStayTouchPos()
   return self._stayTouchGridPos
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-GridTouchComponent.GetStayTouchDuration = function(self, timeNow)
-  -- function num : 0_26
+function GridTouchComponent:GetStayTouchDuration(timeNow)
   return timeNow - self._stayTouchBeginTime
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GridTouch = function(self)
-  -- function num : 0_27
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).GridTouch)
+function MainWorld:GridTouch()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.GridTouch)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasGridTouch = function(self)
-  -- function num : 0_28
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).GridTouch) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasGridTouch()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.GridTouch) ~= nil
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddGridTouch = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).GridTouch
+function MainWorld:AddGridTouch()
+  local index = self.BW_UniqueComponentsEnum.GridTouch
   local component = GridTouchComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveGridTouch = function(self)
-  -- function num : 0_30
+function MainWorld:RemoveGridTouch()
   if self:HasGridTouch() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).GridTouch, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.GridTouch, nil)
   end
 end
-
-

@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_unscaled_count_down_finish_notify_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("unscaled_count_down_finish_notify_system")
 _class("ClientUnscaledCountDownFinishNotifySystem_Render", UnscaledCountDownFinishNotifySystem)
 ClientUnscaledCountDownFinishNotifySystem_Render = ClientUnscaledCountDownFinishNotifySystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientUnscaledCountDownFinishNotifySystem_Render._DoRenderNotifyCountDownFinish = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).UnscaledCountDownRender)
-  for i,e in ipairs(group:GetEntities()) do
+function ClientUnscaledCountDownFinishNotifySystem_Render:_DoRenderNotifyCountDownFinish(TT)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.UnscaledCountDownRender)
+  for i, e in ipairs(group:GetEntities()) do
     local cmpt = e:UnscaledCountDownRender()
     if cmpt:GetWaitPlayNotify() then
       local flagID = cmpt:GetFlagID()
@@ -22,13 +15,7 @@ ClientUnscaledCountDownFinishNotifySystem_Render._DoRenderNotifyCountDownFinish 
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientUnscaledCountDownFinishNotifySystem_Render._PlayNotify = function(self, TT, flagID)
-  -- function num : 0_1 , upvalues : _ENV
+function ClientUnscaledCountDownFinishNotifySystem_Render:_PlayNotify(TT, flagID)
   local notify = NTClientUnscaledCountDownFinish:New(flagID)
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, notify)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, notify)
 end
-
-

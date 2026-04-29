@@ -1,51 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_can_move_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CanMovePos", SkillScopeCalculator_Base)
 SkillScopeCalculator_CanMovePos = SkillScopeCalculator_CanMovePos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CanMovePos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_CanMovePos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local target_area_grid = {}
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   if world then
     local boardServiceLogic = world:GetService("BoardLogic")
-    local board = ((world:GetBoardEntity()):Board())
-    local invalidPos = nil
-    do
-      if world:MatchType() == MatchType.MT_BlackFist then
-        local enemy = (((casterEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
-        invalidPos = enemy:GetGridPosition()
-      end
-      local arr = board:GetBlockFlagArray()
-      for x,columnDic in pairs(arr) do
-        for y,curGridType in pairs(columnDic) do
-          local grid = Vector2(x, y)
-          if not boardServiceLogic:IsPosBlock(grid, BlockFlag.LinkLine) and grid ~= invalidPos then
-            (table.insert)(target_area_grid, grid)
-          end
+    local board = world:GetBoardEntity():Board()
+    local invalidPos
+    if world:MatchType() == MatchType.MT_BlackFist then
+      local enemy = casterEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+      invalidPos = enemy:GetGridPosition()
+    end
+    local arr = board:GetBlockFlagArray()
+    for x, columnDic in pairs(arr) do
+      for y, curGridType in pairs(columnDic) do
+        local grid = Vector2(x, y)
+        if not boardServiceLogic:IsPosBlock(grid, BlockFlag.LinkLine) and grid ~= invalidPos then
+          table.insert(target_area_grid, grid)
         end
       end
-      do
-        for x = 1, (self._gridFilter):GetBoardMaxX() do
-          for y = 1, (self._gridFilter):GetBoardMaxY() do
-            local pos = Vector2(x, y)
-            if (self._gridFilter):IsValidPiecePos(pos) then
-              (table.insert)(target_area_grid, pos)
-            end
-          end
-        end
-        do
-          local result = SkillScopeResult:New(SkillScopeType.CanMovePos, centerPos, target_area_grid, target_area_grid)
-          return result
+    end
+  else
+    for x = 1, self._gridFilter:GetBoardMaxX() do
+      for y = 1, self._gridFilter:GetBoardMaxY() do
+        local pos = Vector2(x, y)
+        if self._gridFilter:IsValidPiecePos(pos) then
+          table.insert(target_area_grid, pos)
         end
       end
     end
   end
+  local result = SkillScopeResult:New(SkillScopeType.CanMovePos, centerPos, target_area_grid, target_area_grid)
+  return result
 end
-
-

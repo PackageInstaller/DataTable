@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_multiply_buff_layer_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayMultiplyBuffLayerInstruction", BaseInstruction)
 PlayMultiplyBuffLayerInstruction = PlayMultiplyBuffLayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayMultiplyBuffLayerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayMultiplyBuffLayerInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMultiplyBuffLayerInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayMultiplyBuffLayerInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local tResults = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.MultiplyBuffLayer)
-  if not tResults or (table.count)(tResults) == 0 then
-    return 
+  if not tResults or table.count(tResults) == 0 then
+    return
   end
-  for _,result in ipairs(tResults) do
+  for _, result in ipairs(tResults) do
     self:_RefreshBuffLayerByResult(TT, world, result)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMultiplyBuffLayerInstruction._RefreshBuffLayerByResult = function(self, TT, world, result)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayMultiplyBuffLayerInstruction:_RefreshBuffLayerByResult(TT, world, result)
   if not result:GetFinalLayerCount() then
-    return 
+    return
   end
   local targetID = result:GetTargetID()
   local eTarget = world:GetEntityByID(targetID)
@@ -41,14 +28,11 @@ PlayMultiplyBuffLayerInstruction._RefreshBuffLayerByResult = function(self, TT, 
   local buffView = eTarget:BuffView()
   local viewInstance = buffView:GetBuffViewInstance(buffSeq)
   if not viewInstance then
-    return 
+    return
   end
   viewInstance:SetLayerCount(TT, finalLayerCount)
-  ;
-  (world:EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
   if eTarget:HasPetPstID() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, (eTarget:PetPstID()):GetPstID(), finalLayerCount)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, eTarget:PetPstID():GetPstID(), finalLayerCount)
   end
 end
-
-

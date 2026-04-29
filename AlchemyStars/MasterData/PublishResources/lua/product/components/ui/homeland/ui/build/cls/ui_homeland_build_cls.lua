@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/build/cls/ui_homeland_build_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandBuildingFilter", Object)
 HomelandBuildingFilter = HomelandBuildingFilter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandBuildingFilter.Constructor = function(self)
-  -- function num : 0_0
+function HomelandBuildingFilter:Constructor()
   self.id = 0
   self.name = ""
   self.icon = ""
   self.children = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBuildingFilter.GetChildById = function(self, id)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandBuildingFilter:GetChildById(id)
   if self.children then
-    for _,c in ipairs(self.children) do
+    for _, c in ipairs(self.children) do
       if c.id == id then
         return c
       end
@@ -28,13 +18,8 @@ HomelandBuildingFilter.GetChildById = function(self, id)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandBuildingFilter.HasChildren = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if self.children and (table.count)(self.children) > 0 then
+function HomelandBuildingFilter:HasChildren()
+  if self.children and table.count(self.children) > 0 then
     return true
   end
 end
-
-

@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_pet_dead_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataPetDeadResult", Object)
 DataPetDeadResult = DataPetDeadResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataPetDeadResult.Constructor = function(self)
-  -- function num : 0_0
+function DataPetDeadResult:Constructor()
   self._petDeadEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetDeadResult.DataSetDeadPetEntityIDList = function(self, deadList)
-  -- function num : 0_1
+function DataPetDeadResult:DataSetDeadPetEntityIDList(deadList)
   self._petDeadEntityIDList = deadList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataPetDeadResult.DataGetDeadPetEntityIDList = function(self)
-  -- function num : 0_2
+function DataPetDeadResult:DataGetDeadPetEntityIDList()
   return self._petDeadEntityIDList
 end
-
-

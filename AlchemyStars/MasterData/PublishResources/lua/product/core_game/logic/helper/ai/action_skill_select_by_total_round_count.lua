@@ -1,50 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_skill_select_by_total_round_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSkillSelectByTotalRoundCount", AINewNode)
 ActionSkillSelectByTotalRoundCount = ActionSkillSelectByTotalRoundCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkillSelectByTotalRoundCount.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkillSelectByTotalRoundCount:Constructor()
   self._skillListIndex = 1
   self._skillID = 0
   self.m_nDefaultSkillIndex = 0
   self.m_nSkillListCount = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByTotalRoundCount.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSkillSelectByTotalRoundCount.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionSkillSelectByTotalRoundCount:InitializeNode(cfg, context, parentNode, configData)
+  ActionSkillSelectByTotalRoundCount.super.InitializeNode(self, cfg, context, parentNode, configData)
   if type(configData) == "number" then
     self._skillListIndex = configData
     self.m_nDefaultSkillIndex = 1
-  else
-    if not configData[1] then
-      self._skillListIndex = type(configData) ~= "table" or 1
-      self.m_nDefaultSkillIndex = configData[2]
-      self._skillCount = configData[3]
-    end
+  elseif type(configData) == "table" then
+    self._skillListIndex = configData[1] or 1
+    self.m_nDefaultSkillIndex = configData[2]
+    self._skillCount = configData[3]
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByTotalRoundCount.Update = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionSkillSelectByTotalRoundCount:Update()
   local vecSkillLists = self:GetConfigSkillList()
   local skillList = vecSkillLists[self._skillListIndex]
   if skillList then
-    local battleStatCmpt = (self._world):BattleStat()
+    local battleStatCmpt = self._world:BattleStat()
     local levelTotalRoundCount = battleStatCmpt:GetLevelTotalRoundCount()
-    if not self._skillCount then
-      local skillCount = (table.count)(skillList)
-    end
+    local skillCount = self._skillCount or table.count(skillList)
     local roundCount = levelTotalRoundCount % skillCount
     if roundCount == 0 then
       roundCount = skillCount
@@ -53,16 +36,9 @@ ActionSkillSelectByTotalRoundCount.Update = function(self)
     self:PrintLog("按回合选技能<初次进入>，RoundCount = ", roundCount, ", skillID = ", self._skillID)
     self:SetRuntimeData("SkillCount", skillCount)
   end
-  do
-    return AINewNodeStatus.Success
-  end
+  return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByTotalRoundCount.GetActionSkillID = function(self)
-  -- function num : 0_3
+function ActionSkillSelectByTotalRoundCount:GetActionSkillID()
   return self._skillID
 end
-
-

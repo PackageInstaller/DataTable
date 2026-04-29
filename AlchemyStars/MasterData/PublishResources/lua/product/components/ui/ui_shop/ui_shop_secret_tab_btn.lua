@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_secret_tab_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSecretTabBtn", UICustomWidget)
 UIShopSecretTabBtn = UIShopSecretTabBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSecretTabBtn.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopSecretTabBtn:OnShow()
   self._isSelected = false
   self._uiUnsel = self:GetUIComponent("RectTransform", "uiUnsel")
   self._uiSel = self:GetUIComponent("RectTransform", "uiSel")
@@ -16,104 +9,66 @@ UIShopSecretTabBtn.OnShow = function(self)
   self._selName = self:GetUIComponent("UILocalizedTMP", "selName")
   self._limitedTime = self:GetUIComponent("RectTransform", "limitedTime")
   self._new = self:GetGameObject("new")
-  self.animation = (self:GetGameObject()):GetComponent("Animation")
+  self.animation = self:GetGameObject():GetComponent("Animation")
   self:AttachEvent(GameEventType.ShopNew, self.ShopNew)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.SkinTabDetachEvent = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopSecretTabBtn:SkinTabDetachEvent()
   self:DetachEvent(GameEventType.ShopNew, self.ShopNew)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.ShopNew = function(self)
-  -- function num : 0_2
+function UIShopSecretTabBtn:ShopNew()
   local new = self:GetSubTabNew()
-  ;
-  (self._new):SetActive(new)
+  self._new:SetActive(new)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.FlushNew = function(self, isNew)
-  -- function num : 0_3
-  (self._new):SetActive(isNew)
+function UIShopSecretTabBtn:FlushNew(isNew)
+  self._new:SetActive(isNew)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIShopSecretTabBtn:OnHide()
   self:DetachEvent(GameEventType.ShopNew, self.ShopNew)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.Init = function(self, subTabType, name, nestsubTabType, onClickTabBtn, param)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopSecretTabBtn:Init(subTabType, name, nestsubTabType, onClickTabBtn, param)
   self.subTabType = subTabType
   self.nestSubTabType = nestsubTabType
   self.onClickTabBtn = onClickTabBtn
   self.param = param
-  ;
-  (self._unselName):SetText(name or "")
-  ;
-  (self._selName):SetText(name or "")
-  ;
-  ((self._limitedTime).gameObject):SetActive(subTabType ~= nil and MarketType.Shop_CampaignMarket <= subTabType)
+  self._unselName:SetText(name or "")
+  self._selName:SetText(name or "")
+  self._limitedTime.gameObject:SetActive(subTabType ~= nil and subTabType >= MarketType.Shop_CampaignMarket)
   self:Select(false)
   self:ShopNew()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.SetData = function(self, k, name, onClickTabBtn)
-  -- function num : 0_6
+function UIShopSecretTabBtn:SetData(k, name, onClickTabBtn)
   self.onClickTabBtn = onClickTabBtn
   self.param = k
-  ;
-  (self._unselName):SetText(name or "")
-  ;
-  (self._selName):SetText(name or "")
-  ;
-  ((self._limitedTime).gameObject):SetActive(false)
+  self._unselName:SetText(name or "")
+  self._selName:SetText(name or "")
+  self._limitedTime.gameObject:SetActive(false)
   self:Select(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.GetSubTabNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIShopSecretTabBtn:GetSubTabNew()
   local new = false
-  do
-    if self.subTabType == MarketType.Shop_Season then
-      local shopModule = (GameGlobal.GetModule)(ShopModule)
-      new = shopModule:GetExchangeTab_SeasonNew()
-    end
-    do
-      if self.subTabType == MarketType.Shop_BattlePass then
-        local shopModule = (GameGlobal.GetModule)(ShopModule)
-        new = shopModule:GetBattlePassTabNew(self.nestSubTabType)
-      end
-      return new
-    end
+  if self.subTabType == MarketType.Shop_Season then
+    local shopModule = GameGlobal.GetModule(ShopModule)
+    new = shopModule:GetExchangeTab_SeasonNew()
   end
+  if self.subTabType == MarketType.Shop_BattlePass then
+    local shopModule = GameGlobal.GetModule(ShopModule)
+    new = shopModule:GetBattlePassTabNew(self.nestSubTabType)
+  end
+  return new
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.Select = function(self, isSelect)
-  -- function num : 0_8
+function UIShopSecretTabBtn:Select(isSelect)
   local preSelected = self._isSelected
   self._isSelected = isSelect
-  ;
-  ((self._uiUnsel).gameObject):SetActive(not isSelect)
-  ;
-  ((self._uiSel).gameObject):SetActive(isSelect)
+  self._uiUnsel.gameObject:SetActive(not isSelect)
+  self._uiSel.gameObject:SetActive(isSelect)
   if preSelected ~= self._isSelected then
     if self._isSelected then
       self:PlayInAnimation()
@@ -123,69 +78,41 @@ UIShopSecretTabBtn.Select = function(self, isSelect)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.SetSelected = function(self, isSelect)
-  -- function num : 0_9
+function UIShopSecretTabBtn:SetSelected(isSelect)
   self:Select(isSelect)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.IsSelected = function(self)
-  -- function num : 0_10
+function UIShopSecretTabBtn:IsSelected()
   return self._isSelected
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.BtnOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
-  ;
-  (self.onClickTabBtn)(self.param, self.subTabType, self.nestSubTabType)
+function UIShopSecretTabBtn:BtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
+  self.onClickTabBtn(self.param, self.subTabType, self.nestSubTabType)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.GetSubType = function(self)
-  -- function num : 0_12
+function UIShopSecretTabBtn:GetSubType()
   return self.subTabType
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.GetNestSubType = function(self)
-  -- function num : 0_13
+function UIShopSecretTabBtn:GetNestSubType()
   return self.nestSubTabType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.PlayInAnimation = function(self)
-  -- function num : 0_14
-  (self.animation):Play("uianim_UIShopSecretTabBtn_in")
+function UIShopSecretTabBtn:PlayInAnimation()
+  self.animation:Play("uianim_UIShopSecretTabBtn_in")
   return 333
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretTabBtn.PlayOutAnimation = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  ((self._uiSel).gameObject):SetActive(true)
-  ;
-  (self.animation):Play("uianim_UIShopSecretTabBtn_out")
+function UIShopSecretTabBtn:PlayOutAnimation()
+  self._uiSel.gameObject:SetActive(true)
+  self.animation:Play("uianim_UIShopSecretTabBtn_out")
   local animLength = 250
   self:StartSafeTask("UIShopSecretTabBtn::PlayOutAnimation", function(lockName, TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV, animLength
     self:Lock(lockName)
     YIELD(TT, animLength)
     self:UnLock(lockName)
-    ;
-    ((self._uiSel).gameObject):SetActive(self._isSelected)
-  end
-)
+    self._uiSel.gameObject:SetActive(self._isSelected)
+  end)
   return animLength
 end
-
-

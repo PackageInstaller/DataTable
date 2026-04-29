@@ -1,107 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/air_group_action_executor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirGroupActionExecutor", Object)
 AirGroupActionExecutor = AirGroupActionExecutor
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirGroupActionExecutor.Constructor = function(self, aircraftMain, airSocialArea, removeCallBack)
-  -- function num : 0_0 , upvalues : _ENV
+function AirGroupActionExecutor:Constructor(aircraftMain, airSocialArea, removeCallBack)
   self.m_AirMain = aircraftMain
   self.m_AirSocialArea = airSocialArea
   self.m_RemoveCallBack = removeCallBack
-  self.m_AirLibMaker = (self.m_AirSocialArea):GetLibMaker()
-  self.m_StateTypes = (self.m_AirSocialArea):GetStateTypes()
+  self.m_AirLibMaker = self.m_AirSocialArea:GetLibMaker()
+  self.m_StateTypes = self.m_AirSocialArea:GetStateTypes()
   self.m_Machine = AirGroupActionMachine:New(self, self.m_StateTypes)
-  ;
-  (self.m_Machine):SetProcessFinish(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.m_Machine:SetProcessFinish(function()
     self:OnProcessFinish()
-  end
-)
-  ;
-  (self.m_AirSocialArea):StartAllPetAction()
-  ;
-  (self.m_Machine):ChangeNextState()
+  end)
+  self.m_AirSocialArea:StartAllPetAction()
+  self.m_Machine:ChangeNextState()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionExecutor.Dispose = function(self, needRandom, isLeave)
-  -- function num : 0_1
+function AirGroupActionExecutor:Dispose(needRandom, isLeave)
   self.m_StateTypes = {}
   if self.m_Machine then
-    (self.m_Machine):Dispose()
+    self.m_Machine:Dispose()
     self.m_Machine = nil
   end
   if self.m_AirLibMaker then
-    (self.m_AirLibMaker):Dispose()
+    self.m_AirLibMaker:Dispose()
     self.m_AirLibMaker = nil
   end
   if self.m_AirSocialArea then
-    (self.m_AirSocialArea):Dispose(needRandom, isLeave)
+    self.m_AirSocialArea:Dispose(needRandom, isLeave)
   end
   self.m_AirMain = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionExecutor.PlayAction = function(self, pet, action)
-  -- function num : 0_2
+function AirGroupActionExecutor:PlayAction(pet, action)
   pet:StartViceAction(action)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionExecutor.GetSocialArea = function(self)
-  -- function num : 0_3
+function AirGroupActionExecutor:GetSocialArea()
   return self.m_AirSocialArea
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionExecutor.GetPets = function(self)
-  -- function num : 0_4
-  return (self.m_AirSocialArea):GetPets()
+function AirGroupActionExecutor:GetPets()
+  return self.m_AirSocialArea:GetPets()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionExecutor.GetAreaFurniture = function(self)
-  -- function num : 0_5
-  return (self.m_AirSocialArea):GetFurniture()
+function AirGroupActionExecutor:GetAreaFurniture()
+  return self.m_AirSocialArea:GetFurniture()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionExecutor.GetLibMaker = function(self)
-  -- function num : 0_6
+function AirGroupActionExecutor:GetLibMaker()
   return self.m_AirLibMaker
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionExecutor.GetAirMain = function(self)
-  -- function num : 0_7
+function AirGroupActionExecutor:GetAirMain()
   return self.m_AirMain
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionExecutor.GetFurniture = function(self, type)
-  -- function num : 0_8
-  return (self.m_AirMain):GetFurniture(type)
+function AirGroupActionExecutor:GetFurniture(type)
+  return self.m_AirMain:GetFurniture(type)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirGroupActionExecutor.OnProcessFinish = function(self)
-  -- function num : 0_9
+function AirGroupActionExecutor:OnProcessFinish()
   if self.m_RemoveCallBack then
-    (self.m_RemoveCallBack)(self)
+    self.m_RemoveCallBack(self)
   end
 end
-
-

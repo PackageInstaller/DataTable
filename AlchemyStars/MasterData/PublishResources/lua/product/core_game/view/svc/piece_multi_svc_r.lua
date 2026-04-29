@@ -1,68 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/piece_multi_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PieceMultiServiceRender", Object)
 PieceMultiServiceRender = PieceMultiServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PieceMultiServiceRender.Constructor = function(self, world)
-  -- function num : 0_0
+function PieceMultiServiceRender:Constructor(world)
   self._world = world
   self._multiBoard = {}
-  self._pieceService = (self._world):GetService("Piece")
+  self._pieceService = self._world:GetService("Piece")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceMultiServiceRender.GetCurBoard = function(self, boardIndex)
-  -- function num : 0_1
+function PieceMultiServiceRender:GetCurBoard(boardIndex)
   if not self._multiBoard then
     self._multiBoard = {}
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._multiBoard)[boardIndex] then
-    (self._multiBoard)[boardIndex] = {}
+  if not self._multiBoard[boardIndex] then
+    self._multiBoard[boardIndex] = {}
   end
-  local curBoard = (self._multiBoard)[boardIndex]
+  local curBoard = self._multiBoard[boardIndex]
   return curBoard
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceMultiServiceRender.FindPieceEntity = function(self, boardIndex, pos)
-  -- function num : 0_2
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function PieceMultiServiceRender:FindPieceEntity(boardIndex, pos)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderMultiBoardCmpt = renderBoardEntity:RenderMultiBoard()
   return renderMultiBoardCmpt:GetGridRenderEntity(boardIndex, pos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceMultiServiceRender.SetPieceRenderEffect = function(self, boardIndex, pos, effectType)
-  -- function num : 0_3 , upvalues : _ENV
+function PieceMultiServiceRender:SetPieceRenderEffect(boardIndex, pos, effectType)
   local curPieceEffectType = self:GetPieceEffectType(boardIndex, pos)
   if curPieceEffectType == effectType then
-    return 
+    return
   end
   local pieceEntity = self:FindPieceEntity(boardIndex, pos)
   local pieceComponent = pieceEntity:Piece()
   pieceComponent:SetRenderPieceEffectType(effectType)
   self:ResetPieceAnimation(boardIndex, pos)
   local curPiecePrefabObj = pieceComponent:GetBaseLayerObj()
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R8 in 'UnsetPending'
-
   if curPiecePrefabObj then
-    (curPiecePrefabObj.transform).localEulerAngles = Vector3(0, 0, 0)
+    curPiecePrefabObj.transform.localEulerAngles = Vector3(0, 0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceMultiServiceRender.GetPieceEffectType = function(self, boardIndex, pos)
-  -- function num : 0_4 , upvalues : _ENV
+function PieceMultiServiceRender:GetPieceEffectType(boardIndex, pos)
   local pieceEntity = self:FindPieceEntity(boardIndex, pos)
   if not pieceEntity then
     return PieceEffectType.Normal
@@ -72,48 +49,34 @@ PieceMultiServiceRender.GetPieceEffectType = function(self, boardIndex, pos)
   return curPieceEffectType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceMultiServiceRender.SetPieceAnimUp = function(self, boardIndex, pos)
-  -- function num : 0_5
+function PieceMultiServiceRender:SetPieceAnimUp(boardIndex, pos)
   self:SetPieceAnimation(boardIndex, pos, "Up")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceMultiServiceRender.SetPieceAnimDown = function(self, boardIndex, pos)
-  -- function num : 0_6
+function PieceMultiServiceRender:SetPieceAnimDown(boardIndex, pos)
   self:SetPieceAnimation(boardIndex, pos, "Down")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceMultiServiceRender.SetPieceAnimation = function(self, boardIndex, pos, anim, force, param)
-  -- function num : 0_7
+function PieceMultiServiceRender:SetPieceAnimation(boardIndex, pos, anim, force, param)
   local pieceEntity = self:FindPieceEntity(boardIndex, pos)
   if not pieceEntity then
-    return 
+    return
   end
   local pieceComponent = pieceEntity:Piece()
   local curAnim = pieceComponent:GetPieceAnimName()
   if curAnim == anim and not force then
-    return 
+    return
   end
-  ;
-  (self._pieceService):_OnHidePiecePrefabSameLayer(pieceEntity, curAnim, anim)
-  ;
-  (self._pieceService):_OnCheckShowCurPieceTypePrefab(pieceEntity)
+  self._pieceService:_OnHidePiecePrefabSameLayer(pieceEntity, curAnim, anim)
+  self._pieceService:_OnCheckShowCurPieceTypePrefab(pieceEntity)
   pieceComponent:SetPieceAnimName(anim)
-  local applyFunc = ((self._pieceService).applyPieceAnimation)[anim]
+  local applyFunc = self._pieceService.applyPieceAnimation[anim]
   if applyFunc ~= nil then
     applyFunc(self._pieceService, pos, pieceEntity, anim, param)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceMultiServiceRender.ResetPieceAnimation = function(self, boardIndex, pos)
-  -- function num : 0_8
+function PieceMultiServiceRender:ResetPieceAnimation(boardIndex, pos)
   local curAnim = self:GetPieceAnimation(boardIndex, pos)
   if curAnim then
     local forcePlay = true
@@ -121,17 +84,12 @@ PieceMultiServiceRender.ResetPieceAnimation = function(self, boardIndex, pos)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PieceMultiServiceRender.GetPieceAnimation = function(self, boardIndex, pos)
-  -- function num : 0_9
+function PieceMultiServiceRender:GetPieceAnimation(boardIndex, pos)
   local pieceEntity = self:FindPieceEntity(boardIndex, pos)
   if not pieceEntity then
-    return 
+    return
   end
   local pieceComponent = pieceEntity:Piece()
   local curAnim = pieceComponent:GetPieceAnimName()
   return curAnim
 end
-
-

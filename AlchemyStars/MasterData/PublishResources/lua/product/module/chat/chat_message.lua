@@ -1,160 +1,151 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/chat/chat_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local chatMessageDef = {CLSID_CChatPushEvent = 3000, CLSID_CEventSendChatMessageToChannel = 3001, CLSID_CEventSendChatMessageToChannelResult = 3002, CLSID_CEventSendChatMessageToPlayer = 3003, CLSID_CEventSendChatMessageToPlayerResult = 3004, CLSID_CEventPushChatMessageToChannel = 3005, CLSID_CEventPushChatMessageToPlayer = 3006, CLSID_CEventPushJoinChatChannelResultMessage = 3007, CLSID_CEventPushLeaveChatChannelResultMessage = 3008}
-;
-(table.append)(MessageDef, chatMessageDef)
+local chatMessageDef = {
+  CLSID_CChatPushEvent = 3000,
+  CLSID_CEventSendChatMessageToChannel = 3001,
+  CLSID_CEventSendChatMessageToChannelResult = 3002,
+  CLSID_CEventSendChatMessageToPlayer = 3003,
+  CLSID_CEventSendChatMessageToPlayerResult = 3004,
+  CLSID_CEventPushChatMessageToChannel = 3005,
+  CLSID_CEventPushChatMessageToPlayer = 3006,
+  CLSID_CEventPushJoinChatChannelResultMessage = 3007,
+  CLSID_CEventPushLeaveChatChannelResultMessage = 3008
+}
+table.append(MessageDef, chatMessageDef)
 _class("CChatPushEvent", CPushEvent)
 CChatPushEvent = CChatPushEvent
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
 
-CChatPushEvent.Constructor = function(self)
-  -- function num : 0_0
+function CChatPushEvent:Constructor()
 end
-
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
 
 CChatPushEvent._proto = {}
 _class("CEventSendChatMessageToChannel", CCallRequestEvent)
 CEventSendChatMessageToChannel = CEventSendChatMessageToChannel
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSendChatMessageToChannel.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventSendChatMessageToChannel:Constructor()
   self.m_sender_pstid = 0
   self.m_channel = chat_channel_token:New()
   self.m_message = chat_message_info:New()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSendChatMessageToChannel._proto = {
-[1] = {"m_sender_pstid", "int64"}
-, 
-[2] = {"m_channel", "chat_channel_token"}
-, 
-[3] = {"m_message", "chat_message_info"}
+  [1] = {
+    "m_sender_pstid",
+    "int64"
+  },
+  [2] = {
+    "m_channel",
+    "chat_channel_token"
+  },
+  [3] = {
+    "m_message",
+    "chat_message_info"
+  }
 }
 _class("CEventSendChatMessageToChannelResult", CCallReplyEvent)
 CEventSendChatMessageToChannelResult = CEventSendChatMessageToChannelResult
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSendChatMessageToChannelResult.Constructor = function(self)
-  -- function num : 0_2
+function CEventSendChatMessageToChannelResult:Constructor()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSendChatMessageToChannelResult._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
 _class("CEventSendChatMessageToPlayer", CCallRequestEvent)
 CEventSendChatMessageToPlayer = CEventSendChatMessageToPlayer
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSendChatMessageToPlayer.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CEventSendChatMessageToPlayer:Constructor()
   self.m_sender_pstid = 0
   self.m_receiver_pstid = 0
   self.m_message = chat_message_info:New()
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSendChatMessageToPlayer._proto = {
-[1] = {"m_sender_pstid", "int64"}
-, 
-[2] = {"m_receiver_pstid", "int64"}
-, 
-[3] = {"m_message", "chat_message_info"}
+  [1] = {
+    "m_sender_pstid",
+    "int64"
+  },
+  [2] = {
+    "m_receiver_pstid",
+    "int64"
+  },
+  [3] = {
+    "m_message",
+    "chat_message_info"
+  }
 }
 _class("CEventSendChatMessageToPlayerResult", CCallReplyEvent)
 CEventSendChatMessageToPlayerResult = CEventSendChatMessageToPlayerResult
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSendChatMessageToPlayerResult.Constructor = function(self)
-  -- function num : 0_4
+function CEventSendChatMessageToPlayerResult:Constructor()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSendChatMessageToPlayerResult._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
 _class("CEventPushChatMessageToChannel", CChatPushEvent)
 CEventPushChatMessageToChannel = CEventPushChatMessageToChannel
--- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushChatMessageToChannel.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CEventPushChatMessageToChannel:Constructor()
   self.m_msg = ChatChannelMessage:New()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushChatMessageToChannel._proto = {
-[1] = {"m_msg", "ChatChannelMessage"}
-, 
-[2] = {"m_ret", "int"}
+  [1] = {
+    "m_msg",
+    "ChatChannelMessage"
+  },
+  [2] = {"m_ret", "int"}
 }
 _class("CEventPushChatMessageToPlayer", CChatPushEvent)
 CEventPushChatMessageToPlayer = CEventPushChatMessageToPlayer
--- DECOMPILER ERROR at PC148: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushChatMessageToPlayer.Constructor = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function CEventPushChatMessageToPlayer:Constructor()
   self.m_msg = ChatPrivateMessage:New()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushChatMessageToPlayer._proto = {
-[1] = {"m_msg", "ChatPrivateMessage"}
-, 
-[2] = {"m_ret", "int"}
+  [1] = {
+    "m_msg",
+    "ChatPrivateMessage"
+  },
+  [2] = {"m_ret", "int"}
 }
 _class("CEventPushJoinChatChannelResultMessage", CChatPushEvent)
 CEventPushJoinChatChannelResultMessage = CEventPushJoinChatChannelResultMessage
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushJoinChatChannelResultMessage.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CEventPushJoinChatChannelResultMessage:Constructor()
   self.m_channel = chat_channel_token:New()
   self.m_channel_config = ChatChannelConfig:New()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushJoinChatChannelResultMessage._proto = {
-[1] = {"m_channel", "chat_channel_token"}
-, 
-[2] = {"m_channel_config", "ChatChannelConfig"}
-, 
-[3] = {"m_ret", "int"}
+  [1] = {
+    "m_channel",
+    "chat_channel_token"
+  },
+  [2] = {
+    "m_channel_config",
+    "ChatChannelConfig"
+  },
+  [3] = {"m_ret", "int"}
 }
 _class("CEventPushLeaveChatChannelResultMessage", CChatPushEvent)
 CEventPushLeaveChatChannelResultMessage = CEventPushLeaveChatChannelResultMessage
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushLeaveChatChannelResultMessage.Constructor = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function CEventPushLeaveChatChannelResultMessage:Constructor()
   self.m_channel = chat_channel_token:New()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushLeaveChatChannelResultMessage._proto = {
-[1] = {"m_channel", "chat_channel_token"}
-, 
-[2] = {"m_ret", "int"}
+  [1] = {
+    "m_channel",
+    "chat_channel_token"
+  },
+  [2] = {"m_ret", "int"}
 }
-

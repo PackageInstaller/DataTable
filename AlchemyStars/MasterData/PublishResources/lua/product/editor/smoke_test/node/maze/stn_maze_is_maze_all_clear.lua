@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/maze/stn_maze_is_maze_all_clear.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("stn_common_wait_game_event")
 _class("CTestRobot_WaitMatchEnd", Common_WaitGameEvent)
 CTestRobot_WaitMatchEnd = CTestRobot_WaitMatchEnd
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CTestRobot_WaitMatchEnd.Constructor = function(self, pManger, nEventType)
-  -- function num : 0_0 , upvalues : _ENV
+function CTestRobot_WaitMatchEnd:Constructor(pManger, nEventType)
   self.m_nEventType = GameEventType.BattleResultFinish
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CTestRobot_WaitMatchEnd._OnEvent = function(self, bVictory)
-  -- function num : 0_1 , upvalues : _ENV
+function CTestRobot_WaitMatchEnd:_OnEvent(bVictory)
   if bVictory then
-    local mazeModule = ((self.m_pGameCenter).GetModule)(MazeModule)
-    local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
+    local mazeModule = self.m_pGameCenter.GetModule(MazeModule)
+    local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
     local mazeCreateInfo = matchEnterData:GetMazeCreateInfo()
     if mazeModule:IsLastLayerRoom(mazeCreateInfo.maze_version, mazeCreateInfo.maze_layer, mazeCreateInfo.maze_room_index) then
       self.m_nLogicResult = 2
@@ -27,11 +17,7 @@ CTestRobot_WaitMatchEnd._OnEvent = function(self, bVictory)
       self.m_nLogicResult = 1
     end
   else
-    do
-      self.m_nLogicResult = 0
-      return ((CTestRobot_WaitMatchEnd.super)._OnEvent)(self, bVictory)
-    end
+    self.m_nLogicResult = 0
   end
+  return CTestRobot_WaitMatchEnd.super._OnEvent(self, bVictory)
 end
-
-

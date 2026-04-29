@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/3dui/season_ui.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonUI", Object)
 SeasonUI = SeasonUI
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonUI.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonUI:Constructor()
   self._levelWidgetPool = {}
   self._signWidgetPool = {}
   self._bubbleWidget = nil
   self._functionWidgetPool = {}
-  self._seasonObj = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonObj()
-  self._componentInfo = (self._seasonObj):GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
+  self._seasonObj = GameGlobal.GetModule(SeasonModule):GetCurSeasonObj()
+  self._componentInfo = self._seasonObj:GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
   self:_InitUICanvas()
   self:_CreateLevelWidgets()
   self:_CreateSignWidgets()
@@ -22,180 +15,130 @@ SeasonUI.Constructor = function(self)
   self:_CreateFunctionWidgets()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI._InitUICanvas = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  self._mgr = ((self._seasonModule).uiModule):SeasonManager()
-  self._uiCanvasRequest = (ResourceManager:GetInstance()):SyncLoadAsset("SeasonUICanvas.prefab", LoadType.GameObject)
-  self._gameObject = (self._uiCanvasRequest).Obj
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._gameObject).name = "UICanvas"
-  ;
-  ((self._gameObject).transform):SetParent(nil)
-  ;
-  (((UnityEngine.SceneManagement).SceneManager).MoveGameObjectToScene)(self._gameObject, ((self._mgr):SeasonSceneManager()):Scene())
-  ;
-  (self._gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._gameObject).transform).position = Vector3.zero
-  self._canvas = (self._gameObject):GetComponent("Canvas")
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._canvas).worldCamera = ((self._mgr):SeasonCameraManager()):Camera()
-  self._view = (self._gameObject):GetComponentInChildren(typeof(UIView))
-  self._level = (self._view):GetUIComponent("UISelectObjectPath", "Level")
-  self._sign = (self._view):GetUIComponent("UISelectObjectPath", "Sign")
-  self._function = (self._view):GetUIComponent("UISelectObjectPath", "Function")
-  self._bubble = (self._view):GetUIComponent("UISelectObjectPath", "Bubble")
-  local mainAtlas = (UISeasonHelper.GetCurMainAtlas)()
+function SeasonUI:_InitUICanvas()
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  self._mgr = self._seasonModule.uiModule:SeasonManager()
+  self._uiCanvasRequest = ResourceManager:GetInstance():SyncLoadAsset("SeasonUICanvas.prefab", LoadType.GameObject)
+  self._gameObject = self._uiCanvasRequest.Obj
+  self._gameObject.name = "UICanvas"
+  self._gameObject.transform:SetParent(nil)
+  UnityEngine.SceneManagement.SceneManager.MoveGameObjectToScene(self._gameObject, self._mgr:SeasonSceneManager():Scene())
+  self._gameObject:SetActive(true)
+  self._gameObject.transform.position = Vector3.zero
+  self._canvas = self._gameObject:GetComponent("Canvas")
+  self._canvas.worldCamera = self._mgr:SeasonCameraManager():Camera()
+  self._view = self._gameObject:GetComponentInChildren(typeof(UIView))
+  self._level = self._view:GetUIComponent("UISelectObjectPath", "Level")
+  self._sign = self._view:GetUIComponent("UISelectObjectPath", "Sign")
+  self._function = self._view:GetUIComponent("UISelectObjectPath", "Function")
+  self._bubble = self._view:GetUIComponent("UISelectObjectPath", "Bubble")
+  local mainAtlas = UISeasonHelper.GetCurMainAtlas()
   if mainAtlas then
-    self._atlasReq = (ResourceManager:GetInstance()):SyncLoadAsset(mainAtlas, LoadType.SpriteAtlas)
-    self._atlas = (self._atlasReq).Obj
+    self._atlasReq = ResourceManager:GetInstance():SyncLoadAsset(mainAtlas, LoadType.SpriteAtlas)
+    self._atlas = self._atlasReq.Obj
   end
   self:_InitCfg()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonUI:Dispose()
   if self._uiCanvasRequest then
-    (self._uiCanvasRequest):Dispose()
+    self._uiCanvasRequest:Dispose()
     self._uiCanvasRequest = nil
   end
   if self._atlasReq then
-    (self._atlasReq):Dispose()
+    self._atlasReq:Dispose()
     self._atlasReq = nil
   end
   if self._funcAtlasReq then
-    (self._funcAtlasReq):Dispose()
+    self._funcAtlasReq:Dispose()
     self._funcAtlasReq = nil
   end
   if self._levelAtlasReq then
-    (self._levelAtlasReq):Dispose()
+    self._levelAtlasReq:Dispose()
     self._levelAtlasReq = nil
   end
-  ;
-  (table.clear)(self._levelWidgetPool)
-  ;
-  (table.clear)(self._signWidgetPool)
+  table.clear(self._levelWidgetPool)
+  table.clear(self._signWidgetPool)
   self._bubbleWidget = nil
-  ;
-  ((UnityEngine.Object).Destroy)(self._gameObject)
+  UnityEngine.Object.Destroy(self._gameObject)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.Update = function(self, deltaTime)
-  -- function num : 0_3
+function SeasonUI:Update(deltaTime)
   if self._bubbleWidget then
-    (self._bubbleWidget):Update(deltaTime)
+    self._bubbleWidget:Update(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.Refresh = function(self)
-  -- function num : 0_4
+function SeasonUI:Refresh()
   self:_RefreshWidgets()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.SwitchDiff = function(self, diff)
-  -- function num : 0_5
+function SeasonUI:SwitchDiff(diff)
   self:_RefreshWidgets()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI._RefreshWidgets = function(self)
-  -- function num : 0_6
+function SeasonUI:_RefreshWidgets()
   self:_CreateLevelWidgets()
   self:_CreateSignWidgets()
   self:_CreateFunctionWidgets()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI._CreateLevelWidgets = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local mainLevels = ((self._mgr):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.MainLevel)
-  local subLevels = ((self._mgr):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.SubLevel)
-  local dailyLevels = ((self._mgr):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.DailyLevel)
-  local storyLevels = ((self._mgr):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.MainStory, true)
+function SeasonUI:_CreateLevelWidgets()
+  local mainLevels = self._mgr:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.MainLevel)
+  local subLevels = self._mgr:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.SubLevel)
+  local dailyLevels = self._mgr:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.DailyLevel)
+  local storyLevels = self._mgr:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.MainStory, true)
   local levels = {}
   if mainLevels then
-    for _,value in pairs(mainLevels) do
-      (table.insert)(levels, value)
+    for _, value in pairs(mainLevels) do
+      table.insert(levels, value)
     end
   end
-  do
-    if subLevels then
-      for _,value in pairs(subLevels) do
-        (table.insert)(levels, value)
-      end
+  if subLevels then
+    for _, value in pairs(subLevels) do
+      table.insert(levels, value)
     end
-    do
-      if dailyLevels then
-        for _,value in pairs(dailyLevels) do
-          (table.insert)(levels, value)
-        end
-      end
-      do
-        if storyLevels then
-          for _,value in pairs(storyLevels) do
-            (table.insert)(levels, value)
-          end
-        end
-        do
-          local count = (table.count)(levels)
-          local poolLength = #self._levelWidgetPool
-          if poolLength < count then
-            for i = poolLength, count - 1 do
-              local go = (self._level):SpawnOneObject((self._levelCfg).widget)
-              ;
-              (table.insert)(self._levelWidgetPool, SeasonUILevel:New(go, self._levelAtlas, self._levelCfg))
-            end
-          end
-          do
-            for i = 1, #self._levelWidgetPool do
-              local widget = (self._levelWidgetPool)[i]
-              if i <= count then
-                widget:SetData(levels[i], self._componentInfo)
-              else
-                widget:SetData(nil)
-              end
-            end
-          end
-        end
-      end
+  end
+  if dailyLevels then
+    for _, value in pairs(dailyLevels) do
+      table.insert(levels, value)
+    end
+  end
+  if storyLevels then
+    for _, value in pairs(storyLevels) do
+      table.insert(levels, value)
+    end
+  end
+  local count = table.count(levels)
+  local poolLength = #self._levelWidgetPool
+  if count > poolLength then
+    for i = poolLength, count - 1 do
+      local go = self._level:SpawnOneObject(self._levelCfg.widget)
+      table.insert(self._levelWidgetPool, SeasonUILevel:New(go, self._levelAtlas, self._levelCfg))
+    end
+  end
+  for i = 1, #self._levelWidgetPool do
+    local widget = self._levelWidgetPool[i]
+    if i <= count then
+      widget:SetData(levels[i], self._componentInfo)
+    else
+      widget:SetData(nil)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI._CreateSignWidgets = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonUI:_CreateSignWidgets()
   self:ClearSignWidgets()
-  for _,_type in pairs(SeasonEventPointType) do
-    local eventPoints = ((self._mgr):SeasonMapManager()):GetEventPointsByType(_type)
+  for _, _type in pairs(SeasonEventPointType) do
+    local eventPoints = self._mgr:SeasonMapManager():GetEventPointsByType(_type)
     if eventPoints then
-      for _,eventPoint in pairs(eventPoints) do
+      for _, eventPoint in pairs(eventPoints) do
         if eventPoint:IsUnlock() and eventPoint:ModeAble() then
           local curProgressExpress = eventPoint:CurProgressExpress()
           if curProgressExpress then
             local expresses = curProgressExpress:GetExpresses(SeasonExpressType.Sign)
             if expresses then
-              for _,express in pairs(expresses) do
+              for _, express in pairs(expresses) do
                 local content = express:Content()
                 local signType = content.type
                 if signType == SeasonExpressTiming.Before then
@@ -211,27 +154,18 @@ SeasonUI._CreateSignWidgets = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.AddSign = function(self, eventPoint, express)
-  -- function num : 0_9 , upvalues : _ENV
+function SeasonUI:AddSign(eventPoint, express)
   local widget = self:_GetFreeSignWidget()
-  do
-    if not widget then
-      local go = (self._sign):SpawnOneObject("SeasonUISign")
-      widget = SeasonUISign:New(go, self._atlas)
-      ;
-      (table.insert)(self._signWidgetPool, widget)
-    end
-    widget:SetData(eventPoint, express)
+  if not widget then
+    local go = self._sign:SpawnOneObject("SeasonUISign")
+    widget = SeasonUISign:New(go, self._atlas)
+    table.insert(self._signWidgetPool, widget)
   end
+  widget:SetData(eventPoint, express)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.RemoveSign = function(self, eventPoint)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,widget in pairs(self._signWidgetPool) do
+function SeasonUI:RemoveSign(eventPoint)
+  for _, widget in pairs(self._signWidgetPool) do
     if widget:EventPoint() == eventPoint then
       widget:Clear()
       break
@@ -239,11 +173,8 @@ SeasonUI.RemoveSign = function(self, eventPoint)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI._GetFreeSignWidget = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for _,widget in pairs(self._signWidgetPool) do
+function SeasonUI:_GetFreeSignWidget()
+  for _, widget in pairs(self._signWidgetPool) do
     if widget:IsFree() then
       return widget
     end
@@ -251,67 +182,50 @@ SeasonUI._GetFreeSignWidget = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.ClearSignWidgets = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  for _,widget in pairs(self._signWidgetPool) do
+function SeasonUI:ClearSignWidgets()
+  for _, widget in pairs(self._signWidgetPool) do
     widget:Clear()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI._CreateBubbleWidgets = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local go = (self._bubble):SpawnOneObject("SeasonUIBubble")
+function SeasonUI:_CreateBubbleWidgets()
+  local go = self._bubble:SpawnOneObject("SeasonUIBubble")
   self._bubbleWidget = SeasonUIBubble:New(go, self._atlas)
-  ;
-  (self._bubbleWidget):SetData()
+  self._bubbleWidget:SetData()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.Bubble = function(self)
-  -- function num : 0_14
+function SeasonUI:Bubble()
   return self._bubbleWidget
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI._InitCfg = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._levelCfg = (UISeasonHelper.GetCurLevelInfo)()
-  if (self._levelCfg).atlas then
-    self._levelAtlasReq = (ResourceManager:GetInstance()):SyncLoadAsset((self._levelCfg).atlas, LoadType.SpriteAtlas)
-    self._levelAtlas = (self._levelAtlasReq).Obj
+function SeasonUI:_InitCfg()
+  self._levelCfg = UISeasonHelper.GetCurLevelInfo()
+  if self._levelCfg.atlas then
+    self._levelAtlasReq = ResourceManager:GetInstance():SyncLoadAsset(self._levelCfg.atlas, LoadType.SpriteAtlas)
+    self._levelAtlas = self._levelAtlasReq.Obj
   else
     self._levelAtlas = self._atlas
   end
-  ;
-  (self._level):SetObjectName((self._levelCfg).widget .. ".prefab")
-  self._funcAtlasName = (UISeasonHelper.GetCurFuncAtlas)()
+  self._level:SetObjectName(self._levelCfg.widget .. ".prefab")
+  self._funcAtlasName = UISeasonHelper.GetCurFuncAtlas()
   if self._funcAtlasName then
-    self._funcAtlasReq = (ResourceManager:GetInstance()):SyncLoadAsset(self._funcAtlasName, LoadType.SpriteAtlas)
-    self._funcAtlas = (self._funcAtlasReq).Obj
+    self._funcAtlasReq = ResourceManager:GetInstance():SyncLoadAsset(self._funcAtlasName, LoadType.SpriteAtlas)
+    self._funcAtlas = self._funcAtlasReq.Obj
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI._CreateFunctionWidgets = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function SeasonUI:_CreateFunctionWidgets()
   self:ClearFunctionWidgets()
-  for _,_type in pairs(SeasonEventPointType) do
-    local eventPoints = ((self._mgr):SeasonMapManager()):GetEventPointsByType(_type)
+  for _, _type in pairs(SeasonEventPointType) do
+    local eventPoints = self._mgr:SeasonMapManager():GetEventPointsByType(_type)
     if eventPoints then
-      for _,eventPoint in pairs(eventPoints) do
+      for _, eventPoint in pairs(eventPoints) do
         if eventPoint:IsUnlock() and eventPoint:ModeAble() then
           local curProgressExpress = eventPoint:CurProgressExpress()
           if curProgressExpress then
             local expresses = curProgressExpress:GetExpresses(SeasonExpressType.Function)
             if expresses then
-              for _,express in pairs(expresses) do
+              for _, express in pairs(expresses) do
                 local content = express:Content()
                 local signType = content.type
                 if signType == SeasonExpressTiming.Before then
@@ -327,27 +241,18 @@ SeasonUI._CreateFunctionWidgets = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.AddFunction = function(self, eventPoint, express)
-  -- function num : 0_17 , upvalues : _ENV
+function SeasonUI:AddFunction(eventPoint, express)
   local widget = self:_GetFreeFunctionWidget()
-  do
-    if not widget then
-      local go = (self._function):SpawnOneObject("SeasonUIFunction")
-      widget = SeasonUIFunction:New(go, self._funcAtlas)
-      ;
-      (table.insert)(self._functionWidgetPool, widget)
-    end
-    widget:SetData(eventPoint, express)
+  if not widget then
+    local go = self._function:SpawnOneObject("SeasonUIFunction")
+    widget = SeasonUIFunction:New(go, self._funcAtlas)
+    table.insert(self._functionWidgetPool, widget)
   end
+  widget:SetData(eventPoint, express)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.RemoveFunction = function(self, eventPoint)
-  -- function num : 0_18 , upvalues : _ENV
-  for _,widget in pairs(self._functionWidgetPool) do
+function SeasonUI:RemoveFunction(eventPoint)
+  for _, widget in pairs(self._functionWidgetPool) do
     if widget:EventPoint() == eventPoint then
       widget:Clear()
       break
@@ -355,11 +260,8 @@ SeasonUI.RemoveFunction = function(self, eventPoint)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI._GetFreeFunctionWidget = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  for _,widget in pairs(self._functionWidgetPool) do
+function SeasonUI:_GetFreeFunctionWidget()
+  for _, widget in pairs(self._functionWidgetPool) do
     if widget:IsFree() then
       return widget
     end
@@ -367,20 +269,14 @@ SeasonUI._GetFreeFunctionWidget = function(self)
   return nil
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.ClearFunctionWidgets = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  for _,widget in pairs(self._functionWidgetPool) do
+function SeasonUI:ClearFunctionWidgets()
+  for _, widget in pairs(self._functionWidgetPool) do
     widget:Clear()
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.RefreshFunction = function(self, eventPoint)
-  -- function num : 0_21 , upvalues : _ENV
-  for _,widget in pairs(self._functionWidgetPool) do
+function SeasonUI:RefreshFunction(eventPoint)
+  for _, widget in pairs(self._functionWidgetPool) do
     if widget:EventPoint() == eventPoint then
       widget:RefreshPosition()
       break
@@ -388,15 +284,10 @@ SeasonUI.RefreshFunction = function(self, eventPoint)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUI.GetEventPointByFunction = function(self, gameObject)
-  -- function num : 0_22 , upvalues : _ENV
-  for _,widget in pairs(self._functionWidgetPool) do
+function SeasonUI:GetEventPointByFunction(gameObject)
+  for _, widget in pairs(self._functionWidgetPool) do
     if widget:Function() == gameObject then
       return widget:EventPoint()
     end
   end
 end
-
-

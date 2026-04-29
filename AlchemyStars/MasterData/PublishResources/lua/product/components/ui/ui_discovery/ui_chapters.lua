@@ -1,61 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_chapters.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChapters", UIController)
 UIChapters = UIChapters
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChapters.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChapters:Constructor()
   self._module = self:GetModule(MissionModule)
-  self.data = (self._module):GetDiscoveryData()
+  self.data = self._module:GetDiscoveryData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapters.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChapters:OnShow(uiParams)
   self.chapterId = uiParams[1]
   self._openCallback = uiParams[2]
   self._closeCallback = uiParams[3]
-  local curChapter = (self.data):GetChapterByChapterId(self.chapterId)
-  local section = (self.data):GetDiscoverySectionByChapterId(self.chapterId)
-  self.chapters = (self.data):GetVisibleChaptersOfSection(section.id)
+  local curChapter = self.data:GetChapterByChapterId(self.chapterId)
+  local section = self.data:GetDiscoverySectionByChapterId(self.chapterId)
+  self.chapters = self.data:GetVisibleChaptersOfSection(section.id)
   local btnChapter = self:GetUIComponent("UISelectObjectPath", "btnChapter")
   self.uiDiscoveryChapterEnter = btnChapter:SpawnObject("UIDiscoveryChapterEnter")
-  ;
-  (self.uiDiscoveryChapterEnter):Init(true)
-  ;
-  (self.uiDiscoveryChapterEnter):Flush(self.chapterId)
+  self.uiDiscoveryChapterEnter:Init(true)
+  self.uiDiscoveryChapterEnter:Flush(self.chapterId)
   local content = self:GetUIComponent("UISelectObjectPath", "Content")
-  content:SpawnObjects("UIChaptersItem", (table.count)(self.chapters))
+  content:SpawnObjects("UIChaptersItem", table.count(self.chapters))
   local items = content:GetAllSpawnList()
   local i = 1
-  for k,v in pairs(self.chapters) do
-    (items[i]):Flush(v, curChapter)
+  for k, v in pairs(self.chapters) do
+    items[i]:Flush(v, curChapter)
     i = i + 1
   end
   if self._openCallback then
-    (self._openCallback)()
+    self._openCallback()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapters.OnHide = function(self)
-  -- function num : 0_2
+function UIChapters:OnHide()
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapters.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UIChapters:bgOnClick(go)
   self:CloseDialog()
 end
-
-

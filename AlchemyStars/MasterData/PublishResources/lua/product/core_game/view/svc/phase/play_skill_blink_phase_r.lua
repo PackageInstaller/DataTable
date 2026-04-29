@@ -1,22 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_blink_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillBlinkPhase", PlaySkillPhaseBase)
 PlaySkillBlinkPhase = PlaySkillBlinkPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillBlinkPhase.PlayFlight = function(self, TT, casterEntity, phaseParam, phaseIndex, phaseAdapter)
-  -- function num : 0_0 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
-  casterEntity:SetAnimatorControllerTriggers({phaseParam.castAnimation})
+function PlaySkillBlinkPhase:PlayFlight(TT, casterEntity, phaseParam, phaseIndex, phaseAdapter)
+  local effectService = self._world:GetService("Effect")
+  casterEntity:SetAnimatorControllerTriggers({
+    phaseParam.castAnimation
+  })
   if phaseParam.castEffectID and phaseParam.castEffectID ~= 0 then
     effectService:CreateEffect(phaseParam.castEffectID, casterEntity)
   end
   YIELD(TT, phaseParam.castDuration)
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport)
   local world = casterEntity:GetOwnerWorld()
   local playSkillInstructionService = world:GetService("PlaySkillInstruction")
@@ -25,13 +20,13 @@ PlaySkillBlinkPhase.PlayFlight = function(self, TT, casterEntity, phaseParam, ph
   YIELD(TT, phaseParam.stealthDuration)
   playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.TeleportShow, false, skillResult)
   playSkillInstructionService:Teleport(TT, casterEntity, RoleShowType.BuffNotify, false, skillResult)
-  casterEntity:SetAnimatorControllerTriggers({phaseParam.appearAnimation})
+  casterEntity:SetAnimatorControllerTriggers({
+    phaseParam.appearAnimation
+  })
   if phaseParam.appearEffectID and phaseParam.appearEffectID ~= 0 then
     effectService:CreateEffect(phaseParam.appearEffectID, casterEntity)
   end
   YIELD(TT, phaseParam.appearDuration)
-  local pieceService = (self._world):GetService("Piece")
+  local pieceService = self._world:GetService("Piece")
   pieceService:RemovePrismAt(skillResult:GetPosNew())
 end
-
-

@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/common/ui_activity_battlepass_n5_item_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5ItemIcon", UICustomWidget)
 UIActivityBattlePassN5ItemIcon = UIActivityBattlePassN5ItemIcon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5ItemIcon.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityBattlePassN5ItemIcon:OnShow(uiParams)
   self._anim = self:GetUIComponent("Animation", "animation")
   self._root = self:GetGameObject("animation")
   self._lvIcon = self:GetGameObject("lvIcon")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIcon.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityBattlePassN5ItemIcon:OnHide()
   self._anim = nil
   self._root = nil
   self._cg = nil
@@ -25,108 +15,78 @@ UIActivityBattlePassN5ItemIcon.OnHide = function(self)
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIcon.SetData_LvIcon = function(self, index, lv)
-  -- function num : 0_2
-  (self._lvIcon):SetActive(true)
+function UIActivityBattlePassN5ItemIcon:SetData_LvIcon(index, lv)
+  self._lvIcon:SetActive(true)
   local txt = self:GetUIComponent("UILocalizationText", "txt")
   local formatStr = "+Lv.%s"
   txt:SetText(lv)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIcon.SetData = function(self, index, roleAsset, callback, scale)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._lvIcon):SetActive(false)
-  if not scale then
-    self._scale = UIItemScale.Level2
-    self:_GetComponents()
-    self._index = index
-    self._roleAsset = roleAsset
-    self._callback = callback
-    local cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
-    if cfg_item == nil then
-      (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. (self._roleAsset).assetid)
-      return 
-    end
-    self._cg = cfg_item.Icon
-    self._colorEnum = cfg_item.Color
-    self:_OnValue()
+function UIActivityBattlePassN5ItemIcon:SetData(index, roleAsset, callback, scale)
+  self._lvIcon:SetActive(false)
+  self._scale = scale or UIItemScale.Level2
+  self:_GetComponents()
+  self._index = index
+  self._roleAsset = roleAsset
+  self._callback = callback
+  local cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
+  if cfg_item == nil then
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._roleAsset.assetid)
+    return
   end
+  self._cg = cfg_item.Icon
+  self._colorEnum = cfg_item.Color
+  self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIcon._GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityBattlePassN5ItemIcon:_GetComponents()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base, self._scale)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_4_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base, self._scale)
+  self.uiItem:SetClickCallBack(function(go)
     self:bgOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIcon._OnValue = function(self)
-  -- function num : 0_5
+function UIActivityBattlePassN5ItemIcon:_OnValue()
   local icon = self._cg
   local quality = self._colorEnum
-  local text1 = (self._roleAsset).count
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, itemId = (self._roleAsset).assetid})
+  local text1 = self._roleAsset.count
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    itemId = self._roleAsset.assetid
+  })
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIcon.bgOnClick = function(self, go)
-  -- function num : 0_6
+function UIActivityBattlePassN5ItemIcon:bgOnClick(go)
   if self._callback then
-    (self._callback)((self._roleAsset).assetid, (go.transform).position)
+    self._callback(self._roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIcon.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityBattlePassN5ItemIcon:PlayAnimationInSequence(index)
   if not self._anim then
-    return 
+    return
   end
   local stamp = index * 60
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, stamp
     self:_ResetAnimation()
-    ;
-    (self._root):SetActive(false)
+    self._root:SetActive(false)
     YIELD(TT, stamp)
     if self._root then
-      (self._root):SetActive(true)
-      ;
-      (self._anim):Play("UIeff_UIActivityBattlePassN5ItemIcon_in")
+      self._root:SetActive(true)
+      self._anim:Play("UIeff_UIActivityBattlePassN5ItemIcon_in")
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ItemIcon._ResetAnimation = function(self)
-  -- function num : 0_8
+function UIActivityBattlePassN5ItemIcon:_ResetAnimation()
   if not self._anim then
-    return 
+    return
   end
-  local state = (self._anim):get_Item("UIeff_UIActivityBattlePassN5ItemIcon_in")
+  local state = self._anim:get_Item("UIeff_UIActivityBattlePassN5ItemIcon_in")
   state.normalizedTime = 0
-  ;
-  (self._anim):Stop()
+  self._anim:Stop()
 end
-
-

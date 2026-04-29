@@ -1,225 +1,165 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_commonloading.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLoading", UIController)
 UICommonLoading = UICommonLoading
 local MIN_TIME = 3000
 local ATLAS_NAME = "UILoading.spriteatlas"
 local RATE = 3
--- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
 
-UICommonLoading.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICommonLoading:Constructor()
   self._processValue = 0
   self._loadingType = LoadingType.STATICPIC
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICommonLoading:OnShow(uiParams)
   self:InitComponents()
   self:AddListener()
-  if not uiParams or not uiParams[1] then
-    self._loadingType = LoadingType.STATICPIC
-    local loadingId = uiParams[2]
-    self._loadLevelEnd = false
-    ;
-    (self._goSTATICPIC):SetActive(self._loadingType == LoadingType.STATICPIC)
-    ;
-    (self._goBOTTOM):SetActive(self._loadingType == LoadingType.BOTTOM)
-    if self._loadingType == LoadingType.BOTTOM then
-      (self._blurMaskObject):SetActive(false)
-    elseif self._loadingType == LoadingType.STATICPIC then
-      self:FlushStaticPic(loadingId)
-    else
-      (Log.warn)("### LoadingType=", self._loadingType)
-    end
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.DelayExcute, self)
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  self._loadingType = uiParams and uiParams[1] or LoadingType.STATICPIC
+  local loadingId = uiParams[2]
+  self._loadLevelEnd = false
+  self._goSTATICPIC:SetActive(self._loadingType == LoadingType.STATICPIC)
+  self._goBOTTOM:SetActive(self._loadingType == LoadingType.BOTTOM)
+  if self._loadingType == LoadingType.BOTTOM then
+    self._blurMaskObject:SetActive(false)
+  elseif self._loadingType == LoadingType.STATICPIC then
+    self:FlushStaticPic(loadingId)
+  else
+    Log.warn("### LoadingType=", self._loadingType)
   end
+  GameGlobal.TaskManager():StartTask(self.DelayExcute, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.FlushStaticPic = function(self, loadingId)
-  -- function num : 0_2 , upvalues : _ENV
+function UICommonLoading:FlushStaticPic(loadingId)
   if not loadingId then
     local match = self:GetModule(MatchModule)
     local enterData = match:GetMatchEnterData()
     local levelId = enterData and enterData._level_id or nil
-    if levelId then
-      local cfg_level = (Cfg.cfg_level)[levelId]
-    end
+    local cfg_level = levelId and Cfg.cfg_level[levelId]
     if cfg_level then
       local loadingIds = cfg_level.LoadingId
       if loadingIds then
         if #loadingIds == 1 then
           loadingId = loadingIds[1]
         else
-          loadingId = (GameGlobal:LoadingManager()):FilterAndRandomLoadingID(loadingIds)
+          loadingId = GameGlobal:LoadingManager():FilterAndRandomLoadingID(loadingIds)
         end
       end
     end
   end
-  do
-    local newCg = self:CheakNewCG()
-    if newCg and newCg.Cg and self:GetLoadingCfg(newCg.Cg) then
-      loadingId = newCg.Cg
-    end
-    local cfg = self:GetLoadingCfg(loadingId)
-    if cfg and not cfg.Icon and not cfg.CName and not cfg.EName and not cfg.Desc then
-      (self._locationMiddle):SetActive(false)
-    else
-      ;
-      (self._locationMiddle):SetActive(true)
-    end
-    if cfg then
-      if cfg.CName then
-        (self._cName):SetText((StringTable.Get)(cfg.CName))
-      else
-        ;
-        (self._cName):SetText("")
-      end
-      if cfg.EName then
-        (self._eName):SetText((StringTable.Get)(cfg.EName))
-      else
-        ;
-        (self._eName):SetText("")
-      end
-      if cfg.Desc then
-        (self._desc):SetText((StringTable.Get)(cfg.Desc))
-      else
-        ;
-        (self._desc):SetText("")
-      end
-      if cfg.Cg then
-        (self._rawImageLoader):LoadImage(cfg.Cg)
-      end
-    end
-    ;
-    (self._blurMaskObject):SetActive(false)
+  local newCg = self:CheakNewCG()
+  if newCg and newCg.Cg and self:GetLoadingCfg(newCg.Cg) then
+    loadingId = newCg.Cg
   end
+  local cfg = self:GetLoadingCfg(loadingId)
+  if cfg and not cfg.Icon and not cfg.CName and not cfg.EName and not cfg.Desc then
+    self._locationMiddle:SetActive(false)
+  else
+    self._locationMiddle:SetActive(true)
+  end
+  if cfg then
+    if cfg.CName then
+      self._cName:SetText(StringTable.Get(cfg.CName))
+    else
+      self._cName:SetText("")
+    end
+    if cfg.EName then
+      self._eName:SetText(StringTable.Get(cfg.EName))
+    else
+      self._eName:SetText("")
+    end
+    if cfg.Desc then
+      self._desc:SetText(StringTable.Get(cfg.Desc))
+    else
+      self._desc:SetText("")
+    end
+    if cfg.Cg then
+      self._rawImageLoader:LoadImage(cfg.Cg)
+    end
+  end
+  self._blurMaskObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.CheakNewCG = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_loading_cg)({})
-  if cfgs and (table.count)(cfgs) > 0 then
+function UICommonLoading:CheakNewCG()
+  local cfgs = Cfg.cfg_loading_cg({})
+  if cfgs and table.count(cfgs) > 0 then
     for i = 1, #cfgs do
       local cfg = cfgs[i]
       local startTime = cfg.StartTime
       local endTime = cfg.EndTime
-      if cfg.TimeType ~= 0 then
-        local isGMT = not cfg.Active or not startTime or not endTime
-        do
-          local inner = self:CheckInner(startTime, endTime, isGMT)
-          if inner then
-            return cfg
-          end
-          -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out IF_STMT
-
+      if cfg.Active and startTime and endTime then
+        local isGMT = cfg.TimeType == 0
+        local inner = self:CheckInner(startTime, endTime, isGMT)
+        if inner then
+          return cfg
         end
       end
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.CheckInner = function(self, startTime, endTime, isGMT)
-  -- function num : 0_4 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  if not isGMT or not Enum_DateTimeZoneType.E_ZoneType_GMT then
-    local timeType = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
-  end
-  local nowTime_UTC = (math.ceil)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001) - loginModule:GetServerTimeZoneDiff()
-  local nowTime_GMT = (math.ceil)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001)
+function UICommonLoading:CheckInner(startTime, endTime, isGMT)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local timeType = isGMT and Enum_DateTimeZoneType.E_ZoneType_GMT or Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
+  local nowTime_UTC = math.ceil(GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001) - loginModule:GetServerTimeZoneDiff()
+  local nowTime_GMT = math.ceil(GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001)
   local nowTime = isGMT and nowTime_GMT or nowTime_UTC
   local inner = false
   local open = loginModule:GetTimeStampByTimeStr(startTime, timeType)
   local close = loginModule:GetTimeStampByTimeStr(endTime, timeType)
-  if open <= nowTime and nowTime < close then
+  if nowTime >= open and nowTime < close then
     inner = true
   end
   return inner
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.DelayExcute = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV, MIN_TIME
+function UICommonLoading:DelayExcute(TT)
   if self._loadingType == LoadingType.PROGRESS then
     YIELD(TT, MIN_TIME)
   end
   while not self._loadLevelEnd do
     YIELD(TT)
   end
-  while self._loadingType == LoadingType.PROGRESS and self._processValue < 100 do
-    YIELD(TT)
+  if self._loadingType == LoadingType.PROGRESS then
+    while self._processValue < 100 do
+      YIELD(TT)
+    end
   end
-  local lm = (GameGlobal.LoadingManager)()
+  local lm = GameGlobal.LoadingManager()
   if lm then
     lm:Excute()
   else
-    ;
-    (Log.fatal)("### LoadingManager is nil.")
+    Log.fatal("### LoadingManager is nil.")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.OnHide = function(self)
-  -- function num : 0_6
+function UICommonLoading:OnHide()
   self:RemoveListener()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.HandleLoadingUpdate = function(self, value)
-  -- function num : 0_7 , upvalues : _ENV
+function UICommonLoading:HandleLoadingUpdate(value)
   if self._loadingType == LoadingType.PROGRESS then
     self._processValue = value
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.HandleLoadLevelEnd = function(self, loaded)
-  -- function num : 0_8
+function UICommonLoading:HandleLoadLevelEnd(loaded)
   self._loadLevelEnd = loaded
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.GetLoadingCfg = function(self, loadingId)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg_loading = (Cfg.cfg_loading)({})
+function UICommonLoading:GetLoadingCfg(loadingId)
+  local cfg_loading = Cfg.cfg_loading({})
   if not cfg_loading then
-    (Log.fatal)("cfg_loading is nil !")
-    return 
+    Log.fatal("cfg_loading is nil !")
+    return
   end
-  local idx = nil
+  local idx
   if loadingId then
     return cfg_loading[loadingId]
   else
-    idx = (math.random)(1, (table.count)(cfg_loading))
+    idx = math.random(1, table.count(cfg_loading))
     return cfg_loading[idx]
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.InitComponents = function(self)
-  -- function num : 0_10
+function UICommonLoading:InitComponents()
   self._blurMask = self:GetUIComponent("H3DUIBlurHelper", "BlurMask")
   self._blurMaskObject = self:GetGameObject("BlurMask")
   self._rawImageLoader = self:GetUIComponent("RawImageLoader", "RawImage")
@@ -230,49 +170,32 @@ UICommonLoading.InitComponents = function(self)
   self._descRect = self:GetUIComponent("RectTransform", "Desc")
   self._locationMiddle = self:GetGameObject("LocationMiddle")
   self._goSTATICPIC = self:GetGameObject("STATICPIC")
-  ;
-  (self._goSTATICPIC):SetActive(false)
+  self._goSTATICPIC:SetActive(false)
   self._goBOTTOM = self:GetGameObject("BOTTOM")
-  ;
-  (self._goBOTTOM):SetActive(false)
+  self._goBOTTOM:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.AddListener = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UICommonLoading:AddListener()
   self:AttachEvent(GameEventType.LoadingProgressChanged, self.HandleLoadingUpdate)
   self:AttachEvent(GameEventType.LoadLevelEnd, self.HandleLoadLevelEnd)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.RemoveListener = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UICommonLoading:RemoveListener()
   self:DetachEvent(GameEventType.LoadingProgressChanged, self.HandleLoadingUpdate)
   self:DetachEvent(GameEventType.LoadLevelEnd, self.HandleLoadLevelEnd)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-UICommonLoading.CacheRT = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
-  local blurHelper = nil
+function UICommonLoading:CacheRT(TT)
+  local blurHelper
   if self._loadingType == LoadingType.BOTTOM then
     blurHelper = self:GetUIComponent("H3DUIBlurHelper", "BOTTOM")
-  else
-    if self._loadingType == LoadingType.STATICPIC then
-      blurHelper = self:GetUIComponent("H3DUIBlurHelper", "STATICPIC")
-    end
+  elseif self._loadingType == LoadingType.STATICPIC then
+    blurHelper = self:GetUIComponent("H3DUIBlurHelper", "STATICPIC")
   end
-  blurHelper.OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+  blurHelper.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local rt = blurHelper:RefreshBlurTexture()
-  local cacheRT = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+  local cacheRT = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
   YIELD(TT)
-  ;
-  ((UnityEngine.Graphics).Blit)(rt, cacheRT)
-  ;
-  ((GameGlobal.LoadingManager)()):CacheRT(cacheRT)
+  UnityEngine.Graphics.Blit(rt, cacheRT)
+  GameGlobal.LoadingManager():CacheRT(cacheRT)
 end
-
-

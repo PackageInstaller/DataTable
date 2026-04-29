@@ -1,34 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_record_pet_power_and_watch.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRecordPetPowerAndWatch", BuffLogicBase)
 BuffLogicRecordPetPowerAndWatch = BuffLogicRecordPetPowerAndWatch
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRecordPetPowerAndWatch.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicRecordPetPowerAndWatch:Constructor(buffInstance, logicParam)
   self._record = logicParam.record
   self._apply = logicParam.apply
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRecordPetPowerAndWatch.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicRecordPetPowerAndWatch:DoLogic()
   local petPowerStateList = {}
-  local world = (self._buffInstance):World()
-  local petEntity = (self._buffInstance):Entity()
+  local world = self._buffInstance:World()
+  local petEntity = self._buffInstance:Entity()
   if not petEntity then
-    return 
+    return
   end
   local petPstIDComponent = petEntity:PetPstID()
   local petPstID = petPstIDComponent:GetPstID()
   local curAttributeCmpt = petEntity:Attributes()
-  local buffComponent = (self._entity):BuffComponent()
+  local buffComponent = self._entity:BuffComponent()
   local recordKey = "BuffLogicRecordPetPowerAndWatch"
-  local activeSkillID = (petEntity:SkillInfo()):GetActiveSkillID()
+  local activeSkillID = petEntity:SkillInfo():GetActiveSkillID()
   local utilDataSvc = world:GetService("UtilData")
   local curReady = utilDataSvc:GetPetSkillReadyAttr(petEntity, activeSkillID)
   local curPower = curAttributeCmpt:GetAttribute("Power")
@@ -38,74 +28,59 @@ BuffLogicRecordPetPowerAndWatch.DoLogic = function(self)
     local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID)
     local curRound = battleStatComponent:GetLevelTotalRoundCount()
     local curRoundHadCastTargetSkill = false
-    local extraSkillIDList = (petEntity:SkillInfo()):GetExtraActiveSkillIDList()
-    if extraSkillIDList and #extraSkillIDList > 0 then
-      local activeSkillID = (petEntity:SkillInfo()):GetActiveSkillID()
+    local extraSkillIDList = petEntity:SkillInfo():GetExtraActiveSkillIDList()
+    if extraSkillIDList and 0 < #extraSkillIDList then
+      local activeSkillID = petEntity:SkillInfo():GetActiveSkillID()
       local curRoundHadCastSkillList = battleStatComponent:GetPetDoActiveSkillRecord(petPstID, curRound)
-      if curRoundHadCastSkillList and (table.count)(curRoundHadCastSkillList) > 0 and (table.icontains)(curRoundHadCastSkillList, activeSkillID) then
+      if curRoundHadCastSkillList and 0 < table.count(curRoundHadCastSkillList) and table.icontains(curRoundHadCastSkillList, activeSkillID) then
         curRoundHadCastTargetSkill = true
       end
     else
-      do
-        curRoundHadCastTargetSkill = false
-        local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID)
-        do
-          local curRound = battleStatComponent:GetLevelTotalRoundCount()
-          if lastDoActiveSkillRound and lastDoActiveSkillRound == curRound then
-            curRoundHadCastTargetSkill = true
-          end
-          if curRoundHadCastTargetSkill then
-            grayWatch = true
-            local keyStr = "HadSaveSkillGrayWatch" .. "_Round_" .. tostring(curRound) .. "_Skill_" .. tostring(activeSkillID)
-            local hadSaveSkillGrayWatch = buffComponent:GetBuffValue(keyStr)
-            if hadSaveSkillGrayWatch then
-              grayWatch = false
-            end
-          end
-          do
-            do
-              local recordPetPowerAndWatchData = {power = curPower, grayWatch = grayWatch, ready = curReady}
-              buffComponent:SetBuffValue(recordKey, recordPetPowerAndWatchData)
-              do return  end
-              if self._apply == 1 then
-                local recordPetPowerAndWatchData = buffComponent:GetBuffValue(recordKey)
-                if not recordPetPowerAndWatchData then
-                  return 
-                end
-                local recordPower = recordPetPowerAndWatchData.power
-                local recordGrayWatch = recordPetPowerAndWatchData.grayWatch
-                local recordReady = recordPetPowerAndWatchData.ready == 1
-                curAttributeCmpt:Modify("Power", recordPower)
-                local blsvc = world:GetService("BuffLogic")
-                blsvc:ChangePetActiveSkillReady(petEntity, recordReady)
-                local notifyView = false
-                do
-                  if curReady == 0 and recordReady == true then
-                    local notify = NTPowerReady:New(petEntity)
-                    ;
-                    (world:GetService("Trigger")):Notify(notify)
-                    notifyView = true
-                  end
-                  buffComponent:SetBuffValue(recordKey, nil)
-                  do
-                    if recordGrayWatch == false then
-                      local battleStatComponent = world:BattleStat()
-                      battleStatComponent:SetLastDoActiveSkillRound(petPstID, nil)
-                    end
-                    do
-                      local buffResult = BuffResultRecordPetPowerAndWatch:New(petEntity:GetID(), petPstID, recordPower, recordReady, recordGrayWatch, notifyView)
-                      do return buffResult end
-                      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+      curRoundHadCastTargetSkill = false
+      local lastDoActiveSkillRound = battleStatComponent:GetLastDoActiveSkillRound(petPstID)
+      local curRound = battleStatComponent:GetLevelTotalRoundCount()
+      if lastDoActiveSkillRound and lastDoActiveSkillRound == curRound then
+        curRoundHadCastTargetSkill = true
       end
     end
+    if curRoundHadCastTargetSkill then
+      grayWatch = true
+      local keyStr = "HadSaveSkillGrayWatch" .. "_Round_" .. tostring(curRound) .. "_Skill_" .. tostring(activeSkillID)
+      local hadSaveSkillGrayWatch = buffComponent:GetBuffValue(keyStr)
+      if hadSaveSkillGrayWatch then
+        grayWatch = false
+      end
+    end
+    local recordPetPowerAndWatchData = {
+      power = curPower,
+      grayWatch = grayWatch,
+      ready = curReady
+    }
+    buffComponent:SetBuffValue(recordKey, recordPetPowerAndWatchData)
+    return
+  elseif self._apply == 1 then
+    local recordPetPowerAndWatchData = buffComponent:GetBuffValue(recordKey)
+    if not recordPetPowerAndWatchData then
+      return
+    end
+    local recordPower = recordPetPowerAndWatchData.power
+    local recordGrayWatch = recordPetPowerAndWatchData.grayWatch
+    local recordReady = recordPetPowerAndWatchData.ready == 1
+    curAttributeCmpt:Modify("Power", recordPower)
+    local blsvc = world:GetService("BuffLogic")
+    blsvc:ChangePetActiveSkillReady(petEntity, recordReady)
+    local notifyView = false
+    if curReady == 0 and recordReady == true then
+      local notify = NTPowerReady:New(petEntity)
+      world:GetService("Trigger"):Notify(notify)
+      notifyView = true
+    end
+    buffComponent:SetBuffValue(recordKey, nil)
+    if recordGrayWatch == false then
+      local battleStatComponent = world:BattleStat()
+      battleStatComponent:SetLastDoActiveSkillRound(petPstID, nil)
+    end
+    local buffResult = BuffResultRecordPetPowerAndWatch:New(petEntity:GetID(), petPstID, recordPower, recordReady, recordGrayWatch, notifyView)
+    return buffResult
   end
 end
-
-

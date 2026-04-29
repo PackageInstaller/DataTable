@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_in_skill_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionIsInSkillRange", ActionIsBase)
 ActionIsInSkillRange = ActionIsInSkillRange
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsInSkillRange.Constructor = function(self)
-  -- function num : 0_0
+function ActionIsInSkillRange:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsInSkillRange.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (AINewNode.IsEntityDead)(self.m_entityOwn) then
+function ActionIsInSkillRange:OnUpdate()
+  if AINewNode.IsEntityDead(self.m_entityOwn) then
     return AINewNodeStatus.Failure
   end
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return AINewNodeStatus.Failure
   end
   local nSkillID = self:GetLogicData(1)
@@ -31,15 +21,12 @@ ActionIsInSkillRange.OnUpdate = function(self)
   end
   local entityTarget = aiComponent:GetTargetEntity()
   local isTargetInSkillRange = false
-  if nSkillID > 0 then
+  if 0 < nSkillID then
     isTargetInSkillRange = self:IsEntityInSkillRange(nSkillID, entityTarget)
   end
-  local bSuccess = (nSkillID > 0 and isTargetInSkillRange)
+  local bSuccess = 0 < nSkillID and isTargetInSkillRange
   if bSuccess then
     return AINewNodeStatus.Success
   end
-  do return AINewNodeStatus.Failure end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return AINewNodeStatus.Failure
 end
-
-

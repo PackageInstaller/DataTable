@@ -1,160 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/scene/homeland_scene_effect_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandSceneEffectManager", Object)
 HomelandSceneEffectManager = HomelandSceneEffectManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandSceneEffectManager.Constructor = function(self)
-  -- function num : 0_0
+function HomelandSceneEffectManager:Constructor()
   self._list = {}
   self._indexs = 1
   self._deadList = {}
   self._isOp = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.Init = function(self, homelandClient)
-  -- function num : 0_1
+function HomelandSceneEffectManager:Init(homelandClient)
   self._homelandClient = homelandClient
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.NewEffect = function(self, effectName, inAni, loopAni, outAni)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandSceneEffectManager:NewEffect(effectName, inAni, loopAni, outAni)
   local ids = self._indexs
   local hh = HomelandSceneEffect:New(ids, effectName, inAni, loopAni, outAni)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._list)[ids] = hh
+  self._list[ids] = hh
   self._indexs = self._indexs + 1
   return ids, hh
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.SetScale = function(self, ids, value)
-  -- function num : 0_3
-  if (self._list)[ids] == nil then
-    return 
+function HomelandSceneEffectManager:SetScale(ids, value)
+  if self._list[ids] == nil then
+    return
   end
-  ;
-  ((self._list)[ids]):SetScale(value)
+  self._list[ids]:SetScale(value)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.SetVisible = function(self, ids, value)
-  -- function num : 0_4
-  if (self._list)[ids] == nil then
-    return 
+function HomelandSceneEffectManager:SetVisible(ids, value)
+  if self._list[ids] == nil then
+    return
   end
-  ;
-  ((self._list)[ids]):SetVisible(value)
+  self._list[ids]:SetVisible(value)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.UpdatePosRota = function(self, ids, pos, rota)
-  -- function num : 0_5
-  if (self._list)[ids] == nil then
-    return 
+function HomelandSceneEffectManager:UpdatePosRota(ids, pos, rota)
+  if self._list[ids] == nil then
+    return
   end
-  ;
-  ((self._list)[ids]):UpdatePosRota(pos, rota)
+  self._list[ids]:UpdatePosRota(pos, rota)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.SetPos = function(self, ids, pos)
-  -- function num : 0_6
-  if (self._list)[ids] == nil then
-    return 
+function HomelandSceneEffectManager:SetPos(ids, pos)
+  if self._list[ids] == nil then
+    return
   end
-  ;
-  ((self._list)[ids]):SetPos(pos)
+  self._list[ids]:SetPos(pos)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.SetRota = function(self, ids, rota)
-  -- function num : 0_7
-  if (self._list)[ids] == nil then
-    return 
+function HomelandSceneEffectManager:SetRota(ids, rota)
+  if self._list[ids] == nil then
+    return
   end
-  ;
-  ((self._list)[ids]):SetRota(rota)
+  self._list[ids]:SetRota(rota)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.Execute = function(self, ids)
-  -- function num : 0_8
-  if (self._list)[ids] == nil then
-    return 
+function HomelandSceneEffectManager:Execute(ids)
+  if self._list[ids] == nil then
+    return
   end
-  ;
-  ((self._list)[ids]):Execute()
+  self._list[ids]:Execute()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.Exit = function(self, ids)
-  -- function num : 0_9
-  if (self._list)[ids] == nil then
-    return 
+function HomelandSceneEffectManager:Exit(ids)
+  if self._list[ids] == nil then
+    return
   end
-  ;
-  ((self._list)[ids]):Exit()
+  self._list[ids]:Exit()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.DeletEffect = function(self, ids)
-  -- function num : 0_10
-  if (self._list)[ids] == nil then
-    return 
+function HomelandSceneEffectManager:DeletEffect(ids)
+  if self._list[ids] == nil then
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._deadList)[ids] = true
+  self._deadList[ids] = true
   self._isOp = true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandSceneEffectManager:Update(deltaTimeMS)
   if self._isOp == false then
-    return 
+    return
   end
-  for k,v in pairs(self._deadList) do
-    if (self._list)[k] ~= nil then
-      ((self._list)[k]):Dispose()
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._list)[k] = nil
+  for k, v in pairs(self._deadList) do
+    if self._list[k] ~= nil then
+      self._list[k]:Dispose()
+      self._list[k] = nil
     end
   end
   self._deadList = {}
   self._isOp = false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandSceneEffectManager.Dispose = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  for k,v in pairs(self._list) do
+function HomelandSceneEffectManager:Dispose()
+  for k, v in pairs(self._list) do
     v:Dispose()
   end
   self._list = {}
 end
-
-

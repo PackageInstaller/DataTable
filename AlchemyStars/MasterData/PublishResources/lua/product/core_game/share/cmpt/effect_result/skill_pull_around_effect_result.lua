@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_pull_around_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPullAroundEffectResult", SkillEffectResultBase)
 SkillPullAroundEffectResult = SkillPullAroundEffectResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPullAroundEffectResult.Constructor = function(self, targetId, targetPos, gridElementChangeTable)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPullAroundEffectResult:Constructor(targetId, targetPos, gridElementChangeTable)
   self._effectType = SkillEffectType.PullAround
   self._targetId = targetId
   self._targetPos = targetPos
   self._gridElementChangeTable = gridElementChangeTable
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPullAroundEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPullAroundEffectResult:GetEffectType()
   return SkillEffectType.PullAround
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPullAroundEffectResult.GetGridPos = function(self)
-  -- function num : 0_2
+function SkillPullAroundEffectResult:GetGridPos()
   return self._targetPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPullAroundEffectResult.GetGridElementChangeTable = function(self)
-  -- function num : 0_3
+function SkillPullAroundEffectResult:GetGridElementChangeTable()
   return self._gridElementChangeTable
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPullAroundEffectResult.GetTargetID = function(self)
-  -- function num : 0_4
+function SkillPullAroundEffectResult:GetTargetID()
   return self._targetId
 end
-
-

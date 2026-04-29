@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cast_select_info_active_skill_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CastSelectInfoActiveSkillCommand", IEntityCommand)
 CastSelectInfoActiveSkillCommand = CastSelectInfoActiveSkillCommand
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 CastSelectInfoActiveSkillCommand.CommandType = "CastSelectInfoActiveSkill"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-CastSelectInfoActiveSkillCommand.Constructor = function(self)
-  -- function num : 0_0
+function CastSelectInfoActiveSkillCommand:Constructor()
   self._commandType = "CastSelectInfoActiveSkill"
   self._activeSkillID = -1
   self._casterPstID = -1
   self._selectInfoList = {}
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_1 , upvalues : _ENV
+function CastSelectInfoActiveSkillCommand:GetExecStateID(runAtClient)
   if runAtClient then
     return GameStateID.PreviewActiveSkill
   else
@@ -29,78 +17,48 @@ CastSelectInfoActiveSkillCommand.GetExecStateID = function(self, runAtClient)
   end
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.GetCommandType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CastSelectInfoActiveSkillCommand:GetCommandType()
   return CastSelectInfoActiveSkillCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CastSelectInfoActiveSkillCommand:IsExecExcluded()
   return 1
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CastSelectInfoActiveSkillCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.GetCmdActiveSkillID = function(self)
-  -- function num : 0_5
+function CastSelectInfoActiveSkillCommand:GetCmdActiveSkillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.GetCmdCasterPstID = function(self)
-  -- function num : 0_6
+function CastSelectInfoActiveSkillCommand:GetCmdCasterPstID()
   return self._casterPstID
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.SetCmdActiveSkillID = function(self, activeSkillID)
-  -- function num : 0_7
+function CastSelectInfoActiveSkillCommand:SetCmdActiveSkillID(activeSkillID)
   self._activeSkillID = activeSkillID
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.SetCmdCasterPstID = function(self, pstID)
-  -- function num : 0_8
+function CastSelectInfoActiveSkillCommand:SetCmdCasterPstID(pstID)
   self._casterPstID = pstID
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.SetCmdSelectInfo = function(self, result)
-  -- function num : 0_9 , upvalues : _ENV
+function CastSelectInfoActiveSkillCommand:SetCmdSelectInfo(result)
   if result then
     self._selectInfoList = {}
-    for _,v in ipairs(result) do
-      (table.insert)(self._selectInfoList, v)
+    for _, v in ipairs(result) do
+      table.insert(self._selectInfoList, v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.GetCmdSelectInfo = function(self)
-  -- function num : 0_10
+function CastSelectInfoActiveSkillCommand:GetCmdSelectInfo()
   return self._selectInfoList
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.ToNetMessage = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CastSelectInfoActiveSkillCommand:ToNetMessage()
   local msg = CEventCastSelectInfoActiveSkillCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -109,18 +67,13 @@ CastSelectInfoActiveSkillCommand.ToNetMessage = function(self)
   msg.CmdIndex = self.CmdIndex
   msg.ActiveSkillID = self._activeSkillID
   msg.CasterPstID = self._casterPstID
-  for i,v in ipairs(self._selectInfoList) do
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-    (msg.SelectInfoList)[#msg.SelectInfoList + 1] = v
+  for i, v in ipairs(self._selectInfoList) do
+    msg.SelectInfoList[#msg.SelectInfoList + 1] = v
   end
   return msg
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-CastSelectInfoActiveSkillCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_12 , upvalues : _ENV
+function CastSelectInfoActiveSkillCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -128,11 +81,7 @@ CastSelectInfoActiveSkillCommand.FromNetMessage = function(self, msg)
   self.CmdIndex = msg.CmdIndex
   self._activeSkillID = msg.ActiveSkillID
   self._casterPstID = msg.CasterPstID
-  for i,v in ipairs(msg.SelectInfoList) do
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._selectInfoList)[#self._selectInfoList + 1] = v
+  for i, v in ipairs(msg.SelectInfoList) do
+    self._selectInfoList[#self._selectInfoList + 1] = v
   end
 end
-
-

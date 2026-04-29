@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/send/ui_collect_card_friend_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardFriendItem", UICustomWidget)
 UICollectCardFriendItem = UICollectCardFriendItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardFriendItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UICollectCardFriendItem:OnShow(uiParam)
   self._nameTex = self:GetUIComponent("UILocalizationText", "NameTex")
   self._nameTex2 = self:GetUIComponent("UILocalizationText", "NameTex2")
   self._lvTex = self:GetUIComponent("UILocalizationText", "Lv")
@@ -23,21 +16,14 @@ UICollectCardFriendItem.OnShow = function(self, uiParam)
   self._frame = self:GetUIComponent("RawImageLoader", "headFrame")
   self._headBg = self:GetUIComponent("UICircleMaskLoader", "headbg")
   self._frameRect = self:GetUIComponent("RectTransform", "headFrame")
-  ;
-  (self._selectGo):SetActive(false)
-  ;
-  (self._noSelect):SetActive(true)
-  ;
-  ((self._nameTex).gameObject):SetActive(false)
-  ;
-  ((self._nameTex2).gameObject):SetActive(true)
+  self._selectGo:SetActive(false)
+  self._noSelect:SetActive(true)
+  self._nameTex.gameObject:SetActive(false)
+  self._nameTex2.gameObject:SetActive(true)
   self:AttachEvent(GameEventType.OnCollectCardSelectFriend, self.Select)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.SetData = function(self, idx, info, callback, currentSelectIdx)
-  -- function num : 0_1
+function UICollectCardFriendItem:SetData(idx, info, callback, currentSelectIdx)
   self._idx = idx
   self._info = info
   self._callback = callback
@@ -47,133 +33,83 @@ UICollectCardFriendItem.SetData = function(self, idx, info, callback, currentSel
   self:Select(currentSelectIdx)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.SetLv = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._lvTex):SetText((StringTable.Get)("str_collect_card_friend_tips3", (self._info).level))
+function UICollectCardFriendItem:SetLv()
+  self._lvTex:SetText(StringTable.Get("str_collect_card_friend_tips3", self._info.level))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.SetFriendName = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local showName = nil
-  if (string.isnullorempty)((self._info).remark_name) then
-    showName = (self._info).nick
+function UICollectCardFriendItem:SetFriendName()
+  local showName
+  if string.isnullorempty(self._info.remark_name) then
+    showName = self._info.nick
   else
-    showName = (self._info).remark_name
+    showName = self._info.remark_name
   end
-  ;
-  (self._nameTex):SetText(showName)
-  ;
-  (self._nameTex2):SetText(showName)
+  self._nameTex:SetText(showName)
+  self._nameTex2:SetText(showName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.GetHeadBgName = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg_head_bg = (Cfg.cfg_player_head_bg)[(self._info).head_bg]
-  do
-    if not cfg_head_bg then
-      local bid = (HelperProxy:GetInstance()):GetHeadBgDefaultID()
-      cfg_head_bg = (Cfg.cfg_player_head_bg)[bid]
-    end
-    return cfg_head_bg.Icon
+function UICollectCardFriendItem:GetHeadBgName()
+  local cfg_head_bg = Cfg.cfg_player_head_bg[self._info.head_bg]
+  if not cfg_head_bg then
+    local bid = HelperProxy:GetInstance():GetHeadBgDefaultID()
+    cfg_head_bg = Cfg.cfg_player_head_bg[bid]
   end
+  return cfg_head_bg.Icon
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.GetHeadIconName = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg_head = (Cfg.cfg_role_head_image)[(self._info).head]
-  do
-    if not cfg_head then
-      local id = (HelperProxy:GetInstance()):GetHeadIconDefaultID()
-      cfg_head = (Cfg.cfg_role_head_image)[id]
-    end
-    if not cfg_head then
-      return "", ""
-    end
-    return cfg_head.Icon, cfg_head.Tag
+function UICollectCardFriendItem:GetHeadIconName()
+  local cfg_head = Cfg.cfg_role_head_image[self._info.head]
+  if not cfg_head then
+    local id = HelperProxy:GetInstance():GetHeadIconDefaultID()
+    cfg_head = Cfg.cfg_role_head_image[id]
   end
+  if not cfg_head then
+    return "", ""
+  end
+  return cfg_head.Icon, cfg_head.Tag
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.GetHeadFrameName = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg_head_frame = (Cfg.cfg_role_head_frame)[(self._info).frame_id]
-  do
-    if not cfg_head_frame then
-      local id = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
-      cfg_head_frame = (Cfg.cfg_role_head_frame)[id]
-    end
-    return cfg_head_frame.Icon
+function UICollectCardFriendItem:GetHeadFrameName()
+  local cfg_head_frame = Cfg.cfg_role_head_frame[self._info.frame_id]
+  if not cfg_head_frame then
+    local id = HelperProxy:GetInstance():GetHeadFrameDefaultID()
+    cfg_head_frame = Cfg.cfg_role_head_frame[id]
   end
+  return cfg_head_frame.Icon
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.GetHeadBgName = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg_head_bg = (Cfg.cfg_player_head_bg)[(self._info).head_bg]
-  do
-    if not cfg_head_bg then
-      local bid = (HelperProxy:GetInstance()):GetHeadBgDefaultID()
-      cfg_head_bg = (Cfg.cfg_player_head_bg)[bid]
-    end
-    return cfg_head_bg.Icon
+function UICollectCardFriendItem:GetHeadBgName()
+  local cfg_head_bg = Cfg.cfg_player_head_bg[self._info.head_bg]
+  if not cfg_head_bg then
+    local bid = HelperProxy:GetInstance():GetHeadBgDefaultID()
+    cfg_head_bg = Cfg.cfg_player_head_bg[bid]
   end
+  return cfg_head_bg.Icon
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.SetHead = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UICollectCardFriendItem:SetHead()
   local iconName, iconTag = self:GetHeadIconName()
-  ;
-  (self._headBg):LoadImage(self:GetHeadBgName())
-  ;
-  (self._head):LoadImage(iconName)
-  if not (string.isnullorempty)(iconTag) then
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._headRect, iconTag)
+  self._headBg:LoadImage(self:GetHeadBgName())
+  self._head:LoadImage(iconName)
+  if not string.isnullorempty(iconTag) then
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._headRect, iconTag)
   end
-  ;
-  (self._frame):LoadImage(self:GetHeadFrameName())
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self._headBgRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self._headBgMaskRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self._frameRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self._headRoot, RoleHeadFrameSizeType.Size4)
+  self._frame:LoadImage(self:GetHeadFrameName())
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self._headBgRect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self._headBgMaskRect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self._frameRect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self._headRoot, RoleHeadFrameSizeType.Size4)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.Select = function(self, idx)
-  -- function num : 0_9
-  (self._selectGo):SetActive(idx == self._idx)
-  ;
-  (self._noSelect):SetActive(idx ~= self._idx)
-  ;
-  ((self._nameTex).gameObject):SetActive(idx == self._idx)
-  ;
-  ((self._nameTex2).gameObject):SetActive(idx ~= self._idx)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UICollectCardFriendItem:Select(idx)
+  self._selectGo:SetActive(idx == self._idx)
+  self._noSelect:SetActive(idx ~= self._idx)
+  self._nameTex.gameObject:SetActive(idx == self._idx)
+  self._nameTex2.gameObject:SetActive(idx ~= self._idx)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardFriendItem.BtnOnClick = function(self, go)
-  -- function num : 0_10
+function UICollectCardFriendItem:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
-
-

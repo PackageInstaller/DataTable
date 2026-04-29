@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/pop/ui_collect_card_pop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardPop", UIController)
 UICollectCardPop = UICollectCardPop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardPop.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UICollectCardPop:OnShow(uiParam)
   self._desc = uiParam[1]
   self._sureCb = uiParam[2]
   self._cancelCb = uiParam[3]
@@ -17,51 +10,34 @@ UICollectCardPop.OnShow = function(self, uiParam)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardPop.GetComponents = function(self)
-  -- function num : 0_1
+function UICollectCardPop:GetComponents()
   self._titleTex = self:GetUIComponent("UILocalizationText", "Title")
   self._descTex = self:GetUIComponent("UILocalizationText", "Desc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardPop.OnValue = function(self)
-  -- function num : 0_2
+function UICollectCardPop:OnValue()
   if self._title then
-    (self._titleTex):SetText(self._title)
+    self._titleTex:SetText(self._title)
   end
   if self._desc then
-    (self._descTex):SetText(self._desc)
+    self._descTex:SetText(self._desc)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardPop.SureBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UICollectCardPop:SureBtnOnClick(go)
   if self._sureCb then
-    (self._sureCb)()
+    self._sureCb()
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardPop.CancelBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UICollectCardPop:CancelBtnOnClick(go)
   if self._cancelCb then
-    (self._cancelCb)()
+    self._cancelCb()
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardPop.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UICollectCardPop:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

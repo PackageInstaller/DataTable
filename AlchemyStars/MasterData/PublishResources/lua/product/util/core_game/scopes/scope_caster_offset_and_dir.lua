@@ -1,21 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_caster_offset_and_dir.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_CasterOffsetAndDir", SkillScopeCalculator_Base)
 SkillScopeCalculator_CasterOffsetAndDir = SkillScopeCalculator_CasterOffsetAndDir
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_CasterOffsetAndDir.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_CasterOffsetAndDir:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local wholeArea = self:_CalFixedPos(scopeParam.pos)
-  for i,v in ipairs(wholeArea) do
+  for i, v in ipairs(wholeArea) do
     wholeArea[i] = Vector2(v.x * casterDir.x + casterPos.x, v.y * casterDir.y + casterPos.y)
   end
   local result = SkillScopeResult:New(SkillScopeType.CasterOffsetAndDir, casterPos, wholeArea, wholeArea)
   return result
 end
-
-

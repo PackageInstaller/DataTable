@@ -1,44 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/common/ui_season_talent_cost_item_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentCostItemBase", UICustomWidget)
 UISeasonTalentCostItemBase = UISeasonTalentCostItemBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentCostItemBase.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTalentCostItemBase:OnShow()
   self:AttachEvent(GameEventType.ItemCountChanged, self.ShowTex)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentCostItemBase.SetData = function(self, id, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonTalentCostItemBase:SetData(id, callback)
   self._numberTex = self:GetUIComponent("UILocalizationText", "number")
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
   self._id = id
   self._callback = callback
   self:ShowTex()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentCostItemBase.ShowTex = function(self)
-  -- function num : 0_2
-  local number = (self._itemModule):GetItemCount(self._id)
-  ;
-  (self._numberTex):SetText(number)
+function UISeasonTalentCostItemBase:ShowTex()
+  local number = self._itemModule:GetItemCount(self._id)
+  self._numberTex:SetText(number)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentCostItemBase.IconOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonTalentCostItemBase:IconOnClick(go)
   if self._callback then
-    (self._callback)(self._id, go)
+    self._callback(self._id, go)
   end
 end
-
-

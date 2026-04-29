@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_notice/ui_notice_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UINoticeBtnItem", UICustomWidget)
 UINoticeBtnItem = UINoticeBtnItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UINoticeBtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UINoticeBtnItem:OnShow(uiParams)
   self:AttachEvent(GameEventType.UINoticeItemClick, self.UINoticeItemClick)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   self._noticeData = loginModule:GetNoticeData()
   if self._noticeData == nil then
-    (Log.fatal)("###noticedata -- notice data is nil !")
-    return 
+    Log.fatal("###noticedata -- notice data is nil !")
+    return
   end
   self._isNew = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeBtnItem.SetData = function(self, idx, notice, callback)
-  -- function num : 0_1
+function UINoticeBtnItem:SetData(idx, notice, callback)
   self:_GetComponents()
   self._idx = idx
   self._notice = notice
@@ -31,10 +21,7 @@ UINoticeBtnItem.SetData = function(self, idx, notice, callback)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeBtnItem._GetComponents = function(self)
-  -- function num : 0_2
+function UINoticeBtnItem:_GetComponents()
   self._select = self:GetGameObject("select")
   self._title = self:GetUIComponent("UILocalizationText", "name")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
@@ -42,80 +29,57 @@ UINoticeBtnItem._GetComponents = function(self)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeBtnItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._title):SetText((self._notice).Text_NoticeTitle)
-  ;
-  (Log.debug)("notice.TextInfo.NoticeTitle : ", (self._notice).Text_NoticeTitle)
-  self._isNew = (self._noticeData):CheckNoticeNew((self._notice).NoticeId, (self._notice).NoticeType)
-  ;
-  (self._newGo):SetActive(self._isNew)
-  local content = (self._notice).Text_NoticeContent
+function UINoticeBtnItem:_OnValue()
+  self._title:SetText(self._notice.Text_NoticeTitle)
+  Log.debug("notice.TextInfo.NoticeTitle : ", self._notice.Text_NoticeTitle)
+  self._isNew = self._noticeData:CheckNoticeNew(self._notice.NoticeId, self._notice.NoticeType)
+  self._newGo:SetActive(self._isNew)
+  local content = self._notice.Text_NoticeContent
   if not content then
-    (Log.error)("###[UINoticeBtnItem] notice content is nil !")
-    return 
+    Log.error("###[UINoticeBtnItem] notice content is nil !")
+    return
   else
-    ;
-    (Log.debug)("###[UINoticeBtnItem] notice content : ", content)
+    Log.debug("###[UINoticeBtnItem] notice content : ", content)
   end
-  local str1 = (string.sub)(content, 1, 1)
-  str1 = (string.trim)(str1)
-  local str2 = (string.sub)(content, -1)
-  str2 = (string.trim)(str2)
+  local str1 = string.sub(content, 1, 1)
+  str1 = string.trim(str1)
+  local str2 = string.sub(content, -1)
+  str2 = string.trim(str2)
   local icon = ""
   if str1 == "{" and str2 == "}" then
-    local tab = (cjson.decode)(content)
+    local tab = cjson.decode(content)
     if tab then
       icon = tab.icon
     else
-      ;
-      (Log.fatal)("###notice json decode fail ! content --> ", content)
+      Log.fatal("###notice json decode fail ! content --> ", content)
     end
   else
-    do
-      icon = "notice_20200602_icon4"
-      if (string.isnullorempty)(icon) == false then
-        (self._icon):LoadImage(icon)
-      end
-    end
+    icon = "notice_20200602_icon4"
+  end
+  if string.isnullorempty(icon) == false then
+    self._icon:LoadImage(icon)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeBtnItem.bgOnClick = function(self)
-  -- function num : 0_4
+function UINoticeBtnItem:bgOnClick()
   if self._isCurrent then
-    return 
+    return
   end
-  ;
-  (self._anim):Play("uieff_Notice_BtnItem_OnClick")
+  self._anim:Play("uieff_Notice_BtnItem_OnClick")
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeBtnItem.UINoticeItemClick = function(self, currIdx, type)
-  -- function num : 0_5
-  self._isCurrent = (self._notice).NoticeType == type and self._idx == currIdx
-  if type == (self._notice).NoticeType and self._idx == currIdx and self._isNew then
-    (self._noticeData):CancelNoticeNew((self._notice).NoticeId, (self._notice).NoticeType)
+function UINoticeBtnItem:UINoticeItemClick(currIdx, type)
+  self._isCurrent = self._notice.NoticeType == type and self._idx == currIdx
+  if type == self._notice.NoticeType and self._idx == currIdx and self._isNew then
+    self._noticeData:CancelNoticeNew(self._notice.NoticeId, self._notice.NoticeType)
     self._isNew = false
-    ;
-    (self._newGo):SetActive(self._isNew)
+    self._newGo:SetActive(self._isNew)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeBtnItem.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UINoticeBtnItem:OnHide()
   self:DetachEvent(GameEventType.UINoticeItemClick, self.UINoticeItemClick)
 end
-
-

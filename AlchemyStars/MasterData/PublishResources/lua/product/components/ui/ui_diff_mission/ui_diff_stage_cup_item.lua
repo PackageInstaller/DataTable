@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_diff_mission/ui_diff_stage_cup_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffStageCupItem", UICustomWidget)
 UIDiffStageCupItem = UIDiffStageCupItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffStageCupItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIDiffStageCupItem:OnShow(uiParam)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageCupItem.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDiffStageCupItem:GetComponents()
   self._descTex = self:GetUIComponent("UILocalizationText", "desc")
   self._img = self:GetUIComponent("Image", "img")
   self._bg = self:GetUIComponent("Image", "bg")
@@ -25,84 +15,56 @@ UIDiffStageCupItem.GetComponents = function(self)
   self._atlas = self:GetAsset("UIDiffMission.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageCupItem.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_difficulty_mission_enties)[self._id]
+function UIDiffStageCupItem:OnValue()
+  local cfg = Cfg.cfg_difficulty_mission_enties[self._id]
   if not cfg then
-    (Log.error)("###[UIDiffStageCupItem] cfg is nil ! id --> ", self._id)
+    Log.error("###[UIDiffStageCupItem] cfg is nil ! id --> ", self._id)
   end
   self._desc = ""
   local cond = cfg.Cond
   if cond then
     local desc = cfg.Desc
     if desc then
-      local uiModoule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
+      local uiModoule = GameGlobal.GetUIModule(DifficultyMissionModule)
       self._desc = uiModoule:GetDiffMissionEnties(desc)
     end
   end
-  do
-    ;
-    (self._descTex):SetText(self._desc)
+  self._descTex:SetText(self._desc)
+  self._award = nil
+  local awards = cfg.Rewards
+  if awards then
+    local award = ItemAsset:New()
+    award.id = awards[1][1]
+    award.count = awards[1][2]
+    self._award = award
+  end
+  local sprite, bg
+  if self._finish then
+    sprite = self._atlas:GetSprite("map_black_icon02")
+    bg = self._atlas:GetSprite("map_black_di02")
     self._award = nil
-    local awards = cfg.Rewards
-    do
-      if awards then
-        local award = ItemAsset:New()
-        award.id = (awards[1])[1]
-        award.count = (awards[1])[2]
-        self._award = award
-      end
-      local sprite, bg = nil, nil
-      if self._finish then
-        sprite = (self._atlas):GetSprite("map_black_icon02")
-        bg = (self._atlas):GetSprite("map_black_di02")
-        self._award = nil
-      else
-        sprite = (self._atlas):GetSprite("map_black_icon03")
-        bg = (self._atlas):GetSprite("map_black_di03")
-      end
-      -- DECOMPILER ERROR at PC71: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._img).sprite = sprite
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._bg).sprite = bg
-      ;
-      (self._awardGo):SetActive(self._award ~= nil)
-      do
-        if self._award then
-          local cfg_item = (Cfg.cfg_item)[(self._award).id]
-          if not cfg_item then
-            (Log.error)("###[UIDiffStageCupItem] cfg_item is nil ! id --> ", (self._award).id)
-          end
-          ;
-          (self._awardIcon):LoadImage(cfg_item.Icon)
-          ;
-          (self._awardCount):SetText((self._award).count)
-        end
-        -- DECOMPILER ERROR: 3 unprocessed JMP targets
-      end
+  else
+    sprite = self._atlas:GetSprite("map_black_icon03")
+    bg = self._atlas:GetSprite("map_black_di03")
+  end
+  self._img.sprite = sprite
+  self._bg.sprite = bg
+  self._awardGo:SetActive(self._award ~= nil)
+  if self._award then
+    local cfg_item = Cfg.cfg_item[self._award.id]
+    if not cfg_item then
+      Log.error("###[UIDiffStageCupItem] cfg_item is nil ! id --> ", self._award.id)
     end
+    self._awardIcon:LoadImage(cfg_item.Icon)
+    self._awardCount:SetText(self._award.count)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageCupItem.SetData = function(self, id, finish)
-  -- function num : 0_3
+function UIDiffStageCupItem:SetData(id, finish)
   self._id = id
   self._finish = finish
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageCupItem.OnHide = function(self)
-  -- function num : 0_4
+function UIDiffStageCupItem:OnHide()
 end
-
-

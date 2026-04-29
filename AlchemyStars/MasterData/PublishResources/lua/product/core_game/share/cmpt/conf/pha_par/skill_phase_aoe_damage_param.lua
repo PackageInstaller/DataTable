@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_aoe_damage_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseAOEDamageParam", SkillPhaseParamBase)
 SkillPhaseAOEDamageParam = SkillPhaseAOEDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseAOEDamageParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseAOEDamageParam:Constructor(t)
   self._casterEffectID = t.casterEffectID
   self._hitPointDelay = t.hitPointDelay
   self._intervalTime = t.intervalTime
@@ -17,60 +10,43 @@ SkillPhaseAOEDamageParam.Constructor = function(self, t)
   self._hitAnimName = t.hitAnimName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAOEDamageParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseAOEDamageParam:GetCacheTable()
   local t = {}
   if self._casterEffectID and self._casterEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._casterEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._casterEffectID].ResPath,
+      1
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAOEDamageParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseAOEDamageParam:GetPhaseType()
   return SkillViewPhaseType.AOEDamage
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAOEDamageParam.GetSkillCastEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseAOEDamageParam:GetSkillCastEffectID()
   return self._casterEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAOEDamageParam.GetSkillHitPointDelay = function(self)
-  -- function num : 0_4
+function SkillPhaseAOEDamageParam:GetSkillHitPointDelay()
   return self._hitPointDelay
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAOEDamageParam.GetSkillAOEInterval = function(self)
-  -- function num : 0_5
+function SkillPhaseAOEDamageParam:GetSkillAOEInterval()
   return self._intervalTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAOEDamageParam.GetSkillHitEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseAOEDamageParam:GetSkillHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseAOEDamageParam.GetSkillHitAnimName = function(self)
-  -- function num : 0_7
+function SkillPhaseAOEDamageParam:GetSkillHitAnimName()
   return self._hitAnimName
 end
-
-

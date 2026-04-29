@@ -1,57 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/quest/ui_battlepass_cn1_quest_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1QuestMain", UICustomWidget)
 UIBattlePassCN1QuestMain = UIBattlePassCN1QuestMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1QuestMain._SetCurComponent = function(self, index)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cmptId = (UIActivityBattlePassHelper.Component_Quest)(self._campaign, index)
+function UIBattlePassCN1QuestMain:_SetCurComponent(index)
+  self._cmptId, self._component, self._componentInfo = UIActivityBattlePassHelper.Component_Quest(self._campaign, index)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattlePassCN1QuestMain:OnShow(uiParams)
   self._index = 1
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain.OnHide = function(self)
-  -- function num : 0_2
+function UIBattlePassCN1QuestMain:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain.SetData = function(self, campaign, tipsCallback)
-  -- function num : 0_3
+function UIBattlePassCN1QuestMain:SetData(campaign, tipsCallback)
   self._campaign = campaign
   self._tipsCallback = tipsCallback
   self:_SetCurComponent(self._index)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain.Refresh_ByParams = function(self, params)
-  -- function num : 0_4
+function UIBattlePassCN1QuestMain:Refresh_ByParams(params)
   if not self.view then
-    return 
+    return
   end
-  if not params then
-    params = {}
-  end
+  params = params or {}
   if params.expData == true then
     self:_SetExpInfo(params.expUpgrade)
   end
   self:_SetTabBtns()
   self:_SetDynamicList()
   if params.resetPos then
-    (self._dynamicListHelper):MovePanelToItemIndex(0, 0)
+    self._dynamicListHelper:MovePanelToItemIndex(0, 0)
   end
   if params.anim_ListItem then
     self:_DynamicListPlayAnimation()
@@ -61,129 +40,99 @@ UIBattlePassCN1QuestMain.Refresh_ByParams = function(self, params)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._ReLoadData = function(self, TT, res, callback)
-  -- function num : 0_5
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+function UIBattlePassCN1QuestMain:_ReLoadData(TT, res, callback)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   callback()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._CheckQuestDailyReset = function(self, callback)
-  -- function num : 0_6
+function UIBattlePassCN1QuestMain:_CheckQuestDailyReset(callback)
   local dailyIndex = 1
-  if self._index == dailyIndex and (self._component):Check_CamQuestDailyReset() then
-    (self._component):Start_HandleCamQuestDailyReset(function(TT, res)
-    -- function num : 0_6_0 , upvalues : self, callback
-    if res:GetSucc() then
-      self:_ReLoadData(TT, res, callback)
-    else
-      callback()
-    end
-  end
-)
-    return 
+  if self._index == dailyIndex and self._component:Check_CamQuestDailyReset() then
+    self._component:Start_HandleCamQuestDailyReset(function(TT, res)
+      if res:GetSucc() then
+        self:_ReLoadData(TT, res, callback)
+      else
+        callback()
+      end
+    end)
+    return
   end
   callback()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._SetExpInfo = function(self, upgrade)
-  -- function num : 0_7 , upvalues : _ENV
-  self._expInfoPool = (UIWidgetHelper.SpawnObject)(self, "expInfoPool", "UIBattlePassCN1ExpInfo")
-  ;
-  (self._expInfoPool):SetData(2, self._campaign, upgrade, function()
-    -- function num : 0_7_0 , upvalues : self
-    self:Refresh_ByParams({resetPos = false, expData = true, expUpgrade = true, anim_PlayIn = false, anim_ListItem = false})
-  end
-)
+function UIBattlePassCN1QuestMain:_SetExpInfo(upgrade)
+  self._expInfoPool = UIWidgetHelper.SpawnObject(self, "expInfoPool", "UIBattlePassCN1ExpInfo")
+  self._expInfoPool:SetData(2, self._campaign, upgrade, function()
+    self:Refresh_ByParams({
+      resetPos = false,
+      expData = true,
+      expUpgrade = true,
+      anim_PlayIn = false,
+      anim_ListItem = false
+    })
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._SetTabBtns = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBattlePassCN1QuestMain:_SetTabBtns()
   self._tabBtnIds = {}
   for i = 1, 3 do
-    local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_Quest)(self._campaign, i)
+    local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_Quest(self._campaign, i)
     if component and componentInfo then
-      (table.insert)(self._tabBtnIds, i)
+      table.insert(self._tabBtnIds, i)
     end
   end
-  self._tabBtns = (UIWidgetHelper.SpawnObjects)(self, "_tabBtns", "UIBattlePassCN1QuestTabBtn", #self._tabBtnIds)
-  for i,v in ipairs(self._tabBtns) do
-    v:SetData((self._tabBtnIds)[i], self._campaign, function(index)
-    -- function num : 0_8_0 , upvalues : self
-    self:_SetTabSelect(index)
+  self._tabBtns = UIWidgetHelper.SpawnObjects(self, "_tabBtns", "UIBattlePassCN1QuestTabBtn", #self._tabBtnIds)
+  for i, v in ipairs(self._tabBtns) do
+    v:SetData(self._tabBtnIds[i], self._campaign, function(index)
+      self:_SetTabSelect(index)
+    end)
+    v:Refresh(self._index == self._tabBtnIds[i])
   end
-)
-    v:Refresh(self._index == (self._tabBtnIds)[i])
-  end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._SetTabSelect = function(self, index)
-  -- function num : 0_9
+function UIBattlePassCN1QuestMain:_SetTabSelect(index)
   self._index = index
   self:_SetCurComponent(self._index)
   self:_CheckQuestDailyReset(function()
-    -- function num : 0_9_0 , upvalues : self
-    self:Refresh_ByParams({resetPos = true, expData = false, expUpgrade = false, anim_PlayIn = false, anim_ListItem = true})
-  end
-)
+    self:Refresh_ByParams({
+      resetPos = true,
+      expData = false,
+      expUpgrade = false,
+      anim_PlayIn = false,
+      anim_ListItem = true
+    })
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._SetDynamicListData = function(self)
-  -- function num : 0_10
-  self._dynamicListInfo = (self._component):GetQuestInfo()
-  self._questStatus = (self._component):GetCampaignQuestStatus(self._dynamicListInfo)
+function UIBattlePassCN1QuestMain:_SetDynamicListData()
+  self._dynamicListInfo = self._component:GetQuestInfo()
+  self._questStatus = self._component:GetCampaignQuestStatus(self._dynamicListInfo)
   self:_SetFilterDynamicList()
-  ;
-  (self._component):SortQuestInfoByCampaignQuestStatus(self._dynamicListInfo)
+  self._component:SortQuestInfoByCampaignQuestStatus(self._dynamicListInfo)
   self:SortQuestInfoByCampaignQuestStatus()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._SetFilterDynamicList = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIBattlePassCN1QuestMain:_SetFilterDynamicList()
   local dynamicListInfo = {}
-  for _,dynamicInfo in pairs(self._dynamicListInfo) do
-    local cfgInfo = (Cfg.cfg_quest)[(dynamicInfo._questInfo).quest_id]
-    local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-    local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-    local status = (self._component):CheckCampaignQuestStatus(dynamicInfo._questInfo)
-    local timeInfo = ((self._componentInfo).m_quest_time_param_map)[(dynamicInfo._questInfo).quest_id]
-    -- DECOMPILER ERROR at PC65: Unhandled construct in 'MakeBoolean' P3
-
-    -- DECOMPILER ERROR at PC65: Unhandled construct in 'MakeBoolean' P3
-
-    if ((cfgInfo.DateType and cfgInfo.DateType > 0 and cfgInfo.IsNotShowBeforStartTime and status == CampaignQuestStatus.CQS_NotStart and not cfgInfo.DateType) or timeInfo.m_end_time ~= 0) and timeInfo.m_end_time < curTime then
-      do
-        (table.insert)(dynamicListInfo, dynamicInfo)
-        -- DECOMPILER ERROR at PC66: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC66: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for _, dynamicInfo in pairs(self._dynamicListInfo) do
+    local cfgInfo = Cfg.cfg_quest[dynamicInfo._questInfo.quest_id]
+    local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+    local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    local status = self._component:CheckCampaignQuestStatus(dynamicInfo._questInfo)
+    local timeInfo = self._componentInfo.m_quest_time_param_map[dynamicInfo._questInfo.quest_id]
+    if cfgInfo.DateType and cfgInfo.DateType > 0 and cfgInfo.IsNotShowBeforStartTime and status == CampaignQuestStatus.CQS_NotStart then
+    elseif cfgInfo.DateType and cfgInfo.DateType > 0 and status == CampaignQuestStatus.CQS_Over then
+    elseif timeInfo.m_end_time ~= 0 and curTime > timeInfo.m_end_time then
+    else
+      table.insert(dynamicListInfo, dynamicInfo)
     end
   end
   self._dynamicListInfo = dynamicListInfo
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain.SortQuestInfoByCampaignQuestStatus = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIBattlePassCN1QuestMain:SortQuestInfoByCampaignQuestStatus()
   local defaultIndex = {}
-  for k,v in ipairs(self._dynamicListInfo) do
+  for k, v in ipairs(self._dynamicListInfo) do
     defaultIndex[v] = k
   end
   local val = {}
@@ -192,132 +141,102 @@ UIBattlePassCN1QuestMain.SortQuestInfoByCampaignQuestStatus = function(self)
   val[CampaignQuestStatus.CQS_Taken] = 2
   val[CampaignQuestStatus.CQS_NotStart] = 3
   val[CampaignQuestStatus.CQS_Over] = 4
-  ;
-  (table.sort)(self._dynamicListInfo, function(a, b)
-    -- function num : 0_12_0 , upvalues : self, val, _ENV, defaultIndex
-    local statusA = (self._component):CheckCampaignQuestStatus(a._questInfo)
-    local statusB = (self._component):CheckCampaignQuestStatus(b._questInfo)
-    if val[statusA] >= val[statusB] then
-      do return val[statusA] == val[statusB] end
-      local daily_resetA = (((self._componentInfo).m_quest_time_param_map)[(a._questInfo).quest_id]).m_need_daily_reset and 1 or 0
-      local daily_resetB = (((self._componentInfo).m_quest_time_param_map)[(b._questInfo).quest_id]).m_need_daily_reset and 1 or 0
-      if daily_resetB >= daily_resetA then
-        do return daily_resetA == daily_resetB end
-        local dateTypeA = ((Cfg.cfg_quest)[(a._questInfo).quest_id]).DateType or 0
-        local dateTypeB = ((Cfg.cfg_quest)[(b._questInfo).quest_id]).DateType or 0
-        if dateTypeB >= dateTypeA then
-          do return dateTypeA == dateTypeB end
-          do return defaultIndex[a] < defaultIndex[b] end
-          -- DECOMPILER ERROR: 13 unprocessed JMP targets
-        end
-      end
+  table.sort(self._dynamicListInfo, function(a, b)
+    local statusA = self._component:CheckCampaignQuestStatus(a._questInfo)
+    local statusB = self._component:CheckCampaignQuestStatus(b._questInfo)
+    if val[statusA] ~= val[statusB] then
+      return val[statusA] < val[statusB]
     end
-  end
-)
+    local daily_resetA = self._componentInfo.m_quest_time_param_map[a._questInfo.quest_id].m_need_daily_reset and 1 or 0
+    local daily_resetB = self._componentInfo.m_quest_time_param_map[b._questInfo.quest_id].m_need_daily_reset and 1 or 0
+    if daily_resetA ~= daily_resetB then
+      return daily_resetA > daily_resetB
+    end
+    local dateTypeA = Cfg.cfg_quest[a._questInfo.quest_id].DateType or 0
+    local dateTypeB = Cfg.cfg_quest[b._questInfo.quest_id].DateType or 0
+    if dateTypeA ~= dateTypeB then
+      return dateTypeA > dateTypeB
+    end
+    return defaultIndex[a] < defaultIndex[b]
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._SetDynamicList = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIBattlePassCN1QuestMain:_SetDynamicList()
   self:_SetDynamicListData()
   if not self._dynamicListHelper then
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self:GetUIComponent("UIDynamicScrollView", "_dynamicList"), "UIBattlePassCN1QuestCell", function(listItem, itemIndex)
-    -- function num : 0_13_0 , upvalues : self
-    self:_SetCellData(listItem, itemIndex)
-  end
-)
+      self:_SetCellData(listItem, itemIndex)
+    end)
   end
   local itemCount = #self._dynamicListInfo
   local itemCountPerRow = 1
-  ;
-  (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._SetCellData = function(self, listItem, index, rightItem)
-  -- function num : 0_14
-  local quest = (self._dynamicListInfo)[index]
-  local status = (self._questStatus)[quest]
+function UIBattlePassCN1QuestMain:_SetCellData(listItem, index, rightItem)
+  local quest = self._dynamicListInfo[index]
+  local status = self._questStatus[quest]
   local questInfo = quest:QuestInfo()
   if quest ~= nil then
     listItem:SetData(index, self._campaign, quest, status, self._componentInfo, function(questInfo)
-    -- function num : 0_14_0 , upvalues : self
-    (self._component):Start_HandleOneKeyTakeQuest(function(res, rewards)
-      -- function num : 0_14_0_0 , upvalues : self
-      self:_OnGetRewards(res, rewards)
-    end
-)
-  end
-, self._tipsCallback)
+      self._component:Start_HandleOneKeyTakeQuest(function(res, rewards)
+        self:_OnGetRewards(res, rewards)
+      end)
+    end, self._tipsCallback)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._DynamicListPlayAnimation = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local tb = (self._dynamicListHelper):GetVisibleItem()
-  for _,v in ipairs(tb) do
-    (v.item):PlayAnimationInSequence(v.index)
+function UIBattlePassCN1QuestMain:_DynamicListPlayAnimation()
+  local tb = self._dynamicListHelper:GetVisibleItem()
+  for _, v in ipairs(tb) do
+    v.item:PlayAnimationInSequence(v.index)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._OnGetRewards = function(self, res, rewards)
-  -- function num : 0_16 , upvalues : _ENV
+function UIBattlePassCN1QuestMain:_OnGetRewards(res, rewards)
   if res:GetSucc() then
-    local lvMax = (UIActivityBattlePassHelper.CheckIsLevelMax)(self._campaign)
+    local lvMax = UIActivityBattlePassHelper.CheckIsLevelMax(self._campaign)
     if lvMax then
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_battlepass_buy_deluxe_notify_maxlv"))
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+      ToastManager.ShowToast(StringTable.Get("str_activity_battlepass_buy_deluxe_notify_maxlv"))
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
     else
-      ;
-      (UIActivityHelper.ShowUIGetRewards)(rewards)
+      UIActivityHelper.ShowUIGetRewards(rewards)
     end
   else
-    do
-      ;
-      (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_16_0 , upvalues : self
-    self:Refresh_ByParams({resetPos = true, expData = false, expUpgrade = false, anim_PlayIn = true, anim_ListItem = true})
-  end
-, function()
-    -- function num : 0_16_1 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
-    end
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:Refresh_ByParams({
+        resetPos = true,
+        expData = false,
+        expUpgrade = false,
+        anim_PlayIn = true,
+        anim_ListItem = true
+      })
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._PlayAnimIn = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  for i,v in ipairs(self._tabBtns) do
+function UIBattlePassCN1QuestMain:_PlayAnimIn()
+  for i, v in ipairs(self._tabBtns) do
     v:PlayAnimationInSequence(i)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1QuestMain._OnQuestUpdate = function(self, quests)
-  -- function num : 0_18
+function UIBattlePassCN1QuestMain:_OnQuestUpdate(quests)
   if not self.view or not self._component then
-    return 
+    return
   end
-  if not quests then
-    quests = {}
-  end
-  local isContain = (self._component):IsContainQuest(quests)
+  quests = quests or {}
+  local isContain = self._component:IsContainQuest(quests)
   if not isContain then
-    return 
+    return
   end
-  self:Refresh_ByParams({resetPos = false, expData = false, expUpgrade = false, anim_PlayIn = false, anim_ListItem = false})
+  self:Refresh_ByParams({
+    resetPos = false,
+    expData = false,
+    expUpgrade = false,
+    anim_PlayIn = false,
+    anim_ListItem = false
+  })
 end
-
-

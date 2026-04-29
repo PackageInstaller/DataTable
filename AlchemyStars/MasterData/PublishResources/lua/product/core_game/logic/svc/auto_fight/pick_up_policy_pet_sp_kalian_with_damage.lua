@@ -1,31 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_sp_kalian_with_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetSPKaLianWithDamage", PickUpPolicy_Base)
 PickUpPolicy_PetSPKaLianWithDamage = PickUpPolicy_PetSPKaLianWithDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetSPKaLianWithDamage.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_PetSPKaLianWithDamage:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local validPosIdxList, validPosList = self:_CalcPickUpValidGridList(petEntity, activeSkillID)
   local pickPosList, atkPosList, targetIds, extraParam = self:_CalPickPosPolicy_PetSPKaLian_WithDamage(calcParam.TT, petEntity, activeSkillID, casterPos, validPosList)
   return pickPosList, atkPosList, targetIds, extraParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetSPKaLianWithDamage._CalPickPosPolicy_PetSPKaLian_WithDamage = function(self, TT, petEntity, activeSkillID, casterPos, validPosList)
-  -- function num : 0_1 , upvalues : _ENV
-  local utilScope = (self._world):GetService("UtilScopeCalc")
+function PickUpPolicy_PetSPKaLianWithDamage:_CalPickPosPolicy_PetSPKaLian_WithDamage(TT, petEntity, activeSkillID, casterPos, validPosList)
+  local utilScope = self._world:GetService("UtilScopeCalc")
   local tInfo = {}
-  for _,v2 in ipairs(validPosList) do
+  for _, v2 in ipairs(validPosList) do
     local convertCount = 0
     local dir = utilScope:GetStandardDirection8D(v2 - casterPos)
     local posForward = v2 + dir
@@ -36,70 +26,59 @@ PickUpPolicy_PetSPKaLianWithDamage._CalPickPosPolicy_PetSPKaLian_WithDamage = fu
     if self:_PetKaLian_CanGridConvertToRed(posBackward, casterPos) then
       convertCount = convertCount + 1
     end
-    if convertCount > 0 then
-      local tMonsters, tMonsterPos = nil, nil
-      if (self._world):MatchType() ~= MatchType.MT_BlackFist then
-        tMonsters = utilScope:SelectNearestMonsterOnPos(v2, 1)
+    if 0 < convertCount then
+      local tMonsters, tMonsterPos
+      if self._world:MatchType() ~= MatchType.MT_BlackFist then
+        tMonsters, tMonsterPos = utilScope:SelectNearestMonsterOnPos(v2, 1)
         YIELD(TT)
       else
-        local enemyTeamEntity = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
+        local enemyTeamEntity = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
         tMonsters = {enemyTeamEntity}
-        -- DECOMPILER ERROR at PC65: Overwrote pending register: R18 in 'AssignReg'
-
+        tMonsterPos = {
+          enemyTeamEntity:GetGridPosition()
+        }
       end
-      do
-        local scopeCalculator = utilScope:GetSkillScopeCalc()
-        local attackRangeScopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.AngleFreeLine, {widthThreshold = 1, noExtend = 1}, v2, (petEntity:BodyArea()):GetArea(), petEntity:GetGridDirection(), SkillTargetType.MonsterTrap, petEntity:GetGridPosition(), petEntity)
-        if not attackRangeScopeResult:GetAttackRange() then
-          local attackRange = {}
-        end
-        local targetSelector = (self._world):GetSkillScopeTargetSelector()
-        if not targetSelector:DoSelectSkillTarget(petEntity, SkillTargetType.Monster, attackRangeScopeResult, activeSkillID) then
-          local targetIds = {}
-        end
-        do
-          local candidateInfo = {index = #tInfo, pos = v2, convertCount = convertCount, nearestMonsterCount = #tMonsters, nearestMonsterDistance = #tMonsterPos > 0 and (Vector2.Distance)(v2, tMonsterPos[1]) or nil, attackRange = attackRange, targetIds = targetIds}
-          ;
-          (table.insert)(tInfo, candidateInfo)
-          -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      local scopeCalculator = utilScope:GetSkillScopeCalc()
+      local attackRangeScopeResult = scopeCalculator:ComputeScopeRange(SkillScopeType.AngleFreeLine, {widthThreshold = 1, noExtend = 1}, v2, petEntity:BodyArea():GetArea(), petEntity:GetGridDirection(), SkillTargetType.MonsterTrap, petEntity:GetGridPosition(), petEntity)
+      local attackRange = attackRangeScopeResult:GetAttackRange() or {}
+      local targetSelector = self._world:GetSkillScopeTargetSelector()
+      local targetIds = targetSelector:DoSelectSkillTarget(petEntity, SkillTargetType.Monster, attackRangeScopeResult, activeSkillID) or {}
+      local candidateInfo = {
+        index = #tInfo,
+        pos = v2,
+        convertCount = convertCount,
+        nearestMonsterCount = #tMonsters,
+        nearestMonsterDistance = 0 < #tMonsterPos and Vector2.Distance(v2, tMonsterPos[1]) or nil,
+        attackRange = attackRange,
+        targetIds = targetIds
+      }
+      table.insert(tInfo, candidateInfo)
     end
   end
   if #tInfo == 0 then
     return {}, {}, {}, {}
   end
-  ;
-  (table.sort)(tInfo, function(a, b)
-    -- function num : 0_1_0
-    if b.convertCount >= a.convertCount then
-      do return a.convertCount == b.convertCount end
-      local countA = #a.targetIds
-      local countB = #b.targetIds
-      if countB >= countA then
-        do return countA == countB end
-        do return a.index < b.index end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+  table.sort(tInfo, function(a, b)
+    if a.convertCount ~= b.convertCount then
+      return a.convertCount > b.convertCount
     end
-  end
-)
+    local countA = #a.targetIds
+    local countB = #b.targetIds
+    if countA ~= countB then
+      return countA > countB
+    end
+    return a.index < b.index
+  end)
   local final = tInfo[1]
   YIELD(TT)
-  return {final.pos}, final.attackRange, final.targetIds, {}
+  return {
+    final.pos
+  }, final.attackRange, final.targetIds, {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetSPKaLianWithDamage._PetKaLian_CanGridConvertToRed = function(self, pos, casterPos)
-  -- function num : 0_2 , upvalues : _ENV
-  local utilScope = (self._world):GetService("UtilScopeCalc")
-  local lsvcBoard = (self._world):GetService("BoardLogic")
+function PickUpPolicy_PetSPKaLianWithDamage:_PetKaLian_CanGridConvertToRed(pos, casterPos)
+  local utilScope = self._world:GetService("UtilScopeCalc")
+  local lsvcBoard = self._world:GetService("BoardLogic")
   if not utilScope:IsValidPiecePos(pos) then
     return false
   end
@@ -114,5 +93,3 @@ PickUpPolicy_PetSPKaLianWithDamage._PetKaLian_CanGridConvertToRed = function(sel
   end
   return true
 end
-
-

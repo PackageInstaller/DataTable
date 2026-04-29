@@ -1,93 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_rotate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionRotate", AirActionBase)
 AirActionRotate = AirActionRotate
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionRotate.Constructor = function(self, pet, target, baseTime)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionRotate:Constructor(pet, target, baseTime)
   self._pet = pet
   self._target = target
   if baseTime then
     self._baseTime = baseTime
   else
-    local forward = ((self._pet):Transform()).forward
-    local dir = (Vector3.Normalize)(target - (self._pet):WorldPosition())
-    local angle = (Vector3.Angle)(forward, dir)
+    local forward = self._pet:Transform().forward
+    local dir = Vector3.Normalize(target - self._pet:WorldPosition())
+    local angle = Vector3.Angle(forward, dir)
     local angle2time = 1.75
     self._baseTime = angle * angle2time
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionRotate.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AirActionRotate:Start()
   if not self._target then
     self._running = false
-    return 
+    return
   end
-  local delta = self._target - (self._pet):WorldPosition()
+  local delta = self._target - self._pet:WorldPosition()
   if self._baseTime <= 5 then
     delta.y = 0
-    ;
-    (self._pet):SetRotation((Quaternion.LookRotation)(delta, Vector3.up))
+    self._pet:SetRotation(Quaternion.LookRotation(delta, Vector3.up))
     self._running = false
-    return 
-  else
-    if delta:Magnitude() < 1e-06 then
-      self._running = false
-      AirLog("转向方向为0，不处理", (debug.traceback)())
-      return 
-    end
+    return
+  elseif delta:Magnitude() < 1.0E-6 then
+    self._running = false
+    AirLog("转向方向为0，不处理", debug.traceback())
+    return
   end
   self.duration = 0
   self._running = true
-  self._startTime = (GameGlobal:GetInstance()):GetCurrentTime()
-  local newPos = Vector3((self._target).x, (((self._pet):Transform()).position).y, (self._target).z)
-  self._targetRotation = (Quaternion.LookRotation)(newPos - (((self._pet):Transform()).position):Clone(), Vector3.up)
-  self._originRotation = ((self._pet):Transform()).rotation
+  self._startTime = GameGlobal:GetInstance():GetCurrentTime()
+  local newPos = Vector3(self._target.x, self._pet:Transform().position.y, self._target.z)
+  self._targetRotation = Quaternion.LookRotation(newPos - self._pet:Transform().position:Clone(), Vector3.up)
+  self._originRotation = self._pet:Transform().rotation
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionRotate.Update = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
+function AirActionRotate:Update(deltaTimeMS)
   if self._running == false then
-    return 
+    return
   end
-  self._duration = (GameGlobal:GetInstance()):GetCurrentTime() - self._startTime
-  if self._baseTime < self._duration then
+  self._duration = GameGlobal:GetInstance():GetCurrentTime() - self._startTime
+  if self._duration > self._baseTime then
     self._running = false
     self._duration = self._baseTime
   end
   if self._pet then
-    (self._pet):SetRotation((Quaternion.Lerp)(self._originRotation, self._targetRotation, self._duration / self._baseTime))
+    self._pet:SetRotation(Quaternion.Lerp(self._originRotation, self._targetRotation, self._duration / self._baseTime))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionRotate.IsOver = function(self)
-  -- function num : 0_3
+function AirActionRotate:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionRotate.Stop = function(self)
-  -- function num : 0_4
+function AirActionRotate:Stop()
   self._running = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionRotate.GetPets = function(self)
-  -- function num : 0_5
-  return {self._pet}
+function AirActionRotate:GetPets()
+  return {
+    self._pet
+  }
 end
-
-

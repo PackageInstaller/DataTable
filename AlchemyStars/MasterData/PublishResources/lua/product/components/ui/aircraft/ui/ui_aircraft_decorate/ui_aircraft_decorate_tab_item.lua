@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_decorate/ui_aircraft_decorate_tab_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftDecorateTabItem", UICustomWidget)
 UIAircraftDecorateTabItem = UIAircraftDecorateTabItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftDecorateTabItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftDecorateTabItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIAircraftDecorate.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.UIAircraftDecorateBigTabClick, self._OnBigTypeBtnClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem.SetData = function(self, index, data, callback, changeLayout)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftDecorateTabItem:SetData(index, data, callback, changeLayout)
   self:_GetComponents()
   self._index = index
   self._data = data
@@ -24,42 +14,30 @@ UIAircraftDecorateTabItem.SetData = function(self, index, data, callback, change
   self._changeLayout = changeLayout
   self._isOpen = false
   self._tweenTime = 0.2
-  local tableId = (self._data).ID
-  local cfg_aircraft_furniture_tab2 = (Cfg.cfg_aircraft_furniture_tab2)({})
+  local tableId = self._data.ID
+  local cfg_aircraft_furniture_tab2 = Cfg.cfg_aircraft_furniture_tab2({})
   self._tabChildList = {}
-  for k,value in pairs(cfg_aircraft_furniture_tab2) do
+  for k, value in pairs(cfg_aircraft_furniture_tab2) do
     if value.Tab1 == tableId then
-      (table.insert)(self._tabChildList, value)
+      table.insert(self._tabChildList, value)
     end
   end
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem.ItemRectTransform = function(self)
-  -- function num : 0_2
+function UIAircraftDecorateTabItem:ItemRectTransform()
   return self._rect
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem.ItemMoveRectTransform = function(self)
-  -- function num : 0_3
+function UIAircraftDecorateTabItem:ItemMoveRectTransform()
   return self._moveRect
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem.OnGetMaskSizeDeltaHeight = function(self)
-  -- function num : 0_4
-  return ((self._mask).sizeDelta).y
+function UIAircraftDecorateTabItem:OnGetMaskSizeDeltaHeight()
+  return self._mask.sizeDelta.y
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem._GetComponents = function(self)
-  -- function num : 0_5
+function UIAircraftDecorateTabItem:_GetComponents()
   self._rect = self:GetUIComponent("RectTransform", "Rect")
   self._text = self:GetUIComponent("UILocalizationText", "Text")
   self._image = self:GetUIComponent("Image", "Image")
@@ -71,136 +49,87 @@ UIAircraftDecorateTabItem._GetComponents = function(self)
   self._select = self:GetGameObject("Select")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._image).sprite = (self._atlas):GetSprite((self._data).Icon)
-  ;
-  (self._text):SetText((StringTable.Get)((self._data).Name))
+function UIAircraftDecorateTabItem:_OnValue()
+  self._image.sprite = self._atlas:GetSprite(self._data.Icon)
+  self._text:SetText(StringTable.Get(self._data.Name))
   if #self._tabChildList > 0 then
     self._hasSmallType = true
-    ;
-    (self._smallBtnPool):SpawnObjects("UIAircraftDecorateTabChildItem", #self._tabChildList)
-    self._items = (self._smallBtnPool):GetAllSpawnList()
+    self._smallBtnPool:SpawnObjects("UIAircraftDecorateTabChildItem", #self._tabChildList)
+    self._items = self._smallBtnPool:GetAllSpawnList()
     for i = 1, #self._tabChildList do
-      local sprite = (self._atlas):GetSprite(((self._tabChildList)[i]).Icon)
-      ;
-      ((self._items)[i]):SetData(i, ((self._tabChildList)[i]).ID, ((self._tabChildList)[i]).Name, sprite, function(idx)
-    -- function num : 0_6_0 , upvalues : self
-    self:_OnClickChildTab(idx)
-  end
-)
+      local sprite = self._atlas:GetSprite(self._tabChildList[i].Icon)
+      self._items[i]:SetData(i, self._tabChildList[i].ID, self._tabChildList[i].Name, sprite, function(idx)
+        self:_OnClickChildTab(idx)
+      end)
     end
   else
-    do
-      self._hasSmallType = false
-      ;
-      ((self._mask).gameObject):SetActive(self._hasSmallType)
-      local left = ((self._grid).padding).left
-      local right = ((self._grid).padding).right
-      local Top = ((self._grid).padding).top
-      local Bottom = ((self._grid).padding).bottom
-      -- DECOMPILER ERROR at PC98: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._mask).sizeDelta = Vector2(left + ((self._grid).cellSize).x + right, Top + Bottom + ((self._grid).cellSize).y * #self._tabChildList + ((self._grid).spacing).y * (#self._tabChildList - 1))
-    end
+    self._hasSmallType = false
   end
+  self._mask.gameObject:SetActive(self._hasSmallType)
+  local left = self._grid.padding.left
+  local right = self._grid.padding.right
+  local Top = self._grid.padding.top
+  local Bottom = self._grid.padding.bottom
+  self._mask.sizeDelta = Vector2(left + self._grid.cellSize.x + right, Top + Bottom + self._grid.cellSize.y * #self._tabChildList + self._grid.spacing.y * (#self._tabChildList - 1))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem.BgOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIAircraftDecorateTabItem:BgOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   self:_OnSelectCurTab()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem._OnSelectCurTab = function(self)
-  -- function num : 0_8
+function UIAircraftDecorateTabItem:_OnSelectCurTab()
   if not self._hasSmallType then
-    return 
+    return
   end
   if self._changeLayout then
-    (self._changeLayout)(self._index, self:OnGetMaskSizeDeltaHeight(), true)
+    self._changeLayout(self._index, self:OnGetMaskSizeDeltaHeight(), true)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem._OnBigTypeBtnClick = function(self, tabIndex, isOpenTab)
-  -- function num : 0_9
+function UIAircraftDecorateTabItem:_OnBigTypeBtnClick(tabIndex, isOpenTab)
   if tabIndex == self._index then
+  else
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem._OnClickChildTab = function(self, tabChild)
-  -- function num : 0_10
+function UIAircraftDecorateTabItem:_OnClickChildTab(tabChild)
   if self._callback then
-    (self._callback)(tabChild)
+    self._callback(tabChild)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem.CloseMovePos = function(self, doTween)
-  -- function num : 0_11 , upvalues : _ENV
+function UIAircraftDecorateTabItem:CloseMovePos(doTween)
   if not self._hasSmallType then
-    return 
+    return
   end
   self._isOpen = false
   local moveToPos = Vector2(0, 0)
   if doTween then
-    (self._moveRect):DOAnchorPos(moveToPos, self._tweenTime)
+    self._moveRect:DOAnchorPos(moveToPos, self._tweenTime)
   else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._moveRect).anchoredPosition = moveToPos
+    self._moveRect.anchoredPosition = moveToPos
   end
-  ;
-  (self._select):SetActive(false)
+  self._select:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem.OpenMovePos = function(self, doTween)
-  -- function num : 0_12 , upvalues : _ENV
+function UIAircraftDecorateTabItem:OpenMovePos(doTween)
   if not self._hasSmallType then
-    return 
+    return
   end
   self._isOpen = true
-  local moveToPos = Vector2(0, -((self._moveRect).sizeDelta).y)
+  local moveToPos = Vector2(0, -self._moveRect.sizeDelta.y)
   if doTween then
-    (self._moveRect):DOAnchorPos(moveToPos, self._tweenTime)
+    self._moveRect:DOAnchorPos(moveToPos, self._tweenTime)
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._moveRect).anchoredPosition = moveToPos
+    self._moveRect.anchoredPosition = moveToPos
   end
-  ;
-  (self._select):SetActive(true)
+  self._select:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem.OnHide = function(self)
-  -- function num : 0_13
+function UIAircraftDecorateTabItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateTabItem.GetChildItem = function(self, index)
-  -- function num : 0_14
-  return (self._items)[index]
+function UIAircraftDecorateTabItem:GetChildItem(index)
+  return self._items[index]
 end
-
-

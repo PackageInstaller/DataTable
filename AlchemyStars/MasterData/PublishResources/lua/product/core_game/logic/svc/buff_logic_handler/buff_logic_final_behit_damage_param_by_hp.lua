@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_final_behit_damage_param_by_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetFinalBehitDamageParamByHP", BuffLogicBase)
 BuffLogicSetFinalBehitDamageParamByHP = BuffLogicSetFinalBehitDamageParamByHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetFinalBehitDamageParamByHP.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetFinalBehitDamageParamByHP:Constructor(buffInstance, logicParam)
   self._minValue = logicParam.minValue
   self._maxValue = logicParam.maxValue
   self._eachHpPercent = logicParam.eachHpPercent
   self._promotePercent = logicParam.promotePercent
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetFinalBehitDamageParamByHP.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicSetFinalBehitDamageParamByHP:DoLogic()
+  local entity = self._buffInstance:Entity()
   local component = entity:Attributes()
   local curHP = component:GetCurrentHP()
   local maxHP = component:CalcMaxHp()
@@ -28,10 +18,8 @@ BuffLogicSetFinalBehitDamageParamByHP.DoLogic = function(self)
   if self._eachHpPercent and self._promotePercent and self._eachHpPercent ~= 0 then
     promoteRate = percentHP / self._eachHpPercent * self._promotePercent
   end
-  promoteRate = (lmathext.clamp)(promoteRate, self._minValue, self._maxValue)
-  if promoteRate > 0 then
+  promoteRate = lmathext.clamp(promoteRate, self._minValue, self._maxValue)
+  if 0 < promoteRate then
     component:Modify("FinalBehitDamageParam", -promoteRate / 100)
   end
 end
-
-

@@ -1,87 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/maze/ui_maze_quick_fight_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMazeQuickFightController", UIController)
 UIMazeQuickFightController = UIMazeQuickFightController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMazeQuickFightController.Constructor = function(self)
-  -- function num : 0_0
+function UIMazeQuickFightController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeQuickFightController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMazeQuickFightController:OnShow(uiParams)
   self._rewards = uiParams[1]
   self._light = uiParams[2]
   self._sort = uiParams[3] or false
   self:GetComponents()
   self:OnValue()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8MazeSweep)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8MazeSweep)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeQuickFightController.GetComponents = function(self)
-  -- function num : 0_2
+function UIMazeQuickFightController:GetComponents()
   local itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
   self._itemInfo = itemInfo:SpawnObject("UISelectInfo")
   self._AwardPool = self:GetUIComponent("UISelectObjectPath", "AwardPool")
   self._cost = self:GetUIComponent("UILocalizationText", "cost")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeQuickFightController.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._cost):SetText(self._light)
+function UIMazeQuickFightController:OnValue()
+  self._cost:SetText(self._light)
   local count = #self._rewards
-  local itemModule = (self:GetModule(ItemModule))
-  -- DECOMPILER ERROR at PC9: Overwrote pending register: R3 in 'AssignReg'
-
-  local rewards = .end
+  local itemModule = self:GetModule(ItemModule)
+  local rewards
   if self._sort then
     rewards = self._rewards
   else
     rewards = itemModule:SortRoleAsset(self._rewards)
   end
-  local items = (self._AwardPool):SpawnObjects("UIMazeQuickFightItem", count)
+  local items = self._AwardPool:SpawnObjects("UIMazeQuickFightItem", count)
   for i = 1, #items do
     local item = items[i]
     local award = Award:New()
-    award:InitWithCount((rewards[i]).assetid, (rewards[i]).count)
+    award:InitWithCount(rewards[i].assetid, rewards[i].count)
     item:SetData(award, function(id, pos)
-    -- function num : 0_3_0 , upvalues : self
-    self:ItemClick(id, pos)
-  end
-)
+      self:ItemClick(id, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeQuickFightController.ButtonOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMazeQuickFightController:ButtonOnClick(go)
   self:CloseDialog()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnQuickFightClose)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnQuickFightClose)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeQuickFightController.ItemClick = function(self, id, pos)
-  -- function num : 0_5
-  (self._itemInfo):SetData(id, pos)
+function UIMazeQuickFightController:ItemClick(id, pos)
+  self._itemInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeQuickFightController.OnHide = function(self)
-  -- function num : 0_6
+function UIMazeQuickFightController:OnHide()
 end
-
-

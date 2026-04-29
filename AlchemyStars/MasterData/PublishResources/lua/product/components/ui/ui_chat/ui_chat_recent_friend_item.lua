@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_recent_friend_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatRecentFriendItem", UICustomWidget)
 UIChatRecentFriendItem = UIChatRecentFriendItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatRecentFriendItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChatRecentFriendItem:OnShow(uiParam)
   self._headBg = self:GetUIComponent("UICircleMaskLoader", "headBg")
   self._head = self:GetUIComponent("RawImageLoader", "head")
   self._headRect = self:GetUIComponent("RectTransform", "head")
@@ -30,98 +23,58 @@ UIChatRecentFriendItem.OnShow = function(self, uiParam)
   self:AttachEvent(GameEventType.SelectRecentFriend, self._RefreshSelectedStatus)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRecentFriendItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChatRecentFriendItem:OnHide()
   self:DetachEvent(GameEventType.SelectRecentFriend, self._RefreshSelectedStatus)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRecentFriendItem.Refresh = function(self, friendData, panelType, chatFriendManager)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChatRecentFriendItem:Refresh(friendData, panelType, chatFriendManager)
   self._chatFriendManager = chatFriendManager
   self._panelType = panelType
   self._friendData = friendData
-  ;
-  (self._headBg):LoadImage((self._friendData):GetHeadBgName())
-  local iconName, iconTag = (self._friendData):GetHeadIconName()
-  ;
-  (self._head):LoadImage(iconName)
-  if not (string.isnullorempty)(iconTag) then
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._headRect, iconTag)
+  self._headBg:LoadImage(self._friendData:GetHeadBgName())
+  local iconName, iconTag = self._friendData:GetHeadIconName()
+  self._head:LoadImage(iconName)
+  if not string.isnullorempty(iconTag) then
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._headRect, iconTag)
   end
-  ;
-  (self._frame):LoadImage((self._friendData):GetHeadFrameName())
-  ;
-  (UIWorldBossHelper.InitOtherDanBadgeSimple)(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, (self._friendData):GetWorldBossInfo())
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self._headBgRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self._headBgMaskRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self._frameRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self._headRoot, RoleHeadFrameSizeType.Size3)
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._name).text = (self._friendData):GetName()
-  -- DECOMPILER ERROR at PC85: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._level).text = (StringTable.Get)("str_chat_level", tostring((self._friendData):GetLevel()))
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._onlineStatusLabel).text = (self._friendData):GetLastOnlineStatusStr()
-  if (self._friendData):IsOnline() then
-    (self._onLineIconGo):SetActive(true)
-    ;
-    (self._offLineIconGo):SetActive(false)
+  self._frame:LoadImage(self._friendData:GetHeadFrameName())
+  UIWorldBossHelper.InitOtherDanBadgeSimple(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, self._friendData:GetWorldBossInfo())
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self._headBgRect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self._headBgMaskRect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self._frameRect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self._headRoot, RoleHeadFrameSizeType.Size3)
+  self._name.text = self._friendData:GetName()
+  self._level.text = StringTable.Get("str_chat_level", tostring(self._friendData:GetLevel()))
+  self._onlineStatusLabel.text = self._friendData:GetLastOnlineStatusStr()
+  if self._friendData:IsOnline() then
+    self._onLineIconGo:SetActive(true)
+    self._offLineIconGo:SetActive(false)
   else
-    ;
-    (self._onLineIconGo):SetActive(false)
-    ;
-    (self._offLineIconGo):SetActive(true)
+    self._onLineIconGo:SetActive(false)
+    self._offLineIconGo:SetActive(true)
   end
-  ;
-  (self._hasMessageGo):SetActive((self._friendData):HasNewMessage())
+  self._hasMessageGo:SetActive(self._friendData:HasNewMessage())
   self:_RefreshSelectedStatus()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRecentFriendItem._RefreshSelectedStatus = function(self)
-  -- function num : 0_3
-  (self._selectedFrameGo):SetActive((self._friendData):IsSelected())
+function UIChatRecentFriendItem:_RefreshSelectedStatus()
+  self._selectedFrameGo:SetActive(self._friendData:IsSelected())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRecentFriendItem.HeadBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.Chat, (self._friendData):GetFriendId(), self._chatFriendManager)
+function UIChatRecentFriendItem:HeadBtnOnClick(go)
+  self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.Chat, self._friendData:GetFriendId(), self._chatFriendManager)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatRecentFriendItem.ItemBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local curFriendId = (self._chatFriendManager):GetSelectRecentFriend()
-  if curFriendId == (self._friendData):GetFriendId() then
-    return 
+function UIChatRecentFriendItem:ItemBtnOnClick(go)
+  local curFriendId = self._chatFriendManager:GetSelectRecentFriend()
+  if curFriendId == self._friendData:GetFriendId() then
+    return
   end
-  ;
-  (self._chatFriendManager):SelectRecentFriend((self._friendData):GetFriendId())
-  local preFriendId = nil
+  self._chatFriendManager:SelectRecentFriend(self._friendData:GetFriendId())
+  local preFriendId
   if curFriendId then
     preFriendId = curFriendId
   end
-  local newFriendId = (self._friendData):GetFriendId()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SelectRecentFriend, newFriendId, preFriendId)
+  local newFriendId = self._friendData:GetFriendId()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SelectRecentFriend, newFriendId, preFriendId)
 end
-
-

@@ -1,70 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/network/3.call/caller/caller_default.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NetCallerDefault", NetCaller)
 NetCallerDefault = NetCallerDefault
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-NetCallerDefault.HandleConnectDone = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((NetCallerDefault.super).HandleConnectDone)(self)
+function NetCallerDefault:HandleConnectDone()
+  NetCallerDefault.super.HandleConnectDone(self)
   self:GainAuth()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCallerDefault.HandleConnectFailed = function(self, reason)
-  -- function num : 0_1 , upvalues : _ENV
-  ((NetCallerDefault.super).HandleConnectFailed)(self, reason)
+function NetCallerDefault:HandleConnectFailed(reason)
+  NetCallerDefault.super.HandleConnectFailed(self, reason)
   self:ResetCall(CallResultType.ConnectFailed)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCallerDefault.HandleConnectClosed = function(self, reason)
-  -- function num : 0_2 , upvalues : _ENV
-  ((NetCallerDefault.super).HandleConnectClosed)(self, reason)
+function NetCallerDefault:HandleConnectClosed(reason)
+  NetCallerDefault.super.HandleConnectClosed(self, reason)
   self:LostAuth()
   self:ResetCall(CallResultType.ConnectClosed)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCallerDefault.HandleReceiveDone = function(self, msg)
-  -- function num : 0_3 , upvalues : _ENV
-  ((NetCallerDefault.super).HandleReceiveDone)(self, msg)
+function NetCallerDefault:HandleReceiveDone(msg)
+  NetCallerDefault.super.HandleReceiveDone(self, msg)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCallerDefault.HandleCallBegin = function(self, msg)
-  -- function num : 0_4 , upvalues : _ENV
-  ((NetCallerDefault.super).HandleCallBegin)(self, msg)
+function NetCallerDefault:HandleCallBegin(msg)
+  NetCallerDefault.super.HandleCallBegin(self, msg)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCallerDefault.HandleCallEnd = function(self, msg)
-  -- function num : 0_5 , upvalues : _ENV
-  ((NetCallerDefault.super).HandleCallEnd)(self, msg)
+function NetCallerDefault:HandleCallEnd(msg)
+  NetCallerDefault.super.HandleCallEnd(self, msg)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCallerDefault.HandleCallTimelong = function(self, msg)
-  -- function num : 0_6 , upvalues : _ENV
-  ((NetCallerDefault.super).HandleCallTimelong)(self, msg)
+function NetCallerDefault:HandleCallTimelong(msg)
+  NetCallerDefault.super.HandleCallTimelong(self, msg)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-NetCallerDefault.HandleCallTimeout = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((NetCallerDefault.super).HandleCallTimeout)(self)
+function NetCallerDefault:HandleCallTimeout()
+  NetCallerDefault.super.HandleCallTimeout(self)
   self:ResetCall(CallResultType.CallTimeout)
   self:Disconnect(self:Key() .. " call timeout")
 end
-
-

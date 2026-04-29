@@ -1,122 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/base_building/ui_homeland_minimap_detail_base_building.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailBaseBuilding", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailBaseBuilding = UIHomelandMinimapDetailBaseBuilding
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailBaseBuilding.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapDetailBaseBuilding:OnShow()
   self.txtName = self:GetUIComponent("UILocalizationText", "NameTxt")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "Skin")
   self.txtSkin = self:GetUIComponent("UILocalizationText", "ContentTxt")
   self.Content = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuilding.OnClose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((UIHomelandMinimapDetailBaseBuilding.super).OnClose)(self)
-  ;
-  (self.imgIcon):DestoryLastImage()
+function UIHomelandMinimapDetailBaseBuilding:OnClose()
+  UIHomelandMinimapDetailBaseBuilding.super.OnClose(self)
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuilding.OnInitDone = function(self)
-  -- function num : 0_2
+function UIHomelandMinimapDetailBaseBuilding:OnInitDone()
   self:Init()
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuilding.Init = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
-  ;
-  (self.data):Init((self.mHomeland):GetHomelandInfo())
+function UIHomelandMinimapDetailBaseBuilding:Init()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
+  self.data:Init(self.mHomeland:GetHomelandInfo())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuilding.Flush = function(self)
-  -- function num : 0_4
+function UIHomelandMinimapDetailBaseBuilding:Flush()
   self:FlushBuilding()
   self:FlushSequence()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuilding.FlushBuilding = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMinimapDetailBaseBuilding:FlushBuilding()
   local iconData = self:GetIconData()
   if not iconData then
-    return 
+    return
   end
   local building = iconData:GetParam()
   local skinId = building:SkinID()
-  local cfg_item_architecture_skin = (Cfg.cfg_item_architecture_skin)[skinId]
-  ;
-  (self.txtName):SetText((StringTable.Get)(cfg_item_architecture_skin.SkinName))
-  ;
-  (self.imgIcon):LoadImage(cfg_item_architecture_skin.SkinIcon)
-  ;
-  (self.txtSkin):SetText((StringTable.Get)(cfg_item_architecture_skin.Des))
+  local cfg_item_architecture_skin = Cfg.cfg_item_architecture_skin[skinId]
+  self.txtName:SetText(StringTable.Get(cfg_item_architecture_skin.SkinName))
+  self.imgIcon:LoadImage(cfg_item_architecture_skin.SkinIcon)
+  self.txtSkin:SetText(StringTable.Get(cfg_item_architecture_skin.Des))
   self._titleRect = self:GetUIComponent("RectTransform", "Title")
   if self._titleRect then
-    local titleWidth = (self.txtName).preferredWidth
-    if titleWidth > 350 then
+    local titleWidth = self.txtName.preferredWidth
+    if 350 < titleWidth then
       titleWidth = 350
     end
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuilding.FlushSequence = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMinimapDetailBaseBuilding:FlushSequence()
   if not self.data then
-    return 
+    return
   end
-  local len = (table.count)((self.data).sequnces)
-  ;
-  (self.Content):SpawnObjects("UIHomelandMinimapDetailBaseBuildingItem", len)
-  local uis = (self.Content):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
-    ui:Flush((((self.data).sequnces)[i]).index)
+  local len = table.count(self.data.sequnces)
+  self.Content:SpawnObjects("UIHomelandMinimapDetailBaseBuildingItem", len)
+  local uis = self.Content:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    ui:Flush(self.data.sequnces[i].index)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuilding.ExitOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailBaseBuilding:ExitOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuilding.BtnBGOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailBaseBuilding:BtnBGOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailBaseBuilding.GetCloseAnimtionName = function(self)
-  -- function num : 0_9
+function UIHomelandMinimapDetailBaseBuilding:GetCloseAnimtionName()
   return "UIHomelandMinimapDetailBaseBuilding_out"
 end
-
-

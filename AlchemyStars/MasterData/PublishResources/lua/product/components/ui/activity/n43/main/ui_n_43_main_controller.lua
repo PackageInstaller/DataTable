@@ -1,359 +1,262 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n43/main/ui_n_43_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN43MainController", UIController)
 UIN43MainController = UIN43MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN43MainController._SetCommonTopButton = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local closeCallback = function()
-    -- function num : 0_0_0 , upvalues : self
+function UIN43MainController:_SetCommonTopButton()
+  local function closeCallback()
     self:_Back()
   end
-
-  local hideCallback = function()
-    -- function num : 0_0_1 , upvalues : self
+  
+  local function hideCallback()
     self:_HideUI()
   end
-
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UINewCommonTopButton")
+  
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UINewCommonTopButton")
   obj:SetData(closeCallback, nil, nil, false, hideCallback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._Back = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self:Manager()):CurUIStateType() == UIStateType.UIN43MainController then
+function UIN43MainController:_Back()
+  if self:Manager():CurUIStateType() == UIStateType.UIN43MainController then
     self:SwitchState(UIStateType.UIMain)
   else
     self:_PlayAnim("out", function()
-    -- function num : 0_1_0 , upvalues : self
-    self:CloseDialog()
-  end
-)
+      self:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._HideUI = function(self)
-  -- function num : 0_2
+function UIN43MainController:_HideUI()
   self:_PlayAnim("hide", function()
-    -- function num : 0_2_0 , upvalues : self
-    (self:GetGameObject("_showBtn")):SetActive(true)
-    ;
-    (self:GetGameObject("_uiElements")):SetActive(false)
-  end
-)
+    self:GetGameObject("_showBtn"):SetActive(true)
+    self:GetGameObject("_uiElements"):SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._ShowUI = function(self)
-  -- function num : 0_3
-  (self:GetGameObject("_showBtn")):SetActive(false)
-  ;
-  (self:GetGameObject("_uiElements")):SetActive(true)
+function UIN43MainController:_ShowUI()
+  self:GetGameObject("_showBtn"):SetActive(false)
+  self:GetGameObject("_uiElements"):SetActive(true)
   self:_PlayAnim("show")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._SetRemainingTime = function(self, widgetName, descId, endTime, tickCallback, stopCallback)
-  -- function num : 0_4 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIN43MainController:_SetRemainingTime(widgetName, descId, endTime, tickCallback, stopCallback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, tickCallback, stopCallback)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._SetBg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local url = (UIActivityHelper.GetCampaignMainBg)(self._campaign, 1)
+function UIN43MainController:_SetBg()
+  local url = UIActivityHelper.GetCampaignMainBg(self._campaign, 1)
   if url then
-    (UIWidgetHelper.SetRawImage)(self, "_mainBg", url)
+    UIWidgetHelper.SetRawImage(self, "_mainBg", url)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._SetSpine = function(self)
-  -- function num : 0_6
+function UIN43MainController:_SetSpine()
   local obj = self:GetUIComponent("SpineLoader", "_spine")
   obj:LoadSpine("n43_kv_1_spine_idle")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._CheckGuide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN43MainController)
+function UIN43MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN43MainController)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._PlayAnim = function(self, idx, callback)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN43MainController:_PlayAnim(idx, callback)
   local tb = {
-["in"] = {animName = "uieff_UIN43MainController_in", duration = 1033}
-, 
-hide = {animName = "uieff_UIN43MainController_hide", duration = 500}
-, 
-show = {animName = "uieff_UIN43MainController_show", duration = 500}
-, 
-out = {animName = "uieff_UIN43MainController_out", duration = 0}
-}
+    ["in"] = {
+      animName = "uieff_UIN43MainController_in",
+      duration = 1033
+    },
+    hide = {
+      animName = "uieff_UIN43MainController_hide",
+      duration = 500
+    },
+    show = {
+      animName = "uieff_UIN43MainController_show",
+      duration = 500
+    },
+    out = {
+      animName = "uieff_UIN43MainController_out",
+      duration = 0
+    }
+  }
   if tb[idx] ~= nil then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[idx]).animName, (tb[idx]).duration, callback)
-  else
-    if callback ~= nil then
-      callback()
-    end
+    UIWidgetHelper.PlayAnimation(self, "_anim", tb[idx].animName, tb[idx].duration, callback)
+  elseif callback ~= nil then
+    callback()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_9 , upvalues : _ENV
-  local campaignType = (UIN43Helper.GetCampaignType)()
+function UIN43MainController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignType = UIN43Helper.GetCampaignType()
   local componentIds = {}
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, campaignType, componentIds)
-  ;
-  (self._campaign):ClearCampaignNew(TT)
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
+  self._campaign:ClearCampaignNew(TT)
   self._bp_campaign = UIActivityCampaign:New()
   local bp_res = AsyncRequestRes:New()
-  ;
-  (self._bp_campaign):LoadCampaignInfo(TT, bp_res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._bp_campaign:LoadCampaignInfo(TT, bp_res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController.OnShow = function(self, uiParams)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN43MainController:OnShow(uiParams)
   self:_AttachEvents()
   self:_SetCommonTopButton()
   self:_SetSpine()
-  local stop = ((self._campaign):GetSample()).end_time
+  local stop = self._campaign:GetSample().end_time
   self:_SetRemainingTime("_time", "str_n34_activity_survey_level_remain_time", stop)
   self:_Refresh()
-  ;
-  (UIActivityHelper.Snap_SetImgRt)(uiParams[1], self, "rt", function(setImgRt)
-    -- function num : 0_10_0 , upvalues : self
+  UIActivityHelper.Snap_SetImgRt(uiParams[1], self, "rt", function(setImgRt)
     local idx = setImgRt and "in" or ""
     self:_PlayAnim(idx, function()
-      -- function num : 0_10_0_0 , upvalues : self
       self:_CheckGuide()
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController.OnHide = function(self)
-  -- function num : 0_11
+function UIN43MainController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController.Destroy = function(self)
-  -- function num : 0_12
+function UIN43MainController:Destroy()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._Refresh = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (UIN43Helper.SetBattlePassBtn)(self, "_battlePassBtn", self._bp_campaign)
+function UIN43MainController:_Refresh()
+  UIN43Helper.SetBattlePassBtn(self, "_battlePassBtn", self._bp_campaign)
   self:_SetLoginBtn()
   self:_SetPowerBtn()
-  ;
-  (UIN43Helper.SetExchangeBtn)(self, "_exchangeBtn", self._campaign)
+  UIN43Helper.SetExchangeBtn(self, "_exchangeBtn", self._campaign)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._SetLoginBtn = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN43MainController:_SetLoginBtn()
   local name = "login"
-  local cmptId, component, componentInfo = (UIN43Helper.GetComponent)(self._campaign, name)
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_loginBtn", "UIActivityCommonComponentEnter")
-  local newCallback = function()
-    -- function num : 0_14_0 , upvalues : _ENV, self, name
-    local new = (UIN43Helper.CalcNew_Component)(self._campaign, name)
+  local cmptId, component, componentInfo = UIN43Helper.GetComponent(self._campaign, name)
+  local obj = UIWidgetHelper.SpawnObject(self, "_loginBtn", "UIActivityCommonComponentEnter")
+  
+  local function newCallback()
+    local new = UIN43Helper.CalcNew_Component(self._campaign, name)
     return new
   end
-
+  
   obj:SetNew("_new", newCallback)
-  local redCallback = function()
-    -- function num : 0_14_1 , upvalues : _ENV, self, name
-    local red = (UIN43Helper.CalcRed_Component)(self._campaign, name)
+  
+  local function redCallback()
+    local red = UIN43Helper.CalcRed_Component(self._campaign, name)
     return red
   end
-
+  
   obj:SetRed("_red", redCallback)
-  local clickCallback = function()
-    -- function num : 0_14_2 , upvalues : _ENV, name, self, cmptId
-    (UIN43Helper.LocalDB_Set)(name, "New")
-    local campaignType = (UIN43Helper.GetCampaignType)()
+  
+  local function clickCallback()
+    UIN43Helper.LocalDB_Set(name, "New")
+    local campaignType = UIN43Helper.GetCampaignType()
     self:ShowDialog("UIActivityTotalLoginAwardController", false, campaignType, cmptId)
   end
-
+  
   obj:SetData(self._campaign, clickCallback)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._SetPowerBtn = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN43MainController:_SetPowerBtn()
   local name = "power"
-  local cmptId, component, componentInfo = (UIN43Helper.GetComponent)(self._campaign, name)
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_powerBtn", "UIActivityCommonComponentEnterLock")
+  local cmptId, component, componentInfo = UIN43Helper.GetComponent(self._campaign, name)
+  local obj = UIWidgetHelper.SpawnObject(self, "_powerBtn", "UIActivityCommonComponentEnterLock")
   obj:SetLockStateCallback(nil, nil, function()
-    -- function num : 0_15_0 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_n37_sample_end"))
-  end
-)
-  local newCallback = function()
-    -- function num : 0_15_1 , upvalues : _ENV, name
-    local new = not (UIN43Helper.LocalDB_Has)(name, "New")
+    ToastManager.ShowToast(StringTable.Get("str_n37_sample_end"))
+  end)
+  
+  local function newCallback()
+    local new = not UIN43Helper.LocalDB_Has(name, "New")
     return new
   end
-
+  
   obj:SetNew("_new", newCallback)
-  local redCallback = function()
-    -- function num : 0_15_2 , upvalues : component
+  
+  local function redCallback()
     return component:HaveRedPoint()
   end
-
+  
   obj:SetRed("_red", redCallback)
   local tb = {
-{"state_lock", "time_lock"}
-, 
-{"state_lock"}
-, 
-{"state_unlock"}
-, 
-{"state_close"}
-}
+    {"state_lock", "time_lock"},
+    {"state_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
   obj:SetWidgetNameGroup(tb)
   local state = UIStateType.UIDiscovery
-  local clickCallback = function()
-    -- function num : 0_15_3 , upvalues : _ENV, name, self
-    (UIN43Helper.LocalDB_Set)(name, "New")
+  
+  local function clickCallback()
+    UIN43Helper.LocalDB_Set(name, "New")
     self:_GotoCanPlayNode()
   end
-
+  
   obj:SetData(self._campaign, cmptId, clickCallback)
   local node = self:_GetCanPlayNode()
-  local str = node and (StringTable.Get)("str_nexplore_main_power_progress", node.name) or ""
-  ;
-  (UIWidgetHelper.SetLocalizationText)(obj, "txtProgress", str)
+  local str = node and StringTable.Get("str_nexplore_main_power_progress", node.name) or ""
+  UIWidgetHelper.SetLocalizationText(obj, "txtProgress", str)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._GetCanPlayNode = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN43MainController:_GetCanPlayNode()
   local missionModule = self:GetModule(MissionModule)
   local discoveryData = missionModule:GetDiscoveryData()
   local node = discoveryData:GetCanPlayNode()
   return node
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._GotoCanPlayNode = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIN43MainController:_GotoCanPlayNode()
   local node = self:_GetCanPlayNode()
   if node then
-    (DiscoveryData.EnterStateUIDiscovery)(5, node.id)
+    DiscoveryData.EnterStateUIDiscovery(5, node.id)
   else
-    ;
-    (discoveryData.EnterStateUIDiscovery)(1)
+    discoveryData.EnterStateUIDiscovery(1)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController.ShowBtnOnClick = function(self, go)
-  -- function num : 0_18
+function UIN43MainController:ShowBtnOnClick(go)
   self:_ShowUI()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController.IntroBtnOnClick = function(self, go)
-  -- function num : 0_19
+function UIN43MainController:IntroBtnOnClick(go)
   self:ShowDialog("UIIntroLoader", "UIN43Intro")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._AttachEvents = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN43MainController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._DetachEvents = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN43MainController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._CheckActivityClose = function(self, id)
-  -- function num : 0_22 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN43MainController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._OnAfterUILayerChanged = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+function UIN43MainController:_OnAfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
     self:_Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._SetTexture = function(self, targetWidget, srcName)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN43MainController:_SetTexture(targetWidget, srcName)
   local test = self:_LoadAsset(srcName, LoadType.Mat)
   if test then
     local srcMat = self:GetAsset(srcName, LoadType.Mat)
     local meshRenderer = self:GetUIComponent("MeshRenderer", targetWidget)
-    ;
-    (meshRenderer.sharedMaterial):SetTexture("_MainTex", srcMat:GetTexture("_MainTex"))
+    meshRenderer.sharedMaterial:SetTexture("_MainTex", srcMat:GetTexture("_MainTex"))
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN43MainController._LoadAsset = function(self, name, type)
-  -- function num : 0_25 , upvalues : _ENV
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(name, type)
+function UIN43MainController:_LoadAsset(name, type)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(name, type)
   if req == nil or req.Obj == nil then
-    (Log.info)("UIN43MainController:_LoadAsset() name =", name, "type =", type)
-    return 
+    Log.info("UIN43MainController:_LoadAsset() name =", name, "type =", type)
+    return
   end
   return req.Obj
 end
-
-

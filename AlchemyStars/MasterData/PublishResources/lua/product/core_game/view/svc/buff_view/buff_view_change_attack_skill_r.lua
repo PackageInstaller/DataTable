@@ -1,27 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_attack_skill_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeAttackSkill", BuffViewBase)
 BuffViewChangeAttackSkill = BuffViewChangeAttackSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeAttackSkill.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((self._entity):PetPstID()):GetPstID(), true)
+function BuffViewChangeAttackSkill:PlayView(TT, notify)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, self._entity:PetPstID():GetPstID(), true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangeAttackSkill.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local trapCasterID = (self._buffResult):GetTrapCasterID()
-  if notify and notify:GetNotifyType() == NotifyType.TrapSkillStart and trapCasterID and trapCasterID == (notify:GetNotifyEntity()):GetID() then
+function BuffViewChangeAttackSkill:IsNotifyMatch(notify)
+  local trapCasterID = self._buffResult:GetTrapCasterID()
+  if notify and notify:GetNotifyType() == NotifyType.TrapSkillStart then
+    if trapCasterID and trapCasterID == notify:GetNotifyEntity():GetID() then
+      return true
+    end
+  else
     return true
   end
-  do return true end
   return false
 end
-
-

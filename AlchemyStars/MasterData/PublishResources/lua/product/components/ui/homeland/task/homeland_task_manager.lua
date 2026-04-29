@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/task/homeland_task_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandTaskManager", Object)
 HomelandTaskManager = HomelandTaskManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandTaskManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandTaskManager:Constructor()
   self._taskGroups = {}
   self._runingTaskGroup = nil
   self._runingTask = nil
@@ -16,454 +9,320 @@ HomelandTaskManager.Constructor = function(self)
   self._occupiedPetList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandTaskManager:Init(homelandClient)
   self._homelandClient = homelandClient
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._homelandTaskManagerHelper = HomelandTaskManagerHelper:New(self)
-  self._homelandTraceManager = (self._homelandClient):GetHomelandTraceManager()
-  self._homelandTaskReceiveCallback = (GameHelper:GetInstance()):CreateCallback(self.RefreshTaskInfo, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.QuestUpdate, self._homelandTaskReceiveCallback)
-  self._onTaskSubmitSuccess = (GameHelper:GetInstance()):CreateCallback(self.OnTaskItemFinish, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnHomeLandTaskSubmit, self._onTaskSubmitSuccess)
-  self._onHomeLandSpecialCheck = (GameHelper:GetInstance()):CreateCallback(self.OnHomeLandSpecialCheck, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnHomeLandSpecialCheck, self._onHomeLandSpecialCheck)
-  self._onHomeLandTaskGroupSubmit = (GameHelper:GetInstance()):CreateCallback(self.OnTaskGroupFinish, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnHomeLandTaskGroupSubmit, self._onHomeLandTaskGroupSubmit)
-  self._onHomeLandTaskGroupSubmitAfterReward = (GameHelper:GetInstance()):CreateCallback(self.OnTaskGroupFinishAfterReward, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnHomeLandTaskGroupSubmitAfterReward, self._onHomeLandTaskGroupSubmitAfterReward)
+  self._homelandTraceManager = self._homelandClient:GetHomelandTraceManager()
+  self._homelandTaskReceiveCallback = GameHelper:GetInstance():CreateCallback(self.RefreshTaskInfo, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.QuestUpdate, self._homelandTaskReceiveCallback)
+  self._onTaskSubmitSuccess = GameHelper:GetInstance():CreateCallback(self.OnTaskItemFinish, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnHomeLandTaskSubmit, self._onTaskSubmitSuccess)
+  self._onHomeLandSpecialCheck = GameHelper:GetInstance():CreateCallback(self.OnHomeLandSpecialCheck, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnHomeLandSpecialCheck, self._onHomeLandSpecialCheck)
+  self._onHomeLandTaskGroupSubmit = GameHelper:GetInstance():CreateCallback(self.OnTaskGroupFinish, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnHomeLandTaskGroupSubmit, self._onHomeLandTaskGroupSubmit)
+  self._onHomeLandTaskGroupSubmitAfterReward = GameHelper:GetInstance():CreateCallback(self.OnTaskGroupFinishAfterReward, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnHomeLandTaskGroupSubmitAfterReward, self._onHomeLandTaskGroupSubmitAfterReward)
   self._homelandStoryTaskManager = HomelandStoryTaskManager:New()
-  ;
-  (self._homelandStoryTaskManager):Init(homelandClient, self)
+  self._homelandStoryTaskManager:Init(homelandClient, self)
   self:ReceiveTaskInfos()
   self:CreateTaskGroups()
   self:StartTaskManager()
-  self._taskCore = (TaskManager:GetInstance()):StartTask(self.ReceiveLastRewards, self)
+  self._taskCore = TaskManager:GetInstance():StartTask(self.ReceiveLastRewards, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandTaskManager:Dispose()
   if self._homelandTaskReceiveCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.QuestUpdate, self._homelandTaskReceiveCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.QuestUpdate, self._homelandTaskReceiveCallback)
     self._homelandTaskReceiveCallback = nil
   end
   if self._onTaskSubmitSuccess then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnHomeLandTaskSubmit, self._onTaskSubmitSuccess)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnHomeLandTaskSubmit, self._onTaskSubmitSuccess)
     self._onTaskSubmitSuccess = nil
   end
   if self._onHomeLandSpecialCheck then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnHomeLandSpecialCheck, self._onHomeLandSpecialCheck)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnHomeLandSpecialCheck, self._onHomeLandSpecialCheck)
     self._onHomeLandSpecialCheck = nil
   end
   if self._onHomeLandTaskGroupSubmit then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnHomeLandTaskGroupSubmit, self._onHomeLandTaskGroupSubmit)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnHomeLandTaskGroupSubmit, self._onHomeLandTaskGroupSubmit)
     self._onHomeLandTaskGroupSubmit = nil
   end
   if self._onHomeLandTaskGroupSubmitAfterReward then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnHomeLandTaskGroupSubmitAfterReward, self._onHomeLandTaskGroupSubmitAfterReward)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnHomeLandTaskGroupSubmitAfterReward, self._onHomeLandTaskGroupSubmitAfterReward)
     self._onHomeLandTaskGroupSubmitAfterReward = nil
   end
   if self._taskCore then
-    ((GameGlobal.TaskManager)()):KillTask(self._taskCore)
+    GameGlobal.TaskManager():KillTask(self._taskCore)
     self._taskCore = nil
   end
   if #self._taskGroups > 0 then
     for i = 1, #self._taskGroups do
-      ((self._taskGroups)[i]):Dispose()
+      self._taskGroups[i]:Dispose()
     end
   end
-  do
-    ;
-    (self._homelandStoryTaskManager):Dispose()
-    self._taskGroups = nil
-    self._runingTask = nil
-  end
+  self._homelandStoryTaskManager:Dispose()
+  self._taskGroups = nil
+  self._runingTask = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function HomelandTaskManager:Update(deltaTimeMS)
   if self._runingTaskGroup then
-    (self._runingTaskGroup):Update(deltaTimeMS)
+    self._runingTaskGroup:Update(deltaTimeMS)
   end
   if self._homelandStoryTaskManager then
-    (self._homelandStoryTaskManager):Update(deltaTimeMS)
+    self._homelandStoryTaskManager:Update(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.ReceiveTaskInfos = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._taskGroupServerData = (self._homelandModule):GetHomelandGroupTaskInfo(QuestType.QT_Homeland_Group_Rookie)
+function HomelandTaskManager:ReceiveTaskInfos()
+  self._taskGroupServerData = self._homelandModule:GetHomelandGroupTaskInfo(QuestType.QT_Homeland_Group_Rookie)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.CreateTaskGroups = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandTaskManager:CreateTaskGroups()
   if #self._taskGroups > 0 then
     for i = 1, #self._taskGroups do
-      ((self._taskGroups)[i]):Dispose()
+      self._taskGroups[i]:Dispose()
     end
     self._taskGroups = {}
   end
-  for groupId,data in pairs(self._taskGroupServerData) do
-    local cfg = (self._homelandTaskManagerHelper):GetTaskGroupCfg(groupId)
+  for groupId, data in pairs(self._taskGroupServerData) do
+    local cfg = self._homelandTaskManagerHelper:GetTaskGroupCfg(groupId)
     local group = HomeTaskGroup:New(groupId, cfg, self, data)
-    ;
-    (table.insert)(self._taskGroups, group)
+    table.insert(self._taskGroups, group)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.StartTaskManager = function(self)
-  -- function num : 0_6
+function HomelandTaskManager:StartTaskManager()
   if #self._taskGroups > 0 then
-    local priGroup = nil
+    local priGroup
     for i = 1, #self._taskGroups do
-      if (self._taskGroups)[i] and not ((self._taskGroups)[i]):CheckFinished() then
-        priGroup = (self._taskGroups)[i]
+      if self._taskGroups[i] and not self._taskGroups[i]:CheckFinished() then
+        priGroup = self._taskGroups[i]
         break
       end
     end
-    do
-      self:SetRuningTaskGroup(priGroup)
-    end
+    self:SetRuningTaskGroup(priGroup)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.GetNextGroup = function(self)
-  -- function num : 0_7
+function HomelandTaskManager:GetNextGroup()
   self:ReceiveTaskInfos()
   self:CreateTaskGroups()
   self:StartTaskManager()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.RefreshTaskInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._homelandStoryTaskManager):RefreshTaskInfo()
+function HomelandTaskManager:RefreshTaskInfo()
+  self._homelandStoryTaskManager:RefreshTaskInfo()
   if self:GetClientMode() ~= HomelandMode.Normal then
-    return 
+    return
   end
   self:ReceiveTaskInfos()
-  for groupId,quests in pairs(self._taskGroupServerData) do
-    if self._runingTaskGroup and (self._runingTaskGroup):GetGroupID() == groupId then
-      (self._runingTaskGroup):SetServerData(quests)
+  for groupId, quests in pairs(self._taskGroupServerData) do
+    if self._runingTaskGroup and self._runingTaskGroup:GetGroupID() == groupId then
+      self._runingTaskGroup:SetServerData(quests)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.GetRuningTaskGroup = function(self)
-  -- function num : 0_9
+function HomelandTaskManager:GetRuningTaskGroup()
   return self._runingTaskGroup
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.GetRuningTask = function(self)
-  -- function num : 0_10
+function HomelandTaskManager:GetRuningTask()
   return self._runingTask
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.GetHomelandTaskManagerHelper = function(self)
-  -- function num : 0_11
+function HomelandTaskManager:GetHomelandTaskManagerHelper()
   return self._homelandTaskManagerHelper
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.GetHomelandClient = function(self)
-  -- function num : 0_12
+function HomelandTaskManager:GetHomelandClient()
   return self._homelandClient
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.GetHomelandModule = function(self)
-  -- function num : 0_13
+function HomelandTaskManager:GetHomelandModule()
   return self._homelandModule
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.SetRuningTaskGroup = function(self, taskGroup)
-  -- function num : 0_14 , upvalues : _ENV
+function HomelandTaskManager:SetRuningTaskGroup(taskGroup)
   if #self._taskGroups == 0 then
-    (Log.fatal)("当前无任务！！！！！！！！！！！！！")
-    return 
+    Log.fatal("当前无任务！！！！！！！！！！！！！")
+    return
   end
   if not taskGroup then
-    (Log.fatal)("当前无任务！！！！！！！！！！！！！:")
-    return 
+    Log.fatal("当前无任务！！！！！！！！！！！！！:")
+    return
   end
   self._runingTaskGroup = taskGroup
-  ;
-  (self._runingTaskGroup):StartRun()
+  self._runingTaskGroup:StartRun()
   self._runingTask = taskGroup:GetRuningTask()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.OnTaskGroupFinish = function(self, groupId)
-  -- function num : 0_15
-  (self._homelandStoryTaskManager):OnTaskGroupFinish(groupId)
+function HomelandTaskManager:OnTaskGroupFinish(groupId)
+  self._homelandStoryTaskManager:OnTaskGroupFinish(groupId)
   if not self._runingTaskGroup then
-    return 
+    return
   end
-  if (self._runingTaskGroup):GetGroupID() ~= groupId then
-    return 
+  if self._runingTaskGroup:GetGroupID() ~= groupId then
+    return
   end
   self._lastTaskGroupId = groupId
   if self._runingTask then
-    (self._runingTask):Dispose()
+    self._runingTask:Dispose()
     self._runingTask = nil
   end
   self:GetNextGroup()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.OnTaskGroupFinishAfterReward = function(self, groupId)
-  -- function num : 0_16
-  (self._homelandStoryTaskManager):OnTaskGroupFinishAfterReward(groupId)
+function HomelandTaskManager:OnTaskGroupFinishAfterReward(groupId)
+  self._homelandStoryTaskManager:OnTaskGroupFinishAfterReward(groupId)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.OnTaskItemFinish = function(self, groupId, taskId)
-  -- function num : 0_17 , upvalues : _ENV
-  (self._homelandStoryTaskManager):OnTaskItemFinish(groupId, taskId)
+function HomelandTaskManager:OnTaskItemFinish(groupId, taskId)
+  self._homelandStoryTaskManager:OnTaskItemFinish(groupId, taskId)
   if not self._runingTaskGroup then
-    return 
+    return
   end
-  if (self._runingTaskGroup):GetGroupID() ~= groupId then
-    return 
+  if self._runingTaskGroup:GetGroupID() ~= groupId then
+    return
   end
-  if (self._runingTask):GetTaskID() ~= taskId then
-    return 
+  if self._runingTask:GetTaskID() ~= taskId then
+    return
   end
-  local allFinish = (self._runingTaskGroup):CheckFinishAll()
+  local allFinish = self._runingTaskGroup:CheckFinishAll()
   if allFinish then
-    (self._runingTaskGroup):OnTaskGroupFinished()
+    self._runingTaskGroup:OnTaskGroupFinished()
   else
     self:NextTaskItem()
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomelandTaskItemChanged)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomelandTaskItemChanged)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.NextTaskItem = function(self)
-  -- function num : 0_18
-  self._runingTask = (self._runingTaskGroup):MoveNextTask()
+function HomelandTaskManager:NextTaskItem()
+  self._runingTask = self._runingTaskGroup:MoveNextTask()
   if self._runingTask then
-    (self._runingTask):StartRun()
+    self._runingTask:StartRun()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.OnTaskGroupStart = function(self, groupId)
-  -- function num : 0_19 , upvalues : _ENV
-  (Log.info)("[HomelandTask]当前 执行 任务组---------------:" .. groupId)
+function HomelandTaskManager:OnTaskGroupStart(groupId)
+  Log.info("[HomelandTask]当前 执行 任务组---------------:" .. groupId)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.OnTaskGroupEnd = function(self, groupId)
-  -- function num : 0_20 , upvalues : _ENV
-  (Log.info)("[HomelandTask]当前 执行 任务组  停止---------------:" .. groupId)
+function HomelandTaskManager:OnTaskGroupEnd(groupId)
+  Log.info("[HomelandTask]当前 执行 任务组  停止---------------:" .. groupId)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.OnTaskItemStart = function(self, taskId)
-  -- function num : 0_21 , upvalues : _ENV
-  (Log.info)("[HomelandTask]当前 执行 任务---------------:" .. taskId)
+function HomelandTaskManager:OnTaskItemStart(taskId)
+  Log.info("[HomelandTask]当前 执行 任务---------------:" .. taskId)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.OnModeChanged = function(self, mode)
-  -- function num : 0_22 , upvalues : _ENV
+function HomelandTaskManager:OnModeChanged(mode)
   self._mode = mode
   if self._mode == HomelandMode.Normal then
     self:RefreshTaskInfo()
   end
   self:SetNpcsVisible(self._mode == HomelandMode.Normal)
-  ;
-  (self._homelandStoryTaskManager):OnModeChanged(mode)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._homelandStoryTaskManager:OnModeChanged(mode)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.GetClientMode = function(self)
-  -- function num : 0_23
+function HomelandTaskManager:GetClientMode()
   return self._mode
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.SetNpcsVisible = function(self, visible)
-  -- function num : 0_24
+function HomelandTaskManager:SetNpcsVisible(visible)
   if self._runingTask then
-    (self._runingTask):SetNpcsVisible(visible)
+    self._runingTask:SetNpcsVisible(visible)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.AddNpcOccupyingPet = function(self, petTplID)
-  -- function num : 0_25
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._occupiedPetList)[petTplID] = true
-  ;
-  ((self._homelandClient):PetManager()):RefreshPetVisible(petTplID)
+function HomelandTaskManager:AddNpcOccupyingPet(petTplID)
+  self._occupiedPetList[petTplID] = true
+  self._homelandClient:PetManager():RefreshPetVisible(petTplID)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.RemoveNpcOccupyingPet = function(self, petTplID)
-  -- function num : 0_26
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._occupiedPetList)[petTplID] = nil
-  ;
-  ((self._homelandClient):PetManager()):RefreshPetVisible(petTplID)
+function HomelandTaskManager:RemoveNpcOccupyingPet(petTplID)
+  self._occupiedPetList[petTplID] = nil
+  self._homelandClient:PetManager():RefreshPetVisible(petTplID)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.IsPetOccupiedAsNpc = function(self, petTplID)
-  -- function num : 0_27 , upvalues : _ENV
-  if self._occupiedPetList and (table.count)(self._occupiedPetList) > 0 then
-    for tmpid,value in pairs(self._occupiedPetList) do
+function HomelandTaskManager:IsPetOccupiedAsNpc(petTplID)
+  if self._occupiedPetList and table.count(self._occupiedPetList) > 0 then
+    for tmpid, value in pairs(self._occupiedPetList) do
       local pet_a_sp = false
       local pet_b_sp = false
       local tmpid_a = tmpid
-      local cfg_pet_a = (Cfg.cfg_pet)[tmpid_a]
+      local cfg_pet_a = Cfg.cfg_pet[tmpid_a]
       if cfg_pet_a.BinderPetID then
         pet_a_sp = true
         tmpid_a = cfg_pet_a.BinderPetID
       end
       local tmpid_b = petTplID
-      local cfg_pet_b = (Cfg.cfg_pet)[tmpid_b]
+      local cfg_pet_b = Cfg.cfg_pet[tmpid_b]
       if cfg_pet_b.BinderPetID then
         pet_b_sp = true
         tmpid_b = cfg_pet_b.BinderPetID
       end
       local isThisPet = false
-      -- DECOMPILER ERROR at PC40: Unhandled construct in 'MakeBoolean' P1
-
-      if pet_a_sp and pet_b_sp and tmpid_a == tmpid_b then
+      if pet_a_sp and pet_b_sp then
+        if tmpid_a == tmpid_b then
+          isThisPet = true
+          Log.debug("###[sp] 两个都是sp，并且id相同,tmpid_a ", tmpid_a)
+        end
+      elseif tmpid == petTplID then
         isThisPet = true
-        ;
-        (Log.debug)("###[sp] 两个都是sp，并且id相同,tmpid_a ", tmpid_a)
-      end
-      if tmpid == petTplID then
-        isThisPet = true
-        ;
-        (Log.debug)("###[sp] 两个都不是sp，但是id相同,tmpid ", tmpid)
+        Log.debug("###[sp] 两个都不是sp，但是id相同,tmpid ", tmpid)
       end
       if isThisPet then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.OnHomeLandSpecialCheck = function(self, pstid)
-  -- function num : 0_28
-  (self._homelandStoryTaskManager):OnHomeLandSpecialCheck(pstid)
+function HomelandTaskManager:OnHomeLandSpecialCheck(pstid)
+  self._homelandStoryTaskManager:OnHomeLandSpecialCheck(pstid)
   if self._runingTask then
-    (self._runingTask):OnHomeLandSpecialCheck(pstid)
+    self._runingTask:OnHomeLandSpecialCheck(pstid)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.ReceiveLastRewards = function(self, TT)
-  -- function num : 0_29 , upvalues : _ENV
+function HomelandTaskManager:ReceiveLastRewards(TT)
   for i = 1, #self._taskGroups do
-    local items = ((self._taskGroups)[i]):GetTaskItems()
+    local items = self._taskGroups[i]:GetTaskItems()
     if items then
       for k = 1, #items do
-        if (items[k]):GetTaskServerInfo() and ((items[k]):GetTaskServerInfo()):Status() == QuestStatus.QUEST_Completed and ((items[k]):GetTaskConditionCfg()).FinishType == FinishConditionEnum.Other then
-          local res, replyEvent = (self:GetHomelandModule()):HandleHomelandTaskQuestTakeReq(TT, (items[k]):GetTaskID())
+        if items[k]:GetTaskServerInfo() and items[k]:GetTaskServerInfo():Status() == QuestStatus.QUEST_Completed and items[k]:GetTaskConditionCfg().FinishType == FinishConditionEnum.Other then
+          local res, replyEvent = self:GetHomelandModule():HandleHomelandTaskQuestTakeReq(TT, items[k]:GetTaskID())
           if res:GetSucc() then
-            (Log.info)("[HomelandTaskManager]任务结束 领奖成功 任务id:" .. (items[k]):GetTaskID())
+            Log.info("[HomelandTaskManager]任务结束 领奖成功 任务id:" .. items[k]:GetTaskID())
             local assetList = replyEvent.rewards
-            if #assetList > 0 then
-              (Log.fatal)("[HomelandTaskManager] ReceiveLastRewards succ, res:" .. res:GetResult())
+            if 0 < #assetList then
+              Log.fatal("[HomelandTaskManager] ReceiveLastRewards succ, res:" .. res:GetResult())
             end
           else
-            do
-              do
-                ;
-                (Log.fatal)("[HomelandTaskManager] ReceiveLastRewards fail, res:" .. res:GetResult())
-                -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+            Log.fatal("[HomelandTaskManager] ReceiveLastRewards fail, res:" .. res:GetResult())
           end
         end
       end
     end
-    local res, replyEvent = nil, nil
-    if ((self._taskGroups)[i]):CheckFinished() and not (self:GetHomelandModule()):IsRecvGroupTaskReward(((self._taskGroups)[i]):GetGroupID()) then
-      res = (self:GetHomelandModule()):HandleHomelandTaskGroupTakeReq(TT, ((self._taskGroups)[i]):GetGroupID())
+    local res, replyEvent
+    if self._taskGroups[i]:CheckFinished() and not self:GetHomelandModule():IsRecvGroupTaskReward(self._taskGroups[i]:GetGroupID()) then
+      res, replyEvent = self:GetHomelandModule():HandleHomelandTaskGroupTakeReq(TT, self._taskGroups[i]:GetGroupID())
       if res:GetSucc() then
-        (Log.info)("[HomelandTask]任务组结束 领奖成功 任务id:" .. ((self._taskGroups)[i]):GetGroupID())
+        Log.info("[HomelandTask]任务组结束 领奖成功 任务id:" .. self._taskGroups[i]:GetGroupID())
         local assetList = replyEvent.rewards
-        if #assetList > 0 then
-          (Log.fatal)("[HomelandTaskManager] ReceiveLastRewards taskGroup succ, res:" .. res:GetResult())
+        if 0 < #assetList then
+          Log.fatal("[HomelandTaskManager] ReceiveLastRewards taskGroup succ, res:" .. res:GetResult())
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandTaskManager.GetHomelandStoryTaskManager = function(self)
-  -- function num : 0_30
+function HomelandTaskManager:GetHomelandStoryTaskManager()
   return self._homelandStoryTaskManager
 end
-
-

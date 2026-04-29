@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_unobtain_six_pet_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIUnObtainSixPetItem", UICustomWidget)
 UIUnObtainSixPetItem = UIUnObtainSixPetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIUnObtainSixPetItem.OnShow = function(self)
-  -- function num : 0_0
+function UIUnObtainSixPetItem:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIUnObtainSixPetItem:InitWidget()
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self.drawIcon = self:GetUIComponent("RawImageLoader", "drawIcon")
   self.diLayer = self:GetUIComponent("Image", "diLayer")
@@ -24,44 +14,25 @@ UIUnObtainSixPetItem.InitWidget = function(self)
   self.logo = self:GetUIComponent("RawImageLoader", "logo")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetItem.SetData = function(self, tmpID)
-  -- function num : 0_2 , upvalues : _ENV
+function UIUnObtainSixPetItem:SetData(tmpID)
   self.petTempId = tmpID
-  local cfg = (Cfg.cfg_pet)[tmpID]
+  local cfg = Cfg.cfg_pet[tmpID]
   local star = cfg.Star
-  local teamBody = (HelperProxy:GetInstance()):GetPetTeamBody(tmpID, 0, 0, PetSkinEffectPath.CARD_DRAW_MULTI)
-  ;
-  (self.drawIcon):LoadImage(teamBody)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-  if star > 4 then
-    (self.diLayer).sprite = (self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)):GetSprite("obtain_donghua_ka" .. star - 3)
+  local teamBody = HelperProxy:GetInstance():GetPetTeamBody(tmpID, 0, 0, PetSkinEffectPath.CARD_DRAW_MULTI)
+  self.drawIcon:LoadImage(teamBody)
+  if 4 < star then
+    self.diLayer.sprite = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas):GetSprite("obtain_donghua_ka" .. star - 3)
   else
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.diLayer).sprite = (self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)):GetSprite("obtain_donghua_ka1")
+    self.diLayer.sprite = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas):GetSprite("obtain_donghua_ka1")
   end
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.elementIcon).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[cfg.FirstElement]).Icon))
-  local parent = (self.stars).transform
+  self.elementIcon.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[cfg.FirstElement].Icon))
+  local parent = self.stars.transform
   for i = 1, 6 do
-    ((parent:GetChild(i - 1)).gameObject):SetActive(i <= star)
+    parent:GetChild(i - 1).gameObject:SetActive(star >= i)
   end
-  ;
-  (self.logo):LoadImage(cfg.Logo)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self.logo:LoadImage(cfg.Logo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIUnObtainSixPetItem.ItemBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIShopPetDetailController", self.petTempId)
+function UIUnObtainSixPetItem:ItemBtnOnClick(go)
+  GameGlobal.UIStateManager():ShowDialog("UIShopPetDetailController", self.petTempId)
 end
-
-

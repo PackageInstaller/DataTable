@@ -1,70 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/game_logic/game_event/auto_event_binder.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AutoEventBinder", Object)
 AutoEventBinder = AutoEventBinder
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoEventBinder.Constructor = function(self, gameEventDispatcher)
-  -- function num : 0_0
+function AutoEventBinder:Constructor(gameEventDispatcher)
   self.type2Callbacks = {}
   self.eventDispatcher = gameEventDispatcher
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoEventBinder.Dispose = function(self)
-  -- function num : 0_1
+function AutoEventBinder:Dispose()
   self:UnBindAllEvents()
   self.type2Callbacks = {}
   self.eventDispatcher = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoEventBinder.BindEvent = function(self, gameEventType, obj, func)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self.type2Callbacks)[gameEventType] ~= nil then
-    (Log.error)("AutoEventBinder:BindEvent same eventtype ", gameEventType, ",", (debug.traceback)())
+function AutoEventBinder:BindEvent(gameEventType, obj, func)
+  if self.type2Callbacks[gameEventType] ~= nil then
+    Log.error("AutoEventBinder:BindEvent same eventtype ", gameEventType, ",", debug.traceback())
     return false
   end
-  local callback = (self.eventDispatcher):RegisterEventCallBack(gameEventType, obj, func)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.type2Callbacks)[gameEventType] = callback
+  local callback = self.eventDispatcher:RegisterEventCallBack(gameEventType, obj, func)
+  self.type2Callbacks[gameEventType] = callback
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoEventBinder.UnBindEvent = function(self, gameEventType)
-  -- function num : 0_3
-  do
-    if (self.type2Callbacks)[gameEventType] ~= nil then
-      local callback = (self.type2Callbacks)[gameEventType]
-      ;
-      (self.eventDispatcher):UnRegisterEventCallback(callback)
-      -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.type2Callbacks)[gameEventType] = nil
-      return true
-    end
-    return false
+function AutoEventBinder:UnBindEvent(gameEventType)
+  if self.type2Callbacks[gameEventType] ~= nil then
+    local callback = self.type2Callbacks[gameEventType]
+    self.eventDispatcher:UnRegisterEventCallback(callback)
+    self.type2Callbacks[gameEventType] = nil
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoEventBinder.UnBindAllEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self.type2Callbacks) do
-    (self.eventDispatcher):UnRegisterEventCallback(v)
+function AutoEventBinder:UnBindAllEvents()
+  for k, v in pairs(self.type2Callbacks) do
+    self.eventDispatcher:UnRegisterEventCallback(v)
   end
   self.type2Callbacks = {}
 end
-
-

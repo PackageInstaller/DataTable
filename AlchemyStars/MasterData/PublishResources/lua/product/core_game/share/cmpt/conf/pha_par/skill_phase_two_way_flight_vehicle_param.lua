@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_two_way_flight_vehicle_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseTwoWayFlightVehicleParam", SkillPhaseParamBase)
 SkillPhaseTwoWayFlightVehicleParam = SkillPhaseTwoWayFlightVehicleParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseTwoWayFlightVehicleParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseTwoWayFlightVehicleParam:Constructor(t)
   self._targetEffectID = t.targetEffectID
   self._targetAnimName = t.targetAnimName
   self._castEffectID = t.castEffectID
@@ -17,23 +10,20 @@ SkillPhaseTwoWayFlightVehicleParam.Constructor = function(self, t)
   self._castTimeLen = t.castTimeLen
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTwoWayFlightVehicleParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseTwoWayFlightVehicleParam:GetCacheTable()
   local t = {
-{((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1}
-, 
-{((Cfg.cfg_effect)[self._targetEffectID]).ResPath, 1}
-}
+    {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    },
+    {
+      Cfg.cfg_effect[self._targetEffectID].ResPath,
+      1
+    }
+  }
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTwoWayFlightVehicleParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseTwoWayFlightVehicleParam:GetPhaseType()
   return SkillViewPhaseType.TwoWayFlightVehicle
 end
-
-

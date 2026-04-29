@@ -1,97 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_line_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignLineMission", ICampaignComponentLocalProcessBase)
 CCampaignLineMission = CCampaignLineMission
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignLineMission.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignLineMission:Constructor()
   self._lineMissionComponent = nil
   self._lineMissionComponentInfo = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignLineMission.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignLineMission:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_LINE_MISSION
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignLineMission.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignLineMission:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignLineMission.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignLineMission:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLineMissionComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignLineMission._GetLineMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._lineMissionComponent = (self._campaignObj):GetComponent(ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION)
+function CCampaignLineMission:_GetLineMissionComponent()
+  self._lineMissionComponent = self._campaignObj:GetComponent(ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION)
   if not self._lineMissionComponent then
-    return 
+    return
   end
-  self._lineMissionComponentInfo = (self._lineMissionComponent):ComponentInfo()
+  self._lineMissionComponentInfo = self._lineMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignLineMission.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignLineMission:GetComponent(componentID)
   if ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION == componentID then
     return self._lineMissionComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignLineMission.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignLineMission:GetComponentInfo(componentID)
   if ECampaignLineMissionComponentID.ECAMPAIGN_LINE_MISSION == componentID then
     return self._lineMissionComponentInfo
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignLineMission.GetEntryNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignLineMission:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_LINE_MISSION)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignLineMission.GetEntryRedDot = function(self)
-  -- function num : 0_8
+function CCampaignLineMission:GetEntryRedDot()
   return self:LineMissionRedDot()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignLineMission.LineMissionRedDot = function(self)
-  -- function num : 0_9
-  if not (self._lineMissionComponent):ComponentIsOpen() then
+function CCampaignLineMission:LineMissionRedDot()
+  if not self._lineMissionComponent:ComponentIsOpen() then
     return false
   end
-  return (self._lineMissionComponent):HaveRedPoint()
+  return self._lineMissionComponent:HaveRedPoint()
 end
-
-

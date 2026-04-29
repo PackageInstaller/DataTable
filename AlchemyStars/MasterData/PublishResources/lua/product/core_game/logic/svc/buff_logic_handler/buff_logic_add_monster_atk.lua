@@ -1,25 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_monster_atk.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddMonsterAtk", BuffLogicBase)
 BuffLogicAddMonsterAtk = BuffLogicAddMonsterAtk
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddMonsterAtk.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddMonsterAtk:Constructor(buffInstance, logicParam)
   self._atkPercent = logicParam.addValue
   self._entity = buffInstance._entity
-  self._buffLogicSvc = (buffInstance._world):GetService("BuffLogic")
+  self._buffLogicSvc = buffInstance._world:GetService("BuffLogic")
   self._buffSeq = buffInstance._buffSeq
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddMonsterAtk.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._buffLogicSvc):ChangeSkillIncrease(self._entity, self._buffSeq, ModifySkillIncreaseParamType.MonsterDamage, self._atkPercent)
+function BuffLogicAddMonsterAtk:DoLogic()
+  self._buffLogicSvc:ChangeSkillIncrease(self._entity, self._buffSeq, ModifySkillIncreaseParamType.MonsterDamage, self._atkPercent)
 end
-
-

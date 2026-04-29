@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_asset/ui_asset.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_asset_config")
 _class("UIAsset", UICustomWidget)
 UIAsset = UIAsset
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAsset.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAsset:OnShow()
   self._componentRoot = nil
   self._disableRoot = nil
-  self._uiCommonAtlas = (self:RootUIOwner()):GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
+  self._uiCommonAtlas = self:RootUIOwner():GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._iconRect = self:GetUIComponent("RectTransform", "icon")
   self._iconObj = self:GetGameObject("icon")
@@ -22,43 +15,26 @@ UIAsset.OnShow = function(self)
   self._qualityObj = self:GetGameObject("quality")
   self._bg = self:GetUIComponent("Image", "bg")
   self._bgObj = self:GetGameObject("quality")
-  self._transform = (self:GetGameObject()).transform
-  self._componentRoot = (self:GetGameObject("Components")).transform
+  self._transform = self:GetGameObject().transform
+  self._componentRoot = self:GetGameObject("Components").transform
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.OnHide = function(self)
-  -- function num : 0_1
+function UIAsset:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.ComponentRoot = function(self)
-  -- function num : 0_2
+function UIAsset:ComponentRoot()
   return self._componentRoot
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.SetBgImage = function(self, bImage)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIAsset:SetBgImage(bImage)
   if bImage then
-    (self._bg).sprite = (self._uiCommonAtlas):GetSprite("spirit_dikuang10_frame")
+    self._bg.sprite = self._uiCommonAtlas:GetSprite("spirit_dikuang10_frame")
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._bg).sprite = (self._uiCommonAtlas):GetSprite("spirit_dikuang1_frame")
+    self._bg.sprite = self._uiCommonAtlas:GetSprite("spirit_dikuang1_frame")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.SetData = function(self, itemId, scale)
-  -- function num : 0_4
+function UIAsset:SetData(itemId, scale)
   if self._id then
     self:_RemoveAllComponent()
   else
@@ -69,107 +45,67 @@ UIAsset.SetData = function(self, itemId, scale)
   self:SetItemIconSize()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.SetItemData = function(self, param)
-  -- function num : 0_5 , upvalues : _ENV
-  if not param then
-    param = {}
-  end
-  ;
-  (self._bgObj):SetActive(param.showBG)
+function UIAsset:SetItemData(param)
+  param = param or {}
+  self._bgObj:SetActive(param.showBG)
   if param.icon then
-    (self._icon):LoadImage(param.icon)
-    ;
-    (self._iconObj):SetActive(true)
+    self._icon:LoadImage(param.icon)
+    self._iconObj:SetActive(true)
   else
-    ;
-    (self._iconObj):SetActive(false)
+    self._iconObj:SetActive(false)
   end
   if param.text then
     if type(param.text) == "number" then
       local num = param.text
-      ;
-      (self._txt):SetText((HelperProxy:GetInstance()):FormatItemCount(num))
-    else
-      do
-        if type(param.text) == "string" then
-          (self._txt):SetText(param.text)
-        end
-        ;
-        (self._txtObj):SetActive(true)
-        ;
-        (self._txtObj):SetActive(false)
-        if param.quality then
-          if param.quality < 0 then
-            (self._qualityObj):SetActive(false)
-            return 
-          end
-          local qualityName = (UIEnum.ItemColorFrame)(param.quality)
-          if qualityName ~= "" then
-            (self._qualityObj):SetActive(true)
-            -- DECOMPILER ERROR at PC87: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._quality).sprite = (self._uiCommonAtlas):GetSprite(qualityName)
-          else
-            ;
-            (self._qualityObj):SetActive(false)
-          end
-        else
-          do
-            ;
-            (self._qualityObj):SetActive(false)
-          end
-        end
-      end
+      self._txt:SetText(HelperProxy:GetInstance():FormatItemCount(num))
+    elseif type(param.text) == "string" then
+      self._txt:SetText(param.text)
     end
+    self._txtObj:SetActive(true)
+  else
+    self._txtObj:SetActive(false)
+  end
+  if param.quality then
+    if param.quality < 0 then
+      self._qualityObj:SetActive(false)
+      return
+    end
+    local qualityName = UIEnum.ItemColorFrame(param.quality)
+    if qualityName ~= "" then
+      self._qualityObj:SetActive(true)
+      self._quality.sprite = self._uiCommonAtlas:GetSprite(qualityName)
+    else
+      self._qualityObj:SetActive(false)
+    end
+  else
+    self._qualityObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.SetItemIconSize = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIAsset:SetItemIconSize()
   local oriSize = Vector2(155, 155)
   if self._id and self._id >= 3751000 and self._id <= 3751999 then
     local newHeight = 160 * oriSize.x / 190
     local newSize = Vector2(oriSize.x, newHeight)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
     if self._iconRect then
-      (self._iconRect).sizeDelta = newSize
+      self._iconRect.sizeDelta = newSize
     end
-    return 
+    return
   end
-  do
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._iconRect then
-      (self._iconRect).sizeDelta = oriSize
-    end
+  if self._iconRect then
+    self._iconRect.sizeDelta = oriSize
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.SetScale = function(self, scale)
-  -- function num : 0_7 , upvalues : _ENV
-  if not scale then
-    scale = 1
-  end
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIAsset:SetScale(scale)
+  scale = scale or 1
   if self._transform then
-    (self._transform).localScale = Vector3(scale, scale, scale)
+    self._transform.localScale = Vector3(scale, scale, scale)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.GetComponent = function(self, type)
-  -- function num : 0_8 , upvalues : _ENV
-  for _,component in ipairs(self._components) do
+function UIAsset:GetComponent(type)
+  for _, component in ipairs(self._components) do
     if component._className == type._className then
       return component
     end
@@ -177,93 +113,62 @@ UIAsset.GetComponent = function(self, type)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.ContainsComponent = function(self, type)
-  -- function num : 0_9
-  do return self:GetComponent(type) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIAsset:ContainsComponent(type)
+  return self:GetComponent(type) ~= nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.AddComponent = function(self, type, ...)
-  -- function num : 0_10 , upvalues : _ENV
+function UIAsset:AddComponent(type, ...)
   local c = self:GetComponent(type)
   if c then
-    (Log.error)("重复的组件")
+    Log.error("重复的组件")
     return nil
   end
   local typeName = type._className
   local index = #self._components + 1
-  if (self._disableComponent)[typeName] then
-    c = (self._disableComponent)[typeName]
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._disableComponent)[typeName] = nil
-    c:Reset(self._id, index, {...})
+  if self._disableComponent[typeName] then
+    c = self._disableComponent[typeName]
+    self._disableComponent[typeName] = nil
+    c:Reset(self._id, index, {
+      ...
+    })
   else
-    c = type:New(self, self._id, index, {...})
-    c:LoadPrefab((UIAssetConfig.GetComponentPrefab)(type))
+    c = type:New(self, self._id, index, {
+      ...
+    })
+    c:LoadPrefab(UIAssetConfig.GetComponentPrefab(type))
     c:OnInit()
   end
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._components)[index] = c
+  self._components[index] = c
   c:OnAdd()
   return c
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.RemoveComponent = function(self, type)
-  -- function num : 0_11 , upvalues : _ENV
+function UIAsset:RemoveComponent(type)
   local c = self:GetComponent(type)
   if not c then
-    (Log.error)("不包含组件，无法移除")
-    return 
+    Log.error("不包含组件，无法移除")
+    return
   end
   local typeName = type._className
   c:OnRemove()
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._components)[typeName] = nil
-  ;
-  (table.remove)(self._components, c:Index())
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._disableComponent)[typeName] = c
+  self._components[typeName] = nil
+  table.remove(self._components, c:Index())
+  self._disableComponent[typeName] = c
   return c
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset._RemoveAllComponent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIAsset:_RemoveAllComponent()
   for i = #self._components, 1, -1 do
-    local c = (self._components)[i]
+    local c = self._components[i]
     c:OnRemove()
-    ;
-    (table.remove)(self._components, i)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._disableComponent)[c._className] = c
+    table.remove(self._components, i)
+    self._disableComponent[c._className] = c
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAsset.GetBtn = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIAsset:GetBtn()
   local eventComponent = self:GetComponent(UIAssetComponentEvent)
   if eventComponent then
     return eventComponent:GetBtnObject()
   end
 end
-
-

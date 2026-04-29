@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_crab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_Crab", SkillScopeCalculator_Base)
 SkillScopeCalculator_Crab = SkillScopeCalculator_Crab
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_Crab.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_Crab:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local params = scopeParam
   local attackDis = params[1]
   local moveDir = params[2] or 0
@@ -20,73 +13,54 @@ SkillScopeCalculator_Crab.CalcRange = function(self, scopeType, scopeParam, cent
   local range = {}
   local wholeArea = {}
   local bodyAreaPosList = {}
-  for _,bodyPos in ipairs(bodyArea) do
+  for _, bodyPos in ipairs(bodyArea) do
     local posWork = centerPos + bodyPos
-    ;
-    (table.insert)(bodyAreaPosList, posWork)
+    table.insert(bodyAreaPosList, posWork)
   end
   local targetDir = Vector2(0, 0)
   if casterDir == Vector2(0, 1) then
     targetDir = Vector2(1 * moveDir, 0)
-  else
-    if casterDir == Vector2(0, -1) then
-      targetDir = Vector2(-1 * moveDir, 0)
-    else
-      if casterDir == Vector2(1, 0) then
-        targetDir = Vector2(0, -1 * moveDir)
-      else
-        if casterDir == Vector2(-1, 0) then
-          targetDir = Vector2(0, 1 * moveDir)
-        end
-      end
-    end
+  elseif casterDir == Vector2(0, -1) then
+    targetDir = Vector2(-1 * moveDir, 0)
+  elseif casterDir == Vector2(1, 0) then
+    targetDir = Vector2(0, -1 * moveDir)
+  elseif casterDir == Vector2(-1, 0) then
+    targetDir = Vector2(0, 1 * moveDir)
   end
   for i = 0, moveDis do
     local movePos = centerPos + Vector2(targetDir.x * i, targetDir.y * i)
-    do
-      if calcMoveBlock == 1 then
-        local isBlock = self:IsPosBlockByArea(movePos, BlockFlag.MonsterLand, bodyArea, casterEntity)
+    if calcMoveBlock == 1 then
+      local isBlock = self:IsPosBlockByArea(movePos, BlockFlag.MonsterLand, bodyArea, casterEntity)
+      if isBlock then
+        break
       end
-      if not isBlock then
-        if onlyAttack ~= 1 and not (table.icontains)(wholeArea, movePos) and movePos ~= centerPos then
-          (table.insert)(wholeArea, movePos)
-        end
-        if attackDis ~= 0 then
-          for _,bodyPos in ipairs(bodyArea) do
-            local curPos = movePos + bodyPos
-            for k = 1, attackDis do
-              local posWork = curPos + Vector2(casterDir.x * k, casterDir.y * k)
-              if not (table.icontains)(bodyAreaPosList, posWork) and not (table.icontains)(wholeArea, posWork) then
-                (table.insert)(wholeArea, posWork)
-              end
-            end
+    end
+    if onlyAttack ~= 1 and not table.icontains(wholeArea, movePos) and movePos ~= centerPos then
+      table.insert(wholeArea, movePos)
+    end
+    if attackDis ~= 0 then
+      for _, bodyPos in ipairs(bodyArea) do
+        local curPos = movePos + bodyPos
+        for k = 1, attackDis do
+          local posWork = curPos + Vector2(casterDir.x * k, casterDir.y * k)
+          if not table.icontains(bodyAreaPosList, posWork) and not table.icontains(wholeArea, posWork) then
+            table.insert(wholeArea, posWork)
           end
-        end
-        do
-          -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out DO_STMT
-
         end
       end
     end
   end
-  for _,pos in ipairs(wholeArea) do
-    if (self._gridFilter):IsValidPiecePos(pos) then
-      (table.insert)(range, pos)
+  for _, pos in ipairs(wholeArea) do
+    if self._gridFilter:IsValidPiecePos(pos) then
+      table.insert(range, pos)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.Crab, centerPos, range, wholeArea)
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_Crab.IsPosBlockByArea = function(self, pos, blockFlag, listArea, entityExcept)
-  -- function num : 0_1
-  local utilDataSvc = ((self._gridFilter)._world):GetService("UtilData")
+function SkillScopeCalculator_Crab:IsPosBlockByArea(pos, blockFlag, listArea, entityExcept)
+  local utilDataSvc = self._gridFilter._world:GetService("UtilData")
   local ret = false
   for i = 1, #listArea do
     local posWork = pos + listArea[i]
@@ -102,5 +76,3 @@ SkillScopeCalculator_Crab.IsPosBlockByArea = function(self, pos, blockFlag, list
   end
   return false
 end
-
-

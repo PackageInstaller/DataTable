@@ -1,61 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/ui_luckland_maingame_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandMainGameController", UIController)
 UILuckLandMainGameController = UILuckLandMainGameController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandMainGameController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandMainGameController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandMainGameController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UILuckLandMainGameController:OnShow(uiParams)
   self._showSpeed = 1.5
   self.missId = uiParams[1]
   self._guideID = 138004
   self._guideID2 = 138005
-  self._guideModule = (GameGlobal.GetModule)(GuideModule)
-  self.curCardDataList = (LuckLandData:GetInstance()):CurCardDatas()
-  self.curBuildDataLevel = (LuckLandData:GetInstance()):CurBuildingDatas()
+  self._guideModule = GameGlobal.GetModule(GuideModule)
+  self.curCardDataList = LuckLandData:GetInstance():CurCardDatas()
+  self.curBuildDataLevel = LuckLandData:GetInstance():CurBuildingDatas()
   self:InitWidget()
   self:InitUI()
   self:AttachEvent(GameEventType.OnLuckLandDeleteCardSucc, self._OnLuckLandDeleteCardSucc)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandMainGameController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandMainGameController:OnHide()
   self:DetachEvent(GameEventType.OnLuckLandDeleteCardSucc, self._OnLuckLandDeleteCardSucc)
   if self.taskid then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskid)
+    GameGlobal.TaskManager():KillTask(self.taskid)
     self.taskid = nil
   end
   if self.taskMoneyid then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskMoneyid)
+    GameGlobal.TaskManager():KillTask(self.taskMoneyid)
     self.taskMoneyid = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandMainGameController._OnLuckLandDeleteCardSucc = function(self)
-  -- function num : 0_3
+function UILuckLandMainGameController:_OnLuckLandDeleteCardSucc()
   self:RefreshGameData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandMainGameController.InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UILuckLandMainGameController:InitWidget()
   self._anim = self:GetGameObject("_anim")
-  self.backBtns = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+  self.backBtns = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
   self.setView = self:GetGameObject("SetView")
   self.continueGameText = self:GetUIComponent("UILocalizationText", "ContinueGameText")
   self.exitGameText = self:GetUIComponent("UILocalizationText", "ExitGameText")
@@ -92,118 +73,79 @@ UILuckLandMainGameController.InitWidget = function(self)
   self:InitPlayCalcuUI()
   self.speedToggleBackgroundImage = self:GetUIComponent("Image", "SpeedToggleBackground")
   self.monsterAtkEffObj = self:GetGameObject("MonsterAtkEff")
-  ;
-  (self.monsterAtkEffObj):SetActive(false)
+  self.monsterAtkEffObj:SetActive(false)
   self.topUnCtrlObj = self:GetGameObject("TopUnCtrl")
-  ;
-  (self.topUnCtrlObj):SetActive(false)
+  self.topUnCtrlObj:SetActive(false)
   self.speedtoggle = self:GetUIComponent("Toggle", "SpeedToggle")
   self._moneyAnim = self:GetUIComponent("Animation", "Money")
   self._canPlaySpeedClickAudio = false
-  self.OnSpeedToggleValueChanged = function(isOn)
-    -- function num : 0_4_0 , upvalues : self, _ENV
+  
+  function self.OnSpeedToggleValueChanged(isOn)
     if self._canPlaySpeedClickAudio then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
     end
     self._canPlaySpeedClickAudio = true
     local key = "LuckLandSpeed"
     if isOn then
       self._showSpeed = 0.75
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.speedToggleBackgroundImage).color = Color(1, 1, 1, 0)
-      ;
-      (LocalDB.SetInt)(key, 1)
+      self.speedToggleBackgroundImage.color = Color(1, 1, 1, 0)
+      LocalDB.SetInt(key, 1)
     else
       self._showSpeed = 1.5
-      -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.speedToggleBackgroundImage).color = Color(1, 1, 1, 1)
-      ;
-      (LocalDB.SetInt)(key, 0)
+      self.speedToggleBackgroundImage.color = Color(1, 1, 1, 1)
+      LocalDB.SetInt(key, 0)
     end
   end
-
-  ;
-  ((self.speedtoggle).onValueChanged):AddListener(self.OnSpeedToggleValueChanged)
+  
+  self.speedtoggle.onValueChanged:AddListener(self.OnSpeedToggleValueChanged)
   local key = "LuckLandSpeed"
-  if (LocalDB.HasKey)(key) then
-    local value = (LocalDB.GetInt)(key, 0)
+  if LocalDB.HasKey(key) then
+    local value = LocalDB.GetInt(key, 0)
     if value == 0 then
       self._showSpeed = 1.5
-      -- DECOMPILER ERROR at PC222: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.speedtoggle).isOn = false
-      -- DECOMPILER ERROR at PC230: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.speedToggleBackgroundImage).color = Color(1, 1, 1, 1)
+      self.speedtoggle.isOn = false
+      self.speedToggleBackgroundImage.color = Color(1, 1, 1, 1)
     else
       self._showSpeed = 0.75
-      -- DECOMPILER ERROR at PC234: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.speedtoggle).isOn = true
-      -- DECOMPILER ERROR at PC242: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self.speedToggleBackgroundImage).color = Color(1, 1, 1, 0)
+      self.speedtoggle.isOn = true
+      self.speedToggleBackgroundImage.color = Color(1, 1, 1, 0)
     end
   else
-    do
-      -- DECOMPILER ERROR at PC245: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.speedtoggle).isOn = false
-      self.cardDetailtoggle = self:GetUIComponent("Toggle", "CardDetailToggle")
-      self._canPlayCradClickAudio = false
-      self.OnCardDetailToggleValueChanged = function(isOn)
-    -- function num : 0_4_1 , upvalues : self, _ENV
+    self.speedtoggle.isOn = false
+  end
+  self.cardDetailtoggle = self:GetUIComponent("Toggle", "CardDetailToggle")
+  self._canPlayCradClickAudio = false
+  
+  function self.OnCardDetailToggleValueChanged(isOn)
     if self._canPlayCradClickAudio then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
     end
     self._canPlayCradClickAudio = true
     for i = 1, #self.cardAreaList do
-      local card = (self.cardAreaList)[i]
+      local card = self.cardAreaList[i]
       card:RefreshDetailMod(isOn)
     end
   end
-
-      ;
-      ((self.cardDetailtoggle).onValueChanged):AddListener(self.OnCardDetailToggleValueChanged)
-      self.flyPosTf = self:GetUIComponent("RectTransform", "FlyPos")
-      self.addMoneyText = self:GetUIComponent("UILocalizationText", "AddMoneyText")
-    end
-  end
+  
+  self.cardDetailtoggle.onValueChanged:AddListener(self.OnCardDetailToggleValueChanged)
+  self.flyPosTf = self:GetUIComponent("RectTransform", "FlyPos")
+  self.addMoneyText = self:GetUIComponent("UILocalizationText", "AddMoneyText")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandMainGameController.InitUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UILuckLandMainGameController:InitUI()
   self._missionId = self.missId
-  ;
-  (self.backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_luckland_back_tips"), function(param)
-      -- function num : 0_5_0_0 , upvalues : _ENV, self
-      ((GameGlobal.UIStateManager)()):CloseDialog("UILuckLandLevelInfo")
+  self.backBtns:SetData(function()
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_luckland_back_tips"), function(param)
+      GameGlobal.UIStateManager():CloseDialog("UILuckLandLevelInfo")
       self:CloseDialog()
-    end
-, nil, nil, nil)
-  end
-, function()
-    -- function num : 0_5_1 , upvalues : self
+    end, nil, nil, nil)
+  end, function()
     self:ShowDialog("UIIntroLoader", "UILuckLandMainGameController")
-  end
-, nil, true, nil, false, nil)
-  self._curMissionCfg = (Cfg.cfg_luckland_client_mission)[self._missionId]
+  end, nil, true, nil, false, nil)
+  self._curMissionCfg = Cfg.cfg_luckland_client_mission[self._missionId]
   if self._curMissionCfg == nil then
-    (Log.error)("cfg_luckland_client_mission is nil" .. self._missionId)
-    return 
+    Log.error("cfg_luckland_client_mission is nil" .. self._missionId)
+    return
   end
   GameGlobal:EnterLuckLandGame(self._missionId)
   self:InitGameData()
@@ -213,116 +155,74 @@ UILuckLandMainGameController.InitUI = function(self)
   self:RefreshGameData()
   self:_CheckGuide()
   self:InitGuideUI()
-  self.flyItemList = (UIWidgetHelper.SpawnObjects)(self, "FlyPos", "UILuckLandFlyItem", 12)
+  self.flyItemList = UIWidgetHelper.SpawnObjects(self, "FlyPos", "UILuckLandFlyItem", 12)
   for i = 1, #self.flyItemList do
-    local item = (self.flyItemList)[i]
-    ;
-    ((item.view):GetGameObject()):SetActive(false)
+    local item = self.flyItemList[i]
+    item.view:GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandMainGameController.InitCardArea = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UILuckLandMainGameController:InitCardArea()
   local moringCount, noonCount, nightCount = 3, 5, 4
-  local camplevel, data = (self.curBuildDataLevel):CampFireBuildLevel()
+  local camplevel, data = self.curBuildDataLevel:CampFireBuildLevel()
   local maxLevel = 5
   local allCount = moringCount + noonCount + nightCount
   self.curRoundCardList = {}
-  self.cardAreaList = (UIWidgetHelper.SpawnObjects)(self, "MorningCardArea", "UILuckLandSingleCard", allCount)
+  self.cardAreaList = UIWidgetHelper.SpawnObjects(self, "MorningCardArea", "UILuckLandSingleCard", allCount)
   for i = 1, #self.cardAreaList do
-    local item = (self.cardAreaList)[i]
+    local item = self.cardAreaList[i]
     if i < allCount - maxLevel + camplevel + 1 then
-      local data = (self.curCardDataList):DrawCard(self.curRoundCardList)
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self.curRoundCardList)[#self.curRoundCardList + 1] = data
+      local data = self.curCardDataList:DrawCard(self.curRoundCardList)
+      self.curRoundCardList[#self.curRoundCardList + 1] = data
       item:SetData(nil)
-      ;
-      ((item.view):GetGameObject()):SetActive(true)
+      item.view:GetGameObject():SetActive(true)
     else
-      do
-        do
-          do
-            local data = (self.curCardDataList):DrawCard(self.curRoundCardList)
-            -- DECOMPILER ERROR at PC58: Confused about usage of register: R14 in 'UnsetPending'
-
-            ;
-            (self.curRoundCardList)[#self.curRoundCardList + 1] = data
-            item:SetData(data)
-            ;
-            ((item.view):GetGameObject()):SetActive(true)
-            item:SetLockCard()
-            item:SetPosIndex(i)
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
+      local data = self.curCardDataList:DrawCard(self.curRoundCardList)
+      self.curRoundCardList[#self.curRoundCardList + 1] = data
+      item:SetData(data)
+      item.view:GetGameObject():SetActive(true)
+      item:SetLockCard()
     end
+    item:SetPosIndex(i)
   end
-  -- DECOMPILER ERROR at PC75: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.cardDetailtoggle).isOn = false
+  self.cardDetailtoggle.isOn = false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandMainGameController.InitBuildArea = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UILuckLandMainGameController:InitBuildArea()
   local maxBuild = 6
-  local buildCount = (self.curBuildDataLevel):TotalCount()
-  self.buildAreaList = (UIWidgetHelper.SpawnObjects)(self, "BuildArea", "UILuckLandBuildItem", maxBuild)
+  local buildCount = self.curBuildDataLevel:TotalCount()
+  self.buildAreaList = UIWidgetHelper.SpawnObjects(self, "BuildArea", "UILuckLandBuildItem", maxBuild)
   for i = 1, #self.buildAreaList do
-    if i <= buildCount then
-      local item = (self.buildAreaList)[i]
-      item:SetData((self.curBuildDataLevel):GetBuildDataByIndex(i), function(levelup, buildingType)
-    -- function num : 0_7_0 , upvalues : self, _ENV
-    self:RefreshGameData()
-    self:BuildLevelUnLockCardPool()
-    if buildingType == LuckLandBuildingType.Main and levelup then
-      self:ShowDialog("UILuckLandSelectCardPopUp", function()
-      -- function num : 0_7_0_0 , upvalues : self
-      self:RefreshGameData()
-    end
-)
-    end
-  end
-)
+    if buildCount >= i then
+      local item = self.buildAreaList[i]
+      item:SetData(self.curBuildDataLevel:GetBuildDataByIndex(i), function(levelup, buildingType)
+        self:RefreshGameData()
+        self:BuildLevelUnLockCardPool()
+        if buildingType == LuckLandBuildingType.Main and levelup then
+          self:ShowDialog("UILuckLandSelectCardPopUp", function()
+            self:RefreshGameData()
+          end)
+        end
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandMainGameController.ShowBuild = function(self, show)
-  -- function num : 0_8 , upvalues : _ENV
+function UILuckLandMainGameController:ShowBuild(show)
   if self.buildAreaList then
-    for _,build in pairs(self.buildAreaList) do
+    for _, build in pairs(self.buildAreaList) do
       build:ShowBuild(show)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandMainGameController._ParseRoundMonsters = function(self, roundMonsterStrArray)
-  -- function num : 0_9 , upvalues : _ENV
+function UILuckLandMainGameController:_ParseRoundMonsters(roundMonsterStrArray)
   local roundMonstersDic = {}
-  for _,strVal in ipairs(roundMonsterStrArray) do
-    local strArray = (string.split)(strVal, "|")
+  for _, strVal in ipairs(roundMonsterStrArray) do
+    local strArray = string.split(strVal, "|")
     if #strArray < 2 then
-      (Log.exception)("[LuckLand] ParseRoundMonsters size error, roundMonsters = ", strVal)
-      return 
+      Log.exception("[LuckLand] ParseRoundMonsters size error, roundMonsters = ", strVal)
+      return
     end
     local round = tonumber(strArray[1])
     local monsterIDList = {}
@@ -335,11 +235,9 @@ UILuckLandMainGameController._ParseRoundMonsters = function(self, roundMonsterSt
 end
 
 local toint = math.tointeger
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
 
-UILuckLandMainGameController.InitEnemyArea = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local entityList = (LuckLandInnerGameHelper.GetFightMonsterData)()
+function UILuckLandMainGameController:InitEnemyArea()
+  local entityList = LuckLandInnerGameHelper.GetFightMonsterData()
   local list = {}
   for i = 1, #entityList do
     local entity = entityList[i]
@@ -348,57 +246,43 @@ UILuckLandMainGameController.InitEnemyArea = function(self)
     list[#list + 1] = LuckLandEnemyData
   end
   local totalAtk = 0
-  self.enemyAreaList = (UIWidgetHelper.SpawnObjects)(self, "EnemyList", "UILuckLandEnemyItem", #list)
+  self.enemyAreaList = UIWidgetHelper.SpawnObjects(self, "EnemyList", "UILuckLandEnemyItem", #list)
   for i = 1, #self.enemyAreaList do
     local data = list[i]
-    local item = (self.enemyAreaList)[i]
-    item:SetData(data, i, (self.enemyListBeginObj).transform, function()
-    -- function num : 0_10_0 , upvalues : self
-    self:RefreshEnemyArea()
-  end
-)
+    local item = self.enemyAreaList[i]
+    item:SetData(data, i, self.enemyListBeginObj.transform, function()
+      self:RefreshEnemyArea()
+    end)
     totalAtk = totalAtk + item:GetDemandMoney()
   end
-  local redyEntity = (LuckLandInnerGameHelper.GetNextMonster)()
-  self.redyEnemyList = (UIWidgetHelper.SpawnObjects)(self, "RedyEnemy", "UILuckLandEnemyItem", 1)
+  local redyEntity = LuckLandInnerGameHelper.GetNextMonster()
+  self.redyEnemyList = UIWidgetHelper.SpawnObjects(self, "RedyEnemy", "UILuckLandEnemyItem", 1)
   local round = redyEntity:GetDemandRound()
-  local curRound, maxRound = (LuckLandInnerGameHelper.GetCurRoundCount)()
+  local curRound, maxRound = LuckLandInnerGameHelper.GetCurRoundCount()
   local m_luckLandEnemyData = LuckLandEnemyData:New()
   m_luckLandEnemyData:Init(redyEntity)
-  ;
-  ((self.redyEnemyList)[1]):SetData(m_luckLandEnemyData, 1, (self.redyEnemyObj).transform, function()
-    -- function num : 0_10_1 , upvalues : self
+  self.redyEnemyList[1]:SetData(m_luckLandEnemyData, 1, self.redyEnemyObj.transform, function()
     self:RefreshEnemyArea()
-  end
-)
-  ;
-  ((self.redyEnemyList)[1]):SetReadyEnemy()
-  ;
-  (self.enemyTotalAtkText):SetText("" .. totalAtk)
-  local leftCount = (LuckLandInnerGameHelper.GetLeftMonstersCount)()
-  ;
-  (self.nextEnemyGoText):SetText((StringTable.Get)("str_luckland_some_round_enter", leftCount))
+  end)
+  self.redyEnemyList[1]:SetReadyEnemy()
+  self.enemyTotalAtkText:SetText("" .. totalAtk)
+  local leftCount = LuckLandInnerGameHelper.GetLeftMonstersCount()
+  self.nextEnemyGoText:SetText(StringTable.Get("str_luckland_some_round_enter", leftCount))
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.RefreshEnemyArea = function(self)
-  -- function num : 0_11
+function UILuckLandMainGameController:RefreshEnemyArea()
   for i = 1, #self.enemyAreaList do
-    local item = (self.enemyAreaList)[i]
+    local item = self.enemyAreaList[i]
     item:CloseTipsBg()
   end
-  local readyItem = (self.redyEnemyList)[1]
+  local readyItem = self.redyEnemyList[1]
   if readyItem then
     readyItem:CloseTipsBg()
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.RefreshNextEnemyList = function(self, nextRoundID)
-  -- function num : 0_12 , upvalues : _ENV
-  local entityList = (LuckLandInnerGameHelper.GetFightMonsterData)()
+function UILuckLandMainGameController:RefreshNextEnemyList(nextRoundID)
+  local entityList = LuckLandInnerGameHelper.GetFightMonsterData()
   local list = {}
   for i = 1, #entityList do
     local entity = entityList[i]
@@ -408,140 +292,108 @@ UILuckLandMainGameController.RefreshNextEnemyList = function(self, nextRoundID)
   end
   local totalAtk = 0
   local curMonsterIndex = 0
-  self.enemyAreaList = (UIWidgetHelper.SpawnObjects)(self, "EnemyList", "UILuckLandEnemyItem", #list)
+  self.enemyAreaList = UIWidgetHelper.SpawnObjects(self, "EnemyList", "UILuckLandEnemyItem", #list)
   for i = 1, #self.enemyAreaList do
     local data = list[i]
-    local item = (self.enemyAreaList)[i]
-    if not (data:GetEnemyEntity()):IsDead() then
+    local item = self.enemyAreaList[i]
+    if not data:GetEnemyEntity():IsDead() then
       curMonsterIndex = curMonsterIndex + 1
-      item:SetData(data, curMonsterIndex, (self.enemyListBeginObj).transform, function()
-    -- function num : 0_12_0 , upvalues : self
-    self:RefreshEnemyArea()
-  end
-)
+      item:SetData(data, curMonsterIndex, self.enemyListBeginObj.transform, function()
+        self:RefreshEnemyArea()
+      end)
       totalAtk = totalAtk + item:GetDemandMoney()
     else
-      item:SetData(data, -1, (self.enemyListBeginObj).transform)
+      item:SetData(data, -1, self.enemyListBeginObj.transform)
     end
   end
-  local redyEntity = (LuckLandInnerGameHelper.GetNextMonster)()
+  local redyEntity = LuckLandInnerGameHelper.GetNextMonster()
   if redyEntity == nil then
-    (self.nextEnemyGoText):SetText((StringTable.Get)("str_luckland_no_enemy"))
-    ;
-    (self.redyEnemyObj):SetActive(false)
-    return 
+    self.nextEnemyGoText:SetText(StringTable.Get("str_luckland_no_enemy"))
+    self.redyEnemyObj:SetActive(false)
+    return
   end
   local round = redyEntity:GetDemandRound()
-  self.redyEnemyList = (UIWidgetHelper.SpawnObjects)(self, "RedyEnemy", "UILuckLandEnemyItem", 1)
-  local curRound, maxRound = (LuckLandInnerGameHelper.GetCurRoundCount)()
+  self.redyEnemyList = UIWidgetHelper.SpawnObjects(self, "RedyEnemy", "UILuckLandEnemyItem", 1)
+  local curRound, maxRound = LuckLandInnerGameHelper.GetCurRoundCount()
   local m_luckLandEnemyData = LuckLandEnemyData:New()
   m_luckLandEnemyData:Init(redyEntity)
-  ;
-  ((self.redyEnemyList)[1]):SetData(m_luckLandEnemyData, 1, (self.redyEnemyObj).transform, function()
-    -- function num : 0_12_1 , upvalues : self
+  self.redyEnemyList[1]:SetData(m_luckLandEnemyData, 1, self.redyEnemyObj.transform, function()
     self:RefreshEnemyArea()
-  end
-)
-  ;
-  ((self.redyEnemyList)[1]):SetReadyEnemy()
-  ;
-  (self.enemyTotalAtkText):SetText("" .. totalAtk)
-  local leftCount = (LuckLandInnerGameHelper.GetLeftMonstersCount)()
-  ;
-  (self.nextEnemyGoText):SetText((StringTable.Get)("str_luckland_some_round_enter", leftCount))
+  end)
+  self.redyEnemyList[1]:SetReadyEnemy()
+  self.enemyTotalAtkText:SetText("" .. totalAtk)
+  local leftCount = LuckLandInnerGameHelper.GetLeftMonstersCount()
+  self.nextEnemyGoText:SetText(StringTable.Get("str_luckland_some_round_enter", leftCount))
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.InitGameData = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self.luckLandGameData = (LuckLandData:GetInstance()):CurGameData()
-  ;
-  (self.luckLandGameData):Init(self._curMissionCfg)
+function UILuckLandMainGameController:InitGameData()
+  self.luckLandGameData = LuckLandData:GetInstance():CurGameData()
+  self.luckLandGameData:Init(self._curMissionCfg)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.RefreshGameData = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UILuckLandMainGameController:RefreshGameData()
   for i = 1, #self.buildAreaList do
-    local item = (self.buildAreaList)[i]
+    local item = self.buildAreaList[i]
     item:RefreshBuildUI()
   end
-  local money = (LuckLandInnerGameHelper.GetCurMoney)()
-  local curHp, maxHp = (LuckLandInnerGameHelper.GetCurHP)()
-  local curRound, maxRound = (LuckLandInnerGameHelper.GetCurRoundCount)()
+  local money = LuckLandInnerGameHelper.GetCurMoney()
+  local curHp, maxHp = LuckLandInnerGameHelper.GetCurHP()
+  local curRound, maxRound = LuckLandInnerGameHelper.GetCurRoundCount()
   local lessRound = maxRound - curRound + 1
-  ;
-  (self.gamePlayTurnCountText):SetText("" .. curRound)
+  self.gamePlayTurnCountText:SetText("" .. curRound)
   if self.curBeyondMoney ~= money then
     if self.curBeyondMoney == nil then
       self.curBeyondMoney = 0
-      ;
-      (self.moneyText):SetText("0")
+      self.moneyText:SetText("0")
     end
     self.taskMoneyid = self:StartTask(self.RefreshMoneyAnim, self, self.curBeyondMoney, money)
   end
   self.curBeyondMoney = money
   local str = curHp .. "/" .. maxHp
-  ;
-  (self.heartText):SetText(str)
+  self.heartText:SetText(str)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.RefreshMoneyAnim = function(self, pp, curMoney, targetMoney)
-  -- function num : 0_15 , upvalues : _ENV
+function UILuckLandMainGameController:RefreshMoneyAnim(pp, curMoney, targetMoney)
   local delta = targetMoney - curMoney
   local count = 4
   local deltaSingle = delta / count
   if curMoney == targetMoney then
     self.taskMoneyid = nil
-    return 
+    return
   end
-  ;
-  ((self.addMoneyText).gameObject):SetActive(true)
-  if delta > 0 then
-    (self.addMoneyText):SetText("+" .. delta)
-  else
-    if delta < 0 then
-      (self.addMoneyText):SetText("" .. delta)
-    end
+  self.addMoneyText.gameObject:SetActive(true)
+  if 0 < delta then
+    self.addMoneyText:SetText("+" .. delta)
+  elseif delta < 0 then
+    self.addMoneyText:SetText("" .. delta)
   end
   for i = 1, count do
     curMoney = curMoney + deltaSingle
-    local moneyCeil = (math.ceil)(curMoney)
-    if deltaSingle > 0 and targetMoney < moneyCeil then
+    local moneyCeil = math.ceil(curMoney)
+    if 0 < deltaSingle and targetMoney < moneyCeil then
       moneyCeil = targetMoney
     end
     if deltaSingle < 0 and moneyCeil < 0 then
       moneyCeil = 0
     end
-    ;
-    (self.moneyText):SetText(moneyCeil)
+    self.moneyText:SetText(moneyCeil)
     YIELD(TT, 50 * self._showSpeed)
   end
-  ;
-  ((self.addMoneyText).gameObject):SetActive(false)
+  self.addMoneyText.gameObject:SetActive(false)
   self.taskMoneyid = nil
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.RefrenshRollPlay = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundBattleComplete)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandRoundStart)
-  ;
-  (self.topUnCtrlObj):SetActive(true)
+function UILuckLandMainGameController:RefrenshRollPlay(TT)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundBattleComplete)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandRoundStart)
+  self.topUnCtrlObj:SetActive(true)
   self:InitPlayCalcuUI()
   self:EmptyAllCard()
   YIELD(TT, 300 * self._showSpeed)
-  local camplevel, data = (self.curBuildDataLevel):CampFireBuildLevel()
+  local camplevel, data = self.curBuildDataLevel:CampFireBuildLevel()
   local maxLevel = 5
   self.curRoundCardList = {}
-  local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+  local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
   local petEntities = {}
   local finalPetEntities = {}
   if entityMgr then
@@ -549,307 +401,239 @@ UILuckLandMainGameController.RefrenshRollPlay = function(self, TT)
     petEntities = entityMgr:GetFightPetEnterList()
   end
   for i = 1, #self.cardAreaList do
-    local item = (self.cardAreaList)[i]
+    local item = self.cardAreaList[i]
     item:SetPosIndex(i)
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.LuckLandCardShow)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.LuckLandCardShow)
   self.moveList = {}
   for i = 1, #self.cardAreaList do
-    local item = (self.cardAreaList)[i]
-    if #self.cardAreaList - maxLevel + camplevel + 1 <= i then
+    local item = self.cardAreaList[i]
+    if i >= #self.cardAreaList - maxLevel + camplevel + 1 then
       item:SetLockCard()
       item:SetBindEntity(nil)
-    else
-      if petEntities[i] then
-        local templateID = (petEntities[i]):GetTemplateID()
-        local data = UILuckLandCardData:New(nil, templateID)
-        item:SetData(data, false, true)
-        item:SetBindEntity(petEntities[i], true)
-        ;
-        (Log.debug)("[fx luckland]:data:", (StringTable.Get)((data:Cfg()).CardName), "   entity:", (StringTable.Get)(((petEntities[i])._cfg):GetPetName()))
-        ;
-        ((item.view):GetGameObject()):SetActive(true)
-        YIELD(TT, 50 * self._showSpeed)
-        if (petEntities[i]):GetTempMove() then
-          local tempMove = (petEntities[i]):GetTempMove()
-          if tempMove == LuckLandConst.BVK_MoveToFirst then
-            (table.insert)(self.moveList, 1, item)
-            for jk = 1, #self.moveList do
-              local moveItem = (self.moveList)[jk]
-              moveItem:MovePos(jk)
-            end
-          end
-          do
-            do
-              do
-                do
-                  -- DECOMPILER ERROR at PC168: Confused about usage of register: R16 in 'UnsetPending'
-
-                  if tempMove == LuckLandConst.BVK_MoveToLast then
-                    (self.moveList)[#self.moveList + 1] = item
-                  end
-                  YIELD(TT, 500 * self._showSpeed)
-                  -- DECOMPILER ERROR at PC179: Confused about usage of register: R15 in 'UnsetPending'
-
-                  ;
-                  (self.moveList)[#self.moveList + 1] = item
-                  item:SetEmptyCard()
-                  item:SetBindEntity(nil)
-                  -- DECOMPILER ERROR at PC186: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC186: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC186: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC186: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC186: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC186: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC186: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC186: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC186: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
+    elseif petEntities[i] then
+      local templateID = petEntities[i]:GetTemplateID()
+      local data = UILuckLandCardData:New(nil, templateID)
+      item:SetData(data, false, true)
+      item:SetBindEntity(petEntities[i], true)
+      Log.debug("[fx luckland]:data:", StringTable.Get(data:Cfg().CardName), "   entity:", StringTable.Get(petEntities[i]._cfg:GetPetName()))
+      item.view:GetGameObject():SetActive(true)
+      YIELD(TT, 50 * self._showSpeed)
+      if petEntities[i]:GetTempMove() then
+        local tempMove = petEntities[i]:GetTempMove()
+        if tempMove == LuckLandConst.BVK_MoveToFirst then
+          table.insert(self.moveList, 1, item)
+          for jk = 1, #self.moveList do
+            local moveItem = self.moveList[jk]
+            moveItem:MovePos(jk)
           end
         end
+        if tempMove == LuckLandConst.BVK_MoveToLast then
+          self.moveList[#self.moveList + 1] = item
+        end
+        YIELD(TT, 500 * self._showSpeed)
+      else
+        self.moveList[#self.moveList + 1] = item
       end
+    else
+      item:SetEmptyCard()
+      item:SetBindEntity(nil)
     end
   end
   for i = 1, #self.moveList do
-    local item = (self.moveList)[i]
-    if #self.cardAreaList - maxLevel + camplevel + 1 > i or item:GetBindEntity() ~= nil then
+    local item = self.moveList[i]
+    if i >= #self.cardAreaList - maxLevel + camplevel + 1 then
+    elseif item:GetBindEntity() ~= nil then
       item:SkillShow()
       YIELD(TT, 50 * self._showSpeed)
     end
   end
-  do
-    while (self._guideModule):IsGuideProcess(self._guideID) and not self:_GuideStepIsDone(self._guideID, 3) do
+  if self._guideModule:IsGuideProcess(self._guideID) then
+    while not self:_GuideStepIsDone(self._guideID, 3) do
       YIELD(TT)
     end
-    local needWaitBuild = false
-    for i = 1, #self.buildAreaList do
-      local item = (self.buildAreaList)[i]
-      local need = item:ShowMoney()
-      if need then
-        needWaitBuild = need
+  end
+  local needWaitBuild = false
+  for i = 1, #self.buildAreaList do
+    local item = self.buildAreaList[i]
+    local need = item:ShowMoney()
+    if need then
+      needWaitBuild = need
+    end
+  end
+  if needWaitBuild then
+    YIELD(TT, 500 * self._showSpeed)
+  end
+  local money, atk, recover = self:CalcuRoundRes()
+  local calcuMoney = 0
+  if 0 < atk then
+    if self.speedtoggle.isOn then
+      self:ShowDialog("UILuckLandPetAtkPopUp", 2)
+    else
+      self:ShowDialog("UILuckLandPetAtkPopUp", 1)
+    end
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
+    while not GameGlobal.UIStateManager():IsShow("UILuckLandPetAtkPopUp") do
+      YIELD(TT)
+    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandResColl, atk)
+    self.showAtkRectT.anchoredPosition = self.OriginAtkRectT.anchoredPosition
+    YIELD(TT, 1000 * self._showSpeed)
+    GameGlobal.UIStateManager():CloseDialog("UILuckLandPetAtkPopUp")
+    self.showAtkObj:SetActive(true)
+    local pos = self.AtkTargetRectT.anchoredPosition
+    self.showAtkRectT:DOAnchorPos(pos, 0.3, true)
+    YIELD(TT, 300 * self._showSpeed)
+    self.showAtkObj:SetActive(false)
+    self.EnemyListBeginRectT:DOPunchAnchorPos(Vector3(0, 50, 0), 0.2, 2)
+    self.EnemyListBeginRectT:DOPunchScale(Vector3(0, 0.15, 0), 0.2, 5)
+    YIELD(TT, 100 * self._showSpeed)
+    for i = 1, #self.enemyAreaList do
+      local enemy = self.enemyAreaList[i]
+      if not enemy:GetDead() then
+        enemy:SetBeAtkDemand(atk)
       end
     end
-    if needWaitBuild then
-      YIELD(TT, 500 * self._showSpeed)
-    end
-    local money, atk, recover = self:CalcuRoundRes()
-    local calcuMoney = 0
-    if atk > 0 then
-      if (self.speedtoggle).isOn then
-        self:ShowDialog("UILuckLandPetAtkPopUp", 2)
-      else
-        self:ShowDialog("UILuckLandPetAtkPopUp", 1)
-      end
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
-      while not ((GameGlobal.UIStateManager)()):IsShow("UILuckLandPetAtkPopUp") do
-        YIELD(TT)
-      end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandResColl, atk)
-      -- DECOMPILER ERROR at PC297: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self.showAtkRectT).anchoredPosition = (self.OriginAtkRectT).anchoredPosition
-      YIELD(TT, 1000 * self._showSpeed)
-      ;
-      ((GameGlobal.UIStateManager)()):CloseDialog("UILuckLandPetAtkPopUp")
-      ;
-      (self.showAtkObj):SetActive(true)
-      local pos = (self.AtkTargetRectT).anchoredPosition
-      ;
-      (self.showAtkRectT):DOAnchorPos(pos, 0.3, true)
-      YIELD(TT, 300 * self._showSpeed)
-      ;
-      (self.showAtkObj):SetActive(false)
-      ;
-      (self.EnemyListBeginRectT):DOPunchAnchorPos(Vector3(0, 50, 0), 0.2, 2)
-      ;
-      (self.EnemyListBeginRectT):DOPunchScale(Vector3(0, 0.15, 0), 0.2, 5)
-      YIELD(TT, 100 * self._showSpeed)
-      for i = 1, #self.enemyAreaList do
-        local enemy = (self.enemyAreaList)[i]
-        if not enemy:GetDead() then
-          enemy:SetBeAtkDemand(atk)
-        end
-      end
-      YIELD(TT, 200 * self._showSpeed)
-    end
-    do
-      ;
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
-      if (self.speedtoggle).isOn then
-        self:ShowDialog("UILuckLandResCalcuPopUp", 2)
-      else
-        self:ShowDialog("UILuckLandResCalcuPopUp", 1)
-      end
-      while not ((GameGlobal.UIStateManager)()):IsShow("UILuckLandResCalcuPopUp") do
-        YIELD(TT)
-      end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandResColl, money)
-      YIELD(TT, 1000 * self._showSpeed)
-      ;
-      (self._moneyAnim):Play("uieff_UILuckLandResCalcuPopUp_jiesuan")
-      YIELD(TT, 120 * self._showSpeed)
-      self:RefreshGameData()
-      YIELD(TT, 100 * self._showSpeed)
-      ;
-      ((GameGlobal.UIStateManager)()):CloseDialog("UILuckLandResCalcuPopUp")
-      self:InitPlayCalcuUI()
-      for i = 1, #self.enemyAreaList do
-        local enemy = (self.enemyAreaList)[i]
-        if not enemy:GetDead() then
-          local round = enemy:GetDemandRound()
-          local roundMoney = enemy:GetDemandMoney()
-          local curMoney = (LuckLandInnerGameHelper.GetCurMoney)()
-          if round == 0 then
-            if roundMoney < curMoney and (self._guideModule):IsGuideDone(self._guideID) then
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UILuckLandMainGameController2)
+    YIELD(TT, 200 * self._showSpeed)
+  end
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
+  if self.speedtoggle.isOn then
+    self:ShowDialog("UILuckLandResCalcuPopUp", 2)
+  else
+    self:ShowDialog("UILuckLandResCalcuPopUp", 1)
+  end
+  while not GameGlobal.UIStateManager():IsShow("UILuckLandResCalcuPopUp") do
+    YIELD(TT)
+  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandResColl, money)
+  YIELD(TT, 1000 * self._showSpeed)
+  self._moneyAnim:Play("uieff_UILuckLandResCalcuPopUp_jiesuan")
+  YIELD(TT, 120 * self._showSpeed)
+  self:RefreshGameData()
+  YIELD(TT, 100 * self._showSpeed)
+  GameGlobal.UIStateManager():CloseDialog("UILuckLandResCalcuPopUp")
+  self:InitPlayCalcuUI()
+  for i = 1, #self.enemyAreaList do
+    local enemy = self.enemyAreaList[i]
+    if not enemy:GetDead() then
+      local round = enemy:GetDemandRound()
+      local roundMoney = enemy:GetDemandMoney()
+      local curMoney = LuckLandInnerGameHelper.GetCurMoney()
+      if round == 0 then
+        if roundMoney < curMoney and self._guideModule:IsGuideDone(self._guideID) then
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UILuckLandMainGameController2)
+          YIELD(TT)
+          if self._guideModule:IsGuideProcess(self._guideID2) then
+            while not self:_GuideStepIsDone(self._guideID2, 1) do
               YIELD(TT)
-              while (self._guideModule):IsGuideProcess(self._guideID2) and not self:_GuideStepIsDone(self._guideID2, 1) do
-                YIELD(TT)
-              end
-              while (self._guideModule):IsGuideProcess(self._guideID2) and not self:_GuideStepIsDone(self._guideID2, 2) do
-                YIELD(TT)
-              end
             end
-            ;
-            (self._moneyAnim):Stop()
-            if roundMoney <= curMoney then
-              enemy:SetGetedDemand(roundMoney)
-              YIELD(TT, 250 * self._showSpeed)
-              ;
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandMonsterTurn)
-              ;
-              (self._moneyAnim):Play("uieff_UILuckLandResCalcuPopUp_boss")
-              YIELD(TT, 400 * self._showSpeed)
-              self:RefreshGameData()
-              enemy:DeadShow()
-              ;
-              (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N5ShowBuilding)
-              YIELD(TT, 250 * self._showSpeed)
-            else
-              enemy:SetGetedDemand(curMoney)
-              YIELD(TT, 250 * self._showSpeed)
-              YIELD(TT, 150 * self._showSpeed)
-              ;
-              (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.LuckLandMonsterFight)
-              ;
-              (self.monsterAtkEffObj):SetActive(false)
-              ;
-              (self.monsterAtkEffObj):SetActive(true)
-              YIELD(TT, 500 * self._showSpeed)
-              ;
-              (self.heartRootRectT):DOPunchScale(Vector3(0.3, 0.3, 0.3), 0.25 * self._showSpeed, 3)
-              ;
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandMonsterTurn)
-              self:RefreshGameData()
-              YIELD(TT, 200 * self._showSpeed)
-              ;
-              (self._moneyAnim):Play("uieff_UILuckLandResCalcuPopUp_boss")
-              YIELD(TT, 400 * self._showSpeed)
+          end
+          if self._guideModule:IsGuideProcess(self._guideID2) then
+            while not self:_GuideStepIsDone(self._guideID2, 2) do
+              YIELD(TT)
             end
-          else
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandMonsterTurn)
           end
         end
-      end
-      local curRound, maxRound = (LuckLandInnerGameHelper.GetCurRoundCount)()
-      YIELD(TT, 250 * self._showSpeed)
-      self:RefreshNextEnemyList(curRound + 1)
-      self:RefreshGameData()
-      YIELD(TT, 250 * self._showSpeed)
-      local curHp, maxHp = (LuckLandInnerGameHelper.GetCurHP)()
-      if curHp <= 0 then
-        self:ShowDialog("UILuckLandGameEndPopUp", function()
-    -- function num : 0_16_0 , upvalues : self
-    self:RestartGame()
-  end
-)
-        ;
-        (self.topUnCtrlObj):SetActive(false)
-        self.taskid = nil
-        return 
-      end
-      local leftMonsterCount = (LuckLandInnerGameHelper.GetLeftMonstersCount)()
-      local allDead = true
-      for i = 1, #self.enemyAreaList do
-        local enemy = (self.enemyAreaList)[i]
-        if not enemy:GetDead() then
-          allDead = false
+        self._moneyAnim:Stop()
+        if roundMoney <= curMoney then
+          enemy:SetGetedDemand(roundMoney)
+          YIELD(TT, 250 * self._showSpeed)
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandMonsterTurn)
+          self._moneyAnim:Play("uieff_UILuckLandResCalcuPopUp_boss")
+          YIELD(TT, 400 * self._showSpeed)
+          self:RefreshGameData()
+          enemy:DeadShow()
+          AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N5ShowBuilding)
+          YIELD(TT, 250 * self._showSpeed)
+        else
+          enemy:SetGetedDemand(curMoney)
+          YIELD(TT, 250 * self._showSpeed)
+          YIELD(TT, 150 * self._showSpeed)
+          AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.LuckLandMonsterFight)
+          self.monsterAtkEffObj:SetActive(false)
+          self.monsterAtkEffObj:SetActive(true)
+          YIELD(TT, 500 * self._showSpeed)
+          self.heartRootRectT:DOPunchScale(Vector3(0.3, 0.3, 0.3), 0.25 * self._showSpeed, 3)
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandMonsterTurn)
+          self:RefreshGameData()
+          YIELD(TT, 200 * self._showSpeed)
+          self._moneyAnim:Play("uieff_UILuckLandResCalcuPopUp_boss")
+          YIELD(TT, 400 * self._showSpeed)
         end
+      else
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandMonsterTurn)
       end
-      if leftMonsterCount == 0 and allDead then
-        self:ShowDialog("UILuckLandGameSucPopUp")
-        self.taskid = nil
-        YIELD(TT)
-        return 
-      end
-      while (self._guideModule):IsGuideProcess(self._guideID) and not self:_GuideStepIsDone(self._guideID, 4) do
-        YIELD(TT)
-      end
-      while 1 do
-        if (self._guideModule):IsGuideProcess(self._guideID2) then
-          if not self:_GuideStepIsDone(self._guideID2, 2) then
-            YIELD(TT)
-            -- DECOMPILER ERROR at PC726: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC726: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC726: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC726: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      self:ShowBuild(true)
-      while (self._guideModule):IsGuideProcess(self._guideID2) and not self:_GuideStepIsDone(self._guideID2, 3) do
-        YIELD(TT)
-      end
-      while (self._guideModule):IsGuideProcess(self._guideID2) and not self:_GuideStepIsDone(self._guideID2, 4) do
-        YIELD(TT)
-      end
-      while (self._guideModule):IsGuideProcess(self._guideID2) and not self:_GuideStepIsDone(self._guideID2, 5) do
-        YIELD(TT)
-      end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LuckLandRoundEnd)
-      self:ShowDialog("UILuckLandSelectCardPopUp", function()
-    -- function num : 0_16_1 , upvalues : self
-    self:RefreshGameData()
-  end
-)
-      ;
-      (self.topUnCtrlObj):SetActive(false)
-      self:RefreshGameData()
-      self.taskid = nil
+    else
     end
   end
+  local curRound, maxRound = LuckLandInnerGameHelper.GetCurRoundCount()
+  YIELD(TT, 250 * self._showSpeed)
+  self:RefreshNextEnemyList(curRound + 1)
+  self:RefreshGameData()
+  YIELD(TT, 250 * self._showSpeed)
+  local curHp, maxHp = LuckLandInnerGameHelper.GetCurHP()
+  if curHp <= 0 then
+    self:ShowDialog("UILuckLandGameEndPopUp", function()
+      self:RestartGame()
+    end)
+    self.topUnCtrlObj:SetActive(false)
+    self.taskid = nil
+    return
+  end
+  local leftMonsterCount = LuckLandInnerGameHelper.GetLeftMonstersCount()
+  local allDead = true
+  for i = 1, #self.enemyAreaList do
+    local enemy = self.enemyAreaList[i]
+    if not enemy:GetDead() then
+      allDead = false
+    end
+  end
+  if leftMonsterCount == 0 and allDead then
+    self:ShowDialog("UILuckLandGameSucPopUp")
+    self.taskid = nil
+    YIELD(TT)
+    return
+  end
+  if self._guideModule:IsGuideProcess(self._guideID) then
+    while not self:_GuideStepIsDone(self._guideID, 4) do
+      YIELD(TT)
+    end
+  end
+  if self._guideModule:IsGuideProcess(self._guideID2) then
+    while not self:_GuideStepIsDone(self._guideID2, 2) do
+      YIELD(TT)
+    end
+    self:ShowBuild(true)
+  end
+  if self._guideModule:IsGuideProcess(self._guideID2) then
+    while not self:_GuideStepIsDone(self._guideID2, 3) do
+      YIELD(TT)
+    end
+  end
+  if self._guideModule:IsGuideProcess(self._guideID2) then
+    while not self:_GuideStepIsDone(self._guideID2, 4) do
+      YIELD(TT)
+    end
+  end
+  if self._guideModule:IsGuideProcess(self._guideID2) then
+    while not self:_GuideStepIsDone(self._guideID2, 5) do
+      YIELD(TT)
+    end
+  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.LuckLandRoundEnd)
+  self:ShowDialog("UILuckLandSelectCardPopUp", function()
+    self:RefreshGameData()
+  end)
+  self.topUnCtrlObj:SetActive(false)
+  self:RefreshGameData()
+  self.taskid = nil
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.CalcuEnemyPhase = function(self, atk)
-  -- function num : 0_17
+function UILuckLandMainGameController:CalcuEnemyPhase(atk)
   local teamAtk = atk
   for i = 1, #self.enemyAreaList do
-    local item = (self.enemyAreaList)[i]
-    if not item:GetDead() and teamAtk > 0 then
+    local item = self.enemyAreaList[i]
+    if not item:GetDead() and 0 < teamAtk then
       local hp = item:GetHP()
       local reduceHp = hp
       if teamAtk < reduceHp then
@@ -864,126 +648,79 @@ UILuckLandMainGameController.CalcuEnemyPhase = function(self, atk)
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.CalcuRoundRes = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UILuckLandMainGameController:CalcuRoundRes()
   local money, atk, recover = 0, 0, 0
-  money = (LuckLandInnerGameHelper.GetRoundRes)()
+  money, atk, recover = LuckLandInnerGameHelper.GetRoundRes()
   return money, atk, recover
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.RestartGame = function(self)
-  -- function num : 0_19
+function UILuckLandMainGameController:RestartGame()
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.BuildLevelUnLockCardPool = function(self)
-  -- function num : 0_20
-  local camplevel, data = (self.curBuildDataLevel):CampFireBuildLevel()
+function UILuckLandMainGameController:BuildLevelUnLockCardPool()
+  local camplevel, data = self.curBuildDataLevel:CampFireBuildLevel()
   local maxLevel = 5
   for i = 1, #self.cardAreaList do
     if i < #self.cardAreaList - maxLevel + camplevel + 1 then
-      local item = (self.cardAreaList)[i]
+      local item = self.cardAreaList[i]
       item:SetUnlockCard()
     end
   end
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.EmptyAllCard = function(self)
-  -- function num : 0_21
-  local camplevel, data = (self.curBuildDataLevel):CampFireBuildLevel()
+function UILuckLandMainGameController:EmptyAllCard()
+  local camplevel, data = self.curBuildDataLevel:CampFireBuildLevel()
   local maxLevel = 5
   for i = 1, #self.cardAreaList do
     if i < #self.cardAreaList - maxLevel + camplevel + 1 then
-      local item = (self.cardAreaList)[i]
+      local item = self.cardAreaList[i]
       item:SetEmptyCard()
     end
   end
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.InitPlayCalcuUI = function(self)
-  -- function num : 0_22
-  (self.showPhaseObj):SetActive(false)
-  ;
-  (self.playerCalcuPhaseObj):SetActive(false)
-  ;
-  (self.showAtkObj):SetActive(false)
-  ;
-  (self.showRecoverObj):SetActive(false)
-  ;
-  (self.showMoneyObj):SetActive(false)
-  ;
-  (self.moneyEffObj):SetActive(false)
-  ;
-  (self.atkEffObj):SetActive(false)
-  ;
-  (self.recoverEffObj):SetActive(false)
+function UILuckLandMainGameController:InitPlayCalcuUI()
+  self.showPhaseObj:SetActive(false)
+  self.playerCalcuPhaseObj:SetActive(false)
+  self.showAtkObj:SetActive(false)
+  self.showRecoverObj:SetActive(false)
+  self.showMoneyObj:SetActive(false)
+  self.moneyEffObj:SetActive(false)
+  self.atkEffObj:SetActive(false)
+  self.recoverEffObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.ContinueBtnOnClick = function(self, go)
-  -- function num : 0_23
+function UILuckLandMainGameController:ContinueBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.ExitBtnOnClick = function(self, go)
-  -- function num : 0_24
+function UILuckLandMainGameController:ExitBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.RollBtnOnClick = function(self, go)
-  -- function num : 0_25
+function UILuckLandMainGameController:RollBtnOnClick(go)
   self.taskid = self:StartTask(self.RefrenshRollPlay, self)
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.CardBagBtnOnClick = function(self, go)
-  -- function num : 0_26
+function UILuckLandMainGameController:CardBagBtnOnClick(go)
   self:ShowDialog("UILuckLandCardBag", true, true)
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController._CheckGuide = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UILuckLandMainGameController)
+function UILuckLandMainGameController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UILuckLandMainGameController)
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController._GuideStepIsDone = function(self, guideID, step)
-  -- function num : 0_28
-  if (self._guideModule):IsGuideProcess(guideID) then
-    local guide = ((self._guideModule).guides)[guideID]
+function UILuckLandMainGameController:_GuideStepIsDone(guideID, step)
+  if self._guideModule:IsGuideProcess(guideID) then
+    local guide = self._guideModule.guides[guideID]
     if guide then
-      local guideStep = (guide.allSteps)[step]
+      local guideStep = guide.allSteps[step]
       return guideStep.done
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-UILuckLandMainGameController.InitGuideUI = function(self)
-  -- function num : 0_29
-  if not (self._guideModule):IsGuideDone(self._guideID2) then
+function UILuckLandMainGameController:InitGuideUI()
+  if not self._guideModule:IsGuideDone(self._guideID2) then
     self:ShowBuild(false)
   end
 end
-
-

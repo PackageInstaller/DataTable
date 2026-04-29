@@ -1,3404 +1,17535 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/guide/cfg_guide_trigger.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {id = 1, guide = 2, sort = 3, des = 4, count = 5, triggerlv = 6, triggerDoneQuest = 7, triggerRecQuest = 8, triggerItem = 9, funcOpen = 10, triggerType = 11, triggerParam = 12, minlv = 13, maxlv = 14, showRules = 15, canJump = 16, continueGuide = 17, preGuideID = 18, missionId = 19, passMissionId = 20, campaignPassInfo = 21, campaignPassedInfo = 22, chapterID = 23, exclusiveGuide = 24, LevelExclusiveGuide = 25, StartTime = 26, EndTime = 27, TaskID = 28, TaskIDs = 29}
-local common = {"关卡3-11传送", "关卡4-2符文", "关卡1-8结算触发", "关卡1-11结算触发", "N12 日常1 猫耳章鱼焦点引导", "N11 日常13 铁蹄大师焦点引导", "N12 日常3 怪怪蛇焦点引导", "N12 日常4 刺猬弟弟焦点引导", "关卡1-10结算触发（局外用）", "弱引导1 引导取消连线", "2021-09-27 09:00:00", "2021-11-08 09:00:00", "2022-08-01 09:00:00", "2024-03-18 09:00:00", "N28 AVG活动主界面引导", "N28 AVG活动获取证据引导", "N28 AVG活动举证引导", "N28 AVG活动审判官笔记引导", "2023-05-08 09:00:00", "2023-07-31 09:00:00", "sp巴顿试用", "莱因哈特试用", "P5试用", "琪尔试用", "虹霞试用", "N21菲雅试用", "N21杰诺试用", "卡斯特试用", "珀拉珂试用", "大航海关卡01", "大航海Boss引导", "米洛斯试用", "塞提试用", "莉莉卡试用", "贝尔塔引导", "阿克西娅引导", "珀兰蒂试用", "试用", "月白引导", "仲试用", "仲试用-仲", "仲试用-黑潮", "仲试用-卡戎", "厘青试用", "厘青试用-厘青", "N27赛车关", "马太", "哈提", "克里斯汀", "哈提boss焦点引导", "列奥", "莺歌", "阿纳托利", "加晴", "sp城主", "2023-08-28 09:00:00", "局内自选引导1引导+困难", "局内自选引导1引导", "点选转色模块3引导+困难", "点选转色模块3引导", "第二回合", "焦点引导", "15简单焦点引导", "15困难焦点引导", "18简单焦点引导", "18困难焦点引导", "金色血条", "丹棠", "2024-01-10 04:00:00", "2023-12-06 05:00:00", "4简单焦点引导", "启迪互联局内", "璇极试用", "维吉尔试用", "入场", "sp伊斯塔万放完技能", "螃蟹", "跑商小游戏引导", "辰霓放完技能", "赛季秘境主界面", "2024-05-08 05:00:00", "赛季秘境任务", "赛季秘境难度选择", "大地图主界面1", "大地图主界面2", "boss突袭关卡详情界面", "首次进入赛季秘境战斗关触发", "岩浆Boss焦点引导", "泽塔放完技能", "巴缇牙引导", "莱因哈特试用-莱因哈特放技能", "2024-09-24 05:00:00", 
-{1000101, 1, 2, 0}
-, 
-{1000102}
-, 
-{1000103}
-, 
-{1000104}
-, 
-{1000105}
-, 
-{1000107}
-, 
-{1000108}
-, 
-{1000109}
-, 
-{1000110}
-, 
-{1000112}
-, 
-{1000129}
-, 
-{999999999, 1, 1, 0}
-, 
-{1000202}
-, 
-{1000203}
-, 
-{1000406}
-, 
-{1000914, 1, 1, 0}
-, 
-{1001014, 1, 1, 0}
-, 
-{1000306}
-, 
-{999999999}
-, 
-{5}
-, 
-{1}
-, 
-{101109}
-, 
-{10}
-, 
-{9}
-, 
-{14}
-, 
-{15}
-, 
-{16}
-, 
-{43}
-, 
-{11100004}
-, 
-{5223001, 1, 1, 0}
-, 
-{410001, 1, 2, 0}
-, 
-{5243001, 1, 1, 2, 1601751}
-, 
-{107}
-, 
-{80001, 1, 8001003}
-, 
-{80001, 1, 8001005}
-, 
-{80001, 1, 8001023}
+local key = {
+  id = 1,
+  guide = 2,
+  sort = 3,
+  des = 4,
+  count = 5,
+  triggerlv = 6,
+  triggerDoneQuest = 7,
+  triggerRecQuest = 8,
+  triggerItem = 9,
+  funcOpen = 10,
+  triggerType = 11,
+  triggerParam = 12,
+  minlv = 13,
+  maxlv = 14,
+  showRules = 15,
+  canJump = 16,
+  continueGuide = 17,
+  preGuideID = 18,
+  missionId = 19,
+  passMissionId = 20,
+  campaignPassInfo = 21,
+  campaignPassedInfo = 22,
+  chapterID = 23,
+  exclusiveGuide = 24,
+  LevelExclusiveGuide = 25,
+  StartTime = 26,
+  EndTime = 27,
+  TaskID = 28,
+  TaskIDs = 29
+}
+local common = {
+  "关卡3-11传送",
+  "关卡4-2符文",
+  "关卡1-8结算触发",
+  "关卡1-11结算触发",
+  "N12 日常1 猫耳章鱼焦点引导",
+  "N11 日常13 铁蹄大师焦点引导",
+  "N12 日常3 怪怪蛇焦点引导",
+  "N12 日常4 刺猬弟弟焦点引导",
+  "关卡1-10结算触发（局外用）",
+  "弱引导1 引导取消连线",
+  "2021-09-27 09:00:00",
+  "2021-11-08 09:00:00",
+  "2022-08-01 09:00:00",
+  "2024-03-18 09:00:00",
+  "N28 AVG活动主界面引导",
+  "N28 AVG活动获取证据引导",
+  "N28 AVG活动举证引导",
+  "N28 AVG活动审判官笔记引导",
+  "2023-05-08 09:00:00",
+  "2023-07-31 09:00:00",
+  "sp巴顿试用",
+  "莱因哈特试用",
+  "P5试用",
+  "琪尔试用",
+  "虹霞试用",
+  "N21菲雅试用",
+  "N21杰诺试用",
+  "卡斯特试用",
+  "珀拉珂试用",
+  "大航海关卡01",
+  "大航海Boss引导",
+  "米洛斯试用",
+  "塞提试用",
+  "莉莉卡试用",
+  "贝尔塔引导",
+  "阿克西娅引导",
+  "珀兰蒂试用",
+  "试用",
+  "月白引导",
+  "仲试用",
+  "仲试用-仲",
+  "仲试用-黑潮",
+  "仲试用-卡戎",
+  "厘青试用",
+  "厘青试用-厘青",
+  "N27赛车关",
+  "马太",
+  "哈提",
+  "克里斯汀",
+  "哈提boss焦点引导",
+  "列奥",
+  "莺歌",
+  "阿纳托利",
+  "加晴",
+  "sp城主",
+  "2023-08-28 09:00:00",
+  "局内自选引导1引导+困难",
+  "局内自选引导1引导",
+  "点选转色模块3引导+困难",
+  "点选转色模块3引导",
+  "第二回合",
+  "焦点引导",
+  "15简单焦点引导",
+  "15困难焦点引导",
+  "18简单焦点引导",
+  "18困难焦点引导",
+  "金色血条",
+  "丹棠",
+  "2024-01-10 04:00:00",
+  "2023-12-06 05:00:00",
+  "4简单焦点引导",
+  "启迪互联局内",
+  "璇极试用",
+  "维吉尔试用",
+  "入场",
+  "sp伊斯塔万放完技能",
+  "螃蟹",
+  "跑商小游戏引导",
+  "辰霓放完技能",
+  "赛季秘境主界面",
+  "2024-05-08 05:00:00",
+  "赛季秘境任务",
+  "赛季秘境难度选择",
+  "大地图主界面1",
+  "大地图主界面2",
+  "boss突袭关卡详情界面",
+  "首次进入赛季秘境战斗关触发",
+  "岩浆Boss焦点引导",
+  "泽塔放完技能",
+  "巴缇牙引导",
+  "莱因哈特试用-莱因哈特放技能",
+  "2024-09-24 05:00:00",
+  {
+    1000101,
+    1,
+    2,
+    0
+  },
+  {1000102},
+  {1000103},
+  {1000104},
+  {1000105},
+  {1000107},
+  {1000108},
+  {1000109},
+  {1000110},
+  {1000112},
+  {1000129},
+  {
+    999999999,
+    1,
+    1,
+    0
+  },
+  {1000202},
+  {1000203},
+  {1000406},
+  {
+    1000914,
+    1,
+    1,
+    0
+  },
+  {
+    1001014,
+    1,
+    1,
+    0
+  },
+  {1000306},
+  {999999999},
+  {5},
+  {1},
+  {101109},
+  {10},
+  {9},
+  {14},
+  {15},
+  {16},
+  {43},
+  {11100004},
+  {
+    5223001,
+    1,
+    1,
+    0
+  },
+  {
+    410001,
+    1,
+    2,
+    0
+  },
+  {
+    5243001,
+    1,
+    1,
+    2,
+    1601751
+  },
+  {107},
+  {
+    80001,
+    1,
+    8001003
+  },
+  {
+    80001,
+    1,
+    8001005
+  },
+  {
+    80001,
+    1,
+    8001023
+  }
 }
 local config = {
-[101] = {101, 1000, nil, "关卡1-1我方回合1行动触发连线引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000101, 1, 1, 0}
-}
-, 
-[102] = {102, 1000, nil, "关卡1-1我方行动后切入提示", nil, nil, nil, nil, nil, nil, 4, 
-{1000101, 1, 1, 1}
-}
-, 
-[103] = {103, 1000, nil, "关卡1-1我方回合2行动触发连线引导", nil, nil, nil, nil, nil, nil, 2, common[93]}
-, 
-[104] = {104, 1000, nil, "关卡1-1我方回合3行动触发弹窗+连线引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000101, 1, 3, 0}
-}
-, 
-[105] = {105, 1000, nil, "关卡1-1我方回合4行动提示", nil, nil, nil, nil, nil, nil, 2, 
-{1000101, 1, 4, 0}
-}
-, 
-[106] = {106, 1001, nil, "关卡1-2我方回合1触发连线引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000102, 1, 1, 0}
-}
-, 
-[107] = {107, 1001, nil, "关卡1-2我方回合2触发连线引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000102, 1, 2, 0}
-}
-, 
-[108] = {108, 1001, nil, "关卡1-2我方回合2触发弹窗", nil, nil, nil, nil, nil, nil, 2, 
-{7000102, 1, 2, 0}
-}
-, 
-[109] = {109, 1001, nil, "关卡1-2我方第2波触发UI引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000102, 2, 1, 0}
-, nil, nil, nil, nil, 1103}
-, 
-[110] = {110, 1002, nil, "关卡1-3回合1格子+技能引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000103, 1, 1, 0}
-}
-, 
-[111] = {111, 1002, nil, "关卡1-3回合1强制连线", nil, nil, nil, nil, nil, nil, 5, 
-{1000103, 1, 1, 2, 1300521}
-}
-, 
-[112] = {112, 1002, nil, "关卡1-3回合2引导微丝技能", nil, nil, nil, nil, nil, nil, 2, 
-{1000103, 1, 2, 0}
-}
-, 
-[113] = {113, 1002, nil, "关卡1-3微丝技能释放结束后", nil, nil, nil, nil, nil, nil, 5, 
-{1000103, 1, 2, 2, 1500331}
-}
-, 
-[114] = {114, 1003, nil, "关卡1-5-1第一波释放白夜技能", nil, nil, nil, nil, nil, nil, 2, 
-{1000104, 1, 1, 0}
-}
-, 
-[115] = {115, 1003, nil, "关卡1-5-1第一波引导连线", nil, nil, nil, nil, nil, nil, 5, 
-{1000104, 1, 1, 2, 1400411}
-}
-, 
-[116] = {116, 1003, nil, "关卡1-5-1第二波引导奈米西斯技能", nil, nil, nil, nil, nil, nil, 2, 
-{1000104, 2, 1, 0}
-}
-, 
-[117] = {117, 1004, nil, "关卡1-6-1回合1引导连线", nil, nil, nil, nil, nil, nil, 2, 
-{1000115, 1, 1, 0}
-}
-, 
-[118] = {118, 1004, nil, "关卡1-6-1回合2引导释放白夜技能", nil, nil, nil, nil, nil, nil, 2, 
-{1000115, 1, 2, 0}
-}
-, 
-[119] = {119, 1004, nil, "关卡1-6-1回合2引导释放微丝技能", nil, nil, nil, nil, nil, nil, 5, 
-{1000115, 1, 2, 2, 1400411}
-}
-, 
-[120] = {120, 1004, nil, "关卡1-6-1波次2置冷却", nil, nil, nil, nil, nil, nil, 2, 
-{1000115, 2, 1, 0}
-}
-, 
-[123] = {123, 1011, nil, "关卡1-7第一波回合1引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000105, 1, 1, 0}
-}
-, 
-[124] = {124, 1011, nil, "关卡1-7第一波回合2引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000105, 1, 2, 0}
-}
-, 
-[125] = {125, 1011, nil, "关卡1-7第一波回合2连线后对话", nil, nil, nil, nil, nil, nil, 5, 
-{1000105, 1, 2, 3, 1300471}
-}
-, 
-[127] = {127, 1015, nil, "关卡1-12第一波机关讲解", nil, nil, nil, nil, nil, nil, 2, 
-{7000111, 1, 1, 0}
-}
-, 
-[128] = {128, 1016, nil, "关卡1-11第二波母巢怪讲解", nil, nil, nil, nil, nil, nil, 2, 
-{1000108, 1, 1, 0}
-}
-, 
-[129] = {129, 1017, nil, "关卡1-12回合1微丝行动", nil, nil, nil, nil, nil, nil, 2, 
-{1000109, 1, 1, 0}
-}
-, 
-[130] = {130, 1017, nil, "关卡1-12回合2连线结束剧情对话多体伤害", nil, nil, nil, nil, nil, nil, 5, 
-{1000109, 1, 2, 3, 1400481}
-}
-, 
-[131] = {131, 1018, nil, "关卡1-12回合2烈雀连线", nil, nil, nil, nil, nil, nil, 2, 
-{1000109, 1, 2, 0}
-}
-, 
-[133] = {133, 1019, nil, "关卡1-13第一波脱离说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000110, 1, 1, 0}
-}
-, 
-[134] = {134, 1019, nil, "关卡1-13第二波脱离说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000110, 2, 1, 0}
-}
-, 
-[135] = {135, 1020, nil, "关卡1-12-1回合说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000116, 1, 1, 0}
-}
-, 
-[136] = {136, 1011, nil, "关卡1-7第2波远程怪处理", nil, nil, nil, nil, nil, nil, 2, 
-{999999999, 2, 1, 0}
-}
-, 
-[137] = {137, 1021, nil, "关卡1-8回合2处理", nil, nil, nil, nil, nil, nil, 2, 
-{1000106, 1, 2, 0}
-}
-, 
-[138] = {138, 1022, nil, "关卡2-2回合1高速怪", nil, nil, nil, nil, nil, nil, 2, 
-{1000201, 1, 1, 0}
-}
-, 
-[139] = {139, 1023, nil, "关卡2-4回合1处理陨石", nil, nil, nil, nil, nil, nil, 2, 
-{1000202, 1, 1, 0}
-}
-, 
-[140] = {140, 1024, nil, "关卡2-5回合1处理落雷", nil, nil, nil, nil, nil, nil, 2, 
-{1000203, 1, 1, 0}
-}
-, 
-[141] = {141, 1025, nil, "关卡2-10回合1高威胁怪", nil, nil, nil, nil, nil, nil, 2, 
-{1000207, 1, 1, 0}
-}
-, 
-[142] = {142, 1026, nil, "关卡2-11回合1爆炸装置", nil, nil, nil, nil, nil, nil, 2, 
-{1000208, 1, 1, 0}
-}
-, 
-[143] = {143, 1027, nil, "关卡2-13第1波护盾怪-队长引导处理", nil, nil, nil, nil, nil, nil, 2, 
-{1000210, 1, 1, 0}
-}
-, 
-[144] = {144, 1028, nil, "关卡2-13-1回合1收集引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000215, 1, 1, 0}
-}
-, 
-[145] = {145, 1030, nil, "关卡1-15BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000112, 1, 1, 0}
-}
-, 
-[146] = {146, 1021, nil, "关卡1-8BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000106, 1, 1, 0}
-}
-, 
-[147] = {147, 1031, nil, "关卡2-8BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000206, 1, 1, 0}
-}
-, 
-[148] = {148, 1032, nil, "关卡2-15BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000212, 1, 1, 0}
-}
-, 
-[149] = {149, 1027, nil, "关卡2-13第1波回合2护盾怪-队长引导处理", nil, nil, nil, nil, nil, nil, 2, 
-{1000210, 1, 2, 0}
-}
-, 
-[150] = {150, 1027, nil, "关卡2-13第二波回合1引导第1次行动", nil, nil, nil, nil, nil, nil, 2, 
-{1000210, 2, 1, 0}
-}
-, 
-[151] = {151, 1033, nil, "关卡1-4-1回合1引导连线主动技能之后", nil, nil, nil, nil, nil, nil, 5, 
-{1000128, 1, 1, 2, 1400411}
-}
-, 
-[152] = {152, 1034, nil, "新关卡1-4回合1连线", nil, nil, nil, nil, nil, nil, 2, 
-{1000129, 1, 1, 0}
-}
-, 
-[153] = {153, 1034, nil, "新关卡1-4回合1机关时刻弹窗", nil, nil, nil, nil, nil, nil, 2, 
-{1000129, 1, 1, 2}
-}
-, 
-[154] = {154, 1035, nil, "关卡2-5-1回合1焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{1000214, 1, 1, 0}
-}
-, 
-[155] = {155, 1024, nil, "关卡2-5第2波剧情对话", nil, nil, nil, nil, nil, nil, 2, 
-{1000203, 2, 1, 0}
-}
-, 
-[156] = {156, 1037, nil, "风船资源本首次1回合1", nil, nil, nil, nil, nil, nil, 2, 
-{3000309, 1, 1, 0}
-}
-, 
-[157] = {157, 1037, nil, "风船资源本首次1回合2", nil, nil, nil, nil, nil, nil, 2, 
-{3000309, 1, 2, 0}
-}
-, 
-[158] = {158, 1037, nil, "风船资源本首次1回合3", nil, nil, nil, nil, nil, nil, 2, 
-{3000309, 1, 3, 0}
-}
-, 
-[159] = {159, 1037, nil, "风船资源本首次1回合4", nil, nil, nil, nil, nil, nil, 2, 
-{3000309, 1, 4, 0}
-}
-, 
-[160] = {160, 1038, nil, "关卡3-7BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000306, 1, 1, 0}
-}
-, 
-[161] = {161, 1039, nil, "关卡3-14BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000312, 1, 1, 0}
-}
-, 
-[162] = {162, 1040, nil, "关卡4-7BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000406, 1, 1, 0}
-}
-, 
-[163] = {163, 1041, nil, "关卡4-14BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000412, 1, 1, 0}
-}
-, 
-[164] = {164, 1042, nil, "关卡3-2治疗怪", nil, nil, nil, nil, nil, nil, 2, 
-{1000301, 1, 1, 0}
-}
-, 
-[165] = {165, 1043, nil, "关卡3-5晕眩怪", nil, nil, nil, nil, nil, nil, 2, 
-{1000304, 1, 1, 0}
-}
-, 
-[166] = {166, 1044, nil, "关卡3-8地刺", nil, nil, nil, nil, nil, nil, 2, 
-{1000307, 1, 1, 0}
-}
-, 
-[167] = {167, 1045, nil, common[1], nil, nil, nil, nil, nil, nil, 2, 
-{1000310, 1, 1, 0}
-}
-, 
-[168] = {168, 1046, nil, common[2], nil, nil, nil, nil, nil, nil, 2, 
-{1000401, 1, 1, 0}
-}
-, 
-[169] = {169, 1046, nil, common[2], nil, nil, nil, nil, nil, nil, 2, 
-{1000401, 1, 2, 0}
-}
-, 
-[170] = {170, 1047, nil, "关卡4-9摄轮", nil, nil, nil, nil, nil, nil, 2, 
-{1000407, 1, 1, 0}
-}
-, 
-[171] = {171, 1048, nil, "金币资源本回合1（废弃）", nil, nil, nil, nil, nil, nil, 2, 
-{99999999, 1, 1, 0}
-}
-, 
-[172] = {172, 1048, nil, "金币资源本回合2（废弃）", nil, nil, nil, nil, nil, nil, 2, 
-{99999999, 1, 2, 0}
-}
-, 
-[173] = {173, 1048, nil, "金币资源本波次2", nil, nil, nil, nil, nil, nil, 2, 
-{3000109, 2, 1, 0}
-}
-, 
-[174] = {174, 1049, nil, "森经验资源本回合1", nil, nil, nil, nil, nil, nil, 2, 
-{3300201, 1, 1, 0}
-}
-, 
-[175] = {175, 1049, nil, "火经验资源本回合1", nil, nil, nil, nil, nil, nil, 2, 
-{3200201, 1, 1, 0}
-}
-, 
-[176] = {176, 1049, nil, "水经验资源本回合1", nil, nil, nil, nil, nil, nil, 2, 
-{3100201, 1, 1, 0}
-}
-, 
-[177] = {177, 1049, nil, "雷经验资源本回合1", nil, nil, nil, nil, nil, nil, 2, 
-{3400201, 1, 1, 0}
-}
-, 
-[178] = {178, 1024, nil, "关卡2-5第1波回合2处理", nil, nil, nil, nil, nil, nil, 2, 
-{1000203, 1, 2, 0}
-}
-, 
-[179] = {179, 1023, nil, "关卡2-4第1波回合2处理", nil, nil, nil, nil, nil, nil, 2, 
-{1000202, 1, 2, 0}
-}
-, 
-[182] = {182, 1001, nil, "关卡1-2结算触发", nil, nil, nil, nil, nil, nil, 11, common[94]}
-, 
-[183] = {183, 1002, nil, "关卡1-3结算触发", nil, nil, nil, nil, nil, nil, 11, common[95]}
-, 
-[184] = {184, 1003, nil, "关卡1-5-1结算触发", nil, nil, nil, nil, nil, nil, 11, common[96]}
-, 
-[185] = {185, 1004, nil, "关卡1-6-1结算触发", nil, nil, nil, nil, nil, nil, 11, 
-{1000115}
-}
-, 
-[186] = {186, 1011, nil, "关卡1-7结算触发", nil, nil, nil, nil, nil, nil, 11, common[97]}
-, 
-[187] = {187, 1010, nil, "关卡1-6第二波", nil, nil, nil, nil, nil, nil, 2, 
-{1000117, 2, 1, 0}
-}
-, 
-[188] = {188, 1000, nil, "关卡1-1结算触发", nil, nil, nil, nil, nil, nil, 11, 
-{1000101}
-}
-, 
-[189] = {189, 1021, nil, common[3], nil, nil, nil, nil, nil, nil, 11, 
-{1000106}
-}
-, 
-[190] = {190, 1015, nil, common[3], nil, nil, nil, nil, nil, nil, 11, common[98]}
-, 
-[191] = {191, 1016, nil, "关卡1-10结算触发", nil, nil, nil, nil, nil, nil, 11, common[99]}
-, 
-[192] = {192, 1017, nil, common[4], nil, nil, nil, nil, nil, nil, 11, common[100]}
-, 
-[193] = {193, 1020, nil, "关卡1-12-1结算触发", nil, nil, nil, nil, nil, nil, 11, 
-{1000116}
-}
-, 
-[194] = {194, 1019, nil, "关卡1-13结算触发", nil, nil, nil, nil, nil, nil, 11, common[101]}
-, 
-[195] = {195, 1509, nil, "关卡1-14结算触发", nil, nil, nil, nil, nil, nil, 11, 
-{1000111}
-}
-, 
-[196] = {196, 1030, nil, "关卡1-15结算触发", nil, nil, nil, nil, nil, nil, 11, common[102]}
-, 
-[197] = {197, 1010, nil, "关卡1-6结算触发", nil, nil, nil, nil, nil, nil, 11, 
-{7000117}
-}
-, 
-[198] = {198, 1017, nil, common[4], nil, nil, nil, nil, nil, nil, 11, common[100]}
-, 
-[199] = {199, 1034, nil, "新关卡1-5结算触发", nil, nil, nil, nil, nil, nil, 11, common[103]}
-, 
-[200] = {200, 1037, nil, "风船资源本首次1结算触发", nil, nil, nil, nil, nil, nil, 11, 
-{3000309}
-}
-, 
-[201] = {201, 1048, nil, "金币资源本首次1结算触发", nil, nil, nil, nil, nil, nil, 11, 
-{3000109}
-}
-, 
-[202] = {202, 1049, nil, "经验资源本首次1结算触发", nil, nil, nil, nil, nil, nil, 11, 
-{3300201}
-}
-, 
-[203] = {203, 1101, nil, "番外2-1结算触发", nil, nil, nil, nil, nil, nil, 11, 
-{2000201}
-}
-, 
-[204] = {204, 1201, nil, "关卡1-3结算触发（局外用）", nil, nil, nil, nil, nil, nil, 11, common[95]}
-, 
-[205] = {205, 1501, nil, "关卡5-7BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000506, 1, 1, 0}
-}
-, 
-[206] = {206, 1502, nil, "关卡5-13BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000512, 1, 1, 0}
-}
-, 
-[207] = {207, 1503, nil, "关卡6-7BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000606, 1, 1, 0}
-}
-, 
-[208] = {208, 1504, nil, "关卡6-14BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000612, 1, 1, 0}
-}
-, 
-[209] = {209, 1505, nil, "关卡7-7BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000706, 1, 1, 0}
-}
-, 
-[210] = {210, 1506, nil, "关卡7-14BOSS说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000712, 1, 1, 0}
-}
-, 
-[211] = {211, 1507, nil, "关卡5-2说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000501, 1, 1, 0}
-}
-, 
-[212] = {212, 1508, nil, "关卡5-8说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000507, 1, 1, 0}
-}
-, 
-[213] = {213, 1509, nil, "新关卡1-14回合1换队长1", nil, nil, nil, nil, nil, nil, 2, 
-{1000111, 1, 1, 0}
-}
-, 
-[214] = {214, 1509, nil, "新关卡1-14回合2换队长2", nil, nil, nil, nil, nil, nil, 2, 
-{1000111, 1, 2, 0}
-}
-, 
-[215] = {215, 1509, nil, "新关卡1-14第2波回合1换队长3", nil, nil, nil, nil, nil, nil, 2, 
-{1000111, 2, 1, 0}
-}
-, 
-[216] = {216, 1045, nil, common[1], nil, nil, nil, nil, nil, nil, 5, 
-{1000310, 1, 1, 1}
-}
-, 
-[217] = {217, 1510, nil, "关卡6-2说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000601, 1, 1, 0}
-}
-, 
-[218] = {218, 1511, nil, "关卡6-9说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000607, 1, 1, 0}
-}
-, 
-[219] = {219, 1512, nil, "关卡7-2说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000701, 1, 1, 0}
-}
-, 
-[220] = {220, 1513, nil, "关卡7-9说明", nil, nil, nil, nil, nil, nil, 2, 
-{1000707, 1, 1, 0}
-}
-, 
-[221] = {221, 1514, nil, "森属性尖塔45层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4003045, 1, 1, 0}
-}
-, 
-[222] = {222, 1514, nil, "火属性尖塔45层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4002045, 1, 1, 0}
-}
-, 
-[223] = {223, 1514, nil, "水属性尖塔45层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4001045, 1, 1, 0}
-}
-, 
-[224] = {224, 1514, nil, "雷属性尖塔45层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4004045, 1, 1, 0}
-}
-, 
-[225] = {225, 1515, nil, "森属性尖塔20层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4003020, 1, 1, 0}
-}
-, 
-[226] = {226, 1515, nil, "火属性尖塔20层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4002020, 1, 1, 0}
-}
-, 
-[227] = {227, 1515, nil, "水属性尖塔20层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4001020, 1, 1, 0}
-}
-, 
-[228] = {228, 1515, nil, "雷属性尖塔20层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4004020, 1, 1, 0}
-}
-, 
-[229] = {229, 1516, nil, "森属性尖塔15层回合1", nil, nil, nil, nil, nil, nil, 2, common[104]}
-, 
-[230] = {230, 1516, nil, "火属性尖塔15层回合1", nil, nil, nil, nil, nil, nil, 2, common[104]}
-, 
-[231] = {231, 1516, nil, "水属性尖塔15层回合1", nil, nil, nil, nil, nil, nil, 2, common[104]}
-, 
-[232] = {232, 1516, nil, "雷属性尖塔15层回合1", nil, nil, nil, nil, nil, nil, 2, common[104]}
-, 
-[233] = {233, 1517, nil, "森属性尖塔10层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4003010, 1, 1, 0}
-}
-, 
-[234] = {234, 1517, nil, "火属性尖塔10层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4002010, 1, 1, 0}
-}
-, 
-[235] = {235, 1517, nil, "水属性尖塔10层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4001010, 1, 1, 0}
-}
-, 
-[236] = {236, 1517, nil, "雷属性尖塔10层回合1", nil, nil, nil, nil, nil, nil, 2, 
-{4004010, 1, 1, 0}
-}
-, 
-[237] = {237, 1518, nil, "秘境战斗引导", nil, nil, nil, nil, nil, nil, 2, 
-{99912001, 1, 1, 0}
-}
-, 
-[238] = {238, 1023, nil, "关卡2-4结算触发", nil, nil, nil, nil, nil, nil, 11, common[105]}
-, 
-[239] = {239, 1024, nil, "关卡2-5结算触发", nil, nil, nil, nil, nil, nil, 11, common[106]}
-, 
-[241] = {241, 1519, nil, "关卡4-10机关", nil, nil, nil, nil, nil, nil, 2, 
-{1000410, 1, 1, 0}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 2004}
-, 
-[242] = {242, 1520, nil, "主线8-2回合1焦点钩子怪", nil, nil, nil, nil, nil, nil, 2, 
-{1000801, 1, 1, 0}
-}
-, 
-[243] = {243, 1521, nil, "主线8-9回合1焦点能量夺取怪", nil, nil, nil, nil, nil, nil, 2, 
-{1000807, 1, 1, 0}
-}
-, 
-[244] = {244, 1522, nil, "主线8-7回合1焦点化变pro", nil, nil, nil, nil, nil, nil, 2, 
-{1000806, 1, 1, 0}
-}
-, 
-[245] = {245, 1523, nil, "主线8-14回合1焦点幽灵pro", nil, nil, nil, nil, nil, nil, 2, 
-{1000812, 1, 1, 0}
-}
-, 
-[246] = {246, 1040, nil, "关卡4-7结算触发", nil, nil, nil, nil, nil, nil, 11, common[107]}
-, 
-[247] = {247, 5001, nil, "N+1活动一阶段N1附身者", nil, nil, nil, nil, nil, nil, 2, 
-{5011001, 1, 1, 0}
-}
-, 
-[248] = {248, 5002, nil, "N+1活动一阶段N8多恩", nil, nil, nil, nil, nil, nil, 2, 
-{5011008, 1, 1, 0}
-}
-, 
-[249] = {249, 1524, nil, "主线9-2回合1焦点狞崮", nil, nil, nil, nil, nil, nil, 2, 
-{1000902, 1, 1, 0}
-}
-, 
-[250] = {250, 1525, nil, "主线9-7回合1焦点月语人", nil, nil, nil, nil, nil, nil, 2, 
-{1000907, 1, 1, 0}
-}
-, 
-[251] = {251, 1526, nil, "主线9-9回合1焦点蔓靶", nil, nil, nil, nil, nil, nil, 2, 
-{1000909, 1, 1, 0}
-}
-, 
-[252] = {252, 1527, nil, "主线10-2回合1焦点跋骷", nil, nil, nil, nil, nil, nil, 2, 
-{1001002, 1, 1, 0}
-}
-, 
-[253] = {253, 1528, nil, "主线10-7回合1焦点碎空", nil, nil, nil, nil, nil, nil, 2, 
-{1001007, 1, 1, 0}
-}
-, 
-[254] = {254, 1529, nil, "主线10-9回合1焦点诅魍", nil, nil, nil, nil, nil, nil, 2, 
-{1001009, 1, 1, 0}
-}
-, 
-[255] = {255, 1530, nil, "主线9-14回合boss塔巴德pro", nil, nil, nil, nil, nil, nil, 2, common[108]}
-, 
-[256] = {256, 1531, nil, "主线10-14回合boss白舒摩尔", nil, nil, nil, nil, nil, nil, 2, common[109]}
-, 
-[257] = {257, 1530, nil, "主线9-14回合boss吞罗", nil, nil, nil, nil, nil, nil, 2, common[108]}
-, 
-[258] = {258, 1531, nil, "主线10-14回合boss白舒摩尔仆从", nil, nil, nil, nil, nil, nil, 2, common[109]}
-, 
-[259] = {259, 5003, nil, "N3 马 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5031001, 1, 1, 0}
-}
-, 
-[260] = {260, 5004, nil, "N3 车 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5031003, 1, 1, 0}
-}
-, 
-[261] = {261, 5005, nil, "N3 象 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5031005, 1, 1, 0}
-}
-, 
-[262] = {262, 5006, nil, "N3 后 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5031007, 1, 1, 0}
-}
-, 
-[263] = {263, 5007, nil, "N3 兵 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5031009, 1, 1, 0}
-}
-, 
-[264] = {264, 5008, nil, "N3 王 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5031020, 1, 1, 0}
-}
-, 
-[265] = {265, 5009, nil, "N5 骸隆戈 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5051007, 1, 1, 0}
-}
-, 
-[266] = {266, 5010, nil, "N5 爆裂 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5051003, 1, 1, 0}
-}
-, 
-[267] = {267, 5011, nil, "N6 钻刁 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5061003, 1, 1, 0}
-}
-, 
-[268] = {268, 5012, nil, "N6 雷雨夜 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5061010, 1, 1, 0}
-}
-, 
-[269] = {269, 5013, nil, "N7 缪特 焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5071010, 1, 1, 0}
-}
-, 
-[270] = {270, 5014, nil, "番外关卡4-2闪现焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{2000402, 1, 1, 0}
-}
-, 
-[271] = {271, 5015, nil, "番外关卡4-6Boss无形", nil, nil, nil, nil, nil, nil, 2, 
-{2000406, 1, 1, 0}
-}
-, 
-[272] = {272, 5016, nil, "N7 精英怪首次出现焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5071003, 1, 1, 0}
-}
-, 
-[273] = {273, 5017, nil, "N9 心魔首次出现焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5091003, 1, 1, 0}
-}
-, 
-[274] = {274, 5018, nil, "N9最终关 心魔焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5091012, 1, 1, 0}
-}
-, 
-[275] = {275, 5019, nil, "N11线性关3 干扰装置引导", nil, nil, nil, nil, nil, nil, 2, 
-{5111003, 1, 1, 0}
-}
-, 
-[276] = {276, 5020, nil, "N11 线性关12 boss焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5111012, 1, 1, 0}
-}
-, 
-[27701] = {27701, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121001, 1, 1, 0}
-}
-, 
-[27702] = {27702, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121002, 1, 1, 0}
-}
-, 
-[27703] = {27703, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121003, 1, 1, 0}
-}
-, 
-[27704] = {27704, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121004, 1, 1, 0}
-}
-, 
-[27705] = {27705, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121005, 1, 1, 0}
-}
-, 
-[27706] = {27706, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121006, 1, 1, 0}
-}
-, 
-[27707] = {27707, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121007, 1, 1, 0}
-}
-, 
-[27708] = {27708, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121008, 1, 1, 0}
-}
-, 
-[27709] = {27709, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121009, 1, 1, 0}
-}
-, 
-[27710] = {27710, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121010, 1, 1, 0}
-}
-, 
-[27711] = {27711, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121011, 1, 1, 0}
-}
-, 
-[27712] = {27712, 5021, nil, common[5], nil, nil, nil, nil, nil, nil, 2, 
-{5121012, 1, 1, 0}
-}
-, 
-[27801] = {27801, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121013, 1, 1, 0}
-}
-, 
-[27802] = {27802, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121014, 1, 1, 0}
-}
-, 
-[27803] = {27803, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121015, 1, 1, 0}
-}
-, 
-[27804] = {27804, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121016, 1, 1, 0}
-}
-, 
-[27805] = {27805, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121017, 1, 1, 0}
-}
-, 
-[27806] = {27806, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121018, 1, 1, 0}
-}
-, 
-[27807] = {27807, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121019, 1, 1, 0}
-}
-, 
-[27808] = {27808, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121020, 1, 1, 0}
-}
-, 
-[27809] = {27809, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121021, 1, 1, 0}
-}
-, 
-[27810] = {27810, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121022, 1, 1, 0}
-}
-, 
-[27811] = {27811, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121023, 1, 1, 0}
-}
-, 
-[27812] = {27812, 5022, nil, common[6], nil, nil, nil, nil, nil, nil, 2, 
-{5121024, 1, 1, 0}
-}
-, 
-[27901] = {27901, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121025, 1, 1, 0}
-}
-, 
-[27902] = {27902, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121026, 1, 1, 0}
-}
-, 
-[27903] = {27903, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121027, 1, 1, 0}
-}
-, 
-[27904] = {27904, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121028, 1, 1, 0}
-}
-, 
-[27905] = {27905, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121029, 1, 1, 0}
-}
-, 
-[27906] = {27906, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121030, 1, 1, 0}
-}
-, 
-[27907] = {27907, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121031, 1, 1, 0}
-}
-, 
-[27908] = {27908, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121032, 1, 1, 0}
-}
-, 
-[27909] = {27909, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121033, 1, 1, 0}
-}
-, 
-[27910] = {27910, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121034, 1, 1, 0}
-}
-, 
-[27911] = {27911, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121035, 1, 1, 0}
-}
-, 
-[27912] = {27912, 5023, nil, common[7], nil, nil, nil, nil, nil, nil, 2, 
-{5121036, 1, 1, 0}
-}
-, 
-[28001] = {28001, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121037, 1, 1, 0}
-}
-, 
-[28002] = {28002, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121038, 1, 1, 0}
-}
-, 
-[28003] = {28003, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121039, 1, 1, 0}
-}
-, 
-[28004] = {28004, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121040, 1, 1, 0}
-}
-, 
-[28005] = {28005, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121041, 1, 1, 0}
-}
-, 
-[28006] = {28006, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121042, 1, 1, 0}
-}
-, 
-[28007] = {28007, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121043, 1, 1, 0}
-}
-, 
-[28008] = {28008, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121044, 1, 1, 0}
-}
-, 
-[28009] = {28009, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121045, 1, 1, 0}
-}
-, 
-[28010] = {28010, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121046, 1, 1, 0}
-}
-, 
-[28011] = {28011, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121047, 1, 1, 0}
-}
-, 
-[28012] = {28012, 5024, nil, common[8], nil, nil, nil, nil, nil, nil, 2, 
-{5121048, 1, 1, 0}
-}
-, 
-[281] = {281, 5026, nil, "N13 浪人剑客焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5131011, 1, 1, 0}
-}
-, 
-[282] = {282, 5027, nil, "N13 尸鬼焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5131001, 1, 1, 0}
-}
-, 
-[283] = {283, 5028, nil, "N13 藤云信虎焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5131012, 1, 1, 0}
-}
-, 
-[284] = {284, 5029, nil, "N13 藤云信虎噬魔焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5141012, 1, 1, 0}
-}
-, 
-[285] = {285, 5030, nil, "N14 鬼剑客焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5142014, 1, 1, 0}
-}
-, 
-[286] = {286, 5031, nil, "N15 拆车局内 第1关", nil, nil, nil, nil, nil, nil, 2, 
-{5159001, 1, 1, 0}
-}
-, 
-[287] = {287, 5032, nil, "N15 拆车局内 第3关", nil, nil, nil, nil, nil, nil, 2, 
-{5159003, 1, 1, 0}
-}
-, 
-[288] = {288, 5033, nil, "N15 拆车局内 第4关", nil, nil, nil, nil, nil, nil, 2, 
-{5159004, 1, 1, 0}
-}
-, 
-[289] = {289, 5034, nil, "N15 拆车局内 第7关", nil, nil, nil, nil, nil, nil, 2, 
-{5159007, 1, 1, 0}
-}
-, 
-[290] = {290, 5035, nil, "N16 san值引导", nil, nil, nil, nil, nil, nil, 2, 
-{5161001, 1, 1, 0}
-}
-, 
-[291] = {291, 5069, nil, "11章幽灵Pro 焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{101109, 1, 1, 0}
-}
-, 
-[293] = {293, 5071, nil, "12-13 局内剧情", nil, nil, nil, nil, nil, nil, 2, 
-{101213, 1, 1, 0}
-}
-, 
-[294] = {294, 5072, nil, "11章克劳迪娅 焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{101114, 1, 1, 0}
-}
-, 
-[295] = {295, 5073, nil, "12章阿希尔 焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{101214, 1, 1, 0}
-}
-, 
-[296] = {296, 5074, nil, "12章黯域引导", nil, nil, nil, nil, nil, nil, 2, 
-{101206, 1, 1, 0}
-}
-, 
-[297] = {297, 5075, nil, "N18 米洛斯引导", nil, nil, nil, nil, nil, nil, 2, 
-{5181012, 1, 1, 0}
-}
-, 
-[298] = {298, 5076, nil, "主线11章11-6关卡结束对话", nil, nil, nil, nil, nil, nil, 28, 
-{101106}
-}
-, 
-[301] = {301, 2001, nil, "番外1-1回合1说话", nil, nil, nil, nil, nil, nil, 2, 
-{2000101, 1, 1, 0}
-}
-, 
-[302] = {302, 2002, nil, "番外1-2回合1说话", nil, nil, nil, nil, nil, nil, 2, 
-{2000102, 1, 1, 0}
-}
-, 
-[303] = {303, 2002, nil, "番外1-2回合2行动后说话", nil, nil, nil, nil, nil, nil, 2, 
-{2000102, 1, 2, 0}
-}
-, 
-[304] = {304, 2003, nil, "番外1-3第一波行动前说话", nil, nil, nil, nil, nil, nil, 2, 
-{2000103, 1, 1, 0}
-}
-, 
-[305] = {305, 2003, nil, "番外1-3第三波行动前说话", nil, nil, nil, nil, nil, nil, 2, 
-{2000103, 3, 1, 0}
-}
-, 
-[306] = {306, 2004, nil, "番外1-4第一波行动前说话", nil, nil, nil, nil, nil, nil, 2, 
-{2000104, 1, 1, 0}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 1519}
-, 
-[307] = {307, 2005, nil, "关卡3-3第一波行动前说话", nil, nil, nil, nil, nil, nil, 2, 
-{1000302, 1, 1, 0}
-}
-, 
-[308] = {308, 2006, nil, "番外1-6第一波", nil, nil, nil, nil, nil, nil, 2, 
-{2000106, 1, 1, 0}
-}
-, 
-[309] = {309, 1101, nil, "番外2-1回合1", nil, nil, nil, nil, nil, nil, 2, 
-{2000201, 1, 1, 0}
-}
-, 
-[310] = {310, 1101, nil, "番外2-1回合2", nil, nil, nil, nil, nil, nil, 2, 
-{2000201, 1, 2, 0}
-}
-, 
-[311] = {311, 1101, nil, "番外2-1回合3", nil, nil, nil, nil, nil, nil, 2, 
-{2000201, 1, 3, 0}
-}
-, 
-[312] = {312, 1102, nil, "4-5回合1 引导击飞怪", nil, nil, nil, nil, nil, nil, 2, 
-{1000404, 1, 1, 0}
-}
-, 
-[313] = {313, 1103, nil, "秘境引导守护关低", nil, nil, nil, nil, nil, nil, 2, 
-{99932011, 1, 1, 0}
-}
-, 
-[314] = {314, 1103, nil, "秘境引导守护关中", nil, nil, nil, nil, nil, nil, 2, 
-{99933011, 1, 1, 0}
-}
-, 
-[315] = {315, 1103, nil, "秘境引导守护关高", nil, nil, nil, nil, nil, nil, 2, 
-{99934011, 1, 1, 0}
-}
-, 
-[316] = {316, 1104, nil, "秘境引导宝箱关", nil, nil, nil, nil, nil, nil, 2, 
-{99952001, 1, 1, 0}
-}
-, 
-[317] = {317, 1105, nil, "秘境引导盗宝贼", nil, nil, nil, nil, nil, nil, 2, 
-{99972001, 1, 1, 0}
-}
-, 
-[318] = {318, 4101, nil, common[9], nil, nil, nil, nil, nil, nil, 11, common[98]}
-, 
-[319] = {319, 4102, nil, common[9], nil, nil, nil, nil, nil, nil, 11, common[98]}
-, 
-[320] = {320, 4103, nil, common[9], nil, nil, nil, nil, nil, nil, 11, common[98]}
-, 
-[321] = {321, 5000, nil, "关卡3-7结算触发（容错的判断条件）", nil, nil, nil, nil, nil, nil, 11, common[110]}
-, 
-[500] = {500, 1051, nil, "关卡1-2结束后引导开启", nil, nil, nil, nil, nil, nil, 6, common[94], nil, nil, nil, nil, nil, nil, 4001030}
-, 
-[501] = {501, 1052, nil, "关卡1-3结束后引导开启抽卡", nil, nil, nil, nil, nil, nil, 6, common[95], nil, nil, nil, nil, 504, nil, 4001040}
-, 
-[502] = {502, 1053, nil, "关卡1-5结束后引导开启主线任务", nil, nil, nil, nil, nil, nil, 6, common[103], nil, nil, nil, nil, nil, nil, 4001060}
-, 
-[503] = {503, 1054, nil, "关卡1-8结束后引导开启成长任务", nil, nil, nil, nil, nil, nil, 6, common[97], nil, nil, nil, nil, nil, nil, 4001070}
-, 
-[504] = {504, 1050, nil, "关卡1-3结束后引导升级角色", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001040}
-, 
-[505] = {505, 1086, nil, "关卡1-6结束后引导查看分支关卡", nil, nil, nil, nil, nil, nil, 6, common[96], nil, nil, nil, nil, nil, nil, 4001050}
-, 
-[506] = {506, 1056, nil, "关卡1-8结束后引导查看邮件", nil, nil, nil, nil, nil, nil, 6, 
-{7000106}
-, nil, nil, nil, nil, nil, nil, 4001130}
-, 
-[507] = {507, 4011, nil, "关卡1-14结束后引导解锁资源室+经验本", nil, nil, nil, nil, nil, nil, 6, common[101], nil, nil, nil, nil, nil, nil, 4001120}
-, 
-[508] = {508, 1058, nil, "关卡1-16结束后引导日常任务", nil, nil, nil, nil, nil, nil, 6, common[102], nil, nil, nil, nil, nil, nil, 4002015}
-, 
-[509] = {509, 1059, nil, "关卡1-10结束后引导风船", nil, nil, nil, nil, nil, nil, 18, 
-{4001095}
-, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[5110] = {5110, 5110, nil, "升级到30级引导觉醒", nil, nil, nil, nil, nil, nil, 3, 
-{96}
-}
-, 
-[511] = {511, 1071, nil, "材料足够触发突破", nil, nil, nil, nil, nil, nil, 13}
-, 
-[512] = {512, 1060, nil, "关卡1-3结束引导上阵", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001040}
-, 
-[513] = {513, 1088, nil, "关卡3-7结束秘境探索", nil, nil, nil, nil, nil, nil, 6, common[110], nil, nil, nil, nil, nil, nil, 4003070}
-, 
-[514] = {514, 1062, nil, "2-5结束后引导金币本", nil, nil, nil, nil, nil, nil, 6, common[106], nil, nil, nil, nil, nil, nil, 4002040}
-, 
-[515] = {515, 1063, nil, "2-4结束后引导礼物", nil, nil, nil, nil, nil, nil, 6, common[105], nil, nil, nil, nil, nil, nil, 4002030}
-, 
-[516] = {516, 1064, nil, "3-13结束后引导番外", nil, nil, nil, nil, nil, nil, 6, 
-{1000312}
-, nil, nil, nil, nil, nil, nil, 4004010}
-, 
-[517] = {517, 1065, nil, "1-7结束后再次引导升级", nil, nil, nil, nil, nil, nil, 6, 
-{1000117}
-, nil, nil, nil, nil, nil, nil, 4001060}
-, 
-[518] = {518, 1066, nil, "1-9结束后再次引导成长任务", nil, nil, nil, nil, nil, nil, 6, 
-{7000108}
-, nil, nil, nil, nil, nil, nil, 4001130}
-, 
-[519] = {519, 1067, nil, "2-12结束后引导风船升级", nil, nil, nil, nil, nil, nil, 6, 
-{1000209}
-, nil, nil, nil, nil, nil, nil, 4002100}
-, 
-[520] = {520, 1068, nil, "6-14结束后引导番外2开启", nil, nil, nil, nil, nil, nil, 6, common[111], nil, nil, nil, nil, nil, nil, 4007010}
-, 
-[521] = {521, 1072, nil, "资源本开启双倍UI触发引导", nil, nil, nil, nil, nil, nil, 15}
-, 
-[522] = {522, 1073, nil, "首次打开普通棋子触发", nil, nil, nil, nil, nil, nil, 3, 
-{3}
-}
-, 
-[523] = {523, 1074, nil, "首次打开精英棋子触发", nil, nil, nil, nil, nil, nil, 3, 
-{7}
-}
-, 
-[524] = {524, 1075, nil, "首次打开boss棋子触发", nil, nil, nil, nil, nil, nil, 3, common[112]}
-, 
-[525] = {525, 1076, nil, "首次打开休息棋子触发", nil, nil, nil, nil, nil, nil, 3, 
-{4}
-}
-, 
-[526] = {526, 1077, nil, "首次打开圣物背包触发", nil, nil, nil, nil, nil, nil, 3, 
-{6}
-}
-, 
-[527] = {527, 1069, nil, "4-14结束后引导爬塔", nil, nil, nil, nil, nil, nil, 6, 
-{1000412}
-, nil, nil, nil, nil, nil, nil, 4005015}
-, 
-[528] = {528, 1078, nil, "1-12结束后引导终端", nil, nil, nil, nil, nil, nil, 6, common[99], nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[529] = {529, 1079, nil, "1-12终端后引导去看随机剧情-容错", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[530] = {530, 1080, nil, "1-12终端后引导去看随机剧情", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[531] = {531, 1081, nil, "1-5任务引导后半段", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001060}
-, 
-[532] = {532, 1083, nil, "觉醒后触发装备引导", nil, nil, nil, nil, nil, nil, 21, common[113]}
-, 
-[533] = {533, 1084, nil, "1-10关卡前触发引导助战（改为触发式了）", nil, nil, nil, nil, nil, nil, 3, 
-{11}
-, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[534] = {534, 1085, nil, "4-7结束后引导装备本", nil, nil, nil, nil, nil, nil, 6, common[107], nil, nil, nil, nil, nil, nil, 4004085}
-, 
-[535] = {535, 1087, nil, "秘境-首次进入编队界面", nil, nil, nil, nil, nil, nil, 22, 
-{6, -1}
-}
-, 
-[536] = {536, 4012, nil, "1-14结束引导解锁资源室后开启资源本（衔接）", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001120}
-, 
-[537] = {537, 1061, nil, "3-7通关解锁秘境室引导后去秘境玩法", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4003070, nil, nil, nil, nil, nil, 1106}
-, 
-[538] = {538, 1090, nil, "打开传说光灵列表界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{12}
-}
-, 
-[539] = {539, 1091, nil, "打开传说光灵任务界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{13}
-}
-, 
-[540] = {540, 1092, nil, "6-14后引导传说光灵", nil, nil, nil, nil, nil, nil, 6, 
-{1000712}
-, nil, nil, nil, nil, nil, nil, 4008015}
-, 
-[550] = {550, 5501, nil, "关卡11-9结算触发", nil, nil, nil, nil, nil, nil, 11, common[114]}
-, 
-[551] = {551, 5511, nil, "容错551——11-9结束引导解锁启迪", nil, nil, nil, nil, nil, nil, 10, 
-{-1, 5511}
-, nil, nil, nil, nil, nil, nil, nil, 4201090}
-, 
-[552] = {552, 5511, nil, "关卡11-9结束后引导开启 启迪", nil, nil, nil, nil, nil, nil, 6, common[114]}
-, 
-[2001] = {2001, 4001, nil, "风船内引导点击UI", nil, nil, nil, nil, nil, nil, 6, 
-{7100001}
-}
-, 
-[2002] = {2002, 4002, nil, "风船内引导焦点", nil, nil, nil, nil, nil, nil, 6, 
-{7100002}
-}
-, 
-[2003] = {2003, 4003, nil, "1-10后第一次进入风船引导", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[2004] = {2004, 4004, nil, "1-10后第一次进入能源室引导", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[2005] = {2005, 4005, nil, "第一次进入主控室引导", nil, nil, nil, nil, nil, nil, 14, common[113], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4017}
-, 
-[2006] = {2006, 4006, nil, "第一次进入灯塔室引导", nil, nil, nil, nil, nil, nil, 26, common[115]}
-, 
-[2007] = {2007, 4007, nil, "1-10后第一次进入棱镜室引导", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[2008] = {2008, 4008, nil, "1-16结束引导风船材料本进入", nil, nil, nil, nil, nil, nil, 6, common[111], nil, nil, nil, nil, nil, nil, 4002010, nil, nil, nil, nil, 4011}
-, 
-[2009] = {2009, 4009, nil, "第一次进入资源室引导", nil, nil, nil, nil, nil, nil, 14, common[116]}
-, 
-[2010] = {2010, 4010, nil, "第一次进入秘境室引导", nil, nil, nil, nil, nil, nil, 6, common[111]}
-, 
-[2011] = {2011, 4011, nil, "【分支】1-15结束引导风船材料室建设", nil, nil, nil, nil, nil, nil, 19, 
-{999999999, 9}
-, nil, nil, nil, nil, nil, nil, 4002010, nil, nil, nil, nil, 4008}
-, 
-[2012] = {2012, 4011, nil, "【分支】引导风船材料室建设-回主界面后（废弃）", nil, nil, nil, nil, nil, nil, 6, common[111], nil, nil, nil, nil, nil, nil, 4002010, nil, nil, nil, nil, 4008}
-, 
-[2013] = {2013, 4013, nil, "第一次进入冶炼室引导", nil, nil, nil, nil, nil, nil, 26, common[117]}
-, 
-[2014] = {2014, 4014, nil, "第一次进入派遣室引导", nil, nil, nil, nil, nil, nil, 26, common[118]}
-, 
-[2016] = {2016, 4016, nil, "1-10后引导解锁棱镜室", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[2017] = {2017, 4017, nil, "第一次进入主控室入驻界面触发引导-导航栏触发", nil, nil, nil, nil, nil, nil, 25, common[113], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4005}
-, 
-[2018] = {2018, 4018, nil, "第一次进入装修-触发", nil, nil, nil, nil, nil, nil, 3, common[116]}
-, 
-[2019] = {2019, 4019, nil, "咖啡厅解锁后-触发装修", nil, nil, nil, nil, nil, nil, 23, common[112], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 4018}
-, 
-[1001] = {1001, 1000, nil, "关卡1-1我方第一波回合2行动提示", nil, nil, nil, nil, nil, nil, 2, common[93]}
-, 
-[1101] = {1101, 3001, nil, common[10], nil, nil, nil, nil, nil, nil, 8, 
-{7000103, 2}
-}
-, 
-[1102] = {1102, 3002, nil, "弱引导2 释放卓雅技能", nil, nil, nil, nil, nil, nil, 9, 
-{7000105, 1}
-}
-, 
-[1104] = {1104, 3004, nil, "弱引导4 引导三星奖励"}
-, 
-[1105] = {1105, 3005, nil, "弱引导5引导点击关卡按钮"}
-, 
-[1106] = {1106, 3006, nil, common[10], nil, nil, nil, nil, nil, nil, 8, 
-{7000115, 1}
-}
-, 
-[1201] = {1201, 1051, nil, "容错1051——1-2结束编队", nil, nil, nil, nil, nil, nil, 10, 
-{1001, 1051}
-, nil, nil, nil, nil, nil, nil, 4001030}
-, 
-[1202] = {1202, 1201, nil, "容错1002——1-2结束编队", nil, nil, nil, nil, nil, nil, 6, common[111], nil, nil, nil, nil, nil, nil, 4001030}
-, 
-[1203] = {1203, 1052, nil, "容错1052——1-3结束抽卡", nil, nil, nil, nil, nil, nil, 10, 
-{1002, 1052}
-, nil, nil, nil, nil, nil, nil, 4001040}
-, 
-[1204] = {1204, 1053, nil, "容错1053——1-5结束引导主线任务", nil, nil, nil, nil, nil, nil, 10, 
-{1034, 1053}
-, nil, nil, nil, nil, nil, nil, 4001060}
-, 
-[1205] = {1205, 1054, nil, "容错1054——1-8结束引导成长任务", nil, nil, nil, nil, nil, nil, 10, 
-{1011, 1054}
-, nil, nil, nil, nil, nil, nil, 4001070}
-, 
-[1206] = {1206, 1050, nil, "容错1050——1-3抽卡结束引导培养", nil, nil, nil, nil, nil, nil, 10, 
-{1052, 1050}
-, nil, nil, nil, nil, nil, nil, 4001040}
-, 
-[1208] = {1208, 4011, nil, "容错4011——1-14结束引导解锁资源室", nil, nil, nil, nil, nil, nil, 10, 
-{1019, 4011}
-, nil, nil, nil, nil, nil, nil, 4001120}
-, 
-[1209] = {1209, 1058, nil, "容错1058——1-15结束引导日常任务", nil, nil, nil, nil, nil, nil, 10, 
-{1509, 1058}
-, nil, nil, nil, nil, nil, nil, 4001130}
-, 
-[1211] = {1211, 1060, nil, "容错1060——1-3培养结束引导编队", nil, nil, nil, nil, nil, nil, 10, 
-{1050, 1060}
-, nil, nil, nil, nil, nil, nil, 4001040}
-, 
-[1213] = {1213, 1065, nil, "容错1065——1-7结束引导再次升级", nil, nil, nil, nil, nil, nil, 10, 
-{1010, 1065}
-, nil, nil, nil, nil, nil, nil, 4001060}
-, 
-[1215] = {1215, 4101, nil, "容错4003——1-10结束引导风船建造第一个房间", nil, nil, nil, nil, nil, nil, 10, 
-{1059, 4003}
-, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[1216] = {1216, 4102, nil, "容错4016——引导风船建造棱镜室", nil, nil, nil, nil, nil, nil, 10, 
-{4004, 4016}
-, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[1217] = {1217, 4103, nil, "容错4004——引导风船能源室", nil, nil, nil, nil, nil, nil, 10, 
-{4003, 4004}
-, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[1225] = {1225, 1062, nil, "容错1062——2-5结束引导支线、金币本", nil, nil, nil, nil, nil, nil, 10, 
-{1024, 1062}
-, nil, nil, nil, nil, nil, nil, 4002040}
-, 
-[1226] = {1226, 1063, nil, "容错1063——2-4结束引导赠送礼物", nil, nil, nil, nil, nil, nil, 10, 
-{1023, 1063}
-, nil, nil, nil, nil, nil, nil, 4002030}
-, 
-[1227] = {1227, 1079, nil, "容错1080——终端结束引导看随机剧情", nil, nil, nil, nil, nil, nil, 10, 
-{1078, 1080}
-, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[1228] = {1228, 1078, nil, "容错1078——1-11结束引导终端", nil, nil, nil, nil, nil, nil, 10, 
-{1016, 1078}
-, nil, nil, nil, nil, nil, nil, 4001100}
-, 
-[1229] = {1229, 1085, nil, "容错1085——4-7结束引导装备本", nil, nil, nil, nil, nil, nil, 10, 
-{1040, 1085}
-, nil, nil, nil, nil, nil, nil, 4004085}
-, 
-[1230] = {1230, 1057, nil, "容错4012——1-14结束引导资源本", nil, nil, nil, nil, nil, nil, 10, 
-{4011, 4012}
-, nil, nil, nil, nil, nil, nil, 4001120}
-, 
-[1231] = {1231, 1088, nil, "容错1088——3-7结束引导解锁秘境室", nil, nil, nil, nil, nil, nil, 10, 
-{5000, 1088}
-, nil, nil, nil, nil, nil, nil, 4003070}
-, 
-[1232] = {1232, 1106, nil, "容错1061——引导秘境玩法", nil, nil, nil, nil, nil, nil, 10, 
-{1088, 1061}
-, nil, nil, nil, nil, nil, nil, 4003070, nil, nil, nil, nil, nil, 1061}
-, 
-[3001] = {3001, 6000, nil, "活动恐惧伊芙喊话", nil, nil, nil, nil, nil, nil, 2, 
-{5012004, 1, 1, 0}
-}
-, 
-[3002] = {3002, 6001, nil, "活动愤怒伊芙喊话", nil, nil, nil, nil, nil, nil, 2, 
-{5012008, 1, 1, 0}
-}
-, 
-[3003] = {3003, 6002, nil, "活动痛苦伊芙喊话", nil, nil, nil, nil, nil, nil, 2, 
-{5012012, 1, 1, 0}
-}
-, 
-[3004] = {3004, 6003, nil, "樱龙使活动进入活动界面触发", nil, nil, nil, nil, nil, nil, 3, common[117]}
-, 
-[3005] = {3005, 6004, nil, "夏活1进入活动界面触发", nil, nil, nil, nil, nil, nil, 3, common[118], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2021-09-06 09:00:00"}
-, 
-[3006] = {3006, 6005, nil, "进入通信证界面触发", nil, nil, nil, nil, nil, nil, 3, common[119]}
-, 
-[3007] = {3007, 6006, nil, "进入刨冰小游戏界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{17}
-}
-, 
-[3008] = {3008, 6007, nil, "进入N4活动界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{18}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[11]}
-, 
-[3009] = {3009, 6008, nil, "进入N4选词条界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{19}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[11]}
-, 
-[3010] = {3010, 6009, nil, "N5启光活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{20}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2021-10-18 05:00:00"}
-, 
-[3011] = {3011, 6010, nil, "N6活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{21}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[12]}
-, 
-[3012] = {3012, 6011, nil, "N6活动触发装修玩法引导", nil, nil, nil, nil, nil, nil, 3, 
-{22}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[12]}
-, 
-[30131] = {30131, 60121, nil, "世界Boss玩法界面触发B", nil, nil, nil, nil, nil, nil, 3, 
-{90}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 60122}
-, 
-[30132] = {30132, 60122, nil, "世界Boss玩法界面触发C", nil, nil, nil, nil, nil, nil, 3, 
-{91}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 60121}
-, 
-[3014] = {3014, 6013, nil, "N7活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{24}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2021-11-29 05:00:00"}
-, 
-[3015] = {3015, 6014, nil, "N8活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{25}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2021-12-20 09:00:00"}
-, 
-[3016] = {3016, 6015, nil, "通关6-14后第一次进入风船触发战术室引导", nil, nil, nil, nil, nil, nil, 3, 
-{2}
-, nil, nil, nil, nil, nil, nil, nil, 4006120}
-, 
-[3017] = {3017, 6016, nil, "战术室建造完成后触发", nil, nil, nil, nil, nil, nil, 26, common[119]}
-, 
-[3018] = {3018, 6017, nil, "N8活动关卡详情触发", nil, nil, nil, nil, nil, nil, 3, 
-{27}
-}
-, 
-[3019] = {3019, 6018, nil, "N9活动关卡详情触发", nil, nil, nil, nil, nil, nil, 3, 
-{28}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-01-10 09:00:00"}
-, 
-[3020] = {3020, 6019, nil, "打开战术室模拟器触发", nil, nil, nil, nil, nil, nil, 3, 
-{26}
-}
-, 
-[3021] = {3021, 6020, nil, "N10活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{29}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-01-24 09:00:00"}
-, 
-[3022] = {3022, 6021, nil, "N11活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{30}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-02-14 09:00:00"}
-, 
-[3023] = {3023, 6022, nil, "N12活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{31}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-03-05 05:00:00"}
-, 
-[3024] = {3024, 6023, nil, "N13活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{32}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-03-28 09:00:00"}
-, 
-[3025] = {3025, 6024, nil, "N14活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{33}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-04-18 09:00:00"}
-, 
-[3027] = {3027, 6026, nil, "N15赛车机关引导1", nil, nil, nil, nil, nil, nil, 2, 
-{5151001, 1, 1, 0}
-}
-, 
-[3028] = {3028, 6027, nil, "N15赛车机关引导2", nil, nil, nil, nil, nil, nil, 2, 
-{5151002, 1, 1, 0}
-}
-, 
-[3029] = {3029, 6028, nil, "N15赛车机关引导3", nil, nil, nil, nil, nil, nil, 2, 
-{5151005, 1, 1, 0}
-}
-, 
-[3030] = {3030, 6029, nil, "N15活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{35}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-05-09 09:00:00"}
-, 
-[3031] = {3031, 6030, nil, "N16活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{36}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-05-29 09:00:00"}
-, 
-[3032] = {3032, 5036, nil, "莲试用", nil, nil, nil, nil, nil, nil, 2, 
-{5164001, 1, 1, 0}
-}
-, 
-[3033] = {3033, 5037, nil, "贾尔斯试用", nil, nil, nil, nil, nil, nil, 2, 
-{5164002, 1, 1, 0}
-}
-, 
-[3034] = {3034, 5038, nil, "梅试用", nil, nil, nil, nil, nil, nil, 2, 
-{5164003, 1, 1, 0}
-}
-, 
-[3035] = {3035, 5039, nil, "间章10s-2回合1引导", nil, nil, nil, nil, nil, nil, 2, 
-{1001102, 1, 1, 0}
-}
-, 
-[3036] = {3036, 5039, nil, "间章10s-2回合2引导", nil, nil, nil, nil, nil, nil, 2, 
-{1001102, 1, 2, 0}
-}
-, 
-[3037] = {3037, 5039, nil, "间章10s-2回合3引导", nil, nil, nil, nil, nil, nil, 2, 
-{1001102, 1, 3, 0}
-}
-, 
-[3038] = {3038, 5040, nil, "间章10s-4引导", nil, nil, nil, nil, nil, nil, 2, 
-{1001104, 1, 1, 0}
-}
-, 
-[3039] = {3039, 5041, nil, "间章10s-4引导2", nil, nil, nil, nil, nil, nil, 2, 
-{1001104, 1, 7, 0}
-}
-, 
-[3040] = {3040, 5042, nil, "间章10s-9引导", nil, nil, nil, nil, nil, nil, 2, 
-{1001109, 1, 1, 0}
-}
-, 
-[3041] = {3041, 5043, nil, "N17活动主界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{46}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-06-20 09:00:00"}
-, 
-[3042] = {3042, 5044, nil, "N17活动困难关", nil, nil, nil, nil, nil, nil, 3, 
-{47}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 12}
-, 
-[3043] = {3043, 5046, nil, "N18 弱化格子引导", nil, nil, nil, nil, nil, nil, 2, 
-{5181001, 1, 1, 0}
-}
-, 
-[3044] = {3044, 5047, nil, "妮娜试用", nil, nil, nil, nil, nil, nil, 2, 
-{5183001, 1, 1, 0}
-}
-, 
-[3045] = {3045, 5048, nil, "早苗试用", nil, nil, nil, nil, nil, nil, 2, 
-{5183002, 1, 1, 0}
-}
-, 
-[190501] = {190501, 190501, nil, "N18 活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{49}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-07-11 09:00:00"}
-, 
-[110001] = {110001, 110001, nil, "N19 活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{50}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[13]}
-, 
-[110002] = {110002, 110002, nil, "N19 P5活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{51}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[13]}
-, 
-[110501] = {110501, 110501, nil, "N20 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{52}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-08-22 09:00:00"}
-, 
-[110502] = {110502, 110502, nil, "N20 小游戏引导", nil, nil, nil, nil, nil, nil, 3, 
-{53}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-08-25 04:00:00"}
-, 
-[111001] = {111001, 111001, nil, "N21 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{54}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-09-19 09:00:00"}
-, 
-[112001] = {112001, 112001, nil, "N22 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{55}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-10-17 09:00:00"}
-, 
-[113001] = {113001, 113001, nil, "N23 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{56}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-11-14 09:00:00"}
-, 
-[114001] = {114001, 114001, nil, "N24 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{57}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2022-12-12 09:00:00"}
-, 
-[112002] = {112002, 112002, nil, "9-14结束后引导番外", nil, nil, nil, nil, nil, nil, 3, common[115], nil, nil, nil, nil, nil, nil, nil, 4009140}
-, 
-[542022] = {542022, 542022, nil, "N25 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{58}
-}
-, 
-[542023] = {542023, 542023, nil, "N25 偶像养成主界面", nil, nil, nil, nil, nil, nil, 3, 
-{59}
-}
-, 
-[542024] = {542024, 542024, nil, "N25 偶像养成游戏界面", nil, nil, nil, nil, nil, nil, 3, 
-{60}
-}
-, 
-[542025] = {542025, 542025, nil, "N25 吸血鬼主界面", nil, nil, nil, nil, nil, nil, 3, 
-{61}
-}
-, 
-[542026] = {542026, 542026, nil, "N25 吸血鬼游戏", nil, nil, nil, nil, nil, nil, 3, 
-{62}
-}
-, 
-[542027] = {542027, 542027, nil, nil, nil, nil, nil, nil, nil, nil, 2, 
-{5259001, 1, 1, 0}
-}
-, 
-[542028] = {542028, 542027, nil, nil, nil, nil, nil, nil, nil, nil, 3, 
-{63}
-}
-, 
-[542029] = {542029, 542027, nil, nil, nil, nil, nil, nil, nil, nil, 3, 
-{64}
-}
-, 
-[542030] = {542030, 542027, nil, nil, nil, nil, nil, nil, nil, nil, 2, 
-{5259001, 3, 1, 0}
-}
-, 
-[116001] = {116001, 116001, nil, "N26 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{65}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2023-02-06 09:00:00"}
-, 
-[117001] = {117001, 117001, nil, "N27 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{66}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2023-03-06 09:00:00"}
-, 
-[117002] = {117002, 117002, nil, "N27 信使小游戏局内引导", nil, nil, nil, nil, nil, nil, 3, 
-{67}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2023-03-09 04:00:00"}
-, 
-[118001] = {118001, 118001, nil, "N28 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{68}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[118002] = {118002, 118002, nil, common[15], nil, nil, nil, nil, nil, nil, 3, 
-{69}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[118003] = {118003, 118003, nil, common[16], nil, nil, nil, nil, nil, nil, 3, 
-{70}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[118004] = {118004, 118004, nil, common[17], nil, nil, nil, nil, nil, nil, 3, 
-{71}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[118005] = {118005, 118005, nil, common[18], nil, nil, nil, nil, nil, nil, 3, 
-{72}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[542006] = {542006, 542006, nil, "N28 Gronru", nil, nil, nil, nil, nil, nil, 3, 
-{73}
-}
-, 
-[542007] = {542007, 542007, nil, "N28 Gronru Map", nil, nil, nil, nil, nil, nil, 3, 
-{74}
-}
-, 
-[542008] = {542008, 542008, nil, "第一关1001点击角色", nil, nil, nil, nil, nil, nil, 3, 
-{75}
-}
-, 
-[542009] = {542009, 542008, nil, "第一关步骤2", nil, nil, nil, nil, nil, nil, 32, 
-{5420082}
-}
-, 
-[542010] = {542010, 542008, nil, "第一关步骤3", nil, nil, nil, nil, nil, nil, 32, 
-{5420083}
-}
-, 
-[542011] = {542011, 542008, nil, "第一关步骤5", nil, nil, nil, nil, nil, nil, 32, 
-{5420085}
-}
-, 
-[542012] = {542012, 542008, nil, "第一关步骤6", nil, nil, nil, nil, nil, nil, 32, 
-{5420086}
-}
-, 
-[542013] = {542013, 542008, nil, "第一关步骤7", nil, nil, nil, nil, nil, nil, 32, 
-{5420087}
-}
-, 
-[542014] = {542014, 542009, nil, "第二关任意位置", nil, nil, nil, nil, nil, nil, 3, 
-{76}
-}
-, 
-[542015] = {542015, 542009, nil, "第二关步骤2", nil, nil, nil, nil, nil, nil, 32, 
-{5420092}
-}
-, 
-[542016] = {542016, 542009, nil, "第二关步骤3", nil, nil, nil, nil, nil, nil, 32, 
-{5420093}
-}
-, 
-[542017] = {542017, 542009, nil, "第二关步骤4", nil, nil, nil, nil, nil, nil, 32, 
-{5420094}
-}
-, 
-[542018] = {542018, 542010, nil, "boss 1", nil, nil, nil, nil, nil, nil, 3, 
-{77}
-}
-, 
-[542019] = {542019, 542011, nil, "boss 2", nil, nil, nil, nil, nil, nil, 3, 
-{78}
-}
-, 
-[542020] = {542020, 542012, nil, "boss 3", nil, nil, nil, nil, nil, nil, 3, 
-{79}
-}
-, 
-[119001] = {119001, 119001, nil, "N29 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{80}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[19]}
-, 
-[119002] = {119002, 119002, nil, "N29侦探小游戏 主界面主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{81}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[19]}
-, 
-[119003] = {119003, 119003, nil, "N29 N29侦探小游戏 地图界面", nil, nil, nil, nil, nil, nil, 3, 
-{82}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[19]}
-, 
-[119004] = {119004, 119004, nil, "N29 N29侦探小游戏 对话界面", nil, nil, nil, nil, nil, nil, 3, 
-{83}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[19]}
-, 
-[119005] = {119005, 119005, nil, "N29  N29侦探小游戏 搜索界面", nil, nil, nil, nil, nil, nil, 3, 
-{84}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[19]}
-, 
-[119006] = {119006, 119006, nil, "N29  N29侦探小游戏 灵感制作界面", nil, nil, nil, nil, nil, nil, 3, 
-{85}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[19]}
-, 
-[119007] = {119007, 119007, nil, "光灵精炼引导-精炼条件未满足", nil, nil, nil, nil, nil, nil, 3, 
-{86}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 119008}
-, 
-[119008] = {119008, 119008, nil, "光灵精炼引导-精炼条件已满足", nil, nil, nil, nil, nil, nil, 3, 
-{87}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 119007}
-, 
-[120001] = {120001, 120001, nil, "N30 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{88}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2023-06-05 09:00:00"}
-, 
-[121001] = {121001, 121001, nil, "N31 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{89}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2023-07-03 09:00:00"}
-, 
-[122001] = {122001, 122001, nil, "N32 主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{92}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[20]}
-, 
-[122002] = {122002, 122002, nil, "N32 多周目水晶球界面", nil, nil, nil, nil, nil, nil, 3, 
-{93}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[20]}
-, 
-[122003] = {122003, 122003, nil, "N32 多周目地图界面", nil, nil, nil, nil, nil, nil, 3, 
-{94}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[20]}
-, 
-[122004] = {122004, 122004, nil, "N32 多周目地图界面_首次获得档案", nil, nil, nil, nil, nil, nil, 3, 
-{95}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[20]}
-, 
-[50000] = {50000, 50000, nil, "3-3后返回主界面时触发家园引导", nil, nil, nil, nil, nil, nil, 6, 
-{1000302}
-, nil, nil, nil, nil, nil, nil, 4003030, nil, nil, nil, nil, nil, 52000}
-, 
-[52000] = {52000, 50000, nil, "(回退引导)3-3后登陆时触发家园引导", nil, nil, nil, nil, nil, nil, 10, 
-{2005, 50000}
-, nil, nil, nil, nil, nil, nil, nil, 4003020, nil, nil, nil, nil, 50000}
-, 
-[50001] = {50001, 50001, nil, "家园——基础操作", nil, nil, nil, nil, nil, nil, 3, common[120], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 
-{11100001}
-}
-, 
-[50002] = {50002, 50002, nil, "家园——砍树", nil, nil, nil, nil, nil, nil, 3, 
-{41}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100001, common[121]}
-, 
-[51002] = {51002, 51002, nil, "家园——挖矿", nil, nil, nil, nil, nil, nil, 3, 
-{42}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100001, common[121]}
-, 
-[50003] = {50003, 50003, nil, "家园——修复建筑", nil, nil, nil, nil, nil, nil, 27, 
-{11100004, 1}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 51003, nil, nil, 11100003, common[121]}
-, 
-[51003] = {51003, 51003, nil, "(回退引导)家园——修复建筑", nil, nil, nil, nil, nil, nil, 3, common[120], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 50003, nil, nil, 11100003, common[121]}
-, 
-[50004] = {50004, 50004, nil, "家园——建造宿舍", nil, nil, nil, nil, nil, nil, 3, 
-{44}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100004, 
-{11100005}
-}
-, 
-[50005] = {50005, 50005, nil, "家园——摆放宿舍", nil, nil, nil, nil, nil, nil, 3, common[120], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100005, 
-{11100006}
-}
-, 
-[50006] = {50006, 50006, nil, "家园——光灵入住", nil, nil, nil, nil, nil, nil, 3, common[120], nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100007, 
-{11100008}
-}
-, 
-[50007] = {50007, 50007, nil, "家园——等级", nil, nil, nil, nil, nil, nil, 3, 
-{39}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100004}
-, 
-[50008] = {50008, 50008, nil, "家园——钓鱼", nil, nil, nil, nil, nil, nil, 3, 
-{40}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100010, 
-{11100011}
-}
-, 
-[50009] = {50009, 50009, nil, "家园——商店", nil, nil, nil, nil, nil, nil, 3, 
-{38}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100012, 
-{11100013}
-}
-, 
-[50011] = {50011, 50011, nil, "家园——奇异树建造", nil, nil, nil, nil, nil, nil, 3, 
-{48}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100014, 
-{11100015}
-}
-, 
-[50012] = {50012, 50012, nil, "家园——奇异树摆放", nil, nil, nil, nil, nil, nil, 27, 
-{11100019, 3}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100019, 
-{11100016}
-}
-, 
-[50010] = {50010, 50010, nil, "家园——奇异树培育", nil, nil, nil, nil, nil, nil, 3, 
-{37}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 11100016, 
-{11100018}
-}
-, 
-[6400] = {6400, 6400, nil, common[21], nil, nil, nil, nil, nil, nil, 2, 
-{5173002, 1, 1, 0}
-}
-, 
-[6401] = {6401, 5045, nil, common[22], nil, nil, nil, nil, nil, nil, 2, 
-{5173001, 1, 1, 0}
-}
-, 
-[6402] = {6402, 6400, nil, common[21], nil, nil, nil, nil, nil, nil, 2, 
-{5173002, 1, 2, 0}
-}
-, 
-[6403] = {6403, 6401, nil, common[23], nil, nil, nil, nil, nil, nil, 2, 
-{5193001, 1, 1, 0}
-}
-, 
-[6404] = {6404, 6402, nil, common[23], nil, nil, nil, nil, nil, nil, 2, 
-{5193001, 2, 1, 0}
-}
-, 
-[6405] = {6405, 6401, nil, common[23], nil, nil, nil, nil, nil, nil, 5, 
-{5193001, 1, 1, 2, 1601591}
-}
-, 
-[6406] = {6406, 6401, nil, common[23], nil, nil, nil, nil, nil, nil, 5, 
-{5193001, 1, 1, 2, 1601581}
-}
-, 
-[6501] = {6501, 6501, nil, common[24], nil, nil, nil, nil, nil, nil, 2, 
-{5203002, 1, 1, 0}
-}
-, 
-[6502] = {6502, 6501, nil, common[24], nil, nil, nil, nil, nil, nil, 5, 
-{5203002, 1, 1, 2, 1501651}
-}
-, 
-[6601] = {6601, 6601, nil, "卡莲试用", nil, nil, nil, nil, nil, nil, 2, 
-{5203001, 1, 1, 0}
-}
-, 
-[6602] = {6602, 6601, nil, common[24], nil, nil, nil, nil, nil, nil, 5, 
-{5203001, 1, 1, 2, 1601641}
-}
-, 
-[6701] = {6701, 6701, nil, "N20 线性关BOSS局内对话", nil, nil, nil, nil, nil, nil, 2, 
-{5201012, 1, 1, 0}
-}
-, 
-[6801] = {6801, 6801, nil, "N21 线性关BOSS局内对话-进入", nil, nil, nil, nil, nil, nil, 2, 
-{5211008, 1, 1, 0}
-}
-, 
-[6802] = {6802, 6802, nil, "N21 线性关BOSS局内对话-打完", nil, nil, nil, nil, nil, nil, 28, 
-{5211008}
-}
-, 
-[6901] = {6901, 6901, nil, common[25], nil, nil, nil, nil, nil, nil, 2, 
-{5213003, 1, 1, 0}
-}
-, 
-[6902] = {6902, 6901, nil, common[25], nil, nil, nil, nil, nil, nil, 5, 
-{5213003, 1, 1, 2, 1501681}
-}
-, 
-[7001] = {7001, 7001, nil, common[26], nil, nil, nil, nil, nil, nil, 2, 
-{5213002, 1, 1, 0}
-}
-, 
-[7002] = {7002, 7001, nil, common[26], nil, nil, nil, nil, nil, nil, 5, 
-{5213002, 1, 1, 2, 1601661}
-}
-, 
-[7003] = {7003, 7010, nil, common[27], nil, nil, nil, nil, nil, nil, 1, 
-{5213001}
-}
-, 
-[7004] = {7004, 7010, nil, common[27], nil, nil, nil, nil, nil, nil, 5, 
-{5213001, 1, 1, 2, 1601671}
-}
-, 
-[7005] = {7005, 7011, nil, "N22 线性关10剧情+焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5221010, 1, 1, 0}
-}
-, 
-[7020] = {7020, 7020, nil, common[28], nil, nil, nil, nil, nil, nil, 2, 
-{5223002, 1, 1, 0}
-}
-, 
-[7021] = {7021, 7020, nil, common[28], nil, nil, nil, nil, nil, nil, 29, 
-{5223002, 1, 1, 2, 1501711}
-}
-, 
-[7022] = {7022, 7020, nil, common[28], nil, nil, nil, nil, nil, nil, 2, 
-{5223002, 1, 2, 0}
-}
-, 
-[7030] = {7030, 7021, nil, common[29], nil, nil, nil, nil, nil, nil, 2, common[122]}
-, 
-[7031] = {7031, 7021, nil, common[29], nil, nil, nil, nil, nil, nil, 29, 
-{5223001, 1, 1, 2, 1601701}
-}
-, 
-[7032] = {7032, 7021, nil, common[29], nil, nil, nil, nil, nil, nil, 2, common[122]}
-, 
-[7035] = {7035, 7024, nil, common[30], nil, nil, nil, nil, nil, nil, 2, 
-{410001, 1, 1, 0}
-}
-, 
-[7036] = {7036, 7024, nil, common[30], nil, nil, nil, nil, nil, nil, 2, common[123]}
-, 
-[7037] = {7037, 7024, nil, common[30], nil, nil, nil, nil, nil, nil, 2, common[123]}
-, 
-[703401] = {703401, 7023, nil, "大航海对话01", nil, nil, nil, nil, nil, nil, 2, 
-{410002, 1, 1, 0}
-}
-, 
-[703402] = {703402, 7023, nil, "大航海对话02", nil, nil, nil, nil, nil, nil, 2, 
-{410002, 1, 2, 0}
-}
-, 
-[703403] = {703403, 7023, nil, "大航海对话03", nil, nil, nil, nil, nil, nil, 2, 
-{410002, 1, 3, 0}
-}
-, 
-[703404] = {703404, 7023, nil, "大航海对话04", nil, nil, nil, nil, nil, nil, 2, 
-{410002, 1, 4, 0}
-}
-, 
-[703801] = {703801, 7025, nil, common[31], nil, nil, nil, nil, nil, nil, 2, 
-{410003, 1, 1, 0}
-}
-, 
-[703802] = {703802, 7025, nil, common[31], nil, nil, nil, nil, nil, nil, 2, 
-{410004, 1, 1, 0}
-}
-, 
-[703803] = {703803, 7025, nil, common[31], nil, nil, nil, nil, nil, nil, 2, 
-{410005, 1, 1, 0}
-}
-, 
-[703804] = {703804, 7025, nil, common[31], nil, nil, nil, nil, nil, nil, 2, 
-{410006, 1, 1, 0}
-}
-, 
-[7040] = {7040, 7040, nil, "焦点引导爱丝特Boss", nil, nil, nil, nil, nil, nil, 2, 
-{5231012, 1, 1, 0}
-}
-, 
-[7041] = {7041, 7041, nil, common[32], nil, nil, nil, nil, nil, nil, 2, 
-{5235002, 1, 1, 0}
-}
-, 
-[7042] = {7042, 7041, nil, common[32], nil, nil, nil, nil, nil, nil, 29, 
-{5235002, 1, 1, 2, 1601731}
-}
-, 
-[7043] = {7043, 7042, nil, common[33], nil, nil, nil, nil, nil, nil, 2, 
-{5235003, 1, 1, 0}
-}
-, 
-[7044] = {7044, 7042, nil, common[33], nil, nil, nil, nil, nil, nil, 29, 
-{5235003, 1, 1, 2, 1401691}
-}
-, 
-[7050] = {7050, 7050, nil, common[34], nil, nil, nil, nil, nil, nil, 2, 
-{5235001, 1, 1, 0}
-}
-, 
-[7051] = {7051, 7050, nil, common[34], nil, nil, nil, nil, nil, nil, 29, 
-{5235001, 1, 1, 2, 1601721}
-}
-, 
-[7052] = {7052, 7050, nil, common[34], nil, nil, nil, nil, nil, nil, 2, 
-{5235001, 1, 2, 0}
-}
-, 
-[7053] = {7053, 7053, nil, "焦点引导恶面花Boss", nil, nil, nil, nil, nil, nil, 2, 
-{101314, 1, 1, 0}
-}
-, 
-[7054] = {7054, 7054, nil, "焦点引导蚀虫Boss", nil, nil, nil, nil, nil, nil, 2, 
-{101307, 1, 1, 0}
-}
-, 
-[7057] = {7057, 7057, nil, "主线13-7结束剧情", nil, nil, nil, nil, nil, nil, 28, 
-{101307}
-}
-, 
-[7059] = {7059, 7059, nil, "主线13-12开始剧情", nil, nil, nil, nil, nil, nil, 2, 
-{101312, 1, 1, 0}
-}
-, 
-[7060] = {7060, 7060, nil, "14-9 提灯灵焦点引导1", nil, nil, nil, nil, nil, nil, 2, 
-{101409, 1, 1, 0}
-}
-, 
-[7062] = {7062, 7062, nil, "14-14 梦底丝焦点引导1", nil, nil, nil, nil, nil, nil, 2, 
-{101414, 1, 1, 0}
-}
-, 
-[7070] = {7070, 7070, nil, common[35], nil, nil, nil, nil, nil, nil, 2, 
-{5243002, 1, 1, 0}
-}
-, 
-[7071] = {7071, 7070, nil, common[35], nil, nil, nil, nil, nil, nil, 2, 
-{5243002, 1, 1, 2}
-}
-, 
-[7080] = {7080, 7080, nil, "焦点引导癫蹄Boss", nil, nil, nil, nil, nil, nil, 2, 
-{101407, 1, 1, 0}
-}
-, 
-[7090] = {7090, 7090, nil, common[36], nil, nil, nil, nil, nil, nil, 2, 
-{5243001, 1, 1, 0}
-}
-, 
-[7091] = {7091, 7090, nil, common[36], nil, nil, nil, nil, nil, nil, 29, 
-{5243001, 1, 1, 2, 1601531}
-}
-, 
-[7092] = {7092, 7090, nil, common[36], nil, nil, nil, nil, nil, nil, 29, common[124]}
-, 
-[7093] = {7093, 7090, nil, common[36], nil, nil, nil, nil, nil, nil, 29, common[124]}
-, 
-[7094] = {7094, 7090, nil, common[36], nil, nil, nil, nil, nil, nil, 29, common[124]}
-, 
-[7095] = {7095, 7090, nil, common[36], nil, nil, nil, nil, nil, nil, 29, common[124]}
-, 
-[7100] = {7100, 7100, nil, "N25 线性关第三关毒虫焦点引导1", nil, nil, nil, nil, nil, nil, 2, 
-{5251003, 1, 1, 0}
-}
-, 
-[7101] = {7101, 7101, nil, "N25 线性关boss幽冥亚种焦点引导1", nil, nil, nil, nil, nil, nil, 2, 
-{5251013, 1, 1, 0}
-}
-, 
-[7102] = {7102, 7102, nil, "N25 维克试用关", nil, nil, nil, nil, nil, nil, 2, 
-{5254002, 1, 1, 0}
-}
-, 
-[7103] = {7103, 7103, nil, common[37], nil, nil, nil, nil, nil, nil, 2, 
-{5254003, 1, 1, 0}
-}
-, 
-[7104] = {7104, 7103, nil, common[37], nil, nil, nil, nil, nil, nil, 29, 
-{5254003, 1, 1, 2, 1501801}
-}
-, 
-[7105] = {7105, 7103, nil, common[37], nil, nil, nil, nil, nil, nil, 2, 
-{5254003, 1, 1, 2}
-}
-, 
-[7106] = {7106, 7104, nil, common[38], nil, nil, nil, nil, nil, nil, 2, 
-{5254001, 1, 1, 0}
-}
-, 
-[7107] = {7107, 7104, nil, common[38], nil, nil, nil, nil, nil, nil, 29, 
-{5254001, 1, 1, 2, 1601771}
-}
-, 
-[7201] = {7201, 7201, nil, "N25 朦刹", nil, nil, nil, nil, nil, nil, 2, 
-{5252004, 1, 1, 0}
-}
-, 
-[7202] = {7202, 7202, nil, "N26 Boss尤", nil, nil, nil, nil, nil, nil, 2, 
-{5261012, 1, 1, 0}
-}
-, 
-[7300] = {7300, 7300, nil, common[39], nil, nil, nil, nil, nil, nil, 2, 
-{5263001, 1, 1, 0}
-}
-, 
-[7301] = {7301, 7300, nil, common[39], nil, nil, nil, nil, nil, nil, 2, 
-{5263001, 1, 1, 2}
-}
-, 
-[7302] = {7302, 7301, nil, common[40], nil, nil, nil, nil, nil, nil, 2, 
-{5263002, 1, 1, 0}
-}
-, 
-[7303] = {7303, 7301, nil, common[41], nil, nil, nil, nil, nil, nil, 30, 
-{5263002, 1, 0, 2, 1601811}
-}
-, 
-[7304] = {7304, 7301, nil, common[42], nil, nil, nil, nil, nil, nil, 30, 
-{5263002, 1, 0, 2, 1400811}
-}
-, 
-[7305] = {7305, 7301, nil, common[43], nil, nil, nil, nil, nil, nil, 30, 
-{5263002, 1, 0, 2, 1600251}
-}
-, 
-[7306] = {7306, 7302, nil, common[44], nil, nil, nil, nil, nil, nil, 2, 
-{5263003, 1, 1, 0}
-}
-, 
-[7307] = {7307, 7302, nil, common[45], nil, nil, nil, nil, nil, nil, 30, 
-{5263003, 1, 0, 2, 1501831}
-}
-, 
-[7401] = {7401, 7401, nil, "焦点引导粉红沙虫boss", nil, nil, nil, nil, nil, nil, 2, 
-{5271012, 1, 1, 0}
-}
-, 
-[7501] = {7501, 7501, nil, "N27仄助焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5271007, 1, 1, 0}
-}
-, 
-[7601] = {7601, 7601, nil, "N27困难关焦点引导-帕索洛机关", nil, nil, nil, nil, nil, nil, 2, 
-{5272004, 1, 1, 0}
-}
-, 
-[7602] = {7602, 7602, nil, common[46], nil, nil, nil, nil, nil, nil, 2, 
-{5272001, 1, 1, 0}
-}
-, 
-[7701] = {7701, 7701, nil, common[46], nil, nil, nil, nil, nil, nil, 2, 
-{5272001, 2, 1, 0}
-}
-, 
-[7801] = {7801, 7801, nil, "N27团战", nil, nil, nil, nil, nil, nil, 2, 
-{5272002, 1, 1, 0}
-}
-, 
-[7901] = {7901, 7901, nil, "凯雅引导1", nil, nil, nil, nil, nil, nil, 2, 
-{5274002, 1, 1, 0}
-}
-, 
-[7902] = {7902, 7901, nil, "凯雅引导2", nil, nil, nil, nil, nil, nil, 31, 
-{5274002, 1, 0, 2, 1501851, 1}
-}
-, 
-[7903] = {7903, 7901, nil, "凯雅引导3", nil, nil, nil, nil, nil, nil, 31, 
-{5274002, 1, 0, 2, 1501851, 2}
-}
-, 
-[7904] = {7904, 7802, nil, "耶利亚", nil, nil, nil, nil, nil, nil, 2, 
-{5274001, 1, 1, 0}
-}
-, 
-[8001] = {8001, 8001, nil, "N28 盗宝", nil, nil, nil, nil, nil, nil, 2, 
-{5283004, 1, 1, 0}
-}
-, 
-[8002] = {8002, 8002, nil, "N28四骑士引导", nil, nil, nil, nil, nil, nil, 2, 
-{5281011, 1, 1, 0}
-}
-, 
-[8003] = {8003, 8003, nil, "蒂娜", nil, nil, nil, nil, nil, nil, 2, 
-{5284001, 1, 1, 0}
-}
-, 
-[8004] = {8004, 8004, nil, "零恩1", nil, nil, nil, nil, nil, nil, 2, 
-{5284002, 1, 1, 0}
-}
-, 
-[8009] = {8009, 8004, nil, "零恩", nil, nil, nil, nil, nil, nil, 31, 
-{5284002, 1, 0, 2, 1601891, 1}
-}
-, 
-[8005] = {8005, 8004, nil, "零恩2", nil, nil, nil, nil, nil, nil, 2, 
-{5284002, 2, 1, 0}
-}
-, 
-[8006] = {8006, 8005, nil, common[47], nil, nil, nil, nil, nil, nil, 2, 
-{5284003, 1, 1, 0}
-}
-, 
-[8007] = {8007, 8005, nil, common[47], nil, nil, nil, nil, nil, nil, 31, 
-{5284003, 1, 0, 2, 1400611, 1}
-}
-, 
-[8008] = {8008, 8005, nil, common[47], nil, nil, nil, nil, nil, nil, 31, 
-{5284003, 1, 0, 2, 1400611, 2}
-}
-, 
-[8050] = {8050, 8050, nil, "N29 战棋 1关1回合", nil, nil, nil, nil, nil, nil, 2, 
-{5299000, 1, 1, 0}
-}
-, 
-[8051] = {8051, 8051, nil, "N29 战棋 1关2回合", nil, nil, nil, nil, nil, nil, 2, 
-{5299000, 1, 2, 0}
-}
-, 
-[8052] = {8052, 8052, nil, "N29 战棋 2关1回合", nil, nil, nil, nil, nil, nil, 2, 
-{5299001, 1, 1, 0}
-}
-, 
-[8053] = {8053, 8053, nil, "N29 战棋 3关1回合", nil, nil, nil, nil, nil, nil, 2, 
-{5299002, 1, 1, 0}
-}
-, 
-[8054] = {8054, 8054, nil, "N29 战棋 5关1回合", 9999, nil, nil, nil, nil, nil, 2, 
-{5299004, 1, 1, 0}
-}
-, 
-[8055] = {8055, 8055, nil, "N29 战棋 6关1回合", nil, nil, nil, nil, nil, nil, 2, 
-{5299005, 1, 1, 0}
-}
-, 
-[8056] = {8056, 8056, nil, "N29 战棋 9关1回合", nil, nil, nil, nil, nil, nil, 2, 
-{5299008, 1, 1, 0}
-}
-, 
-[8057] = {8057, 8057, nil, common[48], nil, nil, nil, nil, nil, nil, 2, 
-{5294001, 1, 1, 0}
-}
-, 
-[8058] = {8058, 8057, nil, common[48], nil, nil, nil, nil, nil, nil, 31, 
-{5294001, 1, 0, 2, 1601911, 1}
-}
-, 
-[8059] = {8059, 8057, nil, common[48], nil, nil, nil, nil, nil, nil, 31, 
-{5294001, 1, 0, 2, 1601911, 2}
-}
-, 
-[8060] = {8060, 8060, nil, common[49], nil, nil, nil, nil, nil, nil, 2, 
-{5294002, 1, 1, 0}
-}
-, 
-[8061] = {8061, 8060, nil, common[49], nil, nil, nil, nil, nil, nil, 31, 
-{5294002, 1, 0, 2, 1501931, 1}
-}
-, 
-[8089] = {8089, 8089, nil, common[50], nil, nil, nil, nil, nil, nil, 2, 
-{5291008, 1, 1, 0}
-}
-, 
-[8090] = {8090, 8090, nil, common[50], nil, nil, nil, nil, nil, nil, 2, 
-{5291014, 1, 1, 0}
-}
-, 
-[8092] = {8092, 8092, nil, common[50], nil, nil, nil, nil, nil, nil, 2, 
-{5293005, 1, 1, 0}
-}
-, 
-[8094] = {8094, 8094, nil, "N30 启光战兵焦点引导主线15-2", nil, nil, nil, nil, nil, nil, 2, 
-{101502, 1, 1, 0}
-}
-, 
-[8095] = {8095, 8095, nil, "N30 钻探者 焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{101509, 1, 1, 0}
-}
-, 
-[8098] = {8098, 8098, nil, "N30 斐桀洛 焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{101614, 1, 1, 0}
-}
-, 
-[8099] = {8099, 8099, nil, "N30 噩梦塔 镣裁机铠引导 水塔", nil, nil, nil, nil, nil, nil, 2, 
-{4005010, 1, 1, 0}
-}
-, 
-[8100] = {8100, 8099, nil, "N30 噩梦塔 镣裁机铠引导 雷塔", nil, nil, nil, nil, nil, nil, 2, 
-{4008010, 1, 1, 0}
-}
-, 
-[8101] = {8101, 8101, nil, "N30 噩梦塔 黑菲 博怒格尔登 火塔1", nil, nil, nil, nil, nil, nil, 2, 
-{4006010, 1, 1, 0}
-}
-, 
-[8102] = {8102, 8101, nil, "N30 噩梦塔 黑菲 博怒格尔登 森塔1", nil, nil, nil, nil, nil, nil, 2, 
-{4007010, 1, 1, 0}
-}
-, 
-[8103] = {8103, 8103, nil, "主线15章章底夜王3阶段", nil, nil, nil, nil, nil, nil, 2, 
-{101514, 1, 1, 0}
-}
-, 
-[8104] = {8104, 8104, nil, common[51], nil, nil, nil, nil, nil, nil, 2, 
-{5301001, 1, 1, 0}
-}
-, 
-[8105] = {8105, 8104, nil, common[51], nil, nil, nil, nil, nil, nil, 31, 
-{5301001, 1, 0, 2, 1601921, 1}
-}
-, 
-[8106] = {8106, 8104, nil, common[51], nil, nil, nil, nil, nil, nil, 2, 
-{5301001, 2, 1, 0}
-}
-, 
-[8107] = {8107, 8105, nil, common[52], nil, nil, nil, nil, nil, nil, 2, 
-{5301002, 1, 1, 0}
-}
-, 
-[8108] = {8108, 8105, nil, common[52], nil, nil, nil, nil, nil, nil, 31, 
-{5301002, 1, 0, 2, 1601991, 1}
-}
-, 
-[8109] = {8109, 8109, nil, "N30 盘丝蛛后boss", nil, nil, nil, nil, nil, nil, 2, 
-{101609, 1, 1, 0}
-}
-, 
-[8110] = {8110, 8110, nil, "N30 精英启光小兵", nil, nil, nil, nil, nil, nil, 2, 
-{101603, 1, 1, 0}
-}
-, 
-[8111] = {8111, 8106, nil, common[53], nil, nil, nil, nil, nil, nil, 2, 
-{5301003, 1, 1, 0}
-}
-, 
-[8112] = {8112, 8106, nil, common[53], nil, nil, nil, nil, nil, nil, 31, 
-{5301003, 1, 0, 2, 1502001, 1}
-}
-, 
-[8113] = {8113, 8106, nil, common[53], nil, nil, nil, nil, nil, nil, 2, 
-{5301003, 2, 1, 0}
-}
-, 
-[8121] = {8121, 8121, nil, "N31 线性关第11关迈木·卡尔帝玛焦点引导1", nil, nil, nil, nil, nil, nil, 2, 
-{5311014, 1, 1, 0}
-}
-, 
-[8127] = {8127, 8127, nil, "N31 线性关约书亚焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5311016, 1, 1, 0}
-}
-, 
-[8122] = {8122, 8122, nil, common[54], nil, nil, nil, nil, nil, nil, 2, 
-{5313003, 1, 1, 0}
-}
-, 
-[8123] = {8123, 8122, nil, common[54], nil, nil, nil, nil, nil, nil, 31, 
-{5313003, 1, 0, 2, 1502031, 1}
-}
-, 
-[8150] = {8150, 8150, nil, common[55], nil, nil, nil, nil, nil, nil, 2, 
-{5313002, 1, 1, 0}
-}
-, 
-[8151] = {8151, 8150, nil, common[55], nil, nil, nil, nil, nil, nil, 31, 
-{5313002, 1, 0, 2, 1602021, 1}
-}
-, 
-[8152] = {8152, 8150, nil, common[55], nil, nil, nil, nil, nil, nil, 31, 
-{5313002, 1, 0, 2, 1602021, 2}
-}
-, 
-[8160] = {8160, 8160, nil, "sp米娅-1波次1回合", nil, nil, nil, nil, nil, nil, 2, 
-{5313001, 1, 1, 0}
-}
-, 
-[8161] = {8161, 8160, nil, "sp米娅", nil, nil, nil, nil, nil, nil, 31, 
-{5313001, 1, 0, 2, 1602011, 1}
-}
-, 
-[8162] = {8162, 8160, nil, "sp米娅-1波次2回合", nil, nil, nil, nil, nil, nil, 2, 
-{5313001, 1, 2, 0}
-}
-, 
-[8164] = {8164, 8160, nil, common[55], nil, nil, nil, nil, nil, nil, 31, 
-{5313001, 1, 0, 2, 1602011, 2}
-}
-, 
-[8163] = {8163, 8160, nil, "sp米娅-2波次1回合", nil, nil, nil, nil, nil, nil, 2, 
-{5313001, 2, 1, 0}
-}
-, 
-[8165] = {8165, 8165, nil, "消灭星星第1关", nil, nil, nil, nil, nil, nil, 2, 
-{5319001, 1, 1, 0}
-}
-, 
-[8166] = {8166, 8166, nil, "消灭星星第2关", nil, nil, nil, nil, nil, nil, 2, 
-{5319002, 1, 1, 0}
-}
-, 
-[8167] = {8167, 8167, nil, "消灭星星第3关", nil, nil, nil, nil, nil, nil, 2, 
-{5319003, 1, 1, 0}
-}
-, 
-[8168] = {8168, 8168, nil, "消灭星星第4关", nil, nil, nil, nil, nil, nil, 2, 
-{5319004, 1, 1, 0}
-}
-, 
-[8169] = {8169, 8169, nil, "消灭星星第5关", nil, nil, nil, nil, nil, nil, 2, 
-{5319006, 1, 1, 0}
-}
-, 
-[8170] = {8170, 8170, nil, "消灭星星第6关", nil, nil, nil, nil, nil, nil, 2, 
-{5319005, 1, 1, 0}
-}
-, 
-[8171] = {8171, 8171, nil, "消灭星星第7关", nil, nil, nil, nil, nil, nil, 2, 
-{5319007, 1, 1, 0}
-}
-, 
-[8300] = {8300, 8173, nil, "约书亚入场", nil, nil, nil, nil, nil, nil, 2, 
-{5324001, 1, 1, 0}
-}
-, 
-[8301] = {8301, 8173, nil, "约书亚放完第一次主动技", nil, nil, nil, nil, nil, nil, 31, 
-{5324001, 1, 0, 2, 1602041, 1}
-}
-, 
-[8302] = {8302, 8173, nil, "约书亚放完第二次主动技", nil, nil, nil, nil, nil, nil, 31, 
-{5324001, 1, 0, 2, 1602041, 2}
-}
-, 
-[8230] = {8230, 8230, nil, "白兰入场", nil, nil, nil, nil, nil, nil, 2, 
-{5324002, 1, 1, 0}
-}
-, 
-[8231] = {8231, 8230, nil, "薇丝放完第1次主动技", nil, nil, nil, nil, nil, nil, 31, 
-{5324002, 1, 0, 2, 1500331, 1}
-}
-, 
-[8232] = {8232, 8230, nil, "白兰放完第1次主动技", nil, nil, nil, nil, nil, nil, 31, 
-{5324002, 1, 0, 2, 1502051, 1}
-}
-, 
-[8240] = {8240, 8240, nil, "神女蝴蝶", nil, nil, nil, nil, nil, nil, 2, 
-{5331013, 1, 1, 0}
-}
-, 
-[8241] = {8241, 8174, nil, "希南入场", nil, nil, nil, nil, nil, nil, 2, 
-{5334002, 1, 1, 0}
-}
-, 
-[8242] = {8242, 8174, nil, "希南放完技能", nil, nil, nil, nil, nil, nil, 31, 
-{5334002, 1, 0, 2, 1602071, 1}
-}
-, 
-[8243] = {8243, 8174, nil, "希南第二波", nil, nil, nil, nil, nil, nil, 2, 
-{5334002, 2, 1, 0}
-}
-, 
-[8400] = {8400, 8300, nil, "莱蕾入场", nil, nil, nil, nil, nil, nil, 2, 
-{5334001, 1, 1, 0}
-}
-, 
-[8401] = {8401, 8300, nil, "莱蕾放完技能1", nil, nil, nil, nil, nil, nil, 31, 
-{5334001, 1, 0, 2, 1602061, 1}
-}
-, 
-[8402] = {8402, 8300, nil, "莱蕾放完技能2", nil, nil, nil, nil, nil, nil, 31, 
-{5334001, 1, 0, 2, 1602061, 2}
-}
-, 
-[8320] = {8320, 8320, nil, "吧噗入场", nil, nil, nil, nil, nil, nil, 2, 
-{5334003, 1, 1, 0}
-}
-, 
-[8321] = {8321, 8320, nil, "吧噗放完技能", nil, nil, nil, nil, nil, nil, 31, 
-{5334003, 1, 0, 2, 1502081, 1}
-}
-, 
-[8322] = {8322, 8320, nil, "极光", nil, nil, nil, nil, nil, nil, 2, 
-{5334003, 1, 1, 2}
-}
-, 
-[123001] = {123001, 123001, nil, "线性关页面-点小游戏跳转", nil, nil, nil, nil, nil, nil, 3, 
-{100}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[56]}
-, 
-[123002] = {123002, 123002, nil, "地图页面-点金币1", nil, nil, nil, nil, nil, nil, 3, 
-{97}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[56]}
-, 
-[123003] = {123003, 123003, nil, "建筑升级页面-点1", nil, nil, nil, nil, nil, nil, 3, 
-{101}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[56]}
-, 
-[123004] = {123004, 123004, nil, "建筑升级弹窗-点奖励", nil, nil, nil, nil, nil, nil, 3, 
-{103}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[56]}
-, 
-[123005] = {123005, 123005, nil, "建筑升级页面完成-关闭", nil, nil, nil, nil, nil, nil, 3, 
-{102}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[56]}
-, 
-[123006] = {123006, 123006, nil, "地图页面-点光灵", nil, nil, nil, nil, nil, nil, 3, 
-{98}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[56]}
-, 
-[123007] = {123007, 123007, nil, "光灵界面-点约会", nil, nil, nil, nil, nil, nil, 3, 
-{104}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[56]}
-, 
-[123008] = {123008, 123008, nil, "地图界面-点手册", nil, nil, nil, nil, nil, nil, 3, 
-{99}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[56]}
-, 
-[800101] = {800101, 800101, nil, "活动", nil, nil, nil, nil, nil, nil, 3, 
-{106}
-}
-, 
-[800102] = {800102, 800102, nil, "地图", nil, nil, nil, nil, nil, nil, 3, common[125]}
-, 
-[800103] = {800103, 800103, nil, "第一关通关后", nil, nil, nil, nil, nil, nil, 3, 
-{111}
-, nil, nil, nil, nil, nil, nil, nil, nil, 
-{80001, 1, 8001001}
-, common[126]}
-, 
-[800104] = {800104, 800104, nil, "第二关通关后", nil, nil, nil, nil, nil, nil, 3, common[125], nil, nil, nil, nil, nil, nil, nil, nil, common[126], common[127]}
-, 
-[800105] = {800105, 800105, nil, "第十二关通关后", nil, nil, nil, nil, nil, nil, 3, common[125], nil, nil, nil, nil, nil, nil, nil, nil, common[128]}
-, 
-[800106] = {800106, 800106, nil, "微笑之水首次升级在升级弹板上引导", nil, nil, nil, nil, nil, nil, 3, 
-{108}
-}
-, 
-[800107] = {800107, 800107, nil, "微笑之水解锁新功能2号在升级弹板上引导", nil, nil, nil, nil, nil, nil, 3, 
-{109}
-}
-, 
-[800110] = {800110, 800110, nil, "拾取第一个收藏品-全套表现结束后", nil, nil, nil, nil, nil, nil, 3, 
-{110}
-, nil, nil, nil, nil, nil, nil, nil, nil, common[126], common[127]}
-, 
-[800111] = {800111, 800111, nil, "日常关", nil, nil, nil, nil, nil, nil, 3, 
-{112}
-, nil, nil, nil, nil, nil, 800105, nil, nil, common[128], nil, nil, nil, nil, "2023-09-06 05:00:00", "2023-09-27 04:00:00"}
-, 
-[8150001] = {8150001, 8150001, nil, "赛季2述梦与遨游切换", nil, nil, nil, nil, nil, nil, 3, 
-{117}
-}
-, 
-[800202] = {800202, 800202, nil, "天平小游戏", nil, nil, nil, nil, nil, nil, 3, 
-{114}
-}
-, 
-[141001] = {141001, 141001, nil, "CN12 N41主活动新手引导", nil, nil, nil, nil, nil, nil, 3, 
-{137}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2024-02-26 09:00:00"}
-, 
-[52906001] = {52906001, 52906001, nil, "伊芙简单焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{800135, 1, 1, 0}
-}
-, 
-[52916001] = {52916001, 52916001, nil, "伊芙困难焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{800136, 1, 1, 0}
-}
-, 
-[124001] = {124001, 124001, nil, "N33主活动新手引导", nil, nil, nil, nil, nil, nil, 3, 
-{105}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[56]}
-, 
-[80010121] = {80010121, 80010121, nil, common[57], nil, nil, nil, nil, nil, nil, 2, 
-{800101, 1, 1, 0}
-}
-, 
-[80010111] = {80010111, 80010121, nil, common[58], nil, nil, nil, nil, nil, nil, 2, 
-{800102, 1, 1, 0}
-}
-, 
-[80010521] = {80010521, 80010521, nil, "点选转色模块2引导+困难", nil, nil, nil, nil, nil, nil, 2, 
-{800110, 1, 1, 0}
-}
-, 
-[80010511] = {80010511, 80010511, nil, "点选转色模块2引导", nil, nil, nil, nil, nil, nil, 2, 
-{800109, 1, 1, 0}
-}
-, 
-[80010621] = {80010621, 80010621, nil, "困难母巢焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{800112, 1, 1, 0}
-}
-, 
-[80010721] = {80010721, 80010721, nil, "困难持盾敌人对队伍造成伤害", nil, nil, nil, nil, nil, nil, 2, 
-{800114, 1, 1, 0}
-}
-, 
-[80010821] = {80010821, 80010821, nil, "困难夏尔的技能描述", nil, nil, nil, nil, nil, nil, 2, 
-{800116, 1, 1, 0}
-}
-, 
-[80011021] = {80011021, 80011021, nil, "敌人攻击力大幅提升", nil, nil, nil, nil, nil, nil, 2, 
-{800120, 1, 1, 0}
-}
-, 
-[80011121] = {80011121, 80011121, nil, "通过任意门可以去到任何地方", nil, nil, nil, nil, nil, nil, 2, 
-{800122, 1, 1, 0}
-}
-, 
-[80011421] = {80011421, 80011421, nil, "影子不再召唤符文而是直接召唤影鬼", nil, nil, nil, nil, nil, nil, 2, 
-{800128, 1, 1, 0}
-}
-, 
-[80011521] = {80011521, 80011521, nil, "尘仆会不断复活击杀鸣灼", nil, nil, nil, nil, nil, nil, 2, 
-{800130, 1, 1, 0}
-}
-, 
-[80010921] = {80010921, 80010921, nil, common[59], nil, nil, nil, nil, nil, nil, 2, 
-{800118, 1, 1, 0}
-}
-, 
-[80010911] = {80010911, 80010911, nil, common[60], nil, nil, nil, nil, nil, nil, 2, 
-{800117, 1, 1, 0}
-}
-, 
-[80011321] = {80011321, 80011321, nil, common[59], nil, nil, nil, nil, nil, nil, 2, 
-{800126, 1, 1, 0}
-}
-, 
-[80011311] = {80011311, 80011311, nil, common[60], nil, nil, nil, nil, nil, nil, 2, 
-{800125, 1, 1, 0}
-}
-, 
-[80011621] = {80011621, 80011621, nil, common[59], nil, nil, nil, nil, nil, nil, 2, 
-{800132, 1, 1, 0}
-}
-, 
-[80011611] = {80011611, 80011611, nil, common[60], nil, nil, nil, nil, nil, nil, 2, 
-{800131, 1, 1, 0}
-}
-, 
-[8403] = {8403, 8403, nil, "焦点引导 咒术小怪", nil, nil, nil, nil, nil, nil, 2, 
-{101709, 1, 1, 0}
-}
-, 
-[8405] = {8405, 8405, nil, "乔瑟琳入场", nil, nil, nil, nil, nil, nil, 2, 
-{5343002, 1, 1, 0}
-}
-, 
-[8406] = {8406, 8405, nil, common[61], nil, nil, nil, nil, nil, nil, 2, 
-{5343002, 1, 2, 0}
-}
-, 
-[8407] = {8407, 8406, nil, "sp雷霆开场", nil, nil, nil, nil, nil, nil, 2, 
-{5343001, 1, 1, 0}
-}
-, 
-[8408] = {8408, 8406, nil, "sp雷霆放完技能", nil, nil, nil, nil, nil, nil, 31, 
-{5343001, 1, 0, 2, 1602091, 1}
-}
-, 
-[8409] = {8409, 8407, nil, common[62], nil, nil, nil, nil, nil, nil, 2, 
-{101808, 1, 1, 0}
-}
-, 
-[8410] = {8410, 8408, nil, common[62], nil, nil, nil, nil, nil, nil, 2, 
-{101810, 1, 1, 0}
-}
-, 
-[8411] = {8411, 8409, nil, common[62], nil, nil, nil, nil, nil, nil, 2, 
-{101806, 1, 1, 0}
-}
-, 
-[8430] = {8430, 8430, nil, "焦点引导 Boss污泥机器人", nil, nil, nil, nil, nil, nil, 2, 
-{101814, 1, 1, 0}
-}
-, 
-[8501] = {8501, 8501, nil, common[62], nil, nil, nil, nil, nil, nil, 2, 
-{101714, 1, 1, 0}
-}
-, 
-[8502] = {8502, 8502, nil, "焦点引导 泥潭机关", nil, nil, nil, nil, nil, nil, 2, 
-{101710, 1, 1, 0}
-}
-, 
-[8503] = {8503, 8503, nil, "焦点引导 军官", nil, nil, nil, nil, nil, nil, 2, 
-{101803, 1, 1, 0}
-}
-, 
-[8440] = {8440, 8440, nil, "焦点引导 治疗兵", nil, nil, nil, nil, nil, nil, 2, 
-{101804, 1, 1, 0}
-}
-, 
-[8441] = {8441, 8441, nil, "焦点引导 通信兵", nil, nil, nil, nil, nil, nil, 2, 
-{101805, 1, 1, 0}
-}
-, 
-[125001] = {125001, 125001, nil, "N34主活动新手引导", nil, nil, nil, nil, nil, nil, 3, 
-{113}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2023-09-24 09:00:00"}
-, 
-[80011701] = {80011701, 80011701, nil, "简单8 小怪焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{800215, 1, 1, 0}
-}
-, 
-[80011702] = {80011702, 80011702, nil, "困难8 小怪焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{800216, 1, 1, 0}
-}
-, 
-[80023701] = {80023701, 80023701, nil, "教学关", nil, nil, nil, nil, nil, nil, 2, 
-{800237, 1, 1, 0}
-}
-, 
-[80022901] = {80022901, 80022901, nil, common[63], nil, nil, nil, nil, nil, nil, 2, 
-{800229, 1, 1, 0}
-}
-, 
-[80023001] = {80023001, 80023001, nil, common[64], nil, nil, nil, nil, nil, nil, 2, 
-{800230, 1, 1, 0}
-}
-, 
-[80023501] = {80023501, 80023501, nil, common[65], nil, nil, nil, nil, nil, nil, 2, 
-{800235, 1, 1, 0}
-}
-, 
-[80023601] = {80023601, 80023601, nil, common[66], nil, nil, nil, nil, nil, nil, 2, 
-{800236, 1, 1, 0}
-}
-, 
-[80023801] = {80023801, 80023801, nil, "EX1引导", nil, nil, nil, nil, nil, nil, 2, 
-{800231, 1, 1, 0}
-}
-, 
-[80023802] = {80023802, 80023801, nil, "EX1引导 困难", nil, nil, nil, nil, nil, nil, 2, 
-{800232, 1, 1, 0}
-}
-, 
-[80023901] = {80023901, 80023901, nil, "EX2引导", nil, nil, nil, nil, nil, nil, 2, 
-{800233, 1, 1, 0}
-}
-, 
-[80023902] = {80023902, 80023901, nil, "EX2引导 困难", nil, nil, nil, nil, nil, nil, 2, 
-{800234, 1, 1, 0}
-}
-, 
-[80020401] = {80020401, 80020401, nil, common[67], nil, nil, nil, nil, nil, nil, 2, 
-{800207, 1, 1, 0}
-}
-, 
-[80020402] = {80020402, 80020402, nil, common[67], nil, nil, nil, nil, nil, nil, 2, 
-{800208, 1, 1, 0}
-}
-, 
-[50140051] = {50140051, 50140051, nil, common[68], nil, nil, nil, nil, nil, nil, 2, 
-{5014005, 1, 1, 0}
-}
-, 
-[50140052] = {50140052, 50140051, nil, common[68], nil, nil, nil, nil, nil, nil, 31, 
-{5014005, 1, 0, 2, 1601881, 1}
-}
-, 
-[50140053] = {50140053, 50140051, nil, common[68], nil, nil, nil, nil, nil, nil, 2, 
-{5014005, 1, 2, 0}
-}
-, 
-[50140061] = {50140061, 50140061, nil, common[68], nil, nil, nil, nil, nil, nil, 2, 
-{5014006, 1, 1, 0}
-}
-, 
-[50140062] = {50140062, 50140061, nil, common[68], nil, nil, nil, nil, nil, nil, 31, 
-{5014006, 1, 0, 2, 1601881, 1}
-}
-, 
-[50140063] = {50140063, 50140061, nil, common[68], nil, nil, nil, nil, nil, nil, 2, 
-{5014006, 1, 1, 2}
-}
-, 
-[170001] = {170001, 170001, nil, "CN7主活动", nil, nil, nil, nil, nil, nil, 3, 
-{118}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2023-11-06 09:00:00"}
-, 
-[8450] = {8450, 8450, nil, "终焉帝局内", nil, nil, nil, nil, nil, nil, 2, 
-{5361008, 1, 1, 0}
-}
-, 
-[5361001] = {5361001, 5361001, nil, "36线性1局内", nil, nil, nil, nil, nil, nil, 2, 
-{5361001, 1, 1, 0}
-}
-, 
-[80032901] = {80032901, 80032901, nil, common[63], nil, nil, nil, nil, nil, nil, 2, 
-{800329, 1, 1, 0}
-}
-, 
-[80033001] = {80033001, 80033001, nil, common[64], nil, nil, nil, nil, nil, nil, 2, 
-{800330, 1, 1, 0}
-}
-, 
-[80033501] = {80033501, 80033501, nil, common[65], nil, nil, nil, nil, nil, nil, 2, 
-{800335, 1, 1, 0}
-}
-, 
-[80033601] = {80033601, 80033601, nil, common[66], nil, nil, nil, nil, nil, nil, 2, 
-{800336, 1, 1, 0}
-}
-, 
-[800301] = {800301, 80030101, nil, "望远镜", nil, nil, nil, nil, nil, nil, 3, 
-{119}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2023-11-20 05:00:00", common[69]}
-, 
-[800302] = {800302, 80030201, nil, "赛季背包", nil, nil, nil, nil, nil, nil, 3, 
-{124}
-, nil, nil, nil, nil, nil, 80030101, nil, nil, nil, nil, nil, nil, nil, common[70], common[69]}
-, 
-[800303] = {800303, 80030301, nil, "赛季背包局内", nil, nil, nil, nil, nil, nil, 3, 
-{125}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[70], common[69]}
-, 
-[537100101] = {537100101, 537100101, nil, "n37深色格子", nil, nil, nil, nil, nil, nil, 2, 
-{5371001, 1, 1, 0}
-}
-, 
-[537100301] = {537100301, 537100301, nil, "n37弩手", nil, nil, nil, nil, nil, nil, 2, 
-{5371003, 1, 1, 0}
-}
-, 
-[537100401] = {537100401, 537100401, nil, "n37盗贼", nil, nil, nil, nil, nil, nil, 2, 
-{5371004, 1, 1, 0}
-}
-, 
-[537100501] = {537100501, 537100501, nil, "n37队长", nil, nil, nil, nil, nil, nil, 2, 
-{5371005, 1, 1, 0}
-}
-, 
-[537100901] = {537100901, 537100901, nil, "n37提灯", nil, nil, nil, nil, nil, nil, 2, 
-{5371009, 1, 1, 0}
-}
-, 
-[537101201] = {537101201, 537101201, nil, "n37丽蓓卡", nil, nil, nil, nil, nil, nil, 2, 
-{5371012, 1, 1, 0}
-}
-, 
-[80030701] = {80030701, 80030701, nil, common[71], nil, nil, nil, nil, nil, nil, 2, 
-{800307, 1, 1, 0}
-}
-, 
-[80030801] = {80030801, 80030801, nil, "4困难焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{800308, 1, 1, 0}
-}
-, 
-[80031301] = {80031301, 80031301, nil, "7简单焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{800313, 1, 1, 0}
-}
-, 
-[80031401] = {80031401, 80031401, nil, "7困难焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{800314, 1, 1, 0}
-}
-, 
-[5374021] = {5374021, 5374002, nil, "伊莎", nil, nil, nil, nil, nil, nil, 2, 
-{5374002, 1, 1, 0}
-}
-, 
-[5374022] = {5374022, 5374002, nil, "伊莎技能放完", nil, nil, nil, nil, nil, nil, 31, 
-{5374002, 1, 0, 2, 1502151, 1}
-}
-, 
-[5374023] = {5374023, 5374002, nil, "伊莎第二回合", nil, nil, nil, nil, nil, nil, 2, 
-{5374002, 1, 2, 0}
-}
-, 
-[5374011] = {5374011, 5374001, nil, "丽蓓卡", nil, nil, nil, nil, nil, nil, 2, 
-{5374001, 1, 1, 0}
-}
-, 
-[5374012] = {5374012, 5374001, nil, "丽蓓卡技能放完", nil, nil, nil, nil, nil, nil, 31, 
-{5374001, 1, 0, 2, 1602141, 1}
-}
-, 
-[128001] = {128001, 128001, nil, "N37主活动新手引导", nil, nil, nil, nil, nil, nil, 3, 
-{120}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2023-11-27 09:00:00"}
-, 
-[128101] = {128101, 128101, nil, "启迪互联第一段引导", nil, nil, nil, nil, nil, nil, 3, 
-{121}
-}
-, 
-[128102] = {128102, 128102, nil, "启迪互联第二段引导", nil, nil, nil, nil, nil, nil, 3, 
-{122}
-}
-, 
-[128103] = {128103, 128103, nil, "启迪互联第三段引导", nil, nil, nil, nil, nil, nil, 3, 
-{123}
-}
-, 
-[181001] = {181001, 5601, nil, common[72], nil, nil, nil, nil, nil, nil, 2, 
-{1010100, 1, 1, 0}
-}
-, 
-[181002] = {181002, 5602, nil, common[72], nil, nil, nil, nil, nil, nil, 2, 
-{1010100, 1, 2, 0}
-}
-, 
-[5384021] = {5384021, 5384021, nil, common[40], nil, nil, nil, nil, nil, nil, 2, 
-{5384002, 1, 1, 0}
-}
-, 
-[5384022] = {5384022, 5384021, nil, common[41], nil, nil, nil, nil, nil, nil, 30, 
-{5384002, 1, 0, 2, 1601811}
-}
-, 
-[5384023] = {5384023, 5384021, nil, common[42], nil, nil, nil, nil, nil, nil, 30, 
-{5384002, 1, 0, 2, 1400811}
-}
-, 
-[5384024] = {5384024, 5384021, nil, common[43], nil, nil, nil, nil, nil, nil, 30, 
-{5384002, 1, 0, 2, 1600251}
-}
-, 
-[5384031] = {5384031, 5384031, nil, common[44], nil, nil, nil, nil, nil, nil, 2, 
-{5384003, 1, 1, 0}
-}
-, 
-[5384032] = {5384032, 5384031, nil, common[45], nil, nil, nil, nil, nil, nil, 30, 
-{5384003, 1, 0, 2, 1501831}
-}
-, 
-[5381002] = {5381002, 5381002, nil, common[71], nil, nil, nil, nil, nil, nil, 2, 
-{5381002, 1, 1, 0}
-}
-, 
-[138001] = {138001, 138001, nil, "N38主活动新手引导", nil, nil, nil, nil, nil, nil, 3, 
-{126}
-}
-, 
-[191001] = {191001, 191001, nil, "小游戏界面引导", nil, nil, nil, nil, nil, nil, 3, 
-{127}
-}
-, 
-[191002] = {191002, 191002, nil, "小游戏第一关引导", nil, nil, nil, nil, nil, nil, 3, 
-{128}
-}
-, 
-[191003] = {191003, 191003, nil, "小游戏挑战关引导", nil, nil, nil, nil, nil, nil, 3, 
-{129}
-}
-, 
-[538100101] = {538100101, 538100101, nil, "n38机关兽", nil, nil, nil, nil, nil, nil, 2, 
-{5381010, 1, 1, 0}
-}
-, 
-[53840011] = {53840011, 53840011, nil, common[73], nil, nil, nil, nil, nil, nil, 2, 
-{5384001, 1, 1, 0}
-}
-, 
-[53840012] = {53840012, 53840011, nil, common[73], nil, nil, nil, nil, nil, nil, 30, 
-{5384001, 1, 0, 2, 1602161}
-}
-, 
-[139001] = {139001, 139001, nil, "N39主活动新手引导", nil, nil, nil, nil, nil, nil, 3, 
-{130}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2024-01-08 09:00:00"}
-, 
-[53940031] = {53940031, 53940031, nil, common[74], nil, nil, nil, nil, nil, nil, 2, 
-{5394003, 1, 1, 0}
-}
-, 
-[53940032] = {53940032, 53940031, nil, common[74], nil, nil, nil, nil, nil, nil, 30, 
-{5394003, 1, 0, 2, 1502201}
-}
-, 
-[5394021] = {5394021, 53940201, nil, common[75], nil, nil, nil, nil, nil, nil, 2, 
-{5394002, 1, 1, 0}
-}
-, 
-[5394022] = {5394022, 53940201, nil, "魔剑放完技能", nil, nil, nil, nil, nil, nil, 31, 
-{5394002, 1, 0, 2, 1500991, 1}
-}
-, 
-[5394023] = {5394023, 53940201, nil, common[76], nil, nil, nil, nil, nil, nil, 31, 
-{5394002, 1, 0, 2, 1602191, 1}
-}
-, 
-[5394024] = {5394024, 53940201, nil, common[61], nil, nil, nil, nil, nil, nil, 2, 
-{5394002, 2, 1, 0}
-}
-, 
-[5394025] = {5394025, 53940201, nil, common[76], nil, nil, nil, nil, nil, nil, 31, 
-{5394002, 1, 0, 2, 1602191, 2}
-}
-, 
-[5394026] = {5394026, 53940201, nil, common[76], nil, nil, nil, nil, nil, nil, 31, 
-{5394002, 1, 0, 2, 0, 1}
-}
-, 
-[5394011] = {5394011, 53940101, nil, common[75], nil, nil, nil, nil, nil, nil, 2, 
-{5394001, 1, 1, 0}
-}
-, 
-[80040001] = {80040001, 80040001, nil, "s4邪剑简单", nil, nil, nil, nil, nil, nil, 2, 
-{800429, 1, 1, 0}
-}
-, 
-[80040002] = {80040002, 80040002, nil, "s4邪剑困难", nil, nil, nil, nil, nil, nil, 2, 
-{800430, 1, 1, 0}
-}
-, 
-[800413] = {800413, 800413, nil, common[77], nil, nil, nil, nil, nil, nil, 2, 
-{800413, 1, 1, 0}
-}
-, 
-[800414] = {800414, 800414, nil, common[77], nil, nil, nil, nil, nil, nil, 2, 
-{800414, 1, 1, 0}
-}
-, 
-[80040111] = {80040111, 80040111, nil, common[57], nil, nil, nil, nil, nil, nil, 2, 
-{800401, 1, 1, 0}
-}
-, 
-[80040112] = {80040112, 80040111, nil, common[58], nil, nil, nil, nil, nil, nil, 2, 
-{800402, 1, 1, 0}
-}
-, 
-[10190501] = {10190501, 10190501, nil, "生化兵1", nil, nil, nil, nil, nil, nil, 2, 
-{101905, 1, 1, 0}
-}
-, 
-[10190901] = {10190901, 10190901, nil, "生化兵2", nil, nil, nil, nil, nil, nil, 2, 
-{101909, 1, 1, 0}
-}
-, 
-[10190701] = {10190701, 10190701, nil, "生化兵3", nil, nil, nil, nil, nil, nil, 2, 
-{101907, 1, 1, 0}
-}
-, 
-[10191201] = {10191201, 10191201, nil, "生化兵4", nil, nil, nil, nil, nil, nil, 2, 
-{101912, 1, 1, 0}
-}
-, 
-[10200701] = {10200701, 10200701, nil, "守护者机关", nil, nil, nil, nil, nil, nil, 2, 
-{102007, 1, 1, 0}
-}
-, 
-[10201101] = {10201101, 10201101, nil, "尤利西斯 简单", nil, nil, nil, nil, nil, nil, 2, 
-{102011, 1, 1, 0}
-}
-, 
-[10201201] = {10201201, 10201201, nil, "尤利西斯 完全", nil, nil, nil, nil, nil, nil, 2, 
-{102012, 1, 1, 0}
-}
-, 
-[140001] = {140001, 140001, nil, "NExplore主活动新手引导", nil, nil, nil, nil, nil, nil, 3, 
-{131}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2024-01-29 09:00:00"}
-, 
-[800411] = {800411, 800411, nil, "小游戏按钮引导", nil, nil, nil, nil, nil, nil, 3, 
-{133}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2024-01-17 09:00:00", "2024-03-06 05:00:00"}
-, 
-[800412] = {800412, 800412, nil, common[78], nil, nil, nil, nil, nil, nil, 3, 
-{134}
-}
-, 
-[54040011] = {54040011, 54040011, nil, common[38], nil, nil, nil, nil, nil, nil, 2, 
-{5404001, 1, 1, 0}
-}
-, 
-[54040012] = {54040012, 54040011, nil, common[38], nil, nil, nil, nil, nil, nil, 30, 
-{5404001, 1, 0, 2, 1602211}
-}
-, 
-[80240101] = {80240101, 80240101, nil, "关卡1引导", nil, nil, nil, nil, nil, nil, 2, 
-{802401, 1, 1, 0}
-}
-, 
-[80240102] = {80240102, 80240102, nil, "关卡1引导2", nil, nil, nil, nil, nil, nil, 2, 
-{802401, 2, 1, 0}
-}
-, 
-[80240111] = {80240111, 80240111, nil, "关卡2引导", nil, nil, nil, nil, nil, nil, 2, 
-{802402, 1, 1, 0}
-}
-, 
-[80240211] = {80240211, 80240211, nil, "关卡1-3", nil, nil, nil, nil, nil, nil, 2, 
-{802403, 1, 1, 0}
-}
-, 
-[80240212] = {80240212, 80240212, nil, "关卡2-1", nil, nil, nil, nil, nil, nil, 2, 
-{802405, 1, 1, 0}
-}
-, 
-[80240213] = {80240213, 80240213, nil, "关卡3-1", nil, nil, nil, nil, nil, nil, 2, 
-{802409, 1, 1, 0}
-}
-, 
-[80240214] = {80240214, 80240214, nil, "关卡4-1", nil, nil, nil, nil, nil, nil, 2, 
-{802413, 1, 1, 0}
-}
-, 
-[80240215] = {80240215, 80240215, nil, "关卡5-1", nil, nil, nil, nil, nil, nil, 2, 
-{802417, 1, 1, 0}
-}
-, 
-[81100413] = {81100413, 81100413, nil, common[78], nil, nil, nil, nil, nil, nil, 3, 
-{136}
-}
-, 
-[5419301] = {5419301, 5419301, nil, "cn12年兽", nil, nil, nil, nil, nil, nil, 2, 
-{7001123, 1, 1, 0}
-}
-, 
-[5414011] = {5414011, 54140101, nil, common[75], nil, nil, nil, nil, nil, nil, 2, 
-{5414001, 1, 1, 0}
-}
-, 
-[5414012] = {5414012, 54140101, nil, common[79], nil, nil, nil, nil, nil, nil, 31, 
-{5414001, 1, 0, 2, 1602231, 1}
-}
-, 
-[5414031] = {5414031, 54140301, nil, common[75], nil, nil, nil, nil, nil, nil, 2, 
-{5414003, 1, 1, 0}
-}
-, 
-[5414032] = {5414032, 54140301, nil, common[79], nil, nil, nil, nil, nil, nil, 31, 
-{5414003, 1, 0, 2, 1502241, 1}
-}
-, 
-[5414021] = {5414021, 54140201, nil, common[39], nil, nil, nil, nil, nil, nil, 2, 
-{5414002, 1, 1, 0}
-}
-, 
-[5414022] = {5414022, 54140201, nil, common[39], nil, nil, nil, nil, nil, nil, 2, 
-{5414002, 1, 1, 2}
-}
-, 
-[5419302] = {5419302, 5419302, nil, "cn12鼠祟灵", nil, nil, nil, nil, nil, nil, 2, 
-{5411001, 1, 1, 0}
-}
-, 
-[80050001] = {80050001, 80050001, nil, "黑箱小怪", nil, nil, nil, nil, nil, nil, 2, 
-{800504, 1, 1, 0}
-}
-, 
-[80050111] = {80050111, 80050111, nil, "引导", nil, nil, nil, nil, nil, nil, 2, 
-{800501, 1, 1, 0}
-}
-, 
-[5419305] = {5419305, 5419305, nil, "S5祭剑座简单", nil, nil, nil, nil, nil, nil, 2, 
-{800544, 1, 1, 0}
-}
-, 
-[5419306] = {5419306, 5419306, nil, "S5祭剑座困难", nil, nil, nil, nil, nil, nil, 2, 
-{800510, 1, 1, 0}
-}
-, 
-[80150101] = {80150101, 80150101, nil, "无色限步长 框选行动值描述", nil, nil, nil, nil, nil, nil, 2, 
-{801501, 1, 1, 0}
-}
-, 
-[80150201] = {80150201, 80150201, nil, "无色限步长 深色格子", nil, nil, nil, nil, nil, nil, 2, 
-{801502, 1, 1, 0}
-}
-, 
-[80150301] = {80150301, 80150301, nil, "坚石教学", nil, nil, nil, nil, nil, nil, 2, 
-{801503, 1, 1, 0}
-}
-, 
-[80250101] = {80250101, 80250101, nil, "启迪 深色格子", nil, nil, nil, nil, nil, nil, 2, 
-{804501, 1, 1, 0}
-}
-, 
-[542001] = {542001, 542001, nil, "N42主活动引导", nil, nil, nil, nil, nil, nil, 3, 
-{138}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[542002] = {542002, 542002, nil, common[15], nil, nil, nil, nil, nil, nil, 3, 
-{139}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[542003] = {542003, 542003, nil, common[16], nil, nil, nil, nil, nil, nil, 3, 
-{140}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[542004] = {542004, 542004, nil, common[17], nil, nil, nil, nil, nil, nil, 3, 
-{141}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[542005] = {542005, 542005, nil, common[18], nil, nil, nil, nil, nil, nil, 3, 
-{142}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[14]}
-, 
-[514201] = {514201, 514201, nil, "N43主活动新手引导", nil, nil, nil, nil, nil, nil, 3, 
-{143}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2024-04-08 09:00:00"}
-, 
-[100209] = {100209, 100209, nil, "阿伊让", nil, nil, nil, nil, nil, nil, 2, 
-{100209, 1, 1, 0}
-}
-, 
-[16022511] = {16022511, 16022511, nil, common[75], nil, nil, nil, nil, nil, nil, 2, 
-{5433001, 1, 1, 0}
-}
-, 
-[16022512] = {16022512, 16022511, nil, "放完技能", nil, nil, nil, nil, nil, nil, 31, 
-{5433001, 1, 0, 2, 1602251, 1}
-}
-, 
-[900101] = {900101, 900101, nil, common[80], nil, nil, nil, nil, nil, nil, 3, 
-{2000}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[81]}
-, 
-[900102] = {900102, 900102, nil, common[82], nil, nil, nil, nil, nil, nil, 3, 
-{2001}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[81]}
-, 
-[900103] = {900103, 900103, nil, common[83], nil, nil, nil, nil, nil, nil, 3, 
-{2002}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[81]}
-, 
-[900104] = {900104, 900104, nil, common[84], nil, nil, nil, nil, nil, nil, 3, 
-{2003}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[81]}
-, 
-[900105] = {900105, 900105, nil, common[85], nil, nil, nil, nil, nil, nil, 3, 
-{2005}
-, nil, nil, nil, nil, nil, 900104, nil, nil, nil, nil, nil, nil, nil, nil, common[81]}
-, 
-[900106] = {900106, 900106, nil, common[86], nil, nil, nil, nil, nil, nil, 3, 
-{2004}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[81]}
-, 
-[900107] = {900107, 900107, nil, "首次进入赛季秘境难度3时触发", nil, nil, nil, nil, nil, nil, 3, 
-{144}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[81]}
-, 
-[900108] = {900108, 900108, nil, common[87], nil, nil, nil, nil, nil, nil, 3, 
-{145}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[81]}
-, 
-[900109] = {900109, 900109, nil, common[87], nil, nil, nil, nil, nil, nil, 3, 
-{146}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[81]}
-, 
-[900201] = {900201, 900201, nil, common[80], nil, nil, nil, nil, nil, nil, 3, 
-{2010}
-}
-, 
-[900202] = {900202, 900202, nil, common[82], nil, nil, nil, nil, nil, nil, 3, 
-{2016}
-}
-, 
-[900203] = {900203, 900203, nil, common[83], nil, nil, nil, nil, nil, nil, 3, 
-{2012}
-}
-, 
-[900204] = {900204, 900204, nil, common[84], nil, nil, nil, nil, nil, nil, 3, 
-{2013}
-}
-, 
-[900205] = {900205, 900205, nil, common[85], nil, nil, nil, nil, nil, nil, 3, 
-{2015}
-, nil, nil, nil, nil, nil, 900204}
-, 
-[900206] = {900206, 900206, nil, common[86], nil, nil, nil, nil, nil, nil, 3, 
-{2014}
-}
-, 
-[900207] = {900207, 900207, nil, "营地界面引导", nil, nil, nil, nil, nil, nil, 3, 
-{2006}
-}
-, 
-[900210] = {900210, 900210, nil, "祭坛界面引导", nil, nil, nil, nil, nil, nil, 3, 
-{2009}
-}
-, 
-[900211] = {900211, 900211, nil, "矿点房界面引导", nil, nil, nil, nil, nil, nil, 3, 
-{2007}
-}
-, 
-[80060301] = {80060301, 80060301, nil, "S6-缠人鬼引导", nil, nil, nil, nil, nil, nil, 2, 
-{800603, 1, 1, 0}
-}
-, 
-[80061801] = {80061801, 80061801, nil, "boss胡萝卜剧情", nil, nil, nil, nil, nil, nil, 2, 
-{800618, 1, 1, 0}
-}
-, 
-[80061001] = {80061001, 80061001, nil, "boss胡萝卜倍卡", nil, nil, nil, nil, nil, nil, 2, 
-{800610, 1, 1, 0}
-}
-, 
-[80060101] = {80060101, 80060101, nil, "S6-流血机制引导", nil, nil, nil, nil, nil, nil, 2, 
-{800601, 1, 1, 0}
-}
-, 
-[80060201] = {80060201, 80060201, nil, "S6-碎石引导", nil, nil, nil, nil, nil, nil, 2, 
-{800602, 1, 1, 0}
-}
-, 
-[80060401] = {80060401, 80060401, nil, "S6-地刺引导", nil, nil, nil, nil, nil, nil, 2, 
-{800604, 1, 1, 0}
-}
-, 
-[2909701] = {2909701, 2909701, nil, common[88], nil, nil, nil, nil, nil, nil, 2, 
-{5451011, 1, 1, 0}
-}
-, 
-[15022811] = {15022811, 15022811, nil, common[75], nil, nil, nil, nil, nil, nil, 2, 
-{5454002, 1, 1, 0}
-}
-, 
-[15022812] = {15022812, 15022811, nil, common[89], nil, nil, nil, nil, nil, nil, 31, 
-{5454002, 1, 0, 2, 1502281, 1}
-}
-, 
-[15022813] = {15022813, 15022811, nil, common[89], nil, nil, nil, nil, nil, nil, 31, 
-{5454002, 1, 0, 2, 1502281, 2}
-}
-, 
-[54540011] = {54540011, 5454001, nil, "蕾切尔入场", nil, nil, nil, nil, nil, nil, 2, 
-{5454001, 1, 1, 0}
-}
-, 
-[54540012] = {54540012, 5454001, nil, "蕾切尔放完技能", nil, nil, nil, nil, nil, nil, 31, 
-{5454001, 1, 0, 2, 1602271, 1}
-}
-, 
-[54540013] = {54540013, 5454001, nil, "蕾切尔极光之后", nil, nil, nil, nil, nil, nil, 2, 
-{5454001, 1, 1, 2}
-}
-, 
-[546010101] = {546010101, 54601, nil, "进入钓鱼小游戏界面触发", nil, nil, nil, nil, nil, nil, 3, 
-{147}
-}
-, 
-[8114001] = {8114001, 8114001, nil, "活动中心危机合约", nil, nil, nil, nil, nil, nil, 3, 
-{148}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, "2024-05-22 05:00:00", "2024-06-12 04:00:00"}
-, 
-[54640011] = {54640011, 5464001, nil, common[90], nil, nil, nil, nil, nil, nil, 2, 
-{5464001, 1, 1, 0}
-}
-, 
-[54640012] = {54640012, 5464001, nil, common[90], nil, nil, nil, nil, nil, nil, 31, 
-{5464001, 1, 0, 2, 1602291, 1}
-}
-, 
-[138004] = {138004, 138004, nil, "怪物攻击前", nil, nil, nil, nil, nil, nil, 3, 
-{132}
-}
-, 
-[138005] = {138005, 138005, nil, "怪物攻击后", nil, nil, nil, nil, nil, nil, 3, 
-{135}
-}
-, 
-[2909801] = {2909801, 2909801, nil, common[88], nil, nil, nil, nil, nil, nil, 2, 
-{5471010, 1, 1, 0}
-}
-, 
-[2005101] = {2005101, 2005101, nil, "蝎子小怪焦点引导", nil, nil, nil, nil, nil, nil, 2, 
-{5471003, 1, 1, 0}
-}
-, 
-[2910001] = {2910001, 2910001, nil, "S7苏尔特恩剧情", nil, nil, nil, nil, nil, nil, 2, 
-{807004, 1, 1, 0}
-}
-, 
-[2910002] = {2910002, 2910002, nil, "S7苏尔特恩倍卡", nil, nil, nil, nil, nil, nil, 2, 
-{807110, 3, 1, 0}
-}
-, 
-[2910101] = {2910101, 2910101, nil, "戴维主教boss焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5481010, 1, 1, 0}
-}
-, 
-[2005201] = {2005201, 2005201, nil, "死徒焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5481005, 1, 1, 0}
-}
-, 
-[5484011] = {5484011, 5484001, nil, "sp维多利亚入场", nil, nil, nil, nil, nil, nil, 2, 
-{5486001, 1, 1, 0}
-}
-, 
-[5484012] = {5484012, 5484001, nil, "sp维多利亚放完技能", nil, nil, nil, nil, nil, nil, 31, 
-{5486001, 1, 0, 2, 1602301, 1}
-}
-, 
-[5484021] = {5484021, 5484002, nil, "威廉入场", nil, nil, nil, nil, nil, nil, 2, 
-{5486002, 1, 1, 0}
-}
-, 
-[5484022] = {5484022, 5484002, nil, "威廉放完技能", nil, nil, nil, nil, nil, nil, 31, 
-{5486002, 1, 0, 2, 1602311, 1}
-}
-, 
-[5484031] = {5484031, 5484003, nil, "sp圣钉入场", nil, nil, nil, nil, nil, nil, 2, 
-{5486003, 1, 1, 0}
-}
-, 
-[5484032] = {5484032, 5484003, nil, "sp圣钉放完技能", nil, nil, nil, nil, nil, nil, 31, 
-{5486003, 1, 0, 2, 1502321, 1}
-}
-, 
-[2909901] = {2909901, 2909901, nil, "遗迹石巨人BOSS焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5491009, 1, 1, 0}
-}
-, 
-[2803101] = {2803101, 2803101, nil, "炼金素材焦点", nil, nil, nil, nil, nil, nil, 2, 
-{5491001, 1, 1, 0}
-}
-, 
-[5491007] = {5491007, 5491007, nil, "莱莎线性8局内", 99, nil, nil, nil, nil, nil, 2, 
-{5491007, 1, 1, 0}
-}
-, 
-[5491008] = {5491008, 5491008, nil, "莱莎线性9局内", 99, nil, nil, nil, nil, nil, 2, 
-{5491008, 1, 1, 0}
-}
-, 
-[16023311] = {16023311, 1602331, nil, common[22], nil, nil, nil, nil, nil, nil, 2, 
-{5204001, 1, 1, 0}
-}
-, 
-[16023312] = {16023312, 1602331, nil, "莱因哈特试用-贡露放技能", nil, nil, nil, nil, nil, nil, 31, 
-{5204001, 1, 0, 2, 1602331, 1}
-}
-, 
-[16023313] = {16023313, 1602331, nil, common[91], nil, nil, nil, nil, nil, nil, 31, 
-{5204001, 1, 0, 2, 1602341, 1}
-}
-, 
-[16023314] = {16023314, 1602331, nil, common[91], nil, nil, nil, nil, nil, nil, 2, 
-{5204001, 2, 1, 0}
-}
-, 
-[2004911] = {2004911, 2004911, nil, "莱莎联动炼金工房", nil, nil, nil, nil, nil, nil, 3, 
-{3001}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[92]}
-, 
-[2004921] = {2004921, 2004921, nil, "莱莎联动炼金商店", nil, nil, nil, nil, nil, nil, 3, 
-{3002}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[92]}
-, 
-[2004931] = {2004931, 2004931, nil, "莱莎联动资源本线性关", nil, nil, nil, nil, nil, nil, 3, 
-{3003}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[92]}
-, 
-[2004941] = {2004941, 2004941, nil, "莱莎联动天赋树", nil, nil, nil, nil, nil, nil, 3, 
-{3004}
-, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, common[92]}
-, 
-[2910201] = {2910201, 2910201, nil, "斯特兰汀BOSS焦点", nil, nil, nil, nil, nil, nil, 2, 
-{550109, 1, 1, 0}
-}
-, 
-[160237101] = {160237101, 160237101, nil, "moye入场", nil, nil, nil, nil, nil, nil, 2, 
-{5214001, 1, 1, 0}
-}
-, 
-[16024101] = {16024101, 16024101, nil, "佩皮塔入场", nil, nil, nil, nil, nil, nil, 2, 
-{5536001, 1, 1, 0}
-}
+  [101] = {
+    101,
+    1000,
+    nil,
+    "关卡1-1我方回合1行动触发连线引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000101,
+      1,
+      1,
+      0
+    }
+  },
+  [102] = {
+    102,
+    1000,
+    nil,
+    "关卡1-1我方行动后切入提示",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4,
+    {
+      1000101,
+      1,
+      1,
+      1
+    }
+  },
+  [103] = {
+    103,
+    1000,
+    nil,
+    "关卡1-1我方回合2行动触发连线引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[93]
+  },
+  [104] = {
+    104,
+    1000,
+    nil,
+    "关卡1-1我方回合3行动触发弹窗+连线引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000101,
+      1,
+      3,
+      0
+    }
+  },
+  [105] = {
+    105,
+    1000,
+    nil,
+    "关卡1-1我方回合4行动提示",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000101,
+      1,
+      4,
+      0
+    }
+  },
+  [106] = {
+    106,
+    1001,
+    nil,
+    "关卡1-2我方回合1触发连线引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000102,
+      1,
+      1,
+      0
+    }
+  },
+  [107] = {
+    107,
+    1001,
+    nil,
+    "关卡1-2我方回合2触发连线引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000102,
+      1,
+      2,
+      0
+    }
+  },
+  [108] = {
+    108,
+    1001,
+    nil,
+    "关卡1-2我方回合2触发弹窗",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      7000102,
+      1,
+      2,
+      0
+    }
+  },
+  [109] = {
+    109,
+    1001,
+    nil,
+    "关卡1-2我方第2波触发UI引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000102,
+      2,
+      1,
+      0
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    1103
+  },
+  [110] = {
+    110,
+    1002,
+    nil,
+    "关卡1-3回合1格子+技能引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000103,
+      1,
+      1,
+      0
+    }
+  },
+  [111] = {
+    111,
+    1002,
+    nil,
+    "关卡1-3回合1强制连线",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      1000103,
+      1,
+      1,
+      2,
+      1300521
+    }
+  },
+  [112] = {
+    112,
+    1002,
+    nil,
+    "关卡1-3回合2引导微丝技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000103,
+      1,
+      2,
+      0
+    }
+  },
+  [113] = {
+    113,
+    1002,
+    nil,
+    "关卡1-3微丝技能释放结束后",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      1000103,
+      1,
+      2,
+      2,
+      1500331
+    }
+  },
+  [114] = {
+    114,
+    1003,
+    nil,
+    "关卡1-5-1第一波释放白夜技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000104,
+      1,
+      1,
+      0
+    }
+  },
+  [115] = {
+    115,
+    1003,
+    nil,
+    "关卡1-5-1第一波引导连线",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      1000104,
+      1,
+      1,
+      2,
+      1400411
+    }
+  },
+  [116] = {
+    116,
+    1003,
+    nil,
+    "关卡1-5-1第二波引导奈米西斯技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000104,
+      2,
+      1,
+      0
+    }
+  },
+  [117] = {
+    117,
+    1004,
+    nil,
+    "关卡1-6-1回合1引导连线",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000115,
+      1,
+      1,
+      0
+    }
+  },
+  [118] = {
+    118,
+    1004,
+    nil,
+    "关卡1-6-1回合2引导释放白夜技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000115,
+      1,
+      2,
+      0
+    }
+  },
+  [119] = {
+    119,
+    1004,
+    nil,
+    "关卡1-6-1回合2引导释放微丝技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      1000115,
+      1,
+      2,
+      2,
+      1400411
+    }
+  },
+  [120] = {
+    120,
+    1004,
+    nil,
+    "关卡1-6-1波次2置冷却",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000115,
+      2,
+      1,
+      0
+    }
+  },
+  [123] = {
+    123,
+    1011,
+    nil,
+    "关卡1-7第一波回合1引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000105,
+      1,
+      1,
+      0
+    }
+  },
+  [124] = {
+    124,
+    1011,
+    nil,
+    "关卡1-7第一波回合2引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000105,
+      1,
+      2,
+      0
+    }
+  },
+  [125] = {
+    125,
+    1011,
+    nil,
+    "关卡1-7第一波回合2连线后对话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      1000105,
+      1,
+      2,
+      3,
+      1300471
+    }
+  },
+  [127] = {
+    127,
+    1015,
+    nil,
+    "关卡1-12第一波机关讲解",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      7000111,
+      1,
+      1,
+      0
+    }
+  },
+  [128] = {
+    128,
+    1016,
+    nil,
+    "关卡1-11第二波母巢怪讲解",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000108,
+      1,
+      1,
+      0
+    }
+  },
+  [129] = {
+    129,
+    1017,
+    nil,
+    "关卡1-12回合1微丝行动",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000109,
+      1,
+      1,
+      0
+    }
+  },
+  [130] = {
+    130,
+    1017,
+    nil,
+    "关卡1-12回合2连线结束剧情对话多体伤害",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      1000109,
+      1,
+      2,
+      3,
+      1400481
+    }
+  },
+  [131] = {
+    131,
+    1018,
+    nil,
+    "关卡1-12回合2烈雀连线",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000109,
+      1,
+      2,
+      0
+    }
+  },
+  [133] = {
+    133,
+    1019,
+    nil,
+    "关卡1-13第一波脱离说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000110,
+      1,
+      1,
+      0
+    }
+  },
+  [134] = {
+    134,
+    1019,
+    nil,
+    "关卡1-13第二波脱离说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000110,
+      2,
+      1,
+      0
+    }
+  },
+  [135] = {
+    135,
+    1020,
+    nil,
+    "关卡1-12-1回合说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000116,
+      1,
+      1,
+      0
+    }
+  },
+  [136] = {
+    136,
+    1011,
+    nil,
+    "关卡1-7第2波远程怪处理",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      999999999,
+      2,
+      1,
+      0
+    }
+  },
+  [137] = {
+    137,
+    1021,
+    nil,
+    "关卡1-8回合2处理",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000106,
+      1,
+      2,
+      0
+    }
+  },
+  [138] = {
+    138,
+    1022,
+    nil,
+    "关卡2-2回合1高速怪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000201,
+      1,
+      1,
+      0
+    }
+  },
+  [139] = {
+    139,
+    1023,
+    nil,
+    "关卡2-4回合1处理陨石",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000202,
+      1,
+      1,
+      0
+    }
+  },
+  [140] = {
+    140,
+    1024,
+    nil,
+    "关卡2-5回合1处理落雷",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000203,
+      1,
+      1,
+      0
+    }
+  },
+  [141] = {
+    141,
+    1025,
+    nil,
+    "关卡2-10回合1高威胁怪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000207,
+      1,
+      1,
+      0
+    }
+  },
+  [142] = {
+    142,
+    1026,
+    nil,
+    "关卡2-11回合1爆炸装置",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000208,
+      1,
+      1,
+      0
+    }
+  },
+  [143] = {
+    143,
+    1027,
+    nil,
+    "关卡2-13第1波护盾怪-队长引导处理",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000210,
+      1,
+      1,
+      0
+    }
+  },
+  [144] = {
+    144,
+    1028,
+    nil,
+    "关卡2-13-1回合1收集引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000215,
+      1,
+      1,
+      0
+    }
+  },
+  [145] = {
+    145,
+    1030,
+    nil,
+    "关卡1-15BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000112,
+      1,
+      1,
+      0
+    }
+  },
+  [146] = {
+    146,
+    1021,
+    nil,
+    "关卡1-8BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000106,
+      1,
+      1,
+      0
+    }
+  },
+  [147] = {
+    147,
+    1031,
+    nil,
+    "关卡2-8BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000206,
+      1,
+      1,
+      0
+    }
+  },
+  [148] = {
+    148,
+    1032,
+    nil,
+    "关卡2-15BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000212,
+      1,
+      1,
+      0
+    }
+  },
+  [149] = {
+    149,
+    1027,
+    nil,
+    "关卡2-13第1波回合2护盾怪-队长引导处理",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000210,
+      1,
+      2,
+      0
+    }
+  },
+  [150] = {
+    150,
+    1027,
+    nil,
+    "关卡2-13第二波回合1引导第1次行动",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000210,
+      2,
+      1,
+      0
+    }
+  },
+  [151] = {
+    151,
+    1033,
+    nil,
+    "关卡1-4-1回合1引导连线主动技能之后",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      1000128,
+      1,
+      1,
+      2,
+      1400411
+    }
+  },
+  [152] = {
+    152,
+    1034,
+    nil,
+    "新关卡1-4回合1连线",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000129,
+      1,
+      1,
+      0
+    }
+  },
+  [153] = {
+    153,
+    1034,
+    nil,
+    "新关卡1-4回合1机关时刻弹窗",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000129,
+      1,
+      1,
+      2
+    }
+  },
+  [154] = {
+    154,
+    1035,
+    nil,
+    "关卡2-5-1回合1焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000214,
+      1,
+      1,
+      0
+    }
+  },
+  [155] = {
+    155,
+    1024,
+    nil,
+    "关卡2-5第2波剧情对话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000203,
+      2,
+      1,
+      0
+    }
+  },
+  [156] = {
+    156,
+    1037,
+    nil,
+    "风船资源本首次1回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      3000309,
+      1,
+      1,
+      0
+    }
+  },
+  [157] = {
+    157,
+    1037,
+    nil,
+    "风船资源本首次1回合2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      3000309,
+      1,
+      2,
+      0
+    }
+  },
+  [158] = {
+    158,
+    1037,
+    nil,
+    "风船资源本首次1回合3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      3000309,
+      1,
+      3,
+      0
+    }
+  },
+  [159] = {
+    159,
+    1037,
+    nil,
+    "风船资源本首次1回合4",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      3000309,
+      1,
+      4,
+      0
+    }
+  },
+  [160] = {
+    160,
+    1038,
+    nil,
+    "关卡3-7BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000306,
+      1,
+      1,
+      0
+    }
+  },
+  [161] = {
+    161,
+    1039,
+    nil,
+    "关卡3-14BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000312,
+      1,
+      1,
+      0
+    }
+  },
+  [162] = {
+    162,
+    1040,
+    nil,
+    "关卡4-7BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000406,
+      1,
+      1,
+      0
+    }
+  },
+  [163] = {
+    163,
+    1041,
+    nil,
+    "关卡4-14BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000412,
+      1,
+      1,
+      0
+    }
+  },
+  [164] = {
+    164,
+    1042,
+    nil,
+    "关卡3-2治疗怪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000301,
+      1,
+      1,
+      0
+    }
+  },
+  [165] = {
+    165,
+    1043,
+    nil,
+    "关卡3-5晕眩怪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000304,
+      1,
+      1,
+      0
+    }
+  },
+  [166] = {
+    166,
+    1044,
+    nil,
+    "关卡3-8地刺",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000307,
+      1,
+      1,
+      0
+    }
+  },
+  [167] = {
+    167,
+    1045,
+    nil,
+    common[1],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000310,
+      1,
+      1,
+      0
+    }
+  },
+  [168] = {
+    168,
+    1046,
+    nil,
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000401,
+      1,
+      1,
+      0
+    }
+  },
+  [169] = {
+    169,
+    1046,
+    nil,
+    common[2],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000401,
+      1,
+      2,
+      0
+    }
+  },
+  [170] = {
+    170,
+    1047,
+    nil,
+    "关卡4-9摄轮",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000407,
+      1,
+      1,
+      0
+    }
+  },
+  [171] = {
+    171,
+    1048,
+    nil,
+    "金币资源本回合1（废弃）",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      99999999,
+      1,
+      1,
+      0
+    }
+  },
+  [172] = {
+    172,
+    1048,
+    nil,
+    "金币资源本回合2（废弃）",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      99999999,
+      1,
+      2,
+      0
+    }
+  },
+  [173] = {
+    173,
+    1048,
+    nil,
+    "金币资源本波次2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      3000109,
+      2,
+      1,
+      0
+    }
+  },
+  [174] = {
+    174,
+    1049,
+    nil,
+    "森经验资源本回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      3300201,
+      1,
+      1,
+      0
+    }
+  },
+  [175] = {
+    175,
+    1049,
+    nil,
+    "火经验资源本回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      3200201,
+      1,
+      1,
+      0
+    }
+  },
+  [176] = {
+    176,
+    1049,
+    nil,
+    "水经验资源本回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      3100201,
+      1,
+      1,
+      0
+    }
+  },
+  [177] = {
+    177,
+    1049,
+    nil,
+    "雷经验资源本回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      3400201,
+      1,
+      1,
+      0
+    }
+  },
+  [178] = {
+    178,
+    1024,
+    nil,
+    "关卡2-5第1波回合2处理",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000203,
+      1,
+      2,
+      0
+    }
+  },
+  [179] = {
+    179,
+    1023,
+    nil,
+    "关卡2-4第1波回合2处理",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000202,
+      1,
+      2,
+      0
+    }
+  },
+  [182] = {
+    182,
+    1001,
+    nil,
+    "关卡1-2结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[94]
+  },
+  [183] = {
+    183,
+    1002,
+    nil,
+    "关卡1-3结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[95]
+  },
+  [184] = {
+    184,
+    1003,
+    nil,
+    "关卡1-5-1结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[96]
+  },
+  [185] = {
+    185,
+    1004,
+    nil,
+    "关卡1-6-1结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {1000115}
+  },
+  [186] = {
+    186,
+    1011,
+    nil,
+    "关卡1-7结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[97]
+  },
+  [187] = {
+    187,
+    1010,
+    nil,
+    "关卡1-6第二波",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000117,
+      2,
+      1,
+      0
+    }
+  },
+  [188] = {
+    188,
+    1000,
+    nil,
+    "关卡1-1结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {1000101}
+  },
+  [189] = {
+    189,
+    1021,
+    nil,
+    common[3],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {1000106}
+  },
+  [190] = {
+    190,
+    1015,
+    nil,
+    common[3],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[98]
+  },
+  [191] = {
+    191,
+    1016,
+    nil,
+    "关卡1-10结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[99]
+  },
+  [192] = {
+    192,
+    1017,
+    nil,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[100]
+  },
+  [193] = {
+    193,
+    1020,
+    nil,
+    "关卡1-12-1结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {1000116}
+  },
+  [194] = {
+    194,
+    1019,
+    nil,
+    "关卡1-13结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[101]
+  },
+  [195] = {
+    195,
+    1509,
+    nil,
+    "关卡1-14结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {1000111}
+  },
+  [196] = {
+    196,
+    1030,
+    nil,
+    "关卡1-15结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[102]
+  },
+  [197] = {
+    197,
+    1010,
+    nil,
+    "关卡1-6结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {7000117}
+  },
+  [198] = {
+    198,
+    1017,
+    nil,
+    common[4],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[100]
+  },
+  [199] = {
+    199,
+    1034,
+    nil,
+    "新关卡1-5结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[103]
+  },
+  [200] = {
+    200,
+    1037,
+    nil,
+    "风船资源本首次1结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {3000309}
+  },
+  [201] = {
+    201,
+    1048,
+    nil,
+    "金币资源本首次1结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {3000109}
+  },
+  [202] = {
+    202,
+    1049,
+    nil,
+    "经验资源本首次1结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {3300201}
+  },
+  [203] = {
+    203,
+    1101,
+    nil,
+    "番外2-1结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    {2000201}
+  },
+  [204] = {
+    204,
+    1201,
+    nil,
+    "关卡1-3结算触发（局外用）",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[95]
+  },
+  [205] = {
+    205,
+    1501,
+    nil,
+    "关卡5-7BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000506,
+      1,
+      1,
+      0
+    }
+  },
+  [206] = {
+    206,
+    1502,
+    nil,
+    "关卡5-13BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000512,
+      1,
+      1,
+      0
+    }
+  },
+  [207] = {
+    207,
+    1503,
+    nil,
+    "关卡6-7BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000606,
+      1,
+      1,
+      0
+    }
+  },
+  [208] = {
+    208,
+    1504,
+    nil,
+    "关卡6-14BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000612,
+      1,
+      1,
+      0
+    }
+  },
+  [209] = {
+    209,
+    1505,
+    nil,
+    "关卡7-7BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000706,
+      1,
+      1,
+      0
+    }
+  },
+  [210] = {
+    210,
+    1506,
+    nil,
+    "关卡7-14BOSS说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000712,
+      1,
+      1,
+      0
+    }
+  },
+  [211] = {
+    211,
+    1507,
+    nil,
+    "关卡5-2说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000501,
+      1,
+      1,
+      0
+    }
+  },
+  [212] = {
+    212,
+    1508,
+    nil,
+    "关卡5-8说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000507,
+      1,
+      1,
+      0
+    }
+  },
+  [213] = {
+    213,
+    1509,
+    nil,
+    "新关卡1-14回合1换队长1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000111,
+      1,
+      1,
+      0
+    }
+  },
+  [214] = {
+    214,
+    1509,
+    nil,
+    "新关卡1-14回合2换队长2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000111,
+      1,
+      2,
+      0
+    }
+  },
+  [215] = {
+    215,
+    1509,
+    nil,
+    "新关卡1-14第2波回合1换队长3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000111,
+      2,
+      1,
+      0
+    }
+  },
+  [216] = {
+    216,
+    1045,
+    nil,
+    common[1],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      1000310,
+      1,
+      1,
+      1
+    }
+  },
+  [217] = {
+    217,
+    1510,
+    nil,
+    "关卡6-2说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000601,
+      1,
+      1,
+      0
+    }
+  },
+  [218] = {
+    218,
+    1511,
+    nil,
+    "关卡6-9说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000607,
+      1,
+      1,
+      0
+    }
+  },
+  [219] = {
+    219,
+    1512,
+    nil,
+    "关卡7-2说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000701,
+      1,
+      1,
+      0
+    }
+  },
+  [220] = {
+    220,
+    1513,
+    nil,
+    "关卡7-9说明",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000707,
+      1,
+      1,
+      0
+    }
+  },
+  [221] = {
+    221,
+    1514,
+    nil,
+    "森属性尖塔45层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4003045,
+      1,
+      1,
+      0
+    }
+  },
+  [222] = {
+    222,
+    1514,
+    nil,
+    "火属性尖塔45层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4002045,
+      1,
+      1,
+      0
+    }
+  },
+  [223] = {
+    223,
+    1514,
+    nil,
+    "水属性尖塔45层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4001045,
+      1,
+      1,
+      0
+    }
+  },
+  [224] = {
+    224,
+    1514,
+    nil,
+    "雷属性尖塔45层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4004045,
+      1,
+      1,
+      0
+    }
+  },
+  [225] = {
+    225,
+    1515,
+    nil,
+    "森属性尖塔20层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4003020,
+      1,
+      1,
+      0
+    }
+  },
+  [226] = {
+    226,
+    1515,
+    nil,
+    "火属性尖塔20层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4002020,
+      1,
+      1,
+      0
+    }
+  },
+  [227] = {
+    227,
+    1515,
+    nil,
+    "水属性尖塔20层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4001020,
+      1,
+      1,
+      0
+    }
+  },
+  [228] = {
+    228,
+    1515,
+    nil,
+    "雷属性尖塔20层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4004020,
+      1,
+      1,
+      0
+    }
+  },
+  [229] = {
+    229,
+    1516,
+    nil,
+    "森属性尖塔15层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[104]
+  },
+  [230] = {
+    230,
+    1516,
+    nil,
+    "火属性尖塔15层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[104]
+  },
+  [231] = {
+    231,
+    1516,
+    nil,
+    "水属性尖塔15层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[104]
+  },
+  [232] = {
+    232,
+    1516,
+    nil,
+    "雷属性尖塔15层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[104]
+  },
+  [233] = {
+    233,
+    1517,
+    nil,
+    "森属性尖塔10层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4003010,
+      1,
+      1,
+      0
+    }
+  },
+  [234] = {
+    234,
+    1517,
+    nil,
+    "火属性尖塔10层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4002010,
+      1,
+      1,
+      0
+    }
+  },
+  [235] = {
+    235,
+    1517,
+    nil,
+    "水属性尖塔10层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4001010,
+      1,
+      1,
+      0
+    }
+  },
+  [236] = {
+    236,
+    1517,
+    nil,
+    "雷属性尖塔10层回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4004010,
+      1,
+      1,
+      0
+    }
+  },
+  [237] = {
+    237,
+    1518,
+    nil,
+    "秘境战斗引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      99912001,
+      1,
+      1,
+      0
+    }
+  },
+  [238] = {
+    238,
+    1023,
+    nil,
+    "关卡2-4结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[105]
+  },
+  [239] = {
+    239,
+    1024,
+    nil,
+    "关卡2-5结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[106]
+  },
+  [241] = {
+    241,
+    1519,
+    nil,
+    "关卡4-10机关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000410,
+      1,
+      1,
+      0
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2004
+  },
+  [242] = {
+    242,
+    1520,
+    nil,
+    "主线8-2回合1焦点钩子怪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000801,
+      1,
+      1,
+      0
+    }
+  },
+  [243] = {
+    243,
+    1521,
+    nil,
+    "主线8-9回合1焦点能量夺取怪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000807,
+      1,
+      1,
+      0
+    }
+  },
+  [244] = {
+    244,
+    1522,
+    nil,
+    "主线8-7回合1焦点化变pro",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000806,
+      1,
+      1,
+      0
+    }
+  },
+  [245] = {
+    245,
+    1523,
+    nil,
+    "主线8-14回合1焦点幽灵pro",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000812,
+      1,
+      1,
+      0
+    }
+  },
+  [246] = {
+    246,
+    1040,
+    nil,
+    "关卡4-7结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[107]
+  },
+  [247] = {
+    247,
+    5001,
+    nil,
+    "N+1活动一阶段N1附身者",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5011001,
+      1,
+      1,
+      0
+    }
+  },
+  [248] = {
+    248,
+    5002,
+    nil,
+    "N+1活动一阶段N8多恩",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5011008,
+      1,
+      1,
+      0
+    }
+  },
+  [249] = {
+    249,
+    1524,
+    nil,
+    "主线9-2回合1焦点狞崮",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000902,
+      1,
+      1,
+      0
+    }
+  },
+  [250] = {
+    250,
+    1525,
+    nil,
+    "主线9-7回合1焦点月语人",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000907,
+      1,
+      1,
+      0
+    }
+  },
+  [251] = {
+    251,
+    1526,
+    nil,
+    "主线9-9回合1焦点蔓靶",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000909,
+      1,
+      1,
+      0
+    }
+  },
+  [252] = {
+    252,
+    1527,
+    nil,
+    "主线10-2回合1焦点跋骷",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1001002,
+      1,
+      1,
+      0
+    }
+  },
+  [253] = {
+    253,
+    1528,
+    nil,
+    "主线10-7回合1焦点碎空",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1001007,
+      1,
+      1,
+      0
+    }
+  },
+  [254] = {
+    254,
+    1529,
+    nil,
+    "主线10-9回合1焦点诅魍",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1001009,
+      1,
+      1,
+      0
+    }
+  },
+  [255] = {
+    255,
+    1530,
+    nil,
+    "主线9-14回合boss塔巴德pro",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[108]
+  },
+  [256] = {
+    256,
+    1531,
+    nil,
+    "主线10-14回合boss白舒摩尔",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[109]
+  },
+  [257] = {
+    257,
+    1530,
+    nil,
+    "主线9-14回合boss吞罗",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[108]
+  },
+  [258] = {
+    258,
+    1531,
+    nil,
+    "主线10-14回合boss白舒摩尔仆从",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[109]
+  },
+  [259] = {
+    259,
+    5003,
+    nil,
+    "N3 马 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5031001,
+      1,
+      1,
+      0
+    }
+  },
+  [260] = {
+    260,
+    5004,
+    nil,
+    "N3 车 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5031003,
+      1,
+      1,
+      0
+    }
+  },
+  [261] = {
+    261,
+    5005,
+    nil,
+    "N3 象 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5031005,
+      1,
+      1,
+      0
+    }
+  },
+  [262] = {
+    262,
+    5006,
+    nil,
+    "N3 后 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5031007,
+      1,
+      1,
+      0
+    }
+  },
+  [263] = {
+    263,
+    5007,
+    nil,
+    "N3 兵 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5031009,
+      1,
+      1,
+      0
+    }
+  },
+  [264] = {
+    264,
+    5008,
+    nil,
+    "N3 王 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5031020,
+      1,
+      1,
+      0
+    }
+  },
+  [265] = {
+    265,
+    5009,
+    nil,
+    "N5 骸隆戈 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5051007,
+      1,
+      1,
+      0
+    }
+  },
+  [266] = {
+    266,
+    5010,
+    nil,
+    "N5 爆裂 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5051003,
+      1,
+      1,
+      0
+    }
+  },
+  [267] = {
+    267,
+    5011,
+    nil,
+    "N6 钻刁 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5061003,
+      1,
+      1,
+      0
+    }
+  },
+  [268] = {
+    268,
+    5012,
+    nil,
+    "N6 雷雨夜 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5061010,
+      1,
+      1,
+      0
+    }
+  },
+  [269] = {
+    269,
+    5013,
+    nil,
+    "N7 缪特 焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5071010,
+      1,
+      1,
+      0
+    }
+  },
+  [270] = {
+    270,
+    5014,
+    nil,
+    "番外关卡4-2闪现焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000402,
+      1,
+      1,
+      0
+    }
+  },
+  [271] = {
+    271,
+    5015,
+    nil,
+    "番外关卡4-6Boss无形",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000406,
+      1,
+      1,
+      0
+    }
+  },
+  [272] = {
+    272,
+    5016,
+    nil,
+    "N7 精英怪首次出现焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5071003,
+      1,
+      1,
+      0
+    }
+  },
+  [273] = {
+    273,
+    5017,
+    nil,
+    "N9 心魔首次出现焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5091003,
+      1,
+      1,
+      0
+    }
+  },
+  [274] = {
+    274,
+    5018,
+    nil,
+    "N9最终关 心魔焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5091012,
+      1,
+      1,
+      0
+    }
+  },
+  [275] = {
+    275,
+    5019,
+    nil,
+    "N11线性关3 干扰装置引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5111003,
+      1,
+      1,
+      0
+    }
+  },
+  [276] = {
+    276,
+    5020,
+    nil,
+    "N11 线性关12 boss焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5111012,
+      1,
+      1,
+      0
+    }
+  },
+  [27701] = {
+    27701,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121001,
+      1,
+      1,
+      0
+    }
+  },
+  [27702] = {
+    27702,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121002,
+      1,
+      1,
+      0
+    }
+  },
+  [27703] = {
+    27703,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121003,
+      1,
+      1,
+      0
+    }
+  },
+  [27704] = {
+    27704,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121004,
+      1,
+      1,
+      0
+    }
+  },
+  [27705] = {
+    27705,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121005,
+      1,
+      1,
+      0
+    }
+  },
+  [27706] = {
+    27706,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121006,
+      1,
+      1,
+      0
+    }
+  },
+  [27707] = {
+    27707,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121007,
+      1,
+      1,
+      0
+    }
+  },
+  [27708] = {
+    27708,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121008,
+      1,
+      1,
+      0
+    }
+  },
+  [27709] = {
+    27709,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121009,
+      1,
+      1,
+      0
+    }
+  },
+  [27710] = {
+    27710,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121010,
+      1,
+      1,
+      0
+    }
+  },
+  [27711] = {
+    27711,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121011,
+      1,
+      1,
+      0
+    }
+  },
+  [27712] = {
+    27712,
+    5021,
+    nil,
+    common[5],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121012,
+      1,
+      1,
+      0
+    }
+  },
+  [27801] = {
+    27801,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121013,
+      1,
+      1,
+      0
+    }
+  },
+  [27802] = {
+    27802,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121014,
+      1,
+      1,
+      0
+    }
+  },
+  [27803] = {
+    27803,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121015,
+      1,
+      1,
+      0
+    }
+  },
+  [27804] = {
+    27804,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121016,
+      1,
+      1,
+      0
+    }
+  },
+  [27805] = {
+    27805,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121017,
+      1,
+      1,
+      0
+    }
+  },
+  [27806] = {
+    27806,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121018,
+      1,
+      1,
+      0
+    }
+  },
+  [27807] = {
+    27807,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121019,
+      1,
+      1,
+      0
+    }
+  },
+  [27808] = {
+    27808,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121020,
+      1,
+      1,
+      0
+    }
+  },
+  [27809] = {
+    27809,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121021,
+      1,
+      1,
+      0
+    }
+  },
+  [27810] = {
+    27810,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121022,
+      1,
+      1,
+      0
+    }
+  },
+  [27811] = {
+    27811,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121023,
+      1,
+      1,
+      0
+    }
+  },
+  [27812] = {
+    27812,
+    5022,
+    nil,
+    common[6],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121024,
+      1,
+      1,
+      0
+    }
+  },
+  [27901] = {
+    27901,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121025,
+      1,
+      1,
+      0
+    }
+  },
+  [27902] = {
+    27902,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121026,
+      1,
+      1,
+      0
+    }
+  },
+  [27903] = {
+    27903,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121027,
+      1,
+      1,
+      0
+    }
+  },
+  [27904] = {
+    27904,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121028,
+      1,
+      1,
+      0
+    }
+  },
+  [27905] = {
+    27905,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121029,
+      1,
+      1,
+      0
+    }
+  },
+  [27906] = {
+    27906,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121030,
+      1,
+      1,
+      0
+    }
+  },
+  [27907] = {
+    27907,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121031,
+      1,
+      1,
+      0
+    }
+  },
+  [27908] = {
+    27908,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121032,
+      1,
+      1,
+      0
+    }
+  },
+  [27909] = {
+    27909,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121033,
+      1,
+      1,
+      0
+    }
+  },
+  [27910] = {
+    27910,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121034,
+      1,
+      1,
+      0
+    }
+  },
+  [27911] = {
+    27911,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121035,
+      1,
+      1,
+      0
+    }
+  },
+  [27912] = {
+    27912,
+    5023,
+    nil,
+    common[7],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121036,
+      1,
+      1,
+      0
+    }
+  },
+  [28001] = {
+    28001,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121037,
+      1,
+      1,
+      0
+    }
+  },
+  [28002] = {
+    28002,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121038,
+      1,
+      1,
+      0
+    }
+  },
+  [28003] = {
+    28003,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121039,
+      1,
+      1,
+      0
+    }
+  },
+  [28004] = {
+    28004,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121040,
+      1,
+      1,
+      0
+    }
+  },
+  [28005] = {
+    28005,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121041,
+      1,
+      1,
+      0
+    }
+  },
+  [28006] = {
+    28006,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121042,
+      1,
+      1,
+      0
+    }
+  },
+  [28007] = {
+    28007,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121043,
+      1,
+      1,
+      0
+    }
+  },
+  [28008] = {
+    28008,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121044,
+      1,
+      1,
+      0
+    }
+  },
+  [28009] = {
+    28009,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121045,
+      1,
+      1,
+      0
+    }
+  },
+  [28010] = {
+    28010,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121046,
+      1,
+      1,
+      0
+    }
+  },
+  [28011] = {
+    28011,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121047,
+      1,
+      1,
+      0
+    }
+  },
+  [28012] = {
+    28012,
+    5024,
+    nil,
+    common[8],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5121048,
+      1,
+      1,
+      0
+    }
+  },
+  [281] = {
+    281,
+    5026,
+    nil,
+    "N13 浪人剑客焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5131011,
+      1,
+      1,
+      0
+    }
+  },
+  [282] = {
+    282,
+    5027,
+    nil,
+    "N13 尸鬼焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5131001,
+      1,
+      1,
+      0
+    }
+  },
+  [283] = {
+    283,
+    5028,
+    nil,
+    "N13 藤云信虎焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5131012,
+      1,
+      1,
+      0
+    }
+  },
+  [284] = {
+    284,
+    5029,
+    nil,
+    "N13 藤云信虎噬魔焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5141012,
+      1,
+      1,
+      0
+    }
+  },
+  [285] = {
+    285,
+    5030,
+    nil,
+    "N14 鬼剑客焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5142014,
+      1,
+      1,
+      0
+    }
+  },
+  [286] = {
+    286,
+    5031,
+    nil,
+    "N15 拆车局内 第1关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5159001,
+      1,
+      1,
+      0
+    }
+  },
+  [287] = {
+    287,
+    5032,
+    nil,
+    "N15 拆车局内 第3关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5159003,
+      1,
+      1,
+      0
+    }
+  },
+  [288] = {
+    288,
+    5033,
+    nil,
+    "N15 拆车局内 第4关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5159004,
+      1,
+      1,
+      0
+    }
+  },
+  [289] = {
+    289,
+    5034,
+    nil,
+    "N15 拆车局内 第7关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5159007,
+      1,
+      1,
+      0
+    }
+  },
+  [290] = {
+    290,
+    5035,
+    nil,
+    "N16 san值引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5161001,
+      1,
+      1,
+      0
+    }
+  },
+  [291] = {
+    291,
+    5069,
+    nil,
+    "11章幽灵Pro 焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101109,
+      1,
+      1,
+      0
+    }
+  },
+  [293] = {
+    293,
+    5071,
+    nil,
+    "12-13 局内剧情",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101213,
+      1,
+      1,
+      0
+    }
+  },
+  [294] = {
+    294,
+    5072,
+    nil,
+    "11章克劳迪娅 焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101114,
+      1,
+      1,
+      0
+    }
+  },
+  [295] = {
+    295,
+    5073,
+    nil,
+    "12章阿希尔 焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101214,
+      1,
+      1,
+      0
+    }
+  },
+  [296] = {
+    296,
+    5074,
+    nil,
+    "12章黯域引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101206,
+      1,
+      1,
+      0
+    }
+  },
+  [297] = {
+    297,
+    5075,
+    nil,
+    "N18 米洛斯引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5181012,
+      1,
+      1,
+      0
+    }
+  },
+  [298] = {
+    298,
+    5076,
+    nil,
+    "主线11章11-6关卡结束对话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    28,
+    {101106}
+  },
+  [301] = {
+    301,
+    2001,
+    nil,
+    "番外1-1回合1说话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000101,
+      1,
+      1,
+      0
+    }
+  },
+  [302] = {
+    302,
+    2002,
+    nil,
+    "番外1-2回合1说话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000102,
+      1,
+      1,
+      0
+    }
+  },
+  [303] = {
+    303,
+    2002,
+    nil,
+    "番外1-2回合2行动后说话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000102,
+      1,
+      2,
+      0
+    }
+  },
+  [304] = {
+    304,
+    2003,
+    nil,
+    "番外1-3第一波行动前说话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000103,
+      1,
+      1,
+      0
+    }
+  },
+  [305] = {
+    305,
+    2003,
+    nil,
+    "番外1-3第三波行动前说话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000103,
+      3,
+      1,
+      0
+    }
+  },
+  [306] = {
+    306,
+    2004,
+    nil,
+    "番外1-4第一波行动前说话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000104,
+      1,
+      1,
+      0
+    },
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1519
+  },
+  [307] = {
+    307,
+    2005,
+    nil,
+    "关卡3-3第一波行动前说话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000302,
+      1,
+      1,
+      0
+    }
+  },
+  [308] = {
+    308,
+    2006,
+    nil,
+    "番外1-6第一波",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000106,
+      1,
+      1,
+      0
+    }
+  },
+  [309] = {
+    309,
+    1101,
+    nil,
+    "番外2-1回合1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000201,
+      1,
+      1,
+      0
+    }
+  },
+  [310] = {
+    310,
+    1101,
+    nil,
+    "番外2-1回合2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000201,
+      1,
+      2,
+      0
+    }
+  },
+  [311] = {
+    311,
+    1101,
+    nil,
+    "番外2-1回合3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      2000201,
+      1,
+      3,
+      0
+    }
+  },
+  [312] = {
+    312,
+    1102,
+    nil,
+    "4-5回合1 引导击飞怪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1000404,
+      1,
+      1,
+      0
+    }
+  },
+  [313] = {
+    313,
+    1103,
+    nil,
+    "秘境引导守护关低",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      99932011,
+      1,
+      1,
+      0
+    }
+  },
+  [314] = {
+    314,
+    1103,
+    nil,
+    "秘境引导守护关中",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      99933011,
+      1,
+      1,
+      0
+    }
+  },
+  [315] = {
+    315,
+    1103,
+    nil,
+    "秘境引导守护关高",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      99934011,
+      1,
+      1,
+      0
+    }
+  },
+  [316] = {
+    316,
+    1104,
+    nil,
+    "秘境引导宝箱关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      99952001,
+      1,
+      1,
+      0
+    }
+  },
+  [317] = {
+    317,
+    1105,
+    nil,
+    "秘境引导盗宝贼",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      99972001,
+      1,
+      1,
+      0
+    }
+  },
+  [318] = {
+    318,
+    4101,
+    nil,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[98]
+  },
+  [319] = {
+    319,
+    4102,
+    nil,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[98]
+  },
+  [320] = {
+    320,
+    4103,
+    nil,
+    common[9],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[98]
+  },
+  [321] = {
+    321,
+    5000,
+    nil,
+    "关卡3-7结算触发（容错的判断条件）",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[110]
+  },
+  [500] = {
+    500,
+    1051,
+    nil,
+    "关卡1-2结束后引导开启",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[94],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001030
+  },
+  [501] = {
+    501,
+    1052,
+    nil,
+    "关卡1-3结束后引导开启抽卡",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[95],
+    nil,
+    nil,
+    nil,
+    nil,
+    504,
+    nil,
+    4001040
+  },
+  [502] = {
+    502,
+    1053,
+    nil,
+    "关卡1-5结束后引导开启主线任务",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[103],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001060
+  },
+  [503] = {
+    503,
+    1054,
+    nil,
+    "关卡1-8结束后引导开启成长任务",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[97],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001070
+  },
+  [504] = {
+    504,
+    1050,
+    nil,
+    "关卡1-3结束后引导升级角色",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001040
+  },
+  [505] = {
+    505,
+    1086,
+    nil,
+    "关卡1-6结束后引导查看分支关卡",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[96],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001050
+  },
+  [506] = {
+    506,
+    1056,
+    nil,
+    "关卡1-8结束后引导查看邮件",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {7000106},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001130
+  },
+  [507] = {
+    507,
+    4011,
+    nil,
+    "关卡1-14结束后引导解锁资源室+经验本",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[101],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001120
+  },
+  [508] = {
+    508,
+    1058,
+    nil,
+    "关卡1-16结束后引导日常任务",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[102],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4002015
+  },
+  [509] = {
+    509,
+    1059,
+    nil,
+    "关卡1-10结束后引导风船",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    18,
+    {4001095},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [5110] = {
+    5110,
+    5110,
+    nil,
+    "升级到30级引导觉醒",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {96}
+  },
+  [511] = {
+    511,
+    1071,
+    nil,
+    "材料足够触发突破",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    13
+  },
+  [512] = {
+    512,
+    1060,
+    nil,
+    "关卡1-3结束引导上阵",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001040
+  },
+  [513] = {
+    513,
+    1088,
+    nil,
+    "关卡3-7结束秘境探索",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[110],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4003070
+  },
+  [514] = {
+    514,
+    1062,
+    nil,
+    "2-5结束后引导金币本",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[106],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4002040
+  },
+  [515] = {
+    515,
+    1063,
+    nil,
+    "2-4结束后引导礼物",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[105],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4002030
+  },
+  [516] = {
+    516,
+    1064,
+    nil,
+    "3-13结束后引导番外",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {1000312},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4004010
+  },
+  [517] = {
+    517,
+    1065,
+    nil,
+    "1-7结束后再次引导升级",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {1000117},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001060
+  },
+  [518] = {
+    518,
+    1066,
+    nil,
+    "1-9结束后再次引导成长任务",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {7000108},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001130
+  },
+  [519] = {
+    519,
+    1067,
+    nil,
+    "2-12结束后引导风船升级",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {1000209},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4002100
+  },
+  [520] = {
+    520,
+    1068,
+    nil,
+    "6-14结束后引导番外2开启",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[111],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4007010
+  },
+  [521] = {
+    521,
+    1072,
+    nil,
+    "资源本开启双倍UI触发引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    15
+  },
+  [522] = {
+    522,
+    1073,
+    nil,
+    "首次打开普通棋子触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {3}
+  },
+  [523] = {
+    523,
+    1074,
+    nil,
+    "首次打开精英棋子触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {7}
+  },
+  [524] = {
+    524,
+    1075,
+    nil,
+    "首次打开boss棋子触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[112]
+  },
+  [525] = {
+    525,
+    1076,
+    nil,
+    "首次打开休息棋子触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {4}
+  },
+  [526] = {
+    526,
+    1077,
+    nil,
+    "首次打开圣物背包触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {6}
+  },
+  [527] = {
+    527,
+    1069,
+    nil,
+    "4-14结束后引导爬塔",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {1000412},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4005015
+  },
+  [528] = {
+    528,
+    1078,
+    nil,
+    "1-12结束后引导终端",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[99],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [529] = {
+    529,
+    1079,
+    nil,
+    "1-12终端后引导去看随机剧情-容错",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [530] = {
+    530,
+    1080,
+    nil,
+    "1-12终端后引导去看随机剧情",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [531] = {
+    531,
+    1081,
+    nil,
+    "1-5任务引导后半段",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001060
+  },
+  [532] = {
+    532,
+    1083,
+    nil,
+    "觉醒后触发装备引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    21,
+    common[113]
+  },
+  [533] = {
+    533,
+    1084,
+    nil,
+    "1-10关卡前触发引导助战（改为触发式了）",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {11},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [534] = {
+    534,
+    1085,
+    nil,
+    "4-7结束后引导装备本",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[107],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4004085
+  },
+  [535] = {
+    535,
+    1087,
+    nil,
+    "秘境-首次进入编队界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    22,
+    {6, -1}
+  },
+  [536] = {
+    536,
+    4012,
+    nil,
+    "1-14结束引导解锁资源室后开启资源本（衔接）",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001120
+  },
+  [537] = {
+    537,
+    1061,
+    nil,
+    "3-7通关解锁秘境室引导后去秘境玩法",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4003070,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1106
+  },
+  [538] = {
+    538,
+    1090,
+    nil,
+    "打开传说光灵列表界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {12}
+  },
+  [539] = {
+    539,
+    1091,
+    nil,
+    "打开传说光灵任务界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {13}
+  },
+  [540] = {
+    540,
+    1092,
+    nil,
+    "6-14后引导传说光灵",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {1000712},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4008015
+  },
+  [550] = {
+    550,
+    5501,
+    nil,
+    "关卡11-9结算触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11,
+    common[114]
+  },
+  [551] = {
+    551,
+    5511,
+    nil,
+    "容错551——11-9结束引导解锁启迪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {-1, 5511},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4201090
+  },
+  [552] = {
+    552,
+    5511,
+    nil,
+    "关卡11-9结束后引导开启 启迪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[114]
+  },
+  [2001] = {
+    2001,
+    4001,
+    nil,
+    "风船内引导点击UI",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {7100001}
+  },
+  [2002] = {
+    2002,
+    4002,
+    nil,
+    "风船内引导焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {7100002}
+  },
+  [2003] = {
+    2003,
+    4003,
+    nil,
+    "1-10后第一次进入风船引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [2004] = {
+    2004,
+    4004,
+    nil,
+    "1-10后第一次进入能源室引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [2005] = {
+    2005,
+    4005,
+    nil,
+    "第一次进入主控室引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    14,
+    common[113],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4017
+  },
+  [2006] = {
+    2006,
+    4006,
+    nil,
+    "第一次进入灯塔室引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    26,
+    common[115]
+  },
+  [2007] = {
+    2007,
+    4007,
+    nil,
+    "1-10后第一次进入棱镜室引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [2008] = {
+    2008,
+    4008,
+    nil,
+    "1-16结束引导风船材料本进入",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[111],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4002010,
+    nil,
+    nil,
+    nil,
+    nil,
+    4011
+  },
+  [2009] = {
+    2009,
+    4009,
+    nil,
+    "第一次进入资源室引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    14,
+    common[116]
+  },
+  [2010] = {
+    2010,
+    4010,
+    nil,
+    "第一次进入秘境室引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[111]
+  },
+  [2011] = {
+    2011,
+    4011,
+    nil,
+    "【分支】1-15结束引导风船材料室建设",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    19,
+    {999999999, 9},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4002010,
+    nil,
+    nil,
+    nil,
+    nil,
+    4008
+  },
+  [2012] = {
+    2012,
+    4011,
+    nil,
+    "【分支】引导风船材料室建设-回主界面后（废弃）",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[111],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4002010,
+    nil,
+    nil,
+    nil,
+    nil,
+    4008
+  },
+  [2013] = {
+    2013,
+    4013,
+    nil,
+    "第一次进入冶炼室引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    26,
+    common[117]
+  },
+  [2014] = {
+    2014,
+    4014,
+    nil,
+    "第一次进入派遣室引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    26,
+    common[118]
+  },
+  [2016] = {
+    2016,
+    4016,
+    nil,
+    "1-10后引导解锁棱镜室",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [2017] = {
+    2017,
+    4017,
+    nil,
+    "第一次进入主控室入驻界面触发引导-导航栏触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    25,
+    common[113],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4005
+  },
+  [2018] = {
+    2018,
+    4018,
+    nil,
+    "第一次进入装修-触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[116]
+  },
+  [2019] = {
+    2019,
+    4019,
+    nil,
+    "咖啡厅解锁后-触发装修",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    23,
+    common[112],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4018
+  },
+  [1001] = {
+    1001,
+    1000,
+    nil,
+    "关卡1-1我方第一波回合2行动提示",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[93]
+  },
+  [1101] = {
+    1101,
+    3001,
+    nil,
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    8,
+    {7000103, 2}
+  },
+  [1102] = {
+    1102,
+    3002,
+    nil,
+    "弱引导2 释放卓雅技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    9,
+    {7000105, 1}
+  },
+  [1104] = {
+    1104,
+    3004,
+    nil,
+    "弱引导4 引导三星奖励"
+  },
+  [1105] = {
+    1105,
+    3005,
+    nil,
+    "弱引导5引导点击关卡按钮"
+  },
+  [1106] = {
+    1106,
+    3006,
+    nil,
+    common[10],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    8,
+    {7000115, 1}
+  },
+  [1201] = {
+    1201,
+    1051,
+    nil,
+    "容错1051——1-2结束编队",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1001, 1051},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001030
+  },
+  [1202] = {
+    1202,
+    1201,
+    nil,
+    "容错1002——1-2结束编队",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    common[111],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001030
+  },
+  [1203] = {
+    1203,
+    1052,
+    nil,
+    "容错1052——1-3结束抽卡",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1002, 1052},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001040
+  },
+  [1204] = {
+    1204,
+    1053,
+    nil,
+    "容错1053——1-5结束引导主线任务",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1034, 1053},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001060
+  },
+  [1205] = {
+    1205,
+    1054,
+    nil,
+    "容错1054——1-8结束引导成长任务",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1011, 1054},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001070
+  },
+  [1206] = {
+    1206,
+    1050,
+    nil,
+    "容错1050——1-3抽卡结束引导培养",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1052, 1050},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001040
+  },
+  [1208] = {
+    1208,
+    4011,
+    nil,
+    "容错4011——1-14结束引导解锁资源室",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1019, 4011},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001120
+  },
+  [1209] = {
+    1209,
+    1058,
+    nil,
+    "容错1058——1-15结束引导日常任务",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1509, 1058},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001130
+  },
+  [1211] = {
+    1211,
+    1060,
+    nil,
+    "容错1060——1-3培养结束引导编队",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1050, 1060},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001040
+  },
+  [1213] = {
+    1213,
+    1065,
+    nil,
+    "容错1065——1-7结束引导再次升级",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1010, 1065},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001060
+  },
+  [1215] = {
+    1215,
+    4101,
+    nil,
+    "容错4003——1-10结束引导风船建造第一个房间",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1059, 4003},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [1216] = {
+    1216,
+    4102,
+    nil,
+    "容错4016——引导风船建造棱镜室",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {4004, 4016},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [1217] = {
+    1217,
+    4103,
+    nil,
+    "容错4004——引导风船能源室",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {4003, 4004},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [1225] = {
+    1225,
+    1062,
+    nil,
+    "容错1062——2-5结束引导支线、金币本",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1024, 1062},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4002040
+  },
+  [1226] = {
+    1226,
+    1063,
+    nil,
+    "容错1063——2-4结束引导赠送礼物",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1023, 1063},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4002030
+  },
+  [1227] = {
+    1227,
+    1079,
+    nil,
+    "容错1080——终端结束引导看随机剧情",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1078, 1080},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [1228] = {
+    1228,
+    1078,
+    nil,
+    "容错1078——1-11结束引导终端",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1016, 1078},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001100
+  },
+  [1229] = {
+    1229,
+    1085,
+    nil,
+    "容错1085——4-7结束引导装备本",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1040, 1085},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4004085
+  },
+  [1230] = {
+    1230,
+    1057,
+    nil,
+    "容错4012——1-14结束引导资源本",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {4011, 4012},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4001120
+  },
+  [1231] = {
+    1231,
+    1088,
+    nil,
+    "容错1088——3-7结束引导解锁秘境室",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {5000, 1088},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4003070
+  },
+  [1232] = {
+    1232,
+    1106,
+    nil,
+    "容错1061——引导秘境玩法",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {1088, 1061},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4003070,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1061
+  },
+  [3001] = {
+    3001,
+    6000,
+    nil,
+    "活动恐惧伊芙喊话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5012004,
+      1,
+      1,
+      0
+    }
+  },
+  [3002] = {
+    3002,
+    6001,
+    nil,
+    "活动愤怒伊芙喊话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5012008,
+      1,
+      1,
+      0
+    }
+  },
+  [3003] = {
+    3003,
+    6002,
+    nil,
+    "活动痛苦伊芙喊话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5012012,
+      1,
+      1,
+      0
+    }
+  },
+  [3004] = {
+    3004,
+    6003,
+    nil,
+    "樱龙使活动进入活动界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[117]
+  },
+  [3005] = {
+    3005,
+    6004,
+    nil,
+    "夏活1进入活动界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[118],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2021-09-06 09:00:00"
+  },
+  [3006] = {
+    3006,
+    6005,
+    nil,
+    "进入通信证界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[119]
+  },
+  [3007] = {
+    3007,
+    6006,
+    nil,
+    "进入刨冰小游戏界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {17}
+  },
+  [3008] = {
+    3008,
+    6007,
+    nil,
+    "进入N4活动界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {18},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[11]
+  },
+  [3009] = {
+    3009,
+    6008,
+    nil,
+    "进入N4选词条界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {19},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[11]
+  },
+  [3010] = {
+    3010,
+    6009,
+    nil,
+    "N5启光活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {20},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2021-10-18 05:00:00"
+  },
+  [3011] = {
+    3011,
+    6010,
+    nil,
+    "N6活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {21},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[12]
+  },
+  [3012] = {
+    3012,
+    6011,
+    nil,
+    "N6活动触发装修玩法引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {22},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[12]
+  },
+  [30131] = {
+    30131,
+    60121,
+    nil,
+    "世界Boss玩法界面触发B",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {90},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    60122
+  },
+  [30132] = {
+    30132,
+    60122,
+    nil,
+    "世界Boss玩法界面触发C",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {91},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    60121
+  },
+  [3014] = {
+    3014,
+    6013,
+    nil,
+    "N7活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {24},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2021-11-29 05:00:00"
+  },
+  [3015] = {
+    3015,
+    6014,
+    nil,
+    "N8活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {25},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2021-12-20 09:00:00"
+  },
+  [3016] = {
+    3016,
+    6015,
+    nil,
+    "通关6-14后第一次进入风船触发战术室引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4006120
+  },
+  [3017] = {
+    3017,
+    6016,
+    nil,
+    "战术室建造完成后触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    26,
+    common[119]
+  },
+  [3018] = {
+    3018,
+    6017,
+    nil,
+    "N8活动关卡详情触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {27}
+  },
+  [3019] = {
+    3019,
+    6018,
+    nil,
+    "N9活动关卡详情触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {28},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-01-10 09:00:00"
+  },
+  [3020] = {
+    3020,
+    6019,
+    nil,
+    "打开战术室模拟器触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {26}
+  },
+  [3021] = {
+    3021,
+    6020,
+    nil,
+    "N10活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {29},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-01-24 09:00:00"
+  },
+  [3022] = {
+    3022,
+    6021,
+    nil,
+    "N11活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {30},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-02-14 09:00:00"
+  },
+  [3023] = {
+    3023,
+    6022,
+    nil,
+    "N12活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {31},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-03-05 05:00:00"
+  },
+  [3024] = {
+    3024,
+    6023,
+    nil,
+    "N13活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {32},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-03-28 09:00:00"
+  },
+  [3025] = {
+    3025,
+    6024,
+    nil,
+    "N14活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {33},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-04-18 09:00:00"
+  },
+  [3027] = {
+    3027,
+    6026,
+    nil,
+    "N15赛车机关引导1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5151001,
+      1,
+      1,
+      0
+    }
+  },
+  [3028] = {
+    3028,
+    6027,
+    nil,
+    "N15赛车机关引导2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5151002,
+      1,
+      1,
+      0
+    }
+  },
+  [3029] = {
+    3029,
+    6028,
+    nil,
+    "N15赛车机关引导3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5151005,
+      1,
+      1,
+      0
+    }
+  },
+  [3030] = {
+    3030,
+    6029,
+    nil,
+    "N15活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {35},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-05-09 09:00:00"
+  },
+  [3031] = {
+    3031,
+    6030,
+    nil,
+    "N16活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {36},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-05-29 09:00:00"
+  },
+  [3032] = {
+    3032,
+    5036,
+    nil,
+    "莲试用",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5164001,
+      1,
+      1,
+      0
+    }
+  },
+  [3033] = {
+    3033,
+    5037,
+    nil,
+    "贾尔斯试用",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5164002,
+      1,
+      1,
+      0
+    }
+  },
+  [3034] = {
+    3034,
+    5038,
+    nil,
+    "梅试用",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5164003,
+      1,
+      1,
+      0
+    }
+  },
+  [3035] = {
+    3035,
+    5039,
+    nil,
+    "间章10s-2回合1引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1001102,
+      1,
+      1,
+      0
+    }
+  },
+  [3036] = {
+    3036,
+    5039,
+    nil,
+    "间章10s-2回合2引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1001102,
+      1,
+      2,
+      0
+    }
+  },
+  [3037] = {
+    3037,
+    5039,
+    nil,
+    "间章10s-2回合3引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1001102,
+      1,
+      3,
+      0
+    }
+  },
+  [3038] = {
+    3038,
+    5040,
+    nil,
+    "间章10s-4引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1001104,
+      1,
+      1,
+      0
+    }
+  },
+  [3039] = {
+    3039,
+    5041,
+    nil,
+    "间章10s-4引导2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1001104,
+      1,
+      7,
+      0
+    }
+  },
+  [3040] = {
+    3040,
+    5042,
+    nil,
+    "间章10s-9引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1001109,
+      1,
+      1,
+      0
+    }
+  },
+  [3041] = {
+    3041,
+    5043,
+    nil,
+    "N17活动主界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {46},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-06-20 09:00:00"
+  },
+  [3042] = {
+    3042,
+    5044,
+    nil,
+    "N17活动困难关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {47},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    12
+  },
+  [3043] = {
+    3043,
+    5046,
+    nil,
+    "N18 弱化格子引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5181001,
+      1,
+      1,
+      0
+    }
+  },
+  [3044] = {
+    3044,
+    5047,
+    nil,
+    "妮娜试用",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5183001,
+      1,
+      1,
+      0
+    }
+  },
+  [3045] = {
+    3045,
+    5048,
+    nil,
+    "早苗试用",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5183002,
+      1,
+      1,
+      0
+    }
+  },
+  [190501] = {
+    190501,
+    190501,
+    nil,
+    "N18 活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {49},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-07-11 09:00:00"
+  },
+  [110001] = {
+    110001,
+    110001,
+    nil,
+    "N19 活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {50},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [110002] = {
+    110002,
+    110002,
+    nil,
+    "N19 P5活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {51},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[13]
+  },
+  [110501] = {
+    110501,
+    110501,
+    nil,
+    "N20 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {52},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-08-22 09:00:00"
+  },
+  [110502] = {
+    110502,
+    110502,
+    nil,
+    "N20 小游戏引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {53},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-08-25 04:00:00"
+  },
+  [111001] = {
+    111001,
+    111001,
+    nil,
+    "N21 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {54},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-09-19 09:00:00"
+  },
+  [112001] = {
+    112001,
+    112001,
+    nil,
+    "N22 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {55},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-10-17 09:00:00"
+  },
+  [113001] = {
+    113001,
+    113001,
+    nil,
+    "N23 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {56},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-11-14 09:00:00"
+  },
+  [114001] = {
+    114001,
+    114001,
+    nil,
+    "N24 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {57},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2022-12-12 09:00:00"
+  },
+  [112002] = {
+    112002,
+    112002,
+    nil,
+    "9-14结束后引导番外",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[115],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4009140
+  },
+  [542022] = {
+    542022,
+    542022,
+    nil,
+    "N25 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {58}
+  },
+  [542023] = {
+    542023,
+    542023,
+    nil,
+    "N25 偶像养成主界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {59}
+  },
+  [542024] = {
+    542024,
+    542024,
+    nil,
+    "N25 偶像养成游戏界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {60}
+  },
+  [542025] = {
+    542025,
+    542025,
+    nil,
+    "N25 吸血鬼主界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {61}
+  },
+  [542026] = {
+    542026,
+    542026,
+    nil,
+    "N25 吸血鬼游戏",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {62}
+  },
+  [542027] = {
+    542027,
+    542027,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5259001,
+      1,
+      1,
+      0
+    }
+  },
+  [542028] = {
+    542028,
+    542027,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {63}
+  },
+  [542029] = {
+    542029,
+    542027,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {64}
+  },
+  [542030] = {
+    542030,
+    542027,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5259001,
+      3,
+      1,
+      0
+    }
+  },
+  [116001] = {
+    116001,
+    116001,
+    nil,
+    "N26 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {65},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-02-06 09:00:00"
+  },
+  [117001] = {
+    117001,
+    117001,
+    nil,
+    "N27 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {66},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-03-06 09:00:00"
+  },
+  [117002] = {
+    117002,
+    117002,
+    nil,
+    "N27 信使小游戏局内引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {67},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-03-09 04:00:00"
+  },
+  [118001] = {
+    118001,
+    118001,
+    nil,
+    "N28 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {68},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [118002] = {
+    118002,
+    118002,
+    nil,
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {69},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [118003] = {
+    118003,
+    118003,
+    nil,
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {70},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [118004] = {
+    118004,
+    118004,
+    nil,
+    common[17],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {71},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [118005] = {
+    118005,
+    118005,
+    nil,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {72},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [542006] = {
+    542006,
+    542006,
+    nil,
+    "N28 Gronru",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {73}
+  },
+  [542007] = {
+    542007,
+    542007,
+    nil,
+    "N28 Gronru Map",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {74}
+  },
+  [542008] = {
+    542008,
+    542008,
+    nil,
+    "第一关1001点击角色",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {75}
+  },
+  [542009] = {
+    542009,
+    542008,
+    nil,
+    "第一关步骤2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    32,
+    {5420082}
+  },
+  [542010] = {
+    542010,
+    542008,
+    nil,
+    "第一关步骤3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    32,
+    {5420083}
+  },
+  [542011] = {
+    542011,
+    542008,
+    nil,
+    "第一关步骤5",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    32,
+    {5420085}
+  },
+  [542012] = {
+    542012,
+    542008,
+    nil,
+    "第一关步骤6",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    32,
+    {5420086}
+  },
+  [542013] = {
+    542013,
+    542008,
+    nil,
+    "第一关步骤7",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    32,
+    {5420087}
+  },
+  [542014] = {
+    542014,
+    542009,
+    nil,
+    "第二关任意位置",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {76}
+  },
+  [542015] = {
+    542015,
+    542009,
+    nil,
+    "第二关步骤2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    32,
+    {5420092}
+  },
+  [542016] = {
+    542016,
+    542009,
+    nil,
+    "第二关步骤3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    32,
+    {5420093}
+  },
+  [542017] = {
+    542017,
+    542009,
+    nil,
+    "第二关步骤4",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    32,
+    {5420094}
+  },
+  [542018] = {
+    542018,
+    542010,
+    nil,
+    "boss 1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {77}
+  },
+  [542019] = {
+    542019,
+    542011,
+    nil,
+    "boss 2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {78}
+  },
+  [542020] = {
+    542020,
+    542012,
+    nil,
+    "boss 3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {79}
+  },
+  [119001] = {
+    119001,
+    119001,
+    nil,
+    "N29 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {80},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[19]
+  },
+  [119002] = {
+    119002,
+    119002,
+    nil,
+    "N29侦探小游戏 主界面主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {81},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[19]
+  },
+  [119003] = {
+    119003,
+    119003,
+    nil,
+    "N29 N29侦探小游戏 地图界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {82},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[19]
+  },
+  [119004] = {
+    119004,
+    119004,
+    nil,
+    "N29 N29侦探小游戏 对话界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {83},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[19]
+  },
+  [119005] = {
+    119005,
+    119005,
+    nil,
+    "N29  N29侦探小游戏 搜索界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {84},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[19]
+  },
+  [119006] = {
+    119006,
+    119006,
+    nil,
+    "N29  N29侦探小游戏 灵感制作界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {85},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[19]
+  },
+  [119007] = {
+    119007,
+    119007,
+    nil,
+    "光灵精炼引导-精炼条件未满足",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {86},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    119008
+  },
+  [119008] = {
+    119008,
+    119008,
+    nil,
+    "光灵精炼引导-精炼条件已满足",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {87},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    119007
+  },
+  [120001] = {
+    120001,
+    120001,
+    nil,
+    "N30 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {88},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-06-05 09:00:00"
+  },
+  [121001] = {
+    121001,
+    121001,
+    nil,
+    "N31 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {89},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-07-03 09:00:00"
+  },
+  [122001] = {
+    122001,
+    122001,
+    nil,
+    "N32 主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {92},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[20]
+  },
+  [122002] = {
+    122002,
+    122002,
+    nil,
+    "N32 多周目水晶球界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {93},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[20]
+  },
+  [122003] = {
+    122003,
+    122003,
+    nil,
+    "N32 多周目地图界面",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {94},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[20]
+  },
+  [122004] = {
+    122004,
+    122004,
+    nil,
+    "N32 多周目地图界面_首次获得档案",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {95},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[20]
+  },
+  [50000] = {
+    50000,
+    50000,
+    nil,
+    "3-3后返回主界面时触发家园引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    6,
+    {1000302},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4003030,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    52000
+  },
+  [52000] = {
+    52000,
+    50000,
+    nil,
+    "(回退引导)3-3后登陆时触发家园引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    10,
+    {2005, 50000},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    4003020,
+    nil,
+    nil,
+    nil,
+    nil,
+    50000
+  },
+  [50001] = {
+    50001,
+    50001,
+    nil,
+    "家园——基础操作",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[120],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    {11100001}
+  },
+  [50002] = {
+    50002,
+    50002,
+    nil,
+    "家园——砍树",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {41},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100001,
+    common[121]
+  },
+  [51002] = {
+    51002,
+    51002,
+    nil,
+    "家园——挖矿",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {42},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100001,
+    common[121]
+  },
+  [50003] = {
+    50003,
+    50003,
+    nil,
+    "家园——修复建筑",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    27,
+    {11100004, 1},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    51003,
+    nil,
+    nil,
+    11100003,
+    common[121]
+  },
+  [51003] = {
+    51003,
+    51003,
+    nil,
+    "(回退引导)家园——修复建筑",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[120],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    50003,
+    nil,
+    nil,
+    11100003,
+    common[121]
+  },
+  [50004] = {
+    50004,
+    50004,
+    nil,
+    "家园——建造宿舍",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {44},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100004,
+    {11100005}
+  },
+  [50005] = {
+    50005,
+    50005,
+    nil,
+    "家园——摆放宿舍",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[120],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100005,
+    {11100006}
+  },
+  [50006] = {
+    50006,
+    50006,
+    nil,
+    "家园——光灵入住",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[120],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100007,
+    {11100008}
+  },
+  [50007] = {
+    50007,
+    50007,
+    nil,
+    "家园——等级",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {39},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100004
+  },
+  [50008] = {
+    50008,
+    50008,
+    nil,
+    "家园——钓鱼",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {40},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100010,
+    {11100011}
+  },
+  [50009] = {
+    50009,
+    50009,
+    nil,
+    "家园——商店",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {38},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100012,
+    {11100013}
+  },
+  [50011] = {
+    50011,
+    50011,
+    nil,
+    "家园——奇异树建造",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {48},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100014,
+    {11100015}
+  },
+  [50012] = {
+    50012,
+    50012,
+    nil,
+    "家园——奇异树摆放",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    27,
+    {11100019, 3},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100019,
+    {11100016}
+  },
+  [50010] = {
+    50010,
+    50010,
+    nil,
+    "家园——奇异树培育",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {37},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    11100016,
+    {11100018}
+  },
+  [6400] = {
+    6400,
+    6400,
+    nil,
+    common[21],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5173002,
+      1,
+      1,
+      0
+    }
+  },
+  [6401] = {
+    6401,
+    5045,
+    nil,
+    common[22],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5173001,
+      1,
+      1,
+      0
+    }
+  },
+  [6402] = {
+    6402,
+    6400,
+    nil,
+    common[21],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5173002,
+      1,
+      2,
+      0
+    }
+  },
+  [6403] = {
+    6403,
+    6401,
+    nil,
+    common[23],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5193001,
+      1,
+      1,
+      0
+    }
+  },
+  [6404] = {
+    6404,
+    6402,
+    nil,
+    common[23],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5193001,
+      2,
+      1,
+      0
+    }
+  },
+  [6405] = {
+    6405,
+    6401,
+    nil,
+    common[23],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      5193001,
+      1,
+      1,
+      2,
+      1601591
+    }
+  },
+  [6406] = {
+    6406,
+    6401,
+    nil,
+    common[23],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      5193001,
+      1,
+      1,
+      2,
+      1601581
+    }
+  },
+  [6501] = {
+    6501,
+    6501,
+    nil,
+    common[24],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5203002,
+      1,
+      1,
+      0
+    }
+  },
+  [6502] = {
+    6502,
+    6501,
+    nil,
+    common[24],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      5203002,
+      1,
+      1,
+      2,
+      1501651
+    }
+  },
+  [6601] = {
+    6601,
+    6601,
+    nil,
+    "卡莲试用",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5203001,
+      1,
+      1,
+      0
+    }
+  },
+  [6602] = {
+    6602,
+    6601,
+    nil,
+    common[24],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      5203001,
+      1,
+      1,
+      2,
+      1601641
+    }
+  },
+  [6701] = {
+    6701,
+    6701,
+    nil,
+    "N20 线性关BOSS局内对话",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5201012,
+      1,
+      1,
+      0
+    }
+  },
+  [6801] = {
+    6801,
+    6801,
+    nil,
+    "N21 线性关BOSS局内对话-进入",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5211008,
+      1,
+      1,
+      0
+    }
+  },
+  [6802] = {
+    6802,
+    6802,
+    nil,
+    "N21 线性关BOSS局内对话-打完",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    28,
+    {5211008}
+  },
+  [6901] = {
+    6901,
+    6901,
+    nil,
+    common[25],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5213003,
+      1,
+      1,
+      0
+    }
+  },
+  [6902] = {
+    6902,
+    6901,
+    nil,
+    common[25],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      5213003,
+      1,
+      1,
+      2,
+      1501681
+    }
+  },
+  [7001] = {
+    7001,
+    7001,
+    nil,
+    common[26],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5213002,
+      1,
+      1,
+      0
+    }
+  },
+  [7002] = {
+    7002,
+    7001,
+    nil,
+    common[26],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      5213002,
+      1,
+      1,
+      2,
+      1601661
+    }
+  },
+  [7003] = {
+    7003,
+    7010,
+    nil,
+    common[27],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    1,
+    {5213001}
+  },
+  [7004] = {
+    7004,
+    7010,
+    nil,
+    common[27],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    5,
+    {
+      5213001,
+      1,
+      1,
+      2,
+      1601671
+    }
+  },
+  [7005] = {
+    7005,
+    7011,
+    nil,
+    "N22 线性关10剧情+焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5221010,
+      1,
+      1,
+      0
+    }
+  },
+  [7020] = {
+    7020,
+    7020,
+    nil,
+    common[28],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5223002,
+      1,
+      1,
+      0
+    }
+  },
+  [7021] = {
+    7021,
+    7020,
+    nil,
+    common[28],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    {
+      5223002,
+      1,
+      1,
+      2,
+      1501711
+    }
+  },
+  [7022] = {
+    7022,
+    7020,
+    nil,
+    common[28],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5223002,
+      1,
+      2,
+      0
+    }
+  },
+  [7030] = {
+    7030,
+    7021,
+    nil,
+    common[29],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[122]
+  },
+  [7031] = {
+    7031,
+    7021,
+    nil,
+    common[29],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    {
+      5223001,
+      1,
+      1,
+      2,
+      1601701
+    }
+  },
+  [7032] = {
+    7032,
+    7021,
+    nil,
+    common[29],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[122]
+  },
+  [7035] = {
+    7035,
+    7024,
+    nil,
+    common[30],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      410001,
+      1,
+      1,
+      0
+    }
+  },
+  [7036] = {
+    7036,
+    7024,
+    nil,
+    common[30],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[123]
+  },
+  [7037] = {
+    7037,
+    7024,
+    nil,
+    common[30],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    common[123]
+  },
+  [703401] = {
+    703401,
+    7023,
+    nil,
+    "大航海对话01",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      410002,
+      1,
+      1,
+      0
+    }
+  },
+  [703402] = {
+    703402,
+    7023,
+    nil,
+    "大航海对话02",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      410002,
+      1,
+      2,
+      0
+    }
+  },
+  [703403] = {
+    703403,
+    7023,
+    nil,
+    "大航海对话03",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      410002,
+      1,
+      3,
+      0
+    }
+  },
+  [703404] = {
+    703404,
+    7023,
+    nil,
+    "大航海对话04",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      410002,
+      1,
+      4,
+      0
+    }
+  },
+  [703801] = {
+    703801,
+    7025,
+    nil,
+    common[31],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      410003,
+      1,
+      1,
+      0
+    }
+  },
+  [703802] = {
+    703802,
+    7025,
+    nil,
+    common[31],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      410004,
+      1,
+      1,
+      0
+    }
+  },
+  [703803] = {
+    703803,
+    7025,
+    nil,
+    common[31],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      410005,
+      1,
+      1,
+      0
+    }
+  },
+  [703804] = {
+    703804,
+    7025,
+    nil,
+    common[31],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      410006,
+      1,
+      1,
+      0
+    }
+  },
+  [7040] = {
+    7040,
+    7040,
+    nil,
+    "焦点引导爱丝特Boss",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5231012,
+      1,
+      1,
+      0
+    }
+  },
+  [7041] = {
+    7041,
+    7041,
+    nil,
+    common[32],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5235002,
+      1,
+      1,
+      0
+    }
+  },
+  [7042] = {
+    7042,
+    7041,
+    nil,
+    common[32],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    {
+      5235002,
+      1,
+      1,
+      2,
+      1601731
+    }
+  },
+  [7043] = {
+    7043,
+    7042,
+    nil,
+    common[33],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5235003,
+      1,
+      1,
+      0
+    }
+  },
+  [7044] = {
+    7044,
+    7042,
+    nil,
+    common[33],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    {
+      5235003,
+      1,
+      1,
+      2,
+      1401691
+    }
+  },
+  [7050] = {
+    7050,
+    7050,
+    nil,
+    common[34],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5235001,
+      1,
+      1,
+      0
+    }
+  },
+  [7051] = {
+    7051,
+    7050,
+    nil,
+    common[34],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    {
+      5235001,
+      1,
+      1,
+      2,
+      1601721
+    }
+  },
+  [7052] = {
+    7052,
+    7050,
+    nil,
+    common[34],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5235001,
+      1,
+      2,
+      0
+    }
+  },
+  [7053] = {
+    7053,
+    7053,
+    nil,
+    "焦点引导恶面花Boss",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101314,
+      1,
+      1,
+      0
+    }
+  },
+  [7054] = {
+    7054,
+    7054,
+    nil,
+    "焦点引导蚀虫Boss",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101307,
+      1,
+      1,
+      0
+    }
+  },
+  [7057] = {
+    7057,
+    7057,
+    nil,
+    "主线13-7结束剧情",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    28,
+    {101307}
+  },
+  [7059] = {
+    7059,
+    7059,
+    nil,
+    "主线13-12开始剧情",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101312,
+      1,
+      1,
+      0
+    }
+  },
+  [7060] = {
+    7060,
+    7060,
+    nil,
+    "14-9 提灯灵焦点引导1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101409,
+      1,
+      1,
+      0
+    }
+  },
+  [7062] = {
+    7062,
+    7062,
+    nil,
+    "14-14 梦底丝焦点引导1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101414,
+      1,
+      1,
+      0
+    }
+  },
+  [7070] = {
+    7070,
+    7070,
+    nil,
+    common[35],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5243002,
+      1,
+      1,
+      0
+    }
+  },
+  [7071] = {
+    7071,
+    7070,
+    nil,
+    common[35],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5243002,
+      1,
+      1,
+      2
+    }
+  },
+  [7080] = {
+    7080,
+    7080,
+    nil,
+    "焦点引导癫蹄Boss",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101407,
+      1,
+      1,
+      0
+    }
+  },
+  [7090] = {
+    7090,
+    7090,
+    nil,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5243001,
+      1,
+      1,
+      0
+    }
+  },
+  [7091] = {
+    7091,
+    7090,
+    nil,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    {
+      5243001,
+      1,
+      1,
+      2,
+      1601531
+    }
+  },
+  [7092] = {
+    7092,
+    7090,
+    nil,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    common[124]
+  },
+  [7093] = {
+    7093,
+    7090,
+    nil,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    common[124]
+  },
+  [7094] = {
+    7094,
+    7090,
+    nil,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    common[124]
+  },
+  [7095] = {
+    7095,
+    7090,
+    nil,
+    common[36],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    common[124]
+  },
+  [7100] = {
+    7100,
+    7100,
+    nil,
+    "N25 线性关第三关毒虫焦点引导1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5251003,
+      1,
+      1,
+      0
+    }
+  },
+  [7101] = {
+    7101,
+    7101,
+    nil,
+    "N25 线性关boss幽冥亚种焦点引导1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5251013,
+      1,
+      1,
+      0
+    }
+  },
+  [7102] = {
+    7102,
+    7102,
+    nil,
+    "N25 维克试用关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5254002,
+      1,
+      1,
+      0
+    }
+  },
+  [7103] = {
+    7103,
+    7103,
+    nil,
+    common[37],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5254003,
+      1,
+      1,
+      0
+    }
+  },
+  [7104] = {
+    7104,
+    7103,
+    nil,
+    common[37],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    {
+      5254003,
+      1,
+      1,
+      2,
+      1501801
+    }
+  },
+  [7105] = {
+    7105,
+    7103,
+    nil,
+    common[37],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5254003,
+      1,
+      1,
+      2
+    }
+  },
+  [7106] = {
+    7106,
+    7104,
+    nil,
+    common[38],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5254001,
+      1,
+      1,
+      0
+    }
+  },
+  [7107] = {
+    7107,
+    7104,
+    nil,
+    common[38],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    29,
+    {
+      5254001,
+      1,
+      1,
+      2,
+      1601771
+    }
+  },
+  [7201] = {
+    7201,
+    7201,
+    nil,
+    "N25 朦刹",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5252004,
+      1,
+      1,
+      0
+    }
+  },
+  [7202] = {
+    7202,
+    7202,
+    nil,
+    "N26 Boss尤",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5261012,
+      1,
+      1,
+      0
+    }
+  },
+  [7300] = {
+    7300,
+    7300,
+    nil,
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5263001,
+      1,
+      1,
+      0
+    }
+  },
+  [7301] = {
+    7301,
+    7300,
+    nil,
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5263001,
+      1,
+      1,
+      2
+    }
+  },
+  [7302] = {
+    7302,
+    7301,
+    nil,
+    common[40],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5263002,
+      1,
+      1,
+      0
+    }
+  },
+  [7303] = {
+    7303,
+    7301,
+    nil,
+    common[41],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5263002,
+      1,
+      0,
+      2,
+      1601811
+    }
+  },
+  [7304] = {
+    7304,
+    7301,
+    nil,
+    common[42],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5263002,
+      1,
+      0,
+      2,
+      1400811
+    }
+  },
+  [7305] = {
+    7305,
+    7301,
+    nil,
+    common[43],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5263002,
+      1,
+      0,
+      2,
+      1600251
+    }
+  },
+  [7306] = {
+    7306,
+    7302,
+    nil,
+    common[44],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5263003,
+      1,
+      1,
+      0
+    }
+  },
+  [7307] = {
+    7307,
+    7302,
+    nil,
+    common[45],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5263003,
+      1,
+      0,
+      2,
+      1501831
+    }
+  },
+  [7401] = {
+    7401,
+    7401,
+    nil,
+    "焦点引导粉红沙虫boss",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5271012,
+      1,
+      1,
+      0
+    }
+  },
+  [7501] = {
+    7501,
+    7501,
+    nil,
+    "N27仄助焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5271007,
+      1,
+      1,
+      0
+    }
+  },
+  [7601] = {
+    7601,
+    7601,
+    nil,
+    "N27困难关焦点引导-帕索洛机关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5272004,
+      1,
+      1,
+      0
+    }
+  },
+  [7602] = {
+    7602,
+    7602,
+    nil,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5272001,
+      1,
+      1,
+      0
+    }
+  },
+  [7701] = {
+    7701,
+    7701,
+    nil,
+    common[46],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5272001,
+      2,
+      1,
+      0
+    }
+  },
+  [7801] = {
+    7801,
+    7801,
+    nil,
+    "N27团战",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5272002,
+      1,
+      1,
+      0
+    }
+  },
+  [7901] = {
+    7901,
+    7901,
+    nil,
+    "凯雅引导1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5274002,
+      1,
+      1,
+      0
+    }
+  },
+  [7902] = {
+    7902,
+    7901,
+    nil,
+    "凯雅引导2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5274002,
+      1,
+      0,
+      2,
+      1501851,
+      1
+    }
+  },
+  [7903] = {
+    7903,
+    7901,
+    nil,
+    "凯雅引导3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5274002,
+      1,
+      0,
+      2,
+      1501851,
+      2
+    }
+  },
+  [7904] = {
+    7904,
+    7802,
+    nil,
+    "耶利亚",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5274001,
+      1,
+      1,
+      0
+    }
+  },
+  [8001] = {
+    8001,
+    8001,
+    nil,
+    "N28 盗宝",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5283004,
+      1,
+      1,
+      0
+    }
+  },
+  [8002] = {
+    8002,
+    8002,
+    nil,
+    "N28四骑士引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5281011,
+      1,
+      1,
+      0
+    }
+  },
+  [8003] = {
+    8003,
+    8003,
+    nil,
+    "蒂娜",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5284001,
+      1,
+      1,
+      0
+    }
+  },
+  [8004] = {
+    8004,
+    8004,
+    nil,
+    "零恩1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5284002,
+      1,
+      1,
+      0
+    }
+  },
+  [8009] = {
+    8009,
+    8004,
+    nil,
+    "零恩",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5284002,
+      1,
+      0,
+      2,
+      1601891,
+      1
+    }
+  },
+  [8005] = {
+    8005,
+    8004,
+    nil,
+    "零恩2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5284002,
+      2,
+      1,
+      0
+    }
+  },
+  [8006] = {
+    8006,
+    8005,
+    nil,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5284003,
+      1,
+      1,
+      0
+    }
+  },
+  [8007] = {
+    8007,
+    8005,
+    nil,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5284003,
+      1,
+      0,
+      2,
+      1400611,
+      1
+    }
+  },
+  [8008] = {
+    8008,
+    8005,
+    nil,
+    common[47],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5284003,
+      1,
+      0,
+      2,
+      1400611,
+      2
+    }
+  },
+  [8050] = {
+    8050,
+    8050,
+    nil,
+    "N29 战棋 1关1回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5299000,
+      1,
+      1,
+      0
+    }
+  },
+  [8051] = {
+    8051,
+    8051,
+    nil,
+    "N29 战棋 1关2回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5299000,
+      1,
+      2,
+      0
+    }
+  },
+  [8052] = {
+    8052,
+    8052,
+    nil,
+    "N29 战棋 2关1回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5299001,
+      1,
+      1,
+      0
+    }
+  },
+  [8053] = {
+    8053,
+    8053,
+    nil,
+    "N29 战棋 3关1回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5299002,
+      1,
+      1,
+      0
+    }
+  },
+  [8054] = {
+    8054,
+    8054,
+    nil,
+    "N29 战棋 5关1回合",
+    9999,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5299004,
+      1,
+      1,
+      0
+    }
+  },
+  [8055] = {
+    8055,
+    8055,
+    nil,
+    "N29 战棋 6关1回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5299005,
+      1,
+      1,
+      0
+    }
+  },
+  [8056] = {
+    8056,
+    8056,
+    nil,
+    "N29 战棋 9关1回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5299008,
+      1,
+      1,
+      0
+    }
+  },
+  [8057] = {
+    8057,
+    8057,
+    nil,
+    common[48],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5294001,
+      1,
+      1,
+      0
+    }
+  },
+  [8058] = {
+    8058,
+    8057,
+    nil,
+    common[48],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5294001,
+      1,
+      0,
+      2,
+      1601911,
+      1
+    }
+  },
+  [8059] = {
+    8059,
+    8057,
+    nil,
+    common[48],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5294001,
+      1,
+      0,
+      2,
+      1601911,
+      2
+    }
+  },
+  [8060] = {
+    8060,
+    8060,
+    nil,
+    common[49],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5294002,
+      1,
+      1,
+      0
+    }
+  },
+  [8061] = {
+    8061,
+    8060,
+    nil,
+    common[49],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5294002,
+      1,
+      0,
+      2,
+      1501931,
+      1
+    }
+  },
+  [8089] = {
+    8089,
+    8089,
+    nil,
+    common[50],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5291008,
+      1,
+      1,
+      0
+    }
+  },
+  [8090] = {
+    8090,
+    8090,
+    nil,
+    common[50],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5291014,
+      1,
+      1,
+      0
+    }
+  },
+  [8092] = {
+    8092,
+    8092,
+    nil,
+    common[50],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5293005,
+      1,
+      1,
+      0
+    }
+  },
+  [8094] = {
+    8094,
+    8094,
+    nil,
+    "N30 启光战兵焦点引导主线15-2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101502,
+      1,
+      1,
+      0
+    }
+  },
+  [8095] = {
+    8095,
+    8095,
+    nil,
+    "N30 钻探者 焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101509,
+      1,
+      1,
+      0
+    }
+  },
+  [8098] = {
+    8098,
+    8098,
+    nil,
+    "N30 斐桀洛 焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101614,
+      1,
+      1,
+      0
+    }
+  },
+  [8099] = {
+    8099,
+    8099,
+    nil,
+    "N30 噩梦塔 镣裁机铠引导 水塔",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4005010,
+      1,
+      1,
+      0
+    }
+  },
+  [8100] = {
+    8100,
+    8099,
+    nil,
+    "N30 噩梦塔 镣裁机铠引导 雷塔",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4008010,
+      1,
+      1,
+      0
+    }
+  },
+  [8101] = {
+    8101,
+    8101,
+    nil,
+    "N30 噩梦塔 黑菲 博怒格尔登 火塔1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4006010,
+      1,
+      1,
+      0
+    }
+  },
+  [8102] = {
+    8102,
+    8101,
+    nil,
+    "N30 噩梦塔 黑菲 博怒格尔登 森塔1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      4007010,
+      1,
+      1,
+      0
+    }
+  },
+  [8103] = {
+    8103,
+    8103,
+    nil,
+    "主线15章章底夜王3阶段",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101514,
+      1,
+      1,
+      0
+    }
+  },
+  [8104] = {
+    8104,
+    8104,
+    nil,
+    common[51],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5301001,
+      1,
+      1,
+      0
+    }
+  },
+  [8105] = {
+    8105,
+    8104,
+    nil,
+    common[51],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5301001,
+      1,
+      0,
+      2,
+      1601921,
+      1
+    }
+  },
+  [8106] = {
+    8106,
+    8104,
+    nil,
+    common[51],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5301001,
+      2,
+      1,
+      0
+    }
+  },
+  [8107] = {
+    8107,
+    8105,
+    nil,
+    common[52],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5301002,
+      1,
+      1,
+      0
+    }
+  },
+  [8108] = {
+    8108,
+    8105,
+    nil,
+    common[52],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5301002,
+      1,
+      0,
+      2,
+      1601991,
+      1
+    }
+  },
+  [8109] = {
+    8109,
+    8109,
+    nil,
+    "N30 盘丝蛛后boss",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101609,
+      1,
+      1,
+      0
+    }
+  },
+  [8110] = {
+    8110,
+    8110,
+    nil,
+    "N30 精英启光小兵",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101603,
+      1,
+      1,
+      0
+    }
+  },
+  [8111] = {
+    8111,
+    8106,
+    nil,
+    common[53],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5301003,
+      1,
+      1,
+      0
+    }
+  },
+  [8112] = {
+    8112,
+    8106,
+    nil,
+    common[53],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5301003,
+      1,
+      0,
+      2,
+      1502001,
+      1
+    }
+  },
+  [8113] = {
+    8113,
+    8106,
+    nil,
+    common[53],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5301003,
+      2,
+      1,
+      0
+    }
+  },
+  [8121] = {
+    8121,
+    8121,
+    nil,
+    "N31 线性关第11关迈木·卡尔帝玛焦点引导1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5311014,
+      1,
+      1,
+      0
+    }
+  },
+  [8127] = {
+    8127,
+    8127,
+    nil,
+    "N31 线性关约书亚焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5311016,
+      1,
+      1,
+      0
+    }
+  },
+  [8122] = {
+    8122,
+    8122,
+    nil,
+    common[54],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5313003,
+      1,
+      1,
+      0
+    }
+  },
+  [8123] = {
+    8123,
+    8122,
+    nil,
+    common[54],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5313003,
+      1,
+      0,
+      2,
+      1502031,
+      1
+    }
+  },
+  [8150] = {
+    8150,
+    8150,
+    nil,
+    common[55],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5313002,
+      1,
+      1,
+      0
+    }
+  },
+  [8151] = {
+    8151,
+    8150,
+    nil,
+    common[55],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5313002,
+      1,
+      0,
+      2,
+      1602021,
+      1
+    }
+  },
+  [8152] = {
+    8152,
+    8150,
+    nil,
+    common[55],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5313002,
+      1,
+      0,
+      2,
+      1602021,
+      2
+    }
+  },
+  [8160] = {
+    8160,
+    8160,
+    nil,
+    "sp米娅-1波次1回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5313001,
+      1,
+      1,
+      0
+    }
+  },
+  [8161] = {
+    8161,
+    8160,
+    nil,
+    "sp米娅",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5313001,
+      1,
+      0,
+      2,
+      1602011,
+      1
+    }
+  },
+  [8162] = {
+    8162,
+    8160,
+    nil,
+    "sp米娅-1波次2回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5313001,
+      1,
+      2,
+      0
+    }
+  },
+  [8164] = {
+    8164,
+    8160,
+    nil,
+    common[55],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5313001,
+      1,
+      0,
+      2,
+      1602011,
+      2
+    }
+  },
+  [8163] = {
+    8163,
+    8160,
+    nil,
+    "sp米娅-2波次1回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5313001,
+      2,
+      1,
+      0
+    }
+  },
+  [8165] = {
+    8165,
+    8165,
+    nil,
+    "消灭星星第1关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5319001,
+      1,
+      1,
+      0
+    }
+  },
+  [8166] = {
+    8166,
+    8166,
+    nil,
+    "消灭星星第2关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5319002,
+      1,
+      1,
+      0
+    }
+  },
+  [8167] = {
+    8167,
+    8167,
+    nil,
+    "消灭星星第3关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5319003,
+      1,
+      1,
+      0
+    }
+  },
+  [8168] = {
+    8168,
+    8168,
+    nil,
+    "消灭星星第4关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5319004,
+      1,
+      1,
+      0
+    }
+  },
+  [8169] = {
+    8169,
+    8169,
+    nil,
+    "消灭星星第5关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5319006,
+      1,
+      1,
+      0
+    }
+  },
+  [8170] = {
+    8170,
+    8170,
+    nil,
+    "消灭星星第6关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5319005,
+      1,
+      1,
+      0
+    }
+  },
+  [8171] = {
+    8171,
+    8171,
+    nil,
+    "消灭星星第7关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5319007,
+      1,
+      1,
+      0
+    }
+  },
+  [8300] = {
+    8300,
+    8173,
+    nil,
+    "约书亚入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5324001,
+      1,
+      1,
+      0
+    }
+  },
+  [8301] = {
+    8301,
+    8173,
+    nil,
+    "约书亚放完第一次主动技",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5324001,
+      1,
+      0,
+      2,
+      1602041,
+      1
+    }
+  },
+  [8302] = {
+    8302,
+    8173,
+    nil,
+    "约书亚放完第二次主动技",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5324001,
+      1,
+      0,
+      2,
+      1602041,
+      2
+    }
+  },
+  [8230] = {
+    8230,
+    8230,
+    nil,
+    "白兰入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5324002,
+      1,
+      1,
+      0
+    }
+  },
+  [8231] = {
+    8231,
+    8230,
+    nil,
+    "薇丝放完第1次主动技",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5324002,
+      1,
+      0,
+      2,
+      1500331,
+      1
+    }
+  },
+  [8232] = {
+    8232,
+    8230,
+    nil,
+    "白兰放完第1次主动技",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5324002,
+      1,
+      0,
+      2,
+      1502051,
+      1
+    }
+  },
+  [8240] = {
+    8240,
+    8240,
+    nil,
+    "神女蝴蝶",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5331013,
+      1,
+      1,
+      0
+    }
+  },
+  [8241] = {
+    8241,
+    8174,
+    nil,
+    "希南入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5334002,
+      1,
+      1,
+      0
+    }
+  },
+  [8242] = {
+    8242,
+    8174,
+    nil,
+    "希南放完技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5334002,
+      1,
+      0,
+      2,
+      1602071,
+      1
+    }
+  },
+  [8243] = {
+    8243,
+    8174,
+    nil,
+    "希南第二波",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5334002,
+      2,
+      1,
+      0
+    }
+  },
+  [8400] = {
+    8400,
+    8300,
+    nil,
+    "莱蕾入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5334001,
+      1,
+      1,
+      0
+    }
+  },
+  [8401] = {
+    8401,
+    8300,
+    nil,
+    "莱蕾放完技能1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5334001,
+      1,
+      0,
+      2,
+      1602061,
+      1
+    }
+  },
+  [8402] = {
+    8402,
+    8300,
+    nil,
+    "莱蕾放完技能2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5334001,
+      1,
+      0,
+      2,
+      1602061,
+      2
+    }
+  },
+  [8320] = {
+    8320,
+    8320,
+    nil,
+    "吧噗入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5334003,
+      1,
+      1,
+      0
+    }
+  },
+  [8321] = {
+    8321,
+    8320,
+    nil,
+    "吧噗放完技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5334003,
+      1,
+      0,
+      2,
+      1502081,
+      1
+    }
+  },
+  [8322] = {
+    8322,
+    8320,
+    nil,
+    "极光",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5334003,
+      1,
+      1,
+      2
+    }
+  },
+  [123001] = {
+    123001,
+    123001,
+    nil,
+    "线性关页面-点小游戏跳转",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {100},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [123002] = {
+    123002,
+    123002,
+    nil,
+    "地图页面-点金币1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {97},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [123003] = {
+    123003,
+    123003,
+    nil,
+    "建筑升级页面-点1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {101},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [123004] = {
+    123004,
+    123004,
+    nil,
+    "建筑升级弹窗-点奖励",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {103},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [123005] = {
+    123005,
+    123005,
+    nil,
+    "建筑升级页面完成-关闭",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {102},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [123006] = {
+    123006,
+    123006,
+    nil,
+    "地图页面-点光灵",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {98},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [123007] = {
+    123007,
+    123007,
+    nil,
+    "光灵界面-点约会",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {104},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [123008] = {
+    123008,
+    123008,
+    nil,
+    "地图界面-点手册",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {99},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [800101] = {
+    800101,
+    800101,
+    nil,
+    "活动",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {106}
+  },
+  [800102] = {
+    800102,
+    800102,
+    nil,
+    "地图",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[125]
+  },
+  [800103] = {
+    800103,
+    800103,
+    nil,
+    "第一关通关后",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {111},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    {
+      80001,
+      1,
+      8001001
+    },
+    common[126]
+  },
+  [800104] = {
+    800104,
+    800104,
+    nil,
+    "第二关通关后",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[125],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[126],
+    common[127]
+  },
+  [800105] = {
+    800105,
+    800105,
+    nil,
+    "第十二关通关后",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    common[125],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[128]
+  },
+  [800106] = {
+    800106,
+    800106,
+    nil,
+    "微笑之水首次升级在升级弹板上引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {108}
+  },
+  [800107] = {
+    800107,
+    800107,
+    nil,
+    "微笑之水解锁新功能2号在升级弹板上引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {109}
+  },
+  [800110] = {
+    800110,
+    800110,
+    nil,
+    "拾取第一个收藏品-全套表现结束后",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {110},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[126],
+    common[127]
+  },
+  [800111] = {
+    800111,
+    800111,
+    nil,
+    "日常关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {112},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    800105,
+    nil,
+    nil,
+    common[128],
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-09-06 05:00:00",
+    "2023-09-27 04:00:00"
+  },
+  [8150001] = {
+    8150001,
+    8150001,
+    nil,
+    "赛季2述梦与遨游切换",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {117}
+  },
+  [800202] = {
+    800202,
+    800202,
+    nil,
+    "天平小游戏",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {114}
+  },
+  [141001] = {
+    141001,
+    141001,
+    nil,
+    "CN12 N41主活动新手引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {137},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2024-02-26 09:00:00"
+  },
+  [52906001] = {
+    52906001,
+    52906001,
+    nil,
+    "伊芙简单焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800135,
+      1,
+      1,
+      0
+    }
+  },
+  [52916001] = {
+    52916001,
+    52916001,
+    nil,
+    "伊芙困难焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800136,
+      1,
+      1,
+      0
+    }
+  },
+  [124001] = {
+    124001,
+    124001,
+    nil,
+    "N33主活动新手引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {105},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[56]
+  },
+  [80010121] = {
+    80010121,
+    80010121,
+    nil,
+    common[57],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800101,
+      1,
+      1,
+      0
+    }
+  },
+  [80010111] = {
+    80010111,
+    80010121,
+    nil,
+    common[58],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800102,
+      1,
+      1,
+      0
+    }
+  },
+  [80010521] = {
+    80010521,
+    80010521,
+    nil,
+    "点选转色模块2引导+困难",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800110,
+      1,
+      1,
+      0
+    }
+  },
+  [80010511] = {
+    80010511,
+    80010511,
+    nil,
+    "点选转色模块2引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800109,
+      1,
+      1,
+      0
+    }
+  },
+  [80010621] = {
+    80010621,
+    80010621,
+    nil,
+    "困难母巢焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800112,
+      1,
+      1,
+      0
+    }
+  },
+  [80010721] = {
+    80010721,
+    80010721,
+    nil,
+    "困难持盾敌人对队伍造成伤害",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800114,
+      1,
+      1,
+      0
+    }
+  },
+  [80010821] = {
+    80010821,
+    80010821,
+    nil,
+    "困难夏尔的技能描述",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800116,
+      1,
+      1,
+      0
+    }
+  },
+  [80011021] = {
+    80011021,
+    80011021,
+    nil,
+    "敌人攻击力大幅提升",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800120,
+      1,
+      1,
+      0
+    }
+  },
+  [80011121] = {
+    80011121,
+    80011121,
+    nil,
+    "通过任意门可以去到任何地方",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800122,
+      1,
+      1,
+      0
+    }
+  },
+  [80011421] = {
+    80011421,
+    80011421,
+    nil,
+    "影子不再召唤符文而是直接召唤影鬼",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800128,
+      1,
+      1,
+      0
+    }
+  },
+  [80011521] = {
+    80011521,
+    80011521,
+    nil,
+    "尘仆会不断复活击杀鸣灼",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800130,
+      1,
+      1,
+      0
+    }
+  },
+  [80010921] = {
+    80010921,
+    80010921,
+    nil,
+    common[59],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800118,
+      1,
+      1,
+      0
+    }
+  },
+  [80010911] = {
+    80010911,
+    80010911,
+    nil,
+    common[60],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800117,
+      1,
+      1,
+      0
+    }
+  },
+  [80011321] = {
+    80011321,
+    80011321,
+    nil,
+    common[59],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800126,
+      1,
+      1,
+      0
+    }
+  },
+  [80011311] = {
+    80011311,
+    80011311,
+    nil,
+    common[60],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800125,
+      1,
+      1,
+      0
+    }
+  },
+  [80011621] = {
+    80011621,
+    80011621,
+    nil,
+    common[59],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800132,
+      1,
+      1,
+      0
+    }
+  },
+  [80011611] = {
+    80011611,
+    80011611,
+    nil,
+    common[60],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800131,
+      1,
+      1,
+      0
+    }
+  },
+  [8403] = {
+    8403,
+    8403,
+    nil,
+    "焦点引导 咒术小怪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101709,
+      1,
+      1,
+      0
+    }
+  },
+  [8405] = {
+    8405,
+    8405,
+    nil,
+    "乔瑟琳入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5343002,
+      1,
+      1,
+      0
+    }
+  },
+  [8406] = {
+    8406,
+    8405,
+    nil,
+    common[61],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5343002,
+      1,
+      2,
+      0
+    }
+  },
+  [8407] = {
+    8407,
+    8406,
+    nil,
+    "sp雷霆开场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5343001,
+      1,
+      1,
+      0
+    }
+  },
+  [8408] = {
+    8408,
+    8406,
+    nil,
+    "sp雷霆放完技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5343001,
+      1,
+      0,
+      2,
+      1602091,
+      1
+    }
+  },
+  [8409] = {
+    8409,
+    8407,
+    nil,
+    common[62],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101808,
+      1,
+      1,
+      0
+    }
+  },
+  [8410] = {
+    8410,
+    8408,
+    nil,
+    common[62],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101810,
+      1,
+      1,
+      0
+    }
+  },
+  [8411] = {
+    8411,
+    8409,
+    nil,
+    common[62],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101806,
+      1,
+      1,
+      0
+    }
+  },
+  [8430] = {
+    8430,
+    8430,
+    nil,
+    "焦点引导 Boss污泥机器人",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101814,
+      1,
+      1,
+      0
+    }
+  },
+  [8501] = {
+    8501,
+    8501,
+    nil,
+    common[62],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101714,
+      1,
+      1,
+      0
+    }
+  },
+  [8502] = {
+    8502,
+    8502,
+    nil,
+    "焦点引导 泥潭机关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101710,
+      1,
+      1,
+      0
+    }
+  },
+  [8503] = {
+    8503,
+    8503,
+    nil,
+    "焦点引导 军官",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101803,
+      1,
+      1,
+      0
+    }
+  },
+  [8440] = {
+    8440,
+    8440,
+    nil,
+    "焦点引导 治疗兵",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101804,
+      1,
+      1,
+      0
+    }
+  },
+  [8441] = {
+    8441,
+    8441,
+    nil,
+    "焦点引导 通信兵",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101805,
+      1,
+      1,
+      0
+    }
+  },
+  [125001] = {
+    125001,
+    125001,
+    nil,
+    "N34主活动新手引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {113},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-09-24 09:00:00"
+  },
+  [80011701] = {
+    80011701,
+    80011701,
+    nil,
+    "简单8 小怪焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800215,
+      1,
+      1,
+      0
+    }
+  },
+  [80011702] = {
+    80011702,
+    80011702,
+    nil,
+    "困难8 小怪焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800216,
+      1,
+      1,
+      0
+    }
+  },
+  [80023701] = {
+    80023701,
+    80023701,
+    nil,
+    "教学关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800237,
+      1,
+      1,
+      0
+    }
+  },
+  [80022901] = {
+    80022901,
+    80022901,
+    nil,
+    common[63],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800229,
+      1,
+      1,
+      0
+    }
+  },
+  [80023001] = {
+    80023001,
+    80023001,
+    nil,
+    common[64],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800230,
+      1,
+      1,
+      0
+    }
+  },
+  [80023501] = {
+    80023501,
+    80023501,
+    nil,
+    common[65],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800235,
+      1,
+      1,
+      0
+    }
+  },
+  [80023601] = {
+    80023601,
+    80023601,
+    nil,
+    common[66],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800236,
+      1,
+      1,
+      0
+    }
+  },
+  [80023801] = {
+    80023801,
+    80023801,
+    nil,
+    "EX1引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800231,
+      1,
+      1,
+      0
+    }
+  },
+  [80023802] = {
+    80023802,
+    80023801,
+    nil,
+    "EX1引导 困难",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800232,
+      1,
+      1,
+      0
+    }
+  },
+  [80023901] = {
+    80023901,
+    80023901,
+    nil,
+    "EX2引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800233,
+      1,
+      1,
+      0
+    }
+  },
+  [80023902] = {
+    80023902,
+    80023901,
+    nil,
+    "EX2引导 困难",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800234,
+      1,
+      1,
+      0
+    }
+  },
+  [80020401] = {
+    80020401,
+    80020401,
+    nil,
+    common[67],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800207,
+      1,
+      1,
+      0
+    }
+  },
+  [80020402] = {
+    80020402,
+    80020402,
+    nil,
+    common[67],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800208,
+      1,
+      1,
+      0
+    }
+  },
+  [50140051] = {
+    50140051,
+    50140051,
+    nil,
+    common[68],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5014005,
+      1,
+      1,
+      0
+    }
+  },
+  [50140052] = {
+    50140052,
+    50140051,
+    nil,
+    common[68],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5014005,
+      1,
+      0,
+      2,
+      1601881,
+      1
+    }
+  },
+  [50140053] = {
+    50140053,
+    50140051,
+    nil,
+    common[68],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5014005,
+      1,
+      2,
+      0
+    }
+  },
+  [50140061] = {
+    50140061,
+    50140061,
+    nil,
+    common[68],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5014006,
+      1,
+      1,
+      0
+    }
+  },
+  [50140062] = {
+    50140062,
+    50140061,
+    nil,
+    common[68],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5014006,
+      1,
+      0,
+      2,
+      1601881,
+      1
+    }
+  },
+  [50140063] = {
+    50140063,
+    50140061,
+    nil,
+    common[68],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5014006,
+      1,
+      1,
+      2
+    }
+  },
+  [170001] = {
+    170001,
+    170001,
+    nil,
+    "CN7主活动",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {118},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-11-06 09:00:00"
+  },
+  [8450] = {
+    8450,
+    8450,
+    nil,
+    "终焉帝局内",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5361008,
+      1,
+      1,
+      0
+    }
+  },
+  [5361001] = {
+    5361001,
+    5361001,
+    nil,
+    "36线性1局内",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5361001,
+      1,
+      1,
+      0
+    }
+  },
+  [80032901] = {
+    80032901,
+    80032901,
+    nil,
+    common[63],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800329,
+      1,
+      1,
+      0
+    }
+  },
+  [80033001] = {
+    80033001,
+    80033001,
+    nil,
+    common[64],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800330,
+      1,
+      1,
+      0
+    }
+  },
+  [80033501] = {
+    80033501,
+    80033501,
+    nil,
+    common[65],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800335,
+      1,
+      1,
+      0
+    }
+  },
+  [80033601] = {
+    80033601,
+    80033601,
+    nil,
+    common[66],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800336,
+      1,
+      1,
+      0
+    }
+  },
+  [800301] = {
+    800301,
+    80030101,
+    nil,
+    "望远镜",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {119},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-11-20 05:00:00",
+    common[69]
+  },
+  [800302] = {
+    800302,
+    80030201,
+    nil,
+    "赛季背包",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {124},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    80030101,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[70],
+    common[69]
+  },
+  [800303] = {
+    800303,
+    80030301,
+    nil,
+    "赛季背包局内",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {125},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[70],
+    common[69]
+  },
+  [537100101] = {
+    537100101,
+    537100101,
+    nil,
+    "n37深色格子",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5371001,
+      1,
+      1,
+      0
+    }
+  },
+  [537100301] = {
+    537100301,
+    537100301,
+    nil,
+    "n37弩手",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5371003,
+      1,
+      1,
+      0
+    }
+  },
+  [537100401] = {
+    537100401,
+    537100401,
+    nil,
+    "n37盗贼",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5371004,
+      1,
+      1,
+      0
+    }
+  },
+  [537100501] = {
+    537100501,
+    537100501,
+    nil,
+    "n37队长",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5371005,
+      1,
+      1,
+      0
+    }
+  },
+  [537100901] = {
+    537100901,
+    537100901,
+    nil,
+    "n37提灯",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5371009,
+      1,
+      1,
+      0
+    }
+  },
+  [537101201] = {
+    537101201,
+    537101201,
+    nil,
+    "n37丽蓓卡",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5371012,
+      1,
+      1,
+      0
+    }
+  },
+  [80030701] = {
+    80030701,
+    80030701,
+    nil,
+    common[71],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800307,
+      1,
+      1,
+      0
+    }
+  },
+  [80030801] = {
+    80030801,
+    80030801,
+    nil,
+    "4困难焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800308,
+      1,
+      1,
+      0
+    }
+  },
+  [80031301] = {
+    80031301,
+    80031301,
+    nil,
+    "7简单焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800313,
+      1,
+      1,
+      0
+    }
+  },
+  [80031401] = {
+    80031401,
+    80031401,
+    nil,
+    "7困难焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800314,
+      1,
+      1,
+      0
+    }
+  },
+  [5374021] = {
+    5374021,
+    5374002,
+    nil,
+    "伊莎",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5374002,
+      1,
+      1,
+      0
+    }
+  },
+  [5374022] = {
+    5374022,
+    5374002,
+    nil,
+    "伊莎技能放完",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5374002,
+      1,
+      0,
+      2,
+      1502151,
+      1
+    }
+  },
+  [5374023] = {
+    5374023,
+    5374002,
+    nil,
+    "伊莎第二回合",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5374002,
+      1,
+      2,
+      0
+    }
+  },
+  [5374011] = {
+    5374011,
+    5374001,
+    nil,
+    "丽蓓卡",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5374001,
+      1,
+      1,
+      0
+    }
+  },
+  [5374012] = {
+    5374012,
+    5374001,
+    nil,
+    "丽蓓卡技能放完",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5374001,
+      1,
+      0,
+      2,
+      1602141,
+      1
+    }
+  },
+  [128001] = {
+    128001,
+    128001,
+    nil,
+    "N37主活动新手引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {120},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2023-11-27 09:00:00"
+  },
+  [128101] = {
+    128101,
+    128101,
+    nil,
+    "启迪互联第一段引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {121}
+  },
+  [128102] = {
+    128102,
+    128102,
+    nil,
+    "启迪互联第二段引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {122}
+  },
+  [128103] = {
+    128103,
+    128103,
+    nil,
+    "启迪互联第三段引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {123}
+  },
+  [181001] = {
+    181001,
+    5601,
+    nil,
+    common[72],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1010100,
+      1,
+      1,
+      0
+    }
+  },
+  [181002] = {
+    181002,
+    5602,
+    nil,
+    common[72],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      1010100,
+      1,
+      2,
+      0
+    }
+  },
+  [5384021] = {
+    5384021,
+    5384021,
+    nil,
+    common[40],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5384002,
+      1,
+      1,
+      0
+    }
+  },
+  [5384022] = {
+    5384022,
+    5384021,
+    nil,
+    common[41],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5384002,
+      1,
+      0,
+      2,
+      1601811
+    }
+  },
+  [5384023] = {
+    5384023,
+    5384021,
+    nil,
+    common[42],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5384002,
+      1,
+      0,
+      2,
+      1400811
+    }
+  },
+  [5384024] = {
+    5384024,
+    5384021,
+    nil,
+    common[43],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5384002,
+      1,
+      0,
+      2,
+      1600251
+    }
+  },
+  [5384031] = {
+    5384031,
+    5384031,
+    nil,
+    common[44],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5384003,
+      1,
+      1,
+      0
+    }
+  },
+  [5384032] = {
+    5384032,
+    5384031,
+    nil,
+    common[45],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5384003,
+      1,
+      0,
+      2,
+      1501831
+    }
+  },
+  [5381002] = {
+    5381002,
+    5381002,
+    nil,
+    common[71],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5381002,
+      1,
+      1,
+      0
+    }
+  },
+  [138001] = {
+    138001,
+    138001,
+    nil,
+    "N38主活动新手引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {126}
+  },
+  [191001] = {
+    191001,
+    191001,
+    nil,
+    "小游戏界面引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {127}
+  },
+  [191002] = {
+    191002,
+    191002,
+    nil,
+    "小游戏第一关引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {128}
+  },
+  [191003] = {
+    191003,
+    191003,
+    nil,
+    "小游戏挑战关引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {129}
+  },
+  [538100101] = {
+    538100101,
+    538100101,
+    nil,
+    "n38机关兽",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5381010,
+      1,
+      1,
+      0
+    }
+  },
+  [53840011] = {
+    53840011,
+    53840011,
+    nil,
+    common[73],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5384001,
+      1,
+      1,
+      0
+    }
+  },
+  [53840012] = {
+    53840012,
+    53840011,
+    nil,
+    common[73],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5384001,
+      1,
+      0,
+      2,
+      1602161
+    }
+  },
+  [139001] = {
+    139001,
+    139001,
+    nil,
+    "N39主活动新手引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {130},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2024-01-08 09:00:00"
+  },
+  [53940031] = {
+    53940031,
+    53940031,
+    nil,
+    common[74],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5394003,
+      1,
+      1,
+      0
+    }
+  },
+  [53940032] = {
+    53940032,
+    53940031,
+    nil,
+    common[74],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5394003,
+      1,
+      0,
+      2,
+      1502201
+    }
+  },
+  [5394021] = {
+    5394021,
+    53940201,
+    nil,
+    common[75],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5394002,
+      1,
+      1,
+      0
+    }
+  },
+  [5394022] = {
+    5394022,
+    53940201,
+    nil,
+    "魔剑放完技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5394002,
+      1,
+      0,
+      2,
+      1500991,
+      1
+    }
+  },
+  [5394023] = {
+    5394023,
+    53940201,
+    nil,
+    common[76],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5394002,
+      1,
+      0,
+      2,
+      1602191,
+      1
+    }
+  },
+  [5394024] = {
+    5394024,
+    53940201,
+    nil,
+    common[61],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5394002,
+      2,
+      1,
+      0
+    }
+  },
+  [5394025] = {
+    5394025,
+    53940201,
+    nil,
+    common[76],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5394002,
+      1,
+      0,
+      2,
+      1602191,
+      2
+    }
+  },
+  [5394026] = {
+    5394026,
+    53940201,
+    nil,
+    common[76],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5394002,
+      1,
+      0,
+      2,
+      0,
+      1
+    }
+  },
+  [5394011] = {
+    5394011,
+    53940101,
+    nil,
+    common[75],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5394001,
+      1,
+      1,
+      0
+    }
+  },
+  [80040001] = {
+    80040001,
+    80040001,
+    nil,
+    "s4邪剑简单",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800429,
+      1,
+      1,
+      0
+    }
+  },
+  [80040002] = {
+    80040002,
+    80040002,
+    nil,
+    "s4邪剑困难",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800430,
+      1,
+      1,
+      0
+    }
+  },
+  [800413] = {
+    800413,
+    800413,
+    nil,
+    common[77],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800413,
+      1,
+      1,
+      0
+    }
+  },
+  [800414] = {
+    800414,
+    800414,
+    nil,
+    common[77],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800414,
+      1,
+      1,
+      0
+    }
+  },
+  [80040111] = {
+    80040111,
+    80040111,
+    nil,
+    common[57],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800401,
+      1,
+      1,
+      0
+    }
+  },
+  [80040112] = {
+    80040112,
+    80040111,
+    nil,
+    common[58],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800402,
+      1,
+      1,
+      0
+    }
+  },
+  [10190501] = {
+    10190501,
+    10190501,
+    nil,
+    "生化兵1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101905,
+      1,
+      1,
+      0
+    }
+  },
+  [10190901] = {
+    10190901,
+    10190901,
+    nil,
+    "生化兵2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101909,
+      1,
+      1,
+      0
+    }
+  },
+  [10190701] = {
+    10190701,
+    10190701,
+    nil,
+    "生化兵3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101907,
+      1,
+      1,
+      0
+    }
+  },
+  [10191201] = {
+    10191201,
+    10191201,
+    nil,
+    "生化兵4",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      101912,
+      1,
+      1,
+      0
+    }
+  },
+  [10200701] = {
+    10200701,
+    10200701,
+    nil,
+    "守护者机关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      102007,
+      1,
+      1,
+      0
+    }
+  },
+  [10201101] = {
+    10201101,
+    10201101,
+    nil,
+    "尤利西斯 简单",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      102011,
+      1,
+      1,
+      0
+    }
+  },
+  [10201201] = {
+    10201201,
+    10201201,
+    nil,
+    "尤利西斯 完全",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      102012,
+      1,
+      1,
+      0
+    }
+  },
+  [140001] = {
+    140001,
+    140001,
+    nil,
+    "NExplore主活动新手引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {131},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2024-01-29 09:00:00"
+  },
+  [800411] = {
+    800411,
+    800411,
+    nil,
+    "小游戏按钮引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {133},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2024-01-17 09:00:00",
+    "2024-03-06 05:00:00"
+  },
+  [800412] = {
+    800412,
+    800412,
+    nil,
+    common[78],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {134}
+  },
+  [54040011] = {
+    54040011,
+    54040011,
+    nil,
+    common[38],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5404001,
+      1,
+      1,
+      0
+    }
+  },
+  [54040012] = {
+    54040012,
+    54040011,
+    nil,
+    common[38],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    30,
+    {
+      5404001,
+      1,
+      0,
+      2,
+      1602211
+    }
+  },
+  [80240101] = {
+    80240101,
+    80240101,
+    nil,
+    "关卡1引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      802401,
+      1,
+      1,
+      0
+    }
+  },
+  [80240102] = {
+    80240102,
+    80240102,
+    nil,
+    "关卡1引导2",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      802401,
+      2,
+      1,
+      0
+    }
+  },
+  [80240111] = {
+    80240111,
+    80240111,
+    nil,
+    "关卡2引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      802402,
+      1,
+      1,
+      0
+    }
+  },
+  [80240211] = {
+    80240211,
+    80240211,
+    nil,
+    "关卡1-3",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      802403,
+      1,
+      1,
+      0
+    }
+  },
+  [80240212] = {
+    80240212,
+    80240212,
+    nil,
+    "关卡2-1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      802405,
+      1,
+      1,
+      0
+    }
+  },
+  [80240213] = {
+    80240213,
+    80240213,
+    nil,
+    "关卡3-1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      802409,
+      1,
+      1,
+      0
+    }
+  },
+  [80240214] = {
+    80240214,
+    80240214,
+    nil,
+    "关卡4-1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      802413,
+      1,
+      1,
+      0
+    }
+  },
+  [80240215] = {
+    80240215,
+    80240215,
+    nil,
+    "关卡5-1",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      802417,
+      1,
+      1,
+      0
+    }
+  },
+  [81100413] = {
+    81100413,
+    81100413,
+    nil,
+    common[78],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {136}
+  },
+  [5419301] = {
+    5419301,
+    5419301,
+    nil,
+    "cn12年兽",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      7001123,
+      1,
+      1,
+      0
+    }
+  },
+  [5414011] = {
+    5414011,
+    54140101,
+    nil,
+    common[75],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5414001,
+      1,
+      1,
+      0
+    }
+  },
+  [5414012] = {
+    5414012,
+    54140101,
+    nil,
+    common[79],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5414001,
+      1,
+      0,
+      2,
+      1602231,
+      1
+    }
+  },
+  [5414031] = {
+    5414031,
+    54140301,
+    nil,
+    common[75],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5414003,
+      1,
+      1,
+      0
+    }
+  },
+  [5414032] = {
+    5414032,
+    54140301,
+    nil,
+    common[79],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5414003,
+      1,
+      0,
+      2,
+      1502241,
+      1
+    }
+  },
+  [5414021] = {
+    5414021,
+    54140201,
+    nil,
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5414002,
+      1,
+      1,
+      0
+    }
+  },
+  [5414022] = {
+    5414022,
+    54140201,
+    nil,
+    common[39],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5414002,
+      1,
+      1,
+      2
+    }
+  },
+  [5419302] = {
+    5419302,
+    5419302,
+    nil,
+    "cn12鼠祟灵",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5411001,
+      1,
+      1,
+      0
+    }
+  },
+  [80050001] = {
+    80050001,
+    80050001,
+    nil,
+    "黑箱小怪",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800504,
+      1,
+      1,
+      0
+    }
+  },
+  [80050111] = {
+    80050111,
+    80050111,
+    nil,
+    "引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800501,
+      1,
+      1,
+      0
+    }
+  },
+  [5419305] = {
+    5419305,
+    5419305,
+    nil,
+    "S5祭剑座简单",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800544,
+      1,
+      1,
+      0
+    }
+  },
+  [5419306] = {
+    5419306,
+    5419306,
+    nil,
+    "S5祭剑座困难",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800510,
+      1,
+      1,
+      0
+    }
+  },
+  [80150101] = {
+    80150101,
+    80150101,
+    nil,
+    "无色限步长 框选行动值描述",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      801501,
+      1,
+      1,
+      0
+    }
+  },
+  [80150201] = {
+    80150201,
+    80150201,
+    nil,
+    "无色限步长 深色格子",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      801502,
+      1,
+      1,
+      0
+    }
+  },
+  [80150301] = {
+    80150301,
+    80150301,
+    nil,
+    "坚石教学",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      801503,
+      1,
+      1,
+      0
+    }
+  },
+  [80250101] = {
+    80250101,
+    80250101,
+    nil,
+    "启迪 深色格子",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      804501,
+      1,
+      1,
+      0
+    }
+  },
+  [542001] = {
+    542001,
+    542001,
+    nil,
+    "N42主活动引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {138},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [542002] = {
+    542002,
+    542002,
+    nil,
+    common[15],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {139},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [542003] = {
+    542003,
+    542003,
+    nil,
+    common[16],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {140},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [542004] = {
+    542004,
+    542004,
+    nil,
+    common[17],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {141},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [542005] = {
+    542005,
+    542005,
+    nil,
+    common[18],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {142},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[14]
+  },
+  [514201] = {
+    514201,
+    514201,
+    nil,
+    "N43主活动新手引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {143},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2024-04-08 09:00:00"
+  },
+  [100209] = {
+    100209,
+    100209,
+    nil,
+    "阿伊让",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      100209,
+      1,
+      1,
+      0
+    }
+  },
+  [16022511] = {
+    16022511,
+    16022511,
+    nil,
+    common[75],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5433001,
+      1,
+      1,
+      0
+    }
+  },
+  [16022512] = {
+    16022512,
+    16022511,
+    nil,
+    "放完技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5433001,
+      1,
+      0,
+      2,
+      1602251,
+      1
+    }
+  },
+  [900101] = {
+    900101,
+    900101,
+    nil,
+    common[80],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2000},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[81]
+  },
+  [900102] = {
+    900102,
+    900102,
+    nil,
+    common[82],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2001},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[81]
+  },
+  [900103] = {
+    900103,
+    900103,
+    nil,
+    common[83],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2002},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[81]
+  },
+  [900104] = {
+    900104,
+    900104,
+    nil,
+    common[84],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2003},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[81]
+  },
+  [900105] = {
+    900105,
+    900105,
+    nil,
+    common[85],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2005},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    900104,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[81]
+  },
+  [900106] = {
+    900106,
+    900106,
+    nil,
+    common[86],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2004},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[81]
+  },
+  [900107] = {
+    900107,
+    900107,
+    nil,
+    "首次进入赛季秘境难度3时触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {144},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[81]
+  },
+  [900108] = {
+    900108,
+    900108,
+    nil,
+    common[87],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {145},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[81]
+  },
+  [900109] = {
+    900109,
+    900109,
+    nil,
+    common[87],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {146},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[81]
+  },
+  [900201] = {
+    900201,
+    900201,
+    nil,
+    common[80],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2010}
+  },
+  [900202] = {
+    900202,
+    900202,
+    nil,
+    common[82],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2016}
+  },
+  [900203] = {
+    900203,
+    900203,
+    nil,
+    common[83],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2012}
+  },
+  [900204] = {
+    900204,
+    900204,
+    nil,
+    common[84],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2013}
+  },
+  [900205] = {
+    900205,
+    900205,
+    nil,
+    common[85],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2015},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    900204
+  },
+  [900206] = {
+    900206,
+    900206,
+    nil,
+    common[86],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2014}
+  },
+  [900207] = {
+    900207,
+    900207,
+    nil,
+    "营地界面引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2006}
+  },
+  [900210] = {
+    900210,
+    900210,
+    nil,
+    "祭坛界面引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2009}
+  },
+  [900211] = {
+    900211,
+    900211,
+    nil,
+    "矿点房界面引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {2007}
+  },
+  [80060301] = {
+    80060301,
+    80060301,
+    nil,
+    "S6-缠人鬼引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800603,
+      1,
+      1,
+      0
+    }
+  },
+  [80061801] = {
+    80061801,
+    80061801,
+    nil,
+    "boss胡萝卜剧情",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800618,
+      1,
+      1,
+      0
+    }
+  },
+  [80061001] = {
+    80061001,
+    80061001,
+    nil,
+    "boss胡萝卜倍卡",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800610,
+      1,
+      1,
+      0
+    }
+  },
+  [80060101] = {
+    80060101,
+    80060101,
+    nil,
+    "S6-流血机制引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800601,
+      1,
+      1,
+      0
+    }
+  },
+  [80060201] = {
+    80060201,
+    80060201,
+    nil,
+    "S6-碎石引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800602,
+      1,
+      1,
+      0
+    }
+  },
+  [80060401] = {
+    80060401,
+    80060401,
+    nil,
+    "S6-地刺引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      800604,
+      1,
+      1,
+      0
+    }
+  },
+  [2909701] = {
+    2909701,
+    2909701,
+    nil,
+    common[88],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5451011,
+      1,
+      1,
+      0
+    }
+  },
+  [15022811] = {
+    15022811,
+    15022811,
+    nil,
+    common[75],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5454002,
+      1,
+      1,
+      0
+    }
+  },
+  [15022812] = {
+    15022812,
+    15022811,
+    nil,
+    common[89],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5454002,
+      1,
+      0,
+      2,
+      1502281,
+      1
+    }
+  },
+  [15022813] = {
+    15022813,
+    15022811,
+    nil,
+    common[89],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5454002,
+      1,
+      0,
+      2,
+      1502281,
+      2
+    }
+  },
+  [54540011] = {
+    54540011,
+    5454001,
+    nil,
+    "蕾切尔入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5454001,
+      1,
+      1,
+      0
+    }
+  },
+  [54540012] = {
+    54540012,
+    5454001,
+    nil,
+    "蕾切尔放完技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5454001,
+      1,
+      0,
+      2,
+      1602271,
+      1
+    }
+  },
+  [54540013] = {
+    54540013,
+    5454001,
+    nil,
+    "蕾切尔极光之后",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5454001,
+      1,
+      1,
+      2
+    }
+  },
+  [546010101] = {
+    546010101,
+    54601,
+    nil,
+    "进入钓鱼小游戏界面触发",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {147}
+  },
+  [8114001] = {
+    8114001,
+    8114001,
+    nil,
+    "活动中心危机合约",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {148},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    "2024-05-22 05:00:00",
+    "2024-06-12 04:00:00"
+  },
+  [54640011] = {
+    54640011,
+    5464001,
+    nil,
+    common[90],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5464001,
+      1,
+      1,
+      0
+    }
+  },
+  [54640012] = {
+    54640012,
+    5464001,
+    nil,
+    common[90],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5464001,
+      1,
+      0,
+      2,
+      1602291,
+      1
+    }
+  },
+  [138004] = {
+    138004,
+    138004,
+    nil,
+    "怪物攻击前",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {132}
+  },
+  [138005] = {
+    138005,
+    138005,
+    nil,
+    "怪物攻击后",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {135}
+  },
+  [2909801] = {
+    2909801,
+    2909801,
+    nil,
+    common[88],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5471010,
+      1,
+      1,
+      0
+    }
+  },
+  [2005101] = {
+    2005101,
+    2005101,
+    nil,
+    "蝎子小怪焦点引导",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5471003,
+      1,
+      1,
+      0
+    }
+  },
+  [2910001] = {
+    2910001,
+    2910001,
+    nil,
+    "S7苏尔特恩剧情",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      807004,
+      1,
+      1,
+      0
+    }
+  },
+  [2910002] = {
+    2910002,
+    2910002,
+    nil,
+    "S7苏尔特恩倍卡",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      807110,
+      3,
+      1,
+      0
+    }
+  },
+  [2910101] = {
+    2910101,
+    2910101,
+    nil,
+    "戴维主教boss焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5481010,
+      1,
+      1,
+      0
+    }
+  },
+  [2005201] = {
+    2005201,
+    2005201,
+    nil,
+    "死徒焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5481005,
+      1,
+      1,
+      0
+    }
+  },
+  [5484011] = {
+    5484011,
+    5484001,
+    nil,
+    "sp维多利亚入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5486001,
+      1,
+      1,
+      0
+    }
+  },
+  [5484012] = {
+    5484012,
+    5484001,
+    nil,
+    "sp维多利亚放完技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5486001,
+      1,
+      0,
+      2,
+      1602301,
+      1
+    }
+  },
+  [5484021] = {
+    5484021,
+    5484002,
+    nil,
+    "威廉入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5486002,
+      1,
+      1,
+      0
+    }
+  },
+  [5484022] = {
+    5484022,
+    5484002,
+    nil,
+    "威廉放完技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5486002,
+      1,
+      0,
+      2,
+      1602311,
+      1
+    }
+  },
+  [5484031] = {
+    5484031,
+    5484003,
+    nil,
+    "sp圣钉入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5486003,
+      1,
+      1,
+      0
+    }
+  },
+  [5484032] = {
+    5484032,
+    5484003,
+    nil,
+    "sp圣钉放完技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5486003,
+      1,
+      0,
+      2,
+      1502321,
+      1
+    }
+  },
+  [2909901] = {
+    2909901,
+    2909901,
+    nil,
+    "遗迹石巨人BOSS焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5491009,
+      1,
+      1,
+      0
+    }
+  },
+  [2803101] = {
+    2803101,
+    2803101,
+    nil,
+    "炼金素材焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5491001,
+      1,
+      1,
+      0
+    }
+  },
+  [5491007] = {
+    5491007,
+    5491007,
+    nil,
+    "莱莎线性8局内",
+    99,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5491007,
+      1,
+      1,
+      0
+    }
+  },
+  [5491008] = {
+    5491008,
+    5491008,
+    nil,
+    "莱莎线性9局内",
+    99,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5491008,
+      1,
+      1,
+      0
+    }
+  },
+  [16023311] = {
+    16023311,
+    1602331,
+    nil,
+    common[22],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5204001,
+      1,
+      1,
+      0
+    }
+  },
+  [16023312] = {
+    16023312,
+    1602331,
+    nil,
+    "莱因哈特试用-贡露放技能",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5204001,
+      1,
+      0,
+      2,
+      1602331,
+      1
+    }
+  },
+  [16023313] = {
+    16023313,
+    1602331,
+    nil,
+    common[91],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    31,
+    {
+      5204001,
+      1,
+      0,
+      2,
+      1602341,
+      1
+    }
+  },
+  [16023314] = {
+    16023314,
+    1602331,
+    nil,
+    common[91],
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5204001,
+      2,
+      1,
+      0
+    }
+  },
+  [2004911] = {
+    2004911,
+    2004911,
+    nil,
+    "莱莎联动炼金工房",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {3001},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[92]
+  },
+  [2004921] = {
+    2004921,
+    2004921,
+    nil,
+    "莱莎联动炼金商店",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {3002},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[92]
+  },
+  [2004931] = {
+    2004931,
+    2004931,
+    nil,
+    "莱莎联动资源本线性关",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {3003},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[92]
+  },
+  [2004941] = {
+    2004941,
+    2004941,
+    nil,
+    "莱莎联动天赋树",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    3,
+    {3004},
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    common[92]
+  },
+  [2910201] = {
+    2910201,
+    2910201,
+    nil,
+    "斯特兰汀BOSS焦点",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      550109,
+      1,
+      1,
+      0
+    }
+  },
+  [160237101] = {
+    160237101,
+    160237101,
+    nil,
+    "moye入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5214001,
+      1,
+      1,
+      0
+    }
+  },
+  [16024101] = {
+    16024101,
+    16024101,
+    nil,
+    "佩皮塔入场",
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    nil,
+    2,
+    {
+      5536001,
+      1,
+      1,
+      0
+    }
+  }
 }
 return config, "id", key
-

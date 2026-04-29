@@ -1,82 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5Progress/ui_n5_progress_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIActivityProgressRewardState = {STATE_LOCK = 0, STATE_UNLOCK = 1, STATE_RECEIVED = 2}
+local UIActivityProgressRewardState = {
+  STATE_LOCK = 0,
+  STATE_UNLOCK = 1,
+  STATE_RECEIVED = 2
+}
 _enum("UIActivityProgressRewardState", UIActivityProgressRewardState)
-local UIN5ProgressCellType = {CELL_NPC_DETAIL = 0, CELL_SIMPLE = 1, CELL_PLAYER = 2}
+local UIN5ProgressCellType = {
+  CELL_NPC_DETAIL = 0,
+  CELL_SIMPLE = 1,
+  CELL_PLAYER = 2
+}
 _enum("UIN5ProgressCellType", UIN5ProgressCellType)
 _class("UIN5ProgressController", UIController)
 UIN5ProgressController = UIN5ProgressController
--- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
 
-UIN5ProgressController._GenActivityTypeSpecificData = function(self, activityType)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN5ProgressController:_GenActivityTypeSpecificData(activityType)
   if activityType == ECampaignType.CAMPAIGN_TYPE_N5 then
     return DActivityTaskSpecificData_N5:New()
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN5ProgressController:Constructor()
   self._cmptCloseTime = 0
   self._refreshTimeEvent = nil
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._PlayDragSound = false
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  do
-    if not self._specificData and uiParams and uiParams[1] then
-      local campaignType = uiParams[1]
-      self._specificData = self:_GenActivityTypeSpecificData(campaignType)
+function UIN5ProgressController:LoadDataOnEnter(TT, res, uiParams)
+  if not self._specificData and uiParams and uiParams[1] then
+    local campaignType = uiParams[1]
+    self._specificData = self:_GenActivityTypeSpecificData(campaignType)
+  end
+  if not self._specificData then
+    res:SetSucc(false)
+    return
+  end
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._campaign = UIActivityCampaign:New()
+  self._campaign:LoadCampaignInfo(TT, res, self._specificData:GetCampaignType(), self._specificData:GetProgressCmptId())
+  if res and res:GetSucc() then
+    local camp = self._campaign:GetComponent(self._specificData:GetProgressCmptId())
+    local campInfo = camp:GetComponentInfo()
+    local openTime = campInfo.m_unlock_time
+    local closeTime = campInfo.m_close_time
+    self._cmptCloseTime = closeTime
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    if openTime > now then
+      res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
+      campaignModule:ShowErrorToast(res.m_result, true)
+      return
+    elseif closeTime < now then
+      res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
+      campaignModule:ShowErrorToast(res.m_result, true)
+      return
     end
-    if not self._specificData then
-      res:SetSucc(false)
-      return 
-    end
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    self._campaign = UIActivityCampaign:New()
-    ;
-    (self._campaign):LoadCampaignInfo(TT, res, (self._specificData):GetCampaignType(), (self._specificData):GetProgressCmptId())
-    if res and res:GetSucc() then
-      local camp = (self._campaign):GetComponent((self._specificData):GetProgressCmptId())
-      local campInfo = camp:GetComponentInfo()
-      local openTime = campInfo.m_unlock_time
-      local closeTime = campInfo.m_close_time
-      self._cmptCloseTime = closeTime
-      local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-      if now < openTime then
-        res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
-        campaignModule:ShowErrorToast(res.m_result, true)
-        return 
-      else
-        if closeTime < now then
-          res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-          campaignModule:ShowErrorToast(res.m_result, true)
-          return 
-        end
-      end
-    end
-    do
-      if res and not res:GetSucc() then
-        campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-      end
-    end
+  end
+  if res and not res:GetSucc() then
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN5ProgressController:OnShow(uiParams)
   self._itemCountPerRow = 1
   self._isFirst = true
   self._isOpen = true
@@ -84,37 +69,25 @@ UIN5ProgressController.OnShow = function(self, uiParams)
   self:AttachEvents()
   self:_OnValue()
   self:_OnValueRemainingTime()
-  ;
-  (CutsceneManager.ExcuteCutsceneOut)()
+  CutsceneManager.ExcuteCutsceneOut()
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN5ProgressController:OnHide()
   self._isOpen = false
   if self._refreshTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._refreshTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._refreshTimeEvent)
     self._refreshTimeEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController.InitWidget = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN5ProgressController:InitWidget()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:_Close()
-  end
-, nil, function()
-    -- function num : 0_5_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
   self._progressItemIcon = self:GetUIComponent("RawImageLoader", "_progressItemIcon")
   self._progressItemNumText = self:GetUIComponent("UILocalizationText", "_progressItemNumText")
   self._progressList = self:GetUIComponent("UIDynamicScrollView", "_progressList")
@@ -125,22 +98,15 @@ UIN5ProgressController.InitWidget = function(self)
   self._getAllBtnCanvasGroup = self:GetUIComponent("CanvasGroup", "_getAllBtn")
   local s = self:GetUIComponent("UISelectObjectPath", "_itemInfo")
   self._tips = s:SpawnObject("UISelectInfo")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._progressListScroll), UIEvent.BeginDrag, function(pointData)
-    -- function num : 0_5_2 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N5ProgressScrollDragBegin)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._progressListScroll), UIEvent.Drag, function(pointData)
-    -- function num : 0_5_3 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._progressListScroll), UIEvent.BeginDrag, function(pointData)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.N5ProgressScrollDragBegin)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._progressListScroll), UIEvent.Drag, function(pointData)
     self._PlayDragSound = true
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._OnValue = function(self)
-  -- function num : 0_6
+function UIN5ProgressController:_OnValue()
   if self._isFirst then
     self:_InitProgressItemId()
     self:_FillUIData_Progress()
@@ -154,102 +120,72 @@ UIN5ProgressController._OnValue = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._Close = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N5CloseDoor)
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIActivityN5, function()
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN5, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-)
+function UIN5ProgressController:_Close()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N5CloseDoor)
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIActivityN5, function()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN5, UIStateType.UIMain, nil, self._campaign._id)
+  end)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._OnValueRemainingTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN5ProgressController:_OnValueRemainingTime()
   self:_ShowRemainingTime()
   if self._refreshTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._refreshTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._refreshTimeEvent)
     self._refreshTimeEvent = nil
   end
-  self._refreshTimeEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_8_0 , upvalues : self
+  self._refreshTimeEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_ShowRemainingTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._ShowRemainingTime = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN5ProgressController:_ShowRemainingTime()
   local stopTime = self._cmptCloseTime
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local remainingTime = stopTime - nowTime
   if remainingTime <= 0 then
     if self._refreshTimeEvent then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._refreshTimeEvent)
+      GameGlobal.RealTimer():CancelEvent(self._refreshTimeEvent)
       self._refreshTimeEvent = nil
     end
-    ;
-    (self._restTimeAreaGo):SetActive(false)
+    self._restTimeAreaGo:SetActive(false)
     remainingTime = 0
   else
-    ;
-    (self._restTimeAreaGo):SetActive(true)
+    self._restTimeAreaGo:SetActive(true)
   end
   local timeStr = self:_GetRemainTime(remainingTime)
-  local str = (StringTable.Get)("str_n5_reward_remaining_time")
+  local str = StringTable.Get("str_n5_reward_remaining_time")
   local formatStr = "%s%s"
-  local showStr = (string.format)(formatStr, str, timeStr)
-  ;
-  (self._restTimeText):SetText(showStr)
+  local showStr = string.format(formatStr, str, timeStr)
+  self._restTimeText:SetText(showStr)
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._GetRemainTime = function(self, time)
-  -- function num : 0_10 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
+function UIN5ProgressController:_GetRemainTime(time)
+  local day, hour, minute
+  day = math.floor(time / 86400)
+  hour = math.floor(time / 3600) % 24
+  minute = math.floor(time / 60) % 60
   local timestring = ""
-  if day > 0 then
-    timestring = "<color=#E03D22>" .. day .. "</color>" .. (StringTable.Get)("str_activity_common_day") .. "<color=#E03D22>" .. hour .. "</color>" .. (StringTable.Get)("str_activity_common_hour")
+  if 0 < day then
+    timestring = "<color=#E03D22>" .. day .. "</color>" .. StringTable.Get("str_activity_common_day") .. "<color=#E03D22>" .. hour .. "</color>" .. StringTable.Get("str_activity_common_hour")
+  elseif 0 < hour then
+    timestring = "<color=#E03D22>" .. hour .. "</color>" .. StringTable.Get("str_activity_common_hour") .. "<color=#E03D22>" .. minute .. "</color>" .. StringTable.Get("str_activity_common_minute")
+  elseif 0 < minute then
+    timestring = "<color=#E03D22>" .. minute .. "</color>" .. StringTable.Get("str_activity_common_minute")
   else
-    if hour > 0 then
-      timestring = "<color=#E03D22>" .. hour .. "</color>" .. (StringTable.Get)("str_activity_common_hour") .. "<color=#E03D22>" .. minute .. "</color>" .. (StringTable.Get)("str_activity_common_minute")
-    else
-      if minute > 0 then
-        timestring = "<color=#E03D22>" .. minute .. "</color>" .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
-    end
+    timestring = StringTable.Get("str_activity_common_less_minute")
   end
-  return (string.format)((StringTable.Get)("str_activity_common_over"), timestring)
+  return string.format(StringTable.Get("str_activity_common_over"), timestring)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._InitProgressItemId = function(self)
-  -- function num : 0_11
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIN5ProgressController:_InitProgressItemId()
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local componentInfo = component:GetComponentInfo()
   self._progressItemId = componentInfo.m_item_id
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._Refresh = function(self)
-  -- function num : 0_12
+function UIN5ProgressController:_Refresh()
   if self._isOpen then
     self:_FillUIData_Progress()
     self:_RefreshList(self._progressListInfo, self._progressList)
@@ -259,76 +195,56 @@ UIN5ProgressController._Refresh = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._RefreshList = function(self, info, list)
-  -- function num : 0_13 , upvalues : _ENV
-  local count = (table.count)(info)
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIN5ProgressController:_RefreshList(info, list)
+  local count = table.count(info)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((list.ScrollRect).content).localPosition = contentPos
+  list.ScrollRect.content.localPosition = contentPos
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._MakeRankList = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIN5ProgressController:_MakeRankList()
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local componentInfo = component:GetComponentInfo()
   local playerScore = componentInfo.m_current_progress
   local cmptCfgId = component:GetComponentCfgId()
   local rankList = {}
-  local cfgGroup = (Cfg.cfg_activity_person_progress_extra_client)({ComponentID = cmptCfgId})
-  if cfgGroup and #cfgGroup > 0 then
-    for index,value in ipairs(cfgGroup) do
+  local cfgGroup = Cfg.cfg_activity_person_progress_extra_client({ComponentID = cmptCfgId})
+  if cfgGroup and 0 < #cfgGroup then
+    for index, value in ipairs(cfgGroup) do
       local npcNameCfg = value.NpcName
-      if not (string.isnullorempty)(npcNameCfg) then
+      if not string.isnullorempty(npcNameCfg) then
         local rankInfo = {}
         rankInfo.target = value.ItemCount
-        ;
-        (table.insert)(rankList, rankInfo)
+        table.insert(rankList, rankInfo)
       end
     end
   end
-  do
-    local rankInfo = {}
-    rankInfo.target = playerScore
-    ;
-    (table.insert)(rankList, rankInfo)
-    ;
-    (table.sort)(rankList, function(a, b)
-    -- function num : 0_14_0
-    do return b.target < a.target end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  end
+  local rankInfo = {}
+  rankInfo.target = playerScore
+  table.insert(rankList, rankInfo)
+  table.sort(rankList, function(a, b)
+    return a.target > b.target
+  end)
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._FillUIData_Progress = function(self)
-  -- function num : 0_15 , upvalues : _ENV, UIN5ProgressCellType
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIN5ProgressController:_FillUIData_Progress()
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local componentInfo = component:GetComponentInfo()
   local cmptCfgId = component:GetComponentCfgId()
   local playerScore = componentInfo.m_current_progress
   local listInfo = {}
   local lst = componentInfo.m_progress_rewards
   local spRewards = componentInfo.m_special_rewards
-  local count = (table.count)(lst)
+  local count = table.count(lst)
   local bInsertPlayer = false
   local showRank = 0
   local maxRank = 0
   local lastScore = -1
   local it = self:_SortPairsByKeys(lst)
-  for k,v in it do
+  for k, v in it, nil, nil do
     local info = {}
     info.rank = -1
     info.cellType = UIN5ProgressCellType.CELL_SIMPLE
@@ -336,135 +252,93 @@ UIN5ProgressController._FillUIData_Progress = function(self)
     info.count = count
     local bIsSp = spRewards[k]
     info.bSpecial = bIsSp ~= nil
-    local cfgGroup = (Cfg.cfg_activity_person_progress_extra_client)({ComponentID = cmptCfgId, ItemCount = k})
-    if cfgGroup and #cfgGroup > 0 then
+    local cfgGroup = Cfg.cfg_activity_person_progress_extra_client({ComponentID = cmptCfgId, ItemCount = k})
+    if cfgGroup and 0 < #cfgGroup then
       local curCfg = cfgGroup[1]
-      do
-        if playerScore < info.target and not bInsertPlayer then
-          local playerInfo = {}
-          playerInfo.target = playerScore
-          playerInfo.count = 0
-          playerInfo.cellType = UIN5ProgressCellType.CELL_PLAYER
-          playerInfo.bSpecial = false
-          showRank = showRank + 1
-          lastScore = info.target
-          playerInfo.rank = showRank
-          ;
-          (table.insert)(listInfo, playerInfo)
-          bInsertPlayer = true
-        end
-        do
-          do
-            local npcNameCfg = curCfg.NpcName
-            if not (string.isnullorempty)(npcNameCfg) then
-              info.cellType = UIN5ProgressCellType.CELL_NPC_DETAIL
-              showRank = showRank + 1
-              lastScore = info.target
-              info.rank = showRank
-            end
-            ;
-            (table.insert)(listInfo, info)
-            -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC90: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      if playerScore < info.target and not bInsertPlayer then
+        local playerInfo = {}
+        playerInfo.target = playerScore
+        playerInfo.count = 0
+        playerInfo.cellType = UIN5ProgressCellType.CELL_PLAYER
+        playerInfo.bSpecial = false
+        showRank = showRank + 1
+        lastScore = info.target
+        playerInfo.rank = showRank
+        table.insert(listInfo, playerInfo)
+        bInsertPlayer = true
+      end
+      local npcNameCfg = curCfg.NpcName
+      if not string.isnullorempty(npcNameCfg) then
+        info.cellType = UIN5ProgressCellType.CELL_NPC_DETAIL
+        showRank = showRank + 1
+        lastScore = info.target
+        info.rank = showRank
       end
     end
+    table.insert(listInfo, info)
   end
-  do
-    if not bInsertPlayer then
-      local playerInfo = {}
-      playerInfo.target = playerScore
-      playerInfo.count = 0
-      playerInfo.cellType = UIN5ProgressCellType.CELL_PLAYER
-      playerInfo.bSpecial = false
-      showRank = showRank + 1
-      playerInfo.rank = showRank
-      ;
-      (table.insert)(listInfo, playerInfo)
-      bInsertPlayer = true
-    end
-    maxRank = showRank
-    for index,value in ipairs(listInfo) do
-      if value.rank ~= -1 then
-        value.rank = maxRank - value.rank + 1
-      end
-    end
-    self._progressListInfo = listInfo
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  if not bInsertPlayer then
+    local playerInfo = {}
+    playerInfo.target = playerScore
+    playerInfo.count = 0
+    playerInfo.cellType = UIN5ProgressCellType.CELL_PLAYER
+    playerInfo.bSpecial = false
+    showRank = showRank + 1
+    playerInfo.rank = showRank
+    table.insert(listInfo, playerInfo)
+    bInsertPlayer = true
   end
+  maxRank = showRank
+  for index, value in ipairs(listInfo) do
+    if value.rank ~= -1 then
+      value.rank = maxRank - value.rank + 1
+    end
+  end
+  self._progressListInfo = listInfo
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._InitDynamicList_Progress = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local count = (table.count)(self._progressListInfo)
-  ;
-  (self._progressList):InitListView(count, function(scrollView, index)
-    -- function num : 0_16_0 , upvalues : self
+function UIN5ProgressController:_InitDynamicList_Progress()
+  local count = table.count(self._progressListInfo)
+  self._progressList:InitListView(count, function(scrollView, index)
     return self:_SpawnListItem_Progress(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._CalDynamicListInitPos_Progress = function(self)
-  -- function num : 0_17 , upvalues : _ENV, UIActivityProgressRewardState, UIN5ProgressCellType
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIN5ProgressController:_CalDynamicListInitPos_Progress()
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local componentInfo = component:GetComponentInfo()
   local tarPos = 0
   local curCell = 1
   local cur = componentInfo.m_current_progress
   local received = componentInfo.m_received_progress
-  for index,value in ipairs(self._progressListInfo) do
+  for index, value in ipairs(self._progressListInfo) do
     local state = UIActivityProgressRewardState.STATE_LOCK
-    if value.target <= cur then
+    if cur >= value.target then
       state = UIActivityProgressRewardState.STATE_UNLOCK
       if value.cellType ~= UIN5ProgressCellType.CELL_PLAYER then
-        for _,x in pairs(received) do
+        for _, x in pairs(received) do
           if x == value.target then
             state = UIActivityProgressRewardState.STATE_RECEIVED
           end
         end
       end
     end
-    do
-      do
-        if state == UIActivityProgressRewardState.STATE_UNLOCK then
-          curCell = index
-          break
-        end
-        -- DECOMPILER ERROR at PC41: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if state == UIActivityProgressRewardState.STATE_UNLOCK then
+      curCell = index
+      break
     end
   end
   tarPos = curCell - 1
   return tarPos
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._SetDynamicListInitPos_Progress = function(self)
-  -- function num : 0_18
+function UIN5ProgressController:_SetDynamicListInitPos_Progress()
   local pos = self:_CalDynamicListInitPos_Progress()
-  ;
-  (self._progressList):MovePanelToItemIndex(pos, 275)
+  self._progressList:MovePanelToItemIndex(pos, 275)
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._SpawnListItem_Progress = function(self, scrollView, index)
-  -- function num : 0_19
+function UIN5ProgressController:_SpawnListItem_Progress(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -483,254 +357,182 @@ UIN5ProgressController._SpawnListItem_Progress = function(self, scrollView, inde
   return item
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._SetListItemData_Progress = function(self, listItem, index)
-  -- function num : 0_20 , upvalues : _ENV
-  (listItem:GetGameObject()):SetActive(true)
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIN5ProgressController:_SetListItemData_Progress(listItem, index)
+  listItem:GetGameObject():SetActive(true)
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local cmptCfgId = component:GetComponentCfgId()
   local componentInfo = component:GetComponentInfo()
-  local count = (table.count)(self._progressListInfo)
+  local count = table.count(self._progressListInfo)
   local rankIndex = -1
   if self._PlayDragSound then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N5MilitaryExploitScrolling)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N5MilitaryExploitScrolling)
   end
-  listItem:SetData(index, count, (self._progressListInfo)[index], componentInfo, function(idx)
-    -- function num : 0_20_0 , upvalues : self
+  listItem:SetData(index, count, self._progressListInfo[index], componentInfo, function(idx)
     self:_ListItemClick_Progress(idx)
-  end
-, function(matid, pos)
-    -- function num : 0_20_1 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
-  end
-, self._specificData, cmptCfgId)
+  end, function(matid, pos)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityQuestAwardItemClick, matid, pos)
+  end, self._specificData, cmptCfgId)
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._ListItemClick_Progress = function(self, idx)
-  -- function num : 0_21
-  self:_GetListItemReward_Progress(((self._progressListInfo)[idx]).target)
+function UIN5ProgressController:_ListItemClick_Progress(idx)
+  self:_GetListItemReward_Progress(self._progressListInfo[idx].target)
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._GetListItemReward_Progress = function(self, param)
-  -- function num : 0_22
+function UIN5ProgressController:_GetListItemReward_Progress(param)
   self:Lock("UIN5ProgressController:_GetListItemReward_Progress")
   self:StartTask(self._GetListItemRewardReq_Progress, self, param)
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._GetListItemRewardReq_Progress = function(self, TT, param)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN5ProgressController:_GetListItemRewardReq_Progress(TT, param)
   local progress = param
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   if component then
     local res = AsyncRequestRes:New()
     local rewards = component:HandleReceiveReward(TT, res, progress)
     self:UnLock("UIN5ProgressController:_GetListItemReward_Progress")
     if self.view == nil then
-      return 
+      return
     end
     if res:GetSucc() then
       self:_ShowUIGetItemController(rewards)
     else
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, function()
-    -- function num : 0_23_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_23_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_Refresh()
+      end, function()
+        self:CloseDialog()
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController.AttachEvents = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN5ProgressController:AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
   self:AttachEvent(GameEventType.ActivityQuestAwardItemClick, self._OnActivityQuestAwardItemClick)
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._CheckActivityClose = function(self, id)
-  -- function num : 0_25 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN5ProgressController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController.OnUIGetItemCloseInQuest = function(self, type)
-  -- function num : 0_26
+function UIN5ProgressController:OnUIGetItemCloseInQuest(type)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._OnActivityQuestAwardItemClick = function(self, matid, pos)
-  -- function num : 0_27
+function UIN5ProgressController:_OnActivityQuestAwardItemClick(matid, pos)
   self:ShowItemInfo(matid, pos)
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController.ShowItemInfo = function(self, matid, pos)
-  -- function num : 0_28
-  (self._tips):SetData(matid, pos)
+function UIN5ProgressController:ShowItemInfo(matid, pos)
+  self._tips:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._ShowUIGetItemController = function(self, rewards)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN5ProgressController:_ShowUIGetItemController(rewards)
   if not rewards then
-    return 
+    return
   end
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   local tempPets = {}
-  if #rewards > 0 then
+  if 0 < #rewards then
     for i = 1, #rewards do
-      local ispet = (self._petModule):IsPetID((rewards[i]).assetid)
+      local ispet = self._petModule:IsPetID(rewards[i].assetid)
       if ispet then
-        (table.insert)(tempPets, rewards[i])
+        table.insert(tempPets, rewards[i])
       end
     end
   end
-  do
-    local cbFunc = function()
-    -- function num : 0_29_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
+  
+  local function cbFunc()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIGetItemCloseInQuest, 0)
   end
-
-    if #tempPets > 0 then
-      self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_29_1 , upvalues : _ENV, self, rewards, cbFunc
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards, cbFunc)
-  end
-)
-    else
+  
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
       self:ShowDialog("UIGetItemController", rewards, cbFunc)
-    end
+    end)
+  else
+    self:ShowDialog("UIGetItemController", rewards, cbFunc)
   end
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._RefreshProgressCurNumText = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIN5ProgressController:_RefreshProgressCurNumText()
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   local componentInfo = component:GetComponentInfo()
   if not componentInfo then
-    return 
+    return
   end
   if self._progressItemIcon then
     local itemId = componentInfo.m_item_id
-    local cfgItem = (Cfg.cfg_item)[itemId]
+    local cfgItem = Cfg.cfg_item[itemId]
     if cfgItem then
-      (self._progressItemIcon):LoadImage(cfgItem.Icon)
+      self._progressItemIcon:LoadImage(cfgItem.Icon)
     end
   end
-  do
-    if self._progressItemNumText then
-      (self._progressItemNumText):SetText(self:_MakeCurProgressText(componentInfo.m_current_progress))
-    end
+  if self._progressItemNumText then
+    self._progressItemNumText:SetText(self:_MakeCurProgressText(componentInfo.m_current_progress))
   end
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._MakeCurProgressText = function(self, cur)
-  -- function num : 0_31 , upvalues : _ENV
+function UIN5ProgressController:_MakeCurProgressText(cur)
   if cur then
     local tarNumDight = 6
-    local retStr = (UIActivityHelper.AddZeroFrontNum)(6, cur)
+    local retStr = UIActivityHelper.AddZeroFrontNum(6, cur)
     return retStr
   end
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._RefreshGetAllBtnArea = function(self)
-  -- function num : 0_32
-  self._getAllShowRed = (self._campaign):CheckComponentRed((self._specificData):GetProgressCmptId())
-  ;
-  (self._getAllRedPointAreaGo):SetActive(self._getAllShowRed)
+function UIN5ProgressController:_RefreshGetAllBtnArea()
+  self._getAllShowRed = self._campaign:CheckComponentRed(self._specificData:GetProgressCmptId())
+  self._getAllRedPointAreaGo:SetActive(self._getAllShowRed)
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController.GetAllBtnOnClick = function(self)
-  -- function num : 0_33
+function UIN5ProgressController:GetAllBtnOnClick()
   if not self._getAllShowRed then
-    return 
+    return
   end
   self:Lock("UIN5ProgressController:GetAllBtnOnClick")
   self:StartTask(self._GetAllRewardReq_Progress, self)
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._GetAllRewardReq_Progress = function(self, TT)
-  -- function num : 0_34 , upvalues : _ENV
-  local cmptId = (self._specificData):GetProgressCmptId()
-  local component = (self._campaign):GetComponent(cmptId)
+function UIN5ProgressController:_GetAllRewardReq_Progress(TT)
+  local cmptId = self._specificData:GetProgressCmptId()
+  local component = self._campaign:GetComponent(cmptId)
   if component then
     local res = AsyncRequestRes:New()
     local rewards = component:HandleOneKeyReceiveRewards(TT, res)
     self:UnLock("UIN5ProgressController:GetAllBtnOnClick")
     if self.view == nil then
-      return 
+      return
     end
     if res:GetSucc() then
       self:_ShowUIGetItemController(rewards)
     else
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, function()
-    -- function num : 0_34_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_34_1 , upvalues : self
-    self:CloseDialog()
-  end
-)
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      campaignModule:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_Refresh()
+      end, function()
+        self:CloseDialog()
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-UIN5ProgressController._SortPairsByKeys = function(self, t)
-  -- function num : 0_35 , upvalues : _ENV
+function UIN5ProgressController:_SortPairsByKeys(t)
   local a = {}
   for n in pairs(t) do
     a[#a + 1] = n
   end
-  ;
-  (table.sort)(a)
+  table.sort(a)
   local i = 0
   return function()
-    -- function num : 0_35_0 , upvalues : i, a, t
     i = i + 1
     return a[i], t[a[i]]
   end
-
 end
-
-

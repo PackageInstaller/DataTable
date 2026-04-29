@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/chain_move_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainMoveComponent", Object)
 ChainMoveComponent = ChainMoveComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainMoveComponent.Constructor = function(self, chainPath, pathIndex, startTime, speed, curGridPathIndex)
-  -- function num : 0_0
+function ChainMoveComponent:Constructor(chainPath, pathIndex, startTime, speed, curGridPathIndex)
   self._chainPath = chainPath
   self._pathIndex = pathIndex
   self._startTime = startTime
@@ -22,10 +15,7 @@ ChainMoveComponent.Constructor = function(self, chainPath, pathIndex, startTime,
   self._pathArriveTimeList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.Dispose = function(self)
-  -- function num : 0_1
+function ChainMoveComponent:Dispose()
   self._chainPath = nil
   self._pathIndex = nil
   self._startTime = nil
@@ -33,142 +23,84 @@ ChainMoveComponent.Dispose = function(self)
   self._moveCount = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.AddPathArriveTime = function(self, pathIndex, arriveTime)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._pathArriveTimeList)[pathIndex] = arriveTime
+function ChainMoveComponent:AddPathArriveTime(pathIndex, arriveTime)
+  self._pathArriveTimeList[pathIndex] = arriveTime
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.GetPathArriveTime = function(self, pathIndex)
-  -- function num : 0_3
-  return (self._pathArriveTimeList)[pathIndex]
+function ChainMoveComponent:GetPathArriveTime(pathIndex)
+  return self._pathArriveTimeList[pathIndex]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.GetChainPath = function(self)
-  -- function num : 0_4
+function ChainMoveComponent:GetChainPath()
   return self._chainPath
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.GetPathIndex = function(self)
-  -- function num : 0_5
+function ChainMoveComponent:GetPathIndex()
   return self._pathIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.SetPathIndex = function(self, pathIndex)
-  -- function num : 0_6
+function ChainMoveComponent:SetPathIndex(pathIndex)
   self._pathIndex = pathIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.GetStartTime = function(self)
-  -- function num : 0_7
+function ChainMoveComponent:GetStartTime()
   return self._startTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.GetSpeed = function(self)
-  -- function num : 0_8
+function ChainMoveComponent:GetSpeed()
   return self._speed
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.GetCurGridPathIndex = function(self)
-  -- function num : 0_9
+function ChainMoveComponent:GetCurGridPathIndex()
   return self._curGridPathIndex
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.SetCurGridPathIndex = function(self, pathIndex)
-  -- function num : 0_10
+function ChainMoveComponent:SetCurGridPathIndex(pathIndex)
   self._curGridPathIndex = pathIndex
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.IsWait = function(self)
-  -- function num : 0_11
+function ChainMoveComponent:IsWait()
   return self._waitState
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.SetWaitState = function(self, state)
-  -- function num : 0_12
+function ChainMoveComponent:SetWaitState(state)
   self._waitState = state
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.SetCanMoveTime = function(self, time)
-  -- function num : 0_13
+function ChainMoveComponent:SetCanMoveTime(time)
   self._canMoveTime = time
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveComponent.GetCanMoveTime = function(self)
-  -- function num : 0_14
+function ChainMoveComponent:GetCanMoveTime()
   return self._canMoveTime
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ChainMove = function(self)
-  -- function num : 0_15
-  return self:GetComponent((self.WEComponentsEnum).ChainMove)
+function Entity:ChainMove()
+  return self:GetComponent(self.WEComponentsEnum.ChainMove)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasChainMove = function(self)
-  -- function num : 0_16
-  return self:HasComponent((self.WEComponentsEnum).ChainMove)
+function Entity:HasChainMove()
+  return self:HasComponent(self.WEComponentsEnum.ChainMove)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddChainMove = function(self, chainPath, pathIndex, startTime, speed)
-  -- function num : 0_17 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChainMove
+function Entity:AddChainMove(chainPath, pathIndex, startTime, speed)
+  local index = self.WEComponentsEnum.ChainMove
   local component = ChainMoveComponent:New(chainPath, pathIndex, startTime, speed, pathIndex)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceChainMove = function(self, chainPath, pathIndex, startTime, speed)
-  -- function num : 0_18 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ChainMove
+function Entity:ReplaceChainMove(chainPath, pathIndex, startTime, speed)
+  local index = self.WEComponentsEnum.ChainMove
   local curGridPathIndex = pathIndex
   if self:HasChainMove() then
-    curGridPathIndex = (self:ChainMove()):GetCurGridPathIndex()
+    curGridPathIndex = self:ChainMove():GetCurGridPathIndex()
   end
   local component = ChainMoveComponent:New(chainPath, pathIndex, startTime, speed, curGridPathIndex)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveChainMove = function(self)
-  -- function num : 0_19
+function Entity:RemoveChainMove()
   if self:HasChainMove() then
-    self:RemoveComponent((self.WEComponentsEnum).ChainMove)
+    self:RemoveComponent(self.WEComponentsEnum.ChainMove)
   end
 end
-
-

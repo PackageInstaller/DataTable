@@ -1,137 +1,96 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_mail/ui_mail_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UiMailHelper", Object)
 UiMailHelper = UiMailHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UiMailHelper.ShowUIGetRewards = function(rewards, callback, doNotSort, autoConversionList)
-  -- function num : 0_0 , upvalues : _ENV
+function UiMailHelper.ShowUIGetRewards(rewards, callback, doNotSort, autoConversionList)
   local itemList = {}
   local petList = {}
   local petSkinList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,v in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, v in pairs(rewards) do
     if petModule:IsPetID(v.assetid) then
-      (table.insert)(petList, v)
+      table.insert(petList, v)
     else
       if petModule:IsPetSkinID(v.assetid) then
         local roleAsset = RoleAsset:New()
         roleAsset.assetid = petModule:GetSkinIDFromItemID(v.assetid)
         roleAsset.count = v.count
-        ;
-        (table.insert)(petSkinList, roleAsset)
+        table.insert(petSkinList, roleAsset)
+      else
       end
     end
-    do
-      do
-        ;
-        (table.insert)(itemList, v)
-        -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    table.insert(itemList, v)
   end
-  ;
-  (UiMailHelper.ShowUIGetRewards_Pet)(petList, petSkinList, itemList, callback, doNotSort, autoConversionList)
+  UiMailHelper.ShowUIGetRewards_Pet(petList, petSkinList, itemList, callback, doNotSort, autoConversionList)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UiMailHelper.ShowUIGetRewards_Pet = function(petList, petSkinList, itemList, callback, doNotSort, autoConversionList)
-  -- function num : 0_1 , upvalues : _ENV
-  if (table.count)(petList) <= 0 then
-    (UiMailHelper.ShowUIGetRewards_PetSkin)(petSkinList, itemList, callback, doNotSort, autoConversionList)
-    return 
+function UiMailHelper.ShowUIGetRewards_Pet(petList, petSkinList, itemList, callback, doNotSort, autoConversionList)
+  if table.count(petList) <= 0 then
+    UiMailHelper.ShowUIGetRewards_PetSkin(petSkinList, itemList, callback, doNotSort, autoConversionList)
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petList, function()
-    -- function num : 0_1_0 , upvalues : _ENV, petSkinList, itemList, callback, doNotSort, autoConversionList
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    (UiMailHelper.ShowUIGetRewards_PetSkin)(petSkinList, itemList, callback, doNotSort, autoConversionList)
-  end
-)
-  return 
+  GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petList, function()
+    GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+    UiMailHelper.ShowUIGetRewards_PetSkin(petSkinList, itemList, callback, doNotSort, autoConversionList)
+  end)
+  return
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UiMailHelper.ShowUIGetRewards_PetSkin = function(petSkinList, itemList, callback, doNotSort, autoConversionList)
-  -- function num : 0_2 , upvalues : _ENV
-  if (table.count)(petSkinList) <= 0 then
-    (UiMailHelper.ShowUIGetRewards_Item)(itemList, callback, doNotSort, autoConversionList)
-    return 
+function UiMailHelper.ShowUIGetRewards_PetSkin(petSkinList, itemList, callback, doNotSort, autoConversionList)
+  if table.count(petSkinList) <= 0 then
+    UiMailHelper.ShowUIGetRewards_Item(itemList, callback, doNotSort, autoConversionList)
+    return
   end
   local index = 0
-  local showNextFunc = function()
-    -- function num : 0_2_0 , upvalues : index, petSkinList
+  
+  local function showNextFunc()
     index = index + 1
     if index <= #petSkinList then
       return petSkinList[index]
     end
     return nil
   end
-
-  local callBackFunc = nil
-  callBackFunc = function()
-    -- function num : 0_2_1 , upvalues : _ENV, showNextFunc, callBackFunc, itemList, callback, doNotSort, autoConversionList
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetSkinObtainController")
+  
+  local callBackFunc
+  
+  function callBackFunc()
+    GameGlobal.UIStateManager():CloseDialog("UIPetSkinObtainController")
     local nextAsset = showNextFunc()
     if nextAsset then
-      (UiMailHelper.ShowUIGetRewards_PetSkin_Single)(nextAsset, callBackFunc)
+      UiMailHelper.ShowUIGetRewards_PetSkin_Single(nextAsset, callBackFunc)
     else
-      ;
-      (UiMailHelper.ShowUIGetRewards_Item)(itemList, callback, doNotSort, autoConversionList)
+      UiMailHelper.ShowUIGetRewards_Item(itemList, callback, doNotSort, autoConversionList)
     end
   end
-
-  ;
-  (UiMailHelper.ShowUIGetRewards_PetSkin_Single)(showNextFunc(), callBackFunc)
+  
+  UiMailHelper.ShowUIGetRewards_PetSkin_Single(showNextFunc(), callBackFunc)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UiMailHelper.ShowUIGetRewards_PetSkin_Single = function(roleAsset, callBackFunc)
-  -- function num : 0_3 , upvalues : _ENV
-  if not roleAsset and callBackFunc then
-    callBackFunc()
+function UiMailHelper.ShowUIGetRewards_PetSkin_Single(roleAsset, callBackFunc)
+  if not roleAsset then
+    if callBackFunc then
+      callBackFunc()
+    end
+    return
   end
-  do return  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIPetSkinObtainController", roleAsset, callBackFunc)
+  GameGlobal.UIStateManager():ShowDialog("UIPetSkinObtainController", roleAsset, callBackFunc)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UiMailHelper.ShowUIGetRewards_Item = function(itemList, callback, doNotSort, autoConversionList)
-  -- function num : 0_4 , upvalues : _ENV
-  if (table.count)(itemList) <= 0 then
+function UiMailHelper.ShowUIGetRewards_Item(itemList, callback, doNotSort, autoConversionList)
+  if table.count(itemList) <= 0 then
     if callback then
       callback()
     end
-    return 
+    return
   end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", itemList, function()
-    -- function num : 0_4_0 , upvalues : autoConversionList, _ENV, callback
+  GameGlobal.UIStateManager():ShowDialog("UIGetItemController", itemList, function()
     if autoConversionList and next(autoConversionList) then
-      ((GameGlobal.UIStateManager)()):ShowDialog("UICommonConversionController", autoConversionList, function()
-      -- function num : 0_4_0_0 , upvalues : callback
-      if callback then
-        callback()
-      end
+      GameGlobal.UIStateManager():ShowDialog("UICommonConversionController", autoConversionList, function()
+        if callback then
+          callback()
+        end
+      end)
+    elseif callback then
+      callback()
     end
-)
-    else
-      if callback then
-        callback()
-      end
-    end
-  end
-, doNotSort)
+  end, doNotSort)
 end
-
-

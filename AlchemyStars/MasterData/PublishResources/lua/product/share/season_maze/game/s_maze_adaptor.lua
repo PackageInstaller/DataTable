@@ -1,229 +1,168 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/s_maze_adaptor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeAdaptor", Object)
 SMazeAdaptor = SMazeAdaptor
-local _TryGetCurState = function(stateID)
-  -- function num : 0_0 , upvalues : _ENV
-  local uiModule = ((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()
+
+local function _TryGetCurState(stateID)
+  local uiModule = GameGlobal.GetModule(SeasonMazeModule):UIModule()
   if not uiModule:IsRunning() then
-    (Log.error)("赛季秘境未运行")
-    return 
+    Log.error("赛季秘境未运行")
+    return
   end
-  local state = (uiModule:SeasonMazeManager()):GetCurState()
+  local state = uiModule:SeasonMazeManager():GetCurState()
   if state:StateID() == stateID then
     return state
   end
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.PlayCard = function(id)
-  -- function num : 0_1 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.PlayCard(id)
   local state = _TryGetCurState(SMazeStateID.PlayCard)
   if not state then
-    (Log.error)("严重错误 当前不是选卡状态 不可以打出行动卡", (debug.traceback)())
-    return 
+    Log.error("严重错误 当前不是选卡状态 不可以打出行动卡", debug.traceback())
+    return
   end
   state:PlayCard(id)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.UseActiveProp = function(id)
-  -- function num : 0_2 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.UseActiveProp(id)
   local state = _TryGetCurState(SMazeStateID.PlayCard)
   if not state then
-    (Log.exception)("严重错误 当前不是选卡状态 不可以使用主动道具", (debug.traceback)())
-    return 
+    Log.exception("严重错误 当前不是选卡状态 不可以使用主动道具", debug.traceback())
+    return
   end
   state:UseProp(id)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.OnRoomSettleFinish = function(room)
-  -- function num : 0_3 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.OnRoomSettleFinish(room)
   local state = _TryGetCurState(SMazeStateID.RoomSettle)
   if not state then
-    (Log.exception)("严重错误 当前不是选卡状态 不可以使用主动道具", (debug.traceback)())
-    return 
+    Log.exception("严重错误 当前不是选卡状态 不可以使用主动道具", debug.traceback())
+    return
   end
   state:SettleFinish(room)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.OnChooseCard = function(id, select)
-  -- function num : 0_4 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.OnChooseCard(id, select)
   local state = _TryGetCurState(SMazeStateID.PlayCard)
   if not state then
-    (Log.error)("严重错误 当前不是选卡状态 不可以预览目标点", (debug.traceback)())
-    return 
+    Log.error("严重错误 当前不是选卡状态 不可以预览目标点", debug.traceback())
+    return
   end
   state:PreviewTargetNode(id, select)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.OnShowMainUI = function()
-  -- function num : 0_5 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.OnShowMainUI()
   local state = _TryGetCurState(SMazeStateID.Born)
   if not state then
-    (Log.exception)("严重错误 当前不是角色出生状态", (debug.traceback)())
-    return 
+    Log.exception("严重错误 当前不是角色出生状态", debug.traceback())
+    return
   end
   state:Start()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.OnLvUpDialogClose = function()
-  -- function num : 0_6 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.OnLvUpDialogClose()
   local state = _TryGetCurState(SMazeStateID.Levelup)
   if not state then
-    (Log.exception)("严重错误 当前不是升级状态", (debug.traceback)())
-    return 
+    Log.exception("严重错误 当前不是升级状态", debug.traceback())
+    return
   end
   state:OnDialogClose()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.CanUseActiveProp = function()
-  -- function num : 0_7 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.CanUseActiveProp()
   local state = _TryGetCurState(SMazeStateID.PlayCard)
-  do return state ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return state ~= nil
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.OnUseBombSelect = function(targetNode)
-  -- function num : 0_8 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.OnUseBombSelect(targetNode)
   local state = _TryGetCurState(SMazeStateID.PlayCard)
   if not state then
-    (Log.exception)("严重错误 当前不是选卡状态 不可以选择炸弹目标", (debug.traceback)())
-    return 
+    Log.exception("严重错误 当前不是选卡状态 不可以选择炸弹目标", debug.traceback())
+    return
   end
   state:SelectBombTarget(targetNode)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeSelectBombTarget, targetNode)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeSelectBombTarget, targetNode)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.OnUseBombConfirm = function()
-  -- function num : 0_9 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.OnUseBombConfirm()
   local state = _TryGetCurState(SMazeStateID.PlayCard)
   if not state then
-    (Log.exception)("严重错误 当前不是选卡状态 不可以确认使用炸弹", (debug.traceback)())
-    return 
+    Log.exception("严重错误 当前不是选卡状态 不可以确认使用炸弹", debug.traceback())
+    return
   end
   state:ConfirmUseBomb()
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.OnUseBombCancel = function()
-  -- function num : 0_10 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.OnUseBombCancel()
   local state = _TryGetCurState(SMazeStateID.PlayCard)
   if not state then
-    (Log.exception)("严重错误 当前不是选卡状态 不可以取消使用炸弹", (debug.traceback)())
-    return 
+    Log.exception("严重错误 当前不是选卡状态 不可以取消使用炸弹", debug.traceback())
+    return
   end
   state:CancelUseBomb()
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.PlayerHeadPos = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local uiModule = ((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()
+function SMazeAdaptor.PlayerHeadPos()
+  local uiModule = GameGlobal.GetModule(SeasonMazeModule):UIModule()
   if uiModule:IsRunning() then
-    return ((uiModule:SeasonMazeManager()):Player()):HeadPosition()
+    return uiModule:SeasonMazeManager():Player():HeadPosition()
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.MainCam = function()
-  -- function num : 0_12 , upvalues : _ENV
-  local uiModule = ((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()
+function SMazeAdaptor.MainCam()
+  local uiModule = GameGlobal.GetModule(SeasonMazeModule):UIModule()
   if uiModule:IsRunning() then
-    return ((uiModule:SeasonMazeManager()):SeasonMazeCameraManager()):Camera()
+    return uiModule:SeasonMazeManager():SeasonMazeCameraManager():Camera()
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.OnPickCardFinish = function()
-  -- function num : 0_13 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.OnPickCardFinish()
   local state = _TryGetCurState(SMazeStateID.Levelup)
   if not state then
-    (Log.exception)("严重错误 当前不是升级状态", (debug.traceback)())
-    return 
+    Log.exception("严重错误 当前不是升级状态", debug.traceback())
+    return
   end
   state:OnFinish()
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.GetCurRoomType = function()
-  -- function num : 0_14 , upvalues : _ENV
-  local uiModule = ((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()
+function SMazeAdaptor.GetCurRoomType()
+  local uiModule = GameGlobal.GetModule(SeasonMazeModule):UIModule()
   if not uiModule:IsRunning() then
-    (Log.error)("赛季秘境未运行")
-    return 
+    Log.error("赛季秘境未运行")
+    return
   end
-  local node = (uiModule:SeasonMazeManager()):GetCurNode()
+  local node = uiModule:SeasonMazeManager():GetCurNode()
   if node then
-    return (node:Room()):Type()
+    return node:Room():Type()
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.ChooseFullPetFinish = function(petID)
-  -- function num : 0_15 , upvalues : _TryGetCurState, _ENV
+function SMazeAdaptor.ChooseFullPetFinish(petID)
   local state = _TryGetCurState(SMazeStateID.ChooseFullPet)
   if not state then
-    (Log.exception)("严重错误 选择满破星灵状态", (debug.traceback)())
-    return 
+    Log.exception("严重错误 选择满破星灵状态", debug.traceback())
+    return
   end
   state:OnChooseFinish(petID)
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.CurNodeID = function()
-  -- function num : 0_16 , upvalues : _ENV
-  local uiModule = ((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()
+function SMazeAdaptor.CurNodeID()
+  local uiModule = GameGlobal.GetModule(SeasonMazeModule):UIModule()
   if not uiModule:IsRunning() then
-    (Log.error)("赛季秘境未运行")
-    return 
+    Log.error("赛季秘境未运行")
+    return
   end
-  local node = (uiModule:SeasonMazeManager()):GetCurNode()
+  local node = uiModule:SeasonMazeManager():GetCurNode()
   if node then
     return node:ID()
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-SMazeAdaptor.OnRelicObtained = function(relicEfts, reason)
-  -- function num : 0_17 , upvalues : _ENV
-  local uiModule = ((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()
+function SMazeAdaptor.OnRelicObtained(relicEfts, reason)
+  local uiModule = GameGlobal.GetModule(SeasonMazeModule):UIModule()
   if not uiModule:IsRunning() then
-    (Log.error)("赛季秘境未运行")
-    return 
+    Log.error("赛季秘境未运行")
+    return
   end
-  local state = (uiModule:SeasonMazeManager()):GetCurState()
-  ;
-  (Log.info)("获得圣物 当前状态:", state:StateID())
+  local state = uiModule:SeasonMazeManager():GetCurState()
+  Log.info("获得圣物 当前状态:", state:StateID())
   state:OnObainedRelic(relicEfts, reason)
 end
-
-

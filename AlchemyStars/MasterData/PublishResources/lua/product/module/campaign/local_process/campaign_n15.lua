@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n15.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN15", ICampaignComponentLocalProcessBase)
 CCampaignN15 = CCampaignN15
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN15.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN15:Constructor()
   self._cumulativeLoginComponent = nil
   self._cumulativeLoginCompInfo = nil
   self._levelCommonComponet = nil
@@ -22,24 +15,15 @@ CCampaignN15.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN15:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N15
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN15:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN15:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetCumulativeLoginComponent()
   self:_GetLevelCommonComponent()
@@ -48,65 +32,47 @@ CCampaignN15.InitComponent = function(self, campaignObj)
   self:_GetLotteryComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_CUMULATIVE_LOGIN)
+function CCampaignN15:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginCompInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginCompInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15._GetLevelCommonComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._levelCommonComponet = (self._campaignObj):GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_LEVEL_COMMON)
+function CCampaignN15:_GetLevelCommonComponent()
+  self._levelCommonComponet = self._campaignObj:GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_LEVEL_COMMON)
   if not self._levelCommonComponet then
-    return 
+    return
   end
-  self._levelCommonCompInfo = (self._levelCommonComponet):ComponentInfo()
+  self._levelCommonCompInfo = self._levelCommonComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15._GetFixTeamComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._fixTeamComponent = (self._campaignObj):GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_LEVEL_FIXTEAM)
+function CCampaignN15:_GetFixTeamComponent()
+  self._fixTeamComponent = self._campaignObj:GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_LEVEL_FIXTEAM)
   if not self._fixTeamComponent then
-    return 
+    return
   end
-  self._fixTeamCompInfo = (self._fixTeamComponent):ComponentInfo()
+  self._fixTeamCompInfo = self._fixTeamComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15._GetPower2itemComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._power2itemComponent = (self._campaignObj):GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_POWER2ITEM)
+function CCampaignN15:_GetPower2itemComponent()
+  self._power2itemComponent = self._campaignObj:GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_POWER2ITEM)
   if not self._power2itemComponent then
-    return 
+    return
   end
-  self._power2itemComponentInfo = (self._power2itemComponent):ComponentInfo()
+  self._power2itemComponentInfo = self._power2itemComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15._GetLotteryComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._lotteryComponent = (self._campaignObj):GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY)
+function CCampaignN15:_GetLotteryComponent()
+  self._lotteryComponent = self._campaignObj:GetComponent(ECampaignN15ComponentID.ECAMPAIGN_N15_LOTTERY)
   if not self._lotteryComponent then
-    return 
+    return
   end
-  self._lotteryCompInfo = (self._lotteryComponent):ComponentInfo()
+  self._lotteryCompInfo = self._lotteryComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetComponent = function(self, componentID)
-  -- function num : 0_9 , upvalues : _ENV
+function CCampaignN15:GetComponent(componentID)
   if ECampaignN15ComponentID.ECAMPAIGN_N15_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponent
   end
@@ -125,10 +91,7 @@ CCampaignN15.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetComponentInfo = function(self, componentID)
-  -- function num : 0_10 , upvalues : _ENV
+function CCampaignN15:GetComponentInfo(componentID)
   if ECampaignN15ComponentID.ECAMPAIGN_N15_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginCompInfo
   end
@@ -147,81 +110,59 @@ CCampaignN15.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetStepStatusNew = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN15:GetStepStatusNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N15)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetLottleryNew = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if not (self._lotteryComponent):ComponentIsOpen() then
+function CCampaignN15:GetLottleryNew()
+  if not self._lotteryComponent:ComponentIsOpen() then
     return false
   end
-  local dbStr = (N15ToolFunctions.GetLottleryNewName)()
-  local hadSave = not (LocalDB.HasKey)(dbStr)
+  local dbStr = N15ToolFunctions.GetLottleryNewName()
+  local hadSave = not LocalDB.HasKey(dbStr)
   return hadSave
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetEntryRedDot = function(self)
-  -- function num : 0_13
-  if not self:GetFixMissionRedDot() and not self:GetLoginAwardRedDot() then
-    return self:GetLottleryRedDot()
-  end
+function CCampaignN15:GetEntryRedDot()
+  return self:GetFixMissionRedDot() or self:GetLoginAwardRedDot() or self:GetLottleryRedDot()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetLottleryRedDot = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local jackpots_info, lottery_times = (self._lotteryComponent):RandEventInfo()
+function CCampaignN15:GetLottleryRedDot()
+  local jackpots_info, lottery_times = self._lotteryComponent:RandEventInfo()
   local poltRedFlag = false
-  for _,v in pairs(jackpots_info) do
+  for _, v in pairs(jackpots_info) do
     if v.is_unlock then
-      local dbStr = (N15ToolFunctions.GetLocalPoltNewName)(v.event_id)
-      if v.is_unlock and not (LocalDB.HasKey)(dbStr) then
+      local dbStr = N15ToolFunctions.GetLocalPoltNewName(v.event_id)
+      if v.is_unlock and not LocalDB.HasKey(dbStr) then
         poltRedFlag = true
       end
     end
   end
   local remain_count = 0
-  for idx,v in pairs((self._lotteryCompInfo).m_jackpots) do
-    local rest, total = (self._lotteryComponent):GetLotteryCount(idx)
-    if rest ~= 0 and (table.icontains)((self._lotteryCompInfo).m_unlock_jackpots, idx) then
+  for idx, v in pairs(self._lotteryCompInfo.m_jackpots) do
+    local rest, total = self._lotteryComponent:GetLotteryCount(idx)
+    if rest ~= 0 and table.icontains(self._lotteryCompInfo.m_unlock_jackpots, idx) then
       remain_count = rest
     end
   end
-  if self._lotteryCompInfo and (self._lotteryComponent):ComponentIsOpen() then
-    local costCount = (self._lotteryCompInfo).m_cost_count * (self._lotteryCompInfo).m_multi_lottery
-    local singleCost = (self._lotteryCompInfo).m_cost_count
-    local curCount = (ClientCampaignDrawShop.GetMoney)((self._lotteryCompInfo).m_cost_item_id)
-    -- DECOMPILER ERROR at PC75: Unhandled construct in 'MakeBoolean' P3
-
-    return (remain_count ~= 0 and singleCost <= curCount)
+  if self._lotteryCompInfo and self._lotteryComponent:ComponentIsOpen() then
+    local costCount = self._lotteryCompInfo.m_cost_count * self._lotteryCompInfo.m_multi_lottery
+    local singleCost = self._lotteryCompInfo.m_cost_count
+    local curCount = ClientCampaignDrawShop.GetMoney(self._lotteryCompInfo.m_cost_item_id)
+    return remain_count ~= 0 and singleCost <= curCount or poltRedFlag
   end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetPoltRedDot = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local jackpots_info, lottery_times = (self._lotteryComponent):RandEventInfo()
+function CCampaignN15:GetPoltRedDot()
+  local jackpots_info, lottery_times = self._lotteryComponent:RandEventInfo()
   local poltRedFlag = false
-  for _,v in pairs(jackpots_info) do
+  for _, v in pairs(jackpots_info) do
     if v.is_unlock then
-      local dbStr = (N15ToolFunctions.GetLocalPoltNewName)(v.event_id)
-      if v.is_unlock and not (LocalDB.HasKey)(dbStr) then
+      local dbStr = N15ToolFunctions.GetLocalPoltNewName(v.event_id)
+      if v.is_unlock and not LocalDB.HasKey(dbStr) then
         poltRedFlag = true
       end
     end
@@ -229,15 +170,12 @@ CCampaignN15.GetPoltRedDot = function(self)
   return poltRedFlag
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetLoginAwardRedDot = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if not (self._cumulativeLoginComponent):ComponentIsOpen() then
+function CCampaignN15:GetLoginAwardRedDot()
+  if not self._cumulativeLoginComponent:ComponentIsOpen() then
     return false
   end
-  local info = (self._cumulativeLoginCompInfo).m_cumulative_info
-  for k,v in pairs(info) do
+  local info = self._cumulativeLoginCompInfo.m_cumulative_info
+  for k, v in pairs(info) do
     if v.m_reward_status == ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV then
       return true
     end
@@ -245,33 +183,25 @@ CCampaignN15.GetLoginAwardRedDot = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetEasyMissionRedDot = function(self)
-  -- function num : 0_17
+function CCampaignN15:GetEasyMissionRedDot()
   return true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN15.GetFixMissionRedDot = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  if not self._fixTeamComponent or not self._fixTeamCompInfo or not (self._fixTeamComponent):ComponentIsOpen() then
+function CCampaignN15:GetFixMissionRedDot()
+  if not (self._fixTeamComponent and self._fixTeamCompInfo) or not self._fixTeamComponent:ComponentIsOpen() then
     return false
   end
-  local cfgs = (Cfg.cfg_campaign_pet_try)({CampaignId = ECampaignType.CAMPAIGN_TYPE_N15})
+  local cfgs = Cfg.cfg_campaign_pet_try({
+    CampaignId = ECampaignType.CAMPAIGN_TYPE_N15
+  })
   local lock = false
   if cfgs then
-    for key,value in pairs(cfgs) do
-      if not (self._fixTeamComponent):IsPassCamMissionID(value.CampaignMissionId) then
+    for key, value in pairs(cfgs) do
+      if not self._fixTeamComponent:IsPassCamMissionID(value.CampaignMissionId) then
         lock = true
         break
       end
     end
   end
-  do
-    return not (self._fixTeamCompInfo).m_b_unlock or lock
-  end
+  return self._fixTeamCompInfo.m_b_unlock and lock
 end
-
-

@@ -1,69 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_cg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICG", Object)
 UICG = UICG
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICG.GetResType = function(resName)
-  -- function num : 0_0 , upvalues : _ENV
+function UICG.GetResType(resName)
   local resType = UICGResType.CG
-  if (string.endwith)(resName, "_cg") then
+  if string.endwith(resName, "_cg") then
     resType = UICGResType.CG
-  else
-    if (string.find)(resName, "_spine_") or (string.startwith)(resName, "l2d_") then
-      resType = UICGResType.Spine
-    end
+  elseif string.find(resName, "_spine_") or string.startwith(resName, "l2d_") then
+    resType = UICGResType.Spine
   end
   return resType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICG.SetDefaultValue = function(tran)
-  -- function num : 0_1 , upvalues : _ENV
+function UICG.SetDefaultValue(tran)
   if not tran then
-    return 
+    return
   end
   tran.anchoredPosition = Vector2.zero
   tran.localScale = Vector3.one
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICG.SetTransform = function(tran, uiName, resName, cfgGroupIndex)
-  -- function num : 0_2 , upvalues : _ENV
-  resName = (DynamicCG.ReplaceL2D)(resName)
-  if not cfgGroupIndex then
-    cfgGroupIndex = 1
-  end
-  local cfg = (Cfg.pet_cg_transform)({ResName = resName, UIName = uiName})
+function UICG.SetTransform(tran, uiName, resName, cfgGroupIndex)
+  resName = DynamicCG.ReplaceL2D(resName)
+  cfgGroupIndex = cfgGroupIndex or 1
+  local cfg = Cfg.pet_cg_transform({ResName = resName, UIName = uiName})
   if not cfg then
-    (UICG.SetDefaultValue)(tran)
-    return 
+    UICG.SetDefaultValue(tran)
+    return
   end
   local v = cfg[1]
   if not v then
-    (UICG.SetDefaultValue)(tran)
-    return 
+    UICG.SetDefaultValue(tran)
+    return
   end
-  local resType = ((UICG.GetResType)(resName))
-  local transform = nil
+  local resType = UICG.GetResType(resName)
+  local transform
   if resType == UICGResType.CG then
     transform = v.CGTransform
+  elseif resType == UICGResType.Spine then
+    transform = v.SpineTransform
   else
-    if resType == UICGResType.Spine then
-      transform = v.SpineTransform
-    else
-      ;
-      (Log.fatal)("### UICG unknown resType:", resName, uiName)
-    end
+    Log.fatal("### UICG unknown resType:", resName, uiName)
   end
   if not transform then
-    (UICG.SetDefaultValue)(tran)
-    return 
+    UICG.SetDefaultValue(tran)
+    return
   end
   local startIndex = (cfgGroupIndex - 1) * 5
   local posX, posY, scale, width, height = transform[startIndex + 1], transform[startIndex + 2], transform[startIndex + 3], transform[startIndex + 4], transform[startIndex + 5]
@@ -76,4 +56,3 @@ end
 
 local UICGResType = {CG = 0, Spine = 1}
 _enum("UICGResType", UICGResType)
-

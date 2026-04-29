@@ -1,34 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_help_pet/ui_help_pet_filter_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHelpPetFilterItem", UICustomWidget)
 UIHelpPetFilterItem = UIHelpPetFilterItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHelpPetFilterItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHelpPetFilterItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetFilterItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHelpPetFilterItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetFilterItem.GetComponents = function(self)
-  -- function num : 0_2
+function UIHelpPetFilterItem:GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "filterName")
   self._selectImgGo = self:GetGameObject("selectImg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetFilterItem.SetData = function(self, cgType, filterName, curCgType, callback)
-  -- function num : 0_3
+function UIHelpPetFilterItem:SetData(cgType, filterName, curCgType, callback)
   self:GetComponents()
   self._cgType = cgType
   self._filterName = filterName
@@ -36,33 +20,21 @@ UIHelpPetFilterItem.SetData = function(self, cgType, filterName, curCgType, call
   self:OnValue(curCgType)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetFilterItem.OnValue = function(self, curCgType)
-  -- function num : 0_4
-  (self._name):SetText(self._filterName)
+function UIHelpPetFilterItem:OnValue(curCgType)
+  self._name:SetText(self._filterName)
   self:Flush(curCgType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetFilterItem.BtnOnClick = function(self)
-  -- function num : 0_5
+function UIHelpPetFilterItem:BtnOnClick()
   if self._callback then
-    (self._callback)(self._cgType)
+    self._callback(self._cgType)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHelpPetFilterItem.Flush = function(self, curCgType)
-  -- function num : 0_6
+function UIHelpPetFilterItem:Flush(curCgType)
   if curCgType == self._cgType then
-    (self._selectImgGo):SetActive(true)
+    self._selectImgGo:SetActive(true)
   else
-    ;
-    (self._selectImgGo):SetActive(false)
+    self._selectImgGo:SetActive(false)
   end
 end
-
-

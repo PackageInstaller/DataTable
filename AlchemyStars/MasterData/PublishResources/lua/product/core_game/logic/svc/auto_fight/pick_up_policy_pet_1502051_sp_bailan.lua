@@ -1,96 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_1502051_sp_bailan.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_Pet1502051SPBaiLan", PickUpPolicy_Base)
 PickUpPolicy_Pet1502051SPBaiLan = PickUpPolicy_Pet1502051SPBaiLan
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_Pet1502051SPBaiLan.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_Pet1502051SPBaiLan:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
-  local monsterGlobalEntityGroup = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterID)
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    monsterGlobalEntityGroup = {(((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()}
+  local monsterGlobalEntityGroup = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterID)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    monsterGlobalEntityGroup = {
+      petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+    }
   end
   local singleGridSelectInfo = {}
   local multiGridSelectInfo = {}
-  local eTeam = (petEntity:Pet()):GetOwnerTeamEntity()
+  local eTeam = petEntity:Pet():GetOwnerTeamEntity()
   local teamPos = eTeam:GetGridPosition()
   local validPickUpGridList, validPosIndexBoolDict = self:_GetValidPickUpGridList(petEntity, calcParam.activeSkillID)
-  for _,e in ipairs(monsterGlobalEntityGroup) do
+  for _, e in ipairs(monsterGlobalEntityGroup) do
     local gridPos = e:GetGridPosition()
-    local bodyArea = (e:BodyArea()):GetArea()
+    local bodyArea = e:BodyArea():GetArea()
     if #bodyArea <= 1 then
-      local gridPosIndex = (Vector2.Pos2Index)(gridPos)
+      local gridPosIndex = Vector2.Pos2Index(gridPos)
       if validPosIndexBoolDict[gridPosIndex] then
         local info = self:_TryGetSelectInfo(gridPos, teamPos)
         if info then
           info.sortIndex = #singleGridSelectInfo
-          ;
-          (table.insert)(singleGridSelectInfo, info)
+          table.insert(singleGridSelectInfo, info)
         end
       end
     else
-      do
-        for _,body in ipairs(bodyArea) do
-          local v2 = gridPos + body
-          local gridPosIndex = (Vector2.Pos2Index)(v2)
-          if validPosIndexBoolDict[gridPosIndex] then
-            local info = self:_TryGetSelectInfo(v2, teamPos)
-            if info then
-              info.sortIndex = #multiGridSelectInfo
-              ;
-              (table.insert)(multiGridSelectInfo, info)
-            end
+      for _, body in ipairs(bodyArea) do
+        local v2 = gridPos + body
+        local gridPosIndex = Vector2.Pos2Index(v2)
+        if validPosIndexBoolDict[gridPosIndex] then
+          local info = self:_TryGetSelectInfo(v2, teamPos)
+          if info then
+            info.sortIndex = #multiGridSelectInfo
+            table.insert(multiGridSelectInfo, info)
           end
-        end
-        do
-          -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC98: LeaveBlock: unexpected jumping out IF_STMT
-
         end
       end
     end
   end
-  local finalInfo = nil
-  if #singleGridSelectInfo > 0 then
+  local finalInfo
+  if 0 < #singleGridSelectInfo then
     finalInfo = self:_TryGetBestCandidate(singleGridSelectInfo)
   end
-  if not finalInfo and #multiGridSelectInfo > 0 then
+  if not finalInfo and 0 < #multiGridSelectInfo then
     finalInfo = self:_TryGetBestCandidate(multiGridSelectInfo)
   end
   if not finalInfo then
-    local list3Ring = (ComputeScopeRange.ComputeRange_SquareRing)(teamPos, 1, 3, false)
+    local list3Ring = ComputeScopeRange.ComputeRange_SquareRing(teamPos, 1, 3, false)
     local candidates = {}
-    for _,v2 in ipairs(list3Ring) do
+    for _, v2 in ipairs(list3Ring) do
       local info = self:_TryGetSelectInfo(v2, teamPos)
       if info then
-        (table.insert)(candidates, info)
+        table.insert(candidates, info)
       end
     end
-    if #candidates > 0 then
+    if 0 < #candidates then
       finalInfo = self:_TryGetBestCandidate(candidates)
     end
   end
-  do
-    if not finalInfo then
-      return {}, {}, {}
-    end
-    return {finalInfo.selectPos}, finalInfo.convertGrids, {}
+  if not finalInfo then
+    return {}, {}, {}
   end
+  return {
+    finalInfo.selectPos
+  }, finalInfo.convertGrids, {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_Pet1502051SPBaiLan._CanGridConvert = function(self, v2)
-  -- function num : 0_1 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function PickUpPolicy_Pet1502051SPBaiLan:_CanGridConvert(v2)
+  local utilData = self._world:GetService("UtilData")
   if not utilData:IsValidPiecePos(v2) then
     return false
   end
@@ -107,85 +87,71 @@ PickUpPolicy_Pet1502051SPBaiLan._CanGridConvert = function(self, v2)
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_Pet1502051SPBaiLan._GetValidPickUpGridList = function(self, petEntity, skillID)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfgsvc = (self._world):GetService("Config")
+function PickUpPolicy_Pet1502051SPBaiLan:_GetValidPickUpGridList(petEntity, skillID)
+  local cfgsvc = self._world:GetService("Config")
   local skillConfigData = cfgsvc:GetSkillConfigData(skillID)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local validGirdList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpValidScopeList, petEntity)
   local invalidGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpInvalidScopeList, petEntity)
   local invalidGridDict = {}
-  for _,invalidPos in ipairs(invalidGridList) do
-    invalidGridDict[(Vector2.Pos2Index)(invalidPos)] = true
+  for _, invalidPos in ipairs(invalidGridList) do
+    invalidGridDict[Vector2.Pos2Index(invalidPos)] = true
   end
   local validPosIdxList = {}
   local validPosList = {}
-  for _,validPos in ipairs(validGirdList) do
-    local validPosIdx = (Vector2.Pos2Index)(validPos)
+  for _, validPos in ipairs(validGirdList) do
+    local validPosIdx = Vector2.Pos2Index(validPos)
     if not invalidGridDict[validPosIdx] then
       validPosIdxList[validPosIdx] = true
-      ;
-      (table.insert)(validPosList, validPos)
+      table.insert(validPosList, validPos)
     end
   end
   return validPosList, validPosIdxList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_Pet1502051SPBaiLan._TryGetSelectInfo = function(self, gridPos, teamPos)
-  -- function num : 0_3 , upvalues : _ENV
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function PickUpPolicy_Pet1502051SPBaiLan:_TryGetSelectInfo(gridPos, teamPos)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalc = SkillScopeCalculator:New(utilScopeSvc)
   local crossCalc = SkillScopeCalculator_Cross:New(scopeCalc)
-  local gridPosIndex = (Vector2.Pos2Index)(gridPos)
-  local crossScope = crossCalc:CalcRange(SkillScopeType.Cross, 1, gridPos, {Vector2.zero})
+  local gridPosIndex = Vector2.Pos2Index(gridPos)
+  local crossScope = crossCalc:CalcRange(SkillScopeType.Cross, 1, gridPos, {
+    Vector2.zero
+  })
   local convertGrids = {}
-  if not crossScope:GetAttackRange() then
-    for _,grid in ipairs({}) do
-      if self:_CanGridConvert(grid) and not (table.Vector2Include)(convertGrids, grid) then
-        (table.insert)(convertGrids, grid)
-      end
+  for _, grid in ipairs(crossScope:GetAttackRange() or {}) do
+    if self:_CanGridConvert(grid) and not table.Vector2Include(convertGrids, grid) then
+      table.insert(convertGrids, grid)
     end
-    if #convertGrids > 0 then
-      return {selectPos = gridPos, convertGrids = convertGrids, distance = (Vector2.Distance)(gridPos, teamPos)}
-    end
+  end
+  if 0 < #convertGrids then
+    return {
+      selectPos = gridPos,
+      convertGrids = convertGrids,
+      distance = Vector2.Distance(gridPos, teamPos)
+    }
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_Pet1502051SPBaiLan._TryGetBestCandidate = function(self, candidates)
-  -- function num : 0_4 , upvalues : _ENV
+function PickUpPolicy_Pet1502051SPBaiLan:_TryGetBestCandidate(candidates)
   local bestCandidate = {}
-  local maxConvertCount = #(candidates[1]).convertGrids
-  local minDistance = (candidates[1]).distance
+  local maxConvertCount = #candidates[1].convertGrids
+  local minDistance = candidates[1].distance
   for i = 2, #candidates do
     local info = candidates[i]
     if maxConvertCount < #info.convertGrids then
       maxConvertCount = #info.convertGrids
       bestCandidate = {info}
-    else
-      if #info.convertGrids == maxConvertCount and info.distance < minDistance then
-        minDistance = info.distance
-        bestCandidate = {info}
-      end
+    elseif #info.convertGrids == maxConvertCount and minDistance > info.distance then
+      minDistance = info.distance
+      bestCandidate = {info}
     end
   end
-  local finalPos = nil
+  local finalPos
   if #bestCandidate == 1 then
     finalPos = bestCandidate[1]
-  else
-    if #bestCandidate > 1 then
-      local index = (math.random)(1, #bestCandidate)
-      finalPos = bestCandidate[index]
-    end
+  elseif 1 < #bestCandidate then
+    local index = math.random(1, #bestCandidate)
+    finalPos = bestCandidate[index]
   end
-  do
-    return finalPos
-  end
+  return finalPos
 end
-
-

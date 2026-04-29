@@ -1,13 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/luck_bag/cfg_luckbag_dialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Stage = 2, Dialog = 3}
+local key = {
+  ID = 1,
+  Stage = 2,
+  Dialog = 3
+}
 local config = {
-{1, 1, "str_cn12_n41_litianxian_speak1"}
-, 
-{2, 2, "str_cn12_n41_litianxian_speak2"}
+  {
+    1,
+    1,
+    "str_cn12_n41_litianxian_speak1"
+  },
+  {
+    2,
+    2,
+    "str_cn12_n41_litianxian_speak2"
+  }
 }
 return config, "ID", key
-

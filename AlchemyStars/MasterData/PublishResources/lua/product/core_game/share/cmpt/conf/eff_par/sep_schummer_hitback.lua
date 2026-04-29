@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_schummer_hitback.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_SchummerHitback", SkillEffectParamBase)
 SkillEffectParam_SchummerHitback = SkillEffectParam_SchummerHitback
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_SchummerHitback.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_SchummerHitback:GetEffectType()
   return SkillEffectType.SchummerHitback
 end
-
-

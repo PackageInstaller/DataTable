@@ -1,209 +1,149 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/subject/main/ui_n9_subject_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9SubjectMainController", UIController)
 UIN9SubjectMainController = UIN9SubjectMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN9SubjectMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIN9SubjectMainController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N9, ECampaignN9ComponentID.ECAMPAIGN_N9_ANSWER_GAME)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N9, ECampaignN9ComponentID.ECAMPAIGN_N9_ANSWER_GAME)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
     self:SubjectEnd()
-    return 
+    return
   end
-  self._cumulativeSubjectComponent = (self._localProcess):GetComponent(ECampaignN9ComponentID.ECAMPAIGN_N9_ANSWER_GAME)
-  self._subjectComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN9ComponentID.ECAMPAIGN_N9_ANSWER_GAME)
-  self._endTime = (self._subjectComponentInfo).m_close_time
+  self._cumulativeSubjectComponent = self._localProcess:GetComponent(ECampaignN9ComponentID.ECAMPAIGN_N9_ANSWER_GAME)
+  self._subjectComponentInfo = self._localProcess:GetComponentInfo(ECampaignN9ComponentID.ECAMPAIGN_N9_ANSWER_GAME)
+  self._endTime = self._subjectComponentInfo.m_close_time
   self:RefreshData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController.RefreshData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN9SubjectMainController:RefreshData()
   self._levelDatas = UIN9SubjectLevelDatas:New(self._subjectComponentInfo)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController._GetComponent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN9SubjectMainController:_GetComponent()
   self._timeLabel = self:GetUIComponent("UILocalizationText", "Time")
   self._timeBgLabel = self:GetUIComponent("UILocalizationText", "TimeBg")
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-      -- function num : 0_2_0_0 , upvalues : self
+  self._backBtn:SetData(function()
+    GameGlobal.TaskManager():StartTask(function(TT)
       self:Lock("UIN9SubjectMainController_CloseCoro")
       self:CloseDialog()
       self:UnLock("UIN9SubjectMainController_CloseCoro")
-    end
-, self)
-  end
-)
-  local levelRoot = (self:GetGameObject("Levels")).transform
+    end, self)
+  end)
+  local levelRoot = self:GetGameObject("Levels").transform
   self._levelItems = {}
   for i = 1, levelRoot.childCount do
     local item = levelRoot:GetChild(i - 1)
     local loader = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local levelItem = loader:SpawnObject("UIN9SubjectLevelItem")
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._levelItems)[#self._levelItems + 1] = levelItem
+    self._levelItems[#self._levelItems + 1] = levelItem
     levelItem:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN9SubjectMainController:OnShow(uiParams)
   self:_GetComponent()
   self:InitRemainTime()
   self:RefreshLevel()
   self:AttachEvent(GameEventType.OnN9SubjectRefresh, self.RefreshSubject)
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstid = roleModule:GetPstId()
-  ;
-  (LocalDB.SetInt)("UIActivityN9Subject" .. pstid, 1)
-  ;
-  (UIN9Const.ResetNewOpenSubjectLevelStatus)()
+  LocalDB.SetInt("UIActivityN9Subject" .. pstid, 1)
+  UIN9Const.ResetNewOpenSubjectLevelStatus()
   local callback = uiParams[1]
   if callback then
     callback()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN9SubjectMainController:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:DetachEvent(GameEventType.OnN9SubjectRefresh, self.RefreshSubject)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController.RefreshSubject = function(self)
-  -- function num : 0_5
+function UIN9SubjectMainController:RefreshSubject()
   self:RefreshData()
   self:RefreshLevel()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController.RefreshLevel = function(self)
-  -- function num : 0_6
+function UIN9SubjectMainController:RefreshLevel()
   if not self._levelDatas then
-    return 
+    return
   end
-  local levelDatas = (self._levelDatas):GetLevelDatas()
+  local levelDatas = self._levelDatas:GetLevelDatas()
   for i = 1, #levelDatas do
     local levelData = levelDatas[i]
-    local item = (self._levelItems)[levelData:GetPositionIndex()]
+    local item = self._levelItems[levelData:GetPositionIndex()]
     if item then
       item:Refresh(levelData)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController.InitRemainTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN9SubjectMainController:InitRemainTime()
   self:RefreshRemainTime()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_7_0 , upvalues : self
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:RefreshRemainTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController.RefreshRemainTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN9SubjectMainController:RefreshRemainTime()
   if not self._endTime then
     self:SubjectEnd()
-    return 
+    return
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(self._endTime - nowTime)
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._endTime - nowTime)
   if seconds < 0 then
     seconds = 0
   end
   if seconds == 0 then
     self:SubjectEnd()
-    return 
+    return
   end
   local timeStr = ""
-  local day = (math.floor)(seconds / 3600 / 24)
-  if day > 0 then
+  local day = math.floor(seconds / 3600 / 24)
+  if 0 < day then
     seconds = seconds - day * 3600 * 24
-    local hour = (math.floor)((seconds) / 3600)
-    timeStr = (StringTable.Get)("str_activity_n9_day", day)
-    if hour > 0 then
-      timeStr = timeStr .. (StringTable.Get)("str_activity_n9_hour", hour)
+    local hour = math.floor(seconds / 3600)
+    timeStr = StringTable.Get("str_activity_n9_day", day)
+    if 0 < hour then
+      timeStr = timeStr .. StringTable.Get("str_activity_n9_hour", hour)
+    end
+  elseif 60 <= seconds then
+    local hour = math.floor(seconds / 3600)
+    seconds = seconds - hour * 3600
+    if 0 < hour then
+      timeStr = StringTable.Get("str_activity_n9_hour", hour)
+    end
+    local minus = math.floor(seconds / 60)
+    if minus then
+      timeStr = timeStr .. StringTable.Get("str_activity_n9_minus", minus)
     end
   else
-    do
-      if seconds >= 60 then
-        local hour = (math.floor)((seconds) / 3600)
-        seconds = seconds - hour * 3600
-        if hour > 0 then
-          timeStr = (StringTable.Get)("str_activity_n9_hour", hour)
-        end
-        local minus = (math.floor)((seconds) / 60)
-        if minus then
-          timeStr = timeStr .. (StringTable.Get)("str_activity_n9_minus", minus)
-        end
-      else
-        do
-          timeStr = (StringTable.Get)("str_activity_n9_less_minus")
-          ;
-          (self._timeLabel):SetText(timeStr)
-          ;
-          (self._timeBgLabel):SetText(timeStr)
-        end
-      end
-    end
+    timeStr = StringTable.Get("str_activity_n9_less_minus")
   end
+  self._timeLabel:SetText(timeStr)
+  self._timeBgLabel:SetText(timeStr)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController.SubjectEnd = function(self)
-  -- function num : 0_9
+function UIN9SubjectMainController:SubjectEnd()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN9SubjectMainController.InfoBtnOnClick = function(self)
-  -- function num : 0_10
+function UIN9SubjectMainController:InfoBtnOnClick()
   self:ShowDialog("UIN9SubjecIntroduce")
 end
-
-

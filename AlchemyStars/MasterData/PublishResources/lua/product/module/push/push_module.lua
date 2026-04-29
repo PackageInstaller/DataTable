@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/push/push_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PushModule", GameModule)
 PushModule = PushModule
-local pushAPI, methodIDDefine = nil, nil
+local pushAPI, methodIDDefine
 if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-  pushAPI = (GCloud.MSDK).MSDKPush
-  methodIDDefine = (GCloud.MSDK).MSDKMethodNameID
-else
-  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-    pushAPI = INTL.INTLAPI
-    methodIDDefine = INTL.INTLMethodID
-  end
+  pushAPI = GCloud.MSDK.MSDKPush
+  methodIDDefine = GCloud.MSDK.MSDKMethodNameID
+elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+  pushAPI = INTL.INTLAPI
+  methodIDDefine = INTL.INTLMethodID
 end
--- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
 
-PushModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PushModule:Constructor()
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     self._defaultChannel = "XG"
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      self._defaultChannel = (INTL.INTLChannel).Firebase
-    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    self._defaultChannel = INTL.INTLChannel.Firebase
   end
   self:RegisterCallback()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PushModule:Dispose()
   self:UnregisterCallback()
   self:UnregisterPush()
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
@@ -41,189 +27,114 @@ PushModule.Dispose = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.RegisterPush = function(self, openId, channel)
-  -- function num : 0_2 , upvalues : pushAPI
+function PushModule:RegisterPush(openId, channel)
   if pushAPI then
-    if not channel then
-      (pushAPI.RegisterPush)(self._defaultChannel, openId)
-    end
+    pushAPI.RegisterPush(channel or self._defaultChannel, openId)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.UnregisterPush = function(self, channel)
-  -- function num : 0_3 , upvalues : pushAPI
-  if pushAPI and not channel then
-    (pushAPI.UnregisterPush)(self._defaultChannel)
-  end
-end
-
--- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.SetTag = function(self, tag, channel)
-  -- function num : 0_4 , upvalues : pushAPI
+function PushModule:UnregisterPush(channel)
   if pushAPI then
-    if not channel then
-      (pushAPI.SetTag)(self._defaultChannel, tag)
-    end
+    pushAPI.UnregisterPush(channel or self._defaultChannel)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.DeleteTag = function(self, tag, channel)
-  -- function num : 0_5 , upvalues : pushAPI
+function PushModule:SetTag(tag, channel)
   if pushAPI then
-    if not channel then
-      (pushAPI.DeleteTag)(self._defaultChannel, tag)
-    end
+    pushAPI.SetTag(channel or self._defaultChannel, tag)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.AddLocalNotification = function(self, localNotification, channel)
-  -- function num : 0_6 , upvalues : pushAPI
+function PushModule:DeleteTag(tag, channel)
   if pushAPI then
-    if not channel then
-      (pushAPI.AddLocalNotification)(self._defaultChannel, localNotification)
-    end
+    pushAPI.DeleteTag(channel or self._defaultChannel, tag)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.ClearLocalNotifications = function(self, channel)
-  -- function num : 0_7 , upvalues : pushAPI
-  if pushAPI and not channel then
-    (pushAPI.ClearLocalNotifications)(self._defaultChannel)
+function PushModule:AddLocalNotification(localNotification, channel)
+  if pushAPI then
+    pushAPI.AddLocalNotification(channel or self._defaultChannel, localNotification)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
+function PushModule:ClearLocalNotifications(channel)
+  if pushAPI then
+    pushAPI.ClearLocalNotifications(channel or self._defaultChannel)
+  end
+end
 
-PushModule.SetINTLPushRetCallback = function(self, callback)
-  -- function num : 0_8
+function PushModule:SetINTLPushRetCallback(callback)
   self._pushRetCallback = callback
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.SetINTLPushBaseRetCallback = function(self, callback)
-  -- function num : 0_9
+function PushModule:SetINTLPushBaseRetCallback(callback)
   self._pushBaseRetCallback = callback
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.OnInlandPushBaseRetEvent = function(self, baseRet)
-  -- function num : 0_10 , upvalues : methodIDDefine, _ENV
-  local methodTag = nil
-  if baseRet.MethodNameId == (methodIDDefine.MSDK_PUSH_REGISTER_PUSH):ToInt() then
+function PushModule:OnInlandPushBaseRetEvent(baseRet)
+  local methodTag
+  if baseRet.MethodNameId == methodIDDefine.MSDK_PUSH_REGISTER_PUSH:ToInt() then
     methodTag = "RegisterPush"
-  else
-    if baseRet.MethodNameId == (methodIDDefine.MSDK_PUSH_UNREGISTER_PUSH):ToInt() then
-      methodTag = "UnregisterPush"
-    else
-      if baseRet.MethodNameId == (methodIDDefine.MSDK_PUSH_SET_TAG):ToInt() then
-        methodTag = "SetTag"
-      else
-        if baseRet.MethodNameId == (methodIDDefine.MSDK_PUSH_DELETE_TAG):ToInt() then
-          methodTag = "DeleteTag"
-        end
-      end
-    end
+  elseif baseRet.MethodNameId == methodIDDefine.MSDK_PUSH_UNREGISTER_PUSH:ToInt() then
+    methodTag = "UnregisterPush"
+  elseif baseRet.MethodNameId == methodIDDefine.MSDK_PUSH_SET_TAG:ToInt() then
+    methodTag = "SetTag"
+  elseif baseRet.MethodNameId == methodIDDefine.MSDK_PUSH_DELETE_TAG:ToInt() then
+    methodTag = "DeleteTag"
   end
-  ;
-  (Log.error)("[MSDK] OnPushBaseRetEvent methodTag " .. methodTag .. " RetCode " .. baseRet.RetCode .. " RetMsg " .. baseRet.RetMsg)
+  Log.error("[MSDK] OnPushBaseRetEvent methodTag " .. methodTag .. " RetCode " .. baseRet.RetCode .. " RetMsg " .. baseRet.RetMsg)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.OnInlandPushNotificationEvent = function(self, pushRet)
-  -- function num : 0_11 , upvalues : methodIDDefine, _ENV
-  local methodTag = nil
-  if pushRet.MethodNameId == (methodIDDefine.MSDK_PUSH_ADD_LOCAL_NOTIFICATION):ToInt() then
+function PushModule:OnInlandPushNotificationEvent(pushRet)
+  local methodTag
+  if pushRet.MethodNameId == methodIDDefine.MSDK_PUSH_ADD_LOCAL_NOTIFICATION:ToInt() then
     methodTag = "AddLocalNotification"
-  else
-    if pushRet.MethodNameId == (methodIDDefine.MSDK_PUSH_CLEAR_LOCAL_NOTIFICATION):ToInt() then
-      methodTag = "ClearLocalNotification"
-    else
-      if pushRet.MethodNameId == (methodIDDefine.MSDK_PUSH_NOTIFICAITON_CALLBACK):ToInt() then
-        methodTag = "NotificationCallback"
-      end
-    end
+  elseif pushRet.MethodNameId == methodIDDefine.MSDK_PUSH_CLEAR_LOCAL_NOTIFICATION:ToInt() then
+    methodTag = "ClearLocalNotification"
+  elseif pushRet.MethodNameId == methodIDDefine.MSDK_PUSH_NOTIFICAITON_CALLBACK:ToInt() then
+    methodTag = "NotificationCallback"
   end
-  ;
-  (Log.error)("[MSDK] OnPushNotificationEvent methodTag " .. methodTag .. " Type " .. pushRet.Type .. " Notification " .. pushRet.Notification)
+  Log.error("[MSDK] OnPushNotificationEvent methodTag " .. methodTag .. " Type " .. pushRet.Type .. " Notification " .. pushRet.Notification)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.OnIntlPushRet = function(self, ret)
-  -- function num : 0_12 , upvalues : _ENV
+function PushModule:OnIntlPushRet(ret)
   if self._pushRetCallback then
-    (self._pushRetCallback)(ret)
+    self._pushRetCallback(ret)
   end
-  ;
-  (Log.info)("[MSDK-INTL] PushModule:OnIntlPushRet, MethodId = ", ret.MethodId, ", loginRet = ", ret:ToString())
+  Log.info("[MSDK-INTL] PushModule:OnIntlPushRet, MethodId = ", ret.MethodId, ", loginRet = ", ret:ToString())
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.OnIntlPushBaseRet = function(self, baseRet)
-  -- function num : 0_13 , upvalues : _ENV
+function PushModule:OnIntlPushBaseRet(baseRet)
   if self._pushBaseRetCallback then
-    (self._pushBaseRetCallback)(baseRet)
+    self._pushBaseRetCallback(baseRet)
   end
-  ;
-  (Log.info)("[MSDK-INTL] PushModule:OnIntlPushBaseRet, MethodId = ", baseRet.MethodId, ", loginRet = ", baseRet:ToString())
+  Log.info("[MSDK-INTL] PushModule:OnIntlPushBaseRet, MethodId = ", baseRet.MethodId, ", loginRet = ", baseRet:ToString())
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.RegisterCallback = function(self)
-  -- function num : 0_14 , upvalues : _ENV, pushAPI
+function PushModule:RegisterCallback()
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     pushAPI.PushBaseRetEvent = pushAPI.PushBaseRetEvent + self.OnInlandPushBaseRetEvent
     pushAPI.PushNotificationEvent = pushAPI.PushNotificationEvent + self.OnInlandPushNotificationEvent
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      self.m_OnPushRetEvent = function(ret)
-    -- function num : 0_14_0 , upvalues : self
-    self:OnIntlPushRet(ret)
-  end
-
-      self.m_OnPushBaseRetEvent = function(baseRet)
-    -- function num : 0_14_1 , upvalues : self
-    self:OnIntlPushBaseRet(baseRet)
-  end
-
-      ;
-      (pushAPI.AddPushResultObserver)(self.m_OnPushRetEvent)
-      ;
-      (pushAPI.AddPushBaseResultObserver)(self.m_OnPushBaseRetEvent)
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    function self.m_OnPushRetEvent(ret)
+      self:OnIntlPushRet(ret)
     end
+    
+    function self.m_OnPushBaseRetEvent(baseRet)
+      self:OnIntlPushBaseRet(baseRet)
+    end
+    
+    pushAPI.AddPushResultObserver(self.m_OnPushRetEvent)
+    pushAPI.AddPushBaseResultObserver(self.m_OnPushBaseRetEvent)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-PushModule.UnregisterCallback = function(self)
-  -- function num : 0_15 , upvalues : _ENV, pushAPI
+function PushModule:UnregisterCallback()
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
     pushAPI.PushBaseRetEvent = pushAPI.PushBaseRetEvent - self.OnInlandPushBaseRetEvent
     pushAPI.PushNotificationEvent = pushAPI.PushNotificationEvent - self.OnInlandPushNotificationEvent
-  else
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-      (pushAPI.RemovePushResultObserver)(self.m_OnPushRetEvent)
-      ;
-      (pushAPI.RemovePushBaseResultObserver)(self.m_OnPushBaseRetEvent)
-    end
+  elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    pushAPI.RemovePushResultObserver(self.m_OnPushRetEvent)
+    pushAPI.RemovePushBaseResultObserver(self.m_OnPushBaseRetEvent)
   end
 end
-
-

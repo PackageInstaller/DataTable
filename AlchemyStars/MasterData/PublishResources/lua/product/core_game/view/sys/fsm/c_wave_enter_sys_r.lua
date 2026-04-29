@@ -1,168 +1,119 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_wave_enter_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("wave_enter_system")
 _class("ClientWaveEnterSystem_Render", WaveEnterSystem)
 ClientWaveEnterSystem_Render = ClientWaveEnterSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientWaveEnterSystem_Render._DoRenderWaveInfo = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function ClientWaveEnterSystem_Render:_DoRenderWaveInfo(TT)
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
-  local utilStatSvc = (self._world):GetService("UtilData")
+  local utilStatSvc = self._world:GetService("UtilData")
   local waveNum = utilStatSvc:GetStatCurWaveIndex()
-  ;
-  (Log.notice)("EnterWave WaveNum:", waveNum)
+  Log.notice("EnterWave WaveNum:", waveNum)
   if levelConfigData:GetWaveCompleteConditionType(waveNum) == CompleteConditionType.KillAnyMonsterCount then
     local param = levelConfigData:GetWaveCompleteConditionParam(waveNum)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.UIInitMonsterDeadCount, (param[1])[1])
-  else
-    do
-      do
-        if levelConfigData:GetWaveCompleteConditionType(waveNum) == CompleteConditionType.KillSpecificMonsterCount then
-          local param = levelConfigData:GetWaveCompleteConditionParam(waveNum)
-          ;
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.UIInitSpecificMonsterDeadCount, (param[1])[1], (param[1])[2])
-        end
-        self:_PlayWaveBgm(waveNum)
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshWaveInfo)
-      end
-    end
+    self._world:EventDispatcher():Dispatch(GameEventType.UIInitMonsterDeadCount, param[1][1])
+  elseif levelConfigData:GetWaveCompleteConditionType(waveNum) == CompleteConditionType.KillSpecificMonsterCount then
+    local param = levelConfigData:GetWaveCompleteConditionParam(waveNum)
+    self._world:EventDispatcher():Dispatch(GameEventType.UIInitSpecificMonsterDeadCount, param[1][1], param[1][2])
   end
+  self:_PlayWaveBgm(waveNum)
+  self._world:EventDispatcher():Dispatch(GameEventType.RefreshWaveInfo)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveEnterSystem_Render._PlayWaveBgm = function(self, waveNum)
-  -- function num : 0_1 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function ClientWaveEnterSystem_Render:_PlayWaveBgm(waveNum)
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local bgmID = levelConfigData:BGMParam(waveNum)
   if not bgmID then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayBGMById)(bgmID)
+  AudioHelperController.PlayBGMById(bgmID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveEnterSystem_Render._DoRenderShowWaveTraps = function(self, TT, spawnTraps)
-  -- function num : 0_2 , upvalues : _ENV
-  local trapServiceRender = (self._world):GetService("TrapRender")
-  local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(trapServiceRender.ShowTraps, trapServiceRender, spawnTraps)
+function ClientWaveEnterSystem_Render:_DoRenderShowWaveTraps(TT, spawnTraps)
+  local trapServiceRender = self._world:GetService("TrapRender")
+  local taskID = GameGlobal.TaskManager():CoreGameStartTask(trapServiceRender.ShowTraps, trapServiceRender, spawnTraps)
   return taskID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveEnterSystem_Render._DoRenderPreShowMonster = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local utilStatSvc = (self._world):GetService("UtilData")
+function ClientWaveEnterSystem_Render:_DoRenderPreShowMonster(TT)
+  local utilStatSvc = self._world:GetService("UtilData")
   local isBossWave, bossIDs = utilStatSvc:GetStatBossWaveInfo()
   if isBossWave then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideBossComing, true, bossIDs[1])
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideBossComing, true, bossIDs[1])
     YIELD(TT, 2000)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideBossComing, false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideBossComing, false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveEnterSystem_Render._DoRenderShowWaveMonsters = function(self, TT, spawnMonsters)
-  -- function num : 0_4 , upvalues : _ENV
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
-  local utilStatSvc = (self._world):GetService("UtilData")
+function ClientWaveEnterSystem_Render:_DoRenderShowWaveMonsters(TT, spawnMonsters)
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
+  local utilStatSvc = self._world:GetService("UtilData")
   local isFirstWave = utilStatSvc:GetStatIsFirstWave()
   if not isFirstWave then
     sMonsterShowRender:CreateMonsterHPEntities(spawnMonsters)
   else
-    local match = (GameGlobal.GetModule)(MatchModule)
+    local match = GameGlobal.GetModule(MatchModule)
     local enterData = match:GetMatchEnterData()
     if enterData._match_type == MatchType.MT_Mission then
-      local missionID = (enterData:GetMissionCreateInfo()).mission_id
-      ;
-      (GameGlobal.UAReportForceGuideEvent)("MissionRefreshMonster", {missionID})
+      local missionID = enterData:GetMissionCreateInfo().mission_id
+      GameGlobal.UAReportForceGuideEvent("MissionRefreshMonster", {missionID})
     end
   end
-  do
-    sMonsterShowRender:ShowMonsters(TT, spawnMonsters)
-  end
+  sMonsterShowRender:ShowMonsters(TT, spawnMonsters)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveEnterSystem_Render._DoRenderWaveEnterInnerStory = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local innerStoryService = (self._world):GetService("InnerStory")
-  local utilStatSvc = (self._world):GetService("UtilData")
+function ClientWaveEnterSystem_Render:_DoRenderWaveEnterInnerStory(TT)
+  local innerStoryService = self._world:GetService("InnerStory")
+  local utilStatSvc = self._world:GetService("UtilData")
   local isFirstWave = utilStatSvc:GetStatIsFirstWave()
   if isFirstWave then
     if innerStoryService:CheckStoryBanner(StoryShowType.BeginAfterMonsterShow) then
-      (InnerGameHelperRender:GetInstance()):IsUIBannerComplete(TT)
+      InnerGameHelperRender:GetInstance():IsUIBannerComplete(TT)
     end
     innerStoryService:CheckStoryTips(StoryShowType.BeginAfterMonsterShow)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveEnterSystem_Render._DoRenderNotifyWaveStart = function(self, TT, waveNum)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveBattlePet)
-  local playBuffService = (self._world):GetService("PlayBuff")
+function ClientWaveEnterSystem_Render:_DoRenderNotifyWaveStart(TT, waveNum)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveBattlePet)
+  local playBuffService = self._world:GetService("PlayBuff")
   playBuffService:PlayBuffView(TT, NTWaveTurnStart:New(waveNum))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveEnterSystem_Render._DoRenderNotifyWaveEnter = function(self, TT, waveNum)
-  -- function num : 0_7 , upvalues : _ENV
-  local playBuffService = (self._world):GetService("PlayBuff")
+function ClientWaveEnterSystem_Render:_DoRenderNotifyWaveEnter(TT, waveNum)
+  local playBuffService = self._world:GetService("PlayBuff")
   playBuffService:PlayBuffView(TT, NTWaveEnter:New(waveNum))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveEnterSystem_Render._DoRenderPlayPreMove = function(self, TT)
-  -- function num : 0_8
-  local playAISvc = (self._world):GetService("PlayAI")
+function ClientWaveEnterSystem_Render:_DoRenderPlayPreMove(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveEnterSystem_Render._DoRenderRefreshMonsterHitBackTeam = function(self, TT, hitbackResult)
-  -- function num : 0_9 , upvalues : _ENV
+function ClientWaveEnterSystem_Render:_DoRenderRefreshMonsterHitBackTeam(TT, hitbackResult)
   if not hitbackResult then
-    return 
+    return
   end
-  local processHitTaskID = nil
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local processHitTaskID
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local hitBackSpeed = 10
-  local playSkillService = (self._world):GetService("PlaySkill")
+  local playSkillService = self._world:GetService("PlaySkill")
   if hitbackResult and not teamEntity:HasHitback() and not hitbackResult:GetHadPlay() then
     hitbackResult:SetHadPlay(true)
     processHitTaskID = playSkillService:ProcessHit(renderBoardEntity, teamEntity, hitbackResult, hitBackSpeed)
   end
-  while processHitTaskID and not (TaskHelper:GetInstance()):IsTaskFinished(processHitTaskID) do
-    YIELD(TT)
+  if processHitTaskID then
+    while not TaskHelper:GetInstance():IsTaskFinished(processHitTaskID) do
+      YIELD(TT)
+    end
   end
   YIELD(TT)
   if hitbackResult then
-    local pieceService = (self._world):GetService("Piece")
+    local pieceService = self._world:GetService("Piece")
     pieceService:RemovePrismAt(hitbackResult:GetPosTarget())
   end
 end
-
-

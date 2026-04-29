@@ -1,8 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/th/activity/n38/str_cn9_n38.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn9_n38_nading_skin_title = "แสงประกายในทะเลมืดมิด", str_cn9_n38_nading_skin_desc = "โคมไฟของฉันจะขับไล่ความมืด!", str_cn9_n38_nading_skin_rewards_preview = "ตัวอย่างรางวัล", str_cn9_n38_nading_skin_time = "เหลือเวลาอีเวนต์: {1}", str_cn9_n38_nading_skin_claim = "รับ", str_cn9_n38_nading_skin_claimed = "รับแล้ว", str_cn9_n38_nading_skin_preview_name = "นาดีน: ผู้คุ้มครองแสงสว่าง (ชุด)", str_cn9_n38_nading_skin_preview_btn = "การตั้งค่า"}
+local config = {
+  str_cn9_n38_nading_skin_title = "แสงประกายในทะเลมืดมิด",
+  str_cn9_n38_nading_skin_desc = "โคมไฟของฉันจะขับไล่ความมืด!",
+  str_cn9_n38_nading_skin_rewards_preview = "ตัวอย่างรางวัล",
+  str_cn9_n38_nading_skin_time = "เหลือเวลาอีเวนต์: {1}",
+  str_cn9_n38_nading_skin_claim = "รับ",
+  str_cn9_n38_nading_skin_claimed = "รับแล้ว",
+  str_cn9_n38_nading_skin_preview_name = "นาดีน: ผู้คุ้มครองแสงสว่าง (ชุด)",
+  str_cn9_n38_nading_skin_preview_btn = "การตั้งค่า"
+}
 return config
-

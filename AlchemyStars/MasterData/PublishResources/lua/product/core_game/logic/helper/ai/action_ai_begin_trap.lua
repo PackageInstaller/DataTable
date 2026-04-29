@@ -1,58 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_ai_begin_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionAiBeginTrap", AINewNode)
 ActionAiBeginTrap = ActionAiBeginTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionAiBeginTrap.Constructor = function(self)
-  -- function num : 0_0
+function ActionAiBeginTrap:Constructor()
   self.m_bStartLogic = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionAiBeginTrap.OnBegin = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local aiComponent = (self.m_entityOwn):AI()
-  if aiComponent == nil then
-    return 
+function ActionAiBeginTrap:OnBegin()
+  local aiComponent = self.m_entityOwn:AI()
+  if nil == aiComponent then
+    return
   end
   local posSelf = self:GetSelfPos()
   local bEnableStart = false
   local stBeginReason = ""
   for i = 1, 1 do
     local nMobilityTotal = aiComponent:GetMobilityValid()
-    if not BattleConst.UseObsoleteAI or nMobilityTotal > 0 then
-      local isRoundEnd = aiComponent:IsAIRoundEnd()
-      if isRoundEnd then
-        stBeginReason = "AI逻辑<回合已经结束>"
-        break
-      end
-      bEnableStart = true
+    if BattleConst.UseObsoleteAI and nMobilityTotal <= 0 then
+      break
     end
+    local isRoundEnd = aiComponent:IsAIRoundEnd()
+    if isRoundEnd then
+      stBeginReason = "AI逻辑<回合已经结束>"
+      break
+    end
+    bEnableStart = true
     break
   end
-  do
-    self.m_bStartLogic = bEnableStart
-    aiComponent:SetMoveState(AIMoveState.MoveEnd)
-    local runCount = self:GetRuntimeData("RunRoundCount") or 1
-    self:SetRuntimeData("RunRoundCount", runCount + 1)
-  end
+  self.m_bStartLogic = bEnableStart
+  aiComponent:SetMoveState(AIMoveState.MoveEnd)
+  local runCount = self:GetRuntimeData("RunRoundCount") or 1
+  self:SetRuntimeData("RunRoundCount", runCount + 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionAiBeginTrap.OnUpdate = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionAiBeginTrap:OnUpdate()
   if self.m_bStartLogic then
     return AINewNodeStatus.Success
   else
     return AINewNodeStatus.Failure
   end
 end
-
-

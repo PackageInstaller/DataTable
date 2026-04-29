@@ -1,43 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_pet_hp_atk_def_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddPetHpAtkDef", BuffViewBase)
 BuffViewAddPetHpAtkDef = BuffViewAddPetHpAtkDef
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddPetHpAtkDef.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddPetHpAtkDef:PlayView(TT)
   local result = self:GetBuffResult()
-  local pstId = ((self._entity):PetPstID()):GetPstID()
+  local pstId = self._entity:PetPstID():GetPstID()
   local hpAdded = result:GetAddHP()
   local atkAdded = result:GetAddAtk()
   local defAdded = result:GetAddDef()
   local damageInfo = result:GetDamageInfo()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ChangePetAtkDefHp, pstId, atkAdded, defAdded, hpAdded)
-  local playDamageSvc = (self._world):GetService("PlayDamage")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ChangePetAtkDefHp, pstId, atkAdded, defAdded, hpAdded)
+  local playDamageSvc = self._world:GetService("PlayDamage")
   playDamageSvc:UpdateTargetHPBar(TT, self._entity, damageInfo)
   local buffViewInstance = self:BuffViewInstance()
   local buffConfigData = buffViewInstance:BuffConfigData()
   local viewParams = buffConfigData:GetViewParams()
   local isPassiveSkill = viewParams.passiveSkill == 1
   if isPassiveSkill then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, pstId, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, pstId, true)
   else
     local entity = self._entity
     local materialAnimationComponent = entity:MaterialAnimationComponent()
     if materialAnimationComponent then
-      if atkAdded > 0 then
+      if 0 < atkAdded then
         materialAnimationComponent:PlayAtkup()
       end
-      if defAdded > 0 then
+      if 0 < defAdded then
         materialAnimationComponent:PlayDefup()
       end
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
-
-

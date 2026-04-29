@@ -1,68 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_jump.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncJump", UICustomWidget)
 UITestFuncJump = UITestFuncJump
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncJump.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITestFuncJump:OnShow(uiParams)
   self._root = self:GetGameObject("_root")
   self._jumpIdText = self:GetUIComponent("UILocalizationText", "_jumpIdText")
   self._jumpParam1Text = self:GetUIComponent("UILocalizationText", "_jumpParam1Text")
   self._jumpParam2Text = self:GetUIComponent("UILocalizationText", "_jumpParam2Text")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncJump.OnHide = function(self)
-  -- function num : 0_1
+function UITestFuncJump:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncJump.ExitBtnOnClick = function(self)
-  -- function num : 0_2
-  (self._root):SetActive(false)
+function UITestFuncJump:ExitBtnOnClick()
+  self._root:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncJump.CheckBtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local idText = (self._jumpIdText).text
-  if idText then
-    local id = tonumber(idText)
-  end
-  local p1Text = (self._jumpParam1Text).text
-  local p2Text = (self._jumpParam2Text).text
-  if p1Text then
-    local param1 = tonumber(p1Text)
-  end
-  if p2Text then
-    local param2 = tonumber(p2Text)
-  end
+function UITestFuncJump:CheckBtnOnClick()
+  local idText = self._jumpIdText.text
+  local id = idText and tonumber(idText)
+  local p1Text = self._jumpParam1Text.text
+  local p2Text = self._jumpParam2Text.text
+  local param1 = p1Text and tonumber(p1Text)
+  local param2 = p2Text and tonumber(p2Text)
   local params = {param1, param2}
   if not id then
-    (ToastManager.ShowToast)("Jump ID is nil")
-    return 
+    ToastManager.ShowToast("Jump ID is nil")
+    return
   end
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+  local questModule = GameGlobal.GetModule(QuestModule)
   local jumpModule = questModule.uiModule
   if jumpModule == nil then
-    (Log.fatal)("[quest] error --> uiModule is nil ! --> jumpModule")
-    return 
+    Log.fatal("[quest] error --> uiModule is nil ! --> jumpModule")
+    return
   end
   local fromParam = {}
-  ;
-  (table.insert)(fromParam, QuestType.QT_Daily)
+  table.insert(fromParam, QuestType.QT_Daily)
   jumpModule:SetFromUIData(FromUIType.NormalUI, "UIQuestController", UIStateType.UIMain, fromParam)
   local jumpType = id
   local jumpParams = params
   jumpModule:SetJumpUIData(jumpType, jumpParams)
   jumpModule:Jump()
 end
-
-

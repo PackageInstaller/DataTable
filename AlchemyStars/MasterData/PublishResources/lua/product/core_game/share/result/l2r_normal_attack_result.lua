@@ -1,13 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/l2r_normal_attack_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("L2R_NormalAttackResult", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-L2R_NormalAttackResult.Constructor = function(self)
-  -- function num : 0_0
+function L2R_NormalAttackResult:Constructor()
   self._playNormalSkillSequence = {}
   self._chainPathTriggerTrapDic = {}
   self._normalAttackResultList = {}
@@ -15,60 +8,40 @@ L2R_NormalAttackResult.Constructor = function(self)
   self._isFinalAtk = false
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.ClearNormalAttackResult = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.clear)(self._playNormalSkillSequence)
-  ;
-  (table.clear)(self._chainPathTriggerTrapDic)
-  ;
-  (table.clear)(self._normalAttackResultList)
+function L2R_NormalAttackResult:ClearNormalAttackResult()
+  table.clear(self._playNormalSkillSequence)
+  table.clear(self._chainPathTriggerTrapDic)
+  table.clear(self._normalAttackResultList)
   self._petRoundTeam = {}
   self._isFinalAtk = false
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.SetPlayNormalAttackFinalAttack = function(self, finalAtk)
-  -- function num : 0_2
+function L2R_NormalAttackResult:SetPlayNormalAttackFinalAttack(finalAtk)
   self._isFinalAtk = finalAtk
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.SetCurPlayNormalSkillPlayStartTime = function(self, order, currentTimeMs)
-  -- function num : 0_3
-  local cur = (self._playNormalSkillSequence)[order]
+function L2R_NormalAttackResult:SetCurPlayNormalSkillPlayStartTime(order, currentTimeMs)
+  local cur = self._playNormalSkillSequence[order]
   cur.playStartTime = currentTimeMs
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.SetPlayNormalSkillSequence = function(self, playNormalSkillSequence)
-  -- function num : 0_4
+function L2R_NormalAttackResult:SetPlayNormalSkillSequence(playNormalSkillSequence)
   self._playNormalSkillSequence = playNormalSkillSequence
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.GetNormalSkillSequenceWithAttackGridData = function(self, skillID, beAttackPos, attackPos)
-  -- function num : 0_5
+function L2R_NormalAttackResult:GetNormalSkillSequenceWithAttackGridData(skillID, beAttackPos, attackPos)
   for i = 1, #self._playNormalSkillSequence do
-    local playNormalSkill = (self._playNormalSkillSequence)[i]
-    if playNormalSkill.skillID == skillID and (playNormalSkill.beAttackPos).x == beAttackPos.x and (playNormalSkill.beAttackPos).y == beAttackPos.y and (playNormalSkill.attackPos).x == attackPos.x and (playNormalSkill.attackPos).y == attackPos.y then
+    local playNormalSkill = self._playNormalSkillSequence[i]
+    if playNormalSkill.skillID == skillID and playNormalSkill.beAttackPos.x == beAttackPos.x and playNormalSkill.beAttackPos.y == beAttackPos.y and playNormalSkill.attackPos.x == attackPos.x and playNormalSkill.attackPos.y == attackPos.y then
       return playNormalSkill
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.GetNormalSkillSequenceWithOrder = function(self, order)
-  -- function num : 0_6
+function L2R_NormalAttackResult:GetNormalSkillSequenceWithOrder(order)
   for i = 1, #self._playNormalSkillSequence do
-    local playNormalSkill = (self._playNormalSkillSequence)[i]
+    local playNormalSkill = self._playNormalSkillSequence[i]
     if playNormalSkill.order == order then
       return playNormalSkill
     end
@@ -76,74 +49,42 @@ L2R_NormalAttackResult.GetNormalSkillSequenceWithOrder = function(self, order)
   return nil
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.GetPlayNormalSkillSequence = function(self)
-  -- function num : 0_7
+function L2R_NormalAttackResult:GetPlayNormalSkillSequence()
   return self._playNormalSkillSequence
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.SetChainPathTriggerTrap = function(self, trapsDic)
-  -- function num : 0_8
+function L2R_NormalAttackResult:SetChainPathTriggerTrap(trapsDic)
   self._chainPathTriggerTrapDic = trapsDic
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.GetChainPathTriggerTrap = function(self, pathIndex)
-  -- function num : 0_9
-  return (self._chainPathTriggerTrapDic)[pathIndex]
+function L2R_NormalAttackResult:GetChainPathTriggerTrap(pathIndex)
+  return self._chainPathTriggerTrapDic[pathIndex]
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.SetNormalSkillWaitTimeDic = function(self, dic)
-  -- function num : 0_10
+function L2R_NormalAttackResult:SetNormalSkillWaitTimeDic(dic)
   self._normalSkillWaitTimeDic = dic
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.GetNormalSkillWaitTimeDic = function(self, petIndex, chainIndex)
-  -- function num : 0_11
-  return ((self._normalSkillWaitTimeDic)[petIndex])[chainIndex]
+function L2R_NormalAttackResult:GetNormalSkillWaitTimeDic(petIndex, chainIndex)
+  return self._normalSkillWaitTimeDic[petIndex][chainIndex]
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.SetPathMoveStartWaitTime = function(self, pathMoveStartWaitTime)
-  -- function num : 0_12
+function L2R_NormalAttackResult:SetPathMoveStartWaitTime(pathMoveStartWaitTime)
   self._pathMoveStartWaitTime = pathMoveStartWaitTime
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.GetPathMoveStartWaitTime = function(self)
-  -- function num : 0_13
+function L2R_NormalAttackResult:GetPathMoveStartWaitTime()
   return self._pathMoveStartWaitTime
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.GetPetNormalAttackResult = function(self, petEntityID)
-  -- function num : 0_14
-  return (self._normalAttackResultList)[petEntityID]
+function L2R_NormalAttackResult:GetPetNormalAttackResult(petEntityID)
+  return self._normalAttackResultList[petEntityID]
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.SetPetNormalAttackResultList = function(self, dataList)
-  -- function num : 0_15
+function L2R_NormalAttackResult:SetPetNormalAttackResultList(dataList)
   self._normalAttackResultList = dataList
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-L2R_NormalAttackResult.GetPlayNormalAttackFinalAttack = function(self)
-  -- function num : 0_16
+function L2R_NormalAttackResult:GetPlayNormalAttackFinalAttack()
   return self._isFinalAtk
 end
-
-

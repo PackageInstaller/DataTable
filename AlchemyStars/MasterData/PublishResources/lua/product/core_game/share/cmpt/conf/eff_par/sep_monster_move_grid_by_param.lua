@@ -1,59 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_monster_move_grid_by_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
-local MovePathType = {Far = 1, NearCross = 2, NearAround = 3}
+local MovePathType = {
+  Far = 1,
+  NearCross = 2,
+  NearAround = 3
+}
 _enum("MovePathType", MovePathType)
 _class("SkillEffectParam_MonsterMoveGridByParam", SkillDamageEffectParam)
 SkillEffectParam_MonsterMoveGridByParam = SkillEffectParam_MonsterMoveGridByParam
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParam_MonsterMoveGridByParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : MovePathType
+function SkillEffectParam_MonsterMoveGridByParam:Constructor(t)
   self._moveType = t.moveType or MovePathType.Far
   self._resetGrid = t.resetGrid or 1
-  if not t.partnerID then
-    self._partnerMonsterClassIDList = {}
-    self._attackSkillID = t.attackSkillID or 0
-  end
+  self._partnerMonsterClassIDList = t.partnerID or {}
+  self._attackSkillID = t.attackSkillID or 0
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_MonsterMoveGridByParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_MonsterMoveGridByParam:GetEffectType()
   return SkillEffectType.MonsterMoveGridByParam
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_MonsterMoveGridByParam.GetMoveType = function(self)
-  -- function num : 0_2
+function SkillEffectParam_MonsterMoveGridByParam:GetMoveType()
   return self._moveType
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_MonsterMoveGridByParam.GetAttackSkillID = function(self)
-  -- function num : 0_3
+function SkillEffectParam_MonsterMoveGridByParam:GetAttackSkillID()
   return self._attackSkillID
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_MonsterMoveGridByParam.GetPartnerIDList = function(self)
-  -- function num : 0_4
+function SkillEffectParam_MonsterMoveGridByParam:GetPartnerIDList()
   return self._partnerMonsterClassIDList
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_MonsterMoveGridByParam.IsResetGrid = function(self)
-  -- function num : 0_5
-  do return self._resetGrid == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SkillEffectParam_MonsterMoveGridByParam:IsResetGrid()
+  return self._resetGrid == 1
 end
-
-

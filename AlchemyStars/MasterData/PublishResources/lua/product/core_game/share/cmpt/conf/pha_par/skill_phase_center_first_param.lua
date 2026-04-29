@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_center_first_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseCenterFirstParam", SkillPhaseParamBase)
 SkillPhaseCenterFirstParam = SkillPhaseCenterFirstParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseCenterFirstParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseCenterFirstParam:Constructor(t)
   self._atkAnim = t.atkAnim
   self._hitAnim = t.hitAnim
   self._atkGridCenterEffectID = t.atkGridCenterEffectID or 0
@@ -22,132 +15,94 @@ SkillPhaseCenterFirstParam.Constructor = function(self, t)
   self._distanceDelay = t.distanceDelay or 0
   self._otherGridHitDelay = t.otherGridHitDelay or 0
   self._damageStageIndex = t.damageStageIndex or 1
-  if not t.atkGridRandomEffect then
-    self._atkGridRandomEffect = {}
-    assert(type(self._atkGridRandomEffect) == "table", "atkGridRamdomEffect必须是数组")
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  self._atkGridRandomEffect = t.atkGridRandomEffect or {}
+  assert("table" == type(self._atkGridRandomEffect), "atkGridRamdomEffect必须是数组")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseCenterFirstParam:GetCacheTable()
   local t = {}
   if self._atkGridCenterEffectID and self._atkGridCenterEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._atkGridCenterEffectID]).ResPath, 1}
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._atkGridCenterEffectID].ResPath,
+      1
+    }
   end
-  if self._atkShandowCenterEffectID and self._atkShandowCenterEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._atkShandowCenterEffectID]).ResPath, 1}
+  if self._atkShandowCenterEffectID and 0 < self._atkShandowCenterEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._atkShandowCenterEffectID].ResPath,
+      1
+    }
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1}
+  if self._hitEffectID and 0 < self._hitEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    }
   end
-  if self._atkGridEffectID and self._atkGridEffectID > 0 then
-    t[#t + 1] = {((Cfg.cfg_effect)[self._atkGridEffectID]).ResPath, 1}
+  if self._atkGridEffectID and 0 < self._atkGridEffectID then
+    t[#t + 1] = {
+      Cfg.cfg_effect[self._atkGridEffectID].ResPath,
+      1
+    }
   end
-  for _,effectID in ipairs(self._atkGridRandomEffect) do
-    (table.insert)(t, self:GenerateCacheTableElementByID(effectID))
+  for _, effectID in ipairs(self._atkGridRandomEffect) do
+    table.insert(t, self:GenerateCacheTableElementByID(effectID))
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseCenterFirstParam:GetPhaseType()
   return SkillViewPhaseType.CenterFirst
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetAtkAnimation = function(self)
-  -- function num : 0_3
+function SkillPhaseCenterFirstParam:GetAtkAnimation()
   return self._atkAnim
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetHitAnimation = function(self)
-  -- function num : 0_4
+function SkillPhaseCenterFirstParam:GetHitAnimation()
   return self._hitAnim
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetAtkCenterEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseCenterFirstParam:GetAtkCenterEffectID()
   return self._atkGridCenterEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetAtkShandowCenterEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseCenterFirstParam:GetAtkShandowCenterEffectID()
   return self._atkShandowCenterEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetAtkEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseCenterFirstParam:GetAtkEffectID()
   return self._atkGridEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetCenterDelay = function(self)
-  -- function num : 0_8
+function SkillPhaseCenterFirstParam:GetCenterDelay()
   return self._centerDelay
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetHitEffectID = function(self)
-  -- function num : 0_9
+function SkillPhaseCenterFirstParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetFinishDelayTime = function(self)
-  -- function num : 0_10
+function SkillPhaseCenterFirstParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetCenterHitDelay = function(self)
-  -- function num : 0_11
+function SkillPhaseCenterFirstParam:GetCenterHitDelay()
   return self._centerHitDelay
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetDistanceDelay = function(self)
-  -- function num : 0_12
+function SkillPhaseCenterFirstParam:GetDistanceDelay()
   return self._distanceDelay
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetOtherGridHitDelay = function(self)
-  -- function num : 0_13
+function SkillPhaseCenterFirstParam:GetOtherGridHitDelay()
   return self._otherGridHitDelay
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetRandomEffectIDs = function(self)
-  -- function num : 0_14
+function SkillPhaseCenterFirstParam:GetRandomEffectIDs()
   return self._atkGridRandomEffect
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCenterFirstParam.GetdDmageStageIndex = function(self)
-  -- function num : 0_15
+function SkillPhaseCenterFirstParam:GetdDmageStageIndex()
   return self._damageStageIndex
 end
-
-

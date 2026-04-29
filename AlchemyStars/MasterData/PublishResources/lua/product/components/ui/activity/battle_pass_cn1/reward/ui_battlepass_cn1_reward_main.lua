@@ -1,60 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/reward/ui_battlepass_cn1_reward_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1RewardMain", UICustomWidget)
 UIBattlePassCN1RewardMain = UIBattlePassCN1RewardMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattlePassCN1RewardMain.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBattlePassCN1RewardMain:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain.OnHide = function(self)
-  -- function num : 0_1
+function UIBattlePassCN1RewardMain:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain.SetData = function(self, campaign, tipsCallback, uiView)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:SetData(campaign, tipsCallback, uiView)
   self._campaign = campaign
   self._tipsCallback = tipsCallback
   self._uiOwner = uiView
-  self._cmptId = (UIActivityBattlePassHelper.Component_LVReward)(self._campaign)
-  ;
-  (UIActivityBattlePassHelper.SetSpecialImgInfo)(self._campaign, R6_PC7, "imgRoot", "img")
-  -- DECOMPILER ERROR at PC20: Overwrote pending register: R6 in 'AssignReg'
-
-  ;
-  (UIActivityBattlePassHelper.SetSkinBtnInfo)(self._campaign, R6_PC7, self, "_skinBtnA", self._tipsCallback)
-  -- DECOMPILER ERROR at PC28: Overwrote pending register: R6 in 'AssignReg'
-
-  ;
-  (UIActivityBattlePassHelper.SetSkinBtnInfo)(self._campaign, R6_PC7, self, "_skinBtnB", self._tipsCallback)
-  -- DECOMPILER ERROR at PC36: Overwrote pending register: R6 in 'AssignReg'
-
-  ;
-  (UIBattlePassStyleHelper.FitStyle_Widget)(self._campaign, R6_PC7)
+  self._cmptId, self._component, self._componentInfo = UIActivityBattlePassHelper.Component_LVReward(self._campaign)
+  UIActivityBattlePassHelper.SetSpecialImgInfo(self._campaign, self, "imgRoot", "img")
+  UIActivityBattlePassHelper.SetSkinBtnInfo(self._campaign, 1, self, "_skinBtnA", self._tipsCallback)
+  UIActivityBattlePassHelper.SetSkinBtnInfo(self._campaign, 2, self, "_skinBtnB", self._tipsCallback)
+  UIBattlePassStyleHelper.FitStyle_Widget(self._campaign, self)
   self:_SetRemainingTime()
-  self:Refresh_ByParams(R6_PC7)
-  R6_PC7 = {resetPos = false, expData = false, expUpgrade = false, anim_PlayIn = false, anim_ListItem = false}
+  self:Refresh_ByParams({
+    resetPos = false,
+    expData = false,
+    expUpgrade = false,
+    anim_PlayIn = false,
+    anim_ListItem = false
+  })
   self:_OnScrollMove()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain.Refresh_ByParams = function(self, params)
-  -- function num : 0_3
+function UIBattlePassCN1RewardMain:Refresh_ByParams(params)
   if not self.view then
-    return 
+    return
   end
-  if not params then
-    params = {}
-  end
+  params = params or {}
   if params.expData == true then
     self:_SetExpInfo(params.expUpgrade)
   end
@@ -62,168 +39,119 @@ UIBattlePassCN1RewardMain.Refresh_ByParams = function(self, params)
   self:_SetClaimAllBtn()
   self:_SetLeftReward()
   self:_SetDynamicList()
-  do
-    if params.resetPos then
-      local pos = (self._component):GetShowLvOnEnter() - 1
-      ;
-      (self._dynamicListHelper):MovePanelToItemIndex(pos, 0)
-    end
-    self:_SetRightReward(self._rightRewardIndex)
-    self:_CheckPoint()
-    if params.anim_PlayIn then
-      self:_PlayAnimIn()
-    end
+  if params.resetPos then
+    local pos = self._component:GetShowLvOnEnter() - 1
+    self._dynamicListHelper:MovePanelToItemIndex(pos, 0)
+  end
+  self:_SetRightReward(self._rightRewardIndex)
+  self:_CheckPoint()
+  if params.anim_PlayIn then
+    self:_PlayAnimIn()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._SetRemainingTime = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local endTime = (self._componentInfo).m_close_time
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_timePool", "UIActivityCommonRemainingTime")
+function UIBattlePassCN1RewardMain:_SetRemainingTime()
+  local endTime = self._componentInfo.m_close_time
+  local obj = UIWidgetHelper.SpawnObject(self, "_timePool", "UIActivityCommonRemainingTime")
   obj:SetData(endTime, nil, nil)
-  local tb = (UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName)(self._campaign, self, "_Time")
-  ;
-  (UIStyleHelper.FitStyle_Widget)(tb.bg, obj, "bg")
-  ;
-  (UIStyleHelper.FitStyle_Widget)(tb.icon, obj, "icon")
-  ;
-  (UIStyleHelper.FitStyle_Widget)(tb.txtTime, obj, "txtDesc")
-  ;
-  (UIStyleHelper.FitStyle_Widget)(tb.txtTime, obj, "txtTime")
+  local tb = UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(self._campaign, self, "_Time")
+  UIStyleHelper.FitStyle_Widget(tb.bg, obj, "bg")
+  UIStyleHelper.FitStyle_Widget(tb.icon, obj, "icon")
+  UIStyleHelper.FitStyle_Widget(tb.txtTime, obj, "txtDesc")
+  UIStyleHelper.FitStyle_Widget(tb.txtTime, obj, "txtTime")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._SetExpInfo = function(self, upgrade)
-  -- function num : 0_5 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "expInfoPool", "UIBattlePassCN1ExpInfo")
+function UIBattlePassCN1RewardMain:_SetExpInfo(upgrade)
+  local obj = UIWidgetHelper.SpawnObject(self, "expInfoPool", "UIBattlePassCN1ExpInfo")
   obj:SetData(1, self._campaign, upgrade, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:Refresh_ByParams({resetPos = false, expData = true, expUpgrade = true, anim_PlayIn = true, anim_ListItem = false})
-  end
-)
+    self:Refresh_ByParams({
+      resetPos = false,
+      expData = true,
+      expUpgrade = true,
+      anim_PlayIn = true,
+      anim_ListItem = false
+    })
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._SetLeftReward = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_leftItemPool", "UIBattlePassCN1RewardCellFixed")
+function UIBattlePassCN1RewardMain:_SetLeftReward()
+  local obj = UIWidgetHelper.SpawnObject(self, "_leftItemPool", "UIBattlePassCN1RewardCellFixed")
   obj:SetData(self._campaign, self._component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._SetRightReward = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:_SetRightReward(index)
   self._rightItemShow = index ~= nil
-  ;
-  (self:GetGameObject("rightItem")):SetActive(self._rightItemShow)
+  self:GetGameObject("rightItem"):SetActive(self._rightItemShow)
   if not self._rightItemShow then
-    return 
+    return
   end
   self._rightRewardIndex = index
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_rightItemPool", "UIBattlePassCN1RewardCell")
+  local obj = UIWidgetHelper.SpawnObject(self, "_rightItemPool", "UIBattlePassCN1RewardCell")
   self:_SetCellData(obj, index, true)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._SetBuyGfitBtn = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIActivityBattlePassHelper.Component_BuyGift)(self._campaign)
+function UIBattlePassCN1RewardMain:_SetBuyGfitBtn()
+  local cmptId, component, componentInfo = UIActivityBattlePassHelper.Component_BuyGift(self._campaign)
   local state = componentInfo.m_buy_state
-  local id = {[BuyGiftStateType.EBGST_INIT] = "str_activity_battlepass_tab_reward_buy_btn_1", [BuyGiftStateType.EBGST_ADVANCED] = "str_activity_battlepass_tab_reward_buy_btn_2", [BuyGiftStateType.EBGST_LUXURY] = "str_activity_battlepass_tab_reward_buy_btn_2"}
-  local str = (StringTable.Get)(id[state])
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtBuyGift", str)
+  local id = {
+    [BuyGiftStateType.EBGST_INIT] = "str_activity_battlepass_tab_reward_buy_btn_1",
+    [BuyGiftStateType.EBGST_ADVANCED] = "str_activity_battlepass_tab_reward_buy_btn_2",
+    [BuyGiftStateType.EBGST_LUXURY] = "str_activity_battlepass_tab_reward_buy_btn_2"
+  }
+  local str = StringTable.Get(id[state])
+  UIWidgetHelper.SetLocalizationText(self, "_txtBuyGift", str)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._SetClaimAllBtn = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local bShow = (UIActivityBattlePassHelper.CheckComponentRedPoint)(self._campaign, self._cmptId)
-  ;
-  (self:GetGameObject("_claimAllBtn")):SetActive(bShow)
+function UIBattlePassCN1RewardMain:_SetClaimAllBtn()
+  local bShow = UIActivityBattlePassHelper.CheckComponentRedPoint(self._campaign, self._cmptId)
+  self:GetGameObject("_claimAllBtn"):SetActive(bShow)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._SetDynamicList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:_SetDynamicList()
   if not self._dynamicListHelper then
     self._dynamicListHelper = UIActivityDynamicListHelper:New(self, self:GetUIComponent("UIDynamicScrollView", "_dynamicList"), "UIBattlePassCN1RewardCell", function(listItem, itemIndex)
-    -- function num : 0_10_0 , upvalues : self
-    self:_SetCellData(listItem, itemIndex)
-  end
-)
+      self:_SetCellData(listItem, itemIndex)
+    end)
     local sr = self:GetUIComponent("ScrollRect", "_dynamicList")
-    ;
-    (sr.onValueChanged):AddListener(function()
-    -- function num : 0_10_1 , upvalues : self
-    self:_OnScrollMove()
+    sr.onValueChanged:AddListener(function()
+      self:_OnScrollMove()
+    end)
   end
-)
-  end
-  do
-    local itemCount = (self._componentInfo).m_max_level
-    local itemCountPerRow = 1
-    ;
-    (self._dynamicListHelper):Refresh(itemCount, itemCountPerRow)
-  end
+  local itemCount = self._componentInfo.m_max_level
+  local itemCountPerRow = 1
+  self._dynamicListHelper:Refresh(itemCount, itemCountPerRow)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._SetCellData = function(self, listItem, index, rightItem)
-  -- function num : 0_11
+function UIBattlePassCN1RewardMain:_SetCellData(listItem, index, rightItem)
   listItem:SetData(index, self._campaign, self._component, function(lv, adv)
-    -- function num : 0_11_0 , upvalues : self
-    (self._component):Start_HandleReceiveLevelReward(lv, adv, function(res, rewards)
-      -- function num : 0_11_0_0 , upvalues : self, lv, adv
+    self._component:Start_HandleReceiveLevelReward(lv, adv, function(res, rewards)
       self:_OnGetRewards(res, rewards, lv, adv)
-    end
-)
-  end
-, self._tipsCallback, rightItem)
+    end)
+  end, self._tipsCallback, rightItem)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._OnScrollMove = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cells = (self._dynamicListHelper):GetVisibleItem()
-  ;
-  (Log.debug)("UIBattlePassCN1RewardMain:_OnScrollMove() table.count(cells) = ", (table.count)(cells))
-  if (table.count)(cells) == 0 then
-    return 
+function UIBattlePassCN1RewardMain:_OnScrollMove()
+  local cells = self._dynamicListHelper:GetVisibleItem()
+  Log.debug("UIBattlePassCN1RewardMain:_OnScrollMove() table.count(cells) = ", table.count(cells))
+  if table.count(cells) == 0 then
+    return
   end
-  local id = ((cells[#cells]).item)._index
-  ;
-  (Log.debug)("UIBattlePassCN1RewardMain:_OnScrollMove() id = ", id)
-  local next = (self._component):GetNextPreviewLvFromConfig(id)
+  local id = cells[#cells].item._index
+  Log.debug("UIBattlePassCN1RewardMain:_OnScrollMove() id = ", id)
+  local next = self._component:GetNextPreviewLvFromConfig(id)
   self:_SetRightReward(next)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._FindClaimItem = function(self, lv, adv)
-  -- function num : 0_13 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:_FindClaimItem(lv, adv)
   local tb = {}
-  local cells = (self._dynamicListHelper):GetVisibleItem()
-  for _,v in ipairs(cells) do
-    if lv == nil or (v.item)._index == lv then
-      if (adv ~= nil or not {1, 2}) and (adv ~= false or not {1}) then
-        local ids = {2}
-      end
-      for __,idx in ipairs(ids) do
-        local obj = (v.item):FindClaimItemIcon(idx)
+  local cells = self._dynamicListHelper:GetVisibleItem()
+  for _, v in ipairs(cells) do
+    if lv == nil or v.item._index == lv then
+      local ids = adv == nil and {1, 2} or adv == false and {1} or {2}
+      for __, idx in ipairs(ids) do
+        local obj = v.item:FindClaimItemIcon(idx)
         if obj then
-          (table.insert)(tb, obj)
+          table.insert(tb, obj)
         end
       end
     end
@@ -231,139 +159,101 @@ UIBattlePassCN1RewardMain._FindClaimItem = function(self, lv, adv)
   return tb
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._OnGetRewards = function(self, res, rewards, lv, adv)
-  -- function num : 0_14 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:_OnGetRewards(res, rewards, lv, adv)
   if res:GetSucc() then
     local tb = self:_FindClaimItem(lv, adv)
     if #tb == 0 then
-      (UIActivityHelper.ShowUIGetRewards)(rewards, true)
+      UIActivityHelper.ShowUIGetRewards(rewards, true)
     else
-      for i,v in ipairs(tb) do
+      for i, v in ipairs(tb) do
         if i == 1 then
           v:PlayAnimTaken(function()
-    -- function num : 0_14_0 , upvalues : _ENV, rewards
-    (UIActivityHelper.ShowUIGetRewards)(rewards, true)
-  end
-)
+            UIActivityHelper.ShowUIGetRewards(rewards, true)
+          end)
         else
           v:PlayAnimTaken()
         end
       end
     end
   else
-    do
-      ;
-      (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_14_1 , upvalues : self
-    self:Refresh_ByParams({resetPos = true, expData = true, expUpgrade = false, anim_PlayIn = true, anim_ListItem = false})
-  end
-, function()
-    -- function num : 0_14_2 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIMain)
-  end
-)
-    end
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:Refresh_ByParams({
+        resetPos = true,
+        expData = true,
+        expUpgrade = false,
+        anim_PlayIn = true,
+        anim_ListItem = false
+      })
+    end, function()
+      self:SwitchState(UIStateType.UIMain)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain.BuyGiftBtnOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  (Log.info)("UIBattlePassCN1RewardMain:BuyGiftBtnOnClick")
-  ;
-  (self._uiOwner):PlayAnim("buy_out", function(callback)
-    -- function num : 0_15_0 , upvalues : _ENV, self
-    (UIActivityBattlePassHelper.OpenBuyGiftController)(function(upgrade)
-      -- function num : 0_15_0_0 , upvalues : self
-      (self._uiOwner):PlayAnim("buy_in")
-      self:Refresh_ByParams({resetPos = false, expData = true, expUpgrade = upgrade, anim_PlayIn = false})
-    end
-)
-  end
-)
+function UIBattlePassCN1RewardMain:BuyGiftBtnOnClick(go)
+  Log.info("UIBattlePassCN1RewardMain:BuyGiftBtnOnClick")
+  self._uiOwner:PlayAnim("buy_out", function(callback)
+    UIActivityBattlePassHelper.OpenBuyGiftController(function(upgrade)
+      self._uiOwner:PlayAnim("buy_in")
+      self:Refresh_ByParams({
+        resetPos = false,
+        expData = true,
+        expUpgrade = upgrade,
+        anim_PlayIn = false
+      })
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain.ClaimAllBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
-  (Log.info)("UIBattlePassCN1RewardMain:ClaimAllBtnOnClick")
-  ;
-  (self._component):Start_HandleOneKeyReceiveReward(function(res, rewards)
-    -- function num : 0_16_0 , upvalues : self
+function UIBattlePassCN1RewardMain:ClaimAllBtnOnClick(go)
+  Log.info("UIBattlePassCN1RewardMain:ClaimAllBtnOnClick")
+  self._component:Start_HandleOneKeyReceiveReward(function(res, rewards)
     self:_OnGetRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain.AttachEvents = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:AttachEvents()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain.RemoveEvents = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:RemoveEvents()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_19
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIBattlePassCN1RewardMain:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._CheckPoint = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:_CheckPoint()
   local obj = self:GetGameObject("claimAllRed")
-  local show = self._campaign and (UIActivityBattlePassHelper.CalcRed_Reward)(self._campaign) or false
+  local show = self._campaign and UIActivityBattlePassHelper.CalcRed_Reward(self._campaign) or false
   obj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._PlayAnimIn = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:_PlayAnimIn()
   local animName = "UIeff_UIBattlePassCN1RewardMain_in"
   local duration = 450
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, duration)
+  UIWidgetHelper.PlayAnimation(self, "_anim", animName, duration)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattlePassCN1RewardMain._DebugPlayAnimTaken = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIBattlePassCN1RewardMain:_DebugPlayAnimTaken()
   local lv, adv = 5, false
   local reward = NewRoleAsset(3000001, 10)
   local rewards = {reward}
   local tb = self:_FindClaimItem(lv, adv)
   if #tb == 0 then
-    (UIActivityHelper.ShowUIGetRewards)(rewards, true)
+    UIActivityHelper.ShowUIGetRewards(rewards, true)
   else
-    for i,v in ipairs(tb) do
+    for i, v in ipairs(tb) do
       if i == 1 then
         v:PlayAnimTaken(function()
-    -- function num : 0_22_0 , upvalues : _ENV, rewards
-    (UIActivityHelper.ShowUIGetRewards)(rewards, true)
-  end
-)
+          UIActivityHelper.ShowUIGetRewards(rewards, true)
+        end)
       else
         v:PlayAnimTaken()
       end
     end
   end
 end
-
-

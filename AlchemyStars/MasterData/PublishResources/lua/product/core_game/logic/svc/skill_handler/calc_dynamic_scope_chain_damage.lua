@@ -1,17 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_dynamic_scope_chain_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_damage")
 _class("SkillEffectCalc_DynamicScopeChainDamage", SkillEffectCalc_Damage)
 SkillEffectCalc_DynamicScopeChainDamage = SkillEffectCalc_DynamicScopeChainDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DynamicScopeChainDamage.CalcChainReplaceScope = function(self, casterEntity, effectParam)
-  -- function num : 0_0
-  local utilScope = (self._world):GetService("UtilScopeCalc")
+function SkillEffectCalc_DynamicScopeChainDamage:CalcChainReplaceScope(casterEntity, effectParam)
+  local utilScope = self._world:GetService("UtilScopeCalc")
   return utilScope:CalcSkillEffectScopeResult(effectParam, casterEntity:GetGridPosition(), casterEntity)
 end
-
-

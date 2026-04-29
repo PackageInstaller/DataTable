@@ -1,87 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/common/ui_activity_evesinsa_second_title.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityEveSinsaSecondTitle", UICustomWidget)
 UIActivityEveSinsaSecondTitle = UIActivityEveSinsaSecondTitle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityEveSinsaSecondTitle._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityEveSinsaSecondTitle:_GetComponents()
   self._titleText = self:GetUIComponent("UILocalizationText", "_titleText")
   self._remainingText = self:GetUIComponent("UILocalizationText", "_remainingText")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSecondTitle.OnShow = function(self)
-  -- function num : 0_1
+function UIActivityEveSinsaSecondTitle:OnShow()
   self._isOpen = true
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSecondTitle.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityEveSinsaSecondTitle:OnHide()
   self._isOpen = false
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSecondTitle.SetData = function(self, campaign, type)
-  -- function num : 0_3
+function UIActivityEveSinsaSecondTitle:SetData(campaign, type)
   self._campaign = campaign
   self._type = type
   self:_SetTitle()
   self:_SetTimer()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSecondTitle._SetTitle = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityEveSinsaSecondTitle:_SetTitle()
   local id = "str_activity_evesinsa_main_levelabtn"
   if self._type == 1 then
     id = "str_activity_evesinsa_main_levelbbtn"
   end
-  ;
-  (self._titleText):SetText((StringTable.Get)(id))
+  self._titleText:SetText(StringTable.Get(id))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSecondTitle._SetTimer = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_5_0 , upvalues : self
+function UIActivityEveSinsaSecondTitle:_SetTimer()
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     return self:_SetRemainingTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityEveSinsaSecondTitle._SetRemainingTimer = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityEveSinsaSecondTitle:_SetRemainingTimer()
   if self._isOpen then
     local uiText = self._remainingText
     local formatStr = "<color=#%s>%s</color>"
     local colorStr = "FFFFFF"
     local svrTimeModule = self:GetModule(SvrTimeModule)
-    local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-    local endTime = (UIActivityEveSinsaHelper.GetPhaseEndTime)(self._campaign, EActivityEveSinsaTimePhase.EPhase_Tree)
+    local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    local endTime = UIActivityEveSinsaHelper.GetPhaseEndTime(self._campaign, EActivityEveSinsaTimePhase.EPhase_Tree)
     local stamp = endTime - curTime
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-    local showStr = (string.format)(formatStr, colorStr, timeStr)
+    local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+    local showStr = string.format(formatStr, colorStr, timeStr)
     uiText:SetText(showStr)
     if stamp <= 0 then
-      self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+      self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
       return true
     end
   end
 end
-
-

@@ -1,115 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/ui_s1_season_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_campaign")
 _class("UIS1SeasonEnter", UISideEnterItem_Campaign)
 UIS1SeasonEnter = UIS1SeasonEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS1SeasonEnter.Constructor = function(self)
-  -- function num : 0_0
+function UIS1SeasonEnter:Constructor()
   self._timeOpen = false
   self._missionOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1SeasonEnter._LoadCampaign = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  (UISideEnterItem_Campaign._LoadCampaign)(self, TT)
+function UIS1SeasonEnter:_LoadCampaign(TT)
+  UISideEnterItem_Campaign._LoadCampaign(self, TT)
   self:CompleteCampaign()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1SeasonEnter._CheckOpen = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS1SeasonEnter:_CheckOpen(TT)
   self._timeOpen = self:_BtnCheckFunc(TT)
-  ;
-  (UISideEnterItem_Campaign._CheckOpen)(self, TT)
+  UISideEnterItem_Campaign._CheckOpen(self, TT)
   return self._timeOpen
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1SeasonEnter.DoShow = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (UISideEnterItem_Campaign.DoShow)(self)
+function UIS1SeasonEnter:DoShow()
+  UISideEnterItem_Campaign.DoShow(self)
   self._missionOpen = self:IsMissionOpen()
   self._uiLocked = self:GetUIComponent("RectTransform", "locked")
-  ;
-  ((self._uiLocked).gameObject):SetActive(not self._missionOpen)
+  self._uiLocked.gameObject:SetActive(not self._missionOpen)
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1SeasonEnter.CompleteCampaign = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS1SeasonEnter:CompleteCampaign()
   if not self._timeOpen then
-    return 
-  else
-    if (self._campaign)._type == -1 then
-      local cfgSeason = (Cfg.cfg_campaign)[(self._campaign)._id]
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._campaign)._type = cfgSeason.CampaignType
-    else
-      do
-        if (self._campaign)._id == -1 then
-          local loginModule = (GameGlobal.GetModule)(LoginModule)
-          local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-          local allSeason = ((Cfg.cfg_campaign)({CampaignType = (self._campaign)._type}))
-          local cfgSeason = nil
-          for k,v in pairs(allSeason) do
-            local openTime = v.BeginTime
-            local closeTime = v.EndTime
-            local open = loginModule:GetTimeStampByTimeStr(openTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-            local close = loginModule:GetTimeStampByTimeStr(closeTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-            if open <= svrTime and svrTime < close then
-              cfgSeason = v
-              break
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC69: Confused about usage of register: R5 in 'UnsetPending'
-
-            if cfgSeason ~= nil then
-              (self._campaign)._id = cfgSeason.CampaignID
-            else
-              ;
-              (Log.exception)("cfg_campaign 与 cfg_main_side_enter_btn 赛季时间配置不匹配 CampaignType --> ", (self._campaign)._type)
-            end
-          end
-        end
+    return
+  elseif self._campaign._type == -1 then
+    local cfgSeason = Cfg.cfg_campaign[self._campaign._id]
+    self._campaign._type = cfgSeason.CampaignType
+  elseif self._campaign._id == -1 then
+    local loginModule = GameGlobal.GetModule(LoginModule)
+    local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+    local allSeason = Cfg.cfg_campaign({
+      CampaignType = self._campaign._type
+    })
+    local cfgSeason
+    for k, v in pairs(allSeason) do
+      local openTime = v.BeginTime
+      local closeTime = v.EndTime
+      local open = loginModule:GetTimeStampByTimeStr(openTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+      local close = loginModule:GetTimeStampByTimeStr(closeTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+      if svrTime >= open and svrTime < close then
+        cfgSeason = v
+        break
       end
+    end
+    if cfgSeason ~= nil then
+      self._campaign._id = cfgSeason.CampaignID
+    else
+      Log.exception("cfg_campaign 与 cfg_main_side_enter_btn 赛季时间配置不匹配 CampaignType --> ", self._campaign._type)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1SeasonEnter.IsMissionOpen = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS1SeasonEnter:IsMissionOpen()
   if self._timeOpen then
-    local cfgSeason = (Cfg.cfg_campaign)[(self._campaign)._id]
+    local cfgSeason = Cfg.cfg_campaign[self._campaign._id]
     local missionid = cfgSeason.NeedMissionID
-    local missionModule = (GameGlobal.GetModule)(MissionModule)
+    local missionModule = GameGlobal.GetModule(MissionModule)
     local ispass = missionModule:IsPassMissionID(missionid)
     return ispass
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1SeasonEnter._CalcNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS1SeasonEnter:_CalcNew()
   if not self._timeOpen then
     return false
   end
@@ -121,10 +80,7 @@ UIS1SeasonEnter._CalcNew = function(self)
   return isNew
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1SeasonEnter._CalcRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIS1SeasonEnter:_CalcRed()
   if not self._timeOpen then
     return false
   end
@@ -136,31 +92,22 @@ UIS1SeasonEnter._CalcRed = function(self)
   return isRed
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS1SeasonEnter.BtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local tips = nil
+function UIS1SeasonEnter:BtnOnClick(go)
+  local tips
   if not self._timeOpen then
-    tips = (StringTable.Get)("str_activity_error_110")
-  else
-    if not self._missionOpen then
-      tips = (StringTable.Get)("str_function_lock_season_tips")
-    end
+    tips = StringTable.Get("str_activity_error_110")
+  elseif not self._missionOpen then
+    tips = StringTable.Get("str_function_lock_season_tips")
   end
   if tips ~= nil then
-    (ToastManager.ShowToast)(tips)
+    ToastManager.ShowToast(tips)
   else
-    self._timeOpen = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonID() ~= -1
+    self._timeOpen = GameGlobal.GetModule(SeasonModule):GetCurSeasonID() ~= -1
     if self._timeOpen then
-      (((GameGlobal.GetModule)(SeasonModule)):UIModule()):OpenSeasonThemeUI()
+      GameGlobal.GetModule(SeasonModule):UIModule():OpenSeasonThemeUI()
     else
-      (self._setShowCallback)(false)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+      self._setShowCallback(false)
+      ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
-
-

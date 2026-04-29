@@ -1,249 +1,210 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/mail/mail_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local mailMessageDef = {CLSID_CEventMobileTestCases = 10000, CLSID_CEventMobileTestCasesRes = 10001, CLSID_CEventMobileNotifyNewMail = 10002, CLSID_CEventMobileNotifyExpiredMail = 10003, CLSID_CEventMobileReqMail = 10004, CLSID_CEventMobileReqMailRes = 10005, CLSID_CEventMobileReadMail = 10006, CLSID_CEventMobileReadMailRes = 10007, CLSID_CEventMobileDeleteMail = 10008, CLSID_CEventMobileDeleteMailRes = 10009, CLSID_CEventMobileDeleteAllMail = 10010, CLSID_CEventMobileDeleteAllMailRes = 10011, CLSID_CEventMobileGetOneMail = 10012, CLSID_CEventMobileGetOneMailRes = 10013, CLSID_CEventMobileGetAllMail = 10014, CLSID_CEventMobileGetAllMailRes = 10015}
-;
-(table.append)(MessageDef, mailMessageDef)
+local mailMessageDef = {
+  CLSID_CEventMobileTestCases = 10000,
+  CLSID_CEventMobileTestCasesRes = 10001,
+  CLSID_CEventMobileNotifyNewMail = 10002,
+  CLSID_CEventMobileNotifyExpiredMail = 10003,
+  CLSID_CEventMobileReqMail = 10004,
+  CLSID_CEventMobileReqMailRes = 10005,
+  CLSID_CEventMobileReadMail = 10006,
+  CLSID_CEventMobileReadMailRes = 10007,
+  CLSID_CEventMobileDeleteMail = 10008,
+  CLSID_CEventMobileDeleteMailRes = 10009,
+  CLSID_CEventMobileDeleteAllMail = 10010,
+  CLSID_CEventMobileDeleteAllMailRes = 10011,
+  CLSID_CEventMobileGetOneMail = 10012,
+  CLSID_CEventMobileGetOneMailRes = 10013,
+  CLSID_CEventMobileGetAllMail = 10014,
+  CLSID_CEventMobileGetAllMailRes = 10015
+}
+table.append(MessageDef, mailMessageDef)
 _class("CEventMobileTestCases", CCallRequestEvent)
 CEventMobileTestCases = CEventMobileTestCases
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileTestCases.Constructor = function(self)
-  -- function num : 0_0
+function CEventMobileTestCases:Constructor()
 end
-
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventMobileTestCases._proto = {}
 _class("CEventMobileTestCasesRes", CCallReplyEvent)
 CEventMobileTestCasesRes = CEventMobileTestCasesRes
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileTestCasesRes.Constructor = function(self)
-  -- function num : 0_1
+function CEventMobileTestCasesRes:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileTestCasesRes._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventMobileNotifyNewMail", CSvrPushEvent)
 CEventMobileNotifyNewMail = CEventMobileNotifyNewMail
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileNotifyNewMail.Constructor = function(self)
-  -- function num : 0_2
+function CEventMobileNotifyNewMail:Constructor()
 end
-
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventMobileNotifyNewMail._proto = {}
 _class("CEventMobileNotifyExpiredMail", CSvrPushEvent)
 CEventMobileNotifyExpiredMail = CEventMobileNotifyExpiredMail
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileNotifyExpiredMail.Constructor = function(self)
-  -- function num : 0_3
+function CEventMobileNotifyExpiredMail:Constructor()
   self.expired_mail_vec = {}
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileNotifyExpiredMail._proto = {
-[3] = {"expired_mail_vec", "list<int64>"}
+  [3] = {
+    "expired_mail_vec",
+    "list<int64>"
+  }
 }
 _class("CEventMobileReqMail", CCallRequestEvent)
 CEventMobileReqMail = CEventMobileReqMail
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileReqMail.Constructor = function(self)
-  -- function num : 0_4
+function CEventMobileReqMail:Constructor()
 end
-
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventMobileReqMail._proto = {}
 _class("CEventMobileReqMailRes", CCallReplyEvent)
 CEventMobileReqMailRes = CEventMobileReqMailRes
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileReqMailRes.Constructor = function(self)
-  -- function num : 0_5
+function CEventMobileReqMailRes:Constructor()
   self.ret = 0
   self.mail_vec = {}
   self.collect_mail_vec = {}
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileReqMailRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"mail_vec", "list<MobileMailInfo>"}
-, 
-[3] = {"collect_mail_vec", "list<MobileMailInfo>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "mail_vec",
+    "list<MobileMailInfo>"
+  },
+  [3] = {
+    "collect_mail_vec",
+    "list<MobileMailInfo>"
+  }
 }
 _class("CEventMobileReadMail", CCallRequestEvent)
 CEventMobileReadMail = CEventMobileReadMail
--- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileReadMail.Constructor = function(self)
-  -- function num : 0_6
+function CEventMobileReadMail:Constructor()
   self.mail_id = 0
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileReadMail._proto = {
-[1] = {"mail_id", "int64"}
+  [1] = {"mail_id", "int64"}
 }
 _class("CEventMobileReadMailRes", CCallReplyEvent)
 CEventMobileReadMailRes = CEventMobileReadMailRes
--- DECOMPILER ERROR at PC147: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileReadMailRes.Constructor = function(self)
-  -- function num : 0_7
+function CEventMobileReadMailRes:Constructor()
   self.ret = 0
   self.mail_id = 0
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileReadMailRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"mail_id", "int64"}
+  [1] = {"ret", "int"},
+  [2] = {"mail_id", "int64"}
 }
 _class("CEventMobileDeleteMail", CCallRequestEvent)
 CEventMobileDeleteMail = CEventMobileDeleteMail
--- DECOMPILER ERROR at PC169: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileDeleteMail.Constructor = function(self)
-  -- function num : 0_8
+function CEventMobileDeleteMail:Constructor()
   self.mail_id = 0
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileDeleteMail._proto = {
-[1] = {"mail_id", "int64"}
+  [1] = {"mail_id", "int64"}
 }
 _class("CEventMobileDeleteMailRes", CCallReplyEvent)
 CEventMobileDeleteMailRes = CEventMobileDeleteMailRes
--- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileDeleteMailRes.Constructor = function(self)
-  -- function num : 0_9
+function CEventMobileDeleteMailRes:Constructor()
   self.ret = 0
   self.mail_id = 0
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileDeleteMailRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"mail_id", "int64"}
+  [1] = {"ret", "int"},
+  [2] = {"mail_id", "int64"}
 }
 _class("CEventMobileDeleteAllMail", CCallRequestEvent)
 CEventMobileDeleteAllMail = CEventMobileDeleteAllMail
--- DECOMPILER ERROR at PC208: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileDeleteAllMail.Constructor = function(self)
-  -- function num : 0_10
+function CEventMobileDeleteAllMail:Constructor()
 end
-
--- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventMobileDeleteAllMail._proto = {}
 _class("CEventMobileDeleteAllMailRes", CCallReplyEvent)
 CEventMobileDeleteAllMailRes = CEventMobileDeleteAllMailRes
--- DECOMPILER ERROR at PC220: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileDeleteAllMailRes.Constructor = function(self)
-  -- function num : 0_11
+function CEventMobileDeleteAllMailRes:Constructor()
   self.ret = 0
   self.mail_vec = {}
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileDeleteAllMailRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"mail_vec", "list<MobileMailInfo>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "mail_vec",
+    "list<MobileMailInfo>"
+  }
 }
 _class("CEventMobileGetOneMail", CCallRequestEvent)
 CEventMobileGetOneMail = CEventMobileGetOneMail
--- DECOMPILER ERROR at PC242: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileGetOneMail.Constructor = function(self)
-  -- function num : 0_12
+function CEventMobileGetOneMail:Constructor()
   self.mail_id = 0
 end
 
--- DECOMPILER ERROR at PC250: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileGetOneMail._proto = {
-[1] = {"mail_id", "int64"}
+  [1] = {"mail_id", "int64"}
 }
 _class("CEventMobileGetOneMailRes", CCallReplyEvent)
 CEventMobileGetOneMailRes = CEventMobileGetOneMailRes
--- DECOMPILER ERROR at PC259: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileGetOneMailRes.Constructor = function(self)
-  -- function num : 0_13
+function CEventMobileGetOneMailRes:Constructor()
   self.ret = 0
   self.mail_id = 0
   self.reward_vec = {}
 end
 
--- DECOMPILER ERROR at PC277: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileGetOneMailRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"mail_id", "int64"}
-, 
-[3] = {"reward_vec", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {"mail_id", "int64"},
+  [3] = {
+    "reward_vec",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventMobileGetAllMail", CCallRequestEvent)
 CEventMobileGetAllMail = CEventMobileGetAllMail
--- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileGetAllMail.Constructor = function(self)
-  -- function num : 0_14
+function CEventMobileGetAllMail:Constructor()
   self.get_collect = false
 end
 
--- DECOMPILER ERROR at PC294: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileGetAllMail._proto = {
-[1] = {"get_collect", "bool"}
+  [1] = {
+    "get_collect",
+    "bool"
+  }
 }
 _class("CEventMobileGetAllMailRes", CCallReplyEvent)
 CEventMobileGetAllMailRes = CEventMobileGetAllMailRes
--- DECOMPILER ERROR at PC303: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventMobileGetAllMailRes.Constructor = function(self)
-  -- function num : 0_15
+function CEventMobileGetAllMailRes:Constructor()
   self.ret = 0
   self.mail_vec = {}
   self.reward_vec = {}
 end
 
--- DECOMPILER ERROR at PC321: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventMobileGetAllMailRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"mail_vec", "list<MobileMailInfo>"}
-, 
-[3] = {"reward_vec", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "mail_vec",
+    "list<MobileMailInfo>"
+  },
+  [3] = {
+    "reward_vec",
+    "list<RoleAsset>"
+  }
 }
-

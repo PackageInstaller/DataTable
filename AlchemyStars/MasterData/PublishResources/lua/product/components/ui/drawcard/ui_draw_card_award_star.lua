@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_award_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardStar", UICustomWidget)
 UIDrawCardAwardStar = UIDrawCardAwardStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardStar.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardAwardStar:Constructor()
   self._atlas = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/ui_discovery_intro_enter/ui_discovery_intro_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryIntroEnter", UICustomWidget)
 UIDiscoveryIntroEnter = UIDiscoveryIntroEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryIntroEnter.OnShow = function(self)
-  -- function num : 0_0
+function UIDiscoveryIntroEnter:OnShow()
   self.root = self:GetGameObject("root")
   self.img = self:GetUIComponent("RawImageLoader", "img")
   self.imgRect = self:GetUIComponent("RectTransform", "img")
@@ -21,30 +14,22 @@ UIDiscoveryIntroEnter.OnShow = function(self)
   self:_CheckActivityIntro()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryIntroEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIDiscoveryIntroEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryIntroEnter._CheckActivityIntro = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.root):SetActive(false)
-  ;
-  (self.awardMulti):SetActive(false)
+function UIDiscoveryIntroEnter:_CheckActivityIntro()
+  self.root:SetActive(false)
+  self.awardMulti:SetActive(false)
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
     local campaignModule = self:GetModule(CampaignModule)
     local bShowIntro = false
-    local showIntroCfg = nil
+    local showIntroCfg
     local latestCampObj = campaignModule:GetLatestCampaignObj(TT)
     if latestCampObj then
       local sampleInfo = latestCampObj:GetSampleInfo()
       if sampleInfo then
         local campId = sampleInfo.id
-        local introCfg = (Cfg.cfg_activity_intro_in_discovery)[campId]
+        local introCfg = Cfg.cfg_activity_intro_in_discovery[campId]
         if introCfg then
           local begin_time = 0
           local close_time = 0
@@ -56,7 +41,7 @@ UIDiscoveryIntroEnter._CheckActivityIntro = function(self)
             local componentInfo = campaign:GetComponentInfo(componentId)
             if componentInfo then
               begin_time = componentInfo.m_unlock_time
-              if (string.isnullorempty)(introCfg.SpecialEndTimeIndex) then
+              if string.isnullorempty(introCfg.SpecialEndTimeIndex) then
                 close_time = componentInfo.m_close_time
               else
                 close_time = componentInfo[introCfg.SpecialEndTimeIndex]
@@ -66,158 +51,100 @@ UIDiscoveryIntroEnter._CheckActivityIntro = function(self)
               end
             end
           else
-            do
-              begin_time = sampleInfo.begin_time
-              close_time = sampleInfo.end_time
-              local svrTimeModule = self:GetModule(SvrTimeModule)
-              do
-                local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-                if begin_time <= curTime and curTime <= close_time then
-                  bShowIntro = true
-                  showIntroCfg = introCfg
-                end
-                ;
-                (self.root):SetActive(bShowIntro)
-                local awardMulti = (self:GetModule(WorldBossModule)):AwardMultiOpen()
-                local unlock = ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_WorldBoss)
-                ;
-                (self.awardMulti):SetActive(not awardMulti or unlock)
-                if bShowIntro and showIntroCfg then
-                  self:_FillActivityIntroEntry(showIntroCfg)
-                else
-                  -- DECOMPILER ERROR at PC114: Confused about usage of register: R7 in 'UnsetPending'
-
-                  ;
-                  (self.awardMultiRect).anchoredPosition = Vector2(0, 5)
-                end
-                return 
-              end
-            end
+            begin_time = sampleInfo.begin_time
+            close_time = sampleInfo.end_time
+          end
+          local svrTimeModule = self:GetModule(SvrTimeModule)
+          local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+          if begin_time <= curTime and close_time >= curTime then
+            bShowIntro = true
+            showIntroCfg = introCfg
           end
         end
       end
     end
-  end
-, self)
+    self.root:SetActive(bShowIntro)
+    local awardMulti = self:GetModule(WorldBossModule):AwardMultiOpen()
+    local unlock = GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_WorldBoss)
+    self.awardMulti:SetActive(awardMulti and unlock)
+    if bShowIntro and showIntroCfg then
+      self:_FillActivityIntroEntry(showIntroCfg)
+    else
+      self.awardMultiRect.anchoredPosition = Vector2(0, 5)
+    end
+    return
+  end, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryIntroEnter._FillActivityIntroEntry = function(self, introCfg)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDiscoveryIntroEnter:_FillActivityIntroEntry(introCfg)
   if introCfg then
     self._activityIntroKey = introCfg.ActivityIntroKey
     self._introLoaderKey = introCfg.IntroLoaderKey
     if introCfg.TitleTextSet then
-      if (introCfg.TitleTextSet).font and (introCfg.TitleTextSet).font == 2 then
+      if introCfg.TitleTextSet.font and introCfg.TitleTextSet.font == 2 then
         self.txt = self.txt1
         self.txtRect = self.txtRect1
-        ;
-        ((self.txt).gameObject):SetActive(true)
+        self.txt.gameObject:SetActive(true)
       end
-      if not (introCfg.TitleTextSet).font or (introCfg.TitleTextSet).font ~= 2 or not "txt1" then
-        local txt = not (introCfg.TitleTextSet).outline or "txt"
-      end
-      self._circleOutline = self:GetUIComponent("H3D.UGUI.CircleOutline", txt)
-      local arr2color = function(arr)
-    -- function num : 0_3_0 , upvalues : _ENV
-    local color = Color.white
-    if arr then
-      color:Set(arr[1] / 255, arr[2] / 255, arr[3] / 255)
-    end
-    return color
-  end
-
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._circleOutline).enabled = true
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._circleOutline).effectColor = arr2color((introCfg.TitleTextSet).outline)
-    end
-    do
-      if self.img and not (string.isnullorempty)(introCfg.IconImg) then
-        (self.img):LoadImage(introCfg.IconImg)
-      end
-      if self.imgRect and introCfg.IconSize then
-        local sizeX = (introCfg.IconSize)[1]
-        local sizeY = (introCfg.IconSize)[2]
-        -- DECOMPILER ERROR at PC84: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self.imgRect).sizeDelta = Vector2(sizeX, sizeY)
-      end
-      do
-        if self.imgRect and introCfg.IconPos then
-          local posX = (introCfg.IconPos)[1]
-          local posY = (introCfg.IconPos)[2]
-          -- DECOMPILER ERROR at PC100: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self.imgRect).anchoredPosition = Vector2(posX, posY)
-        end
-        do
-          if self.txt and not (string.isnullorempty)(introCfg.TitleText) then
-            (self.txt):SetText((StringTable.Get)(introCfg.TitleText))
-            if introCfg.TitleTextSet then
-              local colorTable = (introCfg.TitleTextSet).color
-              do
-                do
-                  if colorTable then
-                    local color = Color(colorTable[1] / 255, colorTable[2] / 255, colorTable[3] / 255)
-                    -- DECOMPILER ERROR at PC133: Confused about usage of register: R4 in 'UnsetPending'
-
-                    ;
-                    (self.txt).color = color
-                  end
-                  -- DECOMPILER ERROR at PC140: Confused about usage of register: R3 in 'UnsetPending'
-
-                  ;
-                  (self.txt).fontSize = (introCfg.TitleTextSet).fontSize or 30
-                  if self.txtRect and introCfg.TitlePos then
-                    local posX = (introCfg.TitlePos)[1]
-                    local posY = (introCfg.TitlePos)[2]
-                    -- DECOMPILER ERROR at PC156: Confused about usage of register: R4 in 'UnsetPending'
-
-                    ;
-                    (self.txtRect).anchoredPosition = Vector2(posX, posY)
-                  end
-                  do
-                    -- DECOMPILER ERROR at PC169: Confused about usage of register: R2 in 'UnsetPending'
-
-                    ;
-                    (self.awardMultiRect).anchoredPosition = Vector2(((self.imgRect).anchoredPosition).x + ((self.imgRect).sizeDelta).x + 10, 5)
-                  end
-                end
-              end
-            end
+      if introCfg.TitleTextSet.outline then
+        local txt = introCfg.TitleTextSet.font and introCfg.TitleTextSet.font == 2 and "txt1" or "txt"
+        self._circleOutline = self:GetUIComponent("H3D.UGUI.CircleOutline", txt)
+        
+        local function arr2color(arr)
+          local color = Color.white
+          if arr then
+            color:Set(arr[1] / 255, arr[2] / 255, arr[3] / 255)
           end
+          return color
         end
+        
+        self._circleOutline.enabled = true
+        self._circleOutline.effectColor = arr2color(introCfg.TitleTextSet.outline)
       end
     end
+    if self.img and not string.isnullorempty(introCfg.IconImg) then
+      self.img:LoadImage(introCfg.IconImg)
+    end
+    if self.imgRect and introCfg.IconSize then
+      local sizeX = introCfg.IconSize[1]
+      local sizeY = introCfg.IconSize[2]
+      self.imgRect.sizeDelta = Vector2(sizeX, sizeY)
+    end
+    if self.imgRect and introCfg.IconPos then
+      local posX = introCfg.IconPos[1]
+      local posY = introCfg.IconPos[2]
+      self.imgRect.anchoredPosition = Vector2(posX, posY)
+    end
+    if self.txt and not string.isnullorempty(introCfg.TitleText) then
+      self.txt:SetText(StringTable.Get(introCfg.TitleText))
+      if introCfg.TitleTextSet then
+        local colorTable = introCfg.TitleTextSet.color
+        if colorTable then
+          local color = Color(colorTable[1] / 255, colorTable[2] / 255, colorTable[3] / 255)
+          self.txt.color = color
+        end
+        self.txt.fontSize = introCfg.TitleTextSet.fontSize or 30
+      end
+    end
+    if self.txtRect and introCfg.TitlePos then
+      local posX = introCfg.TitlePos[1]
+      local posY = introCfg.TitlePos[2]
+      self.txtRect.anchoredPosition = Vector2(posX, posY)
+    end
+    self.awardMultiRect.anchoredPosition = Vector2(self.imgRect.anchoredPosition.x + self.imgRect.sizeDelta.x + 10, 5)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryIntroEnter.RootOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SakuraCommonClick)
+function UIDiscoveryIntroEnter:RootOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SakuraCommonClick)
   if self._activityIntroKey then
-    (UIActivityHelper.ShowActivityIntro)(self._activityIntroKey)
+    UIActivityHelper.ShowActivityIntro(self._activityIntroKey)
   end
   if self._introLoaderKey then
     self:ShowDialog("UIIntroLoader", self._introLoaderKey)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryIntroEnter.AwardMultiOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_world_boss_multi_tips"))
+function UIDiscoveryIntroEnter:AwardMultiOnClick(go)
+  ToastManager.ShowToast(StringTable.Get("str_world_boss_multi_tips"))
 end
-
-

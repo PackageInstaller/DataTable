@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_normal_skill_with_buff_layer_and_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetNormalSkillWithBuffLayerAndTrap", BuffLogicBase)
 BuffLogicSetNormalSkillWithBuffLayerAndTrap = BuffLogicSetNormalSkillWithBuffLayerAndTrap
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNormalSkillWithBuffLayerAndTrap.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetNormalSkillWithBuffLayerAndTrap:Constructor(buffInstance, logicParam)
   self._trapIDs = logicParam.trapIDs
   self._buffEffectType = logicParam.buffEffectType
   self._addLayer = logicParam.addLayer
   self._skillList = logicParam.skillList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNormalSkillWithBuffLayerAndTrap.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  local buffCmpt = (e:BuffComponent())
-  local setSkillParam = nil
-  local svc = (self._world):GetService("BuffLogic")
+function BuffLogicSetNormalSkillWithBuffLayerAndTrap:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  local buffCmpt = e:BuffComponent()
+  local setSkillParam
+  local svc = self._world:GetService("BuffLogic")
   local layerCount = svc:GetBuffLayer(e, self._buffEffectType)
-  if layerCount and layerCount > 0 then
+  if layerCount and 0 < layerCount then
     setSkillParam = {}
     setSkillParam.buffEffectType = self._buffEffectType
     setSkillParam.curLayerCount = layerCount
@@ -34,5 +24,3 @@ BuffLogicSetNormalSkillWithBuffLayerAndTrap.DoLogic = function(self, notify)
   end
   buffCmpt:SetBuffValue("ChangeNormalSkillWithBuffLayerAndTrap", setSkillParam)
 end
-
-

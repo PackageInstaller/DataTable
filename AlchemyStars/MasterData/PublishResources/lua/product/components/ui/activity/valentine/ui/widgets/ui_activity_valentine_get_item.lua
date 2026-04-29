@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/ui/widgets/ui_activity_valentine_get_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineGetItem", UICustomWidget)
 UIActivityValentineGetItem = UIActivityValentineGetItem
 local maxNumCount = 5
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityValentineGetItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityValentineGetItem:OnShow(uiParams)
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._anim = self:GetUIComponent("Animation", "rect")
   self._eff = self:GetGameObject("Effect")
@@ -19,113 +12,86 @@ UIActivityValentineGetItem.OnShow = function(self, uiParams)
   self._itemCount = 0
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIActivityValentineGetItemA")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base)
+  self.uiItem:SetClickCallBack(function(go)
     self:ItemOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItem.ItemOnClick = function(self, go)
-  -- function num : 0_1
+function UIActivityValentineGetItem:ItemOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)(self._item_id, (go.transform).position)
+    self._clickCallback(self._item_id, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItem.SetData = function(self, itemInfo, index, clickCallback, nameColor, tweenIdx, beforeTime)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._eff):SetActive(false)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._itemAlpha).alpha = 0
+function UIActivityValentineGetItem:SetData(itemInfo, index, clickCallback, nameColor, tweenIdx, beforeTime)
+  self._eff:SetActive(false)
+  self._itemAlpha.alpha = 0
   self._index = index
   self._templateData = itemInfo
-  self._item_id = (self._templateData).item_id
-  do
-    if tweenIdx then
-      local tweenTime = beforeTime + (tweenIdx - 1) * 100
-      if self._tweenEvent then
-        ((GameGlobal.Timer)()):CancelEvent(self._tweenEvent)
-        self._tweenEvent = nil
-      end
-      self._tweenEvent = ((GameGlobal.Timer)()):AddEvent(tweenTime, function()
-    -- function num : 0_2_0 , upvalues : self
-    self:_PlayAnim()
-  end
-)
+  self._item_id = self._templateData.item_id
+  if tweenIdx then
+    local tweenTime = beforeTime + (tweenIdx - 1) * 100
+    if self._tweenEvent then
+      GameGlobal.Timer():CancelEvent(self._tweenEvent)
+      self._tweenEvent = nil
     end
-    local quality = (self._templateData).color
-    self._itemCount = (self._templateData).item_count
-    local icon = (self._templateData).icon
-    local tex = self:FormatItemCount(self._itemCount)
-    local text1 = tex
-    local itemId = (self._templateData).item_id
-    local des = (self._templateData).item_des
-    local awardType = (self._templateData).award_type
-    self._clickCallback = clickCallback
-    local activityText = ""
-    if awardType and awardType == StageAwardType.Activity then
-      activityText = (StringTable.Get)("str_item_xianshi")
-    end
-    ;
-    (self.uiItem):SetData({icon = icon, quality = quality, text1 = text1, text2 = nil, text2Color = nil, itemId = itemId, des = des, activityText = activityText})
+    self._tweenEvent = GameGlobal.Timer():AddEvent(tweenTime, function()
+      self:_PlayAnim()
+    end)
   end
+  local quality = self._templateData.color
+  self._itemCount = self._templateData.item_count
+  local icon = self._templateData.icon
+  local tex = self:FormatItemCount(self._itemCount)
+  local text1 = tex
+  local itemId = self._templateData.item_id
+  local des = self._templateData.item_des
+  local awardType = self._templateData.award_type
+  self._clickCallback = clickCallback
+  local activityText = ""
+  if awardType and awardType == StageAwardType.Activity then
+    activityText = StringTable.Get("str_item_xianshi")
+  end
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    text1 = text1,
+    text2 = nil,
+    text2Color = nil,
+    itemId = itemId,
+    des = des,
+    activityText = activityText
+  })
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItem._PlayAnim = function(self)
-  -- function num : 0_3
-  (self._anim):Play("uieff_UIGetItemControllerItem")
+function UIActivityValentineGetItem:_PlayAnim()
+  self._anim:Play("uieff_UIGetItemControllerItem")
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItem.ItemOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+function UIActivityValentineGetItem:ItemOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   if not self._templateData then
-    return 
+    return
   end
   if self._clickCallback then
-    (self._rect):DOPunchScale(Vector3(0.1, 0.1, 0.1), 0.2)
-    ;
-    (self._clickCallback)(self._item_id, (go.transform).position)
+    self._rect:DOPunchScale(Vector3(0.1, 0.1, 0.1), 0.2)
+    self._clickCallback(self._item_id, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItem.GetIndex = function(self)
-  -- function num : 0_5
+function UIActivityValentineGetItem:GetIndex()
   return self._index
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItem.OnHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityValentineGetItem:OnHide()
   if self._tweenEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._tweenEvent)
+    GameGlobal.Timer():CancelEvent(self._tweenEvent)
     self._tweenEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityValentineGetItem.FormatItemCount = function(self, count)
-  -- function num : 0_7 , upvalues : _ENV
-  local tex = (HelperProxy:GetInstance()):FormatItemCount(count)
+function UIActivityValentineGetItem:FormatItemCount(count)
+  local tex = HelperProxy:GetInstance():FormatItemCount(count)
   return tex
 end
-
-

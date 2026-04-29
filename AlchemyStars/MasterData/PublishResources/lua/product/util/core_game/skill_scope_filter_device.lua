@@ -1,46 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/skill_scope_filter_device.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillScopeFilterDevice", Object)
 SkillScopeFilterDevice = SkillScopeFilterDevice
-SkillScopeFilterType = {CasterOccupied = 1, ObstacleTrap = 3, MonsterOccupied = 4, ObstacleTrapByID = 5, SkillTargetSelectionMode = 6, MAX = 99}
+SkillScopeFilterType = {
+  CasterOccupied = 1,
+  ObstacleTrap = 3,
+  MonsterOccupied = 4,
+  ObstacleTrapByID = 5,
+  SkillTargetSelectionMode = 6,
+  MAX = 99
+}
 _enum("SkillScopeFilterType", SkillScopeFilterType)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeFilterDevice.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._filters = {[SkillScopeFilterType.CasterOccupied] = SkillScopeFilter_CasterOccupied:New(), [SkillScopeFilterType.ObstacleTrap] = SkillScopeFilter_ObstacleTrap:New(), [SkillScopeFilterType.MonsterOccupied] = SkillScopeFilter_MonsterOccupied:New(), [SkillScopeFilterType.ObstacleTrapByID] = SkillScopeFilter_ObstacleTrapByID:New(), [SkillScopeFilterType.SkillTargetSelectionMode] = SkillScopeFilter_SkillTargetSelectionMode:New()}
-  self._filterSwitch = {[SkillScopeFilterType.CasterOccupied] = "GetCasterOccupiedPosFilter", [SkillScopeFilterType.ObstacleTrap] = "GetObstructingTrapFilter", [SkillScopeFilterType.MonsterOccupied] = "GetMonsterOccupiedPosFilter", [SkillScopeFilterType.ObstacleTrapByID] = "GetObstructingTrapByIDFilter", [SkillScopeFilterType.SkillTargetSelectionMode] = "GetTargetSelectionMode"}
+function SkillScopeFilterDevice:Constructor()
+  self._filters = {
+    [SkillScopeFilterType.CasterOccupied] = SkillScopeFilter_CasterOccupied:New(),
+    [SkillScopeFilterType.ObstacleTrap] = SkillScopeFilter_ObstacleTrap:New(),
+    [SkillScopeFilterType.MonsterOccupied] = SkillScopeFilter_MonsterOccupied:New(),
+    [SkillScopeFilterType.ObstacleTrapByID] = SkillScopeFilter_ObstacleTrapByID:New(),
+    [SkillScopeFilterType.SkillTargetSelectionMode] = SkillScopeFilter_SkillTargetSelectionMode:New()
+  }
+  self._filterSwitch = {
+    [SkillScopeFilterType.CasterOccupied] = "GetCasterOccupiedPosFilter",
+    [SkillScopeFilterType.ObstacleTrap] = "GetObstructingTrapFilter",
+    [SkillScopeFilterType.MonsterOccupied] = "GetMonsterOccupiedPosFilter",
+    [SkillScopeFilterType.ObstacleTrapByID] = "GetObstructingTrapByIDFilter",
+    [SkillScopeFilterType.SkillTargetSelectionMode] = "GetTargetSelectionMode"
+  }
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilterDevice.DoFilter = function(self, scopeResult, filterParam, passParam)
-  -- function num : 0_1 , upvalues : _ENV
-  for enumKey,filter in pairs(self._filters) do
-    local switchFuncName = (self._filterSwitch)[enumKey]
+function SkillScopeFilterDevice:DoFilter(scopeResult, filterParam, passParam)
+  for enumKey, filter in pairs(self._filters) do
+    local switchFuncName = self._filterSwitch[enumKey]
     if switchFuncName and type(filterParam[switchFuncName]) == "function" then
       local switchFunc = filterParam[switchFuncName]
       if switchFunc(filterParam) then
         filter:DoModifyRange(scopeResult, filterParam, passParam)
       end
     else
-      do
-        do
-          ;
-          (Log.error)(self._className, "filter [", enumKey, "] do not have a switch in SkillScopeFilterParam")
-          -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC32: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.error(self._className, "filter [", enumKey, "] do not have a switch in SkillScopeFilterParam")
     end
   end
 end
-
-

@@ -1,70 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_pet_legend_power_by_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddPetLegendPowerByHP", BuffLogicBase)
 BuffLogicAddPetLegendPowerByHP = BuffLogicAddPetLegendPowerByHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddPetLegendPowerByHP.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddPetLegendPowerByHP:Constructor(buffInstance, logicParam)
   self._hpLimit = logicParam.hpLimit
   self._unitPowerVal = logicParam.unitPowerVal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddPetLegendPowerByHP.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local petEntity = (self._buffInstance):Entity()
+function BuffLogicAddPetLegendPowerByHP:DoLogic()
+  local petEntity = self._buffInstance:Entity()
   if not petEntity then
-    return 
+    return
   end
-  local battleService = (self._world):GetService("Battle")
+  local battleService = self._world:GetService("Battle")
   local hp, maxHP = battleService:GetCasterHP(petEntity)
   local costHPPercent = (maxHP - hp) / maxHP
-  local count = (math.floor)(costHPPercent // self._hpLimit)
+  local count = math.floor(costHPPercent // self._hpLimit)
   if count <= 0 then
-    return 
+    return
   end
-  local val = (math.floor)(count * self._unitPowerVal + 0.5)
+  local val = math.floor(count * self._unitPowerVal + 0.5)
   local curAttributeCmpt = petEntity:Attributes()
   local curLegendPower = curAttributeCmpt:GetAttribute("LegendPower")
   local newPower = curLegendPower + val
-  if BattleConst.LegendPowerMax < newPower then
+  if newPower > BattleConst.LegendPowerMax then
     newPower = BattleConst.LegendPowerMax
   end
   curAttributeCmpt:Modify("LegendPower", newPower)
   local ready = false
-  local activeSkillID = (petEntity:SkillInfo()):GetActiveSkillID()
-  local configService = (self._world):GetService("Config")
+  local activeSkillID = petEntity:SkillInfo():GetActiveSkillID()
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
-  local blsvc = (self._world):GetService("BuffLogic")
+  local blsvc = self._world:GetService("BuffLogic")
   blsvc:ChangePetActiveSkillReady(petEntity, ready)
   local requireNTPowerReady = false
-  if skillConfigData:GetSkillTriggerParam() <= newPower then
+  if newPower >= skillConfigData:GetSkillTriggerParam() then
     blsvc:ChangePetActiveSkillReady(petEntity, 1)
     ready = true
     local notify = NTPowerReady:New(petEntity)
-    ;
-    ((self._world):GetService("Trigger")):Notify(notify)
+    self._world:GetService("Trigger"):Notify(notify)
     requireNTPowerReady = true
   else
-    do
-      blsvc:ChangePetActiveSkillReady(petEntity, 0)
-      ready = false
-      local previouslyReady = skillConfigData:GetSkillTriggerParam() <= curLegendPower
-      local petPstIDComponent = petEntity:PetPstID()
-      local petPstID = petPstIDComponent:GetPstID()
-      local result = BuffResultAddPetLegendPowerByHP:New(petPstID, newPower, ready, previouslyReady)
-      if requireNTPowerReady then
-        result:RequireNTPowerReady(petEntity:GetID())
-      end
-      do return result end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
-    end
+    blsvc:ChangePetActiveSkillReady(petEntity, 0)
+    ready = false
   end
+  local previouslyReady = curLegendPower >= skillConfigData:GetSkillTriggerParam()
+  local petPstIDComponent = petEntity:PetPstID()
+  local petPstID = petPstIDComponent:GetPstID()
+  local result = BuffResultAddPetLegendPowerByHP:New(petPstID, newPower, ready, previouslyReady)
+  if requireNTPowerReady then
+    result:RequireNTPowerReady(petEntity:GetID())
+  end
+  return result
 end
-
-

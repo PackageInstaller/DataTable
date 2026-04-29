@@ -1,8 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/help/ui_season_maze_helper_tab_enum.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UISeasonMazeHelperTabIndex = {Temp1 = 1, Temp2 = 2, Temp3 = 3, Temp4 = 4, Temp5 = 5, Temp6 = 6, Temp7 = 7}
+local UISeasonMazeHelperTabIndex = {
+  Temp1 = 1,
+  Temp2 = 2,
+  Temp3 = 3,
+  Temp4 = 4,
+  Temp5 = 5,
+  Temp6 = 6,
+  Temp7 = 7
+}
 _enum("UISeasonMazeHelperTabIndex", UISeasonMazeHelperTabIndex)
-

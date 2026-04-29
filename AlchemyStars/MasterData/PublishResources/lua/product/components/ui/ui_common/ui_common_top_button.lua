@@ -1,95 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_common/ui_common_top_button.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonTopButton", UICustomWidget)
 UICommonTopButton = UICommonTopButton
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonTopButton.Constructor = function(self)
-  -- function num : 0_0
+function UICommonTopButton:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonTopButton.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICommonTopButton:OnShow(uiParams)
   self._campaign = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonTopButton.SetData = function(self, _backCB, _helpCB, _thumbCB, _hideHomeBtn, showHideUICB)
-  -- function num : 0_2
+function UICommonTopButton:SetData(_backCB, _helpCB, _thumbCB, _hideHomeBtn, showHideUICB)
   self.backCallback = _backCB
   self.helpCallback = _helpCB
   self.thumbCB = _thumbCB
   self.showHideUICB = showHideUICB
   if self.helpCallback == nil then
-    (self:GetGameObject("ButtonHelp")):SetActive(false)
+    self:GetGameObject("ButtonHelp"):SetActive(false)
   end
   if _hideHomeBtn then
     self:HideHomeBtn()
   end
   if self.showHideUICB == nil then
-    (self:GetGameObject("btnShowHideUI")):SetActive(false)
+    self:GetGameObject("btnShowHideUI"):SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonTopButton.OnHide = function(self)
-  -- function num : 0_3
+function UICommonTopButton:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonTopButton.ButtonBackOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("ButtonBackOnClick", {}, true)
-  ;
-  (self.backCallback)()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
+function UICommonTopButton:ButtonBackOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("ButtonBackOnClick", {}, true)
+  self.backCallback()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonTopButton.ButtonThumbOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("ButtonThumbOnClick", {}, true)
+function UICommonTopButton:ButtonThumbOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("ButtonThumbOnClick", {}, true)
   if self.thumbCB then
-    (self.thumbCB)()
+    self.thumbCB()
   else
-    ;
-    (UICommonHelper:GetInstance()):SwitchToUIMain()
+    UICommonHelper:GetInstance():SwitchToUIMain()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonTopButton.ButtonHelpOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("ButtonHelpOnClick", {}, true)
-  ;
-  (self.helpCallback)()
+function UICommonTopButton:ButtonHelpOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("ButtonHelpOnClick", {}, true)
+  self.helpCallback()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonTopButton.HideHomeBtn = function(self)
-  -- function num : 0_7
-  (self:GetGameObject("ButtonThumb")):SetActive(false)
+function UICommonTopButton:HideHomeBtn()
+  self:GetGameObject("ButtonThumb"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonTopButton.btnShowHideUIOnClick = function(self, go)
-  -- function num : 0_8
+function UICommonTopButton:btnShowHideUIOnClick(go)
   if self.showHideUICB then
-    (self.showHideUICB)()
+    self.showHideUICB()
   end
 end
-
-

@@ -1,47 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ani_pop_star/stn_ani_pop_star_reset.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("AniPopStar_Reset", Common_AsyncBase)
 AniPopStar_Reset = AniPopStar_Reset
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AniPopStar_Reset.Constructor = function(self, _manager)
-  -- function num : 0_0
+function AniPopStar_Reset:Constructor(_manager)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AniPopStar_Reset.TaskFunc = function(self, TT, status)
-  -- function num : 0_1 , upvalues : _ENV
-  local strcmd = (string.format)("AnipopUnlockAllHard %s", (LocalDB.GetString)("OpenIdTest"))
-  ;
-  (self.m_pManager):SendCheatCommand(strcmd)
-  ;
-  (self.m_pManager):Log(self, "Command sent: ", strcmd)
+function AniPopStar_Reset:TaskFunc(TT, status)
+  local strcmd = string.format("AnipopUnlockAllHard %s", LocalDB.GetString("OpenIdTest"))
+  self.m_pManager:SendCheatCommand(strcmd)
+  self.m_pManager:Log(self, "Command sent: ", strcmd)
   local res = AsyncRequestRes:New()
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   res = anipopModule:RequestAnipopInfo(TT)
   if res:GetSucc() then
     local aniPopInfo = anipopModule:GetAniPopInfo()
     local res = anipopModule:Balance(TT, aniPopInfo.cur_hard_id)
     if res:GetSucc() then
-      (Log.fatal)("启迪互联重置失败:", res:GetResult())
-      local testHardID = 1
-      local runData = (self.m_pManager):GetMissionRunData()
-      testHardID = runData:GetHardID()
-      local res = anipopModule:SelectHard(TT, testHardID)
-      if res:GetSucc() then
-        do
-          (Log.fatal)("启迪互联选择难度错误：", res:GetResult())
-          ;
-          (Log.fatal)("启迪互联请求失败:", res:GetResult())
-        end
-      end
+    else
+      Log.fatal("启迪互联重置失败:", res:GetResult())
     end
+    local testHardID = 1
+    local runData = self.m_pManager:GetMissionRunData()
+    testHardID = runData:GetHardID()
+    local res = anipopModule:SelectHard(TT, testHardID)
+    if res:GetSucc() then
+    else
+      Log.fatal("启迪互联选择难度错误：", res:GetResult())
+    end
+  else
+    Log.fatal("启迪互联请求失败:", res:GetResult())
   end
 end
-
-

@@ -1,67 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_partner_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderPartnerComponent", Object)
 RenderPartnerComponent = RenderPartnerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderPartnerComponent.Constructor = function(self)
-  -- function num : 0_0
+function RenderPartnerComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderPartnerComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function RenderPartnerComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderPartnerComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function RenderPartnerComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderPartner = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).RenderPartner)
+function Entity:RenderPartner()
+  return self:GetComponent(self.WEComponentsEnum.RenderPartner)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderPartner = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).RenderPartner)
+function Entity:HasRenderPartner()
+  return self:HasComponent(self.WEComponentsEnum.RenderPartner)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderPartner = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderPartner
+function Entity:AddRenderPartner()
+  local index = self.WEComponentsEnum.RenderPartner
   local component = RenderPartnerComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderPartner = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderPartner
+function Entity:ReplaceRenderPartner()
+  local index = self.WEComponentsEnum.RenderPartner
   local component = RenderPartnerComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderPartner = function(self)
-  -- function num : 0_7
+function Entity:RemoveRenderPartner()
   if self:HasRenderPartner() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderPartner)
+    self:RemoveComponent(self.WEComponentsEnum.RenderPartner)
   end
 end
-
-

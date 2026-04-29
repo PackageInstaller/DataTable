@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_add_blood_over_flow_for_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParam_AddBloodOverFlowForDamage", SkillEffectParamBase)
 SkillEffectParam_AddBloodOverFlowForDamage = SkillEffectParam_AddBloodOverFlowForDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_AddBloodOverFlowForDamage.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_AddBloodOverFlowForDamage:Constructor(t)
   self._addBlood = t.addBlood
   self._damage = t.damage
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_AddBloodOverFlowForDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_AddBloodOverFlowForDamage:GetEffectType()
   return SkillEffectType.AddBloodOverFlowForDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_AddBloodOverFlowForDamage.GetAddBlood = function(self)
-  -- function num : 0_2
+function SkillEffectParam_AddBloodOverFlowForDamage:GetAddBlood()
   return self._addBlood
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_AddBloodOverFlowForDamage.GetDamage = function(self)
-  -- function num : 0_3
+function SkillEffectParam_AddBloodOverFlowForDamage:GetDamage()
   return self._damage
 end
-
-

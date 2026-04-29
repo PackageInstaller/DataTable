@@ -1,44 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/cutscene_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutsceneLoadingHandler", LoadingHandler)
 CutsceneLoadingHandler = CutsceneLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0
+function CutsceneLoadingHandler:PreLoadBeforeLoadLevel(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
-  local uiStoryModule = ((GameGlobal.GetModule)(StoryModule)):GetUIModule()
+function CutsceneLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
+  local uiStoryModule = GameGlobal.GetModule(StoryModule):GetUIModule()
   self._levelID = uiStoryModule:GetLevelID()
   if self._levelID == nil then
     self._levelID = 1000902
   end
-  local levelRawData = (Cfg.cfg_level)[self._levelID]
-  local themeRawData = (Cfg.cfg_theme)[levelRawData.Theme]
+  local levelRawData = Cfg.cfg_level[self._levelID]
+  local themeRawData = Cfg.cfg_theme[levelRawData.Theme]
   local levelResPath = themeRawData.SceneResPath
-  ;
-  ((GameGlobal:GetInstance()).gameLogic):LoadScene(TT, levelResPath)
+  GameGlobal:GetInstance().gameLogic:LoadScene(TT, levelResPath)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal:GetInstance()):GetCollector("CoreGameLoading")):Sample("CutsceneLoadingHandler:OnLoadingFinish() begin")
-  ;
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UICutsceneReview)
-  ;
-  (GameGlobal:GetInstance()):EnterCutscene(self._levelID)
-  ;
-  ((GameGlobal:GetInstance()):GetCollector("CoreGameLoading")):Sample("CutsceneLoadingHandler:OnLoadingFinish()")
+function CutsceneLoadingHandler:OnLoadingFinish(...)
+  GameGlobal:GetInstance():GetCollector("CoreGameLoading"):Sample("CutsceneLoadingHandler:OnLoadingFinish() begin")
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UICutsceneReview)
+  GameGlobal:GetInstance():EnterCutscene(self._levelID)
+  GameGlobal:GetInstance():GetCollector("CoreGameLoading"):Sample("CutsceneLoadingHandler:OnLoadingFinish()")
 end
-
-

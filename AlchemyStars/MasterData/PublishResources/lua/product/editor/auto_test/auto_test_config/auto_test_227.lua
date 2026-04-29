@@ -1,51 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_227.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_227 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPosition",
+        args = {pos = 502}
+      },
+      [3] = {
+        action = "SetEntityHPPercent",
+        args = {name = "team", percent = 0.5}
+      },
+      [4] = {
+        action = "AddMonster",
+        args = {
+          dir = 1,
+          disableai = true,
+          id = 5100111,
+          name = "e1",
+          pos = 504
+        }
+      },
+      [5] = {
+        action = "CheckEntityChangeHP",
+        args = {
+          compare = "<",
+          name = "team",
+          trigger = 9
+        }
+      },
+      [6] = {
+        action = "FakeInputChain",
+        args = {
+          chainPath = {
+            [1] = 502.0
+          },
+          pieceType = 0
+        }
+      },
+      [7] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "每回合开始时，为队伍恢复相当于菲莉诗40%攻击力和队伍已损失生命4%的血量。"
+    }
+  },
+  name = "菲莉诗被动技",
+  petList = {
+    [1] = {
+      affinity = 1,
+      awakening = 0,
+      equiplv = 1,
+      grade = 1,
+      id = 1400571,
+      level = 10,
+      name = "p1"
+    }
+  },
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPosition", 
-args = {pos = 502}
-}
-, 
-[3] = {action = "SetEntityHPPercent", 
-args = {name = "team", percent = 0.5}
-}
-, 
-[4] = {action = "AddMonster", 
-args = {dir = 1, disableai = true, id = 5100111, name = "e1", pos = 504}
-}
-, 
-[5] = {action = "CheckEntityChangeHP", 
-args = {compare = "<", name = "team", trigger = 9}
-}
-, 
-[6] = {action = "FakeInputChain", 
-args = {
-chainPath = {[1] = 502}
-, pieceType = 0}
-}
-, 
-[7] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "每回合开始时，为队伍恢复相当于菲莉诗40%攻击力和队伍已损失生命4%的血量。"}
-}
-, name = "菲莉诗被动技", 
-petList = {
-[1] = {affinity = 1, awakening = 0, equiplv = 1, grade = 1, id = 1400571, level = 10, name = "p1"}
-}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

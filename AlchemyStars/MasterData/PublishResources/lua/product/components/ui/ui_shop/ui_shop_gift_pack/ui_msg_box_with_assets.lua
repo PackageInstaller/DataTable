@@ -1,68 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_gift_pack/ui_msg_box_with_assets.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMsgBoxWithAssets", UIController)
 UIMsgBoxWithAssets = UIMsgBoxWithAssets
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMsgBoxWithAssets.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIMsgBoxWithAssets:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMsgBoxWithAssets.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMsgBoxWithAssets:OnShow(uiParams)
   self:InitWidget()
-  ;
-  (self.title):SetText(uiParams[1])
-  ;
-  (self.content):SetText(uiParams[2])
+  self.title:SetText(uiParams[1])
+  self.content:SetText(uiParams[2])
   local assets = uiParams[3]
-  local items = (self.assets):SpawnObjects("UIItem", #assets)
+  local items = self.assets:SpawnObjects("UIItem", #assets)
   for i = 1, #assets do
     local item = items[i]
-    do
-      local asset = assets[i]
-      item:SetForm(UIItemForm.Base)
-      local itemCfg = (Cfg.cfg_item)[asset.assetid]
-      local itenName = (StringTable.Get)(itemCfg.Name)
-      item:SetData({icon = itemCfg.Icon, text1 = asset.count, text2 = itenName, quality = itemCfg.Color, itemId = asset.assetid})
-      item:SetClickCallBack(function(go)
-    -- function num : 0_1_0 , upvalues : self, asset
-    if not self._tipInfo then
-      self._tipInfo = (self.selectInfo):SpawnObject("UISelectInfo")
-    end
-    ;
-    (self._tipInfo):SetData(asset.assetid, (go.transform).position)
-  end
-)
-    end
+    local asset = assets[i]
+    item:SetForm(UIItemForm.Base)
+    local itemCfg = Cfg.cfg_item[asset.assetid]
+    local itenName = StringTable.Get(itemCfg.Name)
+    item:SetData({
+      icon = itemCfg.Icon,
+      text1 = asset.count,
+      text2 = itenName,
+      quality = itemCfg.Color,
+      itemId = asset.assetid
+    })
+    item:SetClickCallBack(function(go)
+      if not self._tipInfo then
+        self._tipInfo = self.selectInfo:SpawnObject("UISelectInfo")
+      end
+      self._tipInfo:SetData(asset.assetid, go.transform.position)
+    end)
   end
   self._onConfirm = uiParams[4]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMsgBoxWithAssets.InitWidget = function(self)
-  -- function num : 0_2
+function UIMsgBoxWithAssets:InitWidget()
   self.title = self:GetUIComponent("UILocalizationText", "Title")
   self.content = self:GetUIComponent("UILocalizationText", "Content")
   self.assets = self:GetUIComponent("UISelectObjectPath", "Assets")
   self.selectInfo = self:GetUIComponent("UISelectObjectPath", "SelectInfo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMsgBoxWithAssets.ButtonOKOnClick = function(self, go)
-  -- function num : 0_3
+function UIMsgBoxWithAssets:ButtonOKOnClick(go)
   self:CloseDialog()
   if self._onConfirm then
-    (self._onConfirm)()
+    self._onConfirm()
   end
 end
-
-

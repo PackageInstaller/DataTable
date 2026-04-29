@@ -1,112 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetBehaviorBase", Object)
 HomelandPetBehaviorBase = HomelandPetBehaviorBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorBase.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetBehaviorBase:Constructor(behaviorType, pet)
   self._behaviorType = behaviorType
   self._pet = pet
   self._behaviorStructure = HomelandPetBehaviorStructure[self._behaviorType]
   self._components = {}
-  self._homelandClient = (self._pet):GetHomelandClient()
-  self._componentFactory = ((self._homelandClient):PetManager()):GetComponentFactory()
+  self._homelandClient = self._pet:GetHomelandClient()
+  self._componentFactory = self._homelandClient:PetManager():GetComponentFactory()
   self._sequence = "SequenceNode"
   self:_InitComponent()
-  local cfg_behavior_lib = (Cfg.cfg_homeland_pet_behavior_lib)({TemplateID = (self._pet):TemplateID(), BehaviorType = self._behaviorType})
-  if not cfg_behavior_lib then
-    cfg_behavior_lib = (Cfg.cfg_homeland_pet_behavior_lib)({TemplateID = 0, BehaviorType = self._behaviorType})
-  end
+  local cfg_behavior_lib = Cfg.cfg_homeland_pet_behavior_lib({
+    TemplateID = self._pet:TemplateID(),
+    BehaviorType = self._behaviorType
+  })
+  cfg_behavior_lib = cfg_behavior_lib or Cfg.cfg_homeland_pet_behavior_lib({
+    TemplateID = 0,
+    BehaviorType = self._behaviorType
+  })
   self._cfgBehaviorLib = cfg_behavior_lib[1]
   self._duration = 0
   self._modeChangeProcessType = HomelandPetModeChangeProcessType.RefreshNavmeshPos
   self.triggerSuccParam = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase._InitComponent = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandPetBehaviorBase:_InitComponent()
   if not self._behaviorStructure then
-    (Log.error)("Homeland Pet Behavior Structure Not Exist.", self._behaviorType)
-    return 
+    Log.error("Homeland Pet Behavior Structure Not Exist.", self._behaviorType)
+    return
   end
-  for behaviorType,componentType in pairs(self._behaviorStructure) do
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
+  for behaviorType, componentType in pairs(self._behaviorStructure) do
     if type(componentType) == "table" then
-      (self._components)[self._sequence] = {}
-      for _,sequenceComponentType in pairs(componentType) do
-        -- DECOMPILER ERROR at PC41: Confused about usage of register: R11 in 'UnsetPending'
-
-        if not ((self._components)[self._sequence])[sequenceComponentType] then
-          ((self._components)[self._sequence])[sequenceComponentType] = (self._componentFactory):CreateHomelandPetComponent(sequenceComponentType, self._pet, self)
+      self._components[self._sequence] = {}
+      for _, sequenceComponentType in pairs(componentType) do
+        if not self._components[self._sequence][sequenceComponentType] then
+          self._components[self._sequence][sequenceComponentType] = self._componentFactory:CreateHomelandPetComponent(sequenceComponentType, self._pet, self)
         end
       end
-    else
-      do
-        do
-          -- DECOMPILER ERROR at PC56: Confused about usage of register: R6 in 'UnsetPending'
-
-          if not (self._components)[componentType] then
-            (self._components)[componentType] = (self._componentFactory):CreateHomelandPetComponent(componentType, self._pet, self)
-          end
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif not self._components[componentType] then
+      self._components[componentType] = self._componentFactory:CreateHomelandPetComponent(componentType, self._pet, self)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.OnEnter = function(self, params, index)
-  -- function num : 0_2
+function HomelandPetBehaviorBase:OnEnter(params, index)
   self._params = params
   self._index = index
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.Enter = function(self)
-  -- function num : 0_3
-  self._duration = (self._cfgBehaviorLib).Duration * 1000
+function HomelandPetBehaviorBase:Enter()
+  self._duration = self._cfgBehaviorLib.Duration * 1000
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.Update = function(self, deltaTime)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandPetBehaviorBase:Update(deltaTime)
   local isFinish = true
-  for componentType,component in pairs(self._components) do
+  for componentType, component in pairs(self._components) do
     if componentType == self._sequence then
-      for sequenceComponentType,sequenceComponent in pairs(component) do
+      for sequenceComponentType, sequenceComponent in pairs(component) do
         if sequenceComponent.state == HomelandPetComponentState.Resting then
           sequenceComponent:OnExcute()
         end
         if sequenceComponent.state == HomelandPetComponentState.Running then
           sequenceComponent:Update(deltaTime)
         end
-        if not sequenceComponent:Failure() then
-          do
-            if not sequenceComponent:Finish() then
-              isFinish = false
-              break
-            end
-            -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if sequenceComponent:Failure() then
+          break
+        end
+        if not sequenceComponent:Finish() then
+          isFinish = false
+          break
         end
       end
     else
@@ -126,38 +88,22 @@ HomelandPetBehaviorBase.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.Exit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for componentType,component in pairs(self._components) do
+function HomelandPetBehaviorBase:Exit()
+  for componentType, component in pairs(self._components) do
     if componentType == self._sequence then
-      for sequenceComponentType,sequenceComponent in pairs(component) do
+      for sequenceComponentType, sequenceComponent in pairs(component) do
         sequenceComponent:Exit()
       end
     else
-      do
-        do
-          component:Exit()
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      component:Exit()
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.Done = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  for componentType,component in pairs(self._components) do
+function HomelandPetBehaviorBase:Done()
+  for componentType, component in pairs(self._components) do
     if componentType == self._sequence then
-      for sequenceComponentType,sequenceComponent in pairs(component) do
+      for sequenceComponentType, sequenceComponent in pairs(component) do
         if sequenceComponent:Failure() then
           return self:_DurationEnd()
         end
@@ -165,175 +111,92 @@ HomelandPetBehaviorBase.Done = function(self)
           return false
         end
       end
-    else
-      do
-        do
-          if not component:Finish() then
-            return false
-          end
-          -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif not component:Finish() then
+      return false
     end
   end
   return self:_DurationEnd()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.ReLoadBehaviorComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  for componentType,component in pairs(self._components) do
+function HomelandPetBehaviorBase:ReLoadBehaviorComponent()
+  for componentType, component in pairs(self._components) do
     if componentType == self._sequence then
-      for sequenceComponentType,sequenceComponent in pairs(component) do
+      for sequenceComponentType, sequenceComponent in pairs(component) do
         sequenceComponent:ReLoadPetComponent()
       end
     else
-      do
-        do
-          component:ReLoadPetComponent()
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      component:ReLoadPetComponent()
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.CD = function(self)
-  -- function num : 0_8
-  return (self._cfgBehaviorLib).CD * 1000
+function HomelandPetBehaviorBase:CD()
+  return self._cfgBehaviorLib.CD * 1000
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.CanInterrupt = function(self)
-  -- function num : 0_9
+function HomelandPetBehaviorBase:CanInterrupt()
   return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.Dispose = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for componentType,component in pairs(self._components) do
+function HomelandPetBehaviorBase:Dispose()
+  for componentType, component in pairs(self._components) do
     if componentType == self._sequence then
-      for sequenceComponentType,sequenceComponent in pairs(component) do
+      for sequenceComponentType, sequenceComponent in pairs(component) do
         sequenceComponent:Dispose()
       end
     else
-      do
-        do
-          component:Dispose()
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC18: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      component:Dispose()
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.GetBehaviorType = function(self)
-  -- function num : 0_11
+function HomelandPetBehaviorBase:GetBehaviorType()
   return self._behaviorType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase._DurationEnd = function(self)
-  -- function num : 0_12
-  do return self._duration <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandPetBehaviorBase:_DurationEnd()
+  return self._duration <= 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.GetComponent = function(self, componentType)
-  -- function num : 0_13 , upvalues : _ENV
-  for _componentType,component in pairs(self._components) do
+function HomelandPetBehaviorBase:GetComponent(componentType)
+  for _componentType, component in pairs(self._components) do
     if _componentType == self._sequence then
-      for _sequenceComponentType,_sequenceComponent in pairs(component) do
+      for _sequenceComponentType, _sequenceComponent in pairs(component) do
         if _sequenceComponentType == componentType then
           return _sequenceComponent
         end
       end
-    else
-      do
-        do
-          if _componentType == componentType then
-            return component
-          end
-          -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC20: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif _componentType == componentType then
+      return component
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.GetCfg = function(self)
-  -- function num : 0_14
+function HomelandPetBehaviorBase:GetCfg()
   return self._cfgBehaviorLib
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.HideBubble = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function HomelandPetBehaviorBase:HideBubble()
   self._bubbleComponent = self:GetComponent(HomelandPetComponentType.Bubble)
   if self._bubbleComponent then
-    (self._bubbleComponent):Hide()
+    self._bubbleComponent:Hide()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.OnClientModeChange = function(self, lastMode, currentMode)
-  -- function num : 0_16 , upvalues : _ENV
+function HomelandPetBehaviorBase:OnClientModeChange(lastMode, currentMode)
   if self._modeChangeProcessType == HomelandPetModeChangeProcessType.RefreshNavmeshPos and lastMode == HomelandMode.Build and currentMode == HomelandMode.Normal then
-    (self._pet):ResetNavmeshPos()
+    self._pet:ResetNavmeshPos()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.HideBubble = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function HomelandPetBehaviorBase:HideBubble()
   self._bubbleComponent = self:GetComponent(HomelandPetComponentType.Bubble)
   if self._bubbleComponent then
-    (self._bubbleComponent):Hide()
+    self._bubbleComponent:Hide()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorBase.GetTriggerSuccParam = function(self)
-  -- function num : 0_18
+function HomelandPetBehaviorBase:GetTriggerSuccParam()
   return self.triggerSuccParam
 end
-
-

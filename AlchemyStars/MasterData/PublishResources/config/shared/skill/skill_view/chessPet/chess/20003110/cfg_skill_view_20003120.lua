@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/chessPet/chess/20003110/cfg_skill_view_20003120.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" DataSelectDamage,damageIndex = 1; PlayCasterAnimation,animName = Skill01_2; PlayCasterBindEffect,effectID =38350; PlayAudio,audioID=6209,audioType=1; Wait,waitTime=300; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=3836,turnToTarget=1,deathClear=0; Wait,waitTime=1000; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " DataSelectDamage,damageIndex = 1; PlayCasterAnimation,animName = Skill01_2; PlayCasterBindEffect,effectID =38350; PlayAudio,audioID=6209,audioType=1; Wait,waitTime=300; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=3836,turnToTarget=1,deathClear=0; Wait,waitTime=1000; "
+    }
+  }
 }
 return config, "ID", key
-

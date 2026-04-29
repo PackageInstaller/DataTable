@@ -1,199 +1,118 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_activity_common_component_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCommonComponentEnter", UICustomWidget)
 UIActivityCommonComponentEnter = UIActivityCommonComponentEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCommonComponentEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityCommonComponentEnter:OnShow(uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityCommonComponentEnter:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.Destroy = function(self)
-  -- function num : 0_2
+function UIActivityCommonComponentEnter:Destroy()
   if self._EMIMatResRequest then
     self._EMIMat = nil
-    ;
-    (self._EMIMatResRequest):Dispose()
+    self._EMIMatResRequest:Dispose()
     self._EMIMatResRequest = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.SetNew = function(self, widgetName, checkNewFunc)
-  -- function num : 0_3
-  if not widgetName then
-    widgetName = "new"
-  end
+function UIActivityCommonComponentEnter:SetNew(widgetName, checkNewFunc)
+  widgetName = widgetName or "new"
   self._newObj = self:GetGameObject(widgetName)
   self._checkNewFunc = checkNewFunc
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.SetRed = function(self, widgetName, checkRedFunc)
-  -- function num : 0_4
-  if not widgetName then
-    widgetName = "red"
-  end
+function UIActivityCommonComponentEnter:SetRed(widgetName, checkRedFunc)
+  widgetName = widgetName or "red"
   self._redObj = self:GetGameObject(widgetName)
   self._checkRedFunc = checkRedFunc
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.SetNew_RedDotModule = function(self, widgetName, newdotType)
-  -- function num : 0_5
-  if not widgetName then
-    widgetName = "new"
-  end
+function UIActivityCommonComponentEnter:SetNew_RedDotModule(widgetName, newdotType)
+  widgetName = widgetName or "new"
   self._newObj = self:GetGameObject(widgetName)
   self._newdotType = newdotType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.SetRed_RedDotModule = function(self, widgetName, reddotType)
-  -- function num : 0_6
-  if not widgetName then
-    widgetName = "red"
-  end
+function UIActivityCommonComponentEnter:SetRed_RedDotModule(widgetName, reddotType)
+  widgetName = widgetName or "red"
   self._redObj = self:GetGameObject(widgetName)
   self._reddotType = reddotType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.SetIcon = function(self, widgetName, icon)
-  -- function num : 0_7
-  if not widgetName then
-    widgetName = "icon"
-  end
+function UIActivityCommonComponentEnter:SetIcon(widgetName, icon)
+  widgetName = widgetName or "icon"
   local obj = self:GetUIComponent("RawImageLoader", widgetName)
   obj:LoadImage(icon)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.SetText = function(self, widgetName, str)
-  -- function num : 0_8
-  if not widgetName then
-    widgetName = "text"
-  end
+function UIActivityCommonComponentEnter:SetText(widgetName, str)
+  widgetName = widgetName or "text"
   local obj = self:GetUIComponent("UILocalizationText", widgetName)
   obj:SetText(str)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.SetLocalizedTMPMaterial = function(self, widgetName, matName)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityCommonComponentEnter:SetLocalizedTMPMaterial(widgetName, matName)
   self._localizedTMP = self:GetUIComponent("UILocalizedTMP", widgetName)
-  self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset(matName, LoadType.Mat)
-  self._EMIMat = (self._EMIMatResRequest).Obj
-  local mat = (self._localizedTMP).fontMaterial
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._localizedTMP).fontMaterial = self._EMIMat
-  ;
-  ((self._localizedTMP).fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset(matName, LoadType.Mat)
+  self._EMIMat = self._EMIMatResRequest.Obj
+  local mat = self._localizedTMP.fontMaterial
+  self._localizedTMP.fontMaterial = self._EMIMat
+  self._localizedTMP.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.SetData = function(self, campaign, uiCallback)
-  -- function num : 0_10
+function UIActivityCommonComponentEnter:SetData(campaign, uiCallback)
   self._campaign = campaign
   self._uiCallback = uiCallback
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter.BtnOnClick = function(self)
-  -- function num : 0_11
+function UIActivityCommonComponentEnter:BtnOnClick()
   if self._uiCallback then
-    (self._uiCallback)()
+    self._uiCallback()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter._AttachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityCommonComponentEnter:_AttachEvents()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter._DetachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityCommonComponentEnter:_DetachEvents()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_14
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityCommonComponentEnter:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter._OnQuestUpdate = function(self)
-  -- function num : 0_15
+function UIActivityCommonComponentEnter:_OnQuestUpdate()
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter._CheckPoint = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityCommonComponentEnter:_CheckPoint()
   if self._newdotType or self._reddotType then
     self:_CheckPoint_RedDotModule()
-    return 
+    return
   end
-  local new = self._checkNewFunc and (self._checkNewFunc)() or false
-  local red = self._checkRedFunc and (self._checkRedFunc)() or false
-  ;
-  (UIActivityHelper.SetWidgetNewAndRed)(self._newObj, new, self._redObj, red)
+  local new = self._checkNewFunc and self._checkNewFunc() or false
+  local red = self._checkRedFunc and self._checkRedFunc() or false
+  UIActivityHelper.SetWidgetNewAndRed(self._newObj, new, self._redObj, red)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonComponentEnter._CheckPoint_RedDotModule = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : self, _ENV
+function UIActivityCommonComponentEnter:_CheckPoint_RedDotModule()
+  GameGlobal.TaskManager():StartTask(function(TT)
     local checkList = {}
     checkList[#checkList + 1] = self._newdotType
     checkList[#checkList + 1] = self._reddotType
-    local redDotModule = (GameGlobal.GetModule)(RedDotModule)
+    local redDotModule = GameGlobal.GetModule(RedDotModule)
     local results = redDotModule:RequestRedDotStatus(TT, checkList)
     local new = results[self._newdotType]
     local red = results[self._reddotType]
-    ;
-    (UIActivityHelper.SetWidgetNewAndRed)(self._newObj, new, self._redObj, red)
-  end
-)
+    UIActivityHelper.SetWidgetNewAndRed(self._newObj, new, self._redObj, red)
+  end)
 end
-
-

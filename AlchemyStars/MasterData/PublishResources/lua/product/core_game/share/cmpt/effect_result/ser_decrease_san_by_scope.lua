@@ -1,18 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_decrease_san_by_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_DecreaseSanByScope", SkillEffectResultBase)
 SkillEffectResult_DecreaseSanByScope = SkillEffectResult_DecreaseSanByScope
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResult_DecreaseSanByScope.__EFFECT_TYPE = SkillEffectType.DecreaseSanByScope
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_DecreaseSanByScope.Constructor = function(self, entityID, range, val, debtVal, modifyTimes)
-  -- function num : 0_0
+function SkillEffectResult_DecreaseSanByScope:Constructor(entityID, range, val, debtVal, modifyTimes)
   self._entityID = entityID
   self._range = range
   self._val = val
@@ -20,81 +11,46 @@ SkillEffectResult_DecreaseSanByScope.Constructor = function(self, entityID, rang
   self._modifyTimes = modifyTimes
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.GetEntityID = function(self)
-  -- function num : 0_1
+function SkillEffectResult_DecreaseSanByScope:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.GetRange = function(self)
-  -- function num : 0_2
+function SkillEffectResult_DecreaseSanByScope:GetRange()
   return self._range
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.GetVal = function(self)
-  -- function num : 0_3
+function SkillEffectResult_DecreaseSanByScope:GetVal()
   return self._val
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.SetOldSanValue = function(self, v)
-  -- function num : 0_4
+function SkillEffectResult_DecreaseSanByScope:SetOldSanValue(v)
   self._oldSanVal = v
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.SetNewSanValue = function(self, v)
-  -- function num : 0_5
+function SkillEffectResult_DecreaseSanByScope:SetNewSanValue(v)
   self._currentSanVal = v
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.SetDebtValue = function(self, v)
-  -- function num : 0_6
+function SkillEffectResult_DecreaseSanByScope:SetDebtValue(v)
   self._debtVal = v
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.SetModifyTimes = function(self, v)
-  -- function num : 0_7
+function SkillEffectResult_DecreaseSanByScope:SetModifyTimes(v)
   self._modifyTimes = v
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.GetOldSanValue = function(self)
-  -- function num : 0_8
+function SkillEffectResult_DecreaseSanByScope:GetOldSanValue()
   return self._oldSanVal
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.GetNewSanValue = function(self)
-  -- function num : 0_9
+function SkillEffectResult_DecreaseSanByScope:GetNewSanValue()
   return self._currentSanVal
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.GetDebtValue = function(self)
-  -- function num : 0_10
+function SkillEffectResult_DecreaseSanByScope:GetDebtValue()
   return self._debtVal
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_DecreaseSanByScope.GetModifyTimes = function(self)
-  -- function num : 0_11
+function SkillEffectResult_DecreaseSanByScope:GetModifyTimes()
   return self._modifyTimes
 end
-
-

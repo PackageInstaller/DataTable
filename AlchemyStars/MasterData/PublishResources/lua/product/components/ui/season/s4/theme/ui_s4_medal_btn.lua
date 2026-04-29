@@ -1,89 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/theme/ui_s4_medal_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4MedalBtn", UICustomWidget)
 UIS4MedalBtn = UIS4MedalBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4MedalBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIS4MedalBtn:OnShow()
   self._constBtnName = self:GetName()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MedalBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIS4MedalBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MedalBtn.SetData = function(self, seasonId, playAnim)
-  -- function num : 0_2 , upvalues : _ENV
+function UIS4MedalBtn:SetData(seasonId, playAnim)
   self._seasonId = seasonId
-  self._medalCfg = (UISeasonCfgHelper.GetCurSeasonMedalGroupCfg)(seasonId)
+  self._medalCfg = UISeasonCfgHelper.GetCurSeasonMedalGroupCfg(seasonId)
   if self._medalCfg == nil then
-    (self:GetGameObject()):SetActive(false)
-    return 
+    self:GetGameObject():SetActive(false)
+    return
   end
   self:_SetFin(self._medalCfg)
   self:_CheckPoint()
   if playAnim then
-    (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", "uieffanim_UIS4_MedalBtn_in", 500, 667)
+    UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", "uieffanim_UIS4_MedalBtn_in", 500, 667)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MedalBtn._SetFin = function(self, cfg)
-  -- function num : 0_3 , upvalues : _ENV
-  local haveBgNum = (UIMedalGroupApply.CheckBgCollect)(cfg)
+function UIS4MedalBtn:_SetFin(cfg)
+  local haveBgNum = UIMedalGroupApply.CheckBgCollect(cfg)
   local totalBgNum = 1
-  local haveMedalNum = (UIMedalGroupApply.CheckMedalListCollect)(cfg)
+  local haveMedalNum = UIMedalGroupApply.CheckMedalListCollect(cfg)
   local totalMedalNum = #cfg.MedalIDList
   local show = haveBgNum == totalBgNum and haveMedalNum == totalMedalNum
-  ;
-  (self:GetGameObject("_fin")):SetActive(show)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_fin"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MedalBtn._CalcNew = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local isNew = not (UISeasonLocalDBHelper.SeasonBtn_Has)(self._constBtnName, "New")
+function UIS4MedalBtn:_CalcNew()
+  local isNew = not UISeasonLocalDBHelper.SeasonBtn_Has(self._constBtnName, "New")
   return isNew
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MedalBtn._CalcRed = function(self)
-  -- function num : 0_5
+function UIS4MedalBtn:_CalcRed()
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MedalBtn._CheckPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIS4MedalBtn:_CheckPoint()
   local new = self:_CalcNew()
   local red = self:_CalcRed()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", "_red")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", "_red")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MedalBtn.BtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.info)("UIS4MedalBtn:BtnOnClick")
-  ;
-  (UISeasonLocalDBHelper.SeasonBtn_Set)(self._constBtnName, "New")
+function UIS4MedalBtn:BtnOnClick()
+  Log.info("UIS4MedalBtn:BtnOnClick")
+  UISeasonLocalDBHelper.SeasonBtn_Set(self._constBtnName, "New")
   self:_CheckPoint()
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIMedalGroupListController", (self._medalCfg).ID)
+  GameGlobal.UIStateManager():ShowDialog("UIMedalGroupListController", self._medalCfg.ID)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/shop/ui_activity_n21cc_shop_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCShopItem", UICustomWidget)
 UIActivityN21CCShopItem = UIActivityN21CCShopItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCShopItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN21CCShopItem:OnShow()
   self._go = self:GetGameObject()
   self._rewardsLoader = self:GetUIComponent("UISelectObjectPath", "Rewards")
   self._normalScoreLabel = self:GetUIComponent("UILocalizationText", "NormalScore")
@@ -26,112 +19,68 @@ UIActivityN21CCShopItem.OnShow = function(self)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN21CCShopItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopItem.Refresh = function(self, data, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN21CCShopItem:Refresh(data, callback)
   if data == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
   self._callback = callback
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._data = data
-  local score = (self._data):GetProgress()
-  ;
-  (self._normalScoreLabel):SetText(score)
-  ;
-  (self._completeScoreLabel):SetText(score)
-  ;
-  (self._normalBG):SetActive(false)
-  ;
-  (self._completeBG):SetActive(false)
-  ;
-  (self._nameGo):SetActive(false)
-  ;
-  (self._completeNameGo):SetActive(false)
-  ;
-  (self._normalScoreGo):SetActive(false)
-  ;
-  (self._completeScoreGo):SetActive(false)
-  ;
-  (self._btnGet):SetActive(false)
-  ;
-  (self._unComplete):SetActive(false)
-  ;
-  (self._hasGet):SetActive(false)
-  ;
-  (self._mask):SetActive(false)
-  local status = (self._data):GetStatus()
+  local score = self._data:GetProgress()
+  self._normalScoreLabel:SetText(score)
+  self._completeScoreLabel:SetText(score)
+  self._normalBG:SetActive(false)
+  self._completeBG:SetActive(false)
+  self._nameGo:SetActive(false)
+  self._completeNameGo:SetActive(false)
+  self._normalScoreGo:SetActive(false)
+  self._completeScoreGo:SetActive(false)
+  self._btnGet:SetActive(false)
+  self._unComplete:SetActive(false)
+  self._hasGet:SetActive(false)
+  self._mask:SetActive(false)
+  local status = self._data:GetStatus()
   if status == UIActivityN21CCShopRewardStatus.UnComplete then
-    (self._nameGo):SetActive(true)
-    ;
-    (self._normalBG):SetActive(true)
-    ;
-    (self._unComplete):SetActive(true)
-    ;
-    (self._normalScoreGo):SetActive(true)
-  else
-    if status == UIActivityN21CCShopRewardStatus.HasGet then
-      (self._completeBG):SetActive(true)
-      ;
-      (self._hasGet):SetActive(true)
-      ;
-      (self._completeNameGo):SetActive(true)
-      ;
-      (self._completeScoreGo):SetActive(true)
-      ;
-      (self._mask):SetActive(true)
-    else
-      if status == UIActivityN21CCShopRewardStatus.UnGet then
-        (self._nameGo):SetActive(true)
-        ;
-        (self._normalBG):SetActive(true)
-        ;
-        (self._btnGet):SetActive(true)
-        ;
-        (self._normalScoreGo):SetActive(true)
-      end
-    end
+    self._nameGo:SetActive(true)
+    self._normalBG:SetActive(true)
+    self._unComplete:SetActive(true)
+    self._normalScoreGo:SetActive(true)
+  elseif status == UIActivityN21CCShopRewardStatus.HasGet then
+    self._completeBG:SetActive(true)
+    self._hasGet:SetActive(true)
+    self._completeNameGo:SetActive(true)
+    self._completeScoreGo:SetActive(true)
+    self._mask:SetActive(true)
+  elseif status == UIActivityN21CCShopRewardStatus.UnGet then
+    self._nameGo:SetActive(true)
+    self._normalBG:SetActive(true)
+    self._btnGet:SetActive(true)
+    self._normalScoreGo:SetActive(true)
   end
   local rewards = data:GetRewards()
   if rewards then
-    (self._rewardsLoader):SpawnObjects("UIActivityN21CCRewardItem", #rewards)
-    local items = (self._rewardsLoader):GetAllSpawnList()
+    self._rewardsLoader:SpawnObjects("UIActivityN21CCRewardItem", #rewards)
+    local items = self._rewardsLoader:GetAllSpawnList()
     for i = 1, #items do
       local data = rewards[i]
       local item = items[i]
       item:Refresh(data)
     end
   else
-    do
-      ;
-      (self._rewardsLoader):SpawnObjects("UIActivityN21CCShopItem", 0)
-    end
+    self._rewardsLoader:SpawnObjects("UIActivityN21CCShopItem", 0)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopItem.BtnGetOnClick = function(self)
-  -- function num : 0_3
+function UIActivityN21CCShopItem:BtnGetOnClick()
   if self._callback then
-    (self._callback)(self._data)
+    self._callback(self._data)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCShopItem.PlayAnim = function(self)
-  -- function num : 0_4
-  (self._anim):Play("UIActivityN21CCShopItem")
+function UIActivityN21CCShopItem:PlayAnim()
+  self._anim:Play("UIActivityN21CCShopItem")
 end
-
-

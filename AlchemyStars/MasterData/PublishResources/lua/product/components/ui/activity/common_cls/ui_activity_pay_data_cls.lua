@@ -1,75 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_cls/ui_activity_pay_data_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityPayData", Object)
 UIActivityPayData = UIActivityPayData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPayData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityPayData:Constructor()
   self._goods = {}
   self._goodPriceList = {}
-  self._mPay = (GameGlobal.GetModule)(PayModule)
+  self._mPay = GameGlobal.GetModule(PayModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayData.UpdateGoodsPrice = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local goodPriceList = (self._mPay):GetGoodPriceList()
-  if goodPriceList and (table.count)(goodPriceList) > 0 then
-    for i,item in ipairs(self._goods) do
+function UIActivityPayData:UpdateGoodsPrice()
+  local goodPriceList = self._mPay:GetGoodPriceList()
+  if goodPriceList and table.count(goodPriceList) > 0 then
+    for i, item in ipairs(self._goods) do
       local midasId = item:GetMidasId()
-      if not (string.isnullorempty)(midasId) and goodPriceList[midasId] then
+      if not string.isnullorempty(midasId) and goodPriceList[midasId] then
         local goodPrice = goodPriceList[midasId]
         item:SetPrice(goodPrice.microprice / 1000000)
         item:SetPriceWithCurrencySymbol(goodPrice.price)
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("### UIActivityPayData:UpdateGoodsPrice() no data in goodPriceList.")
-    end
+    Log.fatal("### UIActivityPayData:UpdateGoodsPrice() no data in goodPriceList.")
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayData.GetGoods = function(self)
-  -- function num : 0_2
+function UIActivityPayData:GetGoods()
   return self._goods
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayData.GetGoodById = function(self, id)
-  -- function num : 0_3 , upvalues : _ENV
-  for index,good in ipairs(self._goods) do
+function UIActivityPayData:GetGoodById(id)
+  for index, good in ipairs(self._goods) do
     if good:GetId() == id then
       return good
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayData.IsEmpty = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  for index,good in ipairs(self._goods) do
+function UIActivityPayData:IsEmpty()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  for index, good in ipairs(self._goods) do
     local endTime = good:GetEndTime()
-    if endTime > 0 and endTime < curTime then
-      do
-        do return false end
-        -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if 0 < endTime and curTime > endTime then
+    else
+      return false
     end
   end
   return true
@@ -77,10 +50,8 @@ end
 
 _class("UIActivityPayItem", Object)
 UIActivityPayItem = UIActivityPayItem
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPayItem.Constructor = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityPayItem:Constructor(id)
   self._currencyGoodsType = MidasCurrencyGoodsType.MIDAS_CURRENCY_GOODS_TYPE_CAMPAIGN
   self._goodsId = id
   self._skinId = 0
@@ -97,218 +68,128 @@ UIActivityPayItem.Constructor = function(self, id)
   self._buyCount = 0
   self._maxBuyCount = 0
   self._isShowLeftTime = true
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetCurrencyGoodsType = function(self)
-  -- function num : 0_6
+function UIActivityPayItem:GetCurrencyGoodsType()
   return self._currencyGoodsType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetId = function(self)
-  -- function num : 0_7
+function UIActivityPayItem:GetId()
   return self._goodsId
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetMidasId = function(self)
-  -- function num : 0_8
+function UIActivityPayItem:GetMidasId()
   return self._midasId
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetMidasId = function(self, midasId)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityPayItem:SetMidasId(midasId)
   self._midasId = midasId
-  ;
-  (Log.debug)("midasId : ", self._midasId)
+  Log.debug("midasId : ", self._midasId)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetBuyCount = function(self)
-  -- function num : 0_10
+function UIActivityPayItem:GetBuyCount()
   return 1
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetSkinId = function(self)
-  -- function num : 0_11
+function UIActivityPayItem:GetSkinId()
   return self._skinId
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetSkinId = function(self, skinId)
-  -- function num : 0_12
+function UIActivityPayItem:SetSkinId(skinId)
   self._skinId = skinId
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetType = function(self)
-  -- function num : 0_13
+function UIActivityPayItem:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetType = function(self, ptype)
-  -- function num : 0_14
+function UIActivityPayItem:SetType(ptype)
   self._type = ptype
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetIsShowLeftTime = function(self)
-  -- function num : 0_15
+function UIActivityPayItem:GetIsShowLeftTime()
   return self._isShowLeftTime
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetIsShowLeftTime = function(self, isShowLeftTime)
-  -- function num : 0_16
+function UIActivityPayItem:SetIsShowLeftTime(isShowLeftTime)
   self._isShowLeftTime = isShowLeftTime
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetEndTime = function(self)
-  -- function num : 0_17
+function UIActivityPayItem:GetEndTime()
   return self._endTime
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetEndTime = function(self, endTime)
-  -- function num : 0_18
+function UIActivityPayItem:SetEndTime(endTime)
   self._endTime = endTime
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetLeftSeconds = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local mSvrTime = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityPayItem:GetLeftSeconds()
+  local mSvrTime = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = mSvrTime:GetServerTime() / 1000
   local endTime = self:GetEndTime()
   local leftSeconds = endTime - nowTime
   return leftSeconds
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetRemainTimeStr = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityPayItem:GetRemainTimeStr()
   local str = ""
   local leftSeconds = self:GetLeftSeconds()
   local cycleType = self:GetCycleType()
   if leftSeconds <= 0 then
-    str = (StringTable.Get)("str_pay_expired")
+    str = StringTable.Get("str_pay_expired")
+  elseif leftSeconds <= 60 then
+    str = StringTable.Get("str_pay_left_minute", 1)
+  elseif leftSeconds <= 3600 then
+    local leftMinutes = math.ceil(leftSeconds / 60)
+    str = StringTable.Get("str_pay_left_minute", leftMinutes)
+  elseif leftSeconds <= 86400 then
+    local leftHours = math.ceil(leftSeconds / 3600)
+    str = StringTable.Get("str_pay_left_hour", leftHours)
   else
-    if leftSeconds <= 60 then
-      str = (StringTable.Get)("str_pay_left_minute", 1)
-    else
-      if leftSeconds <= 3600 then
-        local leftMinutes = (math.ceil)(leftSeconds / 60)
-        str = (StringTable.Get)("str_pay_left_minute", leftMinutes)
-      else
-        do
-          if leftSeconds <= 86400 then
-            local leftHours = (math.ceil)(leftSeconds / 3600)
-            str = (StringTable.Get)("str_pay_left_hour", leftHours)
-          else
-            do
-              do
-                local leftDays = (math.ceil)(leftSeconds / 86400)
-                str = (StringTable.Get)("str_pay_left_day", leftDays)
-                return str
-              end
-            end
-          end
-        end
-      end
-    end
+    local leftDays = math.ceil(leftSeconds / 86400)
+    str = StringTable.Get("str_pay_left_day", leftDays)
   end
+  return str
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetPriceIcon = function(self)
-  -- function num : 0_21
+function UIActivityPayItem:GetPriceIcon()
   return self._priceIcon
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetPriceIcon = function(self, priceIcon)
-  -- function num : 0_22
+function UIActivityPayItem:SetPriceIcon(priceIcon)
   self._priceIcon = priceIcon
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetPriceItemId = function(self)
-  -- function num : 0_23
+function UIActivityPayItem:GetPriceItemId()
   return self._priceItemId
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetPriceItemId = function(self, priceItemId)
-  -- function num : 0_24
+function UIActivityPayItem:SetPriceItemId(priceItemId)
   self._priceItemId = priceItemId
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetPrice = function(self)
-  -- function num : 0_25
+function UIActivityPayItem:GetPrice()
   return self._price
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetPrice = function(self, price)
-  -- function num : 0_26
+function UIActivityPayItem:SetPrice(price)
   self._price = price
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.GetPriceWithCurrencySymbol = function(self)
-  -- function num : 0_27
+function UIActivityPayItem:GetPriceWithCurrencySymbol()
   return self._priceWithCurrencySymbol
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetPriceWithCurrencySymbol = function(self, priceWithCurrencySymbol)
-  -- function num : 0_28 , upvalues : _ENV
-  priceWithCurrencySymbol = (RechargeShopItem.RemoveDot00)(priceWithCurrencySymbol)
+function UIActivityPayItem:SetPriceWithCurrencySymbol(priceWithCurrencySymbol)
+  priceWithCurrencySymbol = RechargeShopItem.RemoveDot00(priceWithCurrencySymbol)
   self._priceWithCurrencySymbol = priceWithCurrencySymbol
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.SetName = function(self, name)
-  -- function num : 0_29
+function UIActivityPayItem:SetName(name)
   self._name = name
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPayItem.HasSoldOut = function(self)
-  -- function num : 0_30
-  return (self._petModule):HaveSkin(self._skinId)
+function UIActivityPayItem:HasSoldOut()
+  return self._petModule:HaveSkin(self._skinId)
 end
-
-

@@ -1,55 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/component/homelandpet_component_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetComponentFactory", Object)
 HomelandPetComponentFactory = HomelandPetComponentFactory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetComponentFactory.Constructor = function(self)
-  -- function num : 0_0
+function HomelandPetComponentFactory:Constructor()
   self._components = {}
   self:_Register()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentFactory._RegistorComponent = function(self, componentType, component)
-  -- function num : 0_1 , upvalues : _ENV
-  local _component = (self._components)[componentType]
-  if _component ~= nil then
-    (Log.error)("HomelandPetComponent is exist! HomelandPetComponentType:", componentType, ", Component:", _component)
-    return 
+function HomelandPetComponentFactory:_RegistorComponent(componentType, component)
+  local _component = self._components[componentType]
+  if nil ~= _component then
+    Log.error("HomelandPetComponent is exist! HomelandPetComponentType:", componentType, ", Component:", _component)
+    return
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._components)[componentType] = component
+  self._components[componentType] = component
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentFactory.CreateHomelandPetComponent = function(self, componentType, pet, behavior)
-  -- function num : 0_2 , upvalues : _ENV
-  local type = (self._components)[componentType]
+function HomelandPetComponentFactory:CreateHomelandPetComponent(componentType, pet, behavior)
+  local type = self._components[componentType]
   if not type then
-    (Log.error)("HomelandPetComponent is not exist! HomelandPetComponentType:", componentType)
-    return 
+    Log.error("HomelandPetComponent is not exist! HomelandPetComponentType:", componentType)
+    return
   end
   local component = type:New(componentType, pet, behavior)
   if not component then
-    (Log.error)("HomelandPetComponent create fail! HomelandPetComponentType:", componentType)
-    return 
+    Log.error("HomelandPetComponent create fail! HomelandPetComponentType:", componentType)
+    return
   end
   component:Init()
   return component
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentFactory._Register = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandPetComponentFactory:_Register()
   self:_RegistorComponent(HomelandPetComponentType.Move, HomelandPetComponentMove)
   self:_RegistorComponent(HomelandPetComponentType.Bubble, HomelandPetComponentBubble)
   self:_RegistorComponent(HomelandPetComponentType.Animation, HomelandPetComponentPlayAnimation)
@@ -59,5 +40,3 @@ HomelandPetComponentFactory._Register = function(self)
   self:_RegistorComponent(HomelandPetComponentType.Swim, HomelandPetComponentSwim)
   self:_RegistorComponent(HomelandPetComponentType.ExtraAnimation, HomelandPetComponentExtraAnimation)
 end
-
-

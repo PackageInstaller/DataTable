@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryManager", Object)
 StoryManager = StoryManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryManager.Constructor = function(self, uiStoryController, storyID, revertBGM, ignoreBreak)
-  -- function num : 0_0 , upvalues : _ENV
+function StoryManager:Constructor(uiStoryController, storyID, revertBGM, ignoreBreak)
   self._storyID = storyID
   self._rootGameObject = uiStoryController:GetGameObject("StoryRoot")
   self._topRootGameObject = uiStoryController:GetGameObject("StoryTopRoot")
@@ -28,7 +21,7 @@ StoryManager.Constructor = function(self, uiStoryController, storyID, revertBGM,
   self._uiStoryController = uiStoryController
   self._storyBgmTrackController = StoryBgmTrackController:New(self)
   self._storyCameraTrackController = StoryCameraTrackController:New(self)
-  self._canvasRect = ((((((self._rootGameObject).transform).parent).parent).parent):GetComponent("RectTransform")).rect
+  self._canvasRect = self._rootGameObject.transform.parent.parent.parent:GetComponent("RectTransform").rect
   self._storyEntityList = {}
   self._paragraphList = {}
   self._currentParagraphID = -1
@@ -42,151 +35,126 @@ StoryManager.Constructor = function(self, uiStoryController, storyID, revertBGM,
   self._optionRecord = {}
   self._hide = false
   self._auto = false
-  self._SrcTimeScale = (UnityEngine.Time).timeScale
-  self._CurTimeScale = (UnityEngine.Time).timeScale
+  self._SrcTimeScale = UnityEngine.Time.timeScale
+  self._CurTimeScale = UnityEngine.Time.timeScale
   self._dialogRecord = {}
   self._orgBgmPlaying = false
   self._orgBgm = nil
   self._orgBgmFadeTime = 0.5
   self._layerDic = SortedDictionary:New()
-  ;
-  (self._layerDic):Insert(1, {})
+  self._layerDic:Insert(1, {})
   self._debugMode = false
   self._entityInfoTemplate = nil
   self._jumping = false
   self._dialogEntity = nil
-  self._loopCameraShakeData = {running = false, 
-shakeData = {}
-, timer = 0, curDuration = 0, tweener = nil}
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._loopCameraShakeData = {
+    running = false,
+    shakeData = {},
+    timer = 0,
+    curDuration = 0,
+    tweener = nil
+  }
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstid = roleModule:GetPstId()
   self._localBreakParapraphMark = pstid .. "LOCAL_BREAK_PARAGRAPH_INDEX"
   if storyID ~= 10010101 then
     self._localBreakParapraphMark = self._localBreakParapraphMark .. storyID
   end
   self._BeSkipped = 0
-  ;
-  (AudioHelperController.RequestUISound)(CriAudioIDConst.SoundStoryClick)
+  AudioHelperController.RequestUISound(CriAudioIDConst.SoundStoryClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.Init = function(self, debugMode, entityInfoTemplate)
-  -- function num : 0_1 , upvalues : _ENV
-  self._startTime = (os.time)()
-  if (EditorGlobal.IsEditorMode)() then
-    self._storyConfig = (EditorGlobal.GetEditorRunStoryConfig)()
+function StoryManager:Init(debugMode, entityInfoTemplate)
+  self._startTime = os.time()
+  if EditorGlobal.IsEditorMode() then
+    self._storyConfig = EditorGlobal.GetEditorRunStoryConfig()
   else
-    local storyConfigItem = (Cfg.cfg_story)[self._storyID]
+    local storyConfigItem = Cfg.cfg_story[self._storyID]
     if storyConfigItem then
       local res, story = dofile(storyConfigItem.StoryScript)
       self._storyConfig = story
     end
   end
-  do
-    if not self._storyConfig then
-      (Log.fatal)("can not find story, id: " .. self._storyID)
-      self._end = true
-      return 
-    end
-    self._debugMode = debugMode
-    self._entityInfoTemplate = entityInfoTemplate
-    if not self._ignoreBreak then
-      self._breakParagraphIds = (self._storyConfig).breakParagraphIds
-    end
-    if self._breakParagraphIds then
-      local breakIdx = (LocalDB.GetInt)(self._localBreakParapraphMark, 0)
-      if breakIdx > 0 and (self._breakParagraphIds)[breakIdx] then
-        self._currentParagraphID = (self._breakParagraphIds)[breakIdx]
-      else
-        self._currentParagraphID = (self._storyConfig).StartParagraph
-      end
-    else
-      do
-        self._currentParagraphID = (self._storyConfig).StartParagraph
-        self._skipBlockIds = (self._storyConfig).SkipBlockIDs
-        if self._revertBGM then
-          self._orgBgmPlaying = (AudioHelperController.BGMPlayerIsPlaying)()
-          if self._orgBgmPlaying then
-            self._orgBgm = (AudioHelperController.GetCurrentBgm)()
-          end
-        end
-        self:_InitEntities()
-        self:_InitParagraphs()
-        self:_StartSection()
-        if (EditorGlobal.IsEditorMode)() then
-          (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    YIELD(TT)
-    local editorparam = (EditorGlobal.GetEnterParam)()
-    self:_Seek(editorparam.ParagraphID, editorparam.SectionID)
+  if not self._storyConfig then
+    Log.fatal("can not find story, id: " .. self._storyID)
+    self._end = true
+    return
   end
-)
-        end
-      end
+  self._debugMode = debugMode
+  self._entityInfoTemplate = entityInfoTemplate
+  if not self._ignoreBreak then
+    self._breakParagraphIds = self._storyConfig.breakParagraphIds
+  end
+  if self._breakParagraphIds then
+    local breakIdx = LocalDB.GetInt(self._localBreakParapraphMark, 0)
+    if 0 < breakIdx and self._breakParagraphIds[breakIdx] then
+      self._currentParagraphID = self._breakParagraphIds[breakIdx]
+    else
+      self._currentParagraphID = self._storyConfig.StartParagraph
     end
+  else
+    self._currentParagraphID = self._storyConfig.StartParagraph
+  end
+  self._skipBlockIds = self._storyConfig.SkipBlockIDs
+  if self._revertBGM then
+    self._orgBgmPlaying = AudioHelperController.BGMPlayerIsPlaying()
+    if self._orgBgmPlaying then
+      self._orgBgm = AudioHelperController.GetCurrentBgm()
+    end
+  end
+  self:_InitEntities()
+  self:_InitParagraphs()
+  self:_StartSection()
+  if EditorGlobal.IsEditorMode() then
+    TaskManager:GetInstance():StartTask(function(TT)
+      YIELD(TT)
+      local editorparam = EditorGlobal.GetEnterParam()
+      self:_Seek(editorparam.ParagraphID, editorparam.SectionID)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.SetNextParagraphID = function(self, ID)
-  -- function num : 0_2
+function StoryManager:SetNextParagraphID(ID)
   self._nextParagraphID = ID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.AddSelectOptionID = function(self, currentTrackData, optionId)
-  -- function num : 0_3
-  if (currentTrackData.Options).OptionLoop == nil then
-    return 
+function StoryManager:AddSelectOptionID(currentTrackData, optionId)
+  if currentTrackData.Options.OptionLoop == nil then
+    return
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._optionRecord)[currentTrackData.DialogContentStr] == nil then
-    (self._optionRecord)[currentTrackData.DialogContentStr] = {}
+  if self._optionRecord[currentTrackData.DialogContentStr] == nil then
+    self._optionRecord[currentTrackData.DialogContentStr] = {}
     self._optionLoopStartParagraphID = self._currentParagraphID
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._optionRecord)[currentTrackData.DialogContentStr])[optionId] = optionId
-  if currentTrackData.Options and (currentTrackData.Options).OptionLoop then
+  self._optionRecord[currentTrackData.DialogContentStr][optionId] = optionId
+  if currentTrackData.Options and currentTrackData.Options.OptionLoop then
     self._optionLoop = true
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetOptionData = function(self, options, dialogContentStr)
-  -- function num : 0_4 , upvalues : _ENV
+function StoryManager:GetOptionData(options, dialogContentStr)
   if not options.OptionLoop then
     return options
   end
-  if (self._optionRecord)[dialogContentStr] == nil then
+  if self._optionRecord[dialogContentStr] == nil then
     return options
   end
   local currentOpitons = {}
-  for index,option in ipairs(options) do
-    if not ((self._optionRecord)[dialogContentStr])[index] then
+  for index, option in ipairs(options) do
+    if not self._optionRecord[dialogContentStr][index] then
       option.optionIndex = index
-      ;
-      (table.insert)(currentOpitons, option)
+      table.insert(currentOpitons, option)
     end
   end
   return currentOpitons
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.CheckOptionLoopOver = function(self, options, dialogContentStr)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._optionRecord)[dialogContentStr] == nil then
-    return 
+function StoryManager:CheckOptionLoopOver(options, dialogContentStr)
+  if self._optionRecord[dialogContentStr] == nil then
+    return
   end
   local optionRCont = 0
-  for _,_ in pairs((self._optionRecord)[dialogContentStr]) do
+  for _, _ in pairs(self._optionRecord[dialogContentStr]) do
     optionRCont = optionRCont + 1
   end
   if optionRCont == #options then
@@ -195,512 +163,328 @@ StoryManager.CheckOptionLoopOver = function(self, options, dialogContentStr)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetCurrentTime = function(self)
-  -- function num : 0_6
+function StoryManager:GetCurrentTime()
   return self._currentTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetStoryUIRoot = function(self)
-  -- function num : 0_7
+function StoryManager:GetStoryUIRoot()
   return self._rootGameObject
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetCanvasRect = function(self)
-  -- function num : 0_8
+function StoryManager:GetCanvasRect()
   return self._canvasRect
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetStoryDialogUIRoot = function(self)
-  -- function num : 0_9
+function StoryManager:GetStoryDialogUIRoot()
   return self._dialogRootGameObject
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetMaskTemplate = function(self)
-  -- function num : 0_10
+function StoryManager:GetMaskTemplate()
   return self._maskTemplate
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetMaskHorizontalTemplate = function(self)
-  -- function num : 0_11
+function StoryManager:GetMaskHorizontalTemplate()
   return self._maskHorizontalTemplate
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetSpineSliceMaskTemplate = function(self)
-  -- function num : 0_12
+function StoryManager:GetSpineSliceMaskTemplate()
   return self._spineSliceMaskTemplate
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetSpineSliceHorizontalMaskTemplate = function(self)
-  -- function num : 0_13
+function StoryManager:GetSpineSliceHorizontalMaskTemplate()
   return self._spineSliceHorizontalMaskTemplate
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetSpineCircleMaskTemplate = function(self)
-  -- function num : 0_14
+function StoryManager:GetSpineCircleMaskTemplate()
   return self._SpineCircleMaskTemplate
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetUIAtlas = function(self)
-  -- function num : 0_15
+function StoryManager:GetUIAtlas()
   return self._uiAtlas
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.PlaySound = function(self, entityID)
-  -- function num : 0_16 , upvalues : _ENV
-  local soundEntity = (self._storyEntityList)[entityID]
+function StoryManager:PlaySound(entityID)
+  local soundEntity = self._storyEntityList[entityID]
   if soundEntity and soundEntity:GetEntityType() == StoryEntityType.Sound then
     soundEntity:PlaySound()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.StopSound = function(self, entityID)
-  -- function num : 0_17 , upvalues : _ENV
-  local soundEntity = (self._storyEntityList)[entityID]
+function StoryManager:StopSound(entityID)
+  local soundEntity = self._storyEntityList[entityID]
   if soundEntity and soundEntity:GetEntityType() == StoryEntityType.Sound then
     soundEntity:StopSound()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.PlayBgm = function(self, entityID, bgmFadeTime)
-  -- function num : 0_18 , upvalues : _ENV
-  local soundEntity = (self._storyEntityList)[entityID]
+function StoryManager:PlayBgm(entityID, bgmFadeTime)
+  local soundEntity = self._storyEntityList[entityID]
   if soundEntity and soundEntity:GetEntityType() == StoryEntityType.Sound then
     soundEntity:PlayBgm(bgmFadeTime)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.SetSpeakState = function(self, entityID, speaking)
-  -- function num : 0_19 , upvalues : _ENV
-  local spineEntity = (self._storyEntityList)[entityID]
+function StoryManager:SetSpeakState(entityID, speaking)
+  local spineEntity = self._storyEntityList[entityID]
   if spineEntity and spineEntity:GetEntityType() == StoryEntityType.Spine then
     spineEntity:SetSpeak(speaking)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.AddDialogRecord = function(self, speaker, content, speakerBG, isPlayer, voiceID)
-  -- function num : 0_20
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R6 in 'UnsetPending'
-
-  (self._dialogRecord)[#self._dialogRecord + 1] = {speaker, content, speakerBG, isPlayer, voiceID}
+function StoryManager:AddDialogRecord(speaker, content, speakerBG, isPlayer, voiceID)
+  self._dialogRecord[#self._dialogRecord + 1] = {
+    speaker,
+    content,
+    speakerBG,
+    isPlayer,
+    voiceID
+  }
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetDialogRecord = function(self)
-  -- function num : 0_21
+function StoryManager:GetDialogRecord()
   return self._dialogRecord
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.InitLayerInfo = function(self, trans)
-  -- function num : 0_22
-  local layerTable = (self._layerDic):Find(1)
+function StoryManager:InitLayerInfo(trans)
+  local layerTable = self._layerDic:Find(1)
   layerTable[#layerTable + 1] = trans
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.SetLayer = function(self, trans, layer)
-  -- function num : 0_23 , upvalues : _ENV
+function StoryManager:SetLayer(trans, layer)
   local layerDic = self._layerDic
   for i = 1, layerDic:Size() do
     local layerTable = layerDic:GetAt(i)
-    ;
-    (table.removev)(layerTable, trans)
+    table.removev(layerTable, trans)
   end
-  local layerTable = (self._layerDic):Find(layer)
+  local layerTable = self._layerDic:Find(layer)
   if layerTable == nil then
     layerTable = {}
-    ;
-    (self._layerDic):Insert(layer, layerTable)
+    self._layerDic:Insert(layer, layerTable)
   end
   layerTable[#layerTable + 1] = trans
   self:_resetLayers()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager._resetLayers = function(self)
-  -- function num : 0_24
+function StoryManager:_resetLayers()
   local layerDic = self._layerDic
   for i = 1, layerDic:Size() do
     local layerTable = layerDic:GetAt(i)
     for j = 1, #layerTable do
-      (layerTable[j]):SetAsLastSibling()
+      layerTable[j]:SetAsLastSibling()
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager._InitEntities = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local entityConfig = (self._storyConfig).Entities
+function StoryManager:_InitEntities()
+  local entityConfig = self._storyConfig.Entities
   if not entityConfig then
-    return 
+    return
   end
-  for _,entity in ipairs(entityConfig) do
+  for _, entity in ipairs(entityConfig) do
     local storyEntity = self:_CreateStoryEntity(entity.EntityID, entity.Type, entity.Resource, entity)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R8 in 'UnsetPending'
-
     if storyEntity then
-      (self._storyEntityList)[storyEntity:GetID()] = storyEntity
+      self._storyEntityList[storyEntity:GetID()] = storyEntity
     else
       self._end = true
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager._InitParagraphs = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  self._paragraphList = (self._storyConfig).Paragraphs
-  local paragraph = (self._paragraphList)[self._currentParagraphID]
+function StoryManager:_InitParagraphs()
+  self._paragraphList = self._storyConfig.Paragraphs
+  local paragraph = self._paragraphList[self._currentParagraphID]
   if not paragraph then
-    (Log.fatal)("不存在ID为" .. self._currentParagraphID .. "的剧情段落,剧情结束")
+    Log.fatal("不存在ID为" .. self._currentParagraphID .. "的剧情段落,剧情结束")
     self._end = true
-    return 
+    return
   end
   if paragraph.NextParagraphID then
     self:SetNextParagraphID(paragraph.NextParagraphID)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager._CreateStoryEntity = function(self, ID, type, resourceName, entityConfig)
-  -- function num : 0_27 , upvalues : _ENV
-  local request, gameObject = nil, nil
+function StoryManager:_CreateStoryEntity(ID, type, resourceName, entityConfig)
+  local request, gameObject
   if type ~= "Sound" and type ~= "PostProcessing" and type ~= "CrackMask" and type ~= "Usme" and type ~= "BgVedio" then
-    request = (ResourceManager:GetInstance()):SyncLoadAsset(resourceName, LoadType.GameObject)
+    request = ResourceManager:GetInstance():SyncLoadAsset(resourceName, LoadType.GameObject)
     if request then
       gameObject = request.Obj
       if type == "Dialog" or type == "AVGDialog" or type == "N28AVGDialog" or type == "IdolDialog" then
-        (gameObject.transform):SetParent((self._dialogRootGameObject).transform, false)
-      else
-        if entityConfig.Root == "Top" then
-          if entityConfig.Anchor then
-            (gameObject.transform):SetParent(((self._topRootGameObject).transform):Find(entityConfig.Anchor .. "Anchor"), false)
-          else
-            ;
-            (gameObject.transform):SetParent((self._topRootGameObject).transform, false)
-          end
+        gameObject.transform:SetParent(self._dialogRootGameObject.transform, false)
+      elseif entityConfig.Root == "Top" then
+        if entityConfig.Anchor then
+          gameObject.transform:SetParent(self._topRootGameObject.transform:Find(entityConfig.Anchor .. "Anchor"), false)
         else
-          ;
-          (gameObject.transform):SetParent((self._rootGameObject).transform, false)
+          gameObject.transform:SetParent(self._topRootGameObject.transform, false)
         end
+      else
+        gameObject.transform:SetParent(self._rootGameObject.transform, false)
       end
     else
       self._end = true
-      return 
+      return
     end
-  else
-    if type == "Usme" or type == "BgVedio" then
-      request = (ResourceManager:GetInstance()):SyncLoadAsset("StoryVideoItem.prefab", LoadType.GameObject)
-      if request then
-        gameObject = request.Obj
-        if type == "Usme" then
-          self._centerAnchor2GameObject = (self._uiStoryController):GetGameObject("CenterAnchor2")
-          ;
-          (gameObject.transform):SetParent((self._centerAnchor2GameObject).transform, false)
-        end
-        if type == "BgVedio" then
-          (gameObject.transform):SetParent((self._rootGameObject).transform, false)
-        end
-      else
-        self._end = true
-        return 
+  elseif type == "Usme" or type == "BgVedio" then
+    request = ResourceManager:GetInstance():SyncLoadAsset("StoryVideoItem.prefab", LoadType.GameObject)
+    if request then
+      gameObject = request.Obj
+      if type == "Usme" then
+        self._centerAnchor2GameObject = self._uiStoryController:GetGameObject("CenterAnchor2")
+        gameObject.transform:SetParent(self._centerAnchor2GameObject.transform, false)
       end
+      if type == "BgVedio" then
+        gameObject.transform:SetParent(self._rootGameObject.transform, false)
+      end
+    else
+      self._end = true
+      return
     end
   end
-  local storyEntity = nil
+  local storyEntity
   if type == "Dialog" then
     storyEntity = StoryEntityDialog:New(ID, gameObject, request, self)
     self._dialogEntity = storyEntity
-  else
-    if type == "AVGDialog" then
-      storyEntity = StoryEntityAVGDialog:New(ID, gameObject, request, self)
-    else
-      if type == "N28AVGDialog" then
-        storyEntity = N28StoryEntityAVGDialog:New(ID, gameObject, request, self)
-      else
-        if type == "IdolDialog" then
-          storyEntity = UIN25IdolStoryEntityDialog:New(ID, gameObject, request, self)
-        else
-          if type == "Spine" then
-            storyEntity = StoryEntitySpine:New(ID, gameObject, request, self, entityConfig)
-          else
-            if type == "SpineSlice" then
-              storyEntity = StoryEntitySpineSlice:New(ID, gameObject, request, self, entityConfig)
-            else
-              if type == "SpineSliceHorizontal" then
-                storyEntity = StoryEntitySpineSliceHorizontal:New(ID, gameObject, request, self, entityConfig)
-              else
-                if type == "Picture" then
-                  storyEntity = StoryEntityPicture:New(ID, gameObject, request, self, entityConfig)
-                else
-                  if type == "Effect" then
-                    storyEntity = StoryEntityEffect:New(ID, gameObject, request, self)
-                  else
-                    if type == "Text" then
-                      storyEntity = StoryEntityText:New(ID, gameObject, request, self)
-                    else
-                      if type == "Sound" then
-                        storyEntity = StoryEntitySound:New(ID, resourceName, self)
-                      else
-                        if type == "PostProcessing" then
-                          storyEntity = StoryEntityPostProcessing:New(ID, resourceName, self)
-                        else
-                          if type == "SpineSliceEdge" then
-                            storyEntity = StoryEntitySpineSliceEdge:New(ID, gameObject, request, self, entityConfig)
-                          else
-                            if type == "PictureSliceEdge" then
-                              storyEntity = StoryEntityPictureEdge:New(ID, gameObject, request, self, entityConfig)
-                            else
-                              if type == "PictureSliceHorizontalEdge" then
-                                storyEntity = StoryEntityPictureHorizontalEdge:New(ID, gameObject, request, self, entityConfig)
-                              else
-                                if type == "CrackMask" then
-                                  storyEntity = StoryEntityCrackMask:New(ID, self)
-                                else
-                                  if type == "SpineCircleEdge" then
-                                    storyEntity = StoryEntitySpineCircleEdge:New(ID, gameObject, request, self, entityConfig)
-                                  else
-                                    if type == "SpotLight" then
-                                      storyEntity = StoryEntitySpotLight:New(ID, gameObject, request, self, entityConfig)
-                                    else
-                                      if type == "Sprite" then
-                                        storyEntity = StoryEntitySprite:New(ID, gameObject, request, self, entityConfig)
-                                      else
-                                        if type == "Usme" then
-                                          storyEntity = StoryEntityVedioUsme:New(ID, gameObject, request, self, entityConfig, resourceName)
-                                        else
-                                          if type == "BgVedio" then
-                                            storyEntity = StoryEntityBgVedio:New(ID, gameObject, request, self, entityConfig, resourceName)
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif type == "AVGDialog" then
+    storyEntity = StoryEntityAVGDialog:New(ID, gameObject, request, self)
+  elseif type == "N28AVGDialog" then
+    storyEntity = N28StoryEntityAVGDialog:New(ID, gameObject, request, self)
+  elseif type == "IdolDialog" then
+    storyEntity = UIN25IdolStoryEntityDialog:New(ID, gameObject, request, self)
+  elseif type == "Spine" then
+    storyEntity = StoryEntitySpine:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "SpineSlice" then
+    storyEntity = StoryEntitySpineSlice:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "SpineSliceHorizontal" then
+    storyEntity = StoryEntitySpineSliceHorizontal:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "Picture" then
+    storyEntity = StoryEntityPicture:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "Effect" then
+    storyEntity = StoryEntityEffect:New(ID, gameObject, request, self)
+  elseif type == "Text" then
+    storyEntity = StoryEntityText:New(ID, gameObject, request, self)
+  elseif type == "Sound" then
+    storyEntity = StoryEntitySound:New(ID, resourceName, self)
+  elseif type == "PostProcessing" then
+    storyEntity = StoryEntityPostProcessing:New(ID, resourceName, self)
+  elseif type == "SpineSliceEdge" then
+    storyEntity = StoryEntitySpineSliceEdge:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "PictureSliceEdge" then
+    storyEntity = StoryEntityPictureEdge:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "PictureSliceHorizontalEdge" then
+    storyEntity = StoryEntityPictureHorizontalEdge:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "CrackMask" then
+    storyEntity = StoryEntityCrackMask:New(ID, self)
+  elseif type == "SpineCircleEdge" then
+    storyEntity = StoryEntitySpineCircleEdge:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "SpotLight" then
+    storyEntity = StoryEntitySpotLight:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "Sprite" then
+    storyEntity = StoryEntitySprite:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "Usme" then
+    storyEntity = StoryEntityVedioUsme:New(ID, gameObject, request, self, entityConfig, resourceName)
+  elseif type == "BgVedio" then
+    storyEntity = StoryEntityBgVedio:New(ID, gameObject, request, self, entityConfig, resourceName)
   end
   return storyEntity
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager._StartSection = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local paragraph = (self._paragraphList)[self._currentParagraphID]
+function StoryManager:_StartSection()
+  local paragraph = self._paragraphList[self._currentParagraphID]
   if not paragraph then
-    (Log.fatal)("不存在ID为" .. self._currentParagraphID .. "的剧情段落,剧情结束")
+    Log.fatal("不存在ID为" .. self._currentParagraphID .. "的剧情段落,剧情结束")
     self._end = true
-    return 
+    return
   end
-  local section = (paragraph.Sections)[self._currentSectionIndex]
+  local section = paragraph.Sections[self._currentSectionIndex]
   if not section then
-    (Log.fatal)("剧情段落\'" .. self._currentParagraphID .. "\'中不存在序号为" .. self._currentSectionIndex .. "的小节,剧情结束")
+    Log.fatal("剧情段落'" .. self._currentParagraphID .. "'中不存在序号为" .. self._currentSectionIndex .. "的小节,剧情结束")
     self._end = true
-    return 
+    return
   end
   if paragraph.ForceAutoDialog then
-    (self._leftButtonRootGameObject):SetActive(false)
+    self._leftButtonRootGameObject:SetActive(false)
   else
-    ;
-    (self._leftButtonRootGameObject):SetActive(true)
+    self._leftButtonRootGameObject:SetActive(true)
   end
-  for trackID,track in ipairs(section) do
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._currentTrackData)[track] = false
+  for trackID, track in ipairs(section) do
+    self._currentTrackData[track] = false
     if track.RefEntityID then
-      local storyEntity = (self._storyEntityList)[track.RefEntityID]
+      local storyEntity = self._storyEntityList[track.RefEntityID]
       if storyEntity then
         storyEntity:SectionStart(track)
-        if track.Options and (track.Options).LoopOverParagraphID ~= nil then
-          self._loopOverParagraphID = (track.Options).LoopOverParagraphID
+        if track.Options and track.Options.LoopOverParagraphID ~= nil then
+          self._loopOverParagraphID = track.Options.LoopOverParagraphID
         end
         if self._debugMode and self._entityInfoTemplate and storyEntity._gameObject then
-          local entityDebugInfo = ((storyEntity._gameObject).transform):Find("EntityInfo")
+          local entityDebugInfo = storyEntity._gameObject.transform:Find("EntityInfo")
           if not entityDebugInfo then
-            entityDebugInfo = ((UnityEngine.GameObject).Instantiate)(self._entityInfoTemplate, (storyEntity._gameObject).transform)
-            -- DECOMPILER ERROR at PC99: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            (entityDebugInfo.transform).localPosition = Vector3(-120, 40, 0)
+            entityDebugInfo = UnityEngine.GameObject.Instantiate(self._entityInfoTemplate, storyEntity._gameObject.transform)
+            entityDebugInfo.transform.localPosition = Vector3(-120, 40, 0)
             entityDebugInfo:SetActive(true)
           end
-          ;
-          (((entityDebugInfo.transform):Find("EntityIDText")):GetComponent("Text")).text = "EntityID:" .. storyEntity._ID
-          ;
-          (((entityDebugInfo.transform):Find("TrackIDText")):GetComponent("Text")).text = "TrackID:" .. trackID
+          entityDebugInfo.transform:Find("EntityIDText"):GetComponent("Text").text = "EntityID:" .. storyEntity._ID
+          entityDebugInfo.transform:Find("TrackIDText"):GetComponent("Text").text = "TrackID:" .. trackID
         end
       end
-    else
-      do
-        do
-          if track.BgmTrack then
-            (self._storyBgmTrackController):SectionStart(track)
-          else
-            if track.CameraTrack then
-              (self._storyCameraTrackController):SectionStart(track)
-            end
-          end
-          -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC141: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif track.BgmTrack then
+      self._storyBgmTrackController:SectionStart(track)
+    elseif track.CameraTrack then
+      self._storyCameraTrackController:SectionStart(track)
     end
   end
   if section.NextParagraphID then
     self:SetNextParagraphID(section.NextParagraphID)
   end
-  ;
-  (self._buttonRootGameObject):SetActive(section.ButtonVisible ~= nil and (section.ButtonVisible and ((not self._auto and not self._hide))))
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if section.ButtonVisible ~= nil then
+    self._buttonRootGameObject:SetActive(section.ButtonVisible and not self._auto and not self._hide)
+  end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetUIRootButtonObject = function(self)
-  -- function num : 0_29
+function StoryManager:GetUIRootButtonObject()
   return self._buttonRootGameObject
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager._EndSection = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  for track,_ in pairs(self._currentTrackData) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._currentTrackData)[track] = true
+function StoryManager:_EndSection()
+  for track, _ in pairs(self._currentTrackData) do
+    self._currentTrackData[track] = true
     if track.RefEntityID then
-      local storyEntity = (self._storyEntityList)[track.RefEntityID]
+      local storyEntity = self._storyEntityList[track.RefEntityID]
       if storyEntity then
         storyEntity:SectionEnd()
       end
-    else
-      do
-        do
-          if track.BgmTrack then
-            (self._storyBgmTrackController):SectionEnd()
-          else
-            if track.CameraTrack then
-              (self._storyCameraTrackController):SectionEnd()
-            end
-          end
-          -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif track.BgmTrack then
+      self._storyBgmTrackController:SectionEnd()
+    elseif track.CameraTrack then
+      self._storyCameraTrackController:SectionEnd()
     end
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager._UpdateTracks = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function StoryManager:_UpdateTracks()
   if self._skipGaragraph then
     self._skipGaragraph = false
     return true
   end
   local allTrackEnd = true
-  for track,trackEnd in pairs(self._currentTrackData) do
+  for track, trackEnd in pairs(self._currentTrackData) do
     if not trackEnd then
       if track.RefEntityID then
-        local storyEntity = (self._storyEntityList)[track.RefEntityID]
+        local storyEntity = self._storyEntityList[track.RefEntityID]
         local trackEnd = true
         if storyEntity then
           trackEnd = storyEntity:Update(self._currentTime)
         end
-        -- DECOMPILER ERROR at PC27: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self._currentTrackData)[track] = trackEnd
+        self._currentTrackData[track] = trackEnd
         if not trackEnd then
           allTrackEnd = trackEnd
         end
-      else
-        do
-          if track.BgmTrack then
-            (self._storyBgmTrackController):Update(self._currentTime)
-          else
-            if track.CameraTrack then
-              local cameraTrackEnd = (self._storyCameraTrackController):Update(self._currentTime)
-              if not cameraTrackEnd then
-                allTrackEnd = cameraTrackEnd
-              end
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      elseif track.BgmTrack then
+        self._storyBgmTrackController:Update(self._currentTime)
+      elseif track.CameraTrack then
+        local cameraTrackEnd = self._storyCameraTrackController:Update(self._currentTime)
+        if not cameraTrackEnd then
+          allTrackEnd = cameraTrackEnd
         end
       end
     end
@@ -708,32 +492,26 @@ StoryManager._UpdateTracks = function(self)
   return allTrackEnd
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.IsEnd = function(self)
-  -- function num : 0_32
+function StoryManager:IsEnd()
   return self._end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.Update = function(self, delteTimeMS)
-  -- function num : 0_33 , upvalues : _ENV
+function StoryManager:Update(delteTimeMS)
   if self._end then
-    return 
+    return
   end
   self._currentTime = self._currentTime + delteTimeMS / 1000
   local sectionEnd = self:_UpdateTracks()
   if sectionEnd then
     self:_EndSection()
     self._currentSectionIndex = self._currentSectionIndex + 1
-    local curParagraph = (self._paragraphList)[self._currentParagraphID]
-    if curParagraph and curParagraph.Sections and (curParagraph.Sections)[self._currentSectionIndex] then
+    local curParagraph = self._paragraphList[self._currentParagraphID]
+    if curParagraph and curParagraph.Sections and curParagraph.Sections[self._currentSectionIndex] then
       self:_StartSection()
       self._currentTime = 0
       self:_UpdateTracks()
     else
-      if self._optionLoopStartParagraphID > 0 and self._currentParagraphID ~= self._optionLoopStartParagraphID then
+      if 0 < self._optionLoopStartParagraphID and self._currentParagraphID ~= self._optionLoopStartParagraphID then
         if self._optionLoop then
           self._nextParagraphID = self._optionLoopStartParagraphID
         else
@@ -746,461 +524,289 @@ StoryManager.Update = function(self, delteTimeMS)
         self._end = true
       else
         self._currentParagraphID = self._nextParagraphID
-        do
-          if self._breakParagraphIds then
-            local breakIdx = (table.ikey)(self._breakParagraphIds, self._currentParagraphID)
-            if breakIdx then
-              (LocalDB.SetInt)(self._localBreakParapraphMark, breakIdx)
-            end
-          end
-          if self._optionLoopStartParagraphID > 0 and self._currentParagraphID == self._optionLoopStartParagraphID then
-            local loopParagraph = (self._paragraphList)[self._currentParagraphID]
-            self._currentSectionIndex = #loopParagraph.Sections
-          else
-            do
-              do
-                self._currentSectionIndex = 1
-                self._currentTime = 0
-                self:_StartSection()
-                self:_UpdateTracks()
-                self:_UpdateLoopCameraShake(delteTimeMS / 1000)
-              end
-            end
+        if self._breakParagraphIds then
+          local breakIdx = table.ikey(self._breakParagraphIds, self._currentParagraphID)
+          if breakIdx then
+            LocalDB.SetInt(self._localBreakParapraphMark, breakIdx)
           end
         end
+        if 0 < self._optionLoopStartParagraphID and self._currentParagraphID == self._optionLoopStartParagraphID then
+          local loopParagraph = self._paragraphList[self._currentParagraphID]
+          self._currentSectionIndex = #loopParagraph.Sections
+        else
+          self._currentSectionIndex = 1
+        end
+        self._currentTime = 0
+        self:_StartSection()
+        self:_UpdateTracks()
       end
     end
   end
+  self:_UpdateLoopCameraShake(delteTimeMS / 1000)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.StartLoopShake = function(self, shakeData)
-  -- function num : 0_34 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._loopCameraShakeData).running = true
+function StoryManager:StartLoopShake(shakeData)
+  self._loopCameraShakeData.running = true
   local duration = shakeData.Duration
   if shakeData.HandHeld == true then
-    duration = ((math.random)() * 0.6 + 0.6) * duration
+    duration = (math.random() * 0.6 + 0.6) * duration
   end
-  ;
-  ((self._rootGameObject).transform):DOKill()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).shakeData = shakeData
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).timer = 0
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).curDuration = duration
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).tweener = ((self._rootGameObject).transform):DOShakePosition(duration, Vector3((((self._loopCameraShakeData).shakeData).Strength)[1], (((self._loopCameraShakeData).shakeData).Strength)[2], 0), ((self._loopCameraShakeData).shakeData).Vibrato, ((self._loopCameraShakeData).shakeData).RandomNess, false, ((self._loopCameraShakeData).shakeData).FadeOut)
+  self._rootGameObject.transform:DOKill()
+  self._loopCameraShakeData.shakeData = shakeData
+  self._loopCameraShakeData.timer = 0
+  self._loopCameraShakeData.curDuration = duration
+  self._loopCameraShakeData.tweener = self._rootGameObject.transform:DOShakePosition(duration, Vector3(self._loopCameraShakeData.shakeData.Strength[1], self._loopCameraShakeData.shakeData.Strength[2], 0), self._loopCameraShakeData.shakeData.Vibrato, self._loopCameraShakeData.shakeData.RandomNess, false, self._loopCameraShakeData.shakeData.FadeOut)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.StopLoopShake = function(self, shakeData)
-  -- function num : 0_35 , upvalues : _ENV
-  if not (self._loopCameraShakeData).running then
-    return 
+function StoryManager:StopLoopShake(shakeData)
+  if not self._loopCameraShakeData.running then
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).running = false
-  ;
-  ((self._rootGameObject).transform):DOKill()
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._rootGameObject).transform).localPosition = Vector3(0, 0, 0)
+  self._loopCameraShakeData.running = false
+  self._rootGameObject.transform:DOKill()
+  self._rootGameObject.transform.localPosition = Vector3(0, 0, 0)
   if shakeData and shakeData.FadeOut then
-    ((self._rootGameObject).transform):DOShakePosition(shakeData.Duration, Vector3((((self._loopCameraShakeData).shakeData).Strength)[1], (((self._loopCameraShakeData).shakeData).Strength)[2], 0), ((self._loopCameraShakeData).shakeData).Vibrato, ((self._loopCameraShakeData).shakeData).RandomNess, false, true)
+    self._rootGameObject.transform:DOShakePosition(shakeData.Duration, Vector3(self._loopCameraShakeData.shakeData.Strength[1], self._loopCameraShakeData.shakeData.Strength[2], 0), self._loopCameraShakeData.shakeData.Vibrato, self._loopCameraShakeData.shakeData.RandomNess, false, true)
   end
   self._loopCameraShakeData = {}
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager._UpdateLoopCameraShake = function(self, deltaTime)
-  -- function num : 0_36 , upvalues : _ENV
-  if not (self._loopCameraShakeData).running then
-    return 
+function StoryManager:_UpdateLoopCameraShake(deltaTime)
+  if not self._loopCameraShakeData.running then
+    return
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).timer = (self._loopCameraShakeData).timer + deltaTime
-  if (self._loopCameraShakeData).curDuration < (self._loopCameraShakeData).timer then
-    local duration = ((self._loopCameraShakeData).shakeData).Duration
-    if ((self._loopCameraShakeData).shakeData).HandHeld == true then
-      duration = ((math.random)() * 0.6 + 0.6) * duration
+  self._loopCameraShakeData.timer = self._loopCameraShakeData.timer + deltaTime
+  if self._loopCameraShakeData.timer > self._loopCameraShakeData.curDuration then
+    local duration = self._loopCameraShakeData.shakeData.Duration
+    if self._loopCameraShakeData.shakeData.HandHeld == true then
+      duration = (math.random() * 0.6 + 0.6) * duration
     end
-    ;
-    ((self._rootGameObject).transform):DOKill()
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._loopCameraShakeData).timer = 0
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._loopCameraShakeData).curDuration = duration
-    -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._loopCameraShakeData).tweener = ((self._rootGameObject).transform):DOShakePosition(duration, Vector3((((self._loopCameraShakeData).shakeData).Strength)[1], (((self._loopCameraShakeData).shakeData).Strength)[2], 0), ((self._loopCameraShakeData).shakeData).Vibrato, ((self._loopCameraShakeData).shakeData).RandomNess, false, ((self._loopCameraShakeData).shakeData).FadeOut)
+    self._rootGameObject.transform:DOKill()
+    self._loopCameraShakeData.timer = 0
+    self._loopCameraShakeData.curDuration = duration
+    self._loopCameraShakeData.tweener = self._rootGameObject.transform:DOShakePosition(duration, Vector3(self._loopCameraShakeData.shakeData.Strength[1], self._loopCameraShakeData.shakeData.Strength[2], 0), self._loopCameraShakeData.shakeData.Vibrato, self._loopCameraShakeData.shakeData.RandomNess, false, self._loopCameraShakeData.shakeData.FadeOut)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.AddAudioPlayCallback = function(self, callback)
-  -- function num : 0_37
+function StoryManager:AddAudioPlayCallback(callback)
   if self._dialogEntity then
-    (self._dialogEntity):AddAudioPlayCallback(callback)
+    self._dialogEntity:AddAudioPlayCallback(callback)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.Destroy = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (UnityEngine.Time).timeScale = self._SrcTimeScale
-  ;
-  (AudioHelperController.SetUISoundPlaySpeed)((UnityEngine.Time).timeScale)
-  ;
-  (AudioHelperController.SetUIVoicePlaySpeed)((UnityEngine.Time).timeScale)
-  local costSecond = (os.time)() - self._startTime
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_38_0 , upvalues : _ENV, self, costSecond
-    ((GameGlobal.GetModule)(RoleModule)):OnEndStory(TT, self._storyID, self._currentParagraphID, self._currentSectionIndex, self._BeSkipped, costSecond)
-  end
-, self)
-  ;
-  (Log.sys)("剧情资源销毁")
-  for _,storyEntity in pairs(self._storyEntityList) do
+function StoryManager:Destroy()
+  UnityEngine.Time.timeScale = self._SrcTimeScale
+  AudioHelperController.SetUISoundPlaySpeed(UnityEngine.Time.timeScale)
+  AudioHelperController.SetUIVoicePlaySpeed(UnityEngine.Time.timeScale)
+  local costSecond = os.time() - self._startTime
+  TaskManager:GetInstance():StartTask(function(TT)
+    GameGlobal.GetModule(RoleModule):OnEndStory(TT, self._storyID, self._currentParagraphID, self._currentSectionIndex, self._BeSkipped, costSecond)
+  end, self)
+  Log.sys("剧情资源销毁")
+  for _, storyEntity in pairs(self._storyEntityList) do
     storyEntity:Destroy()
   end
   if self._revertBGM then
     if self._orgBgmPlaying then
-      (AudioHelperController.PlayBGM)(self._orgBgm, self._orgBgmFadeTime)
+      AudioHelperController.PlayBGM(self._orgBgm, self._orgBgmFadeTime)
     else
-      ;
-      (AudioHelperController.StopBGM)()
+      AudioHelperController.StopBGM()
     end
   end
-  ;
-  (self._layerDic):Clear()
+  self._layerDic:Clear()
   self:StopLoopShake(nil)
-  ;
-  (AudioHelperController.ReleaseUISoundById)(CriAudioIDConst.SoundStoryClick)
+  AudioHelperController.ReleaseUISoundById(CriAudioIDConst.SoundStoryClick)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.SkipParagraph = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function StoryManager:SkipParagraph()
   if self._breakParagraphIds then
-    local breakIdx = (LocalDB.GetInt)(self._localBreakParapraphMark)
-    if (self._breakParagraphIds)[breakIdx + 1] then
+    local breakIdx = LocalDB.GetInt(self._localBreakParapraphMark)
+    if self._breakParagraphIds[breakIdx + 1] then
       self._skipGaragraph = true
-      self._currentParagraphID = (self._breakParagraphIds)[breakIdx + 1]
-      ;
-      (LocalDB.SetInt)(self._localBreakParapraphMark, breakIdx + 1)
+      self._currentParagraphID = self._breakParagraphIds[breakIdx + 1]
+      LocalDB.SetInt(self._localBreakParapraphMark, breakIdx + 1)
       self._currentSectionIndex = 0
       self._currentTime = 0
     else
       self._skipGaragraph = false
       self:SkipStory()
     end
-  else
-    do
-      if self._skipBlockIds then
-        local blocked = false
-        for _,id in ipairs(self._skipBlockIds) do
-          if self._currentParagraphID < id then
-            self._currentParagraphID = id
-            self._skipGaragraph = true
-            self._currentSectionIndex = 0
-            self._currentTime = 0
-            blocked = true
-            break
-          end
-        end
-        do
-          do
-            if not blocked then
-              self._skipGaragraph = false
-              self:SkipStory()
-            end
-            self._skipGaragraph = false
-            self:SkipStory()
-          end
-        end
+  elseif self._skipBlockIds then
+    local blocked = false
+    for _, id in ipairs(self._skipBlockIds) do
+      if id > self._currentParagraphID then
+        self._currentParagraphID = id
+        self._skipGaragraph = true
+        self._currentSectionIndex = 0
+        self._currentTime = 0
+        blocked = true
+        break
       end
     end
+    if not blocked then
+      self._skipGaragraph = false
+      self:SkipStory()
+    end
+  else
+    self._skipGaragraph = false
+    self:SkipStory()
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.SkipStory = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_40_0 , upvalues : _ENV, self
-    ((GameGlobal.GetModule)(RoleModule)):OnSkipStory(TT, self._storyID)
-  end
-, self)
+function StoryManager:SkipStory()
+  TaskManager:GetInstance():StartTask(function(TT)
+    GameGlobal.GetModule(RoleModule):OnSkipStory(TT, self._storyID)
+  end, self)
   self._BeSkipped = 1
   self._end = true
   self:StopLoopShake(nil)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.HideUI = function(self, hide)
-  -- function num : 0_41 , upvalues : _ENV
+function StoryManager:HideUI(hide)
   self._hide = hide
-  ;
-  (self._buttonRootGameObject):SetActive(not hide)
-  for index,storyEntity in ipairs(self._storyEntityList) do
+  self._buttonRootGameObject:SetActive(not hide)
+  for index, storyEntity in ipairs(self._storyEntityList) do
     local entityType = storyEntity:GetEntityType()
     if entityType == StoryEntityType.Dialog then
       storyEntity:HideUI(hide)
-    else
-      if entityType == StoryEntityType.AVGDialog then
-        storyEntity:HideUI(hide)
-      end
+    elseif entityType == StoryEntityType.AVGDialog then
+      storyEntity:HideUI(hide)
     end
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.SetSpeed = function(self, uiRefreshCB, state)
-  -- function num : 0_42 , upvalues : _ENV
-  local rate = (math.floor)(self._CurTimeScale / self._SrcTimeScale)
+function StoryManager:SetSpeed(uiRefreshCB, state)
+  local rate = math.floor(self._CurTimeScale / self._SrcTimeScale)
   if state == 1 then
     self._CurTimeScale = self._SrcTimeScale * self:GetSpeedDB()
+  elseif state == 2 then
+    self:SetSpeedDB(rate)
+    self._CurTimeScale = self._SrcTimeScale
   else
-    if state == 2 then
-      self:SetSpeedDB(rate)
-      self._CurTimeScale = self._SrcTimeScale
-    else
-      self._CurTimeScale = self._CurTimeScale * 2
-      if self._CurTimeScale <= 4 or not 1 then
-        self._CurTimeScale = self._CurTimeScale
-        -- DECOMPILER ERROR at PC36: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (UnityEngine.Time).timeScale = self._CurTimeScale
-        ;
-        (AudioHelperController.SetUISoundPlaySpeed)((UnityEngine.Time).timeScale)
-        ;
-        (AudioHelperController.SetUIVoicePlaySpeed)((UnityEngine.Time).timeScale)
-        if uiRefreshCB then
-          rate = (math.floor)(self._CurTimeScale / self._SrcTimeScale)
-          uiRefreshCB(rate)
-        end
-      end
-    end
+    self._CurTimeScale = self._CurTimeScale * 2
+    self._CurTimeScale = self._CurTimeScale > 4 and 1 or self._CurTimeScale
+  end
+  UnityEngine.Time.timeScale = self._CurTimeScale
+  AudioHelperController.SetUISoundPlaySpeed(UnityEngine.Time.timeScale)
+  AudioHelperController.SetUIVoicePlaySpeed(UnityEngine.Time.timeScale)
+  if uiRefreshCB then
+    rate = math.floor(self._CurTimeScale / self._SrcTimeScale)
+    uiRefreshCB(rate)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetSpeedDB = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function StoryManager:GetSpeedDB()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "StoryManagerSpeed"
-  return (LocalDB.GetInt)(key, 1)
+  return LocalDB.GetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.SetSpeedDB = function(self, value)
-  -- function num : 0_44 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function StoryManager:SetSpeedDB(value)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "StoryManagerSpeed"
-  local new = (LocalDB.SetInt)(key, value)
+  local new = LocalDB.SetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.SetAuto = function(self, auto, id)
-  -- function num : 0_45 , upvalues : _ENV
+function StoryManager:SetAuto(auto, id)
   self._auto = auto
-  for index,storyEntity in ipairs(self._storyEntityList) do
+  for index, storyEntity in ipairs(self._storyEntityList) do
     local entityType = storyEntity:GetEntityType()
     if entityType == StoryEntityType.Dialog then
       storyEntity:SetAuto(auto)
-    else
-      if entityType == StoryEntityType.AVGDialog then
-        storyEntity:SetAuto(auto, id)
-      end
+    elseif entityType == StoryEntityType.AVGDialog then
+      storyEntity:SetAuto(auto, id)
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetAuto = function(self)
-  -- function num : 0_46
+function StoryManager:GetAuto()
   return self._auto
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetCurStoryID = function(self)
-  -- function num : 0_47
+function StoryManager:GetCurStoryID()
   return self._storyID
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetCurParagraphID = function(self)
-  -- function num : 0_48
+function StoryManager:GetCurParagraphID()
   return self._currentParagraphID
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetCurParagraph = function(self)
-  -- function num : 0_49
-  return (self._paragraphList)[self._currentParagraphID]
+function StoryManager:GetCurParagraph()
+  return self._paragraphList[self._currentParagraphID]
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetCurSectionIndex = function(self)
-  -- function num : 0_50
+function StoryManager:GetCurSectionIndex()
   return self._currentSectionIndex
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetCurrentTime = function(self)
-  -- function num : 0_51
+function StoryManager:GetCurrentTime()
   return self._currentTime
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetCurLanguageStr = function(self)
-  -- function num : 0_52 , upvalues : _ENV
-  do
-    if not self._curLanguageStr then
-      local lan = (Localization.GetCurLanguage)()
-      if type(lan) ~= "string" then
-        lan = lan:ToString()
-      end
-      self._curLanguageStr = lan
+function StoryManager:GetCurLanguageStr()
+  if not self._curLanguageStr then
+    local lan = Localization.GetCurLanguage()
+    if type(lan) ~= "string" then
+      lan = lan:ToString()
     end
-    return self._curLanguageStr
+    self._curLanguageStr = lan
   end
+  return self._curLanguageStr
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetStoryEntity = function(self, entityID)
-  -- function num : 0_53
-  return (self._storyEntityList)[entityID]
+function StoryManager:GetStoryEntity(entityID)
+  return self._storyEntityList[entityID]
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.SetUIBlackSideSize = function(self, width, height)
-  -- function num : 0_54 , upvalues : _ENV
-  if ((GameGlobal.UIStateManager)()):IsShow("UIStoryController") then
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UIStoryController", "SetBlackSideSize", width, height)
+function StoryManager:SetUIBlackSideSize(width, height)
+  if GameGlobal.UIStateManager():IsShow("UIStoryController") then
+    GameGlobal.UIStateManager():CallUIMethod("UIStoryController", "SetBlackSideSize", width, height)
+  elseif GameGlobal.UIStateManager():IsShow("UIN20AVGStory") then
+    GameGlobal.UIStateManager():CallUIMethod("UIN20AVGStory", "SetBlackSideSize", width, height)
+  elseif GameGlobal.UIStateManager():IsShow("UIN28AVGStory") then
+    GameGlobal.UIStateManager():CallUIMethod("UIN28AVGStory", "SetBlackSideSize", width, height)
+  elseif GameGlobal.UIStateManager():IsShow("UIN25IdolStoryController") then
+    GameGlobal.UIStateManager():CallUIMethod("UIN25IdolStoryController", "SetBlackSideSize", width, height)
   else
-    if ((GameGlobal.UIStateManager)()):IsShow("UIN20AVGStory") then
-      ((GameGlobal.UIStateManager)()):CallUIMethod("UIN20AVGStory", "SetBlackSideSize", width, height)
-    else
-      if ((GameGlobal.UIStateManager)()):IsShow("UIN28AVGStory") then
-        ((GameGlobal.UIStateManager)()):CallUIMethod("UIN28AVGStory", "SetBlackSideSize", width, height)
-      else
-        if ((GameGlobal.UIStateManager)()):IsShow("UIN25IdolStoryController") then
-          ((GameGlobal.UIStateManager)()):CallUIMethod("UIN25IdolStoryController", "SetBlackSideSize", width, height)
-        else
-          ;
-          (Log.fatal)("[Story] 没有处于显示状态的剧情界面")
-        end
-      end
-    end
+    Log.fatal("[Story] 没有处于显示状态的剧情界面")
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetUICanvasSize = function(self)
-  -- function num : 0_55 , upvalues : _ENV
-  if ((GameGlobal.UIStateManager)()):IsShow("UIStoryController") then
-    return ((GameGlobal.UIStateManager)()):CallUIMethod("UIStoryController", "GetCanvasSize")
+function StoryManager:GetUICanvasSize()
+  if GameGlobal.UIStateManager():IsShow("UIStoryController") then
+    return GameGlobal.UIStateManager():CallUIMethod("UIStoryController", "GetCanvasSize")
+  elseif GameGlobal.UIStateManager():IsShow("UIN20AVGStory") then
+    return GameGlobal.UIStateManager():CallUIMethod("UIN20AVGStory", "GetCanvasSize")
+  elseif GameGlobal.UIStateManager():IsShow("UIN25IdolStoryController") then
+    return GameGlobal.UIStateManager():CallUIMethod("UIN25IdolStoryController", "GetCanvasSize")
+  elseif GameGlobal.UIStateManager():IsShow("UIN28AVGStory") then
+    return GameGlobal.UIStateManager():CallUIMethod("UIN28AVGStory", "GetCanvasSize")
   else
-    if ((GameGlobal.UIStateManager)()):IsShow("UIN20AVGStory") then
-      return ((GameGlobal.UIStateManager)()):CallUIMethod("UIN20AVGStory", "GetCanvasSize")
-    else
-      if ((GameGlobal.UIStateManager)()):IsShow("UIN25IdolStoryController") then
-        return ((GameGlobal.UIStateManager)()):CallUIMethod("UIN25IdolStoryController", "GetCanvasSize")
-      else
-        if ((GameGlobal.UIStateManager)()):IsShow("UIN28AVGStory") then
-          return ((GameGlobal.UIStateManager)()):CallUIMethod("UIN28AVGStory", "GetCanvasSize")
-        else
-          ;
-          (Log.fatal)("[Story] 没有处于显示状态的剧情界面")
-        end
-      end
-    end
+    Log.fatal("[Story] 没有处于显示状态的剧情界面")
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.JumpTo = function(self, paragraphID, sectionID)
-  -- function num : 0_56
-  local frameTime = 33.333333333333
+function StoryManager:JumpTo(paragraphID, sectionID)
+  local frameTime = 33.333333333333336
   local oriAuto = self._auto
   self:SetAuto(true)
   self._jumping = true
-  local dialogRet = nil
-  while 1 do
-    if (paragraphID ~= self._currentParagraphID or sectionID ~= self._currentSectionIndex) and not self._forceStop then
-      self:Update(frameTime)
-      if not self._end then
-        do
-          local dialogEntity = self:GetDialogEntity(self._currentParagraphID, self._currentSectionIndex)
-          if dialogEntity and (dialogEntity._currentTrackData).Options then
-            dialogRet = dialogEntity
-            break
-          end
-          if not dialogEntity or (dialogEntity._currentTrackData).ShowEvidence then
-            dialogRet = dialogEntity
-            break
-          end
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  local dialogRet
+  while (paragraphID ~= self._currentParagraphID or sectionID ~= self._currentSectionIndex) and not self._forceStop do
+    self:Update(frameTime)
+    if self._end then
+      break
+    end
+    local dialogEntity = self:GetDialogEntity(self._currentParagraphID, self._currentSectionIndex)
+    if dialogEntity and dialogEntity._currentTrackData.Options then
+      dialogRet = dialogEntity
+      break
+    end
+    if dialogEntity and dialogEntity._currentTrackData.ShowEvidence then
+      dialogRet = dialogEntity
+      break
     end
   end
   self._jumping = false
@@ -1208,31 +814,22 @@ StoryManager.JumpTo = function(self, paragraphID, sectionID)
   return dialogRet
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.ForceJumpStop = function(self, flag)
-  -- function num : 0_57
+function StoryManager:ForceJumpStop(flag)
   self._forceStop = flag
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.IsJumping = function(self)
-  -- function num : 0_58
+function StoryManager:IsJumping()
   return self._jumping
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryManager.GetDialogEntity = function(self, paragraphID, sectionID)
-  -- function num : 0_59 , upvalues : _ENV
-  local paragraph = (self._paragraphList)[paragraphID]
+function StoryManager:GetDialogEntity(paragraphID, sectionID)
+  local paragraph = self._paragraphList[paragraphID]
   if paragraph ~= nil then
-    local section = (paragraph.Sections)[sectionID]
+    local section = paragraph.Sections[sectionID]
     if section ~= nil then
-      for _,track in ipairs(section) do
+      for _, track in ipairs(section) do
         if track.RefEntityID then
-          local entity = (self._storyEntityList)[track.RefEntityID]
+          local entity = self._storyEntityList[track.RefEntityID]
           local entityType = entity:GetEntityType()
           if entityType == StoryEntityType.Dialog or entityType == StoryEntityType.AVGDialog then
             return entity
@@ -1242,5 +839,3 @@ StoryManager.GetDialogEntity = function(self, paragraphID, sectionID)
     end
   end
 end
-
-

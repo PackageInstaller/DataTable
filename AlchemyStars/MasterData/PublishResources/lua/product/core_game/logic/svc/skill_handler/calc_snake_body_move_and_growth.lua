@@ -1,115 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_snake_body_move_and_growth.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SnakeBodyMoveAndGrowth", Object)
 SkillEffectCalc_SnakeBodyMoveAndGrowth = SkillEffectCalc_SnakeBodyMoveAndGrowth
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SnakeBodyMoveAndGrowth.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SnakeBodyMoveAndGrowth:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  self._monsterShowLogic = (self._world):GetService("MonsterShowLogic")
+  self._configService = self._world:GetService("Config")
+  self._monsterShowLogic = self._world:GetService("MonsterShowLogic")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SnakeBodyMoveAndGrowth.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SnakeBodyMoveAndGrowth:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterID = skillEffectCalcParam.casterEntityID
-  local casterEntity = (self._world):GetEntityByID(casterID)
+  local casterEntity = self._world:GetEntityByID(casterID)
   local casterPos = casterEntity:GetGridPosition()
   local effectParam = skillEffectCalcParam.skillEffectParam
   local snakeMoveType = effectParam:GetMoveType()
   local headMonsterID = effectParam:GetHeadMonsterID()
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local headEntityList = utilDataSvc:FindMonsterByMonsterID(headMonsterID)
   local headEntity = headEntityList[1]
   local headEntityID = headEntity:GetID()
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local shareResultCmpt = boardEntity:ShareSkillResult()
   local resultContainer = shareResultCmpt:GetResultContainerByEntityID(headEntity:GetID())
   if headEntity:HasDeadMark() then
-    (casterEntity:Attributes()):Modify("HP", 0)
-    ;
-    (self._monsterShowLogic):AddMonsterDeadMark(casterEntity)
-    ;
-    (Log.debug)("SnakeBodyDead ModifyHP =0 defender=", casterEntity:GetID())
+    casterEntity:Attributes():Modify("HP", 0)
+    self._monsterShowLogic:AddMonsterDeadMark(casterEntity)
+    Log.debug("SnakeBodyDead ModifyHP =0 defender=", casterEntity:GetID())
     local result = SkillEffectSnakeBodyMoveAndGrowthResult:New()
     result._casterIsDead = true
     shareResultCmpt:AddEntityResult(casterID, result)
     return result
   end
-  do
-    local resultArray = resultContainer:GetEffectResultsAsArray(SkillEffectType.SnakeHeadMove)
-    ;
-    (Log.fatal)("SnakeHeadMoveResultCount:", #resultArray)
-    local headMoveResult = resultArray[#resultArray]
-    if not headMoveResult:GetCasterIsDead() then
-      local attrCmpt = casterEntity:Attributes()
-      local curHP = attrCmpt:GetCurrentHP()
-      local maxHP = attrCmpt:CalcMaxHp()
-      if curHP < maxHP then
-        (casterEntity:Attributes()):Modify("HP", maxHP)
-      end
-      local headNewPos = headMoveResult:GetNewPos()
-      local bodyNewPos = headMoveResult:GetOldPos()
-      local oldBodyArea = (casterEntity:BodyArea()):GetArea()
-      local bodyOldPos = casterEntity:GetGridPosition()
-      local newBodyArea, newBodyPos = self:ChangeBodyArea(oldBodyArea, bodyNewPos, bodyOldPos, snakeMoveType)
-      local result = SkillEffectSnakeBodyMoveAndGrowthResult:New(bodyOldPos, bodyNewPos, oldBodyArea, newBodyArea, newBodyPos)
-      result:SetHeadNewPos(headNewPos)
-      shareResultCmpt:AddEntityResult(casterID, result)
-      return result
-    else
-      do
-        ;
-        (casterEntity:Attributes()):Modify("HP", 0)
-        ;
-        (self._monsterShowLogic):AddMonsterDeadMark(casterEntity)
-        ;
-        (Log.debug)("SnakeBodyDead ModifyHP =0 defender=", casterEntity:GetID())
-        local result = SkillEffectSnakeBodyMoveAndGrowthResult:New()
-        result._casterIsDead = true
-        shareResultCmpt:AddEntityResult(casterID, result)
-        do return result end
-      end
+  local resultArray = resultContainer:GetEffectResultsAsArray(SkillEffectType.SnakeHeadMove)
+  Log.fatal("SnakeHeadMoveResultCount:", #resultArray)
+  local headMoveResult = resultArray[#resultArray]
+  if not headMoveResult:GetCasterIsDead() then
+    local attrCmpt = casterEntity:Attributes()
+    local curHP = attrCmpt:GetCurrentHP()
+    local maxHP = attrCmpt:CalcMaxHp()
+    if curHP < maxHP then
+      casterEntity:Attributes():Modify("HP", maxHP)
     end
+    local headNewPos = headMoveResult:GetNewPos()
+    local bodyNewPos = headMoveResult:GetOldPos()
+    local oldBodyArea = casterEntity:BodyArea():GetArea()
+    local bodyOldPos = casterEntity:GetGridPosition()
+    local newBodyArea, newBodyPos = self:ChangeBodyArea(oldBodyArea, bodyNewPos, bodyOldPos, snakeMoveType)
+    local result = SkillEffectSnakeBodyMoveAndGrowthResult:New(bodyOldPos, bodyNewPos, oldBodyArea, newBodyArea, newBodyPos)
+    result:SetHeadNewPos(headNewPos)
+    shareResultCmpt:AddEntityResult(casterID, result)
+    return result
+  else
+    casterEntity:Attributes():Modify("HP", 0)
+    self._monsterShowLogic:AddMonsterDeadMark(casterEntity)
+    Log.debug("SnakeBodyDead ModifyHP =0 defender=", casterEntity:GetID())
+    local result = SkillEffectSnakeBodyMoveAndGrowthResult:New()
+    result._casterIsDead = true
+    shareResultCmpt:AddEntityResult(casterID, result)
+    return result
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SnakeBodyMoveAndGrowth.ChangeBodyArea = function(self, oldBodyArea, bodyNewPos, bodyOldPos, snakeMoveType)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.info)("OldPos:", bodyOldPos, "NewPos:", bodyNewPos)
-  local newBodyArea = {Vector2(0, 0)}
-  for i,v in ipairs(oldBodyArea) do
+function SkillEffectCalc_SnakeBodyMoveAndGrowth:ChangeBodyArea(oldBodyArea, bodyNewPos, bodyOldPos, snakeMoveType)
+  Log.info("OldPos:", bodyOldPos, "NewPos:", bodyNewPos)
+  local newBodyArea = {
+    Vector2(0, 0)
+  }
+  for i, v in ipairs(oldBodyArea) do
     if i ~= #oldBodyArea then
       local offset = v + bodyOldPos
       local area = offset - bodyNewPos
-      ;
-      (Log.info)("Index:", i, "Offset:", offset, "Area:", area)
-      ;
-      (table.insert)(newBodyArea, area)
+      Log.info("Index:", i, "Offset:", offset, "Area:", area)
+      table.insert(newBodyArea, area)
     end
   end
-  local newBodyPos = nil
+  local newBodyPos
   if snakeMoveType == SnakeMoveType.Growth then
     local offset = oldBodyArea[#oldBodyArea] + bodyOldPos
     local area = offset - bodyNewPos
     newBodyPos = offset
-    ;
-    (Log.info)("Growth Offset:", offset, "Area:", area)
-    ;
-    (table.insert)(newBodyArea, area)
+    Log.info("Growth Offset:", offset, "Area:", area)
+    table.insert(newBodyArea, area)
   end
-  do
-    return newBodyArea, newBodyPos
-  end
+  return newBodyArea, newBodyPos
 end
-
-

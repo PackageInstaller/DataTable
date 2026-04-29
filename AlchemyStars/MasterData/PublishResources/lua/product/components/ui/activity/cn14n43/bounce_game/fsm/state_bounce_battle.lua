@@ -1,49 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/fsm/state_bounce_battle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateBounceBattle", StateBounceBase)
 StateBounceBattle = StateBounceBattle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBounceBattle.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function StateBounceBattle:OnEnter(TT, ...)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceBattle.OnExit = function(self, TT)
-  -- function num : 0_1
+function StateBounceBattle:OnExit(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceBattle.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.bounceData).durationMs = (self.bounceData).durationMs + deltaTimeMS
-  for k,v in pairs(self.monsterGenerator) do
+function StateBounceBattle:OnUpdate(deltaTimeMS)
+  self.bounceData.durationMs = self.bounceData.durationMs + deltaTimeMS
+  for k, v in pairs(self.monsterGenerator) do
     v:OnUpdate(deltaTimeMS)
   end
-  ;
-  (self.objMgr):OnUpdate(deltaTimeMS)
+  self.objMgr:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceBattle.OnJump = function(self)
-  -- function num : 0_3
-  (self:GetPlayer()):OnJump()
+function StateBounceBattle:OnJump()
+  self:GetPlayer():OnJump()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBounceBattle.OnAttack = function(self)
-  -- function num : 0_4
-  (self:GetPlayer()):OnAttack()
+function StateBounceBattle:OnAttack()
+  self:GetPlayer():OnAttack()
 end
-
-

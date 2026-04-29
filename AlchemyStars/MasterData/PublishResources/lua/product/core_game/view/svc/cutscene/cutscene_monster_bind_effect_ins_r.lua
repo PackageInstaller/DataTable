@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_monster_bind_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneMonsterBindEffectInstruction", CutsceneBaseInstruction)
 CutsceneMonsterBindEffectInstruction = CutsceneMonsterBindEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneMonsterBindEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneMonsterBindEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._name = paramList.name
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterBindEffectInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneMonsterBindEffectInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
   local effectService = world:GetService("Effect")
   local cutsceneServiceRender = world:GetService("Cutscene")
-  for i,entity in ipairs(cutsceneServiceRender:GetCutsceneMonsterGroupEntity()) do
+  for i, entity in ipairs(cutsceneServiceRender:GetCutsceneMonsterGroupEntity()) do
     local cutsceneMonsterComponent = entity:CutsceneMonster()
     if cutsceneMonsterComponent:GetCutsceneMonsterName() == self._name then
       local effect = effectService:CreateEffect(self._effectID, entity)
@@ -29,15 +19,13 @@ CutsceneMonsterBindEffectInstruction.DoInstruction = function(self, TT, phaseCon
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneMonsterBindEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CutsceneMonsterBindEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

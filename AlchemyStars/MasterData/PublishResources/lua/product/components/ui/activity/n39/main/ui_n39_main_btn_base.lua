@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n39/main/ui_n39_main_btn_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN39MainBtnBase", UICustomWidget)
 UIN39MainBtnBase = UIN39MainBtnBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39MainBtnBase.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN39MainBtnBase:OnShow()
   self:AttachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.OnItemCountChanged = function(self)
-  -- function num : 0_1
+function UIN39MainBtnBase:OnItemCountChanged()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.GetUIComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN39MainBtnBase:GetUIComponents()
   self.svrTimeModule = self:GetModule(SvrTimeModule)
   self._timerTex = self:GetUIComponent("UISelectObjectPath", "timerTex")
   self._timerTexGo = self:GetGameObject("timerTex")
@@ -33,16 +20,10 @@ UIN39MainBtnBase.GetUIComponents = function(self)
   self:GetExtraUI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.GetExtraUI = function(self)
-  -- function num : 0_3
+function UIN39MainBtnBase:GetExtraUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.SetData = function(self, tagName, component, campaign)
-  -- function num : 0_4
+function UIN39MainBtnBase:SetData(tagName, component, campaign)
   self.tagName = tagName
   self.component = component
   self.campaign = campaign
@@ -50,24 +31,15 @@ UIN39MainBtnBase.SetData = function(self, tagName, component, campaign)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.SetRefreshCallback = function(self, refreshCallback)
-  -- function num : 0_5
+function UIN39MainBtnBase:SetRefreshCallback(refreshCallback)
   self.refreshCallback = refreshCallback
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.SetHideActive = function(self, val)
-  -- function num : 0_6
+function UIN39MainBtnBase:SetHideActive(val)
   self.hideTimer = val
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.SetLockStateCallback = function(self, timeLockCb, lockCb, campaignEndCb, enterClickCb, newCb, redCb)
-  -- function num : 0_7
+function UIN39MainBtnBase:SetLockStateCallback(timeLockCb, lockCb, campaignEndCb, enterClickCb, newCb, redCb)
   self.timeLockCb = timeLockCb
   self.lockCb = lockCb
   self.campaignEndCb = campaignEndCb
@@ -76,190 +48,129 @@ UIN39MainBtnBase.SetLockStateCallback = function(self, timeLockCb, lockCb, campa
   self.redCb = redCb
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.OnValue = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN39MainBtnBase:OnValue()
   self.state = self:CheckState()
-  ;
-  (self._timerTexGo):SetActive(false)
-  ;
-  (self._newGo):SetActive(false)
-  ;
-  (self._redGo):SetActive(false)
-  ;
-  (self._maskGo):SetActive(false)
-  ;
-  (self._close):SetActive(false)
-  ;
-  (self._lock):SetActive(false)
+  self._timerTexGo:SetActive(false)
+  self._newGo:SetActive(false)
+  self._redGo:SetActive(false)
+  self._maskGo:SetActive(false)
+  self._close:SetActive(false)
+  self._lock:SetActive(false)
   if self.state == EActivityComponentLockBtnState.Closed then
-    (self._maskGo):SetActive(true)
-    ;
-    (self._close):SetActive(true)
-  else
-    if self.state == EActivityComponentLockBtnState.LockWithTime then
-      if not self.hideTimer then
-        (self._timerTexGo):SetActive(true)
-        self:SetUnLockTimer()
-      end
-      ;
-      (self._maskGo):SetActive(true)
-      ;
-      (self._lock):SetActive(true)
-    else
-      if self.state == EActivityComponentLockBtnState.Lock then
-        (self._maskGo):SetActive(true)
-        ;
-        (self._lock):SetActive(true)
-      else
-        if not self.hideTimer then
-          (self._timerTexGo):SetActive(true)
-          self:SetOverTimer()
-        end
-        self:SetNewAndRed()
-      end
+    self._maskGo:SetActive(true)
+    self._close:SetActive(true)
+  elseif self.state == EActivityComponentLockBtnState.LockWithTime then
+    if not self.hideTimer then
+      self._timerTexGo:SetActive(true)
+      self:SetUnLockTimer()
     end
+    self._maskGo:SetActive(true)
+    self._lock:SetActive(true)
+  elseif self.state == EActivityComponentLockBtnState.Lock then
+    self._maskGo:SetActive(true)
+    self._lock:SetActive(true)
+  else
+    if not self.hideTimer then
+      self._timerTexGo:SetActive(true)
+      self:SetOverTimer()
+    end
+    self:SetNewAndRed()
   end
   self:SetExtraValue()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.SetNewAndRed = function(self)
-  -- function num : 0_9
-  local red = (self.redCb)(self.tagName)
-  local new = (self.newCb)(self.tagName)
-  ;
-  (self._newGo):SetActive(new)
-  if red then
-    (self._redGo):SetActive(not new)
-  end
+function UIN39MainBtnBase:SetNewAndRed()
+  local red = self.redCb(self.tagName)
+  local new = self.newCb(self.tagName)
+  self._newGo:SetActive(new)
+  self._redGo:SetActive(red and not new)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.SetOverTimer = function(self)
-  -- function num : 0_10
-  local closeTime = ((self.component):GetComponentInfo()).m_close_time
+function UIN39MainBtnBase:SetOverTimer()
+  local closeTime = self.component:GetComponentInfo().m_close_time
   if not self._timerTexItem then
-    self._timerTexItem = (self._timerTex):SpawnObject("UIN39TimeBase")
-    ;
-    (self._timerTexItem):Set_Time_Tex("str_n39_main_btn_less_time")
+    self._timerTexItem = self._timerTex:SpawnObject("UIN39TimeBase")
+    self._timerTexItem:Set_Time_Tex("str_n39_main_btn_less_time")
   end
-  ;
-  (self._timerTexItem):SetData(closeTime, self.refreshCallback)
+  self._timerTexItem:SetData(closeTime, self.refreshCallback)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.SetUnLockTimer = function(self)
-  -- function num : 0_11
-  local unlockTime = (self.component):ComponentUnLockTime()
+function UIN39MainBtnBase:SetUnLockTimer()
+  local unlockTime = self.component:ComponentUnLockTime()
   if not self._timerTexItem then
-    self._timerTexItem = (self._timerTex):SpawnObject("UIN39TimeBase")
-    ;
-    (self._timerTexItem):Set_Time_Tex("str_n39_main_btn_unlock_time")
+    self._timerTexItem = self._timerTex:SpawnObject("UIN39TimeBase")
+    self._timerTexItem:Set_Time_Tex("str_n39_main_btn_unlock_time")
   end
-  ;
-  (self._timerTexItem):SetData(unlockTime, self.refreshCallback)
+  self._timerTexItem:SetData(unlockTime, self.refreshCallback)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.SetExtraValue = function(self)
-  -- function num : 0_12
+function UIN39MainBtnBase:SetExtraValue()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.CheckState = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local curTime = (math.floor)((self.svrTimeModule):GetServerTime() * 0.001)
-  local unlockTime = (self.component):ComponentUnLockTime()
+function UIN39MainBtnBase:CheckState()
+  local curTime = math.floor(self.svrTimeModule:GetServerTime() * 0.001)
+  local unlockTime = self.component:ComponentUnLockTime()
   local stamp = unlockTime - curTime
-  if (self.component):ComponentIsClose() then
+  if self.component:ComponentIsClose() then
     return EActivityComponentLockBtnState.Closed
+  elseif 0 < stamp then
+    return EActivityComponentLockBtnState.LockWithTime
+  elseif not self.component:ComponentIsUnLock() then
+    return EActivityComponentLockBtnState.Lock
   else
-    if stamp > 0 then
-      return EActivityComponentLockBtnState.LockWithTime
-    else
-      if not (self.component):ComponentIsUnLock() then
-        return EActivityComponentLockBtnState.Lock
-      else
-        return EActivityComponentLockBtnState.Unlock
-      end
-    end
+    return EActivityComponentLockBtnState.Unlock
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnBase.BtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  if self.state == EActivityComponentLockBtnState.Closed and self.campaignEndCb then
-    (self.campaignEndCb)()
-  end
-  if self.state == EActivityComponentLockBtnState.LockWithTime and self.timeLockCb then
-    local curTime = (math.floor)((self.svrTimeModule):GetServerTime() * 0.001)
-    local unlockTime = (self.component):ComponentUnLockTime()
-    local stamp = unlockTime - curTime
-    local timeStr = (HelperProxy:GetInstance()):Time2Tex(stamp)
-    ;
-    (self.timeLockCb)(timeStr)
-  end
-  do
-    if self.state == EActivityComponentLockBtnState.Lock and self.lockCb then
-      local missionid = ((self.component):GetComponentInfo()).m_need_mission_id
-      local cfg_mission = (Cfg.cfg_campaign_mission)[missionid]
+function UIN39MainBtnBase:BtnOnClick(go)
+  if self.state == EActivityComponentLockBtnState.Closed then
+    if self.campaignEndCb then
+      self.campaignEndCb()
+    end
+  elseif self.state == EActivityComponentLockBtnState.LockWithTime then
+    if self.timeLockCb then
+      local curTime = math.floor(self.svrTimeModule:GetServerTime() * 0.001)
+      local unlockTime = self.component:ComponentUnLockTime()
+      local stamp = unlockTime - curTime
+      local timeStr = HelperProxy:GetInstance():Time2Tex(stamp)
+      self.timeLockCb(timeStr)
+    end
+  elseif self.state == EActivityComponentLockBtnState.Lock then
+    if self.lockCb then
+      local missionid = self.component:GetComponentInfo().m_need_mission_id
+      local cfg_mission = Cfg.cfg_campaign_mission[missionid]
       local missionName = ""
       if cfg_mission then
-        missionName = (StringTable.Get)(cfg_mission.Name)
+        missionName = StringTable.Get(cfg_mission.Name)
       else
-        ;
-        (Log.error)("###[UIN39MainBtnBase] cfg_mission is nil ! id : ", missionid)
+        Log.error("###[UIN39MainBtnBase] cfg_mission is nil ! id : ", missionid)
       end
-      ;
-      (self.lockCb)(missionName)
+      self.lockCb(missionName)
     end
-    do
-      if self.enterClickCb then
-        (self.enterClickCb)()
-      end
-    end
+  elseif self.enterClickCb then
+    self.enterClickCb()
   end
 end
 
 _class("UIN39MainBtnExchange", UIN39MainBtnBase)
 UIN39MainBtnExchange = UIN39MainBtnExchange
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN39MainBtnExchange.GetExtraUI = function(self)
-  -- function num : 0_15
+function UIN39MainBtnExchange:GetExtraUI()
   self._moneyGo = self:GetGameObject("Money")
   self._txtNum = self:GetUIComponent("UILocalizationText", "txtNum")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnExchange.SetExtraValue = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local itemId = (self.component):GetCostItemId()
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIN39MainBtnExchange:SetExtraValue()
+  local itemId = self.component:GetCostItemId()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local count = itemModule:GetItemCount(itemId)
-  count = (math.min)(count, 999999)
-  local preZero = (UIActivityHelper.GetZeroStrFrontNum)(6, count)
-  local str = (UIActivityHelper.GetColorText)("#9e826d", preZero, "#ffffff", tostring(count))
-  ;
-  (self._txtNum):SetText(str)
+  count = math.min(count, 999999)
+  local preZero = UIActivityHelper.GetZeroStrFrontNum(6, count)
+  local str = UIActivityHelper.GetColorText("#9e826d", preZero, "#ffffff", tostring(count))
+  self._txtNum:SetText(str)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN39MainBtnExchange.OnItemCountChanged = function(self)
-  -- function num : 0_17
+function UIN39MainBtnExchange:OnItemCountChanged()
   self:SetExtraValue()
   self:SetNewAndRed()
 end
-
-

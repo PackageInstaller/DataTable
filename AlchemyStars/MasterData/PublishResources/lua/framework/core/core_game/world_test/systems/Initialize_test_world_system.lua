@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/systems/Initialize_test_world_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("InitializeWorldSystem", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-InitializeWorldSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function InitializeWorldSystem:Constructor(world)
   self.world = world
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-InitializeWorldSystem.Initialize = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (math.randomseed)(((self.world).BW_WorldInfo).world_seed)
+function InitializeWorldSystem:Initialize()
+  math.randomseed(self.world.BW_WorldInfo.world_seed)
 end
-
-

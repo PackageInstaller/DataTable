@@ -1,52 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_skins/ui_shop_skins_tab_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSkinsTabTab", UICustomWidget)
 UIShopSkinsTabTab = UIShopSkinsTabTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSkinsTabTab.Constructor = function(self)
-  -- function num : 0_0
+function UIShopSkinsTabTab:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTabTab.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIShopSkinsTabTab:OnShow(uiParams)
   self:UIWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTabTab.OnHide = function(self)
-  -- function num : 0_2
+function UIShopSkinsTabTab:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTabTab.UIWidget = function(self)
-  -- function num : 0_3
+function UIShopSkinsTabTab:UIWidget()
   self._uiSel = self:GetUIComponent("RectTransform", "uiSel")
   self._uiUnsel = self:GetUIComponent("RectTransform", "uiUnsel")
   self._txtNameSel = self:GetUIComponent("UILocalizationText", "txtNameSel")
   self._txtNameUnsel = self:GetUIComponent("UILocalizationText", "txtNameUnsel")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTabTab.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIShopSkinsTabTab:BtnOnClick(go)
   if self._clickCB ~= nil then
-    (self._clickCB)(self._keyTab, go)
+    self._clickCB(self._keyTab, go)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTabTab.SetData = function(self, keyTab, cfgTab, clickCB)
-  -- function num : 0_5
+function UIShopSkinsTabTab:SetData(keyTab, cfgTab, clickCB)
   self._keyTab = keyTab
   self._cfgTab = cfgTab
   self._clickCB = clickCB
@@ -55,33 +33,18 @@ UIShopSkinsTabTab.SetData = function(self, keyTab, cfgTab, clickCB)
   self:SetSelected(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTabTab.Flush = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local txtName = (StringTable.Get)((self._cfgTab).Name)
-  ;
-  (self._txtNameSel):SetText(txtName)
-  ;
-  (self._txtNameUnsel):SetText(txtName)
+function UIShopSkinsTabTab:Flush()
+  local txtName = StringTable.Get(self._cfgTab.Name)
+  self._txtNameSel:SetText(txtName)
+  self._txtNameUnsel:SetText(txtName)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTabTab.SetSelected = function(self, isSelected)
-  -- function num : 0_7
+function UIShopSkinsTabTab:SetSelected(isSelected)
   self._isSelected = isSelected
-  ;
-  ((self._uiSel).gameObject):SetActive(isSelected)
-  ;
-  ((self._uiUnsel).gameObject):SetActive(not isSelected)
+  self._uiSel.gameObject:SetActive(isSelected)
+  self._uiUnsel.gameObject:SetActive(not isSelected)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSkinsTabTab.IsSelected = function(self)
-  -- function num : 0_8
+function UIShopSkinsTabTab:IsSelected()
   return self._isSelected
 end
-
-

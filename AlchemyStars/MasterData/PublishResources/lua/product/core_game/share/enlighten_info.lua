@@ -1,64 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/enlighten_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EnlightenInfo", Object)
 EnlightenInfo = EnlightenInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EnlightenInfo.Constructor = function(self, attack, defence, hp, exElementParam, activeSkillIncreaseParam, supplyPieceWeights)
-  -- function num : 0_0
+function EnlightenInfo:Constructor(attack, defence, hp, exElementParam, activeSkillIncreaseParam, supplyPieceWeights)
   self._attackFix = attack or 0
   self._defenceFix = defence or 0
   self._maxHPFix = hp or 0
   self._exElementParam = exElementParam / 100 or 0
   self._activeSkillIncreaseParam = activeSkillIncreaseParam / 100 or 0
-  if not supplyPieceWeights then
-    self._supplyPieceWeights = {}
-  end
+  self._supplyPieceWeights = supplyPieceWeights or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EnlightenInfo.GetAttackFixValue = function(self)
-  -- function num : 0_1
+function EnlightenInfo:GetAttackFixValue()
   return self._attackFix
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EnlightenInfo.GetDefenceFixValue = function(self)
-  -- function num : 0_2
+function EnlightenInfo:GetDefenceFixValue()
   return self._defenceFix
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EnlightenInfo.GetMaxHPFixValue = function(self)
-  -- function num : 0_3
+function EnlightenInfo:GetMaxHPFixValue()
   return self._maxHPFix
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EnlightenInfo.GetExElementParam = function(self)
-  -- function num : 0_4
+function EnlightenInfo:GetExElementParam()
   return self._exElementParam
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EnlightenInfo.GetActiveSkillIncreaseParam = function(self)
-  -- function num : 0_5
+function EnlightenInfo:GetActiveSkillIncreaseParam()
   return self._activeSkillIncreaseParam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EnlightenInfo.GetSupplyPieceWeights = function(self)
-  -- function num : 0_6
+function EnlightenInfo:GetSupplyPieceWeights()
   return self._supplyPieceWeights
 end
-
-

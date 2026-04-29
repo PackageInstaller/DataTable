@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/mini_maze/ui_mini_maze_choose_relic_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMiniMazeChooseRelicController", UIController)
 UIMiniMazeChooseRelicController = UIMiniMazeChooseRelicController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMiniMazeChooseRelicController.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
-  if (BattleStatHelper.GetAutoFightStat)() then
+function UIMiniMazeChooseRelicController:OnShow(uiParam)
+  if BattleStatHelper.GetAutoFightStat() then
     self._inAutoFight = true
     self._needAutoSelect = true
   else
@@ -19,222 +12,163 @@ UIMiniMazeChooseRelicController.OnShow = function(self, uiParam)
   self._autoFightCountDownMsCfg = 5000
   self._autoFightCountDownMs = self._autoFightCountDownMsCfg
   self._autoFightCountDownUiNum = 0
-  self.ItemColorToTextColor = {[ItemColor.ItemColor_White] = Color(0.81176470588235, 0.81176470588235, 0.81176470588235, 1), [ItemColor.ItemColor_Green] = Color(0.12549019607843, 0.84705882352941, 0.64705882352941, 1), [ItemColor.ItemColor_Blue] = Color(0.2156862745098, 0.65882352941176, 1, 1), [ItemColor.ItemColor_Purple] = Color(0.69803921568627, 0.53725490196078, 0.98039215686275, 1), [ItemColor.ItemColor_Yellow] = Color(1, 0.95294117647059, 0.2156862745098, 1), [ItemColor.ItemColor_Golden] = Color(1, 0.55686274509804, 0 / 255, 1)}
+  self.ItemColorToTextColor = {
+    [ItemColor.ItemColor_White] = Color(0.8117647058823529, 0.8117647058823529, 0.8117647058823529, 1),
+    [ItemColor.ItemColor_Green] = Color(0.12549019607843137, 0.8470588235294118, 0.6470588235294118, 1),
+    [ItemColor.ItemColor_Blue] = Color(0.21568627450980393, 0.6588235294117647, 1.0, 1),
+    [ItemColor.ItemColor_Purple] = Color(0.6980392156862745, 0.5372549019607843, 0.9803921568627451, 1),
+    [ItemColor.ItemColor_Yellow] = Color(1.0, 0.9529411764705882, 0.21568627450980393, 1),
+    [ItemColor.ItemColor_Golden] = Color(1.0, 0.5568627450980392, 0 / 255, 1)
+  }
   self._atlas = self:GetAsset("UIMazeChoose.spriteatlas", LoadType.SpriteAtlas)
   self._itemModule = self:GetModule(ItemModule)
-  self._cfg_item = (Cfg.cfg_item)({})
+  self._cfg_item = Cfg.cfg_item({})
   self._relicTab = {}
   if uiParam[1] then
-    for index,relic in ipairs(uiParam[1]) do
-      -- DECOMPILER ERROR at PC95: Confused about usage of register: R7 in 'UnsetPending'
-
-      (self._relicTab)[index] = relic
+    for index, relic in ipairs(uiParam[1]) do
+      self._relicTab[index] = relic
     end
   end
-  do
-    self._closeCallBack = nil
-    if uiParam[2] then
-      self._closeCallBack = uiParam[2]
-    end
-    self._openingChoose = false
-    if uiParam[3] then
-      self._openingChoose = uiParam[3]
-    end
-    self._count = #self._relicTab
-    self._index = 0
-    self._state = 0
-    self:GetComponents()
-    local funcModule = (self:GetModule(RoleModule)).uiModule
-    funcModule:LockAchievementFinishPanel(false)
-    self:_CheckGuide()
+  self._closeCallBack = nil
+  if uiParam[2] then
+    self._closeCallBack = uiParam[2]
   end
+  self._openingChoose = false
+  if uiParam[3] then
+    self._openingChoose = uiParam[3]
+  end
+  self._count = #self._relicTab
+  self._index = 0
+  self._state = 0
+  self:GetComponents()
+  local funcModule = self:GetModule(RoleModule).uiModule
+  funcModule:LockAchievementFinishPanel(false)
+  self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicController._CheckGuide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIMiniMazeChooseRelicController)
+function UIMiniMazeChooseRelicController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIMiniMazeChooseRelicController)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : _ENV
-  if self._state == 0 and self._inAutoFight and self._needAutoSelect and self._autoFightCountDownMs > 0 then
-    local deltaTime = (GameGlobal:GetInstance()):GetUnscaledDeltaTime()
+function UIMiniMazeChooseRelicController:OnUpdate(deltaTimeMS)
+  if self._state == 0 and self._inAutoFight and self._needAutoSelect and 0 < self._autoFightCountDownMs then
+    local deltaTime = GameGlobal:GetInstance():GetUnscaledDeltaTime()
     self._autoFightCountDownMs = self._autoFightCountDownMs - deltaTime
     self:RefreshCountDownNum()
-    if self._autoFightCountDownMs <= 0 then
+    if 0 >= self._autoFightCountDownMs then
       self:AutoSelect()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicController.StopAutoSelect = function(self)
-  -- function num : 0_3
+function UIMiniMazeChooseRelicController:StopAutoSelect()
   self._needAutoSelect = false
   self:RefreshCountDownNum()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicController.RefreshCountDownNum = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMiniMazeChooseRelicController:RefreshCountDownNum()
   if self._inAutoFight and self._needAutoSelect then
     local refreshNumSec = 0
-    if self._autoFightCountDownMs < 0 then
+    if 0 > self._autoFightCountDownMs then
       refreshNumSec = 0
     else
-      refreshNumSec = (math.ceil)(self._autoFightCountDownMs / 1000)
+      refreshNumSec = math.ceil(self._autoFightCountDownMs / 1000)
     end
     if self._autoFightCountDownUiNum ~= refreshNumSec then
       self._autoFightCountDownUiNum = refreshNumSec
-      ;
-      (self._countDownAreaGo):SetActive(true)
+      self._countDownAreaGo:SetActive(true)
       local timeNumStr = tostring(self._autoFightCountDownUiNum)
-      ;
-      (self._countDownNum):SetText((StringTable.Get)("str_n25_wait_auto_select", timeNumStr))
+      self._countDownNum:SetText(StringTable.Get("str_n25_wait_auto_select", timeNumStr))
     end
   else
-    do
-      ;
-      (self._countDownAreaGo):SetActive(false)
-    end
+    self._countDownAreaGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicController.AutoSelect = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
+function UIMiniMazeChooseRelicController:AutoSelect()
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     self:Lock("UIMiniMazeChooseRelicControllerAutoSelect")
-    local tarIndex = (math.random)(1, self._count)
+    local tarIndex = math.random(1, self._count)
     self:CardClick(tarIndex)
     YIELD(TT, 1000)
     self:UnLock("UIMiniMazeChooseRelicControllerAutoSelect")
     self:ChooseBtnOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicController.OnHide = function(self)
-  -- function num : 0_6
+function UIMiniMazeChooseRelicController:OnHide()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicController.GetComponents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMiniMazeChooseRelicController:GetComponents()
   self._down = self:GetGameObject("DownAnchor")
   self._posTab = {}
   if self._count == 2 then
     local pos1 = self:GetUIComponent("RectTransform", "pos21")
-    ;
-    (table.insert)(self._posTab, pos1)
+    table.insert(self._posTab, pos1)
     local pos2 = self:GetUIComponent("RectTransform", "pos22")
-    ;
-    (table.insert)(self._posTab, pos2)
+    table.insert(self._posTab, pos2)
   else
-    do
-      local pos1 = self:GetUIComponent("RectTransform", "pos1")
-      ;
-      (table.insert)(self._posTab, pos1)
-      local pos2 = self:GetUIComponent("RectTransform", "pos2")
-      ;
-      (table.insert)(self._posTab, pos2)
-      do
-        local pos3 = self:GetUIComponent("RectTransform", "pos3")
-        ;
-        (table.insert)(self._posTab, pos3)
-        self._itemTab = {}
-        self._itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
-        ;
-        (self._itemPool):SpawnObjects("UIMiniMazeChooseRelicItem", self._count)
-        self._itemTab = (self._itemPool):GetAllSpawnList()
-        for i = 1, self._count do
-          ((self._itemTab)[i]):SetData(i, (self._relicTab)[i], ((self._posTab)[i]).position, function(index)
-    -- function num : 0_7_0 , upvalues : self
-    self:CardClick(index)
+    local pos1 = self:GetUIComponent("RectTransform", "pos1")
+    table.insert(self._posTab, pos1)
+    local pos2 = self:GetUIComponent("RectTransform", "pos2")
+    table.insert(self._posTab, pos2)
+    local pos3 = self:GetUIComponent("RectTransform", "pos3")
+    table.insert(self._posTab, pos3)
   end
-)
-        end
-        self._nameTex = self:GetUIComponent("UILocalizationText", "name")
-        self._descTex = self:GetUIComponent("UILocalizationText", "desc")
-        self._colorBg = self:GetUIComponent("Image", "colorDown")
-        self._chooseBtn = self:GetGameObject("chooseBtn")
-        ;
-        (self._chooseBtn):SetActive(true)
-        self._countDownAreaGo = self:GetGameObject("CountDownArea")
-        self._countDownNum = self:GetUIComponent("UILocalizationText", "CountDownNum")
-        ;
-        (self._countDownAreaGo):SetActive(self._inAutoFight)
-        self:RefreshCountDownNum()
-      end
-    end
+  self._itemTab = {}
+  self._itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
+  self._itemPool:SpawnObjects("UIMiniMazeChooseRelicItem", self._count)
+  self._itemTab = self._itemPool:GetAllSpawnList()
+  for i = 1, self._count do
+    self._itemTab[i]:SetData(i, self._relicTab[i], self._posTab[i].position, function(index)
+      self:CardClick(index)
+    end)
   end
+  self._nameTex = self:GetUIComponent("UILocalizationText", "name")
+  self._descTex = self:GetUIComponent("UILocalizationText", "desc")
+  self._colorBg = self:GetUIComponent("Image", "colorDown")
+  self._chooseBtn = self:GetGameObject("chooseBtn")
+  self._chooseBtn:SetActive(true)
+  self._countDownAreaGo = self:GetGameObject("CountDownArea")
+  self._countDownNum = self:GetUIComponent("UILocalizationText", "CountDownNum")
+  self._countDownAreaGo:SetActive(self._inAutoFight)
+  self:RefreshCountDownNum()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicController.CardClick = function(self, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMiniMazeChooseRelicController:CardClick(index)
   if self._index == index then
-    return 
+    return
   end
   if self._index ~= 0 then
-    ((self._itemTab)[self._index]):CancelOrSelect(false)
+    self._itemTab[self._index]:CancelOrSelect(false)
   end
-  ;
-  ((self._itemTab)[index]):CancelOrSelect(true)
+  self._itemTab[index]:CancelOrSelect(true)
   self._index = index
   if self._state ~= 1 then
     self._state = 1
   end
-  local item = (self._cfg_item)[(self._relicTab)[self._index]]
+  local item = self._cfg_item[self._relicTab[self._index]]
   if item then
-    (self._nameTex):SetText((StringTable.Get)(item.Name))
-    ;
-    (self._descTex):SetText((StringTable.Get)(item.RpIntro))
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._colorBg).sprite = (self._atlas):GetSprite("map_shengwu_xian" .. item.Color)
+    self._nameTex:SetText(StringTable.Get(item.Name))
+    self._descTex:SetText(StringTable.Get(item.RpIntro))
+    self._colorBg.sprite = self._atlas:GetSprite("map_shengwu_xian" .. item.Color)
     local c = Color(1, 1, 1, 1)
-    c = (self.ItemColorToTextColor)[item.Color]
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._nameTex).color = c
+    c = self.ItemColorToTextColor[item.Color]
+    self._nameTex.color = c
   end
-  do
-    ;
-    ((self._down).gameObject):SetActive(true)
-    self:StopAutoSelect()
-  end
+  self._down.gameObject:SetActive(true)
+  self:StopAutoSelect()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChooseRelicController.ChooseBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIMiniMazeChooseRelicController:ChooseBtnOnClick()
   self:StopAutoSelect()
   if self._state == 1 then
-    local relicID = (self._relicTab)[self._index]
+    local relicID = self._relicTab[self._index]
     self:CloseDialog()
     if self._closeCallBack then
-      (self._closeCallBack)(relicID)
+      self._closeCallBack(relicID)
     else
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIMiniMazeChooseWaveAward, relicID, 0, self._openingChoose)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIMiniMazeChooseWaveAward, relicID, 0, self._openingChoose)
     end
   end
 end
-
-

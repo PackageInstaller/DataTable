@@ -1,47 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_explain_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieExplainItem", UICustomWidget)
 UIHomelandMovieExplainItem = UIHomelandMovieExplainItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieExplainItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandMovieExplainItem:Constructor()
   self._data = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieExplainItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMovieExplainItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieExplainItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomelandMovieExplainItem:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._info = self:GetUIComponent("UILocalizationText", "info")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieExplainItem.SetData = function(self, data)
-  -- function num : 0_3
+function UIHomelandMovieExplainItem:SetData(data)
   self._data = data
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieExplainItem.InitData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)((self._data).Title))
-  ;
-  (self._info):SetText((StringTable.Get)((self._data).Content))
+function UIHomelandMovieExplainItem:InitData()
+  self._title:SetText(StringTable.Get(self._data.Title))
+  self._info:SetText(StringTable.Get(self._data.Content))
 end
-
-

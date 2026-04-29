@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/wait_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("WaitInstruction", BaseInstruction)
 WaitInstruction = WaitInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WaitInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function WaitInstruction:Constructor(paramList)
   self._waitTime = tonumber(paramList.waitTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WaitInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function WaitInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._waitTime > 0 then
     YIELD(TT, self._waitTime)
   else
     YIELD(TT)
   end
 end
-
-

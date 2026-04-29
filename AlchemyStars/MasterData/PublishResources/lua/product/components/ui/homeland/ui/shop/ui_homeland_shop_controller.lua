@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopController", UIController)
 UIHomelandShopController = UIHomelandShopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopController._SetRawImageBtn = function(self, widgetName, size, urlNormal, urlClick, callback)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRawImageBtn")
+function UIHomelandShopController:_SetRawImageBtn(widgetName, size, urlNormal, urlClick, callback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRawImageBtn")
   obj:SetData(size, urlNormal, urlClick, callback)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._SetRemainingTime = function(self, widgetName, descId, endTime, customTimeStr)
-  -- function num : 0_1 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIHomelandShopController:_SetRemainingTime(widgetName, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
   end
@@ -25,26 +15,18 @@ UIHomelandShopController._SetRemainingTime = function(self, widgetName, descId, 
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandShopController:LoadDataOnEnter(TT, res, uiParams)
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
   homeLandModule:HomelandShopRefreshReq(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandShopController:OnShow(uiParams)
   self._isOpen = true
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_3_0 , upvalues : self
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     if self._isOpen then
       self:_AssistantUpdate()
     end
-  end
-)
+  end)
   self:_AttachEvents()
   self:_SetDebug()
   self:_SetTabBtns()
@@ -53,301 +35,208 @@ UIHomelandShopController.OnShow = function(self, uiParams)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandShopController:OnHide()
   self._isOpen = nil
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._Refresh = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
-  local shop_info = (homeLandModule.m_homeland_info).shop_info
+function UIHomelandShopController:_Refresh()
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
+  local shop_info = homeLandModule.m_homeland_info.shop_info
   local index = self._tabIndex
-  ;
-  ((self._tabPages)[index]):SetData(shop_info)
+  self._tabPages[index]:SetData(shop_info)
   if index == 1 then
-    self._firstBuyBtnObj = ((self._tabPages)[index]):GetMask()
+    self._firstBuyBtnObj = self._tabPages[index]:GetMask()
   end
   if index == 2 then
-    self._firstSubmitBtnObj = ((self._tabPages)[index]):GetSubmitBtn()
+    self._firstSubmitBtnObj = self._tabPages[index]:GetSubmitBtn()
   end
   self:_SetCoinInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._SetCoinInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_coinPool", "UIHomelandShopCoin")
+function UIHomelandShopController:_SetCoinInfo()
+  local obj = UIWidgetHelper.SpawnObject(self, "_coinPool", "UIHomelandShopCoin")
   obj:SetData()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._SetTabBtns = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local title = {"str_homeland_shop_tab_buy_title", "str_homeland_shop_tab_order_title", "str_homeland_shop_tab_sell_title"}
-  self._tabBtns = (UIWidgetHelper.SpawnObjects)(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
-  for i,v in ipairs(self._tabBtns) do
+function UIHomelandShopController:_SetTabBtns()
+  local title = {
+    "str_homeland_shop_tab_buy_title",
+    "str_homeland_shop_tab_order_title",
+    "str_homeland_shop_tab_sell_title"
+  }
+  self._tabBtns = UIWidgetHelper.SpawnObjects(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
+  for i, v in ipairs(self._tabBtns) do
     v:SetData(i, {
-indexWidgets = {
-{"iconBuy"}
-, 
-{"iconOrder"}
-, 
-{"iconSell"}
-}
-, 
-onoffWidgets = {
-{"OnBtn"}
-, 
-{"OffBtn"}
-}
-, 
-lockWidgets = {
-{"lock"}
-, 
-{}
-}
-, 
-titleWidgets = {"txtTitle_off", "txtTitle_on"}
-, titleText = (StringTable.Get)(title[i]), callback = function(index, isOffBtnClick)
-    -- function num : 0_7_0 , upvalues : self
-    if isOffBtnClick then
-      self:_SetTabSelect(index)
-    end
-  end
-})
+      indexWidgets = {
+        {"iconBuy"},
+        {"iconOrder"},
+        {"iconSell"}
+      },
+      onoffWidgets = {
+        {"OnBtn"},
+        {"OffBtn"}
+      },
+      lockWidgets = {
+        {"lock"},
+        {}
+      },
+      titleWidgets = {
+        "txtTitle_off",
+        "txtTitle_on"
+      },
+      titleText = StringTable.Get(title[i]),
+      callback = function(index, isOffBtnClick)
+        if isOffBtnClick then
+          self:_SetTabSelect(index)
+        end
+      end
+    })
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._SetTabSelect = function(self, index)
-  -- function num : 0_8
+function UIHomelandShopController:_SetTabSelect(index)
   if self._tabIndex == index then
-    return 
+    return
   end
   self._tabIndex = index
   for i = 1, #self._tabBtns do
-    ((self._tabBtns)[i]):SetSelected(i == index)
-    ;
-    (((self._tabPages)[i]):GetGameObject()):SetActive(i == index)
+    self._tabBtns[i]:SetSelected(i == index)
+    self._tabPages[i]:GetGameObject():SetActive(i == index)
   end
   self:_SetAssistant(true)
   self:_Refresh()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._SetTabPages = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandShopController:_SetTabPages()
   self._tabPages = {}
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._tabPages)[1] = (UIWidgetHelper.SpawnObject)(self, "_tab_Buy", "UIHomelandShopTabBuy")
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._tabPages)[2] = (UIWidgetHelper.SpawnObject)(self, "_tab_Order", "UIHomelandShopTabOrder")
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._tabPages)[3] = (UIWidgetHelper.SpawnObject)(self, "_tab_Sell", "UIHomelandShopTabSell")
+  self._tabPages[1] = UIWidgetHelper.SpawnObject(self, "_tab_Buy", "UIHomelandShopTabBuy")
+  self._tabPages[2] = UIWidgetHelper.SpawnObject(self, "_tab_Order", "UIHomelandShopTabOrder")
+  self._tabPages[3] = UIWidgetHelper.SpawnObject(self, "_tab_Sell", "UIHomelandShopTabSell")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._SetAssistant = function(self, open)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandShopController:_SetAssistant(open)
   self._assistantOpen = open
-  ;
-  (self:GetGameObject("_assistantTip")):SetActive(self._assistantOpen)
+  self:GetGameObject("_assistantTip"):SetActive(self._assistantOpen)
   if self._assistantOpen then
     local svrTimeModule = self:GetModule(SvrTimeModule)
-    local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+    local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
     self._assistantTime = curTime + 3
     self._assistantType = self._assistantType or 1
-    local tb = {1, 2, 3, 4}
-    ;
-    (table.shuffle)(tb)
-    if self._assistantType == tb[1] or not tb[1] then
-      self._assistantType = tb[2]
-      local txt = (StringTable.Get)("str_homeland_shop_assistant_common_" .. self._assistantType)
-      txt = (UIActivityHelper.GetColorText)("#6a6969", txt)
-      ;
-      (UIWidgetHelper.SetLocalizationText)(self, "_txtAssistant", txt)
-      local spriteName = "n17_mascot_icon0" .. self._assistantType
-      ;
-      (UIWidgetHelper.SetImageSprite)(self, "Assistant", "UIHomelandShop.spriteatlas", spriteName)
-    end
+    local tb = {
+      1,
+      2,
+      3,
+      4
+    }
+    table.shuffle(tb)
+    self._assistantType = self._assistantType ~= tb[1] and tb[1] or tb[2]
+    local txt = StringTable.Get("str_homeland_shop_assistant_common_" .. self._assistantType)
+    txt = UIActivityHelper.GetColorText("#6a6969", txt)
+    UIWidgetHelper.SetLocalizationText(self, "_txtAssistant", txt)
+    local spriteName = "n17_mascot_icon0" .. self._assistantType
+    UIWidgetHelper.SetImageSprite(self, "Assistant", "UIHomelandShop.spriteatlas", spriteName)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._AssistantUpdate = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandShopController:_AssistantUpdate()
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   self._assistantTime = self._assistantTime or 0
-  if self._assistantOpen and self._assistantTime < curTime then
+  if self._assistantOpen and curTime > self._assistantTime then
     self:_SetAssistant(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._AttachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandShopController:_AttachEvents()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self._Refresh)
   self:AttachEvent(GameEventType.HomelandShopUpdate, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._DetachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandShopController:_DetachEvents()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self._Refresh)
   self:DetachEvent(GameEventType.HomelandShopUpdate, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_14
+function UIHomelandShopController:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.AssistantOnClick = function(self, go)
-  -- function num : 0_15
+function UIHomelandShopController:AssistantOnClick(go)
   self:_SetAssistant(not self._assistantOpen)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._SetDebug = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local open = (UIActivityHelper.CheckDebugOpen)()
-  ;
-  (self:GetGameObject("_debug")):SetActive(open)
+function UIHomelandShopController:_SetDebug()
+  local open = UIActivityHelper.CheckDebugOpen()
+  self:GetGameObject("_debug"):SetActive(open)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._DelayRefresh = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : _ENV, self
+function UIHomelandShopController:_DelayRefresh()
+  TaskManager:GetInstance():StartTask(function(TT)
     YIELD(TT, 100)
     self:_Refresh()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.TestAddCoinsBtnOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHomelandShopController:TestAddCoinsBtnOnClick(go)
   local count = 1000
-  ;
-  (UIGMHelper.AddAsset)((UIHomelandShopHelper.GetCoinItemId)(), count)
+  UIGMHelper.AddAsset(UIHomelandShopHelper.GetCoinItemId(), count)
   self:_DelayRefresh()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.TestAddOrderItemsBtnOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
-  local shop_info = (homeLandModule.m_homeland_info).shop_info
-  for _,goods_info in pairs(shop_info.goods_info) do
-    for i,v in ipairs(goods_info.item_info) do
-      (UIGMHelper.AddAsset)(v.assetid, v.count)
+function UIHomelandShopController:TestAddOrderItemsBtnOnClick(go)
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
+  local shop_info = homeLandModule.m_homeland_info.shop_info
+  for _, goods_info in pairs(shop_info.goods_info) do
+    for i, v in ipairs(goods_info.item_info) do
+      UIGMHelper.AddAsset(v.assetid, v.count)
     end
   end
   self:_DelayRefresh()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.TestAddSellItemsBtnOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_homeland_univalence)({})
-  for k,v in pairs(cfgs) do
-    (UIGMHelper.AddAsset)(k, 1)
+function UIHomelandShopController:TestAddSellItemsBtnOnClick(go)
+  local cfgs = Cfg.cfg_homeland_univalence({})
+  for k, v in pairs(cfgs) do
+    UIGMHelper.AddAsset(k, 1)
   end
   self:_DelayRefresh()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.TestAddRefreshlItemBtnOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
-  local itemId = ((Cfg.cfg_homeland_global).GoodsRefreshItemId).IntValue
-  ;
-  (UIGMHelper.AddAsset)(itemId, 1)
+function UIHomelandShopController:TestAddRefreshlItemBtnOnClick(go)
+  local itemId = Cfg.cfg_homeland_global.GoodsRefreshItemId.IntValue
+  UIGMHelper.AddAsset(itemId, 1)
   self:_DelayRefresh()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.TestRefreshAllBtnOnClick = function(self, go)
-  -- function num : 0_22 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
-  local shop_info = (homeLandModule.m_homeland_info).shop_info
-  local itemId = ((Cfg.cfg_homeland_global).GoodsRefreshItemId).IntValue
-  ;
-  (UIGMHelper.AddAsset)(itemId, (table.count)(shop_info.goods_info))
-  for i,_ in pairs(shop_info.goods_info) do
-    (UIHomelandShopHelper.Start_HomelandGoodReq)(i + 1, false)
+function UIHomelandShopController:TestRefreshAllBtnOnClick(go)
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
+  local shop_info = homeLandModule.m_homeland_info.shop_info
+  local itemId = Cfg.cfg_homeland_global.GoodsRefreshItemId.IntValue
+  UIGMHelper.AddAsset(itemId, table.count(shop_info.goods_info))
+  for i, _ in pairs(shop_info.goods_info) do
+    UIHomelandShopHelper.Start_HomelandGoodReq(i + 1, false)
   end
   self:_DelayRefresh()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController._CheckGuide = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandShopController)
+function UIHomelandShopController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandShopController)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.GetOrderTagBtn = function(self)
-  -- function num : 0_24
-  return ((self._tabBtns)[2]):GetGameObject("OffBtn")
+function UIHomelandShopController:GetOrderTagBtn()
+  return self._tabBtns[2]:GetGameObject("OffBtn")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.GetOrderSubmitBtn = function(self)
-  -- function num : 0_25
+function UIHomelandShopController:GetOrderSubmitBtn()
   return self._firstSubmitBtnObj
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.GetShopTagBtn = function(self)
-  -- function num : 0_26
-  return ((self._tabBtns)[1]):GetGameObject("OffBtn")
+function UIHomelandShopController:GetShopTagBtn()
+  return self._tabBtns[1]:GetGameObject("OffBtn")
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopController.GetShopBuyBtn = function(self)
-  -- function num : 0_27
+function UIHomelandShopController:GetShopBuyBtn()
   return self._firstBuyBtnObj
 end
-
-

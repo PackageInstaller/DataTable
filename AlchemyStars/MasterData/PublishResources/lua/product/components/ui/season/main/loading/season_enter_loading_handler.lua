@@ -1,175 +1,117 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/loading/season_enter_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonEnterLoadingHandler", LoadingHandler)
 SeasonEnterLoadingHandler = SeasonEnterLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonEnterLoadingHandler.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("SeasonEnterLoadingHandler")
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
+function SeasonEnterLoadingHandler:Constructor()
+  GameGlobal.UIStateManager():Lock("SeasonEnterLoadingHandler")
+  self._loginModule = GameGlobal.GetModule(LoginModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler.PreLoadBeforeLoadLevel = function(self)
-  -- function num : 0_1
+function SeasonEnterLoadingHandler:PreLoadBeforeLoadLevel()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonEnterLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
   if not self:_CheckLoginState() then
-    (Log.error)("当前客户端已退出登录，不再继续执行赛季loading", 1)
+    Log.error("当前客户端已退出登录，不再继续执行赛季loading", 1)
     self._canEnter = false
-    return 
+    return
   end
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if seasonModule:GetCurSeasonID() > 0 then
     self:_CacheRT(TT)
-    ;
-    (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+    LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
     seasonModule:ForceRequestCurSeasonData(TT)
-    local component = (seasonModule:GetCurSeasonObj()):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+    local component = seasonModule:GetCurSeasonObj():GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
     if component:ComponentIsOpen() then
       if not self:_CheckLoginState() then
-        (Log.error)("当前客户端已退出登录，不再继续执行赛季loading", 2)
+        Log.error("当前客户端已退出登录，不再继续执行赛季loading", 2)
         self._canEnter = false
-        return 
+        return
       end
       self:Verify(TT, seasonModule)
       if not self:_CheckLoginState() then
-        (Log.error)("当前客户端已退出登录，不再继续执行赛季loading", 3)
+        Log.error("当前客户端已退出登录，不再继续执行赛季loading", 3)
         self._canEnter = false
-        return 
+        return
       end
       self:GetSeasonTask(TT)
       if not self:_CheckLoginState() then
-        (Log.error)("当前客户端已退出登录，不再继续执行赛季loading", 4)
+        Log.error("当前客户端已退出登录，不再继续执行赛季loading", 4)
         self._canEnter = false
-        return 
+        return
       end
       self:VerifyTask(TT)
       self._canEnter = true
       YIELD(TT)
     else
-      ;
-      (Log.info)("赛季关卡组件已关闭")
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
+      Log.info("赛季关卡组件已关闭")
+      ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
     end
   else
-    do
-      ;
-      (Log.info)("赛季已关闭")
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-    end
+    Log.info("赛季已关闭")
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonEnterLoadingHandler:OnLoadingFinish(...)
   if self._canEnter then
-    local loadingParams = {...}
-    local uimodule = (GameGlobal.GetUIModule)(SeasonModule)
+    local loadingParams = {
+      ...
+    }
+    local uimodule = GameGlobal.GetUIModule(SeasonModule)
     uimodule:EnterSeasonGame(loadingParams)
     if loadingParams and loadingParams[4] then
       local dialogName = loadingParams[4]
-      ;
-      ((GameGlobal.UIStateManager)()):SwitchStateWithDialogList((UISeasonHelper.CurSeasonSceneState)(), dialogName)
+      GameGlobal.UIStateManager():SwitchStateWithDialogList(UISeasonHelper.CurSeasonSceneState(), dialogName)
     else
-      do
-        do
-          ;
-          ((GameGlobal.UIStateManager)()):SwitchState((UISeasonHelper.CurSeasonSceneState)())
-          ;
-          (Log.error)("赛季不可进入 弹回到游戏主界面")
-          ;
-          ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-          ;
-          ((GameGlobal.UIStateManager)()):UnLock("SeasonEnterLoadingHandler")
-        end
-      end
+      GameGlobal.UIStateManager():SwitchState(UISeasonHelper.CurSeasonSceneState())
     end
+  else
+    Log.error("赛季不可进入 弹回到游戏主界面")
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
   end
+  GameGlobal.UIStateManager():UnLock("SeasonEnterLoadingHandler")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler.NeedSwitchState = function(self)
-  -- function num : 0_4
+function SeasonEnterLoadingHandler:NeedSwitchState()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler._CacheRT = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UICommonLoading")
+function SeasonEnterLoadingHandler:_CacheRT(TT)
+  local controller = GameGlobal.UIStateManager():GetController("UICommonLoading")
   if controller then
     controller:CacheRT(TT)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler.Verify = function(self, TT, seasonModule)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonEnterLoadingHandler:Verify(TT, seasonModule)
   local errorInfo = {}
   if not seasonModule:GetLevelExpress() then
-    local componentInfo = (seasonModule:GetCurSeasonObj()):GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
+    local componentInfo = seasonModule:GetCurSeasonObj():GetComponentInfo(ECCampaignSeasonComponentID.SEASON_MISSION)
     local pass = componentInfo.m_pass_mission_info
     local map = componentInfo.m_stage_info
-    if pass and (table.count)(pass) then
-      for id,_ in pairs(pass) do
-        local cfgMission = (Cfg.cfg_season_mission)[id]
+    if pass and table.count(pass) then
+      for id, _ in pairs(pass) do
+        local cfgMission = Cfg.cfg_season_mission[id]
         if cfgMission and cfgMission.IsFightLevel then
           local missionID = cfgMission.ID
           local progress = map[missionID]
-          local cfgEventPoint = (Cfg.cfg_season_map_eventpoint)[missionID]
+          local cfgEventPoint = Cfg.cfg_season_map_eventpoint[missionID]
           if cfgEventPoint then
             if progress then
-              local firstProgress = (SeasonTool:GetInstance()):GetProgressByExpressType(cfgEventPoint, SeasonExpressType.Level)
+              local firstProgress = SeasonTool:GetInstance():GetProgressByExpressType(cfgEventPoint, SeasonExpressType.Level)
               if firstProgress and progress < firstProgress then
                 local t = {}
                 t.id = missionID
                 t.progress = firstProgress
-                ;
-                (table.insert)(errorInfo, t)
+                table.insert(errorInfo, t)
               end
             else
-              do
-                local firstProgress = (SeasonTool:GetInstance()):GetProgressByExpressType(cfgEventPoint, SeasonExpressType.Level)
-                do
-                  if firstProgress then
-                    local t = {}
-                    t.id = missionID
-                    t.progress = firstProgress
-                    ;
-                    (table.insert)(errorInfo, t)
-                  end
-                  -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
+              local firstProgress = SeasonTool:GetInstance():GetProgressByExpressType(cfgEventPoint, SeasonExpressType.Level)
+              if firstProgress then
+                local t = {}
+                t.id = missionID
+                t.progress = firstProgress
+                table.insert(errorInfo, t)
               end
             end
           end
@@ -177,57 +119,50 @@ SeasonEnterLoadingHandler.Verify = function(self, TT, seasonModule)
       end
     end
     local count = #errorInfo
-    if count > 0 then
-      for _,value in pairs(errorInfo) do
-        (Log.debug)("Season Verify !", value.id, value.progress)
+    if 0 < count then
+      for _, value in pairs(errorInfo) do
+        Log.debug("Season Verify !", value.id, value.progress)
         seasonModule:HandleSeasonClientStageData(TT, value.id, value.progress)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler.GetSeasonTask = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function SeasonEnterLoadingHandler:GetSeasonTask(TT)
   if not self:_CheckLoginState() then
-    (Log.error)("当前客户端已退出登录，不再继续执行赛季loading", 3)
-    return 
+    Log.error("当前客户端已退出登录，不再继续执行赛季loading", 3)
+    return
   end
-  local seasonTaskModule = (GameGlobal.GetModule)(SeasonTaskModule)
+  local seasonTaskModule = GameGlobal.GetModule(SeasonTaskModule)
   seasonTaskModule:ReqSeasonTaskInfoData(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler.VerifyTask = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  local seasonTaskModule = (GameGlobal.GetModule)(SeasonTaskModule)
+function SeasonEnterLoadingHandler:VerifyTask(TT)
+  local seasonTaskModule = GameGlobal.GetModule(SeasonTaskModule)
   local subTaskID = seasonTaskModule:GetCurQuestId(seasonTaskModule:GetCurNode())
-  if subTaskID > 0 then
-    local questModule = (GameGlobal.GetModule)(QuestModule)
+  if 0 < subTaskID then
+    local questModule = GameGlobal.GetModule(QuestModule)
     local quest = questModule:GetQuest(subTaskID)
     if quest and quest:Status() ~= QuestStatus.QUEST_Taken then
       local num = 0
-      local cfgMissions = (Cfg.cfg_season_mission)({QuestID = subTaskID})
+      local cfgMissions = Cfg.cfg_season_mission({QuestID = subTaskID})
       local map = seasonTaskModule:GetConditionMap()
-      if cfgMissions and (table.count)(map) > 0 then
-        for _,cfgMission in pairs(cfgMissions) do
-          local cfg = (Cfg.cfg_season_map_eventpoint)[cfgMission.ID]
+      if cfgMissions and 0 < table.count(map) then
+        for _, cfgMission in pairs(cfgMissions) do
+          local cfg = Cfg.cfg_season_map_eventpoint[cfgMission.ID]
           if cfg and map[cfg.ID] then
-            local isLast = (SeasonTool:GetInstance()):IsLastProgress(cfg, map[cfg.ID])
+            local isLast = SeasonTool:GetInstance():IsLastProgress(cfg, map[cfg.ID])
             if isLast then
               num = num + 1
             end
           end
         end
-        if (quest:QuestInfo()).cur_progress < num and num <= (quest:QuestInfo()).total_progress then
-          local deltaNum = num - (quest:QuestInfo()).cur_progress
-          ;
-          (Log.debug)("SeasonEnterLoadingHandler VerifyTask.", deltaNum)
+        if num > quest:QuestInfo().cur_progress and num <= quest:QuestInfo().total_progress then
+          local deltaNum = num - quest:QuestInfo().cur_progress
+          Log.debug("SeasonEnterLoadingHandler VerifyTask.", deltaNum)
           local res, rewards = questModule:HandleClientProcess(TT, subTaskID, deltaNum)
           if res:GetSucc() then
-            (Log.info)("SeasonEnterLoadingHandler VerifyTask success.", deltaNum)
+            Log.info("SeasonEnterLoadingHandler VerifyTask success.", deltaNum)
           end
         end
       end
@@ -235,27 +170,17 @@ SeasonEnterLoadingHandler.VerifyTask = function(self, TT)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler.LoadingID = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local seasonID = (seasonModule.uiModule):GetSeasonID()
-  local cfg = (Cfg.cfg_season_loading)[seasonID]
-  do
-    if cfg then
-      local ids = cfg.loadingids
-      return ((GameGlobal.LoadingManager)()):FilterAndRandomLoadingID(ids)
-    end
-    return nil
+function SeasonEnterLoadingHandler:LoadingID()
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
+  local seasonID = seasonModule.uiModule:GetSeasonID()
+  local cfg = Cfg.cfg_season_loading[seasonID]
+  if cfg then
+    local ids = cfg.loadingids
+    return GameGlobal.LoadingManager():FilterAndRandomLoadingID(ids)
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonEnterLoadingHandler._CheckLoginState = function(self)
-  -- function num : 0_10
-  return (self._loginModule):IsLogin()
+function SeasonEnterLoadingHandler:_CheckLoginState()
+  return self._loginModule:IsLogin()
 end
-
-

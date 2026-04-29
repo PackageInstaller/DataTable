@@ -1,79 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_tale_pet/ui_switch_pet_pro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISwitchPetPro", UIController)
 UISwitchPetPro = UISwitchPetPro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISwitchPetPro.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISwitchPetPro:OnShow(uiParams)
   self.petId = uiParams[1]
   self.txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
-  ;
-  (self.txtDesc):SetText((StringTable.Get)("str_tale_pet_txt_switch_pet_tips"))
+  self.txtDesc:SetText(StringTable.Get("str_tale_pet_txt_switch_pet_tips"))
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchPetPro.OnHide = function(self)
-  -- function num : 0_1
+function UISwitchPetPro:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchPetPro._AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISwitchPetPro:_AttachEvents()
   self:AttachEvent(GameEventType.TalePetInfoDataChange, self._SelectTalePetCall)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchPetPro._DetachEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISwitchPetPro:_DetachEvents()
   self:DetachEvent(GameEventType.TalePetInfoDataChange)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchPetPro._SelectTalePetCall = function(self)
-  -- function num : 0_4
+function UISwitchPetPro:_SelectTalePetCall()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchPetPro.btnConfirmOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISwitchPetPro:btnConfirmOnClick()
   self:Lock("UISwitchPetPro:SwitchPetCall")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.SwitchPetCall, self)
+  GameGlobal.TaskManager():StartTask(self.SwitchPetCall, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchPetPro.SwitchPetCall = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local talePetModule = (GameGlobal.GetModule)(TalePetModule)
-  local res = (self.talePetModule):ReqTaleChoose(TT, self.petId)
+function UISwitchPetPro:SwitchPetCall(TT)
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
+  local res = self.talePetModule:ReqTaleChoose(TT, self.petId)
   if res:GetSucc() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tale_pet_txt_start_convene_pet"))
+    ToastManager.ShowToast(StringTable.Get("str_tale_pet_txt_start_convene_pet"))
     self:ShowDialog("UITalePetMissionController", self.petId)
     self:CloseDialog()
   else
-    ;
-    (ToastManager.ShowToast)(res.m_result)
+    ToastManager.ShowToast(res.m_result)
   end
   self:UnLock("UISwitchPetPro:SwitchPetCall")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISwitchPetPro.btnCancelOnClick = function(self)
-  -- function num : 0_7
+function UISwitchPetPro:btnCancelOnClick()
   self:CloseDialog()
 end
-
-

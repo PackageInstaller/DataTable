@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_ruguelike/ui_rugue_like_reset_msg_box_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRugueLikeResetMsgBoxController", UIController)
 UIRugueLikeResetMsgBoxController = UIRugueLikeResetMsgBoxController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRugueLikeResetMsgBoxController.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIRugueLikeResetMsgBoxController:OnShow(uiParam)
   self._msg = uiParam[1]
   self._callBack = uiParam[2]
   self._msgTex = self:GetUIComponent("UILocalizationText", "msg")
-  ;
-  (self._msgTex):SetText(self._msg)
+  self._msgTex:SetText(self._msg)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeResetMsgBoxController.sureBtnOnClick = function(self)
-  -- function num : 0_1
+function UIRugueLikeResetMsgBoxController:sureBtnOnClick()
   if self._callBack then
-    (self._callBack)()
+    self._callBack()
   end
   self:CloseDialog()
 end
-
-

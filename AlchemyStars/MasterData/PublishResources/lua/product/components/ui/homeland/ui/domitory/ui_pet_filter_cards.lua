@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_pet_filter_cards.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetFilterCards", UICustomWidget)
 UIPetFilterCards = UIPetFilterCards
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetFilterCards.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetFilterCards:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetFilterCards.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetFilterCards:InitWidget()
   self.scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self.content = self:GetGameObject("Content")
   self._emptyTip = self:GetGameObject("EmptyTip")
@@ -23,60 +13,38 @@ UIPetFilterCards.InitWidget = function(self)
   self._listShowItemCount = 0
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 333
-  ;
-  (self.scrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_1_0 , upvalues : self
+  self.scrollView:InitListView(self._listShowItemCount, function(scrollView, index)
     return self:InitRaw(scrollView, index)
-  end
-, param)
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
+  end, param)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:IsGuideProcessKey("guide_dormitory_in") then
-    ((self.scrollView).ScrollRect).vertical = false
+    self.scrollView.ScrollRect.vertical = false
   else
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self.scrollView).ScrollRect).vertical = true
+    self.scrollView.ScrollRect.vertical = true
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetFilterCards.SetData = function(self, name, removeOne, onSelect)
-  -- function num : 0_2
+function UIPetFilterCards:SetData(name, removeOne, onSelect)
   self._scriptName = name
   self._removeOne = removeOne
   self._onSelect = onSelect
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetFilterCards.Refresh = function(self, pets)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetFilterCards:Refresh(pets)
   self._petCount = #pets
   self._pets = pets
   if self._petCount == 0 then
-    (self.scrollView):SetListItemCount(0)
-    ;
-    (self.scrollView):MovePanelToItemIndex(0, 0)
-    ;
-    (self._emptyTip):SetActive(true)
-    return 
+    self.scrollView:SetListItemCount(0)
+    self.scrollView:MovePanelToItemIndex(0, 0)
+    self._emptyTip:SetActive(true)
+    return
   end
-  ;
-  (self._emptyTip):SetActive(false)
-  ;
-  (self.scrollView):SetListItemCount((math.ceil)(self._petCount / self._itemCountPerRow))
-  ;
-  (self.scrollView):MovePanelToItemIndex(0, 0)
+  self._emptyTip:SetActive(false)
+  self.scrollView:SetListItemCount(math.ceil(self._petCount / self._itemCountPerRow))
+  self.scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetFilterCards.InitRaw = function(self, scrollView, index)
-  -- function num : 0_4
+function UIPetFilterCards:InitRaw(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -85,31 +53,24 @@ UIPetFilterCards.InitRaw = function(self, scrollView, index)
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
   end
-  ;
-  (rowPool.dynamicInfoOfEngine):SetObjectName(self._scriptName .. ".prefab")
+  rowPool.dynamicInfoOfEngine:SetObjectName(self._scriptName .. ".prefab")
   local rowList = rowPool:SpawnObjects(self._scriptName, self._itemCountPerRow)
   for i = 1, self._itemCountPerRow do
     local heartItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._petCount < itemIndex then
-      (heartItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._petCount then
+      heartItem:GetGameObject():SetActive(false)
     else
-      ;
-      (heartItem:GetGameObject()):SetActive(true)
-      heartItem:SetData((self._pets)[itemIndex], self._removeOne, self._onSelect)
+      heartItem:GetGameObject():SetActive(true)
+      heartItem:SetData(self._pets[itemIndex], self._removeOne, self._onSelect)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetFilterCards.GetFirstPet = function(self)
-  -- function num : 0_5
-  local itemRow = (self.scrollView):GetShownItemByIndex(0)
+function UIPetFilterCards:GetFirstPet()
+  local itemRow = self.scrollView:GetShownItemByIndex(0)
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", itemRow.gameObject)
   local rowList = rowPool:GetAllSpawnList()
-  return (rowList[1]):GetGameObject("bg")
+  return rowList[1]:GetGameObject("bg")
 end
-
-

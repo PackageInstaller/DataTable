@@ -1,48 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/trigger/season_trigger_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonTriggerManager", Object)
 SeasonTriggerManager = SeasonTriggerManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonTriggerManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonTriggerManager:Constructor()
   self._triggerName = "Trigger"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTriggerManager.OnInit = function(self, seasonID)
-  -- function num : 0_1 , upvalues : _ENV
-  self._triggerRoot = (GameObjectHelper.CreateEmpty)(self._triggerName, nil)
-  self._trigger = SeasonTrigger:New(seasonID, (self._triggerRoot).transform)
+function SeasonTriggerManager:OnInit(seasonID)
+  self._triggerRoot = GameObjectHelper.CreateEmpty(self._triggerName, nil)
+  self._trigger = SeasonTrigger:New(seasonID, self._triggerRoot.transform)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTriggerManager.FindTrigger = function(self, triggerId)
-  -- function num : 0_2
-  return (self._trigger):FindTrigger(triggerId)
+function SeasonTriggerManager:FindTrigger(triggerId)
+  return self._trigger:FindTrigger(triggerId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTriggerManager.Update = function(self, deltaTime)
-  -- function num : 0_3
-  (self._trigger):Update(deltaTime)
+function SeasonTriggerManager:Update(deltaTime)
+  self._trigger:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonTriggerManager.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._trigger):Dispose()
+function SeasonTriggerManager:Dispose()
+  self._trigger:Dispose()
   self._trigger = nil
-  ;
-  ((UnityEngine.Object).Destroy)(self._triggerRoot)
+  UnityEngine.Object.Destroy(self._triggerRoot)
   self._triggerRoot = nil
 end
-
-

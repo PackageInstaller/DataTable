@@ -1,234 +1,143 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/lib/string_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local toint = math.tointeger
--- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
 
-string.lead = function(s, prefix)
-  -- function num : 0_0 , upvalues : _ENV
-  return (string.find)(s, "^" .. prefix) and true or false
+function string.lead(s, prefix)
+  return string.find(s, "^" .. prefix) and true or false
 end
 
--- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-string.endwith = function(s, prefix)
-  -- function num : 0_1 , upvalues : _ENV
-  return (string.find)(s, prefix .. "$") and true or false
+function string.endwith(s, prefix)
+  return string.find(s, prefix .. "$") and true or false
 end
 
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-string.startwith = function(s, prefix)
-  -- function num : 0_2 , upvalues : _ENV
-  return (string.find)(s, "^" .. prefix) and true or false
+function string.startwith(s, prefix)
+  return string.find(s, "^" .. prefix) and true or false
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-string.MD5 = function(s)
-  -- function num : 0_3 , upvalues : _ENV
-  return (string.upper)(s:md5())
+function string.MD5(s)
+  return string.upper(s:md5())
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-string.tohex = function(c)
-  -- function num : 0_4 , upvalues : _ENV
-  local i = (string.byte)(c)
-  return (string.format)("%%%X", i)
+function string.tohex(c)
+  local i = string.byte(c)
+  return string.format("%%%X", i)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-string.diff = function(s1, s2)
-  -- function num : 0_5 , upvalues : _ENV
-  local len1, len2 = (string.len)(s1), (string.len)(s2)
+function string.diff(s1, s2)
+  local len1, len2 = string.len(s1), string.len(s2)
   local b, e1, e2 = 0, len1, len2
-  local len = (math.min)(len1, len2)
+  local len = math.min(len1, len2)
   for ii = 1, len do
-    if (string.sub)(s1, ii, ii) == (string.sub)(s2, ii, ii) then
-      do
-        b = ii
-        -- DECOMPILER ERROR at PC35: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC35: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if string.sub(s1, ii, ii) ~= string.sub(s2, ii, ii) then
+      break
     end
+    b = ii
   end
   for ii = 1, len do
-    if (string.sub)(s1, e1, e1) == (string.sub)(s2, e2, e2) then
-      do
-        e2 = len2 - ii
-        e1 = len1 - ii
-        -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC56: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if string.sub(s1, e1, e1) ~= string.sub(s2, e2, e2) then
+      break
     end
+    e2 = len2 - ii
+    e1 = len1 - ii
   end
   return b, e1, e2
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-string.split = function(s, delimiter)
-  -- function num : 0_6
-  if s == nil or s == "" then
+function string.split(s, delimiter)
+  if nil == s or "" == s then
     return {}
   end
   local t, i, j, k = {}, 1, 1, 1
-  while 1 do
-    if i <= #s + 1 then
-      j = s:find(delimiter, i)
-      -- DECOMPILER ERROR at PC27: Overwrote pending register: R5 in 'AssignReg'
-
-      if j or not k then
-        j = #s + 1
-        t[#t + 1] = s:sub(i, j - 1)
-        i = k + 1
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
+  while i <= #s + 1 do
+    j, k = s:find(delimiter, i)
+    j, k = j or #s + 1, k or #s + 1
+    t[#t + 1] = s:sub(i, j - 1)
+    i = k + 1
   end
   return t
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-string.uchar = function(u)
-  -- function num : 0_7 , upvalues : _ENV, toint
+function string.uchar(u)
   if u <= 127 then
-    return (string.char)(u)
+    return string.char(u)
   end
   if u <= 2047 then
-    return (string.char)(192 + toint(u / 64), 128 + u % 64)
+    return string.char(192 + toint(u / 64), 128 + u % 64)
   end
-  return (string.char)(224 + toint(u / 4096), 128 + toint(u / 64 % 64), 128 + u % 64)
+  return string.char(224 + toint(u / 4096), 128 + toint(u / 64 % 64), 128 + u % 64)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-string.trim = function(s)
-  -- function num : 0_8
-  return s:gsub("^%s*(.-)%s*$", "%1")
+function string.trim(s)
+  return (s:gsub("^%s*(.-)%s*$", "%1"))
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-string.ip2string = function(ip)
-  -- function num : 0_9 , upvalues : _ENV, toint
-  local s = (string.format)("%08x", ip)
-  local h1 = toint("0x" .. (string.sub)(s, 1, 2))
-  local h2 = toint("0x" .. (string.sub)(s, 3, 4))
-  local l1 = toint("0x" .. (string.sub)(s, 5, 6))
-  local l2 = toint("0x" .. (string.sub)(s, 7, 8))
-  return (string.format)("%s.%s.%s.%s", h1, h2, l1, l2)
+function string.ip2string(ip)
+  local s = string.format("%08x", ip)
+  local h1 = toint("0x" .. string.sub(s, 1, 2))
+  local h2 = toint("0x" .. string.sub(s, 3, 4))
+  local l1 = toint("0x" .. string.sub(s, 5, 6))
+  local l2 = toint("0x" .. string.sub(s, 7, 8))
+  return string.format("%s.%s.%s.%s", h1, h2, l1, l2)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-string.isnullorempty = function(s)
-  -- function num : 0_10 , upvalues : _ENV
-  do return s == nil or (string.len)(s) == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function string.isnullorempty(s)
+  return s == nil or string.len(s) == 0
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-string.nocase = function(s)
-  -- function num : 0_11 , upvalues : _ENV
-  s = (string.gsub)(s, "%a", function(c)
-    -- function num : 0_11_0 , upvalues : _ENV
-    return (string.format)("[%s%s]", (string.lower)(c), (string.upper)(c))
-  end
-)
+function string.nocase(s)
+  s = string.gsub(s, "%a", function(c)
+    return string.format("[%s%s]", string.lower(c), string.upper(c))
+  end)
   return s
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-string.equal_with_ignorecase = function(s1, s2)
-  -- function num : 0_12 , upvalues : _ENV
-  do return (string.lower)(s1) == (string.lower)(s2) end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function string.equal_with_ignorecase(s1, s2)
+  return string.lower(s1) == string.lower(s2)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-string.trimend = function(s, suffix)
-  -- function num : 0_13 , upvalues : _ENV
+function string.trimend(s, suffix)
   if not suffix then
     return s
   end
   local length = #suffix
   if length == 0 then
     return s
-  else
-    if length == 1 then
-      local index = (string.find)(s, "[" .. suffix .. "]+" .. "$")
-      if index then
-        return (string.sub)(s, 0, index - 1)
-      end
-      return s
-    else
-      do
-        local index = nil
-        local res = s
-        repeat
-          index = (string.find)(res, suffix .. "$")
-          if index then
-            res = (string.sub)(res, 0, index - 1)
-          end
-        until index == nil
-        do return res end
-      end
+  elseif length == 1 then
+    local index = string.find(s, "[" .. suffix .. "]+" .. "$")
+    if index then
+      return string.sub(s, 0, index - 1)
     end
+    return s
+  else
+    local index
+    local res = s
+    repeat
+      index = string.find(res, suffix .. "$")
+      if index then
+        res = string.sub(res, 0, index - 1)
+      end
+    until index == nil
+    return res
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-string.args2str = function(args, split)
-  -- function num : 0_14 , upvalues : _ENV
-  local len = (table.maxn)(args)
+function string.args2str(args, split)
+  local len = table.maxn(args)
   if len == 0 then
     return ""
+  elseif len == 1 then
+    return tostring(args[1])
   else
-    if len == 1 then
-      return tostring(args[1])
+    local tb = {}
+    if split == nil then
+      for i = 1, len do
+        table.insert(tb, tostring(args[i]))
+      end
     else
-      local tb = {}
-      if split == nil then
-        for i = 1, len do
-          (table.insert)(tb, tostring(args[i]))
-        end
-      else
-        do
-          ;
-          (table.insert)(tb, tostring(args[1]))
-          for i = 2, len do
-            (table.insert)(tb, split)
-            ;
-            (table.insert)(tb, tostring(args[i]))
-          end
-          do
-            do return (table.concat)(tb) end
-          end
-        end
+      table.insert(tb, tostring(args[1]))
+      for i = 2, len do
+        table.insert(tb, split)
+        table.insert(tb, tostring(args[i]))
       end
     end
+    return table.concat(tb)
   end
 end
-
-

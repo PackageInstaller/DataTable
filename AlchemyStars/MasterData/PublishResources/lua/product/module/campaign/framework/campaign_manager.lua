@@ -1,175 +1,122 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/framework/campaign_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CampaignManager", Object)
 CampaignManager = CampaignManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignManager.Constructor = function(self, a_module)
-  -- function num : 0_0
+function CampaignManager:Constructor(a_module)
   self.m_campaign_dict = {}
   self.m_campaign_com_module = a_module
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.InitCampaignObj = function(self, a_campaign_id, a_campaign_load_info)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaign_obj = nil
-  if not (self.m_campaign_dict)[a_campaign_id] then
+function CampaignManager:InitCampaignObj(a_campaign_id, a_campaign_load_info)
+  local campaign_obj
+  if not self.m_campaign_dict[a_campaign_id] then
     campaign_obj = CampaignObj:New(self.m_campaign_com_module)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.m_campaign_dict)[a_campaign_id] = campaign_obj
+    self.m_campaign_dict[a_campaign_id] = campaign_obj
   else
-    campaign_obj = (self.m_campaign_dict)[a_campaign_id]
+    campaign_obj = self.m_campaign_dict[a_campaign_id]
   end
   campaign_obj:Init(a_campaign_load_info)
   return campaign_obj
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.GetCampaignObj = function(self, a_campaign_id)
-  -- function num : 0_2
-  return (self.m_campaign_dict)[a_campaign_id]
+function CampaignManager:GetCampaignObj(a_campaign_id)
+  return self.m_campaign_dict[a_campaign_id]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.GetCampaignObjDic = function(self)
-  -- function num : 0_3
+function CampaignManager:GetCampaignObjDic()
   return self.m_campaign_dict
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.UpdateCampaignSampleInfo = function(self, a_sample_info)
-  -- function num : 0_4 , upvalues : _ENV
+function CampaignManager:UpdateCampaignSampleInfo(a_sample_info)
   local campaign_obj = self:GetCampaignObj(a_sample_info.id)
   if not campaign_obj then
-    (Log.debug)("[Campaign][CampaignManager] UpdateCampaignSampleInfo GetCampaignObj not found! ", a_sample_info.id)
+    Log.debug("[Campaign][CampaignManager] UpdateCampaignSampleInfo GetCampaignObj not found! ", a_sample_info.id)
     local camp_info = CampaignLoadInfo:New()
     camp_info.m_sample_info = a_sample_info
     campaign_obj = self:InitCampaignObj(a_sample_info.id, camp_info, self.m_campaign_com_module)
   end
-  do
-    campaign_obj:UpdateSampleInfo(a_sample_info)
-  end
+  campaign_obj:UpdateSampleInfo(a_sample_info)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.UpdateComponentStep = function(self, a_campaign_id, a_component_id, a_step)
-  -- function num : 0_5 , upvalues : _ENV
+function CampaignManager:UpdateComponentStep(a_campaign_id, a_component_id, a_step)
   local campaign_obj = self:GetCampaignObj(a_campaign_id)
   if not campaign_obj then
-    (Log.debug)("[Campaign][CampaignManager] UpdateComponentStep GetCampaignObj not found! ", a_campaign_id)
-    return 
+    Log.debug("[Campaign][CampaignManager] UpdateComponentStep GetCampaignObj not found! ", a_campaign_id)
+    return
   end
   campaign_obj:UpdateComponentStep(a_component_id, a_step)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.UpdateCampaignStep = function(self, campaignID, step, flag)
-  -- function num : 0_6 , upvalues : _ENV
+function CampaignManager:UpdateCampaignStep(campaignID, step, flag)
   local campaign_obj = self:GetCampaignObj(campaignID)
   if not campaign_obj then
-    (Log.debug)("[Campaign][CampaignManager] UpdateCampaignStep GetCampaignObj not found! ", campaignID)
-    return 
+    Log.debug("[Campaign][CampaignManager] UpdateCampaignStep GetCampaignObj not found! ", campaignID)
+    return
   end
   campaign_obj:UpdateCampaignStep(step, flag)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.SetCampaignStep = function(self, campaignID, step)
-  -- function num : 0_7 , upvalues : _ENV
+function CampaignManager:SetCampaignStep(campaignID, step)
   local campaign_obj = self:GetCampaignObj(campaignID)
   if not campaign_obj then
-    (Log.debug)("[Campaign][CampaignManager] SetCampaignStep GetCampaignObj not found! ", campaignID)
-    return 
+    Log.debug("[Campaign][CampaignManager] SetCampaignStep GetCampaignObj not found! ", campaignID)
+    return
   end
   campaign_obj:SetCampaignStep(step)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.GetSampleByID = function(self, a_campaign_id, must_vaild)
-  -- function num : 0_8 , upvalues : _ENV
-  if not must_vaild then
-    must_vaild = true
-  end
+function CampaignManager:GetSampleByID(a_campaign_id, must_vaild)
+  must_vaild = must_vaild or true
   local campaign_obj = self:GetCampaignObj(a_campaign_id)
   if not campaign_obj then
-    (Log.error)("[Campaign][CampaignManager] GetSampleByID GetCampaignObj not found! ", a_campaign_id)
+    Log.error("[Campaign][CampaignManager] GetSampleByID GetCampaignObj not found! ", a_campaign_id)
     return nil
   end
   local sample_info = campaign_obj.m_sample_info
   if not sample_info then
-    (Log.error)("[Campaign][CampaignManager] GetSampleByID sample_info not found! ", a_campaign_id)
+    Log.error("[Campaign][CampaignManager] GetSampleByID sample_info not found! ", a_campaign_id)
     return nil
   else
-    local svrTime = (GameGlobal.GetModule)(SvrTimeModule)
+    local svrTime = GameGlobal.GetModule(SvrTimeModule)
     local cur_time = svrTime:GetServerTime() / 1000
-    if sample_info.end_time ~= 0 and sample_info.end_time < cur_time then
+    if sample_info.end_time ~= 0 and cur_time > sample_info.end_time then
+      return nil
+    elseif cur_time < sample_info.begin_time then
       return nil
     else
-      if cur_time < sample_info.begin_time then
-        return nil
-      else
-        return campaign_obj.m_sample_info
-      end
+      return campaign_obj.m_sample_info
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.GetSampleByType = function(self, a_campaign_type)
-  -- function num : 0_9 , upvalues : _ENV
-  for key,value in pairs(self.m_campaign_dict) do
-    if (value.m_sample_info).camp_type == a_campaign_type then
+function CampaignManager:GetSampleByType(a_campaign_type)
+  for key, value in pairs(self.m_campaign_dict) do
+    if value.m_sample_info.camp_type == a_campaign_type then
       return value.m_sample_info
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.GetOpenSampleByType = function(self, a_campaign_type)
-  -- function num : 0_10 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  for key,value in pairs(self.m_campaign_dict) do
-    if (value.m_sample_info).camp_type == a_campaign_type and (value.m_sample_info):IsShow(curTime) then
+function CampaignManager:GetOpenSampleByType(a_campaign_type)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  for key, value in pairs(self.m_campaign_dict) do
+    if value.m_sample_info.camp_type == a_campaign_type and value.m_sample_info:IsShow(curTime) then
       return value.m_sample_info
     end
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.GetAllOpenSampleCampaign = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local l_openCampaignTable = nil
+function CampaignManager:GetAllOpenSampleCampaign()
+  local l_openCampaignTable
   local l_CampaignIdList = {}
-  local l_svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(l_svrTimeModule:GetServerTime() * 0.001)
-  for key,value in pairs(self.m_campaign_dict) do
-    if (value.m_sample_info):IsShow(curTime) and value:IsReView() == false then
-      if not l_openCampaignTable then
-        l_openCampaignTable = {}
-      end
+  local l_svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(l_svrTimeModule:GetServerTime() * 0.001)
+  for key, value in pairs(self.m_campaign_dict) do
+    if value.m_sample_info:IsShow(curTime) and value:IsReView() == false then
+      l_openCampaignTable = l_openCampaignTable or {}
       l_openCampaignTable[key] = value
       l_CampaignIdList[#l_CampaignIdList + 1] = key
     end
@@ -177,52 +124,38 @@ CampaignManager.GetAllOpenSampleCampaign = function(self)
   return l_openCampaignTable, l_CampaignIdList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.GetLatestCampaignObj = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = ((math.floor)(svrTimeModule:GetServerTime() * 0.001))
-  -- DECOMPILER ERROR at PC10: Overwrote pending register: R3 in 'AssignReg'
-
-  local campaignObj = .end
+function CampaignManager:GetLatestCampaignObj()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local campaignObj
   local latestTime = 0
-  for key,value in pairs(self.m_campaign_dict) do
-    local campaign_cfg = (Cfg.cfg_campaign)[(value.m_sample_info).id]
+  for key, value in pairs(self.m_campaign_dict) do
+    local campaign_cfg = Cfg.cfg_campaign[value.m_sample_info.id]
     if campaign_cfg == nil then
-      (Log.exception)("cfg_campaign中找不到对应活动配置 id:" .. (value.m_sample_info).id)
+      Log.exception("cfg_campaign中找不到对应活动配置 id:" .. value.m_sample_info.id)
     end
-    if campaign_cfg.EntranceIcon and not self:IsReview(value) and (value.m_sample_info):IsShow(curTime) and latestTime < (value.m_sample_info).begin_time then
-      latestTime = (value.m_sample_info).begin_time
+    if campaign_cfg.EntranceIcon and not self:IsReview(value) and value.m_sample_info:IsShow(curTime) and latestTime < value.m_sample_info.begin_time then
+      latestTime = value.m_sample_info.begin_time
       campaignObj = value
     end
   end
   return campaignObj
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.GetAllCampaignReviewSample = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function CampaignManager:GetAllCampaignReviewSample()
   local sample_list = {}
-  for key,value in pairs(self.m_campaign_dict) do
+  for key, value in pairs(self.m_campaign_dict) do
     if self:IsReview(value) then
-      sample_list[(value.m_sample_info).id] = value
+      sample_list[value.m_sample_info.id] = value
     end
   end
   return sample_list
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.IsReview = function(self, obj)
-  -- function num : 0_14 , upvalues : _ENV
-  local campaign_cfg = (Cfg.cfg_campaign)[(obj.m_sample_info).id]
+function CampaignManager:IsReview(obj)
+  local campaign_cfg = Cfg.cfg_campaign[obj.m_sample_info.id]
   if campaign_cfg == nil then
-    (Log.exception)("cfg_campaign中找不到对应活动配置 id:" .. (obj.m_sample_info).id)
+    Log.exception("cfg_campaign中找不到对应活动配置 id:" .. obj.m_sample_info.id)
   end
-  do return campaign_cfg.CostItem ~= nil and #campaign_cfg.CostItem > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return campaign_cfg.CostItem ~= nil and #campaign_cfg.CostItem > 0
 end
-
-

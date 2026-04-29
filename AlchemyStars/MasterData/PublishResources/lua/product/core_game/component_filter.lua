@@ -1,28 +1,93 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/component_filter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _staticClass("ComponentFilter")
--- DECOMPILER ERROR at PC84: Confused about usage of register: R0 in 'UnsetPending'
-
-ComponentFilter.LogicComponents = {PlayerComponent = true, GameFSMComponent = true, CommandSenderComponent = true, CommandReceiverComponent = true, BattleStatComponent = true, AttributesComponent = true, GridLocationComponent = true, AIComponentNew = true, BodyAreaComponent = true, LogicChainPathComponent = true, BoardComponent = true, SkillInfoComponent = true, BuffComponent = true, PetComponent = true, EntityTypeComponent = true, BlockFlagComponent = true, SkillPetAttackDataComponent = true, TeamComponent = true, TrapComponent = true, BossComponent = true, MonsterIDComponent = true, PetPstIDComponent = true, TrapIDComponent = true, ElementComponent = true, SkillRoutineComponent = true, ActiveSkillComponent = true, FeatureSkillComponent = true, LogicPickUpComponent = true, SuperEntityComponent = true, SummonerComponent = true, SkillContextComponent = true, ActiveSkillPickUpComponent = true, SkillHolderComponent = true, PhantomComponent = true, DeadMarkComponent = true, BattleFlagsComponent = true, AlignmentComponent = true, GameTurnComponent = true, SkinComponent = true, LogicChessPathComponent = true, LogicFeatureComponent = true, RideComponent = true, ScopeCenterComponent = true, PetDeadMarkComponent = true, AttackAreaComponent = true, DimensionFlagComponent = true, MatchPetComponent = true, SkillRoutineHolderComponent = true, LogicRoundTeamComponent = true, AIRecorderComponent = true, DropAssetComponent = true, AffixDataComponent = true, ChessPetComponent = true, SyncMoveWithTeamComponent = true, TeleportRecordComponent = true, LogicChainDamageComponent = true, ShareSkillResultComponent = true, BoardMultiComponent = true, AuraRangeComponent = true, OutsideRegionComponent = true, BoardSpliceComponent = true, BoardPushComponent = true, LogicPartnerComponent = true, TalentComponent = true, MirageComponent = true, MoveScopeRecordComponent = true, EquipRefineComponent = true, PopStarLogicComponent = true, PuzzleComponent = true, UnscaledCountDownLogicComponent = true, LogicTrapWallComponent = true, FettersComponent = true, BattleDamageStatisticsComponent = true, BattleWorldEnterDataComponent = true, LogicAutoBeadComponent = true, SkillAutoBeadAttackDataComponent = true, SeasonMazeLogicComponent = true, MonsterWeakComponent = true, ColorPaletteComponent = true}
--- DECOMPILER ERROR at PC87: Confused about usage of register: R0 in 'UnsetPending'
-
+ComponentFilter.LogicComponents = {
+  PlayerComponent = true,
+  GameFSMComponent = true,
+  CommandSenderComponent = true,
+  CommandReceiverComponent = true,
+  BattleStatComponent = true,
+  AttributesComponent = true,
+  GridLocationComponent = true,
+  AIComponentNew = true,
+  BodyAreaComponent = true,
+  LogicChainPathComponent = true,
+  BoardComponent = true,
+  SkillInfoComponent = true,
+  BuffComponent = true,
+  PetComponent = true,
+  EntityTypeComponent = true,
+  BlockFlagComponent = true,
+  SkillPetAttackDataComponent = true,
+  TeamComponent = true,
+  TrapComponent = true,
+  BossComponent = true,
+  MonsterIDComponent = true,
+  PetPstIDComponent = true,
+  TrapIDComponent = true,
+  ElementComponent = true,
+  SkillRoutineComponent = true,
+  ActiveSkillComponent = true,
+  FeatureSkillComponent = true,
+  LogicPickUpComponent = true,
+  SuperEntityComponent = true,
+  SummonerComponent = true,
+  SkillContextComponent = true,
+  ActiveSkillPickUpComponent = true,
+  SkillHolderComponent = true,
+  PhantomComponent = true,
+  DeadMarkComponent = true,
+  BattleFlagsComponent = true,
+  AlignmentComponent = true,
+  GameTurnComponent = true,
+  SkinComponent = true,
+  LogicChessPathComponent = true,
+  LogicFeatureComponent = true,
+  RideComponent = true,
+  ScopeCenterComponent = true,
+  PetDeadMarkComponent = true,
+  AttackAreaComponent = true,
+  DimensionFlagComponent = true,
+  MatchPetComponent = true,
+  SkillRoutineHolderComponent = true,
+  LogicRoundTeamComponent = true,
+  AIRecorderComponent = true,
+  DropAssetComponent = true,
+  AffixDataComponent = true,
+  ChessPetComponent = true,
+  SyncMoveWithTeamComponent = true,
+  TeleportRecordComponent = true,
+  LogicChainDamageComponent = true,
+  ShareSkillResultComponent = true,
+  BoardMultiComponent = true,
+  AuraRangeComponent = true,
+  OutsideRegionComponent = true,
+  BoardSpliceComponent = true,
+  BoardPushComponent = true,
+  LogicPartnerComponent = true,
+  TalentComponent = true,
+  MirageComponent = true,
+  MoveScopeRecordComponent = true,
+  EquipRefineComponent = true,
+  PopStarLogicComponent = true,
+  PuzzleComponent = true,
+  UnscaledCountDownLogicComponent = true,
+  LogicTrapWallComponent = true,
+  FettersComponent = true,
+  BattleDamageStatisticsComponent = true,
+  BattleWorldEnterDataComponent = true,
+  LogicAutoBeadComponent = true,
+  SkillAutoBeadAttackDataComponent = true,
+  SeasonMazeLogicComponent = true,
+  MonsterWeakComponent = true,
+  ColorPaletteComponent = true
+}
 ComponentFilter.ShareComponents = {}
--- DECOMPILER ERROR at PC90: Confused about usage of register: R0 in 'UnsetPending'
 
-ComponentFilter.CheckComponent = function(self, component_name, world_running_postion)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self.LogicComponents)[component_name] and world_running_postion == WorldRunPostion.AtServer then
+function ComponentFilter:CheckComponent(component_name, world_running_postion)
+  if self.LogicComponents[component_name] and world_running_postion == WorldRunPostion.AtServer then
+    return true
+  elseif world_running_postion == WorldRunPostion.AtClient or world_running_postion == WorldRunPostion.Cutscene or world_running_postion == WorldRunPostion.Performance then
     return true
   else
-    if world_running_postion == WorldRunPostion.AtClient or world_running_postion == WorldRunPostion.Cutscene or world_running_postion == WorldRunPostion.Performance then
-      return true
-    else
-      return false
-    end
+    return false
   end
 end
-
-

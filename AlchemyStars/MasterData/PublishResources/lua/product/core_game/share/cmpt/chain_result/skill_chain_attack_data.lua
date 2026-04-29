@@ -1,57 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/chain_result/skill_chain_attack_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_container")
 _class("SkillChainAttackData", SkillEffectResultContainer)
 SkillChainAttackData = SkillChainAttackData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillChainAttackData.Constructor = function(self, timeIndex, stageindex, chainSkillID)
-  -- function num : 0_0
+function SkillChainAttackData:Constructor(timeIndex, stageindex, chainSkillID)
   self._chainTimeIndex = timeIndex
   self._chainStageIndex = stageindex
   self._chainSkillID = chainSkillID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillChainAttackData.GetChainSkillTimeIndex = function(self)
-  -- function num : 0_1
+function SkillChainAttackData:GetChainSkillTimeIndex()
   return self._chainTimeIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillChainAttackData.GetChainSkillStageIndex = function(self)
-  -- function num : 0_2
+function SkillChainAttackData:GetChainSkillStageIndex()
   return self._chainStageIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillChainAttackData.GetChainAttackDataSkillID = function(self)
-  -- function num : 0_3
+function SkillChainAttackData:GetChainAttackDataSkillID()
   return self._chainSkillID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillChainAttackData.GetTotalDamage = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillChainAttackData:GetTotalDamage()
   local val = 0
   local ress = self:GetEffectResultsAsArray(SkillEffectType.Damage)
   if ress then
-    for _,res in ipairs(ress) do
-      if res:GetTotalDamage() > 0 then
+    for _, res in ipairs(ress) do
+      if 0 < res:GetTotalDamage() then
         val = val + res:GetTotalDamage()
       end
     end
   end
-  do
-    return val
-  end
+  return val
 end
-
-

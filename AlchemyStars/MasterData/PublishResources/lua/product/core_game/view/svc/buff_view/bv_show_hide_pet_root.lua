@@ -1,81 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_show_hide_pet_root.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewShowHidePetRoot", BuffViewBase)
 BuffViewShowHidePetRoot = BuffViewShowHidePetRoot
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewShowHidePetRoot.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self:GetBuffResult()).notifyEntityID ~= (notify:GetNotifyEntity()):GetID() then
-    do return notify:GetNotifyType() ~= NotifyType.Benumbed end
-    do return true end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function BuffViewShowHidePetRoot:IsNotifyMatch(notify)
+  if notify:GetNotifyType() == NotifyType.Benumbed then
+    return self:GetBuffResult().notifyEntityID == notify:GetNotifyEntity():GetID()
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewShowHidePetRoot._ShowHideRootRenderer = function(self, renderEnabled)
-  -- function num : 0_1 , upvalues : _ENV
-  local cView = (self._entity):View()
+function BuffViewShowHidePetRoot:_ShowHideRootRenderer(renderEnabled)
+  local cView = self._entity:View()
   local CSGameObject = cView:GetGameObject()
-  local CSGameObjectRoot = (CSGameObject.transform):Find("Root")
-  local tSkinnedMeshRender = (CSGameObjectRoot.transform):GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
+  local CSGameObjectRoot = CSGameObject.transform:Find("Root")
+  local tSkinnedMeshRender = CSGameObjectRoot.transform:GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
   for i = 0, tSkinnedMeshRender.Length - 1 do
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R10 in 'UnsetPending'
-
-    (tSkinnedMeshRender[i]).enabled = renderEnabled
+    tSkinnedMeshRender[i].enabled = renderEnabled
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewShowHidePetRoot.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewShowHidePetRoot:PlayView(TT)
   local result = self._buffResult
   local renderEnabled = result.state == 1
-  local fxsvc = (self._world):GetService("Effect")
+  local fxsvc = self._world:GetService("Effect")
   local buffOwnerEntity = self._entity
   if not renderEnabled then
     buffOwnerEntity:SetAnimatorControllerBools({Move = false})
     YIELD(TT)
-    buffOwnerEntity:SetAnimatorControllerTriggers({result.hideAnimatorTrigger})
+    buffOwnerEntity:SetAnimatorControllerTriggers({
+      result.hideAnimatorTrigger
+    })
     fxsvc:CreatePositionEffect(result.hideEffectID, buffOwnerEntity:GetRenderGridPosition())
     YIELD(TT, result.hideTime)
     self:_ShowHideRootRenderer(false)
     if result.showModelAtLinkageEnd then
-      local effectHolder = (self._entity):EffectHolder()
+      local effectHolder = self._entity:EffectHolder()
       if not effectHolder then
-        (self._entity):AddEffectHolder()
-        effectHolder = (self._entity):EffectHolder()
+        self._entity:AddEffectHolder()
+        effectHolder = self._entity:EffectHolder()
       end
-      if not effectHolder:GetEffectList("BuffViewShowHidePetRoot") then
-        local tEffect = {}
-      end
+      local tEffect = effectHolder:GetEffectList("BuffViewShowHidePetRoot") or {}
       local avatarEffectEntity = tEffect[1]
       if not avatarEffectEntity then
         avatarEffectEntity = fxsvc:CreateEffectEntity()
-        local petPstIDCmpt = (self._entity):PetPstID()
+        local petPstIDCmpt = self._entity:PetPstID()
         local petPstID = petPstIDCmpt:GetPstID()
-        local petData = (self._world):GetPetData(petPstID)
+        local petData = self._world:GetPetData(petPstID)
         local prefabResPath = petData:GetPetPrefab(PetSkinEffectPath.MODEL_INGAME)
         avatarEffectEntity:ReplaceAsset(NativeUnityPrefabAsset:New(prefabResPath, true))
         effectHolder:AttachEffect("BuffViewShowHidePetRoot", avatarEffectEntity)
         local ancName = HelperProxy:GetPetAnimatorControllerName(prefabResPath, PetAnimatorControllerType.Battle)
         if ancName then
-          local req2 = (ResourceManager:GetInstance()):SyncLoadAsset(ancName, LoadType.GameObject)
-          local anim = (req2.Obj):GetComponent(typeof(UnityEngine.Animator))
+          local req2 = ResourceManager:GetInstance():SyncLoadAsset(ancName, LoadType.GameObject)
+          local anim = req2.Obj:GetComponent(typeof(UnityEngine.Animator))
           if anim then
-            local pet = ((avatarEffectEntity:View()).ViewWrapper).GameObject
+            local pet = avatarEffectEntity:View().ViewWrapper.GameObject
             local petAnim = pet:GetComponentInChildren(typeof(UnityEngine.Animator))
             petAnim.runtimeAnimatorController = anim.runtimeAnimatorController
           end
         end
       end
-      local cPet = (self._entity):Pet()
+      local cPet = self._entity:Pet()
       if cPet then
         local eTeam = cPet:GetOwnerTeamEntity()
         local cLogicChainPath = eTeam:LogicChainPath()
@@ -85,13 +69,11 @@ BuffViewShowHidePetRoot.PlayView = function(self, TT)
         avatarEffectEntity:SetGridLocationAndOffset(v2LastPos, Vector2.down)
         avatarEffectEntity:CloneOffsetAndDamageOffset(self._entity)
       end
-      if not avatarEffectEntity:HasEffectHolder() then
-        local nul = avatarEffectEntity:AddEffectHolder()
-      end
+      local nul = avatarEffectEntity:HasEffectHolder() or avatarEffectEntity:AddEffectHolder()
       local cAvatarEffectHolder = avatarEffectEntity:EffectHolder()
       local teidPermanentEffect = effectHolder:GetPermanentEffect()
-      for _,eid in ipairs(teidPermanentEffect) do
-        local e = (self._world):GetEntityByID(eid)
+      for _, eid in ipairs(teidPermanentEffect) do
+        local e = self._world:GetEntityByID(eid)
         if e then
           local isSuccess = self:_TransplantEffect(avatarEffectEntity, e)
           if isSuccess then
@@ -101,51 +83,53 @@ BuffViewShowHidePetRoot.PlayView = function(self, TT)
       end
       YIELD(TT)
       avatarEffectEntity:SetViewVisible(true)
-      avatarEffectEntity:SetAnimatorControllerTriggers({result.avatarShowAnimatorTrigger})
+      avatarEffectEntity:SetAnimatorControllerTriggers({
+        result.avatarShowAnimatorTrigger
+      })
       if result.avatarShowEffectID then
         fxsvc:CreatePositionEffect(result.avatarShowEffectID, avatarEffectEntity:GetRenderGridPosition())
       end
       if buffOwnerEntity:HasPet() then
-        local renderBattleService = (self._world):GetService("RenderBattle")
-        local eTeam = (buffOwnerEntity:Pet()):GetOwnerTeamEntity()
-        if buffOwnerEntity:GetID() == (eTeam:Team()):GetTeamLeaderEntityID() then
-          local teamHPBarEntityID = (eTeam:HP()):GetHPSliderEntityID()
-          local eTeamHPBar = (self._world):GetEntityByID(teamHPBarEntityID)
+        local renderBattleService = self._world:GetService("RenderBattle")
+        local eTeam = buffOwnerEntity:Pet():GetOwnerTeamEntity()
+        if buffOwnerEntity:GetID() == eTeam:Team():GetTeamLeaderEntityID() then
+          local teamHPBarEntityID = eTeam:HP():GetHPSliderEntityID()
+          local eTeamHPBar = self._world:GetEntityByID(teamHPBarEntityID)
           if eTeamHPBar then
-            (eTeam:HP()):SetLockPos(true)
-            local renderHPBarPos = renderBattleService:CalcHPBarPos((avatarEffectEntity:View()).ViewWrapper, (eTeam:HP()):GetHPOffset())
-            local canvasTrans = ((eTeamHPBar:View()).ViewWrapper):FindChild("Root")
+            eTeam:HP():SetLockPos(true)
+            local renderHPBarPos = renderBattleService:CalcHPBarPos(avatarEffectEntity:View().ViewWrapper, eTeam:HP():GetHPOffset())
+            local canvasTrans = eTeamHPBar:View().ViewWrapper:FindChild("Root")
             canvasTrans.position = renderHPBarPos
           end
         end
-        local buffOwnerHPBarEntityID = (buffOwnerEntity:HP()):GetHPSliderEntityID()
-        local eBuffOwnerHPBar = (self._world):GetEntityByID(buffOwnerHPBarEntityID)
+        local buffOwnerHPBarEntityID = buffOwnerEntity:HP():GetHPSliderEntityID()
+        local eBuffOwnerHPBar = self._world:GetEntityByID(buffOwnerHPBarEntityID)
         if eBuffOwnerHPBar then
-          (buffOwnerEntity:HP()):SetLockPos(true)
-          local canvasTrans = ((eBuffOwnerHPBar:View()).ViewWrapper):FindChild("Root")
-          local renderHPBarPos = renderBattleService:CalcHPBarPos((avatarEffectEntity:View()).ViewWrapper, (buffOwnerEntity:HP()):GetHPOffset())
+          buffOwnerEntity:HP():SetLockPos(true)
+          local canvasTrans = eBuffOwnerHPBar:View().ViewWrapper:FindChild("Root")
+          local renderHPBarPos = renderBattleService:CalcHPBarPos(avatarEffectEntity:View().ViewWrapper, buffOwnerEntity:HP():GetHPOffset())
           canvasTrans.position = renderHPBarPos
         end
       end
     end
   else
     if result.showModelAtLinkageEnd then
-      local effectHolder = (self._entity):EffectHolder()
+      local effectHolder = self._entity:EffectHolder()
       if not effectHolder then
-        (self._entity):AddEffectHolder()
-        effectHolder = (self._entity):EffectHolder()
+        self._entity:AddEffectHolder()
+        effectHolder = self._entity:EffectHolder()
       end
-      if not effectHolder:GetEffectList("BuffViewShowHidePetRoot") then
-        local tEffect = {}
-      end
+      local tEffect = effectHolder:GetEffectList("BuffViewShowHidePetRoot") or {}
       local avatarEffectEntity = tEffect[1]
       if avatarEffectEntity then
-        avatarEffectEntity:SetAnimatorControllerTriggers({result.avatarHideAnimatorTrigger})
+        avatarEffectEntity:SetAnimatorControllerTriggers({
+          result.avatarHideAnimatorTrigger
+        })
         YIELD(TT, result.avatarHideTime)
         avatarEffectEntity:SetViewVisible(false)
         if buffOwnerEntity:HasPet() then
-          local eTeam = (buffOwnerEntity:Pet()):GetOwnerTeamEntity()
-          if buffOwnerEntity:GetID() == (eTeam:Team()):GetTeamLeaderEntityID() then
+          local eTeam = buffOwnerEntity:Pet():GetOwnerTeamEntity()
+          if buffOwnerEntity:GetID() == eTeam:Team():GetTeamLeaderEntityID() then
             local cTeamHP = eTeam:HP()
             cTeamHP:SetLockPos(false)
             cTeamHP:SetHPPosDirty(true)
@@ -156,49 +140,38 @@ BuffViewShowHidePetRoot.PlayView = function(self, TT)
         cBuffOwnerHP:SetHPPosDirty(true)
         local cAvatarEffectHolder = avatarEffectEntity:EffectHolder()
         if cAvatarEffectHolder then
-          if not cAvatarEffectHolder:GetEffectList("EffectHolderReplacedByAvatar") then
-            local otherEffects = {}
-          end
-          local cView = (self._entity):View()
+          local otherEffects = cAvatarEffectHolder:GetEffectList("EffectHolderReplacedByAvatar") or {}
+          local cView = self._entity:View()
           local go = cView:GetGameObject()
-          for _,effectEntity in ipairs(otherEffects) do
+          for _, effectEntity in ipairs(otherEffects) do
             self:_TransplantEffect(self._entity, effectEntity)
           end
         end
-        ;
-        (self._world):DestroyEntity(avatarEffectEntity)
+        self._world:DestroyEntity(avatarEffectEntity)
         effectHolder:ClearEffectList("BuffViewShowHidePetRoot")
       end
     end
     self:_ShowHideRootRenderer(true)
   end
-  -- DECOMPILER ERROR: 18 unprocessed JMP targets
 end
 
-local isCSGameObjectInvalid = function(go)
-  -- function num : 0_3 , upvalues : _ENV
-  do return not go or tostring(go) == "null" end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+local function isCSGameObjectInvalid(go)
+  return not go or tostring(go) == "null"
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffViewShowHidePetRoot._TransplantEffect = function(self, eTarget, eFx)
-  -- function num : 0_4 , upvalues : isCSGameObjectInvalid
+function BuffViewShowHidePetRoot:_TransplantEffect(eTarget, eFx)
   if not eFx:HasView() or not eTarget:HasView() then
-    return 
+    return
   end
-  local csgoFx = (eFx:View()):GetGameObject()
-  local csgoTarget = (eTarget:View()):GetGameObject()
+  local csgoFx = eFx:View():GetGameObject()
+  local csgoTarget = eTarget:View():GetGameObject()
   if isCSGameObjectInvalid(csgoFx) or isCSGameObjectInvalid(csgoTarget) then
-    return 
+    return
   end
-  local parentNodeName = ((csgoFx.transform).parent).name
-  local csTransformNewParent = (csgoTarget.transform):Find(parentNodeName)
+  local parentNodeName = csgoFx.transform.parent.name
+  local csTransformNewParent = csgoTarget.transform:Find(parentNodeName)
   if csTransformNewParent then
-    (csgoFx.transform):SetParent(csTransformNewParent, false)
+    csgoFx.transform:SetParent(csTransformNewParent, false)
   end
   return true
 end
-
-

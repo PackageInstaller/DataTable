@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_phase_scope_trajectory_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhaseScopeTrajectory", PlaySkillPhaseBase)
 PlaySkillPhaseScopeTrajectory = PlaySkillPhaseScopeTrajectory
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhaseScopeTrajectory.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPhaseScopeTrajectory:PlayFlight(TT, casterEntity, phaseParam)
   self._attackedPosArray = {}
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local isHorizontal = phaseParam:GetScopeHorizontalOrVertical()
   local attackRange = scopeResult:GetAttackRange()
@@ -23,295 +16,239 @@ PlaySkillPhaseScopeTrajectory.PlayFlight = function(self, TT, casterEntity, phas
   local targetColumnOrRow = {}
   local sidesPos = {}
   if isHorizontal then
-    for _,gridPos in ipairs(attackRange) do
+    for _, gridPos in ipairs(attackRange) do
       if not targetColumnOrRow[gridPos.y] then
         targetColumnOrRow[gridPos.y] = self:_GetHorizontalBeginAndTarget(casterPos, gridPos, coordMinMax)
       end
       if gridPos.x == casterPos.x then
-        (table.insert)(sidesPos, gridPos)
+        table.insert(sidesPos, gridPos)
       end
     end
   else
-    do
-      for _,gridPos in ipairs(attackRange) do
-        if not targetColumnOrRow[gridPos.x] then
-          targetColumnOrRow[gridPos.x] = self:_GetVerticalBeginAndTarget(casterPos, gridPos, coordMinMax)
-        end
-        if gridPos.y == casterPos.y then
-          (table.insert)(sidesPos, gridPos)
-        end
+    for _, gridPos in ipairs(attackRange) do
+      if not targetColumnOrRow[gridPos.x] then
+        targetColumnOrRow[gridPos.x] = self:_GetVerticalBeginAndTarget(casterPos, gridPos, coordMinMax)
       end
-      do
-        local effectService = (self._world):GetService("Effect")
-        if phaseParam:GetSidesEffectID() then
-          local sidesEffectID = phaseParam:GetSidesEffectID()
-          local v2CasterDir = (casterEntity:Location()):GetRenderGridDirection()
-          do
-            for _,v2 in ipairs(sidesPos) do
-              if v2 ~= casterPos then
-                effectService:CreateCommonGridEffect(sidesEffectID, v2, v2CasterDir)
-              end
-            end
-          end
-          YIELD(TT, phaseParam:SidesEffectDelay())
-        end
-        do
-          local sidesDamageDelay = phaseParam:GetSidesDamageDelay()
-          YIELD(TT, sidesDamageDelay)
-          local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
-          if damageResultArray then
-            for damageResultIndex,serDamage in ipairs(damageResultArray) do
-              if (table.icontains)(sidesPos, serDamage:GetGridPos()) then
-                self:_DoHit(TT, phaseParam, casterEntity, serDamage, 0)
-                ;
-                (table.insert)(abstractDamageResults, self:_GetAbstractDamageResultString(serDamage, R27_PC152))
-              end
-            end
-          end
-          do
-            local trajectoryCreateDelay = phaseParam:GetTrajectoryCreateDelay()
-            trajectoryCreateDelay = (math.max)(0, trajectoryCreateDelay - sidesDamageDelay)
-            YIELD(TT, trajectoryCreateDelay)
-            local maxEndTime = 0
-            local boardServiceRender = (self._world):GetService("BoardRender")
-            local trajectoryEffectID = phaseParam:GetTrajectoryEffectID()
-            local trajectories = {}
-            for _,posInfo in pairs(targetColumnOrRow) do
-              R27_PC152 = math
-              R27_PC152 = R27_PC152.max
-              R27_PC152 = R27_PC152(maxEndTime, self:_CreateTrajectories(posInfo, phaseParam, trajectories, casterPos))
-              maxEndTime = R27_PC152
-            end
-            local beginDelayTime = phaseParam:GetBeginDelayTime()
-            beginDelayTime = beginDelayTime - trajectoryCreateDelay - sidesDamageDelay
-            YIELD(TT, beginDelayTime)
-            maxEndTime = maxEndTime + (GameGlobal:GetInstance()):GetCurrentTime()
-            self:_InitFlyPosList()
-            local finishEffEntities = {}
-            local trajectoryFinishEffectID = phaseParam:GetTrajectoryFinishEffectID()
-            for _,trajectoryInfo in ipairs(trajectories) do
-              local trajectoryObject = ((trajectoryInfo.entity):View()):GetGameObject()
-              local transWork = trajectoryObject.transform
-              local gridWorldpos = boardServiceRender:GridPos2RenderPos(trajectoryInfo.target)
-              local easeWork = (transWork:DOMove(gridWorldpos, trajectoryInfo.flyTime, false)):SetEase(((DG.Tweening).Ease).InOutSine)
-              local tailEntity = trajectoryInfo.tailEntity
-              local tailObject, tailEaseWork = nil, nil
-              if tailEntity then
-                tailObject = ((trajectoryInfo.tailEntity):View()):GetGameObject()
-                local transWork = tailObject.transform
-                local gridWorldpos = boardServiceRender:GridPos2RenderPos(trajectoryInfo.target)
-                tailEaseWork = (transWork:DOMove(gridWorldpos, trajectoryInfo.flyTime, false)):SetEase(((DG.Tweening).Ease).InOutSine)
-              end
-              do
-                do
-                  if easeWork then
-                    easeWork:OnComplete(function()
-    -- function num : 0_0_0 , upvalues : self, trajectoryInfo, trajectoryFinishEffectID, _ENV, finishEffEntities, effectService
-    (self._world):DestroyEntity(trajectoryInfo.entity)
-    if trajectoryFinishEffectID then
-      (table.insert)(finishEffEntities, effectService:CreateCommonGridEffect(trajectoryFinishEffectID, trajectoryInfo.target, trajectoryInfo.direction))
-    end
-  end
-)
-                  end
-                  if tailEaseWork then
-                    tailEaseWork:OnComplete(function()
-    -- function num : 0_0_1 , upvalues : _ENV, phaseParam, trajectoryInfo, self
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(T2)
-      -- function num : 0_0_1_0 , upvalues : phaseParam, _ENV, trajectoryInfo, self
-      local tailDismissDelay = phaseParam:GetTailDismissDelay()
-      if tailDismissDelay then
-        YIELD(T2, tailDismissDelay)
-      end
-      if trajectoryInfo and trajectoryInfo.tailEntity then
-        (self._world):DestroyEntity(trajectoryInfo.tailEntity)
+      if gridPos.y == casterPos.y then
+        table.insert(sidesPos, gridPos)
       end
     end
-)
   end
-)
-                  end
-                  -- DECOMPILER ERROR at PC273: LeaveBlock: unexpected jumping out DO_STMT
-
-                end
-              end
-            end
-            local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-            local taskIDArray = {}
-            local allDamageResult = skillEffectResultContainer:GetEffectResultsByType(SkillEffectType.Damage)
-            local t = {}
-            for _,trajectoryInfo in ipairs(trajectories) do
-              local dir = trajectoryInfo.begin - trajectoryInfo.target
-              local totalDis = (Vector2.Distance)(trajectoryInfo.begin, trajectoryInfo.target)
-              for damageResultIndex,damageResult in ipairs(allDamageResult.array) do
-                if not (table.icontains)(abstractDamageResults, self:_GetAbstractDamageResultString(damageResult, damageResultIndex)) then
-                  local gridPos = damageResult:GetGridPos()
-                  local vd = gridPos - trajectoryInfo.target
-                  local vs = gridPos - trajectoryInfo.begin
-                  if vs.x * vd.x <= 0 and vs.y * vd.y <= 0 then
-                    local dis = (Vector2.Distance)(trajectoryInfo.begin, gridPos)
-                    local time = 0
-                    do
-                      do
-                        if totalDis > 0 then
-                          local percent = dis / totalDis
-                          time = percent * trajectoryInfo.flyTime * 1000
-                        end
-                        ;
-                        (table.insert)(t, ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoHit, self, phaseParam, casterEntity, damageResult, time))
-                        ;
-                        (table.insert)(abstractDamageResults, self:_GetAbstractDamageResultString(damageResult, damageResultIndex))
-                        -- DECOMPILER ERROR at PC362: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC362: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC362: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC362: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC362: LeaveBlock: unexpected jumping out IF_STMT
-
-                      end
-                    end
-                  end
-                end
-              end
-            end
-            local trajectoryFinishEffectTime = phaseParam:GetTrajectoryFinishEffectTime()
-            YIELD(TT, trajectoryFinishEffectTime)
-            for damageResultIndex,damageResult in ipairs(allDamageResult.array) do
-              if not (table.icontains)(abstractDamageResults, self:_GetAbstractDamageResultString(damageResult, damageResultIndex)) then
-                (Log.fatal)(self._className, "存在未能正确播放的伤害")
-                ;
-                (table.insert)(t, ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoHit, self, phaseParam, casterEntity, damageResult, 0))
-                ;
-                (table.insert)(abstractDamageResults, self:_GetAbstractDamageResultString(damageResult, damageResultIndex))
-              end
-            end
-            local finishDelayTime = phaseParam:GetFinishDelayTime()
-            if finishDelayTime then
-              YIELD(TT, finishDelayTime)
-            end
-            for i = 1, #finishEffEntities do
-              (self._world):DestroyEntity(finishEffEntities[i])
-            end
-            finishEffEntities = {}
-            return true
+  local effectService = self._world:GetService("Effect")
+  if phaseParam:GetSidesEffectID() then
+    local sidesEffectID = phaseParam:GetSidesEffectID()
+    local v2CasterDir = casterEntity:Location():GetRenderGridDirection()
+    for _, v2 in ipairs(sidesPos) do
+      if v2 ~= casterPos then
+        effectService:CreateCommonGridEffect(sidesEffectID, v2, v2CasterDir)
+      end
+    end
+    YIELD(TT, phaseParam:SidesEffectDelay())
+  end
+  local sidesDamageDelay = phaseParam:GetSidesDamageDelay()
+  YIELD(TT, sidesDamageDelay)
+  local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
+  if damageResultArray then
+    for damageResultIndex, serDamage in ipairs(damageResultArray) do
+      if table.icontains(sidesPos, serDamage:GetGridPos()) then
+        self:_DoHit(TT, phaseParam, casterEntity, serDamage, 0)
+        table.insert(abstractDamageResults, self:_GetAbstractDamageResultString(serDamage, damageResultIndex))
+      end
+    end
+  end
+  local trajectoryCreateDelay = phaseParam:GetTrajectoryCreateDelay()
+  trajectoryCreateDelay = math.max(0, trajectoryCreateDelay - sidesDamageDelay)
+  YIELD(TT, trajectoryCreateDelay)
+  local maxEndTime = 0
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local trajectoryEffectID = phaseParam:GetTrajectoryEffectID()
+  local trajectories = {}
+  for _, posInfo in pairs(targetColumnOrRow) do
+    maxEndTime = math.max(maxEndTime, self:_CreateTrajectories(posInfo, phaseParam, trajectories, casterPos))
+  end
+  local beginDelayTime = phaseParam:GetBeginDelayTime()
+  beginDelayTime = beginDelayTime - trajectoryCreateDelay - sidesDamageDelay
+  YIELD(TT, beginDelayTime)
+  maxEndTime = maxEndTime + GameGlobal:GetInstance():GetCurrentTime()
+  self:_InitFlyPosList()
+  local finishEffEntities = {}
+  local trajectoryFinishEffectID = phaseParam:GetTrajectoryFinishEffectID()
+  for _, trajectoryInfo in ipairs(trajectories) do
+    local trajectoryObject = trajectoryInfo.entity:View():GetGameObject()
+    local transWork = trajectoryObject.transform
+    local gridWorldpos = boardServiceRender:GridPos2RenderPos(trajectoryInfo.target)
+    local easeWork = transWork:DOMove(gridWorldpos, trajectoryInfo.flyTime, false):SetEase(DG.Tweening.Ease.InOutSine)
+    local tailEntity = trajectoryInfo.tailEntity
+    local tailObject, tailEaseWork
+    if tailEntity then
+      tailObject = trajectoryInfo.tailEntity:View():GetGameObject()
+      local transWork = tailObject.transform
+      local gridWorldpos = boardServiceRender:GridPos2RenderPos(trajectoryInfo.target)
+      tailEaseWork = transWork:DOMove(gridWorldpos, trajectoryInfo.flyTime, false):SetEase(DG.Tweening.Ease.InOutSine)
+    end
+    if easeWork then
+      easeWork:OnComplete(function()
+        self._world:DestroyEntity(trajectoryInfo.entity)
+        if trajectoryFinishEffectID then
+          table.insert(finishEffEntities, effectService:CreateCommonGridEffect(trajectoryFinishEffectID, trajectoryInfo.target, trajectoryInfo.direction))
+        end
+      end)
+    end
+    if tailEaseWork then
+      tailEaseWork:OnComplete(function()
+        GameGlobal.TaskManager():CoreGameStartTask(function(T2)
+          local tailDismissDelay = phaseParam:GetTailDismissDelay()
+          if tailDismissDelay then
+            YIELD(T2, tailDismissDelay)
           end
+          if trajectoryInfo and trajectoryInfo.tailEntity then
+            self._world:DestroyEntity(trajectoryInfo.tailEntity)
+          end
+        end)
+      end)
+    end
+  end
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local taskIDArray = {}
+  local allDamageResult = skillEffectResultContainer:GetEffectResultsByType(SkillEffectType.Damage)
+  local t = {}
+  for _, trajectoryInfo in ipairs(trajectories) do
+    local dir = trajectoryInfo.begin - trajectoryInfo.target
+    local totalDis = Vector2.Distance(trajectoryInfo.begin, trajectoryInfo.target)
+    for damageResultIndex, damageResult in ipairs(allDamageResult.array) do
+      if not table.icontains(abstractDamageResults, self:_GetAbstractDamageResultString(damageResult, damageResultIndex)) then
+        local gridPos = damageResult:GetGridPos()
+        local vd = gridPos - trajectoryInfo.target
+        local vs = gridPos - trajectoryInfo.begin
+        if vs.x * vd.x <= 0 and vs.y * vd.y <= 0 then
+          local dis = Vector2.Distance(trajectoryInfo.begin, gridPos)
+          local time = 0
+          if 0 < totalDis then
+            local percent = dis / totalDis
+            time = percent * trajectoryInfo.flyTime * 1000
+          end
+          table.insert(t, GameGlobal.TaskManager():CoreGameStartTask(self._DoHit, self, phaseParam, casterEntity, damageResult, time))
+          table.insert(abstractDamageResults, self:_GetAbstractDamageResultString(damageResult, damageResultIndex))
         end
       end
     end
   end
+  local trajectoryFinishEffectTime = phaseParam:GetTrajectoryFinishEffectTime()
+  YIELD(TT, trajectoryFinishEffectTime)
+  for damageResultIndex, damageResult in ipairs(allDamageResult.array) do
+    if not table.icontains(abstractDamageResults, self:_GetAbstractDamageResultString(damageResult, damageResultIndex)) then
+      Log.fatal(self._className, "存在未能正确播放的伤害")
+      table.insert(t, GameGlobal.TaskManager():CoreGameStartTask(self._DoHit, self, phaseParam, casterEntity, damageResult, 0))
+      table.insert(abstractDamageResults, self:_GetAbstractDamageResultString(damageResult, damageResultIndex))
+    end
+  end
+  local finishDelayTime = phaseParam:GetFinishDelayTime()
+  if finishDelayTime then
+    YIELD(TT, finishDelayTime)
+  end
+  for i = 1, #finishEffEntities do
+    self._world:DestroyEntity(finishEffEntities[i])
+  end
+  finishEffEntities = {}
+  return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._GetMinMaxInRange = function(self, range, isHorizontal)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillPhaseScopeTrajectory:_GetMinMaxInRange(range, isHorizontal)
   local coordMinMax = {}
   if isHorizontal then
-    for _,gridPos in ipairs(range) do
+    for _, gridPos in ipairs(range) do
       if not coordMinMax[gridPos.y] then
-        coordMinMax[gridPos.y] = {min = gridPos.x, max = gridPos.x}
+        coordMinMax[gridPos.y] = {
+          min = gridPos.x,
+          max = gridPos.x
+        }
       end
       local tbl = coordMinMax[gridPos.y]
-      tbl.min = (math.min)(tbl.min, gridPos.x)
-      tbl.max = (math.max)(tbl.max, gridPos.x)
+      tbl.min = math.min(tbl.min, gridPos.x)
+      tbl.max = math.max(tbl.max, gridPos.x)
     end
   else
-    do
-      for _,gridPos in ipairs(range) do
-        if not coordMinMax[gridPos.x] then
-          coordMinMax[gridPos.x] = {min = gridPos.y, max = gridPos.y}
-        end
-        local tbl = coordMinMax[gridPos.x]
-        tbl.min = (math.min)(tbl.min, gridPos.y)
-        tbl.max = (math.max)(tbl.max, gridPos.y)
+    for _, gridPos in ipairs(range) do
+      if not coordMinMax[gridPos.x] then
+        coordMinMax[gridPos.x] = {
+          min = gridPos.y,
+          max = gridPos.y
+        }
       end
-      do
-        return coordMinMax
-      end
+      local tbl = coordMinMax[gridPos.x]
+      tbl.min = math.min(tbl.min, gridPos.y)
+      tbl.max = math.max(tbl.max, gridPos.y)
     end
   end
+  return coordMinMax
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._GetFlyTimeInSecond = function(self, cfgTotalTime, cfgTrajectoryTime, target, begin)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillPhaseScopeTrajectory:_GetFlyTimeInSecond(cfgTotalTime, cfgTrajectoryTime, target, begin)
   local totalTime = cfgTotalTime
   local flyTime = totalTime and totalTime * 0.001 or nil
   if not flyTime then
     local nTrajectoryTime = cfgTrajectoryTime
-    local disx = (math.abs)(target.x - begin.x)
-    local disy = (math.abs)(target.y - begin.y)
-    local dis = (math.sqrt)(disx * disx + disy * disy)
+    local disx = math.abs(target.x - begin.x)
+    local disy = math.abs(target.y - begin.y)
+    local dis = math.sqrt(disx * disx + disy * disy)
     totalTime = dis * nTrajectoryTime
     flyTime = totalTime * 0.001
   end
-  do
-    return flyTime, totalTime
-  end
+  return flyTime, totalTime
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._GetHorizontalBeginAndTarget = function(self, casterPos, gridPos, coordMinMax)
-  -- function num : 0_3
+function PlaySkillPhaseScopeTrajectory:_GetHorizontalBeginAndTarget(casterPos, gridPos, coordMinMax)
   local beginLeftX = casterPos.x - 1
   local beginRightX = casterPos.x + 1
   local beginY = gridPos.y
   local minMax = coordMinMax[beginY]
-  return {beginPosA = self:_TryGetValidPiecePos(beginLeftX, beginY), beginPosB = self:_TryGetValidPiecePos(beginRightX, beginY), targetPosA = self:_TryGetValidPiecePos(minMax.min, beginY), targetPosB = self:_TryGetValidPiecePos(minMax.max, beginY)}
+  return {
+    beginPosA = self:_TryGetValidPiecePos(beginLeftX, beginY),
+    beginPosB = self:_TryGetValidPiecePos(beginRightX, beginY),
+    targetPosA = self:_TryGetValidPiecePos(minMax.min, beginY),
+    targetPosB = self:_TryGetValidPiecePos(minMax.max, beginY)
+  }
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._GetVerticalBeginAndTarget = function(self, casterPos, gridPos, coordMinMax)
-  -- function num : 0_4
+function PlaySkillPhaseScopeTrajectory:_GetVerticalBeginAndTarget(casterPos, gridPos, coordMinMax)
   local beginX = gridPos.x
   local beginUpY = casterPos.y + 1
   local beginDownY = casterPos.y - 1
   local minMax = coordMinMax[beginX]
-  return {beginPosA = self:_TryGetValidPiecePos(beginX, beginDownY), beginPosB = self:_TryGetValidPiecePos(beginX, beginUpY), targetPosA = self:_TryGetValidPiecePos(beginX, minMax.min), targetPosB = self:_TryGetValidPiecePos(beginX, minMax.max)}
+  return {
+    beginPosA = self:_TryGetValidPiecePos(beginX, beginDownY),
+    beginPosB = self:_TryGetValidPiecePos(beginX, beginUpY),
+    targetPosA = self:_TryGetValidPiecePos(beginX, minMax.min),
+    targetPosB = self:_TryGetValidPiecePos(beginX, minMax.max)
+  }
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._TryGetValidPiecePos = function(self, x, y)
-  -- function num : 0_5 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local pos = (Vector2.New)(x, y)
+function PlaySkillPhaseScopeTrajectory:_TryGetValidPiecePos(x, y)
+  local utilDataSvc = self._world:GetService("UtilData")
+  local pos = Vector2.New(x, y)
   local boardMaxX = utilDataSvc:GetCurBoardMaxX()
   local boardMaxY = utilDataSvc:GetCurBoardMaxY()
   if x < 1 then
     pos.x = 1
-  else
-    if boardMaxX < x then
-      pos.x = boardMaxX
-    end
+  elseif x > boardMaxX then
+    pos.x = boardMaxX
   end
   if y < 1 then
     pos.y = 1
-  else
-    if boardMaxY < y then
-      pos.y = boardMaxY
-    end
+  elseif y > boardMaxY then
+    pos.y = boardMaxY
   end
   return pos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._CreateTrajectories = function(self, posInfo, phaseParam, trajectories, casterPos)
-  -- function num : 0_6 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
+function PlaySkillPhaseScopeTrajectory:_CreateTrajectories(posInfo, phaseParam, trajectories, casterPos)
+  local effectService = self._world:GetService("Effect")
   local trajectoryEffectID = phaseParam:GetTrajectoryEffectID()
   local beginPosA = posInfo.beginPosA
   local beginPosB = posInfo.beginPosB
   local targetPosA = posInfo.targetPosA
   local targetPosB = posInfo.targetPosB
-  local utilScope = (self._world):GetService("UtilScopeCalc")
+  local utilScope = self._world:GetService("UtilScopeCalc")
   if not utilScope:IsValidPiecePos(beginPosA) then
     targetPosA = beginPosA
   end
@@ -325,112 +262,92 @@ PlaySkillPhaseScopeTrajectory._CreateTrajectories = function(self, posInfo, phas
   local trajectoryEndOffset = phaseParam:GetTrajectoryFlightEndOffset()
   local totalTimeA = 0
   local totalTimeB = 0
-  do
-    if beginPosA and targetPosA then
-      local trajectoryInfo, totalTime = self:_CreateSingleTrajectory(beginPosA, targetPosA, trajectoryEffectID, trajectoryFollowingEffectID, cfgTotalTime, cfgTrajectoryTime, isHorizontal, casterPos, trajectoryEndOffset)
-      ;
-      (table.insert)(trajectories, trajectoryInfo)
-      totalTimeA = totalTime
-    end
-    do
-      if beginPosB and targetPosB then
-        local trajectoryInfo, totalTime = self:_CreateSingleTrajectory(beginPosB, targetPosB, trajectoryEffectID, trajectoryFollowingEffectID, cfgTotalTime, cfgTrajectoryTime, isHorizontal, casterPos, trajectoryEndOffset)
-        ;
-        (table.insert)(trajectories, trajectoryInfo)
-        totalTimeB = totalTime
-      end
-      return (math.max)(totalTimeA, totalTimeB)
-    end
+  if beginPosA and targetPosA then
+    local trajectoryInfo, totalTime = self:_CreateSingleTrajectory(beginPosA, targetPosA, trajectoryEffectID, trajectoryFollowingEffectID, cfgTotalTime, cfgTrajectoryTime, isHorizontal, casterPos, trajectoryEndOffset)
+    table.insert(trajectories, trajectoryInfo)
+    totalTimeA = totalTime
   end
+  if beginPosB and targetPosB then
+    local trajectoryInfo, totalTime = self:_CreateSingleTrajectory(beginPosB, targetPosB, trajectoryEffectID, trajectoryFollowingEffectID, cfgTotalTime, cfgTrajectoryTime, isHorizontal, casterPos, trajectoryEndOffset)
+    table.insert(trajectories, trajectoryInfo)
+    totalTimeB = totalTime
+  end
+  return math.max(totalTimeA, totalTimeB)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._CreateSingleTrajectory = function(self, beginPos, targetPos, fxID, trailFxID, cfgTotalTime, cfgTrajectoryTime, isHorizontal, casterPos, trajectoryEndOffset)
-  -- function num : 0_7 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
+function PlaySkillPhaseScopeTrajectory:_CreateSingleTrajectory(beginPos, targetPos, fxID, trailFxID, cfgTotalTime, cfgTrajectoryTime, isHorizontal, casterPos, trajectoryEndOffset)
+  local effectService = self._world:GetService("Effect")
   local direction = targetPos - beginPos
   if direction == Vector2.zero then
     if isHorizontal then
       local minMax = self:_GetMinMaxGridXByGridY(targetPos.y)
-      if minMax.max <= targetPos.x then
+      if targetPos.x >= minMax.max then
         direction.x = 1
       else
         direction.x = -1
       end
     else
-      do
-        do
-          local minMax = self:_GetMinMaxGridYByGridX(targetPos.x)
-          if minMax.max <= targetPos.y then
-            direction.y = 1
-          else
-            direction.y = -1
-          end
-          if direction.x > 0 then
-            direction.x = 1
-          else
-            if direction.x < 0 then
-              direction.x = -1
-            end
-          end
-          if direction.y > 0 then
-            direction.y = 1
-          else
-            if direction.y < 0 then
-              direction.y = -1
-            end
-          end
-          local finalPos = targetPos + direction * trajectoryEndOffset
-          local fxEntity = effectService:CreateWorldPositionDirectionEffect(fxID, beginPos, direction)
-          local flyTime, totalTime = self:_GetFlyTimeInSecond(cfgTotalTime, cfgTrajectoryTime, finalPos, beginPos)
-          local trailFxEntity = nil
-          if trailFxID then
-            trailFxEntity = effectService:CreateWorldPositionDirectionEffect(trailFxID, beginPos, direction)
-          end
-          return {entity = fxEntity, begin = beginPos, target = finalPos, flyTime = flyTime, tailEntity = trailFxEntity, currentGridPos = beginPos, direction = direction}, totalTime
-        end
+      local minMax = self:_GetMinMaxGridYByGridX(targetPos.x)
+      if targetPos.y >= minMax.max then
+        direction.y = 1
+      else
+        direction.y = -1
       end
     end
   end
+  if direction.x > 0 then
+    direction.x = 1
+  elseif direction.x < 0 then
+    direction.x = -1
+  end
+  if direction.y > 0 then
+    direction.y = 1
+  elseif direction.y < 0 then
+    direction.y = -1
+  end
+  local finalPos = targetPos + direction * trajectoryEndOffset
+  local fxEntity = effectService:CreateWorldPositionDirectionEffect(fxID, beginPos, direction)
+  local flyTime, totalTime = self:_GetFlyTimeInSecond(cfgTotalTime, cfgTrajectoryTime, finalPos, beginPos)
+  local trailFxEntity
+  if trailFxID then
+    trailFxEntity = effectService:CreateWorldPositionDirectionEffect(trailFxID, beginPos, direction)
+  end
+  return {
+    entity = fxEntity,
+    begin = beginPos,
+    target = finalPos,
+    flyTime = flyTime,
+    tailEntity = trailFxEntity,
+    currentGridPos = beginPos,
+    direction = direction
+  }, totalTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._CalcGridRenderMinAndMax = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function PlaySkillPhaseScopeTrajectory:_CalcGridRenderMinAndMax()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
   local gridEntityTable = renderBoardCmpt:GetGridRenderEntityTable()
   local columnXMinMax = {}
   local rowYMinMax = {}
-  for x,col in pairs(gridEntityTable) do
-    for y,gridEntity in pairs(col) do
+  for x, col in pairs(gridEntityTable) do
+    for y, gridEntity in pairs(col) do
       if not columnXMinMax[y] then
         columnXMinMax[y] = {}
       end
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R16 in 'UnsetPending'
-
-      if not (columnXMinMax[y]).min or x < (columnXMinMax[y]).min then
-        (columnXMinMax[y]).min = x
+      if not columnXMinMax[y].min or x < columnXMinMax[y].min then
+        columnXMinMax[y].min = x
       end
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R16 in 'UnsetPending'
-
-      if not (columnXMinMax[y]).max or (columnXMinMax[y]).max < x then
-        (columnXMinMax[y]).max = x
+      if not columnXMinMax[y].max or x > columnXMinMax[y].max then
+        columnXMinMax[y].max = x
       end
       if not rowYMinMax[x] then
         rowYMinMax[x] = {}
       end
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R16 in 'UnsetPending'
-
-      if not (rowYMinMax[x]).min or y < (rowYMinMax[x]).min then
-        (rowYMinMax[x]).min = y
+      if not rowYMinMax[x].min or y < rowYMinMax[x].min then
+        rowYMinMax[x].min = y
       end
-      -- DECOMPILER ERROR at PC66: Confused about usage of register: R16 in 'UnsetPending'
-
-      if not (rowYMinMax[x]).max or (rowYMinMax[x]).max < y then
-        (rowYMinMax[x]).max = y
+      if not rowYMinMax[x].max or y > rowYMinMax[x].max then
+        rowYMinMax[x].max = y
       end
     end
   end
@@ -438,89 +355,68 @@ PlaySkillPhaseScopeTrajectory._CalcGridRenderMinAndMax = function(self)
   self._rowYMinMax = rowYMinMax
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._GetMinMaxGridXByGridY = function(self, y)
-  -- function num : 0_9
-  return (self._columnXMinMax)[y]
+function PlaySkillPhaseScopeTrajectory:_GetMinMaxGridXByGridY(y)
+  return self._columnXMinMax[y]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._GetMinMaxGridYByGridX = function(self, x)
-  -- function num : 0_10
-  return (self._rowYMinMax)[x]
+function PlaySkillPhaseScopeTrajectory:_GetMinMaxGridYByGridX(x)
+  return self._rowYMinMax[x]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._GetEntityPosByView = function(self, entityWork)
-  -- function num : 0_11
+function PlaySkillPhaseScopeTrajectory:_GetEntityPosByView(entityWork)
   local effectViewCmpt = entityWork:View()
-  if effectViewCmpt == nil then
+  if nil == effectViewCmpt then
     return nil
   end
   local effectObject = effectViewCmpt:GetGameObject()
-  if effectObject == nil then
+  if nil == effectObject then
     return nil
   end
   local effectTrans = effectObject.transform
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local posReturn = boardServiceRender:BoardRenderPos2GridPos(effectTrans.position)
   return posReturn
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._PlayTargetEffect = function(self, TT, phaseParam, posStart, posEnd)
-  -- function num : 0_12 , upvalues : _ENV
+function PlaySkillPhaseScopeTrajectory:_PlayTargetEffect(TT, phaseParam, posStart, posEnd)
   local nEffectID = phaseParam:GetTargetEffectID()
   local nShowTime = phaseParam:GetTargetDelayTime()
-  if nEffectID == nil or nEffectID <= 0 then
-    return 
+  if nil == nEffectID or nEffectID <= 0 then
+    return
   end
-  local effectService = (self._world):GetService("Effect")
+  local effectService = self._world:GetService("Effect")
   local posDirectory = posEnd - posStart
   local entityEffect = effectService:CreateWorldPositionDirectionEffect(nEffectID, posEnd, posDirectory)
   YIELD(TT, nShowTime)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._PlayHitEffect = function(self, TT, phaseParam, entityCast, entityTarget, damageData, damagePos, isFinalHit, nSkillID)
-  -- function num : 0_13 , upvalues : _ENV
+function PlaySkillPhaseScopeTrajectory:_PlayHitEffect(TT, phaseParam, entityCast, entityTarget, damageData, damagePos, isFinalHit, nSkillID)
   local hitAnimationName = phaseParam:GetHitAnimation()
   local hitEffectID = phaseParam:GetHitEffectID()
   local skillService = self:SkillService()
-  local beHitParam = (((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(entityCast)):SetHandleBeHitParam_TargetEntity(entityTarget)):SetHandleBeHitParam_HitAnimName(hitAnimationName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(damageData)):SetHandleBeHitParam_DamagePos(damagePos)):SetHandleBeHitParam_DeathClear(phaseParam:IsClearBodyNow())):SetHandleBeHitParam_IsFinalHit(isFinalHit)):SetHandleBeHitParam_SkillID(nSkillID)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(entityCast):SetHandleBeHitParam_TargetEntity(entityTarget):SetHandleBeHitParam_HitAnimName(hitAnimationName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(damageData):SetHandleBeHitParam_DamagePos(damagePos):SetHandleBeHitParam_DeathClear(phaseParam:IsClearBodyNow()):SetHandleBeHitParam_IsFinalHit(isFinalHit):SetHandleBeHitParam_SkillID(nSkillID)
   skillService:HandleBeHit(TT, beHitParam)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._DoHit = function(self, TT, phaseParam, casterEntity, serDamage, delay)
-  -- function num : 0_14 , upvalues : _ENV
-  if type(delay) == "number" and delay >= 0 then
+function PlaySkillPhaseScopeTrajectory:_DoHit(TT, phaseParam, casterEntity, serDamage, delay)
+  if type(delay) == "number" and 0 <= delay then
     YIELD(TT, delay)
   end
   local damageData = serDamage:GetDamageInfo(phaseParam:GetDamageIndex())
   if not damageData then
-    return 
+    return
   end
   local hitAnimationName = phaseParam:GetHitAnimation()
   local hitEffectID = phaseParam:GetHitEffectID()
   local world = casterEntity:GetOwnerWorld()
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local playSkillService = self:SkillService()
-  local beHitParam = (((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(world:GetEntityByID(serDamage:GetTargetID()))):SetHandleBeHitParam_HitAnimName(hitAnimationName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(damageData)):SetHandleBeHitParam_DamagePos(serDamage:GetGridPos())):SetHandleBeHitParam_DeathClear(phaseParam:IsClearBodyNow())):SetHandleBeHitParam_IsFinalHit(routineComponent:IsFinalAttack())):SetHandleBeHitParam_SkillID(routineComponent:GetSkillID())
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(world:GetEntityByID(serDamage:GetTargetID())):SetHandleBeHitParam_HitAnimName(hitAnimationName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(damageData):SetHandleBeHitParam_DamagePos(serDamage:GetGridPos()):SetHandleBeHitParam_DeathClear(phaseParam:IsClearBodyNow()):SetHandleBeHitParam_IsFinalHit(routineComponent:IsFinalAttack()):SetHandleBeHitParam_SkillID(routineComponent:GetSkillID())
   playSkillService:HandleBeHit(TT, beHitParam)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._OnFlyAttack = function(self, TT, nSkillID, phaseParam, entityCaster, entityTarget, damageData, posStart, posEnd, isFinalHit)
-  -- function num : 0_15
-  local skillEffectResultContainer = (entityCaster:SkillRoutine()):GetResultContainer()
+function PlaySkillPhaseScopeTrajectory:_OnFlyAttack(TT, nSkillID, phaseParam, entityCaster, entityTarget, damageData, posStart, posEnd, isFinalHit)
+  local skillEffectResultContainer = entityCaster:SkillRoutine():GetResultContainer()
   local isFinalHit = skillEffectResultContainer:IsFinalAttack()
   self:_PlayTargetEffect(TT, phaseParam, posStart, posEnd)
   if damageData then
@@ -528,33 +424,21 @@ PlaySkillPhaseScopeTrajectory._OnFlyAttack = function(self, TT, nSkillID, phaseP
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._InitFlyPosList = function(self)
-  -- function num : 0_16
+function PlaySkillPhaseScopeTrajectory:_InitFlyPosList()
   self.m_listFlyPos = {}
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._IsHaveFlyPosList = function(self, pos)
-  -- function num : 0_17 , upvalues : _ENV
-  if (table.icontains)(self.m_listFlyPos, pos) then
+function PlaySkillPhaseScopeTrajectory:_IsHaveFlyPosList(pos)
+  if table.icontains(self.m_listFlyPos, pos) then
     return true
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_listFlyPos)[#self.m_listFlyPos + 1] = pos
+  self.m_listFlyPos[#self.m_listFlyPos + 1] = pos
   return false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._FindFlyDamageResult = function(self, skillEffectResultContainer, posFly, posStart, posEnd, nCheckRange)
-  -- function num : 0_18 , upvalues : _ENV
+function PlaySkillPhaseScopeTrajectory:_FindFlyDamageResult(skillEffectResultContainer, posFly, posStart, posEnd, nCheckRange)
   local dir = posStart - posEnd
-  local dirTemp = (Vector2.New)((math.abs)(dir.x), (math.abs)(dir.y))
+  local dirTemp = Vector2.New(math.abs(dir.x), math.abs(dir.y))
   if dirTemp.x > 0 then
     dir.x = dir.x / dirTemp.x
   end
@@ -566,7 +450,7 @@ PlaySkillPhaseScopeTrajectory._FindFlyDamageResult = function(self, skillEffectR
     local posNew = posFly + dir * (nCheckRange - i)
     if posNew.x > 0 and posNew.y > 0 then
       local damageResult = skillEffectResultContainer:GetEffectResultByPos(SkillEffectType.Damage, posNew)
-      if damageResult and self:_IsHaveFlyPosList(posNew) == false then
+      if damageResult and false == self:_IsHaveFlyPosList(posNew) then
         listDamageData[posNew] = damageResult
       end
     end
@@ -574,11 +458,8 @@ PlaySkillPhaseScopeTrajectory._FindFlyDamageResult = function(self, skillEffectR
   return listDamageData
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._IsPosAttacked = function(self, pos)
-  -- function num : 0_19 , upvalues : _ENV
-  for _,v2 in ipairs(self._attackedPosArray) do
+function PlaySkillPhaseScopeTrajectory:_IsPosAttacked(pos)
+  for _, v2 in ipairs(self._attackedPosArray) do
     if pos == v2 then
       return true
     end
@@ -586,18 +467,10 @@ PlaySkillPhaseScopeTrajectory._IsPosAttacked = function(self, pos)
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._AddAttackedPos = function(self, pos)
-  -- function num : 0_20 , upvalues : _ENV
-  (table.insert)(self._attackedPosArray, pos)
+function PlaySkillPhaseScopeTrajectory:_AddAttackedPos(pos)
+  table.insert(self._attackedPosArray, pos)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillPhaseScopeTrajectory._GetAbstractDamageResultString = function(self, damageResult, damageResultIndex)
-  -- function num : 0_21 , upvalues : _ENV
-  return (string.format)("%s_%s_%s", tostring(damageResult:GetTargetID()), tostring(damageResult:GetGridPos()), tostring(damageResultIndex))
+function PlaySkillPhaseScopeTrajectory:_GetAbstractDamageResultString(damageResult, damageResultIndex)
+  return string.format("%s_%s_%s", tostring(damageResult:GetTargetID()), tostring(damageResult:GetGridPos()), tostring(damageResultIndex))
 end
-
-

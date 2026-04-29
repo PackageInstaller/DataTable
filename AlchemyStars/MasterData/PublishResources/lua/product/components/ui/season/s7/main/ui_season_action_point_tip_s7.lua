@@ -1,72 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s7/main/ui_season_action_point_tip_s7.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonActionPointTipS7", UIController)
 UISeasonActionPointTipS7 = UISeasonActionPointTipS7
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonActionPointTipS7.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonActionPointTipS7:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonActionPointTipS7.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonActionPointTipS7:OnShow(uiParams)
   self:InitWidget()
   self._cpt = uiParams[1]
   local pos = uiParams[2]
   self._onHide = uiParams[3]
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.root).anchoredPosition = pos + Vector2(-20, 0)
-  local remainTime = (self._cpt):GetRegainEndTime()
+  self.root.anchoredPosition = pos + Vector2(-20, 0)
+  local remainTime = self._cpt:GetRegainEndTime()
   if remainTime <= 0 then
     self._countdownStop = true
   end
   if not self._countdownStop then
     self._targetTime = remainTime + 1
-    self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_1_0 , upvalues : self
-    self:_Countdown()
-  end
-)
+    self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:_Countdown()
+    end)
   end
   self:_Countdown()
-  local itemID = (self._cpt):GetItemId()
-  local tipCfg = (Cfg.cfg_top_tips)[itemID]
+  local itemID = self._cpt:GetItemId()
+  local tipCfg = Cfg.cfg_top_tips[itemID]
   local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = atlas:GetSprite(tipCfg.Icon)
-  ;
-  (self.itemName):SetText((StringTable.Get)(tipCfg.Title))
-  ;
-  (self.desText):SetText((StringTable.Get)(tipCfg.Intr))
+  self.icon.sprite = atlas:GetSprite(tipCfg.Icon)
+  self.itemName:SetText(StringTable.Get(tipCfg.Title))
+  self.desText:SetText(StringTable.Get(tipCfg.Intr))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonActionPointTipS7.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonActionPointTipS7:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   if self._onHide then
-    (self._onHide)()
+    self._onHide()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonActionPointTipS7.InitWidget = function(self)
-  -- function num : 0_3
+function UISeasonActionPointTipS7:InitWidget()
   self.icon = self:GetUIComponent("Image", "Icon")
   self.itemName = self:GetUIComponent("UILocalizationText", "ItemName")
   self.countdown = self:GetGameObject("Countdown")
@@ -75,49 +49,33 @@ UISeasonActionPointTipS7.InitWidget = function(self)
   self.root = self:GetUIComponent("RectTransform", "Root")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonActionPointTipS7.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonActionPointTipS7:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonActionPointTipS7._Countdown = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonActionPointTipS7:_Countdown()
   if self._countdownStop then
-    (self.time):SetText("--:--:--")
-    return 
+    self.time:SetText("--:--:--")
+    return
   end
   local now = GetSvrTimeNow()
   local time = self._targetTime - now
-  local timeStr = (HelperProxy:GetInstance()):FormatTime(time)
-  ;
-  (self.time):SetText(timeStr)
+  local timeStr = HelperProxy:GetInstance():FormatTime(time)
+  self.time:SetText(timeStr)
   if time <= 0 then
     self:StartTask(self._ReqFlush, self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonActionPointTipS7._ReqFlush = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonActionPointTipS7:_ReqFlush(TT)
   local res = AsyncRequestRes:New()
-  ;
-  (self._cpt):HandleActionPointData(TT, res)
+  self._cpt:HandleActionPointData(TT, res)
   if res:GetSucc() then
     self:DispatchEvent(GameEventType.OnSeasonActionPointChanged)
   else
-    ;
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
-    ;
-    (Log.error)("请求刷新行动点失败:", res:GetResult())
-    ;
-    (self:GetModule(SeasonModule)):CheckSeasonClose(res)
+    Log.error("请求刷新行动点失败:", res:GetResult())
+    self:GetModule(SeasonModule):CheckSeasonClose(res)
   end
 end
-
-

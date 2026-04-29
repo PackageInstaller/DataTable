@@ -1,24 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_show_hide_select_team_pos_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewShowHideSelectTeamPosInstruction", SkillPreviewBaseInstruction)
 SkillPreviewShowHideSelectTeamPosInstruction = SkillPreviewShowHideSelectTeamPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewShowHideSelectTeamPosInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewShowHideSelectTeamPosInstruction:Constructor(params)
   self._show = params.show == "true"
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewShowHideSelectTeamPosInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BattleUIShowHideSelectTeamPositionButton, (casterEntity:PetPstID()):GetPstID(), self._show)
+function SkillPreviewShowHideSelectTeamPosInstruction:DoInstruction(TT, casterEntity, previewContext)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BattleUIShowHideSelectTeamPositionButton, casterEntity:PetPstID():GetPstID(), self._show)
 end
-
-

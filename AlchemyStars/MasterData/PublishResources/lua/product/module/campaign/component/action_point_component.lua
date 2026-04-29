@@ -1,160 +1,106 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/action_point_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("ActionPointComponent", ICampaignComponent)
 ActionPointComponent = ActionPointComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionPointComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionPointComponent:Constructor()
   self.m_component_info = ActionPointComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionPointComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = ActionPointComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function ActionPointComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ActionPointComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_ACTION_POINT
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function ActionPointComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.HandleActionPointData = function(self, TT, asyncRes)
-  -- function num : 0_5 , upvalues : _ENV
+function ActionPointComponent:HandleActionPointData(TT, asyncRes)
   local request = ActionPointDataReq:New()
   local response = ActionPointDataReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
     asyncRes:SetResult(asyncRes.m_result)
-    ;
-    (Log.error)("[CampaignCom][ActionPointComponent] HandleActionPointData ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][ActionPointComponent] HandleActionPointData ret:", asyncRes.m_result)
     return nil
   end
   ComponentInfo.m_info = response.m_info
   return response
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetRegainEndTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self.m_component_info).m_info == nil then
+function ActionPointComponent:GetRegainEndTime()
+  if self.m_component_info.m_info == nil then
     return 0
   end
-  for key,value in pairs((self.m_component_info).m_info) do
-    do return value.m_end_time end
+  for key, value in pairs(self.m_component_info.m_info) do
+    return value.m_end_time
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetEndTime = function(self, cfgID)
-  -- function num : 0_7
-  if (self.m_component_info).m_info == nil then
+function ActionPointComponent:GetEndTime(cfgID)
+  if self.m_component_info.m_info == nil then
     return 0
   end
-  if ((self.m_component_info).m_info)[cfgID] == nil then
+  if self.m_component_info.m_info[cfgID] == nil then
     return 0
   end
-  return (((self.m_component_info).m_info)[cfgID]).m_end_time
+  return self.m_component_info.m_info[cfgID].m_end_time
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetActionPointCfgMap = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ActionPointComponent:GetActionPointCfgMap()
   local componentId = self:GetComponentCfgId()
-  local cfgMap = (Cfg.cfg_component_action_point)({ComponentID = componentId})
+  local cfgMap = Cfg.cfg_component_action_point({ComponentID = componentId})
   if cfgMap == nil then
-    (Log.exception)("cfg_component_action_point中找不到组件ID:", componentId)
+    Log.exception("cfg_component_action_point中找不到组件ID:", componentId)
     return nil
   end
   return cfgMap
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetActionPointConfig = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ActionPointComponent:GetActionPointConfig()
   local componentId = self:GetComponentCfgId()
-  local cfg = (Cfg.cfg_component_action_point)({ComponentID = componentId})
+  local cfg = Cfg.cfg_component_action_point({ComponentID = componentId})
   if cfg == nil then
-    (Log.exception)("cfg_component_action_point中找不到组件ID:", componentId)
+    Log.exception("cfg_component_action_point中找不到组件ID:", componentId)
     return nil
   end
   return cfg[1]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetItemId = function(self)
-  -- function num : 0_10
+function ActionPointComponent:GetItemId()
   local cfg = self:GetActionPointConfig()
   return cfg and cfg.ItemID or 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetItemCount = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function ActionPointComponent:GetItemCount()
   local cfg = self:GetActionPointConfig()
   if cfg then
-    local module = (GameGlobal.GetModule)(ItemModule)
+    local module = GameGlobal.GetModule(ItemModule)
     local count = module:GetItemCount(self:GetItemId()) or 0
     local ceiling = cfg.RegainMax
     return count, ceiling
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetItemIcon = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfg = (Cfg.cfg_top_tips)[self:GetItemId()]
-  if cfg then
-    return cfg.Icon
-  end
+function ActionPointComponent:GetItemIcon()
+  local cfg = Cfg.cfg_top_tips[self:GetItemId()]
+  return cfg and cfg.Icon
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionPointComponent.GetItemReplaceIcon = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg = (Cfg.cfg_top_tips)[self:GetItemId()]
-  if cfg then
-    return cfg.ReplaceIcon
-  end
+function ActionPointComponent:GetItemReplaceIcon()
+  local cfg = Cfg.cfg_top_tips[self:GetItemId()]
+  return cfg and cfg.ReplaceIcon
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/linkage_num_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkageNumComponent", Object)
 LinkageNumComponent = LinkageNumComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkageNumComponent.Constructor = function(self, linkageNumOffset)
-  -- function num : 0_0 , upvalues : _ENV
+function LinkageNumComponent:Constructor(linkageNumOffset)
   self._linkageNumOffset = Vector3(linkageNumOffset[1], linkageNumOffset[2], 0)
   self._pathCountText = nil
   self._linkCount = 0
@@ -19,203 +12,139 @@ LinkageNumComponent.Constructor = function(self, linkageNumOffset)
   self._linkRestStep = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.SetEntityConfigId = function(self, id)
-  -- function num : 0_1
+function LinkageNumComponent:SetEntityConfigId(id)
   self._entityConfigId = id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.GetEntityConfigId = function(self)
-  -- function num : 0_2
+function LinkageNumComponent:GetEntityConfigId()
   return self._entityConfigId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.GetLinkageIndex = function(self)
-  -- function num : 0_3
+function LinkageNumComponent:GetLinkageIndex()
   return self._linkCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.SetLinkNum = function(self, linkCount)
-  -- function num : 0_4
+function LinkageNumComponent:SetLinkNum(linkCount)
   self._linkCount = linkCount
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.SetLinkChainRate = function(self, rate)
-  -- function num : 0_5
+function LinkageNumComponent:SetLinkChainRate(rate)
   self._linkChainRate = rate
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.GetLinkChainRate = function(self)
-  -- function num : 0_6
+function LinkageNumComponent:GetLinkChainRate()
   return self._linkChainRate
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.SetLinkRestStep = function(self, step)
-  -- function num : 0_7
+function LinkageNumComponent:SetLinkRestStep(step)
   self._linkRestStep = step
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.GetLinkRestStep = function(self)
-  -- function num : 0_8
+function LinkageNumComponent:GetLinkRestStep()
   return self._linkRestStep
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.SetLinkLineType = function(self, linkLineType)
-  -- function num : 0_9
+function LinkageNumComponent:SetLinkLineType(linkLineType)
   self._linkLineType = linkLineType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.GetLinkLineType = function(self)
-  -- function num : 0_10
+function LinkageNumComponent:GetLinkLineType()
   return self._linkLineType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.SetLinkCount = function(self, viewRoot)
-  -- function num : 0_11 , upvalues : _ENV
+function LinkageNumComponent:SetLinkCount(viewRoot)
   if self:GetLinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
     return self:SetLinkCountForCostStep(viewRoot)
   end
   local linkCount = self._linkCount
   local realLinkCount = self._linkChainRate
-  local numMax = (GameObjectHelper.FindChild)(viewRoot.transform, "number_MAX")
-  local numRoot = (GameObjectHelper.FindChild)(viewRoot.transform, "normal")
+  local numMax = GameObjectHelper.FindChild(viewRoot.transform, "number_MAX")
+  local numRoot = GameObjectHelper.FindChild(viewRoot.transform, "normal")
   if not numMax then
-    return 
+    return
   end
-  if BattleConst.SuperChainCount <= realLinkCount then
-    (numMax.gameObject):SetActive(true)
-    ;
-    (numRoot.gameObject):SetActive(false)
-    return 
+  if realLinkCount >= BattleConst.SuperChainCount then
+    numMax.gameObject:SetActive(true)
+    numRoot.gameObject:SetActive(false)
+    return
   end
-  ;
-  (numMax.gameObject):SetActive(false)
-  ;
-  (numRoot.gameObject):SetActive(true)
-  local num = (math.floor)(realLinkCount / 10 + 1)
+  numMax.gameObject:SetActive(false)
+  numRoot.gameObject:SetActive(true)
+  local num = math.floor(realLinkCount / 10 + 1)
   local lastNum = realLinkCount
-  if lastNum >= 10 then
+  if 10 <= lastNum then
     lastNum = lastNum % 10
   end
-  local num1 = (GameObjectHelper.FindChild)(viewRoot.transform, "number_1")
-  local num2 = (GameObjectHelper.FindChild)(viewRoot.transform, "number_2")
+  local num1 = GameObjectHelper.FindChild(viewRoot.transform, "number_1")
+  local num2 = GameObjectHelper.FindChild(viewRoot.transform, "number_2")
   if not self._mpb then
-    self._mpb = (UnityEngine.MaterialPropertyBlock):New()
+    self._mpb = UnityEngine.MaterialPropertyBlock:New()
   end
-  ;
-  (self._mpb):SetInt("_StartFrame", num + 1)
-  local num1Renderer = (num1.gameObject):GetComponent(typeof(UnityEngine.Renderer))
+  self._mpb:SetInt("_StartFrame", num + 1)
+  local num1Renderer = num1.gameObject:GetComponent(typeof(UnityEngine.Renderer))
   num1Renderer:SetPropertyBlock(self._mpb)
-  ;
-  (self._mpb):SetInt("_StartFrame", lastNum + 1)
-  local num2Renderer = (num2.gameObject):GetComponent(typeof(UnityEngine.Renderer))
+  self._mpb:SetInt("_StartFrame", lastNum + 1)
+  local num2Renderer = num2.gameObject:GetComponent(typeof(UnityEngine.Renderer))
   num2Renderer:SetPropertyBlock(self._mpb)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkageNumComponent.SetLinkCountForCostStep = function(self, viewRoot)
-  -- function num : 0_12 , upvalues : _ENV
+function LinkageNumComponent:SetLinkCountForCostStep(viewRoot)
   local linkCount = self._linkCount
   local restStep = self:GetLinkRestStep()
-  local numRoot = (GameObjectHelper.FindChild)(viewRoot.transform, "normal")
-  ;
-  (numRoot.gameObject):SetActive(true)
+  local numRoot = GameObjectHelper.FindChild(viewRoot.transform, "normal")
+  numRoot.gameObject:SetActive(true)
   local firstNumber = -1
   local secondNumber = -1
-  if restStep >= 10 then
-    firstNumber = (math.floor)(restStep / 10)
+  if 10 <= restStep then
+    firstNumber = math.floor(restStep / 10)
     secondNumber = restStep % 10
   else
     firstNumber = restStep
   end
-  local num1 = (GameObjectHelper.FindChild)(viewRoot.transform, "number_1")
-  local num2 = (GameObjectHelper.FindChild)(viewRoot.transform, "number_2")
-  local numPrefix = (GameObjectHelper.FindChild)(viewRoot.transform, "number_prefix")
-  ;
-  (num1.gameObject):SetActive(true)
-  ;
-  (num2.gameObject):SetActive(secondNumber >= 0)
-  ;
-  (numPrefix.gameObject):SetActive(true)
+  local num1 = GameObjectHelper.FindChild(viewRoot.transform, "number_1")
+  local num2 = GameObjectHelper.FindChild(viewRoot.transform, "number_2")
+  local numPrefix = GameObjectHelper.FindChild(viewRoot.transform, "number_prefix")
+  num1.gameObject:SetActive(true)
+  num2.gameObject:SetActive(0 <= secondNumber)
+  numPrefix.gameObject:SetActive(true)
   if not self._mpb then
-    self._mpb = (UnityEngine.MaterialPropertyBlock):New()
+    self._mpb = UnityEngine.MaterialPropertyBlock:New()
   end
-  ;
-  (self._mpb):SetInt("_StartFrame", firstNumber + 1)
-  local num1Renderer = (num1.gameObject):GetComponent(typeof(UnityEngine.Renderer))
+  self._mpb:SetInt("_StartFrame", firstNumber + 1)
+  local num1Renderer = num1.gameObject:GetComponent(typeof(UnityEngine.Renderer))
   num1Renderer:SetPropertyBlock(self._mpb)
-  if secondNumber >= 0 then
-    (self._mpb):SetInt("_StartFrame", secondNumber + 1)
-    local num2Renderer = (num2.gameObject):GetComponent(typeof(UnityEngine.Renderer))
+  if 0 <= secondNumber then
+    self._mpb:SetInt("_StartFrame", secondNumber + 1)
+    local num2Renderer = num2.gameObject:GetComponent(typeof(UnityEngine.Renderer))
     num2Renderer:SetPropertyBlock(self._mpb)
     numRoot.localPosition = Vector3(0.2, 0, 0)
   else
     numRoot.localPosition = Vector3(0, 0, 0)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LinkageNum = function(self)
-  -- function num : 0_13
-  return self:GetComponent((self.WEComponentsEnum).LinkageNum)
+function Entity:LinkageNum()
+  return self:GetComponent(self.WEComponentsEnum.LinkageNum)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLinkageNum = function(self)
-  -- function num : 0_14
-  return self:HasComponent((self.WEComponentsEnum).LinkageNum)
+function Entity:HasLinkageNum()
+  return self:HasComponent(self.WEComponentsEnum.LinkageNum)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLinkageNum = function(self, linkageNumOffset)
-  -- function num : 0_15 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkageNum
+function Entity:AddLinkageNum(linkageNumOffset)
+  local index = self.WEComponentsEnum.LinkageNum
   local component = LinkageNumComponent:New(linkageNumOffset)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLinkageNum = function(self, linkageNumOffset)
-  -- function num : 0_16 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkageNum
+function Entity:ReplaceLinkageNum(linkageNumOffset)
+  local index = self.WEComponentsEnum.LinkageNum
   local component = LinkageNumComponent:New(linkageNumOffset)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLinkageNum = function(self)
-  -- function num : 0_17
+function Entity:RemoveLinkageNum()
   if self:HasLinkageNum() then
-    self:RemoveComponent((self.WEComponentsEnum).LinkageNum)
+    self:RemoveComponent(self.WEComponentsEnum.LinkageNum)
   end
 end
-
-

@@ -1,174 +1,120 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/main/ui_cn20_n49_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_share_controller")
 _class("UICN20N49MainController", UIShareController)
 UICN20N49MainController = UICN20N49MainController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49MainController._SetCommonTopButton = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local shareComponent = (UICN20N49Helper.GetComponent)(self._campaign, "share")
+function UICN20N49MainController:_SetCommonTopButton()
+  local shareComponent = UICN20N49Helper.GetComponent(self._campaign, "share")
   self:InitShare(shareComponent)
-  local closeCallback = function()
-    -- function num : 0_0_0 , upvalues : self
+  
+  local function closeCallback()
     self:_Back()
   end
-
-  local hideCallback = function()
-    -- function num : 0_0_1 , upvalues : self
+  
+  local function hideCallback()
     self:_HideUI()
   end
-
+  
   local showShare = true
-  local shareCallback = function()
-    -- function num : 0_0_2 , upvalues : self
+  
+  local function shareCallback()
     self:OnShare(function()
-      -- function num : 0_0_2_0 , upvalues : self
       self:_HideUI()
-      ;
-      (self:GetGameObject("_backBtns")):SetActive(false)
-      ;
-      (self:GetGameObject("_showBtn")):SetActive(true)
-      ;
-      (self:GetGameObject("_uiElements")):SetActive(false)
-    end
-, function()
-      -- function num : 0_0_2_1 , upvalues : self
+      self:GetGameObject("_backBtns"):SetActive(false)
+      self:GetGameObject("_showBtn"):SetActive(true)
+      self:GetGameObject("_uiElements"):SetActive(false)
+    end, function()
       self:_ShowUI()
-    end
-)
+    end)
   end
-
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UINewCommonTopButton")
+  
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UINewCommonTopButton")
   obj:SetData(closeCallback, nil, nil, false, hideCallback, showShare, shareCallback)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._Back = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self:Manager()):CurUIStateType() == UIStateType.UICN20N49MainController then
+function UICN20N49MainController:_Back()
+  if self:Manager():CurUIStateType() == UIStateType.UICN20N49MainController then
     self:SwitchState(UIStateType.UIMain)
   else
     self:_PlayAnim("out", function()
-    -- function num : 0_1_0 , upvalues : self
-    self:CloseDialog()
-  end
-)
+      self:CloseDialog()
+    end)
     self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._HideUI = function(self)
-  -- function num : 0_2
+function UICN20N49MainController:_HideUI()
   self:_PlayAnim("out01", function()
-    -- function num : 0_2_0 , upvalues : self
-    (self:GetGameObject("_backBtns")):SetActive(false)
-    ;
-    (self:GetGameObject("_showBtn")):SetActive(true)
-    ;
-    (self:GetGameObject("_uiElements")):SetActive(false)
-  end
-)
+    self:GetGameObject("_backBtns"):SetActive(false)
+    self:GetGameObject("_showBtn"):SetActive(true)
+    self:GetGameObject("_uiElements"):SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._ShowUI = function(self)
-  -- function num : 0_3
-  (self:GetGameObject("_backBtns")):SetActive(true)
-  ;
-  (self:GetGameObject("_showBtn")):SetActive(false)
-  ;
-  (self:GetGameObject("_uiElements")):SetActive(true)
+function UICN20N49MainController:_ShowUI()
+  self:GetGameObject("_backBtns"):SetActive(true)
+  self:GetGameObject("_showBtn"):SetActive(false)
+  self:GetGameObject("_uiElements"):SetActive(true)
   self:_PlayAnim("in01", function()
-    -- function num : 0_3_0
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._SetRemainingTime = function(self, widgetName, descId, endTime, tickCallback, stopCallback)
-  -- function num : 0_4 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UICN20N49MainController:_SetRemainingTime(widgetName, descId, endTime, tickCallback, stopCallback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, tickCallback, stopCallback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._SetSpine = function(self)
-  -- function num : 0_5
+function UICN20N49MainController:_SetSpine()
   local obj = self:GetUIComponent("SpineLoader", "_spine")
   obj:LoadSpine("n49_kv_spine_idle")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._SetImgRT = function(self, imgRT)
-  -- function num : 0_6
-  do
-    if imgRT ~= nil then
-      local rt = self:GetUIComponent("RawImage", "rt")
-      rt.texture = imgRT
-      return true
-    end
-    return false
+function UICN20N49MainController:_SetImgRT(imgRT)
+  if imgRT ~= nil then
+    local rt = self:GetUIComponent("RawImage", "rt")
+    rt.texture = imgRT
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._CheckGuide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN20N49MainController)
+function UICN20N49MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN20N49MainController)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._PlayAnim = function(self, idx, callback)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN20N49MainController:_PlayAnim(idx, callback)
   local tb = {
-["in"] = {animName = "uieff_UICN20N49MainController_in", duration = 1167}
-, 
-out01 = {animName = "uieff_UICN20N49MainController_out01", duration = 333}
-, 
-in01 = {animName = "uieff_UICN20N49MainController_in01", duration = 900}
-}
+    ["in"] = {
+      animName = "uieff_UICN20N49MainController_in",
+      duration = 1167
+    },
+    out01 = {
+      animName = "uieff_UICN20N49MainController_out01",
+      duration = 333
+    },
+    in01 = {
+      animName = "uieff_UICN20N49MainController_in01",
+      duration = 900
+    }
+  }
   if tb[idx] ~= nil then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[idx]).animName, (tb[idx]).duration, callback)
-  else
-    if callback ~= nil then
-      callback()
-    end
+    UIWidgetHelper.PlayAnimation(self, "_anim", tb[idx].animName, tb[idx].duration, callback)
+  elseif callback ~= nil then
+    callback()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_9 , upvalues : _ENV
-  local campaignType = (UICN20N49Helper.GetCampaignType)()
+function UICN20N49MainController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignType = UICN20N49Helper.GetCampaignType()
   local componentIds = {}
-  self._campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, campaignType, componentIds)
-  ;
-  (UICN20N49Helper.LocalDB_Set)("main", "New")
+  self._campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
+  UICN20N49Helper.LocalDB_Set("main", "New")
   self._bp_campaign = UIActivityCampaign:New()
   local bp_res = AsyncRequestRes:New()
-  ;
-  (self._bp_campaign):LoadCampaignInfo(TT, bp_res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._bp_campaign:LoadCampaignInfo(TT, bp_res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController.OnShow = function(self, uiParams)
-  -- function num : 0_10
+function UICN20N49MainController:OnShow(uiParams)
   local fromMain = uiParams[1]
   self:_AttachEvents()
   self:_SetCommonTopButton()
@@ -180,56 +126,40 @@ UICN20N49MainController.OnShow = function(self, uiParams)
   self.overFirstTime = true
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController.GetComponents = function(self)
-  -- function num : 0_11
+function UICN20N49MainController:GetComponents()
   local linePool = self:GetUIComponent("UISelectObjectPath", "_lineBtn")
   self._lineObj = linePool:SpawnObject("UIActivityCommonComponentEnterLock")
-  self._lineAnim = (self._lineObj):GetUIComponent("Animation", "anim")
+  self._lineAnim = self._lineObj:GetUIComponent("Animation", "anim")
   local lineTalentPool = self:GetUIComponent("UISelectObjectPath", "_lineTalentBtn")
   self._lineTalentObj = lineTalentPool:SpawnObject("UIActivityCommonComponentEnterLock")
-  self._lineTalentAnim = (self._lineTalentObj):GetUIComponent("Animation", "anim")
+  self._lineTalentAnim = self._lineTalentObj:GetUIComponent("Animation", "anim")
   local alchemyPool = self:GetUIComponent("UISelectObjectPath", "_alchemyBtn")
   self._alchemyObj = alchemyPool:SpawnObject("UIActivityCommonComponentEnterLock")
-  self._alchemyAnim = (self._alchemyObj):GetUIComponent("Animation", "anim")
+  self._alchemyAnim = self._alchemyObj:GetUIComponent("Animation", "anim")
   local alchemyShopPool = self:GetUIComponent("UISelectObjectPath", "_alchemyShopBtn")
   self._alchemyShopObj = alchemyShopPool:SpawnObject("UIActivityCommonComponentEnterLock")
-  self._alchemyShopAnim = (self._alchemyShopObj):GetUIComponent("Animation", "anim")
+  self._alchemyShopAnim = self._alchemyShopObj:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController.PlayAnimIn = function(self, fromMain)
-  -- function num : 0_12
+function UICN20N49MainController:PlayAnimIn(fromMain)
   if fromMain then
     self:_PlayAnim("in", function()
-    -- function num : 0_12_0 , upvalues : self
-    self:_CheckGuide()
-  end
-)
+      self:_CheckGuide()
+    end)
   else
     self:_PlayAnim("in", function()
-    -- function num : 0_12_1 , upvalues : self
-    self:_CheckGuide()
-  end
-)
+      self:_CheckGuide()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController.OnHide = function(self)
-  -- function num : 0_13
+function UICN20N49MainController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._Refresh = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (UICN20N49Helper.SetBattlePassBtn)(self, "_battlePassBtn", self._bp_campaign)
-  self._exchangeObj = (UICN20N49Helper.SetExchangeBtn)(self, "_exchangeBtn", self._campaign)
+function UICN20N49MainController:_Refresh()
+  UICN20N49Helper.SetBattlePassBtn(self, "_battlePassBtn", self._bp_campaign)
+  self._exchangeObj = UICN20N49Helper.SetExchangeBtn(self, "_exchangeBtn", self._campaign)
   self:_SetLoginBtn()
   self:_SetLineBtn()
   self:_SetLineTalentBtn()
@@ -237,481 +167,394 @@ UICN20N49MainController._Refresh = function(self)
   self:_SetAlchemyShopBtn()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._UpdateRemainingTime = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local exchangeItemComponent = (UICN20N49Helper.GetComponentInfo)(self._campaign, "exchange")
+function UICN20N49MainController:_UpdateRemainingTime()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local exchangeItemComponent = UICN20N49Helper.GetComponentInfo(self._campaign, "exchange")
   local endTime = exchangeItemComponent.m_close_time
   local stamp = endTime - curTime
-  if stamp > 0 then
+  if 0 < stamp then
     self:_SetRemainingTime("_time", "str_cn20_n49_shop_close_time_tips", endTime)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._SetLoginBtn = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UICN20N49MainController:_SetLoginBtn()
   local name = "login"
-  local cmptId = (UICN20N49Helper.GetComponentId)(name)
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_loginBtn", "UIActivityCommonComponentEnter")
-  local newCallback = function()
-    -- function num : 0_16_0 , upvalues : _ENV, self, name
-    local new = (UICN20N49Helper.CalcNew_Component)(self._campaign, name)
+  local cmptId = UICN20N49Helper.GetComponentId(name)
+  local obj = UIWidgetHelper.SpawnObject(self, "_loginBtn", "UIActivityCommonComponentEnter")
+  
+  local function newCallback()
+    local new = UICN20N49Helper.CalcNew_Component(self._campaign, name)
     return new
   end
-
+  
   obj:SetNew("new", newCallback)
-  local redCallback = function()
-    -- function num : 0_16_1 , upvalues : _ENV, self, name
-    local red = (UICN20N49Helper.CalcRed_Component)(self._campaign, name)
+  
+  local function redCallback()
+    local red = UICN20N49Helper.CalcRed_Component(self._campaign, name)
     return red
   end
-
+  
   obj:SetRed("red", redCallback)
-  local clickCallback = function()
-    -- function num : 0_16_2 , upvalues : _ENV, name, self, cmptId
-    (UICN20N49Helper.LocalDB_Set)(name, "New")
-    local campaignType = (UICN20N49Helper.GetCampaignType)()
+  
+  local function clickCallback()
+    UICN20N49Helper.LocalDB_Set(name, "New")
+    local campaignType = UICN20N49Helper.GetCampaignType()
     self:ShowDialog("UIActivityTotalLoginAwardController", false, campaignType, cmptId)
   end
-
+  
   obj:SetData(self._campaign, clickCallback)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._SetLineBtn = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UICN20N49MainController:_SetLineBtn()
   local name = "line"
-  local cmptId = (UICN20N49Helper.GetComponentId)(name)
-  local component = (UICN20N49Helper.GetComponent)(self._campaign, name)
-  local newCallback = function()
-    -- function num : 0_17_0 , upvalues : _ENV, self, name
-    local new = (UICN20N49Helper.CalcNew_Component)(self._campaign, name)
+  local cmptId = UICN20N49Helper.GetComponentId(name)
+  local component = UICN20N49Helper.GetComponent(self._campaign, name)
+  
+  local function newCallback()
+    local new = UICN20N49Helper.CalcNew_Component(self._campaign, name)
     return new
   end
-
-  ;
-  (self._lineObj):SetNew("_new", newCallback)
-  local redCallback = function()
-    -- function num : 0_17_1 , upvalues : _ENV, self, name
-    local red = (UICN20N49Helper.CalcRed_Component)(self._campaign, name)
+  
+  self._lineObj:SetNew("_new", newCallback)
+  
+  local function redCallback()
+    local red = UICN20N49Helper.CalcRed_Component(self._campaign, name)
     return red
   end
-
-  ;
-  (self._lineObj):SetRed("_red", redCallback)
-  local closeTime = component and (component:GetComponentInfo()).m_close_time or 0
-  ;
-  (self._lineObj):SetActivityCommonRemainingTime("_time_unlock", "str_cn20_n49_shop_close_time_tips", closeTime, true)
+  
+  self._lineObj:SetRed("_red", redCallback)
+  local closeTime = component and component:GetComponentInfo().m_close_time or 0
+  self._lineObj:SetActivityCommonRemainingTime("_time_unlock", "str_cn20_n49_shop_close_time_tips", closeTime, true)
   local tb = {
-{"state_lock"}
-, 
-{"state_lock"}
-, 
-{"state_unlock"}
-, 
-{"state_close"}
-}
-  ;
-  (self._lineObj):SetWidgetNameGroup(tb)
-  local lockWithTimeCallback = function()
-    -- function num : 0_17_2 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
+    {"state_lock"},
+    {"state_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
+  self._lineObj:SetWidgetNameGroup(tb)
+  
+  local function lockWithTimeCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
   end
-
-  local lockCallback = nil
-  local closedCallback = function()
-    -- function num : 0_17_3 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
+  
+  local lockCallback
+  
+  local function closedCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
   end
-
-  ;
-  (self._lineObj):SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
+  
+  self._lineObj:SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
   local state = UIStateType.UICN20N49LineController
-  local clickCallback = function()
-    -- function num : 0_17_4 , upvalues : _ENV, name, self, cmptId, state
-    (UICN20N49Helper.LocalDB_Set)(name, "New")
-    local lineKey = (UICN20N49Helper._LocalDB_GetKey)(name, "Red")
-    ;
-    (UIActivityHelper.SetCmptRedViewed)(lineKey)
-    local componentMain = (CampaignConst.GetSafeStateInfo)((self._campaign)._id, cmptId, state, nil)
-    ;
-    ((self._campaign)._campaign_module):SwitchState_Safe(true, {componentMain})
+  
+  local function clickCallback()
+    UICN20N49Helper.LocalDB_Set(name, "New")
+    local lineKey = UICN20N49Helper._LocalDB_GetKey(name, "Red")
+    UIActivityHelper.SetCmptRedViewed(lineKey)
+    local componentMain = CampaignConst.GetSafeStateInfo(self._campaign._id, cmptId, state, nil)
+    self._campaign._campaign_module:SwitchState_Safe(true, {componentMain})
   end
-
-  ;
-  (self._lineObj):SetData(self._campaign, cmptId, clickCallback)
+  
+  self._lineObj:SetData(self._campaign, cmptId, clickCallback)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._SetLineTalentBtn = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UICN20N49MainController:_SetLineTalentBtn()
   local name = "talent"
-  local cmptId = (UICN20N49Helper.GetComponentId)(name)
-  local component = (UICN20N49Helper.GetComponent)(self._campaign, name)
-  local newCallback = function()
-    -- function num : 0_18_0 , upvalues : _ENV, self, name
-    local new = (UICN20N49Helper.CalcNew_Component)(self._campaign, name)
+  local cmptId = UICN20N49Helper.GetComponentId(name)
+  local component = UICN20N49Helper.GetComponent(self._campaign, name)
+  
+  local function newCallback()
+    local new = UICN20N49Helper.CalcNew_Component(self._campaign, name)
     return new
   end
-
-  ;
-  (self._lineTalentObj):SetNew("_new", newCallback)
-  local redCallback = function()
-    -- function num : 0_18_1 , upvalues : _ENV, self, name
-    local red = (UICN20N49Helper.CalcRed_Component)(self._campaign, name)
+  
+  self._lineTalentObj:SetNew("_new", newCallback)
+  
+  local function redCallback()
+    local red = UICN20N49Helper.CalcRed_Component(self._campaign, name)
     return red
   end
-
-  ;
-  (self._lineTalentObj):SetRed("_red", redCallback)
-  local txtLock = (self._lineTalentObj):GetUIComponent("UILocalizationText", "_txtLock")
-  local action_point_num = (self._lineTalentObj):GetUIComponent("UILocalizationText", "action_point_num")
+  
+  self._lineTalentObj:SetRed("_red", redCallback)
+  local txtLock = self._lineTalentObj:GetUIComponent("UILocalizationText", "_txtLock")
+  local action_point_num = self._lineTalentObj:GetUIComponent("UILocalizationText", "action_point_num")
   local unlockTime = component and component:ComponentUnLockTime() or 0
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local endTime = component:ComponentUnLockTime() or 0
   local stamp = endTime - curTime
-  local lineComponentInfo = (UICN20N49Helper.GetComponentInfo)(self._campaign, name)
-  local isMissionLock = (component:GetComponentInfo()).m_need_mission_id ~= 0 and (lineComponentInfo.m_pass_mission_info)[(component:GetComponentInfo()).m_need_mission_id] == nil
-  if isMissionLock or stamp > 0 then
-    if stamp > 0 then
-      (self._lineTalentObj):SetActivityCommonRemainingTime("_time_lock", "str_activity_start_in", unlockTime, true, nil, function(first)
-    -- function num : 0_18_2 , upvalues : lineComponentInfo, component, self
-    if (lineComponentInfo.m_pass_mission_info)[(component:GetComponentInfo()).m_need_mission_id] ~= nil then
-      ((self._lineTalentObj):GetGameObject("state_lock")):SetActive(true)
-      self:_Refresh()
-    else
-      self:_Refresh()
-    end
-  end
-)
+  local lineComponentInfo = UICN20N49Helper.GetComponentInfo(self._campaign, name)
+  local isMissionLock = component:GetComponentInfo().m_need_mission_id ~= 0 and lineComponentInfo.m_pass_mission_info[component:GetComponentInfo().m_need_mission_id] == nil
+  if isMissionLock or 0 < stamp then
+    if 0 < stamp then
+      self._lineTalentObj:SetActivityCommonRemainingTime("_time_lock", "str_activity_start_in", unlockTime, true, nil, function(first)
+        if lineComponentInfo.m_pass_mission_info[component:GetComponentInfo().m_need_mission_id] ~= nil then
+          self._lineTalentObj:GetGameObject("state_lock"):SetActive(true)
+          self:_Refresh()
+        else
+          self:_Refresh()
+        end
+      end)
     elseif isMissionLock then
-      local missionName = ((Cfg.cfg_campaign_mission)[(component:GetComponentInfo()).m_need_mission_id]).Name
-      local lvName = (StringTable.Get)(missionName)
-      txtLock:SetText((StringTable.Get)("str_cn20_n49_level_lock_tips", lvName))
+      local missionName = Cfg.cfg_campaign_mission[component:GetComponentInfo().m_need_mission_id].Name
+      local lvName = StringTable.Get(missionName)
+      txtLock:SetText(StringTable.Get("str_cn20_n49_level_lock_tips", lvName))
     end
   end
-  local actionPointComponent = (UICN20N49Helper.GetComponent)(self._campaign, "actionPoint")
+  local actionPointComponent = UICN20N49Helper.GetComponent(self._campaign, "actionPoint")
   local icon = actionPointComponent:GetItemIcon()
-  do
-    if icon then
-      local action_point_icon = (self._lineTalentObj):GetUIComponent("Image", "action_point_icon")
-      action_point_icon.sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(icon)
-    end
-    local n1, n2 = actionPointComponent:GetItemCount()
-    action_point_num:SetText(n1 .. "/" .. n2)
-    local tb = {
-{"state_lock", "_time_lock"}
-, 
-{"state_lock", "_txtLock"}
-, 
-{"state_unlock"}
-, 
-{"state_close"}
-}
-    ;
-    (self._lineTalentObj):SetWidgetNameGroup(tb)
-    local closeTime = component and (component:GetComponentInfo()).m_close_time or 0
-    ;
-    (self._lineTalentObj):SetActivityCommonRemainingTime("_time_unlock", "str_cn20_n49_shop_close_time_tips", closeTime, false)
-    local lockWithTimeCallback = function()
-    -- function num : 0_18_3 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
+  if icon then
+    local action_point_icon = self._lineTalentObj:GetUIComponent("Image", "action_point_icon")
+    action_point_icon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(icon)
   end
-
-    local lockCallback = function()
-    -- function num : 0_18_4 , upvalues : _ENV, component
-    local missionName = ((Cfg.cfg_campaign_mission)[(component:GetComponentInfo()).m_need_mission_id]).Name
-    local lvName = (StringTable.Get)(missionName)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_level_lock_tips", lvName))
+  local n1, n2 = actionPointComponent:GetItemCount()
+  action_point_num:SetText(n1 .. "/" .. n2)
+  local tb = {
+    {"state_lock", "_time_lock"},
+    {"state_lock", "_txtLock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
+  self._lineTalentObj:SetWidgetNameGroup(tb)
+  local closeTime = component and component:GetComponentInfo().m_close_time or 0
+  self._lineTalentObj:SetActivityCommonRemainingTime("_time_unlock", "str_cn20_n49_shop_close_time_tips", closeTime, false)
+  
+  local function lockWithTimeCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
   end
-
-    local closedCallback = function()
-    -- function num : 0_18_5 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
+  
+  local function lockCallback()
+    local missionName = Cfg.cfg_campaign_mission[component:GetComponentInfo().m_need_mission_id].Name
+    local lvName = StringTable.Get(missionName)
+    ToastManager.ShowToast(StringTable.Get("str_cn20_n49_level_lock_tips", lvName))
   end
-
-    ;
-    (self._lineTalentObj):SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
-    local state = UIStateType.UICN20N49LineTalentController
-    local clickCallback = function()
-    -- function num : 0_18_6 , upvalues : _ENV, name, self, cmptId, state
-    (UICN20N49Helper.LocalDB_Set)(name, "New")
-    local blackKey = (UICN20N49Helper._LocalDB_GetKey)(name, "Red")
-    ;
-    (UIActivityHelper.SetCmptRedViewed)(blackKey)
-    local componentMain = (CampaignConst.GetSafeStateInfo)((self._campaign)._id, cmptId, state, nil)
-    ;
-    ((self._campaign)._campaign_module):SwitchState_Safe(true, {componentMain})
+  
+  local function closedCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
   end
-
-    ;
-    (self._lineTalentObj):SetData(self._campaign, cmptId, clickCallback)
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  
+  self._lineTalentObj:SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
+  local state = UIStateType.UICN20N49LineTalentController
+  
+  local function clickCallback()
+    UICN20N49Helper.LocalDB_Set(name, "New")
+    local blackKey = UICN20N49Helper._LocalDB_GetKey(name, "Red")
+    UIActivityHelper.SetCmptRedViewed(blackKey)
+    local componentMain = CampaignConst.GetSafeStateInfo(self._campaign._id, cmptId, state, nil)
+    self._campaign._campaign_module:SwitchState_Safe(true, {componentMain})
   end
+  
+  self._lineTalentObj:SetData(self._campaign, cmptId, clickCallback)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._SetAlchemyBtn = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UICN20N49MainController:_SetAlchemyBtn()
   local name = "alchemy"
-  local cmptId = (UICN20N49Helper.GetComponentId)(name)
-  local component = (UICN20N49Helper.GetComponent)(self._campaign, name)
-  local newCallback = function()
-    -- function num : 0_19_0 , upvalues : _ENV, self, name
-    local new = (UICN20N49Helper.CalcNew_Component)(self._campaign, name)
+  local cmptId = UICN20N49Helper.GetComponentId(name)
+  local component = UICN20N49Helper.GetComponent(self._campaign, name)
+  
+  local function newCallback()
+    local new = UICN20N49Helper.CalcNew_Component(self._campaign, name)
     return new
   end
-
-  ;
-  (self._alchemyObj):SetNew("_new", newCallback)
-  local redCallback = function()
-    -- function num : 0_19_1 , upvalues : _ENV, self, name
-    local red = (UICN20N49Helper.CalcRed_Component)(self._campaign, name)
+  
+  self._alchemyObj:SetNew("_new", newCallback)
+  
+  local function redCallback()
+    local red = UICN20N49Helper.CalcRed_Component(self._campaign, name)
     return red
   end
-
-  ;
-  (self._alchemyObj):SetRed("_red", redCallback)
-  local txtLock = (self._lineTalentObj):GetUIComponent("UILocalizationText", "_txtLock")
+  
+  self._alchemyObj:SetRed("_red", redCallback)
+  local txtLock = self._lineTalentObj:GetUIComponent("UILocalizationText", "_txtLock")
   local unlockTime = component and component:ComponentUnLockTime() or 0
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local endTime = component:ComponentUnLockTime() or 0
   local stamp = endTime - curTime
-  local componentInfo = (UICN20N49Helper.GetComponentInfo)(self._campaign, name)
-  local isMissionLock = (component:GetComponentInfo()).m_need_mission_id ~= 0 and (componentInfo.m_pass_mission_info)[(component:GetComponentInfo()).m_need_mission_id] == nil
-  if isMissionLock or stamp > 0 then
-    if stamp > 0 then
-      (self._lineTalentObj):SetActivityCommonRemainingTime("_time_lock", "str_activity_start_in", unlockTime, true, nil, function(first)
-    -- function num : 0_19_2 , upvalues : componentInfo, component, self
-    if (componentInfo.m_pass_mission_info)[(component:GetComponentInfo()).m_need_mission_id] ~= nil then
-      ((self._lineTalentObj):GetGameObject("state_lock")):SetActive(true)
-      self:_Refresh()
-    else
-      self:_Refresh()
-    end
-  end
-)
+  local componentInfo = UICN20N49Helper.GetComponentInfo(self._campaign, name)
+  local isMissionLock = component:GetComponentInfo().m_need_mission_id ~= 0 and componentInfo.m_pass_mission_info[component:GetComponentInfo().m_need_mission_id] == nil
+  if isMissionLock or 0 < stamp then
+    if 0 < stamp then
+      self._lineTalentObj:SetActivityCommonRemainingTime("_time_lock", "str_activity_start_in", unlockTime, true, nil, function(first)
+        if componentInfo.m_pass_mission_info[component:GetComponentInfo().m_need_mission_id] ~= nil then
+          self._lineTalentObj:GetGameObject("state_lock"):SetActive(true)
+          self:_Refresh()
+        else
+          self:_Refresh()
+        end
+      end)
     elseif isMissionLock then
-      local missionName = ((Cfg.cfg_campaign_mission)[(component:GetComponentInfo()).m_need_mission_id]).Name
-      local lvName = (StringTable.Get)(missionName)
-      txtLock:SetText((StringTable.Get)("str_cn20_n49_level_lock_tips", lvName))
+      local missionName = Cfg.cfg_campaign_mission[component:GetComponentInfo().m_need_mission_id].Name
+      local lvName = StringTable.Get(missionName)
+      txtLock:SetText(StringTable.Get("str_cn20_n49_level_lock_tips", lvName))
     end
   end
-  local closeTime = component and (component:GetComponentInfo()).m_close_time or 0
-  ;
-  (self._alchemyObj):SetActivityCommonRemainingTime("_time_unlock", "str_cn20_n49_shop_close_time_tips", closeTime, true)
+  local closeTime = component and component:GetComponentInfo().m_close_time or 0
+  self._alchemyObj:SetActivityCommonRemainingTime("_time_unlock", "str_cn20_n49_shop_close_time_tips", closeTime, true)
   local tb = {
-{"state_lock", "_time_lock"}
-, 
-{"state_lock"}
-, 
-{"state_unlock"}
-, 
-{"state_close"}
-}
-  ;
-  (self._alchemyObj):SetWidgetNameGroup(tb)
-  local lockWithTimeCallback = function()
-    -- function num : 0_19_3 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
+    {"state_lock", "_time_lock"},
+    {"state_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
+  self._alchemyObj:SetWidgetNameGroup(tb)
+  
+  local function lockWithTimeCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
   end
-
-  local lockCallback = function()
-    -- function num : 0_19_4 , upvalues : _ENV, component
-    local missionName = ((Cfg.cfg_campaign_mission)[(component:GetComponentInfo()).m_need_mission_id]).Name
-    local lvName = (StringTable.Get)(missionName)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_level_lock_tips", lvName))
+  
+  local function lockCallback()
+    local missionName = Cfg.cfg_campaign_mission[component:GetComponentInfo().m_need_mission_id].Name
+    local lvName = StringTable.Get(missionName)
+    ToastManager.ShowToast(StringTable.Get("str_cn20_n49_level_lock_tips", lvName))
   end
-
-  local closedCallback = function()
-    -- function num : 0_19_5 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
+  
+  local function closedCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
   end
-
-  ;
-  (self._alchemyObj):SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
+  
+  self._alchemyObj:SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
   local state = UIStateType.UICN20AlchemyMainController
-  local clickCallback = function()
-    -- function num : 0_19_6 , upvalues : _ENV, name, self
-    (UICN20N49Helper.LocalDB_Set)(name, "New")
-    local lineKey = (UICN20N49Helper._LocalDB_GetKey)(name, "Red")
-    ;
-    (UIActivityHelper.SetCmptRedViewed)(lineKey)
+  
+  local function clickCallback()
+    UICN20N49Helper.LocalDB_Set(name, "New")
+    local lineKey = UICN20N49Helper._LocalDB_GetKey(name, "Red")
+    UIActivityHelper.SetCmptRedViewed(lineKey)
     self:ShowDialog("UICN20AlchemyMainController", self._campaign)
   end
-
-  ;
-  (self._alchemyObj):SetData(self._campaign, cmptId, clickCallback)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  
+  self._alchemyObj:SetData(self._campaign, cmptId, clickCallback)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._SetAlchemyShopBtn = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UICN20N49MainController:_SetAlchemyShopBtn()
   local name = "alchemyShop"
-  local cmptId = (UICN20N49Helper.GetComponentId)(name)
-  local component = (UICN20N49Helper.GetComponent)(self._campaign, name)
-  local newCallback = function()
-    -- function num : 0_20_0 , upvalues : _ENV, self, name
-    local new = (UICN20N49Helper.CalcNew_Component)(self._campaign, name)
+  local cmptId = UICN20N49Helper.GetComponentId(name)
+  local component = UICN20N49Helper.GetComponent(self._campaign, name)
+  
+  local function newCallback()
+    local new = UICN20N49Helper.CalcNew_Component(self._campaign, name)
     return new
   end
-
-  ;
-  (self._alchemyShopObj):SetNew("_new", newCallback)
-  local redCallback = function()
-    -- function num : 0_20_1 , upvalues : _ENV, self, name
-    local red = (UICN20N49Helper.CalcRed_Component)(self._campaign, name)
+  
+  self._alchemyShopObj:SetNew("_new", newCallback)
+  
+  local function redCallback()
+    local red = UICN20N49Helper.CalcRed_Component(self._campaign, name)
     return red
   end
-
-  ;
-  (self._alchemyShopObj):SetRed("_red", redCallback)
-  local txtLock = (self._lineTalentObj):GetUIComponent("UILocalizationText", "_txtLock")
+  
+  self._alchemyShopObj:SetRed("_red", redCallback)
+  local txtLock = self._lineTalentObj:GetUIComponent("UILocalizationText", "_txtLock")
   local unlockTime = component and component:ComponentUnLockTime() or 0
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local endTime = component:ComponentUnLockTime() or 0
   local stamp = endTime - curTime
-  local componentInfo = (UICN20N49Helper.GetComponentInfo)(self._campaign, name)
-  local isMissionLock = (component:GetComponentInfo()).m_need_mission_id ~= 0 and (componentInfo.m_pass_mission_info)[(component:GetComponentInfo()).m_need_mission_id] == nil
-  if isMissionLock or stamp > 0 then
-    if stamp > 0 then
-      (self._lineTalentObj):SetActivityCommonRemainingTime("_time_lock", "str_activity_start_in", unlockTime, true, nil, function(first)
-    -- function num : 0_20_2 , upvalues : componentInfo, component, self
-    if (componentInfo.m_pass_mission_info)[(component:GetComponentInfo()).m_need_mission_id] ~= nil then
-      ((self._lineTalentObj):GetGameObject("state_lock")):SetActive(true)
-      self:_Refresh()
-    else
-      self:_Refresh()
-    end
-  end
-)
+  local componentInfo = UICN20N49Helper.GetComponentInfo(self._campaign, name)
+  local isMissionLock = component:GetComponentInfo().m_need_mission_id ~= 0 and componentInfo.m_pass_mission_info[component:GetComponentInfo().m_need_mission_id] == nil
+  if isMissionLock or 0 < stamp then
+    if 0 < stamp then
+      self._lineTalentObj:SetActivityCommonRemainingTime("_time_lock", "str_activity_start_in", unlockTime, true, nil, function(first)
+        if componentInfo.m_pass_mission_info[component:GetComponentInfo().m_need_mission_id] ~= nil then
+          self._lineTalentObj:GetGameObject("state_lock"):SetActive(true)
+          self:_Refresh()
+        else
+          self:_Refresh()
+        end
+      end)
     elseif isMissionLock then
-      local missionName = ((Cfg.cfg_campaign_mission)[(component:GetComponentInfo()).m_need_mission_id]).Name
-      local lvName = (StringTable.Get)(missionName)
-      txtLock:SetText((StringTable.Get)("str_cn20_n49_level_lock_tips", lvName))
+      local missionName = Cfg.cfg_campaign_mission[component:GetComponentInfo().m_need_mission_id].Name
+      local lvName = StringTable.Get(missionName)
+      txtLock:SetText(StringTable.Get("str_cn20_n49_level_lock_tips", lvName))
     end
   end
-  local closeTime = component and (component:GetComponentInfo()).m_close_time or 0
-  ;
-  (self._alchemyShopObj):SetActivityCommonRemainingTime("_time_unlock", "str_cn20_n49_shop_close_time_tips", closeTime, true)
+  local closeTime = component and component:GetComponentInfo().m_close_time or 0
+  self._alchemyShopObj:SetActivityCommonRemainingTime("_time_unlock", "str_cn20_n49_shop_close_time_tips", closeTime, true)
   local tb = {
-{"state_lock", "_time_lock"}
-, 
-{"state_lock"}
-, 
-{"state_unlock"}
-, 
-{"state_close"}
-}
-  ;
-  (self._alchemyShopObj):SetWidgetNameGroup(tb)
-  local lockWithTimeCallback = function()
-    -- function num : 0_20_3 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_110"))
+    {"state_lock", "_time_lock"},
+    {"state_lock"},
+    {
+      "state_unlock"
+    },
+    {
+      "state_close"
+    }
+  }
+  self._alchemyShopObj:SetWidgetNameGroup(tb)
+  
+  local function lockWithTimeCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_110"))
   end
-
-  local lockCallback = function()
-    -- function num : 0_20_4 , upvalues : _ENV, component
-    local missionName = ((Cfg.cfg_campaign_mission)[(component:GetComponentInfo()).m_need_mission_id]).Name
-    local lvName = (StringTable.Get)(missionName)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_cn20_n49_level_lock_tips", lvName))
+  
+  local function lockCallback()
+    local missionName = Cfg.cfg_campaign_mission[component:GetComponentInfo().m_need_mission_id].Name
+    local lvName = StringTable.Get(missionName)
+    ToastManager.ShowToast(StringTable.Get("str_cn20_n49_level_lock_tips", lvName))
   end
-
-  local closedCallback = function()
-    -- function num : 0_20_5 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_107"))
+  
+  local function closedCallback()
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_107"))
   end
-
-  ;
-  (self._alchemyShopObj):SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
+  
+  self._alchemyShopObj:SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
   local state = UIStateType.UICN20N49Ryza_Shop
-  local clickCallback = function()
-    -- function num : 0_20_6 , upvalues : _ENV, name, self
-    (UICN20N49Helper.LocalDB_Set)(name, "New")
-    local lineKey = (UICN20N49Helper._LocalDB_GetKey)(name, "Red")
-    ;
-    (UIActivityHelper.SetCmptRedViewed)(lineKey)
+  
+  local function clickCallback()
+    UICN20N49Helper.LocalDB_Set(name, "New")
+    local lineKey = UICN20N49Helper._LocalDB_GetKey(name, "Red")
+    UIActivityHelper.SetCmptRedViewed(lineKey)
     self:ShowDialog("UICN20N49Ryza_Shop")
   end
-
-  ;
-  (self._alchemyShopObj):SetData(self._campaign, cmptId, clickCallback)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  
+  self._alchemyShopObj:SetData(self._campaign, cmptId, clickCallback)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController.IntroBtnOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
+function UICN20N49MainController:IntroBtnOnClick(go)
   self:ShowDialog("UIIntroLoader", "UICN20N49Intro", MaskType.MT_BlurMask)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController.ShowBtnOnClick = function(self)
-  -- function num : 0_22
+function UICN20N49MainController:ShowBtnOnClick()
   self:_ShowUI()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._AttachEvents = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UICN20N49MainController:_AttachEvents()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._AfterUILayerChanged)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ItemCountChanged, self._OnItemChanged)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._DetachEvents = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UICN20N49MainController:_DetachEvents()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._AfterUILayerChanged)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.ItemCountChanged, self._OnItemChanged)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._AfterUILayerChanged = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+function UICN20N49MainController:_AfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
     self:_Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._CheckActivityClose = function(self, id)
-  -- function num : 0_26 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UICN20N49MainController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49MainController._OnItemChanged = function(self, id)
-  -- function num : 0_27
+function UICN20N49MainController:_OnItemChanged(id)
   self:_Refresh()
 end
-
-

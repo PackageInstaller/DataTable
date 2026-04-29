@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_preview_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetPreviewArea", BuffLogicBase)
 BuffLogicSetPreviewArea = BuffLogicSetPreviewArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetPreviewArea.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetPreviewArea:Constructor(buffInstance, logicParam)
   self._previewArea = logicParam.previewArea
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetPreviewArea.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetPreviewArea:DoLogic()
+  local e = self._buffInstance:Entity()
   local bodyArea = e:BodyArea()
   if not bodyArea then
-    return 
+    return
   end
   local previewArea = {}
-  for i,v in ipairs(self._previewArea) do
+  for i, v in ipairs(self._previewArea) do
     local pos = Vector2(v[1], v[2])
-    ;
-    (table.insert)(previewArea, pos)
+    table.insert(previewArea, pos)
   end
   bodyArea:SetPreviewArea(previewArea)
 end
-
-

@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/mirage_pick_up_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MiragePickUpCommand", IEntityCommand)
 MiragePickUpCommand = MiragePickUpCommand
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 MiragePickUpCommand.CommandType = "MiragePickUp"
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-MiragePickUpCommand.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MiragePickUpCommand:Constructor()
   self._gridPos = Vector2.zero
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpCommand.GetCommandType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function MiragePickUpCommand:GetCommandType()
   return MiragePickUpCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_2 , upvalues : _ENV
+function MiragePickUpCommand:GetExecStateID(runAtClient)
   if runAtClient then
     return GameStateID.MirageWaitInput
   else
@@ -33,58 +18,38 @@ MiragePickUpCommand.GetExecStateID = function(self, runAtClient)
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function MiragePickUpCommand:IsExecExcluded()
   return 1
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function MiragePickUpCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpCommand.GetPickUpGridPos = function(self)
-  -- function num : 0_5
+function MiragePickUpCommand:GetPickUpGridPos()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpCommand.SetPickUpGridPos = function(self, gridPos)
-  -- function num : 0_6
+function MiragePickUpCommand:SetPickUpGridPos(gridPos)
   self._gridPos = gridPos
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpCommand.ToNetMessage = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function MiragePickUpCommand:ToNetMessage()
   local msg = CEventMiragePickUpCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
   msg.ClientWaitInput = self.ClientWaitInput
   msg.IsAutoFight = self.IsAutoFight
   msg.CmdIndex = self.CmdIndex
-  msg.gridPos = (Vector2.Pos2Index)(self._gridPos)
+  msg.gridPos = Vector2.Pos2Index(self._gridPos)
   return msg
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-MiragePickUpCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_8 , upvalues : _ENV
+function MiragePickUpCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
   self.IsAutoFight = msg.IsAutoFight
   self.CmdIndex = msg.CmdIndex
-  self._gridPos = (Vector2.Index2Pos)(msg.gridPos)
+  self._gridPos = Vector2.Index2Pos(msg.gridPos)
 end
-
-

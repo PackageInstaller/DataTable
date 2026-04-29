@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_mission_node/cls/ui_activity_line_mission_manager_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityLineMissionManager", Object)
 UIActivityLineMissionManager = UIActivityLineMissionManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityLineMissionManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._missionModule = (GameGlobal.GetModule)(MissionModule)
+function UIActivityLineMissionManager:Constructor()
+  self._missionModule = GameGlobal.GetModule(MissionModule)
   self._componentInfo = nil
   self.nodes = {}
   self.lines = {}
@@ -21,48 +14,30 @@ UIActivityLineMissionManager.Constructor = function(self)
   self.totalWidth = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager.GetNodes = function(self)
-  -- function num : 0_1
+function UIActivityLineMissionManager:GetNodes()
   return self.nodes
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager.GetLines = function(self)
-  -- function num : 0_2
+function UIActivityLineMissionManager:GetLines()
   return self.lines
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager.GetTotalWidth = function(self)
-  -- function num : 0_3
+function UIActivityLineMissionManager:GetTotalWidth()
   return self.totalWidth
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager.GetScrollPos = function(self, missionId)
-  -- function num : 0_4
-  if (self._lineCfg)[missionId] then
-    return ((self._lineCfg)[missionId]).ScrollPos
+function UIActivityLineMissionManager:GetScrollPos(missionId)
+  if self._lineCfg[missionId] then
+    return self._lineCfg[missionId].ScrollPos
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager.GetLineExtraConfig = function(self)
-  -- function num : 0_5
+function UIActivityLineMissionManager:GetLineExtraConfig()
   return self._lineExtraCfg
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager.Init = function(self, componentInfo, componentId)
-  -- function num : 0_6
+function UIActivityLineMissionManager:Init(componentInfo, componentId)
   self._componentInfo = componentInfo
   self:_MakeLineExtraConfig(componentId)
   self:_MakeLineConfig(componentId)
@@ -70,10 +45,7 @@ UIActivityLineMissionManager.Init = function(self, componentInfo, componentId)
   self:Update()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager.Update = function(self)
-  -- function num : 0_7
+function UIActivityLineMissionManager:Update()
   self:_UpdateMissionClearInfo(self._lineCfg)
   self:_UpdateMissionState(self._unlockCfg, self._clearInfo)
   self:_UpdateNodePos(self._lineCfg, self._missionState)
@@ -81,64 +53,44 @@ UIActivityLineMissionManager.Update = function(self)
   self:_FillData_Lines(self.nodes, self._unlockCfg)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager.Update_Evesinsa = function(self, isShow, missionId)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityLineMissionManager:Update_Evesinsa(isShow, missionId)
   self:_UpdateMissionClearInfo(self._lineCfg)
   self:_UpdateMissionState(self._unlockCfg, self._clearInfo)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
   if isShow then
-    (self._missionState)[missionId] = {}
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._missionState)[missionId]).State = DiscoveryStageState.Nomal
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._missionState)[missionId]).StarCount = 0
+    self._missionState[missionId] = {}
+    self._missionState[missionId].State = DiscoveryStageState.Nomal
+    self._missionState[missionId].StarCount = 0
   end
   self:_UpdateNodePos(self._lineCfg, self._missionState)
   self:_FillData_Nodes(self._lineCfg, self._missionState)
   self:_FillData_Lines(self.nodes, self._unlockCfg)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager._MakeLineExtraConfig = function(self, componentId)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityLineMissionManager:_MakeLineExtraConfig(componentId)
   local newConfig = {}
-  local config = (Cfg.cfg_component_line_mission_extra)({ComponentID = componentId})
-  for _,v in pairs(config) do
+  local config = Cfg.cfg_component_line_mission_extra({ComponentID = componentId})
+  for _, v in pairs(config) do
     newConfig._NodeWidthLeft = v.NodeWidthLeft or 0
     newConfig._NodeWidthRight = v.NodeWidthRight or 0
     newConfig._MarginLeft = v.MarginLeft or 0
     newConfig._MarginRight = v.MarginRight or 0
-    newConfig._Scale = v.Scale or 1
+    newConfig._Scale = v.Scale or 1.0
   end
   self._lineExtraCfg = newConfig
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager._MakeLineConfig = function(self, componentId)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityLineMissionManager:_MakeLineConfig(componentId)
   local newConfig = {}
-  local config = (Cfg.cfg_component_line_mission)({ComponentID = componentId})
-  for _,v in ipairs(config) do
+  local config = Cfg.cfg_component_line_mission({ComponentID = componentId})
+  for _, v in ipairs(config) do
     newConfig[v.CampaignMissionId] = v
   end
   self._lineCfg = newConfig
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager._MakeUnlockConfig = function(self, lineCfg)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityLineMissionManager:_MakeUnlockConfig(lineCfg)
   local newConfig = {}
-  for _,v in pairs(lineCfg) do
+  for _, v in pairs(lineCfg) do
     local prev = v.NeedMissionId
     if not newConfig[prev] then
       newConfig[prev] = {}
@@ -147,19 +99,15 @@ UIActivityLineMissionManager._MakeUnlockConfig = function(self, lineCfg)
     if not newConfig[curr] then
       newConfig[curr] = {}
     end
-    ;
-    (table.insert)(newConfig[prev], curr)
+    table.insert(newConfig[prev], curr)
   end
   self._unlockCfg = newConfig
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager._UpdateMissionClearInfo = function(self, lineCfg)
-  -- function num : 0_12 , upvalues : _ENV
-  local missionClear = (self._componentInfo).m_pass_mission_info
+function UIActivityLineMissionManager:_UpdateMissionClearInfo(lineCfg)
+  local missionClear = self._componentInfo.m_pass_mission_info
   local newConfig = {}
-  for _,v in pairs(lineCfg) do
+  for _, v in pairs(lineCfg) do
     local prev = v.NeedMissionId
     if not newConfig[prev] then
       newConfig[prev] = missionClear[prev]
@@ -169,25 +117,16 @@ UIActivityLineMissionManager._UpdateMissionClearInfo = function(self, lineCfg)
         newConfig[prev] = mission_tmp
       end
     end
-    do
-      do
-        local curr = v.CampaignMissionId
-        if not newConfig[curr] then
-          newConfig[curr] = missionClear[curr]
-        end
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    local curr = v.CampaignMissionId
+    if not newConfig[curr] then
+      newConfig[curr] = missionClear[curr]
     end
   end
   self._clearInfo = newConfig
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager._IsMissionUnlockInOtherComponent = function(self, otherComponentId, missionId)
-  -- function num : 0_13 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityLineMissionManager:_IsMissionUnlockInOtherComponent(otherComponentId, missionId)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local campaignId, componentId, componentType = campaignModule:ParseCfgComponentID(otherComponentId)
   local component = campaignModule:GetComponentByComponentId(otherComponentId)
   local componentInfo = component:GetComponentInfo()
@@ -197,12 +136,9 @@ UIActivityLineMissionManager._IsMissionUnlockInOtherComponent = function(self, o
   return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager._UpdateMissionState = function(self, unlockCfg, clearInfo)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityLineMissionManager:_UpdateMissionState(unlockCfg, clearInfo)
   local newConfig = {}
-  for k,v in pairs(unlockCfg) do
+  for k, v in pairs(unlockCfg) do
     if k == 0 or clearInfo[k] then
       if k ~= 0 then
         if not newConfig[k] then
@@ -210,39 +146,15 @@ UIActivityLineMissionManager._UpdateMissionState = function(self, unlockCfg, cle
         end
         local count = 0
         local tb = {}
-        count = (self._missionModule):ParseStarInfo((clearInfo[k]).star)
-        -- DECOMPILER ERROR at PC29: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (newConfig[k]).State = DiscoveryStageState.Nomal
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (newConfig[k]).StarCount = count
+        count, tb = self._missionModule:ParseStarInfo(clearInfo[k].star)
+        newConfig[k].State = DiscoveryStageState.Nomal
+        newConfig[k].StarCount = count
       end
-      do
-        -- DECOMPILER ERROR at PC33: Overwrote pending register: R10 in 'AssignReg'
-
-        for _,vv in ipairs(tb) do
-          if not newConfig[vv] then
-            newConfig[vv] = {}
-            -- DECOMPILER ERROR at PC44: Confused about usage of register: R14 in 'UnsetPending'
-
-            ;
-            (newConfig[vv]).State = DiscoveryStageState.CanPlay
-            -- DECOMPILER ERROR at PC46: Confused about usage of register: R14 in 'UnsetPending'
-
-            ;
-            (newConfig[vv]).StarCount = 0
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
+      for _, vv in ipairs(v) do
+        if not newConfig[vv] then
+          newConfig[vv] = {}
+          newConfig[vv].State = DiscoveryStageState.CanPlay
+          newConfig[vv].StarCount = 0
         end
       end
     end
@@ -250,78 +162,66 @@ UIActivityLineMissionManager._UpdateMissionState = function(self, unlockCfg, cle
   self._missionState = newConfig
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager._UpdateNodePos = function(self, lineCfg, missionState)
-  -- function num : 0_15 , upvalues : _ENV
-  local minPosX, maxPosX = nil, nil
-  for k,v in pairs(lineCfg) do
+function UIActivityLineMissionManager:_UpdateNodePos(lineCfg, missionState)
+  local minPosX, maxPosX
+  for k, v in pairs(lineCfg) do
     if missionState[k] then
       if not minPosX or not maxPosX then
-        minPosX = v.MapPosX
+        minPosX, maxPosX = v.MapPosX, v.MapPosX
       end
-      minPosX = (math.min)(minPosX, v.MapPosX)
-      -- DECOMPILER ERROR at PC26: Overwrote pending register: R4 in 'AssignReg'
-
+      minPosX = math.min(minPosX, v.MapPosX)
+      maxPosX = math.max(maxPosX, v.MapPosX)
     end
   end
-  do
-    if not minPosX or not maxPosX then
-      return 
-    end
-    local marginLeft = (self._lineExtraCfg)._MarginLeft + (self._lineExtraCfg)._NodeWidthLeft
-    local marginRight = (self._lineExtraCfg)._MarginRight + (self._lineExtraCfg)._NodeWidthRight
-    local allNodeWidth = maxPosX - minPosX
-    local totalWidth = allNodeWidth + marginLeft + marginRight
-    local firstNodePosX = marginLeft - totalWidth / 2
-    for k,v in pairs(lineCfg) do
-      v.PosX = v.MapPosX - minPosX + firstNodePosX
-      v.PosY = v.MapPosY
-      v.ScrollPos = Vector2(-(v.PosX + totalWidth / 2), 0)
-    end
-    self.totalWidth = totalWidth
+  if not minPosX or not maxPosX then
+    return
   end
+  local marginLeft = self._lineExtraCfg._MarginLeft + self._lineExtraCfg._NodeWidthLeft
+  local marginRight = self._lineExtraCfg._MarginRight + self._lineExtraCfg._NodeWidthRight
+  local allNodeWidth = maxPosX - minPosX
+  local totalWidth = allNodeWidth + marginLeft + marginRight
+  local firstNodePosX = marginLeft - totalWidth / 2
+  for k, v in pairs(lineCfg) do
+    v.PosX = v.MapPosX - minPosX + firstNodePosX
+    v.PosY = v.MapPosY
+    v.ScrollPos = Vector2(-(v.PosX + totalWidth / 2), 0)
+  end
+  self.totalWidth = totalWidth
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager._FillData_Nodes = function(self, lineCfg, missionState)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityLineMissionManager:_FillData_Nodes(lineCfg, missionState)
   local newConfig = {}
-  local config = (Cfg.cfg_campaign_mission)({})
-  for _,v in pairs(config) do
+  local config = Cfg.cfg_campaign_mission({})
+  for _, v in pairs(config) do
     local id = v.CampaignMissionId
     if lineCfg[id] then
-      local state = nil
+      local state
       local starCount = 0
       if missionState[id] then
-        state = (missionState[id]).State
-        starCount = (missionState[id]).StarCount
+        state = missionState[id].State
+        starCount = missionState[id].StarCount
       end
       local newNode = UIActivityMissionNodeInfo:New()
-      newNode:Init(id, (lineCfg[id]).PosX, (lineCfg[id]).PosY, v.Name, v.Title, v.Type, (lineCfg[id]).WayPointType == WayPointType.WayPointType_S, state, starCount)
+      newNode:Init(id, lineCfg[id].PosX, lineCfg[id].PosY, v.Name, v.Title, v.Type, lineCfg[id].WayPointType == WayPointType.WayPointType_S, state, starCount)
       newConfig[id] = newNode
     end
   end
   self.nodes = newConfig
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityLineMissionManager._FillData_Lines = function(self, nodes, unlockCfg)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityLineMissionManager:_FillData_Lines(nodes, unlockCfg)
   local newConfig = {}
-  for k,v in pairs(unlockCfg) do
-    if k ~= 0 and nodes[k] and not (nodes[k]).isSLevel then
-      for _,vv in ipairs(v) do
-        if not (nodes[vv]).isSLevel then
-          (table.insert)(newConfig, {nodes[k], nodes[vv]})
+  for k, v in pairs(unlockCfg) do
+    if k ~= 0 and nodes[k] and not nodes[k].isSLevel then
+      for _, vv in ipairs(v) do
+        if not nodes[vv].isSLevel then
+          table.insert(newConfig, {
+            nodes[k],
+            nodes[vv]
+          })
         end
       end
     end
   end
   self.lines = newConfig
 end
-
-

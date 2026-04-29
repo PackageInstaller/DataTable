@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity_dialog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryEntityDialog", StoryEntity)
 StoryEntityDialog = StoryEntityDialog
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryEntityDialog.Constructor = function(self, ID, gameObject, resRequest, storyManager)
-  -- function num : 0_0 , upvalues : _ENV
-  ((StoryEntityDialog.super).Constructor)(self, ID, gameObject, resRequest, storyManager)
+function StoryEntityDialog:Constructor(ID, gameObject, resRequest, storyManager)
+  StoryEntityDialog.super.Constructor(self, ID, gameObject, resRequest, storyManager)
   self._type = StoryEntityType.Dialog
   self.newName = ""
   self._splitChar = "|"
@@ -20,216 +13,144 @@ StoryEntityDialog.Constructor = function(self, ID, gameObject, resRequest, story
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.InitUIComponents = function(self, gameObject)
-  -- function num : 0_1 , upvalues : _ENV
+function StoryEntityDialog:InitUIComponents(gameObject)
   self._dialogUIView = gameObject:GetComponent("UIView")
-  self._contentBG = (self._dialogUIView):GetUIComponent("Image", "DialogBG")
-  self._speakerGO = (self._dialogUIView):GetGameObject("DialogSpeaker")
-  self._speakerBG1 = (self._dialogUIView):GetUIComponent("Image", "DialogSpeakerBG1")
-  self._speakerBG2 = (self._dialogUIView):GetUIComponent("Image", "DialogSpeakerBG2")
-  self._contentText = (self._dialogUIView):GetUIComponent("UIRichText", "Content")
-  self._speakerText = (self._dialogUIView):GetUIComponent("UILocalizationText", "SpeakerName")
-  self._endFlag = (self._dialogUIView):GetGameObject("EndFlag")
-  self._fullscreenBtn = (self._dialogUIView):GetGameObject("FullScreenBtn")
-  self._optRoot = (self._dialogUIView):GetGameObject("Options")
-  self._optMask = (self._dialogUIView):GetGameObject("OptionMask")
+  self._contentBG = self._dialogUIView:GetUIComponent("Image", "DialogBG")
+  self._speakerGO = self._dialogUIView:GetGameObject("DialogSpeaker")
+  self._speakerBG1 = self._dialogUIView:GetUIComponent("Image", "DialogSpeakerBG1")
+  self._speakerBG2 = self._dialogUIView:GetUIComponent("Image", "DialogSpeakerBG2")
+  self._contentText = self._dialogUIView:GetUIComponent("UIRichText", "Content")
+  self._speakerText = self._dialogUIView:GetUIComponent("UILocalizationText", "SpeakerName")
+  self._endFlag = self._dialogUIView:GetGameObject("EndFlag")
+  self._fullscreenBtn = self._dialogUIView:GetGameObject("FullScreenBtn")
+  self._optRoot = self._dialogUIView:GetGameObject("Options")
+  self._optMask = self._dialogUIView:GetGameObject("OptionMask")
   self._options = {}
   for i = 1, 3 do
-    do
-      -- DECOMPILER ERROR at PC72: Confused about usage of register: R6 in 'UnsetPending'
-
-      (self._options)[i] = (self._dialogUIView):GetGameObject("Opt" .. i)
-    end
+    self._options[i] = self._dialogUIView:GetGameObject("Opt" .. i)
   end
   self._optionBtns = {}
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC88: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._optionBtns)[i] = (self._dialogUIView):GetUIComponent("Button", "Opt" .. i)
+    self._optionBtns[i] = self._dialogUIView:GetUIComponent("Button", "Opt" .. i)
   end
   self._optionBGs = {}
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC105: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._optionBGs)[i] = (self._dialogUIView):GetUIComponent("Image", "opt" .. i .. "Btn")
+    self._optionBGs[i] = self._dialogUIView:GetUIComponent("Image", "opt" .. i .. "Btn")
   end
   self._optionPress = {}
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC121: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._optionPress)[i] = (self._dialogUIView):GetGameObject("opt" .. i .. "BtnPress")
-    ;
-    (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)((self._options)[i]), UIEvent.Press, function(go)
-    -- function num : 0_1_0 , upvalues : self, i
-    (((self._optionBGs)[i]).gameObject):SetActive(false)
-    ;
-    ((self._optionPress)[i]):SetActive(true)
-  end
-)
-    ;
-    (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)((self._options)[i]), UIEvent.Release, function(go)
-    -- function num : 0_1_1 , upvalues : self, i
-    (((self._optionBGs)[i]).gameObject):SetActive(true)
-    ;
-    ((self._optionPress)[i]):SetActive(false)
-  end
-)
-    ;
-    (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)((self._options)[i]), UIEvent.Hovered, function(go)
-    -- function num : 0_1_2 , upvalues : _ENV, self, i
-    if ((UICustomUIEventListener.Get)((self._options)[i])).IsPressd then
-      (((self._optionBGs)[i]).gameObject):SetActive(false)
-      ;
-      ((self._optionPress)[i]):SetActive(true)
-    end
-  end
-)
-    ;
-    (self.uiCustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)((self._options)[i]), UIEvent.Unhovered, function(go)
-    -- function num : 0_1_3 , upvalues : self, i
-    (((self._optionBGs)[i]).gameObject):SetActive(true)
-    ;
-    ((self._optionPress)[i]):SetActive(false)
-  end
-)
+    self._optionPress[i] = self._dialogUIView:GetGameObject("opt" .. i .. "BtnPress")
+    self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._options[i]), UIEvent.Press, function(go)
+      self._optionBGs[i].gameObject:SetActive(false)
+      self._optionPress[i]:SetActive(true)
+    end)
+    self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._options[i]), UIEvent.Release, function(go)
+      self._optionBGs[i].gameObject:SetActive(true)
+      self._optionPress[i]:SetActive(false)
+    end)
+    self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._options[i]), UIEvent.Hovered, function(go)
+      if UICustomUIEventListener.Get(self._options[i]).IsPressd then
+        self._optionBGs[i].gameObject:SetActive(false)
+        self._optionPress[i]:SetActive(true)
+      end
+    end)
+    self.uiCustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._options[i]), UIEvent.Unhovered, function(go)
+      self._optionBGs[i].gameObject:SetActive(true)
+      self._optionPress[i]:SetActive(false)
+    end)
   end
   self._optionTexts = {}
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC183: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._optionTexts)[i] = (self._dialogUIView):GetUIComponent("UILocalizationText", "opt" .. i .. "Text")
+    self._optionTexts[i] = self._dialogUIView:GetUIComponent("UILocalizationText", "opt" .. i .. "Text")
   end
   self._optionAffinity = {}
   for i = 1, 3 do
-    -- DECOMPILER ERROR at PC198: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._optionAffinity)[i] = (self._dialogUIView):GetGameObject("affinity" .. i)
+    self._optionAffinity[i] = self._dialogUIView:GetGameObject("affinity" .. i)
   end
-  self._ropeFront1 = (self._dialogUIView):GetUIComponent("Image", "RopeFront1")
-  self._ropeBack1 = (self._dialogUIView):GetUIComponent("Image", "RopeBack1")
-  self._ropeBack2 = (self._dialogUIView):GetUIComponent("Image", "RopeBack2")
+  self._ropeFront1 = self._dialogUIView:GetUIComponent("Image", "RopeFront1")
+  self._ropeBack1 = self._dialogUIView:GetUIComponent("Image", "RopeBack1")
+  self._ropeBack2 = self._dialogUIView:GetUIComponent("Image", "RopeBack2")
   self._optionParagraphIDDic = {}
   self._optionAffinityData = {}
-  self._threeOptPosList = {Vector3(-59, 217, 0), Vector3(-9.5, 58, 0), Vector3(37.5, -104, 0)}
-  self._twoOptPosList = {Vector3(-58.5, 137.5, 0), Vector3(-9.5, -22, 0)}
-  self._oneOptPos = {Vector3(-9.5, 54, 0)}
-  self._OptPosList = {self._oneOptPos, self._twoOptPosList, self._threeOptPosList}
+  self._threeOptPosList = {
+    Vector3(-59, 217, 0),
+    Vector3(-9.5, 58, 0),
+    Vector3(37.5, -104, 0)
+  }
+  self._twoOptPosList = {
+    Vector3(-58.5, 137.5, 0),
+    Vector3(-9.5, -22, 0)
+  }
+  self._oneOptPos = {
+    Vector3(-9.5, 54, 0)
+  }
+  self._OptPosList = {
+    self._oneOptPos,
+    self._twoOptPosList,
+    self._threeOptPosList
+  }
   self._dialogSpeakerBGBlue = "plot_juqing_xian0"
   self._dialogSpeakerBGRed = "plot_juqing_xian1"
   self._createName = {}
-  -- DECOMPILER ERROR at PC276: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._createName).go = (self._dialogUIView):GetGameObject("CreateName")
-  ;
-  ((self._createName).go):SetActive(false)
-  -- DECOMPILER ERROR at PC288: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._createName).errorTxt = (self._dialogUIView):GetUIComponent("UILocalizationText", "ErrorTxt")
-  -- DECOMPILER ERROR at PC295: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._createName).inputField = (self._dialogUIView):GetUIComponent("EmojiFilteredInputField", "InputField")
-  -- DECOMPILER ERROR at PC301: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._createName).placeHolderGO = (self._dialogUIView):GetGameObject("Placeholder")
-  -- DECOMPILER ERROR at PC308: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._createName).placeHolderLZT = (self._dialogUIView):GetUIComponent("UILocalizationText", "Placeholder")
-  -- DECOMPILER ERROR at PC314: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._createName).inputDecorateGO = (self._dialogUIView):GetGameObject("inputDecorate")
-  self._etl = (UICustomUIEventListener.Get)(((self._createName).inputField).gameObject)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener(self._etl, UIEvent.Press, function()
-    -- function num : 0_1_4 , upvalues : self, _ENV
-    if ((self._createName).inputField).touchScreenKeyboard then
+  self._createName.go = self._dialogUIView:GetGameObject("CreateName")
+  self._createName.go:SetActive(false)
+  self._createName.errorTxt = self._dialogUIView:GetUIComponent("UILocalizationText", "ErrorTxt")
+  self._createName.inputField = self._dialogUIView:GetUIComponent("EmojiFilteredInputField", "InputField")
+  self._createName.placeHolderGO = self._dialogUIView:GetGameObject("Placeholder")
+  self._createName.placeHolderLZT = self._dialogUIView:GetUIComponent("UILocalizationText", "Placeholder")
+  self._createName.inputDecorateGO = self._dialogUIView:GetGameObject("inputDecorate")
+  self._etl = UICustomUIEventListener.Get(self._createName.inputField.gameObject)
+  self.uiCustomEventListener:AddUICustomEventListener(self._etl, UIEvent.Press, function()
+    if self._createName.inputField.touchScreenKeyboard then
       pcall(StoryEntityDialog.ActiveKeyboard, self, false)
     end
-  end
-)
-  ;
-  (self.uiCustomEventListener):AddUICustomEventListener(self._etl, UIEvent.Click, function()
-    -- function num : 0_1_5 , upvalues : _ENV, self
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
-    if (string.len)(((self._createName).inputField).text) <= 0 then
-      ((self._createName).placeHolderLZT).enabled = false
-      ;
-      ((self._createName).inputDecorateGO):SetActive(false)
+  end)
+  self.uiCustomEventListener:AddUICustomEventListener(self._etl, UIEvent.Click, function()
+    if string.len(self._createName.inputField.text) <= 0 then
+      self._createName.placeHolderLZT.enabled = false
+      self._createName.inputDecorateGO:SetActive(false)
     end
-  end
-)
-  ;
-  (((self._createName).inputField).onValueChanged):AddListener(function()
-    -- function num : 0_1_6 , upvalues : self, _ENV
-    local s = ((self._createName).inputField).text
-    if (string.match)(s, " ") then
-      (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
-      s = (string.gsub)(s, " ", "")
+  end)
+  self._createName.inputField.onValueChanged:AddListener(function()
+    local s = self._createName.inputField.text
+    if string.match(s, " ") then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
+      s = string.gsub(s, " ", "")
     end
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self._createName).inputField).text = s
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-    if (string.len)(((self._createName).inputField).text) > 0 then
-      ((self._createName).placeHolderLZT).enabled = true
-      ;
-      ((self._createName).inputDecorateGO):SetActive(false)
+    self._createName.inputField.text = s
+    if string.len(self._createName.inputField.text) > 0 then
+      self._createName.placeHolderLZT.enabled = true
+      self._createName.inputDecorateGO:SetActive(false)
     else
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      ((self._createName).placeHolderLZT).enabled = true
-      ;
-      ((self._createName).inputDecorateGO):SetActive(true)
+      self._createName.placeHolderLZT.enabled = true
+      self._createName.inputDecorateGO:SetActive(true)
     end
-  end
-)
-  self._resumeCallBack = (GameHelper:GetInstance()):CreateCallback(self.OnAppResume, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.AppResume, self._resumeCallBack)
+  end)
+  self._resumeCallBack = GameHelper:GetInstance():CreateCallback(self.OnAppResume, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.AppResume, self._resumeCallBack)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.Destroy = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function StoryEntityDialog:Destroy()
   if self._resumeCallBack then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.AppResume, self._resumeCallBack)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.AppResume, self._resumeCallBack)
   end
   self:StopPlayAudio()
-  ;
-  (self.uiCustomEventListener):RemoveAllCustomEventListener()
+  self.uiCustomEventListener:RemoveAllCustomEventListener()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.GetOptions = function(self)
-  -- function num : 0_3
-  if not ((self._currentTrackData).Options).OptionLoop then
-    return (self._currentTrackData).Options
+function StoryEntityDialog:GetOptions()
+  if not self._currentTrackData.Options.OptionLoop then
+    return self._currentTrackData.Options
   else
-    return (self._storyManager):GetOptionData((self._currentTrackData).Options, (self._currentTrackData).DialogContentStr)
+    return self._storyManager:GetOptionData(self._currentTrackData.Options, self._currentTrackData.DialogContentStr)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.InitData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function StoryEntityDialog:InitData()
   self._inSpeakerNameFadeIn = false
   self._speakerNameFadeInStartTime = 0
   self._speakerNameFadeInDuration = 0
-  self._speakerNameFadeInColor = (Color.New)(1, 1, 1, 1)
+  self._speakerNameFadeInColor = Color.New(1, 1, 1, 1)
   self._speakerNameStr = ""
   self._isPlayer = false
   self._contentStartShow = false
@@ -243,9 +164,13 @@ StoryEntityDialog.InitData = function(self)
   self._inOptionsFadeIn = false
   self._optionsFadeInStartTime = 0
   self._optionsFadeInDuration = 0
-  self._optionsFadeInColor = (Color.New)(1, 1, 1, 1)
+  self._optionsFadeInColor = Color.New(1, 1, 1, 1)
   self._optionsCount = 1
-  self._optionsStrList = {"", "", ""}
+  self._optionsStrList = {
+    "",
+    "",
+    ""
+  }
   self._selectedOptionIndex = 0
   self._contentStartShowTime = 0
   self._contentStr = ""
@@ -267,828 +192,560 @@ StoryEntityDialog.InitData = function(self)
   self._colorPattern = "<color=#%x*"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.SectionStart = function(self, trackData)
-  -- function num : 0_5 , upvalues : _ENV
-  ((StoryEntityDialog.super).SectionStart)(self, trackData)
-  ;
-  (self._speakerGO):SetActive(false)
-  if (self._currentTrackData).SpeakerNameStr ~= "ui_story_name_you" then
-    self._isPlayer = not (self._currentTrackData).SpeakerNameStr
-    self._speakerNameStr = (StringTable.Get)((self._currentTrackData).SpeakerNameStr)
+function StoryEntityDialog:SectionStart(trackData)
+  StoryEntityDialog.super.SectionStart(self, trackData)
+  self._speakerGO:SetActive(false)
+  if self._currentTrackData.SpeakerNameStr then
+    self._isPlayer = self._currentTrackData.SpeakerNameStr == "ui_story_name_you"
+    self._speakerNameStr = StringTable.Get(self._currentTrackData.SpeakerNameStr)
     self._speakerNameStr = self:_DoEscape(self._speakerNameStr)
-    ;
-    (self._speakerText):SetText(self._speakerNameStr)
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._isPlayer or (self._currentTrackData).SpeakerBGColor == "blue" then
-      (self._speakerBG1).sprite = ((self._storyManager):GetUIAtlas()):GetSprite(self._dialogSpeakerBGBlue)
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._speakerBG2).sprite = ((self._storyManager):GetUIAtlas()):GetSprite(self._dialogSpeakerBGBlue)
+    self._speakerText:SetText(self._speakerNameStr)
+    if self._isPlayer or self._currentTrackData.SpeakerBGColor == "blue" then
+      self._speakerBG1.sprite = self._storyManager:GetUIAtlas():GetSprite(self._dialogSpeakerBGBlue)
+      self._speakerBG2.sprite = self._storyManager:GetUIAtlas():GetSprite(self._dialogSpeakerBGBlue)
     else
-      -- DECOMPILER ERROR at PC66: Confused about usage of register: R2 in 'UnsetPending'
-
-      (self._speakerBG1).sprite = ((self._storyManager):GetUIAtlas()):GetSprite(self._dialogSpeakerBGRed)
-      -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._speakerBG2).sprite = ((self._storyManager):GetUIAtlas()):GetSprite(self._dialogSpeakerBGRed)
+      self._speakerBG1.sprite = self._storyManager:GetUIAtlas():GetSprite(self._dialogSpeakerBGRed)
+      self._speakerBG2.sprite = self._storyManager:GetUIAtlas():GetSprite(self._dialogSpeakerBGRed)
     end
-    ;
-    (self._speakerText):SetText("")
-    ;
-    ((self._contentText).gameObject):SetActive(false)
-    self._contentStr = (StringTable.Get)((self._currentTrackData).DialogContentStr)
-    self._contentStr = self:_DoEscape(self._contentStr)
-    self._contentStr = self:_GetContentInfo(self._contentStr)
-    ;
-    (self._contentText):SetText(self._contentStr)
-    self._contentStartShow = false
-    self._contentShown = false
-    self._contentTypeStartTime = 0
-    local transparent = (Color.New)(1, 1, 1, 0)
-    -- DECOMPILER ERROR at PC116: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._speakerBG1).color = transparent
-    -- DECOMPILER ERROR at PC118: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._speakerBG2).color = transparent
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._speakerText).color = transparent
-    ;
-    (self._endFlag):SetActive(false)
-    self._inContentEnding = false
-    self._endClick = false
-    self._autoWaitStartTime = 0
-    self._optionShown = false
-    -- DECOMPILER ERROR at PC137: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._fullscreenBtn).transform).position = ((((self._storyManager):GetStoryUIRoot()).transform).parent).position
-    -- DECOMPILER ERROR at PC150: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (self._currentTrackData).Options ~= nil then
-      ((self._optRoot).transform).position = ((((self._storyManager):GetStoryUIRoot()).transform).parent).position
-      -- DECOMPILER ERROR at PC159: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      ((self._optMask).transform).position = ((((self._storyManager):GetStoryUIRoot()).transform).parent).position
-      local optionData = self:GetOptions()
-      self._optionsCount = #self._options
-      local optPosList = (self._OptPosList)[#optionData]
-      local showAffinityIcon = not ((GameGlobal.GetModule)(StoryModule)):IsAdded((self._storyManager):GetCurStoryID(), (self._storyManager):GetCurParagraphID(), (self._storyManager):GetCurSectionIndex())
-      for i = 1, self._optionsCount do
-        if optionData[i] then
-          ((self._options)[i]):SetActive(true)
-          -- DECOMPILER ERROR at PC200: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (((self._options)[i]).transform).localPosition = optPosList[i]
-          -- DECOMPILER ERROR at PC203: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          ((self._optionBtns)[i]).interactable = false
-          -- DECOMPILER ERROR at PC212: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self._optionsStrList)[i] = self:_DoEscape((StringTable.Get)((optionData[i]).Content))
-          ;
-          ((self._optionTexts)[i]):SetText((self._optionsStrList)[i])
-          -- DECOMPILER ERROR at PC222: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (self._optionParagraphIDDic)[i] = (optionData[i]).NextParagraphID
-          if showAffinityIcon and (optionData[i]).PetID and (optionData[i]).Affinity then
-            ((self._optionAffinity)[i]):SetActive(true)
-            -- DECOMPILER ERROR at PC246: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            (self._optionAffinityData)[i] = {PetID = (optionData[i]).PetID, Affinity = (optionData[i]).Affinity}
-          else
-            ((self._optionAffinity)[i]):SetActive(false)
-          end
+  else
+    self._speakerText:SetText("")
+  end
+  self._contentText.gameObject:SetActive(false)
+  self._contentStr = StringTable.Get(self._currentTrackData.DialogContentStr)
+  self._contentStr = self:_DoEscape(self._contentStr)
+  self._contentStr, self._breakIndexList, self._wordTotalCount = self:_GetContentInfo(self._contentStr)
+  self._contentText:SetText(self._contentStr)
+  self._contentStartShow = false
+  self._contentShown = false
+  self._contentTypeStartTime = 0
+  local transparent = Color.New(1, 1, 1, 0)
+  self._speakerBG1.color = transparent
+  self._speakerBG2.color = transparent
+  self._speakerText.color = transparent
+  self._endFlag:SetActive(false)
+  self._inContentEnding = false
+  self._endClick = false
+  self._autoWaitStartTime = 0
+  self._optionShown = false
+  self._fullscreenBtn.transform.position = self._storyManager:GetStoryUIRoot().transform.parent.position
+  if self._currentTrackData.Options ~= nil then
+    self._optRoot.transform.position = self._storyManager:GetStoryUIRoot().transform.parent.position
+    self._optMask.transform.position = self._storyManager:GetStoryUIRoot().transform.parent.position
+    local optionData = self:GetOptions()
+    self._optionsCount = #self._options
+    local optPosList = self._OptPosList[#optionData]
+    local showAffinityIcon = not GameGlobal.GetModule(StoryModule):IsAdded(self._storyManager:GetCurStoryID(), self._storyManager:GetCurParagraphID(), self._storyManager:GetCurSectionIndex())
+    for i = 1, self._optionsCount do
+      if optionData[i] then
+        self._options[i]:SetActive(true)
+        self._options[i].transform.localPosition = optPosList[i]
+        self._optionBtns[i].interactable = false
+        self._optionsStrList[i] = self:_DoEscape(StringTable.Get(optionData[i].Content))
+        self._optionTexts[i]:SetText(self._optionsStrList[i])
+        self._optionParagraphIDDic[i] = optionData[i].NextParagraphID
+        if showAffinityIcon and optionData[i].PetID and optionData[i].Affinity then
+          self._optionAffinity[i]:SetActive(true)
+          self._optionAffinityData[i] = {
+            PetID = optionData[i].PetID,
+            Affinity = optionData[i].Affinity
+          }
         else
-          ((self._options)[i]):SetActive(false)
+          self._optionAffinity[i]:SetActive(false)
         end
-      end
-      ;
-      ((self._ropeFront1).gameObject):SetActive(#optionData > 1)
-      ;
-      ((self._ropeBack1).gameObject):SetActive(#optionData > 1)
-      ;
-      ((self._ropeBack2).gameObject):SetActive(#optionData > 2)
-    end
-    -- DECOMPILER ERROR at PC300: Confused about usage of register: R3 in 'UnsetPending'
-
-    if (self._currentTrackData).CreateName then
-      (((self._createName).go).transform).position = ((((self._storyManager):GetStoryUIRoot()).transform).parent).position
-    end
-    self._forceAutoDialog = ((self._storyManager):GetCurParagraph()).ForceAutoDialog
-    -- DECOMPILER ERROR: 13 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog._GetContentInfo = function(self, str)
-  -- function num : 0_6 , upvalues : _ENV
-  do
-    if str == nil then
-      local list = {}
-      list[1] = 1
-      return "", list, 0
-    end
-    local plainStr = (string.gsub)(str, "<size=%d*>", "")
-    plainStr = (string.gsub)(plainStr, "</size>", "")
-    plainStr = (string.gsub)(plainStr, "<color=#%x*>", "")
-    plainStr = (string.gsub)(plainStr, "</color>", "")
-    local finalStr = (string.gsub)(str, self._splitChar, "")
-    local breakIndexList = {}
-    local charCount = 0
-    for uchar in (string.gmatch)(plainStr, "[%z\001-\127\194-\244][\128-\191]*") do
-      if uchar == self._splitChar then
-        breakIndexList[#breakIndexList + 1] = charCount
       else
-        charCount = charCount + 1
+        self._options[i]:SetActive(false)
       end
     end
-    breakIndexList[#breakIndexList + 1] = charCount
-    return finalStr, breakIndexList, charCount
+    self._ropeFront1.gameObject:SetActive(1 < #optionData)
+    self._ropeBack1.gameObject:SetActive(1 < #optionData)
+    self._ropeBack2.gameObject:SetActive(2 < #optionData)
   end
+  if self._currentTrackData.CreateName then
+    self._createName.go.transform.position = self._storyManager:GetStoryUIRoot().transform.parent.position
+  end
+  self._forceAutoDialog = self._storyManager:GetCurParagraph().ForceAutoDialog
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
+function StoryEntityDialog:_GetContentInfo(str)
+  if str == nil then
+    local list = {}
+    list[1] = 1
+    return "", list, 0
+  end
+  local plainStr = string.gsub(str, "<size=%d*>", "")
+  plainStr = string.gsub(plainStr, "</size>", "")
+  plainStr = string.gsub(plainStr, "<color=#%x*>", "")
+  plainStr = string.gsub(plainStr, "</color>", "")
+  local finalStr = string.gsub(str, self._splitChar, "")
+  local breakIndexList = {}
+  local charCount = 0
+  for uchar in string.gmatch(plainStr, "[%z\001-\127Â-ô][€-¿]*") do
+    if uchar == self._splitChar then
+      breakIndexList[#breakIndexList + 1] = charCount
+    else
+      charCount = charCount + 1
+    end
+  end
+  breakIndexList[#breakIndexList + 1] = charCount
+  return finalStr, breakIndexList, charCount
+end
 
-StoryEntityDialog._DoEscape = function(self, strContent)
-  -- function num : 0_7 , upvalues : _ENV
+function StoryEntityDialog:_DoEscape(strContent)
   if strContent == nil then
     strContent = ""
-    return 
+    return
   end
-  strContent = (string.gsub)(strContent, "$$", "$")
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+  strContent = string.gsub(strContent, "$$", "$")
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  strContent = (string.gsub)(strContent, "PlayerName", name)
+  strContent = string.gsub(strContent, "PlayerName", name)
   return strContent
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog._GetColorMarkPos = function(self, str)
-  -- function num : 0_8
+function StoryEntityDialog:_GetColorMarkPos(str)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._dialogUIView):SetShow(true, self)
+function StoryEntityDialog:_TriggerKeyframe(keyframeData)
+  self._dialogUIView:SetShow(true, self)
   self._showUI = true
   if self._hideUI then
-    ((self._dialogUIView).gameObject):SetActive(false)
+    self._dialogUIView.gameObject:SetActive(false)
   end
   if keyframeData.ContentBGVisible ~= nil then
-    ((self._contentBG).gameObject):SetActive(keyframeData.ContentBGVisible)
+    self._contentBG.gameObject:SetActive(keyframeData.ContentBGVisible)
   end
   if keyframeData.ShowSpeakerName then
-    (self._speakerGO):SetActive(true)
+    self._speakerGO:SetActive(true)
     local showSpeakerNameTime = keyframeData.ShowSpeakerName
-    if showSpeakerNameTime > 0 then
+    if 0 < showSpeakerNameTime then
       self._inSpeakerNameFadeIn = true
       self._speakerNameFadeInStartTime = keyframeData.Time
       self._speakerNameFadeInDuration = showSpeakerNameTime
     else
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._speakerNameFadeInColor).a = 1
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._speakerBG1).color = self._speakerNameFadeInColor
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._speakerBG2).color = self._speakerNameFadeInColor
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._speakerText).color = self._speakerNameFadeInColor
+      self._speakerNameFadeInColor.a = 1
+      self._speakerBG1.color = self._speakerNameFadeInColor
+      self._speakerBG2.color = self._speakerNameFadeInColor
+      self._speakerText.color = self._speakerNameFadeInColor
     end
   end
-  do
-    if keyframeData.ShowContent then
-      self._contentStartShow = true
-      ;
-      ((self._contentText).gameObject):SetActive(true)
-      if not keyframeData.TypeTimeList then
-        self._contentTypeTimeList = {}
-        self._curBreakIndex = 0
-        self._inContentTyping = true
-        self._contentTypeStartTime = keyframeData.Time
-        self._contentTypeTime = keyframeData.ShowContent * (self._breakIndexList)[1]
-        -- DECOMPILER ERROR at PC72: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self._contentText).ShowCharCount = 0
-        if (self._currentTrackData).VoiceRefID then
-          (self._storyManager):PlaySound((self._currentTrackData).VoiceRefID)
-        end
-        if (self._currentTrackData).SpeakerRefID then
-          (self._storyManager):SetSpeakState((self._currentTrackData).SpeakerRefID, true)
-        end
-        if self._forceAutoDialog and not keyframeData.ForceWaitTimeList then
-          self._forceWaitTime = {}
-          self:PlayAudio((self._currentTrackData).DialogContentStr)
-          do
-            if keyframeData.ShowCreateName then
-              local roleModule = (GameGlobal.GetModule)(RoleModule)
-              if (string.isnullorempty)(roleModule:GetName()) then
-                (GameGlobal.ReportCustomEvent)("CreateRole", "SetRoleNameView")
-                ;
-                (GameGlobal.UAReportForceGuideEvent)("SetNameWindowShow")
-                ;
-                ((self._createName).go):SetActive(true)
-              end
-            end
-            if keyframeData.HideFullScreenBtn ~= nil then
-              (self._fullscreenBtn):SetActive(not keyframeData.HideFullScreenBtn)
-            end
-          end
-        end
-      end
+  if keyframeData.ShowContent then
+    self._contentStartShow = true
+    self._contentText.gameObject:SetActive(true)
+    self._contentTypeTimeList = keyframeData.TypeTimeList or {}
+    self._curBreakIndex = 0
+    self._inContentTyping = true
+    self._contentTypeStartTime = keyframeData.Time
+    self._contentTypeTime = keyframeData.ShowContent * self._breakIndexList[1]
+    self._contentText.ShowCharCount = 0
+    if self._currentTrackData.VoiceRefID then
+      self._storyManager:PlaySound(self._currentTrackData.VoiceRefID)
     end
+    if self._currentTrackData.SpeakerRefID then
+      self._storyManager:SetSpeakState(self._currentTrackData.SpeakerRefID, true)
+    end
+    if self._forceAutoDialog then
+      self._forceWaitTime = keyframeData.ForceWaitTimeList or {}
+    end
+    self:PlayAudio(self._currentTrackData.DialogContentStr)
+  end
+  if keyframeData.ShowCreateName then
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    if string.isnullorempty(roleModule:GetName()) then
+      GameGlobal.ReportCustomEvent("CreateRole", "SetRoleNameView")
+      GameGlobal.UAReportForceGuideEvent("SetNameWindowShow")
+      self._createName.go:SetActive(true)
+    end
+  end
+  if keyframeData.HideFullScreenBtn ~= nil then
+    self._fullscreenBtn:SetActive(not keyframeData.HideFullScreenBtn)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog._UpdateAnimation = function(self, time)
-  -- function num : 0_10 , upvalues : _ENV
+function StoryEntityDialog:_UpdateAnimation(time)
   if not self._showUI then
     return false
   end
   if self._inSpeakerNameFadeIn then
     local alpha = (time - self._speakerNameFadeInStartTime) / self._speakerNameFadeInDuration
-    do
-      if alpha >= 1 then
-        alpha = 1
-        self._inSpeakerNameFadeIn = false
-        ;
-        (self._speakerText):SetText(self._speakerNameStr)
-      end
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._speakerNameFadeInColor).a = alpha
-      -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._speakerBG1).color = self._speakerNameFadeInColor
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._speakerBG2).color = self._speakerNameFadeInColor
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._speakerText).color = self._speakerNameFadeInColor
-      local colorStr = (string.format)("%02x", (math.floor)(alpha * 255))
-      local str = (string.gsub)(self._speakerNameStr, self._colorPattern, function(s)
-    -- function num : 0_10_0 , upvalues : colorStr
-    return s .. colorStr
+    if 1 <= alpha then
+      alpha = 1
+      self._inSpeakerNameFadeIn = false
+      self._speakerText:SetText(self._speakerNameStr)
+    end
+    self._speakerNameFadeInColor.a = alpha
+    self._speakerBG1.color = self._speakerNameFadeInColor
+    self._speakerBG2.color = self._speakerNameFadeInColor
+    self._speakerText.color = self._speakerNameFadeInColor
+    local colorStr = string.format("%02x", math.floor(alpha * 255))
+    local str = string.gsub(self._speakerNameStr, self._colorPattern, function(s)
+      return s .. colorStr
+    end)
+    self._speakerText:SetText(str)
   end
-)
-      ;
-      (self._speakerText):SetText(str)
-    end
-  end
-  do
-    -- DECOMPILER ERROR at PC61: Unhandled construct in 'MakeBoolean' P1
-
-    if self._inContentTyping and self._inContentEnding and self._contentEndingTime < time - self._contentEndStartTime then
-      self._inContentTyping = false
-      self._contentShown = true
-      ;
-      (self._endFlag):SetActive(true)
-    end
-    self._autoWaitStartTime = 0
-    local breakPercent = 1
-    if self._contentTypeTime > 0 and not self._typeClickEnd then
-      breakPercent = (time - self._contentTypeStartTime) / self._contentTypeTime
-      if breakPercent > 1 then
-        breakPercent = 1
-      end
-    end
-    self._typeClickEnd = false
-    local wordCount = -1
-    if self._curBreakIndex == 0 then
-      wordCount = (math.floor)(breakPercent * (self._breakIndexList)[self._curBreakIndex + 1])
-    else
-      wordCount = (math.floor)((lmathext.lerp)((self._breakIndexList)[self._curBreakIndex], (self._breakIndexList)[self._curBreakIndex + 1], breakPercent))
-    end
-    -- DECOMPILER ERROR at PC114: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._contentText).ShowCharCount = wordCount
-    if breakPercent == 1 then
-      self._curBreakIndex = self._curBreakIndex + 1
-      if #self._breakIndexList <= self._curBreakIndex then
-        self._inContentEnding = true
-        self._contentEndStartTime = time
-      else
+  if self._inContentTyping then
+    if self._inContentEnding then
+      if time - self._contentEndStartTime > self._contentEndingTime then
         self._inContentTyping = false
-        if not (self._contentTypeTimeList)[self._curBreakIndex] then
-          do
-            self._contentTypeTime = self._defaultBreakTypeTime * ((self._breakIndexList)[self._curBreakIndex + 1] - (self._breakIndexList)[self._curBreakIndex])
-            if self._contentStartShow and (self._auto or self._forceAutoDialog) and not self._endClick then
-              if (self._contentShown or not self._inContentTyping) and self._autoWaitStartTime == 0 then
-                self._autoWaitStartTime = time
-                if self._forceAutoDialog then
-                  self._autoWaitTime = (self._forceWaitTime)[self._curBreakIndex]
-                else
-                  if self._curBreakIndex == 1 then
-                    self._autoWaitTime = 1 + (self._breakIndexList)[self._curBreakIndex] * 0.075
-                  else
-                    self._autoWaitTime = 1 + ((self._breakIndexList)[self._curBreakIndex] - (self._breakIndexList)[self._curBreakIndex - 1]) * 0.075
-                  end
-                end
-              end
-              -- DECOMPILER ERROR at PC209: Unhandled construct in 'MakeBoolean' P1
-
-              -- DECOMPILER ERROR at PC209: Unhandled construct in 'MakeBoolean' P1
-
-              if self._contentShown and (self._currentTrackData).Options == nil and self._autoWaitTime <= time - self._autoWaitStartTime then
-                self:_DialogEnd()
-              end
-            end
-            if self._autoWaitOptionTime <= time - self._autoWaitStartTime and not self._optionShown then
-              self:_ShowOption()
-              self._optionShown = true
-            end
-            if not self._inContentTyping and self._autoWaitTime <= time - self._autoWaitStartTime then
-              self._contentTypeStartTime = (self._storyManager):GetCurrentTime()
-              self._inContentTyping = true
-              ;
-              (self._endFlag):SetActive(false)
-            end
-            if self._inOptionsFadeIn then
-              if self._optionsFadeInStartTime == 0 then
-                self._optionsFadeInStartTime = time
-              end
-              local alpha = (time - self._optionsFadeInStartTime) / self._optionsFadeInDuration
-              if alpha >= 1 then
-                alpha = 1
-                self._inOptionsFadeIn = false
-                for i = 1, self._optionsCount do
-                  -- DECOMPILER ERROR at PC261: Confused about usage of register: R7 in 'UnsetPending'
-
-                  ((self._optionBtns)[i]).interactable = true
-                  ;
-                  ((self._optionTexts)[i]):SetText((self._optionsStrList)[i])
-                end
-              end
-              do
-                -- DECOMPILER ERROR at PC270: Confused about usage of register: R3 in 'UnsetPending'
-
-                ;
-                (self._optionsFadeInColor).a = alpha
-                do
-                  local colorStr = (string.format)("%02x", (math.floor)(alpha * 255))
-                  for i = 1, self._optionsCount do
-                    -- DECOMPILER ERROR at PC286: Confused about usage of register: R8 in 'UnsetPending'
-
-                    ((self._optionBGs)[i]).color = self._optionsFadeInColor
-                    -- DECOMPILER ERROR at PC290: Confused about usage of register: R8 in 'UnsetPending'
-
-                    ;
-                    ((self._optionTexts)[i]).color = self._optionsFadeInColor
-                    local str = (string.gsub)((self._optionsStrList)[i], self._colorPattern, function(s)
-    -- function num : 0_10_1 , upvalues : colorStr
-    return s .. colorStr
-  end
-)
-                    ;
-                    ((self._optionTexts)[i]):SetText(str)
-                  end
-                  -- DECOMPILER ERROR at PC311: Confused about usage of register: R4 in 'UnsetPending'
-
-                  if #self:GetOptions() == 2 then
-                    (self._ropeFront1).color = self._optionsFadeInColor
-                    -- DECOMPILER ERROR at PC314: Confused about usage of register: R4 in 'UnsetPending'
-
-                    ;
-                    (self._ropeBack1).color = self._optionsFadeInColor
-                  else
-                    -- DECOMPILER ERROR at PC323: Confused about usage of register: R4 in 'UnsetPending'
-
-                    if #self:GetOptions() == 3 then
-                      (self._ropeFront1).color = self._optionsFadeInColor
-                      -- DECOMPILER ERROR at PC326: Confused about usage of register: R4 in 'UnsetPending'
-
-                      ;
-                      (self._ropeBack1).color = self._optionsFadeInColor
-                      -- DECOMPILER ERROR at PC329: Confused about usage of register: R4 in 'UnsetPending'
-
-                      ;
-                      (self._ropeBack2).color = self._optionsFadeInColor
-                    end
-                  end
-                  self.playAudio = true
-                  do
-                    if self.playAudio then
-                      local playing = nil
-                      if self._currentPlayingID then
-                        playing = (AudioHelperController.CheckUIVoicePlaying)(self._currentPlayingID)
-                      end
-                      if playing then
-                        self.playAudio = true
-                      else
-                        self.playAudio = false
-                      end
-                      if not self._auto and not self._forceAutoDialog and self._endClick then
-                        self.playAudio = false
-                      end
-                    end
-                    if time > 120 then
-                      self.playAudio = false
-                    end
-                    if self._contentShown and self._endClick and not self.playAudio then
-                      (self._dialogUIView):SetShow(false, self)
-                      self._showUI = false
-                      return true
-                    else
-                      return false
-                    end
-                  end
-                end
-              end
-            end
-          end
+        self._contentShown = true
+        self._endFlag:SetActive(true)
+      end
+    else
+      self._autoWaitStartTime = 0
+      local breakPercent = 1
+      if 0 < self._contentTypeTime and not self._typeClickEnd then
+        breakPercent = (time - self._contentTypeStartTime) / self._contentTypeTime
+        if 1 < breakPercent then
+          breakPercent = 1
+        end
+      end
+      self._typeClickEnd = false
+      local wordCount = -1
+      if self._curBreakIndex == 0 then
+        wordCount = math.floor(breakPercent * self._breakIndexList[self._curBreakIndex + 1])
+      else
+        wordCount = math.floor(lmathext.lerp(self._breakIndexList[self._curBreakIndex], self._breakIndexList[self._curBreakIndex + 1], breakPercent))
+      end
+      self._contentText.ShowCharCount = wordCount
+      if breakPercent == 1 then
+        self._curBreakIndex = self._curBreakIndex + 1
+        if self._curBreakIndex >= #self._breakIndexList then
+          self._inContentEnding = true
+          self._contentEndStartTime = time
+        else
+          self._inContentTyping = false
+          self._contentTypeTime = (self._contentTypeTimeList[self._curBreakIndex] or self._defaultBreakTypeTime) * (self._breakIndexList[self._curBreakIndex + 1] - self._breakIndexList[self._curBreakIndex])
         end
       end
     end
   end
+  if self._contentStartShow and (self._auto or self._forceAutoDialog) and not self._endClick then
+    if (self._contentShown or not self._inContentTyping) and self._autoWaitStartTime == 0 then
+      self._autoWaitStartTime = time
+      if self._forceAutoDialog then
+        self._autoWaitTime = self._forceWaitTime[self._curBreakIndex]
+      elseif self._curBreakIndex == 1 then
+        self._autoWaitTime = 1 + self._breakIndexList[self._curBreakIndex] * 0.075
+      else
+        self._autoWaitTime = 1 + (self._breakIndexList[self._curBreakIndex] - self._breakIndexList[self._curBreakIndex - 1]) * 0.075
+      end
+    end
+    if self._contentShown then
+      if self._currentTrackData.Options == nil then
+        if time - self._autoWaitStartTime >= self._autoWaitTime then
+          self:_DialogEnd()
+        end
+      elseif time - self._autoWaitStartTime >= self._autoWaitOptionTime and not self._optionShown then
+        self:_ShowOption()
+        self._optionShown = true
+      end
+    elseif not self._inContentTyping and time - self._autoWaitStartTime >= self._autoWaitTime then
+      self._contentTypeStartTime = self._storyManager:GetCurrentTime()
+      self._inContentTyping = true
+      self._endFlag:SetActive(false)
+    end
+  end
+  if self._inOptionsFadeIn then
+    if self._optionsFadeInStartTime == 0 then
+      self._optionsFadeInStartTime = time
+    end
+    local alpha = (time - self._optionsFadeInStartTime) / self._optionsFadeInDuration
+    if 1 <= alpha then
+      alpha = 1
+      self._inOptionsFadeIn = false
+      for i = 1, self._optionsCount do
+        self._optionBtns[i].interactable = true
+        self._optionTexts[i]:SetText(self._optionsStrList[i])
+      end
+    end
+    self._optionsFadeInColor.a = alpha
+    local colorStr = string.format("%02x", math.floor(alpha * 255))
+    for i = 1, self._optionsCount do
+      self._optionBGs[i].color = self._optionsFadeInColor
+      self._optionTexts[i].color = self._optionsFadeInColor
+      local str = string.gsub(self._optionsStrList[i], self._colorPattern, function(s)
+        return s .. colorStr
+      end)
+      self._optionTexts[i]:SetText(str)
+    end
+    if #self:GetOptions() == 2 then
+      self._ropeFront1.color = self._optionsFadeInColor
+      self._ropeBack1.color = self._optionsFadeInColor
+    elseif #self:GetOptions() == 3 then
+      self._ropeFront1.color = self._optionsFadeInColor
+      self._ropeBack1.color = self._optionsFadeInColor
+      self._ropeBack2.color = self._optionsFadeInColor
+    end
+  end
+  self.playAudio = true
+  if self.playAudio then
+    local playing
+    if self._currentPlayingID then
+      playing = AudioHelperController.CheckUIVoicePlaying(self._currentPlayingID)
+    end
+    if playing then
+      self.playAudio = true
+    else
+      self.playAudio = false
+    end
+    if not self._auto and not self._forceAutoDialog and self._endClick then
+      self.playAudio = false
+    end
+  end
+  if 120 < time then
+    self.playAudio = false
+  end
+  if self._contentShown and self._endClick and not self.playAudio then
+    self._dialogUIView:SetShow(false, self)
+    self._showUI = false
+    return true
+  else
+    return false
+  end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog._DialogEnd = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function StoryEntityDialog:_DialogEnd()
   self._endClick = true
-  if (self._currentTrackData).VoiceRefID then
-    (self._storyManager):StopSound((self._currentTrackData).VoiceRefID)
+  if self._currentTrackData.VoiceRefID then
+    self._storyManager:StopSound(self._currentTrackData.VoiceRefID)
   end
-  ;
-  (self._storyManager):AddDialogRecord((self._speakerText).text, (self._contentText).text, (self._currentTrackData).SpeakerBGColor, self._isPlayer, self.VoiceID)
-  if (self._currentTrackData).Options then
-    local playerName = self:_DoEscape((StringTable.Get)("ui_story_name_you"))
-    local optionContent = (self._optionsStrList)[self._selectedOptionIndex]
+  self._storyManager:AddDialogRecord(self._speakerText.text, self._contentText.text, self._currentTrackData.SpeakerBGColor, self._isPlayer, self.VoiceID)
+  if self._currentTrackData.Options then
+    local playerName = self:_DoEscape(StringTable.Get("ui_story_name_you"))
+    local optionContent = self._optionsStrList[self._selectedOptionIndex]
     local playerNameBG = "blue"
-    ;
-    (self._storyManager):AddDialogRecord(playerName, optionContent, playerNameBG)
+    self._storyManager:AddDialogRecord(playerName, optionContent, playerNameBG)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.PlayAudio = function(self, str)
-  -- function num : 0_12 , upvalues : _ENV
-  local Cfgs = (Cfg.cfg_adx2_audio)({StoryStr = str})
+function StoryEntityDialog:PlayAudio(str)
+  local Cfgs = Cfg.cfg_adx2_audio({StoryStr = str})
   self.VoiceID = nil
   if Cfgs then
-    self.VoiceID = (Cfgs[1]).ID
+    self.VoiceID = Cfgs[1].ID
   end
   self:StopPlayAudio()
-  for _,callback in ipairs(self._audioPlayCallbacks) do
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._audioPlayingCallbacks)[#self._audioPlayingCallbacks + 1] = callback
+  for _, callback in ipairs(self._audioPlayCallbacks) do
+    self._audioPlayingCallbacks[#self._audioPlayingCallbacks + 1] = callback
     callback(true)
   end
   self._audioPlayCallbacks = {}
   if self.VoiceID then
-    self._currentPlayingID = (AudioHelperController.PlayUIVoice)(self.VoiceID, false)
-    ;
-    (AudioHelperController.SetUIVoicePlaySpeed)((UnityEngine.Time).timeScale)
-    local voiceLength = (AudioHelperController.GetPlayingVoiceSecLength)(self._currentPlayingID)
-    if voiceLength > 0 or not 1 then
-      self._voiceEndEvent = ((GameGlobal.Timer)()):AddEvent(voiceLength * 1000, function()
-    -- function num : 0_12_0 , upvalues : self
-    self:OnAudioStop()
-    self._voiceEndEvent = nil
-  end
-)
-    end
+    self._currentPlayingID = AudioHelperController.PlayUIVoice(self.VoiceID, false)
+    AudioHelperController.SetUIVoicePlaySpeed(UnityEngine.Time.timeScale)
+    local voiceLength = AudioHelperController.GetPlayingVoiceSecLength(self._currentPlayingID)
+    voiceLength = voiceLength <= 0 and 1 or voiceLength
+    self._voiceEndEvent = GameGlobal.Timer():AddEvent(voiceLength * 1000, function()
+      self:OnAudioStop()
+      self._voiceEndEvent = nil
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.StopPlayAudio = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function StoryEntityDialog:StopPlayAudio()
   if self._currentPlayingID then
-    (AudioHelperController.StopUIVoice)(self._currentPlayingID)
+    AudioHelperController.StopUIVoice(self._currentPlayingID)
   end
   self._currentPlayingID = nil
   if self._voiceEndEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._voiceEndEvent)
+    GameGlobal.Timer():CancelEvent(self._voiceEndEvent)
     self._voiceEndEvent = nil
   end
   self:OnAudioStop()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.OnAudioStop = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  for _,callback in ipairs(self._audioPlayingCallbacks) do
+function StoryEntityDialog:OnAudioStop()
+  for _, callback in ipairs(self._audioPlayingCallbacks) do
     callback(false)
   end
   self._audioPlayingCallbacks = {}
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.AddAudioPlayCallback = function(self, callback)
-  -- function num : 0_15
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._audioPlayCallbacks)[#self._audioPlayCallbacks + 1] = callback
+function StoryEntityDialog:AddAudioPlayCallback(callback)
+  self._audioPlayCallbacks[#self._audioPlayCallbacks + 1] = callback
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.FullScreenBtnOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function StoryEntityDialog:FullScreenBtnOnClick()
   if self._endClick or self._forceAutoDialog or not self._contentStartShow then
-    return 
+    return
   end
   if self._contentShown then
-    (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundStoryClick)
+    AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundStoryClick)
     self:_ShowOption()
+  elseif self._inContentTyping then
+    AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundStoryClick)
+    self._typeClickEnd = true
   else
-    if self._inContentTyping then
-      (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundStoryClick)
-      self._typeClickEnd = true
-    else
-      ;
-      (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundStoryClick)
-      self._contentTypeStartTime = (self._storyManager):GetCurrentTime()
-      self._inContentTyping = true
-      ;
-      (self._endFlag):SetActive(false)
-    end
+    AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundStoryClick)
+    self._contentTypeStartTime = self._storyManager:GetCurrentTime()
+    self._inContentTyping = true
+    self._endFlag:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.SectionEnd = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  ((StoryEntityDialog.super).SectionEnd)(self)
+function StoryEntityDialog:SectionEnd()
+  StoryEntityDialog.super.SectionEnd(self)
   self._endClick = true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog._ShowOption = function(self)
-  -- function num : 0_18
-  if (self._currentTrackData).Options == nil then
+function StoryEntityDialog:_ShowOption()
+  if self._currentTrackData.Options == nil then
     self:_DialogEnd()
   else
     self._inOptionsFadeIn = true
     self._optionsFadeInDuration = self._optionsFadeInTimeConfig
     self._optionsFadeInStartTime = 0
-    ;
-    (self._optRoot):SetActive(true)
-    ;
-    (self._optMask):SetActive(true)
+    self._optRoot:SetActive(true)
+    self._optMask:SetActive(true)
     if self._auto or self._forceAutoDialog then
-      ((self._optRoot).transform):SetParent(((((self._storyManager):GetStoryUIRoot()).transform).parent).parent)
+      self._optRoot.transform:SetParent(self._storyManager:GetStoryUIRoot().transform.parent.parent)
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.Opt1OnClick = function(self)
-  -- function num : 0_19
+function StoryEntityDialog:Opt1OnClick()
   self:_ChooseOption(1)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.Opt2OnClick = function(self)
-  -- function num : 0_20
+function StoryEntityDialog:Opt2OnClick()
   self:_ChooseOption(2)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.Opt3OnClick = function(self)
-  -- function num : 0_21
+function StoryEntityDialog:Opt3OnClick()
   self:_ChooseOption(3)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog._ChooseOption = function(self, index)
-  -- function num : 0_22 , upvalues : _ENV
+function StoryEntityDialog:_ChooseOption(index)
   if self._inOptionsFadeIn then
-    return 
+    return
   end
-  local optionData = (self._storyManager):GetOptionData((self._currentTrackData).Options, (self._currentTrackData).DialogContentStr)
-  local selectIndex = (optionData[index]).optionIndex or index
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StoryChooseOption, selectIndex, self._storyManager)
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("SotrySelect", {(self._storyManager):GetCurStoryID(), (self._storyManager):GetCurParagraphID(), (self._storyManager):GetCurSectionIndex(), selectIndex})
-  ;
-  (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.SoundStoryClick)
+  local optionData = self._storyManager:GetOptionData(self._currentTrackData.Options, self._currentTrackData.DialogContentStr)
+  local selectIndex = optionData[index].optionIndex or index
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StoryChooseOption, selectIndex, self._storyManager)
+  GameGlobal.UAReportForceGuideEvent("SotrySelect", {
+    self._storyManager:GetCurStoryID(),
+    self._storyManager:GetCurParagraphID(),
+    self._storyManager:GetCurSectionIndex(),
+    selectIndex
+  })
+  AudioHelperController.PlayRequestedUISound(CriAudioIDConst.SoundStoryClick)
   self._selectedOptionIndex = index
-  ;
-  (self._storyManager):AddSelectOptionID(self._currentTrackData, selectIndex)
-  ;
-  (self._storyManager):CheckOptionLoopOver((self._currentTrackData).Options, (self._currentTrackData).DialogContentStr)
-  ;
-  (self._storyManager):SetNextParagraphID((self._optionParagraphIDDic)[index])
-  ;
-  (self._optRoot):SetActive(false)
-  ;
-  (self._optMask):SetActive(false)
+  self._storyManager:AddSelectOptionID(self._currentTrackData, selectIndex)
+  self._storyManager:CheckOptionLoopOver(self._currentTrackData.Options, self._currentTrackData.DialogContentStr)
+  self._storyManager:SetNextParagraphID(self._optionParagraphIDDic[index])
+  self._optRoot:SetActive(false)
+  self._optMask:SetActive(false)
   if self._auto then
-    ((self._optRoot).transform):SetParent((self._dialogUIView).transform)
+    self._optRoot.transform:SetParent(self._dialogUIView.transform)
   end
   self._optionParagraphIDDic = {}
-  if (self._optionAffinityData)[selectIndex] then
-    ((GameGlobal.TaskManager)()):StartTask(self._ChooseOptionReq, self, selectIndex)
+  if self._optionAffinityData[selectIndex] then
+    GameGlobal.TaskManager():StartTask(self._ChooseOptionReq, self, selectIndex)
   else
     self:_DialogEnd()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog._ChooseOptionReq = function(self, TT, index)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("StoryEntityDialog:_ChooseOptionReq")
-  local res = ((GameGlobal.GetModule)(StoryModule)):ReqAddMsg(TT, (self._storyManager):GetCurStoryID(), (self._storyManager):GetCurParagraphID(), (self._storyManager):GetCurSectionIndex(), index)
+function StoryEntityDialog:_ChooseOptionReq(TT, index)
+  GameGlobal.UIStateManager():Lock("StoryEntityDialog:_ChooseOptionReq")
+  local res = GameGlobal.GetModule(StoryModule):ReqAddMsg(TT, self._storyManager:GetCurStoryID(), self._storyManager:GetCurParagraphID(), self._storyManager:GetCurSectionIndex(), index)
   if res:GetSucc() then
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UIStoryController", "ShowAddAffinity", ((self._optionAffinityData)[index]).PetID, ((self._optionAffinityData)[index]).Affinity)
+    GameGlobal.UIStateManager():CallUIMethod("UIStoryController", "ShowAddAffinity", self._optionAffinityData[index].PetID, self._optionAffinityData[index].Affinity)
   else
-    ;
-    (Log.fatal)("[Story] error when choose option with affinity increasement, storyID:" .. (self._storyManager):GetCurStoryID() .. " paragraphID:" .. (self._storyManager):GetCurParagraphID() .. " sectionID:" .. (self._storyManager):GetCurSectionIndex() .. " option index:" .. index .. " error code:" .. res:GetResult())
+    Log.fatal("[Story] error when choose option with affinity increasement, storyID:" .. self._storyManager:GetCurStoryID() .. " paragraphID:" .. self._storyManager:GetCurParagraphID() .. " sectionID:" .. self._storyManager:GetCurSectionIndex() .. " option index:" .. index .. " error code:" .. res:GetResult())
   end
   self:_DialogEnd()
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("StoryEntityDialog:_ChooseOptionReq")
+  GameGlobal.UIStateManager():UnLock("StoryEntityDialog:_ChooseOptionReq")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.HideUI = function(self, hide)
-  -- function num : 0_24
+function StoryEntityDialog:HideUI(hide)
   self._hideUI = hide
   if hide then
-    ((self._optMask).transform):SetParent(((self._dialogUIView).transform).parent)
+    self._optMask.transform:SetParent(self._dialogUIView.transform.parent)
   else
-    ;
-    ((self._optMask).transform):SetParent((self._dialogUIView).transform)
-    ;
-    ((self._optMask).transform):SetSiblingIndex(((self._optRoot).transform):GetSiblingIndex())
+    self._optMask.transform:SetParent(self._dialogUIView.transform)
+    self._optMask.transform:SetSiblingIndex(self._optRoot.transform:GetSiblingIndex())
   end
-  if self._showUI then
-    ((self._dialogUIView).gameObject):SetActive(not hide)
-  end
+  self._dialogUIView.gameObject:SetActive(self._showUI and not hide)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.SetAuto = function(self, auto)
-  -- function num : 0_25 , upvalues : _ENV
+function StoryEntityDialog:SetAuto(auto)
   self._auto = auto
   self._autoWaitStartTime = 0
   local status, err = pcall(function()
-    -- function num : 0_25_0 , upvalues : self, auto
-    if (self._optRoot).activeSelf then
+    if self._optRoot.activeSelf then
       if auto then
-        ((self._optRoot).transform):SetParent(((((self._storyManager):GetStoryUIRoot()).transform).parent).parent)
+        self._optRoot.transform:SetParent(self._storyManager:GetStoryUIRoot().transform.parent.parent)
       else
-        ;
-        ((self._optRoot).transform):SetParent((self._dialogUIView).transform)
+        self._optRoot.transform:SetParent(self._dialogUIView.transform)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.CheckCreateNameError = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  if (string.isnullorempty)(((self._createName).inputField).text) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_guide_create_no_name"))
+function StoryEntityDialog:CheckCreateNameError()
+  if string.isnullorempty(self._createName.inputField.text) then
+    ToastManager.ShowToast(StringTable.Get("str_guide_create_no_name"))
     return true
   end
-  self.newName = ((self._createName).inputField).text
-  if (HelperProxy:GetInstance()):GetCharLength(self.newName) > 14 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
+  self.newName = self._createName.inputField.text
+  if HelperProxy:GetInstance():GetCharLength(self.newName) > 14 then
+    ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.BtnCreateNameOnClick = function(self, go)
-  -- function num : 0_27 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("SetNameClick")
-  if self._currentTrackData and (self._currentTrackData).CreateName then
+function StoryEntityDialog:BtnCreateNameOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("SetNameClick")
+  if self._currentTrackData and self._currentTrackData.CreateName then
     if self:CheckCreateNameError() then
-      (GameGlobal.UAReportForceGuideEvent)("SetNameFail", {ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_LIMIT})
-      return 
+      GameGlobal.UAReportForceGuideEvent("SetNameFail", {
+        ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_LIMIT
+      })
+      return
     end
-    ;
-    (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_27_0 , upvalues : _ENV, self
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
-    ;
-    ((GameGlobal.UIStateManager)()):Lock("StoryEntityDialog:BtnCreateNameOnClick")
-    local res = roleModule:RequestChangeName(TT, self.newName)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("StoryEntityDialog:BtnCreateNameOnClick")
-    if res:GetSucc() then
-      roleModule:SetName(self.newName)
-      ;
-      (self._storyManager):SetNextParagraphID(((self._currentTrackData).CreateName).NextParagraphID)
-      ;
-      ((self._createName).go):SetActive(false)
-      self:_DialogEnd()
-      ;
-      (GameGlobal.ReportCustomEvent)("CreateRole", "SetRoleName")
-      ;
-      (GameGlobal.UAReportForceGuideEvent)("SetNameSucc")
-      ;
-      (GameGlobal.UAReportChannelEvent)("tutorial_start", {})
-    else
-      local errorCode = res.m_result
-      ;
-      (GameGlobal.UAReportForceGuideEvent)("SetNameFail", {errorCode})
-      if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_INVALID then
-        (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
+    TaskManager:GetInstance():StartTask(function(TT)
+      local roleModule = GameGlobal.GetModule(RoleModule)
+      GameGlobal.UIStateManager():Lock("StoryEntityDialog:BtnCreateNameOnClick")
+      local res = roleModule:RequestChangeName(TT, self.newName)
+      GameGlobal.UIStateManager():UnLock("StoryEntityDialog:BtnCreateNameOnClick")
+      if res:GetSucc() then
+        roleModule:SetName(self.newName)
+        self._storyManager:SetNextParagraphID(self._currentTrackData.CreateName.NextParagraphID)
+        self._createName.go:SetActive(false)
+        self:_DialogEnd()
+        GameGlobal.ReportCustomEvent("CreateRole", "SetRoleName")
+        GameGlobal.UAReportForceGuideEvent("SetNameSucc")
+        GameGlobal.UAReportChannelEvent("tutorial_start", {})
       else
-        if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_LIMIT then
-          (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
-        else
-          if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
-            (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_DIRTY_NICK"))
-          else
-            if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_REPEAT then
-              (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_REPEAT"))
-            else
-              if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_SPE then
-                (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_SPE"))
-              else
-                if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DUPLICATE_NICK then
-                  (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_DUPLICATE_NICK"))
-                end
-              end
-            end
-          end
+        local errorCode = res.m_result
+        GameGlobal.UAReportForceGuideEvent("SetNameFail", {errorCode})
+        if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_INVALID then
+          ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
+        elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_LIMIT then
+          ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
+        elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
+          ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_DIRTY_NICK"))
+        elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_REPEAT then
+          ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_REPEAT"))
+        elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_SPE then
+          ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_SPE"))
+        elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DUPLICATE_NICK then
+          ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_DUPLICATE_NICK"))
         end
       end
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.OnAppResume = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  if ((self._createName).inputField).touchScreenKeyboard then
+function StoryEntityDialog:OnAppResume()
+  if self._createName.inputField.touchScreenKeyboard then
     pcall(StoryEntityDialog.ActiveKeyboard, self, true)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryEntityDialog.ActiveKeyboard = function(self, active)
-  -- function num : 0_29
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  (((self._createName).inputField).touchScreenKeyboard).active = active
+function StoryEntityDialog:ActiveKeyboard(active)
+  self._createName.inputField.touchScreenKeyboard.active = active
 end
-
-

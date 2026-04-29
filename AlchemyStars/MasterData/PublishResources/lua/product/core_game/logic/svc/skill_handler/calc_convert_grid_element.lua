@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_convert_grid_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ConvertGridElement", Object)
 SkillEffectCalc_ConvertGridElement = SkillEffectCalc_ConvertGridElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ConvertGridElement.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ConvertGridElement:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ConvertGridElement.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  return (self._skillEffectService):_DoCalcSkillConvertGridElementEffect(skillEffectCalcParam.skillEffectParam, skillEffectCalcParam.skillRange, casterEntity)
+function SkillEffectCalc_ConvertGridElement:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  return self._skillEffectService:_DoCalcSkillConvertGridElementEffect(skillEffectCalcParam.skillEffectParam, skillEffectCalcParam.skillRange, casterEntity)
 end
-
-

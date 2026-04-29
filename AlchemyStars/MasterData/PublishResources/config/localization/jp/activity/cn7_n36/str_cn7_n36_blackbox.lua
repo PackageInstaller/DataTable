@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/cn7_n36/str_cn7_n36_blackbox.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn7_n36_blackbox_title = "配達は命がけ", str_cn7_n36_blackbox_intro = "アストラ大陸での暗鬼の活動がますます頻繁になる中、配達もますます危険になっていた。巨像が再びこの世に現れ、空の末裔とその仲間たちの活動も日増しに活発になると、ある勢力が巨像の卓越した飛行能力と長距離移動における機動性に目を付け、特別で危険な配達任務を空の末裔に託すことになる。", str_cn7_n36_blackbox_intro_title = "【配達は命がけ】について", str_cn7_n36_blackbox_intro_head_1 = "『ブラックボックス』モード", str_cn7_n36_blackbox_intro_body_1 = "1．『配達は命がけ』はブラックボックスモードです。\n2．『ブラックボックス』モードには6つのステージがあり、各ステージは2～3つのサブステージに分かれています。\n3．ステージ間には解放機能が関連づけられており、ステージ内のいずれかのサブステージをクリアすると、次のステージが解放されます。\n4．サブステージ間に解放機能は関連づけられていません。どのステージからでも自由に挑戦できます。\n5．同一ステージ内のサブステージに挑戦する場合、異なる光霊を使用して挑戦しなければなりません。", str_cn7_n36_blackbox_intro_head_2 = "挑戦トロフィー", str_cn7_n36_blackbox_intro_body_2 = "1．各ステージにそれぞれ3～5個の挑戦トロフィーが設定されています。挑戦トロフィーによって挑戦条件はそれぞれ異なります。\n2．トロフィーの条件に従い、対応する編成で決められた数のステージをクリアすると、トロフィーを達成でき、報酬がもらえます。\n3．トロフィー間に順序や関連性はありません。それぞれのトロフィーに何度も個別に挑戦できます。\n4．挑戦トロフィーの達成後は達成状態が維持されます。達成済みのトロフィーはステージの編成をリセットした後も無効にはなりません。", str_cn7_n36_blackbox_intro_head_3 = "挑戦編成", str_cn7_n36_blackbox_intro_body_3 = "1．同じ光霊を同一ステージ内の異なるサブステージで重複して使用することはできません。\n2．異なるステージ間であれば、光霊の重複使用制限はありません。\n3．サブステージ間では同じ編成を使用して挑戦できます。\n4．ステージの編成はリセットできます。編成をリセットしても達成済みの挑戦トロフィーには影響しません。", str_cn7_n36_blackbox_diff_unlock_tips = "{1}ステージの任意のサブステージクリアで解放", str_cn7_n36_blackbox1_name = "EX1-雷鳴", str_cn7_n36_blackbox2_name = "EX2-謀計", str_cn7_n36_blackbox3_name = "EX3-困窮", str_cn7_n36_blackbox4_name = "EX4-更迭", str_cn7_n36_blackbox5_name = "EX5-破壊", str_cn7_n36_blackbox6_name = "EX6-煉獄", str_cn7_n36_blackbox1_sub_name_1 = "EX1-1雷鳴・凶雷", str_cn7_n36_blackbox1_sub_name_2 = "EX1-2雷鳴・堅石", str_cn7_n36_blackbox2_sub_name_1 = "EX2-1謀計・負傷", str_cn7_n36_blackbox2_sub_name_2 = "EX2-2謀計・進攻", str_cn7_n36_blackbox3_sub_name_1 = "EX3-1困窮・辺縁", str_cn7_n36_blackbox3_sub_name_2 = "EX3-2困窮・損傷", str_cn7_n36_blackbox3_sub_name_3 = "EX3-3困窮・防傷", str_cn7_n36_blackbox4_sub_name_1 = "EX4-1更迭・回復", str_cn7_n36_blackbox4_sub_name_2 = "EX4-2更迭・深手", str_cn7_n36_blackbox5_sub_name_1 = "EX5-1破壊・傷痕", str_cn7_n36_blackbox5_sub_name_2 = "EX5-2破壊・汚染", str_cn7_n36_blackbox6_sub_name_1 = "EX6-1煉獄・召喚", str_cn7_n36_blackbox6_sub_name_2 = "EX6-2煉獄・生存", str_cn7_n36_blackbox6_sub_name_3 = "EX6-3煉獄・代償"}
+local config = {
+  str_cn7_n36_blackbox_title = "配達は命がけ",
+  str_cn7_n36_blackbox_intro = "アストラ大陸での暗鬼の活動がますます頻繁になる中、配達もますます危険になっていた。巨像が再びこの世に現れ、空の末裔とその仲間たちの活動も日増しに活発になると、ある勢力が巨像の卓越した飛行能力と長距離移動における機動性に目を付け、特別で危険な配達任務を空の末裔に託すことになる。",
+  str_cn7_n36_blackbox_intro_title = "【配達は命がけ】について",
+  str_cn7_n36_blackbox_intro_head_1 = "『ブラックボックス』モード",
+  str_cn7_n36_blackbox_intro_body_1 = "1．『配達は命がけ』はブラックボックスモードです。\n2．『ブラックボックス』モードには6つのステージがあり、各ステージは2～3つのサブステージに分かれています。\n3．ステージ間には解放機能が関連づけられており、ステージ内のいずれかのサブステージをクリアすると、次のステージが解放されます。\n4．サブステージ間に解放機能は関連づけられていません。どのステージからでも自由に挑戦できます。\n5．同一ステージ内のサブステージに挑戦する場合、異なる光霊を使用して挑戦しなければなりません。",
+  str_cn7_n36_blackbox_intro_head_2 = "挑戦トロフィー",
+  str_cn7_n36_blackbox_intro_body_2 = "1．各ステージにそれぞれ3～5個の挑戦トロフィーが設定されています。挑戦トロフィーによって挑戦条件はそれぞれ異なります。\n2．トロフィーの条件に従い、対応する編成で決められた数のステージをクリアすると、トロフィーを達成でき、報酬がもらえます。\n3．トロフィー間に順序や関連性はありません。それぞれのトロフィーに何度も個別に挑戦できます。\n4．挑戦トロフィーの達成後は達成状態が維持されます。達成済みのトロフィーはステージの編成をリセットした後も無効にはなりません。",
+  str_cn7_n36_blackbox_intro_head_3 = "挑戦編成",
+  str_cn7_n36_blackbox_intro_body_3 = "1．同じ光霊を同一ステージ内の異なるサブステージで重複して使用することはできません。\n2．異なるステージ間であれば、光霊の重複使用制限はありません。\n3．サブステージ間では同じ編成を使用して挑戦できます。\n4．ステージの編成はリセットできます。編成をリセットしても達成済みの挑戦トロフィーには影響しません。",
+  str_cn7_n36_blackbox_diff_unlock_tips = "{1}ステージの任意のサブステージクリアで解放",
+  str_cn7_n36_blackbox1_name = "EX1-雷鳴",
+  str_cn7_n36_blackbox2_name = "EX2-謀計",
+  str_cn7_n36_blackbox3_name = "EX3-困窮",
+  str_cn7_n36_blackbox4_name = "EX4-更迭",
+  str_cn7_n36_blackbox5_name = "EX5-破壊",
+  str_cn7_n36_blackbox6_name = "EX6-煉獄",
+  str_cn7_n36_blackbox1_sub_name_1 = "EX1-1雷鳴・凶雷",
+  str_cn7_n36_blackbox1_sub_name_2 = "EX1-2雷鳴・堅石",
+  str_cn7_n36_blackbox2_sub_name_1 = "EX2-1謀計・負傷",
+  str_cn7_n36_blackbox2_sub_name_2 = "EX2-2謀計・進攻",
+  str_cn7_n36_blackbox3_sub_name_1 = "EX3-1困窮・辺縁",
+  str_cn7_n36_blackbox3_sub_name_2 = "EX3-2困窮・損傷",
+  str_cn7_n36_blackbox3_sub_name_3 = "EX3-3困窮・防傷",
+  str_cn7_n36_blackbox4_sub_name_1 = "EX4-1更迭・回復",
+  str_cn7_n36_blackbox4_sub_name_2 = "EX4-2更迭・深手",
+  str_cn7_n36_blackbox5_sub_name_1 = "EX5-1破壊・傷痕",
+  str_cn7_n36_blackbox5_sub_name_2 = "EX5-2破壊・汚染",
+  str_cn7_n36_blackbox6_sub_name_1 = "EX6-1煉獄・召喚",
+  str_cn7_n36_blackbox6_sub_name_2 = "EX6-2煉獄・生存",
+  str_cn7_n36_blackbox6_sub_name_3 = "EX6-3煉獄・代償"
+}
 return config
-

@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_leave_enter_battle_field_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseLeaveEnterBattleFieldParam", SkillPhaseParamBase)
 SkillPhaseLeaveEnterBattleFieldParam = SkillPhaseLeaveEnterBattleFieldParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseLeaveEnterBattleFieldParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseLeaveEnterBattleFieldParam:Constructor(t)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLeaveEnterBattleFieldParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseLeaveEnterBattleFieldParam:GetPhaseType()
   return SkillViewPhaseType.LeaveEnterBattleField
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseLeaveEnterBattleFieldParam.GetCacheTable = function(self)
-  -- function num : 0_2
+function SkillPhaseLeaveEnterBattleFieldParam:GetCacheTable()
   return {}
 end
-
-

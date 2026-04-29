@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/new/drawcard_ui_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DrawCardUIContext", Object)
 DrawCardUIContext = DrawCardUIContext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DrawCardUIContext.Constructor = function(self, sceneReq)
-  -- function num : 0_0
+function DrawCardUIContext:Constructor(sceneReq)
   self._sceneResReq = sceneReq
   self._defaultIdx = -1
   self.isDrawCard = false
@@ -17,10 +10,7 @@ DrawCardUIContext.Constructor = function(self, sceneReq)
   self.haveMaxS = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.Dispose = function(self)
-  -- function num : 0_1
+function DrawCardUIContext:Dispose()
   self._sceneResReq = nil
   self._defaultIdx = -1
   self.isDrawCard = false
@@ -29,82 +19,47 @@ DrawCardUIContext.Dispose = function(self)
   self.haveMaxS = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.GetDefaultPoolIndex = function(self)
-  -- function num : 0_2
+function DrawCardUIContext:GetDefaultPoolIndex()
   return self._defaultIdx
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.SetDefaultPoolIndex = function(self, idx)
-  -- function num : 0_3
+function DrawCardUIContext:SetDefaultPoolIndex(idx)
   self._defaultIdx = idx
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.SetStateDrawCard = function(self, value)
-  -- function num : 0_4
+function DrawCardUIContext:SetStateDrawCard(value)
   self.isDrawCard = value
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.GetStateDrawCard = function(self)
-  -- function num : 0_5
+function DrawCardUIContext:GetStateDrawCard()
   return self.isDrawCard
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.SetMaxStarPetId = function(self, maxStar, maxStarId)
-  -- function num : 0_6
+function DrawCardUIContext:SetMaxStarPetId(maxStar, maxStarId)
   self.maxStar = maxStar
   self.maxStarId = maxStarId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.GetMaxStarPetId = function(self)
-  -- function num : 0_7
+function DrawCardUIContext:GetMaxStarPetId()
   return self.maxStar, self.maxStarId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.SetHaveMaxStarPet = function(self, value)
-  -- function num : 0_8
+function DrawCardUIContext:SetHaveMaxStarPet(value)
   self.haveMaxS = value
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.GetHaveMaxStarPet = function(self)
-  -- function num : 0_9
+function DrawCardUIContext:GetHaveMaxStarPet()
   return self.haveMaxS
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.SetPoolID = function(self, id)
-  -- function num : 0_10
+function DrawCardUIContext:SetPoolID(id)
   self._poolID = id
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.SetPoolType = function(self, type)
-  -- function num : 0_11
+function DrawCardUIContext:SetPoolType(type)
   self._poolType = type
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DrawCardUIContext.GetPoolIDAndType = function(self)
-  -- function num : 0_12
+function DrawCardUIContext:GetPoolIDAndType()
   return self._poolID, self._poolType
 end
-
-

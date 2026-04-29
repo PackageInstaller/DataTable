@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/entrust_stage/ui_n12_entrust_stage_detail_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12EntrustStageDetailController", UIController)
 UIN12EntrustStageDetailController = UIN12EntrustStageDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12EntrustStageDetailController._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_0
+function UIN12EntrustStageDetailController:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController._SpawnObjects = function(self, widgetName, className, count)
-  -- function num : 0_1
+function UIN12EntrustStageDetailController:_SpawnObjects(widgetName, className, count)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local objs = {}
   pool:SpawnObjects(className, count, objs)
   return objs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController._InitWidget = function(self)
-  -- function num : 0_2
+function UIN12EntrustStageDetailController:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_3
+function UIN12EntrustStageDetailController:OnShow(uiParams)
   self._campaign = uiParams[1]
   self._componentId = uiParams[2]
   self._levelId = uiParams[3]
-  self._component = (self._campaign):GetComponent(self._componentId)
+  self._component = self._campaign:GetComponent(self._componentId)
   self._isOpen = true
   self:_InitWidget()
   self:_SetTitleDesc()
@@ -48,135 +32,91 @@ UIN12EntrustStageDetailController.OnShow = function(self, uiParams)
   self:_SetEnterTex()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController._SetEnterTex = function(self)
-  -- function num : 0_4
+function UIN12EntrustStageDetailController:_SetEnterTex()
   self:SetTextMat()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController.SetTextMat = function(self)
-  -- function num : 0_5
+function UIN12EntrustStageDetailController:SetTextMat()
   local tex = self:GetUIComponent("UILocalizedTMP", "txt")
   self:SetFontMat(tex, "uieff_n12_map_enter_tex.mat")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController.SetFontMat = function(self, lable, resname)
-  -- function num : 0_6 , upvalues : _ENV
-  self._res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UIN12EntrustStageDetailController:SetFontMat(lable, resname)
+  self._res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not self._res then
-    return 
+    return
   end
-  local obj = (self._res).Obj
+  local obj = self._res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController.OnHide = function(self)
-  -- function num : 0_7
+function UIN12EntrustStageDetailController:OnHide()
   self._isOpen = false
   if self._res then
-    (self._res):Dispose()
+    self._res:Dispose()
     self._res = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController._SetTitleDesc = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local strTitle, strDesc = (self._component):GetStageTitleDesc(self._levelId)
+function UIN12EntrustStageDetailController:_SetTitleDesc()
+  local strTitle, strDesc = self._component:GetStageTitleDesc(self._levelId)
   local obj = self:GetUIComponent("UILocalizationText", "_txtTitle")
-  obj:SetText((StringTable.Get)(strTitle))
+  obj:SetText(StringTable.Get(strTitle))
   obj = self:GetUIComponent("UILocalizationText", "_txtDesc")
-  obj:SetText((StringTable.Get)(strDesc))
+  obj:SetText(StringTable.Get(strDesc))
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController._SetClearReward = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local lst1, lst2 = (self._component):GetStagePassReward(self._levelId)
+function UIN12EntrustStageDetailController:_SetClearReward()
+  local lst1, lst2 = self._component:GetStagePassReward(self._levelId)
   local count = #lst1
   local objs = self:_SpawnObjects("_clearRewardPool", "UIN12EntrustStageDetailItem", count)
   for i = 1, count do
-    (objs[i]):SetData(lst1[i], lst2[i], function(matid, pos)
-    -- function num : 0_9_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-)
+    objs[i]:SetData(lst1[i], lst2[i], function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController._SetExplorReward = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local lst1, lst2 = (self._component):GetStageBoxReward(self._levelId)
+function UIN12EntrustStageDetailController:_SetExplorReward()
+  local lst1, lst2 = self._component:GetStageBoxReward(self._levelId)
   local count = #lst1
   local objs = self:_SpawnObjects("_explorRewardPool", "UIN12EntrustStageDetailItem", count)
   for i = 1, count do
-    (objs[i]):SetData(lst1[i], lst2[i], function(matid, pos)
-    -- function num : 0_10_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-)
+    objs[i]:SetData(lst1[i], lst2[i], function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController._SetExplorText = function(self)
-  -- function num : 0_11
-  local num = (self._component):GetExplorNum(self._levelId)
+function UIN12EntrustStageDetailController:_SetExplorText()
+  local num = self._component:GetExplorNum(self._levelId)
   local obj = self:GetUIComponent("UILocalizationText", "_txtExplor")
   obj:SetText(num .. "%")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController._SetPassIcon = function(self)
-  -- function num : 0_12
-  local show = (self._component):IsStagePass(self._levelId)
+function UIN12EntrustStageDetailController:_SetPassIcon()
+  local show = self._component:IsStagePass(self._levelId)
   local obj = self:GetGameObject("_pass")
   obj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController.BtnOnClick = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (Log.info)("UIN12EntrustStageDetailController:BtnOnClick")
-  ;
-  (self._component):SetCurLevelId(self._levelId)
-  ;
-  (self._component):SetPlayerPos(0)
-  ;
-  (self._component):SetBannerState(0)
-  ;
-  ((self._campaign)._campaign_module):CampaignSwitchState(true, UIStateType.UIN12EntrustLevelController, UIStateType.UIMain, {self._levelId, true}, (self._campaign)._id, self._componentId)
+function UIN12EntrustStageDetailController:BtnOnClick()
+  Log.info("UIN12EntrustStageDetailController:BtnOnClick")
+  self._component:SetCurLevelId(self._levelId)
+  self._component:SetPlayerPos(0)
+  self._component:SetBannerState(0)
+  self._campaign._campaign_module:CampaignSwitchState(true, UIStateType.UIN12EntrustLevelController, UIStateType.UIMain, {
+    self._levelId,
+    true
+  }, self._campaign._id, self._componentId)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController.CloseBtnOnClick = function(self)
-  -- function num : 0_14
+function UIN12EntrustStageDetailController:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailController.EmptyBtnOnClick = function(self)
-  -- function num : 0_15
+function UIN12EntrustStageDetailController:EmptyBtnOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,43 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_ui_add_feature_card_buff_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayUIAddFeatureCardBuffInstruction", BaseInstruction)
 PlayUIAddFeatureCardBuffInstruction = PlayUIAddFeatureCardBuffInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayUIAddFeatureCardBuffInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayUIAddFeatureCardBuffInstruction:Constructor(paramList)
   self._toTeamLeader = paramList.toTeamLeader
   self._toTeamTail = paramList.toTeamTail
   self._cardBuffType = tonumber(paramList.cardBuffType)
   self._waitTime = tonumber(paramList.waitTime) or 3500
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayUIAddFeatureCardBuffInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayUIAddFeatureCardBuffInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   local playerPstid = 0
   if self._toTeamLeader then
-    playerPstid = (teamEntity:Team()):GetTeamLeaderPetPstID()
-  else
-    if self._toTeamTail then
-      local cTeam = teamEntity:Team()
-      local teamOrder = cTeam:GetTeamOrder()
-      local finalIndex = #teamOrder
-      playerPstid = teamOrder[finalIndex]
-    end
+    playerPstid = teamEntity:Team():GetTeamLeaderPetPstID()
+  elseif self._toTeamTail then
+    local cTeam = teamEntity:Team()
+    local teamOrder = cTeam:GetTeamOrder()
+    local finalIndex = #teamOrder
+    playerPstid = teamOrder[finalIndex]
   end
-  do
-    ;
-    (world:EventDispatcher()):Dispatch(GameEventType.FeaturePetUIAddCardBuff, playerPstid, self._cardBuffType)
-    YIELD(TT, self._waitTime)
-  end
+  world:EventDispatcher():Dispatch(GameEventType.FeaturePetUIAddCardBuff, playerPstid, self._cardBuffType)
+  YIELD(TT, self._waitTime)
 end
-
-

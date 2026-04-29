@@ -1,11 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/petintimacy/pet_intimacy_voice_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, MainLobbyWelcome = 2, Obtain = 3, LevelUp = 4, Grade1Up = 5, Grade2Up = 6, TeamLeaderAppear = 7, BattleSucceed = 8, BattleFail = 9, AircraftInteract = 10, ReceiveGift = 11, ReceiveLoveGift = 12}
+local key = {
+  ID = 1,
+  MainLobbyWelcome = 2,
+  Obtain = 3,
+  LevelUp = 4,
+  Grade1Up = 5,
+  Grade2Up = 6,
+  TeamLeaderAppear = 7,
+  BattleSucceed = 8,
+  BattleFail = 9,
+  AircraftInteract = 10,
+  ReceiveGift = 11,
+  ReceiveLoveGift = 12
+}
 local config = {
-{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+  {
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  }
 }
 return config, "ID", key
-

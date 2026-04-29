@@ -1,73 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/ui_season_transitions.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTransitions", UIController)
 UISeasonTransitions = UISeasonTransitions
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTransitions.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonTransitions:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransitions.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonTransitions:OnShow(uiParams)
   self._callBack = uiParams[1]
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransitions._GetComponents = function(self)
-  -- function num : 0_2
+function UISeasonTransitions:_GetComponents()
   self._image = self:GetUIComponent("Image", "Image")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransitions._OnValue = function(self)
-  -- function num : 0_3
+function UISeasonTransitions:_OnValue()
   self:_PlayAnimation(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransitions._PlayAnimation = function(self, show)
-  -- function num : 0_4 , upvalues : _ENV
-  local targetColor = nil
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
+function UISeasonTransitions:_PlayAnimation(show)
+  local targetColor
   if show then
-    (self._image).color = Color(0, 0, 0, 0)
+    self._image.color = Color(0, 0, 0, 0)
     targetColor = Color(0, 0, 0, 1)
   else
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._image).color = Color(0, 0, 0, 1)
+    self._image.color = Color(0, 0, 0, 1)
     targetColor = Color(0, 0, 0, 0)
   end
-  ;
-  ((self._image):DOColor(targetColor, 0.8)):OnComplete(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._image:DOColor(targetColor, 0.8):OnComplete(function()
     if self._callBack then
-      (self._callBack)()
+      self._callBack()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTransitions.Close = function(self, callBack)
-  -- function num : 0_5
+function UISeasonTransitions:Close(callBack)
   self._callBack = callBack
   self:_PlayAnimation(false)
 end
-
-

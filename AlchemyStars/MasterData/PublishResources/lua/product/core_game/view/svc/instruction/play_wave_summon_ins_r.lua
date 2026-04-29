@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_wave_summon_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayWaveSummonInstruction", BaseInstruction)
 PlayWaveSummonInstruction = PlayWaveSummonInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayWaveSummonInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayWaveSummonInstruction:Constructor(paramList)
   self.duration = tonumber(paramList.flyDuration)
   self.destroyTime = tonumber(paramList.destroyTime)
   self.taskWaitTime = tonumber(paramList.taskWaitTime)
@@ -19,58 +12,51 @@ PlayWaveSummonInstruction.Constructor = function(self, paramList)
   self.monsterID2 = tonumber(paramList.monsterID2)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayWaveSummonInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayWaveSummonInstruction:GetCacheResource()
   local t = {}
   if self.eftID and self.eftID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.eftID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.eftID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayWaveSummonInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayWaveSummonInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local summonResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
   if not summonResultArray then
-    return 
+    return
   end
   local listWaitTask = {}
   for i = 1, #summonResultArray do
     local resultSummon = summonResultArray[i]
-    local taskID = (TaskManager:GetInstance()):CoreGameStartTask(self._OnSkillResultSummon, self, casterEntity, resultSummon)
-    ;
-    (table.insert)(listWaitTask, taskID)
+    local taskID = TaskManager:GetInstance():CoreGameStartTask(self._OnSkillResultSummon, self, casterEntity, resultSummon)
+    table.insert(listWaitTask, taskID)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayWaveSummonInstruction._OnSkillResultSummon = function(self, TT, casterEntity, resultSummon)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayWaveSummonInstruction:_OnSkillResultSummon(TT, casterEntity, resultSummon)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
   local boardServiceRender = world:GetService("BoardRender")
   local effectService = world:GetService("Effect")
-  local _start = ((((casterEntity:View()):GetGameObject()).transform).position):Clone()
+  local _start = casterEntity:View():GetGameObject().transform.position:Clone()
   _start.y = self.eftPosYa
-  local _end = nil
+  local _end
   local eftEntity = effectService:CreatePositionEffect(self.eftID, _start)
   if not eftEntity:HasView() then
     YIELD(TT)
   end
-  local eftTansform = ((eftEntity:View()):GetGameObject()).transform
+  local eftTansform = eftEntity:View():GetGameObject().transform
   _end = boardServiceRender:GridPos2RenderPos(resultSummon:GetGridPos())
   _end.y = self.eftPosYb
-  local disx = (math.abs)(_end.x - _start.x)
-  local disy = (math.abs)(_end.y - _start.y)
-  local power = (math.sqrt)(disx + disy)
+  local disx = math.abs(_end.x - _start.x)
+  local disy = math.abs(_end.y - _start.y)
+  local power = math.sqrt(disx + disy)
   eftTansform:DOJump(_end, power, 1, self.duration / 1000, false)
   YIELD(TT, self.duration)
   sPlaySkillInstruction:ShowSummonAction(TT, world, resultSummon)
@@ -78,50 +64,42 @@ PlayWaveSummonInstruction._OnSkillResultSummon = function(self, TT, casterEntity
   world:DestroyEntity(eftEntity)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayWaveSummonInstruction._OnWaveSummonResult = function(self, TT, casterEntity)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayWaveSummonInstruction:_OnWaveSummonResult(TT, casterEntity)
   local world = casterEntity:GetOwnerWorld()
   YIELD(TT, self.taskWaitTime)
   YIELD(TT)
-  local monsterGroup = world:GetGroup((world.BW_WEMatchers).MonsterID)
-  for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
+  local monsterGroup = world:GetGroup(world.BW_WEMatchers.MonsterID)
+  for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
     if not monsterEntity:HasDeadMark() then
       local monsterIDCmpt = monsterEntity:MonsterID()
       local monsterID = monsterIDCmpt:GetMonsterID()
       if monsterID == self.monsterID1 or monsterID == self.monsterID2 then
-        local taskID = (TaskManager:GetInstance()):CoreGameStartTask(self._OnWaveSummonMonster, self, casterEntity, monsterEntity)
+        local taskID = TaskManager:GetInstance():CoreGameStartTask(self._OnWaveSummonMonster, self, casterEntity, monsterEntity)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayWaveSummonInstruction._OnWaveSummonMonster = function(self, TT, casterEntity, monsterEntity)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayWaveSummonInstruction:_OnWaveSummonMonster(TT, casterEntity, monsterEntity)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
   local boardServiceRender = world:GetService("BoardRender")
   local effectService = world:GetService("Effect")
-  local _start = ((((casterEntity:View()):GetGameObject()).transform).position):Clone()
+  local _start = casterEntity:View():GetGameObject().transform.position:Clone()
   _start.y = self.eftPosYa
-  local _end = nil
+  local _end
   local eftEntity = effectService:CreatePositionEffect(self.eftID, _start)
   if not eftEntity:HasView() then
     YIELD(TT)
   end
-  local eftTansform = ((eftEntity:View()):GetGameObject()).transform
-  _end = boardServiceRender:GridPos2RenderPos((monsterEntity:GridLocation()):Center())
+  local eftTansform = eftEntity:View():GetGameObject().transform
+  _end = boardServiceRender:GridPos2RenderPos(monsterEntity:GridLocation():Center())
   _end.y = self.eftPosYb
-  local disx = (math.abs)(_end.x - _start.x)
-  local disy = (math.abs)(_end.y - _start.y)
-  local power = (math.sqrt)(disx + disy)
+  local disx = math.abs(_end.x - _start.x)
+  local disy = math.abs(_end.y - _start.y)
+  local power = math.sqrt(disx + disy)
   eftTansform:DOJump(_end, power, 1, self.duration / 1000, false)
   YIELD(TT, self.duration + 10)
   world:DestroyEntity(eftEntity)
 end
-
-

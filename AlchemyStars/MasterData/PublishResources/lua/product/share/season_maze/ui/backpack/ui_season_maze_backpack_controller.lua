@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/backpack/ui_season_maze_backpack_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBackPackController", UIController)
 UISeasonMazeBackPackController = UISeasonMazeBackPackController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBackPackController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeBackPackController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
   self._module = self:GetModule(MissionModule)
-  self._ctx = (self._module):TeamCtx()
-  self._teams = (self._ctx):GetSeasonMazeTeam()
+  self._ctx = self._module:TeamCtx()
+  self._teams = self._ctx:GetSeasonMazeTeam()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_item)({})
+function UISeasonMazeBackPackController:OnShow(uiParams)
+  self._cfg = Cfg.cfg_item({})
   if self._cfg == nil then
-    (Log.fatal)("[error] maze --> _cfg == nil !")
+    Log.fatal("[error] maze --> _cfg == nil !")
   end
   self.openTag = 1
   if uiParams[1] then
@@ -30,18 +20,17 @@ UISeasonMazeBackPackController.OnShow = function(self, uiParams)
   if uiParams[2] then
     self._innerGame = true
   end
-  self.seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self.uiSeasonMazeModule = (self.seasonMazeModule):UIModule()
-  self.seasonMazeObj = (self.seasonMazeModule):CurSeasonObj()
-  self.cmptInfo = (self.seasonMazeObj):GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-  ;
-  (self._ctx):InitSeasonMazeTeam((self.cmptInfo).m_formation_list)
+  self.seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self.uiSeasonMazeModule = self.seasonMazeModule:UIModule()
+  self.seasonMazeObj = self.seasonMazeModule:CurSeasonObj()
+  self.cmptInfo = self.seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+  self._ctx:InitSeasonMazeTeam(self.cmptInfo.m_formation_list)
   self.refreshPetOver = false
   self.refreshRelicOver = false
   self.refreshActionCardOver = false
-  self.mazePets = (self.uiSeasonMazeModule):GetSeasonMazePets()
-  self.mazeRelics = (self.uiSeasonMazeModule):GetSeasonMazeRelics()
-  self.mazeActionCards = (self.uiSeasonMazeModule):GetSeasonMazeActionCards()
+  self.mazePets = self.uiSeasonMazeModule:GetSeasonMazePets()
+  self.mazeRelics = self.uiSeasonMazeModule:GetSeasonMazeRelics()
+  self.mazeActionCards = self.uiSeasonMazeModule:GetSeasonMazeActionCards()
   self._itemCountPerRow = 5
   self._relic_itemCountPerRow = 4
   self._actionCard_itemCountPerRow = 4
@@ -52,52 +41,56 @@ UISeasonMazeBackPackController.OnShow = function(self, uiParams)
   self._firstIn = true
   self._uiHeartAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   self._items = {}
-  self._elementSortTypeOrder = {[1] = PetSortType.WaterFirst, [2] = PetSortType.FireFirst, [3] = PetSortType.SenFirst, [4] = PetSortType.ElectricityFirst}
+  self._elementSortTypeOrder = {
+    [1] = PetSortType.WaterFirst,
+    [2] = PetSortType.FireFirst,
+    [3] = PetSortType.SenFirst,
+    [4] = PetSortType.ElectricityFirst
+  }
   self._currentElementSortTypeOrder = 0
   self._sortFilterActiveStatus = false
   self._petHeartItemList = {}
   self._isFilterRedPoint = false
-  self._petModule = (GameGlobal.GetModule)(PetModule)
-  ;
-  (self._petModule):ClearAllPetSortInfo()
+  self._petModule = GameGlobal.GetModule(PetModule)
+  self._petModule:ClearAllPetSortInfo()
   local sortFilterCfg = UISortFilterCfg.SeasonMazeTeam
   local sortCfg = {}
-  for idx,value in ipairs(sortFilterCfg.Sort) do
-    sortCfg[idx] = (Cfg.cfg_client_pet_sort)[value]
+  for idx, value in ipairs(sortFilterCfg.Sort) do
+    sortCfg[idx] = Cfg.cfg_client_pet_sort[value]
   end
   local filterCfg = {}
-  for tag,filters in pairs(sortFilterCfg.Filter) do
+  for tag, filters in pairs(sortFilterCfg.Filter) do
     local cfgs = {}
-    for idx,value in ipairs(filters) do
-      cfgs[idx] = (Cfg.cfg_client_pet_filter)[value]
+    for idx, value in ipairs(filters) do
+      cfgs[idx] = Cfg.cfg_client_pet_filter[value]
     end
     filterCfg[tag] = cfgs
   end
   self._sortCfg = sortCfg
   self._filterCfg = filterCfg
-  if (self._petModule).PetSortType ~= nil then
-    self._sortType = (self._petModule).PetSortType
+  if self._petModule.PetSortType ~= nil then
+    self._sortType = self._petModule.PetSortType
   else
     self._sortType = PetSortType.Level
   end
-  if (self._petModule).PetSortOrder ~= nil then
-    self._sortOrder = (self._petModule).PetSortOrder
+  if self._petModule.PetSortOrder ~= nil then
+    self._sortOrder = self._petModule.PetSortOrder
   else
     self._sortOrder = PetSortOrder.Descending
   end
-  if (self._petModule).PetSortFilter ~= nil then
-    self._filterParams = (self._petModule).PetSortFilter
+  if self._petModule.PetSortFilter ~= nil then
+    self._filterParams = self._petModule.PetSortFilter
   else
     self._filterParams = {}
   end
-  local sortParams = (PetDefaulSort[self._sortType])[self._sortOrder]
-  self._pets = (self._petModule):_SortPets((self.uiSeasonMazeModule):GetSeasonMazeTablePets(), self._filterParams, sortParams, (self._petModule).PetSortChooseSecondAttribute)
+  local sortParams = PetDefaulSort[self._sortType][self._sortOrder]
+  self._pets = self._petModule:_SortPets(self.uiSeasonMazeModule:GetSeasonMazeTablePets(), self._filterParams, sortParams, self._petModule.PetSortChooseSecondAttribute)
   self._pets = self:SortByDeath(self._pets)
-  self._petCount = (table.count)(self._pets)
-  self._listShowItemCount = (math.ceil)(self._petCount / self._itemCountPerRow)
+  self._petCount = table.count(self._pets)
+  self._listShowItemCount = math.ceil(self._petCount / self._itemCountPerRow)
   self._backClose = false
   if self._innerGame then
-    local matchModule = (GameGlobal.GetModule)(MatchModule)
+    local matchModule = GameGlobal.GetModule(MatchModule)
     local enterData = matchModule:GetMatchEnterData()
     if enterData:GetMatchType() == MatchType.MT_SeasonMaze then
       self._isFromSeasonMaze = true
@@ -105,134 +98,88 @@ UISeasonMazeBackPackController.OnShow = function(self, uiParams)
       local createInfo = enterData:GetSeasonMazeMissionInfo()
       self.mazeRelics = createInfo.relic_list
     end
-    do
-      do
-        self.petBtn = self:GetGameObject("PetBtn")
-        ;
-        (self.petBtn):SetActive(false)
-        self.sacredBtn = self:GetGameObject("SacredBtn")
-        -- DECOMPILER ERROR at PC255: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        ((self.sacredBtn).transform).position = Vector3((((self.sacredBtn).transform).position).x, (((self.petBtn).transform).position).y, (((self.sacredBtn).transform).position).z)
-        self.activeCardBtn = self:GetGameObject("ActiveCardBtn")
-        ;
-        (self.activeCardBtn):SetActive(false)
-        self:InitWidget()
-        self:InitUI()
-        self:Lock("UISeasonMazeBackPackController:Enter")
-        self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
+    self.petBtn = self:GetGameObject("PetBtn")
+    self.petBtn:SetActive(false)
+    self.sacredBtn = self:GetGameObject("SacredBtn")
+    self.sacredBtn.transform.position = Vector3(self.sacredBtn.transform.position.x, self.petBtn.transform.position.y, self.sacredBtn.transform.position.z)
+    self.activeCardBtn = self:GetGameObject("ActiveCardBtn")
+    self.activeCardBtn:SetActive(false)
+  end
+  self:InitWidget()
+  self:InitUI()
+  self:Lock("UISeasonMazeBackPackController:Enter")
+  self:StartTask(function(TT)
     YIELD(TT, 500)
     self:UnLock("UISeasonMazeBackPackController:Enter")
-  end
-)
-      end
-    end
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.SortByDeath = function(self, pets)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeBackPackController:SortByDeath(pets)
   local savePets = {}
   local deathPets = {}
   local dispatchPets = {}
   local inTeamPets = {}
   for i = 1, #pets do
-    local pstd = (pets[i]):GetPstID()
-    local curHp, maxHp = (self.uiSeasonMazeModule):GetPetHP(pstd, nil)
-    if curHp > 0 then
-      local module = (GameGlobal.GetModule)(SeasonMazeModule)
-      local dispatch = module:GetPetDispatchData((pets[i]):GetTemplateID())
+    local pstd = pets[i]:GetPstID()
+    local curHp, maxHp = self.uiSeasonMazeModule:GetPetHP(pstd, nil)
+    if 0 < curHp then
+      local module = GameGlobal.GetModule(SeasonMazeModule)
+      local dispatch = module:GetPetDispatchData(pets[i]:GetTemplateID())
       if dispatch then
         dispatchPets[#dispatchPets + 1] = pets[i]
-      else
-        if #(self._teams).list > 0 then
-          local tmpTeam = (((self._teams).list)[1]):Clone()
-          local teampets = tmpTeam:GetPets()
-          local inTeam = false
-          for jk = 1, #teampets do
-            local pet = teampets[jk]
-            if pet == (pets[i]):GetPstID() then
-              inTeamPets[#inTeamPets + 1] = pets[i]
-              inTeam = true
-            end
-          end
-          if not inTeam then
-            savePets[#savePets + 1] = pets[i]
-          end
-        else
-          do
-            do
-              do
-                savePets[#savePets + 1] = pets[i]
-                deathPets[#deathPets + 1] = pets[i]
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+      elseif 0 < #self._teams.list then
+        local tmpTeam = self._teams.list[1]:Clone()
+        local teampets = tmpTeam:GetPets()
+        local inTeam = false
+        for jk = 1, #teampets do
+          local pet = teampets[jk]
+          if pet == pets[i]:GetPstID() then
+            inTeamPets[#inTeamPets + 1] = pets[i]
+            inTeam = true
           end
         end
+        if not inTeam then
+          savePets[#savePets + 1] = pets[i]
+        end
+      else
+        savePets[#savePets + 1] = pets[i]
       end
+    else
+      deathPets[#deathPets + 1] = pets[i]
     end
   end
-  if #inTeamPets > 0 then
+  if 0 < #inTeamPets then
     for i = 1, #savePets do
       inTeamPets[#inTeamPets + 1] = savePets[i]
     end
     savePets = inTeamPets
   end
-  if #dispatchPets > 0 then
+  if 0 < #dispatchPets then
     for i = 1, #dispatchPets do
       savePets[#savePets + 1] = dispatchPets[i]
     end
   end
-  do
-    if #deathPets > 0 then
-      for i = 1, #deathPets do
-        savePets[#savePets + 1] = deathPets[i]
-      end
-    end
-    do
-      return savePets
+  if 0 < #deathPets then
+    for i = 1, #deathPets do
+      savePets[#savePets + 1] = deathPets[i]
     end
   end
+  return savePets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeBackPackController:InitWidget()
   self.petScrollView = self:GetUIComponent("UIDynamicScrollView", "PetScrollView")
   self._emptyDataTip = self:GetGameObject("EmptyTip")
-  self.backBtns = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+  self.backBtns = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
   self._sortBtns = self:GetUIComponent("UISelectObjectPath", "sortBtns")
   self._curSortStateIcon = self:GetUIComponent("Image", "btnFiltrate")
   self._sortFilterLoader = self:GetUIComponent("UISelectObjectPath", "sortFilter")
   self._clearFilterBtn = self:GetGameObject("clearFilterBtn")
-  ;
-  (self._clearFilterBtn):SetActive(false)
+  self._clearFilterBtn:SetActive(false)
   self.topRightAnchor = self:GetGameObject("TopRightAnchor")
   self._filterRedImg = self:GetUIComponent("Image", "FilterRedBtn")
   self._filterRedIGo = self:GetGameObject("FilterRedBtn")
-  ;
-  (self._filterRedIGo):SetActive(false)
+  self._filterRedIGo:SetActive(false)
   self.petView = self:GetGameObject("PetView")
   self.sacredView = self:GetGameObject("SacredView")
   self.activeCardView = self:GetGameObject("ActiveCardView")
@@ -241,285 +188,193 @@ UISeasonMazeBackPackController.InitWidget = function(self)
   self.petName = self:GetUIComponent("UILocalizationText", "petName")
   self.sacredName = self:GetUIComponent("UILocalizationText", "sacredName")
   self.activeCardName = self:GetUIComponent("UILocalizationText", "activeCardName")
-  self._filterRedSp1 = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_4_frame")
-  self._filterRedSp2 = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_3_frame")
+  self._filterRedSp1 = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_4_frame")
+  self._filterRedSp2 = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_3_frame")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.InitUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self.whiteTextColor = (Color.New)(1, 1, 1)
-  self.yellowTextColor = (Color.New)(0.8352941, 0.7215686, 0.4705882)
+function UISeasonMazeBackPackController:InitUI()
+  self.whiteTextColor = Color.New(1, 1, 1)
+  self.yellowTextColor = Color.New(0.8352941, 0.7215686, 0.4705882)
   self.petBtn = self:GetUIComponent("Toggle", "PetBtn")
-  self.petBtnValueChanged = function(isOn)
-    -- function num : 0_4_0 , upvalues : self
+  
+  function self.petBtnValueChanged(isOn)
     if isOn then
       self:ActiveTagView(1)
+    else
     end
   end
-
-  ;
-  ((self.petBtn).onValueChanged):AddListener(self.petBtnValueChanged)
+  
+  self.petBtn.onValueChanged:AddListener(self.petBtnValueChanged)
   self.sacredBtn = self:GetUIComponent("Toggle", "SacredBtn")
-  self.sacredBtnValueChanged = function(isOn)
-    -- function num : 0_4_1 , upvalues : self
+  
+  function self.sacredBtnValueChanged(isOn)
     if isOn then
       self:ActiveTagView(2)
+    else
     end
   end
-
-  ;
-  ((self.sacredBtn).onValueChanged):AddListener(self.sacredBtnValueChanged)
+  
+  self.sacredBtn.onValueChanged:AddListener(self.sacredBtnValueChanged)
   self.activeCardBtn = self:GetUIComponent("Toggle", "ActiveCardBtn")
-  self.activeCardBtnValueChanged = function(isOn)
-    -- function num : 0_4_2 , upvalues : self
+  
+  function self.activeCardBtnValueChanged(isOn)
     if isOn then
       self:ActiveTagView(3)
+    else
     end
   end
-
-  ;
-  ((self.activeCardBtn).onValueChanged):AddListener(self.activeCardBtnValueChanged)
+  
+  self.activeCardBtn.onValueChanged:AddListener(self.activeCardBtnValueChanged)
   self:_InitBackBtn()
   if self.openTag == 1 then
     self:ActiveTagView(1)
-    -- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.activeCardBtn).isOn = false
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.sacredBtn).isOn = false
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.petBtn).isOn = true
-  else
-    if self.openTag == 2 then
-      self:ActiveTagView(2)
-      -- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.activeCardBtn).isOn = false
-      -- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.sacredBtn).isOn = true
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self.petBtn).isOn = false
-    else
-      if self.openTag == 3 then
-        self:ActiveTagView(3)
-        -- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self.activeCardBtn).isOn = true
-        -- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self.sacredBtn).isOn = false
-        -- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self.petBtn).isOn = false
-      end
-    end
+    self.activeCardBtn.isOn = false
+    self.sacredBtn.isOn = false
+    self.petBtn.isOn = true
+  elseif self.openTag == 2 then
+    self:ActiveTagView(2)
+    self.activeCardBtn.isOn = false
+    self.sacredBtn.isOn = true
+    self.petBtn.isOn = false
+  elseif self.openTag == 3 then
+    self:ActiveTagView(3)
+    self.activeCardBtn.isOn = true
+    self.sacredBtn.isOn = false
+    self.petBtn.isOn = false
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController._InitBackBtn = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeBackPackController:_InitBackBtn()
   local hideHomeBtn = false
   if self._innerGame then
     hideHomeBtn = true
   end
-  ;
-  (self.backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+  self.backBtns:SetData(function()
     self._backClose = true
     for i = 1, #self._TaskList do
-      local taskId = (self._TaskList)[i]
+      local taskId = self._TaskList[i]
       if taskId ~= nil then
-        ((GameGlobal.TaskManager)()):KillTask(taskId)
+        GameGlobal.TaskManager():KillTask(taskId)
       end
     end
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_5_1 , upvalues : self, _ENV
+  end, function()
     local pageIdx = 1
     if self._TmpTag == 1 then
       pageIdx = 1
-    else
-      if self._TmpTag == 2 then
-        pageIdx = 2
-      else
-        if self._TmpTag == 3 then
-          pageIdx = 3
-        end
-      end
+    elseif self._TmpTag == 2 then
+      pageIdx = 2
+    elseif self._TmpTag == 3 then
+      pageIdx = 3
     end
-    ;
-    (UISeasonMazeModule.OpenHelpUI)(UISeasonMazeHelperTabIndex.Temp6, pageIdx)
-  end
-, nil, hideHomeBtn, nil, false, nil)
+    UISeasonMazeModule.OpenHelpUI(UISeasonMazeHelperTabIndex.Temp6, pageIdx)
+  end, nil, hideHomeBtn, nil, false, nil)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.ActiveTagView = function(self, tag)
-  -- function num : 0_6
-  (self.petView):SetActive(false)
-  ;
-  (self.sacredView):SetActive(false)
-  ;
-  (self.activeCardView):SetActive(false)
+function UISeasonMazeBackPackController:ActiveTagView(tag)
+  self.petView:SetActive(false)
+  self.sacredView:SetActive(false)
+  self.activeCardView:SetActive(false)
   if tag == 1 then
-    (self.petView):SetActive(true)
+    self.petView:SetActive(true)
     self:RefreshPetBackPack()
-  else
-    if tag == 2 then
-      (self.sacredView):SetActive(true)
-      self:RefreshRelicBackPack()
-    else
-      if tag == 3 then
-        (self.activeCardView):SetActive(true)
-        self:RefreshActionCardBackPack()
-      end
-    end
+  elseif tag == 2 then
+    self.sacredView:SetActive(true)
+    self:RefreshRelicBackPack()
+  elseif tag == 3 then
+    self.activeCardView:SetActive(true)
+    self:RefreshActionCardBackPack()
   end
   self._TmpTag = tag
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.RefreshPetBackPack = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeBackPackController:RefreshPetBackPack()
   if self.refreshPetOver then
-    (self.petScrollView):MovePanelToItemIndex(0, 0)
-    return 
+    self.petScrollView:MovePanelToItemIndex(0, 0)
+    return
   end
   self.refreshPetOver = true
   self._module = self:GetModule(MissionModule)
-  ;
-  (self.petScrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_7_0 , upvalues : self
+  self.petScrollView:InitListView(self._listShowItemCount, function(scrollView, index)
     return self:InitSpritListInfo(scrollView, index)
-  end
-, self:GetScrollViewParam())
-  ;
-  (self._sortBtns):SpawnObjects("UITopSortBtnItem", self._btnCount)
-  self._sortBtnsPool = (self._sortBtns):GetAllSpawnList()
+  end, self:GetScrollViewParam())
+  self._sortBtns:SpawnObjects("UITopSortBtnItem", self._btnCount)
+  self._sortBtnsPool = self._sortBtns:GetAllSpawnList()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):SetData(i, (self._sortCfg)[i], self._sortType, self._sortOrder, function(idx)
-    -- function num : 0_7_1 , upvalues : self
-    self:ChangeSortParams(idx)
-  end
-, self._currentElementSortTypeOrder)
+    self._sortBtnsPool[i]:SetData(i, self._sortCfg[i], self._sortType, self._sortOrder, function(idx)
+      self:ChangeSortParams(idx)
+    end, self._currentElementSortTypeOrder)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeBackPackController:InitSpritListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
-    if (self._TaskList)[item] then
+    if self._TaskList[item] then
       return item
     end
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._TaskList)[item] = self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : index, self, _ENV, item, rowPool
-    while index > 0 and self:GetHasItemAsyncLoading() do
-      YIELD(TT)
-    end
-    if self._backClose then
-      return 
-    end
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._AsyncLoadFlagMap)[item] = 1
-    rowPool:AsyncSpawnObjects(TT, "UISeasonMazeBagPetStateItem", self._itemCountPerRow)
-    local rowList = rowPool:GetAllSpawnList()
-    self._petHeartItemList = rowList
-    for i = 1, self._itemCountPerRow do
-      local heartItem = rowList[i]
-      ;
-      (heartItem:GetGameObject()):SetActive(false)
-    end
-    for i = 1, self._itemCountPerRow do
-      local heartItem = rowList[i]
-      local itemIndex = index * self._itemCountPerRow + i
-      if self._petCount < itemIndex then
-        (heartItem:GetGameObject()):SetActive(false)
-      else
-        self:ShowHeartItem(TT, heartItem, itemIndex)
-        heartItem:PlayFadeInAnim()
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._items)[itemIndex] = heartItem
+    self._TaskList[item] = self:StartTask(function(TT)
+      if 0 < index then
+        while self:GetHasItemAsyncLoading() do
+          YIELD(TT)
+        end
       end
-    end
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-    if itemIndex % 5 == 0 then
-      (self._AsyncLoadFlagMap)[item] = 2
+      if self._backClose then
+        return
+      end
+      self._AsyncLoadFlagMap[item] = 1
+      rowPool:AsyncSpawnObjects(TT, "UISeasonMazeBagPetStateItem", self._itemCountPerRow)
+      local rowList = rowPool:GetAllSpawnList()
+      self._petHeartItemList = rowList
+      for i = 1, self._itemCountPerRow do
+        local heartItem = rowList[i]
+        heartItem:GetGameObject():SetActive(false)
+      end
+      for i = 1, self._itemCountPerRow do
+        local heartItem = rowList[i]
+        local itemIndex = index * self._itemCountPerRow + i
+        if itemIndex > self._petCount then
+          heartItem:GetGameObject():SetActive(false)
+        else
+          self:ShowHeartItem(TT, heartItem, itemIndex)
+          heartItem:PlayFadeInAnim()
+          self._items[itemIndex] = heartItem
+          if itemIndex % 5 == 0 then
+          end
+        end
+      end
+      self._AsyncLoadFlagMap[item] = 2
       item.IsInitHandlerCalled = true
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._TaskList)[item] = nil
-    end
-  end
-)
+      self._TaskList[item] = nil
+    end)
   else
     local rowList = rowPool:GetAllSpawnList()
     self._petHeartItemList = rowList
     for i = 1, self._itemCountPerRow do
       local heartItem = rowList[i]
-      ;
-      (heartItem:GetGameObject()):SetActive(false)
+      heartItem:GetGameObject():SetActive(false)
     end
     for i = 1, self._itemCountPerRow do
       local heartItem = rowList[i]
       local itemIndex = index * self._itemCountPerRow + i
-      if self._petCount < itemIndex then
-        (heartItem:GetGameObject()):SetActive(false)
+      if itemIndex > self._petCount then
+        heartItem:GetGameObject():SetActive(false)
       else
         self:ShowHeartItem(TT, heartItem, itemIndex)
         heartItem:ResetInAnim()
-        -- DECOMPILER ERROR at PC64: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._items)[itemIndex] = heartItem
+        self._items[itemIndex] = heartItem
       end
     end
   end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.GetHasItemAsyncLoading = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for _,v in pairs(self._AsyncLoadFlagMap) do
+function UISeasonMazeBackPackController:GetHasItemAsyncLoading()
+  for _, v in pairs(self._AsyncLoadFlagMap) do
     if v == 1 then
       return true
     end
@@ -527,51 +382,36 @@ UISeasonMazeBackPackController.GetHasItemAsyncLoading = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.ShowHeartItem = function(self, TT, heartItem, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMazeBackPackController:ShowHeartItem(TT, heartItem, index)
   if heartItem == nil or heartItem.view == nil or heartItem:GetGameObject() == nil then
-    return 
+    return
   end
-  local config = (self._pets)[index]
+  local config = self._pets[index]
   if config ~= nil then
     heartItem:SetData(config, function(id)
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    local pstids = {}
-    for i = 1, #self._pets do
-      (table.insert)(pstids, ((self._pets)[i]):GetPstID())
-    end
-    local petModule = self:GetModule(PetModule)
-    ;
-    (petModule.uiModule):SetTeamCustomPets(self._pets)
-    local petid = ((self.mazePets)[id]):GetTemplateID()
-    self:ShowDialog("UISpiritDetailGroupController", petid, false, nil, nil, true)
-  end
-, true, self._firstIn, TeamOpenerType.SeasonMaze, PetSkinEffectPath.CARD_PET_LIST, index)
+      local pstids = {}
+      for i = 1, #self._pets do
+        table.insert(pstids, self._pets[i]:GetPstID())
+      end
+      local petModule = self:GetModule(PetModule)
+      petModule.uiModule:SetTeamCustomPets(self._pets)
+      local petid = self.mazePets[id]:GetTemplateID()
+      self:ShowDialog("UISpiritDetailGroupController", petid, false, nil, nil, true)
+    end, true, self._firstIn, TeamOpenerType.SeasonMaze, PetSkinEffectPath.CARD_PET_LIST, index)
     self:_SetRedPoint(config, heartItem)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController._SetRedPoint = function(self, config, heartItem)
-  -- function num : 0_11
+function UISeasonMazeBackPackController:_SetRedPoint(config, heartItem)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.GetScrollViewParam = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonMazeBackPackController:GetScrollViewParam()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 333
   return param
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.OnSortFilterChanged = function(self, sortType, sortOrder, filterParams)
-  -- function num : 0_13
+function UISeasonMazeBackPackController:OnSortFilterChanged(sortType, sortOrder, filterParams)
   self._sortType = sortType
   self._sortOrder = sortOrder
   self._filterParams = filterParams
@@ -579,27 +419,19 @@ UISeasonMazeBackPackController.OnSortFilterChanged = function(self, sortType, so
   self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.FlushTopBtnState = function(self)
-  -- function num : 0_14
+function UISeasonMazeBackPackController:FlushTopBtnState()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):Flush(self._sortType, self._sortOrder, (self._petModule).PetSortElementIndex)
+    self._sortBtnsPool[i]:Flush(self._sortType, self._sortOrder, self._petModule.PetSortElementIndex)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.ChangeSortParams = function(self, idx)
-  -- function num : 0_15 , upvalues : _ENV
-  local tp = ((self._sortCfg)[idx]).Type
+function UISeasonMazeBackPackController:ChangeSortParams(idx)
+  local tp = self._sortCfg[idx].Type
   if self._sortType == tp then
     if self._sortOrder == PetSortOrder.Ascending then
       self._sortOrder = PetSortOrder.Descending
-    else
-      if self._sortOrder == PetSortOrder.Descending then
-        self._sortOrder = PetSortOrder.Ascending
-      end
+    elseif self._sortOrder == PetSortOrder.Descending then
+      self._sortOrder = PetSortOrder.Ascending
     end
   else
     self._sortType = tp
@@ -608,161 +440,113 @@ UISeasonMazeBackPackController.ChangeSortParams = function(self, idx)
   self:RefrenshPetList(1, true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.RefrenshPetList = function(self, pstid, stay)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonMazeBackPackController:RefrenshPetList(pstid, stay)
   self._items = {}
-  local sortParams = nil
+  local sortParams
   if self._sortType == PetSortType.Element then
-    self._currentElementSortTypeOrder = (self._petModule).PetSortElementIndex
-    sortParams = (PetDefaulSort[(self._elementSortTypeOrder)[self._currentElementSortTypeOrder]])[PetSortOrder.Descending]
+    self._currentElementSortTypeOrder = self._petModule.PetSortElementIndex
+    sortParams = PetDefaulSort[self._elementSortTypeOrder[self._currentElementSortTypeOrder]][PetSortOrder.Descending]
   else
-    sortParams = (PetDefaulSort[self._sortType])[self._sortOrder]
+    sortParams = PetDefaulSort[self._sortType][self._sortOrder]
   end
-  self._pets = (self._petModule):_SortPets((self.uiSeasonMazeModule):GetSeasonMazeTablePets(), self._filterParams, sortParams, (self._petModule).PetSortChooseSecondAttribute)
+  self._pets = self._petModule:_SortPets(self.uiSeasonMazeModule:GetSeasonMazeTablePets(), self._filterParams, sortParams, self._petModule.PetSortChooseSecondAttribute)
   self._pets = self:SortByDeath(self._pets)
-  ;
-  (self._petModule):SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType)
+  self._petModule:SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType)
   local preListShowItemCount = self._listShowItemCount
   self:CalcPetScrollViewCount()
-  ;
-  (self.petScrollView):SetListItemCount(self._listShowItemCount)
+  self.petScrollView:SetListItemCount(self._listShowItemCount)
   if preListShowItemCount == self._listShowItemCount then
-    (self.petScrollView):MovePanelToItemIndex(0, 0)
-  end
-  ;
-  (self._filterRedIGo):SetActive(false)
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.CalcPetScrollViewCount = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  self._petCount = (table.count)(self._pets)
-  self._listShowItemCount = (math.ceil)(self._petCount / self._itemCountPerRow)
-  if self._petCount > 0 then
-    (self._emptyDataTip):SetActive(false)
+    self.petScrollView:MovePanelToItemIndex(0, 0)
   else
-    ;
-    (self._emptyDataTip):SetActive(true)
+  end
+  self._filterRedIGo:SetActive(false)
+end
+
+function UISeasonMazeBackPackController:CalcPetScrollViewCount()
+  self._petCount = table.count(self._pets)
+  self._listShowItemCount = math.ceil(self._petCount / self._itemCountPerRow)
+  if self._petCount > 0 then
+    self._emptyDataTip:SetActive(false)
+  else
+    self._emptyDataTip:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.CloseFiterCallBack = function(self)
-  -- function num : 0_18
+function UISeasonMazeBackPackController:CloseFiterCallBack()
   self._sortFilterActiveStatus = false
   self:SetClearBtnStatus()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.SetClearBtnStatus = function(self)
-  -- function num : 0_19
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  if not (self._petModule):CheckHasCachePetSortInfo() then
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_1_frame")
-    ;
-    (self._clearFilterBtn):SetActive(false)
+function UISeasonMazeBackPackController:SetClearBtnStatus()
+  if not self._petModule:CheckHasCachePetSortInfo() then
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_1_frame")
+    self._clearFilterBtn:SetActive(false)
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_2_frame")
-    ;
-    (self._clearFilterBtn):SetActive(true)
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_2_frame")
+    self._clearFilterBtn:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.SetFilterImgActive = function(self)
-  -- function num : 0_20
-  local sp = nil
+function UISeasonMazeBackPackController:SetFilterImgActive()
+  local sp
   if self._isFilterRedPoint then
     sp = self._filterRedSp1
   else
     sp = self._filterRedSp2
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._filterRedImg).sprite = sp
+  self._filterRedImg.sprite = sp
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.RefreshRelicBackPack = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC13: Unhandled construct in 'MakeBoolean' P1
-
-  if self.refreshRelicOver and (table.count)(self.mazeRelics) ~= 0 then
-    (self.sacredScrollView):MovePanelToItemIndex(0, 0)
+function UISeasonMazeBackPackController:RefreshRelicBackPack()
+  if self.refreshRelicOver then
+    if table.count(self.mazeRelics) ~= 0 then
+      self.sacredScrollView:MovePanelToItemIndex(0, 0)
+    end
+    return
   end
-  do return  end
   self.refreshRelicOver = true
-  self.mazeRelics = (self.uiSeasonMazeModule):GetSeasonMazeRelics()
+  self.mazeRelics = self.uiSeasonMazeModule:GetSeasonMazeRelics()
   local relics = {}
-  if (table.count)(self.mazeRelics) == 0 then
-    return 
+  if table.count(self.mazeRelics) == 0 then
+    return
   end
-  for key,value in pairs(self.mazeRelics) do
+  for key, value in pairs(self.mazeRelics) do
     relics[#relics + 1] = key
   end
   self._itemInfo = self:Relic_SortItems(relics)
-  self._relic_listShowRowmItemCount = (table.count)(self._itemInfo)
+  self._relic_listShowRowmItemCount = table.count(self._itemInfo)
   self:_Relic_InitSrollView()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.Relic_SortItems = function(self, items)
-  -- function num : 0_22 , upvalues : _ENV
-  (table.sort)(items, function(a, b)
-    -- function num : 0_22_0 , upvalues : self
-    local ta = (self._cfg)[a]
-    local tb = (self._cfg)[b]
-    local taUse = (self.uiSeasonMazeModule):GetSeasonMazeRelicCanUseCount(ta.ID)
-    local tbUse = (self.uiSeasonMazeModule):GetSeasonMazeRelicCanUseCount(tb.ID)
+function UISeasonMazeBackPackController:Relic_SortItems(items)
+  table.sort(items, function(a, b)
+    local ta = self._cfg[a]
+    local tb = self._cfg[b]
+    local taUse = self.uiSeasonMazeModule:GetSeasonMazeRelicCanUseCount(ta.ID)
+    local tbUse = self.uiSeasonMazeModule:GetSeasonMazeRelicCanUseCount(tb.ID)
     if taUse == 0 and tbUse ~= 0 then
       return false
     end
     if tbUse == 0 and taUse ~= 0 then
       return true
     end
-    do return ta.ID < tb.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    return ta.ID < tb.ID
+  end)
   return items
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController._Relic_InitSrollView = function(self)
-  -- function num : 0_23
-  (self.sacredScrollView):InitListView(self:Relic_GetRowCount(), function(scrollView, index)
-    -- function num : 0_23_0 , upvalues : self
+function UISeasonMazeBackPackController:_Relic_InitSrollView()
+  self.sacredScrollView:InitListView(self:Relic_GetRowCount(), function(scrollView, index)
     return self:Relic_InitSpritListInfo(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.Relic_GetRowCount = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local row = (math.ceil)(self._relic_listShowRowmItemCount / self._relic_itemCountPerRow)
+function UISeasonMazeBackPackController:Relic_GetRowCount()
+  local row = math.ceil(self._relic_listShowRowmItemCount / self._relic_itemCountPerRow)
   return row
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.Relic_InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_25
+function UISeasonMazeBackPackController:Relic_InitSpritListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -776,8 +560,8 @@ UISeasonMazeBackPackController.Relic_InitSpritListInfo = function(self, scrollVi
   for i = 1, self._relic_itemCountPerRow do
     local heartItem = rowList[i]
     local itemIndex = index * self._relic_itemCountPerRow + i
-    if self._relic_listShowRowmItemCount < itemIndex then
-      (heartItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._relic_listShowRowmItemCount then
+      heartItem:GetGameObject():SetActive(false)
     else
       self:Relic_ShowHeartItem(heartItem, itemIndex)
     end
@@ -785,35 +569,26 @@ UISeasonMazeBackPackController.Relic_InitSpritListInfo = function(self, scrollVi
   return item
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.Relic_ShowHeartItem = function(self, item, index)
-  -- function num : 0_26
-  local cfg = (self._itemInfo)[index]
-  ;
-  (item:GetGameObject()):SetActive(false)
+function UISeasonMazeBackPackController:Relic_ShowHeartItem(item, index)
+  local cfg = self._itemInfo[index]
+  item:GetGameObject():SetActive(false)
   if cfg ~= nil then
     item:SetData(index, cfg, function(tIndex)
-    -- function num : 0_26_0 , upvalues : self, index
-    self:ShowDialog("UISeasonMazeRelicInfoController", (self._itemInfo)[index], self._itemInfo)
-  end
-, false, true, false)
+      self:ShowDialog("UISeasonMazeRelicInfoController", self._itemInfo[index], self._itemInfo)
+    end, false, true, false)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.RefreshActionCardBackPack = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UISeasonMazeBackPackController:RefreshActionCardBackPack()
   if self.refreshActionCardOver then
-    (self.activeCardScrollView):MovePanelToItemIndex(0, 0)
-    return 
+    self.activeCardScrollView:MovePanelToItemIndex(0, 0)
+    return
   end
   self.refreshActionCardOver = true
   self.infos = self:Sort_ActionCard(self.mazeActionCards)
   local unReActionCard = {}
   for i = 1, #self.infos do
-    local target = (self.infos)[i]
+    local target = self.infos[i]
     if #unReActionCard == 0 then
       unReActionCard[#unReActionCard + 1] = target
     else
@@ -830,51 +605,34 @@ UISeasonMazeBackPackController.RefreshActionCardBackPack = function(self)
     end
   end
   self.infos = unReActionCard
-  self._actionCard_listShowRowmItemCount = (table.count)(self.infos)
+  self._actionCard_listShowRowmItemCount = table.count(self.infos)
   self:_ActionCard_InitSrollView()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.Sort_ActionCard = function(self, infos)
-  -- function num : 0_28 , upvalues : _ENV
-  (table.sort)(infos, function(a, b)
-    -- function num : 0_28_0 , upvalues : _ENV
-    local ta = (Cfg.cfg_component_season_maze_hand)[a]
-    local tb = (Cfg.cfg_component_season_maze_hand)[b]
-    if ta.ID >= tb.ID then
-      do return ta.Quality ~= tb.Quality end
-      do return tb.Quality < ta.Quality end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UISeasonMazeBackPackController:Sort_ActionCard(infos)
+  table.sort(infos, function(a, b)
+    local ta = Cfg.cfg_component_season_maze_hand[a]
+    local tb = Cfg.cfg_component_season_maze_hand[b]
+    if ta.Quality == tb.Quality then
+      return ta.ID < tb.ID
     end
-  end
-)
+    return ta.Quality > tb.Quality
+  end)
   return infos
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController._ActionCard_InitSrollView = function(self)
-  -- function num : 0_29
-  (self.activeCardScrollView):InitListView(self:ActionCard_GetRowCount(), function(scrollView, index)
-    -- function num : 0_29_0 , upvalues : self
+function UISeasonMazeBackPackController:_ActionCard_InitSrollView()
+  self.activeCardScrollView:InitListView(self:ActionCard_GetRowCount(), function(scrollView, index)
     return self:ActionCard_InitSpritListInfo(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.ActionCard_GetRowCount = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local row = (math.ceil)(self._actionCard_listShowRowmItemCount / self._actionCard_itemCountPerRow)
+function UISeasonMazeBackPackController:ActionCard_GetRowCount()
+  local row = math.ceil(self._actionCard_listShowRowmItemCount / self._actionCard_itemCountPerRow)
   return row
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.ActionCard_InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_31
+function UISeasonMazeBackPackController:ActionCard_InitSpritListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -888,8 +646,8 @@ UISeasonMazeBackPackController.ActionCard_InitSpritListInfo = function(self, scr
   for i = 1, self._actionCard_itemCountPerRow do
     local heartItem = rowList[i]
     local itemIndex = index * self._actionCard_itemCountPerRow + i
-    if self._actionCard_listShowRowmItemCount < itemIndex then
-      (heartItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._actionCard_listShowRowmItemCount then
+      heartItem:GetGameObject():SetActive(false)
     else
       self:ActionCard_ShowHeartItem(heartItem, itemIndex)
     end
@@ -897,99 +655,58 @@ UISeasonMazeBackPackController.ActionCard_InitSpritListInfo = function(self, scr
   return item
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.ActionCard_ShowHeartItem = function(self, item, index)
-  -- function num : 0_32
-  local cfg = (self.infos)[index]
-  ;
-  (item:GetGameObject()):SetActive(false)
+function UISeasonMazeBackPackController:ActionCard_ShowHeartItem(item, index)
+  local cfg = self.infos[index]
+  item:GetGameObject():SetActive(false)
   if cfg ~= nil then
     item:SetData(index, cfg, function(index)
-    -- function num : 0_32_0 , upvalues : self
-    local indexCfg = (self.infos)[index]
-    self:ShowDialog("UISeasonMazeActionCardInfoController", indexCfg)
-  end
-, function()
-    -- function num : 0_32_1
-  end
-)
+      local indexCfg = self.infos[index]
+      self:ShowDialog("UISeasonMazeActionCardInfoController", indexCfg)
+    end, function()
+    end)
     item:PlayDelaBagAnim(index)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.BtnFiltrateOnClick = function(self, go)
-  -- function num : 0_33
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_2_frame")
+function UISeasonMazeBackPackController:BtnFiltrateOnClick(go)
+  self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_2_frame")
   self._sortFilterActiveStatus = true
   if self._sortFilter == nil then
-    self._sortFilter = (self._sortFilterLoader):SpawnObject("UISortFilterItem")
+    self._sortFilter = self._sortFilterLoader:SpawnObject("UISortFilterItem")
   end
-  ;
-  (self._sortFilter):SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
-    -- function num : 0_33_0 , upvalues : self
+  self._sortFilter:SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
     self:OnSortFilterChanged(sortType, sortOrder, filterParams)
-  end
-, function()
-    -- function num : 0_33_1 , upvalues : self
+  end, function()
     self:CloseFiterCallBack()
-  end
-)
-  ;
-  (self._clearFilterBtn):SetActive(true)
-  ;
-  ((self._sortFilter):GetGameObject()):SetActive(true)
+  end)
+  self._clearFilterBtn:SetActive(true)
+  self._sortFilter:GetGameObject():SetActive(true)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.ClearFilterBtnOnClick = function(self, go)
-  -- function num : 0_34
+function UISeasonMazeBackPackController:ClearFilterBtnOnClick(go)
   if self._sortFilterActiveStatus == false then
-    (self._clearFilterBtn):SetActive(false)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_1_frame")
+    self._clearFilterBtn:SetActive(false)
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_1_frame")
   end
-  ;
-  (self._petModule):ClearPetSortFilterInfo()
+  self._petModule:ClearPetSortFilterInfo()
   self._filterParams = {}
   self._isFilterRedPoint = false
   self:SetFilterImgActive()
   self:FlushTopBtnState()
   self:RefrenshPetList()
   if self._sortFilter then
-    (self._sortFilter):ClearFilters()
+    self._sortFilter:ClearFilters()
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.FilterRedBtnOnClick = function(self, go)
-  -- function num : 0_35
+function UISeasonMazeBackPackController:FilterRedBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.PetBtnOnClick = function(self, go)
-  -- function num : 0_36
+function UISeasonMazeBackPackController:PetBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.SacredBtnOnClick = function(self, go)
-  -- function num : 0_37
+function UISeasonMazeBackPackController:SacredBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBackPackController.ActiveCardBtnOnClick = function(self, go)
-  -- function num : 0_38
+function UISeasonMazeBackPackController:ActiveCardBtnOnClick(go)
 end
-
-

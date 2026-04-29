@@ -1,66 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_feature_coin_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local BuffLogicChangeFeatureCoinCountType = {Value = 1, Bonus = 2}
 _enum("BuffLogicChangeFeatureCoinCountType", BuffLogicChangeFeatureCoinCountType)
 _class("BuffLogicChangeFeatureCoinCount", BuffLogicBase)
 BuffLogicChangeFeatureCoinCount = BuffLogicChangeFeatureCoinCount
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeFeatureCoinCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeFeatureCoinCount:Constructor(buffInstance, logicParam)
   self._modifyValue = logicParam.modifyValue or 0
   self._modifyType = logicParam.modifyType or 1
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureCoinCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV, BuffLogicChangeFeatureCoinCountType
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeFeatureCoinCount:DoLogic(notify)
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.Shop) then
-    return 
+    return
   end
   local modifyValue = self._modifyValue
   if self._modifyType == BuffLogicChangeFeatureCoinCountType.Value then
     modifyValue = self._modifyValue
-  else
-    if self._modifyType == BuffLogicChangeFeatureCoinCountType.Bonus then
-      local baseParam = self._modifyValue
-      local curCoin = lsvcFeature:GetShopCoinCount()
-      if baseParam <= 0 then
-        return 
-      end
-      modifyValue = (math.floor)(curCoin / baseParam)
+  elseif self._modifyType == BuffLogicChangeFeatureCoinCountType.Bonus then
+    local baseParam = self._modifyValue
+    local curCoin = lsvcFeature:GetShopCoinCount()
+    if baseParam <= 0 then
+      return
+    end
+    modifyValue = math.floor(curCoin / baseParam)
+  end
+  local oldCount = lsvcFeature:GetShopCoinCount()
+  lsvcFeature:AddShopCoinCount(modifyValue)
+  local curCount = lsvcFeature:GetShopCoinCount()
+  local buffResult = BuffResultChangeFeatureCoinCount:New(curCount, oldCount, modifyValue)
+  if notify then
+    if notify:GetNotifyType() == NotifyType.PlayerEachMoveStart or notify:GetNotifyType() == NotifyType.PlayerEachMoveEnd or notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
+      buffResult:SetMovePos(notify:GetPos())
+    end
+    if notify:GetNotifyType() == NotifyType.TrapSkillStart then
+      buffResult:SetMovePos(notify:GetPos())
     end
   end
-  do
-    local oldCount = lsvcFeature:GetShopCoinCount()
-    lsvcFeature:AddShopCoinCount(modifyValue)
-    local curCount = lsvcFeature:GetShopCoinCount()
-    local buffResult = BuffResultChangeFeatureCoinCount:New(curCount, oldCount, modifyValue)
-    if notify then
-      if notify:GetNotifyType() == NotifyType.PlayerEachMoveStart or notify:GetNotifyType() == NotifyType.PlayerEachMoveEnd or notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
-        buffResult:SetMovePos(notify:GetPos())
-      end
-      if notify:GetNotifyType() == NotifyType.TrapSkillStart then
-        buffResult:SetMovePos(notify:GetPos())
-      end
-    end
-    local ntCoinCountChange = NTFeatureShopCoinCountChange:New(curCount, oldCount)
-    ;
-    ((self._world):GetService("Trigger")):Notify(ntCoinCountChange)
-    return buffResult
-  end
+  local ntCoinCountChange = NTFeatureShopCoinCountChange:New(curCount, oldCount)
+  self._world:GetService("Trigger"):Notify(ntCoinCountChange)
+  return buffResult
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeFeatureCoinCount.DoOverlap = function(self)
-  -- function num : 0_2
+function BuffLogicChangeFeatureCoinCount:DoOverlap()
   return self:DoLogic()
 end
-
-

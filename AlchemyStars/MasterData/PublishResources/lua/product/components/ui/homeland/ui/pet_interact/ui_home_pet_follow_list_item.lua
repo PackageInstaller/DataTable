@@ -1,49 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/pet_interact/ui_home_pet_follow_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetFollowListItem", UICustomWidget)
 UIHomePetFollowListItem = UIHomePetFollowListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetFollowListItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomePetFollowListItem:OnShow(uiParams)
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._line = self:GetGameObject("line")
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowListItem.SetData = function(self, idx, pet, callback, last)
-  -- function num : 0_1
+function UIHomePetFollowListItem:SetData(idx, pet, callback, last)
   self._pet = pet
   self._callback = callback
-  ;
-  (self._name):SetText((self._pet):PetName())
+  self._name:SetText(self._pet:PetName())
   if last then
-    (self._line):SetActive(false)
+    self._line:SetActive(false)
   else
-    ;
-    (self._line):SetActive(true)
+    self._line:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowListItem.btnOnClick = function(self, go)
-  -- function num : 0_2
+function UIHomePetFollowListItem:btnOnClick(go)
   if self._callback then
-    (self._callback)(self._pet)
+    self._callback(self._pet)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowListItem.Active = function(self, active)
-  -- function num : 0_3
-  (self._go):SetActive(active)
+function UIHomePetFollowListItem:Active(active)
+  self._go:SetActive(active)
 end
-
-

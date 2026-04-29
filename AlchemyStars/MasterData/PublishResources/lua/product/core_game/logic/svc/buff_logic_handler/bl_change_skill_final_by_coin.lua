@@ -1,53 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_coin.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByCoin", BuffLogicBase)
 BuffLogicChangeSkillFinalByCoin = BuffLogicChangeSkillFinalByCoin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByCoin.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeSkillFinalByCoin:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._a = logicParam.a
   self._n = logicParam.n
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByCoin.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-    local seasonMazeSvc = (self._world):GetService("SeasonMaze")
-    for _,paramType in ipairs((self._buffInstance)._effectList) do
+function BuffLogicChangeSkillFinalByCoin:DoLogic(notify)
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local seasonMazeSvc = self._world:GetService("SeasonMaze")
+    for _, paramType in ipairs(self._buffInstance._effectList) do
       local goldCoin = seasonMazeSvc:GetGoldCoin()
       local changeValue = self._a * goldCoin ^ self._n
-      ;
-      (Log.fatal)("ChangeSkillFinalByCoin Value:", changeValue, " a=", self._a, " gold=", goldCoin, " n=", self._n)
-      ;
-      (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
+      Log.fatal("ChangeSkillFinalByCoin Value:", changeValue, " a=", self._a, " gold=", goldCoin, " n=", self._n)
+      self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, changeValue)
     end
   end
 end
 
 _class("BuffLogicRemoveChangeSkillFinalByCoin", BuffLogicBase)
 BuffLogicRemoveChangeSkillFinalByCoin = BuffLogicRemoveChangeSkillFinalByCoin
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveChangeSkillFinalByCoin.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveChangeSkillFinalByCoin:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeSkillFinalByCoin.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveChangeSkillFinalByCoin:DoLogic()
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

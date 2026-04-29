@@ -1,46 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/drop_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DropService", BaseService)
 DropService = DropService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DropService.Constructor = function(self, world)
-  -- function num : 0_0
+function DropService:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DropService.DoActorDrop = function(self, dropID, hostEntityID, isHide)
-  -- function num : 0_1 , upvalues : _ENV
+function DropService:DoActorDrop(dropID, hostEntityID, isHide)
   local configService = self._configService
   local dropConfigData = configService:GetMonsterDropConfigData()
   local dropItemID = dropConfigData:GetMonsterDropItemID(dropID)
   local dropCount = self:_CalcRandomDropCount(dropID)
   local dropItemConfig = configService:GetMonsterDropItemConfigData(dropItemID)
-  local hostEntity = (self._world):GetEntityByID(hostEntityID)
+  local hostEntity = self._world:GetEntityByID(hostEntityID)
   if dropItemConfig:GetPickupType(dropItemID) == DropPickUpType.Auto and dropItemConfig:GetDropEffectType(dropItemID) == DropEffectType.InBag then
-    local assetID = tonumber((dropItemConfig:GetDropEffectParam(dropItemID))[1])
-    local battleStatCmpt = (self._world):BattleStat()
+    local assetID = tonumber(dropItemConfig:GetDropEffectParam(dropItemID)[1])
+    local battleStatCmpt = self._world:BattleStat()
     if battleStatCmpt:AssignWaveResult() then
-      (self:_GetBattleStatComponent()):AddDropRoleAssetNoDouble(assetID, dropCount)
+      self:_GetBattleStatComponent():AddDropRoleAssetNoDouble(assetID, dropCount)
     else
-      ;
-      (self:_GetBattleStatComponent()):AddDropRoleAsset(assetID, dropCount)
+      self:_GetBattleStatComponent():AddDropRoleAsset(assetID, dropCount)
     end
     local retAssest = RoleAsset:New()
     retAssest.assetid = assetID
     retAssest.count = dropCount
     return retAssest
+  else
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DropService._CalcRandomDropCount = function(self, dropID)
-  -- function num : 0_2
+function DropService:_CalcRandomDropCount(dropID)
   local configService = self._configService
   local dropConfigData = configService:GetMonsterDropConfigData()
   local dropMinCount = dropConfigData:GetMonsterDropMinCount(dropID)
@@ -53,5 +40,3 @@ DropService._CalcRandomDropCount = function(self, dropID)
   local dropCount = self:_GetRandomNumber(dropMinCount, dropMaxCount)
   return dropCount
 end
-
-

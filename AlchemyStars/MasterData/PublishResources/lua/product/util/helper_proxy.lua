@@ -1,251 +1,179 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/helper_proxy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HelperProxy", Singleton)
 HelperProxy = HelperProxy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HelperProxy.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HelperProxy:Constructor()
   self._common_lua_helper = CommonLuaHelper:New()
   self._config_table = {}
   self._log_level = self:_GetLogLevel()
   self._curlanguage = ""
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
   Log.loglevel = self._log_level
   self._debug = nil
   self._levelExpTable = nil
   self._maxLevel = nil
-  self.tag2size = {[RoleHeadTag.QTag] = Vector2(190, 160), [RoleHeadTag.Person] = Vector2(216, 138), [RoleHeadTag.Camp] = Vector2(216, 138)}
-  self.frame2scale = {[RoleHeadFrameSizeType.Size1] = 0.5, [RoleHeadFrameSizeType.Size2] = 0.56, [RoleHeadFrameSizeType.Size3] = 0.6, [RoleHeadFrameSizeType.Size4] = 0.65, [RoleHeadFrameSizeType.Size5] = 0.7, [RoleHeadFrameSizeType.Size6] = 1, [RoleHeadFrameSizeType.Size7] = 0.8}
+  self.tag2size = {
+    [RoleHeadTag.QTag] = Vector2(190, 160),
+    [RoleHeadTag.Person] = Vector2(216, 138),
+    [RoleHeadTag.Camp] = Vector2(216, 138)
+  }
+  self.frame2scale = {
+    [RoleHeadFrameSizeType.Size1] = 0.5,
+    [RoleHeadFrameSizeType.Size2] = 0.56,
+    [RoleHeadFrameSizeType.Size3] = 0.6,
+    [RoleHeadFrameSizeType.Size4] = 0.65,
+    [RoleHeadFrameSizeType.Size5] = 0.7,
+    [RoleHeadFrameSizeType.Size6] = 1,
+    [RoleHeadFrameSizeType.Size7] = 0.8
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.GetLuaHelper = function(self)
-  -- function num : 0_1
+function HelperProxy:GetLuaHelper()
   return self._common_lua_helper
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.GetConfig = function(self, key, default_value)
-  -- function num : 0_2
-  local va = (self._config_table)[key]
+function HelperProxy:GetConfig(key, default_value)
+  local va = self._config_table[key]
   if va == nil then
-    va = (self._common_lua_helper):GetConfig(key, default_value)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._config_table)[key] = va
+    va = self._common_lua_helper:GetConfig(key, default_value)
+    self._config_table[key] = va
     return va
   else
     return va
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.GetGameVersion = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local gameVer = (HelperProxy:GetInstance()):GetConfig("GameVersion", "none")
-  do
-    if gameVer == "none" then
-      local IsUSA = (HelperProxy:GetInstance()):GetConfig("IsUSA", "false")
-      if IsUSA == "true" then
-        gameVer = GameVersionType.USA
-      else
-        gameVer = GameVersionType.INTL
-      end
+function HelperProxy:GetGameVersion()
+  local gameVer = HelperProxy:GetInstance():GetConfig("GameVersion", "none")
+  if gameVer == "none" then
+    local IsUSA = HelperProxy:GetInstance():GetConfig("IsUSA", "false")
+    if IsUSA == "true" then
+      gameVer = GameVersionType.USA
+    else
+      gameVer = GameVersionType.INTL
     end
-    return gameVer
   end
+  return gameVer
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.ReportException = function(self, exceMsg)
-  -- function num : 0_4 , upvalues : _ENV
+function HelperProxy:ReportException(exceMsg)
   if _G.APPVER1100 then
-    local traceback_info = (debug.traceback)()
-    ;
-    (self._common_lua_helper):ReportException(exceMsg, traceback_info)
+    local traceback_info = debug.traceback()
+    self._common_lua_helper:ReportException(exceMsg, traceback_info)
   else
-    do
-      ;
-      (Log.exception)("ReportException error version ")
-    end
+    Log.exception("ReportException error version ")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy._GetLogLevel = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HelperProxy:_GetLogLevel()
   local strlevel = self:GetConfig("DebugLogLevel", "Debug")
-  if not (EngineGameHelper.IsDevelopmentBuild)() then
-    if EDITOR then
-      strlevel = self:GetConfig("ReleaseLogLevel", "None")
-      local nlevel = (Log.loglevel_table)[strlevel]
-      return nlevel
-    end
+  if EngineGameHelper.IsDevelopmentBuild() or EDITOR then
+  else
+    strlevel = self:GetConfig("ReleaseLogLevel", "None")
   end
+  local nlevel = Log.loglevel_table[strlevel]
+  return nlevel
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.ReportException = function(self, exceMsg)
-  -- function num : 0_6 , upvalues : _ENV
+function HelperProxy:ReportException(exceMsg)
   if _G.APPVER1100 and Log.loglevel == ELogLevel.None then
-    local traceback_info = (debug.traceback)()
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local traceback_info = debug.traceback()
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local pstId = roleModule:GetPstId()
     local l_zone_id = roleModule:GetZoneIdType()
     exceMsg = exceMsg .. pstId .. "_" .. l_zone_id
-    ;
-    (self._common_lua_helper):ReportException(exceMsg, traceback_info)
+    self._common_lua_helper:ReportException(exceMsg, traceback_info)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.GetEditorShowId = function(self)
-  -- function num : 0_7
+function HelperProxy:GetEditorShowId()
   local show = self:GetConfig("EditorShowId", "false")
   return show
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.GetLanguage = function(self)
-  -- function num : 0_8
+function HelperProxy:GetLanguage()
   if self._curlanguage == "" then
-    self._curlanguage = (self._common_lua_helper):GetLanguage()
+    self._curlanguage = self._common_lua_helper:GetLanguage()
   end
   return self._curlanguage
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.FormatGold = function(self, count)
-  -- function num : 0_9 , upvalues : _ENV
-  if count > 99999999 then
-    local c = (math.modf)(count / 100000)
+function HelperProxy:FormatGold(count)
+  if 99999999 < count then
+    local c = math.modf(count / 100000)
     local str = tostring(c * 0.1) .. "M"
     return str
   else
-    do
-      do return tostring(count) end
-    end
+    return tostring(count)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.Format9999W = function(self, count)
-  -- function num : 0_10 , upvalues : _ENV
-  if count > 99999999 then
-    local c = (math.modf)(count / 100000)
+function HelperProxy:Format9999W(count)
+  if 99999999 < count then
+    local c = math.modf(count / 100000)
     local str = tostring(c * 0.1) .. "M"
     return str
   else
-    do
-      do return tostring(count) end
-    end
+    return tostring(count)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.Format9999 = function(self, count)
-  -- function num : 0_11 , upvalues : _ENV
-  if count > 9999 then
+function HelperProxy:Format9999(count)
+  if 9999 < count then
     return "9999+"
   else
     return tostring(count)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.Format999 = function(self, count)
-  -- function num : 0_12 , upvalues : _ENV
-  if count > 999 then
+function HelperProxy:Format999(count)
+  if 999 < count then
     return "999+"
   else
     return tostring(count)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.FormatItemCount = function(self, count)
-  -- function num : 0_13 , upvalues : _ENV
-  if count >= 1000000 then
-    local c = (math.modf)(count / 100000)
+function HelperProxy:FormatItemCount(count)
+  if 1000000 <= count then
+    local c = math.modf(count / 100000)
     local str = tostring(c * 0.1) .. "M"
     return str
+  elseif 100000 <= count then
+    local c = math.modf(count / 100)
+    local str = tostring(c * 0.1) .. "K"
+    return str
   else
-    do
-      if count >= 100000 then
-        local c = (math.modf)(count / 100)
-        local str = tostring(c * 0.1) .. "K"
-        return str
-      else
-        do
-          do return tostring(count) end
-        end
-      end
-    end
+    return tostring(count)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.pairsByKeys = function(self, tab)
-  -- function num : 0_14 , upvalues : _ENV
+function HelperProxy:pairsByKeys(tab)
   local a = {}
   for n in pairs(tab) do
     a[#a + 1] = n
   end
-  ;
-  (table.sort)(a)
+  table.sort(a)
   local i = 0
   return function()
-    -- function num : 0_14_0 , upvalues : i, a, tab
     i = i + 1
     return a[i], tab[a[i]]
   end
-
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.PairsByKeys = function(self, tab, Com)
-  -- function num : 0_15 , upvalues : _ENV
+function HelperProxy:PairsByKeys(tab, Com)
   local a = {}
   for n in pairs(tab) do
     a[#a + 1] = n
   end
-  ;
-  (table.sort)(a, Com)
+  table.sort(a, Com)
   local i = 0
   return function()
-    -- function num : 0_15_0 , upvalues : i, a, tab
     i = i + 1
     return a[i], tab[a[i]]
   end
-
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.IsTaskFinished = function(self, taskID)
-  -- function num : 0_16 , upvalues : _ENV
-  local task = (TaskManager:GetInstance()):FindTask(taskID)
+function HelperProxy:IsTaskFinished(taskID)
+  local task = TaskManager:GetInstance():FindTask(taskID)
   if task ~= nil then
     return false
   else
@@ -253,394 +181,319 @@ HelperProxy.IsTaskFinished = function(self, taskID)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.ResidentTimeString = function(self)
-  -- function num : 0_17
+function HelperProxy:ResidentTimeString()
   return "2100-01-01 12:00:00"
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.FormatDateTime = function(self, strValue)
-  -- function num : 0_18 , upvalues : _ENV
-  return (os.time)(self:GetTimeTable(strValue))
+function HelperProxy:FormatDateTime(strValue)
+  return os.time(self:GetTimeTable(strValue))
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.FormatGMTDateTime = function(self, strValue)
-  -- function num : 0_19 , upvalues : _ENV
-  return self:FormatDateTime(_utc2Local(self:GetTimeTable(strValue)))
+function HelperProxy:FormatGMTDateTime(strValue)
+  return self:FormatDateTime((_utc2Local(self:GetTimeTable(strValue))))
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.GetTimeTable = function(self, strValue)
-  -- function num : 0_20 , upvalues : _ENV
+function HelperProxy:GetTimeTable(strValue)
   local pattern = "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)"
-  local runyear, runmonth, runday, runhour, runminute, runseconds = (string.match)(strValue, pattern)
-  return {year = runyear, month = runmonth, day = runday, hour = runhour, min = runminute, sec = runseconds}
+  local runyear, runmonth, runday, runhour, runminute, runseconds = string.match(strValue, pattern)
+  return {
+    year = runyear,
+    month = runmonth,
+    day = runday,
+    hour = runhour,
+    min = runminute,
+    sec = runseconds
+  }
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.FormatTime = function(self, seconds)
-  -- function num : 0_21 , upvalues : _ENV
+function HelperProxy:FormatTime(seconds)
   if seconds <= 0 then
     return "00:00:00"
+  elseif seconds < 86400 then
+    return os.date("!%X", seconds)
+  elseif 360000 <= seconds then
+    return "99:59:59"
   else
-    if seconds < 86400 then
-      return (os.date)("!%X", seconds)
-    else
-      if seconds >= 360000 then
-        return "99:59:59"
-      else
-        local _sec = seconds % 60
-        local minute = (math.floor)(seconds / 60)
-        local _min = minute % 60
-        local _hour = (math.floor)(minute / 60)
-        return (string.format)("%02d:%02d:%02d", _hour, _min, _sec)
-      end
-    end
+    local _sec = seconds % 60
+    local minute = math.floor(seconds / 60)
+    local _min = minute % 60
+    local _hour = math.floor(minute / 60)
+    return string.format("%02d:%02d:%02d", _hour, _min, _sec)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.FormatTime_2 = function(self, seconds)
-  -- function num : 0_22 , upvalues : _ENV
+function HelperProxy:FormatTime_2(seconds)
   if seconds <= 0 then
     return "00:00:00"
   else
     local _sec = seconds % 60
-    local minute = (math.floor)(seconds / 60)
+    local minute = math.floor(seconds / 60)
     local _min = minute % 60
-    local _hour = (math.floor)(minute / 60)
-    return (string.format)("%02d:%02d:%02d", _hour, _min, _sec)
+    local _hour = math.floor(minute / 60)
+    return string.format("%02d:%02d:%02d", _hour, _min, _sec)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.FormatTime_3 = function(self, seconds, numHexColor)
-  -- function num : 0_23 , upvalues : _ENV
+function HelperProxy:FormatTime_3(seconds, numHexColor)
   if not seconds then
     return nil
   end
   if seconds < 0 then
     if numHexColor then
-      return (StringTable.Get)("str_prediction_left_time_m", self:FormatNumWithColor(0, numHexColor))
+      return StringTable.Get("str_prediction_left_time_m", self:FormatNumWithColor(0, numHexColor))
     else
-      return (StringTable.Get)("str_prediction_left_time_m", 0)
+      return StringTable.Get("str_prediction_left_time_m", 0)
+    end
+  elseif seconds < 60 then
+    return StringTable.Get("str_activity_common_less_minute")
+  elseif seconds < 3600 then
+    local min = math.floor(seconds / 60)
+    if numHexColor then
+      return StringTable.Get("str_prediction_left_time_m", self:FormatNumWithColor(min, numHexColor))
+    else
+      return StringTable.Get("str_prediction_left_time_m", min)
+    end
+  elseif seconds < 86400 then
+    if seconds % 3600 == 0 then
+      if numHexColor then
+        return StringTable.Get("str_dispatch_room_task_detail_hour", self:FormatNumWithColor(seconds / 3600, numHexColor))
+      else
+        return StringTable.Get("str_dispatch_room_task_detail_hour", seconds / 3600)
+      end
+    end
+    local hour = math.floor(seconds / 3600)
+    local min = math.floor(seconds % 3600 / 60)
+    if numHexColor then
+      return StringTable.Get("str_prediction_left_time_h_m", self:FormatNumWithColor(hour, numHexColor), self:FormatNumWithColor(min, numHexColor))
+    else
+      return StringTable.Get("str_prediction_left_time_h_m", hour, min)
     end
   else
-    if seconds < 60 then
-      return (StringTable.Get)("str_activity_common_less_minute")
+    local day = math.floor(seconds / 86400)
+    local hour = math.floor(seconds % 86400 / 3600)
+    if numHexColor then
+      return StringTable.Get("str_prediction_left_time_d_h", self:FormatNumWithColor(day, numHexColor), self:FormatNumWithColor(hour, numHexColor))
     else
-      if seconds < 3600 then
-        local min = (math.floor)(seconds / 60)
-        if numHexColor then
-          return (StringTable.Get)("str_prediction_left_time_m", self:FormatNumWithColor(min, numHexColor))
-        else
-          return (StringTable.Get)("str_prediction_left_time_m", min)
-        end
-      else
-        do
-          if seconds < 86400 then
-            if seconds % 3600 == 0 then
-              if numHexColor then
-                return (StringTable.Get)("str_dispatch_room_task_detail_hour", self:FormatNumWithColor(seconds / 3600, numHexColor))
-              else
-                return (StringTable.Get)("str_dispatch_room_task_detail_hour", seconds / 3600)
-              end
-            end
-            local hour = (math.floor)(seconds / 3600)
-            local min = (math.floor)(seconds % 3600 / 60)
-            if numHexColor then
-              return (StringTable.Get)("str_prediction_left_time_h_m", self:FormatNumWithColor(hour, numHexColor), self:FormatNumWithColor(min, numHexColor))
-            else
-              return (StringTable.Get)("str_prediction_left_time_h_m", hour, min)
-            end
-          else
-            do
-              local day = (math.floor)(seconds / 86400)
-              local hour = (math.floor)(seconds % 86400 / 3600)
-              if numHexColor then
-                return (StringTable.Get)("str_prediction_left_time_d_h", self:FormatNumWithColor(day, numHexColor), self:FormatNumWithColor(hour, numHexColor))
-              else
-                return (StringTable.Get)("str_prediction_left_time_d_h", day, hour)
-              end
-            end
-          end
-        end
-      end
+      return StringTable.Get("str_prediction_left_time_d_h", day, hour)
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.FormatNumWithColor = function(self, num, hexColor)
-  -- function num : 0_24 , upvalues : _ENV
+function HelperProxy:FormatNumWithColor(num, hexColor)
   if not num then
     return nil
   end
-  local r = (string.format)("<color=%s>%d</color>", hexColor, num)
+  local r = string.format("<color=%s>%d</color>", hexColor, num)
   return r
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.SortPosByCenterPosDistance = function(self, centerPos, posList)
-  -- function num : 0_25 , upvalues : _ENV
-  local get_index = function(c, p)
-    -- function num : 0_25_0
-    if p.x - c.x == 0 and p.y - c.y > 0 then
+function HelperProxy:SortPosByCenterPosDistance(centerPos, posList)
+  local function get_index(c, p)
+    if p.x - c.x == 0 and 0 < p.y - c.y then
       return 1
     end
-    if p.x - c.x > 0 and p.y - c.y > 0 then
+    if p.x - c.x > 0 and 0 < p.y - c.y then
       return 2
     end
     if p.x - c.x > 0 and p.y - c.y == 0 then
       return 3
     end
-    if p.x - c.x > 0 and p.y - c.y < 0 then
+    if p.x - c.x > 0 and 0 > p.y - c.y then
       return 4
     end
-    if p.x - c.x == 0 and p.y - c.y < 0 then
+    if p.x - c.x == 0 and 0 > p.y - c.y then
       return 5
     end
-    if p.x - c.x < 0 and p.y - c.y < 0 then
+    if p.x - c.x < 0 and 0 > p.y - c.y then
       return 6
     end
     if p.x - c.x < 0 and p.y - c.y == 0 then
       return 7
     end
-    if p.x - c.x < 0 and p.y - c.y > 0 then
+    if p.x - c.x < 0 and 0 < p.y - c.y then
       return 8
     end
     return 1
   end
-
-  local cmp_fun = function(p1, p2)
-    -- function num : 0_25_1 , upvalues : _ENV, centerPos, get_index
-    local dis1 = (Vector2.Distance)(centerPos, p1)
-    local dis2 = (Vector2.Distance)(centerPos, p2)
-    if get_index(centerPos, p1) >= get_index(centerPos, p2) then
-      do return dis1 ~= dis2 end
-      do return dis1 < dis2 end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  
+  local function cmp_fun(p1, p2)
+    local dis1 = Vector2.Distance(centerPos, p1)
+    local dis2 = Vector2.Distance(centerPos, p2)
+    if dis1 == dis2 then
+      return get_index(centerPos, p1) < get_index(centerPos, p2)
+    else
+      return dis1 < dis2
     end
   end
-
-  ;
-  (table.sort)(posList, cmp_fun)
+  
+  table.sort(posList, cmp_fun)
   return posList
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.SortPosByCenterPosDistanceFar = function(self, centerPos, posList)
-  -- function num : 0_26 , upvalues : _ENV
-  local get_index = function(c, p)
-    -- function num : 0_26_0
-    if p.x - c.x == 0 and p.y - c.y > 0 then
+function HelperProxy:SortPosByCenterPosDistanceFar(centerPos, posList)
+  local function get_index(c, p)
+    if p.x - c.x == 0 and 0 < p.y - c.y then
       return 1
     end
-    if p.x - c.x > 0 and p.y - c.y > 0 then
+    if p.x - c.x > 0 and 0 < p.y - c.y then
       return 2
     end
     if p.x - c.x > 0 and p.y - c.y == 0 then
       return 3
     end
-    if p.x - c.x > 0 and p.y - c.y < 0 then
+    if p.x - c.x > 0 and 0 > p.y - c.y then
       return 4
     end
-    if p.x - c.x == 0 and p.y - c.y < 0 then
+    if p.x - c.x == 0 and 0 > p.y - c.y then
       return 5
     end
-    if p.x - c.x < 0 and p.y - c.y < 0 then
+    if p.x - c.x < 0 and 0 > p.y - c.y then
       return 6
     end
     if p.x - c.x < 0 and p.y - c.y == 0 then
       return 7
     end
-    if p.x - c.x < 0 and p.y - c.y > 0 then
+    if p.x - c.x < 0 and 0 < p.y - c.y then
       return 8
     end
     return 1
   end
-
-  local cmp_fun = function(p1, p2)
-    -- function num : 0_26_1 , upvalues : _ENV, centerPos, get_index
-    local dis1 = (Vector2.Distance)(centerPos, p1)
-    local dis2 = (Vector2.Distance)(centerPos, p2)
-    if get_index(centerPos, p1) >= get_index(centerPos, p2) then
-      do return dis1 ~= dis2 end
-      do return dis2 < dis1 end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  
+  local function cmp_fun(p1, p2)
+    local dis1 = Vector2.Distance(centerPos, p1)
+    local dis2 = Vector2.Distance(centerPos, p2)
+    if dis1 == dis2 then
+      return get_index(centerPos, p1) < get_index(centerPos, p2)
+    else
+      return dis1 > dis2
     end
   end
-
-  ;
-  (table.sort)(posList, cmp_fun)
+  
+  table.sort(posList, cmp_fun)
   return posList
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HelperProxy.SortPosByCenterPosDistanceAnticlockwise = function(self, centerPos, posList)
-  -- function num : 0_27 , upvalues : _ENV
-  local get_index = function(c, p)
-    -- function num : 0_27_0
-    if p.x - c.x == 0 and p.y - c.y > 0 then
+function HelperProxy:SortPosByCenterPosDistanceAnticlockwise(centerPos, posList)
+  local function get_index(c, p)
+    if p.x - c.x == 0 and 0 < p.y - c.y then
       return 8
     end
-    if p.x - c.x > 0 and p.y - c.y > 0 then
+    if p.x - c.x > 0 and 0 < p.y - c.y then
       return 7
     end
     if p.x - c.x > 0 and p.y - c.y == 0 then
       return 6
     end
-    if p.x - c.x > 0 and p.y - c.y < 0 then
+    if p.x - c.x > 0 and 0 > p.y - c.y then
       return 5
     end
-    if p.x - c.x == 0 and p.y - c.y < 0 then
+    if p.x - c.x == 0 and 0 > p.y - c.y then
       return 4
     end
-    if p.x - c.x < 0 and p.y - c.y < 0 then
+    if p.x - c.x < 0 and 0 > p.y - c.y then
       return 3
     end
     if p.x - c.x < 0 and p.y - c.y == 0 then
       return 2
     end
-    if p.x - c.x < 0 and p.y - c.y > 0 then
+    if p.x - c.x < 0 and 0 < p.y - c.y then
       return 1
     end
     return 8
   end
-
-  local cmp_fun = function(p1, p2)
-    -- function num : 0_27_1 , upvalues : _ENV, centerPos, get_index
-    local dis1 = (Vector2.Distance)(centerPos, p1)
-    local dis2 = (Vector2.Distance)(centerPos, p2)
-    if get_index(centerPos, p1) >= get_index(centerPos, p2) then
-      do return dis1 ~= dis2 end
-      do return dis1 < dis2 end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  
+  local function cmp_fun(p1, p2)
+    local dis1 = Vector2.Distance(centerPos, p1)
+    local dis2 = Vector2.Distance(centerPos, p2)
+    if dis1 == dis2 then
+      return get_index(centerPos, p1) < get_index(centerPos, p2)
+    else
+      return dis1 < dis2
     end
   end
-
-  ;
-  (table.sort)(posList, cmp_fun)
+  
+  table.sort(posList, cmp_fun)
   return posList
 end
 
-local get_index = function(c, p)
-  -- function num : 0_28
-  if p.x - c.x == 0 and p.y - c.y > 0 then
+local function get_index(c, p)
+  if p.x - c.x == 0 and 0 < p.y - c.y then
     return 1
   end
   if p.x - c.x > 0 and p.y - c.y == 0 then
     return 2
   end
-  if p.x - c.x == 0 and p.y - c.y < 0 then
+  if p.x - c.x == 0 and 0 > p.y - c.y then
     return 3
   end
   if p.x - c.x < 0 and p.y - c.y == 0 then
     return 4
   end
-  if p.x - c.x > 0 and p.y - c.y > 0 then
+  if p.x - c.x > 0 and 0 < p.y - c.y then
     return 5
   end
-  if p.x - c.x > 0 and p.y - c.y < 0 then
+  if p.x - c.x > 0 and 0 > p.y - c.y then
     return 6
   end
-  if p.x - c.x < 0 and p.y - c.y < 0 then
+  if p.x - c.x < 0 and 0 > p.y - c.y then
     return 7
   end
-  if p.x - c.x < 0 and p.y - c.y > 0 then
+  if p.x - c.x < 0 and 0 < p.y - c.y then
     return 8
   end
   return 1
 end
 
-local CmpFunc_centerPos = nil
-local CmpFunc_SortPosByCenterArrow = function(p1, p2)
-  -- function num : 0_29 , upvalues : _ENV, CmpFunc_centerPos, get_index
-  local dis1 = (Vector2.Distance)(CmpFunc_centerPos, p1)
-  local dis2 = (Vector2.Distance)(CmpFunc_centerPos, p2)
-  if get_index(CmpFunc_centerPos, p1) >= get_index(CmpFunc_centerPos, p2) then
-    do return dis1 ~= dis2 end
-    do return dis1 < dis2 end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+local CmpFunc_centerPos
+
+local function CmpFunc_SortPosByCenterArrow(p1, p2)
+  local dis1 = Vector2.Distance(CmpFunc_centerPos, p1)
+  local dis2 = Vector2.Distance(CmpFunc_centerPos, p2)
+  if dis1 == dis2 then
+    return get_index(CmpFunc_centerPos, p1) < get_index(CmpFunc_centerPos, p2)
+  else
+    return dis1 < dis2
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.SortPosByCenterArrow = function(self, centerPos, posList)
-  -- function num : 0_30 , upvalues : CmpFunc_centerPos, _ENV, CmpFunc_SortPosByCenterArrow
+function HelperProxy:SortPosByCenterArrow(centerPos, posList)
   CmpFunc_centerPos = centerPos
-  ;
-  (table.sort)(posList, CmpFunc_SortPosByCenterArrow)
+  table.sort(posList, CmpFunc_SortPosByCenterArrow)
   CmpFunc_centerPos = nil
   return posList
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.IsDebug = function(self)
-  -- function num : 0_31
+function HelperProxy:IsDebug()
   if self._debug == nil then
-    self._debug = (self._common_lua_helper):IsDebug()
+    self._debug = self._common_lua_helper:IsDebug()
   end
   return self._debug
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.PlayMovie = function(self, path, bgColor, controlMode, scalingMode)
-  -- function num : 0_32
-  (self._common_lua_helper):PlayMovie(path, bgColor, controlMode, scalingMode)
+function HelperProxy:PlayMovie(path, bgColor, controlMode, scalingMode)
+  self._common_lua_helper:PlayMovie(path, bgColor, controlMode, scalingMode)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy._InitLevelExpTable = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function HelperProxy:_InitLevelExpTable()
   self._levelExpTable = {}
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._levelExpTable)[1] = 0
+  self._levelExpTable[1] = 0
   local exp = 0
   local lv = 1
-  local lvProp = (Cfg.cfg_role_level)[lv]
+  local lvProp = Cfg.cfg_role_level[lv]
   while lvProp do
     exp = exp + lvProp.NeedExp
     lv = lv + 1
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._levelExpTable)[lv] = exp
-    lvProp = (Cfg.cfg_role_level)[lv]
+    self._levelExpTable[lv] = exp
+    lvProp = Cfg.cfg_role_level[lv]
   end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._levelExpTable)[lv] = nil
+  self._levelExpTable[lv] = nil
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GetLevelExp = function(self, lv)
-  -- function num : 0_34
+function HelperProxy:GetLevelExp(lv)
   if not self._levelExpTable then
     self:_InitLevelExpTable()
   end
-  local exp = (self._levelExpTable)[lv]
+  local exp = self._levelExpTable[lv]
   if exp then
     return exp
   else
@@ -648,64 +501,47 @@ HelperProxy.GetLevelExp = function(self, lv)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GetLvByExp = function(self, exp)
-  -- function num : 0_35
+function HelperProxy:GetLvByExp(exp)
   if not self._levelExpTable then
     self:_InitLevelExpTable()
   end
   local lv = 1
-  while (self._levelExpTable)[lv] <= exp do
+  while exp >= self._levelExpTable[lv] do
     lv = lv + 1
+    if not self._levelExpTable[lv] then
+      break
+    end
   end
-  if (self._levelExpTable)[lv] then
-    return lv - 1
-  end
+  return lv - 1
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GetMaxLevel = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function HelperProxy:GetMaxLevel()
   if self._maxLevel then
     return self._maxLevel
   end
   local maxLv = 1
-  local lvProp = (Cfg.cfg_role_level)[maxLv]
+  local lvProp = Cfg.cfg_role_level[maxLv]
   while lvProp do
     maxLv = maxLv + 1
-    lvProp = (Cfg.cfg_role_level)[maxLv]
+    lvProp = Cfg.cfg_role_level[maxLv]
   end
   self._maxLevel = maxLv - 1
   return self._maxLevel
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.InitCameraShake = function(self)
-  -- function num : 0_37
-  (self._common_lua_helper):InitCameraShake()
+function HelperProxy:InitCameraShake()
+  self._common_lua_helper:InitCameraShake()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.DestroyCameraShake = function(self)
-  -- function num : 0_38
-  (self._common_lua_helper):CameraShakeDispose()
+function HelperProxy:DestroyCameraShake()
+  self._common_lua_helper:CameraShakeDispose()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GCCollect = function(self)
-  -- function num : 0_39
-  (self._common_lua_helper):GCCollect()
+function HelperProxy:GCCollect()
+  self._common_lua_helper:GCCollect()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.Utf8toUnicodeNum = function(self, s, nBegin)
-  -- function num : 0_40
+function HelperProxy:Utf8toUnicodeNum(s, nBegin)
   local chHeadChar = s:byte(nBegin)
   if not chHeadChar then
     return -1
@@ -715,7 +551,7 @@ HelperProxy.Utf8toUnicodeNum = function(self, s, nBegin)
     nOutEnd = nBegin + 1
     return chHeadChar, nOutEnd
   end
-  if chHeadChar < 192 or chHeadChar > 253 then
+  if chHeadChar < 192 or 253 < chHeadChar then
     return -1
   end
   local nUnicodeNum = 0
@@ -723,24 +559,18 @@ HelperProxy.Utf8toUnicodeNum = function(self, s, nBegin)
   if chHeadChar < 224 then
     nUnicodeNum = chHeadChar & 31
     nLength = 2
+  elseif chHeadChar < 240 then
+    nUnicodeNum = chHeadChar & 15
+    nLength = 3
+  elseif chHeadChar < 248 then
+    nUnicodeNum = chHeadChar & 7
+    nLength = 4
+  elseif chHeadChar < 252 then
+    nUnicodeNum = chHeadChar & 3
+    nLength = 5
   else
-    if chHeadChar < 240 then
-      nUnicodeNum = chHeadChar & 15
-      nLength = 3
-    else
-      if chHeadChar < 248 then
-        nUnicodeNum = chHeadChar & 7
-        nLength = 4
-      else
-        if chHeadChar < 252 then
-          nUnicodeNum = chHeadChar & 3
-          nLength = 5
-        else
-          nUnicodeNum = chHeadChar & 1
-          nLength = 6
-        end
-      end
-    end
+    nUnicodeNum = chHeadChar & 1
+    nLength = 6
   end
   nOutEnd = nBegin + nLength
   for i = nBegin + 1, nOutEnd - 1 do
@@ -748,326 +578,261 @@ HelperProxy.Utf8toUnicodeNum = function(self, s, nBegin)
     if tempChar & 192 ~= 128 then
       return -1
     end
-    nUnicodeNum = (nUnicodeNum) << 6
+    nUnicodeNum = nUnicodeNum << 6
     nUnicodeNum = nUnicodeNum | tempChar & 63
   end
   return nUnicodeNum, nOutEnd
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GetNickWordLength = function(self, nUnicodeNum, cfg_lang_len)
-  -- function num : 0_41 , upvalues : _ENV
-  for key,value in pairs(cfg_lang_len) do
-    if value.UnicodeBegin <= nUnicodeNum and nUnicodeNum <= value.UnicodeEnd then
+function HelperProxy:GetNickWordLength(nUnicodeNum, cfg_lang_len)
+  for key, value in pairs(cfg_lang_len) do
+    if nUnicodeNum >= value.UnicodeBegin and nUnicodeNum <= value.UnicodeEnd then
       return value.length
     end
   end
   return 1
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GetSubStringByWordsNum = function(self, str, nLimitWordsNum)
-  -- function num : 0_42 , upvalues : _ENV
+function HelperProxy:GetSubStringByWordsNum(str, nLimitWordsNum)
   if not str or str == "" then
     return ""
   end
   if nLimitWordsNum <= 0 then
     return ""
   end
-  local cfg_lang_len = (Cfg.cfg_nick_lang_len)({})
-  local len = (string.len)(str)
+  local cfg_lang_len = Cfg.cfg_nick_lang_len({})
+  local len = string.len(str)
   local nWordNum = 0
   local i = 1
   local last_i = 1
-  while 1 do
-    while 1 do
-      if i <= len then
-        local nUnicodeNum = 0
-        last_i = i
-        nUnicodeNum = self:Utf8toUnicodeNum(str, i)
-        if nUnicodeNum < 0 or not i then
-          (Log.fatal)("字符串utf8编码错误", str)
-          return ""
-        end
-        local nWordLength = self:GetNickWordLength(nUnicodeNum, cfg_lang_len)
-        local lastWordNum = nWordNum
-        nWordNum = lastWordNum + nWordLength
-        if nWordNum == nLimitWordsNum then
-          do return (string.sub)(str, 1, i - 1) end
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  while len >= i do
+    local nUnicodeNum = 0
+    last_i = i
+    nUnicodeNum, i = self:Utf8toUnicodeNum(str, i)
+    if nUnicodeNum < 0 or not i then
+      Log.fatal("字符串utf8编码错误", str)
+      return ""
     end
-    if nLimitWordsNum < nWordNum then
-      return (string.sub)(str, 1, last_i - 1)
+    local nWordLength = self:GetNickWordLength(nUnicodeNum, cfg_lang_len)
+    local lastWordNum = nWordNum
+    nWordNum = lastWordNum + nWordLength
+    if nWordNum == nLimitWordsNum then
+      return string.sub(str, 1, i - 1)
+    elseif nLimitWordsNum < nWordNum then
+      return string.sub(str, 1, last_i - 1)
     end
   end
-  do
-    return str
-  end
+  return str
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GetCharLength = function(self, str)
-  -- function num : 0_43 , upvalues : _ENV
-  if not str then
-    str = ""
-  end
-  local cfg_lang_len = (Cfg.cfg_nick_lang_len)({})
-  local len = (string.len)(str)
+function HelperProxy:GetCharLength(str)
+  str = str or ""
+  local cfg_lang_len = Cfg.cfg_nick_lang_len({})
+  local len = string.len(str)
   local nWordNum = 0
   local i = 1
-  while i <= len do
+  while len >= i do
     local nUnicodeNum = 0
-    nUnicodeNum = self:Utf8toUnicodeNum(str, i)
+    nUnicodeNum, i = self:Utf8toUnicodeNum(str, i)
     if nUnicodeNum < 0 or not i then
-      (Log.fatal)("字符串utf8编码错误", str)
+      Log.fatal("字符串utf8编码错误", str)
       return 999999999
     end
     local nWordLength = self:GetNickWordLength(nUnicodeNum, cfg_lang_len)
     nWordNum = nWordNum + nWordLength
   end
-  do
-    return nWordNum
-  end
+  return nWordNum
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.LoadPet = function(self, petName, isBattle)
-  -- function num : 0_44 , upvalues : _ENV
+function HelperProxy:LoadPet(petName, isBattle)
   local controllerType = PetAnimatorControllerType.Aircraft
   if isBattle then
     controllerType = PetAnimatorControllerType.Battle
   end
   local ancName = self:GetPetAnimatorControllerName(petName, controllerType)
-  local req1 = (ResourceManager:GetInstance()):SyncLoadAsset(petName, LoadType.GameObject)
+  local req1 = ResourceManager:GetInstance():SyncLoadAsset(petName, LoadType.GameObject)
   if req1 == nil then
-    (Log.fatal)("加载宝宝模型失败，", petName)
-    return 
+    Log.fatal("加载宝宝模型失败，", petName)
+    return
   end
-  local req2 = (ResourceManager:GetInstance()):SyncLoadAsset(ancName, LoadType.GameObject)
+  local req2 = ResourceManager:GetInstance():SyncLoadAsset(ancName, LoadType.GameObject)
   if req2 == nil then
-    (Log.fatal)("加载宝宝状态机失败，", ancName)
-    return 
+    Log.fatal("加载宝宝状态机失败，", ancName)
+    return
   end
   local pet = req1.Obj
   if isBattle then
-    local anim = (req2.Obj):GetComponent(typeof(UnityEngine.Animator))
+    local anim = req2.Obj:GetComponent(typeof(UnityEngine.Animator))
     if anim == nil then
-      (Log.fatal)("找不到Animator组件，加载pet模型失败：", ancName)
+      Log.fatal("找不到Animator组件，加载pet模型失败：", ancName)
       return nil
     end
     local petAnim = pet:GetComponentInChildren(typeof(UnityEngine.Animator))
     petAnim.runtimeAnimatorController = anim.runtimeAnimatorController
   else
-    do
-      local anim = (req2.Obj):GetComponent(typeof(UnityEngine.Animation))
-      if anim == nil then
-        (Log.fatal)("找不到Animation组件，加载pet模型失败：", ancName)
-        return 
-      end
-      if anim.clip == nil then
-        (Log.exception)("星灵没有默认的Stand动作：", petName)
-        return 
-      end
-      local root = ((pet.transform):Find("Root")).gameObject
-      local animator = root:GetComponent(typeof(UnityEngine.Animator))
-      if animator then
-        ((UnityEngine.Object).Destroy)(animator)
-      end
-      local petAnim = root:AddComponent(typeof(UnityEngine.Animation))
-      do
-        local clips = (self._common_lua_helper):GetAllAnimationClip(anim)
-        for i = 0, clips.Length - 1 do
-          local clip = clips[i]
-          if clip == nil then
-            (Log.exception)("星灵动作为空:", petName, "，索引：", i)
-          else
-            petAnim:AddClip(clip, clip.name)
-          end
-        end
-        petAnim.clip = anim.clip
-        return pet, {req1, req2}
+    local anim = req2.Obj:GetComponent(typeof(UnityEngine.Animation))
+    if anim == nil then
+      Log.fatal("找不到Animation组件，加载pet模型失败：", ancName)
+      return
+    end
+    if anim.clip == nil then
+      Log.exception("星灵没有默认的Stand动作：", petName)
+      return
+    end
+    local root = pet.transform:Find("Root").gameObject
+    local animator = root:GetComponent(typeof(UnityEngine.Animator))
+    if animator then
+      UnityEngine.Object.Destroy(animator)
+    end
+    local petAnim = root:AddComponent(typeof(UnityEngine.Animation))
+    local clips = self._common_lua_helper:GetAllAnimationClip(anim)
+    for i = 0, clips.Length - 1 do
+      local clip = clips[i]
+      if clip == nil then
+        Log.exception("星灵动作为空:", petName, "，索引：", i)
+      else
+        petAnim:AddClip(clip, clip.name)
       end
     end
+    petAnim.clip = anim.clip
   end
+  return pet, {req1, req2}
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GetPetAnimatorControllerName = function(self, petName, animatorControllerType)
-  -- function num : 0_45 , upvalues : _ENV
-  if (string.endwith)(petName, ".prefab") then
-    local name = ((string.gsub)(petName, ".prefab", ""))
-    local ancName = nil
+function HelperProxy:GetPetAnimatorControllerName(petName, animatorControllerType)
+  if string.endwith(petName, ".prefab") then
+    local name = string.gsub(petName, ".prefab", "")
+    local ancName
     if animatorControllerType == PetAnimatorControllerType.Battle then
       ancName = name .. "_battle.prefab"
-    else
-      if animatorControllerType == PetAnimatorControllerType.Aircraft then
-        ancName = name .. "_aircraft.prefab"
-      else
-        if animatorControllerType == PetAnimatorControllerType.Homeland then
-          ancName = name .. "_homeland.prefab"
-        else
-          if animatorControllerType == PetAnimatorControllerType.HomelandStory then
-            ancName = name .. "_homeland_story.prefab"
-          end
-        end
-      end
+    elseif animatorControllerType == PetAnimatorControllerType.Aircraft then
+      ancName = name .. "_aircraft.prefab"
+    elseif animatorControllerType == PetAnimatorControllerType.Homeland then
+      ancName = name .. "_homeland.prefab"
+    elseif animatorControllerType == PetAnimatorControllerType.HomelandStory then
+      ancName = name .. "_homeland_story.prefab"
     end
     return ancName
   else
-    do
-      ;
-      (Log.fatal)("pet模型名称错误：", petName)
-    end
+    Log.fatal("pet模型名称错误：", petName)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GetAllAnimationClip = function(self, anim)
-  -- function num : 0_46
-  return (self._common_lua_helper):GetAllAnimationClip(anim)
+function HelperProxy:GetAllAnimationClip(anim)
+  return self._common_lua_helper:GetAllAnimationClip(anim)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R3 in 'UnsetPending'
-
-HelperProxy.GetEnableGameRecord = function(self)
-  -- function num : 0_47
+function HelperProxy:GetEnableGameRecord()
   local enable = self:GetConfig("GameRecord", "false")
-  do return enable == "true" end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return enable == "true"
 end
 
 local STR_GSUB = string.gsub
 local STR_GMATCH = string.gmatch
 local STR_LEN = string.len
 local regex = "{%w+}"
--- DECOMPILER ERROR at PC156: Confused about usage of register: R7 in 'UnsetPending'
 
-HelperProxy.GetUrlWithParam = function(self, rawStr, ...)
-  -- function num : 0_48 , upvalues : STR_GSUB, STR_GMATCH, regex, _ENV, STR_LEN
+function HelperProxy:GetUrlWithParam(rawStr, ...)
   rawStr = STR_GSUB(rawStr, "{{", "{")
   rawStr = STR_GSUB(rawStr, "}}", "}")
   rawStr = STR_GSUB(rawStr, "##", "#")
   for match in STR_GMATCH(rawStr, regex) do
-    local argIndex = (string.sub)(match, 2, STR_LEN(match) - 1)
+    local argIndex = string.sub(match, 2, STR_LEN(match) - 1)
     local toReplace = select(argIndex, ...)
     if toReplace then
       rawStr = STR_GSUB(rawStr, match, toReplace)
     else
-      ;
-      (Log.fatal)("StringTable:FindStringWithParams Error,本地化参数不足:", rawStr)
+      Log.fatal("StringTable:FindStringWithParams Error,本地化参数不足:", rawStr)
     end
   end
   return rawStr
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.FileImurUrl = function(self, srcUrl)
-  -- function num : 0_49 , upvalues : _ENV
-  (Log.debug)("HelperProxy:FileImurUrl begin")
-  local roleModule = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+function HelperProxy:FileImurUrl(srcUrl)
+  Log.debug("HelperProxy:FileImurUrl begin")
+  local roleModule = GameGlobal.GameLogic():GetModule(RoleModule)
   local paltid = GetPlatformOS()
-  local sArea = (((GameGlobal.GameLogic)()).ClientInfo).m_login_source
+  local sArea = GameGlobal.GameLogic().ClientInfo.m_login_source
   local sPartition = 0
   local sRoleid = roleModule:GetPstId()
-  local openid = ((GameGlobal.GameLogic)()):GetOpenId()
-  local info = ((GameGlobal.GameLogic)()):GetZoneID()
-  local l, q = (string.find)(srcUrl, "out.survey.imur.tencent.com")
-  local x, y = (string.find)(srcUrl, "out.weisurvey.com")
-  do
-    if l ~= nil or x ~= nil then
-      local newurl = self:GetUrlWithParam(srcUrl, openid, info)
-      ;
-      (Log.debug)("[url] out imur", newurl)
-      return true, newurl
-    end
-    l = (string.find)(srcUrl, "imur.tencent.com")
-    if l == nil then
-      return false, srcUrl
-    else
-      local newurl = self:GetUrlWithParam(srcUrl, paltid, sArea, sPartition, sRoleid)
-      ;
-      (Log.debug)("[url] in imur", newurl)
-      return true, newurl
-    end
+  local openid = GameGlobal.GameLogic():GetOpenId()
+  local info = GameGlobal.GameLogic():GetZoneID()
+  local l, q = string.find(srcUrl, "out.survey.imur.tencent.com")
+  local x, y = string.find(srcUrl, "out.weisurvey.com")
+  if l ~= nil or x ~= nil then
+    local newurl = self:GetUrlWithParam(srcUrl, openid, info)
+    Log.debug("[url] out imur", newurl)
+    return true, newurl
+  end
+  l, q = string.find(srcUrl, "imur.tencent.com")
+  if l == nil then
+    return false, srcUrl
+  else
+    local newurl = self:GetUrlWithParam(srcUrl, paltid, sArea, sPartition, sRoleid)
+    Log.debug("[url] in imur", newurl)
+    return true, newurl
   end
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.AppendImurCallback = function(self, url)
-  -- function num : 0_50 , upvalues : _ENV
-  local zoneID2CallbackNum = {[186] = 1, [11] = 2, [115] = 3, [102] = 4, [171] = 5, [191] = 6, [13] = 7, [81] = 1, [82] = 2, [83] = 3, [84] = 4, [85] = 6, [86] = 7, [91] = 5, [101] = 8, [192] = 9, [117] = 10}
-  local serverZoneID = (((GameGlobal.GameLogic)()):GetModule(PayModule)):GetMidasZoneID()
+function HelperProxy:AppendImurCallback(url)
+  local zoneID2CallbackNum = {
+    [186] = 1,
+    [11] = 2,
+    [115] = 3,
+    [102] = 4,
+    [171] = 5,
+    [191] = 6,
+    [13] = 7,
+    [81] = 1,
+    [82] = 2,
+    [83] = 3,
+    [84] = 4,
+    [85] = 6,
+    [86] = 7,
+    [91] = 5,
+    [101] = 8,
+    [192] = 9,
+    [117] = 10
+  }
+  local serverZoneID = GameGlobal.GameLogic():GetModule(PayModule):GetMidasZoneID()
   local callback = zoneID2CallbackNum[serverZoneID]
   local appendCallback = "&callback=" .. tostring(callback)
   return url .. appendCallback
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.OpenUrl = function(self, hrefName)
-  -- function num : 0_51 , upvalues : _ENV
-  if not (string.find)(hrefName, "survey") then
-    (SDKProxy:GetInstance()):OpenUrl(hrefName, true)
-    return 
+function HelperProxy:OpenUrl(hrefName)
+  if not string.find(hrefName, "survey") then
+    SDKProxy:GetInstance():OpenUrl(hrefName, true)
+    return
   end
-  ;
-  (Log.debug)("HelperProxy:OpenUrl , hrefName : ", hrefName)
+  Log.debug("HelperProxy:OpenUrl , hrefName : ", hrefName)
   local bfind, newurl = self:FileImurUrl(hrefName)
-  ;
-  (Log.debug)("newurl : ", newurl)
-  local final_url = nil
+  Log.debug("newurl : ", newurl)
+  local final_url
   if bfind then
     final_url = self:AppendImurCallback(newurl)
   else
-    ;
-    (Log.debug)("[url]", hrefName)
+    Log.debug("[url]", hrefName)
     final_url = self:AppendImurCallback(hrefName)
   end
-  ;
-  (SDKProxy:GetInstance()):OpenUrl(final_url)
+  SDKProxy:GetInstance():OpenUrl(final_url)
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadIconSizeWithTag = function(self, rt, tag)
-  -- function num : 0_52 , upvalues : _ENV
-  local size = (self.tag2size)[tag]
+function HelperProxy:GetHeadIconSizeWithTag(rt, tag)
+  local size = self.tag2size[tag]
   if rt == nil or size == nil then
-    (Log.error)("GetHeadIconSizeWithTag cant find tag ", tag)
-    return 
+    Log.error("GetHeadIconSizeWithTag cant find tag ", tag)
+    return
   end
   rt.sizeDelta = size
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadBgSizeWithTag = function(self, rt)
-  -- function num : 0_53 , upvalues : _ENV
+function HelperProxy:GetHeadBgSizeWithTag(rt)
   local size = Vector2(193, 175)
   rt.sizeDelta = size
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadFrameDefaultID = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function HelperProxy:GetHeadFrameDefaultID()
   if _G.IsInland then
     return 3762000
   else
@@ -1075,10 +840,7 @@ HelperProxy.GetHeadFrameDefaultID = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadIconDefaultID = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function HelperProxy:GetHeadIconDefaultID()
   if _G.IsInland then
     return 3751001
   else
@@ -1086,127 +848,83 @@ HelperProxy.GetHeadIconDefaultID = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadBgDefaultID = function(self)
-  -- function num : 0_56
+function HelperProxy:GetHeadBgDefaultID()
   return 1
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadBgName = function(self, headBg)
-  -- function num : 0_57 , upvalues : _ENV
-  if headBg then
-    local cfg_head_bg = (Cfg.cfg_player_head_bg)[headBg]
+function HelperProxy:GetHeadBgName(headBg)
+  local cfg_head_bg = headBg and Cfg.cfg_player_head_bg[headBg]
+  if not cfg_head_bg then
+    local bid = self:GetHeadBgDefaultID()
+    cfg_head_bg = Cfg.cfg_player_head_bg[bid]
   end
-  do
-    if not cfg_head_bg then
-      local bid = self:GetHeadBgDefaultID()
-      cfg_head_bg = (Cfg.cfg_player_head_bg)[bid]
-    end
-    return cfg_head_bg.Icon
-  end
+  return cfg_head_bg.Icon
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadIconName = function(self, head)
-  -- function num : 0_58 , upvalues : _ENV
+function HelperProxy:GetHeadIconName(head)
   if _G.IsInland then
-    if head then
-      local cfg_head = (Cfg.cfg_item_head)[head]
+    local cfg_head = head and Cfg.cfg_item_head[head]
+    if not cfg_head then
+      local id = self:GetHeadIconDefaultID()
+      cfg_head = Cfg.cfg_item_head[id]
     end
-    do
-      do
-        if not cfg_head then
-          local id = self:GetHeadIconDefaultID()
-          cfg_head = (Cfg.cfg_item_head)[id]
-        end
-        if not cfg_head then
-          return "", ""
-        end
-        do return cfg_head.Icon, cfg_head.Tag end
-        local cfg_header = (Cfg.cfg_role_head_image)[head]
-        if cfg_header then
-          return cfg_header.Icon, ""
-        else
-          return "", ""
-        end
-      end
+    if not cfg_head then
+      return "", ""
+    end
+    return cfg_head.Icon, cfg_head.Tag
+  else
+    local cfg_header = Cfg.cfg_role_head_image[head]
+    if cfg_header then
+      return cfg_header.Icon, ""
+    else
+      return "", ""
     end
   end
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadFrameName = function(self, headFrame)
-  -- function num : 0_59 , upvalues : _ENV
+function HelperProxy:GetHeadFrameName(headFrame)
   if _G.IsInland then
-    if headFrame then
-      local cfg_head_frame = (Cfg.cfg_item_headframe)[headFrame]
+    local cfg_head_frame = headFrame and Cfg.cfg_item_headframe[headFrame]
+    if not cfg_head_frame then
+      local id = self:GetHeadFrameDefaultID()
+      cfg_head_frame = Cfg.cfg_item_headframe[id]
     end
-    do
-      do
-        if not cfg_head_frame then
-          local id = self:GetHeadFrameDefaultID()
-          cfg_head_frame = (Cfg.cfg_item_headframe)[id]
-        end
-        do return cfg_head_frame.Icon end
-        if not headFrame or headFrame == 0 then
-          headFrame = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
-        end
-        local cfgHeadFrame = (Cfg.cfg_role_head_frame)[headFrame]
-        do return cfgHeadFrame.Icon end
-      end
+    return cfg_head_frame.Icon
+  else
+    if not headFrame or headFrame == 0 then
+      headFrame = HelperProxy:GetInstance():GetHeadFrameDefaultID()
     end
+    local cfgHeadFrame = Cfg.cfg_role_head_frame[headFrame]
+    return cfgHeadFrame.Icon
   end
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadBgMaskSizeWithTag = function(self, rt)
-  -- function num : 0_60 , upvalues : _ENV
+function HelperProxy:GetHeadBgMaskSizeWithTag(rt)
   local size = Vector2(165, 165)
   rt.sizeDelta = size
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadRootSizeWithTag = function(self, rt, type)
-  -- function num : 0_61 , upvalues : _ENV
-  local scale = (self.frame2scale)[type]
+function HelperProxy:GetHeadRootSizeWithTag(rt, type)
+  local scale = self.frame2scale[type]
   rt.localScale = Vector3(1, 1, 1) * scale
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetHeadFrameSizeWithTag = function(self, rt)
-  -- function num : 0_62 , upvalues : _ENV
+function HelperProxy:GetHeadFrameSizeWithTag(rt)
   local size = Vector2(231, 231)
   rt.sizeDelta = size
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.SetShowMuskActive = function(self, active)
-  -- function num : 0_63
-  (self._common_lua_helper):SetShadowSettingActive(active)
+function HelperProxy:SetShowMuskActive(active)
+  self._common_lua_helper:SetShadowSettingActive(active)
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.ReplacePlayerName = function(self, strContent)
-  -- function num : 0_64 , upvalues : _ENV
-  local roleName = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  strContent = (string.gsub)(strContent, "PlayerName", roleName)
+function HelperProxy:ReplacePlayerName(strContent)
+  local roleName = GameGlobal.GetModule(RoleModule):GetName()
+  strContent = string.gsub(strContent, "PlayerName", roleName)
   return strContent
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.CheckEmail = function(self, strContent)
-  -- function num : 0_65
+function HelperProxy:CheckEmail(strContent)
   if not strContent then
     return false
   end
@@ -1217,31 +935,27 @@ HelperProxy.CheckEmail = function(self, strContent)
   end
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetEquipSkillDesc = function(self, desc, petid, equiplv, skillid)
-  -- function num : 0_66 , upvalues : _ENV
+function HelperProxy:GetEquipSkillDesc(desc, petid, equiplv, skillid)
   local buffids = {}
-  local cfg_p_skill = (Cfg.cfg_passive_skill)[skillid]
+  local cfg_p_skill = Cfg.cfg_passive_skill[skillid]
   if cfg_p_skill then
     buffids = cfg_p_skill.BuffID
   else
-    ;
-    (Log.fatal)("###[GetEquipSkillDesc] cfg_passive_skill is nil ! id --> ", skillid)
-    return 
+    Log.fatal("###[GetEquipSkillDesc] cfg_passive_skill is nil ! id --> ", skillid)
+    return
   end
-  local cfg_equip = ((Cfg.cfg_pet_equip)({PetID = petid, Level = equiplv}))
-  local descStr = nil
+  local cfg_equip = Cfg.cfg_pet_equip({PetID = petid, Level = equiplv})
+  local descStr
   if not cfg_equip then
-    return (StringTable.Get)(desc)
+    return StringTable.Get(desc)
   end
   local equipData = cfg_equip[1]
   local skillParam = equipData.elementParam
-  local descStrParam = nil
+  local descStrParam
   if skillParam then
     descStrParam = {}
     local idx = 0
-    for index,buff in ipairs(skillParam) do
+    for index, buff in ipairs(skillParam) do
       local insert = false
       for i = 1, #buffids do
         local buffid = buffids[i]
@@ -1250,78 +964,62 @@ HelperProxy.GetEquipSkillDesc = function(self, desc, petid, equiplv, skillid)
           break
         end
       end
-      do
-        if insert then
-          for index2,tmp in ipairs(buff) do
-            if tmp.isShow == nil or tmp.isShow == true then
-              idx = idx + 1
-              local buffValue = nil
-              if tmp.type == 1 then
-                buffValue = tostring(tmp.value)
-              else
-                if tmp.type == 2 then
-                  buffValue = self:GetEquipSkillParamValue(tmp.value) .. "%%"
-                else
-                  if tmp.type == 3 then
-                    buffValue = self:GetEquipSkillParamValue(tmp.value + 1) .. "%%"
-                  end
-                end
-              end
-              descStrParam[idx] = buffValue
+      if insert then
+        for index2, tmp in ipairs(buff) do
+          if tmp.isShow == nil or tmp.isShow == true then
+            idx = idx + 1
+            local buffValue
+            if tmp.type == 1 then
+              buffValue = tostring(tmp.value)
+            elseif tmp.type == 2 then
+              buffValue = self:GetEquipSkillParamValue(tmp.value) .. "%%"
+            elseif tmp.type == 3 then
+              buffValue = self:GetEquipSkillParamValue(tmp.value + 1) .. "%%"
             end
+            descStrParam[idx] = buffValue
           end
-        end
-        do
-          -- DECOMPILER ERROR at PC95: LeaveBlock: unexpected jumping out DO_STMT
-
         end
       end
     end
   end
-  do
-    if descStrParam then
-      descStr = (StringTable.Get)(desc, (table.unpack)(descStrParam))
-    else
-      descStr = (StringTable.Get)(desc)
-    end
-    return descStr
+  if descStrParam then
+    descStr = StringTable.Get(desc, table.unpack(descStrParam))
+  else
+    descStr = StringTable.Get(desc)
   end
+  return descStr
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetEquipSkillDescDiff = function(self, desc, petid, equiplv, nextLv, skillid)
-  -- function num : 0_67 , upvalues : _ENV
+function HelperProxy:GetEquipSkillDescDiff(desc, petid, equiplv, nextLv, skillid)
   local buffids = {}
-  local cfg_p_skill = (Cfg.cfg_passive_skill)[skillid]
+  local cfg_p_skill = Cfg.cfg_passive_skill[skillid]
   if cfg_p_skill then
     buffids = cfg_p_skill.BuffID
   else
-    ;
-    (Log.fatal)("###[GetEquipSkillDescDiff] cfg_passive_skill is nil ! id --> ", skillid)
-    return 
+    Log.fatal("###[GetEquipSkillDescDiff] cfg_passive_skill is nil ! id --> ", skillid)
+    return
   end
-  local cfg_equip = ((Cfg.cfg_pet_equip)({PetID = petid, Level = equiplv}))
-  local descStr = nil
+  local cfg_equip = Cfg.cfg_pet_equip({PetID = petid, Level = equiplv})
+  local descStr
   if not cfg_equip then
-    (Log.error)("###[GetEquipSkillDescDiff]Cfg.cfg_pet_equip is nil ! id --> ", petid, "|lv -- > ", equiplv)
-    return 
+    Log.error("###[GetEquipSkillDescDiff]Cfg.cfg_pet_equip is nil ! id --> ", petid, "|lv -- > ", equiplv)
+    return
   end
-  local cfg_equip_next = ((Cfg.cfg_pet_equip)({PetID = petid, Level = nextLv}))
-  local descStr_next = nil
+  local cfg_equip_next = Cfg.cfg_pet_equip({PetID = petid, Level = nextLv})
+  local descStr_next
   if not cfg_equip_next then
-    (Log.error)("###[GetEquipSkillDescDiff]Cfg.cfg_equip_next is nil ! id --> ", petid, "|lv -- > ", nextLv)
-    return 
+    Log.error("###[GetEquipSkillDescDiff]Cfg.cfg_equip_next is nil ! id --> ", petid, "|lv -- > ", nextLv)
+    return
   end
   local equipData = cfg_equip[1]
   local equipData_next = cfg_equip_next[1]
   local skillParam = equipData.elementParam
   local skillParam_next = equipData_next.elementParam
-  local descStrParam, descStrParam_next = nil, nil
+  local descStrParam, descStrParam_next
   if skillParam then
     descStrParam = {}
     local idx = 0
-    for index,buff in ipairs(skillParam) do
+    for index, buff in ipairs(skillParam) do
       local insert = false
       for i = 1, #buffids do
         local buffid = buffids[i]
@@ -1330,553 +1028,394 @@ HelperProxy.GetEquipSkillDescDiff = function(self, desc, petid, equiplv, nextLv,
           break
         end
       end
-      do
-        if insert then
-          for index2,tmp in ipairs(buff) do
-            if tmp.isShow == nil or tmp.isShow == true then
-              idx = idx + 1
-              local buffValue = nil
-              if tmp.type == 1 then
-                buffValue = tostring(tmp.value)
-              else
-                if tmp.type == 2 then
-                  buffValue = self:GetEquipSkillParamValue(tmp.value) .. "%%"
-                else
-                  if tmp.type == 3 then
-                    buffValue = self:GetEquipSkillParamValue(tmp.value + 1) .. "%%"
-                  end
-                end
-              end
-              descStrParam[idx] = buffValue
+      if insert then
+        for index2, tmp in ipairs(buff) do
+          if tmp.isShow == nil or tmp.isShow == true then
+            idx = idx + 1
+            local buffValue
+            if tmp.type == 1 then
+              buffValue = tostring(tmp.value)
+            elseif tmp.type == 2 then
+              buffValue = self:GetEquipSkillParamValue(tmp.value) .. "%%"
+            elseif tmp.type == 3 then
+              buffValue = self:GetEquipSkillParamValue(tmp.value + 1) .. "%%"
             end
+            descStrParam[idx] = buffValue
           end
-        end
-        do
-          -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out DO_STMT
-
         end
       end
     end
   end
-  do
-    if skillParam_next then
-      descStrParam_next = {}
-      local idx = 0
-      for index,buff in ipairs(skillParam_next) do
-        local insert = false
-        for i = 1, #buffids do
-          local buffid = buffids[i]
-          if buffid == buff.BuffID then
-            insert = true
-            break
-          end
+  if skillParam_next then
+    descStrParam_next = {}
+    local idx = 0
+    for index, buff in ipairs(skillParam_next) do
+      local insert = false
+      for i = 1, #buffids do
+        local buffid = buffids[i]
+        if buffid == buff.BuffID then
+          insert = true
+          break
         end
-        do
-          if insert then
-            for index2,tmp in ipairs(buff) do
-              if tmp.isShow == nil or tmp.isShow == true then
-                idx = idx + 1
-                local buffValue = nil
-                if tmp.type == 1 then
-                  buffValue = tostring(tmp.value)
-                else
-                  if tmp.type == 2 then
-                    buffValue = self:GetEquipSkillParamValue(tmp.value) .. "%%"
-                  else
-                    if tmp.type == 3 then
-                      buffValue = self:GetEquipSkillParamValue(tmp.value + 1) .. "%%"
-                    end
-                  end
-                end
-                descStrParam_next[idx] = buffValue
-              end
+      end
+      if insert then
+        for index2, tmp in ipairs(buff) do
+          if tmp.isShow == nil or tmp.isShow == true then
+            idx = idx + 1
+            local buffValue
+            if tmp.type == 1 then
+              buffValue = tostring(tmp.value)
+            elseif tmp.type == 2 then
+              buffValue = self:GetEquipSkillParamValue(tmp.value) .. "%%"
+            elseif tmp.type == 3 then
+              buffValue = self:GetEquipSkillParamValue(tmp.value + 1) .. "%%"
             end
-          end
-          do
-            -- DECOMPILER ERROR at PC183: LeaveBlock: unexpected jumping out DO_STMT
-
+            descStrParam_next[idx] = buffValue
           end
         end
       end
     end
-    do
-      local changeTab = {}
-      for i = 1, #descStrParam_next do
-        local change = false
-        local item_next = descStrParam_next[i]
-        local item = descStrParam[i]
-        if item_next ~= item then
-          change = true
-        end
-        if change then
-          item_next = "<color=#ffca01>" .. item_next .. "</color>"
-          descStrParam_next[i] = item_next
-        end
-      end
-      descStr = (StringTable.Get)(desc)
-      if descStrParam_next and #descStrParam_next > 0 then
-        return self:GetStringWithOutHtmlColor(descStr, descStrParam_next)
-      else
-        return self:GetStringWithOutHtmlColor(descStr)
-      end
+  end
+  local changeTab = {}
+  for i = 1, #descStrParam_next do
+    local change = false
+    local item_next = descStrParam_next[i]
+    local item = descStrParam[i]
+    if item_next ~= item then
+      change = true
     end
+    if change then
+      item_next = "<color=#ffca01>" .. item_next .. "</color>"
+      descStrParam_next[i] = item_next
+    end
+  end
+  descStr = StringTable.Get(desc)
+  if descStrParam_next and 0 < #descStrParam_next then
+    return self:GetStringWithOutHtmlColor(descStr, descStrParam_next)
+  else
+    return self:GetStringWithOutHtmlColor(descStr)
   end
 end
 
--- DECOMPILER ERROR at PC216: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetEquipSkillParamValue = function(self, num)
-  -- function num : 0_68 , upvalues : _ENV
+function HelperProxy:GetEquipSkillParamValue(num)
   if type(num) ~= "number" then
-    (Log.fatal)("### num is not number.")
+    Log.fatal("### num is not number.")
     return 0
   end
   local a = num * 100
-  local c, d = (math.modf)(a)
-  if d > 0.001 then
+  local c, d = math.modf(a)
+  if 0.001 < d then
     return c + d
   else
     return c
   end
 end
 
--- DECOMPILER ERROR at PC219: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetStringWithOutHtmlColor = function(self, stg, param)
-  -- function num : 0_69 , upvalues : _ENV
+function HelperProxy:GetStringWithOutHtmlColor(stg, param)
   local str = stg
-  local ss_1 = (string.split)(str, "<link=")
-  local c = (table.count)(ss_1)
+  local ss_1 = string.split(str, "<link=")
+  local c = table.count(ss_1)
   local ls = ""
   for i = 1, c do
     local ls_tmp = ""
     if i == 1 then
       local stemp = ss_1[i]
-      local append_tmp = (string.gsub)(stemp, "%b<>", "")
+      local append_tmp = string.gsub(stemp, "%b<>", "")
       ls_tmp = ls_tmp .. append_tmp
     else
-      do
-        ls_tmp = ls_tmp .. "<link="
-        local ss_2 = (string.split)(ss_1[i], "</link>")
-        local c_2 = (table.count)(ss_2)
-        for j = 1, c_2 do
-          if j == 1 then
-            ls_tmp = ls_tmp .. ss_2[j]
-          else
-            ls_tmp = ls_tmp .. "</link>"
-            local stemp = ss_2[j]
-            local append_tmp = (string.gsub)(stemp, "%b<>", "")
-            ls_tmp = ls_tmp .. append_tmp
-          end
-        end
-        do
-          do
-            ls = ls .. ls_tmp
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      ls_tmp = ls_tmp .. "<link="
+      local ss_2 = string.split(ss_1[i], "</link>")
+      local c_2 = table.count(ss_2)
+      for j = 1, c_2 do
+        if j == 1 then
+          ls_tmp = ls_tmp .. ss_2[j]
+        else
+          ls_tmp = ls_tmp .. "</link>"
+          local stemp = ss_2[j]
+          local append_tmp = string.gsub(stemp, "%b<>", "")
+          ls_tmp = ls_tmp .. append_tmp
         end
       end
     end
+    ls = ls .. ls_tmp
   end
-  local descStr = nil
+  local descStr
   if param then
-    descStr = (StringTable:GetInstance()):FindStringWithParams(ls, (table.unpack)(param))
+    descStr = StringTable:GetInstance():FindStringWithParams(ls, table.unpack(param))
   else
     descStr = str
   end
   return descStr
 end
 
--- DECOMPILER ERROR at PC222: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetSkinCfg = function(self, tid, grade, skinId, path)
-  -- function num : 0_70 , upvalues : _ENV
+function HelperProxy:GetPetSkinCfg(tid, grade, skinId, path)
   local realSkinId = 0
-  if self:IsEffectByPetSkin(path) and skinId and skinId > 1 then
+  if self:IsEffectByPetSkin(path) and skinId and 1 < skinId then
     realSkinId = skinId
   end
   if realSkinId == 0 then
     if grade == 0 then
-      local petCfg = (Cfg.cfg_pet)[tid]
+      local petCfg = Cfg.cfg_pet[tid]
       if not petCfg then
         return nil
       end
       realSkinId = petCfg.SkinId
     else
-      do
-        do
-          local gradeCfg = ((Cfg.cfg_pet_grade)({PetID = tid, Grade = grade}))[1]
-          if not gradeCfg then
-            return nil
-          end
-          realSkinId = gradeCfg.SkinId
-          local cfg = (Cfg.cfg_pet_skin)[realSkinId]
-          if not cfg then
-            (Log.fatal)("###[GetPetSkinCfg] skin cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
-            return nil
-          end
-          return cfg
-        end
+      local gradeCfg = Cfg.cfg_pet_grade({PetID = tid, Grade = grade})[1]
+      if not gradeCfg then
+        return nil
       end
+      realSkinId = gradeCfg.SkinId
     end
   end
+  local cfg = Cfg.cfg_pet_skin[realSkinId]
+  if not cfg then
+    Log.fatal("###[GetPetSkinCfg] skin cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    return nil
+  end
+  return cfg
 end
 
--- DECOMPILER ERROR at PC225: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetHead = function(self, tid, grade, skinId, path)
-  -- function num : 0_71 , upvalues : _ENV
+function HelperProxy:GetPetHead(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetHead] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetHead] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.Head
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetItemIcon = function(self, tid, grade, skinId, path)
-  -- function num : 0_72 , upvalues : _ENV
+function HelperProxy:GetPetItemIcon(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.fatal)("###[GetPetItemIcon] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.fatal("###[GetPetItemIcon] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.ItemIcon
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetVideo = function(self, tid, grade, skinId, path)
-  -- function num : 0_73 , upvalues : _ENV
+function HelperProxy:GetPetVideo(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetVideo] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetVideo] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.VideoIcon
 end
 
--- DECOMPILER ERROR at PC234: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetTeamBody = function(self, tid, grade, skinId, path)
-  -- function num : 0_74 , upvalues : _ENV
+function HelperProxy:GetPetTeamBody(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetTeamBody] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetTeamBody] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.TeamBody
 end
 
--- DECOMPILER ERROR at PC237: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetStaticBody = function(self, tid, grade, skinId, path)
-  -- function num : 0_75 , upvalues : _ENV
+function HelperProxy:GetPetStaticBody(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetStaticBody] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetStaticBody] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.StaticBody
 end
 
--- DECOMPILER ERROR at PC240: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetMainLobbyStaticBody = function(self, tid, grade, skinId, path)
-  -- function num : 0_76 , upvalues : _ENV
+function HelperProxy:GetMainLobbyStaticBody(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetSimpleCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetSimpleCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.MainLobbyCg
 end
 
--- DECOMPILER ERROR at PC243: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetSimpleCg = function(self, tid, grade, skinId, path)
-  -- function num : 0_77 , upvalues : _ENV
+function HelperProxy:GetPetSimpleCg(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetSimpleCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetSimpleCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.SimpleCG
 end
 
--- DECOMPILER ERROR at PC246: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetAircraftBody = function(self, tid, grade, skinId, path)
-  -- function num : 0_78 , upvalues : _ENV
+function HelperProxy:GetPetAircraftBody(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetAircraftBody] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetAircraftBody] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.AircraftBody
 end
 
--- DECOMPILER ERROR at PC249: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetBattleMes = function(self, tid, grade, skinId, path)
-  -- function num : 0_79 , upvalues : _ENV
+function HelperProxy:GetPetBattleMes(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.BattleMes
 end
 
--- DECOMPILER ERROR at PC252: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetHeadChain = function(self, tid, grade, skinId, path)
-  -- function num : 0_80 , upvalues : _ENV
+function HelperProxy:GetPetHeadChain(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetHeadChain] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetHeadChain] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.HeadChain
 end
 
--- DECOMPILER ERROR at PC255: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetSpine = function(self, tid, grade, skinId, path)
-  -- function num : 0_81 , upvalues : _ENV
+function HelperProxy:GetPetSpine(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.Spine
 end
 
--- DECOMPILER ERROR at PC258: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetMainLobbySpine = function(self, tid, grade, skinId, path)
-  -- function num : 0_82 , upvalues : _ENV
+function HelperProxy:GetMainLobbySpine(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.MainLobbySpine
 end
 
--- DECOMPILER ERROR at PC261: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetMainLobbyEnterSpine = function(self, tid, grade, skinId, path)
-  -- function num : 0_83 , upvalues : _ENV
+function HelperProxy:GetMainLobbyEnterSpine(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.MainLobbyEnterSpine
 end
 
--- DECOMPILER ERROR at PC264: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetMainLobbyEnterSpineSubGo = function(self, tid, grade, skinId, path)
-  -- function num : 0_84 , upvalues : _ENV
+function HelperProxy:GetMainLobbyEnterSpineSubGo(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.MainLobbyEnterSpineSubGo
 end
 
--- DECOMPILER ERROR at PC267: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetBody = function(self, tid, grade, skinId, path)
-  -- function num : 0_85 , upvalues : _ENV
+function HelperProxy:GetPetBody(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetCg] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.Body
 end
 
--- DECOMPILER ERROR at PC270: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetPrefab = function(self, tid, grade, skinId, path)
-  -- function num : 0_86 , upvalues : _ENV
+function HelperProxy:GetPetPrefab(tid, grade, skinId, path)
   local cfg = self:GetPetSkinCfg(tid, grade, skinId, path)
   if not cfg then
-    (Log.debug)("###[GetPetPrefab] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.debug("###[GetPetPrefab] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.Prefab
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.IsEffectByPetSkin = function(self, path)
-  -- function num : 0_87 , upvalues : _ENV
+function HelperProxy:IsEffectByPetSkin(path)
   if not path then
     return true
   end
-  local cfg = (Cfg.cfg_pet_skin_effect_filter)[path]
+  local cfg = Cfg.cfg_pet_skin_effect_filter[path]
   if cfg then
     return cfg.Effected
   end
   return true
 end
 
--- DECOMPILER ERROR at PC276: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.NewStringList = function(self)
-  -- function num : 0_88
-  return (self._common_lua_helper):NewStringList()
+function HelperProxy:NewStringList()
+  return self._common_lua_helper:NewStringList()
 end
 
--- DECOMPILER ERROR at PC279: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetNavAgentID = function(self, index)
-  -- function num : 0_89
-  return (self._common_lua_helper):GetNavAgentID(index)
+function HelperProxy:GetNavAgentID(index)
+  return self._common_lua_helper:GetNavAgentID(index)
 end
 
--- DECOMPILER ERROR at PC282: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.CopyTextToClipboard = function(self, text)
-  -- function num : 0_90 , upvalues : _ENV
-  if (string.isnullorempty)(text) then
-    return 
+function HelperProxy:CopyTextToClipboard(text)
+  if string.isnullorempty(text) then
+    return
   end
-  ;
-  (self._common_lua_helper):CopeTextToClipboard(text)
+  self._common_lua_helper:CopeTextToClipboard(text)
 end
 
--- DECOMPILER ERROR at PC285: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.AgainFightActive = function(self, matchType, win)
-  -- function num : 0_91 , upvalues : _ENV
+function HelperProxy:AgainFightActive(matchType, win)
   local _win = 0
   if win then
     _win = 1
   else
     _win = 0
   end
-  local cfg_again_fight = (Cfg.cfg_again_fight)({Type = matchType, Win = _win})
-  do
-    if cfg_again_fight then
-      local active = (cfg_again_fight[1]).Active
-      if active == 1 then
-        return true
-      else
-        return false
-      end
+  local cfg_again_fight = Cfg.cfg_again_fight({Type = matchType, Win = _win})
+  if cfg_again_fight then
+    local active = cfg_again_fight[1].Active
+    if active == 1 then
+      return true
+    else
+      return false
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC288: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.AddAnimTo = function(self, from, to)
-  -- function num : 0_92
-  (self._common_lua_helper):AddAnimTo(from, to)
+function HelperProxy:AddAnimTo(from, to)
+  self._common_lua_helper:AddAnimTo(from, to)
 end
 
--- DECOMPILER ERROR at PC291: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.RemoveAnimTo = function(self, from, to)
-  -- function num : 0_93
-  (self._common_lua_helper):RemoveAnimTo(from, to)
+function HelperProxy:RemoveAnimTo(from, to)
+  self._common_lua_helper:RemoveAnimTo(from, to)
 end
 
--- DECOMPILER ERROR at PC294: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.TriggerAircraftAnimationEvent = function(self, anim, clip, time)
-  -- function num : 0_94
-  (self._common_lua_helper):TriggerAircraftAnimationEvent(anim, clip, time)
+function HelperProxy:TriggerAircraftAnimationEvent(anim, clip, time)
+  self._common_lua_helper:TriggerAircraftAnimationEvent(anim, clip, time)
 end
 
--- DECOMPILER ERROR at PC297: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.SetRoleShaderLodLevel = function(self, level)
-  -- function num : 0_95
-  (self._common_lua_helper):SetRoleShaderLodLevel(level)
+function HelperProxy:SetRoleShaderLodLevel(level)
+  self._common_lua_helper:SetRoleShaderLodLevel(level)
 end
 
--- DECOMPILER ERROR at PC300: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.AddFpsTools = function(self)
-  -- function num : 0_96
-  (self._common_lua_helper):AddFpsTools()
+function HelperProxy:AddFpsTools()
+  self._common_lua_helper:AddFpsTools()
 end
 
--- DECOMPILER ERROR at PC303: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetVideoUrl = function(self, name)
-  -- function num : 0_97 , upvalues : _ENV
-  return (ResourceManager:GetInstance()):GetAssetPath(name, LoadType.VideoClip)
+function HelperProxy:GetVideoUrl(name)
+  return ResourceManager:GetInstance():GetAssetPath(name, LoadType.VideoClip)
 end
 
--- DECOMPILER ERROR at PC306: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.CopyString = function(self, str)
-  -- function num : 0_98 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (UnityEngine.GUIUtility).systemCopyBuffer = str
+function HelperProxy:CopyString(str)
+  UnityEngine.GUIUtility.systemCopyBuffer = str
 end
 
--- DECOMPILER ERROR at PC309: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.SetGameTimeScale = function(self, scale)
-  -- function num : 0_99 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (UnityEngine.Time).timeScale = scale
-  ;
-  ((UnityEngine.PlayerPrefs).SetFloat)("TimeScale", scale)
-  ;
-  (Log.debug)("SetTimeScale ", scale, " ")
+function HelperProxy:SetGameTimeScale(scale)
+  UnityEngine.Time.timeScale = scale
+  UnityEngine.PlayerPrefs.SetFloat("TimeScale", scale)
+  Log.debug("SetTimeScale ", scale, " ")
 end
 
--- DECOMPILER ERROR at PC312: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetFixTimeLen = function(self, sourceLen)
-  -- function num : 0_100 , upvalues : _ENV
-  return sourceLen * (UnityEngine.Time).timeScale
+function HelperProxy:GetFixTimeLen(sourceLen)
+  return sourceLen * UnityEngine.Time.timeScale
 end
 
--- DECOMPILER ERROR at PC315: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetGameTimeScale = function(self)
-  -- function num : 0_101 , upvalues : _ENV
-  return (UnityEngine.Time).timeScale
+function HelperProxy:GetGameTimeScale()
+  return UnityEngine.Time.timeScale
 end
 
--- DECOMPILER ERROR at PC318: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.IsInEnglish = function(self)
-  -- function num : 0_102 , upvalues : _ENV
-  local currentLanguageType = (Localization.GetCurLanguage)()
+function HelperProxy:IsInEnglish()
+  local currentLanguageType = Localization.GetCurLanguage()
   if currentLanguageType == LanguageType.us or currentLanguageType == LanguageType.idn or currentLanguageType == LanguageType.es or currentLanguageType == LanguageType.pt then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC321: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.Sec2DayHourMin = function(self, sec)
-  -- function num : 0_103
+function HelperProxy:Sec2DayHourMin(sec)
   local minAll = sec // 60
   local min = minAll % 60
   local hourAll = minAll // 60
@@ -1885,49 +1424,43 @@ HelperProxy.Sec2DayHourMin = function(self, sec)
   return day, hour, min
 end
 
--- DECOMPILER ERROR at PC324: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.Time2Tex = function(self, sec)
-  -- function num : 0_104 , upvalues : _ENV
+function HelperProxy:Time2Tex(sec)
   local timeStr = ""
   local minAll = sec // 60
   local min = minAll % 60
   local hourAll = minAll // 60
   local hour = hourAll % 24
   local day = hourAll // 24
-  if day and day > 0 then
-    if hour and hour > 0 then
-      timeStr = (StringTable.Get)("str_week_tower_reset_time_day_and_hour", day, hour)
+  if day and 0 < day then
+    if hour and 0 < hour then
+      timeStr = StringTable.Get("str_week_tower_reset_time_day_and_hour", day, hour)
     else
-      timeStr = (StringTable.Get)("str_week_tower_reset_time_day", day)
+      timeStr = StringTable.Get("str_week_tower_reset_time_day", day)
     end
     return timeStr
   end
-  if hour and hour > 0 then
-    if min and min > 0 then
-      timeStr = (StringTable.Get)("str_week_tower_reset_time_hour_and_min", hour, min)
+  if hour and 0 < hour then
+    if min and 0 < min then
+      timeStr = StringTable.Get("str_week_tower_reset_time_hour_and_min", hour, min)
     else
-      timeStr = (StringTable.Get)("str_week_tower_reset_time_hour", hour)
+      timeStr = StringTable.Get("str_week_tower_reset_time_hour", hour)
     end
     return timeStr
   end
-  if min and min > 0 then
-    timeStr = (StringTable.Get)("str_week_tower_reset_time_only_min", min)
+  if min and 0 < min then
+    timeStr = StringTable.Get("str_week_tower_reset_time_only_min", min)
     return timeStr
   end
-  timeStr = (StringTable.Get)("str_week_tower_reset_time_only_sec")
+  timeStr = StringTable.Get("str_week_tower_reset_time_only_sec")
   return timeStr
 end
 
--- DECOMPILER ERROR at PC327: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetGiftsFromNeedMat = function(self, needMat)
-  -- function num : 0_105 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function HelperProxy:GetGiftsFromNeedMat(needMat)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local items = itemModule:GetItemListBySubType(ItemSubType.ItemSubType_Gift)
   local haveChooseGift = {}
-  local cfg_gift = (Cfg.cfg_item_gift)({})
-  for _,v in pairs(items) do
+  local cfg_gift = Cfg.cfg_item_gift({})
+  for _, v in pairs(items) do
     local giftId = v:GetTemplateID()
     local giftPstId = v:GetID()
     local giftCount = v:GetCount()
@@ -1939,38 +1472,30 @@ HelperProxy.GetGiftsFromNeedMat = function(self, needMat)
         gift.id = giftId
         gift.pstid = giftPstId
         gift.count = giftCount
-        ;
-        (table.insert)(haveChooseGift, gift)
+        table.insert(haveChooseGift, gift)
       end
     end
   end
-  ;
-  (table.sort)(haveChooseGift, function(a, b)
-    -- function num : 0_105_0
-    do return b.id < a.id end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(haveChooseGift, function(a, b)
+    return a.id > b.id
+  end)
   local openGiftList = {}
   local needMatList = needMat
-  ;
-  (Log.debug)("###[lxs] 检查的材料列表[", #needMatList, "]")
+  Log.debug("###[lxs] 检查的材料列表[", #needMatList, "]")
   for i = 1, #needMatList do
-    (Log.debug)("###[lxs] 材料 id[", (needMatList[i]).id, "] 数量[", (needMatList[i]).count, "]")
+    Log.debug("###[lxs] 材料 id[", needMatList[i].id, "] 数量[", needMatList[i].count, "]")
   end
-  ;
-  (Log.debug)("###[lxs] 拥有的礼包列表[", #haveChooseGift, "]")
+  Log.debug("###[lxs] 拥有的礼包列表[", #haveChooseGift, "]")
   for i = 1, #haveChooseGift do
-    (Log.debug)("###[lxs] 礼包 id[", (haveChooseGift[i]).id, "] 数量[", (haveChooseGift[i]).count, "]")
+    Log.debug("###[lxs] 礼包 id[", haveChooseGift[i].id, "] 数量[", haveChooseGift[i].count, "]")
   end
-  local _getItemListByGiftCfg = function(giftid)
-    -- function num : 0_105_1 , upvalues : cfg_gift
+  
+  local function _getItemListByGiftCfg(giftid)
     local __cfg = cfg_gift[giftid]
     return __cfg.ItemList
   end
-
-  local _checkMatInGift = function(giftid, matid)
-    -- function num : 0_105_2 , upvalues : cfg_gift
+  
+  local function _checkMatInGift(giftid, matid)
     local __cfg = cfg_gift[giftid]
     local __itemList = __cfg.ItemList
     if __itemList then
@@ -1981,163 +1506,124 @@ HelperProxy.GetGiftsFromNeedMat = function(self, needMat)
         end
       end
     end
-    do
-      return false
-    end
+    return false
   end
-
+  
   local checkIdx = #needMatList
-  while checkIdx > 0 do
+  while 0 < checkIdx do
     local mat = needMatList[checkIdx]
-    ;
-    (Log.debug)("###[lxs] 检查材料[", mat.id, "] 需要[", mat.count, "]")
+    Log.debug("###[lxs] 检查材料[", mat.id, "] 需要[", mat.count, "]")
     local matCheckEnd = false
     while not matCheckEnd do
-      (Log.debug)("###[lxs] 材料不够，查")
+      Log.debug("###[lxs] 材料不够，查")
       for j = #haveChooseGift, 1, -1 do
         local gift = haveChooseGift[j]
         local inGift, inGiftIdx, inGiftCount = _checkMatInGift(gift.id, mat.id)
         if inGift then
-          (Log.debug)("###[lxs] 在该礼包[", gift.id, "] 数量[", gift.count, "]")
+          Log.debug("###[lxs] 在该礼包[", gift.id, "] 数量[", gift.count, "]")
           local less = mat.count - inGiftCount * gift.count
-          local useCount = nil
+          local useCount
           if less <= 0 then
-            (Log.debug)("###[lxs] 这个礼包  足够  开出全部材料")
+            Log.debug("###[lxs] 这个礼包  足够  开出全部材料")
             matCheckEnd = true
-            useCount = (math.ceil)(mat.count / inGiftCount)
+            useCount = math.ceil(mat.count / inGiftCount)
           else
-            ;
-            (Log.debug)("###[lxs] 这个礼包  不能  开出全部材料")
+            Log.debug("###[lxs] 这个礼包  不能  开出全部材料")
             useCount = gift.count
           end
-          ;
-          (Log.debug)("###[lxs] 使用了礼包数量[", useCount, "],每个礼包开[", inGiftCount, "]")
+          Log.debug("###[lxs] 使用了礼包数量[", useCount, "],每个礼包开[", inGiftCount, "]")
           gift.count = gift.count - useCount
-          ;
-          (Log.debug)("###[lxs] 礼包还剩[", gift.count, "]")
+          Log.debug("###[lxs] 礼包还剩[", gift.count, "]")
           if gift.count <= 0 then
-            (Log.debug)("###[lxs] 礼包用完了,移除")
-            ;
-            (table.remove)(haveChooseGift, j)
+            Log.debug("###[lxs] 礼包用完了,移除")
+            table.remove(haveChooseGift, j)
           end
           mat.count = mat.count - useCount * inGiftCount
-          ;
-          (Log.debug)("###[lxs] 这个材料还需要[", mat.count, "]")
+          Log.debug("###[lxs] 这个材料还需要[", mat.count, "]")
           if mat.count <= 0 then
-            (Log.debug)("###[lxs] 这个材料够了,移除")
-            ;
-            (table.remove)(needMatList, checkIdx)
+            Log.debug("###[lxs] 这个材料够了,移除")
+            table.remove(needMatList, checkIdx)
           end
           local saveGift = {}
           saveGift.id = gift.id
           saveGift.pstid = gift.pstid
           saveGift.count = useCount
           saveGift.idx = inGiftIdx
-          ;
-          (table.insert)(openGiftList, saveGift)
-          ;
-          (Log.debug)("###[lxs] 记录一下这个礼包使用,id[", saveGift.id, "] 数量[", saveGift.count, "]")
+          table.insert(openGiftList, saveGift)
+          Log.debug("###[lxs] 记录一下这个礼包使用,id[", saveGift.id, "] 数量[", saveGift.count, "]")
         else
-          do
-            do
-              ;
-              (Log.debug)("###[lxs] 不在该礼包[", gift.id, "]")
-              if matCheckEnd then
-                (Log.debug)("###[lxs] 材料够了,查下一个材料")
-                break
-              else
-                ;
-                (Log.debug)("###[lxs] 材料还不够,查下一个礼包")
-              end
-              -- DECOMPILER ERROR at PC245: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC245: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC245: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+          Log.debug("###[lxs] 不在该礼包[", gift.id, "]")
+        end
+        if matCheckEnd then
+          Log.debug("###[lxs] 材料够了,查下一个材料")
+          break
+        else
+          Log.debug("###[lxs] 材料还不够,查下一个礼包")
         end
       end
       matCheckEnd = true
     end
     checkIdx = checkIdx - 1
   end
-  do
-    ;
-    (Log.debug)("###[lxs] 所有材料检查完毕,使用了这些礼包")
-    for i = 1, #openGiftList do
-      local g = openGiftList[i]
-      local gid = g.id
-      local gc = g.count
-      local gi = g.idx
-      ;
-      (Log.debug)("###[lxs] 礼包 id[", gid, "] count[", gc, "] idx[", gi, "]")
-    end
-    if (table.count)(needMatList) == 0 then
-      (Log.debug)("###[lxs] 需要的材料  都能开出来")
-      return true, openGiftList
-    end
-    ;
-    (Log.debug)("###[lxs] 需要的材料  还差一些")
-    return false
+  Log.debug("###[lxs] 所有材料检查完毕,使用了这些礼包")
+  for i = 1, #openGiftList do
+    local g = openGiftList[i]
+    local gid = g.id
+    local gc = g.count
+    local gi = g.idx
+    Log.debug("###[lxs] 礼包 id[", gid, "] count[", gc, "] idx[", gi, "]")
   end
+  if table.count(needMatList) == 0 then
+    Log.debug("###[lxs] 需要的材料  都能开出来")
+    return true, openGiftList
+  end
+  Log.debug("###[lxs] 需要的材料  还差一些")
+  return false
 end
 
--- DECOMPILER ERROR at PC330: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.IsCrossDayTo = function(self, otherTime)
-  -- function num : 0_106 , upvalues : _ENV
-  local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-  if now - otherTime > 86400 then
+function HelperProxy:IsCrossDayTo(otherTime)
+  local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+  if 86400 < now - otherTime then
     return true
   end
-  local targetTime = ((GameGlobal.GetModule)(LoginModule)):GetCampaignRefreshTime() - 86400
-  if otherTime < targetTime and targetTime < now then
+  local targetTime = GameGlobal.GetModule(LoginModule):GetCampaignRefreshTime() - 86400
+  if otherTime < targetTime and now > targetTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC333: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.HomeGetBody = function(self, pstid, face)
-  -- function num : 0_107 , upvalues : _ENV
-  local _face = nil
+function HelperProxy:HomeGetBody(pstid, face)
+  local _face
   if face then
     _face = face
   else
     _face = "Norm"
   end
   local icon = ""
-  local homeModule = (GameGlobal.GetModule)(HomelandModule)
+  local homeModule = GameGlobal.GetModule(HomelandModule)
   local uiHomeModule = homeModule:GetUIModule()
   local homeClient = uiHomeModule:GetClient()
   local homelandPetManager = homeClient:PetManager()
   local pet = homelandPetManager:GetPetByPstID(pstid)
   local skinid = pet:ClothSkinID()
   local tid = pet:TemplateID()
-  local cfg = (Cfg.cfg_home_pet_story_face)[skinid]
+  local cfg = Cfg.cfg_home_pet_story_face[skinid]
   if cfg then
     icon = cfg[_face]
     if not icon then
       icon = ""
-      ;
-      (Log.error)("###[HelperProxy] icon is nil ! id --> ", skinid, ",_face --> ", _face)
+      Log.error("###[HelperProxy] icon is nil ! id --> ", skinid, ",_face --> ", _face)
     end
   else
     icon = "base_icon_" .. tid
-    ;
-    (Log.error)("###[HelperProxy] cfg is nil ! id --> ", skinid)
+    Log.error("###[HelperProxy] cfg is nil ! id --> ", skinid)
   end
   return icon
 end
 
--- DECOMPILER ERROR at PC336: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.CheckBinderID = function(self, pets, petid)
-  -- function num : 0_108 , upvalues : _ENV
-  local cfg_pet = (Cfg.cfg_pet)({})
+function HelperProxy:CheckBinderID(pets, petid)
+  local cfg_pet = Cfg.cfg_pet({})
   local cfg = cfg_pet[petid]
   if cfg_pet and cfg then
     for i = 1, #pets do
@@ -2150,19 +1636,14 @@ HelperProxy.CheckBinderID = function(self, pets, petid)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC339: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.CheckTextIncludeImgAndSpace = function(self, str)
-  -- function num : 0_109 , upvalues : _ENV
+function HelperProxy:CheckTextIncludeImgAndSpace(str)
   local plainStr = str
-  plainStr = (string.gsub)(plainStr, "<sprite.*/>", "lixuesen")
-  local space = (string.match)(plainStr, " ")
-  local sprite = (string.match)(plainStr, "lixuesen")
+  plainStr = string.gsub(plainStr, "<sprite.*/>", "lixuesen")
+  local space = string.match(plainStr, " ")
+  local sprite = string.match(plainStr, "lixuesen")
   if space and sprite then
     return true
   else
@@ -2170,55 +1651,40 @@ HelperProxy.CheckTextIncludeImgAndSpace = function(self, str)
   end
 end
 
--- DECOMPILER ERROR at PC342: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.CheckTextIncludeImg = function(self, str)
-  -- function num : 0_110
+function HelperProxy:CheckTextIncludeImg(str)
   return false
 end
 
--- DECOMPILER ERROR at PC345: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetItemCountStr = function(self, count, maxLength, preColor, countColor)
-  -- function num : 0_111 , upvalues : _ENV
+function HelperProxy:GetItemCountStr(count, maxLength, preColor, countColor)
   local dight = 0
   local tmpCount = count
   if tmpCount < 0 then
     tmpCount = -tmpCount
   end
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  if count >= 0 then
-    for i = 1, 7 - (dight) do
+  if 0 <= count then
+    for i = 1, 7 - dight do
       pre = pre .. "0"
     end
   else
-    do
-      for i = 1, 7 - (dight) - 1 do
-        pre = pre .. "0"
-      end
-      do
-        if count > 0 then
-          return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-        else
-          if count == 0 then
-            return (string.format)("<color=" .. preColor .. ">%s</color>", pre)
-          else
-            return (string.format)("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
-          end
-        end
-      end
+    for i = 1, 7 - dight - 1 do
+      pre = pre .. "0"
     end
+  end
+  if 0 < count then
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
+  elseif count == 0 then
+    return string.format("<color=" .. preColor .. ">%s</color>", pre)
+  else
+    return string.format("<color=" .. preColor .. ">%s</color><color=" .. countColor .. ">%s</color>", pre, count)
   end
 end
 
--- DECOMPILER ERROR at PC348: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetPetSkillDescFull = function(self, pet, skillId, replaceByEquipRefine, specialEquipLv)
-  -- function num : 0_112 , upvalues : _ENV
+function HelperProxy:GetPetSkillDescFull(pet, skillId, replaceByEquipRefine, specialEquipLv)
   if not pet or not skillId then
     return ""
   end
@@ -2229,7 +1695,7 @@ HelperProxy.GetPetSkillDescFull = function(self, pet, skillId, replaceByEquipRef
   if not self._skillConfigHelper then
     self._skillConfigHelper = SkillConfigHelper:New()
   end
-  local skillDesc = nil
+  local skillDesc
   if replaceByEquipRefine then
     skillDesc = self:GetEquipRefineSkillReplace(pet, skillId)
     if skillDesc then
@@ -2238,7 +1704,7 @@ HelperProxy.GetPetSkillDescFull = function(self, pet, skillId, replaceByEquipRef
   end
   local skillType = cfg.Type
   if skillType == PetSkillType.SkillType_ChainSkill or skillType == PetSkillType.SkillType_Active then
-    local skillConfigData = (self._skillConfigHelper):GetSkillData(skillId)
+    local skillConfigData = self._skillConfigHelper:GetSkillData(skillId)
     local descForceParam = {}
     if skillType == PetSkillType.SkillType_Active then
       local extraParam = skillConfigData:GetSkillTriggerExtraParam()
@@ -2247,35 +1713,26 @@ HelperProxy.GetPetSkillDescFull = function(self, pet, skillId, replaceByEquipRef
         local modCost = extraParam[SkillTriggerTypeExtraParam.SanChangeByRoundCastTimes]
         local curTimes = 0
         local curCost = baseCost + modCost * curTimes
-        ;
-        (table.insert)(descForceParam, tostring(curCost))
+        table.insert(descForceParam, tostring(curCost))
       end
     end
-    do
-      do
-        skillDesc = skillConfigData:GetPetSkillDes(descForceParam)
-        do
-          local equipLv = nil
-          if specialEquipLv then
-            equipLv = specialEquipLv
-          else
-            equipLv = pet:GetEquipLv()
-          end
-          if equipLv == 0 then
-            equipLv = 1
-          end
-          skillDesc = self:GetEquipSkillDesc(cfg.Desc, pet:GetTemplateID(), equipLv, skillId)
-          return skillDesc
-        end
-      end
+    skillDesc = skillConfigData:GetPetSkillDes(descForceParam)
+  else
+    local equipLv
+    if specialEquipLv then
+      equipLv = specialEquipLv
+    else
+      equipLv = pet:GetEquipLv()
     end
+    if equipLv == 0 then
+      equipLv = 1
+    end
+    skillDesc = self:GetEquipSkillDesc(cfg.Desc, pet:GetTemplateID(), equipLv, skillId)
   end
+  return skillDesc
 end
 
--- DECOMPILER ERROR at PC351: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetEquipRefineSkillReplace = function(self, pet, skillId)
-  -- function num : 0_113 , upvalues : _ENV
+function HelperProxy:GetEquipRefineSkillReplace(pet, skillId)
   if not pet or not skillId then
     return nil
   end
@@ -2283,7 +1740,7 @@ HelperProxy.GetEquipRefineSkillReplace = function(self, pet, skillId)
   if refineLv < 1 then
     return nil
   end
-  local refineConfig = (UIPetEquipHelper.GetRefineCfg)(pet:GetTemplateID(), refineLv)
+  local refineConfig = UIPetEquipHelper.GetRefineCfg(pet:GetTemplateID(), refineLv)
   if not refineConfig then
     return nil
   end
@@ -2291,78 +1748,98 @@ HelperProxy.GetEquipRefineSkillReplace = function(self, pet, skillId)
   if not replaceData then
     return nil
   end
-  local newDesc = nil
-  for k,v in pairs(replaceData) do
+  local newDesc
+  for k, v in pairs(replaceData) do
     newDesc = v[skillId]
-  end
-  do
-    if (newDesc and newDesc ~= "") or newDesc then
-      return (StringTable.Get)(newDesc)
+    if newDesc and newDesc ~= "" then
+      break
     end
-    return nil
   end
+  if newDesc then
+    return StringTable.Get(newDesc)
+  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC354: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.GetLongEventGrade = function(self)
-  -- function num : 0_114
+function HelperProxy:GetLongEventGrade()
   return self._upLvGradeVal
 end
 
--- DECOMPILER ERROR at PC357: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.SetLongEventGrade = function(self, val)
-  -- function num : 0_115
+function HelperProxy:SetLongEventGrade(val)
   self._upLvGradeVal = val
 end
 
--- DECOMPILER ERROR at PC360: Confused about usage of register: R7 in 'UnsetPending'
-
-HelperProxy.SMazeDamageUnit = function(self, num)
-  -- function num : 0_116 , upvalues : _ENV
+function HelperProxy:SMazeDamageUnit(num)
   if not num then
-    (Log.error)("###[HelperProxy] SMazeDamageUnit num is nil !")
+    Log.error("###[HelperProxy] SMazeDamageUnit num is nil !")
     return ""
   end
   local tab = {
-[1] = {9, 3, "K"}
-, 
-[2] = {12, 6, "M"}
-, 
-[3] = {15, -1, "M"}
-}
-  local ret = nil
+    [1] = {
+      9,
+      3,
+      "K"
+    },
+    [2] = {
+      12,
+      6,
+      "M"
+    },
+    [3] = {
+      15,
+      -1,
+      "M"
+    }
+  }
+  local ret
   for i = #tab, 1, -1 do
     local data = tab[i]
-    if (math.pow)(10, data[1] - 1) <= num then
-      local num2 = nil
+    if num >= math.pow(10, data[1] - 1) then
+      local num2
       if data[2] < 0 then
         num2 = "99999999"
       else
-        num2 = tostring((math.modf)(num / (math.pow)(10, data[2])))
+        num2 = tostring(math.modf(num / math.pow(10, data[2])))
       end
       ret = num2 .. data[3]
       break
     end
   end
-  do
-    if ret then
-      return ret
-    else
-      ;
-      (Log.debug)("###[HelperProxy] SMazeDamageUnit ret ori num ! num:", num)
-      return tostring(num), num
-    end
+  if ret then
+    return ret
+  else
+    Log.debug("###[HelperProxy] SMazeDamageUnit ret ori num ! num:", num)
+    return tostring(num), num
   end
 end
 
-local RoleHeadSizeType = {Small = 1, Middle = 2, Big = 3}
+local RoleHeadSizeType = {
+  Small = 1,
+  Middle = 2,
+  Big = 3
+}
 _enum("RoleHeadSizeType", RoleHeadSizeType)
-local RoleHeadTag = {All = 0, QTag = 1, Person = 2, Camp = 3}
+local RoleHeadTag = {
+  All = 0,
+  QTag = 1,
+  Person = 2,
+  Camp = 3
+}
 _enum("RoleHeadTag", RoleHeadTag)
-local RoleHeadFrameSizeType = {Size1 = 1, Size2 = 2, Size3 = 3, Size4 = 4, Size5 = 5, Size6 = 6, Size7 = 7}
+local RoleHeadFrameSizeType = {
+  Size1 = 1,
+  Size2 = 2,
+  Size3 = 3,
+  Size4 = 4,
+  Size5 = 5,
+  Size6 = 6,
+  Size7 = 7
+}
 _enum("RoleHeadFrameSizeType", RoleHeadFrameSizeType)
-local PetAnimatorControllerType = {Battle = 1, Aircraft = 2, Homeland = 3, HomelandStory = 4}
+local PetAnimatorControllerType = {
+  Battle = 1,
+  Aircraft = 2,
+  Homeland = 3,
+  HomelandStory = 4
+}
 _enum("PetAnimatorControllerType", PetAnimatorControllerType)
-

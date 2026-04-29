@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/bag/ui_activity_n29_detective_clue_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN29DetectiveClueTab", UICustomWidget)
 UIActivityN29DetectiveClueTab = UIActivityN29DetectiveClueTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN29DetectiveClueTab.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityN29DetectiveClueTab:Constructor()
   self._curClueItem = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueTab.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityN29DetectiveClueTab:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueTab._GetComponent = function(self)
-  -- function num : 0_2
+function UIActivityN29DetectiveClueTab:_GetComponent()
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._place = self:GetUIComponent("UILocalizationText", "place")
@@ -33,121 +20,82 @@ UIActivityN29DetectiveClueTab._GetComponent = function(self)
   self._arrowObj = self:GetGameObject("arrow")
   self._tabObj = self:GetGameObject("tab")
   self._anim = self:GetUIComponent("Animation", "tab")
-  ;
-  ((self._scrollRect).onValueChanged):AddListener(function(ve2)
-    -- function num : 0_2_0 , upvalues : self
-    if ve2.y <= 0 and (self._arrowObj).activeSelf then
-      (self._arrowObj):SetActive(false)
+  self._scrollRect.onValueChanged:AddListener(function(ve2)
+    if ve2.y <= 0 and self._arrowObj.activeSelf then
+      self._arrowObj:SetActive(false)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueTab.SetData = function(self, data)
-  -- function num : 0_3
+function UIActivityN29DetectiveClueTab:SetData(data)
   self._clueInfo = data
   self:InitContent()
   self:RefreshInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueTab.RefreshInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN29DetectiveClueTab:RefreshInfo()
   if self._curClueItem then
-    local cfg = (self._curClueItem):GetCfg()
-    ;
-    (self._name):SetText((StringTable.Get)(cfg.Name))
-    ;
-    (self._place):SetText((StringTable.Get)(cfg.Place))
-    ;
-    (self._info):SetText((StringTable.Get)(cfg.Info))
-    ;
-    (self._icon):LoadImage(cfg.Icon)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._contentRect).anchoredPosition = Vector2(0, 0)
+    local cfg = self._curClueItem:GetCfg()
+    self._name:SetText(StringTable.Get(cfg.Name))
+    self._place:SetText(StringTable.Get(cfg.Place))
+    self._info:SetText(StringTable.Get(cfg.Info))
+    self._icon:LoadImage(cfg.Icon)
+    self._contentRect.anchoredPosition = Vector2(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueTab.InitContent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local list = (self._clueInfo).clue_list
+function UIActivityN29DetectiveClueTab:InitContent()
+  local list = self._clueInfo.clue_list
   local len = #list
-  ;
-  (self._arrowObj):SetActive(len > 6)
-  self._widgets = (self._content):SpawnObjects("UIActivityN29DetectiveClueItem", #list)
-  for i,v in pairs(list) do
-    local widget = (self._widgets)[i]
+  self._arrowObj:SetActive(6 < len)
+  self._widgets = self._content:SpawnObjects("UIActivityN29DetectiveClueItem", #list)
+  for i, v in pairs(list) do
+    local widget = self._widgets[i]
     widget:SetSelect(false)
     local idx = len - i + 1
-    local cfg = (Cfg.cfg_component_detective_item)[list[idx]]
+    local cfg = Cfg.cfg_component_detective_item[list[idx]]
     widget:SetData(cfg, i, function(item)
-    -- function num : 0_5_0 , upvalues : self
-    self:ItemClickCallbcak(item)
-  end
-)
+      self:ItemClickCallbcak(item)
+    end)
     if not self._curClueItem then
       widget:ItemBtnOnClick()
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueTab.SetActive = function(self, isActive, isAnim)
-  -- function num : 0_6
+function UIActivityN29DetectiveClueTab:SetActive(isActive, isAnim)
   self:StartTask(self._ActiveAnim, self, isActive, isAnim)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueTab._ActiveAnim = function(self, TT, isActive, isAnim)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN29DetectiveClueTab:_ActiveAnim(TT, isActive, isAnim)
   if isActive then
-    (self._tabObj):SetActive(true)
+    self._tabObj:SetActive(true)
   else
     if isAnim then
-      (self._anim):Play("uieff_UIN29DetectiveClueTab_out")
+      self._anim:Play("uieff_UIN29DetectiveClueTab_out")
       YIELD(TT, 200)
     end
-    ;
-    (self._tabObj):SetActive(false)
+    self._tabObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueTab.ItemClickCallbcak = function(self, item)
-  -- function num : 0_8
+function UIActivityN29DetectiveClueTab:ItemClickCallbcak(item)
   if self._curClueItem == item then
-    return 
+    return
   end
   if self._curClueItem then
-    (self._curClueItem):SetSelect(false)
+    self._curClueItem:SetSelect(false)
   end
   self._curClueItem = item
   self:RefreshInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN29DetectiveClueTab.CloseBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._anim):Play("uieff_UIN29DetectiveClueTab_out")
-  local controller = ((GameGlobal.UIStateManager)()):GetController("UIActivityN29DetectiveBagController")
+function UIActivityN29DetectiveClueTab:CloseBtnOnClick()
+  self._anim:Play("uieff_UIN29DetectiveClueTab_out")
+  local controller = GameGlobal.UIStateManager():GetController("UIActivityN29DetectiveBagController")
   if controller then
     controller:Close()
   else
-    ;
-    (Log.fatal)("不存在UIActivityN29DetectiveBagController，请检查！！！")
+    Log.fatal("不存在UIActivityN29DetectiveBagController，请检查！！！")
   end
 end
-
-

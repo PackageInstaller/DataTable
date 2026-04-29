@@ -1,164 +1,125 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_style_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStyleHelper", Object)
 UIStyleHelper = UIStyleHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStyleHelper._Type2Func = function(styleInfo)
-  -- function num : 0_0 , upvalues : _ENV
-  local assembler_map = {GameObject = UIStyleHelper.FitStyle_Widget_Active, Image = UIStyleHelper.FitStyle_Widget_Image, RawImage = UIStyleHelper.FitStyle_Widget_RawImage, LocalizationText = UIStyleHelper.FitStyle_Widget_LocalizationText}
+function UIStyleHelper._Type2Func(styleInfo)
+  local assembler_map = {
+    GameObject = UIStyleHelper.FitStyle_Widget_Active,
+    Image = UIStyleHelper.FitStyle_Widget_Image,
+    RawImage = UIStyleHelper.FitStyle_Widget_RawImage,
+    LocalizationText = UIStyleHelper.FitStyle_Widget_LocalizationText
+  }
   local tb_out = {}
   local type = styleInfo and styleInfo.type or ""
   local assembler = assembler_map[type]
   if assembler ~= nil then
-    (table.insert)(tb_out, assembler)
+    table.insert(tb_out, assembler)
   else
-    tb_out = (table.values)(assembler_map)
+    tb_out = table.values(assembler_map)
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStyleHelper._Log = function(styleInfo, uiView, widgetName)
-  -- function num : 0_1 , upvalues : _ENV
+function UIStyleHelper._Log(styleInfo, uiView, widgetName)
   local uiName = uiView and uiView:GetName() or ""
   local name = styleInfo and styleInfo.name or ""
   local type = styleInfo and styleInfo.type or ""
   local fmt = "uiView=%s, widgetName=%s, name=%s, type=%s"
-  local str = (string.format)(fmt, uiName, widgetName, name, type)
-  ;
-  (Log.debug)("UIStyleHelper.FitStyle_Widget() ", str)
+  local str = string.format(fmt, uiName, widgetName, name, type)
+  Log.debug("UIStyleHelper.FitStyle_Widget() ", str)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStyleHelper.FitStyle_Widget = function(styleInfo, uiView, widgetName)
-  -- function num : 0_2 , upvalues : _ENV
+function UIStyleHelper.FitStyle_Widget(styleInfo, uiView, widgetName)
   if styleInfo then
-    (UIStyleHelper._Log)(styleInfo, uiView, widgetName)
-    local funcs = (UIStyleHelper._Type2Func)(styleInfo)
-    for _,func in pairs(funcs) do
+    UIStyleHelper._Log(styleInfo, uiView, widgetName)
+    local funcs = UIStyleHelper._Type2Func(styleInfo)
+    for _, func in pairs(funcs) do
       func(styleInfo, uiView, widgetName)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStyleHelper.FitStyle_Widget_Active = function(styleInfo, uiView, widgetName)
-  -- function num : 0_3
+function UIStyleHelper.FitStyle_Widget_Active(styleInfo, uiView, widgetName)
   local active = styleInfo.active
   if active ~= nil then
-    (uiView:GetGameObject(widgetName)):SetActive(active)
+    uiView:GetGameObject(widgetName):SetActive(active)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStyleHelper.FitStyle_Widget_Image = function(styleInfo, uiView, widgetName)
-  -- function num : 0_4 , upvalues : _ENV
+function UIStyleHelper.FitStyle_Widget_Image(styleInfo, uiView, widgetName)
   local atlasName, spriteName = styleInfo.atlasName, styleInfo.spriteName
   if atlasName and spriteName then
-    (UIWidgetHelper.SetImageSprite)(uiView, widgetName, atlasName, spriteName)
+    UIWidgetHelper.SetImageSprite(uiView, widgetName, atlasName, spriteName)
   end
   local imageColor = styleInfo.imageColor
   if imageColor then
     local obj = uiView:GetUIComponent("Image", widgetName)
-    local c = (UIStyleHelper._GetColorByHex)(imageColor)
+    local c = UIStyleHelper._GetColorByHex(imageColor)
     obj.color = c
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStyleHelper.FitStyle_Widget_RawImage = function(styleInfo, uiView, widgetName)
-  -- function num : 0_5 , upvalues : _ENV
+function UIStyleHelper.FitStyle_Widget_RawImage(styleInfo, uiView, widgetName)
   local rawImageName = styleInfo.rawImageName
   if rawImageName then
-    (UIWidgetHelper.SetRawImage)(uiView, widgetName, rawImageName)
+    UIWidgetHelper.SetRawImage(uiView, widgetName, rawImageName)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStyleHelper.FitStyle_Widget_LocalizationText = function(styleInfo, uiView, widgetName)
-  -- function num : 0_6 , upvalues : _ENV
+function UIStyleHelper.FitStyle_Widget_LocalizationText(styleInfo, uiView, widgetName)
   local color = styleInfo.color
   if color then
     local obj = uiView:GetUIComponent("UILocalizationText", widgetName)
-    local c = (UIStyleHelper._GetColorByHex)(color)
+    local c = UIStyleHelper._GetColorByHex(color)
     obj.color = c
   end
-  do
-    local textColor = styleInfo.textColor
-    local textStrId = styleInfo.textStrId
-    if textColor or textStrId then
-      local obj = uiView:GetUIComponent("UILocalizationText", widgetName)
-      do
-        do
-          if textColor then
-            local c = (UIStyleHelper._GetColorByHex)(textColor)
-            obj.color = c
-          end
-          if textStrId then
-            obj:SetText((StringTable.Get)(textStrId))
-          end
-          local outlineColor = styleInfo.outlineColor
-          if outlineColor then
-            local obj = uiView:GetUIComponent("H3D.UGUI.CircleOutline", widgetName)
-            if obj == nil then
-              obj = uiView:GetUIComponent("Outline", widgetName)
-            end
-            if obj ~= nil then
-              local c = (UIStyleHelper._GetColorByHex)(outlineColor)
-              obj.effectColor = c
-            end
-          end
-        end
-      end
+  local textColor = styleInfo.textColor
+  local textStrId = styleInfo.textStrId
+  if textColor or textStrId then
+    local obj = uiView:GetUIComponent("UILocalizationText", widgetName)
+    if textColor then
+      local c = UIStyleHelper._GetColorByHex(textColor)
+      obj.color = c
+    end
+    if textStrId then
+      obj:SetText(StringTable.Get(textStrId))
+    end
+  end
+  local outlineColor = styleInfo.outlineColor
+  if outlineColor then
+    local obj = uiView:GetUIComponent("H3D.UGUI.CircleOutline", widgetName)
+    if obj == nil then
+      obj = uiView:GetUIComponent("Outline", widgetName)
+    end
+    if obj ~= nil then
+      local c = UIStyleHelper._GetColorByHex(outlineColor)
+      obj.effectColor = c
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStyleHelper._GetColorByHex = function(text)
-  -- function num : 0_7 , upvalues : _ENV
+function UIStyleHelper._GetColorByHex(text)
   local tb = {}
   for i = 2, 8, 2 do
     local j = i + 1
-    local str = j <= #text and (string.sub)(text, i, j) or "FF"
-    local num = tonumber((string.format)("%d", "0x" .. str))
-    ;
-    (table.insert)(tb, num)
+    local str = j <= #text and string.sub(text, i, j) or "FF"
+    local num = tonumber(string.format("%d", "0x" .. str))
+    table.insert(tb, num)
   end
   local r, g, b, a = tb[1], tb[2], tb[3], tb[4]
   return Color(r / 255, g / 255, b / 255, a / 255)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStyleHelper.FitStyle_RichText = function(styleInfo, text)
-  -- function num : 0_8 , upvalues : _ENV
+function UIStyleHelper.FitStyle_RichText(styleInfo, text)
   if styleInfo then
-    return (UIActivityHelper.GetRichText)(styleInfo, text)
+    return UIActivityHelper.GetRichText(styleInfo, text)
   end
   return text
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStyleHelper.ChangeColorStr_Style = function(styleColor, colorNormal, colorRed, change, a, b)
-  -- function num : 0_9 , upvalues : _ENV
+function UIStyleHelper.ChangeColorStr_Style(styleColor, colorNormal, colorRed, change, a, b)
   local normal = styleColor or colorNormal
   local red = colorRed
   local c = change and red or normal
-  local str = (UIActivityHelper.GetColorText)(c, a, normal, "/" .. b)
+  local str = UIActivityHelper.GetColorText(c, a, normal, "/" .. b)
   return str
 end
-
-

@@ -1,44 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_video_v2_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawVideoV2Controller", UIController)
 UIHauteCoutureDrawVideoV2Controller = UIHauteCoutureDrawVideoV2Controller
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawVideoV2Controller.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawVideoV2Controller:Constructor()
   self.main = nil
   self.bg = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawVideoV2Controller.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDrawVideoV2Controller:OnShow(uiParams)
   local main = self:GetUIComponent("UISelectObjectPath", "uiRoot")
   self._ctx = uiParams[1]
-  self.hcType = (self._ctx):HC_Type()
+  self.hcType = self._ctx:HC_Type()
   if self.hcType == HauteCoutureType.HC_GL then
-    (main.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawVideoMainGL.prefab")
+    main.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawVideoMainGL.prefab")
     self.main = main:SpawnObject("UIHauteCoutureDrawVideoMainGL")
+  elseif self.hcType == HauteCoutureType.HC_KR then
+    main.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawVideoMainKR.prefab")
+    self.main = main:SpawnObject("UIHauteCoutureDrawVideoMainKR")
+  elseif self.hcType == HauteCoutureType.HC_KR then
+    main.dynamicInfoOfEngine:SetObjectName("UIHauteCoutureDrawVideoMainBLH.prefab")
+    self.main = main:SpawnObject("UIHauteCoutureDrawVideoMainBLH")
   else
-    if self.hcType == HauteCoutureType.HC_KR then
-      (main.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawVideoMainKR.prefab")
-      self.main = main:SpawnObject("UIHauteCoutureDrawVideoMainKR")
-    else
-      if self.hcType == HauteCoutureType.HC_KR then
-        (main.dynamicInfoOfEngine):SetObjectName("UIHauteCoutureDrawVideoMainBLH.prefab")
-        self.main = main:SpawnObject("UIHauteCoutureDrawVideoMainBLH")
-      else
-        local prefab, class = (self._ctx):GetVideoUIInfo()
-        ;
-        (main.dynamicInfoOfEngine):SetObjectName(prefab)
-        self.main = main:SpawnObject(class._className)
-      end
-    end
+    local prefab, class = self._ctx:GetVideoUIInfo()
+    main.dynamicInfoOfEngine:SetObjectName(prefab)
+    self.main = main:SpawnObject(class._className)
   end
 end
-
-

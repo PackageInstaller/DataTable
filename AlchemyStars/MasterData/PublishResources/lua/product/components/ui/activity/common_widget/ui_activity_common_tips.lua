@@ -1,43 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_activity_common_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCommonTips", UICustomWidget)
 UIActivityCommonTips = UIActivityCommonTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCommonTips.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityCommonTips:OnShow()
   self._hideBtn = self:GetGameObject("_hideBtn")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTips.SetData = function(self, className, prefabName, pos, argsTable)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._hideBtn):SetActive(true)
-  local tipsPool = (self:GetGameObject("_tipsPool")).transform
+function UIActivityCommonTips:SetData(className, prefabName, pos, argsTable)
+  self._hideBtn:SetActive(true)
+  local tipsPool = self:GetGameObject("_tipsPool").transform
   tipsPool.anchoredPosition = Vector2(10000, 0)
   tipsPool.localScale = Vector3(1, 1, 1)
   tipsPool.position = pos
-  self._tips = (UIWidgetHelper.SpawnObject)(self, "_tipsPool", className, prefabName)
-  ;
-  (self._tips):SetData((table.unpack)(argsTable))
-  ;
-  ((self._tips):GetGameObject()):SetActive(true)
+  self._tips = UIWidgetHelper.SpawnObject(self, "_tipsPool", className, prefabName)
+  self._tips:SetData(table.unpack(argsTable))
+  self._tips:GetGameObject():SetActive(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCommonTips.HideBtnOnClick = function(self, go)
-  -- function num : 0_2
-  (self._hideBtn):SetActive(false)
-  ;
-  ((self._tips):GetGameObject()):SetActive(false)
-  if (self._tips).HideBtnOnClick then
-    (self._tips):HideBtnOnClick(go)
+function UIActivityCommonTips:HideBtnOnClick(go)
+  self._hideBtn:SetActive(false)
+  self._tips:GetGameObject():SetActive(false)
+  if self._tips.HideBtnOnClick then
+    self._tips:HideBtnOnClick(go)
   end
 end
-
-

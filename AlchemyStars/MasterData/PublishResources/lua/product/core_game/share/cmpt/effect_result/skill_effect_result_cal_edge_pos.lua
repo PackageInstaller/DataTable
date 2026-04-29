@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_cal_edge_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultCalEdgePos", SkillEffectResultBase)
 SkillEffectResultCalEdgePos = SkillEffectResultCalEdgePos
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultCalEdgePos.Constructor = function(self, farestIdx, posArr, dirArr)
-  -- function num : 0_0
+function SkillEffectResultCalEdgePos:Constructor(farestIdx, posArr, dirArr)
   self.farestIdx = farestIdx
   self.posArr = posArr
   self.dirArr = dirArr
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultCalEdgePos.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultCalEdgePos:GetEffectType()
   return SkillEffectType.CalEdgePos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultCalEdgePos.GetFarestIdx = function(self)
-  -- function num : 0_2
+function SkillEffectResultCalEdgePos:GetFarestIdx()
   return self.farestIdx
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultCalEdgePos.GetPosArr = function(self)
-  -- function num : 0_3
+function SkillEffectResultCalEdgePos:GetPosArr()
   return self.posArr
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultCalEdgePos.GetDirArr = function(self)
-  -- function num : 0_4
+function SkillEffectResultCalEdgePos:GetDirArr()
   return self.dirArr
 end
-
-

@@ -1,136 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/mining/ui_homeland_mining.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMining", UICustomWidget)
 UIHomelandMining = UIHomelandMining
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMining.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMining:OnShow()
   self._btn = self:GetGameObject("MineBtn")
-  ;
-  (self._btn):SetActive(false)
+  self._btn:SetActive(false)
   self._curOre = nil
   self._doMining = false
   self._miningTaskID = nil
   self._minCutTriggerTime = 100
-  self._homelandMiningManager = (((GameGlobal.GetUIModule)(HomelandModule)):GetClient()):HomelandMiningManager()
-  local etl = (UICustomUIEventListener.Get)(self._btn)
+  self._homelandMiningManager = GameGlobal.GetUIModule(HomelandModule):GetClient():HomelandMiningManager()
+  local etl = UICustomUIEventListener.Get(self._btn)
   self:AddUICustomEventListener(etl, UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
     self:OnPress()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : self
     self:OnRelease()
-  end
-)
+  end)
   self:AttachEvent(GameEventType.EnterBuildInteract, self.EnterBuildInteractEventHandle)
   self:AttachEvent(GameEventType.LeaveBuildInteract, self.LeaveBuildInteractEventHandle)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMining.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandMining:OnHide()
   self._doMining = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMining.OnPress = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandMining:OnPress()
   self._doMining = true
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._btn).transform).localScale = Vector3(0.95, 0.95, 0.95)
-  if not ((GameGlobal.TaskManager)()):FindTask(self._miningTaskID) then
+  self._btn.transform.localScale = Vector3(0.95, 0.95, 0.95)
+  if not GameGlobal.TaskManager():FindTask(self._miningTaskID) then
     self._miningTaskID = self:StartTask(UIHomelandMining.MiningTask, self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMining.OnRelease = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandMining:OnRelease()
   self._doMining = false
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._btn).transform).localScale = Vector3(1, 1, 1)
+  self._btn.transform.localScale = Vector3(1.0, 1.0, 1.0)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMining.MiningTask = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandMining:MiningTask(TT)
   while self._doMining and self._curOre do
-    if not (self._homelandMiningManager):IsCutting() then
-      (self._homelandMiningManager):CutOre(self._curOre)
+    if not self._homelandMiningManager:IsCutting() then
+      self._homelandMiningManager:CutOre(self._curOre)
     end
     YIELD(TT, self._minCutTriggerTime)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMining.EnterBuildInteractEventHandle = function(self, interactPoint)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMining:EnterBuildInteractEventHandle(interactPoint)
   if interactPoint:GetPointType() == InteractPointType.Mining then
-    if not ((GameGlobal.GetModule)(HomelandModule)):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_MINING_UI) then
-      return 
+    if not GameGlobal.GetModule(HomelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_MINING_UI) then
+      return
     end
-    if not (self._homelandMiningManager):HavePickAxe() then
-      return 
+    if not self._homelandMiningManager:HavePickAxe() then
+      return
     end
-    local ore = (self._homelandMiningManager):GetNearestOreCanCut()
+    local ore = self._homelandMiningManager:GetNearestOreCanCut()
     if not ore then
-      return 
+      return
     end
     if ore == self._curOre then
-      return 
+      return
     end
     self._curOre = ore
-    ;
-    (self._curOre):EnterInteractScope()
-    ;
-    (self._btn):SetActive(true)
+    self._curOre:EnterInteractScope()
+    self._btn:SetActive(true)
     self:_CheckGuide()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMining.LeaveBuildInteractEventHandle = function(self, interactPoint)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandMining:LeaveBuildInteractEventHandle(interactPoint)
   if interactPoint:GetPointType() == InteractPointType.Mining then
-    if not ((GameGlobal.GetModule)(HomelandModule)):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_MINING_UI) then
-      return 
+    if not GameGlobal.GetModule(HomelandModule):CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_MINING_UI) then
+      return
     end
-    if not (self._homelandMiningManager):HavePickAxe() then
-      return 
+    if not self._homelandMiningManager:HavePickAxe() then
+      return
     end
-    ;
-    (self._btn):SetActive(false)
+    self._btn:SetActive(false)
     if self._curOre then
-      (self._curOre):LeaveInteractScope()
+      self._curOre:LeaveInteractScope()
       self._curOre = nil
     else
-      ;
-      (Log.fatal)("[Homeland] UIHomelandMining cur Ore is nil")
+      Log.fatal("[Homeland] UIHomelandMining cur Ore is nil")
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMining._CheckGuide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandMining)
+function UIHomelandMining:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandMining)
 end
-
-

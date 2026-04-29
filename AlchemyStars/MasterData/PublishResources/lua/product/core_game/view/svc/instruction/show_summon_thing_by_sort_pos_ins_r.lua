@@ -1,108 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/show_summon_thing_by_sort_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("ShowSummonThingBySortPosInstruction", BaseInstruction)
 ShowSummonThingBySortPosInstruction = ShowSummonThingBySortPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ShowSummonThingBySortPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function ShowSummonThingBySortPosInstruction:Constructor(paramList)
   self._sortType = tonumber(paramList.sortType)
   self._eachDelayTime = tonumber(paramList.eachDelayTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowSummonThingBySortPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function ShowSummonThingBySortPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   if skillEffectResultContainer == nil then
-    (Log.fatal)("ShowSummonThingBySortPosInstruction has no skill effect result")
-    return 
+    Log.fatal("ShowSummonThingBySortPosInstruction has no skill effect result")
+    return
   end
   local summonResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.SummonEverything)
   if not summonResultArray then
-    return 
+    return
   end
-  local sortedResultArray = nil
+  local sortedResultArray
   if self._sortType == GridRangeSortType.XYSmallToLargeSort then
     sortedResultArray = self:_XYSmallToLargeSort(summonResultArray)
   end
   local taskIDs = {}
-  for _,summonRes in ipairs(sortedResultArray) do
+  for _, summonRes in ipairs(sortedResultArray) do
     if not summonRes then
-      (Log.fatal)("### ShowSummonThingBySortPosInstruction SkillEffectResult_SummonEverything nil")
-      return 
+      Log.fatal("### ShowSummonThingBySortPosInstruction SkillEffectResult_SummonEverything nil")
+      return
     end
     local summonType = summonRes:GetSummonType()
     if summonType == SkillEffectEnum_SummonType.Monster then
       local summonMonsterData = summonRes:GetMonsterData()
-      do
-        local summonTransformData = summonRes:GetSummonTransformData()
-        local entityWork = world:GetEntityByID(summonMonsterData.m_entityWorkID)
-        local sMonsterShowRender = world:GetService("MonsterShowRender")
-        local taskID = (TaskManager:GetInstance()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : sMonsterShowRender, entityWork, summonTransformData
-    sMonsterShowRender:ShowSummonMonster(TT, entityWork, summonTransformData, true)
-  end
-)
-        ;
-        (table.insert)(taskIDs, taskID)
-        YIELD(TT, self._eachDelayTime)
-      end
+      local summonTransformData = summonRes:GetSummonTransformData()
+      local entityWork = world:GetEntityByID(summonMonsterData.m_entityWorkID)
+      local sMonsterShowRender = world:GetService("MonsterShowRender")
+      local taskID = TaskManager:GetInstance():CoreGameStartTask(function(TT)
+        sMonsterShowRender:ShowSummonMonster(TT, entityWork, summonTransformData, true)
+      end)
+      table.insert(taskIDs, taskID)
+      YIELD(TT, self._eachDelayTime)
+    elseif summonType == SkillEffectEnum_SummonType.Trap then
     else
-    end
-    do
-      if summonType == SkillEffectEnum_SummonType.Trap then
-        do
-          (Log.fatal)("### ShowSummonThingBySortPosInstruction summonType=", summonType)
-          -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
-          -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
+      Log.fatal("### ShowSummonThingBySortPosInstruction summonType=", summonType)
     end
   end
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDs) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDs) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowSummonThingBySortPosInstruction._XYSmallToLargeSort = function(self, summonResultArray)
-  -- function num : 0_2 , upvalues : _ENV
+function ShowSummonThingBySortPosInstruction:_XYSmallToLargeSort(summonResultArray)
   local sortedArray = {}
   local tmpList = {}
-  for _,result in pairs(summonResultArray) do
-    (table.insert)(tmpList, result)
+  for _, result in pairs(summonResultArray) do
+    table.insert(tmpList, result)
   end
-  local sortDicFunc = function(a, b)
-    -- function num : 0_2_0
+  
+  local function sortDicFunc(a, b)
     local posA = a:GetSummonPos()
     local posB = b:GetSummonPos()
     local disA = posA.x + posA.y
     local disB = posB.x + posB.y
-    if posB.x >= posA.x then
-      do return disA ~= disB end
-      do return disA < disB end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    if disA == disB then
+      return posA.x > posB.x
+    else
+      return disA < disB
     end
   end
-
-  ;
-  (table.sort)(tmpList, sortDicFunc)
-  for _,summonRes in ipairs(tmpList) do
-    (table.insert)(sortedArray, summonRes)
+  
+  table.sort(tmpList, sortDicFunc)
+  for _, summonRes in ipairs(tmpList) do
+    table.insert(sortedArray, summonRes)
   end
   return sortedArray
 end
-
-

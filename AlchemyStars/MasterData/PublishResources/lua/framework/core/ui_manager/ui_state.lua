@@ -1,109 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIState", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIState.Constructor = function(self, sceneName, ...)
-  -- function num : 0_0 , upvalues : _ENV
-  self.defaultUIList = {...}
+function UIState:Constructor(sceneName, ...)
+  self.defaultUIList = {
+    ...
+  }
   self.type = UIStateType.Invalid
   self._bExitScreenShot = false
   self.sceneName = sceneName
   self.uiControllerManager = nil
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.Init = function(self, uiStateType, uiControllerManager)
-  -- function num : 0_1
+function UIState:Init(uiStateType, uiControllerManager)
   self.type = uiStateType
   self.uiControllerManager = uiControllerManager
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.SetExitScreenShot = function(self, bss)
-  -- function num : 0_2
+function UIState:SetExitScreenShot(bss)
   self._bExitScreenShot = bss
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.GetExitScreenShot = function(self)
-  -- function num : 0_3
+function UIState:GetExitScreenShot()
   return self._bExitScreenShot
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.Dispose = function(self)
-  -- function num : 0_4
+function UIState:Dispose()
   if self.scene then
-    (self.scene):Dispose()
+    self.scene:Dispose()
     self.scene = nil
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.GetType = function(self)
-  -- function num : 0_5
+function UIState:GetType()
   return self.type
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.GetSceneName = function(self)
-  -- function num : 0_6
+function UIState:GetSceneName()
   return self.sceneName
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.SetSceneName = function(self, value)
-  -- function num : 0_7
+function UIState:SetSceneName(value)
   self.sceneName = value
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.GetDefaultUIList = function(self)
-  -- function num : 0_8
+function UIState:GetDefaultUIList()
   return self.defaultUIList
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.SetScene = function(self, scene)
-  -- function num : 0_9
+function UIState:SetScene(scene)
   self.scene = scene
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.IsShow = function(self)
-  -- function num : 0_10
-  return (self.uiControllerManager):IsLayerShow(0)
+function UIState:IsShow()
+  return self.uiControllerManager:IsLayerShow(0)
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.Show = function(self, flag)
-  -- function num : 0_11
+function UIState:Show(flag)
   if self:IsShow() == flag then
-    return 
+    return
   end
-  ;
-  (self.uiControllerManager):ShowLayer(0, flag)
+  self.uiControllerManager:ShowLayer(0, flag)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.Exit = function(self, TT, nextState)
-  -- function num : 0_12 , upvalues : _ENV
+function UIState:Exit(TT, nextState)
   local temp_deleteUIList = FastArray:New()
   local temp_hideUIList = FastArray:New()
   self:GetCloseUIList(self, nextState, temp_deleteUIList, temp_hideUIList)
@@ -122,272 +80,221 @@ UIState.Exit = function(self, TT, nextState)
   local subTaskList = {}
   for i = 1, deleteUIList:Size() do
     local name = deleteUIList:GetAt(i)
-    local uiController = (self.uiControllerManager):GetController(name)
+    local uiController = self.uiControllerManager:GetController(name)
     uiController:SetHideUnderLayerFlag(false)
-    subTaskList[#subTaskList + 1] = ((GameGlobal.TaskManager)()):StartTask(UIControllerManager.BeforeHideUI, self.uiControllerManager, name)
+    subTaskList[#subTaskList + 1] = GameGlobal.TaskManager():StartTask(UIControllerManager.BeforeHideUI, self.uiControllerManager, name)
   end
   for i = 1, hideUIList:Size() do
     local name = hideUIList:GetAt(i)
-    local uiController = (self.uiControllerManager):GetController(name)
+    local uiController = self.uiControllerManager:GetController(name)
     uiController:SetHideUnderLayerFlag(false)
-    subTaskList[#subTaskList + 1] = ((GameGlobal.TaskManager)()):StartTask(UIControllerManager.BeforeHideUI, self.uiControllerManager, name)
+    subTaskList[#subTaskList + 1] = GameGlobal.TaskManager():StartTask(UIControllerManager.BeforeHideUI, self.uiControllerManager, name)
   end
   for i = 1, #subTaskList do
     JOIN(TT, subTaskList[i])
   end
   for i = 1, deleteUIList:Size() do
     local name = deleteUIList:GetAt(i)
-    ;
-    (self.uiControllerManager):HideUI(name)
+    self.uiControllerManager:HideUI(name)
   end
   for i = 1, hideUIList:Size() do
     local name = hideUIList:GetAt(i)
-    ;
-    (self.uiControllerManager):HideUI(name, true)
+    self.uiControllerManager:HideUI(name, true)
   end
   for i = 1, deleteUIList:Size() do
     local name = deleteUIList:GetAt(i)
-    ;
-    (self.uiControllerManager):AfterHideUI(name)
+    self.uiControllerManager:AfterHideUI(name)
   end
   for i = 1, hideUIList:Size() do
     local name = hideUIList:GetAt(i)
-    ;
-    (self.uiControllerManager):AfterHideUI(name, true)
+    self.uiControllerManager:AfterHideUI(name, true)
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.PreLoad = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function UIState:PreLoad(TT)
   local res = UIStateSwitchReq:New()
   local defaultUIList = self.defaultUIList
   for i = 1, #defaultUIList do
     local name = defaultUIList[i]
-    if not (self.uiControllerManager):IsShow(name) then
-      (self.uiControllerManager):LoadUI(TT, name, res)
+    if not self.uiControllerManager:IsShow(name) then
+      self.uiControllerManager:LoadUI(TT, name, res)
     end
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.TryEnter = function(self, TT, curState, res, uiParams, nextDialogListInfo)
-  -- function num : 0_14 , upvalues : _ENV
+function UIState:TryEnter(TT, curState, res, uiParams, nextDialogListInfo)
   res:SetSucc(true)
-  ;
-  (Log.debug)("[ui] UIState:TryEnter ", curState)
+  Log.debug("[ui] UIState:TryEnter ", curState)
   local defaultUIList = self.defaultUIList
   for i = 1, #defaultUIList do
     local name = defaultUIList[i]
-    ;
-    (Log.debug)("[ui] uiControllerManager:TryShowUI start", name)
-    ;
-    (self.uiControllerManager):TryShowUI(TT, name, res, uiParams)
-    ;
-    (Log.debug)("[ui] uiControllerManager:TryShowUI end", name)
+    Log.debug("[ui] uiControllerManager:TryShowUI start", name)
+    self.uiControllerManager:TryShowUI(TT, name, res, uiParams)
+    Log.debug("[ui] uiControllerManager:TryShowUI end", name)
     if not res:GetSucc() then
-      (Log.debug)("[ui] uiControllerManager:TryShowUI error", name)
+      Log.debug("[ui] uiControllerManager:TryShowUI error", name)
       break
     end
   end
-  do
-    if res:GetSucc() and nextDialogListInfo then
-      local uiList = nextDialogListInfo:GetUIList()
-      for i = 1, #uiList do
-        (self.uiControllerManager):TryShowUI(TT, (uiList[i])[1], res, (uiList[i])[2])
-        local uiController = (self.uiControllerManager):GetController((uiList[i])[1])
-        uiController:SetHideUnderLayerFlag(i == #uiList)
+  if res:GetSucc() then
+    if not nextDialogListInfo then
+      goto lbl_124
+    end
+    local uiList = nextDialogListInfo:GetUIList()
+    for i = 1, #uiList do
+      self.uiControllerManager:TryShowUI(TT, uiList[i][1], res, uiList[i][2])
+      local uiController = self.uiControllerManager:GetController(uiList[i][1])
+      uiController:SetHideUnderLayerFlag(i == #uiList)
+      if not res:GetSucc() then
+        break
       end
-      if not res:GetSucc() or not res:GetSucc() then
-        for i = 1, #uiList do
-          local uiName = (uiList[i])[1]
-          if not (self.uiControllerManager):IsShow(uiName) then
-            (self.uiControllerManager):ForceUnLoadUI(uiName)
-          end
+    end
+    if not res:GetSucc() then
+      for i = 1, #uiList do
+        local uiName = uiList[i][1]
+        if not self.uiControllerManager:IsShow(uiName) then
+          self.uiControllerManager:ForceUnLoadUI(uiName)
         end
       end
     end
-    ;
-    (Log.debug)("[UI] UIState:TryEnter error", curState)
+  else
+    Log.debug("[UI] UIState:TryEnter error", curState)
     for i = 1, #defaultUIList do
       local name = defaultUIList[i]
-      if not (self.uiControllerManager):IsShow(name) then
-        (self.uiControllerManager):ForceUnLoadUI(name)
+      if not self.uiControllerManager:IsShow(name) then
+        self.uiControllerManager:ForceUnLoadUI(name)
       end
     end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
   end
+  ::lbl_124::
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.Enter = function(self, curState, res, uiParams, nextDialogListInfo)
-  -- function num : 0_15 , upvalues : _ENV
+function UIState:Enter(curState, res, uiParams, nextDialogListInfo)
   self:Show(true)
   local defaultUIList = self.defaultUIList
   for i = 1, #defaultUIList do
     local name = defaultUIList[i]
-    ;
-    (self.uiControllerManager):ShowUI(name, res, uiParams, 0)
+    self.uiControllerManager:ShowUI(name, res, uiParams, 0)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateLayerTopDepth)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateLayerTopDepth)
   if nextDialogListInfo then
     local dialogList = nextDialogListInfo:GetUIList()
     for i = 1, #dialogList do
-      (self.uiControllerManager):ShowUI((dialogList[i])[1], res, (dialogList[i])[2], i)
+      self.uiControllerManager:ShowUI(dialogList[i][1], res, dialogList[i][2], i)
     end
   end
-  do
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AfterUILayerChanged)
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.AfterEnter = function(self, TT, curState, res, uiParams, nextDialogListInfo)
-  -- function num : 0_16 , upvalues : _ENV
+function UIState:AfterEnter(TT, curState, res, uiParams, nextDialogListInfo)
   res:SetSucc(true)
   local subTaskList = {}
   local defaultUIList = self.defaultUIList
   for i = 1, #defaultUIList do
     local name = defaultUIList[i]
-    subTaskList[#subTaskList + 1] = ((GameGlobal.TaskManager)()):StartTask(UIControllerManager.AfterShowUI, self.uiControllerManager, name, res, uiParams)
+    subTaskList[#subTaskList + 1] = GameGlobal.TaskManager():StartTask(UIControllerManager.AfterShowUI, self.uiControllerManager, name, res, uiParams)
   end
   if nextDialogListInfo then
     local dialogList = nextDialogListInfo:GetUIList()
     for i = 1, #dialogList do
-      subTaskList[#subTaskList + 1] = ((GameGlobal.TaskManager)()):StartTask(UIControllerManager.AfterShowUI, self.uiControllerManager, (dialogList[i])[1], res, (dialogList[i])[2])
+      subTaskList[#subTaskList + 1] = GameGlobal.TaskManager():StartTask(UIControllerManager.AfterShowUI, self.uiControllerManager, dialogList[i][1], res, dialogList[i][2])
     end
   end
-  do
-    for i = 1, #subTaskList do
-      JOIN(TT, subTaskList[i])
-    end
+  for i = 1, #subTaskList do
+    JOIN(TT, subTaskList[i])
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.RevertState = function(self, TT, res)
-  -- function num : 0_17
+function UIState:RevertState(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.UnloadInvisibleUI = function(self)
-  -- function num : 0_18
+function UIState:UnloadInvisibleUI()
   local defaultUIList = self.defaultUIList
   for i = 1, #defaultUIList do
     local name = defaultUIList[i]
-    if not (self.uiControllerManager):IsShow(name) then
-      (self.uiControllerManager):ForceUnLoadUI(name)
+    if not self.uiControllerManager:IsShow(name) then
+      self.uiControllerManager:ForceUnLoadUI(name)
     end
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.ShowDialog = function(self, TT, uiName, ...)
-  -- function num : 0_19 , upvalues : _ENV
-  while (self.uiControllerManager):GetSwitchLock() do
+function UIState:ShowDialog(TT, uiName, ...)
+  while self.uiControllerManager:GetSwitchLock() do
     YIELD(TT)
   end
-  if ((GameGlobal.UIStateManager)()):CurUIStateType() ~= self.type then
-    (Log.fatal)("[UI] UIState:ShowDialog Error, State:", self.type, " already leave, cannot show:", uiName)
-    return 
+  if GameGlobal.UIStateManager():CurUIStateType() ~= self.type then
+    Log.fatal("[UI] UIState:ShowDialog Error, State:", self.type, " already leave, cannot show:", uiName)
+    return
   end
-  ;
-  (self.uiControllerManager):SetSwitchLock(true)
-  local uiRegisterInfo = (self.uiControllerManager):GetUIRegisterInfo(uiName)
+  self.uiControllerManager:SetSwitchLock(true)
+  local uiRegisterInfo = self.uiControllerManager:GetUIRegisterInfo(uiName)
   if not uiRegisterInfo then
-    (Log.fatal)("[UI] UIState:ShowDialog Error, UI ", uiName, " not regist")
-    ;
-    (self.uiControllerManager):SetSwitchLock(false)
-    return 
+    Log.fatal("[UI] UIState:ShowDialog Error, UI ", uiName, " not regist")
+    self.uiControllerManager:SetSwitchLock(false)
+    return
   end
   local res = UIStateSwitchReq:New()
   res:SetSucc(true)
-  local isShow = (self.uiControllerManager):IsShow(uiName)
-  if isShow and (self.uiControllerManager):IsTopUI(uiName) then
-    (Log.warn)("[UI] UIState:ShowDialog, UI already visible at toppest:", uiName)
-    ;
-    (self.uiControllerManager):SetSwitchLock(false)
-    return 
+  local isShow = self.uiControllerManager:IsShow(uiName)
+  if isShow and self.uiControllerManager:IsTopUI(uiName) then
+    Log.warn("[UI] UIState:ShowDialog, UI already visible at toppest:", uiName)
+    self.uiControllerManager:SetSwitchLock(false)
+    return
   end
   if isShow then
-    (self.uiControllerManager):CloseDialogWhichIsNotToppest(TT, uiName)
+    self.uiControllerManager:CloseDialogWhichIsNotToppest(TT, uiName)
   end
-  ;
-  (self.uiControllerManager):CheckLayerMax(TT)
-  local uiParams = {...}
-  ;
-  (self.uiControllerManager):TryShowUI(TT, uiName, res, uiParams)
+  self.uiControllerManager:CheckLayerMax(TT)
+  local uiParams = {
+    ...
+  }
+  self.uiControllerManager:TryShowUI(TT, uiName, res, uiParams)
   if not res:GetSucc() then
-    if not (self.uiControllerManager):IsShow(uiName) then
-      (self.uiControllerManager):ForceUnLoadUI(uiName)
+    if not self.uiControllerManager:IsShow(uiName) then
+      self.uiControllerManager:ForceUnLoadUI(uiName)
     end
-    ;
-    (self.uiControllerManager):SetSwitchLock(false)
-    return 
+    self.uiControllerManager:SetSwitchLock(false)
+    return
   end
-  while not (CutsceneManager.GetSceneFlag)() do
+  while not CutsceneManager.GetSceneFlag() do
     YIELD(TT)
   end
-  ;
-  (self.uiControllerManager):ShowUI(uiName, res, uiParams)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AfterUILayerChanged)
-  ;
-  (self.uiControllerManager):AfterShowUI(TT, uiName, res, uiParams)
-  ;
-  (self.uiControllerManager):SetSwitchLock(false)
+  self.uiControllerManager:ShowUI(uiName, res, uiParams)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AfterUILayerChanged)
+  self.uiControllerManager:AfterShowUI(TT, uiName, res, uiParams)
+  self.uiControllerManager:SetSwitchLock(false)
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.CloseDialog = function(self, TT, uiName)
-  -- function num : 0_20 , upvalues : _ENV
-  while (self.uiControllerManager):GetSwitchLock() do
+function UIState:CloseDialog(TT, uiName)
+  while self.uiControllerManager:GetSwitchLock() do
     YIELD(TT)
   end
-  ;
-  (self.uiControllerManager):SetSwitchLock(true)
-  local uiRegisterInfo = (self.uiControllerManager):GetUIRegisterInfo(uiName)
+  self.uiControllerManager:SetSwitchLock(true)
+  local uiRegisterInfo = self.uiControllerManager:GetUIRegisterInfo(uiName)
   if not uiRegisterInfo then
-    (self.uiControllerManager):SetSwitchLock(false)
-    return 
+    self.uiControllerManager:SetSwitchLock(false)
+    return
   end
-  local isShow = (self.uiControllerManager):IsShow(uiName)
+  local isShow = self.uiControllerManager:IsShow(uiName)
   if not isShow then
-    (self.uiControllerManager):SetSwitchLock(false)
-    ;
-    (Log.fatal)("[UI] UIState:CloseDialog Error, UI is invisible, ", uiName)
-    return 
+    self.uiControllerManager:SetSwitchLock(false)
+    Log.fatal("[UI] UIState:CloseDialog Error, UI is invisible, ", uiName)
+    return
   end
-  if (self.uiControllerManager):IsTopUI(uiName) then
-    (self.uiControllerManager):HideDialog(TT, uiName)
+  if self.uiControllerManager:IsTopUI(uiName) then
+    self.uiControllerManager:HideDialog(TT, uiName)
   else
-    ;
-    (self.uiControllerManager):CloseDialogWhichIsNotToppest(TT, uiName)
+    self.uiControllerManager:CloseDialogWhichIsNotToppest(TT, uiName)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AfterUILayerChanged, true)
-  if (self.uiControllerManager):TopDepth() == 0 then
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AfterUILayerChanged, true)
+  if self.uiControllerManager:TopDepth() == 0 then
     self:Show(true)
   end
-  ;
-  (self.uiControllerManager):SetSwitchLock(false)
+  self.uiControllerManager:SetSwitchLock(false)
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R0 in 'UnsetPending'
-
-UIState.GetCloseUIList = function(self, curState, nextState, deleteUIList, hideUIList)
-  -- function num : 0_21
+function UIState:GetCloseUIList(curState, nextState, deleteUIList, hideUIList)
   if curState then
     local defaultUIList = curState.defaultUIList
     for i = 1, #defaultUIList do
@@ -397,42 +304,36 @@ UIState.GetCloseUIList = function(self, curState, nextState, deleteUIList, hideU
       end
     end
   end
-  do
-    for i = 1, ((self.uiControllerManager):VisibleUIList()):Size() do
-      local visibleUIList = (self.uiControllerManager):VisibleUIList()
-      local uiName = visibleUIList:GetAt(i)
-      if not deleteUIList:Contains(uiName) then
-        deleteUIList:PushBack(uiName)
-      end
+  for i = 1, self.uiControllerManager:VisibleUIList():Size() do
+    local visibleUIList = self.uiControllerManager:VisibleUIList()
+    local uiName = visibleUIList:GetAt(i)
+    if not deleteUIList:Contains(uiName) then
+      deleteUIList:PushBack(uiName)
     end
-    if nextState then
-      local defaultUIList = nextState.defaultUIList
-      for i = 1, #defaultUIList do
-        local nextUIName = defaultUIList[i]
-        local cannotDel = false
-        if deleteUIList:Contains(nextUIName) then
-          cannotDel = true
-        end
-        if cannotDel then
-          deleteUIList:Remove(nextUIName)
-          if (self.uiControllerManager):IsShow(nextUIName) then
-            hideUIList:PushBack(nextUIName)
-          end
-        end
+  end
+  if nextState then
+    local defaultUIList = nextState.defaultUIList
+    for i = 1, #defaultUIList do
+      local nextUIName = defaultUIList[i]
+      local cannotDel = false
+      if deleteUIList:Contains(nextUIName) then
+        cannotDel = true
       end
-    end
-    do
-      if (self.uiControllerManager):GetForceClearCache() then
-        local cacheUIList = (self.uiControllerManager):GetCacheUIList()
-        for i = 1, cacheUIList:Size() do
-          local uiName = cacheUIList:GetAt(i)
-          if not deleteUIList:Contains(uiName) then
-            deleteUIList:PushBack(uiName)
-          end
+      if cannotDel then
+        deleteUIList:Remove(nextUIName)
+        if self.uiControllerManager:IsShow(nextUIName) then
+          hideUIList:PushBack(nextUIName)
         end
       end
     end
   end
+  if self.uiControllerManager:GetForceClearCache() then
+    local cacheUIList = self.uiControllerManager:GetCacheUIList()
+    for i = 1, cacheUIList:Size() do
+      local uiName = cacheUIList:GetAt(i)
+      if not deleteUIList:Contains(uiName) then
+        deleteUIList:PushBack(uiName)
+      end
+    end
+  end
 end
-
-

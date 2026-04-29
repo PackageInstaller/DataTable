@@ -1,34 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_tale_buff_desc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleTaleBuffDesc", UIController)
 UIBattleTaleBuffDesc = UIBattleTaleBuffDesc
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleTaleBuffDesc.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleTaleBuffDesc:OnShow()
   self._textDescTale = self:GetUIComponent("UILocalizationText", "desc_tale")
   self._textDescNormal = self:GetUIComponent("UILocalizationText", "desc_normal")
-  local matchEnterData = (self:GetModule(MatchModule)):GetMatchEnterData()
+  local matchEnterData = self:GetModule(MatchModule):GetMatchEnterData()
   local taleBuffCfgID = matchEnterData:GetTaleBuffCfgID()
-  local cfgTaleBuff = (Cfg.cfg_trail_level_buff_level)[taleBuffCfgID]
+  local cfgTaleBuff = Cfg.cfg_trail_level_buff_level[taleBuffCfgID]
   if not cfgTaleBuff then
-    (Log.exception)(self._className, "找不到配置：Cfg.cfg_trail_level_buff_level[", tostring(taleBuffCfgID), "]")
-    return 
+    Log.exception(self._className, "找不到配置：Cfg.cfg_trail_level_buff_level[", tostring(taleBuffCfgID), "]")
+    return
   end
-  ;
-  (self._textDescTale):SetText((StringTable.Get)(cfgTaleBuff.TalePetBuffDes))
-  ;
-  (self._textDescNormal):SetText((StringTable.Get)(cfgTaleBuff.NormalPetBuffDes1))
+  self._textDescTale:SetText(StringTable.Get(cfgTaleBuff.TalePetBuffDes))
+  self._textDescNormal:SetText(StringTable.Get(cfgTaleBuff.NormalPetBuffDes1))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleTaleBuffDesc.bgOnClick = function(self)
-  -- function num : 0_1
+function UIBattleTaleBuffDesc:bgOnClick()
   self:CloseDialog()
 end
-
-

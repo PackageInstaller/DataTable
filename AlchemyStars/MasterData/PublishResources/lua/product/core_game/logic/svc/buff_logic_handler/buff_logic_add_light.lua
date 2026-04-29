@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_light.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddLight", BuffLogicBase)
 BuffLogicAddLight = BuffLogicAddLight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddLight.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddLight:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddLight.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  local svc = ((self._buffInstance):World()):GetService("Maze")
+function BuffLogicAddLight:DoLogic()
+  local e = self._buffInstance:Entity()
+  local svc = self._buffInstance:World():GetService("Maze")
   svc:AddLight(self._addvalue)
 end
-
-

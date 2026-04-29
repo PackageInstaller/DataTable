@@ -1,147 +1,105 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/oval_tip/ui_season_maze_oval_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeOvalArea", UICustomWidget)
 UISeasonMazeOvalArea = UISeasonMazeOvalArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeOvalArea.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeOvalArea:OnShow(uiParams)
   self:InitWidget()
-  self._rect = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-  local width = ((self._rect).rect).width
-  local height = ((self._rect).rect).height
+  self._rect = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+  local width = self._rect.rect.width
+  local height = self._rect.rect.height
   self._ovalCenter = Vector2(width / 2, height / 2)
-  self._seasonMazeID = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonMazeID()
-  self._seasonID = (((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()):GetSeasonID()
-  local cfg = (Cfg.cfg_season_campaign_client)[self._seasonID]
-  self._oval = OvalShape:New(width / 2 - (cfg.OvalTipPadding)[1], height / 2 - (cfg.OvalTipPadding)[2])
+  self._seasonMazeID = GameGlobal.GetModule(SeasonMazeModule):CurSeasonMazeID()
+  self._seasonID = GameGlobal.GetModule(SeasonMazeModule):UIModule():GetSeasonID()
+  local cfg = Cfg.cfg_season_campaign_client[self._seasonID]
+  self._oval = OvalShape:New(width / 2 - cfg.OvalTipPadding[1], height / 2 - cfg.OvalTipPadding[2])
   self._arrowPool = {}
   self._tips = {}
-  self._uiModule = ((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()
-  self._camera = (((self._uiModule):SeasonMazeManager()):SeasonMazeCameraManager()):Camera()
-  self._uiCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UISeasonMazeScene")
+  self._uiModule = GameGlobal.GetModule(SeasonMazeModule):UIModule()
+  self._camera = self._uiModule:SeasonMazeManager():SeasonMazeCameraManager():Camera()
+  self._uiCamera = GameGlobal.UIStateManager():GetControllerCamera("UISeasonMazeScene")
   self:_RefreshPlayer()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalArea.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeOvalArea:InitWidget()
   self._tipsParent = self:GetUIComponent("Transform", "tips")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalArea.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,req in ipairs(self._arrowPool) do
+function UISeasonMazeOvalArea:OnHide()
+  for _, req in ipairs(self._arrowPool) do
     req:Dispose()
   end
   self._arrowPool = nil
-  for _,tip in pairs(self._tips) do
+  for _, tip in pairs(self._tips) do
     tip:Dispose()
   end
   self._tips = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalArea.AddTarget = function(self, target, type)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._tips)[target] then
-    (Log.error)("duplicate target")
-    return 
+function UISeasonMazeOvalArea:AddTarget(target, type)
+  if self._tips[target] then
+    Log.error("duplicate target")
+    return
   end
   local prefab = self:_LoadPrefab()
   local tip = UISeasonMazeOvalTip:New(self._seasonMazeID, prefab, function(tip)
-    -- function num : 0_3_0 , upvalues : self
     self:_OnTipClick(tip)
-  end
-)
+  end)
   tip:ResetTarget(target, type)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._tips)[target] = tip
+  self._tips[target] = tip
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalArea.Update = function(self, dt)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,tip in pairs(self._tips) do
-    local screenPos = (self._camera):WorldToScreenPoint(tip:TargetWorldPos())
-    local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(self._rect, screenPos, self._uiCamera, nil)
+function UISeasonMazeOvalArea:Update(dt)
+  for _, tip in pairs(self._tips) do
+    local screenPos = self._camera:WorldToScreenPoint(tip:TargetWorldPos())
+    local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self._rect, screenPos, self._uiCamera, nil)
     local canShow = true
-    local arrowPos = (self._oval):CrossPoint(pos)
-    local distance = tip:GetCanShowDistance((self._camera).orthographicSize)
-    if (Vector2.Distance)(arrowPos, pos) < distance then
+    local arrowPos = self._oval:CrossPoint(pos)
+    local distance = tip:GetCanShowDistance(self._camera.orthographicSize)
+    if distance > Vector2.Distance(arrowPos, pos) then
       canShow = false
     end
-    if ((self._oval):IsInside(pos) or not canShow) and not tip:IsInOval() then
-      tip:Hide()
-    end
-    if tip:IsInOval() then
-      tip:Show()
-    end
-    if not arrowPos then
-      arrowPos = (self._oval):CrossPoint(pos)
-    end
-    local dir = Vector3(pos.x - arrowPos.x, pos.y - arrowPos.y, 0)
-    local lookRot = (Quaternion.LookRotation)(Vector3.forward, dir)
-    if lookRot then
-      local rot = lookRot
-      tip:Sync(arrowPos, rot)
+    if self._oval:IsInside(pos) or not canShow then
+      if not tip:IsInOval() then
+        tip:Hide()
+      end
+    else
+      if tip:IsInOval() then
+        tip:Show()
+      end
+      arrowPos = arrowPos or self._oval:CrossPoint(pos)
+      local dir = Vector3(pos.x - arrowPos.x, pos.y - arrowPos.y, 0)
+      local lookRot = Quaternion.LookRotation(Vector3.forward, dir)
+      if lookRot then
+        local rot = lookRot
+        tip:Sync(arrowPos, rot)
+      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalArea._LoadPrefab = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeOvalArea:_LoadPrefab()
   if #self._arrowPool == 0 then
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset("UISeasonMazeOvalTip.prefab", LoadType.GameObject)
-    local tr = (req.Obj).transform
+    local req = ResourceManager:GetInstance():SyncLoadAsset("UISeasonMazeOvalTip.prefab", LoadType.GameObject)
+    local tr = req.Obj.transform
     tr:SetParent(self._tipsParent, false)
     tr.localPosition = Vector3.zero
     tr.localRotation = Quaternion.identity
     tr.localScale = Vector3.one
     return req
   else
-    do
-      local req = (self._arrowPool)[#self._arrowPool]
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._arrowPool)[#self._arrowPool] = nil
-      do return req end
-    end
+    local req = self._arrowPool[#self._arrowPool]
+    self._arrowPool[#self._arrowPool] = nil
+    return req
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalArea._ReleaseTip = function(self, req)
-  -- function num : 0_6
+function UISeasonMazeOvalArea:_ReleaseTip(req)
   req:Dispose()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalArea._OnTipClick = function(self, tip)
-  -- function num : 0_7
-  ((((self._uiModule):SeasonMazeManager()):SeasonMazeCameraManager()):SeasonCamera()):Focus(tip:TargetWorldPos())
+function UISeasonMazeOvalArea:_OnTipClick(tip)
+  self._uiModule:SeasonMazeManager():SeasonMazeCameraManager():SeasonCamera():Focus(tip:TargetWorldPos())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeOvalArea._RefreshPlayer = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self:AddTarget(((self._uiModule):SeasonMazeManager()):Player(), UISeasonOvalTipType.Player)
+function UISeasonMazeOvalArea:_RefreshPlayer()
+  self:AddTarget(self._uiModule:SeasonMazeManager():Player(), UISeasonOvalTipType.Player)
 end
-
-

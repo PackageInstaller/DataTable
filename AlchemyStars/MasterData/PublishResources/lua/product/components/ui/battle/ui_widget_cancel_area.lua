@@ -1,74 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_cancel_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetCancelArea", UICustomWidget)
 UIWidgetCancelArea = UIWidgetCancelArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetCancelArea.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetCancelArea:OnShow()
   self._cancelArea = self:GetGameObject("CancelArea")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._cancelArea), UIEvent.Hovered, function(go)
-    -- function num : 0_0_0 , upvalues : self
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._cancelArea), UIEvent.Hovered, function(go)
     self:OnEnterCancelArea(go)
-  end
-)
+  end)
   self:AttachEvent(GameEventType.ApplicationFocus, self.OnApplicationFocus)
   self:AttachEvent(GameEventType.ShowChainPathCancelArea, self.OnShowChainPathCancelArea)
   self:AttachEvent(GameEventType.HideChainPathCancelArea, self.OnHideChainPathCancelArea)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetCancelArea.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.notice)("cancel hide")
+function UIWidgetCancelArea:OnHide()
+  Log.notice("cancel hide")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetCancelArea.OnEnterCancelArea = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBattle", input = "OnEnterCancelArea", 
-args = {}
-})
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CancelChainPath)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
+function UIWidgetCancelArea:OnEnterCancelArea()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBattle",
+    input = "OnEnterCancelArea",
+    args = {}
+  })
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CancelChainPath)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Button)
   self:OnHideChainPathCancelArea()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetCancelArea.OnShowChainPathCancelArea = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (BattleStatHelper.GetAutoFightStat)() then
-    return 
+function UIWidgetCancelArea:OnShowChainPathCancelArea()
+  if BattleStatHelper.GetAutoFightStat() then
+    return
   end
-  ;
-  (self._cancelArea):SetActive(true)
+  self._cancelArea:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetCancelArea.OnHideChainPathCancelArea = function(self)
-  -- function num : 0_4
-  (self._cancelArea):SetActive(false)
+function UIWidgetCancelArea:OnHideChainPathCancelArea()
+  self._cancelArea:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetCancelArea.OnApplicationFocus = function(self, isFocus)
-  -- function num : 0_5 , upvalues : _ENV
-  if not (GameGlobal:GetInstance()):IsCoreGameRunning() then
-    return 
+function UIWidgetCancelArea:OnApplicationFocus(isFocus)
+  if not GameGlobal:GetInstance():IsCoreGameRunning() then
+    return
   end
-  if not isFocus or (GameGlobal:GetInstance()):IsLinkLineState() then
+  if isFocus then
+  elseif GameGlobal:GetInstance():IsLinkLineState() then
     self:OnEnterCancelArea()
   end
 end
-
-

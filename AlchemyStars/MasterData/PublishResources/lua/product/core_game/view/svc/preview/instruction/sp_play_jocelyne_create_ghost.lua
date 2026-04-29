@@ -1,33 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_jocelyne_create_ghost.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayJocelyneCreateCasterGhostInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayJocelyneCreateCasterGhostInstruction = SkillPreviewPlayJocelyneCreateCasterGhostInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayJocelyneCreateCasterGhostInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewPlayJocelyneCreateCasterGhostInstruction:Constructor(params)
   self._type = params.Type
   self._prefab = params.Prefab
   self._anim = params.Anim or "AtkUltPreview"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayJocelyneCreateCasterGhostInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayJocelyneCreateCasterGhostInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local entitySvc = world:GetService("RenderEntity")
   local SkillEffectCalc_Teleport = SkillEffectCalc_Teleport:New(world)
   local posNew = SkillEffectCalc_Teleport:_FindTeleportPos_Comparer(nil, casterEntity, nil, nil, previewContext:GetScopeResult(), AiSortByDistance._ComparerByFar)
-  if not posNew then
-    posNew = casterEntity:GetGridPosition()
-  end
+  posNew = posNew or casterEntity:GetGridPosition()
   local entitySvc = world:GetService("RenderEntity")
   entitySvc:CreateGhost(posNew, casterEntity, self._anim, self._prefab)
 end
-
-

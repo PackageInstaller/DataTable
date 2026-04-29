@@ -1,38 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/game_module/messages/setting_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
 local settingMessageDef = {CLSID_CEventUpdateSetting = 25000, CLSID_CEventUpdateSettingResult = 25001}
-;
-(table.append)(MessageDef, settingMessageDef)
+table.append(MessageDef, settingMessageDef)
 _class("CEventUpdateSetting", CCallRequestEvent)
 CEventUpdateSetting = CEventUpdateSetting
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventUpdateSetting.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CEventUpdateSetting:Constructor()
   self.m_info = setting_info:New()
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventUpdateSetting._proto = {
-[1] = {"m_info", "setting_info"}
+  [1] = {
+    "m_info",
+    "setting_info"
+  }
 }
 _class("CEventUpdateSettingResult", CCallReplyEvent)
 CEventUpdateSettingResult = CEventUpdateSettingResult
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventUpdateSettingResult.Constructor = function(self)
-  -- function num : 0_1
+function CEventUpdateSettingResult:Constructor()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventUpdateSettingResult._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
-

@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_camp_center/temp_signin_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_lobby_center_camp_data")
 _class("TempSignInEnter", MainLobbyCenterCampData)
 TempSignInEnter = TempSignInEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-TempSignInEnter.CheckRed = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local tb = {NewPlayerLoginStatus.NPLS_UnAccept}
-  local idx = (UITempSignInEnter.CheckDayStatus)(tb)
+function TempSignInEnter:CheckRed()
+  local tb = {
+    NewPlayerLoginStatus.NPLS_UnAccept
+  }
+  local idx = UITempSignInEnter.CheckDayStatus(tb)
   return idx ~= 0 and 1 or 0
 end
-
-

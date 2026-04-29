@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_listview/ui_heart_spirit_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHeartSpiritController", UIController)
 UIHeartSpiritController = UIHeartSpiritController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHeartSpiritController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHeartSpiritController:Constructor()
   self._itemCountPerRow = 6
   self._listShowItemCount = 0
   self._AsyncLoadFlagMap = {}
@@ -17,7 +10,13 @@ UIHeartSpiritController.Constructor = function(self)
   self._firstIn = true
   self._uiHeartAtlas = self:GetAsset("UIHeartItem.spriteatlas", LoadType.SpriteAtlas)
   self._items = {}
-  self._elementSortTypeOrder = {[1] = PetSortType.WaterFirst, [2] = PetSortType.FireFirst, [3] = PetSortType.SenFirst, [4] = PetSortType.ElectricityFirst, [5] = PetSortType.NoneElementFirst}
+  self._elementSortTypeOrder = {
+    [1] = PetSortType.WaterFirst,
+    [2] = PetSortType.FireFirst,
+    [3] = PetSortType.SenFirst,
+    [4] = PetSortType.ElectricityFirst,
+    [5] = PetSortType.NoneElementFirst
+  }
   self._currentElementSortTypeOrder = 0
   self._sortFilterActiveStatus = false
   self._petHeartItemList = {}
@@ -25,161 +24,110 @@ UIHeartSpiritController.Constructor = function(self)
   self._isFilterFavPet = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.FilterRedBtnOnClick = function(self, go)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHeartSpiritController:FilterRedBtnOnClick(go)
   self._isFilterRedPoint = not self._isFilterRedPoint
   if self._isFilterRedPoint then
     if not self._filterParams then
       self._filterParams = {}
     end
     local filterParam = PetFilterParam:New(PetFilterType.RedPoint_Break, PetFilterType.RedPoint_Break)
-    ;
-    (table.insert)(self._filterParams, filterParam)
+    table.insert(self._filterParams, filterParam)
+  elseif not self._filterParams then
+    self._filterParams = {}
   else
-    do
-      if not self._filterParams then
-        self._filterParams = {}
-      else
-        local removeIdx = nil
-        for index,value in ipairs(self._filterParams) do
-          if value._filter_type == PetFilterType.RedPoint_Break then
-            removeIdx = index
-            break
-          end
-        end
-        do
-          do
-            if removeIdx then
-              (table.remove)(self._filterParams, removeIdx)
-            end
-            self:SetFilterImgActive()
-            self:SetFilterFavImgActive()
-            self:RefrenshPetList()
-          end
-        end
+    local removeIdx
+    for index, value in ipairs(self._filterParams) do
+      if value._filter_type == PetFilterType.RedPoint_Break then
+        removeIdx = index
+        break
       end
     end
+    if removeIdx then
+      table.remove(self._filterParams, removeIdx)
+    end
   end
+  self:SetFilterImgActive()
+  self:SetFilterFavImgActive()
+  self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.SetFilterImgActive = function(self)
-  -- function num : 0_2
-  local sp = nil
+function UIHeartSpiritController:SetFilterImgActive()
+  local sp
   if self._isFilterRedPoint then
     sp = self._filterRedSp1
   else
     sp = self._filterRedSp2
   end
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._filterRedImg).sprite = sp
+  self._filterRedImg.sprite = sp
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.FilterFavBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHeartSpiritController:FilterFavBtnOnClick(go)
   self._isFilterFavPet = not self._isFilterFavPet
   if self._isFilterFavPet then
     if not self._filterParams then
       self._filterParams = {}
     end
     local filterParam = PetFilterParam:New(PetFilterType.Fav_Collect, PetFilterType.Fav_Collect)
-    ;
-    (table.insert)(self._filterParams, filterParam)
+    table.insert(self._filterParams, filterParam)
+  elseif not self._filterParams then
+    self._filterParams = {}
   else
-    do
-      if not self._filterParams then
-        self._filterParams = {}
-      else
-        local removeIdx = nil
-        for index,value in ipairs(self._filterParams) do
-          if value._filter_type == PetFilterType.Fav_Collect then
-            removeIdx = index
-            break
-          end
-        end
-        do
-          do
-            if removeIdx then
-              (table.remove)(self._filterParams, removeIdx)
-            end
-            self:SetFilterImgActive()
-            self:SetFilterFavImgActive()
-            self:RefrenshPetList()
-          end
-        end
+    local removeIdx
+    for index, value in ipairs(self._filterParams) do
+      if value._filter_type == PetFilterType.Fav_Collect then
+        removeIdx = index
+        break
       end
     end
+    if removeIdx then
+      table.remove(self._filterParams, removeIdx)
+    end
   end
+  self:SetFilterImgActive()
+  self:SetFilterFavImgActive()
+  self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.SetFilterFavImgActive = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIHeartSpiritController:SetFilterFavImgActive()
   if self._isFilterFavPet then
-    (self._filterFavImg).sprite = (self._uiHeartAtlas):GetSprite("tjxa_icon4")
+    self._filterFavImg.sprite = self._uiHeartAtlas:GetSprite("tjxa_icon4")
   else
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._filterFavImg).sprite = (self._uiHeartAtlas):GetSprite("tjxa_icon3")
+    self._filterFavImg.sprite = self._uiHeartAtlas:GetSprite("tjxa_icon3")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.GetComponents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHeartSpiritController:GetComponents()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityDialogRefresh)
-    ;
-    (self._petModule):ClearAllPetSortInfo()
+  self._backBtns:SetData(function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityDialogRefresh)
+    self._petModule:ClearAllPetSortInfo()
     self:CloseDialog()
-  end
-, nil)
+  end, nil)
   self._sortBtns = self:GetUIComponent("UISelectObjectPath", "sortBtns")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._curSortStateIcon = self:GetUIComponent("Image", "btnFiltrate")
   self._emptyDataTip = self:GetGameObject("EmptyTip")
-  ;
-  (self._emptyDataTip):SetActive(false)
+  self._emptyDataTip:SetActive(false)
   self._sortFilterLoader = self:GetUIComponent("UISelectObjectPath", "sortFilter")
   self._clearFilterBtn = self:GetGameObject("clearFilterBtn")
-  ;
-  (self._clearFilterBtn):SetActive(false)
+  self._clearFilterBtn:SetActive(false)
   self._clearFilterBtnTrans = self:GetUIComponent("RectTransform", "clearFilterBtn")
   self._topRightTrans = self:GetUIComponent("RectTransform", "TopRightAnchor")
   self._redPoint = self:GetGameObject("RedPoint")
   self._refineTip = self:GetGameObject("RefineTip")
-  ;
-  (self._refineTip):SetActive(false)
+  self._refineTip:SetActive(false)
   self._topRight = self:GetGameObject("TopRight")
   self._topRightRect = self:GetUIComponent("RectTransform", "TopRight")
   self._filterRedImg = self:GetUIComponent("Image", "FilterRedBtn")
   self._filterRedIGo = self:GetGameObject("FilterRedBtn")
-  self._filterRedSp1 = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_4_frame")
-  self._filterRedSp2 = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_3_frame")
+  self._filterRedSp1 = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_4_frame")
+  self._filterRedSp2 = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_3_frame")
   self._filterFavImg = self:GetUIComponent("Image", "FilterFavBtn")
   self._filterFavGo = self:GetGameObject("FilterFavBtn")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.OnValue = function(self)
-  -- function num : 0_6
+function UIHeartSpiritController:OnValue()
   self:SetFilterImgActive()
   self:SetFilterFavImgActive()
   self:SetClearBtnStatus()
@@ -191,119 +139,90 @@ UIHeartSpiritController.OnValue = function(self)
   self:SetFilterGoActive()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.SetFilterGoActive = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHeartSpiritController:SetFilterGoActive()
   local show = false
-  if self._pets and (table.count)(self._pets) > 0 then
-    for key,value in pairs(self._pets) do
-      if not value:IsShowRedPoint() then
-        local isShow = value:IsShowSkinRedPoint()
-      end
-      if not isShow then
-        isShow = (UIPetEquipHelper.CheckRefineRed)(value)
-      end
+  if self._pets and table.count(self._pets) > 0 then
+    for key, value in pairs(self._pets) do
+      local isShow = value:IsShowRedPoint() or value:IsShowSkinRedPoint()
+      isShow = isShow or UIPetEquipHelper.CheckRefineRed(value)
       if isShow then
         show = true
         break
       end
     end
   end
-  do
-    ;
-    (self._filterRedIGo):SetActive(show)
-  end
+  self._filterRedIGo:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.OnShow = function(self, uiParams)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHeartSpiritController:OnShow(uiParams)
   self:GetComponents()
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   local sortFilterCfg = UISortFilterCfg.UIHeartSpirit
   local sortCfg = {}
-  for idx,value in ipairs(sortFilterCfg.Sort) do
-    sortCfg[idx] = (Cfg.cfg_client_pet_sort)[value]
+  for idx, value in ipairs(sortFilterCfg.Sort) do
+    sortCfg[idx] = Cfg.cfg_client_pet_sort[value]
   end
   local filterCfg = {}
-  for tag,filters in pairs(sortFilterCfg.Filter) do
+  for tag, filters in pairs(sortFilterCfg.Filter) do
     local cfgs = {}
-    for idx,value in ipairs(filters) do
-      cfgs[idx] = (Cfg.cfg_client_pet_filter)[value]
+    for idx, value in ipairs(filters) do
+      cfgs[idx] = Cfg.cfg_client_pet_filter[value]
     end
     filterCfg[tag] = cfgs
   end
   self._sortCfg = sortCfg
   self._filterCfg = filterCfg
-  if (self._petModule).PetSortType ~= nil then
-    self._sortType = (self._petModule).PetSortType
+  if self._petModule.PetSortType ~= nil then
+    self._sortType = self._petModule.PetSortType
   else
     self._sortType = PetSortType.Level
   end
-  if (self._petModule).PetSortOrder ~= nil then
-    self._sortOrder = (self._petModule).PetSortOrder
+  if self._petModule.PetSortOrder ~= nil then
+    self._sortOrder = self._petModule.PetSortOrder
   else
     self._sortOrder = PetSortOrder.Descending
   end
-  if (self._petModule).PetSortFilter ~= nil then
-    self._filterParams = (self._petModule).PetSortFilter
+  if self._petModule.PetSortFilter ~= nil then
+    self._filterParams = self._petModule.PetSortFilter
   else
     self._filterParams = {}
   end
   self:AttacEvents()
-  local sortParams = (PetDefaulSort[self._sortType])[self._sortOrder]
-  self._pets = (self._petModule):_SortPets((self._petModule):GetPets(), self._filterParams, sortParams, (self._petModule).PetSortChooseSecondAttribute)
+  local sortParams = PetDefaulSort[self._sortType][self._sortOrder]
+  self._pets = self._petModule:_SortPets(self._petModule:GetPets(), self._filterParams, sortParams, self._petModule.PetSortChooseSecondAttribute)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.InitTopBtns = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  if not (self._petModule):CheckHasCachePetSortInfo() then
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_1_frame")
+function UIHeartSpiritController:InitTopBtns()
+  if not self._petModule:CheckHasCachePetSortInfo() then
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_1_frame")
   end
-  if (self._petModule).PetSortElementIndex ~= 0 then
-    self._currentElementSortTypeOrder = (self._petModule).PetSortElementIndex
+  if self._petModule.PetSortElementIndex ~= 0 then
+    self._currentElementSortTypeOrder = self._petModule.PetSortElementIndex
   end
-  ;
-  (self._sortBtns):SpawnObjects("UITopSortBtnItem", self._btnCount)
-  self._sortBtnsPool = (self._sortBtns):GetAllSpawnList()
+  self._sortBtns:SpawnObjects("UITopSortBtnItem", self._btnCount)
+  self._sortBtnsPool = self._sortBtns:GetAllSpawnList()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):SetData(i, (self._sortCfg)[i], self._sortType, self._sortOrder, function(idx)
-    -- function num : 0_9_0 , upvalues : self
-    self:ChangeSortParams(idx)
+    self._sortBtnsPool[i]:SetData(i, self._sortCfg[i], self._sortType, self._sortOrder, function(idx)
+      self:ChangeSortParams(idx)
+    end, self._currentElementSortTypeOrder)
   end
-, self._currentElementSortTypeOrder)
-  end
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._topRightTrans)
-  local topBtnsWidth = ((self._topRightTrans).rect).width
-  local targetPos = Vector2(-topBtnsWidth - 100, (((self._clearFilterBtn).transform).localPosition).y)
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._topRightRect).anchoredPosition = targetPos
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._topRightTrans)
+  local topBtnsWidth = self._topRightTrans.rect.width
+  local targetPos = Vector2(-topBtnsWidth - 100, self._clearFilterBtn.transform.localPosition.y)
+  self._topRightRect.anchoredPosition = targetPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.ChangeSortParams = function(self, idx)
-  -- function num : 0_10 , upvalues : _ENV
-  local tp = ((self._sortCfg)[idx]).Type
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIPetViewClick", {((self._sortCfg)[idx]).Name}, true)
+function UIHeartSpiritController:ChangeSortParams(idx)
+  local tp = self._sortCfg[idx].Type
+  GameGlobal.UAReportForceGuideEvent("UIPetViewClick", {
+    self._sortCfg[idx].Name
+  }, true)
   if self._sortType == tp then
     if self._sortOrder == PetSortOrder.Ascending then
       self._sortOrder = PetSortOrder.Descending
-    else
-      if self._sortOrder == PetSortOrder.Descending then
-        self._sortOrder = PetSortOrder.Ascending
-      end
+    elseif self._sortOrder == PetSortOrder.Descending then
+      self._sortOrder = PetSortOrder.Ascending
     end
   else
     self._sortType = tp
@@ -312,19 +231,13 @@ UIHeartSpiritController.ChangeSortParams = function(self, idx)
   self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.FlushTopBtnState = function(self)
-  -- function num : 0_11
+function UIHeartSpiritController:FlushTopBtnState()
   for i = 1, self._btnCount do
-    ((self._sortBtnsPool)[i]):Flush(self._sortType, self._sortOrder, (self._petModule).PetSortElementIndex)
+    self._sortBtnsPool[i]:Flush(self._sortType, self._sortOrder, self._petModule.PetSortElementIndex)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.AttacEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHeartSpiritController:AttacEvents()
   self:AttachEvent(GameEventType.PetUpLevelEvent, self.RefrenshPetList)
   self:AttachEvent(GameEventType.PetUpGradeEvent, self.RefrenshPetList)
   self:AttachEvent(GameEventType.PetAwakenEvent, self.RefrenshPetList)
@@ -335,10 +248,7 @@ UIHeartSpiritController.AttacEvents = function(self)
   self:AttachEvent(GameEventType.CheckCardAwakeRedPoint, self.CheckCardAwakeRedPoint)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.DetachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHeartSpiritController:DetachEvents()
   self:DetachEvent(GameEventType.PetUpLevelEvent, self.RefrenshPetList)
   self:DetachEvent(GameEventType.PetUpGradeEvent, self.RefrenshPetList)
   self:DetachEvent(GameEventType.PetAwakenEvent, self.RefrenshPetList)
@@ -349,54 +259,36 @@ UIHeartSpiritController.DetachEvents = function(self)
   self:DetachEvent(GameEventType.CheckCardAwakeRedPoint, self.CheckCardAwakeRedPoint)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.CheckCardAwakeRedPoint = function(self)
-  -- function num : 0_14
+function UIHeartSpiritController:CheckCardAwakeRedPoint()
   self:RefrenshPetList(0, true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.OnHide = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  for _,v in pairs(self._TaskList) do
+function UIHeartSpiritController:OnHide()
+  for _, v in pairs(self._TaskList) do
     if v then
-      ((GameGlobal.TaskManager)()):KillTask(v)
+      GameGlobal.TaskManager():KillTask(v)
       v = nil
     end
   end
   self:DetachEvents()
-  ;
-  (self._petModule):ClearAllPetSortInfo()
+  self._petModule:ClearAllPetSortInfo()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController._InitSrollView = function(self)
-  -- function num : 0_16
-  (self._scrollView):InitListView(self._listShowItemCount, function(scrollView, index)
-    -- function num : 0_16_0 , upvalues : self
+function UIHeartSpiritController:_InitSrollView()
+  self._scrollView:InitListView(self._listShowItemCount, function(scrollView, index)
     return self:InitSpritListInfo(scrollView, index)
-  end
-, self:GetScrollViewParam())
+  end, self:GetScrollViewParam())
   self._firstIn = false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.GetScrollViewParam = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIHeartSpiritController:GetScrollViewParam()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 333
   return param
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.GetHasItemAsyncLoading = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  for _,v in pairs(self._AsyncLoadFlagMap) do
+function UIHeartSpiritController:GetHasItemAsyncLoading()
+  for _, v in pairs(self._AsyncLoadFlagMap) do
     if v == 1 then
       return true
     end
@@ -404,173 +296,126 @@ UIHeartSpiritController.GetHasItemAsyncLoading = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.InitSpritListInfo = function(self, scrollView, index)
-  -- function num : 0_19 , upvalues : _ENV
+function UIHeartSpiritController:InitSpritListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
   local item = scrollView:NewListViewItem("RowItem")
   local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
-    if (self._TaskList)[item] then
+    if self._TaskList[item] then
       return item
     end
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._TaskList)[item] = self:StartTask(function(TT)
-    -- function num : 0_19_0 , upvalues : index, self, _ENV, item, rowPool
-    while index > 0 and self:GetHasItemAsyncLoading() do
-      YIELD(TT)
-    end
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._AsyncLoadFlagMap)[item] = 1
-    rowPool:AsyncSpawnObjects(TT, "UIHeartItem", self._itemCountPerRow)
-    local rowList = rowPool:GetAllSpawnList()
-    self._petHeartItemList = rowList
-    for i = 1, self._itemCountPerRow do
-      local heartItem = rowList[i]
-      ;
-      (heartItem:GetGameObject()):SetActive(false)
-    end
-    for i = 1, self._itemCountPerRow do
-      local heartItem = rowList[i]
-      local itemIndex = index * self._itemCountPerRow + i
-      if self._petCount < itemIndex then
-        (heartItem:GetGameObject()):SetActive(false)
-      else
-        self:ShowHeartItem(TT, heartItem, itemIndex)
-        heartItem:PlayFadeInAnim()
-        -- DECOMPILER ERROR at PC63: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._items)[itemIndex] = heartItem
-        if itemIndex % 2 == 0 then
+    self._TaskList[item] = self:StartTask(function(TT)
+      if 0 < index then
+        while self:GetHasItemAsyncLoading() do
           YIELD(TT)
         end
       end
-    end
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._AsyncLoadFlagMap)[item] = 2
-    item.IsInitHandlerCalled = true
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._TaskList)[item] = nil
-  end
-)
+      self._AsyncLoadFlagMap[item] = 1
+      rowPool:AsyncSpawnObjects(TT, "UIHeartItem", self._itemCountPerRow)
+      local rowList = rowPool:GetAllSpawnList()
+      self._petHeartItemList = rowList
+      for i = 1, self._itemCountPerRow do
+        local heartItem = rowList[i]
+        heartItem:GetGameObject():SetActive(false)
+      end
+      for i = 1, self._itemCountPerRow do
+        local heartItem = rowList[i]
+        local itemIndex = index * self._itemCountPerRow + i
+        if itemIndex > self._petCount then
+          heartItem:GetGameObject():SetActive(false)
+        else
+          self:ShowHeartItem(TT, heartItem, itemIndex)
+          heartItem:PlayFadeInAnim()
+          self._items[itemIndex] = heartItem
+          if itemIndex % 2 == 0 then
+            YIELD(TT)
+          end
+        end
+      end
+      self._AsyncLoadFlagMap[item] = 2
+      item.IsInitHandlerCalled = true
+      self._TaskList[item] = nil
+    end)
   else
     local rowList = rowPool:GetAllSpawnList()
     self._petHeartItemList = rowList
     for i = 1, self._itemCountPerRow do
       local heartItem = rowList[i]
-      ;
-      (heartItem:GetGameObject()):SetActive(false)
+      heartItem:GetGameObject():SetActive(false)
     end
     for i = 1, self._itemCountPerRow do
       local heartItem = rowList[i]
       local itemIndex = index * self._itemCountPerRow + i
-      if self._petCount < itemIndex then
-        (heartItem:GetGameObject()):SetActive(false)
+      if itemIndex > self._petCount then
+        heartItem:GetGameObject():SetActive(false)
       else
         self:ShowHeartItem(TT, heartItem, itemIndex)
         heartItem:ResetInAnim()
-        -- DECOMPILER ERROR at PC64: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._items)[itemIndex] = heartItem
+        self._items[itemIndex] = heartItem
       end
     end
   end
-  do
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.ShowHeartItem = function(self, TT, heartItem, index)
-  -- function num : 0_20 , upvalues : _ENV
-  local config = (self._pets)[index]
-  ;
-  (heartItem:GetGameObject()):SetActive(true)
+function UIHeartSpiritController:ShowHeartItem(TT, heartItem, index)
+  local config = self._pets[index]
+  heartItem:GetGameObject():SetActive(true)
   if config ~= nil then
     heartItem:SetData(config, function(id)
-    -- function num : 0_20_0 , upvalues : self, _ENV, heartItem
-    local pstids = {}
-    for i = 1, #self._pets do
-      (table.insert)(pstids, ((self._pets)[i]):GetPstID())
-    end
-    ;
-    ((self._petModule).uiModule):SetTeamPets(pstids)
-    local petid = ((self._petModule):GetPet(id)):GetTemplateID()
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("UIPetViewClick", {tostring(petid)}, true)
-    self:ShowDialog("UISpiritDetailGroupController", petid, nil, nil, heartItem)
-  end
-, true, self._firstIn, TeamOpenerType.Main, PetSkinEffectPath.CARD_PET_LIST)
+      local pstids = {}
+      for i = 1, #self._pets do
+        table.insert(pstids, self._pets[i]:GetPstID())
+      end
+      self._petModule.uiModule:SetTeamPets(pstids)
+      local petid = self._petModule:GetPet(id):GetTemplateID()
+      GameGlobal.UAReportForceGuideEvent("UIPetViewClick", {
+        tostring(petid)
+      }, true)
+      self:ShowDialog("UISpiritDetailGroupController", petid, nil, nil, heartItem)
+    end, true, self._firstIn, TeamOpenerType.Main, PetSkinEffectPath.CARD_PET_LIST)
     self:_SetRedPoint(config, heartItem)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.CalcPetScrollViewCount = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  self._petCount = (table.count)(self._pets)
-  self._listShowItemCount = (math.ceil)(self._petCount / self._itemCountPerRow)
+function UIHeartSpiritController:CalcPetScrollViewCount()
+  self._petCount = table.count(self._pets)
+  self._listShowItemCount = math.ceil(self._petCount / self._itemCountPerRow)
   self:CheckEmptyTip()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.CheckEmptyTip = function(self)
-  -- function num : 0_22
+function UIHeartSpiritController:CheckEmptyTip()
   if self._petCount <= 0 then
-    (self._emptyDataTip):SetActive(true)
+    self._emptyDataTip:SetActive(true)
   else
-    ;
-    (self._emptyDataTip):SetActive(false)
+    self._emptyDataTip:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.RefrenshPetList = function(self, pstid, stay)
-  -- function num : 0_23 , upvalues : _ENV
+function UIHeartSpiritController:RefrenshPetList(pstid, stay)
   self._items = {}
-  local sortParams = nil
+  local sortParams
   if self._sortType == PetSortType.Element then
-    self._currentElementSortTypeOrder = (self._petModule).PetSortElementIndex
-    sortParams = (PetDefaulSort[(self._elementSortTypeOrder)[self._currentElementSortTypeOrder]])[PetSortOrder.Descending]
+    self._currentElementSortTypeOrder = self._petModule.PetSortElementIndex
+    sortParams = PetDefaulSort[self._elementSortTypeOrder[self._currentElementSortTypeOrder]][PetSortOrder.Descending]
   else
-    sortParams = (PetDefaulSort[self._sortType])[self._sortOrder]
+    sortParams = PetDefaulSort[self._sortType][self._sortOrder]
   end
-  self._pets = (self._petModule):_SortPets((self._petModule):GetPets(), self._filterParams, sortParams, (self._petModule).PetSortChooseSecondAttribute)
-  ;
-  (self._petModule):SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType)
+  self._pets = self._petModule:_SortPets(self._petModule:GetPets(), self._filterParams, sortParams, self._petModule.PetSortChooseSecondAttribute)
+  self._petModule:SavePetSortInfo(self._filterParams, self._sortOrder, self._sortType)
   self:CalcPetScrollViewCount()
-  ;
-  (self._scrollView):SetListItemCount(self._listShowItemCount)
+  self._scrollView:SetListItemCount(self._listShowItemCount)
   if not stay then
-    (self._scrollView):MovePanelToItemIndex(0, 0)
+    self._scrollView:MovePanelToItemIndex(0, 0)
   else
-    ;
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:RefreshAllShownItem()
   end
   self:SetFilterGoActive()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.OnSortFilterChanged = function(self, sortType, sortOrder, filterParams)
-  -- function num : 0_24
+function UIHeartSpiritController:OnSortFilterChanged(sortType, sortOrder, filterParams)
   self._sortType = sortType
   self._sortOrder = sortOrder
   self._filterParams = filterParams
@@ -578,51 +423,32 @@ UIHeartSpiritController.OnSortFilterChanged = function(self, sortType, sortOrder
   self:RefrenshPetList()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.btnFiltrateOnClick = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIPetViewClick", {"shaixuankai"}, true)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_2_frame")
+function UIHeartSpiritController:btnFiltrateOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIPetViewClick", {
+    "shaixuankai"
+  }, true)
+  self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_2_frame")
   self._sortFilterActiveStatus = true
   if self._sortFilter == nil then
-    self._sortFilter = (self._sortFilterLoader):SpawnObject("UISortFilterItem")
+    self._sortFilter = self._sortFilterLoader:SpawnObject("UISortFilterItem")
   end
-  ;
-  (self._sortFilter):SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
-    -- function num : 0_25_0 , upvalues : self
+  self._sortFilter:SetData(self._sortType, self._sortOrder, self._filterParams, self._sortCfg, self._filterCfg, function(sortType, sortOrder, filterParams)
     self:OnSortFilterChanged(sortType, sortOrder, filterParams)
-  end
-, function()
-    -- function num : 0_25_1 , upvalues : self
+  end, function()
     self:CloseFiterCallBack()
-  end
-)
-  ;
-  (self._clearFilterBtn):SetActive(true)
-  ;
-  ((self._sortFilter):GetGameObject()):SetActive(true)
-  ;
-  (self._petModule):ClickPetEquipRefine()
+  end)
+  self._clearFilterBtn:SetActive(true)
+  self._sortFilter:GetGameObject():SetActive(true)
+  self._petModule:ClickPetEquipRefine()
   self:FlushFiltRateRed()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.ClearFilterBtnOnClick = function(self)
-  -- function num : 0_26
+function UIHeartSpiritController:ClearFilterBtnOnClick()
   if self._sortFilterActiveStatus == false then
-    (self._clearFilterBtn):SetActive(false)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_1_frame")
+    self._clearFilterBtn:SetActive(false)
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_1_frame")
   end
-  ;
-  (self._petModule):ClearPetSortFilterInfo()
+  self._petModule:ClearPetSortFilterInfo()
   self._filterParams = {}
   self._isFilterRedPoint = false
   self._isFilterFavPet = false
@@ -631,94 +457,60 @@ UIHeartSpiritController.ClearFilterBtnOnClick = function(self)
   self:FlushTopBtnState()
   self:RefrenshPetList()
   if self._sortFilter then
-    (self._sortFilter):ClearFilters()
+    self._sortFilter:ClearFilters()
   end
-  ;
-  (self._refineTip):SetActive(false)
+  self._refineTip:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.CloseFiterCallBack = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIPetViewClick", {"shaixuanguan"}, true)
+function UIHeartSpiritController:CloseFiterCallBack()
+  GameGlobal.UAReportForceGuideEvent("UIPetViewClick", {
+    "shaixuanguan"
+  }, true)
   self._sortFilterActiveStatus = false
   self:SetClearBtnStatus()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.SetClearBtnStatus = function(self)
-  -- function num : 0_28
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  if not (self._petModule):CheckHasCachePetSortInfo() then
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_1_frame")
-    ;
-    (self._clearFilterBtn):SetActive(false)
+function UIHeartSpiritController:SetClearBtnStatus()
+  if not self._petModule:CheckHasCachePetSortInfo() then
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_1_frame")
+    self._clearFilterBtn:SetActive(false)
   else
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._curSortStateIcon).sprite = (self._uiHeartAtlas):GetSprite("spirit_jiantou_b_2_frame")
-    ;
-    (self._clearFilterBtn):SetActive(true)
+    self._curSortStateIcon.sprite = self._uiHeartAtlas:GetSprite("spirit_jiantou_b_2_frame")
+    self._clearFilterBtn:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.GetHeartItem = function(self, index)
-  -- function num : 0_29
-  if (self._items)[index] then
-    return ((self._items)[index]):GetGameObject("openDetail")
+function UIHeartSpiritController:GetHeartItem(index)
+  if self._items[index] then
+    return self._items[index]:GetGameObject("openDetail")
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.GetGuideScroll = function(self)
-  -- function num : 0_30
+function UIHeartSpiritController:GetGuideScroll()
   return self:GetUIComponent("ScrollRect", "ScrollView")
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController._SetRedPoint = function(self, config, heartItem)
-  -- function num : 0_31 , upvalues : _ENV
-  if not config:IsShowRedPoint() then
-    local isShow = config:IsShowSkinRedPoint()
-  end
-  if not isShow then
-    isShow = (UIPetEquipHelper.CheckRefineRed)(config)
-  end
+function UIHeartSpiritController:_SetRedPoint(config, heartItem)
+  local isShow = config:IsShowRedPoint() or config:IsShowSkinRedPoint()
+  isShow = isShow or UIPetEquipHelper.CheckRefineRed(config)
   heartItem:ShowRedPoint(isShow)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.OnItemCountChange = function(self)
-  -- function num : 0_32
+function UIHeartSpiritController:OnItemCountChange()
   self:RefreshEquipRed()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.RefreshEquipRed = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  for i,heartItem in pairs(self._items) do
-    local config = (self._pets)[i]
+function UIHeartSpiritController:RefreshEquipRed()
+  for i, heartItem in pairs(self._items) do
+    local config = self._pets[i]
     self:_SetRedPoint(config, heartItem)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.GetPetHeartItem = function(self, pettid)
-  -- function num : 0_34 , upvalues : _ENV
-  for k,v in pairs(self._items) do
+function UIHeartSpiritController:GetPetHeartItem(pettid)
+  for k, v in pairs(self._items) do
     if v:GetPetTid() == pettid then
       return v
     end
@@ -726,20 +518,12 @@ UIHeartSpiritController.GetPetHeartItem = function(self, pettid)
   return nil
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.FlushFiltRateRed = function(self)
-  -- function num : 0_35
-  (self._redPoint):SetActive((self._petModule):PetEquipRefineNew())
+function UIHeartSpiritController:FlushFiltRateRed()
+  self._redPoint:SetActive(self._petModule:PetEquipRefineNew())
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartSpiritController.OnPetFilterTypeChange = function(self, type, isAdd)
-  -- function num : 0_36 , upvalues : _ENV
+function UIHeartSpiritController:OnPetFilterTypeChange(type, isAdd)
   if type == PetFilterType.Refine then
-    (self._refineTip):SetActive(isAdd)
+    self._refineTip:SetActive(isAdd)
   end
 end
-
-

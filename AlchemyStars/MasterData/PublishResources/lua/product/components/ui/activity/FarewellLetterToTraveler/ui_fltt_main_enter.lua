@@ -1,110 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/FarewellLetterToTraveler/ui_fltt_main_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFLTTMainEnter", UICustomWidget)
 UIFLTTMainEnter = UIFLTTMainEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFLTTMainEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIFLTTMainEnter:OnShow(uiParams)
   self._activityConst = UIActivityCustomConst:New(self:GetCampaignType(), self:GetComponentIds())
   self:RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIFLTTMainEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainEnter.GetCampaignType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFLTTMainEnter:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_FLTT
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainEnter.GetComponentIds = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIFLTTMainEnter:GetComponentIds()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignFLTTComponentID.ECAMPAIGN_FLTT_LINE_MISSION
   return componentIds
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainEnter.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_4
+function UIFLTTMainEnter:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainEnter.RequestCampaign = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIFLTTMainEnter:RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local lockName = "UIFLTTMainEnterRequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._activityConst):LoadData(TT, res)
+    self._activityConst:LoadData(TT, res)
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainEnter.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.Enter, self)
+function UIFLTTMainEnter:BtnOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.Enter, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainEnter.Enter = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIFLTTMainEnter:Enter(TT)
   self:Lock("UIFLTTMainEnter_Enter")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
-  do
-    if res and not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
-      do
-        campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
-        self:UnLock("UIFLTTMainEnter_Enter")
-        return 
-      end
-    end
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-    if self._uiMainLobbyController then
-      ((self._uiMainLobbyController)._screenShot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera((self._uiMainLobbyController):GetName())
-      local rt = ((self._uiMainLobbyController)._screenShot):RefreshBlurTexture()
-      local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-      self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, rt, cache_rt, self
-    YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
-    self:SwitchState(UIStateType.UIFLTTMainController, cache_rt, true)
+  self._activityConst:LoadData(TT, res)
+  if res and not res:GetSucc() then
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
+    self:UnLock("UIFLTTMainEnter_Enter")
+    return
   end
-)
-    else
-      do
-        self:SwitchState(UIStateType.UIFLTTMainController, nil, true)
-        self:UnLock("UIFLTTMainEnter_Enter")
-      end
-    end
+  if self._uiMainLobbyController then
+    self._uiMainLobbyController._screenShot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self._uiMainLobbyController:GetName())
+    local rt = self._uiMainLobbyController._screenShot:RefreshBlurTexture()
+    local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+    self:StartTask(function(TT)
+      YIELD(TT)
+      UnityEngine.Graphics.Blit(rt, cache_rt)
+      self:SwitchState(UIStateType.UIFLTTMainController, cache_rt, true)
+    end)
+  else
+    self:SwitchState(UIStateType.UIFLTTMainController, nil, true)
   end
+  self:UnLock("UIFLTTMainEnter_Enter")
 end
-
-

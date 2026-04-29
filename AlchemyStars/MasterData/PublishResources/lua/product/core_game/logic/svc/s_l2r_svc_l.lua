@@ -1,158 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/s_l2r_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("L2RService_Server", BaseService)
 L2RService_Server = L2RService_Server
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-L2RService_Server.L2RBoardLogicData = function(self)
-  -- function num : 0_0
+function L2RService_Server:L2RBoardLogicData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RSyncPieceType = function(self)
-  -- function num : 0_1
+function L2RService_Server:L2RSyncPieceType()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RLoadingData = function(self)
-  -- function num : 0_2
+function L2RService_Server:L2RLoadingData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RNormalAttackData = function(self, normalSkillCalcor, teamEntity)
-  -- function num : 0_3
+function L2RService_Server:L2RNormalAttackData(normalSkillCalcor, teamEntity)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RChainAttackData = function(self, teamEntity)
-  -- function num : 0_4
+function L2RService_Server:L2RChainAttackData(teamEntity)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RActiveAttackData = function(self, casterEntity, skillID)
-  -- function num : 0_5
+function L2RService_Server:L2RActiveAttackData(casterEntity, skillID)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RFeatureAttackData = function(self, casterEntity)
-  -- function num : 0_6
+function L2RService_Server:L2RFeatureAttackData(casterEntity)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RAILogicData = function(self)
-  -- function num : 0_7
+function L2RService_Server:L2RAILogicData()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2ROneSkillData = function(self, casterEntity, key)
-  -- function num : 0_8
+function L2RService_Server:L2ROneSkillData(casterEntity, key)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RChainPathData = function(self, teamEntity)
-  -- function num : 0_9
+function L2RService_Server:L2RChainPathData(teamEntity)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RChessPathData = function(self)
-  -- function num : 0_10
+function L2RService_Server:L2RChessPathData()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RChessAttackData = function(self, casterEntity)
-  -- function num : 0_11
+function L2RService_Server:L2RChessAttackData(casterEntity)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RSanRoundDecrease = function(self, curVal, oldVal, delVal)
-  -- function num : 0_12
+function L2RService_Server:L2RSanRoundDecrease(curVal, oldVal, delVal)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RDayNightRoundChange = function(self, curState, oldState, restRound)
-  -- function num : 0_13
+function L2RService_Server:L2RDayNightRoundChange(curState, oldState, restRound)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RSyncMoveData = function(self, entityID, syncMovePath)
-  -- function num : 0_14
+function L2RService_Server:L2RSyncMoveData(entityID, syncMovePath)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RAddPartnerData = function(self, partnerID, petInfo, matchPet, petRes, hp, maxHP)
-  -- function num : 0_15
+function L2RService_Server:L2RAddPartnerData(partnerID, petInfo, matchPet, petRes, hp, maxHP)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RAddRelicData = function(self, relicID, buffSeqs)
-  -- function num : 0_16
+function L2RService_Server:L2RAddRelicData(relicID, buffSeqs)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RNTSelectRoundTeamNormalBefore = function(self)
-  -- function num : 0_17
+function L2RService_Server:L2RNTSelectRoundTeamNormalBefore()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RMirageWalkData = function(self, mirageWalkRes)
-  -- function num : 0_18
+function L2RService_Server:L2RMirageWalkData(mirageWalkRes)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RMirageWarningData = function(self, warningPosList)
-  -- function num : 0_19
+function L2RService_Server:L2RMirageWarningData(warningPosList)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RPickUpComponentData = function(self, entityID, pickUpGridList, directionPickupData, reflectDir, pickUpExtraParam)
-  -- function num : 0_20
+function L2RService_Server:L2RPickUpComponentData(entityID, pickUpGridList, directionPickupData, reflectDir, pickUpExtraParam)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RStepPointRoundChange = function(self, curVal, oldVal)
-  -- function num : 0_21
+function L2RService_Server:L2RStepPointRoundChange(curVal, oldVal)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RStepPointMoveCost = function(self, curVal, oldVal)
-  -- function num : 0_22
+function L2RService_Server:L2RStepPointMoveCost(curVal, oldVal)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RAutoBeadkSkillData = function(self, teamEntity)
-  -- function num : 0_23
+function L2RService_Server:L2RAutoBeadkSkillData(teamEntity)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RService_Server.L2RSyncColorPaletteData = function(self, entityID)
-  -- function num : 0_24
+function L2RService_Server:L2RSyncColorPaletteData(entityID)
 end
-
-

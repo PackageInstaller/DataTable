@@ -1,98 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/enter/ui_season_maze_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeEnter", UISideEnterCenterContentBase)
 UISeasonMazeEnter = UISeasonMazeEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeEnter.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonMazeEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnter.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeEnter:DoInit()
   self._campaign = self._data
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._sample = (self._seasonMazeModule):GetCurSample()
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._sample = self._seasonMazeModule:GetCurSample()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnter.DoShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  local key = (UISeasonMazeEnterBtn.GetLocalDBKey)()
-  ;
-  (LocalDB.SetInt)(key, 1)
+function UISeasonMazeEnter:DoShow(uiParams)
+  local key = UISeasonMazeEnterBtn.GetLocalDBKey()
+  LocalDB.SetInt(key, 1)
   self:GetComponents()
-  self.te = (UIActivityHelper.StartTimerEvent)(self.te, function()
-    -- function num : 0_2_0 , upvalues : self
+  self.te = UIActivityHelper.StartTimerEvent(self.te, function()
     self:OnRefreshTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnter.GetComponents = function(self)
-  -- function num : 0_3
+function UISeasonMazeEnter:GetComponents()
   self.restTimeText = self:GetUIComponent("UILocalizationText", "RestTimeText")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnter.OnRefreshTime = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeEnter:OnRefreshTime()
   if self.restTimeText then
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-    local endTime = (self._sample).end_time
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
+    local endTime = self._sample.end_time
     if curTime < endTime then
-      local str = (StringTable.Get)("str_season_maze_less_adven_time") .. (UIActivityHelper.GetFormatTimerStr)(endTime - curTime)
-      ;
-      (self.restTimeText):SetText(str)
+      local str = StringTable.Get("str_season_maze_less_adven_time") .. UIActivityHelper.GetFormatTimerStr(endTime - curTime)
+      self.restTimeText:SetText(str)
     else
-      do
-        ;
-        (self.restTimeText):SetText((StringTable.Get)("str_activity_error_109"))
-      end
+      self.restTimeText:SetText(StringTable.Get("str_activity_error_109"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnter.BtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UISeasonMazeEnter:BtnOnClick()
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if seasonModule:CheckSeasonClose_ShowClientError(self._seasonId) then
-    return 
+    return
   end
   if self._sample == nil then
-    (ToastManager.ShowToast)((StringTable.Get)("str_world_boss_season_end"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_world_boss_season_end"))
+    return
   end
-  if not (self._sample).is_open then
-    (ToastManager.ShowToast)((StringTable.Get)("str_world_boss_season_end"))
-    return 
+  if not self._sample.is_open then
+    ToastManager.ShowToast(StringTable.Get("str_world_boss_season_end"))
+    return
   end
   self:ShowDialog("UISeasonMazeEnterController", true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnter.DoHide = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIActivityHelper.CancelTimerEvent)(self.te)
+function UISeasonMazeEnter:DoHide()
+  UIActivityHelper.CancelTimerEvent(self.te)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeEnter.DoDestroy = function(self)
-  -- function num : 0_7
+function UISeasonMazeEnter:DoDestroy()
 end
-
-

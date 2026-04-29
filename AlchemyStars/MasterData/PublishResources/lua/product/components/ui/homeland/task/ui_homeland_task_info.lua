@@ -1,67 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/task/ui_homeland_task_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeLandTaskInfo", UICustomWidget)
 UIHomeLandTaskInfo = UIHomeLandTaskInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeLandTaskInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
+function UIHomeLandTaskInfo:OnShow()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
   if not self.homelandClient then
-    return 
+    return
   end
-  self._homelandTraceManager = (self.homelandClient):GetHomelandTraceManager()
+  self._homelandTraceManager = self.homelandClient:GetHomelandTraceManager()
   self:InitWidget()
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomeLandTaskInfo:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   if self.taskID then
-    ((GameGlobal.UIStateManager)()):UnLock("UIHomeLandTaskInfo:ShowAniCore")
-    ;
-    ((GameGlobal.TaskManager)()):KillTask(self.taskID)
+    GameGlobal.UIStateManager():UnLock("UIHomeLandTaskInfo:ShowAniCore")
+    GameGlobal.TaskManager():KillTask(self.taskID)
     self.taskID = nil
   end
   self:_DetachEvents()
   if not self.homelandClient then
-    return 
+    return
   end
   local taskGroup = self:_GetRunningTaskGroup()
   if not taskGroup then
-    return 
+    return
   end
-  local task = ((self.homelandClient):GetHomelandTaskManager()):GetRuningTask()
-  if not task then
-    task = (((self.homelandClient):GetHomelandTaskManager()):GetHomelandStoryTaskManager()):GetRuningTaskItem()
-  end
+  local task = self.homelandClient:GetHomelandTaskManager():GetRuningTask()
+  task = task or self.homelandClient:GetHomelandTaskManager():GetHomelandStoryTaskManager():GetRuningTaskItem()
   self.runningtask = task
-  do
-    if self.runningtask then
-      local traceId = (self.runningtask):GetGuidId()
-      if traceId then
-        (self._homelandTraceManager):DisposeTrace(traceId, TraceEnum.Task)
-      end
+  if self.runningtask then
+    local traceId = self.runningtask:GetGuidId()
+    if traceId then
+      self._homelandTraceManager:DisposeTrace(traceId, TraceEnum.Task)
     end
-    self._lastTaskId = nil
   end
+  self._lastTaskId = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomeLandTaskInfo:InitWidget()
   self._bg = self:GetUIComponent("Image", "bgImage")
   self._titleText = self:GetUIComponent("UILocalizationText", "titleText")
   self._contentText = self:GetUIComponent("UILocalizationText", "contentText")
@@ -72,206 +54,153 @@ UIHomeLandTaskInfo.InitWidget = function(self)
   self:ShowAni()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.SetShow = function(self, show)
-  -- function num : 0_3
-  (self:GetGameObject()):SetActive(show)
+function UIHomeLandTaskInfo:SetShow(show)
+  self:GetGameObject():SetActive(show)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.GetFormatTaskTitle = function(self, tasktitle)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomeLandTaskInfo:GetFormatTaskTitle(tasktitle)
   if tasktitle == nil then
     tasktitle = ""
     local task = self:_GetRunningTask()
     if task then
       local title = task:GetTaskInfo()
-      tasktitle = (StringTable.Get)(title)
+      tasktitle = StringTable.Get(title)
     end
   end
-  do
-    return (string.format)("<color=#fef488>%s</color>", tasktitle)
-  end
+  return string.format("<color=#fef488>%s</color>", tasktitle)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.RefreshUI = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local title, content = nil, nil
+function UIHomeLandTaskInfo:RefreshUI()
+  local title, content
   local task = self:_GetRunningTask()
   if not self.view then
-    return 
+    return
   end
   if task then
     if task:GetTaskID() ~= self._lastTaskId then
-      (self.view):SetShow(false, self)
+      self.view:SetShow(false, self)
     end
-    ;
-    (self.view):SetShow(true, self)
-    title = task:GetTaskInfo()
-    local tasktitle = (StringTable.Get)(title)
+    self.view:SetShow(true, self)
+    title, content = task:GetTaskInfo()
+    local tasktitle = StringTable.Get(title)
     tasktitle = self:GetFormatTaskTitle(tasktitle)
     local finishInfo = task:GetConditionInfo()
     local finishType = finishInfo.FinishType
     if finishType == FinishConditionEnum.Item or finishType == FinishConditionEnum.PetSearch or finishType == FinishConditionEnum.PetNeed then
-      local itemId, itemCount = (finishInfo.NeedItems)[1], (finishInfo.NeedItems)[2]
-      local haveCount = (((GameGlobal.GetModule)(ItemModule)):GetItemCount(itemId))
-      local colorContent = nil
+      local itemId, itemCount = finishInfo.NeedItems[1], finishInfo.NeedItems[2]
+      local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(itemId)
+      local colorContent
       if itemCount <= haveCount then
-        colorContent = (string.format)("<color=#fbc305>%s</color>", haveCount)
-        -- DECOMPILER ERROR at PC77: Overwrote pending register: R2 in 'AssignReg'
-
+        colorContent = string.format("<color=#fbc305>%s</color>", haveCount)
+        content = StringTable.Get(content, colorContent, itemCount)
       else
-        colorContent = (string.format)("<color=#fbc305>%s</color>", haveCount)
-        -- DECOMPILER ERROR at PC91: Overwrote pending register: R2 in 'AssignReg'
-
+        colorContent = string.format("<color=#fbc305>%s</color>", haveCount)
+        content = StringTable.Get(content, colorContent, itemCount)
       end
     else
-      do
-        do
-          -- DECOMPILER ERROR at PC97: Overwrote pending register: R2 in 'AssignReg'
-
-          ;
-          (self._titleText):SetText(tasktitle)
-          ;
-          (self._contentText):SetText(content)
-          ;
-          (self._titleText):SetText("")
-          ;
-          (self._contentText):SetText("")
-          ;
-          (self.view):SetShow(false, self)
-          if task then
-            if task:GetTaskID() == self._lastTaskId then
-              (Log.fatal)("task:GetTaskID()" .. task:GetTaskID())
-            else
-              self:ShowTrace()
-              self._lastTaskId = task:GetTaskID()
-            end
-          else
-            self._lastTaskId = nil
-            if self._traceId then
-              (self._homelandTraceManager):DisposeTrace(self._traceId, TraceEnum.Task)
-              self._traceId = nil
-              if self._timerHandler then
-                ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
-                self._timerHandler = nil
-              end
-            end
-          end
-        end
+      content = StringTable.Get(content)
+    end
+    self._titleText:SetText(tasktitle)
+    self._contentText:SetText(content)
+  else
+    self._titleText:SetText("")
+    self._contentText:SetText("")
+    self.view:SetShow(false, self)
+  end
+  if task then
+    if task:GetTaskID() == self._lastTaskId then
+      Log.fatal("task:GetTaskID()" .. task:GetTaskID())
+    else
+      self:ShowTrace()
+      self._lastTaskId = task:GetTaskID()
+    end
+  else
+    self._lastTaskId = nil
+    if self._traceId then
+      self._homelandTraceManager:DisposeTrace(self._traceId, TraceEnum.Task)
+      self._traceId = nil
+      if self._timerHandler then
+        GameGlobal.Timer():CancelEvent(self._timerHandler)
+        self._timerHandler = nil
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.ShowTrace = function(self)
-  -- function num : 0_6
+function UIHomeLandTaskInfo:ShowTrace()
   self._hideTime = 600
   self:OpenTraceCoro()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.HideTrace = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomeLandTaskInfo:HideTrace()
   local taskGroup = self:_GetRunningTaskGroup()
   if not taskGroup then
-    return 
+    return
   end
   local task = self:_GetRunningTask()
   if not task then
-    return 
+    return
   end
   self.runningtask = task
-  local traceId = (self.runningtask):GetGuidId()
+  local traceId = self.runningtask:GetGuidId()
   if not traceId then
-    return 
+    return
   end
-  ;
-  (self._homelandTraceManager):SetTraceItemShowIcons(traceId, false)
+  self._homelandTraceManager:SetTraceItemShowIcons(traceId, false)
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.OpenTraceCoro = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHomeLandTaskInfo:OpenTraceCoro()
   if self._traceId then
-    (self._homelandTraceManager):DisposeTrace(self._traceId, TraceEnum.Task)
+    self._homelandTraceManager:DisposeTrace(self._traceId, TraceEnum.Task)
     self._traceId = nil
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
   end
   local taskGroup = self:_GetRunningTaskGroup()
   if not taskGroup then
-    return 
+    return
   end
   local task = self:_GetRunningTask()
   if not task then
-    return 
+    return
   end
   self.runningtask = task
-  self._traceId = (self.runningtask):GetGuidId()
+  self._traceId = self.runningtask:GetGuidId()
   if not self._traceId then
-    return 
+    return
   end
-  if (self._homelandTraceManager):CheckHadTraceItem(self._traceId) then
-    return 
+  if self._homelandTraceManager:CheckHadTraceItem(self._traceId) then
+    return
   end
-  ;
-  (self._homelandTraceManager):StartTrace(self._traceId, TraceEnum.Task, nil, self.runningtask)
+  self._homelandTraceManager:StartTrace(self._traceId, TraceEnum.Task, nil, self.runningtask)
   if not self._timerHandler then
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000 * self._hideTime, TimerTriggerCount.Once, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:HideTrace()
-  end
-)
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000 * self._hideTime, TimerTriggerCount.Once, function()
+      self:HideTrace()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo._GetRunningTaskGroup = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local runningTaskGroup = ((self.homelandClient):GetHomelandTaskManager()):GetRuningTaskGroup()
-  if not runningTaskGroup then
-    runningTaskGroup = (((self.homelandClient):GetHomelandTaskManager()):GetHomelandStoryTaskManager()):GetRuningTaskroup()
-  end
-  if runningTaskGroup then
-    (Log.debug)("UIHomeLandTaskInfo:_GetRunningTaskGroup() runningTaskGroup = ", runningTaskGroup._runningTaskId)
-    return runningTaskGroup
-  end
+function UIHomeLandTaskInfo:_GetRunningTaskGroup()
+  local runningTaskGroup = self.homelandClient:GetHomelandTaskManager():GetRuningTaskGroup()
+  runningTaskGroup = runningTaskGroup or self.homelandClient:GetHomelandTaskManager():GetHomelandStoryTaskManager():GetRuningTaskroup()
+  Log.debug("UIHomeLandTaskInfo:_GetRunningTaskGroup() runningTaskGroup = ", runningTaskGroup and runningTaskGroup._runningTaskId)
+  return runningTaskGroup
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo._GetRunningTask = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local task = ((self.homelandClient):GetHomelandTaskManager()):GetRuningTask()
-  if not task then
-    task = (((self.homelandClient):GetHomelandTaskManager()):GetHomelandStoryTaskManager()):GetRuningTaskItem()
-  end
-  if task then
-    (Log.debug)("UIHomeLandTaskInfo:_GetRunningTask() task = ", task._taskID)
-    return task
-  end
+function UIHomeLandTaskInfo:_GetRunningTask()
+  local task = self.homelandClient:GetHomelandTaskManager():GetRuningTask()
+  task = task or self.homelandClient:GetHomelandTaskManager():GetHomelandStoryTaskManager():GetRuningTaskItem()
+  Log.debug("UIHomeLandTaskInfo:_GetRunningTask() task = ", task and task._taskID)
+  return task
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo._AttachEvents = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomeLandTaskInfo:_AttachEvents()
   self:AttachEvent(GameEventType.OnHomeLandTaskSubmit, self._OnHomeLandTaskRefresh)
   self:AttachEvent(GameEventType.ItemCountChanged, self._OnHomeLandTaskItemCountChanged)
   self:AttachEvent(GameEventType.OnHomeLandTaskGroupSubmit, self._OnHomeLandTaskRefresh)
@@ -280,10 +209,7 @@ UIHomeLandTaskInfo._AttachEvents = function(self)
   self:AttachEvent(GameEventType.OnHomelandTaskItemChanged, self._OnHomeLandTaskItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo._DetachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomeLandTaskInfo:_DetachEvents()
   self:DetachEvent(GameEventType.OnHomeLandTaskSubmit, self._OnHomeLandTaskRefresh)
   self:DetachEvent(GameEventType.ItemCountChanged, self._OnHomeLandTaskItemCountChanged)
   self:DetachEvent(GameEventType.OnHomeLandTaskGroupSubmit, self._OnHomeLandTaskRefresh)
@@ -292,130 +218,91 @@ UIHomeLandTaskInfo._DetachEvents = function(self)
   self:AttachEvent(GameEventType.OnHomelandTaskItemChanged, self._OnHomeLandTaskItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo._OnHomeLandTaskRefresh = function(self)
-  -- function num : 0_13
+function UIHomeLandTaskInfo:_OnHomeLandTaskRefresh()
   self:RefreshUI()
   self:ShowAni()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo._OnHomeLandTaskItemCountChanged = function(self)
-  -- function num : 0_14
+function UIHomeLandTaskInfo:_OnHomeLandTaskItemCountChanged()
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.BtnOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIHomeLandTaskInfo:BtnOnClick()
   local runningTaskGroup = self:_GetRunningTaskGroup()
   if not runningTaskGroup then
-    return 
+    return
   end
   local taskItem = runningTaskGroup:GetRuningTask()
   if not taskItem then
-    return 
+    return
   end
   self._traceId = taskItem:GetGuidId()
   if not self._traceId then
-    return 
+    return
   end
   if not taskItem:ShowTraceInfo() then
-    return 
+    return
   end
   if self._traceId then
-    (self._homelandTraceManager):StartTrace(self._traceId, TraceEnum.Task, nil, taskItem)
+    self._homelandTraceManager:StartTrace(self._traceId, TraceEnum.Task, nil, taskItem)
   end
-  ;
-  (self._homelandTraceManager):SetTraceItemShowIcons(self._traceId, true)
+  self._homelandTraceManager:SetTraceItemShowIcons(self._traceId, true)
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   if not self._timerHandler then
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000 * self._hideTime, TimerTriggerCount.Once, function()
-    -- function num : 0_15_0 , upvalues : self
-    self:HideTrace()
-  end
-)
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000 * self._hideTime, TimerTriggerCount.Once, function()
+      self:HideTrace()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.ShowAni = function(self)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._ani).enabled = false
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._ani).enabled = true
+function UIHomeLandTaskInfo:ShowAni()
+  self._ani.enabled = false
+  self._ani.enabled = true
   self:MatchAniAlpha()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.MatchAniAlpha = function(self)
-  -- function num : 0_17
+function UIHomeLandTaskInfo:MatchAniAlpha()
   if not self.taskID then
     self.taskID = self:StartTask(self.ShowAniCore, self)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.ShowAniCore = function(self, TT)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHomeLandTaskInfo:ShowAniCore(TT)
   local key = 30
   local curtime = 0
-  local str = nil
-  local text = (self._titleText).text
+  local str
+  local text = self._titleText.text
   local match = "#(%x+)"
-  local color, res = nil, nil
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("UIHomeLandTaskInfo:ShowAniCore")
-  while curtime <= key and self._titleText ~= nil do
+  local color, res
+  GameGlobal.UIStateManager():Lock("UIHomeLandTaskInfo:ShowAniCore")
+  while key >= curtime and self._titleText ~= nil do
     curtime = curtime + 1
-    color = ((self._titleText).color).a
-    str = (string.format)("0x%06x", (math.ceil)(color * 255))
-    color = (string.sub)(str, 7, 8)
+    color = self._titleText.color.a
+    str = string.format("0x%06x", math.ceil(color * 255))
+    color = string.sub(str, 7, 8)
     str = "#fef488" .. color
     text = self:GetFormatTaskTitle()
-    res = (string.gsub)(text, match, str)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._titleText).text = res
+    res = string.gsub(text, match, str)
+    self._titleText.text = res
     YIELD(TT, 1)
   end
   local task = self:_GetRunningTask()
-  ;
-  (self._point):SetActive(task ~= nil)
+  self._point:SetActive(task ~= nil)
   if task and task._taskCfg then
     local title, content = task:GetTaskInfo()
-    local tasktitle = (StringTable.Get)(title)
-    tasktitle = (string.format)("<color=#fef488>%s</color>", tasktitle)
-    ;
-    (self._titleText):SetText(tasktitle)
+    local tasktitle = StringTable.Get(title)
+    tasktitle = string.format("<color=#fef488>%s</color>", tasktitle)
+    self._titleText:SetText(tasktitle)
   else
-    (self._titleText):SetText("")
+    self._titleText:SetText("")
   end
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("UIHomeLandTaskInfo:ShowAniCore")
+  GameGlobal.UIStateManager():UnLock("UIHomeLandTaskInfo:ShowAniCore")
   self.taskID = nil
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskInfo.ShowOnInteract = function(self, bShow)
-  -- function num : 0_19
-  (self._bgPoint):SetActive(bShow)
+function UIHomeLandTaskInfo:ShowOnInteract(bShow)
+  self._bgPoint:SetActive(bShow)
 end
-
-

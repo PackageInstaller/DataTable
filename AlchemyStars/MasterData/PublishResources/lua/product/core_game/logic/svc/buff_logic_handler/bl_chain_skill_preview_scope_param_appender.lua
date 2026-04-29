@@ -1,39 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_chain_skill_preview_scope_param_appender.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicChainSkillPreviewScopeParamAppender", BuffLogicBase)
 BuffLogicChainSkillPreviewScopeParamAppender = BuffLogicChainSkillPreviewScopeParamAppender
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChainSkillPreviewScopeParamAppender.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChainSkillPreviewScopeParamAppender:Constructor(buffInstance, logicParam)
   self._initArray = logicParam.appendArray
   self._skillID = logicParam.skillID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChainSkillPreviewScopeParamAppender.GetBuffValueKey = function(self)
-  -- function num : 0_1
+function BuffLogicChainSkillPreviewScopeParamAppender:GetBuffValueKey()
   return "ChainSkillPreviewScopeParamAppender" .. self._skillID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChainSkillPreviewScopeParamAppender.DoLogic = function(self, notify)
-  -- function num : 0_2 , upvalues : _ENV
-  local cBuff = (self._entity):BuffComponent()
+function BuffLogicChainSkillPreviewScopeParamAppender:DoLogic(notify)
+  local cBuff = self._entity:BuffComponent()
   local bvk = self:GetBuffValueKey()
   local savedArray = {}
   if not cBuff:GetBuffValue(bvk) then
     cBuff:SetBuffValue(bvk, savedArray)
   else
-    savedArray = (table.cloneconf)(cBuff:GetBuffValue(bvk))
+    savedArray = table.cloneconf(cBuff:GetBuffValue(bvk))
   end
-  for index,value in ipairs(self._initArray) do
+  for index, value in ipairs(self._initArray) do
     local currentVal = savedArray[index] or 0
     savedArray[index] = currentVal + value
   end
@@ -43,27 +30,17 @@ end
 
 _class("BuffLogicResetChainSkillPreviewScopeParamAppender", BuffLogicBase)
 BuffLogicResetChainSkillPreviewScopeParamAppender = BuffLogicResetChainSkillPreviewScopeParamAppender
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetChainSkillPreviewScopeParamAppender.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicResetChainSkillPreviewScopeParamAppender:Constructor(buffInstance, logicParam)
   self._skillID = logicParam.skillID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetChainSkillPreviewScopeParamAppender.GetBuffValueKey = function(self)
-  -- function num : 0_4
+function BuffLogicResetChainSkillPreviewScopeParamAppender:GetBuffValueKey()
   return "ChainSkillPreviewScopeParamAppender" .. self._skillID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetChainSkillPreviewScopeParamAppender.DoLogic = function(self, notify)
-  -- function num : 0_5
-  local cBuff = (self._entity):BuffComponent()
+function BuffLogicResetChainSkillPreviewScopeParamAppender:DoLogic(notify)
+  local cBuff = self._entity:BuffComponent()
   local bvk = self:GetBuffValueKey()
   cBuff:SetBuffValue(bvk, nil)
 end
-
-

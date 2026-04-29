@@ -1,319 +1,213 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_part/ui_discovery_part.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryPart", UIController)
 UIDiscoveryPart = UIDiscoveryPart
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryPart.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDiscoveryPart:Constructor()
   self.module = self:GetModule(MissionModule)
-  self.data = (self.module):GetDiscoveryData()
+  self.data = self.module:GetDiscoveryData()
   self._items = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDiscoveryPart:OnShow(uiParams)
   self.chapterId = uiParams[1]
-  local sectionCur = (self.data):GetDiscoverySectionByChapterId(self.chapterId)
-  local len = (table.count)((self.data).sections)
-  self._onTimeup = function(item, idx)
-    -- function num : 0_1_0 , upvalues : self
-    (self.module):InitDiscoveryData()
-    self.data = (self.module):GetDiscoveryData()
-    item:SetShow(idx, ((self.data).sections)[idx], self._onTimeup)
+  local sectionCur = self.data:GetDiscoverySectionByChapterId(self.chapterId)
+  local len = table.count(self.data.sections)
+  
+  function self._onTimeup(item, idx)
+    self.module:InitDiscoveryData()
+    self.data = self.module:GetDiscoveryData()
+    item:SetShow(idx, self.data.sections[idx], self._onTimeup)
   end
-
+  
   self._nextBtn = self:GetUIComponent("Image", "Next")
   self._lastBtn = self:GetUIComponent("Image", "Last")
   self._leftRed = self:GetGameObject("leftRed")
   self._rightRed = self:GetGameObject("rightRed")
   self._enterRed = self:GetGameObject("enterRed")
   self._scroll = H3DScrollViewHelper:New(self, "sv", "UIDiscoveryPartChaperItem", function(idx, item)
-    -- function num : 0_1_1 , upvalues : self
     self:_OnShowItem(idx, item)
-  end
-, function(idx, item)
-    -- function num : 0_1_2 , upvalues : self
+  end, function(idx, item)
     self:_OnHideItem(idx, item)
-  end
-)
+  end)
   local area = self:GetUIComponent("RectTransform", "SafeArea")
-  ;
-  (self._scroll):Init(len, sectionCur.id, Vector2((area.rect).width, 830))
-  ;
-  (self._scroll):SetGroupChangedCallback(function(idx, item)
-    -- function num : 0_1_3 , upvalues : self
+  self._scroll:Init(len, sectionCur.id, Vector2(area.rect.width, 830))
+  self._scroll:SetGroupChangedCallback(function(idx, item)
     self:_OnCenterItem(idx + 1, item)
-  end
-)
-  ;
-  (self._scroll):SetValueChangedCallback(function(group, value, contentSize, itemSize)
-    -- function num : 0_1_4 , upvalues : self
+  end)
+  self._scroll:SetValueChangedCallback(function(group, value, contentSize, itemSize)
     self:_OnValueChanged(group + 1, value, contentSize, itemSize)
-  end
-)
+  end)
   self._max = len
   self._curIdx = sectionCur.id
-  do
-    if len > 1 then
-      local indexer = self:GetUIComponent("UISelectObjectPath", "Indexer")
-      self._indexer = indexer:SpawnObjects("UIDiscoveryPartIndexer", len)
-      ;
-      ((self._indexer)[self._curIdx]):Select(true)
-    end
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R5 in 'UnsetPending'
-
-    if self._curIdx <= 1 then
-      (self._lastBtn).color = Color(1, 1, 1, 0.3)
-    end
-    -- DECOMPILER ERROR at PC108: Confused about usage of register: R5 in 'UnsetPending'
-
-    if self._max <= self._curIdx then
-      (self._nextBtn).color = Color(1, 1, 1, 0.3)
-    end
-    self._enterBtn = self:GetUIComponent("CanvasGroup", "EnterBtn")
-    self._active = true
-    self:CheckArrowAndBtnRed()
+  if 1 < len then
+    local indexer = self:GetUIComponent("UISelectObjectPath", "Indexer")
+    self._indexer = indexer:SpawnObjects("UIDiscoveryPartIndexer", len)
+    self._indexer[self._curIdx]:Select(true)
   end
+  if 1 >= self._curIdx then
+    self._lastBtn.color = Color(1, 1, 1, 0.3)
+  end
+  if self._curIdx >= self._max then
+    self._nextBtn.color = Color(1, 1, 1, 0.3)
+  end
+  self._enterBtn = self:GetUIComponent("CanvasGroup", "EnterBtn")
+  self._active = true
+  self:CheckArrowAndBtnRed()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart.OnHide = function(self)
-  -- function num : 0_2
-  (self._scroll):Dispose()
+function UIDiscoveryPart:OnHide()
+  self._scroll:Dispose()
   self._active = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UIDiscoveryPart:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart._OnShowItem = function(self, idx, item)
-  -- function num : 0_4
-  item:SetShow(idx, ((self.data).sections)[idx], self._onTimeup)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._items)[idx] = item
+function UIDiscoveryPart:_OnShowItem(idx, item)
+  item:SetShow(idx, self.data.sections[idx], self._onTimeup)
+  self._items[idx] = item
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart._OnHideItem = function(self, idx, item)
-  -- function num : 0_5
-  item:SetHide(idx, ((self.data).sections)[idx])
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._items)[idx] = nil
+function UIDiscoveryPart:_OnHideItem(idx, item)
+  item:SetHide(idx, self.data.sections[idx])
+  self._items[idx] = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart._OnCenterItem = function(self, idx, item)
-  -- function num : 0_6 , upvalues : _ENV
+function UIDiscoveryPart:_OnCenterItem(idx, item)
   if self._curIdx then
-    ((self._indexer)[self._curIdx]):Select(false)
+    self._indexer[self._curIdx]:Select(false)
   end
   self._curIdx = idx
-  ;
-  ((self._indexer)[self._curIdx]):Select(true)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
+  self._indexer[self._curIdx]:Select(true)
   if self._curIdx > 1 then
-    (self._lastBtn).color = Color(1, 1, 1, 1)
+    self._lastBtn.color = Color(1, 1, 1, 1)
   else
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._lastBtn).color = Color(1, 1, 1, 0.3)
+    self._lastBtn.color = Color(1, 1, 1, 0.3)
   end
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
   if self._curIdx < self._max then
-    (self._nextBtn).color = Color(1, 1, 1, 1)
+    self._nextBtn.color = Color(1, 1, 1, 1)
   else
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._nextBtn).color = Color(1, 1, 1, 0.3)
+    self._nextBtn.color = Color(1, 1, 1, 0.3)
   end
   self:CheckArrowAndBtnRed()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart.CheckArrowAndBtnRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIDiscoveryPart:CheckArrowAndBtnRed()
   if self._curIdx > 1 then
     local red = false
-    for index,value in ipairs((self.data).sections) do
+    for index, value in ipairs(self.data.sections) do
       if index < self._curIdx then
         red = value:CanCollect()
-      end
-    end
-    do
-      if not red then
-        do
-          (self._leftRed):SetActive(red)
-          ;
-          (self._leftRed):SetActive(false)
-          if self._curIdx < self._max then
-            local red = false
-            for index,value in ipairs((self.data).sections) do
-              if self._curIdx < index then
-                red = value:CanCollect()
-              end
-            end
-            do
-              if not red then
-                do
-                  (self._rightRed):SetActive(red)
-                  ;
-                  (self._rightRed):SetActive(false)
-                  local section = ((self.data).sections)[self._curIdx]
-                  local red = section:CanCollect()
-                  ;
-                  (self._enterRed):SetActive(red)
-                end
-              end
-            end
-          end
+        if red then
+          break
         end
       end
     end
+    self._leftRed:SetActive(red)
+  else
+    self._leftRed:SetActive(false)
   end
+  if self._curIdx < self._max then
+    local red = false
+    for index, value in ipairs(self.data.sections) do
+      if index > self._curIdx then
+        red = value:CanCollect()
+        if red then
+          break
+        end
+      end
+    end
+    self._rightRed:SetActive(red)
+  else
+    self._rightRed:SetActive(false)
+  end
+  local section = self.data.sections[self._curIdx]
+  local red = section:CanCollect()
+  self._enterRed:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart.LastOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIDiscoveryPart:LastOnClick()
   if self._curIdx <= 1 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_chapter_section_begin"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_chapter_section_begin"))
+    return
   end
-  ;
-  (self._scroll):MovePanelToIndex(self._curIdx - 1)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
+  self._scroll:MovePanelToIndex(self._curIdx - 1)
   if self._curIdx - 1 <= 1 then
-    (self._lastBtn).color = Color(1, 1, 1, 0.3)
+    self._lastBtn.color = Color(1, 1, 1, 0.3)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart.NextOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if self._max <= self._curIdx then
-    (ToastManager.ShowToast)((StringTable.Get)("str_chapter_section_end"))
-    return 
+function UIDiscoveryPart:NextOnClick()
+  if self._curIdx >= self._max then
+    ToastManager.ShowToast(StringTable.Get("str_chapter_section_end"))
+    return
   end
-  ;
-  (self._scroll):MovePanelToIndex(self._curIdx + 1)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  if self._max <= self._curIdx + 1 then
-    (self._nextBtn).color = Color(1, 1, 1, 0.3)
+  self._scroll:MovePanelToIndex(self._curIdx + 1)
+  if self._curIdx + 1 >= self._max then
+    self._nextBtn.color = Color(1, 1, 1, 0.3)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart._OnValueChanged = function(self, group, value, contentSize, itemSize)
-  -- function num : 0_10 , upvalues : _ENV
+function UIDiscoveryPart:_OnValueChanged(group, value, contentSize, itemSize)
   local di = contentSize - itemSize
   if di <= 0 then
-    return 
+    return
   end
   local rate = itemSize / (contentSize - itemSize)
   if rate <= 0 then
-    return 
+    return
   end
   local centerRate = group * rate - 0.5 * rate
   local distance = value - centerRate
-  local a = (math.abs)(distance) / (rate * 0.5) + 0.05
-  a = 1 - a * 2
+  local a = math.abs(distance) / (rate * 0.5) + 0.05
+  a = 1.0 - a * 2
   if a < 0 then
     a = 0
-  else
-    if a > 1 then
-      a = 1
-    end
+  elseif 1 < a then
+    a = 1
   end
-  if ((self._items)[group]):IsLock() then
+  if self._items[group]:IsLock() then
     a = 0
   end
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._enterBtn).alpha = a
+  self._enterBtn.alpha = a
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart.EnterBtnOnClick = function(self)
-  -- function num : 0_11
+function UIDiscoveryPart:EnterBtnOnClick()
   self:StartTask(self._OnEnter, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPart._OnEnter = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
-  local section = (self.data):GetDiscoverySectionBySectionId(self._curIdx)
+function UIDiscoveryPart:_OnEnter(TT)
+  local section = self.data:GetDiscoverySectionBySectionId(self._curIdx)
   local state, chapterId = section:State()
   if state == nil then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUIBattleStart)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUIBattleStart)
   self:Lock("PlayEnterAnim")
-  ;
-  ((self._items)[self._curIdx]):PlayEnterAnim()
+  self._items[self._curIdx]:PlayEnterAnim()
   YIELD(TT, 600)
   if not self._active then
-    return 
+    return
   end
   self:UnLock("PlayEnterAnim")
   if state == DiscoveryStageState.CanPlay then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryFlushChapter, chapterId)
-  else
-    if state == DiscoveryStageState.Nomal then
-      local maxPassChapter = -1
-      for cId,b in pairs(section.chapterIds) do
-        if b and maxPassChapter < cId then
-          maxPassChapter = cId
-        end
-      end
-      if maxPassChapter < 1 then
-        maxPassChapter = 1
-      end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryFlushChapter, maxPassChapter)
-    else
-      do
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_discovery_section_" .. section.id .. "_unlock_condition"))
-        if ((GameGlobal.UIStateManager)()):IsShow("UIChapters") then
-          ((GameGlobal.UIStateManager)()):CloseDialog("UIChapters")
-        end
-        self:CloseDialog()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryFlushChapter, chapterId)
+  elseif state == DiscoveryStageState.Nomal then
+    local maxPassChapter = -1
+    for cId, b in pairs(section.chapterIds) do
+      if b and cId > maxPassChapter then
+        maxPassChapter = cId
       end
     end
+    if maxPassChapter < 1 then
+      maxPassChapter = 1
+    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryFlushChapter, maxPassChapter)
+  else
+    ToastManager.ShowToast(StringTable.Get("str_discovery_section_" .. section.id .. "_unlock_condition"))
   end
+  if GameGlobal.UIStateManager():IsShow("UIChapters") then
+    GameGlobal.UIStateManager():CloseDialog("UIChapters")
+  end
+  self:CloseDialog()
 end
-
-

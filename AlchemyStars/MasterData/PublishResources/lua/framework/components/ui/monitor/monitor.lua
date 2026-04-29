@@ -1,521 +1,392 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/ui/monitor/monitor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Monitor", Singleton)
 Monitor = Monitor
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Monitor.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function Monitor:Constructor()
   if App.SpeedStatistics then
-    self.appHomeCB = (GameHelper:GetInstance()):CreateCallback(function()
-    -- function num : 0_0_0 , upvalues : self
-    self:ABLoadTimes()
-    self:AssetLoadTimes()
-    self:GameObjectLoadTimes()
-  end
-, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.AppHome, self.appHomeCB)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ApplicationQuit, self.appHomeCB)
+    self.appHomeCB = GameHelper:GetInstance():CreateCallback(function()
+      self:ABLoadTimes()
+      self:AssetLoadTimes()
+      self:GameObjectLoadTimes()
+    end, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.AppHome, self.appHomeCB)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ApplicationQuit, self.appHomeCB)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.GC = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function Monitor:GC()
   local c = collectgarbage("count")
-  ;
-  (Log.error)((string.format)("Begin gc count = %f kb", c))
+  Log.error(string.format("Begin gc count = %f kb", c))
   collectgarbage("collect")
-  ;
-  (App.ClearMemory)()
+  App.ClearMemory()
   collectgarbage("collect")
-  ;
-  (App.ClearMemory)()
+  App.ClearMemory()
   collectgarbage("collect")
-  ;
-  (App.ClearMemory)()
+  App.ClearMemory()
   c = collectgarbage("count")
-  ;
-  (Log.error)((string.format)("End gc count =  %f kb", c))
+  Log.error(string.format("End gc count =  %f kb", c))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.Profile = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function Monitor:Profile()
   self:GC()
   local class = {}
-  for inst,trace in next do
-    do
-      local name = inst._className
-      if not class[name] then
-        class[name] = {num = 0}
-        -- DECOMPILER ERROR at PC18: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (class[name]).num = (class[name]).num + 1
-        -- DECOMPILER ERROR at PC25: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (class[name])[trace] = (class[name])[trace] or 0
-        -- DECOMPILER ERROR at PC30: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (class[name])[trace] = (class[name])[trace] + 1
-        if name == "UIMainInterfaceHead" or name == "UISetController" or name == "UICardList" then
-          (Log.error)(tostring(inst) .. " " .. name)
-          local o = (debug.findobj)(_G, function(tb)
-    -- function num : 0_2_0 , upvalues : inst
-    do return inst == tb end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-          local s2 = (table.tostr)(o)
-          local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-          local file = dir .. (string.format)("%s%s.txt", name, TimeToDate2(_now()))
-          self:WriteToFile(dir, file, (string.gsub)(s2, "},", "},\n"))
-        end
-        -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC83: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for inst, trace in next, monitorObjs, nil do
+    local name = inst._className
+    class[name] = class[name] or {num = 0}
+    class[name].num = class[name].num + 1
+    class[name][trace] = class[name][trace] or 0
+    class[name][trace] = class[name][trace] + 1
+    if name == "UIMainInterfaceHead" or name == "UISetController" or name == "UICardList" then
+      Log.error(tostring(inst) .. " " .. name)
+      local o = debug.findobj(_G, function(tb)
+        return inst == tb
+      end)
+      local s2 = table.tostr(o)
+      local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+      local file = dir .. string.format("%s%s.txt", name, TimeToDate2(_now()))
+      self:WriteToFile(dir, file, string.gsub(s2, "},", "},\n"))
     end
   end
   return class
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.SnapShot = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.beforReses = (App.GetResRequests)()
+function Monitor:SnapShot()
+  self.beforReses = App.GetResRequests()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.CompareSnapShot = function(self, memeryMsg)
-  -- function num : 0_4 , upvalues : _ENV
+function Monitor:CompareSnapShot(memeryMsg)
   local beforReses = self.beforReses
   assert(beforReses, "need snapshot frist")
-  local allTraces = (ResourceManager:GetInstance()):GetTraces()
+  local allTraces = ResourceManager:GetInstance():GetTraces()
   local assets = {}
-  local nowReses = (App.GetResRequests)()
+  local nowReses = App.GetResRequests()
   local iter = nowReses:GetEnumerator()
-  while 1 do
-    while 1 do
-      if iter:MoveNext() then
-        local guid = (iter.Current).Key
-        local name = (iter.Current).Value
-        if not beforReses:ContainsKey(guid) then
-          local guids = assets[name]
-          if not guids then
-            guids = {}
-            assets[name] = guids
-          end
-          local traces = allTraces[name]
-          if traces and traces[guid] then
-            (table.insert)(guids, {guid, traces[guid]})
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-    end
-    ;
-    (table.insert)(guids, {guid, (App.GetTrace)(name, guid) or "norecord"})
-  end
-  do
-    if not next(assets) then
-      return 
-    end
-    local diffs = {}
-    for name,guids in next do
-      local time = (App.GetAssetTime)(name)
-      assert(time > 0, (string.format)("asset[%s] can not get loadtime", name))
-      ;
-      (table.insert)(diffs, {name, time})
-    end
-    ;
-    (table.sort)(diffs, function(a, b)
-    -- function num : 0_4_0
-    do return a[2] < b[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    local now = (UnityEngine.Time).realtimeSinceStartup
-    local tb = {memeryMsg}
-    for i = 1, #diffs do
-      local diff = diffs[i]
-      local name = diff[1]
-      local load = diff[2]
-      ;
-      (table.insert)(tb, (string.format)("assetname[%s], time[%f]", name, now - load))
+  while iter:MoveNext() do
+    local guid = iter.Current.Key
+    local name = iter.Current.Value
+    if not beforReses:ContainsKey(guid) then
       local guids = assets[name]
-      for j = 1, #guids do
-        local guid = guids[j]
-        ;
-        (table.insert)(tb, (string.format)("guid[%s] trace[%s]", guid[1], guid[2]))
+      if not guids then
+        guids = {}
+        assets[name] = guids
       end
-      ;
-      (table.insert)(tb, "----------------------------------------------------------------------------")
+      local traces = allTraces[name]
+      if traces and traces[guid] then
+        table.insert(guids, {
+          guid,
+          traces[guid]
+        })
+      else
+        table.insert(guids, {
+          guid,
+          App.GetTrace(name, guid) or "norecord"
+        })
+      end
     end
-    local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-    local file = dir .. (string.format)("LeakInfo%s.txt", TimeToDate2(_now()))
-    self:WriteToFile(dir, file, (table.concat)(tb, "\n"))
-    do return file end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
   end
+  if not next(assets) then
+    return
+  end
+  local diffs = {}
+  for name, guids in next, assets, nil do
+    local time = App.GetAssetTime(name)
+    assert(0 < time, string.format("asset[%s] can not get loadtime", name))
+    table.insert(diffs, {name, time})
+  end
+  table.sort(diffs, function(a, b)
+    return a[2] < b[2]
+  end)
+  local now = UnityEngine.Time.realtimeSinceStartup
+  local tb = {memeryMsg}
+  for i = 1, #diffs do
+    local diff = diffs[i]
+    local name = diff[1]
+    local load = diff[2]
+    table.insert(tb, string.format("assetname[%s], time[%f]", name, now - load))
+    local guids = assets[name]
+    for j = 1, #guids do
+      local guid = guids[j]
+      table.insert(tb, string.format("guid[%s] trace[%s]", guid[1], guid[2]))
+    end
+    table.insert(tb, "----------------------------------------------------------------------------")
+  end
+  local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+  local file = dir .. string.format("LeakInfo%s.txt", TimeToDate2(_now()))
+  self:WriteToFile(dir, file, table.concat(tb, "\n"))
+  return file
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.WriteToFile = function(self, dir, file, content)
-  -- function num : 0_5 , upvalues : _ENV
-  (App.MakeDir)(dir)
-  local f, error = (io.open)(file, "w")
+function Monitor:WriteToFile(dir, file, content)
+  App.MakeDir(dir)
+  local f, error = io.open(file, "w")
   if not f then
-    (Log.error)("can\'t open file " .. file .. " error " .. error)
-    return 
+    Log.error("can't open file " .. file .. " error " .. error)
+    return
   end
   f:write(content)
   f:close()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.ABLoadTimes = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function Monitor:ABLoadTimes()
   if not App.SpeedStatistics then
-    (Log.error)("please turn on the SpeedStatistics switch in switch.lua")
-    return 
+    Log.error("please turn on the SpeedStatistics switch in switch.lua")
+    return
   end
-  local times = (App.GetABLoadTimes)()
-  local asyncTimes = (App.GetABAsyncLoadTimes)()
+  local times = App.GetABLoadTimes()
+  local asyncTimes = App.GetABAsyncLoadTimes()
   local tb = {}
   local iter = times:GetEnumerator()
   while iter:MoveNext() do
-    local name = (iter.Current).Key
-    local time = (iter.Current).Value
+    local name = iter.Current.Key
+    local time = iter.Current.Value
     local count = time.Count
     local total = 0
     for i = 0, count - 1 do
       total = total + time[i]
     end
-    local average = (total) / count
-    ;
-    (table.insert)(tb, {name, average, count})
+    local average = total / count
+    table.insert(tb, {
+      name,
+      average,
+      count
+    })
   end
-  do
-    ;
-    (table.sort)(tb, function(a, b)
-    -- function num : 0_6_0
-    do return b[2] < a[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  table.sort(tb, function(a, b)
+    return a[2] > b[2]
+  end)
+  local logs = {}
+  for i = 1, #tb do
+    local v = tb[i]
+    table.insert(logs, string.format("sync time[%f ms], cnt[%d], abname[%s]", v[2], v[3], v[1]))
   end
-)
-    local logs = {}
-    for i = 1, #tb do
-      local v = tb[i]
-      ;
-      (table.insert)(logs, (string.format)("sync time[%f ms], cnt[%d], abname[%s]", v[2], v[3], v[1]))
-    end
-    tb = {}
-    local iter = asyncTimes:GetEnumerator()
-    while iter:MoveNext() do
-      local name = (iter.Current).Key
-      local time = (iter.Current).Value
-      local count = time.Count
-      local total = 0
-      for i = 0, count - 1 do
-        total = total + time[i]
-      end
-      local average = (total) / count
-      ;
-      (table.insert)(tb, {name, average, count})
-    end
-    do
-      ;
-      (table.sort)(tb, function(a, b)
-    -- function num : 0_6_1
-    do return b[2] < a[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      for i = 1, #tb do
-        local v = tb[i]
-        ;
-        (table.insert)(logs, (string.format)("async time[%f ms], cnt[%d], abname[%s]", v[2], v[3], v[1]))
-      end
-      local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-      local file = dir .. (string.format)("ABLoadTimes%s.txt", TimeToDate2(_now()))
-      self:WriteToFile(dir, file, (table.concat)(logs, "\n"))
-      return file
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.AssetLoadTimes = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if not App.SpeedStatistics then
-    (Log.error)("please turn on the SpeedStatistics switch in switch.lua")
-    return 
-  end
-  local times = (App.GetAssetLoadTimes)()
-  local asyncTimes = (App.GetAssetAsyncLoadTimes)()
-  local tb = {}
-  local iter = times:GetEnumerator()
+  tb = {}
+  local iter = asyncTimes:GetEnumerator()
   while iter:MoveNext() do
-    local name = (iter.Current).Key
-    local time = (iter.Current).Value
+    local name = iter.Current.Key
+    local time = iter.Current.Value
     local count = time.Count
     local total = 0
     for i = 0, count - 1 do
       total = total + time[i]
     end
-    local average = (total) / count
-    ;
-    (table.insert)(tb, {name, average, count})
+    local average = total / count
+    table.insert(tb, {
+      name,
+      average,
+      count
+    })
   end
-  do
-    ;
-    (table.sort)(tb, function(a, b)
-    -- function num : 0_7_0
-    do return b[2] < a[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  table.sort(tb, function(a, b)
+    return a[2] > b[2]
+  end)
+  for i = 1, #tb do
+    local v = tb[i]
+    table.insert(logs, string.format("async time[%f ms], cnt[%d], abname[%s]", v[2], v[3], v[1]))
   end
-)
-    local logs = {}
-    for i = 1, #tb do
-      local v = tb[i]
-      ;
-      (table.insert)(logs, (string.format)("sync time[%f ms], cnt[%d], name[%s]", v[2], v[3], v[1]))
-    end
-    tb = {}
-    local iter = asyncTimes:GetEnumerator()
-    while iter:MoveNext() do
-      local name = (iter.Current).Key
-      local time = (iter.Current).Value
-      local count = time.Count
-      local total = 0
-      for i = 0, count - 1 do
-        total = total + time[i]
-      end
-      local average = (total) / count
-      ;
-      (table.insert)(tb, {name, average, count})
-    end
-    do
-      ;
-      (table.sort)(tb, function(a, b)
-    -- function num : 0_7_1
-    do return b[2] < a[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      for i = 1, #tb do
-        local v = tb[i]
-        ;
-        (table.insert)(logs, (string.format)("async time[%f ms], cnt[%d], name[%s]", v[2], v[3], v[1]))
-      end
-      local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-      local file = dir .. (string.format)("AssetLoadTimes%s.txt", TimeToDate2(_now()))
-      self:WriteToFile(dir, file, (table.concat)(logs, "\n"))
-      return file
-    end
-  end
+  local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+  local file = dir .. string.format("ABLoadTimes%s.txt", TimeToDate2(_now()))
+  self:WriteToFile(dir, file, table.concat(logs, "\n"))
+  return file
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.GameObjectLoadTimes = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function Monitor:AssetLoadTimes()
   if not App.SpeedStatistics then
-    (Log.error)("please turn on the SpeedStatistics switch in switch.lua")
-    return 
+    Log.error("please turn on the SpeedStatistics switch in switch.lua")
+    return
   end
-  local times = (App.GetGameObjectLoadTimes)()
+  local times = App.GetAssetLoadTimes()
+  local asyncTimes = App.GetAssetAsyncLoadTimes()
   local tb = {}
   local iter = times:GetEnumerator()
   while iter:MoveNext() do
-    local name = (iter.Current).Key
-    local time = (iter.Current).Value
+    local name = iter.Current.Key
+    local time = iter.Current.Value
     local count = time.Count
     local total = 0
     for i = 0, count - 1 do
       total = total + time[i]
     end
-    local average = (total) / count
-    ;
-    (table.insert)(tb, {name, average, count})
+    local average = total / count
+    table.insert(tb, {
+      name,
+      average,
+      count
+    })
   end
-  do
-    ;
-    (table.sort)(tb, function(a, b)
-    -- function num : 0_8_0
-    do return b[2] < a[2] end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  table.sort(tb, function(a, b)
+    return a[2] > b[2]
+  end)
+  local logs = {}
+  for i = 1, #tb do
+    local v = tb[i]
+    table.insert(logs, string.format("sync time[%f ms], cnt[%d], name[%s]", v[2], v[3], v[1]))
   end
-)
-    local logs = {}
-    for i = 1, #tb do
-      local v = tb[i]
-      ;
-      (table.insert)(logs, (string.format)("time[%f ms], cnt[%d], name[%s]", v[2], v[3], v[1]))
+  tb = {}
+  local iter = asyncTimes:GetEnumerator()
+  while iter:MoveNext() do
+    local name = iter.Current.Key
+    local time = iter.Current.Value
+    local count = time.Count
+    local total = 0
+    for i = 0, count - 1 do
+      total = total + time[i]
     end
-    local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-    local file = dir .. (string.format)("GameObjectLoadTimes%s.txt", TimeToDate2(_now()))
-    self:WriteToFile(dir, file, (table.concat)(logs, "\n"))
-    return file
+    local average = total / count
+    table.insert(tb, {
+      name,
+      average,
+      count
+    })
   end
+  table.sort(tb, function(a, b)
+    return a[2] > b[2]
+  end)
+  for i = 1, #tb do
+    local v = tb[i]
+    table.insert(logs, string.format("async time[%f ms], cnt[%d], name[%s]", v[2], v[3], v[1]))
+  end
+  local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+  local file = dir .. string.format("AssetLoadTimes%s.txt", TimeToDate2(_now()))
+  self:WriteToFile(dir, file, table.concat(logs, "\n"))
+  return file
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
+function Monitor:GameObjectLoadTimes()
+  if not App.SpeedStatistics then
+    Log.error("please turn on the SpeedStatistics switch in switch.lua")
+    return
+  end
+  local times = App.GetGameObjectLoadTimes()
+  local tb = {}
+  local iter = times:GetEnumerator()
+  while iter:MoveNext() do
+    local name = iter.Current.Key
+    local time = iter.Current.Value
+    local count = time.Count
+    local total = 0
+    for i = 0, count - 1 do
+      total = total + time[i]
+    end
+    local average = total / count
+    table.insert(tb, {
+      name,
+      average,
+      count
+    })
+  end
+  table.sort(tb, function(a, b)
+    return a[2] > b[2]
+  end)
+  local logs = {}
+  for i = 1, #tb do
+    local v = tb[i]
+    table.insert(logs, string.format("time[%f ms], cnt[%d], name[%s]", v[2], v[3], v[1]))
+  end
+  local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+  local file = dir .. string.format("GameObjectLoadTimes%s.txt", TimeToDate2(_now()))
+  self:WriteToFile(dir, file, table.concat(logs, "\n"))
+  return file
+end
 
-Monitor.NullObjectPrint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local msg = (debug.dumpreg)()
-  local msg1 = (string.format)("当前mono内存：%s MB\n当前lua内存：%s MB\n", App.CMem / 1024, collectgarbage("count") / 1024)
-  local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-  local file = dir .. (string.format)("NullObjectPrint%s.txt", TimeToDate2(_now()))
+function Monitor:NullObjectPrint()
+  local msg = debug.dumpreg()
+  local msg1 = string.format("当前mono内存：%s MB\n当前lua内存：%s MB\n", App.CMem / 1024, collectgarbage("count") / 1024)
+  local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+  local file = dir .. string.format("NullObjectPrint%s.txt", TimeToDate2(_now()))
   self:WriteToFile(dir, file, msg1 .. msg)
   return file
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.CNullObjectPrint = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local msg1 = (App.GetObjects)()
-  local msg2 = (App.GetBackUpObjects)()
-  local msg3 = (string.format)("当前mono内存：%s MB\n当前lua内存：%s MB\n", App.CMem / 1024, collectgarbage("count") / 1024)
-  local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-  local file = dir .. (string.format)("C#NullObjectPrint%s.txt", TimeToDate2(_now()))
+function Monitor:CNullObjectPrint()
+  local msg1 = App.GetObjects()
+  local msg2 = App.GetBackUpObjects()
+  local msg3 = string.format("当前mono内存：%s MB\n当前lua内存：%s MB\n", App.CMem / 1024, collectgarbage("count") / 1024)
+  local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+  local file = dir .. string.format("C#NullObjectPrint%s.txt", TimeToDate2(_now()))
   self:WriteToFile(dir, file, msg3 .. msg1 .. msg2)
   return file
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.AllAbsPrint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local abs = (App.GetABs)()
+function Monitor:AllAbsPrint()
+  local abs = App.GetABs()
   local length = abs.Length
   local tb = {}
   for i = 0, length - 1 do
-    (table.insert)(tb, abs[i])
+    table.insert(tb, abs[i])
   end
-  local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-  local file = dir .. (string.format)("AllAbsPrint%s.txt", TimeToDate2(_now()))
-  self:WriteToFile(dir, file, (table.concat)(tb, "\n"))
+  local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+  local file = dir .. string.format("AllAbsPrint%s.txt", TimeToDate2(_now()))
+  self:WriteToFile(dir, file, table.concat(tb, "\n"))
   return file
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.AbLeaksPrint = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local abs = (App.GetABs)()
+function Monitor:AbLeaksPrint()
+  local abs = App.GetABs()
   local length = abs.Length
   local tb = {}
   for i = 0, length - 1 do
     tb[abs[i]] = 1
   end
   local leaks = {}
-  local unityAbs = (App.GetUnityAbs)()
+  local unityAbs = App.GetUnityAbs()
   length = unityAbs.Length
   for i = 0, length - 1 do
     local ab = unityAbs[i]
     if not tb[ab] then
-      (table.insert)(leaks, ab)
+      table.insert(leaks, ab)
     end
   end
   if not next(leaks) then
-    return 
+    return
   end
-  local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-  local file = dir .. (string.format)("AbLeaksPrint%s.txt", TimeToDate2(_now()))
-  self:WriteToFile(dir, file, (table.concat)(leaks, "\n"))
+  local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+  local file = dir .. string.format("AbLeaksPrint%s.txt", TimeToDate2(_now()))
+  self:WriteToFile(dir, file, table.concat(leaks, "\n"))
   return file
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.DisposeAll = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (App.DisposeAll)()
+function Monitor:DisposeAll()
+  App.DisposeAll()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.LuaSnapShot = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function Monitor:LuaSnapShot()
   self:GC()
   self:GC()
-  self.beforFuncs = (debug.regfunc)()
+  self.beforFuncs = debug.regfunc()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.CompareLuaSnapShot = function(self, memeryMsg)
-  -- function num : 0_15 , upvalues : _ENV
+function Monitor:CompareLuaSnapShot(memeryMsg)
   local beforFuncs = self.beforFuncs
   assert(beforFuncs, "need snapshot frist")
   self:GC()
   self:GC()
   self:GC()
   local diffs = {}
-  local nowFuncs = (debug.regfunc)()
-  for k,v in pairs(nowFuncs) do
+  local nowFuncs = debug.regfunc()
+  for k, v in pairs(nowFuncs) do
     if beforFuncs[k] == nil then
       diffs[k] = v
-    else
-      if beforFuncs[k] < v then
-        diffs[k] = v - beforFuncs[k]
-      end
+    elseif v > beforFuncs[k] then
+      diffs[k] = v - beforFuncs[k]
     end
   end
   if not next(diffs) then
-    return 
+    return
   end
-  local now = (UnityEngine.Time).realtimeSinceStartup
+  local now = UnityEngine.Time.realtimeSinceStartup
   local tb = {memeryMsg}
-  for k,v in pairs(diffs) do
-    (table.insert)(tb, (string.format)("[%s] = [%d]", k, v))
+  for k, v in pairs(diffs) do
+    table.insert(tb, string.format("[%s] = [%d]", k, v))
   end
-  local dir = (string.format)("%sAssetMemoryProfileOutput/", App.StoragePath)
-  local file = dir .. (string.format)("LuaLeakInfo%s.txt", TimeToDate2(_now()))
-  self:WriteToFile(dir, file, (table.concat)(tb, "\n"))
+  local dir = string.format("%sAssetMemoryProfileOutput/", App.StoragePath)
+  local file = dir .. string.format("LuaLeakInfo%s.txt", TimeToDate2(_now()))
+  self:WriteToFile(dir, file, table.concat(tb, "\n"))
   return file
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Monitor.Dispose = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function Monitor:Dispose()
   if App.SpeedStatistics then
     self:ABLoadTimes()
     self:AssetLoadTimes()
     self:GameObjectLoadTimes()
   end
 end
-
-

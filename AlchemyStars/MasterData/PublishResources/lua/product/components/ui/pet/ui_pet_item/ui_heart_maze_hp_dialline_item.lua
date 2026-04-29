@@ -1,43 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_item/ui_heart_maze_hp_dialline_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHeartMazeHpDialLineItem", UICustomWidget)
 UIHeartMazeHpDialLineItem = UIHeartMazeHpDialLineItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHeartMazeHpDialLineItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHeartMazeHpDialLineItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartMazeHpDialLineItem.OnShow = function(self)
-  -- function num : 0_1
+function UIHeartMazeHpDialLineItem:OnShow()
   self._img = self:GetUIComponent("Image", "img")
   self._rect = self:GetUIComponent("RectTransform", "img")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHeartMazeHpDialLineItem.SetData = function(self, idx, posx, sp, show)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHeartMazeHpDialLineItem:SetData(idx, posx, sp, show)
   self._index = idx
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(posx, 0)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._img).enabled = show
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._img).sprite = sp
-  ;
-  (self._img):SetNativeSize()
+  self._rect.anchoredPosition = Vector2(posx, 0)
+  self._img.enabled = show
+  self._img.sprite = sp
+  self._img:SetNativeSize()
 end
-
-

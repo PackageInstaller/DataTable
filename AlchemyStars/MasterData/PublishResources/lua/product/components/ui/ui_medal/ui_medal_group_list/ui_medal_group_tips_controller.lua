@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_group_list/ui_medal_group_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalGroupTipsController", UIController)
 UIMedalGroupTipsController = UIMedalGroupTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalGroupTipsController.Constructor = function(self)
-  -- function num : 0_0
+function UIMedalGroupTipsController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalGroupTipsController:OnShow(uiParams)
   self:InitWidget()
   self._medalid = uiParams[1]
   self._isBoard = uiParams[2]
@@ -22,101 +12,67 @@ UIMedalGroupTipsController.OnShow = function(self, uiParams)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupTipsController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local path = nil
-  ;
-  ((GameGlobal.GetModule)(MedalModule))
-  local medalModule = nil
-  local medalInfo, autoTake = nil, nil
-  ;
-  ((self.iconBg).gameObject):SetActive(self._isBoard)
-  ;
-  ((self.icon).gameObject):SetActive(not self._isBoard)
-  local cfg_item = (Cfg.cfg_item)[self._medalid]
+function UIMedalGroupTipsController:OnValue()
+  local path
+  local medalModule = GameGlobal.GetModule(MedalModule)
+  local medalInfo, autoTake
+  self.iconBg.gameObject:SetActive(self._isBoard)
+  self.icon.gameObject:SetActive(not self._isBoard)
+  local cfg_item = Cfg.cfg_item[self._medalid]
   if self._isBoard then
     medalInfo = medalModule:GetMedalBoardVec()
-    local cfg = (Cfg.cfg_item_medal_board)[self._medalid]
+    local cfg = Cfg.cfg_item_medal_board[self._medalid]
     path = cfg.GetPathDesc
     autoTake = cfg.IsAutoTake
     local icon = cfg_item.Icon
-    ;
-    (self.iconBg):LoadImage(icon)
+    self.iconBg:LoadImage(icon)
   else
-    do
-      medalInfo = medalModule:GetMedalVec()
-      do
-        local cfg = (Cfg.cfg_item_medal)[self._medalid]
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R7 in 'UnsetPending'
-
-        if cfg then
-          (self.icon).sprite = (self._atlas):GetSprite(cfg.Icon)
-          ;
-          (self.icon):SetNativeSize()
-        end
-        path = cfg.GetPathDesc
-        autoTake = cfg.IsAutoTake
-        local nam = cfg_item.Name
-        local desc = cfg_item.RpIntro
-        ;
-        (self.nam):SetText((StringTable.Get)(nam))
-        ;
-        (self.des):SetText((StringTable.Get)(desc))
-        ;
-        (self.path):SetText((StringTable.Get)(path))
-        if autoTake then
-          local info = medalInfo[self._medalid]
-          if info.status == RewardStatus.E_MEDAL_REWARD_RECVED then
-            (self._proGo):SetActive(false)
-          else
-            ;
-            (self._proGo):SetActive(true)
-            local rate = 0
-            local proValue = 0
-            local proValueMax = 0
-            if info.total_progress ~= nil then
-              proValueMax = info.total_progress
-            end
-            if info.status == RewardStatus.E_MEDAL_REWARD_RECVED then
-              rate = 1
-              proValue = proValueMax
-            else
-              if info.total_progress and info.total_progress ~= 0 then
-                rate = info.cur_progress / info.total_progress
-                proValue = info.cur_progress
-              end
-            end
-            local width = rate * 761
-            -- DECOMPILER ERROR at PC131: Confused about usage of register: R13 in 'UnsetPending'
-
-            ;
-            (self.proValImg).sizeDelta = Vector2(width, 20)
-            ;
-            (self._proValue):SetText(proValue)
-            ;
-            (self._proValueMax):SetText((string.format)("/%d", proValueMax))
-          end
-        else
-          do
-            ;
-            (self._proGo):SetActive(false)
-            ;
-            (self.have):SetActive(self._collect)
-            ;
-            (self.nothave):SetActive(not self._collect)
-          end
-        end
-      end
+    medalInfo = medalModule:GetMedalVec()
+    local cfg = Cfg.cfg_item_medal[self._medalid]
+    if cfg then
+      self.icon.sprite = self._atlas:GetSprite(cfg.Icon)
+      self.icon:SetNativeSize()
     end
+    path = cfg.GetPathDesc
+    autoTake = cfg.IsAutoTake
   end
+  local nam = cfg_item.Name
+  local desc = cfg_item.RpIntro
+  self.nam:SetText(StringTable.Get(nam))
+  self.des:SetText(StringTable.Get(desc))
+  self.path:SetText(StringTable.Get(path))
+  if autoTake then
+    local info = medalInfo[self._medalid]
+    if info.status == RewardStatus.E_MEDAL_REWARD_RECVED then
+      self._proGo:SetActive(false)
+    else
+      self._proGo:SetActive(true)
+      local rate = 0
+      local proValue = 0
+      local proValueMax = 0
+      if info.total_progress ~= nil then
+        proValueMax = info.total_progress
+      end
+      if info.status == RewardStatus.E_MEDAL_REWARD_RECVED then
+        rate = 1
+        proValue = proValueMax
+      elseif info.total_progress and info.total_progress ~= 0 then
+        rate = info.cur_progress / info.total_progress
+        proValue = info.cur_progress
+      end
+      local width = rate * 761
+      self.proValImg.sizeDelta = Vector2(width, 20)
+      self._proValue:SetText(proValue)
+      self._proValueMax:SetText(string.format("/%d", proValueMax))
+    end
+  else
+    self._proGo:SetActive(false)
+  end
+  self.have:SetActive(self._collect)
+  self.nothave:SetActive(not self._collect)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupTipsController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMedalGroupTipsController:InitWidget()
   self._atlas = self:GetAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
   self.nam = self:GetUIComponent("UILocalizationText", "txtName")
   self.des = self:GetUIComponent("UILocalizationText", "txtdesc")
@@ -131,11 +87,6 @@ UIMedalGroupTipsController.InitWidget = function(self)
   self._proValueMax = self:GetUIComponent("UILocalizationText", "proValueMax")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalGroupTipsController.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UIMedalGroupTipsController:BgOnClick(go)
   self:CloseDialog()
 end
-
-

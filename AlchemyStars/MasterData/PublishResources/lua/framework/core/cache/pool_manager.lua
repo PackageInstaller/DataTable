@@ -1,358 +1,252 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/cache/pool_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PoolManager", Object)
 PoolManager = PoolManager
 local TABLE_INSERT = table.insert
 local TABLE_CONCAT = table.concat
 local CACHE_DIR_NAME = "CachePoolStatistics"
 local CACHE_FILE_NAME = "CachePool"
--- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
 
-PoolManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PoolManager:Constructor()
   self.Pools = {}
-  self.root = (CacheHelper.GetRoot)()
+  self.root = CacheHelper.GetRoot()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PoolManager:Dispose()
   self:DestroyAllPools()
-  ;
-  (UIHelper.DestroyGameObject)(self.root)
+  UIHelper.DestroyGameObject(self.root)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PoolManager:Init()
   PoolRegister:RegisterPools(self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.CreatePool = function(self, poolType, loadType, limitn, enableShowInHierarchy, name, preloadAmount)
-  -- function num : 0_3
+function PoolManager:CreatePool(poolType, loadType, limitn, enableShowInHierarchy, name, preloadAmount)
   self:CreatePoolInternal(poolType, loadType, limitn, enableShowInHierarchy)
   if name and loadType then
-    if not preloadAmount then
-      preloadAmount = 1
-    end
+    preloadAmount = preloadAmount or 1
     self:PreLoad(poolType, name, loadType, preloadAmount)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.AsyncCreatePool = function(self, TT, poolType, loadType, limitn, enableShowInHierarchy, name, preloadAmount)
-  -- function num : 0_4
+function PoolManager:AsyncCreatePool(TT, poolType, loadType, limitn, enableShowInHierarchy, name, preloadAmount)
   self:CreatePoolInternal(poolType, loadType, limitn, enableShowInHierarchy)
   if name and loadType then
-    if not preloadAmount then
-      preloadAmount = 1
-    end
+    preloadAmount = preloadAmount or 1
     self:AsyncPreLoad(TT, poolType, name, loadType, preloadAmount)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.ConcCreatePool = function(self, poolType, loadType, limitn, enableShowInHierarchy, name, preloadAmount)
-  -- function num : 0_5
+function PoolManager:ConcCreatePool(poolType, loadType, limitn, enableShowInHierarchy, name, preloadAmount)
   self:CreatePoolInternal(poolType, loadType, limitn, enableShowInHierarchy)
   if name and loadType then
-    if not preloadAmount then
-      preloadAmount = 1
-    end
+    preloadAmount = preloadAmount or 1
     self:ConcPreLoad(poolType, name, loadType, preloadAmount)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.Spawn = function(self, poolType, name, loadType, onSpawned)
-  -- function num : 0_6 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:Spawn(poolType, name, loadType, onSpawned)
+  local pool = self.Pools[poolType]
   if not pool then
-    (Log.fatal)("[Pool] PoolManager:Spawn Error, not find pool,", poolType, ", need CreatePool first")
-    return 
+    Log.fatal("[Pool] PoolManager:Spawn Error, not find pool,", poolType, ", need CreatePool first")
+    return
   end
   local r = pool:Spawn(name, loadType, onSpawned)
   if loadType == LoadType.GameObject and r and r.Obj then
-    (UIHelper.SetActive)(r.Obj, true)
+    UIHelper.SetActive(r.Obj, true)
   end
   return r
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.AsyncSpawn = function(self, TT, poolType, name, loadType, onSpawned)
-  -- function num : 0_7 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:AsyncSpawn(TT, poolType, name, loadType, onSpawned)
+  local pool = self.Pools[poolType]
   if not pool then
-    (Log.fatal)("[Pool] PoolManager:AsyncSpawn Error, not find pool,", poolType, ", need CreatePool first")
-    return 
+    Log.fatal("[Pool] PoolManager:AsyncSpawn Error, not find pool,", poolType, ", need CreatePool first")
+    return
   end
   local r = pool:AsyncSpawn(TT, name, loadType, onSpawned)
   if loadType == LoadType.GameObject and r and r.Obj then
-    (UIHelper.SetActive)(r.Obj, true)
+    UIHelper.SetActive(r.Obj, true)
   end
   return r
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.DeSpawn = function(self, poolType, resRequest, onDeSpawned)
-  -- function num : 0_8 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:DeSpawn(poolType, resRequest, onDeSpawned)
+  local pool = self.Pools[poolType]
   if not pool then
-    (Log.fatal)("[Pool] PoolManager:DeSpawn Error, not find pool,", poolType, ", you should create pool when spawn")
-    return 
+    Log.fatal("[Pool] PoolManager:DeSpawn Error, not find pool,", poolType, ", you should create pool when spawn")
+    return
   end
   if resRequest.m_LoadType == LoadType.GameObject then
     if not resRequest or not resRequest.Obj then
-      (Log.fatal)("[Pool] PoolManager:DeSpawn Error, gameobject is nil")
-      return 
+      Log.fatal("[Pool] PoolManager:DeSpawn Error, gameobject is nil")
+      return
     end
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    ((resRequest.Obj).transform).parent = pool:Root()
-    ;
-    (UIHelper.SetActive)(resRequest.Obj, false)
+    resRequest.Obj.transform.parent = pool:Root()
+    UIHelper.SetActive(resRequest.Obj, false)
   end
   pool:DeSpawn(resRequest, onDeSpawned)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.SetLimit = function(self, poolType, limitn)
-  -- function num : 0_9 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:SetLimit(poolType, limitn)
+  local pool = self.Pools[poolType]
   if pool then
     pool:SetLimit(limitn)
   else
-    ;
-    (Log.fatal)("[Pool] PoolManager:SetLimit Error, not find pool,", poolType, ", need CreatePool first")
+    Log.fatal("[Pool] PoolManager:SetLimit Error, not find pool,", poolType, ", need CreatePool first")
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.PreLoad = function(self, poolType, name, loadType, preloadAmount)
-  -- function num : 0_10 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:PreLoad(poolType, name, loadType, preloadAmount)
+  local pool = self.Pools[poolType]
   if not pool then
-    (Log.fatal)("[Pool] PoolManager:PreLoad Error, not find pool,", poolType, ", need CreatePool first")
-    return 
+    Log.fatal("[Pool] PoolManager:PreLoad Error, not find pool,", poolType, ", need CreatePool first")
+    return
   end
   pool:PreLoad(name, loadType, preloadAmount)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.AsyncPreLoad = function(self, TT, poolType, name, loadType, preloadAmount)
-  -- function num : 0_11 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:AsyncPreLoad(TT, poolType, name, loadType, preloadAmount)
+  local pool = self.Pools[poolType]
   if not pool then
-    (Log.fatal)("[Pool] PoolManager:AsyncPreLoad Error, not find pool,", poolType, ", need CreatePool first")
-    return 
+    Log.fatal("[Pool] PoolManager:AsyncPreLoad Error, not find pool,", poolType, ", need CreatePool first")
+    return
   end
   pool:AsyncPreLoad(TT, name, loadType, preloadAmount)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.ConcPreLoad = function(self, poolType, name, loadType, preloadAmount)
-  -- function num : 0_12 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:ConcPreLoad(poolType, name, loadType, preloadAmount)
+  local pool = self.Pools[poolType]
   if not pool then
-    (Log.fatal)("[Pool] PoolManager:AsyncPreLoad Error, not find pool,", poolType, ", need CreatePool first")
-    return 
+    Log.fatal("[Pool] PoolManager:AsyncPreLoad Error, not find pool,", poolType, ", need CreatePool first")
+    return
   end
   pool:ConcPreLoad(name, loadType, preloadAmount)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.Compare = function(self, names)
-  -- function num : 0_13 , upvalues : _ENV
+function PoolManager:Compare(names)
   if type(names) ~= "table" then
-    (Log.fatal)("[Pool] PoolManager:Compare Error, names not valid")
+    Log.fatal("[Pool] PoolManager:Compare Error, names not valid")
     return {}, names
   end
   local t, missNames = {}, {}
   for i = 1, #names do
     local name = names[i]
     local miss = true
-    for k,pool in self.Pools do
+    for k, pool in self.Pools, nil, nil do
       local hitCount = pool:GetCount(name)
-      if hitCount > 0 then
+      if 0 < hitCount then
         t[#t + 1] = {_hitCount = hitCount, _name = name}
         miss = false
         break
       end
     end
-    do
-      do
-        if miss then
-          missNames[#missNames + 1] = name
-        end
-        -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if miss then
+      missNames[#missNames + 1] = name
     end
   end
-  ;
-  (table.sort)(t, function(e1, e2)
-    -- function num : 0_13_0
-    do return e2._hitCount < e1._hitCount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(t, function(e1, e2)
+    return e1._hitCount > e2._hitCount
+  end)
   local res = {}
   for i = 1, #t do
-    res[#res + 1] = (t[i])._name
+    res[#res + 1] = t[i]._name
   end
   return res, missNames
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.CompareInPool = function(self, poolType, names)
-  -- function num : 0_14 , upvalues : _ENV
+function PoolManager:CompareInPool(poolType, names)
   if type(names) ~= "table" then
-    (Log.fatal)("[Pool] PoolManager:CompareInPool Error, names not valid")
+    Log.fatal("[Pool] PoolManager:CompareInPool Error, names not valid")
     return {}, names
   end
-  local pool = (self.Pools)[poolType]
+  local pool = self.Pools[poolType]
   if not pool then
-    (Log.debug)("[Pool] PoolManager:CompareInPool, no pool,", poolType, ", now")
+    Log.debug("[Pool] PoolManager:CompareInPool, no pool,", poolType, ", now")
     return {}, names
   end
   local t, missNames = {}, {}
   for i = 1, #names do
     local name = names[i]
     local hitCount = pool:GetCount(name)
-    if hitCount > 0 then
+    if 0 < hitCount then
       t[#t + 1] = {_hitCount = hitCount, _name = name}
     else
       missNames[#missNames + 1] = name
     end
   end
-  ;
-  (table.sort)(t, function(e1, e2)
-    -- function num : 0_14_0
-    do return e2._hitCount < e1._hitCount end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(t, function(e1, e2)
+    return e1._hitCount > e2._hitCount
+  end)
   local res = {}
   for i = 1, #t do
-    res[#res + 1] = (t[i])._name
+    res[#res + 1] = t[i]._name
   end
   return res, missNames
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.LogMessages = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  for k,v in pairs(self.Pools) do
+function PoolManager:LogMessages()
+  for k, v in pairs(self.Pools) do
     v:LogMessages()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.Messages = function(self)
-  -- function num : 0_16 , upvalues : _ENV, TABLE_INSERT, TABLE_CONCAT
+function PoolManager:Messages()
   local res = {}
-  for k,v in pairs(self.Pools) do
+  for k, v in pairs(self.Pools) do
     TABLE_INSERT(res, v:Message())
   end
   return TABLE_CONCAT(res, "\n")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.WriteMessagesToFile = function(self)
-  -- function num : 0_17 , upvalues : _ENV, CACHE_DIR_NAME, CACHE_FILE_NAME
-  local dir = (string.format)("%s%s/", App.StoragePath, CACHE_DIR_NAME)
-  local file = dir .. (string.format)("%s%s.txt", CACHE_FILE_NAME, TimeToDate2(_now()))
-  ;
-  (Monitor:GetInstance()):WriteToFile(dir, file, self:Messages())
+function PoolManager:WriteMessagesToFile()
+  local dir = string.format("%s%s/", App.StoragePath, CACHE_DIR_NAME)
+  local file = dir .. string.format("%s%s.txt", CACHE_FILE_NAME, TimeToDate2(_now()))
+  Monitor:GetInstance():WriteToFile(dir, file, self:Messages())
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.DestroyPool = function(self, poolType)
-  -- function num : 0_18 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:DestroyPool(poolType)
+  local pool = self.Pools[poolType]
   if pool then
     pool:Dispose()
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.Pools)[poolType] = nil
+    self.Pools[poolType] = nil
   else
-    ;
-    (Log.fatal)("[Pool]PoolManager:DestroyPool Error,", poolType, ", is nil")
+    Log.fatal("[Pool]PoolManager:DestroyPool Error,", poolType, ", is nil")
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.ClearPool = function(self, poolType)
-  -- function num : 0_19 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:ClearPool(poolType)
+  local pool = self.Pools[poolType]
   if pool then
     pool:Clear()
   else
-    ;
-    (Log.fatal)("[Pool]PoolManager:ClearPool Error,", poolType, ", is nil")
+    Log.fatal("[Pool]PoolManager:ClearPool Error,", poolType, ", is nil")
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.Root = function(self)
-  -- function num : 0_20
+function PoolManager:Root()
   return self.root
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.PreLoadInternal = function(self, poolType, name, loadType, preloadAmount)
-  -- function num : 0_21 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:PreLoadInternal(poolType, name, loadType, preloadAmount)
+  local pool = self.Pools[poolType]
   if not pool then
-    (Log.fatal)("[Pool] PoolManager:PreLoad Error, not find pool,", poolType, ", need CreatePool first")
-    return 
+    Log.fatal("[Pool] PoolManager:PreLoad Error, not find pool,", poolType, ", need CreatePool first")
+    return
   end
   local hadCount = pool:GetCount(name)
   local leftPreloadAmount = preloadAmount - hadCount
   if leftPreloadAmount <= 0 then
-    (Log.debug)("[Pool] PoolManager:PreLoad return, preloadAmount=", preloadAmount, ",pool:", poolType, ",", name, ", is enough,", hadCount)
-    return 
+    Log.debug("[Pool] PoolManager:PreLoad return, preloadAmount=", preloadAmount, ",pool:", poolType, ",", name, ", is enough,", hadCount)
+    return
   end
-  ;
-  (Log.debug)("[Pool] PoolManager:PreLoad,", leftPreloadAmount, ",", poolType, ",", name)
+  Log.debug("[Pool] PoolManager:PreLoad,", leftPreloadAmount, ",", poolType, ",", name)
   return pool, leftPreloadAmount
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.CreatePoolInternal = function(self, poolType, loadType, limitn, enableShowInHierarchy)
-  -- function num : 0_22 , upvalues : _ENV
-  local pool = (self.Pools)[poolType]
+function PoolManager:CreatePoolInternal(poolType, loadType, limitn, enableShowInHierarchy)
+  local pool = self.Pools[poolType]
   if pool then
-    (Log.info)("[Pool] PoolManager:CreatePool return,", poolType, ", had created")
-    return 
+    Log.info("[Pool] PoolManager:CreatePool return,", poolType, ", had created")
+    return
   end
   enableShowInHierarchy = enableShowInHierarchy ~= false
   if loadType == LoadType.GameObject then
@@ -360,22 +254,12 @@ PoolManager.CreatePoolInternal = function(self, poolType, loadType, limitn, enab
   else
     pool = AssetPool:New(poolType, limitn)
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.Pools)[poolType] = pool
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self.Pools[poolType] = pool
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R4 in 'UnsetPending'
-
-PoolManager.DestroyAllPools = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  for k,v in pairs(self.Pools) do
+function PoolManager:DestroyAllPools()
+  for k, v in pairs(self.Pools) do
     v:Dispose()
   end
-  ;
-  (table.clear)(self.Pools)
+  table.clear(self.Pools)
 end
-
-

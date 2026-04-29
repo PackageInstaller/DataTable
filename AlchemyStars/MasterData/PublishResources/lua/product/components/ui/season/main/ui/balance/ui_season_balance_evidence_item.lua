@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/balance/ui_season_balance_evidence_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBalanceEvidenceItem", UICustomWidget)
 UISeasonBalanceEvidenceItem = UISeasonBalanceEvidenceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBalanceEvidenceItem.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonBalanceEvidenceItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceEvidenceItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBalanceEvidenceItem:OnShow()
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
   self._not_desc = self:GetUIComponent("UILocalizationText", "not_desc")
   self._img = self:GetUIComponent("Image", "img")
@@ -26,77 +16,41 @@ UISeasonBalanceEvidenceItem.OnShow = function(self)
   self._alpha = self:GetUIComponent("CanvasGroup", "rect")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceEvidenceItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonBalanceEvidenceItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceEvidenceItem.SetData = function(self, idx, have, cfg, yieldTime)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonBalanceEvidenceItem:SetData(idx, have, cfg, yieldTime)
   self._idx = idx
   self._cfg = cfg
-  ;
-  (self._have):SetActive(have)
-  ;
-  (self._not):SetActive(not have)
+  self._have:SetActive(have)
+  self._not:SetActive(not have)
   if have then
-    self._type_cfg = (Cfg.cfg_season_evidence_type)[(self._cfg).EvidenceType]
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._img).sprite = (self._atlas):GetSprite((self._type_cfg).Img)
-    local pos = (self._type_cfg).Pos
-    local size = (self._type_cfg).Size
-    local rot = (self._type_cfg).Rot
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._imgRT).sizeDelta = Vector2(size[1], size[2])
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._imgRT).anchoredPosition = Vector2(pos[1], pos[2])
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._imgRT).rotation = (Quaternion.Euler)(0, 0, rot)
-    ;
-    (self._desc):SetText((StringTable.Get)((self._cfg).Desc))
+    self._type_cfg = Cfg.cfg_season_evidence_type[self._cfg.EvidenceType]
+    self._img.sprite = self._atlas:GetSprite(self._type_cfg.Img)
+    local pos = self._type_cfg.Pos
+    local size = self._type_cfg.Size
+    local rot = self._type_cfg.Rot
+    self._imgRT.sizeDelta = Vector2(size[1], size[2])
+    self._imgRT.anchoredPosition = Vector2(pos[1], pos[2])
+    self._imgRT.rotation = Quaternion.Euler(0, 0, rot)
+    self._desc:SetText(StringTable.Get(self._cfg.Desc))
   else
-    do
-      ;
-      (self._not_desc):SetText((StringTable.Get)((self._cfg).LockDesc))
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R5 in 'UnsetPending'
-
-      if yieldTime and yieldTime > 0 then
-        (self._alpha).alpha = 0
-        if self._timer then
-          ((GameGlobal.Timer)()):CancelEvent(self._timer)
-        end
-        self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_3_0 , upvalues : self, have
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._alpha).alpha = 1
-    local animName = have and "uieffanim_UISeasonBalanceEvidenceItem_have_in" or "uieffanim_UISeasonBalanceEvidenceItem_not_in"
-    ;
-    (self._anim):Play(animName)
+    self._not_desc:SetText(StringTable.Get(self._cfg.LockDesc))
   end
-)
-      else
-        -- DECOMPILER ERROR at PC93: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._alpha).alpha = 1
-      end
+  if yieldTime and 0 < yieldTime then
+    self._alpha.alpha = 0
+    if self._timer then
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
+    self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._alpha.alpha = 1
+      local animName = have and "uieffanim_UISeasonBalanceEvidenceItem_have_in" or "uieffanim_UISeasonBalanceEvidenceItem_not_in"
+      self._anim:Play(animName)
+    end)
+  else
+    self._alpha.alpha = 1
   end
 end
-
-

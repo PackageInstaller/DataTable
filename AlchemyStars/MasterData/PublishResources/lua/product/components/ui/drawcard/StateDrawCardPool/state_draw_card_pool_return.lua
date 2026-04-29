@@ -1,73 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/StateDrawCardPool/state_draw_card_pool_return.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateDrawCardPoolReturn", State)
 StateDrawCardPoolReturn = StateDrawCardPoolReturn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateDrawCardPoolReturn.Init = function(self)
-  -- function num : 0_0
+function StateDrawCardPoolReturn:Init()
   self._fsm = self:GetFsm()
-  self._ui = (self._fsm):GetData()
+  self._ui = self._fsm:GetData()
   self.lockKey = "StateDrawCardPoolReturn"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolReturn.OnEnter = function(self, TT, ...)
-  -- function num : 0_1
+function StateDrawCardPoolReturn:OnEnter(TT, ...)
   self:Init()
-  ;
-  (self._ui):Lock(self.lockKey)
+  self._ui:Lock(self.lockKey)
   self:Return(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolReturn.OnExit = function(self, TT)
-  -- function num : 0_2
+function StateDrawCardPoolReturn:OnExit(TT)
   if self._ui then
-    (self._ui):InitLogoPos(true)
+    self._ui:InitLogoPos(true)
   end
-  if (self._ui).uieff then
-    ((self._ui).uieff):SetActive(false)
+  if self._ui.uieff then
+    self._ui.uieff:SetActive(false)
   end
-  ;
-  (self._ui):UnLock(self.lockKey)
+  self._ui:UnLock(self.lockKey)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolReturn.Destroy = function(self)
-  -- function num : 0_3
+function StateDrawCardPoolReturn:Destroy()
   self._fsm = nil
   self._ui = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDrawCardPoolReturn.Return = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local half = (self._ui):GetWidthHalf()
+function StateDrawCardPoolReturn:Return(TT)
+  local half = self._ui:GetWidthHalf()
   local maxDuration = 0.5
-  local duration = (((self._ui).bgLogo).anchoredPosition).x / half * maxDuration
-  duration = maxDuration - (Mathf.Clamp)(duration, 0, maxDuration)
-  ;
-  ((((self._ui).bgLogo):DOAnchorPosX(half, duration)):OnUpdate(function()
-    -- function num : 0_4_0 , upvalues : self
+  local duration = self._ui.bgLogo.anchoredPosition.x / half * maxDuration
+  duration = maxDuration - Mathf.Clamp(duration, 0, maxDuration)
+  self._ui.bgLogo:DOAnchorPosX(half, duration):OnUpdate(function()
     if self._ui then
-      (self._ui):OnBGLogoMoving()
+      self._ui:OnBGLogoMoving()
     end
-  end
-)):OnComplete(function()
-    -- function num : 0_4_1 , upvalues : self, _ENV
+  end):OnComplete(function()
     if self._fsm then
-      (self._fsm):ChangeState(StateDrawCardPool.Init)
+      self._fsm:ChangeState(StateDrawCardPool.Init)
     end
-  end
-)
+  end)
 end
-
-

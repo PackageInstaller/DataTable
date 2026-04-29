@@ -1,44 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/visit/ui_home_state_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeStateWidget", Object)
 UIHomeStateWidget = UIHomeStateWidget
-local type = {SpriteSwap = 1, ColorTint = 2, TextSwap = 3}
+local type = {
+  SpriteSwap = 1,
+  ColorTint = 2,
+  TextSwap = 3
+}
 _enum("UIHomeStateWidgetType", type)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomeStateWidget.Constructor = function(self, widgets)
-  -- function num : 0_0
+function UIHomeStateWidget:Constructor(widgets)
   self._widgets = widgets
   self._state = nil
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomeStateWidget.ChangeState = function(self, state)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomeStateWidget:ChangeState(state)
   if self._state == state then
-    return 
+    return
   end
   self._state = state
-  for _,widget in ipairs(self._widgets) do
+  for _, widget in ipairs(self._widgets) do
     local ui = widget.UI
     local type = widget.Type
-    local target = (widget.States)[state]
+    local target = widget.States[state]
     if type == UIHomeStateWidgetType.SpriteSwap then
       ui.sprite = target
-    else
-      if type == UIHomeStateWidgetType.ColorTint then
-        ui.color = target
-      else
-        if type == UIHomeStateWidgetType.TextSwap then
-          ui:SetText(target)
-        end
-      end
+    elseif type == UIHomeStateWidgetType.ColorTint then
+      ui.color = target
+    elseif type == UIHomeStateWidgetType.TextSwap then
+      ui:SetText(target)
     end
   end
 end
-
-

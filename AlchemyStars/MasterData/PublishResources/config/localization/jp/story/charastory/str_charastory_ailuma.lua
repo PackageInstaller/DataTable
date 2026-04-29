@@ -1,8 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/story/charastory/str_charastory_ailuma.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31350401_1_dialog_content = "PlayerName！私には仕事が必要だ！", ui_story_31350401_2_dialog_content = "仕事？驚いたな。仕事好きな人がいるなんて…", ui_story_31350401_3_dialog_content = "働かずに利益を得るのは良くない！秩序に反する！", ui_story_31350401_4_dialog_content = "（そうだ。エルマは「調和勢」だから、秩序とルールを重んじるんだった）", ui_story_31350401_5_dialog_content = "じゃあソラヴァンの中を見て回ろうか。", ui_story_31350401_6_dialog_content = "おお、ここはドリンクバーだな！？", ui_story_31350401_7_dialog_content = "ドリンクバーのスタッフをやってくれないかな？主な仕事はここの秩序を保つことだよ。", ui_story_31350401_8_dialog_content = "わかった、任せてくれ！", ui_story_31350401_9_dialog_content = "あ、おい、君！ここは子供が入っていい場所ではないぞ！", ui_story_31350401_10_dialog_content = "え？でも、私は大人だよ。", ui_story_31350401_11_dialog_content = "では、何歳なのだ？", ui_story_31350401_12_dialog_content = "えっと…覚えてないよ～何歳だっけ～", ui_story_31350401_13_dialog_content = "エルマ、ノーアは本当に大人なんだよ。", ui_story_31350401_14_dialog_content = "PlayerNameが話してた異郷のお客様ってあなただよね。\nいっしょに「飲み物」を飲もうよ！", ui_story_31350401_15_dialog_content = "それは美味しいのか！？", ui_story_31350401_16_dialog_content = "北境の雪山の上で甘く醸造した絶品の「飲み物」なんだ。すごくおいしいよ。", ui_story_31350401_17_dialog_content = "おぉ――本当だ！おいしすぎる！", ui_story_31350401_18_dialog_content = "はっ！？ダメだ！私はここの管理者だった…で、で、でも――止められないー！", ui_story_31350401_19_dialog_content = "あ、あの！やっぱり別の仕事をお願いできるかな？", ui_story_31350401_20_dialog_content = "ここは光力貯蔵室。ここにいる蛍灯たちと仲良くして、管理してくれればいいよ。", ui_story_31350401_21_dialog_content = "…", ui_story_31350401_22_dialog_content = "（こんな簡単な仕事なら、エルマもきっと大丈夫だよね）", ui_story_31350401_23_dialog_content = "絶大な脅威を検知しました。 逃走します。", ui_story_31350401_24_dialog_content = "近寄らないで。私たちを水没させて飲まないで。私たちは食べ物じゃないわ。", ui_story_31350401_25_dialog_content = "えっ、どうして？蛍灯がお気に入りの光力貯蔵室から逃げ出したよ！", ui_story_31350401_26_dialog_content = "あー…以前に彼らを“空飛ぶハチミツ”と勘違いして…その…水に混ぜて飲もうとしてしまってだな…", ui_story_31350401_27_dialog_content = "そうか…ここはエルマの職場には不向きかもしれないね…", ui_story_31350401_28_dialog_content = "う――私は…私はここでは役に立てないのか！これでは「調和勢」の面汚しだ！", ui_story_31350401_29_dialog_content = "そんなに自分を責めないで。エルマはすごいよ！", ui_story_31350401_30_dialog_content = "だ…だが…このままでは――", ui_story_31350401_31_dialog_content = "影ノ街のスイーツショップで売ってる超ゴージャスなホールケーキが買えない！\n啓光がくれた報酬はもう残りわずかだ！", ui_story_31350401_32_dialog_content = "さすがエルマだね。", ui_story_31350401_33_dialog_content = "あのケーキにすごく期待していたんだ…", ui_story_31350401_34_option_content = "今度は僕もついて行ってあげるよ。", ui_story_31350401_35_dialog_content = "えっ、本当か？だ、だが、ただで手に入れるわけにはいかない！", ui_story_31350401_36_dialog_content = "大丈夫。暗鬼退治に協力してくれたことがあったでしょ。ケーキはその時の報酬だよ。", ui_story_31350401_37_option_content = "あとで僕が作ってあげるよ。", ui_story_31350401_38_dialog_content = "PlayerNameはケーキが作れるのか！？", ui_story_31350401_39_dialog_content = "少しだけどね。", ui_story_31350401_40_dialog_content = "PlayerNameが作ったケーキを食べられるなんて、私は幸せ者だ！", ui_story_31350401_41_dialog_content = "影ノ街のケーキは今度僕もいっしょに買いに行くよ。", ui_story_31350401_42_dialog_content = "えっ、本当か？だ、だが、ただで手に入れるわけにはいかない！", ui_story_31350401_43_dialog_content = "大丈夫。暗鬼退治に協力してくれたことがあったでしょ。ケーキはその時の報酬だよ。", ui_story_31350401_44_dialog_content = "ところで影ノ街で売ってるケーキっていくらなの？", ui_story_31350401_45_dialog_content = "たしか<size=45>3万白夜コイン</size>だったな。", ui_story_31350401_46_dialog_content = "うっ――！", ui_story_31350401_47_dialog_content = "どうした、PlayerName！？どこか痛いのか！？", ui_story_31350401_48_dialog_content = "だ、大丈夫…ちょっと懐が痛いだけ。でもエルマのために耐えないと。"}
+local config = {
+  ui_story_31350401_1_dialog_content = "PlayerName！私には仕事が必要だ！",
+  ui_story_31350401_2_dialog_content = "仕事？驚いたな。仕事好きな人がいるなんて…",
+  ui_story_31350401_3_dialog_content = "働かずに利益を得るのは良くない！秩序に反する！",
+  ui_story_31350401_4_dialog_content = "（そうだ。エルマは「調和勢」だから、秩序とルールを重んじるんだった）",
+  ui_story_31350401_5_dialog_content = "じゃあソラヴァンの中を見て回ろうか。",
+  ui_story_31350401_6_dialog_content = "おお、ここはドリンクバーだな！？",
+  ui_story_31350401_7_dialog_content = "ドリンクバーのスタッフをやってくれないかな？主な仕事はここの秩序を保つことだよ。",
+  ui_story_31350401_8_dialog_content = "わかった、任せてくれ！",
+  ui_story_31350401_9_dialog_content = "あ、おい、君！ここは子供が入っていい場所ではないぞ！",
+  ui_story_31350401_10_dialog_content = "え？でも、私は大人だよ。",
+  ui_story_31350401_11_dialog_content = "では、何歳なのだ？",
+  ui_story_31350401_12_dialog_content = "えっと…覚えてないよ～何歳だっけ～",
+  ui_story_31350401_13_dialog_content = "エルマ、ノーアは本当に大人なんだよ。",
+  ui_story_31350401_14_dialog_content = "PlayerNameが話してた異郷のお客様ってあなただよね。\nいっしょに「飲み物」を飲もうよ！",
+  ui_story_31350401_15_dialog_content = "それは美味しいのか！？",
+  ui_story_31350401_16_dialog_content = "北境の雪山の上で甘く醸造した絶品の「飲み物」なんだ。すごくおいしいよ。",
+  ui_story_31350401_17_dialog_content = "おぉ――本当だ！おいしすぎる！",
+  ui_story_31350401_18_dialog_content = "はっ！？ダメだ！私はここの管理者だった…で、で、でも――止められないー！",
+  ui_story_31350401_19_dialog_content = "あ、あの！やっぱり別の仕事をお願いできるかな？",
+  ui_story_31350401_20_dialog_content = "ここは光力貯蔵室。ここにいる蛍灯たちと仲良くして、管理してくれればいいよ。",
+  ui_story_31350401_21_dialog_content = "…",
+  ui_story_31350401_22_dialog_content = "（こんな簡単な仕事なら、エルマもきっと大丈夫だよね）",
+  ui_story_31350401_23_dialog_content = "絶大な脅威を検知しました。 逃走します。",
+  ui_story_31350401_24_dialog_content = "近寄らないで。私たちを水没させて飲まないで。私たちは食べ物じゃないわ。",
+  ui_story_31350401_25_dialog_content = "えっ、どうして？蛍灯がお気に入りの光力貯蔵室から逃げ出したよ！",
+  ui_story_31350401_26_dialog_content = "あー…以前に彼らを“空飛ぶハチミツ”と勘違いして…その…水に混ぜて飲もうとしてしまってだな…",
+  ui_story_31350401_27_dialog_content = "そうか…ここはエルマの職場には不向きかもしれないね…",
+  ui_story_31350401_28_dialog_content = "う――私は…私はここでは役に立てないのか！これでは「調和勢」の面汚しだ！",
+  ui_story_31350401_29_dialog_content = "そんなに自分を責めないで。エルマはすごいよ！",
+  ui_story_31350401_30_dialog_content = "だ…だが…このままでは――",
+  ui_story_31350401_31_dialog_content = "影ノ街のスイーツショップで売ってる超ゴージャスなホールケーキが買えない！\n啓光がくれた報酬はもう残りわずかだ！",
+  ui_story_31350401_32_dialog_content = "さすがエルマだね。",
+  ui_story_31350401_33_dialog_content = "あのケーキにすごく期待していたんだ…",
+  ui_story_31350401_34_option_content = "今度は僕もついて行ってあげるよ。",
+  ui_story_31350401_35_dialog_content = "えっ、本当か？だ、だが、ただで手に入れるわけにはいかない！",
+  ui_story_31350401_36_dialog_content = "大丈夫。暗鬼退治に協力してくれたことがあったでしょ。ケーキはその時の報酬だよ。",
+  ui_story_31350401_37_option_content = "あとで僕が作ってあげるよ。",
+  ui_story_31350401_38_dialog_content = "PlayerNameはケーキが作れるのか！？",
+  ui_story_31350401_39_dialog_content = "少しだけどね。",
+  ui_story_31350401_40_dialog_content = "PlayerNameが作ったケーキを食べられるなんて、私は幸せ者だ！",
+  ui_story_31350401_41_dialog_content = "影ノ街のケーキは今度僕もいっしょに買いに行くよ。",
+  ui_story_31350401_42_dialog_content = "えっ、本当か？だ、だが、ただで手に入れるわけにはいかない！",
+  ui_story_31350401_43_dialog_content = "大丈夫。暗鬼退治に協力してくれたことがあったでしょ。ケーキはその時の報酬だよ。",
+  ui_story_31350401_44_dialog_content = "ところで影ノ街で売ってるケーキっていくらなの？",
+  ui_story_31350401_45_dialog_content = "たしか<size=45>3万白夜コイン</size>だったな。",
+  ui_story_31350401_46_dialog_content = "うっ――！",
+  ui_story_31350401_47_dialog_content = "どうした、PlayerName！？どこか痛いのか！？",
+  ui_story_31350401_48_dialog_content = "だ、大丈夫…ちょっと懐が痛いだけ。でもエルマのために耐えないと。"
+}
 return config
-

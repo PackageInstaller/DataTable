@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_reset_monster_weak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultResetMonsterWeak", BuffResultBase)
 BuffResultResetMonsterWeak = BuffResultResetMonsterWeak
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultResetMonsterWeak.Constructor = function(self, weakResult)
-  -- function num : 0_0
+function BuffResultResetMonsterWeak:Constructor(weakResult)
   self._weakResult = weakResult
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultResetMonsterWeak.GetWeakResult = function(self)
-  -- function num : 0_1
+function BuffResultResetMonsterWeak:GetWeakResult()
   return self._weakResult
 end
-
-

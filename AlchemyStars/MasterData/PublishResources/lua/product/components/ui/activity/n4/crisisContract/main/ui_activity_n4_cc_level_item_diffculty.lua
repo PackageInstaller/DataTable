@@ -1,40 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/main/ui_activity_n4_cc_level_item_diffculty.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCLevelItemDiffculty", UICustomWidget)
 UIActivityN4CCLevelItemDiffculty = UIActivityN4CCLevelItemDiffculty
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCLevelItemDiffculty.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN4CCLevelItemDiffculty:OnShow(uiParams)
   self:InitWidget()
   self._atlas = self:GetAsset("UIN4CC.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelItemDiffculty.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN4CCLevelItemDiffculty:InitWidget()
   self.passImg = self:GetGameObject("passImg")
   self.lockImg = self:GetGameObject("lockImg")
   self.imgBg = self:GetUIComponent("Image", "imgBg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelItemDiffculty.SetData = function(self, state, index)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.lockImg):SetActive(state == (UIActivityN4CCHelper.DiffultyState).Lock)
-  ;
-  (self.passImg):SetActive(state == (UIActivityN4CCHelper.DiffultyState).Pass)
-  local imgCfg = (UIActivityN4CCHelper.DiffultyBgImg)[state]
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.imgBg).sprite = (self._atlas):GetSprite(imgCfg[index])
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIActivityN4CCLevelItemDiffculty:SetData(state, index)
+  self.lockImg:SetActive(state == UIActivityN4CCHelper.DiffultyState.Lock)
+  self.passImg:SetActive(state == UIActivityN4CCHelper.DiffultyState.Pass)
+  local imgCfg = UIActivityN4CCHelper.DiffultyBgImg[state]
+  self.imgBg.sprite = self._atlas:GetSprite(imgCfg[index])
 end
-
-

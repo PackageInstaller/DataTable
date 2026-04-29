@@ -1,156 +1,101 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n18/ui_n18_review_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N18ReviewData", CampaignDataBase)
 N18ReviewData = N18ReviewData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N18ReviewData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._redDotModule = (GameGlobal.GetModule)(RedDotModule)
+function N18ReviewData:Constructor()
+  self._redDotModule = GameGlobal.GetModule(RedDotModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.CheckRedLevelFixteam = function(self)
-  -- function num : 0_1
+function N18ReviewData:CheckRedLevelFixteam()
   return nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.CheckRedNormal = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local red_level = (self.activityCampaign):CheckComponentRed(ECampaignReviewN18ComponentID.ECAMPAIGN_REVIEW_ReviewN18_LINE_MISSION)
+function N18ReviewData:CheckRedNormal()
+  local red_level = self.activityCampaign:CheckComponentRed(ECampaignReviewN18ComponentID.ECAMPAIGN_REVIEW_ReviewN18_LINE_MISSION)
   return red_level
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.GetComponentInfoNormal = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignReviewN18ComponentID.ECAMPAIGN_REVIEW_ReviewN18_LINE_MISSION)
+function N18ReviewData:GetComponentInfoNormal()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignReviewN18ComponentID.ECAMPAIGN_REVIEW_ReviewN18_LINE_MISSION)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.GetState = function(self, cInfo)
-  -- function num : 0_4 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function N18ReviewData:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UIN18BtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UIN18BtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UIN18BtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UIN18BtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UIN18BtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UIN18BtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UIN18BtnState.Locked
-        else
-          return UIN18BtnState.Normal
-        end
-      end
+      return UIN18BtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.GetStateNormal = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function N18ReviewData:GetStateNormal()
   local cInfo = self:GetComponentInfoNormal()
   if not cInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cInfo)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.GetPstId = function()
-  -- function num : 0_6 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function N18ReviewData.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.GetPrefsKey = function(str)
-  -- function num : 0_7 , upvalues : _ENV
-  local playerPrefsKey = (N18ReviewData.GetPstId)() .. str
+function N18ReviewData.GetPrefsKey(str)
+  local playerPrefsKey = N18ReviewData.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.GetPrefsKeyMain = function()
-  -- function num : 0_8 , upvalues : _ENV
-  return (N18ReviewData.GetPrefsKey)("UIN18ReviewDataPrefsKeyMain")
+function N18ReviewData.GetPrefsKeyMain()
+  return N18ReviewData.GetPrefsKey("UIN18ReviewDataPrefsKeyMain")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.GetPrefsKeyHard = function()
-  -- function num : 0_9 , upvalues : _ENV
-  return (N18ReviewData.GetPrefsKey)("UIN18ReviewDataPrefsKeyHard")
+function N18ReviewData.GetPrefsKeyHard()
+  return N18ReviewData.GetPrefsKey("UIN18ReviewDataPrefsKeyHard")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.GetPrefsKeyMiniGame = function()
-  -- function num : 0_10 , upvalues : _ENV
-  return (N18ReviewData.GetPrefsKey)("UIN18ReviewDataPrefsKeyMiniGame")
+function N18ReviewData.GetPrefsKeyMiniGame()
+  return N18ReviewData.GetPrefsKey("UIN18ReviewDataPrefsKeyMiniGame")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.HasPrefsMain = function()
-  -- function num : 0_11 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N18ReviewData.GetPrefsKeyMain)())
+function N18ReviewData.HasPrefsMain()
+  return UnityEngine.PlayerPrefs.HasKey(N18ReviewData.GetPrefsKeyMain())
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.HasPrefsHard = function()
-  -- function num : 0_12 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N18ReviewData.GetPrefsKeyHard)())
+function N18ReviewData.HasPrefsHard()
+  return UnityEngine.PlayerPrefs.HasKey(N18ReviewData.GetPrefsKeyHard())
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.HasPrefsMiniGame = function()
-  -- function num : 0_13 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N18ReviewData.GetPrefsKeyMiniGame)())
+function N18ReviewData.HasPrefsMiniGame()
+  return UnityEngine.PlayerPrefs.HasKey(N18ReviewData.GetPrefsKeyMiniGame())
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.SetPrefsMain = function()
-  -- function num : 0_14 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N18ReviewData.GetPrefsKeyMain)(), 1)
+function N18ReviewData.SetPrefsMain()
+  UnityEngine.PlayerPrefs.SetInt(N18ReviewData.GetPrefsKeyMain(), 1)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.SetPrefsHard = function()
-  -- function num : 0_15 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N18ReviewData.GetPrefsKeyHard)(), 1)
+function N18ReviewData.SetPrefsHard()
+  UnityEngine.PlayerPrefs.SetInt(N18ReviewData.GetPrefsKeyHard(), 1)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N18ReviewData.SetPrefsMiniGame = function()
-  -- function num : 0_16 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N18ReviewData.GetPrefsKeyMiniGame)(), 1)
+function N18ReviewData.SetPrefsMiniGame()
+  UnityEngine.PlayerPrefs.SetInt(N18ReviewData.GetPrefsKeyMiniGame(), 1)
 end
 
-local UIN18BtnState = {NotOpen = 1, Locked = 2, Closed = 3, Normal = 4}
+local UIN18BtnState = {
+  NotOpen = 1,
+  Locked = 2,
+  Closed = 3,
+  Normal = 4
+}
 _enum("UIN18BtnState", UIN18BtnState)
-

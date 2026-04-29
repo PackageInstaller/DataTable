@@ -1,62 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/sec_reset_single_color_ele.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultResetSingleColorGridElement", SkillEffectResultBase)
 SkillEffectResultResetSingleColorGridElement = SkillEffectResultResetSingleColorGridElement
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultResetSingleColorGridElement.Constructor = function(self, newGridDataList, trapIDList)
-  -- function num : 0_0
+function SkillEffectResultResetSingleColorGridElement:Constructor(newGridDataList, trapIDList)
   self._newGridDataList = newGridDataList
   self._flushTrapIDList = trapIDList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultResetSingleColorGridElement.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultResetSingleColorGridElement:GetEffectType()
   return SkillEffectType.ResetSingleColorGridElement
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultResetSingleColorGridElement.GetNewGridDataList = function(self)
-  -- function num : 0_2
+function SkillEffectResultResetSingleColorGridElement:GetNewGridDataList()
   return self._newGridDataList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultResetSingleColorGridElement.GetFlushTrapList = function(self)
-  -- function num : 0_3
+function SkillEffectResultResetSingleColorGridElement:GetFlushTrapList()
   return self._flushTrapIDList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultResetSingleColorGridElement.GetNewGridPieceType = function(self, pos)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,data in ipairs(self._newGridDataList) do
+function SkillEffectResultResetSingleColorGridElement:GetNewGridPieceType(pos)
+  for _, data in ipairs(self._newGridDataList) do
     if data.m_nX == pos.x and data.m_nY == pos.y then
       return data.m_nNewElementType
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultResetSingleColorGridElement.GetNewGridNumByType = function(self, pieceType)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectResultResetSingleColorGridElement:GetNewGridNumByType(pieceType)
   local count = 0
-  for _,data in ipairs(self._newGridDataList) do
+  for _, data in ipairs(self._newGridDataList) do
     if data.m_nNewElementType == pieceType then
       count = count + 1
     end
   end
   return count
 end
-
-

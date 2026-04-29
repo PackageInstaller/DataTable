@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/dialogue/ui_n32_multiline_dialogue_details.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineDialogueDetails", UIController)
 UIN32MultiLineDialogueDetails = UIN32MultiLineDialogueDetails
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineDialogueDetails.Constructor = function(self)
-  -- function num : 0_0
+function UIN32MultiLineDialogueDetails:Constructor()
   self._missionId = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN32MultiLineDialogueDetails:LoadDataOnEnter(TT, res, uiParams)
   self._missionId = uiParams[1]
   self._isPassMission = uiParams[2]
   self._endCB = uiParams[3]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN32MultiLineDialogueDetails:OnShow(uiParams)
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._txtDetailsValue = self:GetUIComponent("UILocalizationText", "txtDetailsValue")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -37,183 +24,120 @@ UIN32MultiLineDialogueDetails.OnShow = function(self, uiParams)
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.OnHide = function(self)
-  -- function num : 0_3
+function UIN32MultiLineDialogueDetails:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_4
+function UIN32MultiLineDialogueDetails:BtnAnywhereOnClick(go)
   self:OutAnimation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.BtnCloseOnClick = function(self, go)
-  -- function num : 0_5
+function UIN32MultiLineDialogueDetails:BtnCloseOnClick(go)
   self:OutAnimation()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.BtnEnterOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN32MultiLineDialogueDetails:BtnEnterOnClick(go)
   self:ShowDialog("UIN32MultiLineDialogue", self._missionId, self._endCB)
   local lockName = "UIN32MultiLineDialogueDetails:CloseDialog"
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
     YIELD(TT, 333)
     self:CloseDialog()
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.Flush = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfgMission = (Cfg.cfg_campaign_mission)[self._missionId]
-  local cfgChat = (Cfg.cfg_mission_multiline_chat)[self._missionId]
-  ;
-  (self._txtTitle):SetText((StringTable.Get)(cfgMission.Name))
-  ;
-  (self._txtDetailsValue):SetText((StringTable.Get)(cfgMission.Desc))
-  ;
-  (self._imgDrawingLoader):LoadImage(cfgChat.DetailsDrawing)
-  ;
-  (self._imgHeadLoader):LoadImage(cfgChat.DetailsHead)
+function UIN32MultiLineDialogueDetails:Flush()
+  local cfgMission = Cfg.cfg_campaign_mission[self._missionId]
+  local cfgChat = Cfg.cfg_mission_multiline_chat[self._missionId]
+  self._txtTitle:SetText(StringTable.Get(cfgMission.Name))
+  self._txtDetailsValue:SetText(StringTable.Get(cfgMission.Desc))
+  self._imgDrawingLoader:LoadImage(cfgChat.DetailsDrawing)
+  self._imgHeadLoader:LoadImage(cfgChat.DetailsHead)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.FlushRewards = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfgMission = (Cfg.cfg_campaign_mission)[self._missionId]
+function UIN32MultiLineDialogueDetails:FlushRewards()
+  local cfgMission = Cfg.cfg_campaign_mission[self._missionId]
   local dropId = cfgMission.FirstDropId
-  local dropRewards = (Cfg.cfg_drop)({DropID = dropId})
+  local dropRewards = Cfg.cfg_drop({DropID = dropId})
   if dropRewards == nil then
-    return 
+    return
   end
   self._dataRewards = {}
-  for k,v in pairs(dropRewards) do
+  for k, v in pairs(dropRewards) do
     local asset = RoleAsset:New()
     asset.dropId = v.ID
     asset.assetid = v.AssetID
     asset.count = v.MinCount
-    ;
-    (table.insert)(self._dataRewards, asset)
+    table.insert(self._dataRewards, asset)
   end
-  ;
-  (table.sort)(self._dataRewards, function(a, b)
-    -- function num : 0_8_0
-    do return a.dropId < b.dropId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._dataRewards, function(a, b)
+    return a.dropId < b.dropId
+  end)
   local count = #self._dataRewards
-  self._widgetRewards = (self._content):SpawnObjects("UIN32MultiLineDialogueDetailsReward", count)
-  for k,v in pairs(self._dataRewards) do
-    local ui = (self._widgetRewards)[k]
+  self._widgetRewards = self._content:SpawnObjects("UIN32MultiLineDialogueDetailsReward", count)
+  for k, v in pairs(self._dataRewards) do
+    local ui = self._widgetRewards[k]
     ui:SetData(v, self._isPassMission)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.OnShowItemInfo = function(self, reward, go)
-  -- function num : 0_9
-  local deltaPosition = (go.transform).position - ((self._safeArea).transform).position
+function UIN32MultiLineDialogueDetails:OnShowItemInfo(reward, go)
+  local deltaPosition = go.transform.position - self._safeArea.transform.position
   self:ShowDialog("UICommonItemInfo", reward, deltaPosition, "UIN32MultiLineSelectInfo.prefab")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.InAnimation = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN32MultiLineDialogueDetails:InAnimation()
   local lockName = "UIN32MultiLineDialogueDetails:InAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN32MultiLineDialogueDetails_in")
+    self._animation:Play("uieff_UIN32MultiLineDialogueDetails_in")
     YIELD(TT, 400)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetails.OutAnimation = function(self, cbFinish)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN32MultiLineDialogueDetails:OutAnimation(cbFinish)
   local lockName = "UIN32MultiLineDialogueDetails:OutAnimation"
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, lockName, _ENV, cbFinish
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN32MultiLineDialogueDetails_out")
+    self._animation:Play("uieff_UIN32MultiLineDialogueDetails_out")
     YIELD(TT, 200)
     self:CloseDialog()
     self:UnLock(lockName)
     if cbFinish then
       cbFinish()
     end
-  end
-)
+  end)
 end
 
 _class("UIN32MultiLineDialogueDetailsReward", UICustomWidget)
 UIN32MultiLineDialogueDetailsReward = UIN32MultiLineDialogueDetailsReward
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineDialogueDetailsReward.Constructor = function(self)
-  -- function num : 0_12
+function UIN32MultiLineDialogueDetailsReward:Constructor()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetailsReward.OnShow = function(self, uiParams)
-  -- function num : 0_13
+function UIN32MultiLineDialogueDetailsReward:OnShow(uiParams)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self._uiObtained = self:GetUIComponent("RectTransform", "uiObtained")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetailsReward.OnHide = function(self)
-  -- function num : 0_14
+function UIN32MultiLineDialogueDetailsReward:OnHide()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetailsReward.ButtonOnClick = function(self, go)
-  -- function num : 0_15
-  (self:RootUIOwner()):OnShowItemInfo(self._roleAsset, go)
+function UIN32MultiLineDialogueDetailsReward:ButtonOnClick(go)
+  self:RootUIOwner():OnShowItemInfo(self._roleAsset, go)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineDialogueDetailsReward.SetData = function(self, roleAsset, isObtained)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN32MultiLineDialogueDetailsReward:SetData(roleAsset, isObtained)
   self._roleAsset = roleAsset
   self._isObtained = isObtained
-  local cfgItem = (Cfg.cfg_item)[(self._roleAsset).assetid]
+  local cfgItem = Cfg.cfg_item[self._roleAsset.assetid]
   if cfgItem ~= nil then
-    (self._iconLoader):LoadImage(cfgItem.Icon)
+    self._iconLoader:LoadImage(cfgItem.Icon)
   end
-  ;
-  ((self._txtName).gameObject):SetActive(false)
-  ;
-  (self._txtCount):SetText((string.format)("x%d", (self._roleAsset).count))
-  ;
-  ((self._uiObtained).gameObject):SetActive(isObtained)
+  self._txtName.gameObject:SetActive(false)
+  self._txtCount:SetText(string.format("x%d", self._roleAsset.count))
+  self._uiObtained.gameObject:SetActive(isObtained)
 end
-
-

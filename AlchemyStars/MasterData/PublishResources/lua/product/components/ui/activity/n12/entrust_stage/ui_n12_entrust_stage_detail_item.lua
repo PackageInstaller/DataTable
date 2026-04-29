@@ -1,67 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/entrust_stage/ui_n12_entrust_stage_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12EntrustStageDetailItem", UICustomWidget)
 UIN12EntrustStageDetailItem = UIN12EntrustStageDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12EntrustStageDetailItem.SetData = function(self, roleAsset, received, callback, scale)
-  -- function num : 0_0 , upvalues : _ENV
-  if not scale then
-    self._scale = UIItemScale.Level2
-    self._roleAsset = roleAsset
-    self._callback = callback
-    local cfg_item = (Cfg.cfg_item)[(self._roleAsset).assetid]
-    if cfg_item == nil then
-      (Log.fatal)("UIN12EntrustStageDetailItem:SetData() error --> cfg_item is nil ! id --> " .. (self._roleAsset).assetid)
-      return 
-    end
-    self._cg = cfg_item.Icon
-    self._colorEnum = cfg_item.Color
-    self:_SetUIItem(received)
-    self:_SetReceived(received)
+function UIN12EntrustStageDetailItem:SetData(roleAsset, received, callback, scale)
+  self._scale = scale or UIItemScale.Level2
+  self._roleAsset = roleAsset
+  self._callback = callback
+  local cfg_item = Cfg.cfg_item[self._roleAsset.assetid]
+  if cfg_item == nil then
+    Log.fatal("UIN12EntrustStageDetailItem:SetData() error --> cfg_item is nil ! id --> " .. self._roleAsset.assetid)
+    return
   end
+  self._cg = cfg_item.Icon
+  self._colorEnum = cfg_item.Color
+  self:_SetUIItem(received)
+  self:_SetReceived(received)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailItem._SetUIItem = function(self, received)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN12EntrustStageDetailItem:_SetUIItem(received)
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base, self._scale)
-  ;
-  (self.uiItem):SetClickCallBack(function(go)
-    -- function num : 0_1_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base, self._scale)
+  self.uiItem:SetClickCallBack(function(go)
     self:BtnOnClick(go)
-  end
-)
+  end)
   local icon = self._cg
   local _iconGrey = received and 1 or 0
   local quality = self._colorEnum
-  local text1 = (self._roleAsset).count
-  ;
-  (self.uiItem):SetData({icon = icon, iconGrey = _iconGrey, quality = quality, text1 = text1, itemId = (self._roleAsset).assetid})
+  local text1 = self._roleAsset.count
+  self.uiItem:SetData({
+    icon = icon,
+    iconGrey = _iconGrey,
+    quality = quality,
+    text1 = text1,
+    itemId = self._roleAsset.assetid
+  })
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailItem._SetReceived = function(self, show)
-  -- function num : 0_2
+function UIN12EntrustStageDetailItem:_SetReceived(show)
   local obj = self:GetGameObject("state_Taken")
   obj:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageDetailItem.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIN12EntrustStageDetailItem:BtnOnClick(go)
   if self._callback then
-    (self._callback)((self._roleAsset).assetid, (go.transform).position)
+    self._callback(self._roleAsset.assetid, go.transform.position)
   end
 end
-
-

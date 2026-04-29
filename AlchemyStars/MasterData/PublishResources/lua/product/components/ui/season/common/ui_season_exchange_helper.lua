@@ -1,90 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/ui_season_exchange_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonExchangeHelper", Object)
 UISeasonExchangeHelper = UISeasonExchangeHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonExchangeHelper._GetCfg = function(component, id)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonExchangeHelper._GetCfg(component, id)
   local componentCfgId = component:GetComponentCfgId()
-  if not (Cfg.cfg_season_exchange_client)({ComponentID = componentCfgId}) then
-    local cfgs = {}
-  end
-  for _,v in ipairs(cfgs) do
+  local cfgs = Cfg.cfg_season_exchange_client({ComponentID = componentCfgId}) or {}
+  for _, v in ipairs(cfgs) do
     if v.ID == id then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeHelper.GetPrice = function(component, id)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg = (UISeasonExchangeHelper._GetCfg)(component, id)
+function UISeasonExchangeHelper.GetPrice(component, id)
+  local cfg = UISeasonExchangeHelper._GetCfg(component, id)
   local rawPrice = cfg and cfg.RawPrice or 0
   return rawPrice
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeHelper.GetDiscount = function(component, id)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (UISeasonExchangeHelper._GetCfg)(component, id)
+function UISeasonExchangeHelper.GetDiscount(component, id)
+  local cfg = UISeasonExchangeHelper._GetCfg(component, id)
   local discount = cfg and cfg.Discount or 0
   return discount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeHelper.GetBold = function(component, id)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (UISeasonExchangeHelper._GetCfg)(component, id)
+function UISeasonExchangeHelper.GetBold(component, id)
+  local cfg = UISeasonExchangeHelper._GetCfg(component, id)
   local bold = cfg and cfg.Bold or false
   return bold
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeHelper.GetExchangeItemList_Sort = function(component)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonExchangeHelper.GetExchangeItemList_Sort(component)
   local infos = component:GetExchangeItemList()
-  local soldout = function(a)
-    -- function num : 0_4_0 , upvalues : component
+  
+  local function soldout(a)
     return component:IsExchangeItemSoldout(a)
   end
-
-  local special = function(a)
-    -- function num : 0_4_1 , upvalues : _ENV, component
+  
+  local function special(a)
     if a.m_is_special then
       return 1
     end
-    local bold = (UISeasonExchangeHelper.GetBold)(component, a.m_id)
+    local bold = UISeasonExchangeHelper.GetBold(component, a.m_id)
     return bold and 2 or 3
   end
-
-  ;
-  (table.sort)(infos, function(a, b)
-    -- function num : 0_4_2 , upvalues : soldout, special
+  
+  table.sort(infos, function(a, b)
     local soldoutA = soldout(a)
     local soldoutB = soldout(b)
     local specialA = special(a)
     local specialB = special(b)
     if soldoutA ~= soldoutB then
       return soldoutB
+    elseif specialA ~= specialB then
+      return specialA < specialB
     else
-      if specialA >= specialB then
-        do return specialA == specialB end
-        do return a.m_id < b.m_id end
-        -- DECOMPILER ERROR: 4 unprocessed JMP targets
-      end
+      return a.m_id < b.m_id
     end
-  end
-)
+  end)
   return infos
 end
-
-

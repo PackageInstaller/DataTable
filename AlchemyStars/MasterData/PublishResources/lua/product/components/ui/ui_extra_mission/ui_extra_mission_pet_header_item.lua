@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission/ui_extra_mission_pet_header_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtraMissionPetHeaderItem", UICustomWidget)
 UIExtraMissionPetHeaderItem = UIExtraMissionPetHeaderItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtraMissionPetHeaderItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIExtraMissionPetHeaderItem:Constructor()
   self._bigSize = Vector2(216, 181)
   self._smallSize = Vector2(181, 152)
   self:AttachEvent(GameEventType.CancelRedPoint, self.CancelRedPoint)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIExtraMissionPetHeaderItem:OnHide()
   self:DetachEvent(GameEventType.HideNew, self.HideNew)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIExtraMissionPetHeaderItem:Dispose()
   self:DetachEvent(GameEventType.CancelRedPoint, self.CancelRedPoint)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  self._extraMissionModule = (GameGlobal.GetModule)(ExtMissionModule)
+function UIExtraMissionPetHeaderItem:OnShow(uiParams)
+  self._extraMissionModule = GameGlobal.GetModule(ExtMissionModule)
   self._petIcon = self:GetUIComponent("RawImageLoader", "header")
   self._finish = self:GetGameObject("finish")
   self._new = self:GetGameObject("new")
@@ -46,27 +30,19 @@ UIExtraMissionPetHeaderItem.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.HideNew, self.HideNew)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.SetData = function(self, index, petID, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UIExtraMissionPetHeaderItem:SetData(index, petID, callback)
   self._index = index
   self._petID = petID
   self._callback = callback
   local starCount = 0
-  local cfg_ext_misison = (Cfg.cfg_extra_mission)[self._petID]
+  local cfg_ext_misison = Cfg.cfg_extra_mission[self._petID]
   if cfg_ext_misison then
     for i = 1, #cfg_ext_misison.ExtTaskList do
-      local stars = (self._extraMissionModule):UI_GetExtTaskState(self._petID, (cfg_ext_misison.ExtTaskList)[i])
-      if stars > 0 then
-        do
-          starCount = starCount + stars
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC24: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      local stars = self._extraMissionModule:UI_GetExtTaskState(self._petID, cfg_ext_misison.ExtTaskList[i])
+      if stars <= 0 then
+        break
       end
+      starCount = starCount + stars
     end
     if starCount < 0 then
       starCount = 0
@@ -77,124 +53,83 @@ UIExtraMissionPetHeaderItem.SetData = function(self, index, petID, callback)
   self:CheckAward()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.CheckAward = function(self)
-  -- function num : 0_5
-  local state = (self._extraMissionModule):UI_GetExtAwardRed(self._petID)
-  ;
-  (self._red):SetActive(state)
+function UIExtraMissionPetHeaderItem:CheckAward()
+  local state = self._extraMissionModule:UI_GetExtAwardRed(self._petID)
+  self._red:SetActive(state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.CancelRedPoint = function(self, extraMissionID)
-  -- function num : 0_6
+function UIExtraMissionPetHeaderItem:CancelRedPoint(extraMissionID)
   if extraMissionID == self._petID then
     self:CheckAward()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.CheckPetState = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._new):SetActive(false)
-  ;
-  (self._finish):SetActive(false)
-  ;
-  (self._starGo):SetActive(true)
+function UIExtraMissionPetHeaderItem:CheckPetState()
+  self._new:SetActive(false)
+  self._finish:SetActive(false)
+  self._starGo:SetActive(true)
   local starStr = tostring(self._starCount) .. "/<color=#d5d5d5>18</color>"
-  ;
-  (self._starCountTex):SetText(starStr)
-  local key = tostring(((GameGlobal.GameLogic)()):GetOpenId()) .. tostring(self._petID)
-  local newState = ((UnityEngine.PlayerPrefs).HasKey)(key)
-  local newValue = ((UnityEngine.PlayerPrefs).GetInt)(key)
+  self._starCountTex:SetText(starStr)
+  local key = tostring(GameGlobal.GameLogic():GetOpenId()) .. tostring(self._petID)
+  local newState = UnityEngine.PlayerPrefs.HasKey(key)
+  local newValue = UnityEngine.PlayerPrefs.GetInt(key)
   if newState and newValue == 1 then
     self._state = EnumExtMissionState.New
   else
-    self._state = (self._extraMissionModule):UI_GetExtMissionState(self._petID)
+    self._state = self._extraMissionModule:UI_GetExtMissionState(self._petID)
   end
-  local petCfg = (Cfg.cfg_extra_mission)[self._petID]
+  local petCfg = Cfg.cfg_extra_mission[self._petID]
   if petCfg == nil then
-    (Log.fatal)("###ui ext misison -- cfg_extra_mission is nil ! id --> ", self._petID)
+    Log.fatal("###ui ext misison -- cfg_extra_mission is nil ! id --> ", self._petID)
   end
   local iconAsset = ""
   if self._state == EnumExtMissionState.Down then
     iconAsset = petCfg.ExtHeaderImg
-    ;
-    (self._finish):SetActive(true)
-  else
-    if self._state == EnumExtMissionState.Disable then
-      (self._starGo):SetActive(false)
-      iconAsset = petCfg.ExtHeaderGrayImg
-    else
-      if self._state == EnumExtMissionState.New then
-        (self._new):SetActive(true)
-        iconAsset = petCfg.ExtHeaderImg
-      else
-        if self._state == EnumExtMissionState.Open then
-          iconAsset = petCfg.ExtHeaderImg
-        end
-      end
-    end
+    self._finish:SetActive(true)
+  elseif self._state == EnumExtMissionState.Disable then
+    self._starGo:SetActive(false)
+    iconAsset = petCfg.ExtHeaderGrayImg
+  elseif self._state == EnumExtMissionState.New then
+    self._new:SetActive(true)
+    iconAsset = petCfg.ExtHeaderImg
+  elseif self._state == EnumExtMissionState.Open then
+    iconAsset = petCfg.ExtHeaderImg
   end
-  ;
-  (self._petIcon):LoadImage(iconAsset)
+  self._petIcon:LoadImage(iconAsset)
   local idxStr = ""
   if self._index < 10 then
     idxStr = "0" .. self._index
   else
     idxStr = tostring(self._index)
   end
-  ;
-  (self._idxTex):SetText(idxStr)
-  ;
-  (self._select):SetActive(false)
+  self._idxTex:SetText(idxStr)
+  self._select:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.Select = function(self, select)
-  -- function num : 0_8 , upvalues : _ENV
+function UIExtraMissionPetHeaderItem:Select(select)
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
   end
   local endValue = Vector2(0, 0)
   if select then
     endValue = self._bigSize
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._finishTex).fontSize = 35
+    self._finishTex.fontSize = 35
   else
     endValue = self._smallSize
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._finishTex).fontSize = 30
+    self._finishTex.fontSize = 30
   end
-  ;
-  (self._select):SetActive(select)
-  self._tweener = (self._rect):DOPreferredSize(endValue, 0.2, true)
+  self._select:SetActive(select)
+  self._tweener = self._rect:DOPreferredSize(endValue, 0.2, true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.HideNew = function(self, hideID)
-  -- function num : 0_9
+function UIExtraMissionPetHeaderItem:HideNew(hideID)
   if hideID == self._petID and self._index ~= 0 then
-    (self._new):SetActive(false)
+    self._new:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionPetHeaderItem.btnOnClick = function(self)
-  -- function num : 0_10
+function UIExtraMissionPetHeaderItem:btnOnClick()
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
-
-

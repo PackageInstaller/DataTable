@@ -1,39 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_stop_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicStopBuff", BuffLogicBase)
 BuffLogicStopBuff = BuffLogicStopBuff
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicStopBuff.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicStopBuff:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicStopBuff.DoLogic = function(self)
-  -- function num : 0_1
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicStopBuff:DoLogic()
+  local buffComponent = self._entity:BuffComponent()
   buffComponent:SetBuffValue("Freeze", 1)
 end
 
 _class("BuffLogicResumeBuff", BuffLogicBase)
 BuffLogicResumeBuff = BuffLogicResumeBuff
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResumeBuff.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResumeBuff:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResumeBuff.DoLogic = function(self)
-  -- function num : 0_3
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicResumeBuff:DoLogic()
+  local buffComponent = self._entity:BuffComponent()
   buffComponent:SetBuffValue("Freeze", nil)
 end
-
-

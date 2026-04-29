@@ -1,80 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_level_trap_up_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_LevelTrapUpLevel", SkillEffectCalc_Base)
 SkillEffectCalc_LevelTrapUpLevel = SkillEffectCalc_LevelTrapUpLevel
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_LevelTrapUpLevel.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_LevelTrapUpLevel:DoSkillEffectCalculator(skillEffectCalcParam)
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
   local results = {}
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_LevelTrapUpLevel._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_1 , upvalues : _ENV
-  local tarTrap = (self._world):GetEntityByID(targetID)
+function SkillEffectCalc_LevelTrapUpLevel:_CalculateSingleTarget(skillEffectCalcParam, targetID)
+  local tarTrap = self._world:GetEntityByID(targetID)
   if not tarTrap then
-    return 
+    return
   end
   if not tarTrap:HasTrap() then
-    return 
+    return
   end
   local param = skillEffectCalcParam:GetSkillEffectParam()
   if param then
-    local centerPos = (skillEffectCalcParam.skillRange)[1]
+    local centerPos = skillEffectCalcParam.skillRange[1]
     local checkTrapIDs = param:GetCheckTrapIDs()
     local checkTraps = {tarTrap}
-    if #checkTraps > 0 then
+    if 0 < #checkTraps then
       local tarLevel = 1
       local desTrapLevel = 1
       local desTrap = checkTraps[1]
-      do
-        if desTrap then
-          local desTrapID = (desTrap:Trap()):GetTrapID()
-          desTrapLevel = param:GetTrapModelLevel(desTrapID)
-        end
-        tarLevel = desTrapLevel + 1
-        local tarTrapID = 0
-        local isTarTrapMaxLevel = false
-        local modelLevelDic = param:GetModelLevels()
-        if modelLevelDic then
-          if not modelLevelDic[tarLevel] then
-            tarTrapID = modelLevelDic[#modelLevelDic]
-          end
-          if #modelLevelDic <= tarLevel then
-            isTarTrapMaxLevel = true
-          end
-        end
-        if tarTrapID and tarTrapID > 0 then
-          local summonList = {}
-          local destroyList = {}
-          local summonTrapResult = SkillSummonTrapEffectResult:New(tarTrapID, desTrap:GetGridPosition(), param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
-          ;
-          (table.insert)(summonList, summonTrapResult)
-          local desTrapEntityID = desTrap:GetID()
-          local cTrap = desTrap:Trap()
-          local desTrapID = cTrap:GetTrapID()
-          local destroyTrapResult = SkillEffectDestroyTrapResult:New(desTrapEntityID, desTrapID)
-          ;
-          (table.insert)(destroyList, destroyTrapResult)
-          return SkillEffectResultTrapUpLevel:New(summonList, destroyList, isTarTrapMaxLevel)
+      if desTrap then
+        local desTrapID = desTrap:Trap():GetTrapID()
+        desTrapLevel = param:GetTrapModelLevel(desTrapID)
+      end
+      tarLevel = desTrapLevel + 1
+      local tarTrapID = 0
+      local isTarTrapMaxLevel = false
+      local modelLevelDic = param:GetModelLevels()
+      if modelLevelDic then
+        tarTrapID = modelLevelDic[tarLevel] or modelLevelDic[#modelLevelDic]
+        if tarLevel >= #modelLevelDic then
+          isTarTrapMaxLevel = true
         end
       end
+      if tarTrapID and 0 < tarTrapID then
+        local summonList = {}
+        local destroyList = {}
+        local summonTrapResult = SkillSummonTrapEffectResult:New(tarTrapID, desTrap:GetGridPosition(), param:IsTransferDisabled(), param:GetSkillEffectDamageStageIndex())
+        table.insert(summonList, summonTrapResult)
+        local desTrapEntityID = desTrap:GetID()
+        local cTrap = desTrap:Trap()
+        local desTrapID = cTrap:GetTrapID()
+        local destroyTrapResult = SkillEffectDestroyTrapResult:New(desTrapEntityID, desTrapID)
+        table.insert(destroyList, destroyTrapResult)
+        return SkillEffectResultTrapUpLevel:New(summonList, destroyList, isTarTrapMaxLevel)
+      end
+    else
     end
   end
 end
-
-

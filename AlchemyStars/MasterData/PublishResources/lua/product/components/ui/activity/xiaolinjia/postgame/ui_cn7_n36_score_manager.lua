@@ -1,587 +1,441 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/postgame/ui_cn7_n36_score_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UICN7N36ScoreManagerType = {one = 8, Two = 9, Three = 10, Four = 11, Five = 12, Normal = 0}
+local UICN7N36ScoreManagerType = {
+  one = 8,
+  Two = 9,
+  Three = 10,
+  Four = 11,
+  Five = 12,
+  Normal = 0
+}
 _enum("UICN7N36ScoreManagerType", UICN7N36ScoreManagerType)
-local UICN7N36ItemBoundery = {up = 1, down = 2, left = 3, right = 4}
+local UICN7N36ItemBoundery = {
+  up = 1,
+  down = 2,
+  left = 3,
+  right = 4
+}
 _enum("UICN7N36ItemBoundery", UICN7N36ItemBoundery)
 _class("UICN7N36ScoreManager", Object)
 UICN7N36ScoreManager = UICN7N36ScoreManager
--- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
 
-UICN7N36ScoreManager.Constructor = function(self, GridManager, MissionID, MainGridWidth, MainGridHeight)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN7N36ScoreManager:Constructor(GridManager, MissionID, MainGridWidth, MainGridHeight)
   self.GridManager = GridManager
   local MissionID = MissionID or 14
-  local cfg = (Cfg.cfg_season_debris_level)[MissionID]
+  local cfg = Cfg.cfg_season_debris_level[MissionID]
   self.map = cfg.ScoreMatrix
   self.maxX = MainGridHeight
   self.maxY = MainGridWidth
-  self.specialID = {8, 9, 10, 11, 12}
+  self.specialID = {
+    8,
+    9,
+    10,
+    11,
+    12
+  }
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.GetTotalScore = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local atomicItemIDMap = (self.GridManager):GetMainGridItemMap()
+function UICN7N36ScoreManager:GetTotalScore()
+  local atomicItemIDMap = self.GridManager:GetMainGridItemMap()
   local valueTable = {}
   local totalScore = 0
-  for atomicItemID,value in pairs(atomicItemIDMap) do
+  for atomicItemID, value in pairs(atomicItemIDMap) do
     local posTable = value.blockList
     local id = value.itemID
     local score = 0
-    if not (table.icontains)(self.specialID, id) then
-      self.cfg = (Cfg.cfg_season_debris_item)[id]
-      score = (self.cfg).Score
+    if not table.icontains(self.specialID, id) then
+      self.cfg = Cfg.cfg_season_debris_item[id]
+      score = self.cfg.Score
     else
-      local baseScore, extraScore = nil, nil
-      baseScore = self:_CalculateSpecialItem(id, posTable)
+      local baseScore, extraScore
+      baseScore, extraScore = self:_CalculateSpecialItem(id, posTable)
       score = baseScore + extraScore
     end
-    do
-      do
-        -- DECOMPILER ERROR at PC36: Overwrote pending register: R13 in 'AssignReg'
-
-        ;
-        (table.insert)(extraScore, score)
-        -- DECOMPILER ERROR at PC39: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    table.insert(valueTable, score)
   end
-  for _,score in ipairs(valueTable) do
+  for _, score in ipairs(valueTable) do
     totalScore = totalScore + score
   end
-  return (math.floor)(totalScore)
+  return math.floor(totalScore)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.GetItemScore = function(self, id, posTable)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN7N36ScoreManager:GetItemScore(id, posTable)
   local Id = id
   local score = 0
-  if not (table.icontains)(self.specialID, Id) then
-    self.cfg = (Cfg.cfg_season_debris_item)[Id]
-    score = (self.cfg).Score
+  if not table.icontains(self.specialID, Id) then
+    self.cfg = Cfg.cfg_season_debris_item[Id]
+    score = self.cfg.Score
   else
-    local baseScore, extraScore = nil, nil
-    baseScore = self:_CalculateSpecialItem(id, posTable)
+    local baseScore, extraScore
+    baseScore, extraScore = self:_CalculateSpecialItem(id, posTable)
     score = baseScore + extraScore
   end
-  do
-    -- DECOMPILER ERROR at PC26: Overwrote pending register: R6 in 'AssignReg'
-
-    return (math.floor)(extraScore)
-  end
+  return math.floor(score)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.GetSpecialItemScore = function(self, id, posTable)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN7N36ScoreManager:GetSpecialItemScore(id, posTable)
   local Id = id
-  local baseScore, extraScore = nil, nil
-  if not (table.icontains)(self.specialID, Id) then
-    self.cfg = (Cfg.cfg_season_debris_item)[Id]
+  local baseScore, extraScore
+  if not table.icontains(self.specialID, Id) then
+    self.cfg = Cfg.cfg_season_debris_item[Id]
     extraScore = nil
   else
-    baseScore = self:_CalculateSpecialItem(id, posTable)
-    -- DECOMPILER ERROR at PC25: Overwrote pending register: R5 in 'AssignReg'
-
+    baseScore, extraScore = self:_CalculateSpecialItem(id, posTable)
+    extraScore = math.floor(extraScore)
   end
   return extraScore
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager._CalculateSpecialItem = function(self, id, posTable)
-  -- function num : 0_4 , upvalues : _ENV, UICN7N36ScoreManagerType, UICN7N36ItemBoundery
+function UICN7N36ScoreManager:_CalculateSpecialItem(id, posTable)
   local allValue = {}
   local extraScore = 0
   self.id = id
-  self.cfg = (Cfg.cfg_season_debris_item)[self.id]
-  local baseScore = (self.cfg).Score
+  self.cfg = Cfg.cfg_season_debris_item[self.id]
+  local baseScore = self.cfg.Score
   self.itemscore = {
-[UICN7N36ScoreManagerType.Three] = {[UICN7N36ItemBoundery.up] = false, [UICN7N36ItemBoundery.down] = false, [UICN7N36ItemBoundery.left] = false, [UICN7N36ItemBoundery.right] = false}
-, 
-[UICN7N36ScoreManagerType.Five] = {[UICN7N36ItemBoundery.up] = false, [UICN7N36ItemBoundery.down] = false, [UICN7N36ItemBoundery.left] = false, [UICN7N36ItemBoundery.right] = false}
-}
-  for _,pos in ipairs(posTable) do
+    [UICN7N36ScoreManagerType.Three] = {
+      [UICN7N36ItemBoundery.up] = false,
+      [UICN7N36ItemBoundery.down] = false,
+      [UICN7N36ItemBoundery.left] = false,
+      [UICN7N36ItemBoundery.right] = false
+    },
+    [UICN7N36ScoreManagerType.Five] = {
+      [UICN7N36ItemBoundery.up] = false,
+      [UICN7N36ItemBoundery.down] = false,
+      [UICN7N36ItemBoundery.left] = false,
+      [UICN7N36ItemBoundery.right] = false
+    }
+  }
+  for _, pos in ipairs(posTable) do
     local x = pos._row
     local y = pos._col
     local ItemValue = self:CalculateScore(x, y)
-    ;
-    (table.insert)(allValue, ItemValue)
+    table.insert(allValue, ItemValue)
   end
-  for index,value in ipairs(allValue) do
+  for index, value in ipairs(allValue) do
     extraScore = extraScore + value
   end
   return baseScore, extraScore
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.CalculateScore = function(self, x, y)
-  -- function num : 0_5
+function UICN7N36ScoreManager:CalculateScore(x, y)
   self.posX = x
   self.posY = y
-  self.item = (self.GridManager):GetMainMatrixWidget(self.posX, self.posY)
-  self.atomicItemID = (self.item):GetAtomicItemID()
+  self.item = self.GridManager:GetMainMatrixWidget(self.posX, self.posY)
+  self.atomicItemID = self.item:GetAtomicItemID()
   local specialScore = self:GetItemSpecialScore()
   return specialScore, self.itemscore
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.GetItemSpecialScore = function(self)
-  -- function num : 0_6 , upvalues : UICN7N36ScoreManagerType
+function UICN7N36ScoreManager:GetItemSpecialScore()
   local specialScore = 0
   if self.id == UICN7N36ScoreManagerType.one then
     specialScore = self:GetSpecialOne()
-  else
-    if self.id == UICN7N36ScoreManagerType.Two then
-      specialScore = self:GetSpecialTwo()
-    else
-      if self.id == UICN7N36ScoreManagerType.Three then
-        specialScore = self:GetSpecialThree()
-      else
-        if self.id == UICN7N36ScoreManagerType.Four then
-          specialScore = self:GetSpecialFour()
-        else
-          if self.id == UICN7N36ScoreManagerType.Five then
-            specialScore = self:GetSpecialFive()
-          end
-        end
-      end
-    end
+  elseif self.id == UICN7N36ScoreManagerType.Two then
+    specialScore = self:GetSpecialTwo()
+  elseif self.id == UICN7N36ScoreManagerType.Three then
+    specialScore = self:GetSpecialThree()
+  elseif self.id == UICN7N36ScoreManagerType.Four then
+    specialScore = self:GetSpecialFour()
+  elseif self.id == UICN7N36ScoreManagerType.Five then
+    specialScore = self:GetSpecialFive()
   end
   return specialScore
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.GetSpecialOne = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN7N36ScoreManager:GetSpecialOne()
   local score = 0
   local around = {}
   local x, y = self.posX - 1, self.posY
   if x <= 0 then
-    do
-      local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-      if not centerEmpty and not edgeEmpty and Occupy then
-        (table.insert)(around, atomicItemID)
-      end
-      x = self.posX + 1
-      if self.maxX < x then
-        do
-          local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-          if not centerEmpty and not edgeEmpty and Occupy and not (table.icontains)(around, atomicItemID) then
-            (table.insert)(around, atomicItemID)
-          end
-          -- DECOMPILER ERROR at PC55: Overwrote pending register: R4 in 'AssignReg'
-
-          x = self.posX
-          if y <= 0 then
-            do
-              local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-              if not centerEmpty and not edgeEmpty and Occupy and not (table.icontains)(around, atomicItemID) then
-                (table.insert)(around, atomicItemID)
-              end
-              -- DECOMPILER ERROR at PC84: Overwrote pending register: R4 in 'AssignReg'
-
-              x = self.posX
-              if self.maxY < y then
-                do
-                  local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-                  if not centerEmpty and not edgeEmpty and Occupy and not (table.icontains)(around, atomicItemID) then
-                    (table.insert)(around, atomicItemID)
-                  end
-                  score = #around
-                  return score
-                end
-              end
-            end
-          end
-        end
-      end
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and Occupy then
+      table.insert(around, atomicItemID)
     end
   end
+  x, y = self.posX + 1, self.posY
+  if x > self.maxX then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and Occupy and not table.icontains(around, atomicItemID) then
+      table.insert(around, atomicItemID)
+    end
+  end
+  x, y = self.posX, self.posY - 1
+  if y <= 0 then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and Occupy and not table.icontains(around, atomicItemID) then
+      table.insert(around, atomicItemID)
+    end
+  end
+  x, y = self.posX, self.posY + 1
+  if y > self.maxY then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and Occupy and not table.icontains(around, atomicItemID) then
+      table.insert(around, atomicItemID)
+    end
+  end
+  score = #around
+  return score
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.GetSpecialTwo = function(self)
-  -- function num : 0_8
+function UICN7N36ScoreManager:GetSpecialTwo()
   local score = 0
   local x, y = self.posX - 1, self.posY
   if x <= 0 then
-    do
-      local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-      if not centerEmpty and not edgeEmpty and not Occupy then
-        score = score + 1
-      end
-      x = self.posX + 1
-      if self.maxX < x then
-        do
-          local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-          if not centerEmpty and not edgeEmpty and not Occupy then
-            score = score + 1
-          end
-          -- DECOMPILER ERROR at PC39: Overwrote pending register: R3 in 'AssignReg'
-
-          x = self.posX
-          if y <= 0 then
-            do
-              local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-              if not centerEmpty and not edgeEmpty and not Occupy then
-                score = score + 1
-              end
-              -- DECOMPILER ERROR at PC57: Overwrote pending register: R3 in 'AssignReg'
-
-              x = self.posX
-              if self.maxY < y then
-                do
-                  local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-                  if not centerEmpty and not edgeEmpty and not Occupy then
-                    score = score + 1
-                  end
-                  return score
-                end
-              end
-            end
-          end
-        end
-      end
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      score = score + 1
     end
   end
+  x, y = self.posX + 1, self.posY
+  if x > self.maxX then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      score = score + 1
+    end
+  end
+  x, y = self.posX, self.posY - 1
+  if y <= 0 then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      score = score + 1
+    end
+  end
+  x, y = self.posX, self.posY + 1
+  if y > self.maxY then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      score = score + 1
+    end
+  end
+  return score
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.GetSpecialThree = function(self)
-  -- function num : 0_9 , upvalues : UICN7N36ScoreManagerType, UICN7N36ItemBoundery
+function UICN7N36ScoreManager:GetSpecialThree()
   local score = 0
   local type = UICN7N36ScoreManagerType.Three
   local x, y = self.posX - 1, self.posY
   local boundery = UICN7N36ItemBoundery.up
-  if not ((self.itemscore)[type])[boundery] then
+  if not self.itemscore[type][boundery] then
     if x <= 0 then
       score = score + 1
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      ((self.itemscore)[type])[boundery] = true
+      self.itemscore[type][boundery] = true
     else
       local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
       if edgeEmpty then
         score = score + 1
-        -- DECOMPILER ERROR at PC27: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        ((self.itemscore)[type])[boundery] = true
+        self.itemscore[type][boundery] = true
       end
     end
   end
-  do
-    x = self.posX + 1
-    local boundery = UICN7N36ItemBoundery.down
-    if not ((self.itemscore)[type])[boundery] then
-      if self.maxX < x then
+  x, y = self.posX + 1, self.posY
+  local boundery = UICN7N36ItemBoundery.down
+  if not self.itemscore[type][boundery] then
+    if x > self.maxX then
+      score = score + 1
+      self.itemscore[type][boundery] = true
+    else
+      local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+      if edgeEmpty then
         score = score + 1
-        -- DECOMPILER ERROR at PC44: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        ((self.itemscore)[type])[boundery] = true
-      else
-        local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-        if edgeEmpty then
-          score = score + 1
-          -- DECOMPILER ERROR at PC55: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          ((self.itemscore)[type])[boundery] = true
-        end
-      end
-    end
-    do
-      -- DECOMPILER ERROR at PC58: Overwrote pending register: R4 in 'AssignReg'
-
-      x = self.posX
-      local boundery = UICN7N36ItemBoundery.left
-      if not ((self.itemscore)[type])[boundery] then
-        if y <= 0 then
-          score = score + 1
-          -- DECOMPILER ERROR at PC71: Confused about usage of register: R8 in 'UnsetPending'
-
-          ;
-          ((self.itemscore)[type])[boundery] = true
-        else
-          local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-          if edgeEmpty then
-            score = score + 1
-            -- DECOMPILER ERROR at PC82: Confused about usage of register: R13 in 'UnsetPending'
-
-            ;
-            ((self.itemscore)[type])[boundery] = true
-          end
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC85: Overwrote pending register: R4 in 'AssignReg'
-
-        x = self.posX
-        local boundery = UICN7N36ItemBoundery.right
-        if not ((self.itemscore)[type])[boundery] then
-          if self.maxY < y then
-            score = score + 1
-            -- DECOMPILER ERROR at PC99: Confused about usage of register: R9 in 'UnsetPending'
-
-            ;
-            ((self.itemscore)[type])[boundery] = true
-          else
-            local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-            if edgeEmpty then
-              score = score + 1
-              -- DECOMPILER ERROR at PC110: Confused about usage of register: R14 in 'UnsetPending'
-
-              ;
-              ((self.itemscore)[type])[boundery] = true
-            end
-          end
-        end
-        do
-          return score
-        end
+        self.itemscore[type][boundery] = true
       end
     end
   end
+  x, y = self.posX, self.posY - 1
+  local boundery = UICN7N36ItemBoundery.left
+  if not self.itemscore[type][boundery] then
+    if y <= 0 then
+      score = score + 1
+      self.itemscore[type][boundery] = true
+    else
+      local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+      if edgeEmpty then
+        score = score + 1
+        self.itemscore[type][boundery] = true
+      end
+    end
+  end
+  x, y = self.posX, self.posY + 1
+  local boundery = UICN7N36ItemBoundery.right
+  if not self.itemscore[type][boundery] then
+    if y > self.maxY then
+      score = score + 1
+      self.itemscore[type][boundery] = true
+    else
+      local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+      if edgeEmpty then
+        score = score + 1
+        self.itemscore[type][boundery] = true
+      end
+    end
+  end
+  return score
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.GetSpecialFour = function(self)
-  -- function num : 0_10
+function UICN7N36ScoreManager:GetSpecialFour()
   local score = 0
   local x, y = self.posX - 1, self.posY
   if x <= 0 then
-    do
-      local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-      if not centerEmpty and not edgeEmpty and not Occupy then
-        score = score + 1
-      end
-      x = self.posX + 1
-      if self.maxX < x then
-        do
-          local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-          if not centerEmpty and not edgeEmpty and not Occupy then
-            score = score + 1
-          end
-          -- DECOMPILER ERROR at PC39: Overwrote pending register: R3 in 'AssignReg'
-
-          x = self.posX
-          if y <= 0 then
-            do
-              local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-              if not centerEmpty and not edgeEmpty and not Occupy then
-                score = score + 1
-              end
-              -- DECOMPILER ERROR at PC57: Overwrote pending register: R3 in 'AssignReg'
-
-              x = self.posX
-              if self.maxY < y then
-                do
-                  local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-                  if not centerEmpty and not edgeEmpty and not Occupy then
-                    score = score + 1
-                  end
-                  local otherScore = self:CheckOther()
-                  return score + otherScore
-                end
-              end
-            end
-          end
-        end
-      end
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      score = score + 1
     end
   end
+  x, y = self.posX + 1, self.posY
+  if x > self.maxX then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      score = score + 1
+    end
+  end
+  x, y = self.posX, self.posY - 1
+  if y <= 0 then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      score = score + 1
+    end
+  end
+  x, y = self.posX, self.posY + 1
+  if y > self.maxY then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      score = score + 1
+    end
+  end
+  local otherScore = self:CheckOther()
+  return score + otherScore
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.GetSpecialFive = function(self)
-  -- function num : 0_11 , upvalues : UICN7N36ScoreManagerType, UICN7N36ItemBoundery, _ENV
+function UICN7N36ScoreManager:GetSpecialFive()
   local score = 0
   local around = {}
   local type = UICN7N36ScoreManagerType.Five
   local x, y = self.posX - 1, self.posY
   local boundery = UICN7N36ItemBoundery.up
-  if not ((self.itemscore)[type])[boundery] then
-    if x <= 0 then
-      do
-        local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-        if not centerEmpty and not edgeEmpty and Occupy and ID == UICN7N36ScoreManagerType.Five and self.atomicItemID ~= atomicItemID then
-          (table.insert)(around, atomicItemID)
-          -- DECOMPILER ERROR at PC38: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          ((self.itemscore)[type])[boundery] = true
-        end
-        x = self.posX + 1
-        local boundery = UICN7N36ItemBoundery.down
-        if not ((self.itemscore)[type])[boundery] then
-          if self.maxX < x then
-            do
-              local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-              if not centerEmpty and not edgeEmpty and Occupy and ID == UICN7N36ScoreManagerType.Five and self.atomicItemID ~= atomicItemID and not (table.icontains)(around, atomicItemID) then
-                (table.insert)(around, atomicItemID)
-                -- DECOMPILER ERROR at PC83: Confused about usage of register: R13 in 'UnsetPending'
-
-                ;
-                ((self.itemscore)[type])[boundery] = true
-              end
-              -- DECOMPILER ERROR at PC86: Overwrote pending register: R5 in 'AssignReg'
-
-              x = self.posX
-              local boundery = UICN7N36ItemBoundery.left
-              if not ((self.itemscore)[type])[boundery] then
-                if y <= 0 then
-                  do
-                    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-                    if not centerEmpty and not edgeEmpty and Occupy and ID == UICN7N36ScoreManagerType.Five and self.atomicItemID ~= atomicItemID and not (table.icontains)(around, atomicItemID) then
-                      (table.insert)(around, atomicItemID)
-                      -- DECOMPILER ERROR at PC127: Confused about usage of register: R14 in 'UnsetPending'
-
-                      ;
-                      ((self.itemscore)[type])[boundery] = true
-                    end
-                    -- DECOMPILER ERROR at PC130: Overwrote pending register: R5 in 'AssignReg'
-
-                    x = self.posX
-                    local boundery = UICN7N36ItemBoundery.right
-                    if not ((self.itemscore)[type])[boundery] then
-                      if self.maxY < y then
-                        do
-                          local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
-                          if not centerEmpty and not edgeEmpty and Occupy and ID == UICN7N36ScoreManagerType.Five and self.atomicItemID ~= atomicItemID and not (table.icontains)(around, atomicItemID) then
-                            (table.insert)(around, atomicItemID)
-                            -- DECOMPILER ERROR at PC172: Confused about usage of register: R15 in 'UnsetPending'
-
-                            ;
-                            ((self.itemscore)[type])[boundery] = true
-                          end
-                          self.cfg = (Cfg.cfg_season_debris_item)[self.id]
-                          local baseScore = (self.cfg).Score
-                          local multiple = #around
-                          if multiple == 0 then
-                            score = 0
-                          else
-                            score = baseScore ^ multiple
-                          end
-                          return score
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+  if self.itemscore[type][boundery] or x <= 0 then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and Occupy and ID == UICN7N36ScoreManagerType.Five and self.atomicItemID ~= atomicItemID then
+      table.insert(around, atomicItemID)
+      self.itemscore[type][boundery] = true
     end
   end
+  x, y = self.posX + 1, self.posY
+  local boundery = UICN7N36ItemBoundery.down
+  if self.itemscore[type][boundery] or x > self.maxX then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and Occupy and ID == UICN7N36ScoreManagerType.Five and self.atomicItemID ~= atomicItemID and not table.icontains(around, atomicItemID) then
+      table.insert(around, atomicItemID)
+      self.itemscore[type][boundery] = true
+    end
+  end
+  x, y = self.posX, self.posY - 1
+  local boundery = UICN7N36ItemBoundery.left
+  if self.itemscore[type][boundery] or y <= 0 then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and Occupy and ID == UICN7N36ScoreManagerType.Five and self.atomicItemID ~= atomicItemID and not table.icontains(around, atomicItemID) then
+      table.insert(around, atomicItemID)
+      self.itemscore[type][boundery] = true
+    end
+  end
+  x, y = self.posX, self.posY + 1
+  local boundery = UICN7N36ItemBoundery.right
+  if self.itemscore[type][boundery] or y > self.maxY then
+  else
+    local centerEmpty, edgeEmpty, Occupy, ID, atomicItemID = self:CheckItem(x, y)
+    if not centerEmpty and not edgeEmpty and Occupy and ID == UICN7N36ScoreManagerType.Five and self.atomicItemID ~= atomicItemID and not table.icontains(around, atomicItemID) then
+      table.insert(around, atomicItemID)
+      self.itemscore[type][boundery] = true
+    end
+  end
+  self.cfg = Cfg.cfg_season_debris_item[self.id]
+  local baseScore = self.cfg.Score
+  local multiple = #around
+  if multiple == 0 then
+    score = 0
+  else
+    score = baseScore ^ multiple
+  end
+  return score
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager._GetItemData = function(self, x, y)
-  -- function num : 0_12
-  local upItem = (self.GridManager):GetMainMatrixWidget(x, y)
+function UICN7N36ScoreManager:_GetItemData(x, y)
+  local upItem = self.GridManager:GetMainMatrixWidget(x, y)
   local Occupy = upItem:GetIsOccupy()
   local ID = upItem:GetItemID()
   local atomicItemID = upItem:GetAtomicItemID()
   return Occupy, ID, atomicItemID
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.CheckItem = function(self, x, y)
-  -- function num : 0_13
+function UICN7N36ScoreManager:CheckItem(x, y)
   local centerEmpty, edgeEmpty = self:CheckItemEmpty(x, y)
   local Occupy, ID, atomicItemID = self:_GetItemData(x, y)
   return centerEmpty, edgeEmpty, Occupy, ID, atomicItemID
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.CheckOther = function(self)
-  -- function num : 0_14
+function UICN7N36ScoreManager:CheckOther()
   local value = 0
-  local x, y = nil, nil
+  local x, y
   x = self.posX - 1
   y = self.posY - 1
-  if x > 0 and y > 0 then
+  if 0 < x and 0 < y then
     local Occupy, ID, atomicItemID = self:_GetItemData(x, y)
     local centerEmpty, edgeEmpty = self:CheckItemEmpty(x, y)
     if not centerEmpty and not edgeEmpty and not Occupy then
       value = value + 1
     end
   end
-  do
-    x = self.posX + 1
-    y = self.posY - 1
-    if x <= self.maxX and y > 0 then
-      local Occupy, ID, atomicItemID = self:_GetItemData(x, y)
-      local centerEmpty, edgeEmpty = self:CheckItemEmpty(x, y)
-      if not centerEmpty and not edgeEmpty and not Occupy then
-        value = value + 1
-      end
-    end
-    do
-      x = self.posX - 1
-      y = self.posY + 1
-      if x > 0 and y <= self.maxY then
-        local Occupy, ID, atomicItemID = self:_GetItemData(x, y)
-        local centerEmpty, edgeEmpty = self:CheckItemEmpty(x, y)
-        if not centerEmpty and not edgeEmpty and not Occupy then
-          value = value + 1
-        end
-      end
-      do
-        x = self.posX + 1
-        y = self.posY + 1
-        if x <= self.maxX and y <= self.maxY then
-          local Occupy, ID, atomicItemID = self:_GetItemData(x, y)
-          local centerEmpty, edgeEmpty = self:CheckItemEmpty(x, y)
-          if not centerEmpty and not edgeEmpty and not Occupy then
-            value = value + 1
-          end
-        end
-        do
-          return value
-        end
-      end
+  x = self.posX + 1
+  y = self.posY - 1
+  if x <= self.maxX and 0 < y then
+    local Occupy, ID, atomicItemID = self:_GetItemData(x, y)
+    local centerEmpty, edgeEmpty = self:CheckItemEmpty(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      value = value + 1
     end
   end
+  x = self.posX - 1
+  y = self.posY + 1
+  if 0 < x and y <= self.maxY then
+    local Occupy, ID, atomicItemID = self:_GetItemData(x, y)
+    local centerEmpty, edgeEmpty = self:CheckItemEmpty(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      value = value + 1
+    end
+  end
+  x = self.posX + 1
+  y = self.posY + 1
+  if x <= self.maxX and y <= self.maxY then
+    local Occupy, ID, atomicItemID = self:_GetItemData(x, y)
+    local centerEmpty, edgeEmpty = self:CheckItemEmpty(x, y)
+    if not centerEmpty and not edgeEmpty and not Occupy then
+      value = value + 1
+    end
+  end
+  return value
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-UICN7N36ScoreManager.CheckItemEmpty = function(self, x, y)
-  -- function num : 0_15
+function UICN7N36ScoreManager:CheckItemEmpty(x, y)
   local center = false
   local edge = false
-  if ((self.map)[x])[y] == 2 then
+  if self.map[x][y] == 2 then
     center = true
   end
-  if ((self.map)[x])[y] == 0 then
+  if self.map[x][y] == 0 then
     edge = true
   end
   return center, edge
 end
-
-

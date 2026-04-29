@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/ui_story_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStoryController", UIController)
 UIStoryController = UIStoryController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStoryController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIStoryController:OnShow(uiParams)
   self._storyID = uiParams[1]
-  ;
-  (Log.info)("[story] start story ID:" .. tostring(self._storyID))
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("StoryStart", {self._storyID})
+  Log.info("[story] start story ID:" .. tostring(self._storyID))
+  GameGlobal.UAReportForceGuideEvent("StoryStart", {
+    self._storyID
+  })
   self._endCallback = uiParams[2]
   self._needCloseSelf = uiParams[3]
   self._revertBGM = uiParams[4] ~= false
@@ -32,12 +25,16 @@ UIStoryController.OnShow = function(self, uiParams)
   self._buttonSpeedIcon = self:GetUIComponent("Image", "ButtonSpeedIcon")
   self._buttonSpeedHideTimer = nil
   self._buttonSpeedCfg = {
-[1] = {icon = "plot_juqing_icon2"}
-, 
-[2] = {icon = "plot_juqing_icon3"}
-, 
-[4] = {icon = "plot_juqing_icon4"}
-}
+    [1] = {
+      icon = "plot_juqing_icon2"
+    },
+    [2] = {
+      icon = "plot_juqing_icon3"
+    },
+    [4] = {
+      icon = "plot_juqing_icon4"
+    }
+  }
   self._topBlackSide = self:GetGameObject("Top")
   self._bottomBlackSide = self:GetGameObject("Bottom")
   self._leftBlackSide = self:GetGameObject("Left")
@@ -49,525 +46,358 @@ UIStoryController.OnShow = function(self, uiParams)
   self._uiCanvasRect = self:GetUIComponent("RectTransform", "UICanvas")
   self._skipLock = true
   self._fullScreenAnchor = self:GetUIComponent("RectTransform", "FullScreenAnchor")
-  local bands = (ResolutionManager.BangWidth)()
-  ;
-  (Log.info)("UIStoryController FullScreenAnchor " .. bands)
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._fullScreenAnchor).sizeDelta = Vector2(bands * 2, 0)
+  local bands = ResolutionManager.BangWidth()
+  Log.info("UIStoryController FullScreenAnchor " .. bands)
+  self._fullScreenAnchor.sizeDelta = Vector2(bands * 2, 0)
   self._storyManager = StoryManager:New(self, self._storyID, self._revertBGM, self._ignoreBreak)
-  ;
-  (self._dialogReviewScrollView):InitListView(0, function(scrollview, index)
-    -- function num : 0_0_0 , upvalues : self
+  self._dialogReviewScrollView:InitListView(0, function(scrollview, index)
     return self:_OnGetReviewDialogItem(scrollview, index)
-  end
-)
-  -- DECOMPILER ERROR at PC172: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._dialogReviewScrollView).mOnDragingAction = function()
-    -- function num : 0_0_1 , upvalues : self
+  end)
+  
+  function self._dialogReviewScrollView.mOnDragingAction()
     self._reviewDragged = true
   end
-
+  
   if self._debugMode then
     self._debugInfoRoot = self:GetGameObject("DebugInfoRoot")
-    ;
-    (self._debugInfoRoot):SetActive(true)
+    self._debugInfoRoot:SetActive(true)
     self._paragraphText = self:GetUIComponent("Text", "ParagraphText")
     self._sectionText = self:GetUIComponent("Text", "SectionText")
     self._timeText = self:GetUIComponent("Text", "TimeText")
     self._entityInfo = self:GetGameObject("EntityInfo")
   end
-  ;
-  (self._storyManager):Init(self._debugMode, self._entityInfo)
+  self._storyManager:Init(self._debugMode, self._entityInfo)
   self._closed = false
   self._reviewDragged = false
   self._dialogSpeakerBGBlue = "plot_juqing_xian4"
   self._dialogSpeakerBGRed = "plot_juqing_xian5"
   self._skipLock = false
-  if (EditorGlobal.IsEditorMode)() then
-    (EditorGlobal.SetStroyController)(self)
-    ;
-    (EditorGlobal.SetStroyManager)(self._storyManager)
+  if EditorGlobal.IsEditorMode() then
+    EditorGlobal.SetStroyController(self)
+    EditorGlobal.SetStroyManager(self._storyManager)
   end
-  ;
-  ((GameGlobal.UIStateManager)()):SetBlackSideVisible(false)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  GameGlobal.UIStateManager():SetBlackSideVisible(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_1
+function UIStoryController:OnUpdate(deltaTimeMS)
   if not self._storyManager then
-    return 
+    return
   end
-  ;
-  (self._storyManager):Update(deltaTimeMS)
+  self._storyManager:Update(deltaTimeMS)
   if self._debugMode then
     self:FillDebugInfo()
   end
-  if (self._storyManager):IsEnd() and not self._closed then
+  if self._storyManager:IsEnd() and not self._closed then
     self:_EndStory()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._storyManager):Destroy()
+function UIStoryController:OnHide()
+  self._storyManager:Destroy()
   self._storyManager = nil
   if self._tweenQueue then
-    (self._tweenQueue):Complete(false)
+    self._tweenQueue:Complete(false)
     self._tweenQueue = nil
   end
-  local login_module = (GameGlobal.GetModule)(LoginModule)
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("StoryEnd", {self._storyID})
+  local login_module = GameGlobal.GetModule(LoginModule)
+  GameGlobal.UAReportForceGuideEvent("StoryEnd", {
+    self._storyID
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.SetBlackSideSize = function(self, width, height)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._topBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(0, height)
-  ;
-  ((self._bottomBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(0, height)
-  ;
-  (self._topBlackSide):SetActive(height > 0)
-  ;
-  (self._bottomBlackSide):SetActive(height > 0)
-  ;
-  ((self._leftBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(width, 0)
-  ;
-  ((self._rightBlackSide):GetComponent("RectTransform")).sizeDelta = Vector2(width, 0)
-  ;
-  (self._leftBlackSide):SetActive(width > 0)
-  ;
-  (self._rightBlackSide):SetActive(width > 0)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UIStoryController:SetBlackSideSize(width, height)
+  self._topBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(0, height)
+  self._bottomBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(0, height)
+  self._topBlackSide:SetActive(0 < height)
+  self._bottomBlackSide:SetActive(0 < height)
+  self._leftBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(width, 0)
+  self._rightBlackSide:GetComponent("RectTransform").sizeDelta = Vector2(width, 0)
+  self._leftBlackSide:SetActive(0 < width)
+  self._rightBlackSide:SetActive(0 < width)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.GetCanvasSize = function(self)
-  -- function num : 0_4
-  return ((self._uiCanvasRect).sizeDelta).x, ((self._uiCanvasRect).sizeDelta).y
+function UIStoryController:GetCanvasSize()
+  return self._uiCanvasRect.sizeDelta.x, self._uiCanvasRect.sizeDelta.y
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.FillDebugInfo = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._paragraphText).text = (self._storyManager):GetCurParagraphID()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._sectionText).text = (self._storyManager):GetCurSectionIndex()
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._timeText).text = (string.format)("%.1f", (self._storyManager):GetCurrentTime())
+function UIStoryController:FillDebugInfo()
+  self._paragraphText.text = self._storyManager:GetCurParagraphID()
+  self._sectionText.text = self._storyManager:GetCurSectionIndex()
+  self._timeText.text = string.format("%.1f", self._storyManager:GetCurrentTime())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController._EndStory = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.sys)("关闭剧情界面")
+function UIStoryController:_EndStory()
+  Log.sys("关闭剧情界面")
   if self._needCloseSelf == nil or self._needCloseSelf == true then
     self:CloseDialog()
   end
   self._closed = true
-  ;
-  ((GameGlobal.UIStateManager)()):SetBlackSideVisible(true)
+  GameGlobal.UIStateManager():SetBlackSideVisible(true)
   if self._endCallback then
-    (self._endCallback)()
+    self._endCallback()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController._OnGetReviewDialogItem = function(self, scrollview, index)
-  -- function num : 0_7 , upvalues : _ENV
-  local dialogRecord = (self._storyManager):GetDialogRecord()
+function UIStoryController:_OnGetReviewDialogItem(scrollview, index)
+  local dialogRecord = self._storyManager:GetDialogRecord()
   local item = scrollview:NewListViewItem("ReviewContent")
   local luaIndex = index + 1
   if luaIndex <= #dialogRecord then
-    local speakerName = (dialogRecord[luaIndex])[1]
-    do
-      local content = (dialogRecord[luaIndex])[2]
-      local voiceId = (dialogRecord[luaIndex])[5]
-      local voice = ((item.transform):Find("Content/Voice")).gameObject
-      self:AddUICustomEventListener((UICustomUIEventListener.Get)(voice), UIEvent.Click, function()
-    -- function num : 0_7_0 , upvalues : self, _ENV, voiceId
-    if self._currentPlayingID then
-      (AudioHelperController.StopUIVoice)(self._currentPlayingID)
-    end
-    self._currentPlayingID = nil
-    if voiceId then
-      self._currentPlayingID = (AudioHelperController.PlayUIVoice)(voiceId, false)
-    end
-  end
-)
+    local speakerName = dialogRecord[luaIndex][1]
+    local content = dialogRecord[luaIndex][2]
+    local voiceId = dialogRecord[luaIndex][5]
+    local voice = item.transform:Find("Content/Voice").gameObject
+    self:AddUICustomEventListener(UICustomUIEventListener.Get(voice), UIEvent.Click, function()
+      if self._currentPlayingID then
+        AudioHelperController.StopUIVoice(self._currentPlayingID)
+      end
+      self._currentPlayingID = nil
       if voiceId then
-        voice:SetActive(true)
-      else
-        voice:SetActive(false)
+        self._currentPlayingID = AudioHelperController.PlayUIVoice(voiceId, false)
       end
-      ;
-      (((item.transform):Find("SpeakerPlaceHolder/Speaker")):GetComponent(typeof(UILocalizationText))):SetText(speakerName)
-      ;
-      (((item.transform):Find("Content")):GetComponent(typeof(UILocalizationText))):SetText(content)
-      local speakerBG = ((item.transform):Find("SpeakerPlaceHolder/SpeakerBG")).gameObject
-      if (string.len)(speakerName) > 0 then
-        speakerBG:SetActive(true)
-        local speakerBGColor = (dialogRecord[luaIndex])[3]
-        local isPlayer = (dialogRecord[luaIndex])[4]
-        if isPlayer or speakerBGColor == "blue" then
-          (speakerBG:GetComponent("Image")).sprite = (self._uiAtlas):GetSprite(self._dialogSpeakerBGBlue)
-        else
-          ;
-          (speakerBG:GetComponent("Image")).sprite = (self._uiAtlas):GetSprite(self._dialogSpeakerBGRed)
-        end
-      else
-        do
-          do
-            speakerBG:SetActive(false)
-            ;
-            (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-            return item
-          end
-          do return nil end
-        end
-      end
+    end)
+    if voiceId then
+      voice:SetActive(true)
+    else
+      voice:SetActive(false)
     end
+    item.transform:Find("SpeakerPlaceHolder/Speaker"):GetComponent(typeof(UILocalizationText)):SetText(speakerName)
+    item.transform:Find("Content"):GetComponent(typeof(UILocalizationText)):SetText(content)
+    local speakerBG = item.transform:Find("SpeakerPlaceHolder/SpeakerBG").gameObject
+    if string.len(speakerName) > 0 then
+      speakerBG:SetActive(true)
+      local speakerBGColor = dialogRecord[luaIndex][3]
+      local isPlayer = dialogRecord[luaIndex][4]
+      if isPlayer or speakerBGColor == "blue" then
+        speakerBG:GetComponent("Image").sprite = self._uiAtlas:GetSprite(self._dialogSpeakerBGBlue)
+      else
+        speakerBG:GetComponent("Image").sprite = self._uiAtlas:GetSprite(self._dialogSpeakerBGRed)
+      end
+    else
+      speakerBG:SetActive(false)
+    end
+    UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+    return item
+  else
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.ButtonHideOnClick = function(self, go)
-  -- function num : 0_8
-  (self._storyManager):HideUI(true)
-  self._buttonSpeedObjActive = (self._buttonSpeedObj).activeSelf
-  ;
-  (self._buttonSpeedObj):SetActive(false)
-  ;
-  (self._cancelHideButton):SetActive(true)
+function UIStoryController:ButtonHideOnClick(go)
+  self._storyManager:HideUI(true)
+  self._buttonSpeedObjActive = self._buttonSpeedObj.activeSelf
+  self._buttonSpeedObj:SetActive(false)
+  self._cancelHideButton:SetActive(true)
   if self._autoState then
     self:PauseAuto()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.CancelHideButtonOnClick = function(self, go)
-  -- function num : 0_9
-  (self._storyManager):HideUI(false)
-  ;
-  (self._buttonSpeedObj):SetActive(self._buttonSpeedObjActive)
-  ;
-  (self._cancelHideButton):SetActive(false)
+function UIStoryController:CancelHideButtonOnClick(go)
+  self._storyManager:HideUI(false)
+  self._buttonSpeedObj:SetActive(self._buttonSpeedObjActive)
+  self._cancelHideButton:SetActive(false)
   if self._autoState then
     self:ResumeAuto()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.ButtonReviewOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("StoryReplay", {self._storyID, (self._storyManager):GetCurParagraphID(), (self._storyManager):GetCurSectionIndex()})
-  ;
-  ((self._dialogReviewScrollView).gameObject):SetActive(true)
-  local dialogRecord = (self._storyManager):GetDialogRecord()
-  ;
-  (self._dialogReviewScrollView):SetListItemCount(#dialogRecord, true)
-  ;
-  (self._dialogReviewScrollView):MovePanelToItemIndex(#dialogRecord - 1, 0)
+function UIStoryController:ButtonReviewOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("StoryReplay", {
+    self._storyID,
+    self._storyManager:GetCurParagraphID(),
+    self._storyManager:GetCurSectionIndex()
+  })
+  self._dialogReviewScrollView.gameObject:SetActive(true)
+  local dialogRecord = self._storyManager:GetDialogRecord()
+  self._dialogReviewScrollView:SetListItemCount(#dialogRecord, true)
+  self._dialogReviewScrollView:MovePanelToItemIndex(#dialogRecord - 1, 0)
   if self._autoState then
     self:PauseAuto()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.ReviewPanelOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIStoryController:ReviewPanelOnClick()
   if self._reviewDragged then
     self._reviewDragged = false
   else
     if self._currentPlayingID then
-      (AudioHelperController.StopUIVoice)(self._currentPlayingID)
+      AudioHelperController.StopUIVoice(self._currentPlayingID)
     end
-    ;
-    ((self._dialogReviewScrollView).gameObject):SetActive(false)
+    self._dialogReviewScrollView.gameObject:SetActive(false)
     if self._autoState then
       self:ResumeAuto()
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.RestartHideBtnTimer = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIStoryController:RestartHideBtnTimer()
   if self._buttonSpeedHideTimer then
-    ((GameGlobal.TaskManager)()):KillTask(self._buttonSpeedHideTimer)
+    GameGlobal.TaskManager():KillTask(self._buttonSpeedHideTimer)
     self._buttonSpeedHideTimer = nil
   end
-  local targetTime = (GameGlobal:GetInstance()):GetCurrentUnscaledTime() + 2000
+  local targetTime = GameGlobal:GetInstance():GetCurrentUnscaledTime() + 2000
   self._buttonSpeedHideTimer = self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : _ENV, targetTime, self
-    while (GameGlobal:GetInstance()):GetCurrentUnscaledTime() < targetTime do
+    while GameGlobal:GetInstance():GetCurrentUnscaledTime() < targetTime do
       YIELD(TT)
     end
-    ;
-    ((self._storyManager):GetUIRootButtonObject()):SetActive(false)
-    ;
-    (self._buttonSpeedObj):SetActive(false)
-    ;
-    ((GameGlobal.TaskManager)()):KillTask(self._buttonSpeedHideTimer)
+    self._storyManager:GetUIRootButtonObject():SetActive(false)
+    self._buttonSpeedObj:SetActive(false)
+    GameGlobal.TaskManager():KillTask(self._buttonSpeedHideTimer)
     self._buttonSpeedHideTimer = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.CancelHideBtnTimer = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIStoryController:CancelHideBtnTimer()
   if self._buttonSpeedHideTimer then
-    ((GameGlobal.TaskManager)()):KillTask(self._buttonSpeedHideTimer)
+    GameGlobal.TaskManager():KillTask(self._buttonSpeedHideTimer)
     self._buttonSpeedHideTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.ButtonSpeedOnClick = function(self)
-  -- function num : 0_14
-  (self._storyManager):SetSpeed(function(rate)
-    -- function num : 0_14_0 , upvalues : self
-    (self._buttonSpeedText):SetText(rate .. " X")
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._buttonSpeedIcon).sprite = (self._uiAtlas):GetSprite(((self._buttonSpeedCfg)[rate]).icon)
-  end
-, 3)
+function UIStoryController:ButtonSpeedOnClick()
+  self._storyManager:SetSpeed(function(rate)
+    self._buttonSpeedText:SetText(rate .. " X")
+    self._buttonSpeedIcon.sprite = self._uiAtlas:GetSprite(self._buttonSpeedCfg[rate].icon)
+  end, 3)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.ButtonAutoOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  local newAuto = not (self._storyManager):GetAuto()
+function UIStoryController:ButtonAutoOnClick(go)
+  local newAuto = not self._storyManager:GetAuto()
   if newAuto then
-    local login_module = (GameGlobal.GetModule)(LoginModule)
+    local login_module = GameGlobal.GetModule(LoginModule)
     if login_module:IsInFirstStory() then
-      (GameGlobal.ReportCustomEvent)("CreateRole", "AutoPlayBtn")
+      GameGlobal.ReportCustomEvent("CreateRole", "AutoPlayBtn")
     end
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("StoryAuto", {self._storyID, (self._storyManager):GetCurParagraphID(), (self._storyManager):GetCurSectionIndex()})
-    ;
-    (self._buttonSpeedObj):SetActive(true)
-    ;
-    (self._storyManager):SetAuto(true)
-    ;
-    (self._cancelAutoButton):SetActive(true)
-    ;
-    (self._autoStateGO):SetActive(true)
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._autoText).color = Color.black
-    ;
-    (self._storyManager):SetSpeed(function(rate)
-    -- function num : 0_15_0 , upvalues : self
-    (self._buttonSpeedText):SetText(rate .. " X")
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._buttonSpeedIcon).sprite = (self._uiAtlas):GetSprite(((self._buttonSpeedCfg)[rate]).icon)
-  end
-, 1)
+    GameGlobal.UAReportForceGuideEvent("StoryAuto", {
+      self._storyID,
+      self._storyManager:GetCurParagraphID(),
+      self._storyManager:GetCurSectionIndex()
+    })
+    self._buttonSpeedObj:SetActive(true)
+    self._storyManager:SetAuto(true)
+    self._cancelAutoButton:SetActive(true)
+    self._autoStateGO:SetActive(true)
+    self._autoText.color = Color.black
+    self._storyManager:SetSpeed(function(rate)
+      self._buttonSpeedText:SetText(rate .. " X")
+      self._buttonSpeedIcon.sprite = self._uiAtlas:GetSprite(self._buttonSpeedCfg[rate].icon)
+    end, 1)
   else
-    do
-      self:StopAuto()
-      self._autoState = newAuto
-    end
+    self:StopAuto()
   end
+  self._autoState = newAuto
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.StopAuto = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("StoryCancelAuto", {self._storyID, (self._storyManager):GetCurParagraphID(), (self._storyManager):GetCurSectionIndex()})
-  ;
-  (self._storyManager):SetSpeed(nil, 2)
-  ;
-  (self._buttonSpeedObj):SetActive(false)
-  ;
-  (self._storyManager):SetAuto(false)
-  ;
-  (self._cancelAutoButton):SetActive(false)
-  ;
-  ((self._storyManager):GetUIRootButtonObject()):SetActive(true)
-  ;
-  (self._autoStateGO):SetActive(false)
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._autoText).color = Color.white
+function UIStoryController:StopAuto()
+  GameGlobal.UAReportForceGuideEvent("StoryCancelAuto", {
+    self._storyID,
+    self._storyManager:GetCurParagraphID(),
+    self._storyManager:GetCurSectionIndex()
+  })
+  self._storyManager:SetSpeed(nil, 2)
+  self._buttonSpeedObj:SetActive(false)
+  self._storyManager:SetAuto(false)
+  self._cancelAutoButton:SetActive(false)
+  self._storyManager:GetUIRootButtonObject():SetActive(true)
+  self._autoStateGO:SetActive(false)
+  self._autoText.color = Color.white
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.PauseAuto = function(self)
-  -- function num : 0_17
-  (self._storyManager):SetSpeed(nil, 2)
-  ;
-  (self._storyManager):SetAuto(false)
+function UIStoryController:PauseAuto()
+  self._storyManager:SetSpeed(nil, 2)
+  self._storyManager:SetAuto(false)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.ResumeAuto = function(self)
-  -- function num : 0_18
-  (self._storyManager):SetAuto(true)
-  ;
-  (self._storyManager):SetSpeed(function(rate)
-    -- function num : 0_18_0 , upvalues : self
-    (self._buttonSpeedText):SetText(rate .. " X")
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._buttonSpeedIcon).sprite = (self._uiAtlas):GetSprite(((self._buttonSpeedCfg)[rate]).icon)
-  end
-, 1)
+function UIStoryController:ResumeAuto()
+  self._storyManager:SetAuto(true)
+  self._storyManager:SetSpeed(function(rate)
+    self._buttonSpeedText:SetText(rate .. " X")
+    self._buttonSpeedIcon.sprite = self._uiAtlas:GetSprite(self._buttonSpeedCfg[rate].icon)
+  end, 1)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.CancelAutoButtonOnClick = function(self, go)
-  -- function num : 0_19
+function UIStoryController:CancelAutoButtonOnClick(go)
   self:StopAuto()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.SetSkipToOptions = function(self, skipToOptions)
-  -- function num : 0_20
+function UIStoryController:SetSkipToOptions(skipToOptions)
   self._skipToOptions = skipToOptions
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.ButtonSkipOnClick = function(self, go)
-  -- function num : 0_21 , upvalues : _ENV
+function UIStoryController:ButtonSkipOnClick(go)
   if self._skipLock then
-    return 
+    return
   end
   if self._skipToOptions then
     self.key = "JumpStoryNextOptions"
-    ;
-    ((GameGlobal.UIStateManager)()):Lock(self.key)
+    GameGlobal.UIStateManager():Lock(self.key)
     local lastParagraphId, lastSectionIdx = -1, -1
-    local dialogRet = (self._storyManager):JumpTo(lastParagraphId, lastSectionIdx)
+    local dialogRet = self._storyManager:JumpTo(lastParagraphId, lastSectionIdx)
     if dialogRet then
       dialogRet:FullScreenBtnOnClick()
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(self.key)
-    return 
+    GameGlobal.UIStateManager():UnLock(self.key)
+    return
   end
-  do
-    local skip_confirm_str_id = "str_story_skip_confirm"
-    if not (self:GetModule(StoryModule)):IsFinish(self._storyID) then
-      skip_confirm_str_id = "str_story_skip_affinity_confirm"
-    end
-    self._skipLock = true
-    local login_module = (GameGlobal.GetModule)(LoginModule)
-    if login_module:IsInFirstStory() then
-      (GameGlobal.ReportCustomEvent)("CreateRole", "SkipAnimBtn")
-    end
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("StorySkip", {self._storyID, (self._storyManager):GetCurParagraphID(), (self._storyManager):GetCurSectionIndex()})
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)(skip_confirm_str_id), function()
-    -- function num : 0_21_0 , upvalues : _ENV, self
-    (Log.sys)("开始跳过剧情")
+  local skip_confirm_str_id = "str_story_skip_confirm"
+  if not self:GetModule(StoryModule):IsFinish(self._storyID) then
+    skip_confirm_str_id = "str_story_skip_affinity_confirm"
+  end
+  self._skipLock = true
+  local login_module = GameGlobal.GetModule(LoginModule)
+  if login_module:IsInFirstStory() then
+    GameGlobal.ReportCustomEvent("CreateRole", "SkipAnimBtn")
+  end
+  GameGlobal.UAReportForceGuideEvent("StorySkip", {
+    self._storyID,
+    self._storyManager:GetCurParagraphID(),
+    self._storyManager:GetCurSectionIndex()
+  })
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get(skip_confirm_str_id), function()
+    Log.sys("开始跳过剧情")
     if not self._storyManager then
-      (Log.warn)("storyManager在确认跳过前已被置空")
-      ;
-      (Log.sys)("结束跳过剧情")
-      return 
+      Log.warn("storyManager在确认跳过前已被置空")
+      Log.sys("结束跳过剧情")
+      return
     end
     if self._autoState then
       self:ResumeAuto()
     end
-    ;
-    (self._storyManager):SkipParagraph()
+    self._storyManager:SkipParagraph()
     self._skipLock = false
-    ;
-    (Log.sys)("结束跳过剧情")
-  end
-, nil, function()
-    -- function num : 0_21_1 , upvalues : self
+    Log.sys("结束跳过剧情")
+  end, nil, function()
     if self._autoState then
       self:ResumeAuto()
     end
     self._skipLock = false
-  end
-)
-    if self._autoState then
-      self:PauseAuto()
-    end
+  end)
+  if self._autoState then
+    self:PauseAuto()
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryController.ShowAddAffinity = function(self, petID, affinity)
-  -- function num : 0_22 , upvalues : _ENV
-  (Log.fatal)("宝宝:" .. petID .. " +" .. affinity)
-  local pet = (self:GetModule(PetModule)):GetPetByTemplateId(petID)
+function UIStoryController:ShowAddAffinity(petID, affinity)
+  Log.fatal("宝宝:" .. petID .. " +" .. affinity)
+  local pet = self:GetModule(PetModule):GetPetByTemplateId(petID)
   if not pet then
-    (Log.fatal)("[story] missing pet info, tplid:" .. petID)
-    return 
+    Log.fatal("[story] missing pet info, tplid:" .. petID)
+    return
   end
-  ;
-  (self._affinityPetHead):LoadImage(pet:GetPetHead(PetSkinEffectPath.HEAD_ICON_STORY))
-  ;
-  (self._petNameTxt):SetText((StringTable.Get)(pet:GetPetName()))
-  ;
-  (self._affinityTxt):SetText((StringTable.Get)("str_story_add_affinity", affinity))
-  ;
-  (self._affinityWnd):SetActive(true)
+  self._affinityPetHead:LoadImage(pet:GetPetHead(PetSkinEffectPath.HEAD_ICON_STORY))
+  self._petNameTxt:SetText(StringTable.Get(pet:GetPetName()))
+  self._affinityTxt:SetText(StringTable.Get("str_story_add_affinity", affinity))
+  self._affinityWnd:SetActive(true)
   if self._tweenQueue then
-    (self._tweenQueue):Complete(false)
+    self._tweenQueue:Complete(false)
     self._tweenQueue = nil
   end
-  self._tweenQueue = (((DG.Tweening).DOTween).Sequence)()
-  ;
-  (self._tweenQueue):Append(((self._affinityWnd).transform):DOLocalMoveX(-498, 0.2))
-  ;
-  (self._tweenQueue):AppendInterval(3)
-  ;
-  ((self._tweenQueue):Append(((self._affinityWnd).transform):DOLocalMoveX(498, 0.2))):AppendCallback(function()
-    -- function num : 0_22_0 , upvalues : self
-    (self._affinityWnd):SetActive(false)
+  self._tweenQueue = DG.Tweening.DOTween.Sequence()
+  self._tweenQueue:Append(self._affinityWnd.transform:DOLocalMoveX(-498, 0.2))
+  self._tweenQueue:AppendInterval(3)
+  self._tweenQueue:Append(self._affinityWnd.transform:DOLocalMoveX(498, 0.2)):AppendCallback(function()
+    self._affinityWnd:SetActive(false)
     self._tweenQueue = nil
-  end
-)
+  end)
 end
-
-

@@ -1,94 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_map_path_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapPathItem", UICustomWidget)
 UIMapPathItem = UIMapPathItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapPathItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._rect = (self:GetGameObject()):GetComponent("RectTransform")
+function UIMapPathItem:OnShow()
+  self._rect = self:GetGameObject():GetComponent("RectTransform")
   local vec0_5 = Vector2(0.5, 0.5)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMax = vec0_5
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchorMin = vec0_5
-  self._rectRoot = (self:GetGameObject("shape")):GetComponent("RectTransform")
+  self._rect.anchorMax = vec0_5
+  self._rect.anchorMin = vec0_5
+  self._rectRoot = self:GetGameObject("shape"):GetComponent("RectTransform")
   self._line = self:GetGameObject("line")
-  ;
-  (self._line):SetActive(false)
+  self._line:SetActive(false)
   self._shadow = self:GetGameObject("shadow")
-  ;
-  (self._shadow):SetActive(false)
+  self._shadow:SetActive(false)
   self._sNode = nil
   self._eNode = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathItem.OnHide = function(self)
-  -- function num : 0_1
+function UIMapPathItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathItem.Flush = function(self, sNode, eNode, isShadow)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._line):SetActive(not isShadow)
-  ;
-  (self._shadow):SetActive(isShadow)
+function UIMapPathItem:Flush(sNode, eNode, isShadow)
+  self._line:SetActive(not isShadow)
+  self._shadow:SetActive(isShadow)
   if not sNode then
-    return 
+    return
   end
   if not eNode then
-    return 
+    return
   end
   self._sNode = sNode
   self._eNode = eNode
-  local posS, posE = (sNode.pos):Clone(), (eNode.pos):Clone()
-  do
-    if isShadow then
-      local offsetY = 30
-      posS.y = posS.y - offsetY
-      posE.y = posE.y - offsetY
-    end
-    local dis = (Vector2.Distance)(posS, posE)
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._rectRoot).sizeDelta = Vector2(dis, ((self._rectRoot).sizeDelta).y)
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._rect).anchoredPosition = posS
-    local v = posE - posS
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
-    self:Animation()
+  local posS, posE = sNode.pos:Clone(), eNode.pos:Clone()
+  if isShadow then
+    local offsetY = 30
+    posS.y = posS.y - offsetY
+    posE.y = posE.y - offsetY
   end
+  local dis = Vector2.Distance(posS, posE)
+  self._rectRoot.sizeDelta = Vector2(dis, self._rectRoot.sizeDelta.y)
+  self._rect.anchoredPosition = posS
+  local v = posE - posS
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
+  self:Animation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapPathItem.Animation = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._eNode):State() == DiscoveryStageState.CanPlay and (self._eNode):IsFirstShow() then
-    local targetWidth = ((self._rectRoot).sizeDelta).x
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rectRoot).sizeDelta = Vector2(0, ((self._rectRoot).sizeDelta).y)
-    ;
-    (self._rectRoot):DOSizeDelta(Vector2(targetWidth, ((self._rectRoot).sizeDelta).y), 0.8)
+function UIMapPathItem:Animation()
+  if self._eNode:State() == DiscoveryStageState.CanPlay and self._eNode:IsFirstShow() then
+    local targetWidth = self._rectRoot.sizeDelta.x
+    self._rectRoot.sizeDelta = Vector2(0, self._rectRoot.sizeDelta.y)
+    self._rectRoot:DOSizeDelta(Vector2(targetWidth, self._rectRoot.sizeDelta.y), 0.8)
   end
 end
-
-

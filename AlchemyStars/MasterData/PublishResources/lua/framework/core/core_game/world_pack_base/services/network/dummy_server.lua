@@ -1,50 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/services/network/dummy_server.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DummyServer", Object)
 DummyServer = DummyServer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DummyServer.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DummyServer:Constructor()
   self.messages = ArrayList:New()
   self.network = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DummyServer.SetNetworkService = function(self, network)
-  -- function num : 0_1
+function DummyServer:SetNetworkService(network)
   self.network = network
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DummyServer.ReceiveMessage = function(self, networkMessage)
-  -- function num : 0_2
-  (self.messages):PushBack(networkMessage)
+function DummyServer:ReceiveMessage(networkMessage)
+  self.messages:PushBack(networkMessage)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DummyServer.BroadcastMessage = function(self)
-  -- function num : 0_3
-  for i = 1, (self.messages):Size() do
-    local msg = (self.messages):GetAt(i)
-    ;
-    (self.network):ReceiveMessage(msg)
+function DummyServer:BroadcastMessage()
+  for i = 1, self.messages:Size() do
+    local msg = self.messages:GetAt(i)
+    self.network:ReceiveMessage(msg)
   end
-  ;
-  (self.messages):Clear()
+  self.messages:Clear()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DummyServer.Update = function(self, deltaTimeMS)
-  -- function num : 0_4
+function DummyServer:Update(deltaTimeMS)
   self:BroadcastMessage()
 end
-
-

@@ -1,45 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chapter_award/ui_chapter_award_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChapterAwardEntry", UICustomWidget)
 UIChapterAwardEntry = UIChapterAwardEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChapterAwardEntry.Constructor = function(self)
-  -- function num : 0_0
+function UIChapterAwardEntry:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAwardEntry.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChapterAwardEntry:OnShow()
   self._trans = self:GetGameObject()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_1_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.Base)
+  self.uiItem:SetClickCallBack(function()
     self:bgOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAwardEntry.OnHide = function(self)
-  -- function num : 0_2
+function UIChapterAwardEntry:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAwardEntry.Flush = function(self, v)
-  -- function num : 0_3
+function UIChapterAwardEntry:Flush(v)
   if not v then
-    return 
+    return
   end
   self._v = v
   local icon = v.icon
@@ -47,17 +27,17 @@ UIChapterAwardEntry.Flush = function(self, v)
   local text1 = v.count
   local quality = v.color
   local itemId = v.id
-  ;
-  (self.uiItem):SetData({icon = icon, text1 = text1, text2 = text2, quality = quality, itemId = itemId})
+  self.uiItem:SetData({
+    icon = icon,
+    text1 = text1,
+    text2 = text2,
+    quality = quality,
+    itemId = itemId
+  })
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChapterAwardEntry.bgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIChapterAwardEntry:bgOnClick(go)
   if self._v then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, (self._v).id, ((self._trans).transform).position)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, self._v.id, self._trans.transform.position)
   end
 end
-
-

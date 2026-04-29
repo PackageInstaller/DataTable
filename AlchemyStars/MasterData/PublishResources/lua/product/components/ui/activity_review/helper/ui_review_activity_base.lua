@@ -1,45 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/helper/ui_review_activity_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewActivityBase", Object)
 UIReviewActivityBase = UIReviewActivityBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewActivityBase.Constructor = function(self, id, obj, idx)
-  -- function num : 0_0 , upvalues : _ENV
+function UIReviewActivityBase:Constructor(id, obj, idx)
   self._id = id
   self._idx = idx
-  self._camg_cfg = (Cfg.cfg_campaign)[self._id]
+  self._camg_cfg = Cfg.cfg_campaign[self._id]
   if not self._camg_cfg then
     ReviewError("找不到回顾活动配置:", self._id)
   end
   self:UpdateCampaignObj(obj)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.UpdateCampaignObj = function(self, obj)
-  -- function num : 0_1
+function UIReviewActivityBase:UpdateCampaignObj(obj)
   self._campObj = obj
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.ReqDetailInfo = function(self, TT, res)
-  -- function num : 0_2 , upvalues : _ENV
+function UIReviewActivityBase:ReqDetailInfo(TT, res)
   if not self:IsUnlock() then
     ReviewError("回顾活动没有解锁，不能获取详细信息")
   end
   self._campaign = UIActivityCampaign:New()
-  if not res then
-    res = AsyncRequestRes:New()
-  end
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self:ActivityType())
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res, self:ActivityType())
+  res = res or AsyncRequestRes:New()
+  self._campaign:LoadCampaignInfo(TT, res, self:ActivityType())
+  self._campaign:ReLoadCampaignInfo_Force(TT, res, self:ActivityType())
   if res:GetSucc() then
     return self._campaign
   else
@@ -48,248 +31,158 @@ UIReviewActivityBase.ReqDetailInfo = function(self, TT, res)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.ClearDetailInfo = function(self)
-  -- function num : 0_3
+function UIReviewActivityBase:ClearDetailInfo()
   self._campaign = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.AssetPackageID = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ReviewError(self._className .. "未重写AssetPackageID()方法：", (debug.traceback)())
+function UIReviewActivityBase:AssetPackageID()
+  ReviewError(self._className .. "未重写AssetPackageID()方法：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.ActivityOnOpen = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ReviewError(self._className .. "未重写ActivityOnOpen()方法：", (debug.traceback)())
+function UIReviewActivityBase:ActivityOnOpen()
+  ReviewError(self._className .. "未重写ActivityOnOpen()方法：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.GetBattleExitParam = function(self, comID, missionCreateInfo, isWin, battleresultRt)
-  -- function num : 0_6 , upvalues : _ENV
-  ReviewError(self._className .. "未重写GetBattleExitParam()方法：", (debug.traceback)())
+function UIReviewActivityBase:GetBattleExitParam(comID, missionCreateInfo, isWin, battleresultRt)
+  ReviewError(self._className .. "未重写GetBattleExitParam()方法：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.ActivityID = function(self)
-  -- function num : 0_7
+function UIReviewActivityBase:ActivityID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.Index = function(self)
-  -- function num : 0_8
+function UIReviewActivityBase:Index()
   return self._idx
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.ActivityType = function(self)
-  -- function num : 0_9
+function UIReviewActivityBase:ActivityType()
   if self:IsUnlock() then
-    return ((self._campObj):GetSampleInfo()).camp_type
+    return self._campObj:GetSampleInfo().camp_type
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.Title = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  return (StringTable.Get)((self._camg_cfg).CampaignName)
+function UIReviewActivityBase:Title()
+  return StringTable.Get(self._camg_cfg.CampaignName)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.HasRedPoint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIReviewActivityBase:HasRedPoint()
   if self:IsUnlock() then
-    return ((self._campObj):GetSampleInfo()):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
+    return self._campObj:GetSampleInfo():GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD)
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.CanUnlock = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIReviewActivityBase:CanUnlock()
   if self:IsUnlock() then
     return false
   end
   if self:IsOpen() then
     local asset = self:UnlockCost()
-    local have = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(asset.assetid)
-    return asset.count <= have
+    local have = GameGlobal.GetModule(ItemModule):GetItemCount(asset.assetid)
+    return have >= asset.count
   end
-  do return false end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.UnlockCost = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[self:ActivityID()]
+function UIReviewActivityBase:UnlockCost()
+  local cfg = Cfg.cfg_campaign[self:ActivityID()]
   if cfg.CostItem == nil or #cfg.CostItem == 0 then
     ReviewError("回顾活动配置错误，必须有解锁消耗CostItem:", self:ActivityID())
   end
-  local id = ((cfg.CostItem)[1])[1]
-  local count = ((cfg.CostItem)[1])[2]
+  local id = cfg.CostItem[1][1]
+  local count = cfg.CostItem[1][2]
   return NewRoleAsset(id, count)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.IsUnlock = function(self)
-  -- function num : 0_14
-  do return self._campObj ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIReviewActivityBase:IsUnlock()
+  return self._campObj ~= nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.IsDownloaded = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIReviewActivityBase:IsDownloaded()
   if EDITOR or not APPVER1110 then
     return true
   end
-  return not ((HotUpdate.ActivityLuaProxy).HasDownloadList)(self:AssetPackageID())
+  return not HotUpdate.ActivityLuaProxy.HasDownloadList(self:AssetPackageID())
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.IsFinished = function(self)
-  -- function num : 0_16
-  do return self:IsUnlock() and ((self:ProgressPercent() >= 100 and not self:HasRedPoint())) end
-  do return false end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.IsOpen = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local openTime = nil
-  if self._campObj then
-    openTime = ((self._campObj):GetSampleInfo()).begin_time
-  else
-    openTime = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr((self._camg_cfg).BeginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  end
-  do return openTime <= GetSvrTimeNow() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.ProgressPercent = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIReviewActivityBase:IsFinished()
   if self:IsUnlock() then
-    return (((self._campObj):GetSampleInfo()).m_extend_info)[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_POINT_PROGRESS]
+    return self:ProgressPercent() >= 100 and not self:HasRedPoint()
+  end
+  return false
+end
+
+function UIReviewActivityBase:IsOpen()
+  local openTime
+  if self._campObj then
+    openTime = self._campObj:GetSampleInfo().begin_time
+  else
+    openTime = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(self._camg_cfg.BeginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  end
+  return openTime <= GetSvrTimeNow()
+end
+
+function UIReviewActivityBase:ProgressPercent()
+  if self:IsUnlock() then
+    return self._campObj:GetSampleInfo().m_extend_info[CampainExtendKey.E_CAMPAIGN_EXTEND_KEY_POINT_PROGRESS]
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.GetDetailInfo = function(self)
-  -- function num : 0_19
+function UIReviewActivityBase:GetDetailInfo()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.Download = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIReviewActivityBase:Download()
   local packageID = self:AssetPackageID()
-  do
-    if ((HotUpdate.ActivityLuaProxy).IsDownloaderBusy)() then
-      local curID = ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)()
-      if curID == packageID then
-        (ToastManager.ShowToast)((StringTable.Get)("str_review_tip1"))
-      else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_review_tip2"))
-      end
-      return 
-    end
-    ;
-    ((HotUpdate.ActivityLuaProxy).AddListener)(function(callbackType, activityId, unityActionCallBack)
-    -- function num : 0_20_0 , upvalues : _ENV, packageID, self
-    if callbackType == (HotUpdate.ActivityDownloaderCallbackType).DownloadError or callbackType == (HotUpdate.ActivityDownloaderCallbackType).FatalError then
-      (ToastManager.ShowToast)((StringTable.Get)("str_review_tip6"))
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIReviewOnDownloadStateChanged, packageID)
-      ReviewError("下载活动包失败：", packageID)
+  if HotUpdate.ActivityLuaProxy.IsDownloaderBusy() then
+    local curID = HotUpdate.ActivityLuaProxy.CurrProcessingActivityID()
+    if curID == packageID then
+      ToastManager.ShowToast(StringTable.Get("str_review_tip1"))
     else
-      if callbackType == (HotUpdate.ActivityDownloaderCallbackType).Finish then
-        (ToastManager.ShowToast)((StringTable.Get)("str_review_tip3", self:Title()))
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIReviewOnDownloadStateChanged, packageID)
-        ;
-        (Log.debug)("下载活动包完成:", packageID)
-      else
-        if callbackType == (HotUpdate.ActivityDownloaderCallbackType).SpaceNotEnough then
-          (ToastManager.ShowToast)((StringTable.Get)("str_review_tip4"))
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIReviewOnDownloadStateChanged, packageID)
-          ReviewError("下载活动包失败，磁盘空间不足:", packageID)
-        else
-          if callbackType == (HotUpdate.ActivityDownloaderCallbackType).NotUseWifi then
-            (ToastManager.ShowToast)((StringTable.Get)("str_review_tip5"))
-            ;
-            (Log.debug)("使用4G下载活动包:", packageID)
-            unityActionCallBack:DynamicInvoke(true)
-          end
-        end
-      end
+      ToastManager.ShowToast(StringTable.Get("str_review_tip2"))
     end
+    return
   end
-)
-    ;
-    (Log.debug)("开始下载活动资源包:", packageID)
-    ;
-    ((HotUpdate.ActivityLuaProxy).StartDownload)(packageID)
-  end
+  HotUpdate.ActivityLuaProxy.AddListener(function(callbackType, activityId, unityActionCallBack)
+    if callbackType == HotUpdate.ActivityDownloaderCallbackType.DownloadError or callbackType == HotUpdate.ActivityDownloaderCallbackType.FatalError then
+      ToastManager.ShowToast(StringTable.Get("str_review_tip6"))
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIReviewOnDownloadStateChanged, packageID)
+      ReviewError("下载活动包失败：", packageID)
+    elseif callbackType == HotUpdate.ActivityDownloaderCallbackType.Finish then
+      ToastManager.ShowToast(StringTable.Get("str_review_tip3", self:Title()))
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIReviewOnDownloadStateChanged, packageID)
+      Log.debug("下载活动包完成:", packageID)
+    elseif callbackType == HotUpdate.ActivityDownloaderCallbackType.SpaceNotEnough then
+      ToastManager.ShowToast(StringTable.Get("str_review_tip4"))
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIReviewOnDownloadStateChanged, packageID)
+      ReviewError("下载活动包失败，磁盘空间不足:", packageID)
+    elseif callbackType == HotUpdate.ActivityDownloaderCallbackType.NotUseWifi then
+      ToastManager.ShowToast(StringTable.Get("str_review_tip5"))
+      Log.debug("使用4G下载活动包:", packageID)
+      unityActionCallBack:DynamicInvoke(true)
+    end
+  end)
+  Log.debug("开始下载活动资源包:", packageID)
+  HotUpdate.ActivityLuaProxy.StartDownload(packageID)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.IsDownLoading = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  do return ((HotUpdate.ActivityLuaProxy).CurrProcessingActivityID)() == self:AssetPackageID() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIReviewActivityBase:IsDownLoading()
+  return HotUpdate.ActivityLuaProxy.CurrProcessingActivityID() == self:AssetPackageID()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.DownloadProgress = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIReviewActivityBase:DownloadProgress()
   if self:IsDownLoading() then
-    return ((HotUpdate.ActivityLuaProxy).GetProgress)()
+    return HotUpdate.ActivityLuaProxy.GetProgress()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.DownloadPackageSize = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local size = ((HotUpdate.ActivityLuaProxy).GetTotalSize)(self:AssetPackageID())
+function UIReviewActivityBase:DownloadPackageSize()
+  local size = HotUpdate.ActivityLuaProxy.GetTotalSize(self:AssetPackageID())
   return tonumber(size)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityBase.DownloadedSize = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIReviewActivityBase:DownloadedSize()
   if self:IsDownLoading() then
-    return ((HotUpdate.ActivityLuaProxy).GetDownloadedSize)()
+    return HotUpdate.ActivityLuaProxy.GetDownloadedSize()
   end
 end
-
-

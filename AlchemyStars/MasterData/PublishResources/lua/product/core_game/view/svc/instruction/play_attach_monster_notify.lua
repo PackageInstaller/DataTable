@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_attach_monster_notify.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAttachMonsterNotify", BaseInstruction)
 PlayAttachMonsterNotify = PlayAttachMonsterNotify
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAttachMonsterNotify.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayAttachMonsterNotify:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAttachMonsterNotify.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTAttachMonster:New(casterEntity))
+function PlayAttachMonsterNotify:DoInstruction(TT, casterEntity, phaseContext)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTAttachMonster:New(casterEntity))
 end
-
-

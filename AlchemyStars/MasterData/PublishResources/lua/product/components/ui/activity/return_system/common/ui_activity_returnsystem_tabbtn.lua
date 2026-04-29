@@ -1,84 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/common/ui_activity_returnsystem_tabbtn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemTabBtn", UICustomWidget)
 UIActivityReturnSystemTabBtn = UIActivityReturnSystemTabBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemTabBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityReturnSystemTabBtn:OnShow()
   self._isOpen = true
   self._isSelected = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemTabBtn:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBtn.SetData = function(self, idx, strId, callback)
-  -- function num : 0_2
+function UIActivityReturnSystemTabBtn:SetData(idx, strId, callback)
   self._index = idx
   self._strId = strId
   self._callback = callback
   self:_SetTitle(idx, strId)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBtn.SetSelected = function(self, isSelected)
-  -- function num : 0_3 , upvalues : _ENV
-  if not isSelected or not "uieff_TabBtn_in" then
-    local animName = self._isSelected == isSelected or "uieff_TabBtn_out"
+function UIActivityReturnSystemTabBtn:SetSelected(isSelected)
+  if self._isSelected ~= isSelected then
+    local animName = isSelected and "uieff_TabBtn_in" or "uieff_TabBtn_out"
+    UIWidgetHelper.SetAnimationPlay(self, "_anim", animName)
+    self._isSelected = isSelected
   end
-  ;
-  (UIWidgetHelper.SetAnimationPlay)(self, "_anim", animName)
-  self._isSelected = isSelected
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBtn.SetRedPoint = function(self, red)
-  -- function num : 0_4
+function UIActivityReturnSystemTabBtn:SetRedPoint(red)
   local obj = self:GetGameObject("_red")
   obj:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBtn._SetTitle = function(self, idx, strId)
-  -- function num : 0_5 , upvalues : _ENV
-  local title = {"_text_normal", "_text_selected"}
-  for _,v in pairs(title) do
+function UIActivityReturnSystemTabBtn:_SetTitle(idx, strId)
+  local title = {
+    "_text_normal",
+    "_text_selected"
+  }
+  for _, v in pairs(title) do
     local _text = self:GetUIComponent("UILocalizationText", v)
-    _text:SetText((StringTable.Get)(strId[idx]))
+    _text:SetText(StringTable.Get(strId[idx]))
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBtn.TabBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.info)("UIActivityReturnSystemTabBtn:TabBtnOnClick, index = ", self._index)
+function UIActivityReturnSystemTabBtn:TabBtnOnClick(go)
+  Log.info("UIActivityReturnSystemTabBtn:TabBtnOnClick, index = ", self._index)
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemTabBtn.ShowHideRoot = function(self, isBoostIntro)
-  -- function num : 0_7
+function UIActivityReturnSystemTabBtn:ShowHideRoot(isBoostIntro)
   if isBoostIntro then
     local root = self:GetGameObject("TabBtn")
     root:SetActive(false)
   end
 end
-
-

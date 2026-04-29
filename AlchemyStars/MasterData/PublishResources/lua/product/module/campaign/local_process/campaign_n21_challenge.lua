@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n21_challenge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN21Challenge", ICampaignComponentLocalProcessBase)
 CCampaignN21Challenge = CCampaignN21Challenge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN21Challenge.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN21Challenge:Constructor()
   self._challengeComponent = nil
   self._challengeCompInfo = nil
   self._progressComponent1 = nil
@@ -24,70 +17,52 @@ CCampaignN21Challenge.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN21Challenge.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN21Challenge:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N21_CHALLENGE
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN21Challenge.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN21Challenge:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN21Challenge.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN21Challenge:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetChallengeComponent()
   self:_GetProgressComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN21Challenge._GetChallengeComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._challengeComponent = (self._campaignObj):GetComponent(ECampaignN21ChallengeComponentID.CHALLENGE)
+function CCampaignN21Challenge:_GetChallengeComponent()
+  self._challengeComponent = self._campaignObj:GetComponent(ECampaignN21ChallengeComponentID.CHALLENGE)
   if not self._challengeComponent then
-    return 
+    return
   end
-  self._challengeCompInfo = (self._challengeComponent):ComponentInfo()
+  self._challengeCompInfo = self._challengeComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN21Challenge._GetProgressComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._progressComponent1 = (self._campaignObj):GetComponent(ECampaignN21ChallengeComponentID.PROGRESS)
+function CCampaignN21Challenge:_GetProgressComponent()
+  self._progressComponent1 = self._campaignObj:GetComponent(ECampaignN21ChallengeComponentID.PROGRESS)
   if self._progressComponent1 then
-    self._progressCompInfo1 = (self._progressComponent1):ComponentInfo()
+    self._progressCompInfo1 = self._progressComponent1:ComponentInfo()
   end
-  self._progressComponent2 = (self._campaignObj):GetComponent(ECampaignN21ChallengeComponentID.PROGRESS2)
+  self._progressComponent2 = self._campaignObj:GetComponent(ECampaignN21ChallengeComponentID.PROGRESS2)
   if self._progressComponent2 then
-    self._progressCompInfo2 = (self._progressComponent2):ComponentInfo()
+    self._progressCompInfo2 = self._progressComponent2:ComponentInfo()
   end
-  self._progressComponent3 = (self._campaignObj):GetComponent(ECampaignN21ChallengeComponentID.PROGRESS3)
+  self._progressComponent3 = self._campaignObj:GetComponent(ECampaignN21ChallengeComponentID.PROGRESS3)
   if self._progressComponent3 then
-    self._progressCompInfo3 = (self._progressComponent3):ComponentInfo()
+    self._progressCompInfo3 = self._progressComponent3:ComponentInfo()
   end
-  self._progressComponent4 = (self._campaignObj):GetComponent(ECampaignN21ChallengeComponentID.PROGRESS4)
+  self._progressComponent4 = self._campaignObj:GetComponent(ECampaignN21ChallengeComponentID.PROGRESS4)
   if self._progressComponent4 then
-    self._progressCompInfo4 = (self._progressComponent4):ComponentInfo()
+    self._progressCompInfo4 = self._progressComponent4:ComponentInfo()
   end
-  self._progressComponent5 = (self._campaignObj):GetComponent(ECampaignN21ChallengeComponentID.PROGRESS5)
+  self._progressComponent5 = self._campaignObj:GetComponent(ECampaignN21ChallengeComponentID.PROGRESS5)
   if self._progressComponent5 then
-    self._progressCompInfo5 = (self._progressComponent5):ComponentInfo()
+    self._progressCompInfo5 = self._progressComponent5:ComponentInfo()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN21Challenge.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignN21Challenge:GetComponent(componentID)
   if ECampaignN21ChallengeComponentID.CHALLENGE == componentID then
     return self._challengeComponent
   end
@@ -109,10 +84,7 @@ CCampaignN21Challenge.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN21Challenge.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignN21Challenge:GetComponentInfo(componentID)
   if ECampaignN21ChallengeComponentID.CHALLENGE == componentID then
     return self._challengeCompInfo
   end
@@ -133,5 +105,3 @@ CCampaignN21Challenge.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

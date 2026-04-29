@@ -1,52 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_show_hp_progress.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_behavior_base")
 _class("MonsterBeHaviorShowHpProgress", MonsterBeHaviorBase)
 MonsterBeHaviorShowHpProgress = MonsterBeHaviorShowHpProgress
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorShowHpProgress.Name = function(self)
-  -- function num : 0_0
+function MonsterBeHaviorShowHpProgress:Name()
   return "MonsterBeHaviorShowHpProgress"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorShowHpProgress.SetProgress = function(self, hp)
-  -- function num : 0_1
+function MonsterBeHaviorShowHpProgress:SetProgress(hp)
   local bounceController = self:GetCoreController()
-  bounceController:HPProgressChange((self.monster):GetPstId(), hp, ((self.monster).monsterData).initHp)
+  bounceController:HPProgressChange(self.monster:GetPstId(), hp, self.monster.monsterData.initHp)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorShowHpProgress.OnInit = function(self, param)
-  -- function num : 0_2
+function MonsterBeHaviorShowHpProgress:OnInit(param)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorShowHpProgress.OnShow = function(self)
-  -- function num : 0_3
+function MonsterBeHaviorShowHpProgress:OnShow()
   local bounceController = self:GetCoreController()
-  bounceController:ShowHPProgress((self.monster):GetPstId(), ((self.monster).monsterData).initHp)
+  bounceController:ShowHPProgress(self.monster:GetPstId(), self.monster.monsterData.initHp)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorShowHpProgress.OnReset = function(self)
-  -- function num : 0_4
+function MonsterBeHaviorShowHpProgress:OnReset()
   local bounceController = self:GetCoreController()
-  bounceController:HideHPProgress((self.monster):GetPstId())
+  bounceController:HideHPProgress(self.monster:GetPstId())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorShowHpProgress.OnRelease = function(self)
-  -- function num : 0_5
+function MonsterBeHaviorShowHpProgress:OnRelease()
 end
-
-

@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_add_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParamAddRound", SkillEffectParamBase)
 SkillEffectParamAddRound = SkillEffectParamAddRound
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamAddRound.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamAddRound:Constructor(t)
   self._addRoundCount = t.addRoundCount
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAddRound.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamAddRound:GetEffectType()
   return SkillEffectType.AddRoundCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamAddRound.GetAddRoundCount = function(self)
-  -- function num : 0_2
+function SkillEffectParamAddRound:GetAddRoundCount()
   return self._addRoundCount
 end
-
-

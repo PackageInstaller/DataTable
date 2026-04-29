@@ -1,31 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/activity/line/ui_cn7_n36_line_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_line_level_node_base")
 _class("UICN7N36LineMapNode", UIActivityLineLevelNodeBase)
 UICN7N36LineMapNode = UICN7N36LineMapNode
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36LineMapNode.OnInit = function(self)
-  -- function num : 0_0
+function UICN7N36LineMapNode:OnInit()
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36LineMapNode.PlayAnimation = function(self)
-  -- function num : 0_1
+function UICN7N36LineMapNode:PlayAnimation()
   if self._anim then
-    if ((self._rectTransform).anchoredPosition).y > 0 then
-      (self._anim):Play("uieff_UICN7N36MapNode_in01")
-    else
-      if ((self._rectTransform).anchoredPosition).y <= 0 then
-        (self._anim):Play("uieff_UICN7N36MapNode_in")
-      end
+    if self._rectTransform.anchoredPosition.y > 0 then
+      self._anim:Play("uieff_UICN7N36MapNode_in01")
+    elseif self._rectTransform.anchoredPosition.y <= 0 then
+      self._anim:Play("uieff_UICN7N36MapNode_in")
     end
   end
 end
-
-

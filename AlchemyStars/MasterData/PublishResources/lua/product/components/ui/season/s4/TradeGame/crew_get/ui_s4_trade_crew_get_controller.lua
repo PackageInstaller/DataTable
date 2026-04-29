@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/crew_get/ui_s4_trade_crew_get_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeCrewGetController", UIController)
 UIS4TradeCrewGetController = UIS4TradeCrewGetController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeCrewGetController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS4TradeCrewGetController:OnShow(uiParams)
   self._tradeData = uiParams[1]
   self._crewID = uiParams[2]
   self._shipID = uiParams[3]
@@ -18,57 +11,34 @@ UIS4TradeCrewGetController.OnShow = function(self, uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewGetController._GetComponents = function(self)
-  -- function num : 0_1
+function UIS4TradeCrewGetController:_GetComponents()
   self._crewSpawner = self:GetUIComponent("UISelectObjectPath", "crew")
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewGetController._InitComponents = function(self)
-  -- function num : 0_2
-  self._crew = (self._crewSpawner):SpawnObject("UIS4TradeCrewItem")
-  ;
-  (self._crew):SetData(self._tradeData, self._crewID, self._shipID)
-  ;
-  (self._crew):SetClick(false)
-  ;
-  (self._crew):PlayInAnim(0)
+function UIS4TradeCrewGetController:_InitComponents()
+  self._crew = self._crewSpawner:SpawnObject("UIS4TradeCrewItem")
+  self._crew:SetData(self._tradeData, self._crewID, self._shipID)
+  self._crew:SetClick(false)
+  self._crew:PlayInAnim(0)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewGetController._AttachEvents = function(self)
-  -- function num : 0_3
+function UIS4TradeCrewGetController:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewGetController._Close = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS4TradeCrewGetController:_Close()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     self:Lock("uieff_UIS4TradeCrewGetController_out")
-    ;
-    (self._anim):Play("uieff_UIS4TradeCrewGetController_out")
+    self._anim:Play("uieff_UIS4TradeCrewGetController_out")
     YIELD(TT, 334)
     self:UnLock("uieff_UIS4TradeCrewGetController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewGetController.CheckBtnOnClick = function(self)
-  -- function num : 0_5
+function UIS4TradeCrewGetController:CheckBtnOnClick()
   self:_Close()
 end
-
-

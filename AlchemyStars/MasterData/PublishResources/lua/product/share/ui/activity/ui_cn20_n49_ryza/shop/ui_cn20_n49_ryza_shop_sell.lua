@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/shop/ui_cn20_n49_ryza_shop_sell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49Ryza_ShopSell", UIController)
 UICN20N49Ryza_ShopSell = UICN20N49Ryza_ShopSell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49Ryza_ShopSell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UICN20N49Ryza_ShopSell:OnShow(uiParams)
   local res = uiParams[1]
   self._item = res.item_earn
   self._money = res.tip_earn
@@ -19,10 +12,7 @@ UICN20N49Ryza_ShopSell.OnShow = function(self, uiParams)
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopSell.InitWidgets = function(self)
-  -- function num : 0_1
+function UICN20N49Ryza_ShopSell:InitWidgets()
   self._allTex = self:GetUIComponent("UILocalizationText", "allTex")
   self._itemTex = self:GetUIComponent("UILocalizationText", "itemTex")
   self._moneyTex = self:GetUIComponent("UILocalizationText", "moneyTex")
@@ -30,39 +20,29 @@ UICN20N49Ryza_ShopSell.InitWidgets = function(self)
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "item")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopSell.RefreshUI = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._allTex):SetText(self._all)
-  ;
-  (self._itemTex):SetText(self._item)
-  ;
-  (self._moneyTex):SetText(self._money)
+function UICN20N49Ryza_ShopSell:RefreshUI()
+  self._allTex:SetText(self._all)
+  self._itemTex:SetText(self._item)
+  self._moneyTex:SetText(self._money)
   if self._itemid and self._itemid > 0 then
-    local item = (self._itemPool):SpawnObject("UICN20N49Ryza_ShopCell")
+    local item = self._itemPool:SpawnObject("UICN20N49Ryza_ShopCell")
     local data = UICN20N49RyzaItemData:New()
     data.id = self._itemid
-    local price, color = (UICN20N49Ryza_Shop.GetItemPriceColor)(self._itemid)
+    local price, color = UICN20N49Ryza_Shop.GetItemPriceColor(self._itemid)
     data.color = color
     data.price = nil
     data.count = nil
     item:SetData(1, data)
-    local cfg = (Cfg.cfg_item)[self._itemid]
+    local cfg = Cfg.cfg_item[self._itemid]
     if cfg then
-      (self._itemName):SetText((StringTable.Get)(cfg.Name))
+      self._itemName:SetText(StringTable.Get(cfg.Name))
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49Ryza_ShopSell.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UICN20N49Ryza_ShopSell:BgOnClick(go)
   self:CloseDialog()
   if self._callback then
-    (self._callback)()
+    self._callback()
   end
 end
-
-

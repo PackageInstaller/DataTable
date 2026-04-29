@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n17/daily_plan/ui_n17_daily_plan_tab_home.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN17DailyPlanTabHome", UICustomWidget)
 UIN17DailyPlanTabHome = UIN17DailyPlanTabHome
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN17DailyPlanTabHome.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN17DailyPlanTabHome:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHome.OnHide = function(self)
-  -- function num : 0_1
+function UIN17DailyPlanTabHome:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHome.SetData = function(self, component, inHome, closeCallback)
-  -- function num : 0_2
+function UIN17DailyPlanTabHome:SetData(component, inHome, closeCallback)
   self._inHome = inHome
   self._closeCallback = closeCallback
   self:_SetCoinInfo(component)
@@ -31,62 +18,44 @@ UIN17DailyPlanTabHome.SetData = function(self, component, inHome, closeCallback)
   self:_SetHint(component)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHome._SetCoinInfo = function(self, component)
-  -- function num : 0_3 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_coinPool", "UIN17DailyPlanCoin")
+function UIN17DailyPlanTabHome:_SetCoinInfo(component)
+  local obj = UIWidgetHelper.SpawnObject(self, "_coinPool", "UIN17DailyPlanCoin")
   obj:SetData(component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHome._SetList = function(self, component)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN17DailyPlanTabHome:_SetList(component)
   local info = component:GetConditionDesc()
   local url = component:GetKeyRewardIcon()
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_list", "UIN17DailyPlanTabHomeListItem", #info)
-  for i,v in ipairs(objs) do
-    v:SetData(i, (info[i]).Desc, (info[i]).Reward, url)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_list", "UIN17DailyPlanTabHomeListItem", #info)
+  for i, v in ipairs(objs) do
+    v:SetData(i, info[i].Desc, info[i].Reward, url)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHome._SetTip = function(self, component)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN17DailyPlanTabHome:_SetTip(component)
   local limitDay, limitMax = component:GetLimitTipCount()
-  local text = (StringTable.Get)("str_n17_daily_plan_home_limit_tip", limitDay, limitMax)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_desc", text)
+  local text = StringTable.Get("str_n17_daily_plan_home_limit_tip", limitDay, limitMax)
+  UIWidgetHelper.SetLocalizationText(self, "_desc", text)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHome._SetHint = function(self, component)
-  -- function num : 0_6
+function UIN17DailyPlanTabHome:_SetHint(component)
   local cur, max = component:GetKeyRewardCount()
   local show = max <= cur
-  ;
-  (self:GetGameObject("_hint")):SetActive(show)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_hint"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN17DailyPlanTabHome.BtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if self._inHome and self._closeCallback then
-    (self._closeCallback)()
-  end
-  local module = (GameGlobal.GetModule)(RoleModule)
-  local isLock = not module:CheckModuleUnlock(GameModuleID.MD_HomeLand)
-  if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
+function UIN17DailyPlanTabHome:BtnOnClick()
+  if self._inHome then
+    if self._closeCallback then
+      self._closeCallback()
+    end
   else
-    ;
-    (((GameGlobal.GetModule)(HomelandModule)):GetUIModule()):LoadHomeland()
+    local module = GameGlobal.GetModule(RoleModule)
+    local isLock = not module:CheckModuleUnlock(GameModuleID.MD_HomeLand)
+    if isLock then
+      ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    else
+      GameGlobal.GetModule(HomelandModule):GetUIModule():LoadHomeland()
+    end
   end
 end
-
-

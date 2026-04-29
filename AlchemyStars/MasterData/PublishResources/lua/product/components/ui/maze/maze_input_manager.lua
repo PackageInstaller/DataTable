@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/maze/maze_input_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MazeInputManager", Object)
 MazeInputManager = MazeInputManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MazeInputManager.Constructor = function(self, ignorePointerUI)
-  -- function num : 0_0 , upvalues : _ENV
+function MazeInputManager:Constructor(ignorePointerUI)
   self._enabled = true
   self._ignorePointerUI = ignorePointerUI
-  self._mouseInput = ((GameGlobal.EngineInput)()).mousePresent
+  self._mouseInput = GameGlobal.EngineInput().mousePresent
   self.mouseDown = false
   self.downPos = nil
   self.downOnUI = false
@@ -23,30 +16,21 @@ MazeInputManager.Constructor = function(self, ignorePointerUI)
   self._dragEndPos = nil
   self._up = false
   self._upPos = nil
-  local pixels = ((Cfg.cfg_aircraft_camera).clickAndDragPixelLength).Value
+  local pixels = Cfg.cfg_aircraft_camera.clickAndDragPixelLength.Value
   self.clickDragPixelLengthMag = pixels * pixels
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.Dispose = function(self)
-  -- function num : 0_1
+function MazeInputManager:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.Init = function(self, dragPixel)
-  -- function num : 0_2
+function MazeInputManager:Init(dragPixel)
   self._enabled = true
   if dragPixel then
     self.clickDragPixelLengthMag = dragPixel * dragPixel
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.SetEnable = function(self, enable)
-  -- function num : 0_3
+function MazeInputManager:SetEnable(enable)
   self._enabled = enable
   if not enable then
     self:_ResetInputData()
@@ -55,12 +39,9 @@ MazeInputManager.SetEnable = function(self, enable)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.Update = function(self, deltaTime)
-  -- function num : 0_4
+function MazeInputManager:Update(deltaTime)
   if not self._enabled then
-    return 
+    return
   end
   if self._mouseInput then
     self:MouseInput(deltaTime)
@@ -69,15 +50,12 @@ MazeInputManager.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.MouseInput = function(self, deltaTime)
-  -- function num : 0_5 , upvalues : _ENV
-  local down = (((GameGlobal.EngineInput)()).GetMouseButtonDown)(0)
-  local hold = (((GameGlobal.EngineInput)()).GetMouseButton)(0)
-  local up = (((GameGlobal.EngineInput)()).GetMouseButtonUp)(0)
-  local mousePos = ((GameGlobal.EngineInput)()).mousePosition
-  local onUI = (not self._ignorePointerUI and (((UnityEngine.EventSystems).EventSystem).current):IsPointerOverGameObject())
+function MazeInputManager:MouseInput(deltaTime)
+  local down = GameGlobal.EngineInput().GetMouseButtonDown(0)
+  local hold = GameGlobal.EngineInput().GetMouseButton(0)
+  local up = GameGlobal.EngineInput().GetMouseButtonUp(0)
+  local mousePos = GameGlobal.EngineInput().mousePosition
+  local onUI = not self._ignorePointerUI and UnityEngine.EventSystems.EventSystem.current:IsPointerOverGameObject()
   self._clicked = false
   self._clickPos = nil
   if up and self.mouseDown and not self.downOnUI and not onUI and not self._dragging then
@@ -93,7 +71,7 @@ MazeInputManager.MouseInput = function(self, deltaTime)
       self._dragStartPos = self.lastMousePos
       self._dragEndPos = mousePos
     end
-  elseif hold and not onUI and self.mouseDown and self.lastMousePos and self.clickDragPixelLengthMag < (mousePos - self.downPos).sqrMagnitude then
+  elseif hold and not onUI and self.mouseDown and self.lastMousePos and (mousePos - self.downPos).sqrMagnitude > self.clickDragPixelLengthMag then
     self._dragging = true
     self._dragStartPos = self.lastMousePos
     self._dragEndPos = mousePos
@@ -114,39 +92,27 @@ MazeInputManager.MouseInput = function(self, deltaTime)
     self.downOnUI = false
   end
   self.lastMousePos = mousePos
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.TouchInput = function(self, deltaTime)
-  -- function num : 0_6 , upvalues : _ENV
-  local touchCount = ((GameGlobal.EngineInput)()).touchCount
-  local touch0 = nil
-  if touchCount > 0 then
-    touch0 = (((GameGlobal.EngineInput)()).GetTouch)(0)
+function MazeInputManager:TouchInput(deltaTime)
+  local touchCount = GameGlobal.EngineInput().touchCount
+  local touch0
+  if 0 < touchCount then
+    touch0 = GameGlobal.EngineInput().GetTouch(0)
   end
-  local mousePos = nil
+  local mousePos
   local touch0OnUI = false
   if touch0 then
-    if not self._ignorePointerUI then
-      touch0OnUI = (((UnityEngine.EventSystems).EventSystem).current):IsPointerOverGameObject(touch0.fingerId)
-    else
-      touch0OnUI = false
-    end
+    touch0OnUI = not self._ignorePointerUI and UnityEngine.EventSystems.EventSystem.current:IsPointerOverGameObject(touch0.fingerId)
     mousePos = touch0.position
   end
-  local touch1 = nil
-  if touchCount > 1 then
-    touch1 = (((GameGlobal.EngineInput)()).GetTouch)(1)
+  local touch1
+  if 1 < touchCount then
+    touch1 = GameGlobal.EngineInput().GetTouch(1)
   end
   local touch1OnUI = false
   if touch1 then
-    if not self._ignorePointerUI then
-      touch1OnUI = (((UnityEngine.EventSystems).EventSystem).current):IsPointerOverGameObject(touch1.fingerId)
-    else
-      touch1OnUI = false
-    end
+    touch1OnUI = not self._ignorePointerUI and UnityEngine.EventSystems.EventSystem.current:IsPointerOverGameObject(touch1.fingerId)
   end
   self._clicked = false
   self._clickPos = nil
@@ -159,23 +125,19 @@ MazeInputManager.TouchInput = function(self, deltaTime)
       self._dragging = false
       self._dragStartPos = nil
       self._dragEndPos = nil
-    else
-      if self._dragging then
-        if touch0OnUI or touch0.phase == TouchPhase.Ended then
-          self._dragging = false
-          self._dragStartPos = nil
-          self._dragEndPos = nil
-        else
-          self._dragStartPos = Vector3((touch0.position).x - (touch0.deltaPosition).x, (touch0.position).y - (touch0.deltaPosition).y, 0)
-          self._dragEndPos = Vector3((touch0.position).x, (touch0.position).y, 0)
-        end
+    elseif self._dragging then
+      if touch0OnUI or touch0.phase == TouchPhase.Ended then
+        self._dragging = false
+        self._dragStartPos = nil
+        self._dragEndPos = nil
       else
-        if (touch0.phase == TouchPhase.Moved or touch0.phase == TouchPhase.Stationary) and not touch0OnUI and self.mouseDown and self.clickDragPixelLengthMag < (mousePos - self.downPos).sqrMagnitude then
-          self._dragging = true
-          self._dragStartPos = Vector3((touch0.position).x - (touch0.deltaPosition).x, (touch0.position).y - (touch0.deltaPosition).y, 0)
-          self._dragEndPos = Vector3((touch0.position).x, (touch0.position).y, 0)
-        end
+        self._dragStartPos = Vector3(touch0.position.x - touch0.deltaPosition.x, touch0.position.y - touch0.deltaPosition.y, 0)
+        self._dragEndPos = Vector3(touch0.position.x, touch0.position.y, 0)
       end
+    elseif (touch0.phase == TouchPhase.Moved or touch0.phase == TouchPhase.Stationary) and not touch0OnUI and self.mouseDown and (mousePos - self.downPos).sqrMagnitude > self.clickDragPixelLengthMag then
+      self._dragging = true
+      self._dragStartPos = Vector3(touch0.position.x - touch0.deltaPosition.x, touch0.position.y - touch0.deltaPosition.y, 0)
+      self._dragEndPos = Vector3(touch0.position.x, touch0.position.y, 0)
     end
   end
   self._up = false
@@ -189,21 +151,16 @@ MazeInputManager.TouchInput = function(self, deltaTime)
       self.mouseDown = true
       self.downPos = touch0.position
       self.downOnUI = touch0OnUI
-    else
-      if touch0.phase == TouchPhase.Ended and self.mouseDown then
-        self.mouseDown = false
-        self.downPos = nil
-        self.downOnUI = false
-      end
+    elseif touch0.phase == TouchPhase.Ended and self.mouseDown then
+      self.mouseDown = false
+      self.downPos = nil
+      self.downOnUI = false
     end
   end
   self.lastMousePos = mousePos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager._ResetInputData = function(self)
-  -- function num : 0_7
+function MazeInputManager:_ResetInputData()
   self._clicked = false
   self._clickPos = nil
   self._dragging = false
@@ -215,32 +172,18 @@ MazeInputManager._ResetInputData = function(self)
   self.lastMousePos = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.GetClick = function(self)
-  -- function num : 0_8
+function MazeInputManager:GetClick()
   return self._clicked, self._clickPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.GetDrag = function(self)
-  -- function num : 0_9
+function MazeInputManager:GetDrag()
   return self._dragging, self._dragStartPos, self._dragEndPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.GetMouseDown = function(self)
-  -- function num : 0_10
+function MazeInputManager:GetMouseDown()
   return self.mouseDown, self.downPos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeInputManager.GetMouseUp = function(self)
-  -- function num : 0_11
+function MazeInputManager:GetMouseUp()
   return self._up, self._upPos
 end
-
-

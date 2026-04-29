@@ -1,67 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/FarewellLetterToTraveler/ui_fltt_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFLTTMainController", UIController)
 UIFLTTMainController = UIFLTTMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFLTTMainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIFLTTMainController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._missionModule = self:GetModule(MissionModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_FLTT, ECampaignFLTTComponentID.ECAMPAIGN_FLTT_LINE_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_FLTT, ECampaignFLTTComponentID.ECAMPAIGN_FLTT_LINE_MISSION)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._lineComponent = (self._localProcess):GetComponent(ECampaignFLTTComponentID.ECAMPAIGN_FLTT_LINE_MISSION)
-  self._lineComponentInfo = (self._lineComponent):GetComponentInfo()
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._name = (StringTable.Get)(cfg_campaign.CampaignName)
-  self._subName = (StringTable.Get)(cfg_campaign.CampaignSubtitle)
+  self._lineComponent = self._localProcess:GetComponent(ECampaignFLTTComponentID.ECAMPAIGN_FLTT_LINE_MISSION)
+  self._lineComponentInfo = self._lineComponent:GetComponentInfo()
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._name = StringTable.Get(cfg_campaign.CampaignName)
+  self._subName = StringTable.Get(cfg_campaign.CampaignSubtitle)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIFLTTMainController:OnShow(uiParams)
   self:InitWidget()
   self:InitCommonTopButton()
   self:FlushNodes()
   local lockName = "UIFLTTMainController.Enter"
   self:Lock(lockName)
   self._timerHolder = UITimerHolder:New()
-  ;
-  (self._timerHolder):StartTimer(lockName, 500, function()
-    -- function num : 0_1_0 , upvalues : self, lockName
+  self._timerHolder:StartTimer(lockName, 500, function()
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainController.OnHide = function(self)
-  -- function num : 0_2
-  (self._timerHolder):Dispose()
+function UIFLTTMainController:OnHide()
+  self._timerHolder:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIFLTTMainController:InitWidget()
   self._scrollRect = self:GetUIComponent("ScrollRect", "MapContent")
   self._mapContentRect = self:GetUIComponent("RectTransform", "MapContent")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
@@ -70,71 +50,51 @@ UIFLTTMainController.InitWidget = function(self)
   self._nodesPool = self:GetUIComponent("UISelectObjectPath", "Nodes")
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
   self._atlas = self:GetAsset("UIN26Line.spriteatlas", LoadType.SpriteAtlas)
-  self._safeAreaSize = ((self:GetUIComponent("RectTransform", "SafeArea")).rect).size
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).width = (self._safeAreaSize).x
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).height = (self._safeAreaSize).y
+  self._safeAreaSize = self:GetUIComponent("RectTransform", "SafeArea").rect.size
+  self._shot.width = self._safeAreaSize.x
+  self._shot.height = self._safeAreaSize.y
   self._black = self:GetGameObject("Black")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainController.InitCommonTopButton = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._backBtns = (self._ltBtn):SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
+function UIFLTTMainController:InitCommonTopButton()
+  self._backBtns = self._ltBtn:SpawnObject("UINewCommonTopButton")
+  self._backBtns:SetData(function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, nil, function()
-    -- function num : 0_4_1 , upvalues : self, _ENV
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, false, nil, false)
+  end, false, nil, false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainController.FlushNodes = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local componentID = (self._lineComponent):GetComponentCfgId()
-  local extra_cfg = (Cfg.cfg_component_line_mission_extra)({ComponentID = componentID})
-  local extra_width = (extra_cfg[1]).MarginRight
-  local missionCfgs_temp = (Cfg.cfg_component_line_mission)({ComponentID = componentID})
+function UIFLTTMainController:FlushNodes()
+  local componentID = self._lineComponent:GetComponentCfgId()
+  local extra_cfg = Cfg.cfg_component_line_mission_extra({ComponentID = componentID})
+  local extra_width = extra_cfg[1].MarginRight
+  local missionCfgs_temp = Cfg.cfg_component_line_mission({ComponentID = componentID})
   local missionCfgs = {}
-  for _,cfg in pairs(missionCfgs_temp) do
+  for _, cfg in pairs(missionCfgs_temp) do
     missionCfgs[cfg.CampaignMissionId] = cfg
   end
   local unlockInfo = {}
-  local firstMissionID = nil
-  for _,cfg in pairs(missionCfgs) do
+  local firstMissionID
+  for _, cfg in pairs(missionCfgs) do
     if unlockInfo[cfg.NeedMissionId] == nil then
       unlockInfo[cfg.NeedMissionId] = {}
     end
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (unlockInfo[cfg.NeedMissionId])[cfg.CampaignMissionId] = cfg
+    unlockInfo[cfg.NeedMissionId][cfg.CampaignMissionId] = cfg
     if cfg.NeedMissionId == 0 then
       firstMissionID = cfg.CampaignMissionId
     end
   end
   local showMission = {}
   local levelCount, lineCount = 0, 0
-  if next((self._lineComponentInfo).m_pass_mission_info) then
-    for missionID,_ in pairs((self._lineComponentInfo).m_pass_mission_info) do
+  if next(self._lineComponentInfo.m_pass_mission_info) then
+    for missionID, _ in pairs(self._lineComponentInfo.m_pass_mission_info) do
       if not showMission[missionID] then
         showMission[missionID] = missionCfgs[missionID]
         levelCount = levelCount + 1
       end
       if unlockInfo[missionID] then
-        for id,cfg in pairs(unlockInfo[missionID]) do
+        for id, cfg in pairs(unlockInfo[missionID]) do
           if not showMission[id] then
             showMission[id] = missionCfgs[id]
             levelCount = levelCount + 1
@@ -146,135 +106,107 @@ UIFLTTMainController.FlushNodes = function(self)
       end
     end
   else
-    do
-      showMission[firstMissionID] = missionCfgs[firstMissionID]
-      levelCount = 1
-      ;
-      (self._nodesPool):SpawnObjects("UIFLTTLevelNode", levelCount)
-      local nodes = (self._nodesPool):GetAllSpawnList()
-      ;
-      (self._linesPool):SpawnObjects("UIFLTTLevelLine", lineCount)
-      local lines = (self._linesPool):GetAllSpawnList()
-      local nodeIdx, lineIdx = 1, 1
-      for missionID,cfg in pairs(showMission) do
-        local uiNode = nodes[nodeIdx]
-        uiNode:SetData(cfg, ((self._lineComponentInfo).m_pass_mission_info)[missionID], function(stageId, isStory, worldPos)
-    -- function num : 0_5_0 , upvalues : self
-    self:_onNodeClick(stageId, isStory, worldPos)
+    showMission[firstMissionID] = missionCfgs[firstMissionID]
+    levelCount = 1
   end
-)
-        nodeIdx = nodeIdx + 1
-        if cfg.WayPointType ~= 4 and cfg.NeedMissionId ~= 0 then
-          local n1 = showMission[cfg.NeedMissionId]
-          local n2 = cfg
-          local line = lines[lineIdx]
-          line:Flush(Vector2(n2.MapPosX, n2.MapPosY), Vector2(n1.MapPosX, n1.MapPosY))
-          lineIdx = lineIdx + 1
-        end
-      end
-      local right = -99999999
-      for _,cfg in pairs(showMission) do
-        right = (math.max)(right, cfg.MapPosX)
-      end
-      local width = (math.abs)(right + extra_width)
-      width = (math.max)((self._safeAreaSize).x, width)
-      -- DECOMPILER ERROR at PC180: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (self._contentRect).sizeDelta = Vector2(width, ((self._contentRect).sizeDelta).y)
-      -- DECOMPILER ERROR at PC188: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (self._contentRect).anchoredPosition = Vector2((self._safeAreaSize).x - width, 0)
-      local posx = {}
-      for _,cfg in pairs(missionCfgs) do
-        posx[#posx + 1] = cfg.MapPosX
-      end
-      ;
-      (table.sort)(posx)
-      local sp1, sp2 = 6, 12
-      local bgLoader1 = self:GetUIComponent("RawImageLoader", "bg1")
-      local bgLoader2 = self:GetUIComponent("RawImageLoader", "bg2")
-      self._scroller = UILevelScroller:New(self._contentRect, bgLoader1, bgLoader2, {"n26_xxg_bg01", "n26_xxg_bg02", "n26_xxg_bg03"}, {posx[sp1], posx[sp1 + 1], posx[sp2], posx[sp2 + 1]})
-      ;
-      ((self._scrollRect).onValueChanged):AddListener(function()
-    -- function num : 0_5_1 , upvalues : self
-    (self._scroller):OnChange()
-  end
-)
-      self._allMissionCfgs = missionCfgs
+  self._nodesPool:SpawnObjects("UIFLTTLevelNode", levelCount)
+  local nodes = self._nodesPool:GetAllSpawnList()
+  self._linesPool:SpawnObjects("UIFLTTLevelLine", lineCount)
+  local lines = self._linesPool:GetAllSpawnList()
+  local nodeIdx, lineIdx = 1, 1
+  for missionID, cfg in pairs(showMission) do
+    local uiNode = nodes[nodeIdx]
+    uiNode:SetData(cfg, self._lineComponentInfo.m_pass_mission_info[missionID], function(stageId, isStory, worldPos)
+      self:_onNodeClick(stageId, isStory, worldPos)
+    end)
+    nodeIdx = nodeIdx + 1
+    if cfg.WayPointType ~= 4 and cfg.NeedMissionId ~= 0 then
+      local n1 = showMission[cfg.NeedMissionId]
+      local n2 = cfg
+      local line = lines[lineIdx]
+      line:Flush(Vector2(n2.MapPosX, n2.MapPosY), Vector2(n1.MapPosX, n1.MapPosY))
+      lineIdx = lineIdx + 1
     end
   end
+  local right = -99999999
+  for _, cfg in pairs(showMission) do
+    right = math.max(right, cfg.MapPosX)
+  end
+  local width = math.abs(right + extra_width)
+  width = math.max(self._safeAreaSize.x, width)
+  self._contentRect.sizeDelta = Vector2(width, self._contentRect.sizeDelta.y)
+  self._contentRect.anchoredPosition = Vector2(self._safeAreaSize.x - width, 0)
+  local posx = {}
+  for _, cfg in pairs(missionCfgs) do
+    posx[#posx + 1] = cfg.MapPosX
+  end
+  table.sort(posx)
+  local sp1, sp2 = 6, 12
+  local bgLoader1 = self:GetUIComponent("RawImageLoader", "bg1")
+  local bgLoader2 = self:GetUIComponent("RawImageLoader", "bg2")
+  self._scroller = UILevelScroller:New(self._contentRect, bgLoader1, bgLoader2, {
+    "n26_xxg_bg01",
+    "n26_xxg_bg02",
+    "n26_xxg_bg03"
+  }, {
+    posx[sp1],
+    posx[sp1 + 1],
+    posx[sp2],
+    posx[sp2 + 1]
+  })
+  self._scrollRect.onValueChanged:AddListener(function()
+    self._scroller:OnChange()
+  end)
+  self._allMissionCfgs = missionCfgs
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainController._onNodeClick = function(self, stageId)
-  -- function num : 0_6 , upvalues : _ENV
-  local missionCfg = (Cfg.cfg_campaign_mission)[stageId]
-  local titleId = (StringTable.Get)(missionCfg.Title)
-  local titleName = (StringTable.Get)(missionCfg.Name)
+function UIFLTTMainController:_onNodeClick(stageId)
+  local missionCfg = Cfg.cfg_campaign_mission[stageId]
+  local titleId = StringTable.Get(missionCfg.Title)
+  local titleName = StringTable.Get(missionCfg.Name)
   self._storyIndex = 1
   self._storyIds = self:GetStoryIDs(stageId)
   if self._storyIds then
-    self:ShowDialog("UIActivityPlotEnter", titleId, titleName, (self._storyIds)[self._storyIndex], function()
-    -- function num : 0_6_0 , upvalues : self, stageId
-    self:_OnStoryEnd(stageId)
-  end
-)
+    self:ShowDialog("UIActivityPlotEnter", titleId, titleName, self._storyIds[self._storyIndex], function()
+      self:_OnStoryEnd(stageId)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainController._OnStoryEnd = function(self, stageId)
-  -- function num : 0_7
+function UIFLTTMainController:_OnStoryEnd(stageId)
   self._storyIndex = self._storyIndex + 1
-  if (self._storyIds)[self._storyIndex] then
-    (self._black):SetActive(true)
-    self:ShowDialog("UIStoryController", (self._storyIds)[self._storyIndex], function()
-    -- function num : 0_7_0 , upvalues : self, stageId
-    self:_OnStoryEnd(stageId)
-  end
-)
+  if self._storyIds[self._storyIndex] then
+    self._black:SetActive(true)
+    self:ShowDialog("UIStoryController", self._storyIds[self._storyIndex], function()
+      self:_OnStoryEnd(stageId)
+    end)
   else
     self:_AllStoryEndCallback(stageId)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainController._AllStoryEndCallback = function(self, stageId)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._black):SetActive(false)
-  local isActive = (self._lineComponent):IsPassCamMissionID(stageId)
+function UIFLTTMainController:_AllStoryEndCallback(stageId)
+  self._black:SetActive(false)
+  local isActive = self._lineComponent:IsPassCamMissionID(stageId)
   if isActive then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, stageId, _ENV
-    (self._lineComponent):SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    self._lineComponent:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
-    ;
-    (self._lineComponent):HandleCompleteStoryMission(TT, res, stageId)
+    self._lineComponent:HandleCompleteStoryMission(TT, res, stageId)
     if not res:GetSucc() then
-      (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     else
       self:FlushNodes()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFLTTMainController.GetStoryIDs = function(self, missionID)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_mission_story)[missionID]
+function UIFLTTMainController:GetStoryIDs(missionID)
+  local cfg = Cfg.cfg_mission_story[missionID]
   if cfg then
     return cfg.StoryID
   end
   return nil
 end
-
-

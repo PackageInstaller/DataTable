@@ -1,43 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_at_target_pos_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectAtTargetPosInstruction", BaseInstruction)
 PlayEffectAtTargetPosInstruction = PlayEffectAtTargetPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectAtTargetPosInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectAtTargetPosInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtTargetPosInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEffectAtTargetPosInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local targetEntity = world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    (Log.fatal)("#### PlayEffectAtTargetPosInstruction targetEntity nil. targetEntityID=", targetEntityID)
-    return 
+    Log.fatal("#### PlayEffectAtTargetPosInstruction targetEntity nil. targetEntityID=", targetEntityID)
+    return
   end
   local pos = targetEntity:GetRenderGridPosition()
   local sEffect = world:GetService("Effect")
   sEffect:CreateWorldPositionEffect(self._effectID, pos)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtTargetPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectAtTargetPosInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

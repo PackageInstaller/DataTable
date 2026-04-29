@@ -1,15 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/role/1601461/cfg_skill_view_41014611.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7, PhasePosDir = 8}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" Wait,waitTime=200; PlaySwapPetTeamOrder; DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=3,label=doAgain; PlayTargetAddBuff,buffEffectType =4101470; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; "}
-, 
-{"", "1,-1"}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7,
+  PhasePosDir = 8
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " Wait,waitTime=200; PlaySwapPetTeamOrder; DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=3,label=doAgain; PlayTargetAddBuff,buffEffectType =4101470; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgain; "
+    },
+    {"", "1,-1"}
+  }
 }
 return config, "ID", key
-

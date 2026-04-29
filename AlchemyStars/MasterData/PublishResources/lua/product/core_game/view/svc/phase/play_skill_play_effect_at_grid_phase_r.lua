@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_play_effect_at_grid_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPhasePlayEffectAtGridPhase", PlaySkillPhaseBase)
 PlaySkillPhasePlayEffectAtGridPhase = PlaySkillPhasePlayEffectAtGridPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPhasePlayEffectAtGridPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPhasePlayEffectAtGridPhase:PlayFlight(TT, casterEntity, phaseParam)
   local gridEffectList = phaseParam:GetGirdEffectList()
-  for _,param in ipairs(gridEffectList) do
+  for _, param in ipairs(gridEffectList) do
     local effectID = tonumber(param.effectID)
-    local gridPos = Vector2(tonumber((param.gridPos).x), tonumber((param.gridPos).y))
-    ;
-    ((self._world):GetService("Effect")):CreateWorldPositionEffect(effectID, gridPos)
+    local gridPos = Vector2(tonumber(param.gridPos.x), tonumber(param.gridPos.y))
+    self._world:GetService("Effect"):CreateWorldPositionEffect(effectID, gridPos)
   end
 end
-
-

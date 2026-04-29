@@ -1,41 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/storytask/ui_homeland_storytask_group_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandStoryTaskGroupItem", UICustomWidget)
 UIHomelandStoryTaskGroupItem = UIHomelandStoryTaskGroupItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandStoryTaskGroupItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandStoryTaskGroupItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIHomelandStoryTaskGroupItem:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem.OnShow = function(self)
-  -- function num : 0_2
-  self._height = {24.3, 60.4, 22.4, 60.4, 10, 46.2}
+function UIHomelandStoryTaskGroupItem:OnShow()
+  self._height = {
+    24.3,
+    60.4,
+    22.4,
+    60.4,
+    10,
+    46.2
+  }
   self:_GetComponents()
   self:SetCustomTimeStr_Common()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem.OnHide = function(self)
-  -- function num : 0_3
+function UIHomelandStoryTaskGroupItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem._GetComponents = function(self)
-  -- function num : 0_4
+function UIHomelandStoryTaskGroupItem:_GetComponents()
   self._bgImage = self:GetGameObject("bgImage")
   self._lockImage = self:GetGameObject("lockImage")
   self._selectImage = self:GetGameObject("select")
@@ -47,42 +35,25 @@ UIHomelandStoryTaskGroupItem._GetComponents = function(self)
   self._ani = self:GetUIComponent("Animation", "root")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem.Refresh = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandStoryTaskGroupItem:Refresh()
   self._unlock = true
   if self._lastGroup then
-    self._unlock = (self._controller):CheckTaskGroupFinish(self._hodeTaskId, self._lastGroup)
+    self._unlock = self._controller:CheckTaskGroupFinish(self._hodeTaskId, self._lastGroup)
   else
     self._unlock = true
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._tran).anchoredPosition = Vector2(0, (self._height)[self._index])
-  local isInTime = (self._controller):CheckTaskGroupInTime(self._taskGroupId)
-  ;
-  (self._lockImage):SetActive(self._unlock and not isInTime)
-  ;
-  (self._txt):SetText(self._index)
-  ;
-  (self._locktxt):SetText(self._index)
-  ;
-  (self._selectImage):SetActive(not self._select or isInTime)
-  ;
-  (self._bottomImage):SetActive(true)
-  ;
-  (self._bgImage):SetActive(not self._unlock or isInTime)
-  ;
-  (self._bottomImage1):SetActive(self._select)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  self._tran.anchoredPosition = Vector2(0, self._height[self._index])
+  local isInTime = self._controller:CheckTaskGroupInTime(self._taskGroupId)
+  self._lockImage:SetActive(not self._unlock or not isInTime)
+  self._txt:SetText(self._index)
+  self._locktxt:SetText(self._index)
+  self._selectImage:SetActive(self._select and isInTime)
+  self._bottomImage:SetActive(true)
+  self._bgImage:SetActive(self._unlock and isInTime)
+  self._bottomImage1:SetActive(self._select)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem.Flush = function(self, index, taskGroup, controller, taskID, lastGroup, select, cfg)
-  -- function num : 0_6
+function UIHomelandStoryTaskGroupItem:Flush(index, taskGroup, controller, taskID, lastGroup, select, cfg)
   self._index = index
   self._controller = controller
   self._hodeTaskId = taskID
@@ -91,49 +62,36 @@ UIHomelandStoryTaskGroupItem.Flush = function(self, index, taskGroup, controller
   self._select = self._taskGroupId == select
   self._cfg = cfg
   self:Refresh()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem.BtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local servertime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local time = loginModule:GetTimeStampByTimeStr(((self._cfg)[self._taskGroupId]).StartTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if time - servertime >= 0 then
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(time - servertime, self._customStr)
-    local str = (string.format)((StringTable.Get)("str_homeland_storytask_time_unlock", timeStr))
-    ;
-    (ToastManager.ShowHomeToast)(str)
-    return 
+function UIHomelandStoryTaskGroupItem:BtnOnClick(go)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local servertime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local time = loginModule:GetTimeStampByTimeStr(self._cfg[self._taskGroupId].StartTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+  if 0 <= time - servertime then
+    local timeStr = UIActivityHelper.GetFormatTimerStr(time - servertime, self._customStr)
+    local str = string.format(StringTable.Get("str_homeland_storytask_time_unlock", timeStr))
+    ToastManager.ShowHomeToast(str)
+    return
   end
-  do
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandStoryTaskGroupSelect, self._taskGroupId)
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandStoryTaskGroupSelect, self._taskGroupId)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem.ShowAnim = function(self)
-  -- function num : 0_8
-  (self._ani):Play("uieff_N19_UIHomelandStory01_in")
+function UIHomelandStoryTaskGroupItem:ShowAnim()
+  self._ani:Play("uieff_N19_UIHomelandStory01_in")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem.SetCustomTimeStr_Common = function(self)
-  -- function num : 0_9
-  self:SetCustomTimeStr({day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_common_less_minute"})
+function UIHomelandStoryTaskGroupItem:SetCustomTimeStr_Common()
+  self:SetCustomTimeStr({
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_common_less_minute"
+  })
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskGroupItem.SetCustomTimeStr = function(self, customStr)
-  -- function num : 0_10
+function UIHomelandStoryTaskGroupItem:SetCustomTimeStr(customStr)
   self._customStr = customStr
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/campaign_component_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("campaign_info")
 _class("ICampaignComponentInfo", Object)
 ICampaignComponentInfo = ICampaignComponentInfo
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ICampaignComponentInfo.Constructor = function(self)
-  -- function num : 0_0
+function ICampaignComponentInfo:Constructor()
   self.m_campaign_id = 0
   self.m_component_type = 0
   self.m_component_id = 0
@@ -24,389 +17,381 @@ ICampaignComponentInfo.Constructor = function(self)
   self.m_first_story_id = 0
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
 ICampaignComponentInfo._proto = {
-[1] = {"m_campaign_id", "int"}
-, 
-[2] = {"m_component_type", "int"}
-, 
-[3] = {"m_component_id", "int"}
-, 
-[4] = {"m_component_step", "int"}
-, 
-[5] = {"m_b_unlock", "bool"}
-, 
-[6] = {"m_unlock_time", "time"}
-, 
-[7] = {"m_unlock_items", "list<RoleAsset>"}
-, 
-[8] = {"m_open_time", "time"}
-, 
-[9] = {"m_close_time", "time"}
-, 
-[10] = {"m_need_mission_type", "int"}
-, 
-[11] = {"m_need_mission_id", "int"}
-, 
-[12] = {"m_first_story_id", "int"}
+  [1] = {
+    "m_campaign_id",
+    "int"
+  },
+  [2] = {
+    "m_component_type",
+    "int"
+  },
+  [3] = {
+    "m_component_id",
+    "int"
+  },
+  [4] = {
+    "m_component_step",
+    "int"
+  },
+  [5] = {"m_b_unlock", "bool"},
+  [6] = {
+    "m_unlock_time",
+    "time"
+  },
+  [7] = {
+    "m_unlock_items",
+    "list<RoleAsset>"
+  },
+  [8] = {
+    "m_open_time",
+    "time"
+  },
+  [9] = {
+    "m_close_time",
+    "time"
+  },
+  [10] = {
+    "m_need_mission_type",
+    "int"
+  },
+  [11] = {
+    "m_need_mission_id",
+    "int"
+  },
+  [12] = {
+    "m_first_story_id",
+    "int"
+  }
 }
 _class("ICampaignComRequest", Object)
 ICampaignComRequest = ICampaignComRequest
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
 
-ICampaignComRequest.Constructor = function(self)
-  -- function num : 0_1
+function ICampaignComRequest:Constructor()
 end
-
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
 
 ICampaignComRequest._proto = {}
 _class("ICampaignComResponse", Object)
 ICampaignComResponse = ICampaignComResponse
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
 
-ICampaignComResponse.Constructor = function(self)
-  -- function num : 0_2
+function ICampaignComResponse:Constructor()
 end
-
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
 
 ICampaignComResponse._proto = {}
 _class("CCommonBaseComponentDataInfo", ICampaignComponentDataInfo)
 CCommonBaseComponentDataInfo = CCommonBaseComponentDataInfo
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
 
-CCommonBaseComponentDataInfo.Constructor = function(self)
-  -- function num : 0_3
+function CCommonBaseComponentDataInfo:Constructor()
 end
-
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
 
 CCommonBaseComponentDataInfo._proto = {}
 _class("CommonBaseComponentInfo", ICampaignComponentInfo)
 CommonBaseComponentInfo = CommonBaseComponentInfo
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
 
-CommonBaseComponentInfo.Constructor = function(self)
-  -- function num : 0_4
+function CommonBaseComponentInfo:Constructor()
 end
-
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
 
 CommonBaseComponentInfo._proto = {}
 _class("LineFormationItem", Object)
 LineFormationItem = LineFormationItem
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
 
-LineFormationItem.Constructor = function(self)
-  -- function num : 0_5
+function LineFormationItem:Constructor()
   self.id = 0
   self.name = ""
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
 LineFormationItem._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"name", "string"}
-, 
-[3] = {"pet_list", "list<int64>"}
+  [1] = {"id", "int"},
+  [2] = {"name", "string"},
+  [3] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("CLineMissionComponentDataInfo", ICampaignComponentDataInfo)
 CLineMissionComponentDataInfo = CLineMissionComponentDataInfo
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
 
-CLineMissionComponentDataInfo.Constructor = function(self)
-  -- function num : 0_6
+function CLineMissionComponentDataInfo:Constructor()
   self.m_cur_mission = 0
   self.m_pass_mission_info = {}
   self.formation_list = {}
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
 CLineMissionComponentDataInfo._proto = {
-[1] = {"m_cur_mission", "int"}
-, 
-[2] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[3] = {"formation_list", "list<LineFormationItem>"}
+  [1] = {
+    "m_cur_mission",
+    "int"
+  },
+  [2] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [3] = {
+    "formation_list",
+    "list<LineFormationItem>"
+  }
 }
 _class("LineMissionComponentInfo", ICampaignComponentInfo)
 LineMissionComponentInfo = LineMissionComponentInfo
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
 
-LineMissionComponentInfo.Constructor = function(self)
-  -- function num : 0_7
+function LineMissionComponentInfo:Constructor()
   self.m_cur_mission = 0
   self.m_pass_mission_info = {}
   self.formation_list = {}
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
 LineMissionComponentInfo._proto = {
-[1] = {"m_cur_mission", "int"}
-, 
-[2] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[3] = {"formation_list", "list<LineFormationItem>"}
+  [1] = {
+    "m_cur_mission",
+    "int"
+  },
+  [2] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [3] = {
+    "formation_list",
+    "list<LineFormationItem>"
+  }
 }
 _class("CompleteStoryMissionReq", ICampaignComRequest)
 CompleteStoryMissionReq = CompleteStoryMissionReq
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
 
-CompleteStoryMissionReq.Constructor = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function CompleteStoryMissionReq:Constructor()
   self.m_create_info = CampaignMissionCreateInfo:New()
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R0 in 'UnsetPending'
-
 CompleteStoryMissionReq._proto = {
-[1] = {"m_create_info", "CampaignMissionCreateInfo"}
+  [1] = {
+    "m_create_info",
+    "CampaignMissionCreateInfo"
+  }
 }
 _class("CompleteStoryMissionRep", ICampaignComResponse)
 CompleteStoryMissionRep = CompleteStoryMissionRep
--- DECOMPILER ERROR at PC229: Confused about usage of register: R0 in 'UnsetPending'
 
-CompleteStoryMissionRep.Constructor = function(self)
-  -- function num : 0_9
+function CompleteStoryMissionRep:Constructor()
   self.nErrorCode = 0
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
 CompleteStoryMissionRep._proto = {
-[1] = {"nErrorCode", "int"}
-, 
-[2] = {"reward", "list<RoleAsset>"}
+  [1] = {"nErrorCode", "int"},
+  [2] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 local LineMissionComponentNotifyType = {LineMissionComponentNotifyType_InfoChanged = 1}
 _enum("LineMissionComponentNotifyType", LineMissionComponentNotifyType)
 _class("NotifyLineMissionComponentInfoChanged", Object)
 NotifyLineMissionComponentInfoChanged = NotifyLineMissionComponentInfoChanged
--- DECOMPILER ERROR at PC257: Confused about usage of register: R1 in 'UnsetPending'
 
-NotifyLineMissionComponentInfoChanged.Constructor = function(self)
-  -- function num : 0_10
+function NotifyLineMissionComponentInfoChanged:Constructor()
   self.m_cur_mission = 0
   self.m_update_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC270: Confused about usage of register: R1 in 'UnsetPending'
-
 NotifyLineMissionComponentInfoChanged._proto = {
-[1] = {"m_cur_mission", "int"}
-, 
-[2] = {"m_update_mission_info", "map<int,cam_mission_info>"}
+  [1] = {
+    "m_cur_mission",
+    "int"
+  },
+  [2] = {
+    "m_update_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 _class("CTreeMissionComponentDataInfo", ICampaignComponentDataInfo)
 CTreeMissionComponentDataInfo = CTreeMissionComponentDataInfo
--- DECOMPILER ERROR at PC279: Confused about usage of register: R1 in 'UnsetPending'
 
-CTreeMissionComponentDataInfo.Constructor = function(self)
-  -- function num : 0_11
+function CTreeMissionComponentDataInfo:Constructor()
   self.m_pass_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R1 in 'UnsetPending'
-
 CTreeMissionComponentDataInfo._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 _class("TreeMissionComponentInfo", ICampaignComponentInfo)
 TreeMissionComponentInfo = TreeMissionComponentInfo
--- DECOMPILER ERROR at PC296: Confused about usage of register: R1 in 'UnsetPending'
 
-TreeMissionComponentInfo.Constructor = function(self)
-  -- function num : 0_12
+function TreeMissionComponentInfo:Constructor()
   self.m_pass_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC304: Confused about usage of register: R1 in 'UnsetPending'
-
 TreeMissionComponentInfo._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 local TreeMissionComponentNotifyType = {TreeMissionComponentNotifyType_InfoChanged = 1}
 _enum("TreeMissionComponentNotifyType", TreeMissionComponentNotifyType)
 _class("NotifyTreeMissionComponentInfoChanged", Object)
 NotifyTreeMissionComponentInfoChanged = NotifyTreeMissionComponentInfoChanged
--- DECOMPILER ERROR at PC319: Confused about usage of register: R2 in 'UnsetPending'
 
-NotifyTreeMissionComponentInfoChanged.Constructor = function(self)
-  -- function num : 0_13
+function NotifyTreeMissionComponentInfoChanged:Constructor()
   self.m_update_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC327: Confused about usage of register: R2 in 'UnsetPending'
-
 NotifyTreeMissionComponentInfoChanged._proto = {
-[1] = {"m_update_mission_info", "map<int,cam_mission_info>"}
+  [1] = {
+    "m_update_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 _class("CompleteStoryTreeMissionReq", ICampaignComRequest)
 CompleteStoryTreeMissionReq = CompleteStoryTreeMissionReq
--- DECOMPILER ERROR at PC336: Confused about usage of register: R2 in 'UnsetPending'
 
-CompleteStoryTreeMissionReq.Constructor = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function CompleteStoryTreeMissionReq:Constructor()
   self.m_create_info = CampaignMissionCreateInfo:New()
 end
 
--- DECOMPILER ERROR at PC344: Confused about usage of register: R2 in 'UnsetPending'
-
 CompleteStoryTreeMissionReq._proto = {
-[1] = {"m_create_info", "CampaignMissionCreateInfo"}
+  [1] = {
+    "m_create_info",
+    "CampaignMissionCreateInfo"
+  }
 }
 _class("CompleteStoryTreeMissionRep", ICampaignComResponse)
 CompleteStoryTreeMissionRep = CompleteStoryTreeMissionRep
--- DECOMPILER ERROR at PC353: Confused about usage of register: R2 in 'UnsetPending'
 
-CompleteStoryTreeMissionRep.Constructor = function(self)
-  -- function num : 0_15
+function CompleteStoryTreeMissionRep:Constructor()
   self.nErrorCode = 0
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC366: Confused about usage of register: R2 in 'UnsetPending'
-
 CompleteStoryTreeMissionRep._proto = {
-[1] = {"nErrorCode", "int"}
-, 
-[2] = {"reward", "list<RoleAsset>"}
+  [1] = {"nErrorCode", "int"},
+  [2] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("CCombatSimulatorComponentDataInfo", ICampaignComponentDataInfo)
 CCombatSimulatorComponentDataInfo = CCombatSimulatorComponentDataInfo
--- DECOMPILER ERROR at PC375: Confused about usage of register: R2 in 'UnsetPending'
 
-CCombatSimulatorComponentDataInfo.Constructor = function(self)
-  -- function num : 0_16
+function CCombatSimulatorComponentDataInfo:Constructor()
   self.cartridge_use_times = {}
   self.open_cartridge_gift_times = 0
   self.last_cartridge_reset_time = 0
   self.m_pass_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R2 in 'UnsetPending'
-
 CCombatSimulatorComponentDataInfo._proto = {
-[1] = {"cartridge_use_times", "map<int,int>"}
-, 
-[2] = {"open_cartridge_gift_times", "int"}
-, 
-[3] = {"last_cartridge_reset_time", "time"}
-, 
-[4] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
+  [1] = {
+    "cartridge_use_times",
+    "map<int,int>"
+  },
+  [2] = {
+    "open_cartridge_gift_times",
+    "int"
+  },
+  [3] = {
+    "last_cartridge_reset_time",
+    "time"
+  },
+  [4] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 _class("CCombatSimulatorComponentInfo", ICampaignComponentInfo)
 CCombatSimulatorComponentInfo = CCombatSimulatorComponentInfo
--- DECOMPILER ERROR at PC407: Confused about usage of register: R2 in 'UnsetPending'
 
-CCombatSimulatorComponentInfo.Constructor = function(self)
-  -- function num : 0_17
+function CCombatSimulatorComponentInfo:Constructor()
   self.create_cartridge_tick_sec = 0
   self.cartridge_gift_template_id = 0
   self.max_cartridge_num = 0
   self.next_gift_time = 0
 end
 
--- DECOMPILER ERROR at PC430: Confused about usage of register: R2 in 'UnsetPending'
-
 CCombatSimulatorComponentInfo._proto = {
-[1] = {"create_cartridge_tick_sec", "int"}
-, 
-[2] = {"cartridge_gift_template_id", "int"}
-, 
-[3] = {"max_cartridge_num", "int"}
-, 
-[4] = {"next_gift_time", "time"}
+  [1] = {
+    "create_cartridge_tick_sec",
+    "int"
+  },
+  [2] = {
+    "cartridge_gift_template_id",
+    "int"
+  },
+  [3] = {
+    "max_cartridge_num",
+    "int"
+  },
+  [4] = {
+    "next_gift_time",
+    "time"
+  }
 }
 _class("CombatSimulatorComponentRefreshReq", ICampaignComRequest)
 CombatSimulatorComponentRefreshReq = CombatSimulatorComponentRefreshReq
--- DECOMPILER ERROR at PC439: Confused about usage of register: R2 in 'UnsetPending'
 
-CombatSimulatorComponentRefreshReq.Constructor = function(self)
-  -- function num : 0_18
+function CombatSimulatorComponentRefreshReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC442: Confused about usage of register: R2 in 'UnsetPending'
 
 CombatSimulatorComponentRefreshReq._proto = {}
 _class("CombatSimulatorComponentRefreshRep", ICampaignComResponse)
 CombatSimulatorComponentRefreshRep = CombatSimulatorComponentRefreshRep
--- DECOMPILER ERROR at PC451: Confused about usage of register: R2 in 'UnsetPending'
 
-CombatSimulatorComponentRefreshRep.Constructor = function(self)
-  -- function num : 0_19
+function CombatSimulatorComponentRefreshRep:Constructor()
   self.next_gift_time = 0
 end
 
--- DECOMPILER ERROR at PC459: Confused about usage of register: R2 in 'UnsetPending'
-
 CombatSimulatorComponentRefreshRep._proto = {
-[1] = {"next_gift_time", "time"}
+  [1] = {
+    "next_gift_time",
+    "time"
+  }
 }
 _class("CombatSimulatorComponentOpenGiftReq", ICampaignComRequest)
 CombatSimulatorComponentOpenGiftReq = CombatSimulatorComponentOpenGiftReq
--- DECOMPILER ERROR at PC468: Confused about usage of register: R2 in 'UnsetPending'
 
-CombatSimulatorComponentOpenGiftReq.Constructor = function(self)
-  -- function num : 0_20
+function CombatSimulatorComponentOpenGiftReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC471: Confused about usage of register: R2 in 'UnsetPending'
 
 CombatSimulatorComponentOpenGiftReq._proto = {}
 _class("CombatSimulatorComponentOpenGiftRep", ICampaignComResponse)
 CombatSimulatorComponentOpenGiftRep = CombatSimulatorComponentOpenGiftRep
--- DECOMPILER ERROR at PC480: Confused about usage of register: R2 in 'UnsetPending'
 
-CombatSimulatorComponentOpenGiftRep.Constructor = function(self)
-  -- function num : 0_21
+function CombatSimulatorComponentOpenGiftRep:Constructor()
   self.item_template_id = 0
 end
 
--- DECOMPILER ERROR at PC488: Confused about usage of register: R2 in 'UnsetPending'
-
 CombatSimulatorComponentOpenGiftRep._proto = {
-[1] = {"item_template_id", "int"}
+  [1] = {
+    "item_template_id",
+    "int"
+  }
 }
 _class("CombatSimulatorComponentDelCartridgeReq", ICampaignComRequest)
 CombatSimulatorComponentDelCartridgeReq = CombatSimulatorComponentDelCartridgeReq
--- DECOMPILER ERROR at PC497: Confused about usage of register: R2 in 'UnsetPending'
 
-CombatSimulatorComponentDelCartridgeReq.Constructor = function(self)
-  -- function num : 0_22
+function CombatSimulatorComponentDelCartridgeReq:Constructor()
   self.cartridge_pst_id = 0
 end
 
--- DECOMPILER ERROR at PC505: Confused about usage of register: R2 in 'UnsetPending'
-
 CombatSimulatorComponentDelCartridgeReq._proto = {
-[1] = {"cartridge_pst_id", "int64"}
+  [1] = {
+    "cartridge_pst_id",
+    "int64"
+  }
 }
 _class("CombatSimulatorComponentDelCartridgeRep", ICampaignComResponse)
 CombatSimulatorComponentDelCartridgeRep = CombatSimulatorComponentDelCartridgeRep
--- DECOMPILER ERROR at PC514: Confused about usage of register: R2 in 'UnsetPending'
 
-CombatSimulatorComponentDelCartridgeRep.Constructor = function(self)
-  -- function num : 0_23
+function CombatSimulatorComponentDelCartridgeRep:Constructor()
 end
-
--- DECOMPILER ERROR at PC517: Confused about usage of register: R2 in 'UnsetPending'
 
 CombatSimulatorComponentDelCartridgeRep._proto = {}
 _class("CSummerIIMissionComponentDataInfo", ICampaignComponentDataInfo)
 CSummerIIMissionComponentDataInfo = CSummerIIMissionComponentDataInfo
--- DECOMPILER ERROR at PC526: Confused about usage of register: R2 in 'UnsetPending'
 
-CSummerIIMissionComponentDataInfo.Constructor = function(self)
-  -- function num : 0_24
+function CSummerIIMissionComponentDataInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_formation_info = {}
   self.m_select_affix = {}
@@ -415,27 +400,36 @@ CSummerIIMissionComponentDataInfo.Constructor = function(self)
   self.m_pass_hard = {}
 end
 
--- DECOMPILER ERROR at PC559: Confused about usage of register: R2 in 'UnsetPending'
-
 CSummerIIMissionComponentDataInfo._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_formation_info", "map<int,list<int64>>"}
-, 
-[3] = {"m_select_affix", "map<int,list<int>>"}
-, 
-[4] = {"m_pass_afix", "map<int,list<int>>"}
-, 
-[5] = {"m_select_hard", "map<int,int>"}
-, 
-[6] = {"m_pass_hard", "map<int,int>"}
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_formation_info",
+    "map<int,list<int64>>"
+  },
+  [3] = {
+    "m_select_affix",
+    "map<int,list<int>>"
+  },
+  [4] = {
+    "m_pass_afix",
+    "map<int,list<int>>"
+  },
+  [5] = {
+    "m_select_hard",
+    "map<int,int>"
+  },
+  [6] = {
+    "m_pass_hard",
+    "map<int,int>"
+  }
 }
 _class("SummerIIMissionComponentInfo", ICampaignComponentInfo)
 SummerIIMissionComponentInfo = SummerIIMissionComponentInfo
--- DECOMPILER ERROR at PC568: Confused about usage of register: R2 in 'UnsetPending'
 
-SummerIIMissionComponentInfo.Constructor = function(self)
-  -- function num : 0_25
+function SummerIIMissionComponentInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_formation_info = {}
   self.m_select_affix = {}
@@ -445,361 +439,345 @@ SummerIIMissionComponentInfo.Constructor = function(self)
   self.m_pass_hard = {}
 end
 
--- DECOMPILER ERROR at PC606: Confused about usage of register: R2 in 'UnsetPending'
-
 SummerIIMissionComponentInfo._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_formation_info", "map<int,list<int64>>"}
-, 
-[3] = {"m_select_affix", "map<int,list<int>>"}
-, 
-[4] = {"m_pass_afix", "map<int,list<int>>"}
-, 
-[5] = {"m_mission_unlock_time", "map<int,time>"}
-, 
-[6] = {"m_select_hard", "map<int,int>"}
-, 
-[7] = {"m_pass_hard", "map<int,int>"}
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_formation_info",
+    "map<int,list<int64>>"
+  },
+  [3] = {
+    "m_select_affix",
+    "map<int,list<int>>"
+  },
+  [4] = {
+    "m_pass_afix",
+    "map<int,list<int>>"
+  },
+  [5] = {
+    "m_mission_unlock_time",
+    "map<int,time>"
+  },
+  [6] = {
+    "m_select_hard",
+    "map<int,int>"
+  },
+  [7] = {
+    "m_pass_hard",
+    "map<int,int>"
+  }
 }
-local ESummerIIMissionElementType = {ESummerIIMissionElementType_None = 0, ESummerIIMissionElementType_Blue = 1, ESummerIIMissionElementType_Red = 2, ESummerIIMissionElementType_Green = 3, ESummerIIMissionElementType_Yellow = 4, ESummerIIMissionElementType_Boss = 5}
+local ESummerIIMissionElementType = {
+  ESummerIIMissionElementType_None = 0,
+  ESummerIIMissionElementType_Blue = 1,
+  ESummerIIMissionElementType_Red = 2,
+  ESummerIIMissionElementType_Green = 3,
+  ESummerIIMissionElementType_Yellow = 4,
+  ESummerIIMissionElementType_Boss = 5
+}
 _enum("ESummerIIMissionElementType", ESummerIIMissionElementType)
 local SummerIIMissionComponentNotifyType = {SummerIIMissionComponentNotifyType_InfoChanged = 1}
 _enum("SummerIIMissionComponentNotifyType", SummerIIMissionComponentNotifyType)
 _class("NotifySummerIIMissionComponentInfoChanged", Object)
 NotifySummerIIMissionComponentInfoChanged = NotifySummerIIMissionComponentInfoChanged
--- DECOMPILER ERROR at PC632: Confused about usage of register: R4 in 'UnsetPending'
 
-NotifySummerIIMissionComponentInfoChanged.Constructor = function(self)
-  -- function num : 0_26
+function NotifySummerIIMissionComponentInfoChanged:Constructor()
   self.m_update_mission_info = {}
   self.m_update_pass_afix = {}
   self.m_update_pass_hard = {}
 end
 
--- DECOMPILER ERROR at PC650: Confused about usage of register: R4 in 'UnsetPending'
-
 NotifySummerIIMissionComponentInfoChanged._proto = {
-[1] = {"m_update_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_update_pass_afix", "map<int,list<int>>"}
-, 
-[3] = {"m_update_pass_hard", "map<int,int>"}
+  [1] = {
+    "m_update_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_update_pass_afix",
+    "map<int,list<int>>"
+  },
+  [3] = {
+    "m_update_pass_hard",
+    "map<int,int>"
+  }
 }
 _class("CompleteStorySummerIIMissionReq", ICampaignComRequest)
 CompleteStorySummerIIMissionReq = CompleteStorySummerIIMissionReq
--- DECOMPILER ERROR at PC659: Confused about usage of register: R4 in 'UnsetPending'
 
-CompleteStorySummerIIMissionReq.Constructor = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function CompleteStorySummerIIMissionReq:Constructor()
   self.m_create_info = CampaignMissionCreateInfo:New()
 end
 
--- DECOMPILER ERROR at PC667: Confused about usage of register: R4 in 'UnsetPending'
-
 CompleteStorySummerIIMissionReq._proto = {
-[1] = {"m_create_info", "CampaignMissionCreateInfo"}
+  [1] = {
+    "m_create_info",
+    "CampaignMissionCreateInfo"
+  }
 }
 _class("CompleteStorySummerIIMissionRep", ICampaignComResponse)
 CompleteStorySummerIIMissionRep = CompleteStorySummerIIMissionRep
--- DECOMPILER ERROR at PC676: Confused about usage of register: R4 in 'UnsetPending'
 
-CompleteStorySummerIIMissionRep.Constructor = function(self)
-  -- function num : 0_28
+function CompleteStorySummerIIMissionRep:Constructor()
   self.nErrorCode = 0
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC689: Confused about usage of register: R4 in 'UnsetPending'
-
 CompleteStorySummerIIMissionRep._proto = {
-[1] = {"nErrorCode", "int"}
-, 
-[2] = {"reward", "list<RoleAsset>"}
+  [1] = {"nErrorCode", "int"},
+  [2] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("SummerIISelectAffixReq", ICampaignComRequest)
 SummerIISelectAffixReq = SummerIISelectAffixReq
--- DECOMPILER ERROR at PC698: Confused about usage of register: R4 in 'UnsetPending'
 
-SummerIISelectAffixReq.Constructor = function(self)
-  -- function num : 0_29
+function SummerIISelectAffixReq:Constructor()
   self.nCampaignMissionId = 0
   self.SelectAffixIdArray = {}
   self.nHardId = 0
 end
 
--- DECOMPILER ERROR at PC716: Confused about usage of register: R4 in 'UnsetPending'
-
 SummerIISelectAffixReq._proto = {
-[1] = {"nCampaignMissionId", "int"}
-, 
-[2] = {"SelectAffixIdArray", "list<int>"}
-, 
-[3] = {"nHardId", "int"}
+  [1] = {
+    "nCampaignMissionId",
+    "int"
+  },
+  [2] = {
+    "SelectAffixIdArray",
+    "list<int>"
+  },
+  [3] = {"nHardId", "int"}
 }
 _class("SummerIISelectAffixRep", ICampaignComResponse)
 SummerIISelectAffixRep = SummerIISelectAffixRep
--- DECOMPILER ERROR at PC725: Confused about usage of register: R4 in 'UnsetPending'
 
-SummerIISelectAffixRep.Constructor = function(self)
-  -- function num : 0_30
+function SummerIISelectAffixRep:Constructor()
 end
-
--- DECOMPILER ERROR at PC728: Confused about usage of register: R4 in 'UnsetPending'
 
 SummerIISelectAffixRep._proto = {}
 _class("SummerIIChangeFormationReq", ICampaignComRequest)
 SummerIIChangeFormationReq = SummerIIChangeFormationReq
--- DECOMPILER ERROR at PC737: Confused about usage of register: R4 in 'UnsetPending'
 
-SummerIIChangeFormationReq.Constructor = function(self)
-  -- function num : 0_31
+function SummerIIChangeFormationReq:Constructor()
   self.nElementType = 0
   self.formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC750: Confused about usage of register: R4 in 'UnsetPending'
-
 SummerIIChangeFormationReq._proto = {
-[1] = {"nElementType", "int"}
-, 
-[2] = {"formation_pet_list", "list<int64>"}
+  [1] = {
+    "nElementType",
+    "int"
+  },
+  [2] = {
+    "formation_pet_list",
+    "list<int64>"
+  }
 }
 _class("SummerIIChangeFormationRep", ICampaignComResponse)
 SummerIIChangeFormationRep = SummerIIChangeFormationRep
--- DECOMPILER ERROR at PC759: Confused about usage of register: R4 in 'UnsetPending'
 
-SummerIIChangeFormationRep.Constructor = function(self)
-  -- function num : 0_32
+function SummerIIChangeFormationRep:Constructor()
   self.nFormationRet = 0
 end
 
--- DECOMPILER ERROR at PC767: Confused about usage of register: R4 in 'UnsetPending'
-
 SummerIIChangeFormationRep._proto = {
-[1] = {"nFormationRet", "int"}
+  [1] = {
+    "nFormationRet",
+    "int"
+  }
 }
 local CamQuestComponentNotifyType = {CamQuestComponentNotify_DailyReset = 1, QuestListComponentNotifyScore = 2}
 _enum("CamQuestComponentNotifyType", CamQuestComponentNotifyType)
 _class("QuestTimeParamInfo", Object)
 QuestTimeParamInfo = QuestTimeParamInfo
--- DECOMPILER ERROR at PC783: Confused about usage of register: R5 in 'UnsetPending'
 
-QuestTimeParamInfo.Constructor = function(self)
-  -- function num : 0_33
+function QuestTimeParamInfo:Constructor()
   self.m_open_time = 0
   self.m_end_time = 0
   self.m_need_daily_reset = false
 end
 
--- DECOMPILER ERROR at PC801: Confused about usage of register: R5 in 'UnsetPending'
-
 QuestTimeParamInfo._proto = {
-[1] = {"m_open_time", "time"}
-, 
-[2] = {"m_end_time", "time"}
-, 
-[3] = {"m_need_daily_reset", "bool"}
+  [1] = {
+    "m_open_time",
+    "time"
+  },
+  [2] = {"m_end_time", "time"},
+  [3] = {
+    "m_need_daily_reset",
+    "bool"
+  }
 }
 _class("CamQuestComponentInfo", ICampaignComponentInfo)
 CamQuestComponentInfo = CamQuestComponentInfo
--- DECOMPILER ERROR at PC810: Confused about usage of register: R5 in 'UnsetPending'
 
-CamQuestComponentInfo.Constructor = function(self)
-  -- function num : 0_34
+function CamQuestComponentInfo:Constructor()
   self.m_accept_cam_quest_list = {}
   self.m_quest_time_param_map = {}
 end
 
--- DECOMPILER ERROR at PC823: Confused about usage of register: R5 in 'UnsetPending'
-
 CamQuestComponentInfo._proto = {
-[1] = {"m_accept_cam_quest_list", "list<int>"}
-, 
-[2] = {"m_quest_time_param_map", "map<int,QuestTimeParamInfo>"}
+  [1] = {
+    "m_accept_cam_quest_list",
+    "list<int>"
+  },
+  [2] = {
+    "m_quest_time_param_map",
+    "map<int,QuestTimeParamInfo>"
+  }
 }
 _class("CamQuestTakeReq", ICampaignComRequest)
 CamQuestTakeReq = CamQuestTakeReq
--- DECOMPILER ERROR at PC832: Confused about usage of register: R5 in 'UnsetPending'
 
-CamQuestTakeReq.Constructor = function(self)
-  -- function num : 0_35
+function CamQuestTakeReq:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC840: Confused about usage of register: R5 in 'UnsetPending'
-
 CamQuestTakeReq._proto = {
-[1] = {"id", "int"}
+  [1] = {"id", "int"}
 }
 _class("CamQuestTakeRep", ICampaignComResponse)
 CamQuestTakeRep = CamQuestTakeRep
--- DECOMPILER ERROR at PC849: Confused about usage of register: R5 in 'UnsetPending'
 
-CamQuestTakeRep.Constructor = function(self)
-  -- function num : 0_36
+function CamQuestTakeRep:Constructor()
   self.ret = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC862: Confused about usage of register: R5 in 'UnsetPending'
-
 CamQuestTakeRep._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CamOneKeyQuestTakeReq", ICampaignComRequest)
 CamOneKeyQuestTakeReq = CamOneKeyQuestTakeReq
--- DECOMPILER ERROR at PC871: Confused about usage of register: R5 in 'UnsetPending'
 
-CamOneKeyQuestTakeReq.Constructor = function(self)
-  -- function num : 0_37
+function CamOneKeyQuestTakeReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC874: Confused about usage of register: R5 in 'UnsetPending'
 
 CamOneKeyQuestTakeReq._proto = {}
 _class("CamOneKeyQuestTakeRsp", ICampaignComResponse)
 CamOneKeyQuestTakeRsp = CamOneKeyQuestTakeRsp
--- DECOMPILER ERROR at PC883: Confused about usage of register: R5 in 'UnsetPending'
 
-CamOneKeyQuestTakeRsp.Constructor = function(self)
-  -- function num : 0_38
+function CamOneKeyQuestTakeRsp:Constructor()
   self.ret = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC896: Confused about usage of register: R5 in 'UnsetPending'
-
 CamOneKeyQuestTakeRsp._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CamQuestDailyResetReq", ICampaignComRequest)
 CamQuestDailyResetReq = CamQuestDailyResetReq
--- DECOMPILER ERROR at PC905: Confused about usage of register: R5 in 'UnsetPending'
 
-CamQuestDailyResetReq.Constructor = function(self)
-  -- function num : 0_39
+function CamQuestDailyResetReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC908: Confused about usage of register: R5 in 'UnsetPending'
 
 CamQuestDailyResetReq._proto = {}
 _class("CamQuestDailyResetRep", ICampaignComResponse)
 CamQuestDailyResetRep = CamQuestDailyResetRep
--- DECOMPILER ERROR at PC917: Confused about usage of register: R5 in 'UnsetPending'
 
-CamQuestDailyResetRep.Constructor = function(self)
-  -- function num : 0_40
+function CamQuestDailyResetRep:Constructor()
   self.m_reset_quest_map = {}
 end
 
--- DECOMPILER ERROR at PC925: Confused about usage of register: R5 in 'UnsetPending'
-
 CamQuestDailyResetRep._proto = {
-[1] = {"m_reset_quest_map", "map<int,time>"}
+  [1] = {
+    "m_reset_quest_map",
+    "map<int,time>"
+  }
 }
 _class("NotifyCamQuesetComponentDailyReset", Object)
 NotifyCamQuesetComponentDailyReset = NotifyCamQuesetComponentDailyReset
--- DECOMPILER ERROR at PC934: Confused about usage of register: R5 in 'UnsetPending'
 
-NotifyCamQuesetComponentDailyReset.Constructor = function(self)
-  -- function num : 0_41
+function NotifyCamQuesetComponentDailyReset:Constructor()
   self.m_reset_quest_map = {}
 end
 
--- DECOMPILER ERROR at PC942: Confused about usage of register: R5 in 'UnsetPending'
-
 NotifyCamQuesetComponentDailyReset._proto = {
-[1] = {"m_reset_quest_map", "map<int,time>"}
+  [1] = {
+    "m_reset_quest_map",
+    "map<int,time>"
+  }
 }
 _class("DemoComponentDataInfo", ICampaignComponentDataInfo)
 DemoComponentDataInfo = DemoComponentDataInfo
--- DECOMPILER ERROR at PC951: Confused about usage of register: R5 in 'UnsetPending'
 
-DemoComponentDataInfo.Constructor = function(self)
-  -- function num : 0_42
+function DemoComponentDataInfo:Constructor()
   self.m_num = 1
   self.last_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC964: Confused about usage of register: R5 in 'UnsetPending'
-
 DemoComponentDataInfo._proto = {
-[1] = {"m_num", "int"}
-, 
-[2] = {"last_refresh_time", "time"}
+  [1] = {"m_num", "int"},
+  [2] = {
+    "last_refresh_time",
+    "time"
+  }
 }
 _class("DemoComponentInfo", ICampaignComponentInfo)
 DemoComponentInfo = DemoComponentInfo
--- DECOMPILER ERROR at PC973: Confused about usage of register: R5 in 'UnsetPending'
 
-DemoComponentInfo.Constructor = function(self)
-  -- function num : 0_43
+function DemoComponentInfo:Constructor()
   self.m_num = 0
 end
 
--- DECOMPILER ERROR at PC981: Confused about usage of register: R5 in 'UnsetPending'
-
 DemoComponentInfo._proto = {
-[1] = {"m_num", "int"}
+  [1] = {"m_num", "int"}
 }
 _class("DemoComponentReq", ICampaignComRequest)
 DemoComponentReq = DemoComponentReq
--- DECOMPILER ERROR at PC990: Confused about usage of register: R5 in 'UnsetPending'
 
-DemoComponentReq.Constructor = function(self)
-  -- function num : 0_44
+function DemoComponentReq:Constructor()
   self.m_req = 0
 end
 
--- DECOMPILER ERROR at PC998: Confused about usage of register: R5 in 'UnsetPending'
-
 DemoComponentReq._proto = {
-[1] = {"m_req", "int"}
+  [1] = {"m_req", "int"}
 }
 _class("DemoComponentRep", ICampaignComResponse)
 DemoComponentRep = DemoComponentRep
--- DECOMPILER ERROR at PC1007: Confused about usage of register: R5 in 'UnsetPending'
 
-DemoComponentRep.Constructor = function(self)
-  -- function num : 0_45
+function DemoComponentRep:Constructor()
   self.m_rep = 0
 end
 
--- DECOMPILER ERROR at PC1015: Confused about usage of register: R5 in 'UnsetPending'
-
 DemoComponentRep._proto = {
-[1] = {"m_rep", "int"}
+  [1] = {"m_rep", "int"}
 }
 local ExchangeItemCountType = {ExchangeItemComponent_Infinity = -1}
 _enum("ExchangeItemCountType", ExchangeItemCountType)
 _class("CExchangeItemComponentDataInfo", ICampaignComponentDataInfo)
 CExchangeItemComponentDataInfo = CExchangeItemComponentDataInfo
--- DECOMPILER ERROR at PC1030: Confused about usage of register: R6 in 'UnsetPending'
 
-CExchangeItemComponentDataInfo.Constructor = function(self)
-  -- function num : 0_46
+function CExchangeItemComponentDataInfo:Constructor()
   self.m_item_exchange_count = {}
   self.m_exchange_cost_coin = 0
 end
 
--- DECOMPILER ERROR at PC1043: Confused about usage of register: R6 in 'UnsetPending'
-
 CExchangeItemComponentDataInfo._proto = {
-[1] = {"m_item_exchange_count", "map<int,int>"}
-, 
-[2] = {"m_exchange_cost_coin", "int64"}
+  [1] = {
+    "m_item_exchange_count",
+    "map<int,int>"
+  },
+  [2] = {
+    "m_exchange_cost_coin",
+    "int64"
+  }
 }
 _class("ExchangeItemComponentItemInfo", Object)
 ExchangeItemComponentItemInfo = ExchangeItemComponentItemInfo
--- DECOMPILER ERROR at PC1052: Confused about usage of register: R6 in 'UnsetPending'
 
-ExchangeItemComponentItemInfo.Constructor = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function ExchangeItemComponentItemInfo:Constructor()
   self.m_id = 0
   self.m_unlock_time = 0
   self.m_reward = RoleAsset:New()
@@ -813,113 +791,125 @@ ExchangeItemComponentItemInfo.Constructor = function(self)
   self.m_add_baguum = false
 end
 
--- DECOMPILER ERROR at PC1110: Confused about usage of register: R6 in 'UnsetPending'
-
 ExchangeItemComponentItemInfo._proto = {
-[1] = {"m_id", "int"}
-, 
-[2] = {"m_unlock_time", "time"}
-, 
-[3] = {"m_reward", "RoleAsset"}
-, 
-[4] = {"m_exchange_limit_count", "int"}
-, 
-[5] = {"m_cost_item_id", "int"}
-, 
-[6] = {"m_cost_count", "int64"}
-, 
-[7] = {"m_can_exchange_count", "int"}
-, 
-[8] = {"m_is_special", "bool"}
-, 
-[9] = {"m_is_show_red_point", "bool"}
-, 
-[10] = {"m_unlock_cost_item", "map<int,int64>"}
-, 
-[11] = {"m_add_baguum", "bool"}
+  [1] = {"m_id", "int"},
+  [2] = {
+    "m_unlock_time",
+    "time"
+  },
+  [3] = {"m_reward", "RoleAsset"},
+  [4] = {
+    "m_exchange_limit_count",
+    "int"
+  },
+  [5] = {
+    "m_cost_item_id",
+    "int"
+  },
+  [6] = {
+    "m_cost_count",
+    "int64"
+  },
+  [7] = {
+    "m_can_exchange_count",
+    "int"
+  },
+  [8] = {
+    "m_is_special",
+    "bool"
+  },
+  [9] = {
+    "m_is_show_red_point",
+    "bool"
+  },
+  [10] = {
+    "m_unlock_cost_item",
+    "map<int,int64>"
+  },
+  [11] = {
+    "m_add_baguum",
+    "bool"
+  }
 }
 _class("ExchangeItemComponentInfo", ICampaignComponentInfo)
 ExchangeItemComponentInfo = ExchangeItemComponentInfo
--- DECOMPILER ERROR at PC1119: Confused about usage of register: R6 in 'UnsetPending'
 
-ExchangeItemComponentInfo.Constructor = function(self)
-  -- function num : 0_48
+function ExchangeItemComponentInfo:Constructor()
   self.m_exchange_item_list = {}
 end
 
--- DECOMPILER ERROR at PC1127: Confused about usage of register: R6 in 'UnsetPending'
-
 ExchangeItemComponentInfo._proto = {
-[1] = {"m_exchange_item_list", "list<ExchangeItemComponentItemInfo>"}
+  [1] = {
+    "m_exchange_item_list",
+    "list<ExchangeItemComponentItemInfo>"
+  }
 }
 _class("ExchangeItemComponentExchangeReq", ICampaignComRequest)
 ExchangeItemComponentExchangeReq = ExchangeItemComponentExchangeReq
--- DECOMPILER ERROR at PC1136: Confused about usage of register: R6 in 'UnsetPending'
 
-ExchangeItemComponentExchangeReq.Constructor = function(self)
-  -- function num : 0_49
+function ExchangeItemComponentExchangeReq:Constructor()
   self.m_exchange_item_id = 0
   self.m_exchange_count = 1
 end
 
--- DECOMPILER ERROR at PC1149: Confused about usage of register: R6 in 'UnsetPending'
-
 ExchangeItemComponentExchangeReq._proto = {
-[1] = {"m_exchange_item_id", "int"}
-, 
-[2] = {"m_exchange_count", "int"}
+  [1] = {
+    "m_exchange_item_id",
+    "int"
+  },
+  [2] = {
+    "m_exchange_count",
+    "int"
+  }
 }
 _class("ExchangeItemComponentExchangeRep", ICampaignComResponse)
 ExchangeItemComponentExchangeRep = ExchangeItemComponentExchangeRep
--- DECOMPILER ERROR at PC1158: Confused about usage of register: R6 in 'UnsetPending'
 
-ExchangeItemComponentExchangeRep.Constructor = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function ExchangeItemComponentExchangeRep:Constructor()
   self.m_rewards = {}
   self.m_exchange_info = ExchangeItemComponentInfo:New()
   self.m_step = 0
 end
 
--- DECOMPILER ERROR at PC1176: Confused about usage of register: R6 in 'UnsetPending'
-
 ExchangeItemComponentExchangeRep._proto = {
-[1] = {"m_rewards", "list<RoleAsset>"}
-, 
-[2] = {"m_exchange_info", "ExchangeItemComponentInfo"}
-, 
-[3] = {"m_step", "int"}
+  [1] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  },
+  [2] = {
+    "m_exchange_info",
+    "ExchangeItemComponentInfo"
+  },
+  [3] = {"m_step", "int"}
 }
 local PersonProgressComponentNotifyType = {PersonProgressComponentNotify_StepChanged = 1}
 _enum("PersonProgressComponentNotifyType", PersonProgressComponentNotifyType)
 _class("CPersonProgressComponentDataInfo", ICampaignComponentDataInfo)
 CPersonProgressComponentDataInfo = CPersonProgressComponentDataInfo
--- DECOMPILER ERROR at PC1191: Confused about usage of register: R7 in 'UnsetPending'
 
-CPersonProgressComponentDataInfo.Constructor = function(self)
-  -- function num : 0_51
+function CPersonProgressComponentDataInfo:Constructor()
   self.m_received_progress = {}
   self.m_progress = 0
   self.m_mark = 0
   self.m_mark_else = 0
 end
 
--- DECOMPILER ERROR at PC1214: Confused about usage of register: R7 in 'UnsetPending'
-
 CPersonProgressComponentDataInfo._proto = {
-[1] = {"m_received_progress", "list<int64>"}
-, 
-[2] = {"m_progress", "int"}
-, 
-[3] = {"m_mark", "int64"}
-, 
-[4] = {"m_mark_else", "int64"}
+  [1] = {
+    "m_received_progress",
+    "list<int64>"
+  },
+  [2] = {"m_progress", "int"},
+  [3] = {"m_mark", "int64"},
+  [4] = {
+    "m_mark_else",
+    "int64"
+  }
 }
 _class("PersonProgressComponentInfo", ICampaignComponentInfo)
 PersonProgressComponentInfo = PersonProgressComponentInfo
--- DECOMPILER ERROR at PC1223: Confused about usage of register: R7 in 'UnsetPending'
 
-PersonProgressComponentInfo.Constructor = function(self)
-  -- function num : 0_52
+function PersonProgressComponentInfo:Constructor()
   self.m_item_id = 0
   self.m_current_progress = 0
   self.m_received_progress = {}
@@ -931,165 +921,161 @@ PersonProgressComponentInfo.Constructor = function(self)
   self.m_mark_else = 0
 end
 
--- DECOMPILER ERROR at PC1271: Confused about usage of register: R7 in 'UnsetPending'
-
 PersonProgressComponentInfo._proto = {
-[1] = {"m_item_id", "int"}
-, 
-[2] = {"m_current_progress", "int64"}
-, 
-[3] = {"m_received_progress", "list<int64>"}
-, 
-[4] = {"m_progress_rewards", "map<int64,list<RoleAsset>>"}
-, 
-[5] = {"m_special_rewards", "map<int64,list<RoleAsset>>"}
-, 
-[6] = {"m_lv_limit", "int"}
-, 
-[7] = {"m_progress", "int"}
-, 
-[8] = {"m_mark", "int64"}
-, 
-[9] = {"m_mark_else", "int64"}
+  [1] = {"m_item_id", "int"},
+  [2] = {
+    "m_current_progress",
+    "int64"
+  },
+  [3] = {
+    "m_received_progress",
+    "list<int64>"
+  },
+  [4] = {
+    "m_progress_rewards",
+    "map<int64,list<RoleAsset>>"
+  },
+  [5] = {
+    "m_special_rewards",
+    "map<int64,list<RoleAsset>>"
+  },
+  [6] = {"m_lv_limit", "int"},
+  [7] = {"m_progress", "int"},
+  [8] = {"m_mark", "int64"},
+  [9] = {
+    "m_mark_else",
+    "int64"
+  }
 }
 _class("PersonProgressComponentReceiveRewardReq", ICampaignComRequest)
 PersonProgressComponentReceiveRewardReq = PersonProgressComponentReceiveRewardReq
--- DECOMPILER ERROR at PC1280: Confused about usage of register: R7 in 'UnsetPending'
 
-PersonProgressComponentReceiveRewardReq.Constructor = function(self)
-  -- function num : 0_53
+function PersonProgressComponentReceiveRewardReq:Constructor()
   self.m_progress = 0
 end
 
--- DECOMPILER ERROR at PC1288: Confused about usage of register: R7 in 'UnsetPending'
-
 PersonProgressComponentReceiveRewardReq._proto = {
-[1] = {"m_progress", "int64"}
+  [1] = {"m_progress", "int64"}
 }
 _class("PersonProgressComponentReceiveRewardRep", ICampaignComResponse)
 PersonProgressComponentReceiveRewardRep = PersonProgressComponentReceiveRewardRep
--- DECOMPILER ERROR at PC1297: Confused about usage of register: R7 in 'UnsetPending'
 
-PersonProgressComponentReceiveRewardRep.Constructor = function(self)
-  -- function num : 0_54
+function PersonProgressComponentReceiveRewardRep:Constructor()
   self.m_new_progress = 0
   self.m_rewards = {}
 end
 
--- DECOMPILER ERROR at PC1310: Confused about usage of register: R7 in 'UnsetPending'
-
 PersonProgressComponentReceiveRewardRep._proto = {
-[1] = {"m_new_progress", "int64"}
-, 
-[2] = {"m_rewards", "list<RoleAsset>"}
+  [1] = {
+    "m_new_progress",
+    "int64"
+  },
+  [2] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("PersonProgressComponentOneKeyReceiveRewardReq", ICampaignComRequest)
 PersonProgressComponentOneKeyReceiveRewardReq = PersonProgressComponentOneKeyReceiveRewardReq
--- DECOMPILER ERROR at PC1319: Confused about usage of register: R7 in 'UnsetPending'
 
-PersonProgressComponentOneKeyReceiveRewardReq.Constructor = function(self)
-  -- function num : 0_55
+function PersonProgressComponentOneKeyReceiveRewardReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC1322: Confused about usage of register: R7 in 'UnsetPending'
 
 PersonProgressComponentOneKeyReceiveRewardReq._proto = {}
 _class("PersonProgressComponentOneKeyReceiveRewardRep", ICampaignComResponse)
 PersonProgressComponentOneKeyReceiveRewardRep = PersonProgressComponentOneKeyReceiveRewardRep
--- DECOMPILER ERROR at PC1331: Confused about usage of register: R7 in 'UnsetPending'
 
-PersonProgressComponentOneKeyReceiveRewardRep.Constructor = function(self)
-  -- function num : 0_56
+function PersonProgressComponentOneKeyReceiveRewardRep:Constructor()
   self.m_new_progress = 0
   self.m_rewards = {}
 end
 
--- DECOMPILER ERROR at PC1344: Confused about usage of register: R7 in 'UnsetPending'
-
 PersonProgressComponentOneKeyReceiveRewardRep._proto = {
-[1] = {"m_new_progress", "int64"}
-, 
-[2] = {"m_rewards", "list<RoleAsset>"}
+  [1] = {
+    "m_new_progress",
+    "int64"
+  },
+  [2] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("NotifyPresonProgressComponentItemCountChanged", Object)
 NotifyPresonProgressComponentItemCountChanged = NotifyPresonProgressComponentItemCountChanged
--- DECOMPILER ERROR at PC1353: Confused about usage of register: R7 in 'UnsetPending'
 
-NotifyPresonProgressComponentItemCountChanged.Constructor = function(self)
-  -- function num : 0_57
+function NotifyPresonProgressComponentItemCountChanged:Constructor()
   self.m_item_count = 0
 end
 
--- DECOMPILER ERROR at PC1361: Confused about usage of register: R7 in 'UnsetPending'
-
 NotifyPresonProgressComponentItemCountChanged._proto = {
-[1] = {"m_item_count", "int64"}
+  [1] = {
+    "m_item_count",
+    "int64"
+  }
 }
 _class("PersonProgressComponentCollectReq", ICampaignComRequest)
 PersonProgressComponentCollectReq = PersonProgressComponentCollectReq
--- DECOMPILER ERROR at PC1370: Confused about usage of register: R7 in 'UnsetPending'
 
-PersonProgressComponentCollectReq.Constructor = function(self)
-  -- function num : 0_58
+function PersonProgressComponentCollectReq:Constructor()
   self.m_item_num = 0
   self.m_mark = 0
   self.m_mark_else = 0
 end
 
--- DECOMPILER ERROR at PC1388: Confused about usage of register: R7 in 'UnsetPending'
-
 PersonProgressComponentCollectReq._proto = {
-[1] = {"m_item_num", "int"}
-, 
-[2] = {"m_mark", "int64"}
-, 
-[3] = {"m_mark_else", "int64"}
+  [1] = {"m_item_num", "int"},
+  [2] = {"m_mark", "int64"},
+  [3] = {
+    "m_mark_else",
+    "int64"
+  }
 }
 _class("PersonProgressComponentCollectRep", ICampaignComResponse)
 PersonProgressComponentCollectRep = PersonProgressComponentCollectRep
--- DECOMPILER ERROR at PC1397: Confused about usage of register: R7 in 'UnsetPending'
 
-PersonProgressComponentCollectRep.Constructor = function(self)
-  -- function num : 0_59
+function PersonProgressComponentCollectRep:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1405: Confused about usage of register: R7 in 'UnsetPending'
-
 PersonProgressComponentCollectRep._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
-local ECumulativeLoginRewardStatus = {E_CUMULATIVE_LOGIN_REWARD_UNKNOW = 0, E_CUMULATIVE_LOGIN_REWARD_CAN_RECV = 1, E_CUMULATIVE_LOGIN_REWARD_RECVED = 2, E_CUMULATIVE_LOGIN_REWARD_LOCK = 3, E_CUMULATIVE_LOGIN_REWARD_Expired = 4, E_CUMULATIVE_LOGIN_REWARD_Limit = 5}
+local ECumulativeLoginRewardStatus = {
+  E_CUMULATIVE_LOGIN_REWARD_UNKNOW = 0,
+  E_CUMULATIVE_LOGIN_REWARD_CAN_RECV = 1,
+  E_CUMULATIVE_LOGIN_REWARD_RECVED = 2,
+  E_CUMULATIVE_LOGIN_REWARD_LOCK = 3,
+  E_CUMULATIVE_LOGIN_REWARD_Expired = 4,
+  E_CUMULATIVE_LOGIN_REWARD_Limit = 5
+}
 _enum("ECumulativeLoginRewardStatus", ECumulativeLoginRewardStatus)
 _class("CCumulativeLoginComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CCumulativeLoginComponentDataInfo = _ENV.CCumulativeLoginComponentDataInfo
--- DECOMPILER ERROR at PC1433: Confused about usage of register: R8 in 'UnsetPending'
+CCumulativeLoginComponentDataInfo = CCumulativeLoginComponentDataInfo
 
-;
-(_ENV.CCumulativeLoginComponentDataInfo).Constructor = function(self)
-  -- function num : 0_60
+function CCumulativeLoginComponentDataInfo:Constructor()
   self.m_login_days = 0
   self.m_last_refresh_time = 0
   self.m_recieved_days = {}
 end
 
--- DECOMPILER ERROR at PC1452: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CCumulativeLoginComponentDataInfo)._proto = {
-[1] = {"m_login_days", "int"}
-, 
-[2] = {"m_last_refresh_time", "time"}
-, 
-[3] = {"m_recieved_days", "list<int>"}
+CCumulativeLoginComponentDataInfo._proto = {
+  [1] = {
+    "m_login_days",
+    "int"
+  },
+  [2] = {
+    "m_last_refresh_time",
+    "time"
+  },
+  [3] = {
+    "m_recieved_days",
+    "list<int>"
+  }
 }
 _class("CumulativeLoginRewardInfo", Object)
-_ENV.CumulativeLoginRewardInfo = _ENV.CumulativeLoginRewardInfo
--- DECOMPILER ERROR at PC1464: Confused about usage of register: R8 in 'UnsetPending'
+CumulativeLoginRewardInfo = CumulativeLoginRewardInfo
 
-;
-(_ENV.CumulativeLoginRewardInfo).Constructor = function(self)
-  -- function num : 0_61
+function CumulativeLoginRewardInfo:Constructor()
   self.m_login_days = 0
   self.m_login_unlock_time = 0
   self.m_is_special = false
@@ -1098,199 +1084,191 @@ _ENV.CumulativeLoginRewardInfo = _ENV.CumulativeLoginRewardInfo
   self.m_expired_time = 0
 end
 
--- DECOMPILER ERROR at PC1498: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CumulativeLoginRewardInfo)._proto = {
-[1] = {"m_login_days", "int"}
-, 
-[2] = {"m_login_unlock_time", "time"}
-, 
-[3] = {"m_is_special", "bool"}
-, 
-[4] = {"m_reward_status", "int"}
-, 
-[5] = {"m_rewards", "list<RoleAsset>"}
-, 
-[6] = {"m_expired_time", "time"}
+CumulativeLoginRewardInfo._proto = {
+  [1] = {
+    "m_login_days",
+    "int"
+  },
+  [2] = {
+    "m_login_unlock_time",
+    "time"
+  },
+  [3] = {
+    "m_is_special",
+    "bool"
+  },
+  [4] = {
+    "m_reward_status",
+    "int"
+  },
+  [5] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "m_expired_time",
+    "time"
+  }
 }
 _class("CumulativeLoginComponentInfo", ICampaignComponentInfo)
-_ENV.CumulativeLoginComponentInfo = _ENV.CumulativeLoginComponentInfo
--- DECOMPILER ERROR at PC1510: Confused about usage of register: R8 in 'UnsetPending'
+CumulativeLoginComponentInfo = CumulativeLoginComponentInfo
 
-;
-(_ENV.CumulativeLoginComponentInfo).Constructor = function(self)
-  -- function num : 0_62
+function CumulativeLoginComponentInfo:Constructor()
   self.m_login_days = 0
   self.m_cumulative_info = {}
 end
 
--- DECOMPILER ERROR at PC1524: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CumulativeLoginComponentInfo)._proto = {
-[1] = {"m_login_days", "int"}
-, 
-[2] = {"m_cumulative_info", "map<int,CumulativeLoginRewardInfo>"}
+CumulativeLoginComponentInfo._proto = {
+  [1] = {
+    "m_login_days",
+    "int"
+  },
+  [2] = {
+    "m_cumulative_info",
+    "map<int,CumulativeLoginRewardInfo>"
+  }
 }
 _class("CumulativeLoginComponentReceiveRewardReq", ICampaignComRequest)
-_ENV.CumulativeLoginComponentReceiveRewardReq = _ENV.CumulativeLoginComponentReceiveRewardReq
--- DECOMPILER ERROR at PC1536: Confused about usage of register: R8 in 'UnsetPending'
+CumulativeLoginComponentReceiveRewardReq = CumulativeLoginComponentReceiveRewardReq
 
-;
-(_ENV.CumulativeLoginComponentReceiveRewardReq).Constructor = function(self)
-  -- function num : 0_63
+function CumulativeLoginComponentReceiveRewardReq:Constructor()
   self.m_reward_id = 0
 end
 
--- DECOMPILER ERROR at PC1545: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CumulativeLoginComponentReceiveRewardReq)._proto = {
-[1] = {"m_reward_id", "int"}
+CumulativeLoginComponentReceiveRewardReq._proto = {
+  [1] = {
+    "m_reward_id",
+    "int"
+  }
 }
 _class("CumulativeLoginComponentReceiveRewardRep", ICampaignComResponse)
-_ENV.CumulativeLoginComponentReceiveRewardRep = _ENV.CumulativeLoginComponentReceiveRewardRep
--- DECOMPILER ERROR at PC1557: Confused about usage of register: R8 in 'UnsetPending'
+CumulativeLoginComponentReceiveRewardRep = CumulativeLoginComponentReceiveRewardRep
 
-;
-(_ENV.CumulativeLoginComponentReceiveRewardRep).Constructor = function(self)
-  -- function num : 0_64
+function CumulativeLoginComponentReceiveRewardRep:Constructor()
   self.m_rewards = {}
 end
 
--- DECOMPILER ERROR at PC1566: Confused about usage of register: R8 in 'UnsetPending'
-
-;
-(_ENV.CumulativeLoginComponentReceiveRewardRep)._proto = {
-[1] = {"m_rewards", "list<RoleAsset>"}
+CumulativeLoginComponentReceiveRewardRep._proto = {
+  [1] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  }
 }
-local ECampaignStoryCondition = {E_UNLOCK = 0, E_CONDITION1_UNLOCK = 1, E_CONDITION2_UNLOCK = 2, E_CONDITION_ALL_LOCK = 3}
+local ECampaignStoryCondition = {
+  E_UNLOCK = 0,
+  E_CONDITION1_UNLOCK = 1,
+  E_CONDITION2_UNLOCK = 2,
+  E_CONDITION_ALL_LOCK = 3
+}
 _enum("ECampaignStoryCondition", ECampaignStoryCondition)
 _class("CStoryComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CStoryComponentDataInfo = _ENV.CStoryComponentDataInfo
--- DECOMPILER ERROR at PC1592: Confused about usage of register: R9 in 'UnsetPending'
+CStoryComponentDataInfo = CStoryComponentDataInfo
 
-;
-(_ENV.CStoryComponentDataInfo).Constructor = function(self)
-  -- function num : 0_65
+function CStoryComponentDataInfo:Constructor()
   self.m_total_count = 0
   self.m_recieved_reward_story = {}
 end
 
--- DECOMPILER ERROR at PC1606: Confused about usage of register: R9 in 'UnsetPending'
-
-;
-(_ENV.CStoryComponentDataInfo)._proto = {
-[1] = {"m_total_count", "int64"}
-, 
-[2] = {"m_recieved_reward_story", "list<int>"}
+CStoryComponentDataInfo._proto = {
+  [1] = {
+    "m_total_count",
+    "int64"
+  },
+  [2] = {
+    "m_recieved_reward_story",
+    "list<int>"
+  }
 }
 _class("CStoryComponentInfo", ICampaignComponentInfo)
-_ENV.CStoryComponentInfo = _ENV.CStoryComponentInfo
--- DECOMPILER ERROR at PC1618: Confused about usage of register: R9 in 'UnsetPending'
+CStoryComponentInfo = CStoryComponentInfo
 
-;
-(_ENV.CStoryComponentInfo).Constructor = function(self)
-  -- function num : 0_66
+function CStoryComponentInfo:Constructor()
   self.m_total_count = 0
   self.m_recieved_reward_story = {}
   self.m_end_date_time = 0
 end
 
--- DECOMPILER ERROR at PC1637: Confused about usage of register: R9 in 'UnsetPending'
-
-;
-(_ENV.CStoryComponentInfo)._proto = {
-[1] = {"m_total_count", "int64"}
-, 
-[2] = {"m_recieved_reward_story", "list<int>"}
-, 
-[3] = {"m_end_date_time", "time"}
+CStoryComponentInfo._proto = {
+  [1] = {
+    "m_total_count",
+    "int64"
+  },
+  [2] = {
+    "m_recieved_reward_story",
+    "list<int>"
+  },
+  [3] = {
+    "m_end_date_time",
+    "time"
+  }
 }
 _class("StoryComponentRecvRewardReq", ICampaignComRequest)
-_ENV.StoryComponentRecvRewardReq = _ENV.StoryComponentRecvRewardReq
--- DECOMPILER ERROR at PC1649: Confused about usage of register: R9 in 'UnsetPending'
+StoryComponentRecvRewardReq = StoryComponentRecvRewardReq
 
-;
-(_ENV.StoryComponentRecvRewardReq).Constructor = function(self)
-  -- function num : 0_67
+function StoryComponentRecvRewardReq:Constructor()
   self.story_id = 0
 end
 
--- DECOMPILER ERROR at PC1658: Confused about usage of register: R9 in 'UnsetPending'
-
-;
-(_ENV.StoryComponentRecvRewardReq)._proto = {
-[1] = {"story_id", "int"}
+StoryComponentRecvRewardReq._proto = {
+  [1] = {"story_id", "int"}
 }
 _class("StoryComponentRecvRep", ICampaignComResponse)
-_ENV.StoryComponentRecvRep = _ENV.StoryComponentRecvRep
--- DECOMPILER ERROR at PC1670: Confused about usage of register: R9 in 'UnsetPending'
+StoryComponentRecvRep = StoryComponentRecvRep
 
-;
-(_ENV.StoryComponentRecvRep).Constructor = function(self)
-  -- function num : 0_68
+function StoryComponentRecvRep:Constructor()
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC1679: Confused about usage of register: R9 in 'UnsetPending'
-
-;
-(_ENV.StoryComponentRecvRep)._proto = {
-[1] = {"rewards", "list<RoleAsset>"}
+StoryComponentRecvRep._proto = {
+  [1] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 local StoryComponentNotifyType = {StoryComponentNotifyType_PointChange = 1}
 _enum("StoryComponentNotifyType", StoryComponentNotifyType)
 _class("NotifyStoryComponentPointChanged", Object)
-_ENV.NotifyStoryComponentPointChanged = _ENV.NotifyStoryComponentPointChanged
--- DECOMPILER ERROR at PC1698: Confused about usage of register: R10 in 'UnsetPending'
+NotifyStoryComponentPointChanged = NotifyStoryComponentPointChanged
 
-;
-(_ENV.NotifyStoryComponentPointChanged).Constructor = function(self)
-  -- function num : 0_69
+function NotifyStoryComponentPointChanged:Constructor()
   self.m_total_count = 0
 end
 
--- DECOMPILER ERROR at PC1707: Confused about usage of register: R10 in 'UnsetPending'
-
-;
-(_ENV.NotifyStoryComponentPointChanged)._proto = {
-[1] = {"m_total_count", "int64"}
+NotifyStoryComponentPointChanged._proto = {
+  [1] = {
+    "m_total_count",
+    "int64"
+  }
 }
 local ECampaignLotteryType = {E_CLT_SINGLE = 0, E_CLT_MULTI = 1}
 _enum("ECampaignLotteryType", ECampaignLotteryType)
-local ECampaignLRType = {E_CLRT_common = 0, E_CLRT_big = 1, E_CLRT_rare = 2}
+local ECampaignLRType = {
+  E_CLRT_common = 0,
+  E_CLRT_big = 1,
+  E_CLRT_rare = 2
+}
 _enum("ECampaignLRType", ECampaignLRType)
 _class("RandomEvent", Object)
-_ENV.RandomEvent = _ENV.RandomEvent
--- DECOMPILER ERROR at PC1741: Confused about usage of register: R12 in 'UnsetPending'
+RandomEvent = RandomEvent
 
-;
-(_ENV.RandomEvent).Constructor = function(self)
-  -- function num : 0_70
+function RandomEvent:Constructor()
   self.event_id = 0
   self.lottery_times = 0
   self.is_unlock = false
 end
 
--- DECOMPILER ERROR at PC1760: Confused about usage of register: R12 in 'UnsetPending'
-
-;
-(_ENV.RandomEvent)._proto = {
-[1] = {"event_id", "int"}
-, 
-[2] = {"lottery_times", "int"}
-, 
-[3] = {"is_unlock", "bool"}
+RandomEvent._proto = {
+  [1] = {"event_id", "int"},
+  [2] = {
+    "lottery_times",
+    "int"
+  },
+  [3] = {"is_unlock", "bool"}
 }
 _class("AwardInfo", Object)
-_ENV.AwardInfo = _ENV.AwardInfo
--- DECOMPILER ERROR at PC1772: Confused about usage of register: R12 in 'UnsetPending'
+AwardInfo = AwardInfo
 
-;
-(_ENV.AwardInfo).Constructor = function(self)
-  -- function num : 0_71
+function AwardInfo:Constructor()
   self.m_award_id = 0
   self.m_item_id = 0
   self.m_count = 0
@@ -1301,33 +1279,32 @@ _ENV.AwardInfo = _ENV.AwardInfo
   self.m_reward_type = 0
 end
 
--- DECOMPILER ERROR at PC1816: Confused about usage of register: R12 in 'UnsetPending'
-
-;
-(_ENV.AwardInfo)._proto = {
-[1] = {"m_award_id", "int"}
-, 
-[2] = {"m_item_id", "int"}
-, 
-[3] = {"m_count", "int"}
-, 
-[4] = {"m_lottery_count", "int"}
-, 
-[5] = {"m_weight", "int"}
-, 
-[6] = {"m_is_big_reward", "bool"}
-, 
-[7] = {"m_lottery_limit_count", "int"}
-, 
-[8] = {"m_reward_type", "int"}
+AwardInfo._proto = {
+  [1] = {"m_award_id", "int"},
+  [2] = {"m_item_id", "int"},
+  [3] = {"m_count", "int"},
+  [4] = {
+    "m_lottery_count",
+    "int"
+  },
+  [5] = {"m_weight", "int"},
+  [6] = {
+    "m_is_big_reward",
+    "bool"
+  },
+  [7] = {
+    "m_lottery_limit_count",
+    "int"
+  },
+  [8] = {
+    "m_reward_type",
+    "int"
+  }
 }
 _class("LotteryAward", Object)
-_ENV.LotteryAward = _ENV.LotteryAward
--- DECOMPILER ERROR at PC1828: Confused about usage of register: R12 in 'UnsetPending'
+LotteryAward = LotteryAward
 
-;
-(_ENV.LotteryAward).Constructor = function(self)
-  -- function num : 0_72
+function LotteryAward:Constructor()
   self.m_item_id = 0
   self.m_count = 0
   self.m_is_big_reward = false
@@ -1335,43 +1312,36 @@ _ENV.LotteryAward = _ENV.LotteryAward
   self.m_reward_type = 0
 end
 
--- DECOMPILER ERROR at PC1857: Confused about usage of register: R12 in 'UnsetPending'
-
-;
-(_ENV.LotteryAward)._proto = {
-[1] = {"m_item_id", "int"}
-, 
-[2] = {"m_count", "int"}
-, 
-[3] = {"m_is_big_reward", "bool"}
-, 
-[4] = {"m_awaid_id", "int"}
-, 
-[5] = {"m_reward_type", "int"}
+LotteryAward._proto = {
+  [1] = {"m_item_id", "int"},
+  [2] = {"m_count", "int"},
+  [3] = {
+    "m_is_big_reward",
+    "bool"
+  },
+  [4] = {"m_awaid_id", "int"},
+  [5] = {
+    "m_reward_type",
+    "int"
+  }
 }
 _class("CLotteryComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CLotteryComponentDataInfo = _ENV.CLotteryComponentDataInfo
--- DECOMPILER ERROR at PC1869: Confused about usage of register: R12 in 'UnsetPending'
+CLotteryComponentDataInfo = CLotteryComponentDataInfo
 
-;
-(_ENV.CLotteryComponentDataInfo).Constructor = function(self)
-  -- function num : 0_73
+function CLotteryComponentDataInfo:Constructor()
   self.m_unlock_jackpots = {}
 end
 
--- DECOMPILER ERROR at PC1878: Confused about usage of register: R12 in 'UnsetPending'
-
-;
-(_ENV.CLotteryComponentDataInfo)._proto = {
-[1] = {"m_unlock_jackpots", "map<int,list<AwardInfo>>"}
+CLotteryComponentDataInfo._proto = {
+  [1] = {
+    "m_unlock_jackpots",
+    "map<int,list<AwardInfo>>"
+  }
 }
 _class("LotteryComponentInfo", ICampaignComponentInfo)
-_ENV.LotteryComponentInfo = _ENV.LotteryComponentInfo
--- DECOMPILER ERROR at PC1890: Confused about usage of register: R12 in 'UnsetPending'
+LotteryComponentInfo = LotteryComponentInfo
 
-;
-(_ENV.LotteryComponentInfo).Constructor = function(self)
-  -- function num : 0_74
+function LotteryComponentInfo:Constructor()
   self.m_cost_item_id = 0
   self.m_cost_count = 0
   self.m_multi_lottery = 0
@@ -1379,268 +1349,239 @@ _ENV.LotteryComponentInfo = _ENV.LotteryComponentInfo
   self.m_jackpots = {}
 end
 
--- DECOMPILER ERROR at PC1919: Confused about usage of register: R12 in 'UnsetPending'
-
-;
-(_ENV.LotteryComponentInfo)._proto = {
-[1] = {"m_cost_item_id", "int"}
-, 
-[2] = {"m_cost_count", "int"}
-, 
-[3] = {"m_multi_lottery", "int"}
-, 
-[4] = {"m_unlock_jackpots", "list<int>"}
-, 
-[5] = {"m_jackpots", "map<int,list<AwardInfo>>"}
+LotteryComponentInfo._proto = {
+  [1] = {
+    "m_cost_item_id",
+    "int"
+  },
+  [2] = {
+    "m_cost_count",
+    "int"
+  },
+  [3] = {
+    "m_multi_lottery",
+    "int"
+  },
+  [4] = {
+    "m_unlock_jackpots",
+    "list<int>"
+  },
+  [5] = {
+    "m_jackpots",
+    "map<int,list<AwardInfo>>"
+  }
 }
 _class("LotteryComponentLotteryReq", ICampaignComRequest)
-_ENV.LotteryComponentLotteryReq = _ENV.LotteryComponentLotteryReq
--- DECOMPILER ERROR at PC1931: Confused about usage of register: R12 in 'UnsetPending'
+LotteryComponentLotteryReq = LotteryComponentLotteryReq
 
-;
-(_ENV.LotteryComponentLotteryReq).Constructor = function(self)
-  -- function num : 0_75
+function LotteryComponentLotteryReq:Constructor()
   self.m_lottery_type = 0
   self.m_jackpot_index = 0
 end
 
--- DECOMPILER ERROR at PC1945: Confused about usage of register: R12 in 'UnsetPending'
-
-;
-(_ENV.LotteryComponentLotteryReq)._proto = {
-[1] = {"m_lottery_type", "int"}
-, 
-[2] = {"m_jackpot_index", "int"}
+LotteryComponentLotteryReq._proto = {
+  [1] = {
+    "m_lottery_type",
+    "int"
+  },
+  [2] = {
+    "m_jackpot_index",
+    "int"
+  }
 }
 _class("LotteryComponentLotteryRep", ICampaignComResponse)
-_ENV.LotteryComponentLotteryRep = _ENV.LotteryComponentLotteryRep
--- DECOMPILER ERROR at PC1957: Confused about usage of register: R12 in 'UnsetPending'
+LotteryComponentLotteryRep = LotteryComponentLotteryRep
 
-;
-(_ENV.LotteryComponentLotteryRep).Constructor = function(self)
-  -- function num : 0_76
+function LotteryComponentLotteryRep:Constructor()
   self.m_rewards = {}
   self.m_jackpot = {}
   self.m_is_open_new = false
   self.m_unlock_jackpot_index = 0
 end
 
--- DECOMPILER ERROR at PC1981: Confused about usage of register: R12 in 'UnsetPending'
-
-;
-(_ENV.LotteryComponentLotteryRep)._proto = {
-[1] = {"m_rewards", "list<LotteryAward>"}
-, 
-[2] = {"m_jackpot", "list<AwardInfo>"}
-, 
-[3] = {"m_is_open_new", "bool"}
-, 
-[4] = {"m_unlock_jackpot_index", "int"}
+LotteryComponentLotteryRep._proto = {
+  [1] = {
+    "m_rewards",
+    "list<LotteryAward>"
+  },
+  [2] = {
+    "m_jackpot",
+    "list<AwardInfo>"
+  },
+  [3] = {
+    "m_is_open_new",
+    "bool"
+  },
+  [4] = {
+    "m_unlock_jackpot_index",
+    "int"
+  }
 }
 local MissionStoryType = {E_MISSION_BEGIN = 1, E_MISSION_END = 2}
 _enum("MissionStoryType", MissionStoryType)
-local MissionGradeType = {E_INVALID = 0, E_B = 1, E_A = 2, E_S = 4}
+local MissionGradeType = {
+  E_INVALID = 0,
+  E_B = 1,
+  E_A = 2,
+  E_S = 4
+}
 _enum("MissionGradeType", MissionGradeType)
 _class("MiniGameMissionInfo", Object)
-_ENV.MiniGameMissionInfo = _ENV.MiniGameMissionInfo
--- DECOMPILER ERROR at PC2016: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameMissionInfo = MiniGameMissionInfo
 
-;
-(_ENV.MiniGameMissionInfo).Constructor = function(self)
-  -- function num : 0_77
+function MiniGameMissionInfo:Constructor()
   self.max_score = 0
   self.story_mask = 0
   self.reward_mask = 0
   self.mission_grade = 0
 end
 
--- DECOMPILER ERROR at PC2040: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameMissionInfo)._proto = {
-[1] = {"max_score", "int"}
-, 
-[2] = {"story_mask", "int"}
-, 
-[3] = {"reward_mask", "int"}
-, 
-[4] = {"mission_grade", "int"}
+MiniGameMissionInfo._proto = {
+  [1] = {"max_score", "int"},
+  [2] = {"story_mask", "int"},
+  [3] = {
+    "reward_mask",
+    "int"
+  },
+  [4] = {
+    "mission_grade",
+    "int"
+  }
 }
 _class("CMiniGameComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CMiniGameComponentDataInfo = _ENV.CMiniGameComponentDataInfo
--- DECOMPILER ERROR at PC2052: Confused about usage of register: R14 in 'UnsetPending'
+CMiniGameComponentDataInfo = CMiniGameComponentDataInfo
 
-;
-(_ENV.CMiniGameComponentDataInfo).Constructor = function(self)
-  -- function num : 0_78
+function CMiniGameComponentDataInfo:Constructor()
   self.m_mission_list = {}
 end
 
--- DECOMPILER ERROR at PC2061: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.CMiniGameComponentDataInfo)._proto = {
-[1] = {"m_mission_list", "map<int,MiniGameMissionInfo>"}
+CMiniGameComponentDataInfo._proto = {
+  [1] = {
+    "m_mission_list",
+    "map<int,MiniGameMissionInfo>"
+  }
 }
 _class("MiniGameInfo", Object)
-_ENV.MiniGameInfo = _ENV.MiniGameInfo
--- DECOMPILER ERROR at PC2073: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameInfo = MiniGameInfo
 
-;
-(_ENV.MiniGameInfo).Constructor = function(self)
-  -- function num : 0_79 , upvalues : _ENV
+function MiniGameInfo:Constructor()
   self.unlock_time = 0
   self.mission_info = MiniGameMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC2087: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameInfo)._proto = {
-[1] = {"unlock_time", "time"}
-, 
-[2] = {"mission_info", "MiniGameMissionInfo"}
+MiniGameInfo._proto = {
+  [1] = {
+    "unlock_time",
+    "time"
+  },
+  [2] = {
+    "mission_info",
+    "MiniGameMissionInfo"
+  }
 }
 _class("MiniGameComponentInfo", ICampaignComponentInfo)
-_ENV.MiniGameComponentInfo = _ENV.MiniGameComponentInfo
--- DECOMPILER ERROR at PC2099: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameComponentInfo = MiniGameComponentInfo
 
-;
-(_ENV.MiniGameComponentInfo).Constructor = function(self)
-  -- function num : 0_80
+function MiniGameComponentInfo:Constructor()
   self.mission_info_list = {}
 end
 
--- DECOMPILER ERROR at PC2108: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameComponentInfo)._proto = {
-[1] = {"mission_info_list", "map<int,MiniGameInfo>"}
+MiniGameComponentInfo._proto = {
+  [1] = {
+    "mission_info_list",
+    "map<int,MiniGameInfo>"
+  }
 }
 _class("MiniGameComponentMissionStoryReq", ICampaignComRequest)
-_ENV.MiniGameComponentMissionStoryReq = _ENV.MiniGameComponentMissionStoryReq
--- DECOMPILER ERROR at PC2120: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameComponentMissionStoryReq = MiniGameComponentMissionStoryReq
 
-;
-(_ENV.MiniGameComponentMissionStoryReq).Constructor = function(self)
-  -- function num : 0_81
+function MiniGameComponentMissionStoryReq:Constructor()
   self.mission_id = 0
   self.story_type = 0
 end
 
--- DECOMPILER ERROR at PC2134: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameComponentMissionStoryReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"story_type", "int"}
+MiniGameComponentMissionStoryReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"story_type", "int"}
 }
 _class("MiniGameComponentMissionStoryRep", ICampaignComResponse)
-_ENV.MiniGameComponentMissionStoryRep = _ENV.MiniGameComponentMissionStoryRep
--- DECOMPILER ERROR at PC2146: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameComponentMissionStoryRep = MiniGameComponentMissionStoryRep
 
-;
-(_ENV.MiniGameComponentMissionStoryRep).Constructor = function(self)
-  -- function num : 0_82 , upvalues : _ENV
+function MiniGameComponentMissionStoryRep:Constructor()
   self.mission_id = 0
   self.info = MiniGameInfo:New()
 end
 
--- DECOMPILER ERROR at PC2160: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameComponentMissionStoryRep)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"info", "MiniGameInfo"}
+MiniGameComponentMissionStoryRep._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "info",
+    "MiniGameInfo"
+  }
 }
 _class("MiniGameComponentScoreReq", ICampaignComRequest)
-_ENV.MiniGameComponentScoreReq = _ENV.MiniGameComponentScoreReq
--- DECOMPILER ERROR at PC2172: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameComponentScoreReq = MiniGameComponentScoreReq
 
-;
-(_ENV.MiniGameComponentScoreReq).Constructor = function(self)
-  -- function num : 0_83
+function MiniGameComponentScoreReq:Constructor()
   self.mission_id = 0
   self.score = 0
 end
 
--- DECOMPILER ERROR at PC2186: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameComponentScoreReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"score", "int"}
+MiniGameComponentScoreReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"score", "int"}
 }
 _class("MiniGameComponentScoreRep", ICampaignComResponse)
-_ENV.MiniGameComponentScoreRep = _ENV.MiniGameComponentScoreRep
--- DECOMPILER ERROR at PC2198: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameComponentScoreRep = MiniGameComponentScoreRep
 
-;
-(_ENV.MiniGameComponentScoreRep).Constructor = function(self)
-  -- function num : 0_84 , upvalues : _ENV
+function MiniGameComponentScoreRep:Constructor()
   self.mission_id = 0
   self.info = MiniGameInfo:New()
 end
 
--- DECOMPILER ERROR at PC2212: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameComponentScoreRep)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"info", "MiniGameInfo"}
+MiniGameComponentScoreRep._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "info",
+    "MiniGameInfo"
+  }
 }
 _class("MiniGameComponentRecvRewardReq", ICampaignComRequest)
-_ENV.MiniGameComponentRecvRewardReq = _ENV.MiniGameComponentRecvRewardReq
--- DECOMPILER ERROR at PC2224: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameComponentRecvRewardReq = MiniGameComponentRecvRewardReq
 
-;
-(_ENV.MiniGameComponentRecvRewardReq).Constructor = function(self)
-  -- function num : 0_85
+function MiniGameComponentRecvRewardReq:Constructor()
   self.mission_id = 0
   self.grade = 0
 end
 
--- DECOMPILER ERROR at PC2238: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameComponentRecvRewardReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"grade", "int"}
+MiniGameComponentRecvRewardReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"grade", "int"}
 }
 _class("MiniGameComponentRecvRewardRep", ICampaignComResponse)
-_ENV.MiniGameComponentRecvRewardRep = _ENV.MiniGameComponentRecvRewardRep
--- DECOMPILER ERROR at PC2250: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameComponentRecvRewardRep = MiniGameComponentRecvRewardRep
 
-;
-(_ENV.MiniGameComponentRecvRewardRep).Constructor = function(self)
-  -- function num : 0_86 , upvalues : _ENV
+function MiniGameComponentRecvRewardRep:Constructor()
   self.rewards = {}
   self.mission_id = 0
   self.info = MiniGameInfo:New()
 end
 
--- DECOMPILER ERROR at PC2269: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameComponentRecvRewardRep)._proto = {
-[1] = {"rewards", "list<RoleAsset>"}
-, 
-[2] = {"mission_id", "int"}
-, 
-[3] = {"info", "MiniGameInfo"}
+MiniGameComponentRecvRewardRep._proto = {
+  [1] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [2] = {"mission_id", "int"},
+  [3] = {
+    "info",
+    "MiniGameInfo"
+  }
 }
 _class("MiniGameExploreComponentData", ICampaignComponentDataInfo)
-_ENV.MiniGameExploreComponentData = _ENV.MiniGameExploreComponentData
--- DECOMPILER ERROR at PC2281: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameExploreComponentData = MiniGameExploreComponentData
 
-;
-(_ENV.MiniGameExploreComponentData).Constructor = function(self)
-  -- function num : 0_87
+function MiniGameExploreComponentData:Constructor()
   self.used_high_equip_num = 0
   self.used_low_equip_num = 0
   self.last_refresh_time = 0
@@ -1651,207 +1592,189 @@ _ENV.MiniGameExploreComponentData = _ENV.MiniGameExploreComponentData
   self.have_deal_bug = false
 end
 
--- DECOMPILER ERROR at PC2325: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameExploreComponentData)._proto = {
-[1] = {"used_high_equip_num", "int"}
-, 
-[2] = {"used_low_equip_num", "int"}
-, 
-[3] = {"last_refresh_time", "time"}
-, 
-[4] = {"have_new_high_equip", "bool"}
-, 
-[5] = {"m_last_equip_id", "int"}
-, 
-[6] = {"real_used_high_equip_num", "int"}
-, 
-[7] = {"real_used_low_equip_num", "int"}
-, 
-[8] = {"have_deal_bug", "bool"}
+MiniGameExploreComponentData._proto = {
+  [1] = {
+    "used_high_equip_num",
+    "int"
+  },
+  [2] = {
+    "used_low_equip_num",
+    "int"
+  },
+  [3] = {
+    "last_refresh_time",
+    "time"
+  },
+  [4] = {
+    "have_new_high_equip",
+    "bool"
+  },
+  [5] = {
+    "m_last_equip_id",
+    "int"
+  },
+  [6] = {
+    "real_used_high_equip_num",
+    "int"
+  },
+  [7] = {
+    "real_used_low_equip_num",
+    "int"
+  },
+  [8] = {
+    "have_deal_bug",
+    "bool"
+  }
 }
 _class("MiniGameExploreComponentLoadInfo", ICampaignComponentInfo)
-_ENV.MiniGameExploreComponentLoadInfo = _ENV.MiniGameExploreComponentLoadInfo
--- DECOMPILER ERROR at PC2337: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameExploreComponentLoadInfo = MiniGameExploreComponentLoadInfo
 
-;
-(_ENV.MiniGameExploreComponentLoadInfo).Constructor = function(self)
-  -- function num : 0_88
+function MiniGameExploreComponentLoadInfo:Constructor()
   self.used_high_equip_num = 0
   self.used_low_equip_num = 0
   self.next_refresh_time = 0
   self.have_new_high_equip = false
 end
 
--- DECOMPILER ERROR at PC2361: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameExploreComponentLoadInfo)._proto = {
-[1] = {"used_high_equip_num", "int"}
-, 
-[2] = {"used_low_equip_num", "int"}
-, 
-[3] = {"next_refresh_time", "time"}
-, 
-[4] = {"have_new_high_equip", "bool"}
+MiniGameExploreComponentLoadInfo._proto = {
+  [1] = {
+    "used_high_equip_num",
+    "int"
+  },
+  [2] = {
+    "used_low_equip_num",
+    "int"
+  },
+  [3] = {
+    "next_refresh_time",
+    "time"
+  },
+  [4] = {
+    "have_new_high_equip",
+    "bool"
+  }
 }
 _class("MiniGameExploreComponentRandomLocationReq", ICampaignComRequest)
-_ENV.MiniGameExploreComponentRandomLocationReq = _ENV.MiniGameExploreComponentRandomLocationReq
--- DECOMPILER ERROR at PC2373: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameExploreComponentRandomLocationReq = MiniGameExploreComponentRandomLocationReq
 
-;
-(_ENV.MiniGameExploreComponentRandomLocationReq).Constructor = function(self)
-  -- function num : 0_89
+function MiniGameExploreComponentRandomLocationReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC2377: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameExploreComponentRandomLocationReq)._proto = {}
+MiniGameExploreComponentRandomLocationReq._proto = {}
 _class("MiniGameExploreComponentRandomPostionReply", ICampaignComResponse)
-_ENV.MiniGameExploreComponentRandomPostionReply = _ENV.MiniGameExploreComponentRandomPostionReply
--- DECOMPILER ERROR at PC2389: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameExploreComponentRandomPostionReply = MiniGameExploreComponentRandomPostionReply
 
-;
-(_ENV.MiniGameExploreComponentRandomPostionReply).Constructor = function(self)
-  -- function num : 0_90
+function MiniGameExploreComponentRandomPostionReply:Constructor()
   self.postion_id = 0
 end
 
--- DECOMPILER ERROR at PC2398: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameExploreComponentRandomPostionReply)._proto = {
-[1] = {"postion_id", "int"}
+MiniGameExploreComponentRandomPostionReply._proto = {
+  [1] = {"postion_id", "int"}
 }
 _class("MiniGameExploreComponentRecvRewardReq", ICampaignComRequest)
-_ENV.MiniGameExploreComponentRecvRewardReq = _ENV.MiniGameExploreComponentRecvRewardReq
--- DECOMPILER ERROR at PC2410: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameExploreComponentRecvRewardReq = MiniGameExploreComponentRecvRewardReq
 
-;
-(_ENV.MiniGameExploreComponentRecvRewardReq).Constructor = function(self)
-  -- function num : 0_91
+function MiniGameExploreComponentRecvRewardReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC2414: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameExploreComponentRecvRewardReq)._proto = {}
+MiniGameExploreComponentRecvRewardReq._proto = {}
 _class("MiniGameExploreComponentRecvRewardReply", ICampaignComResponse)
-_ENV.MiniGameExploreComponentRecvRewardReply = _ENV.MiniGameExploreComponentRecvRewardReply
--- DECOMPILER ERROR at PC2426: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameExploreComponentRecvRewardReply = MiniGameExploreComponentRecvRewardReply
 
-;
-(_ENV.MiniGameExploreComponentRecvRewardReply).Constructor = function(self)
-  -- function num : 0_92
+function MiniGameExploreComponentRecvRewardReply:Constructor()
   self.rewards = {}
   self.used_high_equip_num = 0
   self.used_low_equip_num = 0
   self.next_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC2450: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameExploreComponentRecvRewardReply)._proto = {
-[1] = {"rewards", "list<RoleAsset>"}
-, 
-[2] = {"used_high_equip_num", "int"}
-, 
-[3] = {"used_low_equip_num", "int"}
-, 
-[4] = {"next_refresh_time", "time"}
+MiniGameExploreComponentRecvRewardReply._proto = {
+  [1] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [2] = {
+    "used_high_equip_num",
+    "int"
+  },
+  [3] = {
+    "used_low_equip_num",
+    "int"
+  },
+  [4] = {
+    "next_refresh_time",
+    "time"
+  }
 }
 _class("MiniGameExploreComponentClearNewEquipReq", ICampaignComRequest)
-_ENV.MiniGameExploreComponentClearNewEquipReq = _ENV.MiniGameExploreComponentClearNewEquipReq
--- DECOMPILER ERROR at PC2462: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameExploreComponentClearNewEquipReq = MiniGameExploreComponentClearNewEquipReq
 
-;
-(_ENV.MiniGameExploreComponentClearNewEquipReq).Constructor = function(self)
-  -- function num : 0_93
+function MiniGameExploreComponentClearNewEquipReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC2466: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameExploreComponentClearNewEquipReq)._proto = {}
+MiniGameExploreComponentClearNewEquipReq._proto = {}
 _class("MiniGameExploreComponentClearNewEquipReply", ICampaignComResponse)
-_ENV.MiniGameExploreComponentClearNewEquipReply = _ENV.MiniGameExploreComponentClearNewEquipReply
--- DECOMPILER ERROR at PC2478: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameExploreComponentClearNewEquipReply = MiniGameExploreComponentClearNewEquipReply
 
-;
-(_ENV.MiniGameExploreComponentClearNewEquipReply).Constructor = function(self)
-  -- function num : 0_94
+function MiniGameExploreComponentClearNewEquipReply:Constructor()
 end
 
--- DECOMPILER ERROR at PC2482: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameExploreComponentClearNewEquipReply)._proto = {}
+MiniGameExploreComponentClearNewEquipReply._proto = {}
 _class("MiniGameFishingChallengeComponentData", ICampaignComponentDataInfo)
-_ENV.MiniGameFishingChallengeComponentData = _ENV.MiniGameFishingChallengeComponentData
--- DECOMPILER ERROR at PC2494: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameFishingChallengeComponentData = MiniGameFishingChallengeComponentData
 
-;
-(_ENV.MiniGameFishingChallengeComponentData).Constructor = function(self)
-  -- function num : 0_95
+function MiniGameFishingChallengeComponentData:Constructor()
   self.append_postions = {}
 end
 
--- DECOMPILER ERROR at PC2503: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameFishingChallengeComponentData)._proto = {
-[1] = {"append_postions", "list<int>"}
+MiniGameFishingChallengeComponentData._proto = {
+  [1] = {
+    "append_postions",
+    "list<int>"
+  }
 }
 _class("MiniGameFishingChallengeComponentLoadInfo", ICampaignComponentInfo)
-_ENV.MiniGameFishingChallengeComponentLoadInfo = _ENV.MiniGameFishingChallengeComponentLoadInfo
--- DECOMPILER ERROR at PC2515: Confused about usage of register: R14 in 'UnsetPending'
+MiniGameFishingChallengeComponentLoadInfo = MiniGameFishingChallengeComponentLoadInfo
 
-;
-(_ENV.MiniGameFishingChallengeComponentLoadInfo).Constructor = function(self)
-  -- function num : 0_96
+function MiniGameFishingChallengeComponentLoadInfo:Constructor()
   self.append_postions = {}
 end
 
--- DECOMPILER ERROR at PC2524: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.MiniGameFishingChallengeComponentLoadInfo)._proto = {
-[1] = {"append_postions", "list<int>"}
+MiniGameFishingChallengeComponentLoadInfo._proto = {
+  [1] = {
+    "append_postions",
+    "list<int>"
+  }
 }
 local LVRewardComponentNotifyType = {LVRewardComponentNotify_LevelProgressChanged = 1, LVRewardComponentNotify_UnlockAdvanced = 2}
 _enum("LVRewardComponentNotifyType", LVRewardComponentNotifyType)
 _class("CLVRewardComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CLVRewardComponentDataInfo = _ENV.CLVRewardComponentDataInfo
--- DECOMPILER ERROR at PC2545: Confused about usage of register: R15 in 'UnsetPending'
+CLVRewardComponentDataInfo = CLVRewardComponentDataInfo
 
-;
-(_ENV.CLVRewardComponentDataInfo).Constructor = function(self)
-  -- function num : 0_97
+function CLVRewardComponentDataInfo:Constructor()
   self.m_received_normal_lv = {}
   self.m_received_advanced_lv = {}
   self.m_unlock_advanced = false
 end
 
--- DECOMPILER ERROR at PC2564: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.CLVRewardComponentDataInfo)._proto = {
-[1] = {"m_received_normal_lv", "list<int>"}
-, 
-[2] = {"m_received_advanced_lv", "list<int>"}
-, 
-[3] = {"m_unlock_advanced", "bool"}
+CLVRewardComponentDataInfo._proto = {
+  [1] = {
+    "m_received_normal_lv",
+    "list<int>"
+  },
+  [2] = {
+    "m_received_advanced_lv",
+    "list<int>"
+  },
+  [3] = {
+    "m_unlock_advanced",
+    "bool"
+  }
 }
 _class("LVRewardComponentInfo", ICampaignComponentInfo)
-_ENV.LVRewardComponentInfo = _ENV.LVRewardComponentInfo
--- DECOMPILER ERROR at PC2576: Confused about usage of register: R15 in 'UnsetPending'
+LVRewardComponentInfo = LVRewardComponentInfo
 
-;
-(_ENV.LVRewardComponentInfo).Constructor = function(self)
-  -- function num : 0_98
+function LVRewardComponentInfo:Constructor()
   self.m_item_id = 0
   self.m_current_level = 1
   self.m_received_normal_lv = {}
@@ -1864,148 +1787,152 @@ _ENV.LVRewardComponentInfo = _ENV.LVRewardComponentInfo
   self.m_level_max_progress = 0
 end
 
--- DECOMPILER ERROR at PC2631: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.LVRewardComponentInfo)._proto = {
-[1] = {"m_item_id", "int"}
-, 
-[2] = {"m_current_level", "int"}
-, 
-[3] = {"m_received_normal_lv", "list<int>"}
-, 
-[4] = {"m_received_advanced_lv", "list<int>"}
-, 
-[5] = {"m_normal_begin_reward_id", "int"}
-, 
-[6] = {"m_advanced_begin_reward_id", "int"}
-, 
-[7] = {"m_max_level", "int"}
-, 
-[8] = {"m_unlock_advanced_reward", "bool"}
-, 
-[9] = {"m_current_progress", "int"}
-, 
-[10] = {"m_level_max_progress", "int"}
+LVRewardComponentInfo._proto = {
+  [1] = {"m_item_id", "int"},
+  [2] = {
+    "m_current_level",
+    "int"
+  },
+  [3] = {
+    "m_received_normal_lv",
+    "list<int>"
+  },
+  [4] = {
+    "m_received_advanced_lv",
+    "list<int>"
+  },
+  [5] = {
+    "m_normal_begin_reward_id",
+    "int"
+  },
+  [6] = {
+    "m_advanced_begin_reward_id",
+    "int"
+  },
+  [7] = {
+    "m_max_level",
+    "int"
+  },
+  [8] = {
+    "m_unlock_advanced_reward",
+    "bool"
+  },
+  [9] = {
+    "m_current_progress",
+    "int"
+  },
+  [10] = {
+    "m_level_max_progress",
+    "int"
+  }
 }
 _class("LVRewardComponentReceiveRewardReq", ICampaignComRequest)
-_ENV.LVRewardComponentReceiveRewardReq = _ENV.LVRewardComponentReceiveRewardReq
--- DECOMPILER ERROR at PC2643: Confused about usage of register: R15 in 'UnsetPending'
+LVRewardComponentReceiveRewardReq = LVRewardComponentReceiveRewardReq
 
-;
-(_ENV.LVRewardComponentReceiveRewardReq).Constructor = function(self)
-  -- function num : 0_99
+function LVRewardComponentReceiveRewardReq:Constructor()
   self.m_req_level = 0
   self.m_is_advanced = false
 end
 
--- DECOMPILER ERROR at PC2658: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.LVRewardComponentReceiveRewardReq)._proto = {
-[1] = {"m_req_level", "int"}
-, 
-[2] = {"m_is_advanced", "bool"}
+LVRewardComponentReceiveRewardReq._proto = {
+  [1] = {
+    "m_req_level",
+    "int"
+  },
+  [2] = {
+    "m_is_advanced",
+    "bool"
+  }
 }
 _class("LVRewardComponentReceiveRewardRep", ICampaignComResponse)
-_ENV.LVRewardComponentReceiveRewardRep = _ENV.LVRewardComponentReceiveRewardRep
--- DECOMPILER ERROR at PC2670: Confused about usage of register: R15 in 'UnsetPending'
+LVRewardComponentReceiveRewardRep = LVRewardComponentReceiveRewardRep
 
-;
-(_ENV.LVRewardComponentReceiveRewardRep).Constructor = function(self)
-  -- function num : 0_100 , upvalues : _ENV
+function LVRewardComponentReceiveRewardRep:Constructor()
   self.m_reward_info = RoleAsset:New()
 end
 
--- DECOMPILER ERROR at PC2680: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.LVRewardComponentReceiveRewardRep)._proto = {
-[1] = {"m_reward_info", "RoleAsset"}
+LVRewardComponentReceiveRewardRep._proto = {
+  [1] = {
+    "m_reward_info",
+    "RoleAsset"
+  }
 }
 _class("LVRewardComponentOneKeyReceiveRewardReq", ICampaignComRequest)
-_ENV.LVRewardComponentOneKeyReceiveRewardReq = _ENV.LVRewardComponentOneKeyReceiveRewardReq
--- DECOMPILER ERROR at PC2692: Confused about usage of register: R15 in 'UnsetPending'
+LVRewardComponentOneKeyReceiveRewardReq = LVRewardComponentOneKeyReceiveRewardReq
 
-;
-(_ENV.LVRewardComponentOneKeyReceiveRewardReq).Constructor = function(self)
-  -- function num : 0_101
+function LVRewardComponentOneKeyReceiveRewardReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC2696: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.LVRewardComponentOneKeyReceiveRewardReq)._proto = {}
+LVRewardComponentOneKeyReceiveRewardReq._proto = {}
 _class("LVRewardComponentOneKeyReceiveRewardRep", ICampaignComResponse)
-_ENV.LVRewardComponentOneKeyReceiveRewardRep = _ENV.LVRewardComponentOneKeyReceiveRewardRep
--- DECOMPILER ERROR at PC2708: Confused about usage of register: R15 in 'UnsetPending'
+LVRewardComponentOneKeyReceiveRewardRep = LVRewardComponentOneKeyReceiveRewardRep
 
-;
-(_ENV.LVRewardComponentOneKeyReceiveRewardRep).Constructor = function(self)
-  -- function num : 0_102
+function LVRewardComponentOneKeyReceiveRewardRep:Constructor()
   self.m_rewards = {}
   self.m_received_normal = {}
   self.m_received_advanced = {}
 end
 
--- DECOMPILER ERROR at PC2728: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.LVRewardComponentOneKeyReceiveRewardRep)._proto = {
-[1] = {"m_rewards", "list<RoleAsset>"}
-, 
-[2] = {"m_received_normal", "list<int>"}
-, 
-[3] = {"m_received_advanced", "list<int>"}
+LVRewardComponentOneKeyReceiveRewardRep._proto = {
+  [1] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  },
+  [2] = {
+    "m_received_normal",
+    "list<int>"
+  },
+  [3] = {
+    "m_received_advanced",
+    "list<int>"
+  }
 }
 _class("NotifyLVRewardComponentLevelProgressChanged", Object)
-_ENV.NotifyLVRewardComponentLevelProgressChanged = _ENV.NotifyLVRewardComponentLevelProgressChanged
--- DECOMPILER ERROR at PC2740: Confused about usage of register: R15 in 'UnsetPending'
+NotifyLVRewardComponentLevelProgressChanged = NotifyLVRewardComponentLevelProgressChanged
 
-;
-(_ENV.NotifyLVRewardComponentLevelProgressChanged).Constructor = function(self)
-  -- function num : 0_103
+function NotifyLVRewardComponentLevelProgressChanged:Constructor()
   self.m_level = 0
   self.m_progress = 0
 end
 
--- DECOMPILER ERROR at PC2755: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.NotifyLVRewardComponentLevelProgressChanged)._proto = {
-[1] = {"m_level", "int"}
-, 
-[2] = {"m_progress", "int"}
+NotifyLVRewardComponentLevelProgressChanged._proto = {
+  [1] = {"m_level", "int"},
+  [2] = {"m_progress", "int"}
 }
 _class("NotifyLVRewardComponentUnlockAdvanced", Object)
-_ENV.NotifyLVRewardComponentUnlockAdvanced = _ENV.NotifyLVRewardComponentUnlockAdvanced
--- DECOMPILER ERROR at PC2767: Confused about usage of register: R15 in 'UnsetPending'
+NotifyLVRewardComponentUnlockAdvanced = NotifyLVRewardComponentUnlockAdvanced
 
-;
-(_ENV.NotifyLVRewardComponentUnlockAdvanced).Constructor = function(self)
-  -- function num : 0_104
+function NotifyLVRewardComponentUnlockAdvanced:Constructor()
   self.m_unlock_advanced_reward = false
 end
 
--- DECOMPILER ERROR at PC2777: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.NotifyLVRewardComponentUnlockAdvanced)._proto = {
-[1] = {"m_unlock_advanced_reward", "bool"}
+NotifyLVRewardComponentUnlockAdvanced._proto = {
+  [1] = {
+    "m_unlock_advanced_reward",
+    "bool"
+  }
 }
 local BuyGiftComponentNotifyType = {BuyGiftComponentNotify_BuyStateChanged = 1}
 _enum("BuyGiftComponentNotifyType", BuyGiftComponentNotifyType)
-local BuyGiftStateType = {EBGST_INIT = 0, EBGST_ADVANCED = 1, EBGST_LUXURY = 2}
+local BuyGiftStateType = {
+  EBGST_INIT = 0,
+  EBGST_ADVANCED = 1,
+  EBGST_LUXURY = 2
+}
 _enum("BuyGiftStateType", BuyGiftStateType)
-local CampaignGiftType = {ECGT_ADVANCED = 0, ECGT_LUXURY = 1, ECGT_ADDITIONALBUY = 2, ECGT_BPLEVEL = 3, ECGT_BACK = 4, ECGT_SENIOR_SKIN = 5}
+local CampaignGiftType = {
+  ECGT_ADVANCED = 0,
+  ECGT_LUXURY = 1,
+  ECGT_ADDITIONALBUY = 2,
+  ECGT_BPLEVEL = 3,
+  ECGT_BACK = 4,
+  ECGT_SENIOR_SKIN = 5
+}
 _enum("CampaignGiftType", CampaignGiftType)
 _class("CampaignGiftInfo", Object)
-_ENV.CampaignGiftInfo = _ENV.CampaignGiftInfo
--- DECOMPILER ERROR at PC2829: Confused about usage of register: R18 in 'UnsetPending'
+CampaignGiftInfo = CampaignGiftInfo
 
-;
-(_ENV.CampaignGiftInfo).Constructor = function(self)
-  -- function num : 0_105
+function CampaignGiftInfo:Constructor()
   self.m_gift_id = 0
   self.m_gift_type = 1
   self.m_midas_id = ""
@@ -2014,158 +1941,142 @@ _ENV.CampaignGiftInfo = _ENV.CampaignGiftInfo
   self.m_now_price = 0
 end
 
--- DECOMPILER ERROR at PC2864: Confused about usage of register: R18 in 'UnsetPending'
-
-;
-(_ENV.CampaignGiftInfo)._proto = {
-[1] = {"m_gift_id", "int"}
-, 
-[2] = {"m_gift_type", "int"}
-, 
-[3] = {"m_midas_id", "string"}
-, 
-[4] = {"m_extra_award", "list<RoleAsset>"}
-, 
-[5] = {"m_raw_price", "int"}
-, 
-[6] = {"m_now_price", "int"}
+CampaignGiftInfo._proto = {
+  [1] = {"m_gift_id", "int"},
+  [2] = {
+    "m_gift_type",
+    "int"
+  },
+  [3] = {"m_midas_id", "string"},
+  [4] = {
+    "m_extra_award",
+    "list<RoleAsset>"
+  },
+  [5] = {
+    "m_raw_price",
+    "int"
+  },
+  [6] = {
+    "m_now_price",
+    "int"
+  }
 }
 _class("CBuyGiftComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CBuyGiftComponentDataInfo = _ENV.CBuyGiftComponentDataInfo
--- DECOMPILER ERROR at PC2876: Confused about usage of register: R18 in 'UnsetPending'
+CBuyGiftComponentDataInfo = CBuyGiftComponentDataInfo
 
-;
-(_ENV.CBuyGiftComponentDataInfo).Constructor = function(self)
-  -- function num : 0_106
+function CBuyGiftComponentDataInfo:Constructor()
   self.m_buy_state = 0
   self.m_buy_gift_map = {}
 end
 
--- DECOMPILER ERROR at PC2891: Confused about usage of register: R18 in 'UnsetPending'
-
-;
-(_ENV.CBuyGiftComponentDataInfo)._proto = {
-[1] = {"m_buy_state", "int"}
-, 
-[2] = {"m_buy_gift_map", "map<int,int>"}
+CBuyGiftComponentDataInfo._proto = {
+  [1] = {
+    "m_buy_state",
+    "int"
+  },
+  [2] = {
+    "m_buy_gift_map",
+    "map<int,int>"
+  }
 }
 _class("BuyGiftComponentInfo", ICampaignComponentInfo)
-_ENV.BuyGiftComponentInfo = _ENV.BuyGiftComponentInfo
--- DECOMPILER ERROR at PC2903: Confused about usage of register: R18 in 'UnsetPending'
+BuyGiftComponentInfo = BuyGiftComponentInfo
 
-;
-(_ENV.BuyGiftComponentInfo).Constructor = function(self)
-  -- function num : 0_107
+function BuyGiftComponentInfo:Constructor()
   self.m_buy_state = 0
   self.m_campaign_gift_list = {}
   self.m_buy_gift_map = {}
 end
 
--- DECOMPILER ERROR at PC2923: Confused about usage of register: R18 in 'UnsetPending'
-
-;
-(_ENV.BuyGiftComponentInfo)._proto = {
-[1] = {"m_buy_state", "int"}
-, 
-[2] = {"m_campaign_gift_list", "list<CampaignGiftInfo>"}
-, 
-[4] = {"m_buy_gift_map", "map<int,int>"}
+BuyGiftComponentInfo._proto = {
+  [1] = {
+    "m_buy_state",
+    "int"
+  },
+  [2] = {
+    "m_campaign_gift_list",
+    "list<CampaignGiftInfo>"
+  },
+  [4] = {
+    "m_buy_gift_map",
+    "map<int,int>"
+  }
 }
 _class("BuyGiftComponentApplyBuyReq", ICampaignComRequest)
-_ENV.BuyGiftComponentApplyBuyReq = _ENV.BuyGiftComponentApplyBuyReq
--- DECOMPILER ERROR at PC2935: Confused about usage of register: R18 in 'UnsetPending'
+BuyGiftComponentApplyBuyReq = BuyGiftComponentApplyBuyReq
 
-;
-(_ENV.BuyGiftComponentApplyBuyReq).Constructor = function(self)
-  -- function num : 0_108
+function BuyGiftComponentApplyBuyReq:Constructor()
   self.m_gift_id = 0
   self.m_buy_count = 1
 end
 
--- DECOMPILER ERROR at PC2950: Confused about usage of register: R18 in 'UnsetPending'
-
-;
-(_ENV.BuyGiftComponentApplyBuyReq)._proto = {
-[1] = {"m_gift_id", "int"}
-, 
-[2] = {"m_buy_count", "int"}
+BuyGiftComponentApplyBuyReq._proto = {
+  [1] = {"m_gift_id", "int"},
+  [2] = {
+    "m_buy_count",
+    "int"
+  }
 }
 _class("BuyGiftComponentApplyBuyRep", ICampaignComResponse)
-_ENV.BuyGiftComponentApplyBuyRep = _ENV.BuyGiftComponentApplyBuyRep
--- DECOMPILER ERROR at PC2962: Confused about usage of register: R18 in 'UnsetPending'
+BuyGiftComponentApplyBuyRep = BuyGiftComponentApplyBuyRep
 
-;
-(_ENV.BuyGiftComponentApplyBuyRep).Constructor = function(self)
-  -- function num : 0_109
+function BuyGiftComponentApplyBuyRep:Constructor()
 end
 
--- DECOMPILER ERROR at PC2966: Confused about usage of register: R18 in 'UnsetPending'
-
-;
-(_ENV.BuyGiftComponentApplyBuyRep)._proto = {}
+BuyGiftComponentApplyBuyRep._proto = {}
 _class("NotifyBuyGiftComponentBuyStateChange", Object)
-_ENV.NotifyBuyGiftComponentBuyStateChange = _ENV.NotifyBuyGiftComponentBuyStateChange
--- DECOMPILER ERROR at PC2978: Confused about usage of register: R18 in 'UnsetPending'
+NotifyBuyGiftComponentBuyStateChange = NotifyBuyGiftComponentBuyStateChange
 
-;
-(_ENV.NotifyBuyGiftComponentBuyStateChange).Constructor = function(self)
-  -- function num : 0_110
+function NotifyBuyGiftComponentBuyStateChange:Constructor()
   self.m_buy_state = 0
   self.m_buy_gift_map = {}
 end
 
--- DECOMPILER ERROR at PC2993: Confused about usage of register: R18 in 'UnsetPending'
-
-;
-(_ENV.NotifyBuyGiftComponentBuyStateChange)._proto = {
-[1] = {"m_buy_state", "int"}
-, 
-[2] = {"m_buy_gift_map", "map<int,int>"}
+NotifyBuyGiftComponentBuyStateChange._proto = {
+  [1] = {
+    "m_buy_state",
+    "int"
+  },
+  [2] = {
+    "m_buy_gift_map",
+    "map<int,int>"
+  }
 }
-local ActionPointStateType = {APST_INVALID = 0, APST_OPEN = 1, APST_CLOSE = 2}
+local ActionPointStateType = {
+  APST_INVALID = 0,
+  APST_OPEN = 1,
+  APST_CLOSE = 2
+}
 _enum("ActionPointStateType", ActionPointStateType)
 _class("ActionPopintData", Object)
-_ENV.ActionPopintData = _ENV.ActionPopintData
--- DECOMPILER ERROR at PC3018: Confused about usage of register: R19 in 'UnsetPending'
+ActionPopintData = ActionPopintData
 
-;
-(_ENV.ActionPopintData).Constructor = function(self)
-  -- function num : 0_111
+function ActionPopintData:Constructor()
   self.m_state = 0
   self.m_end_time = 0
 end
 
--- DECOMPILER ERROR at PC3033: Confused about usage of register: R19 in 'UnsetPending'
-
-;
-(_ENV.ActionPopintData)._proto = {
-[1] = {"m_state", "int"}
-, 
-[2] = {"m_end_time", "int64"}
+ActionPopintData._proto = {
+  [1] = {"m_state", "int"},
+  [2] = {"m_end_time", "int64"}
 }
 _class("ActionPointComponentInfo", ICampaignComponentInfo)
-_ENV.ActionPointComponentInfo = _ENV.ActionPointComponentInfo
--- DECOMPILER ERROR at PC3045: Confused about usage of register: R19 in 'UnsetPending'
+ActionPointComponentInfo = ActionPointComponentInfo
 
-;
-(_ENV.ActionPointComponentInfo).Constructor = function(self)
-  -- function num : 0_112
+function ActionPointComponentInfo:Constructor()
   self.m_info = {}
 end
 
--- DECOMPILER ERROR at PC3055: Confused about usage of register: R19 in 'UnsetPending'
-
-;
-(_ENV.ActionPointComponentInfo)._proto = {
-[1] = {"m_info", "map<int,ActionPopintData>"}
+ActionPointComponentInfo._proto = {
+  [1] = {
+    "m_info",
+    "map<int,ActionPopintData>"
+  }
 }
 _class("CPlayerBackComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CPlayerBackComponentDataInfo = _ENV.CPlayerBackComponentDataInfo
--- DECOMPILER ERROR at PC3067: Confused about usage of register: R19 in 'UnsetPending'
+CPlayerBackComponentDataInfo = CPlayerBackComponentDataInfo
 
-;
-(_ENV.CPlayerBackComponentDataInfo).Constructor = function(self)
-  -- function num : 0_113
+function CPlayerBackComponentDataInfo:Constructor()
   self.nTriggerTimes = 0
   self.tmTriggerTimeVec = {}
   self.tmEndTimeVec = {}
@@ -2173,192 +2084,185 @@ _ENV.CPlayerBackComponentDataInfo = _ENV.CPlayerBackComponentDataInfo
   self.BackRewardVec = {}
 end
 
--- DECOMPILER ERROR at PC3097: Confused about usage of register: R19 in 'UnsetPending'
-
-;
-(_ENV.CPlayerBackComponentDataInfo)._proto = {
-[1] = {"nTriggerTimes", "int"}
-, 
-[2] = {"tmTriggerTimeVec", "list<time>"}
-, 
-[3] = {"tmEndTimeVec", "list<time>"}
-, 
-[4] = {"bIsRecvRewardVec", "list<bool>"}
-, 
-[5] = {"BackRewardVec", "list<list<RoleAsset>>"}
+CPlayerBackComponentDataInfo._proto = {
+  [1] = {
+    "nTriggerTimes",
+    "int"
+  },
+  [2] = {
+    "tmTriggerTimeVec",
+    "list<time>"
+  },
+  [3] = {
+    "tmEndTimeVec",
+    "list<time>"
+  },
+  [4] = {
+    "bIsRecvRewardVec",
+    "list<bool>"
+  },
+  [5] = {
+    "BackRewardVec",
+    "list<list<RoleAsset>>"
+  }
 }
 _class("CPlayerBackComponentInfo", ICampaignComponentInfo)
-_ENV.CPlayerBackComponentInfo = _ENV.CPlayerBackComponentInfo
--- DECOMPILER ERROR at PC3109: Confused about usage of register: R19 in 'UnsetPending'
+CPlayerBackComponentInfo = CPlayerBackComponentInfo
 
-;
-(_ENV.CPlayerBackComponentInfo).Constructor = function(self)
-  -- function num : 0_114
+function CPlayerBackComponentInfo:Constructor()
   self.tmTriggerTime = 0
   self.tmEndTime = 0
   self.BackRewardVec = {}
   self.bIsRecvReward = false
 end
 
--- DECOMPILER ERROR at PC3134: Confused about usage of register: R19 in 'UnsetPending'
-
-;
-(_ENV.CPlayerBackComponentInfo)._proto = {
-[1] = {"tmTriggerTime", "time"}
-, 
-[2] = {"tmEndTime", "time"}
-, 
-[3] = {"BackRewardVec", "list<RoleAsset>"}
-, 
-[4] = {"bIsRecvReward", "bool"}
+CPlayerBackComponentInfo._proto = {
+  [1] = {
+    "tmTriggerTime",
+    "time"
+  },
+  [2] = {"tmEndTime", "time"},
+  [3] = {
+    "BackRewardVec",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "bIsRecvReward",
+    "bool"
+  }
 }
 _class("BackComponentRecvRewardReq", ICampaignComRequest)
-_ENV.BackComponentRecvRewardReq = _ENV.BackComponentRecvRewardReq
--- DECOMPILER ERROR at PC3146: Confused about usage of register: R19 in 'UnsetPending'
+BackComponentRecvRewardReq = BackComponentRecvRewardReq
 
-;
-(_ENV.BackComponentRecvRewardReq).Constructor = function(self)
-  -- function num : 0_115
+function BackComponentRecvRewardReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC3150: Confused about usage of register: R19 in 'UnsetPending'
-
-;
-(_ENV.BackComponentRecvRewardReq)._proto = {}
+BackComponentRecvRewardReq._proto = {}
 _class("BackComponentRecvRewardRep", ICampaignComResponse)
-_ENV.BackComponentRecvRewardRep = _ENV.BackComponentRecvRewardRep
--- DECOMPILER ERROR at PC3162: Confused about usage of register: R19 in 'UnsetPending'
+BackComponentRecvRewardRep = BackComponentRecvRewardRep
 
-;
-(_ENV.BackComponentRecvRewardRep).Constructor = function(self)
-  -- function num : 0_116
+function BackComponentRecvRewardRep:Constructor()
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC3172: Confused about usage of register: R19 in 'UnsetPending'
-
-;
-(_ENV.BackComponentRecvRewardRep)._proto = {
-[1] = {"rewards", "list<RoleAsset>"}
+BackComponentRecvRewardRep._proto = {
+  [1] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CResHelpComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CResHelpComponentDataInfo = _ENV.CResHelpComponentDataInfo
--- DECOMPILER ERROR at PC3184: Confused about usage of register: R19 in 'UnsetPending'
+CResHelpComponentDataInfo = CResHelpComponentDataInfo
 
-;
-(_ENV.CResHelpComponentDataInfo).Constructor = function(self)
-  -- function num : 0_117
+function CResHelpComponentDataInfo:Constructor()
   self.nTodayHelpTimes = 0
   self.tmRefreshTimesTime = 0
 end
 
--- DECOMPILER ERROR at PC3199: Confused about usage of register: R19 in 'UnsetPending'
-
-;
-(_ENV.CResHelpComponentDataInfo)._proto = {
-[1] = {"nTodayHelpTimes", "int"}
-, 
-[2] = {"tmRefreshTimesTime", "time"}
+CResHelpComponentDataInfo._proto = {
+  [1] = {
+    "nTodayHelpTimes",
+    "int"
+  },
+  [2] = {
+    "tmRefreshTimesTime",
+    "time"
+  }
 }
 _class("CResHelpComponentInfo", ICampaignComponentInfo)
-_ENV.CResHelpComponentInfo = _ENV.CResHelpComponentInfo
--- DECOMPILER ERROR at PC3211: Confused about usage of register: R19 in 'UnsetPending'
+CResHelpComponentInfo = CResHelpComponentInfo
 
-;
-(_ENV.CResHelpComponentInfo).Constructor = function(self)
-  -- function num : 0_118
+function CResHelpComponentInfo:Constructor()
   self.nTodayHelpTimes = 0
   self.tmNextRefreshTimesTime = 0
   self.nHelpDayLimitTimes = 0
 end
 
--- DECOMPILER ERROR at PC3231: Confused about usage of register: R19 in 'UnsetPending'
-
-;
-(_ENV.CResHelpComponentInfo)._proto = {
-[1] = {"nTodayHelpTimes", "int"}
-, 
-[2] = {"tmNextRefreshTimesTime", "time"}
-, 
-[3] = {"nHelpDayLimitTimes", "int"}
+CResHelpComponentInfo._proto = {
+  [1] = {
+    "nTodayHelpTimes",
+    "int"
+  },
+  [2] = {
+    "tmNextRefreshTimesTime",
+    "time"
+  },
+  [3] = {
+    "nHelpDayLimitTimes",
+    "int"
+  }
 }
 local CResHelpComponentNotifyType = {CResHelpComponentNotifyType_ResHelpInfoChange = 1}
 _enum("CResHelpComponentNotifyType", CResHelpComponentNotifyType)
 _class("NotifyResHelpComponentInfoChange", Object)
-_ENV.NotifyResHelpComponentInfoChange = _ENV.NotifyResHelpComponentInfoChange
--- DECOMPILER ERROR at PC3251: Confused about usage of register: R20 in 'UnsetPending'
+NotifyResHelpComponentInfoChange = NotifyResHelpComponentInfoChange
 
-;
-(_ENV.NotifyResHelpComponentInfoChange).Constructor = function(self)
-  -- function num : 0_119
+function NotifyResHelpComponentInfoChange:Constructor()
   self.nTodayHelpTimes = 0
   self.tmNextRefreshTimesTime = 0
   self.nHelpDayLimitTimes = 0
 end
 
--- DECOMPILER ERROR at PC3271: Confused about usage of register: R20 in 'UnsetPending'
-
-;
-(_ENV.NotifyResHelpComponentInfoChange)._proto = {
-[1] = {"nTodayHelpTimes", "int"}
-, 
-[2] = {"tmNextRefreshTimesTime", "time"}
-, 
-[3] = {"nHelpDayLimitTimes", "int"}
+NotifyResHelpComponentInfoChange._proto = {
+  [1] = {
+    "nTodayHelpTimes",
+    "int"
+  },
+  [2] = {
+    "tmNextRefreshTimesTime",
+    "time"
+  },
+  [3] = {
+    "nHelpDayLimitTimes",
+    "int"
+  }
 }
 local BattlefieldComponentNotifyType = {BattlefieldComponentNotify_DailyReset = 1, BattlefieldComponentNotify_MilitaryExploitChanged = 2}
 _enum("BattlefieldComponentNotifyType", BattlefieldComponentNotifyType)
 _class("MissionChallengeInfo", Object)
-_ENV.MissionChallengeInfo = _ENV.MissionChallengeInfo
--- DECOMPILER ERROR at PC3293: Confused about usage of register: R21 in 'UnsetPending'
+MissionChallengeInfo = MissionChallengeInfo
 
-;
-(_ENV.MissionChallengeInfo).Constructor = function(self)
-  -- function num : 0_120
+function MissionChallengeInfo:Constructor()
   self.mission_id = 0
   self.wave_index = 0
   self.military_exploit = 0
 end
 
--- DECOMPILER ERROR at PC3313: Confused about usage of register: R21 in 'UnsetPending'
-
-;
-(_ENV.MissionChallengeInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"wave_index", "int"}
-, 
-[3] = {"military_exploit", "int"}
+MissionChallengeInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"wave_index", "int"},
+  [3] = {
+    "military_exploit",
+    "int"
+  }
 }
 _class("CBattlefieldComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CBattlefieldComponentDataInfo = _ENV.CBattlefieldComponentDataInfo
--- DECOMPILER ERROR at PC3325: Confused about usage of register: R21 in 'UnsetPending'
+CBattlefieldComponentDataInfo = CBattlefieldComponentDataInfo
 
-;
-(_ENV.CBattlefieldComponentDataInfo).Constructor = function(self)
-  -- function num : 0_121
+function CBattlefieldComponentDataInfo:Constructor()
   self.m_challenge_mission_info = {}
   self.m_accumulated_military_exploit = 0
   self.m_cur_max_military_exploit = 0
 end
 
--- DECOMPILER ERROR at PC3345: Confused about usage of register: R21 in 'UnsetPending'
-
-;
-(_ENV.CBattlefieldComponentDataInfo)._proto = {
-[1] = {"m_challenge_mission_info", "map<int,list<MissionChallengeInfo>>"}
-, 
-[2] = {"m_accumulated_military_exploit", "int"}
-, 
-[3] = {"m_cur_max_military_exploit", "int"}
+CBattlefieldComponentDataInfo._proto = {
+  [1] = {
+    "m_challenge_mission_info",
+    "map<int,list<MissionChallengeInfo>>"
+  },
+  [2] = {
+    "m_accumulated_military_exploit",
+    "int"
+  },
+  [3] = {
+    "m_cur_max_military_exploit",
+    "int"
+  }
 }
 _class("BattlefieldInfo", Object)
-_ENV.BattlefieldInfo = _ENV.BattlefieldInfo
--- DECOMPILER ERROR at PC3357: Confused about usage of register: R21 in 'UnsetPending'
+BattlefieldInfo = BattlefieldInfo
 
-;
-(_ENV.BattlefieldInfo).Constructor = function(self)
-  -- function num : 0_122
+function BattlefieldInfo:Constructor()
   self.m_challenge_mission_info = {}
   self.m_accumulated_military_exploit = 0
   self.m_cur_max_military_exploit = 0
@@ -2367,649 +2271,552 @@ _ENV.BattlefieldInfo = _ENV.BattlefieldInfo
   self.m_cur_index = 0
 end
 
--- DECOMPILER ERROR at PC3392: Confused about usage of register: R21 in 'UnsetPending'
-
-;
-(_ENV.BattlefieldInfo)._proto = {
-[1] = {"m_challenge_mission_info", "map<int,MissionChallengeInfo>"}
-, 
-[2] = {"m_accumulated_military_exploit", "int"}
-, 
-[3] = {"m_cur_max_military_exploit", "int"}
-, 
-[4] = {"m_next_reset_time", "time"}
-, 
-[5] = {"m_mission_level_wave_map", "map<int,list<int>>"}
-, 
-[6] = {"m_cur_index", "int"}
+BattlefieldInfo._proto = {
+  [1] = {
+    "m_challenge_mission_info",
+    "map<int,MissionChallengeInfo>"
+  },
+  [2] = {
+    "m_accumulated_military_exploit",
+    "int"
+  },
+  [3] = {
+    "m_cur_max_military_exploit",
+    "int"
+  },
+  [4] = {
+    "m_next_reset_time",
+    "time"
+  },
+  [5] = {
+    "m_mission_level_wave_map",
+    "map<int,list<int>>"
+  },
+  [6] = {
+    "m_cur_index",
+    "int"
+  }
 }
 _class("BattlefieldComponentInfo", ICampaignComponentInfo)
-_ENV.BattlefieldComponentInfo = _ENV.BattlefieldComponentInfo
--- DECOMPILER ERROR at PC3404: Confused about usage of register: R21 in 'UnsetPending'
+BattlefieldComponentInfo = BattlefieldComponentInfo
 
-;
-(_ENV.BattlefieldComponentInfo).Constructor = function(self)
-  -- function num : 0_123 , upvalues : _ENV
+function BattlefieldComponentInfo:Constructor()
   self.m_battlefield_info = BattlefieldInfo:New()
 end
 
--- DECOMPILER ERROR at PC3414: Confused about usage of register: R21 in 'UnsetPending'
-
-;
-(_ENV.BattlefieldComponentInfo)._proto = {
-[1] = {"m_battlefield_info", "BattlefieldInfo"}
+BattlefieldComponentInfo._proto = {
+  [1] = {
+    "m_battlefield_info",
+    "BattlefieldInfo"
+  }
 }
 _class("BattlefieldComponentDailyResetReq", ICampaignComRequest)
-_ENV.BattlefieldComponentDailyResetReq = _ENV.BattlefieldComponentDailyResetReq
--- DECOMPILER ERROR at PC3426: Confused about usage of register: R21 in 'UnsetPending'
+BattlefieldComponentDailyResetReq = BattlefieldComponentDailyResetReq
 
-;
-(_ENV.BattlefieldComponentDailyResetReq).Constructor = function(self)
-  -- function num : 0_124
+function BattlefieldComponentDailyResetReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC3430: Confused about usage of register: R21 in 'UnsetPending'
-
-;
-(_ENV.BattlefieldComponentDailyResetReq)._proto = {}
+BattlefieldComponentDailyResetReq._proto = {}
 _class("BattlefieldComponentDailyResetRep", ICampaignComResponse)
-_ENV.BattlefieldComponentDailyResetRep = _ENV.BattlefieldComponentDailyResetRep
--- DECOMPILER ERROR at PC3442: Confused about usage of register: R21 in 'UnsetPending'
+BattlefieldComponentDailyResetRep = BattlefieldComponentDailyResetRep
 
-;
-(_ENV.BattlefieldComponentDailyResetRep).Constructor = function(self)
-  -- function num : 0_125 , upvalues : _ENV
+function BattlefieldComponentDailyResetRep:Constructor()
   self.m_battlefield_info = BattlefieldInfo:New()
 end
 
--- DECOMPILER ERROR at PC3452: Confused about usage of register: R21 in 'UnsetPending'
-
-;
-(_ENV.BattlefieldComponentDailyResetRep)._proto = {
-[1] = {"m_battlefield_info", "BattlefieldInfo"}
+BattlefieldComponentDailyResetRep._proto = {
+  [1] = {
+    "m_battlefield_info",
+    "BattlefieldInfo"
+  }
 }
 _class("NotifyBattlefieldComponentDailyReset", Object)
-_ENV.NotifyBattlefieldComponentDailyReset = _ENV.NotifyBattlefieldComponentDailyReset
--- DECOMPILER ERROR at PC3464: Confused about usage of register: R21 in 'UnsetPending'
+NotifyBattlefieldComponentDailyReset = NotifyBattlefieldComponentDailyReset
 
-;
-(_ENV.NotifyBattlefieldComponentDailyReset).Constructor = function(self)
-  -- function num : 0_126 , upvalues : _ENV
+function NotifyBattlefieldComponentDailyReset:Constructor()
   self.m_battlefield_info = BattlefieldInfo:New()
 end
 
--- DECOMPILER ERROR at PC3474: Confused about usage of register: R21 in 'UnsetPending'
-
-;
-(_ENV.NotifyBattlefieldComponentDailyReset)._proto = {
-[1] = {"m_battlefield_info", "BattlefieldInfo"}
+NotifyBattlefieldComponentDailyReset._proto = {
+  [1] = {
+    "m_battlefield_info",
+    "BattlefieldInfo"
+  }
 }
 _class("NotifyBattlefieldComponentMilitaryExploitChanged", Object)
-_ENV.NotifyBattlefieldComponentMilitaryExploitChanged = _ENV.NotifyBattlefieldComponentMilitaryExploitChanged
--- DECOMPILER ERROR at PC3486: Confused about usage of register: R21 in 'UnsetPending'
+NotifyBattlefieldComponentMilitaryExploitChanged = NotifyBattlefieldComponentMilitaryExploitChanged
 
-;
-(_ENV.NotifyBattlefieldComponentMilitaryExploitChanged).Constructor = function(self)
-  -- function num : 0_127 , upvalues : _ENV
+function NotifyBattlefieldComponentMilitaryExploitChanged:Constructor()
   self.m_challenge_mission_info = MissionChallengeInfo:New()
   self.m_accumulated_military_exploit = 0
   self.m_cur_max_military_exploit = 0
 end
 
--- DECOMPILER ERROR at PC3506: Confused about usage of register: R21 in 'UnsetPending'
-
-;
-(_ENV.NotifyBattlefieldComponentMilitaryExploitChanged)._proto = {
-[1] = {"m_challenge_mission_info", "MissionChallengeInfo"}
-, 
-[2] = {"m_accumulated_military_exploit", "int"}
-, 
-[3] = {"m_cur_max_military_exploit", "int"}
+NotifyBattlefieldComponentMilitaryExploitChanged._proto = {
+  [1] = {
+    "m_challenge_mission_info",
+    "MissionChallengeInfo"
+  },
+  [2] = {
+    "m_accumulated_military_exploit",
+    "int"
+  },
+  [3] = {
+    "m_cur_max_military_exploit",
+    "int"
+  }
 }
-local BuildType = {BULIL_INVALID = 0, BUILD_CLEAN = 1, BUILD_REPAIR = 2, BUILD_DECORATE = 4, PICNIC_AREA = 1024}
+local BuildType = {
+  BULIL_INVALID = 0,
+  BUILD_CLEAN = 1,
+  BUILD_REPAIR = 2,
+  BUILD_DECORATE = 4,
+  PICNIC_AREA = 1024
+}
 _enum("BuildType", BuildType)
-local BuildStoryType = {STORY_INVILD = 0, STORY_DRAWING = 1, STORY_GENERAL_PLOT = 2, STORY_TERMINAL = 3}
+local BuildStoryType = {
+  STORY_INVILD = 0,
+  STORY_DRAWING = 1,
+  STORY_GENERAL_PLOT = 2,
+  STORY_TERMINAL = 3
+}
 _enum("BuildStoryType", BuildStoryType)
 local BuildComponentNotifyType = {BuildComponentNotify_EventRefresh = 1, BuildComponentNotify_TokenMoneyChanged = 2}
 _enum("BuildComponentNotifyType", BuildComponentNotifyType)
 _class("BuildItemInfo", Object)
-_ENV.BuildItemInfo = _ENV.BuildItemInfo
--- DECOMPILER ERROR at PC3561: Confused about usage of register: R24 in 'UnsetPending'
+BuildItemInfo = BuildItemInfo
 
-;
-(_ENV.BuildItemInfo).Constructor = function(self)
-  -- function num : 0_128
+function BuildItemInfo:Constructor()
   self.mask = 0
   self.story_mask = 0
   self.build_item_id = 0
 end
 
--- DECOMPILER ERROR at PC3581: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.BuildItemInfo)._proto = {
-[1] = {"mask", "int"}
-, 
-[2] = {"story_mask", "int"}
-, 
-[3] = {"build_item_id", "int"}
+BuildItemInfo._proto = {
+  [1] = {"mask", "int"},
+  [2] = {"story_mask", "int"},
+  [3] = {
+    "build_item_id",
+    "int"
+  }
 }
 _class("BuildEventInfo", Object)
-_ENV.BuildEventInfo = _ENV.BuildEventInfo
--- DECOMPILER ERROR at PC3593: Confused about usage of register: R24 in 'UnsetPending'
+BuildEventInfo = BuildEventInfo
 
-;
-(_ENV.BuildEventInfo).Constructor = function(self)
-  -- function num : 0_129
+function BuildEventInfo:Constructor()
   self.today_complete_event_num = 0
   self.today_refresh_num = 0
   self.cur_event_list = {}
   self.reset_time = 0
 end
 
--- DECOMPILER ERROR at PC3618: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.BuildEventInfo)._proto = {
-[1] = {"today_complete_event_num", "int"}
-, 
-[2] = {"today_refresh_num", "int"}
-, 
-[3] = {"cur_event_list", "list<int>"}
-, 
-[4] = {"reset_time", "int64"}
+BuildEventInfo._proto = {
+  [1] = {
+    "today_complete_event_num",
+    "int"
+  },
+  [2] = {
+    "today_refresh_num",
+    "int"
+  },
+  [3] = {
+    "cur_event_list",
+    "list<int>"
+  },
+  [4] = {"reset_time", "int64"}
 }
 _class("PicnicInfo", Object)
-_ENV.PicnicInfo = _ENV.PicnicInfo
--- DECOMPILER ERROR at PC3630: Confused about usage of register: R24 in 'UnsetPending'
+PicnicInfo = PicnicInfo
 
-;
-(_ENV.PicnicInfo).Constructor = function(self)
-  -- function num : 0_130
+function PicnicInfo:Constructor()
   self.m_have_story = false
   self.m_next_food = {}
   self.m_times = 0
 end
 
--- DECOMPILER ERROR at PC3650: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.PicnicInfo)._proto = {
-[1] = {"m_have_story", "bool"}
-, 
-[2] = {"m_next_food", "map<int,time>"}
-, 
-[3] = {"m_times", "int"}
+PicnicInfo._proto = {
+  [1] = {
+    "m_have_story",
+    "bool"
+  },
+  [2] = {
+    "m_next_food",
+    "map<int,time>"
+  },
+  [3] = {"m_times", "int"}
 }
 _class("BuildComponentInfo", ICampaignComponentInfo)
-_ENV.BuildComponentInfo = _ENV.BuildComponentInfo
--- DECOMPILER ERROR at PC3662: Confused about usage of register: R24 in 'UnsetPending'
+BuildComponentInfo = BuildComponentInfo
 
-;
-(_ENV.BuildComponentInfo).Constructor = function(self)
-  -- function num : 0_131 , upvalues : _ENV
+function BuildComponentInfo:Constructor()
   self.event_info = BuildEventInfo:New()
   self.build_item_infos = {}
   self.item_count = 0
   self.m_picnic_info = PicnicInfo:New()
 end
 
--- DECOMPILER ERROR at PC3687: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.BuildComponentInfo)._proto = {
-[1] = {"event_info", "BuildEventInfo"}
-, 
-[2] = {"build_item_infos", "map<int,BuildItemInfo>"}
-, 
-[3] = {"item_count", "int"}
-, 
-[4] = {"m_picnic_info", "PicnicInfo"}
+BuildComponentInfo._proto = {
+  [1] = {
+    "event_info",
+    "BuildEventInfo"
+  },
+  [2] = {
+    "build_item_infos",
+    "map<int,BuildItemInfo>"
+  },
+  [3] = {"item_count", "int"},
+  [4] = {
+    "m_picnic_info",
+    "PicnicInfo"
+  }
 }
 _class("BuildComponentBuildReq", ICampaignComRequest)
-_ENV.BuildComponentBuildReq = _ENV.BuildComponentBuildReq
--- DECOMPILER ERROR at PC3699: Confused about usage of register: R24 in 'UnsetPending'
+BuildComponentBuildReq = BuildComponentBuildReq
 
-;
-(_ENV.BuildComponentBuildReq).Constructor = function(self)
-  -- function num : 0_132
+function BuildComponentBuildReq:Constructor()
   self.item_id = 0
   self.build_type = 0
 end
 
--- DECOMPILER ERROR at PC3714: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.BuildComponentBuildReq)._proto = {
-[1] = {"item_id", "int"}
-, 
-[2] = {"build_type", "int"}
+BuildComponentBuildReq._proto = {
+  [1] = {"item_id", "int"},
+  [2] = {"build_type", "int"}
 }
 _class("BuildComponentBuildRep", ICampaignComResponse)
-_ENV.BuildComponentBuildRep = _ENV.BuildComponentBuildRep
--- DECOMPILER ERROR at PC3726: Confused about usage of register: R24 in 'UnsetPending'
+BuildComponentBuildRep = BuildComponentBuildRep
 
-;
-(_ENV.BuildComponentBuildRep).Constructor = function(self)
-  -- function num : 0_133 , upvalues : _ENV
+function BuildComponentBuildRep:Constructor()
   self.build_info = BuildItemInfo:New()
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC3741: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.BuildComponentBuildRep)._proto = {
-[1] = {"build_info", "BuildItemInfo"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+BuildComponentBuildRep._proto = {
+  [1] = {
+    "build_info",
+    "BuildItemInfo"
+  },
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("BuildComponentStoryReq", ICampaignComRequest)
-_ENV.BuildComponentStoryReq = _ENV.BuildComponentStoryReq
--- DECOMPILER ERROR at PC3753: Confused about usage of register: R24 in 'UnsetPending'
+BuildComponentStoryReq = BuildComponentStoryReq
 
-;
-(_ENV.BuildComponentStoryReq).Constructor = function(self)
-  -- function num : 0_134
+function BuildComponentStoryReq:Constructor()
   self.item_id = 0
   self.status = 0
 end
 
--- DECOMPILER ERROR at PC3768: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.BuildComponentStoryReq)._proto = {
-[1] = {"item_id", "int"}
-, 
-[2] = {"status", "int"}
+BuildComponentStoryReq._proto = {
+  [1] = {"item_id", "int"},
+  [2] = {"status", "int"}
 }
 _class("BuildComponentStoryRep", ICampaignComResponse)
-_ENV.BuildComponentStoryRep = _ENV.BuildComponentStoryRep
--- DECOMPILER ERROR at PC3780: Confused about usage of register: R24 in 'UnsetPending'
+BuildComponentStoryRep = BuildComponentStoryRep
 
-;
-(_ENV.BuildComponentStoryRep).Constructor = function(self)
-  -- function num : 0_135 , upvalues : _ENV
+function BuildComponentStoryRep:Constructor()
   self.build_info = BuildItemInfo:New()
 end
 
--- DECOMPILER ERROR at PC3790: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.BuildComponentStoryRep)._proto = {
-[1] = {"build_info", "BuildItemInfo"}
+BuildComponentStoryRep._proto = {
+  [1] = {
+    "build_info",
+    "BuildItemInfo"
+  }
 }
 _class("BuildComponentCompleteEventReq", ICampaignComRequest)
-_ENV.BuildComponentCompleteEventReq = _ENV.BuildComponentCompleteEventReq
--- DECOMPILER ERROR at PC3802: Confused about usage of register: R24 in 'UnsetPending'
+BuildComponentCompleteEventReq = BuildComponentCompleteEventReq
 
-;
-(_ENV.BuildComponentCompleteEventReq).Constructor = function(self)
-  -- function num : 0_136
+function BuildComponentCompleteEventReq:Constructor()
   self.event_id = 0
 end
 
--- DECOMPILER ERROR at PC3812: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.BuildComponentCompleteEventReq)._proto = {
-[1] = {"event_id", "int"}
+BuildComponentCompleteEventReq._proto = {
+  [1] = {"event_id", "int"}
 }
 _class("BuildComponentCompleteEventRep", ICampaignComResponse)
-_ENV.BuildComponentCompleteEventRep = _ENV.BuildComponentCompleteEventRep
--- DECOMPILER ERROR at PC3824: Confused about usage of register: R24 in 'UnsetPending'
+BuildComponentCompleteEventRep = BuildComponentCompleteEventRep
 
-;
-(_ENV.BuildComponentCompleteEventRep).Constructor = function(self)
-  -- function num : 0_137 , upvalues : _ENV
+function BuildComponentCompleteEventRep:Constructor()
   self.build_event_info = BuildEventInfo:New()
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC3839: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.BuildComponentCompleteEventRep)._proto = {
-[1] = {"build_event_info", "BuildEventInfo"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+BuildComponentCompleteEventRep._proto = {
+  [1] = {
+    "build_event_info",
+    "BuildEventInfo"
+  },
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("NotifyBuildComponentEventRefresh", Object)
-_ENV.NotifyBuildComponentEventRefresh = _ENV.NotifyBuildComponentEventRefresh
--- DECOMPILER ERROR at PC3851: Confused about usage of register: R24 in 'UnsetPending'
+NotifyBuildComponentEventRefresh = NotifyBuildComponentEventRefresh
 
-;
-(_ENV.NotifyBuildComponentEventRefresh).Constructor = function(self)
-  -- function num : 0_138 , upvalues : _ENV
+function NotifyBuildComponentEventRefresh:Constructor()
   self.event_info = BuildEventInfo:New()
 end
 
--- DECOMPILER ERROR at PC3861: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.NotifyBuildComponentEventRefresh)._proto = {
-[1] = {"event_info", "BuildEventInfo"}
+NotifyBuildComponentEventRefresh._proto = {
+  [1] = {
+    "event_info",
+    "BuildEventInfo"
+  }
 }
 _class("NotifyBuildComponentTokenMoneyChanged", Object)
-_ENV.NotifyBuildComponentTokenMoneyChanged = _ENV.NotifyBuildComponentTokenMoneyChanged
--- DECOMPILER ERROR at PC3873: Confused about usage of register: R24 in 'UnsetPending'
+NotifyBuildComponentTokenMoneyChanged = NotifyBuildComponentTokenMoneyChanged
 
-;
-(_ENV.NotifyBuildComponentTokenMoneyChanged).Constructor = function(self)
-  -- function num : 0_139
+function NotifyBuildComponentTokenMoneyChanged:Constructor()
   self.item_count = 0
 end
 
--- DECOMPILER ERROR at PC3882: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.NotifyBuildComponentTokenMoneyChanged)._proto = {
-[3] = {"item_count", "int"}
+NotifyBuildComponentTokenMoneyChanged._proto = {
+  [3] = {"item_count", "int"}
 }
 _class("PicnicPutFoodReq", ICampaignComRequest)
-_ENV.PicnicPutFoodReq = _ENV.PicnicPutFoodReq
--- DECOMPILER ERROR at PC3894: Confused about usage of register: R24 in 'UnsetPending'
+PicnicPutFoodReq = PicnicPutFoodReq
 
-;
-(_ENV.PicnicPutFoodReq).Constructor = function(self)
-  -- function num : 0_140
+function PicnicPutFoodReq:Constructor()
   self.area_id = 0
 end
 
--- DECOMPILER ERROR at PC3904: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.PicnicPutFoodReq)._proto = {
-[1] = {"area_id", "int"}
+PicnicPutFoodReq._proto = {
+  [1] = {"area_id", "int"}
 }
 _class("PicnicPutFoodRep", ICampaignComResponse)
-_ENV.PicnicPutFoodRep = _ENV.PicnicPutFoodRep
--- DECOMPILER ERROR at PC3916: Confused about usage of register: R24 in 'UnsetPending'
+PicnicPutFoodRep = PicnicPutFoodRep
 
-;
-(_ENV.PicnicPutFoodRep).Constructor = function(self)
-  -- function num : 0_141 , upvalues : _ENV
+function PicnicPutFoodRep:Constructor()
   self.nErrorCode = 0
   self.picnicInfo = PicnicInfo:New()
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC3936: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.PicnicPutFoodRep)._proto = {
-[1] = {"nErrorCode", "int"}
-, 
-[2] = {"picnicInfo", "PicnicInfo"}
-, 
-[3] = {"reward", "list<RoleAsset>"}
+PicnicPutFoodRep._proto = {
+  [1] = {"nErrorCode", "int"},
+  [2] = {"picnicInfo", "PicnicInfo"},
+  [3] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("PicnicWatchStoryReq", ICampaignComRequest)
-_ENV.PicnicWatchStoryReq = _ENV.PicnicWatchStoryReq
--- DECOMPILER ERROR at PC3948: Confused about usage of register: R24 in 'UnsetPending'
+PicnicWatchStoryReq = PicnicWatchStoryReq
 
-;
-(_ENV.PicnicWatchStoryReq).Constructor = function(self)
-  -- function num : 0_142
+function PicnicWatchStoryReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC3952: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.PicnicWatchStoryReq)._proto = {}
+PicnicWatchStoryReq._proto = {}
 _class("PicnicWatchStoryRep", ICampaignComResponse)
-_ENV.PicnicWatchStoryRep = _ENV.PicnicWatchStoryRep
--- DECOMPILER ERROR at PC3964: Confused about usage of register: R24 in 'UnsetPending'
+PicnicWatchStoryRep = PicnicWatchStoryRep
 
-;
-(_ENV.PicnicWatchStoryRep).Constructor = function(self)
-  -- function num : 0_143
+function PicnicWatchStoryRep:Constructor()
 end
 
--- DECOMPILER ERROR at PC3968: Confused about usage of register: R24 in 'UnsetPending'
-
-;
-(_ENV.PicnicWatchStoryRep)._proto = {}
+PicnicWatchStoryRep._proto = {}
 local BlackfistComponentNotifyType = {BlackfistComponentNotify_ScoreChanged = 1}
 _enum("BlackfistComponentNotifyType", BlackfistComponentNotifyType)
 _class("BlackfistComponentInfo", ICampaignComponentInfo)
-_ENV.BlackfistComponentInfo = _ENV.BlackfistComponentInfo
--- DECOMPILER ERROR at PC3988: Confused about usage of register: R25 in 'UnsetPending'
+BlackfistComponentInfo = BlackfistComponentInfo
 
-;
-(_ENV.BlackfistComponentInfo).Constructor = function(self)
-  -- function num : 0_144
+function BlackfistComponentInfo:Constructor()
   self.cur_day_index = 0
   self.score_infos = {}
   self.order_ids = {}
 end
 
--- DECOMPILER ERROR at PC4008: Confused about usage of register: R25 in 'UnsetPending'
-
-;
-(_ENV.BlackfistComponentInfo)._proto = {
-[1] = {"cur_day_index", "int"}
-, 
-[2] = {"score_infos", "map<int,map<int,int>>"}
-, 
-[3] = {"order_ids", "map<int,int>"}
+BlackfistComponentInfo._proto = {
+  [1] = {
+    "cur_day_index",
+    "int"
+  },
+  [2] = {
+    "score_infos",
+    "map<int,map<int,int>>"
+  },
+  [3] = {
+    "order_ids",
+    "map<int,int>"
+  }
 }
 _class("NotifyBlackfistScoreChanged", Object)
-_ENV.NotifyBlackfistScoreChanged = _ENV.NotifyBlackfistScoreChanged
--- DECOMPILER ERROR at PC4020: Confused about usage of register: R25 in 'UnsetPending'
+NotifyBlackfistScoreChanged = NotifyBlackfistScoreChanged
 
-;
-(_ENV.NotifyBlackfistScoreChanged).Constructor = function(self)
-  -- function num : 0_145
+function NotifyBlackfistScoreChanged:Constructor()
   self.score = {}
 end
 
--- DECOMPILER ERROR at PC4030: Confused about usage of register: R25 in 'UnsetPending'
-
-;
-(_ENV.NotifyBlackfistScoreChanged)._proto = {
-[1] = {"score", "map<int,map<int,int>>"}
+NotifyBlackfistScoreChanged._proto = {
+  [1] = {
+    "score",
+    "map<int,map<int,int>>"
+  }
 }
 local SubjectOpenType = {SubjectOpenType_Auto = 1, SubjectOpenType_Time = 2}
 _enum("SubjectOpenType", SubjectOpenType)
 _class("SubjectComponentLevelRewardedInfo", Object)
-_ENV.SubjectComponentLevelRewardedInfo = _ENV.SubjectComponentLevelRewardedInfo
--- DECOMPILER ERROR at PC4052: Confused about usage of register: R26 in 'UnsetPending'
+SubjectComponentLevelRewardedInfo = SubjectComponentLevelRewardedInfo
 
-;
-(_ENV.SubjectComponentLevelRewardedInfo).Constructor = function(self)
-  -- function num : 0_146
+function SubjectComponentLevelRewardedInfo:Constructor()
   self.level_id = 0
   self.grade = 0
 end
 
--- DECOMPILER ERROR at PC4067: Confused about usage of register: R26 in 'UnsetPending'
-
-;
-(_ENV.SubjectComponentLevelRewardedInfo)._proto = {
-[1] = {"level_id", "int"}
-, 
-[2] = {"grade", "int"}
+SubjectComponentLevelRewardedInfo._proto = {
+  [1] = {"level_id", "int"},
+  [2] = {"grade", "int"}
 }
 _class("SubjectComponentLevelInfo", Object)
-_ENV.SubjectComponentLevelInfo = _ENV.SubjectComponentLevelInfo
--- DECOMPILER ERROR at PC4079: Confused about usage of register: R26 in 'UnsetPending'
+SubjectComponentLevelInfo = SubjectComponentLevelInfo
 
-;
-(_ENV.SubjectComponentLevelInfo).Constructor = function(self)
-  -- function num : 0_147
+function SubjectComponentLevelInfo:Constructor()
   self.level_id = 0
   self.grade = 0
   self.opentype = 0
   self.opentime = 0
 end
 
--- DECOMPILER ERROR at PC4104: Confused about usage of register: R26 in 'UnsetPending'
-
-;
-(_ENV.SubjectComponentLevelInfo)._proto = {
-[1] = {"level_id", "int"}
-, 
-[2] = {"grade", "int"}
-, 
-[3] = {"opentype", "int"}
-, 
-[4] = {"opentime", "time"}
+SubjectComponentLevelInfo._proto = {
+  [1] = {"level_id", "int"},
+  [2] = {"grade", "int"},
+  [3] = {"opentype", "int"},
+  [4] = {"opentime", "time"}
 }
 _class("SubjectComponentInfo", ICampaignComponentInfo)
-_ENV.SubjectComponentInfo = _ENV.SubjectComponentInfo
--- DECOMPILER ERROR at PC4116: Confused about usage of register: R26 in 'UnsetPending'
+SubjectComponentInfo = SubjectComponentInfo
 
-;
-(_ENV.SubjectComponentInfo).Constructor = function(self)
-  -- function num : 0_148
+function SubjectComponentInfo:Constructor()
   self.rewarded_levels = {}
   self.levels = {}
   self.test_score = 0
 end
 
--- DECOMPILER ERROR at PC4136: Confused about usage of register: R26 in 'UnsetPending'
-
-;
-(_ENV.SubjectComponentInfo)._proto = {
-[1] = {"rewarded_levels", "list<SubjectComponentLevelRewardedInfo>"}
-, 
-[2] = {"levels", "map<int,SubjectComponentLevelInfo>"}
-, 
-[3] = {"test_score", "int"}
+SubjectComponentInfo._proto = {
+  [1] = {
+    "rewarded_levels",
+    "list<SubjectComponentLevelRewardedInfo>"
+  },
+  [2] = {
+    "levels",
+    "map<int,SubjectComponentLevelInfo>"
+  },
+  [3] = {"test_score", "int"}
 }
 _class("SubjectComponentRewardReq", ICampaignComRequest)
-_ENV.SubjectComponentRewardReq = _ENV.SubjectComponentRewardReq
--- DECOMPILER ERROR at PC4148: Confused about usage of register: R26 in 'UnsetPending'
+SubjectComponentRewardReq = SubjectComponentRewardReq
 
-;
-(_ENV.SubjectComponentRewardReq).Constructor = function(self)
-  -- function num : 0_149
+function SubjectComponentRewardReq:Constructor()
   self.level_id = 0
   self.grade = 0
 end
 
--- DECOMPILER ERROR at PC4163: Confused about usage of register: R26 in 'UnsetPending'
-
-;
-(_ENV.SubjectComponentRewardReq)._proto = {
-[1] = {"level_id", "int"}
-, 
-[2] = {"grade", "int"}
+SubjectComponentRewardReq._proto = {
+  [1] = {"level_id", "int"},
+  [2] = {"grade", "int"}
 }
 _class("SubjectComponentRewardRep", ICampaignComResponse)
-_ENV.SubjectComponentRewardRep = _ENV.SubjectComponentRewardRep
--- DECOMPILER ERROR at PC4175: Confused about usage of register: R26 in 'UnsetPending'
+SubjectComponentRewardRep = SubjectComponentRewardRep
 
-;
-(_ENV.SubjectComponentRewardRep).Constructor = function(self)
-  -- function num : 0_150
+function SubjectComponentRewardRep:Constructor()
   self.rewarded_levels = {}
 end
 
--- DECOMPILER ERROR at PC4185: Confused about usage of register: R26 in 'UnsetPending'
-
-;
-(_ENV.SubjectComponentRewardRep)._proto = {
-[1] = {"rewarded_levels", "list<SubjectComponentLevelRewardedInfo>"}
+SubjectComponentRewardRep._proto = {
+  [1] = {
+    "rewarded_levels",
+    "list<SubjectComponentLevelRewardedInfo>"
+  }
 }
 _class("SubjectComponentTestScoreReq", ICampaignComRequest)
-_ENV.SubjectComponentTestScoreReq = _ENV.SubjectComponentTestScoreReq
--- DECOMPILER ERROR at PC4197: Confused about usage of register: R26 in 'UnsetPending'
+SubjectComponentTestScoreReq = SubjectComponentTestScoreReq
 
-;
-(_ENV.SubjectComponentTestScoreReq).Constructor = function(self)
-  -- function num : 0_151
+function SubjectComponentTestScoreReq:Constructor()
   self.score = 0
 end
 
--- DECOMPILER ERROR at PC4207: Confused about usage of register: R26 in 'UnsetPending'
-
-;
-(_ENV.SubjectComponentTestScoreReq)._proto = {
-[1] = {"score", "int"}
+SubjectComponentTestScoreReq._proto = {
+  [1] = {"score", "int"}
 }
 _class("SubjectComponentTestScoreRep", ICampaignComResponse)
-_ENV.SubjectComponentTestScoreRep = _ENV.SubjectComponentTestScoreRep
--- DECOMPILER ERROR at PC4219: Confused about usage of register: R26 in 'UnsetPending'
+SubjectComponentTestScoreRep = SubjectComponentTestScoreRep
 
-;
-(_ENV.SubjectComponentTestScoreRep).Constructor = function(self)
-  -- function num : 0_152
+function SubjectComponentTestScoreRep:Constructor()
 end
 
--- DECOMPILER ERROR at PC4223: Confused about usage of register: R26 in 'UnsetPending'
-
-;
-(_ENV.SubjectComponentTestScoreRep)._proto = {}
+SubjectComponentTestScoreRep._proto = {}
 _class("RewardDoubleComponentInfo", ICampaignComponentInfo)
-_ENV.RewardDoubleComponentInfo = _ENV.RewardDoubleComponentInfo
--- DECOMPILER ERROR at PC4235: Confused about usage of register: R26 in 'UnsetPending'
+RewardDoubleComponentInfo = RewardDoubleComponentInfo
 
-;
-(_ENV.RewardDoubleComponentInfo).Constructor = function(self)
-  -- function num : 0_153
+function RewardDoubleComponentInfo:Constructor()
   self.ExRewardPercent = 0
 end
 
--- DECOMPILER ERROR at PC4245: Confused about usage of register: R26 in 'UnsetPending'
-
-;
-(_ENV.RewardDoubleComponentInfo)._proto = {
-[1] = {"ExRewardPercent", "int"}
+RewardDoubleComponentInfo._proto = {
+  [1] = {
+    "ExRewardPercent",
+    "int"
+  }
 }
-local EntrustEventType = {EntrustEventType_Invalid = 0, EntrustEventType_Start = 1, EntrustEventType_End = 2, EntrustEventType_Fight = 3, EntrustEventType_Story = 4, EntrustEventType_MissionOccupy = 5, EntrustEventType_MissionSubmit = 6, EntrustEventType_Box = 7, EntrustEventType_Transfer = 8, EntrustEventType_Interact = 9}
+local EntrustEventType = {
+  EntrustEventType_Invalid = 0,
+  EntrustEventType_Start = 1,
+  EntrustEventType_End = 2,
+  EntrustEventType_Fight = 3,
+  EntrustEventType_Story = 4,
+  EntrustEventType_MissionOccupy = 5,
+  EntrustEventType_MissionSubmit = 6,
+  EntrustEventType_Box = 7,
+  EntrustEventType_Transfer = 8,
+  EntrustEventType_Interact = 9
+}
 _enum("EntrustEventType", EntrustEventType)
 local EntrustComponentNotifyType = {EntrustComponentNotifyType_EventsRefresh = 1}
 _enum("EntrustComponentNotifyType", EntrustComponentNotifyType)
 _class("EntrustMissionInfo", Object)
-_ENV.EntrustMissionInfo = _ENV.EntrustMissionInfo
--- DECOMPILER ERROR at PC4292: Confused about usage of register: R28 in 'UnsetPending'
+EntrustMissionInfo = EntrustMissionInfo
 
-;
-(_ENV.EntrustMissionInfo).Constructor = function(self)
-  -- function num : 0_154
+function EntrustMissionInfo:Constructor()
   self.passed = false
   self.team_events = {}
 end
 
--- DECOMPILER ERROR at PC4307: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.EntrustMissionInfo)._proto = {
-[1] = {"passed", "bool"}
-, 
-[2] = {"team_events", "map<int,int>"}
+EntrustMissionInfo._proto = {
+  [1] = {"passed", "bool"},
+  [2] = {
+    "team_events",
+    "map<int,int>"
+  }
 }
 _class("EntrustComponentInfo", ICampaignComponentInfo)
-_ENV.EntrustComponentInfo = _ENV.EntrustComponentInfo
--- DECOMPILER ERROR at PC4319: Confused about usage of register: R28 in 'UnsetPending'
+EntrustComponentInfo = EntrustComponentInfo
 
-;
-(_ENV.EntrustComponentInfo).Constructor = function(self)
-  -- function num : 0_155
+function EntrustComponentInfo:Constructor()
   self.rewarded_events = {}
   self.open_time = {}
   self.mission_infos = {}
 end
 
--- DECOMPILER ERROR at PC4339: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.EntrustComponentInfo)._proto = {
-[1] = {"rewarded_events", "map<int,list<int>>"}
-, 
-[2] = {"open_time", "map<int,time>"}
-, 
-[3] = {"mission_infos", "map<int,EntrustMissionInfo>"}
+EntrustComponentInfo._proto = {
+  [1] = {
+    "rewarded_events",
+    "map<int,list<int>>"
+  },
+  [2] = {
+    "open_time",
+    "map<int,time>"
+  },
+  [3] = {
+    "mission_infos",
+    "map<int,EntrustMissionInfo>"
+  }
 }
 _class("EntrustLevelData", Object)
-_ENV.EntrustLevelData = _ENV.EntrustLevelData
--- DECOMPILER ERROR at PC4351: Confused about usage of register: R28 in 'UnsetPending'
+EntrustLevelData = EntrustLevelData
 
-;
-(_ENV.EntrustLevelData).Constructor = function(self)
-  -- function num : 0_156
+function EntrustLevelData:Constructor()
   self.rewarded_events = {}
   self.open_lines = {}
   self.open_events = {}
@@ -3023,147 +2830,127 @@ _ENV.EntrustLevelData = _ENV.EntrustLevelData
   self.box_rewards = {}
 end
 
--- DECOMPILER ERROR at PC4411: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.EntrustLevelData)._proto = {
-[1] = {"rewarded_events", "list<int>"}
-, 
-[2] = {"open_lines", "list<int>"}
-, 
-[3] = {"open_events", "list<int>"}
-, 
-[4] = {"passed", "bool"}
-, 
-[5] = {"total_events", "int"}
-, 
-[6] = {"complete_events", "int"}
-, 
-[7] = {"total_box", "int"}
-, 
-[8] = {"opened_box", "int"}
-, 
-[9] = {"open_time", "time"}
-, 
-[10] = {"passed_rewards", "list<RoleAsset>"}
-, 
-[11] = {"box_rewards", "list<RoleAsset>"}
+EntrustLevelData._proto = {
+  [1] = {
+    "rewarded_events",
+    "list<int>"
+  },
+  [2] = {"open_lines", "list<int>"},
+  [3] = {
+    "open_events",
+    "list<int>"
+  },
+  [4] = {"passed", "bool"},
+  [5] = {
+    "total_events",
+    "int"
+  },
+  [6] = {
+    "complete_events",
+    "int"
+  },
+  [7] = {"total_box", "int"},
+  [8] = {"opened_box", "int"},
+  [9] = {"open_time", "time"},
+  [10] = {
+    "passed_rewards",
+    "list<RoleAsset>"
+  },
+  [11] = {
+    "box_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("EntrustComponetClientData", Object)
-_ENV.EntrustComponetClientData = _ENV.EntrustComponetClientData
--- DECOMPILER ERROR at PC4423: Confused about usage of register: R28 in 'UnsetPending'
+EntrustComponetClientData = EntrustComponetClientData
 
-;
-(_ENV.EntrustComponetClientData).Constructor = function(self)
-  -- function num : 0_157
+function EntrustComponetClientData:Constructor()
   self.datas = {}
 end
 
--- DECOMPILER ERROR at PC4433: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.EntrustComponetClientData)._proto = {
-[1] = {"datas", "map<int,EntrustLevelData>"}
+EntrustComponetClientData._proto = {
+  [1] = {
+    "datas",
+    "map<int,EntrustLevelData>"
+  }
 }
 _class("EntrustComponentCompleteReq", ICampaignComRequest)
-_ENV.EntrustComponentCompleteReq = _ENV.EntrustComponentCompleteReq
--- DECOMPILER ERROR at PC4445: Confused about usage of register: R28 in 'UnsetPending'
+EntrustComponentCompleteReq = EntrustComponentCompleteReq
 
-;
-(_ENV.EntrustComponentCompleteReq).Constructor = function(self)
-  -- function num : 0_158
+function EntrustComponentCompleteReq:Constructor()
   self.entrustid = 0
   self.eventid = 0
 end
 
--- DECOMPILER ERROR at PC4460: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.EntrustComponentCompleteReq)._proto = {
-[1] = {"entrustid", "int"}
-, 
-[2] = {"eventid", "int"}
+EntrustComponentCompleteReq._proto = {
+  [1] = {"entrustid", "int"},
+  [2] = {"eventid", "int"}
 }
 _class("EntrustComponentCompleteRep", ICampaignComResponse)
-_ENV.EntrustComponentCompleteRep = _ENV.EntrustComponentCompleteRep
--- DECOMPILER ERROR at PC4472: Confused about usage of register: R28 in 'UnsetPending'
+EntrustComponentCompleteRep = EntrustComponentCompleteRep
 
-;
-(_ENV.EntrustComponentCompleteRep).Constructor = function(self)
-  -- function num : 0_159
+function EntrustComponentCompleteRep:Constructor()
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC4482: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.EntrustComponentCompleteRep)._proto = {
-[1] = {"rewards", "list<RoleAsset>"}
+EntrustComponentCompleteRep._proto = {
+  [1] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("NotifyEntrustEventsRefresh", Object)
-_ENV.NotifyEntrustEventsRefresh = _ENV.NotifyEntrustEventsRefresh
--- DECOMPILER ERROR at PC4494: Confused about usage of register: R28 in 'UnsetPending'
+NotifyEntrustEventsRefresh = NotifyEntrustEventsRefresh
 
-;
-(_ENV.NotifyEntrustEventsRefresh).Constructor = function(self)
-  -- function num : 0_160
+function NotifyEntrustEventsRefresh:Constructor()
   self.rewarded_events = {}
   self.mission_infos = {}
 end
 
--- DECOMPILER ERROR at PC4509: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.NotifyEntrustEventsRefresh)._proto = {
-[1] = {"rewarded_events", "map<int,list<int>>"}
-, 
-[2] = {"mission_infos", "map<int,EntrustMissionInfo>"}
+NotifyEntrustEventsRefresh._proto = {
+  [1] = {
+    "rewarded_events",
+    "map<int,list<int>>"
+  },
+  [2] = {
+    "mission_infos",
+    "map<int,EntrustMissionInfo>"
+  }
 }
 _class("EntrustComponentMoveEventReq", ICampaignComRequest)
-_ENV.EntrustComponentMoveEventReq = _ENV.EntrustComponentMoveEventReq
--- DECOMPILER ERROR at PC4521: Confused about usage of register: R28 in 'UnsetPending'
+EntrustComponentMoveEventReq = EntrustComponentMoveEventReq
 
-;
-(_ENV.EntrustComponentMoveEventReq).Constructor = function(self)
-  -- function num : 0_161
+function EntrustComponentMoveEventReq:Constructor()
   self.entrustid = 0
   self.team_events = {}
 end
 
--- DECOMPILER ERROR at PC4536: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.EntrustComponentMoveEventReq)._proto = {
-[1] = {"entrustid", "int"}
-, 
-[2] = {"team_events", "map<int,int>"}
+EntrustComponentMoveEventReq._proto = {
+  [1] = {"entrustid", "int"},
+  [2] = {
+    "team_events",
+    "map<int,int>"
+  }
 }
 _class("EntrustComponentMoveEventRep", ICampaignComResponse)
-_ENV.EntrustComponentMoveEventRep = _ENV.EntrustComponentMoveEventRep
--- DECOMPILER ERROR at PC4548: Confused about usage of register: R28 in 'UnsetPending'
+EntrustComponentMoveEventRep = EntrustComponentMoveEventRep
 
-;
-(_ENV.EntrustComponentMoveEventRep).Constructor = function(self)
-  -- function num : 0_162 , upvalues : _ENV
+function EntrustComponentMoveEventRep:Constructor()
   self.ret = 0
   self.mission_info = EntrustMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC4563: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.EntrustComponentMoveEventRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"mission_info", "EntrustMissionInfo"}
+EntrustComponentMoveEventRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "mission_info",
+    "EntrustMissionInfo"
+  }
 }
 _class("DailyMissionComponentInfo", ICampaignComponentInfo)
-_ENV.DailyMissionComponentInfo = _ENV.DailyMissionComponentInfo
--- DECOMPILER ERROR at PC4575: Confused about usage of register: R28 in 'UnsetPending'
+DailyMissionComponentInfo = DailyMissionComponentInfo
 
-;
-(_ENV.DailyMissionComponentInfo).Constructor = function(self)
-  -- function num : 0_163
+function DailyMissionComponentInfo:Constructor()
   self.m_cur_day_index = 0
   self.m_daily_mission = {}
   self.m_daily_mission_reset_time = 0
@@ -3172,76 +2959,81 @@ _ENV.DailyMissionComponentInfo = _ENV.DailyMissionComponentInfo
   self.m_today_score = 0
 end
 
--- DECOMPILER ERROR at PC4610: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.DailyMissionComponentInfo)._proto = {
-[1] = {"m_cur_day_index", "int"}
-, 
-[2] = {"m_daily_mission", "list<int>"}
-, 
-[3] = {"m_daily_mission_reset_time", "time"}
-, 
-[4] = {"m_total_score", "int"}
-, 
-[5] = {"m_score_limit", "int"}
-, 
-[6] = {"m_today_score", "int"}
+DailyMissionComponentInfo._proto = {
+  [1] = {
+    "m_cur_day_index",
+    "int"
+  },
+  [2] = {
+    "m_daily_mission",
+    "list<int>"
+  },
+  [3] = {
+    "m_daily_mission_reset_time",
+    "time"
+  },
+  [4] = {
+    "m_total_score",
+    "int"
+  },
+  [5] = {
+    "m_score_limit",
+    "int"
+  },
+  [6] = {
+    "m_today_score",
+    "int"
+  }
 }
 _class("CDailyMissionComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CDailyMissionComponentDataInfo = _ENV.CDailyMissionComponentDataInfo
--- DECOMPILER ERROR at PC4622: Confused about usage of register: R28 in 'UnsetPending'
+CDailyMissionComponentDataInfo = CDailyMissionComponentDataInfo
 
-;
-(_ENV.CDailyMissionComponentDataInfo).Constructor = function(self)
-  -- function num : 0_164
+function CDailyMissionComponentDataInfo:Constructor()
   self.m_today_score = 0
   self.m_toal_score = 0
   self.m_cur_day_index = 0
   self.m_mission = {}
 end
 
--- DECOMPILER ERROR at PC4647: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.CDailyMissionComponentDataInfo)._proto = {
-[1] = {"m_today_score", "int"}
-, 
-[2] = {"m_toal_score", "int"}
-, 
-[3] = {"m_cur_day_index", "int"}
-, 
-[4] = {"m_mission", "map<int,list<int>>"}
+CDailyMissionComponentDataInfo._proto = {
+  [1] = {
+    "m_today_score",
+    "int"
+  },
+  [2] = {
+    "m_toal_score",
+    "int"
+  },
+  [3] = {
+    "m_cur_day_index",
+    "int"
+  },
+  [4] = {
+    "m_mission",
+    "map<int,list<int>>"
+  }
 }
 _class("ChallengeFormationItem", Object)
-_ENV.ChallengeFormationItem = _ENV.ChallengeFormationItem
--- DECOMPILER ERROR at PC4659: Confused about usage of register: R28 in 'UnsetPending'
+ChallengeFormationItem = ChallengeFormationItem
 
-;
-(_ENV.ChallengeFormationItem).Constructor = function(self)
-  -- function num : 0_165
+function ChallengeFormationItem:Constructor()
   self.id = 0
   self.name = ""
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC4679: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.ChallengeFormationItem)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"name", "string"}
-, 
-[3] = {"pet_list", "list<int64>"}
+ChallengeFormationItem._proto = {
+  [1] = {"id", "int"},
+  [2] = {"name", "string"},
+  [3] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("ChallengeMissionComponentInfo", ICampaignComponentInfo)
-_ENV.ChallengeMissionComponentInfo = _ENV.ChallengeMissionComponentInfo
--- DECOMPILER ERROR at PC4691: Confused about usage of register: R28 in 'UnsetPending'
+ChallengeMissionComponentInfo = ChallengeMissionComponentInfo
 
-;
-(_ENV.ChallengeMissionComponentInfo).Constructor = function(self)
-  -- function num : 0_166
+function ChallengeMissionComponentInfo:Constructor()
   self.m_challenge_unlock_time = {}
   self.m_select_affix = {}
   self.m_max_score = {}
@@ -3250,29 +3042,36 @@ _ENV.ChallengeMissionComponentInfo = _ENV.ChallengeMissionComponentInfo
   self.new_look_ids = {}
 end
 
--- DECOMPILER ERROR at PC4726: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.ChallengeMissionComponentInfo)._proto = {
-[1] = {"m_challenge_unlock_time", "map<int,time>"}
-, 
-[2] = {"m_select_affix", "map<int,list<int>>"}
-, 
-[3] = {"m_max_score", "map<int,int>"}
-, 
-[4] = {"formation_list", "list<ChallengeFormationItem>"}
-, 
-[5] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[6] = {"new_look_ids", "list<int>"}
+ChallengeMissionComponentInfo._proto = {
+  [1] = {
+    "m_challenge_unlock_time",
+    "map<int,time>"
+  },
+  [2] = {
+    "m_select_affix",
+    "map<int,list<int>>"
+  },
+  [3] = {
+    "m_max_score",
+    "map<int,int>"
+  },
+  [4] = {
+    "formation_list",
+    "list<ChallengeFormationItem>"
+  },
+  [5] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [6] = {
+    "new_look_ids",
+    "list<int>"
+  }
 }
 _class("CChallengeMissionComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CChallengeMissionComponentDataInfo = _ENV.CChallengeMissionComponentDataInfo
--- DECOMPILER ERROR at PC4738: Confused about usage of register: R28 in 'UnsetPending'
+CChallengeMissionComponentDataInfo = CChallengeMissionComponentDataInfo
 
-;
-(_ENV.CChallengeMissionComponentDataInfo).Constructor = function(self)
-  -- function num : 0_167
+function CChallengeMissionComponentDataInfo:Constructor()
   self.m_select_affix = {}
   self.m_max_score = {}
   self.formation_list = {}
@@ -3280,488 +3079,410 @@ _ENV.CChallengeMissionComponentDataInfo = _ENV.CChallengeMissionComponentDataInf
   self.new_look_ids = {}
 end
 
--- DECOMPILER ERROR at PC4768: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.CChallengeMissionComponentDataInfo)._proto = {
-[1] = {"m_select_affix", "map<int,list<int>>"}
-, 
-[2] = {"m_max_score", "map<int,int>"}
-, 
-[3] = {"formation_list", "list<ChallengeFormationItem>"}
-, 
-[4] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[5] = {"new_look_ids", "list<int>"}
+CChallengeMissionComponentDataInfo._proto = {
+  [1] = {
+    "m_select_affix",
+    "map<int,list<int>>"
+  },
+  [2] = {
+    "m_max_score",
+    "map<int,int>"
+  },
+  [3] = {
+    "formation_list",
+    "list<ChallengeFormationItem>"
+  },
+  [4] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [5] = {
+    "new_look_ids",
+    "list<int>"
+  }
 }
 _class("ChallengeSelectAffixReq", ICampaignComRequest)
-_ENV.ChallengeSelectAffixReq = _ENV.ChallengeSelectAffixReq
--- DECOMPILER ERROR at PC4780: Confused about usage of register: R28 in 'UnsetPending'
+ChallengeSelectAffixReq = ChallengeSelectAffixReq
 
-;
-(_ENV.ChallengeSelectAffixReq).Constructor = function(self)
-  -- function num : 0_168
+function ChallengeSelectAffixReq:Constructor()
   self.nCampaignMissionId = 0
   self.selectAffixIdArray = {}
 end
 
--- DECOMPILER ERROR at PC4795: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.ChallengeSelectAffixReq)._proto = {
-[1] = {"nCampaignMissionId", "int"}
-, 
-[2] = {"selectAffixIdArray", "list<int>"}
+ChallengeSelectAffixReq._proto = {
+  [1] = {
+    "nCampaignMissionId",
+    "int"
+  },
+  [2] = {
+    "selectAffixIdArray",
+    "list<int>"
+  }
 }
 _class("ChallengeSelectAffixRep", ICampaignComResponse)
-_ENV.ChallengeSelectAffixRep = _ENV.ChallengeSelectAffixRep
--- DECOMPILER ERROR at PC4807: Confused about usage of register: R28 in 'UnsetPending'
+ChallengeSelectAffixRep = ChallengeSelectAffixRep
 
-;
-(_ENV.ChallengeSelectAffixRep).Constructor = function(self)
-  -- function num : 0_169
+function ChallengeSelectAffixRep:Constructor()
 end
 
--- DECOMPILER ERROR at PC4811: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.ChallengeSelectAffixRep)._proto = {}
+ChallengeSelectAffixRep._proto = {}
 _class("ChallengeClearAffixReq", ICampaignComRequest)
-_ENV.ChallengeClearAffixReq = _ENV.ChallengeClearAffixReq
--- DECOMPILER ERROR at PC4823: Confused about usage of register: R28 in 'UnsetPending'
+ChallengeClearAffixReq = ChallengeClearAffixReq
 
-;
-(_ENV.ChallengeClearAffixReq).Constructor = function(self)
-  -- function num : 0_170
+function ChallengeClearAffixReq:Constructor()
   self.nChallengeMissionId = 0
 end
 
--- DECOMPILER ERROR at PC4833: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.ChallengeClearAffixReq)._proto = {
-[1] = {"nChallengeMissionId", "int"}
+ChallengeClearAffixReq._proto = {
+  [1] = {
+    "nChallengeMissionId",
+    "int"
+  }
 }
 _class("ChallengeClearAffixRep", ICampaignComResponse)
-_ENV.ChallengeClearAffixRep = _ENV.ChallengeClearAffixRep
--- DECOMPILER ERROR at PC4845: Confused about usage of register: R28 in 'UnsetPending'
+ChallengeClearAffixRep = ChallengeClearAffixRep
 
-;
-(_ENV.ChallengeClearAffixRep).Constructor = function(self)
-  -- function num : 0_171
+function ChallengeClearAffixRep:Constructor()
 end
 
--- DECOMPILER ERROR at PC4849: Confused about usage of register: R28 in 'UnsetPending'
-
-;
-(_ENV.ChallengeClearAffixRep)._proto = {}
+ChallengeClearAffixRep._proto = {}
 local ChallengeComponentNotifyType = {ChallengeComponentNotifyType_ScoreChange = 1}
 _enum("ChallengeComponentNotifyType", ChallengeComponentNotifyType)
 _class("NotifyChallengeMissionScoreChanged", Object)
-_ENV.NotifyChallengeMissionScoreChanged = _ENV.NotifyChallengeMissionScoreChanged
--- DECOMPILER ERROR at PC4869: Confused about usage of register: R29 in 'UnsetPending'
+NotifyChallengeMissionScoreChanged = NotifyChallengeMissionScoreChanged
 
-;
-(_ENV.NotifyChallengeMissionScoreChanged).Constructor = function(self)
-  -- function num : 0_172
+function NotifyChallengeMissionScoreChanged:Constructor()
   self.m_group_id = 0
   self.m_total_score = 0
   self.m_last_score = 0
   self.m_missions = {}
 end
 
--- DECOMPILER ERROR at PC4894: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.NotifyChallengeMissionScoreChanged)._proto = {
-[1] = {"m_group_id", "int"}
-, 
-[2] = {"m_total_score", "int"}
-, 
-[3] = {"m_last_score", "int"}
-, 
-[4] = {"m_missions", "list<cam_mission_info>"}
+NotifyChallengeMissionScoreChanged._proto = {
+  [1] = {"m_group_id", "int"},
+  [2] = {
+    "m_total_score",
+    "int"
+  },
+  [3] = {
+    "m_last_score",
+    "int"
+  },
+  [4] = {
+    "m_missions",
+    "list<cam_mission_info>"
+  }
 }
 _class("Power2ItemComponentInfo", ICampaignComponentInfo)
-_ENV.Power2ItemComponentInfo = _ENV.Power2ItemComponentInfo
--- DECOMPILER ERROR at PC4906: Confused about usage of register: R29 in 'UnsetPending'
+Power2ItemComponentInfo = Power2ItemComponentInfo
 
-;
-(_ENV.Power2ItemComponentInfo).Constructor = function(self)
-  -- function num : 0_173
+function Power2ItemComponentInfo:Constructor()
   self.m_total_count = 0
 end
 
--- DECOMPILER ERROR at PC4916: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.Power2ItemComponentInfo)._proto = {
-[1] = {"m_total_count", "int64"}
+Power2ItemComponentInfo._proto = {
+  [1] = {
+    "m_total_count",
+    "int64"
+  }
 }
 _class("CPower2ItemComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CPower2ItemComponentDataInfo = _ENV.CPower2ItemComponentDataInfo
--- DECOMPILER ERROR at PC4928: Confused about usage of register: R29 in 'UnsetPending'
+CPower2ItemComponentDataInfo = CPower2ItemComponentDataInfo
 
-;
-(_ENV.CPower2ItemComponentDataInfo).Constructor = function(self)
-  -- function num : 0_174
+function CPower2ItemComponentDataInfo:Constructor()
   self.m_total_count = 0
 end
 
--- DECOMPILER ERROR at PC4938: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.CPower2ItemComponentDataInfo)._proto = {
-[1] = {"m_total_count", "int64"}
+CPower2ItemComponentDataInfo._proto = {
+  [1] = {
+    "m_total_count",
+    "int64"
+  }
 }
 _class("SeniorSkinComponentInfo", ICampaignComponentInfo)
-_ENV.SeniorSkinComponentInfo = _ENV.SeniorSkinComponentInfo
--- DECOMPILER ERROR at PC4950: Confused about usage of register: R29 in 'UnsetPending'
+SeniorSkinComponentInfo = SeniorSkinComponentInfo
 
-;
-(_ENV.SeniorSkinComponentInfo).Constructor = function(self)
-  -- function num : 0_175
+function SeniorSkinComponentInfo:Constructor()
   self.shake_num = 0
   self.shake_win_ids = {}
   self.skin_gain_time = {}
 end
 
--- DECOMPILER ERROR at PC4970: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.SeniorSkinComponentInfo)._proto = {
-[1] = {"shake_num", "int"}
-, 
-[2] = {"shake_win_ids", "list<int>"}
-, 
-[3] = {"skin_gain_time", "map<int,time>"}
+SeniorSkinComponentInfo._proto = {
+  [1] = {"shake_num", "int"},
+  [2] = {
+    "shake_win_ids",
+    "list<int>"
+  },
+  [3] = {
+    "skin_gain_time",
+    "map<int,time>"
+  }
 }
 _class("SeniorSkinComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.SeniorSkinComponentDataInfo = _ENV.SeniorSkinComponentDataInfo
--- DECOMPILER ERROR at PC4982: Confused about usage of register: R29 in 'UnsetPending'
+SeniorSkinComponentDataInfo = SeniorSkinComponentDataInfo
 
-;
-(_ENV.SeniorSkinComponentDataInfo).Constructor = function(self)
-  -- function num : 0_176
+function SeniorSkinComponentDataInfo:Constructor()
   self.shake_num = 0
   self.shake_win_ids = {}
 end
 
--- DECOMPILER ERROR at PC4997: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.SeniorSkinComponentDataInfo)._proto = {
-[1] = {"shake_num", "int"}
-, 
-[2] = {"shake_win_ids", "list<int>"}
+SeniorSkinComponentDataInfo._proto = {
+  [1] = {"shake_num", "int"},
+  [2] = {
+    "shake_win_ids",
+    "list<int>"
+  }
 }
 _class("SeniorSkinComponentApplyShake", ICampaignComRequest)
-_ENV.SeniorSkinComponentApplyShake = _ENV.SeniorSkinComponentApplyShake
--- DECOMPILER ERROR at PC5009: Confused about usage of register: R29 in 'UnsetPending'
+SeniorSkinComponentApplyShake = SeniorSkinComponentApplyShake
 
-;
-(_ENV.SeniorSkinComponentApplyShake).Constructor = function(self)
-  -- function num : 0_177
+function SeniorSkinComponentApplyShake:Constructor()
 end
 
--- DECOMPILER ERROR at PC5013: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.SeniorSkinComponentApplyShake)._proto = {}
+SeniorSkinComponentApplyShake._proto = {}
 _class("SeniorSkinComponentApplyShakeReplay", ICampaignComResponse)
-_ENV.SeniorSkinComponentApplyShakeReplay = _ENV.SeniorSkinComponentApplyShakeReplay
--- DECOMPILER ERROR at PC5025: Confused about usage of register: R29 in 'UnsetPending'
+SeniorSkinComponentApplyShakeReplay = SeniorSkinComponentApplyShakeReplay
 
-;
-(_ENV.SeniorSkinComponentApplyShakeReplay).Constructor = function(self)
-  -- function num : 0_178
+function SeniorSkinComponentApplyShakeReplay:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC5035: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.SeniorSkinComponentApplyShakeReplay)._proto = {
-[1] = {"id", "int"}
+SeniorSkinComponentApplyShakeReplay._proto = {
+  [1] = {"id", "int"}
 }
 _class("CycleQuestComponentInfo", ICampaignComponentInfo)
-_ENV.CycleQuestComponentInfo = _ENV.CycleQuestComponentInfo
--- DECOMPILER ERROR at PC5047: Confused about usage of register: R29 in 'UnsetPending'
+CycleQuestComponentInfo = CycleQuestComponentInfo
 
-;
-(_ENV.CycleQuestComponentInfo).Constructor = function(self)
-  -- function num : 0_179
+function CycleQuestComponentInfo:Constructor()
   self.cur_score = 0
   self.today_socre_max = 0
 end
 
--- DECOMPILER ERROR at PC5062: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.CycleQuestComponentInfo)._proto = {
-[1] = {"cur_score", "int"}
-, 
-[2] = {"today_socre_max", "int"}
+CycleQuestComponentInfo._proto = {
+  [1] = {"cur_score", "int"},
+  [2] = {
+    "today_socre_max",
+    "int"
+  }
 }
 _class("CycleQuestComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CycleQuestComponentDataInfo = _ENV.CycleQuestComponentDataInfo
--- DECOMPILER ERROR at PC5074: Confused about usage of register: R29 in 'UnsetPending'
+CycleQuestComponentDataInfo = CycleQuestComponentDataInfo
 
-;
-(_ENV.CycleQuestComponentDataInfo).Constructor = function(self)
-  -- function num : 0_180
+function CycleQuestComponentDataInfo:Constructor()
   self.cur_score = 0
 end
 
--- DECOMPILER ERROR at PC5084: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.CycleQuestComponentDataInfo)._proto = {
-[1] = {"cur_score", "int"}
+CycleQuestComponentDataInfo._proto = {
+  [1] = {"cur_score", "int"}
 }
 _class("NotifyCycleQuesetComponentUpdateScore", Object)
-_ENV.NotifyCycleQuesetComponentUpdateScore = _ENV.NotifyCycleQuesetComponentUpdateScore
--- DECOMPILER ERROR at PC5096: Confused about usage of register: R29 in 'UnsetPending'
+NotifyCycleQuesetComponentUpdateScore = NotifyCycleQuesetComponentUpdateScore
 
-;
-(_ENV.NotifyCycleQuesetComponentUpdateScore).Constructor = function(self)
-  -- function num : 0_181
+function NotifyCycleQuesetComponentUpdateScore:Constructor()
   self.list_quest_id = 0
   self.cur_score = 0
   self.today_socre_max = 0
 end
 
--- DECOMPILER ERROR at PC5116: Confused about usage of register: R29 in 'UnsetPending'
-
-;
-(_ENV.NotifyCycleQuesetComponentUpdateScore)._proto = {
-[1] = {"list_quest_id", "int"}
-, 
-[2] = {"cur_score", "int"}
-, 
-[3] = {"today_socre_max", "int"}
+NotifyCycleQuesetComponentUpdateScore._proto = {
+  [1] = {
+    "list_quest_id",
+    "int"
+  },
+  [2] = {"cur_score", "int"},
+  [3] = {
+    "today_socre_max",
+    "int"
+  }
 }
 local ChessComponentNotifyType = {ChessMissionComponentNotifyType_InfoChanged = 1}
 _enum("ChessComponentNotifyType", ChessComponentNotifyType)
 _class("NotifyChessComponentInfoChanged", Object)
-_ENV.NotifyChessComponentInfoChanged = _ENV.NotifyChessComponentInfoChanged
--- DECOMPILER ERROR at PC5136: Confused about usage of register: R30 in 'UnsetPending'
+NotifyChessComponentInfoChanged = NotifyChessComponentInfoChanged
 
-;
-(_ENV.NotifyChessComponentInfoChanged).Constructor = function(self)
-  -- function num : 0_182
+function NotifyChessComponentInfoChanged:Constructor()
   self.m_update_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC5146: Confused about usage of register: R30 in 'UnsetPending'
-
-;
-(_ENV.NotifyChessComponentInfoChanged)._proto = {
-[1] = {"m_update_mission_info", "map<int,cam_mission_info>"}
+NotifyChessComponentInfoChanged._proto = {
+  [1] = {
+    "m_update_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 _class("ChessComponentInfo", ICampaignComponentInfo)
-_ENV.ChessComponentInfo = _ENV.ChessComponentInfo
--- DECOMPILER ERROR at PC5158: Confused about usage of register: R30 in 'UnsetPending'
+ChessComponentInfo = ChessComponentInfo
 
-;
-(_ENV.ChessComponentInfo).Constructor = function(self)
-  -- function num : 0_183
+function ChessComponentInfo:Constructor()
   self.m_pass_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC5168: Confused about usage of register: R30 in 'UnsetPending'
-
-;
-(_ENV.ChessComponentInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
+ChessComponentInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 _class("ChessComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.ChessComponentDataInfo = _ENV.ChessComponentDataInfo
--- DECOMPILER ERROR at PC5180: Confused about usage of register: R30 in 'UnsetPending'
+ChessComponentDataInfo = ChessComponentDataInfo
 
-;
-(_ENV.ChessComponentDataInfo).Constructor = function(self)
-  -- function num : 0_184
+function ChessComponentDataInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_fight_mission = {}
 end
 
--- DECOMPILER ERROR at PC5195: Confused about usage of register: R30 in 'UnsetPending'
-
-;
-(_ENV.ChessComponentDataInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_fight_mission", "list<int>"}
+ChessComponentDataInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_fight_mission",
+    "list<int>"
+  }
 }
 _class("MissionDropComponentInfo", ICampaignComponentInfo)
-_ENV.MissionDropComponentInfo = _ENV.MissionDropComponentInfo
--- DECOMPILER ERROR at PC5207: Confused about usage of register: R30 in 'UnsetPending'
+MissionDropComponentInfo = MissionDropComponentInfo
 
-;
-(_ENV.MissionDropComponentInfo).Constructor = function(self)
-  -- function num : 0_185
+function MissionDropComponentInfo:Constructor()
   self.m_total_count = 0
 end
 
--- DECOMPILER ERROR at PC5217: Confused about usage of register: R30 in 'UnsetPending'
-
-;
-(_ENV.MissionDropComponentInfo)._proto = {
-[1] = {"m_total_count", "int64"}
+MissionDropComponentInfo._proto = {
+  [1] = {
+    "m_total_count",
+    "int64"
+  }
 }
 _class("MissionDropComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.MissionDropComponentDataInfo = _ENV.MissionDropComponentDataInfo
--- DECOMPILER ERROR at PC5229: Confused about usage of register: R30 in 'UnsetPending'
+MissionDropComponentDataInfo = MissionDropComponentDataInfo
 
-;
-(_ENV.MissionDropComponentDataInfo).Constructor = function(self)
-  -- function num : 0_186
+function MissionDropComponentDataInfo:Constructor()
   self.m_total_count = 0
 end
 
--- DECOMPILER ERROR at PC5239: Confused about usage of register: R30 in 'UnsetPending'
-
-;
-(_ENV.MissionDropComponentDataInfo)._proto = {
-[1] = {"m_total_count", "int64"}
+MissionDropComponentDataInfo._proto = {
+  [1] = {
+    "m_total_count",
+    "int64"
+  }
 }
-local ETimeRewardRewardStatus = {E_TIME_REWARD_UNKNOW = 0, E_TIME_REWARD_CAN_RECV = 1, E_TIME_REWARD_RECVED = 2, E_TIME_REWARD_LOCK = 3}
+local ETimeRewardRewardStatus = {
+  E_TIME_REWARD_UNKNOW = 0,
+  E_TIME_REWARD_CAN_RECV = 1,
+  E_TIME_REWARD_RECVED = 2,
+  E_TIME_REWARD_LOCK = 3
+}
 _enum("ETimeRewardRewardStatus", ETimeRewardRewardStatus)
 _class("TimeRewardInfo", Object)
-_ENV.TimeRewardInfo = _ENV.TimeRewardInfo
--- DECOMPILER ERROR at PC5266: Confused about usage of register: R31 in 'UnsetPending'
+TimeRewardInfo = TimeRewardInfo
 
-;
-(_ENV.TimeRewardInfo).Constructor = function(self)
-  -- function num : 0_187 , upvalues : ETimeRewardRewardStatus
+function TimeRewardInfo:Constructor()
   self.reward_id = 0
   self.unlock_time = 0
   self.rewards = {}
   self.rec_reward_status = ETimeRewardRewardStatus.E_TIME_REWARD_UNKNOW
 end
 
--- DECOMPILER ERROR at PC5291: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.TimeRewardInfo)._proto = {
-[1] = {"reward_id", "int"}
-, 
-[2] = {"unlock_time", "time"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
-, 
-[4] = {"rec_reward_status", "int"}
+TimeRewardInfo._proto = {
+  [1] = {"reward_id", "int"},
+  [2] = {
+    "unlock_time",
+    "time"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "rec_reward_status",
+    "int"
+  }
 }
 _class("TimeRewardComponentInfo", ICampaignComponentInfo)
-_ENV.TimeRewardComponentInfo = _ENV.TimeRewardComponentInfo
--- DECOMPILER ERROR at PC5303: Confused about usage of register: R31 in 'UnsetPending'
+TimeRewardComponentInfo = TimeRewardComponentInfo
 
-;
-(_ENV.TimeRewardComponentInfo).Constructor = function(self)
-  -- function num : 0_188
+function TimeRewardComponentInfo:Constructor()
   self.m_reward_info = {}
 end
 
--- DECOMPILER ERROR at PC5313: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.TimeRewardComponentInfo)._proto = {
-[1] = {"m_reward_info", "map<int,TimeRewardInfo>"}
+TimeRewardComponentInfo._proto = {
+  [1] = {
+    "m_reward_info",
+    "map<int,TimeRewardInfo>"
+  }
 }
 _class("TimeRewardComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.TimeRewardComponentDataInfo = _ENV.TimeRewardComponentDataInfo
--- DECOMPILER ERROR at PC5325: Confused about usage of register: R31 in 'UnsetPending'
+TimeRewardComponentDataInfo = TimeRewardComponentDataInfo
 
-;
-(_ENV.TimeRewardComponentDataInfo).Constructor = function(self)
-  -- function num : 0_189
+function TimeRewardComponentDataInfo:Constructor()
   self.m_rev_reward_id = {}
 end
 
--- DECOMPILER ERROR at PC5335: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.TimeRewardComponentDataInfo)._proto = {
-[1] = {"m_rev_reward_id", "list<int>"}
+TimeRewardComponentDataInfo._proto = {
+  [1] = {
+    "m_rev_reward_id",
+    "list<int>"
+  }
 }
 _class("TakeRewardReq", ICampaignComRequest)
-_ENV.TakeRewardReq = _ENV.TakeRewardReq
--- DECOMPILER ERROR at PC5347: Confused about usage of register: R31 in 'UnsetPending'
+TakeRewardReq = TakeRewardReq
 
-;
-(_ENV.TakeRewardReq).Constructor = function(self)
-  -- function num : 0_190
+function TakeRewardReq:Constructor()
   self.reward_id = 0
 end
 
--- DECOMPILER ERROR at PC5357: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.TakeRewardReq)._proto = {
-[1] = {"reward_id", "int"}
+TakeRewardReq._proto = {
+  [1] = {"reward_id", "int"}
 }
 _class("TakeRewardRep", ICampaignComResponse)
-_ENV.TakeRewardRep = _ENV.TakeRewardRep
--- DECOMPILER ERROR at PC5369: Confused about usage of register: R31 in 'UnsetPending'
+TakeRewardRep = TakeRewardRep
 
-;
-(_ENV.TakeRewardRep).Constructor = function(self)
-  -- function num : 0_191
+function TakeRewardRep:Constructor()
   self.m_rewards = {}
 end
 
--- DECOMPILER ERROR at PC5379: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.TakeRewardRep)._proto = {
-[1] = {"m_rewards", "list<RoleAsset>"}
+TakeRewardRep._proto = {
+  [1] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("HomelandGroupTaskComponentInfo", ICampaignComponentInfo)
-_ENV.HomelandGroupTaskComponentInfo = _ENV.HomelandGroupTaskComponentInfo
--- DECOMPILER ERROR at PC5391: Confused about usage of register: R31 in 'UnsetPending'
+HomelandGroupTaskComponentInfo = HomelandGroupTaskComponentInfo
 
-;
-(_ENV.HomelandGroupTaskComponentInfo).Constructor = function(self)
-  -- function num : 0_192
+function HomelandGroupTaskComponentInfo:Constructor()
   self.task_group_id = {}
 end
 
--- DECOMPILER ERROR at PC5401: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.HomelandGroupTaskComponentInfo)._proto = {
-[1] = {"task_group_id", "list<int>"}
+HomelandGroupTaskComponentInfo._proto = {
+  [1] = {
+    "task_group_id",
+    "list<int>"
+  }
 }
 _class("AVGStoryFormationInfo", Object)
-_ENV.AVGStoryFormationInfo = _ENV.AVGStoryFormationInfo
--- DECOMPILER ERROR at PC5413: Confused about usage of register: R31 in 'UnsetPending'
+AVGStoryFormationInfo = AVGStoryFormationInfo
 
-;
-(_ENV.AVGStoryFormationInfo).Constructor = function(self)
-  -- function num : 0_193
+function AVGStoryFormationInfo:Constructor()
   self.leader_hp = 0
   self.teammate_affinity = {}
   self.evidence = {}
 end
 
--- DECOMPILER ERROR at PC5433: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AVGStoryFormationInfo)._proto = {
-[1] = {"leader_hp", "int"}
-, 
-[2] = {"teammate_affinity", "list<int>"}
-, 
-[3] = {"evidence", "list<int>"}
+AVGStoryFormationInfo._proto = {
+  [1] = {"leader_hp", "int"},
+  [2] = {
+    "teammate_affinity",
+    "list<int>"
+  },
+  [3] = {"evidence", "list<int>"}
 }
 _class("AVGStoryMissionInfo", Object)
-_ENV.AVGStoryMissionInfo = _ENV.AVGStoryMissionInfo
--- DECOMPILER ERROR at PC5445: Confused about usage of register: R31 in 'UnsetPending'
+AVGStoryMissionInfo = AVGStoryMissionInfo
 
-;
-(_ENV.AVGStoryMissionInfo).Constructor = function(self)
-  -- function num : 0_194 , upvalues : _ENV
+function AVGStoryMissionInfo:Constructor()
   self.mission_id = 0
   self.end_formation_info = AVGStoryFormationInfo:New()
   self.update_time = 0
@@ -3769,27 +3490,23 @@ _ENV.AVGStoryMissionInfo = _ENV.AVGStoryMissionInfo
   self.from_nodes = {}
 end
 
--- DECOMPILER ERROR at PC5475: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AVGStoryMissionInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"end_formation_info", "AVGStoryFormationInfo"}
-, 
-[3] = {"update_time", "time"}
-, 
-[4] = {"new_mark", "bool"}
-, 
-[5] = {"from_nodes", "list<int>"}
+AVGStoryMissionInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "end_formation_info",
+    "AVGStoryFormationInfo"
+  },
+  [3] = {
+    "update_time",
+    "time"
+  },
+  [4] = {"new_mark", "bool"},
+  [5] = {"from_nodes", "list<int>"}
 }
 _class("AVGStoryComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.AVGStoryComponentDataInfo = _ENV.AVGStoryComponentDataInfo
--- DECOMPILER ERROR at PC5487: Confused about usage of register: R31 in 'UnsetPending'
+AVGStoryComponentDataInfo = AVGStoryComponentDataInfo
 
-;
-(_ENV.AVGStoryComponentDataInfo).Constructor = function(self)
-  -- function num : 0_195
+function AVGStoryComponentDataInfo:Constructor()
   self.mission_datas = {}
   self.accepted_badge_rewards = {}
   self.choosed_manual_ids = {}
@@ -3800,33 +3517,44 @@ _ENV.AVGStoryComponentDataInfo = _ENV.AVGStoryComponentDataInfo
   self.gained_evidence = {}
 end
 
--- DECOMPILER ERROR at PC5532: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AVGStoryComponentDataInfo)._proto = {
-[1] = {"mission_datas", "map<int,AVGStoryMissionInfo>"}
-, 
-[2] = {"accepted_badge_rewards", "list<int>"}
-, 
-[3] = {"choosed_manual_ids", "list<int>"}
-, 
-[4] = {"conplated_ending_ids", "list<int>"}
-, 
-[5] = {"conplated_node_ids", "list<int>"}
-, 
-[6] = {"cur_node_id", "int"}
-, 
-[7] = {"showed_evidence", "map<int,list<int>>"}
-, 
-[8] = {"gained_evidence", "list<int>"}
+AVGStoryComponentDataInfo._proto = {
+  [1] = {
+    "mission_datas",
+    "map<int,AVGStoryMissionInfo>"
+  },
+  [2] = {
+    "accepted_badge_rewards",
+    "list<int>"
+  },
+  [3] = {
+    "choosed_manual_ids",
+    "list<int>"
+  },
+  [4] = {
+    "conplated_ending_ids",
+    "list<int>"
+  },
+  [5] = {
+    "conplated_node_ids",
+    "list<int>"
+  },
+  [6] = {
+    "cur_node_id",
+    "int"
+  },
+  [7] = {
+    "showed_evidence",
+    "map<int,list<int>>"
+  },
+  [8] = {
+    "gained_evidence",
+    "list<int>"
+  }
 }
 _class("AVGStoryComponentClientInfo", ICampaignComponentInfo)
-_ENV.AVGStoryComponentClientInfo = _ENV.AVGStoryComponentClientInfo
--- DECOMPILER ERROR at PC5544: Confused about usage of register: R31 in 'UnsetPending'
+AVGStoryComponentClientInfo = AVGStoryComponentClientInfo
 
-;
-(_ENV.AVGStoryComponentClientInfo).Constructor = function(self)
-  -- function num : 0_196
+function AVGStoryComponentClientInfo:Constructor()
   self.mission_datas = {}
   self.accepted_badge_rewards = {}
   self.choosed_manual_ids = {}
@@ -3837,284 +3565,226 @@ _ENV.AVGStoryComponentClientInfo = _ENV.AVGStoryComponentClientInfo
   self.gained_evidence = {}
 end
 
--- DECOMPILER ERROR at PC5589: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AVGStoryComponentClientInfo)._proto = {
-[1] = {"mission_datas", "map<int,AVGStoryMissionInfo>"}
-, 
-[2] = {"accepted_badge_rewards", "list<int>"}
-, 
-[3] = {"choosed_manual_ids", "list<int>"}
-, 
-[4] = {"conplated_ending_ids", "list<int>"}
-, 
-[5] = {"conplated_node_ids", "list<int>"}
-, 
-[6] = {"cur_node_id", "int"}
-, 
-[7] = {"showed_evidence", "map<int,list<int>>"}
-, 
-[8] = {"gained_evidence", "list<int>"}
+AVGStoryComponentClientInfo._proto = {
+  [1] = {
+    "mission_datas",
+    "map<int,AVGStoryMissionInfo>"
+  },
+  [2] = {
+    "accepted_badge_rewards",
+    "list<int>"
+  },
+  [3] = {
+    "choosed_manual_ids",
+    "list<int>"
+  },
+  [4] = {
+    "conplated_ending_ids",
+    "list<int>"
+  },
+  [5] = {
+    "conplated_node_ids",
+    "list<int>"
+  },
+  [6] = {
+    "cur_node_id",
+    "int"
+  },
+  [7] = {
+    "showed_evidence",
+    "map<int,list<int>>"
+  },
+  [8] = {
+    "gained_evidence",
+    "list<int>"
+  }
 }
 _class("AvgSetCurrentLocationReq", ICampaignComRequest)
-_ENV.AvgSetCurrentLocationReq = _ENV.AvgSetCurrentLocationReq
--- DECOMPILER ERROR at PC5601: Confused about usage of register: R31 in 'UnsetPending'
+AvgSetCurrentLocationReq = AvgSetCurrentLocationReq
 
-;
-(_ENV.AvgSetCurrentLocationReq).Constructor = function(self)
-  -- function num : 0_197
+function AvgSetCurrentLocationReq:Constructor()
   self.Node_id = 0
 end
 
--- DECOMPILER ERROR at PC5611: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgSetCurrentLocationReq)._proto = {
-[1] = {"Node_id", "int"}
+AvgSetCurrentLocationReq._proto = {
+  [1] = {"Node_id", "int"}
 }
 _class("AvgSetCurrentLocationRsp", ICampaignComResponse)
-_ENV.AvgSetCurrentLocationRsp = _ENV.AvgSetCurrentLocationRsp
--- DECOMPILER ERROR at PC5623: Confused about usage of register: R31 in 'UnsetPending'
+AvgSetCurrentLocationRsp = AvgSetCurrentLocationRsp
 
-;
-(_ENV.AvgSetCurrentLocationRsp).Constructor = function(self)
-  -- function num : 0_198
+function AvgSetCurrentLocationRsp:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC5633: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgSetCurrentLocationRsp)._proto = {
-[1] = {"ret", "int"}
+AvgSetCurrentLocationRsp._proto = {
+  [1] = {"ret", "int"}
 }
 _class("AvgUpdateNodeDataReq", ICampaignComRequest)
-_ENV.AvgUpdateNodeDataReq = _ENV.AvgUpdateNodeDataReq
--- DECOMPILER ERROR at PC5645: Confused about usage of register: R31 in 'UnsetPending'
+AvgUpdateNodeDataReq = AvgUpdateNodeDataReq
 
-;
-(_ENV.AvgUpdateNodeDataReq).Constructor = function(self)
-  -- function num : 0_199 , upvalues : _ENV
+function AvgUpdateNodeDataReq:Constructor()
   self.data = AVGStoryMissionInfo:New()
   self.complate_mission_id = 0
 end
 
--- DECOMPILER ERROR at PC5660: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgUpdateNodeDataReq)._proto = {
-[1] = {"data", "AVGStoryMissionInfo"}
-, 
-[2] = {"complate_mission_id", "int"}
+AvgUpdateNodeDataReq._proto = {
+  [1] = {
+    "data",
+    "AVGStoryMissionInfo"
+  },
+  [2] = {
+    "complate_mission_id",
+    "int"
+  }
 }
 _class("AvgUpdateNodeDataRsp", ICampaignComResponse)
-_ENV.AvgUpdateNodeDataRsp = _ENV.AvgUpdateNodeDataRsp
--- DECOMPILER ERROR at PC5672: Confused about usage of register: R31 in 'UnsetPending'
+AvgUpdateNodeDataRsp = AvgUpdateNodeDataRsp
 
-;
-(_ENV.AvgUpdateNodeDataRsp).Constructor = function(self)
-  -- function num : 0_200
+function AvgUpdateNodeDataRsp:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC5682: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgUpdateNodeDataRsp)._proto = {
-[1] = {"ret", "int"}
+AvgUpdateNodeDataRsp._proto = {
+  [1] = {"ret", "int"}
 }
 _class("AvgComplateEndingReq", ICampaignComRequest)
-_ENV.AvgComplateEndingReq = _ENV.AvgComplateEndingReq
--- DECOMPILER ERROR at PC5694: Confused about usage of register: R31 in 'UnsetPending'
+AvgComplateEndingReq = AvgComplateEndingReq
 
-;
-(_ENV.AvgComplateEndingReq).Constructor = function(self)
-  -- function num : 0_201
+function AvgComplateEndingReq:Constructor()
   self.ending_id = 0
 end
 
--- DECOMPILER ERROR at PC5704: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgComplateEndingReq)._proto = {
-[1] = {"ending_id", "int"}
+AvgComplateEndingReq._proto = {
+  [1] = {"ending_id", "int"}
 }
 _class("AvgComplateEndingRsp", ICampaignComResponse)
-_ENV.AvgComplateEndingRsp = _ENV.AvgComplateEndingRsp
--- DECOMPILER ERROR at PC5716: Confused about usage of register: R31 in 'UnsetPending'
+AvgComplateEndingRsp = AvgComplateEndingRsp
 
-;
-(_ENV.AvgComplateEndingRsp).Constructor = function(self)
-  -- function num : 0_202
+function AvgComplateEndingRsp:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC5726: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgComplateEndingRsp)._proto = {
-[1] = {"ret", "int"}
+AvgComplateEndingRsp._proto = {
+  [1] = {"ret", "int"}
 }
 _class("AvgManualChooseReq", ICampaignComRequest)
-_ENV.AvgManualChooseReq = _ENV.AvgManualChooseReq
--- DECOMPILER ERROR at PC5738: Confused about usage of register: R31 in 'UnsetPending'
+AvgManualChooseReq = AvgManualChooseReq
 
-;
-(_ENV.AvgManualChooseReq).Constructor = function(self)
-  -- function num : 0_203
+function AvgManualChooseReq:Constructor()
   self.manual_id = 0
 end
 
--- DECOMPILER ERROR at PC5748: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgManualChooseReq)._proto = {
-[1] = {"manual_id", "int"}
+AvgManualChooseReq._proto = {
+  [1] = {"manual_id", "int"}
 }
 _class("AvgManualChooseRsp", ICampaignComResponse)
-_ENV.AvgManualChooseRsp = _ENV.AvgManualChooseRsp
--- DECOMPILER ERROR at PC5760: Confused about usage of register: R31 in 'UnsetPending'
+AvgManualChooseRsp = AvgManualChooseRsp
 
-;
-(_ENV.AvgManualChooseRsp).Constructor = function(self)
-  -- function num : 0_204
+function AvgManualChooseRsp:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC5770: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgManualChooseRsp)._proto = {
-[1] = {"ret", "int"}
+AvgManualChooseRsp._proto = {
+  [1] = {"ret", "int"}
 }
 _class("AvgGainEvidenceReq", ICampaignComRequest)
-_ENV.AvgGainEvidenceReq = _ENV.AvgGainEvidenceReq
--- DECOMPILER ERROR at PC5782: Confused about usage of register: R31 in 'UnsetPending'
+AvgGainEvidenceReq = AvgGainEvidenceReq
 
-;
-(_ENV.AvgGainEvidenceReq).Constructor = function(self)
-  -- function num : 0_205
+function AvgGainEvidenceReq:Constructor()
   self.evidence_id = 0
 end
 
--- DECOMPILER ERROR at PC5792: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgGainEvidenceReq)._proto = {
-[1] = {"evidence_id", "int"}
+AvgGainEvidenceReq._proto = {
+  [1] = {
+    "evidence_id",
+    "int"
+  }
 }
 _class("AvgGainEvidenceRsp", ICampaignComResponse)
-_ENV.AvgGainEvidenceRsp = _ENV.AvgGainEvidenceRsp
--- DECOMPILER ERROR at PC5804: Confused about usage of register: R31 in 'UnsetPending'
+AvgGainEvidenceRsp = AvgGainEvidenceRsp
 
-;
-(_ENV.AvgGainEvidenceRsp).Constructor = function(self)
-  -- function num : 0_206
+function AvgGainEvidenceRsp:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC5814: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgGainEvidenceRsp)._proto = {
-[1] = {"ret", "int"}
+AvgGainEvidenceRsp._proto = {
+  [1] = {"ret", "int"}
 }
 _class("AvgShowEvidenceReq", ICampaignComRequest)
-_ENV.AvgShowEvidenceReq = _ENV.AvgShowEvidenceReq
--- DECOMPILER ERROR at PC5826: Confused about usage of register: R31 in 'UnsetPending'
+AvgShowEvidenceReq = AvgShowEvidenceReq
 
-;
-(_ENV.AvgShowEvidenceReq).Constructor = function(self)
-  -- function num : 0_207
+function AvgShowEvidenceReq:Constructor()
   self.evidence_manual_id = 0
   self.evidence_id = 0
 end
 
--- DECOMPILER ERROR at PC5841: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgShowEvidenceReq)._proto = {
-[1] = {"evidence_manual_id", "int"}
-, 
-[2] = {"evidence_id", "int"}
+AvgShowEvidenceReq._proto = {
+  [1] = {
+    "evidence_manual_id",
+    "int"
+  },
+  [2] = {
+    "evidence_id",
+    "int"
+  }
 }
 _class("AvgShowEvidenceRsp", ICampaignComResponse)
-_ENV.AvgShowEvidenceRsp = _ENV.AvgShowEvidenceRsp
--- DECOMPILER ERROR at PC5853: Confused about usage of register: R31 in 'UnsetPending'
+AvgShowEvidenceRsp = AvgShowEvidenceRsp
 
-;
-(_ENV.AvgShowEvidenceRsp).Constructor = function(self)
-  -- function num : 0_208
+function AvgShowEvidenceRsp:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC5863: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgShowEvidenceRsp)._proto = {
-[1] = {"ret", "int"}
+AvgShowEvidenceRsp._proto = {
+  [1] = {"ret", "int"}
 }
 _class("AvgAcceptBadgeRewardReq", ICampaignComRequest)
-_ENV.AvgAcceptBadgeRewardReq = _ENV.AvgAcceptBadgeRewardReq
--- DECOMPILER ERROR at PC5875: Confused about usage of register: R31 in 'UnsetPending'
+AvgAcceptBadgeRewardReq = AvgAcceptBadgeRewardReq
 
-;
-(_ENV.AvgAcceptBadgeRewardReq).Constructor = function(self)
-  -- function num : 0_209
+function AvgAcceptBadgeRewardReq:Constructor()
   self.badge_reward_id = 0
 end
 
--- DECOMPILER ERROR at PC5885: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgAcceptBadgeRewardReq)._proto = {
-[1] = {"badge_reward_id", "int"}
+AvgAcceptBadgeRewardReq._proto = {
+  [1] = {
+    "badge_reward_id",
+    "int"
+  }
 }
 _class("AvgAcceptBadgeRewardRsp", ICampaignComResponse)
-_ENV.AvgAcceptBadgeRewardRsp = _ENV.AvgAcceptBadgeRewardRsp
--- DECOMPILER ERROR at PC5897: Confused about usage of register: R31 in 'UnsetPending'
+AvgAcceptBadgeRewardRsp = AvgAcceptBadgeRewardRsp
 
-;
-(_ENV.AvgAcceptBadgeRewardRsp).Constructor = function(self)
-  -- function num : 0_210
+function AvgAcceptBadgeRewardRsp:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC5907: Confused about usage of register: R31 in 'UnsetPending'
-
-;
-(_ENV.AvgAcceptBadgeRewardRsp)._proto = {
-[1] = {"ret", "int"}
+AvgAcceptBadgeRewardRsp._proto = {
+  [1] = {"ret", "int"}
 }
 local PointProgressComponentNotifyType = {PointProgressComponentNotify_StepChanged = 1}
 _enum("PointProgressComponentNotifyType", PointProgressComponentNotifyType)
 _class("CPointProgressComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CPointProgressComponentDataInfo = _ENV.CPointProgressComponentDataInfo
--- DECOMPILER ERROR at PC5927: Confused about usage of register: R32 in 'UnsetPending'
+CPointProgressComponentDataInfo = CPointProgressComponentDataInfo
 
-;
-(_ENV.CPointProgressComponentDataInfo).Constructor = function(self)
-  -- function num : 0_211
+function CPointProgressComponentDataInfo:Constructor()
   self.m_received_progress = {}
   self.m_cur_progress = 0
 end
 
--- DECOMPILER ERROR at PC5942: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.CPointProgressComponentDataInfo)._proto = {
-[1] = {"m_received_progress", "list<int64>"}
-, 
-[2] = {"m_cur_progress", "int64"}
+CPointProgressComponentDataInfo._proto = {
+  [1] = {
+    "m_received_progress",
+    "list<int64>"
+  },
+  [2] = {
+    "m_cur_progress",
+    "int64"
+  }
 }
 _class("PointProgressComponentInfo", ICampaignComponentInfo)
-_ENV.PointProgressComponentInfo = _ENV.PointProgressComponentInfo
--- DECOMPILER ERROR at PC5954: Confused about usage of register: R32 in 'UnsetPending'
+PointProgressComponentInfo = PointProgressComponentInfo
 
-;
-(_ENV.PointProgressComponentInfo).Constructor = function(self)
-  -- function num : 0_212
+function PointProgressComponentInfo:Constructor()
   self.m_total_progress = 0
   self.m_current_progress = 0
   self.m_received_progress = {}
@@ -4122,250 +3792,188 @@ _ENV.PointProgressComponentInfo = _ENV.PointProgressComponentInfo
   self.m_special_rewards = {}
 end
 
--- DECOMPILER ERROR at PC5984: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.PointProgressComponentInfo)._proto = {
-[1] = {"m_total_progress", "int64"}
-, 
-[2] = {"m_current_progress", "int64"}
-, 
-[3] = {"m_received_progress", "list<int64>"}
-, 
-[4] = {"m_progress_rewards", "map<int64,list<RoleAsset>>"}
-, 
-[5] = {"m_special_rewards", "map<int64,list<RoleAsset>>"}
+PointProgressComponentInfo._proto = {
+  [1] = {
+    "m_total_progress",
+    "int64"
+  },
+  [2] = {
+    "m_current_progress",
+    "int64"
+  },
+  [3] = {
+    "m_received_progress",
+    "list<int64>"
+  },
+  [4] = {
+    "m_progress_rewards",
+    "map<int64,list<RoleAsset>>"
+  },
+  [5] = {
+    "m_special_rewards",
+    "map<int64,list<RoleAsset>>"
+  }
 }
 _class("PointProgressComponentReceiveRewardReq", ICampaignComRequest)
-_ENV.PointProgressComponentReceiveRewardReq = _ENV.PointProgressComponentReceiveRewardReq
--- DECOMPILER ERROR at PC5996: Confused about usage of register: R32 in 'UnsetPending'
+PointProgressComponentReceiveRewardReq = PointProgressComponentReceiveRewardReq
 
-;
-(_ENV.PointProgressComponentReceiveRewardReq).Constructor = function(self)
-  -- function num : 0_213
+function PointProgressComponentReceiveRewardReq:Constructor()
   self.m_progress = 0
 end
 
--- DECOMPILER ERROR at PC6006: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.PointProgressComponentReceiveRewardReq)._proto = {
-[1] = {"m_progress", "int64"}
+PointProgressComponentReceiveRewardReq._proto = {
+  [1] = {"m_progress", "int64"}
 }
 _class("PointProgressComponentReceiveRewardRep", ICampaignComResponse)
-_ENV.PointProgressComponentReceiveRewardRep = _ENV.PointProgressComponentReceiveRewardRep
--- DECOMPILER ERROR at PC6018: Confused about usage of register: R32 in 'UnsetPending'
+PointProgressComponentReceiveRewardRep = PointProgressComponentReceiveRewardRep
 
-;
-(_ENV.PointProgressComponentReceiveRewardRep).Constructor = function(self)
-  -- function num : 0_214
+function PointProgressComponentReceiveRewardRep:Constructor()
   self.m_rewards = {}
 end
 
--- DECOMPILER ERROR at PC6028: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.PointProgressComponentReceiveRewardRep)._proto = {
-[1] = {"m_rewards", "list<RoleAsset>"}
+PointProgressComponentReceiveRewardRep._proto = {
+  [1] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("PointProgressComponentOneKeyReceiveRewardReq", ICampaignComRequest)
-_ENV.PointProgressComponentOneKeyReceiveRewardReq = _ENV.PointProgressComponentOneKeyReceiveRewardReq
--- DECOMPILER ERROR at PC6040: Confused about usage of register: R32 in 'UnsetPending'
+PointProgressComponentOneKeyReceiveRewardReq = PointProgressComponentOneKeyReceiveRewardReq
 
-;
-(_ENV.PointProgressComponentOneKeyReceiveRewardReq).Constructor = function(self)
-  -- function num : 0_215
+function PointProgressComponentOneKeyReceiveRewardReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC6044: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.PointProgressComponentOneKeyReceiveRewardReq)._proto = {}
+PointProgressComponentOneKeyReceiveRewardReq._proto = {}
 _class("PointProgressComponentOneKeyReceiveRewardRep", ICampaignComResponse)
-_ENV.PointProgressComponentOneKeyReceiveRewardRep = _ENV.PointProgressComponentOneKeyReceiveRewardRep
--- DECOMPILER ERROR at PC6056: Confused about usage of register: R32 in 'UnsetPending'
+PointProgressComponentOneKeyReceiveRewardRep = PointProgressComponentOneKeyReceiveRewardRep
 
-;
-(_ENV.PointProgressComponentOneKeyReceiveRewardRep).Constructor = function(self)
-  -- function num : 0_216
+function PointProgressComponentOneKeyReceiveRewardRep:Constructor()
   self.m_rewards = {}
 end
 
--- DECOMPILER ERROR at PC6066: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.PointProgressComponentOneKeyReceiveRewardRep)._proto = {
-[1] = {"m_rewards", "list<RoleAsset>"}
+PointProgressComponentOneKeyReceiveRewardRep._proto = {
+  [1] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("NotifyPointProgressComponentItemCountChanged", Object)
-_ENV.NotifyPointProgressComponentItemCountChanged = _ENV.NotifyPointProgressComponentItemCountChanged
--- DECOMPILER ERROR at PC6078: Confused about usage of register: R32 in 'UnsetPending'
+NotifyPointProgressComponentItemCountChanged = NotifyPointProgressComponentItemCountChanged
 
-;
-(_ENV.NotifyPointProgressComponentItemCountChanged).Constructor = function(self)
-  -- function num : 0_217
+function NotifyPointProgressComponentItemCountChanged:Constructor()
   self.m_cur_progress = 0
 end
 
--- DECOMPILER ERROR at PC6088: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.NotifyPointProgressComponentItemCountChanged)._proto = {
-[1] = {"m_cur_progress", "int64"}
+NotifyPointProgressComponentItemCountChanged._proto = {
+  [1] = {
+    "m_cur_progress",
+    "int64"
+  }
 }
 _class("HomlandTaskComponentGetReq", ICampaignComRequest)
-_ENV.HomlandTaskComponentGetReq = _ENV.HomlandTaskComponentGetReq
--- DECOMPILER ERROR at PC6100: Confused about usage of register: R32 in 'UnsetPending'
+HomlandTaskComponentGetReq = HomlandTaskComponentGetReq
 
-;
-(_ENV.HomlandTaskComponentGetReq).Constructor = function(self)
-  -- function num : 0_218
+function HomlandTaskComponentGetReq:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC6110: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.HomlandTaskComponentGetReq)._proto = {
-[1] = {"id", "int"}
+HomlandTaskComponentGetReq._proto = {
+  [1] = {"id", "int"}
 }
 _class("HomlandTaskComponentGetReply", ICampaignComResponse)
-_ENV.HomlandTaskComponentGetReply = _ENV.HomlandTaskComponentGetReply
--- DECOMPILER ERROR at PC6122: Confused about usage of register: R32 in 'UnsetPending'
+HomlandTaskComponentGetReply = HomlandTaskComponentGetReply
 
-;
-(_ENV.HomlandTaskComponentGetReply).Constructor = function(self)
-  -- function num : 0_219
+function HomlandTaskComponentGetReply:Constructor()
 end
 
--- DECOMPILER ERROR at PC6126: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.HomlandTaskComponentGetReply)._proto = {}
+HomlandTaskComponentGetReply._proto = {}
 _class("HomlandTaskComponentInfo", ICampaignComponentInfo)
-_ENV.HomlandTaskComponentInfo = _ENV.HomlandTaskComponentInfo
--- DECOMPILER ERROR at PC6138: Confused about usage of register: R32 in 'UnsetPending'
+HomlandTaskComponentInfo = HomlandTaskComponentInfo
 
-;
-(_ENV.HomlandTaskComponentInfo).Constructor = function(self)
-  -- function num : 0_220
+function HomlandTaskComponentInfo:Constructor()
   self.m_id = {}
 end
 
--- DECOMPILER ERROR at PC6148: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.HomlandTaskComponentInfo)._proto = {
-[1] = {"m_id", "list<int>"}
+HomlandTaskComponentInfo._proto = {
+  [1] = {"m_id", "list<int>"}
 }
 _class("ChallengeChangeFormationReq", ICampaignComRequest)
-_ENV.ChallengeChangeFormationReq = _ENV.ChallengeChangeFormationReq
--- DECOMPILER ERROR at PC6160: Confused about usage of register: R32 in 'UnsetPending'
+ChallengeChangeFormationReq = ChallengeChangeFormationReq
 
-;
-(_ENV.ChallengeChangeFormationReq).Constructor = function(self)
-  -- function num : 0_221 , upvalues : _ENV
+function ChallengeChangeFormationReq:Constructor()
   self.info = ChallengeFormationItem:New()
 end
 
--- DECOMPILER ERROR at PC6170: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.ChallengeChangeFormationReq)._proto = {
-[1] = {"info", "ChallengeFormationItem"}
+ChallengeChangeFormationReq._proto = {
+  [1] = {
+    "info",
+    "ChallengeFormationItem"
+  }
 }
 _class("ChallengeChangeFormationReply", ICampaignComResponse)
-_ENV.ChallengeChangeFormationReply = _ENV.ChallengeChangeFormationReply
--- DECOMPILER ERROR at PC6182: Confused about usage of register: R32 in 'UnsetPending'
+ChallengeChangeFormationReply = ChallengeChangeFormationReply
 
-;
-(_ENV.ChallengeChangeFormationReply).Constructor = function(self)
-  -- function num : 0_222
+function ChallengeChangeFormationReply:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC6192: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.ChallengeChangeFormationReply)._proto = {
-[1] = {"ret", "int"}
+ChallengeChangeFormationReply._proto = {
+  [1] = {"ret", "int"}
 }
 _class("ChallengeClearNewReq", ICampaignComRequest)
-_ENV.ChallengeClearNewReq = _ENV.ChallengeClearNewReq
--- DECOMPILER ERROR at PC6204: Confused about usage of register: R32 in 'UnsetPending'
+ChallengeClearNewReq = ChallengeClearNewReq
 
-;
-(_ENV.ChallengeClearNewReq).Constructor = function(self)
-  -- function num : 0_223
+function ChallengeClearNewReq:Constructor()
   self.look_ids = {}
 end
 
--- DECOMPILER ERROR at PC6214: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.ChallengeClearNewReq)._proto = {
-[1] = {"look_ids", "list<int>"}
+ChallengeClearNewReq._proto = {
+  [1] = {"look_ids", "list<int>"}
 }
 _class("ChallengeClearNewRep", ICampaignComResponse)
-_ENV.ChallengeClearNewRep = _ENV.ChallengeClearNewRep
--- DECOMPILER ERROR at PC6226: Confused about usage of register: R32 in 'UnsetPending'
+ChallengeClearNewRep = ChallengeClearNewRep
 
-;
-(_ENV.ChallengeClearNewRep).Constructor = function(self)
-  -- function num : 0_224
+function ChallengeClearNewRep:Constructor()
   self.new_look_ids = {}
 end
 
--- DECOMPILER ERROR at PC6236: Confused about usage of register: R32 in 'UnsetPending'
-
-;
-(_ENV.ChallengeClearNewRep)._proto = {
-[1] = {"new_look_ids", "list<int>"}
+ChallengeClearNewRep._proto = {
+  [1] = {
+    "new_look_ids",
+    "list<int>"
+  }
 }
 local BloodsuckerComponentNotifyType = {BloodsuckerComponentNotify_TalentTreeChange = 1}
 _enum("BloodsuckerComponentNotifyType", BloodsuckerComponentNotifyType)
 _class("BloodsuckerMissionInfo", Object)
-_ENV.BloodsuckerMissionInfo = _ENV.BloodsuckerMissionInfo
--- DECOMPILER ERROR at PC6256: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerMissionInfo = BloodsuckerMissionInfo
 
-;
-(_ENV.BloodsuckerMissionInfo).Constructor = function(self)
-  -- function num : 0_225
+function BloodsuckerMissionInfo:Constructor()
   self.mission_id = 0
   self.is_pass = 0
 end
 
--- DECOMPILER ERROR at PC6271: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerMissionInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"is_pass", "int"}
+BloodsuckerMissionInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"is_pass", "int"}
 }
 _class("TalentTreeLayerInfo", Object)
-_ENV.TalentTreeLayerInfo = _ENV.TalentTreeLayerInfo
--- DECOMPILER ERROR at PC6283: Confused about usage of register: R33 in 'UnsetPending'
+TalentTreeLayerInfo = TalentTreeLayerInfo
 
-;
-(_ENV.TalentTreeLayerInfo).Constructor = function(self)
-  -- function num : 0_226
+function TalentTreeLayerInfo:Constructor()
   self.skill_nodes = {}
 end
 
--- DECOMPILER ERROR at PC6293: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.TalentTreeLayerInfo)._proto = {
-[1] = {"skill_nodes", "map<int,TalentTreeSkillNode>"}
+TalentTreeLayerInfo._proto = {
+  [1] = {
+    "skill_nodes",
+    "map<int,TalentTreeSkillNode>"
+  }
 }
 _class("TalentTreeInfo", Object)
-_ENV.TalentTreeInfo = _ENV.TalentTreeInfo
--- DECOMPILER ERROR at PC6305: Confused about usage of register: R33 in 'UnsetPending'
+TalentTreeInfo = TalentTreeInfo
 
-;
-(_ENV.TalentTreeInfo).Constructor = function(self)
-  -- function num : 0_227
+function TalentTreeInfo:Constructor()
   self.cur_exp = 0
   self.cur_talent_point = 0
   self.talent_level = 0
@@ -4374,238 +3982,230 @@ _ENV.TalentTreeInfo = _ENV.TalentTreeInfo
   self.select_index = 0
 end
 
--- DECOMPILER ERROR at PC6340: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.TalentTreeInfo)._proto = {
-[1] = {"cur_exp", "uint"}
-, 
-[2] = {"cur_talent_point", "uint"}
-, 
-[3] = {"talent_level", "int"}
-, 
-[4] = {"infos", "map<int,TalentTreeLayerInfo>"}
-, 
-[5] = {"select_row", "int"}
-, 
-[6] = {"select_index", "int"}
+TalentTreeInfo._proto = {
+  [1] = {"cur_exp", "uint"},
+  [2] = {
+    "cur_talent_point",
+    "uint"
+  },
+  [3] = {
+    "talent_level",
+    "int"
+  },
+  [4] = {
+    "infos",
+    "map<int,TalentTreeLayerInfo>"
+  },
+  [5] = {"select_row", "int"},
+  [6] = {
+    "select_index",
+    "int"
+  }
 }
 _class("PetNodeInfo", Object)
-_ENV.PetNodeInfo = _ENV.PetNodeInfo
--- DECOMPILER ERROR at PC6352: Confused about usage of register: R33 in 'UnsetPending'
+PetNodeInfo = PetNodeInfo
 
-;
-(_ENV.PetNodeInfo).Constructor = function(self)
-  -- function num : 0_228
+function PetNodeInfo:Constructor()
   self.is_try = 0
   self.pet_id = 0
 end
 
--- DECOMPILER ERROR at PC6367: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.PetNodeInfo)._proto = {
-[1] = {"is_try", "int"}
-, 
-[2] = {"pet_id", "int"}
+PetNodeInfo._proto = {
+  [1] = {"is_try", "int"},
+  [2] = {"pet_id", "int"}
 }
 _class("BloodsuckerComponentInfo", ICampaignComponentInfo)
-_ENV.BloodsuckerComponentInfo = _ENV.BloodsuckerComponentInfo
--- DECOMPILER ERROR at PC6379: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerComponentInfo = BloodsuckerComponentInfo
 
-;
-(_ENV.BloodsuckerComponentInfo).Constructor = function(self)
-  -- function num : 0_229 , upvalues : _ENV
+function BloodsuckerComponentInfo:Constructor()
   self.mission_infos = {}
   self.talent_info = TalentTreeInfo:New()
   self.pass_pet_list = {}
   self.join_mission_list = {}
 end
 
--- DECOMPILER ERROR at PC6404: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerComponentInfo)._proto = {
-[1] = {"mission_infos", "map<int,BloodsuckerMissionInfo>"}
-, 
-[2] = {"talent_info", "TalentTreeInfo"}
-, 
-[3] = {"pass_pet_list", "list<int>"}
-, 
-[4] = {"join_mission_list", "list<int>"}
+BloodsuckerComponentInfo._proto = {
+  [1] = {
+    "mission_infos",
+    "map<int,BloodsuckerMissionInfo>"
+  },
+  [2] = {
+    "talent_info",
+    "TalentTreeInfo"
+  },
+  [3] = {
+    "pass_pet_list",
+    "list<int>"
+  },
+  [4] = {
+    "join_mission_list",
+    "list<int>"
+  }
 }
 _class("BloodsuckerComponentUpgradeTalentPointReq", ICampaignComRequest)
-_ENV.BloodsuckerComponentUpgradeTalentPointReq = _ENV.BloodsuckerComponentUpgradeTalentPointReq
--- DECOMPILER ERROR at PC6416: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerComponentUpgradeTalentPointReq = BloodsuckerComponentUpgradeTalentPointReq
 
-;
-(_ENV.BloodsuckerComponentUpgradeTalentPointReq).Constructor = function(self)
-  -- function num : 0_230
+function BloodsuckerComponentUpgradeTalentPointReq:Constructor()
   self.row = 0
   self.index = 0
 end
 
--- DECOMPILER ERROR at PC6431: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerComponentUpgradeTalentPointReq)._proto = {
-[1] = {"row", "int"}
-, 
-[2] = {"index", "int"}
+BloodsuckerComponentUpgradeTalentPointReq._proto = {
+  [1] = {"row", "int"},
+  [2] = {"index", "int"}
 }
 _class("BloodsuckerComponentUpgradeTalentPointRes", ICampaignComResponse)
-_ENV.BloodsuckerComponentUpgradeTalentPointRes = _ENV.BloodsuckerComponentUpgradeTalentPointRes
--- DECOMPILER ERROR at PC6443: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerComponentUpgradeTalentPointRes = BloodsuckerComponentUpgradeTalentPointRes
 
-;
-(_ENV.BloodsuckerComponentUpgradeTalentPointRes).Constructor = function(self)
-  -- function num : 0_231
+function BloodsuckerComponentUpgradeTalentPointRes:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC6453: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerComponentUpgradeTalentPointRes)._proto = {
-[1] = {"ret", "int"}
+BloodsuckerComponentUpgradeTalentPointRes._proto = {
+  [1] = {"ret", "int"}
 }
 _class("NotifyBloodsuckerComponentTalentTreeChanged", Object)
-_ENV.NotifyBloodsuckerComponentTalentTreeChanged = _ENV.NotifyBloodsuckerComponentTalentTreeChanged
--- DECOMPILER ERROR at PC6465: Confused about usage of register: R33 in 'UnsetPending'
+NotifyBloodsuckerComponentTalentTreeChanged = NotifyBloodsuckerComponentTalentTreeChanged
 
-;
-(_ENV.NotifyBloodsuckerComponentTalentTreeChanged).Constructor = function(self)
-  -- function num : 0_232 , upvalues : _ENV
+function NotifyBloodsuckerComponentTalentTreeChanged:Constructor()
   self.tree_info = TalentTreeInfo:New()
 end
 
--- DECOMPILER ERROR at PC6475: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.NotifyBloodsuckerComponentTalentTreeChanged)._proto = {
-[1] = {"tree_info", "TalentTreeInfo"}
+NotifyBloodsuckerComponentTalentTreeChanged._proto = {
+  [1] = {
+    "tree_info",
+    "TalentTreeInfo"
+  }
 }
 _class("BloodsuckerComponentSelectSkillReq", ICampaignComRequest)
-_ENV.BloodsuckerComponentSelectSkillReq = _ENV.BloodsuckerComponentSelectSkillReq
--- DECOMPILER ERROR at PC6487: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerComponentSelectSkillReq = BloodsuckerComponentSelectSkillReq
 
-;
-(_ENV.BloodsuckerComponentSelectSkillReq).Constructor = function(self)
-  -- function num : 0_233
+function BloodsuckerComponentSelectSkillReq:Constructor()
   self.row = 0
   self.index = 0
 end
 
--- DECOMPILER ERROR at PC6502: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerComponentSelectSkillReq)._proto = {
-[1] = {"row", "int"}
-, 
-[2] = {"index", "int"}
+BloodsuckerComponentSelectSkillReq._proto = {
+  [1] = {"row", "int"},
+  [2] = {"index", "int"}
 }
 _class("BloodsuckerComponentSelectSkillRes", ICampaignComResponse)
-_ENV.BloodsuckerComponentSelectSkillRes = _ENV.BloodsuckerComponentSelectSkillRes
--- DECOMPILER ERROR at PC6514: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerComponentSelectSkillRes = BloodsuckerComponentSelectSkillRes
 
-;
-(_ENV.BloodsuckerComponentSelectSkillRes).Constructor = function(self)
-  -- function num : 0_234
+function BloodsuckerComponentSelectSkillRes:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC6524: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerComponentSelectSkillRes)._proto = {
-[1] = {"ret", "int"}
+BloodsuckerComponentSelectSkillRes._proto = {
+  [1] = {"ret", "int"}
 }
 _class("BloodsuckerComponentResetTalentTreeReq", ICampaignComRequest)
-_ENV.BloodsuckerComponentResetTalentTreeReq = _ENV.BloodsuckerComponentResetTalentTreeReq
--- DECOMPILER ERROR at PC6536: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerComponentResetTalentTreeReq = BloodsuckerComponentResetTalentTreeReq
 
-;
-(_ENV.BloodsuckerComponentResetTalentTreeReq).Constructor = function(self)
-  -- function num : 0_235
+function BloodsuckerComponentResetTalentTreeReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC6540: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerComponentResetTalentTreeReq)._proto = {}
+BloodsuckerComponentResetTalentTreeReq._proto = {}
 _class("BloodsuckerComponentResetTalentTreeRes", ICampaignComResponse)
-_ENV.BloodsuckerComponentResetTalentTreeRes = _ENV.BloodsuckerComponentResetTalentTreeRes
--- DECOMPILER ERROR at PC6552: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerComponentResetTalentTreeRes = BloodsuckerComponentResetTalentTreeRes
 
-;
-(_ENV.BloodsuckerComponentResetTalentTreeRes).Constructor = function(self)
-  -- function num : 0_236
+function BloodsuckerComponentResetTalentTreeRes:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC6562: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerComponentResetTalentTreeRes)._proto = {
-[1] = {"ret", "int"}
+BloodsuckerComponentResetTalentTreeRes._proto = {
+  [1] = {"ret", "int"}
 }
 _class("BloodsuckerComponentChangeFormationReq", ICampaignComRequest)
-_ENV.BloodsuckerComponentChangeFormationReq = _ENV.BloodsuckerComponentChangeFormationReq
--- DECOMPILER ERROR at PC6574: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerComponentChangeFormationReq = BloodsuckerComponentChangeFormationReq
 
-;
-(_ENV.BloodsuckerComponentChangeFormationReq).Constructor = function(self)
-  -- function num : 0_237
+function BloodsuckerComponentChangeFormationReq:Constructor()
   self.formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC6584: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerComponentChangeFormationReq)._proto = {
-[1] = {"formation_pet_list", "list<PetNodeInfo>"}
+BloodsuckerComponentChangeFormationReq._proto = {
+  [1] = {
+    "formation_pet_list",
+    "list<PetNodeInfo>"
+  }
 }
 _class("BloodsuckerComponentFormationRep", ICampaignComResponse)
-_ENV.BloodsuckerComponentFormationRep = _ENV.BloodsuckerComponentFormationRep
--- DECOMPILER ERROR at PC6596: Confused about usage of register: R33 in 'UnsetPending'
+BloodsuckerComponentFormationRep = BloodsuckerComponentFormationRep
 
-;
-(_ENV.BloodsuckerComponentFormationRep).Constructor = function(self)
-  -- function num : 0_238
+function BloodsuckerComponentFormationRep:Constructor()
   self.nFormationRet = 0
 end
 
--- DECOMPILER ERROR at PC6606: Confused about usage of register: R33 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerComponentFormationRep)._proto = {
-[1] = {"nFormationRet", "int"}
+BloodsuckerComponentFormationRep._proto = {
+  [1] = {
+    "nFormationRet",
+    "int"
+  }
 }
-local IdolTrainType = {IdolTrainType_None = 0, IdolTrainType_Music = 1, IdolTrainType_Dance = 2, IdolTrainType_Perform = 3}
+local IdolTrainType = {
+  IdolTrainType_None = 0,
+  IdolTrainType_Music = 1,
+  IdolTrainType_Dance = 2,
+  IdolTrainType_Perform = 3
+}
 _enum("IdolTrainType", IdolTrainType)
 local IdolEventType = {IdolEventType_Agree = 1, IdolEventType_Suddenly = 2}
 _enum("IdolEventType", IdolEventType)
-local IdolConstType = {IdolConstType_SuddenlyMax = 100, IdolConstType_MusicInit = 101, IdolConstType_DanceInit = 102, IdolConstType_PerformInit = 103, IdolConstType_FunsInit = 104, IdolConstType_MaxRound = 105}
+local IdolConstType = {
+  IdolConstType_SuddenlyMax = 100,
+  IdolConstType_MusicInit = 101,
+  IdolConstType_DanceInit = 102,
+  IdolConstType_PerformInit = 103,
+  IdolConstType_FunsInit = 104,
+  IdolConstType_MaxRound = 105
+}
 _enum("IdolConstType", IdolConstType)
-local IdolRoundState = {IdolRoundState_None = 0, IdolRoundState_Begin = 1, IdolRoundState_Play = 2, IdolRoundState_End = 3}
+local IdolRoundState = {
+  IdolRoundState_None = 0,
+  IdolRoundState_Begin = 1,
+  IdolRoundState_Play = 2,
+  IdolRoundState_End = 3
+}
 _enum("IdolRoundState", IdolRoundState)
-local IdolWeekType = {IdolWeekType_First = 1, IdolWeekType_Second = 2, IdolWeekType_Third = 3, IdolWeekType_Forth = 4, IdolWeekType_Fifth = 5, IdolWeekType_Sixth = 6, IdolWeekType_Max = 7}
+local IdolWeekType = {
+  IdolWeekType_First = 1,
+  IdolWeekType_Second = 2,
+  IdolWeekType_Third = 3,
+  IdolWeekType_Forth = 4,
+  IdolWeekType_Fifth = 5,
+  IdolWeekType_Sixth = 6,
+  IdolWeekType_Max = 7
+}
 _enum("IdolWeekType", IdolWeekType)
 local IdolAchieveState = {IdolAchieveState_CanRecv = 0, IdolAchieveState_Recved = 1}
 _enum("IdolAchieveState", IdolAchieveState)
-local IdolProcessType = {IdolProcessType_None = 0, IdolProcessType_First = 1, IdolProcessType_Second = 2, IdolProcessType_Third = 3, IdolProcessType_Forth = 4, IdolProcessType_Fifth = 5}
+local IdolProcessType = {
+  IdolProcessType_None = 0,
+  IdolProcessType_First = 1,
+  IdolProcessType_Second = 2,
+  IdolProcessType_Third = 3,
+  IdolProcessType_Forth = 4,
+  IdolProcessType_Fifth = 5
+}
 _enum("IdolProcessType", IdolProcessType)
-local IdolStartType = {IdolStartType_None = 0, IdolStartType_New = 1, IdolStartType_Break = 2, IdolStartType_Process = 3}
+local IdolStartType = {
+  IdolStartType_None = 0,
+  IdolStartType_New = 1,
+  IdolStartType_Break = 2,
+  IdolStartType_Process = 3
+}
 _enum("IdolStartType", IdolStartType)
-local IdolOptionType = {IdolOptionType_None = 0, IdolOptionType_First = 1, IdolOptionType_Second = 2, IdolOptionType_Third = 3}
+local IdolOptionType = {
+  IdolOptionType_None = 0,
+  IdolOptionType_First = 1,
+  IdolOptionType_Second = 2,
+  IdolOptionType_Third = 3
+}
 _enum("IdolOptionType", IdolOptionType)
 _class("IdolProgressInfo", Object)
-_ENV.IdolProgressInfo = _ENV.IdolProgressInfo
--- DECOMPILER ERROR at PC6761: Confused about usage of register: R42 in 'UnsetPending'
+IdolProgressInfo = IdolProgressInfo
 
-;
-(_ENV.IdolProgressInfo).Constructor = function(self)
-  -- function num : 0_239
+function IdolProgressInfo:Constructor()
   self.round_index = 0
   self.round_state = 0
   self.train_type = 0
@@ -4622,567 +4222,508 @@ _ENV.IdolProgressInfo = _ENV.IdolProgressInfo
   self.isConcertDone = false
 end
 
--- DECOMPILER ERROR at PC6838: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolProgressInfo)._proto = {
-[1] = {"round_index", "int"}
-, 
-[2] = {"round_state", "int"}
-, 
-[3] = {"train_type", "int"}
-, 
-[4] = {"note_time", "time"}
-, 
-[5] = {"train_data", "map<int,int>"}
-, 
-[6] = {"funs_num", "int"}
-, 
-[7] = {"level", "map<int,int>"}
-, 
-[8] = {"agree_events", "list<int>"}
-, 
-[9] = {"suddenly_events", "map<int,int>"}
-, 
-[10] = {"finish_activity", "list<int>"}
-, 
-[11] = {"suddenly_events_id", "list<int>"}
-, 
-[12] = {"train_num", "map<int,int>"}
-, 
-[13] = {"local_ending", "int"}
-, 
-[14] = {"isConcertDone", "bool"}
+IdolProgressInfo._proto = {
+  [1] = {
+    "round_index",
+    "int"
+  },
+  [2] = {
+    "round_state",
+    "int"
+  },
+  [3] = {"train_type", "int"},
+  [4] = {"note_time", "time"},
+  [5] = {
+    "train_data",
+    "map<int,int>"
+  },
+  [6] = {"funs_num", "int"},
+  [7] = {
+    "level",
+    "map<int,int>"
+  },
+  [8] = {
+    "agree_events",
+    "list<int>"
+  },
+  [9] = {
+    "suddenly_events",
+    "map<int,int>"
+  },
+  [10] = {
+    "finish_activity",
+    "list<int>"
+  },
+  [11] = {
+    "suddenly_events_id",
+    "list<int>"
+  },
+  [12] = {
+    "train_num",
+    "map<int,int>"
+  },
+  [13] = {
+    "local_ending",
+    "int"
+  },
+  [14] = {
+    "isConcertDone",
+    "bool"
+  }
 }
 _class("IdolCollectinfo", Object)
-_ENV.IdolCollectinfo = _ENV.IdolCollectinfo
--- DECOMPILER ERROR at PC6850: Confused about usage of register: R42 in 'UnsetPending'
+IdolCollectinfo = IdolCollectinfo
 
-;
-(_ENV.IdolCollectinfo).Constructor = function(self)
-  -- function num : 0_240
+function IdolCollectinfo:Constructor()
   self.ending_list = {}
   self.agree_events = {}
   self.achieve_list = {}
 end
 
--- DECOMPILER ERROR at PC6870: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolCollectinfo)._proto = {
-[1] = {"ending_list", "list<int>"}
-, 
-[2] = {"agree_events", "list<int>"}
-, 
-[3] = {"achieve_list", "map<int,int>"}
+IdolCollectinfo._proto = {
+  [1] = {
+    "ending_list",
+    "list<int>"
+  },
+  [2] = {
+    "agree_events",
+    "list<int>"
+  },
+  [3] = {
+    "achieve_list",
+    "map<int,int>"
+  }
 }
 _class("IdolComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.IdolComponentDataInfo = _ENV.IdolComponentDataInfo
--- DECOMPILER ERROR at PC6882: Confused about usage of register: R42 in 'UnsetPending'
+IdolComponentDataInfo = IdolComponentDataInfo
 
-;
-(_ENV.IdolComponentDataInfo).Constructor = function(self)
-  -- function num : 0_241 , upvalues : _ENV
+function IdolComponentDataInfo:Constructor()
   self.break_info = IdolProgressInfo:New()
   self.process_info = {}
   self.collect_info = IdolCollectinfo:New()
   self.play_times = 0
 end
 
--- DECOMPILER ERROR at PC6907: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolComponentDataInfo)._proto = {
-[1] = {"break_info", "IdolProgressInfo"}
-, 
-[2] = {"process_info", "map<int,IdolProgressInfo>"}
-, 
-[3] = {"collect_info", "IdolCollectinfo"}
-, 
-[4] = {"play_times", "int"}
+IdolComponentDataInfo._proto = {
+  [1] = {
+    "break_info",
+    "IdolProgressInfo"
+  },
+  [2] = {
+    "process_info",
+    "map<int,IdolProgressInfo>"
+  },
+  [3] = {
+    "collect_info",
+    "IdolCollectinfo"
+  },
+  [4] = {"play_times", "int"}
 }
 _class("IdolProgressShowInfo", Object)
-_ENV.IdolProgressShowInfo = _ENV.IdolProgressShowInfo
--- DECOMPILER ERROR at PC6919: Confused about usage of register: R42 in 'UnsetPending'
+IdolProgressShowInfo = IdolProgressShowInfo
 
-;
-(_ENV.IdolProgressShowInfo).Constructor = function(self)
-  -- function num : 0_242
+function IdolProgressShowInfo:Constructor()
   self.round_index = 0
   self.note_time = 0
   self.train_data = {}
   self.funs_num = 0
 end
 
--- DECOMPILER ERROR at PC6944: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolProgressShowInfo)._proto = {
-[1] = {"round_index", "int"}
-, 
-[2] = {"note_time", "time"}
-, 
-[3] = {"train_data", "map<int,int>"}
-, 
-[4] = {"funs_num", "int"}
+IdolProgressShowInfo._proto = {
+  [1] = {
+    "round_index",
+    "int"
+  },
+  [2] = {"note_time", "time"},
+  [3] = {
+    "train_data",
+    "map<int,int>"
+  },
+  [4] = {"funs_num", "int"}
 }
 _class("IdolComponentInfo", ICampaignComponentInfo)
-_ENV.IdolComponentInfo = _ENV.IdolComponentInfo
--- DECOMPILER ERROR at PC6956: Confused about usage of register: R42 in 'UnsetPending'
+IdolComponentInfo = IdolComponentInfo
 
-;
-(_ENV.IdolComponentInfo).Constructor = function(self)
-  -- function num : 0_243 , upvalues : _ENV
+function IdolComponentInfo:Constructor()
   self.break_info = IdolProgressInfo:New()
   self.process_info = {}
   self.collect_info = IdolCollectinfo:New()
   self.ending_list = {}
 end
 
--- DECOMPILER ERROR at PC6981: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolComponentInfo)._proto = {
-[1] = {"break_info", "IdolProgressInfo"}
-, 
-[2] = {"process_info", "map<int,IdolProgressShowInfo>"}
-, 
-[3] = {"collect_info", "IdolCollectinfo"}
-, 
-[4] = {"ending_list", "list<int>"}
+IdolComponentInfo._proto = {
+  [1] = {
+    "break_info",
+    "IdolProgressInfo"
+  },
+  [2] = {
+    "process_info",
+    "map<int,IdolProgressShowInfo>"
+  },
+  [3] = {
+    "collect_info",
+    "IdolCollectinfo"
+  },
+  [4] = {
+    "ending_list",
+    "list<int>"
+  }
 }
 _class("IdolStartPlayReq", ICampaignComRequest)
-_ENV.IdolStartPlayReq = _ENV.IdolStartPlayReq
--- DECOMPILER ERROR at PC6993: Confused about usage of register: R42 in 'UnsetPending'
+IdolStartPlayReq = IdolStartPlayReq
 
-;
-(_ENV.IdolStartPlayReq).Constructor = function(self)
-  -- function num : 0_244
+function IdolStartPlayReq:Constructor()
   self.start_type = 0
   self.process_type = 0
 end
 
--- DECOMPILER ERROR at PC7008: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolStartPlayReq)._proto = {
-[1] = {"start_type", "int"}
-, 
-[2] = {"process_type", "int"}
+IdolStartPlayReq._proto = {
+  [1] = {"start_type", "int"},
+  [2] = {
+    "process_type",
+    "int"
+  }
 }
 _class("IdolStartPlayRep", ICampaignComResponse)
-_ENV.IdolStartPlayRep = _ENV.IdolStartPlayRep
--- DECOMPILER ERROR at PC7020: Confused about usage of register: R42 in 'UnsetPending'
+IdolStartPlayRep = IdolStartPlayRep
 
-;
-(_ENV.IdolStartPlayRep).Constructor = function(self)
-  -- function num : 0_245 , upvalues : _ENV
+function IdolStartPlayRep:Constructor()
   self.ret = 0
   self.break_info = IdolProgressInfo:New()
 end
 
--- DECOMPILER ERROR at PC7035: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolStartPlayRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"break_info", "IdolProgressInfo"}
+IdolStartPlayRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "break_info",
+    "IdolProgressInfo"
+  }
 }
 _class("IdolTrainReq", ICampaignComRequest)
-_ENV.IdolTrainReq = _ENV.IdolTrainReq
--- DECOMPILER ERROR at PC7047: Confused about usage of register: R42 in 'UnsetPending'
+IdolTrainReq = IdolTrainReq
 
-;
-(_ENV.IdolTrainReq).Constructor = function(self)
-  -- function num : 0_246
+function IdolTrainReq:Constructor()
   self.round_index = 0
   self.round_state = 0
   self.train_type = 0
 end
 
--- DECOMPILER ERROR at PC7067: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolTrainReq)._proto = {
-[1] = {"round_index", "int"}
-, 
-[2] = {"round_state", "int"}
-, 
-[3] = {"train_type", "int"}
+IdolTrainReq._proto = {
+  [1] = {
+    "round_index",
+    "int"
+  },
+  [2] = {
+    "round_state",
+    "int"
+  },
+  [3] = {"train_type", "int"}
 }
 _class("IdolTrainRep", ICampaignComResponse)
-_ENV.IdolTrainRep = _ENV.IdolTrainRep
--- DECOMPILER ERROR at PC7079: Confused about usage of register: R42 in 'UnsetPending'
+IdolTrainRep = IdolTrainRep
 
-;
-(_ENV.IdolTrainRep).Constructor = function(self)
-  -- function num : 0_247 , upvalues : _ENV
+function IdolTrainRep:Constructor()
   self.ret = 0
   self.break_info = IdolProgressInfo:New()
 end
 
--- DECOMPILER ERROR at PC7094: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolTrainRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"break_info", "IdolProgressInfo"}
+IdolTrainRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "break_info",
+    "IdolProgressInfo"
+  }
 }
 _class("IdolCompleteEventReq", ICampaignComRequest)
-_ENV.IdolCompleteEventReq = _ENV.IdolCompleteEventReq
--- DECOMPILER ERROR at PC7106: Confused about usage of register: R42 in 'UnsetPending'
+IdolCompleteEventReq = IdolCompleteEventReq
 
-;
-(_ENV.IdolCompleteEventReq).Constructor = function(self)
-  -- function num : 0_248
+function IdolCompleteEventReq:Constructor()
   self.event_type = 0
   self.option_type = 0
   self.event_id = 0
   self.train_type = 0
 end
 
--- DECOMPILER ERROR at PC7131: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolCompleteEventReq)._proto = {
-[1] = {"event_type", "int"}
-, 
-[2] = {"option_type", "int"}
-, 
-[3] = {"event_id", "int"}
-, 
-[4] = {"train_type", "int"}
+IdolCompleteEventReq._proto = {
+  [1] = {"event_type", "int"},
+  [2] = {
+    "option_type",
+    "int"
+  },
+  [3] = {"event_id", "int"},
+  [4] = {"train_type", "int"}
 }
 _class("IdolCompleteEventRep", ICampaignComResponse)
-_ENV.IdolCompleteEventRep = _ENV.IdolCompleteEventRep
--- DECOMPILER ERROR at PC7143: Confused about usage of register: R42 in 'UnsetPending'
+IdolCompleteEventRep = IdolCompleteEventRep
 
-;
-(_ENV.IdolCompleteEventRep).Constructor = function(self)
-  -- function num : 0_249 , upvalues : _ENV
+function IdolCompleteEventRep:Constructor()
   self.ret = 0
   self.break_info = IdolProgressInfo:New()
 end
 
--- DECOMPILER ERROR at PC7158: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolCompleteEventRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"break_info", "IdolProgressInfo"}
+IdolCompleteEventRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "break_info",
+    "IdolProgressInfo"
+  }
 }
 _class("IdolCompleteActivityReq", ICampaignComRequest)
-_ENV.IdolCompleteActivityReq = _ENV.IdolCompleteActivityReq
--- DECOMPILER ERROR at PC7170: Confused about usage of register: R42 in 'UnsetPending'
+IdolCompleteActivityReq = IdolCompleteActivityReq
 
-;
-(_ENV.IdolCompleteActivityReq).Constructor = function(self)
-  -- function num : 0_250
+function IdolCompleteActivityReq:Constructor()
   self.activity_id = 0
 end
 
--- DECOMPILER ERROR at PC7180: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolCompleteActivityReq)._proto = {
-[1] = {"activity_id", "int"}
+IdolCompleteActivityReq._proto = {
+  [1] = {
+    "activity_id",
+    "int"
+  }
 }
 _class("IdolCompleteActivityRep", ICampaignComResponse)
-_ENV.IdolCompleteActivityRep = _ENV.IdolCompleteActivityRep
--- DECOMPILER ERROR at PC7192: Confused about usage of register: R42 in 'UnsetPending'
+IdolCompleteActivityRep = IdolCompleteActivityRep
 
-;
-(_ENV.IdolCompleteActivityRep).Constructor = function(self)
-  -- function num : 0_251 , upvalues : _ENV
+function IdolCompleteActivityRep:Constructor()
   self.ret = 0
   self.break_info = IdolProgressInfo:New()
 end
 
--- DECOMPILER ERROR at PC7207: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolCompleteActivityRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"break_info", "IdolProgressInfo"}
+IdolCompleteActivityRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "break_info",
+    "IdolProgressInfo"
+  }
 }
 _class("IdolGetAchieveRewardReq", ICampaignComRequest)
-_ENV.IdolGetAchieveRewardReq = _ENV.IdolGetAchieveRewardReq
--- DECOMPILER ERROR at PC7219: Confused about usage of register: R42 in 'UnsetPending'
+IdolGetAchieveRewardReq = IdolGetAchieveRewardReq
 
-;
-(_ENV.IdolGetAchieveRewardReq).Constructor = function(self)
-  -- function num : 0_252
+function IdolGetAchieveRewardReq:Constructor()
   self.achieve_id = 0
 end
 
--- DECOMPILER ERROR at PC7229: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolGetAchieveRewardReq)._proto = {
-[1] = {"achieve_id", "int"}
+IdolGetAchieveRewardReq._proto = {
+  [1] = {"achieve_id", "int"}
 }
 _class("IdolGetAchieveRewardRep", ICampaignComResponse)
-_ENV.IdolGetAchieveRewardRep = _ENV.IdolGetAchieveRewardRep
--- DECOMPILER ERROR at PC7241: Confused about usage of register: R42 in 'UnsetPending'
+IdolGetAchieveRewardRep = IdolGetAchieveRewardRep
 
-;
-(_ENV.IdolGetAchieveRewardRep).Constructor = function(self)
-  -- function num : 0_253 , upvalues : _ENV
+function IdolGetAchieveRewardRep:Constructor()
   self.ret = 0
   self.collect_info = IdolCollectinfo:New()
 end
 
--- DECOMPILER ERROR at PC7256: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolGetAchieveRewardRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"collect_info", "IdolCollectinfo"}
+IdolGetAchieveRewardRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "collect_info",
+    "IdolCollectinfo"
+  }
 }
 _class("IdolComplateEndingReq", ICampaignComRequest)
-_ENV.IdolComplateEndingReq = _ENV.IdolComplateEndingReq
--- DECOMPILER ERROR at PC7268: Confused about usage of register: R42 in 'UnsetPending'
+IdolComplateEndingReq = IdolComplateEndingReq
 
-;
-(_ENV.IdolComplateEndingReq).Constructor = function(self)
-  -- function num : 0_254
+function IdolComplateEndingReq:Constructor()
   self.ending_id = 0
 end
 
--- DECOMPILER ERROR at PC7278: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolComplateEndingReq)._proto = {
-[1] = {"ending_id", "int"}
+IdolComplateEndingReq._proto = {
+  [1] = {"ending_id", "int"}
 }
 _class("IdolComplateEndingRep", ICampaignComResponse)
-_ENV.IdolComplateEndingRep = _ENV.IdolComplateEndingRep
--- DECOMPILER ERROR at PC7290: Confused about usage of register: R42 in 'UnsetPending'
+IdolComplateEndingRep = IdolComplateEndingRep
 
-;
-(_ENV.IdolComplateEndingRep).Constructor = function(self)
-  -- function num : 0_255
+function IdolComplateEndingRep:Constructor()
   self.ret = 0
   self.ending_list = {}
 end
 
--- DECOMPILER ERROR at PC7305: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolComplateEndingRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"ending_list", "list<int>"}
+IdolComplateEndingRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "ending_list",
+    "list<int>"
+  }
 }
 _class("IdolConcertFailReq", ICampaignComRequest)
-_ENV.IdolConcertFailReq = _ENV.IdolConcertFailReq
--- DECOMPILER ERROR at PC7317: Confused about usage of register: R42 in 'UnsetPending'
+IdolConcertFailReq = IdolConcertFailReq
 
-;
-(_ENV.IdolConcertFailReq).Constructor = function(self)
-  -- function num : 0_256
+function IdolConcertFailReq:Constructor()
   self.isSucess = false
 end
 
--- DECOMPILER ERROR at PC7327: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolConcertFailReq)._proto = {
-[1] = {"isSucess", "bool"}
+IdolConcertFailReq._proto = {
+  [1] = {"isSucess", "bool"}
 }
 _class("IdolConcertFailRep", ICampaignComResponse)
-_ENV.IdolConcertFailRep = _ENV.IdolConcertFailRep
--- DECOMPILER ERROR at PC7339: Confused about usage of register: R42 in 'UnsetPending'
+IdolConcertFailRep = IdolConcertFailRep
 
-;
-(_ENV.IdolConcertFailRep).Constructor = function(self)
-  -- function num : 0_257
+function IdolConcertFailRep:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC7349: Confused about usage of register: R42 in 'UnsetPending'
-
-;
-(_ENV.IdolConcertFailRep)._proto = {
-[1] = {"ret", "int"}
+IdolConcertFailRep._proto = {
+  [1] = {"ret", "int"}
 }
-local NewYearDinner_Status = {E_NewYearDinner_Status_LOCK = 0, E_NewYearDinner_Status_UN_FINISH = 1, E_NewYearDinner_Status_CAN_RECV = 2, E_NewYearDinner_Status_RECVED = 3}
+local NewYearDinner_Status = {
+  E_NewYearDinner_Status_LOCK = 0,
+  E_NewYearDinner_Status_UN_FINISH = 1,
+  E_NewYearDinner_Status_CAN_RECV = 2,
+  E_NewYearDinner_Status_RECVED = 3
+}
 _enum("NewYearDinner_Status", NewYearDinner_Status)
-local NewYearDinner_Reward_Type = {E_NewYearDinner_Reward_Task = 0, E_NewYearDinner_Reward_Food = 1, E_NewYearDinner_Reward_Collect = 2}
+local NewYearDinner_Reward_Type = {
+  E_NewYearDinner_Reward_Task = 0,
+  E_NewYearDinner_Reward_Food = 1,
+  E_NewYearDinner_Reward_Collect = 2
+}
 _enum("NewYearDinner_Reward_Type", NewYearDinner_Reward_Type)
 _class("NewYearDinner_Task", Object)
-_ENV.NewYearDinner_Task = _ENV.NewYearDinner_Task
--- DECOMPILER ERROR at PC7389: Confused about usage of register: R44 in 'UnsetPending'
+NewYearDinner_Task = NewYearDinner_Task
 
-;
-(_ENV.NewYearDinner_Task).Constructor = function(self)
-  -- function num : 0_258
+function NewYearDinner_Task:Constructor()
   self.task_id = 0
   self.status = 0
   self.cur_progress = 0
   self.total_progress = 0
 end
 
--- DECOMPILER ERROR at PC7414: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.NewYearDinner_Task)._proto = {
-[1] = {"task_id", "int"}
-, 
-[2] = {"status", "int"}
-, 
-[3] = {"cur_progress", "int"}
-, 
-[4] = {"total_progress", "int"}
+NewYearDinner_Task._proto = {
+  [1] = {"task_id", "int"},
+  [2] = {"status", "int"},
+  [3] = {
+    "cur_progress",
+    "int"
+  },
+  [4] = {
+    "total_progress",
+    "int"
+  }
 }
 _class("NewYearDinnerInfo", Object)
-_ENV.NewYearDinnerInfo = _ENV.NewYearDinnerInfo
--- DECOMPILER ERROR at PC7426: Confused about usage of register: R44 in 'UnsetPending'
+NewYearDinnerInfo = NewYearDinnerInfo
 
-;
-(_ENV.NewYearDinnerInfo).Constructor = function(self)
-  -- function num : 0_259
+function NewYearDinnerInfo:Constructor()
   self.food_list = {}
   self.collect_list = {}
 end
 
--- DECOMPILER ERROR at PC7441: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.NewYearDinnerInfo)._proto = {
-[1] = {"food_list", "map<int,int>"}
-, 
-[2] = {"collect_list", "map<int,int>"}
+NewYearDinnerInfo._proto = {
+  [1] = {
+    "food_list",
+    "map<int,int>"
+  },
+  [2] = {
+    "collect_list",
+    "map<int,int>"
+  }
 }
 _class("NewYearDinnerComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.NewYearDinnerComponentDataInfo = _ENV.NewYearDinnerComponentDataInfo
--- DECOMPILER ERROR at PC7453: Confused about usage of register: R44 in 'UnsetPending'
+NewYearDinnerComponentDataInfo = NewYearDinnerComponentDataInfo
 
-;
-(_ENV.NewYearDinnerComponentDataInfo).Constructor = function(self)
-  -- function num : 0_260 , upvalues : _ENV
+function NewYearDinnerComponentDataInfo:Constructor()
   self.data_info = NewYearDinnerInfo:New()
   self.task_list = {}
   self.last_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC7473: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.NewYearDinnerComponentDataInfo)._proto = {
-[1] = {"data_info", "NewYearDinnerInfo"}
-, 
-[2] = {"task_list", "map<int,int>"}
-, 
-[3] = {"last_refresh_time", "time"}
+NewYearDinnerComponentDataInfo._proto = {
+  [1] = {
+    "data_info",
+    "NewYearDinnerInfo"
+  },
+  [2] = {
+    "task_list",
+    "map<int,int>"
+  },
+  [3] = {
+    "last_refresh_time",
+    "time"
+  }
 }
 _class("NewYearDinnerComponentInfo", ICampaignComponentInfo)
-_ENV.NewYearDinnerComponentInfo = _ENV.NewYearDinnerComponentInfo
--- DECOMPILER ERROR at PC7485: Confused about usage of register: R44 in 'UnsetPending'
+NewYearDinnerComponentInfo = NewYearDinnerComponentInfo
 
-;
-(_ENV.NewYearDinnerComponentInfo).Constructor = function(self)
-  -- function num : 0_261 , upvalues : _ENV
+function NewYearDinnerComponentInfo:Constructor()
   self.data_info = NewYearDinnerInfo:New()
   self.task_list = {}
 end
 
--- DECOMPILER ERROR at PC7500: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.NewYearDinnerComponentInfo)._proto = {
-[1] = {"data_info", "NewYearDinnerInfo"}
-, 
-[2] = {"task_list", "map<int,NewYearDinner_Task>"}
+NewYearDinnerComponentInfo._proto = {
+  [1] = {
+    "data_info",
+    "NewYearDinnerInfo"
+  },
+  [2] = {
+    "task_list",
+    "map<int,NewYearDinner_Task>"
+  }
 }
 _class("NewYearDinnerMakeFoodReq", ICampaignComRequest)
-_ENV.NewYearDinnerMakeFoodReq = _ENV.NewYearDinnerMakeFoodReq
--- DECOMPILER ERROR at PC7512: Confused about usage of register: R44 in 'UnsetPending'
+NewYearDinnerMakeFoodReq = NewYearDinnerMakeFoodReq
 
-;
-(_ENV.NewYearDinnerMakeFoodReq).Constructor = function(self)
-  -- function num : 0_262
+function NewYearDinnerMakeFoodReq:Constructor()
   self.food_id = 0
 end
 
--- DECOMPILER ERROR at PC7522: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.NewYearDinnerMakeFoodReq)._proto = {
-[1] = {"food_id", "int"}
+NewYearDinnerMakeFoodReq._proto = {
+  [1] = {"food_id", "int"}
 }
 _class("NewYearDinnerMakeFoodRep", ICampaignComResponse)
-_ENV.NewYearDinnerMakeFoodRep = _ENV.NewYearDinnerMakeFoodRep
--- DECOMPILER ERROR at PC7534: Confused about usage of register: R44 in 'UnsetPending'
+NewYearDinnerMakeFoodRep = NewYearDinnerMakeFoodRep
 
-;
-(_ENV.NewYearDinnerMakeFoodRep).Constructor = function(self)
-  -- function num : 0_263 , upvalues : _ENV
+function NewYearDinnerMakeFoodRep:Constructor()
   self.ret = 0
   self.data_info = NewYearDinnerInfo:New()
 end
 
--- DECOMPILER ERROR at PC7549: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.NewYearDinnerMakeFoodRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"data_info", "NewYearDinnerInfo"}
+NewYearDinnerMakeFoodRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "data_info",
+    "NewYearDinnerInfo"
+  }
 }
 _class("NewYearDinnerRewardReq", ICampaignComRequest)
-_ENV.NewYearDinnerRewardReq = _ENV.NewYearDinnerRewardReq
--- DECOMPILER ERROR at PC7561: Confused about usage of register: R44 in 'UnsetPending'
+NewYearDinnerRewardReq = NewYearDinnerRewardReq
 
-;
-(_ENV.NewYearDinnerRewardReq).Constructor = function(self)
-  -- function num : 0_264
+function NewYearDinnerRewardReq:Constructor()
   self.reward_type = 0
   self.req_id = 0
 end
 
--- DECOMPILER ERROR at PC7576: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.NewYearDinnerRewardReq)._proto = {
-[1] = {"reward_type", "int"}
-, 
-[2] = {"req_id", "int"}
+NewYearDinnerRewardReq._proto = {
+  [1] = {
+    "reward_type",
+    "int"
+  },
+  [2] = {"req_id", "int"}
 }
 _class("NewYearDinnerRewardRep", ICampaignComResponse)
-_ENV.NewYearDinnerRewardRep = _ENV.NewYearDinnerRewardRep
--- DECOMPILER ERROR at PC7588: Confused about usage of register: R44 in 'UnsetPending'
+NewYearDinnerRewardRep = NewYearDinnerRewardRep
 
-;
-(_ENV.NewYearDinnerRewardRep).Constructor = function(self)
-  -- function num : 0_265 , upvalues : _ENV
+function NewYearDinnerRewardRep:Constructor()
   self.ret = 0
   self.component_info = NewYearDinnerComponentInfo:New()
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC7608: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.NewYearDinnerRewardRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"component_info", "NewYearDinnerComponentInfo"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
+NewYearDinnerRewardRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "component_info",
+    "NewYearDinnerComponentInfo"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("PostStationMissionInfo", Object)
-_ENV.PostStationMissionInfo = _ENV.PostStationMissionInfo
--- DECOMPILER ERROR at PC7620: Confused about usage of register: R44 in 'UnsetPending'
+PostStationMissionInfo = PostStationMissionInfo
 
-;
-(_ENV.PostStationMissionInfo).Constructor = function(self)
-  -- function num : 0_266
+function PostStationMissionInfo:Constructor()
   self.mission_id = 0
   self.can_get_target_list = {}
   self.already_get_target_list = {}
@@ -5190,438 +4731,367 @@ _ENV.PostStationMissionInfo = _ENV.PostStationMissionInfo
   self.suc = 0
 end
 
--- DECOMPILER ERROR at PC7650: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.PostStationMissionInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"can_get_target_list", "list<int>"}
-, 
-[3] = {"already_get_target_list", "list<int>"}
-, 
-[4] = {"story_mask", "int"}
-, 
-[5] = {"suc", "int"}
+PostStationMissionInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "can_get_target_list",
+    "list<int>"
+  },
+  [3] = {
+    "already_get_target_list",
+    "list<int>"
+  },
+  [4] = {"story_mask", "int"},
+  [5] = {"suc", "int"}
 }
 _class("MissionOrderInfo", Object)
-_ENV.MissionOrderInfo = _ENV.MissionOrderInfo
--- DECOMPILER ERROR at PC7662: Confused about usage of register: R44 in 'UnsetPending'
+MissionOrderInfo = MissionOrderInfo
 
-;
-(_ENV.MissionOrderInfo).Constructor = function(self)
-  -- function num : 0_267
+function MissionOrderInfo:Constructor()
   self.order_id = 0
   self.item_id_num = {}
 end
 
--- DECOMPILER ERROR at PC7677: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.MissionOrderInfo)._proto = {
-[1] = {"order_id", "int"}
-, 
-[2] = {"item_id_num", "map<int,int>"}
+MissionOrderInfo._proto = {
+  [1] = {"order_id", "int"},
+  [2] = {
+    "item_id_num",
+    "map<int,int>"
+  }
 }
 _class("PostStationComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.PostStationComponentDataInfo = _ENV.PostStationComponentDataInfo
--- DECOMPILER ERROR at PC7689: Confused about usage of register: R44 in 'UnsetPending'
+PostStationComponentDataInfo = PostStationComponentDataInfo
 
-;
-(_ENV.PostStationComponentDataInfo).Constructor = function(self)
-  -- function num : 0_268
+function PostStationComponentDataInfo:Constructor()
   self.mission_infos = {}
   self.cur_order_list = {}
 end
 
--- DECOMPILER ERROR at PC7704: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.PostStationComponentDataInfo)._proto = {
-[1] = {"mission_infos", "map<int,PostStationMissionInfo>"}
-, 
-[2] = {"cur_order_list", "map<int,MissionOrderInfo>"}
+PostStationComponentDataInfo._proto = {
+  [1] = {
+    "mission_infos",
+    "map<int,PostStationMissionInfo>"
+  },
+  [2] = {
+    "cur_order_list",
+    "map<int,MissionOrderInfo>"
+  }
 }
 _class("PostStationComponentInfo", ICampaignComponentInfo)
-_ENV.PostStationComponentInfo = _ENV.PostStationComponentInfo
--- DECOMPILER ERROR at PC7716: Confused about usage of register: R44 in 'UnsetPending'
+PostStationComponentInfo = PostStationComponentInfo
 
-;
-(_ENV.PostStationComponentInfo).Constructor = function(self)
-  -- function num : 0_269
+function PostStationComponentInfo:Constructor()
   self.mission_infos = {}
 end
 
--- DECOMPILER ERROR at PC7726: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.PostStationComponentInfo)._proto = {
-[1] = {"mission_infos", "map<int,PostStationMissionInfo>"}
+PostStationComponentInfo._proto = {
+  [1] = {
+    "mission_infos",
+    "map<int,PostStationMissionInfo>"
+  }
 }
 _class("SubmitMissionInfoReq", ICampaignComRequest)
-_ENV.SubmitMissionInfoReq = _ENV.SubmitMissionInfoReq
--- DECOMPILER ERROR at PC7738: Confused about usage of register: R44 in 'UnsetPending'
+SubmitMissionInfoReq = SubmitMissionInfoReq
 
-;
-(_ENV.SubmitMissionInfoReq).Constructor = function(self)
-  -- function num : 0_270
+function SubmitMissionInfoReq:Constructor()
   self.mission_id = 0
   self.order_list = {}
 end
 
--- DECOMPILER ERROR at PC7753: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.SubmitMissionInfoReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"order_list", "map<int,MissionOrderInfo>"}
+SubmitMissionInfoReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "order_list",
+    "map<int,MissionOrderInfo>"
+  }
 }
 _class("SubmitMissionInfoRes", ICampaignComResponse)
-_ENV.SubmitMissionInfoRes = _ENV.SubmitMissionInfoRes
--- DECOMPILER ERROR at PC7765: Confused about usage of register: R44 in 'UnsetPending'
+SubmitMissionInfoRes = SubmitMissionInfoRes
 
-;
-(_ENV.SubmitMissionInfoRes).Constructor = function(self)
-  -- function num : 0_271 , upvalues : _ENV
+function SubmitMissionInfoRes:Constructor()
   self.ret = 0
   self.suc = 0
   self.info = PostStationMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC7785: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.SubmitMissionInfoRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"suc", "int"}
-, 
-[3] = {"info", "PostStationMissionInfo"}
+SubmitMissionInfoRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"suc", "int"},
+  [3] = {
+    "info",
+    "PostStationMissionInfo"
+  }
 }
 _class("PostStationMissionStoryReq", ICampaignComRequest)
-_ENV.PostStationMissionStoryReq = _ENV.PostStationMissionStoryReq
--- DECOMPILER ERROR at PC7797: Confused about usage of register: R44 in 'UnsetPending'
+PostStationMissionStoryReq = PostStationMissionStoryReq
 
-;
-(_ENV.PostStationMissionStoryReq).Constructor = function(self)
-  -- function num : 0_272
+function PostStationMissionStoryReq:Constructor()
   self.mission_id = 0
   self.story_type = 0
 end
 
--- DECOMPILER ERROR at PC7812: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.PostStationMissionStoryReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"story_type", "int"}
+PostStationMissionStoryReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"story_type", "int"}
 }
 _class("PostStationMissionStoryRes", ICampaignComResponse)
-_ENV.PostStationMissionStoryRes = _ENV.PostStationMissionStoryRes
--- DECOMPILER ERROR at PC7824: Confused about usage of register: R44 in 'UnsetPending'
+PostStationMissionStoryRes = PostStationMissionStoryRes
 
-;
-(_ENV.PostStationMissionStoryRes).Constructor = function(self)
-  -- function num : 0_273 , upvalues : _ENV
+function PostStationMissionStoryRes:Constructor()
   self.ret = 0
   self.info = PostStationMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC7839: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.PostStationMissionStoryRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "PostStationMissionInfo"}
+PostStationMissionStoryRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "PostStationMissionInfo"
+  }
 }
 _class("PostStationGetTargetRewardReq", ICampaignComRequest)
-_ENV.PostStationGetTargetRewardReq = _ENV.PostStationGetTargetRewardReq
--- DECOMPILER ERROR at PC7851: Confused about usage of register: R44 in 'UnsetPending'
+PostStationGetTargetRewardReq = PostStationGetTargetRewardReq
 
-;
-(_ENV.PostStationGetTargetRewardReq).Constructor = function(self)
-  -- function num : 0_274
+function PostStationGetTargetRewardReq:Constructor()
   self.mission_id = 0
   self.target_id = 0
 end
 
--- DECOMPILER ERROR at PC7866: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.PostStationGetTargetRewardReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"target_id", "int"}
+PostStationGetTargetRewardReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"target_id", "int"}
 }
 _class("PostStationGetTargetRewardRes", ICampaignComResponse)
-_ENV.PostStationGetTargetRewardRes = _ENV.PostStationGetTargetRewardRes
--- DECOMPILER ERROR at PC7878: Confused about usage of register: R44 in 'UnsetPending'
+PostStationGetTargetRewardRes = PostStationGetTargetRewardRes
 
-;
-(_ENV.PostStationGetTargetRewardRes).Constructor = function(self)
-  -- function num : 0_275 , upvalues : _ENV
+function PostStationGetTargetRewardRes:Constructor()
   self.ret = 0
   self.info = PostStationMissionInfo:New()
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC7898: Confused about usage of register: R44 in 'UnsetPending'
-
-;
-(_ENV.PostStationGetTargetRewardRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "PostStationMissionInfo"}
-, 
-[3] = {"reward", "list<RoleAsset>"}
+PostStationGetTargetRewardRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "PostStationMissionInfo"
+  },
+  [3] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
-local MiniMailStateType = {MMST_Invalid = 0, MMST_Unread = 2, MMST_Read = 3}
+local MiniMailStateType = {
+  MMST_Invalid = 0,
+  MMST_Unread = 2,
+  MMST_Read = 3
+}
 _enum("MiniMailStateType", MiniMailStateType)
 _class("MiniMailItemInfo", Object)
-_ENV.MiniMailItemInfo = _ENV.MiniMailItemInfo
--- DECOMPILER ERROR at PC7922: Confused about usage of register: R45 in 'UnsetPending'
+MiniMailItemInfo = MiniMailItemInfo
 
-;
-(_ENV.MiniMailItemInfo).Constructor = function(self)
-  -- function num : 0_276
+function MiniMailItemInfo:Constructor()
   self.id = 0
   self.unlock_time = 0
   self.state = 0
 end
 
--- DECOMPILER ERROR at PC7942: Confused about usage of register: R45 in 'UnsetPending'
-
-;
-(_ENV.MiniMailItemInfo)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"unlock_time", "time"}
-, 
-[3] = {"state", "int"}
+MiniMailItemInfo._proto = {
+  [1] = {"id", "int"},
+  [2] = {
+    "unlock_time",
+    "time"
+  },
+  [3] = {"state", "int"}
 }
 _class("HandleReadMiniMailReq", ICampaignComRequest)
-_ENV.HandleReadMiniMailReq = _ENV.HandleReadMiniMailReq
--- DECOMPILER ERROR at PC7954: Confused about usage of register: R45 in 'UnsetPending'
+HandleReadMiniMailReq = HandleReadMiniMailReq
 
-;
-(_ENV.HandleReadMiniMailReq).Constructor = function(self)
-  -- function num : 0_277
+function HandleReadMiniMailReq:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC7964: Confused about usage of register: R45 in 'UnsetPending'
-
-;
-(_ENV.HandleReadMiniMailReq)._proto = {
-[1] = {"id", "int"}
+HandleReadMiniMailReq._proto = {
+  [1] = {"id", "int"}
 }
 _class("HandleReadMiniMailReply", ICampaignComResponse)
-_ENV.HandleReadMiniMailReply = _ENV.HandleReadMiniMailReply
--- DECOMPILER ERROR at PC7976: Confused about usage of register: R45 in 'UnsetPending'
+HandleReadMiniMailReply = HandleReadMiniMailReply
 
-;
-(_ENV.HandleReadMiniMailReply).Constructor = function(self)
-  -- function num : 0_278
+function HandleReadMiniMailReply:Constructor()
 end
 
--- DECOMPILER ERROR at PC7980: Confused about usage of register: R45 in 'UnsetPending'
-
-;
-(_ENV.HandleReadMiniMailReply)._proto = {}
+HandleReadMiniMailReply._proto = {}
 _class("MiniMailComponentInfo", ICampaignComponentInfo)
-_ENV.MiniMailComponentInfo = _ENV.MiniMailComponentInfo
--- DECOMPILER ERROR at PC7992: Confused about usage of register: R45 in 'UnsetPending'
+MiniMailComponentInfo = MiniMailComponentInfo
 
-;
-(_ENV.MiniMailComponentInfo).Constructor = function(self)
-  -- function num : 0_279
+function MiniMailComponentInfo:Constructor()
   self.infos = {}
 end
 
--- DECOMPILER ERROR at PC8002: Confused about usage of register: R45 in 'UnsetPending'
-
-;
-(_ENV.MiniMailComponentInfo)._proto = {
-[1] = {"infos", "map<int,MiniMailItemInfo>"}
+MiniMailComponentInfo._proto = {
+  [1] = {
+    "infos",
+    "map<int,MiniMailItemInfo>"
+  }
 }
 local MiniMailComponentNotifyType = {MiniMailComponentNotifyType_Add = 1}
 _enum("MiniMailComponentNotifyType", MiniMailComponentNotifyType)
 _class("NotifyMiniMailAdd", Object)
-_ENV.NotifyMiniMailAdd = _ENV.NotifyMiniMailAdd
--- DECOMPILER ERROR at PC8022: Confused about usage of register: R46 in 'UnsetPending'
+NotifyMiniMailAdd = NotifyMiniMailAdd
 
-;
-(_ENV.NotifyMiniMailAdd).Constructor = function(self)
-  -- function num : 0_280 , upvalues : _ENV
+function NotifyMiniMailAdd:Constructor()
   self.infos = MiniMailItemInfo:New()
 end
 
--- DECOMPILER ERROR at PC8032: Confused about usage of register: R46 in 'UnsetPending'
-
-;
-(_ENV.NotifyMiniMailAdd)._proto = {
-[1] = {"infos", "MiniMailItemInfo"}
+NotifyMiniMailAdd._proto = {
+  [1] = {
+    "infos",
+    "MiniMailItemInfo"
+  }
 }
 _class("DifficultyMissionComponentInfo", ICampaignComponentDataInfo)
-_ENV.DifficultyMissionComponentInfo = _ENV.DifficultyMissionComponentInfo
--- DECOMPILER ERROR at PC8044: Confused about usage of register: R46 in 'UnsetPending'
+DifficultyMissionComponentInfo = DifficultyMissionComponentInfo
 
-;
-(_ENV.DifficultyMissionComponentInfo).Constructor = function(self)
-  -- function num : 0_281 , upvalues : _ENV
+function DifficultyMissionComponentInfo:Constructor()
   self.difficulty_info = difficulty_mission_info:New()
 end
 
--- DECOMPILER ERROR at PC8054: Confused about usage of register: R46 in 'UnsetPending'
-
-;
-(_ENV.DifficultyMissionComponentInfo)._proto = {
-[1] = {"difficulty_info", "difficulty_mission_info"}
+DifficultyMissionComponentInfo._proto = {
+  [1] = {
+    "difficulty_info",
+    "difficulty_mission_info"
+  }
 }
 _class("ClientCampaignDifficultyMissionInfo", ICampaignComponentInfo)
-_ENV.ClientCampaignDifficultyMissionInfo = _ENV.ClientCampaignDifficultyMissionInfo
--- DECOMPILER ERROR at PC8066: Confused about usage of register: R46 in 'UnsetPending'
+ClientCampaignDifficultyMissionInfo = ClientCampaignDifficultyMissionInfo
 
-;
-(_ENV.ClientCampaignDifficultyMissionInfo).Constructor = function(self)
-  -- function num : 0_282
+function ClientCampaignDifficultyMissionInfo:Constructor()
   self.cur_parent_id = 0
   self.infos = {}
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC8086: Confused about usage of register: R46 in 'UnsetPending'
-
-;
-(_ENV.ClientCampaignDifficultyMissionInfo)._proto = {
-[1] = {"cur_parent_id", "int"}
-, 
-[2] = {"infos", "map<int,ParentMissionInfo>"}
-, 
-[3] = {"pet_list", "list<int64>"}
+ClientCampaignDifficultyMissionInfo._proto = {
+  [1] = {
+    "cur_parent_id",
+    "int"
+  },
+  [2] = {
+    "infos",
+    "map<int,ParentMissionInfo>"
+  },
+  [3] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("CCampaignEventApplyChangeFormationReq", ICampaignComRequest)
-_ENV.CCampaignEventApplyChangeFormationReq = _ENV.CCampaignEventApplyChangeFormationReq
--- DECOMPILER ERROR at PC8098: Confused about usage of register: R46 in 'UnsetPending'
+CCampaignEventApplyChangeFormationReq = CCampaignEventApplyChangeFormationReq
 
-;
-(_ENV.CCampaignEventApplyChangeFormationReq).Constructor = function(self)
-  -- function num : 0_283
+function CCampaignEventApplyChangeFormationReq:Constructor()
   self.formation_pet_list = {}
   self.parent_mission_id = 0
   self.sub_mission_id = 0
 end
 
--- DECOMPILER ERROR at PC8118: Confused about usage of register: R46 in 'UnsetPending'
-
-;
-(_ENV.CCampaignEventApplyChangeFormationReq)._proto = {
-[1] = {"formation_pet_list", "list<int64>"}
-, 
-[2] = {"parent_mission_id", "int"}
-, 
-[3] = {"sub_mission_id", "int"}
+CCampaignEventApplyChangeFormationReq._proto = {
+  [1] = {
+    "formation_pet_list",
+    "list<int64>"
+  },
+  [2] = {
+    "parent_mission_id",
+    "int"
+  },
+  [3] = {
+    "sub_mission_id",
+    "int"
+  }
 }
 _class("CCampaignEventApplyChangeFormationRes", ICampaignComResponse)
-_ENV.CCampaignEventApplyChangeFormationRes = _ENV.CCampaignEventApplyChangeFormationRes
--- DECOMPILER ERROR at PC8130: Confused about usage of register: R46 in 'UnsetPending'
+CCampaignEventApplyChangeFormationRes = CCampaignEventApplyChangeFormationRes
 
-;
-(_ENV.CCampaignEventApplyChangeFormationRes).Constructor = function(self)
-  -- function num : 0_284
+function CCampaignEventApplyChangeFormationRes:Constructor()
   self.nFormationRet = 0
 end
 
--- DECOMPILER ERROR at PC8140: Confused about usage of register: R46 in 'UnsetPending'
-
-;
-(_ENV.CCampaignEventApplyChangeFormationRes)._proto = {
-[1] = {"nFormationRet", "int"}
+CCampaignEventApplyChangeFormationRes._proto = {
+  [1] = {
+    "nFormationRet",
+    "int"
+  }
 }
 _class("CCampaignEventResetSubMissionRecordReq", ICampaignComRequest)
-_ENV.CCampaignEventResetSubMissionRecordReq = _ENV.CCampaignEventResetSubMissionRecordReq
--- DECOMPILER ERROR at PC8152: Confused about usage of register: R46 in 'UnsetPending'
+CCampaignEventResetSubMissionRecordReq = CCampaignEventResetSubMissionRecordReq
 
-;
-(_ENV.CCampaignEventResetSubMissionRecordReq).Constructor = function(self)
-  -- function num : 0_285
+function CCampaignEventResetSubMissionRecordReq:Constructor()
   self.parent_mission_id = 0
   self.sub_mission_id = 0
 end
 
--- DECOMPILER ERROR at PC8167: Confused about usage of register: R46 in 'UnsetPending'
-
-;
-(_ENV.CCampaignEventResetSubMissionRecordReq)._proto = {
-[1] = {"parent_mission_id", "int"}
-, 
-[2] = {"sub_mission_id", "int"}
+CCampaignEventResetSubMissionRecordReq._proto = {
+  [1] = {
+    "parent_mission_id",
+    "int"
+  },
+  [2] = {
+    "sub_mission_id",
+    "int"
+  }
 }
 _class("CCampaignEventResetSubMissionRecordRes", ICampaignComResponse)
-_ENV.CCampaignEventResetSubMissionRecordRes = _ENV.CCampaignEventResetSubMissionRecordRes
--- DECOMPILER ERROR at PC8179: Confused about usage of register: R46 in 'UnsetPending'
+CCampaignEventResetSubMissionRecordRes = CCampaignEventResetSubMissionRecordRes
 
-;
-(_ENV.CCampaignEventResetSubMissionRecordRes).Constructor = function(self)
-  -- function num : 0_286
+function CCampaignEventResetSubMissionRecordRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC8189: Confused about usage of register: R46 in 'UnsetPending'
-
-;
-(_ENV.CCampaignEventResetSubMissionRecordRes)._proto = {
-[1] = {"nRet", "int"}
+CCampaignEventResetSubMissionRecordRes._proto = {
+  [1] = {"nRet", "int"}
 }
 local DifficultyMissionComponentNotifyType = {DifficultyMissionComponentNotifyType_Parent = 1, DifficultyMissionComponentNotifyType_CurFormation = 2}
 _enum("DifficultyMissionComponentNotifyType", DifficultyMissionComponentNotifyType)
 _class("NotifyDifficultyMissionComponentParentInfoChanged", Object)
-_ENV.NotifyDifficultyMissionComponentParentInfoChanged = _ENV.NotifyDifficultyMissionComponentParentInfoChanged
--- DECOMPILER ERROR at PC8211: Confused about usage of register: R47 in 'UnsetPending'
+NotifyDifficultyMissionComponentParentInfoChanged = NotifyDifficultyMissionComponentParentInfoChanged
 
-;
-(_ENV.NotifyDifficultyMissionComponentParentInfoChanged).Constructor = function(self)
-  -- function num : 0_287 , upvalues : _ENV
+function NotifyDifficultyMissionComponentParentInfoChanged:Constructor()
   self.info = ParentMissionInfo:New()
   self.cur_mission_id = 0
 end
 
--- DECOMPILER ERROR at PC8226: Confused about usage of register: R47 in 'UnsetPending'
-
-;
-(_ENV.NotifyDifficultyMissionComponentParentInfoChanged)._proto = {
-[1] = {"info", "ParentMissionInfo"}
-, 
-[2] = {"cur_mission_id", "int"}
+NotifyDifficultyMissionComponentParentInfoChanged._proto = {
+  [1] = {
+    "info",
+    "ParentMissionInfo"
+  },
+  [2] = {
+    "cur_mission_id",
+    "int"
+  }
 }
 _class("NotifyDifficultyMissionComponentCurFormationChanged", Object)
-_ENV.NotifyDifficultyMissionComponentCurFormationChanged = _ENV.NotifyDifficultyMissionComponentCurFormationChanged
--- DECOMPILER ERROR at PC8238: Confused about usage of register: R47 in 'UnsetPending'
+NotifyDifficultyMissionComponentCurFormationChanged = NotifyDifficultyMissionComponentCurFormationChanged
 
-;
-(_ENV.NotifyDifficultyMissionComponentCurFormationChanged).Constructor = function(self)
-  -- function num : 0_288
+function NotifyDifficultyMissionComponentCurFormationChanged:Constructor()
   self.formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC8248: Confused about usage of register: R47 in 'UnsetPending'
-
-;
-(_ENV.NotifyDifficultyMissionComponentCurFormationChanged)._proto = {
-[1] = {"formation_pet_list", "list<int64>"}
+NotifyDifficultyMissionComponentCurFormationChanged._proto = {
+  [1] = {
+    "formation_pet_list",
+    "list<int64>"
+  }
 }
-local BounceMission_Status = {E_BounceMission_Status_UN_FINISH = 0, E_BounceMission_Status_CAN_RECV = 1, E_BounceMission_Status_RECVED = 2}
+local BounceMission_Status = {
+  E_BounceMission_Status_UN_FINISH = 0,
+  E_BounceMission_Status_CAN_RECV = 1,
+  E_BounceMission_Status_RECVED = 2
+}
 _enum("BounceMission_Status", BounceMission_Status)
 _class("BounceMissionInfo", Object)
-_ENV.BounceMissionInfo = _ENV.BounceMissionInfo
--- DECOMPILER ERROR at PC8273: Confused about usage of register: R48 in 'UnsetPending'
+BounceMissionInfo = BounceMissionInfo
 
-;
-(_ENV.BounceMissionInfo).Constructor = function(self)
-  -- function num : 0_289
+function BounceMissionInfo:Constructor()
   self.mission_id = 0
   self.enties_list = {}
   self.status = 0
@@ -5630,173 +5100,143 @@ _ENV.BounceMissionInfo = _ENV.BounceMissionInfo
   self.max_record = 0
 end
 
--- DECOMPILER ERROR at PC8308: Confused about usage of register: R48 in 'UnsetPending'
-
-;
-(_ENV.BounceMissionInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"enties_list", "map<int,int>"}
-, 
-[3] = {"status", "int"}
-, 
-[4] = {"kill_num", "int"}
-, 
-[5] = {"kill_boss_num", "int"}
-, 
-[6] = {"max_record", "int"}
+BounceMissionInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "enties_list",
+    "map<int,int>"
+  },
+  [3] = {"status", "int"},
+  [4] = {"kill_num", "int"},
+  [5] = {
+    "kill_boss_num",
+    "int"
+  },
+  [6] = {"max_record", "int"}
 }
 _class("BounceMissionComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.BounceMissionComponentDataInfo = _ENV.BounceMissionComponentDataInfo
--- DECOMPILER ERROR at PC8320: Confused about usage of register: R48 in 'UnsetPending'
+BounceMissionComponentDataInfo = BounceMissionComponentDataInfo
 
-;
-(_ENV.BounceMissionComponentDataInfo).Constructor = function(self)
-  -- function num : 0_290
+function BounceMissionComponentDataInfo:Constructor()
   self.m_cur_mission = 0
   self.m_pass_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC8335: Confused about usage of register: R48 in 'UnsetPending'
-
-;
-(_ENV.BounceMissionComponentDataInfo)._proto = {
-[1] = {"m_cur_mission", "int"}
-, 
-[2] = {"m_pass_mission_info", "map<int,BounceMissionInfo>"}
+BounceMissionComponentDataInfo._proto = {
+  [1] = {
+    "m_cur_mission",
+    "int"
+  },
+  [2] = {
+    "m_pass_mission_info",
+    "map<int,BounceMissionInfo>"
+  }
 }
 _class("ClientBounceMissionComponentInfo", ICampaignComponentInfo)
-_ENV.ClientBounceMissionComponentInfo = _ENV.ClientBounceMissionComponentInfo
--- DECOMPILER ERROR at PC8347: Confused about usage of register: R48 in 'UnsetPending'
+ClientBounceMissionComponentInfo = ClientBounceMissionComponentInfo
 
-;
-(_ENV.ClientBounceMissionComponentInfo).Constructor = function(self)
-  -- function num : 0_291
+function ClientBounceMissionComponentInfo:Constructor()
   self.m_cur_mission = 0
   self.m_pass_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC8362: Confused about usage of register: R48 in 'UnsetPending'
-
-;
-(_ENV.ClientBounceMissionComponentInfo)._proto = {
-[1] = {"m_cur_mission", "int"}
-, 
-[2] = {"m_pass_mission_info", "map<int,BounceMissionInfo>"}
+ClientBounceMissionComponentInfo._proto = {
+  [1] = {
+    "m_cur_mission",
+    "int"
+  },
+  [2] = {
+    "m_pass_mission_info",
+    "map<int,BounceMissionInfo>"
+  }
 }
 _class("BounceMissionSettleReq", ICampaignComRequest)
-_ENV.BounceMissionSettleReq = _ENV.BounceMissionSettleReq
--- DECOMPILER ERROR at PC8374: Confused about usage of register: R48 in 'UnsetPending'
+BounceMissionSettleReq = BounceMissionSettleReq
 
-;
-(_ENV.BounceMissionSettleReq).Constructor = function(self)
-  -- function num : 0_292
+function BounceMissionSettleReq:Constructor()
   self.mission_id = 0
   self.kill_num = 0
   self.kill_boss_num = 0
   self.game_cost_time = 0
 end
 
--- DECOMPILER ERROR at PC8399: Confused about usage of register: R48 in 'UnsetPending'
-
-;
-(_ENV.BounceMissionSettleReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"kill_num", "int"}
-, 
-[3] = {"kill_boss_num", "int"}
-, 
-[4] = {"game_cost_time", "int"}
+BounceMissionSettleReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"kill_num", "int"},
+  [3] = {
+    "kill_boss_num",
+    "int"
+  },
+  [4] = {
+    "game_cost_time",
+    "int"
+  }
 }
 _class("BounceMissionSettleRes", ICampaignComResponse)
-_ENV.BounceMissionSettleRes = _ENV.BounceMissionSettleRes
--- DECOMPILER ERROR at PC8411: Confused about usage of register: R48 in 'UnsetPending'
+BounceMissionSettleRes = BounceMissionSettleRes
 
-;
-(_ENV.BounceMissionSettleRes).Constructor = function(self)
-  -- function num : 0_293 , upvalues : _ENV
+function BounceMissionSettleRes:Constructor()
   self.ret = 0
   self.info = BounceMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC8426: Confused about usage of register: R48 in 'UnsetPending'
-
-;
-(_ENV.BounceMissionSettleRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "BounceMissionInfo"}
+BounceMissionSettleRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "BounceMissionInfo"
+  }
 }
 _class("BounceMissionGetRewardReq", ICampaignComRequest)
-_ENV.BounceMissionGetRewardReq = _ENV.BounceMissionGetRewardReq
--- DECOMPILER ERROR at PC8438: Confused about usage of register: R48 in 'UnsetPending'
+BounceMissionGetRewardReq = BounceMissionGetRewardReq
 
-;
-(_ENV.BounceMissionGetRewardReq).Constructor = function(self)
-  -- function num : 0_294
+function BounceMissionGetRewardReq:Constructor()
   self.mission_id = 0
   self.entie_id = 0
 end
 
--- DECOMPILER ERROR at PC8453: Confused about usage of register: R48 in 'UnsetPending'
-
-;
-(_ENV.BounceMissionGetRewardReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"entie_id", "int"}
+BounceMissionGetRewardReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"entie_id", "int"}
 }
 _class("BounceMissionGetRewardRes", ICampaignComResponse)
-_ENV.BounceMissionGetRewardRes = _ENV.BounceMissionGetRewardRes
--- DECOMPILER ERROR at PC8465: Confused about usage of register: R48 in 'UnsetPending'
+BounceMissionGetRewardRes = BounceMissionGetRewardRes
 
-;
-(_ENV.BounceMissionGetRewardRes).Constructor = function(self)
-  -- function num : 0_295 , upvalues : _ENV
+function BounceMissionGetRewardRes:Constructor()
   self.ret = 0
   self.info = BounceMissionInfo:New()
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC8485: Confused about usage of register: R48 in 'UnsetPending'
-
-;
-(_ENV.BounceMissionGetRewardRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "BounceMissionInfo"}
-, 
-[3] = {"reward", "list<RoleAsset>"}
+BounceMissionGetRewardRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "BounceMissionInfo"
+  },
+  [3] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 local ClueFromType = {Talk = 0, Suspicious = 1}
 _enum("ClueFromType", ClueFromType)
 _class("SubmitClueInfo", Object)
-_ENV.SubmitClueInfo = _ENV.SubmitClueInfo
--- DECOMPILER ERROR at PC8508: Confused about usage of register: R49 in 'UnsetPending'
+SubmitClueInfo = SubmitClueInfo
 
-;
-(_ENV.SubmitClueInfo).Constructor = function(self)
-  -- function num : 0_296
+function SubmitClueInfo:Constructor()
   self.type = 0
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC8523: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.SubmitClueInfo)._proto = {
-[1] = {"type", "int"}
-, 
-[2] = {"id", "int"}
+SubmitClueInfo._proto = {
+  [1] = {"type", "int"},
+  [2] = {"id", "int"}
 }
 _class("CurDetectiveInfo", Object)
-_ENV.CurDetectiveInfo = _ENV.CurDetectiveInfo
--- DECOMPILER ERROR at PC8535: Confused about usage of register: R49 in 'UnsetPending'
+CurDetectiveInfo = CurDetectiveInfo
 
-;
-(_ENV.CurDetectiveInfo).Constructor = function(self)
-  -- function num : 0_297
+function CurDetectiveInfo:Constructor()
   self.clue_list = {}
   self.fragment_list = {}
   self.talk_list = {}
@@ -5804,252 +5244,203 @@ _ENV.CurDetectiveInfo = _ENV.CurDetectiveInfo
   self.cur_time = 0
 end
 
--- DECOMPILER ERROR at PC8565: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.CurDetectiveInfo)._proto = {
-[1] = {"clue_list", "list<int>"}
-, 
-[2] = {"fragment_list", "list<int>"}
-, 
-[3] = {"talk_list", "list<int>"}
-, 
-[4] = {"pstid", "int64"}
-, 
-[5] = {"cur_time", "time"}
+CurDetectiveInfo._proto = {
+  [1] = {"clue_list", "list<int>"},
+  [2] = {
+    "fragment_list",
+    "list<int>"
+  },
+  [3] = {"talk_list", "list<int>"},
+  [4] = {"pstid", "int64"},
+  [5] = {"cur_time", "time"}
 }
 _class("DetectiveComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.DetectiveComponentDataInfo = _ENV.DetectiveComponentDataInfo
--- DECOMPILER ERROR at PC8577: Confused about usage of register: R49 in 'UnsetPending'
+DetectiveComponentDataInfo = DetectiveComponentDataInfo
 
-;
-(_ENV.DetectiveComponentDataInfo).Constructor = function(self)
-  -- function num : 0_298 , upvalues : _ENV
+function DetectiveComponentDataInfo:Constructor()
   self.is_record = false
   self.cur_info = CurDetectiveInfo:New()
   self.cg_list = {}
   self.auto_save_record_time = 0
 end
 
--- DECOMPILER ERROR at PC8602: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.DetectiveComponentDataInfo)._proto = {
-[1] = {"is_record", "bool"}
-, 
-[2] = {"cur_info", "CurDetectiveInfo"}
-, 
-[3] = {"cg_list", "list<int>"}
-, 
-[4] = {"auto_save_record_time", "time"}
+DetectiveComponentDataInfo._proto = {
+  [1] = {"is_record", "bool"},
+  [2] = {
+    "cur_info",
+    "CurDetectiveInfo"
+  },
+  [3] = {"cg_list", "list<int>"},
+  [4] = {
+    "auto_save_record_time",
+    "time"
+  }
 }
 _class("ClientDetectiveComponentInfo", ICampaignComponentInfo)
-_ENV.ClientDetectiveComponentInfo = _ENV.ClientDetectiveComponentInfo
--- DECOMPILER ERROR at PC8614: Confused about usage of register: R49 in 'UnsetPending'
+ClientDetectiveComponentInfo = ClientDetectiveComponentInfo
 
-;
-(_ENV.ClientDetectiveComponentInfo).Constructor = function(self)
-  -- function num : 0_299 , upvalues : _ENV
+function ClientDetectiveComponentInfo:Constructor()
   self.is_record = false
   self.cur_info = CurDetectiveInfo:New()
   self.cg_list = {}
   self.auto_save_record_time = 0
 end
 
--- DECOMPILER ERROR at PC8639: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.ClientDetectiveComponentInfo)._proto = {
-[1] = {"is_record", "bool"}
-, 
-[2] = {"cur_info", "CurDetectiveInfo"}
-, 
-[3] = {"cg_list", "list<int>"}
-, 
-[4] = {"auto_save_record_time", "time"}
+ClientDetectiveComponentInfo._proto = {
+  [1] = {"is_record", "bool"},
+  [2] = {
+    "cur_info",
+    "CurDetectiveInfo"
+  },
+  [3] = {"cg_list", "list<int>"},
+  [4] = {
+    "auto_save_record_time",
+    "time"
+  }
 }
 _class("DetectiveSubmitItemReq", ICampaignComRequest)
-_ENV.DetectiveSubmitItemReq = _ENV.DetectiveSubmitItemReq
--- DECOMPILER ERROR at PC8651: Confused about usage of register: R49 in 'UnsetPending'
+DetectiveSubmitItemReq = DetectiveSubmitItemReq
 
-;
-(_ENV.DetectiveSubmitItemReq).Constructor = function(self)
-  -- function num : 0_300
+function DetectiveSubmitItemReq:Constructor()
   self.stage = 0
   self.clue_list = {}
   self.fragment_list = {}
   self.talk_list = {}
 end
 
--- DECOMPILER ERROR at PC8676: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.DetectiveSubmitItemReq)._proto = {
-[1] = {"stage", "int"}
-, 
-[2] = {"clue_list", "list<SubmitClueInfo>"}
-, 
-[3] = {"fragment_list", "list<int>"}
-, 
-[4] = {"talk_list", "list<int>"}
+DetectiveSubmitItemReq._proto = {
+  [1] = {"stage", "int"},
+  [2] = {
+    "clue_list",
+    "list<SubmitClueInfo>"
+  },
+  [3] = {
+    "fragment_list",
+    "list<int>"
+  },
+  [4] = {"talk_list", "list<int>"}
 }
 _class("DetectiveSubmitItemRes", ICampaignComResponse)
-_ENV.DetectiveSubmitItemRes = _ENV.DetectiveSubmitItemRes
--- DECOMPILER ERROR at PC8688: Confused about usage of register: R49 in 'UnsetPending'
+DetectiveSubmitItemRes = DetectiveSubmitItemRes
 
-;
-(_ENV.DetectiveSubmitItemRes).Constructor = function(self)
-  -- function num : 0_301 , upvalues : _ENV
+function DetectiveSubmitItemRes:Constructor()
   self.ret = 0
   self.cur_info = CurDetectiveInfo:New()
 end
 
--- DECOMPILER ERROR at PC8703: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.DetectiveSubmitItemRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"cur_info", "CurDetectiveInfo"}
+DetectiveSubmitItemRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "cur_info",
+    "CurDetectiveInfo"
+  }
 }
 _class("DetectiveSubmitEndingReq", ICampaignComRequest)
-_ENV.DetectiveSubmitEndingReq = _ENV.DetectiveSubmitEndingReq
--- DECOMPILER ERROR at PC8715: Confused about usage of register: R49 in 'UnsetPending'
+DetectiveSubmitEndingReq = DetectiveSubmitEndingReq
 
-;
-(_ENV.DetectiveSubmitEndingReq).Constructor = function(self)
-  -- function num : 0_302
+function DetectiveSubmitEndingReq:Constructor()
   self.ending_id = 0
 end
 
--- DECOMPILER ERROR at PC8725: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.DetectiveSubmitEndingReq)._proto = {
-[1] = {"ending_id", "int"}
+DetectiveSubmitEndingReq._proto = {
+  [1] = {"ending_id", "int"}
 }
 _class("DetectiveSubmitEndingRes", ICampaignComResponse)
-_ENV.DetectiveSubmitEndingRes = _ENV.DetectiveSubmitEndingRes
--- DECOMPILER ERROR at PC8737: Confused about usage of register: R49 in 'UnsetPending'
+DetectiveSubmitEndingRes = DetectiveSubmitEndingRes
 
-;
-(_ENV.DetectiveSubmitEndingRes).Constructor = function(self)
-  -- function num : 0_303
+function DetectiveSubmitEndingRes:Constructor()
   self.ret = 0
   self.cg_list = {}
 end
 
--- DECOMPILER ERROR at PC8752: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.DetectiveSubmitEndingRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"cg_list", "list<int>"}
+DetectiveSubmitEndingRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"cg_list", "list<int>"}
 }
 _class("DetectiveAutoSaveReq", ICampaignComRequest)
-_ENV.DetectiveAutoSaveReq = _ENV.DetectiveAutoSaveReq
--- DECOMPILER ERROR at PC8764: Confused about usage of register: R49 in 'UnsetPending'
+DetectiveAutoSaveReq = DetectiveAutoSaveReq
 
-;
-(_ENV.DetectiveAutoSaveReq).Constructor = function(self)
-  -- function num : 0_304
+function DetectiveAutoSaveReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC8768: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.DetectiveAutoSaveReq)._proto = {}
+DetectiveAutoSaveReq._proto = {}
 _class("DetectiveAutoSaveRes", ICampaignComResponse)
-_ENV.DetectiveAutoSaveRes = _ENV.DetectiveAutoSaveRes
--- DECOMPILER ERROR at PC8780: Confused about usage of register: R49 in 'UnsetPending'
+DetectiveAutoSaveRes = DetectiveAutoSaveRes
 
-;
-(_ENV.DetectiveAutoSaveRes).Constructor = function(self)
-  -- function num : 0_305
+function DetectiveAutoSaveRes:Constructor()
   self.ret = 0
   self.is_record = false
   self.auto_save_record_time = 0
 end
 
--- DECOMPILER ERROR at PC8800: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.DetectiveAutoSaveRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"is_record", "bool"}
-, 
-[3] = {"auto_save_record_time", "time"}
+DetectiveAutoSaveRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"is_record", "bool"},
+  [3] = {
+    "auto_save_record_time",
+    "time"
+  }
 }
 _class("DetectiveReadRecordPlayReq", ICampaignComRequest)
-_ENV.DetectiveReadRecordPlayReq = _ENV.DetectiveReadRecordPlayReq
--- DECOMPILER ERROR at PC8812: Confused about usage of register: R49 in 'UnsetPending'
+DetectiveReadRecordPlayReq = DetectiveReadRecordPlayReq
 
-;
-(_ENV.DetectiveReadRecordPlayReq).Constructor = function(self)
-  -- function num : 0_306 , upvalues : _ENV
+function DetectiveReadRecordPlayReq:Constructor()
   self.cur_info = CurDetectiveInfo:New()
 end
 
--- DECOMPILER ERROR at PC8822: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.DetectiveReadRecordPlayReq)._proto = {
-[1] = {"cur_info", "CurDetectiveInfo"}
+DetectiveReadRecordPlayReq._proto = {
+  [1] = {
+    "cur_info",
+    "CurDetectiveInfo"
+  }
 }
 _class("DetectiveReadRecordPlayRes", ICampaignComResponse)
-_ENV.DetectiveReadRecordPlayRes = _ENV.DetectiveReadRecordPlayRes
--- DECOMPILER ERROR at PC8834: Confused about usage of register: R49 in 'UnsetPending'
+DetectiveReadRecordPlayRes = DetectiveReadRecordPlayRes
 
-;
-(_ENV.DetectiveReadRecordPlayRes).Constructor = function(self)
-  -- function num : 0_307 , upvalues : _ENV
+function DetectiveReadRecordPlayRes:Constructor()
   self.ret = 0
   self.cur_info = CurDetectiveInfo:New()
 end
 
--- DECOMPILER ERROR at PC8849: Confused about usage of register: R49 in 'UnsetPending'
-
-;
-(_ENV.DetectiveReadRecordPlayRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"cur_info", "CurDetectiveInfo"}
+DetectiveReadRecordPlayRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "cur_info",
+    "CurDetectiveInfo"
+  }
 }
 local PopStarComponentNotifyType = {PopStarMissionComponentNotifyType_InfoChanged = 1}
 _enum("PopStarComponentNotifyType", PopStarComponentNotifyType)
-local PopStarMissionType = {PopStarMissionType_None = 0, PopStarMissionType_Common = 1, PopStarMissionType_Challenge = 2}
+local PopStarMissionType = {
+  PopStarMissionType_None = 0,
+  PopStarMissionType_Common = 1,
+  PopStarMissionType_Challenge = 2
+}
 _enum("PopStarMissionType", PopStarMissionType)
 _class("NotifyPopStarComponentInfoChanged", Object)
-_ENV.NotifyPopStarComponentInfoChanged = _ENV.NotifyPopStarComponentInfoChanged
--- DECOMPILER ERROR at PC8882: Confused about usage of register: R51 in 'UnsetPending'
+NotifyPopStarComponentInfoChanged = NotifyPopStarComponentInfoChanged
 
-;
-(_ENV.NotifyPopStarComponentInfoChanged).Constructor = function(self)
-  -- function num : 0_308
+function NotifyPopStarComponentInfoChanged:Constructor()
   self.m_update_mission_info = {}
   self.m_received = {}
   self.m_max_score = 0
 end
 
--- DECOMPILER ERROR at PC8902: Confused about usage of register: R51 in 'UnsetPending'
-
-;
-(_ENV.NotifyPopStarComponentInfoChanged)._proto = {
-[1] = {"m_update_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_received", "list<int>"}
-, 
-[3] = {"m_max_score", "int"}
+NotifyPopStarComponentInfoChanged._proto = {
+  [1] = {
+    "m_update_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {"m_received", "list<int>"},
+  [3] = {
+    "m_max_score",
+    "int"
+  }
 }
 _class("PopStarComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.PopStarComponentDataInfo = _ENV.PopStarComponentDataInfo
--- DECOMPILER ERROR at PC8914: Confused about usage of register: R51 in 'UnsetPending'
+PopStarComponentDataInfo = PopStarComponentDataInfo
 
-;
-(_ENV.PopStarComponentDataInfo).Constructor = function(self)
-  -- function num : 0_309
+function PopStarComponentDataInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_fight_mission = {}
   self.m_received = {}
@@ -6057,129 +5448,116 @@ _ENV.PopStarComponentDataInfo = _ENV.PopStarComponentDataInfo
   self.m_max_score = 0
 end
 
--- DECOMPILER ERROR at PC8944: Confused about usage of register: R51 in 'UnsetPending'
-
-;
-(_ENV.PopStarComponentDataInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_fight_mission", "list<int>"}
-, 
-[3] = {"m_received", "list<int>"}
-, 
-[4] = {"formation_pet_list", "list<int64>"}
-, 
-[5] = {"m_max_score", "int"}
+PopStarComponentDataInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_fight_mission",
+    "list<int>"
+  },
+  [3] = {"m_received", "list<int>"},
+  [4] = {
+    "formation_pet_list",
+    "list<int64>"
+  },
+  [5] = {
+    "m_max_score",
+    "int"
+  }
 }
 _class("PopStarComponentInfo", ICampaignComponentInfo)
-_ENV.PopStarComponentInfo = _ENV.PopStarComponentInfo
--- DECOMPILER ERROR at PC8956: Confused about usage of register: R51 in 'UnsetPending'
+PopStarComponentInfo = PopStarComponentInfo
 
-;
-(_ENV.PopStarComponentInfo).Constructor = function(self)
-  -- function num : 0_310
+function PopStarComponentInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_received = {}
   self.formation_pet_list = {}
   self.m_max_score = 0
 end
 
--- DECOMPILER ERROR at PC8981: Confused about usage of register: R51 in 'UnsetPending'
-
-;
-(_ENV.PopStarComponentInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_received", "list<int>"}
-, 
-[3] = {"formation_pet_list", "list<int64>"}
-, 
-[4] = {"m_max_score", "int"}
+PopStarComponentInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {"m_received", "list<int>"},
+  [3] = {
+    "formation_pet_list",
+    "list<int64>"
+  },
+  [4] = {
+    "m_max_score",
+    "int"
+  }
 }
 _class("PopStarChangeFormationReq", ICampaignComRequest)
-_ENV.PopStarChangeFormationReq = _ENV.PopStarChangeFormationReq
--- DECOMPILER ERROR at PC8993: Confused about usage of register: R51 in 'UnsetPending'
+PopStarChangeFormationReq = PopStarChangeFormationReq
 
-;
-(_ENV.PopStarChangeFormationReq).Constructor = function(self)
-  -- function num : 0_311
+function PopStarChangeFormationReq:Constructor()
   self.formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC9003: Confused about usage of register: R51 in 'UnsetPending'
-
-;
-(_ENV.PopStarChangeFormationReq)._proto = {
-[1] = {"formation_pet_list", "list<int64>"}
+PopStarChangeFormationReq._proto = {
+  [1] = {
+    "formation_pet_list",
+    "list<int64>"
+  }
 }
 _class("PopStarChangeFormationRep", ICampaignComResponse)
-_ENV.PopStarChangeFormationRep = _ENV.PopStarChangeFormationRep
--- DECOMPILER ERROR at PC9015: Confused about usage of register: R51 in 'UnsetPending'
+PopStarChangeFormationRep = PopStarChangeFormationRep
 
-;
-(_ENV.PopStarChangeFormationRep).Constructor = function(self)
-  -- function num : 0_312
+function PopStarChangeFormationRep:Constructor()
   self.nFormationRet = 0
 end
 
--- DECOMPILER ERROR at PC9025: Confused about usage of register: R51 in 'UnsetPending'
-
-;
-(_ENV.PopStarChangeFormationRep)._proto = {
-[1] = {"nFormationRet", "int"}
+PopStarChangeFormationRep._proto = {
+  [1] = {
+    "nFormationRet",
+    "int"
+  }
 }
 local GlobalbossComponentNotifyType = {GlobalbossComponentNotifyType_InfoChanged = 1}
 _enum("GlobalbossComponentNotifyType", GlobalbossComponentNotifyType)
 local RankType = {RealingRank = 1, PercentRank = 2}
 _enum("RankType", RankType)
 _class("CurRankInfo", Object)
-_ENV.CurRankInfo = _ENV.CurRankInfo
--- DECOMPILER ERROR at PC9055: Confused about usage of register: R53 in 'UnsetPending'
+CurRankInfo = CurRankInfo
 
-;
-(_ENV.CurRankInfo).Constructor = function(self)
-  -- function num : 0_313
+function CurRankInfo:Constructor()
   self.type = 0
   self.value = 0
 end
 
--- DECOMPILER ERROR at PC9070: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.CurRankInfo)._proto = {
-[1] = {"type", "int"}
-, 
-[2] = {"value", "int"}
+CurRankInfo._proto = {
+  [1] = {"type", "int"},
+  [2] = {"value", "int"}
 }
 _class("GlobalbossFormationRecord", Object)
-_ENV.GlobalbossFormationRecord = _ENV.GlobalbossFormationRecord
--- DECOMPILER ERROR at PC9082: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossFormationRecord = GlobalbossFormationRecord
 
-;
-(_ENV.GlobalbossFormationRecord).Constructor = function(self)
-  -- function num : 0_314
+function GlobalbossFormationRecord:Constructor()
   self.id = 0
   self.pet_list = {}
   self.formation_damage = 0
 end
 
--- DECOMPILER ERROR at PC9102: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossFormationRecord)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"pet_list", "list<int64>"}
-, 
-[3] = {"formation_damage", "int64"}
+GlobalbossFormationRecord._proto = {
+  [1] = {"id", "int"},
+  [2] = {
+    "pet_list",
+    "list<int64>"
+  },
+  [3] = {
+    "formation_damage",
+    "int64"
+  }
 }
 _class("RankShowSimpleOne", Object)
-_ENV.RankShowSimpleOne = _ENV.RankShowSimpleOne
--- DECOMPILER ERROR at PC9114: Confused about usage of register: R53 in 'UnsetPending'
+RankShowSimpleOne = RankShowSimpleOne
 
-;
-(_ENV.RankShowSimpleOne).Constructor = function(self)
-  -- function num : 0_315
+function RankShowSimpleOne:Constructor()
   self.pstid = 0
   self.head = 0
   self.damage = 0
@@ -6188,89 +5566,77 @@ _ENV.RankShowSimpleOne = _ENV.RankShowSimpleOne
   self.frame_id = 0
 end
 
--- DECOMPILER ERROR at PC9149: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.RankShowSimpleOne)._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"head", "int"}
-, 
-[3] = {"damage", "int64"}
-, 
-[4] = {"nick", "string"}
-, 
-[5] = {"head_bg", "int"}
-, 
-[6] = {"frame_id", "int"}
+RankShowSimpleOne._proto = {
+  [1] = {"pstid", "int64"},
+  [2] = {"head", "int"},
+  [3] = {"damage", "int64"},
+  [4] = {"nick", "string"},
+  [5] = {"head_bg", "int"},
+  [6] = {"frame_id", "int"}
 }
 _class("RankShowSimpleInfo", Object)
-_ENV.RankShowSimpleInfo = _ENV.RankShowSimpleInfo
--- DECOMPILER ERROR at PC9161: Confused about usage of register: R53 in 'UnsetPending'
+RankShowSimpleInfo = RankShowSimpleInfo
 
-;
-(_ENV.RankShowSimpleInfo).Constructor = function(self)
-  -- function num : 0_316
+function RankShowSimpleInfo:Constructor()
   self.infos = {}
 end
 
--- DECOMPILER ERROR at PC9171: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.RankShowSimpleInfo)._proto = {
-[1] = {"infos", "list<RankShowSimpleOne>"}
+RankShowSimpleInfo._proto = {
+  [1] = {
+    "infos",
+    "list<RankShowSimpleOne>"
+  }
 }
 _class("GlobalbossFormationInfo", Object)
-_ENV.GlobalbossFormationInfo = _ENV.GlobalbossFormationInfo
--- DECOMPILER ERROR at PC9183: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossFormationInfo = GlobalbossFormationInfo
 
-;
-(_ENV.GlobalbossFormationInfo).Constructor = function(self)
-  -- function num : 0_317
+function GlobalbossFormationInfo:Constructor()
   self.formation_list = {}
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC9198: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossFormationInfo)._proto = {
-[1] = {"formation_list", "list<GlobalbossFormationRecord>"}
-, 
-[2] = {"pet_list", "list<int64>"}
+GlobalbossFormationInfo._proto = {
+  [1] = {
+    "formation_list",
+    "list<GlobalbossFormationRecord>"
+  },
+  [2] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("GlobalbossComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.GlobalbossComponentDataInfo = _ENV.GlobalbossComponentDataInfo
--- DECOMPILER ERROR at PC9210: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossComponentDataInfo = GlobalbossComponentDataInfo
 
-;
-(_ENV.GlobalbossComponentDataInfo).Constructor = function(self)
-  -- function num : 0_318 , upvalues : _ENV
+function GlobalbossComponentDataInfo:Constructor()
   self.boss_mission_id = 0
   self.max_total_damage = 0
   self.formation_info = GlobalbossFormationInfo:New()
   self.is_send_reward = false
 end
 
--- DECOMPILER ERROR at PC9235: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossComponentDataInfo)._proto = {
-[1] = {"boss_mission_id", "int"}
-, 
-[2] = {"max_total_damage", "int64"}
-, 
-[3] = {"formation_info", "GlobalbossFormationInfo"}
-, 
-[4] = {"is_send_reward", "bool"}
+GlobalbossComponentDataInfo._proto = {
+  [1] = {
+    "boss_mission_id",
+    "int"
+  },
+  [2] = {
+    "max_total_damage",
+    "int64"
+  },
+  [3] = {
+    "formation_info",
+    "GlobalbossFormationInfo"
+  },
+  [4] = {
+    "is_send_reward",
+    "bool"
+  }
 }
 _class("GlobalbossComponentInfo", ICampaignComponentInfo)
-_ENV.GlobalbossComponentInfo = _ENV.GlobalbossComponentInfo
--- DECOMPILER ERROR at PC9247: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossComponentInfo = GlobalbossComponentInfo
 
-;
-(_ENV.GlobalbossComponentInfo).Constructor = function(self)
-  -- function num : 0_319 , upvalues : _ENV
+function GlobalbossComponentInfo:Constructor()
   self.boss_mission_id = 0
   self.max_total_damage = 0
   self.formation_info = GlobalbossFormationInfo:New()
@@ -6278,565 +5644,446 @@ _ENV.GlobalbossComponentInfo = _ENV.GlobalbossComponentInfo
   self.boss_progress = 0
 end
 
--- DECOMPILER ERROR at PC9277: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossComponentInfo)._proto = {
-[1] = {"boss_mission_id", "int"}
-, 
-[2] = {"max_total_damage", "int64"}
-, 
-[3] = {"formation_info", "GlobalbossFormationInfo"}
-, 
-[4] = {"rank_info", "CurRankInfo"}
-, 
-[5] = {"boss_progress", "int"}
+GlobalbossComponentInfo._proto = {
+  [1] = {
+    "boss_mission_id",
+    "int"
+  },
+  [2] = {
+    "max_total_damage",
+    "int64"
+  },
+  [3] = {
+    "formation_info",
+    "GlobalbossFormationInfo"
+  },
+  [4] = {
+    "rank_info",
+    "CurRankInfo"
+  },
+  [5] = {
+    "boss_progress",
+    "int"
+  }
 }
 _class("GlobalbossChangeFormationReq", ICampaignComRequest)
-_ENV.GlobalbossChangeFormationReq = _ENV.GlobalbossChangeFormationReq
--- DECOMPILER ERROR at PC9289: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossChangeFormationReq = GlobalbossChangeFormationReq
 
-;
-(_ENV.GlobalbossChangeFormationReq).Constructor = function(self)
-  -- function num : 0_320
+function GlobalbossChangeFormationReq:Constructor()
   self.formation_pet_list = {}
   self.nId = 0
 end
 
--- DECOMPILER ERROR at PC9304: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossChangeFormationReq)._proto = {
-[1] = {"formation_pet_list", "list<int64>"}
-, 
-[2] = {"nId", "int"}
+GlobalbossChangeFormationReq._proto = {
+  [1] = {
+    "formation_pet_list",
+    "list<int64>"
+  },
+  [2] = {"nId", "int"}
 }
 _class("GlobalbossChangeFormationRep", ICampaignComResponse)
-_ENV.GlobalbossChangeFormationRep = _ENV.GlobalbossChangeFormationRep
--- DECOMPILER ERROR at PC9316: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossChangeFormationRep = GlobalbossChangeFormationRep
 
-;
-(_ENV.GlobalbossChangeFormationRep).Constructor = function(self)
-  -- function num : 0_321
+function GlobalbossChangeFormationRep:Constructor()
   self.nFormationRet = 0
 end
 
--- DECOMPILER ERROR at PC9326: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossChangeFormationRep)._proto = {
-[1] = {"nFormationRet", "int"}
+GlobalbossChangeFormationRep._proto = {
+  [1] = {
+    "nFormationRet",
+    "int"
+  }
 }
 _class("GlobalbossResetRecordReq", ICampaignComRequest)
-_ENV.GlobalbossResetRecordReq = _ENV.GlobalbossResetRecordReq
--- DECOMPILER ERROR at PC9338: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossResetRecordReq = GlobalbossResetRecordReq
 
-;
-(_ENV.GlobalbossResetRecordReq).Constructor = function(self)
-  -- function num : 0_322
+function GlobalbossResetRecordReq:Constructor()
   self.nId = 0
 end
 
--- DECOMPILER ERROR at PC9348: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossResetRecordReq)._proto = {
-[1] = {"nId", "int"}
+GlobalbossResetRecordReq._proto = {
+  [1] = {"nId", "int"}
 }
 _class("GlobalbossRecordRes", ICampaignComResponse)
-_ENV.GlobalbossRecordRes = _ENV.GlobalbossRecordRes
--- DECOMPILER ERROR at PC9360: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossRecordRes = GlobalbossRecordRes
 
-;
-(_ENV.GlobalbossRecordRes).Constructor = function(self)
-  -- function num : 0_323
+function GlobalbossRecordRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC9370: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossRecordRes)._proto = {
-[1] = {"nRet", "int"}
+GlobalbossRecordRes._proto = {
+  [1] = {"nRet", "int"}
 }
 _class("GlobalbossChoseRecordReq", ICampaignComRequest)
-_ENV.GlobalbossChoseRecordReq = _ENV.GlobalbossChoseRecordReq
--- DECOMPILER ERROR at PC9382: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossChoseRecordReq = GlobalbossChoseRecordReq
 
-;
-(_ENV.GlobalbossChoseRecordReq).Constructor = function(self)
-  -- function num : 0_324
+function GlobalbossChoseRecordReq:Constructor()
   self.select_new = true
   self.nId = 0
 end
 
--- DECOMPILER ERROR at PC9397: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossChoseRecordReq)._proto = {
-[1] = {"select_new", "bool"}
-, 
-[2] = {"nId", "int"}
+GlobalbossChoseRecordReq._proto = {
+  [1] = {"select_new", "bool"},
+  [2] = {"nId", "int"}
 }
 _class("GlobalbossChoseRecordRes", ICampaignComResponse)
-_ENV.GlobalbossChoseRecordRes = _ENV.GlobalbossChoseRecordRes
--- DECOMPILER ERROR at PC9409: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossChoseRecordRes = GlobalbossChoseRecordRes
 
-;
-(_ENV.GlobalbossChoseRecordRes).Constructor = function(self)
-  -- function num : 0_325
+function GlobalbossChoseRecordRes:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC9419: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossChoseRecordRes)._proto = {
-[1] = {"nRet", "int"}
+GlobalbossChoseRecordRes._proto = {
+  [1] = {"nRet", "int"}
 }
 _class("GlobalbossGetRankListReq", ICampaignComRequest)
-_ENV.GlobalbossGetRankListReq = _ENV.GlobalbossGetRankListReq
--- DECOMPILER ERROR at PC9431: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossGetRankListReq = GlobalbossGetRankListReq
 
-;
-(_ENV.GlobalbossGetRankListReq).Constructor = function(self)
-  -- function num : 0_326
+function GlobalbossGetRankListReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC9435: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossGetRankListReq)._proto = {}
+GlobalbossGetRankListReq._proto = {}
 _class("GlobalbossGetRankListRes", ICampaignComResponse)
-_ENV.GlobalbossGetRankListRes = _ENV.GlobalbossGetRankListRes
--- DECOMPILER ERROR at PC9447: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossGetRankListRes = GlobalbossGetRankListRes
 
-;
-(_ENV.GlobalbossGetRankListRes).Constructor = function(self)
-  -- function num : 0_327 , upvalues : _ENV
+function GlobalbossGetRankListRes:Constructor()
   self.nRet = 0
   self.show_list = RankShowSimpleInfo:New()
 end
 
--- DECOMPILER ERROR at PC9462: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossGetRankListRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"show_list", "RankShowSimpleInfo"}
+GlobalbossGetRankListRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "show_list",
+    "RankShowSimpleInfo"
+  }
 }
 _class("GlobalbossGetOneRankDetailReq", ICampaignComRequest)
-_ENV.GlobalbossGetOneRankDetailReq = _ENV.GlobalbossGetOneRankDetailReq
--- DECOMPILER ERROR at PC9474: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossGetOneRankDetailReq = GlobalbossGetOneRankDetailReq
 
-;
-(_ENV.GlobalbossGetOneRankDetailReq).Constructor = function(self)
-  -- function num : 0_328
+function GlobalbossGetOneRankDetailReq:Constructor()
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC9484: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossGetOneRankDetailReq)._proto = {
-[1] = {"pstid", "int64"}
+GlobalbossGetOneRankDetailReq._proto = {
+  [1] = {"pstid", "int64"}
 }
 _class("GlobalbossGetOneRankDetailRes", ICampaignComResponse)
-_ENV.GlobalbossGetOneRankDetailRes = _ENV.GlobalbossGetOneRankDetailRes
--- DECOMPILER ERROR at PC9496: Confused about usage of register: R53 in 'UnsetPending'
+GlobalbossGetOneRankDetailRes = GlobalbossGetOneRankDetailRes
 
-;
-(_ENV.GlobalbossGetOneRankDetailRes).Constructor = function(self)
-  -- function num : 0_329 , upvalues : _ENV
+function GlobalbossGetOneRankDetailRes:Constructor()
   self.nRet = 0
   self.detail_info = RankDetailInfo:New()
 end
 
--- DECOMPILER ERROR at PC9511: Confused about usage of register: R53 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossGetOneRankDetailRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"detail_info", "RankDetailInfo"}
+GlobalbossGetOneRankDetailRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "detail_info",
+    "RankDetailInfo"
+  }
 }
 local TurnCardComponentNotifyType = {TurnCardComponentNotifyType_InfoChanged = 1}
 _enum("TurnCardComponentNotifyType", TurnCardComponentNotifyType)
 _class("MatrixItemInfo", Object)
-_ENV.MatrixItemInfo = _ENV.MatrixItemInfo
--- DECOMPILER ERROR at PC9531: Confused about usage of register: R54 in 'UnsetPending'
+MatrixItemInfo = MatrixItemInfo
 
-;
-(_ENV.MatrixItemInfo).Constructor = function(self)
-  -- function num : 0_330
+function MatrixItemInfo:Constructor()
   self.m_id = 0
   self.m_is_turn = {}
 end
 
--- DECOMPILER ERROR at PC9546: Confused about usage of register: R54 in 'UnsetPending'
-
-;
-(_ENV.MatrixItemInfo)._proto = {
-[1] = {"m_id", "int"}
-, 
-[2] = {"m_is_turn", "map<int,bool>"}
+MatrixItemInfo._proto = {
+  [1] = {"m_id", "int"},
+  [2] = {
+    "m_is_turn",
+    "map<int,bool>"
+  }
 }
 _class("EachMatrixInfo", Object)
-_ENV.EachMatrixInfo = _ENV.EachMatrixInfo
--- DECOMPILER ERROR at PC9558: Confused about usage of register: R54 in 'UnsetPending'
+EachMatrixInfo = EachMatrixInfo
 
-;
-(_ENV.EachMatrixInfo).Constructor = function(self)
-  -- function num : 0_331
+function EachMatrixInfo:Constructor()
   self.m_matrix_item = {}
   self.m_matrix_index = 0
 end
 
--- DECOMPILER ERROR at PC9573: Confused about usage of register: R54 in 'UnsetPending'
-
-;
-(_ENV.EachMatrixInfo)._proto = {
-[1] = {"m_matrix_item", "list<MatrixItemInfo>"}
-, 
-[2] = {"m_matrix_index", "int"}
+EachMatrixInfo._proto = {
+  [1] = {
+    "m_matrix_item",
+    "list<MatrixItemInfo>"
+  },
+  [2] = {
+    "m_matrix_index",
+    "int"
+  }
 }
 _class("NotifyTurnCardComponentInfoChanged", Object)
-_ENV.NotifyTurnCardComponentInfoChanged = _ENV.NotifyTurnCardComponentInfoChanged
--- DECOMPILER ERROR at PC9585: Confused about usage of register: R54 in 'UnsetPending'
+NotifyTurnCardComponentInfoChanged = NotifyTurnCardComponentInfoChanged
 
-;
-(_ENV.NotifyTurnCardComponentInfoChanged).Constructor = function(self)
-  -- function num : 0_332
+function NotifyTurnCardComponentInfoChanged:Constructor()
   self.m_matrix = {}
   self.m_asset = {}
 end
 
--- DECOMPILER ERROR at PC9600: Confused about usage of register: R54 in 'UnsetPending'
-
-;
-(_ENV.NotifyTurnCardComponentInfoChanged)._proto = {
-[1] = {"m_matrix", "map<int,EachMatrixInfo>"}
-, 
-[2] = {"m_asset", "list<RoleAsset>"}
+NotifyTurnCardComponentInfoChanged._proto = {
+  [1] = {
+    "m_matrix",
+    "map<int,EachMatrixInfo>"
+  },
+  [2] = {
+    "m_asset",
+    "list<RoleAsset>"
+  }
 }
 _class("TurnCardComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.TurnCardComponentDataInfo = _ENV.TurnCardComponentDataInfo
--- DECOMPILER ERROR at PC9612: Confused about usage of register: R54 in 'UnsetPending'
+TurnCardComponentDataInfo = TurnCardComponentDataInfo
 
-;
-(_ENV.TurnCardComponentDataInfo).Constructor = function(self)
-  -- function num : 0_333
+function TurnCardComponentDataInfo:Constructor()
   self.m_turn_card_info = {}
 end
 
--- DECOMPILER ERROR at PC9622: Confused about usage of register: R54 in 'UnsetPending'
-
-;
-(_ENV.TurnCardComponentDataInfo)._proto = {
-[1] = {"m_turn_card_info", "map<int,EachMatrixInfo>"}
+TurnCardComponentDataInfo._proto = {
+  [1] = {
+    "m_turn_card_info",
+    "map<int,EachMatrixInfo>"
+  }
 }
 _class("TurnCardComponentInfo", ICampaignComponentInfo)
-_ENV.TurnCardComponentInfo = _ENV.TurnCardComponentInfo
--- DECOMPILER ERROR at PC9634: Confused about usage of register: R54 in 'UnsetPending'
+TurnCardComponentInfo = TurnCardComponentInfo
 
-;
-(_ENV.TurnCardComponentInfo).Constructor = function(self)
-  -- function num : 0_334
+function TurnCardComponentInfo:Constructor()
   self.m_matrix = {}
 end
 
--- DECOMPILER ERROR at PC9644: Confused about usage of register: R54 in 'UnsetPending'
-
-;
-(_ENV.TurnCardComponentInfo)._proto = {
-[1] = {"m_matrix", "map<int,EachMatrixInfo>"}
+TurnCardComponentInfo._proto = {
+  [1] = {
+    "m_matrix",
+    "map<int,EachMatrixInfo>"
+  }
 }
 _class("TurnCardOperateReq", ICampaignComRequest)
-_ENV.TurnCardOperateReq = _ENV.TurnCardOperateReq
--- DECOMPILER ERROR at PC9656: Confused about usage of register: R54 in 'UnsetPending'
+TurnCardOperateReq = TurnCardOperateReq
 
-;
-(_ENV.TurnCardOperateReq).Constructor = function(self)
-  -- function num : 0_335
+function TurnCardOperateReq:Constructor()
   self.turn_card_id = 0
   self.index = 0
 end
 
--- DECOMPILER ERROR at PC9671: Confused about usage of register: R54 in 'UnsetPending'
-
-;
-(_ENV.TurnCardOperateReq)._proto = {
-[1] = {"turn_card_id", "int"}
-, 
-[2] = {"index", "int"}
+TurnCardOperateReq._proto = {
+  [1] = {
+    "turn_card_id",
+    "int"
+  },
+  [2] = {"index", "int"}
 }
 _class("TurnCardOperateRep", ICampaignComResponse)
-_ENV.TurnCardOperateRep = _ENV.TurnCardOperateRep
--- DECOMPILER ERROR at PC9683: Confused about usage of register: R54 in 'UnsetPending'
+TurnCardOperateRep = TurnCardOperateRep
 
-;
-(_ENV.TurnCardOperateRep).Constructor = function(self)
-  -- function num : 0_336
+function TurnCardOperateRep:Constructor()
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC9693: Confused about usage of register: R54 in 'UnsetPending'
-
-;
-(_ENV.TurnCardOperateRep)._proto = {
-[1] = {"reward", "list<RoleAsset>"}
+TurnCardOperateRep._proto = {
+  [1] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 local MultiLineComponentNotifyType = {MultiLineComponentNotifyType_InfoChanged = 1}
 _enum("MultiLineComponentNotifyType", MultiLineComponentNotifyType)
 _class("NotifyMultiLineComponentInfoChanged", Object)
-_ENV.NotifyMultiLineComponentInfoChanged = _ENV.NotifyMultiLineComponentInfoChanged
--- DECOMPILER ERROR at PC9713: Confused about usage of register: R55 in 'UnsetPending'
+NotifyMultiLineComponentInfoChanged = NotifyMultiLineComponentInfoChanged
 
-;
-(_ENV.NotifyMultiLineComponentInfoChanged).Constructor = function(self)
-  -- function num : 0_337
+function NotifyMultiLineComponentInfoChanged:Constructor()
   self.m_pass_mission_info = {}
   self.m_pet_files = {}
 end
 
--- DECOMPILER ERROR at PC9728: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.NotifyMultiLineComponentInfoChanged)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_pet_files", "list<int>"}
+NotifyMultiLineComponentInfoChanged._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_pet_files",
+    "list<int>"
+  }
 }
 _class("MultiLineComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.MultiLineComponentDataInfo = _ENV.MultiLineComponentDataInfo
--- DECOMPILER ERROR at PC9740: Confused about usage of register: R55 in 'UnsetPending'
+MultiLineComponentDataInfo = MultiLineComponentDataInfo
 
-;
-(_ENV.MultiLineComponentDataInfo).Constructor = function(self)
-  -- function num : 0_338
+function MultiLineComponentDataInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_pet_files = {}
   self.m_files_received = {}
   self.m_mark = 0
 end
 
--- DECOMPILER ERROR at PC9765: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.MultiLineComponentDataInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_pet_files", "list<int>"}
-, 
-[3] = {"m_files_received", "list<int>"}
-, 
-[4] = {"m_mark", "int"}
+MultiLineComponentDataInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_pet_files",
+    "list<int>"
+  },
+  [3] = {
+    "m_files_received",
+    "list<int>"
+  },
+  [4] = {"m_mark", "int"}
 }
 _class("MultiLineComponentInfo", ICampaignComponentInfo)
-_ENV.MultiLineComponentInfo = _ENV.MultiLineComponentInfo
--- DECOMPILER ERROR at PC9777: Confused about usage of register: R55 in 'UnsetPending'
+MultiLineComponentInfo = MultiLineComponentInfo
 
-;
-(_ENV.MultiLineComponentInfo).Constructor = function(self)
-  -- function num : 0_339
+function MultiLineComponentInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_pet_files = {}
   self.m_files_received = {}
   self.m_mark = 0
 end
 
--- DECOMPILER ERROR at PC9802: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.MultiLineComponentInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_pet_files", "list<int>"}
-, 
-[3] = {"m_files_received", "list<int>"}
-, 
-[4] = {"m_mark", "int"}
+MultiLineComponentInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_pet_files",
+    "list<int>"
+  },
+  [3] = {
+    "m_files_received",
+    "list<int>"
+  },
+  [4] = {"m_mark", "int"}
 }
 _class("CompleteMultiLineReq", ICampaignComRequest)
-_ENV.CompleteMultiLineReq = _ENV.CompleteMultiLineReq
--- DECOMPILER ERROR at PC9814: Confused about usage of register: R55 in 'UnsetPending'
+CompleteMultiLineReq = CompleteMultiLineReq
 
-;
-(_ENV.CompleteMultiLineReq).Constructor = function(self)
-  -- function num : 0_340 , upvalues : _ENV
+function CompleteMultiLineReq:Constructor()
   self.m_create_info = CampaignMissionCreateInfo:New()
 end
 
--- DECOMPILER ERROR at PC9824: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.CompleteMultiLineReq)._proto = {
-[1] = {"m_create_info", "CampaignMissionCreateInfo"}
+CompleteMultiLineReq._proto = {
+  [1] = {
+    "m_create_info",
+    "CampaignMissionCreateInfo"
+  }
 }
 _class("CompleteMultiLineRep", ICampaignComResponse)
-_ENV.CompleteMultiLineRep = _ENV.CompleteMultiLineRep
--- DECOMPILER ERROR at PC9836: Confused about usage of register: R55 in 'UnsetPending'
+CompleteMultiLineRep = CompleteMultiLineRep
 
-;
-(_ENV.CompleteMultiLineRep).Constructor = function(self)
-  -- function num : 0_341
+function CompleteMultiLineRep:Constructor()
   self.nErrorCode = 0
   self.reward = {}
   self.m_files_id = 0
 end
 
--- DECOMPILER ERROR at PC9856: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.CompleteMultiLineRep)._proto = {
-[1] = {"nErrorCode", "int"}
-, 
-[2] = {"reward", "list<RoleAsset>"}
-, 
-[3] = {"m_files_id", "int"}
+CompleteMultiLineRep._proto = {
+  [1] = {"nErrorCode", "int"},
+  [2] = {
+    "reward",
+    "list<RoleAsset>"
+  },
+  [3] = {"m_files_id", "int"}
 }
 _class("MultiLineGetRewardReq", ICampaignComRequest)
-_ENV.MultiLineGetRewardReq = _ENV.MultiLineGetRewardReq
--- DECOMPILER ERROR at PC9868: Confused about usage of register: R55 in 'UnsetPending'
+MultiLineGetRewardReq = MultiLineGetRewardReq
 
-;
-(_ENV.MultiLineGetRewardReq).Constructor = function(self)
-  -- function num : 0_342
+function MultiLineGetRewardReq:Constructor()
   self.pet_id = 0
 end
 
--- DECOMPILER ERROR at PC9878: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.MultiLineGetRewardReq)._proto = {
-[1] = {"pet_id", "int"}
+MultiLineGetRewardReq._proto = {
+  [1] = {"pet_id", "int"}
 }
 _class("MultiLineGetRewardRes", ICampaignComResponse)
-_ENV.MultiLineGetRewardRes = _ENV.MultiLineGetRewardRes
--- DECOMPILER ERROR at PC9890: Confused about usage of register: R55 in 'UnsetPending'
+MultiLineGetRewardRes = MultiLineGetRewardRes
 
-;
-(_ENV.MultiLineGetRewardRes).Constructor = function(self)
-  -- function num : 0_343
+function MultiLineGetRewardRes:Constructor()
   self.ret = 0
   self.m_files_received = {}
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC9910: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.MultiLineGetRewardRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_files_received", "list<int>"}
-, 
-[3] = {"reward", "list<RoleAsset>"}
+MultiLineGetRewardRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "m_files_received",
+    "list<int>"
+  },
+  [3] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("MultiLineSetMarkReq", ICampaignComRequest)
-_ENV.MultiLineSetMarkReq = _ENV.MultiLineSetMarkReq
--- DECOMPILER ERROR at PC9922: Confused about usage of register: R55 in 'UnsetPending'
+MultiLineSetMarkReq = MultiLineSetMarkReq
 
-;
-(_ENV.MultiLineSetMarkReq).Constructor = function(self)
-  -- function num : 0_344
+function MultiLineSetMarkReq:Constructor()
   self.m_mark = 0
 end
 
--- DECOMPILER ERROR at PC9932: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.MultiLineSetMarkReq)._proto = {
-[1] = {"m_mark", "int"}
+MultiLineSetMarkReq._proto = {
+  [1] = {"m_mark", "int"}
 }
 _class("MultiLineSetMarkRes", ICampaignComResponse)
-_ENV.MultiLineSetMarkRes = _ENV.MultiLineSetMarkRes
--- DECOMPILER ERROR at PC9944: Confused about usage of register: R55 in 'UnsetPending'
+MultiLineSetMarkRes = MultiLineSetMarkRes
 
-;
-(_ENV.MultiLineSetMarkRes).Constructor = function(self)
-  -- function num : 0_345
+function MultiLineSetMarkRes:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC9954: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.MultiLineSetMarkRes)._proto = {
-[1] = {"ret", "int"}
+MultiLineSetMarkRes._proto = {
+  [1] = {"ret", "int"}
 }
 _class("CSmeltItemComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CSmeltItemComponentDataInfo = _ENV.CSmeltItemComponentDataInfo
--- DECOMPILER ERROR at PC9966: Confused about usage of register: R55 in 'UnsetPending'
+CSmeltItemComponentDataInfo = CSmeltItemComponentDataInfo
 
-;
-(_ENV.CSmeltItemComponentDataInfo).Constructor = function(self)
-  -- function num : 0_346
+function CSmeltItemComponentDataInfo:Constructor()
   self.m_info = {}
 end
 
--- DECOMPILER ERROR at PC9976: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.CSmeltItemComponentDataInfo)._proto = {
-[1] = {"m_info", "list<int>"}
+CSmeltItemComponentDataInfo._proto = {
+  [1] = {"m_info", "list<int>"}
 }
 _class("SmeltItemComponentInfo", ICampaignComponentInfo)
-_ENV.SmeltItemComponentInfo = _ENV.SmeltItemComponentInfo
--- DECOMPILER ERROR at PC9988: Confused about usage of register: R55 in 'UnsetPending'
+SmeltItemComponentInfo = SmeltItemComponentInfo
 
-;
-(_ENV.SmeltItemComponentInfo).Constructor = function(self)
-  -- function num : 0_347
+function SmeltItemComponentInfo:Constructor()
   self.m_info = {}
 end
 
--- DECOMPILER ERROR at PC9998: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.SmeltItemComponentInfo)._proto = {
-[1] = {"m_info", "list<int>"}
+SmeltItemComponentInfo._proto = {
+  [1] = {"m_info", "list<int>"}
 }
 _class("SmeltItemComponentReceiveRewardReq", ICampaignComRequest)
-_ENV.SmeltItemComponentReceiveRewardReq = _ENV.SmeltItemComponentReceiveRewardReq
--- DECOMPILER ERROR at PC10010: Confused about usage of register: R55 in 'UnsetPending'
+SmeltItemComponentReceiveRewardReq = SmeltItemComponentReceiveRewardReq
 
-;
-(_ENV.SmeltItemComponentReceiveRewardReq).Constructor = function(self)
-  -- function num : 0_348
+function SmeltItemComponentReceiveRewardReq:Constructor()
   self.m_cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC10020: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.SmeltItemComponentReceiveRewardReq)._proto = {
-[1] = {"m_cfg_id", "int"}
+SmeltItemComponentReceiveRewardReq._proto = {
+  [1] = {"m_cfg_id", "int"}
 }
 _class("SmeltItemComponentReceiveRewardRep", ICampaignComResponse)
-_ENV.SmeltItemComponentReceiveRewardRep = _ENV.SmeltItemComponentReceiveRewardRep
--- DECOMPILER ERROR at PC10032: Confused about usage of register: R55 in 'UnsetPending'
+SmeltItemComponentReceiveRewardRep = SmeltItemComponentReceiveRewardRep
 
-;
-(_ENV.SmeltItemComponentReceiveRewardRep).Constructor = function(self)
-  -- function num : 0_349
+function SmeltItemComponentReceiveRewardRep:Constructor()
   self.m_info = {}
 end
 
--- DECOMPILER ERROR at PC10042: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.SmeltItemComponentReceiveRewardRep)._proto = {
-[1] = {"m_info", "list<int>"}
+SmeltItemComponentReceiveRewardRep._proto = {
+  [1] = {"m_info", "list<int>"}
 }
 _class("ArchInfo", Object)
-_ENV.ArchInfo = _ENV.ArchInfo
--- DECOMPILER ERROR at PC10054: Confused about usage of register: R55 in 'UnsetPending'
+ArchInfo = ArchInfo
 
-;
-(_ENV.ArchInfo).Constructor = function(self)
-  -- function num : 0_350
+function ArchInfo:Constructor()
   self.arch_id = 0
   self.create_coin_time = 0
   self.level = 1
@@ -6845,413 +6092,339 @@ _ENV.ArchInfo = _ENV.ArchInfo
   self.default_coin = 0
 end
 
--- DECOMPILER ERROR at PC10089: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.ArchInfo)._proto = {
-[1] = {"arch_id", "int"}
-, 
-[2] = {"create_coin_time", "time"}
-, 
-[3] = {"level", "int"}
-, 
-[4] = {"coin_num", "int"}
-, 
-[5] = {"cd", "time"}
-, 
-[6] = {"default_coin", "int"}
+ArchInfo._proto = {
+  [1] = {"arch_id", "int"},
+  [2] = {
+    "create_coin_time",
+    "time"
+  },
+  [3] = {"level", "int"},
+  [4] = {"coin_num", "int"},
+  [5] = {"cd", "time"},
+  [6] = {
+    "default_coin",
+    "int"
+  }
 }
 _class("SimulationOperationComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.SimulationOperationComponentDataInfo = _ENV.SimulationOperationComponentDataInfo
--- DECOMPILER ERROR at PC10101: Confused about usage of register: R55 in 'UnsetPending'
+SimulationOperationComponentDataInfo = SimulationOperationComponentDataInfo
 
-;
-(_ENV.SimulationOperationComponentDataInfo).Constructor = function(self)
-  -- function num : 0_351
+function SimulationOperationComponentDataInfo:Constructor()
   self.arch_infos = {}
   self.story_list = {}
   self.final_story = 0
 end
 
--- DECOMPILER ERROR at PC10121: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.SimulationOperationComponentDataInfo)._proto = {
-[1] = {"arch_infos", "map<int,ArchInfo>"}
-, 
-[2] = {"story_list", "list<int>"}
-, 
-[3] = {"final_story", "int"}
+SimulationOperationComponentDataInfo._proto = {
+  [1] = {
+    "arch_infos",
+    "map<int,ArchInfo>"
+  },
+  [2] = {"story_list", "list<int>"},
+  [3] = {
+    "final_story",
+    "int"
+  }
 }
 _class("SimulationOperationComponentInfo", ICampaignComponentInfo)
-_ENV.SimulationOperationComponentInfo = _ENV.SimulationOperationComponentInfo
--- DECOMPILER ERROR at PC10133: Confused about usage of register: R55 in 'UnsetPending'
+SimulationOperationComponentInfo = SimulationOperationComponentInfo
 
-;
-(_ENV.SimulationOperationComponentInfo).Constructor = function(self)
-  -- function num : 0_352
+function SimulationOperationComponentInfo:Constructor()
   self.arch_infos = {}
   self.story_list = {}
   self.final_story = 0
 end
 
--- DECOMPILER ERROR at PC10153: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.SimulationOperationComponentInfo)._proto = {
-[1] = {"arch_infos", "map<int,ArchInfo>"}
-, 
-[2] = {"story_list", "list<int>"}
-, 
-[3] = {"final_story", "int"}
+SimulationOperationComponentInfo._proto = {
+  [1] = {
+    "arch_infos",
+    "map<int,ArchInfo>"
+  },
+  [2] = {"story_list", "list<int>"},
+  [3] = {
+    "final_story",
+    "int"
+  }
 }
 _class("PickUpComponentReq", ICampaignComRequest)
-_ENV.PickUpComponentReq = _ENV.PickUpComponentReq
--- DECOMPILER ERROR at PC10165: Confused about usage of register: R55 in 'UnsetPending'
+PickUpComponentReq = PickUpComponentReq
 
-;
-(_ENV.PickUpComponentReq).Constructor = function(self)
-  -- function num : 0_353
+function PickUpComponentReq:Constructor()
   self.arch_id = 0
 end
 
--- DECOMPILER ERROR at PC10175: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.PickUpComponentReq)._proto = {
-[1] = {"arch_id", "int"}
+PickUpComponentReq._proto = {
+  [1] = {"arch_id", "int"}
 }
 _class("PickUpComponentRep", ICampaignComResponse)
-_ENV.PickUpComponentRep = _ENV.PickUpComponentRep
--- DECOMPILER ERROR at PC10187: Confused about usage of register: R55 in 'UnsetPending'
+PickUpComponentRep = PickUpComponentRep
 
-;
-(_ENV.PickUpComponentRep).Constructor = function(self)
-  -- function num : 0_354 , upvalues : _ENV
+function PickUpComponentRep:Constructor()
   self.ret = 0
   self.info = ArchInfo:New()
 end
 
--- DECOMPILER ERROR at PC10202: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.PickUpComponentRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "ArchInfo"}
+PickUpComponentRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"info", "ArchInfo"}
 }
 _class("SubmitStoryComponentReq", ICampaignComRequest)
-_ENV.SubmitStoryComponentReq = _ENV.SubmitStoryComponentReq
--- DECOMPILER ERROR at PC10214: Confused about usage of register: R55 in 'UnsetPending'
+SubmitStoryComponentReq = SubmitStoryComponentReq
 
-;
-(_ENV.SubmitStoryComponentReq).Constructor = function(self)
-  -- function num : 0_355
+function SubmitStoryComponentReq:Constructor()
   self.arch_id = 0
   self.story_id = 0
   self.final_story = false
 end
 
--- DECOMPILER ERROR at PC10234: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.SubmitStoryComponentReq)._proto = {
-[1] = {"arch_id", "int"}
-, 
-[2] = {"story_id", "int"}
-, 
-[3] = {"final_story", "bool"}
+SubmitStoryComponentReq._proto = {
+  [1] = {"arch_id", "int"},
+  [2] = {"story_id", "int"},
+  [3] = {
+    "final_story",
+    "bool"
+  }
 }
 _class("SubmitStoryComponentRep", ICampaignComResponse)
-_ENV.SubmitStoryComponentRep = _ENV.SubmitStoryComponentRep
--- DECOMPILER ERROR at PC10246: Confused about usage of register: R55 in 'UnsetPending'
+SubmitStoryComponentRep = SubmitStoryComponentRep
 
-;
-(_ENV.SubmitStoryComponentRep).Constructor = function(self)
-  -- function num : 0_356
+function SubmitStoryComponentRep:Constructor()
   self.ret = 0
   self.rewards = {}
   self.story_list = {}
   self.final_story = 0
 end
 
--- DECOMPILER ERROR at PC10271: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.SubmitStoryComponentRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
-, 
-[3] = {"story_list", "list<int>"}
-, 
-[4] = {"final_story", "int"}
+SubmitStoryComponentRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {"story_list", "list<int>"},
+  [4] = {
+    "final_story",
+    "int"
+  }
 }
 _class("UpgradeComponentReq", ICampaignComRequest)
-_ENV.UpgradeComponentReq = _ENV.UpgradeComponentReq
--- DECOMPILER ERROR at PC10283: Confused about usage of register: R55 in 'UnsetPending'
+UpgradeComponentReq = UpgradeComponentReq
 
-;
-(_ENV.UpgradeComponentReq).Constructor = function(self)
-  -- function num : 0_357
+function UpgradeComponentReq:Constructor()
   self.arch_id = 0
 end
 
--- DECOMPILER ERROR at PC10293: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.UpgradeComponentReq)._proto = {
-[1] = {"arch_id", "int"}
+UpgradeComponentReq._proto = {
+  [1] = {"arch_id", "int"}
 }
 _class("UpgradeComponentRep", ICampaignComResponse)
-_ENV.UpgradeComponentRep = _ENV.UpgradeComponentRep
--- DECOMPILER ERROR at PC10305: Confused about usage of register: R55 in 'UnsetPending'
+UpgradeComponentRep = UpgradeComponentRep
 
-;
-(_ENV.UpgradeComponentRep).Constructor = function(self)
-  -- function num : 0_358 , upvalues : _ENV
+function UpgradeComponentRep:Constructor()
   self.ret = 0
   self.rewards = {}
   self.info = ArchInfo:New()
 end
 
--- DECOMPILER ERROR at PC10325: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.UpgradeComponentRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
-, 
-[3] = {"info", "ArchInfo"}
+UpgradeComponentRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {"info", "ArchInfo"}
 }
 _class("GetArchInfosComponentReq", ICampaignComRequest)
-_ENV.GetArchInfosComponentReq = _ENV.GetArchInfosComponentReq
--- DECOMPILER ERROR at PC10337: Confused about usage of register: R55 in 'UnsetPending'
+GetArchInfosComponentReq = GetArchInfosComponentReq
 
-;
-(_ENV.GetArchInfosComponentReq).Constructor = function(self)
-  -- function num : 0_359
+function GetArchInfosComponentReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC10341: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.GetArchInfosComponentReq)._proto = {}
+GetArchInfosComponentReq._proto = {}
 _class("GetArchInfosComponentRep", ICampaignComResponse)
-_ENV.GetArchInfosComponentRep = _ENV.GetArchInfosComponentRep
--- DECOMPILER ERROR at PC10353: Confused about usage of register: R55 in 'UnsetPending'
+GetArchInfosComponentRep = GetArchInfosComponentRep
 
-;
-(_ENV.GetArchInfosComponentRep).Constructor = function(self)
-  -- function num : 0_360
+function GetArchInfosComponentRep:Constructor()
   self.ret = 0
   self.arch_infos = {}
 end
 
--- DECOMPILER ERROR at PC10368: Confused about usage of register: R55 in 'UnsetPending'
-
-;
-(_ENV.GetArchInfosComponentRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"arch_infos", "map<int,ArchInfo>"}
+GetArchInfosComponentRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "arch_infos",
+    "map<int,ArchInfo>"
+  }
 }
 local EightPetsMissionComponentNotifyType = {EightPetsMissionComponentNotifyType_InfoChanged = 1}
 _enum("EightPetsMissionComponentNotifyType", EightPetsMissionComponentNotifyType)
 _class("NotifyEightPetsMissionComponentInfoChanged", Object)
-_ENV.NotifyEightPetsMissionComponentInfoChanged = _ENV.NotifyEightPetsMissionComponentInfoChanged
--- DECOMPILER ERROR at PC10388: Confused about usage of register: R56 in 'UnsetPending'
+NotifyEightPetsMissionComponentInfoChanged = NotifyEightPetsMissionComponentInfoChanged
 
-;
-(_ENV.NotifyEightPetsMissionComponentInfoChanged).Constructor = function(self)
-  -- function num : 0_361
+function NotifyEightPetsMissionComponentInfoChanged:Constructor()
   self.m_update_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC10398: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.NotifyEightPetsMissionComponentInfoChanged)._proto = {
-[1] = {"m_update_mission_info", "map<int,cam_mission_info>"}
+NotifyEightPetsMissionComponentInfoChanged._proto = {
+  [1] = {
+    "m_update_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 _class("EightPetsFormationItem", Object)
-_ENV.EightPetsFormationItem = _ENV.EightPetsFormationItem
--- DECOMPILER ERROR at PC10410: Confused about usage of register: R56 in 'UnsetPending'
+EightPetsFormationItem = EightPetsFormationItem
 
-;
-(_ENV.EightPetsFormationItem).Constructor = function(self)
-  -- function num : 0_362
+function EightPetsFormationItem:Constructor()
   self.name = ""
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC10425: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.EightPetsFormationItem)._proto = {
-[1] = {"name", "string"}
-, 
-[2] = {"pet_list", "list<int64>"}
+EightPetsFormationItem._proto = {
+  [1] = {"name", "string"},
+  [2] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("EightPetsComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.EightPetsComponentDataInfo = _ENV.EightPetsComponentDataInfo
--- DECOMPILER ERROR at PC10437: Confused about usage of register: R56 in 'UnsetPending'
+EightPetsComponentDataInfo = EightPetsComponentDataInfo
 
-;
-(_ENV.EightPetsComponentDataInfo).Constructor = function(self)
-  -- function num : 0_363
+function EightPetsComponentDataInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_formation_info = {}
   self.m_match_team_index = 0
 end
 
--- DECOMPILER ERROR at PC10457: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.EightPetsComponentDataInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_formation_info", "map<int,EightPetsFormationItem>"}
-, 
-[3] = {"m_match_team_index", "int"}
+EightPetsComponentDataInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_formation_info",
+    "map<int,EightPetsFormationItem>"
+  },
+  [3] = {
+    "m_match_team_index",
+    "int"
+  }
 }
 _class("EightPetsComponentInfo", ICampaignComponentInfo)
-_ENV.EightPetsComponentInfo = _ENV.EightPetsComponentInfo
--- DECOMPILER ERROR at PC10469: Confused about usage of register: R56 in 'UnsetPending'
+EightPetsComponentInfo = EightPetsComponentInfo
 
-;
-(_ENV.EightPetsComponentInfo).Constructor = function(self)
-  -- function num : 0_364
+function EightPetsComponentInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_formation_info = {}
   self.m_cur_team_index = 0
 end
 
--- DECOMPILER ERROR at PC10489: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.EightPetsComponentInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_formation_info", "map<int,EightPetsFormationItem>"}
-, 
-[3] = {"m_cur_team_index", "int"}
+EightPetsComponentInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_formation_info",
+    "map<int,EightPetsFormationItem>"
+  },
+  [3] = {
+    "m_cur_team_index",
+    "int"
+  }
 }
 _class("EightPetsChangeFormationReq", ICampaignComRequest)
-_ENV.EightPetsChangeFormationReq = _ENV.EightPetsChangeFormationReq
--- DECOMPILER ERROR at PC10501: Confused about usage of register: R56 in 'UnsetPending'
+EightPetsChangeFormationReq = EightPetsChangeFormationReq
 
-;
-(_ENV.EightPetsChangeFormationReq).Constructor = function(self)
-  -- function num : 0_365 , upvalues : _ENV
+function EightPetsChangeFormationReq:Constructor()
   self.formation_index = 0
   self.formation_list = EightPetsFormationItem:New()
 end
 
--- DECOMPILER ERROR at PC10516: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.EightPetsChangeFormationReq)._proto = {
-[1] = {"formation_index", "int"}
-, 
-[2] = {"formation_list", "EightPetsFormationItem"}
+EightPetsChangeFormationReq._proto = {
+  [1] = {
+    "formation_index",
+    "int"
+  },
+  [2] = {
+    "formation_list",
+    "EightPetsFormationItem"
+  }
 }
 _class("EightPetsChangeFormationReply", ICampaignComResponse)
-_ENV.EightPetsChangeFormationReply = _ENV.EightPetsChangeFormationReply
--- DECOMPILER ERROR at PC10528: Confused about usage of register: R56 in 'UnsetPending'
+EightPetsChangeFormationReply = EightPetsChangeFormationReply
 
-;
-(_ENV.EightPetsChangeFormationReply).Constructor = function(self)
-  -- function num : 0_366
+function EightPetsChangeFormationReply:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC10538: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.EightPetsChangeFormationReply)._proto = {
-[1] = {"ret", "int"}
+EightPetsChangeFormationReply._proto = {
+  [1] = {"ret", "int"}
 }
 _class("SeasonMissionClientInfo", Object)
-_ENV.SeasonMissionClientInfo = _ENV.SeasonMissionClientInfo
--- DECOMPILER ERROR at PC10550: Confused about usage of register: R56 in 'UnsetPending'
+SeasonMissionClientInfo = SeasonMissionClientInfo
 
-;
-(_ENV.SeasonMissionClientInfo).Constructor = function(self)
-  -- function num : 0_367
+function SeasonMissionClientInfo:Constructor()
   self.m_x = 0
   self.m_y = 0
   self.m_z = 0
   self.ext = {}
 end
 
--- DECOMPILER ERROR at PC10575: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.SeasonMissionClientInfo)._proto = {
-[1] = {"m_x", "float"}
-, 
-[2] = {"m_y", "float"}
-, 
-[3] = {"m_z", "float"}
-, 
-[4] = {"ext", "map<int,int>"}
+SeasonMissionClientInfo._proto = {
+  [1] = {"m_x", "float"},
+  [2] = {"m_y", "float"},
+  [3] = {"m_z", "float"},
+  [4] = {
+    "ext",
+    "map<int,int>"
+  }
 }
 _class("SeasonFormationItem", Object)
-_ENV.SeasonFormationItem = _ENV.SeasonFormationItem
--- DECOMPILER ERROR at PC10587: Confused about usage of register: R56 in 'UnsetPending'
+SeasonFormationItem = SeasonFormationItem
 
-;
-(_ENV.SeasonFormationItem).Constructor = function(self)
-  -- function num : 0_368
+function SeasonFormationItem:Constructor()
   self.id = 0
   self.name = ""
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC10607: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.SeasonFormationItem)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"name", "string"}
-, 
-[3] = {"pet_list", "list<int64>"}
+SeasonFormationItem._proto = {
+  [1] = {"id", "int"},
+  [2] = {"name", "string"},
+  [3] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("SeasonDailyMissionInfo", Object)
-_ENV.SeasonDailyMissionInfo = _ENV.SeasonDailyMissionInfo
--- DECOMPILER ERROR at PC10619: Confused about usage of register: R56 in 'UnsetPending'
+SeasonDailyMissionInfo = SeasonDailyMissionInfo
 
-;
-(_ENV.SeasonDailyMissionInfo).Constructor = function(self)
-  -- function num : 0_369
+function SeasonDailyMissionInfo:Constructor()
   self.m_progress = 1
   self.m_total_mission = 0
   self.m_save_info = {}
   self.last_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC10644: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.SeasonDailyMissionInfo)._proto = {
-[1] = {"m_progress", "int"}
-, 
-[2] = {"m_total_mission", "int"}
-, 
-[3] = {"m_save_info", "map<int,int>"}
-, 
-[4] = {"last_refresh_time", "time"}
+SeasonDailyMissionInfo._proto = {
+  [1] = {"m_progress", "int"},
+  [2] = {
+    "m_total_mission",
+    "int"
+  },
+  [3] = {
+    "m_save_info",
+    "map<int,int>"
+  },
+  [4] = {
+    "last_refresh_time",
+    "time"
+  }
 }
 _class("CSeasonMissionComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CSeasonMissionComponentDataInfo = _ENV.CSeasonMissionComponentDataInfo
--- DECOMPILER ERROR at PC10656: Confused about usage of register: R56 in 'UnsetPending'
+CSeasonMissionComponentDataInfo = CSeasonMissionComponentDataInfo
 
-;
-(_ENV.CSeasonMissionComponentDataInfo).Constructor = function(self)
-  -- function num : 0_370 , upvalues : _ENV
+function CSeasonMissionComponentDataInfo:Constructor()
   self.m_cur_mission = 0
   self.m_pass_mission_info = {}
   self.m_formation_list = {}
@@ -7260,29 +6433,36 @@ _ENV.CSeasonMissionComponentDataInfo = _ENV.CSeasonMissionComponentDataInfo
   self.m_daily_info = SeasonDailyMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC10691: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.CSeasonMissionComponentDataInfo)._proto = {
-[1] = {"m_cur_mission", "int"}
-, 
-[2] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[3] = {"m_formation_list", "list<SeasonFormationItem>"}
-, 
-[4] = {"m_client_info", "SeasonMissionClientInfo"}
-, 
-[5] = {"m_stage_info", "map<int,int>"}
-, 
-[6] = {"m_daily_info", "SeasonDailyMissionInfo"}
+CSeasonMissionComponentDataInfo._proto = {
+  [1] = {
+    "m_cur_mission",
+    "int"
+  },
+  [2] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [3] = {
+    "m_formation_list",
+    "list<SeasonFormationItem>"
+  },
+  [4] = {
+    "m_client_info",
+    "SeasonMissionClientInfo"
+  },
+  [5] = {
+    "m_stage_info",
+    "map<int,int>"
+  },
+  [6] = {
+    "m_daily_info",
+    "SeasonDailyMissionInfo"
+  }
 }
 _class("SeasonMissionComponentInfo", ICampaignComponentInfo)
-_ENV.SeasonMissionComponentInfo = _ENV.SeasonMissionComponentInfo
--- DECOMPILER ERROR at PC10703: Confused about usage of register: R56 in 'UnsetPending'
+SeasonMissionComponentInfo = SeasonMissionComponentInfo
 
-;
-(_ENV.SeasonMissionComponentInfo).Constructor = function(self)
-  -- function num : 0_371 , upvalues : _ENV
+function SeasonMissionComponentInfo:Constructor()
   self.m_cur_mission = 0
   self.m_pass_mission_info = {}
   self.m_formation_list = {}
@@ -7291,1133 +6471,888 @@ _ENV.SeasonMissionComponentInfo = _ENV.SeasonMissionComponentInfo
   self.m_daily_info = SeasonDailyMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC10738: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.SeasonMissionComponentInfo)._proto = {
-[1] = {"m_cur_mission", "int"}
-, 
-[2] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[3] = {"m_formation_list", "list<SeasonFormationItem>"}
-, 
-[4] = {"m_client_info", "SeasonMissionClientInfo"}
-, 
-[5] = {"m_stage_info", "map<int,int>"}
-, 
-[6] = {"m_daily_info", "SeasonDailyMissionInfo"}
+SeasonMissionComponentInfo._proto = {
+  [1] = {
+    "m_cur_mission",
+    "int"
+  },
+  [2] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [3] = {
+    "m_formation_list",
+    "list<SeasonFormationItem>"
+  },
+  [4] = {
+    "m_client_info",
+    "SeasonMissionClientInfo"
+  },
+  [5] = {
+    "m_stage_info",
+    "map<int,int>"
+  },
+  [6] = {
+    "m_daily_info",
+    "SeasonDailyMissionInfo"
+  }
 }
 _class("CompleteStorySeasonMissionReq", ICampaignComRequest)
-_ENV.CompleteStorySeasonMissionReq = _ENV.CompleteStorySeasonMissionReq
--- DECOMPILER ERROR at PC10750: Confused about usage of register: R56 in 'UnsetPending'
+CompleteStorySeasonMissionReq = CompleteStorySeasonMissionReq
 
-;
-(_ENV.CompleteStorySeasonMissionReq).Constructor = function(self)
-  -- function num : 0_372 , upvalues : _ENV
+function CompleteStorySeasonMissionReq:Constructor()
   self.m_create_info = CampaignMissionCreateInfo:New()
 end
 
--- DECOMPILER ERROR at PC10760: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.CompleteStorySeasonMissionReq)._proto = {
-[1] = {"m_create_info", "CampaignMissionCreateInfo"}
+CompleteStorySeasonMissionReq._proto = {
+  [1] = {
+    "m_create_info",
+    "CampaignMissionCreateInfo"
+  }
 }
 _class("CompleteStorySeasonMissionRep", ICampaignComResponse)
-_ENV.CompleteStorySeasonMissionRep = _ENV.CompleteStorySeasonMissionRep
--- DECOMPILER ERROR at PC10772: Confused about usage of register: R56 in 'UnsetPending'
+CompleteStorySeasonMissionRep = CompleteStorySeasonMissionRep
 
-;
-(_ENV.CompleteStorySeasonMissionRep).Constructor = function(self)
-  -- function num : 0_373
+function CompleteStorySeasonMissionRep:Constructor()
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC10782: Confused about usage of register: R56 in 'UnsetPending'
-
-;
-(_ENV.CompleteStorySeasonMissionRep)._proto = {
-[1] = {"reward", "list<RoleAsset>"}
+CompleteStorySeasonMissionRep._proto = {
+  [1] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 local SeasonMissionComponentNotifyType = {SeasonMissionComponentNotifyType_InfoChanged = 1, SeasonMissionComponentNotifyTypeDaily_InfoChanged = 2}
 _enum("SeasonMissionComponentNotifyType", SeasonMissionComponentNotifyType)
 _class("NotifySeasonMissionComponentInfoChanged", Object)
-_ENV.NotifySeasonMissionComponentInfoChanged = _ENV.NotifySeasonMissionComponentInfoChanged
--- DECOMPILER ERROR at PC10804: Confused about usage of register: R57 in 'UnsetPending'
+NotifySeasonMissionComponentInfoChanged = NotifySeasonMissionComponentInfoChanged
 
-;
-(_ENV.NotifySeasonMissionComponentInfoChanged).Constructor = function(self)
-  -- function num : 0_374
+function NotifySeasonMissionComponentInfoChanged:Constructor()
   self.m_cur_mission = 0
   self.m_update_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC10819: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.NotifySeasonMissionComponentInfoChanged)._proto = {
-[1] = {"m_cur_mission", "int"}
-, 
-[2] = {"m_update_mission_info", "map<int,cam_mission_info>"}
+NotifySeasonMissionComponentInfoChanged._proto = {
+  [1] = {
+    "m_cur_mission",
+    "int"
+  },
+  [2] = {
+    "m_update_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 _class("NotifySeasonMissionDailyComponentInfoChanged", Object)
-_ENV.NotifySeasonMissionDailyComponentInfoChanged = _ENV.NotifySeasonMissionDailyComponentInfoChanged
--- DECOMPILER ERROR at PC10831: Confused about usage of register: R57 in 'UnsetPending'
+NotifySeasonMissionDailyComponentInfoChanged = NotifySeasonMissionDailyComponentInfoChanged
 
-;
-(_ENV.NotifySeasonMissionDailyComponentInfoChanged).Constructor = function(self)
-  -- function num : 0_375 , upvalues : _ENV
+function NotifySeasonMissionDailyComponentInfoChanged:Constructor()
   self.m_daily_info = SeasonDailyMissionInfo:New()
   self.m_is_reset = false
 end
 
--- DECOMPILER ERROR at PC10846: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.NotifySeasonMissionDailyComponentInfoChanged)._proto = {
-[1] = {"m_daily_info", "SeasonDailyMissionInfo"}
-, 
-[2] = {"m_is_reset", "bool"}
+NotifySeasonMissionDailyComponentInfoChanged._proto = {
+  [1] = {
+    "m_daily_info",
+    "SeasonDailyMissionInfo"
+  },
+  [2] = {"m_is_reset", "bool"}
 }
 _class("SeasonChangeFormationReq", ICampaignComRequest)
-_ENV.SeasonChangeFormationReq = _ENV.SeasonChangeFormationReq
--- DECOMPILER ERROR at PC10858: Confused about usage of register: R57 in 'UnsetPending'
+SeasonChangeFormationReq = SeasonChangeFormationReq
 
-;
-(_ENV.SeasonChangeFormationReq).Constructor = function(self)
-  -- function num : 0_376 , upvalues : _ENV
+function SeasonChangeFormationReq:Constructor()
   self.info = SeasonFormationItem:New()
 end
 
--- DECOMPILER ERROR at PC10868: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.SeasonChangeFormationReq)._proto = {
-[1] = {"info", "SeasonFormationItem"}
+SeasonChangeFormationReq._proto = {
+  [1] = {
+    "info",
+    "SeasonFormationItem"
+  }
 }
 _class("SeasonChangeFormationReply", ICampaignComResponse)
-_ENV.SeasonChangeFormationReply = _ENV.SeasonChangeFormationReply
--- DECOMPILER ERROR at PC10880: Confused about usage of register: R57 in 'UnsetPending'
+SeasonChangeFormationReply = SeasonChangeFormationReply
 
-;
-(_ENV.SeasonChangeFormationReply).Constructor = function(self)
-  -- function num : 0_377
+function SeasonChangeFormationReply:Constructor()
 end
 
--- DECOMPILER ERROR at PC10884: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.SeasonChangeFormationReply)._proto = {}
+SeasonChangeFormationReply._proto = {}
 _class("SeasonClientDataPointReq", ICampaignComRequest)
-_ENV.SeasonClientDataPointReq = _ENV.SeasonClientDataPointReq
--- DECOMPILER ERROR at PC10896: Confused about usage of register: R57 in 'UnsetPending'
+SeasonClientDataPointReq = SeasonClientDataPointReq
 
-;
-(_ENV.SeasonClientDataPointReq).Constructor = function(self)
-  -- function num : 0_378
+function SeasonClientDataPointReq:Constructor()
   self.m_x = 0
   self.m_y = 0
   self.m_z = 0
 end
 
--- DECOMPILER ERROR at PC10916: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.SeasonClientDataPointReq)._proto = {
-[1] = {"m_x", "float"}
-, 
-[2] = {"m_y", "float"}
-, 
-[3] = {"m_z", "float"}
+SeasonClientDataPointReq._proto = {
+  [1] = {"m_x", "float"},
+  [2] = {"m_y", "float"},
+  [3] = {"m_z", "float"}
 }
 _class("SeasonClientDataPointReply", ICampaignComResponse)
-_ENV.SeasonClientDataPointReply = _ENV.SeasonClientDataPointReply
--- DECOMPILER ERROR at PC10928: Confused about usage of register: R57 in 'UnsetPending'
+SeasonClientDataPointReply = SeasonClientDataPointReply
 
-;
-(_ENV.SeasonClientDataPointReply).Constructor = function(self)
-  -- function num : 0_379
+function SeasonClientDataPointReply:Constructor()
 end
 
--- DECOMPILER ERROR at PC10932: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.SeasonClientDataPointReply)._proto = {}
+SeasonClientDataPointReply._proto = {}
 _class("SeasonClientStageDataReq", ICampaignComRequest)
-_ENV.SeasonClientStageDataReq = _ENV.SeasonClientStageDataReq
--- DECOMPILER ERROR at PC10944: Confused about usage of register: R57 in 'UnsetPending'
+SeasonClientStageDataReq = SeasonClientStageDataReq
 
-;
-(_ENV.SeasonClientStageDataReq).Constructor = function(self)
-  -- function num : 0_380
+function SeasonClientStageDataReq:Constructor()
   self.id = 0
   self.type = 0
 end
 
--- DECOMPILER ERROR at PC10959: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.SeasonClientStageDataReq)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"type", "int"}
+SeasonClientStageDataReq._proto = {
+  [1] = {"id", "int"},
+  [2] = {"type", "int"}
 }
 _class("SeasonClientStageDataReply", ICampaignComResponse)
-_ENV.SeasonClientStageDataReply = _ENV.SeasonClientStageDataReply
--- DECOMPILER ERROR at PC10971: Confused about usage of register: R57 in 'UnsetPending'
+SeasonClientStageDataReply = SeasonClientStageDataReply
 
-;
-(_ENV.SeasonClientStageDataReply).Constructor = function(self)
-  -- function num : 0_381
+function SeasonClientStageDataReply:Constructor()
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC10981: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.SeasonClientStageDataReply)._proto = {
-[1] = {"reward", "list<RoleAsset>"}
+SeasonClientStageDataReply._proto = {
+  [1] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("SeasonPointClientDataReq", ICampaignComRequest)
-_ENV.SeasonPointClientDataReq = _ENV.SeasonPointClientDataReq
--- DECOMPILER ERROR at PC10993: Confused about usage of register: R57 in 'UnsetPending'
+SeasonPointClientDataReq = SeasonPointClientDataReq
 
-;
-(_ENV.SeasonPointClientDataReq).Constructor = function(self)
-  -- function num : 0_382
+function SeasonPointClientDataReq:Constructor()
   self.m_save_info = {}
 end
 
--- DECOMPILER ERROR at PC11003: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.SeasonPointClientDataReq)._proto = {
-[1] = {"m_save_info", "map<int,int>"}
+SeasonPointClientDataReq._proto = {
+  [1] = {
+    "m_save_info",
+    "map<int,int>"
+  }
 }
 _class("SeasonPointClientDataReply", ICampaignComResponse)
-_ENV.SeasonPointClientDataReply = _ENV.SeasonPointClientDataReply
--- DECOMPILER ERROR at PC11015: Confused about usage of register: R57 in 'UnsetPending'
+SeasonPointClientDataReply = SeasonPointClientDataReply
 
-;
-(_ENV.SeasonPointClientDataReply).Constructor = function(self)
-  -- function num : 0_383
+function SeasonPointClientDataReply:Constructor()
 end
 
--- DECOMPILER ERROR at PC11019: Confused about usage of register: R57 in 'UnsetPending'
-
-;
-(_ENV.SeasonPointClientDataReply)._proto = {}
+SeasonPointClientDataReply._proto = {}
 local ComDispatchStatus = {DISPATCHING = 1, COMPLETE = 2}
 _enum("ComDispatchStatus", ComDispatchStatus)
 _class("DispatchArchInfo", Object)
-_ENV.DispatchArchInfo = _ENV.DispatchArchInfo
--- DECOMPILER ERROR at PC11041: Confused about usage of register: R58 in 'UnsetPending'
+DispatchArchInfo = DispatchArchInfo
 
-;
-(_ENV.DispatchArchInfo).Constructor = function(self)
-  -- function num : 0_384 , upvalues : ComDispatchStatus
+function DispatchArchInfo:Constructor()
   self.arch_id = 0
   self.end_time = 0
   self.status = ComDispatchStatus.DISPATCHING
 end
 
--- DECOMPILER ERROR at PC11061: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.DispatchArchInfo)._proto = {
-[1] = {"arch_id", "int"}
-, 
-[2] = {"end_time", "time"}
-, 
-[3] = {"status", "int"}
+DispatchArchInfo._proto = {
+  [1] = {"arch_id", "int"},
+  [2] = {"end_time", "time"},
+  [3] = {"status", "int"}
 }
 _class("DispatchComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.DispatchComponentDataInfo = _ENV.DispatchComponentDataInfo
--- DECOMPILER ERROR at PC11073: Confused about usage of register: R58 in 'UnsetPending'
+DispatchComponentDataInfo = DispatchComponentDataInfo
 
-;
-(_ENV.DispatchComponentDataInfo).Constructor = function(self)
-  -- function num : 0_385
+function DispatchComponentDataInfo:Constructor()
   self.dispatch_infos = {}
 end
 
--- DECOMPILER ERROR at PC11083: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.DispatchComponentDataInfo)._proto = {
-[1] = {"dispatch_infos", "map<int,DispatchArchInfo>"}
+DispatchComponentDataInfo._proto = {
+  [1] = {
+    "dispatch_infos",
+    "map<int,DispatchArchInfo>"
+  }
 }
 _class("DispatchComponentInfo", ICampaignComponentInfo)
-_ENV.DispatchComponentInfo = _ENV.DispatchComponentInfo
--- DECOMPILER ERROR at PC11095: Confused about usage of register: R58 in 'UnsetPending'
+DispatchComponentInfo = DispatchComponentInfo
 
-;
-(_ENV.DispatchComponentInfo).Constructor = function(self)
-  -- function num : 0_386
+function DispatchComponentInfo:Constructor()
   self.dispatch_infos = {}
 end
 
--- DECOMPILER ERROR at PC11105: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.DispatchComponentInfo)._proto = {
-[1] = {"dispatch_infos", "map<int,DispatchArchInfo>"}
+DispatchComponentInfo._proto = {
+  [1] = {
+    "dispatch_infos",
+    "map<int,DispatchArchInfo>"
+  }
 }
 _class("DispatchReq", ICampaignComRequest)
-_ENV.DispatchReq = _ENV.DispatchReq
--- DECOMPILER ERROR at PC11117: Confused about usage of register: R58 in 'UnsetPending'
+DispatchReq = DispatchReq
 
-;
-(_ENV.DispatchReq).Constructor = function(self)
-  -- function num : 0_387
+function DispatchReq:Constructor()
   self.arch_id = 0
 end
 
--- DECOMPILER ERROR at PC11127: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.DispatchReq)._proto = {
-[1] = {"arch_id", "int"}
+DispatchReq._proto = {
+  [1] = {"arch_id", "int"}
 }
 _class("DispatchReply", ICampaignComResponse)
-_ENV.DispatchReply = _ENV.DispatchReply
--- DECOMPILER ERROR at PC11139: Confused about usage of register: R58 in 'UnsetPending'
+DispatchReply = DispatchReply
 
-;
-(_ENV.DispatchReply).Constructor = function(self)
-  -- function num : 0_388 , upvalues : _ENV
+function DispatchReply:Constructor()
   self.ret = 0
   self.info = DispatchArchInfo:New()
 end
 
--- DECOMPILER ERROR at PC11154: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.DispatchReply)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "DispatchArchInfo"}
+DispatchReply._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "DispatchArchInfo"
+  }
 }
 _class("GetDispatchRewardsReq", ICampaignComRequest)
-_ENV.GetDispatchRewardsReq = _ENV.GetDispatchRewardsReq
--- DECOMPILER ERROR at PC11166: Confused about usage of register: R58 in 'UnsetPending'
+GetDispatchRewardsReq = GetDispatchRewardsReq
 
-;
-(_ENV.GetDispatchRewardsReq).Constructor = function(self)
-  -- function num : 0_389
+function GetDispatchRewardsReq:Constructor()
   self.arch_id = 0
 end
 
--- DECOMPILER ERROR at PC11176: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.GetDispatchRewardsReq)._proto = {
-[1] = {"arch_id", "int"}
+GetDispatchRewardsReq._proto = {
+  [1] = {"arch_id", "int"}
 }
 _class("GetDispatchRewardsReply", ICampaignComResponse)
-_ENV.GetDispatchRewardsReply = _ENV.GetDispatchRewardsReply
--- DECOMPILER ERROR at PC11188: Confused about usage of register: R58 in 'UnsetPending'
+GetDispatchRewardsReply = GetDispatchRewardsReply
 
-;
-(_ENV.GetDispatchRewardsReply).Constructor = function(self)
-  -- function num : 0_390 , upvalues : _ENV
+function GetDispatchRewardsReply:Constructor()
   self.ret = 0
   self.info = DispatchArchInfo:New()
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC11208: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.GetDispatchRewardsReply)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "DispatchArchInfo"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
+GetDispatchRewardsReply._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "DispatchArchInfo"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("SurveyInfo", Object)
-_ENV.SurveyInfo = _ENV.SurveyInfo
--- DECOMPILER ERROR at PC11220: Confused about usage of register: R58 in 'UnsetPending'
+SurveyInfo = SurveyInfo
 
-;
-(_ENV.SurveyInfo).Constructor = function(self)
-  -- function num : 0_391
+function SurveyInfo:Constructor()
   self.cur_pet_id = 0
   self.tokens_get_time = 0
   self.tokens_get_num = 0
   self.pet_unlock = {}
 end
 
--- DECOMPILER ERROR at PC11245: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.SurveyInfo)._proto = {
-[1] = {"cur_pet_id", "int"}
-, 
-[2] = {"tokens_get_time", "time"}
-, 
-[3] = {"tokens_get_num", "int"}
-, 
-[4] = {"pet_unlock", "list<int>"}
+SurveyInfo._proto = {
+  [1] = {"cur_pet_id", "int"},
+  [2] = {
+    "tokens_get_time",
+    "time"
+  },
+  [3] = {
+    "tokens_get_num",
+    "int"
+  },
+  [4] = {"pet_unlock", "list<int>"}
 }
 _class("SurveyComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.SurveyComponentDataInfo = _ENV.SurveyComponentDataInfo
--- DECOMPILER ERROR at PC11257: Confused about usage of register: R58 in 'UnsetPending'
+SurveyComponentDataInfo = SurveyComponentDataInfo
 
-;
-(_ENV.SurveyComponentDataInfo).Constructor = function(self)
-  -- function num : 0_392 , upvalues : _ENV
+function SurveyComponentDataInfo:Constructor()
   self.info = SurveyInfo:New()
 end
 
--- DECOMPILER ERROR at PC11267: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.SurveyComponentDataInfo)._proto = {
-[1] = {"info", "SurveyInfo"}
+SurveyComponentDataInfo._proto = {
+  [1] = {"info", "SurveyInfo"}
 }
 _class("SurveyComponentInfo", ICampaignComponentInfo)
-_ENV.SurveyComponentInfo = _ENV.SurveyComponentInfo
--- DECOMPILER ERROR at PC11279: Confused about usage of register: R58 in 'UnsetPending'
+SurveyComponentInfo = SurveyComponentInfo
 
-;
-(_ENV.SurveyComponentInfo).Constructor = function(self)
-  -- function num : 0_393 , upvalues : _ENV
+function SurveyComponentInfo:Constructor()
   self.info = SurveyInfo:New()
 end
 
--- DECOMPILER ERROR at PC11289: Confused about usage of register: R58 in 'UnsetPending'
-
-;
-(_ENV.SurveyComponentInfo)._proto = {
-[1] = {"info", "SurveyInfo"}
+SurveyComponentInfo._proto = {
+  [1] = {"info", "SurveyInfo"}
 }
-local SurveyOperateType = {SurveyOperateType_GetToken = 0, SurveyOperateType_Next = 1, SurveyOperateType_UnLock = 2}
+local SurveyOperateType = {
+  SurveyOperateType_GetToken = 0,
+  SurveyOperateType_Next = 1,
+  SurveyOperateType_UnLock = 2
+}
 _enum("SurveyOperateType", SurveyOperateType)
 _class("SurveyClientDataReq", ICampaignComRequest)
-_ENV.SurveyClientDataReq = _ENV.SurveyClientDataReq
--- DECOMPILER ERROR at PC11314: Confused about usage of register: R59 in 'UnsetPending'
+SurveyClientDataReq = SurveyClientDataReq
 
-;
-(_ENV.SurveyClientDataReq).Constructor = function(self)
-  -- function num : 0_394
+function SurveyClientDataReq:Constructor()
   self.op_type = 0
 end
 
--- DECOMPILER ERROR at PC11324: Confused about usage of register: R59 in 'UnsetPending'
-
-;
-(_ENV.SurveyClientDataReq)._proto = {
-[1] = {"op_type", "int"}
+SurveyClientDataReq._proto = {
+  [1] = {"op_type", "int"}
 }
 _class("SurveyClientDataReply", ICampaignComResponse)
-_ENV.SurveyClientDataReply = _ENV.SurveyClientDataReply
--- DECOMPILER ERROR at PC11336: Confused about usage of register: R59 in 'UnsetPending'
+SurveyClientDataReply = SurveyClientDataReply
 
-;
-(_ENV.SurveyClientDataReply).Constructor = function(self)
-  -- function num : 0_395 , upvalues : _ENV
+function SurveyClientDataReply:Constructor()
   self.ret = 0
   self.info = SurveyInfo:New()
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC11356: Confused about usage of register: R59 in 'UnsetPending'
-
-;
-(_ENV.SurveyClientDataReply)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "SurveyInfo"}
-, 
-[3] = {"reward", "list<RoleAsset>"}
+SurveyClientDataReply._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"info", "SurveyInfo"},
+  [3] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("ActionPointDataReq", ICampaignComRequest)
-_ENV.ActionPointDataReq = _ENV.ActionPointDataReq
--- DECOMPILER ERROR at PC11368: Confused about usage of register: R59 in 'UnsetPending'
+ActionPointDataReq = ActionPointDataReq
 
-;
-(_ENV.ActionPointDataReq).Constructor = function(self)
-  -- function num : 0_396
+function ActionPointDataReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC11372: Confused about usage of register: R59 in 'UnsetPending'
-
-;
-(_ENV.ActionPointDataReq)._proto = {}
+ActionPointDataReq._proto = {}
 _class("ActionPointDataReply", ICampaignComResponse)
-_ENV.ActionPointDataReply = _ENV.ActionPointDataReply
--- DECOMPILER ERROR at PC11384: Confused about usage of register: R59 in 'UnsetPending'
+ActionPointDataReply = ActionPointDataReply
 
-;
-(_ENV.ActionPointDataReply).Constructor = function(self)
-  -- function num : 0_397
+function ActionPointDataReply:Constructor()
   self.m_info = {}
 end
 
--- DECOMPILER ERROR at PC11394: Confused about usage of register: R59 in 'UnsetPending'
-
-;
-(_ENV.ActionPointDataReply)._proto = {
-[1] = {"m_info", "map<int,ActionPopintData>"}
+ActionPointDataReply._proto = {
+  [1] = {
+    "m_info",
+    "map<int,ActionPopintData>"
+  }
 }
-local ETimeLoginRewardStatus = {E_TIME_LOGIN_REWARD_UNKNOW = 0, E_TIME_LOGIN_REWARD_LOCK = 1, E_TIME_LOGIN_REWARD_CAN_RECV = 2, E_TIME_LOGIN_REWARD_RECVED = 3, E_TIME_LOGIN_REWARD_EXPIRE_SHOW = 4, E_TIME_LOGIN_REWARD_EXPIRE_LOCK = 5, E_TIME_LOGIN_REWARD_EXPIRE_CAN = 6}
+local ETimeLoginRewardStatus = {
+  E_TIME_LOGIN_REWARD_UNKNOW = 0,
+  E_TIME_LOGIN_REWARD_LOCK = 1,
+  E_TIME_LOGIN_REWARD_CAN_RECV = 2,
+  E_TIME_LOGIN_REWARD_RECVED = 3,
+  E_TIME_LOGIN_REWARD_EXPIRE_SHOW = 4,
+  E_TIME_LOGIN_REWARD_EXPIRE_LOCK = 5,
+  E_TIME_LOGIN_REWARD_EXPIRE_CAN = 6
+}
 _enum("ETimeLoginRewardStatus", ETimeLoginRewardStatus)
 local TimeLoginComponentNotifyType = {TimeLoginComponentNotify_Changed = 1}
 _enum("TimeLoginComponentNotifyType", TimeLoginComponentNotifyType)
 _class("CTimeLoginComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CTimeLoginComponentDataInfo = _ENV.CTimeLoginComponentDataInfo
--- DECOMPILER ERROR at PC11435: Confused about usage of register: R61 in 'UnsetPending'
+CTimeLoginComponentDataInfo = CTimeLoginComponentDataInfo
 
-;
-(_ENV.CTimeLoginComponentDataInfo).Constructor = function(self)
-  -- function num : 0_398
+function CTimeLoginComponentDataInfo:Constructor()
   self.m_count = 0
   self.m_info = {}
 end
 
--- DECOMPILER ERROR at PC11450: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.CTimeLoginComponentDataInfo)._proto = {
-[1] = {"m_count", "int"}
-, 
-[2] = {"m_info", "map<int,int>"}
+CTimeLoginComponentDataInfo._proto = {
+  [1] = {"m_count", "int"},
+  [2] = {
+    "m_info",
+    "map<int,int>"
+  }
 }
 _class("TimeLoginComponentInfo", ICampaignComponentInfo)
-_ENV.TimeLoginComponentInfo = _ENV.TimeLoginComponentInfo
--- DECOMPILER ERROR at PC11462: Confused about usage of register: R61 in 'UnsetPending'
+TimeLoginComponentInfo = TimeLoginComponentInfo
 
-;
-(_ENV.TimeLoginComponentInfo).Constructor = function(self)
-  -- function num : 0_399
+function TimeLoginComponentInfo:Constructor()
   self.m_count = 0
   self.m_info = {}
 end
 
--- DECOMPILER ERROR at PC11477: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.TimeLoginComponentInfo)._proto = {
-[1] = {"m_count", "int"}
-, 
-[2] = {"m_info", "map<int,int>"}
+TimeLoginComponentInfo._proto = {
+  [1] = {"m_count", "int"},
+  [2] = {
+    "m_info",
+    "map<int,int>"
+  }
 }
 _class("TimeLoginComponentReceiveRewardReq", ICampaignComRequest)
-_ENV.TimeLoginComponentReceiveRewardReq = _ENV.TimeLoginComponentReceiveRewardReq
--- DECOMPILER ERROR at PC11489: Confused about usage of register: R61 in 'UnsetPending'
+TimeLoginComponentReceiveRewardReq = TimeLoginComponentReceiveRewardReq
 
-;
-(_ENV.TimeLoginComponentReceiveRewardReq).Constructor = function(self)
-  -- function num : 0_400
+function TimeLoginComponentReceiveRewardReq:Constructor()
   self.m_cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC11499: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.TimeLoginComponentReceiveRewardReq)._proto = {
-[1] = {"m_cfg_id", "int"}
+TimeLoginComponentReceiveRewardReq._proto = {
+  [1] = {"m_cfg_id", "int"}
 }
 _class("TimeLoginComponentReceiveRewardRep", ICampaignComResponse)
-_ENV.TimeLoginComponentReceiveRewardRep = _ENV.TimeLoginComponentReceiveRewardRep
--- DECOMPILER ERROR at PC11511: Confused about usage of register: R61 in 'UnsetPending'
+TimeLoginComponentReceiveRewardRep = TimeLoginComponentReceiveRewardRep
 
-;
-(_ENV.TimeLoginComponentReceiveRewardRep).Constructor = function(self)
-  -- function num : 0_401
+function TimeLoginComponentReceiveRewardRep:Constructor()
   self.m_rewards = {}
   self.m_info = {}
 end
 
--- DECOMPILER ERROR at PC11526: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.TimeLoginComponentReceiveRewardRep)._proto = {
-[1] = {"m_rewards", "list<RoleAsset>"}
-, 
-[2] = {"m_info", "map<int,int>"}
+TimeLoginComponentReceiveRewardRep._proto = {
+  [1] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  },
+  [2] = {
+    "m_info",
+    "map<int,int>"
+  }
 }
 _class("NotifyPointTimeLoginComponentChanged", Object)
-_ENV.NotifyPointTimeLoginComponentChanged = _ENV.NotifyPointTimeLoginComponentChanged
--- DECOMPILER ERROR at PC11538: Confused about usage of register: R61 in 'UnsetPending'
+NotifyPointTimeLoginComponentChanged = NotifyPointTimeLoginComponentChanged
 
-;
-(_ENV.NotifyPointTimeLoginComponentChanged).Constructor = function(self)
-  -- function num : 0_402
+function NotifyPointTimeLoginComponentChanged:Constructor()
   self.m_count = 0
   self.m_info = {}
 end
 
--- DECOMPILER ERROR at PC11553: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.NotifyPointTimeLoginComponentChanged)._proto = {
-[1] = {"m_count", "int"}
-, 
-[2] = {"m_info", "map<int,int>"}
+NotifyPointTimeLoginComponentChanged._proto = {
+  [1] = {"m_count", "int"},
+  [2] = {
+    "m_info",
+    "map<int,int>"
+  }
 }
 _class("SeasonMissionTeamRecordReq", ICampaignComRequest)
-_ENV.SeasonMissionTeamRecordReq = _ENV.SeasonMissionTeamRecordReq
--- DECOMPILER ERROR at PC11565: Confused about usage of register: R61 in 'UnsetPending'
+SeasonMissionTeamRecordReq = SeasonMissionTeamRecordReq
 
-;
-(_ENV.SeasonMissionTeamRecordReq).Constructor = function(self)
-  -- function num : 0_403
+function SeasonMissionTeamRecordReq:Constructor()
   self.num = 0
   self.mission = 0
 end
 
--- DECOMPILER ERROR at PC11580: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.SeasonMissionTeamRecordReq)._proto = {
-[1] = {"num", "int"}
-, 
-[2] = {"mission", "int"}
+SeasonMissionTeamRecordReq._proto = {
+  [1] = {"num", "int"},
+  [2] = {"mission", "int"}
 }
 _class("SeasonMissionTeamRecordRes", ICampaignComResponse)
-_ENV.SeasonMissionTeamRecordRes = _ENV.SeasonMissionTeamRecordRes
--- DECOMPILER ERROR at PC11592: Confused about usage of register: R61 in 'UnsetPending'
+SeasonMissionTeamRecordRes = SeasonMissionTeamRecordRes
 
-;
-(_ENV.SeasonMissionTeamRecordRes).Constructor = function(self)
-  -- function num : 0_404
+function SeasonMissionTeamRecordRes:Constructor()
   self.ret = 0
   self.info = {}
   self.next_num = 0
 end
 
--- DECOMPILER ERROR at PC11612: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.SeasonMissionTeamRecordRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "list<campaign_mtr_role>"}
-, 
-[3] = {"next_num", "int"}
+SeasonMissionTeamRecordRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "list<campaign_mtr_role>"
+  },
+  [3] = {"next_num", "int"}
 }
 _class("SeasonClientDataExtReq", ICampaignComRequest)
-_ENV.SeasonClientDataExtReq = _ENV.SeasonClientDataExtReq
--- DECOMPILER ERROR at PC11624: Confused about usage of register: R61 in 'UnsetPending'
+SeasonClientDataExtReq = SeasonClientDataExtReq
 
-;
-(_ENV.SeasonClientDataExtReq).Constructor = function(self)
-  -- function num : 0_405
+function SeasonClientDataExtReq:Constructor()
   self.ext = {}
 end
 
--- DECOMPILER ERROR at PC11634: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.SeasonClientDataExtReq)._proto = {
-[1] = {"ext", "map<int,int>"}
+SeasonClientDataExtReq._proto = {
+  [1] = {
+    "ext",
+    "map<int,int>"
+  }
 }
 _class("SeasonClientDataExtReply", ICampaignComResponse)
-_ENV.SeasonClientDataExtReply = _ENV.SeasonClientDataExtReply
--- DECOMPILER ERROR at PC11646: Confused about usage of register: R61 in 'UnsetPending'
+SeasonClientDataExtReply = SeasonClientDataExtReply
 
-;
-(_ENV.SeasonClientDataExtReply).Constructor = function(self)
-  -- function num : 0_406
+function SeasonClientDataExtReply:Constructor()
 end
 
--- DECOMPILER ERROR at PC11650: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.SeasonClientDataExtReply)._proto = {}
+SeasonClientDataExtReply._proto = {}
 _class("TacitTestMissionInfo", Object)
-_ENV.TacitTestMissionInfo = _ENV.TacitTestMissionInfo
--- DECOMPILER ERROR at PC11662: Confused about usage of register: R61 in 'UnsetPending'
+TacitTestMissionInfo = TacitTestMissionInfo
 
-;
-(_ENV.TacitTestMissionInfo).Constructor = function(self)
-  -- function num : 0_407
+function TacitTestMissionInfo:Constructor()
   self.mission_id = 0
   self.star = 0
   self.answer_record = {}
 end
 
--- DECOMPILER ERROR at PC11682: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.TacitTestMissionInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"star", "int"}
-, 
-[3] = {"answer_record", "map<int,int>"}
+TacitTestMissionInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"star", "int"},
+  [3] = {
+    "answer_record",
+    "map<int,int>"
+  }
 }
 _class("TacitTestComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.TacitTestComponentDataInfo = _ENV.TacitTestComponentDataInfo
--- DECOMPILER ERROR at PC11694: Confused about usage of register: R61 in 'UnsetPending'
+TacitTestComponentDataInfo = TacitTestComponentDataInfo
 
-;
-(_ENV.TacitTestComponentDataInfo).Constructor = function(self)
-  -- function num : 0_408
+function TacitTestComponentDataInfo:Constructor()
   self.m_pass_mission_info = {}
   self.last_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC11709: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.TacitTestComponentDataInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,TacitTestMissionInfo>"}
-, 
-[2] = {"last_refresh_time", "time"}
+TacitTestComponentDataInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,TacitTestMissionInfo>"
+  },
+  [2] = {
+    "last_refresh_time",
+    "time"
+  }
 }
 _class("TacitTestComponentInfo", ICampaignComponentInfo)
-_ENV.TacitTestComponentInfo = _ENV.TacitTestComponentInfo
--- DECOMPILER ERROR at PC11721: Confused about usage of register: R61 in 'UnsetPending'
+TacitTestComponentInfo = TacitTestComponentInfo
 
-;
-(_ENV.TacitTestComponentInfo).Constructor = function(self)
-  -- function num : 0_409
+function TacitTestComponentInfo:Constructor()
   self.m_pass_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC11731: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.TacitTestComponentInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,TacitTestMissionInfo>"}
+TacitTestComponentInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,TacitTestMissionInfo>"
+  }
 }
 _class("CompleteTacitTestMissionReq", ICampaignComRequest)
-_ENV.CompleteTacitTestMissionReq = _ENV.CompleteTacitTestMissionReq
--- DECOMPILER ERROR at PC11743: Confused about usage of register: R61 in 'UnsetPending'
+CompleteTacitTestMissionReq = CompleteTacitTestMissionReq
 
-;
-(_ENV.CompleteTacitTestMissionReq).Constructor = function(self)
-  -- function num : 0_410
+function CompleteTacitTestMissionReq:Constructor()
   self.mission_id = 0
   self.star = 0
 end
 
--- DECOMPILER ERROR at PC11748: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.CompleteTacitTestMissionReq).GetHandleCode = function(self)
-  -- function num : 0_411 , upvalues : _ENV
+function CompleteTacitTestMissionReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCompleteTacitTestMission
 end
 
--- DECOMPILER ERROR at PC11763: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.CompleteTacitTestMissionReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"star", "int"}
+CompleteTacitTestMissionReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"star", "int"}
 }
 _class("CompleteTacitTestMissionRep", ICampaignComResponse)
-_ENV.CompleteTacitTestMissionRep = _ENV.CompleteTacitTestMissionRep
--- DECOMPILER ERROR at PC11775: Confused about usage of register: R61 in 'UnsetPending'
+CompleteTacitTestMissionRep = CompleteTacitTestMissionRep
 
-;
-(_ENV.CompleteTacitTestMissionRep).Constructor = function(self)
-  -- function num : 0_412 , upvalues : _ENV
+function CompleteTacitTestMissionRep:Constructor()
   self.ret = 0
   self.reward = {}
   self.info = TacitTestMissionInfo:New()
 end
 
--- DECOMPILER ERROR at PC11795: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.CompleteTacitTestMissionRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"reward", "list<RoleAsset>"}
-, 
-[3] = {"info", "TacitTestMissionInfo"}
+CompleteTacitTestMissionRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "reward",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "info",
+    "TacitTestMissionInfo"
+  }
 }
 _class("UpdateTacitTestAnswerReq", ICampaignComRequest)
-_ENV.UpdateTacitTestAnswerReq = _ENV.UpdateTacitTestAnswerReq
--- DECOMPILER ERROR at PC11807: Confused about usage of register: R61 in 'UnsetPending'
+UpdateTacitTestAnswerReq = UpdateTacitTestAnswerReq
 
-;
-(_ENV.UpdateTacitTestAnswerReq).Constructor = function(self)
-  -- function num : 0_413
+function UpdateTacitTestAnswerReq:Constructor()
   self.mission_id = 0
   self.answer_record = {}
 end
 
--- DECOMPILER ERROR at PC11812: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.UpdateTacitTestAnswerReq).GetHandleCode = function(self)
-  -- function num : 0_414 , upvalues : _ENV
+function UpdateTacitTestAnswerReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleUpdateTacitTestAnswer
 end
 
--- DECOMPILER ERROR at PC11827: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.UpdateTacitTestAnswerReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"answer_record", "map<int,int>"}
+UpdateTacitTestAnswerReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "answer_record",
+    "map<int,int>"
+  }
 }
 _class("UpdateTacitTestAnswerRep", ICampaignComResponse)
-_ENV.UpdateTacitTestAnswerRep = _ENV.UpdateTacitTestAnswerRep
--- DECOMPILER ERROR at PC11839: Confused about usage of register: R61 in 'UnsetPending'
+UpdateTacitTestAnswerRep = UpdateTacitTestAnswerRep
 
-;
-(_ENV.UpdateTacitTestAnswerRep).Constructor = function(self)
-  -- function num : 0_415
+function UpdateTacitTestAnswerRep:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC11849: Confused about usage of register: R61 in 'UnsetPending'
-
-;
-(_ENV.UpdateTacitTestAnswerRep)._proto = {
-[1] = {"ret", "int"}
+UpdateTacitTestAnswerRep._proto = {
+  [1] = {"ret", "int"}
 }
 local LinePopStarComponentNotifyType = {LinePopStarMissionComponentNotifyType_InfoChanged = 1}
 _enum("LinePopStarComponentNotifyType", LinePopStarComponentNotifyType)
 _class("NotifyLinePopStarComponentInfoChanged", Object)
-_ENV.NotifyLinePopStarComponentInfoChanged = _ENV.NotifyLinePopStarComponentInfoChanged
--- DECOMPILER ERROR at PC11869: Confused about usage of register: R62 in 'UnsetPending'
+NotifyLinePopStarComponentInfoChanged = NotifyLinePopStarComponentInfoChanged
 
-;
-(_ENV.NotifyLinePopStarComponentInfoChanged).Constructor = function(self)
-  -- function num : 0_416
+function NotifyLinePopStarComponentInfoChanged:Constructor()
   self.m_update_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC11879: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.NotifyLinePopStarComponentInfoChanged)._proto = {
-[1] = {"m_update_mission_info", "map<int,cam_mission_info>"}
+NotifyLinePopStarComponentInfoChanged._proto = {
+  [1] = {
+    "m_update_mission_info",
+    "map<int,cam_mission_info>"
+  }
 }
 _class("LinePopStarFormationItem", Object)
-_ENV.LinePopStarFormationItem = _ENV.LinePopStarFormationItem
--- DECOMPILER ERROR at PC11891: Confused about usage of register: R62 in 'UnsetPending'
+LinePopStarFormationItem = LinePopStarFormationItem
 
-;
-(_ENV.LinePopStarFormationItem).Constructor = function(self)
-  -- function num : 0_417
+function LinePopStarFormationItem:Constructor()
   self.id = 0
   self.name = ""
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC11911: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.LinePopStarFormationItem)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"name", "string"}
-, 
-[3] = {"pet_list", "list<int64>"}
+LinePopStarFormationItem._proto = {
+  [1] = {"id", "int"},
+  [2] = {"name", "string"},
+  [3] = {
+    "pet_list",
+    "list<int64>"
+  }
 }
 _class("LinePopStarComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.LinePopStarComponentDataInfo = _ENV.LinePopStarComponentDataInfo
--- DECOMPILER ERROR at PC11923: Confused about usage of register: R62 in 'UnsetPending'
+LinePopStarComponentDataInfo = LinePopStarComponentDataInfo
 
-;
-(_ENV.LinePopStarComponentDataInfo).Constructor = function(self)
-  -- function num : 0_418
+function LinePopStarComponentDataInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_fight_mission = {}
   self.formation_pet_list = {}
   self.last_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC11948: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.LinePopStarComponentDataInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_fight_mission", "list<int>"}
-, 
-[3] = {"formation_pet_list", "list<LinePopStarFormationItem>"}
-, 
-[4] = {"last_refresh_time", "time"}
+LinePopStarComponentDataInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_fight_mission",
+    "list<int>"
+  },
+  [3] = {
+    "formation_pet_list",
+    "list<LinePopStarFormationItem>"
+  },
+  [4] = {
+    "last_refresh_time",
+    "time"
+  }
 }
 _class("LinePopStarComponentInfo", ICampaignComponentInfo)
-_ENV.LinePopStarComponentInfo = _ENV.LinePopStarComponentInfo
--- DECOMPILER ERROR at PC11960: Confused about usage of register: R62 in 'UnsetPending'
+LinePopStarComponentInfo = LinePopStarComponentInfo
 
-;
-(_ENV.LinePopStarComponentInfo).Constructor = function(self)
-  -- function num : 0_419
+function LinePopStarComponentInfo:Constructor()
   self.m_pass_mission_info = {}
   self.formation_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC11975: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.LinePopStarComponentInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"formation_pet_list", "list<LinePopStarFormationItem>"}
+LinePopStarComponentInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "formation_pet_list",
+    "list<LinePopStarFormationItem>"
+  }
 }
 _class("LinePopStarChangeFormationReq", ICampaignComRequest)
-_ENV.LinePopStarChangeFormationReq = _ENV.LinePopStarChangeFormationReq
--- DECOMPILER ERROR at PC11987: Confused about usage of register: R62 in 'UnsetPending'
+LinePopStarChangeFormationReq = LinePopStarChangeFormationReq
 
-;
-(_ENV.LinePopStarChangeFormationReq).Constructor = function(self)
-  -- function num : 0_420 , upvalues : _ENV
+function LinePopStarChangeFormationReq:Constructor()
   self.info = LinePopStarFormationItem:New()
 end
 
--- DECOMPILER ERROR at PC11997: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.LinePopStarChangeFormationReq)._proto = {
-[1] = {"info", "LinePopStarFormationItem"}
+LinePopStarChangeFormationReq._proto = {
+  [1] = {
+    "info",
+    "LinePopStarFormationItem"
+  }
 }
 _class("LinePopStarChangeFormationRep", ICampaignComResponse)
-_ENV.LinePopStarChangeFormationRep = _ENV.LinePopStarChangeFormationRep
--- DECOMPILER ERROR at PC12009: Confused about usage of register: R62 in 'UnsetPending'
+LinePopStarChangeFormationRep = LinePopStarChangeFormationRep
 
-;
-(_ENV.LinePopStarChangeFormationRep).Constructor = function(self)
-  -- function num : 0_421
+function LinePopStarChangeFormationRep:Constructor()
   self.m_result = 0
 end
 
--- DECOMPILER ERROR at PC12019: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.LinePopStarChangeFormationRep)._proto = {
-[1] = {"m_result", "int"}
+LinePopStarChangeFormationRep._proto = {
+  [1] = {"m_result", "int"}
 }
 _class("VoteComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.VoteComponentDataInfo = _ENV.VoteComponentDataInfo
--- DECOMPILER ERROR at PC12031: Confused about usage of register: R62 in 'UnsetPending'
+VoteComponentDataInfo = VoteComponentDataInfo
 
-;
-(_ENV.VoteComponentDataInfo).Constructor = function(self)
-  -- function num : 0_422
+function VoteComponentDataInfo:Constructor()
   self.pet2vote = {}
   self.init_item = false
 end
 
--- DECOMPILER ERROR at PC12046: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.VoteComponentDataInfo)._proto = {
-[1] = {"pet2vote", "map<int,int>"}
-, 
-[2] = {"init_item", "bool"}
+VoteComponentDataInfo._proto = {
+  [1] = {
+    "pet2vote",
+    "map<int,int>"
+  },
+  [2] = {"init_item", "bool"}
 }
 _class("VoteComponentInfo", ICampaignComponentInfo)
-_ENV.VoteComponentInfo = _ENV.VoteComponentInfo
--- DECOMPILER ERROR at PC12058: Confused about usage of register: R62 in 'UnsetPending'
+VoteComponentInfo = VoteComponentInfo
 
-;
-(_ENV.VoteComponentInfo).Constructor = function(self)
-  -- function num : 0_423
+function VoteComponentInfo:Constructor()
   self.pet2vote = {}
   self.zone_pet2vote = {}
 end
 
--- DECOMPILER ERROR at PC12073: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.VoteComponentInfo)._proto = {
-[1] = {"pet2vote", "map<int,int>"}
-, 
-[2] = {"zone_pet2vote", "map<int,int>"}
+VoteComponentInfo._proto = {
+  [1] = {
+    "pet2vote",
+    "map<int,int>"
+  },
+  [2] = {
+    "zone_pet2vote",
+    "map<int,int>"
+  }
 }
 _class("DoVoteReq", ICampaignComRequest)
-_ENV.DoVoteReq = _ENV.DoVoteReq
--- DECOMPILER ERROR at PC12085: Confused about usage of register: R62 in 'UnsetPending'
+DoVoteReq = DoVoteReq
 
-;
-(_ENV.DoVoteReq).Constructor = function(self)
-  -- function num : 0_424
+function DoVoteReq:Constructor()
   self.pet_id = 0
   self.num = 0
 end
 
--- DECOMPILER ERROR at PC12100: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.DoVoteReq)._proto = {
-[1] = {"pet_id", "int"}
-, 
-[2] = {"num", "int"}
+DoVoteReq._proto = {
+  [1] = {"pet_id", "int"},
+  [2] = {"num", "int"}
 }
 _class("DoVoteRep", ICampaignComResponse)
-_ENV.DoVoteRep = _ENV.DoVoteRep
--- DECOMPILER ERROR at PC12112: Confused about usage of register: R62 in 'UnsetPending'
+DoVoteRep = DoVoteRep
 
-;
-(_ENV.DoVoteRep).Constructor = function(self)
-  -- function num : 0_425
+function DoVoteRep:Constructor()
   self.ret = 0
   self.pet_num = 0
   self.zone_pet_num = 0
 end
 
--- DECOMPILER ERROR at PC12132: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.DoVoteRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"pet_num", "int"}
-, 
-[3] = {"zone_pet_num", "int"}
+DoVoteRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"pet_num", "int"},
+  [3] = {
+    "zone_pet_num",
+    "int"
+  }
 }
 _class("GetZonePetVoteReq", ICampaignComRequest)
-_ENV.GetZonePetVoteReq = _ENV.GetZonePetVoteReq
--- DECOMPILER ERROR at PC12144: Confused about usage of register: R62 in 'UnsetPending'
+GetZonePetVoteReq = GetZonePetVoteReq
 
-;
-(_ENV.GetZonePetVoteReq).Constructor = function(self)
-  -- function num : 0_426
+function GetZonePetVoteReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC12148: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.GetZonePetVoteReq)._proto = {}
+GetZonePetVoteReq._proto = {}
 _class("GetZonePetVoteRep", ICampaignComResponse)
-_ENV.GetZonePetVoteRep = _ENV.GetZonePetVoteRep
--- DECOMPILER ERROR at PC12160: Confused about usage of register: R62 in 'UnsetPending'
+GetZonePetVoteRep = GetZonePetVoteRep
 
-;
-(_ENV.GetZonePetVoteRep).Constructor = function(self)
-  -- function num : 0_427
+function GetZonePetVoteRep:Constructor()
   self.ret = 0
   self.zone_pet2vote = {}
 end
 
--- DECOMPILER ERROR at PC12175: Confused about usage of register: R62 in 'UnsetPending'
-
-;
-(_ENV.GetZonePetVoteRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"zone_pet2vote", "map<int,int>"}
+GetZonePetVoteRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "zone_pet2vote",
+    "map<int,int>"
+  }
 }
-local ASheepMissionType = {ASheepMissionType_None = 0, ASheepMissionType_Common = 1, ASheepMissionType_Challenge = 2}
+local ASheepMissionType = {
+  ASheepMissionType_None = 0,
+  ASheepMissionType_Common = 1,
+  ASheepMissionType_Challenge = 2
+}
 _enum("ASheepMissionType", ASheepMissionType)
 _class("ASheepInfo", Object)
-_ENV.ASheepInfo = _ENV.ASheepInfo
--- DECOMPILER ERROR at PC12200: Confused about usage of register: R63 in 'UnsetPending'
+ASheepInfo = ASheepInfo
 
-;
-(_ENV.ASheepInfo).Constructor = function(self)
-  -- function num : 0_428
+function ASheepInfo:Constructor()
   self.m_pass_mission_info = {}
   self.m_received = {}
   self.m_max_score = 0
 end
 
--- DECOMPILER ERROR at PC12220: Confused about usage of register: R63 in 'UnsetPending'
-
-;
-(_ENV.ASheepInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_received", "list<int>"}
-, 
-[3] = {"m_max_score", "int"}
+ASheepInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {"m_received", "list<int>"},
+  [3] = {
+    "m_max_score",
+    "int"
+  }
 }
 _class("ASheepComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.ASheepComponentDataInfo = _ENV.ASheepComponentDataInfo
--- DECOMPILER ERROR at PC12232: Confused about usage of register: R63 in 'UnsetPending'
+ASheepComponentDataInfo = ASheepComponentDataInfo
 
-;
-(_ENV.ASheepComponentDataInfo).Constructor = function(self)
-  -- function num : 0_429 , upvalues : _ENV
+function ASheepComponentDataInfo:Constructor()
   self.m_info = ASheepInfo:New()
 end
 
--- DECOMPILER ERROR at PC12242: Confused about usage of register: R63 in 'UnsetPending'
-
-;
-(_ENV.ASheepComponentDataInfo)._proto = {
-[1] = {"m_info", "ASheepInfo"}
+ASheepComponentDataInfo._proto = {
+  [1] = {"m_info", "ASheepInfo"}
 }
 _class("ASheepComponentInfo", ICampaignComponentInfo)
-_ENV.ASheepComponentInfo = _ENV.ASheepComponentInfo
--- DECOMPILER ERROR at PC12254: Confused about usage of register: R63 in 'UnsetPending'
+ASheepComponentInfo = ASheepComponentInfo
 
-;
-(_ENV.ASheepComponentInfo).Constructor = function(self)
-  -- function num : 0_430 , upvalues : _ENV
+function ASheepComponentInfo:Constructor()
   self.m_info = ASheepInfo:New()
 end
 
--- DECOMPILER ERROR at PC12264: Confused about usage of register: R63 in 'UnsetPending'
-
-;
-(_ENV.ASheepComponentInfo)._proto = {
-[1] = {"m_info", "ASheepInfo"}
+ASheepComponentInfo._proto = {
+  [1] = {"m_info", "ASheepInfo"}
 }
 _class("CompleteASheepMissionReq", ICampaignComRequest)
-_ENV.CompleteASheepMissionReq = _ENV.CompleteASheepMissionReq
--- DECOMPILER ERROR at PC12276: Confused about usage of register: R63 in 'UnsetPending'
+CompleteASheepMissionReq = CompleteASheepMissionReq
 
-;
-(_ENV.CompleteASheepMissionReq).Constructor = function(self)
-  -- function num : 0_431
+function CompleteASheepMissionReq:Constructor()
   self.mission_id = 0
   self.score = 0
 end
 
--- DECOMPILER ERROR at PC12281: Confused about usage of register: R63 in 'UnsetPending'
-
-;
-(_ENV.CompleteASheepMissionReq).GetHandleCode = function(self)
-  -- function num : 0_432 , upvalues : _ENV
+function CompleteASheepMissionReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCompleteASheepMission
 end
 
--- DECOMPILER ERROR at PC12296: Confused about usage of register: R63 in 'UnsetPending'
-
-;
-(_ENV.CompleteASheepMissionReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"score", "int"}
+CompleteASheepMissionReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"score", "int"}
 }
 _class("CompleteASheepMissionRep", ICampaignComResponse)
-_ENV.CompleteASheepMissionRep = _ENV.CompleteASheepMissionRep
--- DECOMPILER ERROR at PC12308: Confused about usage of register: R63 in 'UnsetPending'
+CompleteASheepMissionRep = CompleteASheepMissionRep
 
-;
-(_ENV.CompleteASheepMissionRep).Constructor = function(self)
-  -- function num : 0_433 , upvalues : _ENV
+function CompleteASheepMissionRep:Constructor()
   self.ret = 0
   self.reward = {}
   self.m_info = ASheepInfo:New()
 end
 
--- DECOMPILER ERROR at PC12328: Confused about usage of register: R63 in 'UnsetPending'
-
-;
-(_ENV.CompleteASheepMissionRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"reward", "list<RoleAsset>"}
-, 
-[3] = {"m_info", "ASheepInfo"}
+CompleteASheepMissionRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "reward",
+    "list<RoleAsset>"
+  },
+  [3] = {"m_info", "ASheepInfo"}
 }
 local RandomLotteryComponentNotifyType = {RandomLotteryComponentNotify_Clear = 1}
 _enum("RandomLotteryComponentNotifyType", RandomLotteryComponentNotifyType)
 _class("CRandomLotteryInfo", Object)
-_ENV.CRandomLotteryInfo = _ENV.CRandomLotteryInfo
--- DECOMPILER ERROR at PC12348: Confused about usage of register: R64 in 'UnsetPending'
+CRandomLotteryInfo = CRandomLotteryInfo
 
-;
-(_ENV.CRandomLotteryInfo).Constructor = function(self)
-  -- function num : 0_434
+function CRandomLotteryInfo:Constructor()
   self.draw_cfg_id = 0
   self.random_type = 0
   self.pet_cfg_id = 0
@@ -8425,215 +7360,190 @@ _ENV.CRandomLotteryInfo = _ENV.CRandomLotteryInfo
   self.m_rewards = {}
 end
 
--- DECOMPILER ERROR at PC12378: Confused about usage of register: R64 in 'UnsetPending'
-
-;
-(_ENV.CRandomLotteryInfo)._proto = {
-[1] = {"draw_cfg_id", "int"}
-, 
-[2] = {"random_type", "int"}
-, 
-[3] = {"pet_cfg_id", "int"}
-, 
-[4] = {"is_get", "bool"}
-, 
-[5] = {"m_rewards", "list<RoleAsset>"}
+CRandomLotteryInfo._proto = {
+  [1] = {
+    "draw_cfg_id",
+    "int"
+  },
+  [2] = {
+    "random_type",
+    "int"
+  },
+  [3] = {"pet_cfg_id", "int"},
+  [4] = {"is_get", "bool"},
+  [5] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CRandomLotteryComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CRandomLotteryComponentDataInfo = _ENV.CRandomLotteryComponentDataInfo
--- DECOMPILER ERROR at PC12390: Confused about usage of register: R64 in 'UnsetPending'
+CRandomLotteryComponentDataInfo = CRandomLotteryComponentDataInfo
 
-;
-(_ENV.CRandomLotteryComponentDataInfo).Constructor = function(self)
-  -- function num : 0_435
+function CRandomLotteryComponentDataInfo:Constructor()
   self.m_one_count = 0
   self.m_multi_count = 0
   self.m_draw = {}
   self.draw_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC12415: Confused about usage of register: R64 in 'UnsetPending'
-
-;
-(_ENV.CRandomLotteryComponentDataInfo)._proto = {
-[1] = {"m_one_count", "int"}
-, 
-[2] = {"m_multi_count", "int"}
-, 
-[3] = {"m_draw", "list<CRandomLotteryInfo>"}
-, 
-[4] = {"draw_refresh_time", "time"}
+CRandomLotteryComponentDataInfo._proto = {
+  [1] = {
+    "m_one_count",
+    "int"
+  },
+  [2] = {
+    "m_multi_count",
+    "int"
+  },
+  [3] = {
+    "m_draw",
+    "list<CRandomLotteryInfo>"
+  },
+  [4] = {
+    "draw_refresh_time",
+    "time"
+  }
 }
 _class("RandomLotteryComponentInfo", ICampaignComponentInfo)
-_ENV.RandomLotteryComponentInfo = _ENV.RandomLotteryComponentInfo
--- DECOMPILER ERROR at PC12427: Confused about usage of register: R64 in 'UnsetPending'
+RandomLotteryComponentInfo = RandomLotteryComponentInfo
 
-;
-(_ENV.RandomLotteryComponentInfo).Constructor = function(self)
-  -- function num : 0_436
+function RandomLotteryComponentInfo:Constructor()
   self.m_one_count = 0
   self.m_multi_count = 0
   self.m_draw = {}
   self.draw_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC12452: Confused about usage of register: R64 in 'UnsetPending'
-
-;
-(_ENV.RandomLotteryComponentInfo)._proto = {
-[1] = {"m_one_count", "int"}
-, 
-[2] = {"m_multi_count", "int"}
-, 
-[3] = {"m_draw", "list<CRandomLotteryInfo>"}
-, 
-[4] = {"draw_refresh_time", "time"}
+RandomLotteryComponentInfo._proto = {
+  [1] = {
+    "m_one_count",
+    "int"
+  },
+  [2] = {
+    "m_multi_count",
+    "int"
+  },
+  [3] = {
+    "m_draw",
+    "list<CRandomLotteryInfo>"
+  },
+  [4] = {
+    "draw_refresh_time",
+    "time"
+  }
 }
 _class("RandomLotteryComponentCostReq", ICampaignComRequest)
-_ENV.RandomLotteryComponentCostReq = _ENV.RandomLotteryComponentCostReq
--- DECOMPILER ERROR at PC12464: Confused about usage of register: R64 in 'UnsetPending'
+RandomLotteryComponentCostReq = RandomLotteryComponentCostReq
 
-;
-(_ENV.RandomLotteryComponentCostReq).Constructor = function(self)
-  -- function num : 0_437
+function RandomLotteryComponentCostReq:Constructor()
   self.cfg_id = 0
   self.is_one = true
 end
 
--- DECOMPILER ERROR at PC12479: Confused about usage of register: R64 in 'UnsetPending'
-
-;
-(_ENV.RandomLotteryComponentCostReq)._proto = {
-[1] = {"cfg_id", "int"}
-, 
-[2] = {"is_one", "bool"}
+RandomLotteryComponentCostReq._proto = {
+  [1] = {"cfg_id", "int"},
+  [2] = {"is_one", "bool"}
 }
 _class("RandomLotteryComponentCostRep", ICampaignComResponse)
-_ENV.RandomLotteryComponentCostRep = _ENV.RandomLotteryComponentCostRep
--- DECOMPILER ERROR at PC12491: Confused about usage of register: R64 in 'UnsetPending'
+RandomLotteryComponentCostRep = RandomLotteryComponentCostRep
 
-;
-(_ENV.RandomLotteryComponentCostRep).Constructor = function(self)
-  -- function num : 0_438
+function RandomLotteryComponentCostRep:Constructor()
   self.m_rewards = {}
   self.m_one_count = 0
   self.m_multi_count = 0
   self.m_fixed_reward = {}
 end
 
--- DECOMPILER ERROR at PC12516: Confused about usage of register: R64 in 'UnsetPending'
-
-;
-(_ENV.RandomLotteryComponentCostRep)._proto = {
-[1] = {"m_rewards", "list<RoleAsset>"}
-, 
-[2] = {"m_one_count", "int"}
-, 
-[3] = {"m_multi_count", "int"}
-, 
-[4] = {"m_fixed_reward", "list<RoleAsset>"}
+RandomLotteryComponentCostRep._proto = {
+  [1] = {
+    "m_rewards",
+    "list<RoleAsset>"
+  },
+  [2] = {
+    "m_one_count",
+    "int"
+  },
+  [3] = {
+    "m_multi_count",
+    "int"
+  },
+  [4] = {
+    "m_fixed_reward",
+    "list<RoleAsset>"
+  }
 }
 _class("NotifyRandomLotteryComponentClear", Object)
-_ENV.NotifyRandomLotteryComponentClear = _ENV.NotifyRandomLotteryComponentClear
--- DECOMPILER ERROR at PC12528: Confused about usage of register: R64 in 'UnsetPending'
+NotifyRandomLotteryComponentClear = NotifyRandomLotteryComponentClear
 
-;
-(_ENV.NotifyRandomLotteryComponentClear).Constructor = function(self)
-  -- function num : 0_439
+function NotifyRandomLotteryComponentClear:Constructor()
   self.draw_refresh_time = 0
 end
 
--- DECOMPILER ERROR at PC12538: Confused about usage of register: R64 in 'UnsetPending'
-
-;
-(_ENV.NotifyRandomLotteryComponentClear)._proto = {
-[1] = {"draw_refresh_time", "time"}
+NotifyRandomLotteryComponentClear._proto = {
+  [1] = {
+    "draw_refresh_time",
+    "time"
+  }
 }
-local BusinessProType = {BPT_Command = 0, BPT_Sail = 1, BPT_Fix = 2, BPT_Max = 3}
+local BusinessProType = {
+  BPT_Command = 0,
+  BPT_Sail = 1,
+  BPT_Fix = 2,
+  BPT_Max = 3
+}
 _enum("BusinessProType", BusinessProType)
 _class("BusinessHarborInfo", Object)
-_ENV.BusinessHarborInfo = _ENV.BusinessHarborInfo
--- DECOMPILER ERROR at PC12565: Confused about usage of register: R65 in 'UnsetPending'
+BusinessHarborInfo = BusinessHarborInfo
 
-;
-(_ENV.BusinessHarborInfo).Constructor = function(self)
-  -- function num : 0_440
+function BusinessHarborInfo:Constructor()
   self.lv = 0
   self.cdEnd = 0
 end
 
--- DECOMPILER ERROR at PC12580: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessHarborInfo)._proto = {
-[1] = {"lv", "int"}
-, 
-[2] = {"cdEnd", "time"}
+BusinessHarborInfo._proto = {
+  [1] = {"lv", "int"},
+  [2] = {"cdEnd", "time"}
 }
 _class("BusinessShipInfo", Object)
-_ENV.BusinessShipInfo = _ENV.BusinessShipInfo
--- DECOMPILER ERROR at PC12592: Confused about usage of register: R65 in 'UnsetPending'
+BusinessShipInfo = BusinessShipInfo
 
-;
-(_ENV.BusinessShipInfo).Constructor = function(self)
-  -- function num : 0_441
+function BusinessShipInfo:Constructor()
   self.lv = 0
   self.seamans = {}
 end
 
--- DECOMPILER ERROR at PC12607: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessShipInfo)._proto = {
-[1] = {"lv", "int"}
-, 
-[2] = {"seamans", "list<int>"}
+BusinessShipInfo._proto = {
+  [1] = {"lv", "int"},
+  [2] = {"seamans", "list<int>"}
 }
 _class("BusinessSeamanInfo", Object)
-_ENV.BusinessSeamanInfo = _ENV.BusinessSeamanInfo
--- DECOMPILER ERROR at PC12619: Confused about usage of register: R65 in 'UnsetPending'
+BusinessSeamanInfo = BusinessSeamanInfo
 
-;
-(_ENV.BusinessSeamanInfo).Constructor = function(self)
-  -- function num : 0_442
+function BusinessSeamanInfo:Constructor()
   self.hire_time = 0
   self.work_id = 0
 end
 
--- DECOMPILER ERROR at PC12634: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessSeamanInfo)._proto = {
-[1] = {"hire_time", "time"}
-, 
-[2] = {"work_id", "int"}
+BusinessSeamanInfo._proto = {
+  [1] = {"hire_time", "time"},
+  [2] = {"work_id", "int"}
 }
 _class("BusinessGEInfo", Object)
-_ENV.BusinessGEInfo = _ENV.BusinessGEInfo
--- DECOMPILER ERROR at PC12646: Confused about usage of register: R65 in 'UnsetPending'
+BusinessGEInfo = BusinessGEInfo
 
-;
-(_ENV.BusinessGEInfo).Constructor = function(self)
-  -- function num : 0_443
+function BusinessGEInfo:Constructor()
   self.first_time = 0
   self.num = 0
 end
 
--- DECOMPILER ERROR at PC12661: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessGEInfo)._proto = {
-[1] = {"first_time", "time"}
-, 
-[2] = {"num", "int"}
+BusinessGEInfo._proto = {
+  [1] = {"first_time", "time"},
+  [2] = {"num", "int"}
 }
 _class("BusinessComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.BusinessComponentDataInfo = _ENV.BusinessComponentDataInfo
--- DECOMPILER ERROR at PC12673: Confused about usage of register: R65 in 'UnsetPending'
+BusinessComponentDataInfo = BusinessComponentDataInfo
 
-;
-(_ENV.BusinessComponentDataInfo).Constructor = function(self)
-  -- function num : 0_444
+function BusinessComponentDataInfo:Constructor()
   self.harborInfo = {}
   self.shipInfo = {}
   self.globalInfo = {}
@@ -8646,37 +7556,40 @@ _ENV.BusinessComponentDataInfo = _ENV.BusinessComponentDataInfo
   self.harborId = 0
 end
 
--- DECOMPILER ERROR at PC12728: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessComponentDataInfo)._proto = {
-[1] = {"harborInfo", "map<int,BusinessHarborInfo>"}
-, 
-[2] = {"shipInfo", "map<int,BusinessShipInfo>"}
-, 
-[3] = {"globalInfo", "map<int,BusinessGEInfo>"}
-, 
-[4] = {"eventInfo", "map<int,BusinessGEInfo>"}
-, 
-[5] = {"seamanInfo", "map<int,BusinessSeamanInfo>"}
-, 
-[6] = {"globalIdCom", "list<int>"}
-, 
-[7] = {"globalId", "int"}
-, 
-[8] = {"globalNum", "int"}
-, 
-[9] = {"eventIdCom", "list<int>"}
-, 
-[10] = {"harborId", "int"}
+BusinessComponentDataInfo._proto = {
+  [1] = {
+    "harborInfo",
+    "map<int,BusinessHarborInfo>"
+  },
+  [2] = {
+    "shipInfo",
+    "map<int,BusinessShipInfo>"
+  },
+  [3] = {
+    "globalInfo",
+    "map<int,BusinessGEInfo>"
+  },
+  [4] = {
+    "eventInfo",
+    "map<int,BusinessGEInfo>"
+  },
+  [5] = {
+    "seamanInfo",
+    "map<int,BusinessSeamanInfo>"
+  },
+  [6] = {
+    "globalIdCom",
+    "list<int>"
+  },
+  [7] = {"globalId", "int"},
+  [8] = {"globalNum", "int"},
+  [9] = {"eventIdCom", "list<int>"},
+  [10] = {"harborId", "int"}
 }
 _class("BusinessComponentInfo", ICampaignComponentInfo)
-_ENV.BusinessComponentInfo = _ENV.BusinessComponentInfo
--- DECOMPILER ERROR at PC12740: Confused about usage of register: R65 in 'UnsetPending'
+BusinessComponentInfo = BusinessComponentInfo
 
-;
-(_ENV.BusinessComponentInfo).Constructor = function(self)
-  -- function num : 0_445
+function BusinessComponentInfo:Constructor()
   self.harborInfo = {}
   self.shipInfo = {}
   self.globalInfo = {}
@@ -8688,216 +7601,171 @@ _ENV.BusinessComponentInfo = _ENV.BusinessComponentInfo
   self.harborId = 0
 end
 
--- DECOMPILER ERROR at PC12790: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessComponentInfo)._proto = {
-[1] = {"harborInfo", "map<int,BusinessHarborInfo>"}
-, 
-[2] = {"shipInfo", "map<int,BusinessShipInfo>"}
-, 
-[3] = {"globalInfo", "map<int,BusinessGEInfo>"}
-, 
-[4] = {"eventInfo", "map<int,BusinessGEInfo>"}
-, 
-[5] = {"seamanInfo", "map<int,BusinessSeamanInfo>"}
-, 
-[7] = {"globalId", "int"}
-, 
-[8] = {"globalNum", "int"}
-, 
-[9] = {"eventIdCom", "list<int>"}
-, 
-[10] = {"harborId", "int"}
+BusinessComponentInfo._proto = {
+  [1] = {
+    "harborInfo",
+    "map<int,BusinessHarborInfo>"
+  },
+  [2] = {
+    "shipInfo",
+    "map<int,BusinessShipInfo>"
+  },
+  [3] = {
+    "globalInfo",
+    "map<int,BusinessGEInfo>"
+  },
+  [4] = {
+    "eventInfo",
+    "map<int,BusinessGEInfo>"
+  },
+  [5] = {
+    "seamanInfo",
+    "map<int,BusinessSeamanInfo>"
+  },
+  [7] = {"globalId", "int"},
+  [8] = {"globalNum", "int"},
+  [9] = {"eventIdCom", "list<int>"},
+  [10] = {"harborId", "int"}
 }
 _class("BusinessSelectReq", ICampaignComRequest)
-_ENV.BusinessSelectReq = _ENV.BusinessSelectReq
--- DECOMPILER ERROR at PC12802: Confused about usage of register: R65 in 'UnsetPending'
+BusinessSelectReq = BusinessSelectReq
 
-;
-(_ENV.BusinessSelectReq).Constructor = function(self)
-  -- function num : 0_446
+function BusinessSelectReq:Constructor()
   self.harbor_id = 0
 end
 
--- DECOMPILER ERROR at PC12812: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessSelectReq)._proto = {
-[1] = {"harbor_id", "int"}
+BusinessSelectReq._proto = {
+  [1] = {"harbor_id", "int"}
 }
 _class("BusinessSelectResult", ICampaignComResponse)
-_ENV.BusinessSelectResult = _ENV.BusinessSelectResult
--- DECOMPILER ERROR at PC12824: Confused about usage of register: R65 in 'UnsetPending'
+BusinessSelectResult = BusinessSelectResult
 
-;
-(_ENV.BusinessSelectResult).Constructor = function(self)
-  -- function num : 0_447
+function BusinessSelectResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC12834: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessSelectResult)._proto = {
-[1] = {"ret", "int"}
+BusinessSelectResult._proto = {
+  [1] = {"ret", "int"}
 }
 _class("BusinessHarborReq", ICampaignComRequest)
-_ENV.BusinessHarborReq = _ENV.BusinessHarborReq
--- DECOMPILER ERROR at PC12846: Confused about usage of register: R65 in 'UnsetPending'
+BusinessHarborReq = BusinessHarborReq
 
-;
-(_ENV.BusinessHarborReq).Constructor = function(self)
-  -- function num : 0_448
+function BusinessHarborReq:Constructor()
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC12856: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessHarborReq)._proto = {
-[1] = {"cfg_id", "int"}
+BusinessHarborReq._proto = {
+  [1] = {"cfg_id", "int"}
 }
 _class("BusinessHarborResult", ICampaignComResponse)
-_ENV.BusinessHarborResult = _ENV.BusinessHarborResult
--- DECOMPILER ERROR at PC12868: Confused about usage of register: R65 in 'UnsetPending'
+BusinessHarborResult = BusinessHarborResult
 
-;
-(_ENV.BusinessHarborResult).Constructor = function(self)
-  -- function num : 0_449
+function BusinessHarborResult:Constructor()
   self.ret = 0
   self.info = {}
 end
 
--- DECOMPILER ERROR at PC12883: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessHarborResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "map<int,BusinessHarborInfo>"}
+BusinessHarborResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "map<int,BusinessHarborInfo>"
+  }
 }
 _class("BusinessShipReq", ICampaignComRequest)
-_ENV.BusinessShipReq = _ENV.BusinessShipReq
--- DECOMPILER ERROR at PC12895: Confused about usage of register: R65 in 'UnsetPending'
+BusinessShipReq = BusinessShipReq
 
-;
-(_ENV.BusinessShipReq).Constructor = function(self)
-  -- function num : 0_450
+function BusinessShipReq:Constructor()
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC12905: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessShipReq)._proto = {
-[1] = {"cfg_id", "int"}
+BusinessShipReq._proto = {
+  [1] = {"cfg_id", "int"}
 }
 _class("BusinessShipResult", ICampaignComResponse)
-_ENV.BusinessShipResult = _ENV.BusinessShipResult
--- DECOMPILER ERROR at PC12917: Confused about usage of register: R65 in 'UnsetPending'
+BusinessShipResult = BusinessShipResult
 
-;
-(_ENV.BusinessShipResult).Constructor = function(self)
-  -- function num : 0_451
+function BusinessShipResult:Constructor()
   self.ret = 0
   self.info = {}
 end
 
--- DECOMPILER ERROR at PC12932: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessShipResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "map<int,BusinessShipInfo>"}
+BusinessShipResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "map<int,BusinessShipInfo>"
+  }
 }
 _class("BusinessHireSeamanReq", ICampaignComRequest)
-_ENV.BusinessHireSeamanReq = _ENV.BusinessHireSeamanReq
--- DECOMPILER ERROR at PC12944: Confused about usage of register: R65 in 'UnsetPending'
+BusinessHireSeamanReq = BusinessHireSeamanReq
 
-;
-(_ENV.BusinessHireSeamanReq).Constructor = function(self)
-  -- function num : 0_452
+function BusinessHireSeamanReq:Constructor()
   self.cfg_id_harbor = 0
   self.cfg_id_seaman = 0
 end
 
--- DECOMPILER ERROR at PC12959: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessHireSeamanReq)._proto = {
-[1] = {"cfg_id_harbor", "int"}
-, 
-[2] = {"cfg_id_seaman", "int"}
+BusinessHireSeamanReq._proto = {
+  [1] = {
+    "cfg_id_harbor",
+    "int"
+  },
+  [2] = {
+    "cfg_id_seaman",
+    "int"
+  }
 }
 _class("BusinessHireSeamanResult", ICampaignComResponse)
-_ENV.BusinessHireSeamanResult = _ENV.BusinessHireSeamanResult
--- DECOMPILER ERROR at PC12971: Confused about usage of register: R65 in 'UnsetPending'
+BusinessHireSeamanResult = BusinessHireSeamanResult
 
-;
-(_ENV.BusinessHireSeamanResult).Constructor = function(self)
-  -- function num : 0_453
+function BusinessHireSeamanResult:Constructor()
   self.ret = 0
   self.info = {}
 end
 
--- DECOMPILER ERROR at PC12986: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessHireSeamanResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "map<int,BusinessSeamanInfo>"}
+BusinessHireSeamanResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "map<int,BusinessSeamanInfo>"
+  }
 }
 _class("BusinessWorkSeamanReq", ICampaignComRequest)
-_ENV.BusinessWorkSeamanReq = _ENV.BusinessWorkSeamanReq
--- DECOMPILER ERROR at PC12998: Confused about usage of register: R65 in 'UnsetPending'
+BusinessWorkSeamanReq = BusinessWorkSeamanReq
 
-;
-(_ENV.BusinessWorkSeamanReq).Constructor = function(self)
-  -- function num : 0_454
+function BusinessWorkSeamanReq:Constructor()
   self.work_id = 0
   self.seamans = {}
 end
 
--- DECOMPILER ERROR at PC13013: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessWorkSeamanReq)._proto = {
-[1] = {"work_id", "int"}
-, 
-[2] = {"seamans", "list<int>"}
+BusinessWorkSeamanReq._proto = {
+  [1] = {"work_id", "int"},
+  [2] = {"seamans", "list<int>"}
 }
 _class("BusinessWorkSeamanResult", ICampaignComResponse)
-_ENV.BusinessWorkSeamanResult = _ENV.BusinessWorkSeamanResult
--- DECOMPILER ERROR at PC13025: Confused about usage of register: R65 in 'UnsetPending'
+BusinessWorkSeamanResult = BusinessWorkSeamanResult
 
-;
-(_ENV.BusinessWorkSeamanResult).Constructor = function(self)
-  -- function num : 0_455
+function BusinessWorkSeamanResult:Constructor()
   self.ret = 0
   self.shipInfo = {}
   self.seamanInfo = {}
 end
 
--- DECOMPILER ERROR at PC13045: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessWorkSeamanResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"shipInfo", "map<int,BusinessShipInfo>"}
-, 
-[3] = {"seamanInfo", "map<int,BusinessSeamanInfo>"}
+BusinessWorkSeamanResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "shipInfo",
+    "map<int,BusinessShipInfo>"
+  },
+  [3] = {
+    "seamanInfo",
+    "map<int,BusinessSeamanInfo>"
+  }
 }
 _class("BusinessSailingReq", ICampaignComRequest)
-_ENV.BusinessSailingReq = _ENV.BusinessSailingReq
--- DECOMPILER ERROR at PC13057: Confused about usage of register: R65 in 'UnsetPending'
+BusinessSailingReq = BusinessSailingReq
 
-;
-(_ENV.BusinessSailingReq).Constructor = function(self)
-  -- function num : 0_456
+function BusinessSailingReq:Constructor()
   self.harbor_id = 0
   self.event_ids = {}
   self.event_op = {}
@@ -8905,27 +7773,20 @@ _ENV.BusinessSailingReq = _ENV.BusinessSailingReq
   self.cd_time = 0
 end
 
--- DECOMPILER ERROR at PC13087: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessSailingReq)._proto = {
-[1] = {"harbor_id", "int"}
-, 
-[2] = {"event_ids", "list<int>"}
-, 
-[3] = {"event_op", "list<map<int,bool>>"}
-, 
-[4] = {"income", "int"}
-, 
-[5] = {"cd_time", "int"}
+BusinessSailingReq._proto = {
+  [1] = {"harbor_id", "int"},
+  [2] = {"event_ids", "list<int>"},
+  [3] = {
+    "event_op",
+    "list<map<int,bool>>"
+  },
+  [4] = {"income", "int"},
+  [5] = {"cd_time", "int"}
 }
 _class("BusinessSailingResult", ICampaignComResponse)
-_ENV.BusinessSailingResult = _ENV.BusinessSailingResult
--- DECOMPILER ERROR at PC13099: Confused about usage of register: R65 in 'UnsetPending'
+BusinessSailingResult = BusinessSailingResult
 
-;
-(_ENV.BusinessSailingResult).Constructor = function(self)
-  -- function num : 0_457
+function BusinessSailingResult:Constructor()
   self.ret = 0
   self.harborInfo = {}
   self.globalInfo = {}
@@ -8937,139 +7798,113 @@ _ENV.BusinessSailingResult = _ENV.BusinessSailingResult
   self.cd_time = 0
 end
 
--- DECOMPILER ERROR at PC13149: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.BusinessSailingResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"harborInfo", "map<int,BusinessHarborInfo>"}
-, 
-[3] = {"globalInfo", "map<int,BusinessGEInfo>"}
-, 
-[4] = {"eventInfo", "map<int,BusinessGEInfo>"}
-, 
-[5] = {"globalId", "int"}
-, 
-[6] = {"globalNum", "int"}
-, 
-[7] = {"eventIdCom", "list<int>"}
-, 
-[8] = {"income", "int"}
-, 
-[9] = {"cd_time", "int"}
+BusinessSailingResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "harborInfo",
+    "map<int,BusinessHarborInfo>"
+  },
+  [3] = {
+    "globalInfo",
+    "map<int,BusinessGEInfo>"
+  },
+  [4] = {
+    "eventInfo",
+    "map<int,BusinessGEInfo>"
+  },
+  [5] = {"globalId", "int"},
+  [6] = {"globalNum", "int"},
+  [7] = {"eventIdCom", "list<int>"},
+  [8] = {"income", "int"},
+  [9] = {"cd_time", "int"}
 }
 _class("PersonProgressProgressReq", ICampaignComRequest)
-_ENV.PersonProgressProgressReq = _ENV.PersonProgressProgressReq
--- DECOMPILER ERROR at PC13161: Confused about usage of register: R65 in 'UnsetPending'
+PersonProgressProgressReq = PersonProgressProgressReq
 
-;
-(_ENV.PersonProgressProgressReq).Constructor = function(self)
-  -- function num : 0_458
+function PersonProgressProgressReq:Constructor()
   self.m_progress = 0
 end
 
--- DECOMPILER ERROR at PC13171: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.PersonProgressProgressReq)._proto = {
-[1] = {"m_progress", "int"}
+PersonProgressProgressReq._proto = {
+  [1] = {"m_progress", "int"}
 }
 _class("PersonProgressProgressResult", ICampaignComResponse)
-_ENV.PersonProgressProgressResult = _ENV.PersonProgressProgressResult
--- DECOMPILER ERROR at PC13183: Confused about usage of register: R65 in 'UnsetPending'
+PersonProgressProgressResult = PersonProgressProgressResult
 
-;
-(_ENV.PersonProgressProgressResult).Constructor = function(self)
-  -- function num : 0_459
+function PersonProgressProgressResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC13193: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.PersonProgressProgressResult)._proto = {
-[1] = {"ret", "int"}
+PersonProgressProgressResult._proto = {
+  [1] = {"ret", "int"}
 }
 _class("RandomLotteryComponentDrawReq", ICampaignComRequest)
-_ENV.RandomLotteryComponentDrawReq = _ENV.RandomLotteryComponentDrawReq
--- DECOMPILER ERROR at PC13205: Confused about usage of register: R65 in 'UnsetPending'
+RandomLotteryComponentDrawReq = RandomLotteryComponentDrawReq
 
-;
-(_ENV.RandomLotteryComponentDrawReq).Constructor = function(self)
-  -- function num : 0_460
+function RandomLotteryComponentDrawReq:Constructor()
   self.cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC13215: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.RandomLotteryComponentDrawReq)._proto = {
-[1] = {"cfg_id", "int"}
+RandomLotteryComponentDrawReq._proto = {
+  [1] = {"cfg_id", "int"}
 }
 _class("RandomLotteryComponentDrawRep", ICampaignComResponse)
-_ENV.RandomLotteryComponentDrawRep = _ENV.RandomLotteryComponentDrawRep
--- DECOMPILER ERROR at PC13227: Confused about usage of register: R65 in 'UnsetPending'
+RandomLotteryComponentDrawRep = RandomLotteryComponentDrawRep
 
-;
-(_ENV.RandomLotteryComponentDrawRep).Constructor = function(self)
-  -- function num : 0_461 , upvalues : _ENV
+function RandomLotteryComponentDrawRep:Constructor()
   self.m_draw = CRandomLotteryInfo:New()
   self.m_one_count = 0
   self.m_multi_count = 0
 end
 
--- DECOMPILER ERROR at PC13247: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.RandomLotteryComponentDrawRep)._proto = {
-[1] = {"m_draw", "CRandomLotteryInfo"}
-, 
-[2] = {"m_one_count", "int"}
-, 
-[3] = {"m_multi_count", "int"}
+RandomLotteryComponentDrawRep._proto = {
+  [1] = {
+    "m_draw",
+    "CRandomLotteryInfo"
+  },
+  [2] = {
+    "m_one_count",
+    "int"
+  },
+  [3] = {
+    "m_multi_count",
+    "int"
+  }
 }
 _class("RandomLotteryComponentDrawRewardReq", ICampaignComRequest)
-_ENV.RandomLotteryComponentDrawRewardReq = _ENV.RandomLotteryComponentDrawRewardReq
--- DECOMPILER ERROR at PC13259: Confused about usage of register: R65 in 'UnsetPending'
+RandomLotteryComponentDrawRewardReq = RandomLotteryComponentDrawRewardReq
 
-;
-(_ENV.RandomLotteryComponentDrawRewardReq).Constructor = function(self)
-  -- function num : 0_462
+function RandomLotteryComponentDrawRewardReq:Constructor()
   self.index = 0
 end
 
--- DECOMPILER ERROR at PC13269: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.RandomLotteryComponentDrawRewardReq)._proto = {
-[1] = {"index", "int"}
+RandomLotteryComponentDrawRewardReq._proto = {
+  [1] = {"index", "int"}
 }
 _class("RandomLotteryComponentDrawRewardRep", ICampaignComResponse)
-_ENV.RandomLotteryComponentDrawRewardRep = _ENV.RandomLotteryComponentDrawRewardRep
--- DECOMPILER ERROR at PC13281: Confused about usage of register: R65 in 'UnsetPending'
+RandomLotteryComponentDrawRewardRep = RandomLotteryComponentDrawRewardRep
 
-;
-(_ENV.RandomLotteryComponentDrawRewardRep).Constructor = function(self)
-  -- function num : 0_463 , upvalues : _ENV
+function RandomLotteryComponentDrawRewardRep:Constructor()
   self.m_draw = CRandomLotteryInfo:New()
 end
 
--- DECOMPILER ERROR at PC13291: Confused about usage of register: R65 in 'UnsetPending'
-
-;
-(_ENV.RandomLotteryComponentDrawRewardRep)._proto = {
-[1] = {"m_draw", "CRandomLotteryInfo"}
+RandomLotteryComponentDrawRewardRep._proto = {
+  [1] = {
+    "m_draw",
+    "CRandomLotteryInfo"
+  }
 }
-local LuckLandMissionType = {LuckLandMissionType_None = 0, LuckLandMissionType_Study = 1, LuckLandMissionType_Common = 2, LuckLandMissionType_Rank = 3}
+local LuckLandMissionType = {
+  LuckLandMissionType_None = 0,
+  LuckLandMissionType_Study = 1,
+  LuckLandMissionType_Common = 2,
+  LuckLandMissionType_Rank = 3
+}
 _enum("LuckLandMissionType", LuckLandMissionType)
 _class("LuckLandMissionInfo", Object)
-_ENV.LuckLandMissionInfo = _ENV.LuckLandMissionInfo
--- DECOMPILER ERROR at PC13318: Confused about usage of register: R66 in 'UnsetPending'
+LuckLandMissionInfo = LuckLandMissionInfo
 
-;
-(_ENV.LuckLandMissionInfo).Constructor = function(self)
-  -- function num : 0_464
+function LuckLandMissionInfo:Constructor()
   self.mission_id = 0
   self.star = 0
   self.record_score = 0
@@ -9079,121 +7914,99 @@ _ENV.LuckLandMissionInfo = _ENV.LuckLandMissionInfo
   self.cur_star = 0
 end
 
--- DECOMPILER ERROR at PC13358: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.LuckLandMissionInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"star", "int"}
-, 
-[3] = {"record_score", "int"}
-, 
-[4] = {"money", "int"}
-, 
-[5] = {"cur_hp", "int"}
-, 
-[6] = {"build_map", "map<int,int>"}
-, 
-[7] = {"cur_star", "int"}
+LuckLandMissionInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"star", "int"},
+  [3] = {
+    "record_score",
+    "int"
+  },
+  [4] = {"money", "int"},
+  [5] = {"cur_hp", "int"},
+  [6] = {
+    "build_map",
+    "map<int,int>"
+  },
+  [7] = {"cur_star", "int"}
 }
 _class("LuckLandResultInfo", Object)
-_ENV.LuckLandResultInfo = _ENV.LuckLandResultInfo
--- DECOMPILER ERROR at PC13370: Confused about usage of register: R66 in 'UnsetPending'
+LuckLandResultInfo = LuckLandResultInfo
 
-;
-(_ENV.LuckLandResultInfo).Constructor = function(self)
-  -- function num : 0_465
+function LuckLandResultInfo:Constructor()
   self.money_score = 0
   self.build_score = 0
   self.hp_prop = 0
   self.total_score = 0
 end
 
--- DECOMPILER ERROR at PC13395: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.LuckLandResultInfo)._proto = {
-[1] = {"money_score", "int"}
-, 
-[2] = {"build_score", "int"}
-, 
-[3] = {"hp_prop", "int"}
-, 
-[4] = {"total_score", "int"}
+LuckLandResultInfo._proto = {
+  [1] = {
+    "money_score",
+    "int"
+  },
+  [2] = {
+    "build_score",
+    "int"
+  },
+  [3] = {"hp_prop", "int"},
+  [4] = {
+    "total_score",
+    "int"
+  }
 }
 _class("LuckLandComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.LuckLandComponentDataInfo = _ENV.LuckLandComponentDataInfo
--- DECOMPILER ERROR at PC13407: Confused about usage of register: R66 in 'UnsetPending'
+LuckLandComponentDataInfo = LuckLandComponentDataInfo
 
-;
-(_ENV.LuckLandComponentDataInfo).Constructor = function(self)
-  -- function num : 0_466
+function LuckLandComponentDataInfo:Constructor()
   self.m_pass_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC13417: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.LuckLandComponentDataInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,LuckLandMissionInfo>"}
+LuckLandComponentDataInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,LuckLandMissionInfo>"
+  }
 }
 _class("LuckLandComponentInfo", ICampaignComponentInfo)
-_ENV.LuckLandComponentInfo = _ENV.LuckLandComponentInfo
--- DECOMPILER ERROR at PC13429: Confused about usage of register: R66 in 'UnsetPending'
+LuckLandComponentInfo = LuckLandComponentInfo
 
-;
-(_ENV.LuckLandComponentInfo).Constructor = function(self)
-  -- function num : 0_467
+function LuckLandComponentInfo:Constructor()
   self.m_pass_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC13439: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.LuckLandComponentInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,LuckLandMissionInfo>"}
+LuckLandComponentInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,LuckLandMissionInfo>"
+  }
 }
 _class("CompleteLuckLandMissionReq", ICampaignComRequest)
-_ENV.CompleteLuckLandMissionReq = _ENV.CompleteLuckLandMissionReq
--- DECOMPILER ERROR at PC13451: Confused about usage of register: R66 in 'UnsetPending'
+CompleteLuckLandMissionReq = CompleteLuckLandMissionReq
 
-;
-(_ENV.CompleteLuckLandMissionReq).Constructor = function(self)
-  -- function num : 0_468
+function CompleteLuckLandMissionReq:Constructor()
   self.mission_id = 0
   self.money = 0
   self.cur_hp = 0
   self.build_map = {}
 end
 
--- DECOMPILER ERROR at PC13456: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.CompleteLuckLandMissionReq).GetHandleCode = function(self)
-  -- function num : 0_469 , upvalues : _ENV
+function CompleteLuckLandMissionReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleCompleteLuckLandMission
 end
 
--- DECOMPILER ERROR at PC13481: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.CompleteLuckLandMissionReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"money", "int"}
-, 
-[3] = {"cur_hp", "int"}
-, 
-[4] = {"build_map", "map<int,int>"}
+CompleteLuckLandMissionReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"money", "int"},
+  [3] = {"cur_hp", "int"},
+  [4] = {
+    "build_map",
+    "map<int,int>"
+  }
 }
 _class("CompleteLuckLandMissionRep", ICampaignComResponse)
-_ENV.CompleteLuckLandMissionRep = _ENV.CompleteLuckLandMissionRep
--- DECOMPILER ERROR at PC13493: Confused about usage of register: R66 in 'UnsetPending'
+CompleteLuckLandMissionRep = CompleteLuckLandMissionRep
 
-;
-(_ENV.CompleteLuckLandMissionRep).Constructor = function(self)
-  -- function num : 0_470 , upvalues : _ENV
+function CompleteLuckLandMissionRep:Constructor()
   self.ret = 0
   self.reward = {}
   self.m_info = LuckLandMissionInfo:New()
@@ -9201,215 +8014,186 @@ _ENV.CompleteLuckLandMissionRep = _ENV.CompleteLuckLandMissionRep
   self.three_reward = {}
 end
 
--- DECOMPILER ERROR at PC13523: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.CompleteLuckLandMissionRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"reward", "list<RoleAsset>"}
-, 
-[3] = {"m_info", "LuckLandMissionInfo"}
-, 
-[4] = {"m_result", "LuckLandResultInfo"}
-, 
-[5] = {"three_reward", "list<RoleAsset>"}
+CompleteLuckLandMissionRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "reward",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "m_info",
+    "LuckLandMissionInfo"
+  },
+  [4] = {
+    "m_result",
+    "LuckLandResultInfo"
+  },
+  [5] = {
+    "three_reward",
+    "list<RoleAsset>"
+  }
 }
 _class("BalanceLuckLandMoneyReq", ICampaignComRequest)
-_ENV.BalanceLuckLandMoneyReq = _ENV.BalanceLuckLandMoneyReq
--- DECOMPILER ERROR at PC13535: Confused about usage of register: R66 in 'UnsetPending'
+BalanceLuckLandMoneyReq = BalanceLuckLandMoneyReq
 
-;
-(_ENV.BalanceLuckLandMoneyReq).Constructor = function(self)
-  -- function num : 0_471
+function BalanceLuckLandMoneyReq:Constructor()
   self.round_id = 0
   self.money = 0
 end
 
--- DECOMPILER ERROR at PC13540: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.BalanceLuckLandMoneyReq).GetHandleCode = function(self)
-  -- function num : 0_472 , upvalues : _ENV
+function BalanceLuckLandMoneyReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleBalanceLuckLandMoney
 end
 
--- DECOMPILER ERROR at PC13555: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.BalanceLuckLandMoneyReq)._proto = {
-[1] = {"round_id", "int"}
-, 
-[2] = {"money", "int"}
+BalanceLuckLandMoneyReq._proto = {
+  [1] = {"round_id", "int"},
+  [2] = {"money", "int"}
 }
 _class("BalanceLuckLandMoneyRep", ICampaignComResponse)
-_ENV.BalanceLuckLandMoneyRep = _ENV.BalanceLuckLandMoneyRep
--- DECOMPILER ERROR at PC13567: Confused about usage of register: R66 in 'UnsetPending'
+BalanceLuckLandMoneyRep = BalanceLuckLandMoneyRep
 
-;
-(_ENV.BalanceLuckLandMoneyRep).Constructor = function(self)
-  -- function num : 0_473
+function BalanceLuckLandMoneyRep:Constructor()
   self.ret = 0
   self.money = 0
 end
 
--- DECOMPILER ERROR at PC13582: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.BalanceLuckLandMoneyRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"money", "int"}
+BalanceLuckLandMoneyRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {"money", "int"}
 }
 _class("LuckLandGetRankListReq", ICampaignComRequest)
-_ENV.LuckLandGetRankListReq = _ENV.LuckLandGetRankListReq
--- DECOMPILER ERROR at PC13594: Confused about usage of register: R66 in 'UnsetPending'
+LuckLandGetRankListReq = LuckLandGetRankListReq
 
-;
-(_ENV.LuckLandGetRankListReq).Constructor = function(self)
-  -- function num : 0_474
+function LuckLandGetRankListReq:Constructor()
   self.mission_id = 0
 end
 
--- DECOMPILER ERROR at PC13599: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.LuckLandGetRankListReq).GetHandleCode = function(self)
-  -- function num : 0_475 , upvalues : _ENV
+function LuckLandGetRankListReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleLuckLandGetRankList
 end
 
--- DECOMPILER ERROR at PC13609: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.LuckLandGetRankListReq)._proto = {
-[1] = {"mission_id", "int"}
+LuckLandGetRankListReq._proto = {
+  [1] = {"mission_id", "int"}
 }
 _class("LuckLandGetRankListRes", ICampaignComResponse)
-_ENV.LuckLandGetRankListRes = _ENV.LuckLandGetRankListRes
--- DECOMPILER ERROR at PC13621: Confused about usage of register: R66 in 'UnsetPending'
+LuckLandGetRankListRes = LuckLandGetRankListRes
 
-;
-(_ENV.LuckLandGetRankListRes).Constructor = function(self)
-  -- function num : 0_476 , upvalues : _ENV
+function LuckLandGetRankListRes:Constructor()
   self.nRet = 0
   self.show_list = RankShowSimpleInfo:New()
 end
 
--- DECOMPILER ERROR at PC13636: Confused about usage of register: R66 in 'UnsetPending'
-
-;
-(_ENV.LuckLandGetRankListRes)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"show_list", "RankShowSimpleInfo"}
+LuckLandGetRankListRes._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "show_list",
+    "RankShowSimpleInfo"
+  }
 }
-local TalentTreeSkillType = {TTST_Skill_None = 0, TTST_Skill_Main = 1, TTST_Skill_Common = 2, TTST_Skill_Pet = 1}
+local TalentTreeSkillType = {
+  TTST_Skill_None = 0,
+  TTST_Skill_Main = 1,
+  TTST_Skill_Common = 2,
+  TTST_Skill_Pet = 1
+}
 _enum("TalentTreeSkillType", TalentTreeSkillType)
-local OperateTalentTree = {OTT_Talent_Buy = 0, OTT_Talent_Upgrade = 1, OTT_Talent_Install = 2, OTT_Talent_UnInstall_all = 3}
+local OperateTalentTree = {
+  OTT_Talent_Buy = 0,
+  OTT_Talent_Upgrade = 1,
+  OTT_Talent_Install = 2,
+  OTT_Talent_UnInstall_all = 3
+}
 _enum("OperateTalentTree", OperateTalentTree)
 _class("NewTalentTreeInfo", Object)
-_ENV.NewTalentTreeInfo = _ENV.NewTalentTreeInfo
--- DECOMPILER ERROR at PC13679: Confused about usage of register: R68 in 'UnsetPending'
+NewTalentTreeInfo = NewTalentTreeInfo
 
-;
-(_ENV.NewTalentTreeInfo).Constructor = function(self)
-  -- function num : 0_477
+function NewTalentTreeInfo:Constructor()
   self.m_skill_list = {}
   self.m_skill_solt = {}
   self.m_skill_cost = {}
 end
 
--- DECOMPILER ERROR at PC13699: Confused about usage of register: R68 in 'UnsetPending'
-
-;
-(_ENV.NewTalentTreeInfo)._proto = {
-[1] = {"m_skill_list", "map<int,int>"}
-, 
-[2] = {"m_skill_solt", "map<int,int>"}
-, 
-[3] = {"m_skill_cost", "map<int,int>"}
+NewTalentTreeInfo._proto = {
+  [1] = {
+    "m_skill_list",
+    "map<int,int>"
+  },
+  [2] = {
+    "m_skill_solt",
+    "map<int,int>"
+  },
+  [3] = {
+    "m_skill_cost",
+    "map<int,int>"
+  }
 }
 _class("TalentTreeComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.TalentTreeComponentDataInfo = _ENV.TalentTreeComponentDataInfo
--- DECOMPILER ERROR at PC13711: Confused about usage of register: R68 in 'UnsetPending'
+TalentTreeComponentDataInfo = TalentTreeComponentDataInfo
 
-;
-(_ENV.TalentTreeComponentDataInfo).Constructor = function(self)
-  -- function num : 0_478 , upvalues : _ENV
+function TalentTreeComponentDataInfo:Constructor()
   self.m_talent_info = NewTalentTreeInfo:New()
 end
 
--- DECOMPILER ERROR at PC13721: Confused about usage of register: R68 in 'UnsetPending'
-
-;
-(_ENV.TalentTreeComponentDataInfo)._proto = {
-[1] = {"m_talent_info", "NewTalentTreeInfo"}
+TalentTreeComponentDataInfo._proto = {
+  [1] = {
+    "m_talent_info",
+    "NewTalentTreeInfo"
+  }
 }
 _class("TalentTreeComponentInfo", ICampaignComponentInfo)
-_ENV.TalentTreeComponentInfo = _ENV.TalentTreeComponentInfo
--- DECOMPILER ERROR at PC13733: Confused about usage of register: R68 in 'UnsetPending'
+TalentTreeComponentInfo = TalentTreeComponentInfo
 
-;
-(_ENV.TalentTreeComponentInfo).Constructor = function(self)
-  -- function num : 0_479 , upvalues : _ENV
+function TalentTreeComponentInfo:Constructor()
   self.m_talent_info = NewTalentTreeInfo:New()
 end
 
--- DECOMPILER ERROR at PC13743: Confused about usage of register: R68 in 'UnsetPending'
-
-;
-(_ENV.TalentTreeComponentInfo)._proto = {
-[1] = {"m_talent_info", "NewTalentTreeInfo"}
+TalentTreeComponentInfo._proto = {
+  [1] = {
+    "m_talent_info",
+    "NewTalentTreeInfo"
+  }
 }
 _class("OperateTalentTreeSkillReq", ICampaignComRequest)
-_ENV.OperateTalentTreeSkillReq = _ENV.OperateTalentTreeSkillReq
--- DECOMPILER ERROR at PC13755: Confused about usage of register: R68 in 'UnsetPending'
+OperateTalentTreeSkillReq = OperateTalentTreeSkillReq
 
-;
-(_ENV.OperateTalentTreeSkillReq).Constructor = function(self)
-  -- function num : 0_480
+function OperateTalentTreeSkillReq:Constructor()
   self.operate_type = 0
   self.skill_type_id = 0
   self.skill_solt_id = 0
 end
 
--- DECOMPILER ERROR at PC13760: Confused about usage of register: R68 in 'UnsetPending'
-
-;
-(_ENV.OperateTalentTreeSkillReq).GetHandleCode = function(self)
-  -- function num : 0_481 , upvalues : _ENV
+function OperateTalentTreeSkillReq:GetHandleCode()
   return ECampaignComHandle.ECCH_HandleOperateTalentTreeSkill
 end
 
--- DECOMPILER ERROR at PC13780: Confused about usage of register: R68 in 'UnsetPending'
-
-;
-(_ENV.OperateTalentTreeSkillReq)._proto = {
-[1] = {"operate_type", "int"}
-, 
-[2] = {"skill_type_id", "int"}
-, 
-[3] = {"skill_solt_id", "int"}
+OperateTalentTreeSkillReq._proto = {
+  [1] = {
+    "operate_type",
+    "int"
+  },
+  [2] = {
+    "skill_type_id",
+    "int"
+  },
+  [3] = {
+    "skill_solt_id",
+    "int"
+  }
 }
 _class("OperateTalentTreeSkillRep", ICampaignComResponse)
-_ENV.OperateTalentTreeSkillRep = _ENV.OperateTalentTreeSkillRep
--- DECOMPILER ERROR at PC13792: Confused about usage of register: R68 in 'UnsetPending'
+OperateTalentTreeSkillRep = OperateTalentTreeSkillRep
 
-;
-(_ENV.OperateTalentTreeSkillRep).Constructor = function(self)
-  -- function num : 0_482 , upvalues : _ENV
+function OperateTalentTreeSkillRep:Constructor()
   self.ret = 0
   self.m_talent_info = NewTalentTreeInfo:New()
 end
 
--- DECOMPILER ERROR at PC13807: Confused about usage of register: R68 in 'UnsetPending'
-
-;
-(_ENV.OperateTalentTreeSkillRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_talent_info", "NewTalentTreeInfo"}
+OperateTalentTreeSkillRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "m_talent_info",
+    "NewTalentTreeInfo"
+  }
 }
 local CollectCardComponentNotifyType = {CollectCardComponentNotifyType_InfoChanged = 1}
 _enum("CollectCardComponentNotifyType", CollectCardComponentNotifyType)
@@ -9420,53 +8204,44 @@ _enum("DropCardType", DropCardType)
 local PoolType = {Type1 = 1, Type2 = 2}
 _enum("PoolType", PoolType)
 _class("ReceiveCardInfo", Object)
-_ENV.ReceiveCardInfo = _ENV.ReceiveCardInfo
--- DECOMPILER ERROR at PC13857: Confused about usage of register: R72 in 'UnsetPending'
+ReceiveCardInfo = ReceiveCardInfo
 
-;
-(_ENV.ReceiveCardInfo).Constructor = function(self)
-  -- function num : 0_483
+function ReceiveCardInfo:Constructor()
   self.player_name = ""
   self.card_id = 0
   self.openid = ""
 end
 
--- DECOMPILER ERROR at PC13877: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.ReceiveCardInfo)._proto = {
-[1] = {"player_name", "string"}
-, 
-[2] = {"card_id", "int"}
-, 
-[3] = {"openid", "string"}
+ReceiveCardInfo._proto = {
+  [1] = {
+    "player_name",
+    "string"
+  },
+  [2] = {"card_id", "int"},
+  [3] = {"openid", "string"}
 }
 _class("NotifyCollectCardComponentInfoChanged", Object)
-_ENV.NotifyCollectCardComponentInfoChanged = _ENV.NotifyCollectCardComponentInfoChanged
--- DECOMPILER ERROR at PC13889: Confused about usage of register: R72 in 'UnsetPending'
+NotifyCollectCardComponentInfoChanged = NotifyCollectCardComponentInfoChanged
 
-;
-(_ENV.NotifyCollectCardComponentInfoChanged).Constructor = function(self)
-  -- function num : 0_484
+function NotifyCollectCardComponentInfoChanged:Constructor()
   self.add_cards = {}
   self.infos = {}
 end
 
--- DECOMPILER ERROR at PC13904: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.NotifyCollectCardComponentInfoChanged)._proto = {
-[1] = {"add_cards", "map<int,int>"}
-, 
-[2] = {"infos", "list<ReceiveCardInfo>"}
+NotifyCollectCardComponentInfoChanged._proto = {
+  [1] = {
+    "add_cards",
+    "map<int,int>"
+  },
+  [2] = {
+    "infos",
+    "list<ReceiveCardInfo>"
+  }
 }
 _class("CollectCardComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CollectCardComponentDataInfo = _ENV.CollectCardComponentDataInfo
--- DECOMPILER ERROR at PC13916: Confused about usage of register: R72 in 'UnsetPending'
+CollectCardComponentDataInfo = CollectCardComponentDataInfo
 
-;
-(_ENV.CollectCardComponentDataInfo).Constructor = function(self)
-  -- function num : 0_485
+function CollectCardComponentDataInfo:Constructor()
   self.received_rewards = {}
   self.send_card_info = {}
   self.card = {}
@@ -9477,328 +8252,342 @@ _ENV.CollectCardComponentDataInfo = _ENV.CollectCardComponentDataInfo
   self.receive_cards = {}
 end
 
--- DECOMPILER ERROR at PC13961: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.CollectCardComponentDataInfo)._proto = {
-[1] = {"received_rewards", "list<int>"}
-, 
-[2] = {"send_card_info", "map<int64,int>"}
-, 
-[3] = {"card", "map<int,int>"}
-, 
-[4] = {"pool_type", "int"}
-, 
-[5] = {"drop_card_num", "int"}
-, 
-[6] = {"last_refresh_time", "time"}
-, 
-[7] = {"gold_card_num", "int"}
-, 
-[8] = {"receive_cards", "list<ReceiveCardInfo>"}
+CollectCardComponentDataInfo._proto = {
+  [1] = {
+    "received_rewards",
+    "list<int>"
+  },
+  [2] = {
+    "send_card_info",
+    "map<int64,int>"
+  },
+  [3] = {
+    "card",
+    "map<int,int>"
+  },
+  [4] = {"pool_type", "int"},
+  [5] = {
+    "drop_card_num",
+    "int"
+  },
+  [6] = {
+    "last_refresh_time",
+    "time"
+  },
+  [7] = {
+    "gold_card_num",
+    "int"
+  },
+  [8] = {
+    "receive_cards",
+    "list<ReceiveCardInfo>"
+  }
 }
 _class("CollectCardComponentInfo", ICampaignComponentInfo)
-_ENV.CollectCardComponentInfo = _ENV.CollectCardComponentInfo
--- DECOMPILER ERROR at PC13973: Confused about usage of register: R72 in 'UnsetPending'
+CollectCardComponentInfo = CollectCardComponentInfo
 
-;
-(_ENV.CollectCardComponentInfo).Constructor = function(self)
-  -- function num : 0_486
+function CollectCardComponentInfo:Constructor()
   self.received_rewards = {}
   self.send_card_info = {}
   self.card = {}
   self.receive_cards = {}
 end
 
--- DECOMPILER ERROR at PC13998: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.CollectCardComponentInfo)._proto = {
-[1] = {"received_rewards", "list<int>"}
-, 
-[2] = {"send_card_info", "map<int64,int>"}
-, 
-[3] = {"card", "map<int,int>"}
-, 
-[4] = {"receive_cards", "list<ReceiveCardInfo>"}
+CollectCardComponentInfo._proto = {
+  [1] = {
+    "received_rewards",
+    "list<int>"
+  },
+  [2] = {
+    "send_card_info",
+    "map<int64,int>"
+  },
+  [3] = {
+    "card",
+    "map<int,int>"
+  },
+  [4] = {
+    "receive_cards",
+    "list<ReceiveCardInfo>"
+  }
 }
 _class("TakeCollectCardRewardReq", ICampaignComRequest)
-_ENV.TakeCollectCardRewardReq = _ENV.TakeCollectCardRewardReq
--- DECOMPILER ERROR at PC14010: Confused about usage of register: R72 in 'UnsetPending'
+TakeCollectCardRewardReq = TakeCollectCardRewardReq
 
-;
-(_ENV.TakeCollectCardRewardReq).Constructor = function(self)
-  -- function num : 0_487
+function TakeCollectCardRewardReq:Constructor()
   self.reward_id = 0
 end
 
--- DECOMPILER ERROR at PC14020: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.TakeCollectCardRewardReq)._proto = {
-[1] = {"reward_id", "int"}
+TakeCollectCardRewardReq._proto = {
+  [1] = {"reward_id", "int"}
 }
 _class("TakeCollectCardRewardRes", ICampaignComResponse)
-_ENV.TakeCollectCardRewardRes = _ENV.TakeCollectCardRewardRes
--- DECOMPILER ERROR at PC14032: Confused about usage of register: R72 in 'UnsetPending'
+TakeCollectCardRewardRes = TakeCollectCardRewardRes
 
-;
-(_ENV.TakeCollectCardRewardRes).Constructor = function(self)
-  -- function num : 0_488
+function TakeCollectCardRewardRes:Constructor()
   self.ret = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC14047: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.TakeCollectCardRewardRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+TakeCollectCardRewardRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("DropCardsReq", ICampaignComRequest)
-_ENV.DropCardsReq = _ENV.DropCardsReq
--- DECOMPILER ERROR at PC14059: Confused about usage of register: R72 in 'UnsetPending'
+DropCardsReq = DropCardsReq
 
-;
-(_ENV.DropCardsReq).Constructor = function(self)
-  -- function num : 0_489 , upvalues : _ENV
+function DropCardsReq:Constructor()
   self.item1 = RoleAsset:New()
   self.item2 = RoleAsset:New()
 end
 
--- DECOMPILER ERROR at PC14074: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.DropCardsReq)._proto = {
-[1] = {"item1", "RoleAsset"}
-, 
-[2] = {"item2", "RoleAsset"}
+DropCardsReq._proto = {
+  [1] = {"item1", "RoleAsset"},
+  [2] = {"item2", "RoleAsset"}
 }
 _class("DropCardsRes", ICampaignComResponse)
-_ENV.DropCardsRes = _ENV.DropCardsRes
--- DECOMPILER ERROR at PC14086: Confused about usage of register: R72 in 'UnsetPending'
+DropCardsRes = DropCardsRes
 
-;
-(_ENV.DropCardsRes).Constructor = function(self)
-  -- function num : 0_490
+function DropCardsRes:Constructor()
   self.ret = 0
   self.add_cards = {}
 end
 
--- DECOMPILER ERROR at PC14101: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.DropCardsRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"add_cards", "map<int,int>"}
+DropCardsRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "add_cards",
+    "map<int,int>"
+  }
 }
 _class("SendCardReq", ICampaignComRequest)
-_ENV.SendCardReq = _ENV.SendCardReq
--- DECOMPILER ERROR at PC14113: Confused about usage of register: R72 in 'UnsetPending'
+SendCardReq = SendCardReq
 
-;
-(_ENV.SendCardReq).Constructor = function(self)
-  -- function num : 0_491
+function SendCardReq:Constructor()
   self.pstid = 0
   self.card_id = 0
 end
 
--- DECOMPILER ERROR at PC14128: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.SendCardReq)._proto = {
-[2] = {"pstid", "int64"}
-, 
-[1] = {"card_id", "int"}
+SendCardReq._proto = {
+  [2] = {"pstid", "int64"},
+  [1] = {"card_id", "int"}
 }
 _class("SendCardRes", ICampaignComResponse)
-_ENV.SendCardRes = _ENV.SendCardRes
--- DECOMPILER ERROR at PC14140: Confused about usage of register: R72 in 'UnsetPending'
+SendCardRes = SendCardRes
 
-;
-(_ENV.SendCardRes).Constructor = function(self)
-  -- function num : 0_492
+function SendCardRes:Constructor()
   self.ret = 0
   self.send_card_info = {}
 end
 
--- DECOMPILER ERROR at PC14155: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.SendCardRes)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"send_card_info", "map<int64,int>"}
+SendCardRes._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "send_card_info",
+    "map<int64,int>"
+  }
 }
 _class("ClearSendCardInfoReq", ICampaignComRequest)
-_ENV.ClearSendCardInfoReq = _ENV.ClearSendCardInfoReq
--- DECOMPILER ERROR at PC14167: Confused about usage of register: R72 in 'UnsetPending'
+ClearSendCardInfoReq = ClearSendCardInfoReq
 
-;
-(_ENV.ClearSendCardInfoReq).Constructor = function(self)
-  -- function num : 0_493
+function ClearSendCardInfoReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC14171: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.ClearSendCardInfoReq)._proto = {}
+ClearSendCardInfoReq._proto = {}
 _class("ClearSendCardInfoRes", ICampaignComResponse)
-_ENV.ClearSendCardInfoRes = _ENV.ClearSendCardInfoRes
--- DECOMPILER ERROR at PC14183: Confused about usage of register: R72 in 'UnsetPending'
+ClearSendCardInfoRes = ClearSendCardInfoRes
 
-;
-(_ENV.ClearSendCardInfoRes).Constructor = function(self)
-  -- function num : 0_494
+function ClearSendCardInfoRes:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC14193: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.ClearSendCardInfoRes)._proto = {
-[1] = {"ret", "int"}
+ClearSendCardInfoRes._proto = {
+  [1] = {"ret", "int"}
 }
 _class("LineChangeFormationReq", ICampaignComRequest)
-_ENV.LineChangeFormationReq = _ENV.LineChangeFormationReq
--- DECOMPILER ERROR at PC14205: Confused about usage of register: R72 in 'UnsetPending'
+LineChangeFormationReq = LineChangeFormationReq
 
-;
-(_ENV.LineChangeFormationReq).Constructor = function(self)
-  -- function num : 0_495 , upvalues : _ENV
+function LineChangeFormationReq:Constructor()
   self.info = LineFormationItem:New()
 end
 
--- DECOMPILER ERROR at PC14215: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.LineChangeFormationReq)._proto = {
-[1] = {"info", "LineFormationItem"}
+LineChangeFormationReq._proto = {
+  [1] = {
+    "info",
+    "LineFormationItem"
+  }
 }
 _class("LineChangeFormationReply", ICampaignComResponse)
-_ENV.LineChangeFormationReply = _ENV.LineChangeFormationReply
--- DECOMPILER ERROR at PC14227: Confused about usage of register: R72 in 'UnsetPending'
+LineChangeFormationReply = LineChangeFormationReply
 
-;
-(_ENV.LineChangeFormationReply).Constructor = function(self)
-  -- function num : 0_496
+function LineChangeFormationReply:Constructor()
 end
 
--- DECOMPILER ERROR at PC14231: Confused about usage of register: R72 in 'UnsetPending'
-
-;
-(_ENV.LineChangeFormationReply)._proto = {}
-local SeasonMazeRoomType = {SMRT_Invalid = 0, SMRT_PVE = 1, SMRT_Random = 2, SMRT_Resource = 3, SMRT_Ore = 4, SMRT_Box = 5, SMRT_Round = 6, SMRT_Empty = 7, SMRT_Camp = 8, SMRT_Altar = 9, SMRT_Market = 10, SMRT_PetRecruit = 11, SMRT_Transfor = 12, SMRT_Shop = 13, SMRT_BeadShop = 14, SMRT_Max = 15}
+LineChangeFormationReply._proto = {}
+local SeasonMazeRoomType = {
+  SMRT_Invalid = 0,
+  SMRT_PVE = 1,
+  SMRT_Random = 2,
+  SMRT_Resource = 3,
+  SMRT_Ore = 4,
+  SMRT_Box = 5,
+  SMRT_Round = 6,
+  SMRT_Empty = 7,
+  SMRT_Camp = 8,
+  SMRT_Altar = 9,
+  SMRT_Market = 10,
+  SMRT_PetRecruit = 11,
+  SMRT_Transfor = 12,
+  SMRT_Shop = 13,
+  SMRT_BeadShop = 14,
+  SMRT_Max = 15
+}
 _enum("SeasonMazeRoomType", SeasonMazeRoomType)
-local SeasonMazeActionState = {SMAS_Invalid = 0, SMAS_Init = 1, SMAS_RandomHand = 2, SMAS_ChooseHand = 3, SMAS_GoPoint = 4, SMAS_RoomOperate = 5, SMAS_Relic = 6, SMAS_BreakPet = 7, SMAS_NewHand = 8, SMAS_BossBattle = 9, SMAS_RoundEnd = 10, SMAS_HardClearing = 11, SMAS_HardVictory = 12}
+local SeasonMazeActionState = {
+  SMAS_Invalid = 0,
+  SMAS_Init = 1,
+  SMAS_RandomHand = 2,
+  SMAS_ChooseHand = 3,
+  SMAS_GoPoint = 4,
+  SMAS_RoomOperate = 5,
+  SMAS_Relic = 6,
+  SMAS_BreakPet = 7,
+  SMAS_NewHand = 8,
+  SMAS_BossBattle = 9,
+  SMAS_RoundEnd = 10,
+  SMAS_HardClearing = 11,
+  SMAS_HardVictory = 12
+}
 _enum("SeasonMazeActionState", SeasonMazeActionState)
-local SeasonMazePointStateType = {SMPST_Invalid = 0, SMPST_Pass = 1, SMPST_Occupy = 2, SMPST_Choose = 3, SMPST_End = 4}
+local SeasonMazePointStateType = {
+  SMPST_Invalid = 0,
+  SMPST_Pass = 1,
+  SMPST_Occupy = 2,
+  SMPST_Choose = 3,
+  SMPST_End = 4
+}
 _enum("SeasonMazePointStateType", SeasonMazePointStateType)
-local SeasonMazeMarketRoleType = {SMMRT_Invalid = 0, SMMRT_Friend = 1, SMMRT_Gale = 2, SMMRT_Bot = 3}
+local SeasonMazeMarketRoleType = {
+  SMMRT_Invalid = 0,
+  SMMRT_Friend = 1,
+  SMMRT_Gale = 2,
+  SMMRT_Bot = 3
+}
 _enum("SeasonMazeMarketRoleType", SeasonMazeMarketRoleType)
-local SeasonMazeRewardReason = {SMRR_Invalid = 0, SMRR_GM = 1, SMRR_Init = 2, SMRR_ChooseHand = 3, SMRR_GoPoint = 4, SMRR_RoomOperate = 5, SMRR_ChooseRelic = 6, SMRR_NewHand = 7, SMRR_BossBattle = 8, SMRR_HardClearing = 9, SMRR_RoomPVE = 10, SMRR_RoomRandom = 11, SMRR_RoomRes = 12, SMRR_RoomOre = 13, SMRR_RoomBox = 14, SMRR_RoomRound = 15, SMRR_RoomCamp = 16, SMRR_RoomAltar = 17, SMRR_RoomMarket = 18, SMRR_Recruit = 19, SMRR_Healthy = 20, SMRR_ResurrectPet = 21, SMRR_Slot = 22, SMRR_SaveLv = 23, SMRR_Once = 24, SMRR_RelicSuit = 25, SMRR_FullBreakPet = 26, SMRR_RoundEnd = 27, SMRR_RandomHand = 28, SMRR_UpLv = 29, SMRR_LayerClear = 30, SMRR_GAINUPADDGOLD = 31, SMRR_PassLastBossReset = 32, SMRR_BossRelicGold = 33}
+local SeasonMazeRewardReason = {
+  SMRR_Invalid = 0,
+  SMRR_GM = 1,
+  SMRR_Init = 2,
+  SMRR_ChooseHand = 3,
+  SMRR_GoPoint = 4,
+  SMRR_RoomOperate = 5,
+  SMRR_ChooseRelic = 6,
+  SMRR_NewHand = 7,
+  SMRR_BossBattle = 8,
+  SMRR_HardClearing = 9,
+  SMRR_RoomPVE = 10,
+  SMRR_RoomRandom = 11,
+  SMRR_RoomRes = 12,
+  SMRR_RoomOre = 13,
+  SMRR_RoomBox = 14,
+  SMRR_RoomRound = 15,
+  SMRR_RoomCamp = 16,
+  SMRR_RoomAltar = 17,
+  SMRR_RoomMarket = 18,
+  SMRR_Recruit = 19,
+  SMRR_Healthy = 20,
+  SMRR_ResurrectPet = 21,
+  SMRR_Slot = 22,
+  SMRR_SaveLv = 23,
+  SMRR_Once = 24,
+  SMRR_RelicSuit = 25,
+  SMRR_FullBreakPet = 26,
+  SMRR_RoundEnd = 27,
+  SMRR_RandomHand = 28,
+  SMRR_UpLv = 29,
+  SMRR_LayerClear = 30,
+  SMRR_GAINUPADDGOLD = 31,
+  SMRR_PassLastBossReset = 32,
+  SMRR_BossRelicGold = 33
+}
 _enum("SeasonMazeRewardReason", SeasonMazeRewardReason)
 _class("SeasonMazeRoomBaseOre", Object)
-_ENV.SeasonMazeRoomBaseOre = _ENV.SeasonMazeRoomBaseOre
--- DECOMPILER ERROR at PC14446: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeRoomBaseOre = SeasonMazeRoomBaseOre
 
-;
-(_ENV.SeasonMazeRoomBaseOre).Constructor = function(self)
-  -- function num : 0_497 , upvalues : _ENV
+function SeasonMazeRoomBaseOre:Constructor()
   self.raw_round = 0
   self.residue_round = 0
   self.reward = SeasonMazeEffect:New()
 end
 
--- DECOMPILER ERROR at PC14466: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomBaseOre)._proto = {
-[1] = {"raw_round", "int"}
-, 
-[2] = {"residue_round", "int"}
-, 
-[3] = {"reward", "SeasonMazeEffect"}
+SeasonMazeRoomBaseOre._proto = {
+  [1] = {"raw_round", "int"},
+  [2] = {
+    "residue_round",
+    "int"
+  },
+  [3] = {
+    "reward",
+    "SeasonMazeEffect"
+  }
 }
 _class("SeasonMazeHardInfo", Object)
-_ENV.SeasonMazeHardInfo = _ENV.SeasonMazeHardInfo
--- DECOMPILER ERROR at PC14478: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeHardInfo = SeasonMazeHardInfo
 
-;
-(_ENV.SeasonMazeHardInfo).Constructor = function(self)
-  -- function num : 0_498
+function SeasonMazeHardInfo:Constructor()
   self.vic_count = 0
   self.fail_info = {}
   self.new_flag = false
 end
 
--- DECOMPILER ERROR at PC14498: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeHardInfo)._proto = {
-[1] = {"vic_count", "int"}
-, 
-[2] = {"fail_info", "list<int>"}
-, 
-[3] = {"new_flag", "bool"}
+SeasonMazeHardInfo._proto = {
+  [1] = {"vic_count", "int"},
+  [2] = {"fail_info", "list<int>"},
+  [3] = {"new_flag", "bool"}
 }
 _class("SeasonMazeHandInfo", Object)
-_ENV.SeasonMazeHandInfo = _ENV.SeasonMazeHandInfo
--- DECOMPILER ERROR at PC14510: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeHandInfo = SeasonMazeHandInfo
 
-;
-(_ENV.SeasonMazeHandInfo).Constructor = function(self)
-  -- function num : 0_499
+function SeasonMazeHandInfo:Constructor()
   self.id = 0
   self.steps = 0
   self.effct = {}
   self.ori_id = 0
 end
 
--- DECOMPILER ERROR at PC14535: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeHandInfo)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"steps", "int"}
-, 
-[3] = {"effct", "list<SeasonMazeEffect>"}
-, 
-[4] = {"ori_id", "int"}
+SeasonMazeHandInfo._proto = {
+  [1] = {"id", "int"},
+  [2] = {"steps", "int"},
+  [3] = {
+    "effct",
+    "list<SeasonMazeEffect>"
+  },
+  [4] = {"ori_id", "int"}
 }
 _class("SeasonMazeWorldBossInfo", Object)
-_ENV.SeasonMazeWorldBossInfo = _ENV.SeasonMazeWorldBossInfo
--- DECOMPILER ERROR at PC14547: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeWorldBossInfo = SeasonMazeWorldBossInfo
 
-;
-(_ENV.SeasonMazeWorldBossInfo).Constructor = function(self)
-  -- function num : 0_500
+function SeasonMazeWorldBossInfo:Constructor()
   self.cfg_id = 0
   self.total_damage = 0
   self.word_ids = {}
 end
 
--- DECOMPILER ERROR at PC14567: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeWorldBossInfo)._proto = {
-[1] = {"cfg_id", "int"}
-, 
-[2] = {"total_damage", "int64"}
-, 
-[3] = {"word_ids", "list<int>"}
+SeasonMazeWorldBossInfo._proto = {
+  [1] = {"cfg_id", "int"},
+  [2] = {
+    "total_damage",
+    "int64"
+  },
+  [3] = {"word_ids", "list<int>"}
 }
 _class("SeasonMazeBossInfo", Object)
-_ENV.SeasonMazeBossInfo = _ENV.SeasonMazeBossInfo
--- DECOMPILER ERROR at PC14579: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeBossInfo = SeasonMazeBossInfo
 
-;
-(_ENV.SeasonMazeBossInfo).Constructor = function(self)
-  -- function num : 0_501
+function SeasonMazeBossInfo:Constructor()
   self.cfg_id = 0
   self.cfg_wave = 0
   self.do_cnt = 0
@@ -9806,96 +8595,73 @@ _ENV.SeasonMazeBossInfo = _ENV.SeasonMazeBossInfo
   self.word_ids = {}
 end
 
--- DECOMPILER ERROR at PC14609: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeBossInfo)._proto = {
-[1] = {"cfg_id", "int"}
-, 
-[2] = {"cfg_wave", "int"}
-, 
-[3] = {"do_cnt", "int"}
-, 
-[4] = {"wave_randoms", "list<float>"}
-, 
-[5] = {"word_ids", "list<int>"}
+SeasonMazeBossInfo._proto = {
+  [1] = {"cfg_id", "int"},
+  [2] = {"cfg_wave", "int"},
+  [3] = {"do_cnt", "int"},
+  [4] = {
+    "wave_randoms",
+    "list<float>"
+  },
+  [5] = {"word_ids", "list<int>"}
 }
 _class("SeasonMazeSaveInfo", Object)
-_ENV.SeasonMazeSaveInfo = _ENV.SeasonMazeSaveInfo
--- DECOMPILER ERROR at PC14621: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeSaveInfo = SeasonMazeSaveInfo
 
-;
-(_ENV.SeasonMazeSaveInfo).Constructor = function(self)
-  -- function num : 0_502
+function SeasonMazeSaveInfo:Constructor()
   self.lv = 0
   self.exp = 0
 end
 
--- DECOMPILER ERROR at PC14636: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSaveInfo)._proto = {
-[1] = {"lv", "int"}
-, 
-[2] = {"exp", "int"}
+SeasonMazeSaveInfo._proto = {
+  [1] = {"lv", "int"},
+  [2] = {"exp", "int"}
 }
 _class("SeasonMazeSlotIndex", Object)
-_ENV.SeasonMazeSlotIndex = _ENV.SeasonMazeSlotIndex
--- DECOMPILER ERROR at PC14648: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeSlotIndex = SeasonMazeSlotIndex
 
-;
-(_ENV.SeasonMazeSlotIndex).Constructor = function(self)
-  -- function num : 0_503 , upvalues : _ENV
+function SeasonMazeSlotIndex:Constructor()
   self.item = SeasonMazeEffect:New()
   self.ori_price = 0
   self.price = 0
   self.sellout = false
 end
 
--- DECOMPILER ERROR at PC14673: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSlotIndex)._proto = {
-[1] = {"item", "SeasonMazeEffect"}
-, 
-[2] = {"ori_price", "int"}
-, 
-[3] = {"price", "int"}
-, 
-[4] = {"sellout", "bool"}
+SeasonMazeSlotIndex._proto = {
+  [1] = {
+    "item",
+    "SeasonMazeEffect"
+  },
+  [2] = {"ori_price", "int"},
+  [3] = {"price", "int"},
+  [4] = {"sellout", "bool"}
 }
 _class("SeasonMazeSlotInfo", Object)
-_ENV.SeasonMazeSlotInfo = _ENV.SeasonMazeSlotInfo
--- DECOMPILER ERROR at PC14685: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeSlotInfo = SeasonMazeSlotInfo
 
-;
-(_ENV.SeasonMazeSlotInfo).Constructor = function(self)
-  -- function num : 0_504
+function SeasonMazeSlotInfo:Constructor()
   self.items = {}
   self.reset_cnt = 0
   self.dis_index = 0
   self.lock_ids = {}
 end
 
--- DECOMPILER ERROR at PC14710: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSlotInfo)._proto = {
-[1] = {"items", "map<int,SeasonMazeSlotIndex>"}
-, 
-[2] = {"reset_cnt", "int"}
-, 
-[3] = {"dis_index", "int"}
-, 
-[4] = {"lock_ids", "map<int,SeasonMazeSlotIndex>"}
+SeasonMazeSlotInfo._proto = {
+  [1] = {
+    "items",
+    "map<int,SeasonMazeSlotIndex>"
+  },
+  [2] = {"reset_cnt", "int"},
+  [3] = {"dis_index", "int"},
+  [4] = {
+    "lock_ids",
+    "map<int,SeasonMazeSlotIndex>"
+  }
 }
 _class("SeasonMazeRelicRandomInfo", Object)
-_ENV.SeasonMazeRelicRandomInfo = _ENV.SeasonMazeRelicRandomInfo
--- DECOMPILER ERROR at PC14722: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeRelicRandomInfo = SeasonMazeRelicRandomInfo
 
-;
-(_ENV.SeasonMazeRelicRandomInfo).Constructor = function(self)
-  -- function num : 0_505
+function SeasonMazeRelicRandomInfo:Constructor()
   self.group_num = {}
   self.ids = {}
   self.reset_cnt = 0
@@ -9903,46 +8669,44 @@ _ENV.SeasonMazeRelicRandomInfo = _ENV.SeasonMazeRelicRandomInfo
   self.hit_cnt = {}
 end
 
--- DECOMPILER ERROR at PC14752: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRelicRandomInfo)._proto = {
-[1] = {"group_num", "list<RoleAsset>"}
-, 
-[2] = {"ids", "list<int>"}
-, 
-[3] = {"reset_cnt", "int"}
-, 
-[4] = {"type_odds", "map<int,int>"}
-, 
-[5] = {"hit_cnt", "map<int,int>"}
+SeasonMazeRelicRandomInfo._proto = {
+  [1] = {
+    "group_num",
+    "list<RoleAsset>"
+  },
+  [2] = {"ids", "list<int>"},
+  [3] = {"reset_cnt", "int"},
+  [4] = {
+    "type_odds",
+    "map<int,int>"
+  },
+  [5] = {
+    "hit_cnt",
+    "map<int,int>"
+  }
 }
 _class("SeasonMazeNewHandInfo", Object)
-_ENV.SeasonMazeNewHandInfo = _ENV.SeasonMazeNewHandInfo
--- DECOMPILER ERROR at PC14764: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeNewHandInfo = SeasonMazeNewHandInfo
 
-;
-(_ENV.SeasonMazeNewHandInfo).Constructor = function(self)
-  -- function num : 0_506
+function SeasonMazeNewHandInfo:Constructor()
   self.ids = {}
   self.lv = {}
 end
 
--- DECOMPILER ERROR at PC14779: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNewHandInfo)._proto = {
-[1] = {"ids", "map<int,list<int>>"}
-, 
-[2] = {"lv", "map<int,int>"}
+SeasonMazeNewHandInfo._proto = {
+  [1] = {
+    "ids",
+    "map<int,list<int>>"
+  },
+  [2] = {
+    "lv",
+    "map<int,int>"
+  }
 }
 _class("SeasonMazeMarketRoleInfo", Object)
-_ENV.SeasonMazeMarketRoleInfo = _ENV.SeasonMazeMarketRoleInfo
--- DECOMPILER ERROR at PC14791: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeMarketRoleInfo = SeasonMazeMarketRoleInfo
 
-;
-(_ENV.SeasonMazeMarketRoleInfo).Constructor = function(self)
-  -- function num : 0_507
+function SeasonMazeMarketRoleInfo:Constructor()
   self.nick = ""
   self.head = 0
   self.head_bg = 0
@@ -9953,33 +8717,23 @@ _ENV.SeasonMazeMarketRoleInfo = _ENV.SeasonMazeMarketRoleInfo
   self.swap_bead_id = 0
 end
 
--- DECOMPILER ERROR at PC14836: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeMarketRoleInfo)._proto = {
-[1] = {"nick", "string"}
-, 
-[2] = {"head", "int"}
-, 
-[3] = {"head_bg", "int"}
-, 
-[4] = {"frame_id", "int"}
-, 
-[5] = {"level", "int"}
-, 
-[6] = {"type", "int"}
-, 
-[7] = {"bead_id", "int"}
-, 
-[8] = {"swap_bead_id", "int"}
+SeasonMazeMarketRoleInfo._proto = {
+  [1] = {"nick", "string"},
+  [2] = {"head", "int"},
+  [3] = {"head_bg", "int"},
+  [4] = {"frame_id", "int"},
+  [5] = {"level", "int"},
+  [6] = {"type", "int"},
+  [7] = {"bead_id", "int"},
+  [8] = {
+    "swap_bead_id",
+    "int"
+  }
 }
 _class("SeasonMazeRoomBase", Object)
-_ENV.SeasonMazeRoomBase = _ENV.SeasonMazeRoomBase
--- DECOMPILER ERROR at PC14848: Confused about usage of register: R77 in 'UnsetPending'
+SeasonMazeRoomBase = SeasonMazeRoomBase
 
-;
-(_ENV.SeasonMazeRoomBase).Constructor = function(self)
-  -- function num : 0_508
+function SeasonMazeRoomBase:Constructor()
   self.state = 0
   self.type = 0
   self.cfg_id = 0
@@ -9992,63 +8746,56 @@ _ENV.SeasonMazeRoomBase = _ENV.SeasonMazeRoomBase
   self.word_ids = {}
 end
 
--- DECOMPILER ERROR at PC14903: Confused about usage of register: R77 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomBase)._proto = {
-[1] = {"state", "int"}
-, 
-[2] = {"type", "int"}
-, 
-[3] = {"cfg_id", "int"}
-, 
-[4] = {"is_bomb", "bool"}
-, 
-[5] = {"var_param", "int"}
-, 
-[6] = {"rand_box", "list<SeasonMazeEffect>"}
-, 
-[7] = {"var_param_1", "int"}
-, 
-[8] = {"market", "map<int64,SeasonMazeMarketRoleInfo>"}
-, 
-[9] = {"wave_randoms", "list<float>"}
-, 
-[10] = {"word_ids", "list<int>"}
+SeasonMazeRoomBase._proto = {
+  [1] = {"state", "int"},
+  [2] = {"type", "int"},
+  [3] = {"cfg_id", "int"},
+  [4] = {"is_bomb", "bool"},
+  [5] = {"var_param", "int"},
+  [6] = {
+    "rand_box",
+    "list<SeasonMazeEffect>"
+  },
+  [7] = {
+    "var_param_1",
+    "int"
+  },
+  [8] = {
+    "market",
+    "map<int64,SeasonMazeMarketRoleInfo>"
+  },
+  [9] = {
+    "wave_randoms",
+    "list<float>"
+  },
+  [10] = {"word_ids", "list<int>"}
 }
 local ESeasonMazePetStateType = {ESeasonMazePetStateType_Dead = 0, ESeasonMazePetStateType_Dispatch = 1}
 _enum("ESeasonMazePetStateType", ESeasonMazePetStateType)
-local ESeasonMazeAutoBeadType = {ESeasonMazeAutoBeadType_Skill = 0, ESeasonMazeAutoBeadType_Strong = 1, ESeasonMazeAutoBeadType_Energy = 2}
+local ESeasonMazeAutoBeadType = {
+  ESeasonMazeAutoBeadType_Skill = 0,
+  ESeasonMazeAutoBeadType_Strong = 1,
+  ESeasonMazeAutoBeadType_Energy = 2
+}
 _enum("ESeasonMazeAutoBeadType", ESeasonMazeAutoBeadType)
 _class("SeasonMazeFormationItem", Object)
-_ENV.SeasonMazeFormationItem = _ENV.SeasonMazeFormationItem
--- DECOMPILER ERROR at PC14939: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeFormationItem = SeasonMazeFormationItem
 
-;
-(_ENV.SeasonMazeFormationItem).Constructor = function(self)
-  -- function num : 0_509
+function SeasonMazeFormationItem:Constructor()
   self.id = 0
   self.name = ""
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC14959: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeFormationItem)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"name", "string"}
-, 
-[3] = {"pet_list", "list<int>"}
+SeasonMazeFormationItem._proto = {
+  [1] = {"id", "int"},
+  [2] = {"name", "string"},
+  [3] = {"pet_list", "list<int>"}
 }
 _class("SeasonMazePetInfo", Object)
-_ENV.SeasonMazePetInfo = _ENV.SeasonMazePetInfo
--- DECOMPILER ERROR at PC14971: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazePetInfo = SeasonMazePetInfo
 
-;
-(_ENV.SeasonMazePetInfo).Constructor = function(self)
-  -- function num : 0_510
+function SeasonMazePetInfo:Constructor()
   self.petID = 0
   self.cur_blood_prcent = 1
   self.break_though_lv = 0
@@ -10057,2416 +8804,1942 @@ _ENV.SeasonMazePetInfo = _ENV.SeasonMazePetInfo
   self.max_hp = 0
 end
 
--- DECOMPILER ERROR at PC15006: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazePetInfo)._proto = {
-[1] = {"petID", "int"}
-, 
-[2] = {"cur_blood_prcent", "double"}
-, 
-[3] = {"break_though_lv", "int"}
-, 
-[4] = {"state", "int"}
-, 
-[5] = {"pow", "int"}
-, 
-[6] = {"max_hp", "int"}
+SeasonMazePetInfo._proto = {
+  [1] = {"petID", "int"},
+  [2] = {
+    "cur_blood_prcent",
+    "double"
+  },
+  [3] = {
+    "break_though_lv",
+    "int"
+  },
+  [4] = {"state", "int"},
+  [5] = {"pow", "int"},
+  [6] = {"max_hp", "int"}
 }
 _class("SeasonMazeRelicInfo", Object)
-_ENV.SeasonMazeRelicInfo = _ENV.SeasonMazeRelicInfo
--- DECOMPILER ERROR at PC15018: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeRelicInfo = SeasonMazeRelicInfo
 
-;
-(_ENV.SeasonMazeRelicInfo).Constructor = function(self)
-  -- function num : 0_511
+function SeasonMazeRelicInfo:Constructor()
   self.relicID = 0
   self.residueCnt = 0
 end
 
--- DECOMPILER ERROR at PC15033: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRelicInfo)._proto = {
-[1] = {"relicID", "int"}
-, 
-[2] = {"residueCnt", "int"}
+SeasonMazeRelicInfo._proto = {
+  [1] = {"relicID", "int"},
+  [2] = {"residueCnt", "int"}
 }
 _class("SeasonMazeBagInfo", Object)
-_ENV.SeasonMazeBagInfo = _ENV.SeasonMazeBagInfo
--- DECOMPILER ERROR at PC15045: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeBagInfo = SeasonMazeBagInfo
 
-;
-(_ENV.SeasonMazeBagInfo).Constructor = function(self)
-  -- function num : 0_0
-  self.m_campaign_id = 0
-  self.m_component_type = 0
-  self.m_component_id = 0
-  self.m_component_step = 0
-  self.m_b_unlock = false
-  self.m_unlock_time = 0
-  self.m_unlock_items = {}
-  self.m_open_time = 0
-  self.m_close_time = 0
-  self.m_need_mission_type = 0
-  self.m_need_mission_id = 0
-  self.m_first_story_id = 0
+function SeasonMazeBagInfo:Constructor()
+  self.pet_list = {}
+  self.relic_list = {}
+  self.card_list = {}
+  self.once_item_list = {}
 end
 
--- DECOMPILER ERROR at PC15070: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeBagInfo)._proto = {
-[1] = {"pet_list", "map<int,SeasonMazePetInfo>"}
-, 
-[2] = {"relic_list", "map<int,SeasonMazeRelicInfo>"}
-, 
-[3] = {"card_list", "list<int>"}
-, 
-[4] = {"once_item_list", "map<int,int>"}
+SeasonMazeBagInfo._proto = {
+  [1] = {
+    "pet_list",
+    "map<int,SeasonMazePetInfo>"
+  },
+  [2] = {
+    "relic_list",
+    "map<int,SeasonMazeRelicInfo>"
+  },
+  [3] = {"card_list", "list<int>"},
+  [4] = {
+    "once_item_list",
+    "map<int,int>"
+  }
 }
 _class("SeasonMazeAutoBead", Object)
-_ENV.SeasonMazeAutoBead = _ENV.SeasonMazeAutoBead
--- DECOMPILER ERROR at PC15082: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeAutoBead = SeasonMazeAutoBead
 
-;
-(_ENV.SeasonMazeAutoBead).Constructor = function(self)
-  -- function num : 0_1
+function SeasonMazeAutoBead:Constructor()
+  self.unique_id = 1
+  self.cfg_id = 0
+  self.b_new = false
 end
 
--- DECOMPILER ERROR at PC15102: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeAutoBead)._proto = {
-[1] = {"unique_id", "int"}
-, 
-[2] = {"cfg_id", "int"}
-, 
-[3] = {"b_new", "bool"}
+SeasonMazeAutoBead._proto = {
+  [1] = {"unique_id", "int"},
+  [2] = {"cfg_id", "int"},
+  [3] = {"b_new", "bool"}
 }
 _class("SeasonMazeAutoBeadClient", Object)
-_ENV.SeasonMazeAutoBeadClient = _ENV.SeasonMazeAutoBeadClient
--- DECOMPILER ERROR at PC15114: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeAutoBeadClient = SeasonMazeAutoBeadClient
 
-;
-(_ENV.SeasonMazeAutoBeadClient).Constructor = function(self)
-  -- function num : 0_2
+function SeasonMazeAutoBeadClient:Constructor()
+  self.bead_info = SeasonMazeAutoBead:New()
+  self.incr_value = {}
 end
 
--- DECOMPILER ERROR at PC15129: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeAutoBeadClient)._proto = {
-[1] = {"bead_info", "SeasonMazeAutoBead"}
-, 
-[2] = {"incr_value", "map<int,int>"}
+SeasonMazeAutoBeadClient._proto = {
+  [1] = {
+    "bead_info",
+    "SeasonMazeAutoBead"
+  },
+  [2] = {
+    "incr_value",
+    "map<int,int>"
+  }
 }
 _class("SeasonMazeAutoBeadDB", Object)
-_ENV.SeasonMazeAutoBeadDB = _ENV.SeasonMazeAutoBeadDB
--- DECOMPILER ERROR at PC15141: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeAutoBeadDB = SeasonMazeAutoBeadDB
 
-;
-(_ENV.SeasonMazeAutoBeadDB).Constructor = function(self)
-  -- function num : 0_3
+function SeasonMazeAutoBeadDB:Constructor()
+  self.m_auto_bead_map = {}
+  self.m_auto_bead_fit_list = {}
+  self.m_no_cnt = 0
 end
 
--- DECOMPILER ERROR at PC15161: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeAutoBeadDB)._proto = {
-[1] = {"m_auto_bead_map", "map<int,SeasonMazeAutoBead>"}
-, 
-[2] = {"m_auto_bead_fit_list", "list<int>"}
-, 
-[3] = {"m_no_cnt", "int"}
+SeasonMazeAutoBeadDB._proto = {
+  [1] = {
+    "m_auto_bead_map",
+    "map<int,SeasonMazeAutoBead>"
+  },
+  [2] = {
+    "m_auto_bead_fit_list",
+    "list<int>"
+  },
+  [3] = {"m_no_cnt", "int"}
 }
 _class("SeasonRelicSuitInfo", Object)
-_ENV.SeasonRelicSuitInfo = _ENV.SeasonRelicSuitInfo
--- DECOMPILER ERROR at PC15173: Confused about usage of register: R79 in 'UnsetPending'
+SeasonRelicSuitInfo = SeasonRelicSuitInfo
 
-;
-(_ENV.SeasonRelicSuitInfo).Constructor = function(self)
-  -- function num : 0_4
+function SeasonRelicSuitInfo:Constructor()
+  self.suit_list = {}
+  self.suit_relic_list = {}
 end
 
--- DECOMPILER ERROR at PC15188: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonRelicSuitInfo)._proto = {
-[1] = {"suit_list", "map<int,int>"}
-, 
-[2] = {"suit_relic_list", "list<int>"}
+SeasonRelicSuitInfo._proto = {
+  [1] = {
+    "suit_list",
+    "map<int,int>"
+  },
+  [2] = {
+    "suit_relic_list",
+    "list<int>"
+  }
 }
 _class("SeasonMazeCurRecruit", Object)
-_ENV.SeasonMazeCurRecruit = _ENV.SeasonMazeCurRecruit
--- DECOMPILER ERROR at PC15200: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeCurRecruit = SeasonMazeCurRecruit
 
-;
-(_ENV.SeasonMazeCurRecruit).Constructor = function(self)
-  -- function num : 0_5
-  self.id = 0
-  self.name = ""
+function SeasonMazeCurRecruit:Constructor()
+  self.cur_pets = {}
+  self.select_pet = 0
+end
+
+SeasonMazeCurRecruit._proto = {
+  [1] = {"cur_pets", "list<int>"},
+  [2] = {"select_pet", "int"}
+}
+_class("SeasonMazeRecruitInfo", Object)
+SeasonMazeRecruitInfo = SeasonMazeRecruitInfo
+
+function SeasonMazeRecruitInfo:Constructor()
+  self.curRecruit = SeasonMazeCurRecruit:New()
+  self.unselect_cnt = {}
+  self.reset_cnt = {}
+end
+
+SeasonMazeRecruitInfo._proto = {
+  [1] = {
+    "curRecruit",
+    "SeasonMazeCurRecruit"
+  },
+  [2] = {
+    "unselect_cnt",
+    "map<int,int>"
+  },
+  [3] = {
+    "reset_cnt",
+    "map<int,int>"
+  }
+}
+_class("SeasonMazeRecruitRoomInfo", Object)
+SeasonMazeRecruitRoomInfo = SeasonMazeRecruitRoomInfo
+
+function SeasonMazeRecruitRoomInfo:Constructor()
+  self.prop = 0
+  self.cur_pets = {}
+  self.reroll_cnt = 0
+  self.unselect_cnt = {}
+  self.reset_cnt = {}
+end
+
+SeasonMazeRecruitRoomInfo._proto = {
+  [1] = {"prop", "int"},
+  [2] = {"cur_pets", "list<int>"},
+  [3] = {"reroll_cnt", "int"},
+  [4] = {
+    "unselect_cnt",
+    "map<int,int>"
+  },
+  [5] = {
+    "reset_cnt",
+    "map<int,int>"
+  }
+}
+_class("CSeasonMazeComponentDataInfo", ICampaignComponentDataInfo)
+CSeasonMazeComponentDataInfo = CSeasonMazeComponentDataInfo
+
+function CSeasonMazeComponentDataInfo:Constructor()
+  self.enter_time = 0
+  self.hard = 0
+  self.rooms = {}
+  self.wait_hands = {}
+  self.fold_hands = {}
+  self.rand_hands = {}
+  self.boss_info = {}
+  self.cur_hand = SeasonMazeHandInfo:New()
+  self.past_hand = {}
+  self.cur_point = 0
+  self.do_layer_num = 0
+  self.hard_num = {}
+  self.tmp_point = {}
+  self.occupy_ore = {}
+  self.cur_state = 0
+  self.save_info = SeasonMazeSaveInfo:New()
+  self.slot_info = SeasonMazeSlotInfo:New()
+  self.relic_random = SeasonMazeRelicRandomInfo:New()
+  self.new_hands = SeasonMazeNewHandInfo:New()
+  self.room_ids = {}
+  self.round_num = {}
+  self.suit_info = SeasonRelicSuitInfo:New()
+  self.attr_list = {}
+  self.m_formation_list = {}
+  self.m_bag_info = SeasonMazeBagInfo:New()
+  self.m_init_select = false
+  self.m_auto_bead_db = SeasonMazeAutoBeadDB:New()
+  self.m_recruit_info = SeasonMazeRecruitInfo:New()
+  self.m_world_boss_info = SeasonMazeWorldBossInfo:New()
+  self.m_recruit_room_info = SeasonMazeRecruitRoomInfo:New()
+  self.manunl_ban_pets = {}
+end
+
+CSeasonMazeComponentDataInfo._proto = {
+  [1] = {"enter_time", "time"},
+  [2] = {"hard", "int"},
+  [3] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [4] = {"wait_hands", "list<int>"},
+  [5] = {"fold_hands", "list<int>"},
+  [6] = {"rand_hands", "list<int>"},
+  [7] = {
+    "boss_info",
+    "map<int,SeasonMazeBossInfo>"
+  },
+  [8] = {
+    "cur_hand",
+    "SeasonMazeHandInfo"
+  },
+  [9] = {
+    "past_hand",
+    "list<SeasonMazeHandInfo>"
+  },
+  [10] = {"cur_point", "int"},
+  [11] = {
+    "do_layer_num",
+    "int"
+  },
+  [12] = {
+    "hard_num",
+    "map<int,SeasonMazeHardInfo>"
+  },
+  [13] = {"tmp_point", "list<int>"},
+  [14] = {
+    "occupy_ore",
+    "map<int,SeasonMazeRoomBaseOre>"
+  },
+  [15] = {"cur_state", "int"},
+  [16] = {
+    "save_info",
+    "SeasonMazeSaveInfo"
+  },
+  [17] = {
+    "slot_info",
+    "SeasonMazeSlotInfo"
+  },
+  [18] = {
+    "relic_random",
+    "SeasonMazeRelicRandomInfo"
+  },
+  [19] = {
+    "new_hands",
+    "SeasonMazeNewHandInfo"
+  },
+  [20] = {
+    "room_ids",
+    "map<int,list<int>>"
+  },
+  [21] = {
+    "round_num",
+    "map<int,int>"
+  },
+  [40] = {
+    "suit_info",
+    "SeasonRelicSuitInfo"
+  },
+  [41] = {
+    "attr_list",
+    "map<int,int>"
+  },
+  [51] = {
+    "m_formation_list",
+    "map<int,SeasonMazeFormationItem>"
+  },
+  [52] = {
+    "m_bag_info",
+    "SeasonMazeBagInfo"
+  },
+  [53] = {
+    "m_init_select",
+    "bool"
+  },
+  [54] = {
+    "m_auto_bead_db",
+    "SeasonMazeAutoBeadDB"
+  },
+  [55] = {
+    "m_recruit_info",
+    "SeasonMazeRecruitInfo"
+  },
+  [56] = {
+    "m_world_boss_info",
+    "SeasonMazeWorldBossInfo"
+  },
+  [57] = {
+    "m_recruit_room_info",
+    "SeasonMazeRecruitRoomInfo"
+  },
+  [58] = {
+    "manunl_ban_pets",
+    "list<int>"
+  }
+}
+_class("SeasonMazeComponentInfo", ICampaignComponentInfo)
+SeasonMazeComponentInfo = SeasonMazeComponentInfo
+
+function SeasonMazeComponentInfo:Constructor()
+  self.enter_time = 0
+  self.hard = 0
+  self.rooms = {}
+  self.wait_hands = {}
+  self.fold_hands = {}
+  self.rand_hands = {}
+  self.boss_info = {}
+  self.cur_hand = SeasonMazeHandInfo:New()
+  self.past_hand = {}
+  self.cur_point = 0
+  self.do_layer_num = 0
+  self.hard_num = {}
+  self.tmp_point = {}
+  self.occupy_ore = {}
+  self.cur_state = 0
+  self.save_info = SeasonMazeSaveInfo:New()
+  self.slot_info = SeasonMazeSlotInfo:New()
+  self.relic_random = SeasonMazeRelicRandomInfo:New()
+  self.new_hands = SeasonMazeNewHandInfo:New()
+  self.round_num = {}
+  self.suit_info = SeasonRelicSuitInfo:New()
+  self.attr_list = {}
+  self.m_formation_list = {}
+  self.m_init_select = false
+  self.m_auto_bead_map = {}
+  self.m_auto_bead_fit_list = {}
+  self.m_new_auto_bead_cnt = 0
+  self.m_bag_info = SeasonMazeBagInfo:New()
+  self.m_world_boss_info = SeasonMazeWorldBossInfo:New()
+  self.m_recruit_room_pet_list = {}
+  self.m_recruit_room_reflush_cnt = 0
+  self.manunl_ban_pets = {}
+end
+
+SeasonMazeComponentInfo._proto = {
+  [1] = {"enter_time", "time"},
+  [2] = {"hard", "int"},
+  [3] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [4] = {"wait_hands", "list<int>"},
+  [5] = {"fold_hands", "list<int>"},
+  [6] = {"rand_hands", "list<int>"},
+  [7] = {
+    "boss_info",
+    "map<int,SeasonMazeBossInfo>"
+  },
+  [8] = {
+    "cur_hand",
+    "SeasonMazeHandInfo"
+  },
+  [9] = {
+    "past_hand",
+    "list<SeasonMazeHandInfo>"
+  },
+  [10] = {"cur_point", "int"},
+  [11] = {
+    "do_layer_num",
+    "int"
+  },
+  [12] = {
+    "hard_num",
+    "map<int,SeasonMazeHardInfo>"
+  },
+  [13] = {"tmp_point", "list<int>"},
+  [14] = {
+    "occupy_ore",
+    "map<int,SeasonMazeRoomBaseOre>"
+  },
+  [15] = {"cur_state", "int"},
+  [16] = {
+    "save_info",
+    "SeasonMazeSaveInfo"
+  },
+  [17] = {
+    "slot_info",
+    "SeasonMazeSlotInfo"
+  },
+  [18] = {
+    "relic_random",
+    "SeasonMazeRelicRandomInfo"
+  },
+  [19] = {
+    "new_hands",
+    "SeasonMazeNewHandInfo"
+  },
+  [21] = {
+    "round_num",
+    "map<int,int>"
+  },
+  [40] = {
+    "suit_info",
+    "SeasonRelicSuitInfo"
+  },
+  [41] = {
+    "attr_list",
+    "map<int,int>"
+  },
+  [51] = {
+    "m_formation_list",
+    "map<int,SeasonMazeFormationItem>"
+  },
+  [52] = {
+    "m_init_select",
+    "bool"
+  },
+  [53] = {
+    "m_auto_bead_map",
+    "map<int,SeasonMazeAutoBeadClient>"
+  },
+  [54] = {
+    "m_auto_bead_fit_list",
+    "list<int>"
+  },
+  [55] = {
+    "m_new_auto_bead_cnt",
+    "int"
+  },
+  [56] = {
+    "m_bag_info",
+    "SeasonMazeBagInfo"
+  },
+  [57] = {
+    "m_world_boss_info",
+    "SeasonMazeWorldBossInfo"
+  },
+  [58] = {
+    "m_recruit_room_pet_list",
+    "list<int>"
+  },
+  [59] = {
+    "m_recruit_room_reflush_cnt",
+    "int"
+  },
+  [60] = {
+    "manunl_ban_pets",
+    "list<int>"
+  }
+}
+_class("SeasonMazeManunlBanPetReq", ICampaignComRequest)
+SeasonMazeManunlBanPetReq = SeasonMazeManunlBanPetReq
+
+function SeasonMazeManunlBanPetReq:Constructor()
+  self.ban_list = {}
+end
+
+SeasonMazeManunlBanPetReq._proto = {
+  [1] = {"ban_list", "list<int>"}
+}
+_class("SeasonMazeManunlBanPetResult", ICampaignComResponse)
+SeasonMazeManunlBanPetResult = SeasonMazeManunlBanPetResult
+
+function SeasonMazeManunlBanPetResult:Constructor()
+end
+
+SeasonMazeManunlBanPetResult._proto = {}
+_class("SeasonMazeRoomTransferReq", ICampaignComRequest)
+SeasonMazeRoomTransferReq = SeasonMazeRoomTransferReq
+
+function SeasonMazeRoomTransferReq:Constructor()
+  self.point_id = 0
+end
+
+SeasonMazeRoomTransferReq._proto = {
+  [1] = {"point_id", "int"}
+}
+_class("SeasonMazeRoomTransferResult", ICampaignComResponse)
+SeasonMazeRoomTransferResult = SeasonMazeRoomTransferResult
+
+function SeasonMazeRoomTransferResult:Constructor()
+  self.rooms = {}
+  self.cur_point = 0
+end
+
+SeasonMazeRoomTransferResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [2] = {"cur_point", "int"}
+}
+_class("SeasonMazeRecruitRoomSelectPropReq", ICampaignComRequest)
+SeasonMazeRecruitRoomSelectPropReq = SeasonMazeRecruitRoomSelectPropReq
+
+function SeasonMazeRecruitRoomSelectPropReq:Constructor()
+  self.prop = 0
+end
+
+SeasonMazeRecruitRoomSelectPropReq._proto = {
+  [1] = {"prop", "int"}
+}
+_class("SeasonMazeRecruitRoomSelectPropResult", ICampaignComResponse)
+SeasonMazeRecruitRoomSelectPropResult = SeasonMazeRecruitRoomSelectPropResult
+
+function SeasonMazeRecruitRoomSelectPropResult:Constructor()
+  self.cur_pets = {}
+end
+
+SeasonMazeRecruitRoomSelectPropResult._proto = {
+  [1] = {"cur_pets", "list<int>"}
+}
+_class("SeasonMazeRecruitRoomReflushReq", ICampaignComRequest)
+SeasonMazeRecruitRoomReflushReq = SeasonMazeRecruitRoomReflushReq
+
+function SeasonMazeRecruitRoomReflushReq:Constructor()
+end
+
+SeasonMazeRecruitRoomReflushReq._proto = {}
+_class("SeasonMazeRecruitRoomReflushReply", ICampaignComResponse)
+SeasonMazeRecruitRoomReflushReply = SeasonMazeRecruitRoomReflushReply
+
+function SeasonMazeRecruitRoomReflushReply:Constructor()
   self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC15215: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeCurRecruit)._proto = {
-[1] = {"cur_pets", "list<int>"}
-, 
-[2] = {"select_pet", "int"}
-}
-_class("SeasonMazeRecruitInfo", Object)
-_ENV.SeasonMazeRecruitInfo = _ENV.SeasonMazeRecruitInfo
--- DECOMPILER ERROR at PC15227: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitInfo).Constructor = function(self)
-  -- function num : 0_6
-  self.m_cur_mission = 0
-  self.m_pass_mission_info = {}
-  self.formation_list = {}
-end
-
--- DECOMPILER ERROR at PC15247: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitInfo)._proto = {
-[1] = {"curRecruit", "SeasonMazeCurRecruit"}
-, 
-[2] = {"unselect_cnt", "map<int,int>"}
-, 
-[3] = {"reset_cnt", "map<int,int>"}
-}
-_class("SeasonMazeRecruitRoomInfo", Object)
-_ENV.SeasonMazeRecruitRoomInfo = _ENV.SeasonMazeRecruitRoomInfo
--- DECOMPILER ERROR at PC15259: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomInfo).Constructor = function(self)
-  -- function num : 0_7
-  self.m_cur_mission = 0
-  self.m_pass_mission_info = {}
-  self.formation_list = {}
-end
-
--- DECOMPILER ERROR at PC15289: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomInfo)._proto = {
-[1] = {"prop", "int"}
-, 
-[2] = {"cur_pets", "list<int>"}
-, 
-[3] = {"reroll_cnt", "int"}
-, 
-[4] = {"unselect_cnt", "map<int,int>"}
-, 
-[5] = {"reset_cnt", "map<int,int>"}
-}
-_class("CSeasonMazeComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.CSeasonMazeComponentDataInfo = _ENV.CSeasonMazeComponentDataInfo
--- DECOMPILER ERROR at PC15301: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.CSeasonMazeComponentDataInfo).Constructor = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self.m_create_info = CampaignMissionCreateInfo:New()
-end
-
--- DECOMPILER ERROR at PC15480: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.CSeasonMazeComponentDataInfo)._proto = {
-[1] = {"enter_time", "time"}
-, 
-[2] = {"hard", "int"}
-, 
-[3] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[4] = {"wait_hands", "list<int>"}
-, 
-[5] = {"fold_hands", "list<int>"}
-, 
-[6] = {"rand_hands", "list<int>"}
-, 
-[7] = {"boss_info", "map<int,SeasonMazeBossInfo>"}
-, 
-[8] = {"cur_hand", "SeasonMazeHandInfo"}
-, 
-[9] = {"past_hand", "list<SeasonMazeHandInfo>"}
-, 
-[10] = {"cur_point", "int"}
-, 
-[11] = {"do_layer_num", "int"}
-, 
-[12] = {"hard_num", "map<int,SeasonMazeHardInfo>"}
-, 
-[13] = {"tmp_point", "list<int>"}
-, 
-[14] = {"occupy_ore", "map<int,SeasonMazeRoomBaseOre>"}
-, 
-[15] = {"cur_state", "int"}
-, 
-[16] = {"save_info", "SeasonMazeSaveInfo"}
-, 
-[17] = {"slot_info", "SeasonMazeSlotInfo"}
-, 
-[18] = {"relic_random", "SeasonMazeRelicRandomInfo"}
-, 
-[19] = {"new_hands", "SeasonMazeNewHandInfo"}
-, 
-[20] = {"room_ids", "map<int,list<int>>"}
-, 
-[21] = {"round_num", "map<int,int>"}
-, 
-[40] = {"suit_info", "SeasonRelicSuitInfo"}
-, 
-[41] = {"attr_list", "map<int,int>"}
-, 
-[51] = {"m_formation_list", "map<int,SeasonMazeFormationItem>"}
-, 
-[52] = {"m_bag_info", "SeasonMazeBagInfo"}
-, 
-[53] = {"m_init_select", "bool"}
-, 
-[54] = {"m_auto_bead_db", "SeasonMazeAutoBeadDB"}
-, 
-[55] = {"m_recruit_info", "SeasonMazeRecruitInfo"}
-, 
-[56] = {"m_world_boss_info", "SeasonMazeWorldBossInfo"}
-, 
-[57] = {"m_recruit_room_info", "SeasonMazeRecruitRoomInfo"}
-, 
-[58] = {"manunl_ban_pets", "list<int>"}
-}
-_class("SeasonMazeComponentInfo", ICampaignComponentInfo)
-_ENV.SeasonMazeComponentInfo = _ENV.SeasonMazeComponentInfo
--- DECOMPILER ERROR at PC15492: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeComponentInfo).Constructor = function(self)
-  -- function num : 0_9
-  self.nErrorCode = 0
-  self.reward = {}
-end
-
--- DECOMPILER ERROR at PC15677: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeComponentInfo)._proto = {
-[1] = {"enter_time", "time"}
-, 
-[2] = {"hard", "int"}
-, 
-[3] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[4] = {"wait_hands", "list<int>"}
-, 
-[5] = {"fold_hands", "list<int>"}
-, 
-[6] = {"rand_hands", "list<int>"}
-, 
-[7] = {"boss_info", "map<int,SeasonMazeBossInfo>"}
-, 
-[8] = {"cur_hand", "SeasonMazeHandInfo"}
-, 
-[9] = {"past_hand", "list<SeasonMazeHandInfo>"}
-, 
-[10] = {"cur_point", "int"}
-, 
-[11] = {"do_layer_num", "int"}
-, 
-[12] = {"hard_num", "map<int,SeasonMazeHardInfo>"}
-, 
-[13] = {"tmp_point", "list<int>"}
-, 
-[14] = {"occupy_ore", "map<int,SeasonMazeRoomBaseOre>"}
-, 
-[15] = {"cur_state", "int"}
-, 
-[16] = {"save_info", "SeasonMazeSaveInfo"}
-, 
-[17] = {"slot_info", "SeasonMazeSlotInfo"}
-, 
-[18] = {"relic_random", "SeasonMazeRelicRandomInfo"}
-, 
-[19] = {"new_hands", "SeasonMazeNewHandInfo"}
-, 
-[21] = {"round_num", "map<int,int>"}
-, 
-[40] = {"suit_info", "SeasonRelicSuitInfo"}
-, 
-[41] = {"attr_list", "map<int,int>"}
-, 
-[51] = {"m_formation_list", "map<int,SeasonMazeFormationItem>"}
-, 
-[52] = {"m_init_select", "bool"}
-, 
-[53] = {"m_auto_bead_map", "map<int,SeasonMazeAutoBeadClient>"}
-, 
-[54] = {"m_auto_bead_fit_list", "list<int>"}
-, 
-[55] = {"m_new_auto_bead_cnt", "int"}
-, 
-[56] = {"m_bag_info", "SeasonMazeBagInfo"}
-, 
-[57] = {"m_world_boss_info", "SeasonMazeWorldBossInfo"}
-, 
-[58] = {"m_recruit_room_pet_list", "list<int>"}
-, 
-[59] = {"m_recruit_room_reflush_cnt", "int"}
-, 
-[60] = {"manunl_ban_pets", "list<int>"}
-}
-_class("SeasonMazeManunlBanPetReq", ICampaignComRequest)
-_ENV.SeasonMazeManunlBanPetReq = _ENV.SeasonMazeManunlBanPetReq
--- DECOMPILER ERROR at PC15689: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeManunlBanPetReq).Constructor = function(self)
-  -- function num : 0_10
-  self.m_cur_mission = 0
-  self.m_update_mission_info = {}
-end
-
--- DECOMPILER ERROR at PC15699: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeManunlBanPetReq)._proto = {
-[1] = {"ban_list", "list<int>"}
-}
-_class("SeasonMazeManunlBanPetResult", ICampaignComResponse)
-_ENV.SeasonMazeManunlBanPetResult = _ENV.SeasonMazeManunlBanPetResult
--- DECOMPILER ERROR at PC15711: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeManunlBanPetResult).Constructor = function(self)
-  -- function num : 0_11
-  self.m_pass_mission_info = {}
-end
-
--- DECOMPILER ERROR at PC15715: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeManunlBanPetResult)._proto = {}
-_class("SeasonMazeRoomTransferReq", ICampaignComRequest)
-_ENV.SeasonMazeRoomTransferReq = _ENV.SeasonMazeRoomTransferReq
--- DECOMPILER ERROR at PC15727: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomTransferReq).Constructor = function(self)
-  -- function num : 0_12
-  self.m_pass_mission_info = {}
-end
-
--- DECOMPILER ERROR at PC15737: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomTransferReq)._proto = {
-[1] = {"point_id", "int"}
-}
-_class("SeasonMazeRoomTransferResult", ICampaignComResponse)
-_ENV.SeasonMazeRoomTransferResult = _ENV.SeasonMazeRoomTransferResult
--- DECOMPILER ERROR at PC15749: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomTransferResult).Constructor = function(self)
-  -- function num : 0_13
-  self.m_update_mission_info = {}
-end
-
--- DECOMPILER ERROR at PC15764: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomTransferResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[2] = {"cur_point", "int"}
-}
-_class("SeasonMazeRecruitRoomSelectPropReq", ICampaignComRequest)
-_ENV.SeasonMazeRecruitRoomSelectPropReq = _ENV.SeasonMazeRecruitRoomSelectPropReq
--- DECOMPILER ERROR at PC15776: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomSelectPropReq).Constructor = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  self.m_create_info = CampaignMissionCreateInfo:New()
-end
-
--- DECOMPILER ERROR at PC15786: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomSelectPropReq)._proto = {
-[1] = {"prop", "int"}
-}
-_class("SeasonMazeRecruitRoomSelectPropResult", ICampaignComResponse)
-_ENV.SeasonMazeRecruitRoomSelectPropResult = _ENV.SeasonMazeRecruitRoomSelectPropResult
--- DECOMPILER ERROR at PC15798: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomSelectPropResult).Constructor = function(self)
-  -- function num : 0_15
-  self.nErrorCode = 0
-  self.reward = {}
-end
-
--- DECOMPILER ERROR at PC15808: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomSelectPropResult)._proto = {
-[1] = {"cur_pets", "list<int>"}
-}
-_class("SeasonMazeRecruitRoomReflushReq", ICampaignComRequest)
-_ENV.SeasonMazeRecruitRoomReflushReq = _ENV.SeasonMazeRecruitRoomReflushReq
--- DECOMPILER ERROR at PC15820: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomReflushReq).Constructor = function(self)
-  -- function num : 0_16
-  self.cartridge_use_times = {}
-  self.open_cartridge_gift_times = 0
-  self.last_cartridge_reset_time = 0
-  self.m_pass_mission_info = {}
-end
-
--- DECOMPILER ERROR at PC15824: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomReflushReq)._proto = {}
-_class("SeasonMazeRecruitRoomReflushReply", ICampaignComResponse)
-_ENV.SeasonMazeRecruitRoomReflushReply = _ENV.SeasonMazeRecruitRoomReflushReply
--- DECOMPILER ERROR at PC15836: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomReflushReply).Constructor = function(self)
-  -- function num : 0_17
-  self.create_cartridge_tick_sec = 0
-  self.cartridge_gift_template_id = 0
-  self.max_cartridge_num = 0
-  self.next_gift_time = 0
-end
-
--- DECOMPILER ERROR at PC15846: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomReflushReply)._proto = {
-[1] = {"pet_list", "list<int>"}
+SeasonMazeRecruitRoomReflushReply._proto = {
+  [1] = {"pet_list", "list<int>"}
 }
 _class("SeasonMazeRecruitRoomSelectReq", ICampaignComRequest)
-_ENV.SeasonMazeRecruitRoomSelectReq = _ENV.SeasonMazeRecruitRoomSelectReq
--- DECOMPILER ERROR at PC15858: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeRecruitRoomSelectReq = SeasonMazeRecruitRoomSelectReq
 
-;
-(_ENV.SeasonMazeRecruitRoomSelectReq).Constructor = function(self)
-  -- function num : 0_18
+function SeasonMazeRecruitRoomSelectReq:Constructor()
+  self.pet_id = 0
 end
 
--- DECOMPILER ERROR at PC15868: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomSelectReq)._proto = {
-[1] = {"pet_id", "int"}
+SeasonMazeRecruitRoomSelectReq._proto = {
+  [1] = {"pet_id", "int"}
 }
 _class("SeasonMazeRecruitRoomSelectReply", ICampaignComResponse)
-_ENV.SeasonMazeRecruitRoomSelectReply = _ENV.SeasonMazeRecruitRoomSelectReply
--- DECOMPILER ERROR at PC15880: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeRecruitRoomSelectReply = SeasonMazeRecruitRoomSelectReply
 
-;
-(_ENV.SeasonMazeRecruitRoomSelectReply).Constructor = function(self)
-  -- function num : 0_19
-  self.next_gift_time = 0
+function SeasonMazeRecruitRoomSelectReply:Constructor()
+  self.rooms = {}
 end
 
--- DECOMPILER ERROR at PC15890: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRecruitRoomSelectReply)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
+SeasonMazeRecruitRoomSelectReply._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  }
 }
 _class("SeasonMazeSelectHardReq", ICampaignComRequest)
-_ENV.SeasonMazeSelectHardReq = _ENV.SeasonMazeSelectHardReq
--- DECOMPILER ERROR at PC15902: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeSelectHardReq = SeasonMazeSelectHardReq
 
-;
-(_ENV.SeasonMazeSelectHardReq).Constructor = function(self)
-  -- function num : 0_20
+function SeasonMazeSelectHardReq:Constructor()
+  self.hard = 0
+  self.pet_list = {}
 end
 
--- DECOMPILER ERROR at PC15917: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSelectHardReq)._proto = {
-[1] = {"hard", "int"}
-, 
-[2] = {"pet_list", "list<int>"}
+SeasonMazeSelectHardReq._proto = {
+  [1] = {"hard", "int"},
+  [2] = {"pet_list", "list<int>"}
 }
 _class("SeasonMazeSelectHardResult", ICampaignComResponse)
-_ENV.SeasonMazeSelectHardResult = _ENV.SeasonMazeSelectHardResult
--- DECOMPILER ERROR at PC15929: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeSelectHardResult = SeasonMazeSelectHardResult
 
-;
-(_ENV.SeasonMazeSelectHardResult).Constructor = function(self)
-  -- function num : 0_21
-  self.item_template_id = 0
+function SeasonMazeSelectHardResult:Constructor()
+  self.info = SeasonMazeComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC15939: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSelectHardResult)._proto = {
-[1] = {"info", "SeasonMazeComponentInfo"}
+SeasonMazeSelectHardResult._proto = {
+  [1] = {
+    "info",
+    "SeasonMazeComponentInfo"
+  }
 }
 _class("SeasonMazeRandomHandReq", ICampaignComRequest)
-_ENV.SeasonMazeRandomHandReq = _ENV.SeasonMazeRandomHandReq
--- DECOMPILER ERROR at PC15951: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeRandomHandReq = SeasonMazeRandomHandReq
 
-;
-(_ENV.SeasonMazeRandomHandReq).Constructor = function(self)
-  -- function num : 0_22
-  self.cartridge_pst_id = 0
+function SeasonMazeRandomHandReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC15955: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRandomHandReq)._proto = {}
+SeasonMazeRandomHandReq._proto = {}
 _class("SeasonMazeRandomHandResult", ICampaignComResponse)
-_ENV.SeasonMazeRandomHandResult = _ENV.SeasonMazeRandomHandResult
--- DECOMPILER ERROR at PC15967: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeRandomHandResult = SeasonMazeRandomHandResult
 
-;
-(_ENV.SeasonMazeRandomHandResult).Constructor = function(self)
-  -- function num : 0_23
+function SeasonMazeRandomHandResult:Constructor()
+  self.wait_hands = {}
+  self.fold_hands = {}
+  self.rand_hands = {}
 end
 
--- DECOMPILER ERROR at PC15987: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRandomHandResult)._proto = {
-[1] = {"wait_hands", "list<int>"}
-, 
-[2] = {"fold_hands", "list<int>"}
-, 
-[3] = {"rand_hands", "list<int>"}
+SeasonMazeRandomHandResult._proto = {
+  [1] = {"wait_hands", "list<int>"},
+  [2] = {"fold_hands", "list<int>"},
+  [3] = {"rand_hands", "list<int>"}
 }
 _class("SeasonMazeChooseHandReq", ICampaignComRequest)
-_ENV.SeasonMazeChooseHandReq = _ENV.SeasonMazeChooseHandReq
--- DECOMPILER ERROR at PC15999: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeChooseHandReq = SeasonMazeChooseHandReq
 
-;
-(_ENV.SeasonMazeChooseHandReq).Constructor = function(self)
-  -- function num : 0_24
-  self.m_pass_mission_info = {}
-  self.m_formation_info = {}
-  self.m_select_affix = {}
-  self.m_pass_afix = {}
-  self.m_select_hard = {}
-  self.m_pass_hard = {}
-end
-
--- DECOMPILER ERROR at PC16009: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeChooseHandReq)._proto = {
-[1] = {"id", "int"}
-}
-_class("SeasonMazeChooseHandResult", ICampaignComResponse)
-_ENV.SeasonMazeChooseHandResult = _ENV.SeasonMazeChooseHandResult
--- DECOMPILER ERROR at PC16021: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeChooseHandResult).Constructor = function(self)
-  -- function num : 0_25
-  self.m_pass_mission_info = {}
-  self.m_formation_info = {}
-  self.m_select_affix = {}
-  self.m_pass_afix = {}
-  self.m_mission_unlock_time = {}
-  self.m_select_hard = {}
-  self.m_pass_hard = {}
-end
-
--- DECOMPILER ERROR at PC16046: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeChooseHandResult)._proto = {
-[1] = {"cur_hand", "SeasonMazeHandInfo"}
-, 
-[2] = {"wait_hands", "list<int>"}
-, 
-[3] = {"fold_hands", "list<int>"}
-, 
-[4] = {"rand_hands", "list<int>"}
-}
-_class("SeasonMazeClearingReq", ICampaignComRequest)
-_ENV.SeasonMazeClearingReq = _ENV.SeasonMazeClearingReq
--- DECOMPILER ERROR at PC16058: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeClearingReq).Constructor = function(self)
-  -- function num : 0_26
-  self.m_update_mission_info = {}
-  self.m_update_pass_afix = {}
-  self.m_update_pass_hard = {}
-end
-
--- DECOMPILER ERROR at PC16068: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeClearingReq)._proto = {
-[1] = {"is_initiative", "bool"}
-}
-_class("SeasonMazeClearingResult", ICampaignComResponse)
-_ENV.SeasonMazeClearingResult = _ENV.SeasonMazeClearingResult
--- DECOMPILER ERROR at PC16080: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeClearingResult).Constructor = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  self.m_create_info = CampaignMissionCreateInfo:New()
-end
-
--- DECOMPILER ERROR at PC16095: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeClearingResult)._proto = {
-[1] = {"info", "SeasonMazeComponentInfo"}
-, 
-[2] = {"old_info", "SeasonMazeComponentInfo"}
-}
-_class("SeasonMazeGoPointReq", ICampaignComRequest)
-_ENV.SeasonMazeGoPointReq = _ENV.SeasonMazeGoPointReq
--- DECOMPILER ERROR at PC16107: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeGoPointReq).Constructor = function(self)
-  -- function num : 0_28
-  self.nErrorCode = 0
-  self.reward = {}
-end
-
--- DECOMPILER ERROR at PC16122: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeGoPointReq)._proto = {
-[1] = {"id", "int"}
-, 
-[2] = {"is_tmp", "bool"}
-}
-_class("SeasonMazeGoPointResult", ICampaignComResponse)
-_ENV.SeasonMazeGoPointResult = _ENV.SeasonMazeGoPointResult
--- DECOMPILER ERROR at PC16134: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeGoPointResult).Constructor = function(self)
-  -- function num : 0_29
-  self.nCampaignMissionId = 0
-  self.SelectAffixIdArray = {}
-  self.nHardId = 0
-end
-
--- DECOMPILER ERROR at PC16164: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeGoPointResult)._proto = {
-[1] = {"cur_hand", "SeasonMazeHandInfo"}
-, 
-[2] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[3] = {"past_hand", "list<SeasonMazeHandInfo>"}
-, 
-[4] = {"tmp_point", "list<int>"}
-, 
-[5] = {"cur_point", "int"}
-}
-_class("SeasonMazeRoomEndReq", ICampaignComRequest)
-_ENV.SeasonMazeRoomEndReq = _ENV.SeasonMazeRoomEndReq
--- DECOMPILER ERROR at PC16176: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomEndReq).Constructor = function(self)
-  -- function num : 0_30
-end
-
--- DECOMPILER ERROR at PC16180: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomEndReq)._proto = {}
-_class("SeasonMazeRoomEndResult", ICampaignComResponse)
-_ENV.SeasonMazeRoomEndResult = _ENV.SeasonMazeRoomEndResult
--- DECOMPILER ERROR at PC16192: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomEndResult).Constructor = function(self)
-  -- function num : 0_31
-  self.nElementType = 0
-  self.formation_pet_list = {}
-end
-
--- DECOMPILER ERROR at PC16212: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoomEndResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[2] = {"info", "SeasonMazeComponentInfo"}
-, 
-[3] = {"cur_state", "int"}
-}
-_class("SeasonMazeBattleReq", ICampaignComRequest)
-_ENV.SeasonMazeBattleReq = _ENV.SeasonMazeBattleReq
--- DECOMPILER ERROR at PC16224: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeBattleReq).Constructor = function(self)
-  -- function num : 0_32
-  self.nFormationRet = 0
-end
-
--- DECOMPILER ERROR at PC16228: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeBattleReq)._proto = {}
-_class("SeasonMazeBattleResult", ICampaignComResponse)
-_ENV.SeasonMazeBattleResult = _ENV.SeasonMazeBattleResult
--- DECOMPILER ERROR at PC16240: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeBattleResult).Constructor = function(self)
-  -- function num : 0_33
-  self.m_open_time = 0
-  self.m_end_time = 0
-  self.m_need_daily_reset = false
-end
-
--- DECOMPILER ERROR at PC16255: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeBattleResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[2] = {"reward", "list<SeasonMazeEffect>"}
-}
-_class("SeasonMazeEventReq", ICampaignComRequest)
-_ENV.SeasonMazeEventReq = _ENV.SeasonMazeEventReq
--- DECOMPILER ERROR at PC16267: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeEventReq).Constructor = function(self)
-  -- function num : 0_34
-  self.m_accept_cam_quest_list = {}
-  self.m_quest_time_param_map = {}
-end
-
--- DECOMPILER ERROR at PC16277: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeEventReq)._proto = {
-[1] = {"cfg_id", "int"}
-}
-_class("SeasonMazeEventResult", ICampaignComResponse)
-_ENV.SeasonMazeEventResult = _ENV.SeasonMazeEventResult
--- DECOMPILER ERROR at PC16289: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeEventResult).Constructor = function(self)
-  -- function num : 0_35
+function SeasonMazeChooseHandReq:Constructor()
   self.id = 0
 end
 
--- DECOMPILER ERROR at PC16314: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeChooseHandReq._proto = {
+  [1] = {"id", "int"}
+}
+_class("SeasonMazeChooseHandResult", ICampaignComResponse)
+SeasonMazeChooseHandResult = SeasonMazeChooseHandResult
 
-;
-(_ENV.SeasonMazeEventResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[2] = {"reward", "list<SeasonMazeEffect>"}
-, 
-[3] = {"hands", "list<SeasonMazeHandInfo>"}
-, 
-[4] = {"extract", "bool"}
+function SeasonMazeChooseHandResult:Constructor()
+  self.cur_hand = SeasonMazeHandInfo:New()
+  self.wait_hands = {}
+  self.fold_hands = {}
+  self.rand_hands = {}
+end
+
+SeasonMazeChooseHandResult._proto = {
+  [1] = {
+    "cur_hand",
+    "SeasonMazeHandInfo"
+  },
+  [2] = {"wait_hands", "list<int>"},
+  [3] = {"fold_hands", "list<int>"},
+  [4] = {"rand_hands", "list<int>"}
+}
+_class("SeasonMazeClearingReq", ICampaignComRequest)
+SeasonMazeClearingReq = SeasonMazeClearingReq
+
+function SeasonMazeClearingReq:Constructor()
+  self.is_initiative = false
+end
+
+SeasonMazeClearingReq._proto = {
+  [1] = {
+    "is_initiative",
+    "bool"
+  }
+}
+_class("SeasonMazeClearingResult", ICampaignComResponse)
+SeasonMazeClearingResult = SeasonMazeClearingResult
+
+function SeasonMazeClearingResult:Constructor()
+  self.info = SeasonMazeComponentInfo:New()
+  self.old_info = SeasonMazeComponentInfo:New()
+end
+
+SeasonMazeClearingResult._proto = {
+  [1] = {
+    "info",
+    "SeasonMazeComponentInfo"
+  },
+  [2] = {
+    "old_info",
+    "SeasonMazeComponentInfo"
+  }
+}
+_class("SeasonMazeGoPointReq", ICampaignComRequest)
+SeasonMazeGoPointReq = SeasonMazeGoPointReq
+
+function SeasonMazeGoPointReq:Constructor()
+  self.id = 0
+  self.is_tmp = false
+end
+
+SeasonMazeGoPointReq._proto = {
+  [1] = {"id", "int"},
+  [2] = {"is_tmp", "bool"}
+}
+_class("SeasonMazeGoPointResult", ICampaignComResponse)
+SeasonMazeGoPointResult = SeasonMazeGoPointResult
+
+function SeasonMazeGoPointResult:Constructor()
+  self.cur_hand = SeasonMazeHandInfo:New()
+  self.rooms = {}
+  self.past_hand = {}
+  self.tmp_point = {}
+  self.cur_point = 0
+end
+
+SeasonMazeGoPointResult._proto = {
+  [1] = {
+    "cur_hand",
+    "SeasonMazeHandInfo"
+  },
+  [2] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [3] = {
+    "past_hand",
+    "list<SeasonMazeHandInfo>"
+  },
+  [4] = {"tmp_point", "list<int>"},
+  [5] = {"cur_point", "int"}
+}
+_class("SeasonMazeRoomEndReq", ICampaignComRequest)
+SeasonMazeRoomEndReq = SeasonMazeRoomEndReq
+
+function SeasonMazeRoomEndReq:Constructor()
+end
+
+SeasonMazeRoomEndReq._proto = {}
+_class("SeasonMazeRoomEndResult", ICampaignComResponse)
+SeasonMazeRoomEndResult = SeasonMazeRoomEndResult
+
+function SeasonMazeRoomEndResult:Constructor()
+  self.rooms = {}
+  self.info = SeasonMazeComponentInfo:New()
+  self.cur_state = 0
+end
+
+SeasonMazeRoomEndResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [2] = {
+    "info",
+    "SeasonMazeComponentInfo"
+  },
+  [3] = {"cur_state", "int"}
+}
+_class("SeasonMazeBattleReq", ICampaignComRequest)
+SeasonMazeBattleReq = SeasonMazeBattleReq
+
+function SeasonMazeBattleReq:Constructor()
+end
+
+SeasonMazeBattleReq._proto = {}
+_class("SeasonMazeBattleResult", ICampaignComResponse)
+SeasonMazeBattleResult = SeasonMazeBattleResult
+
+function SeasonMazeBattleResult:Constructor()
+  self.rooms = {}
+  self.reward = {}
+end
+
+SeasonMazeBattleResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [2] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  }
+}
+_class("SeasonMazeEventReq", ICampaignComRequest)
+SeasonMazeEventReq = SeasonMazeEventReq
+
+function SeasonMazeEventReq:Constructor()
+  self.cfg_id = 0
+end
+
+SeasonMazeEventReq._proto = {
+  [1] = {"cfg_id", "int"}
+}
+_class("SeasonMazeEventResult", ICampaignComResponse)
+SeasonMazeEventResult = SeasonMazeEventResult
+
+function SeasonMazeEventResult:Constructor()
+  self.rooms = {}
+  self.reward = {}
+  self.hands = {}
+  self.extract = false
+end
+
+SeasonMazeEventResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [2] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  },
+  [3] = {
+    "hands",
+    "list<SeasonMazeHandInfo>"
+  },
+  [4] = {"extract", "bool"}
 }
 _class("SeasonMazeResourceReq", ICampaignComRequest)
-_ENV.SeasonMazeResourceReq = _ENV.SeasonMazeResourceReq
--- DECOMPILER ERROR at PC16326: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeResourceReq = SeasonMazeResourceReq
 
-;
-(_ENV.SeasonMazeResourceReq).Constructor = function(self)
-  -- function num : 0_36
-  self.ret = 0
-  self.rewards = {}
+function SeasonMazeResourceReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC16330: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeResourceReq)._proto = {}
+SeasonMazeResourceReq._proto = {}
 _class("SeasonMazeResourceResult", ICampaignComResponse)
-_ENV.SeasonMazeResourceResult = _ENV.SeasonMazeResourceResult
--- DECOMPILER ERROR at PC16342: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeResourceResult = SeasonMazeResourceResult
 
-;
-(_ENV.SeasonMazeResourceResult).Constructor = function(self)
-  -- function num : 0_37
+function SeasonMazeResourceResult:Constructor()
+  self.rooms = {}
+  self.reward = {}
 end
 
--- DECOMPILER ERROR at PC16357: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeResourceResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[2] = {"reward", "list<SeasonMazeEffect>"}
+SeasonMazeResourceResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [2] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  }
 }
 _class("SeasonMazeOreReq", ICampaignComRequest)
-_ENV.SeasonMazeOreReq = _ENV.SeasonMazeOreReq
--- DECOMPILER ERROR at PC16369: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeOreReq = SeasonMazeOreReq
 
-;
-(_ENV.SeasonMazeOreReq).Constructor = function(self)
-  -- function num : 0_38
-  self.ret = 0
-  self.rewards = {}
+function SeasonMazeOreReq:Constructor()
+  self.cfg_id = 0
+  self.rd_index = 0
+  self.is_do = false
 end
 
--- DECOMPILER ERROR at PC16389: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeOreReq)._proto = {
-[1] = {"cfg_id", "int"}
-, 
-[2] = {"rd_index", "int"}
-, 
-[3] = {"is_do", "bool"}
+SeasonMazeOreReq._proto = {
+  [1] = {"cfg_id", "int"},
+  [2] = {"rd_index", "int"},
+  [3] = {"is_do", "bool"}
 }
 _class("SeasonMazeOreResult", ICampaignComResponse)
-_ENV.SeasonMazeOreResult = _ENV.SeasonMazeOreResult
--- DECOMPILER ERROR at PC16401: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeOreResult = SeasonMazeOreResult
 
-;
-(_ENV.SeasonMazeOreResult).Constructor = function(self)
-  -- function num : 0_39
+function SeasonMazeOreResult:Constructor()
+  self.occupy_ore = {}
+  self.reward = {}
+  self.rooms = {}
 end
 
--- DECOMPILER ERROR at PC16421: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeOreResult)._proto = {
-[1] = {"occupy_ore", "map<int,SeasonMazeRoomBaseOre>"}
-, 
-[2] = {"reward", "list<SeasonMazeEffect>"}
-, 
-[3] = {"rooms", "map<int,SeasonMazeRoomBase>"}
+SeasonMazeOreResult._proto = {
+  [1] = {
+    "occupy_ore",
+    "map<int,SeasonMazeRoomBaseOre>"
+  },
+  [2] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  },
+  [3] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  }
 }
 _class("SeasonMazeBoxReq", ICampaignComRequest)
-_ENV.SeasonMazeBoxReq = _ENV.SeasonMazeBoxReq
--- DECOMPILER ERROR at PC16433: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeBoxReq = SeasonMazeBoxReq
 
-;
-(_ENV.SeasonMazeBoxReq).Constructor = function(self)
-  -- function num : 0_40
-  self.m_reset_quest_map = {}
+function SeasonMazeBoxReq:Constructor()
+  self.index = 0
 end
 
--- DECOMPILER ERROR at PC16443: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeBoxReq)._proto = {
-[1] = {"index", "int"}
+SeasonMazeBoxReq._proto = {
+  [1] = {"index", "int"}
 }
 _class("SeasonMazeBoxResult", ICampaignComResponse)
-_ENV.SeasonMazeBoxResult = _ENV.SeasonMazeBoxResult
--- DECOMPILER ERROR at PC16455: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeBoxResult = SeasonMazeBoxResult
 
-;
-(_ENV.SeasonMazeBoxResult).Constructor = function(self)
-  -- function num : 0_41
-  self.m_reset_quest_map = {}
+function SeasonMazeBoxResult:Constructor()
+  self.rooms = {}
+  self.reward = {}
 end
 
--- DECOMPILER ERROR at PC16470: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeBoxResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[2] = {"reward", "list<SeasonMazeEffect>"}
+SeasonMazeBoxResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [2] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  }
 }
 _class("SeasonMazeRoundReq", ICampaignComRequest)
-_ENV.SeasonMazeRoundReq = _ENV.SeasonMazeRoundReq
--- DECOMPILER ERROR at PC16482: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeRoundReq = SeasonMazeRoundReq
 
-;
-(_ENV.SeasonMazeRoundReq).Constructor = function(self)
-  -- function num : 0_42
-  self.m_num = 1
-  self.last_refresh_time = 0
+function SeasonMazeRoundReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC16486: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoundReq)._proto = {}
+SeasonMazeRoundReq._proto = {}
 _class("SeasonMazeRoundResult", ICampaignComResponse)
-_ENV.SeasonMazeRoundResult = _ENV.SeasonMazeRoundResult
--- DECOMPILER ERROR at PC16498: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeRoundResult = SeasonMazeRoundResult
 
-;
-(_ENV.SeasonMazeRoundResult).Constructor = function(self)
-  -- function num : 0_43
-  self.m_num = 0
+function SeasonMazeRoundResult:Constructor()
+  self.rooms = {}
+  self.reward = {}
 end
 
--- DECOMPILER ERROR at PC16513: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoundResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[2] = {"reward", "list<SeasonMazeEffect>"}
+SeasonMazeRoundResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [2] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  }
 }
 _class("SeasonMazeAltarReq", ICampaignComRequest)
-_ENV.SeasonMazeAltarReq = _ENV.SeasonMazeAltarReq
--- DECOMPILER ERROR at PC16525: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeAltarReq = SeasonMazeAltarReq
 
-;
-(_ENV.SeasonMazeAltarReq).Constructor = function(self)
-  -- function num : 0_44
-  self.m_req = 0
+function SeasonMazeAltarReq:Constructor()
+  self.cfg_id = 0
+  self.is_delet = false
+  self.index = 0
 end
 
--- DECOMPILER ERROR at PC16545: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeAltarReq)._proto = {
-[1] = {"cfg_id", "int"}
-, 
-[2] = {"is_delet", "bool"}
-, 
-[3] = {"index", "int"}
+SeasonMazeAltarReq._proto = {
+  [1] = {"cfg_id", "int"},
+  [2] = {"is_delet", "bool"},
+  [3] = {"index", "int"}
 }
 _class("SeasonMazeAltarResult", ICampaignComResponse)
-_ENV.SeasonMazeAltarResult = _ENV.SeasonMazeAltarResult
--- DECOMPILER ERROR at PC16557: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeAltarResult = SeasonMazeAltarResult
 
-;
-(_ENV.SeasonMazeAltarResult).Constructor = function(self)
-  -- function num : 0_45
-  self.m_rep = 0
+function SeasonMazeAltarResult:Constructor()
+  self.cfg_id = 0
+  self.rooms = {}
 end
 
--- DECOMPILER ERROR at PC16572: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeAltarResult)._proto = {
-[1] = {"cfg_id", "int"}
-, 
-[2] = {"rooms", "map<int,SeasonMazeRoomBase>"}
+SeasonMazeAltarResult._proto = {
+  [1] = {"cfg_id", "int"},
+  [2] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  }
 }
 _class("SeasonMazeChooseRelicReq", ICampaignComRequest)
-_ENV.SeasonMazeChooseRelicReq = _ENV.SeasonMazeChooseRelicReq
--- DECOMPILER ERROR at PC16584: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeChooseRelicReq = SeasonMazeChooseRelicReq
 
-;
-(_ENV.SeasonMazeChooseRelicReq).Constructor = function(self)
-  -- function num : 0_46
-  self.m_item_exchange_count = {}
-  self.m_exchange_cost_coin = 0
+function SeasonMazeChooseRelicReq:Constructor()
+  self.index = 0
+  self.operate = 0
 end
 
--- DECOMPILER ERROR at PC16599: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeChooseRelicReq)._proto = {
-[1] = {"index", "int"}
-, 
-[2] = {"operate", "int"}
+SeasonMazeChooseRelicReq._proto = {
+  [1] = {"index", "int"},
+  [2] = {"operate", "int"}
 }
 _class("SeasonMazeChooseRelicResult", ICampaignComResponse)
-_ENV.SeasonMazeChooseRelicResult = _ENV.SeasonMazeChooseRelicResult
--- DECOMPILER ERROR at PC16611: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeChooseRelicResult = SeasonMazeChooseRelicResult
 
-;
-(_ENV.SeasonMazeChooseRelicResult).Constructor = function(self)
-  -- function num : 0_47 , upvalues : _ENV
-  self.m_id = 0
-  self.m_unlock_time = 0
-  self.m_reward = RoleAsset:New()
-  self.m_exchange_limit_count = 0
-  self.m_cost_item_id = 0
-  self.m_cost_count = 0
-  self.m_can_exchange_count = 0
-  self.m_is_special = false
-  self.m_is_show_red_point = false
-  self.m_unlock_cost_item = {}
-  self.m_add_baguum = false
+function SeasonMazeChooseRelicResult:Constructor()
+  self.cur_state = 0
+  self.relic_random = SeasonMazeRelicRandomInfo:New()
+  self.reward = {}
 end
 
--- DECOMPILER ERROR at PC16631: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeChooseRelicResult)._proto = {
-[1] = {"cur_state", "int"}
-, 
-[2] = {"relic_random", "SeasonMazeRelicRandomInfo"}
-, 
-[3] = {"reward", "list<SeasonMazeEffect>"}
+SeasonMazeChooseRelicResult._proto = {
+  [1] = {"cur_state", "int"},
+  [2] = {
+    "relic_random",
+    "SeasonMazeRelicRandomInfo"
+  },
+  [3] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  }
 }
 _class("SeasonMazeUseOnceReq", ICampaignComRequest)
-_ENV.SeasonMazeUseOnceReq = _ENV.SeasonMazeUseOnceReq
--- DECOMPILER ERROR at PC16643: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeUseOnceReq = SeasonMazeUseOnceReq
 
-;
-(_ENV.SeasonMazeUseOnceReq).Constructor = function(self)
-  -- function num : 0_48
-  self.m_exchange_item_list = {}
+function SeasonMazeUseOnceReq:Constructor()
+  self.cfg_id = 0
+  self.param = 0
 end
 
--- DECOMPILER ERROR at PC16658: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeUseOnceReq)._proto = {
-[1] = {"cfg_id", "int"}
-, 
-[2] = {"param", "int"}
+SeasonMazeUseOnceReq._proto = {
+  [1] = {"cfg_id", "int"},
+  [2] = {"param", "int"}
 }
 _class("SeasonMazeUseOnceResult", ICampaignComResponse)
-_ENV.SeasonMazeUseOnceResult = _ENV.SeasonMazeUseOnceResult
--- DECOMPILER ERROR at PC16670: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeUseOnceResult = SeasonMazeUseOnceResult
 
-;
-(_ENV.SeasonMazeUseOnceResult).Constructor = function(self)
-  -- function num : 0_49
-  self.m_exchange_item_id = 0
-  self.m_exchange_count = 1
+function SeasonMazeUseOnceResult:Constructor()
+  self.rooms = {}
+  self.reward = {}
+  self.fold_hands = {}
+  self.rand_hands = {}
+  self.wait_hands = {}
+  self.cur_point = 0
 end
 
--- DECOMPILER ERROR at PC16705: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeUseOnceResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-, 
-[2] = {"reward", "list<SeasonMazeEffect>"}
-, 
-[3] = {"fold_hands", "list<int>"}
-, 
-[4] = {"rand_hands", "list<int>"}
-, 
-[5] = {"wait_hands", "list<int>"}
-, 
-[6] = {"cur_point", "int"}
+SeasonMazeUseOnceResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  },
+  [2] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  },
+  [3] = {"fold_hands", "list<int>"},
+  [4] = {"rand_hands", "list<int>"},
+  [5] = {"wait_hands", "list<int>"},
+  [6] = {"cur_point", "int"}
 }
 _class("SeasonMazeSaveLvReq", ICampaignComRequest)
-_ENV.SeasonMazeSaveLvReq = _ENV.SeasonMazeSaveLvReq
--- DECOMPILER ERROR at PC16717: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeSaveLvReq = SeasonMazeSaveLvReq
 
-;
-(_ENV.SeasonMazeSaveLvReq).Constructor = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  self.m_rewards = {}
-  self.m_exchange_info = ExchangeItemComponentInfo:New()
-  self.m_step = 0
+function SeasonMazeSaveLvReq:Constructor()
+  self.num = 0
 end
 
--- DECOMPILER ERROR at PC16727: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSaveLvReq)._proto = {
-[1] = {"num", "int"}
+SeasonMazeSaveLvReq._proto = {
+  [1] = {"num", "int"}
 }
 _class("SeasonMazeSaveLvResult", ICampaignComResponse)
-_ENV.SeasonMazeSaveLvResult = _ENV.SeasonMazeSaveLvResult
--- DECOMPILER ERROR at PC16739: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeSaveLvResult = SeasonMazeSaveLvResult
 
-;
-(_ENV.SeasonMazeSaveLvResult).Constructor = function(self)
-  -- function num : 0_51
-  self.m_received_progress = {}
-  self.m_progress = 0
-  self.m_mark = 0
-  self.m_mark_else = 0
+function SeasonMazeSaveLvResult:Constructor()
+  self.save_info = SeasonMazeSaveInfo:New()
+  self.reward = {}
 end
 
--- DECOMPILER ERROR at PC16754: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSaveLvResult)._proto = {
-[1] = {"save_info", "SeasonMazeSaveInfo"}
-, 
-[2] = {"reward", "list<SeasonMazeEffect>"}
+SeasonMazeSaveLvResult._proto = {
+  [1] = {
+    "save_info",
+    "SeasonMazeSaveInfo"
+  },
+  [2] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  }
 }
 _class("SeasonMazeGetSlotReq", ICampaignComRequest)
-_ENV.SeasonMazeGetSlotReq = _ENV.SeasonMazeGetSlotReq
--- DECOMPILER ERROR at PC16766: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeGetSlotReq = SeasonMazeGetSlotReq
 
-;
-(_ENV.SeasonMazeGetSlotReq).Constructor = function(self)
-  -- function num : 0_52
-  self.m_item_id = 0
-  self.m_current_progress = 0
-  self.m_received_progress = {}
-  self.m_progress_rewards = {}
-  self.m_special_rewards = {}
-  self.m_lv_limit = 0
-  self.m_progress = 0
-  self.m_mark = 0
-  self.m_mark_else = 0
+function SeasonMazeGetSlotReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC16770: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeGetSlotReq)._proto = {}
+SeasonMazeGetSlotReq._proto = {}
 _class("SeasonMazeGetSlotResult", ICampaignComResponse)
-_ENV.SeasonMazeGetSlotResult = _ENV.SeasonMazeGetSlotResult
--- DECOMPILER ERROR at PC16782: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeGetSlotResult = SeasonMazeGetSlotResult
 
-;
-(_ENV.SeasonMazeGetSlotResult).Constructor = function(self)
-  -- function num : 0_53
-  self.m_progress = 0
+function SeasonMazeGetSlotResult:Constructor()
+  self.slot_info = SeasonMazeSlotInfo:New()
 end
 
--- DECOMPILER ERROR at PC16792: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeGetSlotResult)._proto = {
-[1] = {"slot_info", "SeasonMazeSlotInfo"}
+SeasonMazeGetSlotResult._proto = {
+  [1] = {
+    "slot_info",
+    "SeasonMazeSlotInfo"
+  }
 }
 _class("SeasonMazeOperaSlotReq", ICampaignComRequest)
-_ENV.SeasonMazeOperaSlotReq = _ENV.SeasonMazeOperaSlotReq
--- DECOMPILER ERROR at PC16804: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeOperaSlotReq = SeasonMazeOperaSlotReq
 
-;
-(_ENV.SeasonMazeOperaSlotReq).Constructor = function(self)
-  -- function num : 0_54
-  self.m_new_progress = 0
-  self.m_rewards = {}
+function SeasonMazeOperaSlotReq:Constructor()
+  self.index = 0
+  self.is_re = false
 end
 
--- DECOMPILER ERROR at PC16819: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeOperaSlotReq)._proto = {
-[1] = {"index", "int"}
-, 
-[2] = {"is_re", "bool"}
+SeasonMazeOperaSlotReq._proto = {
+  [1] = {"index", "int"},
+  [2] = {"is_re", "bool"}
 }
 _class("SeasonMazeOperaSlotResult", ICampaignComResponse)
-_ENV.SeasonMazeOperaSlotResult = _ENV.SeasonMazeOperaSlotResult
--- DECOMPILER ERROR at PC16831: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeOperaSlotResult = SeasonMazeOperaSlotResult
 
-;
-(_ENV.SeasonMazeOperaSlotResult).Constructor = function(self)
-  -- function num : 0_55
+function SeasonMazeOperaSlotResult:Constructor()
+  self.slot_info = SeasonMazeSlotInfo:New()
+  self.info = {}
+  self.reward = {}
 end
 
--- DECOMPILER ERROR at PC16851: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeOperaSlotResult)._proto = {
-[1] = {"slot_info", "SeasonMazeSlotInfo"}
-, 
-[2] = {"info", "map<int,SeasonMazeSlotIndex>"}
-, 
-[3] = {"reward", "list<SeasonMazeEffect>"}
+SeasonMazeOperaSlotResult._proto = {
+  [1] = {
+    "slot_info",
+    "SeasonMazeSlotInfo"
+  },
+  [2] = {
+    "info",
+    "map<int,SeasonMazeSlotIndex>"
+  },
+  [3] = {
+    "reward",
+    "list<SeasonMazeEffect>"
+  }
 }
 _class("SeasonMazeNewHandReq", ICampaignComRequest)
-_ENV.SeasonMazeNewHandReq = _ENV.SeasonMazeNewHandReq
--- DECOMPILER ERROR at PC16863: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeNewHandReq = SeasonMazeNewHandReq
 
-;
-(_ENV.SeasonMazeNewHandReq).Constructor = function(self)
-  -- function num : 0_56
-  self.m_new_progress = 0
-  self.m_rewards = {}
+function SeasonMazeNewHandReq:Constructor()
+  self.index = {}
 end
 
--- DECOMPILER ERROR at PC16873: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNewHandReq)._proto = {
-[1] = {"index", "map<int,int>"}
+SeasonMazeNewHandReq._proto = {
+  [1] = {
+    "index",
+    "map<int,int>"
+  }
 }
 _class("SeasonMazeNewHandResult", ICampaignComResponse)
-_ENV.SeasonMazeNewHandResult = _ENV.SeasonMazeNewHandResult
--- DECOMPILER ERROR at PC16885: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeNewHandResult = SeasonMazeNewHandResult
 
-;
-(_ENV.SeasonMazeNewHandResult).Constructor = function(self)
-  -- function num : 0_57
-  self.m_item_count = 0
+function SeasonMazeNewHandResult:Constructor()
+  self.cur_state = 0
+  self.new_hands = SeasonMazeNewHandInfo:New()
+  self.hands = {}
 end
 
--- DECOMPILER ERROR at PC16905: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNewHandResult)._proto = {
-[1] = {"cur_state", "int"}
-, 
-[2] = {"new_hands", "SeasonMazeNewHandInfo"}
-, 
-[3] = {"hands", "list<int>"}
+SeasonMazeNewHandResult._proto = {
+  [1] = {"cur_state", "int"},
+  [2] = {
+    "new_hands",
+    "SeasonMazeNewHandInfo"
+  },
+  [3] = {"hands", "list<int>"}
 }
 _class("SeasonMazeGetMarketReq", ICampaignComRequest)
-_ENV.SeasonMazeGetMarketReq = _ENV.SeasonMazeGetMarketReq
--- DECOMPILER ERROR at PC16917: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeGetMarketReq = SeasonMazeGetMarketReq
 
-;
-(_ENV.SeasonMazeGetMarketReq).Constructor = function(self)
-  -- function num : 0_58
-  self.m_item_num = 0
-  self.m_mark = 0
-  self.m_mark_else = 0
+function SeasonMazeGetMarketReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC16921: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeGetMarketReq)._proto = {}
+SeasonMazeGetMarketReq._proto = {}
 _class("SeasonMazeGetMarketResult", ICampaignComResponse)
-_ENV.SeasonMazeGetMarketResult = _ENV.SeasonMazeGetMarketResult
--- DECOMPILER ERROR at PC16933: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeGetMarketResult = SeasonMazeGetMarketResult
 
-;
-(_ENV.SeasonMazeGetMarketResult).Constructor = function(self)
-  -- function num : 0_59
-  self.ret = 0
+function SeasonMazeGetMarketResult:Constructor()
+  self.rooms = {}
 end
 
--- DECOMPILER ERROR at PC16943: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeGetMarketResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
+SeasonMazeGetMarketResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  }
 }
 _class("SeasonMazeOperaMarketReq", ICampaignComRequest)
-_ENV.SeasonMazeOperaMarketReq = _ENV.SeasonMazeOperaMarketReq
--- DECOMPILER ERROR at PC16955: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeOperaMarketReq = SeasonMazeOperaMarketReq
 
-;
-(_ENV.SeasonMazeOperaMarketReq).Constructor = function(self)
-  -- function num : 0_60
-  self.m_login_days = 0
-  self.m_last_refresh_time = 0
-  self.m_recieved_days = {}
+function SeasonMazeOperaMarketReq:Constructor()
+  self.pst_id = 0
+  self.unique_id = 0
 end
 
--- DECOMPILER ERROR at PC16970: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeOperaMarketReq)._proto = {
-[1] = {"pst_id", "int64"}
-, 
-[2] = {"unique_id", "int"}
+SeasonMazeOperaMarketReq._proto = {
+  [1] = {"pst_id", "int64"},
+  [2] = {"unique_id", "int"}
 }
 _class("SeasonMazeOperaMarketResult", ICampaignComResponse)
-_ENV.SeasonMazeOperaMarketResult = _ENV.SeasonMazeOperaMarketResult
--- DECOMPILER ERROR at PC16982: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeOperaMarketResult = SeasonMazeOperaMarketResult
 
-;
-(_ENV.SeasonMazeOperaMarketResult).Constructor = function(self)
-  -- function num : 0_61
-  self.m_login_days = 0
-  self.m_login_unlock_time = 0
-  self.m_is_special = false
-  self.m_reward_status = 0
-  self.m_rewards = {}
-  self.m_expired_time = 0
+function SeasonMazeOperaMarketResult:Constructor()
+  self.rooms = {}
 end
 
--- DECOMPILER ERROR at PC16992: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeOperaMarketResult)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
+SeasonMazeOperaMarketResult._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  }
 }
 _class("SeasonMazeRoundEndReq", ICampaignComRequest)
-_ENV.SeasonMazeRoundEndReq = _ENV.SeasonMazeRoundEndReq
--- DECOMPILER ERROR at PC17004: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeRoundEndReq = SeasonMazeRoundEndReq
 
-;
-(_ENV.SeasonMazeRoundEndReq).Constructor = function(self)
-  -- function num : 0_62
-  self.m_login_days = 0
-  self.m_cumulative_info = {}
+function SeasonMazeRoundEndReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC17008: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoundEndReq)._proto = {}
+SeasonMazeRoundEndReq._proto = {}
 _class("SeasonMazeRoundEndResult", ICampaignComResponse)
-_ENV.SeasonMazeRoundEndResult = _ENV.SeasonMazeRoundEndResult
--- DECOMPILER ERROR at PC17020: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeRoundEndResult = SeasonMazeRoundEndResult
 
-;
-(_ENV.SeasonMazeRoundEndResult).Constructor = function(self)
-  -- function num : 0_63
-  self.m_reward_id = 0
+function SeasonMazeRoundEndResult:Constructor()
 end
 
--- DECOMPILER ERROR at PC17024: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeRoundEndResult)._proto = {}
+SeasonMazeRoundEndResult._proto = {}
 _class("SeasonMazeWhiteTestBattleReq", ICampaignComRequest)
-_ENV.SeasonMazeWhiteTestBattleReq = _ENV.SeasonMazeWhiteTestBattleReq
--- DECOMPILER ERROR at PC17036: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeWhiteTestBattleReq = SeasonMazeWhiteTestBattleReq
 
-;
-(_ENV.SeasonMazeWhiteTestBattleReq).Constructor = function(self)
-  -- function num : 0_64
-  self.m_rewards = {}
+function SeasonMazeWhiteTestBattleReq:Constructor()
 end
 
--- DECOMPILER ERROR at PC17040: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeWhiteTestBattleReq)._proto = {}
+SeasonMazeWhiteTestBattleReq._proto = {}
 _class("SeasonMazeWhiteTestBattleResult", ICampaignComResponse)
-_ENV.SeasonMazeWhiteTestBattleResult = _ENV.SeasonMazeWhiteTestBattleResult
--- DECOMPILER ERROR at PC17052: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeWhiteTestBattleResult = SeasonMazeWhiteTestBattleResult
 
-;
-(_ENV.SeasonMazeWhiteTestBattleResult).Constructor = function(self)
-  -- function num : 0_65
-  self.m_total_count = 0
-  self.m_recieved_reward_story = {}
+function SeasonMazeWhiteTestBattleResult:Constructor()
 end
 
--- DECOMPILER ERROR at PC17056: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeWhiteTestBattleResult)._proto = {}
+SeasonMazeWhiteTestBattleResult._proto = {}
 _class("SeasonMazeChangeFormationReq", ICampaignComRequest)
-_ENV.SeasonMazeChangeFormationReq = _ENV.SeasonMazeChangeFormationReq
--- DECOMPILER ERROR at PC17068: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeChangeFormationReq = SeasonMazeChangeFormationReq
 
-;
-(_ENV.SeasonMazeChangeFormationReq).Constructor = function(self)
-  -- function num : 0_66
-  self.m_total_count = 0
-  self.m_recieved_reward_story = {}
-  self.m_end_date_time = 0
+function SeasonMazeChangeFormationReq:Constructor()
+  self.formation_index = 0
+  self.info = SeasonMazeFormationItem:New()
 end
 
--- DECOMPILER ERROR at PC17083: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeChangeFormationReq)._proto = {
-[1] = {"formation_index", "int"}
-, 
-[2] = {"info", "SeasonMazeFormationItem"}
+SeasonMazeChangeFormationReq._proto = {
+  [1] = {
+    "formation_index",
+    "int"
+  },
+  [2] = {
+    "info",
+    "SeasonMazeFormationItem"
+  }
 }
 _class("SeasonMazeChangeFormationReply", ICampaignComResponse)
-_ENV.SeasonMazeChangeFormationReply = _ENV.SeasonMazeChangeFormationReply
--- DECOMPILER ERROR at PC17095: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeChangeFormationReply = SeasonMazeChangeFormationReply
 
-;
-(_ENV.SeasonMazeChangeFormationReply).Constructor = function(self)
-  -- function num : 0_67
-  self.story_id = 0
+function SeasonMazeChangeFormationReply:Constructor()
 end
 
--- DECOMPILER ERROR at PC17099: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeChangeFormationReply)._proto = {}
+SeasonMazeChangeFormationReply._proto = {}
 _class("SeasonMazeInitSelectReq", ICampaignComRequest)
-_ENV.SeasonMazeInitSelectReq = _ENV.SeasonMazeInitSelectReq
--- DECOMPILER ERROR at PC17111: Confused about usage of register: R79 in 'UnsetPending'
+SeasonMazeInitSelectReq = SeasonMazeInitSelectReq
 
-;
-(_ENV.SeasonMazeInitSelectReq).Constructor = function(self)
-  -- function num : 0_68
+function SeasonMazeInitSelectReq:Constructor()
+  self.pet_list = {}
+end
+
+SeasonMazeInitSelectReq._proto = {
+  [1] = {"pet_list", "list<int>"}
+}
+_class("SeasonMazeInitSelectReply", ICampaignComResponse)
+SeasonMazeInitSelectReply = SeasonMazeInitSelectReply
+
+function SeasonMazeInitSelectReply:Constructor()
+  self.pet_list = {}
+  self.formation_list = {}
+end
+
+SeasonMazeInitSelectReply._proto = {
+  [1] = {
+    "pet_list",
+    "map<int,SeasonMazePetInfo>"
+  },
+  [2] = {
+    "formation_list",
+    "map<int,SeasonMazeFormationItem>"
+  }
+}
+_class("SeasonMazeFitAutoBeadReq", ICampaignComRequest)
+SeasonMazeFitAutoBeadReq = SeasonMazeFitAutoBeadReq
+
+function SeasonMazeFitAutoBeadReq:Constructor()
+  self.fit_beads = {}
+end
+
+SeasonMazeFitAutoBeadReq._proto = {
+  [1] = {"fit_beads", "list<int>"}
+}
+_class("SeasonMazeFitAutoBeadReply", ICampaignComResponse)
+SeasonMazeFitAutoBeadReply = SeasonMazeFitAutoBeadReply
+
+function SeasonMazeFitAutoBeadReply:Constructor()
+  self.m_auto_bead_map = {}
+  self.m_auto_bead_fit_list = {}
+end
+
+SeasonMazeFitAutoBeadReply._proto = {
+  [1] = {
+    "m_auto_bead_map",
+    "map<int,SeasonMazeAutoBeadClient>"
+  },
+  [2] = {
+    "m_auto_bead_fit_list",
+    "list<int>"
+  }
+}
+_class("SeasonMazeAutoBeadComposeReq", ICampaignComRequest)
+SeasonMazeAutoBeadComposeReq = SeasonMazeAutoBeadComposeReq
+
+function SeasonMazeAutoBeadComposeReq:Constructor()
+  self.compose_list = {}
+end
+
+SeasonMazeAutoBeadComposeReq._proto = {
+  [1] = {
+    "compose_list",
+    "list<list<int>>"
+  }
+}
+_class("SeasonMazeAutoBeadComposeReply", ICampaignComResponse)
+SeasonMazeAutoBeadComposeReply = SeasonMazeAutoBeadComposeReply
+
+function SeasonMazeAutoBeadComposeReply:Constructor()
+  self.m_auto_bead_map = {}
+  self.m_auto_bead_fit_list = {}
+  self.m_new_bead = {}
+end
+
+SeasonMazeAutoBeadComposeReply._proto = {
+  [1] = {
+    "m_auto_bead_map",
+    "map<int,SeasonMazeAutoBeadClient>"
+  },
+  [2] = {
+    "m_auto_bead_fit_list",
+    "list<int>"
+  },
+  [3] = {"m_new_bead", "list<int>"}
+}
+_class("SeasonMazeHealthyReq", ICampaignComRequest)
+SeasonMazeHealthyReq = SeasonMazeHealthyReq
+
+function SeasonMazeHealthyReq:Constructor()
+end
+
+SeasonMazeHealthyReq._proto = {}
+_class("SeasonMazeHealthyReply", ICampaignComResponse)
+SeasonMazeHealthyReply = SeasonMazeHealthyReply
+
+function SeasonMazeHealthyReply:Constructor()
+  self.pet_list = {}
+end
+
+SeasonMazeHealthyReply._proto = {
+  [1] = {
+    "pet_list",
+    "map<int,SeasonMazePetInfo>"
+  }
+}
+_class("SeasonMazeResurrectPetReq", ICampaignComRequest)
+SeasonMazeResurrectPetReq = SeasonMazeResurrectPetReq
+
+function SeasonMazeResurrectPetReq:Constructor()
+  self.pet_id = 0
+end
+
+SeasonMazeResurrectPetReq._proto = {
+  [1] = {"pet_id", "int"}
+}
+_class("SeasonMazeResurrectPetReply", ICampaignComResponse)
+SeasonMazeResurrectPetReply = SeasonMazeResurrectPetReply
+
+function SeasonMazeResurrectPetReply:Constructor()
+end
+
+SeasonMazeResurrectPetReply._proto = {}
+_class("SeasonMazePetRecruitListReq", ICampaignComRequest)
+SeasonMazePetRecruitListReq = SeasonMazePetRecruitListReq
+
+function SeasonMazePetRecruitListReq:Constructor()
+end
+
+SeasonMazePetRecruitListReq._proto = {}
+_class("SeasonMazePetRecruitListReply", ICampaignComResponse)
+SeasonMazePetRecruitListReply = SeasonMazePetRecruitListReply
+
+function SeasonMazePetRecruitListReply:Constructor()
+  self.pet_list = {}
+  self.select_pet = 0
+end
+
+SeasonMazePetRecruitListReply._proto = {
+  [1] = {"pet_list", "list<int>"},
+  [2] = {"select_pet", "int"}
+}
+_class("SeasonMazePetRecruitSelectReq", ICampaignComRequest)
+SeasonMazePetRecruitSelectReq = SeasonMazePetRecruitSelectReq
+
+function SeasonMazePetRecruitSelectReq:Constructor()
+  self.pet_id = 0
+end
+
+SeasonMazePetRecruitSelectReq._proto = {
+  [1] = {"pet_id", "int"}
+}
+_class("SeasonMazePetRecruitSelectReply", ICampaignComResponse)
+SeasonMazePetRecruitSelectReply = SeasonMazePetRecruitSelectReply
+
+function SeasonMazePetRecruitSelectReply:Constructor()
+end
+
+SeasonMazePetRecruitSelectReply._proto = {}
+_class("SeasonMazePetRecruitResetReq", ICampaignComRequest)
+SeasonMazePetRecruitResetReq = SeasonMazePetRecruitResetReq
+
+function SeasonMazePetRecruitResetReq:Constructor()
+end
+
+SeasonMazePetRecruitResetReq._proto = {}
+_class("SeasonMazePetRecruitResetReply", ICampaignComResponse)
+SeasonMazePetRecruitResetReply = SeasonMazePetRecruitResetReply
+
+function SeasonMazePetRecruitResetReply:Constructor()
+  self.pet_list = {}
+end
+
+SeasonMazePetRecruitResetReply._proto = {
+  [1] = {"pet_list", "list<int>"}
+}
+_class("SeasonMazeSelectFullBreakPetReq", ICampaignComRequest)
+SeasonMazeSelectFullBreakPetReq = SeasonMazeSelectFullBreakPetReq
+
+function SeasonMazeSelectFullBreakPetReq:Constructor()
+  self.pet_id = 0
+end
+
+SeasonMazeSelectFullBreakPetReq._proto = {
+  [1] = {"pet_id", "int"}
+}
+_class("SeasonMazeSelectFullBreakPetReply", ICampaignComResponse)
+SeasonMazeSelectFullBreakPetReply = SeasonMazeSelectFullBreakPetReply
+
+function SeasonMazeSelectFullBreakPetReply:Constructor()
+end
+
+SeasonMazeSelectFullBreakPetReply._proto = {}
+_class("SeasonMazeClearAllBeadNewReq", ICampaignComRequest)
+SeasonMazeClearAllBeadNewReq = SeasonMazeClearAllBeadNewReq
+
+function SeasonMazeClearAllBeadNewReq:Constructor()
+end
+
+SeasonMazeClearAllBeadNewReq._proto = {}
+_class("SeasonMazeClearAllBeadNewReply", ICampaignComResponse)
+SeasonMazeClearAllBeadNewReply = SeasonMazeClearAllBeadNewReply
+
+function SeasonMazeClearAllBeadNewReply:Constructor()
+end
+
+SeasonMazeClearAllBeadNewReply._proto = {}
+local SeasonMazeComponentNotifyType = {
+  SeasonMazeComponentNotifyType_Effects = 1,
+  SeasonMazeComponentNotifyType_CurState = 2,
+  SeasonMazeComponentNotifyType_OnceItem = 3,
+  SeasonMazeComponentNotifyType_Boss = 4,
+  SeasonMazeComponentNotifyType_Room = 5,
+  SeasonMazeComponentNotifyType_RandomRelic = 6,
+  SeasonMazeComponentNotifyType_NewHand = 7,
+  SeasonMazeComponentNotifyType_HandBag = 8,
+  SeasonMazeComponentNotifyType_Extract = 9,
+  SeasonMazeComponentNotifyType_Ore = 10,
+  SeasonMazeComponentNotifyType_AutoBeadChange = 50,
+  SeasonMazeComponentNotifyType_AutoBeadSlotUnLock = 51,
+  SeasonMazeComponentNotifyType_AttrChange = 52,
+  SeasonMazeComponentNotifyType_PetChange = 53,
+  SeasonMazeComponentNotifyType_SuitInfo = 54,
+  SeasonMazeComponentNotifyType_Relic = 55,
+  SeasonMazeComonentNotifyFormationChange = 56,
+  SeasonMazeComonentNotifyWorldBossTotalDamage = 57
+}
+_enum("SeasonMazeComponentNotifyType", SeasonMazeComponentNotifyType)
+_class("SeasonMazeNotifyWorldBossDamaage", Object)
+SeasonMazeNotifyWorldBossDamaage = SeasonMazeNotifyWorldBossDamaage
+
+function SeasonMazeNotifyWorldBossDamaage:Constructor()
+  self.total_damage = 0
+end
+
+SeasonMazeNotifyWorldBossDamaage._proto = {
+  [1] = {
+    "total_damage",
+    "int64"
+  }
+}
+_class("SeasonMazeNotifyOre", Object)
+SeasonMazeNotifyOre = SeasonMazeNotifyOre
+
+function SeasonMazeNotifyOre:Constructor()
+  self.occupy_ore = {}
+end
+
+SeasonMazeNotifyOre._proto = {
+  [1] = {
+    "occupy_ore",
+    "map<int,SeasonMazeRoomBaseOre>"
+  }
+}
+_class("SeasonMazeNotifyEffects", Object)
+SeasonMazeNotifyEffects = SeasonMazeNotifyEffects
+
+function SeasonMazeNotifyEffects:Constructor()
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC17121: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeInitSelectReq)._proto = {
-[1] = {"pet_list", "list<int>"}
+SeasonMazeNotifyEffects._proto = {
+  [1] = {
+    "rewards",
+    "list<SeasonMazeEffect>"
+  }
 }
-_class("SeasonMazeInitSelectReply", ICampaignComResponse)
-_ENV.SeasonMazeInitSelectReply = _ENV.SeasonMazeInitSelectReply
--- DECOMPILER ERROR at PC17133: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyCurState", Object)
+SeasonMazeNotifyCurState = SeasonMazeNotifyCurState
 
-;
-(_ENV.SeasonMazeInitSelectReply).Constructor = function(self)
-  -- function num : 0_69
-  self.m_total_count = 0
+function SeasonMazeNotifyCurState:Constructor()
+  self.cur_state = 0
 end
 
--- DECOMPILER ERROR at PC17148: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeInitSelectReply)._proto = {
-[1] = {"pet_list", "map<int,SeasonMazePetInfo>"}
-, 
-[2] = {"formation_list", "map<int,SeasonMazeFormationItem>"}
+SeasonMazeNotifyCurState._proto = {
+  [1] = {"cur_state", "int"}
 }
-_class("SeasonMazeFitAutoBeadReq", ICampaignComRequest)
-_ENV.SeasonMazeFitAutoBeadReq = _ENV.SeasonMazeFitAutoBeadReq
--- DECOMPILER ERROR at PC17160: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyOnceItem", Object)
+SeasonMazeNotifyOnceItem = SeasonMazeNotifyOnceItem
 
-;
-(_ENV.SeasonMazeFitAutoBeadReq).Constructor = function(self)
-  -- function num : 0_70
-  self.event_id = 0
-  self.lottery_times = 0
-  self.is_unlock = false
+function SeasonMazeNotifyOnceItem:Constructor()
+  self.list = {}
 end
 
--- DECOMPILER ERROR at PC17170: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeFitAutoBeadReq)._proto = {
-[1] = {"fit_beads", "list<int>"}
+SeasonMazeNotifyOnceItem._proto = {
+  [1] = {
+    "list",
+    "map<int,int>"
+  }
 }
-_class("SeasonMazeFitAutoBeadReply", ICampaignComResponse)
-_ENV.SeasonMazeFitAutoBeadReply = _ENV.SeasonMazeFitAutoBeadReply
--- DECOMPILER ERROR at PC17182: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyBoss", Object)
+SeasonMazeNotifyBoss = SeasonMazeNotifyBoss
 
-;
-(_ENV.SeasonMazeFitAutoBeadReply).Constructor = function(self)
-  -- function num : 0_71
-  self.m_award_id = 0
-  self.m_item_id = 0
-  self.m_count = 0
-  self.m_lottery_count = 0
-  self.m_weight = 0
-  self.m_is_big_reward = false
-  self.m_lottery_limit_count = 0
-  self.m_reward_type = 0
+function SeasonMazeNotifyBoss:Constructor()
+  self.boss_info = {}
 end
 
--- DECOMPILER ERROR at PC17197: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeFitAutoBeadReply)._proto = {
-[1] = {"m_auto_bead_map", "map<int,SeasonMazeAutoBeadClient>"}
-, 
-[2] = {"m_auto_bead_fit_list", "list<int>"}
+SeasonMazeNotifyBoss._proto = {
+  [1] = {
+    "boss_info",
+    "map<int,SeasonMazeBossInfo>"
+  }
 }
-_class("SeasonMazeAutoBeadComposeReq", ICampaignComRequest)
-_ENV.SeasonMazeAutoBeadComposeReq = _ENV.SeasonMazeAutoBeadComposeReq
--- DECOMPILER ERROR at PC17209: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyRoom", Object)
+SeasonMazeNotifyRoom = SeasonMazeNotifyRoom
 
-;
-(_ENV.SeasonMazeAutoBeadComposeReq).Constructor = function(self)
-  -- function num : 0_72
-  self.m_item_id = 0
-  self.m_count = 0
-  self.m_is_big_reward = false
-  self.m_awaid_id = 0
-  self.m_reward_type = 0
+function SeasonMazeNotifyRoom:Constructor()
+  self.rooms = {}
 end
 
--- DECOMPILER ERROR at PC17219: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeAutoBeadComposeReq)._proto = {
-[1] = {"compose_list", "list<list<int>>"}
+SeasonMazeNotifyRoom._proto = {
+  [1] = {
+    "rooms",
+    "map<int,SeasonMazeRoomBase>"
+  }
 }
-_class("SeasonMazeAutoBeadComposeReply", ICampaignComResponse)
-_ENV.SeasonMazeAutoBeadComposeReply = _ENV.SeasonMazeAutoBeadComposeReply
--- DECOMPILER ERROR at PC17231: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyRandomRelic", Object)
+SeasonMazeNotifyRandomRelic = SeasonMazeNotifyRandomRelic
 
-;
-(_ENV.SeasonMazeAutoBeadComposeReply).Constructor = function(self)
-  -- function num : 0_73
-  self.m_unlock_jackpots = {}
+function SeasonMazeNotifyRandomRelic:Constructor()
+  self.relic_random = SeasonMazeRelicRandomInfo:New()
 end
 
--- DECOMPILER ERROR at PC17251: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeAutoBeadComposeReply)._proto = {
-[1] = {"m_auto_bead_map", "map<int,SeasonMazeAutoBeadClient>"}
-, 
-[2] = {"m_auto_bead_fit_list", "list<int>"}
-, 
-[3] = {"m_new_bead", "list<int>"}
+SeasonMazeNotifyRandomRelic._proto = {
+  [1] = {
+    "relic_random",
+    "SeasonMazeRelicRandomInfo"
+  }
 }
-_class("SeasonMazeHealthyReq", ICampaignComRequest)
-_ENV.SeasonMazeHealthyReq = _ENV.SeasonMazeHealthyReq
--- DECOMPILER ERROR at PC17263: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyNewHand", Object)
+SeasonMazeNotifyNewHand = SeasonMazeNotifyNewHand
 
-;
-(_ENV.SeasonMazeHealthyReq).Constructor = function(self)
-  -- function num : 0_74
-  self.m_cost_item_id = 0
-  self.m_cost_count = 0
-  self.m_multi_lottery = 0
-  self.m_unlock_jackpots = {}
-  self.m_jackpots = {}
+function SeasonMazeNotifyNewHand:Constructor()
+  self.new_hands = SeasonMazeNewHandInfo:New()
+  self.reward = {}
 end
 
--- DECOMPILER ERROR at PC17267: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeHealthyReq)._proto = {}
-_class("SeasonMazeHealthyReply", ICampaignComResponse)
-_ENV.SeasonMazeHealthyReply = _ENV.SeasonMazeHealthyReply
--- DECOMPILER ERROR at PC17279: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeHealthyReply).Constructor = function(self)
-  -- function num : 0_75
-  self.m_lottery_type = 0
-  self.m_jackpot_index = 0
-end
-
--- DECOMPILER ERROR at PC17289: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeHealthyReply)._proto = {
-[1] = {"pet_list", "map<int,SeasonMazePetInfo>"}
+SeasonMazeNotifyNewHand._proto = {
+  [1] = {
+    "new_hands",
+    "SeasonMazeNewHandInfo"
+  },
+  [2] = {
+    "reward",
+    "map<int,list<SeasonMazeEffect>>"
+  }
 }
-_class("SeasonMazeResurrectPetReq", ICampaignComRequest)
-_ENV.SeasonMazeResurrectPetReq = _ENV.SeasonMazeResurrectPetReq
--- DECOMPILER ERROR at PC17301: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyHandBag", Object)
+SeasonMazeNotifyHandBag = SeasonMazeNotifyHandBag
 
-;
-(_ENV.SeasonMazeResurrectPetReq).Constructor = function(self)
-  -- function num : 0_76
-  self.m_rewards = {}
-  self.m_jackpot = {}
-  self.m_is_open_new = false
-  self.m_unlock_jackpot_index = 0
+function SeasonMazeNotifyHandBag:Constructor()
+  self.wait_hands = {}
+  self.fold_hands = {}
+  self.rand_hands = {}
 end
 
--- DECOMPILER ERROR at PC17311: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeResurrectPetReq)._proto = {
-[1] = {"pet_id", "int"}
+SeasonMazeNotifyHandBag._proto = {
+  [1] = {"wait_hands", "list<int>"},
+  [2] = {"fold_hands", "list<int>"},
+  [3] = {"rand_hands", "list<int>"}
 }
-_class("SeasonMazeResurrectPetReply", ICampaignComResponse)
-_ENV.SeasonMazeResurrectPetReply = _ENV.SeasonMazeResurrectPetReply
--- DECOMPILER ERROR at PC17323: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyExtract", Object)
+SeasonMazeNotifyExtract = SeasonMazeNotifyExtract
 
-;
-(_ENV.SeasonMazeResurrectPetReply).Constructor = function(self)
-  -- function num : 0_77
-  self.max_score = 0
-  self.story_mask = 0
-  self.reward_mask = 0
-  self.mission_grade = 0
+function SeasonMazeNotifyExtract:Constructor()
+  self.hands = {}
 end
 
--- DECOMPILER ERROR at PC17327: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeResurrectPetReply)._proto = {}
-_class("SeasonMazePetRecruitListReq", ICampaignComRequest)
-_ENV.SeasonMazePetRecruitListReq = _ENV.SeasonMazePetRecruitListReq
--- DECOMPILER ERROR at PC17339: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazePetRecruitListReq).Constructor = function(self)
-  -- function num : 0_78
-  self.m_mission_list = {}
-end
-
--- DECOMPILER ERROR at PC17343: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazePetRecruitListReq)._proto = {}
-_class("SeasonMazePetRecruitListReply", ICampaignComResponse)
-_ENV.SeasonMazePetRecruitListReply = _ENV.SeasonMazePetRecruitListReply
--- DECOMPILER ERROR at PC17355: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazePetRecruitListReply).Constructor = function(self)
-  -- function num : 0_79 , upvalues : _ENV
-  self.unlock_time = 0
-  self.mission_info = MiniGameMissionInfo:New()
-end
-
--- DECOMPILER ERROR at PC17370: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazePetRecruitListReply)._proto = {
-[1] = {"pet_list", "list<int>"}
-, 
-[2] = {"select_pet", "int"}
+SeasonMazeNotifyExtract._proto = {
+  [1] = {
+    "hands",
+    "list<SeasonMazeHandInfo>"
+  }
 }
-_class("SeasonMazePetRecruitSelectReq", ICampaignComRequest)
-_ENV.SeasonMazePetRecruitSelectReq = _ENV.SeasonMazePetRecruitSelectReq
--- DECOMPILER ERROR at PC17382: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyAutoBeadChange", Object)
+SeasonMazeNotifyAutoBeadChange = SeasonMazeNotifyAutoBeadChange
 
-;
-(_ENV.SeasonMazePetRecruitSelectReq).Constructor = function(self)
-  -- function num : 0_80
-  self.mission_info_list = {}
+function SeasonMazeNotifyAutoBeadChange:Constructor()
+  self.new_cnt = 0
+  self.bead_map = {}
 end
 
--- DECOMPILER ERROR at PC17392: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazePetRecruitSelectReq)._proto = {
-[1] = {"pet_id", "int"}
+SeasonMazeNotifyAutoBeadChange._proto = {
+  [1] = {"new_cnt", "int"},
+  [2] = {
+    "bead_map",
+    "map<int,SeasonMazeAutoBeadClient>"
+  }
 }
-_class("SeasonMazePetRecruitSelectReply", ICampaignComResponse)
-_ENV.SeasonMazePetRecruitSelectReply = _ENV.SeasonMazePetRecruitSelectReply
--- DECOMPILER ERROR at PC17404: Confused about usage of register: R79 in 'UnsetPending'
+_class("SeasonMazeNotifyAutoBeadSlotUnlock", Object)
+SeasonMazeNotifyAutoBeadSlotUnlock = SeasonMazeNotifyAutoBeadSlotUnlock
 
-;
-(_ENV.SeasonMazePetRecruitSelectReply).Constructor = function(self)
-  -- function num : 0_81
+function SeasonMazeNotifyAutoBeadSlotUnlock:Constructor()
+  self.auto_bead_fit = {}
+end
+
+SeasonMazeNotifyAutoBeadSlotUnlock._proto = {
+  [1] = {
+    "auto_bead_fit",
+    "list<int>"
+  }
+}
+_class("SeasonMazeNotifyAttrChange", Object)
+SeasonMazeNotifyAttrChange = SeasonMazeNotifyAttrChange
+
+function SeasonMazeNotifyAttrChange:Constructor()
+  self.attr_change = {}
+  self.attr_reason = {}
+end
+
+SeasonMazeNotifyAttrChange._proto = {
+  [1] = {
+    "attr_change",
+    "map<int,int>"
+  },
+  [2] = {
+    "attr_reason",
+    "map<int,int>"
+  }
+}
+_class("SeasonMazeNotifyPetChange", Object)
+SeasonMazeNotifyPetChange = SeasonMazeNotifyPetChange
+
+function SeasonMazeNotifyPetChange:Constructor()
+  self.pet_list = {}
+end
+
+SeasonMazeNotifyPetChange._proto = {
+  [1] = {
+    "pet_list",
+    "map<int,SeasonMazePetInfo>"
+  }
+}
+_class("SeasonMazeNotifySuitInfoChange", Object)
+SeasonMazeNotifySuitInfoChange = SeasonMazeNotifySuitInfoChange
+
+function SeasonMazeNotifySuitInfoChange:Constructor()
+  self.info = SeasonRelicSuitInfo:New()
+end
+
+SeasonMazeNotifySuitInfoChange._proto = {
+  [1] = {
+    "info",
+    "SeasonRelicSuitInfo"
+  }
+}
+_class("SeasonMazeNotifyRelicChange", Object)
+SeasonMazeNotifyRelicChange = SeasonMazeNotifyRelicChange
+
+function SeasonMazeNotifyRelicChange:Constructor()
+  self.relic_list = {}
+end
+
+SeasonMazeNotifyRelicChange._proto = {
+  [1] = {
+    "relic_list",
+    "map<int,SeasonMazeRelicInfo>"
+  }
+}
+_class("SeasonMazeNotifyFormationChange", Object)
+SeasonMazeNotifyFormationChange = SeasonMazeNotifyFormationChange
+
+function SeasonMazeNotifyFormationChange:Constructor()
+  self.m_formation_list = {}
+end
+
+SeasonMazeNotifyFormationChange._proto = {
+  [1] = {
+    "m_formation_list",
+    "map<int,SeasonMazeFormationItem>"
+  }
+}
+_class("PerfectPuzzleComponentDataInfo", ICampaignComponentDataInfo)
+PerfectPuzzleComponentDataInfo = PerfectPuzzleComponentDataInfo
+
+function PerfectPuzzleComponentDataInfo:Constructor()
+  self.m_pass_mission_info = {}
+  self.m_unlock_missions = {}
+end
+
+PerfectPuzzleComponentDataInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_unlock_missions",
+    "list<int>"
+  }
+}
+_class("PerfectPuzzleComponentInfo", ICampaignComponentInfo)
+PerfectPuzzleComponentInfo = PerfectPuzzleComponentInfo
+
+function PerfectPuzzleComponentInfo:Constructor()
+  self.m_pass_mission_info = {}
+  self.m_unlock_missions = {}
+end
+
+PerfectPuzzleComponentInfo._proto = {
+  [1] = {
+    "m_pass_mission_info",
+    "map<int,cam_mission_info>"
+  },
+  [2] = {
+    "m_unlock_missions",
+    "list<int>"
+  }
+}
+_class("UnlockPerfectPuzzleReq", ICampaignComRequest)
+UnlockPerfectPuzzleReq = UnlockPerfectPuzzleReq
+
+function UnlockPerfectPuzzleReq:Constructor()
   self.mission_id = 0
-  self.story_type = 0
 end
 
--- DECOMPILER ERROR at PC17408: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazePetRecruitSelectReply)._proto = {}
-_class("SeasonMazePetRecruitResetReq", ICampaignComRequest)
-_ENV.SeasonMazePetRecruitResetReq = _ENV.SeasonMazePetRecruitResetReq
--- DECOMPILER ERROR at PC17420: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazePetRecruitResetReq).Constructor = function(self)
-  -- function num : 0_82 , upvalues : _ENV
-  self.mission_id = 0
-  self.info = MiniGameInfo:New()
+function UnlockPerfectPuzzleReq:GetHandleCode()
+  return ECampaignComHandle.ECCH_HandleUnlockPerfectPuzzle
 end
 
--- DECOMPILER ERROR at PC17424: Confused about usage of register: R79 in 'UnsetPending'
+UnlockPerfectPuzzleReq._proto = {
+  [1] = {"mission_id", "int"}
+}
+_class("UnlockPerfectPuzzleRep", ICampaignComResponse)
+UnlockPerfectPuzzleRep = UnlockPerfectPuzzleRep
 
-;
-(_ENV.SeasonMazePetRecruitResetReq)._proto = {}
-_class("SeasonMazePetRecruitResetReply", ICampaignComResponse)
-_ENV.SeasonMazePetRecruitResetReply = _ENV.SeasonMazePetRecruitResetReply
--- DECOMPILER ERROR at PC17436: Confused about usage of register: R79 in 'UnsetPending'
+function UnlockPerfectPuzzleRep:Constructor()
+  self.ret = 0
+  self.m_unlock_missions = {}
+end
 
-;
-(_ENV.SeasonMazePetRecruitResetReply).Constructor = function(self)
-  -- function num : 0_83
+UnlockPerfectPuzzleRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "m_unlock_missions",
+    "list<int>"
+  }
+}
+_class("CompletePerfectPuzzleReq", ICampaignComRequest)
+CompletePerfectPuzzleReq = CompletePerfectPuzzleReq
+
+function CompletePerfectPuzzleReq:Constructor()
   self.mission_id = 0
   self.score = 0
 end
 
--- DECOMPILER ERROR at PC17446: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazePetRecruitResetReply)._proto = {
-[1] = {"pet_list", "list<int>"}
-}
-_class("SeasonMazeSelectFullBreakPetReq", ICampaignComRequest)
-_ENV.SeasonMazeSelectFullBreakPetReq = _ENV.SeasonMazeSelectFullBreakPetReq
--- DECOMPILER ERROR at PC17458: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSelectFullBreakPetReq).Constructor = function(self)
-  -- function num : 0_84 , upvalues : _ENV
-  self.mission_id = 0
-  self.info = MiniGameInfo:New()
+function CompletePerfectPuzzleReq:GetHandleCode()
+  return ECampaignComHandle.ECCH_HandleCompletePerfectPuzzle
 end
 
--- DECOMPILER ERROR at PC17468: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSelectFullBreakPetReq)._proto = {
-[1] = {"pet_id", "int"}
-}
-_class("SeasonMazeSelectFullBreakPetReply", ICampaignComResponse)
-_ENV.SeasonMazeSelectFullBreakPetReply = _ENV.SeasonMazeSelectFullBreakPetReply
--- DECOMPILER ERROR at PC17480: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSelectFullBreakPetReply).Constructor = function(self)
-  -- function num : 0_85
-  self.mission_id = 0
-  self.grade = 0
-end
-
--- DECOMPILER ERROR at PC17484: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeSelectFullBreakPetReply)._proto = {}
-_class("SeasonMazeClearAllBeadNewReq", ICampaignComRequest)
-_ENV.SeasonMazeClearAllBeadNewReq = _ENV.SeasonMazeClearAllBeadNewReq
--- DECOMPILER ERROR at PC17496: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeClearAllBeadNewReq).Constructor = function(self)
-  -- function num : 0_86 , upvalues : _ENV
-  self.rewards = {}
-  self.mission_id = 0
-  self.info = MiniGameInfo:New()
-end
-
--- DECOMPILER ERROR at PC17500: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeClearAllBeadNewReq)._proto = {}
-_class("SeasonMazeClearAllBeadNewReply", ICampaignComResponse)
-_ENV.SeasonMazeClearAllBeadNewReply = _ENV.SeasonMazeClearAllBeadNewReply
--- DECOMPILER ERROR at PC17512: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeClearAllBeadNewReply).Constructor = function(self)
-  -- function num : 0_87
-  self.used_high_equip_num = 0
-  self.used_low_equip_num = 0
-  self.last_refresh_time = 0
-  self.have_new_high_equip = false
-  self.m_last_equip_id = 0
-  self.real_used_high_equip_num = 0
-  self.real_used_low_equip_num = 0
-  self.have_deal_bug = false
-end
-
--- DECOMPILER ERROR at PC17516: Confused about usage of register: R79 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeClearAllBeadNewReply)._proto = {}
-local SeasonMazeComponentNotifyType = {SeasonMazeComponentNotifyType_Effects = 1, SeasonMazeComponentNotifyType_CurState = 2, SeasonMazeComponentNotifyType_OnceItem = 3, SeasonMazeComponentNotifyType_Boss = 4, SeasonMazeComponentNotifyType_Room = 5, SeasonMazeComponentNotifyType_RandomRelic = 6, SeasonMazeComponentNotifyType_NewHand = 7, SeasonMazeComponentNotifyType_HandBag = 8, SeasonMazeComponentNotifyType_Extract = 9, SeasonMazeComponentNotifyType_Ore = 10, SeasonMazeComponentNotifyType_AutoBeadChange = 50, SeasonMazeComponentNotifyType_AutoBeadSlotUnLock = 51, SeasonMazeComponentNotifyType_AttrChange = 52, SeasonMazeComponentNotifyType_PetChange = 53, SeasonMazeComponentNotifyType_SuitInfo = 54, SeasonMazeComponentNotifyType_Relic = 55, SeasonMazeComonentNotifyFormationChange = 56, SeasonMazeComonentNotifyWorldBossTotalDamage = 57}
-_enum("SeasonMazeComponentNotifyType", SeasonMazeComponentNotifyType)
-_class("SeasonMazeNotifyWorldBossDamaage", Object)
-_ENV.SeasonMazeNotifyWorldBossDamaage = _ENV.SeasonMazeNotifyWorldBossDamaage
--- DECOMPILER ERROR at PC17578: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyWorldBossDamaage).Constructor = function(self)
-  -- function num : 0_88
-  self.used_high_equip_num = 0
-  self.used_low_equip_num = 0
-  self.next_refresh_time = 0
-  self.have_new_high_equip = false
-end
-
--- DECOMPILER ERROR at PC17588: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyWorldBossDamaage)._proto = {
-[1] = {"total_damage", "int64"}
-}
-_class("SeasonMazeNotifyOre", Object)
-_ENV.SeasonMazeNotifyOre = _ENV.SeasonMazeNotifyOre
--- DECOMPILER ERROR at PC17600: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyOre).Constructor = function(self)
-  -- function num : 0_89
-end
-
--- DECOMPILER ERROR at PC17610: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyOre)._proto = {
-[1] = {"occupy_ore", "map<int,SeasonMazeRoomBaseOre>"}
-}
-_class("SeasonMazeNotifyEffects", Object)
-_ENV.SeasonMazeNotifyEffects = _ENV.SeasonMazeNotifyEffects
--- DECOMPILER ERROR at PC17622: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyEffects).Constructor = function(self)
-  -- function num : 0_90
-  self.postion_id = 0
-end
-
--- DECOMPILER ERROR at PC17632: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyEffects)._proto = {
-[1] = {"rewards", "list<SeasonMazeEffect>"}
-}
-_class("SeasonMazeNotifyCurState", Object)
-_ENV.SeasonMazeNotifyCurState = _ENV.SeasonMazeNotifyCurState
--- DECOMPILER ERROR at PC17644: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyCurState).Constructor = function(self)
-  -- function num : 0_91
-end
-
--- DECOMPILER ERROR at PC17654: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyCurState)._proto = {
-[1] = {"cur_state", "int"}
-}
-_class("SeasonMazeNotifyOnceItem", Object)
-_ENV.SeasonMazeNotifyOnceItem = _ENV.SeasonMazeNotifyOnceItem
--- DECOMPILER ERROR at PC17666: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyOnceItem).Constructor = function(self)
-  -- function num : 0_92
-  self.rewards = {}
-  self.used_high_equip_num = 0
-  self.used_low_equip_num = 0
-  self.next_refresh_time = 0
-end
-
--- DECOMPILER ERROR at PC17676: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyOnceItem)._proto = {
-[1] = {"list", "map<int,int>"}
-}
-_class("SeasonMazeNotifyBoss", Object)
-_ENV.SeasonMazeNotifyBoss = _ENV.SeasonMazeNotifyBoss
--- DECOMPILER ERROR at PC17688: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyBoss).Constructor = function(self)
-  -- function num : 0_93
-end
-
--- DECOMPILER ERROR at PC17698: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyBoss)._proto = {
-[1] = {"boss_info", "map<int,SeasonMazeBossInfo>"}
-}
-_class("SeasonMazeNotifyRoom", Object)
-_ENV.SeasonMazeNotifyRoom = _ENV.SeasonMazeNotifyRoom
--- DECOMPILER ERROR at PC17710: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyRoom).Constructor = function(self)
-  -- function num : 0_94
-end
-
--- DECOMPILER ERROR at PC17720: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyRoom)._proto = {
-[1] = {"rooms", "map<int,SeasonMazeRoomBase>"}
-}
-_class("SeasonMazeNotifyRandomRelic", Object)
-_ENV.SeasonMazeNotifyRandomRelic = _ENV.SeasonMazeNotifyRandomRelic
--- DECOMPILER ERROR at PC17732: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyRandomRelic).Constructor = function(self)
-  -- function num : 0_95
-  self.append_postions = {}
-end
-
--- DECOMPILER ERROR at PC17742: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyRandomRelic)._proto = {
-[1] = {"relic_random", "SeasonMazeRelicRandomInfo"}
-}
-_class("SeasonMazeNotifyNewHand", Object)
-_ENV.SeasonMazeNotifyNewHand = _ENV.SeasonMazeNotifyNewHand
--- DECOMPILER ERROR at PC17754: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyNewHand).Constructor = function(self)
-  -- function num : 0_96
-  self.append_postions = {}
-end
-
--- DECOMPILER ERROR at PC17769: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyNewHand)._proto = {
-[1] = {"new_hands", "SeasonMazeNewHandInfo"}
-, 
-[2] = {"reward", "map<int,list<SeasonMazeEffect>>"}
-}
-_class("SeasonMazeNotifyHandBag", Object)
-_ENV.SeasonMazeNotifyHandBag = _ENV.SeasonMazeNotifyHandBag
--- DECOMPILER ERROR at PC17781: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyHandBag).Constructor = function(self)
-  -- function num : 0_97
-  self.m_received_normal_lv = {}
-  self.m_received_advanced_lv = {}
-  self.m_unlock_advanced = false
-end
-
--- DECOMPILER ERROR at PC17801: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyHandBag)._proto = {
-[1] = {"wait_hands", "list<int>"}
-, 
-[2] = {"fold_hands", "list<int>"}
-, 
-[3] = {"rand_hands", "list<int>"}
-}
-_class("SeasonMazeNotifyExtract", Object)
-_ENV.SeasonMazeNotifyExtract = _ENV.SeasonMazeNotifyExtract
--- DECOMPILER ERROR at PC17813: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyExtract).Constructor = function(self)
-  -- function num : 0_98
-  self.m_item_id = 0
-  self.m_current_level = 1
-  self.m_received_normal_lv = {}
-  self.m_received_advanced_lv = {}
-  self.m_normal_begin_reward_id = 0
-  self.m_advanced_begin_reward_id = 0
-  self.m_max_level = 1
-  self.m_unlock_advanced_reward = false
-  self.m_current_progress = 0
-  self.m_level_max_progress = 0
-end
-
--- DECOMPILER ERROR at PC17823: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyExtract)._proto = {
-[1] = {"hands", "list<SeasonMazeHandInfo>"}
-}
-_class("SeasonMazeNotifyAutoBeadChange", Object)
-_ENV.SeasonMazeNotifyAutoBeadChange = _ENV.SeasonMazeNotifyAutoBeadChange
--- DECOMPILER ERROR at PC17835: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyAutoBeadChange).Constructor = function(self)
-  -- function num : 0_99
-  self.m_req_level = 0
-  self.m_is_advanced = false
-end
-
--- DECOMPILER ERROR at PC17850: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyAutoBeadChange)._proto = {
-[1] = {"new_cnt", "int"}
-, 
-[2] = {"bead_map", "map<int,SeasonMazeAutoBeadClient>"}
-}
-_class("SeasonMazeNotifyAutoBeadSlotUnlock", Object)
-_ENV.SeasonMazeNotifyAutoBeadSlotUnlock = _ENV.SeasonMazeNotifyAutoBeadSlotUnlock
--- DECOMPILER ERROR at PC17862: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyAutoBeadSlotUnlock).Constructor = function(self)
-  -- function num : 0_100 , upvalues : _ENV
-  self.m_reward_info = RoleAsset:New()
-end
-
--- DECOMPILER ERROR at PC17872: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyAutoBeadSlotUnlock)._proto = {
-[1] = {"auto_bead_fit", "list<int>"}
-}
-_class("SeasonMazeNotifyAttrChange", Object)
-_ENV.SeasonMazeNotifyAttrChange = _ENV.SeasonMazeNotifyAttrChange
--- DECOMPILER ERROR at PC17884: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyAttrChange).Constructor = function(self)
-  -- function num : 0_101
-end
-
--- DECOMPILER ERROR at PC17899: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyAttrChange)._proto = {
-[1] = {"attr_change", "map<int,int>"}
-, 
-[2] = {"attr_reason", "map<int,int>"}
-}
-_class("SeasonMazeNotifyPetChange", Object)
-_ENV.SeasonMazeNotifyPetChange = _ENV.SeasonMazeNotifyPetChange
--- DECOMPILER ERROR at PC17911: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyPetChange).Constructor = function(self)
-  -- function num : 0_102
-  self.m_rewards = {}
-  self.m_received_normal = {}
-  self.m_received_advanced = {}
-end
-
--- DECOMPILER ERROR at PC17921: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyPetChange)._proto = {
-[1] = {"pet_list", "map<int,SeasonMazePetInfo>"}
-}
-_class("SeasonMazeNotifySuitInfoChange", Object)
-_ENV.SeasonMazeNotifySuitInfoChange = _ENV.SeasonMazeNotifySuitInfoChange
--- DECOMPILER ERROR at PC17933: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifySuitInfoChange).Constructor = function(self)
-  -- function num : 0_103
-  self.m_level = 0
-  self.m_progress = 0
-end
-
--- DECOMPILER ERROR at PC17943: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifySuitInfoChange)._proto = {
-[1] = {"info", "SeasonRelicSuitInfo"}
-}
-_class("SeasonMazeNotifyRelicChange", Object)
-_ENV.SeasonMazeNotifyRelicChange = _ENV.SeasonMazeNotifyRelicChange
--- DECOMPILER ERROR at PC17955: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyRelicChange).Constructor = function(self)
-  -- function num : 0_104
-  self.m_unlock_advanced_reward = false
-end
-
--- DECOMPILER ERROR at PC17965: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyRelicChange)._proto = {
-[1] = {"relic_list", "map<int,SeasonMazeRelicInfo>"}
-}
-_class("SeasonMazeNotifyFormationChange", Object)
-_ENV.SeasonMazeNotifyFormationChange = _ENV.SeasonMazeNotifyFormationChange
--- DECOMPILER ERROR at PC17977: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyFormationChange).Constructor = function(self)
-  -- function num : 0_105
-  self.m_gift_id = 0
-  self.m_gift_type = 1
-  self.m_midas_id = ""
-  self.m_extra_award = {}
-  self.m_raw_price = 0
-  self.m_now_price = 0
-end
-
--- DECOMPILER ERROR at PC17987: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeNotifyFormationChange)._proto = {
-[1] = {"m_formation_list", "map<int,SeasonMazeFormationItem>"}
-}
-_class("PerfectPuzzleComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.PerfectPuzzleComponentDataInfo = _ENV.PerfectPuzzleComponentDataInfo
--- DECOMPILER ERROR at PC17999: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.PerfectPuzzleComponentDataInfo).Constructor = function(self)
-  -- function num : 0_106
-  self.m_buy_state = 0
-  self.m_buy_gift_map = {}
-end
-
--- DECOMPILER ERROR at PC18014: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.PerfectPuzzleComponentDataInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_unlock_missions", "list<int>"}
-}
-_class("PerfectPuzzleComponentInfo", ICampaignComponentInfo)
-_ENV.PerfectPuzzleComponentInfo = _ENV.PerfectPuzzleComponentInfo
--- DECOMPILER ERROR at PC18026: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.PerfectPuzzleComponentInfo).Constructor = function(self)
-  -- function num : 0_107
-  self.m_buy_state = 0
-  self.m_campaign_gift_list = {}
-  self.m_buy_gift_map = {}
-end
-
--- DECOMPILER ERROR at PC18041: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.PerfectPuzzleComponentInfo)._proto = {
-[1] = {"m_pass_mission_info", "map<int,cam_mission_info>"}
-, 
-[2] = {"m_unlock_missions", "list<int>"}
-}
-_class("UnlockPerfectPuzzleReq", ICampaignComRequest)
-_ENV.UnlockPerfectPuzzleReq = _ENV.UnlockPerfectPuzzleReq
--- DECOMPILER ERROR at PC18053: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.UnlockPerfectPuzzleReq).Constructor = function(self)
-  -- function num : 0_108
-  self.m_gift_id = 0
-  self.m_buy_count = 1
-end
-
--- DECOMPILER ERROR at PC18058: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.UnlockPerfectPuzzleReq).GetHandleCode = function(self)
-  -- function num : 0_109
-end
-
--- DECOMPILER ERROR at PC18068: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.UnlockPerfectPuzzleReq)._proto = {
-[1] = {"mission_id", "int"}
-}
-_class("UnlockPerfectPuzzleRep", ICampaignComResponse)
-_ENV.UnlockPerfectPuzzleRep = _ENV.UnlockPerfectPuzzleRep
--- DECOMPILER ERROR at PC18080: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.UnlockPerfectPuzzleRep).Constructor = function(self)
-  -- function num : 0_110
-  self.m_buy_state = 0
-  self.m_buy_gift_map = {}
-end
-
--- DECOMPILER ERROR at PC18095: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.UnlockPerfectPuzzleRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_unlock_missions", "list<int>"}
-}
-_class("CompletePerfectPuzzleReq", ICampaignComRequest)
-_ENV.CompletePerfectPuzzleReq = _ENV.CompletePerfectPuzzleReq
--- DECOMPILER ERROR at PC18107: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.CompletePerfectPuzzleReq).Constructor = function(self)
-  -- function num : 0_111
-  self.m_state = 0
-  self.m_end_time = 0
-end
-
--- DECOMPILER ERROR at PC18112: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.CompletePerfectPuzzleReq).GetHandleCode = function(self)
-  -- function num : 0_112
-  self.m_info = {}
-end
-
--- DECOMPILER ERROR at PC18127: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.CompletePerfectPuzzleReq)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"score", "int"}
+CompletePerfectPuzzleReq._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {"score", "int"}
 }
 _class("CompletePerfectPuzzleRep", ICampaignComResponse)
-_ENV.CompletePerfectPuzzleRep = _ENV.CompletePerfectPuzzleRep
--- DECOMPILER ERROR at PC18139: Confused about usage of register: R80 in 'UnsetPending'
+CompletePerfectPuzzleRep = CompletePerfectPuzzleRep
 
-;
-(_ENV.CompletePerfectPuzzleRep).Constructor = function(self)
-  -- function num : 0_113
-  self.nTriggerTimes = 0
-  self.tmTriggerTimeVec = {}
-  self.tmEndTimeVec = {}
-  self.bIsRecvRewardVec = {}
-  self.BackRewardVec = {}
+function CompletePerfectPuzzleRep:Constructor()
+  self.ret = 0
+  self.info = cam_mission_info:New()
 end
 
--- DECOMPILER ERROR at PC18154: Confused about usage of register: R80 in 'UnsetPending'
-
-;
-(_ENV.CompletePerfectPuzzleRep)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "cam_mission_info"}
+CompletePerfectPuzzleRep._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "cam_mission_info"
+  }
 }
-local EAlchemyShopItemType = {EAlchemyShopItemType_BuyFormula = 1, EAlchemyShopItemType_TipBuff = 2, EAlchemyShopItemType_ExtraItem = 3}
+local EAlchemyShopItemType = {
+  EAlchemyShopItemType_BuyFormula = 1,
+  EAlchemyShopItemType_TipBuff = 2,
+  EAlchemyShopItemType_ExtraItem = 3
+}
 _enum("EAlchemyShopItemType", EAlchemyShopItemType)
 _class("AlchemyComponentExtraRecord", Object)
-_ENV.AlchemyComponentExtraRecord = _ENV.AlchemyComponentExtraRecord
--- DECOMPILER ERROR at PC18178: Confused about usage of register: R81 in 'UnsetPending'
+AlchemyComponentExtraRecord = AlchemyComponentExtraRecord
 
-;
-(_ENV.AlchemyComponentExtraRecord).Constructor = function(self)
-  -- function num : 0_114
-  self.tmTriggerTime = 0
-  self.tmEndTime = 0
-  self.BackRewardVec = {}
-  self.bIsRecvReward = false
+function AlchemyComponentExtraRecord:Constructor()
+  self.make_cnt = 0
+  self.extra_cnt = 0
 end
 
--- DECOMPILER ERROR at PC18193: Confused about usage of register: R81 in 'UnsetPending'
-
-;
-(_ENV.AlchemyComponentExtraRecord)._proto = {
-[1] = {"make_cnt", "int"}
-, 
-[2] = {"extra_cnt", "int"}
+AlchemyComponentExtraRecord._proto = {
+  [1] = {"make_cnt", "int"},
+  [2] = {"extra_cnt", "int"}
 }
 _class("AlchemyComponentDataInfo", ICampaignComponentDataInfo)
-_ENV.AlchemyComponentDataInfo = _ENV.AlchemyComponentDataInfo
--- DECOMPILER ERROR at PC18205: Confused about usage of register: R81 in 'UnsetPending'
+AlchemyComponentDataInfo = AlchemyComponentDataInfo
 
-;
-(_ENV.AlchemyComponentDataInfo).Constructor = function(self)
-  -- function num : 0_115
+function AlchemyComponentDataInfo:Constructor()
+  self.cur_tip_buff_id = 0
+  self.cur_extra_buff_id = 0
+  self.makeup_cnt = {}
 end
 
--- DECOMPILER ERROR at PC18225: Confused about usage of register: R81 in 'UnsetPending'
-
-;
-(_ENV.AlchemyComponentDataInfo)._proto = {
-[1] = {"cur_tip_buff_id", "int"}
-, 
-[2] = {"cur_extra_buff_id", "int"}
-, 
-[3] = {"makeup_cnt", "map<int,AlchemyComponentExtraRecord>"}
+AlchemyComponentDataInfo._proto = {
+  [1] = {
+    "cur_tip_buff_id",
+    "int"
+  },
+  [2] = {
+    "cur_extra_buff_id",
+    "int"
+  },
+  [3] = {
+    "makeup_cnt",
+    "map<int,AlchemyComponentExtraRecord>"
+  }
 }
 _class("AlchemyComponentInfo", ICampaignComponentInfo)
-_ENV.AlchemyComponentInfo = _ENV.AlchemyComponentInfo
--- DECOMPILER ERROR at PC18237: Confused about usage of register: R81 in 'UnsetPending'
+AlchemyComponentInfo = AlchemyComponentInfo
 
-;
-(_ENV.AlchemyComponentInfo).Constructor = function(self)
-  -- function num : 0_116
-  self.rewards = {}
+function AlchemyComponentInfo:Constructor()
+  self.show_tip_buff_id = 0
+  self.show_extra_buff_id = 0
+  self.tip_buff_finish = false
+  self.extra_buff_finsih = false
 end
 
--- DECOMPILER ERROR at PC18262: Confused about usage of register: R81 in 'UnsetPending'
-
-;
-(_ENV.AlchemyComponentInfo)._proto = {
-[1] = {"show_tip_buff_id", "int"}
-, 
-[2] = {"show_extra_buff_id", "int"}
-, 
-[3] = {"tip_buff_finish", "bool"}
-, 
-[4] = {"extra_buff_finsih", "bool"}
+AlchemyComponentInfo._proto = {
+  [1] = {
+    "show_tip_buff_id",
+    "int"
+  },
+  [2] = {
+    "show_extra_buff_id",
+    "int"
+  },
+  [3] = {
+    "tip_buff_finish",
+    "bool"
+  },
+  [4] = {
+    "extra_buff_finsih",
+    "bool"
+  }
 }
 _class("AlchemyComponentMakeupReq", ICampaignComRequest)
-_ENV.AlchemyComponentMakeupReq = _ENV.AlchemyComponentMakeupReq
--- DECOMPILER ERROR at PC18274: Confused about usage of register: R81 in 'UnsetPending'
+AlchemyComponentMakeupReq = AlchemyComponentMakeupReq
 
-;
-(_ENV.AlchemyComponentMakeupReq).Constructor = function(self)
-  -- function num : 0_117
-  self.nTodayHelpTimes = 0
-  self.tmRefreshTimesTime = 0
+function AlchemyComponentMakeupReq:Constructor()
+  self.item_id = 0
+  self.num = 0
 end
 
--- DECOMPILER ERROR at PC18289: Confused about usage of register: R81 in 'UnsetPending'
-
-;
-(_ENV.AlchemyComponentMakeupReq)._proto = {
-[1] = {"item_id", "int"}
-, 
-[2] = {"num", "int"}
+AlchemyComponentMakeupReq._proto = {
+  [1] = {"item_id", "int"},
+  [2] = {"num", "int"}
 }
 _class("AlchemyComponentMakeupRes", ICampaignComResponse)
-_ENV.AlchemyComponentMakeupRes = _ENV.AlchemyComponentMakeupRes
--- DECOMPILER ERROR at PC18301: Confused about usage of register: R81 in 'UnsetPending'
+AlchemyComponentMakeupRes = AlchemyComponentMakeupRes
 
-;
-(_ENV.AlchemyComponentMakeupRes).Constructor = function(self)
-  -- function num : 0_118
-  self.nTodayHelpTimes = 0
-  self.tmNextRefreshTimesTime = 0
-  self.nHelpDayLimitTimes = 0
+function AlchemyComponentMakeupRes:Constructor()
+  self.item_id = 0
+  self.num = 0
+  self.extra_cnt = 0
 end
 
--- DECOMPILER ERROR at PC18321: Confused about usage of register: R81 in 'UnsetPending'
-
-;
-(_ENV.AlchemyComponentMakeupRes)._proto = {
-[1] = {"item_id", "int"}
-, 
-[2] = {"num", "int"}
-, 
-[3] = {"extra_cnt", "int"}
+AlchemyComponentMakeupRes._proto = {
+  [1] = {"item_id", "int"},
+  [2] = {"num", "int"},
+  [3] = {"extra_cnt", "int"}
 }
 _class("AlchemyComponentSellReq", ICampaignComRequest)
-_ENV.AlchemyComponentSellReq = _ENV.AlchemyComponentSellReq
--- DECOMPILER ERROR at PC18333: Confused about usage of register: R81 in 'UnsetPending'
+AlchemyComponentSellReq = AlchemyComponentSellReq
 
-;
-(_ENV.AlchemyComponentSellReq).Constructor = function(self)
-  -- function num : 0_119
-  self.nTodayHelpTimes = 0
-  self.tmNextRefreshTimesTime = 0
-  self.nHelpDayLimitTimes = 0
+function AlchemyComponentSellReq:Constructor()
+  self.items = {}
 end
 
--- DECOMPILER ERROR at PC18343: Confused about usage of register: R81 in 'UnsetPending'
-
-;
-(_ENV.AlchemyComponentSellReq)._proto = {
-[1] = {"items", "map<int,int>"}
+AlchemyComponentSellReq._proto = {
+  [1] = {
+    "items",
+    "map<int,int>"
+  }
 }
 _class("AlchemyComponentSellRes", ICampaignComResponse)
-_ENV.AlchemyComponentSellRes = _ENV.AlchemyComponentSellRes
--- DECOMPILER ERROR at PC18355: Confused about usage of register: R81 in 'UnsetPending'
+AlchemyComponentSellRes = AlchemyComponentSellRes
 
-;
-(_ENV.AlchemyComponentSellRes).Constructor = function(self)
-  -- function num : 0_120
-  self.mission_id = 0
-  self.wave_index = 0
-  self.military_exploit = 0
+function AlchemyComponentSellRes:Constructor()
+  self.item_earn = 0
+  self.tip_earn = 0
+  self.star_item = 0
 end
 
--- DECOMPILER ERROR at PC18375: Confused about usage of register: R81 in 'UnsetPending'
-
-;
-(_ENV.AlchemyComponentSellRes)._proto = {
-[1] = {"item_earn", "int"}
-, 
-[2] = {"tip_earn", "int"}
-, 
-[3] = {"star_item", "int"}
+AlchemyComponentSellRes._proto = {
+  [1] = {"item_earn", "int"},
+  [2] = {"tip_earn", "int"},
+  [3] = {"star_item", "int"}
 }
 _class("AlchemyComponentBuyReq", ICampaignComRequest)
-_ENV.AlchemyComponentBuyReq = _ENV.AlchemyComponentBuyReq
--- DECOMPILER ERROR at PC18387: Confused about usage of register: R81 in 'UnsetPending'
+AlchemyComponentBuyReq = AlchemyComponentBuyReq
 
-;
-(_ENV.AlchemyComponentBuyReq).Constructor = function(self)
-  -- function num : 0_121
-  self.m_challenge_mission_info = {}
-  self.m_accumulated_military_exploit = 0
-  self.m_cur_max_military_exploit = 0
+function AlchemyComponentBuyReq:Constructor()
+  self.type = 0
+  self.buy_id = 0
 end
 
--- DECOMPILER ERROR at PC18402: Confused about usage of register: R81 in 'UnsetPending'
-
-;
-(_ENV.AlchemyComponentBuyReq)._proto = {
-[1] = {"type", "int"}
-, 
-[2] = {"buy_id", "int"}
+AlchemyComponentBuyReq._proto = {
+  [1] = {"type", "int"},
+  [2] = {"buy_id", "int"}
 }
 _class("AlchemyComponentBuyRes", ICampaignComResponse)
-_ENV.AlchemyComponentBuyRes = _ENV.AlchemyComponentBuyRes
--- DECOMPILER ERROR at PC18414: Confused about usage of register: R81 in 'UnsetPending'
+AlchemyComponentBuyRes = AlchemyComponentBuyRes
 
-;
-(_ENV.AlchemyComponentBuyRes).Constructor = function(self)
-  -- function num : 0_122
-  self.m_challenge_mission_info = {}
-  self.m_accumulated_military_exploit = 0
-  self.m_cur_max_military_exploit = 0
-  self.m_next_reset_time = 0
-  self.m_mission_level_wave_map = {}
-  self.m_cur_index = 0
+function AlchemyComponentBuyRes:Constructor()
+  self.new_id = 0
+  self.bfinish = false
 end
 
--- DECOMPILER ERROR at PC18429: Confused about usage of register: R81 in 'UnsetPending'
-
-;
-(_ENV.AlchemyComponentBuyRes)._proto = {
-[1] = {"new_id", "int"}
-, 
-[2] = {"bfinish", "bool"}
+AlchemyComponentBuyRes._proto = {
+  [1] = {"new_id", "int"},
+  [2] = {"bfinish", "bool"}
 }
-

@@ -1,205 +1,147 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity_picture.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryEntityPicture", StoryEntityMovable)
 StoryEntityPicture = StoryEntityPicture
-local StoryPictureScrollType = {LeftToRight = 1, RightToLeft = 2, UpToDown = 3, DownToUp = 4, Spread = 5, HorizontalSpread = 6, VerticalSpread = 7}
+local StoryPictureScrollType = {
+  LeftToRight = 1,
+  RightToLeft = 2,
+  UpToDown = 3,
+  DownToUp = 4,
+  Spread = 5,
+  HorizontalSpread = 6,
+  VerticalSpread = 7
+}
 _enum("StoryPictureScrollType", StoryPictureScrollType)
-local StoryPictureBlurType = {None = 1, MotionBlur = 2, GaussianBlur = 3, RadialBlur = 4}
+local StoryPictureBlurType = {
+  None = 1,
+  MotionBlur = 2,
+  GaussianBlur = 3,
+  RadialBlur = 4
+}
 _enum("StoryPictureBlurType", StoryPictureBlurType)
--- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
 
-StoryEntityPicture.Constructor = function(self, ID, gameObject, resRequest, storyManager, entityConfig)
-  -- function num : 0_0 , upvalues : _ENV
-  ((StoryEntityPicture.super).Constructor)(self, ID, gameObject, resRequest, storyManager)
+function StoryEntityPicture:Constructor(ID, gameObject, resRequest, storyManager, entityConfig)
+  StoryEntityPicture.super.Constructor(self, ID, gameObject, resRequest, storyManager)
   self._type = StoryEntityType.Picture
   self._picObject = gameObject
   self._picCmp = gameObject:GetComponent("RawImage")
-  self._picColor = (self._picCmp).color
+  self._picColor = self._picCmp.color
   self._inScrolling = false
   self._scrollStartFromCover = true
   self._scrollType = nil
   self._scrollStartTime = 0
   self._scrollDuration = 0
-  local newGameObject = (UnityEngine.GameObject):New(gameObject.name)
-  ;
-  (newGameObject.transform):SetParent((gameObject.transform).parent, false)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (newGameObject.transform).localPosition = (gameObject.transform).localPosition
+  local newGameObject = UnityEngine.GameObject:New(gameObject.name)
+  newGameObject.transform:SetParent(gameObject.transform.parent, false)
+  newGameObject.transform.localPosition = gameObject.transform.localPosition
   newGameObject:SetActive(gameObject.activeSelf)
   self._gameObject = newGameObject
-  self._maskObject = ((UnityEngine.GameObject).Instantiate)(storyManager:GetMaskTemplate(), newGameObject.transform)
-  ;
-  (self._maskObject):SetActive(true)
-  -- DECOMPILER ERROR at PC60: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  ((self._maskObject).transform).localPosition = Vector3.zero
-  ;
-  (gameObject.transform):SetParent((self._maskObject).transform, false)
+  self._maskObject = UnityEngine.GameObject.Instantiate(storyManager:GetMaskTemplate(), newGameObject.transform)
+  self._maskObject:SetActive(true)
+  self._maskObject.transform.localPosition = Vector3.zero
+  gameObject.transform:SetParent(self._maskObject.transform, false)
   gameObject:SetActive(true)
   if entityConfig.FitSize then
     local canvasRect = storyManager:GetCanvasRect()
     local picRect = gameObject:GetComponent("RectTransform")
     local targetWidth = canvasRect.width + 300
-    local targetHeight = (picRect.sizeDelta).y * targetWidth / (picRect.sizeDelta).x
+    local targetHeight = picRect.sizeDelta.y * targetWidth / picRect.sizeDelta.x
     picRect.sizeDelta = Vector2(targetWidth, targetHeight)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-StoryEntityPicture._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_1 , upvalues : _ENV, StoryPictureScrollType
-  ((StoryEntityPicture.super)._TriggerKeyframe)(self, keyframeData)
+function StoryEntityPicture:_TriggerKeyframe(keyframeData)
+  StoryEntityPicture.super._TriggerKeyframe(self, keyframeData)
   if keyframeData.Scroll ~= nil then
     self._inScrolling = true
-    self._scrollStartFromCover = (keyframeData.Scroll).StartFromCover
-    self._scrollType = StoryPictureScrollType[(keyframeData.Scroll).Toward]
+    self._scrollStartFromCover = keyframeData.Scroll.StartFromCover
+    self._scrollType = StoryPictureScrollType[keyframeData.Scroll.Toward]
     self._scrollStartTime = keyframeData.Time
-    self._scrollDuration = (keyframeData.Scroll).Duration
-    ;
-    ((self._maskObject):GetComponent("Image")).enabled = true
-    ;
-    ((self._maskObject):GetComponent("Mask")).enabled = true
-    local maskRect = (self._maskObject):GetComponent("RectTransform")
-    local picRect = (self._picObject):GetComponent("RectTransform")
+    self._scrollDuration = keyframeData.Scroll.Duration
+    self._maskObject:GetComponent("Image").enabled = true
+    self._maskObject:GetComponent("Mask").enabled = true
+    local maskRect = self._maskObject:GetComponent("RectTransform")
+    local picRect = self._picObject:GetComponent("RectTransform")
     if self._scrollStartFromCover then
       if self._scrollType == StoryPictureScrollType.LeftToRight or self._scrollType == StoryPictureScrollType.RightToLeft or self._scrollType == StoryPictureScrollType.HorizontalSpread then
-        maskRect.sizeDelta = Vector2(0, (picRect.sizeDelta).y)
-      else
-        if self._scrollType == StoryPictureScrollType.UpToDown or self._scrollType == StoryPictureScrollType.DownToUp or self._scrollType == StoryPictureScrollType.VerticalSpread then
-          maskRect.sizeDelta = Vector2((picRect.sizeDelta).x, 0)
-        else
-          if self._scrollType == StoryPictureScrollType.Spread then
-            maskRect.sizeDelta = Vector2.zero
-          end
-        end
+        maskRect.sizeDelta = Vector2(0, picRect.sizeDelta.y)
+      elseif self._scrollType == StoryPictureScrollType.UpToDown or self._scrollType == StoryPictureScrollType.DownToUp or self._scrollType == StoryPictureScrollType.VerticalSpread then
+        maskRect.sizeDelta = Vector2(picRect.sizeDelta.x, 0)
+      elseif self._scrollType == StoryPictureScrollType.Spread then
+        maskRect.sizeDelta = Vector2.zero
       end
     else
       maskRect.sizeDelta = picRect.sizeDelta
     end
-    if (self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.LeftToRight) or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.RightToLeft then
+    if self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.LeftToRight or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.RightToLeft then
       maskRect.pivot = Vector2(0, 0.5)
-      -- DECOMPILER ERROR at PC123: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (maskRect.transform).localPosition = Vector3(-(picRect.sizeDelta).x / 2, ((maskRect.transform).localPosition).y, ((maskRect.transform).localPosition).z)
+      maskRect.transform.localPosition = Vector3(-picRect.sizeDelta.x / 2, maskRect.transform.localPosition.y, maskRect.transform.localPosition.z)
       picRect.anchorMin = Vector2(0, 0.5)
       picRect.anchorMax = Vector2(0, 0.5)
-      -- DECOMPILER ERROR at PC146: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (picRect.transform).localPosition = Vector3((picRect.sizeDelta).x / 2, ((picRect.transform).localPosition).y, ((picRect.transform).localPosition).z)
-    else
-      if (self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.RightToLeft) or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.LeftToRight then
-        maskRect.pivot = Vector2(1, 0.5)
-        -- DECOMPILER ERROR at PC179: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (maskRect.transform).localPosition = Vector3((picRect.sizeDelta).x / 2, ((maskRect.transform).localPosition).y, ((maskRect.transform).localPosition).z)
-        picRect.anchorMin = Vector2(1, 0.5)
-        picRect.anchorMax = Vector2(1, 0.5)
-        -- DECOMPILER ERROR at PC203: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (picRect.transform).localPosition = Vector3(-(picRect.sizeDelta).x / 2, ((picRect.transform).localPosition).y, ((picRect.transform).localPosition).z)
-      else
-        if (self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.UpToDown) or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.DownToUp then
-          maskRect.pivot = Vector2(0.5, 1)
-          -- DECOMPILER ERROR at PC236: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (maskRect.transform).localPosition = Vector3(((maskRect.transform).localPosition).x, (picRect.sizeDelta).y / 2, ((maskRect.transform).localPosition).z)
-          picRect.anchorMin = Vector2(0.5, 1)
-          picRect.anchorMax = Vector2(0.5, 1)
-          -- DECOMPILER ERROR at PC260: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (picRect.transform).localPosition = Vector3(((picRect.transform).localPosition).x, -(picRect.sizeDelta).y / 2, ((picRect.transform).localPosition).z)
-        else
-          if (self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.DownToUp) or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.UpToDown then
-            maskRect.pivot = Vector2(0.5, 0)
-            -- DECOMPILER ERROR at PC294: Confused about usage of register: R4 in 'UnsetPending'
-
-            ;
-            (maskRect.transform).localPosition = Vector3(((maskRect.transform).localPosition).x, -(picRect.sizeDelta).y / 2, ((maskRect.transform).localPosition).z)
-            picRect.anchorMin = Vector2(0.5, 0)
-            picRect.anchorMax = Vector2(0.5, 0)
-            -- DECOMPILER ERROR at PC317: Confused about usage of register: R4 in 'UnsetPending'
-
-            ;
-            (picRect.transform).localPosition = Vector3(((picRect.transform).localPosition).x, (picRect.sizeDelta).y / 2, ((picRect.transform).localPosition).z)
-          else
-          end
-        end
-      end
+      picRect.transform.localPosition = Vector3(picRect.sizeDelta.x / 2, picRect.transform.localPosition.y, picRect.transform.localPosition.z)
+    elseif self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.RightToLeft or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.LeftToRight then
+      maskRect.pivot = Vector2(1, 0.5)
+      maskRect.transform.localPosition = Vector3(picRect.sizeDelta.x / 2, maskRect.transform.localPosition.y, maskRect.transform.localPosition.z)
+      picRect.anchorMin = Vector2(1, 0.5)
+      picRect.anchorMax = Vector2(1, 0.5)
+      picRect.transform.localPosition = Vector3(-picRect.sizeDelta.x / 2, picRect.transform.localPosition.y, picRect.transform.localPosition.z)
+    elseif self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.UpToDown or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.DownToUp then
+      maskRect.pivot = Vector2(0.5, 1)
+      maskRect.transform.localPosition = Vector3(maskRect.transform.localPosition.x, picRect.sizeDelta.y / 2, maskRect.transform.localPosition.z)
+      picRect.anchorMin = Vector2(0.5, 1)
+      picRect.anchorMax = Vector2(0.5, 1)
+      picRect.transform.localPosition = Vector3(picRect.transform.localPosition.x, -picRect.sizeDelta.y / 2, picRect.transform.localPosition.z)
+    elseif self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.DownToUp or not self._scrollStartFromCover and self._scrollType == StoryPictureScrollType.UpToDown then
+      maskRect.pivot = Vector2(0.5, 0)
+      maskRect.transform.localPosition = Vector3(maskRect.transform.localPosition.x, -picRect.sizeDelta.y / 2, maskRect.transform.localPosition.z)
+      picRect.anchorMin = Vector2(0.5, 0)
+      picRect.anchorMax = Vector2(0.5, 0)
+      picRect.transform.localPosition = Vector3(picRect.transform.localPosition.x, picRect.sizeDelta.y / 2, picRect.transform.localPosition.z)
+    elseif self._scrollType == StoryPictureScrollType.Spread then
+    elseif self._scrollType == StoryPictureScrollType.HorizontalSpread then
+    elseif self._scrollType == StoryPictureScrollType.VerticalSpread then
     end
   end
-  do
-    if (((self._scrollType ~= StoryPictureScrollType.Spread or self._scrollType == StoryPictureScrollType.HorizontalSpread) and self._scrollType ~= StoryPictureScrollType.VerticalSpread)) or keyframeData.FullScreen ~= nil then
-      if keyframeData.FullScreen then
-        local rectTrans = (self._picObject):GetComponent("RectTransform")
-        if rectTrans then
-          self:_SetPicFullScreen(rectTrans)
-        end
-      else
-        do
-          ;
-          (self._storyManager):SetUIBlackSideSize(0, 0)
-        end
+  if keyframeData.FullScreen ~= nil then
+    if keyframeData.FullScreen then
+      local rectTrans = self._picObject:GetComponent("RectTransform")
+      if rectTrans then
+        self:_SetPicFullScreen(rectTrans)
       end
+    else
+      self._storyManager:SetUIBlackSideSize(0, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-StoryEntityPicture._SetPicFullScreen = function(self, rectTrans)
-  -- function num : 0_2 , upvalues : _ENV
+function StoryEntityPicture:_SetPicFullScreen(rectTrans)
   local fullPicWidth = 2532
   local fullPicHeight = 1170
-  local screenWidth, screenHeight = (self._storyManager):GetUICanvasSize()
+  local screenWidth, screenHeight = self._storyManager:GetUICanvasSize()
   local picAspect = fullPicWidth / fullPicHeight
   local screenAspect = screenWidth / screenHeight
   local blackSideHeight = 0
   local blackSideWidth = 0
-  if screenAspect < picAspect then
+  if picAspect > screenAspect then
     local picHeight = fullPicHeight * screenWidth / fullPicWidth
     rectTrans.sizeDelta = Vector2(screenWidth, picHeight)
-    blackSideHeight = (math.abs)(screenHeight - picHeight) / 2
+    blackSideHeight = math.abs(screenHeight - picHeight) / 2
+  elseif picAspect < screenAspect then
+    local picWidth = fullPicWidth * screenHeight / fullPicHeight
+    rectTrans.sizeDelta = Vector2(picWidth, screenHeight)
+    blackSideWidth = math.abs(screenWidth - picWidth) / 2
   else
-    do
-      if picAspect < screenAspect then
-        local picWidth = fullPicWidth * screenHeight / fullPicHeight
-        rectTrans.sizeDelta = Vector2(picWidth, screenHeight)
-        blackSideWidth = (math.abs)(screenWidth - picWidth) / 2
-      else
-        do
-          rectTrans.sizeDelta = Vector2(screenWidth, screenHeight)
-          ;
-          (self._storyManager):SetUIBlackSideSize(blackSideWidth, blackSideHeight)
-        end
-      end
-    end
+    rectTrans.sizeDelta = Vector2(screenWidth, screenHeight)
   end
+  self._storyManager:SetUIBlackSideSize(blackSideWidth, blackSideHeight)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-StoryEntityPicture._UpdateAnimation = function(self, time)
-  -- function num : 0_3 , upvalues : _ENV, StoryPictureScrollType
-  local res = ((StoryEntityPicture.super)._UpdateAnimation)(self, time)
+function StoryEntityPicture:_UpdateAnimation(time)
+  local res = StoryEntityPicture.super._UpdateAnimation(self, time)
   if self._inScrolling and self._scrollType then
     local t = 1
     if self._scrollDuration > 0 then
       t = (time - self._scrollStartTime) / self._scrollDuration
     end
-    if t > 1 then
+    if 1 < t then
       t = 1
     end
     local effectT = t
@@ -207,115 +149,69 @@ StoryEntityPicture._UpdateAnimation = function(self, time)
       effectT = 1 - effectT
     end
     if not self._maskRect then
-      self._maskRect = (self._maskObject):GetComponent("RectTransform")
+      self._maskRect = self._maskObject:GetComponent("RectTransform")
     end
     if not self._picRect then
-      self._picRect = (self._picObject):GetComponent("RectTransform")
+      self._picRect = self._picObject:GetComponent("RectTransform")
     end
-    -- DECOMPILER ERROR at PC70: Confused about usage of register: R5 in 'UnsetPending'
-
     if self._scrollType == StoryPictureScrollType.LeftToRight or self._scrollType == StoryPictureScrollType.RightToLeft or self._scrollType == StoryPictureScrollType.HorizontalSpread then
-      (self._maskRect).sizeDelta = Vector2((lmathext.lerp)(0, ((self._picRect).sizeDelta).x, effectT), ((self._picRect).sizeDelta).y)
-    else
-      -- DECOMPILER ERROR at PC98: Confused about usage of register: R5 in 'UnsetPending'
-
-      if self._scrollType == StoryPictureScrollType.UpToDown or self._scrollType == StoryPictureScrollType.DownToUp or self._scrollType == StoryPictureScrollType.VerticalSpread then
-        (self._maskRect).sizeDelta = Vector2(((self._picRect).sizeDelta).x, (lmathext.lerp)(0, ((self._picRect).sizeDelta).y, effectT))
-      else
-        -- DECOMPILER ERROR at PC123: Confused about usage of register: R5 in 'UnsetPending'
-
-        if self._scrollType == StoryPictureScrollType.Spread then
-          (self._maskRect).sizeDelta = Vector2((lmathext.lerp)(0, ((self._picRect).sizeDelta).x, effectT), (lmathext.lerp)(0, ((self._picRect).sizeDelta).y, effectT))
-        end
-      end
+      self._maskRect.sizeDelta = Vector2(lmathext.lerp(0, self._picRect.sizeDelta.x, effectT), self._picRect.sizeDelta.y)
+    elseif self._scrollType == StoryPictureScrollType.UpToDown or self._scrollType == StoryPictureScrollType.DownToUp or self._scrollType == StoryPictureScrollType.VerticalSpread then
+      self._maskRect.sizeDelta = Vector2(self._picRect.sizeDelta.x, lmathext.lerp(0, self._picRect.sizeDelta.y, effectT))
+    elseif self._scrollType == StoryPictureScrollType.Spread then
+      self._maskRect.sizeDelta = Vector2(lmathext.lerp(0, self._picRect.sizeDelta.x, effectT), lmathext.lerp(0, self._picRect.sizeDelta.y, effectT))
     end
-    if t >= 1 then
+    if 1 <= t then
       self._inScrolling = false
     end
     return false
   else
-    do
-      do return res end
-    end
+    return res
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-StoryEntityPicture._SetAlpha = function(self, alpha)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._picColor).a = alpha
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._picCmp).color = self._picColor
+function StoryEntityPicture:_SetAlpha(alpha)
+  self._picColor.a = alpha
+  self._picCmp.color = self._picColor
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-StoryEntityPicture._SetBrightness = function(self, brightness)
-  -- function num : 0_5
-  (self._picColor):Set(brightness, brightness, brightness, (self._picColor).a)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._picCmp).color = self._picColor
+function StoryEntityPicture:_SetBrightness(brightness)
+  self._picColor:Set(brightness, brightness, brightness, self._picColor.a)
+  self._picCmp.color = self._picColor
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-StoryEntityPicture._SetPicBlur = function(self, blurType, blurDirection, blur)
-  -- function num : 0_6 , upvalues : StoryPictureBlurType
+function StoryEntityPicture:_SetPicBlur(blurType, blurDirection, blur)
   blurType = blurType + 1
-  ;
-  ((self._picCmp).material):DisableKeyword("_BLUR_NONE")
-  ;
-  ((self._picCmp).material):DisableKeyword("_BLUR_GAUSSIAN")
-  ;
-  ((self._picCmp).material):DisableKeyword("_BLUR_RADIAL")
-  ;
-  ((self._picCmp).material):DisableKeyword("_BLUR_DIRECTIONAL")
+  self._picCmp.material:DisableKeyword("_BLUR_NONE")
+  self._picCmp.material:DisableKeyword("_BLUR_GAUSSIAN")
+  self._picCmp.material:DisableKeyword("_BLUR_RADIAL")
+  self._picCmp.material:DisableKeyword("_BLUR_DIRECTIONAL")
   if blurType == StoryPictureBlurType.None then
-    ((self._picCmp).material):EnableKeyword("_BLUR_NONE")
-    ;
-    ((self._picCmp).material):SetFloat("_BlurSize", 0)
+    self._picCmp.material:EnableKeyword("_BLUR_NONE")
+    self._picCmp.material:SetFloat("_BlurSize", 0)
+  elseif blurType == StoryPictureBlurType.RadialBlur then
+    self._picCmp.material:SetFloat("_BlurSize", blur)
   else
-    if blurType == StoryPictureBlurType.RadialBlur then
-      ((self._picCmp).material):SetFloat("_BlurSize", blur)
-    else
-      ;
-      ((self._picCmp).material):SetFloat("_BlurSize", blur * 5)
-    end
+    self._picCmp.material:SetFloat("_BlurSize", blur * 5)
   end
-  ;
-  ((self._picCmp).material):EnableKeyword("_BLUR_DIRECTIONAL")
+  self._picCmp.material:EnableKeyword("_BLUR_DIRECTIONAL")
   if blurType == StoryPictureBlurType.MotionBlur then
     if blurDirection == 0 then
-      ((self._picCmp).material):SetFloat("_DirectionalAngle", 90)
+      self._picCmp.material:SetFloat("_DirectionalAngle", 90)
     else
-      ;
-      ((self._picCmp).material):SetFloat("_DirectionalAngle", 180)
+      self._picCmp.material:SetFloat("_DirectionalAngle", 180)
     end
   end
   if blurType == StoryPictureBlurType.GaussianBlur then
-    ((self._picCmp).material):EnableKeyword("_BLUR_GAUSSIAN")
+    self._picCmp.material:EnableKeyword("_BLUR_GAUSSIAN")
   end
   if blurType == StoryPictureBlurType.RadialBlur then
-    ((self._picCmp).material):EnableKeyword("_BLUR_RADIAL")
-    ;
-    ((self._picCmp).material):SetFloat("_RadialCenterX", 0)
-    ;
-    ((self._picCmp).material):SetFloat("_RadialCenterY", 0)
+    self._picCmp.material:EnableKeyword("_BLUR_RADIAL")
+    self._picCmp.material:SetFloat("_RadialCenterX", 0)
+    self._picCmp.material:SetFloat("_RadialCenterY", 0)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-StoryEntityPicture.GetMaterial = function(self)
-  -- function num : 0_7
-  return (self._picCmp).material
+function StoryEntityPicture:GetMaterial()
+  return self._picCmp.material
 end
-
-

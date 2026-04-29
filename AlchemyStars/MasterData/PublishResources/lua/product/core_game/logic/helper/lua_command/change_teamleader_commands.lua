@@ -1,79 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/change_teamleader_commands.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChangeTeamLeaderCommand", IEntityCommand)
 ChangeTeamLeaderCommand = ChangeTeamLeaderCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChangeTeamLeaderCommand.Constructor = function(self)
-  -- function num : 0_0
+function ChangeTeamLeaderCommand:Constructor()
   self._commandType = "ChangeTeamLeader"
   self._newLeaderPstID = nil
   self._oldLeaderPstID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function ChangeTeamLeaderCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.GetExecStateID = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ChangeTeamLeaderCommand:GetExecStateID()
   return GameStateID.WaitInput
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function ChangeTeamLeaderCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function ChangeTeamLeaderCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.GetNewLeaderPstID = function(self)
-  -- function num : 0_5
+function ChangeTeamLeaderCommand:GetNewLeaderPstID()
   return self._newLeaderPstID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.GetOldLeaderPstID = function(self)
-  -- function num : 0_6
+function ChangeTeamLeaderCommand:GetOldLeaderPstID()
   return self._oldLeaderPstID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.SetNewTeamLeaderPstID = function(self, petPstID)
-  -- function num : 0_7
+function ChangeTeamLeaderCommand:SetNewTeamLeaderPstID(petPstID)
   self._newLeaderPstID = petPstID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.SetOldTeamLeaderPstID = function(self, petPstID)
-  -- function num : 0_8
+function ChangeTeamLeaderCommand:SetOldTeamLeaderPstID(petPstID)
   self._oldLeaderPstID = petPstID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.ToNetMessage = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ChangeTeamLeaderCommand:ToNetMessage()
   local msg = CEventChangeTeamLeaderCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -85,10 +51,7 @@ ChangeTeamLeaderCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChangeTeamLeaderCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_10
+function ChangeTeamLeaderCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -97,5 +60,3 @@ ChangeTeamLeaderCommand.FromNetMessage = function(self, msg)
   self._oldLeaderPstID = msg.OldLeaderPstID
   self._newLeaderPstID = msg.NewLeaderPstID
 end
-
-

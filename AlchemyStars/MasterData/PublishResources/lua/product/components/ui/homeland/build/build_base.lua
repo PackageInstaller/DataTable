@@ -1,46 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/build/build_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuildBase", Object)
 BuildBase = BuildBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuildBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function BuildBase:Constructor()
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   self._homelandClient = homeLandModule:GetClient()
-  self._interactPointManager = (self._homelandClient):InteractPointManager()
+  self._interactPointManager = self._homelandClient:InteractPointManager()
   self._petInteractPointCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.RefreshInteractPoint = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuildBase:RefreshInteractPoint()
   if self._isLock then
-    return 
+    return
   end
   if not self._transform then
-    return 
+    return
   end
-  self._interactParent = (self._transform):Find("Interact")
+  self._interactParent = self._transform:Find("Interact")
   if not self._interactParent then
-    return 
+    return
   end
   self._interactPoints = {}
   self._interactpos = {}
-  for i = 0, (self._interactParent).childCount - 1 do
-    local interactPoint = (self._interactParent):GetChild(i)
+  for i = 0, self._interactParent.childCount - 1 do
+    local interactPoint = self._interactParent:GetChild(i)
     local name = interactPoint.name
-    local cfgs = (Cfg.cfg_building_interact_point)({PointName = name})
-    if cfgs and (table.count)(cfgs) > 0 then
+    local cfgs = Cfg.cfg_building_interact_point({PointName = name})
+    if cfgs and 0 < table.count(cfgs) then
       local cfg = cfgs[1]
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._interactPoints)[#self._interactPoints + 1] = (self._interactPointManager):AddBuildInteractPoint(self, i, cfg.ID)
+      self._interactPoints[#self._interactPoints + 1] = self._interactPointManager:AddBuildInteractPoint(self, i, cfg.ID)
       if cfg.ID == InteractPointType.PetBuilding then
         self._petInteractPointCount = self._petInteractPointCount + 1
       end
@@ -48,61 +35,49 @@ BuildBase.RefreshInteractPoint = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetPetInteractPoint = function(self, interactPointindex)
-  -- function num : 0_2 , upvalues : _ENV
-  local interactPoint, index = nil, nil
-  do
-    if self._interactPoints then
-      local petInteractPoint = {}
-      for i = 1, #self._interactPoints do
-        local ip = (self._interactPoints)[i]
-        if ip:GetPointType() == InteractPointType.PetBuilding then
-          petInteractPoint[#petInteractPoint + 1] = ip
-        end
+function BuildBase:GetPetInteractPoint(interactPointindex)
+  local interactPoint, index
+  if self._interactPoints then
+    local petInteractPoint = {}
+    for i = 1, #self._interactPoints do
+      local ip = self._interactPoints[i]
+      if ip:GetPointType() == InteractPointType.PetBuilding then
+        petInteractPoint[#petInteractPoint + 1] = ip
       end
-      if #petInteractPoint > 0 then
-        for _index,_interactPoint in ipairs(petInteractPoint) do
-          local curInteractObject = _interactPoint:GetInteractObject()
-          do
-            do
-              if HomelandPet:IsInstanceOfType(curInteractObject) then
-                local cfg = (Cfg.cfg_homeland_pet_behavior_lib)({TemplateID = curInteractObject:TemplateID(), BehaviorType = HomelandPetBehaviorType.InteractingFurniture})
-                if cfg and #cfg > 0 and (table.icontains)((cfg[1]).ExclusiveBuildings, curInteractObject:TemplateID()) then
-                  return nil, nil
-                end
-              end
-              -- DECOMPILER ERROR at PC69: Unhandled construct in 'MakeBoolean' P1
-
-              if interactPointindex and _index == interactPointindex and not curInteractObject then
-                interactPoint = _interactPoint
-                index = _index
-                break
-              end
-              if not curInteractObject then
-                interactPoint = _interactPoint
-                index = _index
-                break
-              end
-              -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out DO_STMT
-
-            end
+    end
+    if 0 < #petInteractPoint then
+      for _index, _interactPoint in ipairs(petInteractPoint) do
+        local curInteractObject = _interactPoint:GetInteractObject()
+        if HomelandPet:IsInstanceOfType(curInteractObject) then
+          local cfg = Cfg.cfg_homeland_pet_behavior_lib({
+            TemplateID = curInteractObject:TemplateID(),
+            BehaviorType = HomelandPetBehaviorType.InteractingFurniture
+          })
+          if cfg and 0 < #cfg and table.icontains(cfg[1].ExclusiveBuildings, curInteractObject:TemplateID()) then
+            return nil, nil
           end
+        end
+        if interactPointindex then
+          if _index == interactPointindex and not curInteractObject then
+            interactPoint = _interactPoint
+            index = _index
+            break
+          end
+        elseif not curInteractObject then
+          interactPoint = _interactPoint
+          index = _index
+          break
         end
       end
     end
-    return interactPoint, index
   end
+  return interactPoint, index
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetAllInteractPointByType = function(self, interactPointType)
-  -- function num : 0_3
+function BuildBase:GetAllInteractPointByType(interactPointType)
   local interactPoints = {}
   for i = 1, #self._interactPoints do
-    local ip = (self._interactPoints)[i]
+    local ip = self._interactPoints[i]
     if ip:GetPointType() == interactPointType then
       interactPoints[#interactPoints + 1] = ip
     end
@@ -110,52 +85,37 @@ BuildBase.GetAllInteractPointByType = function(self, interactPointType)
   return interactPoints
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.ResetInteractPoint = function(self)
-  -- function num : 0_4
+function BuildBase:ResetInteractPoint()
   if not self._interactPoints then
-    return 
+    return
   end
   for i = 1, #self._interactPoints do
-    (self._interactPointManager):RemoveBuildInteractPoint((self._interactPoints)[i])
+    self._interactPointManager:RemoveBuildInteractPoint(self._interactPoints[i])
   end
   self._interactPoints = nil
   self._interactpos = {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetBuildId = function(self)
-  -- function num : 0_5
+function BuildBase:GetBuildId()
   return self._cfgID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetBuildPstId = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._architecture and (self._architecture).pstid then
-    return (self._architecture).pstid
+function BuildBase:GetBuildPstId()
+  if self._architecture and self._architecture.pstid then
+    return self._architecture.pstid
   end
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   return homelandModule:GetBuildPstid(self:GetBuildId())
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetInteractTransform = function(self, index)
-  -- function num : 0_7
+function BuildBase:GetInteractTransform(index)
   if not self._interactParent then
-    return 
+    return
   end
-  return (self._interactParent):GetChild(index)
+  return self._interactParent:GetChild(index)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetInteractLeaveNode = function(self, index, leaveName)
-  -- function num : 0_8
+function BuildBase:GetInteractLeaveNode(index, leaveName)
   local interact = self:GetInteractTransform(index)
   if interact ~= nil then
     return interact:Find(leaveName)
@@ -163,568 +123,366 @@ BuildBase.GetInteractLeaveNode = function(self, index, leaveName)
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.AddInteractPoint_UniqueIndex = function(self, build, index, interactPointCfgId)
-  -- function num : 0_9 , upvalues : _ENV
-  for _,v in ipairs(self._interactPoints) do
+function BuildBase:AddInteractPoint_UniqueIndex(build, index, interactPointCfgId)
+  for _, v in ipairs(self._interactPoints) do
     if v:GetIndex() == index then
-      return 
+      return
     end
   end
-  local ip = (self._interactPointManager):AddBuildInteractPoint(build, index, interactPointCfgId)
-  ;
-  (table.insert)(self._interactPoints, ip)
+  local ip = self._interactPointManager:AddBuildInteractPoint(build, index, interactPointCfgId)
+  table.insert(self._interactPoints, ip)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetInteractPoint = function(self, index)
-  -- function num : 0_10
+function BuildBase:GetInteractPoint(index)
   if self._interactPoints then
-    return (self._interactPoints)[index]
+    return self._interactPoints[index]
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.EnableInteractPointByIndex = function(self, pointIndex, isEnable)
-  -- function num : 0_11 , upvalues : _ENV
-  local findPointId = nil
-  for id,point in ipairs(self._interactPoints) do
+function BuildBase:EnableInteractPointByIndex(pointIndex, isEnable)
+  local findPointId
+  for id, point in ipairs(self._interactPoints) do
     if point:GetIndex() == pointIndex then
       findPointId = id
       break
     end
   end
-  do
-    if findPointId == nil then
-      return 
-    end
-    local findPoint = (self._interactPoints)[findPointId]
-    if isEnable then
-      local build = findPoint:GetBuild()
-      local index = findPoint:GetIndex()
-      local interactPointCfgId = (findPoint:GetCfg()).ID
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._interactPoints)[findPointId] = (self._interactPointManager):AddBuildInteractPoint(build, index, interactPointCfgId)
-    else
-      do
-        ;
-        (self._interactPointManager):RemoveBuildInteractPoint(findPoint)
-      end
-    end
+  if findPointId == nil then
+    return
+  end
+  local findPoint = self._interactPoints[findPointId]
+  if isEnable then
+    local build = findPoint:GetBuild()
+    local index = findPoint:GetIndex()
+    local interactPointCfgId = findPoint:GetCfg().ID
+    self._interactPoints[findPointId] = self._interactPointManager:AddBuildInteractPoint(build, index, interactPointCfgId)
+  else
+    self._interactPointManager:RemoveBuildInteractPoint(findPoint)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.EnableInteractPointByCfgId = function(self, configId, isEnable)
-  -- function num : 0_12 , upvalues : _ENV
+function BuildBase:EnableInteractPointByCfgId(configId, isEnable)
   local findList = {}
-  for id,point in ipairs(self._interactPoints) do
-    if (point:GetCfg()).ID == configId then
-      (table.insert)(findList, id)
+  for id, point in ipairs(self._interactPoints) do
+    if point:GetCfg().ID == configId then
+      table.insert(findList, id)
     end
   end
-  for k,v in pairs(findList) do
-    local findPoint = (self._interactPoints)[v]
+  for k, v in pairs(findList) do
+    local findPoint = self._interactPoints[v]
     if isEnable then
       local build = findPoint:GetBuild()
       local index = findPoint:GetIndex()
-      local interactPointCfgId = (findPoint:GetCfg()).ID
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self._interactPoints)[v] = (self._interactPointManager):AddBuildInteractPoint(build, index, interactPointCfgId)
+      local interactPointCfgId = findPoint:GetCfg().ID
+      self._interactPoints[v] = self._interactPointManager:AddBuildInteractPoint(build, index, interactPointCfgId)
     else
-      do
-        do
-          ;
-          (self._interactPointManager):RemoveBuildInteractPoint(findPoint)
-          -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC45: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self._interactPointManager:RemoveBuildInteractPoint(findPoint)
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetInteractPosition = function(self, index)
-  -- function num : 0_13
+function BuildBase:GetInteractPosition(index)
   if not self._interactParent then
-    return 
+    return
   end
   if self._interactpos == nil then
     self._interactpos = {}
   end
-  do
-    if (self._interactpos)[index] == nil then
-      local tran = (self._interactParent):GetChild(index)
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._interactpos)[index] = tran.position
-    end
-    return (self._interactpos)[index]
+  if self._interactpos[index] == nil then
+    local tran = self._interactParent:GetChild(index)
+    self._interactpos[index] = tran.position
   end
+  return self._interactpos[index]
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetInteractBoxCollider = function(self, index)
-  -- function num : 0_14
+function BuildBase:GetInteractBoxCollider(index)
   if not self._interactParent then
-    return 
+    return
   end
   if self._interactBoxCollider == nil then
     self._interactBoxCollider = {}
   end
-  do
-    if (self._interactBoxCollider)[index] == nil then
-      local tran = (self._interactParent):GetChild(index)
-      -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._interactBoxCollider)[index] = tran:GetComponent("BoxCollider")
-    end
-    return (self._interactBoxCollider)[index]
+  if self._interactBoxCollider[index] == nil then
+    local tran = self._interactParent:GetChild(index)
+    self._interactBoxCollider[index] = tran:GetComponent("BoxCollider")
   end
+  return self._interactBoxCollider[index]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.ResetInteractPos = function(self)
-  -- function num : 0_15
+function BuildBase:ResetInteractPos()
   self._interactpos = nil
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetInteractAreaPosition = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function BuildBase:GetInteractAreaPosition()
   return Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.Interact = function(self, pointType, index, interactPoint, interactBtn)
-  -- function num : 0_17 , upvalues : _ENV
-  local characterManager = (self._homelandClient):CharacterManager()
+function BuildBase:Interact(pointType, index, interactPoint, interactBtn)
+  local characterManager = self._homelandClient:CharacterManager()
   local characterController = characterManager:MainCharacterController()
   local playerPos = characterController:Position()
-  local targetPos = (self._transform).position
+  local targetPos = self._transform.position
   local targetDir = targetPos - playerPos
   targetDir.y = 0
   self:OnInteract(pointType)
   if pointType == InteractPointType.Info then
     self:ShowDialog("UIBuildInfo", self)
-    characterController:SetLocation(playerPos, (Quaternion.LookRotation)(targetDir))
-  else
-    if pointType == InteractPointType.Build then
-      self:ShowDialog("UIForge")
-    else
-    end
-  end
-  if pointType ~= InteractPointType.Treasure or pointType == InteractPointType.TreasureBounding then
+    characterController:SetLocation(playerPos, Quaternion.LookRotation(targetDir))
+  elseif pointType == InteractPointType.Build then
+    self:ShowDialog("UIForge")
+  elseif pointType == InteractPointType.Treasure then
+  elseif pointType == InteractPointType.TreasureBounding then
     self:ShowDialog("UITreasureBoard")
-  else
-  end
-  if pointType ~= InteractPointType.PetBuilding or pointType == InteractPointType.Wishing then
+  elseif pointType == InteractPointType.PetBuilding then
+  elseif pointType == InteractPointType.Wishing then
     characterController:SetForbiddenMove(true)
     self:ShowDialog("UIBuildCollectCoin", self)
-    characterController:SetLocation(playerPos, (Quaternion.LookRotation)(targetDir))
-  else
-    if pointType == InteractPointType.Raise then
-      characterController:SetForbiddenMove(true)
-      local cameraTran = (self._transform):Find("FishCamera")
-      if cameraTran then
-        local cameraMgr = (self._homelandClient):CameraManager()
-        local followCameraController = cameraMgr:FollowCameraController()
-        followCameraController:Focus(cameraTran, nil, function(param)
-    -- function num : 0_17_0 , upvalues : characterController, playerPos, _ENV, targetDir, self
-    characterController:SetLocation(playerPos, (Quaternion.LookRotation)(targetDir))
-    self:ShowDialog("UIBuildRaiseFish", self)
-  end
-)
-      end
-    else
-      do
-        if pointType == InteractPointType.Shop then
-          self:ShowDialog("UIHomelandShopController", self)
-        else
-          if pointType == InteractPointType.Breed then
-            (Log.info)("BuildBase Click Breed InteractPointBtn")
-            local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
-            homeLandModule:OnBreedInteract(self)
-          else
-            do
-              if pointType == InteractPointType.EnterDomitory then
-                self:ShowDialog("UIHomeDomitory", self:GetBuildPstId())
-              else
-                if pointType == InteractPointType.Photo then
-                  self:ShowDialog("UIHomePhotoController")
-                else
-                  if pointType == InteractPointType.Storehouse then
-                    self:ShowDialog("UIHomeStorehouse")
-                  else
-                    if pointType == InteractPointType.Visit_Build then
-                      self:ShowDialog("UIHomeVisitSpeedup")
-                    else
-                      if pointType == InteractPointType.Visit_Water then
-                        local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
-                        homeLandModule:Visit_Water(self, self:GetInteractTransform(index), interactBtn)
-                      else
-                        do
-                          if pointType == InteractPointType.Visit_GetGift then
-                            self:ShowDialog("UIHomeVisitGetGift")
-                          else
-                            if pointType == InteractPointType.FixBuilding then
-                              self:_TryFixBuilding()
-                            else
-                              if pointType == InteractPointType.TreeDye then
-                                self:ShowDialog("UIHomelandTreeDye", self:GetBuildPstId(), self:GetBuildId())
-                              else
-                                if pointType == InteractPointType.RoleInteract then
-                                  local relatedPetInteractingTarget = (interactPoint:GetBuild()):GetInteractPoint(interactPoint:GetIndex())
-                                  local curInteractingTarget = relatedPetInteractingTarget:GetInteractObject()
-                                  if curInteractingTarget and HomelandPet:IsInstanceOfType(curInteractingTarget) then
-                                    (curInteractingTarget:GetPetBehavior()):RandomBehavior()
-                                  end
-                                  ;
-                                  (((self._homelandClient):CharacterManager()):MainCharacterController()):Interact(self, index, interactPoint)
-                                else
-                                  do
-                                    if pointType == InteractPointType.Album then
-                                      self:ShowDialog("UIHomelandAlbum")
-                                    else
-                                      if pointType == InteractPointType.Aquarium then
-                                        characterController:SetForbiddenMove(true)
-                                        local camera1 = (GameObjectHelper.FindChild)(self._transform, "FishCamera")
-                                        local camera2 = (GameObjectHelper.FindChild)(self._transform, "FishCamera2")
-                                        local targetPos = (((self._homelandClient):CharacterManager()):MainCharacterController()):Position()
-                                        local distance1 = (Vector3.Distance)(camera1.position, targetPos)
-                                        local distance2 = (Vector3.Distance)(camera2.position, targetPos)
-                                        local cameraTran = camera1
-                                        if distance2 < distance1 then
-                                          cameraTran = camera2
-                                        end
-                                        if cameraTran then
-                                          local cameraMgr = (self._homelandClient):CameraManager()
-                                          local followCameraController = cameraMgr:FollowCameraController()
-                                          followCameraController:FocusUseAngles(cameraTran, nil, function(param)
-    -- function num : 0_17_1 , upvalues : characterController, playerPos, _ENV, targetDir, self
-    characterController:SetLocation(playerPos, (Quaternion.LookRotation)(targetDir))
-    self:ShowDialog("UIHomelandAquarium", self)
-  end
-)
-                                          local targetFieldOfView = 26
-                                          self:_AddCameraFovEvent(followCameraController, targetFieldOfView)
-                                        end
-                                      else
-                                        do
-                                          if pointType == InteractPointType.Invite then
-                                            self:ShowDialog("UIHomePetInvite", self, index)
-                                          else
-                                            if pointType == InteractPointType.Clean then
-                                              self:Clean(index)
-                                            else
-                                              if pointType == InteractPointType.HomelandShop then
-                                                self:_OpenShop()
-                                              else
-                                                if pointType == InteractPointType.FlushingRoom then
-                                                  (((self._homelandClient):CharacterManager()):MainCharacterController()):Interact(self, index, interactPoint)
-                                                else
-                                                  if pointType == InteractPointType.RoleSwimmingArea then
-                                                    (Log.fatal)("泳池区域")
-                                                  else
-                                                    if pointType == InteractPointType.EditMedalWall then
-                                                      characterController:SetForbiddenMove(true)
-                                                      self:ShowDialog("UIN22MedalEdit", true, function(param)
-    -- function num : 0_17_2 , upvalues : characterController
-    characterController:SetForbiddenMove(false)
-  end
-)
-                                                    else
-                                                      if pointType == InteractPointType.ShowMedalWall then
-                                                        self:_ShowMedalWall()
-                                                      else
-                                                        if pointType == InteractPointType.Movie then
-                                                          self:ShowDialog("UIHomelandMovieMainController", self)
-                                                        else
-                                                          ;
-                                                          (Log.warn)("### invalid interact point")
-                                                        end
-                                                      end
-                                                    end
-                                                  end
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    characterController:SetLocation(playerPos, Quaternion.LookRotation(targetDir))
+  elseif pointType == InteractPointType.Raise then
+    characterController:SetForbiddenMove(true)
+    local cameraTran = self._transform:Find("FishCamera")
+    if cameraTran then
+      local cameraMgr = self._homelandClient:CameraManager()
+      local followCameraController = cameraMgr:FollowCameraController()
+      followCameraController:Focus(cameraTran, nil, function(param)
+        characterController:SetLocation(playerPos, Quaternion.LookRotation(targetDir))
+        self:ShowDialog("UIBuildRaiseFish", self)
+      end)
     end
+  elseif pointType == InteractPointType.Shop then
+    self:ShowDialog("UIHomelandShopController", self)
+  elseif pointType == InteractPointType.Breed then
+    Log.info("BuildBase Click Breed InteractPointBtn")
+    local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
+    homeLandModule:OnBreedInteract(self)
+  elseif pointType == InteractPointType.EnterDomitory then
+    self:ShowDialog("UIHomeDomitory", self:GetBuildPstId())
+  elseif pointType == InteractPointType.Photo then
+    self:ShowDialog("UIHomePhotoController")
+  elseif pointType == InteractPointType.Storehouse then
+    self:ShowDialog("UIHomeStorehouse")
+  elseif pointType == InteractPointType.Visit_Build then
+    self:ShowDialog("UIHomeVisitSpeedup")
+  elseif pointType == InteractPointType.Visit_Water then
+    local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
+    homeLandModule:Visit_Water(self, self:GetInteractTransform(index), interactBtn)
+  elseif pointType == InteractPointType.Visit_GetGift then
+    self:ShowDialog("UIHomeVisitGetGift")
+  elseif pointType == InteractPointType.FixBuilding then
+    self:_TryFixBuilding()
+  elseif pointType == InteractPointType.TreeDye then
+    self:ShowDialog("UIHomelandTreeDye", self:GetBuildPstId(), self:GetBuildId())
+  elseif pointType == InteractPointType.RoleInteract then
+    local relatedPetInteractingTarget = interactPoint:GetBuild():GetInteractPoint(interactPoint:GetIndex())
+    local curInteractingTarget = relatedPetInteractingTarget:GetInteractObject()
+    if curInteractingTarget and HomelandPet:IsInstanceOfType(curInteractingTarget) then
+      curInteractingTarget:GetPetBehavior():RandomBehavior()
+    end
+    self._homelandClient:CharacterManager():MainCharacterController():Interact(self, index, interactPoint)
+  elseif pointType == InteractPointType.Album then
+    self:ShowDialog("UIHomelandAlbum")
+  elseif pointType == InteractPointType.Aquarium then
+    characterController:SetForbiddenMove(true)
+    local camera1 = GameObjectHelper.FindChild(self._transform, "FishCamera")
+    local camera2 = GameObjectHelper.FindChild(self._transform, "FishCamera2")
+    local targetPos = self._homelandClient:CharacterManager():MainCharacterController():Position()
+    local distance1 = Vector3.Distance(camera1.position, targetPos)
+    local distance2 = Vector3.Distance(camera2.position, targetPos)
+    local cameraTran = camera1
+    if distance1 > distance2 then
+      cameraTran = camera2
+    end
+    if cameraTran then
+      local cameraMgr = self._homelandClient:CameraManager()
+      local followCameraController = cameraMgr:FollowCameraController()
+      followCameraController:FocusUseAngles(cameraTran, nil, function(param)
+        characterController:SetLocation(playerPos, Quaternion.LookRotation(targetDir))
+        self:ShowDialog("UIHomelandAquarium", self)
+      end)
+      local targetFieldOfView = 26
+      self:_AddCameraFovEvent(followCameraController, targetFieldOfView)
+    end
+  elseif pointType == InteractPointType.Invite then
+    self:ShowDialog("UIHomePetInvite", self, index)
+  elseif pointType == InteractPointType.Clean then
+    self:Clean(index)
+  elseif pointType == InteractPointType.HomelandShop then
+    self:_OpenShop()
+  elseif pointType == InteractPointType.FlushingRoom then
+    self._homelandClient:CharacterManager():MainCharacterController():Interact(self, index, interactPoint)
+  elseif pointType == InteractPointType.RoleSwimmingArea then
+    Log.fatal("泳池区域")
+  elseif pointType == InteractPointType.EditMedalWall then
+    characterController:SetForbiddenMove(true)
+    self:ShowDialog("UIN22MedalEdit", true, function(param)
+      characterController:SetForbiddenMove(false)
+    end)
+  elseif pointType == InteractPointType.ShowMedalWall then
+    self:_ShowMedalWall()
+  elseif pointType == InteractPointType.Movie then
+    self:ShowDialog("UIHomelandMovieMainController", self)
+  else
+    Log.warn("### invalid interact point")
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.OnInteract = function(self, interactType)
-  -- function num : 0_18
+function BuildBase:OnInteract(interactType)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetInteractRedStatus = function(self, pointType, index)
-  -- function num : 0_19 , upvalues : _ENV
+function BuildBase:GetInteractRedStatus(pointType, index)
   if pointType == InteractPointType.Info then
-    local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+    local homelandModule = GameGlobal.GetModule(HomelandModule)
     return homelandModule:HasSkinRedPoint(self:GetBuildId())
-  else
-    do
-      if pointType == InteractPointType.Build then
-        local homelandModule = (GameGlobal.GetModule)(HomelandModule)
-        local data = homelandModule:GetForgeData()
-        local map = data:GetSequenceStateCountMap()
-        if data:HasCanUnlockItem() or map[ForgeSequenceState.Getable] > 0 then
-          return true
-        end
-      else
-        do
-          if pointType == InteractPointType.Photo then
-            local itemModule = (GameGlobal.GetModule)(ItemModule)
-            local has = itemModule:UIHomePhotoHasNew()
-            return has
-          else
-            do
-              do
-                if pointType == InteractPointType.Wishing then
-                  local datas = UIBuildCollectCoinDatas:New()
-                  if datas:HasCollectCoin() then
-                    return true
-                  end
-                  return false
-                end
-                return false
-              end
-            end
-          end
-        end
-      end
+  elseif pointType == InteractPointType.Build then
+    local homelandModule = GameGlobal.GetModule(HomelandModule)
+    local data = homelandModule:GetForgeData()
+    local map = data:GetSequenceStateCountMap()
+    if data:HasCanUnlockItem() or map[ForgeSequenceState.Getable] > 0 then
+      return true
     end
+  elseif pointType == InteractPointType.Photo then
+    local itemModule = GameGlobal.GetModule(ItemModule)
+    local has = itemModule:UIHomePhotoHasNew()
+    return has
+  elseif pointType == InteractPointType.Wishing then
+    local datas = UIBuildCollectCoinDatas:New()
+    if datas:HasCollectCoin() then
+      return true
+    end
+    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.EnterInteractArea = function(self)
-  -- function num : 0_20
+function BuildBase:EnterInteractArea()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.LeaveInteractArea = function(self)
-  -- function num : 0_21
+function BuildBase:LeaveInteractArea()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.ShowDialog = function(self, name, ...)
-  -- function num : 0_22 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(name, ...)
+function BuildBase:ShowDialog(name, ...)
+  GameGlobal.UIStateManager():ShowDialog(name, ...)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.CloseDialog = function(self, name)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog(name)
+function BuildBase:CloseDialog(name)
+  GameGlobal.UIStateManager():CloseDialog(name)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase._TryFixBuilding = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  (Log.info)("Building TryFixBuilding")
+function BuildBase:_TryFixBuilding()
+  Log.info("Building TryFixBuilding")
   local enough = true
   if self:IsShabby() then
-    (Log.info)("Building TryFixBuilding, Building Shabby")
-    local defaultBuildingCfgs = ((Cfg.cfg_default_architecture)({ArchitectureId = self._cfgID}))[1]
+    Log.info("Building TryFixBuilding, Building Shabby")
+    local defaultBuildingCfgs = Cfg.cfg_default_architecture({
+      ArchitectureId = self._cfgID
+    })[1]
     local cost = defaultBuildingCfgs.FixCost
     local str = ""
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
-    for i,item in ipairs(cost) do
+    local itemModule = GameGlobal.GetModule(ItemModule)
+    for i, item in ipairs(cost) do
       local id = item[1]
       local need = item[2]
       local count = itemModule:GetItemCount(id)
-      local name = (StringTable.Get)(((Cfg.cfg_item)[id]).Name)
-      if count < need then
-        str = str .. (StringTable.Get)("str_homeland_unlock_not_enough", name, count, need)
-        if enough then
-          do
-            enough = false
-            str = str .. (StringTable.Get)("str_homeland_unlock_enough", name, count, need)
-            if enough then
-              enough = true
-            end
-            if i < #cost then
-              str = str .. (StringTable.Get)("str_homeland_unlock_building_tip_spliter")
-            end
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      local name = StringTable.Get(Cfg.cfg_item[id].Name)
+      if need > count then
+        str = str .. StringTable.Get("str_homeland_unlock_not_enough", name, count, need)
+        enough = enough and false
+      else
+        str = str .. StringTable.Get("str_homeland_unlock_enough", name, count, need)
+        enough = enough and true
+      end
+      if i < #cost then
+        str = str .. StringTable.Get("str_homeland_unlock_building_tip_spliter")
       end
     end
-    self:ShowDialog("UIHomelandMessageBox", nil, (StringTable.Get)("str_homeland_unlock_building_tip", str, self:GetName()), {(StringTable.Get)("str_common_cancel"), function(param)
-    -- function num : 0_24_0
-  end
-}, {(StringTable.Get)("str_common_ok"), function(param)
-    -- function num : 0_24_1 , upvalues : enough, _ENV, self
-    if enough then
-      ((GameGlobal.TaskManager)()):StartTask(self._ReqFix, self)
-    else
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_unlock_building_failed"))
-    end
-  end
-}, true)
+    self:ShowDialog("UIHomelandMessageBox", nil, StringTable.Get("str_homeland_unlock_building_tip", str, self:GetName()), {
+      StringTable.Get("str_common_cancel"),
+      function(param)
+      end
+    }, {
+      StringTable.Get("str_common_ok"),
+      function(param)
+        if enough then
+          GameGlobal.TaskManager():StartTask(self._ReqFix, self)
+        else
+          ToastManager.ShowHomeToast(StringTable.Get("str_homeland_unlock_building_failed"))
+        end
+      end
+    }, true)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase._ReqFix = function(self, TT)
-  -- function num : 0_25 , upvalues : _ENV
+function BuildBase:_ReqFix(TT)
   local pstid = self:PstID()
-  local module = (GameGlobal.GetModule)(HomelandModule)
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("ReqFixBuilding")
+  local module = GameGlobal.GetModule(HomelandModule)
+  GameGlobal.UIStateManager():Lock("ReqFixBuilding")
   local res = module:HandleHomelandFixShabbyReq(TT, pstid)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("ReqFixBuilding")
+  GameGlobal.UIStateManager():UnLock("ReqFixBuilding")
   if not res:GetSucc() then
-    (Log.fatal)("修复建筑失败：", res:GetResult())
-    ;
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_task_error_" .. res:GetResult()))
-    return 
+    Log.fatal("修复建筑失败：", res:GetResult())
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_task_error_" .. res:GetResult()))
+    return
   end
-  ;
-  (AudioHelperController.RequestAndPlayUIVoiceAutoRelease)(CriAudioIDConst.HomelandFixBuild)
+  AudioHelperController.RequestAndPlayUIVoiceAutoRelease(CriAudioIDConst.HomelandFixBuild)
   self:ShowDialog("UIHomelandFixBuilding", self._cfgID, pstid)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase._OpenShop = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("HomelandInteractClick", {"Click_ShopController"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function BuildBase:_OpenShop()
+  GameGlobal.UAReportForceGuideEvent("HomelandInteractClick", {
+    "Click_ShopController"
+  }, true)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Shop)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_SHOP)
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() then
-    (ClientShop.OpenShop)()
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_SHOP)
+  if EngineGameHelper.EnableAppleVerifyBulletin() then
+    ClientShop.OpenShop()
   else
-    ;
-    (ClientShop.OpenShop)(nil, ShopMainTabType.Homeland)
+    ClientShop.OpenShop(nil, ShopMainTabType.Homeland)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetHomelandClient = function(self)
-  -- function num : 0_27
+function BuildBase:GetHomelandClient()
   return self._homelandClient
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase._ShowMedalWall = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local characterController = ((self._homelandClient):CharacterManager()):MainCharacterController()
+function BuildBase:_ShowMedalWall()
+  local characterController = self._homelandClient:CharacterManager():MainCharacterController()
   characterController:SetForbiddenMove(true)
-  local cameraTran = (GameObjectHelper.FindChild)(self._transform, "MedalCamera")
+  local cameraTran = GameObjectHelper.FindChild(self._transform, "MedalCamera")
   if cameraTran then
-    local cameraMgr = (self._homelandClient):CameraManager()
+    local cameraMgr = self._homelandClient:CameraManager()
     local followCameraController = cameraMgr:FollowCameraController()
     followCameraController:FocusUseAngles(cameraTran, nil, function(param)
-    -- function num : 0_28_0 , upvalues : self, cameraTran
-    self:ShowDialog("UIHomelandMedalWall", cameraTran)
-  end
-)
+      self:ShowDialog("UIHomelandMedalWall", cameraTran)
+    end)
     local targetFieldOfView = 26
     self:_AddCameraFovEvent(followCameraController, targetFieldOfView)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase._AddCameraFovEvent = function(self, followCameraController, targetFieldOfView)
-  -- function num : 0_29 , upvalues : _ENV
+function BuildBase:_AddCameraFovEvent(followCameraController, targetFieldOfView)
   local defaultFocusTime = 0.5
-  local startTime = (GameGlobal:GetInstance()):GetCurrentTime()
-  local curFieldOfView = (followCameraController._camera).fieldOfView
-  self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(defaultFocusTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_29_0 , upvalues : _ENV, startTime, defaultFocusTime, self, curFieldOfView, targetFieldOfView, followCameraController
-    local curTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  local startTime = GameGlobal:GetInstance():GetCurrentTime()
+  local curFieldOfView = followCameraController._camera.fieldOfView
+  self._timerHandler = GameGlobal.Timer():AddEventTimes(defaultFocusTime, TimerTriggerCount.Infinite, function()
+    local curTime = GameGlobal:GetInstance():GetCurrentTime()
     local percent = (curTime - startTime) / (defaultFocusTime * 1000)
-    if defaultFocusTime <= curTime - startTime then
+    if curTime - startTime >= defaultFocusTime then
       percent = 1
       if self._timerHandler then
-        ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+        GameGlobal.Timer():CancelEvent(self._timerHandler)
         self._timerHandler = nil
       end
     end
-    local fov = (((DG.Tweening).DOVirtual).EasedValue)(curFieldOfView, targetFieldOfView, percent, ((DG.Tweening).Ease).Linear)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (followCameraController._camera).fieldOfView = fov
-  end
-)
+    local fov = DG.Tweening.DOVirtual.EasedValue(curFieldOfView, targetFieldOfView, percent, DG.Tweening.Ease.Linear)
+    followCameraController._camera.fieldOfView = fov
+  end)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BuildBase.GetInteractableCount = function(self)
-  -- function num : 0_30
+function BuildBase:GetInteractableCount()
   return self._petInteractPointCount
 end
-
-

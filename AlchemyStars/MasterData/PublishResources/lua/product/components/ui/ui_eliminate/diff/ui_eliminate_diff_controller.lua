@@ -1,90 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/diff/ui_eliminate_diff_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateDiffController", UIController)
 UIEliminateDiffController = UIEliminateDiffController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateDiffController.Constructor = function(self)
-  -- function num : 0_0
+function UIEliminateDiffController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIEliminateDiffController:OnShow(uiParams)
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffController.OnHide = function(self)
-  -- function num : 0_2
+function UIEliminateDiffController:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffController._GetComponent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._hardCfg = (Cfg.cfg_anipop_hard)({})
+function UIEliminateDiffController:_GetComponent()
+  self._hardCfg = Cfg.cfg_anipop_hard({})
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._anim = self:GetUIComponent("Animation", "anim")
-  self._diffItems = (self._content):SpawnObjects("UIEliminateDiffItem", #self._hardCfg)
+  self._diffItems = self._content:SpawnObjects("UIEliminateDiffItem", #self._hardCfg)
   self._scrollRect = self:GetUIComponent("ScrollRect", "Scroll View")
-  for i,item in pairs(self._diffItems) do
-    item:SetData((self._hardCfg)[i], i, function(hardID)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    self:StartTask(function(TT)
-      -- function num : 0_3_0_0 , upvalues : _ENV, hardID, self
-      local anipopModule = (GameGlobal.GetModule)(AnipopModule)
-      local res = anipopModule:SelectHard(TT, hardID)
-      if res:GetSucc() then
-        self:SwitchState(UIStateType.UIEliminateLevelController)
-      else
-        ;
-        (Log.fatal)("选择难度错误：", res:GetResult())
-        self:CloseDialog()
-      end
-    end
-)
+  for i, item in pairs(self._diffItems) do
+    item:SetData(self._hardCfg[i], i, function(hardID)
+      self:StartTask(function(TT)
+        local anipopModule = GameGlobal.GetModule(AnipopModule)
+        local res = anipopModule:SelectHard(TT, hardID)
+        if res:GetSucc() then
+          self:SwitchState(UIStateType.UIEliminateLevelController)
+        else
+          Log.fatal("选择难度错误：", res:GetResult())
+          self:CloseDialog()
+        end
+      end)
+    end, self)
   end
-, self)
-  end
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local anipopInfo = anipopModule:GetAniPopInfo()
   local percent = anipopInfo.cur_hard_id / #self._hardCfg
   if anipopInfo.cur_hard_id == 1 then
     percent = 0
   end
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._scrollRect).horizontalNormalizedPosition = percent
+  self._scrollRect.horizontalNormalizedPosition = percent
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffController.CloseBtnOnClick = function(self)
-  -- function num : 0_4
+function UIEliminateDiffController:CloseBtnOnClick()
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateDiffController._Close = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIEliminateDiffController:_Close()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     self:Lock("uieff_UIEliminateDiffController_out")
-    ;
-    (self._anim):Play("uieff_UIEliminateDiffController_out")
+    self._anim:Play("uieff_UIEliminateDiffController_out")
     YIELD(TT, 500)
     self:UnLock("uieff_UIEliminateDiffController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

@@ -1,136 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_auto_bead_power_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureAutoBeadPowerInfo", UICustomWidget)
 UIWidgetFeatureAutoBeadPowerInfo = UIWidgetFeatureAutoBeadPowerInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureAutoBeadPowerInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureAutoBeadPowerInfo:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetFeatureAutoBeadPowerInfo:InitWidget()
   self._imageNormalGo = self:GetGameObject("ImageNormal")
   self._imageNormal = self:GetUIComponent("Image", "ImageNormal")
   self._powerValue = self:GetUIComponent("UILocalizationText", "PowerValue")
   self._restPointValue = self:GetUIComponent("UILocalizationText", "RestPointValue")
   self._anim = self:GetUIComponent("Animation", "UIWidgetFeatureAutoBeadPowerInfo")
-  self._animName = {[1] = "uieffanim_N16_UIWidgetFeatureAutoBeadPowerInfo_01", [2] = "uieffanim_N16_UIWidgetFeatureAutoBeadPowerInfo_02"}
+  self._animName = {
+    [1] = "uieffanim_N16_UIWidgetFeatureAutoBeadPowerInfo_01",
+    [2] = "uieffanim_N16_UIWidgetFeatureAutoBeadPowerInfo_02"
+  }
   self._curAnimLevel = 0
   self._triggered1 = false
   self._triggered2 = false
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureAutoBeadPowerInfo:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureAutoBeadPointRefreshUI, self._OnFeatureAutoBeadPointRefreshUI)
   self:AttachEvent(GameEventType.FeatureAutoBeadPointChange, self._OnFeatureAutoBeadPointChange)
   self:AttachEvent(GameEventType.FeatureAutoBeadPointToPowerChange, self._OnFeatureAutoBeadPointToPowerChange)
   self:AttachEvent(GameEventType.GuideRound, self._GuideRound)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo.SetData = function(self, initInfo)
-  -- function num : 0_3 , upvalues : _ENV
-  local curPoint, pointToPower = (InnerGameHelperRender.GetCurAutoBeadPowerInfo)()
+function UIWidgetFeatureAutoBeadPowerInfo:SetData(initInfo)
+  local curPoint, pointToPower = InnerGameHelperRender.GetCurAutoBeadPowerInfo()
   self._initData = initInfo
-  self._curPoint = (math.floor)(curPoint)
-  self._pointToPower = (math.floor)(pointToPower)
+  self._curPoint = math.floor(curPoint)
+  self._pointToPower = math.floor(pointToPower)
   self:SetValue(self._curPoint)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo.BaseOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if (InnerGameHelperRender.IsPuzzleState)() then
-    return 
+function UIWidgetFeatureAutoBeadPowerInfo:BaseOnClick(go)
+  if InnerGameHelperRender.IsPuzzleState() then
+    return
   end
-  if (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+  if InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
   self:ShowDialog("UIFeatureAutoBeadInfo")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo.SetValue = function(self, pointValue)
-  -- function num : 0_5 , upvalues : _ENV
-  pointValue = (math.floor)(pointValue)
+function UIWidgetFeatureAutoBeadPowerInfo:SetValue(pointValue)
+  pointValue = math.floor(pointValue)
   self._curPoint = pointValue
   self:_SetUiValue(self._curPoint)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo._SetUiValue = function(self, pointValue)
-  -- function num : 0_6 , upvalues : _ENV
-  pointValue = (math.floor)(pointValue)
+function UIWidgetFeatureAutoBeadPowerInfo:_SetUiValue(pointValue)
+  pointValue = math.floor(pointValue)
   local uiRestPoint = 0
   local uiPower = 0
   local uiPercent = 0
-  if self._pointToPower <= 0 then
+  if 0 >= self._pointToPower then
     uiPower = 0
     uiRestPoint = pointValue
     uiPercent = 0
   else
-    uiPower = (math.floor)(pointValue / self._pointToPower)
+    uiPower = math.floor(pointValue / self._pointToPower)
     uiRestPoint = pointValue - uiPower * self._pointToPower
-    uiPercent = (math.floor)((uiRestPoint) / self._pointToPower * 100)
+    uiPercent = math.floor(uiRestPoint / self._pointToPower * 100)
   end
-  ;
-  (self._powerValue):SetText(uiPower)
+  self._powerValue:SetText(uiPower)
   local percentStr = tostring(uiPercent) .. "%"
-  ;
-  (self._restPointValue):SetText(percentStr)
+  self._restPointValue:SetText(percentStr)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo._OnFeatureAutoBeadPointRefreshUI = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local curPoint, pointToPower = (InnerGameHelperRender.GetCurAutoBeadPowerInfo)()
-  self._curPoint = (math.floor)(curPoint)
-  self._pointToPower = (math.floor)(pointToPower)
+function UIWidgetFeatureAutoBeadPowerInfo:_OnFeatureAutoBeadPointRefreshUI()
+  local curPoint, pointToPower = InnerGameHelperRender.GetCurAutoBeadPowerInfo()
+  self._curPoint = math.floor(curPoint)
+  self._pointToPower = math.floor(pointToPower)
   self:SetValue(self._curPoint)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo._OnFeatureAutoBeadPointChange = function(self, curPoint)
-  -- function num : 0_8
+function UIWidgetFeatureAutoBeadPowerInfo:_OnFeatureAutoBeadPointChange(curPoint)
   self:_OnFeatureAutoBeadPointRefreshUI()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo._OnFeatureAutoBeadPointToPowerChange = function(self, curPoint)
-  -- function num : 0_9
+function UIWidgetFeatureAutoBeadPowerInfo:_OnFeatureAutoBeadPointToPowerChange(curPoint)
   self:_OnFeatureAutoBeadPointRefreshUI()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAutoBeadPowerInfo._GuideRound = function(self, levelID, curWaveIndex, curRoundIndex)
-  -- function num : 0_10 , upvalues : _ENV
+function UIWidgetFeatureAutoBeadPowerInfo:_GuideRound(levelID, curWaveIndex, curRoundIndex)
   if not self._triggered1 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonMazeBeadInner)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonMazeBeadInner)
     self._triggered1 = true
   end
   if not self._triggered2 and curRoundIndex == 2 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonMazeBeadInner2)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UISeasonMazeBeadInner2)
     self._triggered2 = true
   end
 end
-
-

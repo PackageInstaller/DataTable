@@ -1,217 +1,150 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_skins/cls/ui_shop_skins_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkinsShopData", Object)
 SkinsShopData = SkinsShopData
 local SkinsShopTabEnum = {ALL = 1}
 _enum("SkinsShopTabEnum", SkinsShopTabEnum)
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-SkinsShopData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkinsShopData:Constructor()
   self._goods = {}
   self._goodPriceList = {}
-  self._mPay = (GameGlobal.GetModule)(PayModule)
+  self._mPay = GameGlobal.GetModule(PayModule)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopData.UpdateByServerData = function(self, marketInfo, cfgs, newList)
-  -- function num : 0_1 , upvalues : _ENV
+function SkinsShopData:UpdateByServerData(marketInfo, cfgs, newList)
   if not marketInfo then
-    (Log.fatal)("### marketInfo nil.")
-    return 
+    Log.fatal("### marketInfo nil.")
+    return
   end
-  local mShop = (GameGlobal.GetModule)(ShopModule)
-  local notShowLeftTime = (mShop:GetClientShop()):GetNotShowLeftTime()
-  local goodPriceList = (self._mPay):GetGoodPriceList()
+  local mShop = GameGlobal.GetModule(ShopModule)
+  local notShowLeftTime = mShop:GetClientShop():GetNotShowLeftTime()
+  local goodPriceList = self._mPay:GetGoodPriceList()
   self._goods = {}
   local serGoods = marketInfo
   local productList = {}
-  for i,good in (HelperProxy:GetInstance()):pairsByKeys(serGoods) do
+  for i, good in HelperProxy:GetInstance():pairsByKeys(serGoods) do
     local id = good.goodid
     local cfgv = cfgs[id]
-    local cfgClient = (Cfg.cfg_shop_common_goods)[id]
+    local cfgClient = Cfg.cfg_shop_common_goods[id]
     if cfgv and cfgClient then
       local item = SkinsShopItem:New(id)
       local midasId = cfgv[ConfigKey.ConfigKey_MidasItemId]
-      if cfgClient.Type == CommonShopType.CommonShopType_Skin and cfgClient.DirectAssetList and (cfgClient.DirectAssetList)[1] then
-        local assetID = ((cfgClient.DirectAssetList)[1])[1]
+      if cfgClient.Type == CommonShopType.CommonShopType_Skin and cfgClient.DirectAssetList and cfgClient.DirectAssetList[1] then
+        local assetID = cfgClient.DirectAssetList[1][1]
         if assetID then
-          local skinCfg = (Cfg.cfg_pet_skin)[assetID]
+          local skinCfg = Cfg.cfg_pet_skin[assetID]
           if skinCfg then
-            item:SetName((StringTable.Get)(skinCfg.SkinName))
+            item:SetName(StringTable.Get(skinCfg.SkinName))
           end
         end
       end
-      do
-        item:SetMidasId(midasId)
-        item:SetEndTime(good.endtime)
-        if notShowLeftTime < good.endtime then
-          item:SetIsShowLeftTime(false)
+      item:SetMidasId(midasId)
+      item:SetEndTime(good.endtime)
+      if notShowLeftTime < good.endtime then
+        item:SetIsShowLeftTime(false)
+      else
+        item:SetIsShowLeftTime(true)
+      end
+      local saleType = good.saletype
+      if saleType == SpecialNum.NeedPayMoney then
+        item:SetType(SkinsPayType.Currency)
+        item:SetPriceIcon(nil)
+        item:SetPriceItemId(nil)
+        local goodPrice = goodPriceList[midasId]
+        if goodPrice then
+          item._price = goodPrice.microprice / 1000000
+          item:SetPriceWithCurrencySymbol(goodPrice.price)
         else
-          item:SetIsShowLeftTime(true)
+          table.insert(productList, midasId)
         end
-        local saleType = good.saletype
-        if saleType == SpecialNum.NeedPayMoney then
-          item:SetType(SkinsPayType.Currency)
+      else
+        local priceRawNotCash = tonumber(cfgv[ConfigKey.ConfigKey_RawPrice])
+        local priceNotCash = tonumber(cfgv[ConfigKey.ConfigKey_NowPrice])
+        if saleType == SpecialNum.FreeGiftSaleType then
+          item:SetType(SkinsPayType.Free)
           item:SetPriceIcon(nil)
           item:SetPriceItemId(nil)
-          local goodPrice = goodPriceList[midasId]
-          if goodPrice then
-            item._price = goodPrice.microprice / 1000000
-            item:SetPriceWithCurrencySymbol(goodPrice.price)
-          else
-            ;
-            (table.insert)(productList, midasId)
-          end
         else
-          do
-            local priceRawNotCash = tonumber(cfgv[ConfigKey.ConfigKey_RawPrice])
-            do
-              local priceNotCash = tonumber(cfgv[ConfigKey.ConfigKey_NowPrice])
-              if saleType == SpecialNum.FreeGiftSaleType then
-                item:SetType(SkinsPayType.Free)
-                item:SetPriceIcon(nil)
-                item:SetPriceItemId(nil)
-              else
-                if saleType == RoleAssetID.RoleAssetDiamond then
-                  item:SetType(SkinsPayType.Yaojing)
-                else
-                  if saleType == RoleAssetID.RoleAssetGlow then
-                    item:SetType(SkinsPayType.Guangpo)
-                  else
-                    item:SetType(SkinsPayType.Item)
-                  end
-                end
-                item:SetPriceIcon("toptoon_" .. saleType)
-                item:SetPriceItemId(saleType)
-              end
-              item._priceRaw = priceRawNotCash
-              item._price = priceNotCash
-              local isSeniorSkin = cfgClient.Type == CommonShopType.CommonShopType_SeniorSkin
-              item:SetSeniorSkinStatus(isSeniorSkin)
-              if cfgClient.Subtype ~= 1 then
-                do
-                  do
-                    item:SetSeniorSkinReviewStatus(not isSeniorSkin)
-                    item._discount = tonumber(cfgv[ConfigKey.ConfigKey_Discount])
-                    item:SetSkinId(good.skin_id)
-                    ;
-                    (table.insert)(self._goods, item)
-                    ;
-                    (Log.fatal)("### no goods in cfgs. id = ", id)
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
+          if saleType == RoleAssetID.RoleAssetDiamond then
+            item:SetType(SkinsPayType.Yaojing)
+          elseif saleType == RoleAssetID.RoleAssetGlow then
+            item:SetType(SkinsPayType.Guangpo)
+          else
+            item:SetType(SkinsPayType.Item)
           end
+          item:SetPriceIcon("toptoon_" .. saleType)
+          item:SetPriceItemId(saleType)
         end
+        item._priceRaw = priceRawNotCash
+        item._price = priceNotCash
       end
+      local isSeniorSkin = cfgClient.Type == CommonShopType.CommonShopType_SeniorSkin
+      item:SetSeniorSkinStatus(isSeniorSkin)
+      if isSeniorSkin then
+        item:SetSeniorSkinReviewStatus(cfgClient.Subtype == 1)
+      end
+      item._discount = tonumber(cfgv[ConfigKey.ConfigKey_Discount])
+      item:SetSkinId(good.skin_id)
+      table.insert(self._goods, item)
+    else
+      Log.fatal("### no goods in cfgs. id = ", id)
     end
   end
-  if productList and (table.count)(productList) > 0 then
-    ((GameGlobal.GetModule)(ShopModule)):GetLocalPrice()
+  if productList and table.count(productList) > 0 then
+    GameGlobal.GetModule(ShopModule):GetLocalPrice()
   end
-  if newList and (table.count)(newList) > 0 then
-    for _,newItem in ipairs(newList) do
-      for _,good in ipairs(self._goods) do
+  if newList and table.count(newList) > 0 then
+    for _, newItem in ipairs(newList) do
+      for _, good in ipairs(self._goods) do
         if newItem == good:GetId() then
           good:SetNew(true)
         end
       end
     end
   end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopData.UpdateGoodsPrice = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local goodPriceList = (self._mPay):GetGoodPriceList()
-  if goodPriceList and (table.count)(goodPriceList) > 0 then
-    for i,item in ipairs(self._goods) do
+function SkinsShopData:UpdateGoodsPrice()
+  local goodPriceList = self._mPay:GetGoodPriceList()
+  if goodPriceList and table.count(goodPriceList) > 0 then
+    for i, item in ipairs(self._goods) do
       local midasId = item:GetMidasId()
-      if not (string.isnullorempty)(midasId) and goodPriceList[midasId] then
+      if not string.isnullorempty(midasId) and goodPriceList[midasId] then
         local goodPrice = goodPriceList[midasId]
         item:SetPriceWithCurrencySymbol(goodPrice.price)
       end
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateSkinsItemPrice)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateSkinsItemPrice)
   else
-    ;
-    (Log.fatal)("### [Pay][Skins]no data in goodPriceList.")
+    Log.fatal("### [Pay][Skins]no data in goodPriceList.")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopData.GetGoods = function(self)
-  -- function num : 0_3
+function SkinsShopData:GetGoods()
   return self._goods
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopData.GetGoodById = function(self, id)
-  -- function num : 0_4 , upvalues : _ENV
-  for index,good in ipairs(self._goods) do
+function SkinsShopData:GetGoodById(id)
+  for index, good in ipairs(self._goods) do
     if good:GetId() == id then
       return good
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopData.IsEmpty = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  for index,good in ipairs(self._goods) do
+function SkinsShopData:IsEmpty()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  for index, good in ipairs(self._goods) do
     local endTime = good:GetEndTime()
-    if endTime > 0 and endTime < curTime then
-      do
-        do return false end
-        -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC23: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if 0 < endTime and curTime > endTime then
+    else
+      return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopData.GetNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  for index,good in ipairs(self._goods) do
+function SkinsShopData:GetNew()
+  for index, good in ipairs(self._goods) do
     if good:GetNew() then
       return true
     end
@@ -221,11 +154,9 @@ end
 
 _class("SkinsShopItem", ShopPriceItem)
 SkinsShopItem = SkinsShopItem
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
 
-SkinsShopItem.Constructor = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV
-  ((SkinsShopItem.super).Constructor)(self, id)
+function SkinsShopItem:Constructor(id)
+  SkinsShopItem.super.Constructor(self, id)
   self._currencyGoodsType = MidasCurrencyGoodsType.MIDAS_CURRENCY_GOODS_TYPE_SKIN
   self._goodsId = id
   self._skinId = 0
@@ -241,330 +172,205 @@ SkinsShopItem.Constructor = function(self, id)
   self._buyCount = 0
   self._maxBuyCount = 0
   self._isShowLeftTime = true
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._new = false
   self._binderSkinItemByRMB = nil
   self._isSeniorSkin = false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetName = function(self, name)
-  -- function num : 0_8
+function SkinsShopItem:SetName(name)
   self._name = name
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetBinderSkin = function(self, item)
-  -- function num : 0_9
+function SkinsShopItem:SetBinderSkin(item)
   self._binderSkinItemByRMB = item
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetBinderSkin = function(self)
-  -- function num : 0_10
+function SkinsShopItem:GetBinderSkin()
   return self._binderSkinItemByRMB
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetCurrencyGoodsType = function(self)
-  -- function num : 0_11
+function SkinsShopItem:GetCurrencyGoodsType()
   return self._currencyGoodsType
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetId = function(self)
-  -- function num : 0_12
+function SkinsShopItem:GetId()
   return self._goodsId
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetSkinId = function(self)
-  -- function num : 0_13
+function SkinsShopItem:GetSkinId()
   return self._skinId
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetSkinId = function(self, skinId)
-  -- function num : 0_14
+function SkinsShopItem:SetSkinId(skinId)
   self._skinId = skinId
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetType = function(self)
-  -- function num : 0_15
+function SkinsShopItem:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetType = function(self, ptype)
-  -- function num : 0_16
+function SkinsShopItem:SetType(ptype)
   self._type = ptype
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetMidasId = function(self)
-  -- function num : 0_17
+function SkinsShopItem:GetMidasId()
   return self._midasId
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetMidasId = function(self, midasId)
-  -- function num : 0_18 , upvalues : _ENV
+function SkinsShopItem:SetMidasId(midasId)
   self._midasId = midasId
-  ;
-  (Log.debug)("midasId : ", self._midasId)
+  Log.debug("midasId : ", self._midasId)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetBuyCount = function(self)
-  -- function num : 0_19
+function SkinsShopItem:GetBuyCount()
   return 1
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetIsShowLeftTime = function(self)
-  -- function num : 0_20
+function SkinsShopItem:GetIsShowLeftTime()
   return self._isShowLeftTime
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetIsShowLeftTime = function(self, isShowLeftTime)
-  -- function num : 0_21
+function SkinsShopItem:SetIsShowLeftTime(isShowLeftTime)
   self._isShowLeftTime = isShowLeftTime
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetEndTime = function(self)
-  -- function num : 0_22
+function SkinsShopItem:GetEndTime()
   return self._endTime
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetEndTime = function(self, endTime)
-  -- function num : 0_23
+function SkinsShopItem:SetEndTime(endTime)
   self._endTime = endTime
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetLeftSeconds = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local mSvrTime = (GameGlobal.GetModule)(SvrTimeModule)
+function SkinsShopItem:GetLeftSeconds()
+  local mSvrTime = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = mSvrTime:GetServerTime() / 1000
   local endTime = self:GetEndTime()
   local leftSeconds = endTime - nowTime
   return leftSeconds
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetRemainTimeStr = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function SkinsShopItem:GetRemainTimeStr()
   local str = ""
   local leftSeconds = self:GetLeftSeconds()
   local cycleType = self:GetCycleType()
   if leftSeconds <= 0 then
-    str = (StringTable.Get)("str_pay_expired")
+    str = StringTable.Get("str_pay_expired")
+  elseif leftSeconds <= 60 then
+    str = StringTable.Get("str_pay_left_minute", 1)
+  elseif leftSeconds <= 3600 then
+    local leftMinutes = math.ceil(leftSeconds / 60)
+    str = StringTable.Get("str_pay_left_minute", leftMinutes)
+  elseif leftSeconds <= 86400 then
+    local leftHours = math.ceil(leftSeconds / 3600)
+    str = StringTable.Get("str_pay_left_hour", leftHours)
   else
-    if leftSeconds <= 60 then
-      str = (StringTable.Get)("str_pay_left_minute", 1)
-    else
-      if leftSeconds <= 3600 then
-        local leftMinutes = (math.ceil)(leftSeconds / 60)
-        str = (StringTable.Get)("str_pay_left_minute", leftMinutes)
-      else
-        do
-          if leftSeconds <= 86400 then
-            local leftHours = (math.ceil)(leftSeconds / 3600)
-            str = (StringTable.Get)("str_pay_left_hour", leftHours)
-          else
-            do
-              do
-                local leftDays = (math.ceil)(leftSeconds / 86400)
-                str = (StringTable.Get)("str_pay_left_day", leftDays)
-                return str
-              end
-            end
-          end
-        end
-      end
-    end
+    local leftDays = math.ceil(leftSeconds / 86400)
+    str = StringTable.Get("str_pay_left_day", leftDays)
   end
+  return str
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetPriceIcon = function(self)
-  -- function num : 0_26
+function SkinsShopItem:GetPriceIcon()
   return self._priceIcon
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetPriceIcon = function(self, priceIcon)
-  -- function num : 0_27
+function SkinsShopItem:SetPriceIcon(priceIcon)
   self._priceIcon = priceIcon
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetPriceItemId = function(self)
-  -- function num : 0_28
+function SkinsShopItem:GetPriceItemId()
   return self._priceItemId
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetPriceItemId = function(self, priceItemId)
-  -- function num : 0_29
+function SkinsShopItem:SetPriceItemId(priceItemId)
   self._priceItemId = priceItemId
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetPrice = function(self)
-  -- function num : 0_30
+function SkinsShopItem:GetPrice()
   return self._price
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetPrice = function(self, price)
-  -- function num : 0_31
+function SkinsShopItem:SetPrice(price)
   self._price = price
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetCostPrice = function(self, price)
-  -- function num : 0_32
+function SkinsShopItem:SetCostPrice(price)
   self._costPrice = price
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetCostPriceItemId = function(self)
-  -- function num : 0_33
+function SkinsShopItem:GetCostPriceItemId()
   return self._costPriceItemId
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetCostPriceItemId = function(self, priceItemId)
-  -- function num : 0_34
+function SkinsShopItem:SetCostPriceItemId(priceItemId)
   self._costPriceItemId = priceItemId
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetCostPrice = function(self)
-  -- function num : 0_35
+function SkinsShopItem:GetCostPrice()
   return self._costPrice
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetCostPrice = function(self)
-  -- function num : 0_36
+function SkinsShopItem:GetCostPrice()
   return self._costPrice
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetCostPrice = function(self)
-  -- function num : 0_37
+function SkinsShopItem:GetCostPrice()
   return self._costPrice
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetConvertType = function(self)
-  -- function num : 0_38
+function SkinsShopItem:GetConvertType()
   return self._convertType
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetConvertType = function(self, ptype)
-  -- function num : 0_39
+function SkinsShopItem:SetConvertType(ptype)
   self._convertType = ptype
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetPriceWithCurrencySymbol = function(self)
-  -- function num : 0_40
+function SkinsShopItem:GetPriceWithCurrencySymbol()
   return self._priceWithCurrencySymbol
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetPriceWithCurrencySymbol = function(self, priceWithCurrencySymbol)
-  -- function num : 0_41 , upvalues : _ENV
-  priceWithCurrencySymbol = (RechargeShopItem.RemoveDot00)(priceWithCurrencySymbol)
+function SkinsShopItem:SetPriceWithCurrencySymbol(priceWithCurrencySymbol)
+  priceWithCurrencySymbol = RechargeShopItem.RemoveDot00(priceWithCurrencySymbol)
   self._priceWithCurrencySymbol = priceWithCurrencySymbol
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.HasSoldOut = function(self)
-  -- function num : 0_42
-  return (self._petModule):HaveSkin(self._skinId)
+function SkinsShopItem:HasSoldOut()
+  return self._petModule:HaveSkin(self._skinId)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetNew = function(self)
-  -- function num : 0_43
+function SkinsShopItem:GetNew()
   return self._new
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetNew = function(self, new)
-  -- function num : 0_44
+function SkinsShopItem:SetNew(new)
   self._new = new
 end
 
-SkinsPayType = {Currency = 0, Yaojing = 1, Guangpo = 2, Item = 3, Free = 4, ConvertCost = 5}
+SkinsPayType = {
+  Currency = 0,
+  Yaojing = 1,
+  Guangpo = 2,
+  Item = 3,
+  Free = 4,
+  ConvertCost = 5
+}
 SkinsConvertPayType = {BattlePass = 0}
 _enum("SkinsConvertPayType", SkinsConvertPayType)
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
 
-SkinsShopItem.SetSeniorSkinStatus = function(self, status)
-  -- function num : 0_45
+function SkinsShopItem:SetSeniorSkinStatus(status)
   self._isSeniorSkin = status
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.IsSeniorSkin = function(self)
-  -- function num : 0_46
+function SkinsShopItem:IsSeniorSkin()
   return self._isSeniorSkin
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.IsResident = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function SkinsShopItem:IsResident()
   local goodsId = self:GetId()
-  local cfgClient = (Cfg.cfg_shop_common_goods)[goodsId]
+  local cfgClient = Cfg.cfg_shop_common_goods[goodsId]
   if cfgClient ~= nil and cfgClient.IsResident then
     return true
   else
@@ -572,26 +378,17 @@ SkinsShopItem.IsResident = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.SetSeniorSkinReviewStatus = function(self, status)
-  -- function num : 0_48
+function SkinsShopItem:SetSeniorSkinReviewStatus(status)
   self._isSeniorSkinReview = status
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.IsSeniorSkinReview = function(self)
-  -- function num : 0_49
+function SkinsShopItem:IsSeniorSkinReview()
   return self._isSeniorSkinReview
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.IsResident = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function SkinsShopItem:IsResident()
   local goodsId = self:GetId()
-  local cfgClient = (Cfg.cfg_shop_common_goods)[goodsId]
+  local cfgClient = Cfg.cfg_shop_common_goods[goodsId]
   if cfgClient ~= nil and cfgClient.IsResident then
     return true
   else
@@ -599,12 +396,9 @@ SkinsShopItem.IsResident = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
-SkinsShopItem.GetTabID = function(self)
-  -- function num : 0_51 , upvalues : _ENV, SkinsShopTabEnum
+function SkinsShopItem:GetTabID()
   local goodsId = self:GetId()
-  local cfgClient = (Cfg.cfg_shop_common_goods)[goodsId]
+  local cfgClient = Cfg.cfg_shop_common_goods[goodsId]
   local tabID = SkinsShopTabEnum.ALL
   if cfgClient ~= nil then
     tabID = cfgClient.TabID
@@ -617,12 +411,8 @@ end
 
 _class("SkinsShopItemContainer", Object)
 SkinsShopItemContainer = SkinsShopItemContainer
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
 
-SkinsShopItemContainer.Constructor = function(self)
-  -- function num : 0_52
+function SkinsShopItemContainer:Constructor()
   self.itemSkin = nil
   self.itemGift = nil
 end
-
-

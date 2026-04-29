@@ -1,102 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n24/ui_n24_main_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN24MainEnter", UICustomWidget)
 UIN24MainEnter = UIN24MainEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN24MainEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN24MainEnter:OnShow(uiParams)
   self._new = self:GetGameObject("new")
   self._red = self:GetGameObject("red")
-  ;
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
+  self._new:SetActive(false)
+  self._red:SetActive(false)
   self._tipspanel1 = self:GetGameObject("tipspanel1")
   self._tips1 = self:GetUIComponent("RollingText", "tips1")
-  ;
-  (self._tipspanel1):SetActive(false)
+  self._tipspanel1:SetActive(false)
   self._activityConst = UIActivityN24Const:New()
   self:RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24MainEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIN24MainEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24MainEnter.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_2
+function UIN24MainEnter:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24MainEnter.RequestCampaign = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN24MainEnter:RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     local lockName = "UIN20MainEnterRequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    ;
-    (self._activityConst):LoadData(TT, res)
+    self._activityConst:LoadData(TT, res)
     self:Flush()
     self:FlushNewRed()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24MainEnter.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._tipspanel1):SetActive(false)
-  if (self._activityConst):IsHomelandTaskEnable() then
-    (self._tipspanel1):SetActive(true)
-    ;
-    (self._tips1):RefreshText((StringTable.Get)("str_n24_main_entry_tips"))
+function UIN24MainEnter:Flush()
+  self._tipspanel1:SetActive(false)
+  if self._activityConst:IsHomelandTaskEnable() then
+    self._tipspanel1:SetActive(true)
+    self._tips1:RefreshText(StringTable.Get("str_n24_main_entry_tips"))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24MainEnter.FlushNewRed = function(self)
-  -- function num : 0_5
-  (self._new):SetActive(false)
-  ;
-  (self._red):SetActive(false)
-  if (self._activityConst):IsShowEntryNew() then
-    (self._new):SetActive(true)
-    return 
+function UIN24MainEnter:FlushNewRed()
+  self._new:SetActive(false)
+  self._red:SetActive(false)
+  if self._activityConst:IsShowEntryNew() then
+    self._new:SetActive(true)
+    return
   end
-  if (self._activityConst):IsShowEntryRed() then
-    (self._red):SetActive(true)
+  if self._activityConst:IsShowEntryRed() then
+    self._red:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24MainEnter.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.Enter, self)
+function UIN24MainEnter:BtnOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.Enter, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24MainEnter.Enter = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN24MainEnter:Enter(TT)
   self:Lock("UIN20MainEnter_Enter")
   self:SwitchState(UIStateType.UIActivityN24MainController)
   self:UnLock("UIN20MainEnter_Enter")
 end
-
-

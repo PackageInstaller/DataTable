@@ -1,8 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/n19/str_n19_p5.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n19_p5_name = "【月夜に盗まれる】", str_n19_p5_drop_time = "イベント残り時間：", str_n19_p5_activity_remaining_time = "終了時間：", str_n19_p5_battle_pass = "特別事件簿", str_n19_p5_login_award = "ログイン報酬", str_n19_p5_pet = "光霊との出会い", str_n19_p5_shop = "潜入開始！", str_n19_p5_story_replay_start = "プロローグ", str_n19_p5_story_replay_end = "エピローグ", str_n19_p5_intro_title = "イベント紹介", str_n19_p5_intro_content = "アイテム【潜入ポイント】の獲得方法：\n1．イベント期間中、プリズムを消費するメインストーリーまたは資源ステージをクリアすると、一定数の【潜入ポイント】を獲得できます。\n2．イベント終了後、上記ステージでは【潜入ポイント】を獲得できなくなります。\n\nアイテム【潜入ポイント】の使用方法：\n1．イベント期間中、【潜入開始！】の【ステージ】内で【潜入ポイント】を消費し、先へ進むことができます。\n2．【潜入開始！】はイベント終了後も3日間開放されます。期限までに【潜入ポイント】を消費してください。【潜入開始！】が終了すると、未使用の【潜入ポイント】は1:10の比率で白夜コインに変換されます。", str_n19_p5_lottery_one = "先へ進む（１回）", str_n19_p5_lottery_multi = "先へ進む（１０回）", str_n19_p5_lottery_intro_title = "ルールについて", str_n19_p5_lottery_intro_content = "1．【潜入ポイント】を消費して【ステージ】を前進できます。\n2．イベント期間中、合計で6個の【ステージ】が開放されます。\n3．各【ステージ】には【レアアイテム】が1つあります。現在の【ステージ】内の【レアアイテム】を獲得しないと次の【ステージ】に進めません。\n4．【潜入開始！】終了後、余った【潜入ポイント】は1:10の比率で白夜コインに変換されます。イベント終了から1時間以上経過後、再びゲームにログインするとメールで獲得できます。", str_n19_p5_lottery_pool = "ステージ{1}", str_n19_p5_pool_lock_tips = "前ステージのレア報酬を獲得後に解放", str_n19_p5_shop_no_item_tips = "このステージのアイテムをすべて獲得しました。ステージを変更してください", str_n19_p5_shop_box_unlock_intro = "前<color=#F6A201>ステージ{1}</color>のレアアイテムを獲得で解放", str_n19_p5_shop_open_next_text = "レアアイテム【{1}】を獲得！ステージ【{2}】が解放された", str_n19_p5_shop_draw_once_more_text = "潜入ポイントを{1}消費して進みますか？", str_n19_p5_sign_title = "イベント期間中の累計ログイン日数{1}日で\n光珀、モナ、限定アイコンをゲット！", str_n19_p5_cost_not_enough = "{1}が足りません", str_n19_p5_award_empty_tip = "このステージの報酬をすべて獲得しました"}
+local config = {
+  str_n19_p5_name = "【月夜に盗まれる】",
+  str_n19_p5_drop_time = "イベント残り時間：",
+  str_n19_p5_activity_remaining_time = "終了時間：",
+  str_n19_p5_battle_pass = "特別事件簿",
+  str_n19_p5_login_award = "ログイン報酬",
+  str_n19_p5_pet = "光霊との出会い",
+  str_n19_p5_shop = "潜入開始！",
+  str_n19_p5_story_replay_start = "プロローグ",
+  str_n19_p5_story_replay_end = "エピローグ",
+  str_n19_p5_intro_title = "イベント紹介",
+  str_n19_p5_intro_content = "アイテム【潜入ポイント】の獲得方法：\n1．イベント期間中、プリズムを消費するメインストーリーまたは資源ステージをクリアすると、一定数の【潜入ポイント】を獲得できます。\n2．イベント終了後、上記ステージでは【潜入ポイント】を獲得できなくなります。\n\nアイテム【潜入ポイント】の使用方法：\n1．イベント期間中、【潜入開始！】の【ステージ】内で【潜入ポイント】を消費し、先へ進むことができます。\n2．【潜入開始！】はイベント終了後も3日間開放されます。期限までに【潜入ポイント】を消費してください。【潜入開始！】が終了すると、未使用の【潜入ポイント】は1:10の比率で白夜コインに変換されます。",
+  str_n19_p5_lottery_one = "先へ進む（１回）",
+  str_n19_p5_lottery_multi = "先へ進む（１０回）",
+  str_n19_p5_lottery_intro_title = "ルールについて",
+  str_n19_p5_lottery_intro_content = "1．【潜入ポイント】を消費して【ステージ】を前進できます。\n2．イベント期間中、合計で6個の【ステージ】が開放されます。\n3．各【ステージ】には【レアアイテム】が1つあります。現在の【ステージ】内の【レアアイテム】を獲得しないと次の【ステージ】に進めません。\n4．【潜入開始！】終了後、余った【潜入ポイント】は1:10の比率で白夜コインに変換されます。イベント終了から1時間以上経過後、再びゲームにログインするとメールで獲得できます。",
+  str_n19_p5_lottery_pool = "ステージ{1}",
+  str_n19_p5_pool_lock_tips = "前ステージのレア報酬を獲得後に解放",
+  str_n19_p5_shop_no_item_tips = "このステージのアイテムをすべて獲得しました。ステージを変更してください",
+  str_n19_p5_shop_box_unlock_intro = "前<color=#F6A201>ステージ{1}</color>のレアアイテムを獲得で解放",
+  str_n19_p5_shop_open_next_text = "レアアイテム【{1}】を獲得！ステージ【{2}】が解放された",
+  str_n19_p5_shop_draw_once_more_text = "潜入ポイントを{1}消費して進みますか？",
+  str_n19_p5_sign_title = "イベント期間中の累計ログイン日数{1}日で\n光珀、モナ、限定アイコンをゲット！",
+  str_n19_p5_cost_not_enough = "{1}が足りません",
+  str_n19_p5_award_empty_tip = "このステージの報酬をすべて獲得しました"
+}
 return config
-

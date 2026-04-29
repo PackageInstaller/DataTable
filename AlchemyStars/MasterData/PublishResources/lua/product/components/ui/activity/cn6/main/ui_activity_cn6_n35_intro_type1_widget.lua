@@ -1,41 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn6/main/ui_activity_cn6_n35_intro_type1_widget.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_intro_type1_widget")
 _class("UIActivityCN6N35IntroType1Widget", UIIntroType1Widget)
 UIActivityCN6N35IntroType1Widget = UIActivityCN6N35IntroType1Widget
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCN6N35IntroType1Widget.SetData = function(self, uiView, cfgId)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityCN6N35IntroType1Widget:SetData(uiView, cfgId)
   self._uiView = uiView
-  self._cfg = (Cfg.cfg_intro_loader_type_1)[cfgId]
+  self._cfg = Cfg.cfg_intro_loader_type_1[cfgId]
   if not self._cfg then
-    (Log.exception)("UIIntroType1Widget:SetData() cfg_intro_loader_type_1[", cfgId, "] error")
+    Log.exception("UIIntroType1Widget:SetData() cfg_intro_loader_type_1[", cfgId, "] error")
     self:CloseDialog()
-    return 
+    return
   end
   self:_SetTitle()
   self:_SetSubTitle()
   self:_SetIntro()
   self._rawImage = self:GetUIComponent("RawImage", "MainBg")
   self._rawImageLoader = self:GetUIComponent("RawImageLoader", "MainBg")
-  self._lastMaterial = (self._rawImage).material
-  self._reqEffectMat = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_N35N6_rongjie02" .. ".mat", LoadType.Mat)
+  self._lastMaterial = self._rawImage.material
+  self._reqEffectMat = ResourceManager:GetInstance():SyncLoadAsset("uieff_N35N6_rongjie02" .. ".mat", LoadType.Mat)
   if self._reqEffectMat then
-    self._effectMat = (self._reqEffectMat).Obj
-    ;
-    (self._rawImageLoader):SetMat("uieff_N35N6_rongjie02", self._effectMat, false)
-    ;
-    ((self._rawImage).material):SetTexture("_MainTex", (self._lastMaterial):GetTexture("_MainTex"))
+    self._effectMat = self._reqEffectMat.Obj
+    self._rawImageLoader:SetMat("uieff_N35N6_rongjie02", self._effectMat, false)
+    self._rawImage.material:SetTexture("_MainTex", self._lastMaterial:GetTexture("_MainTex"))
   end
-  if self._cfg then
-    local animName = (self._cfg).ShowAnim
-  end
-  local duration = self._cfg and (self._cfg).ShowAnimTime or 0
+  local animName = self._cfg and self._cfg.ShowAnim
+  local duration = self._cfg and self._cfg.ShowAnimTime or 0
   self:_PlayAnimation(animName, duration, nil)
 end
-
-

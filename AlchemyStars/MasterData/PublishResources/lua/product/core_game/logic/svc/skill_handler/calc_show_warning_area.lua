@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_show_warning_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ShowWarningArea", Object)
 SkillEffectCalc_ShowWarningArea = SkillEffectCalc_ShowWarningArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ShowWarningArea.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ShowWarningArea:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ShowWarningArea.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ShowWarningArea:DoSkillEffectCalculator(skillEffectCalcParam)
   local effectParam = skillEffectCalcParam.skillEffectParam
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local posCaster = (casterEntity:GridLocation()).Position
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local posCaster = casterEntity:GridLocation().Position
   local effectResult = SkillEffectResult_ShowWarningArea:New()
   if not effectParam:IsGetScopeResultFromAI() then
     effectResult:ComputeWarningArea(self._world, casterEntity, effectParam)
@@ -27,9 +17,5 @@ SkillEffectCalc_ShowWarningArea.DoSkillEffectCalculator = function(self, skillEf
     local scopeResult = cAI:GetSkillScopeResult(true)
     effectResult.m_listPosWarning = scopeResult:GetAttackRange()
   end
-  do
-    return effectResult
-  end
+  return effectResult
 end
-
-

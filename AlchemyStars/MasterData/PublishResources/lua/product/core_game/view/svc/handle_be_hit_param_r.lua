@@ -1,266 +1,162 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/handle_be_hit_param_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HandleBeHitParam", Object)
 HandleBeHitParam = HandleBeHitParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HandleBeHitParam.SetHandleBeHitParam_HitCasterEntity = function(self, entity)
-  -- function num : 0_0
+function HandleBeHitParam:SetHandleBeHitParam_HitCasterEntity(entity)
   self.hitCasterEntity = entity
   return self
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_HitCasterEntity = function(self)
-  -- function num : 0_1
+function HandleBeHitParam:GetHandleBeHitParam_HitCasterEntity()
   return self.hitCasterEntity
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_CasterEntity = function(self, casterEntity)
-  -- function num : 0_2
+function HandleBeHitParam:SetHandleBeHitParam_CasterEntity(casterEntity)
   self.casterEntity = casterEntity
   return self
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_CasterEntity = function(self)
-  -- function num : 0_3
+function HandleBeHitParam:GetHandleBeHitParam_CasterEntity()
   return self.casterEntity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_TargetEntity = function(self, targetEntity)
-  -- function num : 0_4
+function HandleBeHitParam:SetHandleBeHitParam_TargetEntity(targetEntity)
   self.targetEntity = targetEntity
   return self
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_TargetEntity = function(self)
-  -- function num : 0_5
+function HandleBeHitParam:GetHandleBeHitParam_TargetEntity()
   return self.targetEntity
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_HitAnimName = function(self, hitAnimName)
-  -- function num : 0_6
+function HandleBeHitParam:SetHandleBeHitParam_HitAnimName(hitAnimName)
   self.hitAnimName = hitAnimName
   return self
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_HitAnimName = function(self)
-  -- function num : 0_7
+function HandleBeHitParam:GetHandleBeHitParam_HitAnimName()
   return self.hitAnimName
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_HitEffectID = function(self, hitEffectID)
-  -- function num : 0_8
+function HandleBeHitParam:SetHandleBeHitParam_HitEffectID(hitEffectID)
   self.hitEffectID = hitEffectID
   return self
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_HitEffectID = function(self)
-  -- function num : 0_9
+function HandleBeHitParam:GetHandleBeHitParam_HitEffectID()
   return self.hitEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_DamageInfo = function(self, damageInfo)
-  -- function num : 0_10
+function HandleBeHitParam:SetHandleBeHitParam_DamageInfo(damageInfo)
   self.damageInfo = damageInfo
   return self
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_DamageInfo = function(self)
-  -- function num : 0_11
+function HandleBeHitParam:GetHandleBeHitParam_DamageInfo()
   return self.damageInfo
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_DamagePos = function(self, damagePos)
-  -- function num : 0_12
+function HandleBeHitParam:SetHandleBeHitParam_DamagePos(damagePos)
   self.damagePos = damagePos
   return self
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_DamagePos = function(self)
-  -- function num : 0_13
+function HandleBeHitParam:GetHandleBeHitParam_DamagePos()
   return self.damagePos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_HitTurnTarget = function(self, hitTurnTarget)
-  -- function num : 0_14 , upvalues : _ENV
+function HandleBeHitParam:SetHandleBeHitParam_HitTurnTarget(hitTurnTarget)
   if hitTurnTarget == true then
     hitTurnTarget = TurnToTargetType.Caster
-  else
-    if hitTurnTarget == false then
-      hitTurnTarget = TurnToTargetType.None
-    end
+  elseif hitTurnTarget == false then
+    hitTurnTarget = TurnToTargetType.None
   end
   self.hitTurnTarget = hitTurnTarget
   return self
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_HitTurnTarget = function(self)
-  -- function num : 0_15
+function HandleBeHitParam:GetHandleBeHitParam_HitTurnTarget()
   return self.hitTurnTarget
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_DeathClear = function(self, deathClear)
-  -- function num : 0_16
+function HandleBeHitParam:SetHandleBeHitParam_DeathClear(deathClear)
   self.deathClear = deathClear
   return self
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_DeathClear = function(self)
-  -- function num : 0_17
+function HandleBeHitParam:GetHandleBeHitParam_DeathClear()
   return self.deathClear
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_IsFinalHit = function(self, isFinalHit)
-  -- function num : 0_18
+function HandleBeHitParam:SetHandleBeHitParam_IsFinalHit(isFinalHit)
   self.isFinalHit = isFinalHit
   return self
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_IsFinalHit = function(self)
-  -- function num : 0_19
+function HandleBeHitParam:GetHandleBeHitParam_IsFinalHit()
   return self.isFinalHit
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_SkillID = function(self, skillID)
-  -- function num : 0_20
+function HandleBeHitParam:SetHandleBeHitParam_SkillID(skillID)
   self.skillID = skillID
   return self
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_SkillID = function(self)
-  -- function num : 0_21
+function HandleBeHitParam:GetHandleBeHitParam_SkillID()
   return self.skillID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_HitBackSpeed = function(self, hitBackSpeed)
-  -- function num : 0_22
+function HandleBeHitParam:SetHandleBeHitParam_HitBackSpeed(hitBackSpeed)
   self.hitBackSpeed = hitBackSpeed
   return self
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_HitBackSpeed = function(self)
-  -- function num : 0_23
+function HandleBeHitParam:GetHandleBeHitParam_HitBackSpeed()
   return self.hitBackSpeed
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_DamageIndex = function(self, damageIndex)
-  -- function num : 0_24
+function HandleBeHitParam:SetHandleBeHitParam_DamageIndex(damageIndex)
   self.damageIndex = damageIndex
   return self
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_DamageIndex = function(self)
-  -- function num : 0_25
+function HandleBeHitParam:GetHandleBeHitParam_DamageIndex()
   return self.damageIndex
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_PlayHitBack = function(self, isPlayHitBack)
-  -- function num : 0_26
+function HandleBeHitParam:SetHandleBeHitParam_PlayHitBack(isPlayHitBack)
   self.isPlayHitBack = isPlayHitBack
   return self
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.GetHandleBeHitParam_PlayHitBack = function(self)
-  -- function num : 0_27
+function HandleBeHitParam:GetHandleBeHitParam_PlayHitBack()
   if self.isPlayHitBack == nil then
     self.isPlayHitBack = true
   end
   return self.isPlayHitBack
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_HitBackUseDamageIndex = function(self, state)
-  -- function num : 0_28
+function HandleBeHitParam:SetHandleBeHitParam_HitBackUseDamageIndex(state)
   self.isHitBackUseDamageIndex = state
   return self
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.IsHandleBeHitParam_HitBackUseDamageIndex = function(self)
-  -- function num : 0_29
-  if self.isHitBackUseDamageIndex ~= 1 then
-    do return not self.isHitBackUseDamageIndex end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function HandleBeHitParam:IsHandleBeHitParam_HitBackUseDamageIndex()
+  if self.isHitBackUseDamageIndex then
+    return self.isHitBackUseDamageIndex == 1
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.SetHandleBeHitParam_HitBackUseDamagePos = function(self, state)
-  -- function num : 0_30
+function HandleBeHitParam:SetHandleBeHitParam_HitBackUseDamagePos(state)
   self.isHitBackUseDamagePos = state
   return self
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleBeHitParam.IsHandleBeHitParam_HitBackUseDamagePos = function(self)
-  -- function num : 0_31
-  if self.isHitBackUseDamagePos ~= 1 then
-    do return not self.isHitBackUseDamagePos end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function HandleBeHitParam:IsHandleBeHitParam_HitBackUseDamagePos()
+  if self.isHitBackUseDamagePos then
+    return self.isHitBackUseDamagePos == 1
+  else
+    return false
   end
 end
-
-

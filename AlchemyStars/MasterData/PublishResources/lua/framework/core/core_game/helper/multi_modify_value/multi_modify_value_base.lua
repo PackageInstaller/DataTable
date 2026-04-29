@@ -1,105 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/helper/multi_modify_value/multi_modify_value_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IModifyValue", Object)
 IModifyValue = IModifyValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IModifyValue.Constructor = function(self, baseValue)
-  -- function num : 0_0
+function IModifyValue:Constructor(baseValue)
   self.baseValue = baseValue
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-IModifyValue.BaseValue = function(self)
-  -- function num : 0_1
+function IModifyValue:BaseValue()
   return self.baseValue
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-IModifyValue.Value = function(self)
-  -- function num : 0_2
+function IModifyValue:Value()
   return self.baseValue
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-IModifyValue.AddModify = function(self, value, modifyID)
-  -- function num : 0_3
+function IModifyValue:AddModify(value, modifyID)
   self.baseValue = value
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-IModifyValue.RemoveModify = function(self, modifyID)
-  -- function num : 0_4 , upvalues : _ENV
+function IModifyValue:RemoveModify(modifyID)
   error("IModifyValue:RemoveModify(modifyID) need override")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-IModifyValue.ClearModify = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function IModifyValue:ClearModify()
   error("IModifyValue:ClearModify() need override")
 end
 
 _class("MultModifyValue", IModifyValue)
 MultModifyValue = MultModifyValue
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-MultModifyValue.Constructor = function(self, baseValue)
-  -- function num : 0_6
+function MultModifyValue:Constructor(baseValue)
   self.valueModifyList = {}
   self.baseValue = baseValue
   self.value = baseValue
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MultModifyValue.Value = function(self)
-  -- function num : 0_7
+function MultModifyValue:Value()
   return self.value
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MultModifyValue.AddModify = function(self, value, modifyID)
-  -- function num : 0_8 , upvalues : _ENV
-  if not modifyID then
-    modifyID = 1
-  end
+function MultModifyValue:AddModify(value, modifyID)
+  modifyID = modifyID or 1
   self:RemoveModify(modifyID)
-  ;
-  (table.insert)(self.valueModifyList, {modifyID, value})
+  table.insert(self.valueModifyList, {modifyID, value})
   self:CalcuCurValue()
   return modifyID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MultModifyValue.RemoveModify = function(self, modifyID)
-  -- function num : 0_9 , upvalues : _ENV
-  for i,v in ipairs(self.valueModifyList) do
+function MultModifyValue:RemoveModify(modifyID)
+  for i, v in ipairs(self.valueModifyList) do
     local curID = v[1]
     if curID == modifyID then
-      (table.remove)(self.valueModifyList, i)
+      table.remove(self.valueModifyList, i)
       break
     end
   end
-  do
-    self:CalcuCurValue()
-  end
+  self:CalcuCurValue()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MultModifyValue.GetModifyValue = function(self, modifyID)
-  -- function num : 0_10 , upvalues : _ENV
-  for i,v in ipairs(self.valueModifyList) do
+function MultModifyValue:GetModifyValue(modifyID)
+  for i, v in ipairs(self.valueModifyList) do
     local curID = v[1]
     if curID == modifyID then
       return v[2]
@@ -107,19 +66,11 @@ MultModifyValue.GetModifyValue = function(self, modifyID)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MultModifyValue.ClearModify = function(self)
-  -- function num : 0_11
+function MultModifyValue:ClearModify()
   self.valueModifyList = {}
   self:CalcuCurValue()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MultModifyValue.CalcuCurValue = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function MultModifyValue:CalcuCurValue()
   error("MultModifyValue:CalcuCurValue() need override")
 end
-
-

@@ -1,61 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_change_maintain_color_trap_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultChangeMaintainColorTrapEffect", BuffResultBase)
 BuffResultChangeMaintainColorTrapEffect = BuffResultChangeMaintainColorTrapEffect
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeMaintainColorTrapEffect.Constructor = function(self, notifyType, pos, beforePieceType, afterPieceType)
-  -- function num : 0_0
+function BuffResultChangeMaintainColorTrapEffect:Constructor(notifyType, pos, beforePieceType, afterPieceType)
   self._notifyType = notifyType
   self._pos = pos
   self._beforePieceType = beforePieceType
   self._afterPieceType = afterPieceType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeMaintainColorTrapEffect.GetNotifyType = function(self)
-  -- function num : 0_1
+function BuffResultChangeMaintainColorTrapEffect:GetNotifyType()
   return self._notifyType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeMaintainColorTrapEffect.GetPos = function(self)
-  -- function num : 0_2
+function BuffResultChangeMaintainColorTrapEffect:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeMaintainColorTrapEffect.GetBeforePieceType = function(self)
-  -- function num : 0_3
+function BuffResultChangeMaintainColorTrapEffect:GetBeforePieceType()
   return self._beforePieceType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeMaintainColorTrapEffect.GetAfterPieceType = function(self)
-  -- function num : 0_4
+function BuffResultChangeMaintainColorTrapEffect:GetAfterPieceType()
   return self._afterPieceType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeMaintainColorTrapEffect.SetIsInit = function(self, isInit)
-  -- function num : 0_5
+function BuffResultChangeMaintainColorTrapEffect:SetIsInit(isInit)
   self._isInit = isInit
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeMaintainColorTrapEffect.GetIsInit = function(self)
-  -- function num : 0_6
+function BuffResultChangeMaintainColorTrapEffect:GetIsInit()
   return self._isInit
 end
-
-

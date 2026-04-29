@@ -1,36 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pick_up_cross_ignore_validity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpCrossIgnoreValidity", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpCrossIgnoreValidity = SkillScopeCalculator_PickUpCrossIgnoreValidity
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpCrossIgnoreValidity.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_PickUpCrossIgnoreValidity:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local scopeList = {}
   if centerPos then
     if #centerPos == 0 and centerPos._className == "Vector2" then
       centerPos = {centerPos}
     end
-    for _,pos in ipairs(centerPos) do
-      (table.insert)(scopeList, Vector2(pos.x - 1, pos.y))
-      ;
-      (table.insert)(scopeList, Vector2(pos.x + 1, pos.y))
-      ;
-      (table.insert)(scopeList, Vector2(pos.x, pos.y - 1))
-      ;
-      (table.insert)(scopeList, Vector2(pos.x, pos.y + 1))
+    for _, pos in ipairs(centerPos) do
+      table.insert(scopeList, Vector2(pos.x - 1, pos.y))
+      table.insert(scopeList, Vector2(pos.x + 1, pos.y))
+      table.insert(scopeList, Vector2(pos.x, pos.y - 1))
+      table.insert(scopeList, Vector2(pos.x, pos.y + 1))
     end
   end
-  do
-    ;
-    (table.unique)(scopeList)
-    local result = SkillScopeResult:New(SkillScopeType.PickUpCrossIgnoreValidity, centerPos, scopeList, scopeList)
-    return result
-  end
+  table.unique(scopeList)
+  local result = SkillScopeResult:New(SkillScopeType.PickUpCrossIgnoreValidity, centerPos, scopeList, scopeList)
+  return result
 end
-
-

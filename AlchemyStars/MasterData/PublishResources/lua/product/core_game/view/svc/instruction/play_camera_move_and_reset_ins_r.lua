@@ -1,43 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_camera_move_and_reset_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCameraMoveAndResetInstruction", BaseInstruction)
 PlayCameraMoveAndResetInstruction = PlayCameraMoveAndResetInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCameraMoveAndResetInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCameraMoveAndResetInstruction:Constructor(paramList)
   local strOffset = paramList.offset
   if strOffset then
-    local arr = (string.split)(strOffset, "|")
+    local arr = string.split(strOffset, "|")
     self._offset = Vector3(tonumber(arr[1]), tonumber(arr[2]), tonumber(arr[3]))
   else
-    do
-      self._offset = Vector3.zero
-      self._moveTime = tonumber(paramList.moveTime)
-      self._waitTime = tonumber(paramList.waitTime)
-      self._resetTime = tonumber(paramList.resetTime)
-    end
+    self._offset = Vector3.zero
   end
+  self._moveTime = tonumber(paramList.moveTime)
+  self._waitTime = tonumber(paramList.waitTime)
+  self._resetTime = tonumber(paramList.resetTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCameraMoveAndResetInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCameraMoveAndResetInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local mainCamera = (world:MainCamera()):Camera()
+  local mainCamera = world:MainCamera():Camera()
   local cameraTran = mainCamera.transform
   local originalPos = cameraTran.position
   local targetPos = originalPos + self._offset
-  cameraTran:DOMove(targetPos, self._moveTime / 1000, false)
+  cameraTran:DOMove(targetPos, self._moveTime / 1000.0, false)
   YIELD(TT, self._moveTime)
   YIELD(TT, self._waitTime)
-  cameraTran:DOMove(originalPos, self._resetTime / 1000, false)
+  cameraTran:DOMove(originalPos, self._resetTime / 1000.0, false)
   YIELD(TT, self._resetTime)
 end
-
-

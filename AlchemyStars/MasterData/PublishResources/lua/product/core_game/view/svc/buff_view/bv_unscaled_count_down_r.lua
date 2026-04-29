@@ -1,56 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_unscaled_count_down_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewStartUnscaledCountDown", BuffViewBase)
 BuffViewStartUnscaledCountDown = BuffViewStartUnscaledCountDown
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewStartUnscaledCountDown.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewStartUnscaledCountDown:PlayView(TT)
   local res = self._buffResult
   local flagID = res:GetFlagID()
   local countDownValue = res:GetCountDownValue()
   local bShowGlobalUI = res:GetShowGlobalUI()
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local cdCmpt = renderBoardEntity:UnscaledCountDownRender()
   if cdCmpt and not cdCmpt:GetIsActive() then
     cdCmpt:StartCoundDown(flagID, countDownValue)
     if bShowGlobalUI then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.UIShowUnscaledCountDown, true)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.UIEnableUnscaledCountDown, true)
+      self._world:EventDispatcher():Dispatch(GameEventType.UIShowUnscaledCountDown, true)
+      self._world:EventDispatcher():Dispatch(GameEventType.UIEnableUnscaledCountDown, true)
     end
-    ;
-    (Log.info)("UnscaledCD StartCoundDown, flagID:", flagID, " timeMs:", countDownValue)
+    Log.info("UnscaledCD StartCoundDown, flagID:", flagID, " timeMs:", countDownValue)
   end
 end
 
 _class("BuffViewStopUnscaledCountDown", BuffViewBase)
 BuffViewStopUnscaledCountDown = BuffViewStopUnscaledCountDown
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewStopUnscaledCountDown.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewStopUnscaledCountDown:PlayView(TT)
   local res = self._buffResult
   local flagID = res:GetFlagID()
   local bHideGlobalUI = res:GetHideGlobalUI()
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).UnscaledCountDownRender)
-  for i,e in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.UnscaledCountDownRender)
+  for i, e in ipairs(group:GetEntities()) do
     local cdCmpt = e:UnscaledCountDownRender()
-    if flagID == cdCmpt:GetFlagID() and cdCmpt:GetIsActive() then
-      cdCmpt:Reset()
-      if bHideGlobalUI then
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.UIEnableUnscaledCountDown, false)
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.UIShowUnscaledCountDown, false)
+    if flagID == cdCmpt:GetFlagID() then
+      if cdCmpt:GetIsActive() then
+        cdCmpt:Reset()
+        if bHideGlobalUI then
+          self._world:EventDispatcher():Dispatch(GameEventType.UIEnableUnscaledCountDown, false)
+          self._world:EventDispatcher():Dispatch(GameEventType.UIShowUnscaledCountDown, false)
+        end
+        Log.info("UnscaledCD StopCoundDown, flagID:", flagID)
       end
-      ;
-      (Log.info)("UnscaledCD StopCoundDown, flagID:", flagID)
+      break
     end
-    do break end
   end
 end
-
-

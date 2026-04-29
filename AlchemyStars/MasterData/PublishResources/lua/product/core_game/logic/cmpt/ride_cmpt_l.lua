@@ -1,86 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/ride_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RideComponent", Object)
 RideComponent = RideComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RideComponent.Constructor = function(self, riderID, mountID)
-  -- function num : 0_0
+function RideComponent:Constructor(riderID, mountID)
   self._riderID = riderID
   self._mountID = mountID
   self._onlyRiderCanClick = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RideComponent.GetRiderID = function(self)
-  -- function num : 0_1
+function RideComponent:GetRiderID()
   return self._riderID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RideComponent.GetMountID = function(self)
-  -- function num : 0_2
+function RideComponent:GetMountID()
   return self._mountID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RideComponent.IsOnlyRiderCanClick = function(self)
-  -- function num : 0_3
+function RideComponent:IsOnlyRiderCanClick()
   return self._onlyRiderCanClick
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RideComponent.SetOnlyRiderCanClick = function(self, canClick)
-  -- function num : 0_4
+function RideComponent:SetOnlyRiderCanClick(canClick)
   self._onlyRiderCanClick = canClick
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Ride = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).Ride)
+function Entity:Ride()
+  return self:GetComponent(self.WEComponentsEnum.Ride)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRide = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).Ride)
+function Entity:HasRide()
+  return self:HasComponent(self.WEComponentsEnum.Ride)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRide = function(self, riderID, mountID)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Ride
+function Entity:AddRide(riderID, mountID)
+  local index = self.WEComponentsEnum.Ride
   local component = RideComponent:New(riderID, mountID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRide = function(self, riderID, mountID)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Ride
+function Entity:ReplaceRide(riderID, mountID)
+  local index = self.WEComponentsEnum.Ride
   local component = RideComponent:New(riderID, mountID)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRide = function(self)
-  -- function num : 0_9
+function Entity:RemoveRide()
   if self:HasRide() then
-    self:RemoveComponent((self.WEComponentsEnum).Ride)
+    self:RemoveComponent(self.WEComponentsEnum.Ride)
   end
 end
-
-

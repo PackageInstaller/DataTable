@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/old/ui_aircraft_interactive_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftInteractivePoint", Object)
 UIAircraftInteractivePoint = UIAircraftInteractivePoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftInteractivePoint.Constructor = function(self, pos, targetPos, faceIDList)
-  -- function num : 0_0
+function UIAircraftInteractivePoint:Constructor(pos, targetPos, faceIDList)
   self._pos = pos
   self._targetPos = targetPos
   self._forward = nil
@@ -19,39 +12,22 @@ UIAircraftInteractivePoint.Constructor = function(self, pos, targetPos, faceIDLi
   self._index = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractivePoint.GetPos = function(self)
-  -- function num : 0_1
+function UIAircraftInteractivePoint:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractivePoint.GetForward = function(self)
-  -- function num : 0_2
+function UIAircraftInteractivePoint:GetForward()
   return self._forward
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractivePoint.GetFaceIDList = function(self)
-  -- function num : 0_3
+function UIAircraftInteractivePoint:GetFaceIDList()
   return self._faceIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractivePoint.SetIndex = function(self, index)
-  -- function num : 0_4
+function UIAircraftInteractivePoint:SetIndex(index)
   self._index = index
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftInteractivePoint.GetIndex = function(self)
-  -- function num : 0_5
+function UIAircraftInteractivePoint:GetIndex()
   return self._index
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_flotage_trajectory_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseFlotageTrajectoryParam", SkillPhaseParamBase)
 SkillPhaseFlotageTrajectoryParam = SkillPhaseFlotageTrajectoryParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseFlotageTrajectoryParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseFlotageTrajectoryParam:Constructor(t)
   self._efffectID = t.effectID
   self._spawnRadiusMin = t.spawnRadiusMin
   self._spawnRadiusMax = t.spawnRadiusMax
@@ -50,245 +43,150 @@ SkillPhaseFlotageTrajectoryParam.Constructor = function(self, t)
   self._hitSoundID = t.hitSoundID or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseFlotageTrajectoryParam:GetCacheTable()
   local t = {}
   if self._efffectID and self._efffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._efffectID]).ResPath, 5})
+    table.insert(t, {
+      Cfg.cfg_effect[self._efffectID].ResPath,
+      5
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 5})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      5
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseFlotageTrajectoryParam:GetPhaseType()
   return SkillViewPhaseType.FlotageTrajectory
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseFlotageTrajectoryParam:GetEffectID()
   return self._efffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetSpawnRadiusMin = function(self)
-  -- function num : 0_4
+function SkillPhaseFlotageTrajectoryParam:GetSpawnRadiusMin()
   return self._spawnRadiusMin
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetSpawnRadiusMax = function(self)
-  -- function num : 0_5
+function SkillPhaseFlotageTrajectoryParam:GetSpawnRadiusMax()
   return self._spawnRadiusMax
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetSpawnIntervalTime = function(self)
-  -- function num : 0_6
+function SkillPhaseFlotageTrajectoryParam:GetSpawnIntervalTime()
   return self._spawnIntervalTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetSpawnOffsetPos = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillPhaseFlotageTrajectoryParam:GetSpawnOffsetPos()
   return Vector3(self._offsetPosX, self._offsetPosY, self._offsetPosZ)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetPathFirstPos = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillPhaseFlotageTrajectoryParam:GetPathFirstPos()
   if not self._firstPosX then
     return nil
   end
   return Vector3(self._firstPosX, self._firstPosY, self._firstPosZ)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetFirstPosRandom = function(self)
-  -- function num : 0_9
+function SkillPhaseFlotageTrajectoryParam:GetFirstPosRandom()
   return self._firstPosRandom
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetUpSpeed = function(self)
-  -- function num : 0_10
+function SkillPhaseFlotageTrajectoryParam:GetUpSpeed()
   return self._upSpeed
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetUpShakeDis = function(self)
-  -- function num : 0_11
+function SkillPhaseFlotageTrajectoryParam:GetUpShakeDis()
   return self._upShakeDis
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetUpShakeDertaTimeMin = function(self)
-  -- function num : 0_12
+function SkillPhaseFlotageTrajectoryParam:GetUpShakeDertaTimeMin()
   return self._upShakeDertaTimeMin
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetUpShakeDertaTimeMax = function(self)
-  -- function num : 0_13
+function SkillPhaseFlotageTrajectoryParam:GetUpShakeDertaTimeMax()
   return self._upShakeDertaTimeMax
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetFireTimeMin = function(self)
-  -- function num : 0_14
+function SkillPhaseFlotageTrajectoryParam:GetFireTimeMin()
   return self._fireTimeMin
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetFireTimeMax = function(self)
-  -- function num : 0_15
+function SkillPhaseFlotageTrajectoryParam:GetFireTimeMax()
   return self._fireTimeMax
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetFlyTime = function(self)
-  -- function num : 0_16
+function SkillPhaseFlotageTrajectoryParam:GetFlyTime()
   return self._flyTime
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetFlyRandomDis = function(self)
-  -- function num : 0_17
+function SkillPhaseFlotageTrajectoryParam:GetFlyRandomDis()
   return self._flyRandomDis
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetFlyRandomPointCount = function(self)
-  -- function num : 0_18
+function SkillPhaseFlotageTrajectoryParam:GetFlyRandomPointCount()
   return self._flyRandomPointCount
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetdestroyBulletDelay = function(self)
-  -- function num : 0_19
+function SkillPhaseFlotageTrajectoryParam:GetdestroyBulletDelay()
   return self._destroyBulletDelay
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetTargetHit = function(self)
-  -- function num : 0_20
+function SkillPhaseFlotageTrajectoryParam:GetTargetHit()
   return self._targetHit
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetTargetHitOffsetMin = function(self)
-  -- function num : 0_21
+function SkillPhaseFlotageTrajectoryParam:GetTargetHitOffsetMin()
   return self._targetHitOffsetMin
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetTargetHitOffsetMax = function(self)
-  -- function num : 0_22
+function SkillPhaseFlotageTrajectoryParam:GetTargetHitOffsetMax()
   return self._targetHitOffsetMax
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetTurnToTarget = function(self)
-  -- function num : 0_23
+function SkillPhaseFlotageTrajectoryParam:GetTurnToTarget()
   return self._turnToTarget
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetHitAnimName = function(self)
-  -- function num : 0_24
+function SkillPhaseFlotageTrajectoryParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetHitEffectID = function(self)
-  -- function num : 0_25
+function SkillPhaseFlotageTrajectoryParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetHitPointDelay = function(self)
-  -- function num : 0_26
+function SkillPhaseFlotageTrajectoryParam:GetHitPointDelay()
   return self._hitPointDelay
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetFireEffectID = function(self)
-  -- function num : 0_27
+function SkillPhaseFlotageTrajectoryParam:GetFireEffectID()
   return self._fireEffectID
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetDisableRoot = function(self)
-  -- function num : 0_28
+function SkillPhaseFlotageTrajectoryParam:GetDisableRoot()
   return self._disableRoot
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetSummonTrapWithHit = function(self)
-  -- function num : 0_29
+function SkillPhaseFlotageTrajectoryParam:GetSummonTrapWithHit()
   return self._summonTrapWithHit
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetSummonTrapEffectID = function(self)
-  -- function num : 0_30
+function SkillPhaseFlotageTrajectoryParam:GetSummonTrapEffectID()
   return self._summonTrapEffectID
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetSummonTrapDirToTarget = function(self)
-  -- function num : 0_31
+function SkillPhaseFlotageTrajectoryParam:GetSummonTrapDirToTarget()
   return self._summonTrapDirToTarget
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetNeedLookAt = function(self)
-  -- function num : 0_32
+function SkillPhaseFlotageTrajectoryParam:GetNeedLookAt()
   return self._needLookAt
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseFlotageTrajectoryParam.GetHitSoundID = function(self)
-  -- function num : 0_33
+function SkillPhaseFlotageTrajectoryParam:GetHitSoundID()
   return self._hitSoundID
 end
-
-

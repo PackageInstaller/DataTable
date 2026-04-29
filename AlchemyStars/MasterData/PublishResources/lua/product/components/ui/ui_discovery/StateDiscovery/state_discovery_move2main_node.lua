@@ -1,53 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/StateDiscovery/state_discovery_move2main_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StateDiscoveryMove2MainNode", StateDiscoveryBase)
 StateDiscoveryMove2MainNode = StateDiscoveryMove2MainNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StateDiscoveryMove2MainNode.OnEnter = function(self, TT, ...)
-  -- function num : 0_0 , upvalues : _ENV
-  (StateDiscoveryMove2MainNode.super):OnEnter(TT, ...)
+function StateDiscoveryMove2MainNode:OnEnter(TT, ...)
+  StateDiscoveryMove2MainNode.super:OnEnter(TT, ...)
   self:Init()
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.grassData = (self.mCampaign):GetGraveRobberData()
-  ;
-  (self._ui):Lock("StateDiscoveryMove2MainNode")
-  local targetNodeId, callback = nil, nil
-  targetNodeId = (table.unpack)({...})
-  local lastNode = (self.grassData):LastNode()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.grassData = self.mCampaign:GetGraveRobberData()
+  self._ui:Lock("StateDiscoveryMove2MainNode")
+  local targetNodeId, callback
+  targetNodeId, callback = table.unpack({
+    ...
+  })
+  local lastNode = self.grassData:LastNode()
   if not lastNode then
-    (Log.fatal)("### StateDiscoveryMove2MainNode LastNode nil.")
-    return 
+    Log.fatal("### StateDiscoveryMove2MainNode LastNode nil.")
+    return
   end
-  local targetPos = (self._data):GetPosByNodeId(targetNodeId)
+  local targetPos = self._data:GetPosByNodeId(targetNodeId)
   self:Move(TT, lastNode.pos, targetPos)
-  ;
-  (self._data):SetCurPosNodeId(targetNodeId)
+  self._data:SetCurPosNodeId(targetNodeId)
   if callback then
     callback()
   end
-  ;
-  (self.grassData):SaveLastNode(nil)
+  self.grassData:SaveLastNode(nil)
   self:ChangeState(StateDiscovery.Init)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDiscoveryMove2MainNode.OnExit = function(self, TT)
-  -- function num : 0_1
-  (self._ui):UnLock("StateDiscoveryMove2MainNode")
+function StateDiscoveryMove2MainNode:OnExit(TT)
+  self._ui:UnLock("StateDiscoveryMove2MainNode")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateDiscoveryMove2MainNode.Move = function(self, TT, posStart, posEnd)
-  -- function num : 0_2 , upvalues : _ENV
-  local duration = (self._ui):CalcWalkDuration(posStart, posEnd)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryCameraMove, posEnd, duration)
+function StateDiscoveryMove2MainNode:Move(TT, posStart, posEnd)
+  local duration = self._ui:CalcWalkDuration(posStart, posEnd)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryCameraMove, posEnd, duration)
 end
-
-

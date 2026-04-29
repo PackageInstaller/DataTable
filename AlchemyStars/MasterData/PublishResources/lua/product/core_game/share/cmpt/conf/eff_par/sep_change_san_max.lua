@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_change_san_max.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamChangeSanMax", SkillEffectParamBase)
 SkillEffectParamChangeSanMax = SkillEffectParamChangeSanMax
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamChangeSanMax.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamChangeSanMax:Constructor(t)
   self._val = t.val
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeSanMax.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamChangeSanMax:GetEffectType()
   return SkillEffectType.ChangeSanMax
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamChangeSanMax.GetChangeValue = function(self)
-  -- function num : 0_2
+function SkillEffectParamChangeSanMax:GetChangeValue()
   return self._val
 end
-
-

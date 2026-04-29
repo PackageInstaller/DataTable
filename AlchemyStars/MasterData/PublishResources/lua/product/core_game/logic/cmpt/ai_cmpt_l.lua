@@ -1,15 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/ai_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AIComponentNew", Object)
 AIComponentNew = AIComponentNew
-AIMoveState = {NotMove = 1, Moving = 2, MoveEnd = 3}
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
+AIMoveState = {
+  NotMove = 1,
+  Moving = 2,
+  MoveEnd = 3
+}
 
-AIComponentNew.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function AIComponentNew:Constructor()
   self.m_logicList = {}
   self.m_rootLogic = nil
   self.m_logicPreview = nil
@@ -39,157 +36,94 @@ AIComponentNew.Constructor = function(self)
   self._hasAntiSkill = false
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.AddAIRoundRunCount = function(self, aiConfigID)
-  -- function num : 0_1
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._aiRunCount)[aiConfigID] then
-    (self._aiRunCount)[aiConfigID] = 0
+function AIComponentNew:AddAIRoundRunCount(aiConfigID)
+  if not self._aiRunCount[aiConfigID] then
+    self._aiRunCount[aiConfigID] = 0
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._aiRunCount)[aiConfigID] = (self._aiRunCount)[aiConfigID] + 1
+  self._aiRunCount[aiConfigID] = self._aiRunCount[aiConfigID] + 1
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.ClearAIRoundRunCount = function(self)
-  -- function num : 0_2
+function AIComponentNew:ClearAIRoundRunCount()
   self._aiRunCount = {}
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetAIRoundRunCount = function(self, aiConfigID)
-  -- function num : 0_3
-  return (self._aiRunCount)[aiConfigID] or 0
+function AIComponentNew:GetAIRoundRunCount(aiConfigID)
+  return self._aiRunCount[aiConfigID] or 0
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetMoveState = function(self)
-  -- function num : 0_4
+function AIComponentNew:GetMoveState()
   return self._moveState
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetMoveState = function(self, st)
-  -- function num : 0_5
+function AIComponentNew:SetMoveState(st)
   if self._moveState == st then
-    return 
+    return
   end
   self._moveState = st
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetSelectSkillID = function(self)
-  -- function num : 0_6
+function AIComponentNew:GetSelectSkillID()
   return self.m_nSelectSkillID
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetSelectSkillID = function(self, nSkillID)
-  -- function num : 0_7 , upvalues : _ENV
+function AIComponentNew:SetSelectSkillID(nSkillID)
   local _id = tonumber(nSkillID)
   if not _id then
-    (Log.exception)(self._className, "Cannot select a non-number skill id: ", nSkillID)
-    return 
+    Log.exception(self._className, "Cannot select a non-number skill id: ", nSkillID)
+    return
   end
   self.m_nSelectSkillID = nSkillID
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetCutLogic = function(self)
-  -- function num : 0_8
+function AIComponentNew:GetCutLogic()
   return self.m_cutLogic
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetCutLogic = function(self, pLogic)
-  -- function num : 0_9
+function AIComponentNew:SetCutLogic(pLogic)
   self.m_cutLogic = pLogic
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.ExchangeOnceLogic = function(self, nLogicType)
-  -- function num : 0_10 , upvalues : _ENV
-  local pLogicOld = (self.m_logicList)[nLogicType]
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_logicList)[nLogicType] = self.m_cutLogic
+function AIComponentNew:ExchangeOnceLogic(nLogicType)
+  local pLogicOld = self.m_logicList[nLogicType]
+  self.m_logicList[nLogicType] = self.m_cutLogic
   self.m_cutLogic = pLogicOld
   if nLogicType == AILogicPeriodType.Main then
     self:SetPreviewLogic(nLogicType, AILogicOrderType.BaseOrder)
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.AddLogic = function(self, aiLogicPeriodType, logic, order)
-  -- function num : 0_11 , upvalues : _ENV
-  local periodAIList = (self.m_logicList)[aiLogicPeriodType]
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R5 in 'UnsetPending'
-
+function AIComponentNew:AddLogic(aiLogicPeriodType, logic, order)
+  local periodAIList = self.m_logicList[aiLogicPeriodType]
   if periodAIList == nil then
-    (self.m_logicList)[aiLogicPeriodType] = {}
-    periodAIList = (self.m_logicList)[aiLogicPeriodType]
+    self.m_logicList[aiLogicPeriodType] = {}
+    periodAIList = self.m_logicList[aiLogicPeriodType]
   end
-  if not order then
-    local logicOrder = AILogicOrderType.BaseOrder
-  end
+  local logicOrder = order or AILogicOrderType.BaseOrder
   periodAIList[logicOrder] = logic
   if logic then
     logic:SetMyOrder(logicOrder)
     logic:SetActive(false)
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._treeContext)[logic.InstanceID] = {}
+    self._treeContext[logic.InstanceID] = {}
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetAILogicOrders = function(self, aiLogicPeriodType)
-  -- function num : 0_12 , upvalues : _ENV
-  local periodAIList = (self.m_logicList)[aiLogicPeriodType]
+function AIComponentNew:GetAILogicOrders(aiLogicPeriodType)
+  local periodAIList = self.m_logicList[aiLogicPeriodType]
   local orderList = {}
   if periodAIList then
-    for key,_ in pairs(periodAIList) do
+    for key, _ in pairs(periodAIList) do
       orderList[#orderList + 1] = key
     end
   end
-  do
-    return orderList
-  end
+  return orderList
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetAILogic = function(self, aiLogicPeriodType)
-  -- function num : 0_13
-  if not (self.m_logicList)[aiLogicPeriodType] then
-    return {}
-  end
+function AIComponentNew:GetAILogic(aiLogicPeriodType)
+  return self.m_logicList[aiLogicPeriodType] or {}
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SelectLogic = function(self, logicType, order)
-  -- function num : 0_14 , upvalues : _ENV
-  if not order then
-    order = AILogicOrderType.BaseOrder
-  end
+function AIComponentNew:SelectLogic(logicType, order)
+  order = order or AILogicOrderType.BaseOrder
   local aiLogic = self:_FindLogic(logicType, order)
   if aiLogic then
     self.m_rootLogic = aiLogic
@@ -197,87 +131,66 @@ AIComponentNew.SelectLogic = function(self, logicType, order)
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew._FindLogic = function(self, nLogicType, nOrder)
-  -- function num : 0_15
-  local periodLogic = (self.m_logicList)[nLogicType]
+function AIComponentNew:_FindLogic(nLogicType, nOrder)
+  local periodLogic = self.m_logicList[nLogicType]
   if not periodLogic then
-    return 
+    return
   end
   local logic = periodLogic[nOrder]
   return logic
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew._SetActive = function(self, bActive)
-  -- function num : 0_16
+function AIComponentNew:_SetActive(bActive)
   if self.m_rootLogic then
-    (self.m_rootLogic):SetActive(bActive)
+    self.m_rootLogic:SetActive(bActive)
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.OnEvent_EnableAiLogic = function(self, entityWork, nLogicType, order)
-  -- function num : 0_17 , upvalues : _ENV
+function AIComponentNew:OnEvent_EnableAiLogic(entityWork, nLogicType, order)
   self:InitAiLogic(AINewNodeStatus.Ready, entityWork, nLogicType, order)
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.OnEvent_DisableAiLogic = function(self, entityWork)
-  -- function num : 0_18
+function AIComponentNew:OnEvent_DisableAiLogic(entityWork)
   self:_SetActive(false)
   self.m_rootLogic = nil
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetRootLogicID = function(self)
-  -- function num : 0_19
+function AIComponentNew:GetRootLogicID()
   local nLogicID = 0
   if self.m_rootLogic then
-    nLogicID = (self.m_rootLogic):GetAILogicID()
+    nLogicID = self.m_rootLogic:GetAILogicID()
   end
   return nLogicID
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.ResetLogic = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function AIComponentNew:ResetLogic()
   self.m_nStatus = AINewNodeStatus.Ready
   if self.m_rootLogic then
-    (self.m_rootLogic):Reset()
+    self.m_rootLogic:Reset()
   end
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.InitAiLogic = function(self, nStatus, monsterEntity, nLogicType, order)
-  -- function num : 0_21 , upvalues : _ENV
+function AIComponentNew:InitAiLogic(nStatus, monsterEntity, nLogicType, order)
   self.m_nStatus = nStatus
   self:SelectLogic(nLogicType, order)
   if self.m_rootLogic then
-    (self.m_rootLogic):Reset()
+    self.m_rootLogic:Reset()
   end
   if self:IsLogicEnd() then
     self.m_nMobilityTotal = 0
   else
-    self.m_nMobilityTotal = (monsterEntity:Attributes()):GetAIMobility()
+    self.m_nMobilityTotal = monsterEntity:Attributes():GetAIMobility()
   end
   self:OutLog("初始化行动力", " m_nMobilityTotal = ", self.m_nMobilityTotal)
   if self.m_nMobilityTotal <= 0 then
     self.m_nStatus = AINewNodeStatus.Success
-    return 
+    return
   end
-  self._targetTeamEntity = ((self.m_world):Player()):GetLocalTeamEntity()
+  self._targetTeamEntity = self.m_world:Player():GetLocalTeamEntity()
   self._targetEntity = self._targetTeamEntity
   if self._aiTargetType == AITargetType.Normal then
-    local trapGroup = (self.m_world):GetGroup(((self.m_world).BW_WEMatchers).Trap)
-    for _,e in ipairs(trapGroup:GetEntities()) do
+    local trapGroup = self.m_world:GetGroup(self.m_world.BW_WEMatchers.Trap)
+    for _, e in ipairs(trapGroup:GetEntities()) do
       local trapCmpt = e:Trap()
       local trapType = trapCmpt:GetTrapType()
       if trapType == TrapType.Protected then
@@ -285,88 +198,71 @@ AIComponentNew.InitAiLogic = function(self, nStatus, monsterEntity, nLogicType, 
         break
       end
     end
-  else
-    do
-      if self._aiTargetType == AITargetType.Team then
-        self._targetEntity = self._targetTeamEntity
-      end
-      self:_SetActive(true)
-      self:SetLastMovePos(nil)
-      if (self.m_world):MatchType() == MatchType.MT_Chess then
-        self:SetMoveState(AIMoveState.MoveEnd)
-      else
-        if monsterEntity:HasTrap() then
-          self:SetMoveState(AIMoveState.MoveEnd)
-        else
-          self:SetMoveState(AIMoveState.NotMove)
-        end
-      end
-      self:SetAITreeState(1)
-      self:SetAIRoundEnd(false)
-    end
+  elseif self._aiTargetType == AITargetType.Team then
+    self._targetEntity = self._targetTeamEntity
   end
+  self:_SetActive(true)
+  self:SetLastMovePos(nil)
+  if self.m_world:MatchType() == MatchType.MT_Chess then
+    self:SetMoveState(AIMoveState.MoveEnd)
+  elseif monsterEntity:HasTrap() then
+    self:SetMoveState(AIMoveState.MoveEnd)
+  else
+    self:SetMoveState(AIMoveState.NotMove)
+  end
+  self:SetAITreeState(1)
+  self:SetAIRoundEnd(false)
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.CalcBuffedMobility = function(self, mobility, e)
-  -- function num : 0_22 , upvalues : _ENV
+function AIComponentNew:CalcBuffedMobility(mobility, e)
   if not e then
     return mobility
   end
-  if (e:BuffComponent()):HasFlag(BuffFlags.Benumb) then
+  if e:BuffComponent():HasFlag(BuffFlags.Benumb) then
     return 1
   end
   local m = mobility
-  local exMobility = (e:Attributes()):GetAttribute("ExAIMobility") or 0
-  local accelerateRate = (e:BuffComponent()):GetBuffValue("AccelerateRate") or 0
-  m = (math.ceil)(self.m_nMobilityConfig * (1 + accelerateRate)) + exMobility
-  m = (math.max)(m, 0)
+  local exMobility = e:Attributes():GetAttribute("ExAIMobility") or 0
+  local accelerateRate = e:BuffComponent():GetBuffValue("AccelerateRate") or 0
+  m = math.ceil(self.m_nMobilityConfig * (1 + accelerateRate)) + exMobility
+  m = math.max(m, 0)
   return m
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.Update = function(self, dt)
-  -- function num : 0_23 , upvalues : _ENV
+function AIComponentNew:Update(dt)
   if self:IsLogicEnd() then
-    return 
+    return
   end
   if self.m_rootLogic then
     self.m_nStatus = AINewNodeStatus.Running
-    if (self.m_rootLogic):IsEnableStart() then
-      ((self.m_world):GetSyncLogger()):Trace({key = "AIUpdateBegin", entityID = (self._ownerEntity):GetID()})
-      local aiConfigID = (self.m_rootLogic):GetConfigAIID()
+    if self.m_rootLogic:IsEnableStart() then
+      self.m_world:GetSyncLogger():Trace({
+        key = "AIUpdateBegin",
+        entityID = self._ownerEntity:GetID()
+      })
+      local aiConfigID = self.m_rootLogic:GetConfigAIID()
       self:AddAIRoundRunCount(aiConfigID)
-      ;
-      (self.m_rootLogic):Update(dt)
-      ;
-      ((self.m_world):GetSyncLogger()):Trace({key = "AIUpdateEnd", entityID = (self._ownerEntity):GetID()})
+      self.m_rootLogic:Update(dt)
+      self.m_world:GetSyncLogger():Trace({
+        key = "AIUpdateEnd",
+        entityID = self._ownerEntity:GetID()
+      })
     end
   end
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.ReSelectWorkSkill = function(self)
-  -- function num : 0_24
+function AIComponentNew:ReSelectWorkSkill()
   if self.m_rootLogic then
-    (self.m_rootLogic):ReSelectWorkSkill()
+    self.m_rootLogic:ReSelectWorkSkill()
   end
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetRootLogic = function(self)
-  -- function num : 0_25
+function AIComponentNew:GetRootLogic()
   return self.m_rootLogic
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.IsLogicEnd = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  if self.m_rootLogic == nil then
+function AIComponentNew:IsLogicEnd()
+  if nil == self.m_rootLogic then
     return true
   end
   if self.m_nStatus == AINewNodeStatus.Success or self.m_nStatus == AINewNodeStatus.Failure then
@@ -375,250 +271,172 @@ AIComponentNew.IsLogicEnd = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetComponentStatus = function(self, nStatus)
-  -- function num : 0_27
+function AIComponentNew:SetComponentStatus(nStatus)
   self.m_nStatus = nStatus
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.OutLog = function(self, stMsg)
-  -- function num : 0_28 , upvalues : _ENV
+function AIComponentNew:OutLog(stMsg)
   if not self.m_world then
-    return 
+    return
   end
-  if not (self.m_world):IsDevelopEnv() then
-    return 
+  if not self.m_world:IsDevelopEnv() then
+    return
   end
   local nType = 0
   local nID = 0
   if self.m_rootLogic then
-    nID = (self._entity):GetID()
-    local cMonsterID = (self._entity):MonsterID()
+    nID = self._entity:GetID()
+    local cMonsterID = self._entity:MonsterID()
     if cMonsterID then
       nType = cMonsterID:GetMonsterID()
     end
   end
-  do
-    local stMonster = ": Monster = [" .. nType .. "." .. nID .. "]"
-    local stLogicID = ", AI_Config = " .. self:GetRootLogicID()
-    local stMobility = ", nMobility  = " .. self.m_nMobilityTotal
-    ;
-    (Log.debug)("[AI], " .. stMsg .. stMonster .. stLogicID .. stMobility .. "|")
-  end
+  local stMonster = ": Monster = [" .. nType .. "." .. nID .. "]"
+  local stLogicID = ", AI_Config = " .. self:GetRootLogicID()
+  local stMobility = ", nMobility  = " .. self.m_nMobilityTotal
+  Log.debug("[AI], " .. stMsg .. stMonster .. stLogicID .. stMobility .. "|")
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.OutErrorLog = function(self, stMsg)
-  -- function num : 0_29 , upvalues : _ENV
+function AIComponentNew:OutErrorLog(stMsg)
   local nType = 0
   local nID = 0
   if self.m_rootLogic then
-    nID = (self._entity):GetID()
-    local cMonsterID = (self._entity):MonsterID()
+    nID = self._entity:GetID()
+    local cMonsterID = self._entity:MonsterID()
     if cMonsterID then
       nType = cMonsterID:GetMonsterID()
     end
   end
-  do
-    local stMonster = ": Monster = [" .. nType .. "." .. nID .. "]"
-    local stLogicID = ", AI_Config = " .. self:GetRootLogicID()
-    local posSelf = ((self._entity):GridLocation()).Position
-    local stMonsterPos = ", MonsterPosition = (" .. posSelf.x .. "," .. posSelf.y .. ")"
-    ;
-    (Log.error)("[AI], " .. stMsg .. stMonster .. stLogicID .. stMonsterPos)
-  end
+  local stMonster = ": Monster = [" .. nType .. "." .. nID .. "]"
+  local stLogicID = ", AI_Config = " .. self:GetRootLogicID()
+  local posSelf = self._entity:GridLocation().Position
+  local stMonsterPos = ", MonsterPosition = (" .. posSelf.x .. "," .. posSelf.y .. ")"
+  Log.error("[AI], " .. stMsg .. stMonster .. stLogicID .. stMonsterPos)
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.CostMobility = function(self, n)
-  -- function num : 0_30
+function AIComponentNew:CostMobility(n)
   self.m_nMobilityTotal = self.m_nMobilityTotal - n
   return self.m_nMobilityTotal
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.ClearMobilityTotal = function(self)
-  -- function num : 0_31
+function AIComponentNew:ClearMobilityTotal()
   self.m_nMobilityTotal = 0
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetMobilityValid = function(self)
-  -- function num : 0_32
+function AIComponentNew:GetMobilityValid()
   return self.m_nMobilityTotal
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetMobilityConfig = function(self)
-  -- function num : 0_33
-  local m = ((self._ownerEntity):Attributes()):GetAIMobility()
+function AIComponentNew:GetMobilityConfig()
+  local m = self._ownerEntity:Attributes():GetAIMobility()
   return m
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetMobilityTotal = function(self, mobility)
-  -- function num : 0_34
+function AIComponentNew:SetMobilityTotal(mobility)
   self.m_nMobilityTotal = mobility
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetAIOrderWeight = function(self)
-  -- function num : 0_35
-  if self.m_rootLogic == nil then
+function AIComponentNew:GetAIOrderWeight()
+  if nil == self.m_rootLogic then
     return 0
   end
-  return (self.m_rootLogic):GetOrderWeight()
+  return self.m_rootLogic:GetOrderWeight()
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetDistance = function(self)
-  -- function num : 0_36
-  if self.m_rootLogic == nil then
+function AIComponentNew:GetDistance()
+  if nil == self.m_rootLogic then
     return 0
   end
-  local posSlef = (self.m_rootLogic):GetSelfPos()
+  local posSlef = self.m_rootLogic:GetSelfPos()
   local posTarget = self:GetTargetPosCenter()
   local nDistance = (posSlef.x - posTarget.x) * (posSlef.x - posTarget.x) + (posSlef.y - posTarget.y) * (posSlef.y - posTarget.y)
   return nDistance
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetTargetPosCenter = function(self)
-  -- function num : 0_37
+function AIComponentNew:GetTargetPosCenter()
   local entityWork = self:GetTargetEntity()
-  return (entityWork:GridLocation()):Center()
+  return entityWork:GridLocation():Center()
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetTargetPos = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function AIComponentNew:GetTargetPos()
   local entityWork = self:GetTargetEntity()
-  local curPosCenter = ((self._entity):GridLocation()):Center()
+  local curPosCenter = self._entity:GridLocation():Center()
   if entityWork then
     local targetPos = entityWork:GetGridPosition()
-    local gridPos = (entityWork:GridLocation()):GetGridPos()
-    local bodyArea = (entityWork:BodyArea()):GetArea()
+    local gridPos = entityWork:GridLocation():GetGridPos()
+    local bodyArea = entityWork:BodyArea():GetArea()
     local lastDistance = 9
-    for i,area in ipairs(bodyArea) do
+    for i, area in ipairs(bodyArea) do
       local posWork = gridPos + area
-      local distance = (Vector2.Distance)(curPosCenter, posWork)
-      if distance < lastDistance then
+      local distance = Vector2.Distance(curPosCenter, posWork)
+      if lastDistance > distance then
         lastDistance = distance
         targetPos = posWork
       end
     end
     return targetPos
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetTargetEntity = function(self)
-  -- function num : 0_39
+function AIComponentNew:GetTargetEntity()
   local nTargetID = self:GetRuntimeData("Target")
-  do
-    if nTargetID then
-      local entityTarget = (self.m_world):GetEntityByID(nTargetID)
-      if entityTarget then
-        return entityTarget
-      end
+  if nTargetID then
+    local entityTarget = self.m_world:GetEntityByID(nTargetID)
+    if entityTarget then
+      return entityTarget
     end
-    return self._targetEntity
   end
-end
-
--- DECOMPILER ERROR at PC133: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetTargetDefault = function(self)
-  -- function num : 0_40
   return self._targetEntity
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R0 in 'UnsetPending'
+function AIComponentNew:GetTargetDefault()
+  return self._targetEntity
+end
 
-AIComponentNew.GetTargetTeamEntity = function(self)
-  -- function num : 0_41
+function AIComponentNew:GetTargetTeamEntity()
   return self._targetTeamEntity
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetAITargetType = function(self)
-  -- function num : 0_42
+function AIComponentNew:GetAITargetType()
   return self._aiTargetType
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.InitPreviewLogic = function(self, logicType)
-  -- function num : 0_43 , upvalues : _ENV
-  local configService = (self.m_world):GetService("Config")
+function AIComponentNew:InitPreviewLogic(logicType)
+  local configService = self.m_world:GetService("Config")
   local configMonster = configService:GetMonsterConfigData()
-  if not configMonster:GetMonsterPreviewAIOrder(self.m_nMonsterID) then
-    local nPrevOrder = AILogicOrderType.BaseOrder
-  end
+  local nPrevOrder = configMonster:GetMonsterPreviewAIOrder(self.m_nMonsterID) or AILogicOrderType.BaseOrder
   return self:SetPreviewLogic(logicType, nPrevOrder)
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetPreviewLogic = function(self, logicType, nOrder)
-  -- function num : 0_44
-  local periodLogic = (self.m_logicList)[logicType]
+function AIComponentNew:SetPreviewLogic(logicType, nOrder)
+  local periodLogic = self.m_logicList[logicType]
   if not periodLogic then
     self.m_logicPreview = nil
-    return 
+    return
   end
   local logic = periodLogic[nOrder]
-  do
-    if logic == nil then
-      local listOrder = self:GetAILogicOrders(logicType)
-      if #listOrder > 0 then
-        logic = periodLogic[listOrder[1]]
-      end
+  if nil == logic then
+    local listOrder = self:GetAILogicOrders(logicType)
+    if 0 < #listOrder then
+      logic = periodLogic[listOrder[1]]
     end
-    if logic then
-      self.m_logicPreview = logic
-      ;
-      (self.m_logicPreview):UpdateSkillAction()
-    end
+  end
+  if logic then
+    self.m_logicPreview = logic
+    self.m_logicPreview:UpdateSkillAction()
   end
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetReplacePreviewSkillID = function(self, skillID)
-  -- function num : 0_45
+function AIComponentNew:SetReplacePreviewSkillID(skillID)
   self._replacePreviewSkillID = skillID
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.ResetReplacePreviewSkillID = function(self)
-  -- function num : 0_46
+function AIComponentNew:ResetReplacePreviewSkillID()
   self._replacePreviewSkillID = nil
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.IsReplacePreviewSkill = function(self)
-  -- function num : 0_47
+function AIComponentNew:IsReplacePreviewSkill()
   if self._replacePreviewSkillID then
     return true
   else
@@ -626,369 +444,245 @@ AIComponentNew.IsReplacePreviewSkill = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetPreviewSkillID = function(self)
-  -- function num : 0_48
-  if self.m_logicPreview == nil then
+function AIComponentNew:GetPreviewSkillID()
+  if nil == self.m_logicPreview then
     return 0
   end
   if self._replacePreviewSkillID then
     return self._replacePreviewSkillID
   end
-  ;
-  (self.m_logicPreview):UpdateSkillAction()
-  return (self.m_logicPreview):GetActionSkillID(true)
+  self.m_logicPreview:UpdateSkillAction()
+  return self.m_logicPreview:GetActionSkillID(true)
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetCurSkillScopeResult = function(self, addRoundCount, nSkillID)
-  -- function num : 0_49 , upvalues : _ENV
-  local battleStatCmpt = (self.m_world):BattleStat()
+function AIComponentNew:SetCurSkillScopeResult(addRoundCount, nSkillID)
+  local battleStatCmpt = self.m_world:BattleStat()
   local round = battleStatCmpt:GetLevelTotalRoundCount()
   local setRound = round + addRoundCount
   local skillID = nSkillID
-  if not skillID then
-    skillID = self:GetPreviewSkillID()
-  end
-  local bodyArea = ((self._ownerEntity):BodyArea()):GetArea()
-  local posSelf = ((self._ownerEntity):GridLocation()).Position
-  local configService = (self.m_world):GetService("Config")
+  skillID = skillID or self:GetPreviewSkillID()
+  local bodyArea = self._ownerEntity:BodyArea():GetArea()
+  local posSelf = self._ownerEntity:GridLocation().Position
+  local configService = self.m_world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
-  local utilScopeSvc = (self.m_world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self.m_world:GetService("UtilScopeCalc")
   local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
   local skillResult = skillCalculater:CalcSkillScope(skillConfigData, posSelf, Vector2(0, 1), bodyArea)
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self._skillScopeResult)[setRound] = skillResult
+  self._skillScopeResult[setRound] = skillResult
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetSkillScopeResult = function(self, nextRound)
-  -- function num : 0_50
-  local battleStatCmpt = (self.m_world):BattleStat()
+function AIComponentNew:GetSkillScopeResult(nextRound)
+  local battleStatCmpt = self.m_world:BattleStat()
   local round = battleStatCmpt:GetLevelTotalRoundCount()
   if nextRound then
     round = round + 1
   end
-  return (self._skillScopeResult)[round]
+  return self._skillScopeResult[round]
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetRuntimeData = function(self, key, value)
-  -- function num : 0_51
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._runtimeData)[key] = value
+function AIComponentNew:SetRuntimeData(key, value)
+  self._runtimeData[key] = value
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetRuntimeDataAll = function(self, data)
-  -- function num : 0_52 , upvalues : _ENV
+function AIComponentNew:SetRuntimeDataAll(data)
   if data and type(data) == "table" then
-    (table.append)(self._runtimeData, data)
+    table.append(self._runtimeData, data)
   end
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetRuntimeData = function(self, key)
-  -- function num : 0_53
+function AIComponentNew:GetRuntimeData(key)
   if not key then
     return self._runtimeData
   end
-  return (self._runtimeData)[key]
+  return self._runtimeData[key]
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.CanMove = function(self)
-  -- function num : 0_54
+function AIComponentNew:CanMove()
   return self.canMove
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.CanTurn = function(self)
-  -- function num : 0_55
+function AIComponentNew:CanTurn()
   return self.canTurn
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetCanTurn = function(self, canTurn)
-  -- function num : 0_56
+function AIComponentNew:SetCanTurn(canTurn)
   self.canTurn = canTurn
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetRunningSign = function(self, nLogicType, nOrder)
-  -- function num : 0_57
+function AIComponentNew:SetRunningSign(nLogicType, nOrder)
   self.m_nRunningAiType = nLogicType
   self.m_nRunningAiOrder = nOrder
 end
 
--- DECOMPILER ERROR at PC187: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetLastMovePos = function(self)
-  -- function num : 0_58
+function AIComponentNew:GetLastMovePos()
   return self.m_lastMovePos
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetLastMovePos = function(self, pos)
-  -- function num : 0_59
+function AIComponentNew:SetLastMovePos(pos)
   self.m_lastMovePos = pos
 end
 
--- DECOMPILER ERROR at PC193: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.CancelLogic = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function AIComponentNew:CancelLogic()
   if self.m_rootLogic then
-    (self.m_rootLogic):CancelLogic()
+    self.m_rootLogic:CancelLogic()
   end
   self:SetComponentStatus(AINewNodeStatus.Failure)
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.InitCreateRound = function(self)
-  -- function num : 0_61
-  local battleStatCmpt = (self.m_world):BattleStat()
+function AIComponentNew:InitCreateRound()
+  local battleStatCmpt = self.m_world:BattleStat()
   self.m_nCreateRound = battleStatCmpt:GetCurWaveTotalRoundCount()
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetCreateRound = function(self)
-  -- function num : 0_62
+function AIComponentNew:GetCreateRound()
   return self.m_nCreateRound
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetAITreeState = function(self)
-  -- function num : 0_63
+function AIComponentNew:GetAITreeState()
   return self._treeState
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetAITreeState = function(self, st)
-  -- function num : 0_64
+function AIComponentNew:SetAITreeState(st)
   self._treeState = st
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetAIRoundEnd = function(self, isEnd)
-  -- function num : 0_65
+function AIComponentNew:SetAIRoundEnd(isEnd)
   self._isAIRoundEnd = isEnd
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.IsAIRoundEnd = function(self)
-  -- function num : 0_66
+function AIComponentNew:IsAIRoundEnd()
   return self._isAIRoundEnd
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.IsAttachState = function(self, curRound, waveIndex)
-  -- function num : 0_67
+function AIComponentNew:IsAttachState(curRound, waveIndex)
   if self:GetRuntimeData("AttachMonsterID") then
     return true
-  else
-    if self:GetRuntimeData("DetachBeginRunRound") then
-      local detachWaveIndex = self:GetRuntimeData("DetachBeginWaveIndex")
-      if detachWaveIndex < waveIndex then
-        return false
-      else
-        if self:GetRuntimeData("DetachBeginRunRound") <= curRound then
-          return false
-        else
-          return true
-        end
-      end
+  elseif self:GetRuntimeData("DetachBeginRunRound") then
+    local detachWaveIndex = self:GetRuntimeData("DetachBeginWaveIndex")
+    if waveIndex > detachWaveIndex then
+      return false
+    elseif curRound >= self:GetRuntimeData("DetachBeginRunRound") then
+      return false
     else
-      do
-        do return false end
-      end
+      return true
     end
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetAIMovePath_Test = function(self)
-  -- function num : 0_68
+function AIComponentNew:GetAIMovePath_Test()
   return self._aiMovePathTest
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetAIMovePath_Test = function(self, path)
-  -- function num : 0_69
+function AIComponentNew:SetAIMovePath_Test(path)
   self._aiMovePathTest = path
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetAntiSkill = function(self)
-  -- function num : 0_70
+function AIComponentNew:GetAntiSkill()
   return self._hasAntiSkill
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetAntiSkill = function(self, hasAntiSkill)
-  -- function num : 0_71
+function AIComponentNew:SetAntiSkill(hasAntiSkill)
   self._hasAntiSkill = hasAntiSkill
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.GetContextByTreeInstanceID = function(self, instanceID, key)
-  -- function num : 0_72
-  local context = (self._treeContext)[instanceID]
+function AIComponentNew:GetContextByTreeInstanceID(instanceID, key)
+  local context = self._treeContext[instanceID]
   if not context then
     return nil
   end
   return context[key]
 end
 
--- DECOMPILER ERROR at PC232: Confused about usage of register: R0 in 'UnsetPending'
-
-AIComponentNew.SetContextByTreeInstanceID = function(self, instanceID, key, value)
-  -- function num : 0_73
-  local context = (self._treeContext)[instanceID]
+function AIComponentNew:SetContextByTreeInstanceID(instanceID, key, value)
+  local context = self._treeContext[instanceID]
   if not context then
     context = {}
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._treeContext)[instanceID] = context
+    self._treeContext[instanceID] = context
   end
   context[key] = value
 end
 
--- DECOMPILER ERROR at PC235: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AI = function(self)
-  -- function num : 0_74
-  return self:GetComponent((self.WEComponentsEnum).AI)
+function Entity:AI()
+  return self:GetComponent(self.WEComponentsEnum.AI)
 end
 
--- DECOMPILER ERROR at PC238: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAI = function(self)
-  -- function num : 0_75
-  return self:HasComponent((self.WEComponentsEnum).AI)
+function Entity:HasAI()
+  return self:HasComponent(self.WEComponentsEnum.AI)
 end
 
--- DECOMPILER ERROR at PC241: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasNewAI = function(self)
-  -- function num : 0_76
-  return self:HasComponent((self.WEComponentsEnum).AI)
+function Entity:HasNewAI()
+  return self:HasComponent(self.WEComponentsEnum.AI)
 end
 
--- DECOMPILER ERROR at PC244: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.InitAI = function(self, world, nMonsterID, nMobility, aiTargetType)
-  -- function num : 0_77 , upvalues : _ENV
+function Entity:InitAI(world, nMonsterID, nMobility, aiTargetType)
   local aiComponent = self:AI()
-  do
-    if aiComponent == nil then
-      local index = (self.WEComponentsEnum).AI
-      aiComponent = AIComponentNew:New()
-    end
-    aiComponent.m_world = world
+  if aiComponent == nil then
+    local index = self.WEComponentsEnum.AI
+    aiComponent = AIComponentNew:New()
+  end
+  aiComponent.m_world = world
+  aiComponent.m_nMonsterID = nMonsterID or 0
+  aiComponent.m_nMobilityConfig = nMobility or 0
+  aiComponent._ownerEntity = self
+  if aiTargetType then
+    aiComponent._aiTargetType = aiTargetType
+  end
+  aiComponent:InitCreateRound()
+  self:ReplaceComponent(self.WEComponentsEnum.AI, aiComponent)
+end
+
+function Entity:AddNewAI(nMonsterID, aiLogicType, listAiID)
+  if nil == listAiID or #listAiID <= 0 then
+    return
+  end
+  local aiComponent = self:AI()
+  if aiComponent == nil then
+    local index = self.WEComponentsEnum.AI
+    aiComponent = AIComponentNew:New()
     aiComponent.m_nMonsterID = nMonsterID or 0
-    aiComponent.m_nMobilityConfig = nMobility or 0
     aiComponent._ownerEntity = self
-    if aiTargetType then
-      aiComponent._aiTargetType = aiTargetType
-    end
-    aiComponent:InitCreateRound()
-    self:ReplaceComponent((self.WEComponentsEnum).AI, aiComponent)
   end
+  for i = 1, #listAiID do
+    local aiIDAndOrder = listAiID[i]
+    local aiGenInfo = AIGenInfo:New(aiComponent.m_world, self, aiIDAndOrder[1], nMonsterID, aiLogicType)
+    local aiLogic = CustomLogicFactory.Static_CreateLogic(aiGenInfo)
+    if aiIDAndOrder[3] then
+      aiLogic._parallelID = aiIDAndOrder[3]
+    end
+    aiComponent:AddLogic(aiLogicType, aiLogic, aiIDAndOrder[2])
+  end
+  self:ReplaceComponent(self.WEComponentsEnum.AI, aiComponent)
 end
 
--- DECOMPILER ERROR at PC247: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddNewAI = function(self, nMonsterID, aiLogicType, listAiID)
-  -- function num : 0_78 , upvalues : _ENV
-  if listAiID == nil or #listAiID <= 0 then
-    return 
+function Entity:AddNewAIByConfig(nMonsterID, listConfigAiID, aiOrder)
+  if nil == listConfigAiID or #listConfigAiID <= 0 then
+    return
   end
   local aiComponent = self:AI()
-  do
-    if aiComponent == nil then
-      local index = (self.WEComponentsEnum).AI
-      aiComponent = AIComponentNew:New()
-      aiComponent.m_nMonsterID = nMonsterID or 0
-      aiComponent._ownerEntity = self
-    end
-    for i = 1, #listAiID do
-      local aiIDAndOrder = listAiID[i]
-      local aiGenInfo = AIGenInfo:New(aiComponent.m_world, self, aiIDAndOrder[1], nMonsterID, aiLogicType)
-      local aiLogic = (CustomLogicFactory.Static_CreateLogic)(aiGenInfo)
-      if aiIDAndOrder[3] then
-        aiLogic._parallelID = aiIDAndOrder[3]
-      end
-      aiComponent:AddLogic(aiLogicType, aiLogic, aiIDAndOrder[2])
-    end
-    self:ReplaceComponent((self.WEComponentsEnum).AI, aiComponent)
+  if aiComponent == nil then
+    local index = self.WEComponentsEnum.AI
+    aiComponent = AIComponentNew:New()
+    aiComponent.m_nMonsterID = nMonsterID or 0
+    aiComponent._ownerEntity = self
   end
+  for i = 1, #listConfigAiID do
+    local nConfigAiID = listConfigAiID[i]
+    local aiGenInfo = AIGenInfoByConfig:New(aiComponent.m_world, self, nConfigAiID)
+    local aiLogic = CustomLogicFactory.Static_CreateLogic(aiGenInfo)
+    local aiLogicPeriodType = aiGenInfo:GetLogicType()
+    aiLogicPeriodType = self._world:ReplaceAILogicPeriodType(aiLogicPeriodType)
+    local aiLogicOrder = aiOrder or aiGenInfo:GetLogicOrder()
+    aiComponent:AddLogic(aiLogicPeriodType, aiLogic, aiLogicOrder)
+    if aiGenInfo:IsPreview() then
+      aiComponent:SetPreviewLogic(aiLogicPeriodType, aiLogicOrder)
+    end
+  end
+  self:ReplaceComponent(self.WEComponentsEnum.AI, aiComponent)
 end
 
--- DECOMPILER ERROR at PC250: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddNewAIByConfig = function(self, nMonsterID, listConfigAiID, aiOrder)
-  -- function num : 0_79 , upvalues : _ENV
-  if listConfigAiID == nil or #listConfigAiID <= 0 then
-    return 
-  end
-  local aiComponent = self:AI()
-  do
-    if aiComponent == nil then
-      local index = (self.WEComponentsEnum).AI
-      aiComponent = AIComponentNew:New()
-      aiComponent.m_nMonsterID = nMonsterID or 0
-      aiComponent._ownerEntity = self
-    end
-    for i = 1, #listConfigAiID do
-      local nConfigAiID = listConfigAiID[i]
-      local aiGenInfo = AIGenInfoByConfig:New(aiComponent.m_world, self, nConfigAiID)
-      local aiLogic = (CustomLogicFactory.Static_CreateLogic)(aiGenInfo)
-      local aiLogicPeriodType = aiGenInfo:GetLogicType()
-      aiLogicPeriodType = (self._world):ReplaceAILogicPeriodType(aiLogicPeriodType)
-      if not aiOrder then
-        local aiLogicOrder = aiGenInfo:GetLogicOrder()
-      end
-      aiComponent:AddLogic(aiLogicPeriodType, aiLogic, aiLogicOrder)
-      if aiGenInfo:IsPreview() then
-        aiComponent:SetPreviewLogic(aiLogicPeriodType, aiLogicOrder)
-      end
-    end
-    self:ReplaceComponent((self.WEComponentsEnum).AI, aiComponent)
-  end
-end
-
--- DECOMPILER ERROR at PC253: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceAI = function(self, nLogicType, listAiID, orderIndex, enforce)
-  -- function num : 0_80 , upvalues : _ENV
+function Entity:ReplaceAI(nLogicType, listAiID, orderIndex, enforce)
   local aiComponent = self:AI()
   if aiComponent == nil then
     return false
@@ -996,16 +690,14 @@ Entity.ReplaceAI = function(self, nLogicType, listAiID, orderIndex, enforce)
   if aiComponent:GetCutLogic() and not enforce then
     return true
   end
-  if listAiID == nil or #listAiID <= 0 then
+  if nil == listAiID or #listAiID <= 0 then
     return false
   end
-  if not orderIndex or not orderIndex then
-    local nOrderIndex = AILogicOrderType.BaseOrder
-  end
+  local nOrderIndex = orderIndex and orderIndex or AILogicOrderType.BaseOrder
   local pLogicList = {}
   for i = 1, #listAiID do
     local aiGenInfo = AIGenInfo:New(aiComponent.m_world, self, listAiID[i], nil, nLogicType)
-    local aiLogic = (CustomLogicFactory.Static_CreateLogic)(aiGenInfo)
+    local aiLogic = CustomLogicFactory.Static_CreateLogic(aiGenInfo)
     pLogicList[nOrderIndex] = aiLogic
     nOrderIndex = nOrderIndex + 1
   end
@@ -1014,80 +706,60 @@ Entity.ReplaceAI = function(self, nLogicType, listAiID, orderIndex, enforce)
   return true
 end
 
--- DECOMPILER ERROR at PC256: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ResumeAI = function(self, nLogicType)
-  -- function num : 0_81
+function Entity:ResumeAI(nLogicType)
   local aiComponent = self:AI()
   if aiComponent == nil then
-    return 
+    return
   end
   aiComponent:ExchangeOnceLogic(nLogicType)
   aiComponent:SetCutLogic(nil)
 end
 
--- DECOMPILER ERROR at PC259: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ClearAI = function(self, nLogicType)
-  -- function num : 0_82
+function Entity:ClearAI(nLogicType)
   local aiComponent = self:AI()
   if aiComponent == nil then
-    return 
+    return
   end
   aiComponent:SetCutLogic(nil)
   aiComponent:ExchangeOnceLogic(nLogicType)
 end
 
--- DECOMPILER ERROR at PC262: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetCoverAreaList = function(self, pos, fakeBodyArea)
-  -- function num : 0_83 , upvalues : _ENV
+function Entity:GetCoverAreaList(pos, fakeBodyArea)
   local posList = {}
-  if pos == nil then
-    pos = (self:GridLocation()).Position
+  if nil == pos then
+    pos = self:GridLocation().Position
   end
   if self:HasBodyArea() then
-    local area = (self:BodyArea()):GetArea()
+    local area = self:BodyArea():GetArea()
     if fakeBodyArea then
       area = fakeBodyArea
     end
-    if #area > 1 then
+    if 1 < #area then
       for i = 1, #area do
-        posList[#posList + 1] = Vector2(pos.x + (area[i]).x, pos.y + (area[i]).y)
+        posList[#posList + 1] = Vector2(pos.x + area[i].x, pos.y + area[i].y)
       end
     else
-      do
-        do
-          posList[#posList + 1] = Vector2(pos.x + (area[1]).x, pos.y + (area[1]).y)
-          posList[#posList + 1] = pos
-          return posList
-        end
-      end
+      posList[#posList + 1] = Vector2(pos.x + area[1].x, pos.y + area[1].y)
     end
+  else
+    posList[#posList + 1] = pos
   end
+  return posList
 end
 
--- DECOMPILER ERROR at PC265: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetAICanMoveTurn = function(self, monsterID, canMove, canTurn)
-  -- function num : 0_84
+function Entity:SetAICanMoveTurn(monsterID, canMove, canTurn)
   local aiComponent = self:AI()
   if aiComponent == nil then
-    return 
+    return
   end
   aiComponent.canMove = canMove or false
   aiComponent.canTurn = canTurn or false
 end
 
--- DECOMPILER ERROR at PC268: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.InitPreviewLogic = function(self, nLogicType)
-  -- function num : 0_85
+function Entity:InitPreviewLogic(nLogicType)
   local aiComponent = self:AI()
   if aiComponent == nil then
-    return 
+    return
   end
   aiComponent:InitPreviewLogic(nLogicType)
 end
-
-

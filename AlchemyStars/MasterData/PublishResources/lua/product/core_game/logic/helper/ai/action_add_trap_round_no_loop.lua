@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_add_trap_round_no_loop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionAddTrapRoundNoLoop", AINewNode)
 ActionAddTrapRoundNoLoop = ActionAddTrapRoundNoLoop
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionAddTrapRoundNoLoop.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local attributeCmpt = (self.m_entityOwn):Attributes()
+function ActionAddTrapRoundNoLoop:OnUpdate()
+  local attributeCmpt = self.m_entityOwn:Attributes()
   if attributeCmpt then
     local round = attributeCmpt:GetAttribute("CurrentRound")
     local total = attributeCmpt:GetAttribute("TotalRound")
@@ -18,13 +11,8 @@ ActionAddTrapRoundNoLoop.OnUpdate = function(self)
       round = round + 1
       attributeCmpt:Modify("CurrentRound", round)
     end
-    local res = DataAttributeResult:New((self.m_entityOwn):GetID(), "CurrentRound", round)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.DataLogicResult, 0, res)
+    local res = DataAttributeResult:New(self.m_entityOwn:GetID(), "CurrentRound", round)
+    self._world:EventDispatcher():Dispatch(GameEventType.DataLogicResult, 0, res)
   end
-  do
-    return AINewNodeStatus.Success
-  end
+  return AINewNodeStatus.Success
 end
-
-

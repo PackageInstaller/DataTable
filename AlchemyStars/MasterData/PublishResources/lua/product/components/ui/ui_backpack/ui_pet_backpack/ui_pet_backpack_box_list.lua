@@ -1,45 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_pet_backpack/ui_pet_backpack_box_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetBackPackBoxList", UICustomWidget)
 UIPetBackPackBoxList = UIPetBackPackBoxList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetBackPackBoxList.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetBackPackBoxList:OnShow(uiParams)
   self._petItemLoader = self:GetUIComponent("UISelectObjectPath", "Pet")
   self._title = self:GetUIComponent("UILocalizationText", "txt")
   self._titleObj = self:GetGameObject("Title")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackBoxList.OnHide = function(self)
-  -- function num : 0_1
+function UIPetBackPackBoxList:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetBackPackBoxList.SetData = function(self, petList, packBox, scrollRect, previewMode)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetBackPackBoxList:SetData(petList, packBox, scrollRect, previewMode)
   local pet = petList[1]
   local type = petList[2]
   if #pet == 0 then
-    (self._titleObj):SetActive(false)
-    return 
+    self._titleObj:SetActive(false)
+    return
   end
   if type then
-    (self._title):SetText((StringTable.Get)("str_item_select_pet_have"))
+    self._title:SetText(StringTable.Get("str_item_select_pet_have"))
   else
-    ;
-    (self._title):SetText((StringTable.Get)("str_item_select_pet_not_have"))
+    self._title:SetText(StringTable.Get("str_item_select_pet_not_have"))
   end
-  local items = (self._petItemLoader):SpawnObjects("UIPetBackPackBoxItem", #pet)
+  local items = self._petItemLoader:SpawnObjects("UIPetBackPackBoxItem", #pet)
   for i = 1, #items do
-    (items[i]):Refresh(packBox, pet[i], scrollRect, previewMode)
+    items[i]:Refresh(packBox, pet[i], scrollRect, previewMode)
   end
 end
-
-

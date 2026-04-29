@@ -1,43 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/cls/ui_n14_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N14Data", CampaignDataBase)
 N14Data = N14Data
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N14Data.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._redDotModule = (GameGlobal.GetModule)(RedDotModule)
+function N14Data:Constructor()
+  self._redDotModule = GameGlobal.GetModule(RedDotModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.CheckRedAward = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local red = (self._redDotModule):_RequestRedDotStatus4N14(RedDotType.RDT_N14_LOGIN_AWARD)
+function N14Data:CheckRedAward()
+  local red = self._redDotModule:_RequestRedDotStatus4N14(RedDotType.RDT_N14_LOGIN_AWARD)
   return red
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.CheckRedNormal = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local red = (self._redDotModule):_RequestRedDotStatus4N14(RedDotType.RDT_N14_EASYLINEMISSION)
+function N14Data:CheckRedNormal()
+  local red = self._redDotModule:_RequestRedDotStatus4N14(RedDotType.RDT_N14_EASYLINEMISSION)
   return red
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.CheckRedMiniGame = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function N14Data:CheckRedMiniGame()
   local red = false
-  self._componentInfo = (self.activityCampaign):GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_MINI_GAME)
-  local missions = (self._componentInfo).mission_info_list
-  for key,value in pairs(missions) do
+  self._componentInfo = self.activityCampaign:GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_MINI_GAME)
+  local missions = self._componentInfo.mission_info_list
+  for key, value in pairs(missions) do
     local miss_info = value.mission_info
-    for key,value in pairs(ScoreType) do
+    for key, value in pairs(ScoreType) do
       if value <= miss_info.mission_grade and miss_info.reward_mask & value == 0 then
         return true
       end
@@ -46,218 +30,140 @@ N14Data.CheckRedMiniGame = function(self)
   return red
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.CheckNewMiniGame = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local new = (self._redDotModule):_RequestRedDotStatus4N14(RedDotType.RDT_N14_FISHING_NEW)
+function N14Data:CheckNewMiniGame()
+  local new = self._redDotModule:_RequestRedDotStatus4N14(RedDotType.RDT_N14_FISHING_NEW)
   return new
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.CheckNewHard = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local red = (self._redDotModule):_RequestRedDotStatus4N14(RedDotType.RDT_N14_HARDLINEMISSION_NEW)
+function N14Data:CheckNewHard()
+  local red = self._redDotModule:_RequestRedDotStatus4N14(RedDotType.RDT_N14_HARDLINEMISSION_NEW)
   return red
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetComponentNormal = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN14ComponentID.ECAMPAIGN_N14_LEVEL_COMMON)
+function N14Data:GetComponentNormal()
+  local c = self.activityCampaign:GetComponent(ECampaignN14ComponentID.ECAMPAIGN_N14_LEVEL_COMMON)
   return c
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetComponentHard = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN14ComponentID.ECAMPAIGN_N14_LEVEL_HARD)
+function N14Data:GetComponentHard()
+  local c = self.activityCampaign:GetComponent(ECampaignN14ComponentID.ECAMPAIGN_N14_LEVEL_HARD)
   return c
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetComponentInfoNormal = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_LEVEL_COMMON)
+function N14Data:GetComponentInfoNormal()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_LEVEL_COMMON)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetComponentInfoHard = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_LEVEL_HARD)
+function N14Data:GetComponentInfoHard()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_LEVEL_HARD)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetComponentInfoMinigame = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_MINI_GAME)
+function N14Data:GetComponentInfoMinigame()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_MINI_GAME)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetStateShop = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_SHOP)
+function N14Data:GetStateShop()
+  local c = self.activityCampaign:GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_SHOP)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetStateMiniGame = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_MINI_GAME)
+function N14Data:GetStateMiniGame()
+  local c = self.activityCampaign:GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_MINI_GAME)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetStateAward = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_CUMULATIVE_LOGIN)
+function N14Data:GetStateAward()
+  local c = self.activityCampaign:GetComponentInfo(ECampaignN14ComponentID.ECAMPAIGN_N14_CUMULATIVE_LOGIN)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetState = function(self, cInfo)
-  -- function num : 0_14 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function N14Data:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetStateNormal = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function N14Data:GetStateNormal()
   local cInfo = self:GetComponentInfoNormal()
   if not cInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cInfo)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetStateHard = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function N14Data:GetStateHard()
   local cHardInfo = self:GetComponentInfoHard()
   if not cHardInfo then
-    (Log.fatal)("### GetComponentHard failed.")
-    return 
+    Log.fatal("### GetComponentHard failed.")
+    return
   end
   return self:GetState(cHardInfo)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetPstId = function()
-  -- function num : 0_17 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function N14Data.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetPrefsKey = function(str)
-  -- function num : 0_18 , upvalues : _ENV
-  local playerPrefsKey = (N14Data.GetPstId)() .. str
+function N14Data.GetPrefsKey(str)
+  local playerPrefsKey = N14Data.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetPrefsKeyMain = function()
-  -- function num : 0_19 , upvalues : _ENV
-  return (N14Data.GetPrefsKey)("UIN14DataPrefsKeyMain")
+function N14Data.GetPrefsKeyMain()
+  return N14Data.GetPrefsKey("UIN14DataPrefsKeyMain")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetPrefsKeyHard = function()
-  -- function num : 0_20 , upvalues : _ENV
-  return (N14Data.GetPrefsKey)("UIN14DataPrefsKeyHard")
+function N14Data.GetPrefsKeyHard()
+  return N14Data.GetPrefsKey("UIN14DataPrefsKeyHard")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.GetPrefsKeyMiniGame = function()
-  -- function num : 0_21 , upvalues : _ENV
-  return (N14Data.GetPrefsKey)("UIN14DataPrefsKeyMiniGame")
+function N14Data.GetPrefsKeyMiniGame()
+  return N14Data.GetPrefsKey("UIN14DataPrefsKeyMiniGame")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.HasPrefsMain = function()
-  -- function num : 0_22 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N14Data.GetPrefsKeyMain)())
+function N14Data.HasPrefsMain()
+  return UnityEngine.PlayerPrefs.HasKey(N14Data.GetPrefsKeyMain())
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.HasPrefsHard = function()
-  -- function num : 0_23 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N14Data.GetPrefsKeyHard)())
+function N14Data.HasPrefsHard()
+  return UnityEngine.PlayerPrefs.HasKey(N14Data.GetPrefsKeyHard())
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.HasPrefsMiniGame = function()
-  -- function num : 0_24 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N14Data.GetPrefsKeyMiniGame)())
+function N14Data.HasPrefsMiniGame()
+  return UnityEngine.PlayerPrefs.HasKey(N14Data.GetPrefsKeyMiniGame())
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.SetPrefsMain = function()
-  -- function num : 0_25 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N14Data.GetPrefsKeyMain)(), 1)
+function N14Data.SetPrefsMain()
+  UnityEngine.PlayerPrefs.SetInt(N14Data.GetPrefsKeyMain(), 1)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.SetPrefsHard = function()
-  -- function num : 0_26 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N14Data.GetPrefsKeyHard)(), 1)
+function N14Data.SetPrefsHard()
+  UnityEngine.PlayerPrefs.SetInt(N14Data.GetPrefsKeyHard(), 1)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-N14Data.SetPrefsMiniGame = function()
-  -- function num : 0_27 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N14Data.GetPrefsKeyMiniGame)(), 1)
+function N14Data.SetPrefsMiniGame()
+  UnityEngine.PlayerPrefs.SetInt(N14Data.GetPrefsKeyMiniGame(), 1)
 end
-
-

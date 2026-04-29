@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/chess/pickup_chess_result_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpChessResultComponent", Object)
 PickUpChessResultComponent = PickUpChessResultComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpChessResultComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpChessResultComponent:Constructor()
   self._targetType = ChessPickUpTargetType.None
   self._lastPickUpGridPos = Vector2(0, 0)
   self._curPickUpGridPos = Vector2(0, 0)
@@ -24,192 +17,111 @@ PickUpChessResultComponent.Constructor = function(self)
   self._monsterChessTargetEffectIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetChessPickUpResultType = function(self, type)
-  -- function num : 0_1
+function PickUpChessResultComponent:SetChessPickUpResultType(type)
   self._targetType = type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetChessPickUpResultType = function(self)
-  -- function num : 0_2
+function PickUpChessResultComponent:GetChessPickUpResultType()
   return self._targetType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetCurChessPickUpPos = function(self)
-  -- function num : 0_3
+function PickUpChessResultComponent:GetCurChessPickUpPos()
   return self._curPickUpGridPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetCurChessPickUpSafePos = function(self)
-  -- function num : 0_4
+function PickUpChessResultComponent:GetCurChessPickUpSafePos()
   return self._curPickUpGridPosSafe
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetPickUpChessPetEntityID = function(self)
-  -- function num : 0_5
+function PickUpChessResultComponent:GetPickUpChessPetEntityID()
   return self._chessPetEntityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetPickUpChessPetEntityID = function(self, entityID)
-  -- function num : 0_6
+function PickUpChessResultComponent:SetPickUpChessPetEntityID(entityID)
   self._chessPetEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetPickUpPreviewGhostEntityID = function(self)
-  -- function num : 0_7
+function PickUpChessResultComponent:GetPickUpPreviewGhostEntityID()
   return self._previewGhostEntityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetPickUpPreviewGhostEntityID = function(self, entityID)
-  -- function num : 0_8
+function PickUpChessResultComponent:SetPickUpPreviewGhostEntityID(entityID)
   self._previewGhostEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetPickUpMonsterEntityID = function(self)
-  -- function num : 0_9
+function PickUpChessResultComponent:GetPickUpMonsterEntityID()
   return self._monsterEntityID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetPickUpMonsterEntityID = function(self, entityID)
-  -- function num : 0_10
+function PickUpChessResultComponent:SetPickUpMonsterEntityID(entityID)
   self._monsterEntityID = entityID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetChessPickUpPos = function(self, pickUpGridPos)
-  -- function num : 0_11
+function PickUpChessResultComponent:SetChessPickUpPos(pickUpGridPos)
   self._curPickUpGridPos = pickUpGridPos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetChessPickUpTargetChanged = function(self, isChange)
-  -- function num : 0_12
+function PickUpChessResultComponent:SetChessPickUpTargetChanged(isChange)
   self._pickUpTargetChanged = isChange
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.IsChessPickUpTargetChanged = function(self)
-  -- function num : 0_13
+function PickUpChessResultComponent:IsChessPickUpTargetChanged()
   return self._pickUpTargetChanged
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetChessPetWalkRange = function(self, range)
-  -- function num : 0_14
+function PickUpChessResultComponent:SetChessPetWalkRange(range)
   self._walkRangeList = range
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetChessPetWalkRange = function(self)
-  -- function num : 0_15
+function PickUpChessResultComponent:GetChessPetWalkRange()
   return self._walkRangeList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetChessPetWalkRangeReal = function(self, range)
-  -- function num : 0_16
+function PickUpChessResultComponent:SetChessPetWalkRangeReal(range)
   self._walkRangeRealList = range
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetChessPetWalkRangeReal = function(self)
-  -- function num : 0_17
+function PickUpChessResultComponent:GetChessPetWalkRangeReal()
   return self._walkRangeRealList
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetChessPetAttackRange = function(self, range)
-  -- function num : 0_18
+function PickUpChessResultComponent:SetChessPetAttackRange(range)
   self._attackRangeList = range
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetChessPetAttackRange = function(self)
-  -- function num : 0_19
+function PickUpChessResultComponent:GetChessPetAttackRange()
   return self._attackRangeList
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetSkillIsRecover = function(self, isRecover)
-  -- function num : 0_20
+function PickUpChessResultComponent:SetSkillIsRecover(isRecover)
   self._isRecover = isRecover
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetSkillIsRecover = function(self)
-  -- function num : 0_21
+function PickUpChessResultComponent:GetSkillIsRecover()
   return self._isRecover
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.SetChessPetMovePath = function(self, movePath)
-  -- function num : 0_22
+function PickUpChessResultComponent:SetChessPetMovePath(movePath)
   self._movePath = movePath
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetChessPetMovePath = function(self)
-  -- function num : 0_23
+function PickUpChessResultComponent:GetChessPetMovePath()
   return self._movePath
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.AddMonsterChessTargetEffectEntity = function(self, entityID)
-  -- function num : 0_24 , upvalues : _ENV
-  (table.insert)(self._monsterChessTargetEffectIDList, entityID)
+function PickUpChessResultComponent:AddMonsterChessTargetEffectEntity(entityID)
+  table.insert(self._monsterChessTargetEffectIDList, entityID)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.GetMonsterChessTargetEffectEntityIDList = function(self)
-  -- function num : 0_25
+function PickUpChessResultComponent:GetMonsterChessTargetEffectEntityIDList()
   return self._monsterChessTargetEffectIDList
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.ClearMonsterChessTargetEffectEntityIDList = function(self)
-  -- function num : 0_26
+function PickUpChessResultComponent:ClearMonsterChessTargetEffectEntityIDList()
   self._monsterChessTargetEffectIDList = {}
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpChessResultComponent.ResetChessPickUp = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function PickUpChessResultComponent:ResetChessPickUp()
   self._pickUpTargetType = SkillPickUpType.None
   self._lastPickUpGridPos = Vector2(0, 0)
   self._curPickUpGridPos = Vector2(0, 0)
@@ -220,45 +132,28 @@ PickUpChessResultComponent.ResetChessPickUp = function(self)
   self._movePath = {}
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PickUpChessResult = function(self)
-  -- function num : 0_28
-  return self:GetComponent((self.WEComponentsEnum).PickUpChessResult)
+function Entity:PickUpChessResult()
+  return self:GetComponent(self.WEComponentsEnum.PickUpChessResult)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPickUpChessResult = function(self)
-  -- function num : 0_29
-  return self:HasComponent((self.WEComponentsEnum).PickUpChessResult)
+function Entity:HasPickUpChessResult()
+  return self:HasComponent(self.WEComponentsEnum.PickUpChessResult)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPickUpChessResult = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PickUpChessResult
+function Entity:AddPickUpChessResult()
+  local index = self.WEComponentsEnum.PickUpChessResult
   local component = PickUpChessResultComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePickUpChessResult = function(self)
-  -- function num : 0_31
-  local component = self:GetComponent((self.WEComponentsEnum).PickUpChessResult)
-  local index = (self.WEComponentsEnum).PickUpChessResult
+function Entity:ReplacePickUpChessResult()
+  local component = self:GetComponent(self.WEComponentsEnum.PickUpChessResult)
+  local index = self.WEComponentsEnum.PickUpChessResult
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePickUpChessResult = function(self)
-  -- function num : 0_32
+function Entity:RemovePickUpChessResult()
   if self:HasPickUpChessResult() then
-    self:RemoveComponent((self.WEComponentsEnum).PickUpChessResult)
+    self:RemoveComponent(self.WEComponentsEnum.PickUpChessResult)
   end
 end
-
-

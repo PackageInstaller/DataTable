@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_move_path_end_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_MovePathEndPos", PickUpPolicy_Base)
 PickUpPolicy_MovePathEndPos = PickUpPolicy_MovePathEndPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_MovePathEndPos.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PickUpPolicy_MovePathEndPos:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local boardService = (self._world):GetService("BoardLogic")
+  local boardService = self._world:GetService("BoardLogic")
   local posList = {}
   local attackPosList = {}
   local targetIdList = {}
   local env = self:_GetPickUpPolicyEnv()
-  local autoFightSvc = (self._world):GetService("AutoFight")
+  local autoFightSvc = self._world:GetService("AutoFight")
   local chainPath, pieceType, evalue = autoFightSvc:GetAutoChainPath(calcParam.TT, env.TeamEntity)
   local pos = chainPath[#chainPath]
   local isBlockedSummonTrap = boardService:IsPosBlock(pos, BlockFlag.MonsterLand)
@@ -26,11 +19,8 @@ PickUpPolicy_MovePathEndPos.CalcAutoFightPickUpPolicy = function(self, calcParam
   if #chainPath == 1 or isBlockedSummonTrap or isBlockedLinkLine then
     return {}, {}, {}
   end
-  ;
-  (table.insert)(posList, pos)
+  table.insert(posList, pos)
   local result, targetIds = self:_CalcSkillScopeResultAndTargets_PickUpPolicy(petEntity, activeSkillID, pos)
   attackPosList = result:GetAttackRange()
   return posList, attackPosList, targetIds
 end
-
-

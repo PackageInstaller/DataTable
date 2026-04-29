@@ -1,91 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_message_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_common_message_box")
 require("ui_get_item_controller")
 _class("UIN25IdolMessageBox", UICommonMessageBox)
 UIN25IdolMessageBox = UIN25IdolMessageBox
 _class("UIN25IdolGetItem", UIGetItemController)
 UIN25IdolGetItem = UIN25IdolGetItem
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolMessageBox.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolMessageBox:Constructor()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMessageBox.ButtonCancelOnClick = function(self, go)
-  -- function num : 0_1 , upvalues : _ENV
-  self._animation = (self.gameobject):GetComponent("Animation")
+function UIN25IdolMessageBox:ButtonCancelOnClick(go)
+  self._animation = self.gameobject:GetComponent("Animation")
   if self._animation == nil then
-    (UICommonMessageBox.ButtonCancelOnClick)(self, go)
-    return 
+    UICommonMessageBox.ButtonCancelOnClick(self, go)
+    return
   end
   local cancelCallback = self.cancelCallback
   self.cancelCallback = nil
-  ;
-  (UICommonMessageBox.ButtonCancelOnClick)(self, go)
+  UICommonMessageBox.ButtonCancelOnClick(self, go)
   local lockName = "UIN25IdolMessageBox:_backAnim"
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, lockName, _ENV, cancelCallback
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIN25IdolMessageBox_out")
+    self._animation:Play("uieff_UIN25IdolMessageBox_out")
     YIELD(TT, 400)
     self:UnLock(lockName)
     if cancelCallback then
       cancelCallback()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMessageBox.StartTask = function(self, func, ...)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolMessageBox:StartTask(func, ...)
   if type(func) ~= "function" then
-    return 
+    return
   end
-  return ((GameGlobal.TaskManager)()):StartTask(func, ...)
+  return GameGlobal.TaskManager():StartTask(func, ...)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMessageBox.Lock = function(self, name)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock(name)
+function UIN25IdolMessageBox:Lock(name)
+  GameGlobal.UIStateManager():Lock(name)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolMessageBox.UnLock = function(self, name)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock(name)
+function UIN25IdolMessageBox:UnLock(name)
+  GameGlobal.UIStateManager():UnLock(name)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGetItem.Constructor = function(self)
-  -- function num : 0_5
+function UIN25IdolGetItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGetItem._InitListView = function(self, scrollView, index)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN25IdolGetItem:_InitListView(scrollView, index)
   local fnBase = UIGetItemController._InitListView
   local item = fnBase(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolGetItem._ShowItem = function(self, giftItem, index, tweenIdx)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN25IdolGetItem:_ShowItem(giftItem, index, tweenIdx)
   local beforeTime = 0
   if not self._inited then
     beforeTime = self._beforeTime
@@ -93,16 +61,10 @@ UIN25IdolGetItem._ShowItem = function(self, giftItem, index, tweenIdx)
   local item_data = self:_GetItemDataByIndex(index)
   if item_data then
     giftItem:SetData(item_data, index, function(id, pos)
-    -- function num : 0_7_0 , upvalues : self
-    self:OnItemSelect(id, pos)
-  end
-, Color(0.42745098039216, 0.31372549019608, 0.76470588235294, 1), tweenIdx, beforeTime)
-    ;
-    (giftItem:GetGameObject()):SetActive(true)
+      self:OnItemSelect(id, pos)
+    end, Color(0.42745098039215684, 0.3137254901960784, 0.7647058823529411, 1), tweenIdx, beforeTime)
+    giftItem:GetGameObject():SetActive(true)
   else
-    ;
-    (giftItem:GetGameObject()):SetActive(false)
+    giftItem:GetGameObject():SetActive(false)
   end
 end
-
-

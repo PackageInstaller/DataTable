@@ -1,192 +1,135 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/theme/ui_s4_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4MainController", UIController)
 UIS4MainController = UIS4MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4MainController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIS4MainController:Constructor()
   self._isReview = false
-  self._canShare = (self:GetModule(ShareModule)):CanShare()
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._canShare = self:GetModule(ShareModule):CanShare()
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._SetRemainingTime = function(self, widgetName, extraId, descId, endTime)
-  -- function num : 0_1 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
-  ;
-  (obj:GetGameObject()):SetActive(endTime ~= nil)
+function UIS4MainController:_SetRemainingTime(widgetName, extraId, descId, endTime)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
+  obj:GetGameObject():SetActive(endTime ~= nil)
   if endTime == nil then
-    return 
+    return
   end
   obj:SetExtraText(nil, nil, extraId)
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, function(isFirst)
-    -- function num : 0_1_0 , upvalues : self
     if not isFirst then
       self:_Refresh()
     end
-  end
-)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._SetCommonTopButton = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+function UIS4MainController:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_2_0 , upvalues : self
     self:_Back()
-  end
-, nil, nil, false, function()
-    -- function num : 0_2_1 , upvalues : self
+  end, nil, nil, false, function()
     self:_HideUI()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._Back = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self:Manager()):CurUIStateType() == UIStateType.UIS4Main then
+function UIS4MainController:_Back()
+  if self:Manager():CurUIStateType() == UIStateType.UIS4Main then
     self:SwitchState(UIStateType.UIMain)
   else
     self:_Shot(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    self:_PlayAnim("out", function()
-      -- function num : 0_3_0_0 , upvalues : self, _ENV
-      self:CloseDialog()
-      ;
-      (UIBgmHelper.PlayMainBgm)()
-    end
-)
-  end
-)
+      self:_PlayAnim("out", function()
+        self:CloseDialog()
+        UIBgmHelper.PlayMainBgm()
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._HideUI = function(self)
-  -- function num : 0_4
-  (self:GetGameObject("_backBtns")):SetActive(false)
-  ;
-  (self:GetGameObject("_showBtn")):SetActive(true)
+function UIS4MainController:_HideUI()
+  self:GetGameObject("_backBtns"):SetActive(false)
+  self:GetGameObject("_showBtn"):SetActive(true)
   self:_PlayAnim("hide")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._ShowUI = function(self)
-  -- function num : 0_5
-  (self:GetGameObject("_backBtns")):SetActive(true)
-  ;
-  (self:GetGameObject("_showBtn")):SetActive(false)
+function UIS4MainController:_ShowUI()
+  self:GetGameObject("_backBtns"):SetActive(true)
+  self:GetGameObject("_showBtn"):SetActive(false)
   self:_PlayAnim("show")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._SetBg = function(self, phase)
-  -- function num : 0_6
+function UIS4MainController:_SetBg(phase)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._SetSpine = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local phase = (UISeasonPhaseHelper.CheckPhase)()
+function UIS4MainController:_SetSpine()
+  local phase = UISeasonPhaseHelper.CheckPhase()
   if phase == self._spinePhase then
-    return 
+    return
   end
   self._spinePhase = phase
-  local spineName = (UISeasonPhaseHelper.GetPhaseSpine)(phase)
-  ;
-  (UIWidgetHelper.SetSpineLoad)(self, "_spine", spineName)
+  local spineName = UISeasonPhaseHelper.GetPhaseSpine(phase)
+  UIWidgetHelper.SetSpineLoad(self, "_spine", spineName)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._PlayAnim = function(self, idx, callback)
-  -- function num : 0_8 , upvalues : _ENV
+function UIS4MainController:_PlayAnim(idx, callback)
   local tb = {
-["in"] = {animName = "uieffanim_UIS4MainController_in", duration = 200}
-, 
-out = {animName = "uieffanim_UIS4MainController_out", duration = 500}
-, 
-hide = {animName = "uieffanim_UIS4MainController_hide", duration = 500}
-, 
-show = {animName = "uieffanim_UIS4MainController_show", duration = 500}
-}
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[idx]).animName, (tb[idx]).duration, callback)
+    ["in"] = {
+      animName = "uieffanim_UIS4MainController_in",
+      duration = 200
+    },
+    out = {
+      animName = "uieffanim_UIS4MainController_out",
+      duration = 500
+    },
+    hide = {
+      animName = "uieffanim_UIS4MainController_hide",
+      duration = 500
+    },
+    show = {
+      animName = "uieffanim_UIS4MainController_show",
+      duration = 500
+    }
+  }
+  UIWidgetHelper.PlayAnimation(self, "_anim", tb[idx].animName, tb[idx].duration, callback)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._CheckGuide = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIS4MainController)
+function UIS4MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIS4MainController)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_10 , upvalues : _ENV
-  self._seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local reqRes = (self._seasonModule):ForceRequestCurSeasonData(TT)
-  self._seasonId = (self._seasonModule):GetCurSeasonID()
+function UIS4MainController:LoadDataOnEnter(TT, res, uiParams)
+  self._seasonModule = GameGlobal.GetModule(SeasonModule)
+  local reqRes = self._seasonModule:ForceRequestCurSeasonData(TT)
+  self._seasonId = self._seasonModule:GetCurSeasonID()
   if reqRes and not reqRes:GetSucc() then
-    (self._seasonModule):CheckErrorCode(reqRes.m_result, self._seasonId, nil, nil)
+    self._seasonModule:CheckErrorCode(reqRes.m_result, self._seasonId, nil, nil)
     res:SetSucc(false)
-    return 
+    return
   end
-  local uiModule = (GameGlobal.GetUIModule)(SeasonModule)
+  local uiModule = GameGlobal.GetUIModule(SeasonModule)
   uiModule:SetSeasonNew()
   uiModule:ClearBackTrack()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController.OnShow = function(self, uiParams)
-  -- function num : 0_11 , upvalues : _ENV
+function UIS4MainController:OnShow(uiParams)
   self:_SetCommonTopButton()
   self:_SetSpine()
-  local isRt = (UIWidgetHelper.SetRawImageTexture)(self, "rt", uiParams[1])
+  local isRt = UIWidgetHelper.SetRawImageTexture(self, "rt", uiParams[1])
   self:_PlayAnim("in", function()
-    -- function num : 0_11_0 , upvalues : self
     self:_CheckGuide()
-  end
-)
-  local obj = (UIWidgetHelper.SpawnObject)(self, "Title", "UIS4Title")
+  end)
+  local obj = UIWidgetHelper.SpawnObject(self, "Title", "UIS4Title")
   self:_Refresh(true)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController.OnHide = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIS4MainController:OnHide()
   self:_DetachEvents()
-  ;
-  (AudioHelperController.PlayBGMById)(SeasonCriAudio.BGMMain)
+  AudioHelperController.PlayBGMById(SeasonCriAudio.BGMMain)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._Refresh = function(self, first)
-  -- function num : 0_13
-  self._component_quest = (self._seasonModule):GetCurSeasonQuestComponent()
-  self._component_exchange = (self._seasonModule):GetCurSeasonExchangeComponent()
-  self._component_action = (self._seasonModule):GetCurSeasonActionPointComponent()
+function UIS4MainController:_Refresh(first)
+  self._component_quest = self._seasonModule:GetCurSeasonQuestComponent()
+  self._component_exchange = self._seasonModule:GetCurSeasonExchangeComponent()
+  self._component_action = self._seasonModule:GetCurSeasonActionPointComponent()
   self:_CalcTime()
   self:_SetBtn_Collage(first)
   self:_SetBtn_Exchange(first)
@@ -195,165 +138,104 @@ UIS4MainController._Refresh = function(self, first)
   self:_SetBtn_Go(first)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._CalcTime = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local getActionComponentTime = function(component)
-    -- function num : 0_14_0 , upvalues : self, _ENV
+function UIS4MainController:_CalcTime()
+  local function getActionComponentTime(component)
     local time = 0
-    if component then
-      local cfg = component:GetActionPointConfig()
+    
+    local cfg = component and component:GetActionPointConfig()
+    if cfg then
+      local loginModule = self:GetModule(LoginModule)
+      time = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
     end
-    do
-      if cfg then
-        local loginModule = self:GetModule(LoginModule)
-        time = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      end
-      return time or 0
-    end
+    return time or 0
   end
-
-  local getComponentCloseTime = function(component)
-    -- function num : 0_14_1
-    return component and (component:GetComponentInfo()).m_close_time or 0
+  
+  local function getComponentCloseTime(component)
+    return component and component:GetComponentInfo().m_close_time or 0
   end
-
-  local curTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
+  
+  local curTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
   local time_action = getActionComponentTime(self._component_action)
-  local time_exchange = (getComponentCloseTime(self._component_exchange))
-  local extra, time = nil, nil
+  local time_exchange = getComponentCloseTime(self._component_exchange)
+  local extra, time
   if curTime < time_action then
-    extra = "str_season_s4_main_time_cd_action"
-  else
-    -- DECOMPILER ERROR at PC25: Overwrote pending register: R7 in 'AssignReg'
-
-    if curTime < time_exchange then
-      extra = "str_season_s4_main_time_cd_exchange"
-    end
+    extra, time = "str_season_s4_main_time_cd_action", time_action
+  elseif curTime < time_exchange then
+    extra, time = "str_season_s4_main_time_cd_exchange", time_exchange
   end
   self:_SetRemainingTime("_time", extra, nil, time)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._SetBtn_Collage = function(self, first)
-  -- function num : 0_15 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "CollageBtn", "UIS4CollageBtn")
+function UIS4MainController:_SetBtn_Collage(first)
+  local obj = UIWidgetHelper.SpawnObject(self, "CollageBtn", "UIS4CollageBtn")
   obj:SetData(self._seasonId, first)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._SetBtn_Exchange = function(self, first)
-  -- function num : 0_16 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "ExchangeBtn", "UIS4ExchangeBtn")
+function UIS4MainController:_SetBtn_Exchange(first)
+  local obj = UIWidgetHelper.SpawnObject(self, "ExchangeBtn", "UIS4ExchangeBtn")
   obj:SetData(self._seasonId, self._component_exchange, first)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._SetBtn_Medal = function(self, first)
-  -- function num : 0_17 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "MedalBtn", "UIS4MedalBtn")
+function UIS4MainController:_SetBtn_Medal(first)
+  local obj = UIWidgetHelper.SpawnObject(self, "MedalBtn", "UIS4MedalBtn")
   obj:SetData(self._seasonId, first)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._SetBtn_Quest = function(self, first)
-  -- function num : 0_18 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "QuestBtn", "UIS4QuestBtn")
+function UIS4MainController:_SetBtn_Quest(first)
+  local obj = UIWidgetHelper.SpawnObject(self, "QuestBtn", "UIS4QuestBtn")
   obj:SetData(self._seasonId, self._component_quest, first)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._SetBtn_Go = function(self, first)
-  -- function num : 0_19 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "GoBtn", "UIS4GoBtn")
+function UIS4MainController:_SetBtn_Go(first)
+  local obj = UIWidgetHelper.SpawnObject(self, "GoBtn", "UIS4GoBtn")
   obj:SetData(self._seasonId, self._component_action, first)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._Shot = function(self, callback)
-  -- function num : 0_20 , upvalues : _ENV
-  (UIWidgetHelper.BlurHelperShot)(self, "shot", self:GetName(), function(cache_rt)
-    -- function num : 0_20_0 , upvalues : _ENV, self, callback
-    (UIWidgetHelper.SetRawImageTexture)(self, "rt", cache_rt)
+function UIS4MainController:_Shot(callback)
+  UIWidgetHelper.BlurHelperShot(self, "shot", self:GetName(), function(cache_rt)
+    UIWidgetHelper.SetRawImageTexture(self, "rt", cache_rt)
     self:_AfterShot()
     callback()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._AfterShot = function(self)
-  -- function num : 0_21
-  (self:GetGameObject("rt")):SetActive(true)
-  ;
-  (self:GetGameObject("shot")):SetActive(false)
-  ;
-  (self:GetGameObject("_uiElements")):SetActive(false)
-  ;
-  (self:GetGameObject("_spine")):SetActive(false)
+function UIS4MainController:_AfterShot()
+  self:GetGameObject("rt"):SetActive(true)
+  self:GetGameObject("shot"):SetActive(false)
+  self:GetGameObject("_uiElements"):SetActive(false)
+  self:GetGameObject("_spine"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController.ShowBtnOnClick = function(self, go)
-  -- function num : 0_22
+function UIS4MainController:ShowBtnOnClick(go)
   self:_ShowUI()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController.StoryBtnOnClick = function(self, go)
-  -- function num : 0_23
+function UIS4MainController:StoryBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController.IntroBtnOnClick = function(self, go)
-  -- function num : 0_24 , upvalues : _ENV
-  (UISeasonHelper.ShowSeasonHelperBook)(UISeasonHelperTabIndex.S1Main)
+function UIS4MainController:IntroBtnOnClick(go)
+  UISeasonHelper.ShowSeasonHelperBook(UISeasonHelperTabIndex.S1Main)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._AttachEvents = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIS4MainController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._DetachEvents = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIS4MainController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._CheckActivityClose = function(self, id)
-  -- function num : 0_27 , upvalues : _ENV
+function UIS4MainController:_CheckActivityClose(id)
   if self._seasonId == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4MainController._AfterUILayerChanged = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+function UIS4MainController:_AfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
     self:_Refresh()
   end
 end
-
-

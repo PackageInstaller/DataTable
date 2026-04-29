@@ -1,45 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_effect_at_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayEffectAtTrapInstruction", BaseInstruction)
 PlayEffectAtTrapInstruction = PlayEffectAtTrapInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayEffectAtTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayEffectAtTrapInstruction:Constructor(paramList)
   self._trapID = tonumber(paramList.trapID)
   self._effectID = tonumber(paramList.effectID)
   self._waitTime = tonumber(paramList.waitTime or 0)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtTrapInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayEffectAtTrapInstruction:GetCacheResource()
   local t = {}
-  do
-    if self._effectID then
-      local cfgfx = (Cfg.cfg_effect)[self._effectID]
-      if cfgfx then
-        (table.insert)(t, {cfgfx.ResPath, 1})
-      end
+  if self._effectID then
+    local cfgfx = Cfg.cfg_effect[self._effectID]
+    if cfgfx then
+      table.insert(t, {
+        cfgfx.ResPath,
+        1
+      })
     end
-    return t
   end
+  return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayEffectAtTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   self._world = world
-  self._effectService = (self._world):GetService("Effect")
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Trap)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  self._effectService = self._world:GetService("Effect")
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.Trap)
+  local utilDataSvc = self._world:GetService("UtilData")
   local listPosRet = {}
   local listTraps = trapGroup:GetEntities()
   local taskIDList = {}
@@ -49,27 +37,19 @@ PlayEffectAtTrapInstruction.DoInstruction = function(self, TT, casterEntity, pha
       local trapComponent = trap:Trap()
       if trapComponent and trapComponent:GetTrapID() == self._trapID then
         local pos = trap:GetRenderGridPosition()
-        local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self.PlayEffect, self, pos)
-        ;
-        (table.insert)(taskIDList, taskID)
+        local taskID = GameGlobal.TaskManager():CoreGameStartTask(self.PlayEffect, self, pos)
+        table.insert(taskIDList, taskID)
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayEffectAtTrapInstruction.PlayEffect = function(self, TT, pos)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._effectService):CreateWorldPositionDirectionEffect(self._effectID, pos)
+function PlayEffectAtTrapInstruction:PlayEffect(TT, pos)
+  self._effectService:CreateWorldPositionDirectionEffect(self._effectID, pos)
   if self._waitTime then
     YIELD(TT, self._waitTime)
   end
 end
-
-

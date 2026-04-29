@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/ui_haute_couture_draw_dynamic_probablity_main_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawDynamicProbabilityMainPLM", UIHauteCoutureDrawDynamicProbablityBase)
 UIHauteCoutureDrawDynamicProbabilityMainPLM = UIHauteCoutureDrawDynamicProbabilityMainPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawDynamicProbabilityMainPLM.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawDynamicProbabilityMainPLM:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDynamicProbabilityMainPLM.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawDynamicProbabilityMainPLM:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDynamicProbabilityMainPLM.InitWidgets = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawDynamicProbabilityMainPLM:InitWidgets()
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawDynamicProbabilityMainPLM.GetProbablityItemScript = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawDynamicProbabilityMainPLM:GetProbablityItemScript()
   return "UIHauteCoutureDrawProbabiltyItemPLM"
 end
-
-

@@ -1,62 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_atk_by_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttackByDamage", BuffLogicBase)
 BuffLogicChangeAttackByDamage = BuffLogicChangeAttackByDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackByDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAttackByDamage:Constructor(buffInstance, logicParam)
   self._percent = logicParam.percent or 1
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._saveDamage = 0
+  self._buffInstance._saveDamage = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackByDamage.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeAttackByDamage:DoLogic(notify)
   if not notify.GetDamageValue then
-    return 
+    return
   end
   local newDamage = notify:GetDamageValue()
   if not newDamage then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._buffInstance)._saveDamage < newDamage then
-    (self._buffInstance)._saveDamage = newDamage
+  if newDamage > self._buffInstance._saveDamage then
+    self._buffInstance._saveDamage = newDamage
   end
-  local change = (math.floor)((self._buffInstance)._saveDamage * self._percent)
+  local change = math.floor(self._buffInstance._saveDamage * self._percent)
   if change ~= 0 then
-    (self._buffLogicService):ChangeBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, change)
+    self._buffLogicService:ChangeBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, change)
     return true
   end
 end
 
 _class("BuffLogicRemoveChangeAttackByDamage", BuffLogicBase)
 BuffLogicRemoveChangeAttackByDamage = BuffLogicRemoveChangeAttackByDamage
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveChangeAttackByDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveChangeAttackByDamage:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeAttackByDamage.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance)._saveDamage = 0
-  ;
-  (self._buffLogicService):RemoveBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
+function BuffLogicRemoveChangeAttackByDamage:DoLogic()
+  self._buffInstance._saveDamage = 0
+  self._buffLogicService:RemoveBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
   return true
 end
-
-

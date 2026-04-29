@@ -1,43 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/systems/command_receive_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("reactive_system")
 _class("CommandReceiveSystem", ReactiveSystem)
 CommandReceiveSystem = CommandReceiveSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CommandReceiveSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function CommandReceiveSystem:Constructor(world)
   self.world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandReceiveSystem.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).CommandReceiver)
+function CommandReceiveSystem:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.CommandReceiver)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandReceiveSystem.Filter = function(self, entity)
-  -- function num : 0_2
+function CommandReceiveSystem:Filter(entity)
   return entity:HasCommandReceiver()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandReceiveSystem.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function CommandReceiveSystem:ExecuteEntities(entities)
   for i = 1, #entities do
     local e = entities[i]
-    ;
-    (e:CommandReceiver()):Dispatch()
+    e:CommandReceiver():Dispatch()
   end
 end
-
-

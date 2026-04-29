@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/main/ui_season_main_level_list_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMainLevelListS3", UICustomWidget)
 UISeasonMainLevelListS3 = UISeasonMainLevelListS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMainLevelListS3.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMainLevelListS3:OnShow(uiParams)
   self._active = true
   self:InitWidget()
   self:_SetShow(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonMainLevelListS3:OnHide()
   self._active = false
-  if self._player and (self._player):IsPlaying() then
-    (self._player):Stop()
+  if self._player and self._player:IsPlaying() then
+    self._player:Stop()
     self._player = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMainLevelListS3:InitWidget()
   self.progress = self:GetUIComponent("UILocalizationText", "progress")
   self.content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._root = self:GetGameObject("root")
@@ -36,58 +23,52 @@ UISeasonMainLevelListS3.InitWidget = function(self)
   self._diffText = self:GetUIComponent("UILocalizationText", "DiffText")
   self._slider = self:GetUIComponent("RectTransform", "Slider")
   self._sliderBg = self:GetUIComponent("Image", "SliderBg")
-  self._colors = {NormalText = Color(0.384, 0.333, 0.259), HardText = Color(0.416, 0.294, 0.184), NormalProgress = "#E0F5FF", HardProgress = "#E0F5FF"}
+  self._colors = {
+    NormalText = Color(0.384, 0.333, 0.259),
+    HardText = Color(0.416, 0.294, 0.184),
+    NormalProgress = "#E0F5FF",
+    HardProgress = "#E0F5FF"
+  }
   local contentGrid = self:GetUIComponent("GridLayoutGroup", "Content")
-  self._paddingTop = (contentGrid.padding).top
-  self._cellSizeY = (contentGrid.cellSize).y
-  self._cellSpaceY = (contentGrid.spacing).y
+  self._paddingTop = contentGrid.padding.top
+  self._cellSizeY = contentGrid.cellSize.y
+  self._cellSpaceY = contentGrid.spacing.y
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
-  self._viewPortHeight = ((self:GetUIComponent("RectTransform", "Viewport")).rect).height
-  self._anim = (self:GetGameObject()):GetComponent(typeof(UnityEngine.Animation))
+  self._viewPortHeight = self:GetUIComponent("RectTransform", "Viewport").rect.height
+  self._anim = self:GetGameObject():GetComponent(typeof(UnityEngine.Animation))
   self._titleBg = self:GetUIComponent("Image", "Title")
   self._diffBg = self:GetUIComponent("Image", "DiffBg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3.SetData = function(self, obj)
-  -- function num : 0_3
+function UISeasonMainLevelListS3:SetData(obj)
   self._seasonObj = obj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3._Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMainLevelListS3:_Init()
   if self._inited then
-    return 
+    return
   end
-  ;
-  (Log.info)("初始换关卡列表")
+  Log.info("初始换关卡列表")
   self._inited = true
-  self._uiModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._seasonManager = (self._uiModule):SeasonManager()
+  self._uiModule = GameGlobal.GetUIModule(SeasonModule)
+  self._seasonManager = self._uiModule:SeasonManager()
   self:AttachEvent(GameEventType.UISeasonOnLevelDiffChanged, self._OnDiffChanged)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3._OnDiffChanged = function(self, diff, onEnter)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMainLevelListS3:_OnDiffChanged(diff, onEnter)
   if not self._isShown then
-    (Log.info)("难度改变但当前未显示，不处理:", diff)
-    return 
+    Log.info("难度改变但当前未显示，不处理:", diff)
+    return
   end
   if self._curDiff == diff then
-    (Log.info)("当前难度无需切换:", diff)
-    return 
+    Log.info("当前难度无需切换:", diff)
+    return
   end
-  ;
-  (Log.info)("难度切换:", diff)
+  Log.info("难度切换:", diff)
   self._curDiff = diff
   local passCount = 0
   local unlockCount = 0
-  for i,level in ipairs(self._levels) do
+  for i, level in ipairs(self._levels) do
     if level:IsPassDiff(self._curDiff) then
       passCount = passCount + 1
     end
@@ -95,204 +76,135 @@ UISeasonMainLevelListS3._OnDiffChanged = function(self, diff, onEnter)
       unlockCount = unlockCount + 1
     end
   end
-  for _,ui in ipairs(self._levelWidgets) do
+  for _, ui in ipairs(self._levelWidgets) do
     ui:RefreshByDiff(self._curDiff)
   end
   local atlas = self:GetAsset("UIS3Scene.spriteatlas", LoadType.SpriteAtlas)
   if self._curDiff == UISeasonLevelDiff.Normal then
-    (self._diffText):SetText((StringTable.Get)("str_season_stage_diff_normal"))
-    ;
-    (self.progress):SetText((string.format)("<color=%s>%s</color>/%s", (self._colors).NormalProgress, passCount, #self._levels))
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._slider).anchoredPosition = Vector2(-35, 0)
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._sliderBg).sprite = atlas:GetSprite("exp_s3_map_gq_icon03")
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._titleBg).sprite = atlas:GetSprite("exp_s3_map_gq_di01")
-    -- DECOMPILER ERROR at PC101: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._diffBg).sprite = atlas:GetSprite("exp_s3_map_gq_di05")
-  else
-    if self._curDiff == UISeasonLevelDiff.Hard then
-      (self._diffText):SetText((StringTable.Get)("str_season_stage_diff_hard"))
-      ;
-      (self.progress):SetText((string.format)("<color=%s>%s</color>/%s", (self._colors).HardProgress, passCount, #self._levels))
-      -- DECOMPILER ERROR at PC132: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._slider).anchoredPosition = Vector2(35, 0)
-      -- DECOMPILER ERROR at PC137: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._sliderBg).sprite = atlas:GetSprite("exp_s3_map_gq_icon04")
-      -- DECOMPILER ERROR at PC142: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._titleBg).sprite = atlas:GetSprite("exp_s3_map_gq_di02")
-      -- DECOMPILER ERROR at PC147: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._diffBg).sprite = atlas:GetSprite("exp_s3_map_gq_di06")
-    end
+    self._diffText:SetText(StringTable.Get("str_season_stage_diff_normal"))
+    self.progress:SetText(string.format("<color=%s>%s</color>/%s", self._colors.NormalProgress, passCount, #self._levels))
+    self._slider.anchoredPosition = Vector2(-35, 0)
+    self._sliderBg.sprite = atlas:GetSprite("exp_s3_map_gq_icon03")
+    self._titleBg.sprite = atlas:GetSprite("exp_s3_map_gq_di01")
+    self._diffBg.sprite = atlas:GetSprite("exp_s3_map_gq_di05")
+  elseif self._curDiff == UISeasonLevelDiff.Hard then
+    self._diffText:SetText(StringTable.Get("str_season_stage_diff_hard"))
+    self.progress:SetText(string.format("<color=%s>%s</color>/%s", self._colors.HardProgress, passCount, #self._levels))
+    self._slider.anchoredPosition = Vector2(35, 0)
+    self._sliderBg.sprite = atlas:GetSprite("exp_s3_map_gq_icon04")
+    self._titleBg.sprite = atlas:GetSprite("exp_s3_map_gq_di02")
+    self._diffBg.sprite = atlas:GetSprite("exp_s3_map_gq_di06")
   end
   self:_ScrollTo(unlockCount, onEnter)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3._OnClickLevelItem = function(self, data)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMainLevelListS3:_OnClickLevelItem(data)
   if data:IsUnlock() then
-    (Log.info)("聚焦关卡路点:", data:GetCurMissionID())
+    Log.info("聚焦关卡路点:", data:GetCurMissionID())
     local cfg = data:GetMissionCfgByDiff(self._curDiff)
-    ;
-    ((self._uiModule):SeasonManager()):AutoMoveToEventPoint(cfg.ID)
+    self._uiModule:SeasonManager():AutoMoveToEventPoint(cfg.ID)
   else
-    do
-      local cfg = data:GetMissionCfgByDiff(self._curDiff)
-      local id = tonumber(cfg.NeedMission)
-      local name = (StringTable.Get)(((Cfg.cfg_season_mission)[id]).Name)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_season_level_pre_condition_tip", name))
-    end
+    local cfg = data:GetMissionCfgByDiff(self._curDiff)
+    local id = tonumber(cfg.NeedMission)
+    local name = StringTable.Get(Cfg.cfg_season_mission[id].Name)
+    ToastManager.ShowToast(StringTable.Get("str_season_level_pre_condition_tip", name))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3._SetShow = function(self, show)
-  -- function num : 0_7
+function UISeasonMainLevelListS3:_SetShow(show)
   self._isShown = show
-  ;
-  (self._root):SetActive(show)
+  self._root:SetActive(show)
   if show then
     if not self._inited then
       self:_Init()
     end
     self:_Refresh()
-    local curDiff = (self._uiModule):GetCurrentSeasonLevelDiff()
+    local curDiff = self._uiModule:GetCurrentSeasonLevelDiff()
     self._curDiff = nil
     self:_OnDiffChanged(curDiff, true)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3.LevelBtnOnClick = function(self)
-  -- function num : 0_8
+function UISeasonMainLevelListS3:LevelBtnOnClick()
   self:_SetShow(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3.CloseBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMainLevelListS3:CloseBtnOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
     self:Lock("uieff_UISeasonMainLevelListS3_end")
-    ;
-    (self._levelBtn):SetActive(true)
-    ;
-    (self._anim):Play("uieff_UISeasonMainLevelListS3_out")
+    self._levelBtn:SetActive(true)
+    self._anim:Play("uieff_UISeasonMainLevelListS3_out")
     YIELD(TT, 725)
     self:_SetShow(false)
     self:UnLock("uieff_UISeasonMainLevelListS3_end")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3._Refresh = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local points = ((self._seasonManager):SeasonMapManager()):GetEventPointsByType(SeasonEventPointType.MainLevel, true)
-  local mode = ((self._seasonManager):SeasonMapManager()):Mode()
+function UISeasonMainLevelListS3:_Refresh()
+  local points = self._seasonManager:SeasonMapManager():GetEventPointsByType(SeasonEventPointType.MainLevel, true)
+  local mode = self._seasonManager:SeasonMapManager():Mode()
   local tmp = {}
-  for _,point in ipairs(points) do
-    local cfgMode = (point:GetMissionCfg()).Mode
-    if not cfgMode or (table.icontains)(cfgMode, mode) then
+  for _, point in ipairs(points) do
+    local cfgMode = point:GetMissionCfg().Mode
+    if not cfgMode or table.icontains(cfgMode, mode) then
       tmp[#tmp + 1] = point
     end
   end
   points = tmp
-  local obj = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonObj()
+  local obj = GameGlobal.GetModule(SeasonModule):GetCurSeasonObj()
   local lineCpt = obj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   self._levels = {}
-  for _,point in ipairs(points) do
+  for _, point in ipairs(points) do
     local cfg = point:GetMissionCfg()
     local group = cfg.GroupID
-    local data = (self._levels)[group]
+    local data = self._levels[group]
     if not data then
       data = UISeasonLevelData:New(group, point, lineCpt)
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self._levels)[group] = data
+      self._levels[group] = data
     else
       data:AddDiffLevel(point)
     end
   end
-  self._levels = (table.toArray)(self._levels)
-  ;
-  (table.sort)(self._levels, function(a, b)
-    -- function num : 0_10_0
-    do return a:GroupID() < b:GroupID() end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  for i,level in ipairs(self._levels) do
+  self._levels = table.toArray(self._levels)
+  table.sort(self._levels, function(a, b)
+    return a:GroupID() < b:GroupID()
+  end)
+  for i, level in ipairs(self._levels) do
     level:SetIndex(i)
     level:CheckUnlock()
   end
-  if #self._levels ~= (table.count)(self._levels) then
-    (Log.exception)("cfg_season_mission 配置错误, group不是连续的")
+  if #self._levels ~= table.count(self._levels) then
+    Log.exception("cfg_season_mission 配置错误, group不是连续的")
   end
-  self._levelWidgets = (self.content):SpawnObjects("UISeasonMainLevelListItemS3", #self._levels)
-  local onSelect = function(data)
-    -- function num : 0_10_1 , upvalues : self
+  self._levelWidgets = self.content:SpawnObjects("UISeasonMainLevelListItemS3", #self._levels)
+  
+  local function onSelect(data)
     self:_OnClickLevelItem(data)
   end
-
-  for i,level in ipairs(self._levels) do
-    ((self._levelWidgets)[i]):SetData(level, onSelect)
+  
+  for i, level in ipairs(self._levels) do
+    self._levelWidgets[i]:SetData(level, onSelect)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3.DiffOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local diff = nil
+function UISeasonMainLevelListS3:DiffOnClick()
+  local diff
   if self._curDiff == UISeasonLevelDiff.Normal then
     diff = UISeasonLevelDiff.Hard
   else
     diff = UISeasonLevelDiff.Normal
   end
-  ;
-  (self._uiModule):SetCurrentSeasonLevelDiff(diff)
+  self._uiModule:SetCurrentSeasonLevelDiff(diff)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3._ScrollTo = function(self, index, onEnter)
-  -- function num : 0_12 , upvalues : _ENV
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._contentRect)
-  local height = ((self._contentRect).rect).height
+function UISeasonMainLevelListS3:_ScrollTo(index, onEnter)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._contentRect)
+  local height = self._contentRect.rect.height
   local y = self._paddingTop + (self._cellSizeY + self._cellSpaceY) * (index - 1)
-  y = (Mathf.Clamp)(y, 0, (math.max)(height - self._viewPortHeight, 0))
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._contentRect).anchoredPosition = Vector2(0, y)
-  if self._player and (self._player):IsPlaying() then
-    (self._player):Stop()
+  y = Mathf.Clamp(y, 0, math.max(height - self._viewPortHeight, 0))
+  self._contentRect.anchoredPosition = Vector2(0, y)
+  if self._player and self._player:IsPlaying() then
+    self._player:Stop()
     self._player = nil
   end
   if onEnter then
@@ -302,86 +214,68 @@ UISeasonMainLevelListS3._ScrollTo = function(self, index, onEnter)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3._OnEnterAnim = function(self, TT, index)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonMainLevelListS3:_OnEnterAnim(TT, index)
   self:Lock("UISeasonMainLevelListS3_OnEnterAnim")
-  ;
-  (self._anim):Play("uieff_UISeasonMainLevelListS3_in")
+  self._anim:Play("uieff_UISeasonMainLevelListS3_in")
   if not self._active then
-    return 
+    return
   end
   local showCount = 6
-  local from, to = nil, nil
-  if #self._levels <= showCount then
+  local from, to
+  if showCount >= #self._levels then
     from = 1
     to = #self._levels
   else
-    from = (Mathf.Clamp)(index, index, #self._levels - showCount)
+    from = Mathf.Clamp(index, index, #self._levels - showCount)
     to = from + showCount
   end
   for i = from, to do
-    local level = (self._levelWidgets)[i]
+    local level = self._levelWidgets[i]
     level:PrepareAnim()
   end
   for i = from, to do
-    local level = (self._levelWidgets)[i]
-    if level and self._active then
-      do
-        level:PlayEnterAnim()
-        YIELD(TT, 50)
-        -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
-  end
-  ;
-  (self._levelBtn):SetActive(false)
-  self:UnLock("UISeasonMainLevelListS3_OnEnterAnim")
-end
-
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMainLevelListS3._OnSwitchDiffAnim = function(self, TT, index)
-  -- function num : 0_14 , upvalues : _ENV
-  self:Lock("UISeasonMainLevelListS3_OnSwitchDiffAnim")
-  local showCount = 6
-  local from, to = nil, nil
-  if #self._levels <= showCount then
-    from = 1
-    to = #self._levels
-  else
-    from = (Mathf.Clamp)(index, index, #self._levels - showCount)
-    to = from + showCount
-  end
-  for i = from, to do
-    local level = (self._levelWidgets)[i]
-    level:PrepareAnim()
-  end
-  for i = from, to do
-    local level = (self._levelWidgets)[i]
-    if not level then
-      return 
-    end
-    if not self._active then
-      return 
+    local level = self._levelWidgets[i]
+    if not (level and self._active) then
+      break
     end
     level:PlayEnterAnim()
     YIELD(TT, 50)
   end
-  ;
-  (self._levelBtn):SetActive(false)
-  if self._curDiff == UISeasonLevelDiff.Normal then
-    (self._anim):Play("uieff_UISeasonMainLevelListS3_switch_out")
+  self._levelBtn:SetActive(false)
+  self:UnLock("UISeasonMainLevelListS3_OnEnterAnim")
+end
+
+function UISeasonMainLevelListS3:_OnSwitchDiffAnim(TT, index)
+  self:Lock("UISeasonMainLevelListS3_OnSwitchDiffAnim")
+  local showCount = 6
+  local from, to
+  if showCount >= #self._levels then
+    from = 1
+    to = #self._levels
   else
-    if self._curDiff == UISeasonLevelDiff.Hard then
-      (self._anim):Play("uieff_UISeasonMainLevelListS3_switch_in")
+    from = Mathf.Clamp(index, index, #self._levels - showCount)
+    to = from + showCount
+  end
+  for i = from, to do
+    local level = self._levelWidgets[i]
+    level:PrepareAnim()
+  end
+  for i = from, to do
+    local level = self._levelWidgets[i]
+    if not level then
+      return
     end
+    if not self._active then
+      return
+    end
+    level:PlayEnterAnim()
+    YIELD(TT, 50)
+  end
+  self._levelBtn:SetActive(false)
+  if self._curDiff == UISeasonLevelDiff.Normal then
+    self._anim:Play("uieff_UISeasonMainLevelListS3_switch_out")
+  elseif self._curDiff == UISeasonLevelDiff.Hard then
+    self._anim:Play("uieff_UISeasonMainLevelListS3_switch_in")
   end
   self:UnLock("UISeasonMainLevelListS3_OnSwitchDiffAnim")
 end
-
-

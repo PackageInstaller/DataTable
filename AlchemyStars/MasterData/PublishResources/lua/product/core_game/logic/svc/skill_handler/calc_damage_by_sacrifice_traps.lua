@@ -1,51 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_by_sacrifice_traps.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_DamageBySacrificeTraps", Object)
 SkillEffectCalc_DamageBySacrificeTraps = SkillEffectCalc_DamageBySacrificeTraps
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DamageBySacrificeTraps.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_DamageBySacrificeTraps:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageBySacrificeTraps.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+function SkillEffectCalc_DamageBySacrificeTraps:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local targetIDList = skillEffectCalcParam:GetTargetEntityIDs()
   local param = skillEffectCalcParam.skillEffectParam
-  local routineComponent = (casterEntity:SkillContext()):GetResultContainer()
+  local routineComponent = casterEntity:SkillContext():GetResultContainer()
   local resultsArray = routineComponent:GetEffectResultsAsArray(SkillEffectType.SacrificeTraps)
   if not resultsArray then
-    return {SkillEffectDamageBySacrificeTraps:New()}
+    return {
+      SkillEffectDamageBySacrificeTraps:New()
+    }
   end
   local needAttackTrapIDs = param:GetTrapID()
   local attackCount = 1
-  for i,result in ipairs(resultsArray) do
+  for i, result in ipairs(resultsArray) do
     local trapIDs = result:GetTrapIDs()
-    for i,entityID in ipairs(trapIDs) do
-      local trapEntity = (self._world):GetEntityByID(entityID)
-      if trapEntity:HasTrap() and needAttackTrapIDs[(trapEntity:Trap()):GetTrapID()] then
+    for i, entityID in ipairs(trapIDs) do
+      local trapEntity = self._world:GetEntityByID(entityID)
+      if trapEntity:HasTrap() and needAttackTrapIDs[trapEntity:Trap():GetTrapID()] then
         attackCount = attackCount + 1
       end
     end
   end
   local targetID = false
-  if (table.count)(targetIDList) >= 1 then
+  if 1 <= table.count(targetIDList) then
     targetID = targetIDList[1]
   end
   if not targetID or targetID == -1 then
-    (Log.fatal)("Need Target SkillID", skillEffectCalcParam:GetSkillID())
+    Log.fatal("Need Target SkillID", skillEffectCalcParam:GetSkillID())
   end
   local resultArray = {}
-  local defender = (self._world):GetEntityByID(targetID)
-  local triggerService = (self._world):GetService("Trigger")
+  local defender = self._world:GetEntityByID(targetID)
+  local triggerService = self._world:GetService("Trigger")
   triggerService:Notify(NTEffect158AttackBegin:New(casterEntity))
   local defenderPos = defender:GetGridPosition()
   local attackerPos = casterEntity:GetGridPosition()
@@ -55,11 +47,8 @@ SkillEffectCalc_DamageBySacrificeTraps.DoSkillEffectCalculator = function(self, 
   for i = 1, attackCount do
     local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(casterEntity, attackerPos, defender, defenderPos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.DamageBySacrificeTraps, damageStageIndex)
     local skillResult = effectCalcSvc:NewSkillDamageEffectResult(defenderPos, targetID, nTotalDamage, listDamageInfo, damageStageIndex)
-    ;
-    (table.insert)(resultArray, skillResult)
+    table.insert(resultArray, skillResult)
   end
   triggerService:Notify(NTEffect158AttackEnd:New(casterEntity))
   return resultArray
 end
-
-

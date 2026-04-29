@@ -1,53 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelController", UIController)
 UITrailLevelController = UITrailLevelController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._talePetModule = (GameGlobal.GetModule)(TalePetModule)
-  ;
-  (self._talePetModule):RequestServerFormationList(TT)
-  local ctx = (self:GetModule(MissionModule)):TeamCtx()
-  ctx:InitTrailTeam((self._talePetModule):GetFormationList())
-  local ret = (self._talePetModule):RequestTrailLevelData(TT)
+function UITrailLevelController:LoadDataOnEnter(TT, res, uiParams)
+  self._talePetModule = GameGlobal.GetModule(TalePetModule)
+  self._talePetModule:RequestServerFormationList(TT)
+  local ctx = self:GetModule(MissionModule):TeamCtx()
+  ctx:InitTrailTeam(self._talePetModule:GetFormationList())
+  local ret = self._talePetModule:RequestTrailLevelData(TT)
   if ret ~= 0 then
     res.m_result = ret
-    return 
+    return
   end
   local maxLevel = 1
-  self._buffLevel = (self._talePetModule):GetBuffLevel()
+  self._buffLevel, maxLevel = self._talePetModule:GetBuffLevel()
   self._levelLayerDatas = {}
-  local layerCfgs = (Cfg.cfg_tale_stage_layer)({})
+  local layerCfgs = Cfg.cfg_tale_stage_layer({})
   for i = 1, #layerCfgs do
     local layerCfg = layerCfgs[i]
     local levelLayerData = UITrailLevelLayerData:New(layerCfg)
-    -- DECOMPILER ERROR at PC52: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (self._levelLayerDatas)[#self._levelLayerDatas + 1] = levelLayerData
+    self._levelLayerDatas[#self._levelLayerDatas + 1] = levelLayerData
   end
   self._currentSelectLayer = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UITrailLevelController:OnShow(uiParams)
   self._isFirstEnter = true
-  self._isSwitchStatus = not uiParams[1] or true
+  self._isSwitchStatus = uiParams[1] and true
   self._anim = self:GetUIComponent("Animation", "Anim")
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
+  self._backBtn:SetData(function()
     if self._isSwitchStatus then
-      local callState = (self._talePetModule):GetCurCallState()
+      local callState = self._talePetModule:GetCurCallState()
       if callState then
         self:SwitchState(UIStateType.UITalePetCollect, callState, true)
       else
@@ -55,100 +39,71 @@ UITrailLevelController.OnShow = function(self, uiParams)
       end
       self:SwitchState(UIStateType.UIMain)
     else
-      do
-        self:CloseDialog()
-      end
+      self:CloseDialog()
     end
-  end
-, function()
-    -- function num : 0_1_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", "UITrailLevelController")
-  end
-)
+  end)
   self._buffNameLabel = self:GetUIComponent("UILocalizationText", "BuffName")
   self._buffLevelLabel = self:GetUIComponent("UILocalizationText", "BuffLevel")
   self._buffIconImg = self:GetUIComponent("RawImageLoader", "BuffIcon")
   self._rewardRedGo = self:GetGameObject("RewardRed")
   local rewardBtn = self:GetGameObject("RewardBtn")
   self._rewardBtnClickedGo = self:GetGameObject("RewardBtnClicked")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(rewardBtn), UIEvent.Press, function(go)
-    -- function num : 0_1_2 , upvalues : self
-    (self._rewardBtnClickedGo):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(rewardBtn), UIEvent.Release, function(go)
-    -- function num : 0_1_3 , upvalues : self
-    (self._rewardBtnClickedGo):SetActive(false)
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(rewardBtn), UIEvent.Press, function(go)
+    self._rewardBtnClickedGo:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(rewardBtn), UIEvent.Release, function(go)
+    self._rewardBtnClickedGo:SetActive(false)
+  end)
   self:AttachEvent(GameEventType.TalePetTrailLevelRewardChange, self.RefreshRewardInfo)
   self:RefreshBuffInfo()
   self:InitLevelList()
   self:RefreshRewardInfo()
-  ;
-  (UIBgmHelper.PlayMainBgm)()
+  UIBgmHelper.PlayMainBgm()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UITrailLevelController:OnHide()
   self:DetachEvent(GameEventType.TalePetTrailLevelRewardChange, self.RefreshRewardInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.RefreshRewardInfo = function(self)
-  -- function num : 0_3
-  (self._rewardRedGo):SetActive((self._talePetModule):IsShowRewardRed())
+function UITrailLevelController:RefreshRewardInfo()
+  self._rewardRedGo:SetActive(self._talePetModule:IsShowRewardRed())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.RefreshBuffInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_trail_level_buff_level)[self._buffLevel]
-  ;
-  (self._buffNameLabel):SetText((StringTable.Get)(cfg.BuffName))
-  ;
-  (self._buffLevelLabel):SetText((StringTable.Get)("str_tale_pet_trail_level_buff_level", self._buffLevel))
-  ;
-  (self._buffIconImg):LoadImage(cfg.BuffIcon)
+function UITrailLevelController:RefreshBuffInfo()
+  local cfg = Cfg.cfg_trail_level_buff_level[self._buffLevel]
+  self._buffNameLabel:SetText(StringTable.Get(cfg.BuffName))
+  self._buffLevelLabel:SetText(StringTable.Get("str_tale_pet_trail_level_buff_level", self._buffLevel))
+  self._buffIconImg:LoadImage(cfg.BuffIcon)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.InitLevelList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UITrailLevelController:InitLevelList()
   self._maxLevelCount = 4
   self._levelItem = {}
   for i = 1, self._maxLevelCount do
     local level = self:GetUIComponent("UISelectObjectPath", "Level" .. i)
     local levelItem = level:SpawnObject("UITrailLevelItem")
     levelItem:Refresh()
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._levelItem)[#self._levelItem + 1] = levelItem
+    self._levelItem[#self._levelItem + 1] = levelItem
   end
   local bossLevel = self:GetUIComponent("UISelectObjectPath", "BossLevel")
   self._bossLevelItem = bossLevel:SpawnObject("UITrailLevelFinalItem")
-  ;
-  (self._bossLevelItem):Refresh()
+  self._bossLevelItem:Refresh()
   local layer = self:GetUIComponent("UISelectObjectPath", "Layer")
   layer:SpawnObjects("UITrailLevelLayerItem", #self._levelLayerDatas)
   local layerItems = layer:GetAllSpawnList()
-  local defaultLevelLayerData = (self._levelLayerDatas)[1]
+  local defaultLevelLayerData = self._levelLayerDatas[1]
   local defaultLevelLayerItem = layerItems[1]
   self._layerItems = layerItems
   local hasFind = false
-  local isOpenFinalLayer = (self._talePetModule):HasOpenFinalLevel()
+  local isOpenFinalLayer = self._talePetModule:HasOpenFinalLevel()
   for i = 1, #layerItems do
-    local levelLayerData = (self._levelLayerDatas)[i]
+    local levelLayerData = self._levelLayerDatas[i]
     local layerItem = layerItems[i]
     layerItem:Refresh(levelLayerData, self)
     local layerType = levelLayerData:GetLayerType()
-    local isOpen = layerType ~= TrailLevelLayerType.Normal and ((layerType == TrailLevelLayerType.Final and isOpenFinalLayer))
+    local isOpen = layerType == TrailLevelLayerType.Normal or layerType == TrailLevelLayerType.Final and isOpenFinalLayer
     if hasFind == false and levelLayerData and isOpen then
       local levelDatas = levelLayerData:GetLevelDatas()
       if levelDatas then
@@ -165,109 +120,81 @@ UITrailLevelController.InitLevelList = function(self)
     end
   end
   self:Lock("UITrailLevelController_PlayEnterAnim")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayEnterAnim, self, defaultLevelLayerItem)
+  GameGlobal.TaskManager():StartTask(self.PlayEnterAnim, self, defaultLevelLayerItem)
   self:OnLevelLayerItemSelect(defaultLevelLayerItem, defaultLevelLayerData, true)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.PlayEnterAnim = function(self, TT, levelLayerItem)
-  -- function num : 0_6 , upvalues : _ENV
+function UITrailLevelController:PlayEnterAnim(TT, levelLayerItem)
   for i = 1, #self._layerItems do
-    ((self._layerItems)[i]):HideSelf()
+    self._layerItems[i]:HideSelf()
   end
   for i = 1, #self._layerItems do
-    local item = (self._layerItems)[i]
+    local item = self._layerItems[i]
     item:PlayEnterAnim(levelLayerItem == item)
     YIELD(TT)
   end
   self:UnLock("UITrailLevelController_PlayEnterAnim")
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.OnLevelLayerItemSelect = function(self, levelLayerItem, levelLayerData, isEnter)
-  -- function num : 0_7 , upvalues : _ENV
-  if levelLayerData:GetLayerType() == TrailLevelLayerType.Final and not (self._talePetModule):HasOpenFinalLevel() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_tale_pet_trail_level_level_un_open"))
-    return 
+function UITrailLevelController:OnLevelLayerItemSelect(levelLayerItem, levelLayerData, isEnter)
+  if levelLayerData:GetLayerType() == TrailLevelLayerType.Final and not self._talePetModule:HasOpenFinalLevel() then
+    ToastManager.ShowToast(StringTable.Get("str_tale_pet_trail_level_level_un_open"))
+    return
   end
   self:Lock("UITrailLevelController_PlayShowLevelAnim")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayShowLevelAnim, self, levelLayerItem, levelLayerData, isEnter)
+  GameGlobal.TaskManager():StartTask(self.PlayShowLevelAnim, self, levelLayerItem, levelLayerData, isEnter)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.PlayShowLevelAnim = function(self, TT, levelLayerItem, levelLayerData, isEnter)
-  -- function num : 0_8 , upvalues : _ENV
+function UITrailLevelController:PlayShowLevelAnim(TT, levelLayerItem, levelLayerData, isEnter)
   if self._currentSelectLayer == levelLayerItem then
     self:UnLock("UITrailLevelController_PlayShowLevelAnim")
-    return 
+    return
   end
   if self._currentSelectLayer then
-    (self._currentSelectLayer):UnSelect(isEnter)
+    self._currentSelectLayer:UnSelect(isEnter)
   end
   self._currentSelectLayer = levelLayerItem
   if self._currentSelectLayer then
-    (self._currentSelectLayer):Select(isEnter)
+    self._currentSelectLayer:Select(isEnter)
   end
   local levelDatas = levelLayerData:GetLevelDatas()
   if levelLayerData:GetLayerType() == TrailLevelLayerType.Normal then
     self:ShowFinalLayer(false)
-    ;
-    (self._anim):Play("uieff_UITrailLevelController_in")
-    ;
-    (self._bossLevelItem):Refresh()
+    self._anim:Play("uieff_UITrailLevelController_in")
+    self._bossLevelItem:Refresh()
     for i = 1, #self._levelItem do
-      ((self._levelItem)[i]):Refresh(levelDatas[i])
+      self._levelItem[i]:Refresh(levelDatas[i])
       YIELD(TT)
       YIELD(TT)
     end
     YIELD(TT, 480)
-  else
-    if levelLayerData:GetLayerType() == TrailLevelLayerType.Final then
-      self:ShowFinalLayer(true)
-      for i = 1, #self._levelItem do
-        ((self._levelItem)[i]):Refresh()
-      end
-      ;
-      (self._bossLevelItem):Refresh(levelDatas[1])
-      if self._isFirstEnter then
-        (self._anim):Play("uieff_UITrailLevelController_Final")
-        self._isFirstEnter = false
-        YIELD(TT, 3500)
-      else
-        ;
-        (self._anim):Play("uieff_UITrailLevelController_Final_2")
-        YIELD(TT, 700)
-      end
+  elseif levelLayerData:GetLayerType() == TrailLevelLayerType.Final then
+    self:ShowFinalLayer(true)
+    for i = 1, #self._levelItem do
+      self._levelItem[i]:Refresh()
+    end
+    self._bossLevelItem:Refresh(levelDatas[1])
+    if self._isFirstEnter then
+      self._anim:Play("uieff_UITrailLevelController_Final")
+      self._isFirstEnter = false
+      YIELD(TT, 3500)
+    else
+      self._anim:Play("uieff_UITrailLevelController_Final_2")
+      YIELD(TT, 700)
     end
   end
   self:UnLock("UITrailLevelController_PlayShowLevelAnim")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.BuffBtnOnClick = function(self)
-  -- function num : 0_9
+function UITrailLevelController:BuffBtnOnClick()
   self:ShowDialog("UITrailLevelBuffDes")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.RewardBtnOnClick = function(self)
-  -- function num : 0_10
+function UITrailLevelController:RewardBtnOnClick()
   self:ShowDialog("UITrailLevelRewardController")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelController.ShowFinalLayer = function(self, isShowFinalLayer)
-  -- function num : 0_11
+function UITrailLevelController:ShowFinalLayer(isShowFinalLayer)
   local bg1 = self:GetGameObject("Bg1")
   local bg2 = self:GetGameObject("Bg2")
   local bg3 = self:GetGameObject("Bg3")
@@ -296,5 +223,3 @@ UITrailLevelController.ShowFinalLayer = function(self, isShowFinalLayer)
     finalBg3:SetActive(false)
   end
 end
-
-

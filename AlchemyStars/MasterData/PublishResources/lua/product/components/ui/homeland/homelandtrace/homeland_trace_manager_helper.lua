@@ -1,133 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/homelandtrace/homeland_trace_manager_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandTraceManagerHelper", Object)
 HomelandTraceManagerHelper = HomelandTraceManagerHelper
-local SreenDirection = {Up = 1, Dowmn = 2, Lift = 3, Right = 4}
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
+local SreenDirection = {
+  Up = 1,
+  Dowmn = 2,
+  Lift = 3,
+  Right = 4
+}
 
-HomelandTraceManagerHelper.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._traceConfig = (Cfg.cfg_homeland_trace)({})
-  self._screenhfWidth = (UnityEngine.Screen).width / 2
-  self._screenhfHeight = (UnityEngine.Screen).height / 2
-  local xr = (UnityEngine.Screen).width - 400
-  local xy = (UnityEngine.Screen).height - 400
+function HomelandTraceManagerHelper:Constructor()
+  self._traceConfig = Cfg.cfg_homeland_trace({})
+  self._screenhfWidth = UnityEngine.Screen.width / 2
+  self._screenhfHeight = UnityEngine.Screen.height / 2
+  local xr = UnityEngine.Screen.width - 400.0
+  local xy = UnityEngine.Screen.height - 400.0
   local aspect = self._screenhfWidth / self._screenhfHeight
   self._ellipseAxlex = xr / 2
   self._ellipseAxley = xy / 2
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTraceManagerHelper.Dispose = function(self)
-  -- function num : 0_1
+function HomelandTraceManagerHelper:Dispose()
   self._traceConfig = nil
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTraceManagerHelper.GetTraceInfo = function(self, id)
-  -- function num : 0_2
-  return (self._traceConfig)[id]
+function HomelandTraceManagerHelper:GetTraceInfo(id)
+  return self._traceConfig[id]
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTraceManagerHelper.WorldToScreenPoint = function(self, camera, pos)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandTraceManagerHelper:WorldToScreenPoint(camera, pos)
   if camera ~= nil and pos ~= nil then
     return camera:WorldToScreenPoint(pos)
   end
   return Vector2.zero
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTraceManagerHelper.ScreenPointToLocalPointInRectangle = function(self, rect, camera, pos)
-  -- function num : 0_4 , upvalues : _ENV
-  local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)(rect, pos, camera, nil)
+function HomelandTraceManagerHelper:ScreenPointToLocalPointInRectangle(rect, camera, pos)
+  local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(rect, pos, camera, nil)
   return res, pos
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTraceManagerHelper.CheckInScreen = function(self, vec2)
-  -- function num : 0_5 , upvalues : _ENV
-  do return vec2.x > 0 and vec2.x < (UnityEngine.Screen).width and vec2.y > 0 and vec2.y < (UnityEngine.Screen).height end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandTraceManagerHelper:CheckInScreen(vec2)
+  return vec2.x > 0 and vec2.x < UnityEngine.Screen.width and 0 < vec2.y and vec2.y < UnityEngine.Screen.height
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTraceManagerHelper.CheckInEllipse = function(self, x, y)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandTraceManagerHelper:CheckInEllipse(x, y)
   local ori = Vector2(self._screenhfWidth, self._screenhfHeight)
   local xredis = self._ellipseAxlex
   local yredis = self._ellipseAxley
   x = x - ori.x
   y = y - ori.y
-  return (x) * (x) / (xredis * xredis) + (y) * (y) / (yredis * yredis)
+  return x * x / (xredis * xredis) + y * y / (yredis * yredis)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTraceManagerHelper.CheckIntersect = function(self, lineStartPoint, lineEndPoint)
-  -- function num : 0_7 , upvalues : _ENV
-  local offset = (Vector2(self._screenhfWidth, self._screenhfHeight))
-  -- DECOMPILER ERROR at PC4: Overwrote pending register: R4 in 'AssignReg'
-
-  local crossPoint1, crossPoint2 = .end, nil
+function HomelandTraceManagerHelper:CheckIntersect(lineStartPoint, lineEndPoint)
+  local offset = Vector2(self._screenhfWidth, self._screenhfHeight)
+  local crossPoint1, crossPoint2
   lineEndPoint = lineEndPoint - offset
   lineStartPoint = Vector2(0, 0)
-  local k, c = nil, nil
+  local k, c
   k = (lineEndPoint.y - lineStartPoint.y) / (lineEndPoint.x - lineStartPoint.x)
   c = lineStartPoint.y - k * lineStartPoint.x
   local xredis = self._ellipseAxlex
   local yredis = self._ellipseAxley
-  local media = 2 * xredis * xredis * (k) * (c) * (2 * xredis * xredis * (k) * (c)) - 4 * (yredis * yredis + k * (k) * xredis * xredis) * xredis * xredis * ((c) * (c) - yredis * yredis)
-  if media > 0 then
+  local media = 2 * xredis * xredis * k * c * (2 * xredis * xredis * k * c) - 4 * (yredis * yredis + k * k * xredis * xredis) * xredis * xredis * (c * c - yredis * yredis)
+  if 0 < media then
     crossPoint1 = Vector2(0, 0)
     crossPoint2 = Vector2(0, 0)
-    crossPoint1.x = (-2 * xredis * xredis * (k) * (c) + (math.sqrt)(media)) / (2 * (yredis * yredis + k * (k) * xredis * xredis))
-    crossPoint1.y = k * crossPoint1.x + (c)
-    crossPoint2.x = (-2 * xredis * xredis * (k) * (c) - (math.sqrt)(media)) / (2 * (yredis * yredis + k * (k) * xredis * xredis))
-    crossPoint2.y = k * crossPoint2.x + (c)
+    crossPoint1.x = (-2 * xredis * xredis * k * c + math.sqrt(media)) / (2 * (yredis * yredis + k * k * xredis * xredis))
+    crossPoint1.y = k * crossPoint1.x + c
+    crossPoint2.x = (-2 * xredis * xredis * k * c - math.sqrt(media)) / (2 * (yredis * yredis + k * k * xredis * xredis))
+    crossPoint2.y = k * crossPoint2.x + c
     crossPoint1 = crossPoint1 + offset
     crossPoint2 = crossPoint2 + offset
   else
     if media == 0 then
       crossPoint1 = Vector2(0, 0)
-      crossPoint1.x = (-2 * xredis * xredis * (k) * (c) + (math.sqrt)(media)) / (2 * (yredis * yredis + k * (k) * xredis * xredis))
-      crossPoint1.y = k * crossPoint1.x + (c)
+      crossPoint1.x = (-2 * xredis * xredis * k * c + math.sqrt(media)) / (2 * (yredis * yredis + k * k * xredis * xredis))
+      crossPoint1.y = k * crossPoint1.x + c
       crossPoint1 = crossPoint1 + offset
+    else
     end
   end
   return crossPoint1, crossPoint2, k
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTraceManagerHelper.CheckInLine = function(self, checkPoint, startPoint, endPoint)
-  -- function num : 0_8 , upvalues : _ENV
+function HomelandTraceManagerHelper:CheckInLine(checkPoint, startPoint, endPoint)
   if not checkPoint then
-    return 
+    return
   end
   local vec1 = endPoint - checkPoint
   local vec2 = checkPoint - startPoint
-  do return (Vector2.Dot)(vec1, vec2) > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return Vector2.Dot(vec1, vec2) > 0
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandTraceManagerHelper.GetDistance = function(self, form, to)
-  -- function num : 0_9 , upvalues : _ENV
+function HomelandTraceManagerHelper:GetDistance(form, to)
   if form and to then
-    return (Vector3.Distance)(form, to)
+    return Vector3.Distance(form, to)
   end
 end
-
-

@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_turn_to_target_change_body_area_and_dir.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamTurnToTargetChangeBodyAreaAndDir", SkillEffectParamBase)
 SkillEffectParamTurnToTargetChangeBodyAreaAndDir = SkillEffectParamTurnToTargetChangeBodyAreaAndDir
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamTurnToTargetChangeBodyAreaAndDir.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamTurnToTargetChangeBodyAreaAndDir:Constructor(t)
   self._forceTurn = t.forceTurn or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTurnToTargetChangeBodyAreaAndDir.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamTurnToTargetChangeBodyAreaAndDir:GetEffectType()
   return SkillEffectType.TurnToTargetChangeBodyAreaAndDir
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamTurnToTargetChangeBodyAreaAndDir.GetForceTurn = function(self)
-  -- function num : 0_2
+function SkillEffectParamTurnToTargetChangeBodyAreaAndDir:GetForceTurn()
   return self._forceTurn
 end
-
-

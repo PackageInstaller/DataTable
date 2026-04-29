@@ -1,22 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_temp_sign_in/ui_temp_sign_in_data_loader.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITempSignInDataLoader", Object)
 UITempSignInDataLoader = UITempSignInDataLoader
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITempSignInDataLoader.SetData = function(self, params)
-  -- function num : 0_0
+function UITempSignInDataLoader:SetData(params)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITempSignInDataLoader.LoadData = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local signInModule = (GameGlobal.GetModule)(SignInModule)
+function UITempSignInDataLoader:LoadData(TT)
+  local signInModule = GameGlobal.GetModule(SignInModule)
   local res = signInModule:RequestNewPlayerSignupStatus(TT)
 end
-
-

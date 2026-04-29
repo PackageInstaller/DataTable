@@ -1,112 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/component/command_sender_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IEntityCommandPreHandler", Object)
 IEntityCommandPreHandler = IEntityCommandPreHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IEntityCommandPreHandler.BindOwner = function(self, owner)
-  -- function num : 0_0
+function IEntityCommandPreHandler:BindOwner(owner)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommandPreHandler.UnBindOwner = function(self)
-  -- function num : 0_1
+function IEntityCommandPreHandler:UnBindOwner()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommandPreHandler.PreHandleCommand = function(self, cmd)
-  -- function num : 0_2
+function IEntityCommandPreHandler:PreHandleCommand(cmd)
 end
 
 _class("CommandSenderComponent", Object)
 CommandSenderComponent = CommandSenderComponent
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-CommandSenderComponent.Constructor = function(self, preHandler)
-  -- function num : 0_3 , upvalues : _ENV
+function CommandSenderComponent:Constructor(preHandler)
   self.SendQueue = ArrayList:New()
   self.preHandler = preHandler
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandSenderComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_4
+function CommandSenderComponent:WEC_PostInitialize(owner)
   self._CSC_OwnerEntity = owner
   if self.preHandler then
-    (self.preHandler):BindOwner(owner)
+    self.preHandler:BindOwner(owner)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandSenderComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_5
+function CommandSenderComponent:WEC_PostRemoved()
   if self.preHandler then
-    (self.preHandler):UnBindOwner()
+    self.preHandler:UnBindOwner()
     self.preHandler = nil
   end
-  ;
-  (self.SendQueue):Clear()
+  self.SendQueue:Clear()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandSenderComponent.PreHandleCommand = function(self)
-  -- function num : 0_6
+function CommandSenderComponent:PreHandleCommand()
   if self.preHandler then
-    for i = 1, (self.SendQueue):Size() do
-      ((self.preHandler).PreHandleCommand)((self.SendQueue):GetAt(i))
+    for i = 1, self.SendQueue:Size() do
+      self.preHandler.PreHandleCommand(self.SendQueue:GetAt(i))
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CommandSenderComponent.SetPreHandle = function(self, pre_handle)
-  -- function num : 0_7
+function CommandSenderComponent:SetPreHandle(pre_handle)
   self.preHandler = pre_handle
-  ;
-  (self.preHandler):BindOwner(self._CSC_OwnerEntity)
+  self.preHandler:BindOwner(self._CSC_OwnerEntity)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.CommandSender = function(self)
-  -- function num : 0_8
-  return self:GetComponent((self.WEComponentsEnum).CommandSender)
+function Entity:CommandSender()
+  return self:GetComponent(self.WEComponentsEnum.CommandSender)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasCommandSender = function(self)
-  -- function num : 0_9
-  return self:HasComponent((self.WEComponentsEnum).CommandSender)
+function Entity:HasCommandSender()
+  return self:HasComponent(self.WEComponentsEnum.CommandSender)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddCommandSender = function(self, preHandler)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).CommandSender
+function Entity:AddCommandSender(preHandler)
+  local index = self.WEComponentsEnum.CommandSender
   local component = CommandSenderComponent:New(preHandler)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PushCommand = function(self, cmd)
-  -- function num : 0_11 , upvalues : _ENV
+function Entity:PushCommand(cmd)
   if not self:HasCommandSender() then
-    (Log.fatal)("Entity:PushCommand must has CommandSenderComponent!")
-    return 
+    Log.fatal("Entity:PushCommand must has CommandSenderComponent!")
+    return
   end
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   cmd.EntityID = self:GetID()
   cmd.RoundCount = battleStatCmpt:GetGameRoundCount()
   cmd.IsAutoFight = battleStatCmpt:GetAutoFight()
@@ -114,13 +73,10 @@ Entity.PushCommand = function(self, cmd)
   local cmdIndex = battleStatCmpt:IncPushCommandIndex()
   cmd.CmdIndex = cmdIndex
   if cmd:GetCommandType() ~= "BattleSync" then
-    (Log.debug)("[LuaCommand] send command ", echo_one_line(ELogLevel.Debug, cmd))
+    Log.debug("[LuaCommand] send command ", echo_one_line(ELogLevel.Debug, cmd))
   end
-  local index = (self.WEComponentsEnum).CommandSender
+  local index = self.WEComponentsEnum.CommandSender
   local cmdsender = self:CommandSender()
-  ;
-  (cmdsender.SendQueue):PushBack(cmd)
+  cmdsender.SendQueue:PushBack(cmd)
   self:ReplaceComponent(index, cmdsender)
 end
-
-

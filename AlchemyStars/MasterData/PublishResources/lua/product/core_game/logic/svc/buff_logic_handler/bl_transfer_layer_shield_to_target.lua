@@ -1,31 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_transfer_layer_shield_to_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicTransferLayerShieldToTarget", BuffLogicBase)
 BuffLogicTransferLayerShieldToTarget = BuffLogicTransferLayerShieldToTarget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicTransferLayerShieldToTarget.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicTransferLayerShieldToTarget:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicTransferLayerShieldToTarget.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicTransferLayerShieldToTarget:DoLogic(notify)
   if not notify.GetDefenderEntity then
-    return 
+    return
   end
   local targetEntity = notify:GetDefenderEntity()
-  local e = (self._buffInstance):Entity()
-  local buffLogic = (self._world):GetService("BuffLogic")
+  local e = self._buffInstance:Entity()
+  local buffLogic = self._world:GetService("BuffLogic")
   local myLayerCount = buffLogic:GetBuffLayer(e, BuffEffectType.LayerShield)
   buffLogic:AddBuffLayer(targetEntity, BuffEffectType.LayerShield, myLayerCount)
   local newLayer = buffLogic:GetBuffLayer(targetEntity, BuffEffectType.LayerShield)
   local buffResult = BuffResultTransferCasterLayerShieldToTarget:New(e:GetID(), targetEntity:GetID(), newLayer)
   return buffResult
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_cast_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultCastSkill", BuffResultBase)
 BuffResultCastSkill = BuffResultCastSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCastSkill.Constructor = function(self, skillID, skillHolderID, skillHolderType, castPos)
-  -- function num : 0_0
+function BuffResultCastSkill:Constructor(skillID, skillHolderID, skillHolderType, castPos)
   self._skillID = skillID
   self._skillHolderID = skillHolderID
   self._skillHolderType = skillHolderType
@@ -18,682 +11,398 @@ BuffResultCastSkill.Constructor = function(self, skillID, skillHolderID, skillHo
   self._skillDeadMonsterEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetSkillID = function(self)
-  -- function num : 0_1
+function BuffResultCastSkill:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetSkillHolderID = function(self)
-  -- function num : 0_2
+function BuffResultCastSkill:GetSkillHolderID()
   return self._skillHolderID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetSkillHolderType = function(self)
-  -- function num : 0_3
+function BuffResultCastSkill:GetSkillHolderType()
   return self._skillHolderType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetCastPos = function(self)
-  -- function num : 0_4
+function BuffResultCastSkill:GetCastPos()
   return self._castPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetTarget = function(self, targetId, targetPos)
-  -- function num : 0_5
+function BuffResultCastSkill:SetTarget(targetId, targetPos)
   self._targetID = targetId
   self._targetPos = targetPos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetTargetID = function(self)
-  -- function num : 0_6
+function BuffResultCastSkill:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetTargetPos = function(self)
-  -- function num : 0_7
+function BuffResultCastSkill:GetTargetPos()
   return self._targetPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetSkillResultOnPosAndTarget = function(self, res)
-  -- function num : 0_8
+function BuffResultCastSkill:SetSkillResultOnPosAndTarget(res)
   self._skillResultOnPosAndTarget = res
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetSkillResultOnPosAndTarget = function(self)
-  -- function num : 0_9
+function BuffResultCastSkill:GetSkillResultOnPosAndTarget()
   return self._skillResultOnPosAndTarget
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetTeleportPos = function(self, oldpos, newpos)
-  -- function num : 0_10
+function BuffResultCastSkill:SetTeleportPos(oldpos, newpos)
   self._oldPos = oldpos
   self._newPos = newpos
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetTeleportPos = function(self)
-  -- function num : 0_11
+function BuffResultCastSkill:GetTeleportPos()
   return self._oldPos, self._newPos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetTrigger = function(self, triggers)
-  -- function num : 0_12
+function BuffResultCastSkill:SetTrigger(triggers)
   self._trigger = triggers
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetTrigger = function(self)
-  -- function num : 0_13
+function BuffResultCastSkill:GetTrigger()
   return self._trigger
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetStartTask = function(self, task)
-  -- function num : 0_14
+function BuffResultCastSkill:SetStartTask(task)
   self._startTask = task
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetStartTask = function(self)
-  -- function num : 0_15
+function BuffResultCastSkill:GetStartTask()
   return self._startTask
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetUseSuperEntityView = function(self, use)
-  -- function num : 0_16
+function BuffResultCastSkill:SetUseSuperEntityView(use)
   self._useSuperEntityView = use
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetUseSuperEntityView = function(self)
-  -- function num : 0_17
+function BuffResultCastSkill:GetUseSuperEntityView()
   return self._useSuperEntityView
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetNotSetLocation = function(self, state)
-  -- function num : 0_18
+function BuffResultCastSkill:SetNotSetLocation(state)
   self._notSetLocation = state
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetNotSetLocationState = function(self)
-  -- function num : 0_19
+function BuffResultCastSkill:GetNotSetLocationState()
   return self._notSetLocation
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetSkillResult = function(self, result)
-  -- function num : 0_20
+function BuffResultCastSkill:SetSkillResult(result)
   self._skillResult = result
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetSkillResult = function(self)
-  -- function num : 0_21
+function BuffResultCastSkill:GetSkillResult()
   return self._skillResult
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetPlayerHPChangeData = function(self, defenderID, casterID, hPPercent, changeHP)
-  -- function num : 0_22
+function BuffResultCastSkill:SetPlayerHPChangeData(defenderID, casterID, hPPercent, changeHP)
   self._playerHPChangeDefenderID = defenderID
   self._playerHPChangeCasterID = casterID
   self._playerHPChangehPPercent = hPPercent
   self._playerHPChangeChangeHP = changeHP
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetPlayerHPChangeData = function(self)
-  -- function num : 0_23
+function BuffResultCastSkill:GetPlayerHPChangeData()
   return self._playerHPChangeDefenderID, self._playerHPChangeCasterID, self._playerHPChangehPPercent, self._playerHPChangeChangeHP
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetDeadEntityID = function(self, id)
-  -- function num : 0_24
+function BuffResultCastSkill:SetDeadEntityID(id)
   self._deadEntityID = id
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetDeadEntityID = function(self)
-  -- function num : 0_25
+function BuffResultCastSkill:GetDeadEntityID()
   return self._deadEntityID
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetCheckFinalAttack = function(self, checkFinalAttack)
-  -- function num : 0_26
+function BuffResultCastSkill:SetCheckFinalAttack(checkFinalAttack)
   self._checkFinalAttack = checkFinalAttack
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetCheckFinalAttack = function(self)
-  -- function num : 0_27
+function BuffResultCastSkill:GetCheckFinalAttack()
   return self._checkFinalAttack
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetTotalLayer = function(self, n)
-  -- function num : 0_28
+function BuffResultCastSkill:SetTotalLayer(n)
   self._totalLayerCount = n
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetTotalLayer = function(self)
-  -- function num : 0_29
+function BuffResultCastSkill:GetTotalLayer()
   return self._totalLayerCount
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetViewMatchUseLayerCount = function(self, viewMatchUseLayerCount)
-  -- function num : 0_30
+function BuffResultCastSkill:SetViewMatchUseLayerCount(viewMatchUseLayerCount)
   self._viewMatchUseLayerCount = viewMatchUseLayerCount
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetViewMatchUseLayerCount = function(self)
-  -- function num : 0_31
+function BuffResultCastSkill:GetViewMatchUseLayerCount()
   return self._viewMatchUseLayerCount
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetLayer = function(self, n)
-  -- function num : 0_32
+function BuffResultCastSkill:SetLayer(n)
   self._layerCount = n
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetLayer = function(self)
-  -- function num : 0_33
+function BuffResultCastSkill:GetLayer()
   return self._layerCount
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetLayerName = function(self, layerName)
-  -- function num : 0_34
+function BuffResultCastSkill:SetLayerName(layerName)
   self._layerName = layerName
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetLayerName = function(self)
-  -- function num : 0_35
+function BuffResultCastSkill:GetLayerName()
   return self._layerName
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetNotifyIsOwnerSummoner = function(self, notifyIsOwnerSummoner)
-  -- function num : 0_36
+function BuffResultCastSkill:SetNotifyIsOwnerSummoner(notifyIsOwnerSummoner)
   self._notifyIsOwnerSummoner = notifyIsOwnerSummoner
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetNotifyIsOwnerSummoner = function(self)
-  -- function num : 0_37
+function BuffResultCastSkill:GetNotifyIsOwnerSummoner()
   return self._notifyIsOwnerSummoner
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetNotifyMoveEndPos = function(self, pos)
-  -- function num : 0_38
+function BuffResultCastSkill:SetNotifyMoveEndPos(pos)
   self._notifyMoveEndPos = pos
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetNotifyMoveEndPos = function(self)
-  -- function num : 0_39
+function BuffResultCastSkill:GetNotifyMoveEndPos()
   return self._notifyMoveEndPos
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetNotifySyncMovePathIndex = function(self, pathIndex)
-  -- function num : 0_40
+function BuffResultCastSkill:SetNotifySyncMovePathIndex(pathIndex)
   self._notifySyncMoveEndPathIndex = pathIndex
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetNotifySyncMovePathIndex = function(self)
-  -- function num : 0_41
+function BuffResultCastSkill:GetNotifySyncMovePathIndex()
   return self._notifySyncMoveEndPathIndex
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetAttackPosArray = function(self)
-  -- function num : 0_42
+function BuffResultCastSkill:GetAttackPosArray()
   return self._attackPosArray
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetAttackPosArray = function(self, t)
-  -- function num : 0_43
+function BuffResultCastSkill:SetAttackPosArray(t)
   self._attackPosArray = t
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetNotifyEntityID = function(self, id)
-  -- function num : 0_44
+function BuffResultCastSkill:SetNotifyEntityID(id)
   self._notifyEntityID = id
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetNotifyEntityID = function(self)
-  -- function num : 0_45
+function BuffResultCastSkill:GetNotifyEntityID()
   return self._notifyEntityID
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetSuperGridTriggerEndPos = function(self, v)
-  -- function num : 0_46
+function BuffResultCastSkill:SetSuperGridTriggerEndPos(v)
   self._superGridTriggerEndPos = v
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetSuperGridTriggerEndPos = function(self)
-  -- function num : 0_47
+function BuffResultCastSkill:GetSuperGridTriggerEndPos()
   return self._superGridTriggerEndPos
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetPoorGridTriggerEndPos = function(self, v)
-  -- function num : 0_48
+function BuffResultCastSkill:SetPoorGridTriggerEndPos(v)
   self._poorGridTriggerEndPos = v
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetPoorGridTriggerEndPos = function(self)
-  -- function num : 0_49
+function BuffResultCastSkill:GetPoorGridTriggerEndPos()
   return self._poorGridTriggerEndPos
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetIsSuperGridTriggerStart = function(self, bSuperGrid)
-  -- function num : 0_50
+function BuffResultCastSkill:SetIsSuperGridTriggerStart(bSuperGrid)
   self._isSuperGridTriggerStart = bSuperGrid
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetIsSuperGridTriggerStart = function(self)
-  -- function num : 0_51
+function BuffResultCastSkill:GetIsSuperGridTriggerStart()
   return self._isSuperGridTriggerStart
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetSuperGridTriggerStartPos = function(self, v)
-  -- function num : 0_52
+function BuffResultCastSkill:SetSuperGridTriggerStartPos(v)
   self._superGridTriggerStartPos = v
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetSuperGridTriggerStartPos = function(self)
-  -- function num : 0_53
+function BuffResultCastSkill:GetSuperGridTriggerStartPos()
   return self._superGridTriggerStartPos
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetSuperGridTriggerStartByActiveSkill = function(self, bActiveSkill)
-  -- function num : 0_54
+function BuffResultCastSkill:SetSuperGridTriggerStartByActiveSkill(bActiveSkill)
   self._superGridTriggerStartByActiveSkill = bActiveSkill
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.IsSuperGridTriggerStartByActiveSkill = function(self)
-  -- function num : 0_55
+function BuffResultCastSkill:IsSuperGridTriggerStartByActiveSkill()
   return self._superGridTriggerStartByActiveSkill
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.ReplaceCasterPos = function(self, v2)
-  -- function num : 0_56
+function BuffResultCastSkill:ReplaceCasterPos(v2)
   self._castPos = v2
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetPet1601781MultiCastCount = function(self, val)
-  -- function num : 0_57
+function BuffResultCastSkill:SetPet1601781MultiCastCount(val)
   self._pet1601781MultiCastCount = val
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetPet1601781MultiCastCount = function(self)
-  -- function num : 0_58
+function BuffResultCastSkill:GetPet1601781MultiCastCount()
   return self._pet1601781MultiCastCount
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetGridConvertOldPosIndexPieceType = function(self, t)
-  -- function num : 0_59
+function BuffResultCastSkill:SetGridConvertOldPosIndexPieceType(t)
   self._gridConvertOldPosIndexPieceType = t
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetGridConvertOldPosIndexPieceType = function(self)
-  -- function num : 0_60
+function BuffResultCastSkill:GetGridConvertOldPosIndexPieceType()
   return self._gridConvertOldPosIndexPieceType
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetGridConvertNewPosIndexPieceType = function(self, t)
-  -- function num : 0_61
+function BuffResultCastSkill:SetGridConvertNewPosIndexPieceType(t)
   self._gridConvertNewPosIndexPieceType = t
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetGridConvertNewPosIndexPieceType = function(self)
-  -- function num : 0_62
+function BuffResultCastSkill:GetGridConvertNewPosIndexPieceType()
   return self._gridConvertNewPosIndexPieceType
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetPetAbsorbSuperGridTrapPos = function(self, v)
-  -- function num : 0_63
+function BuffResultCastSkill:SetPetAbsorbSuperGridTrapPos(v)
   self._petAbsorbSuperGridTrapPos = v
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetPetAbsorbSuperGridTrapPos = function(self)
-  -- function num : 0_64
+function BuffResultCastSkill:GetPetAbsorbSuperGridTrapPos()
   return self._petAbsorbSuperGridTrapPos
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetMonsterWalkPos = function(self, v)
-  -- function num : 0_65
+function BuffResultCastSkill:SetMonsterWalkPos(v)
   self._monsterWalkPos = v
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetMonsterWalkPos = function(self)
-  -- function num : 0_66
+function BuffResultCastSkill:GetMonsterWalkPos()
   return self._monsterWalkPos
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetNotifyChainSkillTimeIndex = function(self, v)
-  -- function num : 0_67
+function BuffResultCastSkill:SetNotifyChainSkillTimeIndex(v)
   self._notifyChainSkillTimeIndex = v
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetNotifyChainSkillTimeIndex = function(self)
-  -- function num : 0_68
+function BuffResultCastSkill:GetNotifyChainSkillTimeIndex()
   return self._notifyChainSkillTimeIndex
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetNotifyChainSkillStageIndex = function(self, v)
-  -- function num : 0_69
+function BuffResultCastSkill:SetNotifyChainSkillStageIndex(v)
   self._notifyChainSkillStageIndex = v
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetNotifyChainSkillStageIndex = function(self)
-  -- function num : 0_70
+function BuffResultCastSkill:GetNotifyChainSkillStageIndex()
   return self._notifyChainSkillStageIndex
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetNotifyChainSkillId = function(self, v)
-  -- function num : 0_71
+function BuffResultCastSkill:SetNotifyChainSkillId(v)
   self._notifyChainSkillId = v
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetNotifyChainSkillId = function(self)
-  -- function num : 0_72
+function BuffResultCastSkill:GetNotifyChainSkillId()
   return self._notifyChainSkillId
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetCurLayer = function(self, layer)
-  -- function num : 0_73
+function BuffResultCastSkill:SetCurLayer(layer)
   self._curLayer = layer
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetCurLayer = function(self)
-  -- function num : 0_74
+function BuffResultCastSkill:GetCurLayer()
   return self._curLayer
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetUseCurAndTotalLayer = function(self, useCurAndTotalLayer)
-  -- function num : 0_75
+function BuffResultCastSkill:SetUseCurAndTotalLayer(useCurAndTotalLayer)
   self._useCurAndTotalLayer = useCurAndTotalLayer
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.IsUseCurAndTotalLayer = function(self)
-  -- function num : 0_76
+function BuffResultCastSkill:IsUseCurAndTotalLayer()
   return self._useCurAndTotalLayer
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetSkillDeadMonsterEntityIDList = function(self, idList)
-  -- function num : 0_77
+function BuffResultCastSkill:SetSkillDeadMonsterEntityIDList(idList)
   self._skillDeadMonsterEntityIDList = idList
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetSkillDeadMonsterEntityIDList = function(self)
-  -- function num : 0_78
+function BuffResultCastSkill:GetSkillDeadMonsterEntityIDList()
   return self._skillDeadMonsterEntityIDList
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetMovePos = function(self, movePos)
-  -- function num : 0_79
+function BuffResultCastSkill:SetMovePos(movePos)
   self._movePos = movePos
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetMovePos = function(self)
-  -- function num : 0_80
+function BuffResultCastSkill:GetMovePos()
   return self._movePos
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetSkillResultOnPos = function(self, res)
-  -- function num : 0_81
+function BuffResultCastSkill:SetSkillResultOnPos(res)
   self._skillResultOnPos = res
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetSkillResultOnPos = function(self)
-  -- function num : 0_82
+function BuffResultCastSkill:GetSkillResultOnPos()
   return self._skillResultOnPos
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.GetNormalAttackIndex = function(self)
-  -- function num : 0_83
+function BuffResultCastSkill:GetNormalAttackIndex()
   return self._normalAttackIndex
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkill.SetNormalAttackIndex = function(self, index)
-  -- function num : 0_84
+function BuffResultCastSkill:SetNormalAttackIndex(index)
   self._normalAttackIndex = index
 end
 
 _class("BuffResultCastSkillOnPosAndTarget", Object)
 BuffResultCastSkillOnPosAndTarget = BuffResultCastSkillOnPosAndTarget
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCastSkillOnPosAndTarget.Constructor = function(self)
-  -- function num : 0_85
+function BuffResultCastSkillOnPosAndTarget:Constructor()
   self._holder = {}
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillOnPosAndTarget.AddSkillResult = function(self, pos, targetId, skillResult)
-  -- function num : 0_86 , upvalues : _ENV
-  local hash = (Vector2.Pos2Index)(pos)
-  local t = (self._holder)[hash]
+function BuffResultCastSkillOnPosAndTarget:AddSkillResult(pos, targetId, skillResult)
+  local hash = Vector2.Pos2Index(pos)
+  local t = self._holder[hash]
   if not t then
     t = {}
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._holder)[hash] = t
+    self._holder[hash] = t
   end
   t[targetId] = skillResult
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillOnPosAndTarget.GetSkillResult = function(self, pos, targetId)
-  -- function num : 0_87 , upvalues : _ENV
-  local hash = (Vector2.Pos2Index)(pos)
-  local t = (self._holder)[hash]
+function BuffResultCastSkillOnPosAndTarget:GetSkillResult(pos, targetId)
+  local hash = Vector2.Pos2Index(pos)
+  local t = self._holder[hash]
   if t then
     local ret = t[targetId]
     t[targetId] = nil
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R6 in 'UnsetPending'
-
     if not next(t) then
-      (self._holder)[hash] = nil
+      self._holder[hash] = nil
     end
     return ret
   end
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillOnPosAndTarget.ClearSkillResults = function(self)
-  -- function num : 0_88
+function BuffResultCastSkillOnPosAndTarget:ClearSkillResults()
   self._holder = {}
 end
 
 _class("BuffResultCastSkillOnPos", Object)
 BuffResultCastSkillOnPos = BuffResultCastSkillOnPos
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultCastSkillOnPos.Constructor = function(self)
-  -- function num : 0_89
+function BuffResultCastSkillOnPos:Constructor()
   self._holder = {}
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillOnPos.AddSkillResult = function(self, pos, skillResult)
-  -- function num : 0_90 , upvalues : _ENV
-  local hash = (Vector2.Pos2Index)(pos)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._holder)[hash] = skillResult
+function BuffResultCastSkillOnPos:AddSkillResult(pos, skillResult)
+  local hash = Vector2.Pos2Index(pos)
+  self._holder[hash] = skillResult
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillOnPos.GetSkillResult = function(self, pos)
-  -- function num : 0_91 , upvalues : _ENV
-  local hash = (Vector2.Pos2Index)(pos)
-  return (self._holder)[hash]
+function BuffResultCastSkillOnPos:GetSkillResult(pos)
+  local hash = Vector2.Pos2Index(pos)
+  return self._holder[hash]
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultCastSkillOnPos.ClearSkillResults = function(self)
-  -- function num : 0_92
+function BuffResultCastSkillOnPos:ClearSkillResults()
   self._holder = {}
 end
-
-

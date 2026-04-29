@@ -1,87 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopModule", UIModule)
 UIShopModule = UIShopModule
-PayStep = {LaunchPurchaseUI = 1, ClickPurchaseButton = 2, LaunchMidasAuthentication = 3, PayResult = 4}
+PayStep = {
+  LaunchPurchaseUI = 1,
+  ClickPurchaseButton = 2,
+  LaunchMidasAuthentication = 3,
+  PayResult = 4
+}
 _enum("PayStep", PayStep)
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopModule.Constructor = function(self)
-  -- function num : 0_0
+function UIShopModule:Constructor()
   self._curPurchaseSerialNumber = ""
   self._lastPurchaseStartTime = ""
   self._indexNumber = 1
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopModule.Dispose = function(self)
-  -- function num : 0_1
+function UIShopModule:Dispose()
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopModule.GeneratePurchaseSerialNumber = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local sTime = (os.date)("!*t", (math.floor)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000))
-  local timeStr = (string.format)("%04d%02d%02d%02d%02d%02d", sTime.year, sTime.month, sTime.day, sTime.hour, sTime.min, sTime.sec)
+function UIShopModule:GeneratePurchaseSerialNumber()
+  local sTime = os.date("!*t", math.floor(GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000))
+  local timeStr = string.format("%04d%02d%02d%02d%02d%02d", sTime.year, sTime.month, sTime.day, sTime.hour, sTime.min, sTime.sec)
   if timeStr == self._lastPurchaseStartTime then
     self._indexNumber = self._indexNumber + 1
     if self._indexNumber >= 100 then
-      (Log.fatal)("generate purchase serial number error, index number exceeded 99")
+      Log.fatal("generate purchase serial number error, index number exceeded 99")
       self._indexNumber = 0
     end
   else
     self._indexNumber = 1
   end
   self._lastPurchaseStartTime = timeStr
-  self._curPurchaseSerialNumber = ((GameGlobal.GameLogic)()):GetOpenId() .. timeStr .. (string.format)("%02d", self._indexNumber)
+  self._curPurchaseSerialNumber = GameGlobal.GameLogic():GetOpenId() .. timeStr .. string.format("%02d", self._indexNumber)
   return self._curPurchaseSerialNumber
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopModule.ReportPayStep = function(self, payStep, result, errorCode, extraParam)
-  -- function num : 0_3 , upvalues : _ENV
-  if not errorCode then
-    errorCode = 0
-  end
-  if not extraParam then
-    extraParam = ""
-  end
+function UIShopModule:ReportPayStep(payStep, result, errorCode, extraParam)
+  errorCode = errorCode or 0
+  extraParam = extraParam or ""
   local stepName = ""
   local paramsTable = {}
   if payStep == PayStep.LaunchPurchaseUI then
     stepName = "LaunchPurchaseUI"
     paramsTable.serial_number = self:GeneratePurchaseSerialNumber()
     paramsTable.purchase_content = extraParam
+  elseif payStep == PayStep.ClickPurchaseButton then
+    stepName = "ClickPurchaseButton"
+    paramsTable.serial_number = self._curPurchaseSerialNumber
+    paramsTable.purchase_fail_reason = extraParam
+  elseif payStep == PayStep.LaunchMidasAuthentication then
+    stepName = "LaunchMidasAuthentication"
+    paramsTable.serial_number = self._curPurchaseSerialNumber
+  elseif payStep == PayStep.PayResult then
+    stepName = "PayResult"
+    paramsTable.serial_number = self._curPurchaseSerialNumber
+    paramsTable.pay_fail_reason = extraParam
   else
-    if payStep == PayStep.ClickPurchaseButton then
-      stepName = "ClickPurchaseButton"
-      paramsTable.serial_number = self._curPurchaseSerialNumber
-      paramsTable.purchase_fail_reason = extraParam
-    else
-      if payStep == PayStep.LaunchMidasAuthentication then
-        stepName = "LaunchMidasAuthentication"
-        paramsTable.serial_number = self._curPurchaseSerialNumber
-      else
-        if payStep == PayStep.PayResult then
-          stepName = "PayResult"
-          paramsTable.serial_number = self._curPurchaseSerialNumber
-          paramsTable.pay_fail_reason = extraParam
-        else
-          ;
-          (Log.fatal)("ShopModule:ReportPayStep wrong step: ", tostring(payStep))
-          return 
-        end
-      end
-    end
+    Log.fatal("ShopModule:ReportPayStep wrong step: ", tostring(payStep))
+    return
   end
-  ;
-  (UAReportHelper.UAReportPayStep)(payStep, stepName, result, errorCode, (json.encode)(paramsTable))
+  UAReportHelper.UAReportPayStep(payStep, stepName, result, errorCode, json.encode(paramsTable))
 end
-
-

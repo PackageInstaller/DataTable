@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_change_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResultChangeElement", SkillEffectResultBase)
 SkillEffectResultChangeElement = SkillEffectResultChangeElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultChangeElement.Constructor = function(self, target, elementType)
-  -- function num : 0_0
+function SkillEffectResultChangeElement:Constructor(target, elementType)
   self.target = target
   self.elementType = elementType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeElement.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultChangeElement:GetEffectType()
   return SkillEffectType.ChangeElement
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeElement.GetTarget = function(self)
-  -- function num : 0_2
+function SkillEffectResultChangeElement:GetTarget()
   return self.target
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultChangeElement.GetElementType = function(self)
-  -- function num : 0_3
+function SkillEffectResultChangeElement:GetElementType()
   return self.elementType
 end
-
-

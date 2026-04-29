@@ -1,30 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/cls/ui_n25_idol_collection_reddot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N25IdolCollectionReddot", Object)
 N25IdolCollectionReddot = N25IdolCollectionReddot
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N25IdolCollectionReddot.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function N25IdolCollectionReddot:Constructor()
   self._idEndCG = 1
   self._idMemory = 2
   self._idAchieve = 3
   self._viewed = {
-[self._idEndCG] = {key = self:GetDBEndCGKey(), 
-value = {}
-}
-, 
-[self._idMemory] = {key = self:GetDBMemoryKey(), 
-value = {}
-}
-, 
-[self._idAchieve] = {key = self:GetDBAchieveKey(), 
-value = {}
-}
-}
+    [self._idEndCG] = {
+      key = self:GetDBEndCGKey(),
+      value = {}
+    },
+    [self._idMemory] = {
+      key = self:GetDBMemoryKey(),
+      value = {}
+    },
+    [self._idAchieve] = {
+      key = self:GetDBAchieveKey(),
+      value = {}
+    }
+  }
   self:PrivateLoadDB(self._idEndCG)
   self:PrivateLoadDB(self._idMemory)
   self:PrivateLoadDB(self._idAchieve)
@@ -35,90 +29,60 @@ value = {}
   self:FlushUnlocked()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetModule = function(self, gameModuleProto)
-  -- function num : 0_1 , upvalues : _ENV
-  return (GameGlobal.GetModule)(gameModuleProto)
+function N25IdolCollectionReddot:GetModule(gameModuleProto)
+  return GameGlobal.GetModule(gameModuleProto)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetIdolComponent = function(self)
-  -- function num : 0_2
+function N25IdolCollectionReddot:GetIdolComponent()
   return self._idolComponent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetDBEndCGKey = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function N25IdolCollectionReddot:GetDBEndCGKey()
   local key = "N25IdolCollectionReddot_EndCG_fk"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetDBMemoryKey = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function N25IdolCollectionReddot:GetDBMemoryKey()
   local key = "N25IdolCollectionReddot_Memory_fk"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetDBAchieveKey = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function N25IdolCollectionReddot:GetDBAchieveKey()
   local key = "N25IdolCollectionReddot_Achieve_fk"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.PrivateLoadDB = function(self, sheetID)
-  -- function num : 0_6 , upvalues : _ENV
-  local viewed = (self._viewed)[sheetID]
-  local content = (LocalDB.GetString)(viewed.key, "")
-  local fnString = (string.format)("return {%s}", content)
+function N25IdolCollectionReddot:PrivateLoadDB(sheetID)
+  local viewed = self._viewed[sheetID]
+  local content = LocalDB.GetString(viewed.key, "")
+  local fnString = string.format("return {%s}", content)
   local fnTable = load(fnString)
   local dbData = fnTable()
-  for k,v in pairs(dbData) do
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R12 in 'UnsetPending'
-
-    (viewed.value)[v] = v
+  for k, v in pairs(dbData) do
+    viewed.value[v] = v
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.PrivateSaveDB = function(self, sheetID)
-  -- function num : 0_7 , upvalues : _ENV
-  local viewed = (self._viewed)[sheetID]
+function N25IdolCollectionReddot:PrivateSaveDB(sheetID)
+  local viewed = self._viewed[sheetID]
   local content = ""
-  for k,v in pairs(viewed.value) do
-    content = content .. (string.format)("%d, ", v)
+  for k, v in pairs(viewed.value) do
+    content = content .. string.format("%d, ", v)
   end
-  ;
-  (LocalDB.SetString)(viewed.key, content)
+  LocalDB.SetString(viewed.key, content)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.SaveDB = function(self)
-  -- function num : 0_8
+function N25IdolCollectionReddot:SaveDB()
   self:PrivateSaveDB(self._idEndCG)
   self:PrivateSaveDB(self._idMemory)
   self:PrivateSaveDB(self._idAchieve)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.ClearDB = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for k,v in pairs(self._viewed) do
+function N25IdolCollectionReddot:ClearDB()
+  for k, v in pairs(self._viewed) do
     v.value = {}
   end
   self:PrivateSaveDB(self._idEndCG)
@@ -126,15 +90,16 @@ N25IdolCollectionReddot.ClearDB = function(self)
   self:PrivateSaveDB(self._idAchieve)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.ClearNew = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local fnUnlock = {[self._idEndCG] = self.GetEndCGUnlocked, [self._idMemory] = self.GetMemoryUnlocked, [self._idAchieve] = self.GetAchieveUnlocked}
-  for k,v in pairs(self._viewed) do
+function N25IdolCollectionReddot:ClearNew()
+  local fnUnlock = {
+    [self._idEndCG] = self.GetEndCGUnlocked,
+    [self._idMemory] = self.GetMemoryUnlocked,
+    [self._idAchieve] = self.GetAchieveUnlocked
+  }
+  for k, v in pairs(self._viewed) do
     local value = v.value
-    local unlocked = (fnUnlock[k])(self)
-    for k,v in pairs(unlocked) do
+    local unlocked = fnUnlock[k](self)
+    for k, v in pairs(unlocked) do
       value[k] = k
     end
   end
@@ -143,97 +108,61 @@ N25IdolCollectionReddot.ClearNew = function(self)
   self:PrivateSaveDB(self._idAchieve)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.AddViewed = function(self, sheetID, id, autoSaved)
-  -- function num : 0_11
-  local viewed = (self._viewed)[sheetID]
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (viewed.value)[id] = id
+function N25IdolCollectionReddot:AddViewed(sheetID, id, autoSaved)
+  local viewed = self._viewed[sheetID]
+  viewed.value[id] = id
   if autoSaved then
     self:PrivateSaveDB(sheetID)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.AddViewedEngCG = function(self, id, autoSaved)
-  -- function num : 0_12
+function N25IdolCollectionReddot:AddViewedEngCG(id, autoSaved)
   local unlocked = self:GetEndCGUnlocked()
   if unlocked[id] ~= nil then
     self:AddViewed(self._idEndCG, id, autoSaved)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.AddViewedMemory = function(self, id, autoSaved)
-  -- function num : 0_13
+function N25IdolCollectionReddot:AddViewedMemory(id, autoSaved)
   self:AddViewed(self._idMemory, id, autoSaved)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.AddViewedAchieve = function(self, id, autoSaved)
-  -- function num : 0_14
+function N25IdolCollectionReddot:AddViewedAchieve(id, autoSaved)
   self:AddViewed(self._idAchieve, id, autoSaved)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.FlushUnlocked = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local componentInfo = (self._idolComponent):GetComponentInfo()
+function N25IdolCollectionReddot:FlushUnlocked()
+  local componentInfo = self._idolComponent:GetComponentInfo()
   local collectInfo = componentInfo.collect_info
   self._unlockedEnding = {}
-  for k,v in pairs(collectInfo.ending_list) do
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._unlockedEnding)[v] = v
+  for k, v in pairs(collectInfo.ending_list) do
+    self._unlockedEnding[v] = v
   end
   self._unlockedEvent = {}
-  for k,v in pairs(collectInfo.agree_events) do
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._unlockedEvent)[v] = v
+  for k, v in pairs(collectInfo.agree_events) do
+    self._unlockedEvent[v] = v
   end
   self._unlockedAchieve = {}
-  for k,v in pairs(collectInfo.achieve_list) do
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._unlockedAchieve)[k] = v
+  for k, v in pairs(collectInfo.achieve_list) do
+    self._unlockedAchieve[k] = v
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetEndCGUnlocked = function(self)
-  -- function num : 0_16
+function N25IdolCollectionReddot:GetEndCGUnlocked()
   return self._unlockedEnding
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetMemoryUnlocked = function(self)
-  -- function num : 0_17
+function N25IdolCollectionReddot:GetMemoryUnlocked()
   return self._unlockedEvent
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetAchieveUnlocked = function(self)
-  -- function num : 0_18
+function N25IdolCollectionReddot:GetAchieveUnlocked()
   return self._unlockedAchieve
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetEndCGReddot = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local allEnding = (Cfg.cfg_component_idol_ending)({})
-  for k,v in pairs(allEnding) do
+function N25IdolCollectionReddot:GetEndCGReddot()
+  local allEnding = Cfg.cfg_component_idol_ending({})
+  for k, v in pairs(allEnding) do
     if self:GetEndCGTitleReddot(k) then
       return true
     end
@@ -241,12 +170,9 @@ N25IdolCollectionReddot.GetEndCGReddot = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetMemoryReddot = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local allEvents = (Cfg.cfg_component_idol_event)({})
-  for k,v in pairs(allEvents) do
+function N25IdolCollectionReddot:GetMemoryReddot()
+  local allEvents = Cfg.cfg_component_idol_event({})
+  for k, v in pairs(allEvents) do
     if self:GetMemoryTitleReddot(k) then
       return true
     end
@@ -254,79 +180,54 @@ N25IdolCollectionReddot.GetMemoryReddot = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetAchieveReddot = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local allAchieves = (Cfg.cfg_component_idol_achieve)({})
-  for k,v in pairs(allAchieves) do
+function N25IdolCollectionReddot:GetAchieveReddot()
+  local allAchieves = Cfg.cfg_component_idol_achieve({})
+  for k, v in pairs(allAchieves) do
     if self:GetAchieveTitleReddot(k) then
       return true
-    else
-      if self:GetAchieveRewardReddot(k) then
-        return true
-      end
+    elseif self:GetAchieveRewardReddot(k) then
+      return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetEndCGTitleReddot = function(self, id)
-  -- function num : 0_22
+function N25IdolCollectionReddot:GetEndCGTitleReddot(id)
   local unlocked = self:GetEndCGUnlocked()
   if unlocked[id] == nil then
     return false
   end
-  local viewed = (self._viewed)[self._idEndCG]
-  do return (viewed.value)[id] == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local viewed = self._viewed[self._idEndCG]
+  return viewed.value[id] == nil
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetMemoryTitleReddot = function(self, id)
-  -- function num : 0_23
+function N25IdolCollectionReddot:GetMemoryTitleReddot(id)
   local unlocked = self:GetMemoryUnlocked()
   if unlocked[id] == nil then
     return false
   end
-  local viewed = (self._viewed)[self._idMemory]
-  do return (viewed.value)[id] == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local viewed = self._viewed[self._idMemory]
+  return viewed.value[id] == nil
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetAchieveTitleReddot = function(self, id)
-  -- function num : 0_24 , upvalues : _ENV
+function N25IdolCollectionReddot:GetAchieveTitleReddot(id)
   if not self._enableAchieveTitleReddot then
     return false
   end
   local unlocked = self:GetAchieveUnlocked()
   if unlocked[id] == nil then
     return false
-  else
-    if unlocked[id] == IdolAchieveState.IdolAchieveState_Recved then
-      return false
-    end
+  elseif unlocked[id] == IdolAchieveState.IdolAchieveState_Recved then
+    return false
   end
-  local viewed = (self._viewed)[self._idAchieve]
-  do return (viewed.value)[id] == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local viewed = self._viewed[self._idAchieve]
+  return viewed.value[id] == nil
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-N25IdolCollectionReddot.GetAchieveRewardReddot = function(self, id)
-  -- function num : 0_25 , upvalues : _ENV
+function N25IdolCollectionReddot:GetAchieveRewardReddot(id)
   local unlocked = self:GetAchieveUnlocked()
   if unlocked[id] == nil then
     return false
   end
-  do return unlocked[id] == IdolAchieveState.IdolAchieveState_CanRecv end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return unlocked[id] == IdolAchieveState.IdolAchieveState_CanRecv
 end
-
-

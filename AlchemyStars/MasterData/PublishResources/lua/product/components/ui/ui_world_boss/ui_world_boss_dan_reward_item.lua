@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_dan_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossDanRewardItem", UICustomWidget)
 UIWorldBossDanRewardItem = UIWorldBossDanRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossDanRewardItem.Constructor = function(self)
-  -- function num : 0_0
+function UIWorldBossDanRewardItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIWorldBossDanRewardItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanRewardItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIWorldBossDanRewardItem:InitWidget()
   self._icon = self:GetUIComponent("RawImageLoader", "_icon")
   self._numTex = self:GetUIComponent("UILocalizationText", "_numTex")
   self._numTexGo = self:GetGameObject("_numTex")
@@ -33,62 +20,43 @@ UIWorldBossDanRewardItem.InitWidget = function(self)
   self._awardMulti = self:GetUIComponent("UILocalizationText", "AwardMulti")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanRewardItem.SetData = function(self, itemAsset, itemClickCallBack, badgeDan, badgeRankLevel)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWorldBossDanRewardItem:SetData(itemAsset, itemClickCallBack, badgeDan, badgeRankLevel)
   self._bBadge = false
   if badgeDan then
     self._bBadge = true
   end
-  ;
-  (self._badgeGo):SetActive(self._bBadge)
-  ;
-  (self._itemGo):SetActive(not self._bBadge)
+  self._badgeGo:SetActive(self._bBadge)
+  self._itemGo:SetActive(not self._bBadge)
   local worldBossModule = self:GetModule(WorldBossModule)
   local str = ""
   if worldBossModule:AwardMultiOpen() then
     str = "x" .. worldBossModule:GetAwardMultiple()
   end
-  ;
-  (self._awardMulti):SetText(str)
+  self._awardMulti:SetText(str)
   self._itemClickCallBack = itemClickCallBack
   if self._bBadge then
     local roleInfo = role_world_boss_info:New()
     roleInfo.dan_head_switch = true
     roleInfo.dan = badgeDan
     roleInfo.grading = badgeRankLevel
-    ;
-    (UIWorldBossHelper.InitOtherDanBadgeSimple)(self._badgeGen, self._badgeGo, self._badgeGenRect, roleInfo)
-  else
-    do
-      if itemAsset then
-        self._itemId = itemAsset.assetid
-        self._itemCount = itemAsset.count
-        local itemCfg = (Cfg.cfg_item)[self._itemId]
-        if itemCfg then
-          (self._icon):DestoryLastImage()
-          local res = itemCfg.Icon
-          ;
-          (self._icon):LoadImage(res)
-          ;
-          (self._numTex):SetText(self._itemCount)
-        end
-      end
+    UIWorldBossHelper.InitOtherDanBadgeSimple(self._badgeGen, self._badgeGo, self._badgeGenRect, roleInfo)
+  elseif itemAsset then
+    self._itemId = itemAsset.assetid
+    self._itemCount = itemAsset.count
+    local itemCfg = Cfg.cfg_item[self._itemId]
+    if itemCfg then
+      self._icon:DestoryLastImage()
+      local res = itemCfg.Icon
+      self._icon:LoadImage(res)
+      self._numTex:SetText(self._itemCount)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanRewardItem.IconOnClick = function(self, go)
-  -- function num : 0_4
+function UIWorldBossDanRewardItem:IconOnClick(go)
   if self._itemClickCallBack then
     local tr = go.transform
     local pos = tr.position
-    ;
-    (self._itemClickCallBack)(self._itemId, pos)
+    self._itemClickCallBack(self._itemId, pos)
   end
 end
-
-

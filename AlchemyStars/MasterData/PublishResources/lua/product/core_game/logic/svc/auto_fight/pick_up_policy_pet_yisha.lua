@@ -1,88 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_yisha.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetYiSha", PickUpPolicy_Base)
 PickUpPolicy_PetYiSha = PickUpPolicy_PetYiSha
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetYiSha.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_PetYiSha:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local pickPosList, atkPosList, targetIds, extraParam = self:_CalPickPosPolicy_PetYiSha(petEntity, activeSkillID)
   return pickPosList, atkPosList, targetIds, extraParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetYiSha._CalPickPosPolicy_PetYiSha = function(self, petEntity, activeSkillID)
-  -- function num : 0_1 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
+function PickUpPolicy_PetYiSha:_CalPickPosPolicy_PetYiSha(petEntity, activeSkillID)
+  local configService = self._world:GetService("Config")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local buffLogicSvc = self._world:GetService("BuffLogic")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
   local scopeType = SkillScopeType.ZhongxuForceMovementPickRange
-  local scopeParam, centerType, targetType = nil, nil, nil
+  local scopeParam, centerType, targetType
   local skillScopeAndTarget = skillConfigData:GetAutoFightSkillScopeTypeAndTargetType()
   if skillScopeAndTarget and skillScopeAndTarget.useType == AutoFightScopeUseType.PickPosPolicy then
     scopeParam = skillScopeAndTarget.ScopeParam
   else
     return {}, {}, {}
   end
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local validEnemyList = {}
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    local enemyTeam = (((petEntity:Pet()):GetOwnerTeamEntity()):Team()):GetEnemyTeamEntity()
-    ;
-    (table.insert)(validEnemyList, enemyTeam)
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local enemyTeam = petEntity:Pet():GetOwnerTeamEntity():Team():GetEnemyTeamEntity()
+    table.insert(validEnemyList, enemyTeam)
   else
-    do
-      for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-        if not monsterEntity:HasDeadMark() then
-          local canAttack = true
-          if monsterEntity:HasBuff() and not buffLogicSvc:CheckCanBeMagicAttack(petEntity, monsterEntity) then
-            canAttack = false
-          end
-          if canAttack and utilDataSvc:IsEntityForceMovementTarget(monsterEntity, true) then
-            (table.insert)(validEnemyList, monsterEntity)
-          end
+    for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+      if not monsterEntity:HasDeadMark() then
+        local canAttack = true
+        if monsterEntity:HasBuff() and not buffLogicSvc:CheckCanBeMagicAttack(petEntity, monsterEntity) then
+          canAttack = false
         end
-      end
-      do
-        if validEnemyList and #validEnemyList > 0 then
-          (table.shuffle)(validEnemyList)
-          for index,enemyEntity in ipairs(validEnemyList) do
-            local centerPos = enemyEntity:GetGridPosition()
-            local firstPickPos = centerPos
-            local result = self:_CalcSkillScopeResult_PickUpPolicy(petEntity, skillConfigData, scopeType, scopeParam, centerType, targetType, centerPos)
-            if result then
-              local attackRange = result:GetAttackRange()
-              local secondPickRange = attackRange
-              local secondPickRangeCount = #secondPickRange
-              if secondPickRangeCount > 0 then
-                local secondPosIndex = (math.random)(1, secondPickRangeCount)
-                local secondPickPos = secondPickRange[secondPosIndex]
-                local pickPosList = {}
-                ;
-                (table.insert)(pickPosList, firstPickPos)
-                ;
-                (table.insert)(pickPosList, secondPickPos)
-                return pickPosList, pickPosList, {}
-              end
-            end
-          end
-        end
-        do
-          return {}, {}, {}
+        if canAttack and utilDataSvc:IsEntityForceMovementTarget(monsterEntity, true) then
+          table.insert(validEnemyList, monsterEntity)
         end
       end
     end
   end
+  if validEnemyList and 0 < #validEnemyList then
+    table.shuffle(validEnemyList)
+    for index, enemyEntity in ipairs(validEnemyList) do
+      local centerPos = enemyEntity:GetGridPosition()
+      local firstPickPos = centerPos
+      local result = self:_CalcSkillScopeResult_PickUpPolicy(petEntity, skillConfigData, scopeType, scopeParam, centerType, targetType, centerPos)
+      if result then
+        local attackRange = result:GetAttackRange()
+        local secondPickRange = attackRange
+        local secondPickRangeCount = #secondPickRange
+        if 0 < secondPickRangeCount then
+          local secondPosIndex = math.random(1, secondPickRangeCount)
+          local secondPickPos = secondPickRange[secondPosIndex]
+          local pickPosList = {}
+          table.insert(pickPosList, firstPickPos)
+          table.insert(pickPosList, secondPickPos)
+          return pickPosList, pickPosList, {}
+        end
+      end
+    end
+  end
+  return {}, {}, {}
 end
-
-

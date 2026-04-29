@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/draw/ui_simple_haute_couture_draw_res_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureDrawResController", UIController)
 UISimpleHauteCoutureDrawResController = UISimpleHauteCoutureDrawResController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureDrawResController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:OnShow(uiParams)
   local drawType = uiParams[1]
   local data = uiParams[2]
   self._campaign = uiParams[3]
   self.isHomeGameServer = uiParams[4]
   self._hasSkin = uiParams[5]
-  self._randomLotteryComponent = (self._campaign):GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
-  self._cfgMap = (self._randomLotteryComponent):GetFirstCfg()
-  self._cfgMain = (self._randomLotteryComponent):GetCfgMain()
+  self._randomLotteryComponent = self._campaign:GetComponent(ECampaignPetSkinComponentID.RANDOMLOTTERY)
+  self._cfgMap = self._randomLotteryComponent:GetFirstCfg()
+  self._cfgMain = self._randomLotteryComponent:GetCfgMain()
   self:_GetComponents()
   self:CheckHasSkinReward(data, drawType)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:_GetComponents()
   self.atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
   self._simpleIcon = self:GetUIComponent("RawImageLoader", "simpleIcon")
   self._simpleName = self:GetUIComponent("UILocalizationText", "simpleName")
@@ -34,7 +24,7 @@ UISimpleHauteCoutureDrawResController._GetComponents = function(self)
   self._content = self:GetUIComponent("UISelectObjectPath", "content")
   self._topContent = self:GetUIComponent("UISelectObjectPath", "topContent")
   self._topTips = self:GetUIComponent("UISelectObjectPath", "toptips")
-  self._topTipsInfo = (self._topTips):SpawnObject("UITopTipsContext")
+  self._topTipsInfo = self._topTips:SpawnObject("UITopTipsContext")
   self._drawIcon1 = self:GetUIComponent("Image", "drawIcon1")
   self._drawIcon2 = self:GetUIComponent("Image", "drawIcon2")
   self._anim = self:GetUIComponent("Animation", "anim")
@@ -43,349 +33,225 @@ UISimpleHauteCoutureDrawResController._GetComponents = function(self)
   self._simpleBtnObj = self:GetGameObject("SimpleBtn")
   self._multipleBtnObj = self:GetGameObject("MultipleBtn")
   self._simpleDrawEff = {}
-  -- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._simpleDrawEff)[1] = self:GetGameObject("UiEff_choujiang_fei_01")
-  -- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._simpleDrawEff)[2] = self:GetGameObject("UiEff_choujiang_fei_02")
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._simpleDrawEff)[3] = self:GetGameObject("UiEff_choujiang_fei_03")
-  -- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._simpleDrawEff)[4] = self:GetGameObject("UiEff_choujiang_fei_04")
-  -- DECOMPILER ERROR at PC108: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._simpleDrawEff)[5] = self:GetGameObject("UiEff_choujiang_fei_05")
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._simpleDrawEff)[6] = self:GetGameObject("UiEff_choujiang_fei_06")
+  self._simpleDrawEff[1] = self:GetGameObject("UiEff_choujiang_fei_01")
+  self._simpleDrawEff[2] = self:GetGameObject("UiEff_choujiang_fei_02")
+  self._simpleDrawEff[3] = self:GetGameObject("UiEff_choujiang_fei_03")
+  self._simpleDrawEff[4] = self:GetGameObject("UiEff_choujiang_fei_04")
+  self._simpleDrawEff[5] = self:GetGameObject("UiEff_choujiang_fei_05")
+  self._simpleDrawEff[6] = self:GetGameObject("UiEff_choujiang_fei_06")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController._Init = function(self, type, data)
-  -- function num : 0_2 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:_Init(type, data)
   for i = 1, 6 do
-    ((self._simpleDrawEff)[i]):SetActive(false)
+    self._simpleDrawEff[i]:SetActive(false)
   end
   if type == SimpleHauteCoutureDrawType.Single then
-    (self._simpleObj):SetActive(false)
-    ;
-    (self._simpleObj):SetActive(true)
-    ;
-    (self._multipleObj):SetActive(false)
-    ;
-    (self._simpleBtnObj):SetActive(true)
-    ;
-    (self._multipleBtnObj):SetActive(false)
-    local roleAsset = (data.m_rewards)[1]
-    local item = (Cfg.cfg_item)[roleAsset.assetid]
-    ;
-    (self._simpleIcon):LoadImage(item.Icon)
-    ;
-    (self._simpleName):SetText((StringTable.Get)(item.Name))
-    ;
-    (self._simpleNum):SetText(roleAsset.count)
-    local probabilityCfg = ((Cfg.cfg_junior_skin_draw_probablity)({ItemID = roleAsset.assetid, Count = roleAsset.count}))[1]
-    ;
-    ((self._simpleDrawEff)[probabilityCfg.Color]):SetActive(true)
-  else
-    do
-      if type == SimpleHauteCoutureDrawType.Multiple then
-        (self._simpleObj):SetActive(false)
-        ;
-        (self._multipleObj):SetActive(true)
-        ;
-        (self._simpleBtnObj):SetActive(false)
-        ;
-        (self._multipleBtnObj):SetActive(true)
-        local items = (self._content):SpawnObjects("UISimpleHauteCoutureDrawResItem", 10)
-        for i,item in pairs(items) do
-          item:SetData((data.m_rewards)[i], i, (self._cfgMain).DrawPic)
-        end
-      end
-      do
-        local topMenu = (self._topContent):SpawnObject("UISimpleHauteCoutureTopMenu")
-        topMenu:SetData(self._topTipsInfo, (self._cfgMap).CostItemID, RoleAssetID.RoleAssetDiamond, (self._cfgMain).ScoreID, function()
-    -- function num : 0_2_0 , upvalues : self
+    self._simpleObj:SetActive(false)
+    self._simpleObj:SetActive(true)
+    self._multipleObj:SetActive(false)
+    self._simpleBtnObj:SetActive(true)
+    self._multipleBtnObj:SetActive(false)
+    local roleAsset = data.m_rewards[1]
+    local item = Cfg.cfg_item[roleAsset.assetid]
+    self._simpleIcon:LoadImage(item.Icon)
+    self._simpleName:SetText(StringTable.Get(item.Name))
+    self._simpleNum:SetText(roleAsset.count)
+    local probabilityCfg = Cfg.cfg_junior_skin_draw_probablity({
+      ItemID = roleAsset.assetid,
+      Count = roleAsset.count
+    })[1]
+    self._simpleDrawEff[probabilityCfg.Color]:SetActive(true)
+  elseif type == SimpleHauteCoutureDrawType.Multiple then
+    self._simpleObj:SetActive(false)
+    self._multipleObj:SetActive(true)
+    self._simpleBtnObj:SetActive(false)
+    self._multipleBtnObj:SetActive(true)
+    local items = self._content:SpawnObjects("UISimpleHauteCoutureDrawResItem", 10)
+    for i, item in pairs(items) do
+      item:SetData(data.m_rewards[i], i, self._cfgMain.DrawPic)
+    end
+  end
+  local topMenu = self._topContent:SpawnObject("UISimpleHauteCoutureTopMenu")
+  topMenu:SetData(self._topTipsInfo, self._cfgMap.CostItemID, RoleAssetID.RoleAssetDiamond, self._cfgMain.ScoreID, function()
     self:CloseDialog()
     self:ShowDialog("UISimpleHauteCouturePurchaseController", self._campaign, self.isHomeGameServer)
+  end)
+  local iconCfg = Cfg.cfg_top_tips[self._cfgMap.CostItemID]
+  if iconCfg then
+    self._drawIcon1.sprite = self.atlas:GetSprite(iconCfg.Icon)
+    self._drawIcon2.sprite = self.atlas:GetSprite(iconCfg.Icon)
   end
-)
-        local iconCfg = (Cfg.cfg_top_tips)[(self._cfgMap).CostItemID]
-        -- DECOMPILER ERROR at PC135: Confused about usage of register: R5 in 'UnsetPending'
-
-        if iconCfg then
-          (self._drawIcon1).sprite = (self.atlas):GetSprite(iconCfg.Icon)
-          -- DECOMPILER ERROR at PC141: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._drawIcon2).sprite = (self.atlas):GetSprite(iconCfg.Icon)
-        end
-        local itemModule = self:GetModule(ItemModule)
-        local itemNum = itemModule:GetItemCount((self._cfgMap).CostItemID)
-        -- DECOMPILER ERROR at PC157: Confused about usage of register: R7 in 'UnsetPending'
-
-        if itemNum >= 10 then
-          (self._drawSimpleNum).color = Color(1, 1, 1)
-          -- DECOMPILER ERROR at PC164: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self._drawMultipleNum).color = Color(1, 1, 1)
-        else
-          -- DECOMPILER ERROR at PC174: Confused about usage of register: R7 in 'UnsetPending'
-
-          if itemNum >= 1 then
-            (self._drawSimpleNum).color = Color(1, 1, 1)
-            -- DECOMPILER ERROR at PC181: Confused about usage of register: R7 in 'UnsetPending'
-
-            ;
-            (self._drawMultipleNum).color = Color(0.89803921568627, 0.21176470588235, 0)
-          else
-            -- DECOMPILER ERROR at PC189: Confused about usage of register: R7 in 'UnsetPending'
-
-            ;
-            (self._drawSimpleNum).color = Color(0.89803921568627, 0.21176470588235, 0)
-            -- DECOMPILER ERROR at PC196: Confused about usage of register: R7 in 'UnsetPending'
-
-            ;
-            (self._drawMultipleNum).color = Color(0.89803921568627, 0.21176470588235, 0)
-          end
-        end
-      end
-    end
+  local itemModule = self:GetModule(ItemModule)
+  local itemNum = itemModule:GetItemCount(self._cfgMap.CostItemID)
+  if 10 <= itemNum then
+    self._drawSimpleNum.color = Color(1, 1, 1)
+    self._drawMultipleNum.color = Color(1, 1, 1)
+  elseif 1 <= itemNum then
+    self._drawSimpleNum.color = Color(1, 1, 1)
+    self._drawMultipleNum.color = Color(0.8980392156862745, 0.21176470588235294, 0)
+  else
+    self._drawSimpleNum.color = Color(0.8980392156862745, 0.21176470588235294, 0)
+    self._drawMultipleNum.color = Color(0.8980392156862745, 0.21176470588235294, 0)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController.CheckHasSkinReward = function(self, data, type)
-  -- function num : 0_3 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:CheckHasSkinReward(data, type)
   local skinTb = {}
   local num = type == SimpleHauteCoutureDrawType.Single and 1 or 10
-  if not self.isHomeGameServer or not self:GetLastExtraAwardList(num) then
-    local awards = {}
-  end
+  local awards = self.isHomeGameServer and self:GetLastExtraAwardList(num) or {}
   for i = 1, num do
-    local reward = (data.m_rewards)[i]
+    local reward = data.m_rewards[i]
     if reward.assetid < 4999999 and reward.assetid > 4000000 then
       local skinID = reward.assetid - RoleAssetID.RoleAssetPetSkinBegin
       local skinNum = skinTb[skinID] and skinTb[skinID] + 1 or 1
       skinTb[skinID] = skinNum
     end
-    do
-      do
-        ;
-        (table.insert)(awards, reward)
-        -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    table.insert(awards, reward)
   end
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, skinTb, self, type, data, awards
-    if (table.count)(skinTb) > 0 then
-      for skinID,skinNum in pairs(skinTb) do
-        do
-          if self._hasSkin then
+    if table.count(skinTb) > 0 then
+      for skinID, skinNum in pairs(skinTb) do
+        if self._hasSkin then
+          self:_Init(type, data)
+          self:Lock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
+          self._anim:Play("uieffanim_UISimpleHauteCoutureDrawResController_in")
+          YIELD(TT, 1334)
+          self:UnLock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
+          self:ShowDialog("UIGetItemController", awards, function()
+            self:AlreadyGetSkin(skinID, skinTb[skinID])
+          end, true)
+        else
+          skinTb[skinID] = skinTb[skinID] - 1
+          local skin = RoleAsset:New()
+          skin.assetid = skinID
+          local unlockCgId
+          local skinCfg = Cfg.cfg_pet_skin[skin.assetid]
+          if skinCfg then
+            unlockCgId = skinCfg.ImmediateCgId
+          end
+          self:ShowDialog("UIPetSkinObtainController", skin, function()
+            GameGlobal.UIStateManager():CloseDialog("UIPetSkinObtainController")
             self:_Init(type, data)
             self:Lock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
-            ;
-            (self._anim):Play("uieffanim_UISimpleHauteCoutureDrawResController_in")
+            self._anim:Play("uieffanim_UISimpleHauteCoutureDrawResController_in")
             YIELD(TT, 1334)
             self:UnLock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
             self:ShowDialog("UIGetItemController", awards, function()
-      -- function num : 0_3_0_0 , upvalues : self, skinID, skinTb
-      self:AlreadyGetSkin(skinID, skinTb[skinID])
-    end
-, true)
-          else
-            skinTb[skinID] = skinTb[skinID] - 1
-            local skin = RoleAsset:New()
-            skin.assetid = skinID
-            local unlockCgId = nil
-            local skinCfg = (Cfg.cfg_pet_skin)[skin.assetid]
-            if skinCfg then
-              unlockCgId = skinCfg.ImmediateCgId
-            end
-            self:ShowDialog("UIPetSkinObtainController", skin, function()
-      -- function num : 0_3_0_1 , upvalues : _ENV, self, type, data, TT, awards, unlockCgId, skinCfg, skinTb, skinID
-      ((GameGlobal.UIStateManager)()):CloseDialog("UIPetSkinObtainController")
-      self:_Init(type, data)
-      self:Lock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
-      ;
-      (self._anim):Play("uieffanim_UISimpleHauteCoutureDrawResController_in")
-      YIELD(TT, 1334)
-      self:UnLock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
-      self:ShowDialog("UIGetItemController", awards, function()
-        -- function num : 0_3_0_1_0 , upvalues : unlockCgId, _ENV, self, skinCfg, skinTb, skinID
-        do
-          if unlockCgId then
-            local cfg_cg = (Cfg.cfg_cg_book)[unlockCgId]
-            if cfg_cg then
-              self:ShowDialog("UIPetSkinsGetCgController", cfg_cg.StaticPic, false, skinCfg.CgId, 1)
-            end
-            ;
-            (ToastManager.ShowToast)((StringTable.Get)("str_senior_skin_draw_new_cg_tips"))
-            if skinTb[skinID] > 0 then
-              self:AlreadyGetSkin(skinID, skinTb[skinID])
-            end
-          end
-          self:CheckSkinHasGot()
-        end
-      end
-, true)
-    end
-)
-          end
+              if unlockCgId then
+                local cfg_cg = Cfg.cfg_cg_book[unlockCgId]
+                if cfg_cg then
+                  self:ShowDialog("UIPetSkinsGetCgController", cfg_cg.StaticPic, false, skinCfg.CgId, 1)
+                end
+                ToastManager.ShowToast(StringTable.Get("str_senior_skin_draw_new_cg_tips"))
+                if 0 < skinTb[skinID] then
+                  self:AlreadyGetSkin(skinID, skinTb[skinID])
+                end
+              end
+              self:CheckSkinHasGot()
+            end, true)
+          end)
         end
       end
     else
-      do
-        self:_Init(type, data)
-        ;
-        (self._anim):Play("uieffanim_UISimpleHauteCoutureDrawResController_in")
-        self:Lock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
-        YIELD(TT, 1334)
-        self:UnLock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
-        self:ShowDialog("UIGetItemController", awards, nil, true)
-      end
+      self:_Init(type, data)
+      self._anim:Play("uieffanim_UISimpleHauteCoutureDrawResController_in")
+      self:Lock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
+      YIELD(TT, 1334)
+      self:UnLock("UISimpleHauteCoutureDrawResController:CheckHasSkinReward")
+      self:ShowDialog("UIGetItemController", awards, nil, true)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController.AlreadyGetSkin = function(self, skinID, skinNum)
-  -- function num : 0_4 , upvalues : _ENV
-  local skinCfg = (Cfg.cfg_pet_skin)[skinID]
-  local skinName = (StringTable.Get)(skinCfg.SkinName)
+function UISimpleHauteCoutureDrawResController:AlreadyGetSkin(skinID, skinNum)
+  local skinCfg = Cfg.cfg_pet_skin[skinID]
+  local skinName = StringTable.Get(skinCfg.SkinName)
   if not skinCfg.SkinAward then
-    (Log.exception)("请添加皮肤重复获得奖励！！！cfg_pet_skin")
-    return 
+    Log.exception("请添加皮肤重复获得奖励！！！cfg_pet_skin")
+    return
   end
-  local convertID = ((skinCfg.SkinAward)[1])[1]
-  local convertCount = ((skinCfg.SkinAward)[1])[2] * skinNum
+  local convertID = skinCfg.SkinAward[1][1]
+  local convertCount = skinCfg.SkinAward[1][2] * skinNum
   local convertAsset = NewRoleAsset(convertID, convertCount)
-  self:ShowDialog("UIMsgBoxWithAssets", (StringTable.Get)("str_common_gift_get_item"), (StringTable.Get)("str_pay_duplicate_skin_name_msg", skinName), {convertAsset}, function()
-    -- function num : 0_4_0 , upvalues : self
+  self:ShowDialog("UIMsgBoxWithAssets", StringTable.Get("str_common_gift_get_item"), StringTable.Get("str_pay_duplicate_skin_name_msg", skinName), {convertAsset}, function()
     self:CheckSkinHasGot()
-  end
-)
-  return 
+  end)
+  return
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController.GetLastExtraAwardList = function(self, num)
-  -- function num : 0_5 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:GetLastExtraAwardList(num)
   if not self._campaign then
-    return 
+    return
   end
-  local componentID = (self._randomLotteryComponent):GetComponentCfgId()
-  local cfg = ((Cfg.cfg_component_random_lottery)({ComponentID = componentID}))[1]
+  local componentID = self._randomLotteryComponent:GetComponentCfgId()
+  local cfg = Cfg.cfg_component_random_lottery({ComponentID = componentID})[1]
   if not cfg or not cfg.FixedRewards then
     return {}
   end
   local result = {}
   local awardList = cfg.FixedRewards
-  for _,v in pairs(awardList) do
+  for _, v in pairs(awardList) do
     local asset = RoleAsset:New()
     asset.assetid = v[1]
     asset.count = v[2] * num
     asset.heartstone = true
-    ;
-    (table.insert)(result, asset)
+    table.insert(result, asset)
   end
   return result
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController.CheckSkinHasGot = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:CheckSkinHasGot()
   local petModule = self:GetModule(PetModule)
-  local hasSkin = petModule:HaveSkin((self._cfgMain).SkinID)
+  local hasSkin = petModule:HaveSkin(self._cfgMain.SkinID)
   self._hasSkin = hasSkin
   return hasSkin
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController.BackBtnOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:BackBtnOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     self:Lock("uieffanim_UISimpleHauteCoutureDrawResController_out")
-    ;
-    (self._anim):Play("uieffanim_UISimpleHauteCoutureDrawResController_out")
+    self._anim:Play("uieffanim_UISimpleHauteCoutureDrawResController_out")
     YIELD(TT, 400)
     self:UnLock("uieffanim_UISimpleHauteCoutureDrawResController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController.SimpleBtnOnClick = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:SimpleBtnOnClick()
   self:CheckSkinHasGot()
   self:_DrawCard(SimpleHauteCoutureDrawType.Single)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController.MultipleBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:MultipleBtnOnClick()
   self:CheckSkinHasGot()
   self:_DrawCard(SimpleHauteCoutureDrawType.Multiple)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawResController._DrawCard = function(self, type)
-  -- function num : 0_10 , upvalues : _ENV
+function UISimpleHauteCoutureDrawResController:_DrawCard(type)
   local itemModule = self:GetModule(ItemModule)
-  local itemCfg = (Cfg.cfg_item)[(self._cfgMap).CostItemID]
-  local itemNum = itemModule:GetItemCount((self._cfgMap).CostItemID)
-  local costNum = (self._cfgMap).OneCostCount
+  local itemCfg = Cfg.cfg_item[self._cfgMap.CostItemID]
+  local itemNum = itemModule:GetItemCount(self._cfgMap.CostItemID)
+  local costNum = self._cfgMap.OneCostCount
   local title = ""
-  local costName = (StringTable.Get)(itemCfg.Name)
+  local costName = StringTable.Get(itemCfg.Name)
   local str = self.isHomeGameServer and "str_junior_skin_draw_common_main_draw_tip1" or "str_junior_skin_draw_common_main_draw_tip2"
   if type == SimpleHauteCoutureDrawType.Multiple then
     costNum = costNum * 10
   end
-  if not self.isHomeGameServer or not (StringTable.Get)(str, costNum, costName, costNum, costNum) then
-    title = (StringTable.Get)(str, costNum, costName, costNum)
-  end
-  if costNum <= itemNum then
-    self:ShowDialog("UISimpleHauteCoutureConfirm", (self._cfgMap).CostItemID, title, costNum, function()
-    -- function num : 0_10_0 , upvalues : self, _ENV, type
-    self:StartTask(function(TT)
-      -- function num : 0_10_0_0 , upvalues : _ENV, type, self
-      local res = AsyncRequestRes:New()
-      local isSingle = type == SimpleHauteCoutureDrawType.Single
-      local data = (self._randomLotteryComponent):HandleReceiveRandomLotteryCost(TT, res, (self._cfgMap).ID, isSingle)
-      if res:GetSucc() then
-        self:CheckHasSkinReward(data, type)
-      else
-        (Log.fatal)("抽卡失败：", res:GetResult())
-      end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
-    end
-)
-  end
-)
+  title = self.isHomeGameServer and StringTable.Get(str, costNum, costName, costNum, costNum) or StringTable.Get(str, costNum, costName, costNum)
+  if itemNum >= costNum then
+    self:ShowDialog("UISimpleHauteCoutureConfirm", self._cfgMap.CostItemID, title, costNum, function()
+      self:StartTask(function(TT)
+        local res = AsyncRequestRes:New()
+        local isSingle = type == SimpleHauteCoutureDrawType.Single
+        local data = self._randomLotteryComponent:HandleReceiveRandomLotteryCost(TT, res, self._cfgMap.ID, isSingle)
+        if res:GetSucc() then
+          self:CheckHasSkinReward(data, type)
+        else
+          Log.fatal("抽卡失败：", res:GetResult())
+        end
+      end)
+    end)
   else
     self:CloseDialog()
     self:ShowDialog("UISimpleHauteCouturePurchaseController", self._campaign, self.isHomeGameServer)
@@ -394,4 +260,3 @@ end
 
 local SimpleHauteCoutureDrawType = {Single = 1, Multiple = 2}
 _enum("SimpleHauteCoutureDrawType", SimpleHauteCoutureDrawType)
-

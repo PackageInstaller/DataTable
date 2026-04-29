@@ -1,56 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/framework/campaign_component_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CampaignComponentFactory", Object)
 CampaignComponentFactory = CampaignComponentFactory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignComponentFactory.Constructor = function(self)
-  -- function num : 0_0
+function CampaignComponentFactory:Constructor()
   self.m_campaign_com_module = nil
   self.m_component_type_dict = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignComponentFactory.RegistorCampaignComponent = function(self, a_component_type, a_type)
-  -- function num : 0_1 , upvalues : _ENV
-  local component_type = (self.m_component_type_dict)[a_component_type]
-  if component_type ~= nil then
-    (Log.error)("[Campaign][CampaignComponentFactory] RegistorCampaignComponent type is exist! a_component_type:", a_component_type, ", a_type:", a_type)
-    return 
+function CampaignComponentFactory:RegistorCampaignComponent(a_component_type, a_type)
+  local component_type = self.m_component_type_dict[a_component_type]
+  if nil ~= component_type then
+    Log.error("[Campaign][CampaignComponentFactory] RegistorCampaignComponent type is exist! a_component_type:", a_component_type, ", a_type:", a_type)
+    return
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.m_component_type_dict)[a_component_type] = a_type
-  return 
+  self.m_component_type_dict[a_component_type] = a_type
+  return
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignComponentFactory.CreateCampaignComponent = function(self, a_component_type, a_load_info)
-  -- function num : 0_2 , upvalues : _ENV
-  local type = (self.m_component_type_dict)[a_component_type]
+function CampaignComponentFactory:CreateCampaignComponent(a_component_type, a_load_info)
+  local type = self.m_component_type_dict[a_component_type]
   if not type then
-    (Log.error)("[Campaign][CampaignComponentFactory] CreateCampaignComponent type is not exist! a_component_type:", a_component_type)
-    return 
+    Log.error("[Campaign][CampaignComponentFactory] CreateCampaignComponent type is not exist! a_component_type:", a_component_type)
+    return
   end
   local component_obj = type:New()
   if not component_obj then
-    (Log.error)("[Campaign][CampaignComponentFactory] CreateCampaignComponent CreateInstance Error! a_component_type:", a_component_type, ", a_type:", type)
-    return 
+    Log.error("[Campaign][CampaignComponentFactory] CreateCampaignComponent CreateInstance Error! a_component_type:", a_component_type, ", a_type:", type)
+    return
   end
   component_obj:Init(self.m_campaign_com_module, a_load_info)
   return component_obj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignComponentFactory.InitComponentRegister = function(self, a_module)
-  -- function num : 0_3 , upvalues : _ENV
+function CampaignComponentFactory:InitComponentRegister(a_module)
   self.m_campaign_com_module = a_module
   self:RegistorCampaignComponent(CampaignComType.E_CAMPAIGN_COM_COMMON_BASE, CommonBaseComponent)
   self:RegistorCampaignComponent(CampaignComType.E_CAMPAIGN_COM_DEMO, DemoComponent)
@@ -118,5 +99,3 @@ CampaignComponentFactory.InitComponentRegister = function(self, a_module)
   self:RegistorCampaignComponent(CampaignComType.E_CAMPAIGN_COM_PERFECT_PUZZLE, PerfectPuzzleComponent)
   self:RegistorCampaignComponent(CampaignComType.E_CAMPAIGN_ALCHEMY, AlchemyComponent)
 end
-
-

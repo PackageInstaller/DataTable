@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_statechg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedStateChg", UICustomWidget)
 UIHomelandBreedStateChg = UIHomelandBreedStateChg
 local toint = math.tointeger
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-UIHomelandBreedStateChg.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandBreedStateChg:Constructor()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._atlas = self:GetAsset("UIHomelandBreed.spriteatlas", LoadType.SpriteAtlas)
   self._costItemId = 5400002
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedStateChg:OnShow(uiParams)
   self:InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomelandBreedStateChg:InitWidget()
   self.seed = self:GetUIComponent("UISelectObjectPath", "Seed")
   self.culBtn = self:GetUIComponent("Image", "CulBtn")
   self.propicon = self:GetUIComponent("RawImageLoader", "propicon")
@@ -37,172 +24,118 @@ UIHomelandBreedStateChg.InitWidget = function(self)
   self.tipTxt = self:GetUIComponent("UILocalizationText", "tipTxt")
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.seedWidget = (self.seed):SpawnObject("UIHomelandBreedItem")
-  local propCfg = (Cfg.cfg_item)[self._costItemId]
+function UIHomelandBreedStateChg:_OnValue()
+  self.seedWidget = self.seed:SpawnObject("UIHomelandBreedItem")
+  local propCfg = Cfg.cfg_item[self._costItemId]
   if propCfg then
-    (self.propicon):LoadImage(propCfg.Icon)
+    self.propicon:LoadImage(propCfg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg.SetData = function(self, breedInfo)
-  -- function num : 0_4
+function UIHomelandBreedStateChg:SetData(breedInfo)
   self._mainSeedData = nil
   self:_RefreshUIInfo()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg.SeedBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBreedStateChg:SeedBtnOnClick(go)
   self:ShowDialog("UIHomelandBackpack", 4, function(item)
-    -- function num : 0_5_0 , upvalues : _ENV
-    local cfgTree = (Cfg.cfg_item_tree_attribute)[item:GetTemplateID()]
-    do return not cfgTree or cfgTree.Rarity == 4 end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-, function(item)
-    -- function num : 0_5_1 , upvalues : _ENV, self
+    local cfgTree = Cfg.cfg_item_tree_attribute[item:GetTemplateID()]
+    return cfgTree and cfgTree.Rarity == 4
+  end, function(item)
     local curCount, placedCount = 0, 0
-    curCount = (UIForgeData.GetOwnPlaceCount)(item:GetTemplateID())
+    curCount, placedCount = UIForgeData.GetOwnPlaceCount(item:GetTemplateID())
     if curCount == placedCount then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_statechg_nofree"))
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_statechg_nofree"))
       return false
     end
     self._mainSeedData = item:GetTemplate()
     self:_RefreshUIInfo()
     return true
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg.ResultSeedBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandBreedStateChg:ResultSeedBtnOnClick(go)
   if not self._mainSeedData then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_statechg_notree"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_statechg_notree"))
+    return
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local n = itemModule:GetItemCount(self._costItemId)
   if n < 1 then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_statechg_noitem"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_statechg_noitem"))
+    return
   end
   self:ShowDialog("UIHomelandBreedPreview", HomelandBreedPreviewType.StateChg, self._mainSeedData, self._mutationSeedData)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg.CulBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandBreedStateChg:CulBtnOnClick(go)
   if not self._mainSeedData then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_statechg_notree"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_statechg_notree"))
+    return
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local n = itemModule:GetItemCount(self._costItemId)
   if n < 1 then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_statechg_noitem"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_statechg_noitem"))
+    return
   end
   self:_StartBreed()
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg.PropBtnOnClick = function(self, go)
-  -- function num : 0_8
+function UIHomelandBreedStateChg:PropBtnOnClick(go)
   self:ShowDialog("UIItemTipsHomeland", self._costItemId, go)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg._StartBreed = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHomelandBreedStateChg:_StartBreed()
   self:Lock("UIHomelandStartBreed")
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, self
     local clietCultivationInfo = ClietCultivationInfo:New()
     local stateChangeCultivation = StateChangeCultivation:New()
-    stateChangeCultivation.tree_id = (self._mainSeedData).ID
+    stateChangeCultivation.tree_id = self._mainSeedData.ID
     stateChangeCultivation.item_id = self._costItemId
-    ;
-    (table.insert)(clietCultivationInfo.state_change_cultivation, stateChangeCultivation)
-    clietCultivationInfo.land_pstid = (self.uiOwner).buildingPstId
-    local res = (self._homelandModule):HandleCultivation(TT, clietCultivationInfo)
+    table.insert(clietCultivationInfo.state_change_cultivation, stateChangeCultivation)
+    clietCultivationInfo.land_pstid = self.uiOwner.buildingPstId
+    local res = self._homelandModule:HandleCultivation(TT, clietCultivationInfo)
     if res:GetSucc() then
-      ((self.uiOwner).breedLand):PlantTree()
+      self.uiOwner.breedLand:PlantTree()
     end
     self:UnLock("UIHomelandStartBreed")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandCloseBreedUI)
-  end
-, self)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandCloseBreedUI)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg.Update = function(self, deltaTime)
-  -- function num : 0_10
+function UIHomelandBreedStateChg:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIHomelandBreedStateChg._RefreshUIInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV, toint
-  (self.seedWidget):SetData(self._mainSeedData, Vector2(568, 568), Vector2(500, 500))
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIHomelandBreedStateChg:_RefreshUIInfo()
+  self.seedWidget:SetData(self._mainSeedData, Vector2(568, 568), Vector2(500, 500))
+  local itemModule = GameGlobal.GetModule(ItemModule)
   if self._mainSeedData then
-    (self.treeCountBg):SetActive(true)
-    local treeName = (StringTable.Get)((self._mainSeedData).Name)
-    local treeCount = itemModule:GetItemCount((self._mainSeedData).ID)
-    local strTreeCount = (StringTable.Get)("str_homeland_breed_tree_name_count", treeName, toint(treeCount))
-    ;
-    (self.treeCount):SetText(strTreeCount)
-    ;
-    (self.tipTxt):SetText((StringTable.Get)("str_homeland_breed_statechg_preview_tips1"))
+    self.treeCountBg:SetActive(true)
+    local treeName = StringTable.Get(self._mainSeedData.Name)
+    local treeCount = itemModule:GetItemCount(self._mainSeedData.ID)
+    local strTreeCount = StringTable.Get("str_homeland_breed_tree_name_count", treeName, toint(treeCount))
+    self.treeCount:SetText(strTreeCount)
+    self.tipTxt:SetText(StringTable.Get("str_homeland_breed_statechg_preview_tips1"))
   else
-    do
-      ;
-      (self.treeCountBg):SetActive(false)
-      ;
-      (self.tipTxt):SetText((StringTable.Get)("str_homeland_breed_statechg_preview_tips"))
-      local n = itemModule:GetItemCount(self._costItemId)
-      local propCfg = (Cfg.cfg_item)[self._costItemId]
-      do
-        if propCfg then
-          local propName = (StringTable.Get)(propCfg.Name)
-          if n < 1 then
-            (self.propCount):SetText((string.format)("%s: <color=#f8440f>%d</color>/%d", propName, n, 1))
-          else
-            ;
-            (self.propCount):SetText((string.format)("%s: %d/%d", propName, n, 1))
-          end
-        end
-        -- DECOMPILER ERROR at PC109: Confused about usage of register: R4 in 'UnsetPending'
-
-        if n > 0 and self._mainSeedData then
-          (self.culBtn).sprite = (self._atlas):GetSprite("n17_plant_di6")
-          ;
-          (self.ResultMask):SetActive(false)
-        else
-          -- DECOMPILER ERROR at PC120: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self.culBtn).sprite = (self._atlas):GetSprite("n17_plant_di7")
-          ;
-          (self.ResultMask):SetActive(true)
-        end
-      end
+    self.treeCountBg:SetActive(false)
+    self.tipTxt:SetText(StringTable.Get("str_homeland_breed_statechg_preview_tips"))
+  end
+  local n = itemModule:GetItemCount(self._costItemId)
+  local propCfg = Cfg.cfg_item[self._costItemId]
+  if propCfg then
+    local propName = StringTable.Get(propCfg.Name)
+    if n < 1 then
+      self.propCount:SetText(string.format("%s: <color=#f8440f>%d</color>/%d", propName, n, 1))
+    else
+      self.propCount:SetText(string.format("%s: %d/%d", propName, n, 1))
     end
   end
+  if 0 < n and self._mainSeedData then
+    self.culBtn.sprite = self._atlas:GetSprite("n17_plant_di6")
+    self.ResultMask:SetActive(false)
+  else
+    self.culBtn.sprite = self._atlas:GetSprite("n17_plant_di7")
+    self.ResultMask:SetActive(true)
+  end
 end
-
-

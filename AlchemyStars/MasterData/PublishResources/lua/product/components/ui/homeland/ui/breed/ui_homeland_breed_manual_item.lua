@@ -1,63 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_manual_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedManualItem", UICustomWidget)
 UIHomelandBreedManualItem = UIHomelandBreedManualItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedManualItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandBreedManualItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedManualItem:OnShow(uiParams)
   self:_GetComponent()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualItem._GetComponent = function(self)
-  -- function num : 0_2
+function UIHomelandBreedManualItem:_GetComponent()
   self._item = self:GetUIComponent("UISelectObjectPath", "Item")
   self._text = self:GetUIComponent("UILocalizationText", "Text")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualItem._OnValue = function(self)
-  -- function num : 0_3
-  self._itemWidget = (self._item):SpawnObject("UIHomelandBreedItem")
+function UIHomelandBreedManualItem:_OnValue()
+  self._itemWidget = self._item:SpawnObject("UIHomelandBreedItem")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualItem.SetData = function(self, data)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandBreedManualItem:SetData(data)
   self._data = data
-  ;
-  (table.sort)((self._data).st, function(a, b)
-    -- function num : 0_4_0
-    do return b.IsMutation < a.IsMutation end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local cfg = (Cfg.cfg_item)[(((self._data).st)[1]).ID]
-  ;
-  (self._text):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._itemWidget):SetData(cfg, Vector2(345, 345), Vector2(375, 375))
+  table.sort(self._data.st, function(a, b)
+    return a.IsMutation > b.IsMutation
+  end)
+  local cfg = Cfg.cfg_item[self._data.st[1].ID]
+  self._text:SetText(StringTable.Get(cfg.Name))
+  self._itemWidget:SetData(cfg, Vector2(345, 345), Vector2(375, 375))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedManualItem.DetailsBtnOnClick = function(self, go)
-  -- function num : 0_5
-  self:ShowDialog("UIHomelandBreedManualInfo", self._name, (self._data).st)
+function UIHomelandBreedManualItem:DetailsBtnOnClick(go)
+  self:ShowDialog("UIHomelandBreedManualInfo", self._name, self._data.st)
 end
-
-

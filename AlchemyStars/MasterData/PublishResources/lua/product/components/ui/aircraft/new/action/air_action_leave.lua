@@ -1,75 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_leave.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionLeave", AirActionBase)
 AirActionLeave = AirActionLeave
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionLeave.Constructor = function(self, pet, floor, main)
-  -- function num : 0_0
+function AirActionLeave:Constructor(pet, floor, main)
   self._pet = pet
   self._floor = floor
   self._main = main
-  self._exit = (self._main):ExitPosition()
+  self._exit = self._main:ExitPosition()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLeave.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AirActionLeave:Start()
   self._moveAction = AirActionMove:New(self._pet, self._exit, self._floor, self._main, "移动-离开")
   self._destroyAction = AirActionDestroyPet:New(self._pet, self._main)
-  ;
-  (self._moveAction):Start()
+  self._moveAction:Start()
   self._running = true
-  ;
-  (self._pet):SetState(AirPetState.Leaving)
+  self._pet:SetState(AirPetState.Leaving)
   self:LogStart()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLeave.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function AirActionLeave:Update(deltaTimeMS)
   if self._running then
-    if (self._moveAction):IsOver() then
-      (self._destroyAction):Start()
+    if self._moveAction:IsOver() then
+      self._destroyAction:Start()
       self._running = false
       self:Stop()
     else
-      ;
-      (self._moveAction):Update(deltaTimeMS)
+      self._moveAction:Update(deltaTimeMS)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLeave.IsOver = function(self)
-  -- function num : 0_3
+function AirActionLeave:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLeave.Stop = function(self)
-  -- function num : 0_4
-  if self._running and not (self._moveAction):IsOver() then
-    (self._moveAction):Stop()
+function AirActionLeave:Stop()
+  if self._running then
+    if not self._moveAction:IsOver() then
+      self._moveAction:Stop()
+    end
+    self._running = false
   end
-  self._running = false
   self._main = nil
   self._pet = nil
   self:LogStop()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLeave.GetPets = function(self)
-  -- function num : 0_5
-  return {self._pet}
+function AirActionLeave:GetPets()
+  return {
+    self._pet
+  }
 end
-
-

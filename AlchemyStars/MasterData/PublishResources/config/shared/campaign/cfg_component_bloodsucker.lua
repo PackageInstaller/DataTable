@@ -1,156 +1,285 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_bloodsucker.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, CampaignMissionID = 2, ComponentID = 3, Index = 4, MissionIcon = 5, MissionName = 6, MissionBKImg = 7, MissionDec = 8, NeedMission = 9, UnLockTime = 10, FirstPassRewards = 11, WaveRewards = 12, WaveDesc = 13}
+local key = {
+  ID = 1,
+  CampaignMissionID = 2,
+  ComponentID = 3,
+  Index = 4,
+  MissionIcon = 5,
+  MissionName = 6,
+  MissionBKImg = 7,
+  MissionDec = 8,
+  NeedMission = 9,
+  UnLockTime = 10,
+  FirstPassRewards = 11,
+  WaveRewards = 12,
+  WaveDesc = 13
+}
 local common = {
-{
-{3000003, 100}
+  {
+    {3000003, 100}
+  },
+  {
+    {1, 0},
+    {2, 0},
+    {3, 0},
+    {4, 0},
+    {5, 0}
+  },
+  {
+    {1, 20},
+    {2, 21},
+    {3, 22},
+    {4, 23},
+    {5, 24},
+    {6, 25},
+    {7, 26},
+    {8, 27}
+  },
+  {
+    {1, 24},
+    {2, 25},
+    {3, 26},
+    {4, 28},
+    {5, 29},
+    {6, 30},
+    {7, 31},
+    {8, 32}
+  },
+  {
+    {1, 30},
+    {2, 32},
+    {3, 33},
+    {4, 35},
+    {5, 36},
+    {6, 38},
+    {7, 39},
+    {8, 41},
+    {9, 42},
+    {10, 44}
+  },
+  {
+    {1, 40},
+    {2, 42},
+    {3, 44},
+    {4, 46},
+    {5, 48},
+    {6, 50},
+    {7, 52},
+    {8, 54},
+    {9, 56},
+    {10, 58}
+  },
+  {
+    {1, 50},
+    {2, 53},
+    {3, 55},
+    {4, 58},
+    {5, 60},
+    {6, 63},
+    {7, 65},
+    {8, 68},
+    {9, 70},
+    {10, 73},
+    {11, 75},
+    {12, 78}
+  },
+  "0",
+  "mission_2900271_Hccard",
+  "str_n25_battlefield_mission_name1",
+  "str_n25_battlefield_mission_desc1",
+  "1.0",
+  "str_n25_battlefield_mission_name2",
+  "1.2",
+  "str_n25_battlefield_mission_name3",
+  "1.5",
+  "str_n25_battlefield_mission_name4",
+  "str_n25_battlefield_mission_desc2",
+  "2.0",
+  "str_n25_battlefield_mission_name5",
+  "2.5",
+  "str_n25_battlefield_mission_name6",
+  "str_n25_battlefield_mission_desc3",
+  "2024-4-21 09:00:00"
 }
-, 
-{
-{1, 0}
-, 
-{2, 0}
-, 
-{3, 0}
-, 
-{4, 0}
-, 
-{5, 0}
-}
-, 
-{
-{1, 20}
-, 
-{2, 21}
-, 
-{3, 22}
-, 
-{4, 23}
-, 
-{5, 24}
-, 
-{6, 25}
-, 
-{7, 26}
-, 
-{8, 27}
-}
-, 
-{
-{1, 24}
-, 
-{2, 25}
-, 
-{3, 26}
-, 
-{4, 28}
-, 
-{5, 29}
-, 
-{6, 30}
-, 
-{7, 31}
-, 
-{8, 32}
-}
-, 
-{
-{1, 30}
-, 
-{2, 32}
-, 
-{3, 33}
-, 
-{4, 35}
-, 
-{5, 36}
-, 
-{6, 38}
-, 
-{7, 39}
-, 
-{8, 41}
-, 
-{9, 42}
-, 
-{10, 44}
-}
-, 
-{
-{1, 40}
-, 
-{2, 42}
-, 
-{3, 44}
-, 
-{4, 46}
-, 
-{5, 48}
-, 
-{6, 50}
-, 
-{7, 52}
-, 
-{8, 54}
-, 
-{9, 56}
-, 
-{10, 58}
-}
-, 
-{
-{1, 50}
-, 
-{2, 53}
-, 
-{3, 55}
-, 
-{4, 58}
-, 
-{5, 60}
-, 
-{6, 63}
-, 
-{7, 65}
-, 
-{8, 68}
-, 
-{9, 70}
-, 
-{10, 73}
-, 
-{11, 75}
-, 
-{12, 78}
-}
-, "0", "mission_2900271_Hccard", "str_n25_battlefield_mission_name1", "str_n25_battlefield_mission_desc1", "1.0", "str_n25_battlefield_mission_name2", "1.2", "str_n25_battlefield_mission_name3", "1.5", "str_n25_battlefield_mission_name4", "str_n25_battlefield_mission_desc2", "2.0", "str_n25_battlefield_mission_name5", "2.5", "str_n25_battlefield_mission_name6", "str_n25_battlefield_mission_desc3", "2024-4-21 09:00:00"}
 local config = {
-{1, 10001, 107602607, 1, common[9], common[10], common[9], common[11], nil, nil, common[1], common[2], common[8]}
-, 
-{2, 10002, 107602607, 2, common[9], common[13], common[9], common[11], 10001, nil, common[1], common[3], common[12]}
-, 
-{3, 10003, 107602607, 3, common[9], common[15], common[9], common[11], 10002, nil, common[1], common[4], common[14]}
-, 
-{4, 10004, 107602607, 4, common[9], common[17], common[9], common[18], 10003, nil, common[1], common[5], common[16]}
-, 
-{5, 10005, 107602607, 5, common[9], common[20], common[9], common[18], 10004, nil, common[1], common[6], common[19]}
-, 
-{6, 10006, 107602607, 6, common[9], common[22], common[9], common[23], 10005, nil, common[1], common[7], common[21]}
-, 
-{7, 10007, 121202607, 1, common[9], common[10], common[9], common[11], nil, common[24], common[1], common[2], common[8]}
-, 
-{8, 10008, 121202607, 2, common[9], common[13], common[9], common[11], 10007, common[24], common[1], common[3], common[12]}
-, 
-{9, 10009, 121202607, 3, common[9], common[15], common[9], common[11], 10008, "2024-4-22 09:00:00", common[1], common[4], common[14]}
-, 
-{10, 10010, 121202607, 4, common[9], common[17], common[9], common[18], 10009, "2024-4-23 09:00:00", common[1], common[5], common[16]}
-, 
-{11, 10011, 121202607, 5, common[9], common[20], common[9], common[18], 10010, "2024-4-24 09:00:00", common[1], common[6], common[19]}
-, 
-{12, 10012, 121202607, 6, common[9], common[22], common[9], common[23], 10011, "2024-4-25 09:00:00", common[1], common[7], common[21]}
+  {
+    1,
+    10001,
+    107602607,
+    1,
+    common[9],
+    common[10],
+    common[9],
+    common[11],
+    nil,
+    nil,
+    common[1],
+    common[2],
+    common[8]
+  },
+  {
+    2,
+    10002,
+    107602607,
+    2,
+    common[9],
+    common[13],
+    common[9],
+    common[11],
+    10001,
+    nil,
+    common[1],
+    common[3],
+    common[12]
+  },
+  {
+    3,
+    10003,
+    107602607,
+    3,
+    common[9],
+    common[15],
+    common[9],
+    common[11],
+    10002,
+    nil,
+    common[1],
+    common[4],
+    common[14]
+  },
+  {
+    4,
+    10004,
+    107602607,
+    4,
+    common[9],
+    common[17],
+    common[9],
+    common[18],
+    10003,
+    nil,
+    common[1],
+    common[5],
+    common[16]
+  },
+  {
+    5,
+    10005,
+    107602607,
+    5,
+    common[9],
+    common[20],
+    common[9],
+    common[18],
+    10004,
+    nil,
+    common[1],
+    common[6],
+    common[19]
+  },
+  {
+    6,
+    10006,
+    107602607,
+    6,
+    common[9],
+    common[22],
+    common[9],
+    common[23],
+    10005,
+    nil,
+    common[1],
+    common[7],
+    common[21]
+  },
+  {
+    7,
+    10007,
+    121202607,
+    1,
+    common[9],
+    common[10],
+    common[9],
+    common[11],
+    nil,
+    common[24],
+    common[1],
+    common[2],
+    common[8]
+  },
+  {
+    8,
+    10008,
+    121202607,
+    2,
+    common[9],
+    common[13],
+    common[9],
+    common[11],
+    10007,
+    common[24],
+    common[1],
+    common[3],
+    common[12]
+  },
+  {
+    9,
+    10009,
+    121202607,
+    3,
+    common[9],
+    common[15],
+    common[9],
+    common[11],
+    10008,
+    "2024-4-22 09:00:00",
+    common[1],
+    common[4],
+    common[14]
+  },
+  {
+    10,
+    10010,
+    121202607,
+    4,
+    common[9],
+    common[17],
+    common[9],
+    common[18],
+    10009,
+    "2024-4-23 09:00:00",
+    common[1],
+    common[5],
+    common[16]
+  },
+  {
+    11,
+    10011,
+    121202607,
+    5,
+    common[9],
+    common[20],
+    common[9],
+    common[18],
+    10010,
+    "2024-4-24 09:00:00",
+    common[1],
+    common[6],
+    common[19]
+  },
+  {
+    12,
+    10012,
+    121202607,
+    6,
+    common[9],
+    common[22],
+    common[9],
+    common[23],
+    10011,
+    "2024-4-25 09:00:00",
+    common[1],
+    common[7],
+    common[21]
+  }
 }
 return config, "ID", key
-

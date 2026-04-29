@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_summon_with_caster_attribute.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultSummonWithCasterAttribute", SkillEffectResultBase)
 SkillEffectResultSummonWithCasterAttribute = SkillEffectResultSummonWithCasterAttribute
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultSummonWithCasterAttribute.Constructor = function(self, entityID)
-  -- function num : 0_0
+function SkillEffectResultSummonWithCasterAttribute:Constructor(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonWithCasterAttribute.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultSummonWithCasterAttribute:GetEffectType()
   return SkillEffectType.SummonWithCasterAttribute
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultSummonWithCasterAttribute.GetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultSummonWithCasterAttribute:GetEntityID()
   return self._entityID
 end
-
-

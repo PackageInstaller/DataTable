@@ -1,64 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/pet_follow/ui_home_pet_follow_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetFollowItem", UICustomWidget)
 UIHomePetFollowItem = UIHomePetFollowItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetFollowItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomePetFollowItem:OnShow(uiParams)
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.select = self:GetGameObject("select")
   self.using = self:GetGameObject("using")
   self:AttachEvent(GameEventType.OnHomePetFollowClick, self.OnHomePetFollowClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowItem.SetData = function(self, idx, shape, usingType, currentType, callback)
-  -- function num : 0_1
+function UIHomePetFollowItem:SetData(idx, shape, usingType, currentType, callback)
   self._callback = callback
   self._idx = idx
   self._shape = shape
-  self._type = (self._shape).Type
-  ;
-  (self.icon):LoadImage((self._shape).Icon)
+  self._type = self._shape.Type
+  self.icon:LoadImage(self._shape.Icon)
   self:Using(usingType == self._type)
   self:Select(currentType == self._type)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowItem.OnHomePetFollowClick = function(self, type)
-  -- function num : 0_2
+function UIHomePetFollowItem:OnHomePetFollowClick(type)
   self:Select(type == self._type)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowItem.Using = function(self, using)
-  -- function num : 0_3
-  (self.using):SetActive(using)
+function UIHomePetFollowItem:Using(using)
+  self.using:SetActive(using)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowItem.Select = function(self, select)
-  -- function num : 0_4
-  (self.select):SetActive(select)
+function UIHomePetFollowItem:Select(select)
+  self.select:SetActive(select)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollowItem.BgOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomePetFollowItem:BgOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
-
-

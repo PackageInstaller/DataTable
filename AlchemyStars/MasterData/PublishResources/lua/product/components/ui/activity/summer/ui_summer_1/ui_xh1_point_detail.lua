@@ -1,28 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/ui_xh1_point_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1PointDetail", UIController)
 UIXH1PointDetail = UIXH1PointDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1PointDetail.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIXH1PointDetail:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1PointDetail.InitWidget = function(self)
-  -- function num : 0_1
+function UIXH1PointDetail:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1PointDetail.blankOnClick = function(self, go)
-  -- function num : 0_2
+function UIXH1PointDetail:blankOnClick(go)
   self:CloseDialog()
 end
-
-

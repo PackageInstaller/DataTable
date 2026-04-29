@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/battle_enter_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("BattleEnterSystem", MainStateSystem)
 BattleEnterSystem = BattleEnterSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleEnterSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function BattleEnterSystem:_GetMainStateID()
   return GameStateID.BattleEnter
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function BattleEnterSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoLogicInitBattleState()
   self:_DoRenderShowBattleEnter(TT, teamEntity)
   local type, dir = self:_DoLogicGetPieceRefreshType()
@@ -37,172 +27,121 @@ BattleEnterSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicSwitchMainFsmState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicInitBattleState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
-  local battleStatCmpt = (self._world):BattleStat()
+function BattleEnterSystem:_DoLogicInitBattleState()
+  local configService = self._world:GetService("Config")
+  local battleStatCmpt = self._world:BattleStat()
   local levelConfigData = configService:GetLevelConfigData()
   local turnCount = levelConfigData:GetLevelRoundCount()
-  if (self._world):MatchType() == MatchType.MT_Maze then
-    local mazeService = (self._world):GetService("Maze")
+  if self._world:MatchType() == MatchType.MT_Maze then
+    local mazeService = self._world:GetService("Maze")
     turnCount = mazeService:GetLightCount()
-  else
-    do
-      do
-        if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-          local seasonMazeService = (self._world):GetService("SeasonMaze")
-          turnCount = seasonMazeService:GetRoundCount()
-        end
-        battleStatCmpt:InitLevelRound(turnCount)
-        battleStatCmpt:SetTotalWaveCount(levelConfigData:GetWaveCount())
-        if (self._world):MatchType() == MatchType.MT_Mission or (self._world):MatchType() == MatchType.MT_Campaign then
-          local threeStarConditions = {}
-          if (self._world):MatchType() == MatchType.MT_Mission then
-            threeStarConditions = configService:GetMission3StarCondition(((self._world).BW_WorldInfo).missionID)
-          else
-            if (self._world):MatchType() == MatchType.MT_Campaign then
-              threeStarConditions = configService:GetCampaignMission3StarCondition(((self._world).BW_WorldInfo).missionID)
-            end
-          end
-          local star3CalcService = (self._world):GetService("Star3Calc")
-          for _,conditionId in ipairs(threeStarConditions) do
-            local ret = star3CalcService:BeZeroProgress(conditionId)
-            battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
-          end
-        else
-          do
-            if (self._world):MatchType() == MatchType.MT_ExtMission then
-              local threeStarConditions = configService:GetExtMission3StarCondition(((self._world).BW_WorldInfo).ext_mission_task_id)
-              local star3CalcService = (self._world):GetService("Star3Calc")
-              for _,conditionId in ipairs(threeStarConditions) do
-                local ret = star3CalcService:CalcProgress(conditionId)
-                battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
-              end
-            else
-              do
-                if (self._world):MatchType() == MatchType.MT_Season then
-                  local threeStarConditions = configService:GetSeasonMission3StarCondition(((self._world).BW_WorldInfo).missionID)
-                  local star3CalcService = (self._world):GetService("Star3Calc")
-                  for _,conditionId in ipairs(threeStarConditions) do
-                    local ret = star3CalcService:CalcProgress(conditionId)
-                    battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
-                  end
-                end
-                do
-                  battleStatCmpt._matchResult = {}
-                end
-              end
-            end
-          end
-        end
-      end
+  elseif self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local seasonMazeService = self._world:GetService("SeasonMaze")
+    turnCount = seasonMazeService:GetRoundCount()
+  end
+  battleStatCmpt:InitLevelRound(turnCount)
+  battleStatCmpt:SetTotalWaveCount(levelConfigData:GetWaveCount())
+  if self._world:MatchType() == MatchType.MT_Mission or self._world:MatchType() == MatchType.MT_Campaign then
+    local threeStarConditions = {}
+    if self._world:MatchType() == MatchType.MT_Mission then
+      threeStarConditions = configService:GetMission3StarCondition(self._world.BW_WorldInfo.missionID)
+    elseif self._world:MatchType() == MatchType.MT_Campaign then
+      threeStarConditions = configService:GetCampaignMission3StarCondition(self._world.BW_WorldInfo.missionID)
+    end
+    local star3CalcService = self._world:GetService("Star3Calc")
+    for _, conditionId in ipairs(threeStarConditions) do
+      local ret = star3CalcService:BeZeroProgress(conditionId)
+      battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
+    end
+  elseif self._world:MatchType() == MatchType.MT_ExtMission then
+    local threeStarConditions = configService:GetExtMission3StarCondition(self._world.BW_WorldInfo.ext_mission_task_id)
+    local star3CalcService = self._world:GetService("Star3Calc")
+    for _, conditionId in ipairs(threeStarConditions) do
+      local ret = star3CalcService:CalcProgress(conditionId)
+      battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
+    end
+  elseif self._world:MatchType() == MatchType.MT_Season then
+    local threeStarConditions = configService:GetSeasonMission3StarCondition(self._world.BW_WorldInfo.missionID)
+    local star3CalcService = self._world:GetService("Star3Calc")
+    for _, conditionId in ipairs(threeStarConditions) do
+      local ret = star3CalcService:CalcProgress(conditionId)
+      battleStatCmpt:UpdateA3StarProgress(conditionId, ret)
     end
   end
+  battleStatCmpt._matchResult = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicSwitchMainFsmState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.BattleEnterFinish, 1)
+function BattleEnterSystem:_DoLogicSwitchMainFsmState()
+  self._world:EventDispatcher():Dispatch(GameEventType.BattleEnterFinish, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoCreateIntensifyBuffMap = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local petGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).PetPstID)
+function BattleEnterSystem:_DoCreateIntensifyBuffMap()
+  local petGroup = self._world:GetGroup(self._world.BW_WEMatchers.PetPstID)
   local pets = petGroup:GetEntities()
-  local battleStatCmpt = (self._world):BattleStat()
-  for _,petEntity in ipairs(pets) do
-    local equipIntensifyParams = (petEntity:SkillInfo()):GetEquipIntensifyParam()
+  local battleStatCmpt = self._world:BattleStat()
+  for _, petEntity in ipairs(pets) do
+    local equipIntensifyParams = petEntity:SkillInfo():GetEquipIntensifyParam()
     if equipIntensifyParams then
       battleStatCmpt:AddBuffIntensifyParam(equipIntensifyParams)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicSetPetPassiveSkill = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local teamEntities = ((self._world):Player()):GetAllTeamEntities()
-  for _,teamEntity in ipairs(teamEntities) do
+function BattleEnterSystem:_DoLogicSetPetPassiveSkill()
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local teamEntities = self._world:Player():GetAllTeamEntities()
+  for _, teamEntity in ipairs(teamEntities) do
     buffLogicService:BuildPetPassiveSkill(teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicSetPetIntensifyBuff = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local teamEntities = ((self._world):Player()):GetAllTeamEntities()
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  for _,teamEntity in ipairs(teamEntities) do
+function BattleEnterSystem:_DoLogicSetPetIntensifyBuff()
+  local teamEntities = self._world:Player():GetAllTeamEntities()
+  local buffLogicService = self._world:GetService("BuffLogic")
+  for _, teamEntity in ipairs(teamEntities) do
     buffLogicService:BuildPetIntensifyBuff(teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicGetPieceRefreshType = function(self)
-  -- function num : 0_7
-  local affixSvc = (self._world):GetService("Affix")
+function BattleEnterSystem:_DoLogicGetPieceRefreshType()
+  local affixSvc = self._world:GetService("Affix")
   return affixSvc:ReplacePieceRefreshType()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicAssembleFeature = function(self)
-  -- function num : 0_8
-  local featureLogicSvc = (self._world):GetService("FeatureLogic")
+function BattleEnterSystem:_DoLogicAssembleFeature()
+  local featureLogicSvc = self._world:GetService("FeatureLogic")
   if featureLogicSvc and featureLogicSvc:CanEnableFeature() then
     featureLogicSvc:DoInitFeatureList()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicCreateEquipRefineIntensifyBuffMap = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local petGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).PetPstID)
+function BattleEnterSystem:_DoLogicCreateEquipRefineIntensifyBuffMap()
+  local petGroup = self._world:GetGroup(self._world.BW_WEMatchers.PetPstID)
   local pets = petGroup:GetEntities()
-  local battleStatCmpt = (self._world):BattleStat()
-  for _,petEntity in ipairs(pets) do
-    local equipIntensifyParams = (petEntity:EquipRefine()):GetEquipRefineIntensifyParam()
+  local battleStatCmpt = self._world:BattleStat()
+  for _, petEntity in ipairs(pets) do
+    local equipIntensifyParams = petEntity:EquipRefine():GetEquipRefineIntensifyParam()
     if equipIntensifyParams then
       battleStatCmpt:AddBuffEquipRefineParam(equipIntensifyParams)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicSetEquipRefineBuff = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local teamEntities = ((self._world):Player()):GetAllTeamEntities()
-  for _,teamEntity in ipairs(teamEntities) do
+function BattleEnterSystem:_DoLogicSetEquipRefineBuff()
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local teamEntities = self._world:Player():GetAllTeamEntities()
+  for _, teamEntity in ipairs(teamEntities) do
     buffLogicService:BuildPetEquipRefineBuff(teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicSetEquipRefineIntensifyBuff = function(self)
-  -- function num : 0_11
+function BattleEnterSystem:_DoLogicSetEquipRefineIntensifyBuff()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicInitAutoBead = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local autoBeadServiceLogic = (self._world):GetService("AutoBeadLogic")
-  local teamEntities = ((self._world):Player()):GetAllTeamEntities()
-  for _,teamEntity in ipairs(teamEntities) do
+function BattleEnterSystem:_DoLogicInitAutoBead()
+  local autoBeadServiceLogic = self._world:GetService("AutoBeadLogic")
+  local teamEntities = self._world:Player():GetAllTeamEntities()
+  for _, teamEntity in ipairs(teamEntities) do
     local holderEntity = autoBeadServiceLogic:GetAutoBeadSkillHolder(teamEntity)
     if holderEntity then
       autoBeadServiceLogic:InitAutoBead(teamEntity)
@@ -210,76 +149,49 @@ BattleEnterSystem._DoLogicInitAutoBead = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicNotifyPetCreate = function(self, teamEntity)
-  -- function num : 0_13 , upvalues : _ENV
+function BattleEnterSystem:_DoLogicNotifyPetCreate(teamEntity)
   if not teamEntity then
-    (Log.warn)("no team entity created")
-    return 
+    Log.warn("no team entity created")
+    return
   end
-  local teamEntities = (teamEntity:Team()):GetTeamPetEntities()
-  for _,petEntity in ipairs(teamEntities) do
+  local teamEntities = teamEntity:Team():GetTeamPetEntities()
+  for _, petEntity in ipairs(teamEntities) do
     local elementComponent = petEntity:Element()
     local element = elementComponent:GetPrimaryType()
     local petPstIDComponent = petEntity:PetPstID()
     local campID = petPstIDComponent:GetPetCampID()
-    local petData = (self._world):GetPetData(petPstIDComponent:GetPstID())
+    local petData = self._world:GetPetData(petPstIDComponent:GetPstID())
     local petJob = petData:GetJob()
-    ;
-    ((self._world):GetService("Trigger")):Notify(NTPetCreate:New(element, campID, petEntity, petJob))
+    self._world:GetService("Trigger"):Notify(NTPetCreate:New(element, campID, petEntity, petJob))
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicSetPetPassiveSkill = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local teamEntities = ((self._world):Player()):GetAllTeamEntities()
-  for _,teamEntity in ipairs(teamEntities) do
+function BattleEnterSystem:_DoLogicSetPetPassiveSkill()
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local teamEntities = self._world:Player():GetAllTeamEntities()
+  for _, teamEntity in ipairs(teamEntities) do
     buffLogicService:BuildPetPassiveSkill(teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoLogicInitRelic = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-    local seasonMazeSvc = (self._world):GetService("SeasonMaze")
+function BattleEnterSystem:_DoLogicInitRelic()
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local seasonMazeSvc = self._world:GetService("SeasonMaze")
     seasonMazeSvc:InitRelics()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoRenderShowBattleEnter = function(self, TT, teamEntity)
-  -- function num : 0_16
+function BattleEnterSystem:_DoRenderShowBattleEnter(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoRenderShowBoard = function(self, TT)
-  -- function num : 0_17
+function BattleEnterSystem:_DoRenderShowBoard(TT)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoRenderShowPet = function(self, TT, teamEntity)
-  -- function num : 0_18
+function BattleEnterSystem:_DoRenderShowPet(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoRenderAssembleFeature = function(self, TT)
-  -- function num : 0_19
+function BattleEnterSystem:_DoRenderAssembleFeature(TT)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterSystem._DoRenderInitAutoBead = function(self, TT)
-  -- function num : 0_20
+function BattleEnterSystem:_DoRenderInitAutoBead(TT)
 end
-
-

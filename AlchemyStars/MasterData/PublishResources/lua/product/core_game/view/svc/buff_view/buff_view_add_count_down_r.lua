@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_count_down_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddCountDown", BuffViewBase)
 BuffViewAddCountDown = BuffViewAddCountDown
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddCountDown.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddCountDown:PlayView(TT)
   local buffResult = self._buffResult
   local curCountDown = buffResult:GetCountDown()
   local buffseq = buffResult:GetBuffSeq()
-  local buffView = (self._entity):BuffView()
+  local buffView = self._entity:BuffView()
   local viewInstance = buffView:GetBuffViewInstance(buffseq)
   if not viewInstance then
-    return 
+    return
   end
   viewInstance:SetCountDown(curCountDown)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddCountDown.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewAddCountDown:IsNotifyMatch(notify)
   local buffResult = self._buffResult
   return true
 end
-
-

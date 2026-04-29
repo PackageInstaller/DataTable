@@ -1,32 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/ui_simple_haute_couture_draw_title.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureDrawTitle", UICustomWidget)
 UISimpleHauteCoutureDrawTitle = UISimpleHauteCoutureDrawTitle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureDrawTitle.OnShow = function(self)
-  -- function num : 0_0
+function UISimpleHauteCoutureDrawTitle:OnShow()
   self._endTimeTxt = self:GetUIComponent("UILocalizationText", "endTimeTxt")
   self._animObj = self:GetGameObject("anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawTitle.SetTimeText = function(self, timeText)
-  -- function num : 0_1
-  (self._endTimeTxt):SetText(timeText)
+function UISimpleHauteCoutureDrawTitle:SetTimeText(timeText)
+  self._endTimeTxt:SetText(timeText)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawTitle.PlayInAnimation = function(self)
-  -- function num : 0_2
-  (self._animObj):SetActive(false)
-  ;
-  (self._animObj):SetActive(true)
+function UISimpleHauteCoutureDrawTitle:PlayInAnimation()
+  self._animObj:SetActive(false)
+  self._animObj:SetActive(true)
 end
-
-

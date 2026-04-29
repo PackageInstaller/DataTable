@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/core/bounce_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BounceData", Object)
 BounceData = BounceData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BounceData.Constructor = function(self)
-  -- function num : 0_0
+function BounceData:Constructor()
   self.levelId = 0
   self.levelCfg = nil
   self.historyBestScore = 0
@@ -21,42 +14,35 @@ BounceData.Constructor = function(self)
   self:Reset()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.Init = function(self, levelId, selectPlayer, historyBestScore)
-  -- function num : 0_1 , upvalues : _ENV
+function BounceData:Init(levelId, selectPlayer, historyBestScore)
   self.startTime = self:GetTime()
   if BounceDebug.TestPlayerRes then
     self.palyerRes = BounceDebug.TestPlayerRes
   else
-    self.palyerRes = ((UIN28GronruGameConst.GetPlayerInfo)(selectPlayer))[1]
+    self.palyerRes = UIN28GronruGameConst.GetPlayerInfo(selectPlayer)[1]
   end
   if BounceDebug.TestLevelId then
     self.levelId = BounceDebug.TestLevelId
   else
     self.levelId = levelId
   end
-  ;
-  (Log.debug)("[bounce] init levelId = " .. levelId .. " use levelid = " .. self.levelId)
-  self.levelCfg = (Cfg.cfg_component_bounce_mission)[self.levelId]
+  Log.debug("[bounce] init levelId = " .. levelId .. " use levelid = " .. self.levelId)
+  self.levelCfg = Cfg.cfg_component_bounce_mission[self.levelId]
   self.historyBestScore = historyBestScore
   if not self.levelCfg then
-    (Log.fatal)("err:can\'t find cfg_component_bounce_mission cfg with id = " .. self.levelId)
-    return 
+    Log.fatal("err:can't find cfg_component_bounce_mission cfg with id = " .. self.levelId)
+    return
   end
-  self.targetScore = (self.levelCfg).OverByScore or 0
-  self.targetMonster = (self.levelCfg).OverByKillMonster or 0
-  if (self.levelCfg).GenMonsterByScore then
-    self.genBossScore = ((self.levelCfg).GenMonsterByScore)[1]
-    self.genBossId = ((self.levelCfg).GenMonsterByScore)[2]
-    self.genBossPos = Vector2(((self.levelCfg).GenMonsterByScore)[3], ((self.levelCfg).GenMonsterByScore)[4])
+  self.targetScore = self.levelCfg.OverByScore or 0
+  self.targetMonster = self.levelCfg.OverByKillMonster or 0
+  if self.levelCfg.GenMonsterByScore then
+    self.genBossScore = self.levelCfg.GenMonsterByScore[1]
+    self.genBossId = self.levelCfg.GenMonsterByScore[2]
+    self.genBossPos = Vector2(self.levelCfg.GenMonsterByScore[3], self.levelCfg.GenMonsterByScore[4])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.Reset = function(self)
-  -- function num : 0_2
+function BounceData:Reset()
   self.hasGenBoss = false
   self.isOvering = false
   self.score = 0
@@ -71,86 +57,51 @@ BounceData.Reset = function(self)
   self.guidingId = -1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.GetIsGuiding = function(self)
-  -- function num : 0_3
+function BounceData:GetIsGuiding()
   return self.isGuiding
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.SetIsGuiding = function(self, value)
-  -- function num : 0_4
+function BounceData:SetIsGuiding(value)
   self.isGuiding = value
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.AddScore = function(self, score)
-  -- function num : 0_5
+function BounceData:AddScore(score)
   self.score = self.score + score
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.GetScore = function(self)
-  -- function num : 0_6
+function BounceData:GetScore()
   return self.score
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.GetLevelId = function(self)
-  -- function num : 0_7
+function BounceData:GetLevelId()
   return self.levelId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.GetTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local timemodule = (GameGlobal.GetModule)(SvrTimeModule)
+function BounceData:GetTime()
+  local timemodule = GameGlobal.GetModule(SvrTimeModule)
   local nowtime = timemodule:GetServerTime() / 1000
   return nowtime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.GetLastTime = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local time = (math.ceil)(self:GetTime() - self.startTime)
+function BounceData:GetLastTime()
+  local time = math.ceil(self:GetTime() - self.startTime)
   return time
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.GetMissionId = function(self)
-  -- function num : 0_10
-  return (self.levelCfg).CampaignMissionId
+function BounceData:GetMissionId()
+  return self.levelCfg.CampaignMissionId
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.AddHistoryBestScore = function(self)
-  -- function num : 0_11
-  if self.historyBestScore < self.score then
+function BounceData:AddHistoryBestScore()
+  if self.score > self.historyBestScore then
     self.historyBestScore = self.score
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.SetKilledBoss = function(self, killed)
-  -- function num : 0_12
+function BounceData:SetKilledBoss(killed)
   self.killedBoss = killed
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceData.GetKilledBoss = function(self)
-  -- function num : 0_13
+function BounceData:GetKilledBoss()
   return self.killedBoss
 end
-
-

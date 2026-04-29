@@ -1,11 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/shop/cfg_shop_global.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, RefreshTime = 2, DiamondExchangeGlowRate = 3, MonthCycleDay = 4, MonthCardMaxDayNum = 5, NotShowLeftTime = 6, GlowExchangeFurnitureCoinRate = 7}
+local key = {
+  ID = 1,
+  RefreshTime = 2,
+  DiamondExchangeGlowRate = 3,
+  MonthCycleDay = 4,
+  MonthCardMaxDayNum = 5,
+  NotShowLeftTime = 6,
+  GlowExchangeFurnitureCoinRate = 7
+}
 local config = {
-{1, 20, 1, 30, 90, "2524579200", 1}
+  {
+    1,
+    20,
+    1,
+    30,
+    90,
+    "2524579200",
+    1
+  }
 }
 return config, "ID", key
-

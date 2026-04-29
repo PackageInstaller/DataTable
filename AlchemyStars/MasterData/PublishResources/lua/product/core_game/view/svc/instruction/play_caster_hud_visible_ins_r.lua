@@ -1,45 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_hud_visible_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterHUDVisibleInstruction", BaseInstruction)
 PlayCasterHUDVisibleInstruction = PlayCasterHUDVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterHUDVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterHUDVisibleInstruction:Constructor(paramList)
   self._visible = tonumber(paramList.visible)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterHUDVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCasterHUDVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      casterEntity = cSuperEntity:GetSuperEntity()
-    end
-    local hpComponent = casterEntity:HP()
-    if not hpComponent then
-      return 
-    end
-    local sliderEntityId = hpComponent:GetHPSliderEntityID()
-    local sliderEntity = world:GetEntityByID(sliderEntityId)
-    if not sliderEntity then
-      return 
-    end
-    local isHide = self._visible == 0
-    hpComponent:SetHPBarTempHide(isHide)
-    hpComponent:SetHPPosDirty(true)
-    if not isHide then
-      casterEntity:ReplaceHPComponent()
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    casterEntity = cSuperEntity:GetSuperEntity()
+  end
+  local hpComponent = casterEntity:HP()
+  if not hpComponent then
+    return
+  end
+  local sliderEntityId = hpComponent:GetHPSliderEntityID()
+  local sliderEntity = world:GetEntityByID(sliderEntityId)
+  if not sliderEntity then
+    return
+  end
+  local isHide = self._visible == 0
+  hpComponent:SetHPBarTempHide(isHide)
+  hpComponent:SetHPPosDirty(true)
+  if not isHide then
+    casterEntity:ReplaceHPComponent()
   end
 end
-
-

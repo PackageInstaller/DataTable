@@ -1,18 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_story_banner.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStoryBanner", UIController)
 UIStoryBanner = UIStoryBanner
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStoryBanner.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  (GuideHelper.GuideLoadLock)(false, "UIStoryBanner")
+function UIStoryBanner:OnShow(uiParams)
+  GuideHelper.GuideLoadLock(false, "UIStoryBanner")
   self._bannerID = uiParams[1]
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("MissionStoryBanner", {self._bannerID}, false, true)
+  GameGlobal.UAReportForceGuideEvent("MissionStoryBanner", {
+    self._bannerID
+  }, false, true)
   self._bannerType = uiParams[2]
   self._endCallback = uiParams[3]
   self._lock = uiParams[4]
@@ -26,8 +20,7 @@ UIStoryBanner.OnShow = function(self, uiParams)
   self._halfHeadIconElement = self:GetUIComponent("RawImageLoader", "half_headIcon")
   self._halfHeadIcon = self:GetUIComponent("RawImage", "half_headIcon")
   self._halfHeadIconGO = self:GetGameObject("half_headIcon")
-  ;
-  (self._halfHeadIconGO):SetActive(false)
+  self._halfHeadIconGO:SetActive(false)
   self._halfText = self:GetUIComponent("UILocalizationText", "half_text")
   self._halfSpeakerName = self:GetUIComponent("UILocalizationText", "half_speakName")
   self._halfSpeakerNameLineLeft = self:GetUIComponent("Image", "line_left")
@@ -35,8 +28,7 @@ UIStoryBanner.OnShow = function(self, uiParams)
   self._halfBg = self:GetUIComponent("Image", "half_duihuakuang")
   self._spineLoader = self:GetUIComponent("SpineLoader", "spine_loader")
   self._spineLoaderGO = self:GetGameObject("spine_loader")
-  ;
-  (self._spineLoaderGO):SetActive(false)
+  self._spineLoaderGO:SetActive(false)
   self._isSpine = false
   self._homelandGO = self:GetGameObject("homeland")
   self._hlBodyElement = self:GetUIComponent("RawImageLoader", "hl_body")
@@ -45,122 +37,84 @@ UIStoryBanner.OnShow = function(self, uiParams)
   self._hlName = self:GetUIComponent("UILocalizationText", "hl_name")
   self._hlBg = self:GetUIComponent("Image", "hl_duihuakuang")
   self._blackBgGO = self:GetGameObject("blackbg")
-  ;
-  (self._blackBgGO):SetActive(false)
-  if (GameGlobal:GetInstance()):IsCoreGameRunning() then
-    local levelConfigData = (ConfigServiceHelper.GetLevelConfigData)()
+  self._blackBgGO:SetActive(false)
+  if GameGlobal:GetInstance():IsCoreGameRunning() then
+    local levelConfigData = ConfigServiceHelper.GetLevelConfigData()
     self._bannerList = levelConfigData:GetStoryBannerList(self._bannerID)
   else
-    do
-      self._bannerList = self:GetStoryBannerList(self._bannerID)
-      self._index = 1
-      self._canClick = false
-      self._speakerNameLine = {}
-      -- DECOMPILER ERROR at PC173: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._speakerNameLine)[1] = "thread_duihua_kuang6"
-      -- DECOMPILER ERROR at PC175: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._speakerNameLine)[2] = "thread_duihua_kuang6"
-      self._colorPattern = "<color=#%x*"
-      self._bannerText = {}
-      ;
-      (self._rootGO):SetActive(false)
-      ;
-      (self._halfGO):SetActive(false)
-      ;
-      (self._homelandGO):SetActive(false)
-      self._iconAtlas = self:GetAsset("UIInnerStoryTips.spriteatlas", LoadType.SpriteAtlas)
-      self._showTextTaskID = ((GameGlobal.TaskManager)()):StartTask(self.ShowText, self, false)
-      self:LockHomeLandInput(self._lock)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CancelChainPath)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideChainPathCancelArea)
-    end
+    self._bannerList = self:GetStoryBannerList(self._bannerID)
   end
+  self._index = 1
+  self._canClick = false
+  self._speakerNameLine = {}
+  self._speakerNameLine[1] = "thread_duihua_kuang6"
+  self._speakerNameLine[2] = "thread_duihua_kuang6"
+  self._colorPattern = "<color=#%x*"
+  self._bannerText = {}
+  self._rootGO:SetActive(false)
+  self._halfGO:SetActive(false)
+  self._homelandGO:SetActive(false)
+  self._iconAtlas = self:GetAsset("UIInnerStoryTips.spriteatlas", LoadType.SpriteAtlas)
+  self._showTextTaskID = GameGlobal.TaskManager():StartTask(self.ShowText, self, false)
+  self:LockHomeLandInput(self._lock)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CancelChainPath)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HideChainPathCancelArea)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner.GetStoryBannerList = function(self, bannerId)
-  -- function num : 0_1 , upvalues : _ENV
-  local bannerConfig = (Cfg.cfg_story_banner)[bannerId]
+function UIStoryBanner:GetStoryBannerList(bannerId)
+  local bannerConfig = Cfg.cfg_story_banner[bannerId]
   local bannerList = {}
   if not bannerConfig then
-    (Log.fatal)("bannerConfig is Nil BannerID:", bannerId)
+    Log.fatal("bannerConfig is Nil BannerID:", bannerId)
   end
-  for _,v in ipairs(bannerConfig.BannerList) do
+  for _, v in ipairs(bannerConfig.BannerList) do
     local bannerParam = StoryBannerParam:New(v)
-    ;
-    (table.insert)(bannerList, bannerParam)
+    table.insert(bannerList, bannerParam)
   end
   return bannerList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.StoryBanner)
+function UIStoryBanner:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.StoryBanner)
   if self._endCallback then
-    (self._endCallback)()
+    self._endCallback()
   end
-  if self._showTextTaskID and ((GameGlobal.TaskManager)()):FindTask(self._showTextTaskID) then
-    ((GameGlobal.TaskManager)()):KillTask(self._showTextTaskID)
+  if self._showTextTaskID and GameGlobal.TaskManager():FindTask(self._showTextTaskID) then
+    GameGlobal.TaskManager():KillTask(self._showTextTaskID)
     self._showTextTaskID = nil
   end
   self:LockHomeLandInput(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner.SetObjectAlpha = function(self, object)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (object.color).a = 0
+function UIStoryBanner:SetObjectAlpha(object)
+  object.color.a = 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner.SetTextLabelAlpha = function(self, textObject)
-  -- function num : 0_4 , upvalues : _ENV
+function UIStoryBanner:SetTextLabelAlpha(textObject)
   local text = self._bannerText
   if text == "" then
-    return 
+    return
   end
-  local alpha = (textObject.color).a
-  local colorStr = (string.format)("%02x", (math.floor)(alpha * 255))
-  local str = (string.gsub)(text, self._colorPattern, function(s)
-    -- function num : 0_4_0 , upvalues : colorStr
+  local alpha = textObject.color.a
+  local colorStr = string.format("%02x", math.floor(alpha * 255))
+  local str = string.gsub(text, self._colorPattern, function(s)
     return s .. colorStr
-  end
-)
+  end)
   textObject:SetText(str)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner._OnFadeUpdate = function(self)
-  -- function num : 0_5
+function UIStoryBanner:_OnFadeUpdate()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner._SetData = function(self, bSame)
-  -- function num : 0_6 , upvalues : _ENV
-  local banner = (self._bannerList)[self._index]
+function UIStoryBanner:_SetData(bSame)
+  local banner = self._bannerList[self._index]
   if banner then
-    (self._blackBgGO):SetActive(banner._showBlackBg)
+    self._blackBgGO:SetActive(banner._showBlackBg)
   else
-    ;
-    (self._blackBgGO):SetActive(false)
+    self._blackBgGO:SetActive(false)
   end
-  local speakerNameStr = (banner:GetSpeakerName())
-  local go, text, headIconElement, headIcon, speakerName, bg = nil, nil, nil, nil, nil, nil
+  local speakerNameStr = banner:GetSpeakerName()
+  local go, text, headIconElement, headIcon, speakerName, bg
   if self._bannerType == StoryBannerShowType.Normal then
     go = self._rootGO
     text = self._text
@@ -168,78 +122,57 @@ UIStoryBanner._SetData = function(self, bSame)
     headIconElement = self._headIconElement
     speakerName = self._speakerName
     bg = self._bg
-    ;
-    (self._rootGO):SetActive(true)
-    ;
-    (self._halfGO):SetActive(false)
-    ;
-    (self._homelandGO):SetActive(false)
+    self._rootGO:SetActive(true)
+    self._halfGO:SetActive(false)
+    self._homelandGO:SetActive(false)
     if self._index ~= 1 then
       headIconElement:DestoryLastImage()
     end
     headIconElement:LoadImage(banner:GetHeadIconName())
-  else
-    if self._bannerType == StoryBannerShowType.HalfPortrait then
-      go = self._halfGO
-      text = self._halfText
-      headIcon = self._halfHeadIcon
-      headIconElement = self._halfHeadIconElement
-      speakerName = self._halfSpeakerName
-      if banner:IsSpine() then
-        self._isSpine = true
-        ;
-        (self._halfHeadIconGO):SetActive(false)
-        ;
-        (self._spineLoaderGO):SetActive(true)
-        if not bSame then
-          if (self._spineLoader).CurrentSkeleton ~= nil then
-            (self._spineLoader):DestroyCurrentSpine()
-          end
-          ;
-          (self._spineLoader):LoadSpine(banner:GetSpineName())
+  elseif self._bannerType == StoryBannerShowType.HalfPortrait then
+    go = self._halfGO
+    text = self._halfText
+    headIcon = self._halfHeadIcon
+    headIconElement = self._halfHeadIconElement
+    speakerName = self._halfSpeakerName
+    if banner:IsSpine() then
+      self._isSpine = true
+      self._halfHeadIconGO:SetActive(false)
+      self._spineLoaderGO:SetActive(true)
+      if not bSame then
+        if self._spineLoader.CurrentSkeleton ~= nil then
+          self._spineLoader:DestroyCurrentSpine()
         end
-        if banner:GetSpineAnim() then
-          (self._spineLoader):SetAnimation(0, banner:GetSpineAnim(), true)
-        end
-        ;
-        (UICG.SetTransform)((self._spineLoaderGO).transform, self:GetName(), banner:GetSpineName())
-      else
-        self._isSpine = false
-        ;
-        (self._halfHeadIconGO):SetActive(true)
-        ;
-        (self._spineLoaderGO):SetActive(false)
-        if self._index ~= 1 then
-          headIconElement:DestoryLastImage()
-        end
-        ;
-        (self._halfHeadIconElement):LoadImage(banner:GetHeadIconName())
+        self._spineLoader:LoadSpine(banner:GetSpineName())
       end
-      bg = self._halfBg
-      ;
-      (self._rootGO):SetActive(false)
-      ;
-      (self._halfGO):SetActive(true)
-      ;
-      (self._homelandGO):SetActive(false)
+      if banner:GetSpineAnim() then
+        self._spineLoader:SetAnimation(0, banner:GetSpineAnim(), true)
+      end
+      UICG.SetTransform(self._spineLoaderGO.transform, self:GetName(), banner:GetSpineName())
     else
-      if self._bannerType == StoryBannerShowType.HomelandGuide then
-        go = self._homelandGO
-        text = self._hlContext
-        headIcon = self._hlBody
-        headIconElement = self._hlBodyElement
-        speakerName = self._hlName
-        bg = self._hlBg
-        ;
-        (self._hlBodyElement):LoadImage(banner:GetHeadIconName())
-        ;
-        (self._rootGO):SetActive(false)
-        ;
-        (self._halfGO):SetActive(false)
-        ;
-        (self._homelandGO):SetActive(true)
+      self._isSpine = false
+      self._halfHeadIconGO:SetActive(true)
+      self._spineLoaderGO:SetActive(false)
+      if self._index ~= 1 then
+        headIconElement:DestoryLastImage()
       end
+      self._halfHeadIconElement:LoadImage(banner:GetHeadIconName())
     end
+    bg = self._halfBg
+    self._rootGO:SetActive(false)
+    self._halfGO:SetActive(true)
+    self._homelandGO:SetActive(false)
+  elseif self._bannerType == StoryBannerShowType.HomelandGuide then
+    go = self._homelandGO
+    text = self._hlContext
+    headIcon = self._hlBody
+    headIconElement = self._hlBodyElement
+    speakerName = self._hlName
+    bg = self._hlBg
+    self._hlBodyElement:LoadImage(banner:GetHeadIconName())
+    self._rootGO:SetActive(false)
+    self._halfGO:SetActive(false)
+    self._homelandGO:SetActive(true)
   end
   self._bannerText = banner:GetText()
   text:SetText(banner:GetText())
@@ -252,194 +185,145 @@ UIStoryBanner._SetData = function(self, bSame)
   go:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner._DoHideAnimation = function(self, TT)
-  -- function num : 0_7 , upvalues : _ENV
-  local sequence = (((DG.Tweening).DOTween).Sequence)()
+function UIStoryBanner:_DoHideAnimation(TT)
+  local sequence = DG.Tweening.DOTween.Sequence()
   if self._bannerType == StoryBannerShowType.Normal then
-    sequence:Append((self._bg):DOFade(0, 0.1))
-    sequence:Join((self._headIcon):DOFade(0, 0.1))
-    sequence:Join((self._speakerName):DOFade(0, 0.1))
-    sequence:Join(((self._text):DOFade(0, 0.1)):OnUpdate(function()
-    -- function num : 0_7_0 , upvalues : self
-    self:SetTextLabelAlpha(self._text)
-  end
-))
+    sequence:Append(self._bg:DOFade(0, 0.1))
+    sequence:Join(self._headIcon:DOFade(0, 0.1))
+    sequence:Join(self._speakerName:DOFade(0, 0.1))
+    sequence:Join(self._text:DOFade(0, 0.1):OnUpdate(function()
+      self:SetTextLabelAlpha(self._text)
+    end))
     YIELD(TT, 100)
-  else
-    if self._bannerType == StoryBannerShowType.HalfPortrait then
-      if self._isSpine then
-        sequence:Append((self._halfBg):DOFade(0, 0.1))
-        sequence:Join((self._halfSpeakerNameLineLeft):DOFade(0, 0.1))
-        sequence:Join((self._halfSpeakerNameLineRight):DOFade(0, 0.1))
-        sequence:Join((self._halfSpeakerName):DOFade(0, 0.1))
-        sequence:Join(((self._halfText):DOFade(0, 0.1)):OnUpdate(function()
-    -- function num : 0_7_1 , upvalues : self
-    self:SetTextLabelAlpha(self._halfText)
-  end
-))
-        local count = 0
-        while count < 3 do
-          self:SetSpineAlpha(1 - count / 3)
-          count = count + 1
-          YIELD(TT, 33)
-        end
-        self:SetSpineAlpha(0)
-      else
-        do
-          sequence:Append((self._halfHeadIcon):DOFade(0, 0.1))
-          sequence:Join((self._halfBg):DOFade(0, 0.1))
-          sequence:Join((self._halfSpeakerNameLineLeft):DOFade(0, 0.1))
-          sequence:Join((self._halfSpeakerNameLineRight):DOFade(0, 0.1))
-          sequence:Join((self._halfSpeakerName):DOFade(0, 0.1))
-          sequence:Join(((self._halfText):DOFade(0, 0.1)):OnUpdate(function()
-    -- function num : 0_7_2 , upvalues : self
-    self:SetTextLabelAlpha(self._halfText)
-  end
-))
-          YIELD(TT, 100)
-          if self._bannerType == StoryBannerShowType.HomelandGuide then
-            sequence:Append((self._hlBody):DOFade(0, 0.1))
-            sequence:Join((self._hlBg):DOFade(0, 0.1))
-            sequence:Join((self._hlName):DOFade(0, 0.1))
-            sequence:Join(((self._hlContext):DOFade(0, 0.1)):OnUpdate(function()
-    -- function num : 0_7_3 , upvalues : self
-    self:SetTextLabelAlpha(self._hlContext)
-  end
-))
-            YIELD(TT, 100)
-          end
-        end
+  elseif self._bannerType == StoryBannerShowType.HalfPortrait then
+    if self._isSpine then
+      sequence:Append(self._halfBg:DOFade(0, 0.1))
+      sequence:Join(self._halfSpeakerNameLineLeft:DOFade(0, 0.1))
+      sequence:Join(self._halfSpeakerNameLineRight:DOFade(0, 0.1))
+      sequence:Join(self._halfSpeakerName:DOFade(0, 0.1))
+      sequence:Join(self._halfText:DOFade(0, 0.1):OnUpdate(function()
+        self:SetTextLabelAlpha(self._halfText)
+      end))
+      local count = 0
+      while count < 3 do
+        self:SetSpineAlpha(1 - count / 3)
+        count = count + 1
+        YIELD(TT, 33)
       end
+      self:SetSpineAlpha(0)
+    else
+      sequence:Append(self._halfHeadIcon:DOFade(0, 0.1))
+      sequence:Join(self._halfBg:DOFade(0, 0.1))
+      sequence:Join(self._halfSpeakerNameLineLeft:DOFade(0, 0.1))
+      sequence:Join(self._halfSpeakerNameLineRight:DOFade(0, 0.1))
+      sequence:Join(self._halfSpeakerName:DOFade(0, 0.1))
+      sequence:Join(self._halfText:DOFade(0, 0.1):OnUpdate(function()
+        self:SetTextLabelAlpha(self._halfText)
+      end))
+      YIELD(TT, 100)
     end
+  elseif self._bannerType == StoryBannerShowType.HomelandGuide then
+    sequence:Append(self._hlBody:DOFade(0, 0.1))
+    sequence:Join(self._hlBg:DOFade(0, 0.1))
+    sequence:Join(self._hlName:DOFade(0, 0.1))
+    sequence:Join(self._hlContext:DOFade(0, 0.1):OnUpdate(function()
+      self:SetTextLabelAlpha(self._hlContext)
+    end))
+    YIELD(TT, 100)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner._DoShowAnimation = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  local sequence = (((DG.Tweening).DOTween).Sequence)()
+function UIStoryBanner:_DoShowAnimation(TT)
+  local sequence = DG.Tweening.DOTween.Sequence()
   if self._bannerType == StoryBannerShowType.Normal then
-    sequence:Append((self._bg):DOFade(1, 0.2))
-    sequence:Append((self._headIcon):DOFade(1, 0.1))
-    sequence:Join((self._speakerName):DOFade(1, 0.1))
-    sequence:Append(((self._text):DOFade(1, 0.1)):OnUpdate(function()
-    -- function num : 0_8_0 , upvalues : self
-    self:SetTextLabelAlpha(self._text)
-  end
-))
+    sequence:Append(self._bg:DOFade(1, 0.2))
+    sequence:Append(self._headIcon:DOFade(1, 0.1))
+    sequence:Join(self._speakerName:DOFade(1, 0.1))
+    sequence:Append(self._text:DOFade(1, 0.1):OnUpdate(function()
+      self:SetTextLabelAlpha(self._text)
+    end))
     YIELD(TT, 400)
-  else
-    if self._bannerType == StoryBannerShowType.HalfPortrait then
-      if self._isSpine then
-        self:SetSpineAlpha(0)
-        ;
-        (self._halfBg):DOFade(1, 0.2)
-        local count = 0
-        while count < 3 do
-          self:SetSpineAlpha(count / 3)
-          count = count + 1
-          YIELD(TT, 33)
-        end
-        self:SetSpineAlpha(1)
-        sequence:Append((self._halfSpeakerNameLineLeft):DOFade(1, 0.1))
-        sequence:Append((self._halfSpeakerNameLineRight):DOFade(1, 0.1))
-        sequence:Join((self._halfSpeakerName):DOFade(1, 0.1))
-        sequence:Append(((self._halfText):DOFade(1, 0.1)):OnUpdate(function()
-    -- function num : 0_8_1 , upvalues : self
-    self:SetTextLabelAlpha(self._halfText)
-  end
-))
-        YIELD(TT, 200)
-      else
-        do
-          sequence:Append((self._halfHeadIcon):DOFade(1, 0.2))
-          sequence:Join((self._halfBg):DOFade(1, 0.2))
-          sequence:Append((self._halfSpeakerNameLineLeft):DOFade(1, 0.1))
-          sequence:Append((self._halfSpeakerNameLineRight):DOFade(1, 0.1))
-          sequence:Join((self._halfSpeakerName):DOFade(1, 0.1))
-          sequence:Append(((self._halfText):DOFade(1, 0.1)):OnUpdate(function()
-    -- function num : 0_8_2 , upvalues : self
-    self:SetTextLabelAlpha(self._halfText)
-  end
-))
-          YIELD(TT, 400)
-          if self._bannerType == StoryBannerShowType.HomelandGuide then
-            sequence:Append((self._hlBg):DOFade(1, 0.2))
-            sequence:Append((self._hlBody):DOFade(1, 0.1))
-            sequence:Join((self._hlName):DOFade(1, 0.1))
-            sequence:Append(((self._hlContext):DOFade(1, 0.1)):OnUpdate(function()
-    -- function num : 0_8_3 , upvalues : self
-    self:SetTextLabelAlpha(self._hlContext)
-  end
-))
-            YIELD(TT, 400)
-          end
-        end
+  elseif self._bannerType == StoryBannerShowType.HalfPortrait then
+    if self._isSpine then
+      self:SetSpineAlpha(0)
+      self._halfBg:DOFade(1, 0.2)
+      local count = 0
+      while count < 3 do
+        self:SetSpineAlpha(count / 3)
+        count = count + 1
+        YIELD(TT, 33)
       end
+      self:SetSpineAlpha(1)
+      sequence:Append(self._halfSpeakerNameLineLeft:DOFade(1, 0.1))
+      sequence:Append(self._halfSpeakerNameLineRight:DOFade(1, 0.1))
+      sequence:Join(self._halfSpeakerName:DOFade(1, 0.1))
+      sequence:Append(self._halfText:DOFade(1, 0.1):OnUpdate(function()
+        self:SetTextLabelAlpha(self._halfText)
+      end))
+      YIELD(TT, 200)
+    else
+      sequence:Append(self._halfHeadIcon:DOFade(1, 0.2))
+      sequence:Join(self._halfBg:DOFade(1, 0.2))
+      sequence:Append(self._halfSpeakerNameLineLeft:DOFade(1, 0.1))
+      sequence:Append(self._halfSpeakerNameLineRight:DOFade(1, 0.1))
+      sequence:Join(self._halfSpeakerName:DOFade(1, 0.1))
+      sequence:Append(self._halfText:DOFade(1, 0.1):OnUpdate(function()
+        self:SetTextLabelAlpha(self._halfText)
+      end))
+      YIELD(TT, 400)
     end
+  elseif self._bannerType == StoryBannerShowType.HomelandGuide then
+    sequence:Append(self._hlBg:DOFade(1, 0.2))
+    sequence:Append(self._hlBody:DOFade(1, 0.1))
+    sequence:Join(self._hlName:DOFade(1, 0.1))
+    sequence:Append(self._hlContext:DOFade(1, 0.1):OnUpdate(function()
+      self:SetTextLabelAlpha(self._hlContext)
+    end))
+    YIELD(TT, 400)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner.ShowText = function(self, TT, bSame)
-  -- function num : 0_9 , upvalues : _ENV
+function UIStoryBanner:ShowText(TT, bSame)
   if not self._bannerList then
     self:CloseDialog()
-    ;
-    (Log.fatal)("BannerID is invalid ID:", self._bannerID)
+    Log.fatal("BannerID is invalid ID:", self._bannerID)
   end
   if bSame then
-    local text = nil
-    do
-      local sequence = (((DG.Tweening).DOTween).Sequence)()
-      if self._bannerType == StoryBannerShowType.Normal then
-        text = self._text
-      else
-        if self._bannerType == StoryBannerShowType.HalfPortrait then
-          text = self._halfText
-        else
-          if self._bannerType == StoryBannerShowType.HomelandGuide then
-            text = self._hlContext
-          else
-            ;
-            (Log.error)("UIStoryBanner:ShowText error bannerType ", self._bannerType)
-          end
-        end
-      end
-      text:SetText("")
-      self:_SetData(bSame)
-      self:SetObjectAlpha(text)
-      self:SetTextLabelAlpha(text)
-      YIELD(TT, 100)
-      sequence:Append((text:DOFade(1, 0.1)):OnUpdate(function()
-    -- function num : 0_9_0 , upvalues : self, text
+    local text
+    local sequence = DG.Tweening.DOTween.Sequence()
+    if self._bannerType == StoryBannerShowType.Normal then
+      text = self._text
+    elseif self._bannerType == StoryBannerShowType.HalfPortrait then
+      text = self._halfText
+    elseif self._bannerType == StoryBannerShowType.HomelandGuide then
+      text = self._hlContext
+    else
+      Log.error("UIStoryBanner:ShowText error bannerType ", self._bannerType)
+    end
+    text:SetText("")
+    self:_SetData(bSame)
+    self:SetObjectAlpha(text)
     self:SetTextLabelAlpha(text)
-  end
-))
-    end
+    YIELD(TT, 100)
+    sequence:Append(text:DOFade(1, 0.1):OnUpdate(function()
+      self:SetTextLabelAlpha(text)
+    end))
   else
-    do
-      self:_DoHideAnimation(TT)
-      self:_SetData(bSame)
-      self:_DoShowAnimation(TT)
-      self._canClick = true
-    end
+    self:_DoHideAnimation(TT)
+    self:_SetData(bSame)
+    self:_DoShowAnimation(TT)
   end
+  self._canClick = true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner.bgOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIStoryBanner", input = "bgOnClick", 
-args = {}
-})
+function UIStoryBanner:bgOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIStoryBanner",
+    input = "bgOnClick",
+    args = {}
+  })
   if self._canClick == false then
-    return 
+    return
   else
     self._canClick = false
   end
@@ -447,53 +331,35 @@ args = {}
     self:CloseDialog()
   else
     self._index = self._index + 1
-    local preBanner = (self._bannerList)[self._index - 1]
-    local curBanner = (self._bannerList)[self._index]
+    local preBanner = self._bannerList[self._index - 1]
+    local curBanner = self._bannerList[self._index]
     local bSame = false
     if preBanner:IsSameSpeaker(curBanner:GetSpeaker()) then
       bSame = true
     else
       bSame = false
     end
-    self._showTextTaskID = ((GameGlobal.TaskManager)()):StartTask(self.ShowText, self, bSame)
+    self._showTextTaskID = GameGlobal.TaskManager():StartTask(self.ShowText, self, bSame)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner.SetSpineAlpha = function(self, alpha)
-  -- function num : 0_11 , upvalues : _ENV
-  self._spineSke = (self._spineLoaderGO):GetComponentInChildren(typeof((Spine.Unity).SkeletonGraphic))
-  self._spineSkeMultipleTex = (self._spineLoaderGO):GetComponentInChildren(typeof(((Spine.Unity).Modules).SkeletonGraphicMultiObject))
+function UIStoryBanner:SetSpineAlpha(alpha)
+  self._spineSke = self._spineLoaderGO:GetComponentInChildren(typeof(Spine.Unity.SkeletonGraphic))
+  self._spineSkeMultipleTex = self._spineLoaderGO:GetComponentInChildren(typeof(Spine.Unity.Modules.SkeletonGraphicMultiObject))
   if self._spineSke then
-    local color = (self._spineSke).color
+    local color = self._spineSke.color
     color.a = alpha
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._spineSke).color = color
-  else
-    do
-      -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._spineSkeMultipleTex and (self._spineSkeMultipleTex).Skeleton then
-        ((self._spineSkeMultipleTex).Skeleton).A = alpha
-      end
-    end
+    self._spineSke.color = color
+  elseif self._spineSkeMultipleTex and self._spineSkeMultipleTex.Skeleton then
+    self._spineSkeMultipleTex.Skeleton.A = alpha
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStoryBanner.LockHomeLandInput = function(self, Lock)
-  -- function num : 0_12 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIStoryBanner:LockHomeLandInput(Lock)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   if homelandClient then
-    ((homelandClient:InputManager()):GetControllerChar()):SetGuideLock(Lock)
-    ;
-    ((homelandClient:InputManager()):GetControllerBuild()):SetGuideLock(Lock)
+    homelandClient:InputManager():GetControllerChar():SetGuideLock(Lock)
+    homelandClient:InputManager():GetControllerBuild():SetGuideLock(Lock)
   end
 end
-
-

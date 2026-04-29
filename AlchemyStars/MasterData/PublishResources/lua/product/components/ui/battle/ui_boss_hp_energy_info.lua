@@ -1,82 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_boss_hp_energy_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBossHPEnergyInfo", UICustomWidget)
 UIBossHPEnergyInfo = UIBossHPEnergyInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBossHPEnergyInfo.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBossHPEnergyInfo:OnShow()
   self.selectObjPath = self:GetUIComponent("UISelectObjectPath", "UIBossHPEnergyInfo")
   self:AttachEvent(GameEventType.UpdateHPEnergy, self.UpdateBossHPEnergy)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEnergyInfo.SetData = function(self, entityID, current, max)
-  -- function num : 0_1
+function UIBossHPEnergyInfo:SetData(entityID, current, max)
   self._entityID = entityID
   self._max = max or 0
   self._current = max or 0
   if self._max == 0 then
-    (self:GetGameObject()):SetActive(false)
-    return 
+    self:GetGameObject():SetActive(false)
+    return
   end
-  ;
-  (self:GetGameObject()):SetActive(true)
-  ;
-  (self.selectObjPath):SpawnObjects("UIBossHPEnergyItem", max)
+  self:GetGameObject():SetActive(true)
+  self.selectObjPath:SpawnObjects("UIBossHPEnergyItem", max)
   self:_ToggleEnergyState(current, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEnergyInfo._ToggleEnergyState = function(self, current, init)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBossHPEnergyInfo:_ToggleEnergyState(current, init)
   self._current = current
-  local items = (self.selectObjPath):GetAllSpawnList()
+  local items = self.selectObjPath:GetAllSpawnList()
   local reversedItems = {}
   for i = #items, 1, -1 do
-    (table.insert)(reversedItems, items[i])
+    table.insert(reversedItems, items[i])
   end
   for i = 1, current do
-    (reversedItems[i]):DoLight(init)
+    reversedItems[i]:DoLight(init)
   end
   for i = current + 1, self._max do
-    (reversedItems[i]):DoDark(init)
+    reversedItems[i]:DoDark(init)
   end
   for i = self._max + 1, #reversedItems do
-    (reversedItems[i]):DoHide()
+    reversedItems[i]:DoHide()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEnergyInfo.SubHPEnergy = function(self, entityID, count)
-  -- function num : 0_3
+function UIBossHPEnergyInfo:SubHPEnergy(entityID, count)
   if self._entityID ~= entityID then
-    return 
+    return
   end
   if self._max == 0 then
-    return 
+    return
   end
   self._current = self._current - count
   self:UpdateBossHPEnergy(entityID, self._current)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBossHPEnergyInfo.UpdateBossHPEnergy = function(self, entityID, current)
-  -- function num : 0_4
+function UIBossHPEnergyInfo:UpdateBossHPEnergy(entityID, current)
   if self._entityID ~= entityID then
-    return 
+    return
   end
   if self._max == 0 then
-    return 
+    return
   end
   self:_ToggleEnergyState(current)
 end
-
-

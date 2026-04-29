@@ -1,90 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/component/asset_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AssetComponent", Object)
 AssetComponent = AssetComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AssetComponent.Constructor = function(self, detail)
-  -- function num : 0_0
+function AssetComponent:Constructor(detail)
   self.AssetDetail = detail
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetComponent.Dispose = function(self)
-  -- function num : 0_1
+function AssetComponent:Dispose()
   self.AssetDetail = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AssetComponent.GetResPath = function(self)
-  -- function num : 0_2
-  return (self.AssetDetail):GetResPath()
+function AssetComponent:GetResPath()
+  return self.AssetDetail:GetResPath()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Asset = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).Asset)
+function Entity:Asset()
+  return self:GetComponent(self.WEComponentsEnum.Asset)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAsset = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).Asset)
+function Entity:HasAsset()
+  return self:HasComponent(self.WEComponentsEnum.Asset)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAsset = function(self, detail)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Asset
+function Entity:AddAsset(detail)
+  local index = self.WEComponentsEnum.Asset
   local component = AssetComponent:New(detail)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceAsset = function(self, detail)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Asset
+function Entity:ReplaceAsset(detail)
+  local index = self.WEComponentsEnum.Asset
   local component = AssetComponent:New(detail)
   self:ReplaceComponent(index, component)
   self:AddViewSync()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAsset = function(self)
-  -- function num : 0_7
+function Entity:RemoveAsset()
   if self:HasAsset() then
-    self:RemoveComponent((self.WEComponentsEnum).Asset)
+    self:RemoveComponent(self.WEComponentsEnum.Asset)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddViewSync = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function Entity:AddViewSync()
   local world = self:GetOwnerWorld()
-  local resServ = (world.BW_Services).ResourcesPool
+  local resServ = world.BW_Services.ResourcesPool
   if self:HasView() then
-    resServ:DestroyView((self:View()).ViewWrapper)
+    resServ:DestroyView(self:View().ViewWrapper)
   end
-  ;
-  ((self:Asset()).AssetDetail):GenerateView(resServ, Entity.OnViewCreated, self, self)
+  self:Asset().AssetDetail:GenerateView(resServ, Entity.OnViewCreated, self, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.OnViewCreated = function(self, e, viewWrapper)
-  -- function num : 0_9 , upvalues : _ENV
+function Entity:OnViewCreated(e, viewWrapper)
   if viewWrapper then
     e:ReplaceView(viewWrapper)
     local world = self:GetOwnerWorld()
@@ -92,272 +57,197 @@ Entity.OnViewCreated = function(self, e, viewWrapper)
     local entityTypeCmp = e:EntityType()
     if entityTypeCmp and not trapRenderSvc:IsRuneTrap(e) then
       local entityType = entityTypeCmp.Value
-      do
-        if (EntityTypeHelper:GetInstance()):IsBulletTimeEffectEntity(entityType) then
-          local fadeMonoCmpt = (viewWrapper.GameObject):GetComponent(typeof(FadeComponent))
-          if not fadeMonoCmpt then
-            (viewWrapper.GameObject):AddComponent(typeof(FadeComponent))
-          end
+      if EntityTypeHelper:GetInstance():IsBulletTimeEffectEntity(entityType) then
+        local fadeMonoCmpt = viewWrapper.GameObject:GetComponent(typeof(FadeComponent))
+        if not fadeMonoCmpt then
+          viewWrapper.GameObject:AddComponent(typeof(FadeComponent))
         end
-        local isMonsterNeedMaterialAnimation = self:CheckMaterialAnimationCmptByEntityProperty(e)
-        if (EntityTypeHelper:GetInstance()):NeedMaterialAnimation(entityType) and isMonsterNeedMaterialAnimation then
-          local matAnimMonoCmpt = (viewWrapper.GameObject):GetComponent(typeof(MaterialAnimation))
-          if matAnimMonoCmpt then
-            ((UnityEngine.Object).Destroy)(matAnimMonoCmpt)
+      end
+      local isMonsterNeedMaterialAnimation = self:CheckMaterialAnimationCmptByEntityProperty(e)
+      if EntityTypeHelper:GetInstance():NeedMaterialAnimation(entityType) and isMonsterNeedMaterialAnimation then
+        local matAnimMonoCmpt = viewWrapper.GameObject:GetComponent(typeof(MaterialAnimation))
+        if matAnimMonoCmpt then
+          UnityEngine.Object.Destroy(matAnimMonoCmpt)
+        end
+        matAnimMonoCmpt = viewWrapper.GameObject:AddComponent(typeof(MaterialAnimation))
+        local disable = self:NeedDisableMaterialAnimationFlag(e)
+        if disable then
+          matAnimMonoCmpt.isApplyAllRenders = false
+        end
+        e:RemoveMaterialAnimationComponent()
+        local resServ = world.BW_Services.ResourcesPool
+        local container = resServ:LoadAsset("globalShaderEffects.asset")
+        assert(container)
+        e:AddMaterialAnimationComponent(container, matAnimMonoCmpt)
+        local shaderEffect = self:OnGetSpecialShaderEffect(e)
+        if shaderEffect then
+          local containerShaderEffect = resServ:LoadAsset(shaderEffect)
+          if not containerShaderEffect then
+            local respool = world.BW_Services.ResourcesPool
+            respool:CacheAsset(shaderEffect, 1)
+            containerShaderEffect = resServ:LoadAsset(shaderEffect)
           end
-          matAnimMonoCmpt = (viewWrapper.GameObject):AddComponent(typeof(MaterialAnimation))
-          local disable = self:NeedDisableMaterialAnimationFlag(e)
-          if disable then
-            matAnimMonoCmpt.isApplyAllRenders = false
-          end
-          e:RemoveMaterialAnimationComponent()
-          local resServ = (world.BW_Services).ResourcesPool
-          local container = resServ:LoadAsset("globalShaderEffects.asset")
-          assert(container)
-          e:AddMaterialAnimationComponent(container, matAnimMonoCmpt)
-          local shaderEffect = self:OnGetSpecialShaderEffect(e)
-          if shaderEffect then
-            local containerShaderEffect = resServ:LoadAsset(shaderEffect)
-            do
-              do
-                if not containerShaderEffect then
-                  local respool = (world.BW_Services).ResourcesPool
-                  respool:CacheAsset(shaderEffect, 1)
-                  containerShaderEffect = resServ:LoadAsset(shaderEffect)
-                end
-                assert(containerShaderEffect, shaderEffect)
-                ;
-                (e:MaterialAnimationComponent()):LoadContainer(containerShaderEffect)
-                do
-                  local subShaderEffect = self:OnGetSubSpecialShaderEffect(e)
-                  if subShaderEffect then
-                    for _,effCfg in ipairs(subShaderEffect) do
-                      local nodeName = effCfg.node
-                      local nodeGo = nil
-                      local nodeRect = (GameObjectHelper.FindChild)((viewWrapper.GameObject).transform, nodeName)
-                      if nodeRect then
-                        nodeGo = nodeRect.gameObject
-                      end
-                      if nodeGo then
-                        local matAnimMonoCmpt = nodeGo:GetComponent(typeof(MaterialAnimation))
-                        if matAnimMonoCmpt then
-                          ((UnityEngine.Object).Destroy)(matAnimMonoCmpt)
-                        end
-                        matAnimMonoCmpt = nodeGo:AddComponent(typeof(MaterialAnimation))
-                        local resName = effCfg.res
-                        local containerShaderEffect = resServ:LoadAsset(resName)
-                        do
-                          do
-                            if not containerShaderEffect then
-                              local respool = (world.BW_Services).ResourcesPool
-                              respool:CacheAsset(resName, 1)
-                              containerShaderEffect = resServ:LoadAsset(resName)
-                            end
-                            assert(containerShaderEffect)
-                            ;
-                            (e:MaterialAnimationComponent()):AddSubMaterialAnimation(nodeName, matAnimMonoCmpt)
-                            ;
-                            (e:MaterialAnimationComponent()):SubLoadContainer(nodeName, containerShaderEffect)
-                            -- DECOMPILER ERROR at PC195: LeaveBlock: unexpected jumping out DO_STMT
-
-                            -- DECOMPILER ERROR at PC195: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                            -- DECOMPILER ERROR at PC195: LeaveBlock: unexpected jumping out IF_STMT
-
-                          end
-                        end
-                      end
-                    end
-                  end
-                  if entityType == EntityType.Monster or entityType == EntityType.CutsceneMonster then
-                    local eliteEffIDList = self:OnGetEliteEffIDList(e)
-                    if #eliteEffIDList == 0 then
-                      local trailEffect = self:OnGetTrailEffect(e)
-                      local trailEffectExCmpt = ((((viewWrapper.GameObject).transform):Find("Root")).gameObject):GetComponent(typeof(TrailsFX.TrailEffectEx))
-                      if trailEffectExCmpt then
-                        ((UnityEngine.Object).Destroy)(trailEffectExCmpt)
-                      end
-                      e:RemoveTrailEffectEx()
-                      if trailEffect then
-                        trailEffectExCmpt = ((((viewWrapper.GameObject).transform):Find("Root")).gameObject):AddComponent(typeof(TrailsFX.TrailEffectEx))
-                        local resServ = (world.BW_Services).ResourcesPool
-                        local containerTrailEffect = resServ:LoadAsset(trailEffect)
-                        if not containerTrailEffect then
-                          resServ:CacheAsset(trailEffect, 1)
-                          containerTrailEffect = resServ:LoadAsset(trailEffect)
-                        end
-                        assert(containerTrailEffect)
-                        e:AddTrailEffectEx(containerTrailEffect, trailEffectExCmpt)
-                      end
-                    end
-                  end
-                  do
-                    if e:HasMonsterID() and (self._world):MatchType() == MatchType.MT_Chess then
-                      local resServ = (world.BW_Services).ResourcesPool
-                      local containerN15MateEffect = resServ:LoadAsset(BattleConst.N15MaterialAnimAsset)
-                      if not containerN15MateEffect then
-                        resServ:CacheAsset(BattleConst.N15MaterialAnimAsset, 1)
-                        containerN15MateEffect = resServ:LoadAsset(BattleConst.N15MaterialAnimAsset)
-                      end
-                      assert(containerN15MateEffect)
-                      ;
-                      (e:MaterialAnimationComponent()):AddContainer(containerN15MateEffect)
-                      local outlineCmpt = (viewWrapper.GameObject):GetComponent(typeof(OutlineComponent))
-                      if not outlineCmpt then
-                        outlineCmpt = (viewWrapper.GameObject):AddComponent(typeof(OutlineComponent))
-                      end
-                      outlineCmpt.enabled = false
-                    end
-                    do
-                      do
-                        if not ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() and world:GetRunningPosition() ~= WorldRunPostion.Performance then
-                          local battleSvcR = world:GetService("RenderBattle")
-                          battleSvcR:SetActorOutLine(viewWrapper.GameObject)
-                        end
-                        e:RemoveView()
-                      end
-                    end
-                  end
-                end
+          assert(containerShaderEffect, shaderEffect)
+          e:MaterialAnimationComponent():LoadContainer(containerShaderEffect)
+        end
+        local subShaderEffect = self:OnGetSubSpecialShaderEffect(e)
+        if subShaderEffect then
+          for _, effCfg in ipairs(subShaderEffect) do
+            local nodeName = effCfg.node
+            local nodeGo
+            local nodeRect = GameObjectHelper.FindChild(viewWrapper.GameObject.transform, nodeName)
+            if nodeRect then
+              nodeGo = nodeRect.gameObject
+            end
+            if nodeGo then
+              local matAnimMonoCmpt = nodeGo:GetComponent(typeof(MaterialAnimation))
+              if matAnimMonoCmpt then
+                UnityEngine.Object.Destroy(matAnimMonoCmpt)
               end
+              matAnimMonoCmpt = nodeGo:AddComponent(typeof(MaterialAnimation))
+              local resName = effCfg.res
+              local containerShaderEffect = resServ:LoadAsset(resName)
+              if not containerShaderEffect then
+                local respool = world.BW_Services.ResourcesPool
+                respool:CacheAsset(resName, 1)
+                containerShaderEffect = resServ:LoadAsset(resName)
+              end
+              assert(containerShaderEffect)
+              e:MaterialAnimationComponent():AddSubMaterialAnimation(nodeName, matAnimMonoCmpt)
+              e:MaterialAnimationComponent():SubLoadContainer(nodeName, containerShaderEffect)
             end
           end
         end
       end
+      if entityType == EntityType.Monster or entityType == EntityType.CutsceneMonster then
+        local eliteEffIDList = self:OnGetEliteEffIDList(e)
+        if #eliteEffIDList == 0 then
+          local trailEffect = self:OnGetTrailEffect(e)
+          local trailEffectExCmpt = viewWrapper.GameObject.transform:Find("Root").gameObject:GetComponent(typeof(TrailsFX.TrailEffectEx))
+          if trailEffectExCmpt then
+            UnityEngine.Object.Destroy(trailEffectExCmpt)
+          end
+          e:RemoveTrailEffectEx()
+          if trailEffect then
+            trailEffectExCmpt = viewWrapper.GameObject.transform:Find("Root").gameObject:AddComponent(typeof(TrailsFX.TrailEffectEx))
+            local resServ = world.BW_Services.ResourcesPool
+            local containerTrailEffect = resServ:LoadAsset(trailEffect)
+            if not containerTrailEffect then
+              resServ:CacheAsset(trailEffect, 1)
+              containerTrailEffect = resServ:LoadAsset(trailEffect)
+            end
+            assert(containerTrailEffect)
+            e:AddTrailEffectEx(containerTrailEffect, trailEffectExCmpt)
+          end
+        end
+      end
+      if e:HasMonsterID() and self._world:MatchType() == MatchType.MT_Chess then
+        local resServ = world.BW_Services.ResourcesPool
+        local containerN15MateEffect = resServ:LoadAsset(BattleConst.N15MaterialAnimAsset)
+        if not containerN15MateEffect then
+          resServ:CacheAsset(BattleConst.N15MaterialAnimAsset, 1)
+          containerN15MateEffect = resServ:LoadAsset(BattleConst.N15MaterialAnimAsset)
+        end
+        assert(containerN15MateEffect)
+        e:MaterialAnimationComponent():AddContainer(containerN15MateEffect)
+        local outlineCmpt = viewWrapper.GameObject:GetComponent(typeof(OutlineComponent))
+        outlineCmpt = outlineCmpt or viewWrapper.GameObject:AddComponent(typeof(OutlineComponent))
+        outlineCmpt.enabled = false
+      end
     end
+    if not GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() and world:GetRunningPosition() ~= WorldRunPostion.Performance then
+      local battleSvcR = world:GetService("RenderBattle")
+      battleSvcR:SetActorOutLine(viewWrapper.GameObject)
+    end
+  else
+    e:RemoveView()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.OnGetSpecialShaderEffect = function(self, e)
-  -- function num : 0_10 , upvalues : _ENV
-  local shaderEffect = nil
+function Entity:OnGetSpecialShaderEffect(e)
+  local shaderEffect
   if e:HasPetPstID() then
-    local templateid = (e:PetPstID()):GetTemplateID()
-    local cfg_pet = (Cfg.cfg_pet)[templateid]
+    local templateid = e:PetPstID():GetTemplateID()
+    local cfg_pet = Cfg.cfg_pet[templateid]
     shaderEffect = cfg_pet.ShaderEffect
-  else
-    do
-      if e:HasMonsterID() and not e:HasGhost() and not e:HasGuideGhost() then
-        local cfg_monster = (Cfg.cfg_monster)[(e:MonsterID()):GetMonsterID()]
-        local cfg_monster_class = (Cfg.cfg_monster_class)[cfg_monster.ClassID]
-        shaderEffect = cfg_monster_class.ShaderEffect
-      else
-        do
-          do
-            if e:TrapRender() then
-              local cfg_trap = (Cfg.cfg_trap)[(e:TrapRender()):GetTrapID()]
-              shaderEffect = cfg_trap.ShaderEffect
-            end
-            return shaderEffect
-          end
-        end
-      end
-    end
+  elseif e:HasMonsterID() and not e:HasGhost() and not e:HasGuideGhost() then
+    local cfg_monster = Cfg.cfg_monster[e:MonsterID():GetMonsterID()]
+    local cfg_monster_class = Cfg.cfg_monster_class[cfg_monster.ClassID]
+    shaderEffect = cfg_monster_class.ShaderEffect
+  elseif e:TrapRender() then
+    local cfg_trap = Cfg.cfg_trap[e:TrapRender():GetTrapID()]
+    shaderEffect = cfg_trap.ShaderEffect
   end
+  return shaderEffect
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.OnGetSubSpecialShaderEffect = function(self, e)
-  -- function num : 0_11 , upvalues : _ENV
-  local shaderEffect = nil
+function Entity:OnGetSubSpecialShaderEffect(e)
+  local shaderEffect
   if e:HasPetPstID() then
-    local templateid = (e:PetPstID()):GetTemplateID()
-    local cfg_pet = (Cfg.cfg_pet)[templateid]
+    local templateid = e:PetPstID():GetTemplateID()
+    local cfg_pet = Cfg.cfg_pet[templateid]
     shaderEffect = cfg_pet.SubShaderEffect
-  else
-    do
-      if e:HasMonsterID() and not e:HasGhost() and not e:HasGuideGhost() then
-        local cfg_monster = (Cfg.cfg_monster)[(e:MonsterID()):GetMonsterID()]
-        local cfg_monster_class = (Cfg.cfg_monster_class)[cfg_monster.ClassID]
-        shaderEffect = cfg_monster_class.SubShaderEffect
-      else
-        do
-          do
-            if e:Trap() then
-              local cfg_trap = (Cfg.cfg_trap)[(e:TrapRender()):GetTrapID()]
-              shaderEffect = cfg_trap.SubShaderEffect
-            end
-            return shaderEffect
-          end
-        end
-      end
-    end
+  elseif e:HasMonsterID() and not e:HasGhost() and not e:HasGuideGhost() then
+    local cfg_monster = Cfg.cfg_monster[e:MonsterID():GetMonsterID()]
+    local cfg_monster_class = Cfg.cfg_monster_class[cfg_monster.ClassID]
+    shaderEffect = cfg_monster_class.SubShaderEffect
+  elseif e:Trap() then
+    local cfg_trap = Cfg.cfg_trap[e:TrapRender():GetTrapID()]
+    shaderEffect = cfg_trap.SubShaderEffect
   end
+  return shaderEffect
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.OnGetTrailEffect = function(self, e)
-  -- function num : 0_12 , upvalues : _ENV
-  local trailEffect = nil
+function Entity:OnGetTrailEffect(e)
+  local trailEffect
   if e:HasMonsterID() and not e:HasGhost() and not e:HasGuideGhost() then
-    local cfg_monster = (Cfg.cfg_monster)[(e:MonsterID()):GetMonsterID()]
-    local cfg_monster_class = (Cfg.cfg_monster_class)[cfg_monster.ClassID]
+    local cfg_monster = Cfg.cfg_monster[e:MonsterID():GetMonsterID()]
+    local cfg_monster_class = Cfg.cfg_monster_class[cfg_monster.ClassID]
     local eliteIDs = cfg_monster.EliteID
-    if eliteIDs and (table.count)(eliteIDs) > 0 then
+    if eliteIDs and table.count(eliteIDs) > 0 then
       trailEffect = cfg_monster_class.TrailEffect
     end
   end
-  do
-    return trailEffect
-  end
+  return trailEffect
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.OnGetEliteEffIDList = function(self, e)
-  -- function num : 0_13 , upvalues : _ENV
+function Entity:OnGetEliteEffIDList(e)
   local idList = {}
   if e:HasMonsterID() and not e:HasGhost() and not e:HasGuideGhost() then
     local monsterIDCmpt = e:MonsterID()
     if monsterIDCmpt then
       local eliteIDs = monsterIDCmpt:GetEliteIDArray()
-      for _,eliteID in ipairs(eliteIDs) do
-        local cfgElite = (Cfg.cfg_monster_elite)[eliteID]
+      for _, eliteID in ipairs(eliteIDs) do
+        local cfgElite = Cfg.cfg_monster_elite[eliteID]
         if cfgElite and cfgElite.EffectID then
-          (table.insert)(idList, cfgElite.EffectID)
+          table.insert(idList, cfgElite.EffectID)
         end
       end
     end
   end
-  do
-    return idList
-  end
+  return idList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.NeedDisableMaterialAnimationFlag = function(self, e)
-  -- function num : 0_14 , upvalues : _ENV
+function Entity:NeedDisableMaterialAnimationFlag(e)
   local monsterIDCmpt = e:MonsterID()
   if monsterIDCmpt then
     local monsterClassID = monsterIDCmpt:GetMonsterClassID()
-    local needDisable = (table.icontains)(BattleConst.DisableMonsterClassIDList, monsterClassID)
+    local needDisable = table.icontains(BattleConst.DisableMonsterClassIDList, monsterClassID)
     return needDisable
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.CheckMaterialAnimationCmptByEntityProperty = function(self, e)
-  -- function num : 0_15 , upvalues : _ENV
+function Entity:CheckMaterialAnimationCmptByEntityProperty(e)
   local monsterIDCmpt = e:MonsterID()
   if not monsterIDCmpt then
     return true
   end
   local monsterClassID = monsterIDCmpt:GetMonsterClassID()
-  local inList = (table.icontains)(BattleConst.MonsterDontNeedMaterialAnimationClassIDList, monsterClassID)
+  local inList = table.icontains(BattleConst.MonsterDontNeedMaterialAnimationClassIDList, monsterClassID)
   if inList then
     return false
   else
     return true
   end
 end
-
-

@@ -1,79 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge_type_tree/ui_forge_type_tree_item_child.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeTypeTreeItemChild", UICustomWidget)
 UIForgeTypeTreeItemChild = UIForgeTypeTreeItemChild
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForgeTypeTreeItemChild.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
+function UIForgeTypeTreeItemChild:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItemChild.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIForgeTypeTreeItemChild:OnShow()
   self.bg = self:GetUIComponent("Image", "bg")
   self.txt = self:GetUIComponent("UILocalizationText", "txt")
   self.atlas = self:GetAsset("UIHomelandBuildInfo.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.HomelandForgeFoldFilterChild, self.FoldFilter)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItemChild.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIForgeTypeTreeItemChild:OnHide()
   self:DetachEvent(GameEventType.HomelandForgeFoldFilterChild, self.FoldFilter)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItemChild.Init = function(self, id, idChild)
-  -- function num : 0_3
+function UIForgeTypeTreeItemChild:Init(id, idChild)
   self.id = id
   self.idChild = idChild
-  local f = (self.data):GetForgeFilterById(id)
+  local f = self.data:GetForgeFilterById(id)
   local c = f:GetChildById(idChild)
-  ;
-  (self.txt):SetText(c.name)
+  self.txt:SetText(c.name)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItemChild.FoldFilter = function(self, idChild)
-  -- function num : 0_4
+function UIForgeTypeTreeItemChild:FoldFilter(idChild)
   local bgSprite = ""
-  local f = (self.data):GetForgeFilterById(self.id)
+  local f = self.data:GetForgeFilterById(self.id)
   if idChild == self.idChild then
     bgSprite = "N17_produce_btn_classify_4"
   else
     bgSprite = "N17_produce_btn_classify_3"
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.bg).sprite = (self.atlas):GetSprite(bgSprite)
+  self.bg.sprite = self.atlas:GetSprite(bgSprite)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeTypeTreeItemChild.bgOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.data).filter = self.idChild
-  ;
-  (self.data):FilterList()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideListSequence, true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateList)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeFoldFilterChild, self.idChild)
+function UIForgeTypeTreeItemChild:bgOnClick(go)
+  self.data.filter = self.idChild
+  self.data:FilterList()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideListSequence, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateList)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeFoldFilterChild, self.idChild)
 end
-
-

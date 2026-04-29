@@ -1,44 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/helper/ui_review_activity_n5.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewActivityN5", UIReviewActivityBase)
 UIReviewActivityN5 = UIReviewActivityN5
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewActivityN5.Constructor = function(self, id, sample)
-  -- function num : 0_0
+function UIReviewActivityN5:Constructor(id, sample)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN5.AssetPackageID = function(self)
-  -- function num : 0_1
+function UIReviewActivityN5:AssetPackageID()
   return 5
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN5.ActivityOnOpen = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(self.OpenActivity, self)
+function UIReviewActivityN5:ActivityOnOpen()
+  TaskManager:GetInstance():StartTask(self.OpenActivity, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN5.OpenActivity = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIN5MainController_Review)
+function UIReviewActivityN5:OpenActivity(TT)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIN5MainController_Review)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewActivityN5.GetBattleExitParam = function(self, comID, missionCreateInfo, isWin, battleresultRt)
-  -- function num : 0_4 , upvalues : _ENV
+function UIReviewActivityN5:GetBattleExitParam(comID, missionCreateInfo, isWin, battleresultRt)
   if comID == ECampaignReviewEvaRescuePlanComponentID.ECAMPAIGN_REVIEW_EVARESCUEPLAN_LINE_MISSION then
     return UIStateType.UIActivityN5SimpleLevelReview, nil
   end
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/new/award/ui_draw_card_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardItem", UICustomWidget)
 UIDrawCardAwardItem = UIDrawCardAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIDrawCardAwardItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIDrawCardAwardItem:_GetComponents()
   self._scoreTxt = self:GetUIComponent("UILocalizationText", "scoreTxt")
   self._topBg = self:GetUIComponent("Image", "topBg")
   self._anim = self:GetUIComponent("Animation", "anim")
@@ -26,65 +16,43 @@ UIDrawCardAwardItem._GetComponents = function(self)
   self._getMaskObj = self:GetGameObject("GetMask")
   self._canReceiveMaskObj = self:GetGameObject("CanReceiveMask")
   self._canReceiveRedMaskObj = self:GetGameObject("CanReceiveRedMask")
-  ;
-  (self._getMaskObj):SetActive(false)
-  ;
-  (self._canReceiveMaskObj):SetActive(false)
-  ;
-  (self._canReceiveRedMaskObj):SetActive(false)
+  self._getMaskObj:SetActive(false)
+  self._canReceiveMaskObj:SetActive(false)
+  self._canReceiveRedMaskObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardItem.SetData = function(self, quest, index, isFinal, clickCallback, receiveCallback)
-  -- function num : 0_2
+function UIDrawCardAwardItem:SetData(quest, index, isFinal, clickCallback, receiveCallback)
   self._quest = quest
   self._index = index
   self._clickCallback = clickCallback
   self._receiveCallback = receiveCallback
-  ;
-  (self._finalBgObj):SetActive(isFinal)
+  self._finalBgObj:SetActive(isFinal)
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardItem._InitComponents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDrawCardAwardItem:_InitComponents()
   self._ownerController = self:RootUIOwner()
-  self._atlas = (self._ownerController).atlas
-  local questInfo = (self._quest):QuestInfo()
-  local reward = (questInfo.rewards)[1]
-  ;
-  (self._canReceiveMaskObj):SetActive(questInfo.status == QuestStatus.QUEST_Completed)
-  ;
-  (self._canReceiveRedMaskObj):SetActive(questInfo.status == QuestStatus.QUEST_Completed)
-  ;
-  (self._getMaskObj):SetActive(questInfo.status == QuestStatus.QUEST_Taken)
-  ;
-  (self._scoreTxt):SetText((StringTable.Get)("str_draw_card_award_time_info1", questInfo.total_progress))
-  local cfg = (Cfg.cfg_item)[reward.assetid]
-  ;
-  (self._icon):LoadImage(cfg.Icon)
-  ;
-  (self._num):SetText(reward.count)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._atlas = self._ownerController.atlas
+  local questInfo = self._quest:QuestInfo()
+  local reward = questInfo.rewards[1]
+  self._canReceiveMaskObj:SetActive(questInfo.status == QuestStatus.QUEST_Completed)
+  self._canReceiveRedMaskObj:SetActive(questInfo.status == QuestStatus.QUEST_Completed)
+  self._getMaskObj:SetActive(questInfo.status == QuestStatus.QUEST_Taken)
+  self._scoreTxt:SetText(StringTable.Get("str_draw_card_award_time_info1", questInfo.total_progress))
+  local cfg = Cfg.cfg_item[reward.assetid]
+  self._icon:LoadImage(cfg.Icon)
+  self._num:SetText(reward.count)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardItem.FullBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local questInfo = (self._quest):QuestInfo()
-  if questInfo.status == QuestStatus.QUEST_Completed and self._receiveCallback then
-    (self._receiveCallback)()
-  end
-  if self._clickCallback then
-    local questInfo = (self._quest):QuestInfo()
-    local reward = (questInfo.rewards)[1]
-    ;
-    (self._clickCallback)(reward.assetid, (go.transform).position)
+function UIDrawCardAwardItem:FullBtnOnClick(go)
+  local questInfo = self._quest:QuestInfo()
+  if questInfo.status == QuestStatus.QUEST_Completed then
+    if self._receiveCallback then
+      self._receiveCallback()
+    end
+  elseif self._clickCallback then
+    local questInfo = self._quest:QuestInfo()
+    local reward = questInfo.rewards[1]
+    self._clickCallback(reward.assetid, go.transform.position)
   end
 end
-
-

@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/new/ui_recruit_thumb_title_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRecruitThumbTitleItem", Object)
 UIRecruitThumbTitleItem = UIRecruitThumbTitleItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRecruitThumbTitleItem.Constructor = function(self, gameObject, type)
-  -- function num : 0_0 , upvalues : _ENV
+function UIRecruitThumbTitleItem:Constructor(gameObject, type)
   self._gameObject = gameObject
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._gameObject).name = gameObject.name .. type
-  self._uiView = (self._gameObject):GetComponent(typeof(UIView))
-  ;
-  (self._uiView):SetShow(true, self)
+  self._gameObject.name = gameObject.name .. type
+  self._uiView = self._gameObject:GetComponent(typeof(UIView))
+  self._uiView:SetShow(true, self)
   self._type = type
-  local cfg = (Cfg.cfg_recruit_pool_subtype)[self._type]
-  local text = (self._uiView):GetUIComponent("UILocalizationText", "title")
-  text:SetText((StringTable.Get)(cfg.Title))
-  local image = (self._uiView):GetUIComponent("RawImageLoader", "bg")
+  local cfg = Cfg.cfg_recruit_pool_subtype[self._type]
+  local text = self._uiView:GetUIComponent("UILocalizationText", "title")
+  text:SetText(StringTable.Get(cfg.Title))
+  local image = self._uiView:GetUIComponent("RawImageLoader", "bg")
   image:LoadImage(cfg.Bg)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRecruitThumbTitleItem.Dispose = function(self)
-  -- function num : 0_1
-  (self._uiView):SetShow(false, self)
+function UIRecruitThumbTitleItem:Dispose()
+  self._uiView:SetShow(false, self)
   self._uiView = nil
 end
-
-

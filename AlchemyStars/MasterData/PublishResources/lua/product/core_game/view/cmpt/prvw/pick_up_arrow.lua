@@ -1,66 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/pick_up_arrow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpArrowComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpArrowComponent.Constructor = function(self)
-  -- function num : 0_0
+function PickUpArrowComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpArrowComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function PickUpArrowComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpArrowComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function PickUpArrowComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PickUpArrow = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).PickUpArrow)
+function Entity:PickUpArrow()
+  return self:GetComponent(self.WEComponentsEnum.PickUpArrow)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPickUpArrow = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).PickUpArrow)
+function Entity:HasPickUpArrow()
+  return self:HasComponent(self.WEComponentsEnum.PickUpArrow)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPickUpArrow = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PickUpArrow
+function Entity:AddPickUpArrow()
+  local index = self.WEComponentsEnum.PickUpArrow
   local component = PickUpArrowComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePickUpArrow = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PickUpArrow
+function Entity:ReplacePickUpArrow()
+  local index = self.WEComponentsEnum.PickUpArrow
   local component = PickUpArrowComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePickUpArrow = function(self)
-  -- function num : 0_7
+function Entity:RemovePickUpArrow()
   if self:HasPickUpArrow() then
-    self:RemoveComponent((self.WEComponentsEnum).PickUpArrow)
+    self:RemoveComponent(self.WEComponentsEnum.PickUpArrow)
   end
 end
-
-

@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_increase_production_emptypos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicIncreaseProductionEmptyPos", LLBuffLogicBase)
 LLBuffLogicIncreaseProductionEmptyPos = LLBuffLogicIncreaseProductionEmptyPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicIncreaseProductionEmptyPos.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicIncreaseProductionEmptyPos:Constructor(buffObj, logicParam)
   self._incType = logicParam.incType
   self._fixVal = logicParam.fixVal
   self._perVal = logicParam.perVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionEmptyPos.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicIncreaseProductionEmptyPos:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
   local emptyPosCount = 0
-  local entityMgr = (LuckLandInnerGameHelper.GetEntityMgr)()
+  local entityMgr = LuckLandInnerGameHelper.GetEntityMgr()
   local totalPosCount = entityMgr:GetPosCount()
   local fightPets = entityMgr:GetFightPets()
   if fightPets then
@@ -30,21 +20,19 @@ LLBuffLogicIncreaseProductionEmptyPos.DoLogic = function(self, notify)
       emptyPosCount = 0
     end
   end
-  local targets = (self._buffObj):GetTargets()
-  for _,target in ipairs(targets) do
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
     self:DoLogicSingle(target, emptyPosCount)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionEmptyPos.DoLogicSingle = function(self, target, emptyPosCount)
-  -- function num : 0_2 , upvalues : _ENV
-  if target:GetEntityType() == LuckLandEntityType.Pet and target:HasDeleteFlag() then
-    return 
-  end
-  if target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
-    return 
+function LLBuffLogicIncreaseProductionEmptyPos:DoLogicSingle(target, emptyPosCount)
+  if target:GetEntityType() == LuckLandEntityType.Pet then
+    if target:HasDeleteFlag() then
+      return
+    end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
+    return
   end
   if self._incType == LuckLandIncType.Accumulate then
     if self._fixVal then
@@ -53,16 +41,12 @@ LLBuffLogicIncreaseProductionEmptyPos.DoLogicSingle = function(self, target, emp
     if self._perVal then
       target:AddAccPerValue(self._perVal * emptyPosCount)
     end
-  else
-    if self._incType == LuckLandIncType.Temp then
-      if self._fixVal then
-        target:AddTempFixValue(self._fixVal * emptyPosCount)
-      end
-      if self._perVal then
-        target:AddTempPerValue(self._perVal * emptyPosCount)
-      end
+  elseif self._incType == LuckLandIncType.Temp then
+    if self._fixVal then
+      target:AddTempFixValue(self._fixVal * emptyPosCount)
+    end
+    if self._perVal then
+      target:AddTempPerValue(self._perVal * emptyPosCount)
     end
   end
 end
-
-

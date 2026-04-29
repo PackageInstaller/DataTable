@@ -1,104 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/ui_review_progress_award_detail_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIReviewProgressAwardDetailContent", UICustomWidget)
 UIReviewProgressAwardDetailContent = UIReviewProgressAwardDetailContent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIReviewProgressAwardDetailContent.SetData = function(self, uiView, awardTipsCallback, campaignType, itemClassName, itemPrefabName)
-  -- function num : 0_0 , upvalues : _ENV
+function UIReviewProgressAwardDetailContent:SetData(uiView, awardTipsCallback, campaignType, itemClassName, itemPrefabName)
   self._uiView = uiView
   self._awardTipsCallback = awardTipsCallback
   self._itemClassName = itemClassName
   self._itemPrefabName = itemPrefabName
-  self._reviewData = (((GameGlobal.GetModule)(CampaignModule)):GetReviewData()):GetActivityByType(campaignType)
-  self._campaign = (self._reviewData):GetDetailInfo()
-  self._progressCom = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_POINT_PROGRESS, 1)
-  self._progressInfo = (self._progressCom):GetComponentInfo()
+  self._reviewData = GameGlobal.GetModule(CampaignModule):GetReviewData():GetActivityByType(campaignType)
+  self._campaign = self._reviewData:GetDetailInfo()
+  self._progressCom = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_POINT_PROGRESS, 1)
+  self._progressInfo = self._progressCom:GetComponentInfo()
   self:_Refresh(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailContent._Refresh = function(self, playAnim)
-  -- function num : 0_1 , upvalues : _ENV
+function UIReviewProgressAwardDetailContent:_Refresh(playAnim)
   self._allAwards = {}
-  for progress,award in pairs((self._progressInfo).m_progress_rewards) do
-    (table.insert)(self._allAwards, {Progress = progress, AwardID = (award[1]).assetid, Count = (award[1]).count})
+  for progress, award in pairs(self._progressInfo.m_progress_rewards) do
+    table.insert(self._allAwards, {
+      Progress = progress,
+      AwardID = award[1].assetid,
+      Count = award[1].count
+    })
   end
-  ;
-  (table.sort)(self._allAwards, function(a, b)
-    -- function num : 0_1_0
-    do return a.Progress < b.Progress end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local uis = (UIWidgetHelper.SpawnObjects)(self, "awards", self._itemClassName, #self._allAwards, self._itemPrefabName)
-  for index,award in ipairs(self._allAwards) do
-    (uis[index]):SetData(award.AwardID, award.Count, award.Progress, (table.icontains)((self._progressInfo).m_received_progress, award.Progress), award.Progress <= (self._reviewData):ProgressPercent(), self._awardTipsCallback, function(progress)
-    -- function num : 0_1_1 , upvalues : self
-    (self._progressCom):Start_HandleReceiveReward(progress, function(res, rewards)
-      -- function num : 0_1_1_0 , upvalues : self
-      self:_OnReceiveRewards(res, rewards)
-    end
-)
-  end
-)
-    if playAnim and (uis[index]).PlayEnterAni then
-      (uis[index]):PlayEnterAni(index)
+  table.sort(self._allAwards, function(a, b)
+    return a.Progress < b.Progress
+  end)
+  local uis = UIWidgetHelper.SpawnObjects(self, "awards", self._itemClassName, #self._allAwards, self._itemPrefabName)
+  for index, award in ipairs(self._allAwards) do
+    uis[index]:SetData(award.AwardID, award.Count, award.Progress, table.icontains(self._progressInfo.m_received_progress, award.Progress), self._reviewData:ProgressPercent() >= award.Progress, self._awardTipsCallback, function(progress)
+      self._progressCom:Start_HandleReceiveReward(progress, function(res, rewards)
+        self:_OnReceiveRewards(res, rewards)
+      end)
+    end)
+    if playAnim and uis[index].PlayEnterAni then
+      uis[index]:PlayEnterAni(index)
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailContent._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_2 , upvalues : _ENV
+function UIReviewProgressAwardDetailContent:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
     self:_Refresh()
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, function()
-    -- function num : 0_2_0 , upvalues : self
-    self:_Refresh()
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : self
-    (self._uiView):CloseDialog()
-  end
-)
+    self._campaign:CheckErrorCode(res.m_result, function()
+      self:_Refresh()
+    end, function()
+      self._uiView:CloseDialog()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailContent.CloseOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIReviewProgressAwardDetailContent:CloseOnClick(go)
   local animName, duration = self:_GetCloseAnim()
   if animName and duration then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", animName, duration, function()
-    -- function num : 0_3_0 , upvalues : self
-    (self._uiView):CloseDialog()
-  end
-)
+    UIWidgetHelper.PlayAnimation(self, "_anim", animName, duration, function()
+      self._uiView:CloseDialog()
+    end)
   else
-    ;
-    (self._uiView):CloseDialog()
+    self._uiView:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIReviewProgressAwardDetailContent._GetCloseAnim = function(self)
-  -- function num : 0_4
+function UIReviewProgressAwardDetailContent:_GetCloseAnim()
   return nil, nil
 end
-
-

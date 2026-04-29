@@ -1,162 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monste_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterFactory", Object)
 MonsterFactory = MonsterFactory
--- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
 MonsterFactory.AutoAppendPstID = 1
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterFactory.Init = function()
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
+function MonsterFactory.Init()
   MonsterFactory.pools = {}
-  ;
-  (MonsterFactory.MonsterBehaviourRegister)()
+  MonsterFactory.MonsterBehaviourRegister()
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterFactory.Acquire = function(monsterId)
-  -- function num : 0_1 , upvalues : _ENV
+function MonsterFactory.Acquire(monsterId)
   if MonsterFactory.pools == nil then
     return nil
   end
-  local pool = (MonsterFactory.pools)[monsterId]
-  do
-    if pool == nil or #pool <= 0 then
-      local monster = (MonsterFactory.CreateMonster)(monsterId)
-      return monster
-    end
-    local monster = pool[#pool]
-    ;
-    (table.remove)(pool, #pool)
+  local pool = MonsterFactory.pools[monsterId]
+  if pool == nil or #pool <= 0 then
+    local monster = MonsterFactory.CreateMonster(monsterId)
     return monster
   end
+  local monster = pool[#pool]
+  table.remove(pool, #pool)
+  return monster
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterFactory.Recycle = function(monster)
-  -- function num : 0_2 , upvalues : _ENV
+function MonsterFactory.Recycle(monster)
   if monster == nil then
-    return 
+    return
   end
-  ;
-  (MonsterFactory.DestroyMonster)(monster)
+  MonsterFactory.DestroyMonster(monster)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterFactory.Destroy = function()
-  -- function num : 0_3 , upvalues : _ENV
+function MonsterFactory.Destroy()
   if MonsterFactory.pools == nil then
-    return 
+    return
   end
-  for k,pool in pairs(MonsterFactory.pools) do
+  for k, pool in pairs(MonsterFactory.pools) do
     for i = 1, #pool do
-      (MonsterFactory.DestroyMonster)(pool[i])
+      MonsterFactory.DestroyMonster(pool[i])
     end
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
   MonsterFactory.pools = nil
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
   MonsterFactory.Behaviour = nil
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterFactory.CreateMonster = function(monsterId)
-  -- function num : 0_4 , upvalues : _ENV
-  local monsterCfg = (Cfg.cfg_bounce_monster)[monsterId]
+function MonsterFactory.CreateMonster(monsterId)
+  local monsterCfg = Cfg.cfg_bounce_monster[monsterId]
   if not monsterCfg then
     return nil
   end
   local monster = Monster:New(monsterId)
   if monsterCfg.Behaviours then
-    for id,param in pairs(monsterCfg.Behaviours) do
-      local behaviorType = (MonsterFactory.Behaviour)[id]
+    for id, param in pairs(monsterCfg.Behaviours) do
+      local behaviorType = MonsterFactory.Behaviour[id]
       local behaviour = behaviorType:New()
       behaviour:Init(param)
       monster:AddBehavior(behaviour)
     end
   end
-  do
-    return monster
-  end
+  return monster
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterFactory.DestroyMonster = function(monster)
-  -- function num : 0_5
+function MonsterFactory.DestroyMonster(monster)
   if monster == nil then
-    return 
+    return
   end
   monster:Destroy()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterFactory.MonsterBehaviourRegister = function()
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R0 in 'UnsetPending'
-
+function MonsterFactory.MonsterBehaviourRegister()
   MonsterFactory.Behaviour = {}
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.Position] = MonsterBeHaviorPosition
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.Move] = MonsterBeHaviorMove
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.Animation] = MonsterBeHaviorAnimation
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.View] = MonsterBeHaviorView
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.Attack] = MonsterBeHaviorAttack
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.DestroyAfterAttack] = MonsterBeHaviorDestroyAfterAttack
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.Hurt] = MonsterBeHaviorHurt
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.ChangeCampWhenAttacked] = MonsterBeHaviorChgCampWhenAttacked
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.ChangeDirectionWhenAttacked] = MonsterBeHaviorChgDirectionWhenAttacked
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.Generator] = MonsterBeHaviorGenerator
-  -- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.ShowHpProgress] = MonsterBeHaviorShowHpProgress
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-  ;
-  (MonsterFactory.Behaviour)[BehaviourId.TransformationWithHp] = MonsterBeHaviorTransformationWithHp
+  MonsterFactory.Behaviour[BehaviourId.Position] = MonsterBeHaviorPosition
+  MonsterFactory.Behaviour[BehaviourId.Move] = MonsterBeHaviorMove
+  MonsterFactory.Behaviour[BehaviourId.Animation] = MonsterBeHaviorAnimation
+  MonsterFactory.Behaviour[BehaviourId.View] = MonsterBeHaviorView
+  MonsterFactory.Behaviour[BehaviourId.Attack] = MonsterBeHaviorAttack
+  MonsterFactory.Behaviour[BehaviourId.DestroyAfterAttack] = MonsterBeHaviorDestroyAfterAttack
+  MonsterFactory.Behaviour[BehaviourId.Hurt] = MonsterBeHaviorHurt
+  MonsterFactory.Behaviour[BehaviourId.ChangeCampWhenAttacked] = MonsterBeHaviorChgCampWhenAttacked
+  MonsterFactory.Behaviour[BehaviourId.ChangeDirectionWhenAttacked] = MonsterBeHaviorChgDirectionWhenAttacked
+  MonsterFactory.Behaviour[BehaviourId.Generator] = MonsterBeHaviorGenerator
+  MonsterFactory.Behaviour[BehaviourId.ShowHpProgress] = MonsterBeHaviorShowHpProgress
+  MonsterFactory.Behaviour[BehaviourId.TransformationWithHp] = MonsterBeHaviorTransformationWithHp
 end
-
-

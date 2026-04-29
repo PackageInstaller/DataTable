@@ -1,56 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/recoder/match_recorder.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MatchRecorder", Object)
 MatchRecorder = MatchRecorder
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MatchRecorder.Constructor = function(self)
-  -- function num : 0_0
+function MatchRecorder:Constructor()
   self._record = nil
   self._disableRecord = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchRecorder.Dispose = function(self)
-  -- function num : 0_1
+function MatchRecorder:Dispose()
   self._record = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchRecorder.GetRecord = function(self)
-  -- function num : 0_2
+function MatchRecorder:GetRecord()
   local t = self._record
   self._record = nil
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchRecorder.RecoredStartMatch = function(self, time, matchEnterData)
-  -- function num : 0_3 , upvalues : _ENV
+function MatchRecorder:RecoredStartMatch(time, matchEnterData)
   if self._disableRecord then
-    return 
+    return
   end
   self._record = {}
   self._startTime = time
   local t = self._record
-  t[#t + 1] = {time = 0, ts = (os.date)("%X") .. Log.currentPlayerInfo, action = GameRecordAction.StartMatch, actionName = "StartMatch", match_enter_data = matchEnterData}
+  t[#t + 1] = {
+    time = 0,
+    ts = os.date("%X") .. Log.currentPlayerInfo,
+    action = GameRecordAction.StartMatch,
+    actionName = "StartMatch",
+    match_enter_data = matchEnterData
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchRecorder.RecordCommand = function(self, time, cmd)
-  -- function num : 0_4 , upvalues : _ENV
+function MatchRecorder:RecordCommand(time, cmd)
   if not self._record then
-    return 
+    return
   end
   local t = self._record
-  t[#t + 1] = {time = time - self._startTime, ts = (os.date)("%X") .. Log.currentPlayerInfo, action = GameRecordAction.NetInput, actionName = "NetInput", cmd = cmd}
+  t[#t + 1] = {
+    time = time - self._startTime,
+    ts = os.date("%X") .. Log.currentPlayerInfo,
+    action = GameRecordAction.NetInput,
+    actionName = "NetInput",
+    cmd = cmd
+  }
 end
-
-

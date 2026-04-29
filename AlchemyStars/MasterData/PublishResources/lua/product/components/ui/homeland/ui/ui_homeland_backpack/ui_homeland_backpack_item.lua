@@ -1,130 +1,84 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_backpack_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBackpackItem", UICustomWidget)
 UIHomelandBackpackItem = UIHomelandBackpackItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBackpackItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandBackpackItem:OnShow()
   self.item = self:GetUIComponent("UISelectObjectPath", "item")
   self.select = self:GetGameObject("select")
   self.red = self:GetGameObject("red")
   self.default = self:GetGameObject("default")
   self.empty = self:GetGameObject("empty")
   self.anim = self:GetUIComponent("Animation", "root")
-  self.animState = (self.anim):get_Item("UIHomelandBackpackItem_Switching")
-  self.data = (self:GetModule(HomelandModule)):GetHomelandBackpackData()
+  self.animState = self.anim:get_Item("UIHomelandBackpackItem_Switching")
+  self.data = self:GetModule(HomelandModule):GetHomelandBackpackData()
   self:AttachEvent(GameEventType.HomelandBackpackSelectItem, self.FlushSelect)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandBackpackItem:OnHide()
   self:DetachEvent(GameEventType.HomelandBackpackSelectItem, self.FlushSelect)
-  if self._event and not (self._event)._Complete then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+  if self._event and not self._event._Complete then
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackItem.Flush = function(self, filterId, id)
-  -- function num : 0_2 , upvalues : _ENV
-  if self._event and not (self._event)._Complete then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+function UIHomelandBackpackItem:Flush(filterId, id)
+  if self._event and not self._event._Complete then
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   self.filterId = filterId
   if id then
-    (self.default):SetActive(true)
-    ;
-    (self.empty):SetActive(false)
+    self.default:SetActive(true)
+    self.empty:SetActive(false)
     self.id = id
-    local dataItem = (self.data):GetItemById(id)
+    local dataItem = self.data:GetItemById(id)
     local ra = RoleAsset:New()
     ra.assetid = dataItem:GetTemplateID()
     ra.count = dataItem:GetCount()
-    local uiItem = (self.item):SpawnObject("UIItemHomeland")
+    local uiItem = self.item:SpawnObject("UIItemHomeland")
     uiItem:Flush(ra, function()
-    -- function num : 0_2_0 , upvalues : self
-    self:Click()
-  end
-)
+      self:Click()
+    end)
     uiItem:SetNotShowTips(true)
     self:FlushRed()
   else
-    do
-      ;
-      (self.default):SetActive(false)
-      ;
-      (self.empty):SetActive(true)
-    end
+    self.default:SetActive(false)
+    self.empty:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackItem.FlushRed = function(self)
-  -- function num : 0_3
-  local isShowNew = (self.data):IsItemNew(self.filterId, self.id)
-  ;
-  (self.red):SetActive(isShowNew)
+function UIHomelandBackpackItem:FlushRed()
+  local isShowNew = self.data:IsItemNew(self.filterId, self.id)
+  self.red:SetActive(isShowNew)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackItem.FlushSelect = function(self, id)
-  -- function num : 0_4
+function UIHomelandBackpackItem:FlushSelect(id)
   if self.id == id then
-    (self.select):SetActive(true)
+    self.select:SetActive(true)
   else
-    ;
-    (self.select):SetActive(false)
+    self.select:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackItem.PlayShowAnim = function(self, index, msStep)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBackpackItem:PlayShowAnim(index, msStep)
   local animName = "UIHomelandBackpackItem_Switching"
-  ;
-  (self.anim):Play(animName)
-  ;
-  (self.anim):Rewind()
-  ;
-  (self.anim):Sample()
-  ;
-  (self.anim):Stop()
-  self._event = ((GameGlobal.Timer)()):AddEvent(index * msStep, function()
-    -- function num : 0_5_0 , upvalues : self, animName
-    (self.anim):Play(animName)
-  end
-)
+  self.anim:Play(animName)
+  self.anim:Rewind()
+  self.anim:Sample()
+  self.anim:Stop()
+  self._event = GameGlobal.Timer():AddEvent(index * msStep, function()
+    self.anim:Play(animName)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackItem.Click = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local dataItem = (self.data):GetItemById(self.id)
+function UIHomelandBackpackItem:Click()
+  local dataItem = self.data:GetItemById(self.id)
   if not dataItem then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBackpackSelectItem, self.id, true, self)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBackpackSelectItem, self.id, true, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackItem.bgOnClick = function(self, go)
-  -- function num : 0_7
+function UIHomelandBackpackItem:bgOnClick(go)
   self:Click()
 end
-
-

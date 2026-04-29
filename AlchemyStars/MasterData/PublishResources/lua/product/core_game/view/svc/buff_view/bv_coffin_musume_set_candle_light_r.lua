@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_coffin_musume_set_candle_light_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCoffinMusumeSetCandleLight", BuffViewBase)
 BuffViewCoffinMusumeSetCandleLight = BuffViewCoffinMusumeSetCandleLight
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCoffinMusumeSetCandleLight.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  local effectID = (self:ViewParams()).ExecEffectID
+function BuffViewCoffinMusumeSetCandleLight:PlayView(TT, notify)
+  local effectID = self:ViewParams().ExecEffectID
   local e = self:Entity()
   local buffResult = self._buffResult
-  local fxsvc = (self._world):GetService("Effect")
+  local fxsvc = self._world:GetService("Effect")
   if buffResult:IsLightAfter() == 1 then
     fxsvc:CreateEffect(effectID, e)
-  else
-    if buffResult:IsLightAfter() == 0 then
-      fxsvc:DestroyEntityEffectByID(e, {effectID})
-    end
+  elseif buffResult:IsLightAfter() == 0 then
+    fxsvc:DestroyEntityEffectByID(e, {effectID})
   end
-  ;
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTCoffinMusumeLightChanged:New())
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTCoffinMusumeLightChanged:New())
 end
-
-

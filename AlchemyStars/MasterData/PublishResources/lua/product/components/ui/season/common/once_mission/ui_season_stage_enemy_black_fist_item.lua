@@ -1,69 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/once_mission/ui_season_stage_enemy_black_fist_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStageEnemyBalckfistItem", UICustomWidget)
 UISeasonStageEnemyBalckfistItem = UISeasonStageEnemyBalckfistItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStageEnemyBalckfistItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonStageEnemyBalckfistItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageEnemyBalckfistItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonStageEnemyBalckfistItem:InitWidget()
   self.pet = self:GetUIComponent("RawImageLoader", "pet")
   self.secondAttribute1 = self:GetUIComponent("Image", "secondAttribute1")
   self.firstAttribute1 = self:GetUIComponent("Image", "firstAttribute1")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageEnemyBalckfistItem.SetData = function(self, petImgName, elemt1, elemt2, clickCb)
-  -- function num : 0_2
+function UISeasonStageEnemyBalckfistItem:SetData(petImgName, elemt1, elemt2, clickCb)
   self._clickCb = clickCb
-  ;
-  (self.pet):LoadImage(petImgName)
-  ;
-  ((self.secondAttribute1).gameObject):SetActive(elemt2 ~= nil)
-  ;
-  ((self.firstAttribute1).gameObject):SetActive(elemt1 ~= nil)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R5 in 'UnsetPending'
-
+  self.pet:LoadImage(petImgName)
+  self.secondAttribute1.gameObject:SetActive(elemt2 ~= nil)
+  self.firstAttribute1.gameObject:SetActive(elemt1 ~= nil)
   if elemt2 then
-    (self.secondAttribute1).sprite = elemt2
+    self.secondAttribute1.sprite = elemt2
   end
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
   if elemt1 then
-    (self.firstAttribute1).sprite = elemt1
+    self.firstAttribute1.sprite = elemt1
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageEnemyBalckfistItem.SetLeader = function(self, pet)
-  -- function num : 0_3
+function UISeasonStageEnemyBalckfistItem:SetLeader(pet)
   local leaderPool = self:GetUIComponent("UISelectObjectPath", "leader")
   if not leaderPool then
-    return 
+    return
   end
   local leaderWidget = leaderPool:SpawnObject("UITeamsLeader")
   leaderWidget:Flush(pet, true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageEnemyBalckfistItem.RootOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonStageEnemyBalckfistItem:RootOnClick(go)
   if self._clickCb then
-    (self._clickCb)()
+    self._clickCb()
   end
 end
-
-

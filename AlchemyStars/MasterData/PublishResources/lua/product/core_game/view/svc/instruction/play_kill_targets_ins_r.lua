@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_kill_targets_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayKillTargetsInstruction", BaseInstruction)
 PlayKillTargetsInstruction = PlayKillTargetsInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayKillTargetsInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayKillTargetsInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayKillTargetsInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayKillTargetsInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local resultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local resultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultList = resultContainer:GetEffectResultsAsArray(SkillEffectType.KillTargets)
   local deadTaskArray = {}
-  local monsterShowR = (self._world):GetService("MonsterShowRender")
+  local monsterShowR = self._world:GetService("MonsterShowRender")
   if resultList then
-    for i,result in ipairs(resultList) do
+    for i, result in ipairs(resultList) do
       local deadTargetIDs = result:GetTargetList()
-      for _,id in ipairs(deadTargetIDs) do
-        local e = (self._world):GetEntityByID(id)
-        local curDeadTaskID = (TaskManager:GetInstance()):CoreGameStartTask(monsterShowR._DoOneMonsterDead, monsterShowR, e)
+      for _, id in ipairs(deadTargetIDs) do
+        local e = self._world:GetEntityByID(id)
+        local curDeadTaskID = TaskManager:GetInstance():CoreGameStartTask(monsterShowR._DoOneMonsterDead, monsterShowR, e)
         deadTaskArray[#deadTaskArray + 1] = curDeadTaskID
       end
     end
   end
 end
-
-

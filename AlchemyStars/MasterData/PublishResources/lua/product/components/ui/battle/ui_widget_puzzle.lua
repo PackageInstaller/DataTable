@@ -1,102 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_puzzle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPuzzle", UICustomWidget)
 UIWidgetPuzzle = UIWidgetPuzzle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPuzzle.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetPuzzle:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPuzzle.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetPuzzle:InitWidget()
   self._countDownObj = self:GetGameObject("CountDown")
-  ;
-  (self._countDownObj):SetActive(false)
+  self._countDownObj:SetActive(false)
   self._txtCountdownTime = self:GetUIComponent("UILocalizationText", "CountDownTime")
   self._isGuide = false
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPuzzle.OnReset = function(self, countdownTime)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetPuzzle:OnReset(countdownTime)
   self._countDownMs = countdownTime
-  self._countDownNum = (math.ceil)(self._countDownMs / 1000)
+  self._countDownNum = math.ceil(self._countDownMs / 1000)
   local strNum = tostring(self._countDownNum) .. "s"
-  ;
-  (self._txtCountdownTime):SetText(strNum)
+  self._txtCountdownTime:SetText(strNum)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPuzzle.RegisterEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetPuzzle:RegisterEvent()
   self:AttachEvent(GameEventType.ShowPuzzleUI, self.ShowPuzzleUI)
   self:AttachEvent(GameEventType.GuidePuzzleCountdown, self.GuidePuzzleCountdown)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPuzzle.ShowPuzzleUI = function(self, show, countdownTime)
-  -- function num : 0_4
-  (self._countDownObj):SetActive(show)
+function UIWidgetPuzzle:ShowPuzzleUI(show, countdownTime)
+  self._countDownObj:SetActive(show)
   if show and countdownTime then
     self:OnReset(countdownTime)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPuzzle.GuidePuzzleCountdown = function(self, guideState)
-  -- function num : 0_5
+function UIWidgetPuzzle:GuidePuzzleCountdown(guideState)
   if not guideState then
     self._isGuide = false
   end
   self._isGuide = guideState[1] == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPuzzle.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWidgetPuzzle:OnUpdate(deltaTimeMS)
   if self._isGuide then
-    return 
+    return
   end
-  if (self._countDownObj).activeSelf and self._countDownMs > 0 then
-    local deltaTime = (GameGlobal:GetInstance()):GetUnscaledDeltaTime()
+  if self._countDownObj.activeSelf and self._countDownMs > 0 then
+    local deltaTime = GameGlobal:GetInstance():GetUnscaledDeltaTime()
     self._countDownMs = self._countDownMs - deltaTime
     self:RefreshCountDownNum()
     if self._countDownMs <= 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PuzzleUICountDownOver)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PuzzleUICountDownOver)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPuzzle.RefreshCountDownNum = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWidgetPuzzle:RefreshCountDownNum()
   local refreshNumSec = 0
-  if self._countDownMs < 0 then
+  if 0 > self._countDownMs then
     refreshNumSec = 0
   else
-    refreshNumSec = (math.ceil)(self._countDownMs / 1000)
+    refreshNumSec = math.ceil(self._countDownMs / 1000)
   end
   if self._countDownNum ~= refreshNumSec then
     self._countDownNum = refreshNumSec
     local timeNumStr = tostring(self._countDownNum) .. "s"
-    ;
-    (self._txtCountdownTime):SetText(timeNumStr)
+    self._txtCountdownTime:SetText(timeNumStr)
   end
 end
-
-

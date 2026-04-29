@@ -1,82 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/season_maze_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeService", BaseService)
 SeasonMazeService = SeasonMazeService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMazeService:Constructor(world)
   self._world = world
-  self._buffLogicSvc = (self._world):GetService("BuffLogic")
+  self._buffLogicSvc = self._world:GetService("BuffLogic")
   self._getCountFunc = {}
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._getCountFunc)[BuffPopStarProModifyType.RelicCount] = self.GetRelicCount
+  self._getCountFunc[BuffPopStarProModifyType.RelicCount] = self.GetRelicCount
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.AddRelicCounter = function(self, relicID)
-  -- function num : 0_1
+function SeasonMazeService:AddRelicCounter(relicID)
   local cmpt = self:GetSeasonMazeLogicComponent()
   cmpt:AddRelicCount(relicID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetRelicCount = function(self)
-  -- function num : 0_2
+function SeasonMazeService:GetRelicCount()
   local cmpt = self:GetSeasonMazeLogicComponent()
   local count = cmpt:GetRelicsCount()
   return count
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetCountByModifyType = function(self, modifyType)
-  -- function num : 0_3
+function SeasonMazeService:GetCountByModifyType(modifyType)
   local count = 0
-  local func = (self._getCountFunc)[modifyType]
+  local func = self._getCountFunc[modifyType]
   if func then
     count = func(self)
   end
   return count
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetSeasonMazeLogicComponent = function(self)
-  -- function num : 0_4
-  return (self._world):SeasonMazeLogic()
+function SeasonMazeService:GetSeasonMazeLogicComponent()
+  return self._world:SeasonMazeLogic()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetAllRelic = function(self)
-  -- function num : 0_5
+function SeasonMazeService:GetAllRelic()
   local cmpt = self:GetSeasonMazeLogicComponent()
   return cmpt:GetAllRelic()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.AddRewardGoldCoin = function(self, coin)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonMazeService:AddRewardGoldCoin(coin)
   local cmpt = self:GetSeasonMazeLogicComponent()
   cmpt:AddRewardGoldCoin(coin)
-  ;
-  (Log.info)("SeasonMaze Relic AddGoldCoin Count:", coin)
+  Log.info("SeasonMaze Relic AddGoldCoin Count:", coin)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.AddMsAndGoldCoin = function(self)
-  -- function num : 0_7
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function SeasonMazeService:AddMsAndGoldCoin()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local com = teamEntity:BuffComponent()
   if com:GetBuffValue("SeasonMazeAddGoldCoin") then
     self:AddRewardGoldCoin(com:GetBuffValue("SeasonMazeAddGoldCoin"))
@@ -86,24 +54,17 @@ SeasonMazeService.AddMsAndGoldCoin = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.AddRewardMS = function(self, ms)
-  -- function num : 0_8 , upvalues : _ENV
+function SeasonMazeService:AddRewardMS(ms)
   local cmpt = self:GetSeasonMazeLogicComponent()
   local newMS = cmpt:AddMS(ms)
-  ;
-  (Log.info)("SeasonMaze Relic AddMS Count:", ms)
-  local bs = (self._world):BattleStat()
+  Log.info("SeasonMaze Relic AddMS Count:", ms)
+  local bs = self._world:BattleStat()
   bs:SetLevelRound(newMS)
   bs:SetCurWaveRound(newMS)
   bs:MazeAddLight(ms)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetRoundCount = function(self)
-  -- function num : 0_9
+function SeasonMazeService:GetRoundCount()
   local cmpt = self:GetSeasonMazeLogicComponent()
   if self:IsSeasonMazeWorldBoss() then
     return cmpt:GetRoundCount()
@@ -112,124 +73,88 @@ SeasonMazeService.GetRoundCount = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetMS = function(self)
-  -- function num : 0_10
+function SeasonMazeService:GetMS()
   local cmpt = self:GetSeasonMazeLogicComponent()
   return cmpt:GetMS()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.UseMs = function(self)
-  -- function num : 0_11
+function SeasonMazeService:UseMs()
   if not self:IsSeasonMazeWorldBoss() then
     local cmpt = self:GetSeasonMazeLogicComponent()
     cmpt:SubMS(1)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetAutoBeadEnergy = function(self)
-  -- function num : 0_12
+function SeasonMazeService:GetAutoBeadEnergy()
   local cmpt = self:GetSeasonMazeLogicComponent()
   return cmpt:GetAutoBeadEnergy()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.AddOuterAutoBeadEnergy = function(self, point)
-  -- function num : 0_13
+function SeasonMazeService:AddOuterAutoBeadEnergy(point)
   local cmpt = self:GetSeasonMazeLogicComponent()
   return cmpt:AddAutoBeadEnergy(point)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.SubOuterAutoBeadEnergy = function(self, point)
-  -- function num : 0_14
+function SeasonMazeService:SubOuterAutoBeadEnergy(point)
   local cmpt = self:GetSeasonMazeLogicComponent()
   return cmpt:SubAutoBeadEnergy(point)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.IsSeasonMazeWorldBoss = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local matchType, subMatchType = (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss)
+function SeasonMazeService:IsSeasonMazeWorldBoss()
+  local matchType, subMatchType = self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss)
   if subMatchType == MatchType.MT_WorldBoss then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.BuildResult = function(self, result, victory)
-  -- function num : 0_16 , upvalues : _ENV
+function SeasonMazeService:BuildResult(result, victory)
   local mr = SeasonMazeResult:New()
   local cmpt = self:GetSeasonMazeLogicComponent()
-  local battleSvc = (self._world):GetService("Battle")
+  local battleSvc = self._world:GetService("Battle")
   if self:IsSeasonMazeWorldBoss() then
     mr.total_damage = battleSvc:GetWorldBossTotalDamage(result, victory)
   end
   mr.relic_list = cmpt:GetRelicAndCounter()
   mr.outside_attr = cmpt:GetOutsideAttribute()
   local featureSvc = self:GetService("FeatureLogic")
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (mr.outside_attr)[SeasonMazeAttrType.SMAT_AlgorithmUpEnergy] = featureSvc:GetAUOEValue()
-  ;
-  (Log.info)("SeasonMazeResult OutAttrBegin")
-  for k,v in pairs(mr.outside_attr) do
-    (Log.info)("key :", k, " value:", v)
+  mr.outside_attr[SeasonMazeAttrType.SMAT_AlgorithmUpEnergy] = featureSvc:GetAUOEValue()
+  Log.info("SeasonMazeResult OutAttrBegin")
+  for k, v in pairs(mr.outside_attr) do
+    Log.info("key :", k, " value:", v)
   end
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R7 in 'UnsetPending'
-
-  if (mr.outside_attr)[SeasonMazeAttrType.SMAT_AutoBeadEnergy] then
-    (mr.outside_attr)[SeasonMazeAttrType.SMAT_AutoBeadEnergy] = (math.floor)((mr.outside_attr)[SeasonMazeAttrType.SMAT_AutoBeadEnergy])
-    ;
-    (Log.info)("FloorAutoBeadEnergyValue :", (mr.outside_attr)[SeasonMazeAttrType.SMAT_AutoBeadEnergy])
+  if mr.outside_attr[SeasonMazeAttrType.SMAT_AutoBeadEnergy] then
+    mr.outside_attr[SeasonMazeAttrType.SMAT_AutoBeadEnergy] = math.floor(mr.outside_attr[SeasonMazeAttrType.SMAT_AutoBeadEnergy])
+    Log.info("FloorAutoBeadEnergyValue :", mr.outside_attr[SeasonMazeAttrType.SMAT_AutoBeadEnergy])
   end
-  ;
-  (Log.info)("SeasonMazeResult OutAttrEnd")
+  Log.info("SeasonMazeResult OutAttrEnd")
   local pet_infos = {}
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
-  local petEntities = (teamEntity:Team()):GetTeamPetEntities()
-  for _,e in ipairs(petEntities) do
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
+  local petEntities = teamEntity:Team():GetTeamPetEntities()
+  for _, e in ipairs(petEntities) do
     local info = MatchPetResult:New()
-    info.pet_pstid = (e:PetPstID()):GetPstID()
-    info.pet_power = (e:Attributes()):GetAttribute("Power")
-    info.pet_legendPower = (e:Attributes()):GetAttribute("LegendPower")
-    local hp = (e:Attributes()):GetCurrentHP()
-    info.pet_blood = hp / (e:Attributes()):CalcMaxHp()
+    info.pet_pstid = e:PetPstID():GetPstID()
+    info.pet_power = e:Attributes():GetAttribute("Power")
+    info.pet_legendPower = e:Attributes():GetAttribute("LegendPower")
+    local hp = e:Attributes():GetCurrentHP()
+    info.pet_blood = hp / e:Attributes():CalcMaxHp()
     if hp <= 0 then
       info.pet_is_dead = true
     end
-    ;
-    (table.insert)(pet_infos, info)
+    table.insert(pet_infos, info)
   end
   mr.pet_list = pet_infos
   return mr
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetRelics = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
+function SeasonMazeService:GetRelics()
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
     return {}
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.CheckRelicCounter = function(self, relicID)
-  -- function num : 0_18 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_relic)[relicID]
+function SeasonMazeService:CheckRelicCounter(relicID)
+  local cfg = Cfg.cfg_item_relic[relicID]
   local seasonMazeCmpt = self:GetSeasonMazeLogicComponent()
   local cnt = seasonMazeCmpt:GetRelicCounter(relicID)
   if not cnt or cfg.OutGameTriggerCount == 0 or cnt < cfg.OutGameTriggerCount then
@@ -238,15 +163,12 @@ SeasonMazeService.CheckRelicCounter = function(self, relicID)
   return false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.CheckSuite = function(self, suiteID)
-  -- function num : 0_19 , upvalues : _ENV
+function SeasonMazeService:CheckSuite(suiteID)
   local seasonMazeCmpt = self:GetSeasonMazeLogicComponent()
   local relics = seasonMazeCmpt:GetSuitRelic()
-  local suiteCfgList = (Cfg.cfg_item_relic)({SuiteID = suiteID})
-  for _,cfg in pairs(suiteCfgList) do
-    if not (table.icontains)(relics, cfg.ID) then
+  local suiteCfgList = Cfg.cfg_item_relic({SuiteID = suiteID})
+  for _, cfg in pairs(suiteCfgList) do
+    if not table.icontains(relics, cfg.ID) then
       return false
     end
     if not self:CheckRelicCounter(cfg.ID) then
@@ -256,98 +178,65 @@ SeasonMazeService.CheckSuite = function(self, suiteID)
   return true
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.Initialize = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
-    return 
+function SeasonMazeService:Initialize()
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.CalculateRelicInnerEff = function(self, relicID)
-  -- function num : 0_21 , upvalues : _ENV
+function SeasonMazeService:CalculateRelicInnerEff(relicID)
   local relics = self:GetRelics()
-  local cfg = (Cfg.cfg_item_relic)[relicID]
+  local cfg = Cfg.cfg_item_relic[relicID]
   if cfg.InnerGameType == RelicInnerGameEffType.ReplaceRelicID then
     local param = cfg.InnerGameTypeParam
     local needRelicID = param.needRelicID
-    if (table.icontains)(relics, needRelicID) then
+    if table.icontains(relics, needRelicID) then
       return param.replaceID
     end
   end
-  do
-    return relicID
-  end
+  return relicID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.InitRelics = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
+function SeasonMazeService:InitRelics()
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
     return {}
   end
-  local relics = (table.cloneconf)(self:GetAllRelic())
+  local relics = table.cloneconf(self:GetAllRelic())
   local validRelics = {}
-  for _,relicID in ipairs(relics) do
-    local cfg = (Cfg.cfg_item_relic)[relicID]
+  for _, relicID in ipairs(relics) do
+    local cfg = Cfg.cfg_item_relic[relicID]
     if self:CheckRelicCounter(relicID) then
       if cfg.InnerGameType and cfg.InnerGameType > 0 then
         local id = self:CalculateRelicInnerEff(relicID)
-        ;
-        (table.insert)(validRelics, id)
+        table.insert(validRelics, id)
       else
-        do
-          do
-            ;
-            (table.insert)(validRelics, relicID)
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        table.insert(validRelics, relicID)
       end
     end
   end
-  ;
-  (table.sort)(validRelics, function(a, b)
-    -- function num : 0_22_0 , upvalues : _ENV
-    local oa = ((Cfg.cfg_item_relic)[a]).ShowOrder
-    local ob = ((Cfg.cfg_item_relic)[b]).ShowOrder
-    if a >= b then
-      do return oa ~= ob end
-      do return oa < ob end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.sort(validRelics, function(a, b)
+    local oa = Cfg.cfg_item_relic[a].ShowOrder
+    local ob = Cfg.cfg_item_relic[b].ShowOrder
+    if oa == ob then
+      return a < b
+    else
+      return oa < ob
     end
-  end
-)
-  for _,relic in ipairs(validRelics) do
+  end)
+  for _, relic in ipairs(validRelics) do
     self:ApplyRelic(relic)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.ApplyRelic = function(self, relicID)
-  -- function num : 0_23 , upvalues : _ENV
-  local buffLSvc = (self._world):GetService("BuffLogic")
-  local cfg = (Cfg.cfg_item_relic)[relicID]
+function SeasonMazeService:ApplyRelic(relicID)
+  local buffLSvc = self._world:GetService("BuffLogic")
+  local cfg = Cfg.cfg_item_relic[relicID]
   if #cfg.BuffID > 0 then
-    for _,buffID in ipairs(cfg.BuffID) do
-      if buffID > 0 then
-        (Log.notice)("[SeasonMaze ApplyRelic] add buff:", buffID, " relic:", relicID)
+    for _, buffID in ipairs(cfg.BuffID) do
+      if 0 < buffID then
+        Log.notice("[SeasonMaze ApplyRelic] add buff:", buffID, " relic:", relicID)
         local buffIns = buffLSvc:AddBuffByTargetType(buffID, cfg.BuffTargetType, cfg.BuffTargetParam)
-        for _,buffIn in ipairs(buffIns) do
+        for _, buffIn in ipairs(buffIns) do
           buffIn:SetRelicID(relicID)
         end
       end
@@ -355,36 +244,22 @@ SeasonMazeService.ApplyRelic = function(self, relicID)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.AddRelicCount = function(self, relic)
-  -- function num : 0_24
+function SeasonMazeService:AddRelicCount(relic)
   local cmpt = self:GetSeasonMazeLogicComponent()
   cmpt:AddRelicCount(relic)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetGoldCoin = function(self)
-  -- function num : 0_25
+function SeasonMazeService:GetGoldCoin()
   local cmpt = self:GetSeasonMazeLogicComponent()
   return cmpt:GetGoldCoin()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetWaveRandoms = function(self)
-  -- function num : 0_26
+function SeasonMazeService:GetWaveRandoms()
   local cmpt = self:GetSeasonMazeLogicComponent()
   return cmpt:GetWaveRandoms()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeService.GetInitAUOEValue = function(self)
-  -- function num : 0_27
+function SeasonMazeService:GetInitAUOEValue()
   local cmpt = self:GetSeasonMazeLogicComponent()
   return cmpt:GetInitAUOEValue()
 end
-
-

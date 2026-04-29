@@ -1,74 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/input/homeland_input_controller_medal_wall_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandInputControllerMedalWallBase", Object)
 HomelandInputControllerMedalWallBase = HomelandInputControllerMedalWallBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandInputControllerMedalWallBase.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandInputControllerMedalWallBase:Constructor()
   self._speedMin = MedalWallConfig.SpeedMin
   self._speedMax = MedalWallConfig.SpeedMax
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallBase.Init = function(self, mainCharacterController, medalWallCameraController)
-  -- function num : 0_1
+function HomelandInputControllerMedalWallBase:Init(mainCharacterController, medalWallCameraController)
   self._mainCharacterController = mainCharacterController
   self._medalWallCameraController = medalWallCameraController
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallBase.Dispose = function(self)
-  -- function num : 0_2
+function HomelandInputControllerMedalWallBase:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallBase.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function HomelandInputControllerMedalWallBase:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallBase.HandleMove = function(self, moveVec)
-  -- function num : 0_4
+function HomelandInputControllerMedalWallBase:HandleMove(moveVec)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallBase.HandleRotate = function(self, rotateVec)
-  -- function num : 0_5
+function HomelandInputControllerMedalWallBase:HandleRotate(rotateVec)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallBase.HandleScale = function(self, scale)
-  -- function num : 0_6
+function HomelandInputControllerMedalWallBase:HandleScale(scale)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallBase.Enter = function(self, cameraTransform)
-  -- function num : 0_7
-  (self._medalWallCameraController):UpdateCameraTransform(cameraTransform)
+function HomelandInputControllerMedalWallBase:Enter(cameraTransform)
+  self._medalWallCameraController:UpdateCameraTransform(cameraTransform)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallBase.HandleMedalClick = function(self, pos)
-  -- function num : 0_8
+function HomelandInputControllerMedalWallBase:HandleMedalClick(pos)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandInputControllerMedalWallBase._GetMoveSpeed = function(self)
-  -- function num : 0_9
-  return self._speedMin + (self._medalWallCameraController):ScalePercent() * (self._speedMax - self._speedMin)
+function HomelandInputControllerMedalWallBase:_GetMoveSpeed()
+  return self._speedMin + self._medalWallCameraController:ScalePercent() * (self._speedMax - self._speedMin)
 end
-
-

@@ -1,65 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_decompose_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandDecomposeItem", UICustomWidget)
 UIHomelandDecomposeItem = UIHomelandDecomposeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandDecomposeItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandDecomposeItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecomposeItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIHomelandDecomposeItem:InitWidget()
   self.item = self:GetUIComponent("UISelectObjectPath", "item")
   self.selector = self:GetGameObject("Selector")
   self.empty = self:GetGameObject("empty")
   self.itemGo = self:GetGameObject("item")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecomposeItem.SetData = function(self, idx, data, onSelect)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandDecomposeItem:SetData(idx, data, onSelect)
   self._idx = idx
   self._onSelect = onSelect
   if data then
-    (self.itemGo):SetActive(true)
-    ;
-    (self.empty):SetActive(false)
-    local itemHome = (self.item):SpawnObject("UIItemHomeland")
+    self.itemGo:SetActive(true)
+    self.empty:SetActive(false)
+    local itemHome = self.item:SpawnObject("UIItemHomeland")
     local asset = RoleAsset:New()
     asset.assetid = data.assetid
     asset.count = data.count
     itemHome:Flush(asset)
   else
-    do
-      ;
-      (self.itemGo):SetActive(false)
-      ;
-      (self.empty):SetActive(true)
-      self:Select(false)
-    end
+    self.itemGo:SetActive(false)
+    self.empty:SetActive(true)
   end
+  self:Select(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecomposeItem.AreaOnClick = function(self, go)
-  -- function num : 0_3
-  (self._onSelect)(self._idx)
+function UIHomelandDecomposeItem:AreaOnClick(go)
+  self._onSelect(self._idx)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandDecomposeItem.Select = function(self, select)
-  -- function num : 0_4
-  (self.selector):SetActive(select)
+function UIHomelandDecomposeItem:Select(select)
+  self.selector:SetActive(select)
 end
-
-

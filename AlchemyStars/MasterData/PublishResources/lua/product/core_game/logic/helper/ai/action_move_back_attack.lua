@@ -1,70 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_back_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_move_base")
 _class("ActionMoveBackAttack", ActionMoveBase)
 ActionMoveBackAttack = ActionMoveBackAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveBackAttack.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionMoveBackAttack:Constructor()
   self.m_posListNearSelf = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
-  ;
-  (self.m_posListNearSelf):AllowDuplicate()
+  self.m_posListNearSelf:AllowDuplicate()
   self.m_posListMoveAttack = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByFar)
-  ;
-  (self.m_posListMoveAttack):AllowDuplicate()
+  self.m_posListMoveAttack:AllowDuplicate()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackAttack.Reset = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionMoveBackAttack.super).Reset)(self)
-  ;
-  (self.m_posListNearSelf):Clear()
-  ;
-  (self.m_posListMoveAttack):Clear()
+function ActionMoveBackAttack:Reset()
+  ActionMoveBackAttack.super.Reset(self)
+  self.m_posListNearSelf:Clear()
+  self.m_posListMoveAttack:Clear()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackAttack.InitTargetPosList = function(self, listPosTarget, targetEntityPosCenter)
-  -- function num : 0_2 , upvalues : _ENV
-  local posSelf = ((self.m_entityOwn):GridLocation()).Position
-  local dirSelf = ((self.m_entityOwn):GridLocation()).Direction
+function ActionMoveBackAttack:InitTargetPosList(listPosTarget, targetEntityPosCenter)
+  local posSelf = self.m_entityOwn:GridLocation().Position
+  local dirSelf = self.m_entityOwn:GridLocation().Direction
   local nSkillID = self:GetLogicData(1)
-  local bodyArea = ((self.m_entityOwn):BodyArea()):GetArea()
+  local bodyArea = self.m_entityOwn:BodyArea():GetArea()
   if nSkillID == 0 then
-    return 
+    return
   end
-  local aiComponent = (self.m_entityOwn):AI()
+  local aiComponent = self.m_entityOwn:AI()
   local nWalkTotal = aiComponent:GetMobilityValid()
   local walkRange = self:ComputeWalkRange(posSelf, nWalkTotal, true)
-  ;
-  (self.m_posListNearSelf):Clear()
-  ;
-  (self.m_posListMoveAttack):Clear()
-  for key,targetPos in ipairs(listPosTarget) do
+  self.m_posListNearSelf:Clear()
+  self.m_posListMoveAttack:Clear()
+  for key, targetPos in ipairs(listPosTarget) do
     local skillRange = self:ComputeSkillRange(nSkillID, targetPos, bodyArea, dirSelf)
     local bCheckObstacle = self:GetLogicData(-1) or 0
     for i = 1, #skillRange do
       local posAttack = skillRange[i]
       local bValidPos = self:IsPosAccessible(posAttack)
       local bValidAttackPos = true
-      if bCheckObstacle > 0 and bValidPos then
+      if 0 < bCheckObstacle and bValidPos then
         bValidAttackPos = self:IsPosConnected(targetPos, posAttack)
       end
-      ;
-      (AINewNode.InsertSortedArray)(self.m_posListNearSelf, posSelf, posAttack, i)
+      AINewNode.InsertSortedArray(self.m_posListNearSelf, posSelf, posAttack, i)
       if bValidPos and bValidAttackPos then
         for j = 1, #walkRange do
           local posData = walkRange[j]
           local posWalk = posData:GetPos()
           if posWalk == posAttack then
-            (AINewNode.InsertSortedArray)(self.m_posListMoveAttack, targetEntityPosCenter, posWalk, j)
+            AINewNode.InsertSortedArray(self.m_posListMoveAttack, targetEntityPosCenter, posWalk, j)
           end
         end
       end
@@ -72,11 +52,8 @@ ActionMoveBackAttack.InitTargetPosList = function(self, listPosTarget, targetEnt
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackAttack.ComputeSkillRange = function(self, skillID, centerPos, bodyArea, dir)
-  -- function num : 0_3 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function ActionMoveBackAttack:ComputeSkillRange(skillID, centerPos, bodyArea, dir)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local scopeType = skillConfigData:GetSkillScopeType()
   if scopeType == SkillScopeType.DirectLineExpand then
@@ -85,55 +62,41 @@ ActionMoveBackAttack.ComputeSkillRange = function(self, skillID, centerPos, body
     local ret3 = self:_ComputeSkillRange(skillID, centerPos, bodyArea, Vector2(1, 0))
     local ret4 = self:_ComputeSkillRange(skillID, centerPos, bodyArea, Vector2(-1, 0))
     local ret = {}
-    ;
-    (table.appendArray)(ret, ret1)
-    ;
-    (table.appendArray)(ret, ret2)
-    ;
-    (table.appendArray)(ret, ret3)
-    ;
-    (table.appendArray)(ret, ret4)
+    table.appendArray(ret, ret1)
+    table.appendArray(ret, ret2)
+    table.appendArray(ret, ret3)
+    table.appendArray(ret, ret4)
     return ret
   else
-    do
-      do return self:_ComputeSkillRange(skillID, centerPos, bodyArea, dir) end
-    end
+    return self:_ComputeSkillRange(skillID, centerPos, bodyArea, dir)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackAttack.FindNewTargetPos = function(self)
-  -- function num : 0_4
-  local aiComponent = (self.m_entityOwn):AI()
+function ActionMoveBackAttack:FindNewTargetPos()
+  local aiComponent = self.m_entityOwn:AI()
   local posTarget = aiComponent:GetTargetPosCenter()
-  local posSelf = ((self.m_entityOwn):GridLocation()).Position
-  local posReturn = nil
-  do
-    if self.m_posListMoveAttack and (self.m_posListMoveAttack):Size() > 0 then
-      local aiSortByDistance = (self.m_posListMoveAttack):GetAt(1)
-      posReturn = aiSortByDistance.data
-    end
-    if posReturn ~= nil then
-      self:PrintLog("选择可以到达的有效进攻出发点，坐标(", posReturn.x, ",", posReturn.y, ")")
-      return posReturn
-    end
-    posReturn = self:FindPosValidAndConnected(self.m_posListNearSelf, posTarget, nil)
-    if posReturn ~= nil then
-      self:PrintLog("选择距离自己最近的有效进攻出发点，坐标(", posReturn.x, ",", posReturn.y, ")")
-      return posReturn
-    end
-    posReturn = aiComponent:GetTargetPos()
-    self:PrintLog("没有有效进攻出发点，选择玩家坐标(", posReturn.x, ",", posReturn.y, ")")
+  local posSelf = self.m_entityOwn:GridLocation().Position
+  local posReturn
+  if self.m_posListMoveAttack and self.m_posListMoveAttack:Size() > 0 then
+    local aiSortByDistance = self.m_posListMoveAttack:GetAt(1)
+    posReturn = aiSortByDistance.data
+  end
+  if nil ~= posReturn then
+    self:PrintLog("选择可以到达的有效进攻出发点，坐标(", posReturn.x, ",", posReturn.y, ")")
     return posReturn
   end
+  posReturn = self:FindPosValidAndConnected(self.m_posListNearSelf, posTarget, nil)
+  if nil ~= posReturn then
+    self:PrintLog("选择距离自己最近的有效进攻出发点，坐标(", posReturn.x, ",", posReturn.y, ")")
+    return posReturn
+  end
+  posReturn = aiComponent:GetTargetPos()
+  self:PrintLog("没有有效进攻出发点，选择玩家坐标(", posReturn.x, ",", posReturn.y, ")")
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveBackAttack._IsPosInList = function(self, posWork, posList)
-  -- function num : 0_5 , upvalues : _ENV
-  local nListCount = (table.count)(posList)
+function ActionMoveBackAttack:_IsPosInList(posWork, posList)
+  local nListCount = table.count(posList)
   for i = 1, nListCount do
     if posWork == posList[i] then
       return true
@@ -141,5 +104,3 @@ ActionMoveBackAttack._IsPosInList = function(self, posWork, posList)
   end
   return false
 end
-
-

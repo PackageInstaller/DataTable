@@ -1,26 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_immune_translate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-BuffImmuneTranslateType = {"ImmuneHitBack", "ImmunePullAround", "ImmuneTransportConveyor", "ImmuneTransportEddy"}
+BuffImmuneTranslateType = {
+  "ImmuneHitBack",
+  "ImmunePullAround",
+  "ImmuneTransportConveyor",
+  "ImmuneTransportEddy"
+}
 _class("BuffLogicImmuneTranslate", BuffLogicBase)
 BuffLogicImmuneTranslate = BuffLogicImmuneTranslate
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicImmuneTranslate.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicImmuneTranslate:Constructor(buffInstance, logicParam)
   self._translateTypeList = logicParam.translateType
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicImmuneTranslate.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicImmuneTranslate:DoLogic()
+  local e = self._buffInstance:Entity()
   local cBuff = e:BuffComponent()
   if self._translateTypeList then
-    for _,idx in ipairs(self._translateTypeList) do
+    for _, idx in ipairs(self._translateTypeList) do
       cBuff:SetBuffValue(BuffImmuneTranslateType[idx], true)
     end
   end
@@ -28,24 +23,17 @@ end
 
 _class("BuffLogicResetImmuneTranslate", BuffLogicBase)
 BuffLogicResetImmuneTranslate = BuffLogicResetImmuneTranslate
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetImmuneTranslate.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetImmuneTranslate:Constructor(buffInstance, logicParam)
   self._translateTypeList = logicParam.translateType
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetImmuneTranslate.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetImmuneTranslate:DoLogic()
+  local e = self._buffInstance:Entity()
   local cBuff = e:BuffComponent()
   if self._translateTypeList then
-    for _,idx in ipairs(self._translateTypeList) do
+    for _, idx in ipairs(self._translateTypeList) do
       cBuff:SetBuffValue(BuffImmuneTranslateType[idx], nil)
     end
   end
 end
-
-

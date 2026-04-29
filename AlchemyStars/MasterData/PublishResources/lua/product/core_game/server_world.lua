@@ -1,66 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/server_world.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_world")
 _class("ServerWorld", MainWorld)
 ServerWorld = ServerWorld
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ServerWorld.Constructor = function(self, worldInfo, coreGameLogic)
-  -- function num : 0_0 , upvalues : _ENV
+function ServerWorld:Constructor(worldInfo, coreGameLogic)
   self._coreGameLogic = coreGameLogic
   self._runningPosition = WorldRunPostion.AtServer
   self._gameEventDispatcher = GameEventDispatcher:New()
   self._gameEventListenerIDGenerator = IDGenerator:New(IDGeneratorType.GAME_EVENT_LISTENER_FIRST_ID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ServerWorld.GetCoreGameLogic = function(self)
-  -- function num : 0_1
+function ServerWorld:GetCoreGameLogic()
   return self._coreGameLogic
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ServerWorld.IsDevelopEnv = function(self)
-  -- function num : 0_2
-  return (self._coreGameLogic):GetServerLuaLogConfig()
+function ServerWorld:IsDevelopEnv()
+  return self._coreGameLogic:GetServerLuaLogConfig()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ServerWorld.EventDispatcher = function(self)
-  -- function num : 0_3
+function ServerWorld:EventDispatcher()
   return self._gameEventDispatcher
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ServerWorld.HandleCommand = function(self, cmd)
-  -- function num : 0_4 , upvalues : _ENV
+function ServerWorld:HandleCommand(cmd)
   local e = self:GetEntityByID(cmd.EntityID)
   if e then
     e:ReceiveCommand(cmd)
   else
-    ;
-    (Log.fatal)("ServerWorld:HandleCommand can not find entity ID=", cmd.EntityID)
+    Log.fatal("ServerWorld:HandleCommand can not find entity ID=", cmd.EntityID)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ServerWorld.IDGenerator = function(self)
-  -- function num : 0_5
+function ServerWorld:IDGenerator()
   return self._gameEventListenerIDGenerator
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ServerWorld.HandleSyncFailed = function(self, failedType, failedMsg)
-  -- function num : 0_6 , upvalues : _ENV
+function ServerWorld:HandleSyncFailed(failedType, failedMsg)
   if self._coreGameLogic then
     local battleServer = self:GetService("Battle")
     local result = battleServer:CalcBattleResultLogic(self:MatchType(GetMatchTypeType.CalcBattleResult), false)
@@ -71,27 +45,20 @@ ServerWorld.HandleSyncFailed = function(self, failedType, failedMsg)
     if failedMsg then
       result.exception_msg = failedMsg
     end
-    ;
-    (self._coreGameLogic):SetResult(result)
-    ;
-    (self._coreGameLogic):GameOver()
+    self._coreGameLogic:SetResult(result)
+    self._coreGameLogic:GameOver()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ServerWorld.FindCehuaMatch = function(self)
-  -- function num : 0_7
+function ServerWorld:FindCehuaMatch()
   local pCoreGameLogic = self:GetCoreGameLogic()
-  if pCoreGameLogic == nil then
+  if nil == pCoreGameLogic then
     return nil
   end
   local pCoreGameManager = pCoreGameLogic:GetCoreGameMng()
-  if pCoreGameManager == nil then
+  if nil == pCoreGameManager then
     return nil
   end
   local nMatchID = pCoreGameLogic:GetMatchID()
   return pCoreGameManager:FindCehuaMatch(nMatchID)
 end
-
-

@@ -1,71 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/link_line_render_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkLineRenderComponent", Object)
 LinkLineRenderComponent = LinkLineRenderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkLineRenderComponent.Constructor = function(self, pos, dir)
-  -- function num : 0_0 , upvalues : _ENV
-  if not pos then
-    self._head_pos = Vector3(-1, -1, 0)
-    if not dir then
-      self._end_pos = Vector3(0, 0, 0)
-    end
-  end
+function LinkLineRenderComponent:Constructor(pos, dir)
+  self._head_pos = pos or Vector3(-1, -1, 0)
+  self._end_pos = dir or Vector3(0, 0, 0)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineRenderComponent.GetHeadPos = function(self)
-  -- function num : 0_1
+function LinkLineRenderComponent:GetHeadPos()
   return self._head_pos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineRenderComponent.GetEndPos = function(self)
-  -- function num : 0_2
+function LinkLineRenderComponent:GetEndPos()
   return self._end_pos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineRenderComponent.Destructor = function(self)
-  -- function num : 0_3
+function LinkLineRenderComponent:Destructor()
   self._head_pos = nil
   self._end_pos = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineRenderComponent.Dispose = function(self)
-  -- function num : 0_4
+function LinkLineRenderComponent:Dispose()
   self._head_pos = nil
   self._end_pos = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LinkLineRender = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).LinkLineRender)
+function Entity:LinkLineRender()
+  return self:GetComponent(self.WEComponentsEnum.LinkLineRender)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLinkLineRender = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).LinkLineRender)
+function Entity:HasLinkLineRender()
+  return self:HasComponent(self.WEComponentsEnum.LinkLineRender)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLinkLineRender = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkLineRender
+function Entity:AddLinkLineRender()
+  local index = self.WEComponentsEnum.LinkLineRender
   local component = LinkLineRenderComponent:New(nil, nil)
   self:AddComponent(index, component)
   local world = self:GetOwnerWorld()
@@ -73,11 +41,8 @@ Entity.AddLinkLineRender = function(self)
   linkRenderSvc:AssembleChainPath(self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLinkLineRender = function(self, headPos, endPos)
-  -- function num : 0_8
-  local index = (self.WEComponentsEnum).LinkLineRender
+function Entity:ReplaceLinkLineRender(headPos, endPos)
+  local index = self.WEComponentsEnum.LinkLineRender
   local component = self:LinkLineRender()
   component._head_pos = headPos
   component._end_pos = endPos
@@ -86,13 +51,8 @@ Entity.ReplaceLinkLineRender = function(self, headPos, endPos)
   linkRenderSvc:AssembleChainPath(self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLinkLineRender = function(self)
-  -- function num : 0_9
+function Entity:RemoveLinkLineRender()
   if self:HasLinkLine() then
-    self:RemoveComponent((self.WEComponentsEnum).LinkLineRender)
+    self:RemoveComponent(self.WEComponentsEnum.LinkLineRender)
   end
 end
-
-

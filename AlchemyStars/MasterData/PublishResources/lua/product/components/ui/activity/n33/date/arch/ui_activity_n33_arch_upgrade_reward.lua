@@ -1,24 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/arch/ui_activity_n33_arch_upgrade_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33ArchUpgradeReward", UIController)
 UIActivityN33ArchUpgradeReward = UIActivityN33ArchUpgradeReward
 local ARCH_LEVEL_MAX_CONST = 4
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityN33ArchUpgradeReward.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIActivityN33ArchUpgradeReward:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN33ArchUpgradeReward.OnShow = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN33ArchUpgradeReward:OnShow(...)
   self:InitWidget()
-  local data = (table.unpack)({...})
+  local data = table.unpack({
+    ...
+  })
   local archID = data[1]
   local currArchLv = data[2]
   local rewards = data[3]
@@ -28,10 +20,7 @@ UIActivityN33ArchUpgradeReward.OnShow = function(self, ...)
   self:PlayAnim(true)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN33ArchUpgradeReward.InitWidget = function(self)
-  -- function num : 0_2
+function UIActivityN33ArchUpgradeReward:InitWidget()
   self.rootNode = self:GetGameObject("RootNode")
   self.titleNode = self:GetGameObject("TitleNode")
   self.rewardNode = self:GetGameObject("RewardNode")
@@ -57,54 +46,37 @@ UIActivityN33ArchUpgradeReward.InitWidget = function(self)
   self.nextStarNode_2 = self:GetUIComponent("Image", "nextStarNode_2")
   self.nextStarNode_3 = self:GetUIComponent("Image", "nextStarNode_3")
   self.nextStarNode_4 = self:GetUIComponent("Image", "nextStarNode_4")
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN33ArchUpgradeReward.RefreshUI = function(self, archID, currArchLv, rewards)
-  -- function num : 0_3 , upvalues : ARCH_LEVEL_MAX_CONST, _ENV
-  if ARCH_LEVEL_MAX_CONST <= currArchLv then
-    (self.titleText):SetText((StringTable.Get)("str_n33_date_upgrade_reward_key1"))
+function UIActivityN33ArchUpgradeReward:RefreshUI(archID, currArchLv, rewards)
+  if currArchLv >= ARCH_LEVEL_MAX_CONST then
+    self.titleText:SetText(StringTable.Get("str_n33_date_upgrade_reward_key1"))
   else
-    ;
-    (self.titleText):SetText((StringTable.Get)("str_n33_date_upgrade_reward_key2"))
+    self.titleText:SetText(StringTable.Get("str_n33_date_upgrade_reward_key2"))
   end
-  ;
-  (self.rewardUnlockText):SetText((StringTable.Get)("str_n33_date_arch_info_key5"))
-  ;
-  (self.rewardItemText):SetText((StringTable.Get)("str_n33_date_arch_info_key6"))
+  self.rewardUnlockText:SetText(StringTable.Get("str_n33_date_arch_info_key5"))
+  self.rewardItemText:SetText(StringTable.Get("str_n33_date_arch_info_key6"))
   for i = 1, ARCH_LEVEL_MAX_CONST do
-    ((self["currStarNode_" .. R9_PC38]).gameObject):SetActive(i == currArchLv - 1)
-    -- DECOMPILER ERROR at PC49: Overwrote pending register: R9 in 'AssignReg'
-
-    -- DECOMPILER ERROR at PC53: Overwrote pending register: R9 in 'AssignReg'
-
-    ;
-    ((self["nextStarNode_" .. R9_PC38]).gameObject):SetActive(i == currArchLv)
+    self["currStarNode_" .. i].gameObject:SetActive(i == currArchLv - 1)
+    self["nextStarNode_" .. i].gameObject:SetActive(i == currArchLv)
   end
-  local currCfg = ((Cfg.cfg_component_simulation_operation)({ArchitectureId = archID, Level = currArchLv}))[1]
-  local preCfg = ((Cfg.cfg_component_simulation_operation)({ArchitectureId = archID, Level = currArchLv - 1}))[1]
-  -- DECOMPILER ERROR at PC79: Overwrote pending register: R9 in 'AssignReg'
-
-  ;
-  (self.currDesText):SetText((StringTable.Get)(R9_PC38))
-  ;
-  (self.nextDesText):SetText((StringTable.Get)(currCfg.Name))
+  local currCfg = Cfg.cfg_component_simulation_operation({ArchitectureId = archID, Level = currArchLv})[1]
+  local preCfg = Cfg.cfg_component_simulation_operation({
+    ArchitectureId = archID,
+    Level = currArchLv - 1
+  })[1]
+  self.currDesText:SetText(StringTable.Get(preCfg.Name))
+  self.nextDesText:SetText(StringTable.Get(currCfg.Name))
   self:RefreshUI_RewardList(rewards)
   self:RefreshUI_RewardPetList(currCfg.StoryList)
-  ;
-  ((self.closeBtn).gameObject):SetActive(true)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self.closeBtn.gameObject:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN33ArchUpgradeReward.RefreshUI_RewardList = function(self, rewards)
-  -- function num : 0_4 , upvalues : _ENV
-  local rewardCount = (table.count)(rewards)
+function UIActivityN33ArchUpgradeReward:RefreshUI_RewardList(rewards)
+  local rewardCount = table.count(rewards)
   for i = 1, rewardCount do
-    local item = ((UnityEngine.GameObject).Instantiate)(self.rewardItemGo, (self.rewardItemParent).transform)
+    local item = UnityEngine.GameObject.Instantiate(self.rewardItemGo, self.rewardItemParent.transform)
     item:SetActive(true)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local itemWidget = rowPool:SpawnObject("UIActivityN33RewardItem")
@@ -112,16 +84,13 @@ UIActivityN33ArchUpgradeReward.RefreshUI_RewardList = function(self, rewards)
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN33ArchUpgradeReward.RefreshUI_RewardPetList = function(self, storyList)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN33ArchUpgradeReward:RefreshUI_RewardPetList(storyList)
   if not storyList then
-    return 
+    return
   end
-  local rewardCount = (table.count)(storyList)
+  local rewardCount = table.count(storyList)
   for i = 1, rewardCount do
-    local item = ((UnityEngine.GameObject).Instantiate)(self.rewardPetGo, (self.petRewardParent).transform)
+    local item = UnityEngine.GameObject.Instantiate(self.rewardPetGo, self.petRewardParent.transform)
     item:SetActive(true)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local itemWidget = rowPool:SpawnObject("UIActivityN33RewardItem")
@@ -129,70 +98,49 @@ UIActivityN33ArchUpgradeReward.RefreshUI_RewardPetList = function(self, storyLis
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN33ArchUpgradeReward.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self.activityConst):CheckSimulationOperationIsOver() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+function UIActivityN33ArchUpgradeReward:CloseBtnOnClick(go)
+  if self.activityConst:CheckSimulationOperationIsOver() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     self:SwitchState(UIStateType.UIActivityN33MainController)
-    return 
+    return
   end
   self:ShowDialog("UIGetItemController", self.rewards, function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
     self:PlayAnim(false, function()
-      -- function num : 0_6_0_0 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN33UpgradeRewardOver)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN33UpgradeRewardOver)
       self:CloseDialog()
-    end
-)
-  end
-, true)
+    end)
+  end, true)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN33ArchUpgradeReward.PlayAnim = function(self, isIn, callback)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN33ArchUpgradeReward:PlayAnim(isIn, callback)
   if isIn then
     self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, callback
-    self:Lock("uieffanim_UIActivityN33ArchUpgradeReward_in")
-    ;
-    (self._anim):Play("uieffanim_UIActivityN33ArchUpgradeReward_in")
-    YIELD(TT, 2000)
-    self:UnLock("uieffanim_UIActivityN33ArchUpgradeReward_in")
-    self:_CheckGuide()
-    if callback then
-      callback()
-    end
-  end
-, self)
+      self:Lock("uieffanim_UIActivityN33ArchUpgradeReward_in")
+      self._anim:Play("uieffanim_UIActivityN33ArchUpgradeReward_in")
+      YIELD(TT, 2000)
+      self:UnLock("uieffanim_UIActivityN33ArchUpgradeReward_in")
+      self:_CheckGuide()
+      if callback then
+        callback()
+      end
+    end, self)
   else
     self:StartTask(function(TT)
-    -- function num : 0_7_1 , upvalues : self, _ENV, callback
-    self:Lock("uieffanim_UIActivityN33ArchUpgradeReward_out")
-    ;
-    (self._anim):Play("uieffanim_UIActivityN33ArchUpgradeReward_out")
-    YIELD(TT, 250)
-    self:UnLock("uieffanim_UIActivityN33ArchUpgradeReward_out")
-    self:_CheckGuide()
-    if callback then
-      callback()
-    end
-  end
-, self)
+      self:Lock("uieffanim_UIActivityN33ArchUpgradeReward_out")
+      self._anim:Play("uieffanim_UIActivityN33ArchUpgradeReward_out")
+      YIELD(TT, 250)
+      self:UnLock("uieffanim_UIActivityN33ArchUpgradeReward_out")
+      self:_CheckGuide()
+      if callback then
+        callback()
+      end
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityN33ArchUpgradeReward._CheckGuide = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIActivityN33ArchUpgradeReward:_CheckGuide()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if not guideModule:IsGuideDone(123004) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33ArchUpgradeReward)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33ArchUpgradeReward)
   end
 end
-
-

@@ -1,92 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/difficulty_mission/stn_difficulty_mission_build_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("DifficultyMission_BuildTeam", Common_AsyncBase)
 DifficultyMission_BuildTeam = DifficultyMission_BuildTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DifficultyMission_BuildTeam.Constructor = function(self, _, teamIndex)
-  -- function num : 0_0 , upvalues : _ENV
-  if not teamIndex then
-    self._teamIndex = TestConst.MissionTeamIndex
-  end
+function DifficultyMission_BuildTeam:Constructor(_, teamIndex)
+  self._teamIndex = teamIndex or TestConst.MissionTeamIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DifficultyMission_BuildTeam.TaskFunc = function(self, TT, result)
-  -- function num : 0_1 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function DifficultyMission_BuildTeam:TaskFunc(TT, result)
+  local runData = self.m_pManager:GetMissionRunData()
   local petPoolOptions = SmokeTestTeamBuildPoolOptions:New()
-  do
-    if runData:IsRandomTeam() then
-      local isTeamBuilt = (self._manager):BuildRandomTeam(runData, petPoolOptions)
-      if not isTeamBuilt then
-        self.m_nLogicResult = 2
-        return 
-      end
-    end
-    local gmproxy = (GameGlobal.GetModule)(GMProxyModule)
-    for _,petData in ipairs(runData:GetCurrentTeamBuild()) do
-      local cmdAddPet = (string.format)("add_asset %s %d 1", (LocalDB.GetString)("OpenIdTest"), petData:GetTemplateID())
-      self:Log(self, "GMCommand: ", cmdAddPet)
-      local addPetResult = gmproxy:SendCmdTask(TT, cmdAddPet)
-      if addPetResult.m_call_err ~= CallResultType.Normal then
-        (Log.exception)(self._className, "GM command failed: ", cmdAddPet)
-        self.m_nLogicResult = 3
-        return 
-      end
-      local cmdChangePet = petData:GenerateGMCommand()
-      self:Log(self, "GMCommand: ", cmdChangePet)
-      local changePetResult = gmproxy:SendCmdTask(TT, cmdChangePet)
-      if changePetResult.m_call_err ~= CallResultType.Normal then
-        (Log.exception)(self._className, "GM command failed: ", cmdAddPet)
-        self.m_nLogicResult = 3
-        return 
-      end
-    end
-    local nodeID = runData:GetNodeID()
-    local stageID = runData:GetMissionID()
-    local pstIDs = runData:GeneratePetPstID()
-    local diffModule = (GameGlobal.GetModule)(DifficultyMissionModule)
-    do
-      if runData:GetNeedMissionID() then
-        local res = AsyncRequestRes:New()
-        res:SetSucc(true)
-        self._campaign = UIActivityCampaign:New()
-        ;
-        (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN, ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET, ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM, ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_BLACK_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_LOTTERY, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
-        self._localProcess = (self._campaign):GetLocalProcess()
-        self._difficultyMissionComponent = (self._localProcess):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_BLACK_DIFFICULT_MISSION)
-      end
-      local cfgDifficultyParentMission = (Cfg.cfg_difficulty_parent_mission)[nodeID]
-      if not cfgDifficultyParentMission.SubMissionList then
-        local subMissionList = {}
-      end
-      for _,missionID in ipairs(subMissionList) do
-        if runData:GetNeedMissionID() then
-          (self._difficultyMissionComponent):HandleDifficultyResetSubMissionRecord(TT, AsyncRequestRes:New(), nodeID, missionID)
-        else
-          diffModule:HandleResetSubMissionRecord(TT, nodeID, missionID)
-        end
-      end
-      if runData:GetNeedMissionID() then
-        local nodeid = runData:GetNodeID()
-        local stageid = runData:GetMissionID()
-        local res = (self._difficultyMissionComponent):HandleDifficultyChangeFormation(TT, AsyncRequestRes:New(), nodeid, stageid, pstIDs)
-      else
-        do
-          do
-            local res = diffModule:HandleChangeFormation(TT, nodeID, stageID, pstIDs)
-            self.m_nLogicResult = 1
-          end
-        end
-      end
+  if runData:IsRandomTeam() then
+    local isTeamBuilt = self._manager:BuildRandomTeam(runData, petPoolOptions)
+    if not isTeamBuilt then
+      self.m_nLogicResult = 2
+      return
     end
   end
+  local gmproxy = GameGlobal.GetModule(GMProxyModule)
+  for _, petData in ipairs(runData:GetCurrentTeamBuild()) do
+    local cmdAddPet = string.format("add_asset %s %d 1", LocalDB.GetString("OpenIdTest"), petData:GetTemplateID())
+    self:Log(self, "GMCommand: ", cmdAddPet)
+    local addPetResult = gmproxy:SendCmdTask(TT, cmdAddPet)
+    if addPetResult.m_call_err ~= CallResultType.Normal then
+      Log.exception(self._className, "GM command failed: ", cmdAddPet)
+      self.m_nLogicResult = 3
+      return
+    end
+    local cmdChangePet = petData:GenerateGMCommand()
+    self:Log(self, "GMCommand: ", cmdChangePet)
+    local changePetResult = gmproxy:SendCmdTask(TT, cmdChangePet)
+    if changePetResult.m_call_err ~= CallResultType.Normal then
+      Log.exception(self._className, "GM command failed: ", cmdAddPet)
+      self.m_nLogicResult = 3
+      return
+    end
+  end
+  local nodeID = runData:GetNodeID()
+  local stageID = runData:GetMissionID()
+  local pstIDs = runData:GeneratePetPstID()
+  local diffModule = GameGlobal.GetModule(DifficultyMissionModule)
+  if runData:GetNeedMissionID() then
+    local res = AsyncRequestRes:New()
+    res:SetSucc(true)
+    self._campaign = UIActivityCampaign:New()
+    self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_CUMULATIVE_LOGIN, ECampaignN27ComponentID.ECAMPAIGN_N27_FIRST_MEET, ECampaignN27ComponentID.ECAMPAIGN_N27_POWER2ITEM, ECampaignN27ComponentID.ECAMPAIGN_N27_LINE_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_BLACK_DIFFICULT_MISSION, ECampaignN27ComponentID.ECAMPAIGN_N27_LOTTERY, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
+    self._localProcess = self._campaign:GetLocalProcess()
+    self._difficultyMissionComponent = self._localProcess:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_BLACK_DIFFICULT_MISSION)
+  end
+  local cfgDifficultyParentMission = Cfg.cfg_difficulty_parent_mission[nodeID]
+  local subMissionList = cfgDifficultyParentMission.SubMissionList or {}
+  for _, missionID in ipairs(subMissionList) do
+    if runData:GetNeedMissionID() then
+      self._difficultyMissionComponent:HandleDifficultyResetSubMissionRecord(TT, AsyncRequestRes:New(), nodeID, missionID)
+    else
+      diffModule:HandleResetSubMissionRecord(TT, nodeID, missionID)
+    end
+  end
+  if runData:GetNeedMissionID() then
+    local nodeid = runData:GetNodeID()
+    local stageid = runData:GetMissionID()
+    local res = self._difficultyMissionComponent:HandleDifficultyChangeFormation(TT, AsyncRequestRes:New(), nodeid, stageid, pstIDs)
+  else
+    local res = diffModule:HandleChangeFormation(TT, nodeID, stageID, pstIDs)
+  end
+  self.m_nLogicResult = 1
 end
-
-

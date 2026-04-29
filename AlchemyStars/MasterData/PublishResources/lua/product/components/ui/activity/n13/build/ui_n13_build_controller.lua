@@ -1,41 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/build/ui_n13_build_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildController", UIController)
 UIN13BuildController = UIN13BuildController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13BuildController._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_0
+function UIN13BuildController:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SpawnObjects = function(self, widgetName, className, count)
-  -- function num : 0_1
+function UIN13BuildController:_SpawnObjects(widgetName, className, count)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local objs = {}
   pool:SpawnObjects(className, count, objs)
   return objs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetRawImageBtn = function(self, widgetName, size, urlNormal, urlClick, callback)
-  -- function num : 0_2
+function UIN13BuildController:_SetRawImageBtn(widgetName, size, urlNormal, urlClick, callback)
   local obj = self:_SpawnObject(widgetName, "UIActivityCommonRawImageBtn")
   obj:SetData(size, urlNormal, urlClick, callback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetRemainingTime = function(self, widgetName, descId, endTime, customTimeStr)
-  -- function num : 0_3
+function UIN13BuildController:_SetRemainingTime(widgetName, descId, endTime, customTimeStr)
   local obj = self:_SpawnObject(widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
@@ -44,153 +28,95 @@ UIN13BuildController._SetRemainingTime = function(self, widgetName, descId, endT
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._PlayAnim = function(self, widgetName, animName, time, callback)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN13BuildController:_PlayAnim(widgetName, animName, time, callback)
   local anim = self:GetUIComponent("Animation", widgetName)
   self:Lock(animName)
   anim:Play(animName)
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, time, self, animName, callback
     YIELD(TT, time)
     self:UnLock(animName)
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetCommonTopButton = function(self)
-  -- function num : 0_5
+function UIN13BuildController:_SetCommonTopButton()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:_Back()
-  end
-, nil, nil, false, function()
-    -- function num : 0_5_1 , upvalues : self
+  end, nil, nil, false, function()
     self:_HideUI()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._Back = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((self._campaign)._campaign_module):CampaignSwitchState(true, UIStateType.UIN13MainController, UIStateType.UIMain, nil, (self._campaign)._id)
+function UIN13BuildController:_Back()
+  self._campaign._campaign_module:CampaignSwitchState(true, UIStateType.UIN13MainController, UIStateType.UIMain, nil, self._campaign._id)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._HideUI = function(self)
-  -- function num : 0_7
-  (self:GetGameObject("_showBtn")):SetActive(true)
+function UIN13BuildController:_HideUI()
+  self:GetGameObject("_showBtn"):SetActive(true)
   self:_PlayAnim("_ani", "uieff_n13_build_main_hide", 333, nil)
-  ;
-  (self:GetGameObject("BuildingNames")):SetActive(false)
-  ;
-  (self:GetGameObject("BuildingPicnic")):SetActive(false)
+  self:GetGameObject("BuildingNames"):SetActive(false)
+  self:GetGameObject("BuildingPicnic"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._ShowUI = function(self)
-  -- function num : 0_8
-  (self:GetGameObject("_showBtn")):SetActive(false)
+function UIN13BuildController:_ShowUI()
+  self:GetGameObject("_showBtn"):SetActive(false)
   self:_PlayAnim("_ani", "uieff_n13_build_main_show", 333, nil)
-  ;
-  (self:GetGameObject("BuildingNames")):SetActive(true)
-  ;
-  (self:GetGameObject("BuildingPicnic")):SetActive(true)
+  self:GetGameObject("BuildingNames"):SetActive(true)
+  self:GetGameObject("BuildingPicnic"):SetActive(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN13BuildController:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N13
   self._componentId = ECampaignN13ComponentID.ECAMPAIGN_N13_BUILD
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
-  if not (self._campaign):CheckComponentOpen(self._componentId) then
-    res.m_result = (self._campaign):CheckComponentOpenClientError(self._componentId)
-    ;
-    ((self._campaign)._campaign_module):ShowErrorToast(res.m_result, true)
-    return 
+  if not self._campaign:CheckComponentOpen(self._componentId) then
+    res.m_result = self._campaign:CheckComponentOpenClientError(self._componentId)
+    self._campaign._campaign_module:ShowErrorToast(res.m_result, true)
+    return
   end
-  self._component = (self._campaign):GetComponent(self._componentId)
-  self._componentInfo = (self._component):GetComponentInfo()
+  self._component = self._campaign:GetComponent(self._componentId)
+  self._componentInfo = self._component:GetComponentInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._ReLoadDataAndRefresh = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN13BuildController:_ReLoadDataAndRefresh()
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     self:_Refresh()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.OnShow = function(self, uiParams)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN13BuildController:OnShow(uiParams)
   self:SetShowDebug(false, false)
   self:_AttachEvents()
   self._isOpen = true
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = true
-  local dbStr = (N13ToolFunctions.GetSakuragariNew)()
-  local hadSave = not (LocalDB.SetInt)(dbStr, 1)
+  UnityEngine.Input.multiTouchEnabled = true
+  local dbStr = N13ToolFunctions.GetSakuragariNew()
+  local hadSave = not LocalDB.SetInt(dbStr, 1)
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.OnHide = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN13BuildController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+  UnityEngine.Input.multiTouchEnabled = false
   if self._cameraTweener then
-    (self._cameraTweener):Kill()
+    self._cameraTweener:Kill()
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._sr).OnContentPosChanged = nil
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._sr).onContentScaleChanged = nil
+  self._sr.OnContentPosChanged = nil
+  self._sr.onContentScaleChanged = nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._Init = function(self)
-  -- function num : 0_13
+function UIN13BuildController:_Init()
   self._content = self:GetUIComponent("RectTransform", "Content")
   self:_SetCommonTopButton()
   self:_SetBg()
@@ -204,105 +130,88 @@ UIN13BuildController._Init = function(self)
   self:CheckStory()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._InitBuildManager = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN13BuildController:_InitBuildManager()
   if not self._buildManager then
     self._buildManager = UIBuildComponentManager:New(self._component)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._InitMap = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local nodeData = UIUndirectedGraphData:New((Cfg.cfg_n13_map_node)({}), (Cfg.cfg_n13_map_line)({}))
+function UIN13BuildController:_InitMap()
+  local nodeData = UIUndirectedGraphData:New(Cfg.cfg_n13_map_node({}), Cfg.cfg_n13_map_line({}))
   self:_SetMapNode(nodeData)
   self:_SetMapLine(nodeData)
   if not self._petManager then
     local pool = self:GetUIComponent("UISelectObjectPath", "Nodes")
     local objs = pool:GetAllSpawnList()
-    self._petManager = UIN13BuildMapPetManager:New((Cfg.cfg_n13_map_pet)({}), nodeData, objs, function(count)
-    -- function num : 0_15_0 , upvalues : self
-    return self:_SpawnObjects("Pets", "UIN13BuildMapPet", count)
-  end
-, function()
-    -- function num : 0_15_1 , upvalues : self
-    local seq = (self._buildManager):GetPicnicCurSeq()
-    local picnicList = (self._buildManager):GetBuildItemIdList_Picnic()
-    local list = (self._buildManager):GetPicnicFixedPetIdList(seq, #picnicList + 1)
-    return list
-  end
-, function()
-    -- function num : 0_15_2 , upvalues : _ENV
-    local cfgs = (Cfg.cfg_n13_map_node_picnic)({})
-    local tb = {}
-    for _,v in pairs(cfgs) do
-      tb[v.MapNodeId] = true
-    end
-    return tb
-  end
-, function(petId)
-    -- function num : 0_15_3 , upvalues : self, _ENV
-    local seq = (self._buildManager):GetPicnicCurSeq()
-    local storyType = 2
-    local storyId = (self._buildManager):GetPicnicStory(seq)
-    if storyId and storyId > 0 then
-      local storyInfo = {storyType, storyId, 0, 0}
-      ;
-      (UIActivityN13Helper.PlayStory_Picnic)(self._component, storyInfo, function(res)
-      -- function num : 0_15_3_0 , upvalues : _ENV, self
-      if res:GetSucc() then
-        (Log.info)("UIN13BuildMapPet:BtnOnClick() PicnicStory Succ")
-      else
-        ;
-        (Log.error)("UIN13BuildMapPet:BtnOnClick() PicnicStory Failed")
+    self._petManager = UIN13BuildMapPetManager:New(Cfg.cfg_n13_map_pet({}), nodeData, objs, function(count)
+      return self:_SpawnObjects("Pets", "UIN13BuildMapPet", count)
+    end, function()
+      local seq = self._buildManager:GetPicnicCurSeq()
+      local picnicList = self._buildManager:GetBuildItemIdList_Picnic()
+      local list = self._buildManager:GetPicnicFixedPetIdList(seq, #picnicList + 1)
+      return list
+    end, function()
+      local cfgs = Cfg.cfg_n13_map_node_picnic({})
+      local tb = {}
+      for _, v in pairs(cfgs) do
+        tb[v.MapNodeId] = true
       end
-      self:_ReLoadDataAndRefresh()
-    end
-)
-    end
-  end
-)
-    ;
-    (self._petManager):Start()
+      return tb
+    end, function(petId)
+      local seq = self._buildManager:GetPicnicCurSeq()
+      local storyType = 2
+      local storyId = self._buildManager:GetPicnicStory(seq)
+      if storyId and 0 < storyId then
+        local storyInfo = {
+          storyType,
+          storyId,
+          0,
+          0
+        }
+        UIActivityN13Helper.PlayStory_Picnic(self._component, storyInfo, function(res)
+          if res:GetSucc() then
+            Log.info("UIN13BuildMapPet:BtnOnClick() PicnicStory Succ")
+          else
+            Log.error("UIN13BuildMapPet:BtnOnClick() PicnicStory Failed")
+          end
+          self:_ReLoadDataAndRefresh()
+        end)
+      end
+    end)
+    self._petManager:Start()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._InitGotoManager = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN13BuildController:_InitGotoManager()
   if not self._gotoManager then
     self._gotoManager = UIN13BuildGotoManager:New(self._buildManager, self._petManager, self:GetGameObject("GotoRoot"), self:_SpawnObjects("GotoRoot", "UIN13BuildGotoBtn", 2), self:_InitGotoPoints(), self._content, function(target)
-    -- function num : 0_16_0 , upvalues : self
-    local duration = 0.5
-    local targetScale = self._defaultScale
-    self:CameraMoveTo(target, duration, targetScale)
-  end
-)
-    ;
-    (self._gotoManager):Refresh()
+      local duration = 0.5
+      local targetScale = self._defaultScale
+      self:CameraMoveTo(target, duration, targetScale)
+    end)
+    self._gotoManager:Refresh()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._InitGotoPoints = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local pointName = {"_point_top_left", "_point_top_right", "_point_bottom_left", "_point_bottom_right", "_point_left_top", "_point_left_bottom", "_point_right_top", "_point_right_bottom"}
+function UIN13BuildController:_InitGotoPoints()
+  local pointName = {
+    "_point_top_left",
+    "_point_top_right",
+    "_point_bottom_left",
+    "_point_bottom_right",
+    "_point_left_top",
+    "_point_left_bottom",
+    "_point_right_top",
+    "_point_right_bottom"
+  }
   local tb = {}
-  for _,v in ipairs(pointName) do
-    (table.insert)(tb, ((self:GetGameObject(v)).transform).localPosition)
+  for _, v in ipairs(pointName) do
+    table.insert(tb, self:GetGameObject(v).transform.localPosition)
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._Refresh = function(self)
-  -- function num : 0_18
+function UIN13BuildController:_Refresh()
   self:_SetProgress()
   self:_SetScore()
   self:_SetTime()
@@ -311,55 +220,40 @@ UIN13BuildController._Refresh = function(self)
   self:_MovePetToBuild()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._RefreshBuild = function(self)
-  -- function num : 0_19
-  local buildItemIdList = (self._buildManager):GetBuildItemIdList()
+function UIN13BuildController:_RefreshBuild()
+  local buildItemIdList = self._buildManager:GetBuildItemIdList()
   self:_SetMapBuildings(buildItemIdList)
   self:_SetMapBuildingNames(buildItemIdList)
-  local picnicItemIdList = (self._buildManager):GetBuildItemIdList_Picnic()
+  local picnicItemIdList = self._buildManager:GetBuildItemIdList_Picnic()
   self:_SetMapBuildingPicnic(picnicItemIdList)
   self:_SetEffect()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._RefreshMapPet = function(self)
-  -- function num : 0_20
-  local haveStory = (self._buildManager):CheckPicnicHaveStory()
-  local seq = (self._buildManager):GetPicnicCurSeq()
-  local petId = (self._buildManager):GetPicnicPet(seq)
-  ;
-  (self._petManager):SetPetBtnShow(haveStory and petId or 0)
+function UIN13BuildController:_RefreshMapPet()
+  local haveStory = self._buildManager:CheckPicnicHaveStory()
+  local seq = self._buildManager:GetPicnicCurSeq()
+  local petId = self._buildManager:GetPicnicPet(seq)
+  self._petManager:SetPetBtnShow(haveStory and petId or 0)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._MovePetToBuild = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local cfg = (Cfg.cfg_n13_map_pet_setting)[1]
+function UIN13BuildController:_MovePetToBuild()
+  local cfg = Cfg.cfg_n13_map_pet_setting[1]
   local petLayer = cfg.PetLayer or 0
   local idx = 0
-  local buildItemIdList = (self._buildManager):GetBuildItemIdList()
-  for i,v in ipairs(buildItemIdList) do
-    if petLayer < (self._buildManager):GetLayer(v) then
+  local buildItemIdList = self._buildManager:GetBuildItemIdList()
+  for i, v in ipairs(buildItemIdList) do
+    if petLayer < self._buildManager:GetLayer(v) then
       idx = i
       break
     end
   end
-  do
-    local parent = self:GetUIComponent("Transform", "Buildings")
-    local petTrans = self:GetUIComponent("Transform", "Pets")
-    petTrans.parent = parent
-    petTrans:SetSiblingIndex(idx)
-  end
+  local parent = self:GetUIComponent("Transform", "Buildings")
+  local petTrans = self:GetUIComponent("Transform", "Pets")
+  petTrans.parent = parent
+  petTrans:SetSiblingIndex(idx)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetBg = function(self)
-  -- function num : 0_22
+function UIN13BuildController:_SetBg()
   local obj = self:GetUIComponent("RawImageLoader", "bg")
   local url = "xueluoyuan_map_kong"
   if url then
@@ -367,62 +261,40 @@ UIN13BuildController._SetBg = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetProgress = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local unlock, all = (self._buildManager):CalcBuildUnlockProgress()
-  local txt = (math.floor)(unlock * 100 / all) .. "%"
+function UIN13BuildController:_SetProgress()
+  local unlock, all = self._buildManager:CalcBuildUnlockProgress()
+  local txt = math.floor(unlock * 100 / all) .. "%"
   local obj = self:GetUIComponent("UILocalizationText", "_txtProgress")
   obj:SetText(txt)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetScore = function(self)
-  -- function num : 0_24
+function UIN13BuildController:_SetScore()
   local obj = self:_SpawnObject("_score", "UIN13BuildScore")
   obj:SetData()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetTime = function(self)
-  -- function num : 0_25
-  local endTime = (self._componentInfo).m_close_time
+function UIN13BuildController:_SetTime()
+  local endTime = self._componentInfo.m_close_time
   self:_SetRemainingTime("_remainingTime", "str_n13_line_mission_remaining_time", endTime, nil)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetPlotBtn = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIN13BuildController:_SetPlotBtn()
   self:_SetRawImageBtn("PlotReviewBtn", Vector2(415, 213), "n13_xly_btn03", "n13_xly_btn04", function()
-    -- function num : 0_26_0 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SakuraCommonClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SakuraCommonClick)
     self:ShowDialog("UIN13BuildPlotController", self._buildManager)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetRewardBtn = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIN13BuildController:_SetRewardBtn()
   self:_SetRawImageBtn("RewardBtn", Vector2(488, 242), "n13_xly_btn01", "n13_xly_btn02", function()
-    -- function num : 0_27_0 , upvalues : _ENV, self
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
     self:ShowDialog("UIN13BuildRewardController", self._buildManager)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._InitScrollView = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIN13BuildController:_InitScrollView()
   self._cameraTweener = nil
-  self._scaleMin = (Mathf.Max)(0.5, self:_CalcMinScale())
+  self._scaleMin = Mathf.Max(0.5, self:_CalcMinScale())
   self._scaleMax = 1
   self._scaleStep = 0.1
   self._defaultScale = 1
@@ -434,335 +306,225 @@ UIN13BuildController._InitScrollView = function(self)
   self:CameraMoveTo(target, duration, targetScale)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._CalcMinScale = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN13BuildController:_CalcMinScale()
   self._srRT = self:GetUIComponent("RectTransform", "ScrollView")
   local rtBg = self:GetUIComponent("RectTransform", "bg")
-  local scaleX = ((self._srRT).rect).width / (rtBg.rect).width
-  local scaleY = ((self._srRT).rect).height / (rtBg.rect).height
-  return (Mathf.Max)(scaleX, scaleY)
+  local scaleX = self._srRT.rect.width / rtBg.rect.width
+  local scaleY = self._srRT.rect.height / rtBg.rect.height
+  return Mathf.Max(scaleX, scaleY)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetScrollView = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIN13BuildController:_SetScrollView()
   self._srRT = self:GetUIComponent("RectTransform", "ScrollView")
   self._sr = self:GetUIComponent("ScalableScrollRect", "ScrollView")
-  ;
-  (self._sr):Init(Vector2(self._scaleMin, self._scaleMax), self._scaleStep)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._sr).OnContentPosChanged = function()
-    -- function num : 0_30_0 , upvalues : self
-    (self._gotoManager):Refresh()
+  self._sr:Init(Vector2(self._scaleMin, self._scaleMax), self._scaleStep)
+  
+  function self._sr.OnContentPosChanged()
+    self._gotoManager:Refresh()
   end
-
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._sr).onContentScaleChanged = function(scale)
-    -- function num : 0_30_1 , upvalues : _ENV, self
-    (Log.info)("self._sr.onContentScaleChanged")
+  
+  function self._sr.onContentScaleChanged(scale)
+    Log.info("self._sr.onContentScaleChanged")
     self._curScale = scale
-    ;
-    (self._sr):UpdateContentScale(scale)
-    ;
-    (self._gotoManager):Refresh()
+    self._sr:UpdateContentScale(scale)
+    self._gotoManager:Refresh()
   end
-
+  
   if EDITOR or IsPc() then
     local contentScale = 1
-    do
-      self:SetUIEventTrigger((self._sr).gameObject, UIEventTriggerType.Scroll, function(ped)
-    -- function num : 0_30_2 , upvalues : contentScale, _ENV, self
-    contentScale = (Mathf.Clamp)(contentScale + (ped.scrollDelta).y * self._scaleStep, self._scaleMin, self._scaleMax)
-    ;
-    (self._sr):UpdateContentScale(contentScale)
-  end
-)
-    end
+    self:SetUIEventTrigger(self._sr.gameObject, UIEventTriggerType.Scroll, function(ped)
+      contentScale = Mathf.Clamp(contentScale + ped.scrollDelta.y * self._scaleStep, self._scaleMin, self._scaleMax)
+      self._sr:UpdateContentScale(contentScale)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.IsHandlingMap = function(self)
-  -- function num : 0_31
-  if self._sr and not (self._sr):IsDragging() then
-    do return (self._sr):IsScaling() end
+function UIN13BuildController:IsHandlingMap()
+  if self._sr then
+    return self._sr:IsDragging() or self._sr:IsScaling()
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.CameraMoveTo = function(self, target, duration, targetScale, callback, paramsTabel, ignoreLimit, outBack)
-  -- function num : 0_32 , upvalues : _ENV
+function UIN13BuildController:CameraMoveTo(target, duration, targetScale, callback, paramsTabel, ignoreLimit, outBack)
   if self:IsHandlingMap() then
-    return 
+    return
   end
-  if self._cameraTweener and (self._cameraTweener):IsPlaying() then
-    return 
+  if self._cameraTweener and self._cameraTweener:IsPlaying() then
+    return
   end
   local endPos = self:GetContentMoveVector(target)
   local beginScale = self._curScale
   if not ignoreLimit and targetScale then
-    targetScale = (Mathf.Clamp)(targetScale, self._scaleMin, self._scaleMax)
+    targetScale = Mathf.Clamp(targetScale, self._scaleMin, self._scaleMax)
   end
   if duration == -1 then
     local moveMaximumDistance = 1000
-    do
-      local currentDistance = ((self._content).anchoredPosition - endPos).magnitude
-      duration = (Mathf.Lerp)(0, 1, currentDistance / moveMaximumDistance)
-    end
+    local currentDistance = (self._content.anchoredPosition - endPos).magnitude
+    duration = Mathf.Lerp(0, 1, currentDistance / moveMaximumDistance)
   end
-  do
-    do
-      if duration > 0 then
-        local lockStr = "UIN13BuildController_CameraMoveTo"
-        self:StartTask(function(TT)
-    -- function num : 0_32_0 , upvalues : self, lockStr, _ENV, duration
-    self:Lock(lockStr)
-    YIELD(TT, duration * 1000)
-    self:UnLock(lockStr)
+  if 0 < duration then
+    local lockStr = "UIN13BuildController_CameraMoveTo"
+    self:StartTask(function(TT)
+      self:Lock(lockStr)
+      YIELD(TT, duration * 1000)
+      self:UnLock(lockStr)
+    end, self)
   end
-, self)
-      end
-      local tempScale = 0
-      self._cameraTweener = (((self._content):DOAnchorPos(endPos, duration)):OnUpdate(function()
-    -- function num : 0_32_1 , upvalues : targetScale, outBack, self, beginScale, tempScale
+  local tempScale = 0
+  self._cameraTweener = self._content:DOAnchorPos(endPos, duration):OnUpdate(function()
     if targetScale then
       local value = 0
       if outBack then
-        if (self._cameraTweener):ElapsedDirectionalPercentage() < 0.5 then
-          value = beginScale + 0.5 * (self._cameraTweener):ElapsedDirectionalPercentage()
+        if self._cameraTweener:ElapsedDirectionalPercentage() < 0.5 then
+          value = beginScale + 0.5 * self._cameraTweener:ElapsedDirectionalPercentage()
           tempScale = value
         else
-          value = tempScale + (targetScale - tempScale) * (self._cameraTweener):ElapsedDirectionalPercentage()
+          value = tempScale + (targetScale - tempScale) * self._cameraTweener:ElapsedDirectionalPercentage()
         end
       else
-        value = beginScale + (targetScale - beginScale) * (self._cameraTweener):ElapsedDirectionalPercentage()
+        value = beginScale + (targetScale - beginScale) * self._cameraTweener:ElapsedDirectionalPercentage()
       end
-      ;
-      (self._sr):UpdateContentScale(value)
+      self._sr:UpdateContentScale(value)
     end
-  end
-)):OnComplete(function()
-    -- function num : 0_32_2 , upvalues : callback, paramsTabel
+  end):OnComplete(function()
     if callback then
       callback(paramsTabel)
     end
-  end
-)
-    end
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.GetContentMoveVector = function(self, target)
-  -- function num : 0_33 , upvalues : _ENV
+function UIN13BuildController:GetContentMoveVector(target)
   local endPos = Vector2.zero - target
-  if ((self._content).sizeDelta).x ~= 0 then
-    local limitX = ((self._content).sizeDelta).x * self._defaultScale / 2 - (ResolutionManager.ScreenWidth)() / 2
-    local limitY = ((self._content).sizeDelta).y * self._defaultScale / 2 - (ResolutionManager.ScreenHeight)() / 2
-    endPos.x = (Mathf.Clamp)(endPos.x, -limitX, limitX)
-    endPos.y = (Mathf.Clamp)(endPos.y, -limitY, limitY)
+  if self._content.sizeDelta.x ~= 0 then
+    local limitX = self._content.sizeDelta.x * self._defaultScale / 2 - ResolutionManager.ScreenWidth() / 2
+    local limitY = self._content.sizeDelta.y * self._defaultScale / 2 - ResolutionManager.ScreenHeight() / 2
+    endPos.x = Mathf.Clamp(endPos.x, -limitX, limitX)
+    endPos.y = Mathf.Clamp(endPos.y, -limitY, limitY)
   end
-  do
-    return endPos
-  end
+  return endPos
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetMapBuildings = function(self, buildItemIdList)
-  -- function num : 0_34 , upvalues : _ENV
-  local buildingItems = self:_SpawnObjects("Buildings", "UIN13BuildItem", (table.count)(buildItemIdList))
+function UIN13BuildController:_SetMapBuildings(buildItemIdList)
+  local buildingItems = self:_SpawnObjects("Buildings", "UIN13BuildItem", table.count(buildItemIdList))
   for i = 1, #buildingItems do
     local item = buildingItems[i]
     item:SetData(self._buildManager, buildItemIdList[i])
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetMapBuildingNames = function(self, buildItemIdList)
-  -- function num : 0_35 , upvalues : _ENV
-  local buildingItems = self:_SpawnObjects("BuildingNames", "UIN13BuildItemName", (table.count)(buildItemIdList))
+function UIN13BuildController:_SetMapBuildingNames(buildItemIdList)
+  local buildingItems = self:_SpawnObjects("BuildingNames", "UIN13BuildItemName", table.count(buildItemIdList))
   for i = 1, #buildingItems do
-    do
-      local item = buildingItems[i]
-      item:SetData(self._buildManager, buildItemIdList[i], function()
-    -- function num : 0_35_0 , upvalues : self, buildItemIdList, i
-    self:ShowDialog("UIN13BuildConfirmController", self._buildManager, buildItemIdList[i])
-  end
-)
-    end
+    local item = buildingItems[i]
+    item:SetData(self._buildManager, buildItemIdList[i], function()
+      self:ShowDialog("UIN13BuildConfirmController", self._buildManager, buildItemIdList[i])
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetMapBuildingPicnic = function(self, picnicItemIdList)
-  -- function num : 0_36 , upvalues : _ENV
-  local buildingItems = self:_SpawnObjects("BuildingPicnic", "UIBuildBuildItemPicnic", (table.count)(picnicItemIdList))
+function UIN13BuildController:_SetMapBuildingPicnic(picnicItemIdList)
+  local buildingItems = self:_SpawnObjects("BuildingPicnic", "UIBuildBuildItemPicnic", table.count(picnicItemIdList))
   for i = 1, #buildingItems do
-    do
-      local item = buildingItems[i]
-      item:SetData(self._buildManager, picnicItemIdList[i], function()
-    -- function num : 0_36_0 , upvalues : self, picnicItemIdList, i, _ENV
-    (self._component):Start_HandlePicnicPutFood(picnicItemIdList[i], function(res, rewardList)
-      -- function num : 0_36_0_0 , upvalues : _ENV, self, picnicItemIdList, i
-      if res:GetSucc() then
-        (Log.info)("UIBuildBuildItemPicnic:BtnOnClick() Picnic Succ")
-        self:_OnPicnic(picnicItemIdList[i], function()
-        -- function num : 0_36_0_0_0 , upvalues : _ENV, rewardList, self
-        (UIActivityHelper.ShowUIGetRewards)(rewardList)
-        self:_ReLoadDataAndRefresh()
-        ;
-        (self._petManager):ChangeFixedPet()
-      end
-)
-      else
-        ;
-        (Log.error)("UIBuildBuildItemPicnic:BtnOnClick() Picnic Failed")
-        self:_ReLoadDataAndRefresh()
-      end
-    end
-)
-  end
-)
-    end
+    local item = buildingItems[i]
+    item:SetData(self._buildManager, picnicItemIdList[i], function()
+      self._component:Start_HandlePicnicPutFood(picnicItemIdList[i], function(res, rewardList)
+        if res:GetSucc() then
+          Log.info("UIBuildBuildItemPicnic:BtnOnClick() Picnic Succ")
+          self:_OnPicnic(picnicItemIdList[i], function()
+            UIActivityHelper.ShowUIGetRewards(rewardList)
+            self:_ReLoadDataAndRefresh()
+            self._petManager:ChangeFixedPet()
+          end)
+        else
+          Log.error("UIBuildBuildItemPicnic:BtnOnClick() Picnic Failed")
+          self:_ReLoadDataAndRefresh()
+        end
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._OnPicnic = function(self, buildItemId, callback)
-  -- function num : 0_37 , upvalues : _ENV
-  local seq = (self._buildManager):GetPicnicCurSeq()
-  local pet = (self._buildManager):GetPicnicPet(seq)
-  local story = (self._buildManager):GetPicnicStory(seq)
-  local cfg = (Cfg.cfg_n13_map_node_picnic)[buildItemId]
+function UIN13BuildController:_OnPicnic(buildItemId, callback)
+  local seq = self._buildManager:GetPicnicCurSeq()
+  local pet = self._buildManager:GetPicnicPet(seq)
+  local story = self._buildManager:GetPicnicStory(seq)
+  local cfg = Cfg.cfg_n13_map_node_picnic[buildItemId]
   if not cfg then
-    (Log.exception)("UIN13BuildController:_OnPicnic() cfg_n13_map_node_picnic == nil, buildItemId = ", buildItemId)
+    Log.exception("UIN13BuildController:_OnPicnic() cfg_n13_map_node_picnic == nil, buildItemId = ", buildItemId)
   end
   local nodeId = cfg.MapNodeId
-  ;
-  (self._petManager):SetPetPicnic(pet, nodeId, story, callback)
+  self._petManager:SetPetPicnic(pet, nodeId, story, callback)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetMapNode = function(self, nodeData)
-  -- function num : 0_38 , upvalues : _ENV
+function UIN13BuildController:_SetMapNode(nodeData)
   local tb = nodeData:GetNodeIdList()
-  local count = (table.count)(tb)
+  local count = table.count(tb)
   local objs = self:_SpawnObjects("Nodes", "UIN13BuildMapNode", count)
-  for i,v in ipairs(objs) do
+  for i, v in ipairs(objs) do
     v:SetData(nodeData, tb[i], nil)
     v:SetDebugText(tb[i])
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetMapLine = function(self, nodeData)
-  -- function num : 0_39 , upvalues : _ENV
+function UIN13BuildController:_SetMapLine(nodeData)
   local tb = nodeData:GetLineIdList()
-  local count = (table.count)(tb)
+  local count = table.count(tb)
   local objs = self:_SpawnObjects("Lines", "UIN13BuildMapLine", count)
-  for i,v in ipairs(objs) do
+  for i, v in ipairs(objs) do
     v:SetData(nodeData:GetLinePos(tb[i]))
     v:SetDebugText(tb[i])
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetEffect = function(self)
-  -- function num : 0_40
-  (self:GetGameObject("_fx")):SetActive(false)
-  ;
-  (self:GetGameObject("_fx2")):SetActive(false)
+function UIN13BuildController:_SetEffect()
+  self:GetGameObject("_fx"):SetActive(false)
+  self:GetGameObject("_fx2"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._PlayEffect = function(self, buildItemId)
-  -- function num : 0_41 , upvalues : _ENV
+function UIN13BuildController:_PlayEffect(buildItemId)
   local tbObj = {"_fx", "_fx2"}
   local tbTrans = {"_fxScale", "_fx2Scale"}
-  local curStatus = (self._buildManager):GetBuildCurStatus(buildItemId)
+  local curStatus = self._buildManager:GetBuildCurStatus(buildItemId)
   local type = curStatus == UIBuildComponentBuildStatus.CleanUpComplete and 1 or 2
-  local pos = (self._buildManager):GetWidgetPos(buildItemId) + (self._buildManager):GetEffectAreaPos(buildItemId)
+  local pos = self._buildManager:GetWidgetPos(buildItemId) + self._buildManager:GetEffectAreaPos(buildItemId)
   local objPos = self:GetGameObject(tbObj[type])
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (objPos.transform).anchoredPosition = pos
-  local scale = (self._buildManager):GetEffectAreaScale(buildItemId)
+  objPos.transform.anchoredPosition = pos
+  local scale = self._buildManager:GetEffectAreaScale(buildItemId)
   scale = scale * self._curScale / self._defaultScale
   local objScale = self:GetGameObject(tbTrans[type])
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (objScale.transform).localScale = Vector3.one * (scale)
-  ;
-  (self:GetGameObject(tbObj[type])):SetActive(true)
+  objScale.transform.localScale = Vector3.one * scale
+  self:GetGameObject(tbObj[type]):SetActive(true)
   if type == 1 then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N6RandomItemDisapper)
-  else
-    if type == 2 then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N6ShowBuilding)
-    end
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N6RandomItemDisapper)
+  elseif type == 2 then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N6ShowBuilding)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.CheckStory = function(self)
-  -- function num : 0_42
-  local storyList = (self._buildManager):GetUnPlayStoryList()
+function UIN13BuildController:CheckStory()
+  local storyList = self._buildManager:GetUnPlayStoryList()
   if storyList == nil or #storyList <= 0 then
-    return 
+    return
   end
   self:PlayStoryList(storyList)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.PlayStoryList = function(self, storyList)
-  -- function num : 0_43 , upvalues : _ENV
-  if (table.count)(storyList) <= 0 then
-    return 
+function UIN13BuildController:PlayStoryList(storyList)
+  if table.count(storyList) <= 0 then
+    return
   end
   local storyInfo = storyList[1]
-  ;
-  (table.remove)(storyList, 1)
-  ;
-  (UIActivityN13Helper.PlayStory_Build)(self._component, storyInfo, function()
-    -- function num : 0_43_0 , upvalues : self, storyList
+  table.remove(storyList, 1)
+  UIActivityN13Helper.PlayStory_Build(self._component, storyInfo, function()
     self:PlayStoryList(storyList)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.ShowBtnOnClick = function(self, go)
-  -- function num : 0_44
+function UIN13BuildController:ShowBtnOnClick(go)
   self:_ShowUI()
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._AttachEvents = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function UIN13BuildController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.NPlusSixBuildingMainRefresh, self._RefreshBuild)
   self:AttachEvent(GameEventType.NPlusSixBuildingBuildingComplete, self._PlayEffect)
@@ -770,10 +532,7 @@ UIN13BuildController._AttachEvents = function(self)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.OnUIOpenClose)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._DetachEvents = function(self)
-  -- function num : 0_46 , upvalues : _ENV
+function UIN13BuildController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.NPlusSixBuildingMainRefresh, self._RefreshBuild)
   self:DetachEvent(GameEventType.NPlusSixBuildingBuildingComplete, self._PlayEffect)
@@ -781,77 +540,50 @@ UIN13BuildController._DetachEvents = function(self)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self.OnUIOpenClose)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._CheckActivityClose = function(self, id)
-  -- function num : 0_47 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN13BuildController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.OnUIOpenClose = function(self)
-  -- function num : 0_48 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  (UnityEngine.Input).multiTouchEnabled = (self:Manager()):IsTopUI(self.name)
+function UIN13BuildController:OnUIOpenClose()
+  UnityEngine.Input.multiTouchEnabled = self:Manager():IsTopUI(self.name)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.SetShowDebug = function(self, showMap, showPet)
-  -- function num : 0_49
+function UIN13BuildController:SetShowDebug(showMap, showPet)
   self._flagDebugShowMap = showMap
   self._flagDebugShowPet = showPet
   self:_SetDebug()
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController._SetDebug = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  local show = (UIActivityHelper.CheckDebugOpen)()
+function UIN13BuildController:_SetDebug()
+  local show = UIActivityHelper.CheckDebugOpen()
   local obj = self:GetGameObject("Test")
   obj:SetActive(show)
   local tb = {"Nodes", "Lines"}
-  for _,v in ipairs(tb) do
+  for _, v in ipairs(tb) do
     local obj = self:GetGameObject(v)
-    obj:SetActive(not self._flagDebugShowMap or show)
+    obj:SetActive(self._flagDebugShowMap and show)
   end
-  do
-    ;
-    (self._petManager):SetShowDebug(not self._petManager or not self._flagDebugShowPet or show)
+  if self._petManager then
+    self._petManager:SetShowDebug(self._flagDebugShowPet and show)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.Test1BtnOnClick = function(self, go)
-  -- function num : 0_51
+function UIN13BuildController:Test1BtnOnClick(go)
   self:SetShowDebug(not self._flagDebugShowMap, self._flagDebugShowPet)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.Test2BtnOnClick = function(self, go)
-  -- function num : 0_52
+function UIN13BuildController:Test2BtnOnClick(go)
   self:SetShowDebug(self._flagDebugShowMap, not self._flagDebugShowPet)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildController.Test3BtnOnClick = function(self, go)
-  -- function num : 0_53 , upvalues : _ENV
-  local newFixedPetIdList = (self._petManager):DebugChangeFixedPet()
+function UIN13BuildController:Test3BtnOnClick(go)
+  local newFixedPetIdList = self._petManager:DebugChangeFixedPet()
   local t = "{"
-  for _,v in ipairs(newFixedPetIdList) do
+  for _, v in ipairs(newFixedPetIdList) do
     t = t .. v .. ", "
   end
   t = t .. "}"
-  ;
-  (ToastManager.ShowToast)("new fixed petid = " .. t)
+  ToastManager.ShowToast("new fixed petid = " .. t)
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_ecs/entity/entity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Entity", Object)
 Entity = Entity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Entity.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function Entity:Constructor()
   self._isEnabled = false
   self._retainCount = 0
   self._id = 0
@@ -24,292 +17,197 @@ Entity.Constructor = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.isEnabled = function(self)
-  -- function num : 0_1
+function Entity:isEnabled()
   return self._isEnabled
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Initialize = function(self, creationIndex, contextInfo)
-  -- function num : 0_2
+function Entity:Initialize(creationIndex, contextInfo)
   self:Reactivate(creationIndex)
   self.worldContextInfo = contextInfo
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Destroy = function(self)
-  -- function num : 0_3
+function Entity:Destroy()
   self:RemoveAllComponents()
   self._isEnabled = false
-  ;
-  (self.Ev_OnComponentAdded):Clear()
-  ;
-  (self.Ev_OnComponentReplaced):Clear()
-  ;
-  (self.Ev_OnComponentRemoved):Clear()
-  ;
-  (self.Ev_OnEntityReleased):Clear()
+  self.Ev_OnComponentAdded:Clear()
+  self.Ev_OnComponentReplaced:Clear()
+  self.Ev_OnComponentRemoved:Clear()
+  self.Ev_OnEntityReleased:Clear()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAllOnEntityReleasedHandlers = function(self)
-  -- function num : 0_4
-  (self.Ev_OnEntityReleased):Clear()
+function Entity:RemoveAllOnEntityReleasedHandlers()
+  self.Ev_OnEntityReleased:Clear()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Reactivate = function(self, creationIndex)
-  -- function num : 0_5
+function Entity:Reactivate(creationIndex)
   self._isEnabled = true
   self._creationIndex = creationIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddComponent = function(self, index, component)
-  -- function num : 0_6 , upvalues : _ENV
+function Entity:AddComponent(index, component)
   if not self._isEnabled then
-    (Log.debug)("Entity:AddComponent Error! entity._isEnabled = false")
-    return 
+    Log.debug("Entity:AddComponent Error! entity._isEnabled = false")
+    return
   end
   if self:HasComponent(index) then
-    return 
+    return
   end
   component._entity = self
-  ;
-  (self._components):Insert(index, component)
-  ;
-  (self.Ev_OnComponentAdded)(self, index, component)
+  self._components:Insert(index, component)
+  self.Ev_OnComponentAdded(self, index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveComponent = function(self, index)
-  -- function num : 0_7 , upvalues : _ENV
+function Entity:RemoveComponent(index)
   if not self._isEnabled then
-    (Log.debug)("Entity:RemoveComponent Error! entity._isEnabled = false")
-    return 
+    Log.debug("Entity:RemoveComponent Error! entity._isEnabled = false")
+    return
   end
   if not self:HasComponent(index) then
-    return 
+    return
   end
-  local previousComponent = (self._components):Find(index)
-  ;
-  (self._components):Remove(index)
-  ;
-  (self.Ev_OnComponentRemoved)(self, index, previousComponent)
+  local previousComponent = self._components:Find(index)
+  self._components:Remove(index)
+  self.Ev_OnComponentRemoved(self, index, previousComponent)
   if previousComponent.Dispose then
     previousComponent:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceComponent = function(self, index, component)
-  -- function num : 0_8 , upvalues : _ENV
+function Entity:ReplaceComponent(index, component)
   if not self._isEnabled then
-    (Log.debug)("Entity:ReplaceComponent Error! entity._isEnabled = false")
-    return 
+    Log.debug("Entity:ReplaceComponent Error! entity._isEnabled = false")
+    return
   end
   if not self:HasComponent(index) then
     self:AddComponent(index, component)
-    return 
+    return
   end
-  local previousComponent = (self._components):Find(index)
+  local previousComponent = self._components:Find(index)
   if previousComponent ~= component then
     component._entity = self
-    ;
-    (self._components):Modify(index, component)
+    self._components:Modify(index, component)
     if component ~= nil then
-      (self.Ev_OnComponentReplaced)(self, index, previousComponent, component)
+      self.Ev_OnComponentReplaced(self, index, previousComponent, component)
     else
-      ;
-      (self.Ev_OnComponentRemoved)(self, index, previousComponent)
+      self.Ev_OnComponentRemoved(self, index, previousComponent)
       if previousComponent.Dispose then
         previousComponent:Dispose()
       end
     end
   else
-    ;
-    (self.Ev_OnComponentReplaced)(self, index, previousComponent, component)
+    self.Ev_OnComponentReplaced(self, index, previousComponent, component)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetComponent = function(self, index)
-  -- function num : 0_9 , upvalues : _ENV
+function Entity:GetComponent(index)
   if EDITOR and self._checkCrossSide then
     local available = self:_CheckAvailableInRenderSide(index)
     if not available then
       local cmptName = self:_GetComponentNameByIndex(index)
       local fullCmptName = cmptName .. "Component"
-      ;
-      (Log.exception)(fullCmptName, " not available in render side.", " ", (debug.traceback)())
+      Log.exception(fullCmptName, " not available in render side.", " ", debug.traceback())
     end
   end
-  do
-    return (self._components):Find(index)
-  end
+  return self._components:Find(index)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetComponents = function(self)
-  -- function num : 0_10
-  return (self._components).dictionary
+function Entity:GetComponents()
+  return self._components.dictionary
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetComponentIndices = function(self)
-  -- function num : 0_11
-  return (self._components).sorted_key
+function Entity:GetComponentIndices()
+  return self._components.sorted_key
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasComponent = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
+function Entity:HasComponent(index)
   if EDITOR and self._checkCrossSide then
     local available = self:_CheckAvailableInRenderSide(index)
     if not available then
       local cmptName = self:_GetComponentNameByIndex(index)
       local fullCmptName = cmptName .. "Component"
-      ;
-      (Log.exception)(fullCmptName, " not available in render side.", " ", (debug.traceback)())
+      Log.exception(fullCmptName, " not available in render side.", " ", debug.traceback())
     end
   end
-  do
-    do return (self._components):Find(index) ~= nil end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  return self._components:Find(index) ~= nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasComponents = function(self, indices)
-  -- function num : 0_13 , upvalues : _ENV
-  for _,v in pairs(indices) do
-    if (self._components):Find(v) == nil then
+function Entity:HasComponents(indices)
+  for _, v in pairs(indices) do
+    if self._components:Find(v) == nil then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAnyComponent = function(self, indices)
-  -- function num : 0_14 , upvalues : _ENV
-  for _,v in pairs(indices) do
-    if (self._components):Find(v) ~= nil then
+function Entity:HasAnyComponent(indices)
+  for _, v in pairs(indices) do
+    if self._components:Find(v) ~= nil then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAllComponents = function(self)
-  -- function num : 0_15
-  do
-    while (self._components):Size() > 0 do
-      local index = (self._components):GetKeyAt(1)
-      self:RemoveComponent(index)
-    end
-    ;
-    (self._components):Clear()
+function Entity:RemoveAllComponents()
+  while self._components:Size() > 0 do
+    local index = self._components:GetKeyAt(1)
+    self:RemoveComponent(index)
   end
+  self._components:Clear()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetCreationIndex = function(self)
-  -- function num : 0_16
+function Entity:GetCreationIndex()
   return self._creationIndex
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Retain = function(self, owner)
-  -- function num : 0_17
+function Entity:Retain(owner)
   self._retainCount = self._retainCount + 1
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Release = function(self, owner)
-  -- function num : 0_18
+function Entity:Release(owner)
   self._retainCount = self._retainCount - 1
   if self._retainCount == 0 then
-    (self.Ev_OnEntityReleased)(self)
+    self.Ev_OnEntityReleased(self)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetID = function(self)
-  -- function num : 0_19
+function Entity:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetID = function(self, id)
-  -- function num : 0_20
+function Entity:SetID(id)
   self._id = id
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetOwnerWorld = function(self, world)
-  -- function num : 0_21 , upvalues : _ENV
+function Entity:SetOwnerWorld(world)
   self._world = world
-  if (self._world):GetRunningPosition() == WorldRunPostion.Performance then
+  if self._world:GetRunningPosition() == WorldRunPostion.Performance then
     self._checkCrossSide = false
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetOwnerWorld = function(self)
-  -- function num : 0_22
+function Entity:GetOwnerWorld()
   return self._world
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity._CheckAvailableInRenderSide = function(self, index)
-  -- function num : 0_23 , upvalues : _ENV
-  local debugInfo = (debug.getinfo)(3, "S")
+function Entity:_CheckAvailableInRenderSide(index)
+  local debugInfo = debug.getinfo(3, "S")
   if debugInfo == nil then
     return true
   end
   local filePath = debugInfo.short_src
-  local isRenderFile = (string.find)(filePath, "_r.lua")
+  local isRenderFile = string.find(filePath, "_r.lua")
   local world = self:GetOwnerWorld()
-  local available = (world.BW_WorldInfo):AvailableInRender(index)
+  local available = world.BW_WorldInfo:AvailableInRender(index)
   if isRenderFile then
     return available
   end
   return true
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity._GetComponentNameByIndex = function(self, index)
-  -- function num : 0_24
+function Entity:_GetComponentNameByIndex(index)
   local world = self:GetOwnerWorld()
-  local cmptName = (((world.BW_WorldInfo).BWCC_EComponentsEnum).EL_RawStrArray)[index]
+  local cmptName = world.BW_WorldInfo.BWCC_EComponentsEnum.EL_RawStrArray[index]
   return cmptName
 end
-
-

@@ -1,75 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/async_op_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ST_ASYNC_OPERATION_STATUS = {NO_CALL = 0, IN_PROGRESS = 1, FINISHED = 2}
+local ST_ASYNC_OPERATION_STATUS = {
+  NO_CALL = 0,
+  IN_PROGRESS = 1,
+  FINISHED = 2
+}
 _enum("ST_ASYNC_OPERATION_STATUS", ST_ASYNC_OPERATION_STATUS)
-local ST_ASYNC_OPERATION_RESULT = {UNFINISHED = 0, SUCCESS = 1, ERROR = 2}
+local ST_ASYNC_OPERATION_RESULT = {
+  UNFINISHED = 0,
+  SUCCESS = 1,
+  ERROR = 2
+}
 _enum("ST_ASYNC_OPERATION_RESULT", ST_ASYNC_OPERATION_RESULT)
 _class("AsyncOperationStatusData", Object)
 AsyncOperationStatusData = AsyncOperationStatusData
--- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
 
-AsyncOperationStatusData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : ST_ASYNC_OPERATION_STATUS, ST_ASYNC_OPERATION_RESULT
+function AsyncOperationStatusData:Constructor()
   self._status = ST_ASYNC_OPERATION_STATUS.NO_CALL
   self._result = ST_ASYNC_OPERATION_RESULT.UNFINISHED
   self._message = "A brand new AsyncOperationStatusData object. "
   self._customData = {}
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-AsyncOperationStatusData.SetStatus = function(self, v)
-  -- function num : 0_1
+function AsyncOperationStatusData:SetStatus(v)
   self._status = v
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-AsyncOperationStatusData.SetResult = function(self, v)
-  -- function num : 0_2
+function AsyncOperationStatusData:SetResult(v)
   self._result = v
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-AsyncOperationStatusData.SetMessage = function(self, msg)
-  -- function num : 0_3
+function AsyncOperationStatusData:SetMessage(msg)
   self._message = msg
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-AsyncOperationStatusData.IsFinished = function(self)
-  -- function num : 0_4 , upvalues : ST_ASYNC_OPERATION_STATUS
-  do return self._status == ST_ASYNC_OPERATION_STATUS.FINISHED end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AsyncOperationStatusData:IsFinished()
+  return self._status == ST_ASYNC_OPERATION_STATUS.FINISHED
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-AsyncOperationStatusData.IsErrorOccured = function(self)
-  -- function num : 0_5 , upvalues : ST_ASYNC_OPERATION_RESULT
-  do return self._result == ST_ASYNC_OPERATION_RESULT.ERROR end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AsyncOperationStatusData:IsErrorOccured()
+  return self._result == ST_ASYNC_OPERATION_RESULT.ERROR
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-AsyncOperationStatusData.SetCustomData = function(self, key, value)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._customData)[key] = value
+function AsyncOperationStatusData:SetCustomData(key, value)
+  self._customData[key] = value
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-AsyncOperationStatusData.GetCustomData = function(self, key)
-  -- function num : 0_7
-  return (self._customData)[key]
+function AsyncOperationStatusData:GetCustomData(key)
+  return self._customData[key]
 end
-
-

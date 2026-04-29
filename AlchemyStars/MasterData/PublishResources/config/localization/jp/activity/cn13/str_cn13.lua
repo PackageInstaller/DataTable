@@ -1,8 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/cn13/str_cn13.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn13_PerfectPuzzle_game_title = "映像パズル大作戦", str_cn13_PerfectPuzzle_plan_btn = "修復報酬", str_cn13_PerfectPuzzle_piece_btn = "映像データ", str_cn13_PerfectPuzzle_look_btn = "オリジナル映像", str_cn13_PerfectPuzzle_level_1 = "第1ステージ", str_cn13_PerfectPuzzle_level_2 = "第2ステージ", str_cn13_PerfectPuzzle_level_3 = "第3ステージ", str_cn13_PerfectPuzzle_level_4 = "第4ステージ", str_cn13_PerfectPuzzle_level_5 = "第5ステージ", str_cn13_PerfectPuzzle_level_6 = "第6ステージ", str_cn13_PerfectPuzzle_level_7 = "第7ステージ", str_cn13_PerfectPuzzle_tips_btn = "イベント紹介", str_cn13_PerfectPuzzle_timeout_unlock_day = "{1}日後解放", str_cn13_PerfectPuzzle_timeout_unlock_hour = "{1}後解放", str_cn13_PerfectPuzzle_lock_level_tips_1 = "前の映像を完成させてください", str_cn13_PerfectPuzzle_unlock_puzzle_btn = "映像解放", str_cn13_PerfectPuzzle_quest_refresh_countdown = "今日の任務更新：", str_cn13_PerfectPuzzle_get_item_btn = "受取", str_cn13_PerfectPuzzle_quest_day_title = "今日", str_cn13_PerfectPuzzle_quest_plan_title = "今期", str_cn13_PerfectPuzzle_get_item_being = "進行中", str_cn13_PerfectPuzzle_get_item_get_over = "クリア済", str_cn13_PerfectPuzzle_cur_process = "進行度：{1}", str_cn13_PerfectPuzzle_intro_title = "イベント「映像パズル大作戦」について", str_cn13_PerfectPuzzle_intro_head_1 = "【映像修復】", str_cn13_PerfectPuzzle_intro_body_1 = "映像を修復するには、映像中の破片の位置を手動で調整しなければなりません。\n破片を2つタップすると位置が入れ替わります。\nすべての破片が正しい位置に並んだら、映像修復は完了です。\n修復の途中、タップでオリジナル映像を確認できます。", str_cn13_PerfectPuzzle_intro_head_2 = "【映像データ】", str_cn13_PerfectPuzzle_intro_body_2 = "一定数の【映像データ】を消費して、映像を解放してください。\n解放はその1回のみで、解放後修復を開始できます。\n【映像データ】は毎日の任務達成で獲得できます。", str_cn13_PerfectPuzzle_cost_uncan = "コインが足りません！", str_cn13_second_stage_open = "調査ノート解放", str_cn13_diff_stage_open = "「深域遭難」高難易度ステージ解放", str_cn13_ex_diff_stage_open = "「深域遭難」極限ステージ解放"}
+local config = {
+  str_cn13_PerfectPuzzle_game_title = "映像パズル大作戦",
+  str_cn13_PerfectPuzzle_plan_btn = "修復報酬",
+  str_cn13_PerfectPuzzle_piece_btn = "映像データ",
+  str_cn13_PerfectPuzzle_look_btn = "オリジナル映像",
+  str_cn13_PerfectPuzzle_level_1 = "第1ステージ",
+  str_cn13_PerfectPuzzle_level_2 = "第2ステージ",
+  str_cn13_PerfectPuzzle_level_3 = "第3ステージ",
+  str_cn13_PerfectPuzzle_level_4 = "第4ステージ",
+  str_cn13_PerfectPuzzle_level_5 = "第5ステージ",
+  str_cn13_PerfectPuzzle_level_6 = "第6ステージ",
+  str_cn13_PerfectPuzzle_level_7 = "第7ステージ",
+  str_cn13_PerfectPuzzle_tips_btn = "イベント紹介",
+  str_cn13_PerfectPuzzle_timeout_unlock_day = "{1}日後解放",
+  str_cn13_PerfectPuzzle_timeout_unlock_hour = "{1}後解放",
+  str_cn13_PerfectPuzzle_lock_level_tips_1 = "前の映像を完成させてください",
+  str_cn13_PerfectPuzzle_unlock_puzzle_btn = "映像解放",
+  str_cn13_PerfectPuzzle_quest_refresh_countdown = "今日の任務更新：",
+  str_cn13_PerfectPuzzle_get_item_btn = "受取",
+  str_cn13_PerfectPuzzle_quest_day_title = "今日",
+  str_cn13_PerfectPuzzle_quest_plan_title = "今期",
+  str_cn13_PerfectPuzzle_get_item_being = "進行中",
+  str_cn13_PerfectPuzzle_get_item_get_over = "クリア済",
+  str_cn13_PerfectPuzzle_cur_process = "進行度：{1}",
+  str_cn13_PerfectPuzzle_intro_title = "イベント「映像パズル大作戦」について",
+  str_cn13_PerfectPuzzle_intro_head_1 = "【映像修復】",
+  str_cn13_PerfectPuzzle_intro_body_1 = "映像を修復するには、映像中の破片の位置を手動で調整しなければなりません。\n破片を2つタップすると位置が入れ替わります。\nすべての破片が正しい位置に並んだら、映像修復は完了です。\n修復の途中、タップでオリジナル映像を確認できます。",
+  str_cn13_PerfectPuzzle_intro_head_2 = "【映像データ】",
+  str_cn13_PerfectPuzzle_intro_body_2 = "一定数の【映像データ】を消費して、映像を解放してください。\n解放はその1回のみで、解放後修復を開始できます。\n【映像データ】は毎日の任務達成で獲得できます。",
+  str_cn13_PerfectPuzzle_cost_uncan = "コインが足りません！",
+  str_cn13_second_stage_open = "調査ノート解放",
+  str_cn13_diff_stage_open = "「深域遭難」高難易度ステージ解放",
+  str_cn13_ex_diff_stage_open = "「深域遭難」極限ステージ解放"
+}
 return config
-

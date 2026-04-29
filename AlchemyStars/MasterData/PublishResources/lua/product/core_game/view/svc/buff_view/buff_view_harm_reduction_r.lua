@@ -1,71 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_harm_reduction_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewHarmReduction", BuffViewBase)
 BuffViewHarmReduction = BuffViewHarmReduction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewHarmReduction.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
+function BuffViewHarmReduction:PlayView(TT)
+  local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
   if coreGameStateID == GameStateID.WaveEnter then
-    return 
+    return
   end
   local buffResult = self._buffResult
-  local e = (self._viewInstance):Entity()
+  local e = self._viewInstance:Entity()
   local entityID = e:GetID()
   local layer = buffResult:GetLayer()
-  local viewValue = (self:BuffViewInstance()):GetLayerCount() or 0
+  local viewValue = self:BuffViewInstance():GetLayerCount() or 0
   local destoryEffectList = {}
   local oldEffectID = self:GetEffectID(viewValue)
   local createEffectID = self:GetEffectID(layer)
-  ;
-  (self:BuffViewInstance()):SetLayerCount(TT, layer)
-  local effectService = (self._world):GetService("Effect")
+  self:BuffViewInstance():SetLayerCount(TT, layer)
+  local effectService = self._world:GetService("Effect")
   if createEffectID ~= oldEffectID or createEffectID == 0 then
     local effectHolderCmpt = e:EffectHolder()
-    ;
-    (table.insert)(destoryEffectList, BattleConst.HarmReductionNormal)
-    ;
-    (table.insert)(destoryEffectList, BattleConst.HarmReductionInvincible)
+    table.insert(destoryEffectList, BattleConst.HarmReductionNormal)
+    table.insert(destoryEffectList, BattleConst.HarmReductionInvincible)
     effectService:DestroyEntityEffectByID(e, destoryEffectList)
-    if createEffectID and createEffectID > 0 then
+    if createEffectID and 0 < createEffectID then
       local effect = effectService:CreateEffect(createEffectID, e)
       effectHolderCmpt:AttachPermanentEffect(effect:GetID())
     end
   end
-  do
-    if buffResult:GetPreviewSkillID() > 0 then
-      PlayCloseMonsterPreviewRangeInstruction:_HideMonsterAction(e)
-      local skillHolder = buffResult:GetPreviewSkillHolder()
-      local playSkillSvc = (self._world):GetService("PlaySkill")
-      local configSvc = (self._world):GetService("Config")
-      local skillConfigData = configSvc:GetSkillConfigData(buffResult:GetPreviewSkillID(), skillHolder)
-      local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
-      playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, buffResult:GetPreviewSkillID())
-    end
-    do
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.UpdateBossHarmReduction, buffResult)
-    end
+  if 0 < buffResult:GetPreviewSkillID() then
+    PlayCloseMonsterPreviewRangeInstruction:_HideMonsterAction(e)
+    local skillHolder = buffResult:GetPreviewSkillHolder()
+    local playSkillSvc = self._world:GetService("PlaySkill")
+    local configSvc = self._world:GetService("Config")
+    local skillConfigData = configSvc:GetSkillConfigData(buffResult:GetPreviewSkillID(), skillHolder)
+    local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
+    playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, buffResult:GetPreviewSkillID())
   end
+  self._world:EventDispatcher():Dispatch(GameEventType.UpdateBossHarmReduction, buffResult)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewHarmReduction.GetEffectID = function(self, layer)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewHarmReduction:GetEffectID(layer)
   local effectID = 0
-  if layer > 0 and layer < 9 then
+  if 0 < layer and layer < 9 then
     effectID = BattleConst.HarmReductionNormal
-  else
-    if layer == 9 then
-      effectID = BattleConst.HarmReductionInvincible
-    end
+  elseif layer == 9 then
+    effectID = BattleConst.HarmReductionInvincible
   end
   return effectID
 end
-
-

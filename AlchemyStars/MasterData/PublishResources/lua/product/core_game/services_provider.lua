@@ -1,57 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/services_provider.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ServicesProvider", Object)
 ServicesProvider = ServicesProvider
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ServicesProvider.Constructor = function(self)
-  -- function num : 0_0
+function ServicesProvider:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ServicesProvider.AddService = function(self, name, service)
-  -- function num : 0_1
+function ServicesProvider:AddService(name, service)
   self[name] = service
   return self
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ServicesProvider.InitServices = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for name,service in pairs(self) do
+function ServicesProvider:InitServices()
+  for name, service in pairs(self) do
     if service.Initialize then
       service:Initialize()
     end
   end
-  for name,service in pairs(self) do
+  for name, service in pairs(self) do
     if service.InitOver then
       service:InitOver()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ServicesProvider.GetService = function(self, name)
-  -- function num : 0_3
+function ServicesProvider:GetService(name)
   return self[name]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ServicesProvider.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self) do
+function ServicesProvider:Dispose()
+  for k, v in pairs(self) do
     local service = v
     if service.Dispose then
       service:Dispose()
     end
   end
 end
-
-

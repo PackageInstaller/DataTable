@@ -1,314 +1,180 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetForecastItem", UICustomWidget)
 UIPetForecastItem = UIPetForecastItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetForecastItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetForecastItem:OnShow()
   self.atlas = self:GetAsset("UIPetForecast.spriteatlas", LoadType.SpriteAtlas)
-  self.root = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
+  self.root = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
   self.lock = self:GetGameObject("lock")
   self.imgFull = self:GetUIComponent("Image", "imgFull")
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.imgFull).alphaHitTestMinimumThreshold = 0.1
-  self.dayOffset = (self:GetGameObject("dayOffset")):GetComponent(typeof(UnityEngine.RectTransform))
+  self.imgFull.alphaHitTestMinimumThreshold = 0.1
+  self.dayOffset = self:GetGameObject("dayOffset"):GetComponent(typeof(UnityEngine.RectTransform))
   self.txtDay = self:GetUIComponent("UILocalizationText", "txtDay")
   self.sldProgress = self:GetUIComponent("Slider", "sldProgress")
   self.txtProgress = self:GetUIComponent("UILocalizationText", "txtProgress")
   self.awards = self:GetUIComponent("UISelectObjectPath", "awards")
-  self.tranAwards = (self:GetGameObject("awards")):GetComponent(typeof(UnityEngine.RectTransform))
-  self.awardsGrid = (self:GetGameObject("awards")):GetComponent(typeof((UnityEngine.UI).GridLayoutGroup))
+  self.tranAwards = self:GetGameObject("awards"):GetComponent(typeof(UnityEngine.RectTransform))
+  self.awardsGrid = self:GetGameObject("awards"):GetComponent(typeof(UnityEngine.UI.GridLayoutGroup))
   self.unlock = self:GetGameObject("unlock")
   self.mask = self:GetUIComponent("Image", "mask")
-  -- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.mask).alphaHitTestMinimumThreshold = 0.1
+  self.mask.alphaHitTestMinimumThreshold = 0.1
   self.imgPet = self:GetUIComponent("RawImageLoader", "imgPet")
   self.imgSelect = self:GetUIComponent("RawImageLoader", "imgSelect")
   self.imgSelectRaw = self:GetUIComponent("RawImage", "imgSelect")
   self:Select(false)
   self:AttachEvent(GameEventType.PredictionStateChanged, self.PredictionStateChanged)
   self.mSignIn = self:GetModule(SignInModule)
-  self.data = (self.mSignIn):GetPredictionData()
+  self.data = self.mSignIn:GetPredictionData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.imgPet):DestoryLastImage()
-  ;
-  (self.imgSelect):DestoryLastImage()
+function UIPetForecastItem:OnHide()
+  self.imgPet:DestoryLastImage()
+  self.imgSelect:DestoryLastImage()
   self:DetachEvent(GameEventType.PredictionStateChanged, self.PredictionStateChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastItem.Flush = function(self, day, selectCallback, isShow, refreshCallBack)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetForecastItem:Flush(day, selectCallback, isShow, refreshCallBack)
   self.day = day
   self.isShow = isShow
-  local piece = (self.data):GetPiece(day)
+  local piece = self.data:GetPiece(day)
   self.selectCallback = selectCallback
   local v05 = Vector2.one * 0.5
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.root).anchorMin = v05
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.root).anchorMax = v05
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.root).anchoredPosition = piece.pos
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.root).sizeDelta = piece.wh
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.tranAwards).anchoredPosition = piece.apos
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.tranAwards).sizeDelta = piece.awh
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.awardsGrid).cellSize = piece.awh
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.dayOffset).anchoredPosition = piece.ppos
+  self.root.anchorMin = v05
+  self.root.anchorMax = v05
+  self.root.anchoredPosition = piece.pos
+  self.root.sizeDelta = piece.wh
+  self.tranAwards.anchoredPosition = piece.apos
+  self.tranAwards.sizeDelta = piece.awh
+  self.awardsGrid.cellSize = piece.awh
+  self.dayOffset.anchoredPosition = piece.ppos
   self.refreshCallBack = refreshCallBack
   self:FlushState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastItem.FlushState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local piece = (self.data):GetPiece(self.day)
+function UIPetForecastItem:FlushState()
+  local piece = self.data:GetPiece(self.day)
   if piece.state == PredictionStatus.PRES_Accepted then
-    (self.lock):SetActive(false)
-    ;
-    (self.unlock):SetActive(true)
+    self.lock:SetActive(false)
+    self.unlock:SetActive(true)
     if self.isShow then
-      (self.imgPet):LoadImage(piece.imgComicUnlock)
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.mask).sprite = (self.atlas):GetSprite(piece.imgBGUnlock)
-      ;
-      (self.imgSelect):LoadImage(piece.imgSelectUnlock)
+      self.imgPet:LoadImage(piece.imgComicUnlock)
+      self.mask.sprite = self.atlas:GetSprite(piece.imgBGUnlock)
+      self.imgSelect:LoadImage(piece.imgSelectUnlock)
     else
-      ;
-      (self.imgPet):LoadImage(piece.imgComic)
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.mask).sprite = (self.atlas):GetSprite(piece.imgBG)
-      ;
-      (self.imgSelect):LoadImage(piece.imgSelect)
+      self.imgPet:LoadImage(piece.imgComic)
+      self.mask.sprite = self.atlas:GetSprite(piece.imgBG)
+      self.imgSelect:LoadImage(piece.imgSelect)
     end
   else
-    ;
-    (self.lock):SetActive(true)
-    ;
-    (self.unlock):SetActive(false)
-    ;
-    (self.txtDay):SetText((StringTable.Get)("str_prediction_day_n", self.day))
-    local len = (table.count)(piece.awards)
-    ;
-    (self.awards):SpawnObjects("UIPetForecastAwardItem", len)
-    local awards = (self.awards):GetAllSpawnList()
-    for i,v in ipairs(awards) do
-      do
-        local awardInfo = (piece.awards)[i]
-        local tplId = awardInfo[1]
-        v:Flush(tplId, awardInfo[2], function()
-    -- function num : 0_3_0 , upvalues : piece, _ENV, self, tplId, v
-    if piece and piece.state == PredictionStatus.PRES_UnAccept then
-      self:imgFullOnClick(self:GetGameObject())
-    else
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, tplId, ((v:Trans()).transform).position)
+    self.lock:SetActive(true)
+    self.unlock:SetActive(false)
+    self.txtDay:SetText(StringTable.Get("str_prediction_day_n", self.day))
+    local len = table.count(piece.awards)
+    self.awards:SpawnObjects("UIPetForecastAwardItem", len)
+    local awards = self.awards:GetAllSpawnList()
+    for i, v in ipairs(awards) do
+      local awardInfo = piece.awards[i]
+      local tplId = awardInfo[1]
+      v:Flush(tplId, awardInfo[2], function()
+        if piece and piece.state == PredictionStatus.PRES_UnAccept then
+          self:imgFullOnClick(self:GetGameObject())
+        else
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, tplId, v:Trans().transform.position)
+        end
+      end)
     end
-  end
-)
-      end
-    end
-    -- DECOMPILER ERROR at PC100: Confused about usage of register: R4 in 'UnsetPending'
-
     if piece.state == PredictionStatus.PRES_UnReach then
-      (self.imgFull).raycastTarget = false
-      -- DECOMPILER ERROR at PC104: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.imgFull).color = (self.data).colorUnlock
+      self.imgFull.raycastTarget = false
+      self.imgFull.color = self.data.colorUnlock
       if piece:IsCurDay() then
-        ((self.sldProgress).gameObject):SetActive(true)
-        -- DECOMPILER ERROR at PC118: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self.sldProgress).value = piece.curValue / piece.maxValue
-        ;
-        (self.txtProgress):SetText(piece.curValue .. "/" .. piece.maxValue)
+        self.sldProgress.gameObject:SetActive(true)
+        self.sldProgress.value = piece.curValue / piece.maxValue
+        self.txtProgress:SetText(piece.curValue .. "/" .. piece.maxValue)
       else
-        ;
-        ((self.sldProgress).gameObject):SetActive(false)
+        self.sldProgress.gameObject:SetActive(false)
       end
     else
-      -- DECOMPILER ERROR at PC136: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.imgFull).color = Color.white
-      ;
-      ((self.sldProgress).gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC143: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.imgFull).raycastTarget = true
+      self.imgFull.color = Color.white
+      self.sldProgress.gameObject:SetActive(false)
+      self.imgFull.raycastTarget = true
     end
-    -- DECOMPILER ERROR at PC152: Confused about usage of register: R4 in 'UnsetPending'
-
     if self.isShow then
-      (self.imgFull).sprite = (self.atlas):GetSprite(piece.imgFullUnlock)
+      self.imgFull.sprite = self.atlas:GetSprite(piece.imgFullUnlock)
     else
-      -- DECOMPILER ERROR at PC159: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self.imgFull).sprite = (self.atlas):GetSprite(piece.imgFull)
-      -- DECOMPILER ERROR at PC160: Confused about usage of register R5 for local variables in 'ReleaseLocals'
-
+      self.imgFull.sprite = self.atlas:GetSprite(piece.imgFull)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastItem.PredictionStateChanged = function(self, day)
-  -- function num : 0_4
+function UIPetForecastItem:PredictionStateChanged(day)
   if self.day == day then
     self:FlushState()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastItem.imgFullOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetForecastItem:imgFullOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV, go
     local toNewUnlockLastState = false
     self:Lock("UIPetForecastItem_imgFullOnClick")
     local toClose = false
-    local res, replyEvent = (self.mSignIn):PredictionAwardReq(TT, self.day, (self.data).id)
+    local res, replyEvent = self.mSignIn:PredictionAwardReq(TT, self.day, self.data.id)
     if res:GetResult() == Prediction_Result_Code.PREDICTION_SWITCH then
-      (ToastManager.ShowToast)((StringTable.Get)("str_prediction_error_activity_finished"))
+      ToastManager.ShowToast(StringTable.Get("str_prediction_error_activity_finished"))
       toClose = true
-    else
-      if (PetForecastData.CheckCode)(res:GetResult(), true) then
-        (self.data):UpdateState(self.day, PredictionStatus.PRES_Accepted)
-        self:FlushState()
-        YIELD(TT, 800)
-        local t = {}
-        local piece = (self.data):GetPiece(self.day)
-        if piece and piece.awards then
-          for i,award in ipairs(piece.awards) do
-            if award then
-              local a = RoleAsset:New()
-              a.assetid = award[1]
-              a.count = award[2]
-              ;
-              (table.insert)(t, a)
-            end
-          end
-        end
-        do
-          do
-            if t and (table.count)(t) > 0 then
-              ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", t)
-              while not ((GameGlobal.UIStateManager)()):IsShow("UIGetItemController") do
-                YIELD(TT)
-              end
-            end
-            if self.maskOnClick then
-              self:maskOnClick(go)
-            end
-            if (self.data):IsAllAccepted() then
-              toNewUnlockLastState = (self.data):HasNewPieceImage()
-            end
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, -1, nil, nil)
-            self:UnLock("UIPetForecastItem_imgFullOnClick")
-            if toClose then
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PredictionDataChanged)
-            end
-            while 1 do
-              if toNewUnlockLastState then
-                if ((GameGlobal.UIStateManager)()):IsShow("UIGetItemController") then
-                  YIELD(TT)
-                  -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC157: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
-            do
-              local uiPetForecast = self:RootUIOwner()
-              ;
-              (uiPetForecast.fsm):ChangeState(StatePetForecast.NewUnlockLast)
-              if self.refreshCallBack then
-                (self.refreshCallBack)()
-              end
-            end
+    elseif PetForecastData.CheckCode(res:GetResult(), true) then
+      self.data:UpdateState(self.day, PredictionStatus.PRES_Accepted)
+      self:FlushState()
+      YIELD(TT, 800)
+      local t = {}
+      local piece = self.data:GetPiece(self.day)
+      if piece and piece.awards then
+        for i, award in ipairs(piece.awards) do
+          if award then
+            local a = RoleAsset:New()
+            a.assetid = award[1]
+            a.count = award[2]
+            table.insert(t, a)
           end
         end
       end
+      if t and table.count(t) > 0 then
+        GameGlobal.UIStateManager():ShowDialog("UIGetItemController", t)
+        while not GameGlobal.UIStateManager():IsShow("UIGetItemController") do
+          YIELD(TT)
+        end
+      end
+      if self.maskOnClick then
+        self:maskOnClick(go)
+      end
+      toNewUnlockLastState = self.data:IsAllAccepted() and self.data:HasNewPieceImage()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, -1, nil, nil)
     end
-  end
-, self)
+    self:UnLock("UIPetForecastItem_imgFullOnClick")
+    if toClose then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PredictionDataChanged)
+    end
+    if toNewUnlockLastState then
+      while GameGlobal.UIStateManager():IsShow("UIGetItemController") do
+        YIELD(TT)
+      end
+      local uiPetForecast = self:RootUIOwner()
+      uiPetForecast.fsm:ChangeState(StatePetForecast.NewUnlockLast)
+    end
+    if self.refreshCallBack then
+      self.refreshCallBack()
+    end
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastItem.maskOnClick = function(self, go)
-  -- function num : 0_6
+function UIPetForecastItem:maskOnClick(go)
   if self.selectCallback then
-    (self.selectCallback)(self.day)
+    self.selectCallback(self.day)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetForecastItem.Select = function(self, isSelect)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIPetForecastItem:Select(isSelect)
   if isSelect then
-    (self.imgSelectRaw).color = Color(1, 1, 1, 1)
+    self.imgSelectRaw.color = Color(1, 1, 1, 1)
   else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgSelectRaw).color = Color(1, 1, 1, 0)
+    self.imgSelectRaw.color = Color(1, 1, 1, 0)
   end
 end
-
-

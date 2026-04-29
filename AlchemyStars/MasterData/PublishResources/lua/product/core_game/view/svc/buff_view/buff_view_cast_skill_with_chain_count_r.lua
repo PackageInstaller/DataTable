@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_cast_skill_with_chain_count_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewCastSkillWithChainCount", BuffViewBase)
 BuffViewCastSkillWithChainCount = BuffViewCastSkillWithChainCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewCastSkillWithChainCount.PlayView = function(self, TT, notify)
-  -- function num : 0_0
+function BuffViewCastSkillWithChainCount:PlayView(TT, notify)
   local entity = self._entity
   local result = self._buffResult
   local entityID = result:GetEntityID()
-  local petEntity = (self._world):GetEntityByID(entityID)
+  local petEntity = self._world:GetEntityByID(entityID)
   local buffView = petEntity:BuffView()
   buffView:SetBuffValue("AgentChainEntityID", entity:GetID())
 end
-
-

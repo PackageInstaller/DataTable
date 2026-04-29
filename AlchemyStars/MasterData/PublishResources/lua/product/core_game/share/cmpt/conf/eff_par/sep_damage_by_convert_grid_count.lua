@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_by_convert_grid_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamByConvertGridCount", SkillDamageEffectParam)
 SkillEffectParamByConvertGridCount = SkillEffectParamByConvertGridCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamByConvertGridCount.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamByConvertGridCount:Constructor(t)
   self._gridType = t.gridType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamByConvertGridCount.GetGridType = function(self)
-  -- function num : 0_1
+function SkillEffectParamByConvertGridCount:GetGridType()
   return self._gridType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamByConvertGridCount.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectParamByConvertGridCount:GetEffectType()
   return SkillEffectType.DamageByConvertGridCount
 end
-
-

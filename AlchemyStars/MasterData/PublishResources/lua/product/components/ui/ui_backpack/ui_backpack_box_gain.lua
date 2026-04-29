@@ -1,85 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_backpack_box_gain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBackPackBoxGain", UIController)
 UIBackPackBoxGain = UIBackPackBoxGain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBackPackBoxGain.Constructor = function(self)
-  -- function num : 0_0
+function UIBackPackBoxGain:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxGain.Dispose = function(self)
-  -- function num : 0_1
+function UIBackPackBoxGain:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxGain.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBackPackBoxGain:OnShow(uiParams)
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.Base)
+  self.uiItem:SetForm(UIItemForm.Base)
   self._giftId = uiParams[1]
   self._count = uiParams[2]
   self._item = uiParams[3]
   self._index = uiParams[4]
-  local tplId = (self._item):GetTplId()
-  ;
-  (self.uiItem):SetData({icon = (self._item):GetIcon(), quality = (self._item):GetColor(), text1 = (HelperProxy:GetInstance()):FormatItemCount((self._item):GetCount() * self._count), itemId = tplId, showNew = false})
-  ;
-  (self._txtName):SetText((self._item):GetName())
-  local count = (self:GetModule(ItemModule)):GetItemCount(tplId)
-  ;
-  (self._txtCount):SetText((StringTable.Get)("str_item_public_owned") .. (HelperProxy:GetInstance()):FormatItemCount(count))
-  ;
-  (self._txtDesc):SetText((self._item):GetDesc())
+  local tplId = self._item:GetTplId()
+  self.uiItem:SetData({
+    icon = self._item:GetIcon(),
+    quality = self._item:GetColor(),
+    text1 = HelperProxy:GetInstance():FormatItemCount(self._item:GetCount() * self._count),
+    itemId = tplId,
+    showNew = false
+  })
+  self._txtName:SetText(self._item:GetName())
+  local count = self:GetModule(ItemModule):GetItemCount(tplId)
+  self._txtCount:SetText(StringTable.Get("str_item_public_owned") .. HelperProxy:GetInstance():FormatItemCount(count))
+  self._txtDesc:SetText(self._item:GetDesc())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxGain.OnHide = function(self)
-  -- function num : 0_3
+function UIBackPackBoxGain:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxGain.bgOnClick = function(self)
-  -- function num : 0_4
+function UIBackPackBoxGain:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxGain.btnGainOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBackPackBoxGain:btnGainOnClick()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
-    local res, msg = (self:GetModule(ItemModule)):RequestChooseGift(TT, self._giftId, self._index, self._count)
+    local res, msg = self:GetModule(ItemModule):RequestChooseGift(TT, self._giftId, self._index, self._count)
     if res:GetSucc() then
       local ra = RoleAsset:New()
-      ra.assetid = (self._item):GetTplId()
-      ra.count = (self._item):GetCount() * self._count
+      ra.assetid = self._item:GetTplId()
+      ra.count = self._item:GetCount() * self._count
       self:ShowDialog("UIGetItemController", {ra})
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CloseUIBackPackBox)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.CloseUIBackPackBox)
       self:CloseDialog()
     else
-      do
-        ;
-        (Log.fatal)("### fail")
-      end
+      Log.fatal("### fail")
     end
-  end
-, self)
+  end, self)
 end
-
-

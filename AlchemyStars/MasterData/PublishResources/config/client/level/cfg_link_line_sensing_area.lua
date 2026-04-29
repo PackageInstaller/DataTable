@@ -1,11 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/level/cfg_link_line_sensing_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, DefaultRadius = 2, NearbyRadius = 3, DiagonalRadius = 4, angle = 5, drawonoff = 6}
+local key = {
+  ID = 1,
+  DefaultRadius = 2,
+  NearbyRadius = 3,
+  DiagonalRadius = 4,
+  angle = 5,
+  drawonoff = 6
+}
 local config = {
-{1, 0.5, 0.38, 0.48, "50|50|40|40|40|40|50|50", 0}
+  {
+    1,
+    0.5,
+    0.38,
+    0.48,
+    "50|50|40|40|40|40|50|50",
+    0
+  }
 }
 return config, "ID", key
-

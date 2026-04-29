@@ -1,84 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/loading/season_exit_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonExitLoadingHandler", LoadingHandler)
 SeasonExitLoadingHandler = SeasonExitLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonExitLoadingHandler.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("SeasonExitLoadingHandler")
+function SeasonExitLoadingHandler:Constructor()
+  GameGlobal.UIStateManager():Lock("SeasonExitLoadingHandler")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonExitLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(SeasonModule)
-  local uimodule = (GameGlobal.GetUIModule)(SeasonModule)
+function SeasonExitLoadingHandler:PreLoadBeforeLoadLevel(TT)
+  local module = GameGlobal.GetModule(SeasonModule)
+  local uimodule = GameGlobal.GetUIModule(SeasonModule)
   uimodule:ExitSeasonGame()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonExitLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  local loadingParams = {...}
+function SeasonExitLoadingHandler:OnLoadingFinish(...)
+  local loadingParams = {
+    ...
+  }
   local param = loadingParams[1]
-  local uiState, exitCb = nil, nil
+  local uiState, exitCb
   if param then
     if type(param) == "function" then
       exitCb = param
+    elseif type(param) == "string" then
+      uiState = param
     else
-      if type(param) == "string" then
-        uiState = param
-      else
-        ;
-        (Log.exception)("赛季退出参数错误")
-      end
+      Log.exception("赛季退出参数错误")
     end
   else
     uiState = UIStateType.UIMain
   end
   if uiState then
-    ((GameGlobal.UIStateManager)()):SwitchState(uiState)
-  else
-    if exitCb then
-      exitCb()
-    end
+    GameGlobal.UIStateManager():SwitchState(uiState)
+  elseif exitCb then
+    exitCb()
   end
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("SeasonExitLoadingHandler")
+  GameGlobal.UIStateManager():UnLock("SeasonExitLoadingHandler")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonExitLoadingHandler.LoadingType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonExitLoadingHandler:LoadingType()
   return LoadingType.STATICPIC
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonExitLoadingHandler.LoadingID = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
-  local seasonID = (seasonModule:UIModule()):GetSeasonID()
+function SeasonExitLoadingHandler:LoadingID()
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
+  local seasonID = seasonModule:UIModule():GetSeasonID()
   if not seasonID or seasonID <= 0 then
-    seasonID = (seasonModule:UIModule()):GetLatestSeasonID()
-    ;
-    (Log.error)("当前赛季已关闭 取最近一次开放的赛季loading图", seasonID)
+    seasonID = seasonModule:UIModule():GetLatestSeasonID()
+    Log.error("当前赛季已关闭 取最近一次开放的赛季loading图", seasonID)
   end
-  local cfg = (Cfg.cfg_season_loading)[seasonID]
-  do
-    if cfg then
-      local ids = cfg.loadingids
-      return ((GameGlobal.LoadingManager)()):FilterAndRandomLoadingID(ids)
-    end
-    return nil
+  local cfg = Cfg.cfg_season_loading[seasonID]
+  if cfg then
+    local ids = cfg.loadingids
+    return GameGlobal.LoadingManager():FilterAndRandomLoadingID(ids)
   end
+  return nil
 end
-
-

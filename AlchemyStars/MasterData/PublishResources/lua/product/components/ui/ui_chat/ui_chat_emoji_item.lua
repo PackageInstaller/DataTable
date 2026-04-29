@@ -1,47 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_emoji_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatEmojiItem", UICustomWidget)
 UIChatEmojiItem = UIChatEmojiItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatEmojiItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChatEmojiItem:OnShow(uiParam)
   self._emojiIconImg = self:GetUIComponent("RawImageLoader", "EmojiIcon")
   self._emojiIconGo = self:GetGameObject("EmojiIcon")
   self._emojiPressGo = self:GetGameObject("EmojiIconPress")
-  ;
-  (self._emojiPressGo):SetActive(false)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._emojiIconGo), UIEvent.Press, function(go)
-    -- function num : 0_0_0 , upvalues : self
-    (self._emojiPressGo):SetActive(true)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._emojiIconGo), UIEvent.Release, function(go)
-    -- function num : 0_0_1 , upvalues : self
-    (self._emojiPressGo):SetActive(false)
-  end
-)
+  self._emojiPressGo:SetActive(false)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._emojiIconGo), UIEvent.Press, function(go)
+    self._emojiPressGo:SetActive(true)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._emojiIconGo), UIEvent.Release, function(go)
+    self._emojiPressGo:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatEmojiItem.Refresh = function(self, emojiData, uiChatRecentFriendListPanel)
-  -- function num : 0_1
+function UIChatEmojiItem:Refresh(emojiData, uiChatRecentFriendListPanel)
   self._emojiId = emojiData.id
   self._emojiTexture = emojiData.textureName
-  ;
-  (self._emojiIconImg):LoadImage(self._emojiTexture)
+  self._emojiIconImg:LoadImage(self._emojiTexture)
   self._uiChatRecentFriendListPanel = uiChatRecentFriendListPanel
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatEmojiItem.EmojiIconOnClick = function(self, go)
-  -- function num : 0_2
-  (self._uiChatRecentFriendListPanel):SendImageMessage(self._emojiId)
+function UIChatEmojiItem:EmojiIconOnClick(go)
+  self._uiChatRecentFriendListPanel:SendImageMessage(self._emojiId)
 end
-
-

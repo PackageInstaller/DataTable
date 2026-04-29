@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_pet_power_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangePetPower", BuffViewBase)
 BuffViewChangePetPower = BuffViewChangePetPower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangePetPower.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local petPowerStateList = (self._buffResult):GetPetPowerList()
-  for _,petPowerState in pairs(petPowerStateList) do
+function BuffViewChangePetPower:PlayView(TT)
+  local petPowerStateList = self._buffResult:GetPetPowerList()
+  for _, petPowerState in pairs(petPowerStateList) do
     self:_PlayView(TT, petPowerState)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangePetPower._PlayView = function(self, TT, petPowerState)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewChangePetPower:_PlayView(TT, petPowerState)
   local entityID = petPowerState.petEntityID
   local petPstID = petPowerState.petPstID
   local curPower = petPowerState.power
@@ -27,31 +17,23 @@ BuffViewChangePetPower._PlayView = function(self, TT, petPowerState)
   local addCdAnimation = petPowerState.addCdAnimation
   local requireNTPowerReady = petPowerState.requireNTPowerReady
   local readyNoRemind = petPowerState.readyNoRemind
-  if (self._buffResult):GetNotifyView() == 0 then
-    return 
+  if self._buffResult:GetNotifyView() == 0 then
+    return
   end
-  ;
-  (Log.debug)("BuffViewChangePetPower() pet entity=", entityID, " power=", curPower, " ready=", ready)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetPowerChange, petPstID, curPower, true)
-  do
-    if ready then
-      local playReminder = ready
-      if readyNoRemind then
-        playReminder = false
-      end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, playReminder)
+  Log.debug("BuffViewChangePetPower() pet entity=", entityID, " power=", curPower, " ready=", ready)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetPowerChange, petPstID, curPower, true)
+  if ready then
+    local playReminder = ready
+    if readyNoRemind then
+      playReminder = false
     end
-    if cancelReady then
-      (GameGlobal:EventDispatcher()):Dispatch(GameEventType.PetActiveSkillCancelReady, petPstID, addCdAnimation)
-    end
-    if requireNTPowerReady then
-      local notify = NTPowerReady:New((self._world):GetEntityByID(entityID))
-      ;
-      ((self._world):GetService("PlayBuff")):PlayBuffView(TT, notify)
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PetActiveSkillGetReady, petPstID, playReminder)
+  end
+  if cancelReady then
+    GameGlobal:EventDispatcher():Dispatch(GameEventType.PetActiveSkillCancelReady, petPstID, addCdAnimation)
+  end
+  if requireNTPowerReady then
+    local notify = NTPowerReady:New(self._world:GetEntityByID(entityID))
+    self._world:GetService("PlayBuff"):PlayBuffView(TT, notify)
   end
 end
-
-

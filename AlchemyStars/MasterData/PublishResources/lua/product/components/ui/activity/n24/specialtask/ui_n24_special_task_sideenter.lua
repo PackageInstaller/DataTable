@@ -1,119 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n24/specialtask/ui_n24_special_task_sideenter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN24SpecialTaskSideEnter", UICustomWidget)
 UIN24SpecialTaskSideEnter = UIN24SpecialTaskSideEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN24SpecialTaskSideEnter.Constructor = function(self)
-  -- function num : 0_0
+function UIN24SpecialTaskSideEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskSideEnter.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN24SpecialTaskSideEnter:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskSideEnter._GetComponents = function(self)
-  -- function num : 0_2
+function UIN24SpecialTaskSideEnter:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._red = self:GetGameObject("red")
   self._new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskSideEnter.SetData = function(self)
-  -- function num : 0_3
+function UIN24SpecialTaskSideEnter:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskSideEnter.BtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local open = (self._campaign):CheckCampaignOpen()
+function UIN24SpecialTaskSideEnter:BtnOnClick(go)
+  local open = self._campaign:CheckCampaignOpen()
   if not open then
-    (self.root):SetActive(open)
-    ;
-    (self._setShowCallback)(open)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n24_specialtask_close"))
-    return 
+    self.root:SetActive(open)
+    self._setShowCallback(open)
+    ToastManager.ShowToast(StringTable.Get("str_n24_specialtask_close"))
+    return
   end
   self:ShowDialog("UIN24SpecialTask", function()
-    -- function num : 0_4_0 , upvalues : self
-    local open = (self._campaign):CheckCampaignOpen()
+    local open = self._campaign:CheckCampaignOpen()
     if not open then
-      (self.root):SetActive(open)
-      ;
-      (self._setShowCallback)(open)
+      self.root:SetActive(open)
+      self._setShowCallback(open)
     else
-      local showRedPoint = (self._localProcess):GetRedPoint()
-      ;
-      (self._red):SetActive(showRedPoint)
-      ;
-      (self._setNewRedCallback)(false, showRedPoint)
+      local showRedPoint = self._localProcess:GetRedPoint()
+      self._red:SetActive(showRedPoint)
+      self._setNewRedCallback(false, showRedPoint)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskSideEnter.OnSideEnterLoad = function(self, TT, setShowCallback, setNewRedCallback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN24SpecialTaskSideEnter:OnSideEnterLoad(TT, setShowCallback, setNewRedCallback)
   self._setShowCallback = setShowCallback
   self._setNewRedCallback = setNewRedCallback
   self.root = self:GetGameObject()
   self:Lock("UIN24SpecialTaskSideEnter")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SPECIAL, ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SPECIAL, ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   self:UnLock("UIN24SpecialTaskSideEnter")
   if res and not res:GetSucc() then
-    (self.root):SetActive(false)
-    ;
-    (self._setShowCallback)(false)
-    return 
+    self.root:SetActive(false)
+    self._setShowCallback(false)
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
-  self._questComponent = (self._localProcess):GetComponent(ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
-  self._questComponentInfo = (self._questComponent):GetComponentInfo()
-  if not (self._questComponent):ComponentIsOpen() then
-    (self.root):SetActive(false)
-    ;
-    (self._setShowCallback)(false)
-    return 
+  self._localProcess = self._campaign:GetLocalProcess()
+  self._questComponent = self._localProcess:GetComponent(ECampaignSpecialComponentID.ECAMPAIGN_SPECIAL_QUEST)
+  self._questComponentInfo = self._questComponent:GetComponentInfo()
+  if not self._questComponent:ComponentIsOpen() then
+    self.root:SetActive(false)
+    self._setShowCallback(false)
+    return
   end
-  ;
-  (self.root):SetActive(true)
-  ;
-  (self._setShowCallback)(true)
-  local showRedPoint = (self._localProcess):GetRedPoint()
-  ;
-  (self._red):SetActive(showRedPoint)
-  ;
-  (self._setNewRedCallback)(false, showRedPoint)
+  self.root:SetActive(true)
+  self._setShowCallback(true)
+  local showRedPoint = self._localProcess:GetRedPoint()
+  self._red:SetActive(showRedPoint)
+  self._setNewRedCallback(false, showRedPoint)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskSideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    return cfg.SideEnterIcon
-  end
+function UIN24SpecialTaskSideEnter:GetSideEnterRawImage()
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  return cfg and cfg.SideEnterIcon
 end
-
-

@@ -1,97 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_front_extend_degressive_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_FrontExtendDegressiveDamage", SkillEffectCalc_Base)
 SkillEffectCalc_FrontExtendDegressiveDamage = SkillEffectCalc_FrontExtendDegressiveDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_FrontExtendDegressiveDamage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_FrontExtendDegressiveDamage:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_FrontExtendDegressiveDamage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_FrontExtendDegressiveDamage:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   self._results = {}
   self._skillEffectCalcParam = skillEffectCalcParam
   local skillDamageParam = skillEffectCalcParam.skillEffectParam
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local centerPos = scopeResult:GetCenterPos()
   local effectParam = skillDamageParam:GetEffectParam()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = SkillScopeCalculator:New(utilScopeSvc)
   local scopeCalc = SkillScopeCalculator_PickUpFrontExtendWithDamage:New(skillCalculater)
-  local calcDamageFunction = function(gridPos, targetIDArray, addDamagePercent)
-    -- function num : 0_1_0 , upvalues : self
+  
+  local function calcDamageFunction(gridPos, targetIDArray, addDamagePercent)
     return self:_CalculateWithPosAndTarget(gridPos, targetIDArray, addDamagePercent)
   end
-
-  local calcScopeResult = scopeCalc:CalcRange(SkillScopeType.PickUpFrontExtendWithDamage, effectParam, centerPos, (casterEntity:BodyArea()):GetArea(), casterEntity:GetGridDirection(), SkillTargetType.MonsterTrap, centerPos, casterEntity, calcDamageFunction)
-  do
-    if (table.count)(self._results) == 0 then
-      local skillResult = (self._skillEffectService):NewSkillDamageEffectResult(nil, -1, 0, nil, nil)
-      ;
-      (table.insert)(self._results, skillResult)
-    end
-    for _,result in ipairs(self._results) do
-      result:SetSpecialScopeResultList(calcScopeResult:GetSpecialScopeResult())
-    end
-    return self._results
+  
+  local calcScopeResult = scopeCalc:CalcRange(SkillScopeType.PickUpFrontExtendWithDamage, effectParam, centerPos, casterEntity:BodyArea():GetArea(), casterEntity:GetGridDirection(), SkillTargetType.MonsterTrap, centerPos, casterEntity, calcDamageFunction)
+  if table.count(self._results) == 0 then
+    local skillResult = self._skillEffectService:NewSkillDamageEffectResult(nil, -1, 0, nil, nil)
+    table.insert(self._results, skillResult)
   end
+  for _, result in ipairs(self._results) do
+    result:SetSpecialScopeResultList(calcScopeResult:GetSpecialScopeResult())
+  end
+  return self._results
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_FrontExtendDegressiveDamage._CalculateWithPosAndTarget = function(self, gridPos, targetIDArray, addDamagePercent)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_FrontExtendDegressiveDamage:_CalculateWithPosAndTarget(gridPos, targetIDArray, addDamagePercent)
   local results = {}
-  for _,targetID in ipairs(targetIDArray) do
+  for _, targetID in ipairs(targetIDArray) do
     local result = self:_CalculateSingleTarget(gridPos, targetID, addDamagePercent)
     if result then
-      (table.appendArray)(results, result)
+      table.appendArray(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_FrontExtendDegressiveDamage._CalculateSingleTarget = function(self, gridPos, defenderEntityID, addDamagePercent)
-  -- function num : 0_3 , upvalues : _ENV
-  local skillDamageParam = (self._skillEffectCalcParam).skillEffectParam
+function SkillEffectCalc_FrontExtendDegressiveDamage:_CalculateSingleTarget(gridPos, defenderEntityID, addDamagePercent)
+  local skillDamageParam = self._skillEffectCalcParam.skillEffectParam
   local baseDamagePercent = skillDamageParam:GetBaseDamagePercent()
-  local defender = (self._world):GetEntityByID(defenderEntityID)
-  do
-    if defender == nil then
-      local skillResult = (self._skillEffectService):NewSkillDamageEffectResult(nil, -1, 0, nil, nil)
-      return {skillResult}
-    end
-    local attacker = (self._world):GetEntityByID((self._skillEffectCalcParam).casterEntityID)
-    local attackPos = (self._skillEffectCalcParam).attackPos
-    local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
-    local effectCalcSvc = self._skillEffectService
-    local skillResultList = {}
-    local damagePercent = baseDamagePercent + addDamagePercent
-    skillDamageParam:SetDamagePercent({damagePercent})
-    local ignoreShield, curSkillDamageIndex = nil, nil
-    local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(attacker, attackPos, defender, gridPos, (self._skillEffectCalcParam).skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex, ignoreShield, curSkillDamageIndex, gridPos)
-    local skillResult = effectCalcSvc:NewSkillDamageEffectResult(gridPos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
-    ;
-    (table.insert)(skillResultList, skillResult)
-    ;
-    (table.insert)(self._results, skillResult)
-    return skillResultList
+  local defender = self._world:GetEntityByID(defenderEntityID)
+  if defender == nil then
+    local skillResult = self._skillEffectService:NewSkillDamageEffectResult(nil, -1, 0, nil, nil)
+    return {skillResult}
   end
+  local attacker = self._world:GetEntityByID(self._skillEffectCalcParam.casterEntityID)
+  local attackPos = self._skillEffectCalcParam.attackPos
+  local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
+  local effectCalcSvc = self._skillEffectService
+  local skillResultList = {}
+  local damagePercent = baseDamagePercent + addDamagePercent
+  skillDamageParam:SetDamagePercent({damagePercent})
+  local ignoreShield, curSkillDamageIndex
+  local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(attacker, attackPos, defender, gridPos, self._skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex, ignoreShield, curSkillDamageIndex, gridPos)
+  local skillResult = effectCalcSvc:NewSkillDamageEffectResult(gridPos, defenderEntityID, nTotalDamage, listDamageInfo, damageStageIndex)
+  table.insert(skillResultList, skillResult)
+  table.insert(self._results, skillResult)
+  return skillResultList
 end
-
-

@@ -1,27 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_row_col_spread.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_NRowMColSpread", SkillScopeCalculator_Base)
 SkillScopeCalculator_NRowMColSpread = SkillScopeCalculator_NRowMColSpread
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_NRowMColSpread.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_NRowMColSpread:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local targetArea, wholeArea = self:_CalcNRowMColSpread(scopeParam, centerPos, bodyArea)
   local sortScopeUseCasterDir = scopeParam[4]
   if sortScopeUseCasterDir == 1 then
-    local world = (self._gridFilter)._world
+    local world = self._gridFilter._world
     local utilScopeSvc = world:GetService("UtilScopeCalc")
     targetArea = utilScopeSvc:SortScopeRangeWithDir(targetArea, casterDir)
     wholeArea = utilScopeSvc:SortScopeRangeWithDir(wholeArea, casterDir)
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.NRowsMColumns, centerPos, targetArea, wholeArea)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.NRowsMColumns, centerPos, targetArea, wholeArea)
+  return result
 end
-
-

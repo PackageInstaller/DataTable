@@ -1,41 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_level/ui_homeland_level_exp_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandLevelExpTips", UIController)
 UIHomelandLevelExpTips = UIHomelandLevelExpTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandLevelExpTips.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandLevelExpTips:Constructor()
   self.itemCount = 4
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelExpTips.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandLevelExpTips:OnShow(uiParams)
   self.itemPool = self:GetUIComponent("UISelectObjectPath", "content")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelExpTips.Flush = function(self)
-  -- function num : 0_2
-  (self.itemPool):SpawnObjects("UIHomelandLevelExpTipsItem", self.itemCount)
-  local items = (self.itemPool):GetAllSpawnList()
+function UIHomelandLevelExpTips:Flush()
+  self.itemPool:SpawnObjects("UIHomelandLevelExpTipsItem", self.itemCount)
+  local items = self.itemPool:GetAllSpawnList()
   for i = 1, self.itemCount do
-    (items[i]):Flush(i)
+    items[i]:Flush(i)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelExpTips.bgOnClick = function(self, go)
-  -- function num : 0_3
+function UIHomelandLevelExpTips:bgOnClick(go)
   self:CloseDialog()
 end
-
-

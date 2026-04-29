@@ -1,46 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/tab_flip/ui_active_task_flip_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveTaskFlipTab", UICustomWidget)
 UIActiveTaskFlipTab = UIActiveTaskFlipTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskFlipTab.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActiveTaskFlipTab:OnShow()
   self._gridSize = Vector2(135, 135)
   self:_GetComponent()
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.OnHide = function(self)
-  -- function num : 0_1
+function UIActiveTaskFlipTab:OnHide()
   self:DetachListener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.AddListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._itemChangeCallback = (GameHelper:GetInstance()):CreateCallback(self.OnItemCountChanged, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
+function UIActiveTaskFlipTab:AddListener()
+  self._itemChangeCallback = GameHelper:GetInstance():CreateCallback(self.OnItemCountChanged, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.DetachListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
+function UIActiveTaskFlipTab:DetachListener()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab._GetComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActiveTaskFlipTab:_GetComponent()
   self._moneyIcon = self:GetUIComponent("RawImageLoader", "moneyIcon")
   self._moneyNum = self:GetUIComponent("UILocalizationText", "moneyNum")
   self._itemContent = self:GetUIComponent("UISelectObjectPath", "itemContent")
@@ -51,197 +31,133 @@ UIActiveTaskFlipTab._GetComponent = function(self)
   self._effAnim = self:GetUIComponent("Animation", "effRect")
   self._gameObj = self:GetGameObject("anim")
   self._moneyIconObj = self:GetGameObject("moneyIcon")
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effRect).anchorMax = Vector2(0, 1)
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._effRect).anchorMin = Vector2(0, 1)
+  self._effRect.anchorMax = Vector2(0, 1)
+  self._effRect.anchorMin = Vector2(0, 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.OnItemCountChanged = function(self)
-  -- function num : 0_5
+function UIActiveTaskFlipTab:OnItemCountChanged()
   self:RefreshExchangeNum()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.Close = function(self, isAnim)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActiveTaskFlipTab:Close(isAnim)
   if self._selectInfo then
-    (self._selectInfo):closeOnClick()
+    self._selectInfo:closeOnClick()
   end
   if isAnim then
     self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    self:Lock("UIActiveTaskFlipTab_Close")
-    ;
-    (self._anim):Play("uieff_UIActiveTaskFlipTab_out")
-    YIELD(TT, 333)
-    ;
-    (self._gameObj):SetActive(false)
-    self:UnLock("UIActiveTaskFlipTab_Close")
-  end
-, self)
+      self:Lock("UIActiveTaskFlipTab_Close")
+      self._anim:Play("uieff_UIActiveTaskFlipTab_out")
+      YIELD(TT, 333)
+      self._gameObj:SetActive(false)
+      self:UnLock("UIActiveTaskFlipTab_Close")
+    end, self)
   else
-    ;
-    (self._gameObj):SetActive(false)
+    self._gameObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.Open = function(self)
-  -- function num : 0_7
-  (self._gameObj):SetActive(true)
+function UIActiveTaskFlipTab:Open()
+  self._gameObj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.SetData = function(self, data)
-  -- function num : 0_8
+function UIActiveTaskFlipTab:SetData(data)
   self._data = data
-  self._turnCardCfg = (self._data):GetTurnCardCfg()
+  self._turnCardCfg = self._data:GetTurnCardCfg()
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.RefreshExchangeNum = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._CostItem = ((self._turnCardCfg).CostItem)[1]
-  local moneyId = (self._CostItem)[1]
-  local moneyCfg = (Cfg.cfg_item)[moneyId]
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIActiveTaskFlipTab:RefreshExchangeNum()
+  self._CostItem = self._turnCardCfg.CostItem[1]
+  local moneyId = self._CostItem[1]
+  local moneyCfg = Cfg.cfg_item[moneyId]
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local num = itemModule:GetItemCount(moneyId)
-  ;
-  (self._moneyIcon):LoadImage(moneyCfg.Icon)
-  ;
-  (self._moneyNum):SetText(num)
+  self._moneyIcon:LoadImage(moneyCfg.Icon)
+  self._moneyNum:SetText(num)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.InitComponent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActiveTaskFlipTab:InitComponent()
   self:RefreshExchangeNum()
-  self._itemList = (self._data):GetTurnCardInfo()
-  self._items = (self._itemContent):SpawnObjects("UIActiveTaskFlipAwardItem", #self._itemList)
-  self._masks = (self._maskContent):SpawnObjects("UIActiveTaskFlipMaskItem", (table.count)(self._maskList))
+  self._itemList, self._maskList = self._data:GetTurnCardInfo()
+  self._items = self._itemContent:SpawnObjects("UIActiveTaskFlipAwardItem", #self._itemList)
+  self._masks = self._maskContent:SpawnObjects("UIActiveTaskFlipMaskItem", table.count(self._maskList))
   local maskIndex = 1
-  for _,data in pairs(self._maskList) do
-    ((self._masks)[maskIndex]):SetData(data, self._gridSize, function(item)
-    -- function num : 0_10_0 , upvalues : self
-    self:FlipMask(item)
-  end
-)
+  for _, data in pairs(self._maskList) do
+    self._masks[maskIndex]:SetData(data, self._gridSize, function(item)
+      self:FlipMask(item)
+    end)
     maskIndex = maskIndex + 1
   end
-  for i,v in pairs(self._items) do
-    local data = (self._itemList)[i]
+  for i, v in pairs(self._items) do
+    local data = self._itemList[i]
     v:SetData(data, self._gridSize)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.FlipMask = function(self, widget)
-  -- function num : 0_11 , upvalues : _ENV
-  local isOver = (self._data):CheckFlipIsOver()
+function UIActiveTaskFlipTab:FlipMask(widget)
+  local isOver = self._data:CheckFlipIsOver()
   if isOver then
-    return 
+    return
   end
-  local moneyId = (self._CostItem)[1]
-  local costNum = (self._CostItem)[2]
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local moneyId = self._CostItem[1]
+  local costNum = self._CostItem[2]
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local num = itemModule:GetItemCount(moneyId)
-  if num < costNum then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n32_turn_card_item_less"))
-    return 
+  if costNum > num then
+    ToastManager.ShowToast(StringTable.Get("str_n32_turn_card_item_less"))
+    return
   end
   if widget:IsMaskFliped() then
-    (Log.debug)("该牌已经被翻过")
-    return 
+    Log.debug("该牌已经被翻过")
+    return
   end
   self:Lock("UIActiveTaskFlipTab_FlipMask")
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, widget, _ENV
-    local comp = (self._data):GetFlipComp()
-    local index = (self._data):GetMatrixIndex()
+    local comp = self._data:GetFlipComp()
+    local index = self._data:GetMatrixIndex()
     local cellIndex = widget:GetCellIndex()
     local res = AsyncRequestRes:New()
     local rewards = comp:HandleTurnCardOperate(TT, res, index, cellIndex)
     if res:GetSucc() then
       widget:SetFlipState(widget, true)
       local pos = widget:GetMaskPos()
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._effRect).anchoredPosition = pos
-      ;
-      (self._effAnim):Play("uieff_UIActiveTaskFlipMaskItem")
+      self._effRect.anchoredPosition = pos
+      self._effAnim:Play("uieff_UIActiveTaskFlipMaskItem")
       YIELD(TT, 400)
-      if rewards and #rewards > 0 then
+      if rewards and 0 < #rewards then
         self:ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_11_0_0 , upvalues : _ENV, cellIndex
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnFlipMask, cellIndex)
-    end
-)
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.OnFlipMask, cellIndex)
+        end)
       else
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnFlipMask, cellIndex)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnFlipMask, cellIndex)
       end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshActiveTaskRed)
-    else
-      do
-        if res:GetResult() == CampaignErrorType.E_COMPONENT_TURNCARD_LACK_ITEM then
-          (ToastManager.ShowToast)((StringTable.Get)("str_n32_turn_card_item_less"))
-        else
-          if res:GetResult() == CampaignErrorType.E_COMPONENT_TURNCARD_CELL_TURNED then
-            (Log.fatal)("该牌已经被翻过")
-          end
-        end
-        self:UnLock("UIActiveTaskFlipTab_FlipMask")
-      end
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshActiveTaskRed)
+    elseif res:GetResult() == CampaignErrorType.E_COMPONENT_TURNCARD_LACK_ITEM then
+      ToastManager.ShowToast(StringTable.Get("str_n32_turn_card_item_less"))
+    elseif res:GetResult() == CampaignErrorType.E_COMPONENT_TURNCARD_CELL_TURNED then
+      Log.fatal("该牌已经被翻过")
     end
-  end
-, self)
+    self:UnLock("UIActiveTaskFlipTab_FlipMask")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.OnItemSelect = function(self, id, pos)
-  -- function num : 0_12
+function UIActiveTaskFlipTab:OnItemSelect(id, pos)
   if not self._selectInfo then
-    self._selectInfo = (self._selectInfoPool):SpawnObject("UISelectInfo")
+    self._selectInfo = self._selectInfoPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._selectInfo):SetData(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.AwardBtnOnClick = function(self)
-  -- function num : 0_13
-  local isOver = (self._data):CheckFlipIsOver()
+function UIActiveTaskFlipTab:AwardBtnOnClick()
+  local isOver = self._data:CheckFlipIsOver()
   if isOver then
-    return 
+    return
   end
-  self._itemList = (self._data):GetTurnCardInfo()
+  self._itemList, self._maskList = self._data:GetTurnCardInfo()
   self:ShowDialog("UIActiveTaskAwardShowController", self._itemList)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskFlipTab.MoneyIconBtnOnClick = function(self)
-  -- function num : 0_14
-  local moneyId = (self._CostItem)[1]
-  self:OnItemSelect(moneyId, ((self._moneyIconObj).transform).position)
+function UIActiveTaskFlipTab:MoneyIconBtnOnClick()
+  local moneyId = self._CostItem[1]
+  self:OnItemSelect(moneyId, self._moneyIconObj.transform.position)
 end
-
-

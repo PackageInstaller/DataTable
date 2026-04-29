@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/AnniversaryLogin/ui_activity_anniversary_login_tab_pre.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityAnniversaryLoginTabPre", UICustomWidget)
 UIActivityAnniversaryLoginTabPre = UIActivityAnniversaryLoginTabPre
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityAnniversaryLoginTabPre.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityAnniversaryLoginTabPre:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabPre.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityAnniversaryLoginTabPre:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabPre.SetData = function(self, campaign, component, refreshCallback, closeCallback, tipsCallback, btnCallback)
-  -- function num : 0_2
+function UIActivityAnniversaryLoginTabPre:SetData(campaign, component, refreshCallback, closeCallback, tipsCallback, btnCallback)
   self._campaign = campaign
   self._component = component
   self._refreshCallback = refreshCallback
@@ -31,64 +18,38 @@ UIActivityAnniversaryLoginTabPre.SetData = function(self, campaign, component, r
   self._btnCallback = btnCallback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabPre.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local state = (self._component):GetTimeRewardState(1)
+function UIActivityAnniversaryLoginTabPre:Refresh()
+  local state = self._component:GetTimeRewardState(1)
   local index = state == ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV and 1 or 2
   self:_SetState(index)
   self:_SetRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabPre._SetState = function(self, index)
-  -- function num : 0_4 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_txt_1", "CloseBtn"}
-, 
-{"_txt_2", "BackBtn"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, index)
+function UIActivityAnniversaryLoginTabPre:_SetState(index)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"_txt_1", "CloseBtn"},
+    {"_txt_2", "BackBtn"}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, index)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabPre._SetRed = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local red = (UIActivityAnniversaryLoginHelper.CheckComponentRedPoint)(self._campaign, ECampaignAnniversaryComponentID.ECAMPAIGN_RESOURCE_BOX)
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, 0, red, "", "_red")
+function UIActivityAnniversaryLoginTabPre:_SetRed()
+  local red = UIActivityAnniversaryLoginHelper.CheckComponentRedPoint(self._campaign, ECampaignAnniversaryComponentID.ECAMPAIGN_RESOURCE_BOX)
+  UIWidgetHelper.SetNewAndReds(self, 0, red, "", "_red")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabPre.PreviewBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._refreshCallback)(UIActivityAnniversaryLoginState.TabReward)
+function UIActivityAnniversaryLoginTabPre:PreviewBtnOnClick(go)
+  self._refreshCallback(UIActivityAnniversaryLoginState.TabReward)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabPre.ClaimBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._refreshCallback)(UIActivityAnniversaryLoginState.TabReward)
+function UIActivityAnniversaryLoginTabPre:ClaimBtnOnClick(go)
+  self._refreshCallback(UIActivityAnniversaryLoginState.TabReward)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabPre.CloseBtnOnClick = function(self, go)
-  -- function num : 0_8
-  (self._closeCallback)()
+function UIActivityAnniversaryLoginTabPre:CloseBtnOnClick(go)
+  self._closeCallback()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabPre.BackBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._refreshCallback)(UIActivityAnniversaryLoginState.TabMain)
+function UIActivityAnniversaryLoginTabPre:BackBtnOnClick(go)
+  self._refreshCallback(UIActivityAnniversaryLoginState.TabMain)
 end
-
-

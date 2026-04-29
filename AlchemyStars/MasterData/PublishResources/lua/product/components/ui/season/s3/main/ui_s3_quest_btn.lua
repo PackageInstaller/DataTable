@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/main/ui_s3_quest_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS3QuestBtn", UICustomWidget)
 UIS3QuestBtn = UIS3QuestBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS3QuestBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIS3QuestBtn:OnShow()
   self._constBtnName = self:GetName()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn.OnHide = function(self)
-  -- function num : 0_1
+function UIS3QuestBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn.SetData = function(self, seasonId, component)
-  -- function num : 0_2
+function UIS3QuestBtn:SetData(seasonId, component)
   self._seasonId = seasonId
   self._component = component
-  if component then
-    local isOpen = component:ComponentIsOpen()
-  end
+  local isOpen = component and component:ComponentIsOpen()
   self._state = isOpen and 1 or 2
   self:_SetState(self._state)
   local cur, total = self:_Calc(component)
@@ -36,67 +21,45 @@ UIS3QuestBtn.SetData = function(self, seasonId, component)
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn._SetState = function(self, state)
-  -- function num : 0_3
-  (self:GetGameObject("_over")):SetActive(state == 2)
+function UIS3QuestBtn:_SetState(state)
+  self:GetGameObject("_over"):SetActive(state == 2)
   local alpha = state == 2 and 0.5 or 1
   local obj = self:GetUIComponent("CanvasGroup", "_alphaGroup")
   obj.alpha = alpha
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn._SetNum = function(self, cur, total)
-  -- function num : 0_4 , upvalues : _ENV
+function UIS3QuestBtn:_SetNum(cur, total)
   local show = total ~= 0
-  ;
-  (self:GetGameObject("_imgNum")):SetActive(show)
-  local str = (UIActivityHelper.GetColorText)("#FFFFFF", cur, "#FFFFFF", "/" .. total)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtNum", str)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_imgNum"):SetActive(show)
+  local str = UIActivityHelper.GetColorText("#FFFFFF", cur, "#FFFFFF", "/" .. total)
+  UIWidgetHelper.SetLocalizationText(self, "_txtNum", str)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn._SetFin = function(self, cur, total)
-  -- function num : 0_5
+function UIS3QuestBtn:_SetFin(cur, total)
   local show = cur == total and total ~= 0
-  ;
-  (self:GetGameObject("_fin")):SetActive(show)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("_fin"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn._SummaryActive = function(self)
-  -- function num : 0_6
+function UIS3QuestBtn:_SummaryActive()
   local goNum = self:GetGameObject("_imgNum")
   local goFin = self:GetGameObject("_fin")
   local goOver = self:GetGameObject("_over")
   local showNum = goNum.activeSelf
   local showFin = goFin.activeSelf
   local showOver = self._state == 2
-  goNum:SetActive((not showOver and not showFin and showNum))
-  goFin:SetActive((not showOver and showFin))
+  goNum:SetActive(not showOver and not showFin and showNum)
+  goFin:SetActive(not showOver and showFin)
   goOver:SetActive(showOver)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn._Calc = function(self, component)
-  -- function num : 0_7 , upvalues : _ENV
+function UIS3QuestBtn:_Calc(component)
   if component == nil then
     return 0, 0
   end
-  local questList = (UIS1Helper.GetQuestInfo_BySeasonFilter)(component)
+  local questList = UIS1Helper.GetQuestInfo_BySeasonFilter(component)
   local questStatus = component:GetCampaignQuestStatus(questList)
-  local cur, total = 0, (table.count)(questStatus)
-  for _,v in pairs(questStatus) do
+  local cur, total = 0, table.count(questStatus)
+  for _, v in pairs(questStatus) do
     if v == CampaignQuestStatus.CQS_Taken then
       cur = cur + 1
     end
@@ -104,53 +67,34 @@ UIS3QuestBtn._Calc = function(self, component)
   return cur, total
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn._CalcNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if self._component then
-    local isOpen = (self._component):ComponentIsOpen()
-  end
-  local isNew = not (UISeasonLocalDBHelper.SeasonBtn_Has)(self._constBtnName, "New")
-  return not isOpen or isNew
+function UIS3QuestBtn:_CalcNew()
+  local isOpen = self._component and self._component:ComponentIsOpen()
+  local isNew = not UISeasonLocalDBHelper.SeasonBtn_Has(self._constBtnName, "New")
+  return isOpen and isNew
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn._CalcRed = function(self)
-  -- function num : 0_9
-  local isRed = self._component and (self._component):HaveRedPoint() or false
+function UIS3QuestBtn:_CalcRed()
+  local isRed = self._component and self._component:HaveRedPoint() or false
   return isRed
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn._CheckPoint = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIS3QuestBtn:_CheckPoint()
   local new = self:_CalcNew()
   local red = self:_CalcRed()
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", "_red")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", "_red")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS3QuestBtn.BtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.info)("UIS3QuestBtn:BtnOnClick")
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UIS3QuestBtn:BtnOnClick()
+  Log.info("UIS3QuestBtn:BtnOnClick")
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if seasonModule:CheckSeasonClose_ShowClientError(self._seasonId) then
-    return 
+    return
   end
   if self._state == 2 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_season_s1_main_btn_over"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_season_s1_main_btn_over"))
+    return
   end
-  ;
-  (UISeasonLocalDBHelper.SeasonBtn_Set)(self._constBtnName, "New")
+  UISeasonLocalDBHelper.SeasonBtn_Set(self._constBtnName, "New")
   self:_CheckPoint()
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonQuestController")
+  GameGlobal.UIStateManager():ShowDialog("UISeasonQuestController")
 end
-
-

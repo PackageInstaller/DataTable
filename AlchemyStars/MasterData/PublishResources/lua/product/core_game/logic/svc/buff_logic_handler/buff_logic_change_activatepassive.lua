@@ -1,34 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_activatepassive.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeActivatePassive", BuffLogicBase)
 BuffLogicChangeActivatePassive = BuffLogicChangeActivatePassive
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeActivatePassive.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeActivatePassive:Constructor(buffInstance, logicParam)
   self._light = logicParam.light == 1
   self._forceInit = logicParam.forceInit
   self._forceInitType = logicParam.forceInitType or 1
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeActivatePassive.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicChangeActivatePassive:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local buffResult = BuffResultChangeActivatePassive:New(self._light, self._forceInit, self._forceInitType)
-  do
-    if notify and notify:GetNotifyType() == NotifyType.NotifyLayerChange then
-      local layer = notify:GetLayer()
-      buffResult:SetLayer(layer)
-      buffResult:SetLayerName(notify:GetLayerName())
-    end
-    return buffResult
+  if notify and notify:GetNotifyType() == NotifyType.NotifyLayerChange then
+    local layer = notify:GetLayer()
+    buffResult:SetLayer(layer)
+    buffResult:SetLayerName(notify:GetLayerName())
   end
+  return buffResult
 end
-
-

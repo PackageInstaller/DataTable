@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_diff/ui_diff_node_normal.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffNodeNorm", UIDiffNodeBase)
 UIDiffNodeNorm = UIDiffNodeNorm
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffNodeNorm.SetInfo = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDiffNodeNorm:SetInfo()
   local tips = "str_diff_mission_node_tips_norm"
-  local name = (self._node):NodeName()
-  local cup1, cup2 = (self._node):CupNum()
-  ;
-  (self._texName):SetText((StringTable.Get)(tips))
-  ;
-  (self._texTip):SetText((StringTable.Get)(name))
-  ;
-  (self._cupNum):SetText(cup1 .. "/" .. cup2)
+  local name = self._node:NodeName()
+  local cup1, cup2 = self._node:CupNum()
+  self._texName:SetText(StringTable.Get(tips))
+  self._texTip:SetText(StringTable.Get(name))
+  self._cupNum:SetText(cup1 .. "/" .. cup2)
 end
-
-

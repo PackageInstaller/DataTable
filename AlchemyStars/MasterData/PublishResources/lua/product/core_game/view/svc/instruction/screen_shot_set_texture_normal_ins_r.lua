@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/screen_shot_set_texture_normal_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("ScreenShotSetTextureNormalInstruction", BaseInstruction)
 ScreenShotSetTextureNormalInstruction = ScreenShotSetTextureNormalInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ScreenShotSetTextureNormalInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function ScreenShotSetTextureNormalInstruction:Constructor(paramList)
   self._duration = tonumber(paramList.duration) or 3500
   self._effectID = tonumber(paramList.effectID)
   self._effectName = paramList.effectName
@@ -19,167 +12,120 @@ ScreenShotSetTextureNormalInstruction.Constructor = function(self, paramList)
   self._casterEffectHolderEffectID = tonumber(paramList.casterEffectHolderEffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ScreenShotSetTextureNormalInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local world = (casterEntity:GetOwnerWorld())
-  local obj = nil
+function ScreenShotSetTextureNormalInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local world = casterEntity:GetOwnerWorld()
+  local obj
   if self._effectID then
     local effectService = world:GetService("Effect")
     local efx = effectService:CreateScreenEffPointEffect(self._effectID)
-    obj = (efx:View()):GetGameObject()
+    obj = efx:View():GetGameObject()
   end
-  do
-    if self._casterEffectHolderEffectID and self._casterEffectHolderEffectID > 0 then
-      local casterEffectHolderCmpt = casterEntity:EffectHolder()
-      local effectEntityIDList = casterEffectHolderCmpt:GetEffectEntityIDByEffectID(self._casterEffectHolderEffectID)
-      if effectEntityIDList then
-        local effectEntityID = effectEntityIDList[#effectEntityIDList]
-        local effectEntity = world:GetEntityByID(effectEntityID)
-        if effectEntity and effectEntity:View() then
-          obj = (effectEntity:View()):GetGameObject()
-        end
+  if self._casterEffectHolderEffectID and self._casterEffectHolderEffectID > 0 then
+    local casterEffectHolderCmpt = casterEntity:EffectHolder()
+    local effectEntityIDList = casterEffectHolderCmpt:GetEffectEntityIDByEffectID(self._casterEffectHolderEffectID)
+    if effectEntityIDList then
+      local effectEntityID = effectEntityIDList[#effectEntityIDList]
+      local effectEntity = world:GetEntityByID(effectEntityID)
+      if effectEntity and effectEntity:View() then
+        obj = effectEntity:View():GetGameObject()
       end
-    else
-      do
-        if self._effectName then
-          obj = (GameObjectHelper.Find)(self._effectName)
-        end
-        if not obj then
-          return 
-        end
-        local taegetObj = obj
-        if self._rootName then
-          taegetObj = (GameObjectHelper.FindChild)(obj.transform, self._rootName)
-        end
-        if not taegetObj then
-          return 
-        end
-        local csMeshRenderer = (taegetObj.gameObject):GetComponentInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
-        local cMainCamera = world:MainCamera()
-        local csCamera = cMainCamera._sceneCamera
-        self._csCamera = csCamera
-        self._oldMask = csCamera.cullingMask
-        self._oldclearFlags = csCamera.clearFlags
-        csCamera.clearFlags = (UnityEngine.CameraClearFlags).Depth
-        csCamera.cullingMask = 1048576
-        local casterEntityObj = (casterEntity:View()):GetGameObject()
-        ;
-        (GameObjectHelper.SetGameObjectLayer)(casterEntityObj, 20)
-        self:SetPieceEntityObjLayer(world, 20)
-        local renderTextureScene = self:OnGetRenderTexture()
-        YIELD(TT)
-        ;
-        (GameObjectHelper.SetGameObjectLayer)(casterEntityObj, 0)
-        self:SetPieceEntityObjLayer(world, 0)
-        local csMaterial = csMeshRenderer.material
-        csMaterial:SetTexture(self._textureName, renderTextureScene)
-        csMeshRenderer.material = csMaterial
-        if self._block == 1 then
-          YIELD(TT, self._duration)
-          renderTextureScene:Destroy()
-          self:_DeleteBoardBindEffect(casterEntity)
-        else
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self, renderTextureScene, casterEntity
+    end
+  elseif self._effectName then
+    obj = GameObjectHelper.Find(self._effectName)
+  end
+  if not obj then
+    return
+  end
+  local taegetObj = obj
+  if self._rootName then
+    taegetObj = GameObjectHelper.FindChild(obj.transform, self._rootName)
+  end
+  if not taegetObj then
+    return
+  end
+  local csMeshRenderer = taegetObj.gameObject:GetComponentInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
+  local cMainCamera = world:MainCamera()
+  local csCamera = cMainCamera._sceneCamera
+  self._csCamera = csCamera
+  self._oldMask = csCamera.cullingMask
+  self._oldclearFlags = csCamera.clearFlags
+  csCamera.clearFlags = UnityEngine.CameraClearFlags.Depth
+  csCamera.cullingMask = 1048576
+  local casterEntityObj = casterEntity:View():GetGameObject()
+  GameObjectHelper.SetGameObjectLayer(casterEntityObj, 20)
+  self:SetPieceEntityObjLayer(world, 20)
+  local renderTextureScene = self:OnGetRenderTexture()
+  YIELD(TT)
+  GameObjectHelper.SetGameObjectLayer(casterEntityObj, 0)
+  self:SetPieceEntityObjLayer(world, 0)
+  local csMaterial = csMeshRenderer.material
+  csMaterial:SetTexture(self._textureName, renderTextureScene)
+  csMeshRenderer.material = csMaterial
+  if self._block == 1 then
     YIELD(TT, self._duration)
     renderTextureScene:Destroy()
     self:_DeleteBoardBindEffect(casterEntity)
-  end
-)
-        end
-      end
-    end
+  else
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      YIELD(TT, self._duration)
+      renderTextureScene:Destroy()
+      self:_DeleteBoardBindEffect(casterEntity)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ScreenShotSetTextureNormalInstruction._DeleteBoardBindEffect = function(self, casterEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function ScreenShotSetTextureNormalInstruction:_DeleteBoardBindEffect(casterEntity)
   local world = casterEntity:GetOwnerWorld()
   if casterEntity and self._casterEffectHolderEffectID and self._casterEffectHolderEffectID > 0 then
     local casterEffectHolderCmpt = casterEntity:EffectHolder()
     if casterEffectHolderCmpt then
       local effectEntityIDList = casterEffectHolderCmpt:GetEffectEntityIDByEffectID(self._casterEffectHolderEffectID)
       if effectEntityIDList then
-        for _,effectEntityID in ipairs(effectEntityIDList) do
+        for _, effectEntityID in ipairs(effectEntityIDList) do
           local effectEntity = world:GetEntityByID(effectEntityID)
           if world and effectEntity then
             world:DestroyEntity(effectEntity)
           end
         end
       end
-      do
-        casterEffectHolderCmpt:ClearEffectByEffectID(self._casterEffectHolderEffectID)
-      end
+      casterEffectHolderCmpt:ClearEffectByEffectID(self._casterEffectHolderEffectID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ScreenShotSetTextureNormalInstruction.OnGetRenderTexture = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((self._csCamera).gameObject):SetActive(true)
-  local renderTexture = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._csCamera).targetTexture = renderTexture
-  ;
-  (self._csCamera):Render()
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = renderTexture
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._csCamera).targetTexture = nil
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = nil
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._csCamera).cullingMask = self._oldMask
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._csCamera).clearFlags = self._oldclearFlags
-  ;
-  ((self._csCamera).gameObject):SetActive(false)
+function ScreenShotSetTextureNormalInstruction:OnGetRenderTexture()
+  self._csCamera.gameObject:SetActive(true)
+  local renderTexture = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  self._csCamera.targetTexture = renderTexture
+  self._csCamera:Render()
+  UnityEngine.RenderTexture.active = renderTexture
+  self._csCamera.targetTexture = nil
+  UnityEngine.RenderTexture.active = nil
+  self._csCamera.cullingMask = self._oldMask
+  self._csCamera.clearFlags = self._oldclearFlags
+  self._csCamera.gameObject:SetActive(false)
   return renderTexture
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ScreenShotSetTextureNormalInstruction.SetPieceEntityObjLayer = function(self, world, layer)
-  -- function num : 0_4 , upvalues : _ENV
-  local pieceGroup = world:GetGroup((world.BW_WEMatchers).Piece)
-  for _,e in ipairs(pieceGroup:GetEntities()) do
-    if e and e:View() and (e:View()):GetGameObject() then
-      local pieceEntityObj = (e:View()):GetGameObject()
+function ScreenShotSetTextureNormalInstruction:SetPieceEntityObjLayer(world, layer)
+  local pieceGroup = world:GetGroup(world.BW_WEMatchers.Piece)
+  for _, e in ipairs(pieceGroup:GetEntities()) do
+    if e and e:View() and e:View():GetGameObject() then
+      local pieceEntityObj = e:View():GetGameObject()
       if pieceEntityObj then
-        (GameObjectHelper.SetGameObjectLayer)(pieceEntityObj, layer)
+        GameObjectHelper.SetGameObjectLayer(pieceEntityObj, layer)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ScreenShotSetTextureNormalInstruction.GetCacheResource = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ScreenShotSetTextureNormalInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

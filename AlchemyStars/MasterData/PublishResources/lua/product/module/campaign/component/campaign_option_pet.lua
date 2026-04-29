@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/campaign_option_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignOptionPet", ICampaignComponentLocalProcessBase)
 CCampaignOptionPet = CCampaignOptionPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignOptionPet.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignOptionPet:Constructor()
   self._questComponent = nil
   self._questComponentInfo = nil
   self._personProgressScoreComponent = nil
@@ -16,55 +9,37 @@ CCampaignOptionPet.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignOptionPet:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_OPTION_PET
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignOptionPet:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignOptionPet:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetQuestComponent()
   self:_GetPersonProgressComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet._GetQuestComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST)
+function CCampaignOptionPet:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet._GetPersonProgressComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._personProgressScoreComponent = (self._campaignObj):GetComponent(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_PERSON_PROCESS)
+function CCampaignOptionPet:_GetPersonProgressComponent()
+  self._personProgressScoreComponent = self._campaignObj:GetComponent(ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_PERSON_PROCESS)
   if not self._personProgressScoreComponent then
-    return 
+    return
   end
-  self._personProgressScoreCompInfo = (self._personProgressScoreComponent):ComponentInfo()
+  self._personProgressScoreCompInfo = self._personProgressScoreComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignOptionPet:GetComponent(componentID)
   if ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST == componentID then
     return self._questComponent
   end
@@ -74,10 +49,7 @@ CCampaignOptionPet.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignOptionPet:GetComponentInfo(componentID)
   if ECampaignOptionPetComponentID.ECAMPAIGN_OPTION_PET_QUEST == componentID then
     return self._questComponentInfo
   end
@@ -87,33 +59,16 @@ CCampaignOptionPet.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet.GetEntryNew = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignOptionPet:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_OPTION_PET)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet.GetEntryRedDot = function(self)
-  -- function num : 0_9
-  if not self:HardLineMissionRedDot() then
-    return self:CampQuestReddot()
-  end
+function CCampaignOptionPet:GetEntryRedDot()
+  return self:HardLineMissionRedDot() or self:CampQuestReddot()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignOptionPet.CampQuestReddot = function(self)
-  -- function num : 0_10
-  if self._questComponent then
-    return (self._questComponent):HaveRedPoint()
-  end
+function CCampaignOptionPet:CampQuestReddot()
+  return self._questComponent and self._questComponent:HaveRedPoint()
 end
-
-

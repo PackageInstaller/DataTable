@@ -1,98 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_board_splice_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderBoardSpliceComponent", Object)
 RenderBoardSpliceComponent = RenderBoardSpliceComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderBoardSpliceComponent.Constructor = function(self)
-  -- function num : 0_0
+function RenderBoardSpliceComponent:Constructor()
   self._gridEntityTable = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardSpliceComponent.Dispose = function(self)
-  -- function num : 0_1
+function RenderBoardSpliceComponent:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardSpliceComponent.GetGridRenderEntity = function(self, pos)
-  -- function num : 0_2
-  if not pos or not (self._gridEntityTable)[pos.x] or not ((self._gridEntityTable)[pos.x])[pos.y] then
+function RenderBoardSpliceComponent:GetGridRenderEntity(pos)
+  if not (pos and self._gridEntityTable[pos.x]) or not self._gridEntityTable[pos.x][pos.y] then
     return nil
   end
-  return ((self._gridEntityTable)[pos.x])[pos.y]
+  return self._gridEntityTable[pos.x][pos.y]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardSpliceComponent.SetGridRenderEntityData = function(self, pos, gridEntity)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._gridEntityTable)[pos.x] then
-    (self._gridEntityTable)[pos.x] = {}
+function RenderBoardSpliceComponent:SetGridRenderEntityData(pos, gridEntity)
+  if not self._gridEntityTable[pos.x] then
+    self._gridEntityTable[pos.x] = {}
   end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not ((self._gridEntityTable)[pos.x])[pos.y] then
-    ((self._gridEntityTable)[pos.x])[pos.y] = {}
+  if not self._gridEntityTable[pos.x][pos.y] then
+    self._gridEntityTable[pos.x][pos.y] = {}
   end
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._gridEntityTable)[pos.x])[pos.y] = gridEntity
+  self._gridEntityTable[pos.x][pos.y] = gridEntity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderBoardSpliceComponent.RemoveGridRenderEntityData = function(self, pos)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not ((self._gridEntityTable)[pos.x])[pos.y] then
-    ((self._gridEntityTable)[pos.x])[pos.y] = {}
+function RenderBoardSpliceComponent:RemoveGridRenderEntityData(pos)
+  if not self._gridEntityTable[pos.x][pos.y] then
+    self._gridEntityTable[pos.x][pos.y] = {}
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._gridEntityTable)[pos.x])[pos.y] = nil
+  self._gridEntityTable[pos.x][pos.y] = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderBoardSplice = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).RenderBoardSplice)
+function Entity:RenderBoardSplice()
+  return self:GetComponent(self.WEComponentsEnum.RenderBoardSplice)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderBoardSplice = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).RenderBoardSplice)
+function Entity:HasRenderBoardSplice()
+  return self:HasComponent(self.WEComponentsEnum.RenderBoardSplice)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderBoardSplice = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderBoardSplice
+function Entity:AddRenderBoardSplice()
+  local index = self.WEComponentsEnum.RenderBoardSplice
   local component = RenderBoardSpliceComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderBoardSplice = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderBoardSplice
+function Entity:ReplaceRenderBoardSplice()
+  local index = self.WEComponentsEnum.RenderBoardSplice
   local component = RenderBoardSpliceComponent:New()
   self:ReplaceComponent(index, component)
 end
-
-

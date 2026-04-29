@@ -1,40 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/backpack/ui_season_maze_action_card_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeActionCardInfoController", UIController)
 UISeasonMazeActionCardInfoController = UISeasonMazeActionCardInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeActionCardInfoController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeActionCardInfoController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActionCardInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeActionCardInfoController:OnShow(uiParams)
   self:InitWidget()
   self.cfgid = uiParams[1]
-  self._cfg = (Cfg.cfg_component_season_maze_hand)[self.cfgid]
-  self.item = (self.relicPool):SpawnObject("UISeasonMazeCardItem")
-  ;
-  (self.item):SetData(1, self.cfgid, function(cfg)
-    -- function num : 0_1_0
-  end
-, function(cfg)
-    -- function num : 0_1_1
-  end
-)
+  self._cfg = Cfg.cfg_component_season_maze_hand[self.cfgid]
+  self.item = self.relicPool:SpawnObject("UISeasonMazeCardItem")
+  self.item:SetData(1, self.cfgid, function(cfg)
+  end, function(cfg)
+  end)
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActionCardInfoController.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMazeActionCardInfoController:InitWidget()
   self.colorDown = self:GetUIComponent("Image", "colorDown")
   self.desc = self:GetUIComponent("UILocalizationText", "desc")
   self.relicPool = self:GetUIComponent("UISelectObjectPath", "relicPool")
@@ -52,66 +34,45 @@ UISeasonMazeActionCardInfoController.InitWidget = function(self)
   self._atlas = self:GetAsset("SeasonMaze.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActionCardInfoController.InitUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if (self._cfg).BagCardDes1 == nil then
-    (self.t1):SetActive(false)
+function UISeasonMazeActionCardInfoController:InitUI()
+  if self._cfg.BagCardDes1 == nil then
+    self.t1:SetActive(false)
   else
-    ;
-    (self.desc):SetText((StringTable.Get)((self._cfg).BagCardDes1))
+    self.desc:SetText(StringTable.Get(self._cfg.BagCardDes1))
   end
-  if (self._cfg).BagCardDes2 == nil then
-    (self.t2):SetActive(false)
+  if self._cfg.BagCardDes2 == nil then
+    self.t2:SetActive(false)
   else
-    ;
-    (self.desc2):SetText((StringTable.Get)((self._cfg).BagCardDes2))
-    if (self._cfg).EffectIDs ~= nil then
-      local id = ((self._cfg).EffectIDs)[1]
+    self.desc2:SetText(StringTable.Get(self._cfg.BagCardDes2))
+    if self._cfg.EffectIDs ~= nil then
+      local id = self._cfg.EffectIDs[1]
       if id then
-        local effectCfg = (Cfg.cfg_component_season_maze_effect)[id]
+        local effectCfg = Cfg.cfg_component_season_maze_effect[id]
         if effectCfg and effectCfg.EffectList then
-          local effectList = (effectCfg.EffectList)[1]
+          local effectList = effectCfg.EffectList[1]
           local resType = effectList[1]
           local attType = effectList[2]
           if resType == SeasonMazeEffectType.SMET_Pro then
-            local cfg = (Cfg.cfg_season_maze_attribute)[attType]
+            local cfg = Cfg.cfg_season_maze_attribute[attType]
             if cfg then
               local spriteName = cfg.CardIcon
-              -- DECOMPILER ERROR at PC70: Confused about usage of register: R8 in 'UnsetPending'
-
-              ;
-              (self.icon2).sprite = (self._atlas):GetSprite(spriteName)
+              self.icon2.sprite = self._atlas:GetSprite(spriteName)
             end
           else
-            do
-              do
-                local spriteName = (self._cfg).CardIcon
-                -- DECOMPILER ERROR at PC79: Confused about usage of register: R7 in 'UnsetPending'
-
-                ;
-                (self.icon2).sprite = (self._atlas):GetSprite(spriteName)
-                if (self._cfg).BagCardDes3 == nil then
-                  (self.t3):SetActive(false)
-                else
-                  ;
-                  (self.desc3):SetText((StringTable.Get)((self._cfg).BagCardDes3))
-                end
-              end
-            end
+            local spriteName = self._cfg.CardIcon
+            self.icon2.sprite = self._atlas:GetSprite(spriteName)
           end
         end
       end
     end
   end
+  if self._cfg.BagCardDes3 == nil then
+    self.t3:SetActive(false)
+  else
+    self.desc3:SetText(StringTable.Get(self._cfg.BagCardDes3))
+  end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeActionCardInfoController.Bg1OnClick = function(self)
-  -- function num : 0_4
+function UISeasonMazeActionCardInfoController:Bg1OnClick()
   self:CloseDialog()
 end
-
-

@@ -1,53 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/active_task/tab_mission/ui_active_task_mission_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActiveTaskMissionTab", UICustomWidget)
 UIActiveTaskMissionTab = UIActiveTaskMissionTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActiveTaskMissionTab.OnShow = function(self)
-  -- function num : 0_0
+function UIActiveTaskMissionTab:OnShow()
   self._timerName = "CountDown"
   self:AddListener()
   self:_GetComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.OnHide = function(self)
-  -- function num : 0_1
+function UIActiveTaskMissionTab:OnHide()
   self:RemoveListener()
-  ;
-  (self._timerHolder):Dispose()
+  self._timerHolder:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.AddListener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._refreshActiveTaskRedCallback = (GameHelper:GetInstance()):CreateCallback(self.Refresh, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.RefreshActiveTaskRed, self._refreshActiveTaskRedCallback)
-  self._itemChangeCallback = (GameHelper:GetInstance()):CreateCallback(self.OnItemCountChanged, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
+function UIActiveTaskMissionTab:AddListener()
+  self._refreshActiveTaskRedCallback = GameHelper:GetInstance():CreateCallback(self.Refresh, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.RefreshActiveTaskRed, self._refreshActiveTaskRedCallback)
+  self._itemChangeCallback = GameHelper:GetInstance():CreateCallback(self.OnItemCountChanged, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.RemoveListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.RefreshActiveTaskRed, self._refreshActiveTaskRedCallback)
-  ;
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
+function UIActiveTaskMissionTab:RemoveListener()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.RefreshActiveTaskRed, self._refreshActiveTaskRedCallback)
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.ItemCountChanged, self._itemChangeCallback)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab._GetComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActiveTaskMissionTab:_GetComponent()
   self._diffTime = self:GetUIComponent("UILocalizationText", "DiffTime")
   self._dailyMissionContent = self:GetUIComponent("UISelectObjectPath", "dailyMissionContent")
   self._accumMissionContent = self:GetUIComponent("UISelectObjectPath", "accumMissionContent")
@@ -60,259 +37,189 @@ UIActiveTaskMissionTab._GetComponent = function(self)
   self._moneyIconObj = self:GetGameObject("moneyIcon")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.SetData = function(self, data)
-  -- function num : 0_5
+function UIActiveTaskMissionTab:SetData(data)
   self._data = data
-  self._turnCardCfg = (self._data):GetTurnCardCfg()
+  self._turnCardCfg = self._data:GetTurnCardCfg()
   self:InitComponent()
   self:RefreshCountdown()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.Refresh = function(self)
-  -- function num : 0_6
+function UIActiveTaskMissionTab:Refresh()
   self:RefreshExchangeNum()
   self:RefreshMission()
   self:RefreshCountdown()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.OnItemCountChanged = function(self)
-  -- function num : 0_7
+function UIActiveTaskMissionTab:OnItemCountChanged()
   self:RefreshExchangeNum()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.RefreshExchangeNum = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._CostItem = ((self._turnCardCfg).CostItem)[1]
-  local moneyId = (self._CostItem)[1]
-  local moneyCfg = (Cfg.cfg_item)[moneyId]
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIActiveTaskMissionTab:RefreshExchangeNum()
+  self._CostItem = self._turnCardCfg.CostItem[1]
+  local moneyId = self._CostItem[1]
+  local moneyCfg = Cfg.cfg_item[moneyId]
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local num = itemModule:GetItemCount(moneyId)
-  ;
-  (self._moneyIcon):LoadImage(moneyCfg.Icon)
-  ;
-  (self._moneyNum):SetText(num)
+  self._moneyIcon:LoadImage(moneyCfg.Icon)
+  self._moneyNum:SetText(num)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.Close = function(self, isAnim)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActiveTaskMissionTab:Close(isAnim)
   if self._selectInfo then
-    (self._selectInfo):closeOnClick()
+    self._selectInfo:closeOnClick()
   end
-  ;
-  (self._timerHolder):StopTimer(self._timerName)
+  self._timerHolder:StopTimer(self._timerName)
   if isAnim then
     self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    self:Lock("UIActiveTaskMissionTab_Close")
-    ;
-    (self._anim):Play("uieff_UIActiveTaskMissionTab_out")
-    YIELD(TT, 333)
-    ;
-    (self._gameObj):SetActive(false)
-    for _,v in pairs(self._dailyTask) do
-      v:Close()
-    end
-    for _,v in pairs(self._accumTask) do
-      v:Close()
-    end
-    self:UnLock("UIActiveTaskMissionTab_Close")
-  end
-, self)
+      self:Lock("UIActiveTaskMissionTab_Close")
+      self._anim:Play("uieff_UIActiveTaskMissionTab_out")
+      YIELD(TT, 333)
+      self._gameObj:SetActive(false)
+      for _, v in pairs(self._dailyTask) do
+        v:Close()
+      end
+      for _, v in pairs(self._accumTask) do
+        v:Close()
+      end
+      self:UnLock("UIActiveTaskMissionTab_Close")
+    end, self)
   else
-    ;
-    (self._gameObj):SetActive(false)
+    self._gameObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.Open = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._gameObj):SetActive(true)
+function UIActiveTaskMissionTab:Open()
+  self._gameObj:SetActive(true)
   self:Refresh()
-  for i,v in pairs(self._dailyTask) do
+  for i, v in pairs(self._dailyTask) do
     v:Open(i)
   end
-  for i,v in pairs(self._accumTask) do
+  for i, v in pairs(self._accumTask) do
     v:Open(i)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.RefreshMission = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActiveTaskMissionTab:RefreshMission()
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
     self:Lock("UIActiveTaskMissionTab RefreshMission")
-    ;
-    (self._anim):Play("uieff_UIActiveTaskMissionTab_in")
-    local dailyTask = (self._data):GetDailyTask()
-    local accumTask = (self._data):GetAccumTask()
-    for i,v in pairs(self._dailyTask) do
+    self._anim:Play("uieff_UIActiveTaskMissionTab_in")
+    local dailyTask = self._data:GetDailyTask()
+    local accumTask = self._data:GetAccumTask()
+    for i, v in pairs(self._dailyTask) do
       local task = dailyTask[i]
       v:SetData(task, self._data, function(id, pos)
-      -- function num : 0_11_0_0 , upvalues : self
-      self:OnItemSelect(id, pos)
+        self:OnItemSelect(id, pos)
+      end)
     end
-)
-    end
-    for i,v in pairs(self._accumTask) do
+    for i, v in pairs(self._accumTask) do
       local task = accumTask[i]
       v:SetData(task, self._data, function(id, pos)
-      -- function num : 0_11_0_1 , upvalues : self
-      self:OnItemSelect(id, pos)
-    end
-)
+        self:OnItemSelect(id, pos)
+      end)
     end
     YIELD(TT, 400)
     self:UnLock("UIActiveTaskMissionTab RefreshMission")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.InitComponent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local dailyTask = (self._data):GetDailyTask()
-  local accumTask = (self._data):GetAccumTask()
-  self._dailyTask = (self._dailyMissionContent):SpawnObjects("UIActiveTaskMissionItem", #dailyTask)
-  self._accumTask = (self._accumMissionContent):SpawnObjects("UIActiveTaskMissionItem", #accumTask)
-  for i,v in pairs(self._dailyTask) do
+function UIActiveTaskMissionTab:InitComponent()
+  local dailyTask = self._data:GetDailyTask()
+  local accumTask = self._data:GetAccumTask()
+  self._dailyTask = self._dailyMissionContent:SpawnObjects("UIActiveTaskMissionItem", #dailyTask)
+  self._accumTask = self._accumMissionContent:SpawnObjects("UIActiveTaskMissionItem", #accumTask)
+  for i, v in pairs(self._dailyTask) do
     local task = dailyTask[i]
     v:SetData(task, self._data, function(id, pos)
-    -- function num : 0_12_0 , upvalues : self
-    self:OnItemSelect(id, pos)
+      self:OnItemSelect(id, pos)
+    end)
   end
-)
-  end
-  for i,v in pairs(self._accumTask) do
+  for i, v in pairs(self._accumTask) do
     local task = accumTask[i]
     v:SetData(task, self._data, function(id, pos)
-    -- function num : 0_12_1 , upvalues : self
-    self:OnItemSelect(id, pos)
-  end
-)
+      self:OnItemSelect(id, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.RefreshCountdown = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local closeTime = (self._data):GetDailyTaskEndTime()
-  local countDown = function()
-    -- function num : 0_13_0 , upvalues : _ENV, closeTime, self
-    local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
-    local time = (math.ceil)(closeTime - now)
+function UIActiveTaskMissionTab:RefreshCountdown()
+  local closeTime = self._data:GetDailyTaskEndTime()
+  
+  local function countDown()
+    local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
+    local time = math.ceil(closeTime - now)
     local timeStr = self:GetFormatTimerStr(time)
     if self._timeString ~= timeStr then
-      (self._diffTime):SetText(timeStr)
+      self._diffTime:SetText(timeStr)
       self._timeString = timeStr
     end
     if time < 0 then
       self:StartTask(function(TT)
-      -- function num : 0_13_0_0 , upvalues : _ENV, self
-      local res = AsyncRequestRes:New()
-      local comp = (self._data):GetMissionComp()
-      comp:HandleCamQuestDailyReset(TT, res)
-      if res:GetSucc() then
-        (ToastManager.ShowToast)((StringTable.Get)("str_n32_turn_card_daily_mission_refresh"))
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshActiveTaskRed)
-        self:Refresh()
-      else
-        ;
-        (Log.fatal)("请求更新每日任务失败")
-      end
-    end
-, self)
-      ;
-      (self._timerHolder):StopTimer(self._timerName)
+        local res = AsyncRequestRes:New()
+        local comp = self._data:GetMissionComp()
+        comp:HandleCamQuestDailyReset(TT, res)
+        if res:GetSucc() then
+          ToastManager.ShowToast(StringTable.Get("str_n32_turn_card_daily_mission_refresh"))
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshActiveTaskRed)
+          self:Refresh()
+        else
+          Log.fatal("请求更新每日任务失败")
+        end
+      end, self)
+      self._timerHolder:StopTimer(self._timerName)
     end
   end
-
+  
   countDown()
-  ;
-  (self._timerHolder):StartTimerInfinite(self._timerName, 1000, countDown)
+  self._timerHolder:StartTimerInfinite(self._timerName, 1000, countDown)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.GetFormatTimerStr = function(self, time, id)
-  -- function num : 0_14 , upvalues : _ENV
-  local default_id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107"}
-  if not id then
-    id = default_id
-  end
-  local timeStr = (StringTable.Get)(id.over)
+function UIActiveTaskMissionTab:GetFormatTimerStr(time, id)
+  local default_id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107"
+  }
+  id = id or default_id
+  local timeStr = StringTable.Get(id.over)
   if time < 0 then
     return timeStr
   end
-  local day, hour, min, second = (UIActivityHelper.Time2Str)(time)
-  if day > 0 then
-    timeStr = day .. (StringTable.Get)(id.day) .. hour .. (StringTable.Get)(id.hour)
+  local day, hour, min, second = UIActivityHelper.Time2Str(time)
+  if 0 < day then
+    timeStr = day .. StringTable.Get(id.day) .. hour .. StringTable.Get(id.hour)
+  elseif 0 < hour then
+    timeStr = hour .. StringTable.Get(id.hour) .. min .. StringTable.Get(id.min)
+  elseif 0 < min then
+    timeStr = min .. StringTable.Get(id.min)
   else
-    if hour > 0 then
-      timeStr = hour .. (StringTable.Get)(id.hour) .. min .. (StringTable.Get)(id.min)
-    else
-      if min > 0 then
-        timeStr = min .. (StringTable.Get)(id.min)
-      else
-        timeStr = (StringTable.Get)(id.zero)
-      end
-    end
+    timeStr = StringTable.Get(id.zero)
   end
-  return (StringTable.Get)(self:GetTimeDownString(), timeStr)
+  return StringTable.Get(self:GetTimeDownString(), timeStr)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.GetTimeDownString = function(self)
-  -- function num : 0_15
+function UIActiveTaskMissionTab:GetTimeDownString()
   return "str_n32_turn_card_refresh_time"
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.OnItemSelect = function(self, id, pos)
-  -- function num : 0_16
+function UIActiveTaskMissionTab:OnItemSelect(id, pos)
   if not self._selectInfo then
-    self._selectInfo = (self._selectInfoPool):SpawnObject("UISelectInfo")
+    self._selectInfo = self._selectInfoPool:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._selectInfo):SetData(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.AwardBtnOnClick = function(self)
-  -- function num : 0_17
-  local isOver = (self._data):CheckFlipIsOver()
+function UIActiveTaskMissionTab:AwardBtnOnClick()
+  local isOver = self._data:CheckFlipIsOver()
   if isOver then
-    return 
+    return
   end
-  self._itemList = (self._data):GetTurnCardInfo()
+  self._itemList, self._maskList = self._data:GetTurnCardInfo()
   self:ShowDialog("UIActiveTaskAwardShowController", self._itemList)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActiveTaskMissionTab.MoneyIconBtnOnClick = function(self)
-  -- function num : 0_18
-  local moneyId = (self._CostItem)[1]
-  self:OnItemSelect(moneyId, ((self._moneyIconObj).transform).position)
+function UIActiveTaskMissionTab:MoneyIconBtnOnClick()
+  local moneyId = self._CostItem[1]
+  self:OnItemSelect(moneyId, self._moneyIconObj.transform.position)
 end
-
-

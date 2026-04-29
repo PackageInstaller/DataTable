@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/common/ui_n25_entry_btn_normal_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25EntryBtnNormalLevel", UIN25EntryBtnBase)
 UIN25EntryBtnNormalLevel = UIN25EntryBtnNormalLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25EntryBtnNormalLevel.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN25EntryBtnNormalLevel:OnShow(uiParams)
   self:InitWidget()
 end
-
-

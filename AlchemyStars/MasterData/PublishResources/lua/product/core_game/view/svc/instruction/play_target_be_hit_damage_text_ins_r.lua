@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_target_be_hit_damage_text_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTargetBeHitDamageTextInstruction", BaseInstruction)
 PlayTargetBeHitDamageTextInstruction = PlayTargetBeHitDamageTextInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTargetBeHitDamageTextInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayTargetBeHitDamageTextInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTargetBeHitDamageTextInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTargetBeHitDamageTextInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local playDamageService = world:GetService("PlayDamage")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local curDamageIndex = phaseContext:GetCurDamageResultIndex()
   local curDamageInfoIndex = phaseContext:GetCurDamageInfoIndex()
   local curDamageResultStageIndex = phaseContext:GetCurDamageResultStageIndex()
@@ -26,14 +16,14 @@ PlayTargetBeHitDamageTextInstruction.DoInstruction = function(self, TT, casterEn
   local damageResult = damageResultArray[curDamageIndex]
   local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
   if not damageInfo then
-    return 
+    return
   end
   local damageGridPos = damageResult:GetGridPos()
   local skillID = skillEffectResultContainer:GetSkillID()
   local targetEntityID = phaseContext:GetCurTargetEntityID()
   local targetEntity = world:GetEntityByID(targetEntityID)
   if not targetEntity then
-    return 
+    return
   end
   local damageShowType = playDamageService:SingleOrGrid(skillID)
   damageInfo:SetShowType(damageShowType)
@@ -44,5 +34,3 @@ PlayTargetBeHitDamageTextInstruction.DoInstruction = function(self, TT, casterEn
     mtrAni:PlayHit()
   end
 end
-
-

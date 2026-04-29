@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/System/ValueType.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local ValueType = {}
 ValueType[Vector3] = 1
 ValueType[Quaternion] = 2
@@ -14,25 +9,21 @@ ValueType[Bounds] = 7
 ValueType[Touch] = 8
 ValueType[LayerMask] = 9
 ValueType[RaycastHit] = 10
-local GetValueType = function()
-  -- function num : 0_0 , upvalues : _ENV, ValueType
-  local getmetatable = getmetatable
+
+local function GetValueType()
+  local getmetatable = _ENV.getmetatable
   local ValueType = ValueType
   return function(udata)
-    -- function num : 0_0_0 , upvalues : getmetatable, ValueType
     local meta = getmetatable(udata)
     if meta == nil then
       return 0
     end
     return ValueType[meta] or 0
   end
-
 end
 
-AddValueType = function(table, type)
-  -- function num : 0_1 , upvalues : ValueType
+function AddValueType(table, type)
   ValueType[table] = type
 end
 
 GetLuaValueType = GetValueType()
-

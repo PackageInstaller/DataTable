@@ -1,88 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/story_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("StoryComponent", ICampaignComponent)
 StoryComponent = StoryComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-StoryComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function StoryComponent:Constructor()
   self.m_component_info = CStoryComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function StoryComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = CStoryComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_2 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function StoryComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.GetComponentInfo = function(self)
-  -- function num : 0_3
+function StoryComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.GetComponentType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function StoryComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_STORY
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.GetCampaignCount = function(self)
-  -- function num : 0_5
-  return (self.m_component_info).m_total_count
+function StoryComponent:GetCampaignCount()
+  return self.m_component_info.m_total_count
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.GetAlreadyReceivedStoryIdList = function(self)
-  -- function num : 0_6
-  return (self.m_component_info).m_recieved_reward_story
+function StoryComponent:GetAlreadyReceivedStoryIdList()
+  return self.m_component_info.m_recieved_reward_story
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.IsStoryReceived = function(self, story_id)
-  -- function num : 0_7 , upvalues : _ENV
-  if not next((self.m_component_info).m_recieved_reward_story) then
+function StoryComponent:IsStoryReceived(story_id)
+  if not next(self.m_component_info.m_recieved_reward_story) then
     return false
   end
-  return (table.icontains)((self.m_component_info).m_recieved_reward_story, story_id)
+  return table.icontains(self.m_component_info.m_recieved_reward_story, story_id)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.CheckStoryIsUnlock = function(self, story_id)
-  -- function num : 0_8 , upvalues : _ENV
-  local config = (Cfg.cfg_campaign_story)[story_id]
+function StoryComponent:CheckStoryIsUnlock(story_id)
+  local config = Cfg.cfg_campaign_story[story_id]
   if not config then
     return false
   end
   local recv_list = self:GetAlreadyReceivedStoryIdList()
-  if config.PreStoryID and not (table.icontains)(recv_list, config.PreStoryID) then
+  if config.PreStoryID and not table.icontains(recv_list, config.PreStoryID) then
     return false
   end
   if config.ComponentID then
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
     if not campaignModule then
       return false
     end
@@ -91,34 +60,29 @@ StoryComponent.CheckStoryIsUnlock = function(self, story_id)
       return false
     end
     if config.NeedMissionList ~= nil and next(config.NeedMissionList) ~= nil then
-      for k,v in pairs(config.NeedMissionList) do
+      for k, v in pairs(config.NeedMissionList) do
         if not com:IsPassCamMissionID(v) then
           return false
         end
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.GetStoryIsUnlockInfo = function(self, story_id)
-  -- function num : 0_9 , upvalues : _ENV
-  local config = (Cfg.cfg_campaign_story)[story_id]
+function StoryComponent:GetStoryIsUnlockInfo(story_id)
+  local config = Cfg.cfg_campaign_story[story_id]
   if not config then
     return ECampaignStoryCondition.E_CONDITION_ALL_LOCK
   end
   local condition1 = true
   local condition2 = true
   local recv_list = self:GetAlreadyReceivedStoryIdList()
-  if config.PreStoryID and not (table.icontains)(recv_list, config.PreStoryID) then
+  if config.PreStoryID and not table.icontains(recv_list, config.PreStoryID) then
     condition1 = false
   end
   if config.ComponentID then
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
     if not campaignModule then
       return ECampaignStoryCondition.E_CONDITION_ALL_LOCK
     end
@@ -127,94 +91,73 @@ StoryComponent.GetStoryIsUnlockInfo = function(self, story_id)
       return ECampaignStoryCondition.E_CONDITION_ALL_LOCK
     end
     if config.NeedMissionList ~= nil and next(config.NeedMissionList) ~= nil then
-      for k,v in pairs(config.NeedMissionList) do
+      for k, v in pairs(config.NeedMissionList) do
         if not com:IsPassCamMissionID(v) then
           condition2 = false
         end
       end
     end
   end
-  do
-    if condition1 and condition2 then
-      return ECampaignStoryCondition.E_UNLOCK
-    else
-      if condition1 then
-        return ECampaignStoryCondition.E_CONDITION1_UNLOCK
-      else
-        if condition2 then
-          return ECampaignStoryCondition.E_CONDITION2_UNLOCK
-        else
-          return ECampaignStoryCondition.E_CONDITION_ALL_LOCK
-        end
-      end
-    end
+  if condition1 and condition2 then
+    return ECampaignStoryCondition.E_UNLOCK
+  elseif condition1 then
+    return ECampaignStoryCondition.E_CONDITION1_UNLOCK
+  elseif condition2 then
+    return ECampaignStoryCondition.E_CONDITION2_UNLOCK
+  else
+    return ECampaignStoryCondition.E_CONDITION_ALL_LOCK
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.HaveRedPoint = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function StoryComponent:HaveRedPoint()
   if not self:ComponentIsOpen() then
     return false
   end
   local recv_list = self:GetAlreadyReceivedStoryIdList()
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  if not (Cfg.cfg_component_story)[nCfgId] then
+  if not Cfg.cfg_component_story[nCfgId] then
     return false
   end
-  local story_list = ((Cfg.cfg_component_story)[nCfgId]).StoryID
-  local count_list = ((Cfg.cfg_component_story)[nCfgId]).UnlockCount
+  local story_list = Cfg.cfg_component_story[nCfgId].StoryID
+  local count_list = Cfg.cfg_component_story[nCfgId].UnlockCount
   local cur_count = self:GetCampaignCount()
-  for i = 1, (table.count)(story_list) do
-    -- DECOMPILER ERROR at PC59: Unhandled construct in 'MakeBoolean' P1
-
-    if not (table.icontains)(recv_list, story_list[i]) and count_list and count_list[i] and count_list[i] <= cur_count and self:CheckStoryIsUnlock(story_list[i]) then
-      return true
-    end
-    if self:CheckStoryIsUnlock(story_list[i]) then
-      return true
+  for i = 1, table.count(story_list) do
+    if not table.icontains(recv_list, story_list[i]) then
+      if count_list and count_list[i] then
+        if cur_count >= count_list[i] and self:CheckStoryIsUnlock(story_list[i]) then
+          return true
+        end
+      elseif self:CheckStoryIsUnlock(story_list[i]) then
+        return true
+      end
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.HandleStoryTake = function(self, TT, asyncRes, nStoryId)
-  -- function num : 0_11 , upvalues : _ENV
+function StoryComponent:HandleStoryTake(TT, asyncRes, nStoryId)
   local request = StoryComponentRecvRewardReq:New()
   local response = StoryComponentRecvRep:New()
   request.story_id = nStoryId
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][StoryComponent] HandleStoryTake ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][StoryComponent] HandleStoryTake ret:", asyncRes.m_result)
     return nil
   end
-  ;
-  (table.insert)((self.m_component_info).m_recieved_reward_story, nStoryId)
+  table.insert(self.m_component_info.m_recieved_reward_story, nStoryId)
   return response.rewards
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-StoryComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_12 , upvalues : _ENV
+function StoryComponent:CampaignComponentPushNotify(notify_data)
   if StoryComponentNotifyType.StoryComponentNotifyType_PointChange == notify_data.m_notify_type then
     local ev = NotifyStoryComponentPointChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
-      (self.m_component_info).m_total_count = ev.m_total_count
+      self.m_component_info.m_total_count = ev.m_total_count
     else
-      ;
-      (Log.error)("[CampaignCom][StoryComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][StoryComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
-
-

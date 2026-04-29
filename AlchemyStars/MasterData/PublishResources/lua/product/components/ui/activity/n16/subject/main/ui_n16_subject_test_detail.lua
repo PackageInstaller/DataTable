@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/subject/main/ui_n16_subject_test_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16SubjectTestDetailController", UIController)
 UIN16SubjectTestDetailController = UIN16SubjectTestDetailController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN16SubjectTestDetailController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN16SubjectTestDetailController:OnShow(uiParams)
   self._levelData = uiParams[1]
   self._tittleLabel = self:GetUIComponent("UILocalizedTMP", "Tittle")
   self._titleBg = self:GetUIComponent("UILocalizationText", "TitleBg")
@@ -16,67 +9,42 @@ UIN16SubjectTestDetailController.OnShow = function(self, uiParams)
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
   self._historyCountLabel = self:GetUIComponent("UILocalizationText", "HistoryCount")
   self._gradeLabel = self:GetUIComponent("UILocalizedTMP", "Grade")
-  ;
-  (self._tittleLabel):SetText((self._levelData):GetLevelName())
-  ;
-  (self._titleBg):SetText((self._levelData):GetLevelName())
-  ;
-  (self._title1):SetText((self._levelData):GetLevelName())
-  ;
-  (self._desLabel):SetText((self._levelData):GetDes())
-  local historyCount = (self._levelData):GetHistoryRecord()
+  self._tittleLabel:SetText(self._levelData:GetLevelName())
+  self._titleBg:SetText(self._levelData:GetLevelName())
+  self._title1:SetText(self._levelData:GetLevelName())
+  self._desLabel:SetText(self._levelData:GetDes())
+  local historyCount = self._levelData:GetHistoryRecord()
   if historyCount <= 0 then
-    (self._historyCountLabel):SetText("--")
+    self._historyCountLabel:SetText("--")
   else
-    ;
-    (self._historyCountLabel):SetText((StringTable.Get)("str_activity_n16_test_level_subject_count", historyCount))
+    self._historyCountLabel:SetText(StringTable.Get("str_activity_n16_test_level_subject_count", historyCount))
   end
-  local gradeStr = (self._levelData):GetGradeLevelStr()
-  ;
-  (self._gradeLabel):SetText(gradeStr)
-  self._EMIMatResRequest = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_n16_ingame_evaluate.mat", LoadType.Mat)
-  self._EMIMat = (self._EMIMatResRequest).Obj
-  local mat = (self._gradeLabel).fontMaterial
-  -- DECOMPILER ERROR at PC97: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._gradeLabel).fontMaterial = self._EMIMat
-  ;
-  ((self._gradeLabel).fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
-  self._EMIMatResRequest1 = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_n16_ingame_detial.mat", LoadType.Mat)
-  self._EMIMat1 = (self._EMIMatResRequest1).Obj
-  -- DECOMPILER ERROR at PC120: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._tittleLabel).fontMaterial = self._EMIMat1
-  ;
-  ((self._tittleLabel).fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  local gradeStr = self._levelData:GetGradeLevelStr()
+  self._gradeLabel:SetText(gradeStr)
+  self._EMIMatResRequest = ResourceManager:GetInstance():SyncLoadAsset("uieff_n16_ingame_evaluate.mat", LoadType.Mat)
+  self._EMIMat = self._EMIMatResRequest.Obj
+  local mat = self._gradeLabel.fontMaterial
+  self._gradeLabel.fontMaterial = self._EMIMat
+  self._gradeLabel.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  self._EMIMatResRequest1 = ResourceManager:GetInstance():SyncLoadAsset("uieff_n16_ingame_detial.mat", LoadType.Mat)
+  self._EMIMat1 = self._EMIMatResRequest1.Obj
+  self._tittleLabel.fontMaterial = self._EMIMat1
+  self._tittleLabel.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectTestDetailController.OnHide = function(self)
-  -- function num : 0_1
+function UIN16SubjectTestDetailController:OnHide()
   self._EMIMatResRequest = nil
   self._EMIMat = nil
   self._EMIMatResRequest1 = nil
   self._EMIMat1 = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectTestDetailController.BtnStartTestOnClick = function(self)
-  -- function num : 0_2
-  local grade = (self._levelData):GetLeveGrade()
+function UIN16SubjectTestDetailController:BtnStartTestOnClick()
+  local grade = self._levelData:GetLeveGrade()
   self:ShowDialog("UIN16AnswerController", grade)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN16SubjectTestDetailController.MaskOnClick = function(self)
-  -- function num : 0_3
+function UIN16SubjectTestDetailController:MaskOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,88 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_akexiya_force_movement_and_teleport_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayAkexiyaForceMovementAndTeleportInstruction", BaseInstruction)
 PlayAkexiyaForceMovementAndTeleportInstruction = PlayAkexiyaForceMovementAndTeleportInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAkexiyaForceMovementAndTeleportInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAkexiyaForceMovementAndTeleportInstruction:Constructor(paramList)
   self._oldPosEffectID = tonumber(paramList.oldPosEffectID)
   self._newPosEffectID = tonumber(paramList.newPosEffectID)
   self._mode = tonumber(paramList.mode)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAkexiyaForceMovementAndTeleportInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAkexiyaForceMovementAndTeleportInstruction:GetCacheResource()
   local t = {}
-  if self._oldPosEffectID and (Cfg.cfg_effect)[self._oldPosEffectID] then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._oldPosEffectID]).ResPath, 1})
+  if self._oldPosEffectID and Cfg.cfg_effect[self._oldPosEffectID] then
+    table.insert(t, {
+      Cfg.cfg_effect[self._oldPosEffectID].ResPath,
+      1
+    })
   end
-  if self._newPosEffectID and (Cfg.cfg_effect)[self._newPosEffectID] then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._newPosEffectID]).ResPath, 1})
+  if self._newPosEffectID and Cfg.cfg_effect[self._newPosEffectID] then
+    table.insert(t, {
+      Cfg.cfg_effect[self._newPosEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAkexiyaForceMovementAndTeleportInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local world = (casterEntity:GetOwnerWorld())
-  -- DECOMPILER ERROR at PC2: Overwrote pending register: R5 in 'AssignReg'
-
-  local target, oldPos, newPos = .end, nil, nil
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayAkexiyaForceMovementAndTeleportInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local world = casterEntity:GetOwnerWorld()
+  local target, oldPos, newPos
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local teleportResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Teleport)
-  if teleportResultArray and #teleportResultArray > 0 then
+  if teleportResultArray and 0 < #teleportResultArray then
     local result = teleportResultArray[1]
     target = result:GetTargetID()
     oldPos = result:GetPosOld()
     newPos = result:GetPosNew()
   else
-    do
-      local forceMovementResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ForceMovement)
-      if forceMovementResultArray and #forceMovementResultArray > 0 then
-        local result = forceMovementResultArray[1]
-        for _,moveResult in ipairs(result:GetMoveResult()) do
-          if moveResult.isMoved then
-            target = moveResult.targetID
-            oldPos = moveResult.v2OldPos
-            newPos = moveResult.v2NewPos
-          end
-        end
-      end
-      do
-        if not target or not oldPos or not newPos then
-          return 
-        end
-        local e = world:GetEntityByID(target)
-        if not e then
-          return 
-        end
-        if self._mode == 1 then
-          local effectService = world:GetService("Effect")
-          effectService:CreatePositionEffect(self._oldPosEffectID, oldPos)
-          effectService:CreatePositionEffect(self._newPosEffectID, newPos)
-        else
-          do
-            if self._mode == 2 then
-              e:SetViewVisible(false)
-              e:SetLocation(newPos)
-            else
-              if self._mode == 3 then
-                e:SetViewVisible(true)
-              end
-            end
-          end
+    local forceMovementResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ForceMovement)
+    if forceMovementResultArray and 0 < #forceMovementResultArray then
+      local result = forceMovementResultArray[1]
+      for _, moveResult in ipairs(result:GetMoveResult()) do
+        if moveResult.isMoved then
+          target = moveResult.targetID
+          oldPos = moveResult.v2OldPos
+          newPos = moveResult.v2NewPos
         end
       end
     end
   end
+  if not (target and oldPos) or not newPos then
+    return
+  end
+  local e = world:GetEntityByID(target)
+  if not e then
+    return
+  end
+  if self._mode == 1 then
+    local effectService = world:GetService("Effect")
+    effectService:CreatePositionEffect(self._oldPosEffectID, oldPos)
+    effectService:CreatePositionEffect(self._newPosEffectID, newPos)
+  elseif self._mode == 2 then
+    e:SetViewVisible(false)
+    e:SetLocation(newPos)
+  elseif self._mode == 3 then
+    e:SetViewVisible(true)
+  end
 end
-
-

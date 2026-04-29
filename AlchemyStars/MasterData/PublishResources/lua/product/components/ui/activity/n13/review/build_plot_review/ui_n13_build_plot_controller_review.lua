@@ -1,203 +1,146 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n13/review/build_plot_review/ui_n13_build_plot_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN13BuildPlotControllerReview", UIController)
 UIN13BuildPlotControllerReview = UIN13BuildPlotControllerReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN13BuildPlotControllerReview._PlayAnim = function(self, widgetName, animName, time, callback)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN13BuildPlotControllerReview:_PlayAnim(widgetName, animName, time, callback)
   local anim = self:GetUIComponent("Animation", widgetName)
   self:Lock(animName)
   anim:Play(animName)
   self:StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, time, self, animName, callback
     YIELD(TT, time)
     self:UnLock(animName)
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.InitWidget = function(self)
-  -- function num : 0_1
+function UIN13BuildPlotControllerReview:InitWidget()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil, false, true)
+  end, nil, false, true)
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
   self._side = self:GetUIComponent("Transform", "side")
   self._ext = self:GetUIComponent("Transform", "ext")
   self._type2icon = {
-[1] = {[1] = "n13_jqhg_btn03", [2] = "n13_jqhg_btn04"}
-, 
-[2] = {[1] = "n13_jqhg_btn05", [2] = "n13_jqhg_btn06"}
-}
+    [1] = {
+      [1] = "n13_jqhg_btn03",
+      [2] = "n13_jqhg_btn04"
+    },
+    [2] = {
+      [1] = "n13_jqhg_btn05",
+      [2] = "n13_jqhg_btn06"
+    }
+  }
   self._sideIcon = self:GetUIComponent("RawImageLoader", "side")
   self._extIcon = self:GetUIComponent("RawImageLoader", "ext")
   self._redPoint = self:GetGameObject("RedPoint")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN13BuildPlotControllerReview:OnShow(uiParams)
   self._isOpen = true
   self._buildManager = uiParams[1]
   self._callBack = uiParams[2]
   if not self._buildManager then
-    (Log.error)("UIN13BuildRewardController:OnShow() buildManager == nil")
+    Log.error("UIN13BuildRewardController:OnShow() buildManager == nil")
     self:CloseDialog()
-    return 
+    return
   end
-  self.playerID = ((GameGlobal.GameLogic)()):GetOpenId()
+  self.playerID = GameGlobal.GameLogic():GetOpenId()
   self:InitWidget()
   self._idx = {1, 1}
   self:_FillUIData()
   self:_ChangeType(1)
-  ;
-  (self._redPoint):SetActive(self:CheckRed())
+  self._redPoint:SetActive(self:CheckRed())
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.OnHide = function(self)
-  -- function num : 0_3
+function UIN13BuildPlotControllerReview:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._FillUIData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local reviewMap = {(self._buildManager):GetBuildDataStoryReviewIdMap(), (self._buildManager):GetPicnicDataStoryReviewIdMap()}
+function UIN13BuildPlotControllerReview:_FillUIData()
+  local reviewMap = {
+    self._buildManager:GetBuildDataStoryReviewIdMap(),
+    self._buildManager:GetPicnicDataStoryReviewIdMap()
+  }
   self._data = {
-[1] = {}
-, 
-[2] = {}
-}
-  local cfgs = (Cfg.cfg_n13_plot_review)({})
-  for i,v in ipairs(cfgs) do
+    [1] = {},
+    [2] = {}
+  }
+  local cfgs = Cfg.cfg_n13_plot_review({})
+  for i, v in ipairs(cfgs) do
     local type = v.Type
     local map = reviewMap[type]
-    do
-      if type ~= 1 or not "cfg_component_build_item" then
-        local cfgName = map[i] or "cfg_component_picnic"
-      end
-      ;
-      (Log.exception)("UIN13BuildPlotControllerReview:_FillUIData()", " cfg_n13_plot_review [id] = " .. i, " has not found in " .. cfgName)
-      local storyId = 0
-      local unlock = false
-      local condition = ""
-      if type == 1 then
-        local buildItemId, status = (map[i]).buildItemId, (map[i]).status
-        unlock = (self._buildManager):CheckNextStatusComplete(buildItemId, status)
-        storyId = (self._buildManager):GetBuildStoryId(buildItemId, status)
-        if not unlock then
-          local step = (self._buildManager):CalcBuildUnlockStep(buildItemId, status)
-          condition = (StringTable.Get)("str_n13_build_plot_step_build", step)
-        end
-      else
-        do
-          local seq = (map[i]).seq
-          storyId = (self._buildManager):GetPicnicStory(seq)
-          unlock = self:CheckStory(map, i)
-          if i > 10 then
-            local lastUnlock = self:CheckStory(map, i - 1)
-            -- DECOMPILER ERROR at PC106: Confused about usage of register: R15 in 'UnsetPending'
-
-            if lastUnlock and not unlock and i > 10 and i < 15 then
-              (self._idx)[type] = i - 10
-            else
-              if lastUnlock and i == 15 then
-                local lastTrueUnlock = self:CheckStory(map, i)
-                local Seq = (map[i]).seq
-                local lastStoryId = (self._buildManager):GetPicnicStory(Seq)
-                local value = (LocalDB.GetInt)(self.playerID .. lastStoryId .. "UIN13BuildReviewStoryEnd")
-                -- DECOMPILER ERROR at PC137: Confused about usage of register: R19 in 'UnsetPending'
-
-                if lastUnlock and lastTrueUnlock and value == 0 then
-                  (self._idx)[type] = i - 9
-                else
-                end
-              end
-            end
-          end
-          -- DECOMPILER ERROR at PC148: Confused about usage of register: R19 in 'UnsetPending'
-
-          if lastUnlock and lastTrueUnlock and value == 1 then
-            do
-              do
-                do
-                  (self._idx)[type] = i - 10
-                  condition = "none"
-                  ;
-                  (table.insert)((self._data)[type], {storyId = storyId, title = (StringTable.Get)(v.Title), desc = (StringTable.Get)(v.Desc), lock = not unlock, condition = condition})
-                  -- DECOMPILER ERROR at PC170: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC170: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC170: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC170: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC170: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC170: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC170: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC170: LeaveBlock: unexpected jumping out DO_STMT
-
-                end
-              end
-            end
-          end
-        end
-      end
+    if not map[i] then
+      local cfgName = type == 1 and "cfg_component_build_item" or "cfg_component_picnic"
+      Log.exception("UIN13BuildPlotControllerReview:_FillUIData()", " cfg_n13_plot_review [id] = " .. i, " has not found in " .. cfgName)
     end
+    local storyId = 0
+    local unlock = false
+    local condition = ""
+    if type == 1 then
+      local buildItemId, status = map[i].buildItemId, map[i].status
+      unlock = self._buildManager:CheckNextStatusComplete(buildItemId, status)
+      storyId = self._buildManager:GetBuildStoryId(buildItemId, status)
+      if not unlock then
+        local step = self._buildManager:CalcBuildUnlockStep(buildItemId, status)
+        condition = StringTable.Get("str_n13_build_plot_step_build", step)
+      end
+    else
+      local seq = map[i].seq
+      storyId = self._buildManager:GetPicnicStory(seq)
+      unlock = self:CheckStory(map, i)
+      if 10 < i then
+        local lastUnlock = self:CheckStory(map, i - 1)
+        if lastUnlock and not unlock and 10 < i and i < 15 then
+          self._idx[type] = i - 10
+        elseif lastUnlock and i == 15 then
+          local lastTrueUnlock = self:CheckStory(map, i)
+          local Seq = map[i].seq
+          local lastStoryId = self._buildManager:GetPicnicStory(Seq)
+          local value = LocalDB.GetInt(self.playerID .. lastStoryId .. "UIN13BuildReviewStoryEnd")
+          if lastUnlock and lastTrueUnlock and value == 0 then
+            self._idx[type] = i - 9
+          elseif lastUnlock and lastTrueUnlock and value == 1 then
+          else
+            self._idx[type] = i - 10
+          end
+        end
+      end
+      condition = "none"
+    end
+    table.insert(self._data[type], {
+      storyId = storyId,
+      title = StringTable.Get(v.Title),
+      desc = StringTable.Get(v.Desc),
+      lock = not unlock,
+      condition = condition
+    })
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.CheckStory = function(self, map, i)
-  -- function num : 0_5 , upvalues : _ENV
-  local unlock, all = (self._buildManager):CalcBuildUnlockProgress()
+function UIN13BuildPlotControllerReview:CheckStory(map, i)
+  local unlock, all = self._buildManager:CalcBuildUnlockProgress()
   if i == 10 and unlock == all then
     return true
   end
   if i ~= 10 then
-    local lastSeq = (map[i - 1]).seq
-    local lastStoryId = (self._buildManager):GetPicnicStory(lastSeq)
-    local value = (LocalDB.GetInt)(self.playerID .. lastStoryId .. "UIN13BuildReviewStoryEnd")
+    local lastSeq = map[i - 1].seq
+    local lastStoryId = self._buildManager:GetPicnicStory(lastSeq)
+    local value = LocalDB.GetInt(self.playerID .. lastStoryId .. "UIN13BuildReviewStoryEnd")
     if value == 1 then
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.CheckRed = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local unlock, all = (self._buildManager):CalcBuildUnlockProgress()
-  local value = (LocalDB.GetInt)(self.playerID .. "UIN13BuildPlotControllerReviewExtOnClickTrue")
+function UIN13BuildPlotControllerReview:CheckRed()
+  local unlock, all = self._buildManager:CalcBuildUnlockProgress()
+  local value = LocalDB.GetInt(self.playerID .. "UIN13BuildPlotControllerReviewExtOnClickTrue")
   if unlock == all and value ~= 1 then
     return true
   else
@@ -205,129 +148,88 @@ UIN13BuildPlotControllerReview.CheckRed = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._ChangeType = function(self, type, playAni)
-  -- function num : 0_7
+function UIN13BuildPlotControllerReview:_ChangeType(type, playAni)
   if type == self._type then
-    return 
+    return
   end
   if playAni then
     self:_PlayAnim("_ani_Root", "uieff_n13_build_plot_switch", 500)
     self:_PlayAnim("_ani_TabBtn", "uieff_n13_build_plot_tab", 1433)
   end
   self._type = type
-  local sideIcon, extIcon = nil, nil
+  local sideIcon, extIcon
   if self._type == 1 then
-    sideIcon = ((self._type2icon)[1])[1]
-    extIcon = ((self._type2icon)[2])[2]
-    ;
-    (self._side):SetAsLastSibling()
+    sideIcon = self._type2icon[1][1]
+    extIcon = self._type2icon[2][2]
+    self._side:SetAsLastSibling()
   else
-    sideIcon = ((self._type2icon)[1])[2]
-    extIcon = ((self._type2icon)[2])[1]
-    ;
-    (self._ext):SetAsLastSibling()
+    sideIcon = self._type2icon[1][2]
+    extIcon = self._type2icon[2][1]
+    self._ext:SetAsLastSibling()
   end
-  ;
-  (self._sideIcon):LoadImage(sideIcon)
-  ;
-  (self._extIcon):LoadImage(extIcon)
+  self._sideIcon:LoadImage(sideIcon)
+  self._extIcon:LoadImage(extIcon)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._Refresh = function(self)
-  -- function num : 0_8
+function UIN13BuildPlotControllerReview:_Refresh()
   self:_RefreshInfo()
   self:_SetDynamicList(true)
-  local idx = (self._idx)[self._type]
-  ;
-  (self._dynamicList):MovePanelToItemIndex(idx - 1, 0)
+  local idx = self._idx[self._type]
+  self._dynamicList:MovePanelToItemIndex(idx - 1, 0)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._Refresh_Select = function(self)
-  -- function num : 0_9
+function UIN13BuildPlotControllerReview:_Refresh_Select()
   self:_RefreshInfo()
   self:_SetDynamicList(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._RefreshInfo = function(self)
-  -- function num : 0_10
-  local idx = (self._idx)[self._type]
-  local data = ((self._data)[self._type])[idx]
+function UIN13BuildPlotControllerReview:_RefreshInfo()
+  local idx = self._idx[self._type]
+  local data = self._data[self._type][idx]
   if data and not data.lock then
-    (self._title):SetText(data.title)
-    ;
-    (self._desc):SetText(data.desc)
-    ;
-    (self:GetGameObject("PlayBtn")):SetActive(true)
-    ;
-    (self:GetGameObject("_lock")):SetActive(false)
+    self._title:SetText(data.title)
+    self._desc:SetText(data.desc)
+    self:GetGameObject("PlayBtn"):SetActive(true)
+    self:GetGameObject("_lock"):SetActive(false)
   else
-    ;
-    (self._title):SetText("")
-    ;
-    (self._desc):SetText("")
-    ;
-    (self:GetGameObject("PlayBtn")):SetActive(false)
-    ;
-    (self:GetGameObject("_lock")):SetActive(true)
+    self._title:SetText("")
+    self._desc:SetText("")
+    self:GetGameObject("PlayBtn"):SetActive(false)
+    self:GetGameObject("_lock"):SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._SetDynamicListData = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._dynamicListInfo = (self._data)[self._type]
-  self._dynamicListSize = (table.count)(self._dynamicListInfo)
+function UIN13BuildPlotControllerReview:_SetDynamicListData()
+  self._dynamicListInfo = self._data[self._type]
+  self._dynamicListSize = table.count(self._dynamicListInfo)
   self._itemCountPerRow = 1
-  self._dynamicListRowSize = (math.floor)((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
+  self._dynamicListRowSize = math.floor((self._dynamicListSize - 1) / self._itemCountPerRow + 1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._SetDynamicList = function(self, resetPos, noAnim)
-  -- function num : 0_12
+function UIN13BuildPlotControllerReview:_SetDynamicList(resetPos, noAnim)
   self:_SetDynamicListData()
   if not self._isDynamicInited then
     self._isDynamicInited = true
     self._dynamicList = self:GetUIComponent("UIDynamicScrollView", "list")
-    ;
-    (self._dynamicList):InitListView(self._dynamicListRowSize, function(scrollView, index)
-    -- function num : 0_12_0 , upvalues : self
-    return self:_SpawnListItem(scrollView, index)
-  end
-)
+    self._dynamicList:InitListView(self._dynamicListRowSize, function(scrollView, index)
+      return self:_SpawnListItem(scrollView, index)
+    end)
   else
     self:_RefreshList(self._dynamicListRowSize, self._dynamicList, resetPos)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._RefreshList = function(self, count, list, resetPos)
-  -- function num : 0_13
-  local contentPos = ((list.ScrollRect).content).localPosition
+function UIN13BuildPlotControllerReview:_RefreshList(count, list, resetPos)
+  local contentPos = list.ScrollRect.content.localPosition
   list:SetListItemCount(count)
   list:MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
   if not resetPos then
-    ((list.ScrollRect).content).localPosition = contentPos
+    list.ScrollRect.content.localPosition = contentPos
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._SpawnListItem = function(self, scrollView, index)
-  -- function num : 0_14
+function UIN13BuildPlotControllerReview:_SpawnListItem(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -341,99 +243,68 @@ UIN13BuildPlotControllerReview._SpawnListItem = function(self, scrollView, index
   for i = 1, self._itemCountPerRow do
     local listItem = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._dynamicListSize < itemIndex then
-      (listItem:GetGameObject()):SetActive(false)
+    if itemIndex > self._dynamicListSize then
+      listItem:GetGameObject():SetActive(false)
     else
-      ;
-      (listItem:GetGameObject()):SetActive(true)
+      listItem:GetGameObject():SetActive(true)
       self:_SetListItemData(listItem, itemIndex)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview._SetListItemData = function(self, listItem, index)
-  -- function num : 0_15
-  local idx = (self._idx)[self._type]
-  local data = ((self._data)[self._type])[index]
+function UIN13BuildPlotControllerReview:_SetListItemData(listItem, index)
+  local idx = self._idx[self._type]
+  local data = self._data[self._type][index]
   listItem:SetData(index, idx == index, data.lock, data.title, data.condition, function(idx)
-    -- function num : 0_15_0 , upvalues : self
     self:ListItemOnClick(idx)
-  end
-)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.ListItemOnClick = function(self, idx)
-  -- function num : 0_16 , upvalues : _ENV
-  if (self._idx)[self._type] == idx then
-    return 
+function UIN13BuildPlotControllerReview:ListItemOnClick(idx)
+  if self._idx[self._type] == idx then
+    return
   end
-  local data = ((self._data)[self._type])[idx]
+  local data = self._data[self._type][idx]
   if self._type == 2 and data.lock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n13_review_tips_2"))
+    ToastManager.ShowToast(StringTable.Get("str_n13_review_tips_2"))
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._idx)[self._type] = idx
+  self._idx[self._type] = idx
   self:_Refresh_Select()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.SideOnClick = function(self, go)
-  -- function num : 0_17
+function UIN13BuildPlotControllerReview:SideOnClick(go)
   self:_ChangeType(1, true)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.ExtOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  local unlock, all = (self._buildManager):CalcBuildUnlockProgress()
+function UIN13BuildPlotControllerReview:ExtOnClick(go)
+  local unlock, all = self._buildManager:CalcBuildUnlockProgress()
   if unlock == all then
-    (LocalDB.SetInt)(self.playerID .. "UIN13BuildPlotControllerReviewExtOnClickTrue", 1)
+    LocalDB.SetInt(self.playerID .. "UIN13BuildPlotControllerReviewExtOnClickTrue", 1)
     if self._callBack then
-      (self._callBack)()
+      self._callBack()
     end
-    ;
-    (self._redPoint):SetActive(false)
+    self._redPoint:SetActive(false)
     self:_ChangeType(2, true)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n13_review_tips_1"))
+    ToastManager.ShowToast(StringTable.Get("str_n13_review_tips_1"))
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.PlayBtnOnClick = function(self)
-  -- function num : 0_19
-  local idx = (self._idx)[self._type]
-  local data = ((self._data)[self._type])[idx]
+function UIN13BuildPlotControllerReview:PlayBtnOnClick()
+  local idx = self._idx[self._type]
+  local data = self._data[self._type][idx]
   if data and not data.lock then
     self:ShowDialog("UIStoryController", data.storyId, function()
-    -- function num : 0_19_0 , upvalues : self, data, idx
-    self:OnStoryEnd(data.storyId, idx)
-  end
-)
+      self:OnStoryEnd(data.storyId, idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN13BuildPlotControllerReview.OnStoryEnd = function(self, storyId, idx)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN13BuildPlotControllerReview:OnStoryEnd(storyId, idx)
   if self._type == 2 then
-    (LocalDB.SetInt)(self.playerID .. storyId .. "UIN13BuildReviewStoryEnd", 1)
+    LocalDB.SetInt(self.playerID .. storyId .. "UIN13BuildReviewStoryEnd", 1)
     self:_FillUIData()
     self:_Refresh()
   end
 end
-
-

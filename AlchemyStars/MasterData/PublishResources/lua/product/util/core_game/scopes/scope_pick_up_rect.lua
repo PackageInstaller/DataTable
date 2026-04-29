@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_pick_up_rect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_PickUpRect", SkillScopeCalculator_Base)
 SkillScopeCalculator_PickUpRect = SkillScopeCalculator_PickUpRect
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_PickUpRect.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_PickUpRect:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local cross_area = {}
   local wholeArea = {}
   local dirX = 1
@@ -23,15 +16,12 @@ SkillScopeCalculator_PickUpRect.CalcRange = function(self, scopeType, scopeParam
   for i = casterPos.x, centerPos.x, dirX do
     for j = casterPos.y, centerPos.y, dirY do
       local pos = Vector2(i, j)
-      ;
-      (table.insert)(wholeArea, pos)
-      if (self._gridFilter):IsValidPiecePos(pos) then
-        (table.insert)(cross_area, pos)
+      table.insert(wholeArea, pos)
+      if self._gridFilter:IsValidPiecePos(pos) then
+        table.insert(cross_area, pos)
       end
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.PickUpRect, casterPos, cross_area, wholeArea)
   return result
 end
-
-

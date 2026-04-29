@@ -1,79 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_backpack/ui_backpack_box_use_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBackPackBoxUseItem", UICustomWidget)
 UIBackPackBoxUseItem = UIBackPackBoxUseItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBackPackBoxUseItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBackPackBoxUseItem:OnShow(uiParams)
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.BackPack)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.BackPack)
+  self.uiItem:SetClickCallBack(function()
     self:ItemOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxUseItem.OnHide = function(self)
-  -- function num : 0_1
+function UIBackPackBoxUseItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxUseItem.Flush = function(self, itemInfo, index, count, toggleGroup, clickCallback, selectedId)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBackPackBoxUseItem:Flush(itemInfo, index, count, toggleGroup, clickCallback, selectedId)
   self._index = index
   self._toggleGroup = toggleGroup
   self._selectedId = selectedId
   self._itemInfo = itemInfo
   if not itemInfo then
-    return 
+    return
   end
   self._clickCallback = clickCallback
-  ;
-  (self.uiItem):SetData({icon = itemInfo:GetIcon(), quality = itemInfo:GetColor(), text1 = (HelperProxy:GetInstance()):FormatItemCount(itemInfo:GetCount() * count), itemId = itemInfo:GetTplId(), showNew = false})
-  ;
-  (self.uiItem):SetBtnImage(true)
-  ;
-  (self.uiItem):SetToggleGroup(self._toggleGroup)
-  ;
-  (self.uiItem):SetToggleValue(self._selectedId == (self._itemInfo):GetTplId())
-  self.OnValueChangedCallBack = function(isOn)
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SwitchUseBoxItem, isOn, self._index, self._itemInfo)
+  self.uiItem:SetData({
+    icon = itemInfo:GetIcon(),
+    quality = itemInfo:GetColor(),
+    text1 = HelperProxy:GetInstance():FormatItemCount(itemInfo:GetCount() * count),
+    itemId = itemInfo:GetTplId(),
+    showNew = false
+  })
+  self.uiItem:SetBtnImage(true)
+  self.uiItem:SetToggleGroup(self._toggleGroup)
+  self.uiItem:SetToggleValue(self._selectedId == self._itemInfo:GetTplId())
+  
+  function self.OnValueChangedCallBack(isOn)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SwitchUseBoxItem, isOn, self._index, self._itemInfo)
   end
-
-  ;
-  (self.uiItem):SetToggleOnValueChangedCallBack(self.OnValueChangedCallBack)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  
+  self.uiItem:SetToggleOnValueChangedCallBack(self.OnValueChangedCallBack)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxUseItem.FlushEmpty = function(self)
-  -- function num : 0_3
-  (self.uiItem):SetData({text1 = "", icon = "", quality = 0, showNew = false})
-  ;
-  (self.uiItem):SetBtnImage(false)
+function UIBackPackBoxUseItem:FlushEmpty()
+  self.uiItem:SetData({
+    text1 = "",
+    icon = "",
+    quality = 0,
+    showNew = false
+  })
+  self.uiItem:SetBtnImage(false)
   self._clickCallback = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBackPackBoxUseItem.ItemOnClick = function(self)
-  -- function num : 0_4
+function UIBackPackBoxUseItem:ItemOnClick()
   if self._clickCallback then
-    (self._clickCallback)((self._itemInfo):GetTplId(), (((self.uiItem).gameobject).transform).position)
+    self._clickCallback(self._itemInfo:GetTplId(), self.uiItem.gameobject.transform.position)
   end
 end
-
-

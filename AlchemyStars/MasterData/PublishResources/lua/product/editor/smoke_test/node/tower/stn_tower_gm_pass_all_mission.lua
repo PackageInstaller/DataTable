@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/tower/stn_tower_gm_pass_all_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Tower_GM_PassAllMission", Common_AsyncBase)
 Tower_GM_PassAllMission = Tower_GM_PassAllMission
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Tower_GM_PassAllMission.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local gmproxy = (GameGlobal.GetModule)(GMProxyModule)
+function Tower_GM_PassAllMission:TaskFunc(TT, status)
+  local gmproxy = GameGlobal.GetModule(GMProxyModule)
   for type = 1, 8 do
-    local cfg = (Cfg.cfg_tower_detail)({Type = type})
+    local cfg = Cfg.cfg_tower_detail({Type = type})
     if cfg then
       local maxStage = 1
-      for _,c in pairs(cfg) do
-        maxStage = (math.max)(maxStage, c.stage)
+      for _, c in pairs(cfg) do
+        maxStage = math.max(maxStage, c.stage)
       end
-      ;
-      (self._manager):AsyncGM_PassTowerLevel(TT, status, type, maxStage)
+      self._manager:AsyncGM_PassTowerLevel(TT, status, type, maxStage)
       if status:IsErrorOccured() then
-        return 
+        return
       end
     end
   end
 end
-
-

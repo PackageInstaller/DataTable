@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/loading_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LoadingServiceRender", BaseService)
 LoadingServiceRender = LoadingServiceRender
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LoadingServiceRender.Constructor = function(self, world)
-  -- function num : 0_0
+function LoadingServiceRender:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
   self._LoadProcessValue = 0
   self._cachedSoundMonsterIdList = {}
   self._cachedSoundTrapIdList = {}
@@ -22,132 +15,124 @@ LoadingServiceRender.Constructor = function(self, world)
   self._loadAfterLoading = {}
   self._loadingTimeTable = {}
   self._afterLoadingTime = {}
-  self._transformMonsterIDDic = {[2900141] = 2900142, [2900181] = 2900182}
+  self._transformMonsterIDDic = {
+    [2900141] = 2900142,
+    [2900181] = 2900182
+  }
   self._brillantGridMaterial = "brillant_gezi_main.mat"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender.MockLoading = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (LocalDB.GetInt)((GameGlobal.GetHighFrameKey)(), 0) == 1 then
-    BattleConst.RealFrameTime = 0.016666666666667
+function LoadingServiceRender:MockLoading(TT)
+  if LocalDB.GetInt(GameGlobal.GetHighFrameKey(), 0) == 1 then
+    BattleConst.RealFrameTime = 0.016666666666666666
   end
-  local collector = (GameGlobal:GetInstance()):GetCollector("CoreGameLoading")
-  local loadBegin = (os.clock)()
-  ;
-  (Log.prof)("[loading] start load")
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local collector = GameGlobal:GetInstance():GetCollector("CoreGameLoading")
+  local loadBegin = os.clock()
+  Log.prof("[loading] start load")
+  local levelConfigData = self._configService:GetLevelConfigData()
   local levelResPath = levelConfigData:GetLevelResPath()
-  local tik = (os.clock)()
-  local battleSvcR = (self._world):GetService("RenderBattle")
+  local tik = os.clock()
+  local battleSvcR = self._world:GetService("RenderBattle")
   battleSvcR:DefaultEnvColor()
-  ;
-  ((GameGlobal:GetInstance()).gameLogic):LoadScene(TT, levelResPath)
+  GameGlobal:GetInstance().gameLogic:LoadScene(TT, levelResPath)
   YIELD(TT)
-  local newBake = ((UnityEngine.GameObject).Find)("NewBake")
+  local newBake = UnityEngine.GameObject.Find("NewBake")
   if newBake then
-    ((UnityEngine.Shader).EnableKeyword)("H3D_SPE_BAKE_NEW")
+    UnityEngine.Shader.EnableKeyword("H3D_SPE_BAKE_NEW")
   else
-    ;
-    ((UnityEngine.Shader).DisableKeyword)("H3D_SPE_BAKE_NEW")
+    UnityEngine.Shader.DisableKeyword("H3D_SPE_BAKE_NEW")
   end
   self:_UpdateLoadingProcess(30)
   YIELD(TT)
-  local tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "LoadScene", time = (tok - tik) * 1000})
+  local tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "LoadScene",
+    time = (tok - tik) * 1000
+  })
   self:_CacheGlobalAssetFile()
   self:_CacheGridMaterial()
   self:_CacheObject(TT, 60)
   YIELD(TT)
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "CacheObject", time = (tok - tik) * 1000})
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "CacheObject",
+    time = (tok - tik) * 1000
+  })
   self:_LoadingSystemCacheAudio(TT)
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "CacheAudio", time = (tok - tik) * 1000})
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "CacheAudio",
+    time = (tok - tik) * 1000
+  })
   self:_SetUpSceneCamera()
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "_SetUpSceneCamera", time = (tok - tik) * 1000})
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "_SetUpSceneCamera",
+    time = (tok - tik) * 1000
+  })
   YIELD(TT)
   self:_CacheAllEntity(TT)
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "_CacheAllEntity", time = (tok - tik) * 1000})
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "_CacheAllEntity",
+    time = (tok - tik) * 1000
+  })
   YIELD(TT)
   self:_UpdateLoadingProcess(90)
   self:_InitializeLoadingEntity(TT)
   YIELD(TT)
   self:_UpdateLoadingProcess(100)
-  local allTime = (os.clock)() - loadBegin
-  ;
-  (Log.prof)("[loading] end load use time=", allTime * 1000)
-  for i,v in ipairs(self._loadingTimeTable) do
-    (Log.prof)("[loading] process,", v.name, ",time,", v.time)
+  local allTime = os.clock() - loadBegin
+  Log.prof("[loading] end load use time=", allTime * 1000)
+  for i, v in ipairs(self._loadingTimeTable) do
+    Log.prof("[loading] process,", v.name, ",time,", v.time)
   end
   collector:Sample("LoadingServiceRender:MockLoading()")
-  ;
-  ((GameGlobal.LoadingManager)()):CoreGameLoadingFinish()
+  GameGlobal.LoadingManager():CoreGameLoadingFinish()
   if EDITOR then
-    ((self._world):GetAIDebugModule()):StartCoreGame()
+    self._world:GetAIDebugModule():StartCoreGame()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender.LoadAfterLoading = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local respool = ((self._world).BW_Services).ResourcesPool
-  local tik = (os.clock)()
+function LoadingServiceRender:LoadAfterLoading(TT)
+  local respool = self._world.BW_Services.ResourcesPool
+  local tik = os.clock()
   local restable = self._loadAfterLoading
-  for k,v in pairs(restable) do
+  for k, v in pairs(restable) do
     local resname = v[1]
     local count = v[2]
-    if (string.endwith)(resname, ".mat") then
+    if string.endwith(resname, ".mat") then
       respool:CacheMaterial(resname, count)
     else
       respool:Cache(resname, count)
     end
     YIELD(TT)
   end
-  local tok = (os.clock)()
-  ;
-  (Log.prof)("[loading] load after loading finished, use time=", (tok - tik) * 1000)
+  local tok = os.clock()
+  Log.prof("[loading] load after loading finished, use time=", (tok - tik) * 1000)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._UpdateLoadingProcess = function(self, value)
-  -- function num : 0_3 , upvalues : _ENV
+function LoadingServiceRender:_UpdateLoadingProcess(value)
   self._LoadProcessValue = value
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.LoadingProgressChanged, value)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.LoadingProgressChanged, value)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheObject = function(self, TT, maxProcess)
-  -- function num : 0_4 , upvalues : _ENV
-  local respool = ((self._world).BW_Services).ResourcesPool
+function LoadingServiceRender:_CacheObject(TT, maxProcess)
+  local respool = self._world.BW_Services.ResourcesPool
   local cachetable = self:_GetCacheTable()
-  local count = (table.count)(cachetable)
+  local count = table.count(cachetable)
   local oneProcess = (maxProcess - self._LoadProcessValue) / count
-  for keystr,t in pairs(cachetable) do
-    local tik = (os.clock)()
+  for keystr, t in pairs(cachetable) do
+    local tik = os.clock()
     local restable = t
-    for k,v in pairs(restable) do
+    for k, v in pairs(restable) do
       local resname = v[1]
       local count = v[2]
-      if (string.endwith)(resname, ".mat") then
+      if string.endwith(resname, ".mat") then
         respool:CacheMaterial(resname, count)
       else
         respool:Cache(resname, count)
@@ -155,97 +140,99 @@ LoadingServiceRender._CacheObject = function(self, TT, maxProcess)
     end
     self:_UpdateLoadingProcess(self._LoadProcessValue + oneProcess)
     YIELD(TT)
-    local tok = (os.clock)()
-    ;
-    (table.insert)(self._loadingTimeTable, {name = "CacheObject/" .. keystr, time = (tok - tik) * 1000})
+    local tok = os.clock()
+    table.insert(self._loadingTimeTable, {
+      name = "CacheObject/" .. keystr,
+      time = (tok - tik) * 1000
+    })
   end
   self:_UpdateLoadingProcess(maxProcess)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._SetUpSceneCamera = function(self)
-  -- function num : 0_5
-  local cameraService = (self._world):GetService("Camera")
+function LoadingServiceRender:_SetUpSceneCamera()
+  local cameraService = self._world:GetService("Camera")
   cameraService:InitializeSceneCamera()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheAllEntity = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  local tik = (os.clock)()
-  local entityPoolService = (self._world):GetService("EntityPool")
+function LoadingServiceRender:_CacheAllEntity(TT)
+  local tik = os.clock()
+  local entityPoolService = self._world:GetService("EntityPool")
   entityPoolService:CacheEntities()
   YIELD(TT)
   entityPoolService:HideCacheEntities()
   YIELD(TT)
-  local tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "_CacheAllEntity/CacheEntities", time = (tok - tik) * 1000})
+  local tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "_CacheAllEntity/CacheEntities",
+    time = (tok - tik) * 1000
+  })
   self:_PreCreatePreviewEntity()
   self:_PreCreateBoard()
   YIELD(TT)
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "_CacheAllEntity/_PreCreateBoard", time = (tok - tik) * 1000})
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "_CacheAllEntity/_PreCreateBoard",
+    time = (tok - tik) * 1000
+  })
   self:_PreWarmAnim()
   YIELD(TT)
   self:_PrePlayAnim()
   YIELD(TT)
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "_CacheAllEntity/_PreWarmAnim_PrePlayAnim", time = (tok - tik) * 1000})
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "_CacheAllEntity/_PreWarmAnim_PrePlayAnim",
+    time = (tok - tik) * 1000
+  })
   self:_PreCreateTeam()
   YIELD(TT)
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "_CacheAllEntity/_PreCreateTeam", time = (tok - tik) * 1000})
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "_CacheAllEntity/_PreCreateTeam",
+    time = (tok - tik) * 1000
+  })
   self:_PreCreateFirstWaveMonsterAndTrap(TT)
   YIELD(TT)
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "_CacheAllEntity/_PreCreateFirstWave", time = (tok - tik) * 1000})
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "_CacheAllEntity/_PreCreateFirstWave",
+    time = (tok - tik) * 1000
+  })
   self:_MoveUpAllGrid()
   YIELD(TT)
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "_CacheAllEntity/_MoveUpAllGrid", time = (tok - tik) * 1000})
-  ;
-  (ResourceManager:GetInstance()):WarmUpCoreGameShader()
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "_CacheAllEntity/_MoveUpAllGrid",
+    time = (tok - tik) * 1000
+  })
+  ResourceManager:GetInstance():WarmUpCoreGameShader()
   tik = tok
-  tok = (os.clock)()
-  ;
-  (table.insert)(self._loadingTimeTable, {name = "_CacheAllEntity/WarmUpCoreGameShader", time = (tok - tik) * 1000})
+  tok = os.clock()
+  table.insert(self._loadingTimeTable, {
+    name = "_CacheAllEntity/WarmUpCoreGameShader",
+    time = (tok - tik) * 1000
+  })
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._PreCreatePreviewEntity = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local entityService = (self._world):GetService("RenderEntity")
+function LoadingServiceRender:_PreCreatePreviewEntity()
+  local entityService = self._world:GetService("RenderEntity")
   local ePreview = entityService:CreateRenderEntity(EntityConfigIDRender.Preview)
-  ;
-  (self._world):SetPreviewEntity(ePreview)
+  self._world:SetPreviewEntity(ePreview)
   return ePreview
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._PreCreateBoard = function(self)
-  -- function num : 0_8
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function LoadingServiceRender:_PreCreateBoard()
+  local boardServiceRender = self._world:GetService("BoardRender")
   boardServiceRender:InitBaseGridRenderPos()
-  local spawnPieceServiceRender = (self._world):GetService("SpawnPieceRender")
+  local spawnPieceServiceRender = self._world:GetService("SpawnPieceRender")
   spawnPieceServiceRender:InitializeCellRender()
-  local renderEntityService = (self._world):GetService("RenderEntity")
+  local renderEntityService = self._world:GetService("RenderEntity")
   renderEntityService:CreateBoardGridEntity()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local isMultiBoardLevel = levelConfigData:IsMultiBoardLevel()
   if isMultiBoardLevel then
@@ -255,13 +242,10 @@ LoadingServiceRender._PreCreateBoard = function(self)
   renderEntityService:CreateBoardPushGridEntity()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._PreWarmAnim = function(self, cacheGridList)
-  -- function num : 0_9 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,e in ipairs(pieceGroup:GetEntities()) do
+function LoadingServiceRender:_PreWarmAnim(cacheGridList)
+  local pieceService = self._world:GetService("Piece")
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, e in ipairs(pieceGroup:GetEntities()) do
     local pieceEntity = e
     local viewCmpt = pieceEntity:View()
     local gameObj = viewCmpt:GetGameObject()
@@ -269,461 +253,347 @@ LoadingServiceRender._PreWarmAnim = function(self, cacheGridList)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._MoveUpAllGrid = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function LoadingServiceRender:_MoveUpAllGrid()
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local isMultiBoardLevel = levelConfigData:IsMultiBoardLevel()
   local isSpliceBoardLevel = levelConfigData:IsSpliceBoardLevel()
   local isPushBoardLevel = levelConfigData:IsPushBoardLevel()
   if isMultiBoardLevel or isSpliceBoardLevel or isPushBoardLevel then
-    return 
+    return
   end
-  local pieceService = (self._world):GetService("Piece")
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,e in ipairs(pieceGroup:GetEntities()) do
+  local pieceService = self._world:GetService("Piece")
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, e in ipairs(pieceGroup:GetEntities()) do
     local pieceEntity = e
     local viewCmpt = pieceEntity:View()
     local gameObj = viewCmpt:GetGameObject()
-    local curPos = (gameObj.transform).position
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R17 in 'UnsetPending'
-
-    ;
-    (gameObj.transform).position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
+    local curPos = gameObj.transform.position
+    gameObj.transform.position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._PrePlayAnim = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
-  local pieceGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Piece)
-  for _,e in ipairs(pieceGroup:GetEntities()) do
+function LoadingServiceRender:_PrePlayAnim()
+  local pieceService = self._world:GetService("Piece")
+  local pieceGroup = self._world:GetGroup(self._world.BW_WEMatchers.Piece)
+  for _, e in ipairs(pieceGroup:GetEntities()) do
     pieceService:SetPieceEntityAnimNormal(e)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetSceneCacheTable = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local sceneRes = (Cfg.cfg_regular_resource)({})
+function LoadingServiceRender:_GetSceneCacheTable()
+  local sceneRes = Cfg.cfg_regular_resource({})
   local t = {}
-  for i,v in ipairs(sceneRes) do
+  for i, v in ipairs(sceneRes) do
     if v.LoadType == "GameObject" and v.Tag == "scene" then
-      t[#t + 1] = {v.ResName, v.CacheCount}
+      t[#t + 1] = {
+        v.ResName,
+        v.CacheCount
+      }
     end
   end
   self:_CacheCurrentGrid(t)
   return t
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheCurrentGrid = function(self, tableName)
-  -- function num : 0_13 , upvalues : _ENV
+function LoadingServiceRender:_CacheCurrentGrid(tableName)
   local loadGridConfig = {
-{PieceType.Blue, 20}
-, 
-{PieceType.Red, 20}
-, 
-{PieceType.Green, 20}
-, 
-{PieceType.Yellow, 20}
-, 
-{PieceType.Any, 1}
-, 
-{PieceType.None, 1}
-}
-  local pieceServiceRender = (self._world):GetService("Piece")
+    {
+      PieceType.Blue,
+      20
+    },
+    {
+      PieceType.Red,
+      20
+    },
+    {
+      PieceType.Green,
+      20
+    },
+    {
+      PieceType.Yellow,
+      20
+    },
+    {
+      PieceType.Any,
+      1
+    },
+    {
+      PieceType.None,
+      1
+    }
+  }
+  local pieceServiceRender = self._world:GetService("Piece")
   for i = 1, #loadGridConfig do
-    local gridPath = pieceServiceRender:GetGridPrefabPath((loadGridConfig[i])[1])
-    ;
-    (table.insert)(tableName, {gridPath, (loadGridConfig[i])[2]})
+    local gridPath = pieceServiceRender:GetGridPrefabPath(loadGridConfig[i][1])
+    table.insert(tableName, {
+      gridPath,
+      loadGridConfig[i][2]
+    })
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetPetCacheTable = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function LoadingServiceRender:_GetPetCacheTable()
   local ret = {}
-  local petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-  local joinedPlayerInfoArray = ((self._world).BW_WorldInfo).players
-  for i,joinedPlayerInfo in pairs(joinedPlayerInfoArray) do
-    for petIndex,matchPetInfo in ipairs(joinedPlayerInfo.pet_list) do
+  local petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  local joinedPlayerInfoArray = self._world.BW_WorldInfo.players
+  for i, joinedPlayerInfo in pairs(joinedPlayerInfoArray) do
+    for petIndex, matchPetInfo in ipairs(joinedPlayerInfo.pet_list) do
       local petPstID = matchPetInfo.pet_pstid
-      local petData = nil
-      if (self._world):MatchType() == MatchType.MT_PopStar then
+      local petData
+      if self._world:MatchType() == MatchType.MT_PopStar then
         petData = PopStarMatchPet:New(matchPetInfo)
       else
         petData = MatchPet:New(matchPetInfo)
       end
       local retCache = self:_GetCacheTable_ByPetData({petData})
-      ;
-      (table.appendArray)(ret, retCache)
+      table.appendArray(ret, retCache)
     end
   end
-  if (self._world):MatchType() == MatchType.MT_BlackFist then
-    for petIndex,matchPetInfo in ipairs(((self._world):BattleWorldEnterData()):GetRemoteTeamInfo()) do
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    for petIndex, matchPetInfo in ipairs(self._world:BattleWorldEnterData():GetRemoteTeamInfo()) do
       local petPstID = matchPetInfo.pet_pstid
       local petData = MatchPet:New(matchPetInfo)
       local retCache = self:_GetCacheTable_ByPetData({petData})
-      ;
-      (table.appendArray)(ret, retCache)
+      table.appendArray(ret, retCache)
     end
   end
-  do
-    return ret
-  end
+  return ret
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetTrapCacheTable = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function LoadingServiceRender:_GetTrapCacheTable()
   local ret = {}
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local levelConfigData = self._configService:GetLevelConfigData()
   local waveNum = levelConfigData:GetWaveCount()
   local traps = levelConfigData:GetLevelAllWaveTraps()
   local trapArray = {}
   if #traps == 0 then
     return ret
   end
-  for _,trapTransformParam in ipairs(traps) do
+  for _, trapTransformParam in ipairs(traps) do
     local t = self:_GetOneTrapCacheTable(trapTransformParam)
-    ;
-    (table.appendArray)(ret, t)
+    table.appendArray(ret, t)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetOneTrapCacheTable = function(self, trapTransformParam)
-  -- function num : 0_16 , upvalues : _ENV
+function LoadingServiceRender:_GetOneTrapCacheTable(trapTransformParam)
   local ret = {}
-  local trapConfigData = (self._configService):GetTrapConfigData()
+  local trapConfigData = self._configService:GetTrapConfigData()
   local trapId = trapTransformParam:GetTrapID()
-  if (table.icontains)(self._cachedTrapIdList, trapId) then
+  if table.icontains(self._cachedTrapIdList, trapId) then
     return ret
   end
-  ;
-  (table.insert)(self._cachedTrapIdList, trapId)
+  table.insert(self._cachedTrapIdList, trapId)
   local resPathList = trapConfigData:GetTrapResPath(trapId)
-  for i,resPath in ipairs(resPathList) do
-    (table.insert)(ret, {resPath, 1})
+  for i, resPath in ipairs(resPathList) do
+    table.insert(ret, {resPath, 1})
   end
   local skillIds = trapConfigData:GetSkillIDs(trapId)
-  do
-    if skillIds then
-      local t = self:_GetSkillCacheTable(skillIds)
-      ;
-      (table.appendArray)(ret, t)
-    end
-    local shaderEffect = trapConfigData:GetTrapShaderEffect(trapId)
-    if shaderEffect then
-      self:_CacheEachShaderEffectsAssetFile(shaderEffect)
-    end
-    return ret
+  if skillIds then
+    local t = self:_GetSkillCacheTable(skillIds)
+    table.appendArray(ret, t)
   end
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetMonsterCacheTable = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local ret = {}
-  local levelConfigData = (self._configService):GetLevelConfigData()
-  local monsterIds = levelConfigData:GetLoadingMonsterID()
-  for _,monsterID in ipairs(monsterIds) do
-    local t = self:_GetOneMonsterCacheTable(monsterID)
-    ;
-    (table.appendArray)(ret, t)
-  end
-  monsterIds = levelConfigData:GetRunningMonsterID()
-  for _,monsterID in ipairs(monsterIds) do
-    local t = self:_GetOneMonsterCacheTable(monsterID)
-    ;
-    (table.appendArray)(ret, t)
+  local shaderEffect = trapConfigData:GetTrapShaderEffect(trapId)
+  if shaderEffect then
+    self:_CacheEachShaderEffectsAssetFile(shaderEffect)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetOneMonsterCacheTable = function(self, monsterID)
-  -- function num : 0_18 , upvalues : _ENV
+function LoadingServiceRender:_GetMonsterCacheTable()
   local ret = {}
-  if (table.icontains)(self._cachedMonsterIdList, monsterID) then
+  local levelConfigData = self._configService:GetLevelConfigData()
+  local monsterIds = levelConfigData:GetLoadingMonsterID()
+  for _, monsterID in ipairs(monsterIds) do
+    local t = self:_GetOneMonsterCacheTable(monsterID)
+    table.appendArray(ret, t)
+  end
+  monsterIds = levelConfigData:GetRunningMonsterID()
+  for _, monsterID in ipairs(monsterIds) do
+    local t = self:_GetOneMonsterCacheTable(monsterID)
+    table.appendArray(ret, t)
+  end
+  return ret
+end
+
+function LoadingServiceRender:_GetOneMonsterCacheTable(monsterID)
+  local ret = {}
+  if table.icontains(self._cachedMonsterIdList, monsterID) then
     return ret
   end
-  ;
-  (table.insert)(self._cachedMonsterIdList, monsterID)
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
-  ;
-  (table.insert)(ret, {monsterConfigData:GetMonsterResPath(monsterID), 1})
+  table.insert(self._cachedMonsterIdList, monsterID)
+  local monsterConfigData = self._configService:GetMonsterConfigData()
+  table.insert(ret, {
+    monsterConfigData:GetMonsterResPath(monsterID),
+    1
+  })
   local permanentEffectArray = monsterConfigData:GetMonsterPermanentEffectID(monsterID)
   local idleEffectArray = monsterConfigData:GetMonsterIdleEffectID(monsterID)
   if permanentEffectArray then
-    for _,effectID in ipairs(permanentEffectArray) do
-      (table.insert)(ret, {((Cfg.cfg_effect)[effectID]).ResPath, 1})
+    for _, effectID in ipairs(permanentEffectArray) do
+      table.insert(ret, {
+        Cfg.cfg_effect[effectID].ResPath,
+        1
+      })
     end
   end
-  do
-    if idleEffectArray then
-      for _,effectID in ipairs(idleEffectArray) do
-        (table.insert)(ret, {((Cfg.cfg_effect)[effectID]).ResPath, 1})
-      end
+  if idleEffectArray then
+    for _, effectID in ipairs(idleEffectArray) do
+      table.insert(ret, {
+        Cfg.cfg_effect[effectID].ResPath,
+        1
+      })
     end
-    do
-      local deathEffectID = monsterConfigData:GetDeathShowEffectID(monsterID)
-      if deathEffectID ~= nil then
-        if type(deathEffectID) == "number" then
-          (table.insert)(ret, {((Cfg.cfg_effect)[deathEffectID]).ResPath, 1})
-        else
-          for i,effID in ipairs(deathEffectID) do
-            (table.insert)(ret, {((Cfg.cfg_effect)[effID]).ResPath, 1})
-          end
-        end
-      end
-      do
-        local skillIds = monsterConfigData:GetCacheSkillIds(monsterID)
-        local t = self:_GetSkillCacheTable(skillIds)
-        ;
-        (table.appendArray)(ret, t)
-        local buffList = monsterConfigData:GetBornBuffList(monsterID)
-        do
-          if buffList then
-            local t = self:_GetBuffCacheTable(buffList)
-            ;
-            (table.appendArray)(ret, t)
-          end
-          local shaderEffect = monsterConfigData:GetMonsterShaderEffect(monsterID)
-          if shaderEffect then
-            self:_CacheEachShaderEffectsAssetFile(shaderEffect)
-          end
-          local aiidAndOrders = monsterConfigData:GetMonsterAIID(monsterID)
-          for i = 1, #aiidAndOrders do
-            local aiid = (aiidAndOrders[i])[1]
-            if aiid then
-              local aiConfig = AILogicConfig[aiid]
-              if aiConfig then
-                for _,action in pairs(aiConfig.Action) do
-                  if type(action) == "table" and action.Type == "ActionCrazyMode" then
-                    local transformMonsterID = (action.Data)[1]
-                    local t = self:_GetOneMonsterCacheTable(transformMonsterID)
-                    ;
-                    (table.appendArray)(ret, t)
-                  end
-                end
-              end
-            end
-          end
-          return ret
-        end
+  end
+  local deathEffectID = monsterConfigData:GetDeathShowEffectID(monsterID)
+  if deathEffectID ~= nil then
+    if type(deathEffectID) == "number" then
+      table.insert(ret, {
+        Cfg.cfg_effect[deathEffectID].ResPath,
+        1
+      })
+    else
+      for i, effID in ipairs(deathEffectID) do
+        table.insert(ret, {
+          Cfg.cfg_effect[effID].ResPath,
+          1
+        })
       end
     end
   end
+  local skillIds = monsterConfigData:GetCacheSkillIds(monsterID)
+  local t = self:_GetSkillCacheTable(skillIds)
+  table.appendArray(ret, t)
+  local buffList = monsterConfigData:GetBornBuffList(monsterID)
+  if buffList then
+    local t = self:_GetBuffCacheTable(buffList)
+    table.appendArray(ret, t)
+  end
+  local shaderEffect = monsterConfigData:GetMonsterShaderEffect(monsterID)
+  if shaderEffect then
+    self:_CacheEachShaderEffectsAssetFile(shaderEffect)
+  end
+  local aiidAndOrders = monsterConfigData:GetMonsterAIID(monsterID)
+  for i = 1, #aiidAndOrders do
+    local aiid = aiidAndOrders[i][1]
+    if aiid then
+      local aiConfig = AILogicConfig[aiid]
+      if aiConfig then
+        for _, action in pairs(aiConfig.Action) do
+          if type(action) == "table" and action.Type == "ActionCrazyMode" then
+            local transformMonsterID = action.Data[1]
+            local t = self:_GetOneMonsterCacheTable(transformMonsterID)
+            table.appendArray(ret, t)
+          end
+        end
+      end
+    end
+  end
+  return ret
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetSkillCacheTable = function(self, skillIds, skinId)
-  -- function num : 0_19 , upvalues : _ENV
+function LoadingServiceRender:_GetSkillCacheTable(skillIds, skinId)
   local ret = {}
-  for _,skillid in ipairs(skillIds) do
+  for _, skillid in ipairs(skillIds) do
     local t = self:_GetOneSkillCacheTable(skillid, skinId)
-    ;
-    (table.appendArray)(ret, t)
+    table.appendArray(ret, t)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetOneSkillCacheTable = function(self, skillId, skinId)
-  -- function num : 0_20 , upvalues : _ENV
+function LoadingServiceRender:_GetOneSkillCacheTable(skillId, skinId)
   local ret = {}
-  if (table.icontains)(self._cachedSkillIdList, skillId) then
+  if table.icontains(self._cachedSkillIdList, skillId) then
     return ret
   end
-  ;
-  (table.insert)(self._cachedSkillIdList, skillId)
-  local skillConfig = (self._configService):GetSkillConfigData(skillId)
+  table.insert(self._cachedSkillIdList, skillId)
+  local skillConfig = self._configService:GetSkillConfigData(skillId)
   local skillPhaseArray = skillConfig:GetSkillPhaseArray(skinId)
-  do
-    if not skillPhaseArray then
-      local levelID = ((self._world).BW_WorldInfo).level_id
-      ;
-      (Log.exception)("找不到技能 skillID=" .. skillId .. "   levelID=" .. levelID)
-    end
-    for _,phase in ipairs(skillPhaseArray) do
-      local skillPhaseParam = phase:GetPhaseParam()
-      local t = skillPhaseParam:GetCacheTable(skillConfig, skinId)
-      ;
-      (table.appendArray)(ret, t)
-    end
-    local skillEffectArray = skillConfig:GetSkillEffect()
-    for _,effect in ipairs(skillEffectArray) do
-      if effect.GetEffectType then
-        if effect:GetEffectType() == SkillEffectType.AddBuff then
-          local t = self:_GetOneBuffCacheTable(effect:GetBuffID())
-          ;
-          (table.appendArray)(ret, t)
-        else
-          do
-            if effect:GetEffectType() == SkillEffectType.SummonEverything then
-              local t = self:_GetSummonCacheTable(effect)
-              ;
-              (table.appendArray)(ret, t)
-            else
-              do
-                if effect:GetEffectType() == SkillEffectType.MakePhantom then
-                  local eft = effect
-                  local t = self:_GetOneMonsterCacheTable(eft:GetTargetID())
-                  ;
-                  (table.appendArray)(ret, t)
-                else
-                  do
-                    if effect:GetEffectType() == SkillEffectType.Transformation then
-                      local eft = effect
-                      local t = self:_GetOneMonsterCacheTable(eft:GetTargetMonsterID())
-                      ;
-                      (table.appendArray)(ret, t)
-                    else
-                      do
-                        do
-                          if effect:GetEffectType() == SkillEffectType.SummonMultipleTrap then
-                            local t = self:_GetOneTrapCacheTable(effect)
-                            ;
-                            (table.appendArray)(ret, t)
-                          end
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_STMT
-
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+  if not skillPhaseArray then
+    local levelID = self._world.BW_WorldInfo.level_id
+    Log.exception("找不到技能 skillID=" .. skillId .. "   levelID=" .. levelID)
+  end
+  for _, phase in ipairs(skillPhaseArray) do
+    local skillPhaseParam = phase:GetPhaseParam()
+    local t = skillPhaseParam:GetCacheTable(skillConfig, skinId)
+    table.appendArray(ret, t)
+  end
+  local skillEffectArray = skillConfig:GetSkillEffect()
+  for _, effect in ipairs(skillEffectArray) do
+    if effect.GetEffectType then
+      if effect:GetEffectType() == SkillEffectType.AddBuff then
+        local t = self:_GetOneBuffCacheTable(effect:GetBuffID())
+        table.appendArray(ret, t)
+      elseif effect:GetEffectType() == SkillEffectType.SummonEverything then
+        local t = self:_GetSummonCacheTable(effect)
+        table.appendArray(ret, t)
+      elseif effect:GetEffectType() == SkillEffectType.MakePhantom then
+        local eft = effect
+        local t = self:_GetOneMonsterCacheTable(eft:GetTargetID())
+        table.appendArray(ret, t)
+      elseif effect:GetEffectType() == SkillEffectType.Transformation then
+        local eft = effect
+        local t = self:_GetOneMonsterCacheTable(eft:GetTargetMonsterID())
+        table.appendArray(ret, t)
+      elseif effect:GetEffectType() == SkillEffectType.SummonMultipleTrap then
+        local t = self:_GetOneTrapCacheTable(effect)
+        table.appendArray(ret, t)
       end
     end
-    return ret
-  end
-end
-
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetBuffCacheTable = function(self, buffList)
-  -- function num : 0_21 , upvalues : _ENV
-  local ret = {}
-  for _,buffID in ipairs(buffList) do
-    local t = self:_GetOneBuffCacheTable(buffID)
-    ;
-    (table.appendArray)(ret, t)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetOneBuffCacheTable = function(self, buffID)
-  -- function num : 0_22 , upvalues : _ENV
+function LoadingServiceRender:_GetBuffCacheTable(buffList)
   local ret = {}
-  if (table.icontains)(self._cachedBuffIdList, buffID) then
+  for _, buffID in ipairs(buffList) do
+    local t = self:_GetOneBuffCacheTable(buffID)
+    table.appendArray(ret, t)
+  end
+  return ret
+end
+
+function LoadingServiceRender:_GetOneBuffCacheTable(buffID)
+  local ret = {}
+  if table.icontains(self._cachedBuffIdList, buffID) then
     return ret
   end
-  ;
-  (table.insert)(self._cachedBuffIdList, buffID)
-  if not (Cfg.cfg_buff)[buffID] then
+  table.insert(self._cachedBuffIdList, buffID)
+  if not Cfg.cfg_buff[buffID] then
     return ret
   end
-  local buffConfig = (self._configService):GetBuffConfigData(buffID)
+  local buffConfig = self._configService:GetBuffConfigData(buffID)
   local t = buffConfig:GetCacheTable()
-  ;
-  (table.appendArray)(ret, t)
+  table.appendArray(ret, t)
   local skillIds = buffConfig:GetCacheSkillIds()
   local t = self:_GetSkillCacheTable(skillIds)
-  ;
-  (table.appendArray)(ret, t)
+  table.appendArray(ret, t)
   local buffIds = buffConfig:GetCacheBuffIds()
   local t = self:_GetBuffCacheTable(buffIds)
-  ;
-  (table.appendArray)(ret, t)
+  table.appendArray(ret, t)
   return ret
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetSummonCacheTable = function(self, skillEffectParam)
-  -- function num : 0_23 , upvalues : _ENV
+function LoadingServiceRender:_GetSummonCacheTable(skillEffectParam)
   local ret = {}
   local summonType = skillEffectParam:GetSummonType()
   local summonIDS = skillEffectParam:GetSummonList()
-  for _key,summonID in pairs(summonIDS) do
+  for _key, summonID in pairs(summonIDS) do
     if summonType == SkillEffectEnum_SummonType.Monster then
       local t = self:_GetOneMonsterCacheTable(summonID)
-      ;
-      (table.appendArray)(ret, t)
-    else
-      do
-        if summonType == SkillEffectEnum_SummonType.Trap then
-          local trapData = (Cfg.cfg_trap)[summonID]
-          for i,resPath in ipairs(trapData.ResPath) do
-            (table.insert)(ret, {resPath, 1})
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC43: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      table.appendArray(ret, t)
+    elseif summonType == SkillEffectEnum_SummonType.Trap then
+      local trapData = Cfg.cfg_trap[summonID]
+      for i, resPath in ipairs(trapData.ResPath) do
+        table.insert(ret, {resPath, 1})
       end
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetCacheTable = function(self)
-  -- function num : 0_24
+function LoadingServiceRender:_GetCacheTable()
   local t = {}
   t.scene = self:_GetSceneCacheTable()
   t.monster = self:_GetMonsterCacheTable()
@@ -733,91 +603,62 @@ LoadingServiceRender._GetCacheTable = function(self)
   return t
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._LoadingSystemCacheAudio = function(self, TT)
-  -- function num : 0_25 , upvalues : _ENV
+function LoadingServiceRender:_LoadingSystemCacheAudio(TT)
   local cachetable = self:_GetSoundCacheTable()
   local l_acbMap = {}
-  for k,v in ipairs(cachetable) do
+  for k, v in ipairs(cachetable) do
     if USEADX2AUDIO then
-      local l_strAcbName, l_strCueName = (AudioHelperController.GetCueSheetAndCue)(v)
+      local l_strAcbName, l_strCueName = AudioHelperController.GetCueSheetAndCue(v)
       if l_strAcbName and l_acbMap[l_strAcbName] == nil then
         l_acbMap[l_strAcbName] = true
-        ;
-        (AudioHelperController.RequestInnerGameSoundByResName)(l_strAcbName)
+        AudioHelperController.RequestInnerGameSoundByResName(l_strAcbName)
       end
     else
-      do
-        do
-          ;
-          (AudioHelperController.RequestInnerGameSound)(v)
-          -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC29: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      AudioHelperController.RequestInnerGameSound(v)
     end
   end
   local cachetable = self:_GetVoiceCacheTable()
   local l_res_map = {}
-  for k,v in ipairs(cachetable) do
-    local voiceResName = (AudioHelperController.GetResNameByAudioId)(v)
+  for k, v in ipairs(cachetable) do
+    local voiceResName = AudioHelperController.GetResNameByAudioId(v)
     if voiceResName ~= nil and not l_res_map[voiceResName] then
       l_res_map[voiceResName] = true
-      ;
-      (AudioHelperController.RequestInnerGameVoiceByResName)(voiceResName)
+      AudioHelperController.RequestInnerGameVoiceByResName(voiceResName)
     end
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetSoundCacheTable = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function LoadingServiceRender:_GetSoundCacheTable()
   local t = {}
-  ;
-  (table.appendArray)(t, self:_GetSceneSoundCacheTable())
-  ;
-  (table.appendArray)(t, self:_GetPetSoundCacheTable())
-  ;
-  (table.appendArray)(t, self:_GetTrapSoundCacheTable())
-  ;
-  (table.appendArray)(t, self:_GetMonsterSoundCacheTable())
+  table.appendArray(t, self:_GetSceneSoundCacheTable())
+  table.appendArray(t, self:_GetPetSoundCacheTable())
+  table.appendArray(t, self:_GetTrapSoundCacheTable())
+  table.appendArray(t, self:_GetMonsterSoundCacheTable())
   return t
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetSceneSoundCacheTable = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function LoadingServiceRender:_GetSceneSoundCacheTable()
   local t = {}
   for i = CriAudioIDConst.SoundCoreGameLinkLineStart, CriAudioIDConst.SoundCoreGameLinkLineEnd do
     t[#t + 1] = i
   end
   t[#t + 1] = CriAudioIDConst.SouncCoreGameMonsterDeath
   t[#t + 1] = CriAudioIDConst.SoundPetCommonShow
-  for i,v in ipairs(BattleConst.MonsterBornAudioList) do
+  for i, v in ipairs(BattleConst.MonsterBornAudioList) do
     t[#t + 1] = v
   end
   return t
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetPetSoundCacheTable = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function LoadingServiceRender:_GetPetSoundCacheTable()
   local ret = {}
-  local petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-  local joinedPlayerInfoArray = ((self._world).BW_WorldInfo).players
-  for i,joinedPlayerInfo in pairs(joinedPlayerInfoArray) do
-    for petIndex,matchPetInfo in ipairs(joinedPlayerInfo.pet_list) do
+  local petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  local joinedPlayerInfoArray = self._world.BW_WorldInfo.players
+  for i, joinedPlayerInfo in pairs(joinedPlayerInfoArray) do
+    for petIndex, matchPetInfo in ipairs(joinedPlayerInfo.pet_list) do
       local petPstID = matchPetInfo.pet_pstid
-      local petData = nil
-      if (self._world):MatchType() == MatchType.MT_PopStar then
+      local petData
+      if self._world:MatchType() == MatchType.MT_PopStar then
         petData = PopStarMatchPet:New(matchPetInfo)
       else
         petData = MatchPet:New(matchPetInfo)
@@ -825,302 +666,198 @@ LoadingServiceRender._GetPetSoundCacheTable = function(self)
       local normalSkillID = petData:GetNormalSkill()
       local chainSkill = petData:GetChainSkillInfo()
       local activeSkill = petData:GetPetActiveSkill()
-      local skillIds = {normalSkillID, (table.unpack)((table.select)(chainSkill, "Skill")), activeSkill}
+      local skillIds = {
+        normalSkillID,
+        table.unpack(table.select(chainSkill, "Skill")),
+        activeSkill
+      }
       local t = self:_GetSkillCacheSound(skillIds)
-      ;
-      (table.appendArray)(ret, t)
+      table.appendArray(ret, t)
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetTrapSoundCacheTable = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function LoadingServiceRender:_GetTrapSoundCacheTable()
   local ret = {}
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local levelConfigData = self._configService:GetLevelConfigData()
   local traps = levelConfigData:GetLevelAllWaveTraps()
   local trapArray = {}
   if #traps == 0 then
     return ret
   end
-  for _,trapTransformParam in ipairs(traps) do
+  for _, trapTransformParam in ipairs(traps) do
     local t = self:_CacheTrapSound(trapTransformParam:GetTrapID())
-    ;
-    (table.appendArray)(ret, t)
+    table.appendArray(ret, t)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetMonsterSoundCacheTable = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function LoadingServiceRender:_GetMonsterSoundCacheTable()
   local ret = {}
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local levelConfigData = self._configService:GetLevelConfigData()
   local monsterIds = levelConfigData:GetAllMonsterID()
-  for _,monsterID in ipairs(monsterIds) do
+  for _, monsterID in ipairs(monsterIds) do
     local t = self:_CacheMonsterSound(monsterID)
-    ;
-    (table.appendArray)(ret, t)
+    table.appendArray(ret, t)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheMonsterSound = function(self, monsterID)
-  -- function num : 0_31 , upvalues : _ENV
-  if (table.ikey)(self._cachedSoundMonsterIdList, monsterID) then
-    return 
+function LoadingServiceRender:_CacheMonsterSound(monsterID)
+  if table.ikey(self._cachedSoundMonsterIdList, monsterID) then
+    return
   end
-  ;
-  (table.insert)(self._cachedSoundMonsterIdList, monsterID)
+  table.insert(self._cachedSoundMonsterIdList, monsterID)
   local ret = {}
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
+  local monsterConfigData = self._configService:GetMonsterConfigData()
   local deathAudioID = monsterConfigData:GetDeathAudioID(monsterID)
   if deathAudioID then
-    (table.insert)(ret, deathAudioID)
+    table.insert(ret, deathAudioID)
   end
   local skillIds = monsterConfigData:GetCacheSkillIds(monsterID)
   local t = self:_GetSkillCacheSound(skillIds)
-  ;
-  (table.appendArray)(ret, t)
-  local transformID = (self._transformMonsterIDDic)[monsterID]
-  do
-    if transformID then
-      local t = self:_CacheMonsterSound(transformID)
-      ;
-      (table.appendArray)(ret, t)
-    end
-    local aiidAndOrders = monsterConfigData:GetMonsterAIID(monsterID)
-    for i = 1, #aiidAndOrders do
-      local aiid = (aiidAndOrders[i])[1]
-      if aiid then
-        local aiConfig = AILogicConfig[aiid]
-        if aiConfig then
-          for _,action in pairs(aiConfig.Action) do
-            if type(action) == "table" and action.Type == "ActionCrazyMode" then
-              local transformMonsterID = (action.Data)[1]
-              local t = self:_CacheMonsterSound(transformMonsterID)
-              ;
-              (table.appendArray)(ret, t)
-            end
+  table.appendArray(ret, t)
+  local transformID = self._transformMonsterIDDic[monsterID]
+  if transformID then
+    local t = self:_CacheMonsterSound(transformID)
+    table.appendArray(ret, t)
+  end
+  local aiidAndOrders = monsterConfigData:GetMonsterAIID(monsterID)
+  for i = 1, #aiidAndOrders do
+    local aiid = aiidAndOrders[i][1]
+    if aiid then
+      local aiConfig = AILogicConfig[aiid]
+      if aiConfig then
+        for _, action in pairs(aiConfig.Action) do
+          if type(action) == "table" and action.Type == "ActionCrazyMode" then
+            local transformMonsterID = action.Data[1]
+            local t = self:_CacheMonsterSound(transformMonsterID)
+            table.appendArray(ret, t)
           end
         end
       end
     end
-    return ret
   end
+  return ret
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheTrapSound = function(self, trapId)
-  -- function num : 0_32 , upvalues : _ENV
+function LoadingServiceRender:_CacheTrapSound(trapId)
   local ret = {}
-  local trapConfigData = (self._configService):GetTrapConfigData()
+  local trapConfigData = self._configService:GetTrapConfigData()
   local skillIds = trapConfigData:GetSkillIDs(trapId)
-  do
-    if skillIds then
-      local t = self:_GetSkillCacheSound(skillIds)
-      ;
-      (table.appendArray)(ret, t)
-    end
-    local trapConfig = trapConfigData:GetTrapData(trapId)
-    if trapConfig.AIID then
-      for i = 1, #trapConfig.AIID do
-        local nConfigAiID = (trapConfig.AIID)[i]
-        local aiConfigData = (Cfg.cfg_ai)[nConfigAiID]
-        if aiConfigData then
-          local t = self:_GetSkillCacheSound(aiConfigData.SkillList)
-          ;
-          (table.appendArray)(ret, t)
-        end
+  if skillIds then
+    local t = self:_GetSkillCacheSound(skillIds)
+    table.appendArray(ret, t)
+  end
+  local trapConfig = trapConfigData:GetTrapData(trapId)
+  if trapConfig.AIID then
+    for i = 1, #trapConfig.AIID do
+      local nConfigAiID = trapConfig.AIID[i]
+      local aiConfigData = Cfg.cfg_ai[nConfigAiID]
+      if aiConfigData then
+        local t = self:_GetSkillCacheSound(aiConfigData.SkillList)
+        table.appendArray(ret, t)
       end
     end
-    do
-      return ret
-    end
   end
+  return ret
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetSkillCacheSound = function(self, skillIds)
-  -- function num : 0_33 , upvalues : _ENV
+function LoadingServiceRender:_GetSkillCacheSound(skillIds)
   if not skillIds then
-    return 
+    return
   end
   local ret = {}
-  for _,skillid in ipairs(skillIds) do
-    local skillConfig = (self._configService):GetSkillConfigData(skillid)
+  for _, skillid in ipairs(skillIds) do
+    local skillConfig = self._configService:GetSkillConfigData(skillid)
     local skillPhaseArray = skillConfig:GetSkillPhaseArray()
-    for _,phase in ipairs(skillPhaseArray) do
-      local ct = (phase:GetPhaseParam()):GetSoundCacheTable()
-      if ct and #ct > 0 then
-        (table.appendArray)(ret, ct)
+    for _, phase in ipairs(skillPhaseArray) do
+      local ct = phase:GetPhaseParam():GetSoundCacheTable()
+      if ct and 0 < #ct then
+        table.appendArray(ret, ct)
       end
     end
     local effectArray = skillConfig:GetSkillEffect()
-    for key,effectValue in pairs(effectArray) do
+    for key, effectValue in pairs(effectArray) do
       if effectValue:GetEffectType() == SkillEffectType.SummonEverything then
         local summonType = effectValue:GetSummonType()
         local summonIDS = effectValue:GetSummonList()
-        for _key,summonID in pairs(summonIDS) do
+        for _key, summonID in pairs(summonIDS) do
           if summonType == SkillEffectEnum_SummonType.Monster then
             local t = self:_CacheMonsterSound(summonID)
-            ;
-            (table.appendArray)(ret, t)
-          else
-            do
-              do
-                if summonType == SkillEffectEnum_SummonType.Trap then
-                  local t = self:_CacheSummonTrapSound(summonID)
-                  ;
-                  (table.appendArray)(ret, t)
-                end
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+            table.appendArray(ret, t)
+          elseif summonType == SkillEffectEnum_SummonType.Trap then
+            local t = self:_CacheSummonTrapSound(summonID)
+            table.appendArray(ret, t)
           end
         end
-      else
-        do
-          if effectValue:GetEffectType() == SkillEffectType.AddBuff then
-            local t = self:_CacheBuffSound(effectValue:GetBuffID())
-            ;
-            (table.appendArray)(ret, t)
-          else
-            do
-              if effectValue:GetEffectType() == SkillEffectType.Transformation then
-                local t = self:_CacheMonsterSound(effectValue:GetTargetMonsterID())
-                ;
-                (table.appendArray)(ret, t)
-              else
-                do
-                  if effectValue:GetEffectType() == SkillEffectType.MakePhantom then
-                    local t = self:_CacheMonsterSound(effectValue:GetTargetID())
-                    ;
-                    (table.appendArray)(ret, t)
-                  else
-                    do
-                      do
-                        if effectValue:GetEffectType() == SkillEffectType.SummonMultipleTrap then
-                          local t = self:_CacheSummonTrapSound(effectValue:GetTrapID())
-                          ;
-                          (table.appendArray)(ret, t)
-                        end
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                        -- DECOMPILER ERROR at PC145: LeaveBlock: unexpected jumping out IF_STMT
-
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+      elseif effectValue:GetEffectType() == SkillEffectType.AddBuff then
+        local t = self:_CacheBuffSound(effectValue:GetBuffID())
+        table.appendArray(ret, t)
+      elseif effectValue:GetEffectType() == SkillEffectType.Transformation then
+        local t = self:_CacheMonsterSound(effectValue:GetTargetMonsterID())
+        table.appendArray(ret, t)
+      elseif effectValue:GetEffectType() == SkillEffectType.MakePhantom then
+        local t = self:_CacheMonsterSound(effectValue:GetTargetID())
+        table.appendArray(ret, t)
+      elseif effectValue:GetEffectType() == SkillEffectType.SummonMultipleTrap then
+        local t = self:_CacheSummonTrapSound(effectValue:GetTrapID())
+        table.appendArray(ret, t)
       end
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheBuffSound = function(self, buffID)
-  -- function num : 0_34 , upvalues : _ENV
+function LoadingServiceRender:_CacheBuffSound(buffID)
   local ret = {}
-  if not (Cfg.cfg_buff)[buffID] then
+  if not Cfg.cfg_buff[buffID] then
     return ret
   end
-  local buffConfig = (self._configService):GetBuffConfigData(buffID)
+  local buffConfig = self._configService:GetBuffConfigData(buffID)
   local ct = buffConfig:GetSoundCacheTable()
-  if ct and #ct > 0 then
-    (table.appendArray)(ret, ct)
+  if ct and 0 < #ct then
+    table.appendArray(ret, ct)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheSummonTrapSound = function(self, trapID)
-  -- function num : 0_35 , upvalues : _ENV
-  if (table.ikey)(self._cachedSoundTrapIdList, trapID) then
-    return 
+function LoadingServiceRender:_CacheSummonTrapSound(trapID)
+  if table.ikey(self._cachedSoundTrapIdList, trapID) then
+    return
   end
-  ;
-  (table.insert)(self._cachedSoundTrapIdList, trapID)
+  table.insert(self._cachedSoundTrapIdList, trapID)
   local ret = self:_CacheTrapSound(trapID)
-  local trapConfigData = (self._configService):GetTrapConfigData()
+  local trapConfigData = self._configService:GetTrapConfigData()
   local trapData = trapConfigData:GetTrapData(trapID)
   local logicParam = trapData.LogicParam
   if logicParam then
     local trapSummonMonsterID = logicParam.MonsterId
     if trapSummonMonsterID then
       local t = self:_CacheMonsterSound(trapSummonMonsterID)
-      ;
-      (table.appendArray)(ret, t)
+      table.appendArray(ret, t)
     end
   end
-  do
-    return ret
-  end
-end
-
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetVoiceCacheTable = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local ret = {}
-  ;
-  (table.appendArray)(ret, self:_GetPetVoiceCacheTable())
-  ;
-  (table.appendArray)(ret, self:_GetMonsterVoiceCacheTable())
   return ret
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetPetVoiceCacheTable = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function LoadingServiceRender:_GetVoiceCacheTable()
   local ret = {}
-  local petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-  local joinedPlayerInfoArray = ((self._world).BW_WorldInfo).players
-  for i,joinedPlayerInfo in pairs(joinedPlayerInfoArray) do
-    for petIndex,matchPetInfo in ipairs(joinedPlayerInfo.pet_list) do
+  table.appendArray(ret, self:_GetPetVoiceCacheTable())
+  table.appendArray(ret, self:_GetMonsterVoiceCacheTable())
+  return ret
+end
+
+function LoadingServiceRender:_GetPetVoiceCacheTable()
+  local ret = {}
+  local petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  local joinedPlayerInfoArray = self._world.BW_WorldInfo.players
+  for i, joinedPlayerInfo in pairs(joinedPlayerInfoArray) do
+    for petIndex, matchPetInfo in ipairs(joinedPlayerInfo.pet_list) do
       local petPstID = matchPetInfo.pet_pstid
-      local petData = nil
-      if (self._world):MatchType() == MatchType.MT_PopStar then
+      local petData
+      if self._world:MatchType() == MatchType.MT_PopStar then
         petData = PopStarMatchPet:New(matchPetInfo)
       else
         petData = MatchPet:New(matchPetInfo)
@@ -1128,14 +865,18 @@ LoadingServiceRender._GetPetVoiceCacheTable = function(self)
       local normalSkillID = petData:GetNormalSkill()
       local chainSkill = petData:GetChainSkillInfo()
       local activeSkill = petData:GetPetActiveSkill()
-      local skillIds = {normalSkillID, (table.unpack)((table.select)(chainSkill, "Skill")), activeSkill}
-      for _,skillid in ipairs(skillIds) do
-        local skillConfig = (self._configService):GetSkillConfigData(skillid)
+      local skillIds = {
+        normalSkillID,
+        table.unpack(table.select(chainSkill, "Skill")),
+        activeSkill
+      }
+      for _, skillid in ipairs(skillIds) do
+        local skillConfig = self._configService:GetSkillConfigData(skillid)
         local skillPhaseArray = skillConfig:GetSkillPhaseArray(petData:GetSkinId())
-        for _,phase in ipairs(skillPhaseArray) do
-          local t = (phase:GetPhaseParam()):GetVoiceCacheTable()
-          if t and #t > 0 then
-            (table.appendArray)(ret, t)
+        for _, phase in ipairs(skillPhaseArray) do
+          local t = phase:GetPhaseParam():GetVoiceCacheTable()
+          if t and 0 < #t then
+            table.appendArray(ret, t)
           end
         end
       end
@@ -1144,274 +885,228 @@ LoadingServiceRender._GetPetVoiceCacheTable = function(self)
   return ret
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetMonsterVoiceCacheTable = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function LoadingServiceRender:_GetMonsterVoiceCacheTable()
   local ret = {}
-  local levelConfigData = (self._configService):GetLevelConfigData()
+  local levelConfigData = self._configService:GetLevelConfigData()
   local monsterIds = levelConfigData:GetAllMonsterID()
-  for _,monsterID in ipairs(monsterIds) do
+  for _, monsterID in ipairs(monsterIds) do
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheMonsterVoice = function(self, monsterID)
-  -- function num : 0_39 , upvalues : _ENV
-  if (table.ikey)(self._cachedVoiceMonsterIdList, monsterID) then
-    return 
+function LoadingServiceRender:_CacheMonsterVoice(monsterID)
+  if table.ikey(self._cachedVoiceMonsterIdList, monsterID) then
+    return
   end
-  ;
-  (table.insert)(self._cachedVoiceMonsterIdList, monsterID)
+  table.insert(self._cachedVoiceMonsterIdList, monsterID)
   local ret = {}
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
+  local monsterConfigData = self._configService:GetMonsterConfigData()
   local skillIdsList = monsterConfigData:GetCacheSkillIds(monsterID)
-  for _,skillIds in pairs(skillIdsList) do
-    for _,skillid in ipairs(skillIds) do
-      local skillConfig = (self._configService):GetSkillConfigData(skillid)
+  for _, skillIds in pairs(skillIdsList) do
+    for _, skillid in ipairs(skillIds) do
+      local skillConfig = self._configService:GetSkillConfigData(skillid)
       local skillPhaseArray = skillConfig:GetSkillPhaseArray()
-      for _,phase in ipairs(skillPhaseArray) do
-        local ct = (phase:GetPhaseParam()):GetVoiceCacheTable()
-        if ct and #ct > 0 then
-          (table.appendArray)(ret, ct)
+      for _, phase in ipairs(skillPhaseArray) do
+        local ct = phase:GetPhaseParam():GetVoiceCacheTable()
+        if ct and 0 < #ct then
+          table.appendArray(ret, ct)
         end
       end
       local effectArray = skillConfig:GetSkillEffect()
-      for key,effectValue in pairs(effectArray) do
+      for key, effectValue in pairs(effectArray) do
         if effectValue:GetEffectType() == SkillEffectType.SummonEverything then
           local summonType = effectValue:GetSummonType()
           local summonIDS = effectValue:GetSummonList()
-          for _key,summonID in pairs(summonIDS) do
+          for _key, summonID in pairs(summonIDS) do
             if summonType == SkillEffectEnum_SummonType.Monster then
               local t = self:_CacheMonsterVoice(ret, summonID)
-              ;
-              (table.appendArray)(ret, t)
-            else
+              table.appendArray(ret, t)
+            elseif summonType == SkillEffectEnum_SummonType.Trap then
             end
           end
         end
       end
     end
   end
-  if summonType == SkillEffectEnum_SummonType.Trap then
-    return ret
-  end
+  return ret
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetGameCacheResGroup = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function LoadingServiceRender:_GetGameCacheResGroup()
   local ret = {}
   local resGroup = GameCacheResGroup:New()
   local effectcache = resGroup.EffectTable
-  for k,v in pairs(effectcache) do
-    local effectinfo = (Cfg.cfg_effect)[k]
+  for k, v in pairs(effectcache) do
+    local effectinfo = Cfg.cfg_effect[k]
     if effectinfo ~= nil then
-      (table.insert)(ret, {effectinfo.ResPath, v})
+      table.insert(ret, {
+        effectinfo.ResPath,
+        v
+      })
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheGlobalAssetFile = function(self)
-  -- function num : 0_41
+function LoadingServiceRender:_CacheGlobalAssetFile()
   local file_name = "globalShaderEffects.asset"
-  local respool = ((self._world).BW_Services).ResourcesPool
+  local respool = self._world.BW_Services.ResourcesPool
   respool:CacheAsset(file_name, 1)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheEachShaderEffectsAssetFile = function(self, file_name)
-  -- function num : 0_42
-  local respool = ((self._world).BW_Services).ResourcesPool
+function LoadingServiceRender:_CacheEachShaderEffectsAssetFile(file_name)
+  local respool = self._world.BW_Services.ResourcesPool
   respool:CacheAsset(file_name, 1)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._CacheGridMaterial = function(self, cacheTable)
-  -- function num : 0_43 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
+function LoadingServiceRender:_CacheGridMaterial(cacheTable)
+  local pieceService = self._world:GetService("Piece")
   local hasGridLine = pieceService:GetPieceHasGridLine()
   if hasGridLine ~= 1 then
-    return 
+    return
   end
-  local levelID = ((self._world).BW_WorldInfo).level_id
-  local levelConfig = (Cfg.cfg_level)[levelID]
+  local levelID = self._world.BW_WorldInfo.level_id
+  local levelConfig = Cfg.cfg_level[levelID]
   local themeID = levelConfig.Theme
-  local cfgThemeData = (Cfg.cfg_theme)[themeID]
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  local cfgThemeData = Cfg.cfg_theme[themeID]
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderBoardCmpt = renderBoardEntity:RenderBoard()
   renderBoardCmpt:SetBrillantGridLineExtendParam(cfgThemeData.BrillantGridLineExtendParam)
   local lineParam = cfgThemeData.BrillantWhiteLineParam
-  if not lineParam or not lineParam.GridCellScale then
-    local levelGridCellScale = BattleConst.GridCellScale
-  end
-  ;
-  ((UnityEngine.Shader).SetGlobalFloat)("_h3d_GeziCellScale", levelGridCellScale)
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(GameResourceConst.BrillantLine, LoadType.GameObject)
+  local levelGridCellScale = lineParam and lineParam.GridCellScale or BattleConst.GridCellScale
+  UnityEngine.Shader.SetGlobalFloat("_h3d_GeziCellScale", levelGridCellScale)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(GameResourceConst.BrillantLine, LoadType.GameObject)
   renderBoardCmpt:SetBrillantGridRequest(req)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._PreCreateFirstWaveMonsterAndTrap = function(self, TT)
-  -- function num : 0_44 , upvalues : _ENV
+function LoadingServiceRender:_PreCreateFirstWaveMonsterAndTrap(TT)
   local eMonsters = {}
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local monsterIDList = utilDataSvc:GetFirstWaveMonsterIDList()
-  for _,id in ipairs(monsterIDList) do
-    local entity = (self._world):GetEntityByID(id)
-    ;
-    (table.insert)(eMonsters, entity)
+  for _, id in ipairs(monsterIDList) do
+    local entity = self._world:GetEntityByID(id)
+    table.insert(eMonsters, entity)
   end
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:CreateMonsterHPEntities(eMonsters)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local isArchived = utilDataSvc:IsArchivedBattle()
   if isArchived then
-    for _,v in pairs(eMonsters) do
+    for _, v in pairs(eMonsters) do
       local hpCmpt = v:HP()
       local curhp = utilDataSvc:GetCurrentLogicHP(v)
       v:ReplaceRedHPAndWhitHP(curhp)
     end
   end
-  do
-    YIELD(TT)
-    for _,v in pairs(eMonsters) do
-      local monsterEntity = v
-      monsterEntity:SetViewVisible(true)
-      monsterEntity:SetLocation(monsterEntity:GetGridPosition() + monsterEntity:GetGridOffset(), monsterEntity:GetGridDirection())
-      monsterEntity:SetLocationHeight(BattleConst.CacheHeight)
-      local hpCmpt = monsterEntity:HP()
-      local hpSliderEntityID = hpCmpt:GetHPSliderEntityID()
-      local hpEntity = (self._world):GetEntityByID(hpSliderEntityID)
-      if hpEntity then
-        local go = ((hpEntity:View()).ViewWrapper).GameObject
-        local uiview = go:GetComponent("UIView")
-        local buffRootPath = uiview:GetUIComponent("UISelectObjectPath", "buffRoot")
-        if buffRootPath then
-          local buffRoot = UICustomWidgetPool:New(self, buffRootPath)
-          buffRoot:SpawnObjects("UIHPBuffInfo", 1)
-          local uiHPBuffInfo = (buffRoot:GetAllSpawnList())[1]
-          uiHPBuffInfo:SetData(monsterEntity:GetID())
-          hpCmpt:SetUIHpBuffInfoWidget(buffRoot)
-        end
+  YIELD(TT)
+  for _, v in pairs(eMonsters) do
+    local monsterEntity = v
+    monsterEntity:SetViewVisible(true)
+    monsterEntity:SetLocation(monsterEntity:GetGridPosition() + monsterEntity:GetGridOffset(), monsterEntity:GetGridDirection())
+    monsterEntity:SetLocationHeight(BattleConst.CacheHeight)
+    local hpCmpt = monsterEntity:HP()
+    local hpSliderEntityID = hpCmpt:GetHPSliderEntityID()
+    local hpEntity = self._world:GetEntityByID(hpSliderEntityID)
+    if hpEntity then
+      local go = hpEntity:View().ViewWrapper.GameObject
+      local uiview = go:GetComponent("UIView")
+      local buffRootPath = uiview:GetUIComponent("UISelectObjectPath", "buffRoot")
+      if buffRootPath then
+        local buffRoot = UICustomWidgetPool:New(self, buffRootPath)
+        buffRoot:SpawnObjects("UIHPBuffInfo", 1)
+        local uiHPBuffInfo = buffRoot:GetAllSpawnList()[1]
+        uiHPBuffInfo:SetData(monsterEntity:GetID())
+        hpCmpt:SetUIHpBuffInfoWidget(buffRoot)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._PreCreateTeam = function(self)
-  -- function num : 0_45 , upvalues : _ENV
-  local entityServiceRender = (self._world):GetService("RenderEntity")
-  if (self._world):MatchType() ~= MatchType.MT_Chess then
+function LoadingServiceRender:_PreCreateTeam()
+  local entityServiceRender = self._world:GetService("RenderEntity")
+  if self._world:MatchType() ~= MatchType.MT_Chess then
     entityServiceRender:CreateBattleTeamMemberRender()
     entityServiceRender:CreateBattleTeamRender()
-  else
-    if (self._world):MatchType() == MatchType.MT_Chess then
-      entityServiceRender:CreateChessPet()
-    end
+  elseif self._world:MatchType() == MatchType.MT_Chess then
+    entityServiceRender:CreateChessPet()
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._GetCacheTable_ByPetData = function(self, listPetData)
-  -- function num : 0_46 , upvalues : _ENV
+function LoadingServiceRender:_GetCacheTable_ByPetData(listPetData)
   local ret = {}
-  for petIndex,petData in ipairs(listPetData) do
+  for petIndex, petData in ipairs(listPetData) do
     local heroPrefab = petData:GetPetPrefab(PetSkinEffectPath.MODEL_INGAME)
-    local heroAncName = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(heroPrefab, PetAnimatorControllerType.Battle)
-    ;
-    (table.appendArray)(ret, {
-{heroAncName, 1}
-})
+    local heroAncName = HelperProxy:GetInstance():GetPetAnimatorControllerName(heroPrefab, PetAnimatorControllerType.Battle)
+    table.appendArray(ret, {
+      {heroAncName, 1}
+    })
     local normalSkillID = petData:GetNormalSkill()
     local chainSkill = petData:GetChainSkillInfo()
     local activeSkill = petData:GetPetActiveSkill()
     local skinId = petData:GetSkinId()
-    local skillIds = {normalSkillID, (table.unpack)((table.select)(chainSkill, "Skill")), activeSkill}
+    local skillIds = {
+      normalSkillID,
+      table.unpack(table.select(chainSkill, "Skill")),
+      activeSkill
+    }
     local t = self:_GetSkillCacheTable(skillIds, skinId)
-    ;
-    (table.appendArray)(ret, t)
+    table.appendArray(ret, t)
     local passiveSkillID = petData:GetPetPassiveSkill()
-    if passiveSkillID and passiveSkillID > 0 then
-      local cfg = (Cfg.cfg_passive_skill)[passiveSkillID]
+    if passiveSkillID and 0 < passiveSkillID then
+      local cfg = Cfg.cfg_passive_skill[passiveSkillID]
       local t = self:_GetBuffCacheTable(cfg.BuffID)
-      ;
-      (table.appendArray)(ret, t)
+      table.appendArray(ret, t)
     end
-    do
-      local shaderEffect = petData:GetPetShaderEffect()
-      if shaderEffect then
-        self:_CacheEachShaderEffectsAssetFile(shaderEffect)
-      end
-      local templateID = petData:GetTemplateID()
-      local permanentEffectArray = ((Cfg.cfg_pet)[templateID]).BattlePermanentEffect
-      if permanentEffectArray and #permanentEffectArray then
-        for _,effectID in ipairs(permanentEffectArray) do
-          local cfgEffect = (Cfg.cfg_effect)[effectID]
-          if cfgEffect then
-            (table.insert)(ret, {cfgEffect.ResPath, 1})
-          end
+    local shaderEffect = petData:GetPetShaderEffect()
+    if shaderEffect then
+      self:_CacheEachShaderEffectsAssetFile(shaderEffect)
+    end
+    local templateID = petData:GetTemplateID()
+    local permanentEffectArray = Cfg.cfg_pet[templateID].BattlePermanentEffect
+    if permanentEffectArray and #permanentEffectArray then
+      for _, effectID in ipairs(permanentEffectArray) do
+        local cfgEffect = Cfg.cfg_effect[effectID]
+        if cfgEffect then
+          table.insert(ret, {
+            cfgEffect.ResPath,
+            1
+          })
         end
-      end
-      do
-        -- DECOMPILER ERROR at PC110: LeaveBlock: unexpected jumping out DO_STMT
-
       end
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender.CacheObject_MatchPet = function(self, TT, listMatchPet)
-  -- function num : 0_47 , upvalues : _ENV
-  local respool = ((self._world).BW_Services).ResourcesPool
+function LoadingServiceRender:CacheObject_MatchPet(TT, listMatchPet)
+  local respool = self._world.BW_Services.ResourcesPool
   local listRes = self:_GetCacheTable_ByPetData(listMatchPet)
-  local tmClockLoad = (os.clock)()
-  for keystr,v in pairs(listRes) do
+  local tmClockLoad = os.clock()
+  for keystr, v in pairs(listRes) do
     local resname = v[1]
     local count = v[2]
-    if (string.endwith)(resname, ".mat") then
+    if string.endwith(resname, ".mat") then
       respool:CacheMaterial(resname, count)
     else
       respool:Cache(resname, count)
     end
-    local tmClockNow = (os.clock)()
-    if tmClockNow - tmClockLoad >= 4 then
+    local tmClockNow = os.clock()
+    if 4 <= tmClockNow - tmClockLoad then
       YIELD(TT)
       tmClockLoad = tmClockNow
     end
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-LoadingServiceRender._InitializeLoadingEntity = function(self, TT)
-  -- function num : 0_48 , upvalues : _ENV
-  local sEntity = (self._world):GetService("RenderEntity")
+function LoadingServiceRender:_InitializeLoadingEntity(TT)
+  local sEntity = self._world:GetService("RenderEntity")
   local effectEntity = sEntity:CreateRenderEntity(EntityConfigIDRender.FinalAttackEffect)
   local resPath = "eff_finalatk.prefab"
   effectEntity:ReplaceAsset(NativeUnityPrefabAsset:New(resPath, false))
-  local sEntity = (self._world):GetService("RenderEntity")
+  local sEntity = self._world:GetService("RenderEntity")
   sEntity:CreateRenderEntity(EntityConfigIDRender.GuideFinger)
-  local sEntity = (self._world):GetService("RenderEntity")
+  local sEntity = self._world:GetService("RenderEntity")
   sEntity:CreateRenderEntity(EntityConfigIDRender.LinkageInfo)
-  local canMoveArrowService = (self._world):GetService("CanMoveArrow")
+  local canMoveArrowService = self._world:GetService("CanMoveArrow")
   canMoveArrowService:InitArrows()
   canMoveArrowService:InitArrows()
 end
-
-

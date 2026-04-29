@@ -1,16 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/mining/homeland_ore.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandOre", Object)
 HomelandOre = HomelandOre
-local OreState = {Empty = 1, Half = 2, Full = 3}
+local OreState = {
+  Empty = 1,
+  Half = 2,
+  Full = 3
+}
 _enum("OreState", OreState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandOre.Constructor = function(self, oreID, oreGO, oreCfg, miningManager)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandOre:Constructor(oreID, oreGO, oreCfg, miningManager)
   self._oreID = oreID
   self._oreGO = oreGO
   self._oreCfg = oreCfg
@@ -22,307 +19,207 @@ HomelandOre.Constructor = function(self, oreID, oreGO, oreCfg, miningManager)
   self._refreshEvent = nil
   self._oreStateGo = oreGO
   self._clearCutTimesTime = 1800000
-  self._oreGoName = {"CutForbidden.prefab", "CutForbidden.prefab", "CutForbidden.prefab"}
+  self._oreGoName = {
+    "CutForbidden.prefab",
+    "CutForbidden.prefab",
+    "CutForbidden.prefab"
+  }
   self._oreStateGoOffset = Vector3(0, 0, 0)
   self._serverData = nil
   self._refreshTimesTime = nil
   self._needRefresh = true
   self._oreState = nil
-  self._stoneLod0 = ((self._oreGO).transform):Find("model/hl_envpfb_props_ore_01/meshroot/hl_envmod_props_ore_01_LOD0/hl_envmod_props_ore_01_part01")
-  self._stoneLod1 = ((self._oreGO).transform):Find("model/hl_envpfb_props_ore_01/meshroot/hl_envmod_props_ore_01_LOD1/hl_envmod_props_ore_01_part01")
+  self._stoneLod0 = self._oreGO.transform:Find("model/hl_envpfb_props_ore_01/meshroot/hl_envmod_props_ore_01_LOD0/hl_envmod_props_ore_01_part01")
+  self._stoneLod1 = self._oreGO.transform:Find("model/hl_envpfb_props_ore_01/meshroot/hl_envmod_props_ore_01_LOD1/hl_envmod_props_ore_01_part01")
   if self._stoneLod0 == nil then
-    (Log.error)("HomelandOre:Constructor _stone = nil oreID ", self._oreID, (self._oreGO).name)
+    Log.error("HomelandOre:Constructor _stone = nil oreID ", self._oreID, self._oreGO.name)
   end
-  self._objFadeCpt0 = (self._stoneLod0):GetComponent(typeof(FadeComponent))
+  self._objFadeCpt0 = self._stoneLod0:GetComponent(typeof(FadeComponent))
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandOre:Dispose()
   if self._timerEvent then
-    (self._timerEvent):Cancel()
+    self._timerEvent:Cancel()
   end
   if self._oreStateGo then
-    (UIHelper.DestroyGameObject)(self._oreStateGo)
+    UIHelper.DestroyGameObject(self._oreStateGo)
     self._oreStateGo = nil
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.ID = function(self)
-  -- function num : 0_2
+function HomelandOre:ID()
   return self._oreID
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.GetInteractRedStatus = function(self)
-  -- function num : 0_3
+function HomelandOre:GetInteractRedStatus()
   return false
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.EnterInteractScope = function(self)
-  -- function num : 0_4
+function HomelandOre:EnterInteractScope()
   self:RefreshOnOreStateChange()
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.LeaveInteractScope = function(self)
-  -- function num : 0_5
+function HomelandOre:LeaveInteractScope()
   if self._oreStateGo then
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.RefreshOnOreStateChange = function(self)
-  -- function num : 0_6 , upvalues : OreState
+function HomelandOre:RefreshOnOreStateChange()
   if not self._oreState then
     self._oreState = self:GetOreState()
+  elseif self:GetOreState() == self._oreState then
+    return
   else
-    if self:GetOreState() == self._oreState then
-      return 
-    else
-      self._oreState = self:GetOreState()
-    end
+    self._oreState = self:GetOreState()
   end
   if self._oreState == OreState.Empty then
     self:Disappear()
   else
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._objFadeCpt0).Alpha = 1
-    ;
-    ((self._stoneLod0).gameObject):SetActive(true)
-    ;
-    ((self._stoneLod1).gameObject):SetActive(true)
+    self._objFadeCpt0.Alpha = 1
+    self._stoneLod0.gameObject:SetActive(true)
+    self._stoneLod1.gameObject:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.SetOreServerData = function(self, data)
-  -- function num : 0_7
+function HomelandOre:SetOreServerData(data)
   self._serverData = data
   self:SetDropTimes(data.drop_times)
   self._needRefresh = self:CheckNeedRefresh()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.SetDropTimes = function(self, dropTimes)
-  -- function num : 0_8
+function HomelandOre:SetDropTimes(dropTimes)
   self._dropTimes = dropTimes
   self:RefreshOnOreStateChange()
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.SetRefreshTime = function(self, nextTime)
-  -- function num : 0_9 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local nowTime = (self._timeModule):GetServerTime()
+function HomelandOre:SetRefreshTime(nextTime)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local nowTime = self._timeModule:GetServerTime()
   self._nextRefreshTime = nextTime * 1000 - nowTime
   if self._nextRefreshTime > 0 and not self._refreshEvent then
-    self._refreshEvent = ((GameGlobal.Timer)()):AddEvent(self._nextRefreshTime, function()
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    (self._refreshEvent):Cancel()
-    self._refreshEvent = nil
-    self._needRefresh = true
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandRefreshOreInfo)
-  end
-)
+    self._refreshEvent = GameGlobal.Timer():AddEvent(self._nextRefreshTime, function()
+      self._refreshEvent:Cancel()
+      self._refreshEvent = nil
+      self._needRefresh = true
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandRefreshOreInfo)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.IncreaseDropTimes = function(self)
-  -- function num : 0_10
+function HomelandOre:IncreaseDropTimes()
   self._dropTimes = self._dropTimes + 1
   self:RefreshOnOreStateChange()
   self._needRefresh = self:CheckNeedRefresh()
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.ResetClearTimer = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function HomelandOre:ResetClearTimer()
   if self._timerEvent then
-    (self._timerEvent):Cancel()
+    self._timerEvent:Cancel()
     self._timerEvent = nil
   end
-  self._timerEvent = ((GameGlobal.Timer)()):AddEvent(self._clearCutTimesTime, function()
-    -- function num : 0_11_0 , upvalues : self
+  self._timerEvent = GameGlobal.Timer():AddEvent(self._clearCutTimesTime, function()
     self._cutTimes = 0
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.ClearCutTimes = function(self)
-  -- function num : 0_12
+function HomelandOre:ClearCutTimes()
   self._cutTimes = 0
   if self._timerEvent then
-    (self._timerEvent):Cancel()
+    self._timerEvent:Cancel()
     self._timerEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.IncreaseCutTimes = function(self)
-  -- function num : 0_13
+function HomelandOre:IncreaseCutTimes()
   self._cutTimes = self._cutTimes + 1
   return self._cutTimes
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.GetInteractPosition = function(self, index)
-  -- function num : 0_14
+function HomelandOre:GetInteractPosition(index)
   if self._interactpos == nil then
-    self._interactpos = ((self._oreGO).transform).position
+    self._interactpos = self._oreGO.transform.position
   end
   return self._interactpos
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.RefreshOreState = function(self, state)
-  -- function num : 0_15 , upvalues : OreState
-  if ((state == OreState.Full and state ~= OreState.Half) or state == OreState.Empty) then
+function HomelandOre:RefreshOreState(state)
+  if state == OreState.Full then
+  elseif state == OreState.Half then
+  elseif state == OreState.Empty then
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.ClearRefreshTimeEvent = function(self)
-  -- function num : 0_16
+function HomelandOre:ClearRefreshTimeEvent()
   self._refreshEvent = nil
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.GetOreServerId = function(self)
-  -- function num : 0_17
+function HomelandOre:GetOreServerId()
   if self._serverData then
-    return (self._serverData).mine_id
+    return self._serverData.mine_id
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.CheckCanCut = function(self)
-  -- function num : 0_18
-  do return (self._oreCfg).DropLimit > self._dropTimes end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandOre:CheckCanCut()
+  return not (self._dropTimes >= self._oreCfg.DropLimit)
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.CheckNeedRefresh = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  if (self._oreCfg).DropLimit <= self._dropTimes then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandOreRefresh)
+function HomelandOre:CheckNeedRefresh()
+  if self._dropTimes >= self._oreCfg.DropLimit then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandOreRefresh)
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.GetOreState = function(self)
-  -- function num : 0_20 , upvalues : OreState
+function HomelandOre:GetOreState()
   local curState = OreState.Empty
-  if (self._oreCfg).DropLimit <= self._dropTimes then
+  if self._dropTimes >= self._oreCfg.DropLimit then
     curState = OreState.Empty
+  elseif self._dropTimes >= self._oreCfg.DropLimit / 2 and self._dropTimes < self._oreCfg.DropLimit then
+    curState = OreState.Half
   else
-    if (self._oreCfg).DropLimit / 2 <= self._dropTimes and self._dropTimes < (self._oreCfg).DropLimit then
-      curState = OreState.Half
-    else
-      curState = OreState.Full
-    end
+    curState = OreState.Full
   end
   return curState
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.GetPlayerDirection = function(self, chara)
-  -- function num : 0_21 , upvalues : _ENV
+function HomelandOre:GetPlayerDirection(chara)
   if not self._oreStateGo then
     return chara._currentForward
   end
-  local pos = ((self._oreStateGo).transform).position
+  local pos = self._oreStateGo.transform.position
   local vec = Vector3(pos.x, 0, pos.z)
-  local charaPos = Vector3(((chara:Transform()).position).x, 0, ((chara:Transform()).position).z)
+  local charaPos = Vector3(chara:Transform().position.x, 0, chara:Transform().position.z)
   return vec - charaPos
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.GetCutRadius = function(self)
-  -- function num : 0_22
-  return (self._oreCfg).CutRadius
+function HomelandOre:GetCutRadius()
+  return self._oreCfg.CutRadius
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.GetOreEffectPos = function(self, chara)
-  -- function num : 0_23 , upvalues : _ENV
+function HomelandOre:GetOreEffectPos(chara)
   local path = ""
   if self._oreStateGo then
-    local cfg = ((GameGlobal.GetUIModule)(HomelandModule)):GetCurrentToolCfg(ToolType.TT_PICK)
+    local cfg = GameGlobal.GetUIModule(HomelandModule):GetCurrentToolCfg(ToolType.TT_PICK)
     path = cfg.AttachPath
-    local data = (string.split)(cfg.Res, ".prefab")
+    local data = string.split(cfg.Res, ".prefab")
     return path .. "/" .. data[1]
   end
-  do
-    return path
-  end
+  return path
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandOre.Disappear = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : self, _ENV
+function HomelandOre:Disappear()
+  TaskManager:GetInstance():StartTask(function(TT)
     local addtime = 0
     local anitime = 1
     local aptime = 0.05
-    while 1 do
-      -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-      if addtime < anitime then
-        (self._objFadeCpt0).Alpha = (self._objFadeCpt0).Alpha - aptime
-        addtime = addtime + 0.05
-        YIELD(TT, 10)
-        -- DECOMPILER ERROR at PC15: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC15: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    while addtime < anitime do
+      self._objFadeCpt0.Alpha = self._objFadeCpt0.Alpha - aptime
+      addtime = addtime + 0.05
+      YIELD(TT, 10)
     end
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._objFadeCpt0).Alpha = 0
-    ;
-    ((self._stoneLod0).gameObject):SetActive(false)
-    ;
-    ((self._stoneLod1).gameObject):SetActive(false)
-  end
-)
+    self._objFadeCpt0.Alpha = 0
+    self._stoneLod0.gameObject:SetActive(false)
+    self._stoneLod1.gameObject:SetActive(false)
+  end)
 end
-
-

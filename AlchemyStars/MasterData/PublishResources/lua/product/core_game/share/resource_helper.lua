@@ -1,53 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/resource_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResourceHelper", Singleton)
 ResourceHelper = ResourceHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ResourceHelper.Constructor = function(self)
-  -- function num : 0_0
+function ResourceHelper:Constructor()
   self._PetSKill = nil
   self._StoryAffinity = nil
   self._PetEquip = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourceHelper.GetPetSKill = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ResourceHelper:GetPetSKill()
   if not self._PetSKill then
     self._PetSKill = ResPetSkill:New()
   end
   return self._PetSKill
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourceHelper.GetStoryAffinity = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function ResourceHelper:GetStoryAffinity()
   if not self._StoryAffinity then
     self._StoryAffinity = ResStoryAffinity:New()
   end
   return self._StoryAffinity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourceHelper.GetPetEquip = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ResourceHelper:GetPetEquip()
   if not self._PetEquip then
     self._PetEquip = ResPetEquip:New()
   end
   return self._PetEquip
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourceHelper.GetPetEquipRefine = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function ResourceHelper:GetPetEquipRefine()
   if not self._PetEquipRefine then
     self._PetEquipRefine = ResPetEquipRefine:New()
   end
@@ -56,19 +37,14 @@ end
 
 _class("CfgTermEntity", Object)
 CfgTermEntity = CfgTermEntity
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-CfgTermEntity.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function CfgTermEntity:Constructor()
   self.cfg_conds = {}
   self.comp_type = TCType_None
   self.dataInfo = {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ResourceHelper.CheckTermSatisfy = function(self, strCond, cfgTerm, cb)
-  -- function num : 0_6
+function ResourceHelper:CheckTermSatisfy(strCond, cfgTerm, cb)
   if self:ParseCondConfig(strCond, cfgTerm) == false then
     return false
   end
@@ -78,63 +54,45 @@ end
 local TCType_None = 0
 local TCType_All = 1
 local TCType_Any = 2
--- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
 
-ResourceHelper.ParseCondConfig = function(self, strCond, cfgTerm)
-  -- function num : 0_7 , upvalues : TCType_None, _ENV
+function ResourceHelper:ParseCondConfig(strCond, cfgTerm)
   local sub_children = {}
   local composite_type = TCType_None
   local l_parse_ret, l_ret_str, composite_type = self:ParseCond(strCond, sub_children, composite_type, 1)
   if not l_parse_ret then
-    (Log.fatal)("ResourceHelper:ParseCondConfig error:", strCond, "____", l_ret_str)
+    Log.fatal("ResourceHelper:ParseCondConfig error:", strCond, "____", l_ret_str)
     return false
   end
   cfgTerm.comp_type = composite_type
-  if #sub_children > 1 then
+  if 1 < #sub_children then
     for i = 1, #sub_children do
       local cfgSub = _createInstance(cfgTerm._className)
       local l_ret = self:ParseCondConfig(sub_children[i], cfgSub)
       if l_ret ~= true then
         return false
       end
-      ;
-      (table.insert)(cfgTerm.cfg_conds, cfgSub)
+      table.insert(cfgTerm.cfg_conds, cfgSub)
+    end
+  elseif #sub_children == 1 then
+    local spstrs = string.split(sub_children[1], ",")
+    for pi = 1, #spstrs do
+      cfgTerm.dataInfo[pi] = tonumber(spstrs[pi])
     end
   else
-    do
-      if #sub_children == 1 then
-        local spstrs = (string.split)(sub_children[1], ",")
-        for pi = 1, #spstrs do
-          -- DECOMPILER ERROR at PC61: Confused about usage of register: R13 in 'UnsetPending'
-
-          (cfgTerm.dataInfo)[pi] = tonumber(spstrs[pi])
-        end
-      else
-        do
-          do return false end
-          return true
-        end
-      end
-    end
+    return false
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-ResourceHelper.ParseCond = function(self, strCond, cond_list, composite_type, find_start)
-  -- function num : 0_8 , upvalues : _ENV, TCType_None, TCType_Any, TCType_All
-  local b = (string.find)(strCond, "%(", find_start, false)
+function ResourceHelper:ParseCond(strCond, cond_list, composite_type, find_start)
+  local b = string.find(strCond, "%(", find_start, false)
   if b == nil then
-    local str = (string.sub)(strCond, find_start)
-    local and_list = (string.split)(strCond, "&")
-    local or_list = (string.split)(strCond, "|")
-    if not and_list then
-      and_list = {}
-    end
-    if not or_list then
-      or_list = {}
-    end
-    if #and_list > 1 and #or_list > 1 then
+    local str = string.sub(strCond, find_start)
+    local and_list = string.split(strCond, "&")
+    local or_list = string.split(strCond, "|")
+    and_list = and_list or {}
+    or_list = or_list or {}
+    if 1 < #and_list and 1 < #or_list then
       return false, "逻辑连接符不一致", composite_type
     end
     if #and_list <= 1 and #or_list <= 1 then
@@ -145,7 +103,7 @@ ResourceHelper.ParseCond = function(self, strCond, cond_list, composite_type, fi
         return true, "ok", composite_type
       end
     end
-    if #and_list > 1 then
+    if 1 < #and_list then
       if composite_type == TCType_Any then
         return false, "逻辑连接符不一致", composite_type
       end
@@ -162,45 +120,40 @@ ResourceHelper.ParseCond = function(self, strCond, cond_list, composite_type, fi
     end
     return true, "ok", composite_type
   end
-  do
-    local e = self:FindBracketEnd(strCond, b + 1)
-    if e == nil then
-      return false, "括号不匹配", composite_type
-    end
-    cond_list[#cond_list + 1] = (string.sub)(strCond, b + 1, e - 1)
-    local and_pos = (string.find)(strCond, "&", e + 1, false)
-    local or_pos = (string.find)(strCond, "|", e + 1, false)
-    if and_pos == nil and or_pos == nil then
-      return true, "ok", composite_type
-    end
-    if and_pos ~= nil and (or_pos == nil or and_pos < or_pos) then
-      if composite_type == TCType_Any then
-        return false, "逻辑连接符不一致", composite_type
-      end
-      composite_type = TCType_All
-      return self:ParseCond(strCond, cond_list, composite_type, and_pos + 1)
-    end
-    if or_pos ~= nil then
-      if composite_type == TCType_All then
-        return false, "逻辑连接符不一致", composite_type
-      end
-      composite_type = TCType_Any
-      return self:ParseCond(strCond, cond_list, composite_type, or_pos + 1)
-    end
-    return false, "条件配置错误请检查", composite_type
+  local e = self:FindBracketEnd(strCond, b + 1)
+  if e == nil then
+    return false, "括号不匹配", composite_type
   end
+  cond_list[#cond_list + 1] = string.sub(strCond, b + 1, e - 1)
+  local and_pos = string.find(strCond, "&", e + 1, false)
+  local or_pos = string.find(strCond, "|", e + 1, false)
+  if and_pos == nil and or_pos == nil then
+    return true, "ok", composite_type
+  end
+  if and_pos ~= nil and (or_pos == nil or and_pos < or_pos) then
+    if composite_type == TCType_Any then
+      return false, "逻辑连接符不一致", composite_type
+    end
+    composite_type = TCType_All
+    return self:ParseCond(strCond, cond_list, composite_type, and_pos + 1)
+  end
+  if or_pos ~= nil then
+    if composite_type == TCType_All then
+      return false, "逻辑连接符不一致", composite_type
+    end
+    composite_type = TCType_Any
+    return self:ParseCond(strCond, cond_list, composite_type, or_pos + 1)
+  end
+  return false, "条件配置错误请检查", composite_type
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-ResourceHelper.FindBracketEnd = function(self, strCond, find_start)
-  -- function num : 0_9 , upvalues : _ENV
-  local b = (string.find)(strCond, "%(", find_start, false)
-  local e = (string.find)(strCond, ")", find_start, false)
+function ResourceHelper:FindBracketEnd(strCond, find_start)
+  local b = string.find(strCond, "%(", find_start, false)
+  local e = string.find(strCond, ")", find_start, false)
   if e == nil then
     return nil
   end
-  if b == nil or e < b then
+  if b == nil or b > e then
     return e
   end
   local sub_e = self:FindBracketEnd(strCond, b + 1)
@@ -210,32 +163,23 @@ ResourceHelper.FindBracketEnd = function(self, strCond, find_start)
   return self:FindBracketEnd(strCond, sub_e + 1)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-ResourceHelper.CheckSatisfy = function(self, cfgTerm, cb)
-  -- function num : 0_10 , upvalues : TCType_All, _ENV, TCType_Any, TCType_None
+function ResourceHelper:CheckSatisfy(cfgTerm, cb)
   if cfgTerm.comp_type == TCType_All then
-    for k,v in pairs(cfgTerm.cfg_conds) do
+    for k, v in pairs(cfgTerm.cfg_conds) do
       if self:CheckSatisfy(v, cb) == false then
         return false
       end
     end
     return true
-  else
-    if cfgTerm.comp_type == TCType_Any then
-      for k,v in pairs(cfgTerm.cfg_conds) do
-        if self:CheckSatisfy(v, cb) == true then
-          return true
-        end
-      end
-      return false
-    else
-      if cfgTerm.comp_type == TCType_None then
-        return cb(cfgTerm.dataInfo, cb)
+  elseif cfgTerm.comp_type == TCType_Any then
+    for k, v in pairs(cfgTerm.cfg_conds) do
+      if self:CheckSatisfy(v, cb) == true then
+        return true
       end
     end
+    return false
+  elseif cfgTerm.comp_type == TCType_None then
+    return cb(cfgTerm.dataInfo, cb)
   end
   return false
 end
-
-

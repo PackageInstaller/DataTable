@@ -1,177 +1,120 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_image_recall.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyImageRecall", Object)
 UIPetIntimacyImageRecall = UIPetIntimacyImageRecall
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyImageRecall.Constructor = function(self, intimacyMainController, petData)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetIntimacyImageRecall:Constructor(intimacyMainController, petData)
   self._intimacyMainController = intimacyMainController
   self._petData = petData
   self._isInited = false
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall.Init = function(self)
-  -- function num : 0_1
-  self._scrollView = (self._intimacyMainController):GetUIComponent("UIDynamicScrollView", "ImageRecallListView")
-  self._noMovieGO = (self._intimacyMainController):GetGameObject("nomovie")
+function UIPetIntimacyImageRecall:Init()
+  self._scrollView = self._intimacyMainController:GetUIComponent("UIDynamicScrollView", "ImageRecallListView")
+  self._noMovieGO = self._intimacyMainController:GetGameObject("nomovie")
   self:_InitImageRecallData()
   self:_InitScrollView()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall.PetDataChanged = function(self, petData)
-  -- function num : 0_2
+function UIPetIntimacyImageRecall:PetDataChanged(petData)
   self._petData = petData
   if self._isInited then
     self:_InitImageRecallData()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall.Refresh = function(self)
-  -- function num : 0_3
+function UIPetIntimacyImageRecall:Refresh()
   if self._isInited then
     self._currentSelectedData = nil
     self._currentSelectedItem = nil
-    ;
-    (self._scrollView):SetListItemCount(self._imageRecallCount, true)
-    ;
-    (self._scrollView):RefreshAllShownItem()
+    self._scrollView:SetListItemCount(self._imageRecallCount, true)
+    self._scrollView:RefreshAllShownItem()
   else
     self:Init()
     self._isInited = true
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall.CloseWindow = function(self)
-  -- function num : 0_4
+function UIPetIntimacyImageRecall:CloseWindow()
   self:_CancelSelected()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall.Destroy = function(self)
-  -- function num : 0_5
+function UIPetIntimacyImageRecall:Destroy()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall.Update = function(self)
-  -- function num : 0_6
+function UIPetIntimacyImageRecall:Update()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall._InitImageRecallData = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetIntimacyImageRecall:_InitImageRecallData()
   self._currentSelectedData = nil
   self._currentSelectedItem = nil
   self._imageRecallDatas = {}
   local index = 1
   local imageRecallConfig = {}
-  local cfg_story = (Cfg.cfg_aircraft_pet_stroy_refresh)({})
-  local petid = (self._petData):GetTemplateID()
-  for key,value in pairs(cfg_story) do
+  local cfg_story = Cfg.cfg_aircraft_pet_stroy_refresh({})
+  local petid = self._petData:GetTemplateID()
+  for key, value in pairs(cfg_story) do
     local insert = false
     if value.TriggerType == EStoryTriggerType.EnterAircraftSection then
       local _petid = value.PetID
       if _petid == petid then
         insert = true
-      else
-        if value.EnterTriggerNeedPetsArray and (table.count)(value.EnterTriggerNeedPetsArray) > 0 then
-          for i = 1, #value.EnterTriggerNeedPetsArray do
-            local __petid = (value.EnterTriggerNeedPetsArray)[i]
-            if __petid == petid then
-              insert = true
-              break
-            end
+      elseif value.EnterTriggerNeedPetsArray and table.count(value.EnterTriggerNeedPetsArray) > 0 then
+        for i = 1, #value.EnterTriggerNeedPetsArray do
+          local __petid = value.EnterTriggerNeedPetsArray[i]
+          if __petid == petid then
+            insert = true
+            break
           end
         end
       end
     else
-      do
-        do
-          do
-            local _petid = value.PetID
-            if _petid == petid then
-              insert = true
-            end
-            if insert then
-              (table.insert)(imageRecallConfig, value)
-            end
-            -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC61: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      local _petid = value.PetID
+      if _petid == petid then
+        insert = true
       end
     end
+    if insert then
+      table.insert(imageRecallConfig, value)
+    end
   end
-  ;
-  (table.sort)(imageRecallConfig, function(a, b)
-    -- function num : 0_7_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(imageRecallConfig, function(a, b)
+    return a.ID < b.ID
+  end)
   local skinCfg = {}
-  local skinPetCfg = (Cfg.cfg_pet_skin)({PetId = (self._petData):GetTemplateID()})
+  local skinPetCfg = Cfg.cfg_pet_skin({
+    PetId = self._petData:GetTemplateID()
+  })
   if skinPetCfg then
     for i = 1, #skinPetCfg do
       local item = skinPetCfg[i]
       if not item.StoryId then
-        do
-          (table.insert)(skinCfg, item)
-          -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC92: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
       end
+      table.insert(skinCfg, item)
     end
   end
-  ;
-  (table.sort)(skinCfg, function(a, b)
-    -- function num : 0_7_1 , upvalues : _ENV
+  table.sort(skinCfg, function(a, b)
     local sort_a = 0
     local sort_b = 0
-    -- DECOMPILER ERROR at PC10: Unhandled construct in 'MakeBoolean' P1
-
-    if a.SkinType and a.SkinType == PetSkinFlag.PSF_COLLECTION then
-      sort_a = 2
+    if a.SkinType then
+      if a.SkinType == PetSkinFlag.PSF_COLLECTION then
+        sort_a = 2
+      else
+        sort_a = 1
+      end
+    end
+    if b.SkinType then
+      if b.SkinType == PetSkinFlag.PSF_COLLECTION then
+        sort_b = 2
+      else
+        sort_b = 1
+      end
+    end
+    if sort_a ~= sort_b then
+      return sort_a > sort_b
     else
-      sort_a = 1
+      return a.id < b.id
     end
-    -- DECOMPILER ERROR at PC21: Unhandled construct in 'MakeBoolean' P1
-
-    if b.SkinType and b.SkinType == PetSkinFlag.PSF_COLLECTION then
-      sort_b = 2
-    else
-      sort_b = 1
-    end
-    if sort_b >= sort_a then
-      do return sort_a == sort_b end
-      do return a.id < b.id end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
-  end
-)
+  end)
   local allCfg = {}
   for i = 1, #skinCfg do
     local item = skinCfg[i]
@@ -181,212 +124,135 @@ UIPetIntimacyImageRecall._InitImageRecallData = function(self)
     if item.SkinType and item.SkinType == PetSkinFlag.PSF_COLLECTION then
       itemData.collect = true
     end
-    ;
-    (table.insert)(allCfg, itemData)
+    table.insert(allCfg, itemData)
   end
   for i = 1, #imageRecallConfig do
     local item = imageRecallConfig[i]
     local itemData = {}
     itemData.data = item
     itemData.type = 1
-    ;
-    (table.insert)(allCfg, itemData)
+    table.insert(allCfg, itemData)
   end
   if allCfg then
     for i = 1, #allCfg do
       local cfg = allCfg[i]
       local value = cfg.data
-      -- DECOMPILER ERROR at PC163: Unhandled construct in 'MakeBoolean' P1
-
-      if cfg.type == 1 and value.ID ~= nil and value.ID ~= 0 and (value.MutexStoryEventId == 0 or value.MutexStoryEventId == nil) then
-        local storyConfig = (Cfg.cfg_pet_story)[value.ID]
-        local imageRecallData = {}
-        imageRecallData.storyId = storyConfig.StoryID
-        imageRecallData.title = storyConfig.Title
-        imageRecallData.des = storyConfig.Des
-        imageRecallData.icon = storyConfig.Icon
-        imageRecallData.affinityLevel = value.AffinityLevel
-        if value.TriggerType == EStoryTriggerType.EnterAircraftSection then
-          if value.PetID == (self._petData):GetTemplateID() then
-            imageRecallData.isOpen = (self._petData):IsFinishedStory(value.ID)
-          else
-            local mainPetID = value.PetID
-            local mainPet = (self._petModule):GetPetByTemplateId(mainPetID)
-            if mainPet then
-              imageRecallData.isOpen = mainPet:IsFinishedStory(value.ID)
+      if cfg.type == 1 then
+        if value.ID ~= nil and value.ID ~= 0 and (value.MutexStoryEventId == 0 or value.MutexStoryEventId == nil) then
+          local storyConfig = Cfg.cfg_pet_story[value.ID]
+          local imageRecallData = {}
+          imageRecallData.storyId = storyConfig.StoryID
+          imageRecallData.title = storyConfig.Title
+          imageRecallData.des = storyConfig.Des
+          imageRecallData.icon = storyConfig.Icon
+          imageRecallData.affinityLevel = value.AffinityLevel
+          if value.TriggerType == EStoryTriggerType.EnterAircraftSection then
+            if value.PetID == self._petData:GetTemplateID() then
+              imageRecallData.isOpen = self._petData:IsFinishedStory(value.ID)
             else
-              imageRecallData.isOpen = false
+              local mainPetID = value.PetID
+              local mainPet = self._petModule:GetPetByTemplateId(mainPetID)
+              if mainPet then
+                imageRecallData.isOpen = mainPet:IsFinishedStory(value.ID)
+              else
+                imageRecallData.isOpen = false
+              end
             end
+          else
+            imageRecallData.isOpen = self._petData:IsFinishedStory(value.ID)
           end
-        else
-          do
-            do
-              imageRecallData.isOpen = (self._petData):IsFinishedStory(value.ID)
-              imageRecallData.isSelected = false
-              imageRecallData.index = index
-              imageRecallData.condition = storyConfig.Condition
-              -- DECOMPILER ERROR at PC215: Confused about usage of register: R16 in 'UnsetPending'
-
-              ;
-              (self._imageRecallDatas)[index] = imageRecallData
-              index = index + 1
-              if value.StoryId then
-                local storyConfig = (Cfg.cfg_pet_story)[value.StoryId]
-                if storyConfig then
-                  local imageRecallData = {}
-                  imageRecallData.storyId = storyConfig.StoryID
-                  imageRecallData.title = storyConfig.Title
-                  imageRecallData.des = storyConfig.Des
-                  imageRecallData.icon = storyConfig.Icon
-                  imageRecallData.affinityLevel = value.AffinityLevel or 0
-                  local petSkinData = (self._petModule):GetPetSkinsData((self._petData):GetTemplateID())
-                  local have = false
-                  if petSkinData and petSkinData.skin_info then
-                    for _,skinInfo in pairs(petSkinData.skin_info) do
-                      -- DECOMPILER ERROR at PC264: Unhandled construct in 'MakeBoolean' P1
-
-                      if skinInfo.skin_id == value.id and skinInfo.unlock_CG == 1 then
-                        have = true
-                      end
-                      do break end
-                    end
-                  end
-                  do
-                    do
-                      do
-                        do
-                          imageRecallData.isOpen = have
-                          imageRecallData.isSelected = false
-                          imageRecallData.collect = cfg.collect
-                          imageRecallData.index = index
-                          imageRecallData.condition = storyConfig.Condition
-                          -- DECOMPILER ERROR at PC276: Confused about usage of register: R18 in 'UnsetPending'
-
-                          ;
-                          (self._imageRecallDatas)[index] = imageRecallData
-                          index = index + 1
-                          ;
-                          (Log.error)("###[UIPetIntimacyImageRecall] storyConfig is nil ! id --> ", value.StoryId)
-                          ;
-                          (Log.debug)("###[UIPetIntimacyImageRecall] value.StoryId is nil !")
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out DO_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out IF_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                          -- DECOMPILER ERROR at PC289: LeaveBlock: unexpected jumping out IF_STMT
-
-                        end
-                      end
-                    end
-                  end
+          imageRecallData.isSelected = false
+          imageRecallData.index = index
+          imageRecallData.condition = storyConfig.Condition
+          self._imageRecallDatas[index] = imageRecallData
+          index = index + 1
+        end
+      elseif value.StoryId then
+        local storyConfig = Cfg.cfg_pet_story[value.StoryId]
+        if storyConfig then
+          local imageRecallData = {}
+          imageRecallData.storyId = storyConfig.StoryID
+          imageRecallData.title = storyConfig.Title
+          imageRecallData.des = storyConfig.Des
+          imageRecallData.icon = storyConfig.Icon
+          imageRecallData.affinityLevel = value.AffinityLevel or 0
+          local petSkinData = self._petModule:GetPetSkinsData(self._petData:GetTemplateID())
+          local have = false
+          if petSkinData and petSkinData.skin_info then
+            for _, skinInfo in pairs(petSkinData.skin_info) do
+              if skinInfo.skin_id == value.id then
+                if skinInfo.unlock_CG == 1 then
+                  have = true
                 end
+                break
               end
             end
           end
+          imageRecallData.isOpen = have
+          imageRecallData.isSelected = false
+          imageRecallData.collect = cfg.collect
+          imageRecallData.index = index
+          imageRecallData.condition = storyConfig.Condition
+          self._imageRecallDatas[index] = imageRecallData
+          index = index + 1
+        else
+          Log.error("###[UIPetIntimacyImageRecall] storyConfig is nil ! id --> ", value.StoryId)
         end
+      else
+        Log.debug("###[UIPetIntimacyImageRecall] value.StoryId is nil !")
       end
     end
   end
   self._imageRecallCount = #self._imageRecallDatas
-  ;
-  (self._noMovieGO):SetActive(self._imageRecallCount <= 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._noMovieGO:SetActive(0 >= self._imageRecallCount)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall._InitScrollView = function(self)
-  -- function num : 0_8
-  (self._scrollView):InitListView(self._imageRecallCount, function(scrollview, index)
-    -- function num : 0_8_0 , upvalues : self
+function UIPetIntimacyImageRecall:_InitScrollView()
+  self._scrollView:InitListView(self._imageRecallCount, function(scrollview, index)
     return self:_OnGetImageRecallItem(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall._OnGetImageRecallItem = function(self, scrollView, index)
-  -- function num : 0_9 , upvalues : _ENV
+function UIPetIntimacyImageRecall:_OnGetImageRecallItem(scrollView, index)
   local item = scrollView:NewListViewItem("RowItem")
-  local rowPool = (self._intimacyMainController):GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
+  local rowPool = self._intimacyMainController:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
     rowPool:SpawnObjects("UIPetIntimacyImageRecallItem", 1)
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if self._imageRecallCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:_RefreshImageRecallItemInfo(itemWidget, itemIndex)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._imageRecallCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:_RefreshImageRecallItemInfo(itemWidget, itemIndex)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    return item
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall._RefreshImageRecallItemInfo = function(self, itemWidget, index)
-  -- function num : 0_10
-  itemWidget:Refresh(self._intimacyMainController, self, self._petData, (self._imageRecallDatas)[index])
+function UIPetIntimacyImageRecall:_RefreshImageRecallItemInfo(itemWidget, index)
+  itemWidget:Refresh(self._intimacyMainController, self, self._petData, self._imageRecallDatas[index])
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall.OnItemClicked = function(self, item, itemData)
-  -- function num : 0_11
+function UIPetIntimacyImageRecall:OnItemClicked(item, itemData)
   self:_CancelSelected()
   self._currentSelectedData = itemData
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._currentSelectedData).isSelected = true
+  self._currentSelectedData.isSelected = true
   self._currentSelectedItem = item
-  ;
-  (self._currentSelectedItem):RefreshSelectedStatus()
+  self._currentSelectedItem:RefreshSelectedStatus()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyImageRecall._CancelSelected = function(self)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIPetIntimacyImageRecall:_CancelSelected()
   if self._currentSelectedData then
-    (self._currentSelectedData).isSelected = false
+    self._currentSelectedData.isSelected = false
   end
   if self._currentSelectedItem then
-    (self._currentSelectedItem):RefreshSelectedStatus()
+    self._currentSelectedItem:RefreshSelectedStatus()
   end
   self._currentSelectedData = nil
   self._currentSelectedItem = nil
 end
-
-

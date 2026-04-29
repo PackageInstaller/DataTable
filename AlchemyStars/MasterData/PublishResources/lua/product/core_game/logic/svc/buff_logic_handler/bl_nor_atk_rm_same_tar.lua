@@ -1,40 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_nor_atk_rm_same_tar.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetNormalAttackRemoveSameTarget", BuffLogicBase)
 BuffLogicSetNormalAttackRemoveSameTarget = BuffLogicSetNormalAttackRemoveSameTarget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetNormalAttackRemoveSameTarget.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetNormalAttackRemoveSameTarget:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetNormalAttackRemoveSameTarget.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetNormalAttackRemoveSameTarget:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
   buffComponent:SetBuffValue("NormalAttackRemoveSameTarget", 1)
 end
 
 _class("BuffLogicResetNormalAttackRemoveSameTarget", BuffLogicBase)
 BuffLogicResetNormalAttackRemoveSameTarget = BuffLogicResetNormalAttackRemoveSameTarget
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetNormalAttackRemoveSameTarget.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetNormalAttackRemoveSameTarget:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetNormalAttackRemoveSameTarget.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetNormalAttackRemoveSameTarget:DoLogic(notify)
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
   buffComponent:SetBuffValue("NormalAttackRemoveSameTarget", nil)
 end
-
-

@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/player_moving_flag_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayerMovingFlagComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerMovingFlagComponent.Constructor = function(self)
-  -- function num : 0_0
+function PlayerMovingFlagComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PlayerMovingFlag = function(self)
-  -- function num : 0_1
-  return self:GetComponent((self.WEComponentsEnum).PlayerMovingFlag)
+function Entity:PlayerMovingFlag()
+  return self:GetComponent(self.WEComponentsEnum.PlayerMovingFlag)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPlayerMovingFlag = function(self)
-  -- function num : 0_2
-  return self:HasComponent((self.WEComponentsEnum).PlayerMovingFlag)
+function Entity:HasPlayerMovingFlag()
+  return self:HasComponent(self.WEComponentsEnum.PlayerMovingFlag)
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPlayerMovingFlag = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PlayerMovingFlag
+function Entity:AddPlayerMovingFlag()
+  local index = self.WEComponentsEnum.PlayerMovingFlag
   local component = PlayerMovingFlagComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePlayerMovingFlag = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PlayerMovingFlag
+function Entity:ReplacePlayerMovingFlag()
+  local index = self.WEComponentsEnum.PlayerMovingFlag
   local component = PlayerMovingFlagComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePlayerMovingFlag = function(self)
-  -- function num : 0_5
+function Entity:RemovePlayerMovingFlag()
   if self:HasPlayerMovingFlag() then
-    self:RemoveComponent((self.WEComponentsEnum).PlayerMovingFlag)
+    self:RemoveComponent(self.WEComponentsEnum.PlayerMovingFlag)
   end
 end
-
-

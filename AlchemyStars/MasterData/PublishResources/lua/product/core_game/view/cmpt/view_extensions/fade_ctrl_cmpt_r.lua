@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/view_extensions/fade_ctrl_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FadeControllerComponent", Object)
 FadeControllerComponent = FadeControllerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FadeControllerComponent.Constructor = function(self, entity)
-  -- function num : 0_0 , upvalues : _ENV
-  if entity:HasView() and (entity:View()):GetGameObject() then
-    self._fade = ((entity:View()):GetGameObject()):GetComponent(typeof(FadeComponent))
+function FadeControllerComponent:Constructor(entity)
+  if entity:HasView() and entity:View():GetGameObject() then
+    self._fade = entity:View():GetGameObject():GetComponent(typeof(FadeComponent))
   end
   self._transparent = false
   self._transparentValue = 0
@@ -18,83 +11,51 @@ FadeControllerComponent.Constructor = function(self, entity)
   self._ghost = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeControllerComponent.Fade = function(self)
-  -- function num : 0_1
+function FadeControllerComponent:Fade()
   return self._fade
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeControllerComponent.IsGhost = function(self)
-  -- function num : 0_2
+function FadeControllerComponent:IsGhost()
   return self._ghost
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeControllerComponent.IsFlash = function(self)
-  -- function num : 0_3
+function FadeControllerComponent:IsFlash()
   return self._flash
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeControllerComponent.IsTransparent = function(self)
-  -- function num : 0_4
+function FadeControllerComponent:IsTransparent()
   return self._transparent
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeControllerComponent.GetTransparentValue = function(self)
-  -- function num : 0_5
+function FadeControllerComponent:GetTransparentValue()
   return self._transparentValue
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.FadeController = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).FadeController)
+function Entity:FadeController()
+  return self:GetComponent(self.WEComponentsEnum.FadeController)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasFadeController = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).FadeController)
+function Entity:HasFadeController()
+  return self:HasComponent(self.WEComponentsEnum.FadeController)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddFadeController = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).FadeController
+function Entity:AddFadeController()
+  local index = self.WEComponentsEnum.FadeController
   local component = FadeControllerComponent:New(self)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EnableTransparent = function(self, enable, transparentValue)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).FadeController
+function Entity:EnableTransparent(enable, transparentValue)
+  local index = self.WEComponentsEnum.FadeController
   local component = self:FadeController()
-  if not component then
-    component = FadeControllerComponent:New(self)
-  end
+  component = component or FadeControllerComponent:New(self)
   component._transparent = enable
   component._transparentValue = transparentValue or 0.5
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EnableFlash = function(self, enable)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).FadeController
+function Entity:EnableFlash(enable)
+  local index = self.WEComponentsEnum.FadeController
   local component = self:FadeController()
   if component then
     component._flash = enable
@@ -106,39 +67,24 @@ Entity.EnableFlash = function(self, enable)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.EnableGhost = function(self, enable)
-  -- function num : 0_11 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).FadeController
+function Entity:EnableGhost(enable)
+  local index = self.WEComponentsEnum.FadeController
   local component = self:FadeController()
-  if not component then
-    component = FadeControllerComponent:New(self)
-  end
+  component = component or FadeControllerComponent:New(self)
   component._ghost = enable
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetTransparentValue = function(self, val)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).FadeController
+function Entity:SetTransparentValue(val)
+  local index = self.WEComponentsEnum.FadeController
   local component = self:FadeController()
-  if not component then
-    component = FadeControllerComponent:New(self)
-  end
+  component = component or FadeControllerComponent:New(self)
   component._transparentValue = val
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveFadeController = function(self)
-  -- function num : 0_13
+function Entity:RemoveFadeController()
   if self:HasFadeController() then
-    self:RemoveComponent((self.WEComponentsEnum).FadeController)
+    self:RemoveComponent(self.WEComponentsEnum.FadeController)
   end
 end
-
-

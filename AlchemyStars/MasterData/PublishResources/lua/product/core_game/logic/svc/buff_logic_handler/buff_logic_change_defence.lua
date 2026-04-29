@@ -1,128 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_defence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeDefence", BuffLogicBase)
 BuffLogicChangeDefence = BuffLogicChangeDefence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeDefence:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._mulValueLimit = logicParam.mulValueLimit
   self._addValue = logicParam.addValue or 0
   self._addValueLimit = logicParam.addValueLimit
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeDefence_RunCount = 0
+  self._buffInstance.BuffLogicChangeDefence_RunCount = 0
   self._light = logicParam.light == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefence.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeDefence_RunCount = (self._buffInstance).BuffLogicChangeDefence_RunCount + 1
+function BuffLogicChangeDefence:DoLogic()
+  self._buffInstance.BuffLogicChangeDefence_RunCount = self._buffInstance.BuffLogicChangeDefence_RunCount + 1
   local val = 0
-  local e = (self._buffInstance):Entity()
-  local baseDefence = (e:Attributes()):GetAttribute("Defense")
+  local e = self._buffInstance:Entity()
+  local baseDefence = e:Attributes():GetAttribute("Defense")
   if not baseDefence then
-    return 
+    return
   end
   if self._mulValue ~= 0 then
-    val = self._mulValue * (self._buffInstance).BuffLogicChangeDefence_RunCount
-    do
-      if not (self._buffComponent):GetBuffValue("ChangeDefencePercentage") then
-        local curMul = not self._mulValueLimit or 0
-      end
-      if (math.abs)(self._mulValueLimit) < (math.abs)(curMul + val) then
+    val = self._mulValue * self._buffInstance.BuffLogicChangeDefence_RunCount
+    if self._mulValueLimit then
+      local curMul = self._buffComponent:GetBuffValue("ChangeDefencePercentage") or 0
+      if math.abs(curMul + val) > math.abs(self._mulValueLimit) then
         val = self._mulValueLimit - curMul
       end
-      ;
-      (self._buffComponent):AddBuffValue("ChangeDefencePercentage", val)
-      ;
-      (self._buffLogicService):ChangeBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, val)
-      -- DECOMPILER ERROR at PC63: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._buffInstance)._ChangeDefenceType = ModifyBaseDefenceType.DefencePercentage
-      if self._addValue ~= 0 then
-        val = self._addValue * (self._buffInstance).BuffLogicChangeDefence_RunCount
-        do
-          if not (self._buffComponent):GetBuffValue("ChangeDefenceConstantFix") then
-            local curAdd = not self._addValueLimit or 0
-          end
-          if (math.abs)(self._addValueLimit) < (math.abs)(curAdd + val) then
-            val = self._addValueLimit - curAdd
-          end
-          ;
-          (self._buffComponent):AddBuffValue("ChangeDefenceConstantFix", val)
-          ;
-          (self._buffLogicService):ChangeBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, val)
-          -- DECOMPILER ERROR at PC111: Confused about usage of register: R4 in 'UnsetPending'
-
-          ;
-          (self._buffInstance)._ChangeDefenceType = ModifyBaseDefenceType.DefenceConstantFix
-          do
-            if e:HasPetPstID() then
-              local teamEntity = (e:Pet()):GetOwnerTeamEntity()
-              self:UpdateTeamDefenceLogic(teamEntity)
-            end
-            local result = BuffResultChangeDefence:New((self._buffInstance)._ChangeDefenceType, val, e:GetID(), self._light)
-            return result
-          end
-        end
-      end
+      self._buffComponent:AddBuffValue("ChangeDefencePercentage", val)
     end
+    self._buffLogicService:ChangeBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, val)
+    self._buffInstance._ChangeDefenceType = ModifyBaseDefenceType.DefencePercentage
+  elseif self._addValue ~= 0 then
+    val = self._addValue * self._buffInstance.BuffLogicChangeDefence_RunCount
+    if self._addValueLimit then
+      local curAdd = self._buffComponent:GetBuffValue("ChangeDefenceConstantFix") or 0
+      if math.abs(curAdd + val) > math.abs(self._addValueLimit) then
+        val = self._addValueLimit - curAdd
+      end
+      self._buffComponent:AddBuffValue("ChangeDefenceConstantFix", val)
+    end
+    self._buffLogicService:ChangeBaseDefence(e, self:GetBuffSeq(), ModifyBaseDefenceType.DefenceConstantFix, val)
+    self._buffInstance._ChangeDefenceType = ModifyBaseDefenceType.DefenceConstantFix
   end
+  if e:HasPetPstID() then
+    local teamEntity = e:Pet():GetOwnerTeamEntity()
+    self:UpdateTeamDefenceLogic(teamEntity)
+  end
+  local result = BuffResultChangeDefence:New(self._buffInstance._ChangeDefenceType, val, e:GetID(), self._light)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefence.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicChangeDefence:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicChangeDefenceUndo", BuffLogicBase)
 BuffLogicChangeDefenceUndo = BuffLogicChangeDefenceUndo
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDefenceUndo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicChangeDefenceUndo:Constructor(buffInstance, logicParam)
   self._black = logicParam.black == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefenceUndo.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeDefence_RunCount = 0
-  local e = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseDefence(e, self:GetBuffSeq(), (self._buffInstance)._ChangeDefenceType)
-  do
-    if e:HasPetPstID() then
-      local teamEntity = (e:Pet()):GetOwnerTeamEntity()
-      self:UpdateTeamDefenceLogic(teamEntity)
-    end
-    if (self._buffInstance)._ChangeDefenceType == ModifyBaseDefenceType.DefencePercentage then
-      (self._buffComponent):SetBuffValue("ChangeDefencePercentage", 0)
-    else
-      if (self._buffInstance)._ChangeDefenceType == ModifyBaseDefenceType.DefenceConstantFix then
-        (self._buffComponent):SetBuffValue("ChangeDefenceConstantFix", 0)
-      end
-    end
-    return BuffResultChangeDefenceUndo:New(self._black)
+function BuffLogicChangeDefenceUndo:DoLogic()
+  self._buffInstance.BuffLogicChangeDefence_RunCount = 0
+  local e = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseDefence(e, self:GetBuffSeq(), self._buffInstance._ChangeDefenceType)
+  if e:HasPetPstID() then
+    local teamEntity = e:Pet():GetOwnerTeamEntity()
+    self:UpdateTeamDefenceLogic(teamEntity)
   end
+  if self._buffInstance._ChangeDefenceType == ModifyBaseDefenceType.DefencePercentage then
+    self._buffComponent:SetBuffValue("ChangeDefencePercentage", 0)
+  elseif self._buffInstance._ChangeDefenceType == ModifyBaseDefenceType.DefenceConstantFix then
+    self._buffComponent:SetBuffValue("ChangeDefenceConstantFix", 0)
+  end
+  return BuffResultChangeDefenceUndo:New(self._black)
 end
-
-

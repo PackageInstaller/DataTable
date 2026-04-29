@@ -1,15 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_card_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureCard_L", UIWidgetFeatureCard)
 UIWidgetFeatureCard_L = UIWidgetFeatureCard_L
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureCard_L.InitLocalData = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cardAnimNames = {[FeatureCardType.A] = "UIWidgetFeatureCard_sun_l", [FeatureCardType.B] = "UIWidgetFeatureCard_moon_l", [FeatureCardType.C] = "UIWidgetFeatureCard_star_l"}
+function UIWidgetFeatureCard_L:InitLocalData()
+  self._cardAnimNames = {
+    [FeatureCardType.A] = "UIWidgetFeatureCard_sun_l",
+    [FeatureCardType.B] = "UIWidgetFeatureCard_moon_l",
+    [FeatureCardType.C] = "UIWidgetFeatureCard_star_l"
+  }
 end
-
-

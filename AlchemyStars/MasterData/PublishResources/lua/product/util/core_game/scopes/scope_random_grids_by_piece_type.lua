@@ -1,41 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_random_grids_by_piece_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_RandomGridsByPieceType", SkillScopeCalculator_Base)
 SkillScopeCalculator_RandomGridsByPieceType = SkillScopeCalculator_RandomGridsByPieceType
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_RandomGridsByPieceType.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_RandomGridsByPieceType:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local gridCount = scopeParam.gridCount or 0
-  if not scopeParam.pieceType then
-    local girdTypeList = {}
-  end
-  local world = (self._gridFilter)._world
+  local girdTypeList = scopeParam.pieceType or {}
+  local world = self._gridFilter._world
   if not world then
-    (Log.exception)(self._className, "这个范围只能在局内展示")
-    return 
+    Log.exception(self._className, "这个范围只能在局内展示")
+    return
   end
   local boardServiceLogic = world:GetService("BoardLogic")
   local pieceRange = boardServiceLogic:GetGridPosByPieceType(girdTypeList)
   local randomRange = {}
-  if #pieceRange <= gridCount then
+  if gridCount >= #pieceRange then
     randomRange = pieceRange
   else
-    while #randomRange < gridCount do
-      local index = (self._gridFilter):_GetRandomNumber(1, #pieceRange)
+    while gridCount > #randomRange do
+      local index = self._gridFilter:_GetRandomNumber(1, #pieceRange)
       randomRange[#randomRange + 1] = pieceRange[index]
-      ;
-      (table.remove)(pieceRange, index)
+      table.remove(pieceRange, index)
     end
   end
-  do
-    local result = SkillScopeResult:New(SkillScopeType.RandomGridsByPieceType, centerPos, randomRange, randomRange)
-    return result
-  end
+  local result = SkillScopeResult:New(SkillScopeType.RandomGridsByPieceType, centerPos, randomRange, randomRange)
+  return result
 end
-
-

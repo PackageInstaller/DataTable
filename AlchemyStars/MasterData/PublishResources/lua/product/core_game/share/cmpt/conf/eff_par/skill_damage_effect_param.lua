@@ -1,391 +1,238 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_damage_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 DamageEffectCalcType = {Normal = 0, AverageForRecoverHp = 1}
 _enum("DamageEffectCalcType", DamageEffectCalcType)
 require("skill_effect_param_base")
 _class("SkillDamageEffectParam", SkillEffectParamBase)
 SkillDamageEffectParam = SkillDamageEffectParam
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillDamageEffectParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  if not t.target then
-    self.m_nTargetType = EnumTargetEntity.All
-    self._damageTimes = t.damageTimes or 1
-    self._percent = t.percent
-    self._formulaID = t.formulaID
-    self:_CalcFinalParam()
-    self._onceMaxDamageType = t.onceMaxDamageType
-    self._onceMaxDamageParam = t.onceMaxDamageParam
-    self._onceMinDamageParam = t.onceMinDamageParam
-    self._maxAddedDamagePercent = t.maxAddedDamagePercent
-    self._addDamagePercent = t.addDamagePercent
-    self._calcDamageType = DamageEffectCalcType.Normal
-    if t.calcDamageType then
-      self._calcDamageType = t.calcDamageType
-    end
-    self._hpDamagePercent = t.hpDamagePercent
-    self.m_nNearPoint = t.nearPoint or 0
-    self.crit = t.crit or 1
-    self.critProb = t.critProb or 0
-    self.addPercent = t.addPercent
-    self._ignoreShield = t.ignoreShield == 1
-    self._damageIncreaseBuffEffectType = t.damageIncreaseBuffEffectType
-    self._damageIncreaseMul = t.damageIncreaseMul
-    self._defHPThreshold_117 = t.defHPThreshold_117
-    self._damageIncreaseRate_117 = t.damageIncreaseRate_117
-    self._maxHPDamagePercent = t.maxHPDamagePercent
-    self.BodyAreaPow_119 = t.BodyAreaPow_119
-    self._damagePercent_125 = t.damagePercent_125 or 0
-    self._spParams137 = {}
-    -- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._spParams137).a = t.spParamA_137 or 1
-    -- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._spParams137).b = t.spParamB_137 or 1
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._spParams137).c = t.spParamC_137 or 0
-    -- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._spParams137).d = t.spParamD_137 or 0
-    -- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._spParams137).e = t.spParamE_137 or 1
-    -- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._spParams137).f = t.spParamF_137 or 0
-    -- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._spParams137).layerBuffEffect = t.spParamLayerBuffEffect_137
-    -- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._spParams137).weakBuffEffect = t.spParamWeakBuffEffect_137
-    self._damageMulMin138 = t.damageMulMin138
-    self._damageMulMax138 = t.damageMulMax138
-    self._pureDamage = t.pureDamage or 0
-    self._useTrapAttackTrapID = t.useTrapAttackTrapID
-    self._percentLayerType_143 = t.percentLayerType_143
-    self._percentByLayer_143 = t.percentByLayer_143
-    self._absoluteRemainHP_145 = t.absoluteRemainHP_145
-    self._useScopeOrder = t.useScopeOrder or 0
-    self._n33DamageMul = t.n33DamageMul or 1
-    self._chainBasePercent_158 = t.chainBasePercent_158
-    self._chainIndex = t.chainIndex
-    self._hpPercent_161 = t.hpPercent_161
-    self._percent_163 = t.percent_163
-    self._fixedDamage = t.fixedDamage or 0
-    self._layer = t.layer
-    self._bonusPerGrid = t.bonusPerGrid or 0
-    self.buffID = t.buffID
-    self.layerCostPct = t.layerCostPct
-    self.layerDmgPct = t.layerDmgPct
-    -- DECOMPILER ERROR: 13 unprocessed JMP targets
+function SkillDamageEffectParam:Constructor(t)
+  self.m_nTargetType = t.target or EnumTargetEntity.All
+  self._damageTimes = t.damageTimes or 1
+  self._percent = t.percent
+  self._formulaID = t.formulaID
+  self:_CalcFinalParam()
+  self._onceMaxDamageType = t.onceMaxDamageType
+  self._onceMaxDamageParam = t.onceMaxDamageParam
+  self._onceMinDamageParam = t.onceMinDamageParam
+  self._maxAddedDamagePercent = t.maxAddedDamagePercent
+  self._addDamagePercent = t.addDamagePercent
+  self._calcDamageType = DamageEffectCalcType.Normal
+  if t.calcDamageType then
+    self._calcDamageType = t.calcDamageType
   end
+  self._hpDamagePercent = t.hpDamagePercent
+  self.m_nNearPoint = t.nearPoint or 0
+  self.crit = t.crit or 1
+  self.critProb = t.critProb or 0
+  self.addPercent = t.addPercent
+  self._ignoreShield = t.ignoreShield == 1
+  self._damageIncreaseBuffEffectType = t.damageIncreaseBuffEffectType
+  self._damageIncreaseMul = t.damageIncreaseMul
+  self._defHPThreshold_117 = t.defHPThreshold_117
+  self._damageIncreaseRate_117 = t.damageIncreaseRate_117
+  self._maxHPDamagePercent = t.maxHPDamagePercent
+  self.BodyAreaPow_119 = t.BodyAreaPow_119
+  self._damagePercent_125 = t.damagePercent_125 or 0
+  self._spParams137 = {}
+  self._spParams137.a = t.spParamA_137 or 1
+  self._spParams137.b = t.spParamB_137 or 1
+  self._spParams137.c = t.spParamC_137 or 0
+  self._spParams137.d = t.spParamD_137 or 0
+  self._spParams137.e = t.spParamE_137 or 1
+  self._spParams137.f = t.spParamF_137 or 0
+  self._spParams137.layerBuffEffect = t.spParamLayerBuffEffect_137
+  self._spParams137.weakBuffEffect = t.spParamWeakBuffEffect_137
+  self._damageMulMin138 = t.damageMulMin138
+  self._damageMulMax138 = t.damageMulMax138
+  self._pureDamage = t.pureDamage or 0
+  self._useTrapAttackTrapID = t.useTrapAttackTrapID
+  self._percentLayerType_143 = t.percentLayerType_143
+  self._percentByLayer_143 = t.percentByLayer_143
+  self._absoluteRemainHP_145 = t.absoluteRemainHP_145
+  self._useScopeOrder = t.useScopeOrder or 0
+  self._n33DamageMul = t.n33DamageMul or 1
+  self._chainBasePercent_158 = t.chainBasePercent_158
+  self._chainIndex = t.chainIndex
+  self._hpPercent_161 = t.hpPercent_161
+  self._percent_163 = t.percent_163
+  self._fixedDamage = t.fixedDamage or 0
+  self._layer = t.layer
+  self._bonusPerGrid = t.bonusPerGrid or 0
+  self.buffID = t.buffID
+  self.layerCostPct = t.layerCostPct
+  self.layerDmgPct = t.layerDmgPct
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetDamageIncreaseBuffEffectType = function(self)
-  -- function num : 0_1
+function SkillDamageEffectParam:GetDamageIncreaseBuffEffectType()
   return self._damageIncreaseBuffEffectType
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetDamageIncreaseMul = function(self)
-  -- function num : 0_2
+function SkillDamageEffectParam:GetDamageIncreaseMul()
   return self._damageIncreaseMul
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetCalcDamageType = function(self)
-  -- function num : 0_3
+function SkillDamageEffectParam:GetCalcDamageType()
   return self._calcDamageType
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetHpDamagePercent = function(self)
-  -- function num : 0_4
+function SkillDamageEffectParam:GetHpDamagePercent()
   return self._hpDamagePercent
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetMaxAddedDamagePercent = function(self)
-  -- function num : 0_5
+function SkillDamageEffectParam:GetMaxAddedDamagePercent()
   return self._maxAddedDamagePercent
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetAddDamagePercent = function(self)
-  -- function num : 0_6
+function SkillDamageEffectParam:GetAddDamagePercent()
   return self._addDamagePercent
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetEffectType = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillDamageEffectParam:GetEffectType()
   return SkillEffectType.Damage
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetTargetType = function(self)
-  -- function num : 0_8
+function SkillDamageEffectParam:GetTargetType()
   return self.m_nTargetType
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetDamageTimes = function(self)
-  -- function num : 0_9
+function SkillDamageEffectParam:GetDamageTimes()
   return self._damageTimes
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetDamagePercent = function(self)
-  -- function num : 0_10
+function SkillDamageEffectParam:GetDamagePercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetDamageFormulaID = function(self)
-  -- function num : 0_11
+function SkillDamageEffectParam:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam._CalcFinalParam = function(self)
-  -- function num : 0_12
+function SkillDamageEffectParam:_CalcFinalParam()
   self:_CalcFinalPercent()
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam._CalcFinalPercent = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillDamageEffectParam:_CalcFinalPercent()
   if not self._percent then
-    return 
+    return
   end
   local skillAwakeAndGradeParam = self:GetSKillAwakeAndGradeParam()
   if not skillAwakeAndGradeParam then
-    return 
+    return
   end
   if type(skillAwakeAndGradeParam) ~= "table" or skillAwakeAndGradeParam.percent == nil then
-    return 
+    return
   end
   local paramPercent = skillAwakeAndGradeParam.percent
   local newPercent = {}
-  for k,v in ipairs(self._percent) do
+  for k, v in ipairs(self._percent) do
     if paramPercent[k] then
       newPercent[k] = v + paramPercent[k]
     else
-      newPercent[k] = (self._percent)[k]
+      newPercent[k] = self._percent[k]
     end
   end
   self._percent = newPercent
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetOnceMaxDamageType = function(self)
-  -- function num : 0_14
+function SkillDamageEffectParam:GetOnceMaxDamageType()
   return self._onceMaxDamageType
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetOnceMaxDamageParam = function(self)
-  -- function num : 0_15
+function SkillDamageEffectParam:GetOnceMaxDamageParam()
   return self._onceMaxDamageParam
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetOnceMinDamageParam = function(self)
-  -- function num : 0_16
+function SkillDamageEffectParam:GetOnceMinDamageParam()
   return self._onceMinDamageParam
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetNearPoint = function(self)
-  -- function num : 0_17
+function SkillDamageEffectParam:GetNearPoint()
   return self.m_nNearPoint
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetHPThresholdFormula117 = function(self)
-  -- function num : 0_18
+function SkillDamageEffectParam:GetHPThresholdFormula117()
   return self._defHPThreshold_117
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetDamageIncreaseRateFormula117 = function(self)
-  -- function num : 0_19
+function SkillDamageEffectParam:GetDamageIncreaseRateFormula117()
   return self._damageIncreaseRate_117
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetMaxHPDamagePercent = function(self)
-  -- function num : 0_20
+function SkillDamageEffectParam:GetMaxHPDamagePercent()
   return self._maxHPDamagePercent
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetAttackPercentFormula125 = function(self)
-  -- function num : 0_21
+function SkillDamageEffectParam:GetAttackPercentFormula125()
   return self._damagePercent_125
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetPureDamage = function(self)
-  -- function num : 0_22
+function SkillDamageEffectParam:GetPureDamage()
   return self._pureDamage
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetUseTrapAttackTrapID = function(self)
-  -- function num : 0_23
+function SkillDamageEffectParam:GetUseTrapAttackTrapID()
   return self._useTrapAttackTrapID
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetDamageSpParamsFormula137 = function(self)
-  -- function num : 0_24
+function SkillDamageEffectParam:GetDamageSpParamsFormula137()
   return self._spParams137
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetBuffLayerTypeFormula143 = function(self)
-  -- function num : 0_25
+function SkillDamageEffectParam:GetBuffLayerTypeFormula143()
   return self._percentLayerType_143
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetPercentByLayerFormula143 = function(self)
-  -- function num : 0_26
+function SkillDamageEffectParam:GetPercentByLayerFormula143()
   return self._percentByLayer_143
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetAbsoluteRemainHPFormula145 = function(self)
-  -- function num : 0_27
+function SkillDamageEffectParam:GetAbsoluteRemainHPFormula145()
   return self._absoluteRemainHP_145
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.IsIgnoreShield = function(self)
-  -- function num : 0_28
+function SkillDamageEffectParam:IsIgnoreShield()
   return self._ignoreShield
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetUseScopeOrder = function(self)
-  -- function num : 0_29
+function SkillDamageEffectParam:GetUseScopeOrder()
   return self._useScopeOrder
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.SetN33DamageMul = function(self, n33DamageMul)
-  -- function num : 0_30
+function SkillDamageEffectParam:SetN33DamageMul(n33DamageMul)
   self._n33DamageMul = n33DamageMul
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetN33DamageMul = function(self)
-  -- function num : 0_31
+function SkillDamageEffectParam:GetN33DamageMul()
   return self._n33DamageMul
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetChainBasePercentFormula158 = function(self)
-  -- function num : 0_32
+function SkillDamageEffectParam:GetChainBasePercentFormula158()
   return self._chainBasePercent_158
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetChainIndex = function(self)
-  -- function num : 0_33
+function SkillDamageEffectParam:GetChainIndex()
   return self._chainIndex
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.SetChainIndex = function(self, chainIndex)
-  -- function num : 0_34
+function SkillDamageEffectParam:SetChainIndex(chainIndex)
   self._chainIndex = chainIndex
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetHpPercent161 = function(self)
-  -- function num : 0_35
+function SkillDamageEffectParam:GetHpPercent161()
   return self._hpPercent_161
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetPercent163 = function(self)
-  -- function num : 0_36
+function SkillDamageEffectParam:GetPercent163()
   return self._percent_163
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetFixedDamage = function(self)
-  -- function num : 0_37
+function SkillDamageEffectParam:GetFixedDamage()
   return self._fixedDamage
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetLayerForFixedDamage = function(self)
-  -- function num : 0_38
+function SkillDamageEffectParam:GetLayerForFixedDamage()
   return self._layer
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageEffectParam.GetBonusPerGrid = function(self)
-  -- function num : 0_39
+function SkillDamageEffectParam:GetBonusPerGrid()
   return self._bonusPerGrid
 end
-
-

@@ -1,8 +1,2 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/sakura/ui_sakura_task/ui_sakura_task_controller_wrapper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISakuraTaskControllerWrapper", UIActivityEveSinsaTaskController)
 UISakuraTaskControllerWrapper = UISakuraTaskControllerWrapper
-

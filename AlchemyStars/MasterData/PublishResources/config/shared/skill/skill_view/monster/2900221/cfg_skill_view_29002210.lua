@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900221/cfg_skill_view_29002210.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterVisible,visible=1; PlayAudio,audioID = 6049,audioType=1; PlayCasterAnimation,animName=Birth; PlayCasterBindEffect,effectID=1883; PlayCasterBindEffect,effectID=1884; PlayCasterBindEffect,effectID=1885; PlayCasterBindEffect,effectID=956; PlayCasterBindEffect,effectID=957; PlayCasterBindEffect,effectID=958; Wait,waitTime=5600; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterVisible,visible=1; PlayAudio,audioID = 6049,audioType=1; PlayCasterAnimation,animName=Birth; PlayCasterBindEffect,effectID=1883; PlayCasterBindEffect,effectID=1884; PlayCasterBindEffect,effectID=1885; PlayCasterBindEffect,effectID=956; PlayCasterBindEffect,effectID=957; PlayCasterBindEffect,effectID=958; Wait,waitTime=5600; "
+    }
+  }
 }
 return config, "ID", key
-

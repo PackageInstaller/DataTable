@@ -1,86 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/cutscene_instruction_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CutsceneInstructionParam", Object)
 CutsceneInstructionParam = CutsceneInstructionParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneInstructionParam.Constructor = function(self, t)
-  -- function num : 0_0
+function CutsceneInstructionParam:Constructor(t)
   self._instructionSet = self:_ParseInstructionSet(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneInstructionParam.GetInstructionSet = function(self)
-  -- function num : 0_1
+function CutsceneInstructionParam:GetInstructionSet()
   return self._instructionSet
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneInstructionParam.GetCacheTable = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CutsceneInstructionParam:GetCacheTable()
   local t = {}
-  for _,v in ipairs(self._instructionSet) do
+  for _, v in ipairs(self._instructionSet) do
     local insObj = v
     local resourceTable = insObj:GetCacheResource()
     if resourceTable then
-      for _,res in pairs(resourceTable) do
-        (table.insert)(t, res)
+      for _, res in pairs(resourceTable) do
+        table.insert(t, res)
       end
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneInstructionParam.GetSoundCacheTable = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CutsceneInstructionParam:GetSoundCacheTable()
   local t = {}
-  for _,v in ipairs(self._instructionSet) do
+  for _, v in ipairs(self._instructionSet) do
     local insObj = v
     local resourceTable = insObj:GetCacheAudio()
     if resourceTable then
-      for _,res in pairs(resourceTable) do
-        (table.insert)(t, res)
+      for _, res in pairs(resourceTable) do
+        table.insert(t, res)
       end
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneInstructionParam.GetVoiceCacheTable = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CutsceneInstructionParam:GetVoiceCacheTable()
   local t = {}
-  for _,v in ipairs(self._instructionSet) do
+  for _, v in ipairs(self._instructionSet) do
     local insObj = v
     local resourceTable = insObj:GetCacheVoice()
     if resourceTable then
-      for _,res in pairs(resourceTable) do
-        (table.insert)(t, res)
+      for _, res in pairs(resourceTable) do
+        table.insert(t, res)
       end
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneInstructionParam._ParseInstructionSet = function(self, t)
-  -- function num : 0_5 , upvalues : _ENV
+function CutsceneInstructionParam:_ParseInstructionSet(t)
   local instructionSet = {}
   local paramString = t[1]
-  local phaseInsArray = (string.split)(paramString, ";")
-  for k,v in ipairs(phaseInsArray) do
-    if (string.len)(v) > 1 then
-      local instruction = (string.split)(v, ",")
-      if (table.count)(instruction) > 0 then
+  local phaseInsArray = string.split(paramString, ";")
+  for k, v in ipairs(phaseInsArray) do
+    if 1 < string.len(v) then
+      local instruction = string.split(v, ",")
+      if table.count(instruction) > 0 then
         local instructionType, paramList = self:_ParseInstructionParam(instruction)
         local instructionObj = self:_CreateInstruction(instructionType, paramList)
         instructionSet[#instructionSet + 1] = instructionObj
@@ -90,40 +68,32 @@ CutsceneInstructionParam._ParseInstructionSet = function(self, t)
   return instructionSet
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneInstructionParam._CreateInstruction = function(self, instructionType, paramList)
-  -- function num : 0_6 , upvalues : _ENV
-  local insObject = nil
+function CutsceneInstructionParam:_CreateInstruction(instructionType, paramList)
+  local insObject
   local insClassName = instructionType .. "Instruction"
   local insClass = Classes[insClassName]
   if insClass == nil then
-    (Log.fatal)("Can not create instruction:", insClassName)
+    Log.fatal("Can not create instruction:", insClassName)
   else
     insObject = insClass:New(paramList)
   end
   return insObject
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneInstructionParam._ParseInstructionParam = function(self, insArray)
-  -- function num : 0_7 , upvalues : _ENV
-  local instructionType = nil
+function CutsceneInstructionParam:_ParseInstructionParam(insArray)
+  local instructionType
   local paramList = {}
-  for k,v in ipairs(insArray) do
+  for k, v in ipairs(insArray) do
     if k == 1 then
-      instructionType = (string.gsub)(v, "^%s*(.-)%s*$", "%1")
+      instructionType = string.gsub(v, "^%s*(.-)%s*$", "%1")
     else
-      local paramArray = (string.split)(v, "=")
-      if (table.count)(paramArray) >= 2 then
-        local paramName = (string.gsub)(paramArray[1], "^%s*(.-)%s*$", "%1")
-        local paramValue = (string.gsub)(paramArray[2], "^%s*(.-)%s*$", "%1")
+      local paramArray = string.split(v, "=")
+      if table.count(paramArray) >= 2 then
+        local paramName = string.gsub(paramArray[1], "^%s*(.-)%s*$", "%1")
+        local paramValue = string.gsub(paramArray[2], "^%s*(.-)%s*$", "%1")
         paramList[paramName] = paramValue
       end
     end
   end
   return instructionType, paramList
 end
-
-

@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_transport_by_range.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_TransportByRange", Object)
 SkillEffectCalc_TransportByRange = SkillEffectCalc_TransportByRange
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_TransportByRange.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_TransportByRange:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransportByRange.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1
+function SkillEffectCalc_TransportByRange:DoSkillEffectCalculator(skillEffectCalcParam)
   local paramSkillEffect = skillEffectCalcParam.skillEffectParam
   local targetIDs = skillEffectCalcParam.targetEntityIDs
   local range = skillEffectCalcParam:GetCenterPos()
@@ -24,45 +14,31 @@ SkillEffectCalc_TransportByRange.DoSkillEffectCalculator = function(self, skillE
   return {result}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransportByRange._GetNextPos = function(self, i, pos, dirType)
-  -- function num : 0_2 , upvalues : _ENV
-  local nextPos = nil
+function SkillEffectCalc_TransportByRange:_GetNextPos(i, pos, dirType)
+  local nextPos
   if dirType == DirectionType.Up then
     nextPos = Vector2(pos.x, pos.y + i)
-  else
-    if dirType == DirectionType.Down then
-      nextPos = Vector2(pos.x, pos.y - i)
-    else
-      if dirType == DirectionType.Left then
-        nextPos = Vector2(pos.x - i, pos.y)
-      else
-        if dirType == DirectionType.Right then
-          nextPos = Vector2(pos.x + i, pos.y)
-        end
-      end
-    end
+  elseif dirType == DirectionType.Down then
+    nextPos = Vector2(pos.x, pos.y - i)
+  elseif dirType == DirectionType.Left then
+    nextPos = Vector2(pos.x - i, pos.y)
+  elseif dirType == DirectionType.Right then
+    nextPos = Vector2(pos.x + i, pos.y)
   end
   return nextPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransportByRange.GridGetNextPos = function(self, pos, dirType)
-  -- function num : 0_3 , upvalues : _ENV
-  local max = nil
-  local utilScopeCalcSvc = ((self._world):GetService("UtilScopeCalc"))
-  local nextPos = nil
+function SkillEffectCalc_TransportByRange:GridGetNextPos(pos, dirType)
+  local max
+  local utilScopeCalcSvc = self._world:GetService("UtilScopeCalc")
+  local nextPos
   if dirType == DirectionType.Up or dirType == DirectionType.Down then
     max = utilScopeCalcSvc:GetCurBoardMaxY()
-  else
-    if dirType == DirectionType.Left or dirType == DirectionType.Right then
-      max = utilScopeCalcSvc:GetCurBoardMaxX()
-    end
+  elseif dirType == DirectionType.Left or dirType == DirectionType.Right then
+    max = utilScopeCalcSvc:GetCurBoardMaxX()
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   for i = 1, max do
     local tmpPos = self:_GetNextPos(i, pos, dirType)
     local pieceType = utilDataSvc:GetPieceType(tmpPos)
@@ -76,22 +52,17 @@ SkillEffectCalc_TransportByRange.GridGetNextPos = function(self, pos, dirType)
   return nextPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransportByRange.GetNextPos = function(self, pos, dirType)
-  -- function num : 0_4 , upvalues : _ENV
-  local max = nil
-  local utilScopeCalcSvc = ((self._world):GetService("UtilScopeCalc"))
-  local nextPos = nil
+function SkillEffectCalc_TransportByRange:GetNextPos(pos, dirType)
+  local max
+  local utilScopeCalcSvc = self._world:GetService("UtilScopeCalc")
+  local nextPos
   if dirType == DirectionType.Up or dirType == DirectionType.Down then
     max = utilScopeCalcSvc:GetCurBoardMaxY()
-  else
-    if dirType == DirectionType.Left or dirType == DirectionType.Right then
-      max = utilScopeCalcSvc:GetCurBoardMaxX()
-    end
+  elseif dirType == DirectionType.Left or dirType == DirectionType.Right then
+    max = utilScopeCalcSvc:GetCurBoardMaxX()
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   for i = 1, max do
     local tmpPos = self:_GetNextPos(i, pos, dirType)
     local pieceType = utilDataSvc:GetPieceType(tmpPos)
@@ -105,27 +76,22 @@ SkillEffectCalc_TransportByRange.GetNextPos = function(self, pos, dirType)
   return nextPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransportByRange._CalcTransportEnvListByRange = function(self, effectParam, pickUpList, targetIDs)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_TransportByRange:_CalcTransportEnvListByRange(effectParam, pickUpList, targetIDs)
   local isPickUp = effectParam:IsPickUp()
   local isTransportTarget = effectParam:IsTransportTarget()
-  ;
-  (SkillEffectResultTransportByRange:New())
-  local result = nil
-  local range, dirType, edgeBegin, edgeEnd, invalidPos, totalRange = nil, nil, nil, nil, nil, nil
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local result = SkillEffectResultTransportByRange:New()
+  local range, dirType, edgeBegin, edgeEnd, invalidPos, totalRange
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   if isPickUp then
     edgeEnd = {}
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-    range = utilScopeSvc:CalcRangeByPickUpPosList(pickUpList)
-    local utilDataSvc = (self._world):GetService("UtilData")
-    for i,v in ipairs(range) do
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+    range, dirType, edgeBegin, invalidPos, totalRange = utilScopeSvc:CalcRangeByPickUpPosList(pickUpList)
+    local utilDataSvc = self._world:GetService("UtilData")
+    for i, v in ipairs(range) do
       local nextPos = self:GridGetNextPos(v, dirType)
       local pieceType = utilDataSvc:GetPieceType(v)
       if not boardServiceLogic:IsValidPiecePos(nextPos) then
-        (table.insert)(edgeEnd, v)
+        table.insert(edgeEnd, v)
       end
       local pieceData = TransportByRangePieceData:New(v, pieceType, nextPos)
       result:AddPieceData(pieceData)
@@ -135,45 +101,38 @@ SkillEffectCalc_TransportByRange._CalcTransportEnvListByRange = function(self, e
     result:SetResetGridPosList(invalidPos)
     result:SetOutlineRange(totalRange)
   end
-  do
-    local targetData = {}
-    if isTransportTarget then
-      local targetID = targetIDs[1]
-      local targetEntity = (self._world):GetEntityByID(targetID)
-      local buffLogicSvc = (self._world):GetService("BuffLogic")
-      if targetEntity and not buffLogicSvc:CheckForceMoveImmunity(targetEntity) then
-        local pos = targetEntity:GetGridPosition()
-        local bodyAreaCount = (targetEntity:BodyArea()):GetAreaCount()
-        if bodyAreaCount == 1 then
-          local nextPos = self:GetNextPos(pos, dirType)
-          local utilDataSvc = (self._world):GetService("UtilData")
-          if utilDataSvc:IsMonsterCanTel2TargetPos(targetEntity, nextPos) and utilDataSvc:IsBlockMoveWithTrapWall(pos, nextPos, targetEntity) == false then
-            result:AddTargetData(targetID, pos, nextPos)
-            local triggerSvc = (self._world):GetService("Trigger")
-            triggerSvc:Notify(NTTransportEachMoveEnd:New(targetEntity, pos, nextPos))
-          end
+  local targetData = {}
+  if isTransportTarget then
+    local targetID = targetIDs[1]
+    local targetEntity = self._world:GetEntityByID(targetID)
+    local buffLogicSvc = self._world:GetService("BuffLogic")
+    if targetEntity and not buffLogicSvc:CheckForceMoveImmunity(targetEntity) then
+      local pos = targetEntity:GetGridPosition()
+      local bodyAreaCount = targetEntity:BodyArea():GetAreaCount()
+      if bodyAreaCount == 1 then
+        local nextPos = self:GetNextPos(pos, dirType)
+        local utilDataSvc = self._world:GetService("UtilData")
+        if utilDataSvc:IsMonsterCanTel2TargetPos(targetEntity, nextPos) and utilDataSvc:IsBlockMoveWithTrapWall(pos, nextPos, targetEntity) == false then
+          result:AddTargetData(targetID, pos, nextPos)
+          local triggerSvc = self._world:GetService("Trigger")
+          triggerSvc:Notify(NTTransportEachMoveEnd:New(targetEntity, pos, nextPos))
         end
       end
     end
-    do
-      return result
-    end
   end
+  return result
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TransportByRange._TriggerTraps = function(self, result, traps, triggerEntity)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectCalc_TransportByRange:_TriggerTraps(result, traps, triggerEntity)
   if triggerEntity:HasTrapID() then
-    return 
+    return
   end
-  local trapSvc = (self._world):GetService("TrapLogic")
-  for _,e in ipairs(traps) do
+  local trapSvc = self._world:GetService("TrapLogic")
+  for _, e in ipairs(traps) do
     if e:HasTrapID() then
       local triggerTraps, triggerResults = trapSvc:CalcTrapTriggerSkill(e, triggerEntity)
       if triggerTraps then
-        for i,trap in ipairs(triggerTraps) do
+        for i, trap in ipairs(triggerTraps) do
           local skillResult = triggerResults[i]
           result:AddTrapSkillResult(trap:GetID(), skillResult, triggerEntity:GetID())
         end
@@ -181,5 +140,3 @@ SkillEffectCalc_TransportByRange._TriggerTraps = function(self, result, traps, t
     end
   end
 end
-
-

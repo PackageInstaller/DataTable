@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/ui_collect_card_active_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardActivePoint", UICustomWidget)
 UICollectCardActivePoint = UICollectCardActivePoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardActivePoint.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UICollectCardActivePoint:OnShow(uiParam)
   self._pos = self:GetUIComponent("RectTransform", "Pos")
   self._imgNormal = self:GetGameObject("imgNormal")
   self._imgSpecial = self:GetGameObject("imgSpecial")
@@ -21,54 +14,37 @@ UICollectCardActivePoint.OnShow = function(self, uiParam)
   self._num = self:GetUIComponent("UILocalizationText", "Number")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardActivePoint.SetData = function(self, idx, questInfo, callback, maxPoint, sliderWidth)
-  -- function num : 0_1 , upvalues : _ENV
+function UICollectCardActivePoint:SetData(idx, questInfo, callback, maxPoint, sliderWidth)
   self._idx = idx
   self._questInfo = questInfo
   self._callback = callback
-  local progress = (self._questInfo).total_progress
+  local progress = self._questInfo.total_progress
   local posx = sliderWidth * (progress / maxPoint)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._pos).anchoredPosition = Vector2(posx, 0)
-  local special = idx > 1
-  ;
-  (self._imgNormal):SetActive(not special)
-  ;
-  (self._imgSpecial):SetActive(special)
-  ;
-  (self._gotNormal):SetActive(not special)
-  ;
-  (self._gotSpecial):SetActive(special)
-  ;
-  (self._got):SetActive((self._questInfo).status == QuestStatus.QUEST_Taken)
-  ;
-  (self._eff):SetActive((self._questInfo).status == QuestStatus.QUEST_Completed)
-  ;
-  (self._num):SetText(progress)
-  if (self._questInfo).status == QuestStatus.QUEST_Completed then
-    (self._anim):Play()
+  self._pos.anchoredPosition = Vector2(posx, 0)
+  local special = 1 < idx
+  self._imgNormal:SetActive(not special)
+  self._imgSpecial:SetActive(special)
+  self._gotNormal:SetActive(not special)
+  self._gotSpecial:SetActive(special)
+  self._got:SetActive(self._questInfo.status == QuestStatus.QUEST_Taken)
+  self._eff:SetActive(self._questInfo.status == QuestStatus.QUEST_Completed)
+  self._num:SetText(progress)
+  if self._questInfo.status == QuestStatus.QUEST_Completed then
+    self._anim:Play()
   else
-    (self._anim):Stop()
+    self._anim:Stop()
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardActivePoint.BtnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._questInfo).status == QuestStatus.QUEST_Completed and self._callback then
-    (self._callback)(self._idx)
+function UICollectCardActivePoint:BtnOnClick(go)
+  if self._questInfo.status == QuestStatus.QUEST_Completed then
+    if self._callback then
+      self._callback(self._idx)
+    end
+  else
+    local awards = self._questInfo.rewards
+    local award = awards[1]
+    local id = award.assetid
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnCampaignCenterShowItemTips, id, go.transform.position)
   end
-  local awards = (self._questInfo).rewards
-  local award = awards[1]
-  local id = award.assetid
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnCampaignCenterShowItemTips, id, (go.transform).position)
 end
-
-

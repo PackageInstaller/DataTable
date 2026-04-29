@@ -1,118 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/entry/ui_luckland_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandEntry", UISideEnterCenterContentBase)
 UILuckLandEntry = UILuckLandEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandEntry.Constructor = function(self)
-  -- function num : 0_0
+function UILuckLandEntry:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEntry.DoInit = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UILuckLandEntry:DoInit()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._campaignModule = self:GetModule(CampaignModule)
   self._campaign = self._data
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   self._endTime = sample.end_time
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   self._component = localProcess:GetComponent(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
   self._compoentInfo = localProcess:GetComponentInfo(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEntry.DoShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandEntry:DoShow()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self:_GetComponents()
   self.taskId = self:StartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : self, _ENV
-    while 1 do
+    while true do
       self:_OnValue()
       YIELD(TT, 1000)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEntry.DoHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UILuckLandEntry:DoHide()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEntry.DoDestroy = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (UILuckLandEntry.super):Dispose()
+function UILuckLandEntry:DoDestroy()
+  UILuckLandEntry.super:Dispose()
   if self.taskId then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskId)
+    GameGlobal.TaskManager():KillTask(self.taskId)
     self.taskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEntry._GetComponents = function(self)
-  -- function num : 0_5
+function UILuckLandEntry:_GetComponents()
   self._remainTime = self:GetUIComponent("UILocalizationText", "RemainTimeText")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEntry._OnValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UILuckLandEntry:_OnValue()
   if self._remainTime then
-    local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+    local curTime = self._svrTimeModule:GetServerTime() * 0.001
     local endTime = self._endTime
     if curTime < endTime then
-      (self._remainTime):SetText((StringTable.Get)("str_activity_common_remainingtime_3", (UIActivityHelper.GetFormatTimerStr)(endTime - curTime)))
+      self._remainTime:SetText(StringTable.Get("str_activity_common_remainingtime_3", UIActivityHelper.GetFormatTimerStr(endTime - curTime)))
     else
-      ;
-      (self._remainTime):SetText((StringTable.Get)("str_activity_common_state_over"))
+      self._remainTime:SetText(StringTable.Get("str_activity_common_state_over"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEntry.AfterUILayerChanged = function(self)
-  -- function num : 0_7
+function UILuckLandEntry:AfterUILayerChanged()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEntry.PlayBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  (UIActivityHelper.PlayFirstPlot_Campaign)(self._campaign, function()
-    -- function num : 0_8_0 , upvalues : self
+function UILuckLandEntry:PlayBtnOnClick(go)
+  UIActivityHelper.PlayFirstPlot_Campaign(self._campaign, function()
     self:ShowDialog("UILuckLandLevel", self._component, self._compoentInfo)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandEntry.IntroBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UILuckLandEntry:IntroBtnOnClick(go)
   self:ShowDialog("UIIntroLoader", "UILuckLandEntry")
 end
-
-

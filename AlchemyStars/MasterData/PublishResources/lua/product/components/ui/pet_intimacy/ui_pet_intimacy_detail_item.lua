@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_detail_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyDetailItem", UICustomWidget)
 UIPetIntimacyDetailItem = UIPetIntimacyDetailItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyDetailItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetIntimacyDetailItem:Constructor()
   self._index = 0
   self._isCurrent = false
-  self._module = (GameGlobal.GetModule)(PetModule)
+  self._module = GameGlobal.GetModule(PetModule)
   self._controllerName = "UIPetIntimacyMainController"
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetIntimacyDetailItem:OnShow(uiParams)
   self._cg = self:GetUIComponent("RawImageLoader", "cg")
   self._rawImage = self:GetUIComponent("RawImage", "cg")
   self._cgGo = self:GetGameObject("cg")
@@ -28,103 +18,60 @@ UIPetIntimacyDetailItem.OnShow = function(self, uiParams)
   self:AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.AttachEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetIntimacyDetailItem:AttachEvents()
   self:AttachEvent(GameEventType.BreakCheckIsCurrent, self.BreakCheckIsCurrent)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.RemoveEvents = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetIntimacyDetailItem:RemoveEvents()
   self:DetachEvent(GameEventType.BreakCheckIsCurrent, self.BreakCheckIsCurrent)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.BreakCheckIsCurrent = function(self, idx)
-  -- function num : 0_4
+function UIPetIntimacyDetailItem:BreakCheckIsCurrent(idx)
   self._isCurrent = self._index == idx
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.OnHide = function(self)
-  -- function num : 0_5
+function UIPetIntimacyDetailItem:OnHide()
   self._index = 0
   self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.OnHideCallBack = function(self)
-  -- function num : 0_6
+function UIPetIntimacyDetailItem:OnHideCallBack()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.SetData = function(self, index, pet, curridx)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPetIntimacyDetailItem:SetData(index, pet, curridx)
   self._index = index
   self:BreakCheckIsCurrent(curridx)
   self._pet = pet
-  self._pstid = (self._pet):GetPstID()
-  local size = ((Cfg.cfg_global).ui_interface_common_size).ArrayValue
-  ;
-  ((self._cgGo):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
-  self:LoadCgSync((self._pet):GetPetStaticBody(PetSkinEffectPath.BODY_PET_INTIMACY))
+  self._pstid = self._pet:GetPstID()
+  local size = Cfg.cfg_global.ui_interface_common_size.ArrayValue
+  self._cgGo:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
+  self:LoadCgSync(self._pet:GetPetStaticBody(PetSkinEffectPath.BODY_PET_INTIMACY))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.LoadCgSync = function(self, matName)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._cg):LoadImage(matName)
-  ;
-  (UICG.SetTransform)((self._cgGo).transform, self._controllerName, matName)
+function UIPetIntimacyDetailItem:LoadCgSync(matName)
+  self._cg:LoadImage(matName)
+  UICG.SetTransform(self._cgGo.transform, self._controllerName, matName)
   local alpha = 1
   if not self._isCurrent then
     alpha = 0
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._group1).alpha = alpha
+  self._group1.alpha = alpha
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.GetC2C = function(self)
-  -- function num : 0_9
+function UIPetIntimacyDetailItem:GetC2C()
   return self._off
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyDetailItem.ChangeCanvasGroupAlpha = function(self, all, centerX)
-  -- function num : 0_10 , upvalues : _ENV
-  self._off = ((self._center).position).x - centerX
+function UIPetIntimacyDetailItem:ChangeCanvasGroupAlpha(all, centerX)
+  self._off = self._center.position.x - centerX
   local rate = self._off / all
-  rate = tonumber((string.format)("%.3f", rate))
-  if rate > 1 then
+  rate = tonumber(string.format("%.3f", rate))
+  if 1 < rate then
     rate = 1
-  else
-    if rate < -1 then
-      rate = -1
-    end
+  elseif rate < -1 then
+    rate = -1
   end
-  local alpha = 1 - (math.abs)(rate)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect1).anchoredPosition = Vector2(-1200 * rate, 0)
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._group1).alpha = alpha
+  local alpha = 1 - math.abs(rate)
+  self._rect1.anchoredPosition = Vector2(-1200 * rate, 0)
+  self._group1.alpha = alpha
 end
-
-

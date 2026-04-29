@@ -1,8 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/story/charastory/str_charastory_lukeya.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31360401_1_dialog_content = "PlayerName，你是不是很久沒休息了？都快熬出黑眼圈囉。", ui_story_31360401_2_dialog_content = "最近確實有點忙……要不是妳來騷擾我，我的效率或許會提升。", ui_story_31360401_3_dialog_content = "欸……最關心PlayerName的明明是我耶。傷心。", ui_story_31360401_4_dialog_content = "真的嗎……我表示懷疑。", ui_story_31360401_5_dialog_content = "妳把我叫過來，有什麼要緊事嗎？還是妳又騷擾誰了？", ui_story_31360401_6_dialog_content = "原來我在你眼裡是這麼輕浮的人嗎？更加傷心了。", ui_story_31360401_7_dialog_content = "我找你其實也沒什麼要緊的事啦。", ui_story_31360401_8_dialog_content = "只是有點擔心你的身體而已。", ui_story_31360401_9_dialog_content = "為了能讓PlayerName更好入睡、緩解疲勞，我可是準備了很多禮物喔。", ui_story_31360401_10_dialog_content = "怎麼突然有種不好的預感。", ui_story_31360401_11_dialog_content = "放心吧，這些都是好東西～", ui_story_31360401_12_dialog_content = "首先是能緩解疲勞情緒的隨身聽～別看它小小的，裡面裝了很多輕音樂唷。", ui_story_31360401_13_dialog_content = "這我倒是第一次看到。要怎麼用？", ui_story_31360401_14_dialog_content = "來，我幫你。", ui_story_31360401_15_dialog_content = "嗯？妳別突然貼那麼近呀……", ui_story_31360401_16_dialog_content = "<color=#e8d9bb>露可亞幫PlayerName戴好耳機，開始播放裡面的歌曲。</color>", ui_story_31360401_17_dialog_content = "旋律確實很好聽，但我不太喜歡聽著音樂睡覺。", ui_story_31360401_18_dialog_content = "沒關係，我這裡還有更好的東西～這個怎麼樣？", ui_story_31360401_19_dialog_content = "一本書？", ui_story_31360401_20_dialog_content = "這些可是我精選的寫真集喔～一定能幫助PlayerName緩解內心的疲勞～", ui_story_31360401_21_dialog_content = "妳果然是在拿我尋開心吧……這東西怎麼可能助眠啊！", ui_story_31360401_22_dialog_content = "這樣嗎？那終於輪到我本人出場啦。讓我抱著你睡一覺吧？", ui_story_31360401_23_dialog_content = "不、不必了……沒什麼事情的話，我真的要回去了。", ui_story_31360401_24_dialog_content = "欸……別那麼急著走嘛～", ui_story_31360401_25_dialog_content = "<color=#e8d9bb>露可亞輕輕抓住了PlayerName的手。</color>", ui_story_31360401_26_dialog_content = "所以說我擔心你的身體嘛～", ui_story_31360401_27_dialog_content = "最近幾天總是熬夜，身體很累了吧？我想用力量來治療你，你只要簡單睡上一覺就好。", ui_story_31360401_28_dialog_content = "不好好休息的話，關鍵時刻可能會搞砸事情唷。", ui_story_31360401_29_dialog_content = "你就老實點，在我這裡……好好休息吧。", ui_story_31360401_30_dialog_content = "妳把我叫過來，就是為了要我好好休息嗎？", ui_story_31360401_31_dialog_content = "除了這個，還有其它原因喔。", ui_story_31360401_32_dialog_content = "今天我也想稍微休息一會。", ui_story_31360401_33_option_content = "靠在露可亞的肩膀上", ui_story_31360401_34_dialog_content = "呵呵，要是翔太君也能不這麼見外就好了。", ui_story_31360401_35_dialog_content = "看來已經睡著了呢～這麼說來，就算我現在抱住PlayerName也沒有關係吧？", ui_story_31360401_36_option_content = "直接坐在她旁邊", ui_story_31360401_37_dialog_content = "睡吧～睡吧～我會讓你做個好夢。", ui_story_31360401_38_dialog_content = "謝謝妳……露可亞……", ui_story_31360401_39_dialog_content = "呼……", ui_story_31360401_40_dialog_content = "不用謝喔～好好休息吧。"}
+local config = {
+  ui_story_31360401_1_dialog_content = "PlayerName，你是不是很久沒休息了？都快熬出黑眼圈囉。",
+  ui_story_31360401_2_dialog_content = "最近確實有點忙……要不是妳來騷擾我，我的效率或許會提升。",
+  ui_story_31360401_3_dialog_content = "欸……最關心PlayerName的明明是我耶。傷心。",
+  ui_story_31360401_4_dialog_content = "真的嗎……我表示懷疑。",
+  ui_story_31360401_5_dialog_content = "妳把我叫過來，有什麼要緊事嗎？還是妳又騷擾誰了？",
+  ui_story_31360401_6_dialog_content = "原來我在你眼裡是這麼輕浮的人嗎？更加傷心了。",
+  ui_story_31360401_7_dialog_content = "我找你其實也沒什麼要緊的事啦。",
+  ui_story_31360401_8_dialog_content = "只是有點擔心你的身體而已。",
+  ui_story_31360401_9_dialog_content = "為了能讓PlayerName更好入睡、緩解疲勞，我可是準備了很多禮物喔。",
+  ui_story_31360401_10_dialog_content = "怎麼突然有種不好的預感。",
+  ui_story_31360401_11_dialog_content = "放心吧，這些都是好東西～",
+  ui_story_31360401_12_dialog_content = "首先是能緩解疲勞情緒的隨身聽～別看它小小的，裡面裝了很多輕音樂唷。",
+  ui_story_31360401_13_dialog_content = "這我倒是第一次看到。要怎麼用？",
+  ui_story_31360401_14_dialog_content = "來，我幫你。",
+  ui_story_31360401_15_dialog_content = "嗯？妳別突然貼那麼近呀……",
+  ui_story_31360401_16_dialog_content = "<color=#e8d9bb>露可亞幫PlayerName戴好耳機，開始播放裡面的歌曲。</color>",
+  ui_story_31360401_17_dialog_content = "旋律確實很好聽，但我不太喜歡聽著音樂睡覺。",
+  ui_story_31360401_18_dialog_content = "沒關係，我這裡還有更好的東西～這個怎麼樣？",
+  ui_story_31360401_19_dialog_content = "一本書？",
+  ui_story_31360401_20_dialog_content = "這些可是我精選的寫真集喔～一定能幫助PlayerName緩解內心的疲勞～",
+  ui_story_31360401_21_dialog_content = "妳果然是在拿我尋開心吧……這東西怎麼可能助眠啊！",
+  ui_story_31360401_22_dialog_content = "這樣嗎？那終於輪到我本人出場啦。讓我抱著你睡一覺吧？",
+  ui_story_31360401_23_dialog_content = "不、不必了……沒什麼事情的話，我真的要回去了。",
+  ui_story_31360401_24_dialog_content = "欸……別那麼急著走嘛～",
+  ui_story_31360401_25_dialog_content = "<color=#e8d9bb>露可亞輕輕抓住了PlayerName的手。</color>",
+  ui_story_31360401_26_dialog_content = "所以說我擔心你的身體嘛～",
+  ui_story_31360401_27_dialog_content = "最近幾天總是熬夜，身體很累了吧？我想用力量來治療你，你只要簡單睡上一覺就好。",
+  ui_story_31360401_28_dialog_content = "不好好休息的話，關鍵時刻可能會搞砸事情唷。",
+  ui_story_31360401_29_dialog_content = "你就老實點，在我這裡……好好休息吧。",
+  ui_story_31360401_30_dialog_content = "妳把我叫過來，就是為了要我好好休息嗎？",
+  ui_story_31360401_31_dialog_content = "除了這個，還有其它原因喔。",
+  ui_story_31360401_32_dialog_content = "今天我也想稍微休息一會。",
+  ui_story_31360401_33_option_content = "靠在露可亞的肩膀上",
+  ui_story_31360401_34_dialog_content = "呵呵，要是翔太君也能不這麼見外就好了。",
+  ui_story_31360401_35_dialog_content = "看來已經睡著了呢～這麼說來，就算我現在抱住PlayerName也沒有關係吧？",
+  ui_story_31360401_36_option_content = "直接坐在她旁邊",
+  ui_story_31360401_37_dialog_content = "睡吧～睡吧～我會讓你做個好夢。",
+  ui_story_31360401_38_dialog_content = "謝謝妳……露可亞……",
+  ui_story_31360401_39_dialog_content = "呼……",
+  ui_story_31360401_40_dialog_content = "不用謝喔～好好休息吧。"
+}
 return config
-

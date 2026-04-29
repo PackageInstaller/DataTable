@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_wave_result_award_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("wave_result_award_system")
 _class("ClientWaveResultAwardSystem_Render", WaveResultAwardSystem)
 ClientWaveResultAwardSystem_Render = ClientWaveResultAwardSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientWaveResultAwardSystem_Render._DoRenderShowChoosePartner = function(self, TT, choosePartners, choosenRelicID)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowChoosePartnerUI, true, choosePartners, choosenRelicID)
+function ClientWaveResultAwardSystem_Render:_DoRenderShowChoosePartner(TT, choosePartners, choosenRelicID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowChoosePartnerUI, true, choosePartners, choosenRelicID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientWaveResultAwardSystem_Render._DoRenderShowChooseRelic = function(self, TT, chooseRelics, closeCallBack, openingChoose)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIMiniMazeChooseRelicController", chooseRelics, closeCallBack, openingChoose)
+function ClientWaveResultAwardSystem_Render:_DoRenderShowChooseRelic(TT, chooseRelics, closeCallBack, openingChoose)
+  GameGlobal.UIStateManager():ShowDialog("UIMiniMazeChooseRelicController", chooseRelics, closeCallBack, openingChoose)
 end
-
-

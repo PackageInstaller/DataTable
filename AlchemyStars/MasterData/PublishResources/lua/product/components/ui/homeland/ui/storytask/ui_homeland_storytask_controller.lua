@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/storytask/ui_homeland_storytask_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandStoryTaskController", UIController)
 UIHomelandStoryTaskController = UIHomelandStoryTaskController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandStoryTaskController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandStoryTaskController:Constructor()
   self._localData = UIHomelandStoryTaskLocalData:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._uiHomelandModule = ((GameGlobal.GetModule)(HomelandModule)):GetUIModule()
-  self._homelandClient = (self._uiHomelandModule):GetClient()
-  self._taskManager = (self._homelandClient):GetHomelandTaskManager()
-  self._taskHelper = (self._taskManager):GetHomelandTaskManagerHelper()
-  self._storyTaskManager = (self._taskManager):GetHomelandStoryTaskManager()
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._storyTaskInfos = ((self._homelandModule).m_homeland_info).story_task_info
+function UIHomelandStoryTaskController:LoadDataOnEnter(TT, res, uiParams)
+  self._uiHomelandModule = GameGlobal.GetModule(HomelandModule):GetUIModule()
+  self._homelandClient = self._uiHomelandModule:GetClient()
+  self._taskManager = self._homelandClient:GetHomelandTaskManager()
+  self._taskHelper = self._taskManager:GetHomelandTaskManagerHelper()
+  self._storyTaskManager = self._taskManager:GetHomelandStoryTaskManager()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._storyTaskInfos = self._homelandModule.m_homeland_info.story_task_info
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  self._taskGroupCfg = (Cfg.cfg_homeland_task_group)({})
-  self._storyTaskCfg = (Cfg.cfg_homeland_story_task)({})
+function UIHomelandStoryTaskController:OnShow(uiParams)
+  self._taskGroupCfg = Cfg.cfg_homeland_task_group({})
+  self._storyTaskCfg = Cfg.cfg_homeland_story_task({})
   self._firstShow = true
   self:_GetComponents()
   self:Refresh()
@@ -40,25 +27,18 @@ UIHomelandStoryTaskController.OnShow = function(self, uiParams)
   self:SetLocalDataNew()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandStoryTaskController:OnHide()
   self:DetachEvent(GameEventType.HandleStoryTaskUpdate, self.StoryTaskUpdate)
   self:DetachEvent(GameEventType.UIHomelandStoryTaskBtnSelect, self.OnSelectBtn)
   self:DetachEvent(GameEventType.UIHomelandStoryTaskGroupSelect, self.OnSelectGroupItem)
   if self._aniCoro then
     self:UnLock("UIHomelandStoryTaskController:ShowItemCoro")
-    ;
-    ((GameGlobal.TaskManager)()):KillTask(self._aniCoro)
+    GameGlobal.TaskManager():KillTask(self._aniCoro)
     self._aniCoro = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController._GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandStoryTaskController:_GetComponents()
   self._atlas = self:GetAsset("UIHomelandStoryTask.spriteatlas", LoadType.SpriteAtlas)
   self._tabs = self:GetUIComponent("UISelectObjectPath", "tabs")
   self._processText = self:GetUIComponent("UILocalizationText", "processText")
@@ -75,159 +55,87 @@ UIHomelandStoryTaskController._GetComponents = function(self)
   self._rewardText = self:GetUIComponent("UILocalizationText", "rewardText")
   self._finishstate = self:GetUIComponent("Image", "finishstate")
   self._groupInfo = {}
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._groupInfo).groupname = self:GetUIComponent("UILocalizationText", "groupName")
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._groupInfo).tasktitle = self:GetUIComponent("UILocalizationText", "groupTaskTitle")
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._groupInfo).taskcontent = self:GetUIComponent("UILocalizationText", "groupTaskInfo")
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._groupInfo).taskbg = self:GetUIComponent("UILocalizationText", "groupTaskBg")
-  -- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._groupInfo).content = self:GetUIComponent("RectTransform", "content")
-  -- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._groupInfo).img = self:GetUIComponent("RawImageLoader", "contentImg")
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._groupInfo).groupTaskFinished = self:GetUIComponent("UILocalizationText", "groupTaskFinished")
-  -- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._groupInfo).unlock = self:GetUIComponent("RectTransform", "unlock")
-  -- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._groupInfo).unlockIntroaward = self:GetUIComponent("UISelectObjectPath", "unlockIntroaward")
+  self._groupInfo.groupname = self:GetUIComponent("UILocalizationText", "groupName")
+  self._groupInfo.tasktitle = self:GetUIComponent("UILocalizationText", "groupTaskTitle")
+  self._groupInfo.taskcontent = self:GetUIComponent("UILocalizationText", "groupTaskInfo")
+  self._groupInfo.taskbg = self:GetUIComponent("UILocalizationText", "groupTaskBg")
+  self._groupInfo.content = self:GetUIComponent("RectTransform", "content")
+  self._groupInfo.img = self:GetUIComponent("RawImageLoader", "contentImg")
+  self._groupInfo.groupTaskFinished = self:GetUIComponent("UILocalizationText", "groupTaskFinished")
+  self._groupInfo.unlock = self:GetUIComponent("RectTransform", "unlock")
+  self._groupInfo.unlockIntroaward = self:GetUIComponent("UISelectObjectPath", "unlockIntroaward")
   self._finisedGo = self:GetGameObject("finished")
   self._traceBtn = self:GetGameObject("traceBtn")
   self._rightlock = self:GetGameObject("rightlock")
   self._traceText = self:GetUIComponent("UILocalizationText", "btnTraceText")
   self._lockInfo = {}
-  -- DECOMPILER ERROR at PC153: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._lockInfo).title = self:GetUIComponent("UILocalizationText", "locktitleText")
-  -- DECOMPILER ERROR at PC159: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._lockInfo).content = self:GetUIComponent("UILocalizationText", "lockcontentText")
-  -- DECOMPILER ERROR at PC165: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._lockInfo).condition = self:GetUIComponent("UILocalizationText", "conditionText")
-  -- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._lockInfo).actionpoint = self:GetUIComponent("UILocalizationText", "actionpointText")
-  -- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._lockInfo).bg = self:GetUIComponent("Image", "lockbgImg")
+  self._lockInfo.title = self:GetUIComponent("UILocalizationText", "locktitleText")
+  self._lockInfo.content = self:GetUIComponent("UILocalizationText", "lockcontentText")
+  self._lockInfo.condition = self:GetUIComponent("UILocalizationText", "conditionText")
+  self._lockInfo.actionpoint = self:GetUIComponent("UILocalizationText", "actionpointText")
+  self._lockInfo.bg = self:GetUIComponent("Image", "lockbgImg")
   self._rightintro = self:GetGameObject("rightintro")
   self._rightintroInfo = {}
-  -- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rightintroInfo).title = self:GetUIComponent("UILocalizationText", "introtitleText")
-  -- DECOMPILER ERROR at PC195: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rightintroInfo).content = self:GetUIComponent("UILocalizationText", "introcontentText")
-  -- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rightintroInfo).condition = self:GetUIComponent("UILocalizationText", "introconditionText")
-  -- DECOMPILER ERROR at PC207: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rightintroInfo).actionpoint = self:GetUIComponent("UILocalizationText", "locktitleText")
+  self._rightintroInfo.title = self:GetUIComponent("UILocalizationText", "introtitleText")
+  self._rightintroInfo.content = self:GetUIComponent("UILocalizationText", "introcontentText")
+  self._rightintroInfo.condition = self:GetUIComponent("UILocalizationText", "introconditionText")
+  self._rightintroInfo.actionpoint = self:GetUIComponent("UILocalizationText", "locktitleText")
   self._introawardsv = self:GetUIComponent("UISelectObjectPath", "introawardsv")
   self._unlockTextPoint = self:GetUIComponent("UILocalizationText", "unlockTextPoint")
   self._tipTextGo = self:GetGameObject("tipText")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.InitActiveTask = function(self)
-  -- function num : 0_5
+function UIHomelandStoryTaskController:InitActiveTask()
   if not self._storyTaskInfos then
     self._isTrace = false
     self._selectTaskId = 0
-    return 
+    return
   end
-  self._isTrace = (self._storyTaskInfos).cfg_id ~= 0
+  self._isTrace = self._storyTaskInfos.cfg_id ~= 0
   if self._isTrace then
-    self._selectTaskId = (self._storyTaskInfos).cfg_id
-  elseif (self._activeStoryTasks)[1] then
-    self._selectTaskId = ((self._activeStoryTasks)[1]).ID
+    self._selectTaskId = self._storyTaskInfos.cfg_id
+  elseif self._activeStoryTasks[1] then
+    self._selectTaskId = self._activeStoryTasks[1].ID
   end
   if self._selectTaskId then
-    self._selectTaskCfg = (self._storyTaskCfg)[self._selectTaskId]
+    self._selectTaskCfg = self._storyTaskCfg[self._selectTaskId]
     self._selectTaskGroupId = self:GetRunningGroup()
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.GetRunningGroup = function(self)
-  -- function num : 0_6
-  local groupId = ((self._selectTaskCfg).StoryTaskGroupTb)[1]
+function UIHomelandStoryTaskController:GetRunningGroup()
+  local groupId = self._selectTaskCfg.StoryTaskGroupTb[1]
   if self._selectTaskId then
-    for i = 1, #(self._selectTaskCfg).StoryTaskGroupTb do
-      local group = ((self._selectTaskCfg).StoryTaskGroupTb)[i]
-      if not (self._storyTaskManager):CheckStoryTaskGroupFinished(self._selectTaskId, group) and self:CheckTaskGroupInTime(group) then
-        groupId = ((self._selectTaskCfg).StoryTaskGroupTb)[i]
+    for i = 1, #self._selectTaskCfg.StoryTaskGroupTb do
+      local group = self._selectTaskCfg.StoryTaskGroupTb[i]
+      if not self._storyTaskManager:CheckStoryTaskGroupFinished(self._selectTaskId, group) and self:CheckTaskGroupInTime(group) then
+        groupId = self._selectTaskCfg.StoryTaskGroupTb[i]
         return groupId
       end
     end
-    for i = #(self._selectTaskCfg).StoryTaskGroupTb, 1, -1 do
-      local group = ((self._selectTaskCfg).StoryTaskGroupTb)[i]
-      if (self._storyTaskManager):CheckStoryTaskGroupFinished(self._selectTaskId, group) and self:CheckTaskGroupInTime(group) then
+    for i = #self._selectTaskCfg.StoryTaskGroupTb, 1, -1 do
+      local group = self._selectTaskCfg.StoryTaskGroupTb[i]
+      if self._storyTaskManager:CheckStoryTaskGroupFinished(self._selectTaskId, group) and self:CheckTaskGroupInTime(group) then
         groupId = group
         break
       end
     end
-    do
-      do return groupId end
-      return groupId
-    end
+    return groupId
   end
+  return groupId
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckTaskGroupInTime = function(self, taskGroupId)
-  -- function num : 0_7
-  return (self._taskHelper):CheckTaskGroupInTime(taskGroupId)
+function UIHomelandStoryTaskController:CheckTaskGroupInTime(taskGroupId)
+  return self._taskHelper:CheckTaskGroupInTime(taskGroupId)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.SetActiveTask = function(self, taskId)
-  -- function num : 0_8
+function UIHomelandStoryTaskController:SetActiveTask(taskId)
   self._selectTaskId = taskId
-  self._selectTaskCfg = (self._storyTaskCfg)[self._selectTaskId]
+  self._selectTaskCfg = self._storyTaskCfg[self._selectTaskId]
   self._selectTaskGroupId = self:GetRunningGroup()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.Refresh = function(self)
-  -- function num : 0_9
+function UIHomelandStoryTaskController:Refresh()
   self:GetSelectStoryTaskData()
   self:InitActiveTask()
   self:RefreshSelectBtns()
@@ -237,80 +145,54 @@ UIHomelandStoryTaskController.Refresh = function(self)
   self:ShowActionPointInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.GetSelectStoryTaskData = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandStoryTaskController:GetSelectStoryTaskData()
   self._activeStoryTasks = {}
   if not self._storyTaskInfos then
     return self._activeStoryTasks
   end
-  for key,value in pairs(self._storyTaskCfg) do
-    local begintime = ((self._storyTaskCfg)[key]).UnlockTime
+  for key, value in pairs(self._storyTaskCfg) do
+    local begintime = self._storyTaskCfg[key].UnlockTime
     if self:CheckOpen(begintime) then
-      (table.insert)(self._activeStoryTasks, value)
+      table.insert(self._activeStoryTasks, value)
     end
   end
   return self._activeStoryTasks
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckOpen = function(self, beginTime)
-  -- function num : 0_11 , upvalues : _ENV
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIHomelandStoryTaskController:CheckOpen(beginTime)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if beginTime <= curTime then
+  if curTime >= beginTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.RefreshSelectBtns = function(self)
-  -- function num : 0_12
+function UIHomelandStoryTaskController:RefreshSelectBtns()
   local data = self._activeStoryTasks
-  ;
-  (self._tabs):SpawnObjects("UIHomelandStoryTaskBtn", #data)
-  self._selectBnts = (self._tabs):GetAllSpawnList()
+  self._tabs:SpawnObjects("UIHomelandStoryTaskBtn", #data)
+  self._selectBnts = self._tabs:GetAllSpawnList()
   for i = 1, #self._selectBnts do
-    ((self._selectBnts)[i]):SetData(data[i], self, self._selectTaskId)
+    self._selectBnts[i]:SetData(data[i], self, self._selectTaskId)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.RefreshTaskGroups = function(self)
-  -- function num : 0_13
-  local data = (self._storyTaskCfg)[self._selectTaskId]
+function UIHomelandStoryTaskController:RefreshTaskGroups()
+  local data = self._storyTaskCfg[self._selectTaskId]
   if not data then
-    return 
+    return
   end
-  ;
-  (self._groups):SpawnObjects("UIHomelandStoryTaskGroupItem", #data.StoryTaskGroupTb)
-  self._taskGroups = (self._groups):GetAllSpawnList()
+  self._groups:SpawnObjects("UIHomelandStoryTaskGroupItem", #data.StoryTaskGroupTb)
+  self._taskGroups = self._groups:GetAllSpawnList()
   for i = 1, #data.StoryTaskGroupTb do
-    if (data.StoryTaskGroupTb)[i] then
-      ((self._taskGroups)[i]):Show()
-      local lastGroup = (data.StoryTaskGroupTb)[i - 1]
-      ;
-      ((self._taskGroups)[i]):Flush(i, (data.StoryTaskGroupTb)[i], self, self._selectTaskId, lastGroup, self._selectTaskGroupId, self._taskGroupCfg)
+    if data.StoryTaskGroupTb[i] then
+      self._taskGroups[i]:Show()
+      local lastGroup = data.StoryTaskGroupTb[i - 1]
+      self._taskGroups[i]:Flush(i, data.StoryTaskGroupTb[i], self, self._selectTaskId, lastGroup, self._selectTaskGroupId, self._taskGroupCfg)
     else
-      do
-        do
-          ;
-          ((self._taskGroups)[i]):Hide()
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self._taskGroups[i]:Hide()
     end
   end
   self:ShowTaskGroupInfo()
@@ -321,369 +203,238 @@ UIHomelandStoryTaskController.RefreshTaskGroups = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.RefreshUnLockInfo = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHomelandStoryTaskController:RefreshUnLockInfo()
   if not self._selectTaskCfg then
-    (self._rightlock):SetActive(false)
-    ;
-    (self._rightintro):SetActive(false)
-    ;
-    (self._right):SetActive(false)
-    return 
+    self._rightlock:SetActive(false)
+    self._rightintro:SetActive(false)
+    self._right:SetActive(false)
+    return
   end
-  local data = (self._storyTaskCfg)[self._selectTaskId]
-  ;
-  ((self._rightintroInfo).content):SetText((StringTable.Get)(data.GroupsListContent))
+  local data = self._storyTaskCfg[self._selectTaskId]
+  self._rightintroInfo.content:SetText(StringTable.Get(data.GroupsListContent))
   if data.LockTaskId ~= nil then
-    ((self._rightintroInfo).condition):SetText((string.format)((StringTable.Get)("str_homeland_storytask_condition", data.LockTaskId)))
+    self._rightintroInfo.condition:SetText(string.format(StringTable.Get("str_homeland_storytask_condition", data.LockTaskId)))
   else
-    ;
-    ((self._rightintroInfo).condition):SetText("")
+    self._rightintroInfo.condition:SetText("")
   end
   local isInTime = self:CheckIsFree(data.UnCostTimeStart, data.UnCostTimeEnd)
-  ;
-  (self._tipTextGo):SetActive(isInTime)
-  if not isInTime or not 0 then
-    local cost = data.CostItemNum
-  end
-  ;
-  (self._unlockTextPoint):SetText(cost)
-  local cur, max = self:GetActionPointInfo()
+  self._tipTextGo:SetActive(isInTime)
+  local cost = isInTime and 0 or data.CostItemNum
+  self._unlockTextPoint:SetText(cost)
   do
-    local color = nil
+    local cur, max = self:GetActionPointInfo()
+    local color
     if cost <= cur then
-      color = Color(1, 1, 1)
+      color = Color(1.0, 1.0, 1.0)
     else
-      color = Color(0.9843137254902, 0.34117647058824, 0.25490196078431)
+      color = Color(0.984313725490196, 0.3411764705882353, 0.2549019607843137)
     end
-    -- DECOMPILER ERROR at PC85: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._unlockTextPoint).color = color
-    local isUnlock = self:CheckTaskUnLock(self._selectTaskId)
-    ;
-    (self._rightlock):SetActive(false)
-    ;
-    (self._rightintro):SetActive(not isUnlock)
-    ;
-    (self._right):SetActive(isUnlock)
-    ;
-    (self._awardspar):SetActive(isUnlock)
-    ;
-    (self._rightintro):SetActive(not isUnlock)
+    self._unlockTextPoint.color = color
   end
+  local isUnlock = self:CheckTaskUnLock(self._selectTaskId)
+  self._rightlock:SetActive(false)
+  self._rightintro:SetActive(not isUnlock)
+  self._right:SetActive(isUnlock)
+  self._awardspar:SetActive(isUnlock)
+  self._rightintro:SetActive(not isUnlock)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckIsFree = function(self, beginTime, endTime)
-  -- function num : 0_15 , upvalues : _ENV
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIHomelandStoryTaskController:CheckIsFree(beginTime, endTime)
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local beginTime = loginModule:GetTimeStampByTimeStr(beginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local endTime = loginModule:GetTimeStampByTimeStr(endTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  if beginTime <= curTime and curTime < endTime then
+  if curTime >= beginTime and curTime < endTime then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.ShowItemCoro = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
+function UIHomelandStoryTaskController:ShowItemCoro(TT)
   self:Lock("UIHomelandStoryTaskController:ShowItemCoro")
-  local items = (self._groups):GetAllSpawnList()
+  local items = self._groups:GetAllSpawnList()
   YIELD(TT, 90)
   for i = 1, #items do
     YIELD(TT, 20)
-    ;
-    (items[i]):ShowAnim()
+    items[i]:ShowAnim()
   end
   self:UnLock("UIHomelandStoryTaskController:ShowItemCoro")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.ShowTaskGroupInfo = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local curTaskGroupInfo = (self._taskGroupCfg)[self._selectTaskGroupId]
+function UIHomelandStoryTaskController:ShowTaskGroupInfo()
+  local curTaskGroupInfo = self._taskGroupCfg[self._selectTaskGroupId]
   if not curTaskGroupInfo then
-    return 
+    return
   end
   local finished = self:CheckTaskGroupFinish(self._selectTaskId, self._selectTaskGroupId)
   local unlocked = self:CheckTaskGroupUnlock(self._selectTaskId, self._selectTaskGroupId)
-  ;
-  (((self._groupInfo).content).gameObject):SetActive(unlocked)
-  ;
-  (((self._groupInfo).img).gameObject):SetActive(unlocked)
-  ;
-  (((self._groupInfo).unlock).gameObject):SetActive(not unlocked)
+  self._groupInfo.content.gameObject:SetActive(unlocked)
+  self._groupInfo.img.gameObject:SetActive(unlocked)
+  self._groupInfo.unlock.gameObject:SetActive(not unlocked)
   if not unlocked then
-    local rewards = ((self._taskGroupCfg)[self._selectTaskGroupId]).Reward
-    local introawards = ((self._groupInfo).unlockIntroaward):SpawnObjects("UIHomelandTaskGuideRewardItem", #rewards)
+    local rewards = self._taskGroupCfg[self._selectTaskGroupId].Reward
+    local introawards = self._groupInfo.unlockIntroaward:SpawnObjects("UIHomelandTaskGuideRewardItem", #rewards)
     for i = 1, #introawards do
       if rewards[i] then
-        (introawards[i]):Show()
+        introawards[i]:Show()
         local rew = {}
-        rew.assetid = (rewards[i])[1]
-        rew.count = (rewards[i])[2]
-        ;
-        (introawards[i]):SetData(rew, finished)
-        ;
-        (introawards[i]):ClearTextCount()
+        rew.assetid = rewards[i][1]
+        rew.count = rewards[i][2]
+        introawards[i]:SetData(rew, finished)
+        introawards[i]:ClearTextCount()
       else
-        do
-          do
-            ;
-            (introawards[i]):Hide()
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        introawards[i]:Hide()
       end
     end
+  elseif finished then
+    self._rightAnimation:Play()
+    self._groupInfo.groupname:SetText(StringTable.Get(curTaskGroupInfo.GroupTitle))
+    self._groupInfo.tasktitle:SetText("")
+    self._groupInfo.taskcontent:SetText("")
+    self._groupInfo.taskbg:SetText("")
+    self._groupInfo.groupTaskFinished:SetText(StringTable.Get(curTaskGroupInfo.GroupContent))
   else
-    do
-      if finished then
-        (self._rightAnimation):Play()
-        ;
-        ((self._groupInfo).groupname):SetText((StringTable.Get)(curTaskGroupInfo.GroupTitle))
-        ;
-        ((self._groupInfo).tasktitle):SetText("")
-        ;
-        ((self._groupInfo).taskcontent):SetText("")
-        ;
-        ((self._groupInfo).taskbg):SetText("")
-        ;
-        ((self._groupInfo).groupTaskFinished):SetText((StringTable.Get)(curTaskGroupInfo.GroupContent))
-      else
-        local task = self:CheckTaskItemRunning(self._selectTaskId, self._selectTaskGroupId)
-        local info = {}
-        if task then
-          local title, content, bg = task:GetTaskInfo()
-          local finishInfo = task:GetConditionInfo()
-          local finishType = finishInfo.FinishType
-          if finishType == FinishConditionEnum.Item or finishType == FinishConditionEnum.PetSearch or finishType == FinishConditionEnum.PetNeed then
-            local itemId, itemCount = (finishInfo.NeedItems)[1], (finishInfo.NeedItems)[2]
-            local haveCount = (((GameGlobal.GetModule)(ItemModule)):GetItemCount(itemId))
-            local colorContent = nil
-            if itemCount <= haveCount then
-              colorContent = (string.format)("<color=#fbc305>%s</color>", haveCount)
-              content = (StringTable.Get)(content, colorContent, itemCount)
-            else
-              colorContent = (string.format)("<color=#fbc305>%s</color>", haveCount)
-              content = (StringTable.Get)(content, colorContent, itemCount)
-            end
-          else
-            do
-              do
-                do
-                  content = (StringTable.Get)(content)
-                  info.title = (StringTable.Get)(title)
-                  info.content = content
-                  info.bg = (StringTable.Get)(bg)
-                  ;
-                  ((self._groupInfo).groupTaskFinished):SetText("")
-                  info.title = ""
-                  info.content = ""
-                  info.bg = ""
-                  ;
-                  ((self._groupInfo).groupTaskFinished):SetText((StringTable.Get)(curTaskGroupInfo.GroupContent))
-                  ;
-                  (self._rightAnimation):Play()
-                  ;
-                  ((self._groupInfo).groupname):SetText((StringTable.Get)(curTaskGroupInfo.GroupTitle))
-                  ;
-                  ((self._groupInfo).tasktitle):SetText(info.title)
-                  ;
-                  ((self._groupInfo).taskcontent):SetText(info.content)
-                  ;
-                  ((self._groupInfo).taskbg):SetText(info.bg)
-                  ;
-                  (self._finisedGo):SetActive(finished)
-                  ;
-                  (self._traceBtn):SetActive(not finished)
-                  ;
-                  ((self._groupInfo).img):LoadImage(curTaskGroupInfo.GroupIcon)
-                end
-              end
-            end
-          end
+    local task = self:CheckTaskItemRunning(self._selectTaskId, self._selectTaskGroupId)
+    local info = {}
+    if task then
+      local title, content, bg = task:GetTaskInfo()
+      local finishInfo = task:GetConditionInfo()
+      local finishType = finishInfo.FinishType
+      if finishType == FinishConditionEnum.Item or finishType == FinishConditionEnum.PetSearch or finishType == FinishConditionEnum.PetNeed then
+        local itemId, itemCount = finishInfo.NeedItems[1], finishInfo.NeedItems[2]
+        local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(itemId)
+        local colorContent
+        if itemCount <= haveCount then
+          colorContent = string.format("<color=#fbc305>%s</color>", haveCount)
+          content = StringTable.Get(content, colorContent, itemCount)
+        else
+          colorContent = string.format("<color=#fbc305>%s</color>", haveCount)
+          content = StringTable.Get(content, colorContent, itemCount)
         end
+      else
+        content = StringTable.Get(content)
       end
+      info.title = StringTable.Get(title)
+      info.content = content
+      info.bg = StringTable.Get(bg)
+      self._groupInfo.groupTaskFinished:SetText("")
+    else
+      info.title = ""
+      info.content = ""
+      info.bg = ""
+      self._groupInfo.groupTaskFinished:SetText(StringTable.Get(curTaskGroupInfo.GroupContent))
     end
+    self._rightAnimation:Play()
+    self._groupInfo.groupname:SetText(StringTable.Get(curTaskGroupInfo.GroupTitle))
+    self._groupInfo.tasktitle:SetText(info.title)
+    self._groupInfo.taskcontent:SetText(info.content)
+    self._groupInfo.taskbg:SetText(info.bg)
   end
+  self._finisedGo:SetActive(finished)
+  self._traceBtn:SetActive(not finished)
+  self._groupInfo.img:LoadImage(curTaskGroupInfo.GroupIcon)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.RefreshAward = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHomelandStoryTaskController:RefreshAward()
   local finished = self:CheckTaskGroupFinish(self._selectTaskId, self._selectTaskGroupId)
-  local rewards = ((self._taskGroupCfg)[self._selectTaskGroupId]).Reward
-  ;
-  (self._rewardTextgo):SetActive(true)
+  local rewards = self._taskGroupCfg[self._selectTaskGroupId].Reward
+  self._rewardTextgo:SetActive(true)
   local str = finished and "str_homeland_storytask_finished_reward" or "str_homeland_storytask_finish_reward"
-  ;
-  (self._rewardText):SetText((StringTable.Get)(str))
+  self._rewardText:SetText(StringTable.Get(str))
   local sp = finished and "n19_chuanshanjia_finish04" or "n19_chuanshanjia_finish03"
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._finishstate).sprite = (self._atlas):GetSprite(sp)
-  ;
-  (self._awards):SpawnObjects("UIHomelandTaskGuideRewardItem", #rewards)
-  self._awardItems = (self._awards):GetAllSpawnList()
+  self._finishstate.sprite = self._atlas:GetSprite(sp)
+  self._awards:SpawnObjects("UIHomelandTaskGuideRewardItem", #rewards)
+  self._awardItems = self._awards:GetAllSpawnList()
   for i = 1, #self._awardItems do
     if rewards[i] then
-      ((self._awardItems)[i]):Show()
+      self._awardItems[i]:Show()
       local rew = {}
-      rew.assetid = (rewards[i])[1]
-      rew.count = (rewards[i])[2]
-      ;
-      ((self._awardItems)[i]):SetData(rew, finished)
+      rew.assetid = rewards[i][1]
+      rew.count = rewards[i][2]
+      self._awardItems[i]:SetData(rew, finished)
     else
-      do
-        do
-          ;
-          ((self._awardItems)[i]):Hide()
-          -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC76: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self._awardItems[i]:Hide()
     end
   end
-  local data = (self._storyTaskCfg)[self._selectTaskId]
+  local data = self._storyTaskCfg[self._selectTaskId]
   rewards = data.Reward
-  ;
-  (self._introawardsv):SpawnObjects("UIHomelandTaskGuideRewardItem", #rewards)
-  self._introawards = (self._introawardsv):GetAllSpawnList()
+  self._introawardsv:SpawnObjects("UIHomelandTaskGuideRewardItem", #rewards)
+  self._introawards = self._introawardsv:GetAllSpawnList()
   for i = 1, #self._introawards do
     if rewards[i] then
-      ((self._introawards)[i]):Show()
+      self._introawards[i]:Show()
       local rew = {}
-      rew.assetid = (rewards[i])[1]
-      rew.count = (rewards[i])[2]
-      ;
-      ((self._introawards)[i]):SetData(rew, finished)
-      ;
-      ((self._introawards)[i]):ClearTextCount()
+      rew.assetid = rewards[i][1]
+      rew.count = rewards[i][2]
+      self._introawards[i]:SetData(rew, finished)
+      self._introawards[i]:ClearTextCount()
     else
-      do
-        do
-          ;
-          ((self._introawards)[i]):Hide()
-          -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self._introawards[i]:Hide()
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.ShowInfo = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIHomelandStoryTaskController:ShowInfo()
   if not self._selectTaskCfg then
-    return 
+    return
   end
   local finishCount = self:GetFinishedStoryTask()
-  ;
-  (self._processText):SetText((StringTable.Get)("str_homeland_storytask_finished", finishCount, #self._activeStoryTasks))
-  ;
-  (self._titleText):SetText((StringTable.Get)((self._selectTaskCfg).GroupsListTitle))
-  local traceStr = {"str_homeland_storytask_stoptrace", "str_homeland_storytask_trace"}
-  local id = self._isTrace and self._selectTaskId == (self._storyTaskInfos).cfg_id and 1 or 2
-  ;
-  (self._traceText):SetText((StringTable.Get)(traceStr[id]))
+  self._processText:SetText(StringTable.Get("str_homeland_storytask_finished", finishCount, #self._activeStoryTasks))
+  self._titleText:SetText(StringTable.Get(self._selectTaskCfg.GroupsListTitle))
+  local traceStr = {
+    "str_homeland_storytask_stoptrace",
+    "str_homeland_storytask_trace"
+  }
+  local id = self._isTrace and self._selectTaskId == self._storyTaskInfos.cfg_id and 1 or 2
+  self._traceText:SetText(StringTable.Get(traceStr[id]))
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.ShowActionPointInfo = function(self)
-  -- function num : 0_20
+function UIHomelandStoryTaskController:ShowActionPointInfo()
   local cur, max = self:GetActionPointInfo()
-  ;
-  (self._txtActionPoint):SetText(cur .. "/" .. max)
+  self._txtActionPoint:SetText(cur .. "/" .. max)
   if not self._storyTaskInfos then
-    return 
+    return
   end
-  local endtime = (self._storyTaskInfos).refresh_time
+  local endtime = self._storyTaskInfos.refresh_time
   self:_SetRemainingTime("_actionPointPool", nil, endtime)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.GetFinishedStoryTask = function(self)
-  -- function num : 0_21
-  return (self._storyTaskManager):GetFinishedStoryTaskCount()
+function UIHomelandStoryTaskController:GetFinishedStoryTask()
+  return self._storyTaskManager:GetFinishedStoryTaskCount()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.GetStoryTaskCfgData = function(self, id)
-  -- function num : 0_22
-  return (self._storyTaskCfg)[id]
+function UIHomelandStoryTaskController:GetStoryTaskCfgData(id)
+  return self._storyTaskCfg[id]
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.GetTaskGroupCfgData = function(self, id)
-  -- function num : 0_23
-  return (self._taskGroupCfg)[id]
+function UIHomelandStoryTaskController:GetTaskGroupCfgData(id)
+  return self._taskGroupCfg[id]
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.BtnCloseOnClick = function(self, go)
-  -- function num : 0_24
+function UIHomelandStoryTaskController:BtnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.BtnUnlockOnClick = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
+function UIHomelandStoryTaskController:BtnUnlockOnClick(go)
   if self._selectTaskCfg == nil then
-    return 
+    return
   end
   local cur, max = self:GetActionPointInfo()
-  local isInTime = self:CheckIsFree((self._selectTaskCfg).UnCostTimeStart, (self._selectTaskCfg).UnCostTimeEnd)
-  if not isInTime or not 0 then
-    local cost = (self._selectTaskCfg).CostItemNum
-  end
+  local isInTime = self:CheckIsFree(self._selectTaskCfg.UnCostTimeStart, self._selectTaskCfg.UnCostTimeEnd)
+  local cost = isInTime and 0 or self._selectTaskCfg.CostItemNum
   if cur < cost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_homeland_storytask_action_point_not_enough"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_homeland_storytask_action_point_not_enough"))
+    return
   end
-  ;
-  (Log.info)("UIHomelandStoryTaskController:BtnUnlockOnClick() id = ", self._selectTaskId)
+  Log.info("UIHomelandStoryTaskController:BtnUnlockOnClick() id = ", self._selectTaskId)
   self:StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):Lock("UIHomelandStoryTaskController:BtnUnlockOnClick")
-    local res = (self._homelandModule):HomelandStoryTaskUnlockReq(TT, self._selectTaskId)
+    GameGlobal.UIStateManager():Lock("UIHomelandStoryTaskController:BtnUnlockOnClick")
+    local res = self._homelandModule:HomelandStoryTaskUnlockReq(TT, self._selectTaskId)
     if res:GetSucc() then
-      (Log.info)("UIHomelandStoryTaskController:BtnUnlockOnClick() Success, id = ", self._selectTaskId)
-      local taskName = (StringTable.Get)((self._selectTaskCfg).GroupsListTitle)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_homeland_storytask_unlock_success", taskName))
+      Log.info("UIHomelandStoryTaskController:BtnUnlockOnClick() Success, id = ", self._selectTaskId)
+      local taskName = StringTable.Get(self._selectTaskCfg.GroupsListTitle)
+      ToastManager.ShowToast(StringTable.Get("str_homeland_storytask_unlock_success", taskName))
       YIELD(TT, 1500)
       self:ShowInfo()
       self:RefreshTaskGroups()
@@ -691,33 +442,24 @@ UIHomelandStoryTaskController.BtnUnlockOnClick = function(self, go)
       self:RefreshSelectBtns()
       self:ShowActionPointInfo()
     else
-      do
-        ;
-        (Log.fatal)("UIHomelandStoryTaskController:BtnUnlockOnClick() error, id = ", self._selectTaskId)
-        ;
-        ((GameGlobal.UIStateManager)()):UnLock("UIHomelandStoryTaskController:BtnUnlockOnClick")
-      end
+      Log.fatal("UIHomelandStoryTaskController:BtnUnlockOnClick() error, id = ", self._selectTaskId)
     end
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock("UIHomelandStoryTaskController:BtnUnlockOnClick")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.TraceBtnOnClick = function(self, go)
-  -- function num : 0_26 , upvalues : _ENV
-  (Log.info)("UIHomelandStoryTaskController:TraceBtnOnClick() id = ", self._selectTaskId, " isTrace = ", tostring(self._isTrace))
+function UIHomelandStoryTaskController:TraceBtnOnClick(go)
+  Log.info("UIHomelandStoryTaskController:TraceBtnOnClick() id = ", self._selectTaskId, " isTrace = ", tostring(self._isTrace))
   self:StartTask(function(TT)
-    -- function num : 0_26_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):Lock("UIHomelandStoryTaskController:TraceBtnOnClick")
-    local res = (self._homelandModule):HomelandStoryTaskAutoOperateReq(TT, self._selectTaskId)
+    GameGlobal.UIStateManager():Lock("UIHomelandStoryTaskController:TraceBtnOnClick")
+    local res = self._homelandModule:HomelandStoryTaskAutoOperateReq(TT, self._selectTaskId)
     if res:GetSucc() then
-      (Log.info)("UIHomelandStoryTaskController:TraceBtnOnClick() Success, id = ", self._selectTaskId)
-      self._isTrace = (self._storyTaskInfos).cfg_id ~= 0
-      if (self._storyTaskInfos).cfg_id > 0 then
-        (self._storyTaskManager):StartRun((self._storyTaskInfos).cfg_id)
+      Log.info("UIHomelandStoryTaskController:TraceBtnOnClick() Success, id = ", self._selectTaskId)
+      self._isTrace = self._storyTaskInfos.cfg_id ~= 0
+      if self._storyTaskInfos.cfg_id > 0 then
+        self._storyTaskManager:StartRun(self._storyTaskInfos.cfg_id)
       else
-        (self._storyTaskManager):StopRun()
+        self._storyTaskManager:StopRun()
       end
       self:ShowInfo()
       self:RefreshTaskGroups()
@@ -725,58 +467,36 @@ UIHomelandStoryTaskController.TraceBtnOnClick = function(self, go)
       if self._isTrace then
         self:_PrintStoryTask()
         self:CloseDialog()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StoryTaskTraceSuccess)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.StoryTaskTraceSuccess)
       end
     else
-      (Log.fatal)("UIHomelandStoryTaskController:TraceBtnOnClick() error, id = ", self._selectTaskId)
+      Log.fatal("UIHomelandStoryTaskController:TraceBtnOnClick() error, id = ", self._selectTaskId)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UIHomelandStoryTaskController:TraceBtnOnClick")
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock("UIHomelandStoryTaskController:TraceBtnOnClick")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.BtnCloseOnClick = function(self, go)
-  -- function num : 0_27
+function UIHomelandStoryTaskController:BtnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.BtnWhiteCloseOnClick = function(self, go)
-  -- function num : 0_28
+function UIHomelandStoryTaskController:BtnWhiteCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.ActionPointBtnOnClick = function(self, go)
-  -- function num : 0_29
+function UIHomelandStoryTaskController:ActionPointBtnOnClick(go)
   self:ShowDialog("UIHomelandStoryTaskActionPointDetail")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.OnSelectBtn = function(self, taskId)
-  -- function num : 0_30
+function UIHomelandStoryTaskController:OnSelectBtn(taskId)
   self:RefreshSelectBtnsOnSelect(taskId)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.OnSelectGroupItem = function(self, taskId)
-  -- function num : 0_31
+function UIHomelandStoryTaskController:OnSelectGroupItem(taskId)
   self:RefreshSelectGroupOnSelect(taskId)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.StoryTaskUpdate = function(self, msg)
-  -- function num : 0_32
+function UIHomelandStoryTaskController:StoryTaskUpdate(msg)
   self._storyTaskInfos = msg
   self:RefreshSelectBtns()
   self:SetActiveTask(self._selectTaskId)
@@ -785,17 +505,14 @@ UIHomelandStoryTaskController.StoryTaskUpdate = function(self, msg)
   self:ShowActionPointInfo()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckTaskUnLock = function(self, id)
-  -- function num : 0_33 , upvalues : _ENV
+function UIHomelandStoryTaskController:CheckTaskUnLock(id)
   if not self._storyTaskInfos then
     return false
   end
-  if not (self._storyTaskInfos).id_list then
+  if not self._storyTaskInfos.id_list then
     return false
   end
-  for i,v in pairs((self._storyTaskInfos).id_list) do
+  for i, v in pairs(self._storyTaskInfos.id_list) do
     if id == v then
       return true
     end
@@ -803,65 +520,42 @@ UIHomelandStoryTaskController.CheckTaskUnLock = function(self, id)
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.GetActionPointInfo = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  local item_id = ((Cfg.cfg_homeland_global).StoryTaskRefreshItemId).IntValue
-  local maxCount = ((Cfg.cfg_homeland_global).StoryTaskMaxRefreshCount).IntValue
-  local im = (GameGlobal.GetModule)(ItemModule)
+function UIHomelandStoryTaskController:GetActionPointInfo()
+  local item_id = Cfg.cfg_homeland_global.StoryTaskRefreshItemId.IntValue
+  local maxCount = Cfg.cfg_homeland_global.StoryTaskMaxRefreshCount.IntValue
+  local im = GameGlobal.GetModule(ItemModule)
   local itemCount = im:GetItemCount(item_id)
   return itemCount, maxCount
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.GetStoryTaskGroupInfo = function(self, taskGroupId)
-  -- function num : 0_35
-  return (self._storyTaskManager):GetStoryGroupInfo(taskGroupId)
+function UIHomelandStoryTaskController:GetStoryTaskGroupInfo(taskGroupId)
+  return self._storyTaskManager:GetStoryGroupInfo(taskGroupId)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.SetNewPoint = function(self, taskId)
-  -- function num : 0_36
-  if ((self._localData).HasPrefsStoryTask)(taskId) then
-    return 
+function UIHomelandStoryTaskController:SetNewPoint(taskId)
+  if self._localData.HasPrefsStoryTask(taskId) then
+    return
   end
-  ;
-  ((self._localData).SetPrefsStoryTask)(taskId)
+  self._localData.SetPrefsStoryTask(taskId)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckNewPoint = function(self, taskId)
-  -- function num : 0_37
-  return ((self._localData).HasPrefsStoryTask)(taskId)
+function UIHomelandStoryTaskController:CheckNewPoint(taskId)
+  return self._localData.HasPrefsStoryTask(taskId)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckIsTrace = function(self, taskId)
-  -- function num : 0_38
+function UIHomelandStoryTaskController:CheckIsTrace(taskId)
   if not self._storyTaskInfos then
     return false
   end
-  do return (self._storyTaskInfos).cfg_id == taskId end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return self._storyTaskInfos.cfg_id == taskId
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.GetTeaceingStoryTask = function(self)
-  -- function num : 0_39
-  return (self._storyTaskInfos).cfg_id
+function UIHomelandStoryTaskController:GetTeaceingStoryTask()
+  return self._storyTaskInfos.cfg_id
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController._SetRemainingTime = function(self, widgetName, descId, endTime)
-  -- function num : 0_40 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIHomelandStoryTaskController:_SetRemainingTime(widgetName, descId, endTime)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   obj:SetCustomTimeStr_Common_1()
   obj:SetExtraRollingText()
   obj:SetAdvanceText(descId)
@@ -871,55 +565,41 @@ UIHomelandStoryTaskController._SetRemainingTime = function(self, widgetName, des
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckTaskGroupUnlock = function(self, taskId, groupId)
-  -- function num : 0_41
-  local data = (self._storyTaskCfg)[self._selectTaskId]
+function UIHomelandStoryTaskController:CheckTaskGroupUnlock(taskId, groupId)
+  local data = self._storyTaskCfg[self._selectTaskId]
   if not data then
     return true
   end
-  local preGroup = nil
+  local preGroup
   for i = 1, #data.StoryTaskGroupTb do
-    if (data.StoryTaskGroupTb)[i] == groupId then
-      preGroup = (data.StoryTaskGroupTb)[i - 1]
+    if data.StoryTaskGroupTb[i] == groupId then
+      preGroup = data.StoryTaskGroupTb[i - 1]
       break
     end
   end
-  do
-    if preGroup == nil then
-      return true
-    end
-    return self:CheckTaskGroupFinish(taskId, preGroup)
+  if preGroup == nil then
+    return true
   end
+  return self:CheckTaskGroupFinish(taskId, preGroup)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckTaskGroupFinish = function(self, taskId, groupId)
-  -- function num : 0_42
+function UIHomelandStoryTaskController:CheckTaskGroupFinish(taskId, groupId)
   if self._storyTaskManager then
-    return (self._storyTaskManager):CheckStoryTaskGroupFinished(taskId, groupId)
+    return self._storyTaskManager:CheckStoryTaskGroupFinished(taskId, groupId)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckTaskItemRunning = function(self, taskId, groupId)
-  -- function num : 0_43
+function UIHomelandStoryTaskController:CheckTaskItemRunning(taskId, groupId)
   if self._storyTaskManager then
-    return (self._storyTaskManager):GetRunningTask(taskId, groupId)
+    return self._storyTaskManager:GetRunningTask(taskId, groupId)
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.CheckStoryTaskFinish = function(self, taskId)
-  -- function num : 0_44
+function UIHomelandStoryTaskController:CheckStoryTaskFinish(taskId)
   if not self:CheckTaskUnLock(taskId) then
     return false
   end
-  local taskinfo = (self._storyTaskCfg)[taskId]
+  local taskinfo = self._storyTaskCfg[taskId]
   local groups = taskinfo.StoryTaskGroupTb
   for i = 1, #groups do
     if not self:CheckTaskGroupFinish(taskId, groups[i]) then
@@ -929,10 +609,7 @@ UIHomelandStoryTaskController.CheckStoryTaskFinish = function(self, taskId)
   return true
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.RefreshSelectBtnsOnSelect = function(self, taskId)
-  -- function num : 0_45
+function UIHomelandStoryTaskController:RefreshSelectBtnsOnSelect(taskId)
   self:SetActiveTask(taskId)
   self:RefreshUnLockInfo()
   self:ShowInfo()
@@ -940,35 +617,21 @@ UIHomelandStoryTaskController.RefreshSelectBtnsOnSelect = function(self, taskId)
   self:RefreshSelectBtns()
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.RefreshSelectGroupOnSelect = function(self, groupId)
-  -- function num : 0_46
+function UIHomelandStoryTaskController:RefreshSelectGroupOnSelect(groupId)
   self._selectTaskGroupId = groupId
   self:RefreshTaskGroups()
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController.SetLocalDataNew = function(self)
-  -- function num : 0_47
-  (self._localData):SetNewStoryTask()
-  ;
-  ((self._localData).SetPrefsStoryTaskGroupNew)(0)
+function UIHomelandStoryTaskController:SetLocalDataNew()
+  self._localData:SetNewStoryTask()
+  self._localData.SetPrefsStoryTaskGroupNew(0)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskController._PrintStoryTask = function(self)
-  -- function num : 0_48 , upvalues : _ENV
-  (Log.debug)("PrintStoryTask() homelandStoryTask: ")
-  ;
-  (Log.debug)("PrintStoryTask() cfg_id = ", (self._storyTaskInfos).cfg_id)
-  ;
-  (Log.debug)("PrintStoryTask() id_list = ")
-  for i,v in pairs((self._storyTaskInfos).id_list) do
-    (Log.debug)("PrintStoryTask() id_list[", i, "] = ", v)
+function UIHomelandStoryTaskController:_PrintStoryTask()
+  Log.debug("PrintStoryTask() homelandStoryTask: ")
+  Log.debug("PrintStoryTask() cfg_id = ", self._storyTaskInfos.cfg_id)
+  Log.debug("PrintStoryTask() id_list = ")
+  for i, v in pairs(self._storyTaskInfos.id_list) do
+    Log.debug("PrintStoryTask() id_list[", i, "] = ", v)
   end
 end
-
-

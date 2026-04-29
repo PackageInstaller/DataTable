@@ -1,42 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/campsites/ui_season_maze_campsites_buy_ticket.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMaze_Campsites_BuyTicket", UIController)
 UISeasonMaze_Campsites_BuyTicket = UISeasonMaze_Campsites_BuyTicket
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMaze_Campsites_BuyTicket.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMaze_Campsites_BuyTicket:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BuyTicket.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMaze_Campsites_BuyTicket:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BuyTicket.CancelBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UISeasonMaze_Campsites_BuyTicket:CancelBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BuyTicket.BuyBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISeasonMaze_Campsites_BuyTicket:BuyBtnOnClick(go)
   self:ShowDialog("UISeasonMaze_Campsites_Smithy")
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMaze_Campsites_BuyTicket.OnHide = function(self)
-  -- function num : 0_4
+function UISeasonMaze_Campsites_BuyTicket:OnHide()
 end
-
-

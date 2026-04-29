@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_master_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamMasterSkill", FeatureEffectParamBase)
 FeatureEffectParamMasterSkill = FeatureEffectParamMasterSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamMasterSkill.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamMasterSkill:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamMasterSkill._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamMasterSkill:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.SkillID then
     self._skillID = t.SkillID
@@ -45,55 +35,30 @@ FeatureEffectParamMasterSkill._RefreshData = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamMasterSkill.GetMasterSkillID = function(self)
-  -- function num : 0_2
+function FeatureEffectParamMasterSkill:GetMasterSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamMasterSkill.GetUiType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if not self._uiType then
-    return FeatureMasterSkillUiType.Default
-  end
+function FeatureEffectParamMasterSkill:GetUiType()
+  return self._uiType or FeatureMasterSkillUiType.Default
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamMasterSkill.GetImageNormalFront = function(self)
-  -- function num : 0_4
+function FeatureEffectParamMasterSkill:GetImageNormalFront()
   return self._imageNormalFront
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamMasterSkill.GetImageWarningFront = function(self)
-  -- function num : 0_5
+function FeatureEffectParamMasterSkill:GetImageWarningFront()
   return self._imageWarningFront
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamMasterSkill.GetImageNormalBg = function(self)
-  -- function num : 0_6
+function FeatureEffectParamMasterSkill:GetImageNormalBg()
   return self._imageNormalBg
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamMasterSkill.GetImageWarningBg = function(self)
-  -- function num : 0_7
+function FeatureEffectParamMasterSkill:GetImageWarningBg()
   return self._imageWarningBg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamMasterSkill.GetHideUIIcon = function(self)
-  -- function num : 0_8
+function FeatureEffectParamMasterSkill:GetHideUIIcon()
   return self._hideUIIcon
 end
-
-

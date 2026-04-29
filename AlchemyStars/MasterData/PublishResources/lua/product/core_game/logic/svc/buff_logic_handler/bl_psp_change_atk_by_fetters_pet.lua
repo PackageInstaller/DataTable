@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_psp_change_atk_by_fetters_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPSPChangeAtkByFettersPet", BuffLogicBase)
 BuffLogicPSPChangeAtkByFettersPet = BuffLogicPSPChangeAtkByFettersPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPSPChangeAtkByFettersPet.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPSPChangeAtkByFettersPet:Constructor(buffInstance, logicParam)
   self._rate = logicParam.rate or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPChangeAtkByFettersPet.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
+function BuffLogicPSPChangeAtkByFettersPet:DoLogic()
+  local entity = self._buffInstance:Entity()
   if not entity:Attributes() then
     return false
   end
@@ -25,40 +15,28 @@ BuffLogicPSPChangeAtkByFettersPet.DoLogic = function(self)
     return false
   end
   local entityID = fettersCmpt:GetFettersPetEntityID()
-  local fettersPetEntity = (self._world):GetEntityByID(entityID)
+  local fettersPetEntity = self._world:GetEntityByID(entityID)
   if not fettersPetEntity then
     return false
   end
-  local baseAtk = (fettersPetEntity:Attributes()):GetAttribute("Attack")
-  local addValue = (math.floor)(self._rate * baseAtk + 0.5)
-  local curModifyVal = (self._buffLogicService):GetModifyValueByID(entity, "AttackConstantFix", self:GetBuffSeq())
+  local baseAtk = fettersPetEntity:Attributes():GetAttribute("Attack")
+  local addValue = math.floor(self._rate * baseAtk + 0.5)
+  local curModifyVal = self._buffLogicService:GetModifyValueByID(entity, "AttackConstantFix", self:GetBuffSeq())
   addValue = addValue + curModifyVal
-  ;
-  (self._buffLogicService):ChangeBaseAttack(entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, addValue)
+  self._buffLogicService:ChangeBaseAttack(entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, addValue)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPChangeAtkByFettersPet.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicPSPChangeAtkByFettersPet:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicUndoPSPChangeAtkByFettersPet", BuffLogicBase)
 BuffLogicUndoPSPChangeAtkByFettersPet = BuffLogicUndoPSPChangeAtkByFettersPet
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoPSPChangeAtkByFettersPet.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicUndoPSPChangeAtkByFettersPet:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoPSPChangeAtkByFettersPet.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
+function BuffLogicUndoPSPChangeAtkByFettersPet:DoLogic()
+  local e = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseAttack(e, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
 end
-
-

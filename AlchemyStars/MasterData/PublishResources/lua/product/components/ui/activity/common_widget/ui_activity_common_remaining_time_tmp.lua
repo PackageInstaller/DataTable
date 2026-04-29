@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_activity_common_remaining_time_tmp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCommonRemainingTimeTmp", UIActivityCommonRemainingTime)
 UIActivityCommonRemainingTimeTmp = UIActivityCommonRemainingTimeTmp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCommonRemainingTimeTmp._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityCommonRemainingTimeTmp:_GetComponents()
   self._txtTime = self:GetUIComponent("UILocalizedTMP", "txtTime")
 end
-
-

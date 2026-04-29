@@ -1,66 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rewarding_reward/ui_activity_n_plus_six_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixRewardItem", UICustomWidget)
 UIActivityNPlusSixRewardItem = UIActivityNPlusSixRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixRewardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityNPlusSixRewardItem:OnShow()
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._go = self:GetGameObject("go")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardItem.Refresh = function(self, rewardData, isGet)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityNPlusSixRewardItem:Refresh(rewardData, isGet)
   self._rewardData = rewardData
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._countLabel).text = rewardData.count
-  local ItemTempleate = (Cfg.cfg_item)[rewardData.assetid]
-  ;
-  (self._iconImg):LoadImage(ItemTempleate.Icon)
+  self._countLabel.text = rewardData.count
+  local ItemTempleate = Cfg.cfg_item[rewardData.assetid]
+  self._iconImg:LoadImage(ItemTempleate.Icon)
   self._go = self:GetGameObject()
   self:SetRawImageGray(isGet)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardItem.SetRawImageGray = function(self, gray)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityNPlusSixRewardItem:SetRawImageGray(gray)
   local iconRawImg = self:GetUIComponent("RawImage", "Icon")
   local iconObj = self:GetGameObject("Icon")
-  local EMIMat = (UnityEngine.Material):New(iconRawImg.material)
+  local EMIMat = UnityEngine.Material:New(iconRawImg.material)
   if gray then
-    local texture = (iconRawImg.material).mainTexture
+    local texture = iconRawImg.material.mainTexture
     iconRawImg.material = EMIMat
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (iconRawImg.material).mainTexture = texture
-    ;
-    (iconRawImg.material):SetFloat("_LuminosityAmount", 1)
+    iconRawImg.material.mainTexture = texture
+    iconRawImg.material:SetFloat("_LuminosityAmount", 1)
   else
-    do
-      ;
-      (iconRawImg.material):SetFloat("_LuminosityAmount", 0)
-      iconObj:SetActive(false)
-      iconObj:SetActive(true)
-    end
+    iconRawImg.material:SetFloat("_LuminosityAmount", 0)
   end
+  iconObj:SetActive(false)
+  iconObj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardItem.btnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowItemTips, (self._rewardData).assetid, ((self._go).transform).position)
+function UIActivityNPlusSixRewardItem:btnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowItemTips, self._rewardData.assetid, self._go.transform.position)
 end
-
-

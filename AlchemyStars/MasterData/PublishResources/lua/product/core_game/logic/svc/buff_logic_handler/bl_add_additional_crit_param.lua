@@ -1,31 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_additional_crit_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddAdditionalCritParam", BuffLogicBase)
 BuffLogicAddAdditionalCritParam = BuffLogicAddAdditionalCritParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddAdditionalCritParam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddAdditionalCritParam:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddAdditionalCritParam.DoLogic = function(self)
-  -- function num : 0_1
-  (self._buffLogicService):ChangeAdditionalCritParam(self._entity, self:GetBuffSeq(), self._mulValue)
+function BuffLogicAddAdditionalCritParam:DoLogic()
+  self._buffLogicService:ChangeAdditionalCritParam(self._entity, self:GetBuffSeq(), self._mulValue)
 end
 
 _class("BuffLogicRevertAdditionalCritParam", BuffLogicBase)
 BuffLogicRevertAdditionalCritParam = BuffLogicRevertAdditionalCritParam
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertAdditionalCritParam.DoLogic = function(self)
-  -- function num : 0_2
-  (self._buffLogicService):RemoveAdditionalCritParam(self._entity, self:GetBuffSeq())
+function BuffLogicRevertAdditionalCritParam:DoLogic()
+  self._buffLogicService:RemoveAdditionalCritParam(self._entity, self:GetBuffSeq())
 end
-
-

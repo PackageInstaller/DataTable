@@ -1,47 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_conduct_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_ConductDamage", SkillEffectCalc_Base)
 SkillEffectCalc_ConductDamage = SkillEffectCalc_ConductDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ConductDamage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_ConductDamage:DoSkillEffectCalculator(skillEffectCalcParam)
   local tResultArray = {}
   local teidTarget = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(teidTarget) do
+  for _, targetID in ipairs(teidTarget) do
     local results = self:CalculateOnSingleTarget(skillEffectCalcParam, targetID)
-    ;
-    (table.appendArray)(tResultArray, results)
+    table.appendArray(tResultArray, results)
   end
   return tResultArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ConductDamage.CalculateOnSingleTarget = function(self, calcParam, targetID)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ConductDamage:CalculateOnSingleTarget(calcParam, targetID)
   local effectParam = calcParam.skillEffectParam
-  local attacker = (self._world):GetEntityByID(calcParam.casterEntityID)
+  local attacker = self._world:GetEntityByID(calcParam.casterEntityID)
   local tConductResult = {}
   local cSkillContext = attacker:SkillContext()
   local resultContainer = cSkillContext:GetResultContainer()
   local tDamageResultArray = resultContainer:GetEffectResultByArrayAll(SkillEffectType.Damage)
-  for damageIndex,damageResult in ipairs(tDamageResultArray) do
+  for damageIndex, damageResult in ipairs(tDamageResultArray) do
     if damageResult:GetTargetID() == targetID then
-      (table.insert)(tConductResult, self:CalculateResult(calcParam, attacker, damageIndex, damageResult))
+      table.insert(tConductResult, self:CalculateResult(calcParam, attacker, damageIndex, damageResult))
     end
   end
   return tConductResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ConductDamage.CalculateResult = function(self, calcParam, attacker, damageIndex, damageResult)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_ConductDamage:CalculateResult(calcParam, attacker, damageIndex, damageResult)
   local targetID = damageResult:GetTargetID()
   local scopeResult = self:CalcConductScope(calcParam, targetID)
   local targetPosIdRecordList = scopeResult:GetGridPosTargetIDRecordList()
@@ -50,73 +36,57 @@ SkillEffectCalc_ConductDamage.CalculateResult = function(self, calcParam, attack
   local tConductRate = effectParam:GetConductRateList()
   local conductResult = SkillEffectConductDamageResult:New(damageIndex, targetID)
   local cSkillContext = attacker:SkillContext()
-  local effectCalcSvc = (self._world):GetService("SkillEffectCalc")
+  local effectCalcSvc = self._world:GetService("SkillEffectCalc")
   local conductCount = 0
-  for _,targetID in ipairs(targetIDs) do
-    if #tConductRate >= conductCount then
-      conductCount = conductCount + 1
-      local fConductRate = tConductRate[conductCount]
-      if fConductRate then
-        local gridPos = nil
-        local defender = (self._world):GetEntityByID(targetID)
-        if targetPosIdRecordList then
-          for index,value in ipairs(targetPosIdRecordList) do
-            local record = value
-            if (table.icontains)(record.idList, targetID) then
-              gridPos = record.recordPos
-              break
-            end
-          end
-        end
-        do
-          if gridPos then
-            local damageStageIndex = effectParam:GetSkillEffectDamageStageIndex()
-            cSkillContext:SetConductBaseDamage(damageResult:GetTotalDamage())
-            cSkillContext:SetCurrentConductRate(fConductRate)
-            local damageParam = SkillDamageEffectParam:New({
-percent = {fConductRate}
-, formulaID = effectParam:GetFormulaID(), damageStageIndex = effectParam:GetSkillEffectDamageStageIndex()})
-            local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(attacker, calcParam.attackPos, defender, gridPos, calcParam.skillID, damageParam, SkillEffectType.ConductDamage, effectParam:GetSkillEffectDamageStageIndex())
-            do
-              local damageEffectResult = effectCalcSvc:NewSkillDamageEffectResult(gridPos, targetID, nTotalDamage, listDamageInfo, damageStageIndex)
-              conductResult:CreateAtomData(conductCount, damageEffectResult)
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+  for _, targetID in ipairs(targetIDs) do
+    if conductCount > #tConductRate then
+      break
+    end
+    conductCount = conductCount + 1
+    local fConductRate = tConductRate[conductCount]
+    if not fConductRate then
+      break
+    end
+    local gridPos
+    local defender = self._world:GetEntityByID(targetID)
+    if targetPosIdRecordList then
+      for index, value in ipairs(targetPosIdRecordList) do
+        local record = value
+        if table.icontains(record.idList, targetID) then
+          gridPos = record.recordPos
+          break
         end
       end
     end
+    if not gridPos then
+      break
+    end
+    local damageStageIndex = effectParam:GetSkillEffectDamageStageIndex()
+    cSkillContext:SetConductBaseDamage(damageResult:GetTotalDamage())
+    cSkillContext:SetCurrentConductRate(fConductRate)
+    local damageParam = SkillDamageEffectParam:New({
+      percent = {fConductRate},
+      formulaID = effectParam:GetFormulaID(),
+      damageStageIndex = effectParam:GetSkillEffectDamageStageIndex()
+    })
+    local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(attacker, calcParam.attackPos, defender, gridPos, calcParam.skillID, damageParam, SkillEffectType.ConductDamage, effectParam:GetSkillEffectDamageStageIndex())
+    local damageEffectResult = effectCalcSvc:NewSkillDamageEffectResult(gridPos, targetID, nTotalDamage, listDamageInfo, damageStageIndex)
+    conductResult:CreateAtomData(conductCount, damageEffectResult)
   end
   return conductResult
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ConductDamage.CalcConductScope = function(self, calcParam, conductCenterEntityID)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_ConductDamage:CalcConductScope(calcParam, conductCenterEntityID)
   local effectParam = calcParam.skillEffectParam
-  local attacker = (self._world):GetEntityByID(calcParam.casterEntityID)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local attacker = self._world:GetEntityByID(calcParam.casterEntityID)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local calcScope = utilScopeSvc:GetSkillScopeCalc()
   local lastHitpoint = calcParam.gridPos
   local scopeType = effectParam:GetConductScopeType()
   local scopeParam = effectParam:GetConductScopeParam()
   local parser = SkillScopeParamParser:New()
   scopeParam = parser:ParseScopeParam(scopeType, scopeParam)
-  local casterBodyArea = (attacker:BodyArea()):GetArea()
+  local casterBodyArea = attacker:BodyArea():GetArea()
   local casterDirection = attacker:GetGridDirection()
   local targetType = effectParam:GetConductTargetType()
   local scopeResult = calcScope:ComputeScopeRange(scopeType, scopeParam, lastHitpoint, casterBodyArea, casterDirection, targetType, lastHitpoint)
@@ -124,18 +94,18 @@ SkillEffectCalc_ConductDamage.CalcConductScope = function(self, calcParam, condu
   local targetArray = selector:DoSelectSkillTarget(attacker, targetType, scopeResult)
   local rangeMap = {}
   local tv2AttackRange = scopeResult:GetAttackRange()
-  for _,v2 in ipairs(tv2AttackRange) do
+  for _, v2 in ipairs(tv2AttackRange) do
     local index = v2:Pos2Index()
     rangeMap[index] = true
   end
-  for _,targetID in ipairs(targetArray) do
+  for _, targetID in ipairs(targetArray) do
     if targetID ~= conductCenterEntityID then
-      local entity = (self._world):GetEntityByID(targetID)
+      local entity = self._world:GetEntityByID(targetID)
       if entity and entity:HasBodyArea() then
         local v2GridPos = entity:GetGridPosition()
         local cBodyArea = entity:BodyArea()
         local tv2BodyArea = cBodyArea:GetArea()
-        for _,v2AreaPos in ipairs(tv2BodyArea) do
+        for _, v2AreaPos in ipairs(tv2BodyArea) do
           local v2AbsAreaPos = v2AreaPos + v2GridPos
           local index = v2AbsAreaPos:Pos2Index()
           if rangeMap[index] then
@@ -149,5 +119,3 @@ SkillEffectCalc_ConductDamage.CalcConductScope = function(self, calcParam, condu
   end
   return scopeResult
 end
-
-

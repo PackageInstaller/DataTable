@@ -1,41 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_increase_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 require("calc_increase_san")
 _class("SkillEffectParam_IncreaseSan", SkillEffectParamBase)
 SkillEffectParam_IncreaseSan = SkillEffectParam_IncreaseSan
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_IncreaseSan.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
-  if not t.mode then
-    self._mode = SkillEffectIncreaseSanMode.FixVal
-    self._val = t.val
-  end
+function SkillEffectParam_IncreaseSan:Constructor(t)
+  self._mode = t.mode or SkillEffectIncreaseSanMode.FixVal
+  self._val = t.val
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_IncreaseSan.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_IncreaseSan:GetEffectType()
   return SkillEffectType.IncreaseSan
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_IncreaseSan.GetSanValue = function(self)
-  -- function num : 0_2
+function SkillEffectParam_IncreaseSan:GetSanValue()
   return self._val
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_IncreaseSan.GetMode = function(self)
-  -- function num : 0_3
+function SkillEffectParam_IncreaseSan:GetMode()
   return self._mode
 end
-
-

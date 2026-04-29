@@ -1,40 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_inc_pro_final_temp_factor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicIncProFinalTempFactor", LLBuffLogicBase)
 LLBuffLogicIncProFinalTempFactor = LLBuffLogicIncProFinalTempFactor
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicIncProFinalTempFactor.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicIncProFinalTempFactor:Constructor(buffObj, logicParam)
   self._val = logicParam.value
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncProFinalTempFactor.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicIncProFinalTempFactor:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
-  local targets = (self._buffObj):GetTargets()
-  for _,target in ipairs(targets) do
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
     self:DoLogicSingle(target)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncProFinalTempFactor.DoLogicSingle = function(self, target)
-  -- function num : 0_2 , upvalues : _ENV
-  if target:GetEntityType() == LuckLandEntityType.Pet and target:HasDeleteFlag() then
-    return 
-  end
-  if target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
-    return 
+function LLBuffLogicIncProFinalTempFactor:DoLogicSingle(target)
+  if target:GetEntityType() == LuckLandEntityType.Pet then
+    if target:HasDeleteFlag() then
+      return
+    end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
+    return
   end
   target:AddFinalTempFactorValue(self._val)
 end
-
-

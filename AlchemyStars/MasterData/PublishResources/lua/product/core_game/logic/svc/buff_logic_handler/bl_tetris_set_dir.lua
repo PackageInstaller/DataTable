@@ -1,26 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_tetris_set_dir.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicTetrisSetDirIndex", BuffLogicBase)
 BuffLogicTetrisSetDirIndex = BuffLogicTetrisSetDirIndex
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicTetrisSetDirIndex.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicTetrisSetDirIndex:Constructor(buffInstance, logicParam)
   self._index = logicParam.index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicTetrisSetDirIndex.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local featureSvcL = (self._world):GetService("FeatureLogic")
+function BuffLogicTetrisSetDirIndex:DoLogic(notify)
+  local featureSvcL = self._world:GetService("FeatureLogic")
   featureSvcL:SetTetrisDirIndex(self._index)
-  ;
-  (Log.fatal)("BuffLogicTetrisSetDirIndex index:", self._index)
+  Log.fatal("BuffLogicTetrisSetDirIndex index:", self._index)
 end
-
-

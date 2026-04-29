@@ -1,85 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/player/season_maze_player_shadow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazePlayerShadow", Object)
 SeasonMazePlayerShadow = SeasonMazePlayerShadow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazePlayerShadow.Constructor = function(self, parent, yOffset)
-  -- function num : 0_0
+function SeasonMazePlayerShadow:Constructor(parent, yOffset)
   self._parent = parent
   self:_LoadShadow(yOffset or 0)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerShadow.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMazePlayerShadow:Update(deltaTime)
   self:UpdateMaterialProperty()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerShadow.Dispose = function(self)
-  -- function num : 0_2
+function SeasonMazePlayerShadow:Dispose()
   if self._resRequest then
-    (self._resRequest):Dispose()
+    self._resRequest:Dispose()
     self._resRequest = nil
   end
   self._renderers = nil
   self._materialPropertyBlock = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerShadow._LoadShadow = function(self, yOffset)
-  -- function num : 0_3 , upvalues : _ENV
-  self._resRequest = (ResourceManager:GetInstance()):SyncLoadAsset("SCShadowPlane.prefab", LoadType.GameObject)
+function SeasonMazePlayerShadow:_LoadShadow(yOffset)
+  self._resRequest = ResourceManager:GetInstance():SyncLoadAsset("SCShadowPlane.prefab", LoadType.GameObject)
   if not self._resRequest then
-    (Log.error)("SeasonMazePlayerShadow add shadow fail. SCShadowPlane.prefab load fail.")
-    return 
+    Log.error("SeasonMazePlayerShadow add shadow fail. SCShadowPlane.prefab load fail.")
+    return
   end
-  self._shadowGO = (self._resRequest).Obj
-  self._shadowPlane = (self._shadowGO).transform
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shadowPlane).parent = self._parent
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._shadowGO).transform).localPosition = Vector3(0, yOffset, 0)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._shadowGO).transform).localRotation = (Quaternion.Euler)(0, 0, 0)
-  do
-    if APPVER_EXPLORE then
-      local planeShadowComponent = ((self._parent).gameObject):AddComponent(typeof(PlaneShadowComponent))
-      planeShadowComponent.shadowPlane = self._shadowPlane
-      planeShadowComponent.maxDistanceToMainCamera = 50
-    end
-    ;
-    (SeasonTool:GetInstance()):DisenableMeshRender(self._shadowGO)
-    self._materialPropertyBlock = (UnityEngine.MaterialPropertyBlock):New()
-    self._renderers = ((self._parent).gameObject):GetComponentsInChildren(typeof(UnityEngine.Renderer))
-    ;
-    (SeasonTool:GetInstance()):SetMaterialProperty(self._shadowPlane, self._renderers, self._materialPropertyBlock)
-    ;
-    (self._shadowGO):SetActive(true)
-    self:UpdateMaterialProperty()
+  self._shadowGO = self._resRequest.Obj
+  self._shadowPlane = self._shadowGO.transform
+  self._shadowPlane.parent = self._parent
+  self._shadowGO.transform.localPosition = Vector3(0, yOffset, 0)
+  self._shadowGO.transform.localRotation = Quaternion.Euler(0, 0, 0)
+  if APPVER_EXPLORE then
+    local planeShadowComponent = self._parent.gameObject:AddComponent(typeof(PlaneShadowComponent))
+    planeShadowComponent.shadowPlane = self._shadowPlane
+    planeShadowComponent.maxDistanceToMainCamera = 50
   end
+  SeasonTool:GetInstance():DisenableMeshRender(self._shadowGO)
+  self._materialPropertyBlock = UnityEngine.MaterialPropertyBlock:New()
+  self._renderers = self._parent.gameObject:GetComponentsInChildren(typeof(UnityEngine.Renderer))
+  SeasonTool:GetInstance():SetMaterialProperty(self._shadowPlane, self._renderers, self._materialPropertyBlock)
+  self._shadowGO:SetActive(true)
+  self:UpdateMaterialProperty()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazePlayerShadow.UpdateMaterialProperty = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonMazePlayerShadow:UpdateMaterialProperty()
   if not APPVER_EXPLORE and self._shadowPlane and self._renderers and self._materialPropertyBlock then
-    (SeasonTool:GetInstance()):SetMaterialProperty(self._shadowPlane, self._renderers, self._materialPropertyBlock)
+    SeasonTool:GetInstance():SetMaterialProperty(self._shadowPlane, self._renderers, self._materialPropertyBlock)
   end
 end
-
-

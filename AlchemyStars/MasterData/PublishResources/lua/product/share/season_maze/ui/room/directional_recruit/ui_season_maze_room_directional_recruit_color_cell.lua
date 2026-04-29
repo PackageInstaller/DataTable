@@ -1,113 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/directional_recruit/ui_season_maze_room_directional_recruit_color_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoom_DirectionalRecruitColorCell", UICustomWidget)
 UISeasonMazeRoom_DirectionalRecruitColorCell = UISeasonMazeRoom_DirectionalRecruitColorCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoom_DirectionalRecruitColorCell.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.ElementSpriteName = {[ElementType.ElementType_Blue] = "cn14_xzsx_di01", [ElementType.ElementType_Red] = "cn14_xzsx_di02", [ElementType.ElementType_Green] = "cn14_xzsx_di04", [ElementType.ElementType_Yellow] = "cn14_xzsx_di03"}
+function UISeasonMazeRoom_DirectionalRecruitColorCell:InitWidget()
+  self.ElementSpriteName = {
+    [ElementType.ElementType_Blue] = "cn14_xzsx_di01",
+    [ElementType.ElementType_Red] = "cn14_xzsx_di02",
+    [ElementType.ElementType_Green] = "cn14_xzsx_di04",
+    [ElementType.ElementType_Yellow] = "cn14_xzsx_di03"
+  }
   self._RootGo = self:GetGameObject("Root")
   self._colorIcon = self:GetUIComponent("RawImageLoader", "ColorIcon")
   self._SelectedAreaGo = self:GetGameObject("Selected")
-  ;
-  (self._SelectedAreaGo):SetActive(false)
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._SelectedAreaGo:SetActive(false)
+  self._anim = self:GetGameObject():GetComponent("Animation")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitColorCell.OnShow = function(self)
-  -- function num : 0_1
+function UISeasonMazeRoom_DirectionalRecruitColorCell:OnShow()
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitColorCell.SetData = function(self, index, color, clickCb)
-  -- function num : 0_2
+function UISeasonMazeRoom_DirectionalRecruitColorCell:SetData(index, color, clickCb)
   self._index = index
   self._color = color
   self._clickCb = clickCb
   self:InitCell()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitColorCell.InitCell = function(self)
-  -- function num : 0_3
-  local img = (self.ElementSpriteName)[self._color]
+function UISeasonMazeRoom_DirectionalRecruitColorCell:InitCell()
+  local img = self.ElementSpriteName[self._color]
   if img and self._colorIcon then
-    (self._colorIcon):LoadImage(img)
+    self._colorIcon:LoadImage(img)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitColorCell.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeRoom_DirectionalRecruitColorCell:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitColorCell.RootOnClick = function(self)
-  -- function num : 0_5
+function UISeasonMazeRoom_DirectionalRecruitColorCell:RootOnClick()
   if self._clickCb then
-    (self._clickCb)(self._index)
+    self._clickCb(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitColorCell.Select = function(self, index)
-  -- function num : 0_6
+function UISeasonMazeRoom_DirectionalRecruitColorCell:Select(index)
   if not index then
-    (self._SelectedAreaGo):SetActive(false)
-    return 
+    self._SelectedAreaGo:SetActive(false)
+    return
   end
-  ;
-  (self._SelectedAreaGo):SetActive(self._index == index)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._SelectedAreaGo:SetActive(self._index == index)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_DirectionalRecruitColorCell.PlayShowInAnim = function(self, delay)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonMazeRoom_DirectionalRecruitColorCell:PlayShowInAnim(delay)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
-    ;
-    (self._RootGo):SetActive(true)
+    GameGlobal.Timer():CancelEvent(self._timer)
+    self._RootGo:SetActive(true)
   end
-  if delay and delay > 0 then
-    (self._RootGo):SetActive(false)
-    self._timer = ((GameGlobal.Timer)()):AddEvent(delay, function()
-    -- function num : 0_7_0 , upvalues : self
-    (self._RootGo):SetActive(true)
-    if self._anim then
-      (self._anim):Play("uianim_UISeasonMazeRoomDirectionalRecruitColorCell_in")
-    end
-  end
-)
+  if delay and 0 < delay then
+    self._RootGo:SetActive(false)
+    self._timer = GameGlobal.Timer():AddEvent(delay, function()
+      self._RootGo:SetActive(true)
+      if self._anim then
+        self._anim:Play("uianim_UISeasonMazeRoomDirectionalRecruitColorCell_in")
+      end
+    end)
   else
-    ;
-    (self._RootGo):SetActive(true)
-    self._timer = ((GameGlobal.Timer)()):AddEvent(delay, function()
-    -- function num : 0_7_1 , upvalues : self
-    (self._RootGo):SetActive(true)
-    if self._anim then
-      (self._anim):Play("uianim_UISeasonMazeRoomDirectionalRecruitColorCell_in")
-    end
-  end
-)
+    self._RootGo:SetActive(true)
+    self._timer = GameGlobal.Timer():AddEvent(delay, function()
+      self._RootGo:SetActive(true)
+      if self._anim then
+        self._anim:Play("uianim_UISeasonMazeRoomDirectionalRecruitColorCell_in")
+      end
+    end)
   end
 end
-
-

@@ -1,72 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_increase_by_target_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillIncreaseByTargetBuffLayer", BuffLogicBase)
 BuffLogicChangeSkillIncreaseByTargetBuffLayer = BuffLogicChangeSkillIncreaseByTargetBuffLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillIncreaseByTargetBuffLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._buffInstance)._effectList = logicParam.effectList
+function BuffLogicChangeSkillIncreaseByTargetBuffLayer:Constructor(buffInstance, logicParam)
+  self._buffInstance._effectList = logicParam.effectList
   self._minValue = logicParam.minValue or 0
   self._oneLayerValue = logicParam.oneLayerValue or 0
   self._layerType = logicParam.layerType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillIncreaseByTargetBuffLayer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._buffInstance):Entity()
+function BuffLogicChangeSkillIncreaseByTargetBuffLayer:DoLogic(notify)
+  local casterEntity = self._buffInstance:Entity()
   local defenderEntity = notify:GetDefenderEntity()
   if not defenderEntity then
-    return 
+    return
   end
-  local svc = (self._world):GetService("BuffLogic")
+  local svc = self._world:GetService("BuffLogic")
   local layer = svc:GetBuffLayer(defenderEntity, self._layerType)
   local changeValue = self._minValue + self._oneLayerValue * layer
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):ChangeSkillIncrease(casterEntity, self:GetBuffSeq(), paramType, changeValue)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:ChangeSkillIncrease(casterEntity, self:GetBuffSeq(), paramType, changeValue)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillIncreaseByTargetBuffLayer.DoOverlap = function(self, logicParam)
-  -- function num : 0_2
+function BuffLogicChangeSkillIncreaseByTargetBuffLayer:DoOverlap(logicParam)
   return self:DoLogic()
 end
 
 _class("BuffLogicRemoveSkillIncreaseByTargetBuffLayer", BuffLogicBase)
 BuffLogicRemoveSkillIncreaseByTargetBuffLayer = BuffLogicRemoveSkillIncreaseByTargetBuffLayer
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveSkillIncreaseByTargetBuffLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicRemoveSkillIncreaseByTargetBuffLayer:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillIncreaseByTargetBuffLayer.DoLogic = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local casterEntity = (self._buffInstance):Entity()
+function BuffLogicRemoveSkillIncreaseByTargetBuffLayer:DoLogic()
+  local casterEntity = self._buffInstance:Entity()
   if not casterEntity then
-    return 
+    return
   end
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillIncrease(casterEntity, self:GetBuffSeq(), paramType)
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillIncrease(casterEntity, self:GetBuffSeq(), paramType)
   end
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveSkillIncreaseByTargetBuffLayer.DoOverlap = function(self, logicParam)
-  -- function num : 0_5
+function BuffLogicRemoveSkillIncreaseByTargetBuffLayer:DoOverlap(logicParam)
 end
-
-

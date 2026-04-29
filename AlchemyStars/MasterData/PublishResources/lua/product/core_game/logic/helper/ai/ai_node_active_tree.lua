@@ -1,16 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/ai_node_active_tree.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local AIActiveAddType = {Success = 1, Failure = 2, All = 3, Other = 10}
+local AIActiveAddType = {
+  Success = 1,
+  Failure = 2,
+  All = 3,
+  Other = 10
+}
 _enum("AIActiveAddType", AIActiveAddType)
 _class("AIActiveNodeData", Object)
 AIActiveNodeData = AIActiveNodeData
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-AIActiveNodeData.Constructor = function(self, nLogicID, configData)
-  -- function num : 0_0
+function AIActiveNodeData:Constructor(nLogicID, configData)
   self.m_nLogicID = nLogicID
   self.m_configData = configData
   self.m_nextSuccess = nil
@@ -20,77 +18,57 @@ end
 
 _class("AIActiveNodeList", Object)
 AIActiveNodeList = AIActiveNodeList
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
 
-AIActiveNodeList.Constructor = function(self)
-  -- function num : 0_1
+function AIActiveNodeList:Constructor()
   self.m_firstNode = nil
   self.m_workNode = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveNodeList.AddNode = function(self, workNode, nAddType, nLogicID, configData)
-  -- function num : 0_2 , upvalues : _ENV, AIActiveAddType
+function AIActiveNodeList:AddNode(workNode, nAddType, nLogicID, configData)
   local newNode = AIActiveNodeData:New(nLogicID, configData)
-  if workNode == nil then
+  if nil == workNode then
     workNode = newNode
   else
     newNode.m_parentNode = workNode
     if AIActiveAddType.All == nAddType then
       workNode.m_nextSuccess = newNode
       workNode.m_nextFailed = newNode
-    else
-      if AIActiveAddType.Success == nAddType then
-        workNode.m_nextSuccess = newNode
-      else
-        if AIActiveAddType.Failure == nAddType then
-          workNode.m_nextFailed = newNode
-        end
-      end
+    elseif AIActiveAddType.Success == nAddType then
+      workNode.m_nextSuccess = newNode
+    elseif AIActiveAddType.Failure == nAddType then
+      workNode.m_nextFailed = newNode
     end
   end
-  if self.m_firstNode == nil then
+  if nil == self.m_firstNode then
     self.m_firstNode = workNode
   end
   return newNode
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveNodeList.ResetWorkNode = function(self)
-  -- function num : 0_3
+function AIActiveNodeList:ResetWorkNode()
   self.m_workNode = self.m_firstNode
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveNodeList.MoveWorkNode = function(self, bSuccess)
-  -- function num : 0_4
-  if self.m_workNode == nil then
-    return 
+function AIActiveNodeList:MoveWorkNode(bSuccess)
+  if nil == self.m_workNode then
+    return
   end
   if bSuccess then
-    self.m_workNode = (self.m_workNode).m_nextSuccess
+    self.m_workNode = self.m_workNode.m_nextSuccess
   else
-    self.m_workNode = (self.m_workNode).m_nextFailed
+    self.m_workNode = self.m_workNode.m_nextFailed
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveNodeList.Clear = function(self)
-  -- function num : 0_5
+function AIActiveNodeList:Clear()
   self.m_firstNode = nil
   self.m_workNode = nil
 end
 
 _class("AIActiveTreeNode", Object)
 AIActiveTreeNode = AIActiveTreeNode
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
 
-AIActiveTreeNode.Constructor = function(self, actionNode, nLogicID, configData)
-  -- function num : 0_6
+function AIActiveTreeNode:Constructor(actionNode, nLogicID, configData)
   self.m_actionNode = actionNode
   self.m_nLogicID = nLogicID
   self.m_configData = configData
@@ -101,94 +79,59 @@ AIActiveTreeNode.Constructor = function(self, actionNode, nLogicID, configData)
   self.m_bIsHaveInit = false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.StartWork = function(self, nSkillID)
-  -- function num : 0_7
+function AIActiveTreeNode:StartWork(nSkillID)
   if self.m_actionNode then
-    (self.m_actionNode):Reset()
-    ;
-    (self.m_actionNode):SetConfigData(self.m_configData)
-    ;
-    (self.m_actionNode):SetLogicData(nSkillID)
+    self.m_actionNode:Reset()
+    self.m_actionNode:SetConfigData(self.m_configData)
+    self.m_actionNode:SetLogicData(nSkillID)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.GetTreeID = function(self)
-  -- function num : 0_8
+function AIActiveTreeNode:GetTreeID()
   return self.m_nLogicID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.GetWorkAction = function(self)
-  -- function num : 0_9
+function AIActiveTreeNode:GetWorkAction()
   return self.m_actionNode
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.GetOtherIndex = function(self, otherData)
-  -- function num : 0_10 , upvalues : AIActiveAddType
+function AIActiveTreeNode:GetOtherIndex(otherData)
   local nOtherIndex = 0
-  if AIActiveAddType.Other < otherData then
+  if otherData > AIActiveAddType.Other then
     nOtherIndex = otherData - AIActiveAddType.Other
   end
   return nOtherIndex
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.GetOtherNode = function(self, otherData)
-  -- function num : 0_11
+function AIActiveTreeNode:GetOtherNode(otherData)
   local nOtherIndex = self:GetOtherIndex(otherData)
-  return (self.m_nextOther)[nOtherIndex]
+  return self.m_nextOther[nOtherIndex]
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.AddOtherIndex = function(self, otherData, newNode)
-  -- function num : 0_12
+function AIActiveTreeNode:AddOtherIndex(otherData, newNode)
   local nOtherIndex = self:GetOtherIndex(otherData)
-  if nOtherIndex > 0 then
-    if self.m_nextOther == nil then
+  if 0 < nOtherIndex then
+    if nil == self.m_nextOther then
       self.m_nextOther = {}
     end
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.m_nextOther)[nOtherIndex] = newNode
+    self.m_nextOther[nOtherIndex] = newNode
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.IsHaveInit = function(self, bHaveInit)
-  -- function num : 0_13
+function AIActiveTreeNode:IsHaveInit(bHaveInit)
   return self.m_bIsHaveInit
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.SetHaveInit = function(self, bHaveInit)
-  -- function num : 0_14
+function AIActiveTreeNode:SetHaveInit(bHaveInit)
   self.m_bIsHaveInit = bHaveInit
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.GetLogicID = function(self)
-  -- function num : 0_15
+function AIActiveTreeNode:GetLogicID()
   return self.m_nLogicID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTreeNode.IsEndNode = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if not self.m_nextSuccess and not self.m_nextFailed and (not self.m_nextOther or (table.count)(self.m_nextOther) == 0) then
+function AIActiveTreeNode:IsEndNode()
+  if not self.m_nextSuccess and not self.m_nextFailed and (not self.m_nextOther or table.count(self.m_nextOther) == 0) then
     return true
   end
   return false
@@ -196,198 +139,147 @@ end
 
 _class("AIActiveTree", Object)
 AIActiveTree = AIActiveTree
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
 
-AIActiveTree.Constructor = function(self)
-  -- function num : 0_17
+function AIActiveTree:Constructor()
   self.m_rootNode = nil
   self.m_scanNode = nil
   self.m_actionSkill = nil
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.AddNode = function(self, workNode, nAddType, actionNode, nLogicID, configData)
-  -- function num : 0_18 , upvalues : _ENV, AIActiveAddType
-  local returnNode = nil
-  if workNode == nil then
+function AIActiveTree:AddNode(workNode, nAddType, actionNode, nLogicID, configData)
+  local returnNode
+  if nil == workNode then
     workNode = AIActiveTreeNode:New(actionNode, nLogicID, configData)
     returnNode = workNode
   else
     local newNode = self:FindTreeNode(self.m_rootNode, nLogicID)
-    if newNode == nil then
+    if nil == newNode then
       newNode = AIActiveTreeNode:New(actionNode, nLogicID, configData)
       newNode.m_parentNode = workNode
     end
     if AIActiveAddType.All == nAddType then
       workNode.m_nextSuccess = newNode
       workNode.m_nextFailed = newNode
+    elseif AIActiveAddType.Success == nAddType then
+      workNode.m_nextSuccess = newNode
+    elseif AIActiveAddType.Failure == nAddType then
+      workNode.m_nextFailed = newNode
     else
-      if AIActiveAddType.Success == nAddType then
-        workNode.m_nextSuccess = newNode
-      else
-        if AIActiveAddType.Failure == nAddType then
-          workNode.m_nextFailed = newNode
-        else
-          workNode:AddOtherIndex(nAddType, newNode)
-        end
-      end
+      workNode:AddOtherIndex(nAddType, newNode)
     end
     returnNode = newNode
   end
-  do
-    if self.m_rootNode == nil then
-      self.m_rootNode = workNode
-    end
-    return returnNode
+  if nil == self.m_rootNode then
+    self.m_rootNode = workNode
   end
+  return returnNode
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.Clear = function(self)
-  -- function num : 0_19
+function AIActiveTree:Clear()
   self.m_rootNode = nil
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.ClearScanNode = function(self)
-  -- function num : 0_20
+function AIActiveTree:ClearScanNode()
   self.m_scanNode = nil
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.GetWorkNode = function(self)
-  -- function num : 0_21
-  if self.m_scanNode == nil then
+function AIActiveTree:GetWorkNode()
+  if nil == self.m_scanNode then
     return nil
   end
   return self.m_scanNode
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.GetWorkAction = function(self)
-  -- function num : 0_22
-  if self.m_scanNode == nil then
+function AIActiveTree:GetWorkAction()
+  if nil == self.m_scanNode then
     return nil
   end
-  return (self.m_scanNode).m_actionNode
+  return self.m_scanNode.m_actionNode
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.ResetWorkNode = function(self)
-  -- function num : 0_23
+function AIActiveTree:ResetWorkNode()
   self.m_scanNode = self.m_rootNode
   if self.m_actionSkill then
-    (self.m_actionSkill):Update()
+    self.m_actionSkill:Update()
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.IsTreeValid = function(self)
-  -- function num : 0_24
-  if self.m_rootNode == nil then
+function AIActiveTree:IsTreeValid()
+  if nil == self.m_rootNode then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.MoveWorkNode = function(self, nStatus)
-  -- function num : 0_25 , upvalues : _ENV
-  if self.m_scanNode == nil then
-    return 
+function AIActiveTree:MoveWorkNode(nStatus)
+  if nil == self.m_scanNode then
+    return
   end
-  local preActionNode = (self.m_scanNode):GetWorkAction()
-  local preActionTreeID = (self.m_scanNode):GetTreeID()
+  local preActionNode = self.m_scanNode:GetWorkAction()
+  local preActionTreeID = self.m_scanNode:GetTreeID()
   if AINewNodeStatus.Success == nStatus then
-    self.m_scanNode = (self.m_scanNode).m_nextSuccess
+    self.m_scanNode = self.m_scanNode.m_nextSuccess
+  elseif AINewNodeStatus.Failure == nStatus then
+    self.m_scanNode = self.m_scanNode.m_nextFailed
+  elseif nStatus > AINewNodeStatus.Other then
+    local nextOther = self.m_scanNode:GetOtherNode(nStatus)
+    self.m_scanNode = nextOther
   else
-    if AINewNodeStatus.Failure == nStatus then
-      self.m_scanNode = (self.m_scanNode).m_nextFailed
-    else
-      if AINewNodeStatus.Other < nStatus then
-        local nextOther = (self.m_scanNode):GetOtherNode(nStatus)
-        self.m_scanNode = nextOther
-      else
-        do
-          self.m_scanNode = nil
-          local nextActionNode = nil
-          local nextActionIsEnd = false
-          local nextActionTreeID = nil
-          if self.m_scanNode then
-            nextActionNode = (self.m_scanNode):GetWorkAction()
-            nextActionIsEnd = (self.m_scanNode):IsEndNode()
-            nextActionTreeID = (self.m_scanNode):GetTreeID()
-          end
-          preActionNode:PrintActionSwitchLog(preActionNode, preActionTreeID, nextActionNode, nextActionTreeID, nStatus, nextActionIsEnd)
-        end
-      end
-    end
+    self.m_scanNode = nil
   end
+  local nextActionNode
+  local nextActionIsEnd = false
+  local nextActionTreeID
+  if self.m_scanNode then
+    nextActionNode = self.m_scanNode:GetWorkAction()
+    nextActionIsEnd = self.m_scanNode:IsEndNode()
+    nextActionTreeID = self.m_scanNode:GetTreeID()
+  end
+  preActionNode:PrintActionSwitchLog(preActionNode, preActionTreeID, nextActionNode, nextActionTreeID, nStatus, nextActionIsEnd)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.GetCurTreeID = function(self)
-  -- function num : 0_26
-  return (self.m_scanNode):GetTreeID()
+function AIActiveTree:GetCurTreeID()
+  return self.m_scanNode:GetTreeID()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.GetActionSkillID = function(self, preview)
-  -- function num : 0_27
+function AIActiveTree:GetActionSkillID(preview)
   if self.m_actionSkill then
-    return (self.m_actionSkill):GetActionSkillIDEx(preview)
+    return self.m_actionSkill:GetActionSkillIDEx(preview)
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.FindTreeNode_Ex = function(self, rootNode, nLogicID)
-  -- function num : 0_28 , upvalues : _ENV
-  if rootNode == nil then
+function AIActiveTree:FindTreeNode_Ex(rootNode, nLogicID)
+  if nil == rootNode then
     return nil
   end
   if nLogicID == rootNode.m_nLogicID then
     return rootNode
   end
   local listWork = rootNode.m_nextOther
-  if listWork == nil then
+  if nil == listWork then
     listWork = {}
   end
   listWork[#listWork + 1] = rootNode.m_nextSuccess
   listWork[#listWork + 1] = rootNode.m_nextFailed
-  local findNode = nil
-  for key,value in ipairs(listWork) do
+  local findNode
+  for key, value in ipairs(listWork) do
     findNode = self:FindTreeNode(value, nLogicID)
-  end
-  do
-    if not findNode then
-      return findNode
+    if findNode then
+      break
     end
   end
+  return findNode
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.FindTreeNode = function(self, rootNode, nLogicID)
-  -- function num : 0_29 , upvalues : _ENV
-  if rootNode == nil then
+function AIActiveTree:FindTreeNode(rootNode, nLogicID)
+  if nil == rootNode then
     return nil
   end
   if nLogicID == rootNode.m_nLogicID then
     return rootNode
   end
-  local findNode = nil
+  local findNode
   findNode = self:FindTreeNode(rootNode.m_nextSuccess, nLogicID)
   if findNode then
     return findNode
@@ -397,24 +289,18 @@ AIActiveTree.FindTreeNode = function(self, rootNode, nLogicID)
     return findNode
   end
   if rootNode.m_nextOther then
-    for key,value in ipairs(rootNode.m_nextOther) do
+    for key, value in ipairs(rootNode.m_nextOther) do
       findNode = self:FindTreeNode(value, nLogicID)
+      if findNode then
+        break
+      end
     end
   end
-  do
-    if not findNode then
-      return findNode
-    end
-  end
+  return findNode
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-AIActiveTree.ReSelectWorkSkill = function(self)
-  -- function num : 0_30
+function AIActiveTree:ReSelectWorkSkill()
   if self.m_actionSkill then
-    (self.m_actionSkill):Update()
+    self.m_actionSkill:Update()
   end
 end
-
-

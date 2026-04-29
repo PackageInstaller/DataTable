@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_tetris_power.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicTetrisChangePower", BuffLogicBase)
 BuffLogicTetrisChangePower = BuffLogicTetrisChangePower
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicTetrisChangePower.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicTetrisChangePower:Constructor(buffInstance, logicParam)
   self._power = logicParam.power
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicTetrisChangePower.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local featureSvcL = (self._world):GetService("FeatureLogic")
+function BuffLogicTetrisChangePower:DoLogic(notify)
+  local featureSvcL = self._world:GetService("FeatureLogic")
   local curPower = featureSvcL:GetTetrisPower()
   local newPower = self._power + curPower
   if newPower < 0 then
     newPower = 0
   end
   newPower = featureSvcL:SetTetrisPower(newPower)
-  local newPos = nil
+  local newPos
   if notify:GetNotifyType() == NotifyType.EntityMoveEnd or notify:GetNotifyType() == NotifyType.PlayerEachMoveEnd then
     newPos = notify:GetPosNew()
   end
   local result = BuffResultTetrisChangePower:New(newPower, newPos)
   return result
 end
-
-

@@ -1,72 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/common/ui_n20_avg_actor.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGActor", UICustomWidget)
 UIN20AVGActor = UIN20AVGActor
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGActor.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
+function UIN20AVGActor:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGActor.OnShow = function(self)
-  -- function num : 0_1
+function UIN20AVGActor:OnShow()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtValue = self:GetUIComponent("UILocalizationText", "txtValue")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGActor.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIN20AVGActor:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGActor.Flush = function(self, index, value)
-  -- function num : 0_3 , upvalues : _ENV
-  local actor = (self.data):GetActorByIndex(index)
+function UIN20AVGActor:Flush(index, value)
+  local actor = self.data:GetActorByIndex(index)
   self:FlushIcon(actor)
-  local curValue = tonumber((self.txtValue).text)
+  local curValue = tonumber(self.txtValue.text)
   if curValue then
     if value < curValue then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20HpReduce)
-    else
-      if curValue < value then
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N20HpAdd)
-      end
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20HpReduce)
+    elseif value > curValue then
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N20HpAdd)
     end
   end
-  ;
-  (self.txtValue):SetText(value)
+  self.txtValue:SetText(value)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGActor.FlushIcon = function(self, actor)
-  -- function num : 0_4
-  (self.imgIcon):LoadImage(actor.icon)
+function UIN20AVGActor:FlushIcon(actor)
+  self.imgIcon:LoadImage(actor.icon)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGActor.PlayAnim = function(self, change)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN20AVGActor:PlayAnim(change)
   if change == 0 then
-    return 
+    return
   end
-  local id = change > 0 and 1 or 2
-  local animName = {"uieff_UIN20AVGActorLeader2_up", "uieff_UIN20AVGActorLeader2_down"}
+  local id = 0 < change and 1 or 2
+  local animName = {
+    "uieff_UIN20AVGActorLeader2_up",
+    "uieff_UIN20AVGActorLeader2_down"
+  }
   local animTime = {2000, 1500}
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "anim", animName[id], animTime[id])
+  UIWidgetHelper.PlayAnimation(self, "anim", animName[id], animTime[id])
 end
-
-

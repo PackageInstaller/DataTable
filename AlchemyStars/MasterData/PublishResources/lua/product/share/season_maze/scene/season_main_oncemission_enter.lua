@@ -1,55 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/scene/season_main_oncemission_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMainOnceMissionEnter", LoadingHandler)
 SeasonMainOnceMissionEnter = SeasonMainOnceMissionEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMainOnceMissionEnter.Constructor = function(self)
-  -- function num : 0_0
+function SeasonMainOnceMissionEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMainOnceMissionEnter.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_1
+function SeasonMainOnceMissionEnter:PreLoadBeforeLoadLevel(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMainOnceMissionEnter.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function SeasonMainOnceMissionEnter:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
   YIELD(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMainOnceMissionEnter.OnLoadingFinish = function(self, ...)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("EnterOnceMission")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV
+function SeasonMainOnceMissionEnter:OnLoadingFinish(...)
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
+  GameGlobal.UIStateManager():Lock("EnterOnceMission")
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 100)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("EnterOnceMission")
-    local uiName = ((GameGlobal.GetUIModule)(SeasonModule)):GetCurOnceMissionUI()
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog(uiName, nil, nil, nil, true, true)
-  end
-)
+    GameGlobal.UIStateManager():UnLock("EnterOnceMission")
+    local uiName = GameGlobal.GetUIModule(SeasonModule):GetCurOnceMissionUI()
+    GameGlobal.UIStateManager():ShowDialog(uiName, nil, nil, nil, true, true)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMainOnceMissionEnter.LoadingType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonMainOnceMissionEnter:LoadingType()
   return LoadingType.BOTTOM
 end
-
-

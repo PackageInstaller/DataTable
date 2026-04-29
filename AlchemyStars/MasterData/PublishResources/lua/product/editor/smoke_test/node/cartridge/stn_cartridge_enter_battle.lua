@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/cartridge/stn_cartridge_enter_battle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Cartridge_EnterBattle", Common_AsyncBase)
 Cartridge_EnterBattle = Cartridge_EnterBattle
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Cartridge_EnterBattle.TaskFunc = function(self, TT, status)
-  -- function num : 0_0
-  local runData = (self._manager):GetMissionRunData()
+function Cartridge_EnterBattle:TaskFunc(TT, status)
+  local runData = self._manager:GetMissionRunData()
   if runData:GetExperienceVersion() == 2 then
     self:N8TaskFunc(TT, status)
   else
@@ -18,119 +11,112 @@ Cartridge_EnterBattle.TaskFunc = function(self, TT, status)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Cartridge_EnterBattle.AircraftTaskFunc = function(self, TT, status)
-  -- function num : 0_1 , upvalues : _ENV
+function Cartridge_EnterBattle:AircraftTaskFunc(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  ;
-  (self._manager):AsyncGM_TacticIgnoreFightLimit(TT, status)
+  self._manager:AsyncGM_TacticIgnoreFightLimit(TT, status)
   if status:IsErrorOccured() then
-    return 
+    return
   end
-  local runData = (self.m_pManager):GetMissionRunData()
+  local runData = self.m_pManager:GetMissionRunData()
   local cartridgeID = runData:GetCartridgeID()
   local addCartridgeResult = AsyncOperationStatusData:New()
-  ;
-  (self._manager):AsyncGM_AddAsset(TT, addCartridgeResult, cartridgeID, 1)
+  self._manager:AsyncGM_AddAsset(TT, addCartridgeResult, cartridgeID, 1)
   if addCartridgeResult:IsFinished() and addCartridgeResult:IsErrorOccured() then
     status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
     status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-    return 
+    return
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local items = (itemModule:GetItemByTempId(cartridgeID))
-  local luckyItem = nil
-  for k,v in pairs(items) do
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local items = itemModule:GetItemByTempId(cartridgeID)
+  local luckyItem
+  for k, v in pairs(items) do
     luckyItem = v
-    do break end
+    break
   end
-  do
-    if not luckyItem then
-      status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
-      status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-      return 
-    end
-    local aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-    local cartridgeStageIndex = runData:GetCartridgeStageIndex()
-    local cartridgePstID = luckyItem:GetID()
-    local matchComID, paramKetMap = aircraftModule:GetCartridgeMatchParam(cartridgeStageIndex, cartridgePstID)
-    local param = {runData:GetMissionID(), matchComID, paramKetMap}
-    local matchType = MatchType.MT_Campaign
-    if matchComID == ECampaignMissionComponentId.ECampaignMissionComponentId_AircraftBlackfist then
-      matchType = MatchType.MT_BlackFist
-    end
-    local game = (GameGlobal.GetModule)(GameMatchModule)
-    local createInfo = game:GetMatchCreateInfo(matchType, param)
-    for i = 1, 3 do
-      local res = game:StartMatchTask(TT, matchType, TestConst.MissionTeamIndex, createInfo)
-      if res:GetSucc() then
-        status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
-        status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-        return 
-      end
-    end
+  if not luckyItem then
     status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
     status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-    ;
-    (self._manager):Exception_DeclareExceptionThrew("对局创建失败")
+    return
   end
+  local aircraftModule = GameGlobal.GetModule(AircraftModule)
+  local cartridgeStageIndex = runData:GetCartridgeStageIndex()
+  local cartridgePstID = luckyItem:GetID()
+  local matchComID, paramKetMap = aircraftModule:GetCartridgeMatchParam(cartridgeStageIndex, cartridgePstID)
+  local param = {
+    runData:GetMissionID(),
+    matchComID,
+    paramKetMap
+  }
+  local matchType = MatchType.MT_Campaign
+  if matchComID == ECampaignMissionComponentId.ECampaignMissionComponentId_AircraftBlackfist then
+    matchType = MatchType.MT_BlackFist
+  end
+  local game = GameGlobal.GetModule(GameMatchModule)
+  local createInfo = game:GetMatchCreateInfo(matchType, param)
+  for i = 1, 3 do
+    local res = game:StartMatchTask(TT, matchType, TestConst.MissionTeamIndex, createInfo)
+    if res:GetSucc() then
+      status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
+      status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
+      return
+    end
+  end
+  status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
+  status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
+  self._manager:Exception_DeclareExceptionThrew("对局创建失败")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Cartridge_EnterBattle.N8TaskFunc = function(self, TT, status)
-  -- function num : 0_2 , upvalues : _ENV
+function Cartridge_EnterBattle:N8TaskFunc(TT, status)
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.IN_PROGRESS)
-  local runData = (self.m_pManager):GetMissionRunData()
+  local runData = self.m_pManager:GetMissionRunData()
   local cartridgeID = runData:GetCartridgeID()
   local addCartridgeResult = AsyncOperationStatusData:New()
-  ;
-  (self._manager):AsyncGM_AddAsset(TT, addCartridgeResult, cartridgeID, 1)
+  self._manager:AsyncGM_AddAsset(TT, addCartridgeResult, cartridgeID, 1)
   if addCartridgeResult:IsFinished() and addCartridgeResult:IsErrorOccured() then
     status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
     status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-    return 
+    return
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local items = (itemModule:GetItemByTempId(cartridgeID))
-  local luckyItem = nil
-  for k,v in pairs(items) do
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local items = itemModule:GetItemByTempId(cartridgeID)
+  local luckyItem
+  for k, v in pairs(items) do
     luckyItem = v
-    do break end
+    break
   end
-  do
-    if not luckyItem then
-      status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
-      status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-      return 
-    end
-    local aircraftModule = (GameGlobal.GetModule)(AircraftModule)
-    local cartridgeStageIndex = runData:GetCartridgeStageIndex()
-    local cartridgePstID = luckyItem:GetID()
-    local matchComID, paramKetMap = aircraftModule:GetCartridgeMatchParam(cartridgeStageIndex, cartridgePstID)
-    local matchType = MatchType.MT_Campaign
-    if matchComID == ECampaignMissionComponentId.ECampaignMissionComponentId_SimulatorBlackfist then
-      matchType = MatchType.MT_BlackFist
-    end
-    local param = {runData:GetMissionID(), matchComID, 
-{[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = runData:GetN8ComponentID(), [ECampaignMissionParamKey.ECampaignMissionParamKey_CSHardId] = runData:GetCartridgeStageIndex(), [ECampaignMissionParamKey.ECampaignMissionParamKey_CartridgePstId] = cartridgePstID}
-}
-    local game = (GameGlobal.GetModule)(GameMatchModule)
-    local createInfo = game:GetMatchCreateInfo(matchType, param)
-    for i = 1, 3 do
-      local res = game:StartMatchTask(TT, matchType, TestConst.MissionTeamIndex, createInfo)
-      if res:GetSucc() then
-        status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
-        status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-        return 
-      end
-    end
+  if not luckyItem then
     status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
     status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-    ;
-    (self._manager):Exception_DeclareExceptionThrew("对局创建失败")
+    return
   end
+  local aircraftModule = GameGlobal.GetModule(AircraftModule)
+  local cartridgeStageIndex = runData:GetCartridgeStageIndex()
+  local cartridgePstID = luckyItem:GetID()
+  local matchComID, paramKetMap = aircraftModule:GetCartridgeMatchParam(cartridgeStageIndex, cartridgePstID)
+  local matchType = MatchType.MT_Campaign
+  if matchComID == ECampaignMissionComponentId.ECampaignMissionComponentId_SimulatorBlackfist then
+    matchType = MatchType.MT_BlackFist
+  end
+  local param = {
+    runData:GetMissionID(),
+    matchComID,
+    {
+      [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = runData:GetN8ComponentID(),
+      [ECampaignMissionParamKey.ECampaignMissionParamKey_CSHardId] = runData:GetCartridgeStageIndex(),
+      [ECampaignMissionParamKey.ECampaignMissionParamKey_CartridgePstId] = cartridgePstID
+    }
+  }
+  local game = GameGlobal.GetModule(GameMatchModule)
+  local createInfo = game:GetMatchCreateInfo(matchType, param)
+  for i = 1, 3 do
+    local res = game:StartMatchTask(TT, matchType, TestConst.MissionTeamIndex, createInfo)
+    if res:GetSucc() then
+      status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
+      status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
+      return
+    end
+  end
+  status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
+  status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
+  self._manager:Exception_DeclareExceptionThrew("对局创建失败")
 end
-
-

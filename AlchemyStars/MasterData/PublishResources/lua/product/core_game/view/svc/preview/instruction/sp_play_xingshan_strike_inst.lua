@@ -1,107 +1,94 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_xingshan_strike_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewXingshanStrikeInstruction", SkillPreviewBaseInstruction)
 SkillPreviewXingshanStrikeInstruction = SkillPreviewXingshanStrikeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewXingshanStrikeInstruction.Constructor = function(self, param)
-  -- function num : 0_0 , upvalues : _ENV
-  self._teleportScopeCfg = {TargetType = tonumber(param.teleportScopeTargetType), ScopeType = tonumber(param.teleportScopeType), 
-ScopeParam = {tonumber(param.teleportScopeParam)}
-, ScopeCenterType = tonumber(param.teleportScopeCenterType)}
-  self._damageScopeCfg = {TargetType = tonumber(param.damageScopeTargetType), ScopeType = tonumber(param.damageScopeType), 
-ScopeParam = {tonumber(param.damageScopeParam)}
-, ScopeCenterType = tonumber(param.damageScopeCenterType)}
+function SkillPreviewXingshanStrikeInstruction:Constructor(param)
+  self._teleportScopeCfg = {
+    TargetType = tonumber(param.teleportScopeTargetType),
+    ScopeType = tonumber(param.teleportScopeType),
+    ScopeParam = {
+      tonumber(param.teleportScopeParam)
+    },
+    ScopeCenterType = tonumber(param.teleportScopeCenterType)
+  }
+  self._damageScopeCfg = {
+    TargetType = tonumber(param.damageScopeTargetType),
+    ScopeType = tonumber(param.damageScopeType),
+    ScopeParam = {
+      tonumber(param.damageScopeParam)
+    },
+    ScopeCenterType = tonumber(param.damageScopeCenterType)
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewXingshanStrikeInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewXingshanStrikeInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local configSvc = world:GetService("Config")
   local helper = configSvc._skillConfigHelper
   local parser = helper._scopeParamParser
   local previewTeleportScopeParam = SkillPreviewScopeParam:New(self._teleportScopeCfg)
-  local teleportSParam = parser:ParseScopeParam((self._teleportScopeCfg).ScopeType, (self._teleportScopeCfg).ScopeParam)
+  local teleportSParam = parser:ParseScopeParam(self._teleportScopeCfg.ScopeType, self._teleportScopeCfg.ScopeParam)
   previewTeleportScopeParam:SetScopeParamData(teleportSParam)
   local previewDamageScopeParam = SkillPreviewScopeParam:New(self._damageScopeCfg)
-  local damageSParam = parser:ParseScopeParam((self._damageScopeCfg).ScopeType, (self._damageScopeCfg).ScopeParam)
+  local damageSParam = parser:ParseScopeParam(self._damageScopeCfg.ScopeType, self._damageScopeCfg.ScopeParam)
   previewDamageScopeParam:SetScopeParamData(damageSParam)
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   local tv2Pick = previewPickUpComponent:GetAllValidPickUpGridPos()
-  if not tv2Pick[1] then
-    local v2Pickup = casterEntity:GetGridPosition()
-  end
+  local v2Pickup = tv2Pick[1] or casterEntity:GetGridPosition()
   local previewActiveSkillService = world:GetService("PreviewActiveSkill")
   local dirNew = v2Pickup - casterEntity:GetGridPosition()
   if dirNew.x > 0 then
     dirNew.x = 1
-  else
-    if dirNew.x < 0 then
-      dirNew.x = -1
-    end
+  elseif dirNew.x < 0 then
+    dirNew.x = -1
   end
-  if dirNew.y > 0 then
+  if 0 < dirNew.y then
     dirNew.y = 1
-  else
-    if dirNew.y < 0 then
-      dirNew.y = -1
-    end
+  elseif 0 > dirNew.y then
+    dirNew.y = -1
   end
   casterEntity:SetDirection(dirNew)
   local utilScopeSvc = world:GetService("UtilScopeCalc")
-  local casterBodyArea = (casterEntity:BodyArea()):GetArea()
-  local teleportScopeResult = (utilScopeSvc._skillScopeCalc):CalcSkillPreviewScope(casterEntity:GetGridPosition(), dirNew, casterBodyArea, previewTeleportScopeParam, casterEntity)
+  local casterBodyArea = casterEntity:BodyArea():GetArea()
+  local teleportScopeResult = utilScopeSvc._skillScopeCalc:CalcSkillPreviewScope(casterEntity:GetGridPosition(), dirNew, casterBodyArea, previewTeleportScopeParam, casterEntity)
   local teleportPos = self:_FindTeleportPos_Comparer(casterEntity, casterEntity:GetGridPosition(), teleportScopeResult:GetAttackRange())
-  if not teleportPos then
-    teleportPos = casterEntity:GetGridPosition()
+  teleportPos = teleportPos or casterEntity:GetGridPosition()
+  local damageScopeResult = utilScopeSvc._skillScopeCalc:CalcSkillPreviewScope(teleportPos, dirNew, casterBodyArea, previewDamageScopeParam, casterEntity)
+  if teleportPos ~= casterEntity:GetGridPosition() then
+    local entitySvc = world:GetService("RenderEntity")
+    entitySvc:CreateGhost(teleportPos, casterEntity, "AtkUltPreview")
   end
-  local damageScopeResult = (utilScopeSvc._skillScopeCalc):CalcSkillPreviewScope(teleportPos, dirNew, casterBodyArea, previewDamageScopeParam, casterEntity)
-  do
-    if teleportPos ~= casterEntity:GetGridPosition() then
-      local entitySvc = world:GetService("RenderEntity")
-      entitySvc:CreateGhost(teleportPos, casterEntity, "AtkUltPreview")
+  previewActiveSkillService:AllPieceDoConvert("Dark")
+  previewActiveSkillService:DoAnim(damageScopeResult:GetAttackRange(), "Silver")
+  local utilScopeSvc = world:GetService("UtilScopeCalc")
+  local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, previewDamageScopeParam:GetScopeTargetType(), damageScopeResult)
+  targetIDList = table.unique(targetIDList)
+  for _, id in pairs(targetIDList) do
+    local entity = world:GetEntityByID(id)
+    if entity and entity:HasTeam() then
+      entity = entity:GetTeamLeaderPetEntity()
     end
-    previewActiveSkillService:AllPieceDoConvert("Dark")
-    previewActiveSkillService:DoAnim(damageScopeResult:GetAttackRange(), "Silver")
-    local utilScopeSvc = world:GetService("UtilScopeCalc")
-    local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, previewDamageScopeParam:GetScopeTargetType(), damageScopeResult)
-    targetIDList = (table.unique)(targetIDList)
-    for _,id in pairs(targetIDList) do
-      local entity = world:GetEntityByID(id)
-      if entity and entity:HasTeam() then
-        entity = entity:GetTeamLeaderPetEntity()
-      end
-      if entity and entity:HasMaterialAnimationComponent() and not (entity:BuffView()):HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
-        entity:NewEnableFlashAlpha()
-      end
+    if entity and entity:HasMaterialAnimationComponent() and not entity:BuffView():HasBuffEffect(BuffEffectType.NotPlayMaterialAnimation) then
+      entity:NewEnableFlashAlpha()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewXingshanStrikeInstruction._FindTeleportPos_Comparer = function(self, entityCaster, posCenter, skillRangePos)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewXingshanStrikeInstruction:_FindTeleportPos_Comparer(entityCaster, posCenter, skillRangePos)
   local world = entityCaster:GetOwnerWorld()
-  if skillRangePos == nil then
+  if nil == skillRangePos then
     return posCenter
   end
   local listRangeInPlan = skillRangePos
-  local entityMain = (world:Player()):GetPreviewTeamEntity()
+  local entityMain = world:Player():GetPreviewTeamEntity()
   local posMain = entityMain:GetGridPosition()
   local boardServiceLogic = world:GetService("BoardLogic")
   local sortPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByFar)
   sortPosList:AllowDuplicate()
   for i = 1, #skillRangePos do
-    (AINewNode.InsertSortedArray)(sortPosList, posMain, skillRangePos[i], i)
+    AINewNode.InsertSortedArray(sortPosList, posMain, skillRangePos[i], i)
   end
-  local bodyArea = (entityCaster:BodyArea()):GetArea()
+  local bodyArea = entityCaster:BodyArea():GetArea()
   local skillEffectCalcService = world:GetService("SkillEffectCalc")
   local nBlockRaceType = BlockFlag.LinkLine
   for i = 1, sortPosList:Size() do
@@ -114,5 +101,3 @@ SkillPreviewXingshanStrikeInstruction._FindTeleportPos_Comparer = function(self,
   end
   return posCenter
 end
-
-

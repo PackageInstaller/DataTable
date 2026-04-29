@@ -1,8 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/us/story/charastory/str_charastory_tuoer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31330401_1_dialog_content = "Why are you so out of breath, PlayerName? You must really be excited to try my food!", ui_story_31330401_2_dialog_content = "That\'s to be expected though. After all, I\'m the one who made it, and no one else could ever hope to replicate it!", ui_story_31330401_3_dialog_content = "You\'re right, I don\'t think anyone could replicate just how shocking this is.", ui_story_31330401_4_dialog_content = "I\'m really glad you were able to come back and all, but could you please stop researching strange dishes for a while?", ui_story_31330401_5_dialog_content = "I\'ve already gotten a lot of complaints from other people.", ui_story_31330401_6_dialog_content = "Vice! What happened, Vice?! What\'s the matter?!", ui_story_31330401_7_dialog_content = "H-Hurry... Tell PlayerName to... evacuate the Colossus... Th-This is my parting wish...", ui_story_31330401_8_dialog_content = "What\'s with this weird gas? Are we under Eclipsite attack?!", ui_story_31330401_9_dialog_content = "N-Not Eclipsites... It\'s Tohru, she... she\'s cooking something awful... R-Run for your life!", ui_story_31330401_10_dialog_content = "Why\'d you run off, Miss Vice? Come try my fried Eclipsite and sand spider, it\'s amazing!", ui_story_31330401_11_dialog_content = "Vice developed a psychological aversion to Eclipsites after that.", ui_story_31330401_12_dialog_content = "Th-That was just an accident! Relax, I promise I didn\'t use Eclipsites to make food this time!", ui_story_31330401_13_dialog_content = "Then tell me, what did you make this time?", ui_story_31330401_14_dialog_content = "A fusion dish with lots of challenging, different flavors!", ui_story_31330401_15_dialog_content = "I\'m done for... I already have a bad feeling about this.", ui_story_31330401_16_dialog_content = "I started by gathering some spices from Illumina.", ui_story_31330401_17_dialog_content = "Huh? That actually sounds pretty normal.", ui_story_31330401_18_dialog_content = "Next, I traveled to Longzhou to personally pick some fresh chili peppers.", ui_story_31330401_19_dialog_content = "I see, so it\'s a Longzhou dish? I\'m starting to look forward to this!", ui_story_31330401_20_dialog_content = "After that came the highlight of the dish! I searched all over the Rediesel Desert for a long time, and finally found this: a highly-poisonous desert lizard!", ui_story_31330401_21_dialog_content = "Hah?", ui_story_31330401_22_dialog_content = "After throwing in a few fruits from my home world, my spicy lizard and fruit dish was finally complete!", ui_story_31330401_23_dialog_content = "<color=#e8d9bb>Floating inside of the thick, red soup is a lizard that doesn\'t appear to be entirely dead. A truly horrifying and scream-inducing dish.</color>", ui_story_31330401_24_dialog_content = "Tohru... Can\'t you just make normal food instead?", ui_story_31330401_25_dialog_content = "Normal food won\'t cut it! If I make that... I might not be able to properly express my gratitude...", ui_story_31330401_26_dialog_content = "I haven\'t forgotten just how much you helped us back then. That\'s why I... I want to make you a dish that no one else could possibly make.", ui_story_31330401_27_dialog_content = "So... will you eat it?", ui_story_31330401_28_option_content = "Of course I will", ui_story_31330401_29_dialog_content = "I can tell you worked really hard on this.", ui_story_31330401_30_dialog_content = "Even though it looks a little scary, I still plan on eating it.", ui_story_31330401_31_option_content = "It\'s a little, uh...", ui_story_31330401_32_dialog_content = "... I understand. I\'m really sorry about this... I\'ll throw it out right away.", ui_story_31330401_33_dialog_content = "But I still plan on eating it!", ui_story_31330401_34_dialog_content = "After all, you made it just for me, right? It\'s the only dish of its kind in the world!", ui_story_31330401_35_dialog_content = "PlayerName!", ui_story_31330401_36_dialog_content = "(Watch over me, my people! Bless me with the courage to overcome this challenge!)", ui_story_31330401_37_dialog_content = "...", ui_story_31330401_38_dialog_content = "<size=50>Umm—!</size> Wait, it\'s actually pretty good!", ui_story_31330401_39_dialog_content = "Told you! Don\'t forget, I\'m the world\'s greatest maid. I could never make something that tastes bad!", ui_story_31330401_40_dialog_content = "(Taking normal ingredients and turning them into something terrifying like this... I guess that\'s a special skill of its own too.)", ui_story_31330401_41_dialog_content = "Alright! Time to keep exploring the ingredients of this world! What should I cook next time?!", ui_story_31330401_42_dialog_content = "M-Maybe just some simple home cooking?"}
+local config = {
+  ui_story_31330401_1_dialog_content = "Why are you so out of breath, PlayerName? You must really be excited to try my food!",
+  ui_story_31330401_2_dialog_content = "That's to be expected though. After all, I'm the one who made it, and no one else could ever hope to replicate it!",
+  ui_story_31330401_3_dialog_content = "You're right, I don't think anyone could replicate just how shocking this is.",
+  ui_story_31330401_4_dialog_content = "I'm really glad you were able to come back and all, but could you please stop researching strange dishes for a while?",
+  ui_story_31330401_5_dialog_content = "I've already gotten a lot of complaints from other people.",
+  ui_story_31330401_6_dialog_content = "Vice! What happened, Vice?! What's the matter?!",
+  ui_story_31330401_7_dialog_content = "H-Hurry... Tell PlayerName to... evacuate the Colossus... Th-This is my parting wish...",
+  ui_story_31330401_8_dialog_content = "What's with this weird gas? Are we under Eclipsite attack?!",
+  ui_story_31330401_9_dialog_content = "N-Not Eclipsites... It's Tohru, she... she's cooking something awful... R-Run for your life!",
+  ui_story_31330401_10_dialog_content = "Why'd you run off, Miss Vice? Come try my fried Eclipsite and sand spider, it's amazing!",
+  ui_story_31330401_11_dialog_content = "Vice developed a psychological aversion to Eclipsites after that.",
+  ui_story_31330401_12_dialog_content = "Th-That was just an accident! Relax, I promise I didn't use Eclipsites to make food this time!",
+  ui_story_31330401_13_dialog_content = "Then tell me, what did you make this time?",
+  ui_story_31330401_14_dialog_content = "A fusion dish with lots of challenging, different flavors!",
+  ui_story_31330401_15_dialog_content = "I'm done for... I already have a bad feeling about this.",
+  ui_story_31330401_16_dialog_content = "I started by gathering some spices from Illumina.",
+  ui_story_31330401_17_dialog_content = "Huh? That actually sounds pretty normal.",
+  ui_story_31330401_18_dialog_content = "Next, I traveled to Longzhou to personally pick some fresh chili peppers.",
+  ui_story_31330401_19_dialog_content = "I see, so it's a Longzhou dish? I'm starting to look forward to this!",
+  ui_story_31330401_20_dialog_content = "After that came the highlight of the dish! I searched all over the Rediesel Desert for a long time, and finally found this: a highly-poisonous desert lizard!",
+  ui_story_31330401_21_dialog_content = "Hah?",
+  ui_story_31330401_22_dialog_content = "After throwing in a few fruits from my home world, my spicy lizard and fruit dish was finally complete!",
+  ui_story_31330401_23_dialog_content = "<color=#e8d9bb>Floating inside of the thick, red soup is a lizard that doesn't appear to be entirely dead. A truly horrifying and scream-inducing dish.</color>",
+  ui_story_31330401_24_dialog_content = "Tohru... Can't you just make normal food instead?",
+  ui_story_31330401_25_dialog_content = "Normal food won't cut it! If I make that... I might not be able to properly express my gratitude...",
+  ui_story_31330401_26_dialog_content = "I haven't forgotten just how much you helped us back then. That's why I... I want to make you a dish that no one else could possibly make.",
+  ui_story_31330401_27_dialog_content = "So... will you eat it?",
+  ui_story_31330401_28_option_content = "Of course I will",
+  ui_story_31330401_29_dialog_content = "I can tell you worked really hard on this.",
+  ui_story_31330401_30_dialog_content = "Even though it looks a little scary, I still plan on eating it.",
+  ui_story_31330401_31_option_content = "It's a little, uh...",
+  ui_story_31330401_32_dialog_content = "... I understand. I'm really sorry about this... I'll throw it out right away.",
+  ui_story_31330401_33_dialog_content = "But I still plan on eating it!",
+  ui_story_31330401_34_dialog_content = "After all, you made it just for me, right? It's the only dish of its kind in the world!",
+  ui_story_31330401_35_dialog_content = "PlayerName!",
+  ui_story_31330401_36_dialog_content = "(Watch over me, my people! Bless me with the courage to overcome this challenge!)",
+  ui_story_31330401_37_dialog_content = "...",
+  ui_story_31330401_38_dialog_content = "<size=50>Umm—!</size> Wait, it's actually pretty good!",
+  ui_story_31330401_39_dialog_content = "Told you! Don't forget, I'm the world's greatest maid. I could never make something that tastes bad!",
+  ui_story_31330401_40_dialog_content = "(Taking normal ingredients and turning them into something terrifying like this... I guess that's a special skill of its own too.)",
+  ui_story_31330401_41_dialog_content = "Alright! Time to keep exploring the ingredients of this world! What should I cook next time?!",
+  ui_story_31330401_42_dialog_content = "M-Maybe just some simple home cooking?"
+}
 return config
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/sign_in/ui_n19_p5_sign_in_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN19P5SignInItem", UICustomWidget)
 UIN19P5SignInItem = UIN19P5SignInItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN19P5SignInItem.OnShow = function(self)
-  -- function num : 0_0
+function UIN19P5SignInItem:OnShow()
   self.rect = self:GetUIComponent("RectTransform", "rect")
   self.getPool = self:GetUIComponent("UISelectObjectPath", "get")
   self.Bg = self:GetGameObject("Bg")
@@ -21,90 +14,54 @@ UIN19P5SignInItem.OnShow = function(self)
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInItem.AddListener = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN19P5SignInItem:AddListener()
   if self.Bg then
-    ((UIEventTriggerListener.Get)(self.Bg)).onClick = function(PointerEventData)
-    -- function num : 0_1_0 , upvalues : self
-    if self.callback then
-      (self.callback)(self.idx)
+    UIEventTriggerListener.Get(self.Bg).onClick = function(PointerEventData)
+      if self.callback then
+        self.callback(self.idx)
+      end
     end
-  end
-
-    ;
-    ((UIEventTriggerListener.Get)(self.Bg)).onDrag = function(PointerEventData)
-    -- function num : 0_1_1 , upvalues : self
-    if self.onDrag then
-      (self.onDrag)(PointerEventData)
+    UIEventTriggerListener.Get(self.Bg).onDrag = function(PointerEventData)
+      if self.onDrag then
+        self.onDrag(PointerEventData)
+      end
     end
-  end
-
-    ;
-    ((UIEventTriggerListener.Get)(self.Bg)).onBeginDrag = function(PointerEventData)
-    -- function num : 0_1_2 , upvalues : self
-    if self.beginDrag then
-      (self.beginDrag)(PointerEventData)
+    UIEventTriggerListener.Get(self.Bg).onBeginDrag = function(PointerEventData)
+      if self.beginDrag then
+        self.beginDrag(PointerEventData)
+      end
     end
-  end
-
-    ;
-    ((UIEventTriggerListener.Get)(self.Bg)).onEndDrag = function(PointerEventData)
-    -- function num : 0_1_3 , upvalues : self
-    if self.endDrag then
-      (self.endDrag)(PointerEventData)
-    end
-  end
-
-  end
-end
-
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInItem.SetOffsetX = function(self, x)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.rect).anchoredPosition = Vector2(x, 0)
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInItem.RefreshType = function(self, type)
-  -- function num : 0_3
-  self.type = type
-  self:Height()
-  ;
-  (self.pool):RefreshType(self.type)
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInItem.Height = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local height = nil
-  if self.type == UIN19P5SignInPosType.Current then
-    height = 350
-  else
-    if self.type == UIN19P5SignInPosType.Down then
-      height = 230
-    else
-      if self.type == UIN19P5SignInPosType.Up then
-        height = 230
+    UIEventTriggerListener.Get(self.Bg).onEndDrag = function(PointerEventData)
+      if self.endDrag then
+        self.endDrag(PointerEventData)
       end
     end
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.layout).preferredHeight = height
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
+function UIN19P5SignInItem:SetOffsetX(x)
+  self.rect.anchoredPosition = Vector2(x, 0)
+end
 
-UIN19P5SignInItem.Flush = function(self, idx, awards, status, type, callback, beginDrag, onDrag, endDrag)
-  -- function num : 0_5
+function UIN19P5SignInItem:RefreshType(type)
+  self.type = type
+  self:Height()
+  self.pool:RefreshType(self.type)
+end
+
+function UIN19P5SignInItem:Height()
+  local height
+  if self.type == UIN19P5SignInPosType.Current then
+    height = 350
+  elseif self.type == UIN19P5SignInPosType.Down then
+    height = 230
+  elseif self.type == UIN19P5SignInPosType.Up then
+    height = 230
+  end
+  self.layout.preferredHeight = height
+end
+
+function UIN19P5SignInItem:Flush(idx, awards, status, type, callback, beginDrag, onDrag, endDrag)
   self.idx = idx
   self.status = status
   self.type = type
@@ -115,52 +72,33 @@ UIN19P5SignInItem.Flush = function(self, idx, awards, status, type, callback, be
   self.endDrag = endDrag
   self.pool = self:GetPool()
   self:Height()
-  ;
-  (self.pool):Flush(self.idx, self.awards, self.status, self.type, self.callback)
+  self.pool:Flush(self.idx, self.awards, self.status, self.type, self.callback)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN19P5SignInItem.GetPool = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN19P5SignInItem:GetPool()
   if self.status == UIN19P5SignInStatus.Get then
     if not self.get then
-      self.get = (self.getPool):SpawnObject("UIN19P5SignInGet")
+      self.get = self.getPool:SpawnObject("UIN19P5SignInGet")
     end
-    ;
-    (self.getPoolGo):SetActive(true)
-    ;
-    (self.finishPoolGo):SetActive(false)
-    ;
-    (self.lockPoolGo):SetActive(false)
+    self.getPoolGo:SetActive(true)
+    self.finishPoolGo:SetActive(false)
+    self.lockPoolGo:SetActive(false)
     return self.get
-  else
-    if self.status == UIN19P5SignInStatus.Finish then
-      if not self.finish then
-        self.finish = (self.finishPool):SpawnObject("UIN19P5SignInFinish")
-      end
-      ;
-      (self.getPoolGo):SetActive(false)
-      ;
-      (self.finishPoolGo):SetActive(true)
-      ;
-      (self.lockPoolGo):SetActive(false)
-      return self.finish
-    else
-      if self.status == UIN19P5SignInStatus.Lock then
-        if not self.lock then
-          self.lock = (self.lockPool):SpawnObject("UIN19P5SignInLock")
-        end
-        ;
-        (self.getPoolGo):SetActive(false)
-        ;
-        (self.finishPoolGo):SetActive(false)
-        ;
-        (self.lockPoolGo):SetActive(true)
-        return self.lock
-      end
+  elseif self.status == UIN19P5SignInStatus.Finish then
+    if not self.finish then
+      self.finish = self.finishPool:SpawnObject("UIN19P5SignInFinish")
     end
+    self.getPoolGo:SetActive(false)
+    self.finishPoolGo:SetActive(true)
+    self.lockPoolGo:SetActive(false)
+    return self.finish
+  elseif self.status == UIN19P5SignInStatus.Lock then
+    if not self.lock then
+      self.lock = self.lockPool:SpawnObject("UIN19P5SignInLock")
+    end
+    self.getPoolGo:SetActive(false)
+    self.finishPoolGo:SetActive(false)
+    self.lockPoolGo:SetActive(true)
+    return self.lock
   end
 end
-
-

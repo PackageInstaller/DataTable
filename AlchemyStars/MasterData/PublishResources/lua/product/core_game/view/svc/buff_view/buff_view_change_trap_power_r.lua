@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_change_trap_power_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeTrapPower", BuffViewBase)
 BuffViewChangeTrapPower = BuffViewChangeTrapPower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeTrapPower.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TrapPowerChange)
+function BuffViewChangeTrapPower:PlayView(TT)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TrapPowerChange)
 end
-
-

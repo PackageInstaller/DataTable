@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_notice/ui_notice_detail_img.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UINoticeDetailImg", UICustomWidget)
 UINoticeDetailImg = UINoticeDetailImg
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UINoticeDetailImg.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UINoticeDetailImg:OnShow(uiParams)
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._title = self:GetUIComponent("UIRichText", "title")
   self._msg = self:GetUIComponent("UIRichText", "msg")
@@ -16,114 +9,70 @@ UINoticeDetailImg.OnShow = function(self, uiParams)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImg.SetData = function(self, noticeInfo)
-  -- function num : 0_1 , upvalues : _ENV
-  local tab = (cjson.decode)(noticeInfo.Text_NoticeContent)
+function UINoticeDetailImg:SetData(noticeInfo)
+  local tab = cjson.decode(noticeInfo.Text_NoticeContent)
   if tab then
     self._jumpType = tab.jumpType
-    do
-      if tab.jumpParam then
-        local param = {}
-        for i = 1, #tab.jumpParam do
-          local item = (tab.jumpParam)[i]
-          if type(item) == "number" then
-            local z, s = (math.modf)(item)
-            if s == 0 then
-              (table.insert)(param, z)
-            else
-              ;
-              (table.insert)(param, item)
-            end
+    if tab.jumpParam then
+      local param = {}
+      for i = 1, #tab.jumpParam do
+        local item = tab.jumpParam[i]
+        if type(item) == "number" then
+          local z, s = math.modf(item)
+          if s == 0 then
+            table.insert(param, z)
           else
-            do
-              do
-                ;
-                (table.insert)(param, item)
-                -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+            table.insert(param, item)
           end
-        end
-        self._jumpParam = param
-      end
-      do
-        local btn = ((((self._jumpName).gameObject).transform).parent).gameObject
-        if (string.isnullorempty)(tab.jumpName) then
-          btn:SetActive(false)
         else
-          btn:SetActive(true)
-          ;
-          (self._jumpName):SetText(tab.jumpName)
+          table.insert(param, item)
         end
-        ;
-        (self._icon):LoadImage(tab.texture)
-        ;
-        (self._title):SetText(tab.title)
-        -- DECOMPILER ERROR at PC81: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._title).onHrefClick = function(hrefName)
-    -- function num : 0_1_0 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
-  end
-
-        ;
-        (self._msg):SetText(tab.content)
-        -- DECOMPILER ERROR at PC88: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._msg).onHrefClick = function(hrefName)
-    -- function num : 0_1_1 , upvalues : _ENV
-    (SDKProxy:GetInstance()):OpenUrl(hrefName)
-  end
-
-        ;
-        (Log.fatal)("###notice json decode fail ! content --> ", noticeInfo.Text_NoticeContent)
       end
+      self._jumpParam = param
     end
+    local btn = self._jumpName.gameObject.transform.parent.gameObject
+    if string.isnullorempty(tab.jumpName) then
+      btn:SetActive(false)
+    else
+      btn:SetActive(true)
+      self._jumpName:SetText(tab.jumpName)
+    end
+    self._icon:LoadImage(tab.texture)
+    self._title:SetText(tab.title)
+    
+    function self._title.onHrefClick(hrefName)
+      SDKProxy:GetInstance():OpenUrl(hrefName)
+    end
+    
+    self._msg:SetText(tab.content)
+    
+    function self._msg.onHrefClick(hrefName)
+      SDKProxy:GetInstance():OpenUrl(hrefName)
+    end
+  else
+    Log.fatal("###notice json decode fail ! content --> ", noticeInfo.Text_NoticeContent)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImg.AnimFade = function(self)
-  -- function num : 0_2
-  (self._anim):Play("uieff_Notice_DetailImg_Fade")
+function UINoticeDetailImg:AnimFade()
+  self._anim:Play("uieff_Notice_DetailImg_Fade")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImg.AnimShow = function(self)
-  -- function num : 0_3
-  (self._anim):Play("uieff_Notice_DetailImg_Show")
+function UINoticeDetailImg:AnimShow()
+  self._anim:Play("uieff_Notice_DetailImg_Show")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImg.OnHide = function(self)
-  -- function num : 0_4
+function UINoticeDetailImg:OnHide()
   self._icon = nil
   self._title = nil
   self._msg = nil
   self._jumpName = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UINoticeDetailImg.btnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UINoticeDetailImg:btnOnClick()
   if self._jumpType and self._jumpType > 0 and self._jumpParam then
-    local jumpModule = ((GameGlobal.GetModule)(QuestModule)).uiModule
+    local jumpModule = GameGlobal.GetModule(QuestModule).uiModule
     jumpModule:SetJumpUIData(self._jumpType, self._jumpParam)
     jumpModule:Jump()
   end
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_create_monster_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutsceneCreateMonsterInstruction", CutsceneBaseInstruction)
 CutsceneCreateMonsterInstruction = CutsceneCreateMonsterInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutsceneCreateMonsterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutsceneCreateMonsterInstruction:Constructor(paramList)
   self._monsterID = tonumber(paramList.monsterID)
   self._monsterClassID = tonumber(paramList.monsterClassID)
   self._name = paramList.name
@@ -20,15 +13,10 @@ CutsceneCreateMonsterInstruction.Constructor = function(self, paramList)
   self._turnToPlayer = tonumber(paramList.turnToPlayer) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutsceneCreateMonsterInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function CutsceneCreateMonsterInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
   local cutsceneServiceRender = world:GetService("Cutscene")
   local pos = Vector2(self._posX, self._posY)
   local dir = Vector2(self._dirX, self._dirY)
   cutsceneServiceRender:PlayCutsceneCreateMonster(TT, self._monsterID, self._monsterClassID, self._name, pos, dir, self._turnToPlayer)
 end
-
-

@@ -1,29 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/pet/player_hit_back_state_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayerHitBackStateSystem_Render", ReactiveSystem)
 PlayerHitBackStateSystem_Render = PlayerHitBackStateSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerHitBackStateSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PlayerHitBackStateSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerHitBackStateSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).MoveFSM)}, {"Added"})
+function PlayerHitBackStateSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.MoveFSM)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerHitBackStateSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayerHitBackStateSystem_Render:Filter(entity)
   if not entity:HasMoveFSM() then
     return false
   end
@@ -35,27 +24,16 @@ PlayerHitBackStateSystem_Render.Filter = function(self, entity)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerHitBackStateSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function PlayerHitBackStateSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:HandleHitBack(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerHitBackStateSystem_Render.HandleHitBack = function(self, entity)
-  -- function num : 0_4 , upvalues : _ENV
-  (TaskManager:GetInstance()):CoreGameStartTask(self.PlayHitBackAnimation, self, {}, entity:GetID())
+function PlayerHitBackStateSystem_Render:HandleHitBack(entity)
+  TaskManager:GetInstance():CoreGameStartTask(self.PlayHitBackAnimation, self, {}, entity:GetID())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerHitBackStateSystem_Render.PlayHitBackAnimation = function(self, TT, hit_back_target_list, owner_entity_id)
-  -- function num : 0_5 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PlayerHitBackFinish, 1, owner_entity_id)
+function PlayerHitBackStateSystem_Render:PlayHitBackAnimation(TT, hit_back_target_list, owner_entity_id)
+  self._world:EventDispatcher():Dispatch(GameEventType.PlayerHitBackFinish, 1, owner_entity_id)
 end
-
-

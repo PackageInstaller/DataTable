@@ -1,62 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_front_extend_degressive_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamFrontExtendDegressiveDamage", SkillEffectParamBase)
 SkillEffectParamFrontExtendDegressiveDamage = SkillEffectParamFrontExtendDegressiveDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamFrontExtendDegressiveDamage.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamFrontExtendDegressiveDamage:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   self._effectParam = t.effectParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamFrontExtendDegressiveDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamFrontExtendDegressiveDamage:GetEffectType()
   return SkillEffectType.FrontExtendDegressiveDamage
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamFrontExtendDegressiveDamage.GetDamageFormulaID = function(self)
-  -- function num : 0_2
+function SkillEffectParamFrontExtendDegressiveDamage:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamFrontExtendDegressiveDamage.GetBaseDamagePercent = function(self)
-  -- function num : 0_3
-  return (self._percent)[1]
+function SkillEffectParamFrontExtendDegressiveDamage:GetBaseDamagePercent()
+  return self._percent[1]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamFrontExtendDegressiveDamage.GetDamagePercent = function(self)
-  -- function num : 0_4
-  if not self._damagePercent then
-    return self._percent
-  end
+function SkillEffectParamFrontExtendDegressiveDamage:GetDamagePercent()
+  return self._damagePercent or self._percent
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamFrontExtendDegressiveDamage.SetDamagePercent = function(self, damagePercent)
-  -- function num : 0_5
+function SkillEffectParamFrontExtendDegressiveDamage:SetDamagePercent(damagePercent)
   self._damagePercent = damagePercent
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamFrontExtendDegressiveDamage.GetEffectParam = function(self)
-  -- function num : 0_6
+function SkillEffectParamFrontExtendDegressiveDamage:GetEffectParam()
   return self._effectParam
 end
-
-

@@ -1,38 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_player_info_misc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIPlayerInfoToolFunctions = {GetRemainTime = function(time)
-  -- function num : 0_0 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
-  local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_player_info_limited_time_day")
-    if hour > 0 then
-      timestring = timestring .. hour .. (StringTable.Get)("str_player_info_limited_time_hour")
+local UIPlayerInfoToolFunctions = {
+  GetRemainTime = function(time)
+    local day, hour, minute
+    day = math.floor(time / 86400)
+    hour = math.floor(time / 3600) % 24
+    minute = math.floor(time / 60) % 60
+    local timestring = ""
+    if 0 < day then
+      timestring = day .. StringTable.Get("str_player_info_limited_time_day")
+      if 0 < hour then
+        timestring = timestring .. hour .. StringTable.Get("str_player_info_limited_time_hour")
+      end
+      return timestring
+    end
+    if 0 < hour then
+      timestring = hour .. StringTable.Get("str_player_info_limited_time_hour")
+      if 0 < minute then
+        timestring = timestring .. minute .. StringTable.Get("str_player_info_limited_time_minute")
+      end
+      return timestring
+    end
+    if 0 < minute then
+      timestring = minute .. StringTable.Get("str_player_info_limited_time_minute")
+    else
+      timestring = StringTable.Get("str_player_info_limited_time_lessminute")
     end
     return timestring
   end
-  if hour > 0 then
-    timestring = hour .. (StringTable.Get)("str_player_info_limited_time_hour")
-    if minute > 0 then
-      timestring = timestring .. minute .. (StringTable.Get)("str_player_info_limited_time_minute")
-    end
-    return timestring
-  end
-  if minute > 0 then
-    timestring = minute .. (StringTable.Get)("str_player_info_limited_time_minute")
-  else
-    timestring = (StringTable.Get)("str_player_info_limited_time_lessminute")
-  end
-  return timestring
-end
 }
 _enum("UIPlayerInfoToolFunctions", UIPlayerInfoToolFunctions)
-local HeadTagType = {None = -1, All = 0, Q = 1, Pet = 2, Factio = 3}
+local HeadTagType = {
+  None = -1,
+  All = 0,
+  Q = 1,
+  Pet = 2,
+  Factio = 3
+}
 _enum("HeadTagType", HeadTagType)
-

@@ -1,112 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_pet_wait_elevator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftPetWaitElevator", Object)
 AircraftPetWaitElevator = AircraftPetWaitElevator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPetWaitElevator.Constructor = function(self, main, pet, index, linePos)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftPetWaitElevator:Constructor(main, pet, index, linePos)
   self._main = main
   self._pet = pet
   self._lineIdx = index
   self._targetPos = linePos
-  self._mover = AircraftMover:New((self._pet):Transform(), self._targetPos, AircraftSpeed.Pet)
-  ;
-  (self._mover):Begin()
-  ;
-  ((self._pet):Transform()).forward = self._targetPos - (self._pet):WorldPosition()
-  ;
-  (self._pet):Anim_Walk()
+  self._mover = AircraftMover:New(self._pet:Transform(), self._targetPos, AircraftSpeed.Pet)
+  self._mover:Begin()
+  self._pet:Transform().forward = self._targetPos - self._pet:WorldPosition()
+  self._pet:Anim_Walk()
   self._state = AircraftWaitElevState.MoveToLine
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaitElevator.Update = function(self, dtMS)
-  -- function num : 0_1 , upvalues : _ENV
+function AircraftPetWaitElevator:Update(dtMS)
   if self._state == AircraftWaitElevState.MoveToLine then
-    (self._mover):Update(dtMS)
-    if (self._mover):IsArrive() then
+    self._mover:Update(dtMS)
+    if self._mover:IsArrive() then
       self._mover = nil
-      self._waitTime = (self._main):Time()
-      ;
-      (self._pet):SetWaitElevatorTime((self._main):Time())
-      ;
-      (self._pet):Anim_Stand()
+      self._waitTime = self._main:Time()
+      self._pet:SetWaitElevatorTime(self._main:Time())
+      self._pet:Anim_Stand()
       self._state = AircraftWaitElevState.WaitInLine
     end
-  else
-  end
-  if self._state ~= AircraftWaitElevState.WaitInLine or self._state == AircraftWaitElevState.MoveToNext then
-    (self._mover):Update(dtMS)
-    if (self._mover):IsArrive() then
+  elseif self._state == AircraftWaitElevState.WaitInLine then
+  elseif self._state == AircraftWaitElevState.MoveToNext then
+    self._mover:Update(dtMS)
+    if self._mover:IsArrive() then
       self._mover = nil
-      ;
-      (self._pet):SetWaitElevatorTime((self._main):Time())
-      ;
-      (self._pet):Anim_Stand()
+      self._pet:SetWaitElevatorTime(self._main:Time())
+      self._pet:Anim_Stand()
       self._state = AircraftWaitElevState.WaitInLine
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaitElevator.Index = function(self)
-  -- function num : 0_2
+function AircraftPetWaitElevator:Index()
   return self._lineIdx
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaitElevator.ResetIndex = function(self, index, pos, wait)
-  -- function num : 0_3 , upvalues : _ENV
+function AircraftPetWaitElevator:ResetIndex(index, pos, wait)
   self._lineIdx = index
   self._targetPos = pos
   if self._state == AircraftWaitElevState.MoveToLine then
-    (self._mover):ResetTarget(self._targetPos)
-  else
-    if self._state == AircraftWaitElevState.WaitInLine then
-      self._mover = AircraftMover:New((self._pet):Transform(), self._targetPos, AircraftSpeed.Pet)
-      ;
-      ((self._pet):Transform()).forward = self._targetPos - (self._pet):WorldPosition()
-      ;
-      (self._pet):Anim_Walk()
-      ;
-      (self._mover):Begin()
-      self._state = AircraftWaitElevState.MoveToNext
-    else
-      if self._state == AircraftWaitElevState.MoveToNext then
-        (self._mover):ResetTarget(self._targetPos)
-      end
-    end
+    self._mover:ResetTarget(self._targetPos)
+  elseif self._state == AircraftWaitElevState.WaitInLine then
+    self._mover = AircraftMover:New(self._pet:Transform(), self._targetPos, AircraftSpeed.Pet)
+    self._pet:Transform().forward = self._targetPos - self._pet:WorldPosition()
+    self._pet:Anim_Walk()
+    self._mover:Begin()
+    self._state = AircraftWaitElevState.MoveToNext
+  elseif self._state == AircraftWaitElevState.MoveToNext then
+    self._mover:ResetTarget(self._targetPos)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaitElevator.CheckPet = function(self, pet)
-  -- function num : 0_4
-  do return (self._pet):PstID() == pet:PstID() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPetWaitElevator:CheckPet(pet)
+  return self._pet:PstID() == pet:PstID()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaitElevator.Pet = function(self)
-  -- function num : 0_5
+function AircraftPetWaitElevator:Pet()
   return self._pet
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPetWaitElevator.IsWaiting = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  do return self._state == AircraftWaitElevState.WaitInLine end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftPetWaitElevator:IsWaiting()
+  return self._state == AircraftWaitElevState.WaitInLine
 end
-
-

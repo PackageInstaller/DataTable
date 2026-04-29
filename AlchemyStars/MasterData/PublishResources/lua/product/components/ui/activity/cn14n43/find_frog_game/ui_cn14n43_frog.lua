@@ -1,291 +1,187 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/find_frog_game/ui_cn14n43_frog.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN14N43Frog", UICustomWidget)
 UICN14N43Frog = UICN14N43Frog
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN14N43Frog.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN14N43Frog:OnShow(uiParams)
   self.clickCallFun = nil
   self.frogID = -1
   self.idleClick = true
   self:InitWidget()
   if self._spine then
-    self._spineSke = (self._spine).CurrentSkeleton
+    self._spineSke = self._spine.CurrentSkeleton
     if not self._spineSke then
-      self._spineSke = (self._spine).CurrentMultiSkeleton
+      self._spineSke = self._spine.CurrentMultiSkeleton
     end
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
     if self._spineSke then
-      ((self:GetGameObject()).transform).localScale = Vector3.zero
-      ;
-      ((self._spineSke).AnimationState):SetAnimation(0, "Story_norm", true)
+      self:GetGameObject().transform.localScale = Vector3.zero
+      self._spineSke.AnimationState:SetAnimation(0, "Story_norm", true)
     end
   end
-  ;
-  ((GameGlobal.Timer)()):AddEvent(50, function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
+  GameGlobal.Timer():AddEvent(50, function()
     if self:GetGameObject() then
-      ((self:GetGameObject()).transform).localScale = Vector3.one
+      self:GetGameObject().transform.localScale = Vector3.one
     end
-  end
-)
-  local etl = (UICustomUIEventListener.Get)((self._clickBt).gameObject)
+  end)
+  local etl = UICustomUIEventListener.Get(self._clickBt.gameObject)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(ped)
-    -- function num : 0_0_1 , upvalues : self
     if not self.canDrag then
-      return 
+      return
     end
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(ped)
-    -- function num : 0_0_2 , upvalues : self, _ENV
     if not self.canDrag then
-      return 
+      return
     end
     local screenPos = ped.position
-    local pos = (UIHelper.ScreenPointToWorldPointInRectangle)((self._clickBtTran).parent, screenPos, self.controllerCamera)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._clickBtTran).position = pos
-  end
-)
+    local pos = UIHelper.ScreenPointToWorldPointInRectangle(self._clickBtTran.parent, screenPos, self.controllerCamera)
+    self._clickBtTran.position = pos
+  end)
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(ped)
-    -- function num : 0_0_3 , upvalues : self, _ENV
     if not self.canDrag then
-      return 
+      return
     end
-    if self:CheckInRecycleArea() and self.endDragFun then
-      (self.endDragFun)(self.frogID)
+    if self:CheckInRecycleArea() then
+      if self.endDragFun then
+        self.endDragFun(self.frogID)
+      end
+    else
+      self._clickBtTran.localPosition = Vector3(0, 0, 0)
     end
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._clickBtTran).localPosition = Vector3(0, 0, 0)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_0_4 , upvalues : self
     self:ClickBtnOnClick(go)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.OnHide = function(self)
-  -- function num : 0_1
+function UICN14N43Frog:OnHide()
   self._spineSke = nil
   self._spine = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.InitWidget = function(self)
-  -- function num : 0_2
+function UICN14N43Frog:InitWidget()
   self._spine = self:GetUIComponent("SpineLoader", "spine")
   self._clickBt = self:GetGameObject("ClickBtn")
-  self._clickBtTran = (self._clickBt).transform
+  self._clickBtTran = self._clickBt.transform
   self._RootAnim = self:GetUIComponent("Animation", "RootAnim")
   self._EffAnim = self:GetUIComponent("Animation", "EffAnim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.SetDragData = function(self, camera, area)
-  -- function num : 0_3
+function UICN14N43Frog:SetDragData(camera, area)
   self.controllerCamera = camera
   self.RecycleArea = area
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.SetPos = function(self, localV3)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self:GetGameObject()).transform).localPosition = localV3
+function UICN14N43Frog:SetPos(localV3)
+  self:GetGameObject().transform.localPosition = localV3
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.SetData = function(self, canDrag, frogID, clickCallFun, endDragFun)
-  -- function num : 0_5
+function UICN14N43Frog:SetData(canDrag, frogID, clickCallFun, endDragFun)
   self.canDrag = canDrag
   self.frogID = frogID
   self.clickCallFun = clickCallFun
   self.endDragFun = endDragFun
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.ClickBtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UICN14N43Frog:ClickBtnOnClick(go)
   if not self.idleClick then
-    return 
+    return
   end
   if self._spineSke then
-    local entry = ((self._spineSke).AnimationState):SetAnimation(0, "click1", false)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (((self._spine).AnimationState).Data).DefaultMix = 0
-    ;
-    (self._spineSke):Update(0)
+    local entry = self._spineSke.AnimationState:SetAnimation(0, "click1", false)
+    self._spine.AnimationState.Data.DefaultMix = 0
+    self._spineSke:Update(0)
     if entry then
       local anim = entry.Animation
       local duration = anim.Duration
-      local yieldTime = (math.floor)(duration * 1000)
+      local yieldTime = math.floor(duration * 1000)
       if self._spineEvent then
-        ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+        GameGlobal.Timer():CancelEvent(self._spineEvent)
         self._spineEvent = nil
       end
-      self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_6_0 , upvalues : self
-    if self._spineSke and self._spine then
-      ((self._spineSke).AnimationState):SetAnimation(0, "Story_norm", true)
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (((self._spine).AnimationState).Data).DefaultMix = 0
-      ;
-      (self._spineSke):Update(0)
+      self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
+        if self._spineSke and self._spine then
+          self._spineSke.AnimationState:SetAnimation(0, "Story_norm", true)
+          self._spine.AnimationState.Data.DefaultMix = 0
+          self._spineSke:Update(0)
+        end
+      end)
     end
   end
-)
-    end
-  end
-  do
-    if self.clickCallFun then
-      (self.clickCallFun)(self.frogID)
-    end
+  if self.clickCallFun then
+    self.clickCallFun(self.frogID)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.SetActive = function(self, bo)
-  -- function num : 0_7
+function UICN14N43Frog:SetActive(bo)
   local go = self:GetGameObject()
   if not go then
-    return 
+    return
   end
   go:SetActive(bo)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.ChangeIdx = function(self, idx)
-  -- function num : 0_8
+function UICN14N43Frog:ChangeIdx(idx)
   self.frogID = idx
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.CheckInRecycleArea = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local localPos = (self.RecycleArea):InverseTransformPoint((self._clickBtTran).position)
-  local isIn = ((self.RecycleArea).rect):Contains(localPos)
-  ;
-  (Log.debug)("[isIn] ", isIn)
+function UICN14N43Frog:CheckInRecycleArea()
+  local localPos = self.RecycleArea:InverseTransformPoint(self._clickBtTran.position)
+  local isIn = self.RecycleArea.rect:Contains(localPos)
+  Log.debug("[isIn] ", isIn)
   return isIn
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.GetMoveTran = function(self)
-  -- function num : 0_10
-  return (self._clickBt).transform
+function UICN14N43Frog:GetMoveTran()
+  return self._clickBt.transform
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.PlayInWater = function(self)
-  -- function num : 0_11
-  (self._RootAnim):Play("effanim_UICN14N43Frog_in")
+function UICN14N43Frog:PlayInWater()
+  self._RootAnim:Play("effanim_UICN14N43Frog_in")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.PlayOutWater = function(self)
-  -- function num : 0_12
-  (self._RootAnim):Play("effanim_UICN14N43Frog_out")
+function UICN14N43Frog:PlayOutWater()
+  self._RootAnim:Play("effanim_UICN14N43Frog_out")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.PlayMoveEff = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UICN14N43Frog:PlayMoveEff()
   if self._spineSke then
-    local entry = ((self._spineSke).AnimationState):SetAnimation(0, "jump", false)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (((self._spine).AnimationState).Data).DefaultMix = 0
-    ;
-    (self._spineSke):Update(0)
+    local entry = self._spineSke.AnimationState:SetAnimation(0, "jump", false)
+    self._spine.AnimationState.Data.DefaultMix = 0
+    self._spineSke:Update(0)
     if entry then
       self.idleClick = false
       local anim = entry.Animation
       local duration = anim.Duration
-      local yieldTime = (math.floor)(duration * 1000)
+      local yieldTime = math.floor(duration * 1000)
       if self._spineEvent then
-        ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+        GameGlobal.Timer():CancelEvent(self._spineEvent)
         self._spineEvent = nil
       end
-      self._spineEvent = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_13_0 , upvalues : self
-    if self._spineSke and self._spine then
-      ((self._spineSke).AnimationState):SetAnimation(0, "Story_norm", true)
-      -- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (((self._spine).AnimationState).Data).DefaultMix = 0
-      ;
-      (self._spineSke):Update(0)
-      self.idleClick = true
+      self._spineEvent = GameGlobal.Timer():AddEvent(yieldTime, function()
+        if self._spineSke and self._spine then
+          self._spineSke.AnimationState:SetAnimation(0, "Story_norm", true)
+          self._spine.AnimationState.Data.DefaultMix = 0
+          self._spineSke:Update(0)
+          self.idleClick = true
+        end
+      end)
     end
   end
-)
-    end
-  end
-  do
-    ;
-    (self._EffAnim):Play("effanim_UICN14N43Frog_eff_out")
-  end
+  self._EffAnim:Play("effanim_UICN14N43Frog_eff_out")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43Frog.PlayCollectOver = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UICN14N43Frog:PlayCollectOver()
   if self._spineSke then
-    local entry = ((self._spineSke).AnimationState):SetAnimation(0, "click1", false)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (((self._spine).AnimationState).Data).DefaultMix = 0
-    ;
-    (self._spineSke):Update(0)
+    local entry = self._spineSke.AnimationState:SetAnimation(0, "click1", false)
+    self._spine.AnimationState.Data.DefaultMix = 0
+    self._spineSke:Update(0)
     if entry then
       if self._spineEvent then
-        ((GameGlobal.Timer)()):CancelEvent(self._spineEvent)
+        GameGlobal.Timer():CancelEvent(self._spineEvent)
         self._spineEvent = nil
       end
-      self._spineEvent = ((GameGlobal.Timer)()):AddEvent(260, function()
-    -- function num : 0_14_0 , upvalues : self
-    self:SetActive(false)
-  end
-)
+      self._spineEvent = GameGlobal.Timer():AddEvent(260, function()
+        self:SetActive(false)
+      end)
     end
   end
 end
-
-

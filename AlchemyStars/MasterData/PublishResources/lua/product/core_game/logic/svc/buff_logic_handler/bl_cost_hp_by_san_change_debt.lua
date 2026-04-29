@@ -1,45 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_cost_hp_by_san_change_debt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicCostHPBySanChangeDebt", BuffLogicBase)
 BuffLogicCostHPBySanChangeDebt = BuffLogicCostHPBySanChangeDebt
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicCostHPBySanChangeDebt.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicCostHPBySanChangeDebt:Constructor(buffInstance, logicParam)
   self._damagePercent = logicParam.damagePercent
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicCostHPBySanChangeDebt.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicCostHPBySanChangeDebt:DoLogic(notify)
   if not NTSanValueChange:IsInstanceOfType(notify) then
-    return 
+    return
   end
-  if (self._entity):HasDeadMark() or (self._entity):HasPetDeadMark() then
-    return 
+  if self._entity:HasDeadMark() or self._entity:HasPetDeadMark() then
+    return
   end
-  local e = (self._buffInstance):Entity()
+  local e = self._buffInstance:Entity()
   local attrCmpt = e:Attributes()
   local maxHp = attrCmpt:CalcMaxHp()
   if maxHp <= 0 then
-    return 
+    return
   end
   local debtVal = notify:GetDebtValue()
   if debtVal <= 0 then
-    return 
+    return
   end
   local costPercent = self._damagePercent * debtVal
   local casterEntity = self:GetCasterEntity()
   if casterEntity:EntityType() == nil then
     casterEntity = e
   end
-  local blsvc = (self._world):GetService("BuffLogic")
-  local damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), casterEntity, e, {percent = costPercent, formulaID = 10})
+  local blsvc = self._world:GetService("BuffLogic")
+  local damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), casterEntity, e, {percent = costPercent, formulaID = 10})
   return BuffResultCostHPBySanChangeDebt:New(damageInfo, notify)
 end
-
-

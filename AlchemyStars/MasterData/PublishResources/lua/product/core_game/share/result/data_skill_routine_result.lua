@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_skill_routine_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataSkillRoutineResult", Object)
 DataSkillRoutineResult = DataSkillRoutineResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSkillRoutineResult.Constructor = function(self, eid, res, key)
-  -- function num : 0_0
+function DataSkillRoutineResult:Constructor(eid, res, key)
   self._entityId = eid
   self._result = res
   self._key = key
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSkillRoutineResult.GetResult = function(self)
-  -- function num : 0_1
+function DataSkillRoutineResult:GetResult()
   return self._result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSkillRoutineResult.GetEntityID = function(self)
-  -- function num : 0_2
+function DataSkillRoutineResult:GetEntityID()
   return self._entityId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSkillRoutineResult.GetKey = function(self)
-  -- function num : 0_3
+function DataSkillRoutineResult:GetKey()
   return self._key
 end
-
-

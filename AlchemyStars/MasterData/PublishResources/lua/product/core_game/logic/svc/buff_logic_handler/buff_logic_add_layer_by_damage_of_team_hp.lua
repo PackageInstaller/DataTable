@@ -1,52 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_layer_by_damage_of_team_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddLayerByDamageOfTeamHp", BuffLogicBase)
 BuffLogicAddLayerByDamageOfTeamHp = BuffLogicAddLayerByDamageOfTeamHp
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddLayerByDamageOfTeamHp.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._mulValue = logicParam.mulValue or 1
-    self._addValue = logicParam.addValue or 0
-  end
+function BuffLogicAddLayerByDamageOfTeamHp:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._mulValue = logicParam.mulValue or 1
+  self._addValue = logicParam.addValue or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddLayerByDamageOfTeamHp.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddLayerByDamageOfTeamHp:DoLogic(notify)
   if not notify.GetDamage then
-    return 
+    return
   end
   local damage = notify:GetDamage()
   if damage <= 0 then
-    return 
+    return
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local calcDamageService = (self._world):GetService("CalcDamage")
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local calcDamageService = self._world:GetService("CalcDamage")
   local curHp, maxHp = calcDamageService:GetTeamLogicHP(teamEntity)
-  do
-    if (self._world):MatchType() == MatchType.MT_Maze or (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
-      local attrCmpt = (self._entity):Attributes()
-      maxHp = attrCmpt:CalcMaxHp()
-      curHp = attrCmpt:GetCurrentHP()
-    end
-    local losePercent = damage / maxHp
-    local addLayer = (math.ceil)(losePercent / self._mulValue) + self._addValue
-    if addLayer == 0 then
-      return 
-    end
-    local svc = (self._world):GetService("BuffLogic")
-    local curMarkLayer, buffinst = svc:AddBuffLayer(self._entity, self._layerType, addLayer)
-    local buffResult = BuffResultAddLayerByDamageOfTeamHp:New(curMarkLayer, buffinst:BuffSeq(), addLayer)
-    return buffResult
+  if self._world:MatchType() == MatchType.MT_Maze or self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze then
+    local attrCmpt = self._entity:Attributes()
+    maxHp = attrCmpt:CalcMaxHp()
+    curHp = attrCmpt:GetCurrentHP()
   end
+  local losePercent = damage / maxHp
+  local addLayer = math.ceil(losePercent / self._mulValue) + self._addValue
+  if addLayer == 0 then
+    return
+  end
+  local svc = self._world:GetService("BuffLogic")
+  local curMarkLayer, buffinst = svc:AddBuffLayer(self._entity, self._layerType, addLayer)
+  local buffResult = BuffResultAddLayerByDamageOfTeamHp:New(curMarkLayer, buffinst:BuffSeq(), addLayer)
+  return buffResult
 end
-
-

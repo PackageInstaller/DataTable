@@ -1,143 +1,133 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sign_in/ui_sign_in_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISignInController", UIController)
 UISignInController = UISignInController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISignInController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISignInController:LoadDataOnEnter(TT, res, uiParams)
   self._module = self:GetModule(SignInModule)
   if uiParams[1] then
     self._showType = uiParams[1]
   else
     self._showType = UISignInShowType.EVERYDAY
   end
-  self._str2anim = {ShowEveryDayInfo = "uieff_SignIn_SwitchToDaily_new", ShowTotalInfo = "uieff_SignIn_SwitchToTotal_new"}
-  local resState = nil
-  local result, msg = (self._module):GetCurMonthData(TT)
+  self._str2anim = {
+    ShowEveryDayInfo = "uieff_SignIn_SwitchToDaily_new",
+    ShowTotalInfo = "uieff_SignIn_SwitchToTotal_new"
+  }
+  local resState
+  local result, msg = self._module:GetCurMonthData(TT)
   if result:GetSucc() then
     resState = true
     self._data = msg.sign_in_base_info
-    self._currentDay = ((self._data).RoleSignInState).sign_in_days
-    self._currentDaySignIn = (self._module):IsSignInToday()
+    self._currentDay = self._data.RoleSignInState.sign_in_days
+    self._currentDaySignIn = self._module:IsSignInToday()
   else
     resState = false
   end
-  do
-    if resState then
-      local res2, msg2 = (self._module):TotalLoginReq(TT)
-      if res2:GetSucc() then
-        self._totalData = msg2.total_login_info
-        self._currentTotalDay = msg2.nTotalLoginDays
-        resState = true
-      else
-        resState = false
-      end
+  if resState then
+    local res2, msg2 = self._module:TotalLoginReq(TT)
+    if res2:GetSucc() then
+      self._totalData = msg2.total_login_info
+      self._currentTotalDay = msg2.nTotalLoginDays
+      resState = true
+    else
+      resState = false
     end
-    res:SetSucc(resState)
   end
+  res:SetSucc(resState)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISignInController:OnShow(uiParams)
   self:_GetComponents()
   self:SetWakeUpFrom()
-  self._error2str = {[SIGN_IN_RESULT_CODE.SIGN_IN_INVALID] = "str_sign_in_SIGN_IN_INVALID", [SIGN_IN_RESULT_CODE.SIGN_IN_MON_SIGN_DATA_INVALID] = "str_sign_in_SIGN_IN_MON_SIGN_DATA_INVALID", [SIGN_IN_RESULT_CODE.SIGN_IN_TODAY_IS_SIGN] = "str_sign_in_SIGN_IN_TODAY_IS_SIGN", [SIGN_IN_RESULT_CODE.SIGN_IN_FULL] = "str_sign_in_SIGN_IN_FULL", [SIGN_IN_RESULT_CODE.SIGN_IN_NOT_SIGN_CANT_RE_SIGN] = "str_sign_in_SIGN_IN_NOT_SIGN_CANT_RE_SIGN", [SIGN_IN_RESULT_CODE.SIGN_IN_RE_SIGN_VIG_POINT] = "str_sign_in_SIGN_IN_RE_SIGN_VIG_POINT", [SIGN_IN_RESULT_CODE.SIGN_IN_TOTAL_LOGIN_DAYS_INVALID] = "str_sign_in_SIGN_IN_TOTAL_LOGIN_DAYS_INVALID", [SIGN_IN_RESULT_CODE.SIGN_IN_TOTAL_LOGIN_IS_RECVED] = "str_sign_in_SIGN_IN_TOTAL_LOGIN_IS_RECVED", [SIGN_IN_RESULT_CODE.SIGN_IN_TOTAL_LOGIN_NOT_ENOUGH] = "str_sign_in_SIGN_IN_TOTAL_LOGIN_NOT_ENOUGH", [SIGN_IN_RESULT_CODE.SIGN_IN_IS_RE_SIGNED] = "str_sign_in_SIGN_IN_IS_RE_SIGNED"}
-  self._petModule = (GameGlobal.GetModule)(PetModule)
+  self._error2str = {
+    [SIGN_IN_RESULT_CODE.SIGN_IN_INVALID] = "str_sign_in_SIGN_IN_INVALID",
+    [SIGN_IN_RESULT_CODE.SIGN_IN_MON_SIGN_DATA_INVALID] = "str_sign_in_SIGN_IN_MON_SIGN_DATA_INVALID",
+    [SIGN_IN_RESULT_CODE.SIGN_IN_TODAY_IS_SIGN] = "str_sign_in_SIGN_IN_TODAY_IS_SIGN",
+    [SIGN_IN_RESULT_CODE.SIGN_IN_FULL] = "str_sign_in_SIGN_IN_FULL",
+    [SIGN_IN_RESULT_CODE.SIGN_IN_NOT_SIGN_CANT_RE_SIGN] = "str_sign_in_SIGN_IN_NOT_SIGN_CANT_RE_SIGN",
+    [SIGN_IN_RESULT_CODE.SIGN_IN_RE_SIGN_VIG_POINT] = "str_sign_in_SIGN_IN_RE_SIGN_VIG_POINT",
+    [SIGN_IN_RESULT_CODE.SIGN_IN_TOTAL_LOGIN_DAYS_INVALID] = "str_sign_in_SIGN_IN_TOTAL_LOGIN_DAYS_INVALID",
+    [SIGN_IN_RESULT_CODE.SIGN_IN_TOTAL_LOGIN_IS_RECVED] = "str_sign_in_SIGN_IN_TOTAL_LOGIN_IS_RECVED",
+    [SIGN_IN_RESULT_CODE.SIGN_IN_TOTAL_LOGIN_NOT_ENOUGH] = "str_sign_in_SIGN_IN_TOTAL_LOGIN_NOT_ENOUGH",
+    [SIGN_IN_RESULT_CODE.SIGN_IN_IS_RE_SIGNED] = "str_sign_in_SIGN_IN_IS_RE_SIGNED"
+  }
+  self._petModule = GameGlobal.GetModule(PetModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._itemCountPerRow = 1
-  self.type2btnStr = {[UISignInShowType.EVERYDAY] = "str_sign_in_btn_str_sign_in", [UISignInShowType.TOTAL] = "str_sign_in_btn_str_total"}
-  self._activeMakeUpValue = (self._module):ReSignInNeedVigPoint()
+  self.type2btnStr = {
+    [UISignInShowType.EVERYDAY] = "str_sign_in_btn_str_sign_in",
+    [UISignInShowType.TOTAL] = "str_sign_in_btn_str_total"
+  }
+  self._activeMakeUpValue = self._module:ReSignInNeedVigPoint()
   if self._showType == UISignInShowType.EVERYDAY then
-    self._currentDaySignIn = (self._module):IsSignInToday()
+    self._currentDaySignIn = self._module:IsSignInToday()
     self:ShowEveryDayInfo()
-    local nextSignInTime = (self._module):GetNextSignInTime()
-    local currTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+    local nextSignInTime = self._module:GetNextSignInTime()
+    local currTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
     local timeStamp = nextSignInTime - currTime
     if timeStamp < 0 then
       timeStamp = 0
     end
-    local timeStr = (HelperProxy:GetInstance()):FormatTime(timeStamp)
-    ;
-    (self._timeDownText):SetText(timeStr)
+    local timeStr = HelperProxy:GetInstance():FormatTime(timeStamp)
+    self._timeDownText:SetText(timeStr)
     if self._currentDaySignIn then
       self:TimeDown()
     else
       self:CheckAndSignIn()
     end
   else
-    do
-      self:TimeDown()
-      self:ShowTotalInfo()
-      self:_OnValue()
-      self:BtnState()
-      self:ShowActBox()
-    end
+    self:TimeDown()
+    self:ShowTotalInfo()
   end
+  self:_OnValue()
+  self:BtnState()
+  self:ShowActBox()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ShowActBox = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISignInController:ShowActBox()
   local startTime, endTime = self:GetCheckTimeStr(self._currentDay)
   if startTime then
     self._startTime = startTime
     self._endTime = endTime
-    ;
-    (self._actBox):SetActive(true)
-    local month = (self._data).nMonth
-    local tips = (StringTable.Get)("str_sign_in_act_box_tips", (StringTable.Get)("str_sign_in_month_by_num_" .. month))
-    ;
-    (self._actBoxTips):SetText(tips)
+    self._actBox:SetActive(true)
+    local month = self._data.nMonth
+    local tips = StringTable.Get("str_sign_in_act_box_tips", StringTable.Get("str_sign_in_month_by_num_" .. month))
+    self._actBoxTips:SetText(tips)
   else
-    do
-      ;
-      (self._actBox):SetActive(false)
-    end
+    self._actBox:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.GetCheckTimeStr = function(self, dday)
-  -- function num : 0_3 , upvalues : _ENV
+function UISignInController:GetCheckTimeStr(dday)
   local day = dday
   if day <= 0 then
     day = 1
   end
-  local month = (self._data).nMonth
-  local year = (self._data).nYear
+  local month = self._data.nMonth
+  local year = self._data.nYear
   local time = "12:00:00"
-  local concatList = {year, "-", month, "-", day, " ", time}
-  local str = (table.concat)(concatList)
-  local cfg, startTime, endTime = (self._module):GetActivityTime(str)
+  local concatList = {
+    year,
+    "-",
+    month,
+    "-",
+    day,
+    " ",
+    time
+  }
+  local str = table.concat(concatList)
+  local cfg, startTime, endTime = self._module:GetActivityTime(str)
   return startTime, endTime
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ActBoxBgOnClick = function(self, go)
-  -- function num : 0_4
+function UISignInController:ActBoxBgOnClick(go)
   self:ShowDialog("UISignInActBoxTipsController", self._endTime)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UISignInController:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController._GetComponents = function(self)
-  -- function num : 0_6
+function UISignInController:_GetComponents()
   local s = self:GetUIComponent("UISelectObjectPath", "itemInfo")
   self._tips = s:SpawnObject("UISelectInfo")
   self._anim = self:GetUIComponent("Animation", "UICanvas")
@@ -169,72 +159,52 @@ UISignInController._GetComponents = function(self)
   self._t_select = self:GetGameObject("t_select")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ShowEveryDayInfo = function(self, anim, hideCellAnim)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._everyDayTr):SetAsLastSibling()
-  self._currentMonth = (self._data).nMonth
+function UISignInController:ShowEveryDayInfo(anim, hideCellAnim)
+  self._everyDayTr:SetAsLastSibling()
+  self._currentMonth = self._data.nMonth
   self:TodayActive()
   self:ShowDays(anim, hideCellAnim)
   self:ShowTitle()
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._totalCanvasGroup).blocksRaycasts = false
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._everyDayCanvasGroup).blocksRaycasts = true
+  self._totalCanvasGroup.blocksRaycasts = false
+  self._everyDayCanvasGroup.blocksRaycasts = true
   if anim then
     self:Lock("UISignInController:ShowEveryDayInfo")
-    ;
-    (self._anim):Play((self._str2anim).ShowEveryDayInfo)
+    self._anim:Play(self._str2anim.ShowEveryDayInfo)
     self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    YIELD(TT, 500)
-    self:UnLock("UISignInController:ShowEveryDayInfo")
-  end
-, self)
+      YIELD(TT, 500)
+      self:UnLock("UISignInController:ShowEveryDayInfo")
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.CheckAndSignIn = function(self, total)
-  -- function num : 0_8 , upvalues : _ENV
+function UISignInController:CheckAndSignIn(total)
   self:Lock("UISignInController:CheckAndSignIn")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnCheckAndSignIn, self, total)
+  GameGlobal.TaskManager():StartTask(self.OnCheckAndSignIn, self, total)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.OnCheckAndSignIn = function(self, TT, total)
-  -- function num : 0_9 , upvalues : _ENV
-  local res, msg = (self._module):SignInTodayReq(TT, false)
+function UISignInController:OnCheckAndSignIn(TT, total)
+  local res, msg = self._module:SignInTodayReq(TT, false)
   self:UnLock("UISignInController:CheckAndSignIn")
   if not self.view then
-    (Log.debug)("###[UISignInController] not view return !")
-    return 
+    Log.debug("###[UISignInController] not view return !")
+    return
   end
   if res and res:GetSucc() then
     self._data = msg.sign_in_base_info
     local activityAwards = msg.act_assets
-    self._currentDay = ((self._data).RoleSignInState).sign_in_days
-    ;
-    (Log.debug)("###[UISignInController] OnCheckAndSignIn succ ! day --> ", self._currentDay)
+    self._currentDay = self._data.RoleSignInState.sign_in_days
+    Log.debug("###[UISignInController] OnCheckAndSignIn succ ! day --> ", self._currentDay)
     self:ShowEveryDayInfo()
-    self._currentDaySignIn = (self._module):IsSignInToday()
+    self._currentDaySignIn = self._module:IsSignInToday()
     self:Lock("PlaySignInAnim")
     YIELD(TT, 633)
-    local itemPrefab = (self._items)[self._currentDay]
+    local itemPrefab = self._items[self._currentDay]
     itemPrefab:ShowGetting(true)
     itemPrefab:PlayAnim()
     YIELD(TT, 1067)
     if not self.view then
-      (Log.debug)("###[UISignInController] not view return !")
-      return 
+      Log.debug("###[UISignInController] not view return !")
+      return
     end
     itemPrefab:ShowGetting(false)
     self:UnLock("PlaySignInAnim")
@@ -243,174 +213,127 @@ UISignInController.OnCheckAndSignIn = function(self, TT, total)
     self:TimeDown()
     self:BtnState()
   else
-    do
-      do
-        local errorCode = res:GetResult()
-        ;
-        (Log.error)("###[UISignInController] CheckAndSignIn fail ! result --> ", errorCode)
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)((self._error2str)[errorCode]))
-        if total then
-          self:Lock("UISignInController:CheckAndSignIn-2")
-          local res2, msg2 = (self._module):TotalLoginReq(TT)
-          self:UnLock("UISignInController:CheckAndSignIn-2")
-          if res2:GetSucc() then
-            self._totalData = msg2.total_login_info
-            self._currentTotalDay = msg2.nTotalLoginDays
-            self:TotalLoginDayCount()
-            self:ShowTotalAwards()
-            self:BtnState()
-          else
-            local errorCode = res2:GetResult()
-            ;
-            (Log.error)("###[UISignInController] CheckAndSignIn fail ! result --> ", errorCode)
-            ;
-            (ToastManager.ShowToast)((StringTable.Get)((self._error2str)[errorCode]))
-          end
-        end
-        do
-          self:ShowActBox()
-        end
-      end
+    local errorCode = res:GetResult()
+    Log.error("###[UISignInController] CheckAndSignIn fail ! result --> ", errorCode)
+    ToastManager.ShowToast(StringTable.Get(self._error2str[errorCode]))
+  end
+  if total then
+    self:Lock("UISignInController:CheckAndSignIn-2")
+    local res2, msg2 = self._module:TotalLoginReq(TT)
+    self:UnLock("UISignInController:CheckAndSignIn-2")
+    if res2:GetSucc() then
+      self._totalData = msg2.total_login_info
+      self._currentTotalDay = msg2.nTotalLoginDays
+      self:TotalLoginDayCount()
+      self:ShowTotalAwards()
+      self:BtnState()
+    else
+      local errorCode = res2:GetResult()
+      Log.error("###[UISignInController] CheckAndSignIn fail ! result --> ", errorCode)
+      ToastManager.ShowToast(StringTable.Get(self._error2str[errorCode]))
     end
   end
+  self:ShowActBox()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.PlayAnim = function(self, activityAwards)
-  -- function num : 0_10 , upvalues : _ENV
+function UISignInController:PlayAnim(activityAwards)
   local awardList = {}
-  local awards = ((self._days)[self._currentDay]).Items
-  ;
-  (table.insert)(awardList, awards)
-  if activityAwards and #activityAwards > 0 then
+  local awards = self._days[self._currentDay].Items
+  table.insert(awardList, awards)
+  if activityAwards and 0 < #activityAwards then
     for i = 1, #activityAwards do
       local award = activityAwards[i]
-      ;
-      (table.insert)(awardList, award)
+      table.insert(awardList, award)
     end
   end
-  do
-    local tempPets = {}
-    if #awardList > 0 then
-      for i = 1, #awardList do
-        local ispet = (self._petModule):IsPetID((awardList[i]).assetid)
-        if ispet then
-          (table.insert)(tempPets, awardList[i])
-        end
+  local tempPets = {}
+  if 0 < #awardList then
+    for i = 1, #awardList do
+      local ispet = self._petModule:IsPetID(awardList[i].assetid)
+      if ispet then
+        table.insert(tempPets, awardList[i])
       end
     end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_10_0 , upvalues : _ENV, self, awardList
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
+  end
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", awardList)
+    end)
+  else
     self:ShowDialog("UIGetItemController", awardList)
-  end
-)
-      else
-        self:ShowDialog("UIGetItemController", awardList)
-      end
-    end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ShowDays = function(self, addYieldTime, hideAnim)
-  -- function num : 0_11 , upvalues : _ENV
+function UISignInController:ShowDays(addYieldTime, hideAnim)
   self._days = {}
-  local awardList = (self._data).MonthInfo
+  local awardList = self._data.MonthInfo
   local canMakeUp = false
   for i = 1, #awardList do
     local award = awardList[i]
     local got = false
     if i < self._currentDay then
       got = true
-    else
-      if i == self._currentDay and self._currentDaySignIn then
-        got = true
-      end
+    elseif i == self._currentDay and self._currentDaySignIn then
+      got = true
     end
     local itemCanMakeUp = false
-    if not got and not canMakeUp and (self._module):IsReSignInToday() then
+    if not got and not canMakeUp and self._module:IsReSignInToday() then
       itemCanMakeUp = true
       canMakeUp = true
     end
     local data = UISignInAwardData:New(i, award.nDay, award.reward, award.reward_is_good, got, itemCanMakeUp)
-    ;
-    (table.insert)(self._days, data)
+    table.insert(self._days, data)
   end
   local spawnCount = #self._days
-  ;
-  (self._dayPool):SpawnObjects("UISignInEveryDayItem", spawnCount)
-  self._items = (self._dayPool):GetAllSpawnList()
+  self._dayPool:SpawnObjects("UISignInEveryDayItem", spawnCount)
+  self._items = self._dayPool:GetAllSpawnList()
   for i = 1, #self._items do
-    local dayData = nil
-    if i <= (table.count)(self._days) then
-      dayData = (self._days)[i]
+    local dayData
+    if i <= table.count(self._days) then
+      dayData = self._days[i]
     else
       dayData = nil
     end
-    local yieldTime = nil
+    local yieldTime
     if not hideAnim then
       yieldTime = (i - 1) // 7 * 60
     end
     if addYieldTime then
       yieldTime = yieldTime + 50
     end
-    ;
-    ((self._items)[i]):SetData(dayData, self._currentDay, function()
-    -- function num : 0_11_0 , upvalues : self
-    self:CheckAndSignIn()
-  end
-, function(matid, pos)
-    -- function num : 0_11_1 , upvalues : self
-    self:ShowItemInfo(matid, pos)
-  end
-, function(idx)
-    -- function num : 0_11_2 , upvalues : self
-    self:MakeUpDay(idx)
-  end
-, function(day)
-    -- function num : 0_11_3 , upvalues : self
-    return self:CheckActBoxByDay(day)
-  end
-, yieldTime)
+    self._items[i]:SetData(dayData, self._currentDay, function()
+      self:CheckAndSignIn()
+    end, function(matid, pos)
+      self:ShowItemInfo(matid, pos)
+    end, function(idx)
+      self:MakeUpDay(idx)
+    end, function(day)
+      return self:CheckActBoxByDay(day)
+    end, yieldTime)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.CheckActBoxByDay = function(self, day)
-  -- function num : 0_12
+function UISignInController:CheckActBoxByDay(day)
   return self:GetCheckTimeStr(day)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.MakeUpDay = function(self, idx)
-  -- function num : 0_13 , upvalues : _ENV
+function UISignInController:MakeUpDay(idx)
   self:Lock("UISignInController:MakeUpDay(idx)")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnMakeUpDay, self, idx)
+  GameGlobal.TaskManager():StartTask(self.OnMakeUpDay, self, idx)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.OnMakeUpDay = function(self, TT, idx)
-  -- function num : 0_14 , upvalues : _ENV
-  local res, msg = (self._module):SignInTodayReq(TT, true)
+function UISignInController:OnMakeUpDay(TT, idx)
+  local res, msg = self._module:SignInTodayReq(TT, true)
   self:UnLock("UISignInController:MakeUpDay(idx)")
   if res and res:GetSucc() then
     self._data = msg.sign_in_base_info
     local activityAwards = msg.act_assets
-    self._currentDay = ((self._data).RoleSignInState).sign_in_days
-    self._currentDaySignIn = (self._module):IsSignInToday()
+    self._currentDay = self._data.RoleSignInState.sign_in_days
+    self._currentDaySignIn = self._module:IsSignInToday()
     self:TodayActive()
     self:Lock("PlaySignInAnim")
-    local itemPrefab = (self._items)[idx]
+    local itemPrefab = self._items[idx]
     itemPrefab:ShowGetting(true)
     itemPrefab:MakeUpAnim()
     YIELD(TT, 867)
@@ -418,92 +341,68 @@ UISignInController.OnMakeUpDay = function(self, TT, idx)
     self:UnLock("PlaySignInAnim")
     self:MakeUpAnim(idx, activityAwards)
   else
-    do
-      ;
-      (Log.fatal)("###[UISignInController] self._module:MakeUpDay fail ! error --> ", res:GetResult())
-    end
+    Log.fatal("###[UISignInController] self._module:MakeUpDay fail ! error --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.MakeUpAnim = function(self, idx, activityAwards)
-  -- function num : 0_15 , upvalues : _ENV
-  local data = (self._days)[idx]
+function UISignInController:MakeUpAnim(idx, activityAwards)
+  local data = self._days[idx]
   local awards = {}
   local tempAwards = data.Items
-  ;
-  (table.insert)(awards, tempAwards)
-  if activityAwards and #activityAwards > 0 then
+  table.insert(awards, tempAwards)
+  if activityAwards and 0 < #activityAwards then
     for i = 1, #activityAwards do
       local award = activityAwards[i]
-      ;
-      (table.insert)(awards, award)
+      table.insert(awards, award)
     end
   end
-  do
-    local tempPets = {}
-    if #awards > 0 then
-      for i = 1, #awards do
-        local ispet = (self._petModule):IsPetID((awards[i]).assetid)
-        if ispet then
-          (table.insert)(tempPets, awards[i])
-        end
+  local tempPets = {}
+  if 0 < #awards then
+    for i = 1, #awards do
+      local ispet = self._petModule:IsPetID(awards[i].assetid)
+      if ispet then
+        table.insert(tempPets, awards[i])
       end
     end
-    do
-      if #tempPets > 0 then
-        self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_15_0 , upvalues : _ENV, self, awards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
+  end
+  if 0 < #tempPets then
+    self:ShowDialog("UIPetObtain", tempPets, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", awards)
+    end)
+  else
     self:ShowDialog("UIGetItemController", awards)
   end
-)
-      else
-        self:ShowDialog("UIGetItemController", awards)
-      end
-      self:ShowDays(false, true)
-    end
-  end
+  self:ShowDays(false, true)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.TimeDown = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UISignInController:TimeDown()
   self:ShowTime()
   if self._timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+    GameGlobal.Timer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
-  self._timeEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_16_0 , upvalues : self
+  self._timeEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:ShowTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ShowTime = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local nextSignInTime = (self._module):GetNextSignInTime()
-  local currTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UISignInController:ShowTime()
+  local nextSignInTime = self._module:GetNextSignInTime()
+  local currTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local timeStamp = nextSignInTime - currTime
-  do
-    -- DECOMPILER ERROR at PC24: Unhandled construct in 'MakeBoolean' P1
-
-    if timeStamp >= 0 and self._showType == UISignInShowType.EVERYDAY then
-      local timeStr = (HelperProxy:GetInstance()):FormatTime(timeStamp)
-      ;
-      (self._timeDownText):SetText(timeStr)
+  if 0 <= timeStamp then
+    if self._showType == UISignInShowType.EVERYDAY then
+      local timeStr = HelperProxy:GetInstance():FormatTime(timeStamp)
+      self._timeDownText:SetText(timeStr)
     end
-    self._currentDaySignIn = (self._module):IsSignInToday()
+  else
+    self._currentDaySignIn = self._module:IsSignInToday()
     if self._currentDaySignIn then
-      return 
+      return
     end
     if self._timeEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+      GameGlobal.Timer():CancelEvent(self._timeEvent)
       self._timeEvent = nil
     end
     if self._showType == UISignInShowType.EVERYDAY then
@@ -514,173 +413,115 @@ UISignInController.ShowTime = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.RefreshData = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.OnRefreshData, self)
+function UISignInController:RefreshData()
+  GameGlobal.TaskManager():StartTask(self.OnRefreshData, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.OnRefreshData = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function UISignInController:OnRefreshData(TT)
   self:Lock("UISignInController:OnRefreshData")
-  local res1, msg1 = (self._module):GetCurMonthData(TT)
+  local res1, msg1 = self._module:GetCurMonthData(TT)
   self:UnLock("UISignInController:OnRefreshData")
   if res1:GetSucc() then
     self._data = msg1.sign_in_base_info
-    self._currentDay = ((self._data).RoleSignInState).sign_in_days
-    self._currentDaySignIn = (self._module):IsSignInToday()
+    self._currentDay = self._data.RoleSignInState.sign_in_days
+    self._currentDaySignIn = self._module:IsSignInToday()
   else
     local errorCode = res1:GetResult()
-    ;
-    (Log.error)("###[UISignInController] OnRefreshData fail ! result --> ", errorCode)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)((self._error2str)[errorCode]))
+    Log.error("###[UISignInController] OnRefreshData fail ! result --> ", errorCode)
+    ToastManager.ShowToast(StringTable.Get(self._error2str[errorCode]))
   end
-  do
-    self:Lock("UISignInController:OnRefreshData-2")
-    local res2, msg2 = (self._module):TotalLoginReq(TT)
-    self:UnLock("UISignInController:OnRefreshData-2")
-    if res2:GetSucc() then
-      self._totalData = msg2.total_login_info
-      self._currentTotalDay = msg2.nTotalLoginDays
-      self:ShowTotalInfo()
-      self:TimeDown()
-      self:BtnState()
-    else
-      local errorCode = res2:GetResult()
-      ;
-      (Log.error)("###[UISignInController] OnRefreshData fail ! result --> ", errorCode)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)((self._error2str)[errorCode]))
-    end
-    do
-      self:ShowActBox()
-    end
+  self:Lock("UISignInController:OnRefreshData-2")
+  local res2, msg2 = self._module:TotalLoginReq(TT)
+  self:UnLock("UISignInController:OnRefreshData-2")
+  if res2:GetSucc() then
+    self._totalData = msg2.total_login_info
+    self._currentTotalDay = msg2.nTotalLoginDays
+    self:ShowTotalInfo()
+    self:TimeDown()
+    self:BtnState()
+  else
+    local errorCode = res2:GetResult()
+    Log.error("###[UISignInController] OnRefreshData fail ! result --> ", errorCode)
+    ToastManager.ShowToast(StringTable.Get(self._error2str[errorCode]))
   end
+  self:ShowActBox()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.TodayActive = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISignInController:TodayActive()
   local questModule = self:GetModule(QuestModule)
   local activePoint = questModule:GetDailyQuestVigorous()
-  ;
-  (self._activePointTextValue):SetText(activePoint)
-  ;
-  (self._activePointTipsText):SetText((StringTable.Get)("str_sign_in_make_up_tips", self._activeMakeUpValue))
+  self._activePointTextValue:SetText(activePoint)
+  self._activePointTipsText:SetText(StringTable.Get("str_sign_in_make_up_tips", self._activeMakeUpValue))
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ShowTitle = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local monthStr = (StringTable.Get)("str_sign_in_title_month_by_num_" .. tostring(self._currentMonth))
-  ;
-  (self._e_title):SetText((StringTable.Get)("str_sign_in_current_month_2", "<color=#ffffff>" .. monthStr .. "</color>"))
-  ;
-  (self._e_title2):SetText((StringTable.Get)("str_sign_in_current_month_2", monthStr))
+function UISignInController:ShowTitle()
+  local monthStr = StringTable.Get("str_sign_in_title_month_by_num_" .. tostring(self._currentMonth))
+  self._e_title:SetText(StringTable.Get("str_sign_in_current_month_2", "<color=#ffffff>" .. monthStr .. "</color>"))
+  self._e_title2:SetText(StringTable.Get("str_sign_in_current_month_2", monthStr))
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ShowTotalInfo = function(self, anim)
-  -- function num : 0_22 , upvalues : _ENV
-  (self._totalTr):SetAsLastSibling()
+function UISignInController:ShowTotalInfo(anim)
+  self._totalTr:SetAsLastSibling()
   self:TotalLoginDayCount()
   self:ShowTotalAwards(anim)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._totalCanvasGroup).blocksRaycasts = true
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._everyDayCanvasGroup).blocksRaycasts = false
+  self._totalCanvasGroup.blocksRaycasts = true
+  self._everyDayCanvasGroup.blocksRaycasts = false
   if anim then
     self:Lock("UISignInController:ShowTotalInfo")
-    ;
-    (self._anim):Play((self._str2anim).ShowTotalInfo)
+    self._anim:Play(self._str2anim.ShowTotalInfo)
     self:StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : _ENV, self
-    YIELD(TT, 733)
-    self:UnLock("UISignInController:ShowTotalInfo")
-  end
-, self)
+      YIELD(TT, 733)
+      self:UnLock("UISignInController:ShowTotalInfo")
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.TotalLoginDayCount = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  (self._totalLogin):SetText((StringTable.Get)("str_sign_in_day_str", self._currentTotalDay))
-  ;
-  (self._totalLogin2):SetText((StringTable.Get)("str_sign_in_day_str", self._currentTotalDay))
+function UISignInController:TotalLoginDayCount()
+  self._totalLogin:SetText(StringTable.Get("str_sign_in_day_str", self._currentTotalDay))
+  self._totalLogin2:SetText(StringTable.Get("str_sign_in_day_str", self._currentTotalDay))
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ShowTotalAwards = function(self, anim)
-  -- function num : 0_24 , upvalues : _ENV
+function UISignInController:ShowTotalAwards(anim)
   self._totalAwardsData = {}
   local awardList = {}
-  for i,v in (HelperProxy:GetInstance()):pairsByKeys(self._totalData) do
-    (table.insert)(awardList, v)
+  for i, v in HelperProxy:GetInstance():pairsByKeys(self._totalData) do
+    table.insert(awardList, v)
   end
   for i = 1, #awardList do
     local award = awardList[i]
     local data = UITotalAwardData:New(i, award.nDay, award.Reward, award.bIsAccept)
-    ;
-    (table.insert)(self._totalAwardsData, data)
+    table.insert(self._totalAwardsData, data)
   end
-  self._listCount = (table.count)(self._totalAwardsData)
+  self._listCount = table.count(self._totalAwardsData)
   local firstIdx = self:MoveTotalList()
   self._totleItemPlayAnim = anim
-  ;
-  (self._totalAwardsList):SpawnObjects("UISignInTotalItem", self._listCount)
-  self._totalAwardPool = (self._totalAwardsList):GetAllSpawnList()
+  self._totalAwardsList:SpawnObjects("UISignInTotalItem", self._listCount)
+  self._totalAwardPool = self._totalAwardsList:GetAllSpawnList()
   for i = 1, self._listCount do
-    local item = (self._totalAwardPool)[i]
+    local item = self._totalAwardPool[i]
     self:_ShowTotalAwardItem(item, i, firstIdx)
   end
   self._totleItemPlayAnim = false
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.MoveTotalList = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UISignInController:MoveTotalList()
   local moveIdx = 0
   for i = 1, #self._totalAwardsData do
-    local data = (self._totalAwardsData)[i]
+    local data = self._totalAwardsData[i]
     if not data.Got and data.DayCount <= self._currentTotalDay then
       moveIdx = i - 1
       break
     end
   end
-  do
-    local spacingY = 15
-    if moveIdx ~= 0 or not 0 then
-      local topPadding = 35 - spacingY
-    end
-    local cellHeight = 220
-    local pos = cellHeight * (moveIdx) + (moveIdx) * spacingY + topPadding
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._totalAwardsListRect).anchoredPosition = Vector2(0, pos)
-    return moveIdx + 1
-  end
+  local spacingY = 15
+  local topPadding = moveIdx == 0 and 0 or 35 - spacingY
+  local cellHeight = 220
+  local pos = cellHeight * moveIdx + moveIdx * spacingY + topPadding
+  self._totalAwardsListRect.anchoredPosition = Vector2(0, pos)
+  return moveIdx + 1
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController._InitScrollView = function(self, scrollView, index)
-  -- function num : 0_26
+function UISignInController:_InitScrollView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -699,131 +540,90 @@ UISignInController._InitScrollView = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController._ShowTotalAwardItem = function(self, item, idx, firstIdx)
-  -- function num : 0_27
-  local data = (self._totalAwardsData)[idx]
-  local yieldTime = nil
+function UISignInController:_ShowTotalAwardItem(item, idx, firstIdx)
+  local data = self._totalAwardsData[idx]
+  local yieldTime
   if self._totleItemPlayAnim and firstIdx <= idx then
     yieldTime = (idx - firstIdx) * 60 + 50
   end
   item:SetData(data, self._currentTotalDay, function(matid, pos)
-    -- function num : 0_27_0 , upvalues : self
     self:ShowItemInfo(matid, pos)
-  end
-, function(days)
-    -- function num : 0_27_1 , upvalues : self
+  end, function(days)
     self:GetTotalAward(days)
-  end
-, yieldTime)
+  end, yieldTime)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.GetTotalAward = function(self, days)
-  -- function num : 0_28 , upvalues : _ENV
+function UISignInController:GetTotalAward(days)
   self:Lock("UISignInController:GetTotalAward(id)")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnGetTotalAward, self, days)
+  GameGlobal.TaskManager():StartTask(self.OnGetTotalAward, self, days)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.OnGetTotalAward = function(self, TT, days)
-  -- function num : 0_29 , upvalues : _ENV
-  local res, returnDays = (self._module):RecvTotalLoginRewardReq(TT, days)
+function UISignInController:OnGetTotalAward(TT, days)
+  local res, returnDays = self._module:RecvTotalLoginRewardReq(TT, days)
   self:UnLock("UISignInController:GetTotalAward(id)")
   if res and res:GetSucc() then
-    local data = nil
-    do
-      for i = 1, #self._totalAwardsData do
-        if ((self._totalAwardsData)[i]).DayCount == returnDays then
-          data = (self._totalAwardsData)[i]
-          break
-        end
+    local data
+    for i = 1, #self._totalAwardsData do
+      if self._totalAwardsData[i].DayCount == returnDays then
+        data = self._totalAwardsData[i]
+        break
       end
-      do
-        data.Got = true
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnTotalAwardGot, returnDays, data)
-        self:Lock("GameEventType.OnTotalAwardGot_anim")
-        YIELD(TT, 700)
-        self:UnLock("GameEventType.OnTotalAwardGot_anim")
-        self:BtnState()
-        local awards = data.Items
-        do
-          local tempPets = {}
-          if #awards > 0 then
-            for i = 1, #awards do
-              local ispet = (self._petModule):IsPetID((awards[i]).assetid)
-              if ispet then
-                (table.insert)(tempPets, awards[i])
-              end
-            end
-          end
-          do
-            if #tempPets > 0 then
-              self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_29_0 , upvalues : _ENV, self, awards, days
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", awards, function()
-      -- function num : 0_29_0_0 , upvalues : self, days
-      self:Share(days)
     end
-)
-  end
-)
-            else
-              self:ShowDialog("UIGetItemController", awards, function()
-    -- function num : 0_29_1 , upvalues : self, days
-    self:Share(days)
-  end
-)
-            end
-          end
-          ;
-          (Log.fatal)("###[UISignInController] self._module:GetTotalAward fail ! error --> ", res:GetResult())
+    data.Got = true
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnTotalAwardGot, returnDays, data)
+    self:Lock("GameEventType.OnTotalAwardGot_anim")
+    YIELD(TT, 700)
+    self:UnLock("GameEventType.OnTotalAwardGot_anim")
+    self:BtnState()
+    local awards = data.Items
+    local tempPets = {}
+    if 0 < #awards then
+      for i = 1, #awards do
+        local ispet = self._petModule:IsPetID(awards[i].assetid)
+        if ispet then
+          table.insert(tempPets, awards[i])
         end
       end
     end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        self:ShowDialog("UIGetItemController", awards, function()
+          self:Share(days)
+        end)
+      end)
+    else
+      self:ShowDialog("UIGetItemController", awards, function()
+        self:Share(days)
+      end)
+    end
+  else
+    Log.fatal("###[UISignInController] self._module:GetTotalAward fail ! error --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.Share = function(self, days)
-  -- function num : 0_30 , upvalues : _ENV
-  local shareModule = (GameGlobal.GetModule)(ShareModule)
+function UISignInController:Share(days)
+  local shareModule = GameGlobal.GetModule(ShareModule)
   if shareModule:CanShare() then
     self:ShowDialog("UISignInShare", days)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.eBtnOnClick = function(self, go)
-  -- function num : 0_31 , upvalues : _ENV
+function UISignInController:eBtnOnClick(go)
   if self._showType ~= UISignInShowType.EVERYDAY then
     self._showType = UISignInShowType.EVERYDAY
     self:OnButtonOnClickEnd()
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.tBtnOnClick = function(self, go)
-  -- function num : 0_32 , upvalues : _ENV
+function UISignInController:tBtnOnClick(go)
   if self._showType ~= UISignInShowType.TOTAL then
     self._showType = UISignInShowType.TOTAL
     self:OnButtonOnClickEnd()
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ButtonOnClick = function(self, go)
-  -- function num : 0_33 , upvalues : _ENV
+function UISignInController:ButtonOnClick(go)
   if self._showType == UISignInShowType.EVERYDAY then
     self._showType = UISignInShowType.TOTAL
   else
@@ -832,173 +632,109 @@ UISignInController.ButtonOnClick = function(self, go)
   self:OnButtonOnClickEnd()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.OnButtonOnClick = function(self, TT)
-  -- function num : 0_34 , upvalues : _ENV
+function UISignInController:OnButtonOnClick(TT)
   if self._showType == UISignInShowType.EVERYDAY then
-    local result, msg = (self._module):GetCurMonthData(TT)
+    local result, msg = self._module:GetCurMonthData(TT)
     self:UnLock("UISignInController:ButtonOnClick")
     if result:GetSucc() then
       self._data = msg.sign_in_base_info
       self:OnButtonOnClickEnd()
     else
       local errorCode = result:GetResult()
-      ;
-      (Log.error)("###[UISignInController] OnButtonOnClick --> GetCurMonthData fail ! result --> ", errorCode)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)((self._error2str)[errorCode]))
+      Log.error("###[UISignInController] OnButtonOnClick --> GetCurMonthData fail ! result --> ", errorCode)
+      ToastManager.ShowToast(StringTable.Get(self._error2str[errorCode]))
     end
   else
-    do
-      local result, msg = (self._module):TotalLoginReq(TT)
-      self:UnLock("UISignInController:ButtonOnClick")
-      if result:GetSucc() then
-        self._totalData = msg.total_login_info
-        self._currentTotalDay = msg.nTotalLoginDays
-        self:OnButtonOnClickEnd()
-      else
-        local errorCode = result:GetResult()
-        ;
-        (Log.error)("###[UISignInController] OnButtonOnClick --> GetCurMonthData fail ! result --> ", errorCode)
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)((self._error2str)[errorCode]))
-      end
+    local result, msg = self._module:TotalLoginReq(TT)
+    self:UnLock("UISignInController:ButtonOnClick")
+    if result:GetSucc() then
+      self._totalData = msg.total_login_info
+      self._currentTotalDay = msg.nTotalLoginDays
+      self:OnButtonOnClickEnd()
+    else
+      local errorCode = result:GetResult()
+      Log.error("###[UISignInController] OnButtonOnClick --> GetCurMonthData fail ! result --> ", errorCode)
+      ToastManager.ShowToast(StringTable.Get(self._error2str[errorCode]))
     end
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.OnButtonOnClickEnd = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function UISignInController:OnButtonOnClickEnd()
   if self._showType == UISignInShowType.EVERYDAY then
-    self._currentDaySignIn = (self._module):IsSignInToday()
+    self._currentDaySignIn = self._module:IsSignInToday()
     self:ShowEveryDayInfo(true)
     if self._currentDaySignIn then
+    else
       self:CheckAndSignIn()
-      self:ShowTotalInfo(true)
-      self:_OnValue()
-      self:BtnState()
-      self:Lock("UISignInController:OnButtonOnClickEnd")
-      if self._event then
-        ((GameGlobal.Timer)()):CancelEvent(self._event)
-        self._event = nil
-      end
-      self._event = ((GameGlobal.Timer)()):AddEvent(433, function()
-    -- function num : 0_35_0 , upvalues : self
-    self:UnLock("UISignInController:OnButtonOnClickEnd")
-  end
-)
     end
+  else
+    self:ShowTotalInfo(true)
   end
+  self:_OnValue()
+  self:BtnState()
+  self:Lock("UISignInController:OnButtonOnClickEnd")
+  if self._event then
+    GameGlobal.Timer():CancelEvent(self._event)
+    self._event = nil
+  end
+  self._event = GameGlobal.Timer():AddEvent(433, function()
+    self:UnLock("UISignInController:OnButtonOnClickEnd")
+  end)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.OnHide = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function UISignInController:OnHide()
   if self._event then
     self:UnLock("UISignInController:OnButtonOnClickEnd")
-    ;
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   if self._req then
-    (self._req):Dispose()
+    self._req:Dispose()
   end
   self:UnLock("PlaySignInAnim")
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController._OnValue = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UISignInController:_OnValue()
   if self._showType == UISignInShowType.EVERYDAY then
-    (self._everyDayTr):SetAsLastSibling()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._totalCanvasGroup).alpha = 0
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._everyDayCanvasGroup).alpha = 1
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._totalCanvasGroup).blocksRaycasts = false
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._everyDayCanvasGroup).blocksRaycasts = true
-  else
-    if self._showType == UISignInShowType.TOTAL then
-      (self._totalTr):SetAsLastSibling()
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._totalCanvasGroup).alpha = 1
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._everyDayCanvasGroup).alpha = 0
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._totalCanvasGroup).blocksRaycasts = true
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._everyDayCanvasGroup).blocksRaycasts = false
-    end
+    self._everyDayTr:SetAsLastSibling()
+    self._totalCanvasGroup.alpha = 0
+    self._everyDayCanvasGroup.alpha = 1
+    self._totalCanvasGroup.blocksRaycasts = false
+    self._everyDayCanvasGroup.blocksRaycasts = true
+  elseif self._showType == UISignInShowType.TOTAL then
+    self._totalTr:SetAsLastSibling()
+    self._totalCanvasGroup.alpha = 1
+    self._everyDayCanvasGroup.alpha = 0
+    self._totalCanvasGroup.blocksRaycasts = true
+    self._everyDayCanvasGroup.blocksRaycasts = false
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.SetWakeUpFrom = function(self)
-  -- function num : 0_38
+function UISignInController:SetWakeUpFrom()
   local wakeUp = self:GetUIComponent("UISelectObjectPath", "wakeUp")
   self.wakeUp = wakeUp:SpawnObject("UIWakeUpSign")
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.BtnState = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function UISignInController:BtnState()
   local eRed = false
   eRed = not self._currentDaySignIn
   local tRed = false
-  tRed = (self._module):HaveTotalLoginReward()
-  ;
-  (self._eRed):SetActive(eRed)
-  ;
-  (self._tRed):SetActive(tRed)
-  ;
-  (self._e_select):SetActive(self._showType == UISignInShowType.EVERYDAY)
-  ;
-  (self._e_normal):SetActive(self._showType == UISignInShowType.TOTAL)
-  ;
-  (self._t_select):SetActive(self._showType == UISignInShowType.TOTAL)
-  ;
-  (self._t_normal):SetActive(self._showType == UISignInShowType.EVERYDAY)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  tRed = self._module:HaveTotalLoginReward()
+  self._eRed:SetActive(eRed)
+  self._tRed:SetActive(tRed)
+  self._e_select:SetActive(self._showType == UISignInShowType.EVERYDAY)
+  self._e_normal:SetActive(self._showType == UISignInShowType.TOTAL)
+  self._t_select:SetActive(self._showType == UISignInShowType.TOTAL)
+  self._t_normal:SetActive(self._showType == UISignInShowType.EVERYDAY)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.ShowItemInfo = function(self, matid, pos)
-  -- function num : 0_40
-  (self._tips):SetData(matid, pos)
+function UISignInController:ShowItemInfo(matid, pos)
+  self._tips:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInController.OnHide = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function UISignInController:OnHide()
   if self._timeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timeEvent)
+    GameGlobal.Timer():CancelEvent(self._timeEvent)
     self._timeEvent = nil
   end
 end
@@ -1007,10 +743,8 @@ local UISignInShowType = {EVERYDAY = 1, TOTAL = 2}
 _enum("UISignInShowType", UISignInShowType)
 _class("UISignInAwardData", Object)
 UISignInAwardData = UISignInAwardData
--- DECOMPILER ERROR at PC147: Confused about usage of register: R1 in 'UnsetPending'
 
-UISignInAwardData.Constructor = function(self, index, day, items, good, itemGot, canMakeUp)
-  -- function num : 0_42
+function UISignInAwardData:Constructor(index, day, items, good, itemGot, canMakeUp)
   self.Index = index
   self.Day = day
   self.Items = items
@@ -1021,14 +755,10 @@ end
 
 _class("UITotalAwardData", Object)
 UITotalAwardData = UITotalAwardData
--- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
 
-UITotalAwardData.Constructor = function(self, index, dayCount, items, got)
-  -- function num : 0_43
+function UITotalAwardData:Constructor(index, dayCount, items, got)
   self.Index = index
   self.DayCount = dayCount
   self.Items = items
   self.Got = got
 end
-
-

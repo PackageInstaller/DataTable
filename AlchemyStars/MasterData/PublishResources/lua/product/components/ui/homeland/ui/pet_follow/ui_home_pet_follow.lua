@@ -1,84 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/pet_follow/ui_home_pet_follow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePetFollow", UIController)
 UIHomePetFollow = UIHomePetFollow
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePetFollow.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local uiHomeModule = (GameGlobal.GetUIModule)(HomelandModule)
+function UIHomePetFollow:OnShow(uiParams)
+  local uiHomeModule = GameGlobal.GetUIModule(HomelandModule)
   self._homeClient = uiHomeModule:GetClient()
-  self._followMgr = (self._homeClient):HomePetFollowManager()
-  self._usingType = (self._followMgr):CurrentShape()
+  self._followMgr = self._homeClient:HomePetFollowManager()
+  self._usingType = self._followMgr:CurrentShape()
   self._currentType = self._usingType
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
-  self._shapes = (self._followMgr):GetShapes()
+  self._shapes = self._followMgr:GetShapes()
   local count = #self._shapes
-  ;
-  (self._pool):SpawnObjects("UIHomePetFollowItem", count)
-  local pool = (self._pool):GetAllSpawnList()
+  self._pool:SpawnObjects("UIHomePetFollowItem", count)
+  local pool = self._pool:GetAllSpawnList()
   for i = 1, count do
     local item = pool[i]
-    local shape = (self._shapes)[i]
+    local shape = self._shapes[i]
     local type = shape.Type
     item:SetData(i, shape, self._usingType, self._currentType, function(idx)
-    -- function num : 0_0_0 , upvalues : self
-    self:ItemClick(idx)
-  end
-)
+      self:ItemClick(idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollow.ItemClick = function(self, idx)
-  -- function num : 0_1 , upvalues : _ENV
-  local shape = (self._shapes)[idx]
+function UIHomePetFollow:ItemClick(idx)
+  local shape = self._shapes[idx]
   self._currentType = shape.Type
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomePetFollowClick, self._currentType)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomePetFollowClick, self._currentType)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollow.SureBtnOnClick = function(self, go)
-  -- function num : 0_2
+function UIHomePetFollow:SureBtnOnClick(go)
   if self._currentType == self._usingType then
-    (self._followMgr):ChangeShape(self._currentType)
+  else
+    self._followMgr:ChangeShape(self._currentType)
     self._usingType = self._currentType
-    local pool = (self._pool):GetAllSpawnList()
-    self._shapes = (self._followMgr):GetShapes()
+    local pool = self._pool:GetAllSpawnList()
+    self._shapes = self._followMgr:GetShapes()
     local count = #self._shapes
     for i = 1, count do
       local item = pool[i]
-      local shape = (self._shapes)[i]
+      local shape = self._shapes[i]
       local type = shape.Type
       item:SetData(i, shape, self._usingType, self._currentType, function(idx)
-    -- function num : 0_2_0 , upvalues : self
-    self:ItemClick(idx)
-  end
-)
-    end
-    do
-      self:CloseDialog()
+        self:ItemClick(idx)
+      end)
     end
   end
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollow.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePetFollow.OnHide = function(self)
-  -- function num : 0_4
+function UIHomePetFollow:CloseBtnOnClick(go)
+  self:CloseDialog()
 end
 
-
+function UIHomePetFollow:OnHide()
+end

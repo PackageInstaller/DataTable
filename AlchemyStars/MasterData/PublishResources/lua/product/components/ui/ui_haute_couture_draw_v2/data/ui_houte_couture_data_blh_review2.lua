@@ -1,141 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/data/ui_houte_couture_data_blh_review2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureBLH_Review2", UIHauteCoutureDataBase)
 UIHauteCoutureBLH_Review2 = UIHauteCoutureBLH_Review2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureBLH_Review2.CostItemID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:CostItemID()
   return RoleAssetID.RoleAssetDrawCardSeniorSkinBLH_ReRe
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.ShopGoodsOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIHauteCoutureDrawV2ReviewController")
+function UIHauteCoutureBLH_Review2:ShopGoodsOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIHauteCoutureDrawV2ReviewController")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.BuyItem = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.exception)("BuyItem()方法必须重写：", (debug.traceback)())
+function UIHauteCoutureBLH_Review2:BuyItem()
+  Log.exception("BuyItem()方法必须重写：", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.IsReview = function(self)
-  -- function num : 0_3
+function UIHauteCoutureBLH_Review2:IsReview()
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetSkinId = function(self)
-  -- function num : 0_4
+function UIHauteCoutureBLH_Review2:GetSkinId()
   return 90773
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.HC_Type = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:HC_Type()
   return HauteCoutureType.HC_BLH_Re
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetMainUIInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetMainUIInfo()
   return "UIHauteCoutureDrawMainBLH_Review2.prefab", UIHauteCoutureDrawMainBLH_Review2
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetMainUIBgInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetMainUIBgInfo()
   return "UIHauteCoutureDrawBgBLH.prefab", UIHauteCoutureDrawBgBLH
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetGetItemUIInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetGetItemUIInfo()
   return "UIHauteCoutureDrawGetItemMainBLH.prefab", UIHauteCoutureDrawGetItemMainBLH
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetChargeUIInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetChargeUIInfo()
   return "UIHauteCoutureDrawChargeMainBLH.prefab", UIHauteCoutureDrawChargeMainBLH
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetChargeUIBgInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetChargeUIBgInfo()
   return "UIHauteCoutureDrawChargeBgBLH.prefab", UIHauteCoutureDrawChargeBgBLH
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetRulesUIInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetRulesUIInfo()
   return "UIHauteCoutureDrawRulesMainBLH.prefab", UIHauteCoutureDrawRulesMainBLH
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetRulesUIBgInfo = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetRulesUIBgInfo()
   return "UIHauteCoutureDrawRulesBgBLH.prefab", UIHauteCoutureDrawRulesBgBLH
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetVideoUIInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetVideoUIInfo()
   return "UIHauteCoutureDrawVideoMainBLH.prefab", UIHauteCoutureDrawVideoMainBLH
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetDynamicProbablityUIInfo = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetDynamicProbablityUIInfo()
   return "UIHauteCoutureDrawDynamicProbabilityMainBLH_Review2.prefab", UIHauteCoutureDrawDynamicProbabilityMainBLHReview2
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.GetDynamicProbablityUIBgInfo = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:GetDynamicProbablityUIBgInfo()
   return "UIHauteCoutureDrawDynamicProbabilityBgBLH.prefab", UIHauteCoutureDrawDynamicProbabilityBgBLH
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.SideEnterText = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  return (StringTable.Get)("str_senior_skin_draw_lobby_enter_title2")
+function UIHauteCoutureBLH_Review2:SideEnterText()
+  return StringTable.Get("str_senior_skin_draw_lobby_enter_title2")
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.Review_DuplicateRewardBgInfo = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:Review_DuplicateRewardBgInfo()
   return "UIHauteCoutureDuplicateRewardBgBLH.prefab", UIHauteCoutureDuplicateRewardBgBLH
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureBLH_Review2.Review_DuplicateRewardUIInfo = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHauteCoutureBLH_Review2:Review_DuplicateRewardUIInfo()
   return "UIHauteCoutureDuplicateRewardBLH.prefab", UIHauteCoutureDuplicateRewardBLH
 end
-
-

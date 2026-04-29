@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/center/ui_side_enter_center_tabpage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterCenterTabPage", UICustomWidget)
 UISideEnterCenterTabPage = UISideEnterCenterTabPage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterCenterTabPage.OnShow = function(self)
-  -- function num : 0_0
+function UISideEnterCenterTabPage:OnShow()
   self._active = true
   self._data = nil
   self._content = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.OnHide = function(self)
-  -- function num : 0_1
+function UISideEnterCenterTabPage:OnHide()
   self._active = false
   self:UnLoadData()
   self:UnLoadContent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.SetData = function(self, type, closeCallback, hideUICallback, cfg)
-  -- function num : 0_2
+function UISideEnterCenterTabPage:SetData(type, closeCallback, hideUICallback, cfg)
   if self._cfg ~= nil and self._cfg ~= cfg then
     self:UnLoadData()
     self:UnLoadContent()
@@ -37,136 +24,88 @@ UISideEnterCenterTabPage.SetData = function(self, type, closeCallback, hideUICal
   self._cfg = cfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.LoadData = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (UISideEnterConst.GetCfg_SideEnterContent)((self._cfg).ContentKey)
-  if cfg then
-    local loadDataTimes = cfg.LoadDataTimes
-  end
+function UISideEnterCenterTabPage:LoadData(TT)
+  local cfg = UISideEnterConst.GetCfg_SideEnterContent(self._cfg.ContentKey)
+  local loadDataTimes = cfg and cfg.LoadDataTimes
   local loadData = false
   if loadDataTimes then
     loadData = true
-  else
-    if not self._data then
-      loadData = true
-    end
+  elseif not self._data then
+    loadData = true
   end
   if loadData then
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    if cfg then
-      local dataClass = cfg.DataClass
-    end
-    do
-      do
-        if not (string.isnullorempty)(dataClass) then
-          local obj = _createInstance(dataClass)
-          if obj then
-            obj:SetData((self._cfg).ContentParams)
-            self._data = obj:LoadData(TT, res)
-          end
-        end
-        if not res:GetSucc() then
-          self._data = nil
-          ;
-          (Log.info)("UISideEnterCenterTabPage:LoadData() failed, cfg_main_side_enter_center id = ", (self._cfg).ID)
-          return false
-        end
-        do
-          if UIActivityCampaign:IsInstanceOfType(self._data) then
-            local open = (self._data):CheckCampaignOpen()
-            if not open then
-              (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-              ;
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._data):GetCampaignID())
-            end
-            return open
-          end
-          return true
-        end
+    local dataClass = cfg and cfg.DataClass
+    if not string.isnullorempty(dataClass) then
+      local obj = _createInstance(dataClass)
+      if obj then
+        obj:SetData(self._cfg.ContentParams)
+        self._data = obj:LoadData(TT, res)
       end
     end
+    if not res:GetSucc() then
+      self._data = nil
+      Log.info("UISideEnterCenterTabPage:LoadData() failed, cfg_main_side_enter_center id = ", self._cfg.ID)
+      return false
+    end
+  elseif UIActivityCampaign:IsInstanceOfType(self._data) then
+    local open = self._data:CheckCampaignOpen()
+    if not open then
+      ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._data:GetCampaignID())
+    end
+    return open
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.GetHelpIntrKey = function(self)
-  -- function num : 0_4
-  return (self._cfg).HelpIntrKey
+function UISideEnterCenterTabPage:GetHelpIntrKey()
+  return self._cfg.HelpIntrKey
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.UnLoadData = function(self)
-  -- function num : 0_5
+function UISideEnterCenterTabPage:UnLoadData()
   self._data = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.LoadContent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISideEnterCenterTabPage:LoadContent()
   local info = self._cfg
   if not self._content then
-    local class, prefab = (UISideEnterConst.GetCfg_SideEnterContent_Info)(info.ContentKey, self._type)
-    if (string.isnullorempty)(class) or (string.isnullorempty)(prefab) then
-      return 
+    local class, prefab = UISideEnterConst.GetCfg_SideEnterContent_Info(info.ContentKey, self._type)
+    if string.isnullorempty(class) or string.isnullorempty(prefab) then
+      return
     end
-    self._content = (UIWidgetHelper.SpawnObject)(self, "_sop", class, prefab)
-    ;
-    (self._content):OnInit(self._type, self._closeCallback, self._hideUICallback, self._data, info.ContentParams)
+    self._content = UIWidgetHelper.SpawnObject(self, "_sop", class, prefab)
+    self._content:OnInit(self._type, self._closeCallback, self._hideUICallback, self._data, info.ContentParams)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.UnLoadContent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISideEnterCenterTabPage:UnLoadContent()
   if self._content then
-    (self._content):DoHide()
-    ;
-    (self._content):DoDestroy()
+    self._content:DoHide()
+    self._content:DoDestroy()
     self._content = nil
-    ;
-    (UIWidgetHelper.ClearWidgets)(self, "_sop")
+    UIWidgetHelper.ClearWidgets(self, "_sop")
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.OnSelect = function(self, params)
-  -- function num : 0_8 , upvalues : _ENV
-  if not params then
-    params = {}
-  end
+function UISideEnterCenterTabPage:OnSelect(params)
+  params = params or {}
   self:LoadContent()
-  ;
-  (self._content):DoShow(params)
-  if (self._cfg).Bgm ~= CriAudioIDConst.BGMMainUI then
-    (AudioHelperController.PlayBGM)((self._cfg).Bgm, AudioConstValue.BGMCrossFadeTime)
+  self._content:DoShow(params)
+  if self._cfg.Bgm ~= CriAudioIDConst.BGMMainUI then
+    AudioHelperController.PlayBGM(self._cfg.Bgm, AudioConstValue.BGMCrossFadeTime)
   else
-    ;
-    (UIBgmHelper.PlayMainBgm)()
+    UIBgmHelper.PlayMainBgm()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.OnDeselect = function(self)
-  -- function num : 0_9
+function UISideEnterCenterTabPage:OnDeselect()
   if self._content then
-    (self._content):DoHide()
+    self._content:DoHide()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterTabPage.GetContent = function(self)
-  -- function num : 0_10
+function UISideEnterCenterTabPage:GetContent()
   return self._content
 end
-
-

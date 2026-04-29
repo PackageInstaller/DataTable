@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/_Review/ui_haute_couture_draw_prize_item_plm_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawPrizeItemPLMReview", UIHauteCoutureDrawPrizeItemBase)
 UIHauteCoutureDrawPrizeItemPLMReview = UIHauteCoutureDrawPrizeItemPLMReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawPrizeItemPLMReview.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawPrizeItemPLMReview:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemPLMReview.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawPrizeItemPLMReview:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemPLMReview.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHauteCoutureDrawPrizeItemPLMReview:InitWidget()
   self._atlas = self:GetAsset("UIHauteCoutureDrawPLM.spriteatlas", LoadType.SpriteAtlas)
   self.bg = self:GetUIComponent("Image", "bg")
   self.coinBg = self:GetGameObject("coinBg")
@@ -35,134 +22,87 @@ UIHauteCoutureDrawPrizeItemPLMReview.InitWidget = function(self)
   self.Review = self:GetGameObject("Review")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemPLMReview.PlayAnim = function(self, time)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHauteCoutureDrawPrizeItemPLMReview:PlayAnim(time)
   self._anim = self:GetUIComponent("Animation", "anim")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, time, self
     YIELD(TT, time * 15)
-    -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._bgCanvas).alpha = 1
-  end
-)
+    self._bgCanvas.alpha = 1
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemPLMReview._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHauteCoutureDrawPrizeItemPLMReview:_OnValue()
   if not self._specail then
     if self._coinNum > 0 then
-      (self.coinBg):SetActive(true)
-      ;
-      (self.coinNum):SetText(self._coinNum)
+      self.coinBg:SetActive(true)
+      self.coinNum:SetText(self._coinNum)
     else
-      ;
-      (self.coinBg):SetActive(false)
+      self.coinBg:SetActive(false)
     end
-    local cfg = (Cfg.cfg_item)[self._itemId]
+    local cfg = Cfg.cfg_item[self._itemId]
     if cfg == nil then
-      (Log.fatal)("cfg_item is nil." .. self._itemId)
+      Log.fatal("cfg_item is nil." .. self._itemId)
     else
       local icon = cfg.Icon
-      ;
-      (self.image):LoadImage(icon)
+      self.image:LoadImage(icon)
     end
-    do
-      local uiType = (self._data).UIType
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-      if uiType == 2 then
-        (self.bg).sprite = (self._atlas):GetSprite("plmsenior_zjm_kuang02")
-      else
-        -- DECOMPILER ERROR at PC55: Confused about usage of register: R3 in 'UnsetPending'
-
-        if uiType == 3 then
-          (self.bg).sprite = (self._atlas):GetSprite("plmsenior_zjm_kuang03")
-        else
-          -- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-          if uiType == 4 then
-            (self.bg).sprite = (self._atlas):GetSprite("plmsenior_zjm_kuang04")
-          end
-        end
-      end
-      local rewardCount = self._itemCount
-      if rewardCount > 1 then
-        (self.amountText):SetText("×" .. rewardCount)
-      else
-        ;
-        (self.amountText):SetText("")
-      end
-      local cfg = (Cfg.cfg_global).SeniorSkinhead
-      if cfg then
-        local headIds = cfg.ArrayValue
-      end
-      for k,v in pairs(headIds) do
-        if v == self._itemId then
-          local sz = (self.imageRt).sizeDelta
-          sz.x = 190 * sz.y / 160
-          -- DECOMPILER ERROR at PC99: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self.imageRt).sizeDelta = sz
-          break
-        end
-      end
-      do
-        local icon = nil
-        local cfg = ((Cfg.cfg_senior_skin_draw)({ComponentId = (self._data).ComponentID}))[1]
-        if self._replaced then
-          icon = cfg.ReplaceSpecailIcon
-          ;
-          (self.Review):SetActive(true)
-          local count = self:GetUIComponent("UILocalizationText", "ReviewCount")
-          if self._itemCount > 0 then
-            count:SetText("×" .. self._itemCount)
-          else
-            count:SetText("")
-          end
-        else
-          do
-            icon = cfg.SpecailIcon
-            ;
-            (self.Review):SetActive(false)
-            ;
-            (self.image):LoadImage(icon)
-          end
-        end
+    local uiType = self._data.UIType
+    if uiType == 2 then
+      self.bg.sprite = self._atlas:GetSprite("plmsenior_zjm_kuang02")
+    elseif uiType == 3 then
+      self.bg.sprite = self._atlas:GetSprite("plmsenior_zjm_kuang03")
+    elseif uiType == 4 then
+      self.bg.sprite = self._atlas:GetSprite("plmsenior_zjm_kuang04")
+    end
+    local rewardCount = self._itemCount
+    if 1 < rewardCount then
+      self.amountText:SetText("×" .. rewardCount)
+    else
+      self.amountText:SetText("")
+    end
+    local cfg = Cfg.cfg_global.SeniorSkinhead
+    local headIds = cfg and cfg.ArrayValue
+    for k, v in pairs(headIds) do
+      if v == self._itemId then
+        local sz = self.imageRt.sizeDelta
+        sz.x = 190 * sz.y / 160
+        self.imageRt.sizeDelta = sz
+        break
       end
     end
+  else
+    local icon
+    local cfg = Cfg.cfg_senior_skin_draw({
+      ComponentId = self._data.ComponentID
+    })[1]
+    if self._replaced then
+      icon = cfg.ReplaceSpecailIcon
+      self.Review:SetActive(true)
+      local count = self:GetUIComponent("UILocalizationText", "ReviewCount")
+      if 0 < self._itemCount then
+        count:SetText("×" .. self._itemCount)
+      else
+        count:SetText("")
+      end
+    else
+      icon = cfg.SpecailIcon
+      self.Review:SetActive(false)
+    end
+    self.image:LoadImage(icon)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemPLMReview.Flush = function(self, state)
-  -- function num : 0_5
-  (self.receiveImg):SetActive(state)
+function UIHauteCoutureDrawPrizeItemPLMReview:Flush(state)
+  self.receiveImg:SetActive(state)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemPLMReview.SetGray = function(self, gray)
-  -- function num : 0_6
-  (self.gray):SetActive(gray)
+function UIHauteCoutureDrawPrizeItemPLMReview:SetGray(gray)
+  self.gray:SetActive(gray)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemPLMReview.BgOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  if RoleAssetID.RoleAssetPetSkinBegin < self._itemId and self._itemId < RoleAssetID.RoleAssetPetSkinEnd then
+function UIHauteCoutureDrawPrizeItemPLMReview:BgOnClick(go)
+  if self._itemId > RoleAssetID.RoleAssetPetSkinBegin and self._itemId < RoleAssetID.RoleAssetPetSkinEnd then
     self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_TIPS, self._itemId - 4000000)
   else
-    self:ShowDialog("UIHauteCoutureDrawGetItemV2Controller", self._assetList, (StringTable.Get)((self._data).DesName), true, nil, self._ctx)
+    self:ShowDialog("UIHauteCoutureDrawGetItemV2Controller", self._assetList, StringTable.Get(self._data.DesName), true, nil, self._ctx)
   end
 end
-
-

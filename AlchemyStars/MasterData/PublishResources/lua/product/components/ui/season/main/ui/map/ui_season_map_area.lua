@@ -1,124 +1,95 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/map/ui_season_map_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMapArea", UICustomWidget)
 UISeasonMapArea = UISeasonMapArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMapArea.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
-  local seasonID = (self._uiSeasonModule):GetSeasonID()
-  self._seasonMapCfg = (Cfg.cfg_season_map)[seasonID]
+function UISeasonMapArea:OnShow(uiParams)
+  self._uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
+  local seasonID = self._uiSeasonModule:GetSeasonID()
+  self._seasonMapCfg = Cfg.cfg_season_map[seasonID]
   self:_GetComponents()
-  self._seasonManager = (self._uiSeasonModule):SeasonManager()
-  self._seasonPlayerManager = (self._seasonManager):SeasonPlayerManager()
-  self._seasonPlayer = (self._seasonPlayerManager):GetPlayer()
-  self._seasonMapManager = (self._seasonManager):SeasonMapManager()
-  self._cameraTransform = (((self._seasonManager):SeasonCameraManager()):SeasonCamera()):Transform()
-  self._leftUpAnchorPos = Vector3(((self._seasonMapCfg).LeftUpAnchorPos)[1], ((self._seasonMapCfg).LeftUpAnchorPos)[2], ((self._seasonMapCfg).LeftUpAnchorPos)[3])
-  self._rightDownAnchorpos = Vector3(((self._seasonMapCfg).RightDownAnchorPos)[1], ((self._seasonMapCfg).RightDownAnchorPos)[2], ((self._seasonMapCfg).RightDownAnchorPos)[3])
+  self._seasonManager = self._uiSeasonModule:SeasonManager()
+  self._seasonPlayerManager = self._seasonManager:SeasonPlayerManager()
+  self._seasonPlayer = self._seasonPlayerManager:GetPlayer()
+  self._seasonMapManager = self._seasonManager:SeasonMapManager()
+  self._cameraTransform = self._seasonManager:SeasonCameraManager():SeasonCamera():Transform()
+  self._leftUpAnchorPos = Vector3(self._seasonMapCfg.LeftUpAnchorPos[1], self._seasonMapCfg.LeftUpAnchorPos[2], self._seasonMapCfg.LeftUpAnchorPos[3])
+  self._rightDownAnchorpos = Vector3(self._seasonMapCfg.RightDownAnchorPos[1], self._seasonMapCfg.RightDownAnchorPos[2], self._seasonMapCfg.RightDownAnchorPos[3])
   self._atlas = self:GetAsset("UISeasonMain.spriteatlas", LoadType.SpriteAtlas)
   self:_InitMapEvent()
   self:AttachEvent(GameEventType.UISeasonOnLevelDiffChanged, self._InitMapEvent)
   self:AttachEvent(GameEventType.OnSeasonModeChanged, self._InitMapEvent)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMapArea._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMapArea:_GetComponents()
   self._roleAnchorTf = self:GetUIComponent("Transform", "RoleAnchor")
   self._mapCenterRectTf = self:GetUIComponent("RectTransform", "MapCenter")
   local x = 2048
   local y = 1536
-  local scale = (self._seasonMapCfg).MapScale
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._mapCenterRectTf).sizeDelta = Vector2(x * scale, y * scale)
+  local scale = self._seasonMapCfg.MapScale
+  self._mapCenterRectTf.sizeDelta = Vector2(x * scale, y * scale)
   self.mapEventPool = self:GetUIComponent("UISelectObjectPath", "EventLayer")
   self._mapMask = self:GetUIComponent("RectTransform", "MapMask")
-  self._originOffset = (self._mapMask).anchoredPosition
+  self._originOffset = self._mapMask.anchoredPosition
   self._roleOutAnchor = self:GetUIComponent("RectTransform", "RoleOutAnchor")
-  ;
-  ((self._roleOutAnchor).gameObject):SetActive(false)
+  self._roleOutAnchor.gameObject:SetActive(false)
   self._roleOutTf = self:GetUIComponent("Transform", "RoleOutAnchor")
   local mapImage = self:GetUIComponent("RawImageLoader", "MapImage")
-  mapImage:LoadImage((self._seasonMapCfg).MiniMapRes)
-  self._mapRadius = 120
+  mapImage:LoadImage(self._seasonMapCfg.MiniMapRes)
+  self._mapRadius = 120.0
   self._roleOutAnchorOffset = -1
   self._redpoint = self:GetGameObject("Redpoint")
-  ;
-  (self._redpoint):SetActive((LocalDB.GetInt)("UISeasonBackTrackRedpoint", 0) <= 0)
-  ;
-  (self:GetGameObject("BackTrack")):SetActive(UISeasonID.S3 <= ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonID())
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._redpoint:SetActive(LocalDB.GetInt("UISeasonBackTrackRedpoint", 0) <= 0)
+  self:GetGameObject("BackTrack"):SetActive(GameGlobal.GetModule(SeasonModule):GetCurSeasonID() >= UISeasonID.S3)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMapArea._InitMapEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonMapArea:_InitMapEvent()
   if self._seasonMapManager == nil then
-    return 
+    return
   end
   local dt = 0
   self:_RefreshRoleAnchor(dt)
   local points = {}
-  local showTypes = {SeasonEventPointType.MainLevel, SeasonEventPointType.MainStory, SeasonEventPointType.NavPoint}
-  for _,type in ipairs(showTypes) do
-    local events = (self._seasonMapManager):GetEventPointsByType(type)
-    if events and #events > 0 then
-      (table.appendArray)(points, events)
+  local showTypes = {
+    SeasonEventPointType.MainLevel,
+    SeasonEventPointType.MainStory,
+    SeasonEventPointType.NavPoint
+  }
+  for _, type in ipairs(showTypes) do
+    local events = self._seasonMapManager:GetEventPointsByType(type)
+    if events and 0 < #events then
+      table.appendArray(points, events)
     end
   end
   local count = #points
-  ;
-  (self.mapEventPool):SpawnObjects("UISingleSeasonMapEvent", count)
-  local list = (self.mapEventPool):GetAllSpawnList()
-  for i,v in ipairs(list) do
+  self.mapEventPool:SpawnObjects("UISingleSeasonMapEvent", count)
+  local list = self.mapEventPool:GetAllSpawnList()
+  for i, v in ipairs(list) do
     local single = points[i]
     v:SetData(single, self._mapCenterRectTf)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMapArea.SetData = function(self)
-  -- function num : 0_3
+function UISeasonMapArea:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMapArea.OnHide = function(self)
-  -- function num : 0_4
+function UISeasonMapArea:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMapArea.Update = function(self, dt)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMapArea:Update(dt)
   if self._cameraTransform == nil then
-    return 
+    return
   end
   self:_RefreshRoleAnchor(dt)
   if self.mapEventPool then
-    local list = (self.mapEventPool):GetAllSpawnList()
-    for i,v in ipairs(list) do
+    local list = self.mapEventPool:GetAllSpawnList()
+    for i, v in ipairs(list) do
       v:Update(dt)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMapArea._RefreshRoleAnchor = function(self, dt)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonMapArea:_RefreshRoleAnchor(dt)
   local ctf = self._cameraTransform
-  local ptf = (self._seasonPlayer):Transform()
+  local ptf = self._seasonPlayer:Transform()
   local leftUpPos = self._leftUpAnchorPos
   local rightDownPos = self._rightDownAnchorpos
   local cameraPos = ctf.position
@@ -126,53 +97,34 @@ UISeasonMapArea._RefreshRoleAnchor = function(self, dt)
   local curPosDelta = rightDownPos - cameraPos
   local percentX = curPosDelta.x / mapPosDelta.x
   local percentY = curPosDelta.z / mapPosDelta.z
-  local anchoredPos = Vector2(percentX * ((self._mapCenterRectTf).sizeDelta).x, -percentY * ((self._mapCenterRectTf).sizeDelta).y)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._mapCenterRectTf).anchoredPosition = anchoredPos
+  local anchoredPos = Vector2(percentX * self._mapCenterRectTf.sizeDelta.x, -percentY * self._mapCenterRectTf.sizeDelta.y)
+  self._mapCenterRectTf.anchoredPosition = anchoredPos
   local playerPos = ptf.position
   curPosDelta = rightDownPos - playerPos
   percentX = curPosDelta.x / mapPosDelta.x
   percentY = curPosDelta.z / mapPosDelta.z
-  local anchoredPos2 = Vector2(-(percentX) * ((self._mapCenterRectTf).sizeDelta).x, percentY * ((self._mapCenterRectTf).sizeDelta).y)
+  local anchoredPos2 = Vector2(-percentX * self._mapCenterRectTf.sizeDelta.x, percentY * self._mapCenterRectTf.sizeDelta.y)
   local rolePOS = anchoredPos + anchoredPos2
   local offset = self._originOffset
   local halfUIRadius = self._mapRadius
-  local delta = (rolePOS - (self._mapMask).anchoredPosition + offset).magnitude
-  local dir = (rolePOS - (self._mapMask).anchoredPosition + offset).normalized
-  if halfUIRadius + self._roleOutAnchorOffset < delta then
-    local newPos = (self._mapMask).anchoredPosition - offset + halfUIRadius * dir
-    -- DECOMPILER ERROR at PC70: Confused about usage of register: R20 in 'UnsetPending'
-
-    ;
-    (self._roleAnchorTf).anchoredPosition = newPos
+  local delta = (rolePOS - self._mapMask.anchoredPosition + offset).magnitude
+  local dir = (rolePOS - self._mapMask.anchoredPosition + offset).normalized
+  if delta > halfUIRadius + self._roleOutAnchorOffset then
+    local newPos = self._mapMask.anchoredPosition - offset + halfUIRadius * dir
+    self._roleAnchorTf.anchoredPosition = newPos
   else
-    do
-      ;
-      ((self._roleOutAnchor).gameObject):SetActive(false)
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R19 in 'UnsetPending'
-
-      ;
-      (self._roleAnchorTf).anchoredPosition = anchoredPos + anchoredPos2
-    end
+    self._roleOutAnchor.gameObject:SetActive(false)
+    self._roleAnchorTf.anchoredPosition = anchoredPos + anchoredPos2
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMapArea.BackTrackBtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  if not ((GameGlobal.GetModule)(SeasonModule)):CheckSeasonCloseAndJump() then
-    return 
+function UISeasonMapArea:BackTrackBtnOnClick(go)
+  if not GameGlobal.GetModule(SeasonModule):CheckSeasonCloseAndJump() then
+    return
   end
-  if UISeasonID.S3 <= ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonID() then
+  if GameGlobal.GetModule(SeasonModule):GetCurSeasonID() >= UISeasonID.S3 then
     self:ShowDialog("UISeasonBackTrack")
-    ;
-    (LocalDB.SetInt)("UISeasonBackTrackRedpoint", 1)
-    ;
-    (self._redpoint):SetActive(false)
+    LocalDB.SetInt("UISeasonBackTrackRedpoint", 1)
+    self._redpoint:SetActive(false)
   end
 end
-
-

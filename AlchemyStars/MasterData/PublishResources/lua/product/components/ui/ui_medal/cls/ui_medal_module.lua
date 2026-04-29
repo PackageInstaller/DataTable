@@ -1,32 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/cls/ui_medal_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalModule", UIModule)
 UIMedalModule = UIMedalModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalModule.IsMedalNew = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local unLock = ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_MEDAL)
+function UIMedalModule:IsMedalNew()
+  local unLock = GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_MEDAL)
   if not unLock then
     return false
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   return itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_Medal)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalModule.IsMedalBoardNew = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local unLock = ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_MEDAL)
+function UIMedalModule:IsMedalBoardNew()
+  local unLock = GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_MEDAL)
   if not unLock then
     return false
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   return itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_Medal_Board)
 end
-
-

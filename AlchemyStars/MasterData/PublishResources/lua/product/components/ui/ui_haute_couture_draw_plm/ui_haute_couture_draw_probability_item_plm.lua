@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/ui_haute_couture_draw_probability_item_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawProbabiltyItemPLM", UICustomWidget)
 UIHauteCoutureDrawProbabiltyItemPLM = UIHauteCoutureDrawProbabiltyItemPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawProbabiltyItemPLM.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHauteCoutureDrawProbabiltyItemPLM:Constructor()
   self._drawTimes = 0
   self._rareLevel = 0
   self._atlas = self:GetAsset("UIHauteCoutureGL.spriteatlas", LoadType.SpriteAtlas)
   self._atlas2 = self:GetAsset("UIHauteCoutureDrawPLM.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabiltyItemPLM.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawProbabiltyItemPLM:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabiltyItemPLM.InitWidget = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawProbabiltyItemPLM:InitWidget()
   self.prizeName = self:GetUIComponent("UILocalizationText", "prizeName")
   self.prize1 = self:GetGameObject("prize1")
   self.prize2 = self:GetGameObject("prize2")
@@ -39,63 +26,37 @@ UIHauteCoutureDrawProbabiltyItemPLM.InitWidget = function(self)
   self.bg = self:GetUIComponent("Image", "bg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabiltyItemPLM.SetData = function(self, prizeData, drawTimes, hasGot, probablity, isreplaced)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.prizeName):SetText((StringTable.Get)(prizeData.Name))
+function UIHauteCoutureDrawProbabiltyItemPLM:SetData(prizeData, drawTimes, hasGot, probablity, isreplaced)
+  self.prizeName:SetText(StringTable.Get(prizeData.Name))
   if drawTimes then
     self._drawTimes = drawTimes
   end
   if prizeData.RareLevel then
     self._rareLevel = prizeData.RareLevel
   end
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R6 in 'UnsetPending'
-
   if prizeData.UIType == 1 then
-    (self.bg).sprite = (self._atlas2):GetSprite("plmsenior_rule_di03")
+    self.bg.sprite = self._atlas2:GetSprite("plmsenior_rule_di03")
+  elseif prizeData.UIType == 2 then
+    self.bg.sprite = self._atlas2:GetSprite("plmsenior_rule_di07")
   else
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R6 in 'UnsetPending'
-
-    if prizeData.UIType == 2 then
-      (self.bg).sprite = (self._atlas2):GetSprite("plmsenior_rule_di07")
-    else
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.bg).sprite = (self._atlas2):GetSprite("plmsenior_rule_di04")
-    end
+    self.bg.sprite = self._atlas2:GetSprite("plmsenior_rule_di04")
   end
   if hasGot then
-    (self.detail):SetText((StringTable.Get)("str_senior_skin_draw_got"))
-    ;
-    (self.detailTips):SetText((StringTable.Get)("str_senior_skin_draw_rule_get_probability"))
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self.detailbg).sprite = (self._atlas):GetSprite("glsenior_rule_di09")
+    self.detail:SetText(StringTable.Get("str_senior_skin_draw_got"))
+    self.detailTips:SetText(StringTable.Get("str_senior_skin_draw_rule_get_probability"))
+    self.detailbg.sprite = self._atlas:GetSprite("glsenior_rule_di09")
+  elseif self._rareLevel - 1 > self._drawTimes then
+    self.detail:SetText(StringTable.Get("str_senior_skin_draw_rule_probability_5_times", self._rareLevel - self._drawTimes - 1))
+    self.detailTips:SetText(StringTable.Get("str_senior_skin_draw_rule_show_get_probability"))
+    self.detailbg.sprite = self._atlas:GetSprite("glsenior_rule_di03")
   else
-    if self._drawTimes < self._rareLevel - 1 then
-      (self.detail):SetText((StringTable.Get)("str_senior_skin_draw_rule_probability_5_times", self._rareLevel - self._drawTimes - 1))
-      ;
-      (self.detailTips):SetText((StringTable.Get)("str_senior_skin_draw_rule_show_get_probability"))
-      -- DECOMPILER ERROR at PC92: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.detailbg).sprite = (self._atlas):GetSprite("glsenior_rule_di03")
-    else
-      ;
-      (self.detailTips):SetText((StringTable.Get)("str_senior_skin_draw_rule_get_probability"))
-      -- DECOMPILER ERROR at PC106: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.detailbg).sprite = (self._atlas):GetSprite("glsenior_rule_di04")
-      if probablity then
-        (self.detail):SetText((string.format)("%.2f", probablity) .. "%")
-      end
+    self.detailTips:SetText(StringTable.Get("str_senior_skin_draw_rule_get_probability"))
+    self.detailbg.sprite = self._atlas:GetSprite("glsenior_rule_di04")
+    if probablity then
+      self.detail:SetText(string.format("%.2f", probablity) .. "%")
     end
   end
-  local id, count = nil, nil
+  local id, count
   if isreplaced then
     id = prizeData.ReplaceRewardID
     count = prizeData.ReplaceRewardCount
@@ -103,35 +64,25 @@ UIHauteCoutureDrawProbabiltyItemPLM.SetData = function(self, prizeData, drawTime
     id = prizeData.RewardID
     count = prizeData.RewardCount
   end
-  local cfg = (Cfg.cfg_item)[id]
+  local cfg = Cfg.cfg_item[id]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil:", id)
+    Log.fatal("cfg_item is nil:", id)
   else
-    ;
-    (self.prizeImg1):LoadImage(cfg.Icon)
+    self.prizeImg1:LoadImage(cfg.Icon)
   end
-  ;
-  (self.count1):SetText(self:FormatCount(count))
+  self.count1:SetText(self:FormatCount(count))
   if prizeData.AppendGlow and prizeData.AppendGlow > 0 then
-    (self.prize2):SetActive(true)
-    ;
-    (self.prizeImg2):LoadImage(((Cfg.cfg_item)[RoleAssetID.RoleAssetGlow]).Icon)
-    ;
-    (self.count2):SetText(self:FormatCount(prizeData.AppendGlow))
+    self.prize2:SetActive(true)
+    self.prizeImg2:LoadImage(Cfg.cfg_item[RoleAssetID.RoleAssetGlow].Icon)
+    self.count2:SetText(self:FormatCount(prizeData.AppendGlow))
   else
-    ;
-    (self.prize2):SetActive(false)
+    self.prize2:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawProbabiltyItemPLM.FormatCount = function(self, count)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHauteCoutureDrawProbabiltyItemPLM:FormatCount(count)
   if count < 1000 then
     return count
   end
-  return (math.floor)(count / 1000) .. "k"
+  return math.floor(count / 1000) .. "k"
 end
-
-

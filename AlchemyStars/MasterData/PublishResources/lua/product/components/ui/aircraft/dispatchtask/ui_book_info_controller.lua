@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/dispatchtask/ui_book_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBookInfoController", UIController)
 UIBookInfoController = UIBookInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBookInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBookInfoController:OnShow(uiParams)
   self._bookData = uiParams[1]
   self._chapterIndex = uiParams[2]
   self._contentScrollView = self:GetUIComponent("UIDynamicScrollView", "ContentList")
@@ -17,97 +10,57 @@ UIBookInfoController.OnShow = function(self, uiParams)
   self:_InitUI()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookInfoController._InitData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local chapterDatas = (self._bookData):GetChapters()
+function UIBookInfoController:_InitData()
+  local chapterDatas = self._bookData:GetChapters()
   self._chapterIndexs = {}
   self._chapterContents = {}
   for i = 1, #chapterDatas do
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._chapterIndexs)[i] = #self._chapterContents
+    self._chapterIndexs[i] = #self._chapterContents
     local chapterData = chapterDatas[i]
     if chapterData:IsOpen() then
-      local title = (StringTable.Get)("str_dispatch_book_chapter" .. i) .. chapterData:GetName()
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._chapterContents)[#self._chapterContents + 1] = BookParagraphData:New(BookParagraphType.Title, title, nil, nil, nil, false)
+      local title = StringTable.Get("str_dispatch_book_chapter" .. i) .. chapterData:GetName()
+      self._chapterContents[#self._chapterContents + 1] = BookParagraphData:New(BookParagraphType.Title, title, nil, nil, nil, false)
       local contents = chapterData:GetContents()
       for j = 1, #contents do
-        -- DECOMPILER ERROR at PC53: Confused about usage of register: R13 in 'UnsetPending'
-
-        (self._chapterContents)[#self._chapterContents + 1] = contents[j]
+        self._chapterContents[#self._chapterContents + 1] = contents[j]
       end
     else
-      do
-        do
-          -- DECOMPILER ERROR at PC68: Confused about usage of register: R7 in 'UnsetPending'
-
-          ;
-          (self._chapterContents)[#self._chapterContents + 1] = BookParagraphData:New(BookParagraphType.UnOpen, nil, nil, nil, chapterData, true)
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC69: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self._chapterContents[#self._chapterContents + 1] = BookParagraphData:New(BookParagraphType.UnOpen, nil, nil, nil, chapterData, true)
     end
   end
   self._chapterContentCount = #self._chapterContents
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookInfoController._InitUI = function(self)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._bookNameLabel).text = (self._bookData):GetName()
-  ;
-  (self._contentScrollView):InitListView(self._chapterContentCount, function(scrollview, index)
-    -- function num : 0_2_0 , upvalues : self
+function UIBookInfoController:_InitUI()
+  self._bookNameLabel.text = self._bookData:GetName()
+  self._contentScrollView:InitListView(self._chapterContentCount, function(scrollview, index)
     return self:_OnGetChapterInfoItem(scrollview, index)
-  end
-)
-  local index = (self._chapterIndexs)[self._chapterIndex]
-  ;
-  (self._contentScrollView):MovePanelToItemIndex(index, 0)
+  end)
+  local index = self._chapterIndexs[self._chapterIndex]
+  self._contentScrollView:MovePanelToItemIndex(index, 0)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookInfoController._OnGetChapterInfoItem = function(self, scrollView, index)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBookInfoController:_OnGetChapterInfoItem(scrollView, index)
   local item = scrollView:NewListViewItem("UIBookInfoItem")
   local itemIndex = index + 1
-  if self._chapterContentCount < itemIndex then
-    (item.gameObject):SetActive(false)
+  if itemIndex > self._chapterContentCount then
+    item.gameObject:SetActive(false)
   else
     self:_RefreshChapterItemInfo(item.gameObject, itemIndex)
-    ;
-    (item.gameObject):SetActive(true)
+    item.gameObject:SetActive(true)
   end
-  ;
-  (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
   return item
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookInfoController._RefreshChapterItemInfo = function(self, itemGo, index)
-  -- function num : 0_4 , upvalues : _ENV
-  local chapterDatas = (self._bookData):GetChapters()
-  local paragraphData = (self._chapterContents)[index]
+function UIBookInfoController:_RefreshChapterItemInfo(itemGo, index)
+  local chapterDatas = self._bookData:GetChapters()
+  local paragraphData = self._chapterContents[index]
   local tran = itemGo.transform
-  local unOpenGo = (tran:Find("UnOpen")).gameObject
-  local contentGo = (tran:Find("Content")).gameObject
-  local textureGo = (tran:Find("Texture")).gameObject
-  local sliderGo = (tran:Find("Slider")).gameObject
+  local unOpenGo = tran:Find("UnOpen").gameObject
+  local contentGo = tran:Find("Content").gameObject
+  local textureGo = tran:Find("Texture").gameObject
+  local sliderGo = tran:Find("Slider").gameObject
   local paragraphType = paragraphData:GetParagraphType()
   if paragraphType == BookParagraphType.Title then
     unOpenGo:SetActive(false)
@@ -115,92 +68,68 @@ UIBookInfoController._RefreshChapterItemInfo = function(self, itemGo, index)
     textureGo:SetActive(false)
     sliderGo:SetActive(false)
     local contentTran = tran:Find("Content/Content")
-    ;
-    (contentTran.gameObject):SetActive(false)
+    contentTran.gameObject:SetActive(false)
     local sliderTran = tran:Find("Content/Slider")
-    ;
-    (sliderTran.gameObject):SetActive(true)
+    sliderTran.gameObject:SetActive(true)
     local emptyTran = tran:Find("Content/Empty")
-    ;
-    (emptyTran.gameObject):SetActive(true)
+    emptyTran.gameObject:SetActive(true)
     local nameTran = tran:Find("Content/Name")
-    ;
-    (nameTran.gameObject):SetActive(true)
-    local nameLabel = (tran:Find("Content/Name")):GetComponent("UILocalizationText")
+    nameTran.gameObject:SetActive(true)
+    local nameLabel = tran:Find("Content/Name"):GetComponent("UILocalizationText")
     nameLabel.text = paragraphData:GetTitle()
-  else
-    do
-      if paragraphType == BookParagraphType.Text then
-        unOpenGo:SetActive(false)
-        contentGo:SetActive(true)
-        textureGo:SetActive(false)
-        local nameTran = tran:Find("Content/Name")
-        ;
-        (nameTran.gameObject):SetActive(false)
-        local sliderTran = tran:Find("Content/Slider")
-        ;
-        (sliderTran.gameObject):SetActive(false)
-        local contentTran = tran:Find("Content/Content")
-        ;
-        (contentTran.gameObject):SetActive(true)
-        local contentLabel = (tran:Find("Content/Content")):GetComponent("UILocalizationText")
-        contentLabel.text = paragraphData:GetText()
-        if paragraphData:IsEnd() then
-          sliderGo:SetActive(true)
-        else
-          sliderGo:SetActive(false)
-        end
-      else
-        do
-          if paragraphType == BookParagraphType.Image then
-            unOpenGo:SetActive(false)
-            contentGo:SetActive(false)
-            textureGo:SetActive(true)
-            local image = (tran:Find("Texture/Image")):GetComponent("RawImageLoader")
-            image:LoadImage(paragraphData:GetImage())
-            local rawImage = (tran:Find("Texture/Image")):GetComponent("RawImage")
-            local width = ((rawImage.material).mainTexture).width
-            local height = ((rawImage.material).mainTexture).height
-            local layoutElement = (tran:Find("Texture/Image")):GetComponent("LayoutElement")
-            layoutElement.preferredWidth = width
-            layoutElement.preferredHeight = height
-            if paragraphData:IsEnd() then
-              sliderGo:SetActive(true)
-            else
-              sliderGo:SetActive(false)
-            end
-          else
-            do
-              if paragraphType == BookParagraphType.UnOpen then
-                unOpenGo:SetActive(true)
-                sliderGo:SetActive(true)
-                contentGo:SetActive(false)
-                textureGo:SetActive(false)
-                local unOpenName = (tran:Find("UnOpen/Name")):GetComponent("UILocalizationText")
-                local unOpenDes = (tran:Find("UnOpen/Des")):GetComponent("UILocalizationText")
-                local unOpenGetDes = (tran:Find("UnOpen/GetDes")):GetComponent("UILocalizationText")
-                local chapterData = paragraphData:GetChapterData()
-                unOpenName.text = (StringTable.Get)("str_dispatch_book_chapter" .. chapterData:GetChapterId()) .. chapterData:GetName()
-                local des = (StringTable.Get)("str_dispatch_book_des_title")
-                des = (string.gsub)(des, " ", " ")
-                unOpenDes.text = des .. chapterData:GetDes()
-                local getDes = (StringTable.Get)("str_dispatch_book_get_des_title")
-                getDes = (string.gsub)(getDes, " ", " ")
-                unOpenGetDes.text = getDes .. chapterData:GetGetDes()
-              end
-            end
-          end
-        end
-      end
+  elseif paragraphType == BookParagraphType.Text then
+    unOpenGo:SetActive(false)
+    contentGo:SetActive(true)
+    textureGo:SetActive(false)
+    local nameTran = tran:Find("Content/Name")
+    nameTran.gameObject:SetActive(false)
+    local sliderTran = tran:Find("Content/Slider")
+    sliderTran.gameObject:SetActive(false)
+    local contentTran = tran:Find("Content/Content")
+    contentTran.gameObject:SetActive(true)
+    local contentLabel = tran:Find("Content/Content"):GetComponent("UILocalizationText")
+    contentLabel.text = paragraphData:GetText()
+    if paragraphData:IsEnd() then
+      sliderGo:SetActive(true)
+    else
+      sliderGo:SetActive(false)
     end
+  elseif paragraphType == BookParagraphType.Image then
+    unOpenGo:SetActive(false)
+    contentGo:SetActive(false)
+    textureGo:SetActive(true)
+    local image = tran:Find("Texture/Image"):GetComponent("RawImageLoader")
+    image:LoadImage(paragraphData:GetImage())
+    local rawImage = tran:Find("Texture/Image"):GetComponent("RawImage")
+    local width = rawImage.material.mainTexture.width
+    local height = rawImage.material.mainTexture.height
+    local layoutElement = tran:Find("Texture/Image"):GetComponent("LayoutElement")
+    layoutElement.preferredWidth = width
+    layoutElement.preferredHeight = height
+    if paragraphData:IsEnd() then
+      sliderGo:SetActive(true)
+    else
+      sliderGo:SetActive(false)
+    end
+  elseif paragraphType == BookParagraphType.UnOpen then
+    unOpenGo:SetActive(true)
+    sliderGo:SetActive(true)
+    contentGo:SetActive(false)
+    textureGo:SetActive(false)
+    local unOpenName = tran:Find("UnOpen/Name"):GetComponent("UILocalizationText")
+    local unOpenDes = tran:Find("UnOpen/Des"):GetComponent("UILocalizationText")
+    local unOpenGetDes = tran:Find("UnOpen/GetDes"):GetComponent("UILocalizationText")
+    local chapterData = paragraphData:GetChapterData()
+    unOpenName.text = StringTable.Get("str_dispatch_book_chapter" .. chapterData:GetChapterId()) .. chapterData:GetName()
+    local des = StringTable.Get("str_dispatch_book_des_title")
+    des = string.gsub(des, " ", " ")
+    unOpenDes.text = des .. chapterData:GetDes()
+    local getDes = StringTable.Get("str_dispatch_book_get_des_title")
+    getDes = string.gsub(getDes, " ", " ")
+    unOpenGetDes.text = getDes .. chapterData:GetGetDes()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBookInfoController.MaskOnClick = function(self, go)
-  -- function num : 0_5
+function UIBookInfoController:MaskOnClick(go)
   self:CloseDialog()
 end
-
-

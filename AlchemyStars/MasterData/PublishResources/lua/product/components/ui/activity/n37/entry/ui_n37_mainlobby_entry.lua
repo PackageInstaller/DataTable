@@ -1,74 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n37/entry/ui_n37_mainlobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_main_campaign_base")
 _class("UIN37MainLobbyEntry", UIMainLobbyMainCampaignBase)
 UIN37MainLobbyEntry = UIN37MainLobbyEntry
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN37MainLobbyEntry.SetData = function(self, sampleInfo, controller)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN37MainLobbyEntry:SetData(sampleInfo, controller)
   self.sampleInfo = sampleInfo
-  self._campaignType = (UIN37Helper.GetCampaignType)()
+  self._campaignType = UIN37Helper.GetCampaignType()
   self:_RequestCampaign()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37MainLobbyEntry._RequestCampaign = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN37MainLobbyEntry:_RequestCampaign()
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV
     local lockName = "UIN37MainLobbyEntry:_RequestCampaign"
     self:Lock(lockName)
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
-    self._campaign = (UIActivityHelper.LoadCampaign)(TT, res, self._campaignType)
+    self._campaign = UIActivityHelper.LoadCampaign(TT, res, self._campaignType)
     self:_Refresh()
     self:UnLock(lockName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37MainLobbyEntry._Refresh = function(self)
-  -- function num : 0_2
+function UIN37MainLobbyEntry:_Refresh()
   self:_CheckPoint()
   self:_SetTips()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37MainLobbyEntry._CheckPoint = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN37MainLobbyEntry:_CheckPoint()
   if self._campaign then
-    local new = (UIActivityHelper.CheckCampaignSampleNewPoint)(self._campaign)
-    local red = (UIActivityHelper.CheckCampaignSampleRedPoint)(self._campaign)
-    ;
-    (UIWidgetHelper.SetNewAndReds)(self, new, red, "new", "red")
+    local new = UIActivityHelper.CheckCampaignSampleNewPoint(self._campaign)
+    local red = UIActivityHelper.CheckCampaignSampleRedPoint(self._campaign)
+    UIWidgetHelper.SetNewAndReds(self, new, red, "new", "red")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37MainLobbyEntry._SetTips = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIN37Helper.GetComponent)(self._campaign, "hard")
+function UIN37MainLobbyEntry:_SetTips()
+  local cmptId, component, componentInfo = UIN37Helper.GetComponent(self._campaign, "hard")
   local isShow = component:ComponentIsOpen()
-  ;
-  (self:GetGameObject("tipsBg")):SetActive(isShow)
+  self:GetGameObject("tipsBg"):SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37MainLobbyEntry.BtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((UIN37MainLobbyEntry.super).BtnOnClick)(self)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIN37MainController")
+function UIN37MainLobbyEntry:BtnOnClick()
+  UIN37MainLobbyEntry.super.BtnOnClick(self)
+  GameGlobal.UIStateManager():ShowDialog("UIN37MainController")
 end
-
-

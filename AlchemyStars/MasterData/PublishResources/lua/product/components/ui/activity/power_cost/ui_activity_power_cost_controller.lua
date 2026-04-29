@@ -1,391 +1,281 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/power_cost/ui_activity_power_cost_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityPowerCostController", UIController)
 UIActivityPowerCostController = UIActivityPowerCostController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPowerCostController._SetRemainingTime = function(self, widgetName, tmpMatName, descId, endTime, customTimeStr)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIActivityPowerCostController:_SetRemainingTime(widgetName, tmpMatName, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
   end
   obj:SetAdvanceText(descId)
-  if not (string.isnullorempty)(tmpMatName) then
+  if not string.isnullorempty(tmpMatName) then
     obj:SetLocalizedTMPMaterial(tmpMatName)
   end
   obj:SetData(endTime, nil, function()
-    -- function num : 0_0_0 , upvalues : self
     self:_UpdateRemainingTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._SetCommonTopButton = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UICommonTopButton")
+function UIActivityPowerCostController:_SetCommonTopButton()
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UICommonTopButton")
   obj:SetData(function()
-    -- function num : 0_1_0 , upvalues : self
     self:_Back()
-  end
-, nil, nil, false, function()
-    -- function num : 0_1_1 , upvalues : self
+  end, nil, nil, false, function()
     self:_HideUI()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._Back = function(self)
-  -- function num : 0_2
+function UIActivityPowerCostController:_Back()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._HideUI = function(self)
-  -- function num : 0_3
-  (self:GetGameObject("_showBtn")):SetActive(true)
+function UIActivityPowerCostController:_HideUI()
+  self:GetGameObject("_showBtn"):SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._ShowUI = function(self)
-  -- function num : 0_4
-  (self:GetGameObject("_showBtn")):SetActive(false)
+function UIActivityPowerCostController:_ShowUI()
+  self:GetGameObject("_showBtn"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._SetBg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local url = (UIActivityHelper.GetCampaignMainBg)(self._campaign, 1)
+function UIActivityPowerCostController:_SetBg()
+  local url = UIActivityHelper.GetCampaignMainBg(self._campaign, 1)
   if url then
-    (UIWidgetHelper.SetRawImage)(self, "_mainBg", url)
+    UIWidgetHelper.SetRawImage(self, "_mainBg", url)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._SetImgRT = function(self, imgRT)
-  -- function num : 0_6
-  do
-    if imgRT ~= nil then
-      local rt = self:GetUIComponent("RawImage", "rt")
-      rt.texture = imgRT
-      return true
-    end
-    return false
+function UIActivityPowerCostController:_SetImgRT(imgRT)
+  if imgRT ~= nil then
+    local rt = self:GetUIComponent("RawImage", "rt")
+    rt.texture = imgRT
+    return true
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityPowerCostController:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_POWERCOST
   self._componentId = ECampaignPowerCostComponentID.ECAMPAIGN_POWERCOST_QUEST
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
-  ;
-  (self._campaign):ClearCampaignNew(TT)
+  self._campaign:ClearCampaignNew(TT)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController.OnShow = function(self, uiParams)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityPowerCostController:OnShow(uiParams)
   self:_SetDebug()
   self._isOpen = true
   self:_AttachEvents()
-  self._component_quest = (self._campaign):GetComponent(self._componentId)
+  self._component_quest = self._campaign:GetComponent(self._componentId)
   self:_SetCommonTopButton()
-  self._matReq1 = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "_txtTitle", "PowerCostMaterial.mat", self._matReq1)
-  self._matReq2 = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "_txtDesc", "PowerCostMaterial.mat", self._matReq2)
-  self._matReq3 = (UIWidgetHelper.SetLocalizedTMPMaterial)(self, "_txtProgress", "PowerCostMaterial.mat", self._matReq3)
+  self._matReq1 = UIWidgetHelper.SetLocalizedTMPMaterial(self, "_txtTitle", "PowerCostMaterial.mat", self._matReq1)
+  self._matReq2 = UIWidgetHelper.SetLocalizedTMPMaterial(self, "_txtDesc", "PowerCostMaterial.mat", self._matReq2)
+  self._matReq3 = UIWidgetHelper.SetLocalizedTMPMaterial(self, "_txtProgress", "PowerCostMaterial.mat", self._matReq3)
   self:_Refresh()
   if self:_SetImgRT(uiParams[1]) then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", "uieff_Main_In", 1667, function()
-    -- function num : 0_8_0 , upvalues : self
-    self:_CheckGuide()
-  end
-)
+    UIWidgetHelper.PlayAnimation(self, "_anim", "uieff_Main_In", 1667, function()
+      self:_CheckGuide()
+    end)
   else
     self:_CheckGuide()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController.OnHide = function(self)
-  -- function num : 0_9
+function UIActivityPowerCostController:OnHide()
   self._isOpen = false
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController.Destroy = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._matReq1 = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq1)
-  self._matReq2 = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq2)
-  self._matReq3 = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq3)
+function UIActivityPowerCostController:Destroy()
+  self._matReq1 = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq1)
+  self._matReq2 = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq2)
+  self._matReq3 = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq3)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._ReLoadData = function(self, TT, res)
-  -- function num : 0_11
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  if not (self._campaign):CheckCampaignOpen() then
+function UIActivityPowerCostController:_ReLoadData(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  if not self._campaign:CheckCampaignOpen() then
     self:_Back()
-    return 
+    return
   end
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._Refresh = function(self)
-  -- function num : 0_12
+function UIActivityPowerCostController:_Refresh()
   self:_CheckQuestDailyReset()
   self:_SetQuest()
   self:_UpdateRemainingTime()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._SetQuest = function(self)
-  -- function num : 0_13
-  self._questList = (self._component_quest):GetQuestInfo()
-  self._questStatus = (self._component_quest):GetCampaignQuestStatus(self._questList)
+function UIActivityPowerCostController:_SetQuest()
+  self._questList = self._component_quest:GetQuestInfo()
+  self._questStatus = self._component_quest:GetCampaignQuestStatus(self._questList)
   local questIndex = 1
-  self._quest = ((self._questList)[questIndex]):QuestInfo()
-  self._status = (self._component_quest):CheckCampaignQuestStatus(self._quest)
+  self._quest = self._questList[questIndex]:QuestInfo()
+  self._status = self._component_quest:CheckCampaignQuestStatus(self._quest)
   self:_SetQuestRewards(self._quest)
   self:_SetQuestProgress(self._quest)
   self:_SetQuestStatus(self._status)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._SetQuestRewards = function(self, quest)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityPowerCostController:_SetQuestRewards(quest)
   self._rewards = quest.rewards
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_rewardPool", "UIActivityPowerCostItem", #self._rewards)
-  for i,v in ipairs(objs) do
-    v:SetData(i, (self._rewards)[i], function(matid, pos)
-    -- function num : 0_14_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_itemTipsPool", matid, pos)
-  end
-)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_rewardPool", "UIActivityPowerCostItem", #self._rewards)
+  for i, v in ipairs(objs) do
+    v:SetData(i, self._rewards[i], function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "_itemTipsPool", matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._SetQuestProgress = function(self, quest)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityPowerCostController:_SetQuestProgress(quest)
   local cur_progress = quest.cur_progress
   local total_progress = quest.total_progress
-  ;
-  (UIWidgetHelper.SetSliderValue)(self, "_progress", cur_progress, total_progress)
+  UIWidgetHelper.SetSliderValue(self, "_progress", cur_progress, total_progress)
   local strProgress = ""
   if quest.ShowType == 1 then
-    local c, d = (math.modf)(cur_progress * 100 / total_progress)
-    if c < 1 and d > 0 then
+    local c, d = math.modf(cur_progress * 100 / total_progress)
+    if c < 1 and 0 < d then
       c = 1
     end
     strProgress = c .. "%"
   else
-    do
-      strProgress = (string.format)("<color=#FFD325><size=52>%s</size></color><color=#C1C0C0><size=32>/%s</size></color>", cur_progress, total_progress)
-      ;
-      (UIWidgetHelper.SetLocalizedTMPText)(self, "_txtProgress", strProgress)
-    end
+    strProgress = string.format("<color=#FFD325><size=52>%s</size></color><color=#C1C0C0><size=32>/%s</size></color>", cur_progress, total_progress)
   end
+  UIWidgetHelper.SetLocalizedTMPText(self, "_txtProgress", strProgress)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._SetQuestStatus = function(self, status)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityPowerCostController:_SetQuestStatus(status)
   if not self._questStateObjs then
-    self._questStateObjs = (UIActivityHelper.GetObjGroupByWidgetName)(self, {
-{"_ClaimBtn_Disable"}
-, 
-{"_ClaimBtn_Disable"}
-, 
-{"_ClaimBtn", "eff01", "eff02"}
-, 
-{"_ClaimBtn_Disable"}
-, 
-{"_ClaimBtn_Disable"}
-})
+    self._questStateObjs = UIActivityHelper.GetObjGroupByWidgetName(self, {
+      {
+        "_ClaimBtn_Disable"
+      },
+      {
+        "_ClaimBtn_Disable"
+      },
+      {
+        "_ClaimBtn",
+        "eff01",
+        "eff02"
+      },
+      {
+        "_ClaimBtn_Disable"
+      },
+      {
+        "_ClaimBtn_Disable"
+      }
+    })
   end
-  ;
-  (UIActivityHelper.SetObjGroupShow)(self._questStateObjs, status)
+  UIActivityHelper.SetObjGroupShow(self._questStateObjs, status)
   local show = status == CampaignQuestStatus.CQS_Completed
   local pool = self:GetUIComponent("UISelectObjectPath", "_rewardPool")
   local objs = pool:GetAllSpawnList()
-  for i,v in ipairs(objs) do
+  for i, v in ipairs(objs) do
     v:SetEffShow(show)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._UpdateRemainingTime = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local endTime = ((self._component_quest):GetComponentInfo()).m_close_time
+function UIActivityPowerCostController:_UpdateRemainingTime()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local endTime = self._component_quest:GetComponentInfo().m_close_time
   local stamp = endTime - curTime
-  if stamp > 0 then
+  if 0 < stamp then
     self:_SetRemainingTime("_timePool_Main", "PowerCostMaterial.mat", "str_activity_powercost_time_main", endTime, true)
   end
-  local questId = (self._quest).quest_id
-  local timeInfo = (((self._component_quest):GetComponentInfo()).m_quest_time_param_map)[questId]
-  local state2time = {[CampaignQuestStatus.CQS_NotStart] = timeInfo.m_open_time, [CampaignQuestStatus.CQS_Accepted] = timeInfo.m_end_time, [CampaignQuestStatus.CQS_Completed] = timeInfo.m_end_time, [CampaignQuestStatus.CQS_Taken] = timeInfo.m_end_time}
+  local questId = self._quest.quest_id
+  local timeInfo = self._component_quest:GetComponentInfo().m_quest_time_param_map[questId]
+  local state2time = {
+    [CampaignQuestStatus.CQS_NotStart] = timeInfo.m_open_time,
+    [CampaignQuestStatus.CQS_Accepted] = timeInfo.m_end_time,
+    [CampaignQuestStatus.CQS_Completed] = timeInfo.m_end_time,
+    [CampaignQuestStatus.CQS_Taken] = timeInfo.m_end_time
+  }
   endTime = state2time[self._status] or 0
-  stamp = (endTime) - curTime
-  if stamp > 0 then
+  stamp = endTime - curTime
+  if 0 < stamp then
     self:_SetRemainingTime("_timePool_Refresh", "", "str_activity_powercost_time_refresh", endTime)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._CheckQuestDailyReset = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+function UIActivityPowerCostController:_CheckQuestDailyReset()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local component = self._component_quest
   if not component then
-    (Log.inof)("UIActivityPowerCostController:_CheckQuestDailyReset() component == nil")
-    return 
+    Log.inof("UIActivityPowerCostController:_CheckQuestDailyReset() component == nil")
+    return
   end
   local nextTime = component:GetEarliestEndTimeInDailyQuest()
   local stamp = nextTime - curTime
-  if stamp >= 0 then
-    return 
+  if 0 <= stamp then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : _ENV, component, self
     local res = AsyncRequestRes:New()
     component:HandleCamQuestDailyReset(TT, res)
     if res:GetSucc() then
       self:_ReLoadData(TT, res)
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController.ShowBtnOnClick = function(self, go)
-  -- function num : 0_19
+function UIActivityPowerCostController:ShowBtnOnClick(go)
   self:_ShowUI()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController.ClaimBtnOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  (self._component_quest):Start_HandleQuestTake((self._quest).quest_id, function(res, rewards)
-    -- function num : 0_20_0 , upvalues : self, _ENV
+function UIActivityPowerCostController:ClaimBtnOnClick(go)
+  self._component_quest:Start_HandleQuestTake(self._quest.quest_id, function(res, rewards)
     if not self._isOpen then
-      return 
+      return
     end
     if res and res:GetSucc() then
-      (UIActivityHelper.ShowUIGetRewards)(rewards)
+      UIActivityHelper.ShowUIGetRewards(rewards)
     else
-      ;
-      ((self._campaign)._campaign_module):CheckErrorCode(res.m_result, (self._campaign)._id, function()
-      -- function num : 0_20_0_0 , upvalues : self
-      self:_Refresh()
+      self._campaign._campaign_module:CheckErrorCode(res.m_result, self._campaign._id, function()
+        self:_Refresh()
+      end, function()
+        self:_Back()
+      end)
     end
-, function()
-      -- function num : 0_20_0_1 , upvalues : self
-      self:_Back()
-    end
-)
-    end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_21
+function UIActivityPowerCostController:CloseBtnOnClick(go)
   self:_Back()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._AttachEvents = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityPowerCostController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._DetachEvents = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIActivityPowerCostController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._CheckActivityClose = function(self, id)
-  -- function num : 0_24 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityPowerCostController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._CheckGuide = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityPowerCostController)
+function UIActivityPowerCostController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityPowerCostController)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController._SetDebug = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local show = (UIActivityHelper.CheckDebugOpen)()
-  ;
-  (self:GetGameObject("_debug")):SetActive(show)
+function UIActivityPowerCostController:_SetDebug()
+  local show = UIActivityHelper.CheckDebugOpen()
+  self:GetGameObject("_debug"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPowerCostController.TestBtnOnClick = function(self, go)
-  -- function num : 0_27 , upvalues : _ENV
-  local questId = (self._quest).quest_id
-  ;
-  (UIGMHelper.ChangeQuestStatus)(questId, 1, 1, function()
-    -- function num : 0_27_0 , upvalues : self
+function UIActivityPowerCostController:TestBtnOnClick(go)
+  local questId = self._quest.quest_id
+  UIGMHelper.ChangeQuestStatus(questId, 1, 1, function()
     self:_Refresh()
-  end
-)
+  end)
 end
-
-

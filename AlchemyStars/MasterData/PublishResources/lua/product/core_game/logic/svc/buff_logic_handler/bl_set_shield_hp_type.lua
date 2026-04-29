@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_shield_hp_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetHPShieldType", BuffLogicBase)
 BuffLogicSetHPShieldType = BuffLogicSetHPShieldType
 local HPShieldType = {Normal = 1, Lava = 2}
 _enum("HPShieldType", HPShieldType)
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicSetHPShieldType.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : HPShieldType
+function BuffLogicSetHPShieldType:Constructor(buffInstance, logicParam)
   self._hpShieldType = logicParam.type or HPShieldType.Normal
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicSetHPShieldType.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local hpCmpt = (self._entity):BuffComponent()
+function BuffLogicSetHPShieldType:DoLogic(notify)
+  local hpCmpt = self._entity:BuffComponent()
   if hpCmpt then
     hpCmpt:SetBuffValue("HPShieldType", self._hpShieldType)
   end
 end
-
-

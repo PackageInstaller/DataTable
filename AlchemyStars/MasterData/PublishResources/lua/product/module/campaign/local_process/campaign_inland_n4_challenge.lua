@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_n4_challenge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignInlandN4Challenge", ICampaignComponentLocalProcessBase)
 CCampaignInlandN4Challenge = CCampaignInlandN4Challenge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignInlandN4Challenge.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignInlandN4Challenge:Constructor()
   self._challengeMissionComponent = nil
   self._challengeMissionCompInfo = nil
   self._questComponent = nil
@@ -16,55 +9,37 @@ CCampaignInlandN4Challenge.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandN4Challenge.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignInlandN4Challenge:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_N4_CHALLENGE
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandN4Challenge.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignInlandN4Challenge:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandN4Challenge.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignInlandN4Challenge:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetChallengeComponent()
   self:_GetQuestComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandN4Challenge._GetChallengeComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._challengeMissionComponent = (self._campaignObj):GetComponent(ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
+function CCampaignInlandN4Challenge:_GetChallengeComponent()
+  self._challengeMissionComponent = self._campaignObj:GetComponent(ECCampaignInlandN4ChallengeComponentID.CHALLENGE)
   if not self._challengeMissionComponent then
-    return 
+    return
   end
-  self._challengeMissionCompInfo = (self._challengeMissionComponent):ComponentInfo()
+  self._challengeMissionCompInfo = self._challengeMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandN4Challenge._GetQuestComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECCampaignInlandN4ChallengeComponentID.QUEST)
+function CCampaignInlandN4Challenge:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECCampaignInlandN4ChallengeComponentID.QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandN4Challenge.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignInlandN4Challenge:GetComponent(componentID)
   if ECCampaignInlandN4ChallengeComponentID.CHALLENGE == componentID then
     return self._challengeMissionComponent
   end
@@ -74,10 +49,7 @@ CCampaignInlandN4Challenge.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandN4Challenge.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignInlandN4Challenge:GetComponentInfo(componentID)
   if ECCampaignInlandN4ChallengeComponentID.CHALLENGE == componentID then
     return self._challengeMissionCompInfo
   end
@@ -86,5 +58,3 @@ CCampaignInlandN4Challenge.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

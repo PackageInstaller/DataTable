@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_skip_previous_turns.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSkipPreviousTurns", AINewNode)
 ActionSkipPreviousTurns = ActionSkipPreviousTurns
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkipPreviousTurns.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkipPreviousTurns:Constructor()
   self._skipTurns = 0
   self._curSkipTurns = 0
   self._SaveRound = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkipPreviousTurns.InitializeNode = function(self, cfg, context, logicOwn, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSkipPreviousTurns.super).InitializeNode)(self, cfg, context)
+function ActionSkipPreviousTurns:InitializeNode(cfg, context, logicOwn, configData)
+  ActionSkipPreviousTurns.super.InitializeNode(self, cfg, context)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkipPreviousTurns.OnBegin = function(self)
-  -- function num : 0_2
+function ActionSkipPreviousTurns:OnBegin()
   self._skipTurns = self:GetLogicData(-1)
   local nGameRound = self:_GetGameRountNow()
   if self._SaveRound ~= nGameRound then
@@ -34,10 +21,7 @@ ActionSkipPreviousTurns.OnBegin = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkipPreviousTurns.OnUpdate = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ActionSkipPreviousTurns:OnUpdate()
   if self._curSkipTurns <= self._skipTurns then
     return AINewNodeStatus.Success
   else
@@ -45,14 +29,9 @@ ActionSkipPreviousTurns.OnUpdate = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkipPreviousTurns._GetGameRountNow = function(self)
-  -- function num : 0_4
-  local boardEntity = (self._world):GetBoardEntity()
-  local battleStatCmpt = (self._world):BattleStat()
+function ActionSkipPreviousTurns:_GetGameRountNow()
+  local boardEntity = self._world:GetBoardEntity()
+  local battleStatCmpt = self._world:BattleStat()
   local round = battleStatCmpt:GetCurWaveTotalRoundCount()
   return round
 end
-
-

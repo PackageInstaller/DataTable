@@ -1,32 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_damage_to_buff_target.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParam_DamageToBufferTarget", SkillDamageEffectParam)
 SkillEffectParam_DamageToBufferTarget = SkillEffectParam_DamageToBufferTarget
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_DamageToBufferTarget.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_DamageToBufferTarget:Constructor(t)
   self._specificBuffEffectType = t.specificBuffEffectType
-  ;
-  (Log.assert)(self._specificBuffEffectType ~= nil, self._className, "Field \'specificBuffEffectType\' is required. ")
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  Log.assert(self._specificBuffEffectType ~= nil, self._className, "Field 'specificBuffEffectType' is required. ")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageToBufferTarget.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_DamageToBufferTarget:GetEffectType()
   return SkillEffectType.DamageToBuffTarget
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DamageToBufferTarget.GetSpecificBuffEffectType = function(self)
-  -- function num : 0_2
+function SkillEffectParam_DamageToBufferTarget:GetSpecificBuffEffectType()
   return self._specificBuffEffectType
 end
-
-

@@ -1,42 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_and_add_buff_by_hit_back.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_DamageAndAddBuffByHitBack", Object)
 SkillEffectCalc_DamageAndAddBuffByHitBack = SkillEffectCalc_DamageAndAddBuffByHitBack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DamageAndAddBuffByHitBack.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_DamageAndAddBuffByHitBack:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._skillScopeTargetSelector = (self._world):GetSkillScopeTargetSelector()
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._skillScopeTargetSelector = self._world:GetSkillScopeTargetSelector()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageAndAddBuffByHitBack.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+function SkillEffectCalc_DamageAndAddBuffByHitBack:DoSkillEffectCalculator(skillEffectCalcParam)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local param = skillEffectCalcParam.skillEffectParam
   local isTransmitDamage = param:IsTransmitDamage()
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local resultArray = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local hitBackRes = skillEffectResultContainer:GetEffectResultByTargetID(SkillEffectType.HitBack, targetID)
     if hitBackRes and hitBackRes:GetIsBlocked() then
       local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
-      if #result > 0 then
-        (table.appendArray)(resultArray, result)
+      if 0 < #result then
+        table.appendArray(resultArray, result)
       end
       local blockMonsterID = hitBackRes:GetBlockMonsterID()
-      local blockMonsterEntity = (self._world):GetEntityByID(blockMonsterID)
-      if isTransmitDamage and blockMonsterEntity and (self._skillScopeTargetSelector):SelectConditionFilter(blockMonsterEntity) then
+      local blockMonsterEntity = self._world:GetEntityByID(blockMonsterID)
+      if isTransmitDamage and blockMonsterEntity and self._skillScopeTargetSelector:SelectConditionFilter(blockMonsterEntity) then
         local result = self:_CalculateSingleTarget(skillEffectCalcParam, blockMonsterID)
-        if #result > 0 then
-          (table.appendArray)(resultArray, result)
+        if 0 < #result then
+          table.appendArray(resultArray, result)
         end
       end
     end
@@ -44,77 +34,65 @@ SkillEffectCalc_DamageAndAddBuffByHitBack.DoSkillEffectCalculator = function(sel
   return resultArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageAndAddBuffByHitBack._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_DamageAndAddBuffByHitBack:_CalculateSingleTarget(skillEffectCalcParam, targetID)
   local resultArray = {}
   local damageRes = self:CalcDamageResult(skillEffectCalcParam, targetID)
   if damageRes then
-    (table.insert)(resultArray, damageRes)
+    table.insert(resultArray, damageRes)
   end
   local canAddBuff = false
-  for _,damageInfo in ipairs(damageRes:GetDamageInfoArray()) do
+  for _, damageInfo in ipairs(damageRes:GetDamageInfoArray()) do
     canAddBuff = canAddBuff or damageInfo:GetDamageValue() > 0
   end
-  do
-    if canAddBuff then
-      local addBuffRes = self:CalcAddBuffResult(skillEffectCalcParam, targetID)
-      if addBuffRes then
-        (table.insert)(resultArray, addBuffRes)
-      end
+  if canAddBuff then
+    local addBuffRes = self:CalcAddBuffResult(skillEffectCalcParam, targetID)
+    if addBuffRes then
+      table.insert(resultArray, addBuffRes)
     end
-    do return resultArray end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  return resultArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageAndAddBuffByHitBack.CalcDamageResult = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_DamageAndAddBuffByHitBack:CalcDamageResult(skillEffectCalcParam, targetID)
   local skillID = skillEffectCalcParam:GetSkillID()
   local param = skillEffectCalcParam.skillEffectParam
   local percent = param:GetPercent()
   local curFormulaID = param:GetFormulaID()
   local damageStageIndex = param:GetSkillEffectDamageStageIndex()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local casterPos = casterEntity:GetGridPosition()
-  local defenderEntity = (self._world):GetEntityByID(targetID)
+  local defenderEntity = self._world:GetEntityByID(targetID)
   local defenderPos = defenderEntity:GetGridPosition()
-  local skillDamageParam = SkillDamageEffectParam:New({percent = percent, formulaID = curFormulaID, damageStageIndex = damageStageIndex})
-  local nTotalDamage, listDamageInfo = (self._skillEffectService):ComputeSkillDamage(casterEntity, casterPos, defenderEntity, defenderPos, skillID, skillDamageParam, SkillEffectType.DamageAndAddBuffByHitBack, damageStageIndex)
-  local damageRes = (self._skillEffectService):NewSkillDamageEffectResult(defenderPos, targetID, nTotalDamage, listDamageInfo, damageStageIndex)
+  local skillDamageParam = SkillDamageEffectParam:New({
+    percent = percent,
+    formulaID = curFormulaID,
+    damageStageIndex = damageStageIndex
+  })
+  local nTotalDamage, listDamageInfo = self._skillEffectService:ComputeSkillDamage(casterEntity, casterPos, defenderEntity, defenderPos, skillID, skillDamageParam, SkillEffectType.DamageAndAddBuffByHitBack, damageStageIndex)
+  local damageRes = self._skillEffectService:NewSkillDamageEffectResult(defenderPos, targetID, nTotalDamage, listDamageInfo, damageStageIndex)
   return damageRes
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageAndAddBuffByHitBack.CalcAddBuffResult = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectCalc_DamageAndAddBuffByHitBack:CalcAddBuffResult(skillEffectCalcParam, targetID)
   local skillID = skillEffectCalcParam:GetSkillID()
   local attackRange = skillEffectCalcParam:GetSkillRange()
   local param = skillEffectCalcParam.skillEffectParam
   local buffID = param:GetBuffID()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local defenderEntity = (self._world):GetEntityByID(targetID)
-  local buffLogicService = (self._world):GetService("BuffLogic")
-  local triggerSvc = (self._world):GetService("Trigger")
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local defenderEntity = self._world:GetEntityByID(targetID)
+  local buffLogicService = self._world:GetService("BuffLogic")
+  local triggerSvc = self._world:GetService("Trigger")
   local buffResult = SkillBuffEffectResult:New(targetID)
-  local cfgNewBuff = (Cfg.cfg_buff)[buffID]
+  local cfgNewBuff = Cfg.cfg_buff[buffID]
   if cfgNewBuff then
     triggerSvc:Notify(NTEachAddBuffStart:New(skillID, casterEntity, defenderEntity, attackRange))
-    local buff = (buffLogicService:AddBuff(buffID, defenderEntity, {casterEntity = casterEntity}))
-    local seqID = nil
+    local buff = buffLogicService:AddBuff(buffID, defenderEntity, {casterEntity = casterEntity})
+    local seqID
     if buff then
       seqID = buff:BuffSeq()
       buffResult:AddBuffResult(seqID)
     end
     triggerSvc:Notify(NTEachAddBuffEnd:New(skillID, casterEntity, defenderEntity, attackRange, buffID, seqID))
   end
-  do
-    return buffResult
-  end
+  return buffResult
 end
-
-

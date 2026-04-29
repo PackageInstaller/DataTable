@@ -1,101 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/skill_tips_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillTipsComponent", Object)
 SkillTipsComponent = SkillTipsComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillTipsComponent.Constructor = function(self, skillName, skillDesc)
-  -- function num : 0_0
+function SkillTipsComponent:Constructor(skillName, skillDesc)
   self._skillName = skillName
   self._skillDesc = skillDesc
   self._isTrapDesc = false
   self._triggeredByChessPet = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsComponent.GetSkillName = function(self)
-  -- function num : 0_1
+function SkillTipsComponent:GetSkillName()
   return self._skillName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsComponent.GetSkillDesc = function(self)
-  -- function num : 0_2
+function SkillTipsComponent:GetSkillDesc()
   return self._skillDesc
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsComponent.SetTrapDesc = function(self, state)
-  -- function num : 0_3
+function SkillTipsComponent:SetTrapDesc(state)
   self._isTrapDesc = state
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsComponent.GetTrapDesc = function(self)
-  -- function num : 0_4
+function SkillTipsComponent:GetTrapDesc()
   return self._isTrapDesc
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsComponent.SetTriggeredByChessPet = function(self, v)
-  -- function num : 0_5
+function SkillTipsComponent:SetTriggeredByChessPet(v)
   self._triggeredByChessPet = v
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillTipsComponent.IsTriggeredByChessPet = function(self)
-  -- function num : 0_6
+function SkillTipsComponent:IsTriggeredByChessPet()
   return self._triggeredByChessPet
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SkillTips = function(self)
-  -- function num : 0_7
-  return self:GetComponent((self.WEComponentsEnum).SkillTips)
+function Entity:SkillTips()
+  return self:GetComponent(self.WEComponentsEnum.SkillTips)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSkillTips = function(self)
-  -- function num : 0_8
-  return self:HasComponent((self.WEComponentsEnum).SkillTips)
+function Entity:HasSkillTips()
+  return self:HasComponent(self.WEComponentsEnum.SkillTips)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSkillTips = function(self, skillName, skillDesc)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillTips
+function Entity:AddSkillTips(skillName, skillDesc)
+  local index = self.WEComponentsEnum.SkillTips
   local component = SkillTipsComponent:New(skillName, skillDesc)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceSkillTips = function(self, skillName, skillDesc)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillTips
+function Entity:ReplaceSkillTips(skillName, skillDesc)
+  local index = self.WEComponentsEnum.SkillTips
   local component = SkillTipsComponent:New(skillName, skillDesc)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveSkillTips = function(self)
-  -- function num : 0_11
+function Entity:RemoveSkillTips()
   if self:HasSkillTips() then
-    self:RemoveComponent((self.WEComponentsEnum).SkillTips)
+    self:RemoveComponent(self.WEComponentsEnum.SkillTips)
   end
 end
-
-

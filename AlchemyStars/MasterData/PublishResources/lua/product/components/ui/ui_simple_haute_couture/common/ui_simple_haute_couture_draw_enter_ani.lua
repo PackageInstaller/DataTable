@@ -1,55 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/ui_simple_haute_couture_draw_enter_ani.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureDrawEnterAni", UICustomWidget)
 UISimpleHauteCoutureDrawEnterAni = UISimpleHauteCoutureDrawEnterAni
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureDrawEnterAni.Constructor = function(self)
-  -- function num : 0_0
+function UISimpleHauteCoutureDrawEnterAni:Constructor()
   self._clipLength = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawEnterAni.OnShow = function(self)
-  -- function num : 0_1
+function UISimpleHauteCoutureDrawEnterAni:OnShow()
   self._bg1 = self:GetUIComponent("RawImageLoader", "bg1")
   self._bg2 = self:GetUIComponent("RawImageLoader", "bg2")
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawEnterAni.InitWidgets = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISimpleHauteCoutureDrawEnterAni:InitWidgets()
   local aniGo = self:GetGameObject("Animation")
   local animation = aniGo:GetComponent("Animation")
-  local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(animation)
+  local clips = HelperProxy:GetInstance():GetAllAnimationClip(animation)
   if clips and clips.Length > 0 then
     local clip = clips[0]
     self._clipLength = clip.length
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawEnterAni.GetClipLength = function(self)
-  -- function num : 0_3
+function UISimpleHauteCoutureDrawEnterAni:GetClipLength()
   return self._clipLength
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawEnterAni.SetData = function(self, cfg)
-  -- function num : 0_4
+function UISimpleHauteCoutureDrawEnterAni:SetData(cfg)
   self._cfg = cfg
-  ;
-  (self._bg1):LoadImage(((self._cfg).EnterPic)[1])
-  ;
-  (self._bg2):LoadImage(((self._cfg).EnterPic)[2])
+  self._bg1:LoadImage(self._cfg.EnterPic[1])
+  self._bg2:LoadImage(self._cfg.EnterPic[2])
 end
-
-

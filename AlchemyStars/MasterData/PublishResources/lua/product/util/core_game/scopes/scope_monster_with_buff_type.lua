@@ -1,24 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_monster_with_buff_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_MonsterWithBuffType", SkillScopeCalculator_Base)
 SkillScopeCalculator_MonsterWithBuffType = SkillScopeCalculator_MonsterWithBuffType
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_MonsterWithBuffType.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local monsterList, monsterPosList = (self._gridFilter):SelectMonsterWithBuff(scopeParam, casterEntity, 1)
+function SkillScopeCalculator_MonsterWithBuffType:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local monsterList, monsterPosList = self._gridFilter:SelectMonsterWithBuff(scopeParam, casterEntity, 1)
   local monsterIds = {}
-  for key,monster in pairs(monsterList) do
+  for key, monster in pairs(monsterList) do
     if monster:HasMonsterID() then
-      (table.insert)(monsterIds, (monster:MonsterID()):GetMonsterID())
+      table.insert(monsterIds, monster:MonsterID():GetMonsterID())
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.MonsterWithBuffType, casterPos, monsterPosList, monsterPosList, monsterIds)
   return result
 end
-
-

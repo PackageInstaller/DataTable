@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/common/exchange/ui_season_exchange_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonExchangeCell", UICustomWidget)
 UISeasonExchangeCell = UISeasonExchangeCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonExchangeCell.SetData = function(self, index, info, seasonId, component, tipsCallback)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonExchangeCell:SetData(index, info, seasonId, component, tipsCallback)
   self._index = index
   self._info = info
   self._seasonId = seasonId
   self._component = component
   self._tipsCallback = tipsCallback
-  self._uiCfg = (UISeasonHelper.GetCurExchangeCfg)()
+  self._uiCfg = UISeasonHelper.GetCurExchangeCfg()
   local type = self:_GetType()
   self:_SetBg(type)
   self:_SetRemain(type)
@@ -24,156 +17,117 @@ UISeasonExchangeCell.SetData = function(self, index, info, seasonId, component, 
   self:_SetSoldout(type)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonExchangeCell:PlayAnimationInSequence(index)
   local tb = {
-{animName = "uieff_UIS5Exchange_Cell_Large_in", duration = 600}
-, 
-{animName = "uieff_UIS5Exchange_Cell_Small_in", duration = 600}
-, 
-{animName = "uieff_UIS5Exchange_Cell_Small_in", duration = 600}
-}
+    {
+      animName = "uieff_UIS5Exchange_Cell_Large_in",
+      duration = 600
+    },
+    {
+      animName = "uieff_UIS5Exchange_Cell_Small_in",
+      duration = 600
+    },
+    {
+      animName = "uieff_UIS5Exchange_Cell_Small_in",
+      duration = 600
+    }
+  }
   local type = self:_GetType()
-  local animName, duration = (tb[type]).animName, (tb[type]).duration
+  local animName, duration = tb[type].animName, tb[type].duration
   local delay = index * 40
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", animName, delay, duration)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", animName, delay, duration)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell._GetType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local special = (self._info).m_is_special
-  local bold = (UISeasonExchangeHelper.GetBold)(self._component, (self._info).m_id)
-  local type = (special and 1) or (bold and 2) or 3
+function UISeasonExchangeCell:_GetType()
+  local special = self._info.m_is_special
+  local bold = UISeasonExchangeHelper.GetBold(self._component, self._info.m_id)
+  local type = special and 1 or bold and 2 or 3
   return type
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell._SetBg = function(self, type)
-  -- function num : 0_3 , upvalues : _ENV
-  local tb = {[1] = "exp_s5_shop_btn01", [2] = "exp_s5_shop_btn02", [3] = "exp_s5_shop_btn03"}
+function UISeasonExchangeCell:_SetBg(type)
+  local tb = {
+    [1] = "exp_s5_shop_btn01",
+    [2] = "exp_s5_shop_btn02",
+    [3] = "exp_s5_shop_btn03"
+  }
   local atlasName = "UISeasonExchange.spriteatlas"
   local spriteName = tb[type]
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "_bg", atlasName, spriteName)
+  UIWidgetHelper.SetImageSprite(self, "_bg", atlasName, spriteName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell._SetRemain = function(self, type)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonExchangeCell:_SetRemain(type)
   local constHide = 0
-  local remain = (self._component):GetCanExchangeCount(self._info, constHide)
-  local str = (StringTable.Get)("str_season_s1_exchange_remain", remain)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_remainText", str)
-  ;
-  (self:GetGameObject("_remainBg")):SetActive(remain ~= 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local remain = self._component:GetCanExchangeCount(self._info, constHide)
+  local str = StringTable.Get("str_season_s1_exchange_remain", remain)
+  UIWidgetHelper.SetLocalizationText(self, "_remainText", str)
+  self:GetGameObject("_remainBg"):SetActive(remain ~= 0)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell._SetDiscount = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local discount = (UISeasonExchangeHelper.GetDiscount)(self._component, (self._info).m_id)
+function UISeasonExchangeCell:_SetDiscount()
+  local discount = UISeasonExchangeHelper.GetDiscount(self._component, self._info.m_id)
   local str = "-" .. discount .. "%"
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_discountText", str)
+  UIWidgetHelper.SetLocalizationText(self, "_discountText", str)
   local bActive = discount ~= 0
-  ;
-  (self:GetGameObject("_discountBg")):SetActive(bActive)
-  do
-    if bActive and self._uiCfg then
-      local bgImage = self:GetUIComponent("Image", "_discountBg")
-      bgImage.color = (self._uiCfg).DiscountBgColor
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self:GetGameObject("_discountBg"):SetActive(bActive)
+  if bActive and self._uiCfg then
+    local bgImage = self:GetUIComponent("Image", "_discountBg")
+    bgImage.color = self._uiCfg.DiscountBgColor
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell._SetItem = function(self, type)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleAsset = (self._info).m_reward
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, roleAsset.assetid, "_icon")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_count", roleAsset.count)
-  ;
-  (UIWidgetHelper.SetItemText)(self, roleAsset.assetid, "_title")
+function UISeasonExchangeCell:_SetItem(type)
+  local roleAsset = self._info.m_reward
+  UIWidgetHelper.SetItemIcon(self, roleAsset.assetid, "_icon")
+  UIWidgetHelper.SetLocalizationText(self, "_count", roleAsset.count)
+  UIWidgetHelper.SetItemText(self, roleAsset.assetid, "_title")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell._SetCoin = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local itemId = (self._component):GetCostItemId((self._info).m_is_special)
+function UISeasonExchangeCell:_SetCoin()
+  local itemId = self._component:GetCostItemId(self._info.m_is_special)
   local atlasName = "UICommon.spriteatlas"
   local spriteName = "toptoon_" .. itemId
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "_coin", atlasName, spriteName)
-  local price1 = (UISeasonExchangeHelper.GetPrice)(self._component, (self._info).m_id)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_price1", price1)
-  ;
-  (self:GetGameObject("_price1")):SetActive(price1 ~= 0)
-  local price2 = (self._info).m_cost_count
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+  UIWidgetHelper.SetImageSprite(self, "_coin", atlasName, spriteName)
+  local price1 = UISeasonExchangeHelper.GetPrice(self._component, self._info.m_id)
+  UIWidgetHelper.SetLocalizationText(self, "_price1", price1)
+  self:GetGameObject("_price1"):SetActive(price1 ~= 0)
+  local price2 = self._info.m_cost_count
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local curCount = itemModule:GetItemCount(itemId)
-  if curCount < price2 then
+  if price2 > curCount then
     price2 = "<color=#ff4a57>" .. price2 .. "</color>"
   end
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_price2", price2)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  UIWidgetHelper.SetLocalizationText(self, "_price2", price2)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell._SetSoldout = function(self, type)
-  -- function num : 0_8 , upvalues : _ENV
-  local tb = {[1] = "exp_s5_shop_mask01", [2] = "exp_s5_shop_mask02", [3] = "exp_s5_shop_mask02"}
+function UISeasonExchangeCell:_SetSoldout(type)
+  local tb = {
+    [1] = "exp_s5_shop_mask01",
+    [2] = "exp_s5_shop_mask02",
+    [3] = "exp_s5_shop_mask02"
+  }
   local atlasName = "UISeasonExchange.spriteatlas"
   local spriteName = tb[type]
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "_soldout", atlasName, spriteName)
-  local isSoldout = (self._component):IsExchangeItemSoldout(self._info)
-  ;
-  (self:GetGameObject("_soldout")):SetActive(isSoldout)
+  UIWidgetHelper.SetImageSprite(self, "_soldout", atlasName, spriteName)
+  local isSoldout = self._component:IsExchangeItemSoldout(self._info)
+  self:GetGameObject("_soldout"):SetActive(isSoldout)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell.BtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.info)("UISeasonExchangeCell:BtnOnClick index = ", self._index)
-  local isSoldout = (self._component):IsExchangeItemSoldout(self._info)
+function UISeasonExchangeCell:BtnOnClick()
+  Log.info("UISeasonExchangeCell:BtnOnClick index = ", self._index)
+  local isSoldout = self._component:IsExchangeItemSoldout(self._info)
   if isSoldout then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_shop_sold_out_msg"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_shop_sold_out_msg"))
+  elseif self._info.m_reward.assetid >= RoleAssetID.RoleAssetPetSkinBegin and self._info.m_reward.assetid <= RoleAssetID.RoleAssetPetSkinEnd then
+    self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_SEASON_SKIN, self._info.m_reward.assetid - 4000000, self._seasonId, self._component, self._info)
   else
-    if RoleAssetID.RoleAssetPetSkinBegin <= ((self._info).m_reward).assetid and ((self._info).m_reward).assetid <= RoleAssetID.RoleAssetPetSkinEnd then
-      self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_SEASON_SKIN, ((self._info).m_reward).assetid - 4000000, self._seasonId, self._component, self._info)
-    else
-      self:ShowDialog("UISeasonExchangeConfirm", self._seasonId, self._component, self._info)
-    end
+    self:ShowDialog("UISeasonExchangeConfirm", self._seasonId, self._component, self._info)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonExchangeCell.SetBigBg = function(self, goodsBgName)
-  -- function num : 0_10
+function UISeasonExchangeCell:SetBigBg(goodsBgName)
   local bgLoader = self:GetUIComponent("RawImageLoader", "bigBg")
   if bgLoader then
     bgLoader:LoadImage(goodsBgName)
   end
 end
-
-

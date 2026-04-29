@@ -1,42 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_summon_scan_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_SummonScanTrap", SkillEffectResultBase)
 SkillEffectResult_SummonScanTrap = SkillEffectResult_SummonScanTrap
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResult_SummonScanTrap.__EFFECT_TYPE = SkillEffectType.SummonScanTrap
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_SummonScanTrap.Constructor = function(self, trapEntityID, tDestroyTrapID, tAddBuffResults)
-  -- function num : 0_0
+function SkillEffectResult_SummonScanTrap:Constructor(trapEntityID, tDestroyTrapID, tAddBuffResults)
   self._summonTrapEntityID = trapEntityID
   self._tDestroyTrapID = tDestroyTrapID
   self._tAddBuffResults = tAddBuffResults
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SummonScanTrap.GetSummonTrapEntityID = function(self)
-  -- function num : 0_1
+function SkillEffectResult_SummonScanTrap:GetSummonTrapEntityID()
   return self._summonTrapEntityID
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SummonScanTrap.GetDestroyTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectResult_SummonScanTrap:GetDestroyTrapID()
   return self._tDestroyTrapID
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_SummonScanTrap.GetAddBuffResults = function(self)
-  -- function num : 0_3
+function SkillEffectResult_SummonScanTrap:GetAddBuffResults()
   return self._tAddBuffResults
 end
-
-

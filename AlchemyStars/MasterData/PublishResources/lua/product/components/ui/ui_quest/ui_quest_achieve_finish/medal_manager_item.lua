@@ -1,86 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_quest/ui_quest_achieve_finish/medal_manager_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MedalManagerItem", Object)
 MedalManagerItem = MedalManagerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MedalManagerItem.SetGameObject = function(self, go)
-  -- function num : 0_0 , upvalues : _ENV
+function MedalManagerItem:SetGameObject(go)
   self._go = go
   self:_GetComponents()
-  ;
-  (self._go):SetActive(false)
-  self._atlas = (ResourceManager:GetInstance()):SyncLoadAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
+  self._go:SetActive(false)
+  self._atlas = ResourceManager:GetInstance():SyncLoadAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MedalManagerItem.OnHide = function(self)
-  -- function num : 0_1
-  (self._go):SetActive(false)
+function MedalManagerItem:OnHide()
+  self._go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MedalManagerItem.SetData = function(self, medalID)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._go):SetActive(true)
-  local cfg = (Cfg.cfg_item)[medalID]
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
+function MedalManagerItem:SetData(medalID)
+  self._go:SetActive(true)
+  local cfg = Cfg.cfg_item[medalID]
   if self._atlas then
-    (self._medalImg).sprite = ((self._atlas).Obj):GetSprite(cfg.Icon)
+    self._medalImg.sprite = self._atlas.Obj:GetSprite(cfg.Icon)
   end
-  ;
-  (self._titleTex):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._desTex):SetText((StringTable.Get)(((Cfg.cfg_item_medal)[medalID]).GetPathDesc))
+  self._titleTex:SetText(StringTable.Get(cfg.Name))
+  self._desTex:SetText(StringTable.Get(Cfg.cfg_item_medal[medalID].GetPathDesc))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MedalManagerItem.DoTween = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._tweenImg):DOFillAmount(1, 0.4)
-  ;
-  (self._quan):DOLocalRotate(Vector3(0, 0, 360), 0.4, ((DG.Tweening).RotateMode).FastBeyond360)
+function MedalManagerItem:DoTween()
+  self._tweenImg:DOFillAmount(1, 0.4)
+  self._quan:DOLocalRotate(Vector3(0, 0, 360), 0.4, DG.Tweening.RotateMode.FastBeyond360)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MedalManagerItem.ReplyTween = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._quan).localRotation = Quaternion:SetEuler(0, 0, -150)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._tweenImg).fillAmount = 0
+function MedalManagerItem:ReplyTween()
+  self._quan.localRotation = Quaternion:SetEuler(0, 0, -150)
+  self._tweenImg.fillAmount = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MedalManagerItem._GetComponents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._rect = ((((self._go).transform):Find("rect")).gameObject):GetComponent("RectTransform")
-  self._medalImg = ((((self._go).transform):Find("rect/leftObj/bg/medalImg")).gameObject):GetComponent("Image")
-  self._headTex = ((((self._go).transform):Find("rect/rightObj/line/medalHeadTex")).gameObject):GetComponent("UILocalizationText")
-  self._titleTex = ((((self._go).transform):Find("rect/rightObj/medelTitleTex")).gameObject):GetComponent("UILocalizationText")
-  self._desTex = ((((self._go).transform):Find("rect/rightObj/medalDesTex")).gameObject):GetComponent("UILocalizationText")
-  self._tweenImg = ((((self._go).transform):Find("rect/rightObj/line/medalHeadTex/dui")).gameObject):GetComponent("Image")
-  self._quan = ((((self._go).transform):Find("rect/rightObj/line/medalHeadTex/quan")).gameObject):GetComponent("Transform")
-  ;
-  (self._headTex):SetText((StringTable.Get)("str_medal_get_title"))
+function MedalManagerItem:_GetComponents()
+  self._rect = self._go.transform:Find("rect").gameObject:GetComponent("RectTransform")
+  self._medalImg = self._go.transform:Find("rect/leftObj/bg/medalImg").gameObject:GetComponent("Image")
+  self._headTex = self._go.transform:Find("rect/rightObj/line/medalHeadTex").gameObject:GetComponent("UILocalizationText")
+  self._titleTex = self._go.transform:Find("rect/rightObj/medelTitleTex").gameObject:GetComponent("UILocalizationText")
+  self._desTex = self._go.transform:Find("rect/rightObj/medalDesTex").gameObject:GetComponent("UILocalizationText")
+  self._tweenImg = self._go.transform:Find("rect/rightObj/line/medalHeadTex/dui").gameObject:GetComponent("Image")
+  self._quan = self._go.transform:Find("rect/rightObj/line/medalHeadTex/quan").gameObject:GetComponent("Transform")
+  self._headTex:SetText(StringTable.Get("str_medal_get_title"))
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MedalManagerItem.Dispose = function(self)
-  -- function num : 0_6
+function MedalManagerItem:Dispose()
   self._rect = nil
   self._medalImg = nil
   self._titleTex = nil
@@ -89,17 +52,9 @@ MedalManagerItem.Dispose = function(self)
   self._atlas = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MedalManagerItem.GetRectTransform = function(self)
-  -- function num : 0_7
+function MedalManagerItem:GetRectTransform()
   return self._rect
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MedalManagerItem._OnValue = function(self)
-  -- function num : 0_8
+function MedalManagerItem:_OnValue()
 end
-
-

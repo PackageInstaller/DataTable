@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_combat/components/skill_context_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillContextComponent", Object)
 SkillContextComponent = SkillContextComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillContextComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillContextComponent:Constructor()
   self._vampireDevice = VampireLimitDevice:New()
   self._finalDamageFixMap = {}
   self._hasDamage = {}
@@ -23,288 +16,173 @@ SkillContextComponent.Constructor = function(self)
   self._sacrificedHP = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetDamagePctIncreaseBuffEffectType = function(self)
-  -- function num : 0_1
+function SkillContextComponent:GetDamagePctIncreaseBuffEffectType()
   return self._damagePctIncreaseBuffEffectType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetDamagePctIncreaseMul = function(self)
-  -- function num : 0_2
+function SkillContextComponent:GetDamagePctIncreaseMul()
   return self._damagePctIncreaseMul
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetDamagePctIncreaseBuffEffectType = function(self, val)
-  -- function num : 0_3
+function SkillContextComponent:SetDamagePctIncreaseBuffEffectType(val)
   self._damagePctIncreaseBuffEffectType = val
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetDamagePctIncreaseMul = function(self, val)
-  -- function num : 0_4
+function SkillContextComponent:SetDamagePctIncreaseMul(val)
   self._damagePctIncreaseMul = val
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetResultContainer = function(self)
-  -- function num : 0_5
+function SkillContextComponent:GetResultContainer()
   return self._effectResultContainer
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.AddDamage = function(self, targetId, damage)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._hasDamage)[targetId] then
-    (self._hasDamage)[targetId] = {}
+function SkillContextComponent:AddDamage(targetId, damage)
+  if not self._hasDamage[targetId] then
+    self._hasDamage[targetId] = {}
   end
-  ;
-  (table.insert)((self._hasDamage)[targetId], damage)
+  table.insert(self._hasDamage[targetId], damage)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetDamage = function(self, targetId)
-  -- function num : 0_7
-  return (self._hasDamage)[targetId]
+function SkillContextComponent:GetDamage(targetId)
+  return self._hasDamage[targetId]
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.HasDamageInfoFor = function(self, targetId)
-  -- function num : 0_8
-  do return not (self._hasDamage)[targetId] or #(self._hasDamage)[targetId] > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function SkillContextComponent:HasDamageInfoFor(targetId)
+  return self._hasDamage[targetId] and #self._hasDamage[targetId] > 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.IsEntityDamaged = function(self, targetId, nonMissOnly)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillContextComponent:IsEntityDamaged(targetId, nonMissOnly)
   if not self:HasDamageInfoFor(targetId) then
     return false
   end
   local result = false
-  for _,damageInfo in ipairs((self._hasDamage)[targetId]) do
-    -- DECOMPILER ERROR at PC23: Unhandled construct in 'MakeBoolean' P1
-
-    if not result and damageInfo:GetDamageType() == DamageType.Miss then
-      do
-        result = not nonMissOnly
-        result = result or damageInfo:GetDamageValue() > 0
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC34: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for _, damageInfo in ipairs(self._hasDamage[targetId]) do
+    if nonMissOnly then
+      result = result or damageInfo:GetDamageType() ~= DamageType.Miss
+    else
+      result = result or damageInfo:GetDamageValue() > 0
     end
   end
-  do return result end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  return result
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.TryVampireOnce = function(self, cfgBase, value, cfgCeiling, fromSkill)
-  -- function num : 0_10 , upvalues : _ENV
-  local open, paramFromSkill = (self._vampireDevice):Status()
-  if open and not paramFromSkill and fromSkill then
-    (self._vampireDevice):SetLimit(cfgBase, cfgCeiling, fromSkill)
-    ;
-    (Log.fatal)("[Vampire] 吸血参数重置为技能")
+function SkillContextComponent:TryVampireOnce(cfgBase, value, cfgCeiling, fromSkill)
+  local open, paramFromSkill = self._vampireDevice:Status()
+  if open then
+    if not paramFromSkill and fromSkill then
+      self._vampireDevice:SetLimit(cfgBase, cfgCeiling, fromSkill)
+      Log.fatal("[Vampire] 吸血参数重置为技能")
+    end
+  else
+    self._vampireDevice:SetLimit(cfgBase, cfgCeiling, fromSkill)
   end
-  ;
-  (self._vampireDevice):SetLimit(cfgBase, cfgCeiling, fromSkill)
-  return (self._vampireDevice):ConsumeLimit(value)
+  return self._vampireDevice:ConsumeLimit(value)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.AddFinalDamageFix = function(self, targetEntityID, mulVal)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._finalDamageFixMap)[targetEntityID] then
-    (self._finalDamageFixMap)[targetEntityID] = {}
+function SkillContextComponent:AddFinalDamageFix(targetEntityID, mulVal)
+  if not self._finalDamageFixMap[targetEntityID] then
+    self._finalDamageFixMap[targetEntityID] = {}
   end
-  ;
-  (table.insert)((self._finalDamageFixMap)[targetEntityID], FinalDamageFixData:New(targetEntityID, mulVal))
+  table.insert(self._finalDamageFixMap[targetEntityID], FinalDamageFixData:New(targetEntityID, mulVal))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetFinalDamageFixMulVal = function(self, targetEntityID, sourceKey)
-  -- function num : 0_12 , upvalues : _ENV
+function SkillContextComponent:GetFinalDamageFixMulVal(targetEntityID, sourceKey)
   local mulVal = 0
-  if not (self._finalDamageFixMap)[targetEntityID] then
+  if not self._finalDamageFixMap[targetEntityID] then
     return mulVal
   end
-  for _,data in ipairs((self._finalDamageFixMap)[targetEntityID]) do
+  for _, data in ipairs(self._finalDamageFixMap[targetEntityID]) do
     mulVal = mulVal + data:GetMulVal()
   end
   return mulVal
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetCurrentConductRate = function(self, rate)
-  -- function num : 0_13
+function SkillContextComponent:SetCurrentConductRate(rate)
   self._currentConductRate = rate
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetCurrentConductRate = function(self)
-  -- function num : 0_14
+function SkillContextComponent:GetCurrentConductRate()
   return self._currentConductRate
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetConductBaseDamage = function(self, damage)
-  -- function num : 0_15
+function SkillContextComponent:SetConductBaseDamage(damage)
   self._conductBaseDamage = damage
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetConductBaseDamage = function(self)
-  -- function num : 0_16
+function SkillContextComponent:GetConductBaseDamage()
   return self._conductBaseDamage
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetDamagePctIncreaseBuffEffectType = function(self)
-  -- function num : 0_17
+function SkillContextComponent:GetDamagePctIncreaseBuffEffectType()
   return self._damagePctIncreaseBuffEffectType
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetDamagePctIncreaseMul = function(self)
-  -- function num : 0_18
+function SkillContextComponent:GetDamagePctIncreaseMul()
   return self._damagePctIncreaseMul
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetDamagePctIncreaseBuffEffectType = function(self, val)
-  -- function num : 0_19
+function SkillContextComponent:SetDamagePctIncreaseBuffEffectType(val)
   self._damagePctIncreaseBuffEffectType = val
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetDamagePctIncreaseMul = function(self, val)
-  -- function num : 0_20
+function SkillContextComponent:SetDamagePctIncreaseMul(val)
   self._damagePctIncreaseMul = val
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetDegressiveDamageParam = function(self)
-  -- function num : 0_21
+function SkillContextComponent:GetDegressiveDamageParam()
   return self._degressiveDamageParam
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetDegressiveDamageParam = function(self, v)
-  -- function num : 0_22
+function SkillContextComponent:SetDegressiveDamageParam(v)
   self._degressiveDamageParam = v
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetSplashBaseDamage = function(self, v)
-  -- function num : 0_23
+function SkillContextComponent:SetSplashBaseDamage(v)
   self._splashBaseDamage = v
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetSplashBaseDamage = function(self)
-  -- function num : 0_24
+function SkillContextComponent:GetSplashBaseDamage()
   return self._splashBaseDamage
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetDamageDampList = function(self)
-  -- function num : 0_25
+function SkillContextComponent:GetDamageDampList()
   return self._damageDampList
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetDamageDampList = function(self, t)
-  -- function num : 0_26
+function SkillContextComponent:SetDamageDampList(t)
   self._damageDampList = t
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.SetSacrificedHP = function(self, v)
-  -- function num : 0_27
+function SkillContextComponent:SetSacrificedHP(v)
   self._sacrificedHP = v
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillContextComponent.GetSacrificedHP = function(self)
-  -- function num : 0_28
+function SkillContextComponent:GetSacrificedHP()
   return self._sacrificedHP
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSkillContext = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillContext
+function Entity:AddSkillContext()
+  local index = self.WEComponentsEnum.SkillContext
   local component = SkillContextComponent:New()
   return self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SkillContext = function(self)
-  -- function num : 0_30
-  return self:GetComponent((self.WEComponentsEnum).SkillContext)
+function Entity:SkillContext()
+  return self:GetComponent(self.WEComponentsEnum.SkillContext)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSkillContext = function(self)
-  -- function num : 0_31
-  return self:HasComponent((self.WEComponentsEnum).SkillContext)
+function Entity:HasSkillContext()
+  return self:HasComponent(self.WEComponentsEnum.SkillContext)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveSkillContext = function(self)
-  -- function num : 0_32
+function Entity:RemoveSkillContext()
   if self:HasSkillContext() then
-    self:RemoveComponent((self.WEComponentsEnum).SkillContext)
+    self:RemoveComponent(self.WEComponentsEnum.SkillContext)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceSkillContext = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillContext
+function Entity:ReplaceSkillContext()
+  local index = self.WEComponentsEnum.SkillContext
   local component = SkillContextComponent:New()
   self:ReplaceComponent(index, component)
 end
-
-

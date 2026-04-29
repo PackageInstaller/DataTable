@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_feature_skill_power.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetFeatureSkillPower", BuffLogicBase)
 BuffLogicSetFeatureSkillPower = BuffLogicSetFeatureSkillPower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetFeatureSkillPower.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetFeatureSkillPower:Constructor(buffInstance, logicParam)
   self._power = logicParam.power or 0
   self._ready = logicParam.ready or 1
   self._featureType = logicParam.featureType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetFeatureSkillPower.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+function BuffLogicSetFeatureSkillPower:DoLogic()
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if lsvcFeature then
     lsvcFeature:SetFeatureSkillCurPower(self._featureType, self._power, self._ready)
     local data = FeatureSkillCommonPowerData:New()
@@ -29,5 +19,3 @@ BuffLogicSetFeatureSkillPower.DoLogic = function(self)
     return buffResult
   end
 end
-
-

@@ -1,47 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n14/common/ui_activity_n14_line_mission_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN14LineMissionMapLine", UICustomWidget)
 UIActivityN14LineMissionMapLine = UIActivityN14LineMissionMapLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN14LineMissionMapLine.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN14LineMissionMapLine:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "shape")
   self._image = self:GetUIComponent("Image", "line")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN14LineMissionMapLine.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN14LineMissionMapLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN14LineMissionMapLine.Flush = function(self, from, to, condition)
-  -- function num : 0_2 , upvalues : _ENV
-  local dis = (Vector2.Distance)(from, to)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(dis, ((self._rect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = from
+function UIActivityN14LineMissionMapLine:Flush(from, to, condition)
+  local dis = Vector2.Distance(from, to)
+  self._rect.sizeDelta = Vector2(dis, self._rect.sizeDelta.y)
+  self._rect.anchoredPosition = from
   local v = to - from
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
   if not condition then
-    (self._image).color = Color(0, 0, 0, 1)
+    self._image.color = Color(0, 0, 0, 1)
   end
 end
-
-

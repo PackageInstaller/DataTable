@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/season_maze_asset.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeAsset", Object)
 SeasonMazeAsset = SeasonMazeAsset
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeAsset.Constructor = function(self, type, name, count, icon, desc, param)
-  -- function num : 0_0
+function SeasonMazeAsset:Constructor(type, name, count, icon, desc, param)
   self._type = type
   self._name = name
   self._count = count
@@ -17,54 +10,30 @@ SeasonMazeAsset.Constructor = function(self, type, name, count, icon, desc, para
   self._subParam = param
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeAsset.Type = function(self)
-  -- function num : 0_1
+function SeasonMazeAsset:Type()
   return self._type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeAsset.SubParam = function(self)
-  -- function num : 0_2
+function SeasonMazeAsset:SubParam()
   return self._subParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeAsset.Name = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (StringTable.Get)(self._name)
+function SeasonMazeAsset:Name()
+  return StringTable.Get(self._name)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeAsset.Icon = function(self)
-  -- function num : 0_4
+function SeasonMazeAsset:Icon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeAsset.Count = function(self)
-  -- function num : 0_5
+function SeasonMazeAsset:Count()
   return self._count
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeAsset.Desc = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return (StringTable.Get)(self._desc)
+function SeasonMazeAsset:Desc()
+  return StringTable.Get(self._desc)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeAsset.Equal = function(self, other)
-  -- function num : 0_7
-  do return self:Type() == (other.Type)() and self:SubParam() == (other.SubParam)() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonMazeAsset:Equal(other)
+  return self:Type() == other.Type() and self:SubParam() == other.SubParam()
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_random_draw.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignRandomDraw", ICampaignComponentLocalProcessBase)
 CCampaignRandomDraw = CCampaignRandomDraw
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignRandomDraw.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignRandomDraw:Constructor()
   self._randomLotteryComponent = nil
   self._randomLotteryCompInfo = nil
   self._actionPointComponent = nil
@@ -18,67 +11,46 @@ CCampaignRandomDraw.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignRandomDraw.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignRandomDraw:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_RANDOM_DRAW
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignRandomDraw.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignRandomDraw:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignRandomDraw.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignRandomDraw:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetRandomLotteryComponent()
   self:_GetActionPointComponent()
   self:_GetStoryComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignRandomDraw._GetRandomLotteryComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._randomLotteryComponent = (self._campaignObj):GetComponent(ECampaignRandomDrawComponentID.RANDOMLOTTERY)
+function CCampaignRandomDraw:_GetRandomLotteryComponent()
+  self._randomLotteryComponent = self._campaignObj:GetComponent(ECampaignRandomDrawComponentID.RANDOMLOTTERY)
   if not self._randomLotteryComponent then
-    return 
+    return
   end
-  self._randomLotteryCompInfo = (self._randomLotteryComponent):ComponentInfo()
+  self._randomLotteryCompInfo = self._randomLotteryComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignRandomDraw._GetActionPointComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._actionPointComponent = (self._campaignObj):GetComponent(ECampaignRandomDrawComponentID.ACTIONPOINT)
+function CCampaignRandomDraw:_GetActionPointComponent()
+  self._actionPointComponent = self._campaignObj:GetComponent(ECampaignRandomDrawComponentID.ACTIONPOINT)
   if not self._actionPointComponent then
-    return 
+    return
   end
-  self._actionPointScoreCompInfo = (self._actionPointComponent):ComponentInfo()
+  self._actionPointScoreCompInfo = self._actionPointComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignRandomDraw._GetStoryComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._storyComponent = (self._campaignObj):GetComponent(ECampaignRandomDrawComponentID.STORY)
+function CCampaignRandomDraw:_GetStoryComponent()
+  self._storyComponent = self._campaignObj:GetComponent(ECampaignRandomDrawComponentID.STORY)
   if not self._storyComponent then
-    return 
+    return
   end
-  self._storyComponentInfo = (self._storyComponent):ComponentInfo()
+  self._storyComponentInfo = self._storyComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignRandomDraw.GetComponent = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignRandomDraw:GetComponent(componentID)
   if ECampaignRandomDrawComponentID.RANDOMLOTTERY == componentID then
     return self._randomLotteryComponent
   end
@@ -91,10 +63,7 @@ CCampaignRandomDraw.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignRandomDraw.GetComponentInfo = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignRandomDraw:GetComponentInfo(componentID)
   if ECampaignRandomDrawComponentID.RANDOMLOTTERY == componentID then
     return self._randomLotteryCompInfo
   end
@@ -106,5 +75,3 @@ CCampaignRandomDraw.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

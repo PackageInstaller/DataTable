@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/condition/season_map_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapCondition", Object)
 SeasonMapCondition = SeasonMapCondition
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapCondition.Constructor = function(self, module, id, progress)
-  -- function num : 0_0
+function SeasonMapCondition:Constructor(module, id, progress)
   self._module = module
   self._id = id
   self._progress = progress
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapCondition.OnCheck = function(self, map)
-  -- function num : 0_1
-  return (self._module):CheckUISatisfy(self._id, self._progress, map)
+function SeasonMapCondition:OnCheck(map)
+  return self._module:CheckUISatisfy(self._id, self._progress, map)
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/maze/stn_maze_is_match_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Maze_IsMatchRoom", CTestRobot_Base)
 Maze_IsMatchRoom = Maze_IsMatchRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Maze_IsMatchRoom.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function Maze_IsMatchRoom:OnWorking()
   local mazeRoomInfo = self.m_pRunData
   local module = self:GetModule(MissionModule)
   local ctx = module:TeamCtx()
@@ -24,15 +17,12 @@ Maze_IsMatchRoom.OnWorking = function(self)
     self.m_nLogicResult = 0
   end
   self.m_pReturnData = self.m_pRunData
-  return ((Maze_IsMatchRoom.super).OnWorking)(self)
+  return Maze_IsMatchRoom.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Maze_IsMatchRoom._IsNeedMatch = function(self, mazeRoomInfo)
-  -- function num : 0_1 , upvalues : _ENV
-  local configRoomData = (Cfg.cfg_maze_room)[mazeRoomInfo.room_id]
-  if configRoomData == nil then
+function Maze_IsMatchRoom:_IsNeedMatch(mazeRoomInfo)
+  local configRoomData = Cfg.cfg_maze_room[mazeRoomInfo.room_id]
+  if nil == configRoomData then
     return false
   end
   if MazeRoomType.MazeRoomType_Battery == configRoomData.MazeRoomType then
@@ -40,5 +30,3 @@ Maze_IsMatchRoom._IsNeedMatch = function(self, mazeRoomInfo)
   end
   return true
 end
-
-

@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_skill_select_by_buff_layer_and_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionSkillSelectByBuffLayerAndRound", AINewNode)
 ActionSkillSelectByBuffLayerAndRound = ActionSkillSelectByBuffLayerAndRound
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkillSelectByBuffLayerAndRound.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkillSelectByBuffLayerAndRound:Constructor()
   self._skillID = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByBuffLayerAndRound.InitializeNode = function(self, cfg, context, parentNode, configData)
-  -- function num : 0_1 , upvalues : _ENV
-  ((ActionSkillSelectByBuffLayerAndRound.super).InitializeNode)(self, cfg, context, parentNode, configData)
+function ActionSkillSelectByBuffLayerAndRound:InitializeNode(cfg, context, parentNode, configData)
+  ActionSkillSelectByBuffLayerAndRound.super.InitializeNode(self, cfg, context, parentNode, configData)
   self._buffID = configData[1]
   self._comparisonType = configData[2]
   self._comparisonParam = configData[3]
@@ -28,76 +18,60 @@ ActionSkillSelectByBuffLayerAndRound.InitializeNode = function(self, cfg, contex
   self._roundCount = configData[8]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByBuffLayerAndRound.Update = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local buffCmp = (self.m_entityOwn):BuffComponent()
+function ActionSkillSelectByBuffLayerAndRound:Update()
+  local buffCmp = self.m_entityOwn:BuffComponent()
   local buffInstance = buffCmp:GetBuffById(self._buffID)
   local checkResult = false
   if buffInstance then
-    local satisfied = nil
+    local satisfied
     local layer = buffInstance:GetLayerCount()
-    if layer ~= self._comparisonParam then
-      satisfied = self._comparisonType ~= ComparisonOperator.EQ
-      if layer == self._comparisonParam then
-        satisfied = self._comparisonType ~= ComparisonOperator.NE
-        if self._comparisonParam >= layer then
-          satisfied = self._comparisonType ~= ComparisonOperator.GT
-          if self._comparisonParam > layer then
-            satisfied = self._comparisonType ~= ComparisonOperator.GE
-            if layer >= self._comparisonParam then
-              satisfied = self._comparisonType ~= ComparisonOperator.LT
-              if layer > self._comparisonParam then
-                do
-                  satisfied = self._comparisonType ~= ComparisonOperator.LE
-                  if satisfied then
-                    checkResult = true
-                  else
-                    checkResult = false
-                  end
-                  local checkBuffMatch = false
-                  if checkResult == true and self._checkBuffHavereturn == 1 then
-                    checkBuffMatch = true
-                  elseif checkResult == false and self._checkBuffHavereturn == 0 then
-                    checkBuffMatch = true
-                  else
-                    checkBuffMatch = false
-                  end
-                  if checkBuffMatch then
-                    self._skillID = self:GetConfigSkillID(self._skillListIndex, self._skillIndex)
-                  else
-                    local vecSkillLists = self:GetConfigSkillList()
-                    local skillList = vecSkillLists[self._secondSkillListIndex]
-                    local skillCount = (table.count)(skillList)
-                    if self._roundCount then
-                      skillCount = self._roundCount
-                    end
-                    local battleStatCmpt = (self._world):BattleStat()
-                    local levelTotalRoundCount = battleStatCmpt:GetLevelTotalRoundCount()
-                    local roundCount = levelTotalRoundCount % skillCount
-                    if roundCount == 0 then
-                      roundCount = skillCount
-                    end
-                    self._skillID = skillList[roundCount]
-                  end
-                  do return AINewNodeStatus.Success end
-                  -- DECOMPILER ERROR: 21 unprocessed JMP targets
-                end
-              end
-            end
-          end
-        end
-      end
+    if self._comparisonType == ComparisonOperator.EQ then
+      satisfied = layer == self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.NE then
+      satisfied = layer ~= self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.GT then
+      satisfied = layer > self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.GE then
+      satisfied = layer >= self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.LT then
+      satisfied = layer < self._comparisonParam
+    elseif self._comparisonType == ComparisonOperator.LE then
+      satisfied = layer <= self._comparisonParam
+    end
+    if satisfied then
+      checkResult = true
+    else
+      checkResult = false
     end
   end
+  local checkBuffMatch = false
+  if checkResult == true and self._checkBuffHavereturn == 1 then
+    checkBuffMatch = true
+  elseif checkResult == false and self._checkBuffHavereturn == 0 then
+    checkBuffMatch = true
+  else
+    checkBuffMatch = false
+  end
+  if checkBuffMatch then
+    self._skillID = self:GetConfigSkillID(self._skillListIndex, self._skillIndex)
+  else
+    local vecSkillLists = self:GetConfigSkillList()
+    local skillList = vecSkillLists[self._secondSkillListIndex]
+    local skillCount = table.count(skillList)
+    if self._roundCount then
+      skillCount = self._roundCount
+    end
+    local battleStatCmpt = self._world:BattleStat()
+    local levelTotalRoundCount = battleStatCmpt:GetLevelTotalRoundCount()
+    local roundCount = levelTotalRoundCount % skillCount
+    if roundCount == 0 then
+      roundCount = skillCount
+    end
+    self._skillID = skillList[roundCount]
+  end
+  return AINewNodeStatus.Success
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectByBuffLayerAndRound.GetActionSkillID = function(self)
-  -- function num : 0_3
+function ActionSkillSelectByBuffLayerAndRound:GetActionSkillID()
   return self._skillID
 end
-
-

@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_set_move_with_team_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultSetMoveWithTeam", BuffResultBase)
 BuffResultSetMoveWithTeam = BuffResultSetMoveWithTeam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSetMoveWithTeam.Constructor = function(self, bSet, teamEntity)
-  -- function num : 0_0
+function BuffResultSetMoveWithTeam:Constructor(bSet, teamEntity)
   self._bSet = bSet
   self._targetTeamEntity = teamEntity
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetMoveWithTeam.IsSet = function(self)
-  -- function num : 0_1
+function BuffResultSetMoveWithTeam:IsSet()
   return self._bSet
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSetMoveWithTeam.GetTargetTeamEntity = function(self)
-  -- function num : 0_2
+function BuffResultSetMoveWithTeam:GetTargetTeamEntity()
   return self._targetTeamEntity
 end
-
-

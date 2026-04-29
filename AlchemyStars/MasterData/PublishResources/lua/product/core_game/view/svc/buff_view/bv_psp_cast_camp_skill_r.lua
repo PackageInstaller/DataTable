@@ -1,41 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_psp_cast_camp_skill_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewPSPCastCampSkill", BuffViewBase)
 BuffViewPSPCastCampSkill = BuffViewPSPCastCampSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewPSPCastCampSkill.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewPSPCastCampSkill:PlayView(TT, notify)
   local result = self._buffResult
   local deadMonsterEntityIdList = result:GetSkillDeadMonsterEntityIDList()
   if deadMonsterEntityIdList then
-    for _,eid in ipairs(deadMonsterEntityIdList) do
-      local e = (self._world):GetEntityByID(eid)
+    for _, eid in ipairs(deadMonsterEntityIdList) do
+      local e = self._world:GetEntityByID(eid)
       e:AddDeadFlag()
     end
   end
-  do
-    local skillID = result:GetSkillID()
-    local skillHolder = (self._world):GetEntityByID(result:GetSkillHolderID())
-    local skillResult = result:GetSkillResult()
-    ;
-    (skillHolder:SkillRoutine()):SetResultContainer(skillResult)
-    if not skillHolder:HasEffectController() and result:GetNotSetLocationState() == 0 then
-      skillHolder:SetPosition(skillHolder:GetGridPosition() + skillHolder:GetGridOffset())
-    end
-    local playSkillSvc = (self._world):GetService("PlaySkill")
-    local configSvc = (self._world):GetService("Config")
-    local skillConfigData = configSvc:GetSkillConfigData(skillID, skillHolder)
-    local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
-    playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, skillID)
-    if deadMonsterEntityIdList and #deadMonsterEntityIdList > 0 then
-      local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
-      sMonsterShowRender:DoAllMonsterDeadRender(TT)
-    end
+  local skillID = result:GetSkillID()
+  local skillHolder = self._world:GetEntityByID(result:GetSkillHolderID())
+  local skillResult = result:GetSkillResult()
+  skillHolder:SkillRoutine():SetResultContainer(skillResult)
+  if not skillHolder:HasEffectController() and result:GetNotSetLocationState() == 0 then
+    skillHolder:SetPosition(skillHolder:GetGridPosition() + skillHolder:GetGridOffset())
+  end
+  local playSkillSvc = self._world:GetService("PlaySkill")
+  local configSvc = self._world:GetService("Config")
+  local skillConfigData = configSvc:GetSkillConfigData(skillID, skillHolder)
+  local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
+  playSkillSvc:_SkillRoutineTask(TT, skillHolder, skillPhaseArray, skillID)
+  if deadMonsterEntityIdList and 0 < #deadMonsterEntityIdList then
+    local sMonsterShowRender = self._world:GetService("MonsterShowRender")
+    sMonsterShowRender:DoAllMonsterDeadRender(TT)
   end
 end
-
-

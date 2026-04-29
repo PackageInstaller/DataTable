@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/random_count_damage_same_half_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RandomCountDamageSameHalfCalculator", Object)
 RandomCountDamageSameHalfCalculator = RandomCountDamageSameHalfCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RandomCountDamageSameHalfCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function RandomCountDamageSameHalfCalculator:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RandomCountDamageSameHalfCalculator.Calculate = function(self, casterEntity, skillEffectCalcParam, finalScopeFilterParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function RandomCountDamageSameHalfCalculator:Calculate(casterEntity, skillEffectCalcParam, finalScopeFilterParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local targetIDs = scopeResult:GetTargetIDs()
-  if not targetIDs or (table.count)(targetIDs) == 0 then
-    return 
+  if not targetIDs or table.count(targetIDs) == 0 then
+    return
   end
   local results = {}
   local damageDampList = {}
@@ -31,18 +21,18 @@ RandomCountDamageSameHalfCalculator.Calculate = function(self, casterEntity, ski
   local dampPer = skillEffectCalcParam:GetDampPercent()
   local percentAddParam = skillEffectCalcParam:GetPercentAdd()
   local isSelTargetLoop = skillEffectCalcParam:GetIsSelTargetLoop()
-  local randomSvc = (self._world):GetService("RandomLogic")
-  local svcCalcDamage = (self._world):GetService("CalcDamage")
+  local randomSvc = self._world:GetService("RandomLogic")
+  local svcCalcDamage = self._world:GetService("CalcDamage")
   local curDamageIndex = 1
   local lastIndex = 0
   local damageRandomCount = skillEffectCalcParam:GetDamageRandomCount()
-  local randomSvc = (self._world):GetService("RandomLogic")
+  local randomSvc = self._world:GetService("RandomLogic")
   local damageCount = randomSvc:LogicRand(damageRandomCount[1], damageRandomCount[2])
-  while #results < damageCount do
-    local index = nil
+  while damageCount > #results do
+    local index
     if isSelTargetLoop then
       index = lastIndex + 1
-      if #targetIDs < index then
+      if index > #targetIDs then
         index = 1
       end
       lastIndex = index
@@ -55,30 +45,30 @@ RandomCountDamageSameHalfCalculator.Calculate = function(self, casterEntity, ski
     end
     local multiDamageInfo = {}
     local totalDamage = 0
-    local target = (self._world):GetEntityByID(targetID)
-    local targetPos = (target:GridLocation()):GetGridPos()
-    for _,percent in ipairs(percents) do
-      (self._skillEffectService):NotifyDamageBegin(casterEntity, target, casterEntity:GetGridPosition(), targetPos, skillID, nil, nil, curDamageIndex)
-      local damageInfo = svcCalcDamage:DoCalcDamage(casterEntity, target, {percent = (percent + percentAddParam) * damageDampList[targetID], skillID = skillID, formulaID = damageFormulaID, critProb = skillEffectCalcParam.critProb, crit = skillEffectCalcParam.crit})
+    local target = self._world:GetEntityByID(targetID)
+    local targetPos = target:GridLocation():GetGridPos()
+    for _, percent in ipairs(percents) do
+      self._skillEffectService:NotifyDamageBegin(casterEntity, target, casterEntity:GetGridPosition(), targetPos, skillID, nil, nil, curDamageIndex)
+      local damageInfo = svcCalcDamage:DoCalcDamage(casterEntity, target, {
+        percent = (percent + percentAddParam) * damageDampList[targetID],
+        skillID = skillID,
+        formulaID = damageFormulaID,
+        critProb = skillEffectCalcParam.critProb,
+        crit = skillEffectCalcParam.crit
+      })
       damageInfo:SetRandHalfDamageIndex(curDamageIndex)
       curDamageIndex = curDamageIndex + 1
       damageDampList[targetID] = damageDampList[targetID] * dampPer
       totalDamage = totalDamage + damageInfo:GetDamageValue()
-      ;
-      (table.insert)(multiDamageInfo, damageInfo)
-      ;
-      (self._skillEffectService):NotifyDamageEnd(casterEntity, target, casterEntity:GetGridPosition(), targetPos, skillID, damageInfo)
+      table.insert(multiDamageInfo, damageInfo)
+      self._skillEffectService:NotifyDamageEnd(casterEntity, target, casterEntity:GetGridPosition(), targetPos, skillID, damageInfo)
     end
     local skillResult = SkillDamageEffectResult:New(targetPos, targetID, totalDamage, multiDamageInfo)
     results[#results + 1] = skillResult
   end
-  do
-    local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
-    for _,v in ipairs(results) do
-      skillEffectResultContainer:AddEffectResult(v)
-    end
-    return results
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
+  for _, v in ipairs(results) do
+    skillEffectResultContainer:AddEffectResult(v)
   end
+  return results
 end
-
-

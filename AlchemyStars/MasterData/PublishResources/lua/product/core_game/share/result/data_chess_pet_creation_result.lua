@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_chess_pet_creation_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataChessPetCreationResult", Object)
 DataChessPetCreationResult = DataChessPetCreationResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataChessPetCreationResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DataChessPetCreationResult:Constructor()
   self._entityID = -1
   self._templateID = -1
   self._resPath = nil
@@ -20,130 +13,74 @@ DataChessPetCreationResult.Constructor = function(self)
   self._gridLocRes = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.GetChessPetEntityIID = function(self)
-  -- function num : 0_1
+function DataChessPetCreationResult:GetChessPetEntityIID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.SetChessPetEntityID = function(self, entityID)
-  -- function num : 0_2
+function DataChessPetCreationResult:SetChessPetEntityID(entityID)
   self._entityID = entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.GetChessPetTemplateID = function(self)
-  -- function num : 0_3
+function DataChessPetCreationResult:GetChessPetTemplateID()
   return self._templateID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.SetChessPetTemplateID = function(self, id)
-  -- function num : 0_4
+function DataChessPetCreationResult:SetChessPetTemplateID(id)
   self._templateID = id
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.GetChessPetResPath = function(self)
-  -- function num : 0_5
+function DataChessPetCreationResult:GetChessPetResPath()
   return self._resPath
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.SetChessPetResPath = function(self, path)
-  -- function num : 0_6
+function DataChessPetCreationResult:SetChessPetResPath(path)
   self._resPath = path
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.GetChessPetHP = function(self)
-  -- function num : 0_7
+function DataChessPetCreationResult:GetChessPetHP()
   return self._curHp
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.SetChessPetHP = function(self, hp)
-  -- function num : 0_8
+function DataChessPetCreationResult:SetChessPetHP(hp)
   self._curHp = hp
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.GetChessPetMaxHP = function(self)
-  -- function num : 0_9
+function DataChessPetCreationResult:GetChessPetMaxHP()
   return self._maxHp
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.SetChessPetMaxHP = function(self, hp)
-  -- function num : 0_10
+function DataChessPetCreationResult:SetChessPetMaxHP(hp)
   self._maxHp = hp
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.GetChessPetHPOffset = function(self)
-  -- function num : 0_11
+function DataChessPetCreationResult:GetChessPetHPOffset()
   return self._hpOffset
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.SetChessPetHPOffset = function(self, offset)
-  -- function num : 0_12
+function DataChessPetCreationResult:SetChessPetHPOffset(offset)
   self._hpOffset = offset
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.GetChessPetElement = function(self)
-  -- function num : 0_13
+function DataChessPetCreationResult:GetChessPetElement()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.SetChessPetElement = function(self, element)
-  -- function num : 0_14
+function DataChessPetCreationResult:SetChessPetElement(element)
   self._elementType = element
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.GetChessPetLockHPList = function(self)
-  -- function num : 0_15
+function DataChessPetCreationResult:GetChessPetLockHPList()
   return self._lockHpList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.SetChessPetLockHPList = function(self, list)
-  -- function num : 0_16
+function DataChessPetCreationResult:SetChessPetLockHPList(list)
   self._lockHpList = list
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.GetChessPetGridLocResult = function(self)
-  -- function num : 0_17
+function DataChessPetCreationResult:GetChessPetGridLocResult()
   return self._gridLocRes
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPetCreationResult.SetChessPetGridLocResult = function(self, res)
-  -- function num : 0_18
+function DataChessPetCreationResult:SetChessPetGridLocResult(res)
   self._gridLocRes = res
 end
-
-

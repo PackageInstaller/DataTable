@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/3dui/home_3dui_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Home3DUIManager", Object)
 Home3DUIManager = Home3DUIManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Home3DUIManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function Home3DUIManager:Constructor()
   self._talkUnit = nil
   self._talkCount = 10
   self._talkUnitQueue = Home3DUIQueue:New()
@@ -16,305 +9,194 @@ Home3DUIManager.Constructor = function(self)
   self._interactList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIManager.Init = function(self, homelandClient)
-  -- function num : 0_1 , upvalues : _ENV
+function Home3DUIManager:Init(homelandClient)
   self._homelandClient = homelandClient
   self._3duiReq = nil
-  local _3dui = nil
-  _3dui = ((UnityEngine.GameObject).Find)("3DUI")
+  local _3dui
+  _3dui = UnityEngine.GameObject.Find("3DUI")
   if not _3dui then
-    self._3duiReq = (ResourceManager:GetInstance()):SyncLoadAsset("UIHome3DUI.prefab", LoadType.GameObject)
-    _3dui = (self._3duiReq).Obj
+    self._3duiReq = ResourceManager:GetInstance():SyncLoadAsset("UIHome3DUI.prefab", LoadType.GameObject)
+    _3dui = self._3duiReq.Obj
     _3dui:SetActive(true)
   end
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (_3dui.transform).position = Vector3(0, 0, 0)
-  local _3duiCanvas = (_3dui.transform):Find("3DUICanvas")
+  _3dui.transform.position = Vector3(0, 0, 0)
+  local _3duiCanvas = _3dui.transform:Find("3DUICanvas")
   self._talkRoot = _3duiCanvas:Find("TalkRoot")
-  self._talkUnit = ((self._talkRoot):Find("TalkUnit")).gameObject
-  ;
-  (self._talkUnit):SetActive(false)
+  self._talkUnit = self._talkRoot:Find("TalkUnit").gameObject
+  self._talkUnit:SetActive(false)
   for i = 1, self._talkCount do
     self:CreateTalkUnit()
   end
-  ;
-  (Log.debug)("###[Home3DUIManager] Init ! maxCount --> ", self._talkCount)
-  ;
-  (Log.debug)("###[Home3DUIManager] Init ! queue count --> ", (self._talkUnitQueue):Count())
+  Log.debug("###[Home3DUIManager] Init ! maxCount --> ", self._talkCount)
+  Log.debug("###[Home3DUIManager] Init ! queue count --> ", self._talkUnitQueue:Count())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIManager.CreateTalkUnit = function(self, unit)
-  -- function num : 0_2 , upvalues : _ENV
-  local talkUnit = nil
+function Home3DUIManager:CreateTalkUnit(unit)
+  local talkUnit
   if unit then
     talkUnit = unit
   else
     local go = self:Copy(self._talkUnit)
     talkUnit = HomeTalkUnit:New(go)
   end
-  do
-    talkUnit:Active(false)
-    talkUnit:SetUsing(false)
-    ;
-    (self._talkUnitQueue):Enqueue(talkUnit)
-    ;
-    (Log.debug)("###[Home3DUIManager] Enqueue ! queue count --> ", (self._talkUnitQueue):Count())
-  end
+  talkUnit:Active(false)
+  talkUnit:SetUsing(false)
+  self._talkUnitQueue:Enqueue(talkUnit)
+  Log.debug("###[Home3DUIManager] Enqueue ! queue count --> ", self._talkUnitQueue:Count())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIManager.GetTalkUnit = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local count = (self._talkUnitQueue):Count()
+function Home3DUIManager:GetTalkUnit()
+  local count = self._talkUnitQueue:Count()
   if count <= 0 then
     self:CreateTalkUnit()
     self._talkCount = self._talkCount + 1
-    ;
-    (Log.debug)("###[Home3DUIManager] maxCount + 1 ! maxCount --> ", self._talkCount)
+    Log.debug("###[Home3DUIManager] maxCount + 1 ! maxCount --> ", self._talkCount)
   end
-  local talkUnit = (self._talkUnitQueue):Dequeue()
-  ;
-  (Log.debug)("###[Home3DUIManager] Dequeue ! queue count --> ", (self._talkUnitQueue):Count())
+  local talkUnit = self._talkUnitQueue:Dequeue()
+  Log.debug("###[Home3DUIManager] Dequeue ! queue count --> ", self._talkUnitQueue:Count())
   talkUnit:Active(true)
   talkUnit:SetUsing(true)
   return talkUnit
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIManager.ReturnTalkUnit = function(self, unit)
-  -- function num : 0_4
+function Home3DUIManager:ReturnTalkUnit(unit)
   self:CreateTalkUnit(unit)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_5
+function Home3DUIManager:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIManager.Dispose = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("###[Home3DUIManager] Dispose ! queue count --> ", (self._talkUnitQueue):Count())
+function Home3DUIManager:Dispose()
+  Log.debug("###[Home3DUIManager] Dispose ! queue count --> ", self._talkUnitQueue:Count())
   if self._3duiReq then
-    (self._3duiReq):Dispose()
+    self._3duiReq:Dispose()
     self._3duiReq = nil
   end
   for i = 1, #self._nameBoardList do
-    ((self._nameBoardList)[i]):Dispose()
+    self._nameBoardList[i]:Dispose()
   end
   self._nameBoardList = nil
   for i = 1, #self._interactList do
-    ((self._interactList)[i]):Dispose()
+    self._interactList[i]:Dispose()
   end
   self._interactList = nil
   if self._nameBoardAtlas then
     self._nameBoardAtlas = nil
-    ;
-    (self._nameBoardAtlasResReq):Dispose()
+    self._nameBoardAtlasResReq:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIManager.Copy = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  local copy = ((UnityEngine.GameObject).Instantiate)(go, Vector3(0, 0, 0), Quaternion.identity, self._talkRoot)
+function Home3DUIManager:Copy(go)
+  local copy = UnityEngine.GameObject.Instantiate(go, Vector3(0, 0, 0), Quaternion.identity, self._talkRoot)
   return copy
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIManager.AddNameBoard = function(self, root, spriteName, stringKey)
-  -- function num : 0_8 , upvalues : _ENV
-  local resReq = (ResourceManager:GetInstance()):SyncLoadAsset("UIHomelandNameBoard.prefab", LoadType.GameObject)
+function Home3DUIManager:AddNameBoard(root, spriteName, stringKey)
+  local resReq = ResourceManager:GetInstance():SyncLoadAsset("UIHomelandNameBoard.prefab", LoadType.GameObject)
   local go = resReq.Obj
-  local image = go:GetComponentInChildren(typeof((UnityEngine.UI).Image))
+  local image = go:GetComponentInChildren(typeof(UnityEngine.UI.Image))
   local text = go:GetComponentInChildren(typeof(UILocalizationText))
   if not self._nameBoardAtlas then
-    self._nameBoardAtlasResReq = (ResourceManager:GetInstance()):SyncLoadAsset("UIHomeland3D.spriteatlas", LoadType.SpriteAtlas)
-    self._nameBoardAtlas = (self._nameBoardAtlasResReq).Obj
+    self._nameBoardAtlasResReq = ResourceManager:GetInstance():SyncLoadAsset("UIHomeland3D.spriteatlas", LoadType.SpriteAtlas)
+    self._nameBoardAtlas = self._nameBoardAtlasResReq.Obj
   end
   go:SetActive(true)
-  ;
-  (go.transform):SetParent(root, false)
-  image.sprite = (self._nameBoardAtlas):GetSprite(spriteName)
-  text:SetText((StringTable.Get)(stringKey))
-  ;
-  (table.insert)(self._nameBoardList, resReq)
+  go.transform:SetParent(root, false)
+  image.sprite = self._nameBoardAtlas:GetSprite(spriteName)
+  text:SetText(StringTable.Get(stringKey))
+  table.insert(self._nameBoardList, resReq)
   return go
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIManager.AddInteractBoard = function(self, root)
-  -- function num : 0_9 , upvalues : _ENV
-  local resReq = (ResourceManager:GetInstance()):SyncLoadAsset("UIHomelandInteractBoard.prefab", LoadType.GameObject)
-  ;
-  (table.insert)(self._interactList, resReq)
+function Home3DUIManager:AddInteractBoard(root)
+  local resReq = ResourceManager:GetInstance():SyncLoadAsset("UIHomelandInteractBoard.prefab", LoadType.GameObject)
+  table.insert(self._interactList, resReq)
   local go = resReq.Obj
   go:SetActive(true)
-  ;
-  (go.transform):SetParent(root, false)
-  local resReq = (ResourceManager:GetInstance()):SyncLoadAsset("eff_jy_meme_tanhao.prefab", LoadType.GameObject)
-  ;
-  (table.insert)(self._interactList, resReq)
+  go.transform:SetParent(root, false)
+  local resReq = ResourceManager:GetInstance():SyncLoadAsset("eff_jy_meme_tanhao.prefab", LoadType.GameObject)
+  table.insert(self._interactList, resReq)
   local goEff = resReq.Obj
   goEff:SetActive(true)
-  local effRoot = (go.transform):Find("effRoot")
-  ;
-  (goEff.transform):SetParent(effRoot, false)
+  local effRoot = go.transform:Find("effRoot")
+  goEff.transform:SetParent(effRoot, false)
   return go
 end
 
 _class("HomeTalkUnit", Object)
 HomeTalkUnit = HomeTalkUnit
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeTalkUnit.Constructor = function(self, go)
-  -- function num : 0_10
+function HomeTalkUnit:Constructor(go)
   self._selfMsgWidth = 565
   self._go = go
   self._tr = go.transform
-  self._layout = (self._tr):Find("layout")
-  self._layoutGroup = (self._layout):GetComponent("VerticalLayoutGroup")
-  self._tex = (((self._layout):Find("talkTex")).gameObject):GetComponent("UILocalizationText")
-  self._texRect = (((self._layout):Find("talkTex")).gameObject):GetComponent("RectTransform")
-  self._filter = (self._layout):GetComponent("ContentSizeFitter")
-  self._layoutRect = (self._layout):GetComponent("RectTransform")
+  self._layout = self._tr:Find("layout")
+  self._layoutGroup = self._layout:GetComponent("VerticalLayoutGroup")
+  self._tex = self._layout:Find("talkTex").gameObject:GetComponent("UILocalizationText")
+  self._texRect = self._layout:Find("talkTex").gameObject:GetComponent("RectTransform")
+  self._filter = self._layout:GetComponent("ContentSizeFitter")
+  self._layoutRect = self._layout:GetComponent("RectTransform")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTalkUnit.SetPos = function(self, pos)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._tr).position = pos
+function HomeTalkUnit:SetPos(pos)
+  self._tr.position = pos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTalkUnit.SetRotation = function(self, rot)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._tr).rotation = rot
+function HomeTalkUnit:SetRotation(rot)
+  self._tr.rotation = rot
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTalkUnit.SetTex = function(self, tex)
-  -- function num : 0_13
+function HomeTalkUnit:SetTex(tex)
   self:_SetText(tex)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTalkUnit.Active = function(self, active)
-  -- function num : 0_14
-  (self._go):SetActive(active)
+function HomeTalkUnit:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTalkUnit.GetUsing = function(self)
-  -- function num : 0_15
+function HomeTalkUnit:GetUsing()
   return self._using
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTalkUnit.SetUsing = function(self, using)
-  -- function num : 0_16
+function HomeTalkUnit:SetUsing(using)
   self._using = using
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeTalkUnit._SetText = function(self, tex)
-  -- function num : 0_17 , upvalues : _ENV
-  (self._tex):SetText(tex)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._filter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).PreferredSize
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._layoutGroup).childControlWidth = true
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._layoutRect)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  if self._selfMsgWidth < (self._tex).preferredWidth then
-    (self._filter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).Unconstrained
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._layoutGroup).childControlWidth = false
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._layoutRect).sizeDelta = Vector2(self._selfMsgWidth, ((self._layoutRect).sizeDelta).y)
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._texRect).sizeDelta = Vector2(self._selfMsgWidth, ((self._texRect).sizeDelta).y)
+function HomeTalkUnit:_SetText(tex)
+  self._tex:SetText(tex)
+  self._filter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
+  self._layoutGroup.childControlWidth = true
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._layoutRect)
+  if self._tex.preferredWidth > self._selfMsgWidth then
+    self._filter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained
+    self._layoutGroup.childControlWidth = false
+    self._layoutRect.sizeDelta = Vector2(self._selfMsgWidth, self._layoutRect.sizeDelta.y)
+    self._texRect.sizeDelta = Vector2(self._selfMsgWidth, self._texRect.sizeDelta.y)
   else
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._filter).horizontalFit = (((UnityEngine.UI).ContentSizeFitter).FitMode).PreferredSize
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._layoutGroup).childControlWidth = true
+    self._filter.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
+    self._layoutGroup.childControlWidth = true
   end
 end
 
 _class("Home3DUIQueue", Object)
 Home3DUIQueue = Home3DUIQueue
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-Home3DUIQueue.Constructor = function(self)
-  -- function num : 0_18
+function Home3DUIQueue:Constructor()
   self._queue = {}
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIQueue.Enqueue = function(self, item)
-  -- function num : 0_19 , upvalues : _ENV
-  (table.insert)(self._queue, item)
+function Home3DUIQueue:Enqueue(item)
+  table.insert(self._queue, item)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIQueue.Dequeue = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function Home3DUIQueue:Dequeue()
   if self:Count() > 0 then
-    local item = (self._queue)[1]
-    ;
-    (table.remove)(self._queue, 1)
+    local item = self._queue[1]
+    table.remove(self._queue, 1)
     return item
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-Home3DUIQueue.Count = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  return (table.count)(self._queue)
+function Home3DUIQueue:Count()
+  return table.count(self._queue)
 end
-
-

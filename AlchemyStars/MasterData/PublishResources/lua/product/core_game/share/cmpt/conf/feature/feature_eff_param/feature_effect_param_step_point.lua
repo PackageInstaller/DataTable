@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_step_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamStepPoint", FeatureEffectParamBase)
 FeatureEffectParamStepPoint = FeatureEffectParamStepPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamStepPoint.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamStepPoint:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamStepPoint._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamStepPoint:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.InitStepPoint then
     self._initStepPoint = t.InitStepPoint
@@ -33,32 +23,18 @@ FeatureEffectParamStepPoint._RefreshData = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamStepPoint.GetFeatureType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureEffectParamStepPoint:GetFeatureType()
   return FeatureType.StepPoint
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamStepPoint.GetInitStepPoint = function(self)
-  -- function num : 0_3
+function FeatureEffectParamStepPoint:GetInitStepPoint()
   return self._initStepPoint
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamStepPoint.GetMaxStepPoint = function(self)
-  -- function num : 0_4
+function FeatureEffectParamStepPoint:GetMaxStepPoint()
   return self._maxStepPoint
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamStepPoint.GetRecoverStepPoint = function(self)
-  -- function num : 0_5
+function FeatureEffectParamStepPoint:GetRecoverStepPoint()
   return self._recoverStepPoint
 end
-
-

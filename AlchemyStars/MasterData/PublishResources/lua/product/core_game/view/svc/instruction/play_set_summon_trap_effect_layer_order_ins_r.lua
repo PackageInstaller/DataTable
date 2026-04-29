@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_set_summon_trap_effect_layer_order_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySetSummonTrapEffectLayerOrderInstruction", BaseInstruction)
 PlaySetSummonTrapEffectLayerOrderInstruction = PlaySetSummonTrapEffectLayerOrderInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySetSummonTrapEffectLayerOrderInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySetSummonTrapEffectLayerOrderInstruction:Constructor(paramList)
   self._wait = tonumber(paramList.wait)
   self._targetLayerName = paramList.targetLayerName or "SkillGeziEffect"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySetSummonTrapEffectLayerOrderInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySetSummonTrapEffectLayerOrderInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if not APPVER_LAYERORDER then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local resultIndex = phaseContext:GetCurResultIndexByType(SkillEffectType.SummonScanTrap)
-  local routineCmpt = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineCmpt = casterEntity:SkillRoutine():GetResultContainer()
   local tResults = routineCmpt:GetEffectResultsAsArray(SkillEffectType.SummonScanTrap)
   if not tResults then
-    return 
+    return
   end
   local result = tResults[resultIndex]
   local world = casterEntity:GetOwnerWorld()
@@ -34,9 +24,9 @@ PlaySetSummonTrapEffectLayerOrderInstruction.DoInstruction = function(self, TT, 
   local eidNewTrap = result:GetSummonTrapEntityID()
   local eNewTrap = world:GetEntityByID(eidNewTrap)
   if not eNewTrap then
-    return 
+    return
   end
-  local go = (eNewTrap:View()):GetGameObject()
+  local go = eNewTrap:View():GetGameObject()
   local trapRenderCmpt = eNewTrap:TrapRender()
   if trapRenderCmpt and trapRenderCmpt:GetIsPrismGrid() ~= nil then
     local pos = eNewTrap:GetRenderGridPosition()
@@ -44,45 +34,28 @@ PlaySetSummonTrapEffectLayerOrderInstruction.DoInstruction = function(self, TT, 
     local pieceEntity = pieceSvc:FindPieceEntity(pos)
     if pieceEntity and pieceEntity:HasPiece() then
       local pieceComponent = pieceEntity:Piece()
-      do
-        local curPiecePrefabObj = pieceComponent:GetBaseLayerObj()
-        -- DECOMPILER ERROR at PC73: Confused about usage of register: R20 in 'UnsetPending'
-
-        if curPiecePrefabObj then
-          (curPiecePrefabObj.transform).localPosition = Vector3(0, 0.01, 0)
-          ;
-          ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self, curPiecePrefabObj
-    YIELD(TT, self._wait)
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (curPiecePrefabObj.transform).localPosition = Vector3(0, 0, 0)
-  end
-)
-        end
+      local curPiecePrefabObj = pieceComponent:GetBaseLayerObj()
+      if curPiecePrefabObj then
+        curPiecePrefabObj.transform.localPosition = Vector3(0, 0.01, 0)
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          YIELD(TT, self._wait)
+          curPiecePrefabObj.transform.localPosition = Vector3(0, 0, 0)
+        end)
       end
     end
   end
-  do
-    local tLayerOrderComponent = (go.gameObject):GetComponentInChildren(typeof(TLayerOrderComponent))
-    if not tLayerOrderComponent then
-      return 
-    end
-    local curLayerName = tLayerOrderComponent:GetSortLayerName()
-    tLayerOrderComponent:SetSortLayer(self._targetLayerName)
-    tLayerOrderComponent:Sorted()
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_1 , upvalues : _ENV, self, tLayerOrderComponent, curLayerName
+  local tLayerOrderComponent = go.gameObject:GetComponentInChildren(typeof(TLayerOrderComponent))
+  if not tLayerOrderComponent then
+    return
+  end
+  local curLayerName = tLayerOrderComponent:GetSortLayerName()
+  tLayerOrderComponent:SetSortLayer(self._targetLayerName)
+  tLayerOrderComponent:Sorted()
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT, self._wait)
     tLayerOrderComponent:SetSortLayer(curLayerName)
     tLayerOrderComponent:Sorted()
     tLayerOrderComponent:TLayerOrderManagerClearAll()
     tLayerOrderComponent:Sorted()
-  end
-)
-  end
+  end)
 end
-
-

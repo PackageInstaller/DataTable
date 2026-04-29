@@ -1,277 +1,181 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_guide/guide_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideHelper", Object)
 GuideHelper = GuideHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideHelper.Goto = function(showOpenUI)
-  -- function num : 0_0 , upvalues : _ENV
-  local uiName = nil
+function GuideHelper.Goto(showOpenUI)
+  local uiName
   local type = showOpenUI[1]
   if type == GuideGotoType.FromAircraftTo then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftJumpOutTo, function()
-    -- function num : 0_0_0 , upvalues : _ENV, showOpenUI, uiName
-    (table.remove)(showOpenUI, 1)
-    uiName = (GuideHelper._Goto)(showOpenUI)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.OpenUI)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftJumpOutTo, function()
+      table.remove(showOpenUI, 1)
+      uiName = GuideHelper._Goto(showOpenUI)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.OpenUI)
+    end)
   else
-    uiName = (GuideHelper._Goto)(showOpenUI)
+    uiName = GuideHelper._Goto(showOpenUI)
   end
   return uiName
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideHelper._Goto = function(showOpenUI)
-  -- function num : 0_1 , upvalues : _ENV
-  local uiName = nil
+function GuideHelper._Goto(showOpenUI)
+  local uiName
   local controllerType = showOpenUI[1]
   if controllerType == GuideGotoType.UIDiscovery then
     local missionId = showOpenUI[2]
     if missionId then
-      local module = (GameGlobal.GetModule)(MissionModule)
+      local module = GameGlobal.GetModule(MissionModule)
       local data = module:GetDiscoveryData()
       data:UpdatePosByEnter(3, missionId)
-      ;
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIDiscovery, true)
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIDiscovery, true)
     else
-      do
-        do
-          ;
-          ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIDiscovery, true)
-          uiName = "UIDiscovery"
-          if controllerType == GuideGotoType.UIPlayer then
-            local petTempId = showOpenUI[2]
-            if petTempId then
-              local showTrain = showOpenUI[3]
-              if showTrain == 1 then
-                local pets = (((GameGlobal.GetModule)(PetModule)):GetPets())
-                local petPsdId = nil
-                for key,v in pairs(pets) do
-                  if v:GetTemplateID() == petTempId then
-                    petPsdId = key
-                    break
-                  end
-                end
-                do
-                  do
-                    do
-                      do
-                        if petPsdId then
-                          uiName = "UIUpLevelInterfaceController"
-                          ;
-                          ((GameGlobal.UIStateManager)()):ShowDialog(uiName, petPsdId)
-                        end
-                        uiName = "UISpiritDetailGroupController"
-                        ;
-                        ((GameGlobal.UIStateManager)()):ShowDialog(uiName, petTempId)
-                        uiName = "UIHeartSpiritController"
-                        ;
-                        ((GameGlobal.UIStateManager)()):ShowDialog(uiName)
-                        if controllerType == GuideGotoType.UICard then
-                          uiName = "UIRecruit"
-                          ;
-                          ((GameGlobal.UIStateManager)()):ShowDialog("UIRecruit")
-                        else
-                          if controllerType == GuideGotoType.UIQuest then
-                            uiName = "UIQuestController"
-                            ;
-                            ((GameGlobal.UIStateManager)()):ShowDialog(uiName)
-                          else
-                            if controllerType == GuideGotoType.UIMain then
-                              uiName = "UIMainLobbyController"
-                              ;
-                              ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
-                            else
-                              if controllerType == GuideGotoType.UITeam then
-                                local missionId = showOpenUI[2]
-                                if missionId then
-                                  local module = (GameGlobal.GetModule)(MissionModule)
-                                  local data = module:GetDiscoveryData()
-                                  data:UpdatePosByEnter(5, missionId)
-                                  local ctx = module:TeamCtx()
-                                  ctx:Init(TeamOpenerType.Stage, missionId)
-                                  ;
-                                  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UITeams)
-                                  uiName = "UITeams"
-                                end
-                              else
-                                do
-                                  if controllerType == GuideGotoType.UIHelp then
-                                    local helpEnum = showOpenUI[2]
-                                    local cfg = ((Cfg.cfg_help)({Enum = helpEnum}))[1]
-                                    if cfg then
-                                      ((GameGlobal.UIStateManager)()):ShowDialog("UIHelpController", cfg.ID)
-                                    end
-                                    uiName = "UIHelpController"
-                                  else
-                                    do
-                                      if controllerType == GuideGotoType.UIAircraft then
-                                        local controller = ((GameGlobal.UIStateManager)()):GetController("UIAircraftController")
-                                        if controller then
-                                          local module = (GameGlobal.GetModule)(AircraftModule)
-                                          local main = module:GetClientMain()
-                                          main:MoveCameraToFar(function()
-    -- function num : 0_1_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.OpenUI)
-  end
-)
-                                          ;
-                                          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftShowRoomUI, nil)
-                                        else
-                                          do
-                                            do
-                                              ;
-                                              ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Aircraft_Enter, "fc_ui")
-                                              uiName = "UIAircraftController"
-                                              if controllerType == GuideGotoType.CloseCurUI then
-                                                local stateManager = (GameGlobal.UIStateManager)()
-                                                local visibleUIList = (stateManager.uiControllerManager):VisibleUIList()
-                                                for i = 1, visibleUIList:Size() do
-                                                  local name = visibleUIList:GetAt(i)
-                                                  if stateManager:IsTopUI(name) then
-                                                    stateManager:CloseDialog(name)
-                                                    break
-                                                  end
-                                                end
-                                                do
-                                                  do
-                                                    uiName = ""
-                                                    ;
-                                                    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.OpenUI)
-                                                    if controllerType == GuideGotoType.UIVideo then
-                                                      local videoName = showOpenUI[2]
-                                                      local duration = showOpenUI[3]
-                                                      ;
-                                                      ((GameGlobal.UIStateManager)()):ShowDialog("UIGuideVideoController", videoName, duration)
-                                                      uiName = "UIGuideVideoController"
-                                                    end
-                                                    do
-                                                      return uiName
-                                                    end
-                                                  end
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIDiscovery, true)
+    end
+    uiName = "UIDiscovery"
+  elseif controllerType == GuideGotoType.UIPlayer then
+    local petTempId = showOpenUI[2]
+    if petTempId then
+      local showTrain = showOpenUI[3]
+      if showTrain == 1 then
+        local pets = GameGlobal.GetModule(PetModule):GetPets()
+        local petPsdId
+        for key, v in pairs(pets) do
+          if v:GetTemplateID() == petTempId then
+            petPsdId = key
+            break
           end
         end
+        if petPsdId then
+          uiName = "UIUpLevelInterfaceController"
+          GameGlobal.UIStateManager():ShowDialog(uiName, petPsdId)
+        end
+      else
+        uiName = "UISpiritDetailGroupController"
+        GameGlobal.UIStateManager():ShowDialog(uiName, petTempId)
+      end
+    else
+      uiName = "UIHeartSpiritController"
+      GameGlobal.UIStateManager():ShowDialog(uiName)
+    end
+  elseif controllerType == GuideGotoType.UICard then
+    uiName = "UIRecruit"
+    GameGlobal.UIStateManager():ShowDialog("UIRecruit")
+  elseif controllerType == GuideGotoType.UIQuest then
+    uiName = "UIQuestController"
+    GameGlobal.UIStateManager():ShowDialog(uiName)
+  elseif controllerType == GuideGotoType.UIMain then
+    uiName = "UIMainLobbyController"
+    GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
+  elseif controllerType == GuideGotoType.UITeam then
+    local missionId = showOpenUI[2]
+    if missionId then
+      local module = GameGlobal.GetModule(MissionModule)
+      local data = module:GetDiscoveryData()
+      data:UpdatePosByEnter(5, missionId)
+      local ctx = module:TeamCtx()
+      ctx:Init(TeamOpenerType.Stage, missionId)
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UITeams)
+      uiName = "UITeams"
+    end
+  elseif controllerType == GuideGotoType.UIHelp then
+    local helpEnum = showOpenUI[2]
+    local cfg = Cfg.cfg_help({Enum = helpEnum})[1]
+    if cfg then
+      GameGlobal.UIStateManager():ShowDialog("UIHelpController", cfg.ID)
+    end
+    uiName = "UIHelpController"
+  elseif controllerType == GuideGotoType.UIAircraft then
+    local controller = GameGlobal.UIStateManager():GetController("UIAircraftController")
+    if controller then
+      local module = GameGlobal.GetModule(AircraftModule)
+      local main = module:GetClientMain()
+      main:MoveCameraToFar(function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.OpenUI)
+      end)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftShowRoomUI, nil)
+    else
+      GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Aircraft_Enter, "fc_ui")
+    end
+    uiName = "UIAircraftController"
+  elseif controllerType == GuideGotoType.CloseCurUI then
+    local stateManager = GameGlobal.UIStateManager()
+    local visibleUIList = stateManager.uiControllerManager:VisibleUIList()
+    for i = 1, visibleUIList:Size() do
+      local name = visibleUIList:GetAt(i)
+      if stateManager:IsTopUI(name) then
+        stateManager:CloseDialog(name)
+        break
       end
     end
+    uiName = ""
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.OpenUI)
+  elseif controllerType == GuideGotoType.UIVideo then
+    local videoName = showOpenUI[2]
+    local duration = showOpenUI[3]
+    GameGlobal.UIStateManager():ShowDialog("UIGuideVideoController", videoName, duration)
+    uiName = "UIGuideVideoController"
   end
+  return uiName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideHelper.DontShowThreeMission = function()
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
+function GuideHelper.DontShowThreeMission()
   if not GuideHelper._dontShowThreeMissions then
-    GuideHelper._dontShowThreeMissions = ((Cfg.cfg_guide_const).guide_no_threestar_missions).ArrayValue
+    GuideHelper._dontShowThreeMissions = Cfg.cfg_guide_const.guide_no_threestar_missions.ArrayValue
   end
-  local match = (GameGlobal.GetModule)(MatchModule)
+  local match = GameGlobal.GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
   if enterData._match_type == MatchType.MT_Mission then
-    local missionID = (enterData:GetMissionCreateInfo()).mission_id
-    return (table.icontains)(GuideHelper._dontShowThreeMissions, missionID)
+    local missionID = enterData:GetMissionCreateInfo().mission_id
+    return table.icontains(GuideHelper._dontShowThreeMissions, missionID)
   else
-    do
-      do return false end
-    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideHelper.DontShowMainSkillMission = function()
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
+function GuideHelper.DontShowMainSkillMission()
   if not GuideHelper._dontShowMainSkillMissions then
-    GuideHelper._dontShowMainSkillMissions = ((Cfg.cfg_guide_const).guide_no_active_skill_missions).ArrayValue
+    GuideHelper._dontShowMainSkillMissions = Cfg.cfg_guide_const.guide_no_active_skill_missions.ArrayValue
   end
-  local match = (GameGlobal.GetModule)(MatchModule)
+  local match = GameGlobal.GetModule(MatchModule)
   local enterData = match:GetMatchEnterData()
   if enterData._match_type == MatchType.MT_Mission then
-    local missionID = (enterData:GetMissionCreateInfo()).mission_id
-    return (table.icontains)(GuideHelper._dontShowMainSkillMissions, missionID)
+    local missionID = enterData:GetMissionCreateInfo().mission_id
+    return table.icontains(GuideHelper._dontShowMainSkillMissions, missionID)
   else
-    do
-      do return false end
-    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideHelper.GuideLoadLock = function(lock, mark)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("GuideHelper.GuideLoadLock", lock, mark, (debug.traceback)())
+function GuideHelper.GuideLoadLock(lock, mark)
+  Log.debug("GuideHelper.GuideLoadLock", lock, mark, debug.traceback())
   if lock then
-    ((GameGlobal.UIStateManager)()):Lock("GuideLoadLock")
-  else
-    if ((((GameGlobal.UIStateManager)()).uiControllerManager).lockManager):HasLock("GuideLoadLock") then
-      ((GameGlobal.UIStateManager)()):UnLock("GuideLoadLock")
-    end
+    GameGlobal.UIStateManager():Lock("GuideLoadLock")
+  elseif GameGlobal.UIStateManager().uiControllerManager.lockManager:HasLock("GuideLoadLock") then
+    GameGlobal.UIStateManager():UnLock("GuideLoadLock")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideHelper.IsUIGuideShow = function()
-  -- function num : 0_5 , upvalues : _ENV
-  return ((GameGlobal.GuideMessageBoxMng)()):IsGuideBoxShowing()
+function GuideHelper.IsUIGuideShow()
+  return GameGlobal.GuideMessageBoxMng():IsGuideBoxShowing()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideHelper.GuideInProgress = function()
-  -- function num : 0_6 , upvalues : _ENV
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function GuideHelper.GuideInProgress()
+  local guideModule = GameGlobal.GetModule(GuideModule)
   return guideModule:GuideInProgress()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideHelper.IsUIGuideFailedComplete = function(TT)
-  -- function num : 0_7 , upvalues : _ENV
-  local uiGuideFailedShow = ((GameGlobal.UIStateManager)()):IsShow("UIGuideFailedController")
+function GuideHelper.IsUIGuideFailedComplete(TT)
+  local uiGuideFailedShow = GameGlobal.UIStateManager():IsShow("UIGuideFailedController")
   while uiGuideFailedShow == false do
-    uiGuideFailedShow = ((GameGlobal.UIStateManager)()):IsShow("UIGuideFailedController")
+    uiGuideFailedShow = GameGlobal.UIStateManager():IsShow("UIGuideFailedController")
     YIELD(TT)
-    if not (GameGlobal:GetInstance()):IsCoreGameRunning() then
-      return 
+    if not GameGlobal:GetInstance():IsCoreGameRunning() then
+      return
     end
   end
   while uiGuideFailedShow == true do
-    uiGuideFailedShow = ((GameGlobal.UIStateManager)()):IsShow("UIGuideFailedController")
+    uiGuideFailedShow = GameGlobal.UIStateManager():IsShow("UIGuideFailedController")
     YIELD(TT)
-    if not (GameGlobal:GetInstance()):IsCoreGameRunning() then
-      return 
+    if not GameGlobal:GetInstance():IsCoreGameRunning() then
+      return
     end
   end
 end
-
-

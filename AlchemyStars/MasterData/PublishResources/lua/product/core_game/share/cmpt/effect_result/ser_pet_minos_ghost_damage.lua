@@ -1,49 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_pet_minos_ghost_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultPetMinosGhostDamage", SkillEffectResultBase)
 SkillEffectResultPetMinosGhostDamage = SkillEffectResultPetMinosGhostDamage
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultPetMinosGhostDamage.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResultPetMinosGhostDamage:GetEffectType()
   return SkillEffectType.PetMinosGhostDamage
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetMinosGhostDamage.Constructor = function(self, centerPos, damageResults, curMovePath)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultPetMinosGhostDamage:Constructor(centerPos, damageResults, curMovePath)
   self._centerPos = centerPos
   self._damageResults = damageResults
   self._curMovePath = {}
-  for index,value in ipairs(curMovePath) do
-    (table.insert)(self._curMovePath, Vector2(value.x, value.y))
+  for index, value in ipairs(curMovePath) do
+    table.insert(self._curMovePath, Vector2(value.x, value.y))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetMinosGhostDamage.GetCastCenterPos = function(self)
-  -- function num : 0_2
+function SkillEffectResultPetMinosGhostDamage:GetCastCenterPos()
   return self._centerPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetMinosGhostDamage.GetDamageResults = function(self)
-  -- function num : 0_3
+function SkillEffectResultPetMinosGhostDamage:GetDamageResults()
   return self._damageResults
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetMinosGhostDamage.GetCurMovePath = function(self)
-  -- function num : 0_4
+function SkillEffectResultPetMinosGhostDamage:GetCurMovePath()
   return self._curMovePath
 end
-
-

@@ -1,69 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/ui/monitor/ui_resleak.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIResLeak", UIController)
 UIResLeak = UIResLeak
 local data = {}
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
 
-UIResLeak.Constructor = function(self)
-  -- function num : 0_0
+function UIResLeak:Constructor()
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResLeak.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIResLeak:OnShow(uiParams)
   self.content = self:GetUIComponent("Text", "content")
   self.text = self:GetUIComponent("Text", "Text")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.text).text = "快照资源"
+  self.text.text = "快照资源"
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResLeak.btnCloseOnClick = function(self, go)
-  -- function num : 0_2
+function UIResLeak:btnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResLeak.Log = function(self, msg)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.content).text = msg
+function UIResLeak:Log(msg)
+  self.content.text = msg
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResLeak.btnSnapShotOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV, data
-  (Monitor:GetInstance()):SnapShot()
+function UIResLeak:btnSnapShotOnClick(go)
+  Monitor:GetInstance():SnapShot()
   data.luaMemery = collectgarbage("count")
   data.monoMemory = App.CMem
-  data.recordTime = (UnityEngine.Time).realtimeSinceStartup
+  data.recordTime = UnityEngine.Time.realtimeSinceStartup
   self:Log("开始记录")
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIResLeak.btnCompareOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV, data
+function UIResLeak:btnCompareOnClick(go)
   assert(next(data), "need snapshot frist")
-  local time = ToTimingFormat2((UnityEngine.Time).realtimeSinceStartup - data.recordTime)
-  local msg1 = (string.format)("记录前mono内存：%s MB；当前mono内存：%s MB；\n记录前lua内存：%s MB；当前lua内存：%s MB \n记录时长：%s\n是否开启缓存：%s\n", data.monoMemory / 1024, App.CMem / 1024, data.luaMemery / 1024, collectgarbage("count") / 1024, time, not NoCache)
-  local path = (Monitor:GetInstance()):CompareSnapShot(msg1)
+  local time = ToTimingFormat2(UnityEngine.Time.realtimeSinceStartup - data.recordTime)
+  local msg1 = string.format("记录前mono内存：%s MB；当前mono内存：%s MB；\n记录前lua内存：%s MB；当前lua内存：%s MB \n记录时长：%s\n是否开启缓存：%s\n", data.monoMemory / 1024, App.CMem / 1024, data.luaMemery / 1024, collectgarbage("count") / 1024, time, not NoCache)
+  local path = Monitor:GetInstance():CompareSnapShot(msg1)
   if path then
     self:Log("有泄露，记录成功！\n保存路径：" .. path)
   else
     self:Log("无资源泄露")
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/season_map_express.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpress", Object)
 SeasonMapExpress = SeasonMapExpress
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpress.Constructor = function(self, eventPoint, expressCount, triggerType, expressArr)
-  -- function num : 0_0
+function SeasonMapExpress:Constructor(eventPoint, expressCount, triggerType, expressArr)
   self._eventPoint = eventPoint
   self._count = expressCount
   self._triggerType = triggerType
@@ -19,102 +12,68 @@ SeasonMapExpress.Constructor = function(self, eventPoint, expressCount, triggerT
   self:_CreateExpress(expressArr)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpress:Update(deltaTime)
   if self._curExpress then
-    (self._curExpress):Update(deltaTime)
+    self._curExpress:Update(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  for _,express in pairs(self._expressList) do
+function SeasonMapExpress:Dispose()
+  for _, express in pairs(self._expressList) do
     express:Dispose()
   end
-  ;
-  (table.clear)(self._expressList)
+  table.clear(self._expressList)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress._CreateExpress = function(self, expressArr)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMapExpress:_CreateExpress(expressArr)
   for i = 1, #expressArr do
-    local expressCfg = (Cfg.cfg_season_map_express)[expressArr[i]]
+    local expressCfg = Cfg.cfg_season_map_express[expressArr[i]]
     if expressCfg then
-      local express = (SeasonMapExpressFactory:GetInstance()):CreateMapExpress(self._eventPoint, expressCfg.ExpressType, expressCfg)
+      local express = SeasonMapExpressFactory:GetInstance():CreateMapExpress(self._eventPoint, expressCfg.ExpressType, expressCfg)
       if express then
         if express:ExpressType() == SeasonExpressType.Level then
           self._isLevel = true
         end
-        ;
-        (table.insert)(self._expressList, express)
+        table.insert(self._expressList, express)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.TriggerType = function(self)
-  -- function num : 0_4
+function SeasonMapExpress:TriggerType()
   return self._triggerType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.IsLevel = function(self)
-  -- function num : 0_5
+function SeasonMapExpress:IsLevel()
   return self._isLevel
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.Count = function(self)
-  -- function num : 0_6
+function SeasonMapExpress:Count()
   return self._count
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.NeedCount = function(self)
-  -- function num : 0_7
-  do return self._count ~= nil and self._count > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonMapExpress:NeedCount()
+  return self._count ~= nil and self._count > 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.CurExpressIndex = function(self)
-  -- function num : 0_8
+function SeasonMapExpress:CurExpressIndex()
   return self._curExpressIndex
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.PlayNext = function(self, param)
-  -- function num : 0_9 , upvalues : _ENV
-  if #self._expressList <= self._curExpressIndex then
+function SeasonMapExpress:PlayNext(param)
+  if self._curExpressIndex >= #self._expressList then
     return true
   end
   self._curExpressIndex = self._curExpressIndex + 1
-  self._curExpress = (self._expressList)[self._curExpressIndex]
+  self._curExpress = self._expressList[self._curExpressIndex]
   if self._curExpress then
-    (Log.info)("SeasonMapExpress PlayNext ", (self._eventPoint):GetID(), " progress = ", (self._eventPoint):CurProgress(), " index = ", self._curExpressIndex)
-    ;
-    (self._curExpress):Play(param)
+    Log.info("SeasonMapExpress PlayNext ", self._eventPoint:GetID(), " progress = ", self._eventPoint:CurProgress(), " index = ", self._curExpressIndex)
+    self._curExpress:Play(param)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.ContainExpress = function(self, expressType)
-  -- function num : 0_10 , upvalues : _ENV
-  for index,express in pairs(self._expressList) do
+function SeasonMapExpress:ContainExpress(expressType)
+  for index, express in pairs(self._expressList) do
     if express:ExpressType() == expressType then
       return true, express:Content(), index
     end
@@ -122,59 +81,42 @@ SeasonMapExpress.ContainExpress = function(self, expressType)
   return false, nil, nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.GetExpresses = function(self, expressType)
-  -- function num : 0_11 , upvalues : _ENV
-  local t = nil
-  for index,express in pairs(self._expressList) do
+function SeasonMapExpress:GetExpresses(expressType)
+  local t
+  for index, express in pairs(self._expressList) do
     if express:ExpressType() == expressType then
-      if not t then
-        t = {}
-      end
-      ;
-      (table.insert)(t, express)
+      t = t or {}
+      table.insert(t, express)
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.Reset = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function SeasonMapExpress:Reset()
   self._curExpress = nil
   self._curExpressIndex = 0
-  for _,express in pairs(self._expressList) do
+  for _, express in pairs(self._expressList) do
     express:Reset()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.ResumePlay = function(self, expressIndex, param)
-  -- function num : 0_13 , upvalues : _ENV
-  if #self._expressList < expressIndex then
-    (Log.error)("SeasonMapExpress ResumePlay fail. expressIndex error!", expressIndex, #self._expressList)
-    return 
+function SeasonMapExpress:ResumePlay(expressIndex, param)
+  if expressIndex > #self._expressList then
+    Log.error("SeasonMapExpress ResumePlay fail. expressIndex error!", expressIndex, #self._expressList)
+    return
   end
   self._curExpressIndex = expressIndex
-  self._curExpress = (self._expressList)[self._curExpressIndex]
+  self._curExpress = self._expressList[self._curExpressIndex]
   if self._curExpress then
-    (self._curExpress):Play(param)
+    self._curExpress:Play(param)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpress.IsPlaying = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  for _,express in pairs(self._expressList) do
+function SeasonMapExpress:IsPlaying()
+  for _, express in pairs(self._expressList) do
     if express:State() == SeasonExpressState.Playing then
       return true
     end
   end
   return false
 end
-
-

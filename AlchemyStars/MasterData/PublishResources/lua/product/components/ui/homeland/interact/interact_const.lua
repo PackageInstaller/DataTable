@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/interact/interact_const.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("InteractConst", Object)
 InteractConst = InteractConst
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-InteractConst.Constructor = function(self)
-  -- function num : 0_0
+function InteractConst:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractConst.GetInteractDistance = function(buildId)
-  -- function num : 0_1
+function InteractConst.GetInteractDistance(buildId)
   return 2
 end
-
-

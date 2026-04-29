@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_tab_buy_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopTabBuyListItem", UICustomWidget)
 UIHomelandShopTabBuyListItem = UIHomelandShopTabBuyListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopTabBuyListItem._SetRemainingTime = function(self, widgetName, descId, endTime, customTimeStr)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIHomelandShopTabBuyListItem:_SetRemainingTime(widgetName, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
   end
@@ -17,199 +10,148 @@ UIHomelandShopTabBuyListItem._SetRemainingTime = function(self, widgetName, desc
   obj:SetData(endTime, nil, nil)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandShopTabBuyListItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandShopTabBuyListItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem.SetData = function(self, index, data)
-  -- function num : 0_3
+function UIHomelandShopTabBuyListItem:SetData(index, data)
   self._index = index
   self._data = data
-  self:_SetItemInfo((data.cfg).ItemID, (data.cfg).ItemNum)
-  self:_SetPriceInfo((data.cfg).CostID, self:_GetCost())
-  local time = self:_GetRefreshTime((data.cfg).Type, data.week_time, data.moth_time)
-  self:_SetLimitMode((data.cfg).Type)
-  self:_SetLimitText((data.cfg).Type, data.soldCount, (data.cfg).Limit)
-  self:_SetLimitTime((data.cfg).Type, time)
+  self:_SetItemInfo(data.cfg.ItemID, data.cfg.ItemNum)
+  self:_SetPriceInfo(data.cfg.CostID, self:_GetCost())
+  local time = self:_GetRefreshTime(data.cfg.Type, data.week_time, data.moth_time)
+  self:_SetLimitMode(data.cfg.Type)
+  self:_SetLimitText(data.cfg.Type, data.soldCount, data.cfg.Limit)
+  self:_SetLimitTime(data.cfg.Type, time)
   self:_SetSoldout(data.soldout, time)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._SetItemInfo = function(self, itemId, itemNum)
-  -- function num : 0_4 , upvalues : _ENV
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_icon")
-  ;
-  (UIWidgetHelper.SetItemText)(self, itemId, "_txtTitle")
+function UIHomelandShopTabBuyListItem:_SetItemInfo(itemId, itemNum)
+  UIWidgetHelper.SetItemIcon(self, itemId, "_icon")
+  UIWidgetHelper.SetItemText(self, itemId, "_txtTitle")
   local strNum = "x" .. itemNum
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtCount", strNum)
+  UIWidgetHelper.SetLocalizationText(self, "_txtCount", strNum)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._SetPriceInfo = function(self, itemId, itemNum)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_iconPrice")
-  ;
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_iconPriceLimit")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtPriceCount", itemNum)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtPriceCountLimit", itemNum)
+function UIHomelandShopTabBuyListItem:_SetPriceInfo(itemId, itemNum)
+  UIWidgetHelper.SetItemIcon(self, itemId, "_iconPrice")
+  UIWidgetHelper.SetItemIcon(self, itemId, "_iconPriceLimit")
+  UIWidgetHelper.SetLocalizationText(self, "_txtPriceCount", itemNum)
+  UIWidgetHelper.SetLocalizationText(self, "_txtPriceCountLimit", itemNum)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._SetLimitMode = function(self, type)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandShopTabBuyListItem:_SetLimitMode(type)
   local mode = type ~= 1 and type ~= 2 and type ~= 3 and 1 or 2
-  self._modeObjs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_bg_normal", "BuyBtn"}
-, 
-{"_bg_limit", "_limitRoot", "LimitBuyBtn"}
-}, self._modeObjs)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._modeObjs, mode)
+  self._modeObjs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"_bg_normal", "BuyBtn"},
+    {
+      "_bg_limit",
+      "_limitRoot",
+      "LimitBuyBtn"
+    }
+  }, self._modeObjs)
+  UIWidgetHelper.SetObjGroupShow(self._modeObjs, mode)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._SetLimitText = function(self, type, soldCount, limitCount)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandShopTabBuyListItem:_SetLimitText(type, soldCount, limitCount)
   if type ~= 1 and type ~= 2 and type ~= 3 then
-    (self:GetGameObject("_txtLimit")):SetActive(false)
-    return 
+    self:GetGameObject("_txtLimit"):SetActive(false)
+    return
   end
-  ;
-  (self:GetGameObject("_txtLimit")):SetActive(true)
-  local tb = {[1] = "str_homeland_shop_buy_limit_week", [2] = "str_homeland_shop_buy_limit_forever", [3] = "str_homeland_shop_buy_limit_month"}
-  local text = (string.format)(" %d/%d", limitCount - soldCount, limitCount)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtLimit", (StringTable.Get)(tb[type], text))
+  self:GetGameObject("_txtLimit"):SetActive(true)
+  local tb = {
+    [1] = "str_homeland_shop_buy_limit_week",
+    [2] = "str_homeland_shop_buy_limit_forever",
+    [3] = "str_homeland_shop_buy_limit_month"
+  }
+  local text = string.format(" %d/%d", limitCount - soldCount, limitCount)
+  UIWidgetHelper.SetLocalizationText(self, "_txtLimit", StringTable.Get(tb[type], text))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._SetLimitTime = function(self, type, time)
-  -- function num : 0_8
+function UIHomelandShopTabBuyListItem:_SetLimitTime(type, time)
   if type ~= 1 and type ~= 3 then
-    (self:GetGameObject("_remainingTimePool")):SetActive(false)
-    return 
+    self:GetGameObject("_remainingTimePool"):SetActive(false)
+    return
   end
-  ;
-  (self:GetGameObject("_remainingTimePool")):SetActive(true)
+  self:GetGameObject("_remainingTimePool"):SetActive(true)
   if time then
     self:_SetRemainingTime("_remainingTimePool", "", time, true)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._SetSoldout = function(self, soldout, time)
-  -- function num : 0_9 , upvalues : _ENV
-  (self:GetGameObject("_soldout")):SetActive(soldout)
+function UIHomelandShopTabBuyListItem:_SetSoldout(soldout, time)
+  self:GetGameObject("_soldout"):SetActive(soldout)
   if not soldout then
-    return 
+    return
   end
   if time then
     self:_SetRemainingTime("_remainingTimePool2", "", time, true)
   end
   local mode = time and 2 or 1
   if not self._soldoutObjs then
-    self._soldoutObjs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_soldout_element_1", "_soldout_element_2"}
-, 
-{"_soldout_element_1", "_soldout_element_3", "_soldout_element_4"}
-})
+    self._soldoutObjs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+      {
+        "_soldout_element_1",
+        "_soldout_element_2"
+      },
+      {
+        "_soldout_element_1",
+        "_soldout_element_3",
+        "_soldout_element_4"
+      }
+    })
   end
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._soldoutObjs, mode)
+  UIWidgetHelper.SetObjGroupShow(self._soldoutObjs, mode)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._GetRefreshTime = function(self, type, weekTime, monthTime)
-  -- function num : 0_10
-  local tb = {[1] = weekTime, [3] = monthTime}
+function UIHomelandShopTabBuyListItem:_GetRefreshTime(type, weekTime, monthTime)
+  local tb = {
+    [1] = weekTime,
+    [3] = monthTime
+  }
   return tb[type]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._GetCost = function(self)
-  -- function num : 0_11
-  return ((self._data).cfg).CostNum * ((self._data).cfg).ItemNum
+function UIHomelandShopTabBuyListItem:_GetCost()
+  return self._data.cfg.CostNum * self._data.cfg.ItemNum
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._CheckEnough = function(self, buyCount)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandShopTabBuyListItem:_CheckEnough(buyCount)
   local cost = self:_GetCost() * buyCount
-  local have = (UIHomelandShopHelper.GetCoinItemCount)()
-  do return cost <= have end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local have = UIHomelandShopHelper.GetCoinItemCount()
+  return cost <= have
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem._CalcReward = function(self, count)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandShopTabBuyListItem:_CalcReward(count)
   local roleAsset = RoleAsset:New()
-  roleAsset.assetid = ((self._data).cfg).ItemID
-  roleAsset.count = ((self._data).cfg).ItemNum * count
+  roleAsset.assetid = self._data.cfg.ItemID
+  roleAsset.count = self._data.cfg.ItemNum * count
   return roleAsset
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem.BgBtnOnClick = function(self, go)
-  -- function num : 0_14
-  self:ShowDialog("UIItemTipsHomeland", ((self._data).cfg).ItemID, go, true)
+function UIHomelandShopTabBuyListItem:BgBtnOnClick(go)
+  self:ShowDialog("UIItemTipsHomeland", self._data.cfg.ItemID, go, true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem.LimitBuyBtnOnClick = function(self, go)
-  -- function num : 0_15
+function UIHomelandShopTabBuyListItem:LimitBuyBtnOnClick(go)
   self:BuyBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem.BuyBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UIHomelandShopTabBuyListItem:BuyBtnOnClick(go)
   if not self:_CheckEnough(1) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_homeland_shop_tab_buy_not_enough_coin"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_homeland_shop_tab_buy_not_enough_coin"))
+    return
   end
-  local limit = ((self._data).cfg).Limit ~= 0 and ((self._data).cfg).Limit - (self._data).soldCount or 0
-  local limitOnce = ((self._data).cfg).OnceLimit
-  self:ShowDialog("UIHomelandShopBuyConfirm", ((self._data).cfg).ItemID, self:_GetCost(), limit, limitOnce, function(itemId, buyCount)
-    -- function num : 0_16_0 , upvalues : self, _ENV
+  local limit = self._data.cfg.Limit ~= 0 and self._data.cfg.Limit - self._data.soldCount or 0
+  local limitOnce = self._data.cfg.OnceLimit
+  self:ShowDialog("UIHomelandShopBuyConfirm", self._data.cfg.ItemID, self:_GetCost(), limit, limitOnce, function(itemId, buyCount)
     local reward = self:_CalcReward(buyCount)
-    ;
-    (UIHomelandShopHelper.Start_HomelandShopReq)(((self._data).cfg).ID, buyCount, {reward})
-  end
-)
+    UIHomelandShopHelper.Start_HomelandShopReq(self._data.cfg.ID, buyCount, {reward})
+  end)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabBuyListItem.GetBuyBtn = function(self)
-  -- function num : 0_17
+function UIHomelandShopTabBuyListItem:GetBuyBtn()
   return self:GetGameObject("BuyBtn")
 end
-
-

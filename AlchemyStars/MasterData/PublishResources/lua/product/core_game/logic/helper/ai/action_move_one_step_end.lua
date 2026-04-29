@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_move_one_step_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionMoveOneStepEnd", AINewNode)
 ActionMoveOneStepEnd = ActionMoveOneStepEnd
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionMoveOneStepEnd.Update = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionMoveOneStepEnd:Update()
   if self:IsActive() then
     if self.Status == AINewNodeStatus.Ready then
       self:OnBegin()
@@ -23,50 +16,41 @@ ActionMoveOneStepEnd.Update = function(self)
   return self.Status
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveOneStepEnd._GetAiComponent = function(self)
-  -- function num : 0_1
-  local aiComponent = nil
+function ActionMoveOneStepEnd:_GetAiComponent()
+  local aiComponent
   if self.m_entityOwn then
-    aiComponent = (self.m_entityOwn):AI()
+    aiComponent = self.m_entityOwn:AI()
   end
   return aiComponent
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveOneStepEnd.OnBegin = function(self)
-  -- function num : 0_2
+function ActionMoveOneStepEnd:OnBegin()
   local aiComponent = self:_GetAiComponent()
-  if aiComponent == nil then
+  if nil == aiComponent then
     self:PrintLog("AI逻辑<结束>，所属的Entity被销毁。")
-    return 
+    return
   end
   local logicData = self:GetLogicData(-1)
   local nEndForce = logicData or 0
-  if nEndForce > 0 then
+  if 0 < nEndForce then
     aiComponent:ClearMobilityTotal()
     self:PrintLog("AI逻辑<强制结束>")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionMoveOneStepEnd.OnEnd = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ActionMoveOneStepEnd:OnEnd()
   local aiComponent = self:_GetAiComponent()
-  if aiComponent == nil then
-    return 
+  if nil == aiComponent then
+    return
   end
-  if (AINewNode.IsEntityDead)(self.m_entityOwn) then
+  if AINewNode.IsEntityDead(self.m_entityOwn) then
     aiComponent:SetComponentStatus(AINewNodeStatus.Success)
     self:PrintLog("AI宿主死亡，清空行动力: AI逻辑<结束>")
     self.Status = AINewNodeStatus.Success
     aiComponent:ClearMobilityTotal()
   else
     local nMobilityTotal = aiComponent:CostMobility(1)
-    if nMobilityTotal > 0 then
+    if 0 < nMobilityTotal then
       aiComponent:SetComponentStatus(AINewNodeStatus.Running)
       self:PrintLog("nMobilityTotal = " .. nMobilityTotal .. ": AI逻辑<重置>")
       self.Status = AINewNodeStatus.Failure
@@ -77,5 +61,3 @@ ActionMoveOneStepEnd.OnEnd = function(self)
     end
   end
 end
-
-

@@ -1,99 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/layer/season_scene_layer_material.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonSceneLayerMaterial", SeasonSceneLayerBase)
 SeasonSceneLayerMaterial = SeasonSceneLayerMaterial
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneLayerMaterial.Constructor = function(self, sceneRoot)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonSceneLayerMaterial:Constructor(sceneRoot)
   self._flag = {}
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._flag)[SeasonMapMaterial.Metal] = "metal"
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._flag)[SeasonMapMaterial.Stone] = "stone"
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._flag)[SeasonMapMaterial.Water] = "water"
+  self._flag[SeasonMapMaterial.Metal] = "metal"
+  self._flag[SeasonMapMaterial.Stone] = "stone"
+  self._flag[SeasonMapMaterial.Water] = "water"
   self._materials = {}
-  self._materialLayer = (self._sceneRootTransform):Find(SeasonSceneLayer.SoundMaterial)
+  self._materialLayer = self._sceneRootTransform:Find(SeasonSceneLayer.SoundMaterial)
   self:_CacheMaterial()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerMaterial.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.clear)(self._materials)
-  ;
-  (table.clear)(self._renderers)
+function SeasonSceneLayerMaterial:Dispose()
+  table.clear(self._materials)
+  table.clear(self._renderers)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerMaterial.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_2
+function SeasonSceneLayerMaterial:UnLock(zoneMask, zoneID2Animation)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerMaterial._CacheMaterial = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonSceneLayerMaterial:_CacheMaterial()
   if self._materialLayer then
-    local childCount = (self._materialLayer).childCount
-    if childCount > 0 then
+    local childCount = self._materialLayer.childCount
+    if 0 < childCount then
       for i = 0, childCount - 1 do
-        local child = (self._materialLayer):GetChild(i)
+        local child = self._materialLayer:GetChild(i)
         if child then
           local mt = self:_GetMaterialType(child.name)
-          -- DECOMPILER ERROR at PC26: Confused about usage of register: R8 in 'UnsetPending'
-
-          if not (self._materials)[mt] then
-            (self._materials)[mt] = {}
+          if not self._materials[mt] then
+            self._materials[mt] = {}
           end
-          ;
-          (table.insert)((self._materials)[mt], child)
+          table.insert(self._materials[mt], child)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerMaterial._GetMaterialType = function(self, name)
-  -- function num : 0_4 , upvalues : _ENV
-  for key,value in pairs(self._flag) do
-    if (string.find)(name, value) then
+function SeasonSceneLayerMaterial:_GetMaterialType(name)
+  for key, value in pairs(self._flag) do
+    if string.find(name, value) then
       return key
     end
   end
   return SeasonMapMaterial.Default
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerMaterial.GetMapMaterial = function(self, gameObject)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonSceneLayerMaterial:GetMapMaterial(gameObject)
   if gameObject then
-    for key,transforms in pairs(self._materials) do
-      for _,transform in pairs(transforms) do
+    for key, transforms in pairs(self._materials) do
+      for _, transform in pairs(transforms) do
         if transform == gameObject.transform then
           return key, true
         end
       end
     end
   end
-  do
-    return SeasonMapMaterial.Default, false
-  end
+  return SeasonMapMaterial.Default, false
 end
-
-

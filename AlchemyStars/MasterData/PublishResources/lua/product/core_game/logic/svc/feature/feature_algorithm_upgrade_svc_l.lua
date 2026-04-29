@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/feature/feature_algorithm_upgrade_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("feature_svc_l")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureServiceLogic._HandleInitFeature_AlgorithmUpgrade = function(self, featureData)
-  -- function num : 0_0
+function FeatureServiceLogic:_HandleInitFeature_AlgorithmUpgrade(featureData)
   local param = featureData
   local value = 0
   local smSvc = self:GetService("SeasonMaze")
   if smSvc then
     value = smSvc:GetInitAUOEValue()
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local attComponent = boardEntity:Attributes()
   if attComponent then
     local enterValue = param:GetEnterValue() + value
@@ -22,12 +15,9 @@ FeatureServiceLogic._HandleInitFeature_AlgorithmUpgrade = function(self, feature
   end
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetAUOEValue = function(self)
-  -- function num : 0_1
+function FeatureServiceLogic:GetAUOEValue()
   local value = 0
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local attComponent = boardEntity:Attributes()
   if attComponent then
     value = attComponent:GetAttribute("OverloadEnergy")
@@ -35,41 +25,32 @@ FeatureServiceLogic.GetAUOEValue = function(self)
   return value
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetAUOEValue = function(self, value)
-  -- function num : 0_2
+function FeatureServiceLogic:SetAUOEValue(value)
   local final = value
   local max = self:GetMaxAUOEValue()
   local min = self:GetMinAUOEValue()
-  if max < final then
+  if final > max then
     final = max
   end
-  if final < min then
+  if min > final then
     final = min
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local attComponent = boardEntity:Attributes()
   if attComponent then
     attComponent:Modify("OverloadEnergy", final)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.ModifyAUOEValue = function(self, modifyValue)
-  -- function num : 0_3
-  if modifyValue >= 0 then
+function FeatureServiceLogic:ModifyAUOEValue(modifyValue)
+  if 0 <= modifyValue then
     return self:IncreaseAUOEValue(modifyValue)
   else
     return self:DecreaseAUOEValue(-modifyValue)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.IncreaseAUOEValue = function(self, increaseValue)
-  -- function num : 0_4
+function FeatureServiceLogic:IncreaseAUOEValue(increaseValue)
   local old = self:GetAUOEValue()
   local max = self:GetMaxAUOEValue()
   local realModifyValue = increaseValue
@@ -82,15 +63,12 @@ FeatureServiceLogic.IncreaseAUOEValue = function(self, increaseValue)
   return final, old, realModifyValue
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.DecreaseAUOEValue = function(self, decreaseValue)
-  -- function num : 0_5
+function FeatureServiceLogic:DecreaseAUOEValue(decreaseValue)
   local old = self:GetAUOEValue()
   local min = self:GetMinAUOEValue()
   local realModifyValue = decreaseValue
   local final = old - decreaseValue
-  if final < min then
+  if min > final then
     final = min
   end
   realModifyValue = final - old
@@ -98,16 +76,13 @@ FeatureServiceLogic.DecreaseAUOEValue = function(self, decreaseValue)
   return final, old, realModifyValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetMaxAUOEValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function FeatureServiceLogic:GetMaxAUOEValue()
   local maxVal = 0
   local featureCmpt = self:GetLogicCmpt()
   if featureCmpt then
     maxVal = featureCmpt:GetMaxAUOEValue()
   end
-  if maxVal > 0 then
+  if 0 < maxVal then
     return maxVal
   end
   local featureData = self:GetFeatureData(FeatureType.AlgorithmUpgrade)
@@ -118,34 +93,23 @@ FeatureServiceLogic.GetMaxAUOEValue = function(self)
   return 100
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetMinAUOEValue = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function FeatureServiceLogic:GetMinAUOEValue()
   local featureData = self:GetFeatureData(FeatureType.AlgorithmUpgrade)
-  do
-    if featureData then
-      local minVal = featureData:GetMinValue()
-      return minVal
-    end
-    return 0
+  if featureData then
+    local minVal = featureData:GetMinValue()
+    return minVal
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.SetMaxAUOEValue = function(self, maxValue)
-  -- function num : 0_8
+function FeatureServiceLogic:SetMaxAUOEValue(maxValue)
   local featureCmpt = self:GetLogicCmpt()
   if featureCmpt then
     featureCmpt:SetMaxAUOEValue(maxValue)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetFeatureAUActiveRelics = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function FeatureServiceLogic:GetFeatureAUActiveRelics()
   local activeRelics = {}
   local featureData = self:GetFeatureData(FeatureType.AlgorithmUpgrade)
   if featureData then
@@ -155,24 +119,17 @@ FeatureServiceLogic.GetFeatureAUActiveRelics = function(self)
       return activeRelics
     end
     local curRelicIDList = smSvc:GetAllRelic()
-    for _,relicID in ipairs(cfgRelicIDList) do
-      if (table.icontains)(curRelicIDList, relicID) then
-        (table.insert)(activeRelics, relicID)
+    for _, relicID in ipairs(cfgRelicIDList) do
+      if table.icontains(curRelicIDList, relicID) then
+        table.insert(activeRelics, relicID)
       end
     end
   end
-  do
-    return activeRelics
-  end
+  return activeRelics
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureServiceLogic.GetFeatureAUOverloadEnergyInfo = function(self)
-  -- function num : 0_10
+function FeatureServiceLogic:GetFeatureAUOverloadEnergyInfo()
   local maxValue = self:GetMaxAUOEValue()
   local curValue = self:GetAUOEValue()
   return maxValue, curValue
 end
-
-

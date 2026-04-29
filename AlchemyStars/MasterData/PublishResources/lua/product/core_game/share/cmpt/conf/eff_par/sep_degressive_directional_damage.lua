@@ -1,41 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_degressive_directional_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
-local DegressiveDamageDirection = {PICKUP_POS = 1, PICKUP_LEFT_CORNER = 2, PICKUP_RIGHT_CORNER = 3, PICKUP_FRONT_LEFT = 4, PICKUP_FRONT_RIGHT = 5}
+local DegressiveDamageDirection = {
+  PICKUP_POS = 1,
+  PICKUP_LEFT_CORNER = 2,
+  PICKUP_RIGHT_CORNER = 3,
+  PICKUP_FRONT_LEFT = 4,
+  PICKUP_FRONT_RIGHT = 5
+}
 _enum("DegressiveDamageDirection", DegressiveDamageDirection)
 _class("SkillEffectParam_DegressiveDirectionalDamage", SkillDamageEffectParam)
 SkillEffectParam_DegressiveDirectionalDamage = SkillEffectParam_DegressiveDirectionalDamage
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillEffectParam_DegressiveDirectionalDamage.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : DegressiveDamageDirection
+function SkillEffectParam_DegressiveDirectionalDamage:Constructor(t)
   self._degressiveRates = t.degressiveRates
   self._directionType = t.directionType or DegressiveDamageDirection.PICKUP_POS
   self._formulaID = 115
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_DegressiveDirectionalDamage.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_DegressiveDirectionalDamage:GetEffectType()
   return SkillEffectType.DegressiveDirectionalDamage
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_DegressiveDirectionalDamage.GetDegressiveRates = function(self)
-  -- function num : 0_2
+function SkillEffectParam_DegressiveDirectionalDamage:GetDegressiveRates()
   return self._degressiveRates
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillEffectParam_DegressiveDirectionalDamage.GetDirection = function(self)
-  -- function num : 0_3
+function SkillEffectParam_DegressiveDirectionalDamage:GetDirection()
   return self._directionType
 end
-
-

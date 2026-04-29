@@ -1,61 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_team_buff_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITeamBuffItem", UICustomWidget)
 UITeamBuffItem = UITeamBuffItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITeamBuffItem.Constructor = function(self)
-  -- function num : 0_0
+function UITeamBuffItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamBuffItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UITeamBuffItem:OnShow(uiParams)
   self._buffIconLoader = self:GetUIComponent("RawImageLoader", "TeamBuffStateIcon")
   self._buffIconGo = self:GetGameObject("TeamBuffStateIcon")
   self._teamBuffRoundText = self:GetUIComponent("UILocalizationText", "TeamBuffRoundText")
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamBuffItem.OnHide = function(self)
-  -- function num : 0_2
+function UITeamBuffItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamBuffItem.Dispose = function(self)
-  -- function num : 0_3
+function UITeamBuffItem:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamBuffItem.SetData = function(self, BuffViewInstance)
-  -- function num : 0_4 , upvalues : _ENV
+function UITeamBuffItem:SetData(BuffViewInstance)
   self._buffViewInstance = BuffViewInstance
-  local buffEffectType = (self._buffViewInstance):GetBuffEffectType()
-  local iconRes = (self._buffViewInstance):GetBuffIcon()
+  local buffEffectType = self._buffViewInstance:GetBuffEffectType()
+  local iconRes = self._buffViewInstance:GetBuffIcon()
   if not iconRes then
-    (self._buffIconGo):SetActive(false)
+    self._buffIconGo:SetActive(false)
   else
-    ;
-    (self._buffIconGo):SetActive(true)
-    ;
-    (self._buffIconLoader):LoadImage((self._buffViewInstance):GetBuffIcon())
+    self._buffIconGo:SetActive(true)
+    self._buffIconLoader:LoadImage(self._buffViewInstance:GetBuffIcon())
   end
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._teamBuffRoundText).text = (self._buffViewInstance):GetRoundCountOrLayerText()
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._txtDesc).text = (StringTable.Get)((self._buffViewInstance):GetBuffDesc(), (self._buffViewInstance):GetShowBuffDescParams())
+  self._teamBuffRoundText.text = self._buffViewInstance:GetRoundCountOrLayerText()
+  self._txtDesc.text = StringTable.Get(self._buffViewInstance:GetBuffDesc(), self._buffViewInstance:GetShowBuffDescParams())
 end
-
-

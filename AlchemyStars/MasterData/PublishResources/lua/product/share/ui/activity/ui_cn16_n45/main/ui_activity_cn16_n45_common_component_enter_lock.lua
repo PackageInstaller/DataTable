@@ -1,84 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn16_n45/main/ui_activity_cn16_n45_common_component_enter_lock.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCN16N45CommonComponentEnterLock", UICustomWidget)
 UIActivityCN16N45CommonComponentEnterLock = UIActivityCN16N45CommonComponentEnterLock
-local EActivityComponentLockBtnState = {LockWithTime = 1, Lock = 2, Unlock = 3, Closed = 4}
+local EActivityComponentLockBtnState = {
+  LockWithTime = 1,
+  Lock = 2,
+  Unlock = 3,
+  Closed = 4
+}
 _enum("EActivityComponentLockBtnState", EActivityComponentLockBtnState)
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
 
-UIActivityCN16N45CommonComponentEnterLock.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityCN16N45CommonComponentEnterLock:OnShow()
   self:_AttachEvents()
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityCN16N45CommonComponentEnterLock:OnHide()
   self:_DetachEvents()
   self._isOpen = false
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetNew = function(self, widgetName, checkNewFunc)
-  -- function num : 0_2
+function UIActivityCN16N45CommonComponentEnterLock:SetNew(widgetName, checkNewFunc)
   self._widgetName_New = widgetName
   self._checkNewFunc = checkNewFunc
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetRed = function(self, widgetName, checkRedFunc)
-  -- function num : 0_3
+function UIActivityCN16N45CommonComponentEnterLock:SetRed(widgetName, checkRedFunc)
   self._widgetName_Red = widgetName
   self._checkRedFunc = checkRedFunc
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetRedCount = function(self, widgetName, widgetNameText, checkRedFunc)
-  -- function num : 0_4
+function UIActivityCN16N45CommonComponentEnterLock:SetRedCount(widgetName, widgetNameText, checkRedFunc)
   self._widgetName_RedCount = widgetName
   self._widgetName_RedCountText = widgetNameText
   self._checkRedFunc = checkRedFunc
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetNew_RedDotModule = function(self, widgetName, newdotType)
-  -- function num : 0_5
+function UIActivityCN16N45CommonComponentEnterLock:SetNew_RedDotModule(widgetName, newdotType)
   self._widgetName_New = widgetName
   self._newdotType = newdotType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetRed_RedDotModule = function(self, widgetName, reddotType)
-  -- function num : 0_6
+function UIActivityCN16N45CommonComponentEnterLock:SetRed_RedDotModule(widgetName, reddotType)
   self._widgetName_Red = widgetName
   self._reddotType = reddotType
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetLockStateCallback = function(self, lockWithTimeCallback, lockCallback, closedCallback)
-  -- function num : 0_7
+function UIActivityCN16N45CommonComponentEnterLock:SetLockStateCallback(lockWithTimeCallback, lockCallback, closedCallback)
   self._lockWithTimeCallback = lockWithTimeCallback
   self._lockCallback = lockCallback
   self._closedCallback = closedCallback
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetActivityCommonRemainingTime = function(self, widgetName, descId, endTime, customTimeStr, tickCallback, stopCallback)
-  -- function num : 0_8 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIActivityCN16N45CommonComponentEnterLock:SetActivityCommonRemainingTime(widgetName, descId, endTime, customTimeStr, tickCallback, stopCallback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   obj:SetCustomTimeStr_Common_1()
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
@@ -87,11 +61,8 @@ UIActivityCN16N45CommonComponentEnterLock.SetActivityCommonRemainingTime = funct
   obj:SetData(endTime, tickCallback, stopCallback)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetActivityCommonRemainingTime2 = function(self, widgetName, descId, endTime, customTimeStr, tickCallback, stopCallback)
-  -- function num : 0_9 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIActivityCN16N45CommonComponentEnterLock:SetActivityCommonRemainingTime2(widgetName, descId, endTime, customTimeStr, tickCallback, stopCallback)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   obj:SetCustomTimeStr_Common_2()
   if customTimeStr then
     obj:SetCustomTimeStr_Common_2()
@@ -100,210 +71,149 @@ UIActivityCN16N45CommonComponentEnterLock.SetActivityCommonRemainingTime2 = func
   obj:SetData(endTime, tickCallback, stopCallback)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetWidgetNameGroup = function(self, widgetNameGroup)
-  -- function num : 0_10 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, widgetNameGroup)
+function UIActivityCN16N45CommonComponentEnterLock:SetWidgetNameGroup(widgetNameGroup)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, widgetNameGroup)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.SetData = function(self, campaign, componentId, uiCallback)
-  -- function num : 0_11
+function UIActivityCN16N45CommonComponentEnterLock:SetData(campaign, componentId, uiCallback)
   self._campaign = campaign
   self._componentId = componentId
-  self._component = (self._campaign):GetComponent(componentId)
+  self._component = self._campaign:GetComponent(componentId)
   self._uiCallback = uiCallback
   self:_SetTimerForUpdate()
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._SetTimerForUpdate = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_12_0 , upvalues : self
+function UIActivityCN16N45CommonComponentEnterLock:_SetTimerForUpdate()
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     if self._isOpen then
       self:_Refresh()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._Refresh = function(self)
-  -- function num : 0_13 , upvalues : EActivityComponentLockBtnState
+function UIActivityCN16N45CommonComponentEnterLock:_Refresh()
   local state = self:_CheckState()
-  if self._state ~= EActivityComponentLockBtnState.LockWithTime then
-    do
-      local reload = self._state == state
-      if reload then
-        self:_ReloadCampaignInfo_ChangeState()
-      else
-        self:_ChangeState()
-      end
-      self:_CheckPoint()
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if self._state ~= state then
+    local reload = self._state == EActivityComponentLockBtnState.LockWithTime
+    if reload then
+      self:_ReloadCampaignInfo_ChangeState()
+    else
+      self:_ChangeState()
     end
   end
+  self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._CheckState = function(self)
-  -- function num : 0_14 , upvalues : _ENV, EActivityComponentLockBtnState
+function UIActivityCN16N45CommonComponentEnterLock:_CheckState()
   local component = self._component
   if not component then
-    (Log.info)("UIActivityCN16N45CommonComponentEnterLock:_CheckState() component == nil")
+    Log.info("UIActivityCN16N45CommonComponentEnterLock:_CheckState() component == nil")
     return EActivityComponentLockBtnState.Closed
   end
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local unlockTime = component:ComponentUnLockTime()
   local stamp = unlockTime - curTime
   if component:ComponentIsClose() then
     return EActivityComponentLockBtnState.Closed
+  elseif 0 < stamp then
+    return EActivityComponentLockBtnState.LockWithTime
+  elseif not component:ComponentIsUnLock() then
+    return EActivityComponentLockBtnState.Lock
   else
-    if stamp > 0 then
-      return EActivityComponentLockBtnState.LockWithTime
-    else
-      if not component:ComponentIsUnLock() then
-        return EActivityComponentLockBtnState.Lock
-      else
-        return EActivityComponentLockBtnState.Unlock
-      end
-    end
+    return EActivityComponentLockBtnState.Unlock
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._ReloadCampaignInfo_ChangeState = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityCN16N45CommonComponentEnterLock:_ReloadCampaignInfo_ChangeState()
   local lockName = "UIActivityCN16N45CommonComponentEnterLock:_ReloadCampaignInfo_ChangeState()"
   self:Lock(lockName)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : _ENV, self, lockName
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = AsyncRequestRes:New()
-    ;
-    (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+    self._campaign:ReLoadCampaignInfo_Force(TT, res)
     self:_ChangeState()
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._ChangeState = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIActivityCN16N45CommonComponentEnterLock:_ChangeState()
   local state = self:_CheckState()
   if self._state ~= state and self._isOpen and self._stateObj then
-    (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+    UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
   end
   self._state = state
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.GetBtnGameObject = function(self)
-  -- function num : 0_17
+function UIActivityCN16N45CommonComponentEnterLock:GetBtnGameObject()
   if not self._btnGameObject then
-    self._btnGameObject = (((self:GetGameObject()).transform):Find("Btn")).gameObject
+    self._btnGameObject = self:GetGameObject().transform:Find("Btn").gameObject
   end
   return self._btnGameObject
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock.BtnOnClick = function(self)
-  -- function num : 0_18 , upvalues : _ENV, EActivityComponentLockBtnState
-  (Log.info)("UIActivityCN16N45CommonComponentEnterLock:BtnOnClick")
-  local unlockCallback = function()
-    -- function num : 0_18_0 , upvalues : _ENV, self
-    (UIActivityHelper.PlayFirstPlot_Component)(self._campaign, self._componentId, function()
-      -- function num : 0_18_0_0 , upvalues : self
+function UIActivityCN16N45CommonComponentEnterLock:BtnOnClick()
+  Log.info("UIActivityCN16N45CommonComponentEnterLock:BtnOnClick")
+  
+  local function unlockCallback()
+    UIActivityHelper.PlayFirstPlot_Component(self._campaign, self._componentId, function()
       if self._uiCallback then
-        (self._uiCallback)()
+        self._uiCallback()
       end
-    end
-)
+    end)
   end
-
-  local func = {[EActivityComponentLockBtnState.LockWithTime] = self._lockWithTimeCallback, [EActivityComponentLockBtnState.Lock] = self._lockCallback, [EActivityComponentLockBtnState.Unlock] = unlockCallback, [EActivityComponentLockBtnState.Closed] = self._closedCallback}
+  
+  local func = {
+    [EActivityComponentLockBtnState.LockWithTime] = self._lockWithTimeCallback,
+    [EActivityComponentLockBtnState.Lock] = self._lockCallback,
+    [EActivityComponentLockBtnState.Unlock] = unlockCallback,
+    [EActivityComponentLockBtnState.Closed] = self._closedCallback
+  }
   local callback = func[self._state]
   if callback then
     callback()
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._AttachEvents = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityCN16N45CommonComponentEnterLock:_AttachEvents()
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._DetachEvents = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityCN16N45CommonComponentEnterLock:_DetachEvents()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_21
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityCN16N45CommonComponentEnterLock:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._OnQuestUpdate = function(self)
-  -- function num : 0_22
+function UIActivityCN16N45CommonComponentEnterLock:_OnQuestUpdate()
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._CheckPoint = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIActivityCN16N45CommonComponentEnterLock:_CheckPoint()
   if self._newdotType or self._reddotType then
     self:_CheckPoint_RedDotModule()
-    return 
+    return
   end
-  local new = self._checkNewFunc and (self._checkNewFunc)() or false
-  local red = self._checkRedFunc and (self._checkRedFunc)() or false
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, self._widgetName_New, self._widgetName_Red, self._widgetName_RedCount, self._widgetName_RedCountText)
+  local new = self._checkNewFunc and self._checkNewFunc() or false
+  local red = self._checkRedFunc and self._checkRedFunc() or false
+  UIWidgetHelper.SetNewAndReds(self, new, red, self._widgetName_New, self._widgetName_Red, self._widgetName_RedCount, self._widgetName_RedCountText)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityCN16N45CommonComponentEnterLock._CheckPoint_RedDotModule = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_24_0 , upvalues : self, _ENV
+function UIActivityCN16N45CommonComponentEnterLock:_CheckPoint_RedDotModule()
+  GameGlobal.TaskManager():StartTask(function(TT)
     local checkList = {}
     checkList[#checkList + 1] = self._newdotType
     checkList[#checkList + 1] = self._reddotType
-    local redDotModule = (GameGlobal.GetModule)(RedDotModule)
+    local redDotModule = GameGlobal.GetModule(RedDotModule)
     local results = redDotModule:RequestRedDotStatus(TT, checkList)
     local new = results[self._newdotType]
     local red = results[self._reddotType]
-    ;
-    (UIWidgetHelper.SetNewAndReds)(self, new, red, self._widgetName_New, self._widgetName_Red, self._widgetName_RedCount, self._widgetName_RedCountText)
-  end
-)
+    UIWidgetHelper.SetNewAndReds(self, new, red, self._widgetName_New, self._widgetName_Red, self._widgetName_RedCount, self._widgetName_RedCountText)
+  end)
 end
-
-

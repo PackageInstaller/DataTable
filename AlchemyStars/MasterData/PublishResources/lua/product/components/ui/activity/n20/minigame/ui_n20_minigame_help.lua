@@ -1,163 +1,96 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/minigame/ui_n20_minigame_help.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20MiniGameHelp", UIController)
 UIN20MiniGameHelp = UIN20MiniGameHelp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20MiniGameHelp.Constructor = function(self)
-  -- function num : 0_0
+function UIN20MiniGameHelp:Constructor()
   self._dataCount = 0
   self._curIndex = 0
   self._isMoving = false
   self._duration = 0.5
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelp.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_help)[uiParams[1]]
+function UIN20MiniGameHelp:OnShow(uiParams)
+  self._cfg = Cfg.cfg_help[uiParams[1]]
   if self._cfg == nil then
-    (Log.fatal)("[error] self._cfg is nil !")
-    return 
+    Log.fatal("[error] self._cfg is nil !")
+    return
   end
-  self._TT = (self._cfg).TitleBig
-  local count = (table.count)((self._cfg).TitleSmall)
+  self._TT = self._cfg.TitleBig
+  local count = table.count(self._cfg.TitleSmall)
   self._dataTable = {}
   for i = 1, count do
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._dataTable)[i] = {}
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._dataTable)[i]).icon = ((self._cfg).Icon)[i]
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._dataTable)[i]).title = ((self._cfg).TitleSmall)[i]
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((self._dataTable)[i]).msg = ((self._cfg).Intr)[i]
+    self._dataTable[i] = {}
+    self._dataTable[i].icon = self._cfg.Icon[i]
+    self._dataTable[i].title = self._cfg.TitleSmall[i]
+    self._dataTable[i].msg = self._cfg.Intr[i]
   end
   self._lBtnGo = self:GetGameObject("lBtn")
   self._rBtnGo = self:GetGameObject("rBtn")
-  self._dataCount = (table.count)(self._dataTable)
+  self._dataCount = table.count(self._dataTable)
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
-  self._contentWidgets = (self._content):SpawnObjects("UIN20MiniGameHelpItem", self._dataCount)
-  for key,widget in pairs(self._contentWidgets) do
-    widget:SetData(((self._dataTable)[key]).title, ((self._dataTable)[key]).icon, ((self._dataTable)[key]).msg, function(drag)
-    -- function num : 0_1_0
-  end
-)
+  self._contentWidgets = self._content:SpawnObjects("UIN20MiniGameHelpItem", self._dataCount)
+  for key, widget in pairs(self._contentWidgets) do
+    widget:SetData(self._dataTable[key].title, self._dataTable[key].icon, self._dataTable[key].msg, function(drag)
+    end)
   end
   self._scrollRect = self:GetUIComponent("ScrollRect", "ScrollView")
   self._curIndex = 1
-  ;
-  (self._lBtnGo):SetActive(false)
+  self._lBtnGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelp.OnHide = function(self)
-  -- function num : 0_2
+function UIN20MiniGameHelp:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelp.cgLeftOnClick = function(self)
-  -- function num : 0_3
+function UIN20MiniGameHelp:cgLeftOnClick()
   if self._curIndex <= 1 or self._isMoving then
-    return 
+    return
   end
   self._isMoving = true
   self._curIndex = self._curIndex - 1
-  ;
-  (self._lBtnGo):SetActive(self._curIndex > 1)
-  ;
-  (self._rBtnGo):SetActive(true)
-  ;
-  (((self._contentRect):DOAnchorPosX(-1430 * (self._curIndex - 1), self._duration, false)):OnUpdate(function()
-    -- function num : 0_3_0 , upvalues : self
+  self._lBtnGo:SetActive(self._curIndex > 1)
+  self._rBtnGo:SetActive(true)
+  self._contentRect:DOAnchorPosX(-1430 * (self._curIndex - 1), self._duration, false):OnUpdate(function()
     self._isMoving = true
-  end
-)):OnComplete(function()
-    -- function num : 0_3_1 , upvalues : self
+  end):OnComplete(function()
     self._isMoving = false
-  end
-)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelp.cgRightOnClick = function(self)
-  -- function num : 0_4
-  if self._dataCount <= self._curIndex or self._isMoving then
-    return 
+function UIN20MiniGameHelp:cgRightOnClick()
+  if self._curIndex >= self._dataCount or self._isMoving then
+    return
   end
   self._isMoving = true
   self._curIndex = self._curIndex + 1
-  ;
-  (self._lBtnGo):SetActive(true)
-  ;
-  (self._rBtnGo):SetActive(self._curIndex < self._dataCount)
-  ;
-  (((self._contentRect):DOAnchorPosX(-1430 * (self._curIndex - 1), self._duration, false)):OnUpdate(function()
-    -- function num : 0_4_0 , upvalues : self
+  self._lBtnGo:SetActive(true)
+  self._rBtnGo:SetActive(self._curIndex < self._dataCount)
+  self._contentRect:DOAnchorPosX(-1430 * (self._curIndex - 1), self._duration, false):OnUpdate(function()
     self._isMoving = true
-  end
-)):OnComplete(function()
-    -- function num : 0_4_1 , upvalues : self
+  end):OnComplete(function()
     self._isMoving = false
-  end
-)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelp.CloseBtnOnClick = function(self)
-  -- function num : 0_5
+function UIN20MiniGameHelp:CloseBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20MiniGameHelp._OnDrag = function(self, drag)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN20MiniGameHelp:_OnDrag(drag)
   if self._isMoving then
-    return 
+    return
   end
   if not drag then
-    local index = (math.floor)(((self._contentRect).anchoredPosition).x / -1430) + 1
-    if index > 0 and index <= self._dataCount then
+    local index = math.floor(self._contentRect.anchoredPosition.x / -1430) + 1
+    if 0 < index and index <= self._dataCount then
       self._curIndex = index
       self._isMoving = true
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._scrollRect).horizontal = false
-      ;
-      (((self._contentRect):DOAnchorPosX(-1430 * (self._curIndex - 1), self._duration, false)):OnUpdate(function()
-    -- function num : 0_6_0 , upvalues : self
-    self._isMoving = true
-  end
-)):OnComplete(function()
-    -- function num : 0_6_1 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._scrollRect).horizontal = true
-    self._isMoving = false
-  end
-)
+      self._scrollRect.horizontal = false
+      self._contentRect:DOAnchorPosX(-1430 * (self._curIndex - 1), self._duration, false):OnUpdate(function()
+        self._isMoving = true
+      end):OnComplete(function()
+        self._scrollRect.horizontal = true
+        self._isMoving = false
+      end)
     end
   end
 end
-
-

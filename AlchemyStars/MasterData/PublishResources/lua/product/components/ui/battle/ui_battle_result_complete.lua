@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_result_complete.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleResultComplete", UIController)
 UIBattleResultComplete = UIBattleResultComplete
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleResultComplete.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._enterData = (self:GetModule(MatchModule)):GetMatchEnterData()
+function UIBattleResultComplete:LoadDataOnEnter(TT, res, uiParams)
+  self._enterData = self:GetModule(MatchModule):GetMatchEnterData()
   if self._enterData == nil then
     res:SetSucc(false)
-    return 
+    return
   end
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  (HelperProxy:GetInstance()):SetGameTimeScale(1)
+function UIBattleResultComplete:OnShow(uiParams)
+  HelperProxy:GetInstance():SetGameTimeScale(1)
   self._bNeedPopActivityAward = false
   self._popActivityAwardEnd = true
   self._bNeedShowLevelUp = false
@@ -41,11 +31,23 @@ UIBattleResultComplete.OnShow = function(self, uiParams)
   self._starIcon1 = self:GetGameObject("StarIcon1")
   self._starIcon2 = self:GetGameObject("StarIcon2")
   self._starIcon3 = self:GetGameObject("StarIcon3")
-  self._starRootGOList = {self._star1RootGO, self._star2RootGO, self._star3RootGO}
-  self._starTxtList = {self._star1Txt, self._star2Txt, self._star3Txt}
-  self._starIconList = {self._starIcon1, self._starIcon2, self._starIcon3}
+  self._starRootGOList = {
+    self._star1RootGO,
+    self._star2RootGO,
+    self._star3RootGO
+  }
+  self._starTxtList = {
+    self._star1Txt,
+    self._star2Txt,
+    self._star3Txt
+  }
+  self._starIconList = {
+    self._starIcon1,
+    self._starIcon2,
+    self._starIcon3
+  }
   local stars = self:GetGameObject("stars")
-  self._stars = stars:GetComponentsInChildren(typeof((UnityEngine.UI).Image))
+  self._stars = stars:GetComponentsInChildren(typeof(UnityEngine.UI.Image))
   self._levelIcon = self:GetGameObject("Level")
   self._expTxt = self:GetUIComponent("UILocalizationText", "ExpNumberText")
   self._txtExpAdd = self:GetUIComponent("UILocalizationText", "txtExpAdd")
@@ -58,10 +60,10 @@ UIBattleResultComplete.OnShow = function(self, uiParams)
   self._seasonItemsGo = self:GetGameObject("SeasonItems")
   self._seasonMazeItemsGo = self:GetGameObject("SeasonMazeItems")
   if self._seasonItemsGo then
-    (self._seasonItemsGo):SetActive(false)
+    self._seasonItemsGo:SetActive(false)
   end
   if self._seasonMazeItemsGo then
-    (self._seasonMazeItemsGo):SetActive(false)
+    self._seasonMazeItemsGo:SetActive(false)
   end
   self._seasonItemsRect = self:GetUIComponent("RectTransform", "SeasonItems")
   self._seasonMazeTaskObj = self:GetGameObject("SeasonMazeTask")
@@ -71,285 +73,227 @@ UIBattleResultComplete.OnShow = function(self, uiParams)
   self._petData = uiParams[2]
   self._matchPetData = {}
   for i = 1, #self._petData do
-    -- DECOMPILER ERROR at PC208: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._matchPetData)[i] = MatchPet:New((self._petData)[i])
+    self._matchPetData[i] = MatchPet:New(self._petData[i])
   end
   local rt = uiParams[3]
-  do
-    if rt then
-      local shot = self:GetUIComponent("RawImage", "shot")
-      shot.texture = rt
+  if rt then
+    local shot = self:GetUIComponent("RawImage", "shot")
+    shot.texture = rt
+  end
+  self.autoParam = uiParams[4]
+  if self._isWin then
+    self._imgRoleList = {}
+    self._imgShadowList = {}
+    for i = 1, 5 do
+      self._imgRoleList[i] = self:GetUIComponent("RawImageLoader", "imgRole" .. i)
+      self._imgShadowList[i] = self:GetUIComponent("RawImageLoader", "imgShadow" .. i)
     end
-    self.autoParam = uiParams[4]
-    if self._isWin then
-      self._imgRoleList = {}
-      self._imgShadowList = {}
-      for i = 1, 5 do
-        -- DECOMPILER ERROR at PC238: Confused about usage of register: R8 in 'UnsetPending'
-
-        (self._imgRoleList)[i] = self:GetUIComponent("RawImageLoader", "imgRole" .. i)
-        -- DECOMPILER ERROR at PC246: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._imgShadowList)[i] = self:GetUIComponent("RawImageLoader", "imgShadow" .. i)
+  else
+    self._imgRole = self:GetUIComponent("RawImageLoader", "imgRole1")
+    self._imgShadow = self:GetUIComponent("RawImageLoader", "imgShadow1")
+  end
+  self._expSlider = self:GetUIComponent("Slider", "ExpSlider")
+  self._selectItemInfoPool = self:GetUIComponent("UISelectObjectPath", "ItemInfoPool")
+  self._selectItemInfo = self._selectItemInfoPool:SpawnObject("UISelectInfo")
+  self._atlas = self:GetAsset("UIBattleResultComplete.spriteatlas", LoadType.SpriteAtlas)
+  self._imgComplete = self:GetUIComponent("RawImageLoader", "imgComplete")
+  self._imgCompleteGo = self:GetGameObject("imgComplete")
+  self._imgCompleteTitle = self:GetUIComponent("RawImageLoader", "completetitle")
+  self._imgCompleteEn = self:GetUIComponent("RawImageLoader", "completeen")
+  self._completeen = self:GetGameObject("completeen")
+  self._completeen:SetActive(not HelperProxy:GetInstance():IsInEnglish())
+  self._starConditionGO = self:GetGameObject("StarCondition")
+  self._resInstanceGO = self:GetGameObject("resinstance")
+  self._resInsNameTxt = self:GetUIComponent("UILocalizationText", "fubenname")
+  self._resInsDiffTxt = self:GetUIComponent("UILocalizationText", "difficuty")
+  self._resInsDiffGood = self:GetUIComponent("Image", "good")
+  self._summerLevelTypeToScoreColor = {
+    [UISummerActivity2LevelType.Normal] = Color(0.5333333333333333, 0, 0, 1),
+    [UISummerActivity2LevelType.Boss] = Color(0.5333333333333333, 0, 0, 1),
+    [UISummerActivity2LevelType.Affix] = Color(0.5333333333333333, 0, 0, 1)
+  }
+  self._summerTwoScore = self:GetGameObject("SummerTwoScore")
+  self._summerTwoNameGo = self:GetGameObject("SummerTwoName")
+  self._summerTwoNameBgImg = self:GetUIComponent("RawImageLoader", "SummerTwoNameBg")
+  self._summerTwoAnim = self:GetUIComponent("Animation", "SummerTwoScoreBg")
+  self._summerTwoStageNameLabel = self:GetUIComponent("UILocalizationText", "SummerTwoStageName")
+  self._summerTwoScoreBgGo = self:GetGameObject("SummerTwoScoreBg")
+  self._summerTwoScoreHistoryGo = self:GetGameObject("SummerTwoScoreHistory")
+  self._summerTwoScoreIcon1Img = self:GetUIComponent("RawImageLoader", "SummerTwoScoreIcon1")
+  self._summerTwoScore1Label = self:GetUIComponent("UILocalizationText", "SummerTwoScore1")
+  self._summerTwoScoreShadown1Label = self:GetUIComponent("UILocalizationText", "SummerTwoScoreShadown1")
+  self._summerTwoScoreCurrentGo = self:GetGameObject("SummerTwoScoreCurrent")
+  self._summerTwoScoreIcon2Img = self:GetUIComponent("RawImageLoader", "SummerTwoScoreIcon2")
+  self._summerTwoScore2Label = self:GetUIComponent("UILocalizationText", "SummerTwoScore2")
+  self._summerTwoScoreShadown2Label = self:GetUIComponent("UILocalizationText", "SummerTwoScoreShadown2")
+  self._n21CCNameGo = self:GetGameObject("N21CCName")
+  self._n21CCStageNameLabel = self:GetUIComponent("UILocalizationText", "N21CCStageName")
+  self._n21CCScoreGo = self:GetGameObject("N21CCScore")
+  self._n21CCHistoryScoreLabel = self:GetUIComponent("UILocalizationText", "N21CCHistoryScore")
+  self._n21CCCurrentScoreLabel = self:GetUIComponent("UILocalizationText", "N21CCCurrentScore")
+  self._n21CCNameGo:SetActive(false)
+  self._n21CCScoreGo:SetActive(false)
+  self._sailingLoader = self:GetUIComponent("UISelectObjectPath", "UISailingPanel")
+  self._vampireLoader = self:GetUIComponent("UISelectObjectPath", "UIVampirePanel")
+  self._n5Right = self:GetGameObject("N5Right")
+  self._n5RightAnimation = self:GetUIComponent("Animation", "N5Right")
+  self._n5Left = self:GetGameObject("N5Left")
+  self._militaryExploitLeftValue = self:GetUIComponent("UILocalizationText", "MilitaryExploitLeftValue")
+  self._militaryExploitRightValue = self:GetUIComponent("UILocalizationText", "MilitaryExploitRightValue")
+  self._n5StageName = self:GetUIComponent("UILocalizationText", "N5StageName")
+  self._n5StageDifficulty = self:GetUIComponent("UILocalizationText", "N5StageDifficulty")
+  self._difficultyImage = self:GetUIComponent("RawImageLoader", "DifficultyImage")
+  self._tex1 = self:GetUIComponent("UILocalizationText", "Txt1")
+  self._tex2 = self:GetUIComponent("UILocalizationText", "Txt2")
+  self._arrowRect = self:GetUIComponent("RectTransform", "Arrow")
+  self._worldBoss = self:GetGameObject("WorldBoss")
+  self._worldBossAnimation = self:GetUIComponent("Animation", "WorldBoss")
+  self._damgeLeftValue = self:GetUIComponent("UILocalizationText", "DamgeLeftValue")
+  self._damageRightValue = self:GetUIComponent("UILocalizationText", "DamageRightValue")
+  self._activityImage = self:GetUIComponent("RawImageLoader", "ActivityImage")
+  self._activityImageObj = self:GetGameObject("ActivityImage")
+  self._activityResultLeft = self:GetUIComponent("UISelectObjectPath", "ActivityResultLeft")
+  self._activityResultRight = self:GetUIComponent("UISelectObjectPath", "ActivityResultRight")
+  self._diffRoot = self:GetUIComponent("UISelectObjectPath", "DiffRoot")
+  self._autoBtnPool = self:GetUIComponent("UISelectObjectPath", "pool")
+  self._blockMask = self:GetGameObject("blockMask")
+  local md = GameGlobal.GetModule(SerialAutoFightModule)
+  if md:IsRunning() then
+    self._blockMask:SetActive(true)
+    self._autoBtn = self._autoBtnPool:SpawnObject("UIWidgetSerialButton")
+  else
+    self._blockMask:SetActive(false)
+  end
+  self:AttachEvent(GameEventType.CancelSerialAutoFight, self.OnCancelSerialAutoFight)
+  self._taskIDList = {}
+  self._3StarTaskID = -1
+  self:FillInfo()
+  self:AttachEvent(GameEventType.ShowItemTips, self.ShowItemTips)
+  if self._matchPetData[1] then
+    self:StartTask(function(TT)
+      YIELD(TT)
+      local tplID = self._matchPetData[1]:GetTemplateID()
+      local pm = GameGlobal.GetModule(PetAudioModule)
+      if self._isWin then
+        pm:PlayPetAudio("BattleSucceed", tplID)
+      else
+        pm:PlayPetAudio("BattleFail", tplID)
       end
+    end)
+  end
+  local bgmID
+  if self._isWin then
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundBattleComplete)
+    bgmID = CriAudioIDConst.BGMBattleSuccess
+  else
+    bgmID = CriAudioIDConst.BGMBattleFail
+  end
+  AudioHelperController.SetBGMMixerGroup(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.DefaultMixerValue)
+  AudioHelperController.PlayBGMById(bgmID, AudioConstValue.BGMCrossFadeTime)
+  self._expIncreaseAnimTime = 1
+  self._expIncreaseAnimEnd = true
+  if MatchType.MT_MiniMaze == self._enterData._match_type then
+    local transCmp = self:GetUIComponent("ATransitionComponent", "UIBattleResultComplete")
+    transCmp:ChangeAnim("uieff_UIBattleResultComplete_Lose01", 60)
+  elseif MatchType.MT_Chess == self._enterData._match_type then
+    local transCmp = self:GetUIComponent("ATransitionComponent", "UIBattleResultComplete")
+    if MatchType.MT_SailingMission == self._enterData._match_type then
+      transCmp:ChangeAnim("uieff_UIBattleResultComplete_Lose01", 60)
     else
-      do
-        self._imgRole = self:GetUIComponent("RawImageLoader", "imgRole1")
-        self._imgShadow = self:GetUIComponent("RawImageLoader", "imgShadow1")
-        self._expSlider = self:GetUIComponent("Slider", "ExpSlider")
-        self._selectItemInfoPool = self:GetUIComponent("UISelectObjectPath", "ItemInfoPool")
-        self._selectItemInfo = (self._selectItemInfoPool):SpawnObject("UISelectInfo")
-        self._atlas = self:GetAsset("UIBattleResultComplete.spriteatlas", LoadType.SpriteAtlas)
-        self._imgComplete = self:GetUIComponent("RawImageLoader", "imgComplete")
-        self._imgCompleteGo = self:GetGameObject("imgComplete")
-        self._imgCompleteTitle = self:GetUIComponent("RawImageLoader", "completetitle")
-        self._imgCompleteEn = self:GetUIComponent("RawImageLoader", "completeen")
-        self._completeen = self:GetGameObject("completeen")
-        ;
-        (self._completeen):SetActive(not (HelperProxy:GetInstance()):IsInEnglish())
-        self._starConditionGO = self:GetGameObject("StarCondition")
-        self._resInstanceGO = self:GetGameObject("resinstance")
-        self._resInsNameTxt = self:GetUIComponent("UILocalizationText", "fubenname")
-        self._resInsDiffTxt = self:GetUIComponent("UILocalizationText", "difficuty")
-        self._resInsDiffGood = self:GetUIComponent("Image", "good")
-        self._summerLevelTypeToScoreColor = {[UISummerActivity2LevelType.Normal] = Color(0.53333333333333, 0, 0, 1), [UISummerActivity2LevelType.Boss] = Color(0.53333333333333, 0, 0, 1), [UISummerActivity2LevelType.Affix] = Color(0.53333333333333, 0, 0, 1)}
-        self._summerTwoScore = self:GetGameObject("SummerTwoScore")
-        self._summerTwoNameGo = self:GetGameObject("SummerTwoName")
-        self._summerTwoNameBgImg = self:GetUIComponent("RawImageLoader", "SummerTwoNameBg")
-        self._summerTwoAnim = self:GetUIComponent("Animation", "SummerTwoScoreBg")
-        self._summerTwoStageNameLabel = self:GetUIComponent("UILocalizationText", "SummerTwoStageName")
-        self._summerTwoScoreBgGo = self:GetGameObject("SummerTwoScoreBg")
-        self._summerTwoScoreHistoryGo = self:GetGameObject("SummerTwoScoreHistory")
-        self._summerTwoScoreIcon1Img = self:GetUIComponent("RawImageLoader", "SummerTwoScoreIcon1")
-        self._summerTwoScore1Label = self:GetUIComponent("UILocalizationText", "SummerTwoScore1")
-        self._summerTwoScoreShadown1Label = self:GetUIComponent("UILocalizationText", "SummerTwoScoreShadown1")
-        self._summerTwoScoreCurrentGo = self:GetGameObject("SummerTwoScoreCurrent")
-        self._summerTwoScoreIcon2Img = self:GetUIComponent("RawImageLoader", "SummerTwoScoreIcon2")
-        self._summerTwoScore2Label = self:GetUIComponent("UILocalizationText", "SummerTwoScore2")
-        self._summerTwoScoreShadown2Label = self:GetUIComponent("UILocalizationText", "SummerTwoScoreShadown2")
-        self._n21CCNameGo = self:GetGameObject("N21CCName")
-        self._n21CCStageNameLabel = self:GetUIComponent("UILocalizationText", "N21CCStageName")
-        self._n21CCScoreGo = self:GetGameObject("N21CCScore")
-        self._n21CCHistoryScoreLabel = self:GetUIComponent("UILocalizationText", "N21CCHistoryScore")
-        self._n21CCCurrentScoreLabel = self:GetUIComponent("UILocalizationText", "N21CCCurrentScore")
-        ;
-        (self._n21CCNameGo):SetActive(false)
-        ;
-        (self._n21CCScoreGo):SetActive(false)
-        self._sailingLoader = self:GetUIComponent("UISelectObjectPath", "UISailingPanel")
-        self._vampireLoader = self:GetUIComponent("UISelectObjectPath", "UIVampirePanel")
-        self._n5Right = self:GetGameObject("N5Right")
-        self._n5RightAnimation = self:GetUIComponent("Animation", "N5Right")
-        self._n5Left = self:GetGameObject("N5Left")
-        self._militaryExploitLeftValue = self:GetUIComponent("UILocalizationText", "MilitaryExploitLeftValue")
-        self._militaryExploitRightValue = self:GetUIComponent("UILocalizationText", "MilitaryExploitRightValue")
-        self._n5StageName = self:GetUIComponent("UILocalizationText", "N5StageName")
-        self._n5StageDifficulty = self:GetUIComponent("UILocalizationText", "N5StageDifficulty")
-        self._difficultyImage = self:GetUIComponent("RawImageLoader", "DifficultyImage")
-        self._tex1 = self:GetUIComponent("UILocalizationText", "Txt1")
-        self._tex2 = self:GetUIComponent("UILocalizationText", "Txt2")
-        self._arrowRect = self:GetUIComponent("RectTransform", "Arrow")
-        self._worldBoss = self:GetGameObject("WorldBoss")
-        self._worldBossAnimation = self:GetUIComponent("Animation", "WorldBoss")
-        self._damgeLeftValue = self:GetUIComponent("UILocalizationText", "DamgeLeftValue")
-        self._damageRightValue = self:GetUIComponent("UILocalizationText", "DamageRightValue")
-        self._activityImage = self:GetUIComponent("RawImageLoader", "ActivityImage")
-        self._activityImageObj = self:GetGameObject("ActivityImage")
-        self._activityResultLeft = self:GetUIComponent("UISelectObjectPath", "ActivityResultLeft")
-        self._activityResultRight = self:GetUIComponent("UISelectObjectPath", "ActivityResultRight")
-        self._diffRoot = self:GetUIComponent("UISelectObjectPath", "DiffRoot")
-        self._autoBtnPool = self:GetUIComponent("UISelectObjectPath", "pool")
-        self._blockMask = self:GetGameObject("blockMask")
-        local md = (GameGlobal.GetModule)(SerialAutoFightModule)
-        if md:IsRunning() then
-          (self._blockMask):SetActive(true)
-          self._autoBtn = (self._autoBtnPool):SpawnObject("UIWidgetSerialButton")
-        else
-          ;
-          (self._blockMask):SetActive(false)
-        end
-        self:AttachEvent(GameEventType.CancelSerialAutoFight, self.OnCancelSerialAutoFight)
-        self._taskIDList = {}
-        self._3StarTaskID = -1
-        self:FillInfo()
-        self:AttachEvent(GameEventType.ShowItemTips, self.ShowItemTips)
-        if (self._matchPetData)[1] then
-          self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    YIELD(TT)
-    local tplID = ((self._matchPetData)[1]):GetTemplateID()
-    local pm = (GameGlobal.GetModule)(PetAudioModule)
-    if self._isWin then
-      pm:PlayPetAudio("BattleSucceed", tplID)
+      transCmp:ChangeAnim("uieff_UIBattleResultComplete_Lose", 96)
+    end
+  else
+    local transCmp = self:GetUIComponent("ATransitionComponent", "UIBattleResultComplete")
+    if not self._isWin then
+      transCmp:ChangeAnim("uieff_UIBattleResultComplete_Lose", 96)
+    elseif MatchType.MT_EightPets == self._enterData._match_type then
+      transCmp:ChangeAnim("uieff_UIBattleResultComplete_Win_baren", 224)
     else
-      pm:PlayPetAudio("BattleFail", tplID)
+      transCmp:ChangeAnim("uieff_UIBattleResultComplete_Win", 190)
     end
   end
-)
-        end
-        local bgmID = nil
-        if self._isWin then
-          (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundBattleComplete)
-          bgmID = CriAudioIDConst.BGMBattleSuccess
-        else
-          bgmID = CriAudioIDConst.BGMBattleFail
-        end
-        ;
-        (AudioHelperController.SetBGMMixerGroup)(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.DefaultMixerValue)
-        ;
-        (AudioHelperController.PlayBGMById)(bgmID, AudioConstValue.BGMCrossFadeTime)
-        self._expIncreaseAnimTime = 1
-        self._expIncreaseAnimEnd = true
-        if (_ENV.MatchType).MT_MiniMaze == (self._enterData)._match_type then
-          local transCmp = self:GetUIComponent("ATransitionComponent", "UIBattleResultComplete")
-          transCmp:ChangeAnim("uieff_UIBattleResultComplete_Lose01", 60)
-        else
-          do
-            if (_ENV.MatchType).MT_Chess == (self._enterData)._match_type then
-              local transCmp = self:GetUIComponent("ATransitionComponent", "UIBattleResultComplete")
-              if (_ENV.MatchType).MT_SailingMission == (self._enterData)._match_type then
-                transCmp:ChangeAnim("uieff_UIBattleResultComplete_Lose01", 60)
-              else
-                transCmp:ChangeAnim("uieff_UIBattleResultComplete_Lose", 96)
-              end
-            else
-              do
-                do
-                  local transCmp = self:GetUIComponent("ATransitionComponent", "UIBattleResultComplete")
-                  if not self._isWin then
-                    transCmp:ChangeAnim("uieff_UIBattleResultComplete_Lose", 96)
-                  else
-                    if (_ENV.MatchType).MT_EightPets == (self._enterData)._match_type then
-                      transCmp:ChangeAnim("uieff_UIBattleResultComplete_Win_baren", 224)
-                    else
-                      transCmp:ChangeAnim("uieff_UIBattleResultComplete_Win", 190)
-                    end
-                  end
-                  local againFightBtn = self:GetGameObject("againBtnRoot")
-                  local l_MissionCreateInfo = (self._enterData):GetMissionCreateInfo()
-                  do
-                    if l_MissionCreateInfo ~= nil then
-                      local missionID = l_MissionCreateInfo.mission_id
-                      ;
-                      ((_ENV.GameGlobal).UAReportForceGuideEvent)("FightOverMatchResult", {"PlaySpeed", missionID})
-                    end
-                    if self._isWin then
-                      local firstPass = not (self._enterData):LevelIsPass()
-                      if firstPass and l_MissionCreateInfo ~= nil then
-                        local missionID = l_MissionCreateInfo.mission_id
-                        if missionID and ((_ENV.GameGlobal).IsUAReportCompleteTutorialMission)(missionID) then
-                          ((_ENV.GameGlobal).UAReportChannelEvent)("completed_tutorial", {})
-                        end
-                      end
-                    end
-                    do
-                      local levelId = (self._enterData)._level_id
-                      local cfg_level = ((_ENV.Cfg).cfg_level)[levelId]
-                      local levelSet = false
-                      local btnActive = true
-                      if cfg_level then
-                        local fightAgainActive = cfg_level.FightAgainActive
-                        if fightAgainActive then
-                          if fightAgainActive == 1 then
-                            local firstPass = not (self._enterData):LevelIsPass()
-                            if firstPass and self._isWin then
-                              levelSet = true
-                              btnActive = false
-                            end
-                          else
-                            do
-                              do
-                                if fightAgainActive == 2 then
-                                  levelSet = true
-                                  btnActive = false
-                                else
-                                  if fightAgainActive == 3 then
-                                    levelSet = true
-                                    btnActive = true
-                                  end
-                                end
-                                if not levelSet then
-                                  btnActive = (HelperProxy:GetInstance()):AgainFightActive((self._enterData)._match_type, self._isWin)
-                                  againFightBtn:SetActive(btnActive)
-                                else
-                                  againFightBtn:SetActive(btnActive)
-                                end
-                                if (self._enterData)._match_type == (_ENV.MatchType).MT_Season then
-                                  againFightBtn:SetActive(false)
-                                else
-                                  if (self._enterData)._match_type == (_ENV.MatchType).MT_Campaign then
-                                    local campaignMissionInfo = (self._enterData):GetCampaignMissionInfo()
-                                    local campaignModule = ((_ENV.GameGlobal).GetModule)(_ENV.CampaignModule)
-                                    local campID, comID, comType = campaignModule:ParseCampaignMissionParams(campaignMissionInfo.CampaignMissionParams)
-                                    local campConfig = ((_ENV.Cfg).cfg_campaign)[campID]
-                                    if campConfig then
-                                      local campType = campConfig.CampaignType
-                                    end
-                                    if campType == (_ENV.ECampaignType).CAMPAIGN_TYPE_SEASON_TASK_MISSION then
-                                      againFightBtn:SetActive(false)
-                                    end
-                                    if campType == (_ENV.ECampaignType).CAMPAIGN_TYPE_INLAND_SEASON and comID == (_ENV.ECCampaignSeasonComponentID).LINE_MISSION then
-                                      local l_MissionCreateInfo = (self._enterData):GetMissionCreateInfo()
-                                      if l_MissionCreateInfo ~= nil then
-                                        local missionID = l_MissionCreateInfo.nCampaignMissionId
-                                        ;
-                                        ((_ENV.Log).debug)("###[UIBattleResultComplete] SaveFinishLineMissionList battle complete save id:", missionID)
-                                        ;
-                                        (((_ENV.GameGlobal).GetUIModule)(_ENV.SeasonModule)):SaveFinishLineMissionList(missionID)
-                                        if self._isWin then
-                                          ((_ENV.Log).debug)("###[UIBattleResultComplete] SavePassLineMissionList battle complete save id:", missionID)
-                                          ;
-                                          (((_ENV.GameGlobal).GetUIModule)(_ENV.SeasonModule)):SavePassLineMissionList(missionID)
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                                do
-                                  self:_SetStatisticsBtn()
-                                  self:StartTask(function(TT)
-    -- function num : 0_1_1 , upvalues : self, _ENV, md
-    while 1 do
-      if not self:_IsAllTaskOver() or not self._expIncreaseAnimEnd or self._bNeedPopActivityAward and not self._popActivityAwardEnd then
-        YIELD(TT)
-        -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_STMT
-
+  local againFightBtn = self:GetGameObject("againBtnRoot")
+  local l_MissionCreateInfo = self._enterData:GetMissionCreateInfo()
+  if l_MissionCreateInfo ~= nil then
+    local missionID = l_MissionCreateInfo.mission_id
+    GameGlobal.UAReportForceGuideEvent("FightOverMatchResult", {"PlaySpeed", missionID})
+  end
+  if self._isWin then
+    local firstPass = not self._enterData:LevelIsPass()
+    if firstPass and l_MissionCreateInfo ~= nil then
+      local missionID = l_MissionCreateInfo.mission_id
+      if missionID and GameGlobal.IsUAReportCompleteTutorialMission(missionID) then
+        GameGlobal.UAReportChannelEvent("completed_tutorial", {})
       end
+    end
+  end
+  local levelId = self._enterData._level_id
+  local cfg_level = Cfg.cfg_level[levelId]
+  local levelSet = false
+  local btnActive = true
+  if cfg_level then
+    local fightAgainActive = cfg_level.FightAgainActive
+    if fightAgainActive then
+      if fightAgainActive == 1 then
+        local firstPass = not self._enterData:LevelIsPass()
+        if firstPass and self._isWin then
+          levelSet = true
+          btnActive = false
+        end
+      elseif fightAgainActive == 2 then
+        levelSet = true
+        btnActive = false
+      elseif fightAgainActive == 3 then
+        levelSet = true
+        btnActive = true
+      end
+    end
+  end
+  if not levelSet then
+    btnActive = HelperProxy:GetInstance():AgainFightActive(self._enterData._match_type, self._isWin)
+    againFightBtn:SetActive(btnActive)
+  else
+    againFightBtn:SetActive(btnActive)
+  end
+  if self._enterData._match_type == MatchType.MT_Season then
+    againFightBtn:SetActive(false)
+  elseif self._enterData._match_type == MatchType.MT_Campaign then
+    local campaignMissionInfo = self._enterData:GetCampaignMissionInfo()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    local campID, comID, comType = campaignModule:ParseCampaignMissionParams(campaignMissionInfo.CampaignMissionParams)
+    local campConfig = Cfg.cfg_campaign[campID]
+    local campType = campConfig and campConfig.CampaignType
+    if campType == ECampaignType.CAMPAIGN_TYPE_SEASON_TASK_MISSION then
+      againFightBtn:SetActive(false)
+    end
+    if campType == ECampaignType.CAMPAIGN_TYPE_INLAND_SEASON and comID == ECCampaignSeasonComponentID.LINE_MISSION then
+      local l_MissionCreateInfo = self._enterData:GetMissionCreateInfo()
+      if l_MissionCreateInfo ~= nil then
+        local missionID = l_MissionCreateInfo.nCampaignMissionId
+        Log.debug("###[UIBattleResultComplete] SaveFinishLineMissionList battle complete save id:", missionID)
+        GameGlobal.GetUIModule(SeasonModule):SaveFinishLineMissionList(missionID)
+        if self._isWin then
+          Log.debug("###[UIBattleResultComplete] SavePassLineMissionList battle complete save id:", missionID)
+          GameGlobal.GetUIModule(SeasonModule):SavePassLineMissionList(missionID)
+        end
+      end
+    end
+  end
+  self:_SetStatisticsBtn()
+  self:StartTask(function(TT)
+    while not (self:_IsAllTaskOver() and self._expIncreaseAnimEnd) or self._bNeedPopActivityAward and not self._popActivityAwardEnd do
+      YIELD(TT)
     end
     md:SetBattleResultComplated()
-  end
-)
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
-    end
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.IsSummerActivityTwo = function(self, enterData)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBattleResultComplete:IsSummerActivityTwo(enterData)
   local isSummerTwo = false
   if MatchType.MT_Campaign == enterData._match_type then
     local campaignModule = self:GetModule(CampaignModule)
-    local campId, comId, comType = campaignModule:ParseCampaignMissionParams((enterData:GetMissionCreateInfo()).CampaignMissionParams)
-    local campConfig = (Cfg.cfg_campaign)[campId]
+    local campId, comId, comType = campaignModule:ParseCampaignMissionParams(enterData:GetMissionCreateInfo().CampaignMissionParams)
+    local campConfig = Cfg.cfg_campaign[campId]
     if campConfig then
       local campType = campConfig.CampaignType
       if campType == ECampaignType.CAMPAIGN_TYPE_SUMMER_II and comType == CampaignComType.E_CAMPAIGN_COM_SUM_II_MISSION then
@@ -357,31 +301,23 @@ UIBattleResultComplete.IsSummerActivityTwo = function(self, enterData)
       end
     end
   end
-  do
-    return isSummerTwo
-  end
+  return isSummerTwo
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.IsActivityReview = function(self, enterData)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBattleResultComplete:IsActivityReview(enterData)
   if MatchType.MT_Campaign == enterData._match_type then
     local campaignModule = self:GetModule(CampaignModule)
-    local campId, comId, comType = campaignModule:ParseCampaignMissionParams((enterData:GetMissionCreateInfo()).CampaignMissionParams)
+    local campId, comId, comType = campaignModule:ParseCampaignMissionParams(enterData:GetMissionCreateInfo().CampaignMissionParams)
     return campaignModule:IsActivityReview(campId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.IsN21CC = function(self, enterData)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBattleResultComplete:IsN21CC(enterData)
   local isNCC21 = false
   if MatchType.MT_Campaign == enterData._match_type then
     local campaignModule = self:GetModule(CampaignModule)
-    local campId, comId, comType = campaignModule:ParseCampaignMissionParams((enterData:GetMissionCreateInfo()).CampaignMissionParams)
-    local campConfig = (Cfg.cfg_campaign)[campId]
+    local campId, comId, comType = campaignModule:ParseCampaignMissionParams(enterData:GetMissionCreateInfo().CampaignMissionParams)
+    local campConfig = Cfg.cfg_campaign[campId]
     if campConfig then
       local campType = campConfig.CampaignType
       if campType == ECampaignType.CAMPAIGN_TYPE_N21_CHALLENGE and comType == CampaignComType.E_CAMPAIGN_COM_CHALL_MISSION then
@@ -389,20 +325,15 @@ UIBattleResultComplete.IsN21CC = function(self, enterData)
       end
     end
   end
-  do
-    return isNCC21
-  end
+  return isNCC21
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.IsN28Errand = function(self, enterData)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBattleResultComplete:IsN28Errand(enterData)
   local isN28Errand = false
   if MatchType.MT_Campaign == enterData._match_type then
     local campaignModule = self:GetModule(CampaignModule)
-    local campId, comId, comType = campaignModule:ParseCampaignMissionParams((enterData:GetMissionCreateInfo()).CampaignMissionParams)
-    local campConfig = (Cfg.cfg_campaign)[campId]
+    local campId, comId, comType = campaignModule:ParseCampaignMissionParams(enterData:GetMissionCreateInfo().CampaignMissionParams)
+    local campConfig = Cfg.cfg_campaign[campId]
     if campConfig then
       local campType = campConfig.CampaignType
       if campType == ECampaignType.CAMPAIGN_TYPE_LINE_MISSION then
@@ -410,20 +341,15 @@ UIBattleResultComplete.IsN28Errand = function(self, enterData)
       end
     end
   end
-  do
-    return isN28Errand
-  end
+  return isN28Errand
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.IsCn20N49LineTalent = function(self, enterData)
-  -- function num : 0_6 , upvalues : _ENV
+function UIBattleResultComplete:IsCn20N49LineTalent(enterData)
   local isLineTalent = false
   if MatchType.MT_Campaign == enterData._match_type then
     local campaignModule = self:GetModule(CampaignModule)
-    local campId, comId, comType = campaignModule:ParseCampaignMissionParams((enterData:GetMissionCreateInfo()).CampaignMissionParams)
-    local campConfig = (Cfg.cfg_campaign)[campId]
+    local campId, comId, comType = campaignModule:ParseCampaignMissionParams(enterData:GetMissionCreateInfo().CampaignMissionParams)
+    local campConfig = Cfg.cfg_campaign[campId]
     if campConfig then
       local campType = campConfig.CampaignType
       if campType == ECampaignType.CAMPAIGN_TYPE_INLAND_N20 and comId == ECampaignCN20ComponentID.ECN20_LINE_MISSION_TALEN then
@@ -431,25 +357,18 @@ UIBattleResultComplete.IsCn20N49LineTalent = function(self, enterData)
       end
     end
   end
-  do
-    return isLineTalent
-  end
+  return isLineTalent
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._FillCN20N49LineTalentStars = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBattleResultComplete:_FillCN20N49LineTalentStars()
   local passCount = 0
   for i = 1, #self._starRootGOList do
-    ((self._starRootGOList)[i]):SetActive(false)
+    self._starRootGOList[i]:SetActive(false)
   end
-  ;
-  ((self._starRootGOList)[1]):SetActive(true)
-  local desc = (StringTable.Get)("str_cn20_line_talent_sweep_condition")
-  ;
-  ((self._starTxtList)[1]):SetText(desc)
-  local go = (self._starIconList)[1]
+  self._starRootGOList[1]:SetActive(true)
+  local desc = StringTable.Get("str_cn20_line_talent_sweep_condition")
+  self._starTxtList[1]:SetText(desc)
+  local go = self._starIconList[1]
   if self._isWin then
     go:SetActive(true)
     passCount = 3
@@ -457,100 +376,68 @@ UIBattleResultComplete._FillCN20N49LineTalentStars = function(self)
     go:SetActive(false)
     passCount = 0
   end
-  for i = 0, (self._stars).Length - 1 do
-    local go = ((self._stars)[i]).gameObject
-    if i + 1 > passCount then
-      do
-        go:SetActive(not self._isWin)
-        go:SetActive(false)
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+  for i = 0, self._stars.Length - 1 do
+    local go = self._stars[i].gameObject
+    if self._isWin then
+      go:SetActive(passCount >= i + 1)
+    else
+      go:SetActive(false)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.IsCampaignMissionHideExp = function(self, enterData)
-  -- function num : 0_8 , upvalues : _ENV
+function UIBattleResultComplete:IsCampaignMissionHideExp(enterData)
   local bHide = false
   if MatchType.MT_Campaign == enterData._match_type then
-    local missionID = (enterData:GetCampaignMissionInfo()).nCampaignMissionId
-    local missionCfg = (Cfg.cfg_campaign_mission)[missionID]
-  end
-  if missionCfg.NeedPower and missionCfg.NeedPower > 0 then
-    do
+    local missionID = enterData:GetCampaignMissionInfo().nCampaignMissionId
+    local missionCfg = Cfg.cfg_campaign_mission[missionID]
+    if missionCfg.NeedPower and missionCfg.NeedPower > 0 then
+    else
       bHide = true
-      return bHide
     end
   end
+  return bHide
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.InitHighLight = function(self, effName, name1, name2)
-  -- function num : 0_9 , upvalues : _ENV
-  self._highLightResRequest = (ResourceManager:GetInstance()):SyncLoadAsset(effName .. ".prefab", LoadType.GameObject)
-  self._highLightGO = (self._highLightResRequest).Obj
-  local title = (GameObjectHelper.FindChild)((self._highLightGO).transform, "completetitle")
-  local en = (GameObjectHelper.FindChild)((self._highLightGO).transform, "completeen")
-  self.tex1Req = (ResourceManager:GetInstance()):SyncLoadAsset(name1 .. ".mat", LoadType.Mat)
-  self.tex2Req = (ResourceManager:GetInstance()):SyncLoadAsset(name2 .. ".mat", LoadType.Mat)
-  local tex1 = ((self.tex1Req).Obj):GetTexture("_MainTex")
-  local tex2 = ((self.tex2Req).Obj):GetTexture("_MainTex")
-  ;
-  (title:GetComponent("RawImage")).texture = tex1
-  ;
-  (en:GetComponent("RawImage")).texture = tex2
+function UIBattleResultComplete:InitHighLight(effName, name1, name2)
+  self._highLightResRequest = ResourceManager:GetInstance():SyncLoadAsset(effName .. ".prefab", LoadType.GameObject)
+  self._highLightGO = self._highLightResRequest.Obj
+  local title = GameObjectHelper.FindChild(self._highLightGO.transform, "completetitle")
+  local en = GameObjectHelper.FindChild(self._highLightGO.transform, "completeen")
+  self.tex1Req = ResourceManager:GetInstance():SyncLoadAsset(name1 .. ".mat", LoadType.Mat)
+  self.tex2Req = ResourceManager:GetInstance():SyncLoadAsset(name2 .. ".mat", LoadType.Mat)
+  local tex1 = self.tex1Req.Obj:GetTexture("_MainTex")
+  local tex2 = self.tex2Req.Obj:GetTexture("_MainTex")
+  title:GetComponent("RawImage").texture = tex1
+  en:GetComponent("RawImage").texture = tex2
   local parent = self:GetGameObject("g_complete")
-  ;
-  ((self._highLightGO).transform):SetParent(parent.transform)
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  ((self._highLightGO).transform).localPosition = Vector3(0, 0, 0)
-  -- DECOMPILER ERROR at PC89: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  ((self._highLightGO).transform).localScale = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  ((self._highLightGO).transform).localRotation = Quaternion(0, 0, 0, 0)
-  ;
-  (self._highLightGO):SetActive(true)
+  self._highLightGO.transform:SetParent(parent.transform)
+  self._highLightGO.transform.localPosition = Vector3(0, 0, 0)
+  self._highLightGO.transform.localScale = Vector3(1, 1, 1)
+  self._highLightGO.transform.localRotation = Quaternion(0, 0, 0, 0)
+  self._highLightGO:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.OnHide = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):CloseDialog("UICommonConversionController")
+function UIBattleResultComplete:OnHide()
+  GameGlobal.UIStateManager():CloseDialog("UICommonConversionController")
   local hpm = self:GetModule(HelpPetModule)
   hpm:UI_ClearHelpPet()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowItemTips)
   if self._highLightResRequest then
-    (self._highLightResRequest):Dispose()
+    self._highLightResRequest:Dispose()
     self._highLightResRequest = nil
   end
   if self.tex1Req then
-    (self.tex1Req):Dispose()
+    self.tex1Req:Dispose()
     self.tex1Req = nil
   end
   if self.tex2Req then
-    (self.tex2Req):Dispose()
+    self.tex2Req:Dispose()
     self.tex2Req = nil
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._GetItemCount = function(self, vecItem)
-  -- function num : 0_11 , upvalues : _ENV
+function UIBattleResultComplete:_GetItemCount(vecItem)
   local nItemCount = 0
   if vecItem then
     for i = 1, #vecItem do
@@ -560,1448 +447,1176 @@ UIBattleResultComplete._GetItemCount = function(self, vecItem)
       end
     end
   end
-  do
-    return nItemCount
-  end
+  return nItemCount
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._GetMatchResult = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIBattleResultComplete:_GetMatchResult()
   local gameMatchModule = self:GetModule(GameMatchModule)
   local matchResult = gameMatchModule:GetMachResult()
   return matchResult
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.FillInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local animationTime = 833.33333333333
+function UIBattleResultComplete:FillInfo()
+  local animationTime = 833.3333333333334
   local starEffTime = 400
   local matchRes = self:_GetMatchResult()
   if matchRes == nil then
-    return 
+    return
   end
   if matchRes.m_nMatchType == MatchType.MT_ResDungeon then
-    (self._resInstanceGO):SetActive(true)
-    ;
-    (self._starConditionGO):SetActive(false)
+    self._resInstanceGO:SetActive(true)
+    self._starConditionGO:SetActive(false)
     local module = self:GetModule(ResDungeonModule)
     local instanceId = module:GetEnterInstanceId()
     local clientResInstance = module:GetClientResInstance()
     local mainType = clientResInstance:GetMainTypeByInstanceId(instanceId)
     local entry = clientResInstance:GetEntryById(mainType)
-    ;
-    (self._resInsNameTxt):SetText(entry and entry:GetEntryResultName() or "")
-    if entry then
-      local instance = entry:GetInstanceById(instanceId)
-    end
+    self._resInsNameTxt:SetText(entry and entry:GetEntryResultName() or "")
+    local instance = entry and entry:GetInstanceById(instanceId)
     local str = instance and instance:GetDifficultyName() or ""
-    ;
-    (self._resInsDiffTxt):SetText("-" .. str .. "-")
-    local type = nil
+    self._resInsDiffTxt:SetText("-" .. str .. "-")
+    local type
     if instance then
       type = instance:GetMainType()
     end
     local type2sprite = {
-[DungeonType.DungeonType_Coin] = {[true] = "thread_shengli_stamp6", [false] = "thread_shengli_stamp5"}
-, 
-[DungeonType.DungeonType_Experience] = {[true] = "thread_shengli_stamp4", [false] = "thread_shengli_stamp3"}
-, 
-[DungeonType.DungeonType_AircraftMaterial] = {[true] = "thread_shengli_stamp2", [false] = "thread_shengli_stamp1"}
-, 
-[DungeonType.DungeonType_equip] = {[true] = "thread_shengli_stamp8", [false] = "thread_shengli_stamp7"}
-, 
-[DungeonType.DungeonType_Max] = {[true] = "thread_shengli_stamp2", [false] = "thread_shengli_stamp1"}
-}
+      [DungeonType.DungeonType_Coin] = {
+        [true] = "thread_shengli_stamp6",
+        [false] = "thread_shengli_stamp5"
+      },
+      [DungeonType.DungeonType_Experience] = {
+        [true] = "thread_shengli_stamp4",
+        [false] = "thread_shengli_stamp3"
+      },
+      [DungeonType.DungeonType_AircraftMaterial] = {
+        [true] = "thread_shengli_stamp2",
+        [false] = "thread_shengli_stamp1"
+      },
+      [DungeonType.DungeonType_equip] = {
+        [true] = "thread_shengli_stamp8",
+        [false] = "thread_shengli_stamp7"
+      },
+      [DungeonType.DungeonType_Max] = {
+        [true] = "thread_shengli_stamp2",
+        [false] = "thread_shengli_stamp1"
+      }
+    }
     local type2logo = {
-[DungeonType.DungeonType_Coin] = {[true] = "thread_shengli_logo5", [false] = "thread_shengli_logo6"}
-, 
-[DungeonType.DungeonType_Experience] = {[true] = "thread_shengli_logo3", [false] = "thread_shengli_logo4"}
-, 
-[DungeonType.DungeonType_AircraftMaterial] = {[true] = "thread_shengli_logo1", [false] = "thread_shengli_logo2"}
-, 
-[DungeonType.DungeonType_equip] = {[true] = "thread_shengli_logo7", [false] = "thread_shengli_logo8"}
-, 
-[DungeonType.DungeonType_Max] = {[true] = "thread_shengli_logo1", [false] = "thread_shengli_logo2"}
-}
-    -- DECOMPILER ERROR at PC139: Confused about usage of register: R14 in 'UnsetPending'
-
+      [DungeonType.DungeonType_Coin] = {
+        [true] = "thread_shengli_logo5",
+        [false] = "thread_shengli_logo6"
+      },
+      [DungeonType.DungeonType_Experience] = {
+        [true] = "thread_shengli_logo3",
+        [false] = "thread_shengli_logo4"
+      },
+      [DungeonType.DungeonType_AircraftMaterial] = {
+        [true] = "thread_shengli_logo1",
+        [false] = "thread_shengli_logo2"
+      },
+      [DungeonType.DungeonType_equip] = {
+        [true] = "thread_shengli_logo7",
+        [false] = "thread_shengli_logo8"
+      },
+      [DungeonType.DungeonType_Max] = {
+        [true] = "thread_shengli_logo1",
+        [false] = "thread_shengli_logo2"
+      }
+    }
     if type then
-      (self._resInsDiffGood).sprite = (self._atlas):GetSprite((type2logo[type])[self._isWin])
+      self._resInsDiffGood.sprite = self._atlas:GetSprite(type2logo[type][self._isWin])
       local spritePool = self:GetUIComponent("UISelectObjectPath", "resSpritePool")
       spritePool:SpawnObjects("UIBattleResultCompleteResSpriteItem", 4)
       local items = spritePool:GetAllSpawnList()
       for i = 1, #items do
-        local sprite = (self._atlas):GetSprite((type2sprite[i])[type == i])
-        ;
-        (items[i]):SetData(i, sprite, self._isWin)
+        local sprite = self._atlas:GetSprite(type2sprite[i][type == i])
+        items[i]:SetData(i, sprite, self._isWin)
       end
     end
   else
-    (self._resInstanceGO):SetActive(false)
-    ;
-    (self._starConditionGO):SetActive(true)
+    self._resInstanceGO:SetActive(false)
+    self._starConditionGO:SetActive(true)
   end
   local towerModule = self:GetModule(TowerModule)
   if matchRes.m_nMatchType == MatchType.MT_Tower then
     if self._isWin then
-      (self._stageTitle):SetActive(false)
+      self._stageTitle:SetActive(false)
     else
-      (self._stageTitle):SetActive(true)
-      local towerCfg = (Cfg.cfg_tower_detail)[matchRes.m_nID]
+      self._stageTitle:SetActive(true)
+      local towerCfg = Cfg.cfg_tower_detail[matchRes.m_nID]
       local name = towerModule:GetTowerName(towerCfg.Type)
-      local title = (StringTable.Get)("str_tower_tower_layer", name, towerCfg.stage)
-      ;
-      (self._stageTitleTxt):SetText(title)
+      local title = StringTable.Get("str_tower_tower_layer", name, towerCfg.stage)
+      self._stageTitleTxt:SetText(title)
     end
   elseif matchRes.m_nMatchType == MatchType.MT_TalePet then
     if self._isWin then
-      (self._stageTitle):SetActive(false)
+      self._stageTitle:SetActive(false)
     else
-      (self._stageTitle):SetActive(true)
-      local cfg = (Cfg.cfg_tale_stage)[matchRes.m_nID]
-      ;
-      (self._stageTitleTxt):SetText((StringTable.Get)(cfg.Name))
+      self._stageTitle:SetActive(true)
+      local cfg = Cfg.cfg_tale_stage[matchRes.m_nID]
+      self._stageTitleTxt:SetText(StringTable.Get(cfg.Name))
     end
   else
-    (self._stageTitle):SetActive(true)
-    ;
-    (self._stageTitleTxt):SetText(matchRes.m_stShowName)
+    self._stageTitle:SetActive(true)
+    self._stageTitleTxt:SetText(matchRes.m_stShowName)
   end
   if self._isWin and #matchRes.m_vecCondition > 0 then
-    (self._imgCompleteGo):SetActive(false)
+    self._imgCompleteGo:SetActive(false)
   else
-    (self._imgCompleteGo):SetActive(true)
+    self._imgCompleteGo:SetActive(true)
   end
   if matchRes.m_nMatchType == MatchType.MT_ResDungeon then
     if self._isWin then
       self:InitHighLight("ui_eff_complete_exploer", "thread_shengli_chara3", "thread_shengli_chara4")
-      ;
-      (self._imgComplete):LoadImage("thread_shengli_frame16")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara3")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara4")
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara3")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara4")
     else
-      (self._imgComplete):LoadImage("thread_shengli_frame17")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara5")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara6")
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara5")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara6")
     end
   elseif matchRes.m_nMatchType == MatchType.MT_Tower then
     self:_SetNextFightBtn(matchRes)
     if self._isWin then
       self:InitHighLight("ui_eff_complete_exploer", "thread_shengli_chara3", "thread_shengli_chara4")
-      ;
-      (self._imgComplete):LoadImage("thread_shengli_frame16")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara3")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara4")
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara3")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara4")
     else
-      (self._imgComplete):LoadImage("thread_shengli_frame17")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara5")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara6")
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara5")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara6")
     end
   elseif matchRes.m_nMatchType == MatchType.MT_DifficultyMission then
     if self._isWin then
       self:InitHighLight("ui_eff_complete_mission", "world_tiaozhan_tu13", "world_tiaozhan_tu14")
-      ;
-      (self._imgComplete):LoadImage("thread_shengli_frame16")
-      ;
-      (self._imgCompleteTitle):LoadImage("world_tiaozhan_tu13")
-      ;
-      (self._imgCompleteEn):LoadImage("world_tiaozhan_tu14")
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("world_tiaozhan_tu13")
+      self._imgCompleteEn:LoadImage("world_tiaozhan_tu14")
     else
-      (self._imgComplete):LoadImage("thread_shengli_frame17")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara7")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara8")
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara7")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara8")
     end
   elseif matchRes.m_nMatchType == MatchType.MT_TalePet then
     if self._isWin then
       self:InitHighLight("ui_eff_complete_exploer", "thread_shengli_chara3", "thread_shengli_chara4")
-      ;
-      (self._imgComplete):LoadImage("thread_shengli_frame16")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara3")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara4")
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara3")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara4")
     else
-      (self._imgComplete):LoadImage("thread_shengli_frame17")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara5")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara6")
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara5")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara6")
     end
   elseif matchRes.m_nMatchType == MatchType.MT_Conquest then
     local matchResult = self:_GetMatchResult()
-    if (matchResult.m_vecAwardNormal).count > 0 then
+    if 0 < matchResult.m_vecAwardNormal.count then
       self:InitHighLight("ui_eff_complete_mission", "thread_shengli_chara3", "thread_shengli_chara4")
-      ;
-      (self._imgComplete):LoadImage("thread_shengli_frame16")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara3")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara4")
-      ;
-      (self._tex1):SetText((StringTable.Get)("str_battle_end"))
-      ;
-      (self._tex2):SetText((StringTable.Get)("str_battle_end_en"))
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara3")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara4")
+      self._tex1:SetText(StringTable.Get("str_battle_end"))
+      self._tex2:SetText(StringTable.Get("str_battle_end_en"))
     else
-      (self._imgComplete):LoadImage("thread_shengli_frame17")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara7")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara8")
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara7")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara8")
     end
   elseif matchRes.m_nMatchType == MatchType.MT_WorldBoss then
     local matchResult = self:_GetMatchResult()
-    if matchResult.m_damage > 0 then
+    if 0 < matchResult.m_damage then
       self:InitHighLight("ui_eff_complete_mission", "world_tiaozhan_tu11", "world_tiaozhan_tu12")
-      ;
-      (self._imgComplete):LoadImage("thread_shengli_frame16")
-      ;
-      (self._imgCompleteTitle):LoadImage("world_tiaozhan_tu11")
-      ;
-      (self._imgCompleteEn):LoadImage("world_tiaozhan_tu12")
-      ;
-      (self._tex1):SetText((StringTable.Get)("str_battle_end"))
-      ;
-      (self._tex2):SetText((StringTable.Get)("str_battle_end_en"))
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("world_tiaozhan_tu11")
+      self._imgCompleteEn:LoadImage("world_tiaozhan_tu12")
+      self._tex1:SetText(StringTable.Get("str_battle_end"))
+      self._tex2:SetText(StringTable.Get("str_battle_end_en"))
     else
-      (self._imgComplete):LoadImage("thread_shengli_frame17")
-      ;
-      (self._imgCompleteTitle):LoadImage("thread_shengli_chara7")
-      ;
-      (self._imgCompleteEn):LoadImage("thread_shengli_chara8")
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara7")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara8")
     end
   elseif matchRes.m_nMatchType == MatchType.MT_BlackFist then
     local match = self:GetModule(MatchModule)
     local enterData = match:GetMatchEnterData()
-    do
-      local isAir = (self:GetModule(AircraftModule)):IsAircraftCartridgeMission((enterData:GetBlackFistInfo()).component_id)
-      local isN8CombatSimulator = self:_IsActivityN8(enterData) == 2
-      local localizationTitle_win_zh = "thread_shengli_chara3"
-      local localizationTitle_win_en = "thread_shengli_chara4"
-      do
-        if isAir or isN8CombatSimulator then
-          localizationTitle_win_zh = "world_tiaozhan_tu13"
-          localizationTitle_win_en = "world_tiaozhan_tu14"
-        end
-        if self._isWin then
-          self:InitHighLight("ui_eff_complete_mission", localizationTitle_win_zh, localizationTitle_win_en)
-          ;
-          (self._imgComplete):LoadImage("thread_shengli_frame16")
-          ;
-          (self._imgCompleteTitle):LoadImage(localizationTitle_win_zh)
-          ;
-          (self._imgCompleteEn):LoadImage(localizationTitle_win_en)
-          ;
-          (self._tex1):SetText((StringTable.Get)("str_battle_end"))
-          ;
-          (self._tex2):SetText((StringTable.Get)("str_battle_end_en"))
-        else
-          do
-            (self._imgComplete):LoadImage("thread_shengli_frame17")
-            ;
-            (self._imgCompleteTitle):LoadImage("thread_shengli_chara7")
-            ;
-            (self._imgCompleteEn):LoadImage("thread_shengli_chara8")
-            -- DECOMPILER ERROR at PC620: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC620: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      if matchRes.m_nMatchType == MatchType.MT_MiniMaze then
-        local matchResult = self:_GetMatchResult()
-        local cfg = (Cfg.cfg_bloodsucker_mission)[matchResult.m_nID]
-        local isWin = cfg.WaveCount <= matchResult.wave
-        if isWin then
-          self:InitHighLight("ui_eff_complete_exploer", "world_tiaozhan_tu13", "world_tiaozhan_tu14")
-          ;
-          (self._imgComplete):LoadImage("thread_shengli_frame16")
-          ;
-          (self._imgCompleteTitle):LoadImage("world_tiaozhan_tu13")
-          ;
-          (self._imgCompleteEn):LoadImage("world_tiaozhan_tu14")
-        else
-          (self._imgComplete):LoadImage("thread_shengli_frame16")
-          ;
-          (self._imgCompleteTitle):LoadImage("world_tiaozhan_tu11")
-          ;
-          (self._imgCompleteEn):LoadImage("world_tiaozhan_tu12")
-        end
-      elseif matchRes.m_nMatchType == MatchType.MT_PopStar then
-        (self._imgCompleteGo):SetActive(true)
-        if self:IsPopStarChallengeLevel(matchRes) then
-          self:InitHighLight("ui_eff_complete_mission", "world_tiaozhan_tu11", "world_tiaozhan_tu12")
-          ;
-          (self._imgComplete):LoadImage("thread_shengli_frame16")
-          ;
-          (self._imgCompleteTitle):LoadImage("world_tiaozhan_tu11")
-          ;
-          (self._imgCompleteEn):LoadImage("world_tiaozhan_tu12")
-        else
-          local localizationTitle_win_zh = "thread_shengli_chara1"
-          local localizationTitle_win_en = "thread_shengli_chara2"
-          if self._isWin then
-            self:InitHighLight("ui_eff_complete_mission", localizationTitle_win_zh, localizationTitle_win_en)
-            ;
-            (self._imgComplete):LoadImage("thread_shengli_frame16")
-            ;
-            (self._imgCompleteTitle):LoadImage(localizationTitle_win_zh)
-            ;
-            (self._imgCompleteEn):LoadImage(localizationTitle_win_en)
-          else
-            (self._imgComplete):LoadImage("thread_shengli_frame17")
-            ;
-            (self._imgCompleteTitle):LoadImage("thread_shengli_chara7")
-            ;
-            (self._imgCompleteEn):LoadImage("thread_shengli_chara8")
-          end
-        end
-      elseif matchRes.m_nMatchType == MatchType.MT_Season then
-        if self._isWin then
-          self:InitHighLight("ui_eff_complete_exploer", "thread_shengli_chara3", "thread_shengli_chara4")
-          ;
-          (self._imgComplete):LoadImage("thread_shengli_frame16")
-          ;
-          (self._imgCompleteTitle):LoadImage("thread_shengli_chara3")
-          ;
-          (self._imgCompleteEn):LoadImage("thread_shengli_chara4")
-        else
-          (self._imgComplete):LoadImage("thread_shengli_frame17")
-          ;
-          (self._imgCompleteTitle):LoadImage("thread_shengli_chara5")
-          ;
-          (self._imgCompleteEn):LoadImage("thread_shengli_chara6")
-        end
-      elseif matchRes.m_nMatchType == MatchType.MT_SeasonMaze then
-        local matchResult = self:_GetMatchResult()
-        local seasonMazeObj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
-        local seasonMazeComponentInfo = seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-        if matchResult.m_nID == (seasonMazeComponentInfo.m_world_boss_info).cfg_id then
-          if matchResult.m_damage > 0 then
-            self:InitHighLight("ui_eff_complete_mission", "world_tiaozhan_tu11", "world_tiaozhan_tu12")
-            ;
-            (self._imgComplete):LoadImage("thread_shengli_frame16")
-            ;
-            (self._imgCompleteTitle):LoadImage("world_tiaozhan_tu11")
-            ;
-            (self._imgCompleteEn):LoadImage("world_tiaozhan_tu12")
-            ;
-            (self._tex1):SetText((StringTable.Get)("str_battle_end"))
-          else
-            (self._imgComplete):LoadImage("thread_shengli_frame17")
-            ;
-            (self._imgCompleteTitle):LoadImage("thread_shengli_chara7")
-            ;
-            (self._imgCompleteEn):LoadImage("thread_shengli_chara8")
-          end
-        elseif self._isWin then
-          self:InitHighLight("ui_eff_complete_exploer", "thread_shengli_chara3", "thread_shengli_chara4")
-          ;
-          (self._imgComplete):LoadImage("thread_shengli_frame16")
-          ;
-          (self._imgCompleteTitle):LoadImage("thread_shengli_chara3")
-          ;
-          (self._imgCompleteEn):LoadImage("thread_shengli_chara4")
-          ;
-          (self._tex1):SetText((StringTable.Get)("str_season_maze_battle_complete_title"))
-        else
-          (self._imgComplete):LoadImage("thread_shengli_frame17")
-          ;
-          (self._imgCompleteTitle):LoadImage("thread_shengli_chara5")
-          ;
-          (self._imgCompleteEn):LoadImage("thread_shengli_chara6")
-        end
-      else
-        local isAir = false
-        if matchRes.m_nMatchType == MatchType.MT_Campaign then
-          local match = self:GetModule(MatchModule)
-          local enterData = match:GetMatchEnterData()
-          isAir = (self:GetModule(AircraftModule)):IsAircraftCartridgeMission((enterData:GetCampaignMissionInfo()).nMissionComId)
-        end
-        local localizationTitle_win_zh = "thread_shengli_chara1"
-        local localizationTitle_win_en = "thread_shengli_chara2"
-        if isAir then
-          localizationTitle_win_zh = "world_tiaozhan_tu13"
-          localizationTitle_win_en = "world_tiaozhan_tu14"
-        end
-        if self._isWin then
-          self:InitHighLight("ui_eff_complete_mission", localizationTitle_win_zh, localizationTitle_win_en)
-          ;
-          (self._imgComplete):LoadImage("thread_shengli_frame16")
-          ;
-          (self._imgCompleteTitle):LoadImage(localizationTitle_win_zh)
-          ;
-          (self._imgCompleteEn):LoadImage(localizationTitle_win_en)
-        else
-          (self._imgComplete):LoadImage("thread_shengli_frame17")
-          ;
-          (self._imgCompleteTitle):LoadImage("thread_shengli_chara7")
-          ;
-          (self._imgCompleteEn):LoadImage("thread_shengli_chara8")
-        end
-      end
-      local vecPassCondition = matchRes.m_vecCondition
-      local passCount = 0
-      if #vecPassCondition > 0 then
-        for i = 1, #vecPassCondition do
-          local desc = nil
-          local go = (self._starIconList)[i]
-          go:SetActive(false)
-          if self._isWin then
-            local hpm = self:GetModule(HelpPetModule)
-            desc = ((matchRes.m_vecCondition)[i]).m_stDest
-            desc = (string.gsub)(desc, "<color=#%x*>", "<color=#31AAFF>")
-            local pass = ((matchRes.m_vecCondition)[i]).m_bPass
-            if pass then
-              go:SetActive(true)
-              ;
-              (table.insert)(self._taskIDList, self._3StarTaskID)
-              passCount = passCount + 1
-            end
-          else
-            local str = (string.gsub)(((matchRes.m_vecCondition)[i]).m_stDest, "<color=#%x*>", "")
-            str = (string.gsub)(str, "</color>", "")
-            desc = "<color=grey>" .. str .. "</color>"
-            go:SetActive(false)
-          end
-          ;
-          ((self._starTxtList)[i]):SetText(desc)
-        end
-        for i = 1, #self._starRootGOList do
-          ((self._starRootGOList)[i]):SetActive(true)
-        end
-      else
-        for i = 1, #self._starRootGOList do
-          ((self._starRootGOList)[i]):SetActive(false)
-        end
-      end
-      for i = 0, (self._stars).Length - 1 do
-        local go = ((self._stars)[i]).gameObject
-        if i + 1 > passCount then
-          do
-            go:SetActive(not self._isWin)
-            go:SetActive(false)
-            -- DECOMPILER ERROR at PC1061: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC1061: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      local autoFightMd = (GameGlobal.GetModule)(SerialAutoFightModule)
-      local normalRewards = matchRes.m_vecAwardNormal
-      local starRewards = matchRes.m_vecAwardPerfect
-      local firstPassRawrds = matchRes.m_vecFirstPassAward
-      if (table.count)(matchRes.m_vecFirstPassAward) == 0 then
-        self._isFirstWin = matchRes.m_nMatchType ~= MatchType.MT_Mission
-        if self._isWin and self._isFirstWin then
-          local missionModule = (GameGlobal.GetModule)(MissionModule)
-          local data = missionModule:GetDiscoveryData()
-          local missionid = matchRes.m_nID
-          data:FirstFinishMissionID(missionid)
-        else
-          local missionModule = (GameGlobal.GetModule)(MissionModule)
-          local data = missionModule:GetDiscoveryData()
-          data:FirstFinishMissionID(nil)
-        end
-        local missionModule = (GameGlobal.GetModule)(MissionModule)
-        do
-          local data = missionModule:GetDiscoveryData()
-          data:FirstFinishMissionID(nil)
-          local activityRewards = matchRes.m_activity_rewards
-          local extStarRewards = matchRes.m_ext_star_rewards
-          local extFirstPassRewards = matchRes.m_ext_first_rewards
-          local extReward = matchRes.m_vecExtAward
-          local doubleExtReward = matchRes.m_vecDoubleExtAward
-          if not matchRes.m_back_rewards then
-            local backRewards = {}
-          end
-          local _recommendReward = matchRes.m_recommend_pet_rewards
-          local recommendReward = {}
-          if _recommendReward and #_recommendReward > 0 then
-            local roleAsset = RoleAsset:New()
-            local id = 0
-            local count = 0
-            for i = 1, #_recommendReward do
-              local _roleAsset = _recommendReward[i]
-              id = _roleAsset.assetid
-              count = count + _roleAsset.count
-            end
-            roleAsset.assetid = id
-            roleAsset.count = count
-            recommendReward[1] = roleAsset
-          end
-          local itemCount = self:_GetItemCount(normalRewards) + #starRewards + #firstPassRawrds + #extReward + #doubleExtReward + #recommendReward + #backRewards + #extStarRewards + #extFirstPassRewards
-          if autoFightMd:IsRunning() then
-            itemCount = itemCount + #activityRewards
-          end
-          if not self._isWin then
-            if matchRes.m_nMatchType == MatchType.MT_BlackFist then
-              itemCount = itemCount + 1
-              do
-                if matchRes.m_nMatchType == MatchType.MT_ResDungeon then
-                  local resModule = self:GetModule(ResDungeonModule)
-                  if resModule:IsOpenDoubleRes() then
-                    itemCount = itemCount + 1
-                  end
-                end
-                ;
-                (self._itemPool):SpawnObjects("UIWidgetResultReward", itemCount)
-                local items = (self._itemPool):GetAllSpawnList()
-                local itemCfg = Cfg.cfg_item
-                local itemIndex = 1
-                ;
-                (self._levelIcon):SetActive(false)
-                local itemModule = (GameGlobal.GetModule)(ItemModule)
-                local eraseIDList = {}
-                if matchRes.m_nMatchType == MatchType.MT_Tower then
-                  (self._awardParent):SetActive(self._isWin)
-                  ;
-                  (self._expParent):SetActive(false)
-                elseif matchRes.m_nMatchType == MatchType.MT_TalePet then
-                  (self._awardParent):SetActive(self._isWin)
-                  ;
-                  (self._expParent):SetActive(false)
-                elseif matchRes.m_nMatchType == MatchType.MT_LostArea then
-                  (self._awardParent):SetActive(self._isWin)
-                  ;
-                  (self._expParent):SetActive(false)
-                elseif matchRes.m_nMatchType == MatchType.MT_DifficultyMission then
-                  (self._awardParent):SetActive(self._isWin)
-                  ;
-                  (self._expParent):SetActive(false)
-                elseif matchRes.m_nMatchType == MatchType.MT_EightPets then
-                  (self._awardParent):SetActive(self._isWin)
-                  ;
-                  (self._expParent):SetActive(false)
-                elseif matchRes.m_nMatchType == MatchType.MT_SeasonMaze then
-                  (self._awardParent):SetActive(self._isWin)
-                  ;
-                  (self._expParent):SetActive(false)
-                else
-                  local roleModule = (GameGlobal.GetModule)(RoleModule)
-                  local roleLv = roleModule:GetLevel()
-                  local curLvStartExp = (HelperProxy:GetInstance()):GetLevelExp(roleLv)
-                  local sliderStartValue = roleModule:GetRoleExp() - curLvStartExp
-                  local lvProp = (Cfg.cfg_role_level)[roleLv]
-                  -- DECOMPILER ERROR at PC1324: Confused about usage of register: R30 in 'UnsetPending'
-
-                  ;
-                  (self._expSlider).maxValue = lvProp.NeedExp
-                  -- DECOMPILER ERROR at PC1326: Confused about usage of register: R30 in 'UnsetPending'
-
-                  ;
-                  (self._expSlider).value = sliderStartValue
-                  ;
-                  (self._expTxt):SetText("<color=#D8D8D8>" .. (math.floor)(sliderStartValue) .. "</color><color=#00F8FF>/</color><color=#D8D8D8>" .. lvProp.NeedExp .. "</color>")
-                end
-                local popStarScore = self:GetGameObject("PopStarScore")
-                local popStarScoreLabel = self:GetUIComponent("UILocalizationText", "PopStarScore")
-                local popStarScore2 = self:GetGameObject("PopStarScore2")
-                local popStarScore2Label = self:GetUIComponent("UILocalizationText", "PopStarScore2")
-                popStarScore2:SetActive(false)
-                popStarScore:SetActive(false)
-                if matchRes.m_nMatchType == MatchType.MT_PopStar then
-                  if self:IsPopStarChallengeLevel(matchRes) then
-                    for i = 0, (self._stars).Length - 1 do
-                      local go = ((self._stars)[i]).gameObject
-                      go:SetActive(false)
-                    end
-                    popStarScore2:SetActive(true)
-                    ;
-                    (self._expParent):SetActive(false)
-                    local items = self:GetGameObject("Items")
-                    items:SetActive(false)
-                    popStarScore2Label:SetText((StringTable.Get)("str_n31_popstar_battle_result_score_tips", "<color=#f79c2e>" .. matchRes._starNum .. "</color>"))
-                    ;
-                    (self._star1RootGO):SetActive(false)
-                    ;
-                    (self._star2RootGO):SetActive(false)
-                    ;
-                    (self._star3RootGO):SetActive(false)
-                  else
-                    (self._expParent):SetActive(false)
-                    popStarScore:SetActive(true)
-                    popStarScoreLabel:SetText((StringTable.Get)("str_n31_popstar_battle_result_score_tips", matchRes._starNum))
-                  end
-                  if matchRes.m_vecAwardNormal and #matchRes.m_vecAwardNormal > 0 then
-                    local rewards = matchRes.m_vecAwardNormal
-                    self:ShowDialog("UIGetItemController", rewards)
-                  end
-                end
-                ;
-                ((self._txtExpAdd).gameObject):SetActive(self._isWin)
-                for i = 1, #normalRewards do
-                  local roleAsset = normalRewards[i]
-                  if roleAsset.assetid == RoleAssetID.RoleAssetExp then
-                    (self._levelIcon):SetActive(true)
-                    local matchResRoleInfo = matchRes.m_matchResRolInfo
-                    local existingExp = matchResRoleInfo.exp_before
-                    local lv = (HelperProxy:GetInstance()):GetLvByExp(existingExp)
-                    ;
-                    (self._levelTxt):SetText(lv)
-                    if lv < (HelperProxy:GetInstance()):GetMaxLevel() then
-                      local curLvStartExp = (HelperProxy:GetInstance()):GetLevelExp(lv)
-                      local sliderStartValue = existingExp - curLvStartExp
-                      local lvProp = (Cfg.cfg_role_level)[lv]
-                      -- DECOMPILER ERROR at PC1494: Confused about usage of register: R40 in 'UnsetPending'
-
-                      ;
-                      (self._expSlider).maxValue = lvProp.NeedExp
-                      -- DECOMPILER ERROR at PC1496: Confused about usage of register: R40 in 'UnsetPending'
-
-                      ;
-                      (self._expSlider).value = sliderStartValue
-                      ;
-                      (self._expTxt):SetText("<color=#D8D8D8>" .. (math.floor)(sliderStartValue) .. "</color><color=#00F8FF>/</color><color=#D8D8D8>" .. lvProp.NeedExp .. "</color>")
-                      ;
-                      (self._txtExpAdd):SetText("+" .. roleAsset.count)
-                      self:_CheckNeedShowLevelUp(lv, existingExp, roleAsset.count)
-                      local taskID = ((GameGlobal.TaskManager)()):StartTask(self._DisplayExpUp, self, existingExp, existingExp + roleAsset.count, lv, matchResRoleInfo)
-                      ;
-                      (table.insert)(self._taskIDList, taskID)
-                    else
-                      -- DECOMPILER ERROR at PC1539: Confused about usage of register: R37 in 'UnsetPending'
-
-                      (self._expSlider).maxValue = 1
-                      -- DECOMPILER ERROR at PC1541: Confused about usage of register: R37 in 'UnsetPending'
-
-                      ;
-                      (self._expSlider).value = 1
-                    end
-                    ;
-                    (table.insert)(eraseIDList, roleAsset)
-                  end
-                end
-                for i,v in ipairs(eraseIDList) do
-                  (table.removev)(normalRewards, v)
-                end
-                if #recommendReward > 1 then
-                  itemModule:BattleResultSortAsset(recommendReward)
-                end
-                if #doubleExtReward > 1 then
-                  itemModule:BattleResultSortAsset(doubleExtReward)
-                end
-                if #starRewards > 1 then
-                  itemModule:BattleResultSortAsset(starRewards)
-                end
-                if #extStarRewards > 1 then
-                  itemModule:BattleResultSortAsset(extStarRewards)
-                end
-                if #firstPassRawrds > 1 then
-                  itemModule:BattleResultSortAsset(firstPassRawrds)
-                end
-                if #extFirstPassRewards > 1 then
-                  itemModule:BattleResultSortAsset(extFirstPassRewards)
-                end
-                if matchRes.m_nMatchType ~= MatchType.MT_SeasonMaze or #normalRewards > 1 then
-                  self:BattleNormalResultSortAsset(normalRewards)
-                end
-                if #extReward > 1 then
-                  itemModule:BattleResultSortAsset(extReward)
-                end
-                if #backRewards > 1 then
-                  itemModule:BattleResultSortAsset(backRewards)
-                end
-                if matchRes.m_nMatchType == MatchType.MT_Season and self._isWin then
-                  (self._normalItemsGo):SetActive(false)
-                  ;
-                  (self._seasonItemsGo):SetActive(true)
-                  local matchModule = self:GetModule(MatchModule)
-                  local enterData = matchModule:GetMatchEnterData()
-                  local seasonMissionInfo = enterData:GetSeasonMissionInfo()
-                  self:FillSeasonAwardsArea(matchRes, seasonMissionInfo)
-                end
-                if matchRes.m_nMatchType == MatchType.MT_SeasonMaze and self._isWin then
-                  (self._normalItemsGo):SetActive(false)
-                  ;
-                  (self._seasonMazeItemsGo):SetActive(true)
-                  local rewardList = matchRes.m_vecAwardNormal
-                  local seasonMazeAwardGen = self:GetUIComponent("UISelectObjectPath", "SeasonMazePool")
-                  seasonMazeAwardGen:SpawnObjects("UISeasonMazeItem", #rewardList)
-                  local spwanList = seasonMazeAwardGen:GetAllSpawnList()
-                  for i = 1, #rewardList do
-                    local effect = rewardList[i]
-                    ;
-                    (spwanList[i]):SetData(effect, self._selectItemInfo, 1)
-                  end
-                end
-                if #activityRewards > 0 then
-                  if autoFightMd:IsRunning() then
-                    self._bNeedPopActivityAward = false
-                    for i = 1, #activityRewards do
-                      local roleAsset = activityRewards[i]
-                      ;
-                      (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false, false, false, false, false, true)
-                      itemIndex = itemIndex + 1
-                    end
-                  else
-                    for index,value in ipairs(activityRewards) do
-                      value.type = StageAwardType.Activity
-                    end
-                    self._bNeedPopActivityAward = true
-                    self._popActivityAwardEnd = false
-                    self._activityAwards = activityRewards
-                    self:_CheckShowActivityAward()
-                  end
-                end
-                for i = 1, #backRewards do
-                  local roleAsset = backRewards[i]
-                  ;
-                  (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false, false, false, false, false, false, true)
-                  itemIndex = itemIndex + 1
-                end
-                for i = 1, #recommendReward do
-                  local roleAsset = recommendReward[i]
-                  ;
-                  (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false, false, false, false, true)
-                  itemIndex = itemIndex + 1
-                end
-                for i = 1, #doubleExtReward do
-                  local roleAsset = doubleExtReward[i]
-                  ;
-                  (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false, false, false, false, true)
-                  itemIndex = itemIndex + 1
-                end
-                for i = 1, #starRewards do
-                  local roleAsset = starRewards[i]
-                  if MatchType.MT_Chess == (self._enterData)._match_type then
-                    (items[itemIndex]):SetShotEffStartTime()
-                  end
-                  local taskID = (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, true)
-                  ;
-                  (table.insert)(self._taskIDList, taskID)
-                  itemIndex = itemIndex + 1
-                end
-                for i = 1, #extStarRewards do
-                  local roleAsset = extStarRewards[i]
-                  local taskID = (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, true)
-                  ;
-                  (table.insert)(self._taskIDList, taskID)
-                  itemIndex = itemIndex + 1
-                end
-                for i = 1, #firstPassRawrds do
-                  local roleAsset = firstPassRawrds[i]
-                  if MatchType.MT_Chess == (self._enterData)._match_type then
-                    (items[itemIndex]):SetShotEffStartTime()
-                  end
-                  local taskID = (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false, false, true)
-                  ;
-                  (table.insert)(self._taskIDList, taskID)
-                  itemIndex = itemIndex + 1
-                end
-                for i = 1, #extFirstPassRewards do
-                  local roleAsset = extFirstPassRewards[i]
-                  local taskID = (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false, false, true)
-                  ;
-                  (table.insert)(self._taskIDList, taskID)
-                  itemIndex = itemIndex + 1
-                end
-                for i = 1, #normalRewards do
-                  local roleAsset = normalRewards[i]
-                  if roleAsset.assetid ~= RoleAssetID.RoleAssetExp then
-                    (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false)
-                    itemIndex = itemIndex + 1
-                  end
-                end
-                for i = 1, #extReward do
-                  local roleAsset = extReward[i]
-                  ;
-                  (items[itemIndex]):Init(roleAsset.count, roleAsset.assetid, false, false, false, true)
-                  itemIndex = itemIndex + 1
-                end
-                if not self._isWin then
-                  if matchRes.m_nMatchType == MatchType.MT_BlackFist then
-                    local isAir = (self:GetModule(AircraftModule)):IsAircraftCartridgeMission(((self._enterData):GetBlackFistInfo()).component_id)
-                    local isN8CombatSimulator = self:_IsActivityN8(self._enterData) == 2
-                    if isAir or isN8CombatSimulator then
-                      (self._awardParent):SetActive(false)
-                      for i = 1, #self._starRootGOList do
-                        ((self._starRootGOList)[i]):SetActive(false)
-                      end
-                    end
-                  elseif matchRes.m_nMatchType == MatchType.MT_PopStar then
-                    (self._awardParent):SetActive(false)
-                  else
-                    local bIsFirst = matchRes.m_firstFail
-                    local nNeedPower = 0
-                    local nCostPower = 0
-                    local nCostID = RoleAssetID.RoleAssetPhyPoint
-                    if MatchType.MT_Mission == (self._enterData)._match_type then
-                      local mission = self:GetModule(MissionModule)
-                      local missionID = ((self._enterData):GetMissionCreateInfo()).mission_id
-                      local costConfigID = 1
-                      nNeedPower = ((Cfg.cfg_mission)[missionID]).NeedPower
-                      nCostPower = ((Cfg.cfg_mission_common)[costConfigID]).CostPower
-                    elseif MatchType.MT_Campaign == (self._enterData)._match_type then
-                      local isAir = (self:GetModule(AircraftModule)):IsAircraftCartridgeMission(((self._enterData):GetCampaignMissionInfo()).nMissionComId)
-                      local isN8CombatSimulator = self:_IsActivityN8(self._enterData) == 2
-                      if self:IsN21CC(self._enterData) or self:IsSummerActivityTwo(self._enterData) or isAir or isN8CombatSimulator or not self:ShowAward(self._enterData) or self:IsActivityReview(self._enterData) then
-                        (self._awardParent):SetActive(false)
-                        if not self:ShowCondition(self._enterData) then
-                          for i = 1, #self._starRootGOList do
-                            ((self._starRootGOList)[i]):SetActive(false)
-                          end
-                        end
-                      else
-                        local module = self:GetModule(MissionModule)
-                        local missionID = ((self._enterData):GetCampaignMissionInfo()).nCampaignMissionId
-                        local missionCfg = (Cfg.cfg_campaign_mission)[missionID]
-                        if missionCfg.NeedAP then
-                          nCostID = (missionCfg.NeedAP)[1]
-                          nNeedPower = (missionCfg.NeedAP)[2]
-                          nCostPower = 0
-                        else
-                          nNeedPower = missionCfg.NeedPower
-                          local costConfigID = 1
-                          nCostPower = ((Cfg.cfg_mission_common)[costConfigID]).CostPower
-                        end
-                      end
-                      if self:IsN28Errand(self._enterData) then
-                        (self._awardParent):SetActive(false)
-                      end
-                    elseif MatchType.MT_ExtMission == (self._enterData)._match_type then
-                      local createData = (self._enterData):GetMissionCreateInfo()
-                      local workModule = self:GetModule(_ENV.ExtMissionModule)
-                      local cfgExtTask = (Cfg.cfg_extra_mission_task)[createData.m_nExtTaskID]
-                      nNeedPower = cfgExtTask.ExpendPower
-                      nCostPower = cfgExtTask.MinCostPower
-                    elseif MatchType.MT_ResDungeon == (self._enterData)._match_type then
-                      local createData = (self._enterData):GetResDungeonInfo()
-                      local module = self:GetModule(ResDungeonModule)
-                      local cfgExtTask = (Cfg.cfg_res_instance_detail)[createData.res_dungeon_id]
-                      nNeedPower = cfgExtTask.NeedPower
-                      nCostPower = cfgExtTask.MinCostPower
-                      if module:IsOpenDoubleRes() then
-                        nNeedPower = nNeedPower * 3
-                      end
-                    elseif MatchType.MT_Chess == (self._enterData)._match_type then
-                      (self._awardParent):SetActive(false)
-                    elseif MatchType.MT_MiniMaze == (self._enterData)._match_type then
-                      (self._awardParent):SetActive(false)
-                    elseif MatchType.MT_Season == (self._enterData)._match_type then
-                      local module = self:GetModule(MissionModule)
-                      local missionID = ((self._enterData):GetSeasonMissionInfo()).mission_id
-                      local missionCfg = (Cfg.cfg_season_mission)[missionID]
-                      if not missionCfg.FailPassNeedCost or missionCfg.FailPassNeedCost ~= 1 or missionCfg.NeedAP then
-                        nCostID = (missionCfg.NeedAP)[1]
-                        nNeedPower = (missionCfg.NeedAP)[2]
-                        nCostPower = 0
-                      else
-                        nNeedPower = missionCfg.NeedPower
-                        local costConfigID = 1
-                        nCostPower = ((Cfg.cfg_mission_common)[costConfigID]).CostPower
-                      end
-                      if missionCfg.Type == (_ENV.SeasonEventPointType).DailyLevel and not self._isWin then
-                        (self._awardParent):SetActive(false)
-                      end
-                    end
-                    if not bIsFirst then
-                      nNeedPower = nNeedPower - nCostPower
-                      if nNeedPower < 0 then
-                        nNeedPower = 0
-                      end
-                    end
-                    if nCostID == RoleAssetID.RoleAssetPhyPoint then
-                      (items[itemIndex]):Init(nNeedPower, RoleAssetID.RoleAssetPhyPoint, false, 1)
-                    else
-                      local itemName = (StringTable.Get)(((Cfg.cfg_item)[nCostID]).Name)
-                      ;
-                      (items[itemIndex]):Init(nNeedPower, nCostID, false, itemName)
-                    end
-                    itemIndex = itemIndex + 1
-                  end
-                end
-                do
-                  if not self._isWin and MatchType.MT_ResDungeon == (self._enterData)._match_type then
-                    local resModule = self:GetModule(ResDungeonModule)
-                    if resModule:IsOpenDoubleRes() then
-                      (items[itemIndex]):Init(1, RoleAssetID.RoleAssetDoubleRes, false, 2)
-                      itemIndex = itemIndex + 1
-                    end
-                  end
-                  if MatchType.MT_Chess == (self._enterData)._match_type then
-                    self._imgRole = self:GetUIComponent("RawImageLoader", "imgRole1")
-                    self._imgShadow = self:GetUIComponent("RawImageLoader", "imgShadow1")
-                    local missionInfo = (self._enterData):GetChessInfo()
-                    local missionId = missionInfo.mission_id
-                    local chessCfgs = (Cfg.cfg_chess_mission)({})
-                    local chessCfg = chessCfgs[missionId]
-                    ;
-                    (self._imgRole):LoadImage(chessCfg.CG)
-                    -- DECOMPILER ERROR at PC2406: Confused about usage of register: R33 in 'UnsetPending'
-
-                    ;
-                    (((self._imgRole).gameObject).transform).anchoredPosition = (_ENV.Vector2)((chessCfg.Offset)[1], (chessCfg.Offset)[2])
-                    -- DECOMPILER ERROR at PC2422: Confused about usage of register: R33 in 'UnsetPending'
-
-                    ;
-                    (((self._imgRole).gameObject).transform).sizeDelta = (_ENV.Vector2)((chessCfg.Size)[1], (chessCfg.Size)[2])
-                    -- DECOMPILER ERROR at PC2438: Confused about usage of register: R33 in 'UnsetPending'
-
-                    ;
-                    (((self._imgRole).gameObject).transform).localScale = (_ENV.Vector2)((chessCfg.Scale)[1], (chessCfg.Scale)[2])
-                    if self._isWin then
-                      local roleModule = (GameGlobal.GetModule)(RoleModule)
-                      local pstid = roleModule:GetPstId()
-                      local dbStr = "chess" .. missionInfo.mission_id .. pstid
-                      local count = ((_ENV.LocalDB).GetInt)(dbStr, 0)
-                      count = count + 1
-                      ;
-                      ((_ENV.LocalDB).SetInt)(dbStr, count)
-                    end
-                    local left = chessCfg.Dir == 0
-                    if not left or not self._dialogLeftTxt then
-                      local useDialogTxt = self._dialogRightTxt
-                    end
-                    local pos = chessCfg.Pos
-                    -- DECOMPILER ERROR at PC2497: Confused about usage of register: R36 in 'UnsetPending'
-
-                    if left then
-                      ((self._dialogLeftGO).transform).localPosition = (_ENV.Vector2)(pos[1], pos[2])
-                    else
-                      -- DECOMPILER ERROR at PC2509: Confused about usage of register: R36 in 'UnsetPending'
-
-                      ((self._dialogRightGO).transform).localPosition = (_ENV.Vector2)(pos[1], pos[2])
-                    end
-                    ;
-                    (self._dialogLeftGO):SetActive(left)
-                    ;
-                    (self._dialogRightGO):SetActive(not left)
-                    if not self._isWin or not chessCfg.CompletePhrase then
-                      local str = chessCfg.FailPhrase
-                    end
-                    local trueStr = (HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(str))
-                    useDialogTxt:SetText(trueStr)
-                    local csf = ((useDialogTxt.transform).parent):GetComponent("ContentSizeFitter")
-                    local rect = ((useDialogTxt.rectTransform).parent):GetComponent("RectTransform")
-                    local textWidth = 570
-                    if textWidth <= useDialogTxt.preferredWidth then
-                      csf.horizontalFit = ((((_ENV.UnityEngine).UI).ContentSizeFitter).FitMode).Unconstrained
-                      rect.sizeDelta = (_ENV.Vector2)(textWidth, (rect.sizeDelta).y)
-                    else
-                      csf.horizontalFit = ((((_ENV.UnityEngine).UI).ContentSizeFitter).FitMode).PreferredSize
-                    end
-                  else
-                    local firstPetMatchData = (self._matchPetData)[1]
-                    if firstPetMatchData then
-                      if self._isWin then
-                        for i = 1, #self._matchPetData do
-                          local cg = ((self._matchPetData)[i]):GetPetBattleResultCG((_ENV.PetSkinEffectPath).BODY_BATTLE_RESULT)
-                          if not cg then
-                            cg = ((self._matchPetData)[i]):GetPetStaticBody((_ENV.PetSkinEffectPath).BODY_BATTLE_RESULT)
-                          end
-                          if (self._imgRoleList)[i] then
-                            do
-                              ((self._imgRoleList)[i]):LoadImage(cg)
-                              ;
-                              ((self._imgShadowList)[i]):LoadImage(cg)
-                              ;
-                              ((_ENV.UICG).SetTransform)((((self._imgRoleList)[i]).gameObject).transform, self:GetName(), cg)
-                              ;
-                              ((_ENV.UICG).SetTransform)((((self._imgShadowList)[i]).gameObject).transform, self:GetName(), cg)
-                              -- DECOMPILER ERROR at PC2683: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                              -- DECOMPILER ERROR at PC2683: LeaveBlock: unexpected jumping out IF_STMT
-
-                            end
-                          end
-                        end
-                        for i = #self._matchPetData + 1, 5 do
-                          ((((((self._imgRoleList)[i]).transform).parent).parent).gameObject):SetActive(false)
-                        end
-                      else
-                        local cg = ((self._matchPetData)[1]):GetPetBattleResultCG((_ENV.PetSkinEffectPath).BODY_BATTLE_RESULT)
-                        if not cg then
-                          cg = ((self._matchPetData)[1]):GetPetStaticBody((_ENV.PetSkinEffectPath).BODY_BATTLE_RESULT)
-                        end
-                        ;
-                        (self._imgRole):LoadImage(cg)
-                        ;
-                        ((_ENV.UICG).SetTransform)(((self._imgRole).gameObject).transform, self:GetName(), cg)
-                      end
-                      local cfg = nil
-                      local phraseId = ((self._matchPetData)[1]):GetSkinId()
-                      cfg = (Cfg.pet_phrase)[phraseId]
-                      if not cfg then
-                        phraseId = (((self._matchPetData)[1])._cfg_pet).ID
-                        cfg = (Cfg.pet_phrase)[phraseId]
-                      end
-                      if not cfg then
-                        return 
-                      end
-                      local awaken = nil
-                      local currentGrade = ((self._matchPetData)[1]):GetPetGrade()
-                      if currentGrade == 3 then
-                        awaken = true
-                      else
-                        awaken = false
-                      end
-                      local left = nil
-                      if cfg.AwakenDir ~= 0 then
-                        left = not awaken
-                        left = cfg.Dir == 0
-                        if not left or not self._dialogLeftTxt then
-                          local useDialogTxt = self._dialogRightTxt
-                        end
-                        local pos = nil
-                        if awaken then
-                          pos = cfg.AwakenPos
-                        else
-                          pos = cfg.Pos
-                        end
-                        local posTbl = (table.tonumber)((string.split)(pos, "|"))
-                        -- DECOMPILER ERROR at PC2842: Confused about usage of register: R38 in 'UnsetPending'
-
-                        if left then
-                          ((self._dialogLeftGO).transform).localPosition = (_ENV.Vector2)(posTbl[1], posTbl[2])
-                        else
-                          -- DECOMPILER ERROR at PC2854: Confused about usage of register: R38 in 'UnsetPending'
-
-                          ((self._dialogRightGO).transform).localPosition = (_ENV.Vector2)(posTbl[1], posTbl[2])
-                        end
-                        ;
-                        (self._dialogLeftGO):SetActive(left)
-                        ;
-                        (self._dialogRightGO):SetActive(not left)
-                        if not self._isWin or not cfg.CompletePhrase then
-                          local str = cfg.FailPhrase
-                        end
-                        local trueStr = (HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(str))
-                        useDialogTxt:SetText(trueStr)
-                        local csf = ((useDialogTxt.transform).parent):GetComponent("ContentSizeFitter")
-                        local rect = ((useDialogTxt.rectTransform).parent):GetComponent("RectTransform")
-                        do
-                          local textWidth = 570
-                          if textWidth <= useDialogTxt.preferredWidth then
-                            csf.horizontalFit = ((((_ENV.UnityEngine).UI).ContentSizeFitter).FitMode).Unconstrained
-                            rect.sizeDelta = (_ENV.Vector2)(textWidth, (rect.sizeDelta).y)
-                          else
-                            csf.horizontalFit = ((((_ENV.UnityEngine).UI).ContentSizeFitter).FitMode).PreferredSize
-                          end
-                          if MatchType.MT_Campaign == (self._enterData)._match_type then
-                            if self:IsSummerActivityTwo(self._enterData) then
-                              (self._expParent):SetActive(false)
-                              ;
-                              (self._summerTwoScore):SetActive(true)
-                              ;
-                              (self._summerTwoNameGo):SetActive(true)
-                              ;
-                              (self._summerTwoScoreBgGo):SetActive(true)
-                              ;
-                              (self._stageTitle):SetActive(false)
-                              ;
-                              (self._awardParent):SetActive(false)
-                              for i = 1, #self._starRootGOList do
-                                ((self._starRootGOList)[i]):SetActive(false)
-                              end
-                              local missionInfo = (self._enterData):GetMissionCreateInfo()
-                              local missionId = missionInfo.nCampaignMissionId
-                              local componentId = missionInfo.CampaignMissionParams
-                              if not componentId then
-                                return 
-                              end
-                              local cfgs = (Cfg.cfg_component_summer_ii_mission)({CampaignMissionId = missionId, ComponentID = componentId[1]})
-                              if cfgs == nil or #cfgs <= 0 then
-                                return 
-                              end
-                              local cfg = cfgs[1]
-                              local levelType = cfg.LevelType
-                              local missionCfgs = (Cfg.cfg_campaign_mission)({CampaignMissionId = missionId})
-                              if missionCfgs == nil or #missionCfgs <= 0 then
-                                return 
-                              end
-                              local misionCfg = missionCfgs[1]
-                              local name = (StringTable.Get)(misionCfg.Name)
-                              if levelType == (_ENV.UISummerActivity2LevelType).Normal then
-                                (self._summerTwoScoreBgGo):SetActive(false)
-                                ;
-                                (self._summerTwoNameGo):SetActive(false)
-                                ;
-                                (self._stageTitle):SetActive(true)
-                                if self._isWin then
-                                  (self._awardParent):SetActive(true)
-                                else
-                                  (self._awardParent):SetActive(false)
-                                end
-                              else
-                                (self._summerTwoNameBgImg):LoadImage((_ENV.UISummerActivityTwoConst).BattleResultEntryBg)
-                                -- DECOMPILER ERROR at PC3089: Confused about usage of register: R38 in 'UnsetPending'
-
-                                ;
-                                (self._summerTwoStageNameLabel).text = name
-                                if self._isWin then
-                                  local campaignModule = (GameGlobal.GetModule)(_ENV.CampaignModule)
-                                  local progress = campaignModule:GetCampaignLocalProcess((_ENV.ECampaignType).CAMPAIGN_TYPE_SUMMER_II)
-                                  local missionComponent = progress:GetComponent((_ENV.ECampaignSummerIIComponentID).ECAMPAIGN_SUMMERII_MISSION)
-                                  local hasPass = missionComponent:GetHistoryMissionPassStatus(missionId)
-                                  local affixList = (self._enterData):GetAffixList()
-                                  local hardId = (self._enterData):GetHardIndex()
-                                  local currentScore = ((_ENV.UISummerActivityTwoLevelDatas).CalcScoreByCfg)(hardId, affixList, cfg)
-                                  local affixArr = missionComponent:GetHistoryHighAffix(missionId)
-                                  local hardIdHis = missionComponent:GetHistoryHighHard(missionId)
-                                  local historyScore = 0
-                                  if hasPass and hardIdHis then
-                                    historyScore = ((_ENV.UISummerActivityTwoLevelDatas).CalcScoreByCfg)(hardIdHis, affixArr, cfg)
-                                  end
-                                  ;
-                                  (self._summerTwoScoreIcon1Img):LoadImage((_ENV.UISummerActivityTwoConst).EntryIcon)
-                                  ;
-                                  (self._summerTwoScoreIcon2Img):LoadImage((_ENV.UISummerActivityTwoConst).EntryIcon)
-                                  -- DECOMPILER ERROR at PC3175: Confused about usage of register: R48 in 'UnsetPending'
-
-                                  ;
-                                  (self._summerTwoScore1Label).text = historyScore
-                                  -- DECOMPILER ERROR at PC3179: Confused about usage of register: R48 in 'UnsetPending'
-
-                                  ;
-                                  (self._summerTwoScoreShadown1Label).text = historyScore
-                                  -- DECOMPILER ERROR at PC3183: Confused about usage of register: R48 in 'UnsetPending'
-
-                                  ;
-                                  (self._summerTwoScore2Label).text = currentScore
-                                  -- DECOMPILER ERROR at PC3187: Confused about usage of register: R48 in 'UnsetPending'
-
-                                  ;
-                                  (self._summerTwoScoreShadown2Label).text = currentScore
-                                  -- DECOMPILER ERROR at PC3194: Confused about usage of register: R48 in 'UnsetPending'
-
-                                  ;
-                                  (self._summerTwoScoreShadown1Label).color = (self._summerLevelTypeToScoreColor)[levelType]
-                                  -- DECOMPILER ERROR at PC3201: Confused about usage of register: R48 in 'UnsetPending'
-
-                                  ;
-                                  (self._summerTwoScoreShadown2Label).color = (self._summerLevelTypeToScoreColor)[levelType]
-                                  ;
-                                  (self._summerTwoScoreHistoryGo):SetActive(true)
-                                  ;
-                                  (self._summerTwoScoreCurrentGo):SetActive(true)
-                                  ;
-                                  ((GameGlobal.TaskManager)()):StartTask(self.PlaySummerTwoResultAnim, self, historyScore <= currentScore)
-                                else
-                                  (self._summerTwoScoreBgGo):SetActive(false)
-                                end
-                              end
-                              local againFightBtn = self:GetGameObject("againBtnRoot")
-                              againFightBtn:SetActive(false)
-                            elseif self:IsN21CC(self._enterData) then
-                              (self._expParent):SetActive(false)
-                              ;
-                              (self._stageTitle):SetActive(false)
-                              ;
-                              (self._awardParent):SetActive(false)
-                              for i = 1, #self._starRootGOList do
-                                ((self._starRootGOList)[i]):SetActive(false)
-                              end
-                              ;
-                              (self._n21CCNameGo):SetActive(true)
-                              ;
-                              (self._n21CCScoreGo):SetActive(true)
-                              local againFightBtn = self:GetGameObject("againBtnRoot")
-                              againFightBtn:SetActive(false)
-                              local missionInfo = (self._enterData):GetMissionCreateInfo()
-                              local missionId = missionInfo.nCampaignMissionId
-                              local componentId = missionInfo.CampaignMissionParams
-                              if not componentId then
-                                return 
-                              end
-                              local campaignModule = (GameGlobal.GetModule)(_ENV.CampaignModule)
-                              local progress = campaignModule:GetCampaignLocalProcess((_ENV.ECampaignType).CAMPAIGN_TYPE_N21_CHALLENGE)
-                              local component = progress:GetComponent((_ENV.ECampaignN21ChallengeComponentID).CHALLENGE)
-                              local cfgs1 = (Cfg.cfg_component_challenge_mission)({ComponentID = component:GetComponentCfgId(), CampaignMissionId = missionId})
-                              if cfgs1 == nil or #cfgs1 <= 0 then
-                                return 
-                              end
-                              local cfg1 = cfgs1[1]
-                              local name = (StringTable.Get)(cfg1.MonsterName)
-                              ;
-                              (self._n21CCStageNameLabel):SetText(name)
-                              if self._isWin then
-                                local historyScore = ((_ENV.UIActivityN21CCConst).GetHistoryScore)(missionId)
-                                ;
-                                (self._n21CCHistoryScoreLabel):SetText(historyScore)
-                                local currentScore = component:GetScore(cfg1.LeveIndex)
-                                ;
-                                (self._n21CCCurrentScoreLabel):SetText(currentScore)
-                              else
-                                (self._n21CCScoreGo):SetActive(false)
-                              end
-                            elseif self:IsCn20N49LineTalent(self._enterData) then
-                              local matchResult = self:_GetMatchResult()
-                              ;
-                              (self._starConditionGO):SetActive(true)
-                              self:_FillCN20N49LineTalentStars()
-                              ;
-                              (self._expParent):SetActive(false)
-                              self:_HideExpAndMoveUpRewards(true)
-                            elseif self:_NeedHideExpAndMoveUpReards(self._enterData) then
-                              (self._expParent):SetActive(false)
-                              self:_HideExpAndMoveUpRewards(true)
-                            else
-                              (self._summerTwoScore):SetActive(false)
-                              ;
-                              (self._summerTwoNameGo):SetActive(false)
-                              ;
-                              (self._summerTwoScoreBgGo):SetActive(false)
-                              ;
-                              (self._n5Left):SetActive(false)
-                              ;
-                              (self._n5Right):SetActive(false)
-                              ;
-                              (self._worldBoss):SetActive(false)
-                            end
-                            local isAir = (self:GetModule(AircraftModule)):IsAircraftCartridgeMission(((self._enterData):GetCampaignMissionInfo()).nMissionComId)
-                            self:_HideExpAndMoveUpRewards(isAir)
-                            self:_ActivityResult(self._enterData)
-                          elseif MatchType.MT_SailingMission == (self._enterData)._match_type then
-                            (self._expParent):SetActive(false)
-                            ;
-                            (self._stageTitle):SetActive(false)
-                            ;
-                            (self._awardParent):SetActive(false)
-                            for i = 1, #self._starRootGOList do
-                              ((self._starRootGOList)[i]):SetActive(false)
-                            end
-                            local againFightBtn = self:GetGameObject("againBtnRoot")
-                            againFightBtn:SetActive(false)
-                            local matchResult = self:_GetMatchResult()
-                            if self._isWin then
-                              self:StartTask(self.PlaySailingAnim, self, matchResult)
-                            end
-                            local bg = self:GetGameObject("UISailBg")
-                            bg:SetActive(true)
-                          elseif MatchType.MT_MiniMaze == (self._enterData)._match_type then
-                            (self._expParent):SetActive(false)
-                            ;
-                            (self._stageTitle):SetActive(false)
-                            ;
-                            (self._awardParent):SetActive(false)
-                            for i = 1, #self._starRootGOList do
-                              ((self._starRootGOList)[i]):SetActive(false)
-                            end
-                            local againFightBtn = self:GetGameObject("againBtnRoot")
-                            againFightBtn:SetActive(false)
-                            local matchResult = self:_GetMatchResult()
-                            self:StartTask(self.PlayVampireAnim, self, matchResult)
-                          elseif MatchType.MT_BlackFist == (self._enterData)._match_type then
-                            local isAir = (self:GetModule(AircraftModule)):IsAircraftCartridgeMission(((self._enterData):GetBlackFistInfo()).component_id)
-                            local isN8CombatSimulator = self:_IsActivityN8(self._enterData) == 2
-                            self:_HideExpAndMoveUpRewards(isAir or isN8CombatSimulator)
-                          elseif MatchType.MT_Conquest == (self._enterData)._match_type then
-                            local matchResult = self:_GetMatchResult()
-                            ;
-                            (self._n5Left):SetActive(true)
-                            ;
-                            (self._n5Right):SetActive(true)
-                            ;
-                            (self._worldBoss):SetActive(false)
-                            ;
-                            (self._starConditionGO):SetActive(false)
-                            ;
-                            (self._awardParent):SetActive(false)
-                            local cfg = (Cfg.cfg_component_battlefield)({CampaignMissionID = matchResult.m_nID})
-                            if cfg then
-                              (self._difficultyImage):LoadImage(((_ENV.BattleFieldDifficultyImg).DifficultyImg)[(cfg[1]).Index])
-                              ;
-                              (self._n5StageName):SetText((StringTable.Get)((cfg[1]).MissionName))
-                              ;
-                              (self._n5StageDifficulty):SetText((StringTable.Get)(((_ENV.BattleFieldDifficultyText).DifficultyText)[(cfg[1]).Index]))
-                            end
-                            local campaignModule = (GameGlobal.GetModule)(_ENV.CampaignModule)
-                            local progress = campaignModule:GetCampaignLocalProcess((_ENV.ECampaignType).CAMPAIGN_TYPE_N5)
-                            local leftValue = (matchResult.m_vecAwardNormal).count
-                            local rightValue = progress:GetRecordMilitaryExploit(matchResult.m_nID)
-                            ;
-                            (self._militaryExploitLeftValue):SetText(leftValue)
-                            ;
-                            (self._militaryExploitRightValue):SetText(rightValue)
-                            if rightValue < leftValue then
-                              (self._n5RightAnimation):Play("uieff_N5_Result_Left")
-                            else
-                              (self._n5RightAnimation):Play("uieff_N5_Result_Right")
-                            end
-                          elseif MatchType.MT_WorldBoss == (self._enterData)._match_type then
-                            (self._n5Left):SetActive(false)
-                            ;
-                            (self._n5Right):SetActive(false)
-                            ;
-                            (self._awardParent):SetActive(false)
-                            ;
-                            (self._starConditionGO):SetActive(true)
-                            local worldBossModule = self:GetModule(_ENV.WorldBossModule)
-                            local matchResult = self:_GetMatchResult()
-                            if worldBossModule:TeamMemberChange() and matchResult.m_damage > 0 then
-                              self:Lock("UIBattleResultComplete_WorldBoss")
-                              self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : _ENV, self, worldBossModule, matchResult
-    YIELD(TT, 3167)
-    self:_ShowRecordChoice(worldBossModule, matchResult)
-    self:UnLock("UIBattleResultComplete_WorldBoss")
-  end
-, self)
-                            else
-                              self:_DelayShowWorldBossDamage(worldBossModule, matchResult, false, false)
-                            end
-                          elseif MatchType.MT_DifficultyMission == (self._enterData)._match_type then
-                            local matchResult = self:_GetMatchResult()
-                            self._diffItem = (self._diffRoot):SpawnObject("UIDiffResultRoot")
-                            local stageName = matchResult.m_stShowName
-                            local enties = matchResult.m_enties
-                            local nodeid = matchResult.m_parent_mission_id
-                            local stageid = matchResult.m_nID
-                            ;
-                            (self._diffItem):SetData(stageid, stageName, enties, nodeid)
-                            self:_HideExpAndMoveUpRewards(self._isWin)
-                            local starCondition = self:GetUIComponent("RectTransform", "StarCondition")
-                            starCondition.anchoredPosition = (_ENV.Vector2)(0, -50)
-                          elseif MatchType.MT_Season == (self._enterData)._match_type then
-                            self:_HideExpAndMoveUpRewards(true)
-                          elseif MatchType.MT_SeasonMaze == (self._enterData)._match_type then
-                            local matchResult = self:_GetMatchResult()
-                            local seasonMazeObj = ((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()
-                            local seasonMazeComponent = seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-                            local seasonMazeComponentInfo = seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
-                            self:_HideExpAndMoveUpRewards(true)
-                            if matchResult.m_nID == (seasonMazeComponentInfo.m_world_boss_info).cfg_id then
-                              local cfg = (Cfg.cfg_season_maze_mission)[matchResult.m_nID]
-                              ;
-                              (self._stageTitleTxt):SetText((StringTable.Get)(cfg.MissionName))
-                              ;
-                              (self._n5Left):SetActive(false)
-                              ;
-                              (self._n5Right):SetActive(false)
-                              ;
-                              (self._awardParent):SetActive(false)
-                              ;
-                              (self._worldBoss):SetActive(true)
-                              local oldDamge = matchResult.m_last_damage
-                              local newDamage = matchResult.m_damage
-                              local oldDamgeStr = (HelperProxy:GetInstance()):SMazeDamageUnit(oldDamge)
-                              local newDamageStr = (HelperProxy:GetInstance()):SMazeDamageUnit(newDamage)
-                              ;
-                              (self._damgeLeftValue):SetText(newDamageStr)
-                              ;
-                              (self._damageRightValue):SetText(oldDamgeStr)
-                              self:Lock("UIBattleResultComplete_DelayWorldBoss")
-                              self:StartTask(function(TT)
-    -- function num : 0_13_1 , upvalues : newDamage, _ENV, oldDamge, self
-    if newDamage > 0 then
-      YIELD(TT, 1500)
+    local isAir = self:GetModule(AircraftModule):IsAircraftCartridgeMission(enterData:GetBlackFistInfo().component_id)
+    local isN8CombatSimulator = self:_IsActivityN8(enterData) == 2
+    local localizationTitle_win_zh = "thread_shengli_chara3"
+    local localizationTitle_win_en = "thread_shengli_chara4"
+    if isAir or isN8CombatSimulator then
+      localizationTitle_win_zh = "world_tiaozhan_tu13"
+      localizationTitle_win_en = "world_tiaozhan_tu14"
     end
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-    if newDamage <= oldDamge then
-      (self._arrowRect).localRotation = (Quaternion.Euler)(0, -180, 0)
-      ;
-      (self._worldBossAnimation):Play("uieff_WorldBoss_Result_Right")
+    if self._isWin then
+      self:InitHighLight("ui_eff_complete_mission", localizationTitle_win_zh, localizationTitle_win_en)
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage(localizationTitle_win_zh)
+      self._imgCompleteEn:LoadImage(localizationTitle_win_en)
+      self._tex1:SetText(StringTable.Get("str_battle_end"))
+      self._tex2:SetText(StringTable.Get("str_battle_end_en"))
     else
-      ;
-      (self._worldBossAnimation):Play("uieff_WorldBoss_Result_Left")
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara7")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara8")
     end
-    self:UnLock("UIBattleResultComplete_DelayWorldBoss")
+  elseif matchRes.m_nMatchType == MatchType.MT_MiniMaze then
+    local matchResult = self:_GetMatchResult()
+    local cfg = Cfg.cfg_bloodsucker_mission[matchResult.m_nID]
+    local isWin = matchResult.wave >= cfg.WaveCount
+    if isWin then
+      self:InitHighLight("ui_eff_complete_exploer", "world_tiaozhan_tu13", "world_tiaozhan_tu14")
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("world_tiaozhan_tu13")
+      self._imgCompleteEn:LoadImage("world_tiaozhan_tu14")
+    else
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("world_tiaozhan_tu11")
+      self._imgCompleteEn:LoadImage("world_tiaozhan_tu12")
+    end
+  elseif matchRes.m_nMatchType == MatchType.MT_PopStar then
+    self._imgCompleteGo:SetActive(true)
+    if self:IsPopStarChallengeLevel(matchRes) then
+      self:InitHighLight("ui_eff_complete_mission", "world_tiaozhan_tu11", "world_tiaozhan_tu12")
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("world_tiaozhan_tu11")
+      self._imgCompleteEn:LoadImage("world_tiaozhan_tu12")
+    else
+      local localizationTitle_win_zh = "thread_shengli_chara1"
+      local localizationTitle_win_en = "thread_shengli_chara2"
+      if self._isWin then
+        self:InitHighLight("ui_eff_complete_mission", localizationTitle_win_zh, localizationTitle_win_en)
+        self._imgComplete:LoadImage("thread_shengli_frame16")
+        self._imgCompleteTitle:LoadImage(localizationTitle_win_zh)
+        self._imgCompleteEn:LoadImage(localizationTitle_win_en)
+      else
+        self._imgComplete:LoadImage("thread_shengli_frame17")
+        self._imgCompleteTitle:LoadImage("thread_shengli_chara7")
+        self._imgCompleteEn:LoadImage("thread_shengli_chara8")
+      end
+    end
+  elseif matchRes.m_nMatchType == MatchType.MT_Season then
+    if self._isWin then
+      self:InitHighLight("ui_eff_complete_exploer", "thread_shengli_chara3", "thread_shengli_chara4")
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara3")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara4")
+    else
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara5")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara6")
+    end
+  elseif matchRes.m_nMatchType == MatchType.MT_SeasonMaze then
+    local matchResult = self:_GetMatchResult()
+    local seasonMazeObj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
+    local seasonMazeComponentInfo = seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+    if matchResult.m_nID == seasonMazeComponentInfo.m_world_boss_info.cfg_id then
+      if 0 < matchResult.m_damage then
+        self:InitHighLight("ui_eff_complete_mission", "world_tiaozhan_tu11", "world_tiaozhan_tu12")
+        self._imgComplete:LoadImage("thread_shengli_frame16")
+        self._imgCompleteTitle:LoadImage("world_tiaozhan_tu11")
+        self._imgCompleteEn:LoadImage("world_tiaozhan_tu12")
+        self._tex1:SetText(StringTable.Get("str_battle_end"))
+      else
+        self._imgComplete:LoadImage("thread_shengli_frame17")
+        self._imgCompleteTitle:LoadImage("thread_shengli_chara7")
+        self._imgCompleteEn:LoadImage("thread_shengli_chara8")
+      end
+    elseif self._isWin then
+      self:InitHighLight("ui_eff_complete_exploer", "thread_shengli_chara3", "thread_shengli_chara4")
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara3")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara4")
+      self._tex1:SetText(StringTable.Get("str_season_maze_battle_complete_title"))
+    else
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara5")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara6")
+    end
+  else
+    local isAir = false
+    if matchRes.m_nMatchType == MatchType.MT_Campaign then
+      local match = self:GetModule(MatchModule)
+      local enterData = match:GetMatchEnterData()
+      isAir = self:GetModule(AircraftModule):IsAircraftCartridgeMission(enterData:GetCampaignMissionInfo().nMissionComId)
+    end
+    local localizationTitle_win_zh = "thread_shengli_chara1"
+    local localizationTitle_win_en = "thread_shengli_chara2"
+    if isAir then
+      localizationTitle_win_zh = "world_tiaozhan_tu13"
+      localizationTitle_win_en = "world_tiaozhan_tu14"
+    end
+    if self._isWin then
+      self:InitHighLight("ui_eff_complete_mission", localizationTitle_win_zh, localizationTitle_win_en)
+      self._imgComplete:LoadImage("thread_shengli_frame16")
+      self._imgCompleteTitle:LoadImage(localizationTitle_win_zh)
+      self._imgCompleteEn:LoadImage(localizationTitle_win_en)
+    else
+      self._imgComplete:LoadImage("thread_shengli_frame17")
+      self._imgCompleteTitle:LoadImage("thread_shengli_chara7")
+      self._imgCompleteEn:LoadImage("thread_shengli_chara8")
+    end
   end
-, self)
-                            else
-                              (self._starConditionGO):SetActive(false)
-                              local smMissionCfg = ((Cfg.cfg_season_maze_mission)({SeasonMazeMissionId = matchResult.m_nID}))[1]
-                              if smMissionCfg.Type == 2 and self._isWin then
-                                local bossInfos = seasonMazeComponentInfo.boss_info
-                                local bossIndex = 0
-                                local bossCount = (table.count)(bossInfos)
-                                for i = 0, bossCount - 1 do
-                                  local info = bossInfos[i]
-                                  if info.do_cnt == -1 then
-                                    do
-                                      bossIndex = bossIndex + 1
-                                      -- DECOMPILER ERROR at PC3983: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                                      -- DECOMPILER ERROR at PC3983: LeaveBlock: unexpected jumping out IF_STMT
-
-                                    end
-                                  end
-                                end
-                                ;
-                                (self._seasonMazeTaskObj):SetActive(true)
-                                ;
-                                (self._seasonMazeConditionText):SetText((StringTable.Get)("str_season_maze_result_scores_tips", bossIndex))
-                                local cfgs = ((Cfg.cfg_component_season_maze)({ComponentID = seasonMazeComponent:GetComponentCfgId()}))
-                                local cfg = nil
-                                if cfgs and 0 < (table.count)(cfgs) then
-                                  for _,v in (_ENV.pairs)(cfgs) do
-                                    if v.Hard == seasonMazeComponentInfo.hard then
-                                      cfg = v
-                                    end
-                                  end
-                                end
-                                if cfg then
-                                  local rewardID = (cfg.BossReward)[bossIndex]
-                                  local cfgs = (Cfg.cfg_component_season_maze_effect)({ID = rewardID})
-                                  if cfgs and 0 < #cfgs then
-                                    local cfg = cfgs[1]
-                                    for _,v in (_ENV.pairs)(cfg.EffectList) do
-                                      if v[2] == (_ENV.SeasonMazeAttrType).SMAT_Score then
-                                        local score = v[3]
-                                        ;
-                                        (self._seasonMazeConditionScore):SetText(score)
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          else
-                            (self._summerTwoScore):SetActive(false)
-                            ;
-                            (self._summerTwoNameGo):SetActive(false)
-                            ;
-                            (self._summerTwoScoreBgGo):SetActive(false)
-                            ;
-                            (self._n5Left):SetActive(false)
-                            ;
-                            (self._n5Right):SetActive(false)
-                            ;
-                            (self._worldBoss):SetActive(false)
-                          end
-                          -- DECOMPILER ERROR: 189 unprocessed JMP targets
-                        end
-                      end
-                    end
-                  end
-                end
-              end
+  local vecPassCondition = matchRes.m_vecCondition
+  local passCount = 0
+  if 0 < #vecPassCondition then
+    for i = 1, #vecPassCondition do
+      local desc
+      local go = self._starIconList[i]
+      go:SetActive(false)
+      if self._isWin then
+        local hpm = self:GetModule(HelpPetModule)
+        desc = matchRes.m_vecCondition[i].m_stDest
+        desc = string.gsub(desc, "<color=#%x*>", "<color=#31AAFF>")
+        local pass = matchRes.m_vecCondition[i].m_bPass
+        if pass then
+          go:SetActive(true)
+          table.insert(self._taskIDList, self._3StarTaskID)
+          passCount = passCount + 1
+        end
+      else
+        local str = string.gsub(matchRes.m_vecCondition[i].m_stDest, "<color=#%x*>", "")
+        str = string.gsub(str, "</color>", "")
+        desc = "<color=grey>" .. str .. "</color>"
+        go:SetActive(false)
+      end
+      self._starTxtList[i]:SetText(desc)
+    end
+    for i = 1, #self._starRootGOList do
+      self._starRootGOList[i]:SetActive(true)
+    end
+  else
+    for i = 1, #self._starRootGOList do
+      self._starRootGOList[i]:SetActive(false)
+    end
+  end
+  for i = 0, self._stars.Length - 1 do
+    local go = self._stars[i].gameObject
+    if self._isWin then
+      go:SetActive(passCount >= i + 1)
+    else
+      go:SetActive(false)
+    end
+  end
+  local autoFightMd = GameGlobal.GetModule(SerialAutoFightModule)
+  local normalRewards = matchRes.m_vecAwardNormal
+  local starRewards = matchRes.m_vecAwardPerfect
+  local firstPassRawrds = matchRes.m_vecFirstPassAward
+  if matchRes.m_nMatchType == MatchType.MT_Mission then
+    self._isFirstWin = table.count(matchRes.m_vecFirstPassAward) ~= 0
+    if self._isWin and self._isFirstWin then
+      local missionModule = GameGlobal.GetModule(MissionModule)
+      local data = missionModule:GetDiscoveryData()
+      local missionid = matchRes.m_nID
+      data:FirstFinishMissionID(missionid)
+    else
+      local missionModule = GameGlobal.GetModule(MissionModule)
+      local data = missionModule:GetDiscoveryData()
+      data:FirstFinishMissionID(nil)
+    end
+  else
+    local missionModule = GameGlobal.GetModule(MissionModule)
+    local data = missionModule:GetDiscoveryData()
+    data:FirstFinishMissionID(nil)
+  end
+  local activityRewards = matchRes.m_activity_rewards
+  local extStarRewards = matchRes.m_ext_star_rewards
+  local extFirstPassRewards = matchRes.m_ext_first_rewards
+  local extReward = matchRes.m_vecExtAward
+  local doubleExtReward = matchRes.m_vecDoubleExtAward
+  local backRewards = matchRes.m_back_rewards or {}
+  local _recommendReward = matchRes.m_recommend_pet_rewards
+  local recommendReward = {}
+  if _recommendReward and 0 < #_recommendReward then
+    local roleAsset = RoleAsset:New()
+    local id = 0
+    local count = 0
+    for i = 1, #_recommendReward do
+      local _roleAsset = _recommendReward[i]
+      id = _roleAsset.assetid
+      count = count + _roleAsset.count
+    end
+    roleAsset.assetid = id
+    roleAsset.count = count
+    recommendReward[1] = roleAsset
+  end
+  local itemCount = self:_GetItemCount(normalRewards) + #starRewards + #firstPassRawrds + #extReward + #doubleExtReward + #recommendReward + #backRewards + #extStarRewards + #extFirstPassRewards
+  if autoFightMd:IsRunning() then
+    itemCount = itemCount + #activityRewards
+  end
+  if self._isWin or matchRes.m_nMatchType == MatchType.MT_BlackFist then
+  else
+    itemCount = itemCount + 1
+    if matchRes.m_nMatchType == MatchType.MT_ResDungeon then
+      local resModule = self:GetModule(ResDungeonModule)
+      if resModule:IsOpenDoubleRes() then
+        itemCount = itemCount + 1
+      end
+    end
+  end
+  self._itemPool:SpawnObjects("UIWidgetResultReward", itemCount)
+  local items = self._itemPool:GetAllSpawnList()
+  local itemCfg = Cfg.cfg_item
+  local itemIndex = 1
+  self._levelIcon:SetActive(false)
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local eraseIDList = {}
+  if matchRes.m_nMatchType == MatchType.MT_Tower then
+    self._awardParent:SetActive(self._isWin)
+    self._expParent:SetActive(false)
+  elseif matchRes.m_nMatchType == MatchType.MT_TalePet then
+    self._awardParent:SetActive(self._isWin)
+    self._expParent:SetActive(false)
+  elseif matchRes.m_nMatchType == MatchType.MT_LostArea then
+    self._awardParent:SetActive(self._isWin)
+    self._expParent:SetActive(false)
+  elseif matchRes.m_nMatchType == MatchType.MT_DifficultyMission then
+    self._awardParent:SetActive(self._isWin)
+    self._expParent:SetActive(false)
+  elseif matchRes.m_nMatchType == MatchType.MT_EightPets then
+    self._awardParent:SetActive(self._isWin)
+    self._expParent:SetActive(false)
+  elseif matchRes.m_nMatchType == MatchType.MT_SeasonMaze then
+    self._awardParent:SetActive(self._isWin)
+    self._expParent:SetActive(false)
+  else
+    local roleModule = GameGlobal.GetModule(RoleModule)
+    local roleLv = roleModule:GetLevel()
+    local curLvStartExp = HelperProxy:GetInstance():GetLevelExp(roleLv)
+    local sliderStartValue = roleModule:GetRoleExp() - curLvStartExp
+    local lvProp = Cfg.cfg_role_level[roleLv]
+    self._expSlider.maxValue = lvProp.NeedExp
+    self._expSlider.value = sliderStartValue
+    self._expTxt:SetText("<color=#D8D8D8>" .. math.floor(sliderStartValue) .. "</color><color=#00F8FF>/</color><color=#D8D8D8>" .. lvProp.NeedExp .. "</color>")
+  end
+  local popStarScore = self:GetGameObject("PopStarScore")
+  local popStarScoreLabel = self:GetUIComponent("UILocalizationText", "PopStarScore")
+  local popStarScore2 = self:GetGameObject("PopStarScore2")
+  local popStarScore2Label = self:GetUIComponent("UILocalizationText", "PopStarScore2")
+  popStarScore2:SetActive(false)
+  popStarScore:SetActive(false)
+  if matchRes.m_nMatchType == MatchType.MT_PopStar then
+    if self:IsPopStarChallengeLevel(matchRes) then
+      for i = 0, self._stars.Length - 1 do
+        local go = self._stars[i].gameObject
+        go:SetActive(false)
+      end
+      popStarScore2:SetActive(true)
+      self._expParent:SetActive(false)
+      local items = self:GetGameObject("Items")
+      items:SetActive(false)
+      popStarScore2Label:SetText(StringTable.Get("str_n31_popstar_battle_result_score_tips", "<color=#f79c2e>" .. matchRes._starNum .. "</color>"))
+      self._star1RootGO:SetActive(false)
+      self._star2RootGO:SetActive(false)
+      self._star3RootGO:SetActive(false)
+    else
+      self._expParent:SetActive(false)
+      popStarScore:SetActive(true)
+      popStarScoreLabel:SetText(StringTable.Get("str_n31_popstar_battle_result_score_tips", matchRes._starNum))
+    end
+    if matchRes.m_vecAwardNormal and 0 < #matchRes.m_vecAwardNormal then
+      local rewards = matchRes.m_vecAwardNormal
+      self:ShowDialog("UIGetItemController", rewards)
+    end
+  end
+  self._txtExpAdd.gameObject:SetActive(self._isWin)
+  for i = 1, #normalRewards do
+    local roleAsset = normalRewards[i]
+    if roleAsset.assetid == RoleAssetID.RoleAssetExp then
+      self._levelIcon:SetActive(true)
+      local matchResRoleInfo = matchRes.m_matchResRolInfo
+      local existingExp = matchResRoleInfo.exp_before
+      local lv = HelperProxy:GetInstance():GetLvByExp(existingExp)
+      self._levelTxt:SetText(lv)
+      if lv < HelperProxy:GetInstance():GetMaxLevel() then
+        local curLvStartExp = HelperProxy:GetInstance():GetLevelExp(lv)
+        local sliderStartValue = existingExp - curLvStartExp
+        local lvProp = Cfg.cfg_role_level[lv]
+        self._expSlider.maxValue = lvProp.NeedExp
+        self._expSlider.value = sliderStartValue
+        self._expTxt:SetText("<color=#D8D8D8>" .. math.floor(sliderStartValue) .. "</color><color=#00F8FF>/</color><color=#D8D8D8>" .. lvProp.NeedExp .. "</color>")
+        self._txtExpAdd:SetText("+" .. roleAsset.count)
+        self:_CheckNeedShowLevelUp(lv, existingExp, roleAsset.count)
+        local taskID = GameGlobal.TaskManager():StartTask(self._DisplayExpUp, self, existingExp, existingExp + roleAsset.count, lv, matchResRoleInfo)
+        table.insert(self._taskIDList, taskID)
+      else
+        self._expSlider.maxValue = 1
+        self._expSlider.value = 1
+      end
+      table.insert(eraseIDList, roleAsset)
+    end
+  end
+  for i, v in ipairs(eraseIDList) do
+    table.removev(normalRewards, v)
+  end
+  if 1 < #recommendReward then
+    itemModule:BattleResultSortAsset(recommendReward)
+  end
+  if 1 < #doubleExtReward then
+    itemModule:BattleResultSortAsset(doubleExtReward)
+  end
+  if 1 < #starRewards then
+    itemModule:BattleResultSortAsset(starRewards)
+  end
+  if 1 < #extStarRewards then
+    itemModule:BattleResultSortAsset(extStarRewards)
+  end
+  if 1 < #firstPassRawrds then
+    itemModule:BattleResultSortAsset(firstPassRawrds)
+  end
+  if 1 < #extFirstPassRewards then
+    itemModule:BattleResultSortAsset(extFirstPassRewards)
+  end
+  if matchRes.m_nMatchType == MatchType.MT_SeasonMaze then
+  elseif 1 < #normalRewards then
+    self:BattleNormalResultSortAsset(normalRewards)
+  end
+  if 1 < #extReward then
+    itemModule:BattleResultSortAsset(extReward)
+  end
+  if 1 < #backRewards then
+    itemModule:BattleResultSortAsset(backRewards)
+  end
+  if matchRes.m_nMatchType == MatchType.MT_Season and self._isWin then
+    self._normalItemsGo:SetActive(false)
+    self._seasonItemsGo:SetActive(true)
+    local matchModule = self:GetModule(MatchModule)
+    local enterData = matchModule:GetMatchEnterData()
+    local seasonMissionInfo = enterData:GetSeasonMissionInfo()
+    self:FillSeasonAwardsArea(matchRes, seasonMissionInfo)
+  end
+  if matchRes.m_nMatchType == MatchType.MT_SeasonMaze and self._isWin then
+    self._normalItemsGo:SetActive(false)
+    self._seasonMazeItemsGo:SetActive(true)
+    local rewardList = matchRes.m_vecAwardNormal
+    local seasonMazeAwardGen = self:GetUIComponent("UISelectObjectPath", "SeasonMazePool")
+    seasonMazeAwardGen:SpawnObjects("UISeasonMazeItem", #rewardList)
+    local spwanList = seasonMazeAwardGen:GetAllSpawnList()
+    for i = 1, #rewardList do
+      local effect = rewardList[i]
+      spwanList[i]:SetData(effect, self._selectItemInfo, 1)
+    end
+  end
+  if 0 < #activityRewards then
+    if autoFightMd:IsRunning() then
+      self._bNeedPopActivityAward = false
+      for i = 1, #activityRewards do
+        local roleAsset = activityRewards[i]
+        items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false, false, false, false, false, true)
+        itemIndex = itemIndex + 1
+      end
+    else
+      for index, value in ipairs(activityRewards) do
+        value.type = StageAwardType.Activity
+      end
+      self._bNeedPopActivityAward = true
+      self._popActivityAwardEnd = false
+      self._activityAwards = activityRewards
+      self:_CheckShowActivityAward()
+    end
+  end
+  for i = 1, #backRewards do
+    local roleAsset = backRewards[i]
+    items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false, false, false, false, false, false, true)
+    itemIndex = itemIndex + 1
+  end
+  for i = 1, #recommendReward do
+    local roleAsset = recommendReward[i]
+    items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false, false, false, false, true)
+    itemIndex = itemIndex + 1
+  end
+  for i = 1, #doubleExtReward do
+    local roleAsset = doubleExtReward[i]
+    items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false, false, false, false, true)
+    itemIndex = itemIndex + 1
+  end
+  for i = 1, #starRewards do
+    local roleAsset = starRewards[i]
+    if MatchType.MT_Chess == self._enterData._match_type then
+      items[itemIndex]:SetShotEffStartTime()
+    end
+    local taskID = items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, true)
+    table.insert(self._taskIDList, taskID)
+    itemIndex = itemIndex + 1
+  end
+  for i = 1, #extStarRewards do
+    local roleAsset = extStarRewards[i]
+    local taskID = items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, true)
+    table.insert(self._taskIDList, taskID)
+    itemIndex = itemIndex + 1
+  end
+  for i = 1, #firstPassRawrds do
+    local roleAsset = firstPassRawrds[i]
+    if MatchType.MT_Chess == self._enterData._match_type then
+      items[itemIndex]:SetShotEffStartTime()
+    end
+    local taskID = items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false, false, true)
+    table.insert(self._taskIDList, taskID)
+    itemIndex = itemIndex + 1
+  end
+  for i = 1, #extFirstPassRewards do
+    local roleAsset = extFirstPassRewards[i]
+    local taskID = items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false, false, true)
+    table.insert(self._taskIDList, taskID)
+    itemIndex = itemIndex + 1
+  end
+  for i = 1, #normalRewards do
+    local roleAsset = normalRewards[i]
+    if roleAsset.assetid ~= RoleAssetID.RoleAssetExp then
+      items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false)
+      itemIndex = itemIndex + 1
+    end
+  end
+  for i = 1, #extReward do
+    local roleAsset = extReward[i]
+    items[itemIndex]:Init(roleAsset.count, roleAsset.assetid, false, false, false, true)
+    itemIndex = itemIndex + 1
+  end
+  if not self._isWin then
+    if matchRes.m_nMatchType == MatchType.MT_BlackFist then
+      local isAir = self:GetModule(AircraftModule):IsAircraftCartridgeMission(self._enterData:GetBlackFistInfo().component_id)
+      local isN8CombatSimulator = self:_IsActivityN8(self._enterData) == 2
+      if isAir or isN8CombatSimulator then
+        self._awardParent:SetActive(false)
+        for i = 1, #self._starRootGOList do
+          self._starRootGOList[i]:SetActive(false)
+        end
+      end
+    elseif matchRes.m_nMatchType == MatchType.MT_PopStar then
+      self._awardParent:SetActive(false)
+    else
+      local bIsFirst = matchRes.m_firstFail
+      local nNeedPower = 0
+      local nCostPower = 0
+      local nCostID = RoleAssetID.RoleAssetPhyPoint
+      if MatchType.MT_Mission == self._enterData._match_type then
+        local mission = self:GetModule(MissionModule)
+        local missionID = self._enterData:GetMissionCreateInfo().mission_id
+        local costConfigID = 1
+        nNeedPower = Cfg.cfg_mission[missionID].NeedPower
+        nCostPower = Cfg.cfg_mission_common[costConfigID].CostPower
+      elseif MatchType.MT_Campaign == self._enterData._match_type then
+        local isAir = self:GetModule(AircraftModule):IsAircraftCartridgeMission(self._enterData:GetCampaignMissionInfo().nMissionComId)
+        local isN8CombatSimulator = self:_IsActivityN8(self._enterData) == 2
+        if not (not self:IsN21CC(self._enterData) and not self:IsSummerActivityTwo(self._enterData) and not isAir and not isN8CombatSimulator and self:ShowAward(self._enterData)) or self:IsActivityReview(self._enterData) then
+          self._awardParent:SetActive(false)
+          if not self:ShowCondition(self._enterData) then
+            for i = 1, #self._starRootGOList do
+              self._starRootGOList[i]:SetActive(false)
+            end
+          end
+        else
+          local module = self:GetModule(MissionModule)
+          local missionID = self._enterData:GetCampaignMissionInfo().nCampaignMissionId
+          local missionCfg = Cfg.cfg_campaign_mission[missionID]
+          if missionCfg.NeedAP then
+            nCostID = missionCfg.NeedAP[1]
+            nNeedPower = missionCfg.NeedAP[2]
+            nCostPower = 0
+          else
+            nNeedPower = missionCfg.NeedPower
+            local costConfigID = 1
+            nCostPower = Cfg.cfg_mission_common[costConfigID].CostPower
+          end
+        end
+        if self:IsN28Errand(self._enterData) then
+          self._awardParent:SetActive(false)
+        end
+      elseif MatchType.MT_ExtMission == self._enterData._match_type then
+        local createData = self._enterData:GetMissionCreateInfo()
+        local workModule = self:GetModule(ExtMissionModule)
+        local cfgExtTask = Cfg.cfg_extra_mission_task[createData.m_nExtTaskID]
+        nNeedPower = cfgExtTask.ExpendPower
+        nCostPower = cfgExtTask.MinCostPower
+      elseif MatchType.MT_ResDungeon == self._enterData._match_type then
+        local createData = self._enterData:GetResDungeonInfo()
+        local module = self:GetModule(ResDungeonModule)
+        local cfgExtTask = Cfg.cfg_res_instance_detail[createData.res_dungeon_id]
+        nNeedPower = cfgExtTask.NeedPower
+        nCostPower = cfgExtTask.MinCostPower
+        if module:IsOpenDoubleRes() then
+          nNeedPower = nNeedPower * 3
+        end
+      elseif MatchType.MT_Chess == self._enterData._match_type then
+        self._awardParent:SetActive(false)
+      elseif MatchType.MT_MiniMaze == self._enterData._match_type then
+        self._awardParent:SetActive(false)
+      elseif MatchType.MT_Season == self._enterData._match_type then
+        local module = self:GetModule(MissionModule)
+        local missionID = self._enterData:GetSeasonMissionInfo().mission_id
+        local missionCfg = Cfg.cfg_season_mission[missionID]
+        if missionCfg.FailPassNeedCost and missionCfg.FailPassNeedCost == 1 then
+        elseif missionCfg.NeedAP then
+          nCostID = missionCfg.NeedAP[1]
+          nNeedPower = missionCfg.NeedAP[2]
+          nCostPower = 0
+        else
+          nNeedPower = missionCfg.NeedPower
+          local costConfigID = 1
+          nCostPower = Cfg.cfg_mission_common[costConfigID].CostPower
+        end
+        if missionCfg.Type == SeasonEventPointType.DailyLevel and not self._isWin then
+          self._awardParent:SetActive(false)
+        end
+      end
+      if not bIsFirst then
+        nNeedPower = nNeedPower - nCostPower
+        if nNeedPower < 0 then
+          nNeedPower = 0
+        end
+      end
+      if nCostID == RoleAssetID.RoleAssetPhyPoint then
+        items[itemIndex]:Init(nNeedPower, RoleAssetID.RoleAssetPhyPoint, false, 1)
+      else
+        local itemName = StringTable.Get(Cfg.cfg_item[nCostID].Name)
+        items[itemIndex]:Init(nNeedPower, nCostID, false, itemName)
+      end
+      itemIndex = itemIndex + 1
+    end
+  end
+  if not self._isWin and MatchType.MT_ResDungeon == self._enterData._match_type then
+    local resModule = self:GetModule(ResDungeonModule)
+    if resModule:IsOpenDoubleRes() then
+      items[itemIndex]:Init(1, RoleAssetID.RoleAssetDoubleRes, false, 2)
+      itemIndex = itemIndex + 1
+    end
+  end
+  if MatchType.MT_Chess == self._enterData._match_type then
+    self._imgRole = self:GetUIComponent("RawImageLoader", "imgRole1")
+    self._imgShadow = self:GetUIComponent("RawImageLoader", "imgShadow1")
+    local missionInfo = self._enterData:GetChessInfo()
+    local missionId = missionInfo.mission_id
+    local chessCfgs = Cfg.cfg_chess_mission({})
+    local chessCfg = chessCfgs[missionId]
+    self._imgRole:LoadImage(chessCfg.CG)
+    self._imgRole.gameObject.transform.anchoredPosition = Vector2(chessCfg.Offset[1], chessCfg.Offset[2])
+    self._imgRole.gameObject.transform.sizeDelta = Vector2(chessCfg.Size[1], chessCfg.Size[2])
+    self._imgRole.gameObject.transform.localScale = Vector2(chessCfg.Scale[1], chessCfg.Scale[2])
+    if self._isWin then
+      local roleModule = GameGlobal.GetModule(RoleModule)
+      local pstid = roleModule:GetPstId()
+      local dbStr = "chess" .. missionInfo.mission_id .. pstid
+      local count = LocalDB.GetInt(dbStr, 0)
+      count = count + 1
+      LocalDB.SetInt(dbStr, count)
+    end
+    local left = chessCfg.Dir == 0
+    local useDialogTxt = left and self._dialogLeftTxt or self._dialogRightTxt
+    local pos = chessCfg.Pos
+    if left then
+      self._dialogLeftGO.transform.localPosition = Vector2(pos[1], pos[2])
+    else
+      self._dialogRightGO.transform.localPosition = Vector2(pos[1], pos[2])
+    end
+    self._dialogLeftGO:SetActive(left)
+    self._dialogRightGO:SetActive(not left)
+    local str = self._isWin and chessCfg.CompletePhrase or chessCfg.FailPhrase
+    local trueStr = HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(str))
+    useDialogTxt:SetText(trueStr)
+    local csf = useDialogTxt.transform.parent:GetComponent("ContentSizeFitter")
+    local rect = useDialogTxt.rectTransform.parent:GetComponent("RectTransform")
+    local textWidth = 570
+    if textWidth <= useDialogTxt.preferredWidth then
+      csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained
+      rect.sizeDelta = Vector2(textWidth, rect.sizeDelta.y)
+    else
+      csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
+    end
+  else
+    local firstPetMatchData = self._matchPetData[1]
+    if firstPetMatchData then
+      if self._isWin then
+        for i = 1, #self._matchPetData do
+          local cg = self._matchPetData[i]:GetPetBattleResultCG(PetSkinEffectPath.BODY_BATTLE_RESULT)
+          cg = cg or self._matchPetData[i]:GetPetStaticBody(PetSkinEffectPath.BODY_BATTLE_RESULT)
+          if not self._imgRoleList[i] then
+            break
+          end
+          self._imgRoleList[i]:LoadImage(cg)
+          self._imgShadowList[i]:LoadImage(cg)
+          UICG.SetTransform(self._imgRoleList[i].gameObject.transform, self:GetName(), cg)
+          UICG.SetTransform(self._imgShadowList[i].gameObject.transform, self:GetName(), cg)
+        end
+        for i = #self._matchPetData + 1, 5 do
+          self._imgRoleList[i].transform.parent.parent.gameObject:SetActive(false)
+        end
+      else
+        local cg = self._matchPetData[1]:GetPetBattleResultCG(PetSkinEffectPath.BODY_BATTLE_RESULT)
+        cg = cg or self._matchPetData[1]:GetPetStaticBody(PetSkinEffectPath.BODY_BATTLE_RESULT)
+        self._imgRole:LoadImage(cg)
+        UICG.SetTransform(self._imgRole.gameObject.transform, self:GetName(), cg)
+      end
+      local cfg
+      local phraseId = self._matchPetData[1]:GetSkinId()
+      cfg = Cfg.pet_phrase[phraseId]
+      if not cfg then
+        phraseId = self._matchPetData[1]._cfg_pet.ID
+        cfg = Cfg.pet_phrase[phraseId]
+      end
+      if not cfg then
+        return
+      end
+      local awaken
+      local currentGrade = self._matchPetData[1]:GetPetGrade()
+      if currentGrade == 3 then
+        awaken = true
+      else
+        awaken = false
+      end
+      local left
+      if awaken then
+        left = cfg.AwakenDir == 0
+      else
+        left = cfg.Dir == 0
+      end
+      local useDialogTxt = left and self._dialogLeftTxt or self._dialogRightTxt
+      local pos
+      if awaken then
+        pos = cfg.AwakenPos
+      else
+        pos = cfg.Pos
+      end
+      local posTbl = table.tonumber(string.split(pos, "|"))
+      if left then
+        self._dialogLeftGO.transform.localPosition = Vector2(posTbl[1], posTbl[2])
+      else
+        self._dialogRightGO.transform.localPosition = Vector2(posTbl[1], posTbl[2])
+      end
+      self._dialogLeftGO:SetActive(left)
+      self._dialogRightGO:SetActive(not left)
+      local str = self._isWin and cfg.CompletePhrase or cfg.FailPhrase
+      local trueStr = HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(str))
+      useDialogTxt:SetText(trueStr)
+      local csf = useDialogTxt.transform.parent:GetComponent("ContentSizeFitter")
+      local rect = useDialogTxt.rectTransform.parent:GetComponent("RectTransform")
+      local textWidth = 570
+      if textWidth <= useDialogTxt.preferredWidth then
+        csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained
+        rect.sizeDelta = Vector2(textWidth, rect.sizeDelta.y)
+      else
+        csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize
+      end
+    end
+  end
+  if MatchType.MT_Campaign == self._enterData._match_type then
+    if self:IsSummerActivityTwo(self._enterData) then
+      self._expParent:SetActive(false)
+      self._summerTwoScore:SetActive(true)
+      self._summerTwoNameGo:SetActive(true)
+      self._summerTwoScoreBgGo:SetActive(true)
+      self._stageTitle:SetActive(false)
+      self._awardParent:SetActive(false)
+      for i = 1, #self._starRootGOList do
+        self._starRootGOList[i]:SetActive(false)
+      end
+      local missionInfo = self._enterData:GetMissionCreateInfo()
+      local missionId = missionInfo.nCampaignMissionId
+      local componentId = missionInfo.CampaignMissionParams
+      if not componentId then
+        return
+      end
+      local cfgs = Cfg.cfg_component_summer_ii_mission({
+        CampaignMissionId = missionId,
+        ComponentID = componentId[1]
+      })
+      if cfgs == nil or #cfgs <= 0 then
+        return
+      end
+      local cfg = cfgs[1]
+      local levelType = cfg.LevelType
+      local missionCfgs = Cfg.cfg_campaign_mission({CampaignMissionId = missionId})
+      if missionCfgs == nil or #missionCfgs <= 0 then
+        return
+      end
+      local misionCfg = missionCfgs[1]
+      local name = StringTable.Get(misionCfg.Name)
+      if levelType == UISummerActivity2LevelType.Normal then
+        self._summerTwoScoreBgGo:SetActive(false)
+        self._summerTwoNameGo:SetActive(false)
+        self._stageTitle:SetActive(true)
+        if self._isWin then
+          self._awardParent:SetActive(true)
+        else
+          self._awardParent:SetActive(false)
+        end
+      else
+        self._summerTwoNameBgImg:LoadImage(UISummerActivityTwoConst.BattleResultEntryBg)
+        self._summerTwoStageNameLabel.text = name
+        if self._isWin then
+          local campaignModule = GameGlobal.GetModule(CampaignModule)
+          local progress = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_SUMMER_II)
+          local missionComponent = progress:GetComponent(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
+          local hasPass = missionComponent:GetHistoryMissionPassStatus(missionId)
+          local affixList = self._enterData:GetAffixList()
+          local hardId = self._enterData:GetHardIndex()
+          local currentScore = UISummerActivityTwoLevelDatas.CalcScoreByCfg(hardId, affixList, cfg)
+          local affixArr = missionComponent:GetHistoryHighAffix(missionId)
+          local hardIdHis = missionComponent:GetHistoryHighHard(missionId)
+          local historyScore = 0
+          if hasPass and hardIdHis then
+            historyScore = UISummerActivityTwoLevelDatas.CalcScoreByCfg(hardIdHis, affixArr, cfg)
+          end
+          self._summerTwoScoreIcon1Img:LoadImage(UISummerActivityTwoConst.EntryIcon)
+          self._summerTwoScoreIcon2Img:LoadImage(UISummerActivityTwoConst.EntryIcon)
+          self._summerTwoScore1Label.text = historyScore
+          self._summerTwoScoreShadown1Label.text = historyScore
+          self._summerTwoScore2Label.text = currentScore
+          self._summerTwoScoreShadown2Label.text = currentScore
+          self._summerTwoScoreShadown1Label.color = self._summerLevelTypeToScoreColor[levelType]
+          self._summerTwoScoreShadown2Label.color = self._summerLevelTypeToScoreColor[levelType]
+          self._summerTwoScoreHistoryGo:SetActive(true)
+          self._summerTwoScoreCurrentGo:SetActive(true)
+          GameGlobal.TaskManager():StartTask(self.PlaySummerTwoResultAnim, self, currentScore >= historyScore)
+        else
+          self._summerTwoScoreBgGo:SetActive(false)
+        end
+      end
+      local againFightBtn = self:GetGameObject("againBtnRoot")
+      againFightBtn:SetActive(false)
+    elseif self:IsN21CC(self._enterData) then
+      self._expParent:SetActive(false)
+      self._stageTitle:SetActive(false)
+      self._awardParent:SetActive(false)
+      for i = 1, #self._starRootGOList do
+        self._starRootGOList[i]:SetActive(false)
+      end
+      self._n21CCNameGo:SetActive(true)
+      self._n21CCScoreGo:SetActive(true)
+      local againFightBtn = self:GetGameObject("againBtnRoot")
+      againFightBtn:SetActive(false)
+      local missionInfo = self._enterData:GetMissionCreateInfo()
+      local missionId = missionInfo.nCampaignMissionId
+      local componentId = missionInfo.CampaignMissionParams
+      if not componentId then
+        return
+      end
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      local progress = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N21_CHALLENGE)
+      local component = progress:GetComponent(ECampaignN21ChallengeComponentID.CHALLENGE)
+      local cfgs1 = Cfg.cfg_component_challenge_mission({
+        ComponentID = component:GetComponentCfgId(),
+        CampaignMissionId = missionId
+      })
+      if cfgs1 == nil or #cfgs1 <= 0 then
+        return
+      end
+      local cfg1 = cfgs1[1]
+      local name = StringTable.Get(cfg1.MonsterName)
+      self._n21CCStageNameLabel:SetText(name)
+      if self._isWin then
+        local historyScore = UIActivityN21CCConst.GetHistoryScore(missionId)
+        self._n21CCHistoryScoreLabel:SetText(historyScore)
+        local currentScore = component:GetScore(cfg1.LeveIndex)
+        self._n21CCCurrentScoreLabel:SetText(currentScore)
+      else
+        self._n21CCScoreGo:SetActive(false)
+      end
+    elseif self:IsCn20N49LineTalent(self._enterData) then
+      local matchResult = self:_GetMatchResult()
+      self._starConditionGO:SetActive(true)
+      self:_FillCN20N49LineTalentStars()
+      self._expParent:SetActive(false)
+      self:_HideExpAndMoveUpRewards(true)
+    elseif self:_NeedHideExpAndMoveUpReards(self._enterData) then
+      self._expParent:SetActive(false)
+      self:_HideExpAndMoveUpRewards(true)
+    else
+      self._summerTwoScore:SetActive(false)
+      self._summerTwoNameGo:SetActive(false)
+      self._summerTwoScoreBgGo:SetActive(false)
+      self._n5Left:SetActive(false)
+      self._n5Right:SetActive(false)
+      self._worldBoss:SetActive(false)
+    end
+    local isAir = self:GetModule(AircraftModule):IsAircraftCartridgeMission(self._enterData:GetCampaignMissionInfo().nMissionComId)
+    self:_HideExpAndMoveUpRewards(isAir)
+    self:_ActivityResult(self._enterData)
+  elseif MatchType.MT_SailingMission == self._enterData._match_type then
+    self._expParent:SetActive(false)
+    self._stageTitle:SetActive(false)
+    self._awardParent:SetActive(false)
+    for i = 1, #self._starRootGOList do
+      self._starRootGOList[i]:SetActive(false)
+    end
+    local againFightBtn = self:GetGameObject("againBtnRoot")
+    againFightBtn:SetActive(false)
+    local matchResult = self:_GetMatchResult()
+    if self._isWin then
+      self:StartTask(self.PlaySailingAnim, self, matchResult)
+    end
+    local bg = self:GetGameObject("UISailBg")
+    bg:SetActive(true)
+  elseif MatchType.MT_MiniMaze == self._enterData._match_type then
+    self._expParent:SetActive(false)
+    self._stageTitle:SetActive(false)
+    self._awardParent:SetActive(false)
+    for i = 1, #self._starRootGOList do
+      self._starRootGOList[i]:SetActive(false)
+    end
+    local againFightBtn = self:GetGameObject("againBtnRoot")
+    againFightBtn:SetActive(false)
+    local matchResult = self:_GetMatchResult()
+    self:StartTask(self.PlayVampireAnim, self, matchResult)
+  elseif MatchType.MT_BlackFist == self._enterData._match_type then
+    local isAir = self:GetModule(AircraftModule):IsAircraftCartridgeMission(self._enterData:GetBlackFistInfo().component_id)
+    local isN8CombatSimulator = self:_IsActivityN8(self._enterData) == 2
+    self:_HideExpAndMoveUpRewards(isAir or isN8CombatSimulator)
+  elseif MatchType.MT_Conquest == self._enterData._match_type then
+    local matchResult = self:_GetMatchResult()
+    self._n5Left:SetActive(true)
+    self._n5Right:SetActive(true)
+    self._worldBoss:SetActive(false)
+    self._starConditionGO:SetActive(false)
+    self._awardParent:SetActive(false)
+    local cfg = Cfg.cfg_component_battlefield({
+      CampaignMissionID = matchResult.m_nID
+    })
+    if cfg then
+      self._difficultyImage:LoadImage(BattleFieldDifficultyImg.DifficultyImg[cfg[1].Index])
+      self._n5StageName:SetText(StringTable.Get(cfg[1].MissionName))
+      self._n5StageDifficulty:SetText(StringTable.Get(BattleFieldDifficultyText.DifficultyText[cfg[1].Index]))
+    end
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    local progress = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N5)
+    local leftValue = matchResult.m_vecAwardNormal.count
+    local rightValue = progress:GetRecordMilitaryExploit(matchResult.m_nID)
+    self._militaryExploitLeftValue:SetText(leftValue)
+    self._militaryExploitRightValue:SetText(rightValue)
+    if leftValue > rightValue then
+      self._n5RightAnimation:Play("uieff_N5_Result_Left")
+    else
+      self._n5RightAnimation:Play("uieff_N5_Result_Right")
+    end
+  elseif MatchType.MT_WorldBoss == self._enterData._match_type then
+    self._n5Left:SetActive(false)
+    self._n5Right:SetActive(false)
+    self._awardParent:SetActive(false)
+    self._starConditionGO:SetActive(true)
+    local worldBossModule = self:GetModule(WorldBossModule)
+    local matchResult = self:_GetMatchResult()
+    if worldBossModule:TeamMemberChange() and 0 < matchResult.m_damage then
+      self:Lock("UIBattleResultComplete_WorldBoss")
+      self:StartTask(function(TT)
+        YIELD(TT, 3167)
+        self:_ShowRecordChoice(worldBossModule, matchResult)
+        self:UnLock("UIBattleResultComplete_WorldBoss")
+      end, self)
+    else
+      self:_DelayShowWorldBossDamage(worldBossModule, matchResult, false, false)
+    end
+  elseif MatchType.MT_DifficultyMission == self._enterData._match_type then
+    local matchResult = self:_GetMatchResult()
+    self._diffItem = self._diffRoot:SpawnObject("UIDiffResultRoot")
+    local stageName = matchResult.m_stShowName
+    local enties = matchResult.m_enties
+    local nodeid = matchResult.m_parent_mission_id
+    local stageid = matchResult.m_nID
+    self._diffItem:SetData(stageid, stageName, enties, nodeid)
+    self:_HideExpAndMoveUpRewards(self._isWin)
+    local starCondition = self:GetUIComponent("RectTransform", "StarCondition")
+    starCondition.anchoredPosition = Vector2(0, -50)
+  elseif MatchType.MT_Season == self._enterData._match_type then
+    self:_HideExpAndMoveUpRewards(true)
+  elseif MatchType.MT_SeasonMaze == self._enterData._match_type then
+    local matchResult = self:_GetMatchResult()
+    local seasonMazeObj = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj()
+    local seasonMazeComponent = seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+    local seasonMazeComponentInfo = seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+    self:_HideExpAndMoveUpRewards(true)
+    if matchResult.m_nID == seasonMazeComponentInfo.m_world_boss_info.cfg_id then
+      local cfg = Cfg.cfg_season_maze_mission[matchResult.m_nID]
+      self._stageTitleTxt:SetText(StringTable.Get(cfg.MissionName))
+      self._n5Left:SetActive(false)
+      self._n5Right:SetActive(false)
+      self._awardParent:SetActive(false)
+      self._worldBoss:SetActive(true)
+      local oldDamge = matchResult.m_last_damage
+      local newDamage = matchResult.m_damage
+      local oldDamgeStr = HelperProxy:GetInstance():SMazeDamageUnit(oldDamge)
+      local newDamageStr = HelperProxy:GetInstance():SMazeDamageUnit(newDamage)
+      self._damgeLeftValue:SetText(newDamageStr)
+      self._damageRightValue:SetText(oldDamgeStr)
+      self:Lock("UIBattleResultComplete_DelayWorldBoss")
+      self:StartTask(function(TT)
+        if 0 < newDamage then
+          YIELD(TT, 1500)
+        end
+        if oldDamge >= newDamage then
+          self._arrowRect.localRotation = Quaternion.Euler(0, -180, 0)
+          self._worldBossAnimation:Play("uieff_WorldBoss_Result_Right")
+        else
+          self._worldBossAnimation:Play("uieff_WorldBoss_Result_Left")
+        end
+        self:UnLock("UIBattleResultComplete_DelayWorldBoss")
+      end, self)
+    else
+      self._starConditionGO:SetActive(false)
+      local smMissionCfg = Cfg.cfg_season_maze_mission({
+        SeasonMazeMissionId = matchResult.m_nID
+      })[1]
+      if not (smMissionCfg.Type == 2 and self._isWin) then
+        goto lbl_4105
+      end
+      local bossInfos = seasonMazeComponentInfo.boss_info
+      local bossIndex = 0
+      local bossCount = table.count(bossInfos)
+      for i = 0, bossCount - 1 do
+        local info = bossInfos[i]
+        if info.do_cnt ~= -1 then
+          break
+        end
+        bossIndex = bossIndex + 1
+      end
+      self._seasonMazeTaskObj:SetActive(true)
+      self._seasonMazeConditionText:SetText(StringTable.Get("str_season_maze_result_scores_tips", bossIndex))
+      local cfgs = Cfg.cfg_component_season_maze({
+        ComponentID = seasonMazeComponent:GetComponentCfgId()
+      })
+      local cfg
+      if cfgs and table.count(cfgs) > 0 then
+        for _, v in pairs(cfgs) do
+          if v.Hard == seasonMazeComponentInfo.hard then
+            cfg = v
+          end
+        end
+      end
+      if cfg then
+        local rewardID = cfg.BossReward[bossIndex]
+        local cfgs = Cfg.cfg_component_season_maze_effect({ID = rewardID})
+        if cfgs and #cfgs > 0 then
+          local cfg = cfgs[1]
+          for _, v in pairs(cfg.EffectList) do
+            if v[2] == SeasonMazeAttrType.SMAT_Score then
+              local score = v[3]
+              self._seasonMazeConditionScore:SetText(score)
             end
           end
         end
       end
     end
+  else
+    self._summerTwoScore:SetActive(false)
+    self._summerTwoNameGo:SetActive(false)
+    self._summerTwoScoreBgGo:SetActive(false)
+    self._n5Left:SetActive(false)
+    self._n5Right:SetActive(false)
+    self._worldBoss:SetActive(false)
   end
+  ::lbl_4105::
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.IsPopStarNormalLevel = function(self, matchResult)
-  -- function num : 0_14 , upvalues : _ENV
+function UIBattleResultComplete:IsPopStarNormalLevel(matchResult)
   if matchResult.m_nMatchType ~= MatchType.MT_PopStar then
     return false
   end
-  local missionInfo = (self._enterData):GetMissionCreateInfo()
+  local missionInfo = self._enterData:GetMissionCreateInfo()
   local missionId = missionInfo.mission_id
   local componentId = missionInfo.CampaignMissionParams
-  local cfgs = (Cfg.cfg_component_popstar_mission)({MissionID = missionId, ComponentID = componentId[1]})
+  local cfgs = Cfg.cfg_component_popstar_mission({
+    MissionID = missionId,
+    ComponentID = componentId[1]
+  })
   local cfg = cfgs[1]
   if cfg.Type == 1 then
     return true
@@ -2009,17 +1624,17 @@ UIBattleResultComplete.IsPopStarNormalLevel = function(self, matchResult)
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.IsPopStarChallengeLevel = function(self, matchResult)
-  -- function num : 0_15 , upvalues : _ENV
+function UIBattleResultComplete:IsPopStarChallengeLevel(matchResult)
   if matchResult.m_nMatchType ~= MatchType.MT_PopStar then
     return false
   end
-  local missionInfo = (self._enterData):GetMissionCreateInfo()
+  local missionInfo = self._enterData:GetMissionCreateInfo()
   local missionId = missionInfo.mission_id
   local componentId = missionInfo.CampaignMissionParams
-  local cfgs = (Cfg.cfg_component_popstar_mission)({MissionID = missionId, ComponentID = componentId[1]})
+  local cfgs = Cfg.cfg_component_popstar_mission({
+    MissionID = missionId,
+    ComponentID = componentId[1]
+  })
   local cfg = cfgs[1]
   if cfg.Type == 2 then
     return true
@@ -2027,14 +1642,11 @@ UIBattleResultComplete.IsPopStarChallengeLevel = function(self, matchResult)
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.PlayVampireAnim = function(self, TT, matchResult)
-  -- function num : 0_16 , upvalues : _ENV
-  local item = (self._vampireLoader):SpawnObject("UIN25VampireBattleResult")
+function UIBattleResultComplete:PlayVampireAnim(TT, matchResult)
+  local item = self._vampireLoader:SpawnObject("UIN25VampireBattleResult")
   item:SetData(matchResult)
   if self._highLightGO then
-    (self._highLightGO):SetActive(false)
+    self._highLightGO:SetActive(false)
   end
   YIELD(TT, 800)
   local eff1 = self:GetGameObject("eff_N25_01")
@@ -2046,18 +1658,15 @@ UIBattleResultComplete.PlayVampireAnim = function(self, TT, matchResult)
     eff2:SetActive(true)
   end
   if self._highLightGO then
-    (self._highLightGO):SetActive(false)
+    self._highLightGO:SetActive(false)
   end
   item:PlayAnim(TT, matchResult)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.PlaySailingAnim = function(self, TT, matchResult)
-  -- function num : 0_17 , upvalues : _ENV
+function UIBattleResultComplete:PlaySailingAnim(TT, matchResult)
   YIELD(TT, 2250)
-  local sailingMissionModule = (GameGlobal.GetModule)(SailingMissionModule)
-  local item = (self._sailingLoader):SpawnObject("UISailingBattleResultItem")
+  local sailingMissionModule = GameGlobal.GetModule(SailingMissionModule)
+  local item = self._sailingLoader:SpawnObject("UISailingBattleResultItem")
   item:Refresh(matchResult)
   YIELD(TT, 666)
   local historyCount = sailingMissionModule:GetCacheHistoryMissionCount()
@@ -2067,38 +1676,25 @@ UIBattleResultComplete.PlaySailingAnim = function(self, TT, matchResult)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._ShowRecordChoice = function(self, worldBossModule, matchResult)
-  -- function num : 0_18
+function UIBattleResultComplete:_ShowRecordChoice(worldBossModule, matchResult)
   self:ShowDialog("UIWorldBossRecordChoice", matchResult.m_damage, function(choiceOld)
-    -- function num : 0_18_0 , upvalues : self, worldBossModule, matchResult
     self:_DelayShowWorldBossDamage(worldBossModule, matchResult, true, choiceOld)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._DelayShowWorldBossDamage = function(self, worldBossModule, matchResult, recordChoice, choiceOld)
-  -- function num : 0_19 , upvalues : _ENV
+function UIBattleResultComplete:_DelayShowWorldBossDamage(worldBossModule, matchResult, recordChoice, choiceOld)
   self:Lock("UIBattleResultComplete_DelayWorldBoss")
   self:StartTask(function(TT)
-    -- function num : 0_19_0 , upvalues : recordChoice, matchResult, _ENV, self, worldBossModule, choiceOld
     if not recordChoice and matchResult.m_damage > 0 then
       YIELD(TT, 1500)
     end
     self:_ShowWorldBossDamage(worldBossModule, matchResult, recordChoice, choiceOld)
     self:UnLock("UIBattleResultComplete_DelayWorldBoss")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._ShowWorldBossDamage = function(self, worldBossModule, matchResult, recordChoice, choiceOld)
-  -- function num : 0_20 , upvalues : _ENV
-  (self._worldBoss):SetActive(true)
+function UIBattleResultComplete:_ShowWorldBossDamage(worldBossModule, matchResult, recordChoice, choiceOld)
+  self._worldBoss:SetActive(true)
   local record = worldBossModule:GetRecordByTeamIndex(worldBossModule:GetCurSelectTeamIndex())
   local oldDamge = 0
   if record then
@@ -2108,216 +1704,154 @@ UIBattleResultComplete._ShowWorldBossDamage = function(self, worldBossModule, ma
   if choiceOld then
     newDamage = oldDamge
   end
-  ;
-  (self._damgeLeftValue):SetText(newDamage)
-  ;
-  (self._damageRightValue):SetText(oldDamge)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-  if matchResult.m_damage < oldDamge and not recordChoice then
-    (self._arrowRect).localRotation = (Quaternion.Euler)(0, -180, 0)
-    ;
-    (self._worldBossAnimation):Play("uieff_WorldBoss_Result_Right")
+  self._damgeLeftValue:SetText(newDamage)
+  self._damageRightValue:SetText(oldDamge)
+  if oldDamge > matchResult.m_damage and not recordChoice then
+    self._arrowRect.localRotation = Quaternion.Euler(0, -180, 0)
+    self._worldBossAnimation:Play("uieff_WorldBoss_Result_Right")
   else
-    ;
-    (self._worldBossAnimation):Play("uieff_WorldBoss_Result_Left")
+    self._worldBossAnimation:Play("uieff_WorldBoss_Result_Left")
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.PlaySummerTwoResultAnim = function(self, TT, isLeft)
-  -- function num : 0_21 , upvalues : _ENV
+function UIBattleResultComplete:PlaySummerTwoResultAnim(TT, isLeft)
   self:Lock("UIBattleResultComplete_PlaySummerTwoResultAnim")
   YIELD(TT, 2700)
   if isLeft then
-    (self._summerTwoAnim):Play("uieff_SummerTwoScore_leftin")
+    self._summerTwoAnim:Play("uieff_SummerTwoScore_leftin")
   else
-    ;
-    (self._summerTwoAnim):Play("uieff_SummerTwoScore_right")
+    self._summerTwoAnim:Play("uieff_SummerTwoScore_right")
   end
   self:UnLock("UIBattleResultComplete_PlaySummerTwoResultAnim")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.Shot = function(self, callback)
-  -- function num : 0_22 , upvalues : _ENV
+function UIBattleResultComplete:Shot(callback)
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local shotRect = self:GetUIComponent("RectTransform", "screenShot")
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._shot).width = (shotRect.rect).width
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._shot).height = (shotRect.rect).height
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
-  ;
-  (self._shot):CleanRenderTexture()
-  local cacheRt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  local rt = (self._shot):RefreshBlurTexture()
+  self._shot.width = shotRect.rect.width
+  self._shot.height = shotRect.rect.height
+  self._shot.blurTimes = 0
+  self._shot:CleanRenderTexture()
+  local cacheRt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  local rt = self._shot:RefreshBlurTexture()
   self:StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : _ENV, rt, cacheRt, callback
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cacheRt)
+    UnityEngine.Graphics.Blit(rt, cacheRt)
     if callback then
       callback(cacheRt)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.Dispose = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIBattleResultComplete:Dispose()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
     self._shot = nil
   end
-  ;
-  (UIBattleResultComplete.super):Dispose()
+  UIBattleResultComplete.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.bgOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIBattleResultComplete", input = "bgOnClick", 
-args = {}
-})
+function UIBattleResultComplete:bgOnClick()
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIBattleResultComplete",
+    input = "bgOnClick",
+    args = {}
+  })
   if not self:_IsAllTaskOver() or not self._expIncreaseAnimEnd then
-    return 
+    return
   end
-  local md = (GameGlobal.GetModule)(SerialAutoFightModule)
+  local md = GameGlobal.GetModule(SerialAutoFightModule)
   if md:IsRunning() then
-    return 
+    return
   end
-  ;
-  (Log.debug)("###[CommonConver] start click battle result !")
-  local autoConversionList = ((GameGlobal.GetModule)(ItemModule)):GetConverList()
+  Log.debug("###[CommonConver] start click battle result !")
+  local autoConversionList = GameGlobal.GetModule(ItemModule):GetConverList()
   if autoConversionList and next(autoConversionList) then
-    (Log.debug)("###[CommonConver] 有转化道具")
+    Log.debug("###[CommonConver] 有转化道具")
     self:ShowDialog("UICommonConversionController", autoConversionList)
-    return 
+    return
   else
-    ;
-    (Log.debug)("###[CommonConver] 无转化道具")
+    Log.debug("###[CommonConver] 无转化道具")
   end
-  if (UISeasonHelper.TrySeasonBattleExit)((self._enterData)._match_type, self._isWin) then
-    (Log.info)("赛季退局")
-    return 
-  else
-    if (((GameGlobal.GetModule)(SeasonMazeModule)):UIModule()):TryExitBattle(self._enterData, self._isWin) then
-      (Log.info)("赛季秘境退局")
-      return 
-    end
+  if UISeasonHelper.TrySeasonBattleExit(self._enterData._match_type, self._isWin) then
+    Log.info("赛季退局")
+    return
+  elseif GameGlobal.GetModule(SeasonMazeModule):UIModule():TryExitBattle(self._enterData, self._isWin) then
+    Log.info("赛季秘境退局")
+    return
   end
   self:Shot(function(rt)
-    -- function num : 0_24_0 , upvalues : _ENV
-    ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Exit_Core_Game, nil, rt)
-  end
-)
+    GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Exit_Core_Game, nil, rt)
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.againFightBtnOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  (GameGlobal:GetInstance()):ExitCoreGame()
+function UIBattleResultComplete:againFightBtnOnClick()
+  GameGlobal:GetInstance():ExitCoreGame()
   local matchModule = self:GetModule(MatchModule)
   local matchData = matchModule:GetMatchEnterData()
   local missionId = matchData:GetLevelID()
   local isChess = matchData:GetMatchType() == MatchType.MT_Chess
   if isChess then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUIBattleStart)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUIBattleStart)
     self:Lock("DoEnterMatch")
-    local game = (GameGlobal.GetModule)(GameMatchModule)
-    do
-      local matchType = MatchType.MT_Chess
-      local teamId = 1
-      local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-      local progress = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_CHESS)
-      local chessComponent = progress:GetComponent(ECampaignChessComponentID.ECAMPAIGN_CHESS_MISSION)
-      if not chessComponent then
-        progress = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N29)
-        chessComponent = progress:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_CHESS)
+    local game = GameGlobal.GetModule(GameMatchModule)
+    local matchType = MatchType.MT_Chess
+    local teamId = 1
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    local progress = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_CHESS)
+    local chessComponent = progress:GetComponent(ECampaignChessComponentID.ECAMPAIGN_CHESS_MISSION)
+    if not chessComponent then
+      progress = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N29)
+      chessComponent = progress:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_CHESS)
+    end
+    local parmas = {}
+    table.insert(parmas, missionId)
+    table.insert(parmas, ECampaignMissionComponentId.ECampaignMissionComponentId_ChessMission)
+    table.insert(parmas, chessComponent:GetCampaignMissionParamKeyMap())
+    local createInfo = game:GetMatchCreateInfo(matchType, parmas)
+    self:StartTask(function(TT)
+      local res = game:StartMatchTask(TT, matchType, teamId, createInfo)
+      if not res:GetSucc() then
+        ToastManager.ShowToast(game:GetErrorMsg(res:GetResult()))
+        self:SwitchState(UIStateType.UIMain)
+        self:UnLock("DoEnterMatch")
+      else
+        self:UnLock("DoEnterMatch")
       end
-      local parmas = {}
-      ;
-      (table.insert)(parmas, missionId)
-      ;
-      (table.insert)(parmas, ECampaignMissionComponentId.ECampaignMissionComponentId_ChessMission)
-      ;
-      (table.insert)(parmas, chessComponent:GetCampaignMissionParamKeyMap())
-      local createInfo = game:GetMatchCreateInfo(matchType, parmas)
-      self:StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : game, matchType, teamId, createInfo, _ENV, self
-    local res = game:StartMatchTask(TT, matchType, teamId, createInfo)
-    if not res:GetSucc() then
-      (ToastManager.ShowToast)(game:GetErrorMsg(res:GetResult()))
-      self:SwitchState(UIStateType.UIMain)
-      self:UnLock("DoEnterMatch")
-    else
-      self:UnLock("DoEnterMatch")
-    end
-  end
-, self)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSetGraphicRaycaster, true)
-      return 
-    end
+    end, self)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSetGraphicRaycaster, true)
+    return
   end
   local missionModule = self:GetModule(MissionModule)
   local ctx = missionModule:TeamCtx()
   ctx:SetFightAgain(true)
   ctx:ShowDialogUITeams(true)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._SetNextFightBtn = function(self, matchRes)
-  -- function num : 0_26 , upvalues : _ENV
-  do
-    if EDITOR then
-      local testRobot = (GameGlobal.GetModule)(TestRobotModule)
-      if testRobot and testRobot:GetIsEnableRobot() then
-        return 
-      end
+function UIBattleResultComplete:_SetNextFightBtn(matchRes)
+  if EDITOR then
+    local testRobot = GameGlobal.GetModule(TestRobotModule)
+    if testRobot and testRobot:GetIsEnableRobot() then
+      return
     end
-    local autoFightModule = self:GetModule(SerialAutoFightModule)
-    if autoFightModule:IsRunning() then
-      return 
-    end
-    local towerModule = self:GetModule(TowerModule)
-    local isActive = towerModule:IsNextStageActive(matchRes.m_nID)
-    local isFirstWin = (table.count)(matchRes.m_vecFirstPassAward) ~= 0
-    local isShow = not self._isWin or not isFirstWin or isActive
-    ;
-    (self:GetGameObject("nextBtnRoot")):SetActive(isShow)
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
   end
+  local autoFightModule = self:GetModule(SerialAutoFightModule)
+  if autoFightModule:IsRunning() then
+    return
+  end
+  local towerModule = self:GetModule(TowerModule)
+  local isActive = towerModule:IsNextStageActive(matchRes.m_nID)
+  local isFirstWin = table.count(matchRes.m_vecFirstPassAward) ~= 0
+  local isShow = self._isWin and isFirstWin and isActive
+  self:GetGameObject("nextBtnRoot"):SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.PrepareNextFightTeams_Tower = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (GameGlobal:GetInstance()):ExitCoreGame()
+function UIBattleResultComplete:PrepareNextFightTeams_Tower()
+  GameGlobal:GetInstance():ExitCoreGame()
   local matchRes = self:_GetMatchResult()
-  local ctx = (self:GetModule(MissionModule)):TeamCtx()
-  local towerModule = (GameGlobal.GetModule)(TowerModule)
+  local ctx = self:GetModule(MissionModule):TeamCtx()
+  local towerModule = GameGlobal.GetModule(TowerModule)
   local nextCfg = towerModule:GetNextStageCfg(matchRes.m_nID)
   local ceiling = nextCfg.PetNumber
   local elememt = nextCfg.Type
@@ -2329,70 +1863,58 @@ UIBattleResultComplete.PrepareNextFightTeams_Tower = function(self)
   local team = teams:Get(curTeamId)
   local petsList = team.pets
   local count = 0
-  for _,id in ipairs(petsList) do
-    if id > 0 then
+  for _, id in ipairs(petsList) do
+    if 0 < id then
       count = count + 1
     end
   end
   local towerTeamCeiling = ctx:GetTowerTeamCeiling()
-  do
-    if count < towerTeamCeiling then
-      local tips = {[ElementType.ElementType_Blue] = "str_tower_pet_count_error_water", [ElementType.ElementType_Red] = "str_tower_pet_count_error_fire", [ElementType.ElementType_Green] = "str_tower_pet_count_error_wood", [ElementType.ElementType_Yellow] = "str_tower_pet_count_error_thunder"}
-      ;
-      (ToastManager.ShowToast)((string.format)((StringTable.Get)(tips[ctx:GetTowerElement()]), towerTeamCeiling))
-      return 
-    end
-    return ctx
+  if count < towerTeamCeiling then
+    local tips = {
+      [ElementType.ElementType_Blue] = "str_tower_pet_count_error_water",
+      [ElementType.ElementType_Red] = "str_tower_pet_count_error_fire",
+      [ElementType.ElementType_Green] = "str_tower_pet_count_error_wood",
+      [ElementType.ElementType_Yellow] = "str_tower_pet_count_error_thunder"
+    }
+    ToastManager.ShowToast(string.format(StringTable.Get(tips[ctx:GetTowerElement()]), towerTeamCeiling))
+    return
   end
+  return ctx
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.NextFightTeams_Tower = function(self)
-  -- function num : 0_28
+function UIBattleResultComplete:NextFightTeams_Tower()
   local ctx = self:PrepareNextFightTeams_Tower()
   if ctx then
     ctx:ShowDialogUITeams(true)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.NextFightBtnOnClick = function(self, go)
-  -- function num : 0_29 , upvalues : _ENV
+function UIBattleResultComplete:NextFightBtnOnClick(go)
   local ctx = self:PrepareNextFightTeams_Tower()
   if not ctx then
-    return 
+    return
   end
-  local gameMatchModule = (GameGlobal.GetModule)(GameMatchModule)
+  local gameMatchModule = GameGlobal.GetModule(GameMatchModule)
   local createInfo = gameMatchModule:GetMatchCreateInfo(MatchType.MT_Tower, ctx:GetTowerLayerID())
   local curTeamId = ctx:GetCurrTeamId()
   local lockName = "DoEnterMatch"
   self:Lock(lockName)
   self:StartTask(function(TT)
-    -- function num : 0_29_0 , upvalues : gameMatchModule, _ENV, curTeamId, createInfo, self, lockName
     local res = gameMatchModule:StartMatchTask(TT, MatchType.MT_Tower, curTeamId, createInfo)
     self:UnLock(lockName)
     if not res:GetSucc() then
-      (ToastManager.ShowToast)(gameMatchModule:GetErrorMsg(res:GetResult()))
+      ToastManager.ShowToast(gameMatchModule:GetErrorMsg(res:GetResult()))
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.btnSerialAutoFightOnClick = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIBattleResultComplete:btnSerialAutoFightOnClick()
   self:ShowDialog("UISerialAutoFightInfo", OpenUISerialFightInfoState.OutGame)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._IsAllTaskOver = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  for k,taskID in pairs(self._taskIDList) do
-    local task = ((GameGlobal.TaskManager)()):FindTask(taskID)
+function UIBattleResultComplete:_IsAllTaskOver()
+  for k, taskID in pairs(self._taskIDList) do
+    local task = GameGlobal.TaskManager():FindTask(taskID)
     if task ~= nil then
       return false
     end
@@ -2400,11 +1922,8 @@ UIBattleResultComplete._IsAllTaskOver = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._DisplayExpUp = function(self, TT, curValue, targetValue, startLv, matchResRoleInfo)
-  -- function num : 0_32 , upvalues : _ENV
-  while not (TaskHelper:GetInstance()):IsTaskFinished(self._3StarTaskID) do
+function UIBattleResultComplete:_DisplayExpUp(TT, curValue, targetValue, startLv, matchResRoleInfo)
+  while not TaskHelper:GetInstance():IsTaskFinished(self._3StarTaskID) do
     YIELD(TT)
   end
   YIELD(TT, 2200)
@@ -2412,303 +1931,203 @@ UIBattleResultComplete._DisplayExpUp = function(self, TT, curValue, targetValue,
   self._expIncreaseAnimEnd = false
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._DisplayExpUpRecursively = function(self, TT, startValue, targetValue, curLv, startLv, matchResRoleInfo)
-  -- function num : 0_33 , upvalues : _ENV
-  local lvProp = (Cfg.cfg_role_level)[curLv]
+function UIBattleResultComplete:_DisplayExpUpRecursively(TT, startValue, targetValue, curLv, startLv, matchResRoleInfo)
+  local lvProp = Cfg.cfg_role_level[curLv]
   if not lvProp then
-    return 
+    return
   end
-  local curLvStartExp = (HelperProxy:GetInstance()):GetLevelExp(curLv)
+  local curLvStartExp = HelperProxy:GetInstance():GetLevelExp(curLv)
   local sliderStartValue = startValue - curLvStartExp
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._expSlider).maxValue = lvProp.NeedExp
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._expSlider).value = sliderStartValue
+  self._expSlider.maxValue = lvProp.NeedExp
+  self._expSlider.value = sliderStartValue
   local curLvMaxExp = curLvStartExp + lvProp.NeedExp
   local sliderTargetValue = targetValue - curLvStartExp
-  if curLvMaxExp <= targetValue then
+  if targetValue >= curLvMaxExp then
     local curLvTargetValue = lvProp.NeedExp
-    do
-      (((self._expSlider):DOValue(curLvTargetValue, self._expIncreaseAnimTime, false)):OnUpdate(function()
-    -- function num : 0_33_0 , upvalues : self, _ENV, curLvTargetValue
-    (self._expTxt):SetText("<color=#D8D8D8>" .. (math.floor)((self._expSlider).value) .. "</color><color=#00F8FF>/</color><color=#D8D8D8>" .. curLvTargetValue .. "</color>")
-  end
-)):OnComplete(function()
-    -- function num : 0_33_1 , upvalues : curLv, self, _ENV, startLv, matchResRoleInfo, TT, curLvMaxExp, targetValue
-    local nextLv = curLv + 1
-    ;
-    (self._levelTxt):SetText(nextLv)
-    if (HelperProxy:GetInstance()):GetMaxLevel() <= nextLv then
-      local autoFightModule = self:GetModule(SerialAutoFightModule)
-      if not autoFightModule:IsRunning() then
-        self:ShowDialog("UILevelUp", startLv, nextLv, matchResRoleInfo, function()
-      -- function num : 0_33_1_0 , upvalues : self
-      self:_ShowActivityAward()
-    end
-)
-      end
-      self._expIncreaseAnimEnd = true
-    else
-      do
+    self._expSlider:DOValue(curLvTargetValue, self._expIncreaseAnimTime, false):OnUpdate(function()
+      self._expTxt:SetText("<color=#D8D8D8>" .. math.floor(self._expSlider.value) .. "</color><color=#00F8FF>/</color><color=#D8D8D8>" .. curLvTargetValue .. "</color>")
+    end):OnComplete(function()
+      local nextLv = curLv + 1
+      self._levelTxt:SetText(nextLv)
+      if nextLv >= HelperProxy:GetInstance():GetMaxLevel() then
+        local autoFightModule = self:GetModule(SerialAutoFightModule)
+        if not autoFightModule:IsRunning() then
+          self:ShowDialog("UILevelUp", startLv, nextLv, matchResRoleInfo, function()
+            self:_ShowActivityAward()
+          end)
+        end
+        self._expIncreaseAnimEnd = true
+      else
         self:_DisplayExpUpRecursively(TT, curLvMaxExp, targetValue, nextLv, startLv, matchResRoleInfo)
       end
-    end
-  end
-)
-    end
+    end)
   else
-    do
-      ;
-      (((self._expSlider):DOValue(sliderTargetValue, self._expIncreaseAnimTime, false)):OnUpdate(function()
-    -- function num : 0_33_2 , upvalues : self, _ENV, lvProp
-    (self._expTxt):SetText("<color=#D8D8D8>" .. (math.floor)((self._expSlider).value) .. "</color><color=#00F8FF>/</color><color=#D8D8D8>" .. lvProp.NeedExp .. "</color>")
-  end
-)):OnComplete(function()
-    -- function num : 0_33_3 , upvalues : curLv, startLv, self, _ENV, matchResRoleInfo
-    do
+    self._expSlider:DOValue(sliderTargetValue, self._expIncreaseAnimTime, false):OnUpdate(function()
+      self._expTxt:SetText("<color=#D8D8D8>" .. math.floor(self._expSlider.value) .. "</color><color=#00F8FF>/</color><color=#D8D8D8>" .. lvProp.NeedExp .. "</color>")
+    end):OnComplete(function()
       if curLv ~= startLv then
         local autoFightModule = self:GetModule(SerialAutoFightModule)
         if not autoFightModule:IsRunning() then
           self:ShowDialog("UILevelUp", startLv, curLv, matchResRoleInfo, function()
-      -- function num : 0_33_3_0 , upvalues : self
-      self:_ShowActivityAward()
-    end
-)
+            self:_ShowActivityAward()
+          end)
         end
       end
       self._expIncreaseAnimEnd = true
-    end
-  end
-)
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.ShowItemTips = function(self, itemID, pos)
-  -- function num : 0_34
-  (self._selectItemInfo):SetData(itemID, pos)
+function UIBattleResultComplete:ShowItemTips(itemID, pos)
+  self._selectItemInfo:SetData(itemID, pos)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.BattleNormalResultSortAsset = function(self, assets)
-  -- function num : 0_35 , upvalues : _ENV
+function UIBattleResultComplete:BattleNormalResultSortAsset(assets)
   local dataList = self:GetPassAward()
-  ;
-  (table.sort)(assets, function(a, b)
-    -- function num : 0_35_0 , upvalues : _ENV, self, dataList
-    local ta = (Cfg.cfg_item)[a.assetid]
-    local tb = (Cfg.cfg_item)[b.assetid]
+  table.sort(assets, function(a, b)
+    local ta = Cfg.cfg_item[a.assetid]
+    local tb = Cfg.cfg_item[b.assetid]
     if ta == nil then
-      (Log.error)(" Cfg.cfg_item cant find assetid ", a.assetid)
+      Log.error(" Cfg.cfg_item cant find assetid ", a.assetid)
     end
     if tb == nil then
-      (Log.error)(" Cfg.cfg_item cant find assetid ", b.assetid)
+      Log.error(" Cfg.cfg_item cant find assetid ", b.assetid)
     end
     local aNormal = self:HasItem(dataList, ta.ID)
     local bNormal = self:HasItem(dataList, tb.ID)
-    if ta.Color == tb.Color then
-      if ta.ID >= tb.ID then
-        do return aNormal ~= bNormal end
-        do return tb.Color < ta.Color end
-        do return bNormal < aNormal end
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
+    if aNormal == bNormal then
+      if ta.Color == tb.Color then
+        return ta.ID < tb.ID
+      else
+        return ta.Color > tb.Color
       end
+    else
+      return aNormal > bNormal
     end
-  end
-)
+  end)
   return assets
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.GetPassAward = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local awardHeadType, cfgId = nil, nil
-  if MatchType.MT_Mission == (self._enterData)._match_type then
+function UIBattleResultComplete:GetPassAward()
+  local awardHeadType, cfgId
+  if MatchType.MT_Mission == self._enterData._match_type then
     awardHeadType = AwardHeadType.Mission
-    cfgId = ((self._enterData):GetMissionCreateInfo()).mission_id
-  else
-    if MatchType.MT_ExtMission == (self._enterData)._match_type then
-      awardHeadType = AwardHeadType.ExtMisson
-      local createData = (self._enterData):GetMissionCreateInfo()
-      cfgId = createData.m_nExtTaskID
-    else
-      do
-        if MatchType.MT_ResDungeon == (self._enterData)._match_type then
-          awardHeadType = AwardHeadType.ResInstance
-          local createData = (self._enterData):GetResDungeonInfo()
-          cfgId = createData.res_dungeon_id
-        end
-        do
-          return (UICommonHelper:GetInstance()):GetPassAward(awardHeadType, cfgId)
-        end
-      end
-    end
+    cfgId = self._enterData:GetMissionCreateInfo().mission_id
+  elseif MatchType.MT_ExtMission == self._enterData._match_type then
+    awardHeadType = AwardHeadType.ExtMisson
+    local createData = self._enterData:GetMissionCreateInfo()
+    cfgId = createData.m_nExtTaskID
+  elseif MatchType.MT_ResDungeon == self._enterData._match_type then
+    awardHeadType = AwardHeadType.ResInstance
+    local createData = self._enterData:GetResDungeonInfo()
+    cfgId = createData.res_dungeon_id
   end
+  return UICommonHelper:GetInstance():GetPassAward(awardHeadType, cfgId)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.GetPassRandomAward = function(self)
-  -- function num : 0_37
+function UIBattleResultComplete:GetPassRandomAward()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.HasItem = function(self, dataList, itemId)
-  -- function num : 0_38 , upvalues : _ENV
+function UIBattleResultComplete:HasItem(dataList, itemId)
   local isNormal = 0
   if dataList then
-    for i,v in ipairs(dataList) do
+    for i, v in ipairs(dataList) do
       if v.ItemID == itemId then
         isNormal = 1
         break
       end
     end
   end
-  do
-    return isNormal
-  end
+  return isNormal
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.OnCancelSerialAutoFight = function(self)
-  -- function num : 0_39
-  (self._blockMask):SetActive(false)
+function UIBattleResultComplete:OnCancelSerialAutoFight()
+  self._blockMask:SetActive(false)
   if self._autoBtn then
-    (self._autoBtn):Hide()
+    self._autoBtn:Hide()
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.blockMaskOnClick = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  (ToastManager.ShowToast)((StringTable.Get)("str_battle_cannot_use"))
+function UIBattleResultComplete:blockMaskOnClick()
+  ToastManager.ShowToast(StringTable.Get("str_battle_cannot_use"))
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._CheckNeedShowLevelUp = function(self, curLv, curExp, addExp)
-  -- function num : 0_41 , upvalues : _ENV
+function UIBattleResultComplete:_CheckNeedShowLevelUp(curLv, curExp, addExp)
   self._bNeedShowLevelUp = false
-  local lvProp = (Cfg.cfg_role_level)[curLv]
+  local lvProp = Cfg.cfg_role_level[curLv]
   if not lvProp then
-    return 
+    return
   end
   local targetValue = curExp + addExp
-  local curLvStartExp = (HelperProxy:GetInstance()):GetLevelExp(curLv)
+  local curLvStartExp = HelperProxy:GetInstance():GetLevelExp(curLv)
   local curLvMaxExp = curLvStartExp + lvProp.NeedExp
-  if curLvMaxExp <= targetValue then
+  if targetValue >= curLvMaxExp then
     self._bNeedShowLevelUp = true
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._CheckShowActivityAward = function(self)
-  -- function num : 0_42
+function UIBattleResultComplete:_CheckShowActivityAward()
   if self._bNeedShowLevelUp then
-    return 
+    return
   else
     self:_ShowActivityAward()
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._ShowActivityAward = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function UIBattleResultComplete:_ShowActivityAward()
   if self._bNeedPopActivityAward and #self._activityAwards > 0 then
-    local itemId = ((self._activityAwards)[1]).assetid
+    local itemId = self._activityAwards[1].assetid
     local tipsText = ""
     if itemId then
-      local tipsCfg = (Cfg.cfg_activity_drop_item_get_tips_client)[itemId]
+      local tipsCfg = Cfg.cfg_activity_drop_item_get_tips_client[itemId]
       if tipsCfg then
         local tipsId = tipsCfg.GetItemTips
         if tipsId and tipsId ~= "" then
-          tipsText = (StringTable.Get)(tipsId)
+          tipsText = StringTable.Get(tipsId)
         end
       end
     end
-    do
-      local titleText = (StringTable.Get)("str_sakura_get_activity_item")
-      self._bNeedPopActivityAward = false
-      self:ShowDialog("UIGetItemController", self._activityAwards, nil, nil, tipsText, titleText)
-      self._popActivityAwardEnd = true
-    end
+    local titleText = StringTable.Get("str_sakura_get_activity_item")
+    self._bNeedPopActivityAward = false
+    self:ShowDialog("UIGetItemController", self._activityAwards, nil, nil, tipsText, titleText)
+    self._popActivityAwardEnd = true
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._HideExpAndMoveUpRewards = function(self, isHide)
-  -- function num : 0_44 , upvalues : _ENV
+function UIBattleResultComplete:_HideExpAndMoveUpRewards(isHide)
   if isHide then
-    (self._expParent):SetActive(false)
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._itemPoolRect).anchoredPosition = Vector2(((self._itemPoolRect).anchoredPosition).x, 8)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._seasonItemsRect).anchoredPosition = Vector2(((self._seasonItemsRect).anchoredPosition).x, 21)
+    self._expParent:SetActive(false)
+    self._itemPoolRect.anchoredPosition = Vector2(self._itemPoolRect.anchoredPosition.x, 8)
+    self._seasonItemsRect.anchoredPosition = Vector2(self._seasonItemsRect.anchoredPosition.x, 21)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._IsActivityN8 = function(self, enterData)
-  -- function num : 0_45 , upvalues : _ENV
+function UIBattleResultComplete:_IsActivityN8(enterData)
   if MatchType.MT_Campaign == enterData._match_type then
     local campaignModule = self:GetModule(CampaignModule)
     local createInfo = enterData:GetMissionCreateInfo()
     if createInfo then
       local campId, comId, comType = campaignModule:ParseCampaignMissionParams(createInfo.CampaignMissionParams)
-      local campConfig = (Cfg.cfg_campaign)[campId]
-      if campConfig then
-        local campType = campConfig.CampaignType
-      end
+      local campConfig = Cfg.cfg_campaign[campId]
+      local campType = campConfig and campConfig.CampaignType
       if campType == ECampaignType.CAMPAIGN_TYPE_N8 then
         if comType == CampaignComType.E_CAMPAIGN_COM_LINE_MISSION then
           return 1
-        else
-          if comType == CampaignComType.E_CAMPAIGN_COM_CombatSimulator then
-            return 2
-          end
+        elseif comType == CampaignComType.E_CAMPAIGN_COM_CombatSimulator then
+          return 2
         end
       end
     end
-  else
-    do
-      do
-        if MatchType.MT_BlackFist == enterData._match_type then
-          local component_id = (enterData:GetBlackFistInfo()).component_id
-          if component_id == ECampaignMissionComponentId.ECampaignMissionComponentId_SimulatorBlackfist then
-            return 2
-          end
-        end
-        return 0
-      end
+  elseif MatchType.MT_BlackFist == enterData._match_type then
+    local component_id = enterData:GetBlackFistInfo().component_id
+    if component_id == ECampaignMissionComponentId.ECampaignMissionComponentId_SimulatorBlackfist then
+      return 2
     end
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._NeedHideExpAndMoveUpReards = function(self, enterData)
-  -- function num : 0_46
+function UIBattleResultComplete:_NeedHideExpAndMoveUpReards(enterData)
   local isN8Flag = self:_IsActivityN8(enterData)
   if isN8Flag == 1 or isN8Flag == 2 then
     return true
@@ -2718,152 +2137,114 @@ UIBattleResultComplete._NeedHideExpAndMoveUpReards = function(self, enterData)
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._ActivityResult = function(self, enterData)
-  -- function num : 0_47 , upvalues : _ENV
+function UIBattleResultComplete:_ActivityResult(enterData)
   if MatchType.MT_Campaign == enterData._match_type then
     local campaignModule = self:GetModule(CampaignModule)
     local createInfo = enterData:GetMissionCreateInfo()
     if createInfo then
       local campId, comId, comType = campaignModule:ParseCampaignMissionParams(createInfo.CampaignMissionParams)
-      local campConfig = (Cfg.cfg_campaign)[campId]
+      local campConfig = Cfg.cfg_campaign[campId]
       if not campConfig then
-        (self._activityImageObj):SetActive(false)
-        return 
+        self._activityImageObj:SetActive(false)
+        return
       end
       local campType = campConfig.CampaignType
       if campType == ECampaignType.CAMPAIGN_TYPE_N12 and (comType == CampaignComType.E_CAMPAIGN_COM_DAILY_MISSION or comType == CampaignComType.E_CAMPAIGN_COM_CHALL_MISSION) then
-        local cfg_campaign_mission = (Cfg.cfg_campaign_mission)[createInfo.nCampaignMissionId]
+        local cfg_campaign_mission = Cfg.cfg_campaign_mission[createInfo.nCampaignMissionId]
         local levelName = campConfig.CampaignName
         if cfg_campaign_mission then
           levelName = cfg_campaign_mission.Name
         end
-        ;
-        ((self._activityResultLeft).dynamicInfoOfEngine):SetObjectName("UIN12BattleResultLeft.prefab")
-        local item = (self._activityResultLeft):SpawnObject("UIN12BattleResultLeft")
+        self._activityResultLeft.dynamicInfoOfEngine:SetObjectName("UIN12BattleResultLeft.prefab")
+        local item = self._activityResultLeft:SpawnObject("UIN12BattleResultLeft")
         item:SetData(levelName)
         if comType == CampaignComType.E_CAMPAIGN_COM_CHALL_MISSION then
-          ((self._activityResultRight).dynamicInfoOfEngine):SetObjectName("UIN12BattleResultRight.prefab")
-          local item = (self._activityResultRight):SpawnObject("UIN12BattleResultRight")
+          self._activityResultRight.dynamicInfoOfEngine:SetObjectName("UIN12BattleResultRight.prefab")
+          local item = self._activityResultRight:SpawnObject("UIN12BattleResultRight")
           item:SetData(self._isWin)
         end
-        do
-          do
-            ;
-            (self._activityImageObj):SetActive(comType == CampaignComType.E_CAMPAIGN_COM_DAILY_MISSION)
-            ;
-            (self._starConditionGO):SetActive(false)
-            -- DECOMPILER ERROR: 2 unprocessed JMP targets
-          end
+        self._activityImageObj:SetActive(comType == CampaignComType.E_CAMPAIGN_COM_DAILY_MISSION)
+        self._starConditionGO:SetActive(false)
+      end
+    end
+  end
+end
+
+function UIBattleResultComplete:ShowAward(enterData)
+  if MatchType.MT_Campaign == enterData._match_type then
+    local campaignModule = self:GetModule(CampaignModule)
+    local createInfo = enterData:GetMissionCreateInfo()
+    if createInfo then
+      local campId, comId, comType = campaignModule:ParseCampaignMissionParams(createInfo.CampaignMissionParams)
+      local campConfig = Cfg.cfg_campaign[campId]
+      if not campConfig then
+        return false
+      end
+      local campType = campConfig.CampaignType
+      if campType == ECampaignType.CAMPAIGN_TYPE_N12 then
+        if comType == CampaignComType.E_CAMPAIGN_COM_DAILY_MISSION then
+          return false
         end
+      elseif campType == ECampaignType.CAMPAIGN_TYPE_WEEK_TOWER then
+        return false
+      elseif campType == ECampaignType.CAMPAIGN_TYPE_N13 then
+        if comType == CampaignComType.E_CAMPAIGN_COM_LINE_MISSION then
+          return false
+        end
+      elseif campType == ECampaignType.CAMPAIGN_TYPE_N15 then
+        if comType == CampaignComType.E_CAMPAIGN_COM_LINE_MISSION then
+          return false
+        end
+      elseif campType == ECampaignType.CAMPAIGN_TYPE_CHESS and comType == CampaignComType.E_CAMPAIGN_COM_CHESS then
+        return false
       end
     end
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.ShowAward = function(self, enterData)
-  -- function num : 0_48 , upvalues : _ENV
+function UIBattleResultComplete:ShowCondition(enterData)
   if MatchType.MT_Campaign == enterData._match_type then
     local campaignModule = self:GetModule(CampaignModule)
     local createInfo = enterData:GetMissionCreateInfo()
     if createInfo then
       local campId, comId, comType = campaignModule:ParseCampaignMissionParams(createInfo.CampaignMissionParams)
-      local campConfig = (Cfg.cfg_campaign)[campId]
+      local campConfig = Cfg.cfg_campaign[campId]
       if not campConfig then
         return false
       end
       local campType = campConfig.CampaignType
-      -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P1
-
-      if campType == ECampaignType.CAMPAIGN_TYPE_N12 and comType == CampaignComType.E_CAMPAIGN_COM_DAILY_MISSION then
+      if campType == ECampaignType.CAMPAIGN_TYPE_N12 then
+        if comType == CampaignComType.E_CAMPAIGN_COM_DAILY_MISSION then
+          return false
+        end
+      elseif campType == ECampaignType.CAMPAIGN_TYPE_WEEK_TOWER then
+        return false
+      elseif campType == ECampaignType.CAMPAIGN_TYPE_N13 and comType == CampaignComType.E_CAMPAIGN_COM_LINE_MISSION then
         return false
       end
     end
   end
-  do
-    if campType == ECampaignType.CAMPAIGN_TYPE_WEEK_TOWER then
-      return false
-    else
-      -- DECOMPILER ERROR at PC50: Unhandled construct in 'MakeBoolean' P1
-
-      if campType == ECampaignType.CAMPAIGN_TYPE_N13 and comType == CampaignComType.E_CAMPAIGN_COM_LINE_MISSION then
-        return false
-      end
-    end
-    -- DECOMPILER ERROR at PC61: Unhandled construct in 'MakeBoolean' P1
-
-    if campType == ECampaignType.CAMPAIGN_TYPE_N15 and comType == CampaignComType.E_CAMPAIGN_COM_LINE_MISSION then
-      return false
-    end
-    if campType == ECampaignType.CAMPAIGN_TYPE_CHESS and comType == CampaignComType.E_CAMPAIGN_COM_CHESS then
-      return false
-    end
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.ShowCondition = function(self, enterData)
-  -- function num : 0_49 , upvalues : _ENV
-  if MatchType.MT_Campaign == enterData._match_type then
-    local campaignModule = self:GetModule(CampaignModule)
-    local createInfo = enterData:GetMissionCreateInfo()
-    if createInfo then
-      local campId, comId, comType = campaignModule:ParseCampaignMissionParams(createInfo.CampaignMissionParams)
-      local campConfig = (Cfg.cfg_campaign)[campId]
-      if not campConfig then
-        return false
-      end
-      local campType = campConfig.CampaignType
-      -- DECOMPILER ERROR at PC32: Unhandled construct in 'MakeBoolean' P1
-
-      if campType == ECampaignType.CAMPAIGN_TYPE_N12 and comType == CampaignComType.E_CAMPAIGN_COM_DAILY_MISSION then
-        return false
-      end
-    end
-  end
-  do
-    if campType == ECampaignType.CAMPAIGN_TYPE_WEEK_TOWER then
-      return false
-    else
-      if campType == ECampaignType.CAMPAIGN_TYPE_N13 and comType == CampaignComType.E_CAMPAIGN_COM_LINE_MISSION then
-        return false
-      end
-    end
-    return true
-  end
-end
-
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.FillSeasonAwardsArea = function(self, matchRes, seasonMissionInfo)
-  -- function num : 0_50 , upvalues : _ENV
+function UIBattleResultComplete:FillSeasonAwardsArea(matchRes, seasonMissionInfo)
   local seasonAwardGen = self:GetUIComponent("UISelectObjectPath", "SeasonMultiAwardGroup")
-  local ui = (UISeasonHelper.CurSeasonBattleResultAwardList)()
+  local ui = UISeasonHelper.CurSeasonBattleResultAwardList()
   if ui then
-    (seasonAwardGen.dynamicInfoOfEngine):SetObjectName(ui .. ".prefab")
+    seasonAwardGen.dynamicInfoOfEngine:SetObjectName(ui .. ".prefab")
     self._seasonMultiAwardList = seasonAwardGen:SpawnObject(ui)
-    ;
-    (self._seasonMultiAwardList):SetData(matchRes, seasonMissionInfo)
+    self._seasonMultiAwardList:SetData(matchRes, seasonMissionInfo)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete._SetStatisticsBtn = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function UIBattleResultComplete:_SetStatisticsBtn()
   local isShow = true
-  local matchType = (self._enterData):GetMatchType()
-  local subMatchType = (self._enterData):GetSubMatchType()
+  local matchType = self._enterData:GetMatchType()
+  local subMatchType = self._enterData:GetSubMatchType()
   if matchType == MatchType.MT_BlackFist or matchType == MatchType.MT_Chess or matchType == MatchType.MT_EightPets or matchType == MatchType.MT_PopStar then
     isShow = false
   end
@@ -2876,11 +2257,6 @@ UIBattleResultComplete._SetStatisticsBtn = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultComplete.StatisticsBtnOnClick = function(self, go)
-  -- function num : 0_52
+function UIBattleResultComplete:StatisticsBtnOnClick(go)
   self:ShowDialog("UIBattleStatistics", self._matchPetData)
 end
-
-

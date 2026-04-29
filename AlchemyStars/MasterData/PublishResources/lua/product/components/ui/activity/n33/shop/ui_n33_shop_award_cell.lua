@@ -1,25 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/shop/ui_n33_shop_award_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN33ShopAwardCell", UICustomWidget)
 UIN33ShopAwardCell = UIN33ShopAwardCell
-local ECampaignLRType = ECampaignLRType
--- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
+local ECampaignLRType = _ENV.ECampaignLRType
 
-UIN33ShopAwardCell.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN33ShopAwardCell:OnShow(uiParams)
   self._animCfg = {
-[1] = {"uieff_UIN33ShopAwardCell_in", 333.33333333333}
-}
+    [1] = {
+      "uieff_UIN33ShopAwardCell_in",
+      333.3333333333333
+    }
+  }
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33ShopAwardCell._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : ECampaignLRType
+function UIN33ShopAwardCell:_GetComponents()
   local typeCount = ECampaignLRType.E_CLRT_rare + 1
   self._nodes = {}
   for i = 1, typeCount do
@@ -28,131 +21,90 @@ UIN33ShopAwardCell._GetComponents = function(self)
     t._itemIcon = self:GetUIComponent("RawImageLoader", "ItemIcon" .. i)
     t._itemNumText = self:GetUIComponent("UILocalizationText", "ItemNumText" .. i)
     t._restNumText = self:GetUIComponent("UILocalizationText", "RestNumText" .. i)
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._nodes)[i] = t
+    self._nodes[i] = t
   end
   self._mask = self:GetGameObject("Mask")
   self._animation = self:GetUIComponent("Animation", "UIN33ShopAwardCell")
   self.go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33ShopAwardCell.InitN33ShopAwardCellData = function(self, data, itemInfoCallback, unlock, yieldTime, isTips)
-  -- function num : 0_2
+function UIN33ShopAwardCell:InitN33ShopAwardCellData(data, itemInfoCallback, unlock, yieldTime, isTips)
   if not data then
-    (self.go):SetActive(false)
-    return 
+    self.go:SetActive(false)
+    return
   end
-  if yieldTime and yieldTime >= 0 then
-    (self.go):SetActive(false)
+  if yieldTime and 0 <= yieldTime then
+    self.go:SetActive(false)
     self:ShowAnim(1, yieldTime)
   else
-    ;
-    (self.go):SetActive(true)
+    self.go:SetActive(true)
   end
   self._data = data
-  self._rewardType = (self._data).m_reward_type + 1
+  self._rewardType = self._data.m_reward_type + 1
   self._unlock = unlock
-  self._itemId = (self._data).m_item_id
-  self._itemCount = (self._data).m_lottery_limit_count
-  self._itemRestCount = (self._data).m_lottery_count
+  self._itemId = self._data.m_item_id
+  self._itemCount = self._data.m_lottery_limit_count
+  self._itemRestCount = self._data.m_lottery_count
   self._itemInfoCallback = itemInfoCallback
   self._isTips = isTips
   self:FillUi()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33ShopAwardCell.FillUi = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for index,value in ipairs(self._nodes) do
-    (value._objBg):SetActive(index == self._rewardType)
+function UIN33ShopAwardCell:FillUi()
+  for index, value in ipairs(self._nodes) do
+    value._objBg:SetActive(index == self._rewardType)
   end
-  local node = (self._nodes)[self._rewardType]
-  local itemCfg = (Cfg.cfg_item)[self._itemId]
-  ;
-  (self._mask):SetActive(not self._isTips and self._itemRestCount <= 0)
-  do
-    if itemCfg then
-      local itemCount = (self._data).m_count
-      ;
-      (node._itemIcon):LoadImage(itemCfg.Icon)
-      ;
-      (node._itemNumText):SetText(itemCount)
-      if self._itemRestCount and self._itemCount then
-        local showTimesTex = self._itemRestCount .. "/" .. self._itemCount
-        ;
-        (node._restNumText):SetText(showTimesTex)
-      else
-        (node._restNumText):SetText("")
-      end
+  local node = self._nodes[self._rewardType]
+  local itemCfg = Cfg.cfg_item[self._itemId]
+  self._mask:SetActive(not self._isTips and self._itemRestCount <= 0)
+  if itemCfg then
+    local itemCount = self._data.m_count
+    node._itemIcon:LoadImage(itemCfg.Icon)
+    node._itemNumText:SetText(itemCount)
+    if self._itemRestCount and self._itemCount then
+      local showTimesTex = self._itemRestCount .. "/" .. self._itemCount
+      node._restNumText:SetText(showTimesTex)
+    else
+      node._restNumText:SetText("")
     end
-    -- DECOMPILER ERROR: 6 unprocessed JMP targets
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33ShopAwardCell.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN33ShopAwardCell:OnHide()
   if self._animTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._animTask)
+    GameGlobal.TaskManager():KillTask(self._animTask)
     self._animTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33ShopAwardCell.Bg1OnClick = function(self, go)
-  -- function num : 0_5
+function UIN33ShopAwardCell:Bg1OnClick(go)
   self:_BgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33ShopAwardCell.Bg2OnClick = function(self, go)
-  -- function num : 0_6
+function UIN33ShopAwardCell:Bg2OnClick(go)
   self:_BgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33ShopAwardCell.Bg3OnClick = function(self, go)
-  -- function num : 0_7
+function UIN33ShopAwardCell:Bg3OnClick(go)
   self:_BgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33ShopAwardCell._BgOnClick = function(self, go)
-  -- function num : 0_8
+function UIN33ShopAwardCell:_BgOnClick(go)
   if self._itemInfoCallback then
-    (self._itemInfoCallback)(self._data, nil, self._unlock, nil, true)
+    self._itemInfoCallback(self._data, nil, self._unlock, nil, true)
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33ShopAwardCell.ShowAnim = function(self, id, yieldTime)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN33ShopAwardCell:ShowAnim(id, yieldTime)
   if self._animTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._animTask)
+    GameGlobal.TaskManager():KillTask(self._animTask)
     self._animTask = nil
   end
-  local data = (self._animCfg)[id]
+  local data = self._animCfg[id]
   self._animTask = self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, yieldTime, self, data
     YIELD(TT, yieldTime)
-    ;
-    (self.go):SetActive(true)
-    ;
-    (self._animation):Play(data[1])
+    self.go:SetActive(true)
+    self._animation:Play(data[1])
     self._animTask = nil
-  end
-)
+  end)
 end
-
-

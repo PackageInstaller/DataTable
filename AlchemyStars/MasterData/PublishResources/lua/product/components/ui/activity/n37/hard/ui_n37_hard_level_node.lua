@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n37/hard/ui_n37_hard_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_hard_level_node")
 _class("UIN37HardLevelNode", UIActivityNHardLevelNode)
 UIN37HardLevelNode = UIN37HardLevelNode
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN37HardLevelNode.OnInit = function(self)
-  -- function num : 0_0
+function UIN37HardLevelNode:OnInit()
   self._open = self:GetGameObject("Open")
   self._lockIconLoader = self:GetUIComponent("RawImageLoader", "LockIcon")
   self._completeIconLoader = self:GetUIComponent("RawImageLoader", "CompleteIcon")
@@ -17,68 +10,41 @@ UIN37HardLevelNode.OnInit = function(self)
   self.name = self:GetUIComponent("UILocalizedTMP", "Name")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37HardLevelNode.GetLockTipsString = function(self)
-  -- function num : 0_1
+function UIN37HardLevelNode:GetLockTipsString()
   return "str_cn6&n35_hard_level_lock_tips"
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37HardLevelNode.PlayAnimation = function(self)
-  -- function num : 0_2
+function UIN37HardLevelNode:PlayAnimation()
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._anim):Play("uieff_UIN37DiffLevelNode_in")
-  end
-)
+    self._anim:Play("uieff_UIN37DiffLevelNode_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37HardLevelNode.OnLevelOpen = function(self, clientCfg)
-  -- function num : 0_3
-  (self._open):SetActive(true)
-  ;
-  (self._lock):SetActive(false)
-  ;
-  (self._complete):SetActive(false)
+function UIN37HardLevelNode:OnLevelOpen(clientCfg)
+  self._open:SetActive(true)
+  self._lock:SetActive(false)
+  self._complete:SetActive(false)
   if clientCfg then
-    (self._iconLoader):LoadImage(clientCfg.Icon)
+    self._iconLoader:LoadImage(clientCfg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37HardLevelNode.OnLevelLock = function(self, clientCfg)
-  -- function num : 0_4
-  (self._open):SetActive(false)
-  ;
-  (self._lock):SetActive(true)
-  ;
-  (self._complete):SetActive(false)
+function UIN37HardLevelNode:OnLevelLock(clientCfg)
+  self._open:SetActive(false)
+  self._lock:SetActive(true)
+  self._complete:SetActive(false)
   if clientCfg then
-    (self._iconLoader):LoadImage(clientCfg.Icon)
-    ;
-    (self._lockIconLoader):LoadImage(clientCfg.CloseIcon)
+    self._iconLoader:LoadImage(clientCfg.Icon)
+    self._lockIconLoader:LoadImage(clientCfg.CloseIcon)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37HardLevelNode.OnLevelComplete = function(self, clientCfg)
-  -- function num : 0_5
-  (self._open):SetActive(true)
-  ;
-  (self._lock):SetActive(false)
-  ;
-  (self._complete):SetActive(true)
+function UIN37HardLevelNode:OnLevelComplete(clientCfg)
+  self._open:SetActive(true)
+  self._lock:SetActive(false)
+  self._complete:SetActive(true)
   if clientCfg then
-    (self._iconLoader):LoadImage(clientCfg.Icon)
-    ;
-    (self._completeIconLoader):LoadImage(clientCfg.CompleteIcon)
+    self._iconLoader:LoadImage(clientCfg.Icon)
+    self._completeIconLoader:LoadImage(clientCfg.CompleteIcon)
   end
 end
-
-

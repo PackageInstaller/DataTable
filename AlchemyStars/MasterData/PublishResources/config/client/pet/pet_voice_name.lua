@@ -1,11 +1,67 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/pet_voice_name.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, MainLobbyWelcome = 2, MainLobbyInteract = 3, Leisure = 4, Appointment = 5, Obtain = 6, LevelUp = 7, Grade1Up = 8, Grade2Up = 9, Grade3Up = 10, Formation = 11, Charge = 12, Skill = 13, ChainSkill = 14, Excute = 15, Special1 = 16, SkillGradeUp = 17, StandBy = 18, TeamLeaderAppear = 19, BattleSucceed = 20, BattleFail = 21, LoginVoice = 22, AircraftClick = 23, AircraftInteract = 24, ReceiveGift = 25, ReceiveLoveGift = 26, Story1 = 27, Story2 = 28, Story3 = 29, NewYear = 30}
+local key = {
+  ID = 1,
+  MainLobbyWelcome = 2,
+  MainLobbyInteract = 3,
+  Leisure = 4,
+  Appointment = 5,
+  Obtain = 6,
+  LevelUp = 7,
+  Grade1Up = 8,
+  Grade2Up = 9,
+  Grade3Up = 10,
+  Formation = 11,
+  Charge = 12,
+  Skill = 13,
+  ChainSkill = 14,
+  Excute = 15,
+  Special1 = 16,
+  SkillGradeUp = 17,
+  StandBy = 18,
+  TeamLeaderAppear = 19,
+  BattleSucceed = 20,
+  BattleFail = 21,
+  LoginVoice = 22,
+  AircraftClick = 23,
+  AircraftInteract = 24,
+  ReceiveGift = 25,
+  ReceiveLoveGift = 26,
+  Story1 = 27,
+  Story2 = 28,
+  Story3 = 29,
+  NewYear = 30
+}
 local config = {
-{1, "str_files_Title_MainLobbyWelcome", "str_files_Title_MainLobbyInteract", "str_files_Title_Leisure", "str_files_Title_Appointment", "str_files_Title_Obtain", "str_files_Title_LevelUp", "str_files_Title_Grade1Up", "str_files_Title_Grade2Up", "str_files_Title_Grade3Up", "str_files_Title_Formation", "str_files_Title_Charge", "str_files_Title_Skill", "str_files_Title_ChainSkill", "str_files_Title_Excute", "str_files_Title_Special1", "str_files_Title_SkillGradeUp", "str_files_Title_StandBy", "str_files_Title_TeamLeaderAppear", "str_files_Title_BattleSucceed", "str_files_Title_BattleFail", "str_files_Title_LoginVoice", "str_files_Title_AircraftClick", "str_files_Title_AircraftInteract", "str_files_Title_ReceiveGift", "str_files_Title_ReceiveLoveGift", "str_files_Title_Story1", "str_files_Title_Story2", "str_files_Title_Story3", "str_files_Title_NewYear"}
+  {
+    1,
+    "str_files_Title_MainLobbyWelcome",
+    "str_files_Title_MainLobbyInteract",
+    "str_files_Title_Leisure",
+    "str_files_Title_Appointment",
+    "str_files_Title_Obtain",
+    "str_files_Title_LevelUp",
+    "str_files_Title_Grade1Up",
+    "str_files_Title_Grade2Up",
+    "str_files_Title_Grade3Up",
+    "str_files_Title_Formation",
+    "str_files_Title_Charge",
+    "str_files_Title_Skill",
+    "str_files_Title_ChainSkill",
+    "str_files_Title_Excute",
+    "str_files_Title_Special1",
+    "str_files_Title_SkillGradeUp",
+    "str_files_Title_StandBy",
+    "str_files_Title_TeamLeaderAppear",
+    "str_files_Title_BattleSucceed",
+    "str_files_Title_BattleFail",
+    "str_files_Title_LoginVoice",
+    "str_files_Title_AircraftClick",
+    "str_files_Title_AircraftInteract",
+    "str_files_Title_ReceiveGift",
+    "str_files_Title_ReceiveLoveGift",
+    "str_files_Title_Story1",
+    "str_files_Title_Story2",
+    "str_files_Title_Story3",
+    "str_files_Title_NewYear"
+  }
 }
 return config, "ID", key
-

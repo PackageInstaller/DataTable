@@ -1,63 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_role_turn_result_sys.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("role_turn_result_state_system")
 _class("ClientRoleTurnResultSystem_Render", RoleTurnResultStateSystem)
 ClientRoleTurnResultSystem_Render = ClientRoleTurnResultSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientRoleTurnResultSystem_Render._DoRenderPlayNotify = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTRoleTurnResultState:New())
+function ClientRoleTurnResultSystem_Render:_DoRenderPlayNotify(TT)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTRoleTurnResultState:New())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleTurnResultSystem_Render._DoRenderNormalAttackMonsterDead = function(self, TT)
-  -- function num : 0_1
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+function ClientRoleTurnResultSystem_Render:_DoRenderNormalAttackMonsterDead(TT)
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:DoAllMonsterDeadRender(TT, false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleTurnResultSystem_Render._DoRenderGuideSkill = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local guideService = (self._world):GetService("Guide")
+function ClientRoleTurnResultSystem_Render:_DoRenderGuideSkill(TT)
+  local guideService = self._world:GetService("Guide")
   local guideTaskId = guideService:Trigger(GameEventType.GuidePlayerSkillFinish, GuidePlayerHandle.LinkEnd)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleTurnResultSystem_Render._DoRenderGuideSkillReal = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local guideService = (self._world):GetService("Guide")
+function ClientRoleTurnResultSystem_Render:_DoRenderGuideSkillReal(TT)
+  local guideService = self._world:GetService("Guide")
   local guideTaskId = guideService:Trigger(GameEventType.GuidePlayerSkillRealFinish, GuidePlayerHandle.LinkEnd)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleTurnResultSystem_Render._DoRenderWaitDeathEnd = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function ClientRoleTurnResultSystem_Render:_DoRenderWaitDeathEnd(TT)
   while self:_CheckShowDeathNotEnd() do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleTurnResultSystem_Render._CheckShowDeathNotEnd = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local deathGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).ShowDeath)
-  for _,v in ipairs(deathGroup:GetEntities()) do
+function ClientRoleTurnResultSystem_Render:_CheckShowDeathNotEnd()
+  local deathGroup = self._world:GetGroup(self._world.BW_WEMatchers.ShowDeath)
+  for _, v in ipairs(deathGroup:GetEntities()) do
     local entity = v
     local showDeathCmpt = entity:ShowDeath()
     if not showDeathCmpt:IsShowDeathEnd() then
@@ -67,31 +45,27 @@ ClientRoleTurnResultSystem_Render._CheckShowDeathNotEnd = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoleTurnResultSystem_Render._WaitBeHitSkillFinish = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function ClientRoleTurnResultSystem_Render:_WaitBeHitSkillFinish(TT)
   YIELD(TT)
   YIELD(TT)
   local count = 0
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local renderState = previewEntity:RenderState()
-  do
-    if renderState and renderState:GetRenderStateType() == RenderStateType.WaitPlayTask then
-      local taskID = renderState:GetRenderStateParam()
-      while taskID and not (TaskHelper:GetInstance()):IsTaskFinished(taskID) do
+  if renderState and renderState:GetRenderStateType() == RenderStateType.WaitPlayTask then
+    local taskID = renderState:GetRenderStateParam()
+    if taskID then
+      while not TaskHelper:GetInstance():IsTaskFinished(taskID) do
+        YIELD(TT)
+        count = count + 1
+      end
+    else
+      while renderState:GetRenderStateType() == RenderStateType.WaitPlayTask do
         YIELD(TT)
         count = count + 1
       end
     end
-    while renderState:GetRenderStateType() == RenderStateType.WaitPlayTask do
-      YIELD(TT)
-      count = count + 1
-    end
-    if count ~= 0 then
-      (Log.warn)("HPLock Wait Count:", count)
-    end
+  end
+  if count ~= 0 then
+    Log.warn("HPLock Wait Count:", count)
   end
 end
-
-

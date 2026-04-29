@@ -1,81 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_skill_scope/ui_skill_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISkillScope", UIController)
 UISkillScope = UISkillScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISkillScope.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISkillScope:OnShow(uiParams)
   local skillId = uiParams[1]
   self._petId = uiParams[2]
   self.pet = uiParams[4]
-  self._row = BattleConst.DefaultMaxX
+  self._row, self._col = BattleConst.DefaultMaxX, BattleConst.DefaultMaxY
   self._txtSkill = self:GetUIComponent("UILocalizationText", "txtSkill")
   self._activeSkillGo = self:GetGameObject("activeSkill")
   self._txtPower = self:GetUIComponent("UILocalizationText", "txtPower")
   self._chainSkillGo = self:GetGameObject("chainSkill")
   self._chainSkill = self:GetUIComponent("UISelectObjectPath", "chainSkill")
-  self._cam = (self:GetGameObject("Camera")):GetComponent("Camera")
-  self._offsetWorld = (self:GetGameObject("offsetWorld")):GetComponent("RectTransform")
+  self._cam = self:GetGameObject("Camera"):GetComponent("Camera")
+  self._offsetWorld = self:GetGameObject("offsetWorld"):GetComponent("RectTransform")
   self._piece = self:GetAsset("UISkillScopePiece.prefab", LoadType.GameObject)
   self._skillConfigHelper = SkillConfigHelper:New()
   self._cfg = self:GetCfgSkill(skillId)
-  if (self._cfg):GetSkillType() == 2 then
+  if self._cfg:GetSkillType() == 2 then
     self:AttachEvent(GameEventType.FlushSkillScope, self.Flush)
   end
-  self._clrCenter = Color(0.92549019607843, 0.90980392156863, 0.70196078431373, 1)
-  self._clrScope = Color(0.97254901960784, 0.92549019607843, 0.32156862745098, 0.7)
+  self._clrCenter = Color(0.9254901960784314, 0.9098039215686274, 0.7019607843137254, 1)
+  self._clrScope = Color(0.9725490196078431, 0.9254901960784314, 0.3215686274509804, 0.7)
   self._clrWhiteTran = Color.white
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._clrWhiteTran).a = 0.42
+  self._clrWhiteTran.a = 0.42
   self._gray = Color.white
-  -- DECOMPILER ERROR at PC95: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._gray).a = 0.15
+  self._gray.a = 0.15
   self:GenMap()
   self:InitUIBoard()
   self:Flush(skillId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISkillScopeClose)
+function UISkillScope:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISkillScopeClose)
   self:DisposeAsset("UISkillScopePiece.prefab")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._cam).targetTexture = nil
-  if (self._cfg):GetSkillType() == 2 then
+  self._cam.targetTexture = nil
+  if self._cfg:GetSkillType() == 2 then
     self:DetachEvent(GameEventType.FlushSkillScope, self.Flush)
   end
   self:KillTweener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.KillTweener = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISkillScope:KillTweener()
   if self._twns then
-    for i,v in ipairs(self._twns) do
+    for i, v in ipairs(self._twns) do
       v:Kill()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.IsGapTile = function(self, x, y)
-  -- function num : 0_3 , upvalues : _ENV
+function UISkillScope:IsGapTile(x, y)
   local GapTile = BattleConst.GapTiles
-  for _,v in ipairs(GapTile) do
+  for _, v in ipairs(GapTile) do
     if x == v[1] and y == v[2] then
       return true
     end
@@ -83,68 +58,45 @@ UISkillScope.IsGapTile = function(self, x, y)
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.GenMap = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISkillScope:GenMap()
   self._boardData = {}
   for j = 1, self._col do
     for k = 1, self._row do
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R9 in 'UnsetPending'
-
       if not self:IsGapTile(j, k) then
-        (self._boardData)[j .. "_" .. k] = UISkillScopePiece:New(j, k)
+        self._boardData[j .. "_" .. k] = UISkillScopePiece:New(j, k)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.InitUIBoard = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISkillScope:InitUIBoard()
   if not self._offsetWorld then
-    return 
+    return
   end
   local tran = self._offsetWorld
   local names = {"l", "h"}
-  local rowCenter = (math.ceil)(self._row * 0.5)
-  local colCenter = (math.ceil)(self._col * 0.5)
+  local rowCenter = math.ceil(self._row * 0.5)
+  local colCenter = math.ceil(self._col * 0.5)
   local unit = 1
   local scale = 0.9
   for i = 1, #names do
-    local goi = (GameObjectHelper.CreateEmpty)(names[i], tran)
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R12 in 'UnsetPending'
-
+    local goi = GameObjectHelper.CreateEmpty(names[i], tran)
     if i == 1 then
-      (goi.transform).localPosition = Vector3(0, 0, 20)
+      goi.transform.localPosition = Vector3(0, 0, 20)
     end
     for j = 1, self._row do
-      local goj = (GameObjectHelper.CreateEmpty)(tostring(j), goi.transform)
-      -- DECOMPILER ERROR at PC57: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      (goj.transform).localPosition = Vector3(0, (j - rowCenter) * unit, 0)
+      local goj = GameObjectHelper.CreateEmpty(tostring(j), goi.transform)
+      goj.transform.localPosition = Vector3(0, (j - rowCenter) * unit, 0)
       for k = 1, self._col do
-        local boardV = (self._boardData)[j .. "_" .. k]
+        local boardV = self._boardData[j .. "_" .. k]
         if boardV then
-          local gok = ((UnityEngine.Object).Instantiate)(self._piece, goj.transform)
+          local gok = UnityEngine.Object.Instantiate(self._piece, goj.transform)
           gok.name = tostring(k)
-          ;
-          (GameObjectHelper.SetGameObjectLayer)(gok, (tran.gameObject).layer)
+          GameObjectHelper.SetGameObjectLayer(gok, tran.gameObject.layer)
           gok:SetActive(true)
-          -- DECOMPILER ERROR at PC96: Confused about usage of register: R23 in 'UnsetPending'
-
-          ;
-          (gok.transform).localPosition = Vector3((k - colCenter) * unit, 0, 0)
-          -- DECOMPILER ERROR at PC100: Confused about usage of register: R23 in 'UnsetPending'
-
-          ;
-          (gok.transform).localRotation = Quaternion.identity
-          -- DECOMPILER ERROR at PC105: Confused about usage of register: R23 in 'UnsetPending'
-
-          ;
-          (gok.transform).localScale = Vector3.one * scale
+          gok.transform.localPosition = Vector3((k - colCenter) * unit, 0, 0)
+          gok.transform.localRotation = Quaternion.identity
+          gok.transform.localScale = Vector3.one * scale
           local img = self:GetImage(gok)
           if i == 2 then
             boardV:SetImage(img)
@@ -157,90 +109,70 @@ UISkillScope.InitUIBoard = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.Flush = function(self, skillId)
-  -- function num : 0_6 , upvalues : _ENV
+function UISkillScope:Flush(skillId)
   if skillId == 0 then
-    (Log.fatal)("### UISkillScope skillId=0")
+    Log.fatal("### UISkillScope skillId=0")
   end
   self._skillId = skillId
   self:FlushSkillScope()
   self:FlushSkillInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.FlushSkillScope = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISkillScope:FlushSkillScope()
   if not self._boardData then
-    return 
+    return
   end
-  for k,v in pairs(self._boardData) do
+  for k, v in pairs(self._boardData) do
     self:SetColor(v.col, v.row, self._clrWhiteTran)
   end
   local skillScopeCal = SkillScopeCalculator:New()
   self._cfg = self:GetCfgSkill(self._skillId)
   local playerPos = Vector2(5, 5)
   self:SetColor(playerPos.x, playerPos.y, self._clrCenter)
-  local skillScope = skillScopeCal:CalcSkillScope(self._cfg, playerPos, Vector2(0, 1), {Vector2(0, 0)})
+  local skillScope = skillScopeCal:CalcSkillScope(self._cfg, playerPos, Vector2(0, 1), {
+    Vector2(0, 0)
+  })
   if skillScope then
     local wholeGridRange = skillScope:GetWholeGridRange()
     self:KillTweener()
     self._twns = {}
-    for i,v in ipairs(wholeGridRange) do
+    for i, v in ipairs(wholeGridRange) do
       if playerPos.x ~= v.x or playerPos.y ~= v.y then
         local twn = self:DOColor(v.x, v.y, self._clrScope, self._clrWhiteTran)
-        ;
-        (table.insert)(self._twns, twn)
+        table.insert(self._twns, twn)
       end
     end
   end
-  do
-    local skillType = (self._cfg):GetSkillType()
-    local skillTypeStr = ""
-    if skillType == PetSkillType.SkillType_ChainSkill then
-      skillTypeStr = "str_discovery_chain"
-    else
-      if skillType == PetSkillType.SkillType_Active then
-        skillTypeStr = "str_discovery_active"
-      else
-        skillTypeStr = "str_discovery_leader"
-      end
-    end
-    -- DECOMPILER ERROR at PC110: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._txtSkill).text = (StringTable.Get)(skillTypeStr) .. (StringTable.Get)("str_discovery_skill") .. " " .. (StringTable.Get)("str_discovery_scope_view")
+  local skillType = self._cfg:GetSkillType()
+  local skillTypeStr = ""
+  if skillType == PetSkillType.SkillType_ChainSkill then
+    skillTypeStr = "str_discovery_chain"
+  elseif skillType == PetSkillType.SkillType_Active then
+    skillTypeStr = "str_discovery_active"
+  else
+    skillTypeStr = "str_discovery_leader"
   end
+  self._txtSkill.text = StringTable.Get(skillTypeStr) .. StringTable.Get("str_discovery_skill") .. " " .. StringTable.Get("str_discovery_scope_view")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.FlushSkillInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local skillType = (self._cfg):GetSkillType()
-  ;
-  (self._activeSkillGo):SetActive(false)
-  ;
-  (self._chainSkillGo):SetActive(false)
+function UISkillScope:FlushSkillInfo()
+  local skillType = self._cfg:GetSkillType()
+  self._activeSkillGo:SetActive(false)
+  self._chainSkillGo:SetActive(false)
   if skillType == PetSkillType.SkillType_ChainSkill then
-    (self._chainSkillGo):SetActive(true)
-    local petModule = (self:GetModule(PetModule))
-    -- DECOMPILER ERROR at PC22: Overwrote pending register: R3 in 'AssignReg'
-
-    local pet = .end
+    self._chainSkillGo:SetActive(true)
+    local petModule = self:GetModule(PetModule)
+    local pet
     if self.pet then
       pet = self.pet
     else
       pet = petModule:GetPet(self._petId)
     end
     local skillInfo = pet:GetSkillByType(skillType)
-    local ids = (skillInfo.GetIdFunc)(pet)
-    ;
-    (self._chainSkill):SpawnObjects("UISkillScopeChainItem", (table.count)(ids))
-    local uiPool = (self._chainSkill):GetAllSpawnList()
-    for i,v in ipairs(uiPool) do
+    local ids = skillInfo.GetIdFunc(pet)
+    self._chainSkill:SpawnObjects("UISkillScopeChainItem", table.count(ids))
+    local uiPool = self._chainSkill:GetAllSpawnList()
+    for i, v in ipairs(uiPool) do
       local go = v:GetGameObject()
       local id = ids[i]
       if id then
@@ -252,87 +184,60 @@ UISkillScope.FlushSkillInfo = function(self)
         go:SetActive(false)
       end
     end
-  elseif skillType == PetSkillType.SkillType_Active then
-    (self._activeSkillGo):SetActive(true)
-    local triggerParam = (self._cfg):GetSkillTriggerParam()
-    -- DECOMPILER ERROR at PC99: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._txtPower).text = (StringTable.Get)("str_discovery_cool_down", triggerParam)
+  else
+    if skillType == PetSkillType.SkillType_Active then
+      self._activeSkillGo:SetActive(true)
+      local triggerParam = self._cfg:GetSkillTriggerParam()
+      self._txtPower.text = StringTable.Get("str_discovery_cool_down", triggerParam)
+    else
+    end
   end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.GetCfgSkill = function(self, skillId)
-  -- function num : 0_9
-  local cfg = (self._skillConfigHelper):GetSkillData(skillId)
+function UISkillScope:GetCfgSkill(skillId)
+  local cfg = self._skillConfigHelper:GetSkillData(skillId)
   return cfg
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.bgOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CloseSkillScope, nil)
+function UISkillScope:bgOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CloseSkillScope, nil)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.GetImage = function(self, go)
-  -- function num : 0_11
+function UISkillScope:GetImage(go)
   if not go then
-    return 
+    return
   end
-  local img = ((go.transform):Find("Image")):GetComponent("Image")
+  local img = go.transform:Find("Image"):GetComponent("Image")
   return img
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.SetColor = function(self, i, j, color)
-  -- function num : 0_12
-  local item = (self._boardData)[i .. "_" .. j]
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R5 in 'UnsetPending'
-
+function UISkillScope:SetColor(i, j, color)
+  local item = self._boardData[i .. "_" .. j]
   if item then
-    (item.img).color = color
+    item.img.color = color
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScope.DOColor = function(self, i, j, color, startColor)
-  -- function num : 0_13 , upvalues : _ENV
-  local item = (self._boardData)[i .. "_" .. j]
+function UISkillScope:DOColor(i, j, color, startColor)
+  local item = self._boardData[i .. "_" .. j]
   if item then
-    local twn = ((((item.img):DOColor(color, 1)):OnStart(function()
-    -- function num : 0_13_0 , upvalues : self, i, j, startColor
-    self:SetColor(i, j, startColor)
-  end
-)):SetLoops(-1, ((DG.Tweening).LoopType).Yoyo)):SetEase(((DG.Tweening).Ease).OutSine)
+    local twn = item.img:DOColor(color, 1):OnStart(function()
+      self:SetColor(i, j, startColor)
+    end):SetLoops(-1, DG.Tweening.LoopType.Yoyo):SetEase(DG.Tweening.Ease.OutSine)
     return twn
   end
 end
 
 _class("UISkillScopePiece", Object)
 UISkillScopePiece = UISkillScopePiece
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-UISkillScopePiece.Constructor = function(self, col, row)
-  -- function num : 0_14
+function UISkillScopePiece:Constructor(col, row)
   self.col = col
   self.row = row
   self.img = nil
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillScopePiece.SetImage = function(self, img)
-  -- function num : 0_15
+function UISkillScopePiece:SetImage(img)
   self.img = img
 end
-
-

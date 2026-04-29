@@ -1,49 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/trap_area_element_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapAreaElementComponent", Object)
 TrapAreaElementComponent = TrapAreaElementComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Entity.TrapAreaElement = function(self)
-  -- function num : 0_0
-  return self:GetComponent((self.WEComponentsEnum).TrapAreaElement)
+function Entity:TrapAreaElement()
+  return self:GetComponent(self.WEComponentsEnum.TrapAreaElement)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTrapAreaElement = function(self)
-  -- function num : 0_1
-  return self:HasComponent((self.WEComponentsEnum).TrapAreaElement)
+function Entity:HasTrapAreaElement()
+  return self:HasComponent(self.WEComponentsEnum.TrapAreaElement)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTrapAreaElement = function(self, areaEntityID)
-  -- function num : 0_2 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrapAreaElement
+function Entity:AddTrapAreaElement(areaEntityID)
+  local index = self.WEComponentsEnum.TrapAreaElement
   local component = TrapAreaElementComponent:New(areaEntityID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceTrapAreaElement = function(self, areaEntityID)
-  -- function num : 0_3 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrapAreaElement
+function Entity:ReplaceTrapAreaElement(areaEntityID)
+  local index = self.WEComponentsEnum.TrapAreaElement
   local component = TrapAreaElementComponent:New(areaEntityID)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveTrapAreaElement = function(self)
-  -- function num : 0_4
+function Entity:RemoveTrapAreaElement()
   if self:HasTrapAreaElement() then
-    self:RemoveComponent((self.WEComponentsEnum).TrapAreaElement)
+    self:RemoveComponent(self.WEComponentsEnum.TrapAreaElement)
   end
 end
-
-

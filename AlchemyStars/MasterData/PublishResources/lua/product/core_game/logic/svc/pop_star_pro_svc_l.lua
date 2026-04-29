@@ -1,154 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/pop_star_pro_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("PopStarProServiceLogic", BaseService)
 PopStarProServiceLogic = PopStarProServiceLogic
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarProServiceLogic.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarProServiceLogic:Constructor(world)
   self._world = world
   self._getCountFunc = {}
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._getCountFunc)[BuffPopStarProModifyType.CampPetCount] = self.GetCampPetCount
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._getCountFunc)[BuffPopStarProModifyType.FettersPetCount] = self.GetFettersPetCount
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._getCountFunc)[BuffPopStarProModifyType.FettersPetGroupCount] = self.GetFettersPetGroupCount
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._getCountFunc)[BuffPopStarProModifyType.PopGridCount] = self.GetPopGridCount
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._getCountFunc)[BuffPopStarProModifyType.RelicCount] = self.GetRelicCount
+  self._getCountFunc[BuffPopStarProModifyType.CampPetCount] = self.GetCampPetCount
+  self._getCountFunc[BuffPopStarProModifyType.FettersPetCount] = self.GetFettersPetCount
+  self._getCountFunc[BuffPopStarProModifyType.FettersPetGroupCount] = self.GetFettersPetGroupCount
+  self._getCountFunc[BuffPopStarProModifyType.PopGridCount] = self.GetPopGridCount
+  self._getCountFunc[BuffPopStarProModifyType.RelicCount] = self.GetRelicCount
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetPopStarLogicComponent = function(self)
-  -- function num : 0_1
-  local component = ((self._world):GetBoardEntity()):PopStarLogic()
+function PopStarProServiceLogic:GetPopStarLogicComponent()
+  local component = self._world:GetBoardEntity():PopStarLogic()
   return component
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetPopGridNum = function(self)
-  -- function num : 0_2
+function PopStarProServiceLogic:GetPopGridNum()
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetPopGridNum()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetLastPopGridNum = function(self)
-  -- function num : 0_3
+function PopStarProServiceLogic:GetLastPopGridNum()
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetLastPopGridNum()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.AddPopGridNum = function(self, num)
-  -- function num : 0_4
+function PopStarProServiceLogic:AddPopGridNum(num)
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   component:AddPopGridNum(num)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.CalculatePopStarConnectPieces = function(self, gridPos)
-  -- function num : 0_5 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PopStarProServiceLogic:CalculatePopStarConnectPieces(gridPos)
+  local utilDataSvc = self._world:GetService("UtilData")
   local pieceType = utilDataSvc:GetPieceType(gridPos)
   local pieces = utilDataSvc:GetReplicaBoardPieces()
   local connMap = {}
-  for x,_ in pairs(pieces) do
+  for x, _ in pairs(pieces) do
     connMap[x] = {}
   end
   local connectPieces = {}
-  ;
-  (table.insert)(connectPieces, gridPos)
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (connMap[gridPos.x])[gridPos.y] = true
-  local searchConnectPiece = function(center, next)
-    -- function num : 0_5_0 , upvalues : _ENV, utilDataSvc, pieceType, connMap, connectPieces
-    for _,offset in ipairs(Offset8) do
+  table.insert(connectPieces, gridPos)
+  connMap[gridPos.x][gridPos.y] = true
+  
+  local function searchConnectPiece(center, next)
+    for _, offset in ipairs(Offset8) do
       local pos = Vector2(center.x + offset[1], center.y + offset[2])
       if utilDataSvc:IsValidPiecePos(pos) then
         local connectPieceType = utilDataSvc:GetPieceType(pos)
         local pieceMatch = PopStarCanMatchPieceType(pieceType, connectPieceType)
-        if not (connMap[pos.x])[pos.y] and pieceMatch then
-          (table.insert)(connectPieces, pos)
-          -- DECOMPILER ERROR at PC42: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (connMap[pos.x])[pos.y] = true
+        if not connMap[pos.x][pos.y] and pieceMatch then
+          table.insert(connectPieces, pos)
+          connMap[pos.x][pos.y] = true
           next(pos, next)
         end
       end
     end
   end
-
+  
   searchConnectPiece(gridPos, searchConnectPiece)
   return connectPieces
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetPopConnectPieces = function(self)
-  -- function num : 0_6
+function PopStarProServiceLogic:GetPopConnectPieces()
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetPopConnectPieces()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.SetPopConnectPieces = function(self, connectPieces)
-  -- function num : 0_7
+function PopStarProServiceLogic:SetPopConnectPieces(connectPieces)
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   component:SetPopConnectPieces(connectPieces)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.CalculatePopPieces = function(self, connectPieces)
-  -- function num : 0_8 , upvalues : _ENV
+function PopStarProServiceLogic:CalculatePopPieces(connectPieces)
   local result = DataPopStarResult:New()
   result:SetPopConnectPieces(connectPieces)
-  local affixSvc = (self._world):GetService("Affix")
+  local affixSvc = self._world:GetService("Affix")
   local refreshType, fallingDir = affixSvc:ReplacePieceRefreshType()
-  if refreshType ~= PieceRefreshType.FallingDown or not fallingDir then
-    fallingDir = Vector2(0, -1)
-  end
+  fallingDir = refreshType == PieceRefreshType.FallingDown and fallingDir or Vector2(0, -1)
   local popNum = #connectPieces
   local destroyTrapList = self:_DestroyMaintainColorTrap(connectPieces)
   popNum = popNum + #destroyTrapList
@@ -159,69 +104,65 @@ PopStarProServiceLogic.CalculatePopPieces = function(self, connectPieces)
   result:SetTotalPopNum(self:GetPopGridNum())
   local ntChange = NTPopStarScoreChange:New()
   ntChange:SetPopChangeNum(popNum)
-  local triggerSvc = (self._world):GetService("Trigger")
+  local triggerSvc = self._world:GetService("Trigger")
   triggerSvc:Notify(ntChange)
   self:_TriggerTrap(connectPieces, result)
-  local boardLogicSvc = (self._world):GetService("BoardLogic")
+  local boardLogicSvc = self._world:GetService("BoardLogic")
   boardLogicSvc:SyncGridTilesColor()
   local delSet, newSet, moveSet = boardLogicSvc:PopStarGridByFallDir(connectPieces, fallingDir)
   result:SetDelSet(delSet)
   result:SetMoveSet(moveSet)
   result:SetNewSet(newSet)
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
-  for _,v in ipairs(newSet) do
-    boardLogicSvc:SetPieceTypeLogic(v.color, Vector2((v.pos).x, (v.pos).y))
+  for _, v in ipairs(newSet) do
+    boardLogicSvc:SetPieceTypeLogic(v.color, Vector2(v.pos.x, v.pos.y))
   end
-  for _,v in ipairs(moveSet) do
-    boardLogicSvc:SetPieceTypeLogic(v.color, Vector2((v.to).x, (v.to).y))
+  for _, v in ipairs(moveSet) do
+    boardLogicSvc:SetPieceTypeLogic(v.color, Vector2(v.to.x, v.to.y))
   end
-  local filter = function(e)
-    -- function num : 0_8_0
-    if e:HasTrapID() and (e:Trap()):FallWithGrid() then
-      return not e:HasDeadMark()
-    end
+  
+  local function filter(e)
+    return e:HasTrapID() and e:Trap():FallWithGrid() and not e:HasDeadMark()
   end
-
+  
   local moveTraps = {}
-  for _,v in ipairs(moveSet) do
+  for _, v in ipairs(moveSet) do
     local es = boardCmpt:GetPieceEntities(v.from, filter)
-    for i,e in ipairs(es) do
-      moveTraps[#moveTraps + 1] = {entity = e, from = v.from, to = v.to}
+    for i, e in ipairs(es) do
+      moveTraps[#moveTraps + 1] = {
+        entity = e,
+        from = v.from,
+        to = v.to
+      }
       e:SetGridPosition(v.to)
       boardLogicSvc:UpdateEntityBlockFlag(e, v.from, v.to)
     end
   end
   result:SetMoveTrapList(moveTraps)
-  local triggerSvc = (self._world):GetService("Trigger")
+  local triggerSvc = self._world:GetService("Trigger")
   triggerSvc:Notify(NTPopStarEnd:New(popNum))
   return result
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic._DestroyMaintainColorTrap = function(self, connectPieces)
-  -- function num : 0_9 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PopStarProServiceLogic:_DestroyMaintainColorTrap(connectPieces)
+  local utilDataSvc = self._world:GetService("UtilData")
   local destroyTrapList = {}
-  for _,pos in ipairs(connectPieces) do
+  for _, pos in ipairs(connectPieces) do
     local maintainColorTrapList = utilDataSvc:FindMaintainColorTrapByPos(pos)
-    if #maintainColorTrapList > 0 then
-      (table.appendArray)(destroyTrapList, maintainColorTrapList)
+    if 0 < #maintainColorTrapList then
+      table.appendArray(destroyTrapList, maintainColorTrapList)
     end
   end
   return destroyTrapList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic._TriggerTrap = function(self, connectPieces, result)
-  -- function num : 0_10 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local trapLSvc = (self._world):GetService("TrapLogic")
-  for _,pos in ipairs(connectPieces) do
+function PopStarProServiceLogic:_TriggerTrap(connectPieces, result)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local trapLSvc = self._world:GetService("TrapLogic")
+  for _, pos in ipairs(connectPieces) do
     local trapList, trapResList = trapLSvc:TriggerTrapOnPosByEntity(pos, teamEntity, TrapTriggerOrigin.Move)
-    for i,e in ipairs(trapList) do
+    for i, e in ipairs(trapList) do
       local trapEntity = e
       local skillEffectResultContainer = trapResList[i]
       local aiResult = AISkillResult:New()
@@ -231,121 +172,90 @@ PopStarProServiceLogic._TriggerTrap = function(self, connectPieces, result)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.Initialize = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self._world):MatchType() ~= MatchType.MT_PopStarPro then
-    return 
+function PopStarProServiceLogic:Initialize()
+  if self._world:MatchType() ~= MatchType.MT_PopStarPro then
+    return
   end
   local triggerSvc = self:GetService("Trigger")
   local triggerHandler = TriggerCallbackOwner:New(self, self.InitRelics)
   local trigger = triggerSvc:CreateTrigger(triggerHandler, {
-{NotifyType.GameStart}
-, 
-{TriggerType.Always}
-}, self._world)
+    {
+      NotifyType.GameStart
+    },
+    {
+      TriggerType.Always
+    }
+  }, self._world)
   triggerSvc:Attach(trigger)
   trigger:SetActive(true)
   self._trigger = trigger
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.Dispose = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self._world):MatchType() ~= MatchType.MT_PopStarPro then
-    return 
+function PopStarProServiceLogic:Dispose()
+  if self._world:MatchType() ~= MatchType.MT_PopStarPro then
+    return
   end
   local triggerSvc = self:GetService("Trigger")
   triggerSvc:Detach(self._trigger)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetTeamHPPercent = function(self)
-  -- function num : 0_13
-  local createInfo = ((self._world).BW_WorldInfo):GetPopStarProCreateInfo()
+function PopStarProServiceLogic:GetTeamHPPercent()
+  local createInfo = self._world.BW_WorldInfo:GetPopStarProCreateInfo()
   return createInfo.team_blood
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetLeftRoundCount = function(self)
-  -- function num : 0_14
-  local createInfo = ((self._world).BW_WorldInfo):GetPopStarProCreateInfo()
+function PopStarProServiceLogic:GetLeftRoundCount()
+  local createInfo = self._world.BW_WorldInfo:GetPopStarProCreateInfo()
   return createInfo.left_turn
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetWaveRandoms = function(self)
-  -- function num : 0_15
-  local createInfo = ((self._world).BW_WorldInfo):GetPopStarProCreateInfo()
+function PopStarProServiceLogic:GetWaveRandoms()
+  local createInfo = self._world.BW_WorldInfo:GetPopStarProCreateInfo()
   return createInfo.wave_randoms
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetRelics = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.PopStarProNoRelic) ~= MatchType.MT_PopStarPro then
+function PopStarProServiceLogic:GetRelics()
+  if self._world:MatchType(GetMatchTypeType.PopStarProNoRelic) ~= MatchType.MT_PopStarPro then
     return {}
   end
-  local createInfo = ((self._world).BW_WorldInfo):GetPopStarProCreateInfo()
+  local createInfo = self._world.BW_WorldInfo:GetPopStarProCreateInfo()
   return createInfo.relics
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetFeatureRelics = function(self)
-  -- function num : 0_17
-  local createInfo = ((self._world).BW_WorldInfo):GetPopStarProCreateInfo()
+function PopStarProServiceLogic:GetFeatureRelics()
+  local createInfo = self._world.BW_WorldInfo:GetPopStarProCreateInfo()
   return createInfo.skill_relics
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetRelicCounters = function(self)
-  -- function num : 0_18
-  local createInfo = ((self._world).BW_WorldInfo):GetPopStarProCreateInfo()
+function PopStarProServiceLogic:GetRelicCounters()
+  local createInfo = self._world.BW_WorldInfo:GetPopStarProCreateInfo()
   return createInfo.relic_counters
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetInitFeaturePower = function(self, featureType, featureData)
-  -- function num : 0_19 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.PopStarProNoRelic) ~= MatchType.MT_PopStarPro then
+function PopStarProServiceLogic:GetInitFeaturePower(featureType, featureData)
+  if self._world:MatchType(GetMatchTypeType.PopStarProNoRelic) ~= MatchType.MT_PopStarPro then
     return 0
   end
-  local createInfo = ((self._world).BW_WorldInfo):GetPopStarProCreateInfo()
-  local power = (createInfo.feature_info_list)[featureType]
+  local createInfo = self._world.BW_WorldInfo:GetPopStarProCreateInfo()
+  local power = createInfo.feature_info_list[featureType]
   if not power then
     local useCfgInitPower = false
-    do
-      do
-        if featureData and featureData.GetFirstUseInitPower then
-          local fistUseInitPower = featureData:GetFirstUseInitPower()
-          if fistUseInitPower then
-            power = fistUseInitPower
-            useCfgInitPower = true
-          end
-        end
-        if not useCfgInitPower then
-          power = 0
-        end
-        return power
+    if featureData and featureData.GetFirstUseInitPower then
+      local fistUseInitPower = featureData:GetFirstUseInitPower()
+      if fistUseInitPower then
+        power = fistUseInitPower
+        useCfgInitPower = true
       end
     end
+    if not useCfgInitPower then
+      power = 0
+    end
   end
+  return power
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.CheckRelicCounter = function(self, relicID)
-  -- function num : 0_20 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_relic)[relicID]
+function PopStarProServiceLogic:CheckRelicCounter(relicID)
+  local cfg = Cfg.cfg_item_relic[relicID]
   local relicCounters = self:GetRelicCounters()
   local cnt = relicCounters[relicID]
   if not cnt or cfg.OutGameTriggerCount == 0 or cnt < cfg.OutGameTriggerCount then
@@ -354,32 +264,24 @@ PopStarProServiceLogic.CheckRelicCounter = function(self, relicID)
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.CalculateRelicInnerEff = function(self, relicID)
-  -- function num : 0_21 , upvalues : _ENV
+function PopStarProServiceLogic:CalculateRelicInnerEff(relicID)
   local relics = self:GetRelics()
-  local cfg = (Cfg.cfg_item_relic)[relicID]
+  local cfg = Cfg.cfg_item_relic[relicID]
   if cfg.InnerGameType == RelicInnerGameEffType.ReplaceRelicID then
     local param = cfg.InnerGameTypeParam
     local needRelicID = param.needRelicID
-    if (table.icontains)(relics, needRelicID) then
+    if table.icontains(relics, needRelicID) then
       return param.replaceID
     end
   end
-  do
-    return relicID
-  end
+  return relicID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.CheckSuite = function(self, suiteID)
-  -- function num : 0_22 , upvalues : _ENV
+function PopStarProServiceLogic:CheckSuite(suiteID)
   local relics = self:GetRelics()
-  local suiteCfgList = (Cfg.cfg_item_relic)({SuiteID = suiteID})
-  for _,cfg in pairs(suiteCfgList) do
-    if not (table.icontains)(relics, cfg.ID) then
+  local suiteCfgList = Cfg.cfg_item_relic({SuiteID = suiteID})
+  for _, cfg in pairs(suiteCfgList) do
+    if not table.icontains(relics, cfg.ID) then
       return false
     end
     if not self:CheckRelicCounter(cfg.ID) then
@@ -389,87 +291,55 @@ PopStarProServiceLogic.CheckSuite = function(self, suiteID)
   return true
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.InitRelics = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.PopStarProNoRelic) ~= MatchType.MT_PopStarPro then
+function PopStarProServiceLogic:InitRelics()
+  if self._world:MatchType(GetMatchTypeType.PopStarProNoRelic) ~= MatchType.MT_PopStarPro then
     return {}
   end
-  local relics = (table.cloneconf)(self:GetRelics())
+  local relics = table.cloneconf(self:GetRelics())
   local featureRelics = self:GetFeatureRelics()
-  ;
-  (table.appendArray)(relics, featureRelics)
+  table.appendArray(relics, featureRelics)
   local validRelics = {}
-  for _,relicID in ipairs(relics) do
-    local cfg = (Cfg.cfg_item_relic)[relicID]
+  for _, relicID in ipairs(relics) do
+    local cfg = Cfg.cfg_item_relic[relicID]
     if self:CheckRelicCounter(relicID) then
       if cfg.SuiteID > 0 and self:CheckSuite(cfg.SuiteID) then
-        if not (table.icontains)(validRelics, cfg.SuiteID) then
-          (table.insert)(validRelics, cfg.SuiteID)
+        if not table.icontains(validRelics, cfg.SuiteID) then
+          table.insert(validRelics, cfg.SuiteID)
         end
         if cfg.Coexist then
-          (table.insert)(validRelics, relicID)
+          table.insert(validRelics, relicID)
         end
+      elseif cfg.InnerGameType and 0 < cfg.InnerGameType then
+        local id = self:CalculateRelicInnerEff(relicID)
+        table.insert(validRelics, id)
       else
-        if cfg.InnerGameType and cfg.InnerGameType > 0 then
-          local id = self:CalculateRelicInnerEff(relicID)
-          ;
-          (table.insert)(validRelics, id)
-        else
-          do
-            do
-              ;
-              (table.insert)(validRelics, relicID)
-              -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC85: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+        table.insert(validRelics, relicID)
       end
     end
   end
-  ;
-  (table.sort)(validRelics, function(a, b)
-    -- function num : 0_23_0 , upvalues : _ENV
-    local oa = ((Cfg.cfg_item_relic)[a]).ShowOrder
-    local ob = ((Cfg.cfg_item_relic)[b]).ShowOrder
-    if a >= b then
-      do return oa ~= ob end
-      do return oa < ob end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.sort(validRelics, function(a, b)
+    local oa = Cfg.cfg_item_relic[a].ShowOrder
+    local ob = Cfg.cfg_item_relic[b].ShowOrder
+    if oa == ob then
+      return a < b
+    else
+      return oa < ob
     end
-  end
-)
-  for _,relic in ipairs(validRelics) do
+  end)
+  for _, relic in ipairs(validRelics) do
     self:ApplyRelic(relic)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.ApplyRelic = function(self, relicID)
-  -- function num : 0_24 , upvalues : _ENV
-  local buffLSvc = (self._world):GetService("BuffLogic")
-  local cfg = (Cfg.cfg_item_relic)[relicID]
+function PopStarProServiceLogic:ApplyRelic(relicID)
+  local buffLSvc = self._world:GetService("BuffLogic")
+  local cfg = Cfg.cfg_item_relic[relicID]
   if #cfg.BuffID > 0 then
-    for _,buffID in ipairs(cfg.BuffID) do
-      if buffID > 0 then
-        (Log.notice)("[PopStarPro ApplyRelic] add buff:", buffID, " relic:", relicID)
+    for _, buffID in ipairs(cfg.BuffID) do
+      if 0 < buffID then
+        Log.notice("[PopStarPro ApplyRelic] add buff:", buffID, " relic:", relicID)
         local buffIns = buffLSvc:AddBuffByTargetType(buffID, cfg.BuffTargetType, cfg.BuffTargetParam)
-        for _,buffIn in ipairs(buffIns) do
+        for _, buffIn in ipairs(buffIns) do
           buffIn:SetRelicID(relicID)
         end
       end
@@ -477,95 +347,68 @@ PopStarProServiceLogic.ApplyRelic = function(self, relicID)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic._HandlePopNum = function(self, popNum)
-  -- function num : 0_25 , upvalues : _ENV
+function PopStarProServiceLogic:_HandlePopNum(popNum)
   local tmpNum = popNum
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local buffCmpt = teamEntity:BuffComponent()
   local val = buffCmpt:GetBuffValue(PopStarConst.PopOnceMoreKey)
-  if val and val > 0 then
-    local randomLSvc = (self._world):GetService("RandomLogic")
+  if val and 0 < val then
+    local randomLSvc = self._world:GetService("RandomLogic")
     local random = randomLSvc:LogicRand()
-    if random <= val then
+    if val >= random then
       tmpNum = tmpNum + popNum
     end
   end
-  do
-    return tmpNum
-  end
+  return tmpNum
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.AddRelicCounter = function(self, relicID)
-  -- function num : 0_26
-  local createInfo = ((self._world).BW_WorldInfo):GetPopStarProCreateInfo()
-  local cnt = (createInfo.relic_counters)[relicID]
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
+function PopStarProServiceLogic:AddRelicCounter(relicID)
+  local createInfo = self._world.BW_WorldInfo:GetPopStarProCreateInfo()
+  local cnt = createInfo.relic_counters[relicID]
   if not cnt then
-    (createInfo.relic_counters)[relicID] = 1
+    createInfo.relic_counters[relicID] = 1
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (createInfo.relic_counters)[relicID] = cnt + 1
+    createInfo.relic_counters[relicID] = cnt + 1
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetRelicCounter = function(self, relicID)
-  -- function num : 0_27
-  local createInfo = ((self._world).BW_WorldInfo):GetPopStarProCreateInfo()
-  return (createInfo.relic_counters)[relicID]
+function PopStarProServiceLogic:GetRelicCounter(relicID)
+  local createInfo = self._world.BW_WorldInfo:GetPopStarProCreateInfo()
+  return createInfo.relic_counters[relicID]
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetPopStarProFeatureInfoList = function(self)
-  -- function num : 0_28
+function PopStarProServiceLogic:GetPopStarProFeatureInfoList()
   local svc = self:GetService("FeatureLogic")
   return svc:GetPopStarProFeatureInfoList()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic._HandleAddFeatureEnergy = function(self, popNum)
-  -- function num : 0_29 , upvalues : _ENV
+function PopStarProServiceLogic:_HandleAddFeatureEnergy(popNum)
   local tmpNum = popNum
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local buffCmpt = teamEntity:BuffComponent()
   local val = buffCmpt:GetBuffValue(PopStarConst.BVK_AddEnergyOnceMore)
-  if val and val > 0 then
-    local randomLSvc = (self._world):GetService("RandomLogic")
+  if val and 0 < val then
+    local randomLSvc = self._world:GetService("RandomLogic")
     local random = randomLSvc:LogicRand()
-    if random <= val then
+    if val >= random then
       tmpNum = tmpNum + popNum
     end
   end
-  do
-    local ntAdd = NTPopStarProAddFeatureEnergy:New()
-    ntAdd:SetAddNum(tmpNum)
-    local triggerSvc = (self._world):GetService("Trigger")
-    triggerSvc:Notify(ntAdd)
-  end
+  local ntAdd = NTPopStarProAddFeatureEnergy:New()
+  ntAdd:SetAddNum(tmpNum)
+  local triggerSvc = self._world:GetService("Trigger")
+  triggerSvc:Notify(ntAdd)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetCampPetCount = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function PopStarProServiceLogic:GetCampPetCount()
   local count = 0
   local campID = self:GetCampID()
   if campID == 0 then
     return count
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  for _,pet in ipairs(teamMembers) do
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  for _, pet in ipairs(teamMembers) do
     local component = pet:MatchPet()
     local matchPet = component:GetMatchPet()
     if matchPet:GetPetCamp() == campID then
@@ -575,14 +418,11 @@ PopStarProServiceLogic.GetCampPetCount = function(self)
   return count
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetFettersPetCount = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function PopStarProServiceLogic:GetFettersPetCount()
   local count = 0
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  for _,pet in ipairs(teamMembers) do
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  for _, pet in ipairs(teamMembers) do
     if pet:HasFetters() then
       count = count + 1
     end
@@ -590,58 +430,43 @@ PopStarProServiceLogic.GetFettersPetCount = function(self)
   return count
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetFettersPetGroupCount = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function PopStarProServiceLogic:GetFettersPetGroupCount()
   local count = self:GetFettersPetCount()
-  count = (math.floor)(count / 2)
+  count = math.floor(count / 2)
   return count
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetPopGridCount = function(self)
-  -- function num : 0_33
+function PopStarProServiceLogic:GetPopGridCount()
   local count = self:GetLastPopGridNum()
   return count
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetRelicCount = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function PopStarProServiceLogic:GetRelicCount()
   local relics = self:GetRelics()
-  return (table.count)(relics)
+  return table.count(relics)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetCountByModifyType = function(self, modifyType)
-  -- function num : 0_35
+function PopStarProServiceLogic:GetCountByModifyType(modifyType)
   local count = 0
-  local func = (self._getCountFunc)[modifyType]
+  local func = self._getCountFunc[modifyType]
   if func then
     count = func(self)
   end
   return count
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.ActiveCamp = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function PopStarProServiceLogic:ActiveCamp()
   local campDic = {}
-  local activeCampID = nil
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
-  local teamMembers = (teamEntity:Team()):GetTeamPetEntities()
-  for _,pet in ipairs(teamMembers) do
+  local activeCampID
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
+  local teamMembers = teamEntity:Team():GetTeamPetEntities()
+  for _, pet in ipairs(teamMembers) do
     local component = pet:MatchPet()
     local matchPet = component:GetMatchPet()
     local campID = matchPet:GetPetCamp()
     if campDic[campID] then
       campDic[campID] = campDic[campID] + 1
-      if PopStarConst.ActiveCampPetCount <= campDic[campID] then
+      if campDic[campID] >= PopStarConst.ActiveCampPetCount then
         activeCampID = campID
         break
       end
@@ -649,41 +474,31 @@ PopStarProServiceLogic.ActiveCamp = function(self)
       campDic[campID] = 1
     end
   end
-  do
-    if activeCampID then
-      local component = self:GetPopStarLogicComponent()
-      if component then
-        component:SetCampID(activeCampID)
-      end
+  if activeCampID then
+    local component = self:GetPopStarLogicComponent()
+    if component then
+      component:SetCampID(activeCampID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetCampID = function(self)
-  -- function num : 0_37
+function PopStarProServiceLogic:GetCampID()
   local component = self:GetPopStarLogicComponent()
   if not component then
-    return 
+    return
   end
   return component:GetCampID()
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarProServiceLogic.GetCampSkillIDByLevel = function(self, level)
-  -- function num : 0_38 , upvalues : _ENV
+function PopStarProServiceLogic:GetCampSkillIDByLevel(level)
   local campID = self:GetCampID()
   if campID == 0 then
-    return 
+    return
   end
-  local cfg = (Cfg.cfg_camp_skill)({CampID = campID, SkillLevel = level})
+  local cfg = Cfg.cfg_camp_skill({CampID = campID, SkillLevel = level})
   if not cfg then
-    (Log.error)("[CampSkill] skill id is not exist, campID = ", campID, ", level = ", level)
-    return 
+    Log.error("[CampSkill] skill id is not exist, campID = ", campID, ", level = ", level)
+    return
   end
-  return (cfg[1]).SkillID
+  return cfg[1].SkillID
 end
-
-

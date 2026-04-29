@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_reflect_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("DamageByReflectDistanceCalculator", SkillEffectCalc_Base)
 DamageByReflectDistanceCalculator = DamageByReflectDistanceCalculator
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DamageByReflectDistanceCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function DamageByReflectDistanceCalculator:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DamageByReflectDistanceCalculator.Calculate = function(self, casterEntity, effectParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function DamageByReflectDistanceCalculator:Calculate(casterEntity, effectParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local attackRange = scopeResult:GetAttackRange()
   local distance = scopeResult:GetSpecialScopeResult()
   local attackPos = casterEntity:GetGridPosition()
-  local boardLogicSvc = (self._world):GetService("BoardLogic")
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
-  local skillEffectService = (self._world):GetService("SkillEffectCalc")
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
+  local boardLogicSvc = self._world:GetService("BoardLogic")
+  local buffLogicSvc = self._world:GetService("BuffLogic")
+  local skillEffectService = self._world:GetService("SkillEffectCalc")
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
   local damageStageIndex = effectParam:GetSkillEffectDamageStageIndex()
   local modifySkillIncreaseType = effectParam:GetSkillIncreaseType()
   local tResults = {}
@@ -35,17 +25,14 @@ DamageByReflectDistanceCalculator.Calculate = function(self, casterEntity, effec
     local damageParam = distance[i] * effectParam:GetDistanceDamageParam()
     local targetID = scopeResult:GetTargetIDByPos(gridPos)
     if targetID then
-      local target = (self._world):GetEntityByID(targetID)
+      local target = self._world:GetEntityByID(targetID)
       buffLogicSvc:ChangeSkillIncrease(casterEntity, self, modifySkillIncreaseType, damageParam)
       local nTotalDamage, listDamageInfo = skillEffectService:ComputeSkillDamage(casterEntity, attackPos, target, gridPos, skillID, effectParam, SkillEffectType.Damage, damageStageIndex)
       buffLogicSvc:RemoveSkillIncrease(casterEntity, self, modifySkillIncreaseType)
-      local skillResult = (self._skillEffectService):NewSkillDamageEffectResult(gridPos, target:GetID(), nTotalDamage, listDamageInfo, damageStageIndex)
+      local skillResult = self._skillEffectService:NewSkillDamageEffectResult(gridPos, target:GetID(), nTotalDamage, listDamageInfo, damageStageIndex)
       skillEffectResultContainer:AddEffectResult(skillResult)
-      ;
-      (table.insert)(tResults, skillResult)
+      table.insert(tResults, skillResult)
     end
   end
   return tResults
 end
-
-

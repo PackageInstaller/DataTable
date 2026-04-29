@@ -1,79 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/misc/functions.lua 
+local require = _ENV.require
+local string = _ENV.string
+local table = _ENV.table
 
--- params : ...
--- function num : 0 , upvalues : _ENV
-local require = require
-local string = string
-local table = table
-string.split = function(input, delimiter)
-  -- function num : 0_0 , upvalues : _ENV, string, table
+function string.split(input, delimiter)
   input = tostring(input)
   delimiter = tostring(delimiter)
   if delimiter == "" then
     return false
   end
   local pos, arr = 0, {}
-  for st,sp in function()
-    -- function num : 0_0_0 , upvalues : string, input, delimiter, pos
-    return (string.find)(input, delimiter, pos, true)
-  end
- do
-    (table.insert)(arr, (string.sub)(input, pos, st - 1))
+  for st, sp in function()
+    return string.find(input, delimiter, pos, true)
+  end, nil, nil do
+    table.insert(arr, string.sub(input, pos, st - 1))
     pos = sp + 1
   end
-  ;
-  (table.insert)(arr, (string.sub)(input, pos))
+  table.insert(arr, string.sub(input, pos))
   return arr
 end
 
-import = function(moduleName, currentModuleName)
-  -- function num : 0_1 , upvalues : string, table, _ENV, require
-  local currentModuleNameParts = nil
+function import(moduleName, currentModuleName)
+  local currentModuleNameParts
   local moduleFullName = moduleName
   local offset = 1
-  while 1 do
-    if (string.byte)(moduleName, offset) ~= 46 then
-      moduleFullName = (string.sub)(moduleName, offset)
-      if currentModuleNameParts and #currentModuleNameParts > 0 then
-        moduleFullName = (table.concat)(currentModuleNameParts, ".") .. "." .. moduleFullName
+  while true do
+    if string.byte(moduleName, offset) ~= 46 then
+      moduleFullName = string.sub(moduleName, offset)
+      if currentModuleNameParts and 0 < #currentModuleNameParts then
+        moduleFullName = table.concat(currentModuleNameParts, ".") .. "." .. moduleFullName
       end
       break
     end
     offset = offset + 1
     if not currentModuleNameParts then
-      do
-        if not currentModuleName then
-          local n, v = (debug.getlocal)(3, 1)
-          currentModuleName = v
-        end
-        currentModuleNameParts = (string.split)(currentModuleName, ".")
-        ;
-        (table.remove)(currentModuleNameParts, #currentModuleNameParts)
-        -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out DO_STMT
-
-        -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC47: LeaveBlock: unexpected jumping out IF_STMT
-
+      if not currentModuleName then
+        local n, v = debug.getlocal(3, 1)
+        currentModuleName = v
       end
+      currentModuleNameParts = string.split(currentModuleName, ".")
     end
+    table.remove(currentModuleNameParts, #currentModuleNameParts)
   end
   return require(moduleFullName)
 end
 
-reimport = function(name)
-  -- function num : 0_2 , upvalues : _ENV, require
-  local package = package
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (package.loaded)[name] = nil
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (package.preload)[name] = nil
+function reimport(name)
+  local package = _ENV.package
+  package.loaded[name] = nil
+  package.preload[name] = nil
   return require(name)
 end
-
-

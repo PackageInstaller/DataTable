@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_ruguelike/ui_rugue_like_last_stage_tip_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIRugueLikeLastStageTipController", UIController)
 UIRugueLikeLastStageTipController = UIRugueLikeLastStageTipController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIRugueLikeLastStageTipController.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIRugueLikeLastStageTipController:OnShow(uiParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIRugueLikeLastStageTipController.bgOnClick = function(self)
-  -- function num : 0_1
+function UIRugueLikeLastStageTipController:bgOnClick()
   self:ShowDialog("UIRugueLikeBattleResultController", true)
 end
-
-

@@ -1,86 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/cls/ui_world_boss_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UIWroldBossBadgeStype = {WBBS_NORMAL = 1, WBBS_SIMPLE = 2}
 _enum("UIWroldBossBadgeStype", UIWroldBossBadgeStype)
 _class("UIWorldBossHelper", Object)
 UIWorldBossHelper = UIWorldBossHelper
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIWorldBossHelper.Constructor = function(self)
-  -- function num : 0_0
+function UIWorldBossHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.GetCurDanCfg = function(curDan, curRankLevel)
-  -- function num : 0_1 , upvalues : _ENV
-  if (UIWorldBossHelper.IsNoDan)(curDan, curRankLevel) then
+function UIWorldBossHelper.GetCurDanCfg(curDan, curRankLevel)
+  if UIWorldBossHelper.IsNoDan(curDan, curRankLevel) then
     return nil
   end
-  local cfg = (Cfg.cfg_world_boss_dan)[curDan]
+  local cfg = Cfg.cfg_world_boss_dan[curDan]
   return cfg
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.GetUiLegendDanCfg = function(missionId)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossHelper.GetUiLegendDanCfg(missionId)
   local curRankLevel = 1
-  local curCfg = nil
-  local cfg = (Cfg.cfg_world_boss_dan)({MissionID = missionId})
-  if #cfg > 0 then
+  local curCfg
+  local cfg = Cfg.cfg_world_boss_dan({MissionID = missionId})
+  if 0 < #cfg then
     local minLevel = 0
-    for index,value in ipairs(cfg) do
-      if value.RankLevel > 0 and curRankLevel <= value.RankLevel and (minLevel == 0 or value.RankLevel < minLevel) then
+    for index, value in ipairs(cfg) do
+      if 0 < value.RankLevel and curRankLevel <= value.RankLevel and (minLevel == 0 or minLevel > value.RankLevel) then
         minLevel = value.RankLevel
         curCfg = value
       end
     end
   end
-  do
-    return curCfg
-  end
+  return curCfg
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.GetUiMinDanId = function(missionId)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWorldBossHelper.GetUiMinDanId(missionId)
   local curRankLevel = 1
   local danId = 1
-  local cfg = (Cfg.cfg_world_boss_dan)({MissionID = missionId})
-  if #cfg > 0 then
-    danId = (cfg[1]).ID
+  local cfg = Cfg.cfg_world_boss_dan({MissionID = missionId})
+  if 0 < #cfg then
+    danId = cfg[1].ID
   end
   return danId
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.GetDanBadgeBase = function(curDan, curRankLevel)
-  -- function num : 0_4 , upvalues : _ENV
-  if (UIWorldBossHelper.IsNoDan)(curDan, curRankLevel) then
+function UIWorldBossHelper.GetDanBadgeBase(curDan, curRankLevel)
+  if UIWorldBossHelper.IsNoDan(curDan, curRankLevel) then
     return "1601191_logo"
   end
   local rankLevel = curRankLevel
-  local cfg = (UIWorldBossHelper.GetCurDanCfg)(curDan, rankLevel)
+  local cfg = UIWorldBossHelper.GetCurDanCfg(curDan, rankLevel)
   if cfg then
     return cfg.DanBadgeBase
   end
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.GetWorldBossLegendDanGroup = function(idMission)
-  -- function num : 0_5 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIWorldBossHelper.GetWorldBossLegendDanGroup(idMission)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local idZone = roleModule:GetZoneIdType()
   local zoneTableName = "cfg_world_boss_legend_dan_" .. idZone
-  local cfg = nil
-  if (ResourceManager:GetInstance()):HasLua(zoneTableName) then
+  local cfg
+  if ResourceManager:GetInstance():HasLua(zoneTableName) then
     cfg = Cfg[zoneTableName]
   else
     cfg = Cfg.cfg_world_boss_legend_dan
@@ -89,53 +65,41 @@ UIWorldBossHelper.GetWorldBossLegendDanGroup = function(idMission)
   return cfgGroup
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.GetDanBadgeBaseSimple = function(curDan, curRankLevel)
-  -- function num : 0_6 , upvalues : _ENV
-  if (UIWorldBossHelper.IsNoDan)(curDan, curRankLevel) then
+function UIWorldBossHelper.GetDanBadgeBaseSimple(curDan, curRankLevel)
+  if UIWorldBossHelper.IsNoDan(curDan, curRankLevel) then
     return "1601191_logo"
   end
   local rankLevel = curRankLevel
-  local cfg = (UIWorldBossHelper.GetCurDanCfg)(curDan, rankLevel)
+  local cfg = UIWorldBossHelper.GetCurDanCfg(curDan, rankLevel)
   if cfg then
-    local cfgGroup = nil
-    if rankLevel > 0 then
-      cfgGroup = (UIWorldBossHelper.GetWorldBossLegendDanGroup)(cfg.MissionID)
+    local cfgGroup
+    if 0 < rankLevel then
+      cfgGroup = UIWorldBossHelper.GetWorldBossLegendDanGroup(cfg.MissionID)
     end
     if cfgGroup ~= nil then
       local cfgPool = {}
-      for k,v in pairs(cfgGroup) do
-        (table.insert)(cfgPool, v)
+      for k, v in pairs(cfgGroup) do
+        table.insert(cfgPool, v)
       end
-      ;
-      (table.sort)(cfgPool, function(a, b)
-    -- function num : 0_6_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-      for k,v in pairs(cfgPool) do
+      table.sort(cfgPool, function(a, b)
+        return a.ID < b.ID
+      end)
+      for k, v in pairs(cfgPool) do
         if rankLevel <= v.RankingLevel then
           return v.SimpleDanBadgeBase
         end
       end
     end
-    do
-      do return cfg.SimpleDanBadgeBase end
-    end
+    return cfg.SimpleDanBadgeBase
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.IsPlusDan = function(curDan, curRankLevel)
-  -- function num : 0_7 , upvalues : _ENV
-  if (UIWorldBossHelper.IsNoDan)(curDan, curRankLevel) then
+function UIWorldBossHelper.IsPlusDan(curDan, curRankLevel)
+  if UIWorldBossHelper.IsNoDan(curDan, curRankLevel) then
     return false
   end
   local rankLevel = curRankLevel
-  local cfg = (UIWorldBossHelper.GetCurDanCfg)(curDan, rankLevel)
+  local cfg = UIWorldBossHelper.GetCurDanCfg(curDan, rankLevel)
   if cfg then
     if cfg.IsPlusDan and cfg.IsPlusDan == 1 then
       return true
@@ -146,35 +110,29 @@ UIWorldBossHelper.IsPlusDan = function(curDan, curRankLevel)
   return false
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.GetDanName = function(curDan, curRankLevel)
-  -- function num : 0_8 , upvalues : _ENV
-  if (UIWorldBossHelper.IsNoDan)(curDan, curRankLevel) then
+function UIWorldBossHelper.GetDanName(curDan, curRankLevel)
+  if UIWorldBossHelper.IsNoDan(curDan, curRankLevel) then
     return "str_world_boss_dan_detail_no_dan"
   end
   local rankLevel = curRankLevel
-  local cfg = (UIWorldBossHelper.GetCurDanCfg)(curDan, rankLevel)
+  local cfg = UIWorldBossHelper.GetCurDanCfg(curDan, rankLevel)
   if cfg then
     return cfg.DanName
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.GetDanNeedDamage = function(curDan, curRankLevel)
-  -- function num : 0_9 , upvalues : _ENV
-  if (UIWorldBossHelper.IsNoDan)(curDan, curRankLevel) then
+function UIWorldBossHelper.GetDanNeedDamage(curDan, curRankLevel)
+  if UIWorldBossHelper.IsNoDan(curDan, curRankLevel) then
     return 0
   end
   local rankLevel = 0
   if curRankLevel then
     rankLevel = curRankLevel
   end
-  if rankLevel > 0 then
+  if 0 < rankLevel then
     return nil
   end
-  local cfg = (UIWorldBossHelper.GetCurDanCfg)(curDan, rankLevel)
+  local cfg = UIWorldBossHelper.GetCurDanCfg(curDan, rankLevel)
   if cfg then
     return cfg.NeedDamage
   else
@@ -182,33 +140,27 @@ UIWorldBossHelper.GetDanNeedDamage = function(curDan, curRankLevel)
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.IsNormalTopDan = function(curDan, curRankLevel)
-  -- function num : 0_10 , upvalues : _ENV
-  if (UIWorldBossHelper.IsNoDan)(curDan, curRankLevel) then
+function UIWorldBossHelper.IsNormalTopDan(curDan, curRankLevel)
+  if UIWorldBossHelper.IsNoDan(curDan, curRankLevel) then
     return false
   end
   local rankLevel = 0
   if curRankLevel then
     rankLevel = curRankLevel
   end
-  if rankLevel > 0 then
+  if 0 < rankLevel then
     return false
   end
   local nextDan = curDan + 1
-  local nextCfg = (UIWorldBossHelper.GetCurDanCfg)(nextDan, rankLevel)
-  if nextCfg.RankLevel <= 0 then
-    do return not nextCfg end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  local nextCfg = UIWorldBossHelper.GetCurDanCfg(nextDan, rankLevel)
+  if nextCfg then
+    return 0 < nextCfg.RankLevel
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.IsNoDan = function(curDan, curRankLevel)
-  -- function num : 0_11
+function UIWorldBossHelper.IsNoDan(curDan, curRankLevel)
   if curDan == 0 and curRankLevel == 0 then
     return true
   else
@@ -216,133 +168,97 @@ UIWorldBossHelper.IsNoDan = function(curDan, curRankLevel)
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.SortDanDetailUIData = function(list)
-  -- function num : 0_12 , upvalues : _ENV
+function UIWorldBossHelper.SortDanDetailUIData(list)
   if list then
-    (table.sort)(list, function(a, b)
-    -- function num : 0_12_0
-    do return b._danId < a._danId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(list, function(a, b)
+      return a._danId > b._danId
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.InitSelfDanBadgeSimple = function(badgeGen, badgeGo, badgeRect)
-  -- function num : 0_13 , upvalues : _ENV, UIWroldBossBadgeStype
-  local head_dan_badge = nil
+function UIWorldBossHelper.InitSelfDanBadgeSimple(badgeGen, badgeGo, badgeRect)
+  local head_dan_badge
   if badgeGen and badgeGo then
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local bShowBadge = roleModule:GetBadgeSwitch()
     if bShowBadge then
       local lastDan = roleModule:GetWorldBossRecordDan()
       local lastRank = roleModule:GetWorldBossRecordRank()
-      if (UIWorldBossHelper.IsNoDan)(lastDan, lastRank) then
+      if UIWorldBossHelper.IsNoDan(lastDan, lastRank) then
         badgeGo:SetActive(false)
       else
         head_dan_badge = badgeGen:SpawnObject("UIWorldBossDanBadge")
         local badgeType = UIWroldBossBadgeStype.WBBS_SIMPLE
-        head_dan_badge:SetData(badgeType, lastDan, lastRank, (badgeRect.sizeDelta).x, (badgeRect.sizeDelta).y)
+        head_dan_badge:SetData(badgeType, lastDan, lastRank, badgeRect.sizeDelta.x, badgeRect.sizeDelta.y)
         badgeGo:SetActive(true)
       end
     else
-      do
-        do
-          badgeGo:SetActive(false)
-          return head_dan_badge
-        end
-      end
+      badgeGo:SetActive(false)
     end
   end
+  return head_dan_badge
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.InitOtherDanBadgeSimple = function(badgeGen, badgeGo, badgeRect, roleWorldBossInfo)
-  -- function num : 0_14 , upvalues : _ENV, UIWroldBossBadgeStype
-  local head_dan_badge = nil
+function UIWorldBossHelper.InitOtherDanBadgeSimple(badgeGen, badgeGo, badgeRect, roleWorldBossInfo)
+  local head_dan_badge
   if badgeGen and badgeGo and badgeRect and roleWorldBossInfo then
     local bShowBadge = roleWorldBossInfo.dan_head_switch
     if bShowBadge then
       local lastDan = roleWorldBossInfo.dan
       local lastRank = roleWorldBossInfo.grading
-      if (UIWorldBossHelper.IsNoDan)(lastDan, lastRank) then
+      if UIWorldBossHelper.IsNoDan(lastDan, lastRank) then
         badgeGo:SetActive(false)
       else
         head_dan_badge = badgeGen:SpawnObject("UIWorldBossDanBadge")
         local badgeType = UIWroldBossBadgeStype.WBBS_SIMPLE
-        head_dan_badge:SetData(badgeType, lastDan, lastRank, (badgeRect.sizeDelta).x, (badgeRect.sizeDelta).y)
+        head_dan_badge:SetData(badgeType, lastDan, lastRank, badgeRect.sizeDelta.x, badgeRect.sizeDelta.y)
         badgeGo:SetActive(true)
       end
     else
-      do
-        do
-          badgeGo:SetActive(false)
-          return head_dan_badge
-        end
-      end
+      badgeGo:SetActive(false)
     end
   end
+  return head_dan_badge
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.InitDanBadge = function(badgeGen, badgeGo, badgeRect, dan, rank)
-  -- function num : 0_15 , upvalues : _ENV, UIWroldBossBadgeStype
-  local head_dan_badge = nil
-  if dan <= 0 then
-    do
-      local bShowBadge = not badgeGen or not badgeGo or not badgeRect or not dan or not rank
-      if bShowBadge then
-        if (UIWorldBossHelper.IsNoDan)(dan, rank) then
-          badgeGo:SetActive(false)
-        else
-          head_dan_badge = badgeGen:SpawnObject("UIWorldBossDanBadge")
-          local badgeType = UIWroldBossBadgeStype.WBBS_NORMAL
-          head_dan_badge:SetData(badgeType, dan, rank, (badgeRect.sizeDelta).x, (badgeRect.sizeDelta).y)
-          badgeGo:SetActive(true)
-        end
-      else
+function UIWorldBossHelper.InitDanBadge(badgeGen, badgeGo, badgeRect, dan, rank)
+  local head_dan_badge
+  if badgeGen and badgeGo and badgeRect and dan and rank then
+    local bShowBadge = 0 < dan
+    if bShowBadge then
+      if UIWorldBossHelper.IsNoDan(dan, rank) then
         badgeGo:SetActive(false)
+      else
+        head_dan_badge = badgeGen:SpawnObject("UIWorldBossDanBadge")
+        local badgeType = UIWroldBossBadgeStype.WBBS_NORMAL
+        head_dan_badge:SetData(badgeType, dan, rank, badgeRect.sizeDelta.x, badgeRect.sizeDelta.y)
+        badgeGo:SetActive(true)
       end
-      do return head_dan_badge end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+    else
+      badgeGo:SetActive(false)
     end
   end
+  return head_dan_badge
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.GetCurDanLevel = function(danId)
-  -- function num : 0_16 , upvalues : _ENV
+function UIWorldBossHelper.GetCurDanLevel(danId)
   local danLevel = 0
-  local cfg = (Cfg.cfg_world_boss_dan)[danId]
+  local cfg = Cfg.cfg_world_boss_dan[danId]
   if cfg then
     danLevel = cfg.DanLevel
   end
   return danLevel
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-UIWorldBossHelper.CheckCurRank = function(rankList, score)
-  -- function num : 0_17 , upvalues : _ENV
-  local bEqual = function(a, b)
-    -- function num : 0_17_0
-    do return a == b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIWorldBossHelper.CheckCurRank(rankList, score)
+  local function bEqual(a, b)
+    return a == b
   end
-
-  local checkFun = function(a, b)
-    -- function num : 0_17_1
-    do return b <= a end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  
+  local function checkFun(a, b)
+    return b <= a
   end
-
+  
   if rankList and score then
     local nRank = #rankList
     if nRank == 0 then
@@ -362,72 +278,62 @@ UIWorldBossHelper.CheckCurRank = function(rankList, score)
     end
     local top = 1
     local bottom = nRank
-    local mid = (math.floor)((bottom + top) / 2)
+    local mid = math.floor((bottom + top) / 2)
     local nList = bottom - top + 1
     local safeFlag = 999
-    while nList > 2 do
+    while 2 < nList do
       if checkFun(score, rankList[mid]) then
         bottom = mid
       else
         top = mid
       end
-      mid = (math.floor)((bottom + top) / 2)
+      mid = math.floor((bottom + top) / 2)
       nList = bottom - top + 1
       safeFlag = safeFlag - 1
-    end
-    if safeFlag < 0 or checkFun(score, rankList[top]) then
-      return top
-    else
-      if not checkFun(score, rankList[bottom]) then
-        return bottom + 1
-      else
-        return bottom
+      if safeFlag < 0 then
+        break
       end
     end
+    if checkFun(score, rankList[top]) then
+      return top
+    elseif not checkFun(score, rankList[bottom]) then
+      return bottom + 1
+    else
+      return bottom
+    end
   end
-  do
-    return -1
-  end
+  return -1
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-UIActivityHelper.CalClientDan = function(rankList, curDan, curRank, curPromoteDamage, damage, missionId)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityHelper.CalClientDan(rankList, curDan, curRank, curPromoteDamage, damage, missionId)
   local newDan = curDan
   local newRank = curRank
   local promoteDamage = curPromoteDamage
   if rankList then
     local nRankList = #rankList
-    if curRank > 0 or (UIWorldBossHelper.IsNormalTopDan)(curDan, curRank) then
-      local legendCfg = (UIWorldBossHelper.GetUiLegendDanCfg)(missionId)
+    if 0 < curRank or UIWorldBossHelper.IsNormalTopDan(curDan, curRank) then
+      local legendCfg = UIWorldBossHelper.GetUiLegendDanCfg(missionId)
       if legendCfg then
         local maxRank = legendCfg.RankLevel
-        local calRank = (UIWorldBossHelper.CheckCurRank)(rankList, damage)
-        if calRank >= 1 and calRank <= maxRank then
+        local calRank = UIWorldBossHelper.CheckCurRank(rankList, damage)
+        if 1 <= calRank and maxRank >= calRank then
           newRank = calRank
           newDan = legendCfg.ID
           if newRank ~= 1 then
             local preRank = newRank - 1
-            if preRank >= 1 and preRank <= nRankList then
+            if 1 <= preRank and nRankList >= preRank then
               promoteDamage = rankList[preRank]
             end
           end
         else
-          do
-            do
-              newRank = 0
-              newDan = legendCfg.ID - 1
-              if nRankList > 0 then
-                promoteDamage = rankList[nRankList]
-              end
-              return newDan, newRank, promoteDamage
-            end
+          newRank = 0
+          newDan = legendCfg.ID - 1
+          if 0 < nRankList then
+            promoteDamage = rankList[nRankList]
           end
         end
       end
     end
   end
+  return newDan, newRank, promoteDamage
 end
-
-

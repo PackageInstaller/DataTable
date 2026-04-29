@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n38/mission/ui_n38_hard_level_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN38HardLevelBtn", UICustomWidget)
 UIN38HardLevelBtn = UIN38HardLevelBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN38HardLevelBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN38HardLevelBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38HardLevelBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UIN38HardLevelBtn:InitWidget()
   self._bg = self:GetUIComponent("Image", "Bg")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._lockGO = self:GetGameObject("Lock")
@@ -23,10 +13,7 @@ UIN38HardLevelBtn.InitWidget = function(self)
   self._timeText = self:GetUIComponent("UILocalizationText", "Time")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38HardLevelBtn.SetData = function(self, atlas, isBlack, blackUnlock, clickCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN38HardLevelBtn:SetData(atlas, isBlack, blackUnlock, clickCallback)
   self._atlas = atlas
   self._clickCallback = clickCallback
   self._isBlack = isBlack
@@ -36,82 +23,55 @@ UIN38HardLevelBtn.SetData = function(self, atlas, isBlack, blackUnlock, clickCal
     btnSpriteName = "n26_kng_btn02"
     multiLangaugeName = "str_n38_diff_title"
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self._bg).sprite = atlas:GetSprite(btnSpriteName)
-  ;
-  (self._name):SetText((StringTable.Get)(multiLangaugeName))
+  self._bg.sprite = atlas:GetSprite(btnSpriteName)
+  self._name:SetText(StringTable.Get(multiLangaugeName))
   if isBlack then
-    (self._lockGO):SetActive(not blackUnlock)
+    self._lockGO:SetActive(not blackUnlock)
     if not blackUnlock then
-      local startTime = ((self.uiOwner)._blevelComponentInfo).m_unlock_time
-      local curTime = (math.floor)((self:GetModule(SvrTimeModule)):GetServerTime() * 0.001)
-      if curTime < startTime then
-        (self._timeGO):SetActive(true)
-        ;
-        (self._timeText):SetText(UIN38Line:GetFormatTimerStr((math.max)(startTime - curTime, 0), "FEFCFC"))
+      local startTime = self.uiOwner._blevelComponentInfo.m_unlock_time
+      local curTime = math.floor(self:GetModule(SvrTimeModule):GetServerTime() * 0.001)
+      if startTime > curTime then
+        self._timeGO:SetActive(true)
+        self._timeText:SetText(UIN38Line:GetFormatTimerStr(math.max(startTime - curTime, 0), "FEFCFC"))
       else
-        ;
-        (self._timeGO):SetActive(false)
+        self._timeGO:SetActive(false)
       end
     else
-      do
-        ;
-        (self._timeGO):SetActive(false)
-        ;
-        (self._timeGO):SetActive(false)
-        ;
-        (self._lockGO):SetActive(false)
-      end
+      self._timeGO:SetActive(false)
     end
+  else
+    self._timeGO:SetActive(false)
+    self._lockGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38HardLevelBtn.Refresh = function(self, blackUnlock)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN38HardLevelBtn:Refresh(blackUnlock)
   if self._isBlack then
-    (self._lockGO):SetActive(not blackUnlock)
+    self._lockGO:SetActive(not blackUnlock)
     if not blackUnlock then
-      local startTime = ((self.uiOwner)._blevelComponentInfo).m_unlock_time
-      local curTime = (math.floor)((self:GetModule(SvrTimeModule)):GetServerTime() * 0.001)
-      if curTime < startTime then
-        (self._timeGO):SetActive(true)
-        ;
-        (self._timeText):SetText(UIN38Line:GetFormatTimerStr((math.max)(startTime - curTime, 0), "FEFCFC"))
+      local startTime = self.uiOwner._blevelComponentInfo.m_unlock_time
+      local curTime = math.floor(self:GetModule(SvrTimeModule):GetServerTime() * 0.001)
+      if startTime > curTime then
+        self._timeGO:SetActive(true)
+        self._timeText:SetText(UIN38Line:GetFormatTimerStr(math.max(startTime - curTime, 0), "FEFCFC"))
       else
-        ;
-        (self._timeGO):SetActive(false)
+        self._timeGO:SetActive(false)
       end
     else
-      do
-        ;
-        (self._timeGO):SetActive(false)
-        ;
-        (self._timeGO):SetActive(false)
-        ;
-        (self._lockGO):SetActive(false)
-      end
+      self._timeGO:SetActive(false)
     end
+  else
+    self._timeGO:SetActive(false)
+    self._lockGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38HardLevelBtn.SetUnlock = function(self, isUnlock)
-  -- function num : 0_4
-  (self._lockGO):SetActive(isUnlock)
+function UIN38HardLevelBtn:SetUnlock(isUnlock)
+  self._lockGO:SetActive(isUnlock)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN38HardLevelBtn.LevelBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UIN38HardLevelBtn:LevelBtnOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)(self._isBlack)
+    self._clickCallback(self._isBlack)
   end
 end
-
-

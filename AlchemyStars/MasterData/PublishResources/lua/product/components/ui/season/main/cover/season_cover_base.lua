@@ -1,75 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/cover/season_cover_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonCoverBase", Object)
 SeasonCoverBase = SeasonCoverBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonCoverBase.Constructor = function(self, transform)
-  -- function num : 0_0
+function SeasonCoverBase:Constructor(transform)
   self._yDelta = 2
   self._transform = transform
   self._rawPosition = transform.position
   self._covers = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverBase.AddBuildingCover = function(self, cover)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._covers, cover)
+function SeasonCoverBase:AddBuildingCover(cover)
+  table.insert(self._covers, cover)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverBase.OnCoverCheck = function(self, position)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonCoverBase:OnCoverCheck(position)
   local z = position.z
   local x = position.x
-  local targetCover = nil
-  for _,cover in pairs(self._covers) do
+  local targetCover
+  for _, cover in pairs(self._covers) do
     if not targetCover then
       targetCover = cover
-    else
-      if (Mathf.Abs)((cover.position).x - x) < (Mathf.Abs)((targetCover.position).x - x) then
-        targetCover = cover
-      end
+    elseif Mathf.Abs(cover.position.x - x) < Mathf.Abs(targetCover.position.x - x) then
+      targetCover = cover
     end
   end
-  if z >= (targetCover.position).z then
-    do return not targetCover end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if targetCover then
+    return z < targetCover.position.z
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverBase.IncreaseBuildingY = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._transform).position = Vector3((self._rawPosition).x, (self._rawPosition).y + self._yDelta, (self._rawPosition).z)
+function SeasonCoverBase:IncreaseBuildingY()
+  self._transform.position = Vector3(self._rawPosition.x, self._rawPosition.y + self._yDelta, self._rawPosition.z)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverBase.ReduceBuildingY = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._transform).position = self._rawPosition
+function SeasonCoverBase:ReduceBuildingY()
+  self._transform.position = self._rawPosition
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonCoverBase.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonCoverBase:Dispose()
   self._transform = nil
-  ;
-  (table.clear)(self._covers)
+  table.clear(self._covers)
 end
-
-

@@ -1,91 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/_review/ui_n5_review_progress_award.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5ReviewProgressAward", UICustomWidget)
 UIN5ReviewProgressAward = UIN5ReviewProgressAward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5ReviewProgressAward.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN5ReviewProgressAward:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAward.InitWidget = function(self)
-  -- function num : 0_1
+function UIN5ReviewProgressAward:InitWidget()
   self.icon = self:GetUIComponent("Image", "icon")
   self.root = self:GetUIComponent("RectTransform", "root")
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAward.SetData = function(self, idx, curIndex, progress, curProgress, status)
-  -- function num : 0_2 , upvalues : _ENV
-  local parent = ((self.root).parent):GetComponent(typeof(UnityEngine.RectTransform))
-  local width = (parent.rect).width
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self.root).anchoredPosition = Vector2(width * progress / 100, 0)
+function UIN5ReviewProgressAward:SetData(idx, curIndex, progress, curProgress, status)
+  local parent = self.root.parent:GetComponent(typeof(UnityEngine.RectTransform))
+  local width = parent.rect.width
+  self.root.anchoredPosition = Vector2(width * progress / 100, 0)
   local atlas = self:GetAsset("UIN5.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R9 in 'UnsetPending'
-
   if curIndex == -1 then
-    (self.root).anchoredPosition = Vector2(width * progress / 100, 0)
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.icon).sprite = atlas:GetSprite("hdhg_n5zjm_icon02")
-  else
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R9 in 'UnsetPending'
-
-    if status == 1 then
-      (self.root).anchoredPosition = Vector2(width * progress / 100, 0)
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self.icon).sprite = atlas:GetSprite("hdhg_n5zjm_icon02")
-    else
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R9 in 'UnsetPending'
-
-      if status == 2 then
-        (self.root).anchoredPosition = Vector2(width * progress / 100, 2)
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self.icon).sprite = atlas:GetSprite("hdhg_n5zjm_icon03")
-      else
-        -- DECOMPILER ERROR at PC75: Confused about usage of register: R9 in 'UnsetPending'
-
-        if status == 3 then
-          (self.root).anchoredPosition = Vector2(width * progress / 100, 0)
-          -- DECOMPILER ERROR at PC80: Confused about usage of register: R9 in 'UnsetPending'
-
-          ;
-          (self.icon).sprite = atlas:GetSprite("hdhg_n5zjm_icon01")
-        end
-      end
-    end
+    self.root.anchoredPosition = Vector2(width * progress / 100, 0)
+    self.icon.sprite = atlas:GetSprite("hdhg_n5zjm_icon02")
+  elseif status == 1 then
+    self.root.anchoredPosition = Vector2(width * progress / 100, 0)
+    self.icon.sprite = atlas:GetSprite("hdhg_n5zjm_icon02")
+  elseif status == 2 then
+    self.root.anchoredPosition = Vector2(width * progress / 100, 2)
+    self.icon.sprite = atlas:GetSprite("hdhg_n5zjm_icon03")
+  elseif status == 3 then
+    self.root.anchoredPosition = Vector2(width * progress / 100, 0)
+    self.icon.sprite = atlas:GetSprite("hdhg_n5zjm_icon01")
   end
-  ;
-  (self.icon):SetNativeSize()
+  self.icon:SetNativeSize()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAward.PlayEnterAni = function(self, delay)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN5ReviewProgressAward:PlayEnterAni(delay)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, delay, self
     YIELD(TT, delay)
-    ;
-    (self.animation):Play("uieff_N24_Main_Review_icon01")
-  end
-, self)
+    self.animation:Play("uieff_N24_Main_Review_icon01")
+  end, self)
 end
-
-

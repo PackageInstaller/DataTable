@@ -1,79 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/center/ui_side_enter_center_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterCenterEntry", UICustomWidget)
 UISideEnterCenterEntry = UISideEnterCenterEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterCenterEntry.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISideEnterCenterEntry:OnShow(uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry.OnHide = function(self)
-  -- function num : 0_1
+function UISideEnterCenterEntry:OnHide()
   self:_DetachEvents()
   self:_Stop_PlayNewEffect()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry.SetData = function(self, TT)
-  -- function num : 0_2
+function UISideEnterCenterEntry:SetData(TT)
   self:_LoadDataAndRefresh(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISideEnterCenterEntry:_Refresh()
   if not self._refreshTaskId then
-    self._refreshTaskId = (TaskManager:GetInstance()):StartTask(self._LoadDataAndRefresh, self)
+    self._refreshTaskId = TaskManager:GetInstance():StartTask(self._LoadDataAndRefresh, self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._LoadDataAndRefresh = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UISideEnterCenterEntry:_LoadDataAndRefresh(TT)
   local lockName = "UISideEnterCenterEntry_LoadDataAndRefresh"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  local cfgList = (UISideEnterConst.GetCfgList_SideEnterCenter)()
-  self._showTb = (UISideEnterConst.SpawnSideEnterLoader)(TT, self, "_centerLoaderPool", cfgList, function()
-    -- function num : 0_4_0 , upvalues : self
+  GameGlobal.UIStateManager():Lock(lockName)
+  local cfgList = UISideEnterConst.GetCfgList_SideEnterCenter()
+  self._showTb = UISideEnterConst.SpawnSideEnterLoader(TT, self, "_centerLoaderPool", cfgList, function()
     self:_Refresh()
-  end
-, function()
-    -- function num : 0_4_1 , upvalues : self
+  end, function()
     self:_CheckPoint(self._showTb)
-  end
-)
+  end)
   local hide = #self._showTb == 0
-  ;
-  (self:GetGameObject()):SetActive(not hide)
+  self:GetGameObject():SetActive(not hide)
   self:_CheckPoint(self._showTb)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock(lockName)
+  GameGlobal.UIStateManager():UnLock(lockName)
   self._refreshTaskId = nil
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._Start_PlayNewEffect = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISideEnterCenterEntry:_Start_PlayNewEffect()
   if self._playTaskId and self._playTaskId ~= -1 then
-    return 
+    return
   end
-  self._playTaskId = (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
+  self._playTaskId = TaskManager:GetInstance():StartTask(function(TT)
     if not self.view then
-      return 
+      return
     end
     local isPlay, duration = self:_PlayNewEffect(self._showTb)
     if isPlay then
@@ -81,168 +50,111 @@ UISideEnterCenterEntry._Start_PlayNewEffect = function(self)
       if self.view then
         local animName = "uieff_UISideEnterCenter_Entry_newEffect_out"
         local animDuration = 500
-        ;
-        (UIWidgetHelper.SetAnimationPlay)(self, "_newEffect", animName)
+        UIWidgetHelper.SetAnimationPlay(self, "_newEffect", animName)
         YIELD(TT, animDuration)
       end
-      do
-        if self.view then
-          self:_SetNewEffectShow(false)
-        end
-        YIELD(TT, 1000)
-        self._playTaskId = nil
-        if self.view then
-          self:_Start_PlayNewEffect()
-        end
-        self._playTaskId = nil
+      if self.view then
+        self:_SetNewEffectShow(false)
       end
+      YIELD(TT, 1000)
+      self._playTaskId = nil
+      if self.view then
+        self:_Start_PlayNewEffect()
+      end
+    else
+      self._playTaskId = nil
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._Stop_PlayNewEffect = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISideEnterCenterEntry:_Stop_PlayNewEffect()
   if self._playTaskId and self._playTaskId ~= -1 then
-    ((GameGlobal.TaskManager)()):KillTask(self._playTaskId)
+    GameGlobal.TaskManager():KillTask(self._playTaskId)
     self._playTaskId = nil
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._PlayNewEffect = function(self, showTb)
-  -- function num : 0_7 , upvalues : _ENV
-  if not showTb then
-    showTb = {}
-  end
+function UISideEnterCenterEntry:_PlayNewEffect(showTb)
+  showTb = showTb or {}
   local obj, cfg, key = self:_CalcNewEffect(showTb)
   if obj then
-    (Log.debug)("UISideEnterCenterEntry:_PlayNewEffect() Play New Effect, key = ", key)
-    ;
-    (LocalDB.SetInt)(key, 0)
+    Log.debug("UISideEnterCenterEntry:_PlayNewEffect() Play New Effect, key = ", key)
+    LocalDB.SetInt(key, 0)
     local url = obj:GetSideEnterRawImage()
-    ;
-    (UIWidgetHelper.SetRawImage)(self, "_bg_ne", url)
+    UIWidgetHelper.SetRawImage(self, "_bg_ne", url)
     self:_SetNewEffectShow(true)
     return true, cfg.duration
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._GetNewEffectCfg = function(self, obj)
-  -- function num : 0_8
+function UISideEnterCenterEntry:_GetNewEffectCfg(obj)
   local cfg = obj:GetCfg()
   return cfg.NewEffect
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._GetNewEffectKey = function(self, cfg)
-  -- function num : 0_9 , upvalues : _ENV
-  if cfg and cfg.key then
-    local key = (UIActivityHelper.GetLocalDBKeyWithPstId)(cfg.key)
-  end
+function UISideEnterCenterEntry:_GetNewEffectKey(cfg)
+  local key = cfg and cfg.key and UIActivityHelper.GetLocalDBKeyWithPstId(cfg.key)
   return key
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._CalcNewEffect = function(self, showTb)
-  -- function num : 0_10 , upvalues : _ENV
+function UISideEnterCenterEntry:_CalcNewEffect(showTb)
   local tb = {}
-  for _,obj in ipairs(showTb) do
+  for _, obj in ipairs(showTb) do
     local n, r = obj:GetNewRed()
     local isNew = n ~= 0
     local cfg = self:_GetNewEffectCfg(obj)
     local key = self:_GetNewEffectKey(cfg)
-    local isRecord = key ~= nil and (LocalDB.HasKey)(key)
+    local isRecord = key == nil or LocalDB.HasKey(key)
     if cfg ~= nil and key ~= nil and isNew and not isRecord then
       return obj, cfg, key
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._SetNewEffectShow = function(self, show)
-  -- function num : 0_11
-  (self:GetGameObject("_newEffect")):SetActive(show)
+function UISideEnterCenterEntry:_SetNewEffectShow(show)
+  self:GetGameObject("_newEffect"):SetActive(show)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._CheckPoint = function(self, showTb)
-  -- function num : 0_12 , upvalues : _ENV
-  if not showTb then
-    showTb = {}
-  end
+function UISideEnterCenterEntry:_CheckPoint(showTb)
+  showTb = showTb or {}
   local new = 0
   local red = 0
   for i = 1, #showTb do
-    local n, r = (showTb[i]):GetNewRed()
+    local n, r = showTb[i]:GetNewRed()
     new = new + n
     red = red + r
   end
-  ;
-  (Log.info)("UISideEnterCenterEntry:_SetNewRed() new = ", new, " red = ", red)
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "_new", nil, "_redCount", "_redCountTxt")
+  Log.info("UISideEnterCenterEntry:_SetNewRed() new = ", new, " red = ", red)
+  UIWidgetHelper.SetNewAndReds(self, new, red, "_new", nil, "_redCount", "_redCountTxt")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry.BtnOnClick = function(self)
-  -- function num : 0_13
+function UISideEnterCenterEntry:BtnOnClick()
   self:ShowDialog("UISideEnterCenterController")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._AttachEvents = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UISideEnterCenterEntry:_AttachEvents()
   self:AttachEvent(GameEventType.SideEnterRefresh, self._OnSideEnterRefresh)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:AttachEvent(GameEventType.MainLobbyOpenListFinish, self._OnMainLobbyOpenListFinish)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._DetachEvents = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UISideEnterCenterEntry:_DetachEvents()
   self:DetachEvent(GameEventType.SideEnterRefresh, self._OnSideEnterRefresh)
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:DetachEvent(GameEventType.MainLobbyOpenListFinish, self._OnMainLobbyOpenListFinish)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._OnSideEnterRefresh = function(self)
-  -- function num : 0_16
+function UISideEnterCenterEntry:_OnSideEnterRefresh()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._OnAfterUILayerChanged = function(self)
-  -- function num : 0_17
+function UISideEnterCenterEntry:_OnAfterUILayerChanged()
   self:_CheckPoint(self._showTb)
   self:_SetNewEffectShow(false)
   self:_Stop_PlayNewEffect()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterEntry._OnMainLobbyOpenListFinish = function(self)
-  -- function num : 0_18
+function UISideEnterCenterEntry:_OnMainLobbyOpenListFinish()
   self:_Start_PlayNewEffect()
 end
-
-

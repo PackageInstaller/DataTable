@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_shop/ui_activity_shop_item_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityShopItemGroup", UICustomWidget)
 UIActivityShopItemGroup = UIActivityShopItemGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityShopItemGroup.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityShopItemGroup:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroup.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityShopItemGroup:InitWidget()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._lockArea = self:GetGameObject("LockArea")
   self._cellGenGo = self:GetGameObject("ShopItemList")
@@ -25,30 +15,21 @@ UIActivityShopItemGroup.InitWidget = function(self)
   self._event = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroup.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityShopItemGroup:OnHide()
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroup.SetData = function(self)
-  -- function num : 0_3
+function UIActivityShopItemGroup:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroup.GetRealSize = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local campaignId = (self._data)._campaignId
-  local commonCfg = nil
+function UIActivityShopItemGroup:GetRealSize()
+  local campaignId = self._data._campaignId
+  local commonCfg
   if campaignId then
-    commonCfg = (Cfg.cfg_activity_shop_common_client)[campaignId]
+    commonCfg = Cfg.cfg_activity_shop_common_client[campaignId]
   end
   local spWidth = 400
   local normalWidth = 350
@@ -57,7 +38,7 @@ UIActivityShopItemGroup.GetRealSize = function(self)
     normalWidth = commonCfg.NormalCellWidth
   end
   local width = 0
-  for index,value in ipairs(self._data) do
+  for index, value in ipairs(self._data) do
     if value.GetIsSpecial and value:GetIsSpecial() then
       width = width + spWidth
     else
@@ -67,112 +48,75 @@ UIActivityShopItemGroup.GetRealSize = function(self)
   return Vector2(width, UIActivityShopControllerBase.ItemGroupHeight)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroup.InitData = function(self, data)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityShopItemGroup:InitData(data)
   self:DisposeCustomWidgets()
   self._shopItemList = self:GetUIComponent("UISelectObjectPath", "ShopItemList")
   self._data = data
   local cellSize = #data
   self._cellSize = cellSize
-  local itemList = (self._shopItemList):SpawnObjects("UIActivityShopItemGroupCell", cellSize)
-  for index,value in ipairs(itemList) do
+  local itemList = self._shopItemList:SpawnObjects("UIActivityShopItemGroupCell", cellSize)
+  for index, value in ipairs(itemList) do
     value:InitData(data[index])
     self:CheckAnimation(index, value, data)
   end
-  ;
-  (UIHelper.SetAsLastSibling)(self._lockArea)
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
-  if (ClientCampaignShop.CheckIsGoodsGroupUnlock)((self._data)._unlockTime, nowTime) then
-    (self._lockArea):SetActive(false)
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._setAlphaArea).alpha = 1
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._setAlphaArea).blocksRaycasts = true
+  UIHelper.SetAsLastSibling(self._lockArea)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
+  if ClientCampaignShop.CheckIsGoodsGroupUnlock(self._data._unlockTime, nowTime) then
+    self._lockArea:SetActive(false)
+    self._setAlphaArea.alpha = 1
+    self._setAlphaArea.blocksRaycasts = true
   else
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._setAlphaArea).alpha = 0.5
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._setAlphaArea).blocksRaycasts = false
-    ;
-    (self._lockArea):SetActive(true)
+    self._setAlphaArea.alpha = 0.5
+    self._setAlphaArea.blocksRaycasts = false
+    self._lockArea:SetActive(true)
     self:_OnValueRemainingTime()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroup._OnValueRemainingTime = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityShopItemGroup:_OnValueRemainingTime()
   self:_ShowRemainingTime()
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
-  self._event = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_6_0 , upvalues : self
+  self._event = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_ShowRemainingTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroup._ShowRemainingTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local stopTime = (self._data)._unlockTime
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+function UIActivityShopItemGroup:_ShowRemainingTime()
+  local stopTime = self._data._unlockTime
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local remainingTime = stopTime - nowTime
   if remainingTime <= 0 then
     if self._event then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+      GameGlobal.RealTimer():CancelEvent(self._event)
       self._event = nil
     end
     remainingTime = 0
   end
-  ;
-  (self._countDownText):SetText(self:_GetFormatString(remainingTime))
+  self._countDownText:SetText(self:_GetFormatString(remainingTime))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroup._GetFormatString = function(self, stamp)
-  -- function num : 0_8 , upvalues : _ENV
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (StringTable.Get)("str_activity_common_shop_group_unlock_time", timeStr)
+function UIActivityShopItemGroup:_GetFormatString(stamp)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = StringTable.Get("str_activity_common_shop_group_unlock_time", timeStr)
   return showStr
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopItemGroup.CheckAnimation = function(self, index, ui, data)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self._data)._campaignId == 1069 then
+function UIActivityShopItemGroup:CheckAnimation(index, ui, data)
+  if self._data._campaignId == 1069 then
     local dataUI = data[index]
-  end
-  if dataUI.GetIsSpecial and dataUI:GetIsSpecial() then
-    local go = ui:GetGameObject()
-    do
+    if dataUI.GetIsSpecial and dataUI:GetIsSpecial() then
+    else
+      local go = ui:GetGameObject()
       go:SetActive(false)
       self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : _ENV, index, ui, go
-    YIELD(TT, 20 + index * 50)
-    if ui.view then
-      go:SetActive(true)
-    end
-  end
-, self)
+        YIELD(TT, 20 + index * 50)
+        if ui.view then
+          go:SetActive(true)
+        end
+      end, self)
     end
   end
 end
-
-

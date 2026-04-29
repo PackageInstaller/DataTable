@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/ban_pet/ui_season_maze_ban_pet_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBanPetController", UIController)
 UISeasonMazeBanPetController = UISeasonMazeBanPetController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBanPetController.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonMazeBanPetController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1
+function UISeasonMazeBanPetController:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
-  self._uiSeasonMazeModule = (self._seasonMazeModule):UIModule()
-  self._seasonMazeObj = (self._seasonMazeModule):CurSeasonObj()
-  self._com = (self._seasonMazeObj):GetMazeComponent()
-  self._cmptInfo = (self._seasonMazeObj):GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+function UISeasonMazeBanPetController:OnShow(uiParams)
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
+  self._uiSeasonMazeModule = self._seasonMazeModule:UIModule()
+  self._seasonMazeObj = self._seasonMazeModule:CurSeasonObj()
+  self._com = self._seasonMazeObj:GetMazeComponent()
+  self._cmptInfo = self._seasonMazeObj:GetComponentInfo(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
   self._isInDiscovery = true
-  if (self._cmptInfo).hard == 0 or (self._cmptInfo).hard == nil then
+  if self._cmptInfo.hard == 0 or self._cmptInfo.hard == nil then
     self._isInDiscovery = false
   end
   self._backClose = false
@@ -36,11 +23,8 @@ UISeasonMazeBanPetController.OnShow = function(self, uiParams)
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.backBtns = (UIWidgetHelper.SpawnObject)(self, "backBtns", "UINewCommonTopButton")
+function UISeasonMazeBanPetController:InitWidget()
+  self.backBtns = UIWidgetHelper.SpawnObject(self, "backBtns", "UINewCommonTopButton")
   self.topRightAnchor = self:GetGameObject("TopRightAnchor")
   self._manualView = self:GetGameObject("ManualView")
   self._rotateView = self:GetGameObject("RotateView")
@@ -51,324 +35,220 @@ UISeasonMazeBanPetController.InitWidget = function(self)
   self._rotateContentGen = self:GetUIComponent("UISelectObjectPath", "RotateContent")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.InitUI = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeBanPetController:InitUI()
   self.openTag = 2
   self._manualBanCellCount = 8
   self._manualBanCellUnlockCount = 6
-  self._allPets = (self._uiSeasonMazeModule):GetSeasonMazeCfgPets()
-  self._rotateBanPetList = (self._uiSeasonMazeModule):SeasonMazeCfgBanPetList()
+  self._allPets = self._uiSeasonMazeModule:GetSeasonMazeCfgPets()
+  self._rotateBanPetList = self._uiSeasonMazeModule:SeasonMazeCfgBanPetList()
   self._rotateBanPetList = self:_SortRotateBanPetList(self._rotateBanPetList)
   self._rotateBanCellCount = #self._rotateBanPetList
   self._primaryMap = {}
   for i = 1, self._manualBanCellUnlockCount do
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._primaryMap)[i] = 0
+    self._primaryMap[i] = 0
   end
-  local manualBanList = (self._cmptInfo).manunl_ban_pets
-  for index,value in ipairs(manualBanList) do
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._primaryMap)[index] = value
+  local manualBanList = self._cmptInfo.manunl_ban_pets
+  for index, value in ipairs(manualBanList) do
+    self._primaryMap[index] = value
   end
-  self.whiteTextColor = (Color.New)(1, 1, 1)
-  self.yellowTextColor = (Color.New)(0.8352941, 0.7215686, 0.4705882)
+  self.whiteTextColor = Color.New(1, 1, 1)
+  self.yellowTextColor = Color.New(0.8352941, 0.7215686, 0.4705882)
   self._manualBtn = self:GetUIComponent("Toggle", "ManualBtn")
-  self._manualBtnValueChanged = function(isOn)
-    -- function num : 0_4_0 , upvalues : self
+  
+  function self._manualBtnValueChanged(isOn)
     if isOn then
       self:ActiveTagView(1)
+    else
     end
   end
-
-  ;
-  ((self._manualBtn).onValueChanged):AddListener(self._manualBtnValueChanged)
+  
+  self._manualBtn.onValueChanged:AddListener(self._manualBtnValueChanged)
   self._rotateBtn = self:GetUIComponent("Toggle", "RotateBtn")
-  self._rotateBtnValueChanged = function(isOn)
-    -- function num : 0_4_1 , upvalues : self
+  
+  function self._rotateBtnValueChanged(isOn)
     if isOn then
       self:ActiveTagView(2)
+    else
     end
   end
-
-  ;
-  ((self._rotateBtn).onValueChanged):AddListener(self._rotateBtnValueChanged)
+  
+  self._rotateBtn.onValueChanged:AddListener(self._rotateBtnValueChanged)
   self:_InitBackBtn()
   if self.openTag == 1 then
     self:ActiveTagView(1)
-    -- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rotateBtn).isOn = false
-    -- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._manualBtn).isOn = true
-  else
-    if self.openTag == 2 then
-      self:ActiveTagView(2)
-      -- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._rotateBtn).isOn = true
-      -- DECOMPILER ERROR at PC97: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._manualBtn).isOn = false
-    end
+    self._rotateBtn.isOn = false
+    self._manualBtn.isOn = true
+  elseif self.openTag == 2 then
+    self:ActiveTagView(2)
+    self._rotateBtn.isOn = true
+    self._manualBtn.isOn = false
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController._InitBackBtn = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeBanPetController:_InitBackBtn()
   local hideHomeBtn = false
   if self._innerGame then
     hideHomeBtn = true
   end
-  ;
-  (self.backBtns):SetData(function()
-    -- function num : 0_5_0 , upvalues : self
+  self.backBtns:SetData(function()
     self._backClose = true
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_5_1 , upvalues : _ENV
+  end, function()
     local pageIdx = 4
-    ;
-    (UISeasonMazeModule.OpenHelpUI)(UISeasonMazeHelperTabIndex.Temp3, pageIdx)
-  end
-, nil, hideHomeBtn, nil, false, nil)
+    UISeasonMazeModule.OpenHelpUI(UISeasonMazeHelperTabIndex.Temp3, pageIdx)
+  end, nil, hideHomeBtn, nil, false, nil)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.ActiveTagView = function(self, tag)
-  -- function num : 0_6
-  (self._manualView):SetActive(false)
-  ;
-  (self._rotateView):SetActive(false)
-  ;
-  (self._fastBanArea):SetActive(false)
+function UISeasonMazeBanPetController:ActiveTagView(tag)
+  self._manualView:SetActive(false)
+  self._rotateView:SetActive(false)
+  self._fastBanArea:SetActive(false)
   if tag == 1 then
-    (self._manualView):SetActive(true)
-    ;
-    (self._fastBanArea):SetActive(true)
+    self._manualView:SetActive(true)
+    self._fastBanArea:SetActive(true)
     self:RefreshManualView()
-  else
-    if tag == 2 then
-      (self._rotateView):SetActive(true)
-      self:RefreshRotateView()
-    end
+  elseif tag == 2 then
+    self._rotateView:SetActive(true)
+    self:RefreshRotateView()
   end
   self._TmpTag = tag
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.RefreshManualView = function(self)
-  -- function num : 0_7
-  (self._manualContentGen):SpawnObjects("UISeasonMazeBanPetCellItem", self._manualBanCellCount)
-  self._manualCells = (self._manualContentGen):GetAllSpawnList()
+function UISeasonMazeBanPetController:RefreshManualView()
+  self._manualContentGen:SpawnObjects("UISeasonMazeBanPetCellItem", self._manualBanCellCount)
+  self._manualCells = self._manualContentGen:GetAllSpawnList()
   local cellCount = #self._manualCells
   for i = 1, cellCount do
-    local cell = (self._manualCells)[i]
-    local isLockByBank = self._manualBanCellUnlockCount < i
+    local cell = self._manualCells[i]
+    local isLockByBank = i > self._manualBanCellUnlockCount
     local unlockBankLevel = i
-    local pet = nil
-    do
-      do
-        if not isLockByBank then
-          local petTemplateID = (self._primaryMap)[i]
-          if petTemplateID then
-            pet = (self._allPets)[petTemplateID]
-          end
-        end
-        cell:SetData(i, pet, true, false, isLockByBank, unlockBankLevel, self._isInDiscovery, function(cellIndex)
-    -- function num : 0_7_0 , upvalues : self
-    self:OnManualCellClick(cellIndex)
-  end
-)
-        -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out DO_STMT
-
+    local pet
+    if not isLockByBank then
+      local petTemplateID = self._primaryMap[i]
+      if petTemplateID then
+        pet = self._allPets[petTemplateID]
       end
     end
+    cell:SetData(i, pet, true, false, isLockByBank, unlockBankLevel, self._isInDiscovery, function(cellIndex)
+      self:OnManualCellClick(cellIndex)
+    end)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.RefreshRotateView = function(self)
-  -- function num : 0_8
-  (self._rotateContentGen):SpawnObjects("UISeasonMazeBanPetCellItem", self._rotateBanCellCount)
-  self._rotateCells = (self._rotateContentGen):GetAllSpawnList()
+function UISeasonMazeBanPetController:RefreshRotateView()
+  self._rotateContentGen:SpawnObjects("UISeasonMazeBanPetCellItem", self._rotateBanCellCount)
+  self._rotateCells = self._rotateContentGen:GetAllSpawnList()
   local cellCount = #self._rotateCells
   for i = 1, cellCount do
-    local cell = (self._rotateCells)[i]
-    local pet = nil
-    local petTemplateID = (self._rotateBanPetList)[i]
+    local cell = self._rotateCells[i]
+    local pet
+    local petTemplateID = self._rotateBanPetList[i]
     if petTemplateID then
-      pet = (self._allPets)[petTemplateID]
+      pet = self._allPets[petTemplateID]
     end
     cell:SetData(i, pet, false, true, false, 0, self._isInDiscovery, nil)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.OnManualCellClick = function(self, cellIndex)
-  -- function num : 0_9 , upvalues : _ENV
+function UISeasonMazeBanPetController:OnManualCellClick(cellIndex)
   local slot = cellIndex
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
   local openList = {}
-  for key,value in pairs(self._allPets) do
+  for key, value in pairs(self._allPets) do
     local pstid = value:GetPstID()
-    if (table.icontains)(self._primaryMap, pstid) then
-      do
-        openList[key] = value
-        -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC22: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if table.icontains(self._primaryMap, pstid) then
+    else
+      openList[key] = value
     end
   end
-  local openPet = nil
-  if (self._primaryMap)[slot] > 0 then
-    openPet = (self._allPets)[(self._primaryMap)[slot]]
-    openList[(self._primaryMap)[slot]] = openPet
+  local openPet
+  if self._primaryMap[slot] > 0 then
+    openPet = self._allPets[self._primaryMap[slot]]
+    openList[self._primaryMap[slot]] = openPet
   end
   self:ShowDialog("UISeasonMazeBanPetChangeController", openList, function(pstid, del)
-    -- function num : 0_9_0 , upvalues : self, slot
-    -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
     if del then
-      (self._primaryMap)[slot] = 0
+      self._primaryMap[slot] = 0
     else
-      -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._primaryMap)[slot] = pstid
+      self._primaryMap[slot] = pstid
     end
     self:ReqBanPet()
-  end
-, openPet, false, self._primaryMap, self._allPets, 0, self._rotateBanPetList)
+  end, openPet, false, self._primaryMap, self._allPets, 0, self._rotateBanPetList)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.ReqBanPet = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonMazeBanPetController:ReqBanPet()
   self:Lock("UISeasonMazeBanPetController:ReqBanPet")
   local banList = {}
   for i = 1, self._manualBanCellUnlockCount do
-    if (self._primaryMap)[i] and (self._primaryMap)[i] > 0 then
-      (table.insert)(banList, (self._primaryMap)[i])
+    if self._primaryMap[i] and self._primaryMap[i] > 0 then
+      table.insert(banList, self._primaryMap[i])
     end
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.TaskReqBanPet, self, banList)
+  GameGlobal.TaskManager():StartTask(self.TaskReqBanPet, self, banList)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.TaskReqBanPet = function(self, TT, banList)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazeBanPetController:TaskReqBanPet(TT, banList)
   local res = AsyncRequestRes:New()
-  local response = (self._com):HandleSeasonMazeBanPet(TT, res, banList)
+  local response = self._com:HandleSeasonMazeBanPet(TT, res, banList)
   self:UnLock("UISeasonMazeBanPetController:ReqBanPet")
   if res:GetSucc() then
     self:RefreshManualView()
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UISeasonMazeBanPetController] HandleSeasonMazeBanPet fail! result:", result)
-    if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-      return 
+    Log.error("###[UISeasonMazeBanPetController] HandleSeasonMazeBanPet fail! result:", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.ManualBtnOnClick = function(self, go)
-  -- function num : 0_12
+function UISeasonMazeBanPetController:ManualBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.RotateBtnOnClick = function(self, go)
-  -- function num : 0_13
+function UISeasonMazeBanPetController:RotateBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.BtnClearOnClick = function(self, go)
-  -- function num : 0_14
+function UISeasonMazeBanPetController:BtnClearOnClick(go)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController.BtnFastBanOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
-  local allPets = (self._uiSeasonMazeModule):GetSeasonMazeCfgPets()
+function UISeasonMazeBanPetController:BtnFastBanOnClick(go)
+  local allPets = self._uiSeasonMazeModule:GetSeasonMazeCfgPets()
   self:ShowDialog("UISeasonMazeBanPetChangeController", allPets, function(petList)
-    -- function num : 0_15_0 , upvalues : _ENV, self
     if petList and next(petList) then
-      for index,value in ipairs(petList) do
-        -- DECOMPILER ERROR at PC12: Confused about usage of register: R6 in 'UnsetPending'
-
-        (self._primaryMap)[index] = value
+      for index, value in ipairs(petList) do
+        self._primaryMap[index] = value
       end
     else
-      do
-        self._primaryMap = {}
-        for i = 1, self._manualBanCellUnlockCount do
-          -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-          (self._primaryMap)[i] = 0
-        end
-        do
-          self:ReqBanPet()
-        end
+      self._primaryMap = {}
+      for i = 1, self._manualBanCellUnlockCount do
+        self._primaryMap[i] = 0
       end
     end
-  end
-, nil, true, self._primaryMap, self._allPets, self._manualBanCellUnlockCount, self._rotateBanPetList)
+    self:ReqBanPet()
+  end, nil, true, self._primaryMap, self._allPets, self._manualBanCellUnlockCount, self._rotateBanPetList)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBanPetController._SortRotateBanPetList = function(self, petIDList)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonMazeBanPetController:_SortRotateBanPetList(petIDList)
   local retList = {}
   local sortDataList = {}
-  for index,petID in ipairs(petIDList) do
-    local cfgPet = (Cfg.cfg_pet)[petID]
+  for index, petID in ipairs(petIDList) do
+    local cfgPet = Cfg.cfg_pet[petID]
     if cfgPet then
-      (table.insert)(sortDataList, {id = petID, star = cfgPet.Star})
+      table.insert(sortDataList, {
+        id = petID,
+        star = cfgPet.Star
+      })
     end
   end
-  ;
-  (table.sort)(sortDataList, function(a, b)
-    -- function num : 0_16_0
-    if a.id >= b.id then
-      do return a.star ~= b.star end
-      do return b.star < a.star end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.sort(sortDataList, function(a, b)
+    if a.star == b.star then
+      return a.id < b.id
+    else
+      return a.star > b.star
     end
-  end
-)
-  for index,data in ipairs(sortDataList) do
-    (table.insert)(retList, data.id)
+  end)
+  for index, data in ipairs(sortDataList) do
+    table.insert(retList, data.id)
   end
   return retList
 end
-
-

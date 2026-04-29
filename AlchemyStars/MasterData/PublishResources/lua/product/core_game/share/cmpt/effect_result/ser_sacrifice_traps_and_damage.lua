@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_sacrifice_traps_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectSacrificeTrapsAndDamageResult", SkillEffectResultBase)
 SkillEffectSacrificeTrapsAndDamageResult = SkillEffectSacrificeTrapsAndDamageResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSacrificeTrapsAndDamageResult.Constructor = function(self, trapIDs, damageResultArray)
-  -- function num : 0_0
+function SkillEffectSacrificeTrapsAndDamageResult:Constructor(trapIDs, damageResultArray)
   self._trapIDs = trapIDs
   self._damageResultArray = damageResultArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageResult.GetTrapIDArray = function(self)
-  -- function num : 0_1
+function SkillEffectSacrificeTrapsAndDamageResult:GetTrapIDArray()
   return self._trapIDs
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageResult.GetDamageResultArray = function(self)
-  -- function num : 0_2
+function SkillEffectSacrificeTrapsAndDamageResult:GetDamageResultArray()
   return self._damageResultArray
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSacrificeTrapsAndDamageResult.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectSacrificeTrapsAndDamageResult:GetEffectType()
   return SkillEffectType.SacrificeTrapsAndDamage
 end
-
-

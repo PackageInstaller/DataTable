@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_nearest_grid_team_ele.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_NearestGridTeamElement", SkillScopeCalculator_Base)
 SkillScopeCalculator_NearestGridTeamElement = SkillScopeCalculator_NearestGridTeamElement
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_NearestGridTeamElement.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_NearestGridTeamElement:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local param = scopeParam
-  local teamEntity = (((self._gridFilter)._world):Player()):GetCurrentTeamEntity()
-  local teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
+  local teamEntity = self._gridFilter._world:Player():GetCurrentTeamEntity()
+  local teamLeader = teamEntity:Team():GetTeamLeaderEntity()
   local realCenterPos = teamLeader:GetGridPosition()
   local gridCount = param.gridCount or 0
   local girdTypeList = {}
-  ;
-  (table.insert)(girdTypeList, (teamLeader:Element()):GetPrimaryType())
-  local pieceList = (self._gridFilter):FindPieceElementByTypeCountAndCenter(realCenterPos, girdTypeList, gridCount, {}, {})
+  table.insert(girdTypeList, teamLeader:Element():GetPrimaryType())
+  local pieceList = self._gridFilter:FindPieceElementByTypeCountAndCenter(realCenterPos, girdTypeList, gridCount, {}, {})
   local result = SkillScopeResult:New(SkillScopeType.NearestGridTeamElement, casterPos, pieceList, pieceList)
   return result
 end
-
-

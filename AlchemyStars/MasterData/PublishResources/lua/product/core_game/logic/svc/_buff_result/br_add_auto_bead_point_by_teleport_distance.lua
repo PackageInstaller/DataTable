@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_add_auto_bead_point_by_teleport_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultAddAutoBeadPointByTeleportDistance", BuffResultBase)
 BuffResultAddAutoBeadPointByTeleportDistance = BuffResultAddAutoBeadPointByTeleportDistance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddAutoBeadPointByTeleportDistance.Constructor = function(self, curVal, oldVal)
-  -- function num : 0_0
+function BuffResultAddAutoBeadPointByTeleportDistance:Constructor(curVal, oldVal)
   self._curPoint = curVal
   self._oldPoint = oldVal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddAutoBeadPointByTeleportDistance.GetCurAutoBeadPoint = function(self)
-  -- function num : 0_1
+function BuffResultAddAutoBeadPointByTeleportDistance:GetCurAutoBeadPoint()
   return self._curPoint
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddAutoBeadPointByTeleportDistance.GetOldAutoBeadPoint = function(self)
-  -- function num : 0_2
+function BuffResultAddAutoBeadPointByTeleportDistance:GetOldAutoBeadPoint()
   return self._oldPoint
 end
-
-

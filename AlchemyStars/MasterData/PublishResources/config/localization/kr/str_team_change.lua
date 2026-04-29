@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/kr/str_team_change.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_team_change_no_choose = "오로리안 제거", str_team_change_lv = "LV.", str_team_change_binder_toast_tips = "[{1}] 편성 완료, [{2}] 편성 제외됨", str_team_change_binder_item_tex = "편대에 이미 <color=#ffdc62>[{1}]</color> 출전 중"}
+local config = {
+  str_team_change_no_choose = "오로리안 제거",
+  str_team_change_lv = "LV.",
+  str_team_change_binder_toast_tips = "[{1}] 편성 완료, [{2}] 편성 제외됨",
+  str_team_change_binder_item_tex = "편대에 이미 <color=#ffdc62>[{1}]</color> 출전 중"
+}
 return config
-

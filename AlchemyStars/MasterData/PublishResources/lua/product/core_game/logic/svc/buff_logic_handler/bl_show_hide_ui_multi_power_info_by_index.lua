@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_show_hide_ui_multi_power_info_by_index.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicShowHideUiMultiPowerInfoByIndex", BuffLogicBase)
 BuffLogicShowHideUiMultiPowerInfoByIndex = BuffLogicShowHideUiMultiPowerInfoByIndex
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicShowHideUiMultiPowerInfoByIndex.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicShowHideUiMultiPowerInfoByIndex:Constructor(buffInstance, logicParam)
   self._uiIndex = logicParam.uiIndex or 2
   self._showHide = logicParam.showHide or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicShowHideUiMultiPowerInfoByIndex.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._entity):PetPstID() then
-    local pstId = ((self._entity):PetPstID()):GetPstID()
+function BuffLogicShowHideUiMultiPowerInfoByIndex:DoLogic(notify)
+  if self._entity:PetPstID() then
+    local pstId = self._entity:PetPstID():GetPstID()
     local bShow = self._showHide == 1
     local buffResult = BuffResultShowHideUiMultiPowerInfoByIndex:New(pstId, self._uiIndex, bShow)
     return buffResult
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

@@ -1,39 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_level/ui_homeland_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandLevel", UIController)
 UIHomelandLevel = UIHomelandLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandLevel.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetHomelandLevelData()
+function UIHomelandLevel:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetHomelandLevelData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  local reqRes = (self.mHomeland):HomelandGetSignInfo(TT)
+function UIHomelandLevel:LoadDataOnEnter(TT, res, uiParams)
+  local reqRes = self.mHomeland:HomelandGetSignInfo(TT)
   if reqRes:GetSucc() then
     res:SetSucc(true)
   else
-    ;
-    (ToastManager.ShowHomeToast)(reqRes:GetResult())
+    ToastManager.ShowHomeToast(reqRes:GetResult())
     res:SetSucc(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandLevel:OnShow(uiParams)
   self.redAward = self:GetGameObject("redAward")
-  ;
-  (self.redAward):SetActive(false)
+  self.redAward:SetActive(false)
   self.btnImageLevel = self:GetUIComponent("Image", "btnLevel")
   self.btnImageAward = self:GetUIComponent("Image", "btnAward")
   self.btnTextLevel = self:GetUIComponent("UILocalizationText", "btnLevelTxt")
@@ -70,391 +55,263 @@ UIHomelandLevel.OnShow = function(self, uiParams)
   local levelTip = self:GetUIComponent("UILocalizedTMP", "LevelTMP")
   local mat = levelTip.fontMaterial
   levelTip.fontMaterial = matObj
-  ;
-  (levelTip.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  levelTip.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandLevel:OnHide()
   self:CancelTimerEvent()
   self:DetachEvent(GameEventType.HomelandLevelClickLevelItem, self.HomelandLevelClickLevelItem)
   self:DetachEvent(GameEventType.HomelandLevelOnLevelInfoChange, self.HomelandLevelOnLevelInfoChange)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.Init = function(self)
-  -- function num : 0_4
+function UIHomelandLevel:Init()
   self:InitAward()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.InitAward = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local len = (table.count)((self.data).levels)
-  ;
-  (self.cLevels):SpawnObjects("UIHomelandLevelItem", len)
+function UIHomelandLevel:InitAward()
+  local len = table.count(self.data.levels)
+  self.cLevels:SpawnObjects("UIHomelandLevelItem", len)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.Flush = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandLevel:Flush()
   self:FlushAwardRed()
   if self.tabIdx == 1 then
     self:SetBtnStyle(true, self.btnImageLevel, self.btnTextLevel)
-    ;
-    (self.level):SetActive(true)
+    self.level:SetActive(true)
     self:SetBtnStyle(false, self.btnImageAward, self.btnTextAward)
-    ;
-    (self.award):SetActive(false)
+    self.award:SetActive(false)
     self:FlushLevel()
+  elseif self.tabIdx == 2 then
+    self:SetBtnStyle(false, self.btnImageLevel, self.btnTextLevel)
+    self.level:SetActive(false)
+    self:SetBtnStyle(true, self.btnImageAward, self.btnTextAward)
+    self.award:SetActive(true)
+    self:FlushAward()
   else
-    if self.tabIdx == 2 then
-      self:SetBtnStyle(false, self.btnImageLevel, self.btnTextLevel)
-      ;
-      (self.level):SetActive(false)
-      self:SetBtnStyle(true, self.btnImageAward, self.btnTextAward)
-      ;
-      (self.award):SetActive(true)
-      self:FlushAward()
-    else
-      ;
-      (Log.warn)("### invalid tabIdx:", self.tabIdx)
-    end
+    Log.warn("### invalid tabIdx:", self.tabIdx)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.SetBtnStyle = function(self, active, image, text)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHomelandLevel:SetBtnStyle(active, image, text)
   if active then
-    image.sprite = (self._atlas):GetSprite("n17_level_btn1")
+    image.sprite = self._atlas:GetSprite("n17_level_btn1")
     text.color = Color.white
   else
-    image.sprite = (self._atlas):GetSprite("n17_level_btn2")
-    text.color = Color(0.28627450980392, 0.28627450980392, 0.28627450980392)
+    image.sprite = self._atlas:GetSprite("n17_level_btn2")
+    text.color = Color(0.28627450980392155, 0.28627450980392155, 0.28627450980392155)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.FlushAwardRed = function(self)
-  -- function num : 0_8
-  (self.redAward):SetActive((self.data):HasLevelAward())
-  ;
-  (self.redSignAward):SetActive((self.data):HasSignAward())
+function UIHomelandLevel:FlushAwardRed()
+  self.redAward:SetActive(self.data:HasLevelAward())
+  self.redSignAward:SetActive(self.data:HasSignAward())
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.FlushLevel = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self.txtLevel):SetText((self.data).level)
-  local curLevelData = (self.data):GetHomelandLevelItemDataByLevel((self.data).level)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.sldExp).minValue = curLevelData.expLow
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.sldExp).maxValue = curLevelData.expHigh
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.sldExp).value = (self.data).exp
-  if (self.data):IsLevelMax() then
-    (self.txtExp):SetText((StringTable.Get)("str_homeland_level_full"))
+function UIHomelandLevel:FlushLevel()
+  self.txtLevel:SetText(self.data.level)
+  local curLevelData = self.data:GetHomelandLevelItemDataByLevel(self.data.level)
+  self.sldExp.minValue = curLevelData.expLow
+  self.sldExp.maxValue = curLevelData.expHigh
+  self.sldExp.value = self.data.exp
+  if self.data:IsLevelMax() then
+    self.txtExp:SetText(StringTable.Get("str_homeland_level_full"))
   else
-    ;
-    (self.txtExp):SetText("<color=#FF9600>" .. (self.data).exp .. "</color>/" .. curLevelData.expHigh)
+    self.txtExp:SetText("<color=#FF9600>" .. self.data.exp .. "</color>/" .. curLevelData.expHigh)
   end
-  ;
-  (self.txtLiveable):SetText((self.data).liveable)
-  ;
-  (self.signRed):SetActive((self.data):HasSignAward())
-  ;
-  (self.signintext):SetActive(not (self.data):HasSignedToday())
-  ;
-  (self.signintext1):SetActive((self.data):HasSignedToday())
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self.data):HasSignedToday() then
-    (self.stateimg).sprite = (self._atlas):GetSprite("n17_level_unget")
+  self.txtLiveable:SetText(self.data.liveable)
+  self.signRed:SetActive(self.data:HasSignAward())
+  self.signintext:SetActive(not self.data:HasSignedToday())
+  self.signintext1:SetActive(self.data:HasSignedToday())
+  if self.data:HasSignedToday() then
+    self.stateimg.sprite = self._atlas:GetSprite("n17_level_unget")
   else
-    -- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.stateimg).sprite = (self._atlas):GetSprite("n17_level_get")
+    self.stateimg.sprite = self._atlas:GetSprite("n17_level_get")
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.FlushAward = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local uis = (self.cLevels):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
-    local item = ((self.data).levels)[i]
+function UIHomelandLevel:FlushAward()
+  local uis = self.cLevels:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local item = self.data.levels[i]
     if item then
       ui:Flush(item.level)
       ui:FlushSelect(self.curSelectLevel)
     end
   end
-  local levelDescs = (self.data):GetLevelDescs(self.curSelectLevel)
-  ;
-  (self.cDescs):SpawnObjects("UIHomelandLevelDescItem", #levelDescs)
-  local uis = (self.cDescs):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+  local levelDescs = self.data:GetLevelDescs(self.curSelectLevel)
+  self.cDescs:SpawnObjects("UIHomelandLevelDescItem", #levelDescs)
+  local uis = self.cDescs:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     ui:Flush(levelDescs[i])
   end
-  local curLevelData = (self.data):GetHomelandLevelItemDataByLevel(self.curSelectLevel)
-  local len = (table.count)(curLevelData.awards)
-  ;
-  (self.cAwards):SpawnObjects("UIItemHomeland", len)
-  local uis = (self.cAwards):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
-    local item = (curLevelData.awards)[i]
+  local curLevelData = self.data:GetHomelandLevelItemDataByLevel(self.curSelectLevel)
+  local len = table.count(curLevelData.awards)
+  self.cAwards:SpawnObjects("UIItemHomeland", len)
+  local uis = self.cAwards:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local item = curLevelData.awards[i]
     if item then
       ui:Flush(item)
     end
   end
-  ;
-  (UIHelper.RefreshLayout)(self.awardRect)
-  -- DECOMPILER ERROR at PC75: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (self.awardsv).horizontalNormalizedPosition = 0
+  UIHelper.RefreshLayout(self.awardRect)
+  self.awardsv.horizontalNormalizedPosition = 0
   if curLevelData.state == nil then
-    (self.txtGetBtn):SetText((StringTable.Get)("str_homeland_level_btn_down"))
-  else
-    if curLevelData.state == HomelandLevelItemDataState.HasGot then
-      (self.txtGetBtn):SetText((StringTable.Get)("str_homeland_level_got"))
-    else
-      if curLevelData.state == HomelandLevelItemDataState.CanGet then
-        (self.txtGetBtn):SetText((StringTable.Get)("str_homeland_level_receive_awards"))
-      end
-    end
+    self.txtGetBtn:SetText(StringTable.Get("str_homeland_level_btn_down"))
+  elseif curLevelData.state == HomelandLevelItemDataState.HasGot then
+    self.txtGetBtn:SetText(StringTable.Get("str_homeland_level_got"))
+  elseif curLevelData.state == HomelandLevelItemDataState.CanGet then
+    self.txtGetBtn:SetText(StringTable.Get("str_homeland_level_receive_awards"))
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.RegisterTimeEvent = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandLevel:RegisterTimeEvent()
   self:CancelTimerEvent()
-  local stampNext = (self.data):GetNextSignTime()
-  local stampNow = (UICommonHelper.GetNowTimestamp)()
+  local stampNext = self.data:GetNextSignTime()
+  local stampNow = UICommonHelper.GetNowTimestamp()
   local delay = stampNext - stampNow
   if delay < 0 then
     delay = 1
   else
     delay = delay + 1
   end
-  self.te = ((GameGlobal.Timer)()):AddEventTimes((delay) * 1000, TimerTriggerCount.Once, function()
-    -- function num : 0_11_0 , upvalues : _ENV, delay, self
-    (Log.fatal)("### UIHomelandLevel RegisterTimeEvent delay=", delay)
+  self.te = GameGlobal.Timer():AddEventTimes(delay * 1000, TimerTriggerCount.Once, function()
+    Log.fatal("### UIHomelandLevel RegisterTimeEvent delay=", delay)
     self:StartTask(self.HomelandGetSignInfo, self)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.CancelTimerEvent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandLevel:CancelTimerEvent()
   if self.te then
-    ((GameGlobal.Timer)()):CancelEvent(self.te)
+    GameGlobal.Timer():CancelEvent(self.te)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.HomelandGetSignInfo = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandLevel:HomelandGetSignInfo(TT)
   local key = "UIHomelandLevelHomelandGetSignInfo"
   self:Lock(key)
-  local res = (self.mHomeland):HomelandGetSignInfo(TT)
-  if (UIHomelandLevelData.CheckCode)(res:GetResult()) then
-    (self.data):Init()
+  local res = self.mHomeland:HomelandGetSignInfo(TT)
+  if UIHomelandLevelData.CheckCode(res:GetResult()) then
+    self.data:Init()
     self:Flush()
   end
   self:UnLock(key)
   self:RegisterTimeEvent()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.HomelandLevelClickLevelItem = function(self, level)
-  -- function num : 0_14
+function UIHomelandLevel:HomelandLevelClickLevelItem(level)
   if self.curSelectLevel ~= level then
     self.curSelectLevel = level
     self:FlushAward()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.HomelandLevelOnLevelInfoChange = function(self)
-  -- function num : 0_15
-  self.curSelectLevel = (self.data).level
+function UIHomelandLevel:HomelandLevelOnLevelInfoChange()
+  self.curSelectLevel = self.data.level
   self:Flush()
   self:CLevelsMove2CurLevel()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.CLevelsMove2CurLevel = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local len = (table.count)((self.data).levels)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  if len > 1 then
-    (self.sv).horizontalNormalizedPosition = ((self.data).level - 1) / (len - 1)
+function UIHomelandLevel:CLevelsMove2CurLevel()
+  local len = table.count(self.data.levels)
+  if 1 < len then
+    self.sv.horizontalNormalizedPosition = (self.data.level - 1) / (len - 1)
   else
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.sv).horizontalNormalizedPosition = 0
+    self.sv.horizontalNormalizedPosition = 0
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.btnCloseOnClick = function(self, go)
-  -- function num : 0_17
+function UIHomelandLevel:btnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.btnLevelOnClick = function(self, go)
-  -- function num : 0_18
+function UIHomelandLevel:btnLevelOnClick(go)
   if self.tabIdx ~= 1 then
     self.tabIdx = 1
     self:Flush()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.btnAwardOnClick = function(self, go)
-  -- function num : 0_19
+function UIHomelandLevel:btnAwardOnClick(go)
   if self.tabIdx ~= 2 then
     self.tabIdx = 2
-    self.curSelectLevel = (self.data).level
+    self.curSelectLevel = self.data.level
     self:Flush()
     self:CLevelsMove2CurLevel()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.imgSignOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self.data):CheckSignedToday() then
-    return 
+function UIHomelandLevel:imgSignOnClick(go)
+  if self.data:CheckSignedToday() then
+    return
   end
-  local call = function()
-    -- function num : 0_20_0 , upvalues : self, _ENV
+  
+  local function call()
     self:StartTask(function(TT)
-      -- function num : 0_20_0_0 , upvalues : self, _ENV
       local key = "UIHomelandLevelimgSignOnClick"
       self:Lock(key)
-      local res = (self.mHomeland):HomelandSign(TT)
-      if (UIHomelandLevelData.CheckCode)(res:GetResult()) then
-        local awardSigns = (self.data).awardSign
-        do
-          do
-            if awardSigns and (table.count)(awardSigns) > 0 then
-              local title = (StringTable.Get)("str_homeland_level_signed_award")
-              self:ShowDialog("UIHomeShowAwards", awardSigns, nil, true, title)
-            end
-            ;
-            (self.data):Init()
-            self:Flush()
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeAfterCollectLevelReward)
-            self:UnLock(key)
-          end
+      local res = self.mHomeland:HomelandSign(TT)
+      if UIHomelandLevelData.CheckCode(res:GetResult()) then
+        local awardSigns = self.data.awardSign
+        if awardSigns and table.count(awardSigns) > 0 then
+          local title = StringTable.Get("str_homeland_level_signed_award")
+          self:ShowDialog("UIHomeShowAwards", awardSigns, nil, true, title)
         end
+        self.data:Init()
+        self:Flush()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeAfterCollectLevelReward)
       end
-    end
-, self)
+      self:UnLock(key)
+    end, self)
   end
-
+  
   local showAward = false
-  local award = nil
-  for i = 1, #(self.data).awardSign do
-    if (((self.data).awardSign)[i]).assetid == (UIHomelandShopHelper.GetCoinItemId)() then
+  local award
+  for i = 1, #self.data.awardSign do
+    if self.data.awardSign[i].assetid == UIHomelandShopHelper.GetCoinItemId() then
       showAward = true
-      award = ((self.data).awardSign)[i]
+      award = self.data.awardSign[i]
     end
   end
   if showAward then
-    (UIHomelandShopHelper.CheckCoinOverflow)(award.count, call)
+    UIHomelandShopHelper.CheckCoinOverflow(award.count, call)
   else
     call()
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.btnSignTipOnClick = function(self, go)
-  -- function num : 0_21
+function UIHomelandLevel:btnSignTipOnClick(go)
   self:ShowDialog("UIHomelandLevelSignPop")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.expFormBtnOnClick = function(self, go)
-  -- function num : 0_22
+function UIHomelandLevel:expFormBtnOnClick(go)
   self:ShowDialog("UIHomelandLevelExpTips")
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel.btnGetOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
-  local curLevelData = (self.data):GetHomelandLevelItemDataByLevel(self.curSelectLevel)
+function UIHomelandLevel:btnGetOnClick(go)
+  local curLevelData = self.data:GetHomelandLevelItemDataByLevel(self.curSelectLevel)
   if not curLevelData.state then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_level_not_reach"))
-    return 
-  else
-    if curLevelData.state == HomelandLevelItemDataState.HasGot then
-      return 
-    end
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_level_not_reach"))
+    return
+  elseif curLevelData.state == HomelandLevelItemDataState.HasGot then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_23_0 , upvalues : self, _ENV
     local key = "UIHomelandLevelbtnGetOnClick"
     self:Lock(key)
-    local res, assets = (self.mHomeland):HomelandLevelReward(TT, self.curSelectLevel)
-    if (UIHomelandLevelData.CheckCode)(res:GetResult()) then
-      if assets and (table.count)(assets) > 0 then
-        self:ShowDialog("UIHomeShowAwards", assets, nil, true, (StringTable.Get)("str_homeland_level_award"))
+    local res, assets = self.mHomeland:HomelandLevelReward(TT, self.curSelectLevel)
+    if UIHomelandLevelData.CheckCode(res:GetResult()) then
+      if assets and table.count(assets) > 0 then
+        self:ShowDialog("UIHomeShowAwards", assets, nil, true, StringTable.Get("str_homeland_level_award"))
       end
-      ;
-      (self.data):Init()
+      self.data:Init()
       self:Flush()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeAfterCollectLevelReward)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeAfterCollectLevelReward)
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevel._CheckGuide = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandLevel)
+function UIHomelandLevel:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandLevel)
 end
-
-

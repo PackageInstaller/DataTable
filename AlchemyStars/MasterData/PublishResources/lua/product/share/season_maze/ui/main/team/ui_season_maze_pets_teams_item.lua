@@ -1,55 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/team/ui_season_maze_pets_teams_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazePetsTeamsItem", UICustomWidget)
 UISeasonMazePetsTeamsItem = UISeasonMazePetsTeamsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazePetsTeamsItem.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonMazePetsTeamsItem:Constructor()
   self._petPstID = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazePetsTeamsItem:OnShow(uiParams)
   self._module = self:GetModule(MissionModule)
   self:UIWidget()
   self:DefaultVisible()
   self:UIEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonMazePetsTeamsItem:OnHide()
   if self._equipLvWidget ~= nil then
-    (self._equipLvWidget):Dispose()
+    self._equipLvWidget:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.BtnDetailOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazePetsTeamsItem:BtnDetailOnClick(go)
   local petList = {}
   if self._getPetListCb then
-    petList = (self._getPetListCb)()
+    petList = self._getPetListCb()
   end
   local petModule = self:GetModule(PetModule)
-  ;
-  (petModule.uiModule):SetTeamCustomPets(petList)
-  local petid = (self._petInfo):GetTemplateID()
+  petModule.uiModule:SetTeamCustomPets(petList)
+  local petid = self._petInfo:GetTemplateID()
   self:ShowDialog("UISpiritDetailGroupController", petid, false, nil, nil, true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.UIWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazePetsTeamsItem:UIWidget()
   self._petIconLoader = self:GetUIComponent("RawImageLoader", "petIcon")
   self._leader = self:GetUIComponent("RectTransform", "leader")
   self._button = self:GetUIComponent("RectTransform", "button")
@@ -57,28 +37,30 @@ UISeasonMazePetsTeamsItem.UIWidget = function(self)
   self._imgAdd = self:GetUIComponent("RectTransform", "imgAdd")
   self._imgGray = self:GetUIComponent("RectTransform", "imgGray")
   self._animation = self:GetUIComponent("Animation", "animation")
-  self._career = (self._widget):GetUIComponent("Image", "career")
-  self._attrMain = (self._widget):GetUIComponent("Image", "attrMain")
-  self._attrVice = (self._widget):GetUIComponent("Image", "attrVice")
-  self._petName = (self._widget):GetUIComponent("UILocalizationText", "petName")
-  self._lvValue = (self._widget):GetUIComponent("UILocalizationText", "lvValue")
-  self._imgGrade = (self._widget):GetUIComponent("Image", "imgGrade")
-  self._equipLv = (self._widget):GetUIComponent("UISelectObjectPath", "equipLv")
+  self._career = self._widget:GetUIComponent("Image", "career")
+  self._attrMain = self._widget:GetUIComponent("Image", "attrMain")
+  self._attrVice = self._widget:GetUIComponent("Image", "attrVice")
+  self._petName = self._widget:GetUIComponent("UILocalizationText", "petName")
+  self._lvValue = self._widget:GetUIComponent("UILocalizationText", "lvValue")
+  self._imgGrade = self._widget:GetUIComponent("Image", "imgGrade")
+  self._equipLv = self._widget:GetUIComponent("UISelectObjectPath", "equipLv")
   self._equipLvWidget = nil
-  self._stars = {(self._widget):GetUIComponent("RectTransform", "star1"), (self._widget):GetUIComponent("RectTransform", "star2"), (self._widget):GetUIComponent("RectTransform", "star3"), (self._widget):GetUIComponent("RectTransform", "star4"), (self._widget):GetUIComponent("RectTransform", "star5"), (self._widget):GetUIComponent("RectTransform", "star6")}
+  self._stars = {
+    self._widget:GetUIComponent("RectTransform", "star1"),
+    self._widget:GetUIComponent("RectTransform", "star2"),
+    self._widget:GetUIComponent("RectTransform", "star3"),
+    self._widget:GetUIComponent("RectTransform", "star4"),
+    self._widget:GetUIComponent("RectTransform", "star5"),
+    self._widget:GetUIComponent("RectTransform", "star6")
+  }
   self._starAwaken = {}
   self._starLock = {}
-  for k,v in pairs(self._stars) do
-    -- DECOMPILER ERROR at PC125: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._starAwaken)[k] = self:GetChildComponent(v, "RectTransform", "starAwaken")
-    -- DECOMPILER ERROR at PC132: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._starLock)[k] = self:GetChildComponent(v, "RectTransform", "starLock")
+  for k, v in pairs(self._stars) do
+    self._starAwaken[k] = self:GetChildComponent(v, "RectTransform", "starAwaken")
+    self._starLock[k] = self:GetChildComponent(v, "RectTransform", "starLock")
   end
-  self._warningRoot = (self._widget):GetUIComponent("RectTransform", "warning")
-  self._txtWarning = (self._widget):GetUIComponent("UILocalizationText", "txtWarning")
+  self._warningRoot = self._widget:GetUIComponent("RectTransform", "warning")
+  self._txtWarning = self._widget:GetUIComponent("UILocalizationText", "txtWarning")
   self._lockGo = self:GetGameObject("lock")
   self._powerGo = self:GetGameObject("power")
   self._powerTex = self:GetUIComponent("UILocalizationText", "powerValue")
@@ -89,99 +71,73 @@ UISeasonMazePetsTeamsItem.UIWidget = function(self)
   self._blackShadow = self:GetGameObject("blackShadow")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.DefaultVisible = function(self)
-  -- function num : 0_5
-  ((self._imgGray).gameObject):SetActive(false)
-  ;
-  ((self._warningRoot).gameObject):SetActive(false)
+function UISeasonMazePetsTeamsItem:DefaultVisible()
+  self._imgGray.gameObject:SetActive(false)
+  self._warningRoot.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.UIEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local endDragFunc = function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
+function UISeasonMazePetsTeamsItem:UIEvents()
+  local function endDragFunc()
     if self._petPstID == 0 then
-      return 
+      return
     end
-    ;
-    ((self._imgGray).gameObject):SetActive(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamItemLongPress, false, self._slot, self._petInfo)
+    self._imgGray.gameObject:SetActive(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamItemLongPress, false, self._slot, self._petInfo)
   end
-
-  local etl = (UICustomUIEventListener.Get)((self._button).gameObject)
+  
+  local etl = UICustomUIEventListener.Get(self._button.gameObject)
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(ped)
-    -- function num : 0_6_1 , upvalues : self, _ENV
     if self._lock then
-      return 
+      return
     end
-    if self._petPstID == 0 or ((GameGlobal.UIStateManager)()):IsLocked() then
-      return 
+    if self._petPstID == 0 or GameGlobal.UIStateManager():IsLocked() then
+      return
     end
-    ;
-    ((self._imgGray).gameObject):SetActive(true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamItemLongPress, true, self._slot, self._petInfo)
-  end
-)
+    self._imgGray.gameObject:SetActive(true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamItemLongPress, true, self._slot, self._petInfo)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(ped)
-    -- function num : 0_6_2 , upvalues : self, _ENV
     if self._lock then
-      return 
+      return
     end
     if self._petPstID == 0 then
-      return 
+      return
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamUpdateReplaceCardPos, ped.position)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamUpdateReplaceCardPos, ped.position)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(ped)
-    -- function num : 0_6_3 , upvalues : self, endDragFunc
     if self._lock then
-      return 
+      return
     end
     endDragFunc()
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(go)
-    -- function num : 0_6_4 , upvalues : self
     if self._lock then
-      return 
+      return
     end
     if self._clickCb then
-      (self._clickCb)(self._slot)
+      self._clickCb(self._slot)
     end
-  end
-)
+  end)
   if not EDITOR then
     self:AddUICustomEventListener(etl, UIEvent.ApplicationFocus, function(b)
-    -- function num : 0_6_5 , upvalues : self, etl, endDragFunc
-    if self._lock then
-      return 
-    end
-    if not b then
-      if not etl.IsDragging then
-        return 
+      if self._lock then
+        return
       end
-      etl.IsDragging = false
-      endDragFunc()
-    end
-  end
-)
+      if not b then
+        if not etl.IsDragging then
+          return
+        end
+        etl.IsDragging = false
+        endDragFunc()
+      end
+    end)
   end
   self:AttachEvent(GameEventType.PetDataChangeEvent, self.OnPetInfoChanged)
   self:AttachEvent(GameEventType.OnPetSkinChange, self.OnPetInfoChanged)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.InitData = function(self, atlasProperty, atlasAwake, atlasProf, clickCb, getPetListCb, getHpCfg, isPrimary)
-  -- function num : 0_7
+function UISeasonMazePetsTeamsItem:InitData(atlasProperty, atlasAwake, atlasProf, clickCb, getPetListCb, getHpCfg, isPrimary)
   self._atlasProperty = atlasProperty
   self._atlasAwake = atlasAwake
   self._atlasProf = atlasProf
@@ -191,10 +147,7 @@ UISeasonMazePetsTeamsItem.InitData = function(self, atlasProperty, atlasAwake, a
   self._isPrimary = isPrimary
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.FlushPet = function(self, slot, pet, lock)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazePetsTeamsItem:FlushPet(slot, pet, lock)
   local theFirstIn = self._slot == nil
   local prePetPstID = self._petPstID
   self._slot = slot
@@ -202,104 +155,69 @@ UISeasonMazePetsTeamsItem.FlushPet = function(self, slot, pet, lock)
   self._uiSeasonMazeModule = self:GetUIModule(SeasonMazeModule)
   self._petInfo = pet
   if self._petInfo then
-    self._petPstID = (self._petInfo):GetPstID()
+    self._petPstID = self._petInfo:GetPstID()
   else
     self._petPstID = 0
   end
   self:OnPetInfoChanged()
   if not theFirstIn and prePetPstID ~= self._petPstID and self._petInfo ~= nil then
-    (self._animation):Play("effanim_UISeasonMazePetsTeamsItem_in2")
+    self._animation:Play("effanim_UISeasonMazePetsTeamsItem_in2")
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.ShowHpAndPower = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local hpUnit, lineUnit, sp1, sp2 = (self._getHpCfg)()
-  local cur, hpMax = (self._uiSeasonMazeModule):GetPetHP((self._petInfo):GetTemplateID(), self._petInfo)
+function UISeasonMazePetsTeamsItem:ShowHpAndPower()
+  local hpUnit, lineUnit, sp1, sp2 = self._getHpCfg()
+  local cur, hpMax = self._uiSeasonMazeModule:GetPetHP(self._petInfo:GetTemplateID(), self._petInfo)
   local rate = cur / hpMax
-  ;
-  (self._hpTex):SetText(cur .. "/" .. hpMax)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._hpImg).fillAmount = rate
+  self._hpTex:SetText(cur .. "/" .. hpMax)
+  self._hpImg.fillAmount = rate
   local hpvaluewidth = 716
-  local dialLineCount = (math.ceil)(hpMax / hpUnit) - 1
-  if (self._lineRoot).childCount < dialLineCount then
-    local gaps = dialLineCount - (self._lineRoot).childCount
-    local oriGo = ((self._lineRoot):GetChild(0)).gameObject
+  local dialLineCount = math.ceil(hpMax / hpUnit) - 1
+  if dialLineCount > self._lineRoot.childCount then
+    local gaps = dialLineCount - self._lineRoot.childCount
+    local oriGo = self._lineRoot:GetChild(0).gameObject
     for i = 1, gaps do
-      local ins = ((UnityEngine.GameObject).Instantiate)(oriGo, self._lineRoot)
+      local ins = UnityEngine.GameObject.Instantiate(oriGo, self._lineRoot)
     end
   end
-  do
-    for i = 1, (self._lineRoot).childCount do
-      local go = ((self._lineRoot):GetChild(i - 1)).gameObject
-      local show = i * hpUnit < cur
-      go:SetActive(show)
-      if i % lineUnit ~= 0 then
-        local middleImg = not show
-        local sp = nil
-        if middleImg then
-          sp = sp1
-        else
-          sp = sp2
-        end
-        ;
-        ((((go.transform):GetChild(0)).gameObject):GetComponent("Image")).sprite = sp
-        do
-          local posx = hpvaluewidth / hpMax * hpUnit * i
-          ;
-          ((((go.transform):GetChild(0)).gameObject):GetComponent("RectTransform")).anchoredPosition = Vector2(posx, 0)
-          -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC104: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+  for i = 1, self._lineRoot.childCount do
+    local go = self._lineRoot:GetChild(i - 1).gameObject
+    local show = cur > i * hpUnit
+    go:SetActive(show)
+    if show then
+      local middleImg = i % lineUnit == 0
+      local sp
+      if middleImg then
+        sp = sp1
+      else
+        sp = sp2
       end
+      go.transform:GetChild(0).gameObject:GetComponent("Image").sprite = sp
+      local posx = hpvaluewidth / hpMax * hpUnit * i
+      go.transform:GetChild(0).gameObject:GetComponent("RectTransform").anchoredPosition = Vector2(posx, 0)
     end
-    local notShowPower = ((GameGlobal.GetModule)(MazeModule)):IsPetActiveSkillUseLegendEnergy(nil, self._petInfo)
-    ;
-    (self._powerGo):SetActive(not notShowPower)
-    do
-      if not notShowPower then
-        local power = (self._uiSeasonMazeModule):GetPetPower((self._petInfo):GetTemplateID(), self._petInfo)
-        ;
-        (self._powerTex):SetText(power)
-      end
-      -- DECOMPILER ERROR: 6 unprocessed JMP targets
-    end
+  end
+  local notShowPower = GameGlobal.GetModule(MazeModule):IsPetActiveSkillUseLegendEnergy(nil, self._petInfo)
+  self._powerGo:SetActive(not notShowPower)
+  if not notShowPower then
+    local power = self._uiSeasonMazeModule:GetPetPower(self._petInfo:GetTemplateID(), self._petInfo)
+    self._powerTex:SetText(power)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.OnPetInfoChanged = function(self)
-  -- function num : 0_10
+function UISeasonMazePetsTeamsItem:OnPetInfoChanged()
   if self._petInfo == nil then
-    ((self._petIconLoader).gameObject):SetActive(false)
-    ;
-    ((self._leader).gameObject):SetActive(false)
-    ;
-    ((self._widget).gameObject):SetActive(false)
-    ;
-    ((self._imgAdd).gameObject):SetActive(true)
-    ;
-    (self._blackShadow):SetActive(false)
+    self._petIconLoader.gameObject:SetActive(false)
+    self._leader.gameObject:SetActive(false)
+    self._widget.gameObject:SetActive(false)
+    self._imgAdd.gameObject:SetActive(true)
+    self._blackShadow:SetActive(false)
   else
-    ;
-    (self._blackShadow):SetActive(true)
-    ;
-    ((self._petIconLoader).gameObject):SetActive(true)
-    ;
-    ((self._leader).gameObject):SetActive(self._slot == 1)
-    ;
-    ((self._widget).gameObject):SetActive(true)
-    ;
-    ((self._imgAdd).gameObject):SetActive(false)
+    self._blackShadow:SetActive(true)
+    self._petIconLoader.gameObject:SetActive(true)
+    self._leader.gameObject:SetActive(self._slot == 1)
+    self._widget.gameObject:SetActive(true)
+    self._imgAdd.gameObject:SetActive(false)
     self:ShowCareer()
     self:ShowName()
     self:ShowBattleMes()
@@ -311,178 +229,128 @@ UISeasonMazePetsTeamsItem.OnPetInfoChanged = function(self)
     self:ShowHpAndPower()
   end
   if self._lock then
-    (self._lockGo):SetActive(true)
-    ;
-    ((self._imgAdd).gameObject):SetActive(false)
+    self._lockGo:SetActive(true)
+    self._imgAdd.gameObject:SetActive(false)
   else
-    (self._lockGo):SetActive(false)
-    ;
-    ((self._imgAdd).gameObject):SetActive(true)
+    self._lockGo:SetActive(false)
+    self._imgAdd.gameObject:SetActive(true)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.ShowCareer = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonMazePetsTeamsItem:ShowCareer()
   if self._prof2Img == nil then
-    self._prof2Img = {[PetProfType.PetProf_Color] = "epg_gqxq_icon08", [PetProfType.PetProf_Blood] = "epg_gqxq_icon06", [PetProfType.PetProf_Attack] = "epg_gqxq_icon07", [PetProfType.PetProf_Function] = "epg_gqxq_icon09"}
-    self._prof2Name = {[PetProfType.PetProf_Color] = "str_pet_tag_job_name_color_change_1", [PetProfType.PetProf_Blood] = "str_pet_tag_job_name_return_blood_1", [PetProfType.PetProf_Attack] = "str_pet_tag_job_name_attack_1", [PetProfType.PetProf_Function] = "str_pet_tag_job_name_function_1"}
+    self._prof2Img = {
+      [PetProfType.PetProf_Color] = "epg_gqxq_icon08",
+      [PetProfType.PetProf_Blood] = "epg_gqxq_icon06",
+      [PetProfType.PetProf_Attack] = "epg_gqxq_icon07",
+      [PetProfType.PetProf_Function] = "epg_gqxq_icon09"
+    }
+    self._prof2Name = {
+      [PetProfType.PetProf_Color] = "str_pet_tag_job_name_color_change_1",
+      [PetProfType.PetProf_Blood] = "str_pet_tag_job_name_return_blood_1",
+      [PetProfType.PetProf_Attack] = "str_pet_tag_job_name_attack_1",
+      [PetProfType.PetProf_Function] = "str_pet_tag_job_name_function_1"
+    }
   end
-  local prof = (self._petInfo):GetProf()
-  local spriteName = (self._prof2Img)[prof]
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._career).sprite = (self._atlasProf):GetSprite(spriteName)
+  local prof = self._petInfo:GetProf()
+  local spriteName = self._prof2Img[prof]
+  self._career.sprite = self._atlasProf:GetSprite(spriteName)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.ShowName = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._petName):SetText((StringTable.Get)((self._petInfo):GetPetName()))
+function UISeasonMazePetsTeamsItem:ShowName()
+  self._petName:SetText(StringTable.Get(self._petInfo:GetPetName()))
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.ShowBattleMes = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local tid = (self._petInfo):GetTemplateID()
-  local grade = (self._petInfo):GetPetGrade()
-  local skinId = (self._petInfo):GetSkinId()
+function UISeasonMazePetsTeamsItem:ShowBattleMes()
+  local tid = self._petInfo:GetTemplateID()
+  local grade = self._petInfo:GetPetGrade()
+  local skinId = self._petInfo:GetSkinId()
   local path = PetSkinEffectPath.CARD_TEAM
   local hpProxy = HelperProxy:GetInstance()
   local nameBattleMes = hpProxy:GetPetBattleMes(tid, grade, skinId, path)
-  ;
-  (self._petIconLoader):LoadImage(nameBattleMes)
+  self._petIconLoader:LoadImage(nameBattleMes)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.ShowLevel = function(self)
-  -- function num : 0_14
-  local petLevel = (self._petInfo):GetPetLevel()
-  ;
-  (self._lvValue):SetText("LV." .. petLevel)
+function UISeasonMazePetsTeamsItem:ShowLevel()
+  local petLevel = self._petInfo:GetPetLevel()
+  self._lvValue:SetText("LV." .. petLevel)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.ShowElement = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+function UISeasonMazePetsTeamsItem:ShowElement()
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if cfg_pet_element == nil then
-    ((self._attrMain).gameObject):SetActive(false)
-    ;
-    ((self._attrVice).gameObject):SetActive(false)
-    return 
+    self._attrMain.gameObject:SetActive(false)
+    self._attrVice.gameObject:SetActive(false)
+    return
   end
-  local v1stSprite, v2ndSprite = nil, nil
-  local v1stElement = (self._petInfo):GetPetFirstElement()
-  local v2ndElement = (self._petInfo):GetPetSecondElement()
-  do
-    if v1stElement ~= nil then
-      local spriteName = (UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[v1stElement]).Icon)
-      v1stSprite = (self._atlasProperty):GetSprite(spriteName)
-    end
-    do
-      if v2ndElement ~= nil then
-        local spriteName = (UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[v2ndElement]).Icon)
-        v2ndSprite = (self._atlasProperty):GetSprite(spriteName)
-      end
-      if v1stSprite ~= nil then
-        ((self._attrMain).gameObject):SetActive(false)
-        ;
-        ((self._attrVice).gameObject):SetActive(true)
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._attrVice).sprite = v1stSprite
-      end
-      if v2ndSprite ~= nil then
-        ((self._attrMain).gameObject):SetActive(true)
-        -- DECOMPILER ERROR at PC74: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._attrMain).sprite = v1stSprite
-        -- DECOMPILER ERROR at PC76: Confused about usage of register: R6 in 'UnsetPending'
-
-        ;
-        (self._attrVice).sprite = v2ndSprite
-      end
-    end
+  local v1stSprite, v2ndSprite
+  local v1stElement = self._petInfo:GetPetFirstElement()
+  local v2ndElement = self._petInfo:GetPetSecondElement()
+  if v1stElement ~= nil then
+    local spriteName = UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[v1stElement].Icon)
+    v1stSprite = self._atlasProperty:GetSprite(spriteName)
+  end
+  if v2ndElement ~= nil then
+    local spriteName = UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[v2ndElement].Icon)
+    v2ndSprite = self._atlasProperty:GetSprite(spriteName)
+  end
+  if v1stSprite ~= nil then
+    self._attrMain.gameObject:SetActive(false)
+    self._attrVice.gameObject:SetActive(true)
+    self._attrVice.sprite = v1stSprite
+  end
+  if v2ndSprite ~= nil then
+    self._attrMain.gameObject:SetActive(true)
+    self._attrMain.sprite = v1stSprite
+    self._attrVice.sprite = v2ndSprite
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.ShowStarLevel = function(self)
-  -- function num : 0_16
-  local petStar = (self._petInfo):GetPetStar()
-  local awakenStep = (self._petInfo):GetPetAwakening()
-  local awakenLock = (self._petInfo):GetAwakeMatch()
+function UISeasonMazePetsTeamsItem:ShowStarLevel()
+  local petStar = self._petInfo:GetPetStar()
+  local awakenStep = self._petInfo:GetPetAwakening()
+  local awakenLock = self._petInfo:GetAwakeMatch()
   local maxStarLevel = #self._stars
   for starLevel = 1, maxStarLevel do
-    local starGo = ((self._stars)[starLevel]).gameObject
+    local starGo = self._stars[starLevel].gameObject
     if starLevel <= petStar then
       starGo:SetActive(true)
     else
       starGo:SetActive(false)
     end
-    local starGo = ((self._starAwaken)[starLevel]).gameObject
-    local starLockGo = ((self._starLock)[starLevel]).gameObject
+    local starGo = self._starAwaken[starLevel].gameObject
+    local starLockGo = self._starLock[starLevel].gameObject
     if starLevel <= awakenLock then
       starGo:SetActive(true)
       starLockGo:SetActive(false)
+    elseif starLevel <= awakenStep then
+      starGo:SetActive(false)
+      starLockGo:SetActive(true)
     else
-      if starLevel <= awakenStep then
-        starGo:SetActive(false)
-        starLockGo:SetActive(true)
-      else
-        starGo:SetActive(false)
-        starLockGo:SetActive(false)
-      end
+      starGo:SetActive(false)
+      starLockGo:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.ShowGrade = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local petId = (self._petInfo):GetTemplateID()
-  local petGradeLevel = (self._petInfo):GetPetGrade()
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._imgGrade).sprite = (self._atlasAwake):GetSprite((UIPetModule.GetAwakeSpriteName)(petId, petGradeLevel))
+function UISeasonMazePetsTeamsItem:ShowGrade()
+  local petId = self._petInfo:GetTemplateID()
+  local petGradeLevel = self._petInfo:GetPetGrade()
+  self._imgGrade.sprite = self._atlasAwake:GetSprite(UIPetModule.GetAwakeSpriteName(petId, petGradeLevel))
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.ShowEquipLv = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UISeasonMazePetsTeamsItem:ShowEquipLv()
   if self._equipLvWidget == nil then
     self._equipLvWidget = UICustomWidgetPool:New(self:RootUIOwner(), self._equipLv)
   end
-  local obj = (self._equipLvWidget):SpawnObject("UIPetEquipLvIcon")
+  local obj = self._equipLvWidget:SpawnObject("UIPetEquipLvIcon")
   obj:SetData(self._petInfo, true)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.HideGuideWarn = function(self)
-  -- function num : 0_19
-  ((self._warningRoot).gameObject):SetActive(false)
+function UISeasonMazePetsTeamsItem:HideGuideWarn()
+  self._warningRoot.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazePetsTeamsItem.IsLocked = function(self)
-  -- function num : 0_20
+function UISeasonMazePetsTeamsItem:IsLocked()
   return false
 end
-
-

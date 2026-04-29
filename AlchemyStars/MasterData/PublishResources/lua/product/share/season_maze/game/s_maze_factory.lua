@@ -1,57 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/s_maze_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeFactory", Object)
 SMazeFactory = SMazeFactory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeFactory.Constructor = function(self, mn)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeFactory:Constructor(mn)
   self._manager = mn
   self._cardType = {}
-  self._propType = {[SeasonMazeEffectType.SMET_Once_Shoe] = SMazeProp_Boot, [SeasonMazeEffectType.SMET_Once_Retrun] = SMazeProp_TP, [SeasonMazeEffectType.SMET_Once_Sprint] = SMazeProp_Rush, [SeasonMazeEffectType.SMET_Once_Bomb] = SMazeProp_Bomb}
-  self._roomType = {[SeasonMazeRoomType.SMRT_PVE] = SMazeMapRoom_Battle, [SeasonMazeRoomType.SMRT_Random] = SMazeMapRoom_RandomEvent, [SeasonMazeRoomType.SMRT_Resource] = SMazeMapRoom_Resource, [SeasonMazeRoomType.SMRT_Ore] = SMazeMapRoom_Ore, [SeasonMazeRoomType.SMRT_Box] = SMazeMapRoom_Box, [SeasonMazeRoomType.SMRT_Round] = SMazeMapRoom_RoundBonus, [SeasonMazeRoomType.SMRT_Empty] = SMazeMapRoom_Empty, [SeasonMazeRoomType.SMRT_Camp] = SMazeMapRoom_Camp, [SeasonMazeRoomType.SMRT_Altar] = SMazeMapRoom_Altar, [SeasonMazeRoomType.SMRT_Market] = SMazeMapRoom_FleaMarket, [SeasonMazeRoomType.SMRT_PetRecruit] = SMazeMapRoom_DirectionalRecruit, [SeasonMazeRoomType.SMRT_Transfor] = SMazeMapRoom_Transport, [SeasonMazeRoomType.SMRT_Shop] = SMazeMapRoom_Shop, [SeasonMazeRoomType.SMRT_BeadShop] = SMazeMapRoom_Bead}
+  self._propType = {
+    [SeasonMazeEffectType.SMET_Once_Shoe] = SMazeProp_Boot,
+    [SeasonMazeEffectType.SMET_Once_Retrun] = SMazeProp_TP,
+    [SeasonMazeEffectType.SMET_Once_Sprint] = SMazeProp_Rush,
+    [SeasonMazeEffectType.SMET_Once_Bomb] = SMazeProp_Bomb
+  }
+  self._roomType = {
+    [SeasonMazeRoomType.SMRT_PVE] = SMazeMapRoom_Battle,
+    [SeasonMazeRoomType.SMRT_Random] = SMazeMapRoom_RandomEvent,
+    [SeasonMazeRoomType.SMRT_Resource] = SMazeMapRoom_Resource,
+    [SeasonMazeRoomType.SMRT_Ore] = SMazeMapRoom_Ore,
+    [SeasonMazeRoomType.SMRT_Box] = SMazeMapRoom_Box,
+    [SeasonMazeRoomType.SMRT_Round] = SMazeMapRoom_RoundBonus,
+    [SeasonMazeRoomType.SMRT_Empty] = SMazeMapRoom_Empty,
+    [SeasonMazeRoomType.SMRT_Camp] = SMazeMapRoom_Camp,
+    [SeasonMazeRoomType.SMRT_Altar] = SMazeMapRoom_Altar,
+    [SeasonMazeRoomType.SMRT_Market] = SMazeMapRoom_FleaMarket,
+    [SeasonMazeRoomType.SMRT_PetRecruit] = SMazeMapRoom_DirectionalRecruit,
+    [SeasonMazeRoomType.SMRT_Transfor] = SMazeMapRoom_Transport,
+    [SeasonMazeRoomType.SMRT_Shop] = SMazeMapRoom_Shop,
+    [SeasonMazeRoomType.SMRT_BeadShop] = SMazeMapRoom_Bead
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeFactory.Dispose = function(self)
-  -- function num : 0_1
+function SMazeFactory:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeFactory.CreateCard = function(self, typeID, ...)
-  -- function num : 0_2 , upvalues : _ENV
+function SMazeFactory:CreateCard(typeID, ...)
   return SMazeCard:New(typeID)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeFactory.CreateProp = function(self, id, count)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_season_maze_once)({OnceID = id})
-  if cfg or #cfg > 0 then
+function SMazeFactory:CreateProp(id, count)
+  local cfg = Cfg.cfg_component_season_maze_once({OnceID = id})
+  if cfg or 0 < #cfg then
     cfg = cfg[1]
   end
   local typeID = cfg.Type
-  local type = (self._propType)[typeID]
+  local type = self._propType[typeID]
   local prop = type:New(id, count, typeID)
   return prop
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeFactory.CreateRoom = function(self, typeID, ...)
-  -- function num : 0_4 , upvalues : _ENV
-  local type = (self._roomType)[typeID]
+function SMazeFactory:CreateRoom(typeID, ...)
+  local type = self._roomType[typeID]
   if not type then
-    (Log.exception)("房间类型错误:", typeID)
+    Log.exception("房间类型错误:", typeID)
   end
   local room = type:New(...)
   return room
 end
-
-

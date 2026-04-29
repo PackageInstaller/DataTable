@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/team_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TeamComponent", Object)
 TeamComponent = TeamComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TeamComponent.Constructor = function(self)
-  -- function num : 0_0
+function TeamComponent:Constructor()
   self._teamLeader = nil
   self._teamPetEntities = nil
   self._teamOrder = {}
@@ -20,291 +13,176 @@ TeamComponent.Constructor = function(self)
   self._autoBeadSkillHolderID = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetTeamLeaderEntity = function(self)
-  -- function num : 0_1
+function TeamComponent:GetTeamLeaderEntity()
   return self._teamLeader
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetTeamLeaderEntityID = function(self)
-  -- function num : 0_2
-  return (self._teamLeader):GetID()
+function TeamComponent:GetTeamLeaderEntityID()
+  return self._teamLeader:GetID()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetTeamLeaderPetPstID = function(self)
-  -- function num : 0_3
-  return ((self._teamLeader):PetPstID()):GetPstID()
+function TeamComponent:GetTeamLeaderPetPstID()
+  return self._teamLeader:PetPstID():GetPstID()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.SetTeamLeader = function(self, entity)
-  -- function num : 0_4
+function TeamComponent:SetTeamLeader(entity)
   self._teamLeader = entity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.SetOriginalTeamLeaderID = function(self, entityID)
-  -- function num : 0_5
+function TeamComponent:SetOriginalTeamLeaderID(entityID)
   self._originalTeamLeaderID = entityID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetOriginalTeamLeaderID = function(self)
-  -- function num : 0_6
+function TeamComponent:GetOriginalTeamLeaderID()
   return self._originalTeamLeaderID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetTeamPetEntities = function(self)
-  -- function num : 0_7
+function TeamComponent:GetTeamPetEntities()
   return self._teamPetEntities
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.SetTeamPetEntities = function(self, pets)
-  -- function num : 0_8 , upvalues : _ENV
+function TeamComponent:SetTeamPetEntities(pets)
   self._teamPetEntities = pets
-  for _,e in ipairs(pets) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._teamPetEntityDict)[(e:PetPstID()):GetPstID()] = e
+  for _, e in ipairs(pets) do
+    self._teamPetEntityDict[e:PetPstID():GetPstID()] = e
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.ClearTeamPetEntities = function(self)
-  -- function num : 0_9
+function TeamComponent:ClearTeamPetEntities()
   self._teamPetEntities = {}
   self._teamPetEntityDict = {}
   self._teamOrder = {}
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetPetEntityByPetPstID = function(self, pstid)
-  -- function num : 0_10
-  return (self._teamPetEntityDict)[pstid]
+function TeamComponent:GetPetEntityByPetPstID(pstid)
+  return self._teamPetEntityDict[pstid]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.SetTeamOrder = function(self, teamOrder)
-  -- function num : 0_11
+function TeamComponent:SetTeamOrder(teamOrder)
   self._teamOrder = teamOrder
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetTeamOrder = function(self)
-  -- function num : 0_12
+function TeamComponent:GetTeamOrder()
   return self._teamOrder
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetTeamIndexByPetPstID = function(self, petPstID)
-  -- function num : 0_13 , upvalues : _ENV
-  for i,v in ipairs(self._teamOrder) do
+function TeamComponent:GetTeamIndexByPetPstID(petPstID)
+  for i, v in ipairs(self._teamOrder) do
     if v == petPstID then
       return i
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetPetEntityByTeamIndex = function(self, petIndex)
-  -- function num : 0_14
-  local petPstID = (self._teamOrder)[petIndex]
+function TeamComponent:GetPetEntityByTeamIndex(petIndex)
+  local petPstID = self._teamOrder[petIndex]
   local petEntity = self:GetPetEntityByPetPstID(petPstID)
   return petEntity
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.ChangeTeamLeader = function(self, newLeaderPetPstID)
-  -- function num : 0_15
+function TeamComponent:ChangeTeamLeader(newLeaderPetPstID)
   local newLeaderIndex = self:GetTeamIndexByPetPstID(newLeaderPetPstID)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._teamOrder)[1] = (self._teamOrder)[newLeaderIndex]
+  self._teamOrder[1], self._teamOrder[newLeaderIndex] = self._teamOrder[newLeaderIndex], self._teamOrder[1]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetEnemyTeamEntity = function(self)
-  -- function num : 0_16
+function TeamComponent:GetEnemyTeamEntity()
   return self._enemyTeamEntity
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.SetEnemyTeamEntity = function(self, teamEntity)
-  -- function num : 0_17
+function TeamComponent:SetEnemyTeamEntity(teamEntity)
   self._enemyTeamEntity = teamEntity
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.IsTeamLeaderByEntityId = function(self, entityId)
-  -- function num : 0_18
-  do return self:GetTeamLeaderEntityID() == entityId end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function TeamComponent:IsTeamLeaderByEntityId(entityId)
+  return self:GetTeamLeaderEntityID() == entityId
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.SetHelpPetPstID = function(self, val)
-  -- function num : 0_19
+function TeamComponent:SetHelpPetPstID(val)
   self._helpPetPstID = val
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetHelpPetPstID = function(self)
-  -- function num : 0_20
+function TeamComponent:GetHelpPetPstID()
   return self._helpPetPstID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.CloneTeamOrder = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function TeamComponent:CloneTeamOrder()
   local t = {}
-  for k,v in pairs(self._teamOrder) do
+  for k, v in pairs(self._teamOrder) do
     t[k] = v
   end
   return t
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.SetSelectedTeamOrderPosition = function(self, v)
-  -- function num : 0_22
+function TeamComponent:SetSelectedTeamOrderPosition(v)
   self._selectedTeamOrderPosition = v
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.ClearSelectedTeamOrderPosition = function(self)
-  -- function num : 0_23
+function TeamComponent:ClearSelectedTeamOrderPosition()
   self._selectedTeamOrderPosition = 0
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetSelectedTeamOrderPosition = function(self)
-  -- function num : 0_24
+function TeamComponent:GetSelectedTeamOrderPosition()
   return self._selectedTeamOrderPosition
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.SetChangeTeamLeaderCmdData = function(self, oldTeamOrder, newTeamOrder)
-  -- function num : 0_25
+function TeamComponent:SetChangeTeamLeaderCmdData(oldTeamOrder, newTeamOrder)
   self._cmdOldTeamOrder = oldTeamOrder
   self._cmdNewTeamOrder = newTeamOrder
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetChangeTeamLeaderCmdData = function(self)
-  -- function num : 0_26
+function TeamComponent:GetChangeTeamLeaderCmdData()
   return self._cmdOldTeamOrder, self._cmdNewTeamOrder
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.SetAutoBeadSkillHolderID = function(self, entityID)
-  -- function num : 0_27
+function TeamComponent:SetAutoBeadSkillHolderID(entityID)
   self._autoBeadSkillHolderID = entityID
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-TeamComponent.GetAutoBeadSkillHolderID = function(self)
-  -- function num : 0_28
+function TeamComponent:GetAutoBeadSkillHolderID()
   return self._autoBeadSkillHolderID
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.Team = function(self)
-  -- function num : 0_29
-  return self:GetComponent((self.WEComponentsEnum).Team)
+function Entity:Team()
+  return self:GetComponent(self.WEComponentsEnum.Team)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTeam = function(self)
-  -- function num : 0_30
-  return self:HasComponent((self.WEComponentsEnum).Team)
+function Entity:HasTeam()
+  return self:HasComponent(self.WEComponentsEnum.Team)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTeam = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Team
+function Entity:AddTeam()
+  local index = self.WEComponentsEnum.Team
   local component = TeamComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceTeam = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).Team
+function Entity:ReplaceTeam()
+  local index = self.WEComponentsEnum.Team
   local component = TeamComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveTeam = function(self)
-  -- function num : 0_33
+function Entity:RemoveTeam()
   if self:HasTeam() then
-    self:RemoveComponent((self.WEComponentsEnum).Team)
+    self:RemoveComponent(self.WEComponentsEnum.Team)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetTeamLeaderPetEntity = function(self, petEntity)
-  -- function num : 0_34 , upvalues : _ENV
+function Entity:SetTeamLeaderPetEntity(petEntity)
   if not self:HasTeam() then
-    local index = (self.WEComponentsEnum).Team
+    local index = self.WEComponentsEnum.Team
     local component = TeamComponent:New()
     self:AddComponent(index, component)
   end
-  do
-    local team = self:Team()
-    local petPstID = (petEntity:PetPstID()):GetPstID()
-    team:SetTeamLeader(petEntity)
-    team:ChangeTeamLeader(petPstID)
-    local element = petEntity:Element()
-    self:ReplaceElement(element:GetPrimaryType(), element:GetSecondaryType())
-  end
+  local team = self:Team()
+  local petPstID = petEntity:PetPstID():GetPstID()
+  team:SetTeamLeader(petEntity)
+  team:ChangeTeamLeader(petPstID)
+  local element = petEntity:Element()
+  self:ReplaceElement(element:GetPrimaryType(), element:GetSecondaryType())
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetTeamLeaderPetEntity = function(self)
-  -- function num : 0_35
+function Entity:GetTeamLeaderPetEntity()
   if not self:HasTeam() then
     return nil
   end
@@ -312,5 +190,3 @@ Entity.GetTeamLeaderPetEntity = function(self)
   local teamLeaderPetEntity = team:GetTeamLeaderEntity()
   return teamLeaderPetEntity
 end
-
-

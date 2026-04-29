@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/common/ui_homeland_message_box_items.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMessageBox_Items", UIController)
 UIHomelandMessageBox_Items = UIHomelandMessageBox_Items
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMessageBox_Items.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandMessageBox_Items:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox_Items.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMessageBox_Items:OnShow(uiParams)
   self.txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self.txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self.poolItems = self:GetUIComponent("UISelectObjectPath", "items")
@@ -25,43 +15,27 @@ UIHomelandMessageBox_Items.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox_Items.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMessageBox_Items:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox_Items.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.txtTitle):SetText(self.strTitle)
-  ;
-  (self.txtDesc):SetText(self.strDesc)
-  local len = (table.count)(self.items)
-  ;
-  (self.poolItems):SpawnObjects("UIItemHomeland", len)
-  local uis = (self.poolItems):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
-    ui:Flush((self.items)[i], nil)
+function UIHomelandMessageBox_Items:Flush()
+  self.txtTitle:SetText(self.strTitle)
+  self.txtDesc:SetText(self.strDesc)
+  local len = table.count(self.items)
+  self.poolItems:SpawnObjects("UIItemHomeland", len)
+  local uis = self.poolItems:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    ui:Flush(self.items[i], nil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox_Items.btnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandMessageBox_Items:btnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox_Items.btnConfirmOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomelandMessageBox_Items:btnConfirmOnClick(go)
   if self.funcConfirm then
-    (self.funcConfirm)()
+    self.funcConfirm()
   end
   self:CloseDialog()
 end
-
-

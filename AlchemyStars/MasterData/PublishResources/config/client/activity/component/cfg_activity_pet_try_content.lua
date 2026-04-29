@@ -1,306 +1,608 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/component/cfg_activity_pet_try_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponetntID = 2, SortId = 3, CampaignMissionId = 4, PrizePoolId = 5, PetID = 6, PetCG = 7, PetHeadIcon = 8, SignImg = 9, PetTalk = 10}
+local key = {
+  ID = 1,
+  ComponetntID = 2,
+  SortId = 3,
+  CampaignMissionId = 4,
+  PrizePoolId = 5,
+  PetID = 6,
+  PetCG = 7,
+  PetHeadIcon = 8,
+  SignImg = 9,
+  PetTalk = 10
+}
 local common = {
-{1}
-, 
-{2}
-, 
-{3}
+  {1},
+  {2},
+  {3}
 }
 local config = {
-{1, 500500501, common[1], 50053001, 200004, 
-{1600021}
-, 
-{"1600022_cg"}
-, "spirit_1600022_card", "trial_name_1600021", "str_activity_common_pet_try_1600021"}
-, 
-{2, 500500501, common[2], 50053002, 200004, 
-{1500711}
-, 
-{"1500712_cg"}
-, "spirit_1500712_card", "trial_name_1500711", "str_activity_common_pet_try_1500711"}
-, 
-{3, 500700501, common[3], 5012014, 20003, 
-{1600301}
-, 
-{"1600302_cg"}
-, "spirit_1600302_card", "trial_name_1600301", "str_activity_common_pet_try_1600301"}
-, 
-{4, 500700501, 
-{4}
-, 5012015, 20003, 
-{1601051}
-, 
-{"1601052_cg"}
-, "spirit_1601052_card", "trial_name_1601051", "str_activity_common_pet_try_1601051"}
-, 
-{5, 500700501, 
-{5}
-, 5012016, 20003, 
-{1501041}
-, 
-{"1501042_cg"}
-, "spirit_1501042_card", "trial_name_1501041", "str_activity_common_pet_try_1501041"}
-, 
-{6, 500800501, common[1], 50083001, 200001, 
-{1600061}
-, 
-{"1600062_cg"}
-, "spirit_1600062_card", "trial_name_1600061", "str_activity_common_pet_try_1600061"}
-, 
-{7, 500800501, common[2], 50083002, 200002, 
-{1600261}
-, 
-{"1600262_cg"}
-, "spirit_1600262_card", "trial_name_1600261", "str_activity_common_pet_try_1600261"}
-, 
-{8, 109600501, common[2], 5301001, 20041, 
-{1601921}
-, 
-{"1601922_cg"}
-, "spirit_1601922_card", "trial_name_1601921", "str_activity_common_pet_try_1601921"}
-, 
-{9, 109600501, common[1], 5301002, 20040, 
-{1601991}
-, 
-{"1601992_cg"}
-, "spirit_1601992_card", "trial_name_1601991", "str_activity_common_pet_try_1601991"}
-, 
-{10, 109600501, common[3], 5301003, -1, 
-{1502001}
-, 
-{"1502002_cg"}
-, "spirit_1502002_card", "trial_name_1502001", "str_activity_common_pet_try_1502001"}
-, 
-{11, 110700501, common[1], 5313001, 60007, 
-{1602011}
-, 
-{"1602012_cg"}
-, "spirit_1602012_card", "trial_name_1602011", "str_activity_common_pet_try_1602011"}
-, 
-{12, 110700501, common[2], 5313002, 20042, 
-{1602021}
-, 
-{"1602022_cg"}
-, "spirit_1602022_card", "trial_name_1602021", "str_activity_common_pet_try_1602021"}
-, 
-{13, 110700501, common[3], 5313003, -1, 
-{1502031}
-, 
-{"1502032_cg"}
-, "spirit_1502032_card", "trial_name_1502031", "str_activity_common_pet_try_1502031"}
-, 
-{14, 110900501, common[1], 5324001, 20043, 
-{1602041}
-, 
-{"1602042_cg"}
-, "spirit_1602042_card", "trial_name_1602041", "str_activity_common_pet_try_1602041"}
-, 
-{15, 110900501, common[2], 5324002, 20043, 
-{1502051}
-, 
-{"1502052_cg"}
-, "spirit_1502052_card", "trial_name_1502051", "str_activity_common_pet_try_1502051"}
-, 
-{16, 112000501, common[1], 5334001, 20044, 
-{1602061}
-, 
-{"1602062_cg"}
-, "spirit_1602062_card", "trial_name_1602061", "str_activity_common_pet_try_1602061"}
-, 
-{17, 112000501, common[2], 5334002, 20045, 
-{1602071}
-, 
-{"1602072_cg"}
-, "spirit_1602072_card", "trial_name_1602071", "str_activity_common_pet_try_1602071"}
-, 
-{18, 112000501, common[3], 5334003, -1, 
-{1502081}
-, 
-{"1502082_cg"}
-, "spirit_1502082_card", "trial_name_1502081", "str_activity_common_pet_try_1502081"}
-, 
-{19, 112100501, common[1], 5343001, 60008, 
-{1602091}
-, 
-{"1602092_cg"}
-, "spirit_1602092_card", "trial_name_1602091", "str_activity_common_pet_try_1602091"}
-, 
-{20, 112100501, common[2], 5343002, 60008, 
-{1502101}
-, 
-{"1502102_cg"}
-, "spirit_1502102_card", "trial_name_1502101", "str_activity_common_pet_try_1502101"}
-, 
-{21, 502600501, common[1], 5354001, 20047, 
-{1602111}
-, 
-{"1602112_cg"}
-, "spirit_1602112_card", "trial_name_1602111", "str_activity_common_pet_try_1602111"}
-, 
-{22, 502600501, common[2], 5354002, 20046, 
-{1602121}
-, 
-{"1602122_cg"}
-, "spirit_1602122_card", "trial_name_1602121", "str_activity_common_pet_try_1602121"}
-, 
-{23, 502600501, common[3], 5354003, -1, 
-{1502131}
-, 
-{"1502132_cg"}
-, "spirit_1502132_card", "trial_name_1502131", "str_activity_common_pet_try_1502131"}
-, 
-{24, 503000501, 
-{1, 2, 3, 4, 5}
-, 5103001, 70008, 
-{1601331, 1601341, 1501361, 1501351, 1401371}
-, 
-{"1601331_cg", "1601341_cg", "1501361_cg", "1501351_cg", "1401371_cg"}
-}
-, 
-{25, 113000501, common[1], 5374001, 20049, 
-{1602141}
-, 
-{"1602142_cg"}
-, "spirit_1602142_card", "trial_name_1602141", "str_activity_common_pet_try_1602141"}
-, 
-{26, 113000501, common[2], 5374002, 20049, 
-{1502151}
-, 
-{"1502152_cg"}
-, "spirit_1502152_card", "trial_name_1502151", "str_activity_common_pet_try_1502151"}
-, 
-{27, 113200501, common[1], 5384001, 20050, 
-{1602161}
-, 
-{"1602162_cg"}
-, "spirit_1602162_card", "trial_name_1602161", "str_activity_common_pet_try_1602161"}
-, 
-{28, 113200501, common[2], 5384002, 20051, 
-{1601811}
-, 
-{"1601812_cg"}
-, "spirit_1601812_card", "trial_name_1601811", "str_activity_common_pet_try_1601811"}
-, 
-{29, 113200501, common[3], 5384003, -1, 
-{1501831}
-, 
-{"1501832_cg"}
-, "spirit_1501832_card", "trial_name_1501831", "str_activity_common_pet_try_1501831"}
-, 
-{30, 113500501, common[1], 5394001, 60011, 
-{1602181}
-, 
-{"1602182_cg"}
-, "spirit_1602182_card", "trial_name_1602181", "str_activity_common_pet_try_1602181"}
-, 
-{31, 113500501, common[2], 5394002, 20052, 
-{1602191}
-, 
-{"1602192_cg"}
-, "spirit_1602192_card", "trial_name_1602191", "str_activity_common_pet_try_1602191"}
-, 
-{32, 113500501, common[3], 5394003, -1, 
-{1502201}
-, 
-{"1502202_cg"}
-, "spirit_1502202_card", "trial_name_1502201", "str_activity_common_pet_try_1502201"}
-, 
-{33, 114000501, common[3], 5404001, -1, 
-{1602211}
-, 
-{"1602212_cg"}
-, "spirit_1602211_card", "trial_name_1602211", "str_activity_common_pet_try_1602211"}
-, 
-{34, 114300501, common[1], 5414001, 20054, 
-{1602231}
-, 
-{"1602232_cg"}
-, "spirit_1602232_card", "trial_name_1602231", "str_activity_common_pet_try_1602231"}
-, 
-{35, 114300501, common[2], 5414002, 20055, 
-{1601821}
-, 
-{"1601822_cg"}
-, "spirit_1601822_card", "trial_name_1601821", "str_activity_common_pet_try_1601821"}
-, 
-{36, 114300501, common[3], 5414003, -1, 
-{1502241}
-, 
-{"1502242_cg"}
-, "spirit_1502242_card", "trial_name_1502241", "str_activity_common_pet_try_1502241"}
-, 
-{37, 115300501, common[3], 5433001, 20058, 
-{1602251}
-, 
-{"1602251_cg"}
-, "spirit_1602251_card", "trial_name_1602251", "str_activity_common_pet_try_1602251"}
-, 
-{38, 115400501, common[1], 5454001, 20060, 
-{1602271}
-, 
-{"1602272_cg"}
-, "spirit_1602272_card", "trial_name_1602271", "str_activity_common_pet_try_1602271"}
-, 
-{39, 115400501, common[2], 5454002, -1, 
-{1502281}
-, 
-{"1502282_cg"}
-, "spirit_1502281_card", "trial_name_1502281", "str_activity_common_pet_try_1502281"}
-, 
-{40, 505400501, common[1], 5464001, 20062, 
-{1602291}
-, 
-{"1602292_cg"}
-, "spirit_1602292_card", "trial_name_1602291", "str_activity_common_pet_try_1602291"}
-, 
-{41, 122200501, common[1], 5484001, 60019, 
-{1602301}
-, 
-{"1602302_cg"}
-, "spirit_1602302_card", "trial_name_1602301", "str_activity_common_pet_try_1602301"}
-, 
-{42, 122200501, common[2], 5484002, 20065, 
-{1602311}
-, 
-{"1602312_cg"}
-, "spirit_1602312_card", "trial_name_1602311", "str_activity_common_pet_try_1602311"}
-, 
-{43, 122200501, common[3], 5484003, -1, 
-{1502321}
-, 
-{"1502322_cg"}
-, "spirit_1502322_card", "trial_name_1502321", "str_activity_common_pet_try_1502321"}
-, 
-{44, 507100501, 
-{1, 2, 3}
-, 50710011, 70009, 
-{1602331, 1602341, 1502351}
-, 
-{"1602331_cg", "1602341_cg", "1502351_cg"}
-}
-, 
-{45, 507400501, common[1], 5214001, 20067, 
-{1602371}
-, 
-{"1602372_cg"}
-, "spirit_1602372_card", "trial_name_1602371", "str_activity_common_pet_try_1602371"}
-, 
-{46, 507800501, common[1], 5224001, 20068, 
-{1602381}
-, 
-{"1602381_cg"}
-, "spirit_1602382_card", "trial_name_1602381", "str_activity_common_pet_try_1602381"}
-, 
-{47, 507500501, common[1], 5536001, 20069, 
-{1602411}
-, 
-{"1602411_cg"}
-, "spirit_1602412_card", "trial_name_1602411", "str_activity_common_pet_try_1602411"}
+  {
+    1,
+    500500501,
+    common[1],
+    50053001,
+    200004,
+    {1600021},
+    {"1600022_cg"},
+    "spirit_1600022_card",
+    "trial_name_1600021",
+    "str_activity_common_pet_try_1600021"
+  },
+  {
+    2,
+    500500501,
+    common[2],
+    50053002,
+    200004,
+    {1500711},
+    {"1500712_cg"},
+    "spirit_1500712_card",
+    "trial_name_1500711",
+    "str_activity_common_pet_try_1500711"
+  },
+  {
+    3,
+    500700501,
+    common[3],
+    5012014,
+    20003,
+    {1600301},
+    {"1600302_cg"},
+    "spirit_1600302_card",
+    "trial_name_1600301",
+    "str_activity_common_pet_try_1600301"
+  },
+  {
+    4,
+    500700501,
+    {4},
+    5012015,
+    20003,
+    {1601051},
+    {"1601052_cg"},
+    "spirit_1601052_card",
+    "trial_name_1601051",
+    "str_activity_common_pet_try_1601051"
+  },
+  {
+    5,
+    500700501,
+    {5},
+    5012016,
+    20003,
+    {1501041},
+    {"1501042_cg"},
+    "spirit_1501042_card",
+    "trial_name_1501041",
+    "str_activity_common_pet_try_1501041"
+  },
+  {
+    6,
+    500800501,
+    common[1],
+    50083001,
+    200001,
+    {1600061},
+    {"1600062_cg"},
+    "spirit_1600062_card",
+    "trial_name_1600061",
+    "str_activity_common_pet_try_1600061"
+  },
+  {
+    7,
+    500800501,
+    common[2],
+    50083002,
+    200002,
+    {1600261},
+    {"1600262_cg"},
+    "spirit_1600262_card",
+    "trial_name_1600261",
+    "str_activity_common_pet_try_1600261"
+  },
+  {
+    8,
+    109600501,
+    common[2],
+    5301001,
+    20041,
+    {1601921},
+    {"1601922_cg"},
+    "spirit_1601922_card",
+    "trial_name_1601921",
+    "str_activity_common_pet_try_1601921"
+  },
+  {
+    9,
+    109600501,
+    common[1],
+    5301002,
+    20040,
+    {1601991},
+    {"1601992_cg"},
+    "spirit_1601992_card",
+    "trial_name_1601991",
+    "str_activity_common_pet_try_1601991"
+  },
+  {
+    10,
+    109600501,
+    common[3],
+    5301003,
+    -1,
+    {1502001},
+    {"1502002_cg"},
+    "spirit_1502002_card",
+    "trial_name_1502001",
+    "str_activity_common_pet_try_1502001"
+  },
+  {
+    11,
+    110700501,
+    common[1],
+    5313001,
+    60007,
+    {1602011},
+    {"1602012_cg"},
+    "spirit_1602012_card",
+    "trial_name_1602011",
+    "str_activity_common_pet_try_1602011"
+  },
+  {
+    12,
+    110700501,
+    common[2],
+    5313002,
+    20042,
+    {1602021},
+    {"1602022_cg"},
+    "spirit_1602022_card",
+    "trial_name_1602021",
+    "str_activity_common_pet_try_1602021"
+  },
+  {
+    13,
+    110700501,
+    common[3],
+    5313003,
+    -1,
+    {1502031},
+    {"1502032_cg"},
+    "spirit_1502032_card",
+    "trial_name_1502031",
+    "str_activity_common_pet_try_1502031"
+  },
+  {
+    14,
+    110900501,
+    common[1],
+    5324001,
+    20043,
+    {1602041},
+    {"1602042_cg"},
+    "spirit_1602042_card",
+    "trial_name_1602041",
+    "str_activity_common_pet_try_1602041"
+  },
+  {
+    15,
+    110900501,
+    common[2],
+    5324002,
+    20043,
+    {1502051},
+    {"1502052_cg"},
+    "spirit_1502052_card",
+    "trial_name_1502051",
+    "str_activity_common_pet_try_1502051"
+  },
+  {
+    16,
+    112000501,
+    common[1],
+    5334001,
+    20044,
+    {1602061},
+    {"1602062_cg"},
+    "spirit_1602062_card",
+    "trial_name_1602061",
+    "str_activity_common_pet_try_1602061"
+  },
+  {
+    17,
+    112000501,
+    common[2],
+    5334002,
+    20045,
+    {1602071},
+    {"1602072_cg"},
+    "spirit_1602072_card",
+    "trial_name_1602071",
+    "str_activity_common_pet_try_1602071"
+  },
+  {
+    18,
+    112000501,
+    common[3],
+    5334003,
+    -1,
+    {1502081},
+    {"1502082_cg"},
+    "spirit_1502082_card",
+    "trial_name_1502081",
+    "str_activity_common_pet_try_1502081"
+  },
+  {
+    19,
+    112100501,
+    common[1],
+    5343001,
+    60008,
+    {1602091},
+    {"1602092_cg"},
+    "spirit_1602092_card",
+    "trial_name_1602091",
+    "str_activity_common_pet_try_1602091"
+  },
+  {
+    20,
+    112100501,
+    common[2],
+    5343002,
+    60008,
+    {1502101},
+    {"1502102_cg"},
+    "spirit_1502102_card",
+    "trial_name_1502101",
+    "str_activity_common_pet_try_1502101"
+  },
+  {
+    21,
+    502600501,
+    common[1],
+    5354001,
+    20047,
+    {1602111},
+    {"1602112_cg"},
+    "spirit_1602112_card",
+    "trial_name_1602111",
+    "str_activity_common_pet_try_1602111"
+  },
+  {
+    22,
+    502600501,
+    common[2],
+    5354002,
+    20046,
+    {1602121},
+    {"1602122_cg"},
+    "spirit_1602122_card",
+    "trial_name_1602121",
+    "str_activity_common_pet_try_1602121"
+  },
+  {
+    23,
+    502600501,
+    common[3],
+    5354003,
+    -1,
+    {1502131},
+    {"1502132_cg"},
+    "spirit_1502132_card",
+    "trial_name_1502131",
+    "str_activity_common_pet_try_1502131"
+  },
+  {
+    24,
+    503000501,
+    {
+      1,
+      2,
+      3,
+      4,
+      5
+    },
+    5103001,
+    70008,
+    {
+      1601331,
+      1601341,
+      1501361,
+      1501351,
+      1401371
+    },
+    {
+      "1601331_cg",
+      "1601341_cg",
+      "1501361_cg",
+      "1501351_cg",
+      "1401371_cg"
+    }
+  },
+  {
+    25,
+    113000501,
+    common[1],
+    5374001,
+    20049,
+    {1602141},
+    {"1602142_cg"},
+    "spirit_1602142_card",
+    "trial_name_1602141",
+    "str_activity_common_pet_try_1602141"
+  },
+  {
+    26,
+    113000501,
+    common[2],
+    5374002,
+    20049,
+    {1502151},
+    {"1502152_cg"},
+    "spirit_1502152_card",
+    "trial_name_1502151",
+    "str_activity_common_pet_try_1502151"
+  },
+  {
+    27,
+    113200501,
+    common[1],
+    5384001,
+    20050,
+    {1602161},
+    {"1602162_cg"},
+    "spirit_1602162_card",
+    "trial_name_1602161",
+    "str_activity_common_pet_try_1602161"
+  },
+  {
+    28,
+    113200501,
+    common[2],
+    5384002,
+    20051,
+    {1601811},
+    {"1601812_cg"},
+    "spirit_1601812_card",
+    "trial_name_1601811",
+    "str_activity_common_pet_try_1601811"
+  },
+  {
+    29,
+    113200501,
+    common[3],
+    5384003,
+    -1,
+    {1501831},
+    {"1501832_cg"},
+    "spirit_1501832_card",
+    "trial_name_1501831",
+    "str_activity_common_pet_try_1501831"
+  },
+  {
+    30,
+    113500501,
+    common[1],
+    5394001,
+    60011,
+    {1602181},
+    {"1602182_cg"},
+    "spirit_1602182_card",
+    "trial_name_1602181",
+    "str_activity_common_pet_try_1602181"
+  },
+  {
+    31,
+    113500501,
+    common[2],
+    5394002,
+    20052,
+    {1602191},
+    {"1602192_cg"},
+    "spirit_1602192_card",
+    "trial_name_1602191",
+    "str_activity_common_pet_try_1602191"
+  },
+  {
+    32,
+    113500501,
+    common[3],
+    5394003,
+    -1,
+    {1502201},
+    {"1502202_cg"},
+    "spirit_1502202_card",
+    "trial_name_1502201",
+    "str_activity_common_pet_try_1502201"
+  },
+  {
+    33,
+    114000501,
+    common[3],
+    5404001,
+    -1,
+    {1602211},
+    {"1602212_cg"},
+    "spirit_1602211_card",
+    "trial_name_1602211",
+    "str_activity_common_pet_try_1602211"
+  },
+  {
+    34,
+    114300501,
+    common[1],
+    5414001,
+    20054,
+    {1602231},
+    {"1602232_cg"},
+    "spirit_1602232_card",
+    "trial_name_1602231",
+    "str_activity_common_pet_try_1602231"
+  },
+  {
+    35,
+    114300501,
+    common[2],
+    5414002,
+    20055,
+    {1601821},
+    {"1601822_cg"},
+    "spirit_1601822_card",
+    "trial_name_1601821",
+    "str_activity_common_pet_try_1601821"
+  },
+  {
+    36,
+    114300501,
+    common[3],
+    5414003,
+    -1,
+    {1502241},
+    {"1502242_cg"},
+    "spirit_1502242_card",
+    "trial_name_1502241",
+    "str_activity_common_pet_try_1502241"
+  },
+  {
+    37,
+    115300501,
+    common[3],
+    5433001,
+    20058,
+    {1602251},
+    {"1602251_cg"},
+    "spirit_1602251_card",
+    "trial_name_1602251",
+    "str_activity_common_pet_try_1602251"
+  },
+  {
+    38,
+    115400501,
+    common[1],
+    5454001,
+    20060,
+    {1602271},
+    {"1602272_cg"},
+    "spirit_1602272_card",
+    "trial_name_1602271",
+    "str_activity_common_pet_try_1602271"
+  },
+  {
+    39,
+    115400501,
+    common[2],
+    5454002,
+    -1,
+    {1502281},
+    {"1502282_cg"},
+    "spirit_1502281_card",
+    "trial_name_1502281",
+    "str_activity_common_pet_try_1502281"
+  },
+  {
+    40,
+    505400501,
+    common[1],
+    5464001,
+    20062,
+    {1602291},
+    {"1602292_cg"},
+    "spirit_1602292_card",
+    "trial_name_1602291",
+    "str_activity_common_pet_try_1602291"
+  },
+  {
+    41,
+    122200501,
+    common[1],
+    5484001,
+    60019,
+    {1602301},
+    {"1602302_cg"},
+    "spirit_1602302_card",
+    "trial_name_1602301",
+    "str_activity_common_pet_try_1602301"
+  },
+  {
+    42,
+    122200501,
+    common[2],
+    5484002,
+    20065,
+    {1602311},
+    {"1602312_cg"},
+    "spirit_1602312_card",
+    "trial_name_1602311",
+    "str_activity_common_pet_try_1602311"
+  },
+  {
+    43,
+    122200501,
+    common[3],
+    5484003,
+    -1,
+    {1502321},
+    {"1502322_cg"},
+    "spirit_1502322_card",
+    "trial_name_1502321",
+    "str_activity_common_pet_try_1502321"
+  },
+  {
+    44,
+    507100501,
+    {
+      1,
+      2,
+      3
+    },
+    50710011,
+    70009,
+    {
+      1602331,
+      1602341,
+      1502351
+    },
+    {
+      "1602331_cg",
+      "1602341_cg",
+      "1502351_cg"
+    }
+  },
+  {
+    45,
+    507400501,
+    common[1],
+    5214001,
+    20067,
+    {1602371},
+    {"1602372_cg"},
+    "spirit_1602372_card",
+    "trial_name_1602371",
+    "str_activity_common_pet_try_1602371"
+  },
+  {
+    46,
+    507800501,
+    common[1],
+    5224001,
+    20068,
+    {1602381},
+    {"1602381_cg"},
+    "spirit_1602382_card",
+    "trial_name_1602381",
+    "str_activity_common_pet_try_1602381"
+  },
+  {
+    47,
+    507500501,
+    common[1],
+    5536001,
+    20069,
+    {1602411},
+    {"1602411_cg"},
+    "spirit_1602412_card",
+    "trial_name_1602411",
+    "str_activity_common_pet_try_1602411"
+  }
 }
 return config, "ID", key
-

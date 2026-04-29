@@ -1,61 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/component/logic_extensions/entity_commands.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IEntityCommand", Object)
 IEntityCommand = IEntityCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IEntityCommand.Constructor = function(self)
-  -- function num : 0_0
+function IEntityCommand:Constructor()
   self.EntityID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommand.GetEntityID = function(self)
-  -- function num : 0_1
+function IEntityCommand:GetEntityID()
   return self.EntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommand.GetCommandType = function(self)
-  -- function num : 0_2
+function IEntityCommand:GetCommandType()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommand.GetExecStateID = function(self)
-  -- function num : 0_3
+function IEntityCommand:GetExecStateID()
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommand.IsExecExcluded = function(self)
-  -- function num : 0_4
+function IEntityCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommand.DependRoundCount = function(self)
-  -- function num : 0_5
+function IEntityCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommand.ToNetMessage = function(self)
-  -- function num : 0_6
+function IEntityCommand:ToNetMessage()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-IEntityCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_7
+function IEntityCommand:FromNetMessage(msg)
 end
-
-

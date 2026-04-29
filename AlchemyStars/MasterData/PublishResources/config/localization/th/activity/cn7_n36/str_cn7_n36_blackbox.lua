@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/th/activity/cn7_n36/str_cn7_n36_blackbox.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn7_n36_blackbox_title = "การส่งมอบที่ล่อแหลม", str_cn7_n36_blackbox_intro = "Eclipsites แพร่หลายมากขึ้นใน Astra Continent ซึ่งเป็นภัยคุกคามที่เพิ่มมากขึ้นต่อเส้นทางการจัดส่ง เมื่อ Colossi ฟื้นคืนชีพ Caelestites และพรรคพวกของพวกเขามีความกระตือรือร้นมากขึ้น บางกลุ่มยอมรับความสามารถในการบินที่น่าทึ่งของ Colossus และการหลบหลีกในระยะไกล จึงมอบความไว้วางใจให้ขนส่งพิเศษและมีความเสี่ยง", str_cn7_n36_blackbox_intro_title = "ข้อมูลการเล่นเกมการจัดส่งที่ไม่ปลอดภัย", str_cn7_n36_blackbox_intro_head_1 = "โหมดกล่องแพนดอร่า", str_cn7_n36_blackbox_intro_body_1 = "1. การจัดส่งที่ไม่ปลอดภัยอยู่ภายใต้โหมด Pandora\'s Box\n2.โหมด Pandora\'s Box ประกอบด้วย 6 ด่าน แต่ละด่านประกอบด้วย 2-3 ด่านย่อย\n3.ด่าน Pandora\'s Box มีกลไกการปลดล็อค การทำสเตจย่อยให้เสร็จสิ้นภายในสเตจ Pandora\'s Box จะปลดล็อคสเตจถัดไป\n4. ไม่มีการปลดล็อคกลไกระหว่างด่านย่อย ดังนั้นคุณจึงสามารถท้าทายพวกมันได้อย่างอิสระ\n5.จะต้องใช้ Aurorians ที่แตกต่างกันเมื่อท้าทายด่านย่อยภายในด่าน Pandora\'s Box เดียวกัน", str_cn7_n36_blackbox_intro_head_2 = "ถ้วยรางวัลการท้าทาย", str_cn7_n36_blackbox_intro_body_2 = "1. แต่ละด่านของ Pandora\'s Box จะมีถ้วยรางวัลท้าทาย 3-5 ถ้วยรางวัล และถ้วยรางวัลท้าทายที่แตกต่างกันก็มีเงื่อนไขการท้าทายที่แตกต่างกัน\n2.เนวิเกเตอร์จำเป็นต้องเคลียร์ด่านเวย์พอยต์ตามจำนวนที่กำหนดด้วยรายชื่อผู้เล่นตัวจริงตามเนื้อหาถ้วยรางวัลเพื่อรับถ้วยรางวัลและรางวัลที่สอดคล้องกัน\n3. เนื่องจากไม่มีการเรียงลำดับระหว่างถ้วยรางวัล Navigator จึงมีอิสระที่จะท้าทายถ้วยรางวัลแต่ละรายการได้หลายครั้ง\n4.เมื่อได้รับ Challenge Trophy แล้ว มันจะยังคงอยู่แม้ว่าการจัดด่านจะถูกรีเซ็ตก็ตาม", str_cn7_n36_blackbox_intro_head_3 = "การจัดทีมท้าทาย", str_cn7_n36_blackbox_intro_body_3 = "1.รูปแบบ Aurorian เดียวกันไม่สามารถใช้ในด่านย่อยที่แตกต่างกันของด่าน Pandora\'s Box\n2. ข้อจำกัดเดียวกันนี้ใช้ไม่ได้กับด่าน Pandora\'s Box\n3. แต่ละด่านย่อยสามารถท้าทายได้ด้วยรูปแบบเดียว\n4.รูปแบบด่านสามารถรีเซ็ตได้ และการรีเซ็ตรูปแบบจะไม่ส่งผลต่อ Challenge Trophies ที่ได้รับ", str_cn7_n36_blackbox_diff_unlock_tips = "ล้างใด ๆ {1} ขั้นตอนย่อยเพื่อปลดล็อก", str_cn7_n36_blackbox1_name = "EX1 - ฟ้าคำรน", str_cn7_n36_blackbox2_name = "EX2 - ความทะเยอทะยานที่ไร้ประโยชน์", str_cn7_n36_blackbox3_name = "EX3 - กลืนไม่เข้าคายไม่ออก", str_cn7_n36_blackbox4_name = "EX4 - การเปลี่ยนแปลง", str_cn7_n36_blackbox5_name = "EX5 - ทำลายล้าง", str_cn7_n36_blackbox6_name = "EX6 - นรก", str_cn7_n36_blackbox1_sub_name_1 = "EX1-1 ฟ้าคำรน - สายฟ้าน่าหวั่นไหว", str_cn7_n36_blackbox1_sub_name_2 = "EX1-2 ฟ้าคำรน - หินแข็งที่ไม่สามารถทำลายได้", str_cn7_n36_blackbox2_sub_name_1 = "EX2-1 ความทะเยอทะยานที่ไร้สาระ - ดาเมจ", str_cn7_n36_blackbox2_sub_name_2 = "EX2-2 ความทะเยอทะยานที่ไร้สาระ - จู่โจม", str_cn7_n36_blackbox3_sub_name_1 = "EX3-1 กลืนไม่เข้าคายไม่ออก - ขอบเขต", str_cn7_n36_blackbox3_sub_name_2 = "EX3-2 ปัญหายาก - ผู้บาดเจ็บ", str_cn7_n36_blackbox3_sub_name_3 = "EX3-3 ปัญหา - ป้องกัน", str_cn7_n36_blackbox4_sub_name_1 = "EX4-1 การปรับเปลี่ยน - การกู้คืน", str_cn7_n36_blackbox4_sub_name_2 = "EX4-2 การเปลี่ยนแปลง - การทำให้แย่ลง", str_cn7_n36_blackbox5_sub_name_1 = "EX5-1 ทำลาย - รอยแผลเป็น", str_cn7_n36_blackbox5_sub_name_2 = "EX5-2 ทำลายล้าง - ปนเปื้อน", str_cn7_n36_blackbox6_sub_name_1 = "EX6-1 นรก - เสียงเรียก", str_cn7_n36_blackbox6_sub_name_2 = "EX6-2 นรก - รอดตัว", str_cn7_n36_blackbox6_sub_name_3 = "EX6-3 นรก - ราคาที่ต้องจ่าย"}
+local config = {
+  str_cn7_n36_blackbox_title = "การส่งมอบที่ล่อแหลม",
+  str_cn7_n36_blackbox_intro = "Eclipsites แพร่หลายมากขึ้นใน Astra Continent ซึ่งเป็นภัยคุกคามที่เพิ่มมากขึ้นต่อเส้นทางการจัดส่ง เมื่อ Colossi ฟื้นคืนชีพ Caelestites และพรรคพวกของพวกเขามีความกระตือรือร้นมากขึ้น บางกลุ่มยอมรับความสามารถในการบินที่น่าทึ่งของ Colossus และการหลบหลีกในระยะไกล จึงมอบความไว้วางใจให้ขนส่งพิเศษและมีความเสี่ยง",
+  str_cn7_n36_blackbox_intro_title = "ข้อมูลการเล่นเกมการจัดส่งที่ไม่ปลอดภัย",
+  str_cn7_n36_blackbox_intro_head_1 = "โหมดกล่องแพนดอร่า",
+  str_cn7_n36_blackbox_intro_body_1 = "1. การจัดส่งที่ไม่ปลอดภัยอยู่ภายใต้โหมด Pandora's Box\n2.โหมด Pandora's Box ประกอบด้วย 6 ด่าน แต่ละด่านประกอบด้วย 2-3 ด่านย่อย\n3.ด่าน Pandora's Box มีกลไกการปลดล็อค การทำสเตจย่อยให้เสร็จสิ้นภายในสเตจ Pandora's Box จะปลดล็อคสเตจถัดไป\n4. ไม่มีการปลดล็อคกลไกระหว่างด่านย่อย ดังนั้นคุณจึงสามารถท้าทายพวกมันได้อย่างอิสระ\n5.จะต้องใช้ Aurorians ที่แตกต่างกันเมื่อท้าทายด่านย่อยภายในด่าน Pandora's Box เดียวกัน",
+  str_cn7_n36_blackbox_intro_head_2 = "ถ้วยรางวัลการท้าทาย",
+  str_cn7_n36_blackbox_intro_body_2 = "1. แต่ละด่านของ Pandora's Box จะมีถ้วยรางวัลท้าทาย 3-5 ถ้วยรางวัล และถ้วยรางวัลท้าทายที่แตกต่างกันก็มีเงื่อนไขการท้าทายที่แตกต่างกัน\n2.เนวิเกเตอร์จำเป็นต้องเคลียร์ด่านเวย์พอยต์ตามจำนวนที่กำหนดด้วยรายชื่อผู้เล่นตัวจริงตามเนื้อหาถ้วยรางวัลเพื่อรับถ้วยรางวัลและรางวัลที่สอดคล้องกัน\n3. เนื่องจากไม่มีการเรียงลำดับระหว่างถ้วยรางวัล Navigator จึงมีอิสระที่จะท้าทายถ้วยรางวัลแต่ละรายการได้หลายครั้ง\n4.เมื่อได้รับ Challenge Trophy แล้ว มันจะยังคงอยู่แม้ว่าการจัดด่านจะถูกรีเซ็ตก็ตาม",
+  str_cn7_n36_blackbox_intro_head_3 = "การจัดทีมท้าทาย",
+  str_cn7_n36_blackbox_intro_body_3 = "1.รูปแบบ Aurorian เดียวกันไม่สามารถใช้ในด่านย่อยที่แตกต่างกันของด่าน Pandora's Box\n2. ข้อจำกัดเดียวกันนี้ใช้ไม่ได้กับด่าน Pandora's Box\n3. แต่ละด่านย่อยสามารถท้าทายได้ด้วยรูปแบบเดียว\n4.รูปแบบด่านสามารถรีเซ็ตได้ และการรีเซ็ตรูปแบบจะไม่ส่งผลต่อ Challenge Trophies ที่ได้รับ",
+  str_cn7_n36_blackbox_diff_unlock_tips = "ล้างใด ๆ {1} ขั้นตอนย่อยเพื่อปลดล็อก",
+  str_cn7_n36_blackbox1_name = "EX1 - ฟ้าคำรน",
+  str_cn7_n36_blackbox2_name = "EX2 - ความทะเยอทะยานที่ไร้ประโยชน์",
+  str_cn7_n36_blackbox3_name = "EX3 - กลืนไม่เข้าคายไม่ออก",
+  str_cn7_n36_blackbox4_name = "EX4 - การเปลี่ยนแปลง",
+  str_cn7_n36_blackbox5_name = "EX5 - ทำลายล้าง",
+  str_cn7_n36_blackbox6_name = "EX6 - นรก",
+  str_cn7_n36_blackbox1_sub_name_1 = "EX1-1 ฟ้าคำรน - สายฟ้าน่าหวั่นไหว",
+  str_cn7_n36_blackbox1_sub_name_2 = "EX1-2 ฟ้าคำรน - หินแข็งที่ไม่สามารถทำลายได้",
+  str_cn7_n36_blackbox2_sub_name_1 = "EX2-1 ความทะเยอทะยานที่ไร้สาระ - ดาเมจ",
+  str_cn7_n36_blackbox2_sub_name_2 = "EX2-2 ความทะเยอทะยานที่ไร้สาระ - จู่โจม",
+  str_cn7_n36_blackbox3_sub_name_1 = "EX3-1 กลืนไม่เข้าคายไม่ออก - ขอบเขต",
+  str_cn7_n36_blackbox3_sub_name_2 = "EX3-2 ปัญหายาก - ผู้บาดเจ็บ",
+  str_cn7_n36_blackbox3_sub_name_3 = "EX3-3 ปัญหา - ป้องกัน",
+  str_cn7_n36_blackbox4_sub_name_1 = "EX4-1 การปรับเปลี่ยน - การกู้คืน",
+  str_cn7_n36_blackbox4_sub_name_2 = "EX4-2 การเปลี่ยนแปลง - การทำให้แย่ลง",
+  str_cn7_n36_blackbox5_sub_name_1 = "EX5-1 ทำลาย - รอยแผลเป็น",
+  str_cn7_n36_blackbox5_sub_name_2 = "EX5-2 ทำลายล้าง - ปนเปื้อน",
+  str_cn7_n36_blackbox6_sub_name_1 = "EX6-1 นรก - เสียงเรียก",
+  str_cn7_n36_blackbox6_sub_name_2 = "EX6-2 นรก - รอดตัว",
+  str_cn7_n36_blackbox6_sub_name_3 = "EX6-3 นรก - ราคาที่ต้องจ่าย"
+}
 return config
-

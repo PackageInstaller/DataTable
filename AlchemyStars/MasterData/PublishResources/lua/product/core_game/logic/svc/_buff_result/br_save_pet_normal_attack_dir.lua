@@ -1,31 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_save_pet_normal_attack_dir.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultSavePetNormalAttackDir", BuffResultBase)
 BuffResultSavePetNormalAttackDir = BuffResultSavePetNormalAttackDir
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSavePetNormalAttackDir.Constructor = function(self, dirTable, dir, dirNum)
-  -- function num : 0_0
+function BuffResultSavePetNormalAttackDir:Constructor(dirTable, dir, dirNum)
   self._dirTable = dirTable
   self._dir = dir
   self._dirNum = dirNum
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSavePetNormalAttackDir.GetDir = function(self)
-  -- function num : 0_1
+function BuffResultSavePetNormalAttackDir:GetDir()
   return self._dir
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSavePetNormalAttackDir.GetDirNum = function(self)
-  -- function num : 0_2
+function BuffResultSavePetNormalAttackDir:GetDirNum()
   return self._dirNum
 end
-
-

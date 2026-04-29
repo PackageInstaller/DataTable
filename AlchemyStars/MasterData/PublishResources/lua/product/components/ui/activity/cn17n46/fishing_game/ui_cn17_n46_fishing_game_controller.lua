@@ -1,85 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn17n46/fishing_game/ui_cn17_n46_fishing_game_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_cn17_n46_fishing_game_bubble")
 _class("UICN17N46FishingGameController", UIController)
 UICN17N46FishingGameController = UICN17N46FishingGameController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN17N46FishingGameController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN17N46FishingGameController:OnShow(uiParams)
   self._stage_id = uiParams[1]
   self._component = uiParams[2]
   self._componentInfo = uiParams[3]
   self._lastBGMResName = uiParams[4]
   self._callback = uiParams[5]
-  self._cfg_stage = (Cfg.cfg_component_mini_game_mission)[self._stage_id]
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+  self._cfg_stage = Cfg.cfg_component_mini_game_mission[self._stage_id]
+  local guideModule = GameGlobal.GetModule(GuideModule)
   local guideDone = guideModule:IsGuideDone(54601)
   if not guideDone then
-    self._cfg_fishgame_inner = (Cfg.cfg_fishing_game_inner_guide)[1]
+    self._cfg_fishgame_inner = Cfg.cfg_fishing_game_inner_guide[1]
   else
-    self._cfg_fishgame_inner = ((Cfg.cfg_fishing_game_inner)({ID = (self._cfg_stage).ID}))[1]
+    self._cfg_fishgame_inner = Cfg.cfg_fishing_game_inner({
+      ID = self._cfg_stage.ID
+    })[1]
   end
-  self._cfg_minigame = (Cfg.cfg_fishing_minigame)[1]
-  self._bonus = (self._cfg_minigame).BaseScoreMult
-  self._baseFishScore = (self._cfg_minigame).BaseFishScore
-  self._orderFinishBouns = (self._cfg_minigame).OrderFinishAddScoreMult
-  self._fishingSuccessAddScoreMult = (self._cfg_minigame).FishingSuccessAddScoreMult
-  self._cathedFishDisappearTime = (self._cfg_minigame).CatchedFishDisappearTime
-  self._netRotateAngle = (self._cfg_minigame).NetDefaultRotateAngle
-  self._camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+  self._cfg_minigame = Cfg.cfg_fishing_minigame[1]
+  self._bonus = self._cfg_minigame.BaseScoreMult
+  self._baseFishScore = self._cfg_minigame.BaseFishScore
+  self._orderFinishBouns = self._cfg_minigame.OrderFinishAddScoreMult
+  self._fishingSuccessAddScoreMult = self._cfg_minigame.FishingSuccessAddScoreMult
+  self._cathedFishDisappearTime = self._cfg_minigame.CatchedFishDisappearTime
+  self._netRotateAngle = self._cfg_minigame.NetDefaultRotateAngle
+  self._camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   self:GenerateGameData()
   self:InitWidget()
   self:_OnValue()
   self:AttachEvent(GameEventType.ShowGuideStep, self._ShowGuideStep)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN17N46FishingGameController:OnHide()
   self._timerHolder = nil
   self._spineTimeHolder = nil
   self._catchedFishDisTimeHolder = nil
   self._catchingFishs = nil
   if self.taskid_1 ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskid_1)
+    GameGlobal.TaskManager():KillTask(self.taskid_1)
     self.taskid_1 = nil
   end
   if self.taskid_2 ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskid_2)
+    GameGlobal.TaskManager():KillTask(self.taskid_2)
     self.taskid_2 = nil
   end
   if self.taskid_3 ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskid_3)
+    GameGlobal.TaskManager():KillTask(self.taskid_3)
     self.taskid_3 = nil
   end
   if self.taskid_4 ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskid_4)
+    GameGlobal.TaskManager():KillTask(self.taskid_4)
     self.taskid_4 = nil
   end
   if self.taskid_5 ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskid_5)
+    GameGlobal.TaskManager():KillTask(self.taskid_5)
     self.taskid_5 = nil
   end
   if self.taskid_6 ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self.taskid_6)
+    GameGlobal.TaskManager():KillTask(self.taskid_6)
     self.taskid_6 = nil
   end
   if self._bubblePool then
-    for _,bubble in pairs(self._bubblePool) do
+    for _, bubble in pairs(self._bubblePool) do
       bubble:Dispose()
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.Constructor = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN17N46FishingGameController:Constructor()
   self._roleModule = self:GetModule(RoleModule)
   self._guideModule = self:GetModule(GuideModule)
   self._gameState = FishingGameState.Start
@@ -100,7 +89,7 @@ UICN17N46FishingGameController.Constructor = function(self)
   self._currentFishIndex = 1
   self._currentOrderTime = 0
   self._currentGenerateFishTime = 0
-  self._orangeColor = Color(1, 0.52549019607843, 0)
+  self._orangeColor = Color(1.0, 0.5254901960784314, 0)
   self._isFirstInitOrder = true
   self._fishList = {}
   self._bubblePool = {}
@@ -111,16 +100,16 @@ UICN17N46FishingGameController.Constructor = function(self)
   self._canExit = false
   self._catchedFishIdList = {}
   self._orderList = {}
-  self._rawImageName = {"n14_fish_icon_shou", "n14_fish_icon_shou1"}
+  self._rawImageName = {
+    "n14_fish_icon_shou",
+    "n14_fish_icon_shou1"
+  }
   self._isRefreshing = false
   self._guideing = false
   self._handOffect = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN17N46FishingGameController:InitWidget()
   self._pause = self:GetGameObject("Puase")
   self._start = self:GetGameObject("Start")
   self._countDown = self:GetUIComponent("UILocalizedTMP", "CountDown")
@@ -162,56 +151,51 @@ UICN17N46FishingGameController.InitWidget = function(self)
   self._currentCatchedFishObj = self:GetGameObject("CurrentFish")
   self._continueClickText = self:GetUIComponent("UILocalizedTMP", "ClickText")
   self._fishingNetGuide = self:GetGameObject("FishingNetGuide")
-  self._skillPointMaterial = (self._skillPointImg).material
-  self._poolSize = {((self._poolBg).sizeDelta).y / 2 - 50, -((self._poolBg).sizeDelta).y / 2, ((self._poolBg).sizeDelta).x / 2 - 100, -((self._poolBg).sizeDelta).x / 2 + 100}
-  self._countDownWidth = ((self._orderCountDownImgBgTrans).sizeDelta).x
-  self._countDownHeight = ((self._orderCountDownImgBgTrans).sizeDelta).y
+  self._skillPointMaterial = self._skillPointImg.material
+  self._poolSize = {
+    self._poolBg.sizeDelta.y / 2 - 50,
+    -self._poolBg.sizeDelta.y / 2,
+    self._poolBg.sizeDelta.x / 2 - 100,
+    -self._poolBg.sizeDelta.x / 2 + 100
+  }
+  self._countDownWidth = self._orderCountDownImgBgTrans.sizeDelta.x
+  self._countDownHeight = self._orderCountDownImgBgTrans.sizeDelta.y
   self._skillReady = self:GetGameObject("SkillReady")
   self._skillkanban = self:GetGameObject("Kanban")
   self._eff = self:GetGameObject("CatchEff")
-  self._effectEndPos = ((self:GetGameObject("ScoreValue")).transform).position
+  self._effectEndPos = self:GetGameObject("ScoreValue").transform.position
   self._effectOctopusEffAni = self:GetUIComponent("Animation", "OctopusEff")
-  local etl = (UICustomUIEventListener.Get)((self._fishingNet).gameObject)
-  self._pathValues = {((self:GetGameObject("path1")).transform).position, ((self:GetGameObject("path2")).transform).position, ((self:GetGameObject("path3")).transform).position}
+  local etl = UICustomUIEventListener.Get(self._fishingNet.gameObject)
+  self._pathValues = {
+    self:GetGameObject("path1").transform.position,
+    self:GetGameObject("path2").transform.position,
+    self:GetGameObject("path3").transform.position
+  }
   self._uieffClick = self:GetGameObject("uieffClick")
   self._scoreEffect = self:GetGameObject("ScoreEffect")
   self:AddUICustomEventListener(etl, UIEvent.BeginDrag, function(pointData)
-    -- function num : 0_3_0 , upvalues : self
     self:BeginDragFishingNet(pointData)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.Drag, function(pointData)
-    -- function num : 0_3_1 , upvalues : self
     self:OnDragFishingNet(pointData)
-  end
-)
+  end)
   self:AddUICustomEventListener(etl, UIEvent.EndDrag, function(pointData)
-    -- function num : 0_3_2 , upvalues : self
     self:EndDragFishingNet(pointData)
-  end
-)
-  etl = (UICustomUIEventListener.Get)((self._poolBg).gameObject)
+  end)
+  etl = UICustomUIEventListener.Get(self._poolBg.gameObject)
   self:AddUICustomEventListener(etl, UIEvent.Click, function(pointData)
-    -- function num : 0_3_3 , upvalues : self
     self:ShowClickEff(pointData)
-  end
-)
+  end)
   if not EDITOR then
     self:AddUICustomEventListener(etl, UIEvent.ApplicationFocus, function(b)
-    -- function num : 0_3_4 , upvalues : etl, self, _ENV
-    if not b then
-      etl.IsDragging = false
-      -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      ((self._fishingNetHandle).transform).position = self._fishingNetOriginPos
-      ;
-      ((GameGlobal.UIStateManager)()):UnLock("FishingLock")
-    end
+      if not b then
+        etl.IsDragging = false
+        self._fishingNetHandle.transform.position = self._fishingNetOriginPos
+        GameGlobal.UIStateManager():UnLock("FishingLock")
+      end
+    end)
   end
-)
-  end
-  self._fishingNetOriginPos = ((self._fishingNetHandle).transform).position
+  self._fishingNetOriginPos = self._fishingNetHandle.transform.position
   self:GenerateLayerPool()
   self:InitializationOriginAllFish()
   self:SetFontMat()
@@ -219,113 +203,60 @@ UICN17N46FishingGameController.InitWidget = function(self)
   self._timerHolder = UITimerHolder:New()
   self._spineTimeHolder = UITimerHolder:New()
   self._catchedFishDisTimeHolder = UITimerHolder:New()
-  ;
-  (self._fishingNetRawImage):LoadImage((self._rawImageName)[1])
-  -- DECOMPILER ERROR at PC361: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._fishingNet).localScale = Vector3(1, 1, 1) * (self._cfg_minigame).FishingNetModelScaleMult
-  -- DECOMPILER ERROR at PC374: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._fishingNet).anchoredPosition = (self._fishingNet).anchoredPosition + Vector2(((self._cfg_minigame).FishNetOffset)[1], ((self._cfg_minigame).FishNetOffset)[2])
+  self._fishingNetRawImage:LoadImage(self._rawImageName[1])
+  self._fishingNet.localScale = Vector3(1, 1, 1) * self._cfg_minigame.FishingNetModelScaleMult
+  self._fishingNet.anchoredPosition = self._fishingNet.anchoredPosition + Vector2(self._cfg_minigame.FishNetOffset[1], self._cfg_minigame.FishNetOffset[2])
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.SetFontMat = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local res = (ResourceManager:GetInstance()):SyncLoadAsset("uieff_n14_fishing_game_pause.mat", LoadType.Mat)
+function UICN17N46FishingGameController:SetFontMat()
+  local res = ResourceManager:GetInstance():SyncLoadAsset("uieff_n14_fishing_game_pause.mat", LoadType.Mat)
   if not res then
-    return 
+    return
   end
   local obj = res.Obj
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._gameStartText).fontMaterial = obj
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._gameEndText).fontMaterial = obj
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._gamePauseText).fontMaterial = obj
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._countDown).fontMaterial = obj
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._continueClickText).fontMaterial = obj
+  self._gameStartText.fontMaterial = obj
+  self._gameEndText.fontMaterial = obj
+  self._gamePauseText.fontMaterial = obj
+  self._countDown.fontMaterial = obj
+  self._continueClickText.fontMaterial = obj
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.GenerateGameData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._skillPoint = (self._cfg_minigame).SkillNeedCount
-  self._clickInterval = (self._cfg_minigame).SkillClickInterval
-  self._skillTime = (self._cfg_minigame).SkillTime
-  self.fishPoolInfo = FishingGameLevelInfo:New((self._cfg_fishgame_inner).FishInfo, (self._cfg_fishgame_inner).OrderFishInfo, (self._cfg_fishgame_inner).TotalFish, 0, 0)
-  self._currentOrder = ((self.fishPoolInfo).orderDetailInfo)[self._currentOrderIndex]
+function UICN17N46FishingGameController:GenerateGameData()
+  self._skillPoint = self._cfg_minigame.SkillNeedCount
+  self._clickInterval = self._cfg_minigame.SkillClickInterval
+  self._skillTime = self._cfg_minigame.SkillTime
+  self.fishPoolInfo = FishingGameLevelInfo:New(self._cfg_fishgame_inner.FishInfo, self._cfg_fishgame_inner.OrderFishInfo, self._cfg_fishgame_inner.TotalFish, 0, 0)
+  self._currentOrder = self.fishPoolInfo.orderDetailInfo[self._currentOrderIndex]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.InitOrderScrollView = function(self)
-  -- function num : 0_6
+function UICN17N46FishingGameController:InitOrderScrollView()
   if self._isFirstInitOrder then
-    (self._list):InitListView((self._currentOrder).orderCount, function(scrollView, index)
-    -- function num : 0_6_0 , upvalues : self
-    return self:_InitOrderList(scrollView, index)
-  end
-)
-    ;
-    (self._lineList):InitListView((self._currentOrder).orderCount - 1, function(scrollView, index)
-    -- function num : 0_6_1 , upvalues : self
-    return self:_InitOrderLineList(scrollView, index)
-  end
-)
+    self._list:InitListView(self._currentOrder.orderCount, function(scrollView, index)
+      return self:_InitOrderList(scrollView, index)
+    end)
+    self._lineList:InitListView(self._currentOrder.orderCount - 1, function(scrollView, index)
+      return self:_InitOrderLineList(scrollView, index)
+    end)
   else
     self:_RefreshOrderList()
   end
   self._isFirstInitOrder = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._RefreshOrderList = function(self)
-  -- function num : 0_7
-  local contentPos = (((self._list).ScrollRect).content).localPosition
-  ;
-  (self._list):SetListItemCount((self._currentOrder).orderCount)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (((self._list).ScrollRect).content).localPosition = contentPos
+function UICN17N46FishingGameController:_RefreshOrderList()
+  local contentPos = self._list.ScrollRect.content.localPosition
+  self._list:SetListItemCount(self._currentOrder.orderCount)
+  self._list.ScrollRect.content.localPosition = contentPos
   self:ClearOrderList()
-  ;
-  (self._list):RefreshAllShownItem()
-  local contentPos = (((self._lineList).ScrollRect).content).localPosition
-  ;
-  (self._lineList):SetListItemCount((self._currentOrder).orderCount - 1)
-  ;
-  (self._lineList):MovePanelToItemIndex(0, 0)
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (((self._lineList).ScrollRect).content).localPosition = contentPos
-  ;
-  (self._lineList):RefreshAllShownItem()
+  self._list:RefreshAllShownItem()
+  local contentPos = self._lineList.ScrollRect.content.localPosition
+  self._lineList:SetListItemCount(self._currentOrder.orderCount - 1)
+  self._lineList:MovePanelToItemIndex(0, 0)
+  self._lineList.ScrollRect.content.localPosition = contentPos
+  self._lineList:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._InitOrderLineList = function(self, scrollView, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN17N46FishingGameController:_InitOrderLineList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -337,33 +268,23 @@ UICN17N46FishingGameController._InitOrderLineList = function(self, scrollView, i
   end
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if (self._currentOrder).orderCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:_RefreshLineItemInfo(itemWidget, itemIndex, itemIndex < self._currentFishIndex, itemIndex == #(self._currentOrder).detailInfo)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._currentOrder.orderCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:_RefreshLineItemInfo(itemWidget, itemIndex, itemIndex < self._currentFishIndex, itemIndex == #self._currentOrder.detailInfo)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    do return item end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._RefreshLineItemInfo = function(self, itemWidget, itemIndex, isFinish, isEnd)
-  -- function num : 0_9
+function UICN17N46FishingGameController:_RefreshLineItemInfo(itemWidget, itemIndex, isFinish, isEnd)
   itemWidget:SetData(itemIndex, isFinish, isEnd)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._InitOrderList = function(self, scrollView, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UICN17N46FishingGameController:_InitOrderList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -376,75 +297,45 @@ UICN17N46FishingGameController._InitOrderList = function(self, scrollView, index
   local rowList = rowPool:GetAllSpawnList()
   local itemWidget = rowList[1]
   self:AddOrderListItem(itemWidget)
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      if (self._currentOrder).orderCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      else
-        self:RefreshOrderItemInfo(itemWidget, itemIndex, itemIndex == self._currentFishIndex, itemIndex < self._currentFishIndex, itemIndex == #(self._currentOrder).detailInfo)
-      end
+  if itemWidget then
+    local itemIndex = index + 1
+    if itemIndex > self._currentOrder.orderCount then
+      itemWidget:GetGameObject():SetActive(false)
+    else
+      self:RefreshOrderItemInfo(itemWidget, itemIndex, itemIndex == self._currentFishIndex, itemIndex < self._currentFishIndex, itemIndex == #self._currentOrder.detailInfo)
     end
-    ;
-    (UIHelper.RefreshLayout)(item:GetComponent("RectTransform"))
-    do return item end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
   end
+  UIHelper.RefreshLayout(item:GetComponent("RectTransform"))
+  return item
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.RefreshOrderItemInfo = function(self, itemWidget, index, isCurrent, isFinish, isLast)
-  -- function num : 0_11
-  itemWidget:SetData(index, ((self._currentOrder).detailInfo)[index], isCurrent, isFinish, isLast)
+function UICN17N46FishingGameController:RefreshOrderItemInfo(itemWidget, index, isCurrent, isFinish, isLast)
+  itemWidget:SetData(index, self._currentOrder.detailInfo[index], isCurrent, isFinish, isLast)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._OnValue = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._timeValue):SetText(self:ParseTime((self._cfg_stage).Time))
-  ;
-  (self._scoreValue):SetText(self._score)
-  ;
-  (self._bounsValue):SetText(self._bonus)
-  ;
-  (self._totalScore):SetText(self._score)
-  ;
-  (self._roleSpine):LoadSpine((self._cfg_fishgame_inner).RoleSpine)
-  ;
-  (self._roleSpine):SetAnimation(0, (self._cfg_fishgame_inner).RoleNormalAnimName, true)
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._fishingNetHandle).transform).localEulerAngles = Vector3(0, 0, -self._netRotateAngle)
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._fishingNetHandleClone).transform).localEulerAngles = Vector3(0, 0, -self._netRotateAngle)
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._currentCatchedFishObj).transform).localEulerAngles = Vector3(0, 0, self._netRotateAngle)
+function UICN17N46FishingGameController:_OnValue()
+  self._timeValue:SetText(self:ParseTime(self._cfg_stage.Time))
+  self._scoreValue:SetText(self._score)
+  self._bounsValue:SetText(self._bonus)
+  self._totalScore:SetText(self._score)
+  self._roleSpine:LoadSpine(self._cfg_fishgame_inner.RoleSpine)
+  self._roleSpine:SetAnimation(0, self._cfg_fishgame_inner.RoleNormalAnimName, true)
+  self._fishingNetHandle.transform.localEulerAngles = Vector3(0, 0, -self._netRotateAngle)
+  self._fishingNetHandleClone.transform.localEulerAngles = Vector3(0, 0, -self._netRotateAngle)
+  self._currentCatchedFishObj.transform.localEulerAngles = Vector3(0, 0, self._netRotateAngle)
   self:_RefreshSkillEffect(0)
   self:_StartCountDown()
   self:LoadCatchedFishSpine()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.LoadCatchedFishSpine = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._currentCatchedFishes = (self._currentCatchedFishPool):SpawnObjects("UICN17N46FishingGameCatchedFish", 7)
-  for i = 1, (table.count)(self._currentCatchedFishes) do
-    ((self._currentCatchedFishes)[i]):SetData(i)
+function UICN17N46FishingGameController:LoadCatchedFishSpine()
+  self._currentCatchedFishes = self._currentCatchedFishPool:SpawnObjects("UICN17N46FishingGameCatchedFish", 7)
+  for i = 1, table.count(self._currentCatchedFishes) do
+    self._currentCatchedFishes[i]:SetData(i)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_14
+function UICN17N46FishingGameController:OnUpdate(deltaTimeMS)
   if self._guideing and not self:_Guideing() then
     self._guideing = false
     self:_WhenGuideDone()
@@ -457,81 +348,57 @@ UICN17N46FishingGameController.OnUpdate = function(self, deltaTimeMS)
   self:_UpdateObstacleEff(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.OrderFinish = function(self)
-  -- function num : 0_15
+function UICN17N46FishingGameController:OrderFinish()
   self._currentOrderTime = 0
-  local orderCount = #(self.fishPoolInfo).orderDetailInfo
+  local orderCount = #self.fishPoolInfo.orderDetailInfo
   self._currentFishIndex = 1
   if orderCount <= self._currentOrderIndex then
-    (self.fishPoolInfo):GenerateOrderInfo((self.fishPoolInfo).orderInfo)
+    self.fishPoolInfo:GenerateOrderInfo(self.fishPoolInfo.orderInfo)
   end
   self._currentOrderIndex = self._currentOrderIndex % orderCount + 1
-  self._currentOrder = ((self.fishPoolInfo).orderDetailInfo)[self._currentOrderIndex]
+  self._currentOrder = self.fishPoolInfo.orderDetailInfo[self._currentOrderIndex]
   self:_RefreshOrderList()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._UpdateGenerateFishTime = function(self, ms)
-  -- function num : 0_16 , upvalues : _ENV
-  if (self._gameState == FishingGameState.Playing or self._gameState == FishingGameState.Skill) and (self.fishPoolInfo):PoolIsFull() == false then
+function UICN17N46FishingGameController:_UpdateGenerateFishTime(ms)
+  if (self._gameState == FishingGameState.Playing or self._gameState == FishingGameState.Skill) and self.fishPoolInfo:PoolIsFull() == false then
     self._currentGenerateFishTime = self._currentGenerateFishTime + ms * 0.001
-    if (self.fishPoolInfo):PoolIsEmpty() then
-      if (self._cfg_minigame).PoolEmptyRefreshFishTime < self._currentGenerateFishTime then
+    if self.fishPoolInfo:PoolIsEmpty() then
+      if self._currentGenerateFishTime > self._cfg_minigame.PoolEmptyRefreshFishTime then
         self._currentGenerateFishTime = 0
         self:GenerateFish()
       end
       self._currentGenerateFishTime = 0
       self:GenerateFish()
-    else
-      -- DECOMPILER ERROR at PC49: Unhandled construct in 'MakeBoolean' P1
-
-      if self._gameState == FishingGameState.Skill and (self._cfg_fishgame_inner).SupplyInterval / (self._cfg_minigame).SkillSupplyIntervalMult < self._currentGenerateFishTime then
+    elseif self._gameState == FishingGameState.Skill then
+      if self._currentGenerateFishTime > self._cfg_fishgame_inner.SupplyInterval / self._cfg_minigame.SkillSupplyIntervalMult then
         self._currentGenerateFishTime = 0
         self:GenerateFish()
       end
+    elseif self._currentGenerateFishTime > self._cfg_fishgame_inner.SupplyInterval then
+      self._currentGenerateFishTime = 0
+      self:GenerateFish()
     end
-  end
-  if (self._cfg_fishgame_inner).SupplyInterval < self._currentGenerateFishTime then
-    self._currentGenerateFishTime = 0
-    self:GenerateFish()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._UpdateOrderTime = function(self, ms)
-  -- function num : 0_17 , upvalues : _ENV
+function UICN17N46FishingGameController:_UpdateOrderTime(ms)
   if self:_Guideing() then
-    return 
+    return
   end
   if self._gameState == FishingGameState.Playing or self._gameState == FishingGameState.Skill then
     self._currentOrderTime = self._currentOrderTime + ms * 0.001
-    local wid = self._countDownWidth * self._currentOrderTime / (self._currentOrder).finishTime
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._orderCountDownImgTrans).sizeDelta = Vector2(wid, self._countDownHeight)
-    local fillPercent = self._currentOrderTime / (self._currentOrder).finishTime
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
+    local wid = self._countDownWidth * self._currentOrderTime / self._currentOrder.finishTime
+    self._orderCountDownImgTrans.sizeDelta = Vector2(wid, self._countDownHeight)
+    local fillPercent = self._currentOrderTime / self._currentOrder.finishTime
     if fillPercent < 0.3 then
-      (self._orderCountDownImg).color = Color.green
+      self._orderCountDownImg.color = Color.green
+    elseif fillPercent < 0.66 then
+      self._orderCountDownImg.color = self._orangeColor
     else
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R4 in 'UnsetPending'
-
-      if fillPercent < 0.66 then
-        (self._orderCountDownImg).color = self._orangeColor
-      else
-        -- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._orderCountDownImg).color = Color.red
-      end
+      self._orderCountDownImg.color = Color.red
     end
-    if (self._currentOrder).finishTime < self._currentOrderTime then
+    if self._currentOrderTime > self._currentOrder.finishTime then
       self:ChangeSpineMood(true)
       self:OrderFinish()
       self:OnOrderRefresh()
@@ -539,20 +406,16 @@ UICN17N46FishingGameController._UpdateOrderTime = function(self, ms)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._UpdateTime = function(self, ms)
-  -- function num : 0_18 , upvalues : _ENV
+function UICN17N46FishingGameController:_UpdateTime(ms)
   if self:_Guideing() then
-    return 
+    return
   end
   if self._gameState == FishingGameState.Playing then
     self._elapseDeltaTime = self._elapseDeltaTime + ms * 0.001
     if self._elapseDeltaTime >= 1 then
       self._elapseTime = self._elapseTime + 1
-      local remainTime = (self._cfg_stage).Time - self._elapseTime
-      ;
-      (self._timeValue):SetText(self:ParseTime(remainTime))
+      local remainTime = self._cfg_stage.Time - self._elapseTime
+      self._timeValue:SetText(self:ParseTime(remainTime))
       self._elapseDeltaTime = 0
       if remainTime <= 0 then
         self:_GameOver(true)
@@ -561,28 +424,22 @@ UICN17N46FishingGameController._UpdateTime = function(self, ms)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ParseTime = function(self, sec)
-  -- function num : 0_19 , upvalues : _ENV
-  local minute = (math.floor)(sec / 60)
+function UICN17N46FishingGameController:ParseTime(sec)
+  local minute = math.floor(sec / 60)
   local second = sec % 60
-  return (string.format)("%02d:%02d", minute, second)
+  return string.format("%02d:%02d", minute, second)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._UpdateFishPos = function(self, deltaTime)
-  -- function num : 0_20 , upvalues : _ENV
+function UICN17N46FishingGameController:_UpdateFishPos(deltaTime)
   if self._gameState == FishingGameState.Playing or self._gameState == FishingGameState.Skill then
-    for _,value in pairs(self._fishList) do
+    for _, value in pairs(self._fishList) do
       local fish = value
       if fish then
         if self:_Guideing() then
-          return 
+          return
         end
         if fish.IsRotate == false and fish:IsSwimmingState() then
-          fish:CheckReachedEdge((self._poolSize)[1], (self._poolSize)[2], (self._poolSize)[3], (self._poolSize)[4], fish:GetFishLength() / 2)
+          fish:CheckReachedEdge(self._poolSize[1], self._poolSize[2], self._poolSize[3], self._poolSize[4], fish:GetFishLength() / 2)
         end
         if fish:IsDead() == false then
           fish:Swim(deltaTime, self._gameState)
@@ -592,92 +449,64 @@ UICN17N46FishingGameController._UpdateFishPos = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._StartCountDown = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  (self._start):SetActive(true)
+function UICN17N46FishingGameController:_StartCountDown()
+  self._start:SetActive(true)
   self._cd = 5
-  ;
-  (self._countDown):SetText("")
-  self._StartTimer = ((GameGlobal.Timer)()):AddEventTimes(1033, TimerTriggerCount.Infinite, self._OnCountDown, self)
+  self._countDown:SetText("")
+  self._StartTimer = GameGlobal.Timer():AddEventTimes(1033, TimerTriggerCount.Infinite, self._OnCountDown, self)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._OnCountDown = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UICN17N46FishingGameController:_OnCountDown()
   self._cd = self._cd - 1
   if self._cd <= 0 then
     if self._StartTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._StartTimer)
+      GameGlobal.Timer():CancelEvent(self._StartTimer)
       self._StartTimer = nil
       self._gameState = FishingGameState.Playing
-      ;
-      (AudioHelperController.PauseBGM)()
-      ;
-      (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMMiniGame, AudioConstValue.BGMCrossFadeTime)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN17N46FishingGameController)
+      AudioHelperController.PauseBGM()
+      AudioHelperController.PlayBGM(CriAudioIDConst.BGMMiniGame, AudioConstValue.BGMCrossFadeTime)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN17N46FishingGameController)
       self._guideing = self:_Guideing()
       self:_InitGuideFish()
     end
-    ;
-    (self._start):SetActive(false)
+    self._start:SetActive(false)
     self:InitOrderScrollView()
   else
     if self._cd == 4 then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameStart)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameStart)
     end
     if self._cd - 1 <= 0 then
-      return 
+      return
     end
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._countDown).text = self._cd - 1
-    ;
-    (self._cdAnimation):Stop()
+    self._countDown.text = self._cd - 1
+    self._cdAnimation:Stop()
     if self._cd > 2 then
       self:_LoadSpine()
-      ;
-      (self._cdAnimation):Play("uieff_Start_Number_32")
+      self._cdAnimation:Play("uieff_Start_Number_32")
     end
     if self._cd == 2 then
       self:_LoadSpine()
-      ;
-      (self._cdAnimation):Play("uieff_Start_Number_1s")
+      self._cdAnimation:Play("uieff_Start_Number_1s")
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.PauseBtnOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
+function UICN17N46FishingGameController:PauseBtnOnClick(go)
   if self:_Guideing() then
-    return 
+    return
   end
-  ;
-  (self._pause):SetActive(true)
+  self._pause:SetActive(true)
   self._lastGameStage = self._gameState
   self._gameState = FishingGameState.Pause
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ExitBtnOnClick = function(self, go)
-  -- function num : 0_24
-  (self._pause):SetActive(false)
+function UICN17N46FishingGameController:ExitBtnOnClick(go)
+  self._pause:SetActive(false)
   self:_GameOver(self._score > 0)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ContinueBtnOnClick = function(self, go)
-  -- function num : 0_25 , upvalues : _ENV
-  (self._pause):SetActive(false)
+function UICN17N46FishingGameController:ContinueBtnOnClick(go)
+  self._pause:SetActive(false)
   if self._lastGameStage then
     self._gameState = self._lastGameStage
   else
@@ -685,174 +514,117 @@ UICN17N46FishingGameController.ContinueBtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.FinishOnClick = function(self, go)
-  -- function num : 0_26
+function UICN17N46FishingGameController:FinishOnClick(go)
   if self._canExit then
     self:_PlayGameOverStory()
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._PlayGameOverStory = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UICN17N46FishingGameController:_PlayGameOverStory()
   self:_Close()
-  if self._playstory and (table.icontains)((self._cfg_stage).StoryActiveType, 2) and ((((self._componentInfo).mission_info_list)[self._stage_id]).mission_info).story_mask & 2 == 0 then
-    ((GameGlobal.GetModule)(StoryModule)):StartStory(((self._cfg_stage).StoryID)[(math.max)(1, (table.count)((self._cfg_stage).StoryID))], function()
-    -- function num : 0_27_0 , upvalues : self, _ENV
-    self.taskid_3 = self:StartTask(function(TT)
-      -- function num : 0_27_0_0 , upvalues : _ENV, self
-      local res = AsyncRequestRes:New()
-      res = (self._component):HandleStoryMsg(TT, res, self._stage_id, 2)
-      if self._callback then
-        (self._callback)()
-      end
-      self:_Close()
-      self.taskid_3 = nil
-    end
-)
-  end
-)
+  if self._playstory and table.icontains(self._cfg_stage.StoryActiveType, 2) and self._componentInfo.mission_info_list[self._stage_id].mission_info.story_mask & 2 == 0 then
+    GameGlobal.GetModule(StoryModule):StartStory(self._cfg_stage.StoryID[math.max(1, table.count(self._cfg_stage.StoryID))], function()
+      self.taskid_3 = self:StartTask(function(TT)
+        local res = AsyncRequestRes:New()
+        res = self._component:HandleStoryMsg(TT, res, self._stage_id, 2)
+        if self._callback then
+          self._callback()
+        end
+        self:_Close()
+        self.taskid_3 = nil
+      end)
+    end)
   else
     if self._callback then
-      (self._callback)()
+      self._callback()
     end
     self:_Close()
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._GameOver = function(self, playstory)
-  -- function num : 0_28 , upvalues : _ENV
+function UICN17N46FishingGameController:_GameOver(playstory)
   self._gameState = MiniGameState.Over
   self._playstory = playstory
-  ;
-  ((GameGlobal.Timer)()):AddEvent(2000, function()
-    -- function num : 0_28_0 , upvalues : self
+  GameGlobal.Timer():AddEvent(2000, function()
     self._canExit = true
-  end
-)
+  end)
   self:_ShowFinish()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._Close = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UICN17N46FishingGameController:_Close()
   if self._bubblePool then
-    for _,bubble in pairs(self._bubblePool) do
+    for _, bubble in pairs(self._bubblePool) do
       bubble:Dispose()
     end
   end
-  do
-    self:CloseDialog()
-    ;
-    (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
-  end
+  self:CloseDialog()
+  AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._ShowFinish = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  (self._finish):SetActive(true)
-  ;
-  (self._scoreValue):SetText(self._score)
+function UICN17N46FishingGameController:_ShowFinish()
+  self._finish:SetActive(true)
+  self._scoreValue:SetText(self._score)
   self._tempScore = 0
-  self._tempScoreDelta = (math.ceil)(self._score / App.TargetFrame)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameFinish)
+  self._tempScoreDelta = math.ceil(self._score / App.TargetFrame)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameFinish)
   self:_SendScoreToServer()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._SendScoreToServer = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UICN17N46FishingGameController:_SendScoreToServer()
   self.taskid_2 = self:StartTask(function(TT)
-    -- function num : 0_31_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    res = (self._component):HandleScoreMsg(TT, res, self._stage_id, (math.floor)(self._score))
+    res = self._component:HandleScoreMsg(TT, res, self._stage_id, math.floor(self._score))
     if not res:GetSucc() then
-      (Log.error)("handle score msg fail.")
+      Log.error("handle score msg fail.")
     end
     self.taskid_2 = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.BeginDragFishingNet = function(self, pointData)
-  -- function num : 0_32 , upvalues : _ENV
+function UICN17N46FishingGameController:BeginDragFishingNet(pointData)
   if self._gameState == FishingGameState.Skill or self._showPufferEff then
-    return 
+    return
   end
-  self._posOffest = ((self._fishingNetHandle).transform).position - ((self._fishingNet).transform).position
-  local pos = (UIHelper.ScreenPointToWorldPointInRectangle)(((self._fishingNetHandle).transform).parent, pointData.position, self._camera)
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._fishingNetHandle).transform).position = pos + self._posOffest
+  self._posOffest = self._fishingNetHandle.transform.position - self._fishingNet.transform.position
+  local pos = UIHelper.ScreenPointToWorldPointInRectangle(self._fishingNetHandle.transform.parent, pointData.position, self._camera)
+  self._fishingNetHandle.transform.position = pos + self._posOffest
   self:ClearFishSpine()
   if self._bubblePool then
-    for _,bubble in pairs(self._bubblePool) do
+    for _, bubble in pairs(self._bubblePool) do
       bubble:Hide()
     end
   end
-  do
-    ;
-    ((GameGlobal.UIStateManager)()):Lock("FishingLock")
-    self._caughtRightFish = false
-    self._caughtFish = false
-    self._caughtObstacle = false
-    self._isCatchPufferFish = false
-    self._isCatchOctopus = false
-  end
+  GameGlobal.UIStateManager():Lock("FishingLock")
+  self._caughtRightFish = false
+  self._caughtFish = false
+  self._caughtObstacle = false
+  self._isCatchPufferFish = false
+  self._isCatchOctopus = false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.OnDragFishingNet = function(self, pointData)
-  -- function num : 0_33 , upvalues : _ENV
+function UICN17N46FishingGameController:OnDragFishingNet(pointData)
   if self._gameState == FishingGameState.Skill or self._showPufferEff then
-    return 
+    return
   end
-  local pos = (UIHelper.ScreenPointToWorldPointInRectangle)(((self._fishingNetHandle).transform).parent, pointData.position, self._camera)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._fishingNetHandle).transform).position = pos + self._posOffest
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._fishingNetHandleClone).transform).position = pos + self._posOffest
+  local pos = UIHelper.ScreenPointToWorldPointInRectangle(self._fishingNetHandle.transform.parent, pointData.position, self._camera)
+  self._fishingNetHandle.transform.position = pos + self._posOffest
+  self._fishingNetHandleClone.transform.position = pos + self._posOffest
   if self:_Guideing() then
-    (self._fishingNetGuide):SetActive(false)
+    self._fishingNetGuide:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.EndDragFishingNet = function(self, pointData)
-  -- function num : 0_34 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
+function UICN17N46FishingGameController:EndDragFishingNet(pointData)
   if self._isRefreshing then
-    ((self._fishingNetHandle).transform).position = self._fishingNetOriginPos
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("FishingLock")
-    return 
+    self._fishingNetHandle.transform.position = self._fishingNetOriginPos
+    GameGlobal.UIStateManager():UnLock("FishingLock")
+    return
   end
   if self._gameState == FishingGameState.Skill or self._showPufferEff or self._gameState == MiniGameState.Over then
-    ((GameGlobal.UIStateManager)()):UnLock("FishingLock")
-    return 
+    GameGlobal.UIStateManager():UnLock("FishingLock")
+    return
   end
-  ;
-  (self._eff):SetActive(true)
+  self._eff:SetActive(true)
   self:CatchFish()
   self:CatchObstacle()
   self:PlayFishingAnimation()
@@ -867,10 +639,10 @@ UICN17N46FishingGameController.EndDragFishingNet = function(self, pointData)
   if self._caughtFish then
     waitTime = reset
   else
-    waitTime = (self._cfg_minigame).NotCatchedFishNetResetTime
+    waitTime = self._cfg_minigame.NotCatchedFishNetResetTime
   end
   if not self._caughtFish and self:_Guideing() then
-    (self._fishingNetGuide):SetActive(true)
+    self._fishingNetGuide:SetActive(true)
   end
   self._caughtRightFish = false
   self._caughtFish = false
@@ -878,154 +650,104 @@ UICN17N46FishingGameController.EndDragFishingNet = function(self, pointData)
   self:ResetFishingNetPos()
   self._isCatchPufferFish = false
   self._isCatchOctopus = false
-  ;
-  (self._timerHolder):StartTimer("WaitForAnim", waitTime * 1000, function()
-    -- function num : 0_34_0 , upvalues : self, _ENV
+  self._timerHolder:StartTimer("WaitForAnim", waitTime * 1000, function()
     self:FishNetCloneShow(false)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("FishingLock")
-  end
-)
+    GameGlobal.UIStateManager():UnLock("FishingLock")
+  end)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ClearFishSpine = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function UICN17N46FishingGameController:ClearFishSpine()
   self._catchedFishIdList = {}
-  ;
-  (self._catchedFishDisTimeHolder):StopTimer("catchedFish")
-  ;
-  ((self._currentFishSpine).gameObject):SetActive(false)
-  for k,v in pairs(self._currentCatchedFishes) do
+  self._catchedFishDisTimeHolder:StopTimer("catchedFish")
+  self._currentFishSpine.gameObject:SetActive(false)
+  for k, v in pairs(self._currentCatchedFishes) do
     v:Hide()
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ChangeSpineMood = function(self, orderFail)
-  -- function num : 0_36
+function UICN17N46FishingGameController:ChangeSpineMood(orderFail)
   local changeTime = 0
   if orderFail then
-    (self._roleSpine):SetAnimation(0, (self._cfg_fishgame_inner).OrderFailAnim, true)
-    changeTime = (self._cfg_fishgame_inner).OrderFailToNormalTime
-  else
-    if self._caughtFish then
-      if self._caughtRightFish then
-        if self._caughtObstacle then
-          if self._isCatchOctopus then
-            (self._roleSpine):SetAnimation(0, (self._cfg_fishgame_inner).OctopusAnim, true)
-            changeTime = (self._cfg_fishgame_inner).FailToNormalTime
-          else
-            ;
-            (self._roleSpine):SetAnimation(0, (self._cfg_fishgame_inner).FailAnim, true)
-            changeTime = (self._cfg_fishgame_inner).FailToNormalTime
-          end
+    self._roleSpine:SetAnimation(0, self._cfg_fishgame_inner.OrderFailAnim, true)
+    changeTime = self._cfg_fishgame_inner.OrderFailToNormalTime
+  elseif self._caughtFish then
+    if self._caughtRightFish then
+      if self._caughtObstacle then
+        if self._isCatchOctopus then
+          self._roleSpine:SetAnimation(0, self._cfg_fishgame_inner.OctopusAnim, true)
+          changeTime = self._cfg_fishgame_inner.FailToNormalTime
         else
-          ;
-          (self._roleSpine):SetAnimation(0, (self._cfg_fishgame_inner).SuccessAnim, true)
-          changeTime = (self._cfg_fishgame_inner).SuccessToNormalTime
+          self._roleSpine:SetAnimation(0, self._cfg_fishgame_inner.FailAnim, true)
+          changeTime = self._cfg_fishgame_inner.FailToNormalTime
         end
       else
-        if self._caughtObstacle then
-          if self._isCatchOctopus then
-            (self._roleSpine):SetAnimation(0, (self._cfg_fishgame_inner).OctopusAnim, true)
-            changeTime = (self._cfg_fishgame_inner).FailToNormalTime
-          else
-            ;
-            (self._roleSpine):SetAnimation(0, (self._cfg_fishgame_inner).FailAnim, true)
-            changeTime = (self._cfg_fishgame_inner).FailToNormalTime
-          end
-        end
+        self._roleSpine:SetAnimation(0, self._cfg_fishgame_inner.SuccessAnim, true)
+        changeTime = self._cfg_fishgame_inner.SuccessToNormalTime
+      end
+    elseif self._caughtObstacle then
+      if self._isCatchOctopus then
+        self._roleSpine:SetAnimation(0, self._cfg_fishgame_inner.OctopusAnim, true)
+        changeTime = self._cfg_fishgame_inner.FailToNormalTime
+      else
+        self._roleSpine:SetAnimation(0, self._cfg_fishgame_inner.FailAnim, true)
+        changeTime = self._cfg_fishgame_inner.FailToNormalTime
       end
     end
   end
-  if changeTime > 0 then
-    (self._spineTimeHolder):StopTimer("changeSpine")
-    ;
-    (self._spineTimeHolder):StartTimer("changeSpine", changeTime, function()
-    -- function num : 0_36_0 , upvalues : self
-    (self._roleSpine):SetAnimation(0, (self._cfg_fishgame_inner).RoleNormalAnimName, true)
-  end
-)
+  if 0 < changeTime then
+    self._spineTimeHolder:StopTimer("changeSpine")
+    self._spineTimeHolder:StartTimer("changeSpine", changeTime, function()
+      self._roleSpine:SetAnimation(0, self._cfg_fishgame_inner.RoleNormalAnimName, true)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._RefreshSkillEffect = function(self, percent)
-  -- function num : 0_37 , upvalues : _ENV
+function UICN17N46FishingGameController:_RefreshSkillEffect(percent)
   local mask_y, pos_y = self:_GetSkillEffectParam(percent)
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._skillPointImg).fillAmount = percent
-  ;
-  (self._skillPointMaterial):SetTextureOffset("_MaskTex", Vector2(0, mask_y))
+  self._skillPointImg.fillAmount = percent
+  self._skillPointMaterial:SetTextureOffset("_MaskTex", Vector2(0, mask_y))
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.PlayFishingAnimation = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UICN17N46FishingGameController:PlayFishingAnimation()
   if self._caughtFish then
     local dis, reset = self:GetDisappearAndResetTime()
     local time = dis
-    ;
-    (self._catchedFishDisTimeHolder):StopTimer("catchedFish")
-    ;
-    (self._catchedFishDisTimeHolder):StartTimer("catchedFish", (math.floor)(time * 1000), function()
-    -- function num : 0_38_0 , upvalues : self
-    self:ClearFishSpine()
-  end
-)
-    if (table.count)(self._catchedFishIdList) > 0 then
+    self._catchedFishDisTimeHolder:StopTimer("catchedFish")
+    self._catchedFishDisTimeHolder:StartTimer("catchedFish", math.floor(time * 1000), function()
+      self:ClearFishSpine()
+    end)
+    if table.count(self._catchedFishIdList) > 0 then
       for i = 1, #self._catchedFishIdList do
-        for k,v in pairs(self._currentCatchedFishes) do
-          if v:CheckShowName((self._catchedFishIdList)[i]) then
+        for k, v in pairs(self._currentCatchedFishes) do
+          if v:CheckShowName(self._catchedFishIdList[i]) then
             v:ShowFish()
-            v:CheckIsRight(((self._currentOrder).detailInfo)[self._currentFishIndex])
+            v:CheckIsRight(self._currentOrder.detailInfo[self._currentFishIndex])
             break
           end
         end
       end
     end
-    do
-      ;
-      ((self._currentFishSpine).gameObject):SetActive(true)
-    end
+    self._currentFishSpine.gameObject:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ResetFishingNetPos = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function UICN17N46FishingGameController:ResetFishingNetPos()
   self.taskid_1 = self:StartTask(function(TT)
-    -- function num : 0_39_0 , upvalues : self, _ENV
     self:Lock("UICN17N46FishingGameStageController:ResetFishingNetPos")
     local ani = self:GetUIComponent("Animation", "FishingNetHandleImg")
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
     if not self._showPufferEff then
-      ((self._fishingNetHandle).transform).position = self._fishingNetOriginPos
-      -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      ((self._fishingNetTrans).transform).localRotation = Quaternion.identity
+      self._fishingNetHandle.transform.position = self._fishingNetOriginPos
+      self._fishingNetTrans.transform.localRotation = Quaternion.identity
       ani:Play("uieff_FishingNetHandleTrans_shan")
       YIELD(TT, 1000)
     else
-      local cfg = (Cfg.cfg_fishing_fish)({})
-      local time = (cfg[self._caughtFishId]).CatchedTime
+      local cfg = Cfg.cfg_fishing_fish({})
+      local time = cfg[self._caughtFishId].CatchedTime
       YIELD(TT, time * 1000)
       if self.taskid_1 ~= nil then
-        (((self._fishingNetHandle).transform):DOMove(self._fishingNetOriginPos, 0.3)):OnComplete(function()
-      -- function num : 0_39_0_0 , upvalues : ani
-      ani:Play("uieff_FishingNetHandleTrans_shan")
-    end
-)
+        self._fishingNetHandle.transform:DOMove(self._fishingNetOriginPos, 0.3):OnComplete(function()
+          ani:Play("uieff_FishingNetHandleTrans_shan")
+        end)
       end
       YIELD(TT, 800)
       if self.taskid_1 ~= nil then
@@ -1034,114 +756,85 @@ UICN17N46FishingGameController.ResetFishingNetPos = function(self)
       YIELD(TT, 800)
       if self.taskid_1 ~= nil then
         self._showPufferEff = false
-        ;
-        (self._fishingNetRawImage):LoadImage((self._rawImageName)[1])
+        self._fishingNetRawImage:LoadImage(self._rawImageName[1])
       end
     end
-    do
-      if self.taskid_1 ~= nil then
-        (self._eff):SetActive(false)
-      end
-      self:UnLock("UICN17N46FishingGameStageController:ResetFishingNetPos")
-      self.taskid_1 = nil
+    if self.taskid_1 ~= nil then
+      self._eff:SetActive(false)
     end
-  end
-, self)
+    self:UnLock("UICN17N46FishingGameStageController:ResetFishingNetPos")
+    self.taskid_1 = nil
+  end, self)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.CatchFish = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  local netScreenPos = (self._camera):WorldToScreenPoint(((self._fishingNetHandle).transform).position)
+function UICN17N46FishingGameController:CatchFish()
+  local netScreenPos = self._camera:WorldToScreenPoint(self._fishingNetHandle.transform.position)
   local catchedFishCount = 0
-  for k,v in pairs(self._fishList) do
-    if v.state ~= FishingFishState.Die and v:CheckCatched(self._camera, netScreenPos, ((self._fishingNet).sizeDelta).x / 2 * (self._cfg_minigame).JudgeRangeMult) then
-      if self._caughtRightFish == false and ((self._currentOrder).detailInfo)[self._currentFishIndex] == ((self._fishList)[k])._fishId then
+  for k, v in pairs(self._fishList) do
+    if v.state ~= FishingFishState.Die and v:CheckCatched(self._camera, netScreenPos, self._fishingNet.sizeDelta.x / 2 * self._cfg_minigame.JudgeRangeMult) then
+      if self._caughtRightFish == false and self._currentOrder.detailInfo[self._currentFishIndex] == self._fishList[k]._fishId then
         self._caughtRightFish = true
       end
-      if ((self._fishList)[k])._fishId == FishingFishType.Octopus then
+      if self._fishList[k]._fishId == FishingFishType.Octopus then
         self._caughtObstacle = true
         self._isCatchOctopus = true
       end
-      if ((self._fishList)[k])._fishId == FishingFishType.Puffer then
+      if self._fishList[k]._fishId == FishingFishType.Puffer then
         self._caughtObstacle = true
         self._isCatchPufferFish = true
       end
-      if ((self._fishList)[k])._fishId == FishingFishType.Puffer then
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameSkillStart)
+      if self._fishList[k]._fishId == FishingFishType.Puffer then
+        AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameSkillStart)
       else
-        ;
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameWeight)
+        AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameWeight)
       end
       self:_GuideCatchFishSuccess()
-      if not (table.icontains)(self._catchedFishIdList, ((self._fishList)[k])._fishId) then
+      if not table.icontains(self._catchedFishIdList, self._fishList[k]._fishId) then
         catchedFishCount = catchedFishCount + 1
-        -- DECOMPILER ERROR at PC94: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._catchedFishIdList)[catchedFishCount] = ((self._fishList)[k])._fishId
+        self._catchedFishIdList[catchedFishCount] = self._fishList[k]._fishId
       end
-      ;
-      ((self._fishList)[k]):Die()
-      ;
-      (self.fishPoolInfo):CatchFish(((self._fishList)[k])._fishId)
-      self._caughtFishId = ((self._fishList)[k])._fishId
+      self._fishList[k]:Die()
+      self.fishPoolInfo:CatchFish(self._fishList[k]._fishId)
+      self._caughtFishId = self._fishList[k]._fishId
       self._caughtFish = true
     end
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.CatchObstacle = function(self)
-  -- function num : 0_41
+function UICN17N46FishingGameController:CatchObstacle()
   if self._isCatchOctopus then
     self:_AddOctopusTime()
     self._showOctopusEff = true
     self._currentPufferTime = 0
-    ;
-    (self._octopusEff):SetActive(true)
-    ;
-    (self._effectOctopusEffAni):Play("uieff_N14_Fishing_Octopus")
+    self._octopusEff:SetActive(true)
+    self._effectOctopusEffAni:Play("uieff_N14_Fishing_Octopus")
   end
   if self._isCatchPufferFish then
     self._showPufferEff = true
-    ;
-    (self._fishingNetRawImage):LoadImage((self._rawImageName)[2])
+    self._fishingNetRawImage:LoadImage(self._rawImageName[2])
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._UpdateObstacleEff = function(self, ms)
-  -- function num : 0_42 , upvalues : _ENV
+function UICN17N46FishingGameController:_UpdateObstacleEff(ms)
   if (self._gameState == FishingGameState.Playing or self._gameState == FishingGameState.Skill) and self._showOctopusEff then
     self._currentOctopusTime = self._currentOctopusTime + ms * 0.001
     if self._currentOctopusTime > 3 then
       self._showOctopusEff = false
       self._currentOctopusTime = 0
-      ;
-      (self._effectOctopusEffAni):Play("uieff_N14_Fishing_Octopus_Fade")
+      self._effectOctopusEffAni:Play("uieff_N14_Fishing_Octopus_Fade")
     end
   end
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._AddOctopusTime = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function UICN17N46FishingGameController:_AddOctopusTime()
   if self._gameState == FishingGameState.Playing and self._showOctopusEff then
     self._currentOctopusTime = 0
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._UpdateFishingSkillTime = function(self, ms)
-  -- function num : 0_44 , upvalues : _ENV
+function UICN17N46FishingGameController:_UpdateFishingSkillTime(ms)
   if self._gameState ~= FishingGameState.Skill then
-    return 
+    return
   end
   self._clickInterval = self._clickInterval - ms * 0.001
   self._skillTime = self._skillTime - ms * 0.001
@@ -1150,138 +843,98 @@ UICN17N46FishingGameController._UpdateFishingSkillTime = function(self, ms)
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.AutoFishing = function(self)
-  -- function num : 0_45 , upvalues : _ENV
-  local currentFishId = ((self._currentOrder).detailInfo)[self._currentFishIndex]
+function UICN17N46FishingGameController:AutoFishing()
+  local currentFishId = self._currentOrder.detailInfo[self._currentFishIndex]
   local currentFishIndexInPool = -1
-  for k,v in pairs(self._fishList) do
+  for k, v in pairs(self._fishList) do
     if v.state ~= FishingFishState.Die and v._fishId == currentFishId then
       currentFishIndexInPool = k
       break
     end
   end
-  do
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-    if currentFishIndexInPool ~= -1 then
-      ((self._fishingNetHandle).transform).position = ((((self._fishList)[currentFishIndexInPool])._spine).transform).position
-      local ani = self:GetUIComponent("Animation", "FishingNetHandleImg")
-      ani:Play("uieff_FishingNetHandleTrans_collect")
-      self._caughtFishId = ((self._fishList)[currentFishIndexInPool])._fishId
-      self._caughtFish = true
-      self._caughtRightFish = true
-      ;
-      (table.insert)(self._catchedFishIdList, ((self._fishList)[currentFishIndexInPool])._fishId)
-      self:FishNetCloneShow(self._caughtFish)
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      ((self._fishingNetHandleClone).transform).position = ((self._fishingNetHandle).transform).position
-      self:PlayFishingAnimation()
-      self:AddScore()
-      self:ChangeSpineMood(false)
-      self._catchedFishIdList = {}
-      ;
-      ((self._fishList)[currentFishIndexInPool]):Die()
-      ;
-      (self.fishPoolInfo):CatchFish(((self._fishList)[currentFishIndexInPool])._fishId)
-      self:ShowScoreBubble(((self._fishingNetHandle).transform).position)
-      self._clickInterval = (self._cfg_minigame).SkillClickInterval
-      if self._caughtFishId == FishingFishType.Puffer then
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameSkillStart)
-      else
-        ;
-        (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameWeight)
-      end
-      ;
-      (self._timerHolder):StartTimer("WaitForAnim", 500, function()
-    -- function num : 0_45_0 , upvalues : self
-    self:FishNetCloneShow(false)
-  end
-)
+  if currentFishIndexInPool ~= -1 then
+    self._fishingNetHandle.transform.position = self._fishList[currentFishIndexInPool]._spine.transform.position
+    local ani = self:GetUIComponent("Animation", "FishingNetHandleImg")
+    ani:Play("uieff_FishingNetHandleTrans_collect")
+    self._caughtFishId = self._fishList[currentFishIndexInPool]._fishId
+    self._caughtFish = true
+    self._caughtRightFish = true
+    table.insert(self._catchedFishIdList, self._fishList[currentFishIndexInPool]._fishId)
+    self:FishNetCloneShow(self._caughtFish)
+    self._fishingNetHandleClone.transform.position = self._fishingNetHandle.transform.position
+    self:PlayFishingAnimation()
+    self:AddScore()
+    self:ChangeSpineMood(false)
+    self._catchedFishIdList = {}
+    self._fishList[currentFishIndexInPool]:Die()
+    self.fishPoolInfo:CatchFish(self._fishList[currentFishIndexInPool]._fishId)
+    self:ShowScoreBubble(self._fishingNetHandle.transform.position)
+    self._clickInterval = self._cfg_minigame.SkillClickInterval
+    if self._caughtFishId == FishingFishType.Puffer then
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameSkillStart)
+    else
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameWeight)
     end
+    self._timerHolder:StartTimer("WaitForAnim", 500, function()
+      self:FishNetCloneShow(false)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.SkillAreaOnClick = function(self, go)
-  -- function num : 0_46 , upvalues : _ENV
+function UICN17N46FishingGameController:SkillAreaOnClick(go)
   if self._currentPufferTime > 0 or self._showPufferEff then
-    return 
+    return
   end
-  if self._gameState == FishingGameState.Skill and self._clickInterval <= 0 then
-    self._clickInterval = (self._cfg_minigame).SkillClickInterval
+  if self._gameState == FishingGameState.Skill and 0 >= self._clickInterval then
+    self._clickInterval = self._cfg_minigame.SkillClickInterval
     self:AutoFishing()
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.SkillEnd = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UICN17N46FishingGameController:SkillEnd()
   self:ResetFishingNetPos()
   self._skillCanStartCurrentPoint = 0
-  self._clickInterval = (self._cfg_minigame).SkillClickInterval
-  self._skillTime = (self._cfg_minigame).SkillTime
-  ;
-  (self._skillObj):SetActive(false)
+  self._clickInterval = self._cfg_minigame.SkillClickInterval
+  self._skillTime = self._cfg_minigame.SkillTime
+  self._skillObj:SetActive(false)
   self._gameState = FishingGameState.Playing
   self:_RefreshSkillEffect(0)
-  ;
-  (AudioHelperController.SetBGMMixerGroup)(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.DefaultMixerValue)
+  AudioHelperController.SetBGMMixerGroup(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.DefaultMixerValue)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ShowScoreBubble = function(self, pos)
-  -- function num : 0_48 , upvalues : _ENV
+function UICN17N46FishingGameController:ShowScoreBubble(pos)
   if self._caughtFish or self._gameState == FishingGameState.Skill then
-    local bubble = nil
-    for k,v in pairs(self._bubblePool) do
+    local bubble
+    for k, v in pairs(self._bubblePool) do
       if v:CheckUsing() == false then
         bubble = v
         break
       end
     end
-    do
-      if bubble == nil then
-        bubble = UICN17N46FishingGameBubble:New(self._bubblePoolTrans)
-        ;
-        (table.insert)(self._bubblePool, bubble)
-      end
-      local pos = (UIHelper.ScreenPointToWorldPointInRectangle)((self._fishingNetTrans).parent, (((self._currentFishSpine).gameObject).transform).position, self._camera)
-      bubble:Show(self._currentAddScore, self._caughtRightFish, (((self._currentFishSpine).gameObject).transform).position)
+    if bubble == nil then
+      bubble = UICN17N46FishingGameBubble:New(self._bubblePoolTrans)
+      table.insert(self._bubblePool, bubble)
     end
+    local pos = UIHelper.ScreenPointToWorldPointInRectangle(self._fishingNetTrans.parent, self._currentFishSpine.gameObject.transform.position, self._camera)
+    bubble:Show(self._currentAddScore, self._caughtRightFish, self._currentFishSpine.gameObject.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.AddScore = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function UICN17N46FishingGameController:AddScore()
   if self._caughtRightFish == true or self._gameState == FishingGameState.Skill then
     self:RefreshOrderState()
     self._bonus = self._bonus + self._fishingSuccessAddScoreMult
     self._currentAddScore = self._baseFishScore * self._bonus
     self._score = self._score + self._currentAddScore
-    ;
-    (self._scoreValue):SetText((math.floor)(self._score))
-    ;
-    (self._bounsValue):SetText(self._bonus)
-    ;
-    (self._totalScore):SetText((math.floor)(self._score))
+    self._scoreValue:SetText(math.floor(self._score))
+    self._bounsValue:SetText(self._bonus)
+    self._totalScore:SetText(math.floor(self._score))
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.RefreshOrderState = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function UICN17N46FishingGameController:RefreshOrderState()
   self._currentFishIndex = self._currentFishIndex + 1
-  if (table.count)((self._currentOrder).detailInfo) < self._currentFishIndex then
+  if self._currentFishIndex > table.count(self._currentOrder.detailInfo) then
     self._bonus = self._bonus + self._orderFinishBouns
     self:OrderFinish()
     self:OnOrderRefresh()
@@ -1290,357 +943,249 @@ UICN17N46FishingGameController.RefreshOrderState = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.RefreshSkillState = function(self)
-  -- function num : 0_51
+function UICN17N46FishingGameController:RefreshSkillState()
   if self._caughtRightFish == true then
     self._skillCanStartCurrentPoint = self._skillCanStartCurrentPoint + 1
-    if self._skillPoint <= self._skillCanStartCurrentPoint then
+    if self._skillCanStartCurrentPoint >= self._skillPoint then
       self._skillCanStartCurrentPoint = self._skillPoint
     end
     local percent = self._skillCanStartCurrentPoint / self._skillPoint
     self:_RefreshSkillEffect(percent)
-    if percent >= 1 then
-      (self._skillReady):SetActive(true)
+    if 1 <= percent then
+      self._skillReady:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._GetSkillEffectParam = function(self, percent)
-  -- function num : 0_52
+function UICN17N46FishingGameController:_GetSkillEffectParam(percent)
   if percent == 0 then
     return 0.5, -160
   end
-  if percent == 1 then
+  if percent == 1.0 then
     return 0, 215
   end
   return 0.425 - 0.335 * percent, -100 + 300 * percent
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.SKillBtnOnClick = function(self, go)
-  -- function num : 0_53 , upvalues : _ENV
-  if self._skillCanStartCurrentPoint < (self._cfg_minigame).SkillNeedCount then
-    return 
+function UICN17N46FishingGameController:SKillBtnOnClick(go)
+  if self._skillCanStartCurrentPoint < self._cfg_minigame.SkillNeedCount then
+    return
   end
-  if (self._cfg_stage).Time <= self._elapseTime then
-    return 
+  if self._elapseTime >= self._cfg_stage.Time then
+    return
   end
   if self._gameState == FishingGameState.Skill or self._gameState == FishingGameState.SkillAnim or self._showPufferEff then
-    return 
+    return
   end
   self._gameState = FishingGameState.SkillAnim
   self._gameState = FishingGameState.Skill
   local rw = self:GetUIComponent("RawImageLoader", "kanban")
-  rw:LoadImage((self._cfg_fishgame_inner).SkillImage)
-  ;
-  (self._skillkanban):SetActive(true)
-  ;
-  (self._skillReady):SetActive(false)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameSkillLoop)
-  ;
-  (AudioHelperController.SetBGMMixerGroup)(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.AuroralTimeMixerValue)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(1000, function()
-    -- function num : 0_53_0 , upvalues : self
-    (self._skillkanban):SetActive(false)
-    ;
-    (self._skillObj):SetActive(true)
-  end
-)
+  rw:LoadImage(self._cfg_fishgame_inner.SkillImage)
+  self._skillkanban:SetActive(true)
+  self._skillReady:SetActive(false)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameSkillLoop)
+  AudioHelperController.SetBGMMixerGroup(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.AuroralTimeMixerValue)
+  GameGlobal.Timer():AddEvent(1000, function()
+    self._skillkanban:SetActive(false)
+    self._skillObj:SetActive(true)
+  end)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.GenerateLayerPool = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function UICN17N46FishingGameController:GenerateLayerPool()
   self._layerList = {}
-  for i = 1, (table.count)((Cfg.cfg_fishing_fish)({})) do
-    local layerGo = (UnityEngine.GameObject):New("Layer" .. R8_PC17)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (layerGo.transform).parent = (self._layerPool).transform
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (layerGo.transform).localPosition = Vector3.zero
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (layerGo.transform).localScale = Vector3.one
-    ;
-    (table.insert)(self._layerList, R8_PC17)
+  for i = 1, table.count(Cfg.cfg_fishing_fish({})) do
+    local layerGo = UnityEngine.GameObject:New("Layer" .. i)
+    layerGo.transform.parent = self._layerPool.transform
+    layerGo.transform.localPosition = Vector3.zero
+    layerGo.transform.localScale = Vector3.one
+    table.insert(self._layerList, layerGo)
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.InitializationOriginAllFish = function(self)
-  -- function num : 0_55 , upvalues : _ENV
-  local allFishGroupList = (self.fishPoolInfo).allFishInfo
-  ;
-  (self._bornPos):SpawnObjects("UICN17N46FishingGameFish", (self.fishPoolInfo).totalFish)
-  self._fishList = (self._bornPos):GetAllSpawnList()
-  ;
-  (self._shawdowLayerPos):SpawnObjects("UICN17N46FishingGameFishShadow", (self.fishPoolInfo).totalFish)
-  self._shadowList = (self._shawdowLayerPos):GetAllSpawnList()
+function UICN17N46FishingGameController:InitializationOriginAllFish()
+  local allFishGroupList = self.fishPoolInfo.allFishInfo
+  self._bornPos:SpawnObjects("UICN17N46FishingGameFish", self.fishPoolInfo.totalFish)
+  self._fishList = self._bornPos:GetAllSpawnList()
+  self._shawdowLayerPos:SpawnObjects("UICN17N46FishingGameFishShadow", self.fishPoolInfo.totalFish)
+  self._shadowList = self._shawdowLayerPos:GetAllSpawnList()
   local currentFishIndex = 1
-  for k,v in pairs(allFishGroupList) do
+  for k, v in pairs(allFishGroupList) do
     for j = 1, v.currentCount do
-      local bornAngel = (math.random)(-60, 60)
-      local bornPosX = (math.random)(-700, 700)
+      local bornAngel = math.random(-60, 60)
+      local bornPosX = math.random(-700, 700)
       local pos = Vector3(bornPosX, -500, 0)
       local rot = Vector3(0, 0, bornAngel)
-      local layer = (v.fishCfg).Layer
-      -- DECOMPILER ERROR at PC61: Confused about usage of register: R17 in 'UnsetPending'
-
-      ;
-      ((((self._fishList)[currentFishIndex]):GetGameObject()).transform).parent = ((self._layerList)[layer]).transform
-      ;
-      ((self._fishList)[currentFishIndex]):SetData(v.fishId, pos, rot, (self._shadowList)[currentFishIndex])
-      ;
-      ((self._fishList)[currentFishIndex]):SetCamera(self._camera)
+      local layer = v.fishCfg.Layer
+      self._fishList[currentFishIndex]:GetGameObject().transform.parent = self._layerList[layer].transform
+      self._fishList[currentFishIndex]:SetData(v.fishId, pos, rot, self._shadowList[currentFishIndex])
+      self._fishList[currentFishIndex]:SetCamera(self._camera)
       currentFishIndex = currentFishIndex + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.GenerateFish = function(self)
-  -- function num : 0_56 , upvalues : _ENV
-  local fishId = (self.fishPoolInfo):GenerateFish()
+function UICN17N46FishingGameController:GenerateFish()
+  local fishId = self.fishPoolInfo:GenerateFish()
   if fishId ~= -1 then
-    for k,v in pairs(self._fishList) do
+    for k, v in pairs(self._fishList) do
       if v.state == FishingFishState.Die then
-        local bornAngel = (math.random)(-60, 60)
-        local bornPosX = (math.random)(-700, 700)
+        local bornAngel = math.random(-60, 60)
+        local bornPosX = math.random(-700, 700)
         local pos = Vector3(bornPosX, -500, 0)
         local rot = Vector3(0, 0, bornAngel)
         v:SetData(fishId, pos, rot)
         v:SetCamera(self._camera)
-        -- DECOMPILER ERROR at PC50: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        ((v:GetGameObject()).transform).parent = ((self._layerList)[(v._fishCfg).Layer]).transform
+        v:GetGameObject().transform.parent = self._layerList[v._fishCfg.Layer].transform
         break
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.GetDisappearAndResetTime = function(self)
-  -- function num : 0_57 , upvalues : _ENV
-  local catchTime, resetTime = (self._cfg_minigame).CatchedFishDisappearTime, (self._cfg_minigame).CatchedFishNetRestTime
-  for i = 1, (table.count)((Cfg.cfg_fishing_fish)({})) do
-    for k,v in ipairs(self._catchedFishIdList) do
-      if ((Cfg.cfg_fishing_fish)[i]).ID == v then
-        catchTime = (math.max)(catchTime, ((Cfg.cfg_fishing_fish)[i]).CatchedTime)
-        resetTime = (math.max)(catchTime, ((Cfg.cfg_fishing_fish)[i]).FishNetResetTime)
+function UICN17N46FishingGameController:GetDisappearAndResetTime()
+  local catchTime, resetTime = self._cfg_minigame.CatchedFishDisappearTime, self._cfg_minigame.CatchedFishNetRestTime
+  for i = 1, table.count(Cfg.cfg_fishing_fish({})) do
+    for k, v in ipairs(self._catchedFishIdList) do
+      if Cfg.cfg_fishing_fish[i].ID == v then
+        catchTime = math.max(catchTime, Cfg.cfg_fishing_fish[i].CatchedTime)
+        resetTime = math.max(catchTime, Cfg.cfg_fishing_fish[i].FishNetResetTime)
       end
     end
   end
   return catchTime, resetTime
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.FishNetCloneShow = function(self, bShow)
-  -- function num : 0_58
-  (self._fishingNetHandleClone):SetActive(bShow)
+function UICN17N46FishingGameController:FishNetCloneShow(bShow)
+  self._fishingNetHandleClone:SetActive(bShow)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.AddOrderListItem = function(self, widget)
-  -- function num : 0_59 , upvalues : _ENV
+function UICN17N46FishingGameController:AddOrderListItem(widget)
   if not self._orderList then
     self._orderList = {}
   end
-  ;
-  (table.insert)(self._orderList, widget)
+  table.insert(self._orderList, widget)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ClearOrderList = function(self)
-  -- function num : 0_60
+function UICN17N46FishingGameController:ClearOrderList()
   self._orderList = {}
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ShowOrderItem = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function UICN17N46FishingGameController:ShowOrderItem()
   if self._caughtFish then
     if self._caughtRightFish then
-      for i,v in pairs(self._orderList) do
+      for i, v in pairs(self._orderList) do
         if v._index == self._currentFishIndex - 1 then
           v:PlayAnimation(1)
-          v:EffectDoTween(self._pathValues, 0.8, ((DG.Tweening).Ease).InOutCubic, function(pos)
-    -- function num : 0_61_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-    ((self._scoreEffect).transform).position = pos
-    ;
-    (self._scoreEffect):SetActive(true)
-    self.taskid_6 = self:StartTask(function(TT)
-      -- function num : 0_61_0_0 , upvalues : _ENV, self
-      YIELD(TT, 500)
-      if self.taskid_6 ~= nil then
-        (self._scoreEffect):SetActive(false)
-      end
-      self.taskid_6 = nil
-    end
-, self)
-  end
-)
+          v:EffectDoTween(self._pathValues, 0.8, DG.Tweening.Ease.InOutCubic, function(pos)
+            self._scoreEffect.transform.position = pos
+            self._scoreEffect:SetActive(true)
+            self.taskid_6 = self:StartTask(function(TT)
+              YIELD(TT, 500)
+              if self.taskid_6 ~= nil then
+                self._scoreEffect:SetActive(false)
+              end
+              self.taskid_6 = nil
+            end, self)
+          end)
         end
       end
     else
-      do
-        for i,v in pairs(self._orderList) do
-          if v._index == self._currentFishIndex then
-            v:PlayAnimation(3)
-          end
+      for i, v in pairs(self._orderList) do
+        if v._index == self._currentFishIndex then
+          v:PlayAnimation(3)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.OnOrderRefresh = function(self)
-  -- function num : 0_62 , upvalues : _ENV
+function UICN17N46FishingGameController:OnOrderRefresh()
   self.taskid_5 = self:StartTask(function(TT)
-    -- function num : 0_62_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):Lock("UICN17N46FishingAniLock")
+    GameGlobal.UIStateManager():Lock("UICN17N46FishingAniLock")
     self._isRefreshing = true
-    for i,v in pairs(self._orderList) do
+    for i, v in pairs(self._orderList) do
       v:PlayAnimation(4)
     end
     YIELD(TT, 1200)
     self._isRefreshing = false
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UICN17N46FishingAniLock")
+    GameGlobal.UIStateManager():UnLock("UICN17N46FishingAniLock")
     self.taskid_5 = nil
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._LoadSpine = function(self)
-  -- function num : 0_63 , upvalues : _ENV
+function UICN17N46FishingGameController:_LoadSpine()
   local spineName = "n14_g_4_spine_idle"
   local aniName = "1"
-  if (string.isnullorempty)(spineName) then
-    return 
+  if string.isnullorempty(spineName) then
+    return
   end
   self._spine = self:GetUIComponent("SpineLoader", "Spine")
   if not self._spineSke then
-    (self._spine):LoadSpine(spineName)
+    self._spine:LoadSpine(spineName)
   end
   if self._spine then
-    self._spineSke = (self._spine).CurrentSkeleton
+    self._spineSke = self._spine.CurrentSkeleton
     if not self._spineSke then
-      self._spineSke = (self._spine).CurrentMultiSkeleton
+      self._spineSke = self._spine.CurrentMultiSkeleton
     end
     if self._spineSke then
-      ((self._spineSke).AnimationState):SetAnimation(0, aniName, true)
+      self._spineSke.AnimationState:SetAnimation(0, aniName, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController.ShowClickEff = function(self, pointData)
-  -- function num : 0_64 , upvalues : _ENV
-  local mousePos = ((GameGlobal.EngineInput)()).mousePosition
-  local pos = (UIHelper.ScreenPointToWorldPointInRectangle)(((self._uieffClick).transform).parent, mousePos, self._camera)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._uieffClick).transform).position = pos
-  ;
-  (self._uieffClick):SetActive(true)
+function UICN17N46FishingGameController:ShowClickEff(pointData)
+  local mousePos = GameGlobal.EngineInput().mousePosition
+  local pos = UIHelper.ScreenPointToWorldPointInRectangle(self._uieffClick.transform.parent, mousePos, self._camera)
+  self._uieffClick.transform.position = pos
+  self._uieffClick:SetActive(true)
   self.taskid_4 = self:StartTask(function(TT)
-    -- function num : 0_64_0 , upvalues : _ENV, self
     YIELD(TT, 500)
     if self.taskid_4 ~= nil then
-      (self._uieffClick):SetActive(false)
+      self._uieffClick:SetActive(false)
     end
     self.taskid_4 = nil
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._Guideing = function(self)
-  -- function num : 0_65
-  return (self._guideModule):GuideInProgress()
+function UICN17N46FishingGameController:_Guideing()
+  return self._guideModule:GuideInProgress()
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._GuideCatchFishSuccess = function(self)
-  -- function num : 0_66 , upvalues : _ENV
+function UICN17N46FishingGameController:_GuideCatchFishSuccess()
   if self:_Guideing() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.OperationFinish)
-    ;
-    (self._fishingNetGuide):SetActive(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.OperationFinish)
+    self._fishingNetGuide:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._InitGuideFish = function(self)
-  -- function num : 0_67 , upvalues : _ENV
+function UICN17N46FishingGameController:_InitGuideFish()
   if not self:_Guideing() then
-    return 
+    return
   end
-  for _,_fish in pairs(self._fishList) do
+  for _, _fish in pairs(self._fishList) do
     local pos = Vector3(0, 0, 0)
     local rot = Vector3(0, 0, 0)
     _fish:ForceSetPosition(pos, rot)
   end
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._WhenGuideDone = function(self)
-  -- function num : 0_68 , upvalues : _ENV
-  self._cfg_fishgame_inner = ((Cfg.cfg_fishing_game_inner)({ID = (self._cfg_stage).ID}))[1]
-  ;
-  (self._roleSpine):LoadSpine((self._cfg_fishgame_inner).RoleSpine)
-  ;
-  (self._roleSpine):SetAnimation(0, (self._cfg_fishgame_inner).RoleNormalAnimName, true)
-  self.fishPoolInfo = FishingGameLevelInfo:New((self._cfg_fishgame_inner).FishInfo, (self._cfg_fishgame_inner).OrderFishInfo, (self._cfg_fishgame_inner).TotalFish, 0, 0)
-  self._currentOrder = ((self.fishPoolInfo).orderDetailInfo)[self._currentOrderIndex]
+function UICN17N46FishingGameController:_WhenGuideDone()
+  self._cfg_fishgame_inner = Cfg.cfg_fishing_game_inner({
+    ID = self._cfg_stage.ID
+  })[1]
+  self._roleSpine:LoadSpine(self._cfg_fishgame_inner.RoleSpine)
+  self._roleSpine:SetAnimation(0, self._cfg_fishgame_inner.RoleNormalAnimName, true)
+  self.fishPoolInfo = FishingGameLevelInfo:New(self._cfg_fishgame_inner.FishInfo, self._cfg_fishgame_inner.OrderFishInfo, self._cfg_fishgame_inner.TotalFish, 0, 0)
+  self._currentOrder = self.fishPoolInfo.orderDetailInfo[self._currentOrderIndex]
   self:InitializationOriginAllFish()
   self:OrderFinish()
   self:OnOrderRefresh()
-  ;
-  (LocalDB.SetInt)((self._roleModule):GetPstId() .. "FishingGuide", 1)
+  LocalDB.SetInt(self._roleModule:GetPstId() .. "FishingGuide", 1)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN17N46FishingGameController._ShowGuideStep = function(self, param)
-  -- function num : 0_69 , upvalues : _ENV
-  if (param.data).guideType == GuideType.OperationFinish then
-    (self._fishingNetGuide):SetActive(true)
+function UICN17N46FishingGameController:_ShowGuideStep(param)
+  if param.data.guideType == GuideType.OperationFinish then
+    self._fishingNetGuide:SetActive(true)
   end
 end
-
-

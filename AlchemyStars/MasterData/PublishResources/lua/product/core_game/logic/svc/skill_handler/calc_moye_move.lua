@@ -1,109 +1,76 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_moye_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_MoyeMove", Object)
 SkillEffectCalc_MoyeMove = SkillEffectCalc_MoyeMove
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_MoyeMove.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_MoyeMove:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoyeMove.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_MoyeMove:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   local activeSkillPickUpCmpt = casterEntity:ActiveSkillPickUpComponent()
   if not activeSkillPickUpCmpt then
-    return 
+    return
   end
   local chainPath = activeSkillPickUpCmpt:GetAllValidPickUpGridPos()
   local linkCount = #chainPath
   if linkCount <= 1 then
-    return 
+    return
   end
-  local utilDataSvc = ((self._world):GetService("UtilData"))
-  local remoteTeamPos = nil
-  do
-    if (self._world):MatchType() == MatchType.MT_BlackFist then
-      local remoteTeam = ((self._world):Player()):GetRemoteTeamEntity()
-      if remoteTeam then
-        remoteTeamPos = remoteTeam:GetGridPosition()
-      end
-    end
-    local finalPos = nil
-    for i = #chainPath, 1, -1 do
-      local isOccupied = utilDataSvc:IsHaveEntity(chainPath[i], EnumTargetEntity.Monster | EnumTargetEntity.Pet)
-      if not isOccupied and remoteTeamPos ~= chainPath[i] then
-        finalPos = chainPath[i]
-        break
-      end
-    end
-    do
-      if not finalPos then
-        finalPos = self:_GetAroundValidGrid(chainPath[#chainPath])
-      end
-      if not finalPos then
-        finalPos = casterEntity:GetGridPosition()
-      end
-      local effectResult = SkillEffectResultMoyeMove:New()
-      local teleportRes = self:CalculateTeleportResult(skillEffectCalcParam, finalPos)
-      effectResult:SetTeleportResult(teleportRes)
-      return {effectResult}
+  local utilDataSvc = self._world:GetService("UtilData")
+  local remoteTeamPos
+  if self._world:MatchType() == MatchType.MT_BlackFist then
+    local remoteTeam = self._world:Player():GetRemoteTeamEntity()
+    if remoteTeam then
+      remoteTeamPos = remoteTeam:GetGridPosition()
     end
   end
+  local finalPos
+  for i = #chainPath, 1, -1 do
+    local isOccupied = utilDataSvc:IsHaveEntity(chainPath[i], EnumTargetEntity.Monster | EnumTargetEntity.Pet)
+    if not isOccupied and remoteTeamPos ~= chainPath[i] then
+      finalPos = chainPath[i]
+      break
+    end
+  end
+  finalPos = finalPos or self:_GetAroundValidGrid(chainPath[#chainPath])
+  finalPos = finalPos or casterEntity:GetGridPosition()
+  local effectResult = SkillEffectResultMoyeMove:New()
+  local teleportRes = self:CalculateTeleportResult(skillEffectCalcParam, finalPos)
+  effectResult:SetTeleportResult(teleportRes)
+  return {effectResult}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoyeMove.CalculateTeleportResult = function(self, skillEffectCalcParam, finalPos)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_MoyeMove:CalculateTeleportResult(skillEffectCalcParam, finalPos)
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local pieceType = param:GetConvertType()
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
-  local casterPos = (casterEntity:GetGridPosition()):Clone()
-  do
-    if not pieceType then
-      local boardServiceLogic = (self._world):GetService("BoardLogic")
-      boardServiceLogic:RemoveEntityBlockFlag(casterEntity, casterPos)
-      pieceType = ((boardServiceLogic:SupplyPieceList({casterPos}))[1]).color
-    end
-    local dir = (casterEntity:GetGridDirection()):Clone()
-    local result = SkillEffectResult_Teleport:New(casterEntityID, casterPos, pieceType, finalPos, dir)
-    return result
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
+  local casterPos = casterEntity:GetGridPosition():Clone()
+  if not pieceType then
+    local boardServiceLogic = self._world:GetService("BoardLogic")
+    boardServiceLogic:RemoveEntityBlockFlag(casterEntity, casterPos)
+    pieceType = boardServiceLogic:SupplyPieceList({casterPos})[1].color
   end
+  local dir = casterEntity:GetGridDirection():Clone()
+  local result = SkillEffectResult_Teleport:New(casterEntityID, casterPos, pieceType, finalPos, dir)
+  return result
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MoyeMove._GetAroundValidGrid = function(self, grid)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_MoyeMove:_GetAroundValidGrid(grid)
   local around = {
-{-1, -1}
-, 
-{-1, 0}
-, 
-{-1, 1}
-, 
-{0, 1}
-, 
-{1, 1}
-, 
-{1, 0}
-, 
-{1, -1}
-, 
-{0, -1}
-}
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+    {-1, -1},
+    {-1, 0},
+    {-1, 1},
+    {0, 1},
+    {1, 1},
+    {1, 0},
+    {1, -1},
+    {0, -1}
+  }
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local finded = false
-  for _,offset in ipairs(around) do
+  for _, offset in ipairs(around) do
     local targetGrid = grid + offset
     if not boardServiceLogic:IsPosBlock(targetGrid, BlockFlag.LinkLine) then
       finded = true
@@ -115,11 +82,9 @@ SkillEffectCalc_MoyeMove._GetAroundValidGrid = function(self, grid)
       self._index = 0
     end
     self._index = self._index + 1
-    if #around < self._index then
+    if self._index > #around then
       self._index = #around
     end
     self:_GetAroundValidGrid(grid + around[self._index])
   end
 end
-
-

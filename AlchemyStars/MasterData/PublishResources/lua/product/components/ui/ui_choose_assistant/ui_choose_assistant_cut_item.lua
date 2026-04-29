@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_assistant_cut_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseAssistantCutItem", UICustomWidget)
 UIChooseAssistantCutItem = UIChooseAssistantCutItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseAssistantCutItem.OnShow = function(self)
-  -- function num : 0_0
+function UIChooseAssistantCutItem:OnShow()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantCutItem.SetData = function(self, idx, data)
-  -- function num : 0_1
+function UIChooseAssistantCutItem:SetData(idx, data)
   self._idx = idx
   self._data = data
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantCutItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIChooseAssistantCutItem:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseAssistantCutItem._OnValue = function(self)
-  -- function num : 0_3
+function UIChooseAssistantCutItem:_OnValue()
 end
-
-

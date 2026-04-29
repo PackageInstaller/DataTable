@@ -1,68 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/ui_module/ui_guide_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGuideModule", UIModule)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGuideModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIGuideModule:Constructor()
   self.uiContainer = {}
-  self.uiRoot = (((UnityEngine.GameObject).Find)("Hidden")).transform
+  self.uiRoot = UnityEngine.GameObject.Find("Hidden").transform
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideModule.Dispose = function(self)
-  -- function num : 0_1
+function UIGuideModule:Dispose()
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideModule.CreateUICustomWidget = function(self, uiCustomWidgetName)
-  -- function num : 0_2 , upvalues : _ENV
+function UIGuideModule:CreateUICustomWidget(uiCustomWidgetName)
   local uiCustomWidget = _createInstance(uiCustomWidgetName)
   if not uiCustomWidget then
-    (Log.fatal)("[UI] GuideModule:CreateUICustomWidget Error, No UICustomWidget of name = ", uiCustomWidgetName)
+    Log.fatal("[UI] GuideModule:CreateUICustomWidget Error, No UICustomWidget of name = ", uiCustomWidgetName)
   else
     uiCustomWidget:SetName(uiCustomWidgetName)
   end
   return uiCustomWidget
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideModule.GetUI = function(self, name, prefab)
-  -- function num : 0_3 , upvalues : _ENV
-  local ui = (table.remove)(self.uiContainer, #self.uiContainer)
+function UIGuideModule:GetUI(name, prefab)
+  local ui = table.remove(self.uiContainer, #self.uiContainer)
   if ui then
     ui:Show()
     return ui
   end
-  local go = (UIHelper.GetGameObject)(prefab)
+  local go = UIHelper.GetGameObject(prefab)
   local guide = self:CreateUICustomWidget(name)
   if not guide then
-    (Log.fatal)("[UI] CreateUICustomWidget Error, ", name)
-    return 
+    Log.fatal("[UI] CreateUICustomWidget Error, ", name)
+    return
   end
   local view = go:GetComponent("UIView")
   if not view then
-    (Log.fatal)("[UI] UICustomWidget Error, View is Null ", name)
-    return 
+    Log.fatal("[UI] UICustomWidget Error, View is Null ", name)
+    return
   end
   guide:Load(view, self.parent)
   return guide
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideModule.PushUI = function(self, ui)
-  -- function num : 0_4 , upvalues : _ENV
-  (table.insert)(self.uiContainer, ui)
+function UIGuideModule:PushUI(ui)
+  table.insert(self.uiContainer, ui)
   ui:Hide()
-  ;
-  (((ui:View()):GetGameObject()).transform):SetParent(self.uiRoot, false)
+  ui:View():GetGameObject().transform:SetParent(self.uiRoot, false)
 end
-
-

@@ -1,50 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_pickup_grid_together.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResult_PickUpGridTogether", SkillEffectResultBase)
 SkillEffectResult_PickUpGridTogether = SkillEffectResult_PickUpGridTogether
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_PickUpGridTogether.Constructor = function(self, newGridDataList)
-  -- function num : 0_0
+function SkillEffectResult_PickUpGridTogether:Constructor(newGridDataList)
   self._newGridDataList = newGridDataList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_PickUpGridTogether.GetNewGridDataList = function(self)
-  -- function num : 0_1
+function SkillEffectResult_PickUpGridTogether:GetNewGridDataList()
   return self._newGridDataList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_PickUpGridTogether.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectResult_PickUpGridTogether:GetEffectType()
   return SkillEffectType.PickUpGridTogether
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_PickUpGridTogether.GetPosList = function(self)
-  -- function num : 0_3
+function SkillEffectResult_PickUpGridTogether:GetPosList()
   return self._posList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_PickUpGridTogether.GetOldGridTypeList = function(self)
-  -- function num : 0_4
+function SkillEffectResult_PickUpGridTogether:GetOldGridTypeList()
   return self._oldGridTypeList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_PickUpGridTogether.GetNewGridTypeList = function(self)
-  -- function num : 0_5
+function SkillEffectResult_PickUpGridTogether:GetNewGridTypeList()
   return self._newGridTypeList
 end
-
-

@@ -1,8 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/n34/str_n34.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n34_activity_remain_time = "活動剩餘時間：{1}", str_n34_activity_survey_level_remain_time = "活動剩餘時間：{1}", str_n34_activity_survey_level_lock_mission_tips = "未解鎖前置關卡", str_n34_activity_survey_level_lock_time_tips = "活動未開啟", str_n34_activity_dispath_level_remain_time = "活動剩餘時間：{1}", str_n34_activity_dispatch_level_lock_time_tips = "{1}後解鎖", str_n34_activity_dispatch_level_lock_mission_tips = "關卡未解鎖", str_n34_day = "{1}天", str_n34_hour = "{1}小時", str_n34_minus = "{1}分鐘", str_n34_less_one_minus = "<1分鐘", str_n34_activity_end = "活動已結束", str_n34_activity_intro_title = "【日落線上的交響】活動說明", str_n34_activity_intro_head_1 = "【可用人力】取得方式", str_n34_activity_intro_body_1 = "1.活動期間，完成消耗稜鏡的主線或資源整備關卡時，可獲得一定數量的【可用人力】。\n2.活動結束前三天，上述關卡不再掉落【可用人力】。", str_n34_activity_intro_head_2 = "【可用人力】道具使用", str_n34_activity_intro_body_2 = "1.活動期間，可在【黃昏鎮的權略】玩法中，消耗【可用人力】完成同僚的委託，獲得獎勵。\n2.當【可用人力】停止掉落後，【黃昏鎮的權略】還會開放3天，請及時使用存餘的【可用人力】。\n3.【黃昏鎮的權略】關閉後，未使用的【可用人力】將按照1:10的比例轉換成白夜幣。", str_n34_activity_intro_head_3 = "【黃昏鎮的權略】玩法說明", str_n34_activity_intro_body_3 = "1.雷霆大元帥開始重建黃昏鎮的秩序，吸引了啟光同僚們的關注！一鼓作氣完成所有同僚們的權略委託，獲得每個同僚專屬的認可報告書吧！\n2.消耗【可用人力】可以完成同僚們的權略委託，從而增加同僚們的認可度。\n3.完成所有委託，即可獲得每個同僚專屬的【報告書】，查看同僚們對雷霆大元帥的評價。\n4.獲得所有同僚的【報告書】後，即可獲得由啟光聯邦頒發的【傑出服務勳章】以及其他豐厚獎勵。", str_n34_activity_intro_head_4 = "【漸進暮色】玩法說明", str_n34_activity_intro_body_4 = "1.為了摸清暗鬼們的計畫，雷霆大元帥決定派遣先遣隊前往黃昏鎮周邊的晨昏線邊界進行調查。\n2.根據情報，本次任務共需要前往7個可疑區域進行調查，每次調查都需要消耗一定時間才能完成。\n3.調查過程中先遣隊會定期進行行動匯報，導航員可以查看調查用終端通信裝置了解行動進展。\n4.完成每個區域的調查後，先遣隊會及時向雷霆大元帥進行通訊匯報。一起揭曉暗鬼的計畫吧！", str_n34_activity_login_btn = "新軍簽到", str_n34_main_entry_tips1 = "黃昏鎮的謀略玩法已開放", str_n34_main_entry_tips2 = "漸進暮色玩法已開放", str_n34_activity_event_btn = "特別事件簿", str_n34_activity_main_tip = "活動說明"}
+local config = {
+  str_n34_activity_remain_time = "活動剩餘時間：{1}",
+  str_n34_activity_survey_level_remain_time = "活動剩餘時間：{1}",
+  str_n34_activity_survey_level_lock_mission_tips = "未解鎖前置關卡",
+  str_n34_activity_survey_level_lock_time_tips = "活動未開啟",
+  str_n34_activity_dispath_level_remain_time = "活動剩餘時間：{1}",
+  str_n34_activity_dispatch_level_lock_time_tips = "{1}後解鎖",
+  str_n34_activity_dispatch_level_lock_mission_tips = "關卡未解鎖",
+  str_n34_day = "{1}天",
+  str_n34_hour = "{1}小時",
+  str_n34_minus = "{1}分鐘",
+  str_n34_less_one_minus = "<1分鐘",
+  str_n34_activity_end = "活動已結束",
+  str_n34_activity_intro_title = "【日落線上的交響】活動說明",
+  str_n34_activity_intro_head_1 = "【可用人力】取得方式",
+  str_n34_activity_intro_body_1 = "1.活動期間，完成消耗稜鏡的主線或資源整備關卡時，可獲得一定數量的【可用人力】。\n2.活動結束前三天，上述關卡不再掉落【可用人力】。",
+  str_n34_activity_intro_head_2 = "【可用人力】道具使用",
+  str_n34_activity_intro_body_2 = "1.活動期間，可在【黃昏鎮的權略】玩法中，消耗【可用人力】完成同僚的委託，獲得獎勵。\n2.當【可用人力】停止掉落後，【黃昏鎮的權略】還會開放3天，請及時使用存餘的【可用人力】。\n3.【黃昏鎮的權略】關閉後，未使用的【可用人力】將按照1:10的比例轉換成白夜幣。",
+  str_n34_activity_intro_head_3 = "【黃昏鎮的權略】玩法說明",
+  str_n34_activity_intro_body_3 = "1.雷霆大元帥開始重建黃昏鎮的秩序，吸引了啟光同僚們的關注！一鼓作氣完成所有同僚們的權略委託，獲得每個同僚專屬的認可報告書吧！\n2.消耗【可用人力】可以完成同僚們的權略委託，從而增加同僚們的認可度。\n3.完成所有委託，即可獲得每個同僚專屬的【報告書】，查看同僚們對雷霆大元帥的評價。\n4.獲得所有同僚的【報告書】後，即可獲得由啟光聯邦頒發的【傑出服務勳章】以及其他豐厚獎勵。",
+  str_n34_activity_intro_head_4 = "【漸進暮色】玩法說明",
+  str_n34_activity_intro_body_4 = "1.為了摸清暗鬼們的計畫，雷霆大元帥決定派遣先遣隊前往黃昏鎮周邊的晨昏線邊界進行調查。\n2.根據情報，本次任務共需要前往7個可疑區域進行調查，每次調查都需要消耗一定時間才能完成。\n3.調查過程中先遣隊會定期進行行動匯報，導航員可以查看調查用終端通信裝置了解行動進展。\n4.完成每個區域的調查後，先遣隊會及時向雷霆大元帥進行通訊匯報。一起揭曉暗鬼的計畫吧！",
+  str_n34_activity_login_btn = "新軍簽到",
+  str_n34_main_entry_tips1 = "黃昏鎮的謀略玩法已開放",
+  str_n34_main_entry_tips2 = "漸進暮色玩法已開放",
+  str_n34_activity_event_btn = "特別事件簿",
+  str_n34_activity_main_tip = "活動說明"
+}
 return config
-

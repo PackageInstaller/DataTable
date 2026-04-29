@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_high_frequency_damage_and_traction_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayHighFrequencyDamageAndTractionInstruction", BaseInstruction)
 PlayHighFrequencyDamageAndTractionInstruction = PlayHighFrequencyDamageAndTractionInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayHighFrequencyDamageAndTractionInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayHighFrequencyDamageAndTractionInstruction:Constructor(paramList)
   self._damageFxID = tonumber(paramList.damageFxID)
   self._tractionCenterFxID = tonumber(paramList.tractionCenterFxID)
   self._hitAnimName = paramList.hitAnimName
@@ -19,32 +12,26 @@ PlayHighFrequencyDamageAndTractionInstruction.Constructor = function(self, param
   self._paramList = paramList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHighFrequencyDamageAndTractionInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayHighFrequencyDamageAndTractionInstruction:GetCacheResource()
   local t = {}
   local damageFxPath = self:GetEffectResCacheInfo(self._damageFxID, 8)
   if damageFxPath then
-    (table.insert)(t, damageFxPath)
+    table.insert(t, damageFxPath)
   end
   local tractionCenterFxPath = self:GetEffectResCacheInfo(self._tractionCenterFxID)
   if tractionCenterFxPath then
-    (table.insert)(t, tractionCenterFxPath)
+    table.insert(t, tractionCenterFxPath)
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHighFrequencyDamageAndTractionInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local resContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayHighFrequencyDamageAndTractionInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local resContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = resContainer:GetEffectResultByArrayAll(SkillEffectType.HighFrequencyDamage)
   local skillID = resContainer:GetSkillID()
   local lastDamageResult = self:_DoHighFrequencyDamage(TT, casterEntity, phaseContext, results[1], skillID)
   if not lastDamageResult then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local fxsvc = world:GetService("Effect")
@@ -53,8 +40,8 @@ PlayHighFrequencyDamageAndTractionInstruction.DoInstruction = function(self, TT,
   local v2RenderGridPosition = eFirstTarget:GetRenderGridPosition()
   fxsvc:CreateWorldPositionEffect(self._tractionCenterFxID, v2RenderGridPosition)
   local tractionResultArray = resContainer:GetEffectResultByArrayAll(SkillEffectType.MultiTraction)
-  if tractionResultArray and #tractionResultArray > 0 then
-    if self._beforeTractionTime > 0 then
+  if tractionResultArray and 0 < #tractionResultArray then
+    if 0 < self._beforeTractionTime then
       YIELD(TT, self._beforeTractionTime)
     end
     local tractionInst = PlayMultiTractionInstruction:New(self._paramList)
@@ -62,24 +49,21 @@ PlayHighFrequencyDamageAndTractionInstruction.DoInstruction = function(self, TT,
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayHighFrequencyDamageAndTractionInstruction._DoHighFrequencyDamage = function(self, TT, casterEntity, phaseContext, result, skillID)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayHighFrequencyDamageAndTractionInstruction:_DoHighFrequencyDamage(TT, casterEntity, phaseContext, result, skillID)
   local damageResults = result:GetDamageResultArray()
   if #damageResults == 0 then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local fxsvc = world:GetService("Effect")
-  if self._startupFxTime > 0 then
+  if 0 < self._startupFxTime then
     YIELD(TT, self._startupFxTime)
   end
   local finalAttackIndex = result:GetFinalAttackIndex()
   local curDamageInfoIndex = phaseContext:GetCurDamageInfoIndex()
   local playSkillService = world:GetService("PlaySkill")
   local playBuffSvc = world:GetService("PlayBuff")
-  for index,damageResult in ipairs(damageResults) do
+  for index, damageResult in ipairs(damageResults) do
     local nt = NTBeforeHighFrequencyDamageHit:New(casterEntity, index)
     playBuffSvc:PlayBuffView(TT, nt)
     local targetID = damageResult:GetTargetID()
@@ -87,16 +71,13 @@ PlayHighFrequencyDamageAndTractionInstruction._DoHighFrequencyDamage = function(
     local damageInfo = damageResult:GetDamageInfo(curDamageInfoIndex)
     local damageGridPos = damageResult:GetGridPos()
     local playFinalAttack = playSkillService:GetFinalAttack(world, casterEntity, phaseContext)
-    local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(self._damageFxID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(true)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(index == finalAttackIndex)):SetHandleBeHitParam_SkillID(skillID)
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(self._damageFxID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(true):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(index == finalAttackIndex):SetHandleBeHitParam_SkillID(skillID)
     playSkillService:HandleBeHit(TT, beHitParam)
     local ntAfter = NTAfterHighFrequencyDamageHit:New(casterEntity, index)
     playBuffSvc:PlayBuffView(TT, ntAfter)
-    if self._eachDamageTime > 0 then
+    if 0 < self._eachDamageTime then
       YIELD(TT, self._eachDamageTime)
     end
   end
-  do return damageResults[#damageResults] end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return damageResults[#damageResults]
 end
-
-

@@ -1,12 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_globalboss_mission.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, CampaignMissionID = 2, ComponentID = 3, MissionIcon = 4, MissionName = 5, MissionBKImg = 6, MissionDec = 7}
-local common = {"mission_2900271_Hccard"}
+local key = {
+  ID = 1,
+  CampaignMissionID = 2,
+  ComponentID = 3,
+  MissionIcon = 4,
+  MissionName = 5,
+  MissionBKImg = 6,
+  MissionDec = 7
+}
+local common = {
+  "mission_2900271_Hccard"
+}
 local config = {
-{1, 10001, 107602607, common[1], "str_n25_battlefield_mission_name1", common[1], "str_n25_battlefield_mission_desc1"}
+  {
+    1,
+    10001,
+    107602607,
+    common[1],
+    "str_n25_battlefield_mission_name1",
+    common[1],
+    "str_n25_battlefield_mission_desc1"
+  }
 }
 return config, "ID", key
-

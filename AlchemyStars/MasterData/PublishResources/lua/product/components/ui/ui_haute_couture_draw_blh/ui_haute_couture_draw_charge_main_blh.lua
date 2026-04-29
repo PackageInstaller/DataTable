@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_blh/ui_haute_couture_draw_charge_main_blh.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawChargeMainBLH", UIHauteCoutureDrawChargeBase)
 UIHauteCoutureDrawChargeMainBLH = UIHauteCoutureDrawChargeMainBLH
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawChargeMainBLH.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawChargeMainBLH:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainBLH.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHauteCoutureDrawChargeMainBLH:OnShow(uiParams)
   self:InitWidgets()
   self:_OnValue()
   self:AddEventBase()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainBLH.InitWidgets = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDrawChargeMainBLH:InitWidgets()
   self:InitWidgetsBase()
   self:RemoveEventBase()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainBLH._OnValue = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawChargeMainBLH:_OnValue()
   self:_OnValueBase()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeMainBLH.GetItemImpl = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDrawChargeMainBLH:GetItemImpl()
   return "UIHauteCoutureDrawChargeItemBLH"
 end
-
-

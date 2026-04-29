@@ -1,32 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/bead/ui_season_maze_bead_intro_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBeadIntroItem", UICustomWidget)
 UISeasonMazeBeadIntroItem = UISeasonMazeBeadIntroItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBeadIntroItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeBeadIntroItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadIntroItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeBeadIntroItem:InitWidget()
   self.title = self:GetUIComponent("UILocalizationText", "Title")
   self.desc = self:GetUIComponent("UILocalizationText", "Desc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadIntroItem.SetData = function(self, data)
-  -- function num : 0_2
-  (self.title):SetText(data.title)
-  ;
-  (self.desc):SetText(data.desc)
+function UISeasonMazeBeadIntroItem:SetData(data)
+  self.title:SetText(data.title)
+  self.desc:SetText(data.desc)
 end
-
-

@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_master_skill_teleport.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureMasterSkillTeleport", UIWidgetFeatureMasterSkill)
 UIWidgetFeatureMasterSkillTeleport = UIWidgetFeatureMasterSkillTeleport
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureMasterSkillTeleport.GetFeatureType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetFeatureMasterSkillTeleport:GetFeatureType()
   return FeatureType.MasterSkillTeleport
 end
-
-

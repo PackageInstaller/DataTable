@@ -1,9 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/editor_story_enter_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 return {
-EnterParam = {StoryID = 2, ParagraphID = 1, SectionID = 1}
+  EnterParam = {
+    StoryID = 2,
+    ParagraphID = 1,
+    SectionID = 1
+  }
 }
-

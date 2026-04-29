@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/fish/ui_homeland_minimap_detail_fish.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailFish", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailFish = UIHomelandMinimapDetailFish
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailFish.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandMinimapDetailFish:OnShow(uiParams)
   self._fish = self:GetGameObject("FishIcon")
   self._goldFish = self:GetGameObject("GoldFishIcon")
   self._goldPetFish = self:GetGameObject("GoldPetFishIcon")
@@ -19,96 +12,62 @@ UIHomelandMinimapDetailFish.OnShow = function(self, uiParams)
   self._contentList = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailFish.OnInitDone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local fishCfgID = (self:GetIconData()):GetParam()
-  self.cfg = (HomelandFishingConst.GetFishingPositionCfg)(fishCfgID)
-  self.fishingPointType = (self.cfg).Type
+function UIHomelandMinimapDetailFish:OnInitDone()
+  local fishCfgID = self:GetIconData():GetParam()
+  self.cfg = HomelandFishingConst.GetFishingPositionCfg(fishCfgID)
+  self.fishingPointType = self.cfg.Type
   if self.fishingPointType == HomelandFishingPointType.Normal then
-    (self._fish):SetActive(true)
-    ;
-    (self._nameTxt):SetText((StringTable.Get)("str_homeland_minimap_detail_title_fish"))
-    ;
-    (self._commonContentTxt):SetText((StringTable.Get)("str_homeland_minimap_detail_desc_fish"))
+    self._fish:SetActive(true)
+    self._nameTxt:SetText(StringTable.Get("str_homeland_minimap_detail_title_fish"))
+    self._commonContentTxt:SetText(StringTable.Get("str_homeland_minimap_detail_desc_fish"))
     self:ShowDetailContent()
-  else
-    if self.fishingPointType == HomelandFishingPointType.Gold then
-      (self._goldFish):SetActive(true)
-      ;
-      (self._nameTxt):SetText((StringTable.Get)("str_homeland_minimap_detail_title_goldfish"))
-      ;
-      (self._commonContentTxt):SetText((StringTable.Get)("str_homeland_minimap_detail_desc_goldfish"))
-      self:ShowDetailContent()
-    else
-      if self.fishingPointType == HomelandFishingPointType.GoldPetFish then
-        (self._goldPetFish):SetActive(true)
-        ;
-        (self._nameTxt):SetText((StringTable.Get)("str_homeland_minimap_detail_title_goldpetfish"))
-        ;
-        (self._commonContentTxt):SetText((StringTable.Get)("str_homeland_minimap_detail_desc_goldpetfish"))
-        self:ShowDetailContent()
-      else
-        if self.fishingPointType == HomelandFishingPointType.Box then
-          (self._box):SetActive(true)
-          ;
-          (self._nameTxt):SetText((StringTable.Get)("str_homeland_minimap_detail_title_box"))
-          ;
-          (self._commonContentTxt):SetText((StringTable.Get)("str_homeland_minimap_detail_desc_box"))
-        end
-      end
-    end
+  elseif self.fishingPointType == HomelandFishingPointType.Gold then
+    self._goldFish:SetActive(true)
+    self._nameTxt:SetText(StringTable.Get("str_homeland_minimap_detail_title_goldfish"))
+    self._commonContentTxt:SetText(StringTable.Get("str_homeland_minimap_detail_desc_goldfish"))
+    self:ShowDetailContent()
+  elseif self.fishingPointType == HomelandFishingPointType.GoldPetFish then
+    self._goldPetFish:SetActive(true)
+    self._nameTxt:SetText(StringTable.Get("str_homeland_minimap_detail_title_goldpetfish"))
+    self._commonContentTxt:SetText(StringTable.Get("str_homeland_minimap_detail_desc_goldpetfish"))
+    self:ShowDetailContent()
+  elseif self.fishingPointType == HomelandFishingPointType.Box then
+    self._box:SetActive(true)
+    self._nameTxt:SetText(StringTable.Get("str_homeland_minimap_detail_title_box"))
+    self._commonContentTxt:SetText(StringTable.Get("str_homeland_minimap_detail_desc_box"))
   end
   self._titleRect = self:GetUIComponent("RectTransform", "Title")
   if self._titleRect then
-    local titleWidth = (self._nameTxt).preferredWidth
-    if titleWidth > 350 then
+    local titleWidth = self._nameTxt.preferredWidth
+    if 350 < titleWidth then
       titleWidth = 350
     end
-    -- DECOMPILER ERROR at PC133: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailFish.ShowDetailContent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._detailGO):SetActive(true)
-  local dropInfo = (self.cfg).DropInfo
+function UIHomelandMinimapDetailFish:ShowDetailContent()
+  self._detailGO:SetActive(true)
+  local dropInfo = self.cfg.DropInfo
   if not dropInfo or #dropInfo == 0 then
-    return 
+    return
   end
-  local itemList = (self._contentList):SpawnObjects("UIHomelandMinimapDetailFishItem", #dropInfo)
-  for i,item in ipairs(itemList) do
-    item:SetData((dropInfo[i])[1], (dropInfo[i])[2])
+  local itemList = self._contentList:SpawnObjects("UIHomelandMinimapDetailFishItem", #dropInfo)
+  for i, item in ipairs(itemList) do
+    item:SetData(dropInfo[i][1], dropInfo[i][2])
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailFish.ExitOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailFish:ExitOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailFish.BtnBGOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailFish:BtnBGOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailFish.GetCloseAnimtionName = function(self)
-  -- function num : 0_5
+function UIHomelandMinimapDetailFish:GetCloseAnimtionName()
   return "UIHomelandMinimapDetailFish_out"
 end
-
-

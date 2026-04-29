@@ -1,34 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_layer_by_damaged_record.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetLayerByDamagedRecord", BuffLogicBase)
 BuffLogicSetLayerByDamagedRecord = BuffLogicSetLayerByDamagedRecord
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetLayerByDamagedRecord.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetLayerByDamagedRecord:Constructor(buffInstance, logicParam)
   self._hpPercentPerLayer = logicParam.hpPercentPerLayer or 1
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._entity = buffInstance._entity
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._entity = buffInstance._entity
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetLayerByDamagedRecord.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._entity):HasDamageStatisticsComponent() then
-    local totalDamage = ((self._entity):DamageStatisticsComponent()):GetTotalDamage()
-    if totalDamage > 0 then
-      local attrCmpt = (self._entity):Attributes()
+function BuffLogicSetLayerByDamagedRecord:DoLogic()
+  if self._entity:HasDamageStatisticsComponent() then
+    local totalDamage = self._entity:DamageStatisticsComponent():GetTotalDamage()
+    if 0 < totalDamage then
+      local attrCmpt = self._entity:Attributes()
       local max_hp = attrCmpt:CalcMaxHp()
-      if max_hp > 0 then
+      if 0 < max_hp then
         local totalRate = totalDamage / max_hp
-        local layerCount = (math.floor)(totalRate / self._hpPercentPerLayer)
-        local svc = (self._world):GetService("BuffLogic")
+        local layerCount = math.floor(totalRate / self._hpPercentPerLayer)
+        local svc = self._world:GetService("BuffLogic")
         svc:SetBuffLayer(self._entity, self._layerType, layerCount)
         local buffResult = BuffResultAddLayer:New(layerCount)
         return buffResult
@@ -36,5 +24,3 @@ BuffLogicSetLayerByDamagedRecord.DoLogic = function(self)
     end
   end
 end
-
-

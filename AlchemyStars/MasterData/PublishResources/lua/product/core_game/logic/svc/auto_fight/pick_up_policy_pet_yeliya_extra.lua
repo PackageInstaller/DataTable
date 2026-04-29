@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_pet_yeliya_extra.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pick_up_policy_base")
 _class("PickUpPolicy_PetYeliyaExtra", PickUpPolicy_Base)
 PickUpPolicy_PetYeliyaExtra = PickUpPolicy_PetYeliyaExtra
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_PetYeliyaExtra.CalcAutoFightPickUpPolicy = function(self, calcParam)
-  -- function num : 0_0
+function PickUpPolicy_PetYeliyaExtra:CalcAutoFightPickUpPolicy(calcParam)
   local petEntity = calcParam.petEntity
   local activeSkillID = calcParam.activeSkillID
   local policyParam = calcParam.policyParam
-  local casterPos = (petEntity:GridLocation()).Position
+  local casterPos = petEntity:GridLocation().Position
   local pickPosList = {}
   local attackPosList = {}
   local targetIdList = {}
@@ -22,11 +15,8 @@ PickUpPolicy_PetYeliyaExtra.CalcAutoFightPickUpPolicy = function(self, calcParam
   return pickPosList, atkPosList, targetIds, extraParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetYeliyaExtra._CalPickPosPolicy_PetYeliyaExtra = function(self, petEntity, activeSkillID, casterPos, validPosIdxList)
-  -- function num : 0_1 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function PickUpPolicy_PetYeliyaExtra:_CalPickPosPolicy_PetYeliyaExtra(petEntity, activeSkillID, casterPos, validPosIdxList)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID)
   local checkDamageSkillID = 30018411
   local policyParam = skillConfigData:GetAutoFightPickPosPolicyParam()
@@ -36,33 +26,30 @@ PickUpPolicy_PetYeliyaExtra._CalPickPosPolicy_PetYeliyaExtra = function(self, pe
   local pickPosList = {}
   local retScopeResult = {}
   local retTargetIds = {}
-  local testPickPos = nil
+  local testPickPos
   local tmpPickList = {}
   testPickPos = self:_YeliyaFindValidPosWithMaxTargetCount(petEntity, casterPos, validPosIdxList, tmpPickList, checkDamageSkillID)
   if testPickPos then
-    (table.insert)(pickPosList, testPickPos)
+    table.insert(pickPosList, testPickPos)
   else
     return {}, {}, {}
   end
   return pickPosList, retScopeResult, retTargetIds
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpPolicy_PetYeliyaExtra._YeliyaFindValidPosWithMaxTargetCount = function(self, petEntity, centerPos, validPosIdxList, alreadyPickList, checkDamageSkillID)
-  -- function num : 0_2 , upvalues : _ENV
-  local pickPos = nil
+function PickUpPolicy_PetYeliyaExtra:_YeliyaFindValidPosWithMaxTargetCount(petEntity, centerPos, validPosIdxList, alreadyPickList, checkDamageSkillID)
+  local pickPos
   checkDamageSkillID = 30018411
-  local boardService = (self._world):GetService("BoardLogic")
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
   local centerPosIndex = self:_Pos2Index(centerPos)
   local maxTargetCount = 0
-  local maxTargetPos = nil
-  for _,off in ipairs(ringMax) do
+  local maxTargetPos
+  for _, off in ipairs(ringMax) do
     local posIdx = self:_PosIndexAddOffset(centerPosIndex, off)
     if validPosIdxList[posIdx] then
       local pos = self:_Index2Pos(posIdx)
-      if not (table.icontains)(alreadyPickList, pos) then
+      if not table.icontains(alreadyPickList, pos) then
         local isBlockedLinkLine = boardService:IsPosBlock(pos, BlockFlag.LinkLine)
         if not isBlockedLinkLine then
           local result, targetIds = self:_CalcSkillScopeResultAndTargets_PickUpPolicy(petEntity, checkDamageSkillID, pos)
@@ -82,5 +69,3 @@ PickUpPolicy_PetYeliyaExtra._YeliyaFindValidPosWithMaxTargetCount = function(sel
   end
   return pickPos
 end
-
-

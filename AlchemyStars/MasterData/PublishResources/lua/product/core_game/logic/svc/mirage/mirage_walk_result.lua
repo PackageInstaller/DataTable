@@ -1,80 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/mirage/mirage_walk_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MirageWalkResult", Object)
 MirageWalkResult = MirageWalkResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageWalkResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MirageWalkResult:Constructor()
   self._walkPos = nil
   self._oldPosColor = PieceType.None
   self._newPosColor = PieceType.None
   self._trapResultList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWalkResult.GetWalkPos = function(self)
-  -- function num : 0_1
+function MirageWalkResult:GetWalkPos()
   return self._walkPos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWalkResult.SetWalkPos = function(self, pos)
-  -- function num : 0_2
+function MirageWalkResult:SetWalkPos(pos)
   self._walkPos = pos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWalkResult.SetOldPosColor = function(self, color)
-  -- function num : 0_3
+function MirageWalkResult:SetOldPosColor(color)
   self._oldPosColor = color
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWalkResult.GetOldPosColor = function(self)
-  -- function num : 0_4
+function MirageWalkResult:GetOldPosColor()
   return self._oldPosColor
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWalkResult.SetNewPosColor = function(self, color)
-  -- function num : 0_5
+function MirageWalkResult:SetNewPosColor(color)
   self._newPosColor = color
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWalkResult.GetNewPosColor = function(self)
-  -- function num : 0_6
+function MirageWalkResult:GetNewPosColor()
   return self._newPosColor
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWalkResult.GetWalkTrapResultList = function(self)
-  -- function num : 0_7
+function MirageWalkResult:GetWalkTrapResultList()
   return self._trapResultList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageWalkResult.AddWalkTrap = function(self, trapEntityID, skillResult)
-  -- function num : 0_8 , upvalues : _ENV
+function MirageWalkResult:AddWalkTrap(trapEntityID, skillResult)
   local res = WalkTriggerTrapResult:New()
   res:SetTrapEntityID(trapEntityID)
   res:SetTrapResult(skillResult)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._trapResultList)[#self._trapResultList + 1] = res
+  self._trapResultList[#self._trapResultList + 1] = res
 end
-
-

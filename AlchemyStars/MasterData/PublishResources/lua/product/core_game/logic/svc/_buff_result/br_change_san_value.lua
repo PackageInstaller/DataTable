@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_change_san_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultChangeSanValue", BuffResultBase)
 BuffResultChangeSanValue = BuffResultChangeSanValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultChangeSanValue.Constructor = function(self, curSan, oldSan, realModifyValue, debtVal, modifyTimes, forceRefresh)
-  -- function num : 0_0
+function BuffResultChangeSanValue:Constructor(curSan, oldSan, realModifyValue, debtVal, modifyTimes, forceRefresh)
   self._curSan = curSan
   self._oldSan = oldSan
   self._realModifyValue = realModifyValue
@@ -17,46 +10,26 @@ BuffResultChangeSanValue.Constructor = function(self, curSan, oldSan, realModify
   self._forceRefresh = forceRefresh
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSanValue.GetCurSan = function(self)
-  -- function num : 0_1
+function BuffResultChangeSanValue:GetCurSan()
   return self._curSan
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSanValue.GetOldSan = function(self)
-  -- function num : 0_2
+function BuffResultChangeSanValue:GetOldSan()
   return self._oldSan
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSanValue.GetRealModifyValue = function(self)
-  -- function num : 0_3
+function BuffResultChangeSanValue:GetRealModifyValue()
   return self._realModifyValue
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSanValue.GetDebtVal = function(self)
-  -- function num : 0_4
+function BuffResultChangeSanValue:GetDebtVal()
   return self._debtVal
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSanValue.GetModifyTimes = function(self)
-  -- function num : 0_5
+function BuffResultChangeSanValue:GetModifyTimes()
   return self._modifyTimes
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultChangeSanValue.GetForceRefresh = function(self)
-  -- function num : 0_6
+function BuffResultChangeSanValue:GetForceRefresh()
   return self._forceRefresh
 end
-
-

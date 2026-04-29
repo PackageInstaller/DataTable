@@ -1,40 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_sort_ai_order.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSortAI", BuffLogicBase)
 BuffLogicSortAI = BuffLogicSortAI
 local SortAIOrderType = {Type1 = 1}
 _enum("SortAIOrderType", SortAIOrderType)
--- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicSortAI.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicSortAI:Constructor(buffInstance, logicParam)
   self._orderWeight = logicParam.orderWeight
   self._sortType = logicParam.sortType
   self._sortAIConfigID = logicParam.sortAIConfigID
-  if not logicParam.aiLogicType then
-    self._aiLogicType = AILogicPeriodType.Main
-    if not logicParam.sortParam then
-      self._sortParam = {5, 9}
-    end
-  end
+  self._aiLogicType = logicParam.aiLogicType or AILogicPeriodType.Main
+  self._sortParam = logicParam.sortParam or {5, 9}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicSortAI.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV, SortAIOrderType
-  local aiEntityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).AI)
+function BuffLogicSortAI:DoLogic()
+  local aiEntityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.AI)
   local needSortEntitiesList = {}
   for i = 1, #aiEntityList do
     local e = aiEntityList[i]
     local aiComponent = e:AI()
     local aiLogicList = aiComponent:GetAILogic(self._aiLogicType)
-    for _,aiLogic in pairs(aiLogicList) do
+    for _, aiLogic in pairs(aiLogicList) do
       if aiLogic:GetAIConfigID() == self._sortAIConfigID then
-        (table.insert)(needSortEntitiesList, e)
+        table.insert(needSortEntitiesList, e)
         break
       end
     end
@@ -44,70 +30,63 @@ BuffLogicSortAI.DoLogic = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicSortAI.BuildSortType1List = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicSortAI:BuildSortType1List()
   local sortBoardList = {}
-  local centerList = Vector2((self._sortParam)[1], (self._sortParam)[2])
-  local boardSvc = (self._world):GetService("BoardLogic")
+  local centerList = Vector2(self._sortParam[1], self._sortParam[2])
+  local boardSvc = self._world:GetService("BoardLogic")
   local maxX = boardSvc:GetCurBoardMaxX()
   local maxY = boardSvc:GetCurBoardMaxY()
   local curX, curY = centerList.x, centerList.y
   for i = curX, 1, -1 do
     local pos = Vector2(i, curY)
     if boardSvc:IsValidPiecePos(pos) then
-      (table.insert)(sortBoardList, pos)
+      table.insert(sortBoardList, pos)
     end
   end
   for i = maxY, 1, -1 do
     local pos = Vector2(1, i)
     if boardSvc:IsValidPiecePos(pos) then
-      (table.insert)(sortBoardList, pos)
+      table.insert(sortBoardList, pos)
     end
   end
   for i = 1, maxX do
     local pos = Vector2(i, 1)
     if boardSvc:IsValidPiecePos(pos) then
-      (table.insert)(sortBoardList, pos)
+      table.insert(sortBoardList, pos)
     end
   end
   for i = 1, maxY do
     local pos = Vector2(maxX, i)
     if boardSvc:IsValidPiecePos(pos) then
-      (table.insert)(sortBoardList, pos)
+      table.insert(sortBoardList, pos)
     end
   end
   for i = 2, curX, -1 do
     local pos = Vector2(i, curY)
     if boardSvc:IsValidPiecePos(pos) then
-      (table.insert)(sortBoardList, pos)
+      table.insert(sortBoardList, pos)
     end
   end
   return sortBoardList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicSortAI.SortType1 = function(self, needSortEntityList)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffLogicSortAI:SortType1(needSortEntityList)
   local canMoveAndAttackList = {}
   local otherList = {}
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local teamPos = teamEntity:GetGridPosition()
-  for _,entity in ipairs(needSortEntityList) do
+  for _, entity in ipairs(needSortEntityList) do
     local pos = entity:GetGridPosition()
     if pos.x == teamPos.x or pos.y == teamPos.y then
-      (table.insert)(canMoveAndAttackList, entity)
+      table.insert(canMoveAndAttackList, entity)
     else
-      ;
-      (table.insert)(otherList, entity)
+      table.insert(otherList, entity)
     end
   end
-  for _,entity in ipairs(canMoveAndAttackList) do
+  for _, entity in ipairs(canMoveAndAttackList) do
     local aiComponent = entity:AI()
     local aiLogicList = aiComponent:GetAILogic(self._aiLogicType)
-    for order,aiLogic in pairs(aiLogicList) do
+    for order, aiLogic in pairs(aiLogicList) do
       if aiLogic:GetAIConfigID() == self._sortAIConfigID then
         aiLogic:SetOrderWeight(self._orderWeight)
         aiLogic:SetParallelID(1)
@@ -117,12 +96,12 @@ BuffLogicSortAI.SortType1 = function(self, needSortEntityList)
   end
   local sortBoardList = self:BuildSortType1List()
   local count = 1
-  for i,pos in ipairs(sortBoardList) do
-    for _,entity in ipairs(otherList) do
+  for i, pos in ipairs(sortBoardList) do
+    for _, entity in ipairs(otherList) do
       local entityPos = entity:GetGridPosition()
       local aiComponent = entity:AI()
       local aiLogicList = aiComponent:GetAILogic(self._aiLogicType)
-      for order,aiLogic in pairs(aiLogicList) do
+      for order, aiLogic in pairs(aiLogicList) do
         if aiLogic:GetAIConfigID() == self._sortAIConfigID and entityPos == pos then
           aiLogic:SetOrderWeight(self._orderWeight - count)
           count = count + 1
@@ -133,5 +112,3 @@ BuffLogicSortAI.SortType1 = function(self, needSortEntityList)
     end
   end
 end
-
-

@@ -1,126 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/pet_render_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetRenderComponent", Object)
 PetRenderComponent = PetRenderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetRenderComponent.Constructor = function(self)
-  -- function num : 0_0
+function PetRenderComponent:Constructor()
   self._pet1601751HPAboveLimitAutoCastActiveCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetRenderComponent.RecordPetMinosGhostUsedPos = function(self, pos)
-  -- function num : 0_1 , upvalues : _ENV
+function PetRenderComponent:RecordPetMinosGhostUsedPos(pos)
   if not self._petMinosGhostUsedPosList then
     self._petMinosGhostUsedPosList = {}
   end
-  ;
-  (table.insert)(self._petMinosGhostUsedPosList, pos)
+  table.insert(self._petMinosGhostUsedPosList, pos)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetRenderComponent.ClearPetMinosGhostUsedPos = function(self, pos)
-  -- function num : 0_2 , upvalues : _ENV
+function PetRenderComponent:ClearPetMinosGhostUsedPos(pos)
   if self._petMinosGhostUsedPosList then
-    (table.removev)(self._petMinosGhostUsedPosList, pos)
+    table.removev(self._petMinosGhostUsedPosList, pos)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetRenderComponent.GetPetMinosGhostUsedPosList = function(self)
-  -- function num : 0_3
+function PetRenderComponent:GetPetMinosGhostUsedPosList()
   if not self._petMinosGhostUsedPosList then
     self._petMinosGhostUsedPosList = {}
   end
   return self._petMinosGhostUsedPosList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PetRenderComponent.ClearPetMinosGhostUsedPosList = function(self)
-  -- function num : 0_4
+function PetRenderComponent:ClearPetMinosGhostUsedPosList()
   self._petMinosGhostUsedPosList = {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PetRenderComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_5
+function PetRenderComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PetRenderComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_6
+function PetRenderComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PetRenderComponent.GetPet1601751HPAboveLimitAutoCastActiveCount = function(self)
-  -- function num : 0_7
+function PetRenderComponent:GetPet1601751HPAboveLimitAutoCastActiveCount()
   return self._pet1601751HPAboveLimitAutoCastActiveCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PetRenderComponent.TickPet1601751HPAboveLimitAutoCastActiveCount = function(self)
-  -- function num : 0_8
+function PetRenderComponent:TickPet1601751HPAboveLimitAutoCastActiveCount()
   self._pet1601751HPAboveLimitAutoCastActiveCount = self._pet1601751HPAboveLimitAutoCastActiveCount + 1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PetRenderComponent.ClearPet1601751HPAboveLimitAutoCastActiveCount = function(self)
-  -- function num : 0_9
+function PetRenderComponent:ClearPet1601751HPAboveLimitAutoCastActiveCount()
   self._pet1601751HPAboveLimitAutoCastActiveCount = 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PetRender = function(self)
-  -- function num : 0_10
-  return self:GetComponent((self.WEComponentsEnum).PetRender)
+function Entity:PetRender()
+  return self:GetComponent(self.WEComponentsEnum.PetRender)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPetRender = function(self)
-  -- function num : 0_11
-  return self:HasComponent((self.WEComponentsEnum).PetRender)
+function Entity:HasPetRender()
+  return self:HasComponent(self.WEComponentsEnum.PetRender)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPetRender = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PetRender
+function Entity:AddPetRender()
+  local index = self.WEComponentsEnum.PetRender
   local component = PetRenderComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePetRender = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PetRender
+function Entity:ReplacePetRender()
+  local index = self.WEComponentsEnum.PetRender
   local component = PetRenderComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePetRender = function(self)
-  -- function num : 0_14
+function Entity:RemovePetRender()
   if self:HasPetRender() then
-    self:RemoveComponent((self.WEComponentsEnum).PetRender)
+    self:RemoveComponent(self.WEComponentsEnum.PetRender)
   end
 end
-
-

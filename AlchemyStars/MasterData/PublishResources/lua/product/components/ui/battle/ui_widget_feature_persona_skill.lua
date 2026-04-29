@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_persona_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeaturePersonaSkill", UICustomWidget)
 UIWidgetFeaturePersonaSkill = UIWidgetFeaturePersonaSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeaturePersonaSkill.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeaturePersonaSkill:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetFeaturePersonaSkill:InitWidget()
   self.enableFakeInput = true
   self._imageNormalGo = self:GetGameObject("ImageNormal")
   self._imageWarningGo = self:GetGameObject("ImageWarning")
   self._uIWidgetFeaturePersonaSkill = self:GetUIComponent("Image", "UIWidgetFeaturePersonaSkill")
   self._skillInfoGenGo = self:GetGameObject("SkillInfoGen")
   self._skillPool = self:GetUIComponent("UISelectObjectPath", "SkillInfoGen")
-  self._skillUI = (self._skillPool):SpawnObject("UIWidgetFeaturePersonaSkillInfo")
+  self._skillUI = self._skillPool:SpawnObject("UIWidgetFeaturePersonaSkillInfo")
   self._powerText = self:GetUIComponent("UILocalizationText", "power")
   self._powerTextGo = self:GetGameObject("power")
   self.alreadyCastActiveImage = self:GetGameObject("AlreadyCastActiveImage")
-  ;
-  (self.alreadyCastActiveImage):SetActive(false)
+  self.alreadyCastActiveImage:SetActive(false)
   self._cdGO = self:GetGameObject("CdArea")
-  ;
-  (self._cdGO):SetActive(true)
-  ;
-  (self._skillInfoGenGo):SetActive(false)
+  self._cdGO:SetActive(true)
+  self._skillInfoGenGo:SetActive(false)
   self._uiBattle = nil
   self._switchTimeEvent = nil
   self._switchTimeLength = 100
@@ -46,294 +33,196 @@ UIWidgetFeaturePersonaSkill.InitWidget = function(self)
   self:OnPersonaPowerChange(FeatureType.PersonaSkill, 0, 1)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.IsAutoFighting = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):IsAutoFighting()
+function UIWidgetFeaturePersonaSkill:IsAutoFighting()
+  return GameGlobal.GetUIModule(MatchModule):IsAutoFighting()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.OnPersonaPowerChange = function(self, featureType, power, ready)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetFeaturePersonaSkill:OnPersonaPowerChange(featureType, power, ready)
   if FeatureType.PersonaSkill ~= featureType then
-    return 
+    return
   end
   if power <= 0 then
     power = 0
   end
-  if power == 0 then
-    (self._cdGO):SetActive(self._power ~= 0)
-    if self._ready == 1 or self._power == 0 then
-      (self.alreadyCastActiveImage):SetActive(false)
-    end
-    if ready then
-      if self._ready ~= ready then
-        self._ready = ready
-      end
-      if ready == 1 then
-        (self._cdGO):SetActive(false)
-      end
-    end
-    if self._power ~= power then
-      self._power = power
-    end
-    ;
-    (self._powerText):SetText(power)
-    self:_RefreshStateBg()
-    -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  if self._power == 0 then
+    self._cdGO:SetActive(power ~= 0)
   end
+  if self._ready == 1 or self._power == 0 then
+    self.alreadyCastActiveImage:SetActive(false)
+  end
+  if ready then
+    if self._ready ~= ready then
+      self._ready = ready
+    end
+    if ready == 1 then
+      self._cdGO:SetActive(false)
+    end
+  end
+  if self._power ~= power then
+    self._power = power
+  end
+  self._powerText:SetText(power)
+  self:_RefreshStateBg()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill._RefreshStateBg = function(self)
-  -- function num : 0_4
-  (self._imageNormalGo):SetActive(self._ready ~= 1)
-  ;
-  (self._imageWarningGo):SetActive(self._ready == 1)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIWidgetFeaturePersonaSkill:_RefreshStateBg()
+  self._imageNormalGo:SetActive(self._ready ~= 1)
+  self._imageWarningGo:SetActive(self._ready == 1)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.SetUIBattle = function(self, uiBattle)
-  -- function num : 0_5
+function UIWidgetFeaturePersonaSkill:SetUIBattle(uiBattle)
   self._uiBattle = uiBattle
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.GetUIBattle = function(self)
-  -- function num : 0_6
+function UIWidgetFeaturePersonaSkill:GetUIBattle()
   return self._uiBattle
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.SetData = function(self, personaSkillInitData)
-  -- function num : 0_7 , upvalues : _ENV
+function UIWidgetFeaturePersonaSkill:SetData(personaSkillInitData)
   self._featureInitData = personaSkillInitData
-  self._skillID = (self._featureInitData):GetPersonaSkillID()
-  self._skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self._skillID)
+  self._skillID = self._featureInitData:GetPersonaSkillID()
+  self._skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._skillID)
   local skillConfigData = self._skillConfigData
   self._maxPower = skillConfigData:GetSkillTriggerParam()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.UIWidgetFeaturePersonaSkillOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  if self:IsAutoFighting() or (InnerGameHelperRender.IsPuzzleState)() or (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+function UIWidgetFeaturePersonaSkill:UIWidgetFeaturePersonaSkillOnClick(go)
+  if self:IsAutoFighting() or InnerGameHelperRender.IsPuzzleState() or InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
   local canCastSkill = true
   if canCastSkill then
-    local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
-    local enableInput = (GameGlobal:GetInstance()):IsInputEnable()
+    local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
+    local enableInput = GameGlobal:GetInstance():IsInputEnable()
     if coreGameStateID == GameStateID.WaitInput and enableInput == true then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, self._skillID)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideCanMoveArrow)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickPersonaSkill, FeatureType.PersonaSkill, self._skillID)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._skillID)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HideCanMoveArrow)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickPersonaSkill, FeatureType.PersonaSkill, self._skillID)
       self:ShowPersonaSkillUI()
-    else
-      if coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
-        if self._switchTimeEvent == nil then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UISwitchActiveSkillUI)
-          self:ShowPersonaSkillUI()
-          ;
-          (Log.notice)("preclickhead persona skill", self._skillID)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, self._skillID)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideCanMoveArrow)
-          self._switchTimeEvent = ((GameGlobal.Timer)()):AddEvent(self._switchTimeLength, function()
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickPersonaSkill, FeatureType.PersonaSkill, self._skillID)
-    self._switchTimeEvent = nil
-    ;
-    (Log.notice)("preview persona skill", self._skillID)
-  end
-)
-        else
-          ;
-          (Log.notice)("still in switch", self._skillID)
-        end
+    elseif coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
+      if self._switchTimeEvent == nil then
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.UISwitchActiveSkillUI)
+        self:ShowPersonaSkillUI()
+        Log.notice("preclickhead persona skill", self._skillID)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._skillID)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HideCanMoveArrow)
+        self._switchTimeEvent = GameGlobal.Timer():AddEvent(self._switchTimeLength, function()
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickPersonaSkill, FeatureType.PersonaSkill, self._skillID)
+          self._switchTimeEvent = nil
+          Log.notice("preview persona skill", self._skillID)
+        end)
+      else
+        Log.notice("still in switch", self._skillID)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.ShowPersonaSkillUI = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, true, FeatureType.PersonaSkill)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelActiveSkillCast)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PauseGuideWeakLine)
+function UIWidgetFeaturePersonaSkill:ShowPersonaSkillUI()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, true, FeatureType.PersonaSkill)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelActiveSkillCast)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PauseGuideWeakLine)
   local skillConfigData = self._skillConfigData
   local canCast = self._ready == 1
-  local castCb = function(castSkillID, pickUpType)
-    -- function num : 0_9_0 , upvalues : self
+  
+  local function castCb(castSkillID, pickUpType)
     self:OnCastSkill(castSkillID, pickUpType)
   end
-
-  local cancelCb = function()
-    -- function num : 0_9_1 , upvalues : self
+  
+  local function cancelCb()
     self:OnCancelSkill()
   end
-
-  ;
-  (self._skillUI):Init(FeatureType.PersonaSkill, self._skillID, self._maxPower, self._power, canCast, castCb, cancelCb)
+  
+  self._skillUI:Init(FeatureType.PersonaSkill, self._skillID, self._maxPower, self._power, canCast, castCb, cancelCb)
   local pickUpType = skillConfigData:GetSkillPickType()
   self._pickUpType = pickUpType
   if pickUpType ~= SkillPickUpType.None then
     self._isCurPetSkillReady = canCast
     self:_PreviewPickUpSkill(self._skillID, pickUpType)
-    ;
-    (self._skillUI):ShowCancelBtn(false)
+    self._skillUI:ShowCancelBtn(false)
   else
-    (self._skillUI):ShowCancelBtn(true)
+    self._skillUI:ShowCancelBtn(true)
   end
-  ;
-  (self._skillInfoGenGo):SetActive(true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._skillInfoGenGo:SetActive(true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.HidePersonaSkillUI = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._skillInfoGenGo):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.PersonaSkill)
+function UIWidgetFeaturePersonaSkill:HidePersonaSkillUI()
+  self._skillInfoGenGo:SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.PersonaSkill)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.OnCastSkill = function(self, castSkillID, pickUpType)
-  -- function num : 0_11 , upvalues : _ENV
+function UIWidgetFeaturePersonaSkill:OnCastSkill(castSkillID, pickUpType)
   if pickUpType == SkillPickUpType.None then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastPersonaSkill, castSkillID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CastPersonaSkill, castSkillID)
     self:ClearPower()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIResetLastPreviewPetId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIResetLastPreviewPetId)
+    self:HidePersonaSkillUI()
+  elseif pickUpType == SkillPickUpType.PickSwitchInstruction then
+    Log.fatal("[UIWidgetFeaturePersonaSkill] cast skill pick up type error:", pickUpType)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, true)
+    local petPstID = 0
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
     self:HidePersonaSkillUI()
   else
-    if pickUpType == SkillPickUpType.PickSwitchInstruction then
-      (Log.fatal)("[UIWidgetFeaturePersonaSkill] cast skill pick up type error:", pickUpType)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnablePickUpSkillCast, true)
-      local petPstID = 0
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
-      self:HidePersonaSkillUI()
-    else
-      do
-        ;
-        (Log.fatal)("[UIWidgetFeaturePersonaSkill] cast skill pick up type error:", pickUpType)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnablePickUpSkillCast, false)
-        local petPstID = 0
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
-        self:HidePersonaSkillUI()
-      end
-    end
+    Log.fatal("[UIWidgetFeaturePersonaSkill] cast skill pick up type error:", pickUpType)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, false)
+    local petPstID = 0
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
+    self:HidePersonaSkillUI()
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.ClearPower = function(self)
-  -- function num : 0_12
+function UIWidgetFeaturePersonaSkill:ClearPower()
   self._power = 0
   self._ready = 0
-  ;
-  (self.alreadyCastActiveImage):SetActive(true)
+  self.alreadyCastActiveImage:SetActive(true)
   self:_RefreshStateBg()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.OnCancelSkill = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopPreviewActiveSkill, false, true, self._skillID, -1)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, -1)
+function UIWidgetFeaturePersonaSkill:OnCancelSkill()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopPreviewActiveSkill, false, true, self._skillID, -1)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, -1)
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.OnSwitchActiveSkillUI = function(self)
-  -- function num : 0_14
+function UIWidgetFeaturePersonaSkill:OnSwitchActiveSkillUI()
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.OnChooseTargetConfirm = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if self._skillID > 0 and (self._uiBattle):GetCurPetActiveSkillId() == self._skillID then
+function UIWidgetFeaturePersonaSkill:OnChooseTargetConfirm()
+  if self._skillID > 0 and self._uiBattle:GetCurPetActiveSkillId() == self._skillID then
     self:ClearPower()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIResetLastPreviewPetId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIResetLastPreviewPetId)
     self:HidePersonaSkillUI()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.OnChooseTargetCancel = function(self)
-  -- function num : 0_16
+function UIWidgetFeaturePersonaSkill:OnChooseTargetCancel()
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.OnPickInvalidGridCancel = function(self)
-  -- function num : 0_17
+function UIWidgetFeaturePersonaSkill:OnPickInvalidGridCancel()
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.OnAutoFightCastPersonaSkill = function(self, featureType)
-  -- function num : 0_18 , upvalues : _ENV
+function UIWidgetFeaturePersonaSkill:OnAutoFightCastPersonaSkill(featureType)
   if not featureType then
     self:OnCastSkill(self._skillID, SkillPickUpType.None)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill.OnClickWhenPickUp = function(self)
-  -- function num : 0_19
+function UIWidgetFeaturePersonaSkill:OnClickWhenPickUp()
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeaturePersonaSkill._PreviewPickUpSkill = function(self, skillId, pickUpType)
-  -- function num : 0_20 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelActiveSkillSwitchTimer)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastPersonaSkill, skillId)
+function UIWidgetFeaturePersonaSkill:_PreviewPickUpSkill(skillId, pickUpType)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelActiveSkillSwitchTimer)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CastPersonaSkill, skillId)
   if pickUpType == SkillPickUpType.None then
-    (Log.fatal)("[UIWidgetFeaturePersonaSkill] preview skill pickup type is none")
+    Log.fatal("[UIWidgetFeaturePersonaSkill] preview skill pickup type is none")
   else
     local petPstID = 0
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowActiveSkillChooseUI, skillId, pickUpType, petPstID, self._isCurPetSkillReady)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowActiveSkillChooseUI, skillId, pickUpType, petPstID, self._isCurPetSkillReady)
   end
 end
-
-

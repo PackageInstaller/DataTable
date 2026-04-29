@@ -1,80 +1,69 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_sailing_plan/ui_shop_sailing_plan_normal_quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSailingPlanNormalQuest", UICustomWidget)
 UIShopSailingPlanNormalQuest = UIShopSailingPlanNormalQuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSailingPlanNormalQuest.Constructor = function(self)
-  -- function num : 0_0
-  self._idx2name = {[1] = 5, [2] = 6, [3] = 7, [4] = 8, [5] = 9, [6] = 10, [7] = 12, [8] = 13}
-  self._idx2idx = {[1] = 5, [2] = 6, [3] = 7, [4] = 8, [5] = 9, [6] = 10, [7] = 11, [8] = 12}
+function UIShopSailingPlanNormalQuest:Constructor()
+  self._idx2name = {
+    [1] = 5,
+    [2] = 6,
+    [3] = 7,
+    [4] = 8,
+    [5] = 9,
+    [6] = 10,
+    [7] = 12,
+    [8] = 13
+  }
+  self._idx2idx = {
+    [1] = 5,
+    [2] = 6,
+    [3] = 7,
+    [4] = 8,
+    [5] = 9,
+    [6] = 10,
+    [7] = 11,
+    [8] = 12
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanNormalQuest.SetData = function(self, idx, quest, callback, yieldTime, allTaken)
-  -- function num : 0_1
+function UIShopSailingPlanNormalQuest:SetData(idx, quest, callback, yieldTime, allTaken)
   self:GetComponents()
   self._idx = idx
   self._quest = quest
   self._questinfo = quest:QuestInfo()
-  self._rewards = (self._questinfo).rewards
+  self._rewards = self._questinfo.rewards
   self._callback = callback
   self._allTaken = allTaken
   self:OnValue()
   self:PlayAnim(yieldTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanNormalQuest.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopSailingPlanNormalQuest:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanNormalQuest.PlayAnim = function(self, yieldTime)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIShopSailingPlanNormalQuest:PlayAnim(yieldTime)
   if yieldTime then
-    (self._root).alpha = 0
+    self._root.alpha = 0
     if yieldTime == 0 then
-      (self._anim):Play()
+      self._anim:Play()
     else
       if self._event then
-        ((GameGlobal.Timer)()):CancelEvent(self._event)
+        GameGlobal.Timer():CancelEvent(self._event)
         self._event = nil
       end
-      self._event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_3_0 , upvalues : self
-    (self._anim):Play()
-  end
-)
+      self._event = GameGlobal.Timer():AddEvent(yieldTime, function()
+        self._anim:Play()
+      end)
     end
   else
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rootTr).anchoredPosition = Vector2(0, 0)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._root).alpha = 1
+    self._rootTr.anchoredPosition = Vector2(0, 0)
+    self._root.alpha = 1
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanNormalQuest.GetComponents = function(self)
-  -- function num : 0_4
+function UIShopSailingPlanNormalQuest:GetComponents()
   self._pools = self:GetUIComponent("UISelectObjectPath", "pools")
   self._chapter = self:GetUIComponent("UILocalizedTMP", "chapter")
   self._idxTex = self:GetUIComponent("UILocalizationText", "idxTex")
@@ -88,46 +77,28 @@ UIShopSailingPlanNormalQuest.GetComponents = function(self)
   self._got = self:GetGameObject("got")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanNormalQuest.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopSailingPlanNormalQuest:OnValue()
   local count = #self._rewards
-  ;
-  (self._pools):SpawnObjects("UIShopSailingPlanItem", count)
-  local pools = (self._pools):GetAllSpawnList()
-  local status = (self._questinfo).status
+  self._pools:SpawnObjects("UIShopSailingPlanItem", count)
+  local pools = self._pools:GetAllSpawnList()
+  local status = self._questinfo.status
   for i = 1, count do
     local item = pools[i]
-    local roleAsset = (self._rewards)[i]
+    local roleAsset = self._rewards[i]
     item:SetData(i, roleAsset, function(id, pos)
-    -- function num : 0_5_0 , upvalues : self
-    self:ItemOnClick(id, pos)
+      self:ItemOnClick(id, pos)
+    end, true, status, nil, nil, true, false, 0.85)
   end
-, true, status, nil, nil, true, false, 0.85)
-  end
-  ;
-  (self._chapter):SetText(tostring((self._idx2idx)[self._idx]))
-  ;
-  (self._idxTex):SetText((StringTable.Get)("str_chapter_idx_" .. (self._idx2name)[self._idx]))
-  ;
-  (self._lock):SetActive(status ~= QuestStatus.QUEST_Completed)
-  ;
-  (self._lockImg):SetActive(status < QuestStatus.QUEST_Completed)
-  ;
-  (self._got):SetActive(status == QuestStatus.QUEST_Taken)
-  ;
-  (self._allTakenGo):SetActive(self._allTaken)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._chapter:SetText(tostring(self._idx2idx[self._idx]))
+  self._idxTex:SetText(StringTable.Get("str_chapter_idx_" .. self._idx2name[self._idx]))
+  self._lock:SetActive(status ~= QuestStatus.QUEST_Completed)
+  self._lockImg:SetActive(status < QuestStatus.QUEST_Completed)
+  self._got:SetActive(status == QuestStatus.QUEST_Taken)
+  self._allTakenGo:SetActive(self._allTaken)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanNormalQuest.ItemOnClick = function(self, id, pos)
-  -- function num : 0_6
+function UIShopSailingPlanNormalQuest:ItemOnClick(id, pos)
   if self._callback then
-    (self._callback)((self._questinfo).quest_id, id, pos)
+    self._callback(self._questinfo.quest_id, id, pos)
   end
 end
-
-

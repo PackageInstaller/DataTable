@@ -1,22 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/maze/stn_maze_recover_formation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Maze_RecoverFormation", Common_AsyncBase)
 Maze_RecoverFormation = Maze_RecoverFormation
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Maze_RecoverFormation.TaskFunc = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self.m_pManager):GetMissionRunData()
+function Maze_RecoverFormation:TaskFunc(TT)
+  local runData = self.m_pManager:GetMissionRunData()
   local petPstIds = runData:GetCurrentTeamPstIDList()
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local teamCtx = missionModule:TeamCtx()
   local mazeTeam = teamCtx:GetMazeTeam()
-  local mazeModule = (GameGlobal.GetModule)(MazeModule)
+  local mazeModule = GameGlobal.GetModule(MazeModule)
   mazeModule:UpdateMazeFormationInfo(TT, teamCtx.mazeTeamId, mazeTeam.name, petPstIds)
 end
-
-

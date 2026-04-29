@@ -1,36 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_layer_by_feature_step_cost.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddLayerByFeatureStepCost", BuffLogicBase)
 BuffLogicAddLayerByFeatureStepCost = BuffLogicAddLayerByFeatureStepCost
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddLayerByFeatureStepCost.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._mulValue = logicParam.mulValue or 1
-    self._addValue = logicParam.addValue or 0
-    self._dontDisplay = logicParam.dontDisplay
-  end
+function BuffLogicAddLayerByFeatureStepCost:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._mulValue = logicParam.mulValue or 1
+  self._addValue = logicParam.addValue or 0
+  self._dontDisplay = logicParam.dontDisplay
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddLayerByFeatureStepCost.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddLayerByFeatureStepCost:DoLogic(notify)
   if notify then
     local notifyType = notify:GetNotifyType()
     if notifyType == NotifyType.FeatureStepPointMoveCost or notifyType == NotifyType.FeatureStepPointSkillCost then
       local stepCost = notify:GetCostVal()
-      local addLayer = (math.floor)(stepCost * self._mulValue) + self._addValue
+      local addLayer = math.floor(stepCost * self._mulValue) + self._addValue
       if addLayer == 0 then
-        return 
+        return
       end
-      local svc = (self._world):GetService("BuffLogic")
+      local svc = self._world:GetService("BuffLogic")
       local curMarkLayer, buffInst = svc:AddBuffLayer(self._entity, self._layerType, addLayer)
       local buffResult = BuffResultAddLayer:New(curMarkLayer, self._dontDisplay)
       buffResult:SetBuffSeq(buffInst:BuffSeq())
@@ -38,5 +26,3 @@ BuffLogicAddLayerByFeatureStepCost.DoLogic = function(self, notify)
     end
   end
 end
-
-

@@ -1,70 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_s2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignInlandS2", ICampaignComponentLocalProcessBase)
 CCampaignInlandS2 = CCampaignInlandS2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignInlandS2.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignInlandS2:Constructor()
   self._cumulativeLoginComponent = nil
   self._cumulativeLoginCompInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS2.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignInlandS2:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_S2
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS2.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignInlandS2:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS2.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignInlandS2:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetCumulativeLoginComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS2._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECCampaignInlandS2ComponentID.CUMULATIVE_LOGIN)
+function CCampaignInlandS2:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECCampaignInlandS2ComponentID.CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginCompInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginCompInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS2.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignInlandS2:GetComponent(componentID)
   if ECCampaignInlandS2ComponentID.CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandS2.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignInlandS2:GetComponentInfo(componentID)
   if ECCampaignInlandS2ComponentID.CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginCompInfo
   end
   return nil
 end
-
-

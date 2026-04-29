@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/trap/2800041/cfg_skill_view_500104.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" ShowHideTrapHead,isShow=0; PlayCasterAnimation,animName = Birth; Wait,waitTime=1000; PlayCasterAttachEffectHolder,effHolderType=Idle,effId=535; PlayCasterAttachEffectHolder,effHolderType=Charge,effId=536; PlayCasterAttachEffectHolder,effHolderType=Charge,effId=537; PlayCasterEffectHolder,effHolderType=Idle,isShow=1; PlayCasterEffectHolder,effHolderType=Charge,isShow=0; PlayCasterTrapRound; ShowHideTrapHead,isShow=1; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " ShowHideTrapHead,isShow=0; PlayCasterAnimation,animName = Birth; Wait,waitTime=1000; PlayCasterAttachEffectHolder,effHolderType=Idle,effId=535; PlayCasterAttachEffectHolder,effHolderType=Charge,effId=536; PlayCasterAttachEffectHolder,effHolderType=Charge,effId=537; PlayCasterEffectHolder,effHolderType=Idle,isShow=1; PlayCasterEffectHolder,effHolderType=Charge,isShow=0; PlayCasterTrapRound; ShowHideTrapHead,isShow=1; "
+    }
+  }
 }
 return config, "ID", key
-

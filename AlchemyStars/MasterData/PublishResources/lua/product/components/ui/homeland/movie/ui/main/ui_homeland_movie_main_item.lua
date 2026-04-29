@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_main_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieMainItem", UICustomWidget)
 UIHomelandMovieMainItem = UIHomelandMovieMainItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieMainItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandMovieMainItem:Constructor()
   self._data = nil
   self._callBack = nil
   self._isLocked = true
@@ -22,26 +15,17 @@ UIHomelandMovieMainItem.Constructor = function(self)
   self._isBeSelected = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMovieMainItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMovieMainItem:OnHide()
   if self._redState and self._isBeSelected then
     self:_RemoveRedPoint()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.InitWidget = function(self)
-  -- function num : 0_3
+function UIHomelandMovieMainItem:InitWidget()
   self._movieBG = self:GetUIComponent("RawImageLoader", "movieBG")
   self._select = self:GetGameObject("select")
   self._lockImg = self:GetGameObject("lockImg")
@@ -52,19 +36,13 @@ UIHomelandMovieMainItem.InitWidget = function(self)
   self._animMain = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.Dispose = function(self)
-  -- function num : 0_4
+function UIHomelandMovieMainItem:Dispose()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.SetData = function(self, data, index, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMovieMainItem:SetData(data, index, callback)
   self._data = data
   self._callBack = callback
-  self._movieData = (MovieDataManager:GetInstance()):GetMovieDataByID((self._data).ID)
+  self._movieData = MovieDataManager:GetInstance():GetMovieDataByID(self._data.ID)
   self:_SetAnimation(self._delay * (index - 1))
   self:SetInfo()
   self:CheckIsLock()
@@ -72,133 +50,84 @@ UIHomelandMovieMainItem.SetData = function(self, data, index, callback)
   self:SetSelected(false, true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.GetData = function(self)
-  -- function num : 0_6
+function UIHomelandMovieMainItem:GetData()
   return self._data
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.GetScoreList = function(self)
-  -- function num : 0_7
-  return (self._data).Rewards
+function UIHomelandMovieMainItem:GetScoreList()
+  return self._data.Rewards
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.GetID = function(self)
-  -- function num : 0_8
-  return (self._data).ID
+function UIHomelandMovieMainItem:GetID()
+  return self._data.ID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.SetInfo = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._movieBG):LoadImage((self._data).Poster)
+function UIHomelandMovieMainItem:SetInfo(TT)
+  self._movieBG:LoadImage(self._data.Poster)
   if self._movieData then
-    local score = (self._movieData).max_score * 0.5
+    local score = self._movieData.max_score * 0.5
     if score % 1 == 0.5 then
-      (self._scoreText):SetText(score)
+      self._scoreText:SetText(score)
     else
-      ;
-      (self._scoreText):SetText((math.floor)(score))
+      self._scoreText:SetText(math.floor(score))
     end
   else
-    do
-      ;
-      (self._scoreImg):SetActive(false)
-    end
+    self._scoreImg:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem._SetAnimation = function(self, delay)
-  -- function num : 0_10 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "anim", "anim", "UIHomelandMovieMainController_in", delay, 500, nil)
+function UIHomelandMovieMainItem:_SetAnimation(delay)
+  UIWidgetHelper.PlayAnimationInSequence(self, "anim", "anim", "UIHomelandMovieMainController_in", delay, 500, nil)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.CheckIsLock = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._isLocked = (MovieDataManager:GetInstance()):CheckMovieLock(self._data)
-  ;
-  (self._lockImg):SetActive(self._isLocked)
+function UIHomelandMovieMainItem:CheckIsLock()
+  self._isLocked = MovieDataManager:GetInstance():CheckMovieLock(self._data)
+  self._lockImg:SetActive(self._isLocked)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.SetSelected = function(self, isSelected, refresh)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._select):SetActive(isSelected)
+function UIHomelandMovieMainItem:SetSelected(isSelected, refresh)
+  self._select:SetActive(isSelected)
   if refresh then
     self._isLeave = false
   end
   if self._isLeave then
     self._redState = false
-    ;
-    (self._newImg):SetActive(false)
+    self._newImg:SetActive(false)
     self:_RemoveRedPoint()
   end
   if self._isBeSelected and not isSelected then
-    (self._animMain):Play("UIHomelandMovieMainController_down")
+    self._animMain:Play("UIHomelandMovieMainController_down")
   end
   if isSelected and not self._isBeSelected then
     self._isBeSelected = true
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rect).anchoredPosition = Vector2(0, 30)
-    ;
-    (self._animMain):Play("UIHomelandMovieMainController_up")
+    self._rect.anchoredPosition = Vector2(0, 30)
+    self._animMain:Play("UIHomelandMovieMainController_up")
+  elseif isSelected and self._isBeSelected then
   else
-  end
-  if isSelected and self._isBeSelected then
     self._isBeSelected = false
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._rect).anchoredPosition = Vector2(0, 0)
-    self._isLeave = isSelected
+    self._rect.anchoredPosition = Vector2(0, 0)
   end
+  self._isLeave = isSelected
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.CheckIsNew = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._redState = (MovieDataManager:GetInstance()):CheckMovieNew(self._data)
-  ;
-  (self._newImg):SetActive(self._redState)
+function UIHomelandMovieMainItem:CheckIsNew()
+  self._redState, self._pstid = MovieDataManager:GetInstance():CheckMovieNew(self._data)
+  self._newImg:SetActive(self._redState)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem.MovieBtnOnClick = function(self)
-  -- function num : 0_14
+function UIHomelandMovieMainItem:MovieBtnOnClick()
   self:_RemoveRedPoint()
   if self._callBack then
-    (self._callBack)(self)
+    self._callBack(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieMainItem._RemoveRedPoint = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIHomelandMovieMainItem:_RemoveRedPoint()
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV
     if self._pstid then
-      local itemModule = (GameGlobal.GetModule)(ItemModule)
+      local itemModule = GameGlobal.GetModule(ItemModule)
       itemModule:SetItemUnnewOverlay(TT, self._pstid)
       itemModule:SetItemUnnew(TT, self._pstid)
     end
-  end
-)
+  end)
 end
-
-

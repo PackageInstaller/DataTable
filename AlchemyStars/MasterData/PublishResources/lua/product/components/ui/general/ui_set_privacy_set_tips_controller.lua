@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_privacy_set_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetPrivacySetTipsController", UIController)
 UISetPrivacySetTipsController = UISetPrivacySetTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetPrivacySetTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISetPrivacySetTipsController:OnShow(uiParams)
   self._tips = self:GetUIComponent("UILocalizationText", "Tips")
   local tips = uiParams[1]
   self._confirmCallback = uiParams[2]
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._tips).text = tips
+  self._tips.text = tips
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetPrivacySetTipsController.CancelBtnOnClick = function(self)
-  -- function num : 0_1
+function UISetPrivacySetTipsController:CancelBtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetPrivacySetTipsController.ConfirmBtnOnClick = function(self)
-  -- function num : 0_2
+function UISetPrivacySetTipsController:ConfirmBtnOnClick()
   self:CloseDialog()
   if self._confirmCallback then
-    (self._confirmCallback)()
+    self._confirmCallback()
   end
 end
-
-

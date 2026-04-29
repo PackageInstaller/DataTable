@@ -1,59 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_shield_damage_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddDamageShield", BuffViewBase)
 BuffViewAddDamageShield = BuffViewAddDamageShield
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddDamageShield.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  local player = ((self._world):Player()):GetCurrentTeamEntity()
-  local curShield = (self:GetBuffResult()):GetShield()
+function BuffViewAddDamageShield:PlayView(TT)
+  local player = self._world:Player():GetCurrentTeamEntity()
+  local curShield = self:GetBuffResult():GetShield()
   local hpCmpt = player:HP()
   if not hpCmpt then
-    (Log.error)("add damge shield no hpCmpt!!")
-    return 
+    Log.error("add damge shield no hpCmpt!!")
+    return
   end
   hpCmpt:SetShieldValue(curShield)
   player:TriggerHPUpdate()
   local hpBarID = hpCmpt:GetHPSliderEntityID()
-  local hpBarEntity = (self._world):GetEntityByID(hpBarID)
-  local go = ((hpBarEntity:View()).ViewWrapper).GameObject
+  local hpBarEntity = self._world:GetEntityByID(hpBarID)
+  local go = hpBarEntity:View().ViewWrapper.GameObject
   local uiview = go:GetComponent("UIView")
   local shieldImg = uiview:GetUIComponent("Image", "shield")
   if shieldImg ~= nil then
-    (shieldImg.gameObject):SetActive(true)
+    shieldImg.gameObject:SetActive(true)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamHPChange, {isLocalTeam = ((self._world):Player()):IsLocalTeamEntity(player), currentHP = hpCmpt:GetRedHP(), maxHP = hpCmpt:GetMaxHP(), hitpoint = hpCmpt:GetWhiteHP(), shield = hpCmpt:GetShieldValue(), entityID = player:GetID(), showCurseHp = hpCmpt:GetShowCurseHp(), curseHpVal = hpCmpt:GetCurseHpValue()})
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamHPChange, {
+    isLocalTeam = self._world:Player():IsLocalTeamEntity(player),
+    currentHP = hpCmpt:GetRedHP(),
+    maxHP = hpCmpt:GetMaxHP(),
+    hitpoint = hpCmpt:GetWhiteHP(),
+    shield = hpCmpt:GetShieldValue(),
+    entityID = player:GetID(),
+    showCurseHp = hpCmpt:GetShowCurseHp(),
+    curseHpVal = hpCmpt:GetCurseHpValue()
+  })
 end
 
 _class("BuffViewRemoveDamageShield", BuffViewBase)
 BuffViewRemoveDamageShield = BuffViewRemoveDamageShield
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveDamageShield.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  local player = ((self._world):Player()):GetCurrentTeamEntity()
+function BuffViewRemoveDamageShield:PlayView(TT)
+  local player = self._world:Player():GetCurrentTeamEntity()
   local hpCmpt = player:HP()
   if not hpCmpt then
-    (Log.error)("add damge shield no hpCmpt!!")
-    return 
+    Log.error("add damge shield no hpCmpt!!")
+    return
   end
   hpCmpt:SetShieldValue(0)
   player:TriggerHPUpdate()
   local hpBarID = hpCmpt:GetHPSliderEntityID()
-  local hpBarEntity = (self._world):GetEntityByID(hpBarID)
-  local go = ((hpBarEntity:View()).ViewWrapper).GameObject
+  local hpBarEntity = self._world:GetEntityByID(hpBarID)
+  local go = hpBarEntity:View().ViewWrapper.GameObject
   local uiview = go:GetComponent("UIView")
   local shieldImg = uiview:GetUIComponent("Image", "shield")
   if shieldImg ~= nil then
-    (shieldImg.gameObject):SetActive(false)
+    shieldImg.gameObject:SetActive(false)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamHPChange, {isLocalTeam = ((self._world):Player()):IsLocalTeamEntity(player), currentHP = hpCmpt:GetRedHP(), maxHP = hpCmpt:GetMaxHP(), hitpoint = hpCmpt:GetWhiteHP(), shield = hpCmpt:GetShieldValue(), entityID = player:GetID(), showCurseHp = hpCmpt:GetShowCurseHp(), curseHpVal = hpCmpt:GetCurseHpValue()})
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamHPChange, {
+    isLocalTeam = self._world:Player():IsLocalTeamEntity(player),
+    currentHP = hpCmpt:GetRedHP(),
+    maxHP = hpCmpt:GetMaxHP(),
+    hitpoint = hpCmpt:GetWhiteHP(),
+    shield = hpCmpt:GetShieldValue(),
+    entityID = player:GetID(),
+    showCurseHp = hpCmpt:GetShowCurseHp(),
+    curseHpVal = hpCmpt:GetCurseHpValue()
+  })
 end
-
-

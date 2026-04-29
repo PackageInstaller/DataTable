@@ -1,31 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/chain/grid_touch_drag_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GridDragSystem_Render", UniqueReactiveSystem)
 GridDragSystem_Render = GridDragSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GridDragSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function GridDragSystem_Render:Constructor(world)
   self.world = world
-  self._CancelChainPathCallBack = (GameHelper:GetInstance()):CreateCallback(self.CancelChainPath, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.CancelChainPath, self._CancelChainPathCallBack)
+  self._CancelChainPathCallBack = GameHelper:GetInstance():CreateCallback(self.CancelChainPath, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.CancelChainPath, self._CancelChainPathCallBack)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GridDragSystem_Render.TearDown = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.CancelChainPath, self._CancelChainPathCallBack)
+function GridDragSystem_Render:TearDown()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.CancelChainPath, self._CancelChainPathCallBack)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GridDragSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_2 , upvalues : _ENV
+function GridDragSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -38,12 +24,9 @@ GridDragSystem_Render.IsInterested = function(self, index, previousComponent, co
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GridDragSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_3 , upvalues : _ENV
+function GridDragSystem_Render:ExecuteWorld(world)
   self.world = world
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewChainPathCmpt = previewEntity:PreviewChainPath()
   local chainPath = previewChainPathCmpt:GetPreviewChainPath()
   local gridTouchComponent = world:GridTouch()
@@ -51,7 +34,7 @@ GridDragSystem_Render.ExecuteWorld = function(self, world)
   local offsetArray = gridTouchComponent:GetGridMoveOffsetArray()
   local linkLineService = world:GetService("LinkLine")
   if chainPath == nil then
-    return 
+    return
   end
   if #chainPath == 0 then
     local beginIndex = 0
@@ -60,93 +43,63 @@ GridDragSystem_Render.ExecuteWorld = function(self, world)
       local touchOffset = offsetArray[touchIndex]
       if beginIndex == 0 then
         local touchPlayer = linkLineService:IsTouchInPlayerTouchArea(touchPosition, touchOffset)
-        if touchPlayer then
-          local prvwSvc = (self._world):GetService("PreviewMonsterTrap")
-          prvwSvc:ClearMonsterTrapPreview()
-          gridTouchComponent:SetTouchPlayer(touchPlayer)
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideCanMoveArrow)
-          local ret = linkLineService:StartLinkLine(touchPosition, touchOffset)
-          beginIndex = touchIndex
+        if not touchPlayer then
+          goto lbl_71
         end
-      else
-        do
-          -- DECOMPILER ERROR at PC69: Unhandled construct in 'MakeBoolean' P1
-
-          if ret ~= nil and ret ~= false then
-            do
-              if beginIndex < touchIndex then
-                linkLineService:CalcPathPoint(touchPosition, touchOffset)
-              end
-              -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC70: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+        local prvwSvc = self._world:GetService("PreviewMonsterTrap")
+        prvwSvc:ClearMonsterTrapPreview()
+        gridTouchComponent:SetTouchPlayer(touchPlayer)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.HideCanMoveArrow)
+        local ret = linkLineService:StartLinkLine(touchPosition, touchOffset)
+        beginIndex = touchIndex
+        if ret ~= nil and ret == false then
+          break
         end
-      end
-    end
-  else
-    do
-      for touchIndex = 1, #posArray do
-        local touchPosition = posArray[touchIndex]
-        local touchOffset = offsetArray[touchIndex]
+      elseif touchIndex > beginIndex then
         linkLineService:CalcPathPoint(touchPosition, touchOffset)
       end
+      ::lbl_71::
+    end
+  else
+    for touchIndex = 1, #posArray do
+      local touchPosition = posArray[touchIndex]
+      local touchOffset = offsetArray[touchIndex]
+      linkLineService:CalcPathPoint(touchPosition, touchOffset)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-GridDragSystem_Render.Filter = function(self, world)
-  -- function num : 0_4
+function GridDragSystem_Render:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-GridDragSystem_Render.CancelChainPath = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local inputCmpt = (self._world):Input()
+function GridDragSystem_Render:CancelChainPath()
+  local inputCmpt = self._world:Input()
   if inputCmpt:IsPreviewActiveSkill() or inputCmpt:IsPreviewActiveSkillPlaying() then
-    return 
+    return
   end
-  local syncMoveServiceRender = (self._world):GetService("SyncMoveRender")
+  local syncMoveServiceRender = self._world:GetService("SyncMoveRender")
   if syncMoveServiceRender then
     syncMoveServiceRender:ClearPreview()
   end
-  local linkLineService = (self.world):GetService("LinkLine")
+  local linkLineService = self.world:GetService("LinkLine")
   linkLineService:CancelChainPath()
-  local previewEntity = (self._world):GetPreviewEntity()
+  local previewEntity = self._world:GetPreviewEntity()
   previewEntity:ReplacePreviewChainPath({}, PieceType.None, PieceType.None)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FlushPetChainSkillItem, true, 0, nil)
-  local linkageRenderService = (self.world):GetService("LinkageRender")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FlushPetChainSkillItem, true, 0, nil)
+  local linkageRenderService = self.world:GetService("LinkageRender")
   linkageRenderService:ShowLinkageInfo({})
   linkageRenderService:HideBenumbTips()
   linkageRenderService:HideTrapWallBlock()
   self:_DisablePreviewChainSkillRange()
-  local featureRender = (self._world):GetService("FeatureRender")
+  local featureRender = self._world:GetService("FeatureRender")
   if featureRender then
     featureRender:OnLinkLineChainPathChange({}, true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-GridDragSystem_Render._DisablePreviewChainSkillRange = function(self)
-  -- function num : 0_6
-  local reBoard = (self._world):GetRenderBoardEntity()
+function GridDragSystem_Render:_DisablePreviewChainSkillRange()
+  local reBoard = self._world:GetRenderBoardEntity()
   local previewChainSkillRangeCmpt = reBoard:PreviewChainSkillRange()
   previewChainSkillRangeCmpt:EnablePreviewChainSkillRange(false)
 end
-
-

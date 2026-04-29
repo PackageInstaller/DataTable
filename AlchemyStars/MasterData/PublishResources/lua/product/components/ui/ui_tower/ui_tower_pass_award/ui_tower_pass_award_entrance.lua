@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_tower/ui_tower_pass_award/ui_tower_pass_award_entrance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITowerPassAwardEntrance", UICustomWidget)
 UITowerPassAwardEntrance = UITowerPassAwardEntrance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITowerPassAwardEntrance.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UITowerPassAwardEntrance:Constructor()
   self._questModule = self:GetModule(QuestModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardEntrance.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UITowerPassAwardEntrance:OnShow(uiParams)
   self:_GetComponents()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardEntrance.AfterUILayerChanged = function(self)
-  -- function num : 0_2
+function UITowerPassAwardEntrance:AfterUILayerChanged()
   self:_SetUIInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardEntrance._GetComponents = function(self)
-  -- function num : 0_3
+function UITowerPassAwardEntrance:_GetComponents()
   self._nameGO = self:GetGameObject("Name")
   self._lineGO = self:GetGameObject("Line")
   self._progressGO = self:GetGameObject("Progress")
@@ -41,37 +25,24 @@ UITowerPassAwardEntrance._GetComponents = function(self)
   self._Icon = self:GetUIComponent("RawImageLoader", "Icon")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardEntrance.SetData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._allQuests = (self._questModule):GetQuestByQuestType(QuestType.QT_Tower)
-  ;
-  (table.sort)(self._allQuests, function(a, b)
-    -- function num : 0_4_0
+function UITowerPassAwardEntrance:SetData()
+  self._allQuests = self._questModule:GetQuestByQuestType(QuestType.QT_Tower)
+  table.sort(self._allQuests, function(a, b)
     local questInfoa = a:QuestInfo()
     local questInfob = b:QuestInfo()
-    do return questInfoa.quest_id < questInfob.quest_id end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    return questInfoa.quest_id < questInfob.quest_id
+  end)
   self:_SetUIInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardEntrance.EntrancsBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UITowerPassAwardEntrance:EntrancsBtnOnClick(go)
   self:ShowDialog("UITowerPassAward", self._allQuests, self._topIndex)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardEntrance._SetUIInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local curQuestInfo, lastQuestInfo = nil, nil
+function UITowerPassAwardEntrance:_SetUIInfo()
+  local curQuestInfo, lastQuestInfo
   self._topIndex = nil
-  for i,quest in ipairs(self._allQuests) do
+  for i, quest in ipairs(self._allQuests) do
     local questInfo = quest:QuestInfo()
     lastQuestInfo = questInfo
     if questInfo.status ~= QuestStatus.QUEST_Taken then
@@ -80,60 +51,39 @@ UITowerPassAwardEntrance._SetUIInfo = function(self)
       break
     end
   end
-  do
-    if curQuestInfo then
-      (self._nameGO):SetActive(true)
-      ;
-      (self._lineGO):SetActive(true)
-      ;
-      (self._progressGO):SetActive(true)
-      ;
-      (self._allGotGO):SetActive(false)
-      if curQuestInfo.status == QuestStatus.QUEST_Completed then
-        (self._name):SetText((StringTable.Get)(curQuestInfo.QuestName))
-        ;
-        (self._progress):SetText((StringTable.Get)("str_tower_pass_award_canget"))
-        ;
-        (self._redPointGO):SetActive(true)
-      else
-        if curQuestInfo.status == QuestStatus.QUEST_NotStart or curQuestInfo.status == QuestStatus.QUEST_Accepted then
-          (self._name):SetText((StringTable.Get)(curQuestInfo.QuestName))
-          ;
-          (self._progress):SetText(curQuestInfo.cur_progress .. "/" .. curQuestInfo.total_progress)
-          ;
-          (self._redPointGO):SetActive(false)
-        end
-      end
-      self:_SetIcon(curQuestInfo)
-    else
-      self:_SetIcon(lastQuestInfo)
-      ;
-      (self._nameGO):SetActive(false)
-      ;
-      (self._lineGO):SetActive(false)
-      ;
-      (self._progressGO):SetActive(false)
-      ;
-      (self._allGotGO):SetActive(true)
-      ;
-      (self._redPointGO):SetActive(false)
+  if curQuestInfo then
+    self._nameGO:SetActive(true)
+    self._lineGO:SetActive(true)
+    self._progressGO:SetActive(true)
+    self._allGotGO:SetActive(false)
+    if curQuestInfo.status == QuestStatus.QUEST_Completed then
+      self._name:SetText(StringTable.Get(curQuestInfo.QuestName))
+      self._progress:SetText(StringTable.Get("str_tower_pass_award_canget"))
+      self._redPointGO:SetActive(true)
+    elseif curQuestInfo.status == QuestStatus.QUEST_NotStart or curQuestInfo.status == QuestStatus.QUEST_Accepted then
+      self._name:SetText(StringTable.Get(curQuestInfo.QuestName))
+      self._progress:SetText(curQuestInfo.cur_progress .. "/" .. curQuestInfo.total_progress)
+      self._redPointGO:SetActive(false)
     end
+    self:_SetIcon(curQuestInfo)
+  else
+    self:_SetIcon(lastQuestInfo)
+    self._nameGO:SetActive(false)
+    self._lineGO:SetActive(false)
+    self._progressGO:SetActive(false)
+    self._allGotGO:SetActive(true)
+    self._redPointGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITowerPassAwardEntrance._SetIcon = function(self, questInfo)
-  -- function num : 0_7 , upvalues : _ENV
+function UITowerPassAwardEntrance:_SetIcon(questInfo)
   if questInfo then
-    local reward = (questInfo.rewards)[1]
+    local reward = questInfo.rewards[1]
     if reward then
-      local cfg = (Cfg.cfg_item)[reward.assetid]
+      local cfg = Cfg.cfg_item[reward.assetid]
       if cfg then
-        (self._Icon):LoadImage(cfg.Icon)
+        self._Icon:LoadImage(cfg.Icon)
       end
     end
   end
 end
-
-

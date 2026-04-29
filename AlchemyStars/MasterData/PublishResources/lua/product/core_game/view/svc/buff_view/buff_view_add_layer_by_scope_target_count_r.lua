@@ -1,49 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_add_layer_by_scope_target_count_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddLayerByScopeTargetCount", BuffViewBase)
 BuffViewAddLayerByScopeTargetCount = BuffViewAddLayerByScopeTargetCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddLayerByScopeTargetCount.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddLayerByScopeTargetCount:PlayView(TT)
   local result = self._buffResult
   local curMarkLayer = result:GetLayer()
-  ;
-  (self._viewInstance):SetLayerCount(TT, curMarkLayer)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  self._viewInstance:SetLayerCount(TT, curMarkLayer)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
   if result:GetDonotDisplay() then
-    return 
+    return
   end
-  if (self._entity):HasPetPstID() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), curMarkLayer)
+  if self._entity:HasPetPstID() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), curMarkLayer)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddLayerByScopeTargetCount.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewAddLayerByScopeTargetCount:IsNotifyMatch(notify)
   local notifyType = notify:GetNotifyType()
   if notifyType == NotifyType.TrapDead or notifyType == NotifyType.TrapShow then
-    local entity = (notify:GetNotifyEntity())
-    local notifyEntityID = nil
+    local entity = notify:GetNotifyEntity()
+    local notifyEntityID
     if entity then
       notifyEntityID = entity:GetID()
     end
-    local resEntityID = (self._buffResult):GetNotifyEntityID()
-    if notifyEntityID ~= resEntityID then
-      do
-        do return not notifyEntityID or not resEntityID end
-        do return false end
-        do return true end
-        -- DECOMPILER ERROR: 3 unprocessed JMP targets
-      end
+    local resEntityID = self._buffResult:GetNotifyEntityID()
+    if notifyEntityID and resEntityID then
+      return notifyEntityID == resEntityID
+    else
+      return false
     end
   end
+  return true
 end
-
-

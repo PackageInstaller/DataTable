@@ -1,45 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_guest_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetGuestAttack", BuffLogicBase)
 BuffLogicSetGuestAttack = BuffLogicSetGuestAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetGuestAttack.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetGuestAttack:Constructor(buffInstance, logicParam)
   self._rate = logicParam.rate or 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetGuestAttack.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local guestAttack = ((self._entity):BuffComponent()):GetBuffValue("GuestAttack")
+function BuffLogicSetGuestAttack:DoLogic()
+  local guestAttack = self._entity:BuffComponent():GetBuffValue("GuestAttack")
   if guestAttack == nil then
-    (Log.notice)("Haven\'t guestAttack, SetGuestAttack Error!")
-    return 
+    Log.notice("Haven't guestAttack, SetGuestAttack Error!")
+    return
   end
-  ;
-  (self._buffLogicService):ChangeBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.Attack, guestAttack * self._rate)
+  self._buffLogicService:ChangeBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.Attack, guestAttack * self._rate)
 end
 
 _class("BuffLogicResetGuestAttack", BuffLogicBase)
 BuffLogicResetGuestAttack = BuffLogicResetGuestAttack
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetGuestAttack.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetGuestAttack:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetGuestAttack.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.notice)("BuffLogicResetGuestAttack")
-  ;
-  (self._buffLogicService):RemoveBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.Attack)
+function BuffLogicResetGuestAttack:DoLogic()
+  Log.notice("BuffLogicResetGuestAttack")
+  self._buffLogicService:RemoveBaseAttack(self._entity, self:GetBuffSeq(), ModifyBaseAttackType.Attack)
 end
-
-

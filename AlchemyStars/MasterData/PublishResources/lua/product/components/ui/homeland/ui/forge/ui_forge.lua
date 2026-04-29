@@ -1,42 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForge", UIController)
 UIForge = UIForge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForge.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
-  ;
-  (self.data):ResetSort()
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.data).filter = 0
-  ;
-  (self.data):Init((self.mHomeland):GetHomelandInfo())
-  ;
-  (self.data):FilterList()
+function UIForge:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
+  self.data:ResetSort()
+  self.data.filter = 0
+  self.data:Init(self.mHomeland:GetHomelandInfo())
+  self.data:FilterList()
   self._firstItem = nil
   self._firstSquenceItem = nil
   self._fourthTagItem = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIForge:OnShow(uiParams)
   self.cTypeRect = self:GetUIComponent("RectTransform", "cType")
   self.cType = self:GetUIComponent("UISelectObjectPath", "cType")
   self.txtSequence = self:GetUIComponent("UILocalizationText", "txtSequence")
   self.imgClock = self:GetGameObject("imgClock")
   self.redSequence = self:GetGameObject("redSequence")
-  ;
-  (self.redSequence):SetActive(false)
+  self.redSequence:SetActive(false)
   self.goSort = self:GetGameObject("sort")
   self.sort = self:GetUIComponent("UISelectObjectPath", "sort")
   self.goEconomy = self:GetGameObject("economy")
@@ -56,41 +39,30 @@ UIForge.OnShow = function(self, uiParams)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIForge:OnHide()
   self:DetachEvent(GameEventType.ShowHideListSequence, self.ShowHideListSequence)
   self:DetachEvent(GameEventType.HomelandForgeUpdateList, self.FlushList)
   self:DetachEvent(GameEventType.HomelandForgeUpdateSequence, self.FlushSequence)
   self:DetachEvent(GameEventType.HomelandLevelOnLevelInfoChange, self.HomelandLevelOnLevelInfoChange)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandMain)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIHomelandMain)
   if self._moveTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._moveTask)
+    GameGlobal.TaskManager():KillTask(self._moveTask)
     self._moveTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.Init = function(self)
-  -- function num : 0_3
+function UIForge:Init()
   self:InitTypeTree()
   self:InitSort()
   self:InitEconomy()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.InitTypeTree = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local len = (table.count)((self.data).filters)
-  ;
-  (self.cType):SpawnObjects("UIForgeTypeTreeItem", len)
-  local uis = (self.cType):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
-    local id = (((self.data).filters)[i]).id
+function UIForge:InitTypeTree()
+  local len = table.count(self.data.filters)
+  self.cType:SpawnObjects("UIForgeTypeTreeItem", len)
+  local uis = self.cType:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
+    local id = self.data.filters[i].id
     ui:Init(id)
     if id == 0 then
       ui:FoldFilter(0)
@@ -101,69 +73,49 @@ UIForge.InitTypeTree = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.InitSort = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local len = (table.count)(ForgeSortType)
-  ;
-  (self.sort):SpawnObjects("UIForgeSort", len)
-  local uis = (self.sort):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+function UIForge:InitSort()
+  local len = table.count(ForgeSortType)
+  self.sort:SpawnObjects("UIForgeSort", len)
+  local uis = self.sort:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     ui:Init(i)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.InitEconomy = function(self)
-  -- function num : 0_6
-  (self.economy):SpawnObject("UIForgeEconomy")
+function UIForge:InitEconomy()
+  self.economy:SpawnObject("UIForgeEconomy")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.Flush = function(self)
-  -- function num : 0_7
+function UIForge:Flush()
   self:FlushSequence()
   self:GuideSort()
   self:FlushList()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.GuideSort = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self:GetModule(GuideModule)):IsGuideProcessKey("guide_dormitory_build") then
-    local cfg = (Cfg.cfg_guide_const).guide_dormitory_build
-    local temp = nil
-    for i = 1, #(self.data).list do
-      if (((self.data).list)[i]).id == (cfg.ArrayValue)[1] then
-        temp = ((self.data).list)[i]
-        ;
-        (table.remove)((self.data).list, i)
+function UIForge:GuideSort()
+  if self:GetModule(GuideModule):IsGuideProcessKey("guide_dormitory_build") then
+    local cfg = Cfg.cfg_guide_const.guide_dormitory_build
+    local temp
+    for i = 1, #self.data.list do
+      if self.data.list[i].id == cfg.ArrayValue[1] then
+        temp = self.data.list[i]
+        table.remove(self.data.list, i)
         break
       end
     end
-    do
-      if temp then
-        (table.insert)((self.data).list, 1, temp)
-      end
+    if temp then
+      table.insert(self.data.list, 1, temp)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.FlushList = function(self, needFlushData)
-  -- function num : 0_9 , upvalues : _ENV
-  local len = (table.count)((self.data).list)
-  ;
-  (self.cList):SpawnObjects("UIForgeItem", len)
-  local uis = (self.cList):GetAllSpawnList()
+function UIForge:FlushList(needFlushData)
+  local len = table.count(self.data.list)
+  self.cList:SpawnObjects("UIForgeItem", len)
+  local uis = self.cList:GetAllSpawnList()
   self._firstItem = nil
-  for i,ui in ipairs(uis) do
-    local item = ((self.data).list)[i]
+  for i, ui in ipairs(uis) do
+    local item = self.data.list[i]
     if item then
       ui:Flush(item.id)
     end
@@ -171,261 +123,174 @@ UIForge.FlushList = function(self, needFlushData)
       self._firstItem = ui
     end
   end
-  do
-    if (self.data):HasCanUnlockItem() then
-      (self.oneKeyUnlockBtn):SetActive(self._isShowList)
-      self:FlushSort()
-    end
-  end
+  self.oneKeyUnlockBtn:SetActive(self.data:HasCanUnlockItem() and self._isShowList)
+  self:FlushSort()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.FlushSort = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local uis = (self.sort):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+function UIForge:FlushSort()
+  local uis = self.sort:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     ui:Flush()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.FlushSequence = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local len = (table.count)((self.data).sequnces)
-  ;
-  (self.cSequence):SpawnObjects("UIForgeSequenceItem", len)
-  local uis = (self.cSequence):GetAllSpawnList()
+function UIForge:FlushSequence()
+  local len = table.count(self.data.sequnces)
+  self.cSequence:SpawnObjects("UIForgeSequenceItem", len)
+  local uis = self.cSequence:GetAllSpawnList()
   self._firstSquenceItem = nil
-  for i,ui in ipairs(uis) do
-    ui:Flush((((self.data).sequnces)[i]).index)
+  for i, ui in ipairs(uis) do
+    ui:Flush(self.data.sequnces[i].index)
     if not self._firstSquenceItem then
       self._firstSquenceItem = ui
     end
   end
   self:FlushSequenceButton()
-  ;
-  (self.oneKeyUnlockBtn):SetActive(false)
+  self.oneKeyUnlockBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.FlushSequenceButton = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local mapStateCount = (self.data):GetSequenceStateCountMap()
+function UIForge:FlushSequenceButton()
+  local mapStateCount = self.data:GetSequenceStateCountMap()
   local countForging = mapStateCount[ForgeSequenceState.Forging]
   local countGetable = mapStateCount[ForgeSequenceState.Getable]
   local countIdle = mapStateCount[ForgeSequenceState.Idle]
   local countLocked = mapStateCount[ForgeSequenceState.Locked]
-  ;
-  (self.redSequence):SetActive(false)
-  ;
-  (self.imgClock):SetActive(false)
-  if countGetable > 0 then
-    (self.redSequence):SetActive(true)
-  else
-    if countForging > 0 then
-      (self.imgClock):SetActive(true)
-    end
+  self.redSequence:SetActive(false)
+  self.imgClock:SetActive(false)
+  if 0 < countGetable then
+    self.redSequence:SetActive(true)
+  elseif 0 < countForging then
+    self.imgClock:SetActive(true)
   end
-  if countForging > 0 then
-    (self.txtSequence):SetText((StringTable.Get)("str_homeland_forge_sequence_produce_ing", countForging, countForging + countGetable + countIdle))
+  if 0 < countForging then
+    self.txtSequence:SetText(StringTable.Get("str_homeland_forge_sequence_produce_ing", countForging, countForging + countGetable + countIdle))
   else
-    ;
-    (self.txtSequence):SetText((StringTable.Get)("str_homeland_forge_sequence_produce_list"))
+    self.txtSequence:SetText(StringTable.Get("str_homeland_forge_sequence_produce_list"))
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshInteractUI)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshInteractUI)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.HomelandLevelOnLevelInfoChange = function(self)
-  -- function num : 0_13
-  (self.data):Init((self.mHomeland):GetHomelandInfo())
+function UIForge:HomelandLevelOnLevelInfoChange()
+  self.data:Init(self.mHomeland:GetHomelandInfo())
   self:FlushSequence()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.ShowHideListSequence = function(self, isShowList)
-  -- function num : 0_14
+function UIForge:ShowHideListSequence(isShowList)
   if isShowList then
-    (self.goSort):SetActive(true)
-    ;
-    (self.goEconomy):SetActive(false)
-    ;
-    (self.list):SetActive(true)
-    ;
-    (self.sequence):SetActive(false)
+    self.goSort:SetActive(true)
+    self.goEconomy:SetActive(false)
+    self.list:SetActive(true)
+    self.sequence:SetActive(false)
   else
-    ;
-    (self.goSort):SetActive(false)
-    ;
-    (self.goEconomy):SetActive(true)
-    ;
-    (self.list):SetActive(false)
-    ;
-    (self.sequence):SetActive(true)
+    self.goSort:SetActive(false)
+    self.goEconomy:SetActive(true)
+    self.list:SetActive(false)
+    self.sequence:SetActive(true)
   end
   self._isShowList = isShowList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.FlushCDText = function(uiText, time, strs, isUILocalizationText)
-  -- function num : 0_15 , upvalues : _ENV
-  local leftSeconds = (UICommonHelper.CalcLeftSeconds)(time)
-  local d, h, m, s = (UICommonHelper.S2DHMS)(leftSeconds)
-  local SetText = function(str)
-    -- function num : 0_15_0 , upvalues : isUILocalizationText, uiText
+function UIForge.FlushCDText(uiText, time, strs, isUILocalizationText)
+  local leftSeconds = UICommonHelper.CalcLeftSeconds(time)
+  local d, h, m, s = UICommonHelper.S2DHMS(leftSeconds)
+  
+  local function SetText(str)
     if isUILocalizationText then
       uiText:SetText(str)
     else
       uiText:RefreshText(str)
     end
   end
-
-  if d >= 1 then
-    if h >= 1 then
-      SetText((StringTable.Get)(strs[1], (math.floor)(d), (math.floor)(h)))
+  
+  if 1 <= d then
+    if 1 <= h then
+      SetText(StringTable.Get(strs[1], math.floor(d), math.floor(h)))
     else
-      SetText((StringTable.Get)(strs[2], (math.floor)(d)))
+      SetText(StringTable.Get(strs[2], math.floor(d)))
     end
+  elseif 1 <= h then
+    if 1 <= m then
+      SetText(StringTable.Get(strs[3], math.floor(h), math.floor(m)))
+    else
+      SetText(StringTable.Get(strs[4], math.floor(h)))
+    end
+  elseif 1 <= m then
+    SetText(StringTable.Get(strs[5], math.floor(m)))
   else
-    if h >= 1 then
-      if m >= 1 then
-        SetText((StringTable.Get)(strs[3], (math.floor)(h), (math.floor)(m)))
-      else
-        SetText((StringTable.Get)(strs[4], (math.floor)(h)))
-      end
-    else
-      if m >= 1 then
-        SetText((StringTable.Get)(strs[5], (math.floor)(m)))
-      else
-        SetText((StringTable.Get)(strs[5], "<1"))
-      end
-    end
+    SetText(StringTable.Get(strs[5], "<1"))
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.GetTimestampStr = function(timeDelta, strs)
-  -- function num : 0_16 , upvalues : _ENV
-  local d, h, m, s = (UICommonHelper.S2DHMS)(timeDelta)
+function UIForge.GetTimestampStr(timeDelta, strs)
+  local d, h, m, s = UICommonHelper.S2DHMS(timeDelta)
   local str = ""
-  if d >= 1 then
-    if h >= 1 then
-      str = (StringTable.Get)(strs[1], (math.ceil)(d), (math.ceil)(h))
+  if 1 <= d then
+    if 1 <= h then
+      str = StringTable.Get(strs[1], math.ceil(d), math.ceil(h))
     else
-      str = (StringTable.Get)(strs[2], (math.ceil)(d))
+      str = StringTable.Get(strs[2], math.ceil(d))
     end
+  elseif 1 <= h then
+    if 1 <= m then
+      str = StringTable.Get(strs[3], math.ceil(h), math.ceil(m))
+    else
+      str = StringTable.Get(strs[4], math.ceil(h))
+    end
+  elseif 1 <= m then
+    str = StringTable.Get(strs[5], math.ceil(m))
   else
-    if h >= 1 then
-      if m >= 1 then
-        str = (StringTable.Get)(strs[3], (math.ceil)(h), (math.ceil)(m))
-      else
-        str = (StringTable.Get)(strs[4], (math.ceil)(h))
-      end
-    else
-      if m >= 1 then
-        str = (StringTable.Get)(strs[5], (math.ceil)(m))
-      else
-        str = (StringTable.Get)(strs[5], "<1")
-      end
-    end
+    str = StringTable.Get(strs[5], "<1")
   end
   return str
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.btnBackOnClick = function(self)
-  -- function num : 0_17
+function UIForge:btnBackOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.btnInfoOnClick = function(self)
-  -- function num : 0_18
+function UIForge:btnInfoOnClick()
   self:ShowDialog("UIHomeHelpController", "UIForge")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.btnSequenceOnClick = function(self)
-  -- function num : 0_19
+function UIForge:btnSequenceOnClick()
   self:ShowHideListSequence(false)
   self:FlushSequence()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.OneKeyUnlockOnClick = function(self)
-  -- function num : 0_20
+function UIForge:OneKeyUnlockOnClick()
   self:ShowDialog("UIForgeOneKeyUnlock")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.GeForgeItem = function(self)
-  -- function num : 0_21
-  return (self._firstItem):GetGameObject("bg")
+function UIForge:GeForgeItem()
+  return self._firstItem:GetGameObject("bg")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.GeForgeFirstSquenceItemBg = function(self)
-  -- function num : 0_22
-  return (self._firstSquenceItem):GetGameObject("bg")
+function UIForge:GeForgeFirstSquenceItemBg()
+  return self._firstSquenceItem:GetGameObject("bg")
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.GeForgeFirstSquenceItemSpeedBtn = function(self)
-  -- function num : 0_23
-  return (self._firstSquenceItem):GetGameObject("btnSpeed")
+function UIForge:GeForgeFirstSquenceItemSpeedBtn()
+  return self._firstSquenceItem:GetGameObject("btnSpeed")
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.GeForgeFirstSquenceBtnGet = function(self)
-  -- function num : 0_24
-  return (self._firstSquenceItem):GetGameObject("BtnGet")
+function UIForge:GeForgeFirstSquenceBtnGet()
+  return self._firstSquenceItem:GetGameObject("BtnGet")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.GetSpecialTagItem = function(self)
-  -- function num : 0_25
-  return (self._fourthTagItem):GetGameObject("bg")
+function UIForge:GetSpecialTagItem()
+  return self._fourthTagItem:GetGameObject("bg")
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge.GetLandTagItem = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIForge:GetLandTagItem()
   self._moveTask = self:StartTask(function(TT)
-    -- function num : 0_26_0 , upvalues : _ENV, self
     YIELD(TT, 100)
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
     if self.cTypeRect then
-      (self.cTypeRect).anchoredPosition = Vector2(((self.cTypeRect).anchoredPosition).x, 120)
+      self.cTypeRect.anchoredPosition = Vector2(self.cTypeRect.anchoredPosition.x, 120)
     end
-  end
-)
-  return (self._fourthTagItem):GetLandBtn()
+  end)
+  return self._fourthTagItem:GetLandBtn()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForge._CheckGuide = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIForge)
+function UIForge:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIForge)
 end
-
-

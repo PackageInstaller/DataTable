@@ -1,8 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/eventtrailer/str_event_trailer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_event_trailer_title1 = "アストラホットニュース", str_event_trailer_title2 = "ホットニュース", str_event_trailer_item_btn1 = "まもなく解放", str_event_trailer_item_btn2 = "先に確認", str_event_trailer_item_btn3 = "向かう", str_event_trailer_item_btn4 = "終了", str_event_trailer_timer1 = "イベント期間：", str_event_trailer_type_1 = "バージョンイベント", str_event_trailer_type_2 = "ミニゲーム", str_event_trailer_type_3 = "挑戦", str_event_trailer_type_4 = "夢境更新", str_event_trailer_type_5 = "コーデ新発売", str_event_trailer_type_6 = "メインストーリー更新", str_event_trailer_type_7 = "光の異聞録", str_event_trailer_name_1 = "告白の日", str_event_trailer_name_2 = "恋愛裁判", str_event_trailer_name_3 = "残存", str_event_trailer_name_4 = "枯散", str_event_trailer_name_5 = "ときめきデリバリー", str_event_trailer_name_6 = "眠れる千年の誓い", str_event_trailer_locked_tips_1 = "ステージ{1}をクリアする必要があります", str_event_trailer_locked_tips_2 = "アイテム{1}が必要です", str_event_trailer_name_7 = "第2部間章解放", str_event_trailer_name_8 = "崩夢の墟", str_event_trailer_name_9 = "別働隊戦術訓練キャンプ", str_event_trailer_name_10 = "スーパーヴィラン ガルーケンシュタイン", str_event_trailer_name_11 = "夢境の残響", str_event_trailer_name_12 = "天空に響く歌", str_event_trailer_name_13 = "回想の夢境 浅眠", str_event_trailer_name_14 = "スターウィッシュ・プロダクション", str_event_trailer_name_15 = "回想の夢境 深夢", str_event_trailer_name_16 = "伏魔の巣窟", str_event_trailer_name_17 = "片翼の誓い", str_event_trailer_name_18 = "奇天烈美食タウン", str_event_trailer_name_19 = "崩夢の墟", str_event_trailer_name_20 = "再起の翼", str_event_trailer_name_21 = "龍州海鮮記", str_event_trailer_name_22 = "終わりなき狩猟", str_event_trailer_name_23 = "別働隊戦術訓練キャンプ", str_event_trailer_name_24 = "START", str_event_trailer_name_25 = "HARD", str_event_trailer_name_26 = "水晶の予言", str_event_trailer_name_27 = "魚捕り名人", str_event_trailer_name_28 = "映像パズル大作戦", str_event_trailer_name_29 = "訓練場へ", str_event_trailer_name_30 = "特訓", str_event_trailer_name_31 = "極光の守護者", str_event_trailer_name_32 = "星が暁に出会う夜", str_event_trailer_name_33 = "崩夢の墟", str_event_trailer_name_34 = "因果のパズル", str_event_trailer_name_35 = "メビウス", str_event_trailer_name_36 = "夏はヒンヤリ大作戦", str_event_trailer_name_37 = "別働隊戦術訓練キャンプ"}
+local config = {
+  str_event_trailer_title1 = "アストラホットニュース",
+  str_event_trailer_title2 = "ホットニュース",
+  str_event_trailer_item_btn1 = "まもなく解放",
+  str_event_trailer_item_btn2 = "先に確認",
+  str_event_trailer_item_btn3 = "向かう",
+  str_event_trailer_item_btn4 = "終了",
+  str_event_trailer_timer1 = "イベント期間：",
+  str_event_trailer_type_1 = "バージョンイベント",
+  str_event_trailer_type_2 = "ミニゲーム",
+  str_event_trailer_type_3 = "挑戦",
+  str_event_trailer_type_4 = "夢境更新",
+  str_event_trailer_type_5 = "コーデ新発売",
+  str_event_trailer_type_6 = "メインストーリー更新",
+  str_event_trailer_type_7 = "光の異聞録",
+  str_event_trailer_name_1 = "告白の日",
+  str_event_trailer_name_2 = "恋愛裁判",
+  str_event_trailer_name_3 = "残存",
+  str_event_trailer_name_4 = "枯散",
+  str_event_trailer_name_5 = "ときめきデリバリー",
+  str_event_trailer_name_6 = "眠れる千年の誓い",
+  str_event_trailer_locked_tips_1 = "ステージ{1}をクリアする必要があります",
+  str_event_trailer_locked_tips_2 = "アイテム{1}が必要です",
+  str_event_trailer_name_7 = "第2部間章解放",
+  str_event_trailer_name_8 = "崩夢の墟",
+  str_event_trailer_name_9 = "別働隊戦術訓練キャンプ",
+  str_event_trailer_name_10 = "スーパーヴィラン ガルーケンシュタイン",
+  str_event_trailer_name_11 = "夢境の残響",
+  str_event_trailer_name_12 = "天空に響く歌",
+  str_event_trailer_name_13 = "回想の夢境 浅眠",
+  str_event_trailer_name_14 = "スターウィッシュ・プロダクション",
+  str_event_trailer_name_15 = "回想の夢境 深夢",
+  str_event_trailer_name_16 = "伏魔の巣窟",
+  str_event_trailer_name_17 = "片翼の誓い",
+  str_event_trailer_name_18 = "奇天烈美食タウン",
+  str_event_trailer_name_19 = "崩夢の墟",
+  str_event_trailer_name_20 = "再起の翼",
+  str_event_trailer_name_21 = "龍州海鮮記",
+  str_event_trailer_name_22 = "終わりなき狩猟",
+  str_event_trailer_name_23 = "別働隊戦術訓練キャンプ",
+  str_event_trailer_name_24 = "START",
+  str_event_trailer_name_25 = "HARD",
+  str_event_trailer_name_26 = "水晶の予言",
+  str_event_trailer_name_27 = "魚捕り名人",
+  str_event_trailer_name_28 = "映像パズル大作戦",
+  str_event_trailer_name_29 = "訓練場へ",
+  str_event_trailer_name_30 = "特訓",
+  str_event_trailer_name_31 = "極光の守護者",
+  str_event_trailer_name_32 = "星が暁に出会う夜",
+  str_event_trailer_name_33 = "崩夢の墟",
+  str_event_trailer_name_34 = "因果のパズル",
+  str_event_trailer_name_35 = "メビウス",
+  str_event_trailer_name_36 = "夏はヒンヤリ大作戦",
+  str_event_trailer_name_37 = "別働隊戦術訓練キャンプ"
+}
 return config
-

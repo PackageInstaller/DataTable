@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/review/ui_black_fight_paper_item_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBlackFightPaperItemReview", UICustomWidget)
 UIBlackFightPaperItemReview = UIBlackFightPaperItemReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBlackFightPaperItemReview.OnShow = function(self)
-  -- function num : 0_0
+function UIBlackFightPaperItemReview:OnShow()
   self.root = self:GetGameObject("root")
   self.txtPhase = self:GetUIComponent("UILocalizationText", "txtPhase")
   self.poolL = self:GetUIComponent("UISelectObjectPath", "l")
@@ -19,56 +12,36 @@ UIBlackFightPaperItemReview.OnShow = function(self)
   self.reputationValue = self:GetUIComponent("UILocalizationText", "reputationValue")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperItemReview.OnHide = function(self)
-  -- function num : 0_1
+function UIBlackFightPaperItemReview:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperItemReview.Flush = function(self, paper)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBlackFightPaperItemReview:Flush(paper)
   local unlock = paper:IsUnlock()
   if unlock then
-    (self.txtPhase):SetText(218 + paper.idx)
+    self.txtPhase:SetText(218 + paper.idx)
     self:FlushLR(paper, true)
     self:FlushLR(paper, false)
     self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    (self.root):SetActive(false)
-    YIELD(TT)
-    ;
-    (self.root):SetActive(true)
-  end
-, self)
+      self.root:SetActive(false)
+      YIELD(TT)
+      self.root:SetActive(true)
+    end, self)
   else
-    local cfg_campaign_mission = (Cfg.cfg_campaign_mission)[paper.missionId]
+    local cfg_campaign_mission = Cfg.cfg_campaign_mission[paper.missionId]
     if cfg_campaign_mission then
-      local levelName = (StringTable.Get)(cfg_campaign_mission.Name)
-      local str = (StringTable.Get)("str_n7_review_paper_complete_level_x", levelName)
-      ;
-      (self.reputationValue):SetText(str)
+      local levelName = StringTable.Get(cfg_campaign_mission.Name)
+      local str = StringTable.Get("str_n7_review_paper_complete_level_x", levelName)
+      self.reputationValue:SetText(str)
     else
-      do
-        do
-          ;
-          (self.reputationValue):SetText("invalid " .. paper.missionId)
-          ;
-          (self.lock):SetActive(not unlock)
-          ;
-          (self.root):SetActive(unlock)
-        end
-      end
+      self.reputationValue:SetText("invalid " .. paper.missionId)
     end
   end
+  self.lock:SetActive(not unlock)
+  self.root:SetActive(unlock)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightPaperItemReview.FlushLR = function(self, paper, isL)
-  -- function num : 0_3 , upvalues : _ENV
-  local pool, elements = nil, nil
+function UIBlackFightPaperItemReview:FlushLR(paper, isL)
+  local pool, elements
   if isL then
     pool = self.poolL
     elements = paper.elementsL
@@ -76,12 +49,10 @@ UIBlackFightPaperItemReview.FlushLR = function(self, paper, isL)
     pool = self.poolR
     elements = paper.elementsR
   end
-  local len = (table.count)(elements)
+  local len = table.count(elements)
   pool:SpawnObjects("UIBlackFightPaperElementReview", len)
   local uis = pool:GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+  for i, ui in ipairs(uis) do
     ui:Flush(elements[i])
   end
 end
-
-

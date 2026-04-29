@@ -1,36 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_empty_rand_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_EmptyRandGrid", SkillScopeCalculator_Base)
 SkillScopeCalculator_EmptyRandGrid = SkillScopeCalculator_EmptyRandGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_EmptyRandGrid.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_EmptyRandGrid:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local casterPos = centerPos
   local count = scopeParam
   local randPos = {}
-  local pieces = (self._gridFilter):GetEmptyPieces()
-  if #pieces < count then
+  local pieces = self._gridFilter:GetEmptyPieces()
+  if count > #pieces then
     count = #pieces
   end
   repeat
     local randomIndex = -1
     if self._gridFilter then
-      randomIndex = (self._gridFilter):_GetRandomNumber(0, #pieces)
+      randomIndex = self._gridFilter:_GetRandomNumber(0, #pieces)
     else
-      randomIndex = (math.random)(0, #pieces)
+      randomIndex = math.random(0, #pieces)
     end
     local pos = pieces[randomIndex]
-    if not (table.icontains)(randPos, pos) then
-      (table.insert)(randPos, pos)
+    if not table.icontains(randPos, pos) then
+      table.insert(randPos, pos)
     end
   until #randPos == count
   local result = SkillScopeResult:New(SkillScopeType.EmptyRandGrid, casterPos, randPos, randPos)
   return result
 end
-
-

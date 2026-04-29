@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/chain_move_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainMoveData", Object)
 ChainMoveData = ChainMoveData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainMoveData.Constructor = function(self, petEntityID, pos, chainIndex)
-  -- function num : 0_0
+function ChainMoveData:Constructor(petEntityID, pos, chainIndex)
   self.petEntityID = petEntityID
   self.pos = pos
   self.chainIndex = chainIndex
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveData.GetPetEntityID = function(self)
-  -- function num : 0_1
+function ChainMoveData:GetPetEntityID()
   return self.petEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveData.GetPos = function(self)
-  -- function num : 0_2
+function ChainMoveData:GetPos()
   return self.pos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveData.GetChainIndex = function(self)
-  -- function num : 0_3
+function ChainMoveData:GetChainIndex()
   return self.chainIndex
 end
-
-

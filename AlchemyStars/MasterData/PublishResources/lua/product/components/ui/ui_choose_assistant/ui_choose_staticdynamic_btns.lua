@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_choose_assistant/ui_choose_staticdynamic_btns.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChooseStaticDynamicBtns", UICustomWidget)
 UIChooseStaticDynamicBtns = UIChooseStaticDynamicBtns
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChooseStaticDynamicBtns.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChooseStaticDynamicBtns:Constructor()
   self._roleModule = self:GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseStaticDynamicBtns.GetComponents = function(self)
-  -- function num : 0_1
+function UIChooseStaticDynamicBtns:GetComponents()
   self._staticRect = self:GetUIComponent("RectTransform", "static")
   self._dynamicRect = self:GetUIComponent("RectTransform", "dynamic")
   self._staticText = self:GetUIComponent("UILocalizationText", "staticText")
@@ -24,20 +14,14 @@ UIChooseStaticDynamicBtns.GetComponents = function(self)
   self._bg1 = self:GetGameObject("bg1")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseStaticDynamicBtns.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIChooseStaticDynamicBtns:OnShow(uiParams)
   self:GetComponents()
   self:_InitSkinState()
   self:ChangeDynamicAndStatic(self._cgState)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseStaticDynamicBtns._InitSkinState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local flagValue = (self._roleModule):GetExtFlag(CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE)
+function UIChooseStaticDynamicBtns:_InitSkinState()
+  local flagValue = self._roleModule:GetExtFlag(CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE)
   if flagValue then
     self._cgState = DynamicAndStaticState.Static
   else
@@ -45,35 +29,27 @@ UIChooseStaticDynamicBtns._InitSkinState = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseStaticDynamicBtns.StaticDynamicBtnsOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIChooseStaticDynamicBtns:StaticDynamicBtnsOnClick()
   if self._cgState == DynamicAndStaticState.Static then
     self._cgState = DynamicAndStaticState.Dynamic
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_Dynamic"}, true)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlideDynamic)
+    GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+      "Click_Dynamic"
+    }, true)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlideDynamic)
   else
     self._cgState = DynamicAndStaticState.Static
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_Static"}, true)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSlide)
+    GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+      "Click_Static"
+    }, true)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSlide)
   end
   self:ChangeDynamicAndStatic(self._cgState)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OnGetExtData, self, self._cgState)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SwitchSkinStaticOrDynamic, self._cgState)
+  GameGlobal.TaskManager():StartTask(self._OnGetExtData, self, self._cgState)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SwitchSkinStaticOrDynamic, self._cgState)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseStaticDynamicBtns._OnGetExtData = function(self, TT, state)
-  -- function num : 0_5 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIChooseStaticDynamicBtns:_OnGetExtData(TT, state)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local flagValue = false
   if state == DynamicAndStaticState.Static then
     flagValue = true
@@ -83,44 +59,21 @@ UIChooseStaticDynamicBtns._OnGetExtData = function(self, TT, state)
   roleModule:SetExtFlag(TT, CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE, flagValue)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChooseStaticDynamicBtns.ChangeDynamicAndStatic = function(self, state)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChooseStaticDynamicBtns:ChangeDynamicAndStatic(state)
   if self._dsTween then
-    (self._dsTween):Kill()
+    self._dsTween:Kill()
   end
   if state == DynamicAndStaticState.Dynamic then
-    local pos = (self._dynamicRect).anchoredPosition
-    ;
-    (self._bg1):SetActive(false)
-    ;
-    (self._bg2):SetActive(true)
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._dynamicText).color = Color.black
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._staticText).color = Color(0.38823529411765, 0.38823529411765, 0.38823529411765, 1)
+    local pos = self._dynamicRect.anchoredPosition
+    self._bg1:SetActive(false)
+    self._bg2:SetActive(true)
+    self._dynamicText.color = Color.black
+    self._staticText.color = Color(0.38823529411764707, 0.38823529411764707, 0.38823529411764707, 1)
   else
-    do
-      local pos = (self._staticRect).anchoredPosition
-      ;
-      (self._bg1):SetActive(true)
-      ;
-      (self._bg2):SetActive(false)
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._staticText).color = Color.black
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._dynamicText).color = Color(0.38823529411765, 0.38823529411765, 0.38823529411765, 1)
-    end
+    local pos = self._staticRect.anchoredPosition
+    self._bg1:SetActive(true)
+    self._bg2:SetActive(false)
+    self._staticText.color = Color.black
+    self._dynamicText.color = Color(0.38823529411764707, 0.38823529411764707, 0.38823529411764707, 1)
   end
 end
-
-

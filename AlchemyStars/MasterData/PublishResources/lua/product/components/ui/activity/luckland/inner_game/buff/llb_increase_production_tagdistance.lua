@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_increase_production_tagdistance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicIncreaseProductionTagDistance", LLBuffLogicBase)
 LLBuffLogicIncreaseProductionTagDistance = LLBuffLogicIncreaseProductionTagDistance
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicIncreaseProductionTagDistance.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicIncreaseProductionTagDistance:Constructor(buffObj, logicParam)
   self._tagType = logicParam.tagType
   self._tagParam = logicParam.tagParam
   self._incType = logicParam.incType
@@ -17,39 +10,32 @@ LLBuffLogicIncreaseProductionTagDistance.Constructor = function(self, buffObj, l
   self._perVal = logicParam.perVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionTagDistance.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicIncreaseProductionTagDistance:DoLogic(notify)
   local notifyEntity = notify:GetNotifyEntity()
   local maxDistance = 0
-  local pets = (LuckLandTriggerTool.GetPetsByTag)(self._tagType, self._tagParam)
+  local pets = LuckLandTriggerTool.GetPetsByTag(self._tagType, self._tagParam)
   if pets and notifyEntity:GetEntityType() == LuckLandEntityType.Pet then
     local petEntity = notifyEntity
-    for _,pet in pairs(pets) do
-      local distance = (LuckLandTriggerTool.Distance)(petEntity, pet)
+    for _, pet in pairs(pets) do
+      local distance = LuckLandTriggerTool.Distance(petEntity, pet)
       if maxDistance < distance then
         maxDistance = distance
       end
     end
   end
-  do
-    local targets = (self._buffObj):GetTargets()
-    for _,target in ipairs(targets) do
-      self:DoLogicSingle(target, maxDistance)
-    end
+  local targets = self._buffObj:GetTargets()
+  for _, target in ipairs(targets) do
+    self:DoLogicSingle(target, maxDistance)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionTagDistance.DoLogicSingle = function(self, target, maxDistance)
-  -- function num : 0_2 , upvalues : _ENV
-  if target:GetEntityType() == LuckLandEntityType.Pet and target:HasDeleteFlag() then
-    return 
-  end
-  if target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
-    return 
+function LLBuffLogicIncreaseProductionTagDistance:DoLogicSingle(target, maxDistance)
+  if target:GetEntityType() == LuckLandEntityType.Pet then
+    if target:HasDeleteFlag() then
+      return
+    end
+  elseif target:GetEntityType() == LuckLandEntityType.Monster and target:IsDead() then
+    return
   end
   if self._incType == LuckLandIncType.Accumulate then
     if self._fixVal then
@@ -58,16 +44,12 @@ LLBuffLogicIncreaseProductionTagDistance.DoLogicSingle = function(self, target, 
     if self._perVal then
       target:AddAccPerValue(self._perVal * maxDistance)
     end
-  else
-    if self._incType == LuckLandIncType.Temp then
-      if self._fixVal then
-        target:AddTempFixValue(self._fixVal * maxDistance)
-      end
-      if self._perVal then
-        target:AddTempPerValue(self._perVal * maxDistance)
-      end
+  elseif self._incType == LuckLandIncType.Temp then
+    if self._fixVal then
+      target:AddTempFixValue(self._fixVal * maxDistance)
+    end
+    if self._perVal then
+      target:AddTempPerValue(self._perVal * maxDistance)
     end
   end
 end
-
-

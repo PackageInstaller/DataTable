@@ -1,33 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/medal_wall/homeland_medal_wall.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandMedalWall", HomeBuilding)
 HomelandMedalWall = HomelandMedalWall
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandMedalWall.Constructor = function(self, insID, architecture, cfg)
-  -- function num : 0_0
+function HomelandMedalWall:Constructor(insID, architecture, cfg)
   self._isInited = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWall.InitMedalWall = function(self, architecture)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandMedalWall:InitMedalWall(architecture)
   if self._isInited then
-    return 
+    return
   end
   self._isInited = true
-  self._uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-  self._isVisit = ((self._uiModule):GetClient()):IsVisit()
+  self._uiModule = GameGlobal.GetUIModule(HomelandModule)
+  self._isVisit = self._uiModule:GetClient():IsVisit()
   self._pstid = architecture.pstid
   self._buildID = self:GetBuildId()
   self._buildPstID = self:GetBuildPstId()
   self._transform = self:Transform()
-  self._medalRoot = (GameObjectHelper.FindChild)(self._transform, "MedalRoot")
-  self._meadalWall = (GameObjectHelper.FindChild)(self._transform, "hl_envmod_building_5256001")
+  self._medalRoot = GameObjectHelper.FindChild(self._transform, "MedalRoot")
+  self._meadalWall = GameObjectHelper.FindChild(self._transform, "hl_envmod_building_5256001")
   if self._isVisit then
     self:RefreshMedalWall()
   else
@@ -35,93 +25,66 @@ HomelandMedalWall.InitMedalWall = function(self, architecture)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWall.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandMedalWall.super).Dispose)(self)
+function HomelandMedalWall:Dispose()
+  HomelandMedalWall.super.Dispose(self)
   self:ClearMedals()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWall.ClearMedals = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandMedalWall:ClearMedals()
   if self._medals then
-    for k,v in pairs(self._medals) do
+    for k, v in pairs(self._medals) do
       v:Destroy()
     end
   end
-  do
-    self:RemoveEvents()
-  end
+  self:RemoveEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWall.RemoveEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandMedalWall:RemoveEvents()
   if self._updateMedalCallback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.BoardMedalUpdate, self._updateMedalCallback)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.BoardMedalUpdate, self._updateMedalCallback)
     self._updateMedalCallback = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWall._InitMedalWall = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandMedalWall:_InitMedalWall()
   if self._updateMedalCallback == nil then
-    self._updateMedalCallback = (GameHelper:GetInstance()):CreateCallback(self.RefreshMedalWall, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.BoardMedalUpdate, self._updateMedalCallback)
+    self._updateMedalCallback = GameHelper:GetInstance():CreateCallback(self.RefreshMedalWall, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.BoardMedalUpdate, self._updateMedalCallback)
   end
   self:RefreshMedalWall()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandMedalWall.RefreshMedalWall = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function HomelandMedalWall:RefreshMedalWall()
   if self._medals then
-    for k,v in pairs(self._medals) do
+    for k, v in pairs(self._medals) do
       v:Destroy()
     end
   end
-  do
-    self._medals = {}
-    local placeData = nil
-    if self._isVisit then
-      placeData = ((self._uiModule):GetVisitInfo()).medal_placement
+  self._medals = {}
+  local placeData
+  if self._isVisit then
+    placeData = self._uiModule:GetVisitInfo().medal_placement
+  else
+    placeData = GameGlobal.GetModule(MedalModule):GetPlacementInfo()
+  end
+  local boardCfg = Cfg.cfg_item_medal_board[placeData.board_back_id]
+  if boardCfg and self._meadalWall then
+    local meadalWallMesh = self._meadalWall:GetComponent(typeof(UnityEngine.MeshRenderer))
+    local matName = boardCfg.BoardMat .. ".mat"
+    self._res = ResourceManager:GetInstance():SyncLoadAsset(matName, LoadType.Mat)
+    if self._res then
+      meadalWallMesh.material = self._res.Obj
     else
-      placeData = ((GameGlobal.GetModule)(MedalModule)):GetPlacementInfo()
-    end
-    local boardCfg = (Cfg.cfg_item_medal_board)[placeData.board_back_id]
-    if boardCfg and self._meadalWall then
-      local meadalWallMesh = (self._meadalWall):GetComponent(typeof(UnityEngine.MeshRenderer))
-      local matName = boardCfg.BoardMat .. ".mat"
-      self._res = (ResourceManager:GetInstance()):SyncLoadAsset(matName, LoadType.Mat)
-      if self._res then
-        meadalWallMesh.material = (self._res).Obj
-      else
-        ;
-        (Log.fatal)("该勋章板资源不存在", matName)
-      end
-    end
-    do
-      local medalEditor = ((GameGlobal.GetModule)(MedalModule)):GetN22MedalEditData()
-      local medalList = medalEditor:GetMappingBoardMedalList(MedalWallConfig.HomelandMedalWallWidth, placeData)
-      for _,boardMedal in pairs(medalList) do
-        -- DECOMPILER ERROR at PC94: Confused about usage of register: R10 in 'UnsetPending'
-
-        (self._medals)[#self._medals + 1] = HomelandMedal:New(self._medalRoot, boardMedal, self._buildID)
-      end
+      Log.fatal("该勋章板资源不存在", matName)
     end
   end
+  local medalEditor = GameGlobal.GetModule(MedalModule):GetN22MedalEditData()
+  local medalList = medalEditor:GetMappingBoardMedalList(MedalWallConfig.HomelandMedalWallWidth, placeData)
+  for _, boardMedal in pairs(medalList) do
+    self._medals[#self._medals + 1] = HomelandMedal:New(self._medalRoot, boardMedal, self._buildID)
+  end
 end
-
-

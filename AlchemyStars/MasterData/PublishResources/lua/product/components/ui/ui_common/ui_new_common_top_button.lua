@@ -1,51 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_common/ui_new_common_top_button.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UINewCommonTopButton", UICustomWidget)
 UINewCommonTopButton = UINewCommonTopButton
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UINewCommonTopButton.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UINewCommonTopButton:Constructor()
   self._shareModule = self:GetModule(ShareModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UINewCommonTopButton:OnShow(uiParams)
   self._shareBtn = self:GetGameObject("ShareBtn")
-  local extraWidget = {"TeamRecordBtn"}
-  for _,v in ipairs(extraWidget) do
-    (self:GetGameObject(v)):SetActive(false)
+  local extraWidget = {
+    "TeamRecordBtn"
+  }
+  for _, v in ipairs(extraWidget) do
+    self:GetGameObject(v):SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.SetData_Extra = function(self, params)
-  -- function num : 0_2 , upvalues : _ENV
+function UINewCommonTopButton:SetData_Extra(params)
   self._extra = {}
-  for i,v in ipairs(params) do
+  for i, v in ipairs(params) do
     local widget = v[1]
     local callback = v[2]
     local obj = self:GetGameObject(widget)
     if obj then
       obj:SetActive(true)
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._extra)[widget] = callback
+      self._extra[widget] = callback
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.SetData = function(self, _backCB, _helpCB, _thumbCB, _hideHomeBtn, showHideUICB, showShareBtn, shareCB)
-  -- function num : 0_3
+function UINewCommonTopButton:SetData(_backCB, _helpCB, _thumbCB, _hideHomeBtn, showHideUICB, showShareBtn, shareCB)
   self.backCallback = _backCB
   self.helpCallback = _helpCB
   self.thumbCB = _thumbCB
@@ -53,107 +36,70 @@ UINewCommonTopButton.SetData = function(self, _backCB, _helpCB, _thumbCB, _hideH
   self.showShareBtn = showShareBtn
   self.shareCB = shareCB
   if self.helpCallback == nil then
-    (self:GetGameObject("ButtonHelp")):SetActive(false)
+    self:GetGameObject("ButtonHelp"):SetActive(false)
   else
-    ;
-    (self:GetGameObject("ButtonHelp")):SetActive(true)
+    self:GetGameObject("ButtonHelp"):SetActive(true)
   end
   if _hideHomeBtn then
     self:HideHomeBtn()
   end
   if self.showHideUICB == nil then
-    (self:GetGameObject("btnShowHideUI")):SetActive(false)
+    self:GetGameObject("btnShowHideUI"):SetActive(false)
   end
   if self.showShareBtn then
-    (self._shareBtn):SetActive((self._shareModule):CanShare())
+    self._shareBtn:SetActive(self._shareModule:CanShare())
   else
-    ;
-    (self._shareBtn):SetActive(false)
+    self._shareBtn:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.OnHide = function(self)
-  -- function num : 0_4
+function UINewCommonTopButton:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.ButtonBackOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("ButtonBackOnClick", {}, true)
-  ;
-  (self.backCallback)()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundCancel)
+function UINewCommonTopButton:ButtonBackOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("ButtonBackOnClick", {}, true)
+  self.backCallback()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundCancel)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.ButtonThumbOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("ButtonThumbOnClick", {}, true)
+function UINewCommonTopButton:ButtonThumbOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("ButtonThumbOnClick", {}, true)
   if self.thumbCB then
-    (self.thumbCB)()
+    self.thumbCB()
   else
-    ;
-    (UICommonHelper:GetInstance()):SwitchToUIMain()
+    UICommonHelper:GetInstance():SwitchToUIMain()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.ButtonHelpOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("ButtonHelpOnClick", {}, true)
-  ;
-  (self.helpCallback)()
+function UINewCommonTopButton:ButtonHelpOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("ButtonHelpOnClick", {}, true)
+  self.helpCallback()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.HideHomeBtn = function(self)
-  -- function num : 0_8
-  (self:GetGameObject("ButtonThumb")):SetActive(false)
+function UINewCommonTopButton:HideHomeBtn()
+  self:GetGameObject("ButtonThumb"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.BtnShowHideUIOnClick = function(self, go)
-  -- function num : 0_9
+function UINewCommonTopButton:BtnShowHideUIOnClick(go)
   if self.showHideUICB then
-    (self.showHideUICB)()
+    self.showHideUICB()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.ShareBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UINewCommonTopButton:ShareBtnOnClick(go)
   if self.shareCB then
-    (self.shareCB)()
+    self.shareCB()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.SetShareBtn = function(self, show, shareCB)
-  -- function num : 0_11
-  if show then
-    (self._shareBtn):SetActive((self._shareModule):CanShare())
-    self.shareCB = shareCB
-  end
+function UINewCommonTopButton:SetShareBtn(show, shareCB)
+  self._shareBtn:SetActive(show and self._shareModule:CanShare())
+  self.shareCB = shareCB
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UINewCommonTopButton.TeamRecordBtnOnClick = function(self, go)
-  -- function num : 0_12
+function UINewCommonTopButton:TeamRecordBtnOnClick(go)
   local widget = "TeamRecordBtn"
-  if (self._extra)[widget] then
-    ((self._extra)[widget])()
+  if self._extra[widget] then
+    self._extra[widget]()
   end
 end
-
-

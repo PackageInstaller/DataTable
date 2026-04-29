@@ -1,119 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/damage_statistics_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DamageStatisticsComponent", Object)
 DamageStatisticsComponent = DamageStatisticsComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DamageStatisticsComponent.Constructor = function(self)
-  -- function num : 0_0
+function DamageStatisticsComponent:Constructor()
   self._damageDict = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DamageStatisticsComponent.Append = function(self, attacker, val)
-  -- function num : 0_1
+function DamageStatisticsComponent:Append(attacker, val)
   local e = attacker
   local eid = attacker:GetID()
   if attacker:HasSuperEntity() then
-    e = (attacker:SuperEntityComponent()):GetSuperEntity()
+    e = attacker:SuperEntityComponent():GetSuperEntity()
     eid = e:GetID()
   end
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R5 in 'UnsetPending'
-
-  if not (self._damageDict)[eid] then
-    (self._damageDict)[eid] = 0
+  if not self._damageDict[eid] then
+    self._damageDict[eid] = 0
   end
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._damageDict)[eid] = (self._damageDict)[eid] + val
+  self._damageDict[eid] = self._damageDict[eid] + val
 end
 
 _class("DamageStatisticsSourceElement", Object)
 DamageStatisticsSourceElement = DamageStatisticsSourceElement
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-DamageStatisticsSourceElement.Constructor = function(self, eid, val)
-  -- function num : 0_2
+function DamageStatisticsSourceElement:Constructor(eid, val)
   self.entityID = eid
   self.value = val
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DamageStatisticsComponent.GetDamageSourceArray = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function DamageStatisticsComponent:GetDamageSourceArray()
   local t = {}
-  for eid,value in pairs(self._damageDict) do
-    (table.insert)(t, DamageStatisticsSourceElement:New(eid, value))
+  for eid, value in pairs(self._damageDict) do
+    table.insert(t, DamageStatisticsSourceElement:New(eid, value))
   end
-  ;
-  (table.sort)(t, function(a, b)
-    -- function num : 0_3_0
-    if a.entityID >= b.entityID then
-      do return a.value ~= b.value end
-      do return a.value < b.value end
-      -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  table.sort(t, function(a, b)
+    if a.value == b.value then
+      return a.entityID < b.entityID
     end
-  end
-)
+    return a.value < b.value
+  end)
   return t
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DamageStatisticsComponent.GetTotalDamage = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function DamageStatisticsComponent:GetTotalDamage()
   local totalDamage = 0
-  for eid,value in pairs(self._damageDict) do
+  for eid, value in pairs(self._damageDict) do
     totalDamage = totalDamage + value
   end
   return totalDamage
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.DamageStatisticsComponent = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).DamageStatistics)
+function Entity:DamageStatisticsComponent()
+  return self:GetComponent(self.WEComponentsEnum.DamageStatistics)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasDamageStatisticsComponent = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).DamageStatistics)
+function Entity:HasDamageStatisticsComponent()
+  return self:HasComponent(self.WEComponentsEnum.DamageStatistics)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddDamageStatisticsComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).DamageStatistics
+function Entity:AddDamageStatisticsComponent()
+  local index = self.WEComponentsEnum.DamageStatistics
   local component = DamageStatisticsComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceDamageStatisticsComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).DamageStatistics
+function Entity:ReplaceDamageStatisticsComponent()
+  local index = self.WEComponentsEnum.DamageStatistics
   local component = DamageStatisticsComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveDamageStatisticsComponent = function(self)
-  -- function num : 0_9
+function Entity:RemoveDamageStatisticsComponent()
   if self:HasDamageStatisticsComponent() then
-    self:RemoveComponent((self.WEComponentsEnum).DamageStatistics)
+    self:RemoveComponent(self.WEComponentsEnum.DamageStatistics)
   end
 end
-
-

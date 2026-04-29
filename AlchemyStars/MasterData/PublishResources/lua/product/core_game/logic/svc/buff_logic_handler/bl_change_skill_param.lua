@@ -1,90 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillParam", BuffLogicBase)
 BuffLogicChangeSkillParam = BuffLogicChangeSkillParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillParam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicChangeSkillParam:Constructor(buffInstance, logicParam)
   if type(logicParam.skillID) == "number" then
-    self._skillID = {logicParam.skillID}
+    self._skillID = {
+      logicParam.skillID
+    }
   else
     self._skillID = logicParam.skillID
   end
   self._effectIndex = logicParam.effectIndex
-  if not logicParam.append then
-    self._append = {}
-    if not logicParam.set then
-      self._set = {}
-      if not logicParam.remove then
-        self._remove = {}
-        if not logicParam.appendArray then
-          self._appendArray = {}
-          -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          (self._buffInstance)._cfg = {}
-        end
-      end
-    end
-  end
+  self._append = logicParam.append or {}
+  self._set = logicParam.set or {}
+  self._remove = logicParam.remove or {}
+  self._appendArray = logicParam.appendArray or {}
+  self._buffInstance._cfg = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillParam.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  for _,skillID in ipairs(self._skillID) do
-    local cfgdecorsvc = (self:GetWorld()):GetService("ConfigDecoration")
+function BuffLogicChangeSkillParam:DoLogic()
+  for _, skillID in ipairs(self._skillID) do
+    local cfgdecorsvc = self:GetWorld():GetService("ConfigDecoration")
     cfgdecorsvc:DecorateSkillEffect(self:GetBuffSeq(), self:GetEntity(), skillID, self._effectIndex, self._append, self._set, self._remove, self._appendArray)
-    local result = {buffSeqID = self:GetBuffSeq(), entityID = (self:GetEntity()):GetID(), skillID = skillID, effectIndex = self._effectIndex, append = self._append, set = self._set, remove = self._remove, appendArray = self._appendArray}
-    ;
-    (table.insert)((self._buffInstance)._cfg, result)
+    local result = {
+      buffSeqID = self:GetBuffSeq(),
+      entityID = self:GetEntity():GetID(),
+      skillID = skillID,
+      effectIndex = self._effectIndex,
+      append = self._append,
+      set = self._set,
+      remove = self._remove,
+      appendArray = self._appendArray
+    }
+    table.insert(self._buffInstance._cfg, result)
   end
 end
 
 _class("BuffLogicUndoChangeSkillParam", BuffLogicBase)
 BuffLogicUndoChangeSkillParam = BuffLogicUndoChangeSkillParam
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoChangeSkillParam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicUndoChangeSkillParam:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoChangeSkillParam.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local resultList = (self._buffInstance)._cfg
-  for k,result in ipairs(resultList) do
-    local cfgdecorsvc = (self:GetWorld()):GetService("ConfigDecoration")
+function BuffLogicUndoChangeSkillParam:DoLogic()
+  local resultList = self._buffInstance._cfg
+  for k, result in ipairs(resultList) do
+    local cfgdecorsvc = self:GetWorld():GetService("ConfigDecoration")
     cfgdecorsvc:RevertSkillEffectDecoration(self:GetBuffSeq(), result.entityID, result.skillID, result.effectIndex)
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._cfg = {}
+  self._buffInstance._cfg = {}
 end
 
 _class("BuffLogicRevertChangeSkillParam", BuffLogicBase)
 BuffLogicRevertChangeSkillParam = BuffLogicRevertChangeSkillParam
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertChangeSkillParam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_4 , upvalues : _ENV
+function BuffLogicRevertChangeSkillParam:Constructor(buffInstance, logicParam)
   self.skillID = tonumber(logicParam.skillID)
   self.effectIndex = tonumber(logicParam.effectIndex)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRevertChangeSkillParam.DoLogic = function(self)
-  -- function num : 0_5
-  local cfgdecorsvc = (self:GetWorld()):GetService("ConfigDecoration")
-  cfgdecorsvc:RevertAllSkillEffectDecoration((self._entity):GetID(), self.skillID, self.effectIndex)
+function BuffLogicRevertChangeSkillParam:DoLogic()
+  local cfgdecorsvc = self:GetWorld():GetService("ConfigDecoration")
+  cfgdecorsvc:RevertAllSkillEffectDecoration(self._entity:GetID(), self.skillID, self.effectIndex)
 end
-
-

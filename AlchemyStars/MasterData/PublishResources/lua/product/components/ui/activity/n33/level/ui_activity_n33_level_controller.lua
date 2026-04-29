@@ -1,55 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/level/ui_activity_n33_level_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33LevelController", UIController)
 UIActivityN33LevelController = UIActivityN33LevelController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33LevelController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityN33LevelController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._activityConst = UIActivityCustomConst:New(ECampaignType.CAMPAIGN_TYPE_N33, self:GetComponentIds())
-  ;
-  (self._activityConst):LoadData(TT, res)
-  do
-    if res and not res:GetSucc() then
-      local campModule = (GameGlobal.GetModule)(CampaignModule)
-      campModule:CheckErrorCode(res.m_result, ((self._activityConst):GetCampaignId()), nil, nil)
-    end
-    self._normalComponent = nil
-    self._normalComponentInfo = nil
-    self._hardComponent = nil
-    self._hardComponentInfo = nil
-    self._normalComponent = (self._activityConst):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
-    self._hardComponent = (self._activityConst):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
+  self._activityConst:LoadData(TT, res)
+  if res and not res:GetSucc() then
+    local campModule = GameGlobal.GetModule(CampaignModule)
+    campModule:CheckErrorCode(res.m_result, self._activityConst:GetCampaignId(), nil, nil)
   end
+  self._normalComponent = nil
+  self._normalComponentInfo = nil
+  self._hardComponent = nil
+  self._hardComponentInfo = nil
+  self._normalComponent, self._normalComponentInfo = self._activityConst:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
+  self._hardComponent, self._hardComponentInfo = self._activityConst:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.LoadData = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN33LevelController:LoadData(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN33LevelController:OnShow(uiParams)
   self:AttachEvent(GameEventType.OnN33RefreshBuildStatus, self.RefreshShop)
   self:AttachEvent(GameEventType.UIActivityN33LevelRefresh, self.Refresh)
   self._levelType = uiParams[1]
   if self._levelType == nil then
     self._levelType = 1
   end
-  self._isNormalUI = not uiParams[2] or true
+  self._isNormalUI = uiParams[2] and true
   self._selectMission = uiParams[3]
-  self._battleReturn = not uiParams[4] or true
+  self._battleReturn = uiParams[4] and true
   self._levelNameLabel = self:GetUIComponent("UILocalizationText", "LevelName")
   self._shopCountLabel = self:GetUIComponent("UILocalizationText", "ShopCount")
   self._shopRed = self:GetGameObject("ShopRed")
@@ -62,45 +45,35 @@ UIActivityN33LevelController.OnShow = function(self, uiParams)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN33LevelController:OnHide()
   self:DetachEvent(GameEventType.UIActivityN33LevelRefresh, self.Refresh)
   self:DetachEvent(GameEventType.OnN33RefreshBuildStatus, self.RefreshShop)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetBuildDatas = function(self, component, componentInfo, isHard)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_n33_build)({ComponentID = component:GetComponentCfgId()})
+function UIActivityN33LevelController:GetBuildDatas(component, componentInfo, isHard)
+  local cfgs = Cfg.cfg_n33_build({
+    ComponentID = component:GetComponentCfgId()
+  })
   if not cfgs then
     return {}
   end
   local result = {}
   for i = 1, #cfgs do
-    local lockIcon, openIcon, selectIcon = self:GetBuildIcons((cfgs[i]).ArchitectureId)
+    local lockIcon, openIcon, selectIcon = self:GetBuildIcons(cfgs[i].ArchitectureId)
     result[#result + 1] = UIActivityExploreBuildData:New(cfgs[i], component, componentInfo, lockIcon, openIcon, selectIcon, isHard)
   end
   return result
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetBuildIcons = function(self, buildId)
-  -- function num : 0_5 , upvalues : _ENV
-  local level = (UIActivityN33DateHelper.GetDateBuildLvel)((self._activityConst):GetCampaign(), buildId)
+function UIActivityN33LevelController:GetBuildIcons(buildId)
+  local level = UIActivityN33DateHelper.GetDateBuildLvel(self._activityConst:GetCampaign(), buildId)
   local lockIcon = "N33_jyms_image_" .. buildId .. "_" .. level .. "_" .. self._levelType
   local openIcon = "N33_jyms_image_" .. buildId .. "_" .. level .. "_" .. self._levelType
   local selectIcon = "N33_jyms_sj_" .. buildId .. "_" .. level .. "_" .. self._levelType
   return lockIcon, openIcon, selectIcon
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetComponentIds = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN33LevelController:GetComponentIds()
   local componentIds = {}
   componentIds[#componentIds + 1] = ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION
   componentIds[#componentIds + 1] = ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION
@@ -109,10 +82,7 @@ UIActivityN33LevelController.GetComponentIds = function(self)
   return componentIds
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.FocusBuild = function(self, buildId)
-  -- function num : 0_7
+function UIActivityN33LevelController:FocusBuild(buildId)
   self:SetBtnsStatus(false)
   local builds = {}
   if self._levelType == 1 then
@@ -128,17 +98,12 @@ UIActivityN33LevelController.FocusBuild = function(self, buildId)
       break
     end
   end
-  do
-    if self._currentBuild then
-      (self._currentBuild):SetSelectStatus(true)
-    end
+  if self._currentBuild then
+    self._currentBuild:SetSelectStatus(true)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.CancelFocusBuild = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN33LevelController:CancelFocusBuild()
   local builds = {}
   if self._levelType == 1 then
     builds = self._normalLevels
@@ -153,17 +118,12 @@ UIActivityN33LevelController.CancelFocusBuild = function(self)
       break
     end
   end
-  do
-    if self._currentBuild then
-      (self._currentBuild):SetSelectStatus(false)
-    end
+  if self._currentBuild then
+    self._currentBuild:SetSelectStatus(false)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.RefreshBuilds = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityN33LevelController:RefreshBuilds()
   self._normalBuilds = self:GetBuildDatas(self._normalComponent, self._normalComponentInfo, false)
   self._hardBuilds = self:GetBuildDatas(self._hardComponent, self._hardComponentInfo, true)
   self._bossEnterTime = self:GetBossEnterTime()
@@ -174,35 +134,28 @@ UIActivityN33LevelController.RefreshBuilds = function(self)
   normalLevelLoader:SpawnObjects("UIActivityN33LevelItem", #self._normalBuilds)
   self._normalLevels = normalLevelLoader:GetAllSpawnList()
   for i = 1, #self._normalLevels do
-    ((self._normalLevels)[i]):SetData((self._normalBuilds)[i], function(data)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
-      return 
-    end
-    local com, comInfo = (self._activityConst):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
-    self:ShowDialog("UIActivityN33LevelDetail", data, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
-  end
-)
+    self._normalLevels[i]:SetData(self._normalBuilds[i], function(data)
+      if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
+        return
+      end
+      local com, comInfo = self._activityConst:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
+      self:ShowDialog("UIActivityN33LevelDetail", data, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
+    end)
   end
   hardLevelLoader:SpawnObjects("UIActivityN33LevelItem", #self._hardBuilds)
   self._hardLevels = hardLevelLoader:GetAllSpawnList()
   for i = 1, #self._hardLevels do
-    ((self._hardLevels)[i]):SetData((self._hardBuilds)[i], function(data)
-    -- function num : 0_9_1 , upvalues : self, _ENV
-    if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
-      return 
-    end
-    local com, comInfo = (self._activityConst):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
-    self:ShowDialog("UIActivityN33LevelDetail", data, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
-  end
-)
+    self._hardLevels[i]:SetData(self._hardBuilds[i], function(data)
+      if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
+        return
+      end
+      local com, comInfo = self._activityConst:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
+      self:ShowDialog("UIActivityN33LevelDetail", data, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetCurrentBuildDatas = function(self)
-  -- function num : 0_10
+function UIActivityN33LevelController:GetCurrentBuildDatas()
   if self._levelType == 1 then
     return self._normalBuilds
   end
@@ -211,33 +164,21 @@ UIActivityN33LevelController.GetCurrentBuildDatas = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetLevelType = function(self)
-  -- function num : 0_11
+function UIActivityN33LevelController:GetLevelType()
   return self._levelType
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.Init = function(self)
-  -- function num : 0_12
+function UIActivityN33LevelController:Init()
   self:RefreshActivityRemainTime()
   self:Refresh()
   self:PlayAnimation()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.PlayAnimation = function(self)
-  -- function num : 0_13
+function UIActivityN33LevelController:PlayAnimation()
   self:StartTask(self.PlayAnimationCoro, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.PlayAnimationCoro = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN33LevelController:PlayAnimationCoro(TT)
   self:Lock("UIActivityN33LevelController_PlayAnimEnterCoro")
   local normalLevelSelect = self:GetGameObject("NormalLevelSelected")
   local hardLevelSelect = self:GetGameObject("HardLevelSelected")
@@ -249,20 +190,20 @@ UIActivityN33LevelController.PlayAnimationCoro = function(self, TT)
   hard:SetActive(self._levelType == 2)
   if self._levelType == 1 then
     for i = 1, #self._normalLevels do
-      ((self._normalLevels)[i]):CheckPlayAnim()
+      self._normalLevels[i]:CheckPlayAnim()
     end
   else
     for i = 1, #self._hardLevels do
-      ((self._hardLevels)[i]):CheckPlayAnim()
+      self._hardLevels[i]:CheckPlayAnim()
     end
   end
   if self._openTime > 0 then
     YIELD(TT, self._openTime)
   end
-  if self._bossEnterTime > 0 then
+  if 0 < self._bossEnterTime then
     YIELD(TT, self._bossEnterTime)
   end
-  if self._bossDisappearTime > 0 then
+  if 0 < self._bossDisappearTime then
     YIELD(TT, self._bossDisappearTime)
   end
   if self._battleReturn then
@@ -272,20 +213,20 @@ UIActivityN33LevelController.PlayAnimationCoro = function(self, TT)
       local currentLevelId = self:GetCurrentLevelId()
       local cacheCurrentLevelId = UIActivityN33LevelController.CurrentLevel
       local jumpId = self._selectMission
-      if (currentLevelId > 0 or cacheCurrentLevelId > 0) and currentLevelId ~= cacheCurrentLevelId then
+      if (0 < currentLevelId or 0 < cacheCurrentLevelId) and currentLevelId ~= cacheCurrentLevelId then
         jumpId = currentLevelId
       end
       if jumpId then
         if self._levelType == 1 then
           local data = self:GetMissionBuildData(self._normalBuilds, jumpId)
           if data then
-            local com, comInfo = (self._activityConst):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
+            local com, comInfo = self._activityConst:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
             self:ShowDialog("UIActivityN33LevelDetail", data, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
           end
         elseif self._levelType == 2 then
           local data = self:GetMissionBuildData(self._hardBuilds, jumpId)
           if data then
-            local com, comInfo = (self._activityConst):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
+            local com, comInfo = self._activityConst:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
             self:ShowDialog("UIActivityN33LevelDetail", data, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
           end
         end
@@ -293,13 +234,9 @@ UIActivityN33LevelController.PlayAnimationCoro = function(self, TT)
     end
   end
   self:UnLock("UIActivityN33LevelController_PlayAnimEnterCoro")
-  -- DECOMPILER ERROR: 14 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetBuildOpenAnimationTime = function(self)
-  -- function num : 0_15
+function UIActivityN33LevelController:GetBuildOpenAnimationTime()
   local builds = self._normalBuilds
   if self._levelType == 2 then
     builds = self._hardBuilds
@@ -313,15 +250,10 @@ UIActivityN33LevelController.GetBuildOpenAnimationTime = function(self)
       break
     end
   end
-  do
-    return time
-  end
+  return time
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetBossEnterTime = function(self)
-  -- function num : 0_16
+function UIActivityN33LevelController:GetBossEnterTime()
   local builds = self._normalBuilds
   if self._levelType == 2 then
     builds = self._hardBuilds
@@ -338,10 +270,7 @@ UIActivityN33LevelController.GetBossEnterTime = function(self)
   return time
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetBossDisappearTime = function(self)
-  -- function num : 0_17
+function UIActivityN33LevelController:GetBossDisappearTime()
   local builds = self._normalBuilds
   if self._levelType == 2 then
     builds = self._hardBuilds
@@ -358,19 +287,11 @@ UIActivityN33LevelController.GetBossDisappearTime = function(self)
   return time
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.CacheCurrentLevelId = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIActivityN33LevelController:CacheCurrentLevelId()
   UIActivityN33LevelController.CurrentLevel = self:GetCurrentLevelId()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetCurrentLevelId = function(self)
-  -- function num : 0_19
+function UIActivityN33LevelController:GetCurrentLevelId()
   local builds = self._normalBuilds
   if self._levelType == 2 then
     builds = self._hardBuilds
@@ -385,15 +306,12 @@ UIActivityN33LevelController.GetCurrentLevelId = function(self)
   return 0
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.GetMissionBuildData = function(self, builds, missionId)
-  -- function num : 0_20
+function UIActivityN33LevelController:GetMissionBuildData(builds, missionId)
   for i = 1, #builds do
     local build = builds[i]
     local missions = build:GetMissions()
     for j = 1, #missions do
-      if missionId == (missions[j]):GetMissionId() then
+      if missionId == missions[j]:GetMissionId() then
         return build
       end
     end
@@ -401,36 +319,28 @@ UIActivityN33LevelController.GetMissionBuildData = function(self, builds, missio
   return nil
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.RefreshShop = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  local com, comInfo = nil, nil
-  com = (self._activityConst):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LOTTERY)
+function UIActivityN33LevelController:RefreshShop()
+  local com, comInfo
+  com, comInfo = self._activityConst:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LOTTERY)
   local icon, count = com:GetLotteryCostItemIconText()
-  if count > 9999999 then
+  if 9999999 < count then
     count = 9999999
   end
-  ;
-  (self._shopCountLabel):SetText((UIActivityCustomHelper.GetItemCountStr)(7, count, "#B5B5B4", "#C8DD2A"))
-  ;
-  (self._iconLoader):LoadImage(icon)
+  self._shopCountLabel:SetText(UIActivityCustomHelper.GetItemCountStr(7, count, "#B5B5B4", "#C8DD2A"))
+  self._iconLoader:LoadImage(icon)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.Refresh = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityN33LevelController:Refresh()
   self:RefreshShop()
   local hardLevelLock = self:GetGameObject("HardLevelLock")
-  local status = (self._activityConst):GetComponentStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
+  local status = self._activityConst:GetComponentStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
   if status == ActivityComponentStatus.Open then
     hardLevelLock:SetActive(false)
   else
     hardLevelLock:SetActive(true)
   end
   local hardLevelNew = self:GetGameObject("HardLevelNew")
-  hardLevelNew:SetActive((self._activityConst):IsShowComponentNew(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION))
+  hardLevelNew:SetActive(self._activityConst:IsShowComponentNew(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION))
   self:RereshRed()
   self:RefreshBuilds()
   local builds = self._normalBuilds
@@ -442,51 +352,35 @@ UIActivityN33LevelController.Refresh = function(self)
     local build = builds[i]
     if build:GetCurrentLevel() ~= nil then
       showPosition = true
-      ;
-      (self._levelNameLabel):SetText((build:GetCurrentLevel()):GetName())
+      self._levelNameLabel:SetText(build:GetCurrentLevel():GetName())
       break
     end
   end
-  do
-    ;
-    (self._positionBtn):SetActive(showPosition)
-    self:SetBuildForcusStatus(false)
-    self:_CheckGuide()
-  end
+  self._positionBtn:SetActive(showPosition)
+  self:SetBuildForcusStatus(false)
+  self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.SetBuildForcusStatus = function(self, status)
-  -- function num : 0_23
+function UIActivityN33LevelController:SetBuildForcusStatus(status)
   if self._levelType == 1 then
     for i = 1, #self._normalLevels do
-      ((self._normalLevels)[i]):SetForcusStatus(status)
+      self._normalLevels[i]:SetForcusStatus(status)
     end
   else
-    do
-      for i = 1, #self._hardLevels do
-        ((self._hardLevels)[i]):SetForcusStatus(status)
-      end
+    for i = 1, #self._hardLevels do
+      self._hardLevels[i]:SetForcusStatus(status)
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.RereshRed = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local isShow = (self._activityConst):IsShowComponentRed(ECampaignN33ComponentID.ECAMPAIGN_N33_LOTTERY)
-  ;
-  (self._shopRed):SetActive(isShow)
+function UIActivityN33LevelController:RereshRed()
+  local isShow = self._activityConst:IsShowComponentRed(ECampaignN33ComponentID.ECAMPAIGN_N33_LOTTERY)
+  self._shopRed:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.SwitchLevel = function(self, levelType)
-  -- function num : 0_25
+function UIActivityN33LevelController:SwitchLevel(levelType)
   if self._levelType == levelType then
-    return 
+    return
   end
   self._levelType = levelType
   local normalLevelSelect = self:GetGameObject("NormalLevelSelected")
@@ -495,162 +389,123 @@ UIActivityN33LevelController.SwitchLevel = function(self, levelType)
   hardLevelSelect:SetActive(self._levelType == 2)
   self:Refresh()
   self:StartTask(self.SwitchLevelCoro, self)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.SwitchLevelCoro = function(self, TT)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityN33LevelController:SwitchLevelCoro(TT)
   self:Lock("UIActivityN33LevelController_SwitchLevelCoro")
   local hardLevelNew = self:GetGameObject("HardLevelNew")
-  hardLevelNew:SetActive((self._activityConst):IsShowComponentNew(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION))
+  hardLevelNew:SetActive(self._activityConst:IsShowComponentNew(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION))
   local normal = self:GetGameObject("Normal")
   local hard = self:GetGameObject("Hard")
   normal:SetActive(true)
   hard:SetActive(true)
   if self._levelType == 1 then
-    (self._anim):Play("uianim_UIActivityN33LevelController_switch_out")
+    self._anim:Play("uianim_UIActivityN33LevelController_switch_out")
     for i = 1, #self._normalLevels do
-      ((self._normalLevels)[i]):SwitLevelType(true)
+      self._normalLevels[i]:SwitLevelType(true)
     end
     for i = 1, #self._hardLevels do
-      ((self._hardLevels)[i]):SwitLevelType(false)
+      self._hardLevels[i]:SwitLevelType(false)
     end
   else
-    do
-      ;
-      (self._anim):Play("uianim_UIActivityN33LevelController_switch_in")
-      for i = 1, #self._normalLevels do
-        ((self._normalLevels)[i]):SwitLevelType(false)
-      end
-      for i = 1, #self._hardLevels do
-        ((self._hardLevels)[i]):SwitLevelType(true)
-      end
-      do
-        YIELD(TT, 400)
-        for i = 1, #self._normalLevels do
-          ((self._normalLevels)[i]):CheckPlayAnim()
-        end
-        for i = 1, #self._hardLevels do
-          ((self._hardLevels)[i]):CheckPlayAnim()
-        end
-        normal:SetActive(self._levelType == 1)
-        hard:SetActive(self._levelType == 2)
-        self:UnLock("UIActivityN33LevelController_SwitchLevelCoro")
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+    self._anim:Play("uianim_UIActivityN33LevelController_switch_in")
+    for i = 1, #self._normalLevels do
+      self._normalLevels[i]:SwitLevelType(false)
+    end
+    for i = 1, #self._hardLevels do
+      self._hardLevels[i]:SwitLevelType(true)
     end
   end
+  YIELD(TT, 400)
+  for i = 1, #self._normalLevels do
+    self._normalLevels[i]:CheckPlayAnim()
+  end
+  for i = 1, #self._hardLevels do
+    self._hardLevels[i]:CheckPlayAnim()
+  end
+  normal:SetActive(self._levelType == 1)
+  hard:SetActive(self._levelType == 2)
+  self:UnLock("UIActivityN33LevelController_SwitchLevelCoro")
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_27
+function UIActivityN33LevelController:OnUpdate(deltaTimeMS)
   self:RefreshActivityRemainTime()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.RefreshActivityRemainTime = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
-    (self._timeLabel):SetText((StringTable.Get)("str_n33_activity_end"))
-    return 
+function UIActivityN33LevelController:RefreshActivityRemainTime()
+  if self._activityConst:IsActivityEnd() then
+    self._timeLabel:SetText(StringTable.Get("str_n33_activity_end"))
+    return
   end
-  local status, endTime = (self._activityConst):GetComponentStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
+  local status, endTime = self._activityConst:GetComponentStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
   if self._levelType == 2 then
-    status = (self._activityConst):GetComponentStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
+    status, endTime = self._activityConst:GetComponentStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
   end
   local tipsStr = "str_n33_activity_remain_time"
   local seconds = endTime
   if seconds <= 0 then
     seconds = 0
-    ;
-    (self._timeLabel):SetText((StringTable.Get)("str_n33_activity_end"))
-    return 
+    self._timeLabel:SetText(StringTable.Get("str_n33_activity_end"))
+    return
   end
-  local timeStr = (UIActivityCustomHelper.GetTimeString)(seconds, "str_n33_day", "str_n33_hour", "str_n33_minus", "str_n33_less_one_minus")
-  local timeTips = (StringTable.Get)(tipsStr, timeStr)
-  ;
-  (self._timeLabel):SetText(timeTips)
+  local timeStr = UIActivityCustomHelper.GetTimeString(seconds, "str_n33_day", "str_n33_hour", "str_n33_minus", "str_n33_less_one_minus")
+  local timeTips = StringTable.Get(tipsStr, timeStr)
+  self._timeLabel:SetText(timeTips)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.SetBtnsStatus = function(self, status)
-  -- function num : 0_29
-  (self._btns):SetActive(status)
+function UIActivityN33LevelController:SetBtnsStatus(status)
+  self._btns:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.ShopOnClick = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIActivityN33LevelController:ShopOnClick()
   if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LOTTERY, "str_n33_activity_shop_lock_time_tips", "str_n33_activity_shop_lock_mission_tips") then
-    return 
+    return
   end
   self:ShowDialog("UIN33ShopController")
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.BtnGameOnClick = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UIActivityN33LevelController:BtnGameOnClick()
   if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_SIMULATION_OPERATION, "str_n33_activity_game_lock_time_tips", "str_n33_activity_game_lock_mission_tips") then
-    return 
+    return
   end
   self:ShowDialog("UIActivityN33DateMainController")
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.BtnLevelsOnClick = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  if self._levelType == 1 and not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
-    return 
-  end
-  if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
-    return 
+function UIActivityN33LevelController:BtnLevelsOnClick()
+  if self._levelType == 1 then
+    if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
+      return
+    end
+  elseif not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
+    return
   end
   self:SetBtnsStatus(false)
   self:ShowDialog("UIActivityN33LevelList", self)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.NormalLevelOnClick = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIActivityN33LevelController:NormalLevelOnClick()
   if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
-    return 
+    return
   end
   self:SwitchLevel(1)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.HardLevelOnClick = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UIActivityN33LevelController:HardLevelOnClick()
   if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "str_n33_activity_hard_level_lock_time_tips", "str_n33_activity_hard_level_lock_mission_tips") then
-    return 
+    return
   end
-  ;
-  (self._activityConst):ClearComponentNew(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
+  self._activityConst:ClearComponentNew(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
   local hardLevelNew = self:GetGameObject("HardLevelNew")
   hardLevelNew:SetActive(false)
   self:SwitchLevel(2)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.PositionBtnOnClick = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function UIActivityN33LevelController:PositionBtnOnClick()
   local builds = self._normalBuilds
   if self._levelType == 2 then
     builds = self._hardBuilds
   end
-  local buildData = nil
+  local buildData
   for i = 1, #builds do
     local build = builds[i]
     if build:GetCurrentLevel() ~= nil then
@@ -658,63 +513,50 @@ UIActivityN33LevelController.PositionBtnOnClick = function(self)
       break
     end
   end
-  do
-    if buildData then
-      if self._levelType == 1 then
-        if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
-          return 
-        end
-        local com, comInfo = (self._activityConst):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
-        self:ShowDialog("UIActivityN33LevelDetail", buildData, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
-      else
-        do
-          if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
-            return 
-          end
-          local com, comInfo = (self._activityConst):GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
-          self:ShowDialog("UIActivityN33LevelDetail", buildData, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
-        end
+  if buildData then
+    if self._levelType == 1 then
+      if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
+        return
       end
+      local com, comInfo = self._activityConst:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
+      self:ShowDialog("UIActivityN33LevelDetail", buildData, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION)
+    else
+      if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
+        return
+      end
+      local com, comInfo = self._activityConst:GetComponent(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
+      self:ShowDialog("UIActivityN33LevelDetail", buildData, com, comInfo, self, ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION)
     end
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.CheckButtonStatus = function(self, componentId, timeLockStr, missionLockStr)
-  -- function num : 0_36 , upvalues : _ENV
-  local status, time = (self._activityConst):GetComponentStatus(componentId)
+function UIActivityN33LevelController:CheckButtonStatus(componentId, timeLockStr, missionLockStr)
+  local status, time = self._activityConst:GetComponentStatus(componentId)
   if status == ActivityComponentStatus.Close or status == ActivityComponentStatus.ActivityEnd then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
     if status == ActivityComponentStatus.ActivityEnd then
-      ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+      GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
     else
       self:SwitchState(UIStateType.UIActivityN33MainController)
     end
     return false
-  else
-    if status == ActivityComponentStatus.TimeLock then
-      (ToastManager.ShowToast)((StringTable.Get)(timeLockStr, (UIActivityCustomHelper.GetTimeString)(time, "str_n33_day", "str_n33_hour", "str_n33_minus", "str_n33_less_one_minus")))
-      return false
-    else
-      if status == ActivityComponentStatus.MissionLock then
-        (ToastManager.ShowToast)((StringTable.Get)(missionLockStr))
-        return false
-      end
-    end
+  elseif status == ActivityComponentStatus.TimeLock then
+    ToastManager.ShowToast(StringTable.Get(timeLockStr, UIActivityCustomHelper.GetTimeString(time, "str_n33_day", "str_n33_hour", "str_n33_minus", "str_n33_less_one_minus")))
+    return false
+  elseif status == ActivityComponentStatus.MissionLock then
+    ToastManager.ShowToast(StringTable.Get(missionLockStr))
+    return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.BtnReturnOnClick = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  if self._levelType == 1 and not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
-    return 
-  end
-  if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
-    return 
+function UIActivityN33LevelController:BtnReturnOnClick()
+  if self._levelType == 1 then
+    if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
+      return
+    end
+  elseif not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
+    return
   end
   if self._isNormalUI then
     self:SwitchState(UIStateType.UIActivityN33MainController)
@@ -723,36 +565,26 @@ UIActivityN33LevelController.BtnReturnOnClick = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.BtnHomeOnClick = function(self)
-  -- function num : 0_38 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(UIStateType.UIMain)
+function UIActivityN33LevelController:BtnHomeOnClick()
+  GameGlobal.UIStateManager():SwitchState(UIStateType.UIMain)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController.BtnDesOnClick = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  if self._levelType == 1 and not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
-    return 
-  end
-  if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
-    return 
+function UIActivityN33LevelController:BtnDesOnClick()
+  if self._levelType == 1 then
+    if not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_LINE_MISSION, "", "") then
+      return
+    end
+  elseif not self:CheckButtonStatus(ECampaignN33ComponentID.ECAMPAIGN_N33_DIFFICULT_MISSION, "", "") then
+    return
   end
   self:ShowDialog("UIIntroLoader", "UIActivityN33LevelIntro")
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33LevelController._CheckGuide = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  local campaign = (self._activityConst):GetCampaign()
-  local isOpen = (UIActivityN33DateHelper.CheckDateOpen)(campaign)
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+function UIActivityN33LevelController:_CheckGuide()
+  local campaign = self._activityConst:GetCampaign()
+  local isOpen = UIActivityN33DateHelper.CheckDateOpen(campaign)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if isOpen and not guideModule:IsGuideDone(123001) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33LevelController)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN33LevelController)
   end
 end
-
-

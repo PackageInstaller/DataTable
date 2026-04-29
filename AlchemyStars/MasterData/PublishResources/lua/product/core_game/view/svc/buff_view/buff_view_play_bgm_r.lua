@@ -1,33 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_play_bgm_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewPlayBGM", BuffViewBase)
 BuffViewPlayBGM = BuffViewPlayBGM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewPlayBGM.PlayView = function(self, TT, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewPlayBGM:PlayView(TT, notify)
   local result = self._buffResult
   local bgmID = result:GetBGMID()
   local useLevelBGM = result:GetuseLevelBGM()
   if useLevelBGM and useLevelBGM == 1 then
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     local levelConfigData = configService:GetLevelConfigData()
     bgmID = levelConfigData:GetBgmID()
   end
-  do
-    ;
-    (AudioHelperController.PlayBGMById)(bgmID, AudioConstValue.BGMCrossFadeTime)
-  end
+  AudioHelperController.PlayBGMById(bgmID, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewPlayBGM.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewPlayBGM:IsNotifyMatch(notify)
   return true
 end
-
-

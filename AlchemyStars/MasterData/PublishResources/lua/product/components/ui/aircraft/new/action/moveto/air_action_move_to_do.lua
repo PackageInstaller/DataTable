@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/moveto/air_action_move_to_do.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionMoveToDo", Object)
 AirActionMoveToDo = AirActionMoveToDo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionMoveToDo.Constructor = function(self, pet, targetFloor, actionPos, moveType, main)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionMoveToDo:Constructor(pet, targetFloor, actionPos, moveType, main)
   self._pet = pet
   if targetFloor == nil then
-    (Log.exception)("目标楼层为空：", (debug.traceback)())
+    Log.exception("目标楼层为空：", debug.traceback())
   end
   self._targetFloor = targetFloor
   self._actionPos = actionPos
@@ -21,184 +14,123 @@ AirActionMoveToDo.Constructor = function(self, pet, targetFloor, actionPos, move
   self._state = AircraftPetMoveToDoState.Stop
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local curF = (self._pet):GetFloor()
+function AirActionMoveToDo:Start()
+  local curF = self._pet:GetFloor()
   local tarF = self._targetFloor
   if curF == tarF then
     self._state = AircraftPetMoveToDoState.MoveToActionTarget
     self._moveAction = AirActionMove:New(self._pet, self._actionPos, curF, self._main, "走向行为点")
-    ;
-    (self._moveAction):Start()
+    self._moveAction:Start()
     self._running = true
+  elseif curF == 1 and tarF == 2 or curF == 2 and tarF == 1 then
+    self._state = AircraftPetMoveToDoState.MoveToStair
+    local spos = self._main:GetStairTarget(curF)
+    self._moveAction = AirActionMove:New(self._pet, spos, curF, self._main, "走向楼梯")
+    self._moveAction:Start()
+    self._running = true
+    self._pet:SetMoveTarget(spos)
   else
-    if (curF == 1 and tarF == 2) or curF == 2 and tarF == 1 then
-      self._state = AircraftPetMoveToDoState.MoveToStair
-      local spos = (self._main):GetStairTarget(curF)
-      self._moveAction = AirActionMove:New(self._pet, spos, curF, self._main, "走向楼梯")
-      ;
-      (self._moveAction):Start()
-      self._running = true
-      ;
-      (self._pet):SetMoveTarget(spos)
-    else
-      do
-        self._state = AircraftPetMoveToDoState.MoveToElevator
-        local epos = ((self._main):Elevator()):GetLineTarget(curF)
-        self._moveAction = AirActionMove:New(self._pet, epos, curF, self._main, "走向电梯")
-        ;
-        (self._moveAction):Start()
-        self._running = true
-        ;
-        (self._pet):SetMoveTarget(epos)
-      end
-    end
+    self._state = AircraftPetMoveToDoState.MoveToElevator
+    local epos = self._main:Elevator():GetLineTarget(curF)
+    self._moveAction = AirActionMove:New(self._pet, epos, curF, self._main, "走向电梯")
+    self._moveAction:Start()
+    self._running = true
+    self._pet:SetMoveTarget(epos)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.IsOver = function(self)
-  -- function num : 0_2
+function AirActionMoveToDo:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
+function AirActionMoveToDo:Update(deltaTimeMS)
   if self._running then
     if self._state == AircraftPetMoveToDoState.Wait then
-      return 
-    else
-      if self._state == AircraftPetMoveToDoState.MoveToStair then
-        (self._moveAction):Update(deltaTimeMS)
-        if (self._moveAction):IsOver() then
-          (self._pet):SetTargetFloor(self._targetFloor)
-          ;
-          (self._main):OnPetArriveStair(self._pet)
-          ;
-          (self._pet):SetMoveTarget(nil)
-          ;
-          (self._pet):SetMoveToAction(self)
-          self._moveAction = nil
-          self._state = AircraftPetMoveToDoState.Wait
-        end
-      else
-        if self._state == AircraftPetMoveToDoState.MoveToElevator then
-          (self._moveAction):Update(deltaTimeMS)
-          if (self._moveAction):IsOver() then
-            (self._pet):SetMoveTarget(nil)
-            self:OnArriveElevator()
-          end
-        else
-          if self._state == AircraftPetMoveToDoState.MoveToActionTarget then
-            (self._moveAction):Update(deltaTimeMS)
-            if (self._moveAction):IsOver() then
-              self._running = false
-              self:Stop()
-            end
-          end
-        end
+      return
+    elseif self._state == AircraftPetMoveToDoState.MoveToStair then
+      self._moveAction:Update(deltaTimeMS)
+      if self._moveAction:IsOver() then
+        self._pet:SetTargetFloor(self._targetFloor)
+        self._main:OnPetArriveStair(self._pet)
+        self._pet:SetMoveTarget(nil)
+        self._pet:SetMoveToAction(self)
+        self._moveAction = nil
+        self._state = AircraftPetMoveToDoState.Wait
+      end
+    elseif self._state == AircraftPetMoveToDoState.MoveToElevator then
+      self._moveAction:Update(deltaTimeMS)
+      if self._moveAction:IsOver() then
+        self._pet:SetMoveTarget(nil)
+        self:OnArriveElevator()
+      end
+    elseif self._state == AircraftPetMoveToDoState.MoveToActionTarget then
+      self._moveAction:Update(deltaTimeMS)
+      if self._moveAction:IsOver() then
+        self._running = false
+        self:Stop()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.OnArriveElevator = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local full = ((self._main):Elevator()):IsFull((self._pet):GetFloor())
+function AirActionMoveToDo:OnArriveElevator()
+  local full = self._main:Elevator():IsFull(self._pet:GetFloor())
   if full then
-    if (self._pet):IsWorkingPet() then
-      AirLog("电梯排队人数已满，工作星灵直接回到工作房间，当前楼层:", (self._pet):GetFloor())
-      ;
-      (self._main):PetStartWork((self._pet):TemplateID(), (self._pet):GetSpace())
+    if self._pet:IsWorkingPet() then
+      AirLog("电梯排队人数已满，工作星灵直接回到工作房间，当前楼层:", self._pet:GetFloor())
+      self._main:PetStartWork(self._pet:TemplateID(), self._pet:GetSpace())
+    elseif self._pet:IsLeavingPet() then
+      AirLog("电梯排队人数已满，离开星灵直接销毁，当前楼层:", self._pet:GetFloor())
+      self._main:RemoveRestPet(self._pet:TemplateID())
     else
-      if (self._pet):IsLeavingPet() then
-        AirLog("电梯排队人数已满，离开星灵直接销毁，当前楼层:", (self._pet):GetFloor())
-        ;
-        (self._main):RemoveRestPet((self._pet):TemplateID())
-      else
-        AirLog("电梯排队人数已满，星灵重新随机行为，当前楼层:", (self._pet):GetFloor())
-        ;
-        (self._main):RandomActionForPet(self._pet)
-      end
+      AirLog("电梯排队人数已满，星灵重新随机行为，当前楼层:", self._pet:GetFloor())
+      self._main:RandomActionForPet(self._pet)
     end
-    return 
+    return
   end
-  ;
-  (self._pet):SetTargetFloor(self._targetFloor)
-  ;
-  ((self._main):Elevator()):ArriveLineTarget(self._pet, (self._pet):GetFloor())
-  ;
-  (self._pet):SetMoveToAction(self)
+  self._pet:SetTargetFloor(self._targetFloor)
+  self._main:Elevator():ArriveLineTarget(self._pet, self._pet:GetFloor())
+  self._pet:SetMoveToAction(self)
   self._moveAction = nil
   self._state = AircraftPetMoveToDoState.Wait
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.ArriveFloor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function AirActionMoveToDo:ArriveFloor()
   if self._state ~= AircraftPetMoveToDoState.Wait then
-    (Log.exception)("跨楼层后星灵的状态错误：", self._state)
+    Log.exception("跨楼层后星灵的状态错误：", self._state)
   end
-  ;
-  (self._pet):SetFloor(self._targetFloor)
-  ;
-  (self._pet):SetTargetFloor(nil)
-  ;
-  (self._pet):SetState(AirPetState.Transiting)
+  self._pet:SetFloor(self._targetFloor)
+  self._pet:SetTargetFloor(nil)
+  self._pet:SetState(AirPetState.Transiting)
   self._state = AircraftPetMoveToDoState.MoveToActionTarget
   self._moveAction = AirActionMove:New(self._pet, self._actionPos, self._targetFloor, self._main, "跨层后走向行为点")
-  ;
-  (self._moveAction):Start()
+  self._moveAction:Start()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.Duration = function(self)
-  -- function num : 0_6
+function AirActionMoveToDo:Duration()
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.CurrentTime = function(self)
-  -- function num : 0_7
+function AirActionMoveToDo:CurrentTime()
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.Stop = function(self)
-  -- function num : 0_8
+function AirActionMoveToDo:Stop()
   if self._running then
     self._running = false
-    if self._moveAction and not (self._moveAction):IsOver() then
-      (self._moveAction):Stop()
+    if self._moveAction and not self._moveAction:IsOver() then
+      self._moveAction:Stop()
     end
   end
-  ;
-  (self._pet):SetMoveTarget(nil)
+  self._pet:SetMoveTarget(nil)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.Dispose = function(self)
-  -- function num : 0_9
+function AirActionMoveToDo:Dispose()
   self:Stop()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToDo.Pets = function(self)
-  -- function num : 0_10
-  return {self._pet}
+function AirActionMoveToDo:Pets()
+  return {
+    self._pet
+  }
 end
-
-

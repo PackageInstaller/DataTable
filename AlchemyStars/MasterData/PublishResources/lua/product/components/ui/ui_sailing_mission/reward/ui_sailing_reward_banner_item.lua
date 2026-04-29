@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/reward/ui_sailing_reward_banner_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingRewardBannerItem", UICustomWidget)
 UISailingRewardBannerItem = UISailingRewardBannerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingRewardBannerItem.OnShow = function(self)
-  -- function num : 0_0
+function UISailingRewardBannerItem:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerItem.OnHide = function(self)
-  -- function num : 0_1
+function UISailingRewardBannerItem:OnHide()
   self._matRes = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerItem.SetData = function(self, cfg, callbcak, begindrag, drag, enddrag)
-  -- function num : 0_2 , upvalues : _ENV
+function UISailingRewardBannerItem:SetData(cfg, callbcak, begindrag, drag, enddrag)
   self._cfg = cfg
   self._callback = callbcak
   self._beginDrag = begindrag
@@ -29,15 +16,14 @@ UISailingRewardBannerItem.SetData = function(self, cfg, callbcak, begindrag, dra
   self._endDrag = enddrag
   self._btn = self:GetGameObject("btn")
   self._icon = self:GetUIComponent("RawImageLoader", "ad")
-  ;
-  (self._icon):LoadImage(((self._cfg).data).Icon)
+  self._icon:LoadImage(self._cfg.data.Icon)
   self._module = self:GetModule(SailingMissionModule)
   self._totalProgressNum = self:GetUIComponent("UILocalizedTMP", "progressNum")
   self._matRes = {}
   self:SetFontMat(self._totalProgressNum, "sailing_reward_progress_num_mat.mat")
-  local progress = (self._module):GetHistoryProgress()
+  local progress = self._module:GetHistoryProgress()
   if self._totalProgressNum then
-    (self._totalProgressNum):SetText(tostring(progress))
+    self._totalProgressNum:SetText(tostring(progress))
   end
   self._unlockInfoAreaGo = self:GetGameObject("unlockInfoArea")
   self._unlockInfoText = self:GetUIComponent("UILocalizationText", "unlockInfoText")
@@ -46,111 +32,79 @@ UISailingRewardBannerItem.SetData = function(self, cfg, callbcak, begindrag, dra
   self._titleGo = self:GetGameObject("titleGo")
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._checkDetailBtnGo = self:GetGameObject("checkDetailBtn")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.BeginDrag, self._beginDrag)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.Drag, self._drag)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btn), UIEvent.EndDrag, self._endDrag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.BeginDrag, self._beginDrag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.Drag, self._drag)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btn), UIEvent.EndDrag, self._endDrag)
   self:AttachEvent(GameEventType.SailingGetProgressReward, self.OnSailingGetProgressReward)
-  local unlockInfo = ((self._cfg).data).UnlockInfo
+  local unlockInfo = self._cfg.data.UnlockInfo
   if unlockInfo then
-    (self._unlockInfoText):SetText((StringTable.Get)(unlockInfo))
-    ;
-    (self._unlockInfoAreaGo):SetActive(true)
+    self._unlockInfoText:SetText(StringTable.Get(unlockInfo))
+    self._unlockInfoAreaGo:SetActive(true)
   else
-    ;
-    (self._unlockInfoAreaGo):SetActive(false)
+    self._unlockInfoAreaGo:SetActive(false)
   end
-  if ((self._cfg).data).Title then
-    (self._titleGo):SetActive(true)
-    ;
-    (self._title):SetText((StringTable.Get)(((self._cfg).data).Title))
+  if self._cfg.data.Title then
+    self._titleGo:SetActive(true)
+    self._title:SetText(StringTable.Get(self._cfg.data.Title))
   else
-    ;
-    (self._title):SetActive(false)
+    self._title:SetActive(false)
   end
-  if ((self._cfg).data).Desc then
-    (self._descGo):SetActive(true)
-    ;
-    (self._desc):SetText((StringTable.Get)(((self._cfg).data).Desc))
+  if self._cfg.data.Desc then
+    self._descGo:SetActive(true)
+    self._desc:SetText(StringTable.Get(self._cfg.data.Desc))
   else
-    ;
-    (self._descGo):SetActive(false)
+    self._descGo:SetActive(false)
   end
-  if ((self._cfg).data).ItemID then
-    (self._checkDetailBtnGo):SetActive(true)
-    self._curDetailItemID = ((self._cfg).data).ItemID
+  if self._cfg.data.ItemID then
+    self._checkDetailBtnGo:SetActive(true)
+    self._curDetailItemID = self._cfg.data.ItemID
   else
-    ;
-    (self._checkDetailBtnGo):SetActive(false)
+    self._checkDetailBtnGo:SetActive(false)
     self._curDetailItemID = 0
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerItem.SetFontMat = function(self, lable, resname)
-  -- function num : 0_3 , upvalues : _ENV
-  local res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
-  ;
-  (table.insert)(self._matRes, res)
+function UISailingRewardBannerItem:SetFontMat(lable, resname)
+  local res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
+  table.insert(self._matRes, res)
   if not res then
-    return 
+    return
   end
   local obj = res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerItem.OnSailingGetProgressReward = function(self, cfgIDList)
-  -- function num : 0_4
+function UISailingRewardBannerItem:OnSailingGetProgressReward(cfgIDList)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerItem.BtnOnClick = function(self)
-  -- function num : 0_5
+function UISailingRewardBannerItem:BtnOnClick()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerItem.Dispose = function(self)
-  -- function num : 0_6
+function UISailingRewardBannerItem:Dispose()
   self._cfg = nil
   self._callback = nil
   self._icon = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerItem.CheckRewardBtnOnClick = function(self)
-  -- function num : 0_7
+function UISailingRewardBannerItem:CheckRewardBtnOnClick()
   if self._callback then
-    (self._callback)(((self._cfg).data).RewardID)
+    self._callback(self._cfg.data.RewardID)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingRewardBannerItem.CheckDetailBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UISailingRewardBannerItem:CheckDetailBtnOnClick(go)
   if self._curDetailItemID and self._curDetailItemID > 0 then
-    local petModule = (GameGlobal.GetModule)(PetModule)
-    do
-      if petModule:IsPetSkinID(self._curDetailItemID) then
-        local skinId = petModule:GetSkinIDFromItemID(self._curDetailItemID)
-        ;
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_TIPS, skinId)
-        return 
-      end
-      if petModule:IsPetID(self._curDetailItemID) then
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIShopPetDetailController", self._curDetailItemID)
-        return 
-      end
+    local petModule = GameGlobal.GetModule(PetModule)
+    if petModule:IsPetSkinID(self._curDetailItemID) then
+      local skinId = petModule:GetSkinIDFromItemID(self._curDetailItemID)
+      GameGlobal.UIStateManager():ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_TIPS, skinId)
+      return
+    end
+    if petModule:IsPetID(self._curDetailItemID) then
+      GameGlobal.UIStateManager():ShowDialog("UIShopPetDetailController", self._curDetailItemID)
+      return
     end
   end
 end
-
-

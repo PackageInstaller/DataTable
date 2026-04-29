@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/buff/llb_increase_production_to_delete_source.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("llb_logic_base")
 _class("LLBuffLogicIncreaseProductionToDeleteSource", LLBuffLogicBase)
 LLBuffLogicIncreaseProductionToDeleteSource = LLBuffLogicIncreaseProductionToDeleteSource
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffLogicIncreaseProductionToDeleteSource.Constructor = function(self, buffObj, logicParam)
-  -- function num : 0_0
+function LLBuffLogicIncreaseProductionToDeleteSource:Constructor(buffObj, logicParam)
   self._incType = logicParam.incType
   self._fixVal = logicParam.fixVal
   self._perVal = logicParam.perVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffLogicIncreaseProductionToDeleteSource.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function LLBuffLogicIncreaseProductionToDeleteSource:DoLogic(notify)
   local params = notify:GetNotifyParams()
   if not LLNTDeletePet:IsInstanceOfType(notify) or not params then
-    return 
+    return
   end
   local notifyEntity = notify:GetNotifyEntity()
   local deleteEntity = params[1]
   if notifyEntity ~= deleteEntity then
-    return 
+    return
   end
   local deleteSource = params[2]
   if self._incType and deleteSource and LLEntityPet:IsInstanceOfType(deleteSource) and not deleteSource:HasDeleteFlag() then
@@ -37,17 +27,13 @@ LLBuffLogicIncreaseProductionToDeleteSource.DoLogic = function(self, notify)
       if self._perVal then
         deleteSource:AddAccPerValue(self._perVal)
       end
-    else
-      if self._incType == LuckLandIncType.Temp then
-        if self._fixVal then
-          deleteSource:AddTempFixValue(self._fixVal)
-        end
-        if self._perVal then
-          deleteSource:AddTempPerValue(self._perVal)
-        end
+    elseif self._incType == LuckLandIncType.Temp then
+      if self._fixVal then
+        deleteSource:AddTempFixValue(self._fixVal)
+      end
+      if self._perVal then
+        deleteSource:AddTempPerValue(self._perVal)
       end
     end
   end
 end
-
-

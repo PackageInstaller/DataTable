@@ -1,83 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/eight_pets/teams/ui_n33_eight_pets_teams_condition.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local UIN33EightPetsTeamsReason = {SUCCESS = 0, ERROR_PROF_UPPER_LIMIT = 1}
 _enum("UIN33EightPetsTeamsReason", UIN33EightPetsTeamsReason)
 _class("UIN33EightPetsTeamsCondition", Object)
 UIN33EightPetsTeamsCondition = UIN33EightPetsTeamsCondition
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN33EightPetsTeamsCondition.Constructor = function(self)
-  -- function num : 0_0
+function UIN33EightPetsTeamsCondition:Constructor()
   self._result = 0
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33EightPetsTeamsCondition.CurTeamPets = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function UIN33EightPetsTeamsCondition:CurTeamPets()
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local ctx = missionModule:TeamCtx()
   if ctx:IsFastSelect() then
     local context = ctx:EightPetsContext()
     return context:FastTeamPets()
   else
-    do
-      local teamId = ctx:GetCurrTeamId()
-      local teams = ctx:Teams()
-      local team = teams:Get(teamId)
-      do return team:GetPets() end
-    end
+    local teamId = ctx:GetCurrTeamId()
+    local teams = ctx:Teams()
+    local team = teams:Get(teamId)
+    return team:GetPets()
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33EightPetsTeamsCondition.SetCondition = function(self, ...)
-  -- function num : 0_2
-  local params = {...}
+function UIN33EightPetsTeamsCondition:SetCondition(...)
+  local params = {
+    ...
+  }
   self:OnSetCondition(params)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33EightPetsTeamsCondition.OnSetCondition = function(self, params)
-  -- function num : 0_3
+function UIN33EightPetsTeamsCondition:OnSetCondition(params)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33EightPetsTeamsCondition.ConditionResult = function(self)
-  -- function num : 0_4
+function UIN33EightPetsTeamsCondition:ConditionResult()
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33EightPetsTeamsCondition.TestPet = function(self, petPstId, teamSlot)
-  -- function num : 0_5 , upvalues : UIN33EightPetsTeamsReason
+function UIN33EightPetsTeamsCondition:TestPet(petPstId, teamSlot)
   return UIN33EightPetsTeamsReason.SUCCESS, 0
 end
 
 _class("UIN33EightPetsTeamsProfUpperLimit", UIN33EightPetsTeamsCondition)
 UIN33EightPetsTeamsProfUpperLimit = UIN33EightPetsTeamsProfUpperLimit
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN33EightPetsTeamsProfUpperLimit.OnSetCondition = function(self, params)
-  -- function num : 0_6
+function UIN33EightPetsTeamsProfUpperLimit:OnSetCondition(params)
   self._prof = params[1]
   self._upperLimit = params[2]
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33EightPetsTeamsProfUpperLimit.ConditionResult = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function UIN33EightPetsTeamsProfUpperLimit:ConditionResult()
+  local petModule = GameGlobal.GetModule(PetModule)
   local count = 0
   local pets = self:CurTeamPets()
-  for k,v in pairs(pets) do
+  for k, v in pairs(pets) do
     local pet = petModule:GetPet(v)
     if pet ~= nil and pet:GetProf() == self._prof then
       count = count + 1
@@ -86,42 +59,34 @@ UIN33EightPetsTeamsProfUpperLimit.ConditionResult = function(self)
   self._result = count
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN33EightPetsTeamsProfUpperLimit.TestPet = function(self, petPstId, teamSlot)
-  -- function num : 0_8 , upvalues : _ENV, UIN33EightPetsTeamsReason
+function UIN33EightPetsTeamsProfUpperLimit:TestPet(petPstId, teamSlot)
   local count = self._result
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local ctx = missionModule:TeamCtx()
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   local petNew = petModule:GetPet(petPstId)
   if petNew ~= nil and petNew:GetProf() == self._prof then
     local teamPets = self:CurTeamPets()
     local petOld = petModule:GetPet(teamPets[teamSlot])
-    do
-      do
-        if ctx:IsFastSelect() then
-          local lookupPets = (ctx:EightPetsContext()):FastTeamPetsLookup()
-          if lookupPets[petPstId] == nil then
-            petOld = nil
-          else
-            petOld = petNew
-          end
-        end
-        if petOld == nil then
-          count = count + 1
-        else
-          if petOld:GetProf() ~= self._prof then
-            count = count + 1
-          end
-        end
-        if self._upperLimit < count then
-          return UIN33EightPetsTeamsReason.ERROR_PROF_UPPER_LIMIT, self._upperLimit
-        end
-        return UIN33EightPetsTeamsReason.SUCCESS, self._upperLimit
+    if ctx:IsFastSelect() then
+      local lookupPets = ctx:EightPetsContext():FastTeamPetsLookup()
+      if lookupPets[petPstId] == nil then
+        petOld = nil
+      else
+        petOld = petNew
+      end
+    end
+    if petOld == nil then
+      count = count + 1
+    else
+      if petOld:GetProf() ~= self._prof then
+        count = count + 1
+      else
       end
     end
   end
+  if count > self._upperLimit then
+    return UIN33EightPetsTeamsReason.ERROR_PROF_UPPER_LIMIT, self._upperLimit
+  end
+  return UIN33EightPetsTeamsReason.SUCCESS, self._upperLimit
 end
-
-

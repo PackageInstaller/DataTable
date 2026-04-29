@@ -1,83 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_level_trap_up_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamLevelTrapUpLevel", SkillEffectParamBase)
 SkillEffectParamLevelTrapUpLevel = SkillEffectParamLevelTrapUpLevel
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamLevelTrapUpLevel.Constructor = function(self, t)
-  -- function num : 0_0
-  if not t.checkTrapIDs then
-    self._checkTrapIDs = {}
-    self._upLevel = t.upLevel or 1
-    if not t.modelLevels then
-      self._modelLevels = {}
-      self._transferDisabled = t.transferDisabled == 1
-      self._disableDieSkill = t.disableDieSkill
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
-    end
-  end
+function SkillEffectParamLevelTrapUpLevel:Constructor(t)
+  self._checkTrapIDs = t.checkTrapIDs or {}
+  self._upLevel = t.upLevel or 1
+  self._modelLevels = t.modelLevels or {}
+  self._transferDisabled = t.transferDisabled == 1
+  self._disableDieSkill = t.disableDieSkill
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapUpLevel.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamLevelTrapUpLevel:GetEffectType()
   return SkillEffectType.LevelTrapUpLevel
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapUpLevel.GetCheckTrapIDs = function(self)
-  -- function num : 0_2
+function SkillEffectParamLevelTrapUpLevel:GetCheckTrapIDs()
   return self._checkTrapIDs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapUpLevel.GetUpLevel = function(self)
-  -- function num : 0_3
+function SkillEffectParamLevelTrapUpLevel:GetUpLevel()
   return self._upLevel
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapUpLevel.GetModelLevels = function(self)
-  -- function num : 0_4
+function SkillEffectParamLevelTrapUpLevel:GetModelLevels()
   return self._modelLevels
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapUpLevel.IsTransferDisabled = function(self)
-  -- function num : 0_5
+function SkillEffectParamLevelTrapUpLevel:IsTransferDisabled()
   return self._transferDisabled
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapUpLevel.GetDisableDieSkill = function(self)
-  -- function num : 0_6
+function SkillEffectParamLevelTrapUpLevel:GetDisableDieSkill()
   return self._disableDieSkill
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapUpLevel.GetTrapModelLevel = function(self, trapID)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillEffectParamLevelTrapUpLevel:GetTrapModelLevel(trapID)
   if self._modelLevels then
-    for level,id in ipairs(self._modelLevels) do
+    for level, id in ipairs(self._modelLevels) do
       if trapID == id then
         return level
       end
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
-
-

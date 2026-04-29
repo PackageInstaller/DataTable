@@ -1,74 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_chess_path_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataChessPathResult", Object)
 DataChessPathResult = DataChessPathResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataChessPathResult.Constructor = function(self)
-  -- function num : 0_0
+function DataChessPathResult:Constructor()
   self._chessPathResult = {}
   self._chessPetEntityID = -1
   self._walkResultList = {}
   self._pickUpPos = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPathResult.SetChessPathResult = function(self, res)
-  -- function num : 0_1
+function DataChessPathResult:SetChessPathResult(res)
   self._chessPathResult = res
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPathResult.GetChessPathResult = function(self)
-  -- function num : 0_2
+function DataChessPathResult:GetChessPathResult()
   return self._chessPathResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPathResult.SetChessPetEntityID = function(self, chessPetEntityID)
-  -- function num : 0_3
+function DataChessPathResult:SetChessPetEntityID(chessPetEntityID)
   self._chessPetEntityID = chessPetEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPathResult.GetChessPetEntityID = function(self)
-  -- function num : 0_4
+function DataChessPathResult:GetChessPetEntityID()
   return self._chessPetEntityID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPathResult.SetChessWalkResultList = function(self, walkResultList)
-  -- function num : 0_5
+function DataChessPathResult:SetChessWalkResultList(walkResultList)
   self._walkResultList = walkResultList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPathResult.GetChessWalkResultList = function(self)
-  -- function num : 0_6
+function DataChessPathResult:GetChessWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPathResult.SetChessPickUpPos = function(self, pickUpPos)
-  -- function num : 0_7
+function DataChessPathResult:SetChessPickUpPos(pickUpPos)
   self._pickUpPos = pickUpPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DataChessPathResult.GetChessPickUpPos = function(self)
-  -- function num : 0_8
+function DataChessPathResult:GetChessPickUpPos()
   return self._pickUpPos
 end
-
-

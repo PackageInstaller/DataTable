@@ -1,55 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/scan_feature_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("match_message")
 _class("ScanFeatureCommand", IEntityCommand)
 ScanFeatureCommand = ScanFeatureCommand
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
 ScanFeatureCommand.CommandType = "ScanFeatureCommand"
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
 
-ScanFeatureCommand.Constructor = function(self, teamEntityID, skillType, trapID)
-  -- function num : 0_0
+function ScanFeatureCommand:Constructor(teamEntityID, skillType, trapID)
   self.EntityID = teamEntityID
   self._activeSkillType = skillType
   self._trapID = trapID
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureCommand.GetActiveSkillType = function(self)
-  -- function num : 0_1
+function ScanFeatureCommand:GetActiveSkillType()
   return self._activeSkillType
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureCommand.GetScanTrapID = function(self)
-  -- function num : 0_2
+function ScanFeatureCommand:GetScanTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_3 , upvalues : _ENV
+function ScanFeatureCommand:GetExecStateID(runAtClient)
   return GameStateID.WaitInput
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureCommand.GetCommandType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function ScanFeatureCommand:GetCommandType()
   return ScanFeatureCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureCommand.ToNetMessage = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ScanFeatureCommand:ToNetMessage()
   local msg = CEventScanFeatureCommand:New()
   msg.EntityID = self.EntityID
   msg.ActiveSkillType = self._activeSkillType
@@ -57,13 +33,8 @@ ScanFeatureCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-ScanFeatureCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_6
+function ScanFeatureCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self._activeSkillType = msg.ActiveSkillType
   self._trapID = msg.TrapID
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n37/exchange/ui_n37_exchange_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN37ExchangeItem", UICustomWidget)
 UIN37ExchangeItem = UIN37ExchangeItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN37ExchangeItem.SetData = function(self, index, data, component, tipsCallback, isShowBg)
-  -- function num : 0_0
+function UIN37ExchangeItem:SetData(index, data, component, tipsCallback, isShowBg)
   self._index = index
   self._data = data
   self._component = component
@@ -16,108 +9,84 @@ UIN37ExchangeItem.SetData = function(self, index, data, component, tipsCallback,
   self:_SetRemainCount()
   self:_SetReward()
   self:_SetCost()
-  ;
-  (self:GetGameObject("_bg")):SetActive(isShowBg)
+  self:GetGameObject("_bg"):SetActive(isShowBg)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeItem.PlayAnimationInSequence = function(self, index, type, wait)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN37ExchangeItem:PlayAnimationInSequence(index, type, wait)
   local tb = {
-Big = {animName = "uieff_UIN37Exchange_ItemBig_in", duration = 1800}
-, 
-Small = {animName = "uieff_UIN37Exchange_ItemSmall_in", duration = 333}
-}
-  local animName, duration = (tb[type]).animName, (tb[type]).duration
+    Big = {
+      animName = "uieff_UIN37Exchange_ItemBig_in",
+      duration = 1800
+    },
+    Small = {
+      animName = "uieff_UIN37Exchange_ItemSmall_in",
+      duration = 333
+    }
+  }
+  local animName, duration = tb[type].animName, tb[type].duration
   local delay = wait + (index - 1) * 66
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_root", animName, delay, duration, nil, true)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_root", animName, delay, duration, nil, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeItem._SetRemainCount = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local isLimit = (self._data).m_exchange_limit_count ~= -1
-  local count = (self._data).m_can_exchange_count
-  local limitText = (StringTable.Get)("str_n37_item_remain_title") .. count
-  local unlimitText = (StringTable.Get)("str_n31_item_unlimit_count")
+function UIN37ExchangeItem:_SetRemainCount()
+  local isLimit = self._data.m_exchange_limit_count ~= -1
+  local count = self._data.m_can_exchange_count
+  local limitText = StringTable.Get("str_n37_item_remain_title") .. count
+  local unlimitText = StringTable.Get("str_n31_item_unlimit_count")
   local text = isLimit and limitText or unlimitText
   if isLimit and count == 0 then
-    text = (UIActivityHelper.GetColorText)("#9C4343", text)
+    text = UIActivityHelper.GetColorText("#9C4343", text)
   end
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "RemainCount", text)
-  ;
-  (self:GetGameObject("_soldout")):SetActive(not isLimit or count == 0)
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  UIWidgetHelper.SetLocalizationText(self, "RemainCount", text)
+  self:GetGameObject("_soldout"):SetActive(isLimit and count == 0)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeItem._SetReward = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN37ExchangeItem:_SetReward()
   local data = self._data
-  local itemId = (data.m_reward).assetid
-  local count = (data.m_reward).count
+  local itemId = data.m_reward.assetid
+  local count = data.m_reward.count
   local isSpecial = data.m_id == 1
-  ;
-  (self:GetGameObject("SpecialIcon")):SetActive(isSpecial)
-  ;
-  (self:GetGameObject("RewardIcon")):SetActive(not isSpecial)
+  self:GetGameObject("SpecialIcon"):SetActive(isSpecial)
+  self:GetGameObject("RewardIcon"):SetActive(not isSpecial)
   if isSpecial then
-    local cfg = (Cfg.cfg_activity_shop_special_item_icon_client)[itemId]
-    local url = not cfg and ({}).SpecialIcon or ""
-    ;
-    (UIWidgetHelper.SetRawImage)(self, "SpecialIcon", url)
+    local cfg = Cfg.cfg_activity_shop_special_item_icon_client[itemId]
+    local url = (cfg or {}).SpecialIcon or ""
+    UIWidgetHelper.SetRawImage(self, "SpecialIcon", url)
   else
-    (UIWidgetHelper.SetItemIcon)(self, itemId, "RewardIcon")
+    UIWidgetHelper.SetItemIcon(self, itemId, "RewardIcon")
   end
-  ;
-  (UIWidgetHelper.SetItemIconColor)(self, itemId, "_color", "UIN37Main.spriteatlas", "n37_shop_pinzhi0")
-  ;
-  (UIWidgetHelper.SetItemText)(self, itemId, "Title")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "RewardCount", count)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  UIWidgetHelper.SetItemIconColor(self, itemId, "_color", "UIN37Main.spriteatlas", "n37_shop_pinzhi0")
+  UIWidgetHelper.SetItemText(self, itemId, "Title")
+  UIWidgetHelper.SetLocalizationText(self, "RewardCount", count)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeItem._SetCost = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local icon, count = (self._component):GetCostItemIconText()
-  local need = (self._data).m_cost_count
+function UIN37ExchangeItem:_SetCost()
+  local icon, count = self._component:GetCostItemIconText()
+  local need = self._data.m_cost_count
   local colorRed = "#F84757"
   local colorNormal = "#F9F4F6"
   local color = count < need and colorRed or colorNormal
-  local str = (UIActivityHelper.GetColorText)(color, tostring(need))
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "CostCount", str)
+  local str = UIActivityHelper.GetColorText(color, tostring(need))
+  UIWidgetHelper.SetLocalizationText(self, "CostCount", str)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37ExchangeItem.BtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN37ExchangeItem:BtnOnClick(go)
   local uiItemData = DCampaignShopItemBase:New()
   uiItemData:Refresh(self._data, self._component)
   local useNormalDlg = false
-  do
-    if not uiItemData:IsUnLimit() then
-      local remainCount = uiItemData:GetRemainCount()
-      if remainCount <= 0 then
-        (ToastManager.ShowToast)((StringTable.Get)("str_n31_item_has_empty_tips"))
-        return 
-      end
-      if remainCount == 1 then
-        useNormalDlg = true
-      end
+  if not uiItemData:IsUnLimit() then
+    local remainCount = uiItemData:GetRemainCount()
+    if remainCount <= 0 then
+      ToastManager.ShowToast(StringTable.Get("str_n31_item_has_empty_tips"))
+      return
     end
-    local tb = {[true] = "UICampaignShopConfirmNormalController", [false] = "UICampaignShopConfirmDetailController"}
-    self:ShowDialog(tb[useNormalDlg], uiItemData)
+    if remainCount == 1 then
+      useNormalDlg = true
+    end
   end
+  local tb = {
+    [true] = "UICampaignShopConfirmNormalController",
+    [false] = "UICampaignShopConfirmDetailController"
+  }
+  self:ShowDialog(tb[useNormalDlg], uiItemData)
 end
-
-

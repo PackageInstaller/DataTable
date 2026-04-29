@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_inland_sailing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignInlandSailing", ICampaignComponentLocalProcessBase)
 CCampaignInlandSailing = CCampaignInlandSailing
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignInlandSailing.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignInlandSailing:Constructor()
   self._buyGiftComponent = nil
   self._buyGiftComponentInfo = nil
   self._questComponent = nil
@@ -16,55 +9,37 @@ CCampaignInlandSailing.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandSailing.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignInlandSailing:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_SAILING
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandSailing.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignInlandSailing:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandSailing.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignInlandSailing:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetBuyGiftComponent()
   self:_GetQuestComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandSailing._GetBuyGiftComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._buyGiftComponent = (self._campaignObj):GetComponent(ECCampaignInlandSailingComponentID.BUY_GIFT)
+function CCampaignInlandSailing:_GetBuyGiftComponent()
+  self._buyGiftComponent = self._campaignObj:GetComponent(ECCampaignInlandSailingComponentID.BUY_GIFT)
   if not self._buyGiftComponent then
-    return 
+    return
   end
-  self._buyGiftComponentInfo = (self._buyGiftComponent):ComponentInfo()
+  self._buyGiftComponentInfo = self._buyGiftComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandSailing._GetQuestComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECCampaignInlandSailingComponentID.QUEST)
+function CCampaignInlandSailing:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECCampaignInlandSailingComponentID.QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandSailing.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignInlandSailing:GetComponent(componentID)
   if ECCampaignInlandSailingComponentID.BUY_GIFT == componentID then
     return self._buyGiftComponent
   end
@@ -74,10 +49,7 @@ CCampaignInlandSailing.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignInlandSailing.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignInlandSailing:GetComponentInfo(componentID)
   if ECCampaignInlandSailingComponentID.BUY_GIFT == componentID then
     return self._buyGiftComponentInfo
   end
@@ -86,5 +58,3 @@ CCampaignInlandSailing.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

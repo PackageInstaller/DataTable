@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_decrease_max_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultDecreaseMaxHP", BuffResultBase)
 BuffResultDecreaseMaxHP = BuffResultDecreaseMaxHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultDecreaseMaxHP.Constructor = function(self, eid, damageInfo, maxHPResult)
-  -- function num : 0_0
+function BuffResultDecreaseMaxHP:Constructor(eid, damageInfo, maxHPResult)
   self._eid = eid
   self._damageInfo = damageInfo
   self._maxHPResult = maxHPResult
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDecreaseMaxHP.GetDamageInfo = function(self)
-  -- function num : 0_1
+function BuffResultDecreaseMaxHP:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDecreaseMaxHP.GetEntityID = function(self)
-  -- function num : 0_2
+function BuffResultDecreaseMaxHP:GetEntityID()
   return self._eid
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDecreaseMaxHP.GetMaxHPResult = function(self)
-  -- function num : 0_3
+function BuffResultDecreaseMaxHP:GetMaxHPResult()
   return self._maxHPResult
 end
-
-

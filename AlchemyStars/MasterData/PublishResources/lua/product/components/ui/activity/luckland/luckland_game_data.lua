@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/luckland_game_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandGameData", Object)
 LuckLandGameData = LuckLandGameData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandGameData.Init = function(self, data)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandGameData:Init(data)
   self._cfg = data
   self.gameRound = data.GameRound
   self.curMoney = data.InitMoney
@@ -21,129 +14,75 @@ LuckLandGameData.Init = function(self, data)
   self.enemyTotalAtk = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetTotalRound = function(self)
-  -- function num : 0_1
-  return (self._cfg).GameRound
+function LuckLandGameData:GetTotalRound()
+  return self._cfg.GameRound
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetCurRound = function(self)
-  -- function num : 0_2
+function LuckLandGameData:GetCurRound()
   return self.gameRound
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetUseRound = function(self)
-  -- function num : 0_3
-  return (self._cfg).GameRound - self.gameRound + 1
+function LuckLandGameData:GetUseRound()
+  return self._cfg.GameRound - self.gameRound + 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetCurMoney = function(self)
-  -- function num : 0_4
+function LuckLandGameData:GetCurMoney()
   return self.curMoney
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetUserMaxHp = function(self)
-  -- function num : 0_5
+function LuckLandGameData:GetUserMaxHp()
   return self.maxHp
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetUserCurHp = function(self)
-  -- function num : 0_6
+function LuckLandGameData:GetUserCurHp()
   return self.curHp
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.ReDrawCount = function(self)
-  -- function num : 0_7
+function LuckLandGameData:ReDrawCount()
   return self.reDrawCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.ReDrawCost = function(self)
-  -- function num : 0_8
+function LuckLandGameData:ReDrawCost()
   return 10
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetGameRoundEnemyDic = function(self)
-  -- function num : 0_9
+function LuckLandGameData:GetGameRoundEnemyDic()
   return self.gameRoundEnemyDic
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetNeXTEnemyList = function(self)
-  -- function num : 0_10
+function LuckLandGameData:GetNeXTEnemyList()
   return self.nextEnmeyList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetNextEnterEnemyRoundIndex = function(self)
-  -- function num : 0_11
+function LuckLandGameData:GetNextEnterEnemyRoundIndex()
   return self.nextEnterEnemyRoundIndex
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.SetNextEnterEnemyRoundIndex = function(self, index)
-  -- function num : 0_12
+function LuckLandGameData:SetNextEnterEnemyRoundIndex(index)
   self.nextEnterEnemyRoundIndex = index
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.GetEnemyTotalAtk = function(self)
-  -- function num : 0_13
+function LuckLandGameData:GetEnemyTotalAtk()
   return self.enemyTotalAtk
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.SetEnemyTotalAtk = function(self, atk)
-  -- function num : 0_14
+function LuckLandGameData:SetEnemyTotalAtk(atk)
   self.enemyTotalAtk = atk
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.TurnNextRound = function(self)
-  -- function num : 0_15
+function LuckLandGameData:TurnNextRound()
   self.gameRound = self.gameRound - 1
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.AddMoney = function(self, money)
-  -- function num : 0_16
+function LuckLandGameData:AddMoney(money)
   self.curMoney = self.curMoney + money
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.CostMoney = function(self, money)
-  -- function num : 0_17
+function LuckLandGameData:CostMoney(money)
   self.curMoney = self.curMoney - money
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.CanCostMoney = function(self, money)
-  -- function num : 0_18
+function LuckLandGameData:CanCostMoney(money)
   if money <= self.curMoney then
     return true
   else
@@ -151,30 +90,19 @@ LuckLandGameData.CanCostMoney = function(self, money)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.RecoverUserHp = function(self, hp)
-  -- function num : 0_19
+function LuckLandGameData:RecoverUserHp(hp)
   self.curHp = self.curHp + hp
-  if self.maxHp < self.curHp then
+  if self.curHp > self.maxHp then
     self.curHp = self.maxHp
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.ReduceUserHp = function(self, hp)
-  -- function num : 0_20
+function LuckLandGameData:ReduceUserHp(hp)
   self.curHp = self.curHp - hp
   if self.curHp <= 0 then
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandGameData.AddReDrawCount = function(self)
-  -- function num : 0_21
+function LuckLandGameData:AddReDrawCount()
   self.reDrawCount = self.reDrawCount + 1
 end
-
-

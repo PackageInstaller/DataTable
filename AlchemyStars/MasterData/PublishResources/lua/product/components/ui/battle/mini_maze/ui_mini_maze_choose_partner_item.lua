@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/mini_maze/ui_mini_maze_choose_partner_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMiniMazeChoosePartnerItem", UICustomWidget)
 UIMiniMazeChoosePartnerItem = UIMiniMazeChoosePartnerItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMiniMazeChoosePartnerItem.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMiniMazeChoosePartnerItem:OnShow(uiParam)
   self._atlas = self:GetAsset("UIMazeChoose.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChoosePartnerItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIMiniMazeChoosePartnerItem:GetComponents()
   self._card = self:GetUIComponent("RectTransform", "card")
   self._itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
   self._itemPoolCanvasGroup = self:GetUIComponent("CanvasGroup", "itemPool")
@@ -24,101 +14,64 @@ UIMiniMazeChoosePartnerItem.GetComponents = function(self)
   self._selectGO = self:GetGameObject("Select")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChoosePartnerItem.SetData = function(self, index, partnerID, pos, _cardClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMiniMazeChoosePartnerItem:SetData(index, partnerID, pos, _cardClick)
   self:GetComponents()
   self._partnerID = partnerID
-  self._petID = ((Cfg.cfg_mini_maze_partner_info)[partnerID]).PetID
+  self._petID = Cfg.cfg_mini_maze_partner_info[partnerID].PetID
   self._index = index
   self._pos = pos
   self._callback = _cardClick
   self._canClick = false
-  self._item = (self._itemPool):SpawnObject("UIMiniMazePartnerItem")
-  local cbFunc = function()
-    -- function num : 0_2_0 , upvalues : self
+  self._item = self._itemPool:SpawnObject("UIMiniMazePartnerItem")
+  
+  local function cbFunc()
     self:CardClick()
   end
-
-  ;
-  (self._item):SetData(self._partnerID, self._index, cbFunc, self._index)
-  ;
-  (self._card):DOScale(Vector3(1, 1, 1), 0.2)
-  ;
-  ((self._card):DOMove(pos, 0.2)):OnComplete(function()
-    -- function num : 0_2_1 , upvalues : self
+  
+  self._item:SetData(self._partnerID, self._index, cbFunc, self._index)
+  self._card:DOScale(Vector3(1, 1, 1), 0.2)
+  self._card:DOMove(pos, 0.2):OnComplete(function()
     self._canClick = true
-  end
-)
+  end)
   self._colorBg = self:GetUIComponent("Image", "colorBg")
-  ;
-  ((self._colorBg).gameObject):SetActive(false)
-  local cfg_pet = (Cfg.cfg_pet)[self._petID]
+  self._colorBg.gameObject:SetActive(false)
+  local cfg_pet = Cfg.cfg_pet[self._petID]
   if cfg_pet then
     local color = cfg_pet.Star
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._colorBg).sprite = (self._atlas):GetSprite("map_xuanzhong_di" .. color)
+    self._colorBg.sprite = self._atlas:GetSprite("map_xuanzhong_di" .. color)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChoosePartnerItem.CardClick = function(self)
-  -- function num : 0_3
+function UIMiniMazeChoosePartnerItem:CardClick()
   if self._canClick == true then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChoosePartnerItem.Flush = function(self, itemid)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMiniMazeChoosePartnerItem:Flush(itemid)
   self:Lock("UIMiniMazeChoosePartnerItem:Flush")
-  ;
-  (self._itemPoolCanvasGroup):DOFade(0, 0.5)
-  ;
-  ((self._card):DOScale(Vector3(0.1, 0.1, 0.1), 0.5)):OnComplete(function()
-    -- function num : 0_4_0 , upvalues : self, _ENV, itemid
-    (self._card):DOScale(Vector3(1, 1, 1), 0.1)
-    ;
-    (self._itemPoolCanvasGroup):DOFade(1, 0.1)
+  self._itemPoolCanvasGroup:DOFade(0, 0.5)
+  self._card:DOScale(Vector3(0.1, 0.1, 0.1), 0.5):OnComplete(function()
+    self._card:DOScale(Vector3(1, 1, 1), 0.1)
+    self._itemPoolCanvasGroup:DOFade(1, 0.1)
     self:UnLock("UIMiniMazeChoosePartnerItem:Flush")
-    ;
-    (self._item):Flush(itemid)
-  end
-)
+    self._item:Flush(itemid)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChoosePartnerItem.CancelOrSelect = function(self, select)
-  -- function num : 0_5
+function UIMiniMazeChoosePartnerItem:CancelOrSelect(select)
   self:SetSelected(select)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChoosePartnerItem.MoveTwwen = function(self, move, pos)
-  -- function num : 0_6
+function UIMiniMazeChoosePartnerItem:MoveTwwen(move, pos)
   if move then
-    (self._card):DOMove(pos, 0.2)
+    self._card:DOMove(pos, 0.2)
   else
-    ;
-    ((self._card).gameObject):SetActive(false)
+    self._card.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniMazeChoosePartnerItem.SetSelected = function(self, bSelect)
-  -- function num : 0_7
-  (self._selectGO):SetActive(bSelect)
-  ;
-  (self._notSelectGO):SetActive(not bSelect)
+function UIMiniMazeChoosePartnerItem:SetSelected(bSelect)
+  self._selectGO:SetActive(bSelect)
+  self._notSelectGO:SetActive(not bSelect)
 end
-
-

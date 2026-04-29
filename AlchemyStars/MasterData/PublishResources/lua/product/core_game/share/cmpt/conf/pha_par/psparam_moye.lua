@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/psparam_moye.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseMoyeParam", SkillPhaseParamBase)
 SkillPhaseMoyeParam = SkillPhaseMoyeParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseMoyeParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseMoyeParam:Constructor(t)
   self.monsterAnim = t.monsterAnim
   self.monsterEffID = t.monsterEffID
   self.monsterAudioID = t.monsterAudioID
@@ -42,57 +35,67 @@ SkillPhaseMoyeParam.Constructor = function(self, t)
   self.teleportWaitTime = t.teleportWaitTime or 700
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMoyeParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseMoyeParam:GetCacheTable()
   local t = {}
   if self.monsterEffID and self.monsterEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.monsterEffID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self.monsterEffID].ResPath,
+      1
+    })
   end
-  if self.monsterWeaponEffID and self.monsterWeaponEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.monsterWeaponEffID]).ResPath, 1})
+  if self.monsterWeaponEffID and 0 < self.monsterWeaponEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self.monsterWeaponEffID].ResPath,
+      1
+    })
   end
-  if self.noMonsterEffID and self.noMonsterEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.noMonsterEffID]).ResPath, 1})
+  if self.noMonsterEffID and 0 < self.noMonsterEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self.noMonsterEffID].ResPath,
+      1
+    })
   end
-  if self.noMonsterWeaponEffID and self.noMonsterWeaponEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.noMonsterWeaponEffID]).ResPath, 1})
+  if self.noMonsterWeaponEffID and 0 < self.noMonsterWeaponEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self.noMonsterWeaponEffID].ResPath,
+      1
+    })
   end
-  if self.trajectoryEffID and self.trajectoryEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.trajectoryEffID]).ResPath, 1})
+  if self.trajectoryEffID and 0 < self.trajectoryEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self.trajectoryEffID].ResPath,
+      1
+    })
   end
-  if self.lastPosEffID and self.lastPosEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.lastPosEffID]).ResPath, 1})
+  if self.lastPosEffID and 0 < self.lastPosEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self.lastPosEffID].ResPath,
+      1
+    })
   end
-  if self.teleportEffID and self.teleportEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self.teleportEffID]).ResPath, 1})
+  if self.teleportEffID and 0 < self.teleportEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self.teleportEffID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMoyeParam.GetCacheAudio = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseMoyeParam:GetCacheAudio()
   local t = {}
   if self.monsterAudioID and self.monsterAudioID > 0 then
-    (table.insert)(t, self.monsterAudioID)
+    table.insert(t, self.monsterAudioID)
   end
-  if self.noMonsterAudioID and self.noMonsterAudioID > 0 then
-    (table.insert)(t, self.noMonsterAudioID)
+  if self.noMonsterAudioID and 0 < self.noMonsterAudioID then
+    table.insert(t, self.noMonsterAudioID)
   end
-  if self.lastPosAudioID and self.lastPosAudioID > 0 then
-    (table.insert)(t, self.lastPosAudioID)
+  if self.lastPosAudioID and 0 < self.lastPosAudioID then
+    table.insert(t, self.lastPosAudioID)
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseMoyeParam.GetPhaseType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPhaseMoyeParam:GetPhaseType()
   return SkillViewPhaseType.Moye
 end
-
-

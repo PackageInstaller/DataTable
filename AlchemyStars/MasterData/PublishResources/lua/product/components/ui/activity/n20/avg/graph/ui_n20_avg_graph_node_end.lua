@@ -1,47 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/graph/ui_n20_avg_graph_node_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGGraphNodeEnd", UIN20AVGGraphNodeBase)
 UIN20AVGGraphNodeEnd = UIN20AVGGraphNodeEnd
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGGraphNodeEnd.OnHide = function(self)
-  -- function num : 0_0
-  (self.imgIcon):DestoryLastImage()
+function UIN20AVGGraphNodeEnd:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeEnd.InitComponent = function(self)
-  -- function num : 0_1
+function UIN20AVGGraphNodeEnd:InitComponent()
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeEnd.FlushName = function(self)
-  -- function num : 0_2
-  (self.txtName):SetText((self.node).title)
+function UIN20AVGGraphNodeEnd:FlushName()
+  self.txtName:SetText(self.node.title)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphNodeEnd.FlushState = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local state = (self.node):State()
+function UIN20AVGGraphNodeEnd:FlushState()
+  local state = self.node:State()
   if state == AVGStoryNodeState.CanPlay then
-    (self.imgIcon):LoadImage((self.node).cgCanPlay)
+    self.imgIcon:LoadImage(self.node.cgCanPlay)
+  elseif state == AVGStoryNodeState.Complete then
+    self.imgIcon:LoadImage(self.node.cg)
   else
-    if state == AVGStoryNodeState.Complete then
-      (self.imgIcon):LoadImage((self.node).cg)
-    else
-      ;
-      (Log.warn)("### invalid AVGStoryNodeState:", state)
-    end
+    Log.warn("### invalid AVGStoryNodeState:", state)
   end
 end
-
-

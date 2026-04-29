@@ -1,83 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/stage/ui_season_stage_multi_award_list_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStageMultiAwardListS3", UICustomWidget)
 UISeasonStageMultiAwardListS3 = UISeasonStageMultiAwardListS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStageMultiAwardListS3.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonStageMultiAwardListS3:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageMultiAwardListS3.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonStageMultiAwardListS3:InitWidget()
   self._seasonAwardGen = self:GetUIComponent("UISelectObjectPath", "Content")
   self._sr = self:GetUIComponent("ScrollRect", "ScrollView")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageMultiAwardListS3.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonStageMultiAwardListS3:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageMultiAwardListS3.SetData = function(self, multiAwardList)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonStageMultiAwardListS3:SetData(multiAwardList)
   self._multiAwardList = multiAwardList
   local count = #self._multiAwardList
-  ;
-  (self._seasonAwardGen):SpawnObjects("UISeasonStageSingleAwardListS3", count)
-  local list = (self._seasonAwardGen):GetAllSpawnList()
+  self._seasonAwardGen:SpawnObjects("UISeasonStageSingleAwardListS3", count)
+  local list = self._seasonAwardGen:GetAllSpawnList()
   self._list = list
-  for i,v in ipairs(list) do
-    v:SetData((self._multiAwardList)[i])
+  for i, v in ipairs(list) do
+    v:SetData(self._multiAwardList[i])
   end
   self:ResetScrollPos()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageMultiAwardListS3.ResetScrollPos = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._sr).horizontalNormalizedPosition = 0
+function UISeasonStageMultiAwardListS3:ResetScrollPos()
+  self._sr.horizontalNormalizedPosition = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageMultiAwardListS3.PlayAnim = function(self, totalAnimDelay)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonStageMultiAwardListS3:PlayAnim(totalAnimDelay)
   if self._list then
     local singleListAnimDelay = 0
     if totalAnimDelay then
       singleListAnimDelay = singleListAnimDelay + totalAnimDelay
     end
     local eachItemDelay = 50
-    for index,singleList in ipairs(self._list) do
+    for index, singleList in ipairs(self._list) do
       singleList:PlayAnim(singleListAnimDelay)
-      local cellCount = #(self._multiAwardList)[index]
+      local cellCount = #self._multiAwardList[index]
       singleListAnimDelay = singleListAnimDelay + cellCount * eachItemDelay
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageMultiAwardListS3.SetWaitAnim = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISeasonStageMultiAwardListS3:SetWaitAnim()
   if self._list then
-    for index,singleList in ipairs(self._list) do
+    for index, singleList in ipairs(self._list) do
       singleList:SetWaitAnim()
     end
   end
 end
-
-

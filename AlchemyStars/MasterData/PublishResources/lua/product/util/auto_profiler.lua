@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/auto_profiler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("custom_profiler")
 _class("AutoProfiler", Object)
 AutoProfiler = AutoProfiler
 local func_cache = {__mode = "k"}
 local custom_profiler = {}
--- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
 
-AutoProfiler.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV, custom_profiler
+function AutoProfiler:Constructor()
   self.mCustomProfiler = CustomProfiler:New()
   self._cache_init = false
   custom_profiler = self.mCustomProfiler
@@ -20,45 +13,31 @@ AutoProfiler.Constructor = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.Init = function(self)
-  -- function num : 0_1
-  (self.mCustomProfiler):Init()
+function AutoProfiler:Init()
+  self.mCustomProfiler:Init()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.ClearFrameData = function(self)
-  -- function num : 0_2
-  (self.mCustomProfiler):ClearFrameData()
+function AutoProfiler:ClearFrameData()
+  self.mCustomProfiler:ClearFrameData()
 end
 
-auto_profiler_hook = function(event, line)
-  -- function num : 0_3 , upvalues : _ENV, func_cache, custom_profiler
+function auto_profiler_hook(event, line)
   if event == "call" then
-    local func = ((debug.getinfo)(2, "f")).func
+    local func = debug.getinfo(2, "f").func
     local info = func_cache[func]
     if info ~= nil then
       custom_profiler:BeginSample(info.name)
     end
-  else
-    do
-      if event == "return" then
-        local func = ((debug.getinfo)(2, "f")).func
-        local info = func_cache[func]
-        if info ~= nil then
-          custom_profiler:EndSample()
-        end
-      end
+  elseif event == "return" then
+    local func = debug.getinfo(2, "f").func
+    local info = func_cache[func]
+    if info ~= nil then
+      custom_profiler:EndSample()
     end
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.Start = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AutoProfiler:Start()
   if self._cache_init == false then
     self.mark = {}
     self:scan(_G, nil)
@@ -66,85 +45,63 @@ AutoProfiler.Start = function(self)
     self.mark = nil
     self._cache_init = true
   end
-  ;
-  (debug.sethook)(auto_profiler_hook, "cr", 0)
-  ;
-  (self.mCustomProfiler):Start()
-  ;
-  (Log.prof)("AutoProfiler:Start")
+  debug.sethook(auto_profiler_hook, "cr", 0)
+  self.mCustomProfiler:Start()
+  Log.prof("AutoProfiler:Start")
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.Print = function(self)
-  -- function num : 0_5
-  (self.mCustomProfiler):Print()
+function AutoProfiler:Print()
+  self.mCustomProfiler:Print()
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.PrintNodeData = function(self, treeData, frameindex)
-  -- function num : 0_6
-  (self.mCustomProfiler):PrintNodeData(treeData, frameindex)
+function AutoProfiler:PrintNodeData(treeData, frameindex)
+  self.mCustomProfiler:PrintNodeData(treeData, frameindex)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.PrintInfo = function(self, info, frameindex)
-  -- function num : 0_7
-  (self.mCustomProfiler):PrintInfo(info, frameindex)
+function AutoProfiler:PrintInfo(info, frameindex)
+  self.mCustomProfiler:PrintInfo(info, frameindex)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.StoreSamepleData = function(self)
-  -- function num : 0_8
-  (self.mCustomProfiler):StoreSamepleData()
+function AutoProfiler:StoreSamepleData()
+  self.mCustomProfiler:StoreSamepleData()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.Stop = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (debug.sethook)(nil)
-  ;
-  (self.mCustomProfiler):Stop()
-  ;
-  (Log.prof)("CustomProfiler:Stop")
+function AutoProfiler:Stop()
+  debug.sethook(nil)
+  self.mCustomProfiler:Stop()
+  Log.prof("CustomProfiler:Stop")
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.BeginSample = function(self, samplename)
-  -- function num : 0_10
+function AutoProfiler:BeginSample(samplename)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-AutoProfiler.EndSample = function(self)
-  -- function num : 0_11
+function AutoProfiler:EndSample()
 end
 
 local ffnames = {
-event = {[20] = "_xpcall.__call", [142] = "event.__call"}
-, 
-slot = {[11] = "slot.__call"}
-, 
-MainScene = {[250] = "MainScene.Update"}
+  event = {
+    [20] = "_xpcall.__call",
+    [142] = "event.__call"
+  },
+  slot = {
+    [11] = "slot.__call"
+  },
+  MainScene = {
+    [250] = "MainScene.Update"
+  }
 }
-local blacklist = {ipairs_aux = 1, ["_xpcall.__call"] = 1, unknow = 1}
--- DECOMPILER ERROR at PC64: Confused about usage of register: R4 in 'UnsetPending'
+local blacklist = {
+  ipairs_aux = 1,
+  ["_xpcall.__call"] = 1,
+  unknow = 1
+}
 
-AutoProfiler.scan = function(self, t, name)
-  -- function num : 0_12 , upvalues : _ENV, blacklist, func_cache
-  if (self.mark)[t] then
-    return 
+function AutoProfiler:scan(t, name)
+  if self.mark[t] then
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.mark)[t] = true
-  for k,v in pairs(t) do
+  self.mark[t] = true
+  for k, v in pairs(t) do
     if type(k) == "string" then
       if type(v) == "function" then
         local str = k
@@ -154,42 +111,19 @@ AutoProfiler.scan = function(self, t, name)
         if not blacklist[str] and k ~= "__index" and k ~= "__newindex" then
           func_cache[v] = {name = str, id = -1}
         end
-      else
-        do
-          do
-            if type(v) == "table" and not (self.mark)[v] then
-              self:scan(v, k)
-            end
-            if (name and k == tolua.gettag) or k == tolua.settag then
-              self:scan(v, name)
-            end
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      elseif type(v) == "table" and not self.mark[v] then
+        self:scan(v, k)
       end
+    elseif name and k == tolua.gettag or k == tolua.settag then
+      self:scan(v, name)
     end
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R4 in 'UnsetPending'
-
-AutoProfiler.scanlibs = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function AutoProfiler:scanlibs()
   local t = package.loaded
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.mark)[t] = true
-  for k,v in pairs(t) do
+  self.mark[t] = true
+  for k, v in pairs(t) do
     if type(k) == "string" and type(v) == "table" then
       self:scan(v, k)
       local mt = getmetatable(v)
@@ -199,5 +133,3 @@ AutoProfiler.scanlibs = function(self)
     end
   end
 end
-
-

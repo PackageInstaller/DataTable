@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/favour_pet/vote2/ui_favour_pet_vote2_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFavourPetVote2Item", UICustomWidget)
 UIFavourPetVote2Item = UIFavourPetVote2Item
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFavourPetVote2Item.SetData = function(self, campaign, component, voteId, isChampion, clickCallback)
-  -- function num : 0_0
+function UIFavourPetVote2Item:SetData(campaign, component, voteId, isChampion, clickCallback)
   self._campaign = campaign
   self._component = component
   self._voteId = voteId
@@ -19,97 +12,65 @@ UIFavourPetVote2Item.SetData = function(self, campaign, component, voteId, isCha
   self:_SetVote(voteId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Item.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_1 , upvalues : _ENV
+function UIFavourPetVote2Item:PlayAnimationInSequence(index)
   local animName, duration = "uieff_UIFavourPet_Vote2_Item_in", 1167
   local delay = index * 100
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_root", animName, delay, duration, nil, true)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_root", animName, delay, duration, nil, true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Item._SetCrown = function(self, isShow)
-  -- function num : 0_2
-  if not isShow then
-    isShow = false
-  end
-  ;
-  (self:GetGameObject("_crown")):SetActive(isShow)
+function UIFavourPetVote2Item:_SetCrown(isShow)
+  isShow = isShow or false
+  self:GetGameObject("_crown"):SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Item._SetName = function(self, voteId)
-  -- function num : 0_3 , upvalues : _ENV
+function UIFavourPetVote2Item:_SetName(voteId)
   local petName = ""
   local skinName = ""
-  local cfg = (UIFavourPetHelper.GetSkinInfo)(self._component, voteId)
+  local cfg = UIFavourPetHelper.GetSkinInfo(self._component, voteId)
   if cfg then
-    skinName = (StringTable.Get)(cfg.SkinName)
-    petName = (UIFavourPetHelper.GetPetName)(cfg.PetId)
+    skinName = StringTable.Get(cfg.SkinName)
+    petName = UIFavourPetHelper.GetPetName(cfg.PetId)
   end
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_petName", petName)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_skinName", skinName)
+  UIWidgetHelper.SetLocalizationText(self, "_petName", petName)
+  UIWidgetHelper.SetLocalizationText(self, "_skinName", skinName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Item._SetCg = function(self, voteId)
-  -- function num : 0_4 , upvalues : _ENV
+function UIFavourPetVote2Item:_SetCg(voteId)
   local widgetName = "_skinCg"
-  local info = (UIFavourPetHelper.GetPetCgInfo)(self._component, voteId)
+  local info = UIFavourPetHelper.GetPetCgInfo(self._component, voteId)
   local isShow = info ~= nil
-  ;
-  (self:GetGameObject(widgetName)):SetActive(isShow)
+  self:GetGameObject(widgetName):SetActive(isShow)
   if isShow then
     local trans = self:GetUIComponent("RectTransform", widgetName)
     trans.sizeDelta = info.size
     trans.localScale = info.scale
     trans.anchoredPosition = info.pos
     local rawImageName = info.rawImageName
-    if not (string.isnullorempty)(rawImageName) then
-      (UIWidgetHelper.SetRawImage)(self, widgetName, rawImageName)
+    if not string.isnullorempty(rawImageName) then
+      UIWidgetHelper.SetRawImage(self, widgetName, rawImageName)
     end
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Item._SetVote = function(self, voteId)
-  -- function num : 0_5 , upvalues : _ENV
-  local isVoted = (UIFavourPetHelper.NotEnoughVoteItem)(self._component)
-  local myVote = (self._component):GetPetVote(voteId)
-  local tb = {[1] = "str_favour_pet_vote", [2] = "str_favour_pet_vote_finish"}
-  if not isVoted or myVote == 0 or not tb[2] then
-    local strId = tb[1]
-  end
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtVoteBtn", (StringTable.Get)(strId))
-  local totalVote = (self._component):GetZonePetVote(voteId)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_totalVote", totalVote)
+function UIFavourPetVote2Item:_SetVote(voteId)
+  local isVoted = UIFavourPetHelper.NotEnoughVoteItem(self._component)
+  local myVote = self._component:GetPetVote(voteId)
+  local tb = {
+    [1] = "str_favour_pet_vote",
+    [2] = "str_favour_pet_vote_finish"
+  }
+  local strId = isVoted and myVote ~= 0 and tb[2] or tb[1]
+  UIWidgetHelper.SetLocalizationText(self, "_txtVoteBtn", StringTable.Get(strId))
+  local totalVote = self._component:GetZonePetVote(voteId)
+  UIWidgetHelper.SetLocalizationText(self, "_totalVote", totalVote)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Item.DetailBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIFavourPetVote2Item:DetailBtnOnClick(go)
   self:ShowDialog("UIFavourPetVote2Detail", self._component, self._voteId)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFavourPetVote2Item.BtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIFavourPetVote2Item:BtnOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)(self._voteId)
+    self._clickCallback(self._voteId)
   end
 end
-
-

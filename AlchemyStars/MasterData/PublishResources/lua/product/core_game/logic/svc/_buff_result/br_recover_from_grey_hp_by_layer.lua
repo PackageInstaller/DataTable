@@ -1,39 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_recover_from_grey_hp_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_result_base")
 _class("BuffResultRecoverFromGreyHPByLayer", BuffResultBase)
 BuffResultRecoverFromGreyHPByLayer = BuffResultRecoverFromGreyHPByLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRecoverFromGreyHPByLayer.Constructor = function(self, entityID, damageInfo, greyHPVal)
-  -- function num : 0_0
+function BuffResultRecoverFromGreyHPByLayer:Constructor(entityID, damageInfo, greyHPVal)
   self._entityID = entityID
   self._damageInfo = damageInfo
   self._finalGreyHPVal = greyHPVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecoverFromGreyHPByLayer.GetEntityID = function(self)
-  -- function num : 0_1
+function BuffResultRecoverFromGreyHPByLayer:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecoverFromGreyHPByLayer.GetDamageInfo = function(self)
-  -- function num : 0_2
+function BuffResultRecoverFromGreyHPByLayer:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRecoverFromGreyHPByLayer.GetFinalGreyHPVal = function(self)
-  -- function num : 0_3
+function BuffResultRecoverFromGreyHPByLayer:GetFinalGreyHPVal()
   return self._finalGreyHPVal
 end
-
-

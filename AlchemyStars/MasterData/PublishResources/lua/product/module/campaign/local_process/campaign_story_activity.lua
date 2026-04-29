@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_story_activity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignStoryActivity", ICampaignComponentLocalProcessBase)
 CCampaignStoryActivity = CCampaignStoryActivity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignStoryActivity.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignStoryActivity:Constructor()
   self._lineMissionComponent = nil
   self._lineMissionComponentInfo = nil
   self._questComponent = nil
@@ -18,67 +11,46 @@ CCampaignStoryActivity.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity.InitComponent = function(self, campaignObj)
-  -- function num : 0_1
+function CCampaignStoryActivity:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetLineMissionComponent()
   self:_GetQuestComponent()
   self:_GetSharedStoryComponent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity.GetCampaignType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CCampaignStoryActivity:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_STORY_ACTIVITY
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity.CampaignObjInfo = function(self)
-  -- function num : 0_3
+function CCampaignStoryActivity:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity._GetLineMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._lineMissionComponent = (self._campaignObj):GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION)
+function CCampaignStoryActivity:_GetLineMissionComponent()
+  self._lineMissionComponent = self._campaignObj:GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION)
   if not self._lineMissionComponent then
-    return 
+    return
   end
-  self._lineMissionComponentInfo = (self._lineMissionComponent):ComponentInfo()
+  self._lineMissionComponentInfo = self._lineMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity._GetQuestComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK)
+function CCampaignStoryActivity:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_TASK)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity._GetSharedStoryComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._storySharedComponent = (self._campaignObj):GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_SHARED)
+function CCampaignStoryActivity:_GetSharedStoryComponent()
+  self._storySharedComponent = self._campaignObj:GetComponent(ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_SHARED)
   if not self._storySharedComponent then
-    return 
+    return
   end
-  self._storySharedComponentInfo = (self._storySharedComponent):ComponentInfo()
+  self._storySharedComponentInfo = self._storySharedComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity.GetComponent = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignStoryActivity:GetComponent(componentID)
   if ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION == componentID then
     return self._lineMissionComponent
   end
@@ -91,10 +63,7 @@ CCampaignStoryActivity.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity.GetComponentInfo = function(self, componentID)
-  -- function num : 0_8 , upvalues : _ENV
+function CCampaignStoryActivity:GetComponentInfo(componentID)
   if ECampaignStoryActivityComponentID.ECAMPAIGN_STORY_ACTIVITY_MISSION == componentID then
     return self._lineMissionComponentInfo
   end
@@ -107,43 +76,23 @@ CCampaignStoryActivity.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity.GetEntryNew = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignStoryActivity:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_STORY_ACTIVITY)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity.GetEntryRedDot = function(self)
-  -- function num : 0_10
-  if not self:HardLineMissionRedDot() then
-    return self:CampQuestReddot()
-  end
+function CCampaignStoryActivity:GetEntryRedDot()
+  return self:HardLineMissionRedDot() or self:CampQuestReddot()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity.LineMissionRedDot = function(self)
-  -- function num : 0_11
-  if not (self._lineMissionComponent):ComponentIsOpen() then
+function CCampaignStoryActivity:LineMissionRedDot()
+  if not self._lineMissionComponent:ComponentIsOpen() then
     return false
   end
-  return (self._lineMissionComponent):HaveRedPoint()
+  return self._lineMissionComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignStoryActivity.CampQuestReddot = function(self)
-  -- function num : 0_12
-  if self._questComponent then
-    return (self._questComponent):HaveRedPoint()
-  end
+function CCampaignStoryActivity:CampQuestReddot()
+  return self._questComponent and self._questComponent:HaveRedPoint()
 end
-
-

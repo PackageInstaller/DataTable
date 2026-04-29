@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_crab_move_and_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultCrabMoveAndAttack", SkillEffectResultBase)
 SkillEffectResultCrabMoveAndAttack = SkillEffectResultCrabMoveAndAttack
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultCrabMoveAndAttack.Constructor = function(self, attackMoveStep)
-  -- function num : 0_0
+function SkillEffectResultCrabMoveAndAttack:Constructor(attackMoveStep)
   self._attackMoveStep = attackMoveStep
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultCrabMoveAndAttack.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultCrabMoveAndAttack:GetEffectType()
   return SkillEffectType.CrabMoveAndAttack
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultCrabMoveAndAttack.GetAttackMoveStep = function(self)
-  -- function num : 0_2
+function SkillEffectResultCrabMoveAndAttack:GetAttackMoveStep()
   return self._attackMoveStep
 end
-
-

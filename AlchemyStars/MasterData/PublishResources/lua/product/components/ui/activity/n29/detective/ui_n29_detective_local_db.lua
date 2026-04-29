@@ -1,258 +1,172 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/ui_n29_detective_local_db.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveLocalDb", Object)
 UIN29DetectiveLocalDb = UIN29DetectiveLocalDb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveLocalDb.Constructor = function(self)
-  -- function num : 0_0
+function UIN29DetectiveLocalDb:Constructor()
   self:CreateType()
   self:InitDetectiveComponent()
-  self._game = {key = self:GetDBGameKey(), value = self:DefaultGameValue()}
+  self._game = {
+    key = self:GetDBGameKey(),
+    value = self:DefaultGameValue()
+  }
   self._viewed = {
-[self._idEndCG] = {key = self:GetDBEndCGKey(), 
-value = {}
-}
-, 
-[self._idMemory] = {key = self:GetDBMemoryKey(), 
-value = {}
-}
-, 
-[self._idAchieve] = {key = self:GetDBAchieveKey(), 
-value = {}
-}
-}
+    [self._idEndCG] = {
+      key = self:GetDBEndCGKey(),
+      value = {}
+    },
+    [self._idMemory] = {
+      key = self:GetDBMemoryKey(),
+      value = {}
+    },
+    [self._idAchieve] = {
+      key = self:GetDBAchieveKey(),
+      value = {}
+    }
+  }
   self._enableAchieveTitleReddot = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.CreateType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN29DetectiveLocalDb:CreateType()
   UIN29DetectiveLocalDb._idEndCG = 1
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
   UIN29DetectiveLocalDb._idMemory = 2
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
   UIN29DetectiveLocalDb._idAchieve = 3
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
   UIN29DetectiveLocalDb.Game_Continue = 1
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
   UIN29DetectiveLocalDb.Game_Continue_Reasoning = 2
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
   UIN29DetectiveLocalDb.Game_Continue_ReasoningPlot = 3
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
   UIN29DetectiveLocalDb.Game_Continue_Ending = 4
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
   UIN29DetectiveLocalDb.Game_New = 10
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
   UIN29DetectiveLocalDb.Game_Archive = 20
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.DefaultGameValue = function(self)
-  -- function num : 0_2
-  return {pstid = 0, idReasoning = self.Game_Continue}
+function UIN29DetectiveLocalDb:DefaultGameValue()
+  return {
+    pstid = 0,
+    idReasoning = self.Game_Continue
+  }
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetModule = function(self, gameModuleProto)
-  -- function num : 0_3 , upvalues : _ENV
-  return (GameGlobal.GetModule)(gameModuleProto)
+function UIN29DetectiveLocalDb:GetModule(gameModuleProto)
+  return GameGlobal.GetModule(gameModuleProto)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.InitDetectiveComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN29DetectiveLocalDb:InitDetectiveComponent()
   local campaignModule = self:GetModule(CampaignModule)
   self._localProcess = campaignModule:GetCampaignLocalProcess(ECampaignType.CAMPAIGN_TYPE_N29)
-  self._detectiveComponent = (self._localProcess):GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
-  self._questComponent = (self._localProcess):GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_QUEST)
+  self._detectiveComponent = self._localProcess:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
+  self._questComponent = self._localProcess:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_QUEST)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.DetectiveComponent = function(self)
-  -- function num : 0_5
+function UIN29DetectiveLocalDb:DetectiveComponent()
   return self._detectiveComponent
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.QuestComponent = function(self)
-  -- function num : 0_6
+function UIN29DetectiveLocalDb:QuestComponent()
   return self._questComponent
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetDBGameKey = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN29DetectiveLocalDb:GetDBGameKey()
   local key = "UIN29DetectiveLocalDb::PlayGame"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetDBEndCGKey = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN29DetectiveLocalDb:GetDBEndCGKey()
   local key = "UIN29DetectiveLocalDb::EndCG"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetDBMemoryKey = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN29DetectiveLocalDb:GetDBMemoryKey()
   local key = "UIN29DetectiveLocalDb::Memory"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetDBAchieveKey = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN29DetectiveLocalDb:GetDBAchieveKey()
   local key = "UIN29DetectiveLocalDb::Achieve"
   local roleModule = self:GetModule(RoleModule)
   return roleModule:GetPstId() .. key
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GameLoadDB = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local content = (LocalDB.GetString)((self._game).key, "")
-  local fnString = (string.format)("return {%s}", content)
+function UIN29DetectiveLocalDb:GameLoadDB()
+  local content = LocalDB.GetString(self._game.key, "")
+  local fnString = string.format("return {%s}", content)
   local fnTable = load(fnString)
   local dbData = fnTable()
-  for k,v in pairs(dbData) do
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R10 in 'UnsetPending'
-
-    ((self._game).value)[k] = v
+  for k, v in pairs(dbData) do
+    self._game.value[k] = v
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GameSaveDB = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN29DetectiveLocalDb:GameSaveDB()
   local content = ""
-  for k,v in pairs((self._game).value) do
-    content = content .. (string.format)("%s = %s,", k, v)
+  for k, v in pairs(self._game.value) do
+    content = content .. string.format("%s = %s,", k, v)
   end
-  ;
-  (LocalDB.SetString)((self._game).key, content)
+  LocalDB.SetString(self._game.key, content)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GameIdReasoning = function(self, idReasoning)
-  -- function num : 0_13
-  local componentInfo = (self._detectiveComponent):GetComponentInfo()
-  local pstid = (componentInfo.cur_info).pstid
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._game).value).pstid = pstid
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._game).value).idReasoning = idReasoning
+function UIN29DetectiveLocalDb:GameIdReasoning(idReasoning)
+  local componentInfo = self._detectiveComponent:GetComponentInfo()
+  local pstid = componentInfo.cur_info.pstid
+  self._game.value.pstid = pstid
+  self._game.value.idReasoning = idReasoning
   self:GameSaveDB()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.PrivateViewedLoadDB = function(self, sheetID)
-  -- function num : 0_14 , upvalues : _ENV
-  local viewed = (self._viewed)[sheetID]
-  local content = (LocalDB.GetString)(viewed.key, "")
-  local fnString = (string.format)("return {%s}", content)
+function UIN29DetectiveLocalDb:PrivateViewedLoadDB(sheetID)
+  local viewed = self._viewed[sheetID]
+  local content = LocalDB.GetString(viewed.key, "")
+  local fnString = string.format("return {%s}", content)
   local fnTable = load(fnString)
   local dbData = fnTable()
-  for k,v in pairs(dbData) do
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R12 in 'UnsetPending'
-
-    (viewed.value)[v] = v
+  for k, v in pairs(dbData) do
+    viewed.value[v] = v
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.PrivateViewedSaveDB = function(self, sheetID)
-  -- function num : 0_15 , upvalues : _ENV
-  local viewed = (self._viewed)[sheetID]
+function UIN29DetectiveLocalDb:PrivateViewedSaveDB(sheetID)
+  local viewed = self._viewed[sheetID]
   local content = ""
-  for k,v in pairs(viewed.value) do
-    content = content .. (string.format)("%d, ", v)
+  for k, v in pairs(viewed.value) do
+    content = content .. string.format("%d, ", v)
   end
-  ;
-  (LocalDB.SetString)(viewed.key, content)
+  LocalDB.SetString(viewed.key, content)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.ViewedLoadDB = function(self)
-  -- function num : 0_16
+function UIN29DetectiveLocalDb:ViewedLoadDB()
   self:FlushUnlocked()
   self:PrivateViewedLoadDB(self._idEndCG)
   self:PrivateViewedLoadDB(self._idMemory)
   self:PrivateViewedLoadDB(self._idAchieve)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.ViewedSaveDB = function(self)
-  -- function num : 0_17
+function UIN29DetectiveLocalDb:ViewedSaveDB()
   self:PrivateViewedSaveDB(self._idEndCG)
   self:PrivateViewedSaveDB(self._idMemory)
   self:PrivateViewedSaveDB(self._idAchieve)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.ClearDB = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  for k,v in pairs(self._viewed) do
+function UIN29DetectiveLocalDb:ClearDB()
+  for k, v in pairs(self._viewed) do
     v.value = {}
   end
   self:PrivateViewedSaveDB(self._idEndCG)
   self:PrivateViewedSaveDB(self._idMemory)
   self:PrivateViewedSaveDB(self._idAchieve)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._game).value = self:DefaultGameValue()
+  self._game.value = self:DefaultGameValue()
   self:GameSaveDB()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.ViewedClearNew = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local fnUnlock = {[self._idEndCG] = self.GetEndCGUnlocked, [self._idMemory] = self.GetMemoryUnlocked, [self._idAchieve] = self.GetAchieveUnlocked}
-  for k,v in pairs(self._viewed) do
+function UIN29DetectiveLocalDb:ViewedClearNew()
+  local fnUnlock = {
+    [self._idEndCG] = self.GetEndCGUnlocked,
+    [self._idMemory] = self.GetMemoryUnlocked,
+    [self._idAchieve] = self.GetAchieveUnlocked
+  }
+  for k, v in pairs(self._viewed) do
     local value = v.value
-    local unlocked = (fnUnlock[k])(self)
-    for k,v in pairs(unlocked) do
+    local unlocked = fnUnlock[k](self)
+    for k, v in pairs(unlocked) do
       value[k] = k
     end
   end
@@ -261,118 +175,81 @@ UIN29DetectiveLocalDb.ViewedClearNew = function(self)
   self:PrivateViewedSaveDB(self._idAchieve)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.AddViewed = function(self, sheetID, id, autoSaved)
-  -- function num : 0_20
-  local viewed = (self._viewed)[sheetID]
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (viewed.value)[id] = id
+function UIN29DetectiveLocalDb:AddViewed(sheetID, id, autoSaved)
+  local viewed = self._viewed[sheetID]
+  viewed.value[id] = id
   if autoSaved then
     self:ViewedSaveDB(sheetID)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.AddViewedEngCG = function(self, id, autoSaved)
-  -- function num : 0_21
+function UIN29DetectiveLocalDb:AddViewedEngCG(id, autoSaved)
   local unlocked = self:GetEndCGUnlocked()
   if unlocked[id] ~= nil then
     self:AddViewed(self._idEndCG, id, autoSaved)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.AddViewedMemory = function(self, id, autoSaved)
-  -- function num : 0_22
+function UIN29DetectiveLocalDb:AddViewedMemory(id, autoSaved)
   local unlocked = self:GetMemoryUnlocked()
   if unlocked[id] ~= nil then
     self:AddViewed(self._idMemory, id, autoSaved)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.AddViewedAchieve = function(self, id, autoSaved)
-  -- function num : 0_23
+function UIN29DetectiveLocalDb:AddViewedAchieve(id, autoSaved)
   local unlocked = self:GetAchieveUnlocked()
   if unlocked[id] ~= nil then
     self:AddViewed(self._idAchieve, id, autoSaved)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.FlushUnlocked = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN29DetectiveLocalDb:FlushUnlocked()
   self._unlockedEnding = {}
-  local infoComponent = (self._detectiveComponent):GetComponentInfo()
-  for k,v in pairs(infoComponent.cg_list) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._unlockedEnding)[v] = v
+  local infoComponent = self._detectiveComponent:GetComponentInfo()
+  for k, v in pairs(infoComponent.cg_list) do
+    self._unlockedEnding[v] = v
   end
   self._unlockedMemory = {}
   self._unlockedAchieve = {}
   local questModule = self:GetModule(QuestModule)
-  local infoComponent = (self._questComponent):GetComponentInfo()
-  for k,v in pairs(infoComponent.m_accept_cam_quest_list) do
+  local infoComponent = self._questComponent:GetComponentInfo()
+  for k, v in pairs(infoComponent.m_accept_cam_quest_list) do
     local quest = questModule:GetQuest(v)
     local qinfo = quest:QuestInfo()
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R11 in 'UnsetPending'
-
     if qinfo.status == QuestStatus.QUEST_Completed then
-      (self._unlockedAchieve)[v] = v
-    else
-      -- DECOMPILER ERROR at PC46: Confused about usage of register: R11 in 'UnsetPending'
-
-      if qinfo.status == QuestStatus.QUEST_Taken then
-        (self._unlockedAchieve)[v] = v
-      end
+      self._unlockedAchieve[v] = v
+    elseif qinfo.status == QuestStatus.QUEST_Taken then
+      self._unlockedAchieve[v] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.FlushUnlocked_TestCase = function(self)
-  -- function num : 0_25
-  self._unlockedEnding = {[42] = 42}
+function UIN29DetectiveLocalDb:FlushUnlocked_TestCase()
+  self._unlockedEnding = {
+    [42] = 42
+  }
   self._unlockedMemory = {}
-  self._unlockedAchieve = {[3570054] = 3570054}
+  self._unlockedAchieve = {
+    [3570054] = 3570054
+  }
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetEndCGUnlocked = function(self)
-  -- function num : 0_26
+function UIN29DetectiveLocalDb:GetEndCGUnlocked()
   return self._unlockedEnding
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetMemoryUnlocked = function(self)
-  -- function num : 0_27
+function UIN29DetectiveLocalDb:GetMemoryUnlocked()
   return self._unlockedMemory
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetAchieveUnlocked = function(self)
-  -- function num : 0_28
+function UIN29DetectiveLocalDb:GetAchieveUnlocked()
   return self._unlockedAchieve
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetEndCGReddot = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN29DetectiveLocalDb:GetEndCGReddot()
   local allEnding = self:GetAllEnding()
-  for k,v in pairs(allEnding) do
+  for k, v in pairs(allEnding) do
     if self:GetEndCGTitleReddot(v.CgId) then
       return true
     end
@@ -380,47 +257,32 @@ UIN29DetectiveLocalDb.GetEndCGReddot = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetMemoryReddot = function(self)
-  -- function num : 0_30
+function UIN29DetectiveLocalDb:GetMemoryReddot()
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetAchieveReddot = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local infoComponent = (self._questComponent):GetComponentInfo()
-  for k,v in pairs(infoComponent.m_accept_cam_quest_list) do
+function UIN29DetectiveLocalDb:GetAchieveReddot()
+  local infoComponent = self._questComponent:GetComponentInfo()
+  for k, v in pairs(infoComponent.m_accept_cam_quest_list) do
     if self:GetAchieveTitleReddot(v) then
       return true
-    else
-      if self:GetAchieveRewardReddot(v) then
-        return true
-      end
+    elseif self:GetAchieveRewardReddot(v) then
+      return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetEndCGTitleReddot = function(self, id)
-  -- function num : 0_32
+function UIN29DetectiveLocalDb:GetEndCGTitleReddot(id)
   local unlocked = self:GetEndCGUnlocked()
   if unlocked[id] == nil then
     return false
   end
-  local viewed = (self._viewed)[self._idEndCG]
-  do return (viewed.value)[id] == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local viewed = self._viewed[self._idEndCG]
+  return viewed.value[id] == nil
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetAchieveTitleReddot = function(self, id)
-  -- function num : 0_33 , upvalues : _ENV
+function UIN29DetectiveLocalDb:GetAchieveTitleReddot(id)
   if not self._enableAchieveTitleReddot then
     return false
   end
@@ -429,38 +291,28 @@ UIN29DetectiveLocalDb.GetAchieveTitleReddot = function(self, id)
   local unlocked = self:GetAchieveUnlocked()
   if unlocked[id] == nil then
     return false
-  else
-    if quest:Status() == QuestStatus.QUEST_Taken then
-      return false
-    end
+  elseif quest:Status() == QuestStatus.QUEST_Taken then
+    return false
   end
-  local viewed = (self._viewed)[self._idAchieve]
-  do return (viewed.value)[id] == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local viewed = self._viewed[self._idAchieve]
+  return viewed.value[id] == nil
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetAchieveRewardReddot = function(self, id)
-  -- function num : 0_34 , upvalues : _ENV
+function UIN29DetectiveLocalDb:GetAchieveRewardReddot(id)
   local questModule = self:GetModule(QuestModule)
   local quest = questModule:GetQuest(id)
   local unlocked = self:GetAchieveUnlocked()
   if unlocked[id] == nil then
     return false
   end
-  do return quest:Status() == QuestStatus.QUEST_Completed end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return quest:Status() == QuestStatus.QUEST_Completed
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetAllStage = function(self)
-  -- function num : 0_35 , upvalues : _ENV
-  local idComponent = (self._detectiveComponent):GetComponentCfgId()
-  local allStage = (Cfg.cfg_component_detective_stage)({})
+function UIN29DetectiveLocalDb:GetAllStage()
+  local idComponent = self._detectiveComponent:GetComponentCfgId()
+  local allStage = Cfg.cfg_component_detective_stage({})
   local retCfg = {}
-  for k,v in pairs(allStage) do
+  for k, v in pairs(allStage) do
     if v.ComponentID == idComponent then
       retCfg[k] = v
     end
@@ -468,14 +320,11 @@ UIN29DetectiveLocalDb.GetAllStage = function(self)
   return retCfg
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.GetAllEnding = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  local idComponent = (self._detectiveComponent):GetComponentCfgId()
-  local allEnding = (Cfg.cfg_component_detective_ending)({})
+function UIN29DetectiveLocalDb:GetAllEnding()
+  local idComponent = self._detectiveComponent:GetComponentCfgId()
+  local allEnding = Cfg.cfg_component_detective_ending({})
   local retCfg = {}
-  for k,v in pairs(allEnding) do
+  for k, v in pairs(allEnding) do
     if v.ComponentID == idComponent then
       retCfg[k] = v
     end
@@ -483,110 +332,72 @@ UIN29DetectiveLocalDb.GetAllEnding = function(self)
   return retCfg
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.AllClueAndFragment = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function UIN29DetectiveLocalDb:AllClueAndFragment()
   local dicClue = {}
   local dicFragment = {}
   local allStage = self:GetAllStage()
-  for k,v in pairs(allStage) do
+  for k, v in pairs(allStage) do
     if v.ClueFree ~= nil then
-      for ks,vs in pairs(v.ClueFree) do
+      for ks, vs in pairs(v.ClueFree) do
         dicClue[vs] = vs
       end
     end
-    do
-      if v.ClueList ~= nil then
-        for ks,vs in pairs(v.ClueList) do
-          dicClue[vs] = vs
-        end
+    if v.ClueList ~= nil then
+      for ks, vs in pairs(v.ClueList) do
+        dicClue[vs] = vs
       end
-      do
-        if v.FragmentList ~= nil then
-          for ks,vs in pairs(v.FragmentList) do
-            dicFragment[vs] = vs
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+    end
+    if v.FragmentList ~= nil then
+      for ks, vs in pairs(v.FragmentList) do
+        dicFragment[vs] = vs
       end
     end
   end
   return dicClue, dicFragment
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.ArchiveLoadData = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UIN29DetectiveLocalDb:ArchiveLoadData()
   local loadData = CurDetectiveInfo:New()
   local idEndStage = 0
   local allStage = self:GetAllStage()
-  for k,v in pairs(allStage) do
+  for k, v in pairs(allStage) do
     idEndStage = k
   end
-  local allWayPoint = (Cfg.cfg_component_detective_waypoint)({})
+  local allWayPoint = Cfg.cfg_component_detective_waypoint({})
   local selectedWayPoint = {}
   local allStage = self:GetAllStage()
-  for k,v in pairs(allStage) do
+  for k, v in pairs(allStage) do
     if v.ClueFree ~= nil then
-      for ks,vs in pairs(v.ClueFree) do
-        -- DECOMPILER ERROR at PC32: Confused about usage of register: R17 in 'UnsetPending'
-
-        (loadData.clue_list)[vs] = vs
+      for ks, vs in pairs(v.ClueFree) do
+        loadData.clue_list[vs] = vs
       end
     end
-    do
-      if v.ClueList ~= nil then
-        for ks,vs in pairs(v.ClueList) do
-          -- DECOMPILER ERROR at PC43: Confused about usage of register: R17 in 'UnsetPending'
-
-          (loadData.clue_list)[vs] = vs
-        end
+    if v.ClueList ~= nil then
+      for ks, vs in pairs(v.ClueList) do
+        loadData.clue_list[vs] = vs
       end
-      do
-        if v.FragmentList ~= nil and k ~= idEndStage then
-          for ks,vs in pairs(v.FragmentList) do
-            -- DECOMPILER ERROR at PC56: Confused about usage of register: R17 in 'UnsetPending'
-
-            (loadData.fragment_list)[vs] = vs
-          end
-        end
-        do
-          if v.Waypoint ~= nil then
-            for ks,vs in pairs(v.Waypoint) do
-              local cfg = allWayPoint[vs]
-              if cfg.Type == 2 then
-                selectedWayPoint[vs] = cfg
-              end
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
+    end
+    if v.FragmentList ~= nil and k ~= idEndStage then
+      for ks, vs in pairs(v.FragmentList) do
+        loadData.fragment_list[vs] = vs
+      end
+    end
+    if v.Waypoint ~= nil then
+      for ks, vs in pairs(v.Waypoint) do
+        local cfg = allWayPoint[vs]
+        if cfg.Type == 2 then
+          selectedWayPoint[vs] = cfg
         end
       end
     end
   end
-  local allTalk = (Cfg.cfg_component_detective_talk)({})
-  for k,v in pairs(selectedWayPoint) do
+  local allTalk = Cfg.cfg_component_detective_talk({})
+  for k, v in pairs(selectedWayPoint) do
     if v.WaypointContent ~= nil then
-      for ks,vs in pairs(v.WaypointContent) do
+      for ks, vs in pairs(v.WaypointContent) do
         local cfg = allTalk[vs]
-        -- DECOMPILER ERROR at PC95: Confused about usage of register: R19 in 'UnsetPending'
-
         if cfg.NeedClue ~= nil then
-          (loadData.talk_list)[vs] = vs
+          loadData.talk_list[vs] = vs
         end
       end
     end
@@ -597,112 +408,81 @@ UIN29DetectiveLocalDb.ArchiveLoadData = function(self)
   return loadData
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.ToList = function(self, dic, inSort)
-  -- function num : 0_39 , upvalues : _ENV
+function UIN29DetectiveLocalDb:ToList(dic, inSort)
   local lst = {}
-  for k,v in pairs(dic) do
-    (table.insert)(lst, v)
+  for k, v in pairs(dic) do
+    table.insert(lst, v)
   end
   if inSort then
-    (table.sort)(lst, function(a, b)
-    -- function num : 0_39_0
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(lst, function(a, b)
+      return a < b
+    end)
   end
   return lst
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.BreakIdStage = function(self)
-  -- function num : 0_40
+function UIN29DetectiveLocalDb:BreakIdStage()
   return self._idStage
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.BreakIdReasoning = function(self)
-  -- function num : 0_41
+function UIN29DetectiveLocalDb:BreakIdReasoning()
   return self._idReasoning
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.BreakPosition = function(self)
-  -- function num : 0_42 , upvalues : _ENV
-  local componentInfo = (self._detectiveComponent):GetComponentInfo()
+function UIN29DetectiveLocalDb:BreakPosition()
+  local componentInfo = self._detectiveComponent:GetComponentInfo()
   local breakInfo = componentInfo.cur_info
   local dicClue = {}
-  for k,v in pairs(breakInfo.clue_list) do
+  for k, v in pairs(breakInfo.clue_list) do
     dicClue[v] = v
   end
   local dicFragment = {}
-  for k,v in pairs(breakInfo.fragment_list) do
+  for k, v in pairs(breakInfo.fragment_list) do
     dicFragment[v] = v
   end
   local idEndStage = 0
   local allStage = self:GetAllStage()
-  for k,v in pairs(allStage) do
+  for k, v in pairs(allStage) do
     idEndStage = k
   end
   local idStage = 0
   local idReasoning = self.Game_Continue
   local allStage = self:GetAllStage()
-  for k,v in pairs(allStage) do
+  for k, v in pairs(allStage) do
     idStage = k
     local getAllCule = true
     if v.ClueList ~= nil then
-      for ks,vs in pairs(v.ClueList) do
+      for ks, vs in pairs(v.ClueList) do
         if dicClue[vs] == nil then
           getAllCule = false
           break
         end
       end
     end
-    do
-      local getAllFragment = true
-      if v.FragmentList ~= nil then
-        for ks,vs in pairs(v.FragmentList) do
-          if dicFragment[vs] == nil then
-            getAllFragment = false
-            break
-          end
+    local getAllFragment = true
+    if v.FragmentList ~= nil then
+      for ks, vs in pairs(v.FragmentList) do
+        if dicFragment[vs] == nil then
+          getAllFragment = false
+          break
         end
       end
-      do
-        do
-          if not getAllCule then
-            idReasoning = self.Game_Continue
-            break
-          else
-            if getAllCule and not getAllFragment then
-              if breakInfo.pstid == ((self._game).value).pstid then
-                idReasoning = (math.min)(self.Game_Continue_Reasoning, ((self._game).value).idReasoning)
-                break
-              end
-              idReasoning = self.Game_Continue
-              break
-            else
-              if idStage == idEndStage then
-                -- DECOMPILER ERROR at PC115: Unhandled construct in 'MakeBoolean' P1
-
-                if getAllCule and getAllFragment and breakInfo.pstid == ((self._game).value).pstid then
-                  idReasoning = (math.max)(self.Game_Continue_ReasoningPlot, ((self._game).value).idReasoning)
-                else
-                  idReasoning = self.Game_Continue_ReasoningPlot
-                end
-              end
-            end
-          end
-          -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC118: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+    end
+    if not getAllCule then
+      idReasoning = self.Game_Continue
+      break
+    elseif getAllCule and not getAllFragment then
+      if breakInfo.pstid == self._game.value.pstid then
+        idReasoning = math.min(self.Game_Continue_Reasoning, self._game.value.idReasoning)
+        break
+      end
+      idReasoning = self.Game_Continue
+      break
+    elseif idStage == idEndStage and getAllCule and getAllFragment then
+      if breakInfo.pstid == self._game.value.pstid then
+        idReasoning = math.max(self.Game_Continue_ReasoningPlot, self._game.value.idReasoning)
+      else
+        idReasoning = self.Game_Continue_ReasoningPlot
       end
     end
   end
@@ -711,160 +491,112 @@ UIN29DetectiveLocalDb.BreakPosition = function(self)
   return idStage, idReasoning
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.ExistBreak = function(self)
-  -- function num : 0_43
+function UIN29DetectiveLocalDb:ExistBreak()
   if self._idReasoning == nil then
     self:BreakPosition()
   end
-  local componentInfo = (self._detectiveComponent):GetComponentInfo()
-  local breakLoad = (componentInfo.cur_info).pstid ~= 0
+  local componentInfo = self._detectiveComponent:GetComponentInfo()
+  local breakLoad = componentInfo.cur_info.pstid ~= 0
   if not breakLoad then
     return false
   end
   if self._idReasoning == self.Game_Continue_Ending then
     return false
   end
-  do return true end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  return true
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.ShowDialog = function(self, uiName, ...)
-  -- function num : 0_44 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(uiName, ...)
+function UIN29DetectiveLocalDb:ShowDialog(uiName, ...)
+  GameGlobal.UIStateManager():ShowDialog(uiName, ...)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.StartTask = function(self, func, ...)
-  -- function num : 0_45 , upvalues : _ENV
-  return ((GameGlobal.TaskManager)()):StartTask(func, ...)
+function UIN29DetectiveLocalDb:StartTask(func, ...)
+  return GameGlobal.TaskManager():StartTask(func, ...)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.Lock = function(self, name)
-  -- function num : 0_46 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock(name)
+function UIN29DetectiveLocalDb:Lock(name)
+  GameGlobal.UIStateManager():Lock(name)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.UnLock = function(self, name)
-  -- function num : 0_47 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):UnLock(name)
+function UIN29DetectiveLocalDb:UnLock(name)
+  GameGlobal.UIStateManager():UnLock(name)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.SwitchState = function(self, uiStateType, ...)
-  -- function num : 0_48 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):SwitchState(uiStateType, ...)
+function UIN29DetectiveLocalDb:SwitchState(uiStateType, ...)
+  GameGlobal.UIStateManager():SwitchState(uiStateType, ...)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.AfterReasoningPlot = function(self, idPlot, isEndPlot, fnNormal, fnEnd)
-  -- function num : 0_49 , upvalues : _ENV
-  local eventUIOpen, eventChooseOption = nil, nil
+function UIN29DetectiveLocalDb:AfterReasoningPlot(idPlot, isEndPlot, fnNormal, fnEnd)
+  local eventUIOpen, eventChooseOption
   if isEndPlot then
-    eventUIOpen = (GameHelper:GetInstance()):CreateCallback(self.OnStoryUIOpen, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.UIOpen, eventUIOpen)
-    eventChooseOption = (GameHelper:GetInstance()):CreateCallback(self.OnStoryChooseOption, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.StoryChooseOption, eventChooseOption)
+    eventUIOpen = GameHelper:GetInstance():CreateCallback(self.OnStoryUIOpen, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.UIOpen, eventUIOpen)
+    eventChooseOption = GameHelper:GetInstance():CreateCallback(self.OnStoryChooseOption, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.StoryChooseOption, eventChooseOption)
   end
   self:ShowDialog("UIStoryController", idPlot, function()
-    -- function num : 0_49_0 , upvalues : isEndPlot, _ENV, eventUIOpen, eventChooseOption, fnEnd, fnNormal
     if isEndPlot then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.UIOpen, eventUIOpen)
-      ;
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.StoryChooseOption, eventChooseOption)
+      GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.UIOpen, eventUIOpen)
+      GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.StoryChooseOption, eventChooseOption)
       if fnEnd ~= nil then
         fnEnd()
       end
-    else
-      if fnNormal ~= nil then
-        fnNormal()
-      end
+    elseif fnNormal ~= nil then
+      fnNormal()
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.OnStoryUIOpen = function(self, uiName)
-  -- function num : 0_50 , upvalues : _ENV
-  local uiStateManager = (GameGlobal.UIStateManager)()
+function UIN29DetectiveLocalDb:OnStoryUIOpen(uiName)
+  local uiStateManager = GameGlobal.UIStateManager()
   local uiController = uiStateManager:GetController(uiName)
   if uiController ~= nil then
     uiController:SetSkipToOptions(true)
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.OnStoryChooseOption = function(self, index, storyManager)
-  -- function num : 0_51 , upvalues : _ENV
+function UIN29DetectiveLocalDb:OnStoryChooseOption(index, storyManager)
   local idEndPlot = 0
   local allStage = self:GetAllStage()
-  for k,v in pairs(allStage) do
+  for k, v in pairs(allStage) do
     idEndPlot = v.AfterReasoningPlot
   end
   if idEndPlot ~= storyManager:GetCurStoryID() then
-    return 
+    return
   end
-  local cfgEnding = nil
+  local cfgEnding
   local allEnding = self:GetAllEnding()
-  for k,v in pairs(allEnding) do
+  for k, v in pairs(allEnding) do
     if v.StoryParagraph == storyManager:GetCurParagraphID() and v.StoryOptionIndex == index then
       cfgEnding = v
       break
     end
   end
-  do
-    if cfgEnding ~= nil then
-      self:GameIdReasoning(self.Game_Continue_Ending)
-      self:StartTask(self.SubmitEndingTask, self, cfgEnding.ID)
-    end
+  if cfgEnding ~= nil then
+    self:GameIdReasoning(self.Game_Continue_Ending)
+    self:StartTask(self.SubmitEndingTask, self, cfgEnding.ID)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.SubmitEndingTask = function(self, TT, idEnding)
-  -- function num : 0_52 , upvalues : _ENV
+function UIN29DetectiveLocalDb:SubmitEndingTask(TT, idEnding)
   self:Lock("UIN29DetectiveLogin:SubmitEndingTask")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._detectiveComponent):HandleSubmitEnding(TT, res, idEnding)
+  self._detectiveComponent:HandleSubmitEnding(TT, res, idEnding)
   self:UnLock("UIN29DetectiveLogin:SubmitEndingTask")
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLocalDb.PlayEndingPlot = function(self, branchEnding)
-  -- function num : 0_53 , upvalues : _ENV
+function UIN29DetectiveLocalDb:PlayEndingPlot(branchEnding)
   if branchEnding then
     self:SwitchState(UIStateType.UIN29DetectiveLogin)
   else
     local allEnding = self:GetAllEnding()
-    local idEnding = (self._detectiveComponent):GetCurrentEndingId()
-    local idCg = (allEnding[idEnding]).CgId
-    local allItem = (Cfg.cfg_component_detective_item)({})
-    idCg = (allItem[idCg]).CG
+    local idEnding = self._detectiveComponent:GetCurrentEndingId()
+    local idCg = allEnding[idEnding].CgId
+    local allItem = Cfg.cfg_component_detective_item({})
+    idCg = allItem[idCg].CG
     self:ShowDialog("UIStoryController", idCg, function()
-    -- function num : 0_53_0 , upvalues : self, _ENV
-    self:SwitchState(UIStateType.UIN29DetectiveLogin)
-  end
-)
+      self:SwitchState(UIStateType.UIN29DetectiveLogin)
+    end)
   end
 end
-
-

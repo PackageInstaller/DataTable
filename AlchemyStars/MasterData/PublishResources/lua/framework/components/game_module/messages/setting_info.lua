@@ -1,42 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/game_module/messages/setting_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local SETTING_OPTION = {SETTING_OPTION_UNKONW = 0, SETTING_OPTION_MUSIC = 1, SETTING_OPTION_CHAT_PRIVATE = 100}
+local SETTING_OPTION = {
+  SETTING_OPTION_UNKONW = 0,
+  SETTING_OPTION_MUSIC = 1,
+  SETTING_OPTION_CHAT_PRIVATE = 100
+}
 _enum("SETTING_OPTION", SETTING_OPTION)
 _class("setting_info", Object)
 setting_info = setting_info
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-setting_info.Constructor = function(self)
-  -- function num : 0_0
+function setting_info:Constructor()
   self.option = {}
-  self.music_volume = 0
+  self.music_volume = 0.0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
 setting_info._proto = {
-[1] = {"option", "map<int,bool>"}
-, 
-[2] = {"music_volume", "float"}
+  [1] = {
+    "option",
+    "map<int,bool>"
+  },
+  [2] = {
+    "music_volume",
+    "float"
+  }
 }
 _class("local_setting_info", Object)
 local_setting_info = local_setting_info
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
 
-local_setting_info.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function local_setting_info:Constructor()
   self.info = setting_info:New()
   self.account = ""
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
 local_setting_info._proto = {
-[1] = {"info", "setting_info"}
-, 
-[2] = {"account", "string"}
+  [1] = {
+    "info",
+    "setting_info"
+  },
+  [2] = {"account", "string"}
 }
-

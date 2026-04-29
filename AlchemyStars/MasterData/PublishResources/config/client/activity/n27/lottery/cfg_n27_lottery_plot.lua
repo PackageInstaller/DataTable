@@ -1,21 +1,108 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/n27/lottery/cfg_n27_lottery_plot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, PlotLevel = 2, PlotID = 3, BookName = 4, BookLockedName = 5, RecvIcon = 6, Sender = 7, Receiver = 8, BookContent = 9, ReceiverSign = 10, SpineIdle = 11, SpineShouli = 12, SpineSongli = 13}
+local key = {
+  ID = 1,
+  PlotLevel = 2,
+  PlotID = 3,
+  BookName = 4,
+  BookLockedName = 5,
+  RecvIcon = 6,
+  Sender = 7,
+  Receiver = 8,
+  BookContent = 9,
+  ReceiverSign = 10,
+  SpineIdle = 11,
+  SpineShouli = 12,
+  SpineSongli = 13
+}
 local config = {
-{1, 60, 50410101, "str_n27_lottery_book_name_01", "str_n27_lottery_book_locked_name_01", "N27_shop_tu01", "str_n27_lottery_sender_01", "str_n27_lottery_receiver_01", "str_n27_lottery_book_content_01", "N27_shop_logolk", "luke_idle", "luke_shouli", "song_luke"}
-, 
-{2, 120, 50410201, "str_n27_lottery_book_name_02", "str_n27_lottery_book_locked_name_02", "N27_shop_tu02", "str_n27_lottery_sender_02", "str_n27_lottery_receiver_02", "str_n27_lottery_book_content_02", "N27_shop_logof", "fei_idle", "fei_shouli", "song_fei"}
-, 
-{3, 180, 50410301, "str_n27_lottery_book_name_03", "str_n27_lottery_book_locked_name_03", "N27_shop_tu03", "str_n27_lottery_sender_03", "str_n27_lottery_receiver_03", "str_n27_lottery_book_content_03", "N27_shop_logolwy", "nuoweiya_idle", "nuoweiya_shouli", "song_nuoweiya"}
-, 
-{4, 240, 50410401, "str_n27_lottery_book_name_04", "str_n27_lottery_book_locked_name_04", "N27_shop_tu04", "str_n27_lottery_sender_04", "str_n27_lottery_receiver_04", "str_n27_lottery_book_content_04", "N27_shop_logodn", "dina_idle", "dina_shouli", "song_dina"}
-, 
-{5, 300, 50410501, "str_n27_lottery_book_name_05", "str_n27_lottery_book_locked_name_05", "N27_shop_tu05", "str_n27_lottery_sender_05", "str_n27_lottery_receiver_05", "str_n27_lottery_book_content_05", "N27_shop_logoyf", "yifu_idle", "yifu_shouli", "song_yifu"}
-, 
-{6, 360, 50410601, "str_n27_lottery_book_name_06", "str_n27_lottery_book_locked_name_06", "N27_shop_tu06", "str_n27_lottery_sender_06", "str_n27_lottery_receiver_06", "str_n27_lottery_book_content_06", "N27_shop_logoqt", "qingtong_idle", "qingtong_shouli", "song_qingtong"}
+  {
+    1,
+    60,
+    50410101,
+    "str_n27_lottery_book_name_01",
+    "str_n27_lottery_book_locked_name_01",
+    "N27_shop_tu01",
+    "str_n27_lottery_sender_01",
+    "str_n27_lottery_receiver_01",
+    "str_n27_lottery_book_content_01",
+    "N27_shop_logolk",
+    "luke_idle",
+    "luke_shouli",
+    "song_luke"
+  },
+  {
+    2,
+    120,
+    50410201,
+    "str_n27_lottery_book_name_02",
+    "str_n27_lottery_book_locked_name_02",
+    "N27_shop_tu02",
+    "str_n27_lottery_sender_02",
+    "str_n27_lottery_receiver_02",
+    "str_n27_lottery_book_content_02",
+    "N27_shop_logof",
+    "fei_idle",
+    "fei_shouli",
+    "song_fei"
+  },
+  {
+    3,
+    180,
+    50410301,
+    "str_n27_lottery_book_name_03",
+    "str_n27_lottery_book_locked_name_03",
+    "N27_shop_tu03",
+    "str_n27_lottery_sender_03",
+    "str_n27_lottery_receiver_03",
+    "str_n27_lottery_book_content_03",
+    "N27_shop_logolwy",
+    "nuoweiya_idle",
+    "nuoweiya_shouli",
+    "song_nuoweiya"
+  },
+  {
+    4,
+    240,
+    50410401,
+    "str_n27_lottery_book_name_04",
+    "str_n27_lottery_book_locked_name_04",
+    "N27_shop_tu04",
+    "str_n27_lottery_sender_04",
+    "str_n27_lottery_receiver_04",
+    "str_n27_lottery_book_content_04",
+    "N27_shop_logodn",
+    "dina_idle",
+    "dina_shouli",
+    "song_dina"
+  },
+  {
+    5,
+    300,
+    50410501,
+    "str_n27_lottery_book_name_05",
+    "str_n27_lottery_book_locked_name_05",
+    "N27_shop_tu05",
+    "str_n27_lottery_sender_05",
+    "str_n27_lottery_receiver_05",
+    "str_n27_lottery_book_content_05",
+    "N27_shop_logoyf",
+    "yifu_idle",
+    "yifu_shouli",
+    "song_yifu"
+  },
+  {
+    6,
+    360,
+    50410601,
+    "str_n27_lottery_book_name_06",
+    "str_n27_lottery_book_locked_name_06",
+    "N27_shop_tu06",
+    "str_n27_lottery_sender_06",
+    "str_n27_lottery_receiver_06",
+    "str_n27_lottery_book_content_06",
+    "N27_shop_logoqt",
+    "qingtong_idle",
+    "qingtong_shouli",
+    "song_qingtong"
+  }
 }
 return config, "ID", key
-

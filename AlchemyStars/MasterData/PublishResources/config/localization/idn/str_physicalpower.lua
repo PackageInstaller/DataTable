@@ -1,8 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/idn/str_physicalpower.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_physicalpower_current_time = "Waktu Saat Ini", str_physicalpower_next_time = "Prism Berikutnya", str_physicalpower_all_time = "Semua Prism", str_physicalpower_error_phy_add_full = "Prism telah mencapai batas dan tidak dapat diisi ulang."}
+local config = {
+  str_physicalpower_current_time = "Waktu Saat Ini",
+  str_physicalpower_next_time = "Prism Berikutnya",
+  str_physicalpower_all_time = "Semua Prism",
+  str_physicalpower_error_phy_add_full = "Prism telah mencapai batas dan tidak dapat diisi ulang."
+}
 return config
-

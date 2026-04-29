@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_listview/ui_sort_row_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UiSortRowLayer", UICustomWidget)
 UiSortRowLayer = UiSortRowLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UiSortRowLayer.Constructor = function(self)
-  -- function num : 0_0
-  self._rowSortBtnPos = {[1] = 0, [2] = 210, [3] = 338, [4] = 466}
+function UiSortRowLayer:Constructor()
+  self._rowSortBtnPos = {
+    [1] = 0,
+    [2] = 210,
+    [3] = 338,
+    [4] = 466
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UiSortRowLayer.OnShow = function(self)
-  -- function num : 0_1
+function UiSortRowLayer:OnShow()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UiSortRowLayer.SetBtnPos = function(self, index)
-  -- function num : 0_2
-  return (self._rowSortBtnPos)[index]
+function UiSortRowLayer:SetBtnPos(index)
+  return self._rowSortBtnPos[index]
 end
-
-

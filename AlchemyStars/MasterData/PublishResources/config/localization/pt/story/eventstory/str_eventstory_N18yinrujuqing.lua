@@ -1,8 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/pt/story/eventstory/str_eventstory_N18yinrujuqing.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_5026_50263301_1_dialog_content = "Nada mal, nada mal.", ui_story_5026_50263301_2_dialog_content = "Tanto a paisagem quanto o clima são impecáveis. Este é realmente um lugar incrível.", ui_story_5026_50263301_3_dialog_content = "PlayerName, você está valorizando sua casa novamente?", ui_story_5026_50263301_4_dialog_content = "Tipo de. Eu estava indo pescar, mas me distraí com a vista incrível.", ui_story_5026_50263301_5_dialog_content = "Quando voltei aos meus sentidos, já estava aqui há vinte minutos.", ui_story_5026_50263301_6_dialog_content = "Já que é tão raro você estar livre, que tal...", ui_story_5026_50263301_7_dialog_content = "Hum? O que você quer fazer desta vez, Vice?", ui_story_5026_50263301_8_dialog_content = "Olha só!", ui_story_5026_50263301_9_dialog_content = "É este o <color=#FFB400>Detector portátil</color>?", ui_story_5026_50263301_10_dialog_content = "Nós o usamos antes para encontrar tesouros nos Jardins das Nuvens.", ui_story_5026_50263301_11_dialog_content = "Embora, a maioria do que encontramos foram coisas estranhas... Como espécimes de insetos deixados pelos Chubbs...", ui_story_5026_50263301_12_dialog_content = "Sim, você estava tão assustado que pulou para longe.", ui_story_5026_50263301_13_dialog_content = "Então, vamos fazer outra caça ao tesouro em Cloud Gardens?", ui_story_5026_50263301_14_dialog_content = "Haha! Você me pegou! Eu sabia que você iria!", ui_story_5026_50263301_15_dialog_content = "Foi apenas uma ideia do momento. Encontrei este detector quando estava limpando o Armazém Colossus.", ui_story_5026_50263301_16_dialog_content = "\"O Cloud Gardens é enorme, há muito dele que ainda não exploramos! Podemos até encontrar tesouros enterrados!\"", ui_story_5026_50263301_17_dialog_content = "Era isso que estava na minha cabeça, e de alguma forma acabei carregando tudo até aqui!", ui_story_5026_50263301_18_dialog_content = "Você é como eu, facilmente distraído.", ui_story_5026_50263301_19_dialog_content = "Chama-se desejo de explorar o desconhecido! Você não quer saber mais sobre este lugar também?", ui_story_5026_50263301_20_dialog_content = "Claro que eu faço. Na verdade, sempre tive nossa última aventura em mente.", ui_story_5026_50263301_21_dialog_content = "Para mim, tudo o que encontramos naquela época era valioso.", ui_story_5026_50263301_22_dialog_content = "Pertencem a este lugar, ou aos celestitas que ali viveram.", ui_story_5026_50263301_23_dialog_content = "E agora, eles se tornaram objetos que me conectam ao passado, me permitindo viajar no tempo e no espaço...", ui_story_5026_50263301_24_dialog_content = "Apesar de serem inanimados, eles contam as histórias mais intrigantes.", ui_story_5026_50263301_25_dialog_content = "PlayerName...", ui_story_5026_50263301_26_dialog_content = "...", ui_story_5026_50263301_27_dialog_content = "Vamos começar a explorar então!", ui_story_5026_50263301_28_dialog_content = "Vamos!", ui_story_5026_50263301_29_dialog_content = "Você ainda se lembra de como usar o Detector Portátil?", ui_story_5026_50263301_30_dialog_content = "É claro. Vamos lá!", ui_story_5026_50263301_31_dialog_content = "Por onde devemos começar desta vez?"}
+local config = {
+  ui_story_5026_50263301_1_dialog_content = "Nada mal, nada mal.",
+  ui_story_5026_50263301_2_dialog_content = "Tanto a paisagem quanto o clima são impecáveis. Este é realmente um lugar incrível.",
+  ui_story_5026_50263301_3_dialog_content = "PlayerName, você está valorizando sua casa novamente?",
+  ui_story_5026_50263301_4_dialog_content = "Tipo de. Eu estava indo pescar, mas me distraí com a vista incrível.",
+  ui_story_5026_50263301_5_dialog_content = "Quando voltei aos meus sentidos, já estava aqui há vinte minutos.",
+  ui_story_5026_50263301_6_dialog_content = "Já que é tão raro você estar livre, que tal...",
+  ui_story_5026_50263301_7_dialog_content = "Hum? O que você quer fazer desta vez, Vice?",
+  ui_story_5026_50263301_8_dialog_content = "Olha só!",
+  ui_story_5026_50263301_9_dialog_content = "É este o <color=#FFB400>Detector portátil</color>?",
+  ui_story_5026_50263301_10_dialog_content = "Nós o usamos antes para encontrar tesouros nos Jardins das Nuvens.",
+  ui_story_5026_50263301_11_dialog_content = "Embora, a maioria do que encontramos foram coisas estranhas... Como espécimes de insetos deixados pelos Chubbs...",
+  ui_story_5026_50263301_12_dialog_content = "Sim, você estava tão assustado que pulou para longe.",
+  ui_story_5026_50263301_13_dialog_content = "Então, vamos fazer outra caça ao tesouro em Cloud Gardens?",
+  ui_story_5026_50263301_14_dialog_content = "Haha! Você me pegou! Eu sabia que você iria!",
+  ui_story_5026_50263301_15_dialog_content = "Foi apenas uma ideia do momento. Encontrei este detector quando estava limpando o Armazém Colossus.",
+  ui_story_5026_50263301_16_dialog_content = "\"O Cloud Gardens é enorme, há muito dele que ainda não exploramos! Podemos até encontrar tesouros enterrados!\"",
+  ui_story_5026_50263301_17_dialog_content = "Era isso que estava na minha cabeça, e de alguma forma acabei carregando tudo até aqui!",
+  ui_story_5026_50263301_18_dialog_content = "Você é como eu, facilmente distraído.",
+  ui_story_5026_50263301_19_dialog_content = "Chama-se desejo de explorar o desconhecido! Você não quer saber mais sobre este lugar também?",
+  ui_story_5026_50263301_20_dialog_content = "Claro que eu faço. Na verdade, sempre tive nossa última aventura em mente.",
+  ui_story_5026_50263301_21_dialog_content = "Para mim, tudo o que encontramos naquela época era valioso.",
+  ui_story_5026_50263301_22_dialog_content = "Pertencem a este lugar, ou aos celestitas que ali viveram.",
+  ui_story_5026_50263301_23_dialog_content = "E agora, eles se tornaram objetos que me conectam ao passado, me permitindo viajar no tempo e no espaço...",
+  ui_story_5026_50263301_24_dialog_content = "Apesar de serem inanimados, eles contam as histórias mais intrigantes.",
+  ui_story_5026_50263301_25_dialog_content = "PlayerName...",
+  ui_story_5026_50263301_26_dialog_content = "...",
+  ui_story_5026_50263301_27_dialog_content = "Vamos começar a explorar então!",
+  ui_story_5026_50263301_28_dialog_content = "Vamos!",
+  ui_story_5026_50263301_29_dialog_content = "Você ainda se lembra de como usar o Detector Portátil?",
+  ui_story_5026_50263301_30_dialog_content = "É claro. Vamos lá!",
+  ui_story_5026_50263301_31_dialog_content = "Por onde devemos começar desta vez?"
+}
 return config
-

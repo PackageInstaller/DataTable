@@ -1,65 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/valentine/enter/ui_activity_valentine_sideenter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityValentineSideEnter", UICustomWidget)
 UIActivityValentineSideEnter = UIActivityValentineSideEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityValentineSideEnter.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityValentineSideEnter:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSideEnter.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityValentineSideEnter:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSideEnter.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityValentineSideEnter:OnHide()
   self._activityData = nil
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSideEnter._GetComponents = function(self)
-  -- function num : 0_3
+function UIActivityValentineSideEnter:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._red = self:GetGameObject("red")
   self._new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSideEnter.SetData = function(self)
-  -- function num : 0_4
+function UIActivityValentineSideEnter:SetData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSideEnter.BtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local isOver = (self._activityData):CheckTaskIsOver()
-  local isMailOver = (self._activityData):CheckMailIsOver()
-  ;
-  (self._activityData):CancelEntryNew()
-  ;
-  (self._activityData):ClearTaskGroupRed()
+function UIActivityValentineSideEnter:BtnOnClick(go)
+  local isOver = self._activityData:CheckTaskIsOver()
+  local isMailOver = self._activityData:CheckMailIsOver()
+  self._activityData:CancelEntryNew()
+  self._activityData:ClearTaskGroupRed()
   if isMailOver then
-    (self._setShowCallback)(not isMailOver)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n27_valentine_y_offline"))
-    return 
+    self._setShowCallback(not isMailOver)
+    ToastManager.ShowToast(StringTable.Get("str_n27_valentine_y_offline"))
+    return
   end
   if isOver then
     self:ShowDialog("UIActivityValentineEndController")
@@ -68,70 +43,49 @@ UIActivityValentineSideEnter.BtnOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSideEnter.OnSideEnterLoad = function(self, TT, setShowCallback, setNewRedCallback)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityValentineSideEnter:OnSideEnterLoad(TT, setShowCallback, setNewRedCallback)
   self._setShowCallback = setShowCallback
   self._setNewRedCallback = setNewRedCallback
   self:Lock("UIActivityValentineSideEnter")
   local res = AsyncRequestRes:New()
   self._activityData = ActivityValentineData:New()
-  ;
-  (self._activityData):LoadData(TT, res)
+  self._activityData:LoadData(TT, res)
   self:UnLock("UIActivityValentineSideEnter")
-  self._campain = (self._activityData):GetCampaign()
-  local isOpen = (self._campain):CheckCampaignOpen()
+  self._campain = self._activityData:GetCampaign()
+  local isOpen = self._campain:CheckCampaignOpen()
   if not isOpen then
-    (self._setShowCallback)(false)
-    return 
+    self._setShowCallback(false)
+    return
   end
-  ;
-  (self._setShowCallback)(true)
+  self._setShowCallback(true)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
   self:_CheckRedPoint()
-  self._timer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_6_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_CheckRedPoint()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campainId = (self._activityData):GetCampaignID()
-  local cfg = (Cfg.cfg_campaign)[campainId]
-  if cfg then
-    return cfg.SideEnterIcon
-  end
+function UIActivityValentineSideEnter:GetSideEnterRawImage()
+  local campainId = self._activityData:GetCampaignID()
+  local cfg = Cfg.cfg_campaign[campainId]
+  return cfg and cfg.SideEnterIcon
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityValentineSideEnter._CheckRedPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityValentineSideEnter:_CheckRedPoint()
   if not self._activityData then
-    return 
+    return
   end
-  if not ((GameGlobal.GameLogic)()):Inited() then
-    (Log.error)("###[UIActivityValentineSideEnter] _CheckRedPoint ,but logic is Reset !")
-    return 
+  if not GameGlobal.GameLogic():Inited() then
+    Log.error("###[UIActivityValentineSideEnter] _CheckRedPoint ,but logic is Reset !")
+    return
   end
-  ;
-  (Log.debug)("###[UIActivityValentineSideEnter] _CheckRedPoint !")
-  local showNew = (self._activityData):GetEntryNew()
-  local showRed = (self._activityData):GetEntryRed()
-  ;
-  (self._red):SetActive(showRed)
-  ;
-  (self._new):SetActive(showNew)
-  ;
-  (self._setNewRedCallback)(showNew, showRed)
+  Log.debug("###[UIActivityValentineSideEnter] _CheckRedPoint !")
+  local showNew = self._activityData:GetEntryNew()
+  local showRed = self._activityData:GetEntryRed()
+  self._red:SetActive(showRed)
+  self._new:SetActive(showNew)
+  self._setNewRedCallback(showNew, showRed)
 end
-
-

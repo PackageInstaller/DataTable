@@ -1,60 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_trap_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetTrapSkillItem", UICustomWidget)
 UIWidgetTrapSkillItem = UIWidgetTrapSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetTrapSkillItem.OnShow = function(self)
-  -- function num : 0_0
+function UIWidgetTrapSkillItem:OnShow()
   self.enableFakeInput = true
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._selectImage = self:GetUIComponent("Image", "select")
   self._frame = self:GetUIComponent("Image", "frame")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkillItem.OnHide = function(self)
-  -- function num : 0_1
+function UIWidgetTrapSkillItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkillItem.Init = function(self, index, skillID, callBack)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetTrapSkillItem:Init(index, skillID, callBack)
   self._index = index
   self._callBack = callBack
   local activeSkillData = BattleSkillCfg(skillID)
-  ;
-  (self._icon):LoadImage(activeSkillData.Icon)
+  self._icon:LoadImage(activeSkillData.Icon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkillItem.OnSelect = function(self, visible, canCast)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetTrapSkillItem", input = "OnSelect", 
-args = {visible, canCast}
-})
-  ;
-  ((self._selectImage).gameObject):SetActive(visible)
-  ;
-  ((self._frame).gameObject):SetActive(not canCast)
+function UIWidgetTrapSkillItem:OnSelect(visible, canCast)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetTrapSkillItem",
+    input = "OnSelect",
+    args = {visible, canCast}
+  })
+  self._selectImage.gameObject:SetActive(visible)
+  self._frame.gameObject:SetActive(not canCast)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetTrapSkillItem.buttonBgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetTrapSkillItem", input = "buttonBgOnClick", 
-args = {}
-})
+function UIWidgetTrapSkillItem:buttonBgOnClick(go)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetTrapSkillItem",
+    input = "buttonBgOnClick",
+    args = {}
+  })
   if self._callBack then
-    (self._callBack)(self._index)
+    self._callBack(self._index)
   end
 end
-
-

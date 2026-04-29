@@ -1,65 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/3dui/season_ui_bubble.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonUIBubble", Object)
 SeasonUIBubble = SeasonUIBubble
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonUIBubble.Constructor = function(self, gameObject, atlas)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonUIBubble:Constructor(gameObject, atlas)
   self._gameObject = gameObject
-  self._transform = (self._gameObject).transform
+  self._transform = self._gameObject.transform
   self._atlas = atlas
-  self._view = (self._gameObject):GetComponent(typeof(UIView))
+  self._view = self._gameObject:GetComponent(typeof(UIView))
   self:_GetComponents()
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
-  self._player = ((self._seasonManager):SeasonPlayerManager()):GetPlayer()
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
+  self._player = self._seasonManager:SeasonPlayerManager():GetPlayer()
   self._data = nil
   self._curVoice = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIBubble._GetComponents = function(self)
-  -- function num : 0_1
-  self._rootTransform = (self._view):GetUIComponent("Transform", "Root")
-  self._content = (self._view):GetUIComponent("UILocalizationText", "Content")
+function SeasonUIBubble:_GetComponents()
+  self._rootTransform = self._view:GetUIComponent("Transform", "Root")
+  self._content = self._view:GetUIComponent("UILocalizationText", "Content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIBubble.SetData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (self._player):Cfg()
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
+function SeasonUIBubble:SetData()
+  local cfg = self._player:Cfg()
   if cfg and cfg.BubbleOffset then
-    (self._rootTransform).localPosition = Vector3((cfg.BubbleOffset)[1], (cfg.BubbleOffset)[2], (cfg.BubbleOffset)[3])
+    self._rootTransform.localPosition = Vector3(cfg.BubbleOffset[1], cfg.BubbleOffset[2], cfg.BubbleOffset[3])
   end
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIBubble.Update = function(self, deltaTime)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
+function SeasonUIBubble:Update(deltaTime)
   if self._data then
-    if (self._data).delay > 0 then
-      (self._data).delay = (self._data).delay - deltaTime
-      if (self._data).delay <= 0 then
-        self:_Play((self._data).text, (self._data).audio)
+    if self._data.delay > 0 then
+      self._data.delay = self._data.delay - deltaTime
+      if self._data.delay <= 0 then
+        self:_Play(self._data.text, self._data.audio)
       end
     end
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._data).time = (self._data).time - deltaTime
-    if (self._data).time > 0 then
+    self._data.time = self._data.time - deltaTime
+    if 0 < self._data.time then
       self:_UpdatePosition()
     else
       self:Stop()
@@ -67,59 +43,39 @@ SeasonUIBubble.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIBubble.Play = function(self, bubble)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonUIBubble:Play(bubble)
   if bubble then
     self._data = SeasonUIBubbleData:New(bubble)
     self._curVoice = nil
-    if (self._data).delay <= 0 then
-      self:_Play((self._data).text, (self._data).audio)
+    if self._data.delay <= 0 then
+      self:_Play(self._data.text, self._data.audio)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIBubble.Stop = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function SeasonUIBubble:Stop()
   self._data = nil
   if self._curVoice then
-    (AudioHelperController.StopUIVoice)(self._curVoice)
+    AudioHelperController.StopUIVoice(self._curVoice)
     self._curVoice = nil
   end
-  ;
-  (self._gameObject):SetActive(false)
+  self._gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIBubble._Play = function(self, text, audio)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonUIBubble:_Play(text, audio)
   if text then
-    (self._content):SetText((StringTable.Get)(text))
-    ;
-    (self._gameObject):SetActive(true)
+    self._content:SetText(StringTable.Get(text))
+    self._gameObject:SetActive(true)
   else
-    ;
-    (self._gameObject):SetActive(false)
+    self._gameObject:SetActive(false)
   end
   if audio then
-    (((self._seasonManager):SeasonAudioManager()):GetSeasonAudio()):StopSeasonUIVoice()
-    self._curVoice = (AudioHelperController.PlayUIVoiceByAudioId)(audio)
+    self._seasonManager:SeasonAudioManager():GetSeasonAudio():StopSeasonUIVoice()
+    self._curVoice = AudioHelperController.PlayUIVoiceByAudioId(audio)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonUIBubble._UpdatePosition = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local position = (self._player):Position()
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._transform).position = Vector3(position.x, position.y, position.z)
+function SeasonUIBubble:_UpdatePosition()
+  local position = self._player:Position()
+  self._transform.position = Vector3(position.x, position.y, position.z)
 end
-
-

@@ -1,58 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/battle_enter_pets_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("BattleEnterPetsInstruction", BaseInstruction)
 BattleEnterPetsInstruction = BattleEnterPetsInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleEnterPetsInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function BattleEnterPetsInstruction:Constructor(paramList)
   self._petShowDelay = tonumber(paramList.petShowDelay)
   self._interval = {}
   local strParam = paramList.interval
   if strParam then
-    local arr = (string.split)(strParam, "|")
-    for index,str in ipairs(arr) do
+    local arr = string.split(strParam, "|")
+    for index, str in ipairs(arr) do
       local n = tonumber(str)
-      ;
-      (table.insert)(self._interval, n)
+      table.insert(self._interval, n)
     end
   else
-    do
-      self._interval = {0, 0, 0}
-      self._effLightPillar = tonumber(paramList.effLightPillar)
-    end
+    self._interval = {
+      0,
+      0,
+      0
+    }
   end
+  self._effLightPillar = tonumber(paramList.effLightPillar)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterPetsInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function BattleEnterPetsInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-  self._ePets = (teamEntity:Team()):GetTeamPetEntities()
-  for i,e in ipairs(self._ePets) do
+  local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+  self._ePets = teamEntity:Team():GetTeamPetEntities()
+  for i, e in ipairs(self._ePets) do
     if e then
       self:PlayEffShowPet(e, teamEntity)
-      if self._interval and (self._interval)[i] then
-        YIELD(TT, (self._interval)[i])
+      if self._interval and self._interval[i] then
+        YIELD(TT, self._interval[i])
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterPetsInstruction.PlayEffShowPet = function(self, e, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  local teamLeaderPetPstID = (teamEntity:Team()):GetTeamLeaderPetPstID()
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : e, teamLeaderPetPstID, self, _ENV
+function BattleEnterPetsInstruction:PlayEffShowPet(e, teamEntity)
+  local teamLeaderPetPstID = teamEntity:Team():GetTeamLeaderPetPstID()
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     local petPstIDCmpt = e:PetPstID()
     if petPstIDCmpt:GetPstID() ~= teamLeaderPetPstID then
       self:PlayEffLightPillar(e)
@@ -62,54 +48,42 @@ BattleEnterPetsInstruction.PlayEffShowPet = function(self, e, teamEntity)
     end
     self:PlayBattlePermanentEffect(e)
     e:SetViewVisible(true)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterPetsInstruction.PlayEffLightPillar = function(self, e)
-  -- function num : 0_3
+function BattleEnterPetsInstruction:PlayEffLightPillar(e)
   if not self._effLightPillar then
     self._effLightPillar = self:GetFirstElementEffect(e)
   end
-  local sEffect = (self._world):GetService("Effect")
+  local sEffect = self._world:GetService("Effect")
   sEffect:CreateEffect(self._effLightPillar, e)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterPetsInstruction.GetFirstElementEffect = function(self, e)
-  -- function num : 0_4
-  local sEffect = (self._world):GetService("Effect")
-  local elementType = (e:Element()):GetPrimaryType()
+function BattleEnterPetsInstruction:GetFirstElementEffect(e)
+  local sEffect = self._world:GetService("Effect")
+  local elementType = e:Element():GetPrimaryType()
   return sEffect:GetPetShowEffIdByEntity(elementType)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterPetsInstruction.PlayBattlePermanentEffect = function(self, e)
-  -- function num : 0_5 , upvalues : _ENV
-  local sEffect = (self._world):GetService("Effect")
-  local templateID = (e:PetPstID()):GetTemplateID()
-  local cfgPet = (Cfg.cfg_pet)[templateID]
+function BattleEnterPetsInstruction:PlayBattlePermanentEffect(e)
+  local sEffect = self._world:GetService("Effect")
+  local templateID = e:PetPstID():GetTemplateID()
+  local cfgPet = Cfg.cfg_pet[templateID]
   local permanentFxArray = cfgPet.BattlePermanentEffect
-  if permanentFxArray and #permanentFxArray > 0 then
-    for _,effectID in ipairs(permanentFxArray) do
+  if permanentFxArray and 0 < #permanentFxArray then
+    for _, effectID in ipairs(permanentFxArray) do
       sEffect:CreateEffect(effectID, e)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleEnterPetsInstruction.GetCacheResource = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function BattleEnterPetsInstruction:GetCacheResource()
   local t = {}
   if self._effLightPillar and self._effLightPillar > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effLightPillar]).ResPath, 4})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effLightPillar].ResPath,
+      4
+    })
   end
   return t
 end
-
-

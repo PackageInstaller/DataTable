@@ -1,107 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/Activity/ui_n7_mainlobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN7MainLobbyEntry", UICustomWidget)
 UIN7MainLobbyEntry = UIN7MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN7MainLobbyEntry.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN7MainLobbyEntry:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainLobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN7MainLobbyEntry:OnShow(uiParams)
   self:_GetComponents()
   self:_InitNewFlagAndRedPoint()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainLobbyEntry._GetComponents = function(self)
-  -- function num : 0_2
+function UIN7MainLobbyEntry:_GetComponents()
   self._redPoint = self:GetGameObject("RedPoint")
   self._newFlag = self:GetGameObject("NewFlag")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainLobbyEntry._InitNewFlagAndRedPoint = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.RequestData, self)
+function UIN7MainLobbyEntry:_InitNewFlagAndRedPoint()
+  GameGlobal.TaskManager():StartTask(self.RequestData, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainLobbyEntry.RequestData = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN7MainLobbyEntry:RequestData(TT)
   self:Lock("UIN7MainLobbyEntry_InitNewFlagAndRedPoint")
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local res = AsyncRequestRes:New()
   campaignModule:GetCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N7)
   local checkList = {}
   checkList[#checkList + 1] = RedDotType.RDT_BLACKFIST_FUNCTION_NEW
   checkList[#checkList + 1] = RedDotType.RDT_ENTRY_REDDOT
-  local redDotModule = (GameGlobal.GetModule)(RedDotModule)
+  local redDotModule = GameGlobal.GetModule(RedDotModule)
   local results = redDotModule:RequestRedDotStatus(TT, checkList)
-  local existNotReadPaper, _ = (campaignModule:GetN7BlackFightData()):ExistNotReadPaper()
+  local existNotReadPaper, _ = campaignModule:GetN7BlackFightData():ExistNotReadPaper()
   self:_RefreshNewFlagAndRedPoint(results[RedDotType.RDT_BLACKFIST_FUNCTION_NEW] or false, results[RedDotType.RDT_ENTRY_REDDOT] or false, existNotReadPaper)
   self:UnLock("UIN7MainLobbyEntry_InitNewFlagAndRedPoint")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.EntryBtnOnClickCoro, self)
+function UIN7MainLobbyEntry:EntryBtnOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.EntryBtnOnClickCoro, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainLobbyEntry.EntryBtnOnClickCoro = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN7MainLobbyEntry:EntryBtnOnClickCoro(TT)
   self:Lock("UIN7MainLobbyEntry_EntryBtnOnClickCoro")
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self._campaignModule):GetN7BlackFightData()
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
+  self.data = self._campaignModule:GetN7BlackFightData()
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  local ret = (self.data):RequestCampaign(TT)
-  self._campaign = (self.data).activityCampaign
+  local ret = self.data:RequestCampaign(TT)
+  self._campaign = self.data.activityCampaign
   res:SetResult(ret:GetResult())
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
     self:UnLock("UIN7MainLobbyEntry_EntryBtnOnClickCoro")
-    return 
+    return
   end
-  if not self._campaign or not (self._campaign)._id or (self._campaign)._id <= 0 then
-    (Log.warn)("### campain not open.")
+  if not (self._campaign and self._campaign._id) or self._campaign._id <= 0 then
+    Log.warn("### campain not open.")
     self:UnLock("UIN7MainLobbyEntry_EntryBtnOnClickCoro")
-    return 
+    return
   end
-  ;
-  (CutsceneManager.ExcuteCutsceneIn)(UIStateType.UIActivityN7MainController, function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
+  CutsceneManager.ExcuteCutsceneIn(UIStateType.UIActivityN7MainController, function()
     self:SwitchState(UIStateType.UIActivityN7MainController, true)
-  end
-)
+  end)
   self:UnLock("UIN7MainLobbyEntry_EntryBtnOnClickCoro")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainLobbyEntry._RefreshNewFlagAndRedPoint = function(self, isShowNew, isShowRed, existNotReadPaper)
-  -- function num : 0_7
-  (self._newFlag):SetActive(isShowNew)
+function UIN7MainLobbyEntry:_RefreshNewFlagAndRedPoint(isShowNew, isShowRed, existNotReadPaper)
+  self._newFlag:SetActive(isShowNew)
   if isShowNew then
-    (self._redPoint):SetActive(false)
+    self._redPoint:SetActive(false)
   else
-    ;
-    (self._redPoint):SetActive(isShowRed or existNotReadPaper)
+    self._redPoint:SetActive(isShowRed or existNotReadPaper)
   end
 end
-
-

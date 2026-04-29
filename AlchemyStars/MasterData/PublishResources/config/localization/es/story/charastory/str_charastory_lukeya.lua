@@ -1,8 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/es/story/charastory/str_charastory_lukeya.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {ui_story_31360401_1_dialog_content = "Hace mucho tiempo que no descansas lo suficiente, ¿verdad? Estás empezando a tener ojeras alrededor de tus ojos.", ui_story_31360401_2_dialog_content = "Así es. Las cosas han estado bastante ocupadas últimamente... Pero sería mucho más productivo si dejaras de molestarme todo el tiempo.", ui_story_31360401_3_dialog_content = "¡Oh, PlayerName, eso duele! ¡Solo estoy demostrando cuánto me preocupo por ti!", ui_story_31360401_4_dialog_content = "¿En serio? Porque yo discrepo...", ui_story_31360401_5_dialog_content = "Entonces, ¿cuál es este asunto importante que necesitas discutir conmigo? O mejor dicho, ¿a quién estabas molestando antes de esto?", ui_story_31360401_6_dialog_content = "¿De verdad soy una persona tan frívola para ti? ¡Estoy aún más herido!", ui_story_31360401_7_dialog_content = "Pero, siendo honesto, no es nada urgente.", ui_story_31360401_8_dialog_content = "Solo me preocupaba por tu salud, eso es todo.", ui_story_31360401_9_dialog_content = "¡Por eso he preparado muchos regalos para ayudarte a dormir mejor y aliviar el estrés en tu corazón!", ui_story_31360401_10_dialog_content = "¿Por qué de repente tengo un mal presentimiento sobre esto?", ui_story_31360401_11_dialog_content = "Relájate, ¡te prometo que no es nada malo!", ui_story_31360401_12_dialog_content = "El primer regalo es un reproductor de música portátil, ¡para que puedas relajarte dondequiera que vayas! Puede parecer pequeño, pero está cargado de mucha música relajante.", ui_story_31360401_13_dialog_content = "¡Esta es la primera vez que veo algo así! ¿Cómo lo uso?", ui_story_31360401_14_dialog_content = "Aquí, te muestro.", ui_story_31360401_15_dialog_content = "¿Eh? N-No te acerques tanto de repente...", ui_story_31360401_16_dialog_content = "<color=#e8d9bb>Lucoa ayuda a PlayerName a ponerse los auriculares y reproduce una canción en el dispositivo.</color>", ui_story_31360401_17_dialog_content = "Esta canción es muy bonita y todo, pero no me gusta escuchar música mientras duermo.", ui_story_31360401_18_dialog_content = "Está bien, porque tengo algo más para ti. ¿Qué te parece esto?", ui_story_31360401_19_dialog_content = "¿Un libro?", ui_story_31360401_20_dialog_content = "Escogí a mano cada una de estas fotos. Estoy seguro de que te ayudarán a aliviar todo el estrés en tu corazón.", ui_story_31360401_21_dialog_content = "Realmente me estás molestando, ¿verdad...? ¿Cómo se supone que estos me ayudarán a dormir?!", ui_story_31360401_22_dialog_content = "¿Todavía no funciona, eh? ¡Parece que tendré que hacerlo todo yo mismo! ¿Qué tal si te sostengo para dormir esta noche?", ui_story_31360401_23_dialog_content = "N-No, gracias... Si no hay nada más, realmente necesito volver al trabajo.", ui_story_31360401_24_dialog_content = "¡Oye... No te apresures tanto en irte!", ui_story_31360401_25_dialog_content = "<color=#e8d9bb> Lucoa toma suavemente la mano de PlayerName.</color>", ui_story_31360401_26_dialog_content = "Dije que estaba preocupado por ti, ¿no?", ui_story_31360401_27_dialog_content = "Últimamente te has estado quedando despierto hasta tarde todas las noches. ¿No estás cansado? Quiero usar mis poderes para sanarte, todo lo que necesitas hacer es dormir bien por la noche.", ui_story_31360401_28_dialog_content = "Si no descansas lo suficiente, vas a fallar en el peor momento posible.", ui_story_31360401_29_dialog_content = "¡Así que sé un buen chico y toma un descanso conmigo aquí!", ui_story_31360401_30_dialog_content = "Entonces, ¿la razón por la que me llamaste fue para asegurarte de que descansara lo suficiente?", ui_story_31360401_31_dialog_content = "Entre otras razones, sí.", ui_story_31360401_32_dialog_content = "Bueno, quería descansar un poco más hoy.", ui_story_31360401_33_option_content = "Descansa en el hombro de Lucoa", ui_story_31360401_34_dialog_content = "Jejeje, si tan solo Shouta fuera más extrovertido como tú.", ui_story_31360401_35_dialog_content = "Oh, ¿parece que ya te has quedado dormido? Entonces, debería estar bien si te abrazo, ¿verdad?", ui_story_31360401_36_option_content = "Siéntate justo a su lado", ui_story_31360401_37_dialog_content = "Duerme bien, cariño, y sueña dulce.", ui_story_31360401_38_dialog_content = "Gracias... Lucoa...", ui_story_31360401_39_dialog_content = "Zzzz...", ui_story_31360401_40_dialog_content = "¡No hay problema! ¡Descansa mucho!"}
+local config = {
+  ui_story_31360401_1_dialog_content = "Hace mucho tiempo que no descansas lo suficiente, ¿verdad? Estás empezando a tener ojeras alrededor de tus ojos.",
+  ui_story_31360401_2_dialog_content = "Así es. Las cosas han estado bastante ocupadas últimamente... Pero sería mucho más productivo si dejaras de molestarme todo el tiempo.",
+  ui_story_31360401_3_dialog_content = "¡Oh, PlayerName, eso duele! ¡Solo estoy demostrando cuánto me preocupo por ti!",
+  ui_story_31360401_4_dialog_content = "¿En serio? Porque yo discrepo...",
+  ui_story_31360401_5_dialog_content = "Entonces, ¿cuál es este asunto importante que necesitas discutir conmigo? O mejor dicho, ¿a quién estabas molestando antes de esto?",
+  ui_story_31360401_6_dialog_content = "¿De verdad soy una persona tan frívola para ti? ¡Estoy aún más herido!",
+  ui_story_31360401_7_dialog_content = "Pero, siendo honesto, no es nada urgente.",
+  ui_story_31360401_8_dialog_content = "Solo me preocupaba por tu salud, eso es todo.",
+  ui_story_31360401_9_dialog_content = "¡Por eso he preparado muchos regalos para ayudarte a dormir mejor y aliviar el estrés en tu corazón!",
+  ui_story_31360401_10_dialog_content = "¿Por qué de repente tengo un mal presentimiento sobre esto?",
+  ui_story_31360401_11_dialog_content = "Relájate, ¡te prometo que no es nada malo!",
+  ui_story_31360401_12_dialog_content = "El primer regalo es un reproductor de música portátil, ¡para que puedas relajarte dondequiera que vayas! Puede parecer pequeño, pero está cargado de mucha música relajante.",
+  ui_story_31360401_13_dialog_content = "¡Esta es la primera vez que veo algo así! ¿Cómo lo uso?",
+  ui_story_31360401_14_dialog_content = "Aquí, te muestro.",
+  ui_story_31360401_15_dialog_content = "¿Eh? N-No te acerques tanto de repente...",
+  ui_story_31360401_16_dialog_content = "<color=#e8d9bb>Lucoa ayuda a PlayerName a ponerse los auriculares y reproduce una canción en el dispositivo.</color>",
+  ui_story_31360401_17_dialog_content = "Esta canción es muy bonita y todo, pero no me gusta escuchar música mientras duermo.",
+  ui_story_31360401_18_dialog_content = "Está bien, porque tengo algo más para ti. ¿Qué te parece esto?",
+  ui_story_31360401_19_dialog_content = "¿Un libro?",
+  ui_story_31360401_20_dialog_content = "Escogí a mano cada una de estas fotos. Estoy seguro de que te ayudarán a aliviar todo el estrés en tu corazón.",
+  ui_story_31360401_21_dialog_content = "Realmente me estás molestando, ¿verdad...? ¿Cómo se supone que estos me ayudarán a dormir?!",
+  ui_story_31360401_22_dialog_content = "¿Todavía no funciona, eh? ¡Parece que tendré que hacerlo todo yo mismo! ¿Qué tal si te sostengo para dormir esta noche?",
+  ui_story_31360401_23_dialog_content = "N-No, gracias... Si no hay nada más, realmente necesito volver al trabajo.",
+  ui_story_31360401_24_dialog_content = "¡Oye... No te apresures tanto en irte!",
+  ui_story_31360401_25_dialog_content = "<color=#e8d9bb> Lucoa toma suavemente la mano de PlayerName.</color>",
+  ui_story_31360401_26_dialog_content = "Dije que estaba preocupado por ti, ¿no?",
+  ui_story_31360401_27_dialog_content = "Últimamente te has estado quedando despierto hasta tarde todas las noches. ¿No estás cansado? Quiero usar mis poderes para sanarte, todo lo que necesitas hacer es dormir bien por la noche.",
+  ui_story_31360401_28_dialog_content = "Si no descansas lo suficiente, vas a fallar en el peor momento posible.",
+  ui_story_31360401_29_dialog_content = "¡Así que sé un buen chico y toma un descanso conmigo aquí!",
+  ui_story_31360401_30_dialog_content = "Entonces, ¿la razón por la que me llamaste fue para asegurarte de que descansara lo suficiente?",
+  ui_story_31360401_31_dialog_content = "Entre otras razones, sí.",
+  ui_story_31360401_32_dialog_content = "Bueno, quería descansar un poco más hoy.",
+  ui_story_31360401_33_option_content = "Descansa en el hombro de Lucoa",
+  ui_story_31360401_34_dialog_content = "Jejeje, si tan solo Shouta fuera más extrovertido como tú.",
+  ui_story_31360401_35_dialog_content = "Oh, ¿parece que ya te has quedado dormido? Entonces, debería estar bien si te abrazo, ¿verdad?",
+  ui_story_31360401_36_option_content = "Siéntate justo a su lado",
+  ui_story_31360401_37_dialog_content = "Duerme bien, cariño, y sueña dulce.",
+  ui_story_31360401_38_dialog_content = "Gracias... Lucoa...",
+  ui_story_31360401_39_dialog_content = "Zzzz...",
+  ui_story_31360401_40_dialog_content = "¡No hay problema! ¡Descansa mucho!"
+}
 return config
-

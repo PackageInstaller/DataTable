@@ -1,95 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/line_mission/ui_season_talent_line_mission_slot.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentLineMissionSlot", UICustomWidget)
 UISeasonTalentLineMissionSlot = UISeasonTalentLineMissionSlot
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentLineMissionSlot.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTalentLineMissionSlot:OnShow()
   self._pool = self:GetUIComponent("UISelectObjectPath", "pool")
   self._red = self:GetGameObject("red")
   self:AttachEvent(GameEventType.OnTalentTreeRedChange, self.OnTalentTreeRedChange)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlot.SetData = function(self, com)
-  -- function num : 0_1
+function UISeasonTalentLineMissionSlot:SetData(com)
   self.talentCom = com
-  self._comCfgId = (self.talentCom):GetComponentCfgId()
-  self.talentComInfo = (self.talentCom):GetComponentInfo()
-  local info = (self.talentComInfo).m_talent_info
+  self._comCfgId = self.talentCom:GetComponentCfgId()
+  self.talentComInfo = self.talentCom:GetComponentInfo()
+  local info = self.talentComInfo.m_talent_info
   self.slotInfo = info.m_skill_solt
   self:SlotCfgList()
   self:ShowPools()
   self:ShowRed()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlot.OnTalentTreeRedChange = function(self)
-  -- function num : 0_2
+function UISeasonTalentLineMissionSlot:OnTalentTreeRedChange()
   self:ShowRed()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlot.ShowRed = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local red = (UISeasonHelper.TalentTreeSkillRed)(nil, self.talentCom)
-  ;
-  (self._red):SetActive(red)
+function UISeasonTalentLineMissionSlot:ShowRed()
+  local red = UISeasonHelper.TalentTreeSkillRed(nil, self.talentCom)
+  self._red:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlot.SlotCfgList = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonTalentLineMissionSlot:SlotCfgList()
   self.slotCfgList = {}
-  local cfgs = (Cfg.cfg_component_talent_tree_slot)({ComponentID = self._comCfgId})
-  for key,value in pairs(cfgs) do
-    (table.insert)(self.slotCfgList, value)
+  local cfgs = Cfg.cfg_component_talent_tree_slot({
+    ComponentID = self._comCfgId
+  })
+  for key, value in pairs(cfgs) do
+    table.insert(self.slotCfgList, value)
   end
-  ;
-  (table.sort)(self.slotCfgList, function(a, b)
-    -- function num : 0_4_0
-    do return a.SlotID < b.SlotID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self.slotCfgList, function(a, b)
+    return a.SlotID < b.SlotID
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlot.ShowPools = function(self)
-  -- function num : 0_5
-  (self._pool):SpawnObjects("UISeasonTalentLineMissionSlotCell", #self.slotCfgList)
-  local pools = (self._pool):GetAllSpawnList()
+function UISeasonTalentLineMissionSlot:ShowPools()
+  self._pool:SpawnObjects("UISeasonTalentLineMissionSlotCell", #self.slotCfgList)
+  local pools = self._pool:GetAllSpawnList()
   for i = 1, #self.slotCfgList do
     local item = pools[i]
-    local cfg = (self.slotCfgList)[i]
-    local rootid = (self.slotInfo)[cfg.SlotID]
+    local cfg = self.slotCfgList[i]
+    local rootid = self.slotInfo[cfg.SlotID]
     item:SetData(i, cfg, rootid)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionSlot.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  if (self.talentComInfo).m_b_unlock then
+function UISeasonTalentLineMissionSlot:BtnOnClick(go)
+  if self.talentComInfo.m_b_unlock then
     self:ShowDialog("UISeasonTalentTreeController")
   else
-    local missionid = (self.talentComInfo).m_need_mission_id
-    local cfg_camp_mission = (Cfg.cfg_campaign_mission)[missionid]
-    local missionName = (StringTable.Get)(cfg_camp_mission.Name)
-    local tips = (StringTable.Get)("str_season_talent_tree_line_node_lock_tex", missionName)
-    ;
-    (ToastManager.ShowToast)(tips)
+    local missionid = self.talentComInfo.m_need_mission_id
+    local cfg_camp_mission = Cfg.cfg_campaign_mission[missionid]
+    local missionName = StringTable.Get(cfg_camp_mission.Name)
+    local tips = StringTable.Get("str_season_talent_tree_line_node_lock_tex", missionName)
+    ToastManager.ShowToast(tips)
   end
 end
-
-

@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_total_round.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_is_base")
 _class("ActionCheckTotalRound", ActionIsBase)
 ActionCheckTotalRound = ActionCheckTotalRound
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckTotalRound.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckTotalRound:OnUpdate()
   local skillCount = self:GetLogicData(-1)
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local levelTotalRoundCount = battleStatCmpt:GetLevelTotalRoundCount()
   local roundCount = levelTotalRoundCount % skillCount
   if roundCount == 0 then
@@ -19,5 +12,3 @@ ActionCheckTotalRound.OnUpdate = function(self)
   end
   return AINewNodeStatus.Other + roundCount
 end
-
-

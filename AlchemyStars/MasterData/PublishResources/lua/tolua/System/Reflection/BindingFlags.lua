@@ -1,16 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/tolua/System/Reflection/BindingFlags.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
-
 if System.Reflection == nil then
   System.Reflection = {}
 end
-local GetMask = function(...)
-  -- function num : 0_0
-  local arg = {...}
+
+local function GetMask(...)
+  local arg = {
+    ...
+  }
   local value = 0
   for i = 1, #arg do
     value = value + arg[i]
@@ -18,14 +13,28 @@ local GetMask = function(...)
   return value
 end
 
-local BindingFlags = {Default = 0, IgnoreCase = 1, DeclaredOnly = 2, Instance = 4, Static = 8, Public = 16, NonPublic = 32, FlattenHierarchy = 64, InvokeMethod = 256, CreateInstance = 512, GetField = 1024, SetField = 2048, GetProperty = 4096, SetProperty = 8192, PutDispProperty = 16384, PutRefDispProperty = 32768, ExactBinding = 65536, SuppressChangeType = 131072, OptionalParamBinding = 262144, IgnoreReturn = 16777216}
--- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(System.Reflection).BindingFlags = BindingFlags
--- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-((System.Reflection).BindingFlags).GetMask = GetMask
+local BindingFlags = {
+  Default = 0,
+  IgnoreCase = 1,
+  DeclaredOnly = 2,
+  Instance = 4,
+  Static = 8,
+  Public = 16,
+  NonPublic = 32,
+  FlattenHierarchy = 64,
+  InvokeMethod = 256,
+  CreateInstance = 512,
+  GetField = 1024,
+  SetField = 2048,
+  GetProperty = 4096,
+  SetProperty = 8192,
+  PutDispProperty = 16384,
+  PutRefDispProperty = 32768,
+  ExactBinding = 65536,
+  SuppressChangeType = 131072,
+  OptionalParamBinding = 262144,
+  IgnoreReturn = 16777216
+}
+System.Reflection.BindingFlags = BindingFlags
+System.Reflection.BindingFlags.GetMask = GetMask
 return BindingFlags
-

@@ -1,35 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_change_head.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChangeHeadController", UIController)
 UIChangeHeadController = UIChangeHeadController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChangeHeadController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChangeHeadController:OnShow(uiParams)
   self._playerInfo = uiParams[1]
   self._closeCB = uiParams[2]
   self._roleModule = self:GetModule(RoleModule)
-  self._roleHeadID = (self._playerInfo).m_nHeadImageID
+  self._roleHeadID = self._playerInfo.m_nHeadImageID
   self._currHeadID = self._roleHeadID
-  self._roleHeadBgID = (self._playerInfo).m_nHeadColorID
+  self._roleHeadBgID = self._playerInfo.m_nHeadColorID
   self._currHeadBgID = self._roleHeadBgID
-  self._roleHeadFrameID = (self._roleModule):GetHeadFrameID()
+  self._roleHeadFrameID = self._roleModule:GetHeadFrameID()
   if not self._roleHeadFrameID or self._roleHeadFrameID == 0 then
-    self._roleHeadFrameID = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
-    self._currHeadFrameID = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
+    self._roleHeadFrameID = HelperProxy:GetInstance():GetHeadFrameDefaultID()
+    self._currHeadFrameID = HelperProxy:GetInstance():GetHeadFrameDefaultID()
   else
     self._currHeadFrameID = self._roleHeadFrameID
   end
   self._headLock = false
   self._headFrameLock = false
-  self._error2str = {[ROLE_RESULT_CODE.ROLE_ERROR_HEAD_FRAME_LOCK] = "str_player_info_ROLE_ERROR_HEAD_FRAME_LOCK", [ROLE_RESULT_CODE.ROLE_ERROR_HEAD_FRAME_LOCK_CONDITION] = "str_player_info_ROLE_ERROR_HEAD_FRAME_LOCK_CONDITION", [ROLE_RESULT_CODE.ROLE_ERROR_HEAD_IMAGE_LOCK] = "str_player_info_ROLE_ERROR_HEAD_IMAGE_LOCK", [ROLE_RESULT_CODE.ROLE_ERROR_HEAD_IMAGE_LOCK_CONDITION] = "str_player_info_ROLE_ERROR_HEAD_IMAGE_LOCK_CONDITION", [ROLE_RESULT_CODE.ROLE_ERROR_INVALID_DATA] = "str_player_info_ROLE_ERROR_INVALID_DATA"}
+  self._error2str = {
+    [ROLE_RESULT_CODE.ROLE_ERROR_HEAD_FRAME_LOCK] = "str_player_info_ROLE_ERROR_HEAD_FRAME_LOCK",
+    [ROLE_RESULT_CODE.ROLE_ERROR_HEAD_FRAME_LOCK_CONDITION] = "str_player_info_ROLE_ERROR_HEAD_FRAME_LOCK_CONDITION",
+    [ROLE_RESULT_CODE.ROLE_ERROR_HEAD_IMAGE_LOCK] = "str_player_info_ROLE_ERROR_HEAD_IMAGE_LOCK",
+    [ROLE_RESULT_CODE.ROLE_ERROR_HEAD_IMAGE_LOCK_CONDITION] = "str_player_info_ROLE_ERROR_HEAD_IMAGE_LOCK_CONDITION",
+    [ROLE_RESULT_CODE.ROLE_ERROR_INVALID_DATA] = "str_player_info_ROLE_ERROR_INVALID_DATA"
+  }
   self:_GetComponents()
   self._atlas = self:GetAsset("UIPlayerInfo.spriteatlas", LoadType.SpriteAtlas)
-  self._cfg_tag = (Cfg.cfg_player_head_filter)({})
-  self._cfg_count = (table.count)(self._cfg_tag)
+  self._cfg_tag = Cfg.cfg_player_head_filter({})
+  self._cfg_count = table.count(self._cfg_tag)
   self._itemCountPerRow = 5
   self._currTag = 0
   self._selectHead = UIChangeHeadControllerState.Head
@@ -38,10 +37,7 @@ UIChangeHeadController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.OnPlayerHeadInfoChanged, self.OnPlayerHeadInfoChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowCurrentHeadInfo = function(self)
-  -- function num : 0_1
+function UIChangeHeadController:ShowCurrentHeadInfo()
   self:ShowCurrHead()
   self:ShowCurrHeadBg()
   self:ShowCurrHeadFrame()
@@ -50,82 +46,55 @@ UIChangeHeadController.ShowCurrentHeadInfo = function(self)
   self:CheckOKBtnState()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowDesc = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChangeHeadController:ShowDesc()
   local desc = ""
   if self._selectHead == UIChangeHeadControllerState.Head then
-    local cfg_head = (Cfg.cfg_role_head_image)[self._currHeadID]
+    local cfg_head = Cfg.cfg_role_head_image[self._currHeadID]
     if cfg_head then
-      desc = (StringTable.Get)(cfg_head.Desc)
+      desc = StringTable.Get(cfg_head.Desc)
     end
-  else
-    do
-      if self._selectHead == UIChangeHeadControllerState.Frame then
-        local cfg_head = (Cfg.cfg_role_head_frame)[self._currHeadFrameID]
-        if cfg_head then
-          desc = (StringTable.Get)(cfg_head.Desc)
-        end
-      else
-        do
-          if self._selectHead == UIChangeHeadControllerState.Bg then
-            desc = (StringTable.Get)("str_player_info_head_bg_desc")
-          end
-          ;
-          (self._currHeadDesc):SetText(desc)
-        end
-      end
+  elseif self._selectHead == UIChangeHeadControllerState.Frame then
+    local cfg_head = Cfg.cfg_role_head_frame[self._currHeadFrameID]
+    if cfg_head then
+      desc = StringTable.Get(cfg_head.Desc)
     end
+  elseif self._selectHead == UIChangeHeadControllerState.Bg then
+    desc = StringTable.Get("str_player_info_head_bg_desc")
+  end
+  self._currHeadDesc:SetText(desc)
+end
+
+function UIChangeHeadController:ShowCurrHeadFrame()
+  local cfg_head_frame = Cfg.cfg_role_head_frame[self._currHeadFrameID]
+  if cfg_head_frame == nil then
+    local fid = HelperProxy:GetInstance():GetHeadFrameDefaultID()
+    Log.fatal("###playerinfo - cfg_role_head_frame is nil ! id ", self._currHeadFrameID)
+    cfg_head_frame = Cfg.cfg_role_head_frame[fid]
+  end
+  if cfg_head_frame then
+    self._currFrame:LoadImage(cfg_head_frame.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowCurrHeadFrame = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_head_frame = (Cfg.cfg_role_head_frame)[self._currHeadFrameID]
-  do
-    if cfg_head_frame == nil then
-      local fid = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
-      ;
-      (Log.fatal)("###playerinfo - cfg_role_head_frame is nil ! id ", self._currHeadFrameID)
-      cfg_head_frame = (Cfg.cfg_role_head_frame)[fid]
-    end
-    if cfg_head_frame then
-      (self._currFrame):LoadImage(cfg_head_frame.Icon)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.OnPlayerHeadInfoChanged = function(self)
-  -- function num : 0_4
-  self._playerInfo = (self._roleModule):UI_GetPlayerInfo()
-  self._roleHeadID = (self._playerInfo).m_nHeadImageID
+function UIChangeHeadController:OnPlayerHeadInfoChanged()
+  self._playerInfo = self._roleModule:UI_GetPlayerInfo()
+  self._roleHeadID = self._playerInfo.m_nHeadImageID
   self._currHeadID = self._roleHeadID
-  self._roleHeadBgID = (self._playerInfo).m_nHeadColorID
+  self._roleHeadBgID = self._playerInfo.m_nHeadColorID
   self._currHeadBgID = self._roleHeadBgID
-  self._roleHeadFrameID = (self._roleModule):GetHeadFrameID()
+  self._roleHeadFrameID = self._roleModule:GetHeadFrameID()
   self._currHeadFrameID = self._roleHeadFrameID
   self:CheckOKBtnState()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIChangeHeadController:OnHide()
   if self._unLockTween then
-    ((GameGlobal.Timer)()):CancelEvent(self._unLockTween)
+    GameGlobal.Timer():CancelEvent(self._unLockTween)
     self._unLockTween = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController._GetComponents = function(self)
-  -- function num : 0_6
+function UIChangeHeadController:_GetComponents()
   self._headTagGroup = self:GetUIComponent("UISelectObjectPath", "headTagGroup")
   self._currHeadBg = self:GetUIComponent("UICircleMaskLoader", "headBg")
   self._currHeadIcon = self:GetUIComponent("RawImageLoader", "headIcon")
@@ -151,81 +120,58 @@ UIChangeHeadController._GetComponents = function(self)
   self._danBadgeGenGo = self:GetGameObject("DanBadgeSimpleGen")
   self._danBadgeGenRect = self:GetUIComponent("RectTransform", "DanBadgeSimpleGen")
   self._ChangeFrameRedObj = self:GetGameObject("ChangeFrameRed")
-  ;
-  (self._ChangeFrameRedObj):SetActive(false)
+  self._ChangeFrameRedObj:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowBtn = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._changeBtn).gameObject), UIEvent.Hovered, function(go)
-    -- function num : 0_7_0 , upvalues : self
-    if self._isDown and (self._changeBtn).interactable then
-      (self._changeBtnShow):SetActive(true)
+function UIChangeHeadController:ShowBtn()
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._changeBtn.gameObject), UIEvent.Hovered, function(go)
+    if self._isDown and self._changeBtn.interactable then
+      self._changeBtnShow:SetActive(true)
     end
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._changeBtn).gameObject), UIEvent.Press, function(go)
-    -- function num : 0_7_1 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._changeBtn.gameObject), UIEvent.Press, function(go)
     self._isDown = true
-    if (self._changeBtn).interactable then
-      (self._changeBtnShow):SetActive(true)
+    if self._changeBtn.interactable then
+      self._changeBtnShow:SetActive(true)
     end
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._changeBtn).gameObject), UIEvent.Release, function(go)
-    -- function num : 0_7_2 , upvalues : self
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._changeBtn.gameObject), UIEvent.Release, function(go)
     self._isDown = false
-    ;
-    (self._changeBtnShow):SetActive(false)
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)((self._changeBtn).gameObject), UIEvent.Unhovered, function(go)
-    -- function num : 0_7_3 , upvalues : self
-    (self._changeBtnShow):SetActive(false)
-  end
-)
+    self._changeBtnShow:SetActive(false)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._changeBtn.gameObject), UIEvent.Unhovered, function(go)
+    self._changeBtnShow:SetActive(false)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.UI_GetHeadFrameList = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg = (Cfg.cfg_role_head_frame)({})
+function UIChangeHeadController:UI_GetHeadFrameList()
+  local cfg = Cfg.cfg_role_head_frame({})
   local frameList = {}
-  for i,v in (HelperProxy:GetInstance()):pairsByKeys(cfg) do
+  for i, v in HelperProxy:GetInstance():pairsByKeys(cfg) do
     local headFrame = {}
     headFrame.ID = v[1]
     headFrame.Icon = v[3]
-    ;
-    (table.insert)(frameList, headFrame)
+    table.insert(frameList, headFrame)
   end
   return frameList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController._OnValue = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIChangeHeadController:_OnValue()
   self:ShowBtn()
-  self._tmpheadList = (self._roleModule):UI_GetHeadImageListByTag(self._currTag)
+  self._tmpheadList = self._roleModule:UI_GetHeadImageListByTag(self._currTag)
   self:CheckHeadActive()
-  self._headCount = (table.count)(self._headList)
-  self._headBgList = (self._roleModule):UI_GetHeadBgList()
-  self._headBgCount = (table.count)(self._headBgList)
+  self._headCount = table.count(self._headList)
+  self._headBgList = self._roleModule:UI_GetHeadBgList()
+  self._headBgCount = table.count(self._headBgList)
   self._tmpHeadFrameList = self:UI_GetHeadFrameList()
   self:CheckHeadFrameActive()
-  self._headFrameCount = (table.count)(self._headFrameList)
-  ;
-  (self._headTagGroup):SpawnObjects("UIHeadTagItem", self._cfg_count)
-  self._tagItems = (self._headTagGroup):GetAllSpawnList()
+  self._headFrameCount = table.count(self._headFrameList)
+  self._headTagGroup:SpawnObjects("UIHeadTagItem", self._cfg_count)
+  self._tagItems = self._headTagGroup:GetAllSpawnList()
   for i = 1, self._cfg_count do
-    ((self._tagItems)[i]):SetData((self._cfg_tag)[i], self._currTag, function(tag)
-    -- function num : 0_9_0 , upvalues : self
-    self:FilterHeadByTag(tag)
-  end
-)
+    self._tagItems[i]:SetData(self._cfg_tag[i], self._currTag, function(tag)
+      self:FilterHeadByTag(tag)
+    end)
   end
   self:CheckHeadTagRedActive()
   self:_InitHeadBgScrollView()
@@ -235,152 +181,109 @@ UIChangeHeadController._OnValue = function(self)
   self:ShowCurrentHeadInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.CheckHeadActive = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIChangeHeadController:CheckHeadActive()
   self._headList = {}
-  local cfg_head = (Cfg.cfg_role_head_image)({})
+  local cfg_head = Cfg.cfg_role_head_image({})
   for i = 1, #self._tmpheadList do
     local hide = false
-    local headitem = (self._tmpheadList)[i] or nil
+    local headitem = self._tmpheadList[i] or nil
     local isOpen = false
     local canUnLock = false
-    do
-      if headitem then
-        local lockInfo = (self._roleModule):UI_GetHeadImageLockInfo(headitem.m_nImageID)
-        if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
-          isOpen = true
-        end
-        if not isOpen then
-          canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
-        end
+    if headitem then
+      local lockInfo = self._roleModule:UI_GetHeadImageLockInfo(headitem.m_nImageID)
+      if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
+        isOpen = true
       end
-      do
-        do
-          if headitem and not isOpen and not canUnLock then
-            local cfg_head_item = cfg_head[headitem.m_nImageID]
-            if cfg_head_item.LockHide and cfg_head_item.LockHide == 1 then
-              hide = true
-            end
-          end
-          if headitem and not hide then
-            (table.insert)(self._headList, headitem)
-          end
-          -- DECOMPILER ERROR at PC66: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC66: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if not isOpen then
+        canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
       end
+    end
+    if headitem and not isOpen and not canUnLock then
+      local cfg_head_item = cfg_head[headitem.m_nImageID]
+      if cfg_head_item.LockHide and cfg_head_item.LockHide == 1 then
+        hide = true
+      end
+    end
+    if headitem and not hide then
+      table.insert(self._headList, headitem)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.CheckHeadTagRedActive = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._tagItems = (self._headTagGroup):GetAllSpawnList()
+function UIChangeHeadController:CheckHeadTagRedActive()
+  self._tagItems = self._headTagGroup:GetAllSpawnList()
   for i = 1, #self._tagItems do
-    local item = (self._tagItems)[i]
+    local item = self._tagItems[i]
     local tag = item._tag
     local headRed = false
-    local tmpheadList = (self._roleModule):UI_GetHeadImageListByTag(tag)
+    local tmpheadList = self._roleModule:UI_GetHeadImageListByTag(tag)
     for i = 1, #tmpheadList do
       local headitem = tmpheadList[i] or nil
       local isOpen = false
       local canUnLock = false
-      do
-        do
-          if headitem then
-            local lockInfo = (self._roleModule):UI_GetHeadImageLockInfo(headitem.m_nImageID)
-            if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
-              isOpen = true
-            end
-            if not isOpen then
-              canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
-            end
-          end
-          if not isOpen and canUnLock then
-            headRed = true
-          end
-          -- DECOMPILER ERROR at PC55: LeaveBlock: unexpected jumping out DO_STMT
-
+      if headitem then
+        local lockInfo = self._roleModule:UI_GetHeadImageLockInfo(headitem.m_nImageID)
+        if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
+          isOpen = true
         end
+        if not isOpen then
+          canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
+        end
+      end
+      if not isOpen and canUnLock then
+        headRed = true
       end
     end
     item:ShowRed(headRed)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.CheckHeadFrameActive = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIChangeHeadController:CheckHeadFrameActive()
   self._headFrameList = {}
-  local cfg_head_frame = (Cfg.cfg_role_head_frame)({})
+  local cfg_head_frame = Cfg.cfg_role_head_frame({})
   local showFrameRed = false
   for i = 1, #self._tmpHeadFrameList do
     local hide = false
-    local frame = (self._tmpHeadFrameList)[i] or nil
+    local frame = self._tmpHeadFrameList[i] or nil
     local canUnLock = false
     local isOpen = false
-    do
-      if frame then
-        local lockInfo = (self._roleModule):UI_GetHeadFrameLockInfo(frame.ID)
-        if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
-          isOpen = true
-        end
-        if not isOpen then
-          canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
-        end
+    if frame then
+      local lockInfo = self._roleModule:UI_GetHeadFrameLockInfo(frame.ID)
+      if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
+        isOpen = true
       end
-      do
-        do
-          if frame and not isOpen and not canUnLock then
-            local cfg_head_frame_item = cfg_head_frame[frame.ID]
-            if cfg_head_frame_item.LockHide and cfg_head_frame_item.LockHide == 1 then
-              hide = true
-            end
-          end
-          if frame and not hide then
-            (table.insert)(self._headFrameList, frame)
-          end
-          if not isOpen and canUnLock then
-            showFrameRed = true
-          end
-          -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC72: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+      if not isOpen then
+        canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
       end
     end
+    if frame and not isOpen and not canUnLock then
+      local cfg_head_frame_item = cfg_head_frame[frame.ID]
+      if cfg_head_frame_item.LockHide and cfg_head_frame_item.LockHide == 1 then
+        hide = true
+      end
+    end
+    if frame and not hide then
+      table.insert(self._headFrameList, frame)
+    end
+    if not isOpen and canUnLock then
+      showFrameRed = true
+    end
   end
-  ;
-  (self._ChangeFrameRedObj):SetActive(showFrameRed)
+  self._ChangeFrameRedObj:SetActive(showFrameRed)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.backOnClick = function(self)
-  -- function num : 0_13
+function UIChangeHeadController:backOnClick()
   if self._closeCB then
-    (self._closeCB)()
+    self._closeCB()
     self._closeCB = nil
   end
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.FilterHeadByTag = function(self, tag)
-  -- function num : 0_14 , upvalues : _ENV
+function UIChangeHeadController:FilterHeadByTag(tag)
   if self._currTag ~= tag then
     self._currTag = tag
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnChangeHeadTagBtnClick, tag)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnChangeHeadTagBtnClick, tag)
     self._selectHead = UIChangeHeadControllerState.Head
     self:ShowHeadAndBgPanel()
     self:CheckOKBtnState()
@@ -390,42 +293,27 @@ UIChangeHeadController.FilterHeadByTag = function(self, tag)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.RefreshHeadList = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._tmpheadList = (self._roleModule):UI_GetHeadImageListByTag(self._currTag)
+function UIChangeHeadController:RefreshHeadList()
+  self._tmpheadList = self._roleModule:UI_GetHeadImageListByTag(self._currTag)
   self:CheckHeadActive()
-  self._headCount = (table.count)(self._headList)
-  ;
-  (self._headScrollView):SetListItemCount(self:GetRowCount())
+  self._headCount = table.count(self._headList)
+  self._headScrollView:SetListItemCount(self:GetRowCount())
   self:CheckCurrHeadInner()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController._InitHeadSrollView = function(self)
-  -- function num : 0_16
-  (self._headScrollView):InitListView(self:GetRowCount(), function(scrollView, index)
-    -- function num : 0_16_0 , upvalues : self
+function UIChangeHeadController:_InitHeadSrollView()
+  self._headScrollView:InitListView(self:GetRowCount(), function(scrollView, index)
     return self:InitHeadList(scrollView, index)
-  end
-)
+  end)
   self:CheckCurrHeadInner()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.GetRowCount = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local row = (math.ceil)(self._headCount / self._itemCountPerRow)
+function UIChangeHeadController:GetRowCount()
+  local row = math.ceil(self._headCount / self._itemCountPerRow)
   return row
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.InitHeadList = function(self, scrollView, index)
-  -- function num : 0_18
+function UIChangeHeadController:InitHeadList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -444,80 +332,57 @@ UIChangeHeadController.InitHeadList = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowHeadItem = function(self, item, index)
-  -- function num : 0_19 , upvalues : _ENV
-  local headitem = (self._headList)[index] or nil
+function UIChangeHeadController:ShowHeadItem(item, index)
+  local headitem = self._headList[index] or nil
   local isOpen = false
   local canUnLock = false
-  do
-    if headitem then
-      local lockInfo = (self._roleModule):UI_GetHeadImageLockInfo(headitem.m_nImageID)
-      if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
-        isOpen = true
-      end
-      if not isOpen then
-        canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
-      end
-    end
-    if GameSingle then
+  if headitem then
+    local lockInfo = self._roleModule:UI_GetHeadImageLockInfo(headitem.m_nImageID)
+    if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
       isOpen = true
-      canUnLock = true
     end
-    ;
-    (item:GetGameObject()):SetActive(true)
-    item:SetData(index, headitem, isOpen, canUnLock, self._currHeadID, function(tIndex)
-    -- function num : 0_19_0 , upvalues : self
+    if not isOpen then
+      canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
+    end
+  end
+  if GameSingle then
+    isOpen = true
+    canUnLock = true
+  end
+  item:GetGameObject():SetActive(true)
+  item:SetData(index, headitem, isOpen, canUnLock, self._currHeadID, function(tIndex)
     self:HeadItemClick(tIndex)
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ChangeHeadTween = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIChangeHeadController:ChangeHeadTween()
   self:Lock("ChangeHeadTween")
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPlayerChangeHeadItemClick, self._currHeadID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPlayerChangeHeadItemClick, self._currHeadID)
   self:ShowCurrHead()
   self:CheckOKBtnState()
   self:ShowUnLockConditions()
   self:ShowDesc()
-  ;
-  (self._headGroup):SetActive(false)
-  ;
-  (self._conditionGroup):SetActive(false)
-  self._tweener1 = ((GameGlobal.Timer)()):AddEvent(50, function()
-    -- function num : 0_20_0 , upvalues : self, _ENV
-    (self._headGroup):SetActive(true)
-    ;
-    (self._conditionGroup):SetActive(true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPlayerChangeHeadItemClick, 0)
-    self._tweener2 = ((GameGlobal.Timer)()):AddEvent(50, function()
-      -- function num : 0_20_0_0 , upvalues : _ENV, self
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPlayerChangeHeadItemClick, self._currHeadID)
+  self._headGroup:SetActive(false)
+  self._conditionGroup:SetActive(false)
+  self._tweener1 = GameGlobal.Timer():AddEvent(50, function()
+    self._headGroup:SetActive(true)
+    self._conditionGroup:SetActive(true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPlayerChangeHeadItemClick, 0)
+    self._tweener2 = GameGlobal.Timer():AddEvent(50, function()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPlayerChangeHeadItemClick, self._currHeadID)
       self:UnLock("ChangeHeadTween")
       self:CheckHeadTagRedActive()
-    end
-)
-  end
-)
+    end)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.HeadItemClick = function(self, idx)
-  -- function num : 0_21 , upvalues : _ENV
-  local headiitem = (self._headList)[idx]
+function UIChangeHeadController:HeadItemClick(idx)
+  local headiitem = self._headList[idx]
   local headid = headiitem.m_nImageID
   if headid and self._currHeadID ~= headid then
-    local lockInfo = (self._roleModule):UI_GetHeadImageLockInfo(headid)
+    local lockInfo = self._roleModule:UI_GetHeadImageLockInfo(headid)
     local isOpen = false
-    if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
+    if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
       isOpen = true
     end
     local canUnLock = false
@@ -525,133 +390,94 @@ UIChangeHeadController.HeadItemClick = function(self, idx)
       self._headLock = false
     else
       self._headLock = true
-      canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
+      canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
     end
     if isOpen then
       self._currHeadID = headid
       self:ChangeHeadTween()
+    elseif canUnLock then
+      self:Lock("lockHeadReq")
+      self:StartTask(function(TT)
+        local res = self._roleModule:Request_ClearHeadImageLock(TT, headid)
+        self:UnLock("lockHeadReq")
+        if res:GetSucc() then
+          self._headLock = false
+          self._currHeadID = headid
+          self:ChangeHeadTween()
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.HideHeadRedPoint, self._currHeadID)
+        else
+          local result = res:GetResult()
+          Log.debug("###[UIChangeHeadController]player info - roleModule:Request_ClearHeadImageLock result - ", result)
+          local tips = ""
+          if self._error2str[result] then
+            tips = StringTable.Get(self._error2str[result])
+          end
+          ToastManager.ShowToast(tips)
+        end
+      end, self)
     else
-      if canUnLock then
-        self:Lock("lockHeadReq")
-        self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, headid, _ENV
-    local res = (self._roleModule):Request_ClearHeadImageLock(TT, headid)
-    self:UnLock("lockHeadReq")
-    if res:GetSucc() then
-      self._headLock = false
       self._currHeadID = headid
       self:ChangeHeadTween()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideHeadRedPoint, self._currHeadID)
-    else
-      local result = res:GetResult()
-      ;
-      (Log.debug)("###[UIChangeHeadController]player info - roleModule:Request_ClearHeadImageLock result - ", result)
-      local tips = ""
-      if (self._error2str)[result] then
-        tips = (StringTable.Get)((self._error2str)[result])
-      end
-      ;
-      (ToastManager.ShowToast)(tips)
-    end
-  end
-, self)
-      else
-        self._currHeadID = headid
-        self:ChangeHeadTween()
-      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowCurrHead = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local cfg_head = (Cfg.cfg_role_head_image)[self._currHeadID]
+function UIChangeHeadController:ShowCurrHead()
+  local cfg_head = Cfg.cfg_role_head_image[self._currHeadID]
   if cfg_head then
-    (self._currHeadIcon):LoadImage(cfg_head.Icon)
-    ;
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._currHeadIconRect, cfg_head.Tag)
+    self._currHeadIcon:LoadImage(cfg_head.Icon)
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._currHeadIconRect, cfg_head.Tag)
   else
-    ;
-    (Log.error)("###[UIChangeHeadController]playerinfo - cfg_role_head_image is nil ! id ", self._currHeadID)
+    Log.error("###[UIChangeHeadController]playerinfo - cfg_role_head_image is nil ! id ", self._currHeadID)
   end
-  ;
-  (UIWorldBossHelper.InitSelfDanBadgeSimple)(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect)
+  UIWorldBossHelper.InitSelfDanBadgeSimple(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.InitToggleShowDan = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIChangeHeadController:InitToggleShowDan()
   self.tgl = self:GetUIComponent("Toggle", "toggle")
-  local l_role_module = (GameGlobal.GetModule)(RoleModule)
+  local l_role_module = GameGlobal.GetModule(RoleModule)
   local curSwitch = l_role_module:GetBadgeSwitch()
   self:ToggleOnClick(curSwitch, true)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ToggleOnClick = function(self, curSwitch, first)
-  -- function num : 0_24 , upvalues : _ENV
+function UIChangeHeadController:ToggleOnClick(curSwitch, first)
   if first then
     self.danSwitch = curSwitch
   end
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.tgl).isOn = self.danSwitch
+  self.tgl.isOn = self.danSwitch
   if not first then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDefaultClick)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDefaultClick)
     if self.danSwitch then
-      (ToastManager.ShowToast)((StringTable.Get)("str_role_head_image_dan_setting_open"))
+      ToastManager.ShowToast(StringTable.Get("str_role_head_image_dan_setting_open"))
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_role_head_image_dan_setting_close"))
+      ToastManager.ShowToast(StringTable.Get("str_role_head_image_dan_setting_close"))
     end
-    local l_role_module = (GameGlobal.GetModule)(RoleModule)
+    local l_role_module = GameGlobal.GetModule(RoleModule)
     l_role_module:PushBadgeSwitchSetting(self.danSwitch)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPlayerChangeHeadBadgeClick)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPlayerChangeHeadBadgeClick)
   end
-  do
-    if self.danSwitch then
-      (UIWorldBossHelper.InitSelfDanBadgeSimple)(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect)
-      ;
-      (self._danBadgeGenGo):SetActive(true)
-    else
-      ;
-      (self._danBadgeGenGo):SetActive(false)
-    end
-    self.danSwitch = not self.danSwitch
+  if self.danSwitch then
+    UIWorldBossHelper.InitSelfDanBadgeSimple(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect)
+    self._danBadgeGenGo:SetActive(true)
+  else
+    self._danBadgeGenGo:SetActive(false)
   end
+  self.danSwitch = not self.danSwitch
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController._InitHeadBgScrollView = function(self)
-  -- function num : 0_25
-  (self._headBgScrollView):InitListView(self:GetBgRowCount(), function(scrollView, index)
-    -- function num : 0_25_0 , upvalues : self
+function UIChangeHeadController:_InitHeadBgScrollView()
+  self._headBgScrollView:InitListView(self:GetBgRowCount(), function(scrollView, index)
     return self:InitHeadBgList(scrollView, index)
-  end
-)
+  end)
   self:CheckCurrHeadBgInner()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.GetBgRowCount = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local row = (math.ceil)(self._headBgCount / self._itemCountPerRow)
+function UIChangeHeadController:GetBgRowCount()
+  local row = math.ceil(self._headBgCount / self._itemCountPerRow)
   return row
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.InitHeadBgList = function(self, scrollView, index)
-  -- function num : 0_27
+function UIChangeHeadController:InitHeadBgList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -670,29 +496,19 @@ UIChangeHeadController.InitHeadBgList = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowHeadBgItem = function(self, item, index)
-  -- function num : 0_28
-  local headbgid = (self._headBgList)[index] or nil
-  ;
-  (item:GetGameObject()):SetActive(true)
+function UIChangeHeadController:ShowHeadBgItem(item, index)
+  local headbgid = self._headBgList[index] or nil
+  item:GetGameObject():SetActive(true)
   item:SetData(index, headbgid, self._currHeadBgID, function(tIndex)
-    -- function num : 0_28_0 , upvalues : self
     self:HeadBgItemClick(tIndex)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.HeadBgItemClick = function(self, idx)
-  -- function num : 0_29 , upvalues : _ENV
-  local headbgid = (self._headBgList)[idx]
+function UIChangeHeadController:HeadBgItemClick(idx)
+  local headbgid = self._headBgList[idx]
   if headbgid and self._currHeadBgID ~= headbgid then
     self._currHeadBgID = headbgid
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPlayerChangeHeadBgItemClick, headbgid)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPlayerChangeHeadBgItemClick, headbgid)
     self:ShowCurrHeadBg()
     self:ShowDesc()
     self:ShowUnLockConditions()
@@ -700,47 +516,31 @@ UIChangeHeadController.HeadBgItemClick = function(self, idx)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowCurrHeadBg = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local cfg_head_bg = (Cfg.cfg_player_head_bg)[self._currHeadBgID]
+function UIChangeHeadController:ShowCurrHeadBg()
+  local cfg_head_bg = Cfg.cfg_player_head_bg[self._currHeadBgID]
   if cfg_head_bg == nil then
-    (Log.error)("###[UIChangeHeadController]playerinfo - cfg_player_head_bg is nil ! id ", self._currHeadBgID)
-    local bid = (HelperProxy:GetInstance()):GetHeadBgDefaultID()
-    cfg_head_bg = (Cfg.cfg_player_head_bg)[bid]
+    Log.error("###[UIChangeHeadController]playerinfo - cfg_player_head_bg is nil ! id ", self._currHeadBgID)
+    local bid = HelperProxy:GetInstance():GetHeadBgDefaultID()
+    cfg_head_bg = Cfg.cfg_player_head_bg[bid]
   end
-  do
-    if cfg_head_bg then
-      (self._currHeadBg):LoadImage(cfg_head_bg.Icon)
-    end
+  if cfg_head_bg then
+    self._currHeadBg:LoadImage(cfg_head_bg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.GetFrameRowCount = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local row = (math.ceil)(self._headFrameCount / self._itemCountPerRow)
+function UIChangeHeadController:GetFrameRowCount()
+  local row = math.ceil(self._headFrameCount / self._itemCountPerRow)
   return row
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController._InitHeadFrameScrollView = function(self)
-  -- function num : 0_32
-  (self._headFrameScrollView):InitListView(self:GetFrameRowCount(), function(scrollView, index)
-    -- function num : 0_32_0 , upvalues : self
+function UIChangeHeadController:_InitHeadFrameScrollView()
+  self._headFrameScrollView:InitListView(self:GetFrameRowCount(), function(scrollView, index)
     return self:_InitHeadFrameList(scrollView, index)
-  end
-)
+  end)
   self:CheckCurrHeadFrameInner()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController._InitHeadFrameList = function(self, scrollView, index)
-  -- function num : 0_33
+function UIChangeHeadController:_InitHeadFrameList(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -759,46 +559,35 @@ UIChangeHeadController._InitHeadFrameList = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowHeadFrameItem = function(self, item, index)
-  -- function num : 0_34 , upvalues : _ENV
-  local frame = (self._headFrameList)[index] or nil
+function UIChangeHeadController:ShowHeadFrameItem(item, index)
+  local frame = self._headFrameList[index] or nil
   local canUnLock = false
   local isOpen = false
-  do
-    if frame then
-      local lockInfo = (self._roleModule):UI_GetHeadFrameLockInfo(frame.ID)
-      if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
-        isOpen = true
-      end
-      if not isOpen then
-        canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
-      end
-    end
-    if GameSingle then
+  if frame then
+    local lockInfo = self._roleModule:UI_GetHeadFrameLockInfo(frame.ID)
+    if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
       isOpen = true
-      canUnLock = true
     end
-    ;
-    (item:GetGameObject()):SetActive(true)
-    item:SetData(index, frame, isOpen, canUnLock, self._currHeadFrameID, function(idx)
-    -- function num : 0_34_0 , upvalues : self
+    if not isOpen then
+      canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
+    end
+  end
+  if GameSingle then
+    isOpen = true
+    canUnLock = true
+  end
+  item:GetGameObject():SetActive(true)
+  item:SetData(index, frame, isOpen, canUnLock, self._currHeadFrameID, function(idx)
     self:HeadFrameItemClick(idx)
-  end
-)
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.HeadFrameItemClick = function(self, idx)
-  -- function num : 0_35 , upvalues : _ENV
-  local headFrameId = ((self._headFrameList)[idx]).ID
+function UIChangeHeadController:HeadFrameItemClick(idx)
+  local headFrameId = self._headFrameList[idx].ID
   if headFrameId and self._currHeadFrameID ~= headFrameId then
-    local lockInfo = (self._roleModule):UI_GetHeadFrameLockInfo(headFrameId)
+    local lockInfo = self._roleModule:UI_GetHeadFrameLockInfo(headFrameId)
     local isOpen = false
-    if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
+    if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
       isOpen = true
     end
     local canUnLock = false
@@ -806,176 +595,126 @@ UIChangeHeadController.HeadFrameItemClick = function(self, idx)
       self._headFrameLock = false
     else
       self._headFrameLock = true
-      canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
+      canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
     end
     if isOpen then
       self._currHeadFrameID = headFrameId
       self:ChangeHeadFrameTween()
+    elseif canUnLock then
+      self:Lock("lockHeadFrameReq")
+      self:StartTask(function(TT)
+        local res = self._roleModule:Request_ClearHeadFrameLock(TT, headFrameId)
+        self:UnLock("lockHeadFrameReq")
+        if res:GetSucc() then
+          self._headFrameLock = false
+          self._currHeadFrameID = headFrameId
+          self:ChangeHeadFrameTween()
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.HideHeadFrameRedPoint, self._currHeadFrameID)
+          self:CheckHeadFrameActive()
+          self:CheckHeadTagRedActive()
+        else
+          local result = res:GetResult()
+          Log.debug("###[UIChangeHeadController]player info - roleModule:Request_ClearHeadImageLock result - ", result)
+          local tips = ""
+          if self._error2str[result] then
+            tips = StringTable.Get(self._error2str[result])
+          end
+          ToastManager.ShowToast(tips)
+        end
+      end, self)
     else
-      if canUnLock then
-        self:Lock("lockHeadFrameReq")
-        self:StartTask(function(TT)
-    -- function num : 0_35_0 , upvalues : self, headFrameId, _ENV
-    local res = (self._roleModule):Request_ClearHeadFrameLock(TT, headFrameId)
-    self:UnLock("lockHeadFrameReq")
-    if res:GetSucc() then
-      self._headFrameLock = false
       self._currHeadFrameID = headFrameId
       self:ChangeHeadFrameTween()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HideHeadFrameRedPoint, self._currHeadFrameID)
-      self:CheckHeadFrameActive()
-      self:CheckHeadTagRedActive()
-    else
-      local result = res:GetResult()
-      ;
-      (Log.debug)("###[UIChangeHeadController]player info - roleModule:Request_ClearHeadImageLock result - ", result)
-      local tips = ""
-      if (self._error2str)[result] then
-        tips = (StringTable.Get)((self._error2str)[result])
-      end
-      ;
-      (ToastManager.ShowToast)(tips)
-    end
-  end
-, self)
-      else
-        self._currHeadFrameID = headFrameId
-        self:ChangeHeadFrameTween()
-      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ChangeHeadFrameTween = function(self)
-  -- function num : 0_36 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPlayerChangeHeadFrameItemClick, self._currHeadFrameID)
+function UIChangeHeadController:ChangeHeadFrameTween()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPlayerChangeHeadFrameItemClick, self._currHeadFrameID)
   self:ShowCurrHeadFrame()
   self:ShowUnLockConditions()
   self:CheckOKBtnState()
   self:ShowDesc()
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.CheckOKBtnState = function(self)
-  -- function num : 0_37
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIChangeHeadController:CheckOKBtnState()
   if self._currHeadID == self._roleHeadID and self._currHeadFrameID == self._roleHeadFrameID and self._currHeadBgID == self._roleHeadBgID then
-    (self._changeBtn).interactable = false
+    self._changeBtn.interactable = false
   else
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._changeBtn).interactable = true
+    self._changeBtn.interactable = true
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowUnLockConditions = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UIChangeHeadController:ShowUnLockConditions()
   local conditions = {}
   local haveCondition = false
   if self._selectHead == UIChangeHeadControllerState.Head then
-    local lockCondition = (self._roleModule):UI_GetHeadImageLockInfo(self._currHeadID)
-    if lockCondition and lockCondition.m_lockConditionList and (table.count)(lockCondition.m_lockConditionList) > 0 then
+    local lockCondition = self._roleModule:UI_GetHeadImageLockInfo(self._currHeadID)
+    if lockCondition and lockCondition.m_lockConditionList and table.count(lockCondition.m_lockConditionList) > 0 then
       conditions = lockCondition.m_lockConditionList
       haveCondition = true
     end
-  else
-    do
-      do
-        if self._selectHead == UIChangeHeadControllerState.Frame then
-          local lockCondition = (self._roleModule):UI_GetHeadFrameLockInfo(self._currHeadFrameID)
-          if lockCondition and lockCondition.m_lockConditionList and (table.count)(lockCondition.m_lockConditionList) > 0 then
-            conditions = lockCondition.m_lockConditionList
-            haveCondition = true
-          end
-        else
-        end
-        if self._selectHead == UIChangeHeadControllerState.Bg then
-          (self._goNoCondition):SetActive(not haveCondition)
-          if haveCondition then
-            local count = (table.count)(conditions)
-            ;
-            (self._conditions):SpawnObjects("UIHeadUnLockConditionItem", count)
-            local items = (self._conditions):GetAllSpawnList()
-            for i = 1, count do
-              local con = conditions[i]
-              ;
-              (items[i]):SetData(con)
-            end
-          else
-            do
-              local count = (table.count)(conditions)
-              ;
-              (self._conditions):SpawnObjects("UIHeadUnLockConditionItem", count)
-            end
-          end
-        end
-      end
+  elseif self._selectHead == UIChangeHeadControllerState.Frame then
+    local lockCondition = self._roleModule:UI_GetHeadFrameLockInfo(self._currHeadFrameID)
+    if lockCondition and lockCondition.m_lockConditionList and table.count(lockCondition.m_lockConditionList) > 0 then
+      conditions = lockCondition.m_lockConditionList
+      haveCondition = true
     end
+  elseif self._selectHead == UIChangeHeadControllerState.Bg then
+  end
+  self._goNoCondition:SetActive(not haveCondition)
+  if haveCondition then
+    local count = table.count(conditions)
+    self._conditions:SpawnObjects("UIHeadUnLockConditionItem", count)
+    local items = self._conditions:GetAllSpawnList()
+    for i = 1, count do
+      local con = conditions[i]
+      items[i]:SetData(con)
+    end
+  else
+    local count = table.count(conditions)
+    self._conditions:SpawnObjects("UIHeadUnLockConditionItem", count)
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.changeBtnOnClick = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function UIChangeHeadController:changeBtnOnClick()
   if self._currHeadID == self._roleHeadID and self._currHeadFrameID == self._roleHeadFrameID and self._currHeadBgID == self._roleHeadBgID then
-    return 
+    return
   end
-  local tips = nil
+  local tips
   if self._headLock and self._headFrameLock then
     tips = "str_player_info_head_icon_and_head_frame_unlock"
-  else
-    if self._headLock then
-      tips = "str_player_info_head_icon_unlock"
-    else
-      if self._headFrameLock then
-        tips = "str_player_info_head_frame_unlock"
-      end
-    end
+  elseif self._headLock then
+    tips = "str_player_info_head_icon_unlock"
+  elseif self._headFrameLock then
+    tips = "str_player_info_head_frame_unlock"
   end
   if tips then
-    (ToastManager.ShowToast)((StringTable.Get)(tips))
+    ToastManager.ShowToast(StringTable.Get(tips))
   else
     self:Lock("self:StartTask(self.OnchangeBtnOnClick")
     self:StartTask(self.OnchangeBtnOnClick, self)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.OnchangeBtnOnClick = function(self, TT)
-  -- function num : 0_40 , upvalues : _ENV
-  local res = (self._roleModule):Request_AmendHeadImage(TT, self._currHeadID, self._currHeadBgID, self._currHeadFrameID)
+function UIChangeHeadController:OnchangeBtnOnClick(TT)
+  local res = self._roleModule:Request_AmendHeadImage(TT, self._currHeadID, self._currHeadBgID, self._currHeadFrameID)
   self:UnLock("self:StartTask(self.OnchangeBtnOnClick")
   if res:GetSucc() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_player_info_change_head_succ"))
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPlayerHeadInfoChanged)
+    ToastManager.ShowToast(StringTable.Get("str_player_info_change_head_succ"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPlayerHeadInfoChanged)
   else
     local result = res:GetResult()
-    ;
-    (Log.debug)("###[UIChangeHeadController]player info - roleModule:Request_AmendHeadImage result - ", result)
+    Log.debug("###[UIChangeHeadController]player info - roleModule:Request_AmendHeadImage result - ", result)
     local tips = ""
-    if (self._error2str)[result] then
-      tips = (StringTable.Get)((self._error2str)[result])
+    if self._error2str[result] then
+      tips = StringTable.Get(self._error2str[result])
     end
-    ;
-    (ToastManager.ShowToast)(tips)
+    ToastManager.ShowToast(tips)
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.headBgBtnOnClick = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function UIChangeHeadController:headBgBtnOnClick()
   if self._selectHead ~= UIChangeHeadControllerState.Bg then
     self._selectHead = UIChangeHeadControllerState.Bg
     self:ShowHeadAndBgPanel()
@@ -983,15 +722,11 @@ UIChangeHeadController.headBgBtnOnClick = function(self)
     self:ShowUnLockConditions()
     self:ShowDesc()
     self._currTag = -1
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnChangeHeadTagBtnClick, self._currTag)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnChangeHeadTagBtnClick, self._currTag)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.headFrameBtnOnClick = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function UIChangeHeadController:headFrameBtnOnClick()
   if self._selectHead ~= UIChangeHeadControllerState.Frame then
     self._selectHead = UIChangeHeadControllerState.Frame
     self:ShowHeadAndBgPanel()
@@ -999,92 +734,65 @@ UIChangeHeadController.headFrameBtnOnClick = function(self)
     self:ShowUnLockConditions()
     self:ShowDesc()
     self._currTag = -1
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnChangeHeadTagBtnClick, self._currTag)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnChangeHeadTagBtnClick, self._currTag)
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.ShowHeadAndBgPanel = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  ((self._headScrollView).gameObject):SetActive(self._selectHead == UIChangeHeadControllerState.Head)
-  ;
-  ((self._headBgScrollView).gameObject):SetActive(self._selectHead == UIChangeHeadControllerState.Bg)
-  ;
-  ((self._headFrameScrollView).gameObject):SetActive(self._selectHead == UIChangeHeadControllerState.Frame)
-  ;
-  (self._selectBgImg):SetActive(self._selectHead == UIChangeHeadControllerState.Bg)
-  ;
-  (self._selectFrameImg):SetActive(self._selectHead == UIChangeHeadControllerState.Frame)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+function UIChangeHeadController:ShowHeadAndBgPanel()
+  self._headScrollView.gameObject:SetActive(self._selectHead == UIChangeHeadControllerState.Head)
+  self._headBgScrollView.gameObject:SetActive(self._selectHead == UIChangeHeadControllerState.Bg)
+  self._headFrameScrollView.gameObject:SetActive(self._selectHead == UIChangeHeadControllerState.Frame)
+  self._selectBgImg:SetActive(self._selectHead == UIChangeHeadControllerState.Bg)
+  self._selectFrameImg:SetActive(self._selectHead == UIChangeHeadControllerState.Frame)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.CheckCurrHeadInner = function(self)
-  -- function num : 0_44
+function UIChangeHeadController:CheckCurrHeadInner()
   local idx = 0
   for i = 1, #self._headList do
-    if (self._headList)[i] == self._currHeadID then
+    if self._headList[i] == self._currHeadID then
       idx = i
       break
     end
   end
-  do
-    local row = self:GetRowByIdx(idx)
-    ;
-    (self._headScrollView):MovePanelToItemIndex(row, 0)
-  end
+  local row = self:GetRowByIdx(idx)
+  self._headScrollView:MovePanelToItemIndex(row, 0)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.CheckCurrHeadBgInner = function(self)
-  -- function num : 0_45
+function UIChangeHeadController:CheckCurrHeadBgInner()
   local idx = 0
   for i = 1, #self._headBgList do
-    if (self._headBgList)[i] == self._currHeadBgID then
+    if self._headBgList[i] == self._currHeadBgID then
       idx = i
       break
     end
   end
-  do
-    local row = self:GetRowByIdx(idx)
-    ;
-    (self._headBgScrollView):MovePanelToItemIndex(row, 0)
-  end
+  local row = self:GetRowByIdx(idx)
+  self._headBgScrollView:MovePanelToItemIndex(row, 0)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.CheckCurrHeadFrameInner = function(self)
-  -- function num : 0_46
+function UIChangeHeadController:CheckCurrHeadFrameInner()
   local idx = 0
   for i = 1, #self._headFrameList do
-    if ((self._headFrameList)[i]).ID == self._currHeadFrameID then
+    if self._headFrameList[i].ID == self._currHeadFrameID then
       idx = i
       break
     end
   end
-  do
-    local row = self:GetRowByIdx(idx)
-    ;
-    (self._headFrameScrollView):MovePanelToItemIndex(row, 0)
-  end
+  local row = self:GetRowByIdx(idx)
+  self._headFrameScrollView:MovePanelToItemIndex(row, 0)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeHeadController.GetRowByIdx = function(self, idx)
-  -- function num : 0_47 , upvalues : _ENV
-  local row = (math.ceil)(idx / self._itemCountPerRow)
-  if row > 0 then
+function UIChangeHeadController:GetRowByIdx(idx)
+  local row = math.ceil(idx / self._itemCountPerRow)
+  if 0 < row then
     row = row - 1
   end
   return row
 end
 
-local UIChangeHeadControllerState = {Head = 1, Bg = 2, Frame = 3}
+local UIChangeHeadControllerState = {
+  Head = 1,
+  Bg = 2,
+  Frame = 3
+}
 _enum("UIChangeHeadControllerState", UIChangeHeadControllerState)
-

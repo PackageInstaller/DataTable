@@ -1,145 +1,90 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/ui_activity_n21cc_side_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCSideEnter", UICustomWidget)
 UIActivityN21CCSideEnter = UIActivityN21CCSideEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCSideEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN21CCSideEnter:OnShow(uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN21CCSideEnter:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter.OnSideEnterLoad = function(self, TT, setShowCallback, setNewRedCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN21CCSideEnter:OnSideEnterLoad(TT, setShowCallback, setNewRedCallback)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   self._activityConst = UIActivityN21CCConst:New()
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   self._setShowCallback = setShowCallback
   self._setNewRedCallback = setNewRedCallback
-  local isOpen = (self._campaign):CheckCampaignOpen()
+  local isOpen = self._campaign:CheckCampaignOpen()
   if isOpen then
-    (self._setShowCallback)(true)
+    self._setShowCallback(true)
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    return cfg.SideEnterIcon
-  end
+function UIActivityN21CCSideEnter:GetSideEnterRawImage()
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  return cfg and cfg.SideEnterIcon
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter.SetData = function(self, campaign, callback)
-  -- function num : 0_4
+function UIActivityN21CCSideEnter:SetData(campaign, callback)
   self._campaign = campaign
   self._callback = callback
   self:_SetBg()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter._SetBg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    local sideEnterIcon = cfg.SideEnterIcon
-  end
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "bg", sideEnterIcon)
+function UIActivityN21CCSideEnter:_SetBg()
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  local sideEnterIcon = cfg and cfg.SideEnterIcon
+  UIWidgetHelper.SetRawImage(self, "bg", sideEnterIcon)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter.BtnOnClick = function(self)
-  -- function num : 0_6
-  (self._callback)()
+function UIActivityN21CCSideEnter:BtnOnClick()
+  self._callback()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter._AttachEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityN21CCSideEnter:_AttachEvents()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter._DetachEvents = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN21CCSideEnter:_DetachEvents()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_9
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIActivityN21CCSideEnter:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter._OnQuestUpdate = function(self)
-  -- function num : 0_10
+function UIActivityN21CCSideEnter:_OnQuestUpdate()
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter._CheckPoint = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local isShowNew = (self._activityConst):IsShowEntryNew()
-  local isShowRed = (self._activityConst):IsShowEntryRed()
+function UIActivityN21CCSideEnter:_CheckPoint()
+  local isShowNew = self._activityConst:IsShowEntryNew()
+  local isShowRed = self._activityConst:IsShowEntryRed()
   local new = isShowNew and 1 or 0
   local red = isShowRed and 1 or 0
-  ;
-  (UIWidgetHelper.SetNewAndReds)(self, new, red, "new", "red")
+  UIWidgetHelper.SetNewAndReds(self, new, red, "new", "red")
   if self._setNewRedCallback then
-    (self._setNewRedCallback)(new, red)
+    self._setNewRedCallback(new, red)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter._OnAfterUILayerChanged = function(self)
-  -- function num : 0_12
+function UIActivityN21CCSideEnter:_OnAfterUILayerChanged()
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCSideEnter._OnCampaignClose = function(self, id)
-  -- function num : 0_13
-  if (self._campaign)._id == id then
-    (self._setShowCallback)(false)
+function UIActivityN21CCSideEnter:_OnCampaignClose(id)
+  if self._campaign._id == id then
+    self._setShowCallback(false)
   end
 end
-
-

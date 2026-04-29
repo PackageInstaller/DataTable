@@ -1,83 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/pop_star/pop_star_round_enter_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pop_star_round_enter_system")
 _class("PopStarRoundEnterSystem_Render", PopStarRoundEnterSystem)
 PopStarRoundEnterSystem_Render = PopStarRoundEnterSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarRoundEnterSystem_Render._DoRenderTrapBeforePlayer = function(self, TT)
-  -- function num : 0_0
-  local playAISvc = (self._world):GetService("PlayAI")
+function PopStarRoundEnterSystem_Render:_DoRenderTrapBeforePlayer(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundEnterSystem_Render._DoRenderShowPetUI = function(self, TT, curWaveRound)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateRoundCount, curWaveRound)
-  local renderBattleService = (self.world):GetService("RenderBattle")
+function PopStarRoundEnterSystem_Render:_DoRenderShowPetUI(TT, curWaveRound)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateRoundCount, curWaveRound)
+  local renderBattleService = self.world:GetService("RenderBattle")
   renderBattleService:ShowUIPetInfo(TT)
   self:_DoRenderGuidePlayer(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundEnterSystem_Render._DoRenderGuidePlayer = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local guideService = (self._world):GetService("Guide")
+function PopStarRoundEnterSystem_Render:_DoRenderGuidePlayer(TT)
+  local guideService = self._world:GetService("Guide")
   local guideTaskId = guideService:Trigger(GameEventType.GuideRound, GuideRoundTurn.PlayerTurn)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(guideTaskId, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(guideTaskId, true) do
     YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundEnterSystem_Render._DoRenderPlayerTurnBuff = function(self, TT, teamEntity, formerTeamOrder)
-  -- function num : 0_3
+function PopStarRoundEnterSystem_Render:_DoRenderPlayerTurnBuff(TT, teamEntity, formerTeamOrder)
   if teamEntity == nil then
-    return 
+    return
   end
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayPlayerTurnBuff(TT, teamEntity, formerTeamOrder, false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundEnterSystem_Render._DoRenderUpdatePetPower = function(self, TT, tNotifyArray)
-  -- function num : 0_4 , upvalues : _ENV
+function PopStarRoundEnterSystem_Render:_DoRenderUpdatePetPower(TT, tNotifyArray)
   if not tNotifyArray or #tNotifyArray == 0 then
-    return 
+    return
   end
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  for _,notify in ipairs(tNotifyArray) do
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  for _, notify in ipairs(tNotifyArray) do
     playBuffSvc:PlayBuffView(TT, notify)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundEnterSystem_Render._DoRenderSaveRoundBeginPlayerPos = function(self, TT, teamEntity)
-  -- function num : 0_5 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function PopStarRoundEnterSystem_Render:_DoRenderSaveRoundBeginPlayerPos(TT, teamEntity)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTSaveRoundBeginPlayerPosEnd:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarRoundEnterSystem_Render._DoRenderFeatureOnRoundEnter = function(self, TT)
-  -- function num : 0_6
-  local featureRSvc = (self._world):GetService("FeatureRender")
+function PopStarRoundEnterSystem_Render:_DoRenderFeatureOnRoundEnter(TT)
+  local featureRSvc = self._world:GetService("FeatureRender")
   if featureRSvc then
     featureRSvc:DoFeatureOnRoundEnter(TT)
   end
 end
-
-

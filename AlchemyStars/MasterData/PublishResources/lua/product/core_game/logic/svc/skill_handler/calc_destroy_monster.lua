@@ -1,76 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_destroy_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_DestroyMonster", SkillEffectCalc_Base)
 SkillEffectCalc_DestroyMonster = SkillEffectCalc_DestroyMonster
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DestroyMonster.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_DestroyMonster:DoSkillEffectCalculator(skillEffectCalcParam)
   local effectParam = skillEffectCalcParam.skillEffectParam
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
   local destroyType = effectParam:GetDestroyType()
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local Entities = monsterGroup:GetEntities()
   local resultArray = {}
-  if destroyType == SkillEffectDestroyMonsterType.Self and casterEntity:HasMonsterID() then
-    (table.insert)(resultArray, SkillEffectDestroyMonsterResult:New(casterEntity:GetID()))
-  end
-  if destroyType == SkillEffectDestroyMonsterType.MySummonMonster then
-    for i,e in ipairs(Entities) do
+  if destroyType == SkillEffectDestroyMonsterType.Self then
+    if casterEntity:HasMonsterID() then
+      table.insert(resultArray, SkillEffectDestroyMonsterResult:New(casterEntity:GetID()))
+    end
+  elseif destroyType == SkillEffectDestroyMonsterType.MySummonMonster then
+    for i, e in ipairs(Entities) do
       if e:HasSummoner() and e:GetSummonerEntity() == casterEntity then
-        (table.insert)(resultArray, SkillEffectDestroyMonsterResult:New(e:GetID()))
+        table.insert(resultArray, SkillEffectDestroyMonsterResult:New(e:GetID()))
       end
     end
-  else
-    do
-      if destroyType == SkillEffectDestroyMonsterType.InRangeSpecificClass then
-        local monsterClassIdDic = effectParam:GetMonsterClassIdDic()
-        local utilSvc = (self._world):GetService("UtilData")
-        local cfgService = (self._world):GetService("Config")
-        local monsterConfigData = cfgService:GetMonsterConfigData()
-        for _,pos in ipairs(skillEffectCalcParam.skillRange) do
-          local entity = utilSvc:GetMonsterAtPos(R19_PC84)
-          -- DECOMPILER ERROR at PC89: Overwrote pending register: R19 in 'AssignReg'
-
-          if entity then
-            local nMonsterID = (entity:MonsterID()):GetMonsterID()
-            -- DECOMPILER ERROR at PC91: Overwrote pending register: R19 in 'AssignReg'
-
-            R19_PC84 = R19_PC84(monsterConfigData, nMonsterID)
-            local nMonsterClassID = nil
-            if monsterClassIdDic[nMonsterClassID] then
-              (table.insert)(resultArray, SkillEffectDestroyMonsterResult:New(entity:GetID()))
-            end
-          end
+  elseif destroyType == SkillEffectDestroyMonsterType.InRangeSpecificClass then
+    local monsterClassIdDic = effectParam:GetMonsterClassIdDic()
+    local utilSvc = self._world:GetService("UtilData")
+    local cfgService = self._world:GetService("Config")
+    local monsterConfigData = cfgService:GetMonsterConfigData()
+    for _, pos in ipairs(skillEffectCalcParam.skillRange) do
+      local entity = utilSvc:GetMonsterAtPos(pos)
+      if entity then
+        local nMonsterID = entity:MonsterID():GetMonsterID()
+        local nMonsterClassID = monsterConfigData:GetMonsterClassID(nMonsterID)
+        if monsterClassIdDic[nMonsterClassID] then
+          table.insert(resultArray, SkillEffectDestroyMonsterResult:New(entity:GetID()))
+        end
+      end
+    end
+  elseif destroyType == SkillEffectDestroyMonsterType.TargetMonster then
+    local targetIds = skillEffectCalcParam:GetTargetEntityIDs()
+    if targetIds then
+      if type(targetIds) == "table" then
+        for _, targetId in ipairs(targetIds) do
+          table.insert(resultArray, SkillEffectDestroyMonsterResult:New(targetId))
         end
       else
-        do
-          if destroyType == SkillEffectDestroyMonsterType.TargetMonster then
-            local targetIds = skillEffectCalcParam:GetTargetEntityIDs()
-            if targetIds then
-              if type(targetIds) == "table" then
-                for _,targetId in ipairs(targetIds) do
-                  (table.insert)(resultArray, SkillEffectDestroyMonsterResult:New(R18_PC132))
-                end
-              else
-                do
-                  do
-                    ;
-                    (table.insert)(resultArray, SkillEffectDestroyMonsterResult:New(targetIds))
-                    return resultArray
-                  end
-                end
-              end
-            end
-          end
-        end
+        table.insert(resultArray, SkillEffectDestroyMonsterResult:New(targetIds))
       end
     end
   end
+  return resultArray
 end
-
-

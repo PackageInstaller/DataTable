@@ -1,25 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_daily_limit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, DayIndex = 2, ComponentID = 3, IncreaseScoreLimit = 4}
+local key = {
+  ID = 1,
+  DayIndex = 2,
+  ComponentID = 3,
+  IncreaseScoreLimit = 4
+}
 local config = {
-{1, 1, 101902002, 2000}
-, 
-{2, 2, 101902002, 2000}
-, 
-{3, 3, 101902002, 2000}
-, 
-{4, 4, 101902002, 2000}
-, 
-{5, 5, 101902002, 2000}
-, 
-{6, 6, 101902002, 2000}
-, 
-{7, 7, 101902002, 2000}
-, 
-{8, 8, 101902002, 2000}
+  {
+    1,
+    1,
+    101902002,
+    2000
+  },
+  {
+    2,
+    2,
+    101902002,
+    2000
+  },
+  {
+    3,
+    3,
+    101902002,
+    2000
+  },
+  {
+    4,
+    4,
+    101902002,
+    2000
+  },
+  {
+    5,
+    5,
+    101902002,
+    2000
+  },
+  {
+    6,
+    6,
+    101902002,
+    2000
+  },
+  {
+    7,
+    7,
+    101902002,
+    2000
+  },
+  {
+    8,
+    8,
+    101902002,
+    2000
+  }
 }
 return config, "ID", key
-

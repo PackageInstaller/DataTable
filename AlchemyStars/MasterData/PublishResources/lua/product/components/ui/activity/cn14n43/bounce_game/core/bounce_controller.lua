@@ -1,403 +1,266 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/core/bounce_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("bounce_obj_mgr")
 _class("BounceController", Object)
 BounceController = BounceController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BounceController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function BounceController:Constructor()
   self.bounceData = BounceData:New()
   self.monsterPool = BounceMonsterPool:New()
   self.objMgr = BounceObjMgr:New()
   self.monsterGenerator = {}
-  self.firstGuideStepPositionKeys = {"guide5420082", "guide5420083", "guide5420085", "guide5420086", "guide5420087"}
-  self.secondGuideStepPositionKeys = {"guide5420092", "guide5420093", "guide5420094"}
-  self.guideModule = (GameGlobal.GetModule)(GuideModule)
+  self.firstGuideStepPositionKeys = {
+    "guide5420082",
+    "guide5420083",
+    "guide5420085",
+    "guide5420086",
+    "guide5420087"
+  }
+  self.secondGuideStepPositionKeys = {
+    "guide5420092",
+    "guide5420093",
+    "guide5420094"
+  }
+  self.guideModule = GameGlobal.GetModule(GuideModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.Init = function(self, uiController, levelId, selectPlayer, historyBestScore)
-  -- function num : 0_1 , upvalues : _ENV
+function BounceController:Init(uiController, levelId, selectPlayer, historyBestScore)
   self.uiController = uiController
-  ;
-  (self.bounceData):Init(levelId, selectPlayer, historyBestScore)
-  ;
-  (MonsterFactory.Init)()
-  ;
-  (EffectManager.Init)()
-  ;
-  (self.objMgr):Init(self)
-  ;
-  (self.uiController):SetViewVisibleByBouceState(StateBounce.Init)
-  self.fsm = (StateMachineManager:GetInstance()):CreateStateMachine("StateBounce", StateBounce)
-  ;
-  (self.fsm):SetData(self)
-  ;
-  (self.fsm):Init(StateBounce.Init)
+  self.bounceData:Init(levelId, selectPlayer, historyBestScore)
+  MonsterFactory.Init()
+  EffectManager.Init()
+  self.objMgr:Init(self)
+  self.uiController:SetViewVisibleByBouceState(StateBounce.Init)
+  self.fsm = StateMachineManager:GetInstance():CreateStateMachine("StateBounce", StateBounce)
+  self.fsm:SetData(self)
+  self.fsm:Init(StateBounce.Init)
   self.playerChangeStateRefUICallFun = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.OnQuick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.fsm):SetData(nil)
-  ;
-  (StateMachineManager:GetInstance()):DestroyStateMachine((self.fsm).Id)
+function BounceController:OnQuick()
+  self.fsm:SetData(nil)
+  StateMachineManager:GetInstance():DestroyStateMachine(self.fsm.Id)
   self.fsm = nil
-  ;
-  (MonsterFactory.Destroy)()
-  ;
-  (EffectManager.Destroy)()
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
+  MonsterFactory.Destroy()
+  EffectManager.Destroy()
   BouncePlayerData.DebugIns = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.OnRestartGame = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.objMgr):Reset()
+function BounceController:OnRestartGame()
+  self.objMgr:Reset()
   self:ChgFsmState(StateBounce.Prepare)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetData = function(self)
-  -- function num : 0_4
+function BounceController:GetData()
   return self.bounceData
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetUIController = function(self)
-  -- function num : 0_5
+function BounceController:GetUIController()
   return self.uiController
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetObjMgr = function(self)
-  -- function num : 0_6
+function BounceController:GetObjMgr()
   return self.objMgr
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetMonsterPool = function(self)
-  -- function num : 0_7
+function BounceController:GetMonsterPool()
   return self.monsterPool
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetMonsterGenerator = function(self)
-  -- function num : 0_8
+function BounceController:GetMonsterGenerator()
   return self.monsterGenerator
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetObjectsRoot = function(self)
-  -- function num : 0_9
-  return (self.uiController):GetCanvasRt()
+function BounceController:GetObjectsRoot()
+  return self.uiController:GetCanvasRt()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.IsOvering = function(self)
-  -- function num : 0_10
-  return (self.bounceData).isOvering
+function BounceController:IsOvering()
+  return self.bounceData.isOvering
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_11 , upvalues : _ENV
-  (EffectManager.Update)(deltaTimeMS)
-  if (self.bounceData).isGuiding and (GuideHelper.IsUIGuideShow)() then
-    return 
+function BounceController:OnUpdate(deltaTimeMS)
+  EffectManager.Update(deltaTimeMS)
+  if self.bounceData.isGuiding and GuideHelper.IsUIGuideShow() then
+    return
   end
-  do
-    if (self.bounceData).isGuiding then
-      local isGuiding = (self.guideModule):IsGuideProcess((self.bounceData).guidingId)
-      ;
-      (self.bounceData):SetIsGuiding(isGuiding)
+  if self.bounceData.isGuiding then
+    local isGuiding = self.guideModule:IsGuideProcess(self.bounceData.guidingId)
+    self.bounceData:SetIsGuiding(isGuiding)
+  end
+  if self.bounceData.isOvering then
+    self.bounceData.overTime = self.bounceData.overTime - deltaTimeMS
+    if self.bounceData.overTime <= 0 then
+      self.bounceData.isOvering = false
+      local params = self:GetOverParam()
+      self:ChgFsmState(StateBounce.Over, params)
+      return
     end
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-    if (self.bounceData).isOvering then
-      (self.bounceData).overTime = (self.bounceData).overTime - deltaTimeMS
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-      if (self.bounceData).overTime <= 0 then
-        (self.bounceData).isOvering = false
-        local params = self:GetOverParam()
-        self:ChgFsmState(StateBounce.Over, params)
-        return 
-      end
-    end
-    do
-      if self.fsm then
-        (self.fsm):OnUpdate(deltaTimeMS)
-      end
-    end
+  end
+  if self.fsm then
+    self.fsm:OnUpdate(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.OnJump = function(self, fromPC)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self.bounceData).isGuiding and not (GuideHelper.IsUIGuideShow)() then
-    return 
+function BounceController:OnJump(fromPC)
+  if self.bounceData.isGuiding and not GuideHelper.IsUIGuideShow() then
+    return
   end
-  if (self.bounceData).isOvering then
-    return 
+  if self.bounceData.isOvering then
+    return
   end
-  do
-    if fromPC and (self.bounceData).isGuiding then
-      local res = self:CheckKeyOperate("JumpBtn")
-      if not res then
-        return 
-      end
+  if fromPC and self.bounceData.isGuiding then
+    local res = self:CheckKeyOperate("JumpBtn")
+    if not res then
+      return
     end
-    local curState = (self.fsm):GetCurState()
-    curState:OnJump()
   end
+  local curState = self.fsm:GetCurState()
+  curState:OnJump()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.OnAttack = function(self, fromPC)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self.bounceData).isGuiding and not (GuideHelper.IsUIGuideShow)() then
-    return 
+function BounceController:OnAttack(fromPC)
+  if self.bounceData.isGuiding and not GuideHelper.IsUIGuideShow() then
+    return
   end
-  if (self.bounceData).isOvering then
-    return 
+  if self.bounceData.isOvering then
+    return
   end
-  do
-    if fromPC and (self.bounceData).isGuiding then
-      local res = self:CheckKeyOperate("AttackBtn")
-      if not res then
-        return 
-      end
+  if fromPC and self.bounceData.isGuiding then
+    local res = self:CheckKeyOperate("AttackBtn")
+    if not res then
+      return
     end
-    local curState = (self.fsm):GetCurState()
-    curState:OnAttack()
   end
+  local curState = self.fsm:GetCurState()
+  curState:OnAttack()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.CheckKeyOperate = function(self, btnEvent)
-  -- function num : 0_14 , upvalues : _ENV
-  local guides = (self.guideModule):GetCurGuides()
+function BounceController:CheckKeyOperate(btnEvent)
+  local guides = self.guideModule:GetCurGuides()
   if not guides then
     return false
   end
-  for _,guide in pairs(guides) do
+  for _, guide in pairs(guides) do
     local curStep = guide:GetCurStep()
-    if curStep and curStep.show and curStep.btnGuideCfg and (curStep.btnGuideCfg).guideArea == btnEvent then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ForceFinishGuideStep, GuideType.Button)
+    if curStep and curStep.show and curStep.btnGuideCfg and curStep.btnGuideCfg.guideArea == btnEvent then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ForceFinishGuideStep, GuideType.Button)
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.ChgFsmState = function(self, newState, params)
-  -- function num : 0_15 , upvalues : _ENV
-  (Log.debug)("[bounce] BounceController chgfsmState " .. newState)
+function BounceController:ChgFsmState(newState, params)
+  Log.debug("[bounce] BounceController chgfsmState " .. newState)
   if not self.fsm then
-    return 
+    return
   end
-  ;
-  (self.uiController):SetViewVisibleByBouceState(newState, params)
-  ;
-  (self.fsm):ChangeState(newState)
+  self.uiController:SetViewVisibleByBouceState(newState, params)
+  self.fsm:ChangeState(newState)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetPlayerPrefabName = function(self)
-  -- function num : 0_16
-  return (self.bounceData).palyerRes
+function BounceController:GetPlayerPrefabName()
+  return self.bounceData.palyerRes
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.MonsterDead = function(self, monsterId)
-  -- function num : 0_17 , upvalues : _ENV
-  local monsterCfg = (Cfg.cfg_bounce_monster)[monsterId]
+function BounceController:MonsterDead(monsterId)
+  local monsterCfg = Cfg.cfg_bounce_monster[monsterId]
   if not monsterCfg then
     return nil
   end
   if monsterCfg.Score then
     self:AddScore(monsterCfg.Score)
   end
-  ;
-  (self.uiController):MonsterDead(monsterId)
-  -- DECOMPILER ERROR at PC26: Unhandled construct in 'MakeBoolean' P1
-
-  if (self.bounceData).targetMonster > 0 and (self.bounceData).targetMonster == monsterId then
+  self.uiController:MonsterDead(monsterId)
+  if self.bounceData.targetMonster > 0 then
+    if self.bounceData.targetMonster == monsterId then
+      self:StartOver()
+      self.bounceData:SetKilledBoss(true)
+    end
+  elseif self.bounceData.targetScore <= self.bounceData.score then
     self:StartOver()
-    ;
-    (self.bounceData):SetKilledBoss(true)
+    return
   end
-  if (self.bounceData).targetScore <= (self.bounceData).score then
-    self:StartOver()
-    return 
-  end
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self.bounceData).hasGenBoss and (self.bounceData).genBossId and (self.bounceData).genBossScore <= (self.bounceData).score then
-    (self.bounceData).hasGenBoss = true
-    local monsterId = (self.bounceData).genBossId
-    local monster = (self.monsterPool):Get(monsterId)
+  if not self.bounceData.hasGenBoss and self.bounceData.genBossId and self.bounceData.genBossScore <= self.bounceData.score then
+    self.bounceData.hasGenBoss = true
+    local monsterId = self.bounceData.genBossId
+    local monster = self.monsterPool:Get(monsterId)
     monster:SetCoreController(self)
-    local view = monster:GetBehavior((MonsterBeHaviorView.Name)())
+    local view = monster:GetBehavior(MonsterBeHaviorView.Name())
     if view then
       view:SetParent(self:GetObjectsRoot())
     end
-    local posBehaviour = monster:GetBehavior((MonsterBeHaviorPosition.Name)())
+    local posBehaviour = monster:GetBehavior(MonsterBeHaviorPosition.Name())
     if posBehaviour then
-      posBehaviour:SetPosition((self.bounceData).genBossPos)
+      posBehaviour:SetPosition(self.bounceData.genBossPos)
     end
-    ;
-    (self.objMgr):AddMonster(monster)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N28BoucneAccBossEnter)
-    if (self.bounceData).levelId == 6 and not (self.guideModule):IsGuideDone(BounceConst.GuideBoss1) then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIBounceMainControllerBoss1)
-      -- DECOMPILER ERROR at PC120: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.bounceData).guidingId = BounceConst.GuideBoss1
-      local isGuiding = (self.guideModule):IsGuideProcess(BounceConst.GuideBoss1)
-      ;
-      (self.bounceData):SetIsGuiding(isGuiding)
+    self.objMgr:AddMonster(monster)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N28BoucneAccBossEnter)
+    if self.bounceData.levelId == 6 and not self.guideModule:IsGuideDone(BounceConst.GuideBoss1) then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIBounceMainControllerBoss1)
+      self.bounceData.guidingId = BounceConst.GuideBoss1
+      local isGuiding = self.guideModule:IsGuideProcess(BounceConst.GuideBoss1)
+      self.bounceData:SetIsGuiding(isGuiding)
     end
-    do
-      ;
-      (self.uiController):PauseMoveBOSSBG_ShowBoss()
-    end
+    self.uiController:PauseMoveBOSSBG_ShowBoss()
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.StartOver = function(self)
-  -- function num : 0_18
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.bounceData).isOvering = true
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.bounceData).overTime = 2000
+function BounceController:StartOver()
+  self.bounceData.isOvering = true
+  self.bounceData.overTime = 2000
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetOverParam = function(self)
-  -- function num : 0_19
+function BounceController:GetOverParam()
   local param = {}
-  param.Score = (self.bounceData).score
-  param.HistoryBestScore = (self.bounceData).historyBestScore
+  param.Score = self.bounceData.score
+  param.HistoryBestScore = self.bounceData.historyBestScore
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.AddScore = function(self, score)
-  -- function num : 0_20
-  (self.bounceData):AddScore(score)
-  ;
-  (self.uiController):ScoreChange((self.bounceData):GetScore())
+function BounceController:AddScore(score)
+  self.bounceData:AddScore(score)
+  self.uiController:ScoreChange(self.bounceData:GetScore())
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.ShowHPProgress = function(self, serializeId, maxValue)
-  -- function num : 0_21
-  (self.uiController):ShowHPProgress(serializeId, maxValue)
+function BounceController:ShowHPProgress(serializeId, maxValue)
+  self.uiController:ShowHPProgress(serializeId, maxValue)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.HideHPProgress = function(self, serializeId)
-  -- function num : 0_22
-  (self.uiController):HideHPProgress(serializeId)
+function BounceController:HideHPProgress(serializeId)
+  self.uiController:HideHPProgress(serializeId)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.HPProgressChange = function(self, serializeId, currentValue, maxValue)
-  -- function num : 0_23
-  (self.uiController):HPProgressChange(serializeId, currentValue, maxValue)
+function BounceController:HPProgressChange(serializeId, currentValue, maxValue)
+  self.uiController:HPProgressChange(serializeId, currentValue, maxValue)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetGameData = function(self)
-  -- function num : 0_24
+function BounceController:GetGameData()
   return self.bounceData
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.GetGuideRt = function(self, guideStepKey)
-  -- function num : 0_25
-  return (self.uiController):GetGuideRt(guideStepKey)
+function BounceController:GetGuideRt(guideStepKey)
+  return self.uiController:GetGuideRt(guideStepKey)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.SetGuideStepShow = function(self, guideStepKey)
-  -- function num : 0_26
-  (self.uiController):SetGuideStepShow(guideStepKey)
+function BounceController:SetGuideStepShow(guideStepKey)
+  self.uiController:SetGuideStepShow(guideStepKey)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.SetGuidePosition = function(self, key, position)
-  -- function num : 0_27
-  (self.uiController):SetGuidePosition(key, position)
+function BounceController:SetGuidePosition(key, position)
+  self.uiController:SetGuidePosition(key, position)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.OnTrigerGuideStep = function(self, guideStepKey)
-  -- function num : 0_28 , upvalues : _ENV
-  (Log.debug)("[bounce] Guide_CheckMonsterPosition " .. guideStepKey)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N28BounceGameArriveTarget, guideStepKey)
+function BounceController:OnTrigerGuideStep(guideStepKey)
+  Log.debug("[bounce] Guide_CheckMonsterPosition " .. guideStepKey)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.N28BounceGameArriveTarget, guideStepKey)
   self:SetGuideStepShow(guideStepKey)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.SetPlayerChangeStateRefUICallFun = function(self, fun)
-  -- function num : 0_29
+function BounceController:SetPlayerChangeStateRefUICallFun(fun)
   self.playerChangeStateRefUICallFun = fun
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-BounceController.PlayerChangeState = function(self, isLeaveGround)
-  -- function num : 0_30
+function BounceController:PlayerChangeState(isLeaveGround)
   if self.playerChangeStateRefUICallFun then
-    (self.playerChangeStateRefUICallFun)(isLeaveGround)
+    self.playerChangeStateRefUICallFun(isLeaveGround)
   end
 end
-
-

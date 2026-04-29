@@ -1,97 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n31_center.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN31Center", ICampaignComponentLocalProcessBase)
 CCampaignN31Center = CCampaignN31Center
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN31Center.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN31Center:Constructor()
   self._popstarMissionComponent = nil
   self._popstarMissionComponentInfo = nil
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Center.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN31Center:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N31_CENTER
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Center.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN31Center:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Center.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN31Center:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetPopStarMissionComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Center._GetPopStarMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._popstarMissionComponent = (self._campaignObj):GetComponent(ECampaignN31CenterComponentID.ECAMPAIGN_N31Center_POPSTAR_MISSION)
+function CCampaignN31Center:_GetPopStarMissionComponent()
+  self._popstarMissionComponent = self._campaignObj:GetComponent(ECampaignN31CenterComponentID.ECAMPAIGN_N31Center_POPSTAR_MISSION)
   if not self._popstarMissionComponent then
-    return 
+    return
   end
-  self._popstarMissionComponentInfo = (self._popstarMissionComponent):ComponentInfo()
+  self._popstarMissionComponentInfo = self._popstarMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Center.GetComponent = function(self, componentID)
-  -- function num : 0_5 , upvalues : _ENV
+function CCampaignN31Center:GetComponent(componentID)
   if ECampaignN31CenterComponentID.ECAMPAIGN_N31Center_POPSTAR_MISSION == componentID then
     return self._popstarMissionComponent
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Center.GetComponentInfo = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignN31Center:GetComponentInfo(componentID)
   if ECampaignN31CenterComponentID.ECAMPAIGN_N31Center_POPSTAR_MISSION == componentID then
     return self._popstarMissionComponentInfo
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31Center.GetEntryNew = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN31Center:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N31_CENTER)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31.GetEntryRedDot = function(self)
-  -- function num : 0_8
+function CCampaignN31:GetEntryRedDot()
   return self:PopStarMissionReddot()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN31.PopStarMissionReddot = function(self)
-  -- function num : 0_9
-  if self._popstarMissionComponent then
-    return (self._popstarMissionComponent):HaveRedPoint()
-  end
+function CCampaignN31:PopStarMissionReddot()
+  return self._popstarMissionComponent and self._popstarMissionComponent:HaveRedPoint()
 end
-
-

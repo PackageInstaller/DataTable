@@ -1,82 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/show_death_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ShowDeathComponent", Object)
 ShowDeathComponent = ShowDeathComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ShowDeathComponent.Constructor = function(self)
-  -- function num : 0_0
+function ShowDeathComponent:Constructor()
   self._isShowDeathEnd = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowDeathComponent.SetShowDeathEnd = function(self, isEnd)
-  -- function num : 0_1
+function ShowDeathComponent:SetShowDeathEnd(isEnd)
   self._isShowDeathEnd = isEnd
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowDeathComponent.IsShowDeathEnd = function(self)
-  -- function num : 0_2
+function ShowDeathComponent:IsShowDeathEnd()
   return self._isShowDeathEnd
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowDeathComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_3
+function ShowDeathComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ShowDeathComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_4
+function ShowDeathComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ShowDeath = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).ShowDeath)
+function Entity:ShowDeath()
+  return self:GetComponent(self.WEComponentsEnum.ShowDeath)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasShowDeath = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).ShowDeath)
+function Entity:HasShowDeath()
+  return self:HasComponent(self.WEComponentsEnum.ShowDeath)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddShowDeath = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ShowDeath
+function Entity:AddShowDeath()
+  local index = self.WEComponentsEnum.ShowDeath
   local component = ShowDeathComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceShowDeath = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).ShowDeath
+function Entity:ReplaceShowDeath()
+  local index = self.WEComponentsEnum.ShowDeath
   local component = ShowDeathComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveShowDeath = function(self)
-  -- function num : 0_9
+function Entity:RemoveShowDeath()
   if self:HasShowDeath() then
-    self:RemoveComponent((self.WEComponentsEnum).ShowDeath)
+    self:RemoveComponent(self.WEComponentsEnum.ShowDeath)
   end
 end
-
-

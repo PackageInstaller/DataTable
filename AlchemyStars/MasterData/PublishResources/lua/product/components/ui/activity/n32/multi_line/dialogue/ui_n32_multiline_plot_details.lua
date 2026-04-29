@@ -1,32 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/dialogue/ui_n32_multiline_plot_details.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLinePlotDetails", UIController)
 UIN32MultiLinePlotDetails = UIN32MultiLinePlotDetails
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLinePlotDetails.Constructor = function(self)
-  -- function num : 0_0
+function UIN32MultiLinePlotDetails:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLinePlotDetails.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN32MultiLinePlotDetails:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLinePlotDetails.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN32MultiLinePlotDetails:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLinePlotDetails.OnHide = function(self)
-  -- function num : 0_3
+function UIN32MultiLinePlotDetails:OnHide()
 end
-
-

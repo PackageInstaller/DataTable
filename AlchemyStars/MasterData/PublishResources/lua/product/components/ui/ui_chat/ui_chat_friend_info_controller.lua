@@ -1,68 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_chat/ui_chat_friend_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChatFriendInfoController", UIController)
 UIChatFriendInfoController = UIChatFriendInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChatFriendInfoController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIChatFriendInfoController:LoadDataOnEnter(TT, res, uiParams)
   self._friendId = uiParams[1]
   self._chatFriendManager = uiParams[2]
   self:_RequestData(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController._RequestData = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._chatFriendManager):RequestFriendList(TT)
-  self._isMyFriend = (self._chatFriendManager):IsMyFriend(self._friendId)
-  self._isInBlackList = (self._chatFriendManager):IsInBlackList(self._friendId)
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIChatFriendInfoController:_RequestData(TT)
+  self._chatFriendManager:RequestFriendList(TT)
+  self._isMyFriend = self._chatFriendManager:IsMyFriend(self._friendId)
+  self._isInBlackList = self._chatFriendManager:IsInBlackList(self._friendId)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   self._isSelf = self._friendId == roleModule:GetPstId()
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   local res, tempPlayerDetailInfo = socialModule:HandleGetPlayerDetailInfo(TT, self._friendId)
   if not res:GetSucc() then
-    (self._chatFriendManager):HandleErrorMsgCode(res:GetResult())
-    return 
+    self._chatFriendManager:HandleErrorMsgCode(res:GetResult())
+    return
   end
   local playerDetailInfo = tempPlayerDetailInfo
   local simpleInfo = playerDetailInfo.simple_info
   local chatFriendData = ChatFriendData:New(simpleInfo.pstid, simpleInfo.head, simpleInfo.head_bg, simpleInfo.frame_id, simpleInfo.level, simpleInfo.nick, false, simpleInfo.is_online, simpleInfo.create_time, 0, simpleInfo.last_logout_time, simpleInfo.remark_name, simpleInfo.help_pet, simpleInfo.world_boss_info, simpleInfo.homeland_info)
   self._friendDetailData = ChatFriendDetailData:New(chatFriendData, playerDetailInfo)
-  self._friendData = (self._friendDetailData):GetFriendData()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._friendData = self._friendDetailData:GetFriendData()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChatFriendInfoController:OnShow(uiParams)
   self:_GetComponents()
   if not self._friendData then
-    (Log.error)("friend data is nil")
-    return 
+    Log.error("friend data is nil")
+    return
   end
   self:AttachEvent(GameEventType.ChangeFriendInfoSuccess, self._Refresh)
   self:AttachEvent(GameEventType.UpdateFriendInfo, self._UpdateFriendInfo)
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIChatFriendInfoController:OnHide()
   self:DetachEvent(GameEventType.ChangeFriendInfoSuccess, self._Refresh)
   self:DetachEvent(GameEventType.UpdateFriendInfo, self._UpdateFriendInfo)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController._GetComponents = function(self)
-  -- function num : 0_4
+function UIChatFriendInfoController:_GetComponents()
   self._headBg = self:GetUIComponent("UICircleMaskLoader", "headBg")
   self._head = self:GetUIComponent("RawImageLoader", "head")
   self._headRect = self:GetUIComponent("RectTransform", "head")
@@ -83,8 +63,7 @@ UIChatFriendInfoController._GetComponents = function(self)
   self._petPanel = self:GetUIComponent("UISelectObjectPath", "PetPanel")
   self._petList = {}
   self._maxPetCount = 4
-  ;
-  (self._petPanel):SpawnObjects("UIChatPetItem", self._maxPetCount, self._petList)
+  self._petPanel:SpawnObjects("UIChatPetItem", self._maxPetCount, self._petList)
   self._missionProgress = self:GetUIComponent("UILocalizationText", "missionProgress")
   self._missionStar = self:GetUIComponent("UILocalizationText", "missionStar")
   self._petCount = self:GetUIComponent("UILocalizationText", "petCount")
@@ -110,362 +89,215 @@ UIChatFriendInfoController._GetComponents = function(self)
   self._visitHomeGo = self:GetGameObject("VisitHomeBtn")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController._Init = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._headBg):LoadImage((self._friendData):GetHeadBgName())
-  local iconName, iconTag = (self._friendData):GetHeadIconName()
-  ;
-  (self._head):LoadImage(iconName)
-  if not (string.isnullorempty)(iconTag) then
-    (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._headRect, iconTag)
+function UIChatFriendInfoController:_Init()
+  self._headBg:LoadImage(self._friendData:GetHeadBgName())
+  local iconName, iconTag = self._friendData:GetHeadIconName()
+  self._head:LoadImage(iconName)
+  if not string.isnullorempty(iconTag) then
+    HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._headRect, iconTag)
   end
-  ;
-  (self._frame):LoadImage((self._friendData):GetHeadFrameName())
-  ;
-  (UIWorldBossHelper.InitOtherDanBadgeSimple)(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, (self._friendData):GetWorldBossInfo())
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgSizeWithTag(self._headBgRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadBgMaskSizeWithTag(self._headBgMaskRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadFrameSizeWithTag(self._frameRect)
-  ;
-  (HelperProxy:GetInstance()):GetHeadRootSizeWithTag(self._headRoot, RoleHeadFrameSizeType.Size5)
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._name).text = (self._friendData):GetName()
-  -- DECOMPILER ERROR at PC82: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._level).text = (StringTable.Get)("str_chat_level", tostring((self._friendData):GetLevel()))
-  -- DECOMPILER ERROR at PC87: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._id).text = (self._friendData):GetShowFriendId()
-  ;
-  (self._playInfoBtnOnGo):SetActive(true)
-  ;
-  (self._battleInfoBtnOnGo):SetActive(false)
-  ;
-  (self._playerInfoPanelGo):SetActive(true)
-  ;
-  (self._battleInfoPanelGo):SetActive(false)
+  self._frame:LoadImage(self._friendData:GetHeadFrameName())
+  UIWorldBossHelper.InitOtherDanBadgeSimple(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, self._friendData:GetWorldBossInfo())
+  HelperProxy:GetInstance():GetHeadBgSizeWithTag(self._headBgRect)
+  HelperProxy:GetInstance():GetHeadBgMaskSizeWithTag(self._headBgMaskRect)
+  HelperProxy:GetInstance():GetHeadFrameSizeWithTag(self._frameRect)
+  HelperProxy:GetInstance():GetHeadRootSizeWithTag(self._headRoot, RoleHeadFrameSizeType.Size5)
+  self._name.text = self._friendData:GetName()
+  self._level.text = StringTable.Get("str_chat_level", tostring(self._friendData:GetLevel()))
+  self._id.text = self._friendData:GetShowFriendId()
+  self._playInfoBtnOnGo:SetActive(true)
+  self._battleInfoBtnOnGo:SetActive(false)
+  self._playerInfoPanelGo:SetActive(true)
+  self._battleInfoPanelGo:SetActive(false)
   if self._isSelf then
-    (self._addFriendBtnGo):SetActive(false)
-    ;
-    (self._changeNameBtnGo):SetActive(false)
-    ;
-    (self._otherBtnGo):SetActive(false)
-    ;
-    (self._visitHomeGo):SetActive(false)
+    self._addFriendBtnGo:SetActive(false)
+    self._changeNameBtnGo:SetActive(false)
+    self._otherBtnGo:SetActive(false)
+    self._visitHomeGo:SetActive(false)
   else
-    ;
-    (self._addFriendBtnGo):SetActive(not self._isMyFriend)
-    ;
-    (self._changeNameBtnGo):SetActive(self._isMyFriend)
-    if self._isMyFriend then
-      (self._visitHomeGo):SetActive(self:_CanVisit())
-      local petList = (self._friendData):GetPetDataList()
-      for i = 1, self._maxPetCount do
-        if petList and petList[i] then
-          ((self._petList)[i]):Refresh(petList[i])
-        else
-          ;
-          ((self._petList)[i]):Refresh(nil)
-        end
-      end
-      local des = (self._friendDetailData):GetDes()
-      -- DECOMPILER ERROR at PC179: Confused about usage of register: R5 in 'UnsetPending'
-
-      if (string.isnullorempty)(des) then
-        (self._des).text = (StringTable.Get)("str_chat_self_des_is_empty")
-      else
-        -- DECOMPILER ERROR at PC182: Confused about usage of register: R5 in 'UnsetPending'
-
-        ;
-        (self._des).text = des
-      end
-      -- DECOMPILER ERROR at PC187: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._time).text = (self._friendData):GetCreateDateStr()
-      local currMissionID = (self._friendDetailData):GetCurrentMissionId()
-      local cfg_mission = (Cfg.cfg_mission)[currMissionID]
-      do
-        if cfg_mission then
-          local cfgName = (DiscoveryStage.GetStageIndexString)(currMissionID) .. (StringTable.Get)(cfg_mission.Name)
-          ;
-          (self._missionProgress):SetText(cfgName)
-        end
-        local star = (self._friendDetailData):GetStar()
-        -- DECOMPILER ERROR at PC213: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._missionStar).text = star
-        local petCount = (self._friendDetailData):GetPetCount()
-        -- DECOMPILER ERROR at PC218: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self._petCount).text = petCount
-        local achievementPoint = (self._friendDetailData):GetAchievementPoint()
-        local achievementPointAll = (self._friendDetailData):GetAllAchievementPoint()
-        -- DECOMPILER ERROR at PC232: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._achievementPoint).text = "<color=#ffd300>" .. achievementPoint .. "</color>" .. "/" .. achievementPointAll
-        local towerWater = (self._friendDetailData):GetTowerWater()
-        ;
-        (self._towerwater):SetText("【" .. (StringTable.Get)("str_tower_water") .. "】\n" .. (string.format)((StringTable.Get)("str_tower_cur_layer"), "<color=#ffd300>" .. towerWater .. "</color>"))
-        local towerFire = (self._friendDetailData):GetTowerFire()
-        ;
-        (self._towerfire):SetText("【" .. (StringTable.Get)("str_tower_fire") .. "】\n" .. (string.format)((StringTable.Get)("str_tower_cur_layer"), "<color=#ffd300>" .. towerFire .. "</color>"))
-        local towerWood = (self._friendDetailData):GetTowerWood()
-        ;
-        (self._towerwood):SetText("【" .. (StringTable.Get)("str_tower_wood") .. "】\n" .. (string.format)((StringTable.Get)("str_tower_cur_layer"), "<color=#ffd300>" .. towerWood .. "</color>"))
-        local towerThunder = (self._friendDetailData):GetTowerThunder()
-        ;
-        (self._towerthunder):SetText("【" .. (StringTable.Get)("str_tower_thunder") .. "】\n" .. (string.format)((StringTable.Get)("str_tower_cur_layer"), "<color=#ffd300>" .. towerThunder .. "</color>"))
-        self:RankValue()
-      end
+    self._addFriendBtnGo:SetActive(not self._isMyFriend)
+    self._changeNameBtnGo:SetActive(self._isMyFriend)
+    self._visitHomeGo:SetActive(self._isMyFriend and self:_CanVisit())
+  end
+  local petList = self._friendData:GetPetDataList()
+  for i = 1, self._maxPetCount do
+    if petList and petList[i] then
+      self._petList[i]:Refresh(petList[i])
+    else
+      self._petList[i]:Refresh(nil)
     end
   end
+  local des = self._friendDetailData:GetDes()
+  if string.isnullorempty(des) then
+    self._des.text = StringTable.Get("str_chat_self_des_is_empty")
+  else
+    self._des.text = des
+  end
+  self._time.text = self._friendData:GetCreateDateStr()
+  local currMissionID = self._friendDetailData:GetCurrentMissionId()
+  local cfg_mission = Cfg.cfg_mission[currMissionID]
+  if cfg_mission then
+    local cfgName = DiscoveryStage.GetStageIndexString(currMissionID) .. StringTable.Get(cfg_mission.Name)
+    self._missionProgress:SetText(cfgName)
+  end
+  local star = self._friendDetailData:GetStar()
+  self._missionStar.text = star
+  local petCount = self._friendDetailData:GetPetCount()
+  self._petCount.text = petCount
+  local achievementPoint = self._friendDetailData:GetAchievementPoint()
+  local achievementPointAll = self._friendDetailData:GetAllAchievementPoint()
+  self._achievementPoint.text = "<color=#ffd300>" .. achievementPoint .. "</color>" .. "/" .. achievementPointAll
+  local towerWater = self._friendDetailData:GetTowerWater()
+  self._towerwater:SetText("【" .. StringTable.Get("str_tower_water") .. "】\n" .. string.format(StringTable.Get("str_tower_cur_layer"), "<color=#ffd300>" .. towerWater .. "</color>"))
+  local towerFire = self._friendDetailData:GetTowerFire()
+  self._towerfire:SetText("【" .. StringTable.Get("str_tower_fire") .. "】\n" .. string.format(StringTable.Get("str_tower_cur_layer"), "<color=#ffd300>" .. towerFire .. "</color>"))
+  local towerWood = self._friendDetailData:GetTowerWood()
+  self._towerwood:SetText("【" .. StringTable.Get("str_tower_wood") .. "】\n" .. string.format(StringTable.Get("str_tower_cur_layer"), "<color=#ffd300>" .. towerWood .. "</color>"))
+  local towerThunder = self._friendDetailData:GetTowerThunder()
+  self._towerthunder:SetText("【" .. StringTable.Get("str_tower_thunder") .. "】\n" .. string.format(StringTable.Get("str_tower_cur_layer"), "<color=#ffd300>" .. towerThunder .. "</color>"))
+  self:RankValue()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.RankValue = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local airModule = (GameGlobal.GetModule)(AircraftModule)
+function UIChatFriendInfoController:RankValue()
+  local airModule = GameGlobal.GetModule(AircraftModule)
   local switchOpen = airModule:GetSwitchOpenState(16)
-  ;
-  (self._rank):SetActive(switchOpen)
+  self._rank:SetActive(switchOpen)
   if switchOpen then
-    local rankValue = (self._friendDetailData):GetRankValue()
-    ;
-    (self._rankTex):SetText(rankValue)
+    local rankValue = self._friendDetailData:GetRankValue()
+    self._rankTex:SetText(rankValue)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController._UpdateFriendInfo = function(self, type, pstid)
-  -- function num : 0_7 , upvalues : _ENV
+function UIChatFriendInfoController:_UpdateFriendInfo(type, pstid)
   if self._friendId ~= pstid then
-    return 
+    return
   end
   self:Lock("_Refresh")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._RefreshCoro, self)
+  GameGlobal.TaskManager():StartTask(self._RefreshCoro, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController._Refresh = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIChatFriendInfoController:_Refresh()
   self:Lock("_Refresh")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._RefreshCoro, self)
+  GameGlobal.TaskManager():StartTask(self._RefreshCoro, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController._RefreshCoro = function(self, TT)
-  -- function num : 0_9
+function UIChatFriendInfoController:_RefreshCoro(TT)
   self:_RequestData(TT)
   if not self._friendData then
     self:UnLock("_Refresh")
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._name).text = (self._friendData):GetName()
-  ;
-  (self._addFriendBtnGo):SetActive(not self._isMyFriend)
-  ;
-  (self._changeNameBtnGo):SetActive(self._isMyFriend)
-  ;
-  (self._visitHomeGo):SetActive(self._isMyFriend)
+  self._name.text = self._friendData:GetName()
+  self._addFriendBtnGo:SetActive(not self._isMyFriend)
+  self._changeNameBtnGo:SetActive(self._isMyFriend)
+  self._visitHomeGo:SetActive(self._isMyFriend)
   self:UnLock("_Refresh")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.MaskOnClick = function(self, go)
-  -- function num : 0_10
+function UIChatFriendInfoController:MaskOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.PlayerInfoBtnOnClick = function(self, go)
-  -- function num : 0_11
-  (self._animCmp):Play("uieff_ChatFriendInfo_Switch2Player")
-  ;
-  (self._playInfoBtnOnGo):SetActive(true)
-  ;
-  (self._battleInfoBtnOnGo):SetActive(false)
-  ;
-  (self._playerInfoPanelGo):SetActive(true)
-  ;
-  (self._battleInfoPanelGo):SetActive(false)
+function UIChatFriendInfoController:PlayerInfoBtnOnClick(go)
+  self._animCmp:Play("uieff_ChatFriendInfo_Switch2Player")
+  self._playInfoBtnOnGo:SetActive(true)
+  self._battleInfoBtnOnGo:SetActive(false)
+  self._playerInfoPanelGo:SetActive(true)
+  self._battleInfoPanelGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.BattleInfoBtnOnClick = function(self, go)
-  -- function num : 0_12
-  (self._animCmp):Play("uieff_ChatFriendInfo_Switch2Battle")
-  ;
-  (self._playInfoBtnOnGo):SetActive(false)
-  ;
-  (self._battleInfoBtnOnGo):SetActive(true)
-  ;
-  (self._playerInfoPanelGo):SetActive(false)
-  ;
-  (self._battleInfoPanelGo):SetActive(true)
+function UIChatFriendInfoController:BattleInfoBtnOnClick(go)
+  self._animCmp:Play("uieff_ChatFriendInfo_Switch2Battle")
+  self._playInfoBtnOnGo:SetActive(false)
+  self._battleInfoBtnOnGo:SetActive(true)
+  self._playerInfoPanelGo:SetActive(false)
+  self._battleInfoPanelGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.OtherBtnOnClick = function(self, go)
-  -- function num : 0_13
-  (self._otherPanelBtnGo):SetActive(true)
-  ;
-  (self._deleteFriendBtnGo):SetActive(self._isMyFriend)
-  ;
-  (self._addToBlackListBtnGo):SetActive(not self._isInBlackList)
-  ;
-  (self._removeFromBlackListBtnGo):SetActive(self._isInBlackList)
-  ;
-  (self._otherBtnPanelAnim):Play("uieff_ChatFriendInfo_OtherPanel")
+function UIChatFriendInfoController:OtherBtnOnClick(go)
+  self._otherPanelBtnGo:SetActive(true)
+  self._deleteFriendBtnGo:SetActive(self._isMyFriend)
+  self._addToBlackListBtnGo:SetActive(not self._isInBlackList)
+  self._removeFromBlackListBtnGo:SetActive(self._isInBlackList)
+  self._otherBtnPanelAnim:Play("uieff_ChatFriendInfo_OtherPanel")
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.OtherPanelBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._otherBtnPanelAnim):Play("uieff_ChatFriendInfo_OtherPanelFade")
+function UIChatFriendInfoController:OtherPanelBtnOnClick(go)
+  self._otherBtnPanelAnim:Play("uieff_ChatFriendInfo_OtherPanelFade")
   self:Lock("OtherPanelBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._CloseOtherBtnPanel, self)
+  GameGlobal.TaskManager():StartTask(self._CloseOtherBtnPanel, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController._CloseOtherBtnPanel = function(self, TT)
-  -- function num : 0_15 , upvalues : _ENV
+function UIChatFriendInfoController:_CloseOtherBtnPanel(TT)
   YIELD(TT, 270)
-  ;
-  (self._otherPanelBtnGo):SetActive(false)
+  self._otherPanelBtnGo:SetActive(false)
   self:UnLock("OtherPanelBtnOnClick")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.DeleteFriendBtnOnClick = function(self, go)
-  -- function num : 0_16
+function UIChatFriendInfoController:DeleteFriendBtnOnClick(go)
   self:ShowDialog("UIChatDeleteFriendController", self._friendData, self._chatFriendManager)
-  ;
-  (self._otherPanelBtnGo):SetActive(false)
+  self._otherPanelBtnGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.AddFriendBtnOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
+function UIChatFriendInfoController:AddFriendBtnOnClick(go)
   self:Lock("AddFriendBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._SendAddFriendMsg, self)
+  GameGlobal.TaskManager():StartTask(self._SendAddFriendMsg, self)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController._SendAddFriendMsg = function(self, TT)
-  -- function num : 0_18 , upvalues : _ENV
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+function UIChatFriendInfoController:_SendAddFriendMsg(TT)
+  local socialModule = GameGlobal.GetModule(SocialModule)
   local res, invtInfo = socialModule:InvitationFriend(TT, self._friendId)
   if not res:GetSucc() then
     local retCode = res:GetResult()
     if retCode == SocialErrorCode.SOCIAL_INVITATION_MUTUAL_SUCCESS then
-      (ToastManager.ShowToast)((StringTable.Get)("str_chat_is_your_friend"))
+      ToastManager.ShowToast(StringTable.Get("str_chat_is_your_friend"))
     else
-      ;
-      (self._chatFriendManager):HandleErrorMsgCode(retCode)
+      self._chatFriendManager:HandleErrorMsgCode(retCode)
     end
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_chat_send_request_add_friend_success"))
-      self:UnLock("AddFriendBtnOnClick")
-    end
+    ToastManager.ShowToast(StringTable.Get("str_chat_send_request_add_friend_success"))
   end
+  self:UnLock("AddFriendBtnOnClick")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.ChangeNameBtnOnClick = function(self, go)
-  -- function num : 0_19
+function UIChatFriendInfoController:ChangeNameBtnOnClick(go)
   if not self._friendData then
-    return 
+    return
   end
   self:ShowDialog("UIChatSetNoteNameController", self._friendData, self._chatFriendManager)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.CopyIdBtnOnClick = function(self, go)
-  -- function num : 0_20 , upvalues : _ENV
-  (HelperProxy:GetInstance()):CopyTextToClipboard((self._id).text)
+function UIChatFriendInfoController:CopyIdBtnOnClick(go)
+  HelperProxy:GetInstance():CopyTextToClipboard(self._id.text)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.AddToBlackListBtnOnClick = function(self, go)
-  -- function num : 0_21
+function UIChatFriendInfoController:AddToBlackListBtnOnClick(go)
   if not self._friendData then
-    return 
+    return
   end
   self:ShowDialog("UIChatAddBlacklistController", self._friendData, self._chatFriendManager)
-  ;
-  (self._otherPanelBtnGo):SetActive(false)
+  self._otherPanelBtnGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.RemoveFromBlackListBtnOnClick = function(self, go)
-  -- function num : 0_22
+function UIChatFriendInfoController:RemoveFromBlackListBtnOnClick(go)
   if not self._friendData then
-    return 
+    return
   end
   self:ShowDialog("UIChatRemoveBlacklistController", self._friendData, self._chatFriendManager)
-  ;
-  (self._otherPanelBtnGo):SetActive(false)
+  self._otherPanelBtnGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController.VisitHomeBtnOnClick = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function UIChatFriendInfoController:VisitHomeBtnOnClick()
   if self._isMyFriend then
-    if ((self._friendData):GetHomelandInfo()).unlock then
-      (HomeLoading.Visit)((self._friendData):GetFriendId())
+    if self._friendData:GetHomelandInfo().unlock then
+      HomeLoading.Visit(self._friendData:GetFriendId())
     else
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_homeland_visit_friend_not_unlock_home"))
+      ToastManager.ShowToast(StringTable.Get("str_homeland_visit_friend_not_unlock_home"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChatFriendInfoController._CanVisit = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(HomelandModule)
+function UIChatFriendInfoController:_CanVisit()
+  local module = GameGlobal.GetModule(HomelandModule)
   return module:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_VISIT_UI)
 end
-
-

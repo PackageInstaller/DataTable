@@ -1,94 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/ai_sched_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("AISchedulerService", BaseService)
 AISchedulerService = AISchedulerService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AISchedulerService.Initialize = function(self)
-  -- function num : 0_0
-  self.m_aiService = (self._world):GetService("AI")
-  self.m_battleService = (self._world):GetService("Battle")
-  self._boardService = (self._world):GetService("BoardLogic")
-  self.group = (self._world):GetGroup(((self._world).BW_WEMatchers).AI)
+function AISchedulerService:Initialize()
+  self.m_aiService = self._world:GetService("AI")
+  self.m_battleService = self._world:GetService("Battle")
+  self._boardService = self._world:GetService("BoardLogic")
+  self.group = self._world:GetGroup(self._world.BW_WEMatchers.AI)
   self:_InitListScan()
   self.m_bRebuildScan = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AISchedulerService._InitListScan = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._world):MatchType() == MatchType.MT_Chess then
+function AISchedulerService:_InitListScan()
+  if self._world:MatchType() == MatchType.MT_Chess then
     self.m_listScan = SortedArray:New(Algorithm.COMPARE_CUSTOM, AISchedulerService._ChessModeComparer)
   else
     self.m_listScan = SortedArray:New(Algorithm.COMPARE_CUSTOM, AISchedulerService._LessComparer)
   end
-  ;
-  (self.m_listScan):AllowDuplicate()
+  self.m_listScan:AllowDuplicate()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AISchedulerService.GetAIList = function(self)
-  -- function num : 0_2
+function AISchedulerService:GetAIList()
   return self.m_listScan
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AISchedulerService.SetAIList = function(self, elist)
-  -- function num : 0_3 , upvalues : _ENV
-  (self.m_listScan):Clear()
-  for i,e in ipairs(elist) do
-    if not (e:AI()):IsLogicEnd() then
-      (self.m_listScan):Insert(e)
+function AISchedulerService:SetAIList(elist)
+  self.m_listScan:Clear()
+  for i, e in ipairs(elist) do
+    if not e:AI():IsLogicEnd() then
+      self.m_listScan:Insert(e)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AISchedulerService.DoScheduleAILogic = function(self)
-  -- function num : 0_4
+function AISchedulerService:DoScheduleAILogic()
   return self:_UpdateWorkList()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AISchedulerService.DoUpdateAIList = function(self)
-  -- function num : 0_5
-  for i = 1, (self.m_listScan):Size() do
-    local e = (self.m_listScan):GetAt(i)
+function AISchedulerService:DoUpdateAIList()
+  for i = 1, self.m_listScan:Size() do
+    local e = self.m_listScan:GetAt(i)
     self:UpdateAI(e)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AISchedulerService.UpdateAI = function(self, e)
-  -- function num : 0_6
-  if e == nil then
-    return 
+function AISchedulerService:UpdateAI(e)
+  if nil == e then
+    return
   end
-  local pos = (e:GridLocation()).Position
+  local pos = e:GridLocation().Position
   local aiComponent = e:AI()
   if aiComponent:IsLogicEnd() or e:HasDeadMark() then
-    return 
+    return
   end
-  local timeService = (self._world):GetService("Time")
+  local timeService = self._world:GetService("Time")
   local deltaTimeMS = timeService:GetDeltaTimeMs()
   aiComponent:Update(deltaTimeMS)
   aiComponent:ResetLogic()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AISchedulerService._UpdateWorkList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AISchedulerService:_UpdateWorkList()
   local listWork = self.m_listScan
   local nMaxCount = listWork:Size()
   if nMaxCount <= 0 then
@@ -98,123 +69,97 @@ AISchedulerService._UpdateWorkList = function(self)
   for i = 1, nMaxCount do
     local entityWork = listWork:GetAt(i)
     local bUpdate = false
-    local aiComponent = nil
+    local aiComponent
     if entityWork and not entityWork:HasDeadMark() then
       aiComponent = entityWork:AI()
-      if aiComponent:IsLogicEnd() == false then
+      if false == aiComponent:IsLogicEnd() then
         self:UpdateAI(entityWork)
         aiComponent:OutLog("扫描队列<退出>")
       end
     else
-      ;
-      (Log.fatal)("EntityIsDead:", entityWork:GetID())
+      Log.fatal("EntityIsDead:", entityWork:GetID())
     end
     if entityWork:HasDeadMark() or aiComponent:IsAIRoundEnd() then
       nCountHaveDown = nCountHaveDown + 1
     end
   end
-  do return nCountHaveDown == nMaxCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nCountHaveDown == nMaxCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AISchedulerService._LessComparer = function(entityA, entityB)
-  -- function num : 0_8
-  local nDistanceA = (entityA:AI()):GetDistance()
-  local nDistanceB = (entityB:AI()):GetDistance()
-  local aiLogicOrderWeightA = (entityA:AI()):GetAIOrderWeight()
-  local aiLogicOrderWeightB = (entityB:AI()):GetAIOrderWeight()
+function AISchedulerService._LessComparer(entityA, entityB)
+  local nDistanceA = entityA:AI():GetDistance()
+  local nDistanceB = entityB:AI():GetDistance()
+  local aiLogicOrderWeightA = entityA:AI():GetAIOrderWeight()
+  local aiLogicOrderWeightB = entityB:AI():GetAIOrderWeight()
   if aiLogicOrderWeightA ~= aiLogicOrderWeightB then
-    if aiLogicOrderWeightB < aiLogicOrderWeightA then
+    if aiLogicOrderWeightA > aiLogicOrderWeightB then
+      return -1
+    elseif aiLogicOrderWeightA < aiLogicOrderWeightB then
+      return 1
+    end
+  elseif nDistanceA < nDistanceB then
+    return 1
+  elseif nDistanceA > nDistanceB then
+    return -1
+  else
+    local center = entityA:AI():GetTargetPos()
+    local a = entityA:GridLocation().Position
+    local b = entityA:GridLocation().Position
+    if a.x - center.x >= 0 and b.x - center.x < 0 then
+      return 1
+    end
+    if a.x - center.x < 0 and b.x - center.x >= 0 then
+      return -1
+    end
+    local nReturn = 0
+    if a.x - center.x == 0 and b.x - center.x == 0 then
+      if 0 <= a.y - center.y or 0 <= b.y - center.y then
+        nReturn = a.y - b.y
+      else
+        nReturn = b.y - a.y
+      end
+    end
+    if 0 == nReturn then
+      local det = (a.x - center.x) * (b.y - center.y) - (b.x - center.x) * (a.y - center.y)
+      if det < 0 then
+        nReturn = 1
+      elseif 0 < det then
+        nReturn = -1
+      end
+    end
+    if 0 == nReturn then
+      local nIDA = entityA:GetID()
+      local nIDB = entityB:GetID()
+      nReturn = nIDA - nIDB
+    end
+    if 0 < nReturn then
+      return 1
+    elseif nReturn < 0 then
       return -1
     else
-      if aiLogicOrderWeightA < aiLogicOrderWeightB then
-        return 1
-      end
-    end
-  else
-    if nDistanceA < nDistanceB then
-      return 1
-    else
-      if nDistanceB < nDistanceA then
-        return -1
-      else
-        local center = (entityA:AI()):GetTargetPos()
-        local a = (entityA:GridLocation()).Position
-        local b = (entityA:GridLocation()).Position
-        if a.x - center.x >= 0 and b.x - center.x < 0 then
-          return 1
-        end
-        if a.x - center.x < 0 and b.x - center.x >= 0 then
-          return -1
-        end
-        local nReturn = 0
-        if a.x - center.x == 0 and b.x - center.x == 0 then
-          if a.y - center.y >= 0 or b.y - center.y >= 0 then
-            nReturn = a.y - b.y
-          else
-            nReturn = b.y - a.y
-          end
-        end
-        do
-          if nReturn == 0 then
-            local det = (a.x - center.x) * (b.y - center.y) - (b.x - center.x) * (a.y - center.y)
-            if det < 0 then
-              nReturn = 1
-            else
-              if det > 0 then
-                nReturn = -1
-              end
-            end
-          end
-          if nReturn == 0 then
-            local nIDA = entityA:GetID()
-            local nIDB = entityB:GetID()
-            nReturn = nIDA - nIDB
-          end
-          do
-            do
-              if nReturn > 0 then
-                return 1
-              else
-                if nReturn < 0 then
-                  return -1
-                else
-                  return 0
-                end
-              end
-              return 0
-            end
-          end
-        end
-      end
+      return 0
     end
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AISchedulerService._ChessModeComparer = function(entityA, entityB)
-  -- function num : 0_9
+function AISchedulerService._ChessModeComparer(entityA, entityB)
   if entityA == nil or not entityA:MonsterID() then
     return 0
   end
   if entityB == nil or not entityB:MonsterID() then
     return 0
   end
-  local mstIDA = (entityA:MonsterID()):GetMonsterID()
-  local mstIDB = (entityB:MonsterID()):GetMonsterID()
-  if mstIDA >= mstIDB or not 1 then
-    do return not entityA:HasMonsterID() or not entityB:HasMonsterID() or mstIDA == mstIDB or -1 end
-    local eidA = entityA:GetID()
-    local eidB = entityB:GetID()
-    if eidA == eidB then
-      return 0
-    else
-      return eidA < eidB and 1 or -1
-    end
+  local mstIDA = entityA:MonsterID():GetMonsterID()
+  local mstIDB = entityB:MonsterID():GetMonsterID()
+  if entityA:HasMonsterID() and entityB:HasMonsterID() and mstIDA ~= mstIDB then
+    return mstIDA < mstIDB and 1 or -1
+  end
+  local eidA = entityA:GetID()
+  local eidB = entityB:GetID()
+  if eidA == eidB then
+    return 0
+  else
+    return eidA < eidB and 1 or -1
   end
 end
-
-

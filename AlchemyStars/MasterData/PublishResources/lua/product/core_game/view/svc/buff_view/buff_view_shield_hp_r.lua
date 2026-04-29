@@ -1,68 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_shield_hp_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPShield", BuffViewBase)
 BuffViewAddHPShield = BuffViewAddHPShield
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPShield.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewAddHPShield:IsNotifyMatch(notify)
   local buffResult = self._buffResult
-  if buffResult:GetChainPetEntityID() ~= (notify:GetNotifyEntity()):GetID() or buffResult:GetNotifyChainSkillTimeIndex() ~= notify:GetChainSkillTimeIndex() then
-    do return notify:GetNotifyType() ~= NotifyType.SingleChainSkillAttackBegin and notify:GetNotifyType() ~= NotifyType.SinglePetChainSkillAttackBegin end
-    do return true end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if notify:GetNotifyType() == NotifyType.SingleChainSkillAttackBegin or notify:GetNotifyType() == NotifyType.SinglePetChainSkillAttackBegin then
+    return buffResult:GetChainPetEntityID() == notify:GetNotifyEntity():GetID() and buffResult:GetNotifyChainSkillTimeIndex() == notify:GetChainSkillTimeIndex()
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPShield.PlayView = function(self, TT)
-  -- function num : 0_1
-  local eid = (self._buffResult):GetEntityID()
-  local entity = (self._world):GetEntityByID(eid)
-  local damageInfo = (self._buffResult):GetDamageInfo()
+function BuffViewAddHPShield:PlayView(TT)
+  local eid = self._buffResult:GetEntityID()
+  local entity = self._world:GetEntityByID(eid)
+  local damageInfo = self._buffResult:GetDamageInfo()
   if entity:HasPet() then
-    entity = (entity:Pet()):GetOwnerTeamEntity()
+    entity = entity:Pet():GetOwnerTeamEntity()
   end
   local hpCmpt = entity:HP()
   local curShield = damageInfo:GetHPShield() or 0
   hpCmpt:SetShieldValue(curShield)
-  local playDamageSvc = (self._world):GetService("PlayDamage")
+  local playDamageSvc = self._world:GetService("PlayDamage")
   playDamageSvc:UpdateTargetHPBar(TT, entity, damageInfo)
 end
 
 _class("BuffViewRemoveHPShield", BuffViewBase)
 BuffViewRemoveHPShield = BuffViewRemoveHPShield
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveHPShield.IsNotifyMatch = function(self, notify)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewRemoveHPShield:IsNotifyMatch(notify)
   local buffResult = self._buffResult
-  if buffResult:GetChainPetEntityID() ~= (notify:GetNotifyEntity()):GetID() or buffResult:GetNotifyChainSkillTimeIndex() ~= notify:GetChainSkillTimeIndex() then
-    do return notify:GetNotifyType() ~= NotifyType.SingleChainSkillAttackBegin and notify:GetNotifyType() ~= NotifyType.SingleChainSkillAttackFinish end
-    do return true end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if notify:GetNotifyType() == NotifyType.SingleChainSkillAttackBegin or notify:GetNotifyType() == NotifyType.SingleChainSkillAttackFinish then
+    return buffResult:GetChainPetEntityID() == notify:GetNotifyEntity():GetID() and buffResult:GetNotifyChainSkillTimeIndex() == notify:GetChainSkillTimeIndex()
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewRemoveHPShield.PlayView = function(self, TT)
-  -- function num : 0_3
-  local eid = (self._buffResult):GetEntityID()
-  local entity = (self._world):GetEntityByID(eid)
-  local damageInfo = (self._buffResult):GetDamageInfo()
+function BuffViewRemoveHPShield:PlayView(TT)
+  local eid = self._buffResult:GetEntityID()
+  local entity = self._world:GetEntityByID(eid)
+  local damageInfo = self._buffResult:GetDamageInfo()
   if entity:HasPet() then
-    entity = (entity:Pet()):GetOwnerTeamEntity()
+    entity = entity:Pet():GetOwnerTeamEntity()
   end
   local hpCmpt = entity:HP()
   local curShield = damageInfo:GetHPShield() or 0
   hpCmpt:SetShieldValue(curShield)
-  local playDamageSvc = (self._world):GetService("PlayDamage")
+  local playDamageSvc = self._world:GetService("PlayDamage")
   playDamageSvc:UpdateTargetHPBar(TT, entity, damageInfo)
 end
-
-

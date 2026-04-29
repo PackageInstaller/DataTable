@@ -1,18 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_grade_show_growth.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGradeShowGrowth", UICustomWidget)
 UIGradeShowGrowth = UIGradeShowGrowth
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGradeShowGrowth.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._element2Str = {[ElementType.ElementType_Blue] = "str_pet_filter_water_element", [ElementType.ElementType_Red] = "str_pet_filter_fire_element", [ElementType.ElementType_Green] = "str_pet_filter_sen_element", [ElementType.ElementType_Yellow] = "str_pet_filter_electricity_element", [ElementType.ElementType_AnyNone] = "str_tale_pet_att_none"}
+function UIGradeShowGrowth:Constructor()
+  self._element2Str = {
+    [ElementType.ElementType_Blue] = "str_pet_filter_water_element",
+    [ElementType.ElementType_Red] = "str_pet_filter_fire_element",
+    [ElementType.ElementType_Green] = "str_pet_filter_sen_element",
+    [ElementType.ElementType_Yellow] = "str_pet_filter_electricity_element",
+    [ElementType.ElementType_AnyNone] = "str_tale_pet_att_none"
+  }
   self._petModule = self:GetModule(PetModule)
   self._animPlaying = false
-  local frameTime = 16.666666666667
+  local frameTime = 16.666666666666668
   self.maxLvTime_start = frameTime * 0
   self.maxLvTime_end = frameTime * 40
   self.maxLvTime_Gaps = self.maxLvTime_end - self.maxLvTime_start
@@ -29,33 +28,24 @@ UIGradeShowGrowth.Constructor = function(self)
   self:AttachEvent(GameEventType.OnPetUpGradeThird, self.PlayTexAnim)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIGradeShowGrowth:OnHide()
   self:DetachEvent(GameEventType.OnPetUpGradeThird, self.PlayTexAnim)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.SetData = function(self, pet, skillVaryInfos, lastMaxLv, lastAtk, lastDef, lastHp)
-  -- function num : 0_2
+function UIGradeShowGrowth:SetData(pet, skillVaryInfos, lastMaxLv, lastAtk, lastDef, lastHp)
   self._petInfo = pet
   self.lastMaxLv = lastMaxLv
   self.lastAtk = lastAtk
   self.lastDef = lastDef
   self.lastHp = lastHp
   self._skillVaryInfos = skillVaryInfos
-  local uiModule = (self._petModule).uiModule
-  self._skillVaryInfos = uiModule:RemoveNotShowSkill((self._petInfo):GetTemplateID(), (self._petInfo):GetPetGrade(), (self._petInfo):GetPetAwakening(), self._skillVaryInfos)
+  local uiModule = self._petModule.uiModule
+  self._skillVaryInfos = uiModule:RemoveNotShowSkill(self._petInfo:GetTemplateID(), self._petInfo:GetPetGrade(), self._petInfo:GetPetAwakening(), self._skillVaryInfos)
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.GetComponents = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIGradeShowGrowth:GetComponents(uiParams)
   self._atlasAwake = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
   self._gradePrev = self:GetUIComponent("Image", "gradePrev")
   self._gradeCurr = self:GetUIComponent("Image", "gradeCurr")
@@ -85,25 +75,18 @@ UIGradeShowGrowth.GetComponents = function(self, uiParams)
   self._unLockSecondElemOrEquipTipsGo = self:GetGameObject("GradeSecondElemOrEquipTips")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.OnValue = function(self)
-  -- function num : 0_4
+function UIGradeShowGrowth:OnValue()
   self:ShowGrade()
-  ;
-  (self._lvTex2):SetText(self.lastMaxLv)
-  self.nowMaxLv = (self._petInfo):GetMaxLevel()
-  local atk = (self._petInfo):GetPetAttack()
-  local def = (self._petInfo):GetPetDefence()
-  local hp = (self._petInfo):GetPetHealth()
-  ;
-  (self._atkTex):SetText(self.lastAtk)
+  self._lvTex2:SetText(self.lastMaxLv)
+  self.nowMaxLv = self._petInfo:GetMaxLevel()
+  local atk = self._petInfo:GetPetAttack()
+  local def = self._petInfo:GetPetDefence()
+  local hp = self._petInfo:GetPetHealth()
+  self._atkTex:SetText(self.lastAtk)
   self.nowAtk = atk
-  ;
-  (self._defTex):SetText(self.lastDef)
+  self._defTex:SetText(self.lastDef)
   self.nowDef = def
-  ;
-  (self._hpTex):SetText(self.lastHp)
+  self._hpTex:SetText(self.lastHp)
   self.nowHp = hp
   self:ShowLv()
   self:ShowElement()
@@ -111,250 +94,167 @@ UIGradeShowGrowth.OnValue = function(self)
   self:ShowAtt()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.PlayTexAnim = function(self)
-  -- function num : 0_5
+function UIGradeShowGrowth:PlayTexAnim()
   self._animPlaying = true
-  ;
-  (self._gradeAnim):Play()
-  ;
-  (self._lizi):SetActive(false)
-  ;
-  (self._lizi):SetActive(true)
+  self._gradeAnim:Play()
+  self._lizi:SetActive(false)
+  self._lizi:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_6 , upvalues : _ENV
+function UIGradeShowGrowth:OnUpdate(deltaTimeMS)
   if self._animPlaying then
     self.accTime = self.accTime + deltaTimeMS
     local percent_lv = (self.accTime - self.maxLvTime_start) / self.maxLvTime_Gaps
-    if self.maxLvTime_end <= self.accTime then
+    if self.accTime >= self.maxLvTime_end then
       percent_lv = 1
     end
-    do
-      if percent_lv <= 1 and percent_lv >= 0 then
-        local lvRec = (((DG.Tweening).DOVirtual).EasedValue)(self.lastMaxLv, self.nowMaxLv, percent_lv, ((DG.Tweening).Ease).OutQuad)
-        ;
-        (self._lvTex2):SetText((math.floor)(lvRec))
-      end
-      local percent_atk = (self.accTime - self.attackTime_start) / self.attackTime_Gaps
-      if self.attackTime_end <= self.accTime then
-        percent_atk = 1
-      end
-      do
-        if percent_atk <= 1 and percent_atk >= 0 then
-          local atkRec = (((DG.Tweening).DOVirtual).EasedValue)(self.lastAtk, self.nowAtk, percent_atk, ((DG.Tweening).Ease).OutQuad)
-          ;
-          (self._atkTex):SetText((math.floor)(atkRec))
-        end
-        local percent_def = (self.accTime - self.defenceTime_start) / self.defenceTime_Gaps
-        if self.defenceTime_end <= self.accTime then
-          percent_def = 1
-        end
-        do
-          if percent_def <= 1 or percent_def >= 0 then
-            local defRec = (((DG.Tweening).DOVirtual).EasedValue)(self.lastDef, self.nowDef, percent_def, ((DG.Tweening).Ease).OutQuad)
-            ;
-            (self._defTex):SetText((math.floor)(defRec))
-          end
-          local percent_hp = (self.accTime - self.hpTime_start) / self.hpTime_Gaps
-          if self.hpTime_end <= self.accTime then
-            percent_hp = 1
-          end
-          do
-            if percent_hp <= 1 or percent_hp >= 0 then
-              local hpRec = (((DG.Tweening).DOVirtual).EasedValue)(self.lastHp, self.nowHp, percent_hp, ((DG.Tweening).Ease).OutQuad)
-              ;
-              (self._hpTex):SetText((math.floor)(hpRec))
-            end
-            if self.hpTime_end <= self.accTime then
-              self._animPlaying = false
-            end
-          end
-        end
-      end
+    if percent_lv <= 1 and 0 <= percent_lv then
+      local lvRec = DG.Tweening.DOVirtual.EasedValue(self.lastMaxLv, self.nowMaxLv, percent_lv, DG.Tweening.Ease.OutQuad)
+      self._lvTex2:SetText(math.floor(lvRec))
+    end
+    local percent_atk = (self.accTime - self.attackTime_start) / self.attackTime_Gaps
+    if self.accTime >= self.attackTime_end then
+      percent_atk = 1
+    end
+    if percent_atk <= 1 and 0 <= percent_atk then
+      local atkRec = DG.Tweening.DOVirtual.EasedValue(self.lastAtk, self.nowAtk, percent_atk, DG.Tweening.Ease.OutQuad)
+      self._atkTex:SetText(math.floor(atkRec))
+    end
+    local percent_def = (self.accTime - self.defenceTime_start) / self.defenceTime_Gaps
+    if self.accTime >= self.defenceTime_end then
+      percent_def = 1
+    end
+    if percent_def <= 1 or 0 <= percent_def then
+      local defRec = DG.Tweening.DOVirtual.EasedValue(self.lastDef, self.nowDef, percent_def, DG.Tweening.Ease.OutQuad)
+      self._defTex:SetText(math.floor(defRec))
+    end
+    local percent_hp = (self.accTime - self.hpTime_start) / self.hpTime_Gaps
+    if self.accTime >= self.hpTime_end then
+      percent_hp = 1
+    end
+    if percent_hp <= 1 or 0 <= percent_hp then
+      local hpRec = DG.Tweening.DOVirtual.EasedValue(self.lastHp, self.nowHp, percent_hp, DG.Tweening.Ease.OutQuad)
+      self._hpTex:SetText(math.floor(hpRec))
+    end
+    if self.accTime >= self.hpTime_end then
+      self._animPlaying = false
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.ShowLv = function(self)
-  -- function num : 0_7
-  (self._lvTex):SetText("Lv." .. (self._petInfo):GetPetLevel() .. "/")
+function UIGradeShowGrowth:ShowLv()
+  self._lvTex:SetText("Lv." .. self._petInfo:GetPetLevel() .. "/")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.ShowAtt = function(self)
-  -- function num : 0_8
-  local atk = (self._petInfo):GetPetAttack()
-  local def = (self._petInfo):GetPetDefence()
-  local hp = (self._petInfo):GetPetHealth()
-  ;
-  (self._atkArrow):SetActive(self.lastAtk < atk)
-  ;
-  (self._atkArrow):SetActive(self.lastDef < def)
-  ;
-  (self._atkArrow):SetActive(self.lastHp < hp)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIGradeShowGrowth:ShowAtt()
+  local atk = self._petInfo:GetPetAttack()
+  local def = self._petInfo:GetPetDefence()
+  local hp = self._petInfo:GetPetHealth()
+  self._atkArrow:SetActive(atk > self.lastAtk)
+  self._atkArrow:SetActive(def > self.lastDef)
+  self._atkArrow:SetActive(hp > self.lastHp)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.ShowGrade = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local petId = (self._petInfo):GetTemplateID()
-  local gradeCurr = (self._petInfo):GetPetGrade()
+function UIGradeShowGrowth:ShowGrade()
+  local petId = self._petInfo:GetTemplateID()
+  local gradeCurr = self._petInfo:GetPetGrade()
   local gradePrev = gradeCurr - 1
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._gradePrev).sprite = (self._atlasAwake):GetSprite((UIPetModule.GetAwakeSpriteName)(petId, gradePrev))
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._gradeCurr).sprite = (self._atlasAwake):GetSprite((UIPetModule.GetAwakeSpriteName)(petId, gradeCurr))
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._gradeCurrGlow).sprite = (self._atlasAwake):GetSprite((UIPetModule.GetAwakeSpriteGlowName)(petId, gradeCurr))
+  self._gradePrev.sprite = self._atlasAwake:GetSprite(UIPetModule.GetAwakeSpriteName(petId, gradePrev))
+  self._gradeCurr.sprite = self._atlasAwake:GetSprite(UIPetModule.GetAwakeSpriteName(petId, gradeCurr))
+  self._gradeCurrGlow.sprite = self._atlasAwake:GetSprite(UIPetModule.GetAwakeSpriteGlowName(petId, gradeCurr))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.ShowElement = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
-  local f = (self._petInfo):GetPetFirstElement()
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._firstIcon).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[f]).Icon))
-  local str = nil
-  local s = (self._petInfo):GetPetSecondElement()
+function UIGradeShowGrowth:ShowElement()
+  local cfg_pet_element = Cfg.cfg_pet_element({})
+  local f = self._petInfo:GetPetFirstElement()
+  self._firstIcon.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[f].Icon))
+  local str
+  local s = self._petInfo:GetPetSecondElement()
   if s == nil or s == 0 then
-    ((self._secondGo).gameObject):SetActive(false)
-    str = (StringTable.Get)((self._element2Str)[f])
+    self._secondGo.gameObject:SetActive(false)
+    str = StringTable.Get(self._element2Str[f])
   else
-    ;
-    ((self._secondGo).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._secondIcon).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[s]).Icon))
-    str = (StringTable.Get)("str_pet_detail_element_" .. f) .. "  " .. (StringTable.Get)("str_pet_detail_element_" .. s)
+    self._secondGo.gameObject:SetActive(true)
+    self._secondIcon.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[s].Icon))
+    str = StringTable.Get("str_pet_detail_element_" .. f) .. "  " .. StringTable.Get("str_pet_detail_element_" .. s)
   end
-  ;
-  (self._elementTex):SetText(str)
+  self._elementTex:SetText(str)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeShowGrowth.ShowVarySkill = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIGradeShowGrowth:ShowVarySkill()
   if self._skillVaryInfos then
-    self._listDetailTotalRow = (table.count)(self._skillVaryInfos)
+    self._listDetailTotalRow = table.count(self._skillVaryInfos)
     local show = true
     local unLockEquip = false
     local unLockElem = false
     local unLockExtra = false
     if self._listDetailTotalRow > 0 then
-      (self._varyPool):SpawnObjects("UIGradeDetailItem", self._listDetailTotalRow)
-      local rowList = (self._varyPool):GetAllSpawnList()
+      self._varyPool:SpawnObjects("UIGradeDetailItem", self._listDetailTotalRow)
+      local rowList = self._varyPool:GetAllSpawnList()
       for i = 1, #rowList do
-        local skillInfo = (self._skillVaryInfos)[i]
-        do
-          if not unLockEquip and skillInfo.type == "passive" then
-            local state = skillInfo.changeType
-            if state == PetSkillChangeState.NewGain then
-              unLockEquip = true
-            end
-          end
-          do
-            if not unLockExtra and skillInfo.type == "extra" then
-              local state = skillInfo.changeType
-              if state == PetSkillChangeState.NewGain then
-                unLockExtra = true
-              end
-            end
-            local lastGrade = (self._petInfo):GetPetGrade() - 1
-            if lastGrade < 0 then
-              lastGrade = 0
-            end
-            local nextGrade = (self._petInfo):GetPetGrade()
-            do
-              local _break = (self._petInfo):GetPetAwakening()
-              ;
-              (rowList[i]):SetData(self._petInfo, skillInfo, i, self._listDetailTotalRow, lastGrade, nextGrade, _break, _break)
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out DO_STMT
-
-            end
+        local skillInfo = self._skillVaryInfos[i]
+        if not unLockEquip and skillInfo.type == "passive" then
+          local state = skillInfo.changeType
+          if state == PetSkillChangeState.NewGain then
+            unLockEquip = true
           end
         end
+        if not unLockExtra and skillInfo.type == "extra" then
+          local state = skillInfo.changeType
+          if state == PetSkillChangeState.NewGain then
+            unLockExtra = true
+          end
+        end
+        local lastGrade = self._petInfo:GetPetGrade() - 1
+        if lastGrade < 0 then
+          lastGrade = 0
+        end
+        local nextGrade = self._petInfo:GetPetGrade()
+        local _break = self._petInfo:GetPetAwakening()
+        rowList[i]:SetData(self._petInfo, skillInfo, i, self._listDetailTotalRow, lastGrade, nextGrade, _break, _break)
       end
     end
-    do
-      ;
-      (self._equip):SetActive(unLockEquip)
-      if unLockEquip then
-        do
-          if not self._refineItem then
-            local refineItemPool = self:GetUIComponent("UISelectObjectPath", "equipInfo")
-            self._refineItem = refineItemPool:SpawnObject("UIPetEquipLvIcon")
-          end
-          ;
-          (self._refineItem):SetData(self._petInfo)
-          if self._listDetailTotalRow > 0 then
-            if self._listDetailTotalRow <= 1 then
-              local state = ((self._skillVaryInfos)[1]).changeType
-              if state == PetSkillChangeState.Improved then
-                show = false
-              end
-            else
-              do
-                show = false
-                ;
-                (self._onlyUnLockEquip):SetActive(show)
-                local petid = (self._petInfo):GetTemplateID()
-                local cfg_pet = (Cfg.cfg_pet)[petid]
-                do
-                  if cfg_pet then
-                    local grade = (self._petInfo):GetPetGrade()
-                    if cfg_pet.Element2NeedGrade and grade == cfg_pet.Element2NeedGrade and cfg_pet.SecondElement > 0 then
-                      unLockElem = true
-                    end
-                  end
-                  ;
-                  (self._elem):SetActive(unLockElem)
-                  if unLockElem or unLockEquip then
-                    (self._unLockSecondElemOrEquipTipsGo):SetActive(true)
-                  else
-                    ;
-                    (self._unLockSecondElemOrEquipTipsGo):SetActive(false)
-                  end
-                  if unLockElem then
-                    (self._unLockSecondElemOrEquipTips):SetText((StringTable.Get)("str_pet_config_second_element"))
-                  end
-                  if unLockEquip then
-                    (self._unLockSecondElemOrEquipTips):SetText((StringTable.Get)("str_pet_config_unlock_equip"))
-                  end
-                  if unLockExtra then
-                    (self._unLockSecondElemOrEquipTips):SetText((StringTable.Get)("str_pet_config_unlock_active_skill"))
-                  end
-                end
-              end
-            end
-          end
-        end
+    self._equip:SetActive(unLockEquip)
+    if unLockEquip then
+      if not self._refineItem then
+        local refineItemPool = self:GetUIComponent("UISelectObjectPath", "equipInfo")
+        self._refineItem = refineItemPool:SpawnObject("UIPetEquipLvIcon")
       end
+      self._refineItem:SetData(self._petInfo)
+    end
+    if self._listDetailTotalRow > 0 then
+      if self._listDetailTotalRow <= 1 then
+        local state = self._skillVaryInfos[1].changeType
+        if state == PetSkillChangeState.Improved then
+          show = false
+        end
+      else
+        show = false
+      end
+    end
+    self._onlyUnLockEquip:SetActive(show)
+    local petid = self._petInfo:GetTemplateID()
+    local cfg_pet = Cfg.cfg_pet[petid]
+    if cfg_pet then
+      local grade = self._petInfo:GetPetGrade()
+      if cfg_pet.Element2NeedGrade and grade == cfg_pet.Element2NeedGrade and 0 < cfg_pet.SecondElement then
+        unLockElem = true
+      end
+    end
+    self._elem:SetActive(unLockElem)
+    if unLockElem or unLockEquip then
+      self._unLockSecondElemOrEquipTipsGo:SetActive(true)
+    else
+      self._unLockSecondElemOrEquipTipsGo:SetActive(false)
+    end
+    if unLockElem then
+      self._unLockSecondElemOrEquipTips:SetText(StringTable.Get("str_pet_config_second_element"))
+    end
+    if unLockEquip then
+      self._unLockSecondElemOrEquipTips:SetText(StringTable.Get("str_pet_config_unlock_equip"))
+    end
+    if unLockExtra then
+      self._unLockSecondElemOrEquipTips:SetText(StringTable.Get("str_pet_config_unlock_active_skill"))
     end
   end
 end
-
-

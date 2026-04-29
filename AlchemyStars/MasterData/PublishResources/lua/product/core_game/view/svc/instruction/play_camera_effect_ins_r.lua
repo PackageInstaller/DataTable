@@ -1,51 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_camera_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCameraEffectInstruction", BaseInstruction)
 PlayCameraEffectInstruction = PlayCameraEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCameraEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCameraEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._bindBoard = paramList.bindBoard
   self._casterEffectHolder = tonumber(paramList.casterEffectHolder)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCameraEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayCameraEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._effectID and self._effectID > 0 then
     local world = casterEntity:GetOwnerWorld()
     local serEffect = world:GetService("Effect")
     if self._bindBoard then
       local boardEntity = world:GetRenderBoardEntity()
       serEffect:CreateScreenEffPointEffectWithHolder(self._effectID, boardEntity)
+    elseif self._casterEffectHolder == 1 then
+      serEffect:CreateScreenEffPointEffectWithHolder(self._effectID, casterEntity)
     else
-      do
-        if self._casterEffectHolder == 1 then
-          serEffect:CreateScreenEffPointEffectWithHolder(self._effectID, casterEntity)
-        else
-          serEffect:CreateScreenEffPointEffect(self._effectID)
-        end
-      end
+      serEffect:CreateScreenEffPointEffect(self._effectID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCameraEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCameraEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

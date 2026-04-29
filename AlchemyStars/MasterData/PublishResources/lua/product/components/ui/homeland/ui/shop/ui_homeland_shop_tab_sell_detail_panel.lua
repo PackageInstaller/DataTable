@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/shop/ui_homeland_shop_tab_sell_detail_panel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandShopTabSellDetailPanel", UICustomWidget)
 UIHomelandShopTabSellDetailPanel = UIHomelandShopTabSellDetailPanel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandShopTabSellDetailPanel.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHomelandShopTabSellDetailPanel:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandShopTabSellDetailPanel:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel.SetData = function(self, itemId, btnCallback)
-  -- function num : 0_2
+function UIHomelandShopTabSellDetailPanel:SetData(itemId, btnCallback)
   self._itemId = itemId
   self._btnCallback = btnCallback
   self:_SetState(itemId)
@@ -31,136 +18,96 @@ UIHomelandShopTabSellDetailPanel.SetData = function(self, itemId, btnCallback)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel._SetState = function(self, itemId)
-  -- function num : 0_3 , upvalues : _ENV
-  if itemId then
-    local cfg = (Cfg.cfg_item)[itemId]
-  end
+function UIHomelandShopTabSellDetailPanel:_SetState(itemId)
+  local cfg = itemId and Cfg.cfg_item[itemId]
   local state = cfg and 1 or 2
   if not self._stateObj then
-    self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_state_normal"}
-, 
-{"_state_empty"}
-})
+    self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+      {
+        "_state_normal"
+      },
+      {
+        "_state_empty"
+      }
+    })
   end
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel._SetType = function(self, itemId)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandShopTabSellDetailPanel:_SetType(itemId)
   local filter_Architecture = 3
-  local cfg = (Cfg.cfg_item)[itemId]
+  local cfg = Cfg.cfg_item[itemId]
   local type = cfg and cfg.TabType == filter_Architecture and 3 or 1
   if not self._typeObj then
-    self._typeObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"_type_default"}
-, 
-{"_type_tool"}
-, 
-{"_type_architecture"}
-})
+    self._typeObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+      {
+        "_type_default"
+      },
+      {"_type_tool"},
+      {
+        "_type_architecture"
+      }
+    })
   end
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._typeObj, type)
+  UIWidgetHelper.SetObjGroupShow(self._typeObj, type)
   self:_SetMainItem(itemId)
-  local func = {self._SetType_Default, self._SetType_Tool, self._SetType_Architecture}
-  ;
-  (func[type])(self, itemId)
+  local func = {
+    self._SetType_Default,
+    self._SetType_Tool,
+    self._SetType_Architecture
+  }
+  func[type](self, itemId)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel._SetMainItem = function(self, itemId)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIWidgetHelper.SetItemIcon)(self, itemId, "_itemIcon")
-  ;
-  (UIWidgetHelper.SetItemText)(self, itemId, "_txtTitle", "_txtDesc")
+function UIHomelandShopTabSellDetailPanel:_SetMainItem(itemId)
+  UIWidgetHelper.SetItemIcon(self, itemId, "_itemIcon")
+  UIWidgetHelper.SetItemText(self, itemId, "_txtTitle", "_txtDesc")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel._SetType_Default = function(self, itemId)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIWidgetHelper.SetItemCount)(self, itemId, "_txtCount", UIHomelandShopTabSellDetailPanel._FormatCount)
-  local price = (UIHomelandShopHelper.CalcItemSellPrice)(itemId, 1)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtSinglePrice", price.count)
+function UIHomelandShopTabSellDetailPanel:_SetType_Default(itemId)
+  UIWidgetHelper.SetItemCount(self, itemId, "_txtCount", UIHomelandShopTabSellDetailPanel._FormatCount)
+  local price = UIHomelandShopHelper.CalcItemSellPrice(itemId, 1)
+  UIWidgetHelper.SetLocalizationText(self, "_txtSinglePrice", price.count)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel._SetType_Tool = function(self, itemId)
-  -- function num : 0_7 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtLv", "")
-  ;
-  (self:GetGameObject("LvUpBtn")):SetActive(false)
-  ;
-  (self:GetGameObject("_txtMaxObj")):SetActive(false)
+function UIHomelandShopTabSellDetailPanel:_SetType_Tool(itemId)
+  UIWidgetHelper.SetLocalizationText(self, "_txtLv", "")
+  self:GetGameObject("LvUpBtn"):SetActive(false)
+  self:GetGameObject("_txtMaxObj"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel._SetType_Architecture = function(self, itemId)
-  -- function num : 0_8 , upvalues : _ENV
-  local cfg_item_architecture = (Cfg.cfg_item_architecture)[itemId]
+function UIHomelandShopTabSellDetailPanel:_SetType_Architecture(itemId)
+  local cfg_item_architecture = Cfg.cfg_item_architecture[itemId]
   if cfg_item_architecture then
     local strLiveable = "+" .. cfg_item_architecture.LivableValue
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_txtLiveable", strLiveable)
-    local x = (cfg_item_architecture.Size)[1]
-    local y = (cfg_item_architecture.Size)[2]
+    UIWidgetHelper.SetLocalizationText(self, "_txtLiveable", strLiveable)
+    local x = cfg_item_architecture.Size[1]
+    local y = cfg_item_architecture.Size[2]
     local strSize = x .. "*" .. y
-    ;
-    (UIWidgetHelper.SetLocalizationText)(self, "_txtSize", strSize)
+    UIWidgetHelper.SetLocalizationText(self, "_txtSize", strSize)
   else
-    do
-      ;
-      (Log.error)("### no data in cfg_item_architecture. id =", itemId)
-      local curCount, placedCount = (UIForgeData.GetOwnPlaceCount)(itemId)
-      local strPlace = curCount - placedCount .. "/" .. curCount
-      ;
-      (UIWidgetHelper.SetLocalizationText)(self, "_txtPlace", strPlace)
-    end
+    Log.error("### no data in cfg_item_architecture. id =", itemId)
   end
+  local curCount, placedCount = UIForgeData.GetOwnPlaceCount(itemId)
+  local strPlace = curCount - placedCount .. "/" .. curCount
+  UIWidgetHelper.SetLocalizationText(self, "_txtPlace", strPlace)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel._FormatCount = function(count)
-  -- function num : 0_9 , upvalues : _ENV
-  do
-    if count > 999999 then
-      local c = (math.floor)(count * 0.001) * 0.1
-      return (StringTable.Get)("str_homeland_backpack_n_w", c)
-    end
-    return count
+function UIHomelandShopTabSellDetailPanel._FormatCount(count)
+  if 999999 < count then
+    local c = math.floor(count * 0.001) * 0.1
+    return StringTable.Get("str_homeland_backpack_n_w", c)
   end
+  return count
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel.LvUpBtnOnClick = function(self, go)
-  -- function num : 0_10
+function UIHomelandShopTabSellDetailPanel:LvUpBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel.GetFromBtnOnClick = function(self, go)
-  -- function num : 0_11
+function UIHomelandShopTabSellDetailPanel:GetFromBtnOnClick(go)
   self:ShowDialog("UIHomelandGetPath", self._itemId)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandShopTabSellDetailPanel.BtnOnClick = function(self, go)
-  -- function num : 0_12
+function UIHomelandShopTabSellDetailPanel:BtnOnClick(go)
   self:ShowDialog("UIHomelandShopSellConfirm", self._itemId, self._btnCallback)
 end
-
-

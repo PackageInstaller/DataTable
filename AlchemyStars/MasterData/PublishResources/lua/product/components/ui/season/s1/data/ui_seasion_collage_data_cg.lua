@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s1/data/ui_seasion_collage_data_cg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonCollageData_CG", Object)
 UISeasonCollageData_CG = UISeasonCollageData_CG
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonCollageData_CG.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonCollageData_CG:Constructor()
   self._Index = nil
   self._ID = nil
   self._Valid = nil
@@ -18,53 +11,30 @@ UISeasonCollageData_CG.Constructor = function(self)
   self._ShareAwardCount = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_CG.Index = function(self)
-  -- function num : 0_1
+function UISeasonCollageData_CG:Index()
   return self._Index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_CG.ID = function(self)
-  -- function num : 0_2
+function UISeasonCollageData_CG:ID()
   return self._ID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_CG.IsValid = function(self)
-  -- function num : 0_3
+function UISeasonCollageData_CG:IsValid()
   return self._Valid
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_CG.IsUnlock = function(self)
-  -- function num : 0_4
+function UISeasonCollageData_CG:IsUnlock()
   return self._IsUnlock
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_CG.IsNew = function(self)
-  -- function num : 0_5
+function UISeasonCollageData_CG:IsNew()
   return self._IsNew
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_CG.CanShare = function(self)
-  -- function num : 0_6
+function UISeasonCollageData_CG:CanShare()
   return self._CanShare
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonCollageData_CG.ShareAwardCount = function(self)
-  -- function num : 0_7
+function UISeasonCollageData_CG:ShareAwardCount()
   return self._ShareAwardCount
 end
-
-

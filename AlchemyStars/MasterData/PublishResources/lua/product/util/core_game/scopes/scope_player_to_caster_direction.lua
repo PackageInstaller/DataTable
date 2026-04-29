@@ -1,43 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_player_to_caster_direction.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculatorPlayerToCasterDirection", SkillScopeCalculator_Base)
 SkillScopeCalculatorPlayerToCasterDirection = SkillScopeCalculatorPlayerToCasterDirection
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculatorPlayerToCasterDirection.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculatorPlayerToCasterDirection:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   if not scopeParam then
-    (Log.fatal)("### scopeParam is nil. centerPos=", centerPos)
-    return 
+    Log.fatal("### scopeParam is nil. centerPos=", centerPos)
+    return
   end
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local direction = scopeParam[1]
-  -- DECOMPILER ERROR at PC18: Unhandled construct in 'MakeBoolean' P3
-
-  local noRepeat = (scopeParam[2] and scopeParam[2] == 1)
+  local noRepeat = scopeParam[2] and scopeParam[2] == 1 or false
   local resultScope = {}
   if noRepeat then
     local workPosX = casterPos.x + casterDir.x * direction
     local workPosY = casterPos.y + casterDir.y * direction
     local workPos = Vector2(workPosX, workPosY)
-    ;
-    (table.insert)(resultScope, workPos)
+    table.insert(resultScope, workPos)
   else
     for i = 1, direction do
       local workPosX = casterPos.x + casterDir.x * direction
       local workPosY = casterPos.y + casterDir.y * direction
       local workPos = Vector2(workPosX, workPosY)
-      ;
-      (table.insert)(resultScope, workPos)
+      table.insert(resultScope, workPos)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.PlayerToCasterDirection, centerPos, resultScope, resultScope)
-  do return result end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return result
 end
-
-

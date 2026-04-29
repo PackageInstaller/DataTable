@@ -1,88 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/config/luckland_buff_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLBuffConfigData", Object)
 LLBuffConfigData = LLBuffConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLBuffConfigData.Constructor = function(self, buffID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_luckland_client_buff)[buffID]
+function LLBuffConfigData:Constructor(buffID)
+  self._cfg = Cfg.cfg_luckland_client_buff[buffID]
   if not self._cfg then
-    (Log.exception)("[LuckLand] buff config is nil buff id=", buffID)
+    Log.exception("[LuckLand] buff config is nil buff id=", buffID)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetData = function(self)
-  -- function num : 0_1
+function LLBuffConfigData:GetData()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetBuffID = function(self)
-  -- function num : 0_2
-  return (self._cfg).ID
+function LLBuffConfigData:GetBuffID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetTargetType = function(self)
-  -- function num : 0_3
-  return (self._cfg).TargetType
+function LLBuffConfigData:GetTargetType()
+  return self._cfg.TargetType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetTargetParam = function(self)
-  -- function num : 0_4
-  return (self._cfg).TargetParam
+function LLBuffConfigData:GetTargetParam()
+  return self._cfg.TargetParam
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetNotifyCfgData = function(self)
-  -- function num : 0_5
-  return (self._cfg).Notify
+function LLBuffConfigData:GetNotifyCfgData()
+  return self._cfg.Notify
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetTriggerCfgData = function(self)
-  -- function num : 0_6
-  return (self._cfg).Trigger
+function LLBuffConfigData:GetTriggerCfgData()
+  return self._cfg.Trigger
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetLogicCfgData = function(self)
-  -- function num : 0_7
-  return (self._cfg).Logic
+function LLBuffConfigData:GetLogicCfgData()
+  return self._cfg.Logic
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetName = function(self)
-  -- function num : 0_8
-  return (self._cfg).Name
+function LLBuffConfigData:GetName()
+  return self._cfg.Name
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetIcon = function(self)
-  -- function num : 0_9
-  return (self._cfg).Icon
+function LLBuffConfigData:GetIcon()
+  return self._cfg.Icon
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LLBuffConfigData.GetDesc = function(self)
-  -- function num : 0_10
-  return (self._cfg).Desc
+function LLBuffConfigData:GetDesc()
+  return self._cfg.Desc
 end
-
-

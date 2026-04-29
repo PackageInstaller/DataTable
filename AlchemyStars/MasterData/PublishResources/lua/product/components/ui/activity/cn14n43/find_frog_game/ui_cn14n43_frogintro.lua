@@ -1,43 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/find_frog_game/ui_cn14n43_frogintro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN14N43FrogIntro", UIController)
 UICN14N43FrogIntro = UICN14N43FrogIntro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN14N43FrogIntro.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UICN14N43FrogIntro:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogIntro.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN14N43FrogIntro:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogIntro.InitWidget = function(self)
-  -- function num : 0_2
+function UICN14N43FrogIntro:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "_title")
   self._animation = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN14N43FrogIntro.CloseBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN14N43FrogIntro:CloseBtnOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    (self._animation):Play("effanim_UICN14N43FrogIntro_out")
+    self._animation:Play("effanim_UICN14N43FrogIntro_out")
     YIELD(TT, 200)
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

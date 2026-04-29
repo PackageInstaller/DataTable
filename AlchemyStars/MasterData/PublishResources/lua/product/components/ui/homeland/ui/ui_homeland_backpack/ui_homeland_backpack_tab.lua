@@ -1,91 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_backpack_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBackpackTab", UICustomWidget)
 UIHomelandBackpackTab = UIHomelandBackpackTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBackpackTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetHomelandBackpackData()
-  self.dictFilterIcon = {[1] = "n17_pack_icon02", [2] = "n17_pack_icon03", [3] = "n17_pack_icon04", [4] = "n17_pack_icon05", [5] = "n17_pack_icon06"}
+function UIHomelandBackpackTab:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetHomelandBackpackData()
+  self.dictFilterIcon = {
+    [1] = "n17_pack_icon02",
+    [2] = "n17_pack_icon03",
+    [3] = "n17_pack_icon04",
+    [4] = "n17_pack_icon05",
+    [5] = "n17_pack_icon06"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackTab.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandBackpackTab:OnShow()
   self.imgTab = self:GetUIComponent("Image", "imgTab")
   self.imgIcon = self:GetUIComponent("Image", "imgIcon")
   self.txtFilter = self:GetUIComponent("UILocalizationText", "txtFilter")
   self.red = self:GetGameObject("red")
-  ;
-  (self.red):SetActive(false)
+  self.red:SetActive(false)
   self.atlas = self:GetAsset("UIHomelandBackpack.spriteatlas", LoadType.SpriteAtlas)
   self:AttachEvent(GameEventType.HomelandBackpackFoldFilter, self.FoldFilter)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackTab.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandBackpackTab:OnHide()
   self:DetachEvent(GameEventType.HomelandBackpackFoldFilter, self.FoldFilter)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackTab.Init = function(self, id)
-  -- function num : 0_3
+function UIHomelandBackpackTab:Init(id)
   self.id = id
-  local f = (self.data):GetFilterById(id)
-  ;
-  (self.txtFilter):SetText(f.name)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.imgIcon).sprite = (self.atlas):GetSprite((self.dictFilterIcon)[f.id])
+  local f = self.data:GetFilterById(id)
+  self.txtFilter:SetText(f.name)
+  self.imgIcon.sprite = self.atlas:GetSprite(self.dictFilterIcon[f.id])
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackTab.FlushRed = function(self, isShow)
-  -- function num : 0_4
+function UIHomelandBackpackTab:FlushRed(isShow)
   if isShow then
-    (self.red):SetActive(true)
+    self.red:SetActive(true)
   else
-    ;
-    (self.red):SetActive(false)
+    self.red:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackTab.FoldFilter = function(self, id)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIHomelandBackpackTab:FoldFilter(id)
   if id == self.id then
-    (self.imgTab).sprite = (self.atlas):GetSprite("n17_pack_btn02")
+    self.imgTab.sprite = self.atlas:GetSprite("n17_pack_btn02")
   else
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imgTab).sprite = (self.atlas):GetSprite("n17_pack_btn03")
+    self.imgTab.sprite = self.atlas:GetSprite("n17_pack_btn03")
   end
   self._isSelected = self.id == id
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBackpackTab.imgTabOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomelandBackpackTab:imgTabOnClick(go)
   if not self._isSelected then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandBackpackFoldFilter, self.id)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandBackpackFoldFilter, self.id)
   end
 end
-
-

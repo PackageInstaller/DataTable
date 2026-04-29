@@ -1,51 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/battle_damage_statistics_svc_l_s.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("BattleDamageStatisticsServiceLogic_Server", BaseService)
 BattleDamageStatisticsServiceLogic_Server = BattleDamageStatisticsServiceLogic_Server
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleDamageStatisticsServiceLogic_Server.Constructor = function(self, world)
-  -- function num : 0_0
+function BattleDamageStatisticsServiceLogic_Server:Constructor(world)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic_Server._OnGetBattleDamageStatisticsComponent = function(self)
-  -- function num : 0_1
+function BattleDamageStatisticsServiceLogic_Server:_OnGetBattleDamageStatisticsComponent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic_Server.AddDamageStatisticsInfo = function(self, damageInfo)
-  -- function num : 0_2
+function BattleDamageStatisticsServiceLogic_Server:AddDamageStatisticsInfo(damageInfo)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic_Server.GetDamageStatisticsInfo = function(self)
-  -- function num : 0_3
+function BattleDamageStatisticsServiceLogic_Server:GetDamageStatisticsInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic_Server._OnSortDamageStatisticsInfo = function(self)
-  -- function num : 0_4
+function BattleDamageStatisticsServiceLogic_Server:_OnSortDamageStatisticsInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic_Server.GetMonsterHPMaxStatistics = function(self)
-  -- function num : 0_5
+function BattleDamageStatisticsServiceLogic_Server:GetMonsterHPMaxStatistics()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleDamageStatisticsServiceLogic_Server.AddMonsterHPMaxStatistics = function(self, hpMax)
-  -- function num : 0_6
+function BattleDamageStatisticsServiceLogic_Server:AddMonsterHPMaxStatistics(hpMax)
 end
-
-

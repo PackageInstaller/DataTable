@@ -1,136 +1,100 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_scorpion_summon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ScorpionSummon", SkillEffectCalc_Base)
 SkillEffectCalc_ScorpionSummon = SkillEffectCalc_ScorpionSummon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ScorpionSummon.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ScorpionSummon:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  self._utilCalcSvc = (self._world):GetService("UtilCalc")
-  self._utilDataSvc = (self._world):GetService("UtilData")
-  self._randomSvc = (self._world):GetService("RandomLogic")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  self._utilCalcSvc = self._world:GetService("UtilCalc")
+  self._utilDataSvc = self._world:GetService("UtilData")
+  self._randomSvc = self._world:GetService("RandomLogic")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon.DoSkillEffectCalculator = function(self, skillEffectCalcParam, notPreview)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:DoSkillEffectCalculator(skillEffectCalcParam, notPreview)
   local effectParam = skillEffectCalcParam:GetSkillEffectParam()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
-  local casterPosition = (casterEntity:GetGridPosition())
-  local targetCenter = nil
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterPosition = casterEntity:GetGridPosition()
+  local targetCenter
   local targetIDs = skillEffectCalcParam:GetTargetEntityIDs()
   if targetIDs and targetIDs[1] then
     local targetID = targetIDs[1]
-    local targetEntity = (self._world):GetEntityByID(targetID)
-    targetCenter = (targetEntity:GridLocation()):GetGridPos()
+    local targetEntity = self._world:GetEntityByID(targetID)
+    targetCenter = targetEntity:GridLocation():GetGridPos()
   end
-  do
-    if not targetCenter then
-      return {}
-    end
-    local results = {}
-    local areas = {}
-    local monsterIDs = effectParam:GetSummonList()
-    local limitCount = effectParam:GetSummonMonsterLimitCount()
-    local isOverLimit, existCount = self:_IsOverLimitBefore(monsterIDs[1], limitCount)
-    if isOverLimit then
-      return results
-    end
-    local summonType = effectParam:GetScorpionSummonType()
-    if summonType then
-      if summonType == ScorpionSummonType.ObliqueBack then
-        areas = self:_ObliqueBack(targetCenter, casterPosition)
-      else
-        if summonType == ScorpionSummonType.FrontBack then
-          areas = self:_FrontBack(targetCenter, casterPosition)
-        else
-          if summonType == ScorpionSummonType.RandomInEight then
-            areas = self:_RandomInEight(casterPosition)
-          else
-            if summonType == ScorpionSummonType.RoundSix then
-              areas = self:_RoundSix(targetCenter)
-            end
-          end
-        end
-      end
-    end
-    ;
-    (Log.info)("ScorpionSummon summonType ", summonType)
-    isOverLimit = self:_IsOverLimitAfter(areas, existCount, limitCount)
-    if isOverLimit then
-      areas = self:_AreasCorrection(areas)
-    end
-    for _,positions in ipairs(areas) do
-      local result = SkillEffectResult_ScorpionSummon:New(SkillEffectEnum_SummonType.Monster, monsterIDs[1], positions)
-      ;
-      (table.insert)(results, result)
-    end
+  if not targetCenter then
+    return {}
+  end
+  local results = {}
+  local areas = {}
+  local monsterIDs = effectParam:GetSummonList()
+  local limitCount = effectParam:GetSummonMonsterLimitCount()
+  local isOverLimit, existCount = self:_IsOverLimitBefore(monsterIDs[1], limitCount)
+  if isOverLimit then
     return results
   end
+  local summonType = effectParam:GetScorpionSummonType()
+  if summonType then
+    if summonType == ScorpionSummonType.ObliqueBack then
+      areas = self:_ObliqueBack(targetCenter, casterPosition)
+    elseif summonType == ScorpionSummonType.FrontBack then
+      areas = self:_FrontBack(targetCenter, casterPosition)
+    elseif summonType == ScorpionSummonType.RandomInEight then
+      areas = self:_RandomInEight(casterPosition)
+    elseif summonType == ScorpionSummonType.RoundSix then
+      areas = self:_RoundSix(targetCenter)
+    end
+  end
+  Log.info("ScorpionSummon summonType ", summonType)
+  isOverLimit = self:_IsOverLimitAfter(areas, existCount, limitCount)
+  if isOverLimit then
+    areas = self:_AreasCorrection(areas)
+  end
+  for _, positions in ipairs(areas) do
+    local result = SkillEffectResult_ScorpionSummon:New(SkillEffectEnum_SummonType.Monster, monsterIDs[1], positions)
+    table.insert(results, result)
+  end
+  return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._ObliqueBack = function(self, targetCenter, center)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_ObliqueBack(targetCenter, center)
   local summonAreas = {
-[1] = {
-{-1, 0}
-, 
-{-1, 1}
-, 
-{0, 1}
-}
-, 
-[2] = {
-{0, 1}
-, 
-{1, 1}
-, 
-{1, 0}
-}
-, 
-[3] = {
-{1, 0}
-, 
-{1, -1}
-, 
-{0, -1}
-}
-, 
-[4] = {
-{0, -1}
-, 
-{-1, -1}
-, 
-{-1, 0}
-}
-}
+    [1] = {
+      {-1, 0},
+      {-1, 1},
+      {0, 1}
+    },
+    [2] = {
+      {0, 1},
+      {1, 1},
+      {1, 0}
+    },
+    [3] = {
+      {1, 0},
+      {1, -1},
+      {0, -1}
+    },
+    [4] = {
+      {0, -1},
+      {-1, -1},
+      {-1, 0}
+    }
+  }
   local areaIndex = 0
   if targetCenter.x <= center.x then
-    if center.y < targetCenter.y then
+    if targetCenter.y > center.y then
       areaIndex = 1
     else
       areaIndex = 4
     end
+  elseif targetCenter.y > center.y then
+    areaIndex = 2
   else
-    if center.y < targetCenter.y then
-      areaIndex = 2
-    else
-      areaIndex = 3
-    end
+    areaIndex = 3
   end
   local isVaild = self:_AreaValid(summonAreas[areaIndex], targetCenter)
   if not isVaild then
     local tempAreaIndex = 0
-    for _index,value in ipairs(summonAreas) do
+    for _index, value in ipairs(summonAreas) do
       if _index ~= areaIndex then
         isVaild = self:_AreaValid(value, targetCenter)
         if isVaild then
@@ -139,36 +103,26 @@ SkillEffectCalc_ScorpionSummon._ObliqueBack = function(self, targetCenter, cente
         end
       end
     end
-    do
-      do
-        areaIndex = tempAreaIndex
-        local areas = {}
-        do
-          if areaIndex > 0 then
-            local area = {}
-            for _,value in ipairs(summonAreas[areaIndex]) do
-              (table.insert)(area, self:_ToVector2(value, targetCenter))
-            end
-            ;
-            (table.insert)(areas, area)
-          end
-          return areas
-        end
-      end
-    end
+    areaIndex = tempAreaIndex
   end
+  local areas = {}
+  if 0 < areaIndex then
+    local area = {}
+    for _, value in ipairs(summonAreas[areaIndex]) do
+      table.insert(area, self:_ToVector2(value, targetCenter))
+    end
+    table.insert(areas, area)
+  end
+  return areas
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._AreaValid = function(self, offsets, targetCenter)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_AreaValid(offsets, targetCenter)
   if not offsets then
     return false
   end
-  for _,offset in ipairs(offsets) do
+  for _, offset in ipairs(offsets) do
     local realPosition = self:_ToVector2(offset, targetCenter)
-    local isBlock = (self._utilDataSvc):IsPosBlock(realPosition, BlockFlag.MonsterFly)
+    local isBlock = self._utilDataSvc:IsPosBlock(realPosition, BlockFlag.MonsterFly)
     if isBlock then
       return false
     end
@@ -176,42 +130,32 @@ SkillEffectCalc_ScorpionSummon._AreaValid = function(self, offsets, targetCenter
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._FrontBack = function(self, targetCenter, center)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_FrontBack(targetCenter, center)
   local summonAreas = {
-[1] = {
-[1] = {
-{-1, 0}
-, 
-{-1, 1}
-}
-, 
-[2] = {
-{1, 0}
-, 
-{1, 1}
-}
-}
-, 
-[2] = {
-[1] = {
-{0, 1}
-, 
-{1, 1}
-}
-, 
-[2] = {
-{0, -1}
-, 
-{1, -1}
-}
-}
-}
+    [1] = {
+      [1] = {
+        {-1, 0},
+        {-1, 1}
+      },
+      [2] = {
+        {1, 0},
+        {1, 1}
+      }
+    },
+    [2] = {
+      [1] = {
+        {0, 1},
+        {1, 1}
+      },
+      [2] = {
+        {0, -1},
+        {1, -1}
+      }
+    }
+  }
   local index = 0
   local anchor = Vector2(targetCenter.x, targetCenter.y)
-  if targetCenter.x < center.x or targetCenter.x - center.x > 1 then
+  if targetCenter.x < center.x or 1 < targetCenter.x - center.x then
     index = 1
     anchor.y = center.y
   else
@@ -220,128 +164,99 @@ SkillEffectCalc_ScorpionSummon._FrontBack = function(self, targetCenter, center)
   end
   local areas = {}
   local tempAreas = summonAreas[index]
-  for _,tempArea in ipairs(tempAreas) do
+  for _, tempArea in ipairs(tempAreas) do
     local isValid = self:_AreaValid(tempArea, anchor)
     if isValid then
       local area = {}
-      for _,offset in ipairs(tempArea) do
+      for _, offset in ipairs(tempArea) do
         local realPosition = self:_ToVector2(offset, anchor)
-        ;
-        (table.insert)(area, realPosition)
+        table.insert(area, realPosition)
       end
-      ;
-      (table.insert)(areas, area)
+      table.insert(areas, area)
     end
   end
   return areas
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._RandomInEight = function(self, center)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_RandomInEight(center)
   local areas = {}
   local summonAreas = {
-[DirectionType.LeftUp] = {
-{-1, 0}
-, 
-{-1, 1}
-, 
-{0, 1}
-}
-, 
-[DirectionType.RightUp] = {
-{0, 1}
-, 
-{1, 1}
-, 
-{1, 0}
-}
-, 
-[DirectionType.LeftDown] = {
-{-1, 0}
-, 
-{-1, -1}
-, 
-{0, -1}
-}
-, 
-[DirectionType.RightDown] = {
-{0, -1}
-, 
-{1, -1}
-, 
-{1, 0}
-}
-, 
-[DirectionType.Up] = {
-{0, 1}
-, 
-{1, 1}
-}
-, 
-[DirectionType.Down] = {
-{0, -1}
-, 
-{1, -1}
-}
-, 
-[DirectionType.Left] = {
-{-1, 0}
-, 
-{-1, 1}
-}
-, 
-[DirectionType.Right] = {
-{1, 0}
-, 
-{1, 1}
-}
-}
+    [DirectionType.LeftUp] = {
+      {-1, 0},
+      {-1, 1},
+      {0, 1}
+    },
+    [DirectionType.RightUp] = {
+      {0, 1},
+      {1, 1},
+      {1, 0}
+    },
+    [DirectionType.LeftDown] = {
+      {-1, 0},
+      {-1, -1},
+      {0, -1}
+    },
+    [DirectionType.RightDown] = {
+      {0, -1},
+      {1, -1},
+      {1, 0}
+    },
+    [DirectionType.Up] = {
+      {0, 1},
+      {1, 1}
+    },
+    [DirectionType.Down] = {
+      {0, -1},
+      {1, -1}
+    },
+    [DirectionType.Left] = {
+      {-1, 0},
+      {-1, 1}
+    },
+    [DirectionType.Right] = {
+      {1, 0},
+      {1, 1}
+    }
+  }
   local validDirections = {}
   for direction = DirectionType.Up, DirectionType.RightDown do
     local anchor = self:_GetAnchorByDirectionType(direction, center)
     local isValid = self:_AreaValid(summonAreas[direction], anchor)
     if isValid then
-      (table.insert)(validDirections, direction)
+      table.insert(validDirections, direction)
     end
   end
   if #validDirections <= 0 then
     return areas
   end
-  local firstIndex = (self._randomSvc):LogicRand(1, #validDirections)
+  local firstIndex = self._randomSvc:LogicRand(1, #validDirections)
   local direction = validDirections[firstIndex]
   local anchor = self:_GetAnchorByDirectionType(direction, center)
   local firstOffsets = summonAreas[direction]
   areas = self:_InsertArea(areas, firstOffsets, anchor)
-  if #validDirections >= 2 then
-    (table.remove)(validDirections, firstIndex)
+  if 2 <= #validDirections then
+    table.remove(validDirections, firstIndex)
     local validDirections2 = {}
-    for _,_direction in ipairs(validDirections) do
+    for _, _direction in ipairs(validDirections) do
       local offsets = summonAreas[_direction]
       if not self:_IsOverlap(offsets, firstOffsets) then
-        (table.insert)(validDirections2, _direction)
+        table.insert(validDirections2, _direction)
       end
     end
-    if #validDirections2 > 0 then
-      local secondIndex = (self._randomSvc):LogicRand(1, #validDirections2)
+    if 0 < #validDirections2 then
+      local secondIndex = self._randomSvc:LogicRand(1, #validDirections2)
       direction = validDirections2[secondIndex]
       local anchor = self:_GetAnchorByDirectionType(direction, center)
       local secondOffsets = summonAreas[direction]
       areas = self:_InsertArea(areas, secondOffsets, anchor)
     end
   end
-  do
-    return areas
-  end
+  return areas
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._IsOverlap = function(self, area1, area2)
-  -- function num : 0_6 , upvalues : _ENV
-  for _,position in ipairs(area1) do
-    for _,_position in ipairs(area2) do
+function SkillEffectCalc_ScorpionSummon:_IsOverlap(area1, area2)
+  for _, position in ipairs(area1) do
+    for _, _position in ipairs(area2) do
       if position[1] == _position[1] and position[2] == _position[2] then
         return true
       end
@@ -350,137 +265,101 @@ SkillEffectCalc_ScorpionSummon._IsOverlap = function(self, area1, area2)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._InsertArea = function(self, areas, offsets, center)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_InsertArea(areas, offsets, center)
   local area = {}
-  for _,offset in ipairs(offsets) do
+  for _, offset in ipairs(offsets) do
     local realPosition = self:_ToVector2(offset, center)
-    ;
-    (table.insert)(area, realPosition)
+    table.insert(area, realPosition)
   end
-  ;
-  (table.insert)(areas, area)
+  table.insert(areas, area)
   return areas
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._GetAnchorByDirectionType = function(self, directionType, center)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_GetAnchorByDirectionType(directionType, center)
   local anchor = Vector2(center.x, center.y)
   if directionType == DirectionType.LeftUp or directionType == DirectionType.Up then
     anchor.y = anchor.y + 1
-  else
-    if directionType == DirectionType.RightUp then
-      anchor.x = anchor.x + 1
-      anchor.y = anchor.y + 1
-    else
-      if directionType == DirectionType.RightDown or directionType == DirectionType.Right then
-        anchor.x = anchor.x + 1
-      end
-    end
+  elseif directionType == DirectionType.RightUp then
+    anchor.x = anchor.x + 1
+    anchor.y = anchor.y + 1
+  elseif directionType == DirectionType.RightDown or directionType == DirectionType.Right then
+    anchor.x = anchor.x + 1
   end
   return anchor
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._RoundSix = function(self, targetCeneter)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_RoundSix(targetCeneter)
   local summonAreas = {
-[1] = {
-[1] = {
-{-1, 0}
-, 
-{-1, 1}
-, 
-{0, 1}
-}
-, 
-[2] = {
-{1, 0}
-, 
-{1, -1}
-, 
-{0, -1}
-}
-}
-, 
-[2] = {
-[1] = {
-{0, -1}
-, 
-{-1, -1}
-, 
-{-1, 0}
-}
-, 
-[2] = {
-{0, 1}
-, 
-{1, 1}
-, 
-{1, 0}
-}
-}
-}
+    [1] = {
+      [1] = {
+        {-1, 0},
+        {-1, 1},
+        {0, 1}
+      },
+      [2] = {
+        {1, 0},
+        {1, -1},
+        {0, -1}
+      }
+    },
+    [2] = {
+      [1] = {
+        {0, -1},
+        {-1, -1},
+        {-1, 0}
+      },
+      [2] = {
+        {0, 1},
+        {1, 1},
+        {1, 0}
+      }
+    }
+  }
   local weights = {0, 0}
   local tempAreas = {
-{}
-, 
-{}
-}
-  for areaIndex,areas in ipairs(summonAreas) do
-    for _,area in ipairs(areas) do
+    {},
+    {}
+  }
+  for areaIndex, areas in ipairs(summonAreas) do
+    for _, area in ipairs(areas) do
       local vaild = self:_AreaValid(area, targetCeneter)
       if vaild then
         weights[areaIndex] = weights[areaIndex] + 1
-        ;
-        (table.insert)(tempAreas[areaIndex], area)
+        table.insert(tempAreas[areaIndex], area)
       end
     end
   end
   local areas = {}
-  if weights[1] + weights[2] <= 0 then
+  if 0 >= weights[1] + weights[2] then
     return areas
   end
   local index = 1
-  if weights[1] < weights[2] then
+  if weights[2] > weights[1] then
     index = 2
   end
-  for _,tempArea in ipairs(tempAreas[index]) do
+  for _, tempArea in ipairs(tempAreas[index]) do
     local area = {}
-    for _,offset in ipairs(R14_PC119) do
+    for _, offset in ipairs(tempArea) do
       local realPosition = self:_ToVector2(offset, targetCeneter)
-      ;
-      (table.insert)(area, realPosition)
+      table.insert(area, realPosition)
     end
-    ;
-    (table.insert)(areas, area)
+    table.insert(areas, area)
   end
   return areas
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._ToVector2 = function(self, offset, position)
-  -- function num : 0_10 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_ToVector2(offset, position)
   return Vector2(position.x + offset[1], position.y + offset[2])
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._IsOverLimitBefore = function(self, monsterID, limitCount)
-  -- function num : 0_11 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_IsOverLimitBefore(monsterID, limitCount)
   local count = 0
-  if limitCount and limitCount > 0 then
-    local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  if limitCount and 0 < limitCount then
+    local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
     if monsterGroup then
-      for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
+      for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
         if not monsterEntity:HasDeadMark() then
-          local id = (monsterEntity:MonsterID()):GetMonsterID()
+          local id = monsterEntity:MonsterID():GetMonsterID()
           if id == monsterID then
             count = count + 1
           end
@@ -491,42 +370,33 @@ SkillEffectCalc_ScorpionSummon._IsOverLimitBefore = function(self, monsterID, li
       end
     end
   end
-  do
-    return false, count
-  end
+  return false, count
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._IsOverLimitAfter = function(self, areas, existCount, limitCount)
-  -- function num : 0_12 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_IsOverLimitAfter(areas, existCount, limitCount)
   local count = 0
-  for _,area in pairs(areas) do
-    for _,position in pairs(area) do
+  for _, area in pairs(areas) do
+    for _, position in pairs(area) do
       count = count + 1
     end
   end
-  do return limitCount <= count + existCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return limitCount <= count + existCount
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ScorpionSummon._AreasCorrection = function(self, areas)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillEffectCalc_ScorpionSummon:_AreasCorrection(areas)
   local minCount = 99
   local minIndex = 0
-  for index,area in pairs(areas) do
+  for index, area in pairs(areas) do
     local count = 0
-    for _,position in pairs(area) do
+    for _, position in pairs(area) do
       count = count + 1
     end
-    if count <= minCount then
+    if minCount >= count then
       minCount = count
       minIndex = index
     end
   end
-  return {areas[minIndex]}
+  return {
+    areas[minIndex]
+  }
 end
-
-

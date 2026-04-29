@@ -1,82 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/newyear/ui_n25_newyear_item_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25NewYearItemTips", UICustomWidget)
 UIN25NewYearItemTips = UIN25NewYearItemTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25NewYearItemTips.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN25NewYearItemTips:Constructor()
+  self._itemModule = GameGlobal.GetModule(ItemModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearItemTips.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25NewYearItemTips:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearItemTips._GetComponents = function(self)
-  -- function num : 0_2
+function UIN25NewYearItemTips:_GetComponents()
   self._parentGo = self:GetGameObject("Parent")
   self._itemInfoGo = self:GetGameObject("ItemInfo")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._count = self:GetUIComponent("UILocalizationText", "Count")
   self._content = self:GetUIComponent("UILocalizationText", "Content")
   self._uIItem = self:GetUIComponent("UISelectObjectPath", "UIItem")
-  self._uiItemWidget = (self._uIItem):SpawnObject("UIN25NewYearItem")
-  ;
-  (self._parentGo):SetActive(false)
+  self._uiItemWidget = self._uIItem:SpawnObject("UIN25NewYearItem")
+  self._parentGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearItemTips.SetData = function(self, roleAsset, position)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[roleAsset.assetid]
+function UIN25NewYearItemTips:SetData(roleAsset, position)
+  local cfg = Cfg.cfg_item[roleAsset.assetid]
   if not cfg then
-    return 
+    return
   end
-  ;
-  (self._name):SetText((StringTable.Get)(cfg.Name))
-  local count = (self._roleModule):GetAssetCount(roleAsset.assetid)
-  local str = (string.format)("<color=#d57f48>%s</color>", self:_FormatItemCount(count))
-  ;
-  (self._count):SetText((StringTable.Get)("str_item_public_owned") .. str)
-  ;
-  (self._content):SetText((StringTable.Get)(cfg.Intro))
-  ;
-  (self._uiItemWidget):Flush(roleAsset)
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._itemInfoGo).transform).position = position
-  -- DECOMPILER ERROR at PC63: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self._itemInfoGo).transform).localPosition = Vector3((((self._itemInfoGo).transform).localPosition).x + 380, (((self._itemInfoGo).transform).localPosition).y + 130, 0)
-  ;
-  (self._parentGo):SetActive(true)
+  self._name:SetText(StringTable.Get(cfg.Name))
+  local count = self._roleModule:GetAssetCount(roleAsset.assetid)
+  local str = string.format("<color=#d57f48>%s</color>", self:_FormatItemCount(count))
+  self._count:SetText(StringTable.Get("str_item_public_owned") .. str)
+  self._content:SetText(StringTable.Get(cfg.Intro))
+  self._uiItemWidget:Flush(roleAsset)
+  self._itemInfoGo.transform.position = position
+  self._itemInfoGo.transform.localPosition = Vector3(self._itemInfoGo.transform.localPosition.x + 380, self._itemInfoGo.transform.localPosition.y + 130, 0)
+  self._parentGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearItemTips.CloseBtnOnClick = function(self, go)
-  -- function num : 0_4
-  (self._parentGo):SetActive(false)
+function UIN25NewYearItemTips:CloseBtnOnClick(go)
+  self._parentGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25NewYearItemTips._FormatItemCount = function(self, itemCount)
-  -- function num : 0_5 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UIN25NewYearItemTips:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
-
-

@@ -1,42 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_evade.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddEvade", BuffLogicBase)
 BuffLogicAddEvade = BuffLogicAddEvade
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddEvade.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddEvade:Constructor(buffInstance, logicParam)
   self._evadeRate = logicParam.evadeRate
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddEvade.DoLogic = function(self, notify)
-  -- function num : 0_1
+function BuffLogicAddEvade:DoLogic(notify)
   if self._evadeRate <= 0 then
-    return 
+    return
   end
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:Modify("Evade", self._evadeRate, self:GetBuffSeq())
 end
 
 _class("BuffLogicRemoveEvade", BuffLogicBase)
 BuffLogicRemoveEvade = BuffLogicRemoveEvade
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveEvade.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveEvade:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveEvade.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local cpt = ((self._buffInstance):Entity()):Attributes()
+function BuffLogicRemoveEvade:DoLogic(notify)
+  local cpt = self._buffInstance:Entity():Attributes()
   cpt:RemoveModify("Evade", self:GetBuffSeq())
 end
-
-

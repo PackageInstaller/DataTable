@@ -1,61 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_destroy_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectDestroyTrapResult", SkillEffectResultBase)
 SkillEffectDestroyTrapResult = SkillEffectDestroyTrapResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectDestroyTrapResult.Constructor = function(self, entityID, trapID, trapPos, stageIndex)
-  -- function num : 0_0
+function SkillEffectDestroyTrapResult:Constructor(entityID, trapID, trapPos, stageIndex)
   self._entityID = entityID
   self._trapID = trapID
   self._trapPos = trapPos
   self._stageIndex = stageIndex or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectDestroyTrapResult:GetEffectType()
   return SkillEffectType.DestroyTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapResult.GetEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectDestroyTrapResult:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapResult.GetTrapID = function(self)
-  -- function num : 0_3
+function SkillEffectDestroyTrapResult:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapResult.SetTrapPos = function(self, pos)
-  -- function num : 0_4
+function SkillEffectDestroyTrapResult:SetTrapPos(pos)
   self._trapPos = pos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapResult.GetTrapPos = function(self)
-  -- function num : 0_5
+function SkillEffectDestroyTrapResult:GetTrapPos()
   return self._trapPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectDestroyTrapResult.GetDamageStageIndex = function(self)
-  -- function num : 0_6
+function SkillEffectDestroyTrapResult:GetDamageStageIndex()
   return self._stageIndex
 end
-
-

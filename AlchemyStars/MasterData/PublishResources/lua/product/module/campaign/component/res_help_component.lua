@@ -1,93 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/res_help_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ResHelpComponent", ICampaignComponent)
 ResHelpComponent = ResHelpComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ResHelpComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ResHelpComponent:Constructor()
   self.m_component_info = CResHelpComponentInfo:New()
   self.m_local_next_refresh_time = -1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent._GetLocalNextRefreshTime = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ResHelpComponent:_GetLocalNextRefreshTime()
   if self.m_local_next_refresh_time < 0 then
-    local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local roleModule = GameGlobal.GetModule(RoleModule)
     local pstid = roleModule:GetPstId()
     local l_key = pstid .. "ResHelpNextRefreshTime"
-    local strNextRefreshTime = (LocalDB.GetString)(l_key, "0")
+    local strNextRefreshTime = LocalDB.GetString(l_key, "0")
     local lNextRefreshTime = tonumber(strNextRefreshTime)
     self.m_local_next_refresh_time = lNextRefreshTime
   end
-  do
-    return self.m_local_next_refresh_time
-  end
+  return self.m_local_next_refresh_time
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent._SetLocalNextRefrehTime = function(self, _next_refreshTime_)
-  -- function num : 0_2 , upvalues : _ENV
+function ResHelpComponent:_SetLocalNextRefrehTime(_next_refreshTime_)
   self.m_local_next_refresh_time = _next_refreshTime_
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstid = roleModule:GetPstId()
   local l_key = pstid .. "ResHelpNextRefreshTime"
-  ;
-  (LocalDB.SetString)(l_key, tostring(_next_refreshTime_))
+  LocalDB.SetString(l_key, tostring(_next_refreshTime_))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.ComponentInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ResHelpComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = CResHelpComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.GetComponentInfo = function(self)
-  -- function num : 0_4
+function ResHelpComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.GetComponentType = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ResHelpComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_RES_HELP
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_6 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function ResHelpComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.HaveRedPoint = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+function ResHelpComponent:HaveRedPoint()
+  local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   if not time_mod then
     return false
   end
-  local tmNowTime = (math.modf)(time_mod:GetServerTime() / 1000)
+  local tmNowTime = math.modf(time_mod:GetServerTime() / 1000)
   local l_component_info = self:GetComponentInfo()
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  if l_component_info.tmNextRefreshTimesTime <= tmNowTime then
-    (self.m_component_info).tmNextRefreshTimesTime = (self.m_component_info).tmNextRefreshTimesTime + 86400
+  if tmNowTime >= l_component_info.tmNextRefreshTimesTime then
+    self.m_component_info.tmNextRefreshTimesTime = self.m_component_info.tmNextRefreshTimesTime + 86400
   end
   local l_local_refresh_time = self:_GetLocalNextRefreshTime()
   if l_local_refresh_time == l_component_info.tmNextRefreshTimesTime then
@@ -99,65 +66,37 @@ ResHelpComponent.HaveRedPoint = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.CloseTodayRedPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function ResHelpComponent:CloseTodayRedPoint()
   local l_component_info = self:GetComponentInfo()
   self:_SetLocalNextRefrehTime(l_component_info.tmNextRefreshTimesTime)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, l_component_info.m_campaign_id, nil, nil)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, l_component_info.m_campaign_id, nil, nil)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_9 , upvalues : _ENV
+function ResHelpComponent:CampaignComponentPushNotify(notify_data)
   if CResHelpComponentNotifyType.CResHelpComponentNotifyType_ResHelpInfoChange == notify_data.m_notify_type then
     local ev = NotifyResHelpComponentInfoChange:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnUpdateBaseInfo(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][ResHelpComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][ResHelpComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.OnUpdateBaseInfo = function(self, ev)
-  -- function num : 0_10
+function ResHelpComponent:OnUpdateBaseInfo(ev)
   self:GetComponentInfo()
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).nTodayHelpTimes = ev.nTodayHelpTimes
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).tmNextRefreshTimesTime = ev.tmNextRefreshTimesTime
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).nHelpDayLimitTimes = ev.nHelpDayLimitTimes
+  self.m_component_info.nTodayHelpTimes = ev.nTodayHelpTimes
+  self.m_component_info.tmNextRefreshTimesTime = ev.tmNextRefreshTimesTime
+  self.m_component_info.nHelpDayLimitTimes = ev.nHelpDayLimitTimes
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.GetBoostTimes = function(self)
-  -- function num : 0_11
+function ResHelpComponent:GetBoostTimes()
   local cInfo = self:GetComponentInfo()
   return cInfo.nTodayHelpTimes, cInfo.nHelpDayLimitTimes
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ResHelpComponent.GetNextTimestamp = function(self)
-  -- function num : 0_12
+function ResHelpComponent:GetNextTimestamp()
   local cInfo = self:GetComponentInfo()
   return cInfo.tmNextRefreshTimesTime
 end
-
-

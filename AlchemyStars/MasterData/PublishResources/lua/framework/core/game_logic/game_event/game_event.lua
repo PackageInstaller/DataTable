@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/game_logic/game_event/game_event.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameEventDispatcher", Object)
 GameEventDispatcher = GameEventDispatcher
 local tableIKey = table.ikey
@@ -10,10 +5,8 @@ local tableClear = table.clear
 local tableInsert = table.insert
 local fieldGetListenerID = "GetListenerID"
 local fieldGetID = "GetID"
--- DECOMPILER ERROR at PC16: Confused about usage of register: R5 in 'UnsetPending'
 
-GameEventDispatcher.Constructor = function(self)
-  -- function num : 0_0
+function GameEventDispatcher:Constructor()
   self.type2ListenerContexts = {}
   self.type2Callbacks = {}
   self.type2ListenerContextsTodoList = {}
@@ -21,87 +14,60 @@ GameEventDispatcher.Constructor = function(self)
   self.dispatchedIDArray = {}
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.AddListener = function(self, gameEventType, listenerContext)
-  -- function num : 0_1 , upvalues : _ENV, fieldGetListenerID
-  local listenerContexts = (self.type2ListenerContextsTodoList)[gameEventType]
+function GameEventDispatcher:AddListener(gameEventType, listenerContext)
+  local listenerContexts = self.type2ListenerContextsTodoList[gameEventType]
   if not listenerContexts then
     listenerContexts = ArrayList:New()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.type2ListenerContextsTodoList)[gameEventType] = listenerContexts
+    self.type2ListenerContextsTodoList[gameEventType] = listenerContexts
   end
   if self:IsIDInContainer(listenerContexts, listenerContext.listenerID, fieldGetListenerID) then
-    return 
+    return
   end
   listenerContexts:PushFront(listenerContext)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.RemoveListener = function(self, gameEventType, listenerID)
-  -- function num : 0_2 , upvalues : fieldGetListenerID
+function GameEventDispatcher:RemoveListener(gameEventType, listenerID)
   self:RemoveListenerFrom(gameEventType, listenerID, self.type2ListenerContexts, fieldGetListenerID)
   self:RemoveListenerFrom(gameEventType, listenerID, self.type2ListenerContextsTodoList, fieldGetListenerID)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.AddCallbackListener = function(self, gameEventType, callback)
-  -- function num : 0_3 , upvalues : _ENV, fieldGetID
-  local listenerCallbacks = (self.type2CallbacksTodoList)[gameEventType]
+function GameEventDispatcher:AddCallbackListener(gameEventType, callback)
+  local listenerCallbacks = self.type2CallbacksTodoList[gameEventType]
   if not listenerCallbacks then
     listenerCallbacks = ArrayList:New()
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.type2CallbacksTodoList)[gameEventType] = listenerCallbacks
+    self.type2CallbacksTodoList[gameEventType] = listenerCallbacks
   end
   if self:IsIDInContainer(listenerCallbacks, callback:GetID(), fieldGetID) then
-    return 
+    return
   end
   listenerCallbacks:PushFront(callback)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.RemoveCallbackListener = function(self, gameEventType, callback)
-  -- function num : 0_4 , upvalues : fieldGetID
-  if (self.type2Callbacks)[gameEventType] and callback then
+function GameEventDispatcher:RemoveCallbackListener(gameEventType, callback)
+  if self.type2Callbacks[gameEventType] and callback then
     self:RemoveListenerFrom(gameEventType, callback:GetID(), self.type2Callbacks, fieldGetID)
   end
-  if (self.type2CallbacksTodoList)[gameEventType] and callback then
+  if self.type2CallbacksTodoList[gameEventType] and callback then
     self:RemoveListenerFrom(gameEventType, callback:GetID(), self.type2CallbacksTodoList, fieldGetID)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.RegisterEventCallBack = function(self, gameEventType, clsObject, callback)
-  -- function num : 0_5 , upvalues : _ENV
-  local callBackFunc = (GameHelper:GetInstance()):CreateEventCallback(gameEventType, callback, clsObject)
+function GameEventDispatcher:RegisterEventCallBack(gameEventType, clsObject, callback)
+  local callBackFunc = GameHelper:GetInstance():CreateEventCallback(gameEventType, callback, clsObject)
   self:AddCallbackListener(gameEventType, callBackFunc)
   return callBackFunc
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.UnRegisterEventCallback = function(self, eventCallback)
-  -- function num : 0_6
+function GameEventDispatcher:UnRegisterEventCallback(eventCallback)
   local type = eventCallback:GetEventType()
   self:RemoveCallbackListener(type, eventCallback)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.Dispatch = function(self, gameEventType, ...)
-  -- function num : 0_7 , upvalues : fieldGetListenerID, fieldGetID, tableClear, tableIKey, tableInsert
+function GameEventDispatcher:Dispatch(gameEventType, ...)
   self:MergeListenersTodoToCurrent(self.type2ListenerContextsTodoList, self.type2ListenerContexts, fieldGetListenerID)
   self:MergeListenersTodoToCurrent(self.type2CallbacksTodoList, self.type2Callbacks, fieldGetID)
   local dispatchedIDArray = tableClear(self.dispatchedIDArray)
-  local listenerContexts = (self.type2ListenerContexts)[gameEventType]
+  local listenerContexts = self.type2ListenerContexts[gameEventType]
   if listenerContexts then
     for i = listenerContexts:Size(), 1, -1 do
       local listenerContext = listenerContexts:GetAt(i)
@@ -111,90 +77,64 @@ GameEventDispatcher.Dispatch = function(self, gameEventType, ...)
       end
     end
   end
-  do
-    tableClear(dispatchedIDArray)
-    local listenerCallbacks = (self.type2Callbacks)[gameEventType]
-    if listenerCallbacks then
-      for i = listenerCallbacks:Size(), 1, -1 do
-        local listenerCallback = listenerCallbacks:GetAt(i)
-        if listenerCallback and not tableIKey(dispatchedIDArray, listenerCallback:GetID()) then
-          tableInsert(dispatchedIDArray, listenerCallback:GetID())
-          listenerCallback:Call(...)
-        end
+  tableClear(dispatchedIDArray)
+  local listenerCallbacks = self.type2Callbacks[gameEventType]
+  if listenerCallbacks then
+    for i = listenerCallbacks:Size(), 1, -1 do
+      local listenerCallback = listenerCallbacks:GetAt(i)
+      if listenerCallback and not tableIKey(dispatchedIDArray, listenerCallback:GetID()) then
+        tableInsert(dispatchedIDArray, listenerCallback:GetID())
+        listenerCallback:Call(...)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.RemoveAllListeners = function(self)
-  -- function num : 0_8
+function GameEventDispatcher:RemoveAllListeners()
   self.type2ListenerContexts = {}
   self.type2Callbacks = {}
   self.type2ListenerContextsTodoList = {}
   self.type2CallbacksTodoList = {}
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.RemoveListenerFrom = function(self, gameEventType, listenerID, t, checkField)
-  -- function num : 0_9
+function GameEventDispatcher:RemoveListenerFrom(gameEventType, listenerID, t, checkField)
   local listeners = t[gameEventType]
   if not listeners then
-    return 
+    return
   end
   for i = 1, listeners:Size() do
     local listener = listeners:GetAt(i)
-    if listener and (listener[checkField])(listener) == listenerID then
+    if listener and listener[checkField](listener) == listenerID then
       listeners:RemoveAt(i)
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.MergeListenersTodoToCurrent = function(self, todoTable, curTable, checkField)
-  -- function num : 0_10 , upvalues : _ENV, tableClear
-  for gameEventType,todoListeners in pairs(todoTable) do
+function GameEventDispatcher:MergeListenersTodoToCurrent(todoTable, curTable, checkField)
+  for gameEventType, todoListeners in pairs(todoTable) do
     local curListeners = curTable[gameEventType]
     if curListeners then
       for i = todoListeners:Size(), 1, -1 do
         local todoListener = todoListeners:GetAt(i)
-        local todoListenerID = (todoListener[checkField])(todoListener)
+        local todoListenerID = todoListener[checkField](todoListener)
         if not self:IsIDInContainer(curListeners, todoListenerID, checkField) then
           curListeners:PushFront(todoListener)
         end
       end
     else
-      do
-        do
-          curTable[gameEventType] = todoListeners
-          -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC31: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      curTable[gameEventType] = todoListeners
     end
   end
   tableClear(todoTable)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-GameEventDispatcher.IsIDInContainer = function(self, arrayList, targetID, checkField)
-  -- function num : 0_11
+function GameEventDispatcher:IsIDInContainer(arrayList, targetID, checkField)
   for i = 1, arrayList:Size() do
     local obj = arrayList:GetAt(i)
-    if obj and (obj[checkField])(obj) == targetID then
+    if obj and obj[checkField](obj) == targetID then
       return true
     end
   end
   return false
 end
-
-

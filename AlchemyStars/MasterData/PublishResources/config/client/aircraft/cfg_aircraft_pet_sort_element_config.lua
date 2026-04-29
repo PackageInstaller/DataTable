@@ -1,13 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/aircraft/cfg_aircraft_pet_sort_element_config.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Name = 2, attributeID = 3}
+local key = {
+  ID = 1,
+  Name = 2,
+  attributeID = 3
+}
 local config = {
-{1, "str_aircraft_tip_star_level", 1}
-, 
-{2, "str_aircraft_tip_star_element", 3}
+  {
+    1,
+    "str_aircraft_tip_star_level",
+    1
+  },
+  {
+    2,
+    "str_aircraft_tip_star_element",
+    3
+  }
 }
 return config, "ID", key
-

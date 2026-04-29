@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/console/ui_smoking_test_dashboard.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_controller")
 _class("UISmokingTestDashboard", UIController)
 UISmokingTestDashboard = UISmokingTestDashboard
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISmokingTestDashboard.OnShow = function(self)
-  -- function num : 0_0
+function UISmokingTestDashboard:OnShow()
   self._StoryTestBtn = self:GetUIComponent("Button", "StoryTest")
   self._StoryChapterTestBtn = self:GetUIComponent("Button", "StoryChapterTest")
   self._ExtraTestBtn = self:GetUIComponent("Button", "ExtraTest")
@@ -25,166 +18,94 @@ UISmokingTestDashboard.OnShow = function(self)
   self._advancedMode = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.OnUpdate = function(self, dt)
-  -- function num : 0_1 , upvalues : _ENV
+function UISmokingTestDashboard:OnUpdate(dt)
   self:_EntrancesBtnStatusUpdate(dt)
   self:_AdvancedBtnStatusUpdate(dt)
-  local testRobot = (GameGlobal.GetModule)(TestRobotModule)
-  ;
-  (self._StatusLog):SetText(testRobot.__statusStr)
+  local testRobot = GameGlobal.GetModule(TestRobotModule)
+  self._StatusLog:SetText(testRobot.__statusStr)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard._EntrancesBtnStatusUpdate = function(self, dt)
-  -- function num : 0_2 , upvalues : _ENV
-  local testRobot = (GameGlobal.GetModule)(TestRobotModule)
+function UISmokingTestDashboard:_EntrancesBtnStatusUpdate(dt)
+  local testRobot = GameGlobal.GetModule(TestRobotModule)
   local entranceEnable = not testRobot.m_bEnableRobot
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._StoryTestBtn).interactable = entranceEnable
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._StoryChapterTestBtn).interactable = entranceEnable
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._ExtraTestBtn).interactable = entranceEnable
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._MazeTestBtn).interactable = entranceEnable
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._ResDungeonTestBtn).interactable = entranceEnable
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._GoldbergEveBtn).interactable = entranceEnable
+  self._StoryTestBtn.interactable = entranceEnable
+  self._StoryChapterTestBtn.interactable = entranceEnable
+  self._ExtraTestBtn.interactable = entranceEnable
+  self._MazeTestBtn.interactable = entranceEnable
+  self._ResDungeonTestBtn.interactable = entranceEnable
+  self._GoldbergEveBtn.interactable = entranceEnable
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard._AdvancedBtnStatusUpdate = function(self, dt)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._HardResetBtn).interactable = self._advancedMode
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._HaltBtn).interactable = self._advancedMode
+function UISmokingTestDashboard:_AdvancedBtnStatusUpdate(dt)
+  self._HardResetBtn.interactable = self._advancedMode
+  self._HaltBtn.interactable = self._advancedMode
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.BlackBGOnClick = function(self)
-  -- function num : 0_4
+function UISmokingTestDashboard:BlackBGOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.StoryTestOnClick = function(self)
-  -- function num : 0_5
-  if not (self._StoryTestBtn).interactable then
-    return 
+function UISmokingTestDashboard:StoryTestOnClick()
+  if not self._StoryTestBtn.interactable then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.StoryChapterTestOnClick = function(self)
-  -- function num : 0_6
-  if not (self._StoryChapterTestBtn).interactable then
-    return 
+function UISmokingTestDashboard:StoryChapterTestOnClick()
+  if not self._StoryChapterTestBtn.interactable then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.ExtraTestOnClick = function(self)
-  -- function num : 0_7
-  if not (self._ExtraTestBtn).interactable then
-    return 
+function UISmokingTestDashboard:ExtraTestOnClick()
+  if not self._ExtraTestBtn.interactable then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.MazeTestOnClick = function(self)
-  -- function num : 0_8
-  if not (self._MazeTestBtn).interactable then
-    return 
+function UISmokingTestDashboard:MazeTestOnClick()
+  if not self._MazeTestBtn.interactable then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.TowerTestOnClick = function(self)
-  -- function num : 0_9
-  if not (self._StoryTestBtn).interactable then
-    return 
+function UISmokingTestDashboard:TowerTestOnClick()
+  if not self._StoryTestBtn.interactable then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.ResDungeonTestOnClick = function(self)
-  -- function num : 0_10
-  if not (self._ResDungeonTestBtn).interactable then
-    return 
+function UISmokingTestDashboard:ResDungeonTestOnClick()
+  if not self._ResDungeonTestBtn.interactable then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.GoldbergEveTestOnClick = function(self)
-  -- function num : 0_11
-  if not (self._GoldbergEveBtn).interactable then
-    return 
+function UISmokingTestDashboard:GoldbergEveTestOnClick()
+  if not self._GoldbergEveBtn.interactable then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.SafetyLockOnClick = function(self)
-  -- function num : 0_12
+function UISmokingTestDashboard:SafetyLockOnClick()
   self._advancedMode = not self._advancedMode
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.HardResetOnClick = function(self)
-  -- function num : 0_13
-  if not (self._HardResetBtn).interactable then
-    return 
+function UISmokingTestDashboard:HardResetOnClick()
+  if not self._HardResetBtn.interactable then
+    return
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.HaltOnClick = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  if not (self._HaltBtn).interactable then
-    return 
+function UISmokingTestDashboard:HaltOnClick()
+  if not self._HaltBtn.interactable then
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(TestRobotModule)).m_bEnableRobot = false
+  GameGlobal.GetModule(TestRobotModule).m_bEnableRobot = false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISmokingTestDashboard.ActivityTestOnClick = function(self)
-  -- function num : 0_15
-  if not (self._activityTestBtn).interactable then
-    return 
+function UISmokingTestDashboard:ActivityTestOnClick()
+  if not self._activityTestBtn.interactable then
+    return
   end
 end
-
-

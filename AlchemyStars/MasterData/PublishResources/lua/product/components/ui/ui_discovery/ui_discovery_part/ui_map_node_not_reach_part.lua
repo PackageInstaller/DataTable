@@ -1,41 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_part/ui_map_node_not_reach_part.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMapNodeNotReachPart", UIMapNodeBasePart)
 UIMapNodeNotReachPart = UIMapNodeNotReachPart
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMapNodeNotReachPart.GetUIComponentStar = function(self)
-  -- function num : 0_0
+function UIMapNodeNotReachPart:GetUIComponentStar()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeNotReachPart.FlushStar = function(self)
-  -- function num : 0_1
+function UIMapNodeNotReachPart:FlushStar()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeNotReachPart.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((UIMapNodeNotReachPart.super).Flush)(self)
-  local stage = ((self.nodeInfo).stages)[1]
-  local cfg_mission = (Cfg.cfg_mission)[stage.id]
+function UIMapNodeNotReachPart:Flush()
+  UIMapNodeNotReachPart.super.Flush(self)
+  local stage = self.nodeInfo.stages[1]
+  local cfg_mission = Cfg.cfg_mission[stage.id]
   if cfg_mission then
     local level = cfg_mission.NeedLevel
     if level then
-      (self.txtIdx):SetText(level .. (StringTable.Get)("str_discovery_level_not_reach_tip"))
+      self.txtIdx:SetText(level .. StringTable.Get("str_discovery_level_not_reach_tip"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMapNodeNotReachPart.ClickItem = function(self)
-  -- function num : 0_3
+function UIMapNodeNotReachPart:ClickItem()
 end
-
-

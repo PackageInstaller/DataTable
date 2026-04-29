@@ -1,141 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_pet_multi_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetPetMultiSkillItem", UICustomWidget)
 UIWidgetPetMultiSkillItem = UIWidgetPetMultiSkillItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetPetMultiSkillItem.OnShow = function(self)
-  -- function num : 0_0
+function UIWidgetPetMultiSkillItem:OnShow()
   self.enableFakeInput = true
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._selectImage = self:GetUIComponent("Image", "select")
   self._frame = self:GetUIComponent("Image", "frame")
   self._btnGo = self:GetGameObject("ButtonBg")
   self._powerInfoGo = self:GetGameObject("PowerInfoArea")
-  ;
-  (self._powerInfoGo):SetActive(false)
+  self._powerInfoGo:SetActive(false)
   self._alreadyCastGo = self:GetGameObject("AlreadyCastActiveImage")
-  ;
-  (self._alreadyCastGo):SetActive(false)
+  self._alreadyCastGo:SetActive(false)
   self._cdGo = self:GetGameObject("Energy")
-  ;
-  (self._cdGo):SetActive(false)
+  self._cdGo:SetActive(false)
   self._energyText = self:GetUIComponent("UILocalizationText", "CurEnergyText")
   self._flagIcon = self:GetUIComponent("RawImageLoader", "FlagIcon")
   self._flagIconBaseGo = self:GetGameObject("FlagIconBase")
-  ;
-  (self._flagIconBaseGo):SetActive(false)
+  self._flagIconBaseGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetMultiSkillItem.OnHide = function(self)
-  -- function num : 0_1
+function UIWidgetPetMultiSkillItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetMultiSkillItem.Init = function(self, index, uiData, callBack, isVariantSkillList)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetPetMultiSkillItem:Init(index, uiData, callBack, isVariantSkillList)
   self._index = index
   self._callBack = callBack
   self._uiData = uiData
   local skillID = uiData._skillId
   local activeSkillData = BattleSkillCfg(skillID)
-  ;
-  (self._icon):LoadImage(activeSkillData.Icon)
-  local skillData = (ConfigServiceHelper.GetSkillConfigData)(skillID)
-  ;
-  (self._powerInfoGo):SetActive(false)
+  self._icon:LoadImage(activeSkillData.Icon)
+  local skillData = ConfigServiceHelper.GetSkillConfigData(skillID)
+  self._powerInfoGo:SetActive(false)
   if skillData:GetSkillTriggerType() == SkillTriggerType.Energy and not isVariantSkillList then
-    (self._powerInfoGo):SetActive(true)
+    self._powerInfoGo:SetActive(true)
     self:RefreshPowerInfoArea()
   end
   if self._flagIconBaseGo then
-    local variantSkillFlagCfg = (Cfg.cfg_variant_skill_flag_icon)[skillID]
+    local variantSkillFlagCfg = Cfg.cfg_variant_skill_flag_icon[skillID]
     if variantSkillFlagCfg then
       local flagIconID = variantSkillFlagCfg.FlagIcon
-      ;
-      (self._flagIconBaseGo):SetActive(true)
-      ;
-      (self._flagIcon):LoadImage(flagIconID)
+      self._flagIconBaseGo:SetActive(true)
+      self._flagIcon:LoadImage(flagIconID)
     else
-      do
-        ;
-        (self._flagIconBaseGo):SetActive(false)
-      end
+      self._flagIconBaseGo:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetMultiSkillItem.OnSelect = function(self, visible, canCast)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetPetMultiSkillItem", input = "OnSelect", 
-args = {visible, canCast}
-})
-  ;
-  ((self._selectImage).gameObject):SetActive(visible)
-  ;
-  ((self._frame).gameObject):SetActive(not canCast)
+function UIWidgetPetMultiSkillItem:OnSelect(visible, canCast)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetPetMultiSkillItem",
+    input = "OnSelect",
+    args = {visible, canCast}
+  })
+  self._selectImage.gameObject:SetActive(visible)
+  self._frame.gameObject:SetActive(not canCast)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetMultiSkillItem.ButtonBgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.UIInput, {ui = "UIWidgetPetMultiSkillItem", input = "buttonBgOnClick", 
-args = {}
-})
+function UIWidgetPetMultiSkillItem:ButtonBgOnClick(go)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.UIInput, {
+    ui = "UIWidgetPetMultiSkillItem",
+    input = "buttonBgOnClick",
+    args = {}
+  })
   if self._callBack then
-    (self._callBack)(self._index)
+    self._callBack(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetMultiSkillItem.GetSelectBtn = function(self)
-  -- function num : 0_5
+function UIWidgetPetMultiSkillItem:GetSelectBtn()
   return self._btnGo
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetPetMultiSkillItem.RefreshPowerInfoArea = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local canCast = (self._uiData)._canCast
-  local leftPower = (self._uiData)._leftPower
-  local maxPower = (self._uiData)._maxPower
-  local showAlreadyCast = (self._uiData)._showAlreadyCast
-  local showPowerInfo = (self._uiData)._showPowerInfo
-  ;
-  (self._powerInfoGo):SetActive(showPowerInfo)
-  if (self._uiData)._canCast then
-    (self._cdGo):SetActive(false)
-    ;
-    (self._alreadyCastGo):SetActive(false)
+function UIWidgetPetMultiSkillItem:RefreshPowerInfoArea()
+  local canCast = self._uiData._canCast
+  local leftPower = self._uiData._leftPower
+  local maxPower = self._uiData._maxPower
+  local showAlreadyCast = self._uiData._showAlreadyCast
+  local showPowerInfo = self._uiData._showPowerInfo
+  self._powerInfoGo:SetActive(showPowerInfo)
+  if self._uiData._canCast then
+    self._cdGo:SetActive(false)
+    self._alreadyCastGo:SetActive(false)
+  elseif showAlreadyCast then
+    self._alreadyCastGo:SetActive(true)
+    self._cdGo:SetActive(false)
   else
-    if showAlreadyCast then
-      (self._alreadyCastGo):SetActive(true)
-      ;
-      (self._cdGo):SetActive(false)
+    self._alreadyCastGo:SetActive(false)
+    if leftPower == 0 then
+      self._cdGo:SetActive(false)
     else
-      ;
-      (self._alreadyCastGo):SetActive(false)
-      if leftPower == 0 then
-        (self._cdGo):SetActive(false)
-      else
-        ;
-        (self._cdGo):SetActive(true)
-        ;
-        (self._energyText):SetText(tostring(leftPower))
-      end
+      self._cdGo:SetActive(true)
+      self._energyText:SetText(tostring(leftPower))
     end
   end
 end
-
-

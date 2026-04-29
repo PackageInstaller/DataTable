@@ -1,36 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/vampire/talent/RoleSkill/ui_n25_vampire_role_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25VampireRoleSkill", UIController)
 UIN25VampireRoleSkill = UIN25VampireRoleSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25VampireRoleSkill.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN25VampireRoleSkill:Constructor()
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN25Data()
+  self.data = self.mCampaign:GetN25Data()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self.atc = (self:GetGameObject()):GetComponent(typeof(ATransitionComponent))
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.atc).enabled = true
-  ;
-  (self.atc):PlayEnterAnimation(true)
+function UIN25VampireRoleSkill:OnShow(uiParams)
+  self.atc = self:GetGameObject():GetComponent(typeof(ATransitionComponent))
+  self.atc.enabled = true
+  self.atc:PlayEnterAnimation(true)
   self.poolContent = self:GetUIComponent("UISelectObjectPath", "Content")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self.txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self.goBtnReplace = self:GetGameObject("BtnReplace")
   self.imgReplace = self:GetUIComponent("Image", "BtnReplace")
   self.txtReplace = self:GetUIComponent("UILocalizationText", "txtReplace")
-  local roleSkill = (self.data):GetCurRoleSkill()
+  local roleSkill = self.data:GetCurRoleSkill()
   self.curRoleSkillId = 0
   if roleSkill then
     self.curRoleSkillId = roleSkill.skillId
@@ -39,103 +25,65 @@ UIN25VampireRoleSkill.OnShow = function(self, uiParams)
   self:SelectSkillItem()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.OnHide = function(self)
-  -- function num : 0_2
+function UIN25VampireRoleSkill:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.Flush = function(self)
-  -- function num : 0_3
+function UIN25VampireRoleSkill:Flush()
   self:FlushSkillInfo()
   self:FlushList()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.FlushSkillInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local curRoleSkill = (self.data):GetSkillBySkillId(self.curRoleSkillId)
+function UIN25VampireRoleSkill:FlushSkillInfo()
+  local curRoleSkill = self.data:GetSkillBySkillId(self.curRoleSkillId)
   if not curRoleSkill then
-    curRoleSkill = (self.data):GetFstRoleSkill()
+    curRoleSkill = self.data:GetFstRoleSkill()
     self.curRoleSkillId = curRoleSkill.skillId
   end
   local icon, name, desc = curRoleSkill:IconNameDesc()
-  ;
-  (self.txtName):SetText(name)
-  ;
-  (self.txtDesc):SetText(desc)
+  self.txtName:SetText(name)
+  self.txtDesc:SetText(desc)
   if self:IsRoleSkillLock(curRoleSkill.skillId) then
-    (self.goBtnReplace):SetActive(false)
+    self.goBtnReplace:SetActive(false)
   else
-    ;
-    (self.goBtnReplace):SetActive(true)
-    local roleSkill = (self.data):GetCurRoleSkill()
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R6 in 'UnsetPending'
-
+    self.goBtnReplace:SetActive(true)
+    local roleSkill = self.data:GetCurRoleSkill()
     if roleSkill and roleSkill.skillId == self.curRoleSkillId then
-      (self.imgReplace).color = Color.gray
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.imgReplace).raycastTarget = false
-      ;
-      (self.txtReplace):SetText((StringTable.Get)("str_n25_vampire_equiped"))
+      self.imgReplace.color = Color.gray
+      self.imgReplace.raycastTarget = false
+      self.txtReplace:SetText(StringTable.Get("str_n25_vampire_equiped"))
     else
-      -- DECOMPILER ERROR at PC62: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.imgReplace).color = Color.white
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.imgReplace).raycastTarget = true
-      ;
-      (self.txtReplace):SetText((StringTable.Get)("str_n25_vampire_replace"))
+      self.imgReplace.color = Color.white
+      self.imgReplace.raycastTarget = true
+      self.txtReplace:SetText(StringTable.Get("str_n25_vampire_replace"))
     end
   end
-  do
-    self:SelectSkillItem()
+  self:SelectSkillItem()
+end
+
+function UIN25VampireRoleSkill:FlushList()
+  local roleSkills = self.data:GetRoleSkills()
+  local len = table.count(roleSkills)
+  self.poolContent:SpawnObjects("UIN25VampireRoleSkillItem", len)
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, roleSkill in pairs(roleSkills) do
+    local ui = uis[i]
+    ui:Flush(roleSkill, self, function()
+      if self.curRoleSkillId == roleSkill.skillId then
+        return
+      end
+      self.curRoleSkillId = roleSkill.skillId
+      self:FlushSkillInfo()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.FlushList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local roleSkills = (self.data):GetRoleSkills()
-  local len = (table.count)(roleSkills)
-  ;
-  (self.poolContent):SpawnObjects("UIN25VampireRoleSkillItem", len)
-  local uis = (self.poolContent):GetAllSpawnList()
-  for i,roleSkill in pairs(roleSkills) do
-    do
-      local ui = uis[i]
-      ui:Flush(roleSkill, self, function()
-    -- function num : 0_5_0 , upvalues : self, roleSkill
-    if self.curRoleSkillId == roleSkill.skillId then
-      return 
-    end
-    self.curRoleSkillId = roleSkill.skillId
-    self:FlushSkillInfo()
-  end
-)
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.IsRoleSkillLock = function(self, roleSkillId)
-  -- function num : 0_6
-  local tier = (self.data):GetTierBySkillId(roleSkillId)
+function UIN25VampireRoleSkill:IsRoleSkillLock(roleSkillId)
+  local tier = self.data:GetTierBySkillId(roleSkillId)
   if tier then
     if tier:IsLock() then
       return true
     else
-      local roleSkill = (self.data):GetSkillBySkillId(roleSkillId)
+      local roleSkill = self.data:GetSkillBySkillId(roleSkillId)
       if roleSkill then
         local level, maxLevel = roleSkill:CurMaxLevel()
         if level <= 0 then
@@ -144,17 +92,12 @@ UIN25VampireRoleSkill.IsRoleSkillLock = function(self, roleSkillId)
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.SelectSkillItem = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local uis = (self.poolContent):GetAllSpawnList()
-  for index,uiv in ipairs(uis) do
+function UIN25VampireRoleSkill:SelectSkillItem()
+  local uis = self.poolContent:GetAllSpawnList()
+  for index, uiv in ipairs(uis) do
     if self.curRoleSkillId == uiv:SkillId() then
       uiv:Select(true)
     else
@@ -163,48 +106,32 @@ UIN25VampireRoleSkill.SelectSkillItem = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.BgOnClick = function(self, go)
-  -- function num : 0_8
+function UIN25VampireRoleSkill:BgOnClick(go)
   self:PlayAnimClose()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.BtnReplaceOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN25VampireRoleSkill:BtnReplaceOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
     local key = "HandleBloodsuckerResetTalentTree"
     self:Lock(key)
-    local row, index = (self.data):GetSkillRowIndexBySkillId(self.curRoleSkillId)
-    local c = (self.data):GetComponentVampire()
+    local row, index = self.data:GetSkillRowIndexBySkillId(self.curRoleSkillId)
+    local c = self.data:GetComponentVampire()
     local res = AsyncRequestRes:New()
     c:HandleBloodsuckerSelectSkill(TT, res, row, index)
-    if (N25Data.CheckCode)(res) then
+    if N25Data.CheckCode(res) then
       self:PlayAnimClose()
     end
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25VampireRoleSkill.PlayAnimClose = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN25VampireRoleSkill:PlayAnimClose()
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, _ENV
     local key = "UIN25VampireRoleSkillPlayAnimClose"
     self:Lock(key)
-    ;
-    (self.atc):PlayLeaveAnimation(true)
+    self.atc:PlayLeaveAnimation(true)
     YIELD(TT, 140)
     self:CloseDialog()
     self:UnLock(key)
-  end
-, self)
+  end, self)
 end
-
-

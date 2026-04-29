@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/buff/buff_view_notify_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewNotifyComponent", Object)
 BuffViewNotifyComponent = BuffViewNotifyComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewNotifyComponent.Constructor = function(self, notifyType, params)
-  -- function num : 0_0
+function BuffViewNotifyComponent:Constructor(notifyType, params)
   self._notifyType = notifyType
   self._params = params
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewNotifyComponent.GetNotifyType = function(self)
-  -- function num : 0_1
+function BuffViewNotifyComponent:GetNotifyType()
   return self._notifyType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewNotifyComponent.GetParams = function(self)
-  -- function num : 0_2
+function BuffViewNotifyComponent:GetParams()
   return self._params
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.BuffViewNotify = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).BuffViewNotify)
+function Entity:BuffViewNotify()
+  return self:GetComponent(self.WEComponentsEnum.BuffViewNotify)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.NotifyBuffView = function(self, notifyType, params)
-  -- function num : 0_4 , upvalues : _ENV
+function Entity:NotifyBuffView(notifyType, params)
   local component = BuffViewNotifyComponent:New(notifyType, params)
-  self:ReplaceComponent((self.WEComponentsEnum).BuffViewNotify, component)
+  self:ReplaceComponent(self.WEComponentsEnum.BuffViewNotify, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveBuffViewNotify = function(self)
-  -- function num : 0_5
+function Entity:RemoveBuffViewNotify()
   if self:BuffViewNotify() then
-    self:RemoveComponent((self.WEComponentsEnum).BuffViewNotify)
+    self:RemoveComponent(self.WEComponentsEnum.BuffViewNotify)
   end
 end
-
-

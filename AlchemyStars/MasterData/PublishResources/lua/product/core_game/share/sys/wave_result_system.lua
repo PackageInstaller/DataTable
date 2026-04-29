@@ -1,31 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/wave_result_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("WaveResultSystem", MainStateSystem)
 WaveResultSystem = WaveResultSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WaveResultSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function WaveResultSystem:_GetMainStateID()
   return GameStateID.WaveResult
 end
 
-local AssignWave = {None = 0, AssignEndWave = 1, AssignRand = 2}
+local AssignWave = {
+  None = 0,
+  AssignEndWave = 1,
+  AssignRand = 2
+}
 _enum("AssignWave", AssignWave)
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
 
-WaveResultSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function WaveResultSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoLogicChainAttackDead()
   self:_DoRenderChainAttackDead(TT)
   self:_DoLogicCalc3StarProgress()
   self:_DoLogicCalcBonusObjective()
   self:_DoLogicClearChainPath(teamEntity)
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local waveNum = battleStatCmpt:GetCurWaveIndex()
   self:_DoLogicNotifyWaveEnd(waveNum)
   self:_DoRenderNotifyWaveEnd(TT, waveNum)
@@ -34,71 +29,51 @@ WaveResultSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicTrapDie()
   self:_DoRenderTrapDie(TT)
   local turnToBattleResult, victory = self:_DoLogicCheckBattleResult(teamEntity)
-  do
-    if turnToBattleResult then
-      local hasDeadLogic = self:_DoLogicHandleTurnBattleResult(victory)
-      self:_DoRenderHandleTurnBattleResult(TT, victory, hasDeadLogic)
-    end
-    self:_WaitTime(TT, 200)
-    self:_DoLogicUpdateBattleStat()
-    self:_DoLogicLeaveWaveResult(turnToBattleResult)
-    self:_DoRenderSendWaveEnd(TT, turnToBattleResult, victory)
+  if turnToBattleResult then
+    local hasDeadLogic = self:_DoLogicHandleTurnBattleResult(victory)
+    self:_DoRenderHandleTurnBattleResult(TT, victory, hasDeadLogic)
   end
+  self:_WaitTime(TT, 200)
+  self:_DoLogicUpdateBattleStat()
+  self:_DoLogicLeaveWaveResult(turnToBattleResult)
+  self:_DoRenderSendWaveEnd(TT, turnToBattleResult, victory)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoLogicChainAttackDead = function(self)
-  -- function num : 0_2
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
+function WaveResultSystem:_DoLogicChainAttackDead()
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
   local drops, deadEntityIDList = sMonsterShowLogic:DoAllMonsterDeadLogic()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoLogicClearChainPath = function(self, teamEntity)
-  -- function num : 0_3
+function WaveResultSystem:_DoLogicClearChainPath(teamEntity)
   if teamEntity == nil then
-    return 
+    return
   end
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   logicChainPathCmpt:ClearLogicChainPath()
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoLogicCalc3StarProgress = function(self)
-  -- function num : 0_4
-  local starService = (self._world):GetService("Star3Calc")
+function WaveResultSystem:_DoLogicCalc3StarProgress()
+  local starService = self._world:GetService("Star3Calc")
   starService:Calc3StarProgress()
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoLogicCalcBonusObjective = function(self)
-  -- function num : 0_5
-  local bonusService = (self._world):GetService("BonusCalc")
+function WaveResultSystem:_DoLogicCalcBonusObjective()
+  local bonusService = self._world:GetService("BonusCalc")
   bonusService:CalcBonusObjective()
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoLogicNotifyWaveEnd = function(self, waveNum)
-  -- function num : 0_6 , upvalues : _ENV
-  ((self._world):GetService("Trigger")):Notify(NTWaveTurnEnd:New(waveNum))
+function WaveResultSystem:_DoLogicNotifyWaveEnd(waveNum)
+  self._world:GetService("Trigger"):Notify(NTWaveTurnEnd:New(waveNum))
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoLogicCheckBattleResult = function(self, teamEntity)
-  -- function num : 0_7 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveResultSystem:_DoLogicCheckBattleResult(teamEntity)
+  local battleStatCmpt = self._world:BattleStat()
   local turn2BattleResult, victory = false, false
   if battleStatCmpt:AssignWaveResult() then
     turn2BattleResult = true
     victory = true
   else
-    local battleService = (self._world):GetService("Battle")
+    local battleService = self._world:GetService("Battle")
     local playerDead = battleService:HandlePlayerCalculation(teamEntity)
     local protectedTrapDead = battleService:HandleTrapCalculation()
     local curseTowerAllActive = battleService:HandleCurseTowerCalculation()
@@ -109,85 +84,77 @@ WaveResultSystem._DoLogicCheckBattleResult = function(self, teamEntity)
       turn2BattleResult = true
       victory = false
     else
-      local curseTowerGroupEntities = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).CurseTower)
-      do
-        if curseTowerGroupEntities and #curseTowerGroupEntities > 0 then
-          local isAllActive = true
-          for _,eTower in ipairs(curseTowerGroupEntities) do
-            local isActive = (eTower:CurseTower()):GetTowerState() == CurseTowerState.Active
-            if isAllActive then
-              isAllActive = isActive
-            end
-          end
-          if isAllActive then
-            turn2BattleResult = true
-            victory = false
-          end
+      local curseTowerGroupEntities = self._world:GetGroupEntities(self._world.BW_WEMatchers.CurseTower)
+      if curseTowerGroupEntities and 0 < #curseTowerGroupEntities then
+        local isAllActive = true
+        for _, eTower in ipairs(curseTowerGroupEntities) do
+          local isActive = eTower:CurseTower():GetTowerState() == CurseTowerState.Active
+          isAllActive = isAllActive and isActive
         end
-        local configService = (self._world):GetService("Config")
-        local levelConfigData = configService:GetLevelConfigData()
-        local outOfRoundType = levelConfigData:GetOutOfRoundType()
-        local leftRoundCount = battleStatCmpt:GetCurWaveRound()
-        if outOfRoundType == 0 and leftRoundCount == 0 and not battleStatCmpt:LevelCompleteLimitAllRoundCount() then
+        if isAllActive then
           turn2BattleResult = true
           victory = false
-        else
-          local isLastWave = self:IsLastWave()
-          if isLastWave then
-            local AssignWaveType, isAssignWaveNotEnd = self:_CalAssignWaveAndRefreshNextWave(true)
-            if isAssignWaveNotEnd then
-              turn2BattleResult = false
-              victory = false
-            else
-              turn2BattleResult = true
-              victory = true
-              local killAnyMonsterCountEnough = battleService:HandleKillAnyMonsterCountCalculation()
-              if not killAnyMonsterCountEnough then
-                victory = false
-              end
-              local killSpecificMonsterCountEnough = battleService:HandleKillSpecificMonsterCountCalculation()
-              if not killSpecificMonsterCountEnough then
-                victory = false
-              end
-              local killMoreThanPetMonster = battleService:HandleKillMoreThanPetMonsterCalculation()
-              if killMoreThanPetMonster == false then
-                victory = false
-              end
-            end
-          else
+        end
+      end
+      local configService = self._world:GetService("Config")
+      local levelConfigData = configService:GetLevelConfigData()
+      local outOfRoundType = levelConfigData:GetOutOfRoundType()
+      local leftRoundCount = battleStatCmpt:GetCurWaveRound()
+      if outOfRoundType == 0 and leftRoundCount == 0 and not battleStatCmpt:LevelCompleteLimitAllRoundCount() then
+        turn2BattleResult = true
+        victory = false
+      else
+        local isLastWave = self:IsLastWave()
+        if isLastWave then
+          local AssignWaveType, isAssignWaveNotEnd = self:_CalAssignWaveAndRefreshNextWave(true)
+          if isAssignWaveNotEnd then
             turn2BattleResult = false
             victory = false
+          else
+            turn2BattleResult = true
+            victory = true
+            local killAnyMonsterCountEnough = battleService:HandleKillAnyMonsterCountCalculation()
+            if not killAnyMonsterCountEnough then
+              victory = false
+            end
+            local killSpecificMonsterCountEnough = battleService:HandleKillSpecificMonsterCountCalculation()
+            if not killSpecificMonsterCountEnough then
+              victory = false
+            end
+            local killMoreThanPetMonster = battleService:HandleKillMoreThanPetMonsterCalculation()
+            if killMoreThanPetMonster == false then
+              victory = false
+            end
           end
+        else
+          turn2BattleResult = false
+          victory = false
         end
-        do return turn2BattleResult, victory end
-        -- DECOMPILER ERROR: 9 unprocessed JMP targets
       end
     end
   end
+  return turn2BattleResult, victory
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._CalAssignWaveAndRefreshNextWave = function(self, battleLevelResult)
-  -- function num : 0_8 , upvalues : AssignWave, _ENV
+function WaveResultSystem:_CalAssignWaveAndRefreshNextWave(battleLevelResult)
   local bRefresh = false
   if not battleLevelResult then
     return AssignWave.AssignEndWave, bRefresh
   end
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local levelCompleteConditionType = levelConfigData:GetLevelCompleteConditionType()
   if levelCompleteConditionType ~= CompleteConditionType.AssignWaveAndRandomNextWave then
     return AssignWave.None, bRefresh
   end
-  local l_arrAssignWaveParams = (levelConfigData:GetLevelCompleteConditionParams())[1]
-  if (table.count)(l_arrAssignWaveParams) < LevelCompleteAssignWaveParamExp.RefreshUpProb then
-    (Log.fatal)("if table.count(l_nAssignWaveParams) < ", LevelCompleteAssignWaveParamExp.RefreshUpProb, " then")
+  local l_arrAssignWaveParams = levelConfigData:GetLevelCompleteConditionParams()[1]
+  if table.count(l_arrAssignWaveParams) < LevelCompleteAssignWaveParamExp.RefreshUpProb then
+    Log.fatal("if table.count(l_nAssignWaveParams) < ", LevelCompleteAssignWaveParamExp.RefreshUpProb, " then")
   end
   local l_nAssignWave = l_arrAssignWaveParams[LevelCompleteAssignWaveParamExp.AssignWaveEnd]
-  local battleStatCmpt = (self._world):BattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   local l_nCurWaveIndex = battleStatCmpt:GetCurWaveIndex()
-  if l_nCurWaveIndex < l_nAssignWave then
+  if l_nAssignWave > l_nCurWaveIndex then
     return AssignWave.None, bRefresh
   end
   if l_nAssignWave < l_nCurWaveIndex then
@@ -201,141 +168,96 @@ WaveResultSystem._CalAssignWaveAndRefreshNextWave = function(self, battleLevelRe
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoCumulateNextWave = function(self, l_arrAssignWaveParams)
-  -- function num : 0_9 , upvalues : _ENV, AssignWave
+function WaveResultSystem:_DoCumulateNextWave(l_arrAssignWaveParams)
   local bRefresh = false
   local cumulateNumLimit = l_arrAssignWaveParams[LevelCompleteAssignWaveParamExp.RefreshUpProb]
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  if 2 * cumulateNumLimit < ((self._world).BW_WorldInfo).assign_wave_refresh_probability then
-    ((self._world).BW_WorldInfo).assign_wave_refresh_probability = 0
+  if self._world.BW_WorldInfo.assign_wave_refresh_probability > 2 * cumulateNumLimit then
+    self._world.BW_WorldInfo.assign_wave_refresh_probability = 0
   end
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._world).BW_WorldInfo).assign_wave_refresh_probability = ((self._world).BW_WorldInfo).assign_wave_refresh_probability + 1 + ((self._world).BW_WorldInfo).asset_double_item_count
-  -- DECOMPILER ERROR at PC34: Unhandled construct in 'MakeBoolean' P1
-
-  if ((self._world).BW_WorldInfo).level_is_pass and cumulateNumLimit <= ((self._world).BW_WorldInfo).assign_wave_refresh_probability then
+  self._world.BW_WorldInfo.assign_wave_refresh_probability = self._world.BW_WorldInfo.assign_wave_refresh_probability + 1 + self._world.BW_WorldInfo.asset_double_item_count
+  if self._world.BW_WorldInfo.level_is_pass then
+    if cumulateNumLimit <= self._world.BW_WorldInfo.assign_wave_refresh_probability then
+      bRefresh = true
+      self._world.BW_WorldInfo.assign_wave_refresh_probability = self._world.BW_WorldInfo.assign_wave_refresh_probability - cumulateNumLimit
+    end
+  else
     bRefresh = true
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._world).BW_WorldInfo).assign_wave_refresh_probability = ((self._world).BW_WorldInfo).assign_wave_refresh_probability - cumulateNumLimit
   end
-  bRefresh = true
-  ;
-  (Log.fatal)("Prob:", ((self._world).BW_WorldInfo).assign_wave_refresh_probability)
-  local battleStatCmpt = (self._world):BattleStat()
+  Log.fatal("Prob:", self._world.BW_WorldInfo.assign_wave_refresh_probability)
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetAssignWaveResult(bRefresh)
   return AssignWave.AssignEndWave, bRefresh
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoRandomNextWave = function(self, l_arrAssignWaveParams)
-  -- function num : 0_10 , upvalues : _ENV, AssignWave
+function WaveResultSystem:_DoRandomNextWave(l_arrAssignWaveParams)
   local bRefresh = false
   local l_nPerThousandProbability = l_arrAssignWaveParams[LevelCompleteAssignWaveParamExp.BaseRefreshProb]
   local l_nUpProb = l_arrAssignWaveParams[LevelCompleteAssignWaveParamExp.RefreshUpProb]
-  if l_nPerThousandProbability < ((self._world).BW_WorldInfo).assign_wave_refresh_probability then
-    l_nPerThousandProbability = ((self._world).BW_WorldInfo).assign_wave_refresh_probability
-  else
-    -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-    if ((self._world).BW_WorldInfo).assign_wave_refresh_probability < l_nPerThousandProbability then
-      ((self._world).BW_WorldInfo).assign_wave_refresh_probability = l_nPerThousandProbability
-    end
+  if l_nPerThousandProbability < self._world.BW_WorldInfo.assign_wave_refresh_probability then
+    l_nPerThousandProbability = self._world.BW_WorldInfo.assign_wave_refresh_probability
+  elseif l_nPerThousandProbability > self._world.BW_WorldInfo.assign_wave_refresh_probability then
+    self._world.BW_WorldInfo.assign_wave_refresh_probability = l_nPerThousandProbability
   end
-  if ((self._world).BW_WorldInfo).level_is_pass then
-    local randomSvc = (self._world):GetService("RandomLogic")
+  if self._world.BW_WorldInfo.level_is_pass then
+    local randomSvc = self._world:GetService("RandomLogic")
     local nRandNum = randomSvc:LogicRand(1, 1000)
-    if nRandNum <= l_nPerThousandProbability then
+    if l_nPerThousandProbability >= nRandNum then
       bRefresh = true
-      -- DECOMPILER ERROR at PC42: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      ((self._world).BW_WorldInfo).assign_wave_refresh_probability = 0
-    else
-      if l_nUpProb then
-        if ((self._world).BW_WorldInfo).double_resource_state then
-          (Log.debug)("Level is Double Resource State")
-          l_nUpProb = l_nUpProb * 2
-        end
-        -- DECOMPILER ERROR at PC62: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        ((self._world).BW_WorldInfo).assign_wave_refresh_probability = ((self._world).BW_WorldInfo).assign_wave_refresh_probability + l_nUpProb
-        ;
-        (Log.fatal)("Prob:", ((self._world).BW_WorldInfo).assign_wave_refresh_probability)
+      self._world.BW_WorldInfo.assign_wave_refresh_probability = 0
+    elseif l_nUpProb then
+      if self._world.BW_WorldInfo.double_resource_state then
+        Log.debug("Level is Double Resource State")
+        l_nUpProb = l_nUpProb * 2
       end
+      self._world.BW_WorldInfo.assign_wave_refresh_probability = self._world.BW_WorldInfo.assign_wave_refresh_probability + l_nUpProb
+      Log.fatal("Prob:", self._world.BW_WorldInfo.assign_wave_refresh_probability)
     end
   else
-    do
-      bRefresh = true
-      local battleStatCmpt = (self._world):BattleStat()
-      battleStatCmpt:SetAssignWaveResult(bRefresh)
-      return AssignWave.AssignEndWave, bRefresh
-    end
+    bRefresh = true
   end
+  local battleStatCmpt = self._world:BattleStat()
+  battleStatCmpt:SetAssignWaveResult(bRefresh)
+  return AssignWave.AssignEndWave, bRefresh
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoLogicHandleTurnBattleResult = function(self, victory)
-  -- function num : 0_11
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveResultSystem:_DoLogicHandleTurnBattleResult(victory)
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:SetBattleLevelResult(victory)
   if victory then
-    local battleService = (self._world):GetService("Battle")
+    local battleService = self._world:GetService("Battle")
     return battleService:LevelWinKillAllMonster()
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoLogicUpdateBattleStat = function(self)
-  -- function num : 0_12
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveResultSystem:_DoLogicUpdateBattleStat()
+  local battleStatCmpt = self._world:BattleStat()
   battleStatCmpt:ResetChainIndex()
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoLogicLeaveWaveResult = function(self, turnToBattleResult)
-  -- function num : 0_13 , upvalues : _ENV
+function WaveResultSystem:_DoLogicLeaveWaveResult(turnToBattleResult)
   if turnToBattleResult == false then
-    local matchType = (self._world):MatchType()
+    local matchType = self._world:MatchType()
     if matchType == MatchType.MT_MiniMaze then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.WaveResultFinish, 3)
+      self._world:EventDispatcher():Dispatch(GameEventType.WaveResultFinish, 3)
     else
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.WaveResultFinish, 1)
+      self._world:EventDispatcher():Dispatch(GameEventType.WaveResultFinish, 1)
     end
   else
-    do
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.WaveResultFinish, 2)
-    end
+    self._world:EventDispatcher():Dispatch(GameEventType.WaveResultFinish, 2)
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem.IsLastWave = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local battleStatCmpt = (self._world):BattleStat()
+function WaveResultSystem:IsLastWave()
+  local battleStatCmpt = self._world:BattleStat()
   local isLastWave = battleStatCmpt:IsLastWave()
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local levelCompleteConditionType = levelConfigData:GetLevelCompleteConditionType()
   if levelCompleteConditionType ~= CompleteConditionType.AssignWaveAndRandomNextWave then
     return isLastWave
   else
     local l_nCurWaveIndex = battleStatCmpt:GetCurWaveIndex()
-    local l_arrAssignWaveParams = (levelConfigData:GetLevelCompleteConditionParams())[1]
+    local l_arrAssignWaveParams = levelConfigData:GetLevelCompleteConditionParams()[1]
     local l_nAssignWave = l_arrAssignWaveParams[LevelCompleteAssignWaveParamExp.AssignWaveEnd]
     if l_nCurWaveIndex == l_nAssignWave then
       return true
@@ -345,28 +267,14 @@ WaveResultSystem.IsLastWave = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoRenderNotifyWaveEnd = function(self, TT, waveNum)
-  -- function num : 0_15
+function WaveResultSystem:_DoRenderNotifyWaveEnd(TT, waveNum)
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoRenderChainAttackDead = function(self, TT)
-  -- function num : 0_16
+function WaveResultSystem:_DoRenderChainAttackDead(TT)
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoRenderHandleTurnBattleResult = function(self, TT, victory, hasDeadLogic)
-  -- function num : 0_17
+function WaveResultSystem:_DoRenderHandleTurnBattleResult(TT, victory, hasDeadLogic)
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-WaveResultSystem._DoRenderSendWaveEnd = function(self, TT, turnToBattleResult, victory)
-  -- function num : 0_18
+function WaveResultSystem:_DoRenderSendWaveEnd(TT, turnToBattleResult, victory)
 end
-
-

@@ -1,54 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/season_map_eventpoint_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapEventPointTask", SeasonMapEventPointBase)
 SeasonMapEventPointTask = SeasonMapEventPointTask
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapEventPointTask.Constructor = function(self, owner, cfgMission, cfgEventPoint)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonMapEventPointTask:Constructor(owner, cfgMission, cfgEventPoint)
   self._seasonMapTask = owner
-  self._seasonTaskModule = (GameGlobal.GetModule)(SeasonTaskModule)
-  self._player = (((self._uiSeasonModule):SeasonManager()):SeasonPlayerManager()):GetPlayer()
-  if not (self._cfgMission).BackTrackID then
-    (Log.exception)("season task eventpoint backtrack id is nil.", self._id)
+  self._seasonTaskModule = GameGlobal.GetModule(SeasonTaskModule)
+  self._player = self._uiSeasonModule:SeasonManager():SeasonPlayerManager():GetPlayer()
+  if not self._cfgMission.BackTrackID then
+    Log.exception("season task eventpoint backtrack id is nil.", self._id)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointTask.QuestID = function(self)
-  -- function num : 0_1
-  return (self._cfgMission).QuestID
+function SeasonMapEventPointTask:QuestID()
+  return self._cfgMission.QuestID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointTask.Update = function(self, deltaTime)
-  -- function num : 0_2 , upvalues : _ENV
-  ((self.super).Update)(self, deltaTime)
+function SeasonMapEventPointTask:Update(deltaTime)
+  self.super.Update(self, deltaTime)
   if self._player then
     local show = self._show
     local range = self:RangeShow()
-    if (Vector3.Distance)((self._player):RealPosition(), self:Position()) > range then
-      do
-        self:SetRangeShow(not range or range <= 0)
-        if show ~= self._show then
-          ((((self._uiSeasonModule):SeasonManager()):SeasonUIManager()):UI()):RefreshFunction(self)
-        end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    if range and 0 < range then
+      self:SetRangeShow(range >= Vector3.Distance(self._player:RealPosition(), self:Position()))
+      if show ~= self._show then
+        self._uiSeasonModule:SeasonManager():SeasonUIManager():UI():RefreshFunction(self)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointTask.IsFinish = function(self)
-  -- function num : 0_3
-  local map = (self._seasonTaskModule):GetConditionMap()
+function SeasonMapEventPointTask:IsFinish()
+  local map = self._seasonTaskModule:GetConditionMap()
   if map[self._curProgress] then
     return self:IsLastProgress(map[self._curProgress])
   else
@@ -56,101 +37,80 @@ SeasonMapEventPointTask.IsFinish = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointTask._CalcCurProgressExpress = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonMapEventPointTask:_CalcCurProgressExpress()
   if not self._isUnlock then
     self:ExpressShow(false)
-    return 
+    return
   end
-  local map = ((GameGlobal.GetModule)(SeasonTaskModule)):GetConditionMap((self._componentInfo).m_stage_info)
+  local map = GameGlobal.GetModule(SeasonTaskModule):GetConditionMap(self._componentInfo.m_stage_info)
   if map and map[self._id] then
     self._curProgress = map[self._id]
   end
-  for progress,_condition in pairs(self._conditions) do
-    if _condition and _condition:OnCheck(map) and self._curProgress < progress and (self._progressExpress)[progress] then
+  for progress, _condition in pairs(self._conditions) do
+    if _condition and _condition:OnCheck(map) and progress > self._curProgress and self._progressExpress[progress] then
       self._curProgress = progress
     end
   end
-  self._curProgressExpress = (self._progressExpress)[self._curProgress]
-  do
-    if self._curProgressExpress then
-      local result, content = (self._curProgressExpress):ContainExpress(SeasonExpressType.Show)
-      if result and content ~= nil and (not content.id or content.id == self._id) then
-        self._expressShow = content.show
-      end
+  self._curProgressExpress = self._progressExpress[self._curProgress]
+  if self._curProgressExpress then
+    local result, content = self._curProgressExpress:ContainExpress(SeasonExpressType.Show)
+    if result and content ~= nil and (not content.id or content.id == self._id) then
+      self._expressShow = content.show
     end
-    self:ExpressShow(self._expressShow)
   end
+  self:ExpressShow(self._expressShow)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointTask.SyncProgress = function(self, progress)
-  -- function num : 0_5 , upvalues : _ENV
-  local map = (self._seasonTaskModule):GetConditionMap()
+function SeasonMapEventPointTask:SyncProgress(progress)
+  local map = self._seasonTaskModule:GetConditionMap()
   if map and map[self._id] and map[self._id] == progress then
-    if (self._curProgressExpress):NeedCount() then
-      (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, progress
-    self:_RecordExpressCount(TT, progress)
-  end
-, self)
+    if self._curProgressExpress:NeedCount() then
+      TaskManager:GetInstance():StartTask(function(TT)
+        self:_RecordExpressCount(TT, progress)
+      end, self)
     end
-    return 
+    return
   end
-  ;
-  (Log.debug)("SeasonMapEventPointTask play all expresses end.", self._id, progress)
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("SeasonMapEventPointTask")
-  ;
-  (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_5_1 , upvalues : self, progress, _ENV
-    local info = {quest_id = self:QuestID(), 
-event_infos = {
-[self._id] = {event_id = self._id, status = progress}
-}
-}
-    local res = (self._seasonTaskModule):ReqSubmitClientInfo(TT, info)
-    if res:GetSucc() and (self._uiSeasonModule):InSeasaonRunning() then
-      if (self._curProgressExpress):NeedCount() then
+  Log.debug("SeasonMapEventPointTask play all expresses end.", self._id, progress)
+  GameGlobal.UIStateManager():Lock("SeasonMapEventPointTask")
+  TaskManager:GetInstance():StartTask(function(TT)
+    local info = {
+      quest_id = self:QuestID(),
+      event_infos = {
+        [self._id] = {
+          event_id = self._id,
+          status = progress
+        }
+      }
+    }
+    local res = self._seasonTaskModule:ReqSubmitClientInfo(TT, info)
+    if res:GetSucc() and self._uiSeasonModule:InSeasaonRunning() then
+      if self._curProgressExpress:NeedCount() then
         self:_RecordExpressCount(TT, progress)
       end
       self:_OnSyncSuccess(progress)
       if self._endCallBack then
-        (self._endCallBack)(self._id, progress)
+        self._endCallBack(self._id, progress)
         self._endCallBack = nil
       end
       self:_SyncQuestNum(TT, progress)
     else
-      ;
-      (Log.error)("SeasonMapEventPointTask sync progress fail!", self._id, progress)
+      Log.error("SeasonMapEventPointTask sync progress fail!", self._id, progress)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("SeasonMapEventPointTask")
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock("SeasonMapEventPointTask")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointTask._SyncQuestNum = function(self, TT, progress)
-  -- function num : 0_6
+function SeasonMapEventPointTask:_SyncQuestNum(TT, progress)
   if self:IsLastProgress(progress) then
-    (self._seasonMapTask):TrySyncQuestNum(TT, self:QuestID())
+    self._seasonMapTask:TrySyncQuestNum(TT, self:QuestID())
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapEventPointTask.BackTrackAble = function(self)
-  -- function num : 0_7
-  if (self._cfgMission).BackTrackID ~= (self._uiSeasonModule):GetSeasonID() then
-    do return not (self._cfgMission).BackTrackID end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SeasonMapEventPointTask:BackTrackAble()
+  if self._cfgMission.BackTrackID then
+    return self._cfgMission.BackTrackID == self._uiSeasonModule:GetSeasonID()
+  else
+    return false
   end
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/map/ui_n12_map_quest_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_n12_map_controller")
 _class("UIN12MapQuestController", UIN12MapController)
 UIN12MapQuestController = UIN12MapQuestController
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12MapQuestController.GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12MapQuestController:GetComponents()
   self._headIcon = self:GetUIComponent("RawImageLoader", "head")
   self._talkTex = self:GetUIComponent("UILocalizationText", "talk")
   self._btnTex = self:GetUIComponent("UILocalizedTMP", "btnTex")
@@ -22,146 +15,106 @@ UIN12MapQuestController.GetComponents = function(self)
   self._atlas = self:GetAsset("UIN12_Entrust.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapQuestController.OnValue = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIN12MapQuestController:OnValue()
+  self._itemModule = GameGlobal.GetModule(ItemModule)
   self:SetPass(true)
   local cfg = self:Cfg()
-  local params = (cfg.Params)[1]
+  local params = cfg.Params[1]
   if cfg.EventType == 5 then
     self._questType = 1
+  elseif cfg.EventType == 6 then
+    self._questType = 2
   else
-    if cfg.EventType == 6 then
-      self._questType = 2
-    else
-      ;
-      (Log.error)("###[UIN12MapQuestController] cfg.EventType is not 5 or 6 ! cfg.EventType --> ", cfg.EventType, "| nodeid --> ", self._nodeid)
-    end
+    Log.error("###[UIN12MapQuestController] cfg.EventType is not 5 or 6 ! cfg.EventType --> ", cfg.EventType, "| nodeid --> ", self._nodeid)
   end
   local talk = params.Desc
-  ;
-  (self._talkTex):SetText((StringTable.Get)(talk))
+  self._talkTex:SetText(StringTable.Get(talk))
   local head = params.Head
   if head then
-    (self._headIcon):LoadImage(head)
+    self._headIcon:LoadImage(head)
   end
-  self._showNumber = not params.ShowNumber or params.ShowNumber == 1
+  self._showNumber = params.ShowNumber and params.ShowNumber == 1
   self._rewards = cfg.RewardList
   self:SetTextMat()
   self:ShowBtnTex()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapQuestController.ShowBtnTex = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg_item = (Cfg.cfg_item)({})
+function UIN12MapQuestController:ShowBtnTex()
+  local cfg_item = Cfg.cfg_item({})
   local tex = ""
   self._rewardTex = ""
   for i = 1, #self._rewards do
     local item = {}
-    item.id = ((self._rewards)[i])[1]
-    item.count = ((self._rewards)[i])[2]
+    item.id = self._rewards[i][1]
+    item.count = self._rewards[i][2]
     local _cfg_item = cfg_item[item.id]
     item.name = _cfg_item.Name
-    local itemName = (StringTable.Get)(item.name)
-    if item.count > 1 then
-      itemName = (StringTable.Get)("str_n12_map_quest_x", itemName, item.count)
+    local itemName = StringTable.Get(item.name)
+    if 1 < item.count then
+      itemName = StringTable.Get("str_n12_map_quest_x", itemName, item.count)
     end
     if i == 1 then
       self._rewardTex = self._rewardTex .. itemName
+    elseif i == #self._rewards then
+      self._rewardTex = StringTable.Get("str_n12_map_quest_and", self._rewardTex, itemName)
     else
-      if i == #self._rewards then
-        self._rewardTex = (StringTable.Get)("str_n12_map_quest_and", self._rewardTex, itemName)
-      else
-        self._rewardTex = (StringTable.Get)("str_n12_map_quest_point", self._rewardTex, itemName)
-      end
+      self._rewardTex = StringTable.Get("str_n12_map_quest_point", self._rewardTex, itemName)
     end
   end
   if self._questType == 1 then
-    tex = (StringTable.Get)("str_n12_map_quest_get", self._rewardTex)
-  else
-    if self._questType == 2 then
-      tex = (StringTable.Get)("str_n12_map_quest_send", self._rewardTex)
-      if self._showNumber then
-        local firstID = ((self._rewards)[1])[1]
-        local firstCount = (self._itemModule):GetItemCount(firstID)
-        tex = tex .. (StringTable.Get)("str_n12_map_quest_owner", firstCount)
-      end
+    tex = StringTable.Get("str_n12_map_quest_get", self._rewardTex)
+  elseif self._questType == 2 then
+    tex = StringTable.Get("str_n12_map_quest_send", self._rewardTex)
+    if self._showNumber then
+      local firstID = self._rewards[1][1]
+      local firstCount = self._itemModule:GetItemCount(firstID)
+      tex = tex .. StringTable.Get("str_n12_map_quest_owner", firstCount)
     end
   end
-  do
-    ;
-    (self._btnTex):SetText(tex)
-    self:ChangeTextWidth(self._btnTex)
-  end
+  self._btnTex:SetText(tex)
+  self:ChangeTextWidth(self._btnTex)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapQuestController.btnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN12MapQuestController:btnOnClick(go)
   if self._pass then
-    return 
+    return
   end
-  do
-    if self._questType == 2 and not self:Enough() then
-      local tips = (StringTable.Get)("str_n12_map_quest_not_enough")
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    self:RequestFinishEvent()
+  if self._questType == 2 and not self:Enough() then
+    local tips = StringTable.Get("str_n12_map_quest_not_enough")
+    ToastManager.ShowToast(tips)
+    return
   end
+  self:RequestFinishEvent()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapQuestController.Enough = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12MapQuestController:Enough()
   if not self._itemModule then
     self._itemModule = self:GetGameObject(ItemModule)
   end
   local enough = true
-  for _,reward in pairs(self._rewards) do
+  for _, reward in pairs(self._rewards) do
     local count = reward[2]
-    local haveCount = (self._itemModule):GetItemCount(reward[1])
-    if haveCount < count then
+    local haveCount = self._itemModule:GetItemCount(reward[1])
+    if count > haveCount then
       enough = false
       break
     end
   end
-  do
-    return enough
-  end
+  return enough
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapQuestController.OnFinishEvent = function(self, rewards)
-  -- function num : 0_5 , upvalues : _ENV
-  local tips = nil
+function UIN12MapQuestController:OnFinishEvent(rewards)
+  local tips
   if self._questType == 1 then
-    tips = (StringTable.Get)("str_n12_map_quest_get", self._rewardTex)
-  else
-    if self._questType == 2 then
-      tips = (StringTable.Get)("str_n12_map_quest_finish")
-    end
+    tips = StringTable.Get("str_n12_map_quest_get", self._rewardTex)
+  elseif self._questType == 2 then
+    tips = StringTable.Get("str_n12_map_quest_finish")
   end
-  ;
-  (ToastManager.ShowToast)(tips)
+  ToastManager.ShowToast(tips)
   self:RefreshPass()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12MapQuestController.RefreshPass = function(self)
-  -- function num : 0_6
+function UIN12MapQuestController:RefreshPass()
   self:SetPass(true)
   self:ShowBtnTex()
 end
-
-

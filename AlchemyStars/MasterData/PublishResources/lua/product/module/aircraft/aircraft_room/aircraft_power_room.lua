@@ -1,62 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/aircraft/aircraft_room/aircraft_power_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("aircraft_room_base")
 _class("AircraftPowerRoom", AircraftRoomBase)
 AircraftPowerRoom = AircraftPowerRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftPowerRoom.Constructor = function(self)
-  -- function num : 0_0
+function AircraftPowerRoom:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPowerRoom.SetClientData = function(self, client_data)
-  -- function num : 0_1
+function AircraftPowerRoom:SetClientData(client_data)
   self._firefly_room_rate = client_data[1]
   self._firefly_pet_rate = client_data[2]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPowerRoom.GetPowerRoomConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_power_room)[self._roomid]
+function AircraftPowerRoom:GetPowerRoomConfig()
+  local cfg = Cfg.cfg_aircraft_power_room[self._roomid]
   return cfg
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPowerRoom.GetFireflyRecoverSpeed = function(self)
-  -- function num : 0_3
+function AircraftPowerRoom:GetFireflyRecoverSpeed()
   return self._firefly_room_rate, self._firefly_pet_rate
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPowerRoom.GetFireflyTotalSpeed = function(self)
-  -- function num : 0_4
+function AircraftPowerRoom:GetFireflyTotalSpeed()
   return self._firefly_room_rate + self._firefly_pet_rate
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPowerRoom.GetPowerLimit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_power_room)[self._roomid]
+function AircraftPowerRoom:GetPowerLimit()
+  local cfg = Cfg.cfg_aircraft_power_room[self._roomid]
   return cfg.AddPower
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPowerRoom.GetUpgradeInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function AircraftPowerRoom:GetUpgradeInfo()
   local room_cfg = self:GetConfig()
   local cur_powerroom_cfg = self:GetPowerRoomConfig()
-  local next_powerroom_cfg = (Cfg.cfg_aircraft_power_room)[room_cfg.NextLevelID]
+  local next_powerroom_cfg = Cfg.cfg_aircraft_power_room[room_cfg.NextLevelID]
   if next_powerroom_cfg == nil then
     return nil
   end
@@ -65,19 +40,25 @@ AircraftPowerRoom.GetUpgradeInfo = function(self)
   local cur_firefly_recover = cur_powerroom_cfg.FireflyRecover
   local nxt_firefly_recover = next_powerroom_cfg.FireflyRecover
   return {
-{AirLevelInfoTitle.PowerLimit, AirRoomChangeLevelDataType.NumberInt, cur_power_limit, next_power_limit}
-, 
-{AirLevelInfoTitle.FireflyRate, AirRoomChangeLevelDataType.NumberFloat, cur_firefly_recover, nxt_firefly_recover}
-}
+    {
+      AirLevelInfoTitle.PowerLimit,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_power_limit,
+      next_power_limit
+    },
+    {
+      AirLevelInfoTitle.FireflyRate,
+      AirRoomChangeLevelDataType.NumberFloat,
+      cur_firefly_recover,
+      nxt_firefly_recover
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftPowerRoom.GetDegradeInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AircraftPowerRoom:GetDegradeInfo()
   local room_cfg = self:GetConfig()
   local cur_powerroom_cfg = self:GetPowerRoomConfig()
-  local prev_powerroom_cfg = (Cfg.cfg_aircraft_power_room)[room_cfg.PrevLevelID]
+  local prev_powerroom_cfg = Cfg.cfg_aircraft_power_room[room_cfg.PrevLevelID]
   if prev_powerroom_cfg == nil then
     return nil
   end
@@ -86,10 +67,17 @@ AircraftPowerRoom.GetDegradeInfo = function(self)
   local cur_firefly_recover = cur_powerroom_cfg.FireflyRecover
   local prev_firefly_recover = prev_powerroom_cfg.FireflyRecover
   return {
-{AirLevelInfoTitle.PowerLimit, AirRoomChangeLevelDataType.NumberInt, cur_power_limit, next_power_limit}
-, 
-{AirLevelInfoTitle.FireflyRate, AirRoomChangeLevelDataType.NumberFloat, cur_firefly_recover, prev_firefly_recover}
-}
+    {
+      AirLevelInfoTitle.PowerLimit,
+      AirRoomChangeLevelDataType.NumberInt,
+      cur_power_limit,
+      next_power_limit
+    },
+    {
+      AirLevelInfoTitle.FireflyRate,
+      AirRoomChangeLevelDataType.NumberFloat,
+      cur_firefly_recover,
+      prev_firefly_recover
+    }
+  }
 end
-
-

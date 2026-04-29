@@ -1,23 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_add_blood.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
-local AddBlood_Type = {Percent = 1, AbsData = 2, Attribute = 3, HighestHPOfBoss = 4, AttributeList = 5, LastCastActiveSkillPet = 6, AttributeAndTargetBodyAreaInSkillRangeCount = 7, LostHPPercent = 8, ByLayerAndAttr = 9, PetAliveMultiplyAbsData = 10, Max = 99}
+local AddBlood_Type = {
+  Percent = 1,
+  AbsData = 2,
+  Attribute = 3,
+  HighestHPOfBoss = 4,
+  AttributeList = 5,
+  LastCastActiveSkillPet = 6,
+  AttributeAndTargetBodyAreaInSkillRangeCount = 7,
+  LostHPPercent = 8,
+  ByLayerAndAttr = 9,
+  PetAliveMultiplyAbsData = 10,
+  Max = 99
+}
 _enum("AddBlood_Type", AddBlood_Type)
-local AddBlood_Attribute = {START = 0, None = 0, Attack = 1, Defense = 2, MaxHP = 3, TeamLoseHp = 4, LocalTeamLostHP = 5, END = 6}
+local AddBlood_Attribute = {
+  START = 0,
+  None = 0,
+  Attack = 1,
+  Defense = 2,
+  MaxHP = 3,
+  TeamLoseHp = 4,
+  LocalTeamLostHP = 5,
+  END = 6
+}
 _enum("AddBlood_Attribute", AddBlood_Attribute)
 _class("SkillEffectParam_AddBlood", SkillEffectParamBase)
 SkillEffectParam_AddBlood = SkillEffectParam_AddBlood
--- DECOMPILER ERROR at PC40: Confused about usage of register: R2 in 'UnsetPending'
 
-SkillEffectParam_AddBlood.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : AddBlood_Attribute, _ENV
+function SkillEffectParam_AddBlood:Constructor(t)
   self.m_nType = t.type
   self.m_nData = t.data
   self.m_nAttribute = AddBlood_Attribute.None
-  if t.Attribute ~= nil and type(t.Attribute) == "number" and AddBlood_Attribute.START < t.Attribute and t.Attribute < AddBlood_Attribute.END then
+  if t.Attribute ~= nil and type(t.Attribute) == "number" and t.Attribute > AddBlood_Attribute.START and t.Attribute < AddBlood_Attribute.END then
     self.m_nAttribute = t.Attribute
   end
   self.m_nAttributePer = 0
@@ -33,88 +47,50 @@ SkillEffectParam_AddBlood.Constructor = function(self, t)
   self._perLayer = t.perLayer
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetBuffLayerType = function(self)
-  -- function num : 0_1
+function SkillEffectParam_AddBlood:GetBuffLayerType()
   return self._buffLayerType
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetCostLayer = function(self)
-  -- function num : 0_2
+function SkillEffectParam_AddBlood:GetCostLayer()
   return self._costLayer
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetPerLayer = function(self)
-  -- function num : 0_3
+function SkillEffectParam_AddBlood:GetPerLayer()
   return self._perLayer
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetEffectType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillEffectParam_AddBlood:GetEffectType()
   return SkillEffectType.AddBlood
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetType = function(self)
-  -- function num : 0_5
+function SkillEffectParam_AddBlood:GetType()
   return self.m_nType
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetData = function(self)
-  -- function num : 0_6
+function SkillEffectParam_AddBlood:GetData()
   return self.m_nData or 0
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetAttribute = function(self)
-  -- function num : 0_7
+function SkillEffectParam_AddBlood:GetAttribute()
   return self.m_nAttribute
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetAttributePer = function(self)
-  -- function num : 0_8
+function SkillEffectParam_AddBlood:GetAttributePer()
   return self.m_nAttributePer
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetAddBloodRateByDefender = function(self)
-  -- function num : 0_9
+function SkillEffectParam_AddBlood:GetAddBloodRateByDefender()
   return self.m_nAddBloodRateByDefender
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetDataList = function(self)
-  -- function num : 0_10
+function SkillEffectParam_AddBlood:GetDataList()
   return self.m_nDataList
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetAttributeList = function(self)
-  -- function num : 0_11
+function SkillEffectParam_AddBlood:GetAttributeList()
   return self.m_nAttributeList
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-SkillEffectParam_AddBlood.GetAttributePerList = function(self)
-  -- function num : 0_12
+function SkillEffectParam_AddBlood:GetAttributePerList()
   return self.m_nAttributePerList
 end
-
-

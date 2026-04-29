@@ -1,147 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/component/homelandpet_component_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_component_base")
 _class("HomelandPetComponentMove", HomelandPetComponentBase)
 HomelandPetComponentMove = HomelandPetComponentMove
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetComponentMove.Constructor = function(self, componentType, pet, behavior)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetComponentMove.super).Constructor)(self, componentType, pet, behavior)
-  self._navMeshAgent = (self._pet):GetNavMeshAgent()
-  self._obstacle = (self._pet):GetNavMeshObstacle()
-  self._animation = (self._pet):GetAnimation()
+function HomelandPetComponentMove:Constructor(componentType, pet, behavior)
+  HomelandPetComponentMove.super.Constructor(self, componentType, pet, behavior)
+  self._navMeshAgent = self._pet:GetNavMeshAgent()
+  self._obstacle = self._pet:GetNavMeshObstacle()
+  self._animation = self._pet:GetAnimation()
   self._destination = nil
   self._stuckTime = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.ReLoadPetComponent = function(self)
-  -- function num : 0_1
-  self._navMeshAgent = (self._pet):GetNavMeshAgent()
-  self._obstacle = (self._pet):GetNavMeshObstacle()
-  self._animation = (self._pet):GetAnimation()
+function HomelandPetComponentMove:ReLoadPetComponent()
+  self._navMeshAgent = self._pet:GetNavMeshAgent()
+  self._obstacle = self._pet:GetNavMeshObstacle()
+  self._animation = self._pet:GetAnimation()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.OnExcute = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandPetComponentMove:OnExcute()
   if self.state == HomelandPetComponentState.Resting then
     if not self._destination then
-      return 
+      return
     end
-    self._naviMeshTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._obstacle).enabled = false
-    YIELD(TT)
-    if (self._pet):IsAlive() then
-      self._stuckTime = 0
-      -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._navMeshAgent).enabled = true
-      -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._navMeshAgent).destination = self._destination
-      if not self._animation then
-        self._animation = (self._pet):GetAnimation()
-      end
-      if self._animation then
-        if (self._pet).runSpeed <= (self._pet):GetSpeed() then
-          self:PlayRun()
-        else
-          self:PlayWalk()
+    self._naviMeshTask = GameGlobal.TaskManager():StartTask(function(TT)
+      self._obstacle.enabled = false
+      YIELD(TT)
+      if self._pet:IsAlive() then
+        self._stuckTime = 0
+        self._navMeshAgent.enabled = true
+        self._navMeshAgent.destination = self._destination
+        if not self._animation then
+          self._animation = self._pet:GetAnimation()
+        end
+        if self._animation then
+          if self._pet:GetSpeed() >= self._pet.runSpeed then
+            self:PlayRun()
+          else
+            self:PlayWalk()
+          end
         end
       end
-    end
-  end
-)
+    end)
     self.state = HomelandPetComponentState.Running
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.Update = function(self, dms)
-  -- function num : 0_3 , upvalues : _ENV
-  ((HomelandPetComponentMove.super).Update)(self, dms)
-  if self.state == HomelandPetComponentState.Running and (self._navMeshAgent).enabled then
+function HomelandPetComponentMove:Update(dms)
+  HomelandPetComponentMove.super.Update(self, dms)
+  if self.state == HomelandPetComponentState.Running and self._navMeshAgent.enabled then
     self:CheckPetMotionType()
-    local remainingDistance = (Vector3.Distance)((self._navMeshAgent).destination, (self._pet):GetPosition())
-    if remainingDistance <= (self._navMeshAgent).stoppingDistance then
+    local remainingDistance = Vector3.Distance(self._navMeshAgent.destination, self._pet:GetPosition())
+    if remainingDistance <= self._navMeshAgent.stoppingDistance then
       self:Stop()
       if self._animation then
         self:PlayStand()
       end
       self.state = HomelandPetComponentState.Success
     else
-      self:_CheckStuck((self._pet):GetPosition(), dms)
+      self:_CheckStuck(self._pet:GetPosition(), dms)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.SetTarget = function(self, destination)
-  -- function num : 0_4
+function HomelandPetComponentMove:SetTarget(destination)
   self._destination = destination
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.Exit = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((HomelandPetComponentMove.super).Exit)(self)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).enabled = false
+function HomelandPetComponentMove:Exit()
+  HomelandPetComponentMove.super.Exit(self)
+  self._navMeshAgent.enabled = false
   self._destination = nil
   if self._naviMeshTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._naviMeshTask)
+    GameGlobal.TaskManager():KillTask(self._naviMeshTask)
     self._naviMeshTask = nil
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._obstacle).enabled = true
+  self._obstacle.enabled = true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.Stop = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._navMeshAgent).enabled = false
+function HomelandPetComponentMove:Stop()
+  self._navMeshAgent.enabled = false
   if self._naviMeshTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._naviMeshTask)
+    GameGlobal.TaskManager():KillTask(self._naviMeshTask)
     self._naviMeshTask = nil
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._obstacle).enabled = true
+  self._obstacle.enabled = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove._CheckStuck = function(self, position, ms)
-  -- function num : 0_7 , upvalues : _ENV
+function HomelandPetComponentMove:_CheckStuck(position, ms)
   if self._stuckTime == 0 then
     self._recordPosition = position
   end
   self._stuckTime = self._stuckTime + ms
   if self._stuckTime >= 1000 and self._recordPosition then
-    local distance = (Vector3.Distance)(self._recordPosition, (self._pet):GetPosition())
+    local distance = Vector3.Distance(self._recordPosition, self._pet:GetPosition())
     if distance <= 0.1 then
       self:Stop()
       if self._animation then
@@ -153,105 +104,76 @@ HomelandPetComponentMove._CheckStuck = function(self, position, ms)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.Dispose = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  ((HomelandPetComponentMove.super).Dispose)()
+function HomelandPetComponentMove:Dispose()
+  HomelandPetComponentMove.super.Dispose()
   if self._naviMeshTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._naviMeshTask)
+    GameGlobal.TaskManager():KillTask(self._naviMeshTask)
     self._naviMeshTask = nil
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.PlayStand = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self._pet):GetMotionType() == HomelandPetMotionType.Swim then
-    (self._animation):CrossFade(HomelandPetAnimName.Float)
+function HomelandPetComponentMove:PlayStand()
+  if self._pet:GetMotionType() == HomelandPetMotionType.Swim then
+    self._animation:CrossFade(HomelandPetAnimName.Float)
     self:ShowStandOrMoveInWaterEffect(true)
   else
-    ;
-    (self._animation):CrossFade(HomelandPetAnimName.Stand)
+    self._animation:CrossFade(HomelandPetAnimName.Stand)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.PlayRun = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._pet):GetMotionType() == HomelandPetMotionType.Swim then
-    (self._animation):CrossFade(HomelandPetAnimName.FastSwim)
+function HomelandPetComponentMove:PlayRun()
+  if self._pet:GetMotionType() == HomelandPetMotionType.Swim then
+    self._animation:CrossFade(HomelandPetAnimName.FastSwim)
     self:ShowStandOrMoveInWaterEffect(false)
   else
-    ;
-    (self._animation):CrossFade(HomelandPetAnimName.Run)
+    self._animation:CrossFade(HomelandPetAnimName.Run)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.PlayWalk = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  if (self._pet):GetMotionType() == HomelandPetMotionType.Swim then
-    (self._animation):CrossFade(HomelandPetAnimName.Swim)
+function HomelandPetComponentMove:PlayWalk()
+  if self._pet:GetMotionType() == HomelandPetMotionType.Swim then
+    self._animation:CrossFade(HomelandPetAnimName.Swim)
     self:ShowStandOrMoveInWaterEffect(false)
   else
-    ;
-    (self._animation):CrossFade(HomelandPetAnimName.Walk)
+    self._animation:CrossFade(HomelandPetAnimName.Walk)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.CheckPetMotionType = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self._navMeshAgent).areaMask ~= 4 and (self._navMeshAgent).areaMask ~= 5 then
-    return 
+function HomelandPetComponentMove:CheckPetMotionType()
+  if self._navMeshAgent.areaMask ~= 4 and self._navMeshAgent.areaMask ~= 5 then
+    return
   end
   self:OnGetBehaviorSwimmingPool()
   if not self._behaviorSwimmingPool then
-    return 
+    return
   end
-  local homelandSwimmingPool = (self._behaviorSwimmingPool)._building
+  local homelandSwimmingPool = self._behaviorSwimmingPool._building
   if not homelandSwimmingPool then
-    return 
+    return
   end
   local roleSwimAreaCollider = homelandSwimmingPool:GetRoleSwimAreaCollider()
   if not roleSwimAreaCollider then
-    return 
+    return
   end
-  local petPos = (self._pet):GetPosition()
+  local petPos = self._pet:GetPosition()
   local closestPoint = roleSwimAreaCollider:ClosestPoint(petPos)
-  local dir = (Vector3.Distance)(closestPoint, petPos)
-  if dir > 0 then
-    return 
+  local dir = Vector3.Distance(closestPoint, petPos)
+  if 0 < dir then
+    return
   end
-  ;
-  (self._behaviorSwimmingPool):CheckPetMotionType()
+  self._behaviorSwimmingPool:CheckPetMotionType()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.OnGetBehaviorSwimmingPool = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandPetComponentMove:OnGetBehaviorSwimmingPool()
   if self._behaviorSwimmingPool then
-    return 
+    return
   end
-  local behavior = (self._pet):GetPetBehavior()
+  local behavior = self._pet:GetPetBehavior()
   self._behaviorSwimmingPool = behavior:GetHomelandPetBehavior(HomelandPetBehaviorType.SwimmingPool)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetComponentMove.ShowStandOrMoveInWaterEffect = function(self, floatEffectVisible)
-  -- function num : 0_14
+function HomelandPetComponentMove:ShowStandOrMoveInWaterEffect(floatEffectVisible)
   self:OnGetBehaviorSwimmingPool()
-  ;
-  (self._behaviorSwimmingPool):ShowFloatEffect(floatEffectVisible)
-  ;
-  (self._behaviorSwimmingPool):ShowSwimEffect(not floatEffectVisible)
+  self._behaviorSwimmingPool:ShowFloatEffect(floatEffectVisible)
+  self._behaviorSwimmingPool:ShowSwimEffect(not floatEffectVisible)
 end
-
-

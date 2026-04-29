@@ -1,141 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/state/s_maze_state_round_end.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("s_maze_state_base")
 _class("SMazeState_RoundEnd", SMazeStateBase)
 SMazeState_RoundEnd = SMazeState_RoundEnd
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeState_RoundEnd.OnEnter = function(self, node)
-  -- function num : 0_0
+function SMazeState_RoundEnd:OnEnter(node)
   self._node = node
   self:StartTask(self._Check, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoundEnd._Check = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function SMazeState_RoundEnd:_Check(TT)
   self:Lock("SMazeState_RoundEnd:1")
-  local cpt = (self._manager):GetMazeComponent()
+  local cpt = self._manager:GetMazeComponent()
   local asyncRes = AsyncRequestRes:New()
   cpt:HandleSeasonMazeRoundEnd(TT, asyncRes)
   self:UnLock("SMazeState_RoundEnd:1")
   if not asyncRes:GetSucc() then
     self:_LogError("回合结束消息失败:", asyncRes:GetResult())
-    if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(asyncRes) then
-      return 
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(asyncRes) then
+      return
     end
-    return 
+    return
   end
   YIELD(TT, 200)
   if not self._valid then
     self:_Log("SMazeState_RoundEnd:打断1")
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Round)
-  local cpt = (self._manager):GetMazeComponent()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Round)
+  local cpt = self._manager:GetMazeComponent()
   local extraGold = cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Gold_Round_Add)
-  local goldCfg = (Cfg.cfg_season_maze_attribute)[SeasonMazeAttrType.SMAT_Gold]
+  local goldCfg = Cfg.cfg_season_maze_attribute[SeasonMazeAttrType.SMAT_Gold]
   local goldAsset = SeasonMazeAsset:New(SeasonMazeEffectType.SMET_Pro, goldCfg.Name, extraGold, goldCfg.Icon, goldCfg.Desc, SeasonMazeAttrType.SMAT_Gold)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, SeasonMazeAttrType.SMAT_Gold)
   self:_Log("收货金币:", extraGold)
-  if extraGold > 0 then
-    (self._manager):PlayGetGold(TT, extraGold)
+  if 0 < extraGold then
+    self._manager:PlayGetGold(TT, extraGold)
   end
   self:PlayAssetToast(TT, {goldAsset})
   if cpt:CurOperate() == SeasonMazeActionState.SMAS_BossBattle then
     local count = cpt:GetAttrValue(SeasonMazeAttrType.SMAT_Round)
     if count ~= 0 then
-      (Log.exception)("当前回合数不是0", count)
+      Log.exception("当前回合数不是0", count)
     end
-    ;
-    (self._machine):ChangeStateTo(SMazeState_BossAttack)
+    self._machine:ChangeStateTo(SMazeState_BossAttack)
+  elseif self._node:Room():Type() == SeasonMazeRoomType.SMRT_Camp then
+    self:TransformPosEffect(function()
+      self._manager:MapManager():ReMake()
+      self._machine:ChangeStateTo(SMazeState_Born, true)
+    end)
   else
-    do
-      if ((self._node):Room()):Type() == SeasonMazeRoomType.SMRT_Camp then
-        self:TransformPosEffect(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    ((self._manager):MapManager()):ReMake()
-    ;
-    (self._machine):ChangeStateTo(SMazeState_Born, true)
-  end
-)
-      else
-        ;
-        (self._machine):ChangeStateTo(SMazeState_PlayCard, self._node, true)
-      end
-    end
+    self._machine:ChangeStateTo(SMazeState_PlayCard, self._node, true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeState_RoundEnd.TransformPosEffect = function(self, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function SMazeState_RoundEnd:TransformPosEffect(cb)
   local tls = {}
   local lock = EZTL_Callback:New(function()
-    -- function num : 0_2_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):Lock("SMazeState_PlayerMove:TransformPosEffect")
-  end
-, "锁屏")
-  ;
-  (table.insert)(tls, lock)
-  local para = EZTL_Parallel:New({EZTL_Sequence:New({EZTL_Wait:New(100, "等0.1秒"), EZTL_Callback:New(function()
-    -- function num : 0_2_1 , upvalues : _ENV
-    (((((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()):Player()):GetModelGameObject()):SetActive(false)
-  end
-, "隐藏")}), EZTL_Callback:New(function()
-    -- function num : 0_2_2 , upvalues : _ENV
-    local pos = ((((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()):Player()):Position()
-    ;
-    ((((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()):Player()):PlayEffect("TransStartPoint", pos)
-  end
-, "加载资源"), EZTL_Callback:New(function()
-    -- function num : 0_2_3 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UISeasonMazeScene", "TransStartPoint", 0.7)
-  end
-, "黑屏"), EZTL_Wait:New(700, "等0.7秒")}, EZTL_EndTag.All, nil, "加载资源，黑屏")
-  ;
-  (table.insert)(tls, para)
+    GameGlobal.UIStateManager():Lock("SMazeState_PlayerMove:TransformPosEffect")
+  end, "锁屏")
+  table.insert(tls, lock)
+  local para = EZTL_Parallel:New({
+    EZTL_Sequence:New({
+      EZTL_Wait:New(100, "等0.1秒"),
+      EZTL_Callback:New(function()
+        GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager():Player():GetModelGameObject():SetActive(false)
+      end, "隐藏")
+    }),
+    EZTL_Callback:New(function()
+      local pos = GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager():Player():Position()
+      GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager():Player():PlayEffect("TransStartPoint", pos)
+    end, "加载资源"),
+    EZTL_Callback:New(function()
+      GameGlobal.UIStateManager():CallUIMethod("UISeasonMazeScene", "TransStartPoint", 0.7)
+    end, "黑屏"),
+    EZTL_Wait:New(700, "等0.7秒")
+  }, EZTL_EndTag.All, nil, "加载资源，黑屏")
+  table.insert(tls, para)
   local callback = EZTL_Callback:New(function()
-    -- function num : 0_2_4 , upvalues : cb
     if cb then
       cb()
     end
-  end
-, "传送")
-  ;
-  (table.insert)(tls, callback)
-  local para2 = EZTL_Parallel:New({EZTL_Callback:New(function()
-    -- function num : 0_2_5 , upvalues : _ENV
-    (((((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()):Player()):GetModelGameObject()):SetActive(true)
-    local pos = ((((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()):Player()):Position()
-    ;
-    ((((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()):Player()):PlayEffect("TransEndPoint", pos)
-  end
-, "显示特效"), EZTL_Callback:New(function()
-    -- function num : 0_2_6 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):CallUIMethod("UISeasonMazeScene", "TransEndPoint", 0.7)
-  end
-, "取消黑屏"), EZTL_Wait:New(700, "等0.7秒")}, EZTL_EndTag.All, nil, "加载资源，黑屏")
-  ;
-  (table.insert)(tls, para2)
+  end, "传送")
+  table.insert(tls, callback)
+  local para2 = EZTL_Parallel:New({
+    EZTL_Callback:New(function()
+      GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager():Player():GetModelGameObject():SetActive(true)
+      local pos = GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager():Player():Position()
+      GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager():Player():PlayEffect("TransEndPoint", pos)
+    end, "显示特效"),
+    EZTL_Callback:New(function()
+      GameGlobal.UIStateManager():CallUIMethod("UISeasonMazeScene", "TransEndPoint", 0.7)
+    end, "取消黑屏"),
+    EZTL_Wait:New(700, "等0.7秒")
+  }, EZTL_EndTag.All, nil, "加载资源，黑屏")
+  table.insert(tls, para2)
   local unlock = EZTL_Callback:New(function()
-    -- function num : 0_2_7 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):UnLock("SMazeState_PlayerMove:TransformPosEffect")
-  end
-, "解锁")
-  ;
-  (table.insert)(tls, unlock)
+    GameGlobal.UIStateManager():UnLock("SMazeState_PlayerMove:TransformPosEffect")
+  end, "解锁")
+  table.insert(tls, unlock)
   local seq = EZTL_Sequence:New(tls)
-  ;
-  (((GameGlobal.GetUIModule)(SeasonMazeModule)):SeasonMazeManager()):PlayEZTL(seq)
+  GameGlobal.GetUIModule(SeasonMazeModule):SeasonMazeManager():PlayEZTL(seq)
   return seq
 end
-
-

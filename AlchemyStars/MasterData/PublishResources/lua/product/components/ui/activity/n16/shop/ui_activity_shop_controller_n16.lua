@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/shop/ui_activity_shop_controller_n16.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityShopControllerN16", UIActivityShopControllerBase)
 UIActivityShopControllerN16 = UIActivityShopControllerN16
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityShopControllerN16.DefaultBackFunc = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityShopControllerN16:DefaultBackFunc()
   self:SwitchState(UIStateType.UIActivityN16MainController)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityShopControllerN16._GetFormatString = function(self, stamp)
-  -- function num : 0_1 , upvalues : _ENV
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (StringTable.Get)("str_activity_n16_shop_close_at", timeStr)
+function UIActivityShopControllerN16:_GetFormatString(stamp)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = StringTable.Get("str_activity_n16_shop_close_at", timeStr)
   return showStr
 end
-
-

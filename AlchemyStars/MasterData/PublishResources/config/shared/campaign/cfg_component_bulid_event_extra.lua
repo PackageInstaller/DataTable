@@ -1,20 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_bulid_event_extra.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, DayMaxEventNum = 2, OnceRandNum = 3, CurEventNum = 4, RefreshTime = 5, ItemId = 6}
+local key = {
+  ID = 1,
+  DayMaxEventNum = 2,
+  OnceRandNum = 3,
+  CurEventNum = 4,
+  RefreshTime = 5,
+  ItemId = 6
+}
 local common = {
-{32400}
+  {32400}
 }
 local config = {
-[100701601] = {100701601, 2, 2, 2, common[1], 3000214}
-, 
-[102101604] = {102101604, 2, 2, 2, 
-{72000}
-, 3000238}
-, 
-[1900601602] = {1900601602, 0, 0, 0, common[1], 3000214}
+  [100701601] = {
+    100701601,
+    2,
+    2,
+    2,
+    common[1],
+    3000214
+  },
+  [102101604] = {
+    102101604,
+    2,
+    2,
+    2,
+    {72000},
+    3000238
+  },
+  [1900601602] = {
+    1900601602,
+    0,
+    0,
+    0,
+    common[1],
+    3000214
+  }
 }
 return config, "ID", key
-

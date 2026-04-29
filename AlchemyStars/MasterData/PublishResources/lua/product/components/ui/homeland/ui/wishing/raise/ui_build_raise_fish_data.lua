@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/wishing/raise/ui_build_raise_fish_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBuildRaiseFishData", Object)
 UIBuildRaiseFishData = UIBuildRaiseFishData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildRaiseFishData.Constructor = function(self, id, instanceId, count)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBuildRaiseFishData:Constructor(id, instanceId, count)
   self._id = id
   self._instanceId = instanceId
-  local itemCfg = (Cfg.cfg_item)[self._id]
-  local fishCfg = (Cfg.cfg_item_homeland_fish)[self._id]
+  local itemCfg = Cfg.cfg_item[self._id]
+  local fishCfg = Cfg.cfg_item_homeland_fish[self._id]
   self._icon = itemCfg.Icon
-  self._name = (StringTable.Get)(itemCfg.Name)
+  self._name = StringTable.Get(itemCfg.Name)
   self._color = itemCfg.Color
   self._sort = fishCfg.Sort
   if count == nil then
@@ -24,343 +17,227 @@ UIBuildRaiseFishData.Constructor = function(self, id, instanceId, count)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.Clone = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBuildRaiseFishData:Clone()
   return UIBuildRaiseFishData:New(self._id, self._instanceId, self._count)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.GetCount = function(self)
-  -- function num : 0_2
+function UIBuildRaiseFishData:GetCount()
   return self._count
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.SetCount = function(self, count)
-  -- function num : 0_3
+function UIBuildRaiseFishData:SetCount(count)
   self._count = count
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.MinusCount = function(self)
-  -- function num : 0_4
+function UIBuildRaiseFishData:MinusCount()
   self._count = self._count - 1
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.AddCount = function(self)
-  -- function num : 0_5
+function UIBuildRaiseFishData:AddCount()
   self._count = self._count + 1
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.GetId = function(self)
-  -- function num : 0_6
+function UIBuildRaiseFishData:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.GetInstanceId = function(self)
-  -- function num : 0_7
+function UIBuildRaiseFishData:GetInstanceId()
   return self._instanceId
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.SetInstanceId = function(self, instanceId)
-  -- function num : 0_8
+function UIBuildRaiseFishData:SetInstanceId(instanceId)
   self._instanceId = instanceId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.GetIcon = function(self)
-  -- function num : 0_9
+function UIBuildRaiseFishData:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.GetColor = function(self)
-  -- function num : 0_10
+function UIBuildRaiseFishData:GetColor()
   return self._color
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishData.GetSortPriority = function(self)
-  -- function num : 0_11
+function UIBuildRaiseFishData:GetSortPriority()
   return self._sort
 end
 
 _class("UIBuildRaiseFishDatas", Object)
 UIBuildRaiseFishDatas = UIBuildRaiseFishDatas
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBuildRaiseFishDatas.Constructor = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local raiseFishIds = (HomelandWishingConst.GetRaiseFishList)()
+function UIBuildRaiseFishDatas:Constructor()
+  local raiseFishIds = HomelandWishingConst.GetRaiseFishList()
   self._originalRaiseFish = {}
   for i = 1, #raiseFishIds do
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._originalRaiseFish)[#self._originalRaiseFish + 1] = UIBuildRaiseFishData:New((raiseFishIds[i]).ID, (raiseFishIds[i]).InstanceId, 1)
+    self._originalRaiseFish[#self._originalRaiseFish + 1] = UIBuildRaiseFishData:New(raiseFishIds[i].ID, raiseFishIds[i].InstanceId, 1)
   end
   self._raiseFish = self._originalRaiseFish
   self._remainFish = {}
-  local remainFishList = (HomelandWishingConst.GetRemainFishList)()
+  local remainFishList = HomelandWishingConst.GetRemainFishList()
   for i = 1, #remainFishList do
-    local data = UIBuildRaiseFishData:New((remainFishList[i]).ID, (remainFishList[i]).InstanceId, (remainFishList[i]).Count)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._remainFish)[#self._remainFish + 1] = data
+    local data = UIBuildRaiseFishData:New(remainFishList[i].ID, remainFishList[i].InstanceId, remainFishList[i].Count)
+    self._remainFish[#self._remainFish + 1] = data
   end
   self._aquariumFish = {}
-  local aquariumFishList = (HomelandWishingConst.GetAquariumFishList)()
-  for buildPstId,fishs in pairs(aquariumFishList) do
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R9 in 'UnsetPending'
-
-    if not (self._aquariumFish)[buildPstId] then
-      (self._aquariumFish)[buildPstId] = {}
+  local aquariumFishList = HomelandWishingConst.GetAquariumFishList()
+  for buildPstId, fishs in pairs(aquariumFishList) do
+    if not self._aquariumFish[buildPstId] then
+      self._aquariumFish[buildPstId] = {}
     end
     for i = 1, #fishs do
-      local data = UIBuildRaiseFishData:New((fishs[i]).ID, (fishs[i]).InstanceId, (fishs[i]).Count)
-      -- DECOMPILER ERROR at PC84: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      ((self._aquariumFish)[buildPstId])[#(self._aquariumFish)[buildPstId] + 1] = data
+      local data = UIBuildRaiseFishData:New(fishs[i].ID, fishs[i].InstanceId, fishs[i].Count)
+      self._aquariumFish[buildPstId][#self._aquariumFish[buildPstId] + 1] = data
     end
   end
   self:Sort()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.GetRaiseFish = function(self)
-  -- function num : 0_13
+function UIBuildRaiseFishDatas:GetRaiseFish()
   return self._raiseFish
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.GetRemainFish = function(self)
-  -- function num : 0_14
+function UIBuildRaiseFishDatas:GetRemainFish()
   return self._remainFish
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.RaiseFish = function(self, raiseFishData)
-  -- function num : 0_15 , upvalues : _ENV
+function UIBuildRaiseFishDatas:RaiseFish(raiseFishData)
   local fishData = raiseFishData:Clone()
-  fishData:SetInstanceId((HomelandWishingConst.GenFishInstanceId)())
-  ;
-  (HomelandWishingConst.RaiseFish)(fishData:GetId(), fishData:GetInstanceId())
+  fishData:SetInstanceId(HomelandWishingConst.GenFishInstanceId())
+  HomelandWishingConst.RaiseFish(fishData:GetId(), fishData:GetInstanceId())
   for i = 1, #self._remainFish do
-    local data = (self._remainFish)[i]
+    local data = self._remainFish[i]
     if data == raiseFishData then
       data:MinusCount()
       if data:GetCount() <= 0 then
-        (table.remove)(self._remainFish, R10_PC33)
+        table.remove(self._remainFish, i)
       end
       break
     end
   end
-  do
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._raiseFish)[#self._raiseFish + 1] = fishData
-    self:Sort()
-    return fishData
-  end
+  self._raiseFish[#self._raiseFish + 1] = fishData
+  self:Sort()
+  return fishData
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.UnRaiseFish = function(self, raiseFishData)
-  -- function num : 0_16 , upvalues : _ENV
-  (HomelandWishingConst.UnRaiseFish)(raiseFishData:GetId(), raiseFishData:GetInstanceId())
+function UIBuildRaiseFishDatas:UnRaiseFish(raiseFishData)
+  HomelandWishingConst.UnRaiseFish(raiseFishData:GetId(), raiseFishData:GetInstanceId())
   for i = 1, #self._raiseFish do
-    local data = (self._raiseFish)[i]
+    local data = self._raiseFish[i]
     if data == raiseFishData then
-      (table.remove)(self._raiseFish, R9_PC20)
+      table.remove(self._raiseFish, i)
       break
     end
   end
-  do
-    for i = 1, #self._remainFish do
-      local data = (self._remainFish)[i]
-      if data:GetId() == raiseFishData:GetId() then
-        data:AddCount()
-        self:Sort()
-        return 
-      end
+  for i = 1, #self._remainFish do
+    local data = self._remainFish[i]
+    if data:GetId() == raiseFishData:GetId() then
+      data:AddCount()
+      self:Sort()
+      return
     end
-    raiseFishData:SetCount(1)
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._remainFish)[#self._remainFish + 1] = raiseFishData
-    self:Sort()
   end
+  raiseFishData:SetCount(1)
+  self._remainFish[#self._remainFish + 1] = raiseFishData
+  self:Sort()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.GetRaiseFishCount = function(self)
-  -- function num : 0_17
+function UIBuildRaiseFishDatas:GetRaiseFishCount()
   return #self._raiseFish
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.Sort = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  (table.sort)(self._raiseFish, function(a, b)
-    -- function num : 0_18_0
+function UIBuildRaiseFishDatas:Sort()
+  table.sort(self._raiseFish, function(a, b)
     local priorityA = a:GetSortPriority()
     local priorityB = b:GetSortPriority()
-    if priorityA >= priorityB then
-      do return priorityA == priorityB end
-      if b:GetColor() >= a:GetColor() then
-        do return a:GetColor() == b:GetColor() end
-        do return a:GetId() < b:GetId() end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+    if priorityA ~= priorityB then
+      return priorityA < priorityB
     end
-  end
-)
-  ;
-  (table.sort)(self._remainFish, function(a, b)
-    -- function num : 0_18_1
+    if a:GetColor() ~= b:GetColor() then
+      return a:GetColor() > b:GetColor()
+    end
+    return a:GetId() < b:GetId()
+  end)
+  table.sort(self._remainFish, function(a, b)
     local a1 = a
     local b1 = b
     local priorityA = a1:GetSortPriority()
     local priorityB = b1:GetSortPriority()
-    if priorityA >= priorityB then
-      do return priorityA == priorityB end
-      if b1:GetColor() >= a1:GetColor() then
-        do return a1:GetColor() == b1:GetColor() end
-        do return a1:GetId() < b1:GetId() end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+    if priorityA ~= priorityB then
+      return priorityA < priorityB
     end
-  end
-)
-  for buildPstId,fishs in pairs(self._aquariumFish) do
-    (table.sort)(fishs, function(a, b)
-    -- function num : 0_18_2
-    local priorityA = a:GetSortPriority()
-    local priorityB = b:GetSortPriority()
-    if priorityA >= priorityB then
-      do return priorityA == priorityB end
-      if b:GetColor() >= a:GetColor() then
-        do return a:GetColor() == b:GetColor() end
-        do return a:GetId() < b:GetId() end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
-      end
+    if a1:GetColor() ~= b1:GetColor() then
+      return a1:GetColor() > b1:GetColor()
     end
-  end
-)
+    return a1:GetId() < b1:GetId()
+  end)
+  for buildPstId, fishs in pairs(self._aquariumFish) do
+    table.sort(fishs, function(a, b)
+      local priorityA = a:GetSortPriority()
+      local priorityB = b:GetSortPriority()
+      if priorityA ~= priorityB then
+        return priorityA < priorityB
+      end
+      if a:GetColor() ~= b:GetColor() then
+        return a:GetColor() > b:GetColor()
+      end
+      return a:GetId() < b:GetId()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.GetAquariumFish = function(self)
-  -- function num : 0_19
+function UIBuildRaiseFishDatas:GetAquariumFish()
   return self._aquariumFish
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.GetCurAquariumFish = function(self, buildPstID)
-  -- function num : 0_20
-  if not (self._aquariumFish)[buildPstID] then
-    local curAquariumFish = {}
-  end
+function UIBuildRaiseFishDatas:GetCurAquariumFish(buildPstID)
+  local curAquariumFish = self._aquariumFish[buildPstID] or {}
   return curAquariumFish
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.GetCurAquariumFishCount = function(self, buildPstID)
-  -- function num : 0_21
+function UIBuildRaiseFishDatas:GetCurAquariumFishCount(buildPstID)
   local curAquariumFish = self:GetCurAquariumFish(buildPstID)
   return #curAquariumFish
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.AddAquariumFish = function(self, buildPstID, raiseFishData)
-  -- function num : 0_22 , upvalues : _ENV
+function UIBuildRaiseFishDatas:AddAquariumFish(buildPstID, raiseFishData)
   local fishData = raiseFishData:Clone()
-  fishData:SetInstanceId((HomelandWishingConst.GenAquariumFishInstanceId)(buildPstID))
-  ;
-  (HomelandWishingConst.AddAquariumFish)(buildPstID, fishData:GetId(), fishData:GetInstanceId())
+  fishData:SetInstanceId(HomelandWishingConst.GenAquariumFishInstanceId(buildPstID))
+  HomelandWishingConst.AddAquariumFish(buildPstID, fishData:GetId(), fishData:GetInstanceId())
   for i = 1, #self._remainFish do
-    local data = (self._remainFish)[i]
+    local data = self._remainFish[i]
     if data == raiseFishData then
       data:MinusCount()
       if data:GetCount() <= 0 then
-        (table.remove)(self._remainFish, i)
+        table.remove(self._remainFish, i)
       end
       break
     end
   end
-  do
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R4 in 'UnsetPending'
-
-    if not (self._aquariumFish)[buildPstID] then
-      (self._aquariumFish)[buildPstID] = {}
-    end
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    ((self._aquariumFish)[buildPstID])[#(self._aquariumFish)[buildPstID] + 1] = fishData
-    self:Sort()
-    return fishData
+  if not self._aquariumFish[buildPstID] then
+    self._aquariumFish[buildPstID] = {}
   end
+  self._aquariumFish[buildPstID][#self._aquariumFish[buildPstID] + 1] = fishData
+  self:Sort()
+  return fishData
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBuildRaiseFishDatas.RemoeAquariumFish = function(self, buildPstID, raiseFishData)
-  -- function num : 0_23 , upvalues : _ENV
-  (HomelandWishingConst.RemoveAquariumFish)(buildPstID, raiseFishData:GetId(), raiseFishData:GetInstanceId())
-  for i = 1, #(self._aquariumFish)[buildPstID] do
-    local data = ((self._aquariumFish)[buildPstID])[i]
+function UIBuildRaiseFishDatas:RemoeAquariumFish(buildPstID, raiseFishData)
+  HomelandWishingConst.RemoveAquariumFish(buildPstID, raiseFishData:GetId(), raiseFishData:GetInstanceId())
+  for i = 1, #self._aquariumFish[buildPstID] do
+    local data = self._aquariumFish[buildPstID][i]
     if data == raiseFishData then
-      (table.remove)((self._aquariumFish)[buildPstID], i)
+      table.remove(self._aquariumFish[buildPstID], i)
       break
     end
   end
-  do
-    for i = 1, #self._remainFish do
-      local data = (self._remainFish)[i]
-      if data:GetId() == raiseFishData:GetId() then
-        data:AddCount()
-        self:Sort()
-        return 
-      end
+  for i = 1, #self._remainFish do
+    local data = self._remainFish[i]
+    if data:GetId() == raiseFishData:GetId() then
+      data:AddCount()
+      self:Sort()
+      return
     end
-    raiseFishData:SetCount(1)
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._remainFish)[#self._remainFish + 1] = raiseFishData
-    self:Sort()
   end
+  raiseFishData:SetCount(1)
+  self._remainFish[#self._remainFish + 1] = raiseFishData
+  self:Sort()
 end
-
-

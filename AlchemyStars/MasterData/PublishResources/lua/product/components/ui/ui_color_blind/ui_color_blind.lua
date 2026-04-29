@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_color_blind/ui_color_blind.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIColorBlind", UIController)
 UIColorBlind = UIColorBlind
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIColorBlind.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIColorBlind:OnShow(uiParam)
   self.txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self.pool = self:GetUIComponent("UISelectObjectPath", "s")
   self.btnConfirmObj = self:GetGameObject("btnConfirm")
@@ -17,192 +10,160 @@ UIColorBlind.OnShow = function(self, uiParam)
   self.selectItemIsGot = false
   self:InitGroupBtn()
   self:InitCfgData()
-  self:OnSelectGroupType((self.groupType).all)
+  self:OnSelectGroupType(self.groupType.all)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlind.InitGroupBtn = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.groupType = {all = 0, default = 1, pay = 2}
-  self.btnObjGroup = {[(self.groupType).default] = self:GetGameObject("DefaultButton"), [(self.groupType).pay] = self:GetGameObject("PayButton"), [(self.groupType).all] = self:GetGameObject("AllButton")}
-  for type,obj in pairs(self.btnObjGroup) do
-    do
-      self:AddUICustomEventListener((UICustomUIEventListener.Get)(obj), UIEvent.Click, function(go)
-    -- function num : 0_1_0 , upvalues : self, type
-    self:OnSelectGroupType(type)
-  end
-)
-    end
+function UIColorBlind:InitGroupBtn()
+  self.groupType = {
+    all = 0,
+    default = 1,
+    pay = 2
+  }
+  self.btnObjGroup = {
+    [self.groupType.default] = self:GetGameObject("DefaultButton"),
+    [self.groupType.pay] = self:GetGameObject("PayButton"),
+    [self.groupType.all] = self:GetGameObject("AllButton")
+  }
+  for type, obj in pairs(self.btnObjGroup) do
+    self:AddUICustomEventListener(UICustomUIEventListener.Get(obj), UIEvent.Click, function(go)
+      self:OnSelectGroupType(type)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlind.InitCfgData = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self.chessCfg = (Cfg.cfg_item_chess)({})
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
-  self.curPlayerSelectItemID = (UIPropertyHelper:GetInstance()):GetChessItemID()
-  local selectCfgFilter = (Cfg.cfg_item_chess)({ID = self.curPlayerSelectItemID})
+function UIColorBlind:InitCfgData()
+  self.chessCfg = Cfg.cfg_item_chess({})
+  self.itemModule = GameGlobal.GetModule(ItemModule)
+  self.curPlayerSelectItemID = UIPropertyHelper:GetInstance():GetChessItemID()
+  local selectCfgFilter = Cfg.cfg_item_chess({
+    ID = self.curPlayerSelectItemID
+  })
   if selectCfgFilter then
     self.curPlayerSelectItem = selectCfgFilter[1]
   else
-    ;
-    (Log.exception)("[UIColorBlind] not exist this itemID", self.curPlayerSelectItem)
+    Log.exception("[UIColorBlind] not exist this itemID", self.curPlayerSelectItem)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlind.OnSelectGroupType = function(self, type)
-  -- function num : 0_3 , upvalues : _ENV
+function UIColorBlind:OnSelectGroupType(type)
   if self.curSelectGroup == type then
-    return 
+    return
   end
   self.curSelectGroup = type
   self:RefreshSpawnItems()
-  for t,v in pairs(self.btnObjGroup) do
-    (((v.transform):Find("select")).gameObject):SetActive(self.curSelectGroup == t)
+  for t, v in pairs(self.btnObjGroup) do
+    v.transform:Find("select").gameObject:SetActive(self.curSelectGroup == t)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlind.GetCfgDataFromItemID = function(self, itemId)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,v in pairs(self.chessCfg) do
+function UIColorBlind:GetCfgDataFromItemID(itemId)
+  for _, v in pairs(self.chessCfg) do
     if v.ID == itemId then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlind.RefreshSpawnItems = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local typeChessList = nil
-  local curSelectItemInType = (self.curPlayerSelectItem).type == self.curSelectGroup
-  if self.curSelectGroup == (self.groupType).default then
-    typeChessList = (Cfg.cfg_item_chess)({type = 1})
-  elseif self.curSelectGroup == (self.groupType).pay then
-    typeChessList = (Cfg.cfg_item_chess)({type = 2})
+function UIColorBlind:RefreshSpawnItems()
+  local typeChessList
+  local curSelectItemInType = self.curPlayerSelectItem.type == self.curSelectGroup
+  if self.curSelectGroup == self.groupType.default then
+    typeChessList = Cfg.cfg_item_chess({type = 1})
+  elseif self.curSelectGroup == self.groupType.pay then
+    typeChessList = Cfg.cfg_item_chess({type = 2})
   else
-    typeChessList = (Cfg.cfg_item_chess)({})
+    typeChessList = Cfg.cfg_item_chess({})
     curSelectItemInType = true
   end
   if not typeChessList then
-    return 
+    return
   end
   local sortChessList = {}
-  for _,cv in pairs(typeChessList) do
-    do
-      local v = {ID = cv.ID, type = cv.type, order = cv.order, showNoSkin = cv.showNoSkin == 1, acquisitionPath = cv.acquisitionPath, icon = cv.icon}
-      if curSelectItemInType and v.ID == self.curPlayerSelectItemID then
-        v.order = 0
-      end
-      local count = (self.itemModule):GetItemCount(v.ID)
-      if count <= 0 and v.showNoSkin then
+  for _, cv in pairs(typeChessList) do
+    local v = {
+      ID = cv.ID,
+      type = cv.type,
+      order = cv.order,
+      showNoSkin = cv.showNoSkin == 1,
+      acquisitionPath = cv.acquisitionPath,
+      icon = cv.icon
+    }
+    if curSelectItemInType and v.ID == self.curPlayerSelectItemID then
+      v.order = 0
+    end
+    local count = self.itemModule:GetItemCount(v.ID)
+    if count <= 0 then
+      if v.showNoSkin then
         v.notGet = true
         v.order = v.order + 10000
-        ;
-        (table.insert)(sortChessList, v)
+        table.insert(sortChessList, v)
       end
-      local items = (self.itemModule):GetItemByTempId(v.ID)
-      for _,vitem in pairs(items) do
+    else
+      local items = self.itemModule:GetItemByTempId(v.ID)
+      for _, vitem in pairs(items) do
         self.item = vitem
       end
-      if self.item and (self.item):IsNewOverlay() then
+      if self.item and self.item:IsNewOverlay() then
         v.isNew = true
       else
         v.isNew = false
       end
-      ;
-      (table.insert)(sortChessList, v)
+      table.insert(sortChessList, v)
     end
   end
-  ;
-  (table.sort)(sortChessList, function(v1, v2)
-    -- function num : 0_5_0
-    do return v1.order < v2.order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(sortChessList, function(v1, v2)
+    return v1.order < v2.order
+  end)
   local len = #sortChessList
-  ;
-  (self.pool):SpawnObjects("UIColorBlindItem", len)
-  self.items = (self.pool):GetAllSpawnList()
+  self.pool:SpawnObjects("UIColorBlindItem", len)
+  self.items = self.pool:GetAllSpawnList()
   for i = 1, len do
     local cfg = sortChessList[i]
-    ;
-    ((self.items)[i]):Flush(cfg, function()
-    -- function num : 0_5_1 , upvalues : self, sortChessList, i, _ENV, cfg
-    self.selectItemId = (sortChessList[i]).ID
-    local chessItemCfgs = (Cfg.cfg_item)({ID = self.selectItemId})
-    do
+    self.items[i]:Flush(cfg, function()
+      self.selectItemId = sortChessList[i].ID
+      local chessItemCfgs = Cfg.cfg_item({
+        ID = self.selectItemId
+      })
       if chessItemCfgs then
         local chessItemCfg = chessItemCfgs[1]
         if cfg.notGet then
-          (self.txtDesc):SetText((StringTable.Get)(cfg.acquisitionPath))
+          self.txtDesc:SetText(StringTable.Get(cfg.acquisitionPath))
           self.selectItemIsGot = false
         else
-          ;
-          (self.txtDesc):SetText((StringTable.Get)(chessItemCfg.Intro))
+          self.txtDesc:SetText(StringTable.Get(chessItemCfg.Intro))
           self.selectItemIsGot = true
         end
-        ;
-        (self.btnConfirmObj):SetActive(true)
+        self.btnConfirmObj:SetActive(true)
       end
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ColorBlindSelect, cfg.ID)
-    end
-  end
-)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ColorBlindSelect, cfg.ID)
+    end)
   end
   if curSelectItemInType then
-    ((self.items)[1]):imgOnClick()
+    self.items[1]:imgOnClick()
   else
-    (self.txtDesc):SetText("")
-    ;
-    (self.btnConfirmObj):SetActive(false)
+    self.txtDesc:SetText("")
+    self.btnConfirmObj:SetActive(false)
   end
-  -- DECOMPILER ERROR: 15 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlind.OnHide = function(self)
-  -- function num : 0_6
+function UIColorBlind:OnHide()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlind.bgOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ColorBlindUpdate)
+function UIColorBlind:bgOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ColorBlindUpdate)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIColorBlind.btnConfirmOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIColorBlind:btnConfirmOnClick(go)
   if not self.selectItemIsGot then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_color_locked"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_set_color_locked"))
+    return
   end
   self:Lock("SetItemListUnnew_btnConfirmOnClick")
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    (self.itemModule):HandleCEventChessItem(TT, self.selectItemId)
+    self.itemModule:HandleCEventChessItem(TT, self.selectItemId)
     self:UnLock("SetItemListUnnew_btnConfirmOnClick")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ColorBlindUpdate)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ColorBlindUpdate)
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

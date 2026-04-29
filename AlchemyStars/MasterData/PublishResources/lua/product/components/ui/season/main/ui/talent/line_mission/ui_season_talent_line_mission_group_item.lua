@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/line_mission/ui_season_talent_line_mission_group_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentLineMissionGroupItem", UICustomWidget)
 UISeasonTalentLineMissionGroupItem = UISeasonTalentLineMissionGroupItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentLineMissionGroupItem.OnShow = function(self)
-  -- function num : 0_0
+function UISeasonTalentLineMissionGroupItem:OnShow()
   self._selectGo = self:GetGameObject("select")
   self._lockTimerGo = self:GetGameObject("lockTimer")
   self._lockGo = self:GetGameObject("lock")
@@ -21,10 +14,7 @@ UISeasonTalentLineMissionGroupItem.OnShow = function(self)
   self._alpha = self:GetUIComponent("CanvasGroup", "root")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroupItem.SetData = function(self, idx, data, starNum, red, isLock, lockTime, callback, loadSeasonCb)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonTalentLineMissionGroupItem:SetData(idx, data, starNum, red, isLock, lockTime, callback, loadSeasonCb)
   self.idx = idx
   self.data = data
   self.isLock = isLock
@@ -33,125 +23,77 @@ UISeasonTalentLineMissionGroupItem.SetData = function(self, idx, data, starNum, 
   self.starNum = starNum
   self.red = red
   self.loadSeasonCb = loadSeasonCb
-  ;
-  (self._starNumTex):SetText(self.starNum)
-  ;
-  (self._nameTex):SetText((StringTable.Get)((self.data).nameStr))
-  ;
-  (self._maskGo):SetActive(self.isLock)
-  ;
-  (self._lockGo):SetActive(not self.isLock or self.lockTime == nil)
-  ;
-  (self._lockTimerGo):SetActive(self.lockTime ~= nil)
+  self._starNumTex:SetText(self.starNum)
+  self._nameTex:SetText(StringTable.Get(self.data.nameStr))
+  self._maskGo:SetActive(self.isLock)
+  self._lockGo:SetActive(self.isLock and self.lockTime == nil)
+  self._lockTimerGo:SetActive(self.lockTime ~= nil)
   if self.lockTime then
     self:SetLockTime()
   end
   self:SetRed()
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroupItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonTalentLineMissionGroupItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroupItem.PlayAnim = function(self, yieldTime)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if yieldTime and yieldTime > 0 then
-    (self._alpha).alpha = 0
+function UISeasonTalentLineMissionGroupItem:PlayAnim(yieldTime)
+  if yieldTime and 0 < yieldTime then
+    self._alpha.alpha = 0
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
-    self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_3_0 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._alpha).alpha = 1
-    ;
-    (self._anim):Play()
-  end
-)
+    self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._alpha.alpha = 1
+      self._anim:Play()
+    end)
   else
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._alpha).alpha = 1
-    ;
-    (self._anim):Play()
+    self._alpha.alpha = 1
+    self._anim:Play()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroupItem.SetRed = function(self)
-  -- function num : 0_4
-  (self._red):SetActive(self.red)
+function UISeasonTalentLineMissionGroupItem:SetRed()
+  self._red:SetActive(self.red)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroupItem.SetLockTime = function(self)
-  -- function num : 0_5
-  self._timerTexItem = (self._timerTexPool):SpawnObject("UISeasonTalentTimeBase")
-  ;
-  (self._timerTexItem):Set_Time_Tex("str_season_talent_tree_line_group_time_tex")
-  ;
-  (self._timerTexItem):SetData(self.lockTime, function()
-    -- function num : 0_5_0 , upvalues : self
+function UISeasonTalentLineMissionGroupItem:SetLockTime()
+  self._timerTexItem = self._timerTexPool:SpawnObject("UISeasonTalentTimeBase")
+  self._timerTexItem:Set_Time_Tex("str_season_talent_tree_line_group_time_tex")
+  self._timerTexItem:SetData(self.lockTime, function()
     self:LoadSeasonInfo()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroupItem.LoadSeasonInfo = function(self)
-  -- function num : 0_6
+function UISeasonTalentLineMissionGroupItem:LoadSeasonInfo()
   if self.loadSeasonCb then
-    (self.loadSeasonCb)()
+    self.loadSeasonCb()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroupItem.BtnOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonTalentLineMissionGroupItem:BtnOnClick(go)
   if self.isLock then
-    local tips = nil
+    local tips
     if self.lockTime then
-      tips = (StringTable.Get)("str_season_talent_tree_line_lock_tips1")
+      tips = StringTable.Get("str_season_talent_tree_line_lock_tips1")
     else
-      tips = (StringTable.Get)("str_season_talent_tree_line_lock_tips2")
+      tips = StringTable.Get("str_season_talent_tree_line_lock_tips2")
     end
-    ;
-    (ToastManager.ShowToast)(tips)
+    ToastManager.ShowToast(tips)
   else
-    do
-      if self._isSelected then
-        return 
-      end
-      if self.callback then
-        (self.callback)(self.idx)
-      end
+    if self._isSelected then
+      return
+    end
+    if self.callback then
+      self.callback(self.idx)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentLineMissionGroupItem.Select = function(self, select)
-  -- function num : 0_8
+function UISeasonTalentLineMissionGroupItem:Select(select)
   self._isSelected = select
-  ;
-  (self._selectGo):SetActive(select)
+  self._selectGo:SetActive(select)
 end
-
-

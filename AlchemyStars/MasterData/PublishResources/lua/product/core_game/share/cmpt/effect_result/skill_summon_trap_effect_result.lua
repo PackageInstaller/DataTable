@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_summon_trap_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillSummonTrapEffectResult", SkillEffectResultBase)
 SkillSummonTrapEffectResult = SkillSummonTrapEffectResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillSummonTrapEffectResult.Constructor = function(self, trapID, pos, transferDisabled, stageIndex, dir, aiOrder)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillSummonTrapEffectResult:Constructor(trapID, pos, transferDisabled, stageIndex, dir, aiOrder)
   self._effectType = SkillEffectType.SummonTrap
   self._trapID = trapID
   self._pos = pos
@@ -19,74 +12,42 @@ SkillSummonTrapEffectResult.Constructor = function(self, trapID, pos, transferDi
   self._aiOrder = aiOrder
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillSummonTrapEffectResult:GetEffectType()
   return SkillEffectType.SummonTrap
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillSummonTrapEffectResult:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.GetPos = function(self)
-  -- function num : 0_3
+function SkillSummonTrapEffectResult:GetPos()
   return self._pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.GetDir = function(self)
-  -- function num : 0_4
+function SkillSummonTrapEffectResult:GetDir()
   return self._dir
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.GetTrapAIOrder = function(self)
-  -- function num : 0_5
+function SkillSummonTrapEffectResult:GetTrapAIOrder()
   return self._aiOrder
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.SetTrapIDList = function(self, trapIDList)
-  -- function num : 0_6
+function SkillSummonTrapEffectResult:SetTrapIDList(trapIDList)
   self._trapIDList = trapIDList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.GetTrapIDList = function(self)
-  -- function num : 0_7
+function SkillSummonTrapEffectResult:GetTrapIDList()
   return self._trapIDList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.SetTransferDisabled = function(self, b)
-  -- function num : 0_8
+function SkillSummonTrapEffectResult:SetTransferDisabled(b)
   self._transferDisabled = b
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.IsTransferDisabled = function(self)
-  -- function num : 0_9
+function SkillSummonTrapEffectResult:IsTransferDisabled()
   return self._transferDisabled
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillSummonTrapEffectResult.GetDamageStageIndex = function(self)
-  -- function num : 0_10
+function SkillSummonTrapEffectResult:GetDamageStageIndex()
   return self._stageIndex
 end
-
-

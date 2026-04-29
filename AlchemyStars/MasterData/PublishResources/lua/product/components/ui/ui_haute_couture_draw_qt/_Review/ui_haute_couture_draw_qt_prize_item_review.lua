@@ -1,132 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_qt/_Review/ui_haute_couture_draw_qt_prize_item_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_haute_couture_draw_prize_item_base")
 _class("UIHauteCoutureDraw_QT_PrizeItem_Review", UIHauteCoutureDrawPrizeItemBase)
 UIHauteCoutureDraw_QT_PrizeItem_Review = UIHauteCoutureDraw_QT_PrizeItem_Review
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDraw_QT_PrizeItem_Review.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDraw_QT_PrizeItem_Review:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCoutureDraw_QT_PrizeItem_Review:OnShow(uiParams)
   self:_InitWidgets()
-  self._atlas = (self:RootUIOwner()):GetAsset("UIHauteCoutureQT.spriteatlas", LoadType.SpriteAtlas)
+  self._atlas = self:RootUIOwner():GetAsset("UIHauteCoutureQT.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review._InitWidgets = function(self)
-  -- function num : 0_2
+function UIHauteCoutureDraw_QT_PrizeItem_Review:_InitWidgets()
   self.bg = self:GetUIComponent("Image", "bg")
   self._receiveGo = self:GetGameObject("_receive")
   self._grayGo = self:GetGameObject("_gray")
   self._review = self:GetGameObject("Review")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review._OnValue = function(self)
-  -- function num : 0_3
-  if self._specail and self._replaced then
-    local replaceGo = self:GetGameObject("replace")
-    if replaceGo then
-      replaceGo:SetActive(true)
-    end
-    local rewardCount = ((self._assetList)[1]).count
-    local str = "X" .. rewardCount
-    local txt = self:GetUIComponent("UILocalizedTMP", "txt")
-    local txtshadow = self:GetUIComponent("UILocalizedTMP", "txtshadow")
-    if txt then
-      txt:SetText(str)
-    end
-    if txtshadow then
-      txtshadow:SetText(str)
-    end
-  end
-  do
-    do return  end
-    self:_SetState()
-    self:_SetCoin(self._coinNum)
-    self:_SetRewardIcon(self._itemId)
-    self:_SetRewardCount((self._data).RewardCount)
-  end
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review._SetState = function(self)
-  -- function num : 0_4
-  local uiType = (self._data).UIType
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  if uiType == 2 then
-    (self.bg).sprite = (self._atlas):GetSprite("qt_senior_zjm_di03")
-  else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    if uiType == 3 then
-      (self.bg).sprite = (self._atlas):GetSprite("qt_senior_zjm_di04")
-    else
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R2 in 'UnsetPending'
-
-      if uiType == 4 then
-        (self.bg).sprite = (self._atlas):GetSprite("qt_senior_zjm_di05")
+function UIHauteCoutureDraw_QT_PrizeItem_Review:_OnValue()
+  if self._specail then
+    if self._replaced then
+      local replaceGo = self:GetGameObject("replace")
+      if replaceGo then
+        replaceGo:SetActive(true)
+      end
+      local rewardCount = self._assetList[1].count
+      local str = "X" .. rewardCount
+      local txt = self:GetUIComponent("UILocalizedTMP", "txt")
+      local txtshadow = self:GetUIComponent("UILocalizedTMP", "txtshadow")
+      if txt then
+        txt:SetText(str)
+      end
+      if txtshadow then
+        txtshadow:SetText(str)
       end
     end
+    return
+  end
+  self:_SetState()
+  self:_SetCoin(self._coinNum)
+  self:_SetRewardIcon(self._itemId)
+  self:_SetRewardCount(self._data.RewardCount)
+end
+
+function UIHauteCoutureDraw_QT_PrizeItem_Review:_SetState()
+  local uiType = self._data.UIType
+  if uiType == 2 then
+    self.bg.sprite = self._atlas:GetSprite("qt_senior_zjm_di03")
+  elseif uiType == 3 then
+    self.bg.sprite = self._atlas:GetSprite("qt_senior_zjm_di04")
+  elseif uiType == 4 then
+    self.bg.sprite = self._atlas:GetSprite("qt_senior_zjm_di05")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review._SetCoin = function(self, num)
-  -- function num : 0_5 , upvalues : _ENV
-  local show = num > 0
-  ;
-  (self:GetGameObject("_coin")):SetActive(show)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_coinNum_2_gold", "x" .. num)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHauteCoutureDraw_QT_PrizeItem_Review:_SetCoin(num)
+  local show = 0 < num
+  self:GetGameObject("_coin"):SetActive(show)
+  UIWidgetHelper.SetLocalizationText(self, "_coinNum_2_gold", "x" .. num)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review._SetRewardIcon = function(self, itemId)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHauteCoutureDraw_QT_PrizeItem_Review:_SetRewardIcon(itemId)
   local widgetName = "_icon"
-  local cfg = (Cfg.cfg_item)[itemId]
+  local cfg = Cfg.cfg_item[itemId]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil." .. itemId)
+    Log.fatal("cfg_item is nil." .. itemId)
   else
     local icon = cfg.Icon
-    ;
-    (UIWidgetHelper.SetRawImage)(self, widgetName, icon)
+    UIWidgetHelper.SetRawImage(self, widgetName, icon)
   end
-  do
-    if self:_IsHead(itemId) then
-      local rt = self:GetUIComponent("RectTransform", widgetName)
-      local sz = rt.sizeDelta
-      sz.x = 190 * sz.y / 160
-      rt.sizeDelta = sz
-    end
+  if self:_IsHead(itemId) then
+    local rt = self:GetUIComponent("RectTransform", widgetName)
+    local sz = rt.sizeDelta
+    sz.x = 190 * sz.y / 160
+    rt.sizeDelta = sz
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review._IsHead = function(self, itemId)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_global).SeniorSkinhead
-  if cfg then
-    local headIds = cfg.ArrayValue
-  end
-  for k,v in pairs(headIds) do
+function UIHauteCoutureDraw_QT_PrizeItem_Review:_IsHead(itemId)
+  local cfg = Cfg.cfg_global.SeniorSkinhead
+  local headIds = cfg and cfg.ArrayValue
+  for k, v in pairs(headIds) do
     if v == itemId then
       return true
     end
@@ -134,65 +88,39 @@ UIHauteCoutureDraw_QT_PrizeItem_Review._IsHead = function(self, itemId)
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review._SetRewardCount = function(self, rewardCount)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHauteCoutureDraw_QT_PrizeItem_Review:_SetRewardCount(rewardCount)
   local str = ""
-  if rewardCount > 0 then
-    if rewardCount >= 1000 or not rewardCount then
-      str = (math.floor)(rewardCount / 1000) .. "k"
-    end
+  if 0 < rewardCount then
+    str = rewardCount < 1000 and rewardCount or math.floor(rewardCount / 1000) .. "k"
     str = "x" .. str
   end
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_count_2_gold", str)
+  UIWidgetHelper.SetLocalizationText(self, "_count_2_gold", str)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review.Flush = function(self, state)
-  -- function num : 0_9
-  (self._receiveGo):SetActive(state)
+function UIHauteCoutureDraw_QT_PrizeItem_Review:Flush(state)
+  self._receiveGo:SetActive(state)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review.SetGray = function(self, gray)
-  -- function num : 0_10
-  (self._grayGo):SetActive(gray)
+function UIHauteCoutureDraw_QT_PrizeItem_Review:SetGray(gray)
+  self._grayGo:SetActive(gray)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review.PlayAnimation = function(self, idx)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHauteCoutureDraw_QT_PrizeItem_Review:PlayAnimation(idx)
   local delay = 0 + idx * 80
   local animName = "uieff_UIHauteCoutureDraw_QT_PrizeItem_in"
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_anim", animName, delay, 733)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_anim", animName, delay, 733)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review.BgOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  if RoleAssetID.RoleAssetPetSkinBegin < self._itemId and self._itemId < RoleAssetID.RoleAssetPetSkinEnd then
+function UIHauteCoutureDraw_QT_PrizeItem_Review:BgOnClick(go)
+  if self._itemId > RoleAssetID.RoleAssetPetSkinBegin and self._itemId < RoleAssetID.RoleAssetPetSkinEnd then
     self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_TIPS, self._itemId - 4000000)
-  else
-    if self.clickCb then
-      (self.clickCb)((self._assetList)[1], (go.transform).position)
-    end
+  elseif self.clickCb then
+    self.clickCb(self._assetList[1], go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDraw_QT_PrizeItem_Review.CoinImgOnClick = function(self, go)
-  -- function num : 0_13
+function UIHauteCoutureDraw_QT_PrizeItem_Review:CoinImgOnClick(go)
   if self.clickCb then
-    (self.clickCb)((self._assetList)[2], (go.transform).position)
+    self.clickCb(self._assetList[2], go.transform.position)
   end
 end
-
-

@@ -1,79 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/task/ui_homeland_task_activity.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeLandTaskActivity", UICustomWidget)
 UIHomeLandTaskActivity = UIHomeLandTaskActivity
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeLandTaskActivity.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.mUIHomeland = (self.mHomeland):GetUIModule()
-  self.homelandClient = (self.mUIHomeland):GetClient()
+function UIHomeLandTaskActivity:LoadDataOnEnter(TT, res, uiParams)
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.mUIHomeland = self.mHomeland:GetUIModule()
+  self.homelandClient = self.mUIHomeland:GetClient()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskActivity.OnShow = function(self)
-  -- function num : 0_1
+function UIHomeLandTaskActivity:OnShow()
   self:InitWidget()
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskActivity.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomeLandTaskActivity:InitWidget()
   self._bg = self:GetUIComponent("Image", "bgImage")
   self._titleText = self:GetUIComponent("UILocalizationText", "titleText")
   self._contentText = self:GetUIComponent("UILocalizationText", "contentText")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskActivity.RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local title, content = (((self.homelandClient):GetHomelandTaskManager()):GetRuningTaskGroup()):GetGroupInfo()
-  ;
-  (self._titleText):SetText((StringTable.Get)(title))
-  ;
-  (self._contentText):SetText((StringTable.Get)(content))
+function UIHomeLandTaskActivity:RefreshUI()
+  local title, content = self.homelandClient:GetHomelandTaskManager():GetRuningTaskGroup():GetGroupInfo()
+  self._titleText:SetText(StringTable.Get(title))
+  self._contentText:SetText(StringTable.Get(content))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskActivity.OnHide = function(self)
-  -- function num : 0_4
+function UIHomeLandTaskActivity:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskActivity._AttachEvents = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomeLandTaskActivity:_AttachEvents()
   self:AttachEvent(GameEventType.OnHomeLandTaskFinished, self._OnHomeLandTaskFinished)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskActivity._DetachEvents = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomeLandTaskActivity:_DetachEvents()
   self:DetachEvent(GameEventType.OnHomeLandTaskFinished, self._OnHomeLandTaskFinished)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskActivity._OnHomeLandTaskFinished = function(self)
-  -- function num : 0_7
+function UIHomeLandTaskActivity:_OnHomeLandTaskFinished()
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandTaskActivity.BtnOnClick = function(self)
-  -- function num : 0_8
+function UIHomeLandTaskActivity:BtnOnClick()
 end
-
-

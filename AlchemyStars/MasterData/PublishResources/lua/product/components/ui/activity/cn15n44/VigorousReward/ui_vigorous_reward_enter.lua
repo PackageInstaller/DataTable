@@ -1,143 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn15n44/VigorousReward/ui_vigorous_reward_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UIVigorousRewardEnter", UISideEnterItem_Base)
 UIVigorousRewardEnter = UIVigorousRewardEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIVigorousRewardEnter.GetOpenCfg = function()
-  -- function num : 0_0 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_quest_daily_extra_activity)()
+function UIVigorousRewardEnter.GetOpenCfg()
+  local cfgs = Cfg.cfg_quest_daily_extra_activity()
   for i = 1, #cfgs do
     local cfg = cfgs[i]
     local st, ed = cfg.StartTime, cfg.EndTime
     if cfg.TimeTransform == 0 then
-      local isOpen = (UISideEnterItem_FixedTime.CheckOpen)(st, ed)
+      local isOpen = UISideEnterItem_FixedTime.CheckOpen(st, ed)
       if isOpen then
         return cfg
       end
-    else
-      do
-        do
-          if cfg.TimeTransform == 1 then
-            local isOpen = (UISideEnterItem_FixedTime.CheckServerTimeOpen)(st, ed)
-            if isOpen then
-              return cfg
-            end
-          end
-          -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC33: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    elseif cfg.TimeTransform == 1 then
+      local isOpen = UISideEnterItem_FixedTime.CheckServerTimeOpen(st, ed)
+      if isOpen then
+        return cfg
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter.OnShow = function(self)
-  -- function num : 0_1
+function UIVigorousRewardEnter:OnShow()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter.OnHide = function(self)
-  -- function num : 0_2
+function UIVigorousRewardEnter:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter._CheckOpen = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  self._cfg = (UIVigorousRewardEnter.GetOpenCfg)()
+function UIVigorousRewardEnter:_CheckOpen(TT)
+  self._cfg = UIVigorousRewardEnter.GetOpenCfg()
   local functionId = 14
-  local functionLockCfg = (Cfg.cfg_module_unlock)[functionId]
+  local functionLockCfg = Cfg.cfg_module_unlock[functionId]
   if not functionLockCfg then
-    (Log.debug)("don\'t have function config")
+    Log.debug("don't have function config")
     return false
   end
-  local module = (GameGlobal.GetModule)(RoleModule)
+  local module = GameGlobal.GetModule(RoleModule)
   local ispass = module:CheckModuleUnlock(functionId)
   if not self._cfg or not ispass then
-    (Log.fatal)("###[UIVigorousRewardEnter] cfg is nil ! id --> ", 1)
+    Log.fatal("###[UIVigorousRewardEnter] cfg is nil ! id --> ", 1)
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_4
-  return (self._cfg).MainSideIcon
+function UIVigorousRewardEnter:GetSideEnterRawImage()
+  return self._cfg.MainSideIcon
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter.DoShow = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "title", (StringTable.Get)((self._cfg).MainSideStr))
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "bg", self:GetSideEnterRawImage())
+function UIVigorousRewardEnter:DoShow()
+  UIWidgetHelper.SetLocalizationText(self, "title", StringTable.Get(self._cfg.MainSideStr))
+  UIWidgetHelper.SetRawImage(self, "bg", self:GetSideEnterRawImage())
   self:_AttachEvents()
   self:_CheckNew()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter._CalcNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local pstID = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
-  return (LocalDB.GetInt)("UIVigorousRewardEnter_New" .. pstID, 0) == 0 and 1 or 0
+function UIVigorousRewardEnter:_CalcNew()
+  local pstID = GameGlobal.GetModule(RoleModule):GetPstId()
+  return LocalDB.GetInt("UIVigorousRewardEnter_New" .. pstID, 0) == 0 and 1 or 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter._AttachEvents = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIVigorousRewardEnter:_AttachEvents()
   self:AttachEvent(GameEventType.SideEnterTabRefresh, self._CheckNew)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter._DetachEvents = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIVigorousRewardEnter:_DetachEvents()
   self:DetachEvent(GameEventType.SideEnterTabRefresh, self._CheckNew)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter._CalcRed = function(self)
-  -- function num : 0_9
+function UIVigorousRewardEnter:_CalcRed()
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter._CheckNew = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (UIWidgetHelper.SetNewAndReds)(self, self:_CalcNew(), self:_CalcRed(), "_new", "red")
+function UIVigorousRewardEnter:_CheckNew()
+  UIWidgetHelper.SetNewAndReds(self, self:_CalcNew(), self:_CalcRed(), "_new", "red")
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIVigorousRewardEnter._Refresh = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIVigorousRewardEnter:_Refresh()
   local isOpen = self:_CheckOpen()
   if not isOpen then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-    ;
-    (self._setShowCallback)(isOpen)
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+    self._setShowCallback(isOpen)
   end
 end
-
-

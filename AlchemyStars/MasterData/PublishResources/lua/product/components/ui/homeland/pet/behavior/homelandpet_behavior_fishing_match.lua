@@ -1,62 +1,64 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_fishing_match.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorFishingMatch", HomelandPetBehaviorBase)
 HomelandPetBehaviorFishingMatch = HomelandPetBehaviorFishingMatch
-local HomelandPetFishingMatchStage = {Ready = 1, Play = 2, PlayEnd = 3, Finish = 4, Exiting = 5}
+local HomelandPetFishingMatchStage = {
+  Ready = 1,
+  Play = 2,
+  PlayEnd = 3,
+  Finish = 4,
+  Exiting = 5
+}
 _enum("HomelandPetFishingMatchStage", HomelandPetFishingMatchStage)
-local HomelandPetFishingAnimType = {StartThrow = 1, Waiting = 2, Bite = 3, Collect = 4, MAX = 5}
+local HomelandPetFishingAnimType = {
+  StartThrow = 1,
+  Waiting = 2,
+  Bite = 3,
+  Collect = 4,
+  MAX = 5
+}
 _enum("HomelandPetFishingAnimType", HomelandPetFishingAnimType)
-local HomelandPetFishingAnimID = {Stand = 1, StartThrow = 2, Waiting = 3, Bite = 4, Collect = 5, Boost = 6, Win = 7, Lose = 8}
+local HomelandPetFishingAnimID = {
+  Stand = 1,
+  StartThrow = 2,
+  Waiting = 3,
+  Bite = 4,
+  Collect = 5,
+  Boost = 6,
+  Win = 7,
+  Lose = 8
+}
 _enum("HomelandPetFishingAnimType", HomelandPetFishingAnimType)
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
 
-HomelandPetBehaviorFishingMatch.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV, HomelandPetFishingMatchStage
-  ((HomelandPetBehaviorFishingMatch.super).Constructor)(self, behaviorType, pet)
+function HomelandPetBehaviorFishingMatch:Constructor(behaviorType, pet)
+  HomelandPetBehaviorFishingMatch.super.Constructor(self, behaviorType, pet)
   self._animationComponent = self:GetComponent(HomelandPetComponentType.ExtraAnimation)
   self._abilityCfg = nil
   self._stage = HomelandPetFishingMatchStage.Ready
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.Dispose = function(self)
-  -- function num : 0_1
+function HomelandPetBehaviorFishingMatch:Dispose()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.Enter = function(self)
-  -- function num : 0_2 , upvalues : _ENV, HomelandPetFishingAnimID
-  ((HomelandPetBehaviorFishingMatch.super).Enter)(self)
+function HomelandPetBehaviorFishingMatch:Enter()
+  HomelandPetBehaviorFishingMatch.super.Enter(self)
   if self._cbFishMatchStart == nil then
-    self._cbFishMatchStart = (GameHelper:GetInstance()):CreateCallback(self.FishMatchStart, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishMatchStart, self._cbFishMatchStart)
+    self._cbFishMatchStart = GameHelper:GetInstance():CreateCallback(self.FishMatchStart, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishMatchStart, self._cbFishMatchStart)
   end
   if self._cbFishMatchEnd == nil then
-    self._cbFishMatchEnd = (GameHelper:GetInstance()):CreateCallback(self.FishMatchEnd, self)
-    ;
-    ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.FishMatchEnd, self._cbFishMatchEnd)
+    self._cbFishMatchEnd = GameHelper:GetInstance():CreateCallback(self.FishMatchEnd, self)
+    GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.FishMatchEnd, self._cbFishMatchEnd)
   end
-  ;
-  (self._animationComponent):PlayAnimation(HomelandPetFishingAnimID.Stand)
+  self._animationComponent:PlayAnimation(HomelandPetFishingAnimID.Stand)
   if not self._params then
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.Update = function(self, dms)
-  -- function num : 0_3 , upvalues : _ENV, HomelandPetFishingMatchStage
-  ((HomelandPetBehaviorFishingMatch.super).Update)(self, dms)
+function HomelandPetBehaviorFishingMatch:Update(dms)
+  HomelandPetBehaviorFishingMatch.super.Update(self, dms)
   if self._stage == HomelandPetFishingMatchStage.Play then
-    local curTime = (GameGlobal:GetInstance()):GetCurrentTime()
+    local curTime = GameGlobal:GetInstance():GetCurrentTime()
     self._startTime = self._startTime or curTime
     local tick = curTime - self._startTime
     if not self:_CheckSectionEnd(tick) then
@@ -68,157 +70,120 @@ HomelandPetBehaviorFishingMatch.Update = function(self, dms)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.Exit = function(self)
-  -- function num : 0_4 , upvalues : _ENV, HomelandPetFishingAnimID
-  ((HomelandPetBehaviorFishingMatch.super).Exit)(self)
+function HomelandPetBehaviorFishingMatch:Exit()
+  HomelandPetBehaviorFishingMatch.super.Exit(self)
   if self._cbFishMatchStart then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishMatchStart, self._cbFishMatchStart)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishMatchStart, self._cbFishMatchStart)
     self._cbFishMatchStart = nil
   end
   if self._cbFishMatchEnd then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.FishMatchEnd, self._cbFishMatchEnd)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.FishMatchEnd, self._cbFishMatchEnd)
     self._cbFishMatchEnd = nil
   end
-  ;
-  (self._animationComponent):PlayAnimation(HomelandPetFishingAnimID.Stand)
+  self._animationComponent:PlayAnimation(HomelandPetFishingAnimID.Stand)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.Finish = function(self)
-  -- function num : 0_5
+function HomelandPetBehaviorFishingMatch:Finish()
   return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.CanInterrupt = function(self)
-  -- function num : 0_6 , upvalues : HomelandPetFishingMatchStage
+function HomelandPetBehaviorFishingMatch:CanInterrupt()
   if self._stage == HomelandPetFishingMatchStage.Exiting then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.SwitchStage = function(self, stage)
-  -- function num : 0_7
+function HomelandPetBehaviorFishingMatch:SwitchStage(stage)
   self._stage = stage
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.FishMatchStart = function(self, match_end_time, pet_ability_id)
-  -- function num : 0_8 , upvalues : HomelandPetFishingMatchStage
+function HomelandPetBehaviorFishingMatch:FishMatchStart(match_end_time, pet_ability_id)
   self._startTime = nil
   self:_SetCfg(pet_ability_id)
-  self._data = self:_CalcSectionData((self._abilityCfg).Config)
+  self._data = self:_CalcSectionData(self._abilityCfg.Config)
   self:SwitchStage(HomelandPetFishingMatchStage.Play)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.FishMatchEnd = function(self, result, playerGoal, petGoal)
-  -- function num : 0_9 , upvalues : HomelandPetFishingMatchStage, HomelandPetFishingAnimID, _ENV
+function HomelandPetBehaviorFishingMatch:FishMatchEnd(result, playerGoal, petGoal)
   self:SwitchStage(HomelandPetFishingMatchStage.Exiting)
   local cfgId = HomelandPetFishingAnimID.Win
-  cfgId = result == FishMatchEndType.MATCHEND_CLOSE or (petGoal < playerGoal and HomelandPetFishingAnimID.Lose) or HomelandPetFishingAnimID.Win
-  ;
-  (self._animationComponent):StopAllEffect()
-  ;
-  (self._animationComponent):PlayAnimation(cfgId, HomelandPetFishingAnimID.Stand)
-  ;
-  (self._animationComponent):StopFishTools()
+  if result ~= FishMatchEndType.MATCHEND_CLOSE then
+    cfgId = petGoal < playerGoal and HomelandPetFishingAnimID.Lose or HomelandPetFishingAnimID.Win
+  end
+  self._animationComponent:StopAllEffect()
+  self._animationComponent:PlayAnimation(cfgId, HomelandPetFishingAnimID.Stand)
+  self._animationComponent:StopFishTools()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch.Goal = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FishMatchPetScore)
+function HomelandPetBehaviorFishingMatch:Goal()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FishMatchPetScore)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch._SetCfg = function(self, id)
-  -- function num : 0_11 , upvalues : _ENV
-  self._abilityCfg = (Cfg.cfg_homeland_fishmatch_pet_ability)[id]
+function HomelandPetBehaviorFishingMatch:_SetCfg(id)
+  self._abilityCfg = Cfg.cfg_homeland_fishmatch_pet_ability[id]
   if not self._abilityCfg then
-    (Log.exception)("HomelandPetBehaviorFishingMatch:_SetCfg() cfg_homeland_fishmatch_pet_ability[", id, "] == nil")
-    return 
+    Log.exception("HomelandPetBehaviorFishingMatch:_SetCfg() cfg_homeland_fishmatch_pet_ability[", id, "] == nil")
+    return
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch._GetAnimationTime = function(self)
-  -- function num : 0_12
+function HomelandPetBehaviorFishingMatch:_GetAnimationTime()
   return 1300, 1667
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch._CalcSectionData = function(self, data)
-  -- function num : 0_13 , upvalues : _ENV
+function HomelandPetBehaviorFishingMatch:_CalcSectionData(data)
   local tb_out = {}
   local animTime1, animTime2 = self:_GetAnimationTime()
-  for i,v in ipairs(data) do
+  for i, v in ipairs(data) do
     local timeOnce = v[1]
     local biteTime = v[2]
     local effect = v[3] == 1
     local count = v[4]
     if biteTime < 0 then
-      (Log.exception)("HomelandPetBehaviorFishingMatch:_CalcPlayData() cfg_homeland_fishmatch_pet_ability[", self._params, "] Error: biteTime < 0")
+      Log.exception("HomelandPetBehaviorFishingMatch:_CalcPlayData() cfg_homeland_fishmatch_pet_ability[", self._params, "] Error: biteTime < 0")
     end
     local playSpeed = 1
     if timeOnce < animTime1 + animTime2 then
       playSpeed = timeOnce / (animTime1 + animTime2)
     end
-    local t1, t4 = animTime1 * (playSpeed), animTime2 * (playSpeed)
+    local t1, t4 = animTime1 * playSpeed, animTime2 * playSpeed
     local t2t3 = timeOnce - t1 - t4
-    local t2 = (math.max)(0, t2t3 - biteTime)
+    local t2 = math.max(0, t2t3 - biteTime)
     local t3 = t2t3 - t2
     for ii = 1, count do
-      (table.insert)(tb_out, self:_CreateData(tb_out, t1, effect))
-      ;
-      (table.insert)(tb_out, self:_CreateData(tb_out, t2, effect))
-      ;
-      (table.insert)(tb_out, self:_CreateData(tb_out, t3, effect))
-      ;
-      (table.insert)(tb_out, self:_CreateData(tb_out, t4, effect))
+      table.insert(tb_out, self:_CreateData(tb_out, t1, effect))
+      table.insert(tb_out, self:_CreateData(tb_out, t2, effect))
+      table.insert(tb_out, self:_CreateData(tb_out, t3, effect))
+      table.insert(tb_out, self:_CreateData(tb_out, t4, effect))
     end
   end
-  ;
-  (table.insert)(tb_out, self:_CreateData(tb_out, animTime1, false))
-  ;
-  (table.insert)(tb_out, self:_CreateData(tb_out, 0, false))
-  do return tb_out end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.insert(tb_out, self:_CreateData(tb_out, animTime1, false))
+  table.insert(tb_out, self:_CreateData(tb_out, 0, false))
+  return tb_out
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch._CreateData = function(self, tb_out, duration, effect)
-  -- function num : 0_14 , upvalues : HomelandPetFishingAnimType
+function HomelandPetBehaviorFishingMatch:_CreateData(tb_out, duration, effect)
   local last = tb_out[#tb_out]
   local type = last and last.type + 1 or HomelandPetFishingAnimType.MAX
-  local start = ((type == HomelandPetFishingAnimType.MAX and HomelandPetFishingAnimType.StartThrow) or last) and last.start + last.duration or 0
-  return {type = type, start = start, duration = duration, effect = effect, play = false}
+  type = type == HomelandPetFishingAnimType.MAX and HomelandPetFishingAnimType.StartThrow or type
+  local start = last and last.start + last.duration or 0
+  return {
+    type = type,
+    start = start,
+    duration = duration,
+    effect = effect,
+    play = false
+  }
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch._PlaySection = function(self, tick)
-  -- function num : 0_15 , upvalues : _ENV, HomelandPetFishingAnimType, HomelandPetFishingAnimID
+function HomelandPetBehaviorFishingMatch:_PlaySection(tick)
   if not self._data then
-    return 
+    return
   end
-  local id = nil
-  for i,v in ipairs(self._data) do
-    if not v.play and v.start < tick then
+  local id
+  for i, v in ipairs(self._data) do
+    if not v.play and tick > v.start then
       v.play = true
       local cfgId = HomelandPetFishingAnimType.Stand
       local effId = HomelandPetFishingAnimID.Boost
@@ -226,72 +191,53 @@ HomelandPetBehaviorFishingMatch._PlaySection = function(self, tick)
       if v.type == HomelandPetFishingAnimType.StartThrow then
         id = 1
         cfgId = HomelandPetFishingAnimID.StartThrow
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FishMatchPetChangeFishingStatus, FishgingStatus.Throw)
-        ;
-        (self._animationComponent):StartFishTools(cfgId, 800)
-      else
-        if v.type == HomelandPetFishingAnimType.Waiting then
-          id = 2
-          cfgId = HomelandPetFishingAnimID.Waiting
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FishMatchPetChangeFishingStatus, FishgingStatus.Fishing)
-        else
-          if v.type == HomelandPetFishingAnimType.Bite then
-            id = 3
-            cfgId = HomelandPetFishingAnimID.Bite
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FishMatchPetChangeFishingStatus, FishgingStatus.Bite)
-          else
-            if v.type == HomelandPetFishingAnimType.Collect then
-              id = 4
-              cfgId = HomelandPetFishingAnimID.Collect
-              ;
-              ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FishMatchPetChangeFishingStatus, FishgingStatus.FishSuccess)
-              ;
-              (self._animationComponent):StopFishTools(500)
-              self:Goal()
-            end
-          end
-        end
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FishMatchPetChangeFishingStatus, FishgingStatus.Throw)
+        self._animationComponent:StartFishTools(cfgId, 800)
+      elseif v.type == HomelandPetFishingAnimType.Waiting then
+        id = 2
+        cfgId = HomelandPetFishingAnimID.Waiting
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FishMatchPetChangeFishingStatus, FishgingStatus.Fishing)
+      elseif v.type == HomelandPetFishingAnimType.Bite then
+        id = 3
+        cfgId = HomelandPetFishingAnimID.Bite
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FishMatchPetChangeFishingStatus, FishgingStatus.Bite)
+      elseif v.type == HomelandPetFishingAnimType.Collect then
+        id = 4
+        cfgId = HomelandPetFishingAnimID.Collect
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.FishMatchPetChangeFishingStatus, FishgingStatus.FishSuccess)
+        self._animationComponent:StopFishTools(500)
+        self:Goal()
       end
-      ;
-      (self._animationComponent):PlayAnimation(cfgId)
-      ;
-      (self._animationComponent):PlayEffect(cfgId, true)
-      ;
-      (self._animationComponent):PlayEffect(effId, show)
+      self._animationComponent:PlayAnimation(cfgId)
+      self._animationComponent:PlayEffect(cfgId, true)
+      self._animationComponent:PlayEffect(effId, show)
       break
     end
   end
-  do
-    self:_DebugBubble(id)
-  end
+  self:_DebugBubble(id)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch._CheckSectionEnd = function(self, tick)
-  -- function num : 0_16
-  local last = (self._data)[#self._data]
-  do return last and last.play end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function HomelandPetBehaviorFishingMatch:_CheckSectionEnd(tick)
+  local last = self._data[#self._data]
+  return not last or last.play
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R3 in 'UnsetPending'
-
-HomelandPetBehaviorFishingMatch._DebugBubble = function(self, id)
-  -- function num : 0_17 , upvalues : _ENV
-  local show = (UIActivityHelper.CheckDebugOpen)()
+function HomelandPetBehaviorFishingMatch:_DebugBubble(id)
+  local show = UIActivityHelper.CheckDebugOpen()
   if not show then
-    return 
+    return
   end
-  local tb = {[1] = 4030137, [2] = 4030133, [3] = 4030103, [4] = 4030025, [5] = 4030013, [6] = 4010082}
+  local tb = {
+    [1] = 4030137,
+    [2] = 4030133,
+    [3] = 4030103,
+    [4] = 4030025,
+    [5] = 4030013,
+    [6] = 4010082
+  }
   local bubbleCmp = self:GetComponent(HomelandPetComponentType.Bubble)
   local bubbleId = tb[id]
   if bubbleCmp and bubbleId then
     bubbleCmp:ShowBubble(bubbleId)
   end
 end
-
-

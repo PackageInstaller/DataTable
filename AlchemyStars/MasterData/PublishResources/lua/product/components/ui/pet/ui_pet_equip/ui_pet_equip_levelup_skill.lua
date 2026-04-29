@@ -1,41 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_levelup_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipLevelupSkill", UICustomWidget)
 UIPetEquipLevelupSkill = UIPetEquipLevelupSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipLevelupSkill.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetEquipLevelupSkill:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipLevelupSkill.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetEquipLevelupSkill:InitWidget()
   self.skillName = self:GetUIComponent("UILocalizationText", "skillName")
   self._skillDesc = self:GetUIComponent("UILocalizedTMP", "skillDesc")
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillDesc).onHrefClick = function(hrefName)
-    -- function num : 0_1_0 , upvalues : _ENV
-    ((GameGlobal.UIStateManager)()):ShowDialog("UISkillHrefInfo", hrefName)
+  
+  function self._skillDesc.onHrefClick(hrefName)
+    GameGlobal.UIStateManager():ShowDialog("UISkillHrefInfo", hrefName)
   end
-
+  
   self.skillIcon = self:GetUIComponent("RawImageLoader", "skillIcon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipLevelupSkill.SetData = function(self, skillIcon, skillDesc)
-  -- function num : 0_2
-  (self.skillIcon):LoadImage(skillIcon)
-  ;
-  (self._skillDesc):SetText(skillDesc)
+function UIPetEquipLevelupSkill:SetData(skillIcon, skillDesc)
+  self.skillIcon:LoadImage(skillIcon)
+  self._skillDesc:SetText(skillDesc)
 end
-
-

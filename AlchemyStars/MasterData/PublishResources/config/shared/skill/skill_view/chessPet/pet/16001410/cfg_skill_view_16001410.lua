@@ -1,21 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/chessPet/pet/16001410/cfg_skill_view_16001410.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = AtkUlt01; PlayAudio,audioID = 2172,audioType=1; PlayCasterBindEffect,effectID =1755; Wait,waitTime=500; PlayCasterBindEffect,effectID =452; PlayCasterVisible,visible=0; "}
-}
-, 
-{2, 2, 0, 2, 1, 500, 
-{" DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCasterEffectAtTargetPos,effectID=453,randomDir=1,label=doAgain; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; Wait,waitTime=200; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "}
-}
-, 
-{3, 3, 0, 2, 2, 1100, 
-{" PlayCasterVisible,visible=1; PlayCasterAnimation,animName = AtkUlt02; PlayCasterBindEffect,effectID =454; Wait,waitTime=3500; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = AtkUlt01; PlayAudio,audioID = 2172,audioType=1; PlayCasterBindEffect,effectID =1755; Wait,waitTime=500; PlayCasterBindEffect,effectID =452; PlayCasterVisible,visible=0; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    500,
+    {
+      " DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCasterEffectAtTargetPos,effectID=453,randomDir=1,label=doAgain; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1,deathClear=0; Wait,waitTime=200; DataSelectNextDamage; Jump,condition=CheckDamageIndexValid,goto=doAgain; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    2,
+    2,
+    1100,
+    {
+      " PlayCasterVisible,visible=1; PlayCasterAnimation,animName = AtkUlt02; PlayCasterBindEffect,effectID =454; Wait,waitTime=3500; "
+    }
+  }
 }
 return config, "ID", key
-

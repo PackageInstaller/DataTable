@@ -1,37 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/tasklist/ui_season_task_list_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTaskListContent", UICustomWidget)
 UISeasonTaskListContent = UISeasonTaskListContent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTaskListContent._GetAnimInfo = function(self, key)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写 _GetAnimInfo() 方法:", (debug.traceback)())
+function UISeasonTaskListContent:_GetAnimInfo(key)
+  Log.exception(self._className .. "必须重写 _GetAnimInfo() 方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._GetRewardInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写 _GetRewardInfo() 方法:", (debug.traceback)())
+function UISeasonTaskListContent:_GetRewardInfo()
+  Log.exception(self._className .. "必须重写 _GetRewardInfo() 方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._GetStrIdInfo = function(self, key, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.exception)(self._className .. "必须重写 _GetStrIdInfo() 方法:", (debug.traceback)())
+function UISeasonTaskListContent:_GetStrIdInfo(key, ...)
+  Log.exception(self._className .. "必须重写 _GetStrIdInfo() 方法:", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonTaskListContent:OnShow(uiParams)
   self._constBtnName = "TaskListContent_QuestFin"
-  self._seasonTaskModule = ((GameGlobal.GameLogic)()):GetModule(SeasonTaskModule)
+  self._seasonTaskModule = GameGlobal.GameLogic():GetModule(SeasonTaskModule)
   self._nodes = {}
   self._tabIndex = 1
   self._pageIndex = 1
@@ -45,89 +29,61 @@ UISeasonTaskListContent.OnShow = function(self, uiParams)
   self:_AttachEvent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent.OnHide = function(self)
-  -- function num : 0_4
+function UISeasonTaskListContent:OnHide()
   self:_DetachEvent()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent.SetData = function(self, params)
-  -- function num : 0_5
-  if params then
-    self._closeCallback = params.closeCallback
-    self._nodes = (self._seasonTaskModule):GetAllNode()
-    self:_SetTabBtns()
-    self:_SetTabSelect(1)
-    self:_Refresh(true)
-    self:_PlayAnim()
-  end
+function UISeasonTaskListContent:SetData(params)
+  self._closeCallback = params and params.closeCallback
+  self._nodes = self._seasonTaskModule:GetAllNode()
+  self:_SetTabBtns()
+  self:_SetTabSelect(1)
+  self:_Refresh(true)
+  self:_PlayAnim()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._PlayAnim = function(self)
-  -- function num : 0_6
+function UISeasonTaskListContent:_PlayAnim()
   self:_PlayAnimInSeq_TabBtn()
   self:_PlayAnim_QuestFin()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._PlayAnimInSeq_TabBtn = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISeasonTaskListContent:_PlayAnimInSeq_TabBtn()
   local animName, duration = self:_GetAnimInfo("TabBtnIn")
   local objs = self._tabBtns
-  for i,v in ipairs(objs) do
+  for i, v in ipairs(objs) do
     local delay = (i - 1) * 0.07
-    ;
-    (UIWidgetHelper.PlayAnimationInSequence)(v, "_anim", "_root", animName, delay, duration)
+    UIWidgetHelper.PlayAnimationInSequence(v, "_anim", "_root", animName, delay, duration)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._PlayAnim_QuestFin = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonTaskListContent:_PlayAnim_QuestFin()
   local idx, questId = self:_FindFinNode()
   if not idx then
-    if not idx then
-      idx = (self._seasonTaskModule):GetCurNodeIndex()
-    end
+    idx = idx or self._seasonTaskModule:GetCurNodeIndex()
     self:_SetTabSelect(idx)
     self:_Refresh()
-    return 
+    return
   end
   self:_SetTabSelect(idx)
   self:_Refresh(true)
-  local now = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-  ;
-  (UISeasonLocalDBHelper.SeasonBtn_Set)(self._constBtnName, questId, now)
+  local now = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+  UISeasonLocalDBHelper.SeasonBtn_Set(self._constBtnName, questId, now)
   self:_SetQuestFin(true)
   local animName, duration = self:_GetAnimInfo("QuestFin")
   local delay = 1000
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "Fin", "Fin", animName, delay, duration, function()
-    -- function num : 0_8_0 , upvalues : self
+  UIWidgetHelper.PlayAnimationInSequence(self, "Fin", "Fin", animName, delay, duration, function()
     self:_PlayAnim_QuestFin()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._FindFinNode = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  for i,node in ipairs(self._nodes) do
-    local questId, isFin = (UISeasonTaskListHelper.CheckLastQuestFin)(node)
+function UISeasonTaskListContent:_FindFinNode()
+  for i, node in ipairs(self._nodes) do
+    local questId, isFin = UISeasonTaskListHelper.CheckLastQuestFin(node)
     if not questId then
-      return 
+      return
     end
-    local lastTime = (UISeasonLocalDBHelper.SeasonBtn_Get)(self._constBtnName, questId)
-    ;
-    (Log.debug)("UISeasonTaskListContent:_FindFinNode() lastTime = ", lastTime)
+    local lastTime = UISeasonLocalDBHelper.SeasonBtn_Get(self._constBtnName, questId)
+    Log.debug("UISeasonTaskListContent:_FindFinNode() lastTime = ", lastTime)
     local isCross = HelperProxy:IsCrossDayTo(lastTime)
     if isFin and isCross then
       return i, questId
@@ -135,311 +91,209 @@ UISeasonTaskListContent._FindFinNode = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._Refresh = function(self, isFirst)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonTaskListContent:_Refresh(isFirst)
   if not self.view then
-    return 
+    return
   end
   self:_SetTabBtnState()
   local node = self._node
-  local questList = (UISeasonTaskListHelper.GetAllQuestId)(self._node)
-  local a, b = (UISeasonTaskListHelper.GetNodeProgress)(node)
+  local questList = UISeasonTaskListHelper.GetAllQuestId(self._node)
+  local a, b = UISeasonTaskListHelper.GetNodeProgress(node)
   self:_SetProgress(a, b)
-  local lastQuest, isNodeFin = (UISeasonTaskListHelper.CheckLastQuestFin)(node)
+  local lastQuest, isNodeFin = UISeasonTaskListHelper.CheckLastQuestFin(node)
   self:_SetRewards(lastQuest, isNodeFin)
   self:_SetNodeFin(isNodeFin)
   local questId = questList[self._pageIndex]
-  local isQuestFin = (UISeasonTaskListHelper.CheckQuestFin)(questId)
+  local isQuestFin = UISeasonTaskListHelper.CheckQuestFin(questId)
   self:_SetTitle(questId)
   self:_SetDesc(questId)
-  self:_SetQuestFin((not isFirst and isQuestFin))
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self:_SetQuestFin(not isFirst and isQuestFin)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetTabBtns = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISeasonTaskListContent:_SetTabBtns()
   local nodes = self:_ReverseTable(self._nodes)
-  local title = (UISeasonTaskListHelper.GetNodeTitle)(nodes)
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
+  local title = UISeasonTaskListHelper.GetNodeTitle(nodes)
+  local objs = UIWidgetHelper.SpawnObjects(self, "_tabBtns", "UIActivityCommonTextTabBtn", #title)
   self._tabBtns = self:_ReverseTable(objs)
-  for i,v in ipairs(self._tabBtns) do
+  for i, v in ipairs(self._tabBtns) do
     v:SetData(i, {
-indexWidgets = {}
-, 
-onoffWidgets = {
-{"OnBtn", "_space_on", "bg_on"}
-, 
-{"OffBtn", "_space_off", "bg_off"}
-}
-, 
-lockWidgets = {}
-, 
-titleWidgets = {"txt_off", "txt_on"}
-, titleText = title[i], callback = function(index, isOffBtnClick)
-    -- function num : 0_11_0 , upvalues : self
-    if isOffBtnClick then
-      self:_SetTabSelect(index)
-      self:_Refresh()
-    end
-  end
-, lockCallback = function()
-    -- function num : 0_11_1 , upvalues : self, _ENV
-    local text = self:_GetStrIdInfo("tab_lock")
-    ;
-    (ToastManager.ShowToast)(text)
-  end
-})
+      indexWidgets = {},
+      onoffWidgets = {
+        {
+          "OnBtn",
+          "_space_on",
+          "bg_on"
+        },
+        {
+          "OffBtn",
+          "_space_off",
+          "bg_off"
+        }
+      },
+      lockWidgets = {},
+      titleWidgets = {"txt_off", "txt_on"},
+      titleText = title[i],
+      callback = function(index, isOffBtnClick)
+        if isOffBtnClick then
+          self:_SetTabSelect(index)
+          self:_Refresh()
+        end
+      end,
+      lockCallback = function()
+        local text = self:_GetStrIdInfo("tab_lock")
+        ToastManager.ShowToast(text)
+      end
+    })
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetTabSelect = function(self, index)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonTaskListContent:_SetTabSelect(index)
   self._tabIndex = index
   for i = 1, #self._tabBtns do
-    ((self._tabBtns)[i]):SetSelected(i == index)
+    self._tabBtns[i]:SetSelected(i == index)
   end
-  self._node = (self._nodes)[self._tabIndex]
-  local idx = (UISeasonTaskListHelper.GetCurQuestIndex)(self._node)
+  self._node = self._nodes[self._tabIndex]
+  local idx = UISeasonTaskListHelper.GetCurQuestIndex(self._node)
   self:_SetPageSelect(idx)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetTabBtnState = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonTaskListContent:_SetTabBtnState()
   local widgetGroup = {
-fin = {"bg_mask", "bg_fin"}
-, 
-lock = {"bg_mask", "bg_lock"}
-, 
-normal = {}
-}
-  local tbLock = (self._seasonTaskModule):GetAllNodeLock()
-  for i,v in ipairs(self._tabBtns) do
-    if not (self._nodes)[i] then
-      local node = {}
-    end
+    fin = {"bg_mask", "bg_fin"},
+    lock = {"bg_mask", "bg_lock"},
+    normal = {}
+  }
+  local tbLock = self._seasonTaskModule:GetAllNodeLock()
+  for i, v in ipairs(self._tabBtns) do
+    local node = self._nodes[i] or {}
     local state = "normal"
-    -- DECOMPILER ERROR at PC43: Unhandled construct in 'MakeBoolean' P3
-
-    if ((node.is_finish and "fin") or tbLock[i]) then
-      do
-        local obj = (UIWidgetHelper.GetObjGroupByWidgetName)(v, widgetGroup)
-        ;
-        (UIWidgetHelper.SetObjGroupShow)(obj, state)
-        v:SetLock(state == "lock")
-        -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC54: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
+    state = node.is_finish and "fin" or state
+    state = tbLock[i] and "lock" or state
+    local obj = UIWidgetHelper.GetObjGroupByWidgetName(v, widgetGroup)
+    UIWidgetHelper.SetObjGroupShow(obj, state)
+    v:SetLock(state == "lock")
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetPageSelect = function(self, index)
-  -- function num : 0_14 , upvalues : _ENV
-  local questList = (UISeasonTaskListHelper.GetAllQuestId)(self._node)
-  local curQuestIdx = (UISeasonTaskListHelper.GetCurQuestIndex)(self._node)
+function UISeasonTaskListContent:_SetPageSelect(index)
+  local questList = UISeasonTaskListHelper.GetAllQuestId(self._node)
+  local curQuestIdx = UISeasonTaskListHelper.GetCurQuestIndex(self._node)
   local min, max = 1, #questList
-  self._pageIndex = (Mathf.Clamp)(index, min, (math.min)(curQuestIdx, max))
-  ;
-  (self:GetGameObject("PageLeftBtn")):SetActive(self._pageIndex ~= min)
-  ;
-  (self:GetGameObject("PageRightBtn")):SetActive(self._pageIndex ~= max)
+  self._pageIndex = Mathf.Clamp(index, min, math.min(curQuestIdx, max))
+  self:GetGameObject("PageLeftBtn"):SetActive(self._pageIndex ~= min)
+  self:GetGameObject("PageRightBtn"):SetActive(self._pageIndex ~= max)
   local text = self:_GetStrIdInfo("page", self._pageIndex, #questList)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtPage", text)
-  do
-    if curQuestIdx < index then
-      local text = self:_GetStrIdInfo("tab_lock")
-      ;
-      (ToastManager.ShowToast)(text)
-    end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  UIWidgetHelper.SetLocalizationText(self, "_txtPage", text)
+  if index > curQuestIdx then
+    local text = self:_GetStrIdInfo("tab_lock")
+    ToastManager.ShowToast(text)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetTexts = function(self, widgetName, key)
-  -- function num : 0_15 , upvalues : _ENV
+function UISeasonTaskListContent:_SetTexts(widgetName, key)
   local text = self:_GetStrIdInfo(key)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, widgetName, text)
+  UIWidgetHelper.SetLocalizationText(self, widgetName, text)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetTitle = function(self, questId)
-  -- function num : 0_16 , upvalues : _ENV
-  local text = (UISeasonTaskListHelper.GetQuestText)(questId, "QuestName")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtTitle", text)
+function UISeasonTaskListContent:_SetTitle(questId)
+  local text = UISeasonTaskListHelper.GetQuestText(questId, "QuestName")
+  UIWidgetHelper.SetLocalizationText(self, "_txtTitle", text)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetDesc = function(self, questId)
-  -- function num : 0_17 , upvalues : _ENV
-  local text = (UISeasonTaskListHelper.GetQuestText)(questId, "QuestDesc")
+function UISeasonTaskListContent:_SetDesc(questId)
+  local text = UISeasonTaskListHelper.GetQuestText(questId, "QuestDesc")
   local obj = self:GetUIComponent("UIRichText", "_txtDesc")
   obj:SetText(text)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetRewards = function(self, questId, isFin)
-  -- function num : 0_18 , upvalues : _ENV
+function UISeasonTaskListContent:_SetRewards(questId, isFin)
   local className, prefabName = self:_GetRewardInfo()
-  if not (UISeasonTaskListHelper.GetQuestInfo)(questId, "rewards") then
-    local rewards = {}
-  end
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "Content", className, #rewards, prefabName)
-  for i,v in ipairs(objs) do
+  local rewards = UISeasonTaskListHelper.GetQuestInfo(questId, "rewards") or {}
+  local objs = UIWidgetHelper.SpawnObjects(self, "Content", className, #rewards, prefabName)
+  for i, v in ipairs(objs) do
     v:Flush(rewards[i])
     v:SetFin(isFin)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetProgress = function(self, a, b)
-  -- function num : 0_19 , upvalues : _ENV
-  local text = (string.format)("%s/%s", a, b)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtProgress", text)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "_txtProgressFin", text)
+function UISeasonTaskListContent:_SetProgress(a, b)
+  local text = string.format("%s/%s", a, b)
+  UIWidgetHelper.SetLocalizationText(self, "_txtProgress", text)
+  UIWidgetHelper.SetLocalizationText(self, "_txtProgressFin", text)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetNodeFin = function(self, isFin)
-  -- function num : 0_20 , upvalues : _ENV
+function UISeasonTaskListContent:_SetNodeFin(isFin)
   local state = isFin and 2 or 1
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"GoToBtn", "Progress"}
-, 
-{"ProgressFin"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"GoToBtn", "Progress"},
+    {
+      "ProgressFin"
+    }
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._SetQuestFin = function(self, isFin)
-  -- function num : 0_21
-  (self:GetGameObject("Fin")):SetActive(isFin)
+function UISeasonTaskListContent:_SetQuestFin(isFin)
+  self:GetGameObject("Fin"):SetActive(isFin)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent.GoToBtnOnClick = function(self, go)
-  -- function num : 0_22 , upvalues : _ENV
-  (UISeasonTaskListHelper.CheckModeTravel)(function()
-    -- function num : 0_22_0 , upvalues : self, _ENV
-    (self:GetGameObject("Root")):SetActive(false)
-    ;
-    (self:GetGameObject("ModeConfirm")):SetActive(true)
-    local obj = (UIWidgetHelper.SpawnObject)(self, "ModeConfirm", "UISeasonTaskListContentModeConfirm")
+function UISeasonTaskListContent:GoToBtnOnClick(go)
+  UISeasonTaskListHelper.CheckModeTravel(function()
+    self:GetGameObject("Root"):SetActive(false)
+    self:GetGameObject("ModeConfirm"):SetActive(true)
+    local obj = UIWidgetHelper.SpawnObject(self, "ModeConfirm", "UISeasonTaskListContentModeConfirm")
     obj:SetData(function()
-      -- function num : 0_22_0_0 , upvalues : _ENV, self
-      (UISeasonTaskListHelper.SwitchModeTravel)(self._closeCallback)
-    end
-, function()
-      -- function num : 0_22_0_1 , upvalues : self
+      UISeasonTaskListHelper.SwitchModeTravel(self._closeCallback)
+    end, function()
       self:CloseBtnOnClick()
-    end
-)
-  end
-, self._closeCallback)
+    end)
+  end, self._closeCallback)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent.CloseBtnOnClick = function(self, go)
-  -- function num : 0_23
+function UISeasonTaskListContent:CloseBtnOnClick(go)
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent.PageLeftBtnOnClick = function(self, go)
-  -- function num : 0_24
+function UISeasonTaskListContent:PageLeftBtnOnClick(go)
   self:_SetPageSelect(self._pageIndex - 1)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent.PageRightBtnOnClick = function(self, go)
-  -- function num : 0_25
+function UISeasonTaskListContent:PageRightBtnOnClick(go)
   self:_SetPageSelect(self._pageIndex + 1)
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._AttachEvent = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UISeasonTaskListContent:_AttachEvent()
   self:AttachEvent(GameEventType.OnSeasonTaskReset, self.OnSeasonTaskReset)
   self:AttachEvent(GameEventType.OnSeasonTaskRefreshed, self.OnSeasonTaskRefreshed)
   self:AttachEvent(GameEventType.ShowItemTips, self._ShowTips)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._DetachEvent = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UISeasonTaskListContent:_DetachEvent()
   self:DetachEvent(GameEventType.OnSeasonTaskReset, self.OnSeasonTaskReset)
   self:DetachEvent(GameEventType.OnSeasonTaskRefreshed, self.OnSeasonTaskRefreshed)
   self:DetachEvent(GameEventType.ShowItemTips, self._ShowTips)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent.OnSeasonTaskReset = function(self)
-  -- function num : 0_28
+function UISeasonTaskListContent:OnSeasonTaskReset()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent.OnSeasonTaskRefreshed = function(self)
-  -- function num : 0_29
+function UISeasonTaskListContent:OnSeasonTaskRefreshed()
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._ShowTips = function(self, matid, pos)
-  -- function num : 0_30 , upvalues : _ENV
-  (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
+function UISeasonTaskListContent:_ShowTips(matid, pos)
+  UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskListContent._ReverseTable = function(self, tb)
-  -- function num : 0_31 , upvalues : _ENV
+function UISeasonTaskListContent:_ReverseTable(tb)
   local rtb = {}
   for i = #tb, 1, -1 do
-    (table.insert)(rtb, tb[i])
+    table.insert(rtb, tb[i])
   end
   return rtb
 end
-
-

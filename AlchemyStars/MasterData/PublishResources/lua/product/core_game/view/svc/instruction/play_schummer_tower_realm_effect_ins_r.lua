@@ -1,72 +1,63 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_schummer_tower_realm_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySchummerTowerRealmEffectInstruction", BaseInstruction)
 PlaySchummerTowerRealmEffectInstruction = PlaySchummerTowerRealmEffectInstruction
 local PositionalData = {
-LT = {v2GridPos = (Vector2.New)(2, 8), v2Dir = Vector2.up}
-, 
-LB = {v2GridPos = (Vector2.New)(2, 2), v2Dir = Vector2.left}
-, 
-RT = {v2GridPos = (Vector2.New)(8, 8), v2Dir = Vector2.right}
-, 
-RB = {v2GridPos = (Vector2.New)(8, 2), v2Dir = Vector2.down}
+  LT = {
+    v2GridPos = Vector2.New(2, 8),
+    v2Dir = Vector2.up
+  },
+  LB = {
+    v2GridPos = Vector2.New(2, 2),
+    v2Dir = Vector2.left
+  },
+  RT = {
+    v2GridPos = Vector2.New(8, 8),
+    v2Dir = Vector2.right
+  },
+  RB = {
+    v2GridPos = Vector2.New(8, 2),
+    v2Dir = Vector2.down
+  }
 }
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
 
-PlaySchummerTowerRealmEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlaySchummerTowerRealmEffectInstruction:Constructor(paramList)
   self._effectID = 2771
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-PlaySchummerTowerRealmEffectInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV, PositionalData
+function PlaySchummerTowerRealmEffectInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local fxsvc = world:GetService("Effect")
-  local curseTowerGroupEntities = world:GetGroupEntities((world.BW_WEMatchers).CurseTower)
+  local curseTowerGroupEntities = world:GetGroupEntities(world.BW_WEMatchers.CurseTower)
   if not curseTowerGroupEntities or #curseTowerGroupEntities <= 0 then
-    return 
+    return
   end
   local utilDataSvc = world:GetService("UtilData")
-  for _,eTower in ipairs(curseTowerGroupEntities) do
+  for _, eTower in ipairs(curseTowerGroupEntities) do
     if utilDataSvc:GetTrapCurseTowerState(eTower) ~= CurseTowerState.Deactive then
       local v2GridPos = eTower:GetGridPosition()
       local v2Relative = v2GridPos - BattleConst.BoardCenterPos
-      local tPosData = nil
-      if v2Relative.x < 0 and v2Relative.y > 0 then
+      local tPosData
+      if 0 > v2Relative.x and 0 < v2Relative.y then
         tPosData = PositionalData.LT
-      else
-        if v2Relative.x > 0 and v2Relative.y > 0 then
-          tPosData = PositionalData.RT
-        else
-          if v2Relative.x < 0 and v2Relative.y < 0 then
-            tPosData = PositionalData.LB
-          else
-            if v2Relative.x > 0 and v2Relative.y < 0 then
-              tPosData = PositionalData.RB
-            end
-          end
-        end
+      elseif 0 < v2Relative.x and 0 < v2Relative.y then
+        tPosData = PositionalData.RT
+      elseif 0 > v2Relative.x and 0 > v2Relative.y then
+        tPosData = PositionalData.LB
+      elseif 0 < v2Relative.x and 0 > v2Relative.y then
+        tPosData = PositionalData.RB
       end
       fxsvc:CreateWorldPositionDirectionEffect(self._effectID, tPosData.v2GridPos, tPosData.v2Dir)
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-PlaySchummerTowerRealmEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySchummerTowerRealmEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

@@ -1,10 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/sign_in/ui_n19_p5_sign_in_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIN19P5SignInStatus = {Lock = 0, Get = 1, Finish = 2}
+local UIN19P5SignInStatus = {
+  Lock = 0,
+  Get = 1,
+  Finish = 2
+}
 _enum("UIN19P5SignInStatus", UIN19P5SignInStatus)
-local UIN19P5SignInPosType = {Up = 0, Current = 1, Down = 2}
+local UIN19P5SignInPosType = {
+  Up = 0,
+  Current = 1,
+  Down = 2
+}
 _enum("UIN19P5SignInPosType", UIN19P5SignInPosType)
-

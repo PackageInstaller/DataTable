@@ -1,39 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/campsites/ui_season_maze_room_campsites.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_season_maze_room_base")
 _class("UISeasonMazeRoom_Campsites", UISeasonMazeRoomBase)
 UISeasonMazeRoom_Campsites = UISeasonMazeRoom_Campsites
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoom_Campsites.InitWidget = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonMazeRoom_Campsites:InitWidget()
   self.UISeasonMazeBossAtk = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeBossAtk")
   self._UISeasonMazeTopIconPool = self:GetUIComponent("UISelectObjectPath", "UISeasonMazeTopIcon")
   self.BankCount = self:GetUIComponent("UILocalizationText", "BankCount")
   self.smithyPrize = self:GetGameObject("smithyPrize")
   local backBtn = self:GetUIComponent("UISelectObjectPath", "backBtn")
   self._backBtn = backBtn:SpawnObject("UISMazeCommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
-    ((self._seasonMazeModule):UIModule()):ExitTo(UIStateType.UISeasonMazeMain)
-  end
-, function()
-    -- function num : 0_0_1 , upvalues : _ENV
-    (UISeasonMazeModule.OpenHelpUI)(UISeasonMazeHelperTabIndex.Temp5, 10)
-  end
-, function()
-    -- function num : 0_0_2 , upvalues : self, _ENV
-    ((self._seasonMazeModule):UIModule()):ExitTo(UIStateType.UIMain)
-  end
-)
+  self._backBtn:SetData(function()
+    self._seasonMazeModule:UIModule():ExitTo(UIStateType.UISeasonMazeMain)
+  end, function()
+    UISeasonMazeModule.OpenHelpUI(UISeasonMazeHelperTabIndex.Temp5, 10)
+  end, function()
+    self._seasonMazeModule:UIModule():ExitTo(UIStateType.UIMain)
+  end)
   self.BeadBtnObj = self:GetGameObject("BeadBtn")
   self.role = self:GetGameObject("role")
-  ;
-  (self.role):SetActive(false)
+  self.role:SetActive(false)
   self.roleRender = self:GetUIComponent("MeshRenderer", "role")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "iconLoader")
   self._iconRawImage = self:GetUIComponent("RawImage", "iconLoader")
@@ -51,56 +36,40 @@ UISeasonMazeRoom_Campsites.InitWidget = function(self)
   self._go_bank = self:GetGameObject("BankBtn")
   self._go_smi = self:GetGameObject("SmithyBtn")
   self._recruitRed = self:GetGameObject("recruitRed")
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._go_med), UIEvent.Press, function(go)
-    -- function num : 0_0_3 , upvalues : self
-    (self._anim_med):Play()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._go_life), UIEvent.Press, function(go)
-    -- function num : 0_0_4 , upvalues : self
-    (self._anim_life):Play()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._go_rec), UIEvent.Press, function(go)
-    -- function num : 0_0_5 , upvalues : self
-    (self._anim_rec):Play()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._go_bank), UIEvent.Press, function(go)
-    -- function num : 0_0_6 , upvalues : self
-    (self._anim_bank):Play()
-  end
-)
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._go_smi), UIEvent.Press, function(go)
-    -- function num : 0_0_7 , upvalues : self
-    (self._anim_smi):Play()
-  end
-)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._go_med), UIEvent.Press, function(go)
+    self._anim_med:Play()
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._go_life), UIEvent.Press, function(go)
+    self._anim_life:Play()
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._go_rec), UIEvent.Press, function(go)
+    self._anim_rec:Play()
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._go_bank), UIEvent.Press, function(go)
+    self._anim_bank:Play()
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._go_smi), UIEvent.Press, function(go)
+    self._anim_smi:Play()
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.SetTopIcon = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._UISeasonMazeTopIconWidget = (self._UISeasonMazeTopIconPool):SpawnObject("UISeasonMazeTopIcon")
-  ;
-  (self._UISeasonMazeTopIconWidget):SetData({SeasonMazeTopIconType.Lv, SeasonMazeTopIconType.Ms, SeasonMazeTopIconType.Money})
+function UISeasonMazeRoom_Campsites:SetTopIcon()
+  self._UISeasonMazeTopIconWidget = self._UISeasonMazeTopIconPool:SpawnObject("UISeasonMazeTopIcon")
+  self._UISeasonMazeTopIconWidget:SetData({
+    SeasonMazeTopIconType.Lv,
+    SeasonMazeTopIconType.Ms,
+    SeasonMazeTopIconType.Money
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.SetRecruitRed = function(self, bRed)
-  -- function num : 0_2
+function UISeasonMazeRoom_Campsites:SetRecruitRed(bRed)
   self._hasRecruited = not bRed
   if self._recruitRed then
-    (self._recruitRed):SetActive(bRed)
+    self._recruitRed:SetActive(bRed)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.OnShowUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeRoom_Campsites:OnShowUI()
   self:InitWidget()
   self:SetTopIcon()
   self:SetBossAtk()
@@ -115,68 +84,54 @@ UISeasonMazeRoom_Campsites.OnShowUI = function(self)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites._CheckGuide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeRoom_Campsites)
+function UISeasonMazeRoom_Campsites:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUIShare.UISeasonMazeRoom_Campsites)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.RefreshNew = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonMazeRoom_Campsites:RefreshNew()
   local count = 0
   local isUnlock = false
-  local componentInfo = (self._component):GetComponentInfo()
+  local componentInfo = self._component:GetComponentInfo()
   if componentInfo then
     if componentInfo.m_auto_bead_map then
-      for _,value in pairs(componentInfo.m_auto_bead_map) do
+      for _, value in pairs(componentInfo.m_auto_bead_map) do
         local data = value
-        if data and (data.bead_info).b_new then
+        if data and data.bead_info.b_new then
           count = count + 1
         end
       end
     end
-    do
-      do
-        local cfgs = (Cfg.cfg_component_season_maze)({Hard = componentInfo.hard})
-        isUnlock = not cfgs or not cfgs[1] or (cfgs[1]).BeadSlotCnt > 0
-        if count ~= 1 then
-          (self._red):SetActive(not isUnlock)
-          ;
-          (self._redCount):SetActive(count > 1)
-          ;
-          (self._redCountValue):SetText(tostring(count))
-          ;
-          (self.BeadBtnObj):SetActive(isUnlock)
-          -- DECOMPILER ERROR: 5 unprocessed JMP targets
-        end
-      end
+    local cfgs = Cfg.cfg_component_season_maze({
+      Hard = componentInfo.hard
+    })
+    if cfgs and cfgs[1] then
+      isUnlock = 0 < cfgs[1].BeadSlotCnt
     end
   end
+  if isUnlock then
+    self._red:SetActive(count == 1)
+    self._redCount:SetActive(1 < count)
+    self._redCountValue:SetText(tostring(count))
+  end
+  self.BeadBtnObj:SetActive(isUnlock)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.GetPets = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
+function UISeasonMazeRoom_Campsites:GetPets()
+  local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
   local seasonMazeObj = seasonMazeModule:CurSeasonObj()
-  local cfgid = (seasonMazeObj:GetMazeComponent()):GetComponentCfgId()
+  local cfgid = seasonMazeObj:GetMazeComponent():GetComponentCfgId()
   local uimodule = seasonMazeModule:GetUIModule()
   self._pets = {}
   local currentMazeLv = 1
-  local cfg_lvs = ((Cfg.cfg_component_season_maze_lv)({ComponentID = cfgid, Lv = currentMazeLv}))
-  local cfg_lv = nil
+  local cfg_lvs = Cfg.cfg_component_season_maze_lv({ComponentID = cfgid, Lv = currentMazeLv})
+  local cfg_lv
   if cfg_lvs and next(cfg_lvs) then
     cfg_lv = cfg_lvs[1]
   else
-    ;
-    (Log.error)("###[UISeasonMazeRoom_Campsites] cfg_lvs is nil ! id --> ", currentMazeLv)
+    Log.error("###[UISeasonMazeRoom_Campsites] cfg_lvs is nil ! id --> ", currentMazeLv)
   end
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for index,value in ipairs(self._randomPets) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for index, value in ipairs(self._randomPets) do
     local pstid = 0
     local templateID = value
     local level = 1
@@ -188,76 +143,55 @@ UISeasonMazeRoom_Campsites.GetPets = function(self)
     if localPetData then
       pstid = localPetData:GetPstID()
       awake = localPetData:GetPetAwakening()
-      if cfg_lv.PetAwake and cfg_lv.PetAwake > 0 then
+      if cfg_lv.PetAwake and 0 < cfg_lv.PetAwake then
         awake = cfg_lv.PetAwake
       end
       grade = localPetData:GetPetGrade()
       level = localPetData:GetPetLevel()
-      if cfg_lv.PetGrade and cfg_lv.PetGrade > 0 then
+      if cfg_lv.PetGrade and 0 < cfg_lv.PetGrade then
         grade = cfg_lv.PetGrade
-        if cfg_lv.PetLv and cfg_lv.PetLv > 0 then
+        if cfg_lv.PetLv and 0 < cfg_lv.PetLv then
           level = cfg_lv.PetLv
         end
-        grade = uimodule:GetPetGradeLv(templateID, grade, level)
+        grade, level = uimodule:GetPetGradeLv(templateID, grade, level)
       end
       equip = localPetData:GetEquipLv()
-      if cfg_lv.PetEquip and cfg_lv.PetEquip > 0 then
+      if cfg_lv.PetEquip and 0 < cfg_lv.PetEquip then
         equip = cfg_lv.PetEquip
       end
       skinId = localPetData:GetSkinId()
     else
-      if cfg_lv.PetAwake and cfg_lv.PetAwake > 0 then
+      if cfg_lv.PetAwake and 0 < cfg_lv.PetAwake then
         awake = cfg_lv.PetAwake
       end
-      if cfg_lv.PetGrade and cfg_lv.PetGrade > 0 then
+      if cfg_lv.PetGrade and 0 < cfg_lv.PetGrade then
         grade = cfg_lv.PetGrade
-        -- DECOMPILER ERROR at PC130: Overwrote pending register: R16 in 'AssignReg'
-
-        -- DECOMPILER ERROR at PC136: Overwrote pending register: R16 in 'AssignReg'
-
-        if cfg_lv.PetLv and cfg_lv.PetLv > 0 then
-          grade = uimodule:GetPetGradeLv(templateID, grade, level)
-          if cfg_lv.PetEquip and cfg_lv.PetEquip > 0 then
-            equip = cfg_lv.PetEquip
-          end
-          local codeCheckPetData = _G.pet_data
-          local tempData = codeCheckPetData:New()
-          tempData.pet_pstid = pstid
-          tempData.template_id = templateID
-          tempData.current_skin = skinId or 0
-          do
-            local pet = Pet:New(tempData)
-            tempData.grade = grade
-            tempData.level = level
-            tempData.awakening = awake
-            tempData.equip_lv = equip
-            pet:SetData(tempData)
-            ;
-            (table.insert)(self._pets, pet)
-            -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if cfg_lv.PetLv and 0 < cfg_lv.PetLv then
+          level = cfg_lv.PetLv
         end
+        grade, level = uimodule:GetPetGradeLv(templateID, grade, level)
+      end
+      if cfg_lv.PetEquip and 0 < cfg_lv.PetEquip then
+        equip = cfg_lv.PetEquip
       end
     end
+    local codeCheckPetData = _G.pet_data
+    local tempData = codeCheckPetData:New()
+    tempData.pet_pstid = pstid
+    tempData.template_id = templateID
+    tempData.current_skin = skinId or 0
+    local pet = Pet:New(tempData)
+    tempData.grade = grade
+    tempData.level = level
+    tempData.awakening = awake
+    tempData.equip_lv = equip
+    pet:SetData(tempData)
+    table.insert(self._pets, pet)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_7 , upvalues : _ENV
-  local seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
+function UISeasonMazeRoom_Campsites:LoadDataOnEnter(TT, res, uiParams)
+  local seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
   local seasonMazeObj = seasonMazeModule:CurSeasonObj()
   local component = seasonMazeObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
   local response = component:HandleSeasonMazePetRecruitList(TT, res)
@@ -266,217 +200,142 @@ UISeasonMazeRoom_Campsites.LoadDataOnEnter = function(self, TT, res, uiParams)
   if res:GetSucc() then
     self._randomPets = response.pet_list
     local selectedPet = response.select_pet
-    if selectedPet and selectedPet > 0 then
+    if selectedPet and 0 < selectedPet then
       self._hasRecruited = true
       self:GetPets()
-      for index,value in ipairs(self._pets) do
+      for index, value in ipairs(self._pets) do
         if value:GetTemplateID() == selectedPet then
           self._resultPet = value
           break
         end
       end
-    else
-      do
-        do
-          if not self._randomPets or #self._randomPets == 0 then
-            self._hasRecruited = true
-          end
-          local result = res:GetResult()
-          ;
-          (Log.error)("###[UISeasonMazeRoom_Campsites] HandleSeasonMazePetRecruitList fail! result:", result)
-          if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-            return 
-          end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.OnRecruitPetSucc = function(self, pet)
-  -- function num : 0_8 , upvalues : _ENV
-  if pet then
-    local icon = pet:GetPetVideo(PetSkinEffectPath.HEAD_ICON_WE_CHAT)
-    if icon then
-      (self._iconLoader):LoadImage(icon)
-      local texture = ((self._iconRawImage).material).mainTexture
-      ;
-      (self.role):SetActive(true)
-      ;
-      ((self.roleRender).material):SetTexture("_MainTex", texture)
-      return 
-    end
-  end
-  do
-    ;
-    (self.role):SetActive(false)
-  end
-end
-
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.OnUISeasonMazeAttChanged = function(self)
-  -- function num : 0_9
-  self:SetBank()
-end
-
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.SetBossAtk = function(self)
-  -- function num : 0_10
-  if self.UISeasonMazeBossAtk then
-    if not self.UISeasonMazeBossAtkWidget then
-      self.UISeasonMazeBossAtkWidget = (self.UISeasonMazeBossAtk):SpawnObject("UISeasonMazeBossAtk")
-    end
-    ;
-    (self.UISeasonMazeBossAtkWidget):SetData()
-  end
-end
-
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.SetBank = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local curHard = (self._comInfo).hard
-  local cfgs = (Cfg.cfg_component_season_maze_save)({ComponentID = self._comCfgID, LockHard = curHard})
-  local max = 0
-  if cfgs and (table.count)(cfgs) > 0 then
-    for key,value in pairs(cfgs) do
-      max = (math.max)(max, value.NeedNum)
-    end
-  end
-  do
-    self._currentSaveCount = ((self._comInfo).save_info).exp
-    ;
-    (self.BankCount):SetText((StringTable.Get)("str_season_maze_room_camp_bank_count", self._currentSaveCount .. "/" .. max))
-  end
-end
-
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.SetSmithy = function(self)
-  -- function num : 0_12
-  self:ReqSlotInfos()
-end
-
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.ReqSlotInfos = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self:Lock("UISeasonMaze_Campsites_Smithy:ReqSlotInfos")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.TaskReqSlotInfos, self)
-end
-
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.TaskReqSlotInfos = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
-  local res = AsyncRequestRes:New()
-  local response = (self._component):HandleSeasonMazeGetSlot(TT, res)
-  self:UnLock("UISeasonMaze_Campsites_Smithy:ReqSlotInfos")
-  if res:GetSucc() then
-    local comInfo = (self._component):GetComponentInfo()
-    local slotInfo = comInfo.slot_info
-    if slotInfo then
-      local prizeTag = slotInfo.dis_index
-      ;
-      (self.smithyPrize):SetActive(not prizeTag or prizeTag > 0)
+    elseif not self._randomPets or #self._randomPets == 0 then
+      self._hasRecruited = true
     end
   else
     local result = res:GetResult()
-    ;
-    (Log.error)("###[UISeasonMazeRoom_Campsites] HandleSeasonMazeGetSlot fail! result:", result)
-    if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-      return 
+    Log.error("###[UISeasonMazeRoom_Campsites] HandleSeasonMazePetRecruitList fail! result:", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.OnHide = function(self)
-  -- function num : 0_15
+function UISeasonMazeRoom_Campsites:OnRecruitPetSucc(pet)
+  if pet then
+    local icon = pet:GetPetVideo(PetSkinEffectPath.HEAD_ICON_WE_CHAT)
+    if icon then
+      self._iconLoader:LoadImage(icon)
+      local texture = self._iconRawImage.material.mainTexture
+      self.role:SetActive(true)
+      self.roleRender.material:SetTexture("_MainTex", texture)
+      return
+    end
+  end
+  self.role:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
+function UISeasonMazeRoom_Campsites:OnUISeasonMazeAttChanged()
+  self:SetBank()
+end
 
-UISeasonMazeRoom_Campsites.NextBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UISeasonMazeRoom_Campsites:SetBossAtk()
+  if self.UISeasonMazeBossAtk then
+    if not self.UISeasonMazeBossAtkWidget then
+      self.UISeasonMazeBossAtkWidget = self.UISeasonMazeBossAtk:SpawnObject("UISeasonMazeBossAtk")
+    end
+    self.UISeasonMazeBossAtkWidget:SetData()
+  end
+end
+
+function UISeasonMazeRoom_Campsites:SetBank()
+  local curHard = self._comInfo.hard
+  local cfgs = Cfg.cfg_component_season_maze_save({
+    ComponentID = self._comCfgID,
+    LockHard = curHard
+  })
+  local max = 0
+  if cfgs and 0 < table.count(cfgs) then
+    for key, value in pairs(cfgs) do
+      max = math.max(max, value.NeedNum)
+    end
+  end
+  self._currentSaveCount = self._comInfo.save_info.exp
+  self.BankCount:SetText(StringTable.Get("str_season_maze_room_camp_bank_count", self._currentSaveCount .. "/" .. max))
+end
+
+function UISeasonMazeRoom_Campsites:SetSmithy()
+  self:ReqSlotInfos()
+end
+
+function UISeasonMazeRoom_Campsites:ReqSlotInfos()
+  self:Lock("UISeasonMaze_Campsites_Smithy:ReqSlotInfos")
+  GameGlobal.TaskManager():StartTask(self.TaskReqSlotInfos, self)
+end
+
+function UISeasonMazeRoom_Campsites:TaskReqSlotInfos(TT)
+  local res = AsyncRequestRes:New()
+  local response = self._component:HandleSeasonMazeGetSlot(TT, res)
+  self:UnLock("UISeasonMaze_Campsites_Smithy:ReqSlotInfos")
+  if res:GetSucc() then
+    local comInfo = self._component:GetComponentInfo()
+    local slotInfo = comInfo.slot_info
+    if slotInfo then
+      local prizeTag = slotInfo.dis_index
+      self.smithyPrize:SetActive(prizeTag and 0 < prizeTag)
+    end
+  else
+    local result = res:GetResult()
+    Log.error("###[UISeasonMazeRoom_Campsites] HandleSeasonMazeGetSlot fail! result:", result)
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return
+    end
+  end
+end
+
+function UISeasonMazeRoom_Campsites:OnHide()
+end
+
+function UISeasonMazeRoom_Campsites:NextBtnOnClick(go)
   if not self._hasRecruited then
-    (UISeasonMazeModule.PopMsgBox)("", (StringTable.Get)("str_season_maze_room_camp_next_tip2"), SeasonMazeMsgBoxType.OkCancel, function()
-    -- function num : 0_16_0 , upvalues : self
-    self:RecruitBtnOnClick()
+    UISeasonMazeModule.PopMsgBox("", StringTable.Get("str_season_maze_room_camp_next_tip2"), SeasonMazeMsgBoxType.OkCancel, function()
+      self:RecruitBtnOnClick()
+    end, nil, function()
+      self:OnHideUI()
+    end, nil, function(popUI)
+      popUI:SetOkCancelBtnTxt(StringTable.Get("str_season_maze_room_camp_recruit_jump"), StringTable.Get("str_season_maze_room_camp_next"))
+    end)
+    return
   end
-, nil, function()
-    -- function num : 0_16_1 , upvalues : self
+  UISeasonMazeModule.PopMsgBox("", StringTable.Get("str_season_maze_room_camp_next_tip"), SeasonMazeMsgBoxType.OkCancel, function()
     self:OnHideUI()
-  end
-, nil, function(popUI)
-    -- function num : 0_16_2 , upvalues : _ENV
-    popUI:SetOkCancelBtnTxt((StringTable.Get)("str_season_maze_room_camp_recruit_jump"), (StringTable.Get)("str_season_maze_room_camp_next"))
-  end
-)
-    return 
-  end
-  ;
-  (UISeasonMazeModule.PopMsgBox)("", (StringTable.Get)("str_season_maze_room_camp_next_tip"), SeasonMazeMsgBoxType.OkCancel, function()
-    -- function num : 0_16_3 , upvalues : self
-    self:OnHideUI()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.MedicalBtnOnClick = function(self, go)
-  -- function num : 0_17
+function UISeasonMazeRoom_Campsites:MedicalBtnOnClick(go)
   self:ShowDialog("UISeasonMaze_Campsites_Medical")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.LifeBtnOnClick = function(self, go)
-  -- function num : 0_18
+function UISeasonMazeRoom_Campsites:LifeBtnOnClick(go)
   self:ShowDialog("UISeasonMaze_Campsites_Life")
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.BankBtnOnClick = function(self, go)
-  -- function num : 0_19
+function UISeasonMazeRoom_Campsites:BankBtnOnClick(go)
   self:ShowDialog("UISeasonMaze_Campsites_Bank")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.SmithyBtnOnClick = function(self, go)
-  -- function num : 0_20
+function UISeasonMazeRoom_Campsites:SmithyBtnOnClick(go)
   self:ShowDialog("UISeasonMaze_Campsites_Smithy")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.RecruitBtnOnClick = function(self, go)
-  -- function num : 0_21
+function UISeasonMazeRoom_Campsites:RecruitBtnOnClick(go)
   self:ShowDialog("UISeasonMaze_Campsites_Recruit")
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.BagBtnOnClick = function(self, go)
-  -- function num : 0_22
+function UISeasonMazeRoom_Campsites:BagBtnOnClick(go)
   self:ShowDialog("UISeasonMazeBackPackController", 1)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoom_Campsites.BeadBtnOnClick = function(self, go)
-  -- function num : 0_23
+function UISeasonMazeRoom_Campsites:BeadBtnOnClick(go)
   self:ShowDialog("UISeasonMazeBead")
 end
-
-

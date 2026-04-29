@@ -1,28 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_effect_by_transport_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridEffectByTransportGridInstruction", BaseInstruction)
 PlayGridEffectByTransportGridInstruction = PlayGridEffectByTransportGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridEffectByTransportGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridEffectByTransportGridInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._intervalTime = tonumber(paramList.intervalTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectByTransportGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayGridEffectByTransportGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
   self._world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local effectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.TransportByRange)
   if effectResult == nil then
-    return 
+    return
   end
   local posList = effectResult:GetOutlineRange()
   local dir = effectResult:GetTransportDir()
@@ -33,97 +23,78 @@ PlayGridEffectByTransportGridInstruction.DoInstruction = function(self, TT, cast
     if dir == DirectionType.Left then
       step = -1
     end
-    for i,pos in ipairs(posList) do
+    for i, pos in ipairs(posList) do
       if not sortPosList[pos.x] then
         sortPosList[pos.x] = {}
       end
       if maxL < pos.x then
         maxL = pos.x
       end
-      ;
-      (table.insert)(sortPosList[pos.x], pos)
+      table.insert(sortPosList[pos.x], pos)
     end
-  else
-    do
-      if dir == DirectionType.Up or dir == DirectionType.Down then
-        if dir == DirectionType.Down then
-          step = -1
-        end
-        for i,pos in ipairs(posList) do
-          if maxL < pos.y then
-            maxL = pos.y
-          end
-          if not sortPosList[pos.y] then
-            sortPosList[pos.y] = {}
-          end
-          ;
-          (table.insert)(sortPosList[pos.y], pos)
-        end
+  elseif dir == DirectionType.Up or dir == DirectionType.Down then
+    if dir == DirectionType.Down then
+      step = -1
+    end
+    for i, pos in ipairs(posList) do
+      if maxL < pos.y then
+        maxL = pos.y
       end
-      do
-        self:_SmallToLargeSort(sortPosList)
-        local beginL, endL = nil, nil
-        if step == 1 then
-          beginL = 1
-          endL = maxL
-        else
-          if step == -1 then
-            beginL = maxL
-            endL = 1
-          end
-        end
-        local effectSvc = (self._world):GetService("Effect")
-        for i = beginL, endL, step do
-          local list = sortPosList[i]
-          if list then
-            for i,pos in ipairs(list) do
-              effectSvc:CreateCommonGridEffect(self._effectID, pos)
-            end
-            YIELD(TT, self._intervalTime)
-          end
-        end
+      if not sortPosList[pos.y] then
+        sortPosList[pos.y] = {}
       end
+      table.insert(sortPosList[pos.y], pos)
+    end
+  end
+  self:_SmallToLargeSort(sortPosList)
+  local beginL, endL
+  if step == 1 then
+    beginL = 1
+    endL = maxL
+  elseif step == -1 then
+    beginL = maxL
+    endL = 1
+  end
+  local effectSvc = self._world:GetService("Effect")
+  for i = beginL, endL, step do
+    local list = sortPosList[i]
+    if list then
+      for i, pos in ipairs(list) do
+        effectSvc:CreateCommonGridEffect(self._effectID, pos)
+      end
+      YIELD(TT, self._intervalTime)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectByTransportGridInstruction._SmallToLargeSort = function(self, posDic)
-  -- function num : 0_2 , upvalues : _ENV
-  local sortDicFunc = function(dic)
-    -- function num : 0_2_0 , upvalues : _ENV
+function PlayGridEffectByTransportGridInstruction:_SmallToLargeSort(posDic)
+  local function sortDicFunc(dic)
     local newDic = {}
+    
     local keyList = {}
-    for k,_ in pairs(dic) do
-      (table.insert)(keyList, k)
+    for k, _ in pairs(dic) do
+      table.insert(keyList, k)
     end
-    ;
-    (table.sort)(keyList, function(a, b)
-      -- function num : 0_2_0_0
-      do return a < b end
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
-    end
-)
+    table.sort(keyList, function(a, b)
+      return a < b
+    end)
     for i = 1, #keyList do
       newDic[#newDic + 1] = dic[keyList[i]]
     end
     return newDic
   end
-
+  
   posDic = sortDicFunc(posDic)
   return posDic
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectByTransportGridInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayGridEffectByTransportGridInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

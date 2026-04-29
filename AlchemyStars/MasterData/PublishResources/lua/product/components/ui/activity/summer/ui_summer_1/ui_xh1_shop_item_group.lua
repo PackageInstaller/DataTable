@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/ui_summer_1/ui_xh1_shop_item_group.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXH1ShopItemGroup", UICustomWidget)
 UIXH1ShopItemGroup = UIXH1ShopItemGroup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXH1ShopItemGroup.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIXH1ShopItemGroup:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopItemGroup.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIXH1ShopItemGroup:InitWidget()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._lockArea = self:GetGameObject("LockArea")
   self._cellGenGo = self:GetGameObject("ShopItemList")
@@ -24,28 +14,19 @@ UIXH1ShopItemGroup.InitWidget = function(self)
   self._event = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopItemGroup.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIXH1ShopItemGroup:OnHide()
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopItemGroup.SetData = function(self)
-  -- function num : 0_3
+function UIXH1ShopItemGroup:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopItemGroup.GetRealSize = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIXH1ShopItemGroup:GetRealSize()
   local width = 0
-  for index,value in ipairs(self._data) do
+  for index, value in ipairs(self._data) do
     if value.GetIsSpecial and value:GetIsSpecial() then
       width = width + 366
     else
@@ -55,31 +36,23 @@ UIXH1ShopItemGroup.GetRealSize = function(self)
   return Vector2(width, 800)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopItemGroup.InitData = function(self, data)
-  -- function num : 0_5 , upvalues : _ENV
+function UIXH1ShopItemGroup:InitData(data)
   self:DisposeCustomWidgets()
   self._shopItemList = self:GetUIComponent("UISelectObjectPath", "ShopItemList")
   self._data = data
   local cellSize = #data
   self._cellSize = cellSize
-  local itemList = (self._shopItemList):SpawnObjects("UIXH1ShopItemGroupCell", cellSize)
-  for index,value in ipairs(itemList) do
+  local itemList = self._shopItemList:SpawnObjects("UIXH1ShopItemGroupCell", cellSize)
+  for index, value in ipairs(itemList) do
     value:InitData(data[index])
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXH1ShopItemGroup._GetFormatString = function(self, stamp)
-  -- function num : 0_6 , upvalues : _ENV
+function UIXH1ShopItemGroup:_GetFormatString(stamp)
   local formatStr = "%s <color=#%s>%s</color>"
-  local descStr = (StringTable.Get)("str_activity_evesinsa_shop_group_unlock_time")
+  local descStr = StringTable.Get("str_activity_evesinsa_shop_group_unlock_time")
   local colorStr = "FFE42D"
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (string.format)(formatStr, descStr, colorStr, timeStr)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = string.format(formatStr, descStr, colorStr, timeStr)
   return showStr
 end
-
-

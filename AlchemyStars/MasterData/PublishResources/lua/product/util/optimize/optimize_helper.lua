@@ -1,92 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/optimize/optimize_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("OptimizeHelper", Object)
 OptimizeHelper = OptimizeHelper
-local texture2D, renderTexture = nil, nil
--- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
+local texture2D, renderTexture
 
-OptimizeHelper.GetOptimizeRenderTexture = function(gameObject)
-  -- function num : 0_0 , upvalues : renderTexture, _ENV
+function OptimizeHelper.GetOptimizeRenderTexture(gameObject)
   if renderTexture == nil then
-    renderTexture = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+    renderTexture = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
   end
-  ;
-  (OptimizeHelper.OnRenderTextureRender)(gameObject)
+  OptimizeHelper.OnRenderTextureRender(gameObject)
   return renderTexture
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-OptimizeHelper.OnRenderTextureRender = function(gameObject, rednerTexture2D, mainCamera)
-  -- function num : 0_1 , upvalues : renderTexture, _ENV, texture2D
+function OptimizeHelper.OnRenderTextureRender(gameObject, rednerTexture2D, mainCamera)
   if renderTexture then
     renderTexture:Release()
   end
-  local mainCamera = (OptimizeHelper.GetMainCamera)()
+  local mainCamera = OptimizeHelper.GetMainCamera()
   local oldObjLayer = gameObject.layer
-  ;
-  (GameObjectHelper.SetGameObjectLayer)(gameObject, 21)
+  GameObjectHelper.SetGameObjectLayer(gameObject, 21)
   local oldMask = mainCamera.cullingMask
   mainCamera.cullingMask = 2097152
   local oldClearFlags = mainCamera.clearFlags
-  mainCamera.clearFlags = (UnityEngine.CameraClearFlags).Depth
+  mainCamera.clearFlags = UnityEngine.CameraClearFlags.Depth
   mainCamera.targetTexture = renderTexture
   mainCamera:Render()
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = renderTexture
+  UnityEngine.RenderTexture.active = renderTexture
   if rednerTexture2D then
-    texture2D:ReadPixels((UnityEngine.Rect):New(0, 0, (UnityEngine.Screen).width, (UnityEngine.Screen).height), 0, 0, false)
+    texture2D:ReadPixels(UnityEngine.Rect:New(0, 0, UnityEngine.Screen.width, UnityEngine.Screen.height), 0, 0, false)
     texture2D:Apply()
   end
-  ;
-  (GameObjectHelper.SetGameObjectLayer)(gameObject, oldObjLayer)
+  GameObjectHelper.SetGameObjectLayer(gameObject, oldObjLayer)
   mainCamera.clearFlags = oldClearFlags
   mainCamera.cullingMask = oldMask
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-OptimizeHelper.OnRenderTextureClear = function()
-  -- function num : 0_2 , upvalues : renderTexture, _ENV
+function OptimizeHelper.OnRenderTextureClear()
   if renderTexture then
     renderTexture:Release()
   end
-  local mainCamera = (OptimizeHelper.GetMainCamera)()
+  local mainCamera = OptimizeHelper.GetMainCamera()
   mainCamera.targetTexture = nil
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = nil
+  UnityEngine.RenderTexture.active = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-OptimizeHelper.GetOptimizeTexture2D = function(gameObject, mainCamera)
-  -- function num : 0_3 , upvalues : renderTexture, _ENV, texture2D
+function OptimizeHelper.GetOptimizeTexture2D(gameObject, mainCamera)
   if renderTexture == nil then
-    renderTexture = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+    renderTexture = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
   end
   if texture2D == nil then
-    texture2D = (UnityEngine.Texture2D):New((UnityEngine.Screen).width, (UnityEngine.Screen).height)
+    texture2D = UnityEngine.Texture2D:New(UnityEngine.Screen.width, UnityEngine.Screen.height)
   end
-  ;
-  (OptimizeHelper.OnRenderTextureRender)(gameObject, true, mainCamera)
+  OptimizeHelper.OnRenderTextureRender(gameObject, true, mainCamera)
   return texture2D
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-OptimizeHelper.GetMainCamera = function()
-  -- function num : 0_4 , upvalues : _ENV
-  local world = (GameGlobal:GetInstance()):GetMainWorld()
+function OptimizeHelper.GetMainCamera()
+  local world = GameGlobal:GetInstance():GetMainWorld()
   local mainCameraComponent = world:MainCamera()
   local mainCamera = mainCameraComponent:Camera()
   return mainCamera
 end
-
-

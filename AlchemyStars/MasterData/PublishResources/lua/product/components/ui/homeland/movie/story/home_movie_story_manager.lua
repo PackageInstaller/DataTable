@@ -1,37 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/story/home_movie_story_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeMovieStoryManager", Object)
 HomeMovieStoryManager = HomeMovieStoryManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeMovieStoryManager.Constructor = function(self, storyID, uiController, mainCameraGo, rootGameObject, modelRoot, dialogRootGameObject, buttonRootGameObject, leftButtonRootGameObject, maskTemplate, uiAtlas, revertBGM, ignoreBreak, openTease, isRecord)
-  -- function num : 0_0 , upvalues : _ENV
+function HomeMovieStoryManager:Constructor(storyID, uiController, mainCameraGo, rootGameObject, modelRoot, dialogRootGameObject, buttonRootGameObject, leftButtonRootGameObject, maskTemplate, uiAtlas, revertBGM, ignoreBreak, openTease, isRecord)
   self._UIHomeStoryController = uiController
   self._storyID = storyID
   self._rootGameObject = rootGameObject
   self._modelRoot = modelRoot
-  self.RootRotation = ((self._modelRoot).transform).rotation
+  self.RootRotation = self._modelRoot.transform.rotation
   self._dialogRootGameObject = dialogRootGameObject
   self._buttonRootGameObject = buttonRootGameObject
   self._leftButtonRootGameObject = leftButtonRootGameObject
   self._maskTemplate = maskTemplate
   self._mainCamera = mainCameraGo
   self._mainCameraTr = mainCameraGo.transform
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._mainCameraTr).localPosition = Vector3(0, 0, 0)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._mainCameraTr).rotation = Quaternion.identity
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._mainCameraTr).localScale = Vector3(1, 1, 1)
+  self._mainCameraTr.localPosition = Vector3(0, 0, 0)
+  self._mainCameraTr.rotation = Quaternion.identity
+  self._mainCameraTr.localScale = Vector3(1, 1, 1)
   self._openTease = openTease
   self._isRecord = isRecord
   self._uiAtlas = uiAtlas
@@ -42,7 +26,7 @@ HomeMovieStoryManager.Constructor = function(self, storyID, uiController, mainCa
   self._animResList = {}
   self._storyBgmTrackController = HomeStoryBgmTrackController:New(self)
   self._storyCameraTrackController = HomeStoryCameraTrackController:New(self)
-  self._canvasRect = ((((rootGameObject.transform).parent).parent):GetComponent("RectTransform")).rect
+  self._canvasRect = rootGameObject.transform.parent.parent:GetComponent("RectTransform").rect
   self._storyEntityList = {}
   self._paragraphList = {}
   self._currentParagraphID = -1
@@ -57,37 +41,36 @@ HomeMovieStoryManager.Constructor = function(self, storyID, uiController, mainCa
   self._orgBgm = nil
   self._orgBgmFadeTime = 0.5
   self._layerDic = SortedDictionary:New()
-  ;
-  (self._layerDic):Insert(1, {})
+  self._layerDic:Insert(1, {})
   self._debugMode = false
   self._entityInfoTemplate = nil
-  self._loopCameraShakeData = {running = false, 
-shakeData = {}
-, timer = 0, curDuration = 0, tweener = nil}
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._loopCameraShakeData = {
+    running = false,
+    shakeData = {},
+    timer = 0,
+    curDuration = 0,
+    tweener = nil
+  }
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstid = roleModule:GetPstId()
   self._localBreakParapraphMark = pstid .. "LOCAL_BREAK_PARAGRAPH_INDEX"
   self._BeSkipped = 0
-  ;
-  (AudioHelperController.RequestUISound)(CriAudioIDConst.SoundStoryClick)
+  AudioHelperController.RequestUISound(CriAudioIDConst.SoundStoryClick)
   self._recovertStandList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.Init = function(self, debugMode, entityInfoTemplate, yieldTime, isViewEnter)
-  -- function num : 0_1 , upvalues : _ENV
+function HomeMovieStoryManager:Init(debugMode, entityInfoTemplate, yieldTime, isViewEnter)
   isViewEnter = true
-  local storyConfigItem = nil
-  self._startTime = (os.time)()
-  if (EditorGlobal.IsEditorMode)() then
-    self._storyConfig = (EditorGlobal.GetEditorRunStoryConfig)()
-    local editorStoryID = (self._storyConfig).ID
-    storyConfigItem = (Cfg.cfg_homeland_event)[editorStoryID]
+  local storyConfigItem
+  self._startTime = os.time()
+  if EditorGlobal.IsEditorMode() then
+    self._storyConfig = EditorGlobal.GetEditorRunStoryConfig()
+    local editorStoryID = self._storyConfig.ID
+    storyConfigItem = Cfg.cfg_homeland_event[editorStoryID]
     if storyConfigItem and storyConfigItem.StoryRootPosOffset then
-      local tmp_tr = ((self._UIHomeStoryController)._storyRoot).transform
+      local tmp_tr = self._UIHomeStoryController._storyRoot.transform
       if tmp_tr then
-        local vec = Vector3((storyConfigItem.StoryRootPosOffset)[1], (storyConfigItem.StoryRootPosOffset)[2], (storyConfigItem.StoryRootPosOffset)[3])
+        local vec = Vector3(storyConfigItem.StoryRootPosOffset[1], storyConfigItem.StoryRootPosOffset[2], storyConfigItem.StoryRootPosOffset[3])
         local pos = tmp_tr.position - vec * tmp_tr.rotation
         tmp_tr.localPosition = pos
         tmp_tr.localScale = tmp_tr.localScale
@@ -95,825 +78,611 @@ HomeMovieStoryManager.Init = function(self, debugMode, entityInfoTemplate, yield
       end
     end
   else
-    do
-      local cfg = (Cfg.cfg_home_story)[self._storyID]
-      if not cfg then
-        (Log.exception)("配表中不存在storyID ", self._storyID)
-      end
-      local res, story = dofile(cfg.StoryScript)
-      self._storyConfig = story
-      storyConfigItem = (Cfg.cfg_homeland_event)[self._storyID]
-      if storyConfigItem and storyConfigItem.StoryRootPosOffset then
-        local vec = Vector3((storyConfigItem.StoryRootPosOffset)[1], (storyConfigItem.StoryRootPosOffset)[2], (storyConfigItem.StoryRootPosOffset)[3])
-        self._eventMgr = (self._UIHomeStoryController)._eventMgr
-        local trans = ((self._eventMgr):GetStoryRoot()).transform
-        local pos = trans.position - vec * trans.rotation
-        ;
-        (self._eventMgr):SetStoryRoot(pos, trans.rotation, trans.localScale)
-      end
-      do
-        if not self._storyConfig then
-          (Log.fatal)("###[HomeMovieStoryManager] can not find story, id: " .. self._storyID)
-          self._end = true
-          return 
-        end
-        self._debugMode = debugMode
-        self._entityInfoTemplate = entityInfoTemplate
-        if not self._ignoreBreak then
-          self._breakParagraphIds = (self._storyConfig).breakParagraphIds
-        end
-        if self._breakParagraphIds then
-          local breakIdx = (LocalDB.GetInt)(self._localBreakParapraphMark, 0)
-          if breakIdx > 0 then
-            self._currentParagraphID = (self._breakParagraphIds)[breakIdx]
-          else
-            self._currentParagraphID = (self._storyConfig).StartParagraph
-          end
-        else
-          do
-            self._currentParagraphID = (self._storyConfig).StartParagraph
-            if self._revertBGM then
-              self._orgBgmPlaying = (AudioHelperController.BGMPlayerIsPlaying)()
-              if self._orgBgmPlaying then
-                self._orgBgm = (AudioHelperController.GetCurrentBgm)()
-              end
-            end
-            self:_InitEntities()
-            self:_InitParagraphs()
-            if yieldTime and yieldTime > 0 and false then
-              ((GameGlobal.UIStateManager)()):Lock("HomeMovieStoryManager_yieldTime")
-              ;
-              ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    ((GameGlobal.UIStateManager)()):UnLock("HomeMovieStoryManager_yieldTime")
+    local cfg = Cfg.cfg_home_story[self._storyID]
+    if not cfg then
+      Log.exception("配表中不存在storyID ", self._storyID)
+    end
+    local res, story = dofile(cfg.StoryScript)
+    self._storyConfig = story
+    storyConfigItem = Cfg.cfg_homeland_event[self._storyID]
+    if storyConfigItem and storyConfigItem.StoryRootPosOffset then
+      local vec = Vector3(storyConfigItem.StoryRootPosOffset[1], storyConfigItem.StoryRootPosOffset[2], storyConfigItem.StoryRootPosOffset[3])
+      self._eventMgr = self._UIHomeStoryController._eventMgr
+      local trans = self._eventMgr:GetStoryRoot().transform
+      local pos = trans.position - vec * trans.rotation
+      self._eventMgr:SetStoryRoot(pos, trans.rotation, trans.localScale)
+    end
+  end
+  if not self._storyConfig then
+    Log.fatal("###[HomeMovieStoryManager] can not find story, id: " .. self._storyID)
+    self._end = true
+    return
+  end
+  self._debugMode = debugMode
+  self._entityInfoTemplate = entityInfoTemplate
+  if not self._ignoreBreak then
+    self._breakParagraphIds = self._storyConfig.breakParagraphIds
+  end
+  if self._breakParagraphIds then
+    local breakIdx = LocalDB.GetInt(self._localBreakParapraphMark, 0)
+    if 0 < breakIdx then
+      self._currentParagraphID = self._breakParagraphIds[breakIdx]
+    else
+      self._currentParagraphID = self._storyConfig.StartParagraph
+    end
+  else
+    self._currentParagraphID = self._storyConfig.StartParagraph
+  end
+  if self._revertBGM then
+    self._orgBgmPlaying = AudioHelperController.BGMPlayerIsPlaying()
+    if self._orgBgmPlaying then
+      self._orgBgm = AudioHelperController.GetCurrentBgm()
+    end
+  end
+  self:_InitEntities()
+  self:_InitParagraphs()
+  if yieldTime and 0 < yieldTime and false then
+    GameGlobal.UIStateManager():Lock("HomeMovieStoryManager_yieldTime")
+    GameGlobal.Timer():AddEvent(yieldTime, function()
+      GameGlobal.UIStateManager():UnLock("HomeMovieStoryManager_yieldTime")
+      self:_StartSection()
+    end)
+  else
     self:_StartSection()
   end
-)
-            else
-              self:_StartSection()
-            end
-            do
-              if (EditorGlobal.IsEditorMode)() then
-                local editorparam = (EditorGlobal.GetEnterParam)()
-                self:_Seek(editorparam.ParagraphID, editorparam.SectionID)
-              end
-              local findName = "[H3DRenderSetting]"
-              local findGo = ((UnityEngine.GameObject).Find)(findName)
-              if findGo then
-                local h3dSetting = findGo:GetComponent(typeof(H3DRenderSetting))
-                if h3dSetting then
-                  h3dSetting.enabled = false
-                  h3dSetting.enabled = true
-                end
-              end
-            end
-          end
-        end
-      end
+  if EditorGlobal.IsEditorMode() then
+    local editorparam = EditorGlobal.GetEnterParam()
+    self:_Seek(editorparam.ParagraphID, editorparam.SectionID)
+  end
+  local findName = "[H3DRenderSetting]"
+  local findGo = UnityEngine.GameObject.Find(findName)
+  if findGo then
+    local h3dSetting = findGo:GetComponent(typeof(H3DRenderSetting))
+    if h3dSetting then
+      h3dSetting.enabled = false
+      h3dSetting.enabled = true
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.SetNextParagraphID = function(self, ID)
-  -- function num : 0_2
+function HomeMovieStoryManager:SetNextParagraphID(ID)
   self._nextParagraphID = ID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetCurrentTime = function(self)
-  -- function num : 0_3
+function HomeMovieStoryManager:GetCurrentTime()
   return self._currentTime
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetStoryUIRoot = function(self)
-  -- function num : 0_4
+function HomeMovieStoryManager:GetStoryUIRoot()
   return self._rootGameObject
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetCanvasRect = function(self)
-  -- function num : 0_5
+function HomeMovieStoryManager:GetCanvasRect()
   return self._canvasRect
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetStoryDialogUIRoot = function(self)
-  -- function num : 0_6
+function HomeMovieStoryManager:GetStoryDialogUIRoot()
   return self._dialogRootGameObject
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetMaskTemplate = function(self)
-  -- function num : 0_7
+function HomeMovieStoryManager:GetMaskTemplate()
   return self._maskTemplate
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetUIAtlas = function(self)
-  -- function num : 0_8
+function HomeMovieStoryManager:GetUIAtlas()
   return self._uiAtlas
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.PlaySound = function(self, entityID)
-  -- function num : 0_9 , upvalues : _ENV
-  local soundEntity = (self._storyEntityList)[entityID]
+function HomeMovieStoryManager:PlaySound(entityID)
+  local soundEntity = self._storyEntityList[entityID]
   if soundEntity and soundEntity:GetEntityType() == HomeStoryEntityType.Sound then
     soundEntity:PlaySound()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.StopSound = function(self, entityID)
-  -- function num : 0_10 , upvalues : _ENV
-  local soundEntity = (self._storyEntityList)[entityID]
+function HomeMovieStoryManager:StopSound(entityID)
+  local soundEntity = self._storyEntityList[entityID]
   if soundEntity and soundEntity:GetEntityType() == HomeStoryEntityType.Sound then
     soundEntity:StopSound()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.PlayBgm = function(self, entityID, bgmFadeTime)
-  -- function num : 0_11 , upvalues : _ENV
-  local soundEntity = (self._storyEntityList)[entityID]
+function HomeMovieStoryManager:PlayBgm(entityID, bgmFadeTime)
+  local soundEntity = self._storyEntityList[entityID]
   if soundEntity and soundEntity:GetEntityType() == HomeStoryEntityType.Sound then
     soundEntity:PlayBgm(bgmFadeTime)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetEntity = function(self, id)
-  -- function num : 0_12
-  local entity = (self._storyEntityList)[id]
+function HomeMovieStoryManager:GetEntity(id)
+  local entity = self._storyEntityList[id]
   if entity then
     return entity
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetEntityGo = function(self, id)
-  -- function num : 0_13
-  local entity = (self._storyEntityList)[id]
+function HomeMovieStoryManager:GetEntityGo(id)
+  local entity = self._storyEntityList[id]
   if entity then
     return entity:GetEntityGo()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetEntityPos = function(self, entityID)
-  -- function num : 0_14 , upvalues : _ENV
-  local soundEntity = (self._storyEntityList)[entityID]
+function HomeMovieStoryManager:GetEntityPos(entityID)
+  local soundEntity = self._storyEntityList[entityID]
   if soundEntity and soundEntity:GetEntityType() == HomeStoryEntityType.Model then
     return soundEntity:Pos()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.ActiveEntity = function(self, entityID, active)
-  -- function num : 0_15 , upvalues : _ENV
-  local entity = (self._storyEntityList)[entityID]
+function HomeMovieStoryManager:ActiveEntity(entityID, active)
+  local entity = self._storyEntityList[entityID]
   if entity and entity:GetEntityType() == HomeStoryEntityType.Model then
     entity:SetActive(active)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.SetEntityPos = function(self, entityID, pos)
-  -- function num : 0_16 , upvalues : _ENV
-  local entity = (self._storyEntityList)[entityID]
+function HomeMovieStoryManager:SetEntityPos(entityID, pos)
+  local entity = self._storyEntityList[entityID]
   if entity and entity:GetEntityType() == HomeStoryEntityType.Model then
     entity:SetPos(pos)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetEntityHeadPos = function(self, entityID)
-  -- function num : 0_17 , upvalues : _ENV
-  local soundEntity = (self._storyEntityList)[entityID]
+function HomeMovieStoryManager:GetEntityHeadPos(entityID)
+  local soundEntity = self._storyEntityList[entityID]
   if soundEntity and soundEntity:GetEntityType() == HomeStoryEntityType.Model then
     return soundEntity:HeadPos()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.SetSpeakState = function(self, entityID, speaking)
-  -- function num : 0_18 , upvalues : _ENV
-  local spineEntity = (self._storyEntityList)[entityID]
+function HomeMovieStoryManager:SetSpeakState(entityID, speaking)
+  local spineEntity = self._storyEntityList[entityID]
   if spineEntity and spineEntity:GetEntityType() == HomeStoryEntityType.Spine then
     spineEntity:SetSpeak(speaking)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.AddDialogRecord = function(self, speaker, content, isPlayer, icon, tips)
-  -- function num : 0_19
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R6 in 'UnsetPending'
-
-  (self._dialogRecord)[#self._dialogRecord + 1] = {speaker, content, isPlayer, icon, tips}
+function HomeMovieStoryManager:AddDialogRecord(speaker, content, isPlayer, icon, tips)
+  self._dialogRecord[#self._dialogRecord + 1] = {
+    speaker,
+    content,
+    isPlayer,
+    icon,
+    tips
+  }
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetDialogRecord = function(self)
-  -- function num : 0_20
+function HomeMovieStoryManager:GetDialogRecord()
   return self._dialogRecord
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.InitLayerInfo = function(self, trans)
-  -- function num : 0_21
-  local layerTable = (self._layerDic):Find(1)
+function HomeMovieStoryManager:InitLayerInfo(trans)
+  local layerTable = self._layerDic:Find(1)
   layerTable[#layerTable + 1] = trans
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.SetLayer = function(self, trans, layer)
-  -- function num : 0_22 , upvalues : _ENV
+function HomeMovieStoryManager:SetLayer(trans, layer)
   local layerDic = self._layerDic
   for i = 1, layerDic:Size() do
     local layerTable = layerDic:GetAt(i)
-    ;
-    (table.removev)(layerTable, trans)
+    table.removev(layerTable, trans)
   end
-  local layerTable = (self._layerDic):Find(layer)
+  local layerTable = self._layerDic:Find(layer)
   if layerTable == nil then
     layerTable = {}
-    ;
-    (self._layerDic):Insert(layer, layerTable)
+    self._layerDic:Insert(layer, layerTable)
   end
   layerTable[#layerTable + 1] = trans
   self:_resetLayers()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager._resetLayers = function(self)
-  -- function num : 0_23
+function HomeMovieStoryManager:_resetLayers()
   local layerDic = self._layerDic
   for i = 1, layerDic:Size() do
     local layerTable = layerDic:GetAt(i)
     for j = 1, #layerTable do
-      (layerTable[j]):SetAsLastSibling()
+      layerTable[j]:SetAsLastSibling()
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager._InitEntities = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local entityConfig = (self._storyConfig).Entities
+function HomeMovieStoryManager:_InitEntities()
+  local entityConfig = self._storyConfig.Entities
   if not entityConfig then
-    return 
+    return
   end
-  for _,entity in ipairs(entityConfig) do
+  for _, entity in ipairs(entityConfig) do
     local storyEntity = self:_CreateStoryEntity(entity.EntityID, entity.Type, entity.Resource, entity)
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R8 in 'UnsetPending'
-
     if storyEntity then
-      (self._storyEntityList)[storyEntity:GetID()] = storyEntity
-    else
-      if entity.SubType ~= "Furniture" then
-        self._end = true
-        return 
-      end
+      self._storyEntityList[storyEntity:GetID()] = storyEntity
+    elseif entity.SubType ~= "Furniture" then
+      self._end = true
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager._InitParagraphs = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  self._paragraphList = (self._storyConfig).Paragraphs
-  local paragraph = (self._paragraphList)[self._currentParagraphID]
+function HomeMovieStoryManager:_InitParagraphs()
+  self._paragraphList = self._storyConfig.Paragraphs
+  local paragraph = self._paragraphList[self._currentParagraphID]
   if not paragraph then
-    (Log.fatal)("###[HomeMovieStoryManager] 不存在ID为" .. self._currentParagraphID .. "的剧情段落,剧情结束")
+    Log.fatal("###[HomeMovieStoryManager] 不存在ID为" .. self._currentParagraphID .. "的剧情段落,剧情结束")
     self._end = true
-    return 
+    return
   end
   if paragraph.NextParagraphID then
     self:SetNextParagraphID(paragraph.NextParagraphID)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager._CreateStoryEntity = function(self, ID, type, resourceName, entityConfig)
-  -- function num : 0_26 , upvalues : _ENV
-  local request, gameObject, skinid = nil, nil, nil
+function HomeMovieStoryManager:_CreateStoryEntity(ID, type, resourceName, entityConfig)
+  local request, gameObject, skinid
   if type == "Effect" or type == "Dialog" or type == "Model" or type == "CameraVC" or type == "Picture" or type == "Spine" then
     if type == "Model" then
-      request = self:LoadModel(entityConfig)
+      request, gameObject, skinid = self:LoadModel(entityConfig)
       if request then
-        (gameObject.transform):SetParent((self._modelRoot).transform, false)
+        gameObject.transform:SetParent(self._modelRoot.transform, false)
       else
         if entityConfig.SubType ~= "Furniture" then
           self._end = true
         end
-        return 
+        return
       end
     else
-      request = (ResourceManager:GetInstance()):SyncLoadAsset(resourceName, LoadType.GameObject)
-      -- DECOMPILER ERROR at PC47: Overwrote pending register: R6 in 'AssignReg'
-
+      request = ResourceManager:GetInstance():SyncLoadAsset(resourceName, LoadType.GameObject)
       if request then
+        gameObject = request.Obj
         if type == "Dialog" then
-          (gameObject.transform):SetParent((self._dialogRootGameObject).transform, false)
+          gameObject.transform:SetParent(self._dialogRootGameObject.transform, false)
+        elseif type == "CameraVC" then
+          gameObject.transform:SetParent(self._modelRoot.transform, false)
         else
-          if type == "CameraVC" then
-            (gameObject.transform):SetParent((self._modelRoot).transform, false)
-          else
-            ;
-            (gameObject.transform):SetParent((self._rootGameObject).transform, false)
-          end
+          gameObject.transform:SetParent(self._rootGameObject.transform, false)
         end
       else
         self._end = true
-        return 
+        return
       end
     end
   end
-  local storyEntity = nil
+  local storyEntity
   if type == "Dialog" then
     storyEntity = HomeMovieEntityDialog:New(ID, gameObject, request, self, self._UIHomeStoryController, self._openTease, self._isRecord)
-  else
-    if type == "Effect" then
-      storyEntity = HomeStoryEntityEffect:New(ID, gameObject, request, self, self._UIHomeStoryController)
-    else
-      if type == "Sound" then
-        storyEntity = HomeStoryEntitySound:New(ID, resourceName, self)
-      else
-        if type == "PostProcessing" then
-          storyEntity = HomeStoryEntityPostProcessing:New(ID, resourceName, self)
-        else
-          if type == "Model" then
-            storyEntity = HomeStoryEntityModel:New(ID, gameObject, request, self, entityConfig, (self._modelRoot).transform, skinid)
-          else
-            if type == "Picture" then
-              storyEntity = HomeStoryEntityPicture:New(ID, gameObject, request, self, entityConfig)
-            else
-              if type == "CameraVC" then
-                storyEntity = HomeStoryEntityCameraVC:New(ID, gameObject, request, self, entityConfig)
-              else
-                if type == "Spine" then
-                  storyEntity = HomeMovieEntitySpine:New(ID, gameObject, request, self, self._UIHomeStoryController, entityConfig)
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif type == "Effect" then
+    storyEntity = HomeStoryEntityEffect:New(ID, gameObject, request, self, self._UIHomeStoryController)
+  elseif type == "Sound" then
+    storyEntity = HomeStoryEntitySound:New(ID, resourceName, self)
+  elseif type == "PostProcessing" then
+    storyEntity = HomeStoryEntityPostProcessing:New(ID, resourceName, self)
+  elseif type == "Model" then
+    storyEntity = HomeStoryEntityModel:New(ID, gameObject, request, self, entityConfig, self._modelRoot.transform, skinid)
+  elseif type == "Picture" then
+    storyEntity = HomeStoryEntityPicture:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "CameraVC" then
+    storyEntity = HomeStoryEntityCameraVC:New(ID, gameObject, request, self, entityConfig)
+  elseif type == "Spine" then
+    storyEntity = HomeMovieEntitySpine:New(ID, gameObject, request, self, self._UIHomeStoryController, entityConfig)
   end
   return storyEntity
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.DisposeAnimRes = function(self)
-  -- function num : 0_27
+function HomeMovieStoryManager:DisposeAnimRes()
   if self._animResList and #self._animResList > 0 then
     for i = 1, #self._animResList do
-      ((self._animResList)[i]):Dispose()
+      self._animResList[i]:Dispose()
     end
   end
-  do
-    self._animResList = nil
-  end
+  self._animResList = nil
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.LoadModel = function(self, cfg)
-  -- function num : 0_28 , upvalues : _ENV
-  local resName, request, go, skinid = nil, nil, nil, nil
+function HomeMovieStoryManager:LoadModel(cfg)
+  local resName, request, go, skinid
   if cfg.SubType == "Pet" then
     local petid = cfg.PetID
     if petid and not self._debugMode then
-      local pet = ((GameGlobal.GetModule)(PetModule)):GetPetByTemplateId(petid)
+      local pet = GameGlobal.GetModule(PetModule):GetPetByTemplateId(petid)
       if pet then
         resName = pet:GetPetPrefab()
       else
         resName = cfg.Resource
-        petid = (string.gsub)(resName, ".prefab", "")
+        petid = string.gsub(resName, ".prefab", "")
       end
     else
-      do
-        resName = cfg.Resource
-        petid = (string.gsub)(resName, ".prefab", "")
-        skinid = (string.gsub)(resName, ".prefab", "")
-        request = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.GameObject)
-        if request then
-          go = request.Obj
-        end
-        local root = ((go.transform):Find("Root")).gameObject
-        local animator = root:GetComponent(typeof(UnityEngine.Animator))
-        ;
-        ((UnityEngine.Object).Destroy)(animator)
-        local animation = root:AddComponent(typeof(UnityEngine.Animation))
-        local _aircraftAnimName = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(resName, PetAnimatorControllerType.Aircraft)
-        local _homelandAnimName = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(resName, PetAnimatorControllerType.Homeland)
-        local homelandStoryAnimName = (HelperProxy:GetInstance()):GetPetAnimatorControllerName(resName, PetAnimatorControllerType.HomelandStory)
-        local airReq = (ResourceManager:GetInstance()):SyncLoadAsset(_aircraftAnimName, LoadType.GameObject)
-        local homeReq = (ResourceManager:GetInstance()):SyncLoadAsset(_homelandAnimName, LoadType.GameObject)
-        local homeStoryReq = (ResourceManager:GetInstance()):SyncLoadAsset(homelandStoryAnimName, LoadType.GameObject)
-        if airReq then
-          local airAnim = (airReq.Obj):GetComponent(typeof(UnityEngine.Animation))
-          if airAnim then
-            local clips_air = (HelperProxy:GetInstance()):GetAllAnimationClip(airAnim)
-            for i = 0, clips_air.Length - 1 do
-              if clips_air[i] == nil then
-                (Log.exception)("###[HomeMovieStoryManager] Pet animation is null:", petid, ", index:", i)
-              else
-                animation:AddClip(clips_air[i], (clips_air[i]).name)
-              end
-            end
-            animation.clip = airAnim.clip
+      resName = cfg.Resource
+      petid = string.gsub(resName, ".prefab", "")
+    end
+    skinid = string.gsub(resName, ".prefab", "")
+    request = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.GameObject)
+    if request then
+      go = request.Obj
+    end
+    local root = go.transform:Find("Root").gameObject
+    local animator = root:GetComponent(typeof(UnityEngine.Animator))
+    UnityEngine.Object.Destroy(animator)
+    local animation = root:AddComponent(typeof(UnityEngine.Animation))
+    local _aircraftAnimName = HelperProxy:GetInstance():GetPetAnimatorControllerName(resName, PetAnimatorControllerType.Aircraft)
+    local _homelandAnimName = HelperProxy:GetInstance():GetPetAnimatorControllerName(resName, PetAnimatorControllerType.Homeland)
+    local homelandStoryAnimName = HelperProxy:GetInstance():GetPetAnimatorControllerName(resName, PetAnimatorControllerType.HomelandStory)
+    local airReq = ResourceManager:GetInstance():SyncLoadAsset(_aircraftAnimName, LoadType.GameObject)
+    local homeReq = ResourceManager:GetInstance():SyncLoadAsset(_homelandAnimName, LoadType.GameObject)
+    local homeStoryReq = ResourceManager:GetInstance():SyncLoadAsset(homelandStoryAnimName, LoadType.GameObject)
+    if airReq then
+      local airAnim = airReq.Obj:GetComponent(typeof(UnityEngine.Animation))
+      if airAnim then
+        local clips_air = HelperProxy:GetInstance():GetAllAnimationClip(airAnim)
+        for i = 0, clips_air.Length - 1 do
+          if clips_air[i] == nil then
+            Log.exception("###[HomeMovieStoryManager] Pet animation is null:", petid, ", index:", i)
+          else
+            animation:AddClip(clips_air[i], clips_air[i].name)
           end
         end
-        do
-          if homeReq then
-            local homeAnim = (homeReq.Obj):GetComponent(typeof(UnityEngine.Animation))
-            if homeAnim then
-              local clips_home = (HelperProxy:GetInstance()):GetAllAnimationClip(homeAnim)
-              for i = 0, clips_home.Length - 1 do
-                if clips_home[i] == nil then
-                  (Log.exception)("###[HomeMovieStoryManager] Pet animation is null:", petid, ", index:", i)
-                else
-                  animation:AddClip(clips_home[i], (clips_home[i]).name)
-                end
-              end
-            end
-          end
-          do
-            if homeStoryReq then
-              local homeStoryAnim = (homeStoryReq.Obj):GetComponent(typeof(UnityEngine.Animation))
-              if homeStoryAnim then
-                local clips_home = (HelperProxy:GetInstance()):GetAllAnimationClip(homeStoryAnim)
-                for i = 0, clips_home.Length - 1 do
-                  if clips_home[i] == nil then
-                    (Log.exception)("###[HomeStoryManager] Pet animation is null:", petid, ", index:", i)
-                  else
-                    animation:AddClip(clips_home[i], (clips_home[i]).name)
-                  end
-                end
-              end
-            end
-            do
-              animation:Play(HomelandPetAnimName.Stand)
-              if airReq then
-                (table.insert)(self._animResList, airReq)
-              end
-              if homeReq then
-                (table.insert)(self._animResList, homeReq)
-              end
-              if homeStoryReq then
-                (table.insert)(self._animResList, homeStoryReq)
-              end
-              local rootTr = root.transform
-              for i = 0, rootTr.childCount - 1 do
-                local child = rootTr:GetChild(i)
-                if (string.find)(child.name, "weapon") then
-                  (child.gameObject):SetActive(false)
-                end
-              end
-              do
-                if cfg.SubType == "Player" then
-                  resName = cfg.Resource
-                  request = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.GameObject)
-                  if request then
-                    go = request.Obj
-                  end
-                  local _name = (string.gsub)(resName, ".prefab", "")
-                  skinid = (string.gsub)(resName, ".prefab", "")
-                  local _aniResReq = (ResourceManager:GetInstance()):SyncLoadAsset(_name .. "_battle.prefab", LoadType.GameObject)
-                  local anim = (_aniResReq.Obj):GetComponent(typeof(UnityEngine.Animator))
-                  local animator = go:GetComponentInChildren(typeof(UnityEngine.Animator))
-                  animator.runtimeAnimatorController = anim.runtimeAnimatorController
-                  if _aniResReq then
-                    (table.insert)(self._animResList, _aniResReq)
-                  end
-                else
-                  do
-                    if cfg.SubType == "Other" then
-                      resName = cfg.Resource
-                      request = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.GameObject)
-                      if request then
-                        go = request.Obj
-                      end
-                    else
-                      if cfg.SubType == "NPC" then
-                        resName = cfg.Resource
-                        request = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.GameObject)
-                        if request then
-                          go = request.Obj
-                        end
-                        local root = ((go.transform):Find("Root")).gameObject
-                        local rootTr = root.transform
-                        for i = 0, rootTr.childCount - 1 do
-                          local child = rootTr:GetChild(i)
-                          if (string.find)(child.name, "weapon") then
-                            (child.gameObject):SetActive(false)
-                          end
-                        end
-                      else
-                        do
-                          if cfg.SubType == "Furniture" then
-                            local endList = nil
-                            if (EditorGlobal.IsEditorMode)() then
-                              endList = (EditorGlobal.GetFurnitureList)()
-                              for _,v in pairs(endList) do
-                                if v == cfg.Condition then
-                                  resName = cfg.Resource
-                                  request = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.GameObject)
-                                  if request then
-                                    go = request.Obj
-                                  end
-                                end
-                              end
-                            else
-                              do
-                                if self._isRecord then
-                                  local playBackData = (MoviePrepareData:GetInstance()):GetPlayBackData()
-                                  endList = playBackData.chose_item
-                                  for _,v in pairs(endList) do
-                                    if v == cfg.Condition then
-                                      resName = cfg.Resource
-                                      request = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.GameObject)
-                                      if request then
-                                        go = request.Obj
-                                      end
-                                    end
-                                  end
-                                else
-                                  do
-                                    endList = (HomelandMoviePrepareManager:GetInstance()):GetSelectedData(MoviePrepareType.PT_Prop)
-                                    for _,v in pairs(endList) do
-                                      if v:GetItemId() == cfg.Condition then
-                                        resName = cfg.Resource
-                                        request = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.GameObject)
-                                        if request then
-                                          go = request.Obj
-                                        end
-                                      end
-                                    end
-                                    do
-                                      resName = cfg.Resource
-                                      request = (ResourceManager:GetInstance()):SyncLoadAsset(resName, LoadType.GameObject)
-                                      if request then
-                                        go = request.Obj
-                                      end
-                                      if not request then
-                                        (Log.error)("###[HomeMovieStoryManager] cfg find asset name : ", resName)
-                                      end
-                                      return request, go, skinid
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
+        animation.clip = airAnim.clip
+      end
+    end
+    if homeReq then
+      local homeAnim = homeReq.Obj:GetComponent(typeof(UnityEngine.Animation))
+      if homeAnim then
+        local clips_home = HelperProxy:GetInstance():GetAllAnimationClip(homeAnim)
+        for i = 0, clips_home.Length - 1 do
+          if clips_home[i] == nil then
+            Log.exception("###[HomeMovieStoryManager] Pet animation is null:", petid, ", index:", i)
+          else
+            animation:AddClip(clips_home[i], clips_home[i].name)
           end
         end
       end
     end
+    if homeStoryReq then
+      local homeStoryAnim = homeStoryReq.Obj:GetComponent(typeof(UnityEngine.Animation))
+      if homeStoryAnim then
+        local clips_home = HelperProxy:GetInstance():GetAllAnimationClip(homeStoryAnim)
+        for i = 0, clips_home.Length - 1 do
+          if clips_home[i] == nil then
+            Log.exception("###[HomeStoryManager] Pet animation is null:", petid, ", index:", i)
+          else
+            animation:AddClip(clips_home[i], clips_home[i].name)
+          end
+        end
+      end
+    end
+    animation:Play(HomelandPetAnimName.Stand)
+    if airReq then
+      table.insert(self._animResList, airReq)
+    end
+    if homeReq then
+      table.insert(self._animResList, homeReq)
+    end
+    if homeStoryReq then
+      table.insert(self._animResList, homeStoryReq)
+    end
+    local rootTr = root.transform
+    for i = 0, rootTr.childCount - 1 do
+      local child = rootTr:GetChild(i)
+      if string.find(child.name, "weapon") then
+        child.gameObject:SetActive(false)
+      end
+    end
+  elseif cfg.SubType == "Player" then
+    resName = cfg.Resource
+    request = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.GameObject)
+    if request then
+      go = request.Obj
+    end
+    local _name = string.gsub(resName, ".prefab", "")
+    skinid = string.gsub(resName, ".prefab", "")
+    local _aniResReq = ResourceManager:GetInstance():SyncLoadAsset(_name .. "_battle.prefab", LoadType.GameObject)
+    local anim = _aniResReq.Obj:GetComponent(typeof(UnityEngine.Animator))
+    local animator = go:GetComponentInChildren(typeof(UnityEngine.Animator))
+    animator.runtimeAnimatorController = anim.runtimeAnimatorController
+    if _aniResReq then
+      table.insert(self._animResList, _aniResReq)
+    end
+  elseif cfg.SubType == "Other" then
+    resName = cfg.Resource
+    request = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.GameObject)
+    if request then
+      go = request.Obj
+    end
+  elseif cfg.SubType == "NPC" then
+    resName = cfg.Resource
+    request = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.GameObject)
+    if request then
+      go = request.Obj
+    end
+    local root = go.transform:Find("Root").gameObject
+    local rootTr = root.transform
+    for i = 0, rootTr.childCount - 1 do
+      local child = rootTr:GetChild(i)
+      if string.find(child.name, "weapon") then
+        child.gameObject:SetActive(false)
+      end
+    end
+  elseif cfg.SubType == "Furniture" then
+    local endList
+    if EditorGlobal.IsEditorMode() then
+      endList = EditorGlobal.GetFurnitureList()
+      for _, v in pairs(endList) do
+        if v == cfg.Condition then
+          resName = cfg.Resource
+          request = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.GameObject)
+          if request then
+            go = request.Obj
+          end
+        end
+      end
+    elseif self._isRecord then
+      local playBackData = MoviePrepareData:GetInstance():GetPlayBackData()
+      endList = playBackData.chose_item
+      for _, v in pairs(endList) do
+        if v == cfg.Condition then
+          resName = cfg.Resource
+          request = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.GameObject)
+          if request then
+            go = request.Obj
+          end
+        end
+      end
+    else
+      endList = HomelandMoviePrepareManager:GetInstance():GetSelectedData(MoviePrepareType.PT_Prop)
+      for _, v in pairs(endList) do
+        if v:GetItemId() == cfg.Condition then
+          resName = cfg.Resource
+          request = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.GameObject)
+          if request then
+            go = request.Obj
+          end
+        end
+      end
+    end
+  else
+    resName = cfg.Resource
+    request = ResourceManager:GetInstance():SyncLoadAsset(resName, LoadType.GameObject)
+    if request then
+      go = request.Obj
+    end
   end
+  if not request then
+    Log.error("###[HomeMovieStoryManager] cfg find asset name : ", resName)
+  end
+  return request, go, skinid
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager._StartSection = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local paragraph = (self._paragraphList)[self._currentParagraphID]
+function HomeMovieStoryManager:_StartSection()
+  local paragraph = self._paragraphList[self._currentParagraphID]
   if not paragraph then
-    (Log.fatal)("###[HomeMovieStoryManager] 不存在ID为" .. self._currentParagraphID .. "的剧情段落,剧情结束")
+    Log.fatal("###[HomeMovieStoryManager] 不存在ID为" .. self._currentParagraphID .. "的剧情段落,剧情结束")
     self._end = true
-    return 
+    return
   end
-  local section = (paragraph.Sections)[self._currentSectionIndex]
+  local section = paragraph.Sections[self._currentSectionIndex]
   if not section then
-    (Log.fatal)("###[HomeMovieStoryManager] 剧情段落\'" .. self._currentParagraphID .. "\'中不存在序号为" .. self._currentSectionIndex .. "的小节,剧情结束")
+    Log.fatal("###[HomeMovieStoryManager] 剧情段落'" .. self._currentParagraphID .. "'中不存在序号为" .. self._currentSectionIndex .. "的小节,剧情结束")
     self._end = true
-    return 
+    return
   end
   if paragraph.ForceAutoDialog then
-    (self._leftButtonRootGameObject):SetActive(false)
+    self._leftButtonRootGameObject:SetActive(false)
   else
-    ;
-    (self._leftButtonRootGameObject):SetActive(true)
+    self._leftButtonRootGameObject:SetActive(true)
   end
-  for trackID,track in ipairs(section) do
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._currentTrackData)[track] = false
+  for trackID, track in ipairs(section) do
+    self._currentTrackData[track] = false
     if track.RefEntityID then
-      local storyEntity = (self._storyEntityList)[track.RefEntityID]
+      local storyEntity = self._storyEntityList[track.RefEntityID]
       if storyEntity then
         storyEntity:SectionStart(track)
         if self._debugMode and self._entityInfoTemplate and storyEntity._gameObject then
-          local entityDebugInfo = ((storyEntity._gameObject).transform):Find("EntityInfo")
+          local entityDebugInfo = storyEntity._gameObject.transform:Find("EntityInfo")
           if not entityDebugInfo then
-            entityDebugInfo = ((UnityEngine.GameObject).Instantiate)(self._entityInfoTemplate, (storyEntity._gameObject).transform)
-            -- DECOMPILER ERROR at PC89: Confused about usage of register: R10 in 'UnsetPending'
-
-            ;
-            (entityDebugInfo.transform).localPosition = Vector3(-120, 40, 0)
+            entityDebugInfo = UnityEngine.GameObject.Instantiate(self._entityInfoTemplate, storyEntity._gameObject.transform)
+            entityDebugInfo.transform.localPosition = Vector3(-120, 40, 0)
             entityDebugInfo:SetActive(true)
           end
-          ;
-          (((entityDebugInfo.transform):Find("EntityIDText")):GetComponent("Text")).text = "EntityID:" .. storyEntity._ID
-          ;
-          (((entityDebugInfo.transform):Find("TrackIDText")):GetComponent("Text")).text = "TrackID:" .. trackID
+          entityDebugInfo.transform:Find("EntityIDText"):GetComponent("Text").text = "EntityID:" .. storyEntity._ID
+          entityDebugInfo.transform:Find("TrackIDText"):GetComponent("Text").text = "TrackID:" .. trackID
+        end
+      end
+    elseif track.BgmTrack then
+      self._storyBgmTrackController:SectionStart(track)
+    elseif track.CameraTrack then
+      self._storyCameraTrackController:SectionStart(track)
+    end
+  end
+  if section.ButtonVisible ~= nil then
+    self._buttonRootGameObject:SetActive(section.ButtonVisible and not self._auto and not self._hide)
+  end
+  if section.Branch then
+    local nextParagraphID, endList
+    if EditorGlobal.IsEditorMode() then
+      endList = EditorGlobal.GetFurnitureList()
+      for k, v in pairs(endList) do
+        if k == section.Branch[1].MovieItemID then
+          local itemID = v
+          for _, b in pairs(section.Branch) do
+            if tonumber(b.Condition) == itemID then
+              nextParagraphID = b.NextParagraphID
+            end
+          end
+        end
+      end
+    elseif self._isRecord then
+      local playBackData = MoviePrepareData:GetInstance():GetPlayBackData()
+      endList = playBackData.chose_item
+      for k, v in pairs(endList) do
+        if k == section.Branch[1].MovieItemID then
+          local itemID = v
+          for _, b in pairs(section.Branch) do
+            if tonumber(b.Condition) == itemID then
+              nextParagraphID = b.NextParagraphID
+            end
+          end
         end
       end
     else
-      do
-        do
-          if track.BgmTrack then
-            (self._storyBgmTrackController):SectionStart(track)
-          else
-            if track.CameraTrack then
-              (self._storyCameraTrackController):SectionStart(track)
+      endList = HomelandMoviePrepareManager:GetInstance():GetSelectedData(MoviePrepareType.PT_Prop)
+      for _, v in pairs(endList) do
+        if v:GetTitleId() == section.Branch[1].MovieItemID then
+          local itemID = v:GetItemId()
+          for _, v in pairs(section.Branch) do
+            if tonumber(v.Condition) == itemID then
+              nextParagraphID = v.NextParagraphID
             end
           end
-          -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC131: LeaveBlock: unexpected jumping out IF_STMT
-
         end
       end
+    end
+    if nextParagraphID then
+      self:SetNextParagraphID(nextParagraphID)
+      return
     end
   end
-  ;
-  (self._buttonRootGameObject):SetActive(section.ButtonVisible ~= nil and (section.ButtonVisible and ((not self._auto and not self._hide))))
-  do
-    if section.Branch then
-      local nextParagraphID, endList = nil, nil
-      if (EditorGlobal.IsEditorMode)() then
-        endList = (EditorGlobal.GetFurnitureList)()
-        for k,v in pairs(endList) do
-          if k == ((section.Branch)[1]).MovieItemID then
-            local itemID = v
-            for _,b in pairs(section.Branch) do
-              if tonumber(b.Condition) == itemID then
-                nextParagraphID = b.NextParagraphID
-              end
-            end
-          end
-        end
-      elseif self._isRecord then
-        local playBackData = (MoviePrepareData:GetInstance()):GetPlayBackData()
-        endList = playBackData.chose_item
-        for k,v in pairs(endList) do
-          if k == ((section.Branch)[1]).MovieItemID then
-            local itemID = v
-            for _,b in pairs(section.Branch) do
-              if tonumber(b.Condition) == itemID then
-                nextParagraphID = b.NextParagraphID
-              end
-            end
-          end
-        end
-      else
-        endList = (HomelandMoviePrepareManager:GetInstance()):GetSelectedData(MoviePrepareType.PT_Prop)
-        for _,v in pairs(endList) do
-          if v:GetTitleId() == ((section.Branch)[1]).MovieItemID then
-            local itemID = v:GetItemId()
-            for _,v in pairs(section.Branch) do
-              if tonumber(v.Condition) == itemID then
-                nextParagraphID = v.NextParagraphID
-              end
-            end
-          end
-        end
-      end
-      if nextParagraphID then
-        self:SetNextParagraphID(nextParagraphID)
-        return 
-      end
-    end
-    if section.NextParagraphID then
-      self:SetNextParagraphID(section.NextParagraphID)
-    end
-    -- DECOMPILER ERROR: 14 unprocessed JMP targets
+  if section.NextParagraphID then
+    self:SetNextParagraphID(section.NextParagraphID)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager._EndSection = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  for track,_ in pairs(self._currentTrackData) do
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._currentTrackData)[track] = true
+function HomeMovieStoryManager:_EndSection()
+  for track, _ in pairs(self._currentTrackData) do
+    self._currentTrackData[track] = true
     if track.RefEntityID then
-      local storyEntity = (self._storyEntityList)[track.RefEntityID]
+      local storyEntity = self._storyEntityList[track.RefEntityID]
       if storyEntity then
         storyEntity:SectionEnd()
       end
-    else
-      do
-        do
-          if track.BgmTrack then
-            (self._storyBgmTrackController):SectionEnd()
-          else
-            if track.CameraTrack then
-              (self._storyCameraTrackController):SectionEnd()
-            end
-          end
-          -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC30: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif track.BgmTrack then
+      self._storyBgmTrackController:SectionEnd()
+    elseif track.CameraTrack then
+      self._storyCameraTrackController:SectionEnd()
     end
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager._UpdateTracks = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function HomeMovieStoryManager:_UpdateTracks()
   if self._skipGaragraph then
     self._skipGaragraph = false
     return true
   end
   local allTrackEnd = true
-  for track,trackEnd in pairs(self._currentTrackData) do
+  for track, trackEnd in pairs(self._currentTrackData) do
     if not trackEnd then
       if track.RefEntityID then
-        local storyEntity = (self._storyEntityList)[track.RefEntityID]
+        local storyEntity = self._storyEntityList[track.RefEntityID]
         local trackEnd = true
         if storyEntity then
           trackEnd = storyEntity:Update(self._currentTime)
         end
-        -- DECOMPILER ERROR at PC27: Confused about usage of register: R9 in 'UnsetPending'
-
-        ;
-        (self._currentTrackData)[track] = trackEnd
+        self._currentTrackData[track] = trackEnd
         if not trackEnd then
           allTrackEnd = trackEnd
         end
-      else
-        do
-          if track.BgmTrack then
-            (self._storyBgmTrackController):Update(self._currentTime)
-          else
-            if track.CameraTrack then
-              local cameraTrackEnd = (self._storyCameraTrackController):Update(self._currentTime)
-              if not cameraTrackEnd then
-                allTrackEnd = cameraTrackEnd
-              end
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC50: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+      elseif track.BgmTrack then
+        self._storyBgmTrackController:Update(self._currentTime)
+      elseif track.CameraTrack then
+        local cameraTrackEnd = self._storyCameraTrackController:Update(self._currentTime)
+        if not cameraTrackEnd then
+          allTrackEnd = cameraTrackEnd
         end
       end
     end
@@ -921,109 +690,72 @@ HomeMovieStoryManager._UpdateTracks = function(self)
   return allTrackEnd
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.IsEnd = function(self)
-  -- function num : 0_32
+function HomeMovieStoryManager:IsEnd()
   return self._end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.Update = function(self, delteTimeMS)
-  -- function num : 0_33 , upvalues : _ENV
+function HomeMovieStoryManager:Update(delteTimeMS)
   if self._end then
-    return 
+    return
   end
   self._currentTime = self._currentTime + delteTimeMS / 1000
   local sectionEnd = self:_UpdateTracks()
   if sectionEnd then
     self:_EndSection()
     self._currentSectionIndex = self._currentSectionIndex + 1
-    if (((self._paragraphList)[self._currentParagraphID]).Sections)[self._currentSectionIndex] then
+    if self._paragraphList[self._currentParagraphID].Sections[self._currentSectionIndex] then
       self:_StartSection()
       self._currentTime = 0
       self:_UpdateTracks()
+    elseif not self._nextParagraphID or self._nextParagraphID == self._currentParagraphID then
+      self._end = true
     else
-      if not self._nextParagraphID or self._nextParagraphID == self._currentParagraphID then
-        self._end = true
-      else
-        self._currentParagraphID = self._nextParagraphID
-        do
-          if self._breakParagraphIds then
-            local breakIdx = (table.ikey)(self._breakParagraphIds, self._currentParagraphID)
-            if breakIdx then
-              (LocalDB.SetInt)(self._localBreakParapraphMark, breakIdx)
-            end
-          end
-          self._currentSectionIndex = 1
-          self._currentTime = 0
-          self:_StartSection()
-          self:_UpdateTracks()
-          self:_UpdateLoopCameraShake(delteTimeMS / 1000)
-          self:_UpdateCameraPathAndFov(delteTimeMS / 1000)
+      self._currentParagraphID = self._nextParagraphID
+      if self._breakParagraphIds then
+        local breakIdx = table.ikey(self._breakParagraphIds, self._currentParagraphID)
+        if breakIdx then
+          LocalDB.SetInt(self._localBreakParapraphMark, breakIdx)
         end
       end
+      self._currentSectionIndex = 1
+      self._currentTime = 0
+      self:_StartSection()
+      self:_UpdateTracks()
     end
+  end
+  self:_UpdateLoopCameraShake(delteTimeMS / 1000)
+  self:_UpdateCameraPathAndFov(delteTimeMS / 1000)
+end
+
+function HomeMovieStoryManager:RemoveRecoverStandEntity(entityid)
+  Log.debug("###[recover stand] 移除entity:", entityid)
+  if self._recovertStandList[entityid] then
+    local hadEvent = self._recovertStandList[entityid]
+    GameGlobal.Timer():CancelEvent(hadEvent)
+    self._recovertStandList[entityid] = nil
+    Log.debug("###[recover stand] 移除成功")
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.RemoveRecoverStandEntity = function(self, entityid)
-  -- function num : 0_34 , upvalues : _ENV
-  (Log.debug)("###[recover stand] 移除entity:", entityid)
-  if (self._recovertStandList)[entityid] then
-    local hadEvent = (self._recovertStandList)[entityid]
-    ;
-    ((GameGlobal.Timer)()):CancelEvent(hadEvent)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._recovertStandList)[entityid] = nil
-    ;
-    (Log.debug)("###[recover stand] 移除成功")
+function HomeMovieStoryManager:AddRecoverStandEntity(length, entityid)
+  Log.debug("###[recover stand] 添加entity:", entityid)
+  if self._recovertStandList[entityid] then
+    local hadEvent = self._recovertStandList[entityid]
+    GameGlobal.Timer():CancelEvent(hadEvent)
+    hadEvent = nil
+    Log.debug("###[recover stand] 已经存在，移除成功")
   end
-end
-
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.AddRecoverStandEntity = function(self, length, entityid)
-  -- function num : 0_35 , upvalues : _ENV
-  (Log.debug)("###[recover stand] 添加entity:", entityid)
-  do
-    if (self._recovertStandList)[entityid] then
-      local hadEvent = (self._recovertStandList)[entityid]
-      ;
-      ((GameGlobal.Timer)()):CancelEvent(hadEvent)
-      hadEvent = nil
-      ;
-      (Log.debug)("###[recover stand] 已经存在，移除成功")
-    end
-    local event = ((GameGlobal.Timer)()):AddEvent(length, function(entityid)
-    -- function num : 0_35_0 , upvalues : self
+  local event = GameGlobal.Timer():AddEvent(length, function(entityid)
     self:RecoverStand(entityid)
-  end
-, entityid)
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._recovertStandList)[entityid] = event
-    ;
-    (Log.debug)("###[recover stand] 添加成功")
-  end
+  end, entityid)
+  self._recovertStandList[entityid] = event
+  Log.debug("###[recover stand] 添加成功")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.RecoverStand = function(self, entityid)
-  -- function num : 0_36 , upvalues : _ENV
-  (Log.debug)("###[recover stand] 回调entity:", entityid)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._recovertStandList)[entityid] = nil
-  local entity = (self._storyEntityList)[entityid]
+function HomeMovieStoryManager:RecoverStand(entityid)
+  Log.debug("###[recover stand] 回调entity:", entityid)
+  self._recovertStandList[entityid] = nil
+  local entity = self._storyEntityList[entityid]
   local go = entity:GetEntityGo()
   local animCmp = go:GetComponentInChildren(typeof(UnityEngine.Animation))
   if animCmp then
@@ -1031,150 +763,85 @@ HomeMovieStoryManager.RecoverStand = function(self, entityid)
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.StartLoopShake = function(self, shakeData)
-  -- function num : 0_37 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._loopCameraShakeData).running = true
+function HomeMovieStoryManager:StartLoopShake(shakeData)
+  self._loopCameraShakeData.running = true
   local duration = shakeData.Duration
   if shakeData.HandHeld == true then
-    duration = ((math.random)() * 0.6 + 0.6) * duration
+    duration = (math.random() * 0.6 + 0.6) * duration
   end
-  ;
-  (self._cameraTr):DOKill()
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).shakeData = shakeData
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).timer = 0
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).curDuration = duration
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).tweener = (self._cameraTr):DOShakePosition(duration, Vector3((((self._loopCameraShakeData).shakeData).Strength)[1], (((self._loopCameraShakeData).shakeData).Strength)[2], (((self._loopCameraShakeData).shakeData).Strength)[3]), ((self._loopCameraShakeData).shakeData).Vibrato, ((self._loopCameraShakeData).shakeData).RandomNess, false, ((self._loopCameraShakeData).shakeData).FadeOut)
+  self._cameraTr:DOKill()
+  self._loopCameraShakeData.shakeData = shakeData
+  self._loopCameraShakeData.timer = 0
+  self._loopCameraShakeData.curDuration = duration
+  self._loopCameraShakeData.tweener = self._cameraTr:DOShakePosition(duration, Vector3(self._loopCameraShakeData.shakeData.Strength[1], self._loopCameraShakeData.shakeData.Strength[2], self._loopCameraShakeData.shakeData.Strength[3]), self._loopCameraShakeData.shakeData.Vibrato, self._loopCameraShakeData.shakeData.RandomNess, false, self._loopCameraShakeData.shakeData.FadeOut)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.StopLoopShake = function(self, shakeData)
-  -- function num : 0_38 , upvalues : _ENV
-  if not (self._loopCameraShakeData).running then
-    return 
+function HomeMovieStoryManager:StopLoopShake(shakeData)
+  if not self._loopCameraShakeData.running then
+    return
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).running = false
-  ;
-  (self._cameraTr):DOKill()
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._cameraTr).localPosition = Vector3(0, 0, 0)
+  self._loopCameraShakeData.running = false
+  self._cameraTr:DOKill()
+  self._cameraTr.localPosition = Vector3(0, 0, 0)
   if shakeData and shakeData.FadeOut then
-    (self._cameraTr):DOShakePosition(shakeData.Duration, Vector3((((self._loopCameraShakeData).shakeData).Strength)[1], (((self._loopCameraShakeData).shakeData).Strength)[2], (((self._loopCameraShakeData).shakeData).Strength)[3]), ((self._loopCameraShakeData).shakeData).Vibrato, ((self._loopCameraShakeData).shakeData).RandomNess, false, true)
+    self._cameraTr:DOShakePosition(shakeData.Duration, Vector3(self._loopCameraShakeData.shakeData.Strength[1], self._loopCameraShakeData.shakeData.Strength[2], self._loopCameraShakeData.shakeData.Strength[3]), self._loopCameraShakeData.shakeData.Vibrato, self._loopCameraShakeData.shakeData.RandomNess, false, true)
   end
   self._loopCameraShakeData = {}
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager._UpdateLoopCameraShake = function(self, deltaTime)
-  -- function num : 0_39 , upvalues : _ENV
-  if not (self._loopCameraShakeData).running then
-    return 
+function HomeMovieStoryManager:_UpdateLoopCameraShake(deltaTime)
+  if not self._loopCameraShakeData.running then
+    return
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._loopCameraShakeData).timer = (self._loopCameraShakeData).timer + deltaTime
-  if (self._loopCameraShakeData).curDuration < (self._loopCameraShakeData).timer then
-    local duration = ((self._loopCameraShakeData).shakeData).Duration
-    if ((self._loopCameraShakeData).shakeData).HandHeld == true then
-      duration = ((math.random)() * 0.6 + 0.6) * duration
+  self._loopCameraShakeData.timer = self._loopCameraShakeData.timer + deltaTime
+  if self._loopCameraShakeData.timer > self._loopCameraShakeData.curDuration then
+    local duration = self._loopCameraShakeData.shakeData.Duration
+    if self._loopCameraShakeData.shakeData.HandHeld == true then
+      duration = (math.random() * 0.6 + 0.6) * duration
     end
-    ;
-    (self._cameraTr):DOKill()
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._loopCameraShakeData).timer = 0
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._loopCameraShakeData).curDuration = duration
-    -- DECOMPILER ERROR at PC66: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._loopCameraShakeData).tweener = (self._cameraTr):DOShakePosition(duration, Vector3((((self._loopCameraShakeData).shakeData).Strength)[1], (((self._loopCameraShakeData).shakeData).Strength)[2], (((self._loopCameraShakeData).shakeData).Strength)[3]), ((self._loopCameraShakeData).shakeData).Vibrato, ((self._loopCameraShakeData).shakeData).RandomNess, false, ((self._loopCameraShakeData).shakeData).FadeOut)
+    self._cameraTr:DOKill()
+    self._loopCameraShakeData.timer = 0
+    self._loopCameraShakeData.curDuration = duration
+    self._loopCameraShakeData.tweener = self._cameraTr:DOShakePosition(duration, Vector3(self._loopCameraShakeData.shakeData.Strength[1], self._loopCameraShakeData.shakeData.Strength[2], self._loopCameraShakeData.shakeData.Strength[3]), self._loopCameraShakeData.shakeData.Vibrato, self._loopCameraShakeData.shakeData.RandomNess, false, self._loopCameraShakeData.shakeData.FadeOut)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager._UpdateCameraPathAndFov = function(self, deltaTime)
-  -- function num : 0_40
+function HomeMovieStoryManager:_UpdateCameraPathAndFov(deltaTime)
   if self._storyCameraTrackController then
-    (self._storyCameraTrackController):OnUpdate(deltaTime)
+    self._storyCameraTrackController:OnUpdate(deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.Destroy = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function HomeMovieStoryManager:Destroy()
   if self._recovertStandList then
-    do
-      for key,event in pairs(self._recovertStandList) do
-        ((GameGlobal.Timer)()):CancelEvent(event)
-      end
+    for key, event in pairs(self._recovertStandList) do
+      GameGlobal.Timer():CancelEvent(event)
     end
   end
-  do
-    if self._debugMode then
-      do
-        local costSecond = (os.time)() - self._startTime
-        ;
-        (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_41_0 , upvalues : _ENV, self, costSecond
-    ((GameGlobal.GetModule)(RoleModule)):OnEndStory(TT, self._storyID, self._currentParagraphID, self._currentSectionIndex, self._BeSkipped, costSecond)
+  if self._debugMode then
+  else
+    local costSecond = os.time() - self._startTime
+    TaskManager:GetInstance():StartTask(function(TT)
+      GameGlobal.GetModule(RoleModule):OnEndStory(TT, self._storyID, self._currentParagraphID, self._currentSectionIndex, self._BeSkipped, costSecond)
+    end, self)
   end
-, self)
-        ;
-        (Log.sys)("###[HomeMovieStoryManager] 剧情资源销毁")
-        for _,storyEntity in pairs(self._storyEntityList) do
-          storyEntity:Destroy()
-        end
-        self:DisposeAnimRes()
-        ;
-        (self._layerDic):Clear()
-        self:StopLoopShake(nil)
-        ;
-        (AudioHelperController.ReleaseUISoundById)(CriAudioIDConst.SoundStoryClick)
-      end
-    end
+  Log.sys("###[HomeMovieStoryManager] 剧情资源销毁")
+  for _, storyEntity in pairs(self._storyEntityList) do
+    storyEntity:Destroy()
   end
+  self:DisposeAnimRes()
+  self._layerDic:Clear()
+  self:StopLoopShake(nil)
+  AudioHelperController.ReleaseUISoundById(CriAudioIDConst.SoundStoryClick)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.SkipParagraph = function(self)
-  -- function num : 0_42 , upvalues : _ENV
+function HomeMovieStoryManager:SkipParagraph()
   if self._breakParagraphIds then
-    local breakIdx = (LocalDB.GetInt)(self._localBreakParapraphMark)
-    if (self._breakParagraphIds)[breakIdx + 1] then
+    local breakIdx = LocalDB.GetInt(self._localBreakParapraphMark)
+    if self._breakParagraphIds[breakIdx + 1] then
       self._skipGaragraph = true
-      self._currentParagraphID = (self._breakParagraphIds)[breakIdx + 1]
-      ;
-      (LocalDB.SetInt)(self._localBreakParapraphMark, breakIdx + 1)
+      self._currentParagraphID = self._breakParagraphIds[breakIdx + 1]
+      LocalDB.SetInt(self._localBreakParapraphMark, breakIdx + 1)
       self._currentSectionIndex = 0
       self._currentTime = 0
     else
@@ -1182,113 +849,74 @@ HomeMovieStoryManager.SkipParagraph = function(self)
       self:SkipStory()
     end
   else
-    do
-      self._skipGaragraph = false
-      self:SkipStory()
-    end
+    self._skipGaragraph = false
+    self:SkipStory()
   end
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.SkipStory = function(self)
-  -- function num : 0_43 , upvalues : _ENV
+function HomeMovieStoryManager:SkipStory()
   if self._debugMode then
-    (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_43_0 , upvalues : _ENV, self
-    ((GameGlobal.GetModule)(RoleModule)):OnSkipStory(TT, self._storyID)
+  else
+    TaskManager:GetInstance():StartTask(function(TT)
+      GameGlobal.GetModule(RoleModule):OnSkipStory(TT, self._storyID)
+    end, self)
   end
-, self)
-    self._BeSkipped = 1
-    self._end = true
-    self:StopLoopShake(nil)
-  end
+  self._BeSkipped = 1
+  self._end = true
+  self:StopLoopShake(nil)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.HideUI = function(self, hide)
-  -- function num : 0_44 , upvalues : _ENV
+function HomeMovieStoryManager:HideUI(hide)
   self._hide = hide
-  ;
-  (self._buttonRootGameObject):SetActive(not hide)
-  for index,storyEntity in ipairs(self._storyEntityList) do
+  self._buttonRootGameObject:SetActive(not hide)
+  for index, storyEntity in ipairs(self._storyEntityList) do
     if storyEntity:GetEntityType() == HomeStoryEntityType.Dialog then
       storyEntity:HideUI(hide)
     end
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.SetAuto = function(self, auto)
-  -- function num : 0_45 , upvalues : _ENV
+function HomeMovieStoryManager:SetAuto(auto)
   self._auto = auto
-  ;
-  (self._buttonRootGameObject):SetActive(not auto)
-  for index,storyEntity in ipairs(self._storyEntityList) do
+  self._buttonRootGameObject:SetActive(not auto)
+  for index, storyEntity in ipairs(self._storyEntityList) do
     if storyEntity:GetEntityType() == HomeStoryEntityType.Dialog then
       storyEntity:SetAuto(auto)
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetCurStoryID = function(self)
-  -- function num : 0_46
+function HomeMovieStoryManager:GetCurStoryID()
   return self._storyID
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetCurParagraphID = function(self)
-  -- function num : 0_47
+function HomeMovieStoryManager:GetCurParagraphID()
   return self._currentParagraphID
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetCurParagraph = function(self)
-  -- function num : 0_48
-  return (self._paragraphList)[self._currentParagraphID]
+function HomeMovieStoryManager:GetCurParagraph()
+  return self._paragraphList[self._currentParagraphID]
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetCurSectionIndex = function(self)
-  -- function num : 0_49
+function HomeMovieStoryManager:GetCurSectionIndex()
   return self._currentSectionIndex
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetCurrentTime = function(self)
-  -- function num : 0_50
+function HomeMovieStoryManager:GetCurrentTime()
   return self._currentTime
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetCurLanguageStr = function(self)
-  -- function num : 0_51 , upvalues : _ENV
-  do
-    if not self._curLanguageStr then
-      local lan = (Localization.GetCurLanguage)()
-      if type(lan) ~= "string" then
-        lan = lan:ToString()
-      end
-      self._curLanguageStr = lan
+function HomeMovieStoryManager:GetCurLanguageStr()
+  if not self._curLanguageStr then
+    local lan = Localization.GetCurLanguage()
+    if type(lan) ~= "string" then
+      lan = lan:ToString()
     end
-    return self._curLanguageStr
+    self._curLanguageStr = lan
   end
+  return self._curLanguageStr
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeMovieStoryManager.GetStoryCamera = function(self)
-  -- function num : 0_52
+function HomeMovieStoryManager:GetStoryCamera()
   return self._mainCameraTr
 end
-
-

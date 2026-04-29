@@ -1,33 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_revert_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_view_base_r")
 _class("BuffViewDoRevertHP", BuffViewBase)
 BuffViewDoRevertHP = BuffViewDoRevertHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDoRevertHP.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewDoRevertHP:PlayView(TT)
   local entity = self._entity
-  local damageInfo = (self._buffResult):GetDamageInfo()
+  local damageInfo = self._buffResult:GetDamageInfo()
   local materialEntity = entity
   if entity:HasTeam() then
     materialEntity = entity:GetTeamLeaderPetEntity()
   end
   if damageInfo:GetDamageType() == DamageType.Recover then
     if materialEntity:MaterialAnimationComponent() then
-      (materialEntity:MaterialAnimationComponent()):PlayCure()
+      materialEntity:MaterialAnimationComponent():PlayCure()
     end
-    local playDamageService = (self._world):GetService("PlayDamage")
+    local playDamageService = self._world:GetService("PlayDamage")
     playDamageService:AsyncUpdateHPAndDisplayDamage(materialEntity, damageInfo)
   else
-    do
-      local playBuffSvc = (self._world):GetService("PlayBuff")
-      playBuffSvc:PlayDamageBuff(TT, self)
-    end
+    local playBuffSvc = self._world:GetService("PlayBuff")
+    playBuffSvc:PlayDamageBuff(TT, self)
   end
 end
-
-

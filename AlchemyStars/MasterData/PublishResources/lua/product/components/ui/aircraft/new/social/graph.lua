@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/graph.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("graph_vertex", Object)
 graph_vertex = graph_vertex
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-graph_vertex.Constructor = function(self, data)
-  -- function num : 0_0
+function graph_vertex:Constructor(data)
   self.data = data
   self.firstEdge = nil
   self.isVisited = false
@@ -16,72 +9,52 @@ end
 
 _class("graph_node", Object)
 graph_node = graph_node
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-graph_node.Constructor = function(self, vertex)
-  -- function num : 0_1
+function graph_node:Constructor(vertex)
   self.adjvex = vertex
   self.next = nil
 end
 
 _class("graph", Object)
 graph = graph
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-graph.Constructor = function(self)
-  -- function num : 0_2
+function graph:Constructor()
   self.items = {}
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.GetItems = function(self)
-  -- function num : 0_3
+function graph:GetItems()
   return self.items
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.AddVertex = function(self, data)
-  -- function num : 0_4 , upvalues : _ENV
+function graph:AddVertex(data)
   if self:Contain(data) then
-    (Log.error)("添加了重复的顶点")
-    return 
+    Log.error("添加了重复的顶点")
+    return
   end
   local newVertex = graph_vertex:New(data)
-  ;
-  (table.insert)(self.items, newVertex)
+  table.insert(self.items, newVertex)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.Clear = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (table.clear)(self.items)
+function graph:Clear()
+  table.clear(self.items)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.AddEdge = function(self, from, to)
-  -- function num : 0_6 , upvalues : _ENV
+function graph:AddEdge(from, to)
   local fromVertex = self:Find(from)
   if not fromVertex then
-    (Log.error)("头顶点不存在！")
-    return 
+    Log.error("头顶点不存在！")
+    return
   end
   local toVertex = self:Find(to)
   if not toVertex then
-    (Log.error)("尾顶点不存在！")
-    return 
+    Log.error("尾顶点不存在！")
+    return
   end
   self:_AddDirectedEdge(fromVertex, toVertex)
   self:_AddDirectedEdge(toVertex, fromVertex)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.AddDirectedEdge = function(self, from, to)
-  -- function num : 0_7
+function graph:AddDirectedEdge(from, to)
   local fromVertex = self:Find(from)
   if not fromVertex then
     return nil
@@ -93,16 +66,13 @@ graph.AddDirectedEdge = function(self, from, to)
   self:_AddDirectedEdge(fromVertex, toVertex)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-graph._AddDirectedEdge = function(self, fromVertex, toVertex)
-  -- function num : 0_8 , upvalues : _ENV
+function graph:_AddDirectedEdge(fromVertex, toVertex)
   if fromVertex.firstEdge == nil then
     fromVertex.firstEdge = graph_node:New(toVertex)
   else
-    local temp = nil
+    local temp
     local node = fromVertex.firstEdge
-    while node ~= nil and (node.adjvex).data ~= toVertex.data do
+    while node ~= nil and node.adjvex.data ~= toVertex.data do
       temp = node
       node = node.next
     end
@@ -111,11 +81,8 @@ graph._AddDirectedEdge = function(self, fromVertex, toVertex)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.Find = function(self, data)
-  -- function num : 0_9 , upvalues : _ENV
-  for index,vertex in ipairs(self.items) do
+function graph:Find(data)
+  for index, vertex in ipairs(self.items) do
     if vertex.data == data then
       return vertex
     end
@@ -123,11 +90,8 @@ graph.Find = function(self, data)
   return nil
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.Contain = function(self, data)
-  -- function num : 0_10 , upvalues : _ENV
-  for index,vertex in ipairs(self.items) do
+function graph:Contain(data)
+  for index, vertex in ipairs(self.items) do
     if vertex.data == data then
       return true
     end
@@ -135,95 +99,62 @@ graph.Contain = function(self, data)
   return false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.GetGraphInfo = function(self, isDirectedGraph)
-  -- function num : 0_11 , upvalues : _ENV
+function graph:GetGraphInfo(isDirectedGraph)
   local sb = ""
-  for index,v in ipairs(self.items) do
+  for index, v in ipairs(self.items) do
     sb = sb .. tostring(v.data) .. ":"
-    do
-      do
-        if v.firstEdge ~= nil then
-          local temp = v.firstEdge
-          while temp ~= nil do
-            if isDirectedGraph then
-              sb = sb .. tostring(v.data) .. "→" .. tostring((temp.adjvex).data) .. " "
-            else
-              sb = sb .. tostring((temp.adjvex).data)
-            end
-            temp = temp.next
-          end
+    if v.firstEdge ~= nil then
+      local temp = v.firstEdge
+      while temp ~= nil do
+        if isDirectedGraph then
+          sb = sb .. tostring(v.data) .. "→" .. tostring(temp.adjvex.data) .. " "
+        else
+          sb = sb .. tostring(temp.adjvex.data)
         end
-        sb = sb .. "\r\n"
-        -- DECOMPILER ERROR at PC42: LeaveBlock: unexpected jumping out DO_STMT
-
+        temp = temp.next
       end
     end
+    sb = sb .. "\r\n"
   end
   return sb
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.InitVisited = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  for index,v in ipairs(self.items) do
+function graph:InitVisited()
+  for index, v in ipairs(self.items) do
     v.isVisited = false
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.BFSTraverse = function(self, index)
-  -- function num : 0_13
+function graph:BFSTraverse(index)
   self:InitVisited()
-  return self:BFS((self.items)[index])
+  return self:BFS(self.items[index])
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.BFS = function(self, v)
-  -- function num : 0_14 , upvalues : _ENV
+function graph:BFS(v)
   local tbl = {}
   v.isVisited = true
   local verQueue = AircraftQueue:New()
   verQueue:Enqueue(v)
-  ;
-  (table.insert)(tbl, v.data)
+  table.insert(tbl, v.data)
   while verQueue:Count() > 0 do
     local w = verQueue:Dequeue()
     local node = w.firstEdge
-    while 1 do
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R6 in 'UnsetPending'
-
-      if node ~= nil then
-        if (node.adjvex).isVisited == false then
-          (node.adjvex).isVisited = true
-          ;
-          (table.insert)(tbl, (node.adjvex).data)
-          verQueue:Enqueue(node.adjvex)
-        end
-        node = node.next
-        -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC38: LeaveBlock: unexpected jumping out IF_STMT
-
+    while node ~= nil do
+      if node.adjvex.isVisited == false then
+        node.adjvex.isVisited = true
+        table.insert(tbl, node.adjvex.data)
+        verQueue:Enqueue(node.adjvex)
       end
+      node = node.next
     end
   end
-  do
-    local str = ""
-    for index,value in ipairs(tbl) do
-    end
-    return tbl
+  local str = ""
+  for index, value in ipairs(tbl) do
   end
+  return tbl
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-graph.graphTraverseTest = function()
-  -- function num : 0_15 , upvalues : _ENV
+function graph.graphTraverseTest()
   local adjList = graph:New()
   adjList:Clear()
   adjList:AddVertex("A")
@@ -233,9 +164,6 @@ graph.graphTraverseTest = function()
   adjList:AddDirectedEdge("C", "A")
   adjList:AddDirectedEdge("B", "A")
   adjList:AddDirectedEdge("A", "B")
-  ;
-  (Log.error)("广度优先遍历：")
+  Log.error("广度优先遍历：")
   local queue = adjList:BFSTraverse(1)
 end
-
-

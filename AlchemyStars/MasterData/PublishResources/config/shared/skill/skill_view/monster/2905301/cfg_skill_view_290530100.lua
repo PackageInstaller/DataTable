@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2905301/cfg_skill_view_290530100.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayAudio,audioID=6295,audioType=1; PlayTeamHUDVisible,visible=0; PlayCasterControlOutLine,enable=0; PlayCasterControlGridDown,enable=0; PlayCasterHUDVisible,visible=0; PlayCameraEffect,effectID=290530102; Wait,waitTime=2300; PlayCameraEffect,effectID=290530104; Wait,waitTime=100; PlayCasterControlOutLine,enable=1; PlayCasterControlGridDown,enable=1; PlayCasterAnimation,animName=Birth; PlayCasterVisible,visible=1; PlayCasterBindEffect,effectID=290530103; PlayCasterMaterialAnim,animName=eff_2905301_transform_mat; DataSelectBuff,buffIndex=1; Jump,condition=CheckBuffIndexValid,result=0,goto=phaseEnd,label=buffLoop; PlayTargetAddBuff,buffID=PARAM.buffID1; PlayTargetAddBuff,buffID=PARAM.buffID2; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=buffLoop; Wait,waitTime=1300; PlayTeamHUDVisible,visible=1; PlayCasterHUDVisible,visible=1; Wait,waitTime=1000; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID=6295,audioType=1; PlayTeamHUDVisible,visible=0; PlayCasterControlOutLine,enable=0; PlayCasterControlGridDown,enable=0; PlayCasterHUDVisible,visible=0; PlayCameraEffect,effectID=290530102; Wait,waitTime=2300; PlayCameraEffect,effectID=290530104; Wait,waitTime=100; PlayCasterControlOutLine,enable=1; PlayCasterControlGridDown,enable=1; PlayCasterAnimation,animName=Birth; PlayCasterVisible,visible=1; PlayCasterBindEffect,effectID=290530103; PlayCasterMaterialAnim,animName=eff_2905301_transform_mat; DataSelectBuff,buffIndex=1; Jump,condition=CheckBuffIndexValid,result=0,goto=phaseEnd,label=buffLoop; PlayTargetAddBuff,buffID=PARAM.buffID1; PlayTargetAddBuff,buffID=PARAM.buffID2; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=buffLoop; Wait,waitTime=1300; PlayTeamHUDVisible,visible=1; PlayCasterHUDVisible,visible=1; Wait,waitTime=1000; "
+    }
+  }
 }
 return config, "ID", key
-

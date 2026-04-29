@@ -1,30 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/ui_n27_inner_game_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN27PostInnerGameController", UIController)
 UIN27PostInnerGameController = UIN27PostInnerGameController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN27PostInnerGameController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN27PostInnerGameController:LoadDataOnEnter(TT, res, uiParams)
   local campaignModule = self:GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._component = (self._campaign):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
-  self._componentInfo = (self._campaign):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
+  self._component = self._campaign:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
+  self._componentInfo = self._campaign:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN27PostInnerGameController:OnShow(uiParams)
   self._MissionID = uiParams[1] or 6
   self:InitGameConfig()
   self:InitWidget()
@@ -34,22 +23,26 @@ UIN27PostInnerGameController.OnShow = function(self, uiParams)
   self:InitOrderGroup()
   self:InitTimeCounter()
   self:StartGame()
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = true
+  UnityEngine.Input.multiTouchEnabled = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.InitGameConfig = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN27PostInnerGameController:InitGameConfig()
   self._MainGridWidth = 5
   self._MainGridHeight = 5
   self._MainGridPixel = 625
   self._AllGameTypeID = 99
-  self._RotationList = {0, 90, 180, 270}
-  self._TimeCountSprNameList = {"n27_yz_wf_first", "n27_yz_wf_second", "n27_yz_wf_third", "n27_yz_wf_fourth"}
+  self._RotationList = {
+    0,
+    90,
+    180,
+    270
+  }
+  self._TimeCountSprNameList = {
+    "n27_yz_wf_first",
+    "n27_yz_wf_second",
+    "n27_yz_wf_third",
+    "n27_yz_wf_fourth"
+  }
   self._StartGameTime = 3
   self._RunTime = 0
   self._GameItemDic = {}
@@ -79,80 +72,56 @@ UIN27PostInnerGameController.InitGameConfig = function(self)
   self._EndGame = false
   self._IsAnimated = false
   self._BlockPixel = self._MainGridPixel / self._MainGridWidth
-  self._Input = (GameGlobal.EngineInput)()
-  self._MousePresent = ((GameGlobal.EngineInput)()).mousePresent
+  self._Input = GameGlobal.EngineInput()
+  self._MousePresent = GameGlobal.EngineInput().mousePresent
   self._TimerList = {}
-  local missionCfg = (Cfg.cfg_component_post_station_game_mission)({ID = self._MissionID})
+  local missionCfg = Cfg.cfg_component_post_station_game_mission({
+    ID = self._MissionID
+  })
   if missionCfg then
     self._MissionCfg = missionCfg[1]
-    self._GameTime = (self._MissionCfg).Time
-    self._DayTextStr = (self._MissionCfg).Title
-    local taskIDList = (self._MissionCfg).Target
-    local orderIDList = (self._MissionCfg).OrderList
-    for _,taskID in pairs(taskIDList) do
-      local taskCfg = (Cfg.cfg_component_post_station_game_mission_target)({ID = taskID})
+    self._GameTime = self._MissionCfg.Time
+    self._DayTextStr = self._MissionCfg.Title
+    local taskIDList = self._MissionCfg.Target
+    local orderIDList = self._MissionCfg.OrderList
+    for _, taskID in pairs(taskIDList) do
+      local taskCfg = Cfg.cfg_component_post_station_game_mission_target({ID = taskID})
       if taskCfg then
-        (table.insert)(self._CurTaskList, taskCfg[1])
+        table.insert(self._CurTaskList, taskCfg[1])
       end
     end
-    for _,orderID in pairs(orderIDList) do
-      local orderCfg = (Cfg.cfg_component_post_station_game_mission_order)({ID = orderID})
+    for _, orderID in pairs(orderIDList) do
+      local orderCfg = Cfg.cfg_component_post_station_game_mission_order({ID = orderID})
       if orderCfg then
-        (table.insert)(self._AllOrderList, orderCfg[1])
+        table.insert(self._AllOrderList, orderCfg[1])
       end
     end
   end
-  do
-    local itemCfg = (table.cloneconf)((Cfg.cfg_component_post_station_game_item)())
-    for _,item in pairs(itemCfg) do
-      local unLock = false
-      for _,missionID in pairs(item.MissionList) do
-        if missionID == self._MissionID then
-          unLock = true
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC161: Confused about usage of register: R9 in 'UnsetPending'
-
-        if unLock then
-          if not (self._GameItemDic)[item.ItemType] then
-            (self._GameItemDic)[item.ItemType] = {}
-            -- DECOMPILER ERROR at PC166: Confused about usage of register: R9 in 'UnsetPending'
-
-            ;
-            ((self._GameItemDic)[item.ItemType])[item.ID] = item
-            do
-              local itemTypeCfg = (Cfg.cfg_post_station_game_item_type)({ItemType = item.ItemType})
-              -- DECOMPILER ERROR at PC178: Confused about usage of register: R10 in 'UnsetPending'
-
-              if itemTypeCfg then
-                (self._GameItemTypeDic)[item.ItemType] = itemTypeCfg[1]
-              end
-              self._AllGameItemCount = self._AllGameItemCount + 1
-              -- DECOMPILER ERROR at PC182: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC182: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC182: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC182: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC182: LeaveBlock: unexpected jumping out DO_STMT
-
-            end
-          end
-        end
+  local itemCfg = table.cloneconf(Cfg.cfg_component_post_station_game_item())
+  for _, item in pairs(itemCfg) do
+    local unLock = false
+    for _, missionID in pairs(item.MissionList) do
+      if missionID == self._MissionID then
+        unLock = true
       end
     end
-    self._UIN27PostPackageGridManager = UIN27PostPackageGridManager:New(self._MainGridWidth, self._MainGridHeight)
-    self._UIN27MissionTaskCondition = UIN27MissionTaskCondition:New()
+    if unLock then
+      self._GameItemDic[item.ItemType] = self._GameItemDic[item.ItemType] or {}
+      self._GameItemDic[item.ItemType][item.ID] = item
+      local itemTypeCfg = Cfg.cfg_post_station_game_item_type({
+        ItemType = item.ItemType
+      })
+      if itemTypeCfg then
+        self._GameItemTypeDic[item.ItemType] = itemTypeCfg[1]
+      end
+      self._AllGameItemCount = self._AllGameItemCount + 1
+    end
   end
+  self._UIN27PostPackageGridManager = UIN27PostPackageGridManager:New(self._MainGridWidth, self._MainGridHeight)
+  self._UIN27MissionTaskCondition = UIN27MissionTaskCondition:New()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN27PostInnerGameController:InitWidget()
   self._atlas = self:GetAsset("PostInGame.spriteatlas", LoadType.SpriteAtlas)
   self._MainGridRawImage = self:GetUIComponent("RawImage", "MainGridRawImage")
   self._MainGridRawImageObj = self:GetGameObject("MainGridRawImage")
@@ -161,13 +130,13 @@ UIN27PostInnerGameController.InitWidget = function(self)
   self._OrderTabObjList = {}
   self._TimerImageList = {}
   for i = 1, 3 do
-    (table.insert)(self._TaskObjList, self:GetGameObject("Task" .. i))
+    table.insert(self._TaskObjList, self:GetGameObject("Task" .. i))
   end
   for i = 1, 3 do
-    (table.insert)(self._OrderTabObjList, self:GetGameObject("OrderTabObj" .. i))
+    table.insert(self._OrderTabObjList, self:GetGameObject("OrderTabObj" .. i))
   end
   for i = 1, 4 do
-    (table.insert)(self._TimerImageList, self:GetUIComponent("Image", "Timer" .. i))
+    table.insert(self._TimerImageList, self:GetUIComponent("Image", "Timer" .. i))
   end
   self._OrderListGroup = self:GetUIComponent("UISelectObjectPath", "OrderList")
   self._ItemPanel = self:GetUIComponent("UISelectObjectPath", "ItemPanel")
@@ -190,15 +159,12 @@ UIN27PostInnerGameController.InitWidget = function(self)
   self._box1Spine = self:GetUIComponent("SpineLoader", "spine2_1")
   self._box2Spine = self:GetUIComponent("SpineLoader", "spine2_2")
   self._petSpine = self:GetUIComponent("SpineLoader", "spine3")
-  self._box1Trans = (self:GetGameObject("spine2_1")).transform
-  self._MainGridRawImageTrans = (self._MainGridRawImageObj).transform
-  self._Camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+  self._box1Trans = self:GetGameObject("spine2_1").transform
+  self._MainGridRawImageTrans = self._MainGridRawImageObj.transform
+  self._Camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.AttachEvents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN27PostInnerGameController:AttachEvents()
   self:AttachEvent(GameEventType.OnN27PostGameItemTypeChange, self.RefreshItemPanel)
   self:AttachEvent(GameEventType.OnN27PostGameItemPress, self.OnGameItemSelect)
   self:AttachEvent(GameEventType.OnN27PostGameItemRelease, self.OnGameItemRelease)
@@ -208,681 +174,461 @@ UIN27PostInnerGameController.AttachEvents = function(self)
   self:AttachEvent(GameEventType.ShowGuideStep, self.ShowGuideStep)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.StartGame = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._StartPanelObj):SetActive(true)
-  ;
-  (self._Transition):ChangeAnim("uieff_UIN27PostInnerGameController_StartPanel_in", 10)
-  ;
-  (self._Transition):PlayEnterAnimation(true)
+function UIN27PostInnerGameController:StartGame()
+  self._StartPanelObj:SetActive(true)
+  self._Transition:ChangeAnim("uieff_UIN27PostInnerGameController_StartPanel_in", 10)
+  self._Transition:PlayEnterAnimation(true)
   local startShowTime = 0
-  ;
-  ((GameGlobal.Timer)()):AddEventTimes(1000, self._StartGameTime, function()
-    -- function num : 0_5_0 , upvalues : startShowTime, self, _ENV
+  GameGlobal.Timer():AddEventTimes(1000, self._StartGameTime, function()
     startShowTime = startShowTime + 1
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R0 in 'UnsetPending'
-
     if startShowTime == 3 then
-      (self._MainGridGameCamera).depth = 11
-      ;
-      (self._Transition):PlayLeaveAnimation(true)
+      self._MainGridGameCamera.depth = 11
+      self._Transition:PlayLeaveAnimation(true)
       self:PlayGameInAnimation()
       self:RefreshOrderPanel(true)
-      local te = ((GameGlobal.Timer)()):AddEvent(333, function()
-      -- function num : 0_5_0_0 , upvalues : self, _ENV
-      (self._StartPanelObj):SetActive(false)
-      if self._MissionID == 1 then
-        self:_CheckGuide()
-      end
-      if not (GuideHelper.GuideInProgress)() then
-        self._IsPause = false
-      end
-    end
-)
-      ;
-      (table.insert)(self._TimerList, te)
+      local te = GameGlobal.Timer():AddEvent(333, function()
+        self._StartPanelObj:SetActive(false)
+        if self._MissionID == 1 then
+          self:_CheckGuide()
+        end
+        if not GuideHelper.GuideInProgress() then
+          self._IsPause = false
+        end
+      end)
+      table.insert(self._TimerList, te)
     else
-      do
-        -- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-        ;
-        (self._StartTimeText).text = tostring(self._StartGameTime - startShowTime)
-      end
+      self._StartTimeText.text = tostring(self._StartGameTime - startShowTime)
     end
-  end
-)
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._StartTimeText).text = self._StartGameTime .. ""
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameStart)
-  ;
-  (self._DayText):SetText((StringTable.Get)(self._DayTextStr))
+  end)
+  self._StartTimeText.text = self._StartGameTime .. ""
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameStart)
+  self._DayText:SetText(StringTable.Get(self._DayTextStr))
   if EDITOR or IsPc() then
-    (self._PcImageRObj):SetActive(true)
-    ;
-    (self._PcImageTObj):SetActive(true)
+    self._PcImageRObj:SetActive(true)
+    self._PcImageTObj:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.PlayGameInAnimation = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._AnimIn):Play("uieff_UIN27PostInnerGameController_in")
-  local itemWidgetList = (self._ItemPanel):GetAllSpawnList()
-  for idx,v in pairs(itemWidgetList) do
-    do
-      local te = ((GameGlobal.Timer)()):AddEvent(30 * idx, function()
-    -- function num : 0_6_0 , upvalues : v
-    (v:GetGameObject()):SetActive(true)
-  end
-)
-      ;
-      (table.insert)(self._TimerList, te)
-      ;
-      (v:GetGameObject()):SetActive(false)
-    end
+function UIN27PostInnerGameController:PlayGameInAnimation()
+  self._AnimIn:Play("uieff_UIN27PostInnerGameController_in")
+  local itemWidgetList = self._ItemPanel:GetAllSpawnList()
+  for idx, v in pairs(itemWidgetList) do
+    local te = GameGlobal.Timer():AddEvent(30 * idx, function()
+      v:GetGameObject():SetActive(true)
+    end)
+    table.insert(self._TimerList, te)
+    v:GetGameObject():SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.InitTimeCounter = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN27PostInnerGameController:InitTimeCounter()
   self._RunTime = 0
   if self._countdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+    GameGlobal.Timer():CancelEvent(self._countdownTimer)
   end
-  self._countdownTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_7_0 , upvalues : self
+  self._countdownTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     if self._IsPause or self._EndGame then
-      return 
+      return
     end
     self._RunTime = self._RunTime + 1
     self:RefreshTimeCounter(self._GameTime - self._RunTime)
     if self._RunTime == self._GameTime then
       self._EndGame = true
-      if (self._DeletePanelObj).activeSelf then
+      if self._DeletePanelObj.activeSelf then
         self:DeleteCancelOnClick()
       end
       self:ShowDialog("UIN27PostGameClosingController", self._CurOrderMap, self._CurOrderRTMap, self._CurOrderSeq, self._CurTaskList, self._UIN27MissionTaskCondition, self._MissionID, self._componentInfo, false)
     end
-  end
-)
+  end)
   self:RefreshTimeCounter(self._GameTime - self._RunTime)
   self._IsPause = true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.InitItemTabBtnGroup = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._ItemTabBtnGroup):SpawnObjects("UIN27SelectItemTypeItem", #self._GameItemTypeDic + 1)
-  local spawnList = (self._ItemTabBtnGroup):GetAllSpawnList()
-  ;
-  (spawnList[1]):SetData(self._AllGameTypeID)
+function UIN27PostInnerGameController:InitItemTabBtnGroup()
+  self._ItemTabBtnGroup:SpawnObjects("UIN27SelectItemTypeItem", #self._GameItemTypeDic + 1)
+  local spawnList = self._ItemTabBtnGroup:GetAllSpawnList()
+  spawnList[1]:SetData(self._AllGameTypeID)
   local idx = 2
-  for _,v in ipairs(self._GameItemTypeDic) do
-    (spawnList[idx]):SetData(v.ItemType, v.TabIconUnSelect, v.TabIconSelect)
+  for _, v in ipairs(self._GameItemTypeDic) do
+    spawnList[idx]:SetData(v.ItemType, v.TabIconUnSelect, v.TabIconSelect)
     idx = idx + 1
   end
-  ;
-  (self._ItemPanel):SpawnObjects("UIN27SelectItem", self._AllGameItemCount)
-  local itemWidgetList = (self._ItemPanel):GetAllSpawnList()
+  self._ItemPanel:SpawnObjects("UIN27SelectItem", self._AllGameItemCount)
+  local itemWidgetList = self._ItemPanel:GetAllSpawnList()
   local idx = 1
-  for _type,itemGroup in pairs(self._GameItemDic) do
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R10 in 'UnsetPending'
-
-    (self._UIGameItemObjectMap)[_type] = {}
-    for _,v in pairs(itemGroup) do
-      (table.insert)((self._UIGameItemObjectMap)[_type], itemWidgetList[idx])
+  for _type, itemGroup in pairs(self._GameItemDic) do
+    self._UIGameItemObjectMap[_type] = {}
+    for _, v in pairs(itemGroup) do
+      table.insert(self._UIGameItemObjectMap[_type], itemWidgetList[idx])
       idx = idx + 1
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN27PostGameItemTypeChange, self._AllGameTypeID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN27PostGameItemTypeChange, self._AllGameTypeID)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.InitOrderGroup = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._OrderListGroup):SpawnObjects("UIN27OrderItem", 5)
-  self._OrderWidgetList = (self._OrderListGroup):GetAllSpawnList()
-  for _,v in pairs(self._OrderWidgetList) do
-    do
-      v:InitWidget()
-      if not self._firstOrderWidgetForGuide then
-        self._firstOrderWidgetForGuide = v
-      end
-      ;
-      (v:GetGameObject()):SetActive(false)
+function UIN27PostInnerGameController:InitOrderGroup()
+  self._OrderListGroup:SpawnObjects("UIN27OrderItem", 5)
+  self._OrderWidgetList = self._OrderListGroup:GetAllSpawnList()
+  for _, v in pairs(self._OrderWidgetList) do
+    v:InitWidget()
+    if not self._firstOrderWidgetForGuide then
+      self._firstOrderWidgetForGuide = v
     end
+    v:GetGameObject():SetActive(false)
   end
   for i = 1, self._MaxOrderShowCount do
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._CurOrderList)[i] = (self._AllOrderList)[1]
-    ;
-    (table.remove)(self._AllOrderList, 1)
+    self._CurOrderList[i] = self._AllOrderList[1]
+    table.remove(self._AllOrderList, 1)
   end
   for i = 1, #self._OrderTabObjList do
     local showID = i
-    local tabObj = (self._OrderTabObjList)[i]
-    local selectGO = ((tabObj.transform):Find("SelectImage")).gameObject
-    ;
-    (((tabObj.transform):Find("SelectImage/RawImage")):GetComponent("RawImageLoader")):LoadImage(((self._CurOrderList)[i]).PetHeadSelectIcon)
-    ;
-    (((tabObj.transform):Find("NormalImage/RawImage")):GetComponent("RawImageLoader")):LoadImage(((self._CurOrderList)[i]).PetHeadIcon)
-    self:AddUICustomEventListener((UICustomUIEventListener.Get)(tabObj), UIEvent.Click, function(go)
-    -- function num : 0_9_0 , upvalues : self, selectGO, showID
-    (((((self._OrderTabObjList)[self._CurShowOrderIdx]).transform):Find("SelectImage")).gameObject):SetActive(false)
-    selectGO:SetActive(true)
-    self._CurShowOrderIdx = showID
-    self:RefreshOrderPanel()
-  end
-)
+    local tabObj = self._OrderTabObjList[i]
+    local selectGO = tabObj.transform:Find("SelectImage").gameObject
+    tabObj.transform:Find("SelectImage/RawImage"):GetComponent("RawImageLoader"):LoadImage(self._CurOrderList[i].PetHeadSelectIcon)
+    tabObj.transform:Find("NormalImage/RawImage"):GetComponent("RawImageLoader"):LoadImage(self._CurOrderList[i].PetHeadIcon)
+    self:AddUICustomEventListener(UICustomUIEventListener.Get(tabObj), UIEvent.Click, function(go)
+      self._OrderTabObjList[self._CurShowOrderIdx].transform:Find("SelectImage").gameObject:SetActive(false)
+      selectGO:SetActive(true)
+      self._CurShowOrderIdx = showID
+      self:RefreshOrderPanel()
+    end)
     selectGO:SetActive(showID == self._CurShowOrderIdx)
   end
   self:RefreshTaskPanel()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.RefreshTaskPanel = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN27PostInnerGameController:RefreshTaskPanel()
   local idx = 1
-  for _,task in pairs(self._CurTaskList) do
-    local taskObj = (self._TaskObjList)[idx]
-    local textComp = ((taskObj.transform):Find("LocalizationText")):GetComponent("UILocalizationText")
-    local str = (self._UIN27MissionTaskCondition):CheckTaskAndGetStr(task, self._CurOrderMap)
+  for _, task in pairs(self._CurTaskList) do
+    local taskObj = self._TaskObjList[idx]
+    local textComp = taskObj.transform:Find("LocalizationText"):GetComponent("UILocalizationText")
+    local str = self._UIN27MissionTaskCondition:CheckTaskAndGetStr(task, self._CurOrderMap)
     textComp.text = str
     idx = idx + 1
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.RefreshOrderPanel = function(self, anim)
-  -- function num : 0_11 , upvalues : _ENV
-  local showOrder = (self._CurOrderList)[self._CurShowOrderIdx]
+function UIN27PostInnerGameController:RefreshOrderPanel(anim)
+  local showOrder = self._CurOrderList[self._CurShowOrderIdx]
   local petID = showOrder.PetId
-  if not showOrder.ItemTypeAndNum then
-    local itemTypeList = {}
-  end
-  if not showOrder.ItemIdAndNum then
-    local itemList = {}
-  end
+  local itemTypeList = showOrder.ItemTypeAndNum or {}
+  local itemList = showOrder.ItemIdAndNum or {}
   local showCount = 0
   for i = 1, #self._OrderWidgetList do
-    do
-      (((self._OrderWidgetList)[i]):GetGameObject()):SetActive(false)
-    end
+    self._OrderWidgetList[i]:GetGameObject():SetActive(false)
   end
   for i = 1, #self._OrderWidgetList do
     if i <= #itemTypeList then
       local orderItemCfg = itemTypeList[i]
-      local typeCfg = (self._GameItemTypeDic)[orderItemCfg[1]]
+      local typeCfg = self._GameItemTypeDic[orderItemCfg[1]]
       local count = orderItemCfg[2]
       local curCount = 0
-      for itemID,countValue in pairs(self._CurItemMap) do
-        local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = itemID}))[1]
+      for itemID, countValue in pairs(self._CurItemMap) do
+        local itemCfg = Cfg.cfg_component_post_station_game_item({ID = itemID})[1]
         if itemCfg.ItemType == orderItemCfg[1] then
           curCount = curCount + countValue
         end
       end
-      ;
-      ((self._OrderWidgetList)[i]):SetData(typeCfg, nil, count, curCount)
+      self._OrderWidgetList[i]:SetData(typeCfg, nil, count, curCount)
       showCount = showCount + 1
-    else
-      do
-        if i - #itemTypeList <= #itemList then
-          local idx = i - #itemTypeList
-          local orderItemCfg = itemList[idx]
-          local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = orderItemCfg[1]}))[1]
-          local count = orderItemCfg[2]
-          local itemInMapCount = (self._CurItemMap)[orderItemCfg[1]]
-          local curCount = itemInMapCount and itemInMapCount or 0
-          ;
-          ((self._OrderWidgetList)[i]):SetData(nil, itemCfg, count, curCount)
-          ;
-          (((self._OrderWidgetList)[i]):GetGameObject()):SetActive(true)
-          showCount = showCount + 1
-        end
-        do
-          -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+    elseif i - #itemTypeList <= #itemList then
+      local idx = i - #itemTypeList
+      local orderItemCfg = itemList[idx]
+      local itemCfg = Cfg.cfg_component_post_station_game_item({
+        ID = orderItemCfg[1]
+      })[1]
+      local count = orderItemCfg[2]
+      local itemInMapCount = self._CurItemMap[orderItemCfg[1]]
+      local curCount = itemInMapCount and itemInMapCount or 0
+      self._OrderWidgetList[i]:SetData(nil, itemCfg, count, curCount)
+      self._OrderWidgetList[i]:GetGameObject():SetActive(true)
+      showCount = showCount + 1
     end
   end
   for i = 1, showCount do
     if anim then
-      local te = ((GameGlobal.Timer)()):AddEvent(30 * i, function()
-    -- function num : 0_11_0 , upvalues : self, i
-    (((self._OrderWidgetList)[i]):GetGameObject()):SetActive(true)
-    ;
-    ((self._OrderWidgetList)[i]):PlayShowAnimation()
-    ;
-    ((self._OrderWidgetList)[i]):PlayCheckAnimation()
-  end
-)
-      ;
-      (table.insert)(self._TimerList, te)
+      local te = GameGlobal.Timer():AddEvent(30 * i, function()
+        self._OrderWidgetList[i]:GetGameObject():SetActive(true)
+        self._OrderWidgetList[i]:PlayShowAnimation()
+        self._OrderWidgetList[i]:PlayCheckAnimation()
+      end)
+      table.insert(self._TimerList, te)
     else
-      do
-        do
-          ;
-          (((self._OrderWidgetList)[i]):GetGameObject()):SetActive(true)
-          ;
-          ((self._OrderWidgetList)[i]):PlayCheckAnimation()
-          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC139: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      self._OrderWidgetList[i]:GetGameObject():SetActive(true)
+      self._OrderWidgetList[i]:PlayCheckAnimation()
     end
   end
-  local str = (StringTable.Get)("str_n27_poststation_currentorder") .. "(%d/%d)"
-  ;
-  (self._OrderTitleText):SetText((string.format)(str, (table.count)(self._CurOrderMap) + 1, (self._MissionCfg).OrderNum))
+  local str = StringTable.Get("str_n27_poststation_currentorder") .. "(%d/%d)"
+  self._OrderTitleText:SetText(string.format(str, table.count(self._CurOrderMap) + 1, self._MissionCfg.OrderNum))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.RefreshItemPanel = function(self, typeID, force)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN27PostInnerGameController:RefreshItemPanel(typeID, force)
   if self._CurSelectItemTypeID == typeID and not force then
-    return 
+    return
   end
   if typeID == self._AllGameTypeID then
-    for _type,itemGroup in pairs(self._GameItemDic) do
-      local widgetList = (self._UIGameItemObjectMap)[_type]
+    for _type, itemGroup in pairs(self._GameItemDic) do
+      local widgetList = self._UIGameItemObjectMap[_type]
       local idx = 1
-      for _,v in pairs(itemGroup) do
+      for _, v in pairs(itemGroup) do
         local widget = widgetList[idx]
         widget:SetData(v)
-        ;
-        (widget:GetGameObject()):SetActive(true)
+        widget:GetGameObject():SetActive(true)
         idx = idx + 1
       end
     end
   else
-    do
-      for _type,itemGroup in pairs(self._GameItemDic) do
-        local idx = 1
-        local widgetList = (self._UIGameItemObjectMap)[_type]
-        for _,v in pairs(itemGroup) do
-          local widget = widgetList[idx]
-          if _type == typeID then
-            widget:SetData(v)
-            ;
-            (widget:GetGameObject()):SetActive(true)
-          else
-            ;
-            (widget:GetGameObject()):SetActive(false)
-          end
-          idx = idx + 1
+    for _type, itemGroup in pairs(self._GameItemDic) do
+      local idx = 1
+      local widgetList = self._UIGameItemObjectMap[_type]
+      for _, v in pairs(itemGroup) do
+        local widget = widgetList[idx]
+        if _type == typeID then
+          widget:SetData(v)
+          widget:GetGameObject():SetActive(true)
+        else
+          widget:GetGameObject():SetActive(false)
         end
-      end
-      do
-        self._CurSelectItemTypeID = typeID
+        idx = idx + 1
       end
     end
   end
+  self._CurSelectItemTypeID = typeID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.InitMainGrid = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._MainGridReq = (ResourceManager:GetInstance()):SyncLoadAsset("UIN27MainGrid.prefab", LoadType.GameObject)
-  ;
-  ((self._MainGridReq).Obj):SetActive(true)
-  self._MainGridItemPrefab = ((((self._MainGridReq).Obj).transform):Find("Canvas/block")).gameObject
-  self._GameItemPrefab = ((((self._MainGridReq).Obj).transform):Find("Canvas/itemRawImage")).gameObject
-  self._MainGridTransform = (((self._MainGridReq).Obj).transform):Find("Canvas/Grid")
-  self._MainGridgGroupTransform = (((self._MainGridReq).Obj).transform):Find("Canvas/GridItemGroup")
-  self._DragItem = ((((self._MainGridReq).Obj).transform):Find("Canvas/DragItem")).gameObject
-  self._DragIconRawImageLoader = (((((self._MainGridReq).Obj).transform):Find("Canvas/DragItem/dragIcon")).gameObject):GetComponent("RawImageLoader")
-  self._DragBgGroup = (((self._MainGridReq).Obj).transform):Find("Canvas/DragItem/bgGroup")
-  self._DragHand = ((((self._MainGridReq).Obj).transform):Find("Canvas/hand")).gameObject
-  self._MainGridGameCamera = ((((self._MainGridReq).Obj).transform):Find("Camera")):GetComponent("Camera")
-  self._GameRenderTexture = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  -- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._MainGridGameCamera).targetTexture = self._GameRenderTexture
-  -- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._MainGridRawImage).texture = self._GameRenderTexture
+function UIN27PostInnerGameController:InitMainGrid()
+  self._MainGridReq = ResourceManager:GetInstance():SyncLoadAsset("UIN27MainGrid.prefab", LoadType.GameObject)
+  self._MainGridReq.Obj:SetActive(true)
+  self._MainGridItemPrefab = self._MainGridReq.Obj.transform:Find("Canvas/block").gameObject
+  self._GameItemPrefab = self._MainGridReq.Obj.transform:Find("Canvas/itemRawImage").gameObject
+  self._MainGridTransform = self._MainGridReq.Obj.transform:Find("Canvas/Grid")
+  self._MainGridgGroupTransform = self._MainGridReq.Obj.transform:Find("Canvas/GridItemGroup")
+  self._DragItem = self._MainGridReq.Obj.transform:Find("Canvas/DragItem").gameObject
+  self._DragIconRawImageLoader = self._MainGridReq.Obj.transform:Find("Canvas/DragItem/dragIcon").gameObject:GetComponent("RawImageLoader")
+  self._DragBgGroup = self._MainGridReq.Obj.transform:Find("Canvas/DragItem/bgGroup")
+  self._DragHand = self._MainGridReq.Obj.transform:Find("Canvas/hand").gameObject
+  self._MainGridGameCamera = self._MainGridReq.Obj.transform:Find("Camera"):GetComponent("Camera")
+  self._GameRenderTexture = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  self._MainGridGameCamera.targetTexture = self._GameRenderTexture
+  self._MainGridRawImage.texture = self._GameRenderTexture
   for i = 1, self._MainGridWidth do
     for j = 1, self._MainGridHeight do
-      local mainGridItem = ((UnityEngine.GameObject).Instantiate)(self._MainGridItemPrefab, self._MainGridTransform)
+      local mainGridItem = UnityEngine.GameObject.Instantiate(self._MainGridItemPrefab, self._MainGridTransform)
       local mainGridItemWidget = UIN27MainGridItem:New(i, j, mainGridItem)
-      ;
-      (self._UIN27PostPackageGridManager):InjectWidgetToMainMatrix(i, j, mainGridItemWidget)
+      self._UIN27PostPackageGridManager:InjectWidgetToMainMatrix(i, j, mainGridItemWidget)
       mainGridItem:SetActive(true)
     end
   end
-  self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._MainEmptyArea), UIEvent.Hovered, function(go)
-    -- function num : 0_13_0 , upvalues : _ENV, self
-    (Log.debug)("Empty Hovered!!!!!!!!!!!!")
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._MainEmptyArea), UIEvent.Hovered, function(go)
+    Log.debug("Empty Hovered!!!!!!!!!!!!")
     self._CurHoveredBlock = nil
-    ;
-    (self._UIN27PostPackageGridManager):ClearCheckBlocksColor()
-  end
-)
+    self._UIN27PostPackageGridManager:ClearCheckBlocksColor()
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_14
+function UIN27PostInnerGameController:OnUpdate(deltaTimeMS)
   if self._EndGame then
-    return 
+    return
   end
   self:OnPCInputUpdate()
   self:OnDragUpdate()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnDragUpdate = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN27PostInnerGameController:OnDragUpdate()
   if not self._IsDragItem then
-    return 
+    return
   end
-  local mousePosition = nil
+  local mousePosition
   if self._MousePresent then
-    mousePosition = (self._Input).mousePosition
+    mousePosition = self._Input.mousePosition
+  elseif self._Input.touchCount ~= 0 then
+    mousePosition = self._Input.GetTouch(0).position
   else
-    if (self._Input).touchCount ~= 0 then
-      mousePosition = (((self._Input).GetTouch)(0)).position
-    else
-      mousePosition = (self._Input).mousePosition
-    end
+    mousePosition = self._Input.mousePosition
   end
   local screenPos = Vector2(mousePosition.x, mousePosition.y)
-  local pos = (UIHelper.ScreenPointToWorldPointInRectangle)(((self._DragItem).transform).parent, screenPos, self._MainGridGameCamera)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._DragItem).transform).position = pos
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._DragHand).transform).position = pos
+  local pos = UIHelper.ScreenPointToWorldPointInRectangle(self._DragItem.transform.parent, screenPos, self._MainGridGameCamera)
+  self._DragItem.transform.position = pos
+  self._DragHand.transform.position = pos
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnPCInputUpdate = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN27PostInnerGameController:OnPCInputUpdate()
   if not self._IsDragItem then
-    return 
+    return
   end
-  if ((self._Input).GetKeyDown)((UnityEngine.KeyCode).R) then
+  if self._Input.GetKeyDown(UnityEngine.KeyCode.R) then
     self:RotateBtnOnClick()
   end
-  if ((self._Input).GetKeyDown)((UnityEngine.KeyCode).T) then
+  if self._Input.GetKeyDown(UnityEngine.KeyCode.T) then
     self:FlipBtnOnClick()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.SetDragStatus = function(self, flag)
-  -- function num : 0_17
+function UIN27PostInnerGameController:SetDragStatus(flag)
   self._IsDragItem = flag
-  ;
-  (self._DragItem):SetActive(flag)
-  ;
-  (self._DragHand):SetActive(flag)
-  ;
-  (self._MainEmptyArea):SetActive(flag)
+  self._DragItem:SetActive(flag)
+  self._DragHand:SetActive(flag)
+  self._MainEmptyArea:SetActive(flag)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnGameItemSelect = function(self, itemWidget)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN27PostInnerGameController:OnGameItemSelect(itemWidget)
   if itemWidget:GetItemCount() == 0 then
-    return 
+    return
   end
   self._CurHoveredBlock = nil
-  local itemDetail = (self._UIN27PostPackageGridManager):GetItemDetail(itemWidget:GetItemID())
+  local itemDetail = self._UIN27PostPackageGridManager:GetItemDetail(itemWidget:GetItemID())
   self._CurRotateIdx = 1
-  self._CurItemMatrix = (self._UIN27PostPackageGridManager):CopyMatrix(itemDetail.Matrix)
+  self._CurItemMatrix = self._UIN27PostPackageGridManager:CopyMatrix(itemDetail.Matrix)
   self._CurDragItemID = itemWidget:GetItemID()
-  local eulerAngle = (self._RotationList)[self._CurRotateIdx]
-  local ndcX, ndxY = (self._UIN27PostPackageGridManager):GetItemNDCCenter(itemWidget:GetItemID())
+  local eulerAngle = self._RotationList[self._CurRotateIdx]
+  local ndcX, ndxY = self._UIN27PostPackageGridManager:GetItemNDCCenter(itemWidget:GetItemID())
   local pivot = self:GetItemPivot({ndcX, ndxY}, self._CurRotateIdx, 1, 1)
-  local RectTransform = (self._DragItem):GetComponent("RectTransform")
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self._DragItem).transform).localEulerAngles = Vector3(0, 0, eulerAngle)
-  -- DECOMPILER ERROR at PC53: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  ((self._DragItem).transform).localScale = Vector3.one
+  local RectTransform = self._DragItem:GetComponent("RectTransform")
+  self._DragItem.transform.localEulerAngles = Vector3(0, 0, eulerAngle)
+  self._DragItem.transform.localScale = Vector3.one
   RectTransform.pivot = Vector2(pivot[1], pivot[2])
-  local sizeX, sizeY = (self._UIN27PostPackageGridManager):GetItemSize(itemWidget:GetItemID())
+  local sizeX, sizeY = self._UIN27PostPackageGridManager:GetItemSize(itemWidget:GetItemID())
   RectTransform.sizeDelta = Vector2(self._BlockPixel * sizeX, self._BlockPixel * sizeY)
   self:SetDragStatus(true)
   self:ShowDragItemBlockBG(self._CurItemMatrix)
-  local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = self._CurDragItemID}))[1]
-  ;
-  (self._DragIconRawImageLoader):LoadImage(itemCfg.GameItemIcon)
-  if (GuideHelper.GuideInProgress)() and ((GameGlobal.GuideMessageBoxMng)())._uiMsgBox then
-    (((GameGlobal.GuideMessageBoxMng)())._uiMsgBox):SetShow(false)
+  local itemCfg = Cfg.cfg_component_post_station_game_item({
+    ID = self._CurDragItemID
+  })[1]
+  self._DragIconRawImageLoader:LoadImage(itemCfg.GameItemIcon)
+  if GuideHelper.GuideInProgress() and GameGlobal.GuideMessageBoxMng()._uiMsgBox then
+    GameGlobal.GuideMessageBoxMng()._uiMsgBox:SetShow(false)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnGameItemRelease = function(self, itemWidget)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN27PostInnerGameController:OnGameItemRelease(itemWidget)
   self:SetDragStatus(false)
-  if (GuideHelper.GuideInProgress)() and ((GameGlobal.GuideMessageBoxMng)())._uiMsgBox then
-    (((GameGlobal.GuideMessageBoxMng)())._uiMsgBox):SetShow(true)
+  if GuideHelper.GuideInProgress() and GameGlobal.GuideMessageBoxMng()._uiMsgBox then
+    GameGlobal.GuideMessageBoxMng()._uiMsgBox:SetShow(true)
   end
   if self._CurHoveredBlock == nil then
-    return 
+    return
   end
-  local pos = Vector2((self._CurHoveredBlock):GetX(), (self._CurHoveredBlock):GetY())
-  local mainBlockWidget = (self._UIN27PostPackageGridManager):GetMainMatrixWidget(pos.x, pos.y)
-  local result, atomicItemID = (self._UIN27PostPackageGridManager):TryToInsertMainMatrix(itemWidget:GetItemID(), self._CurItemMatrix, mainBlockWidget, self._CurRotateIdx, ((self._DragItem).transform).localScale)
+  local pos = Vector2(self._CurHoveredBlock:GetX(), self._CurHoveredBlock:GetY())
+  local mainBlockWidget = self._UIN27PostPackageGridManager:GetMainMatrixWidget(pos.x, pos.y)
+  local result, atomicItemID = self._UIN27PostPackageGridManager:TryToInsertMainMatrix(itemWidget:GetItemID(), self._CurItemMatrix, mainBlockWidget, self._CurRotateIdx, self._DragItem.transform.localScale)
   if result then
-    (Log.debug)("------放置成功-----")
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameWeight)
-    local itemDetail = (self._UIN27PostPackageGridManager):GetItemDetailOnGridMap(atomicItemID)
+    Log.debug("------放置成功-----")
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameWeight)
+    local itemDetail = self._UIN27PostPackageGridManager:GetItemDetailOnGridMap(atomicItemID)
     local gameObject = self:CreateItemOnGrid(itemWidget:GetItemID(), pos, itemDetail)
     self:SetItemToMap(itemWidget:GetItemID(), true)
-    -- DECOMPILER ERROR at PC76: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._GameItemObjectMap)[atomicItemID] = gameObject
+    self._GameItemObjectMap[atomicItemID] = gameObject
     self:RefreshOrderPanel()
-    if (GuideHelper.GuideInProgress)() then
-      (self._GuideEffObj):SetActive(false)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ForceFinishGuideStep, GuideType.Button)
+    if GuideHelper.GuideInProgress() then
+      self._GuideEffObj:SetActive(false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ForceFinishGuideStep, GuideType.Button)
     end
   else
-    do
-      ;
-      (Log.debug)("------放置失败-----")
-      ;
-      (self._UIN27PostPackageGridManager):ClearCheckBlocksColor()
-      self._CurHoveredBlock = nil
-    end
+    Log.debug("------放置失败-----")
   end
+  self._UIN27PostPackageGridManager:ClearCheckBlocksColor()
+  self._CurHoveredBlock = nil
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnGameBlockHovered = function(self, blockWidget)
-  -- function num : 0_20
+function UIN27PostInnerGameController:OnGameBlockHovered(blockWidget)
   if not self._IsDragItem then
-    return 
+    return
   end
   self._CurHoveredBlock = blockWidget
-  ;
-  (self._UIN27PostPackageGridManager):CheckItemHoveredOnMainMatrix(self._CurDragItemID, self._CurItemMatrix, blockWidget, self._CurRotateIdx)
+  self._UIN27PostPackageGridManager:CheckItemHoveredOnMainMatrix(self._CurDragItemID, self._CurItemMatrix, blockWidget, self._CurRotateIdx)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnGameBlockPress = function(self, blockWidget)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN27PostInnerGameController:OnGameBlockPress(blockWidget)
   local atomicItemID = blockWidget:GetAtomicItemID()
   local itemID = blockWidget:GetItemID()
   if atomicItemID == nil then
-    return 
+    return
   end
-  local itemDetail = (self._UIN27PostPackageGridManager):GetItemDetailOnGridMap(atomicItemID)
+  local itemDetail = self._UIN27PostPackageGridManager:GetItemDetailOnGridMap(atomicItemID)
   self._CurHoveredBlock = blockWidget
   self._CurDragItemAtomicID = atomicItemID
   self._CurRotateIdx = itemDetail.rotationID
   self._CurItemMatrix = itemDetail.matrix
   self._CurDragItemID = itemID
-  local eulerAngle = (self._RotationList)[self._CurRotateIdx]
-  local ndcX, ndxY = (self._UIN27PostPackageGridManager):GetItemNDCCenter(itemID)
-  local pivot = self:GetItemPivot({ndcX, ndxY}, self._CurRotateIdx, (itemDetail.scale).x, (itemDetail.scale).y)
-  local RectTransform = (self._DragItem):GetComponent("RectTransform")
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  ((self._DragItem).transform).localEulerAngles = Vector3(0, 0, eulerAngle)
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  ((self._DragItem).transform).localScale = itemDetail.scale
+  local eulerAngle = self._RotationList[self._CurRotateIdx]
+  local ndcX, ndxY = self._UIN27PostPackageGridManager:GetItemNDCCenter(itemID)
+  local pivot = self:GetItemPivot({ndcX, ndxY}, self._CurRotateIdx, itemDetail.scale.x, itemDetail.scale.y)
+  local RectTransform = self._DragItem:GetComponent("RectTransform")
+  self._DragItem.transform.localEulerAngles = Vector3(0, 0, eulerAngle)
+  self._DragItem.transform.localScale = itemDetail.scale
   RectTransform.pivot = Vector2(pivot[1], pivot[2])
-  local sizeX, sizeY = (self._UIN27PostPackageGridManager):GetItemSize(itemID)
+  local sizeX, sizeY = self._UIN27PostPackageGridManager:GetItemSize(itemID)
   RectTransform.sizeDelta = Vector2(self._BlockPixel * sizeX, self._BlockPixel * sizeY)
-  ;
-  ((self._GameItemObjectMap)[atomicItemID]):SetActive(false)
-  for _,blockWidget in pairs(itemDetail.blockList) do
+  self._GameItemObjectMap[atomicItemID]:SetActive(false)
+  for _, blockWidget in pairs(itemDetail.blockList) do
     blockWidget:SetOccupy(false, nil, nil)
   end
   self:SetDragStatus(true)
-  self:ShowDragItemBlockBG(((self._UIN27PostPackageGridManager):GetItemDetail(itemID)).Matrix)
-  local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = self._CurDragItemID}))[1]
-  ;
-  (self._DragIconRawImageLoader):LoadImage(itemCfg.GameItemIcon)
+  self:ShowDragItemBlockBG(self._UIN27PostPackageGridManager:GetItemDetail(itemID).Matrix)
+  local itemCfg = Cfg.cfg_component_post_station_game_item({
+    ID = self._CurDragItemID
+  })[1]
+  self._DragIconRawImageLoader:LoadImage(itemCfg.GameItemIcon)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnGameBlockRelease = function(self, blockWidget)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN27PostInnerGameController:OnGameBlockRelease(blockWidget)
   self:SetDragStatus(false)
   local atomicItemID = self._CurDragItemAtomicID
   local itemID = self._CurDragItemID
   if atomicItemID == nil then
-    return 
+    return
   end
-  local itemDetail = (self._UIN27PostPackageGridManager):GetItemDetailOnGridMap(atomicItemID)
+  local itemDetail = self._UIN27PostPackageGridManager:GetItemDetailOnGridMap(atomicItemID)
   if self._CurHoveredBlock == nil then
     self:SetItemToMap(itemID, false)
-    local gameObject = (self._GameItemObjectMap)[atomicItemID]
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._GameItemObjectMap)[atomicItemID] = nil
-    ;
-    ((UnityEngine.GameObject).Destroy)(gameObject)
+    local gameObject = self._GameItemObjectMap[atomicItemID]
+    self._GameItemObjectMap[atomicItemID] = nil
+    UnityEngine.GameObject.Destroy(gameObject)
     self:RefreshOrderPanel()
   else
-    do
-      local pos = Vector2((self._CurHoveredBlock):GetX(), (self._CurHoveredBlock):GetY())
-      local mainBlockWidget = (self._UIN27PostPackageGridManager):GetMainMatrixWidget(pos.x, pos.y)
-      local result, newAtomicItemID = (self._UIN27PostPackageGridManager):TryToInsertMainMatrix(itemID, self._CurItemMatrix, mainBlockWidget, self._CurRotateIdx, ((self._DragItem).transform).localScale)
-      if result then
-        (Log.debug)("------替换位置放置成功-----")
-        ;
-        (self._UIN27PostPackageGridManager):RemoveItemDetailInGridMap(atomicItemID)
-        local gameObject = (self._GameItemObjectMap)[atomicItemID]
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._GameItemObjectMap)[atomicItemID] = nil
-        ;
-        ((UnityEngine.GameObject).Destroy)(gameObject)
-        itemDetail = (self._UIN27PostPackageGridManager):GetItemDetailOnGridMap(newAtomicItemID)
-        local gameObject = self:CreateItemOnGrid(itemID, pos, itemDetail)
-        -- DECOMPILER ERROR at PC84: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._GameItemObjectMap)[newAtomicItemID] = gameObject
-        self:RefreshOrderPanel()
-      else
-        do
-          do
-            ;
-            (Log.debug)("------放置失败还原位置-----")
-            for _,blockWidget in pairs(itemDetail.blockList) do
-              blockWidget:SetOccupy(true, atomicItemID, itemID)
-            end
-            ;
-            ((self._GameItemObjectMap)[atomicItemID]):SetActive(true)
-            ;
-            (self._UIN27PostPackageGridManager):ClearCheckBlocksColor()
-            self._CurDragItemAtomicID = nil
-            self._CurHoveredBlock = nil
-          end
-        end
+    local pos = Vector2(self._CurHoveredBlock:GetX(), self._CurHoveredBlock:GetY())
+    local mainBlockWidget = self._UIN27PostPackageGridManager:GetMainMatrixWidget(pos.x, pos.y)
+    local result, newAtomicItemID = self._UIN27PostPackageGridManager:TryToInsertMainMatrix(itemID, self._CurItemMatrix, mainBlockWidget, self._CurRotateIdx, self._DragItem.transform.localScale)
+    if result then
+      Log.debug("------替换位置放置成功-----")
+      self._UIN27PostPackageGridManager:RemoveItemDetailInGridMap(atomicItemID)
+      local gameObject = self._GameItemObjectMap[atomicItemID]
+      self._GameItemObjectMap[atomicItemID] = nil
+      UnityEngine.GameObject.Destroy(gameObject)
+      itemDetail = self._UIN27PostPackageGridManager:GetItemDetailOnGridMap(newAtomicItemID)
+      local gameObject = self:CreateItemOnGrid(itemID, pos, itemDetail)
+      self._GameItemObjectMap[newAtomicItemID] = gameObject
+      self:RefreshOrderPanel()
+    else
+      Log.debug("------放置失败还原位置-----")
+      for _, blockWidget in pairs(itemDetail.blockList) do
+        blockWidget:SetOccupy(true, atomicItemID, itemID)
       end
+      self._GameItemObjectMap[atomicItemID]:SetActive(true)
     end
   end
+  self._UIN27PostPackageGridManager:ClearCheckBlocksColor()
+  self._CurDragItemAtomicID = nil
+  self._CurHoveredBlock = nil
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.CreateItemOnGrid = function(self, itemID, center, itemDetail)
-  -- function num : 0_23 , upvalues : _ENV
-  local sizeX, sizeY = (self._UIN27PostPackageGridManager):GetItemSize(itemID)
-  local gameItemObj = ((UnityEngine.GameObject).Instantiate)(self._GameItemPrefab, self._MainGridgGroupTransform)
-  local te = ((GameGlobal.Timer)()):AddEvent(500, function()
-    -- function num : 0_23_0 , upvalues : _ENV, gameItemObj
-    if not (tolua.isnull)(gameItemObj) then
-      (((gameItemObj.transform):Find("eff")).gameObject):SetActive(false)
+function UIN27PostInnerGameController:CreateItemOnGrid(itemID, center, itemDetail)
+  local sizeX, sizeY = self._UIN27PostPackageGridManager:GetItemSize(itemID)
+  local gameItemObj = UnityEngine.GameObject.Instantiate(self._GameItemPrefab, self._MainGridgGroupTransform)
+  local te = GameGlobal.Timer():AddEvent(500, function()
+    if not tolua.isnull(gameItemObj) then
+      gameItemObj.transform:Find("eff").gameObject:SetActive(false)
     end
-  end
-)
-  ;
-  (table.insert)(self._TimerList, te)
-  local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = itemID}))[1]
+  end)
+  table.insert(self._TimerList, te)
+  local itemCfg = Cfg.cfg_component_post_station_game_item({ID = itemID})[1]
   local rawImage = gameItemObj:GetComponent("RawImageLoader")
   rawImage:LoadImage(itemCfg.GameItemIcon)
-  local eulerAngle = (self._RotationList)[itemDetail.rotationID]
-  local ndcX, ndxY = (self._UIN27PostPackageGridManager):GetItemNDCCenter(itemID)
-  local pivot = self:GetItemPivot({ndcX, ndxY}, self._CurRotateIdx, (itemDetail.scale).x, (itemDetail.scale).y)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (gameItemObj.transform).localEulerAngles = Vector3(0, 0, eulerAngle)
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (gameItemObj.transform).localScale = itemDetail.scale
+  local eulerAngle = self._RotationList[itemDetail.rotationID]
+  local ndcX, ndxY = self._UIN27PostPackageGridManager:GetItemNDCCenter(itemID)
+  local pivot = self:GetItemPivot({ndcX, ndxY}, self._CurRotateIdx, itemDetail.scale.x, itemDetail.scale.y)
+  gameItemObj.transform.localEulerAngles = Vector3(0, 0, eulerAngle)
+  gameItemObj.transform.localScale = itemDetail.scale
   local RectTransform = gameItemObj:GetComponent("RectTransform")
   RectTransform.sizeDelta = Vector2(self._BlockPixel * sizeX, self._BlockPixel * sizeY)
   RectTransform.anchoredPosition = Vector2(center.y * self._BlockPixel, -center.x * self._BlockPixel)
@@ -891,497 +637,307 @@ UIN27PostInnerGameController.CreateItemOnGrid = function(self, itemID, center, i
   return gameItemObj
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.RotateBtnOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN27PostInnerGameController:RotateBtnOnClick()
   if not self._IsDragItem or self._IsAnimated then
-    return 
+    return
   end
   self._CurRotateIdx = self._CurRotateIdx + 1
-  if #self._RotationList >= self._CurRotateIdx or not 1 then
-    self._CurRotateIdx = self._CurRotateIdx
-    local eulerAngle = (self._RotationList)[self._CurRotateIdx]
-    local ndcX, ndxY = (self._UIN27PostPackageGridManager):GetItemNDCCenter(self._CurDragItemID)
-    local pivot = self:GetItemPivot({ndcX, ndxY}, self._CurRotateIdx, (((self._DragItem).transform).localScale).x, (((self._DragItem).transform).localScale).y)
-    self._IsAnimated = true
-    local eulerAngles = Vector3(0, 0, eulerAngle)
-    ;
-    ((((self._DragItem).transform):DORotate(eulerAngles, 0.3)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_24_0 , upvalues : self
+  self._CurRotateIdx = self._CurRotateIdx > #self._RotationList and 1 or self._CurRotateIdx
+  local eulerAngle = self._RotationList[self._CurRotateIdx]
+  local ndcX, ndxY = self._UIN27PostPackageGridManager:GetItemNDCCenter(self._CurDragItemID)
+  local pivot = self:GetItemPivot({ndcX, ndxY}, self._CurRotateIdx, self._DragItem.transform.localScale.x, self._DragItem.transform.localScale.y)
+  self._IsAnimated = true
+  local eulerAngles = Vector3(0, 0, eulerAngle)
+  self._DragItem.transform:DORotate(eulerAngles, 0.3):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
     self._IsAnimated = false
-  end
-)
-    local RectTransform = (self._DragItem):GetComponent("RectTransform")
-    ;
-    (RectTransform:DOPivot(Vector2(pivot[1], pivot[2]), 0.3)):SetEase(((DG.Tweening).Ease).Linear)
-    self._CurItemMatrix = (self._UIN27PostPackageGridManager):RotateItemClockwise(self._CurItemMatrix)
-    if self._CurHoveredBlock then
-      (self._UIN27PostPackageGridManager):CheckItemHoveredOnMainMatrix(self._CurDragItemID, self._CurItemMatrix, self._CurHoveredBlock, self._CurRotateIdx)
-    end
+  end)
+  local RectTransform = self._DragItem:GetComponent("RectTransform")
+  RectTransform:DOPivot(Vector2(pivot[1], pivot[2]), 0.3):SetEase(DG.Tweening.Ease.Linear)
+  self._CurItemMatrix = self._UIN27PostPackageGridManager:RotateItemClockwise(self._CurItemMatrix)
+  if self._CurHoveredBlock then
+    self._UIN27PostPackageGridManager:CheckItemHoveredOnMainMatrix(self._CurDragItemID, self._CurItemMatrix, self._CurHoveredBlock, self._CurRotateIdx)
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.FlipBtnOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIN27PostInnerGameController:FlipBtnOnClick()
   if not self._IsDragItem or self._IsAnimated then
-    return 
+    return
   end
-  local scale = ((self._DragItem).transform).localScale
-  local RectTransform = (self._DragItem):GetComponent("RectTransform")
-  if self._CurRotateIdx & 1 ~= 1 or not {-1, 1} then
-    local flipParam = {1, -1}
-  end
+  local scale = self._DragItem.transform.localScale
+  local RectTransform = self._DragItem:GetComponent("RectTransform")
+  local flipParam = self._CurRotateIdx & 1 == 1 and {-1, 1} or {1, -1}
   self._IsAnimated = true
   local tScaleX = scale.x * flipParam[1]
   local tScaleY = scale.y * flipParam[2]
-  ;
-  ((((self._DragItem).transform):DOScale(Vector3(tScaleX, tScaleY, scale.z), 0.3)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_25_0 , upvalues : self
+  self._DragItem.transform:DOScale(Vector3(tScaleX, tScaleY, scale.z), 0.3):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
     self._IsAnimated = false
-  end
-)
-  local ndcX, ndxY = (self._UIN27PostPackageGridManager):GetItemNDCCenter(self._CurDragItemID)
+  end)
+  local ndcX, ndxY = self._UIN27PostPackageGridManager:GetItemNDCCenter(self._CurDragItemID)
   local pivot = self:GetItemPivot({ndcX, ndxY}, self._CurRotateIdx, tScaleX, tScaleY)
-  ;
-  (RectTransform:DOPivot(Vector2(pivot[1], pivot[2]), 0.3)):SetEase(((DG.Tweening).Ease).Linear)
-  self._CurItemMatrix = (self._UIN27PostPackageGridManager):FlipItem(self._CurItemMatrix)
+  RectTransform:DOPivot(Vector2(pivot[1], pivot[2]), 0.3):SetEase(DG.Tweening.Ease.Linear)
+  self._CurItemMatrix = self._UIN27PostPackageGridManager:FlipItem(self._CurItemMatrix)
   if self._CurHoveredBlock then
-    (self._UIN27PostPackageGridManager):CheckItemHoveredOnMainMatrix(self._CurDragItemID, self._CurItemMatrix, self._CurHoveredBlock, self._CurRotateIdx)
+    self._UIN27PostPackageGridManager:CheckItemHoveredOnMainMatrix(self._CurDragItemID, self._CurItemMatrix, self._CurHoveredBlock, self._CurRotateIdx)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.DeleteBtnOnClick = function(self)
-  -- function num : 0_26
-  (self._Transition):ChangeAnim("uieff_UIN27PostInnerGameController_DeletePanel_in", 10)
-  ;
-  (self._Transition):PlayEnterAnimation(true)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._MainGridGameCamera).depth = 0
-  ;
-  (self._DeletePanelObj):SetActive(true)
+function UIN27PostInnerGameController:DeleteBtnOnClick()
+  self._Transition:ChangeAnim("uieff_UIN27PostInnerGameController_DeletePanel_in", 10)
+  self._Transition:PlayEnterAnimation(true)
+  self._MainGridGameCamera.depth = 0
+  self._DeletePanelObj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.DeleteCheckOnClick = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameTrash)
+function UIN27PostInnerGameController:DeleteCheckOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameTrash)
   self:ClearGameMainGrid()
   self:RefreshOrderPanel()
-  do
-    if self._petSpine then
-      local skeleton = (self._petSpine).CurrentSkeleton
-      if not skeleton then
-        skeleton = (self._petSpine).CurrentMultiSkeleton
-      end
-      if skeleton then
-        (skeleton.AnimationState):SetAnimation(0, "sad", false)
-        ;
-        (skeleton.AnimationState):AddAnimation(0, "idle", true, 0)
-      end
+  if self._petSpine then
+    local skeleton = self._petSpine.CurrentSkeleton
+    skeleton = skeleton or self._petSpine.CurrentMultiSkeleton
+    if skeleton then
+      skeleton.AnimationState:SetAnimation(0, "sad", false)
+      skeleton.AnimationState:AddAnimation(0, "idle", true, 0)
     end
-    ;
-    (self._Transition):PlayLeaveAnimation(true)
-    local te = ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_27_0 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._MainGridGameCamera).depth = 11
-    ;
-    (self._DeletePanelObj):SetActive(false)
   end
-)
-    ;
-    (table.insert)(self._TimerList, te)
-  end
+  self._Transition:PlayLeaveAnimation(true)
+  local te = GameGlobal.Timer():AddEvent(333, function()
+    self._MainGridGameCamera.depth = 11
+    self._DeletePanelObj:SetActive(false)
+  end)
+  table.insert(self._TimerList, te)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.DeleteCancelOnClick = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  (self._Transition):PlayLeaveAnimation(true)
-  local te = ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_28_0 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._MainGridGameCamera).depth = 11
-    ;
-    (self._DeletePanelObj):SetActive(false)
-  end
-)
-  ;
-  (table.insert)(self._TimerList, te)
+function UIN27PostInnerGameController:DeleteCancelOnClick()
+  self._Transition:PlayLeaveAnimation(true)
+  local te = GameGlobal.Timer():AddEvent(333, function()
+    self._MainGridGameCamera.depth = 11
+    self._DeletePanelObj:SetActive(false)
+  end)
+  table.insert(self._TimerList, te)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.PostBtnOnClick = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN27PostInnerGameController:PostBtnOnClick()
   if self._EndGame then
-    return 
+    return
   end
-  local curOrder = (self._CurOrderList)[self._CurShowOrderIdx]
+  local curOrder = self._CurOrderList[self._CurShowOrderIdx]
   local copy = {}
-  for k,v in pairs(self._CurItemMap) do
+  for k, v in pairs(self._CurItemMap) do
     if v ~= 0 then
       copy[k] = v
     end
   end
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._CurOrderMap)[curOrder.ID] = copy
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._CurOrderSeq)[curOrder.ID] = (table.count)(self._CurOrderMap)
+  self._CurOrderMap[curOrder.ID] = copy
+  self._CurOrderSeq[curOrder.ID] = table.count(self._CurOrderMap)
   self:Lock("UIN27PostInnerGameController_PostBtnOnClick")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N27MiniGamePostBtn)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N27MiniGamePostBtn)
   self:StartTask(function(TT)
-    -- function num : 0_29_0 , upvalues : self, curOrder, _ENV
     self:CacheGameRT(TT, curOrder.ID)
-    local mainGridIdx = (self._MainGridRawImageTrans):GetSiblingIndex()
-    ;
-    (self._box1Trans):SetSiblingIndex(mainGridIdx)
-    do
-      if self._petSpine then
-        local skeleton = (self._petSpine).CurrentSkeleton
-        if not skeleton then
-          skeleton = (self._petSpine).CurrentMultiSkeleton
-        end
-        if skeleton then
-          (skeleton.AnimationState):SetAnimation(0, "happy", false)
-          ;
-          (skeleton.AnimationState):AddAnimation(0, "idle", true, 0)
-        end
-      end
-      do
-        if self._box1Spine then
-          local skeleton = (self._box1Spine).CurrentSkeleton
-          if not skeleton then
-            skeleton = (self._box1Spine).CurrentMultiSkeleton
-          end
-          if skeleton then
-            (skeleton.AnimationState):SetAnimation(0, "dabao", false)
-            ;
-            (skeleton.AnimationState):AddAnimation(0, "fangzhi", false, 0)
-            ;
-            (skeleton.AnimationState):AddAnimation(0, "idle", false, 0)
-          end
-        end
-        do
-          if self._box2Spine then
-            local skeleton = (self._box2Spine).CurrentSkeleton
-            if not skeleton then
-              skeleton = (self._box2Spine).CurrentMultiSkeleton
-            end
-            if skeleton then
-              (skeleton.AnimationState):SetAnimation(0, "dabao", false)
-              ;
-              (skeleton.AnimationState):AddAnimation(0, "fangzhi", false, 0)
-              ;
-              (skeleton.AnimationState):AddAnimation(0, "idle", false, 0)
-            end
-          end
-          ;
-          (self._MainGridRawImageObj):SetActive(false)
-          if (table.count)(self._CurOrderMap) == (self._MissionCfg).OrderNum then
-            self._EndGame = true
-            local order_list = {}
-            for orderID,set in pairs(self._CurOrderMap) do
-              local missionOrderInfo = MissionOrderInfo:New()
-              missionOrderInfo.order_id = orderID
-              missionOrderInfo.item_id_num = set
-              order_list[orderID] = missionOrderInfo
-            end
-            local res = AsyncRequestRes:New()
-            local code, result = (self._component):HandleSubmitMissionInfo(TT, res, self._MissionID, order_list)
-            if code and result then
-              YIELD(TT, 1800)
-              self:ShowDialog("UIN27PostGameClosingController", self._CurOrderMap, self._CurOrderRTMap, self._CurOrderSeq, self._CurTaskList, self._UIN27MissionTaskCondition, self._MissionID, self._componentInfo, true)
-            else
-              self:QuitOnClick()
-              ;
-              (Log.error)("HandleSubmitMissionInfo req fail")
-            end
-            YIELD(TT, 1000)
-            ;
-            (self._MainGridRawImageObj):SetActive(true)
-            ;
-            (self._MainGridRawImageTrans):SetSiblingIndex(mainGridIdx)
-            ;
-            (self._HideGroup):DOFade(1, 0.3)
-          else
-            do
-              -- DECOMPILER ERROR at PC184: Confused about usage of register: R2 in 'UnsetPending'
-
-              ;
-              (self._CurOrderList)[self._CurShowOrderIdx] = (self._AllOrderList)[1]
-              ;
-              (table.remove)(self._AllOrderList, 1)
-              for i = 1, #self._OrderTabObjList do
-                local tabObj = (self._OrderTabObjList)[i]
-                ;
-                (((tabObj.transform):Find("SelectImage/RawImage")):GetComponent("RawImageLoader")):LoadImage(((self._CurOrderList)[i]).PetHeadSelectIcon)
-                ;
-                (((tabObj.transform):Find("NormalImage/RawImage")):GetComponent("RawImageLoader")):LoadImage(((self._CurOrderList)[i]).PetHeadIcon)
-              end
-              self:ClearGameMainGrid(true)
-              self:RefreshOrderPanel()
-              self:RefreshTaskPanel()
-              YIELD(TT, 2200)
-              ;
-              (self._MainGridRawImageObj):SetActive(true)
-              ;
-              (self._MainGridRawImageTrans):SetSiblingIndex(mainGridIdx)
-              ;
-              (self._HideGroup):DOFade(1, 0.3)
-              self:UnLock("UIN27PostInnerGameController_PostBtnOnClick")
-            end
-          end
-        end
+    local mainGridIdx = self._MainGridRawImageTrans:GetSiblingIndex()
+    self._box1Trans:SetSiblingIndex(mainGridIdx)
+    if self._petSpine then
+      local skeleton = self._petSpine.CurrentSkeleton
+      skeleton = skeleton or self._petSpine.CurrentMultiSkeleton
+      if skeleton then
+        skeleton.AnimationState:SetAnimation(0, "happy", false)
+        skeleton.AnimationState:AddAnimation(0, "idle", true, 0)
       end
     end
-  end
-)
+    if self._box1Spine then
+      local skeleton = self._box1Spine.CurrentSkeleton
+      skeleton = skeleton or self._box1Spine.CurrentMultiSkeleton
+      if skeleton then
+        skeleton.AnimationState:SetAnimation(0, "dabao", false)
+        skeleton.AnimationState:AddAnimation(0, "fangzhi", false, 0)
+        skeleton.AnimationState:AddAnimation(0, "idle", false, 0)
+      end
+    end
+    if self._box2Spine then
+      local skeleton = self._box2Spine.CurrentSkeleton
+      skeleton = skeleton or self._box2Spine.CurrentMultiSkeleton
+      if skeleton then
+        skeleton.AnimationState:SetAnimation(0, "dabao", false)
+        skeleton.AnimationState:AddAnimation(0, "fangzhi", false, 0)
+        skeleton.AnimationState:AddAnimation(0, "idle", false, 0)
+      end
+    end
+    self._MainGridRawImageObj:SetActive(false)
+    if table.count(self._CurOrderMap) == self._MissionCfg.OrderNum then
+      self._EndGame = true
+      local order_list = {}
+      for orderID, set in pairs(self._CurOrderMap) do
+        local missionOrderInfo = MissionOrderInfo:New()
+        missionOrderInfo.order_id = orderID
+        missionOrderInfo.item_id_num = set
+        order_list[orderID] = missionOrderInfo
+      end
+      local res = AsyncRequestRes:New()
+      local code, result = self._component:HandleSubmitMissionInfo(TT, res, self._MissionID, order_list)
+      if code and result then
+        YIELD(TT, 1800)
+        self:ShowDialog("UIN27PostGameClosingController", self._CurOrderMap, self._CurOrderRTMap, self._CurOrderSeq, self._CurTaskList, self._UIN27MissionTaskCondition, self._MissionID, self._componentInfo, true)
+      else
+        self:QuitOnClick()
+        Log.error("HandleSubmitMissionInfo req fail")
+      end
+      YIELD(TT, 1000)
+      self._MainGridRawImageObj:SetActive(true)
+      self._MainGridRawImageTrans:SetSiblingIndex(mainGridIdx)
+      self._HideGroup:DOFade(1, 0.3)
+    else
+      self._CurOrderList[self._CurShowOrderIdx] = self._AllOrderList[1]
+      table.remove(self._AllOrderList, 1)
+      for i = 1, #self._OrderTabObjList do
+        local tabObj = self._OrderTabObjList[i]
+        tabObj.transform:Find("SelectImage/RawImage"):GetComponent("RawImageLoader"):LoadImage(self._CurOrderList[i].PetHeadSelectIcon)
+        tabObj.transform:Find("NormalImage/RawImage"):GetComponent("RawImageLoader"):LoadImage(self._CurOrderList[i].PetHeadIcon)
+      end
+      self:ClearGameMainGrid(true)
+      self:RefreshOrderPanel()
+      self:RefreshTaskPanel()
+      YIELD(TT, 2200)
+      self._MainGridRawImageObj:SetActive(true)
+      self._MainGridRawImageTrans:SetSiblingIndex(mainGridIdx)
+      self._HideGroup:DOFade(1, 0.3)
+    end
+    self:UnLock("UIN27PostInnerGameController_PostBtnOnClick")
+  end)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.ShowDragItemBlockBG = function(self, matrix)
-  -- function num : 0_30 , upvalues : _ENV
-  for i = 0, (self._DragBgGroup).childCount - 1 do
-    (((self._DragBgGroup):GetChild(i)).gameObject):SetActive(false)
+function UIN27PostInnerGameController:ShowDragItemBlockBG(matrix)
+  for i = 0, self._DragBgGroup.childCount - 1 do
+    self._DragBgGroup:GetChild(i).gameObject:SetActive(false)
   end
   local raw, col = #matrix, #matrix[1]
   local idx = 0
   for i = 1, raw do
     for j = 1, col do
-      local go = ((self._DragBgGroup):GetChild(idx)).gameObject
+      local go = self._DragBgGroup:GetChild(idx).gameObject
       go:SetActive(true)
-      ;
-      (go:GetComponent("Image")).color = Color(1, 1, 1, (matrix[i])[j])
+      go:GetComponent("Image").color = Color(1, 1, 1, matrix[i][j])
       idx = idx + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.GetItemPivot = function(self, ndcCenter, rotationID, scaleX, scaleY)
-  -- function num : 0_31
+function UIN27PostInnerGameController:GetItemPivot(ndcCenter, rotationID, scaleX, scaleY)
   local x, y = 0, 0
   if rotationID == 1 then
-    x = ndcCenter[1]
+    x, y = ndcCenter[1], 1 - ndcCenter[2]
+  elseif rotationID == 2 then
+    x, y = 1 - ndcCenter[1], 1 - ndcCenter[2]
+  elseif rotationID == 3 then
+    x, y = 1 - ndcCenter[1], ndcCenter[2]
   else
-    -- DECOMPILER ERROR at PC14: Overwrote pending register: R6 in 'AssignReg'
-
-    if rotationID == 2 then
-      x = 1 - ndcCenter[1]
-    else
-      -- DECOMPILER ERROR at PC21: Overwrote pending register: R6 in 'AssignReg'
-
-      if rotationID == 3 then
-        x = 1 - ndcCenter[1]
-      else
-        -- DECOMPILER ERROR at PC25: Overwrote pending register: R6 in 'AssignReg'
-
-        x = ndcCenter[1]
-      end
-    end
+    x, y = ndcCenter[1], ndcCenter[2]
   end
   if scaleX < 0 then
     x = 1 - x
   end
-  -- DECOMPILER ERROR at PC32: Overwrote pending register: R6 in 'AssignReg'
-
   if scaleY < 0 then
-    return {x, y}
+    y = 1 - y
   end
+  return {x, y}
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.CacheGameRT = function(self, TT, id)
-  -- function num : 0_32 , upvalues : _ENV
-  (self._HideGroup):DOFade(0, 0.3)
+function UIN27PostInnerGameController:CacheGameRT(TT, id)
+  self._HideGroup:DOFade(0, 0.3)
   YIELD(TT, 300)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._Shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UIN27PostInnerGameController")
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._Shot).width = (UnityEngine.Screen).width
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._Shot).height = (UnityEngine.Screen).height
-  local rt = (self._Shot):RefreshBlurTexture()
-  local cacheRT = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+  self._Shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera("UIN27PostInnerGameController")
+  self._Shot.width = UnityEngine.Screen.width
+  self._Shot.height = UnityEngine.Screen.height
+  local rt = self._Shot:RefreshBlurTexture()
+  local cacheRT = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
   YIELD(TT)
-  ;
-  ((UnityEngine.Graphics).Blit)(rt, cacheRT)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = cacheRT
-  local tex2d = (UnityEngine.Texture2D):New((UnityEngine.Screen).width, (UnityEngine.Screen).height)
-  tex2d:ReadPixels((UnityEngine.Rect):New(0, 0, (UnityEngine.Screen).width, (UnityEngine.Screen).height), 0, 0, false)
+  UnityEngine.Graphics.Blit(rt, cacheRT)
+  UnityEngine.RenderTexture.active = cacheRT
+  local tex2d = UnityEngine.Texture2D:New(UnityEngine.Screen.width, UnityEngine.Screen.height)
+  tex2d:ReadPixels(UnityEngine.Rect:New(0, 0, UnityEngine.Screen.width, UnityEngine.Screen.height), 0, 0, false)
   tex2d:Apply()
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (UnityEngine.RenderTexture).active = nil
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._CurOrderRTMap)[id] = tex2d
-  ;
-  (self._Shot):CleanRenderTexture()
+  UnityEngine.RenderTexture.active = nil
+  self._CurOrderRTMap[id] = tex2d
+  self._Shot:CleanRenderTexture()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.ClearGameMainGrid = function(self, noReturn)
-  -- function num : 0_33 , upvalues : _ENV
+function UIN27PostInnerGameController:ClearGameMainGrid(noReturn)
   if not noReturn then
-    for itemID,count in pairs(self._CurItemMap) do
-      local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = itemID}))[1]
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (((self._GameItemDic)[itemCfg.ItemType])[itemID]).ItemNumLimit = (((self._GameItemDic)[itemCfg.ItemType])[itemID]).ItemNumLimit + count
+    for itemID, count in pairs(self._CurItemMap) do
+      local itemCfg = Cfg.cfg_component_post_station_game_item({ID = itemID})[1]
+      self._GameItemDic[itemCfg.ItemType][itemID].ItemNumLimit = self._GameItemDic[itemCfg.ItemType][itemID].ItemNumLimit + count
     end
   end
-  do
-    ;
-    (table.clear)(self._CurItemMap)
-    self:RefreshItemPanel(self._CurSelectItemTypeID, true)
-    ;
-    (self._UIN27PostPackageGridManager):ClearGrid()
-    for _,go in pairs(self._GameItemObjectMap) do
-      ((UnityEngine.GameObject).Destroy)(go)
-    end
-    ;
-    (table.clear)(self._GameItemObjectMap)
+  table.clear(self._CurItemMap)
+  self:RefreshItemPanel(self._CurSelectItemTypeID, true)
+  self._UIN27PostPackageGridManager:ClearGrid()
+  for _, go in pairs(self._GameItemObjectMap) do
+    UnityEngine.GameObject.Destroy(go)
   end
+  table.clear(self._GameItemObjectMap)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.SetItemToMap = function(self, itemID, isAdd)
-  -- function num : 0_34 , upvalues : _ENV
-  local itemCfg = ((Cfg.cfg_component_post_station_game_item)({ID = itemID}))[1]
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._CurItemMap)[itemID] then
-    (self._CurItemMap)[itemID] = not isAdd or 0
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._CurItemMap)[itemID] = (self._CurItemMap)[itemID] + 1
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (((self._GameItemDic)[itemCfg.ItemType])[itemID]).ItemNumLimit = (((self._GameItemDic)[itemCfg.ItemType])[itemID]).ItemNumLimit - 1
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._CurItemMap)[itemID] = (self._CurItemMap)[itemID] - 1
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (((self._GameItemDic)[itemCfg.ItemType])[itemID]).ItemNumLimit = (((self._GameItemDic)[itemCfg.ItemType])[itemID]).ItemNumLimit + 1
-    self:RefreshItemPanel(self._CurSelectItemTypeID, true)
+function UIN27PostInnerGameController:SetItemToMap(itemID, isAdd)
+  local itemCfg = Cfg.cfg_component_post_station_game_item({ID = itemID})[1]
+  if isAdd then
+    self._CurItemMap[itemID] = self._CurItemMap[itemID] or 0
+    self._CurItemMap[itemID] = self._CurItemMap[itemID] + 1
+    self._GameItemDic[itemCfg.ItemType][itemID].ItemNumLimit = self._GameItemDic[itemCfg.ItemType][itemID].ItemNumLimit - 1
+  else
+    self._CurItemMap[itemID] = self._CurItemMap[itemID] - 1
+    self._GameItemDic[itemCfg.ItemType][itemID].ItemNumLimit = self._GameItemDic[itemCfg.ItemType][itemID].ItemNumLimit + 1
   end
+  self:RefreshItemPanel(self._CurSelectItemTypeID, true)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.RefreshTimeCounter = function(self, second)
-  -- function num : 0_35 , upvalues : _ENV
+function UIN27PostInnerGameController:RefreshTimeCounter(second)
   local timeList = {}
   while second ~= 0 do
-    (table.insert)(timeList, 1, second % 10)
+    table.insert(timeList, 1, second % 10)
     second = second // 10
   end
   local len = 4 - #timeList
   for i = 1, len do
-    (table.insert)(timeList, 1, 0)
+    table.insert(timeList, 1, 0)
   end
   for i = 1, #self._TimerImageList do
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R8 in 'UnsetPending'
-
-    ((self._TimerImageList)[i]).sprite = (self._atlas):GetSprite((self._TimeCountSprNameList)[i] .. timeList[i])
+    self._TimerImageList[i].sprite = self._atlas:GetSprite(self._TimeCountSprNameList[i] .. timeList[i])
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.PauseOnClick = function(self)
-  -- function num : 0_36
-  (self._Transition):ChangeAnim("uieff_UIN27PostInnerGameController_PausePanel_in", 10)
-  ;
-  (self._Transition):PlayEnterAnimation(true)
-  ;
-  (self._PausePanelObj):SetActive(true)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._MainGridGameCamera).depth = 0
+function UIN27PostInnerGameController:PauseOnClick()
+  self._Transition:ChangeAnim("uieff_UIN27PostInnerGameController_PausePanel_in", 10)
+  self._Transition:PlayEnterAnimation(true)
+  self._PausePanelObj:SetActive(true)
+  self._MainGridGameCamera.depth = 0
   self._IsPause = true
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.ResumeOnClick = function(self)
-  -- function num : 0_37 , upvalues : _ENV
-  (self._Transition):PlayLeaveAnimation(true)
-  local te = ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_37_0 , upvalues : self
-    (self._PausePanelObj):SetActive(false)
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._MainGridGameCamera).depth = 20
+function UIN27PostInnerGameController:ResumeOnClick()
+  self._Transition:PlayLeaveAnimation(true)
+  local te = GameGlobal.Timer():AddEvent(333, function()
+    self._PausePanelObj:SetActive(false)
+    self._MainGridGameCamera.depth = 20
     self._IsPause = false
-  end
-)
-  ;
-  (table.insert)(self._TimerList, te)
+  end)
+  table.insert(self._TimerList, te)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.QuitOnClick = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function UIN27PostInnerGameController:QuitOnClick()
   if self:CheckComponentClose() then
     self:SwitchState(UIStateType.UIMain)
   else
     local openDialogListInfo = OpenDialogListInfo:New()
-    openDialogListInfo:AddUIInfo("UISideEnterCenterController", {campaign_type = ECampaignType.CAMPAIGN_TYPE_N27, 
-params = {self._MissionID}
-})
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchStateWithDialogList(UIStateType.UIMain, openDialogListInfo, true)
+    openDialogListInfo:AddUIInfo("UISideEnterCenterController", {
+      campaign_type = ECampaignType.CAMPAIGN_TYPE_N27,
+      params = {
+        self._MissionID
+      }
+    })
+    GameGlobal.UIStateManager():SwitchStateWithDialogList(UIStateType.UIMain, openDialogListInfo, true)
   end
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.OnHide = function(self)
-  -- function num : 0_39 , upvalues : _ENV
+function UIN27PostInnerGameController:OnHide()
   self._EndGame = false
   self:DetachEvent(GameEventType.OnN27PostGameItemTypeChange, self.RefreshItemPanel)
   self:DetachEvent(GameEventType.OnN27PostGameItemPress, self.OnGameItemSelect)
@@ -1390,74 +946,48 @@ UIN27PostInnerGameController.OnHide = function(self)
   self:DetachEvent(GameEventType.OnN27PostGameBlockPress, self.OnGameBlockPress)
   self:DetachEvent(GameEventType.OnN27PostGameBlockRelease, self.OnGameBlockRelease)
   if self._countdownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countdownTimer)
+    GameGlobal.Timer():CancelEvent(self._countdownTimer)
     self._countdownTimer = nil
   end
-  for _,v in pairs(self._TimerList) do
-    ((GameGlobal.Timer)()):CancelEvent(v)
+  for _, v in pairs(self._TimerList) do
+    GameGlobal.Timer():CancelEvent(v)
   end
-  ;
-  ((UnityEngine.GameObject).Destroy)((self._MainGridReq).Obj)
+  UnityEngine.GameObject.Destroy(self._MainGridReq.Obj)
   self._MainGridReq = nil
-  ;
-  (self._GameRenderTexture):Release()
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
+  self._GameRenderTexture:Release()
+  UnityEngine.Input.multiTouchEnabled = false
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController._CheckGuide = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN27PostInnerGameController)
+function UIN27PostInnerGameController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN27PostInnerGameController)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController._FinishDragItemGuide = function(self)
-  -- function num : 0_41 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.OperationFinish)
+function UIN27PostInnerGameController:_FinishDragItemGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.OperationFinish)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.GetFirstOrderWidghtForGuide = function(self)
-  -- function num : 0_42
-  return (self._firstOrderWidgetForGuide):GetGameObject()
+function UIN27PostInnerGameController:GetFirstOrderWidghtForGuide()
+  return self._firstOrderWidgetForGuide:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.GetFirstItemForGuide = function(self)
-  -- function num : 0_43
-  local itemWidgetList = (self._ItemPanel):GetAllSpawnList()
-  return (itemWidgetList[1]):GetGameObject()
+function UIN27PostInnerGameController:GetFirstItemForGuide()
+  local itemWidgetList = self._ItemPanel:GetAllSpawnList()
+  return itemWidgetList[1]:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.ShowGuideStep = function(self, param)
-  -- function num : 0_44
-  if (param.data).step == 4 then
-    (self._GuideEffObj):SetActive(true)
+function UIN27PostInnerGameController:ShowGuideStep(param)
+  if param.data.step == 4 then
+    self._GuideEffObj:SetActive(true)
   else
-    ;
-    (self._GuideEffObj):SetActive(false)
+    self._GuideEffObj:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN27PostInnerGameController.CheckComponentClose = function(self)
-  -- function num : 0_45 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  if (self._componentInfo).m_close_time <= curTime then
+function UIN27PostInnerGameController:CheckComponentClose()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  if curTime >= self._componentInfo.m_close_time then
     return true
   end
   return false
 end
-
-

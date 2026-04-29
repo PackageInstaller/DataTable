@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/photo/ui_home_photo_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomePhotoInfoController", UIController)
 UIHomePhotoInfoController = UIHomePhotoInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomePhotoInfoController.closeBtnOnClick = function(self, go)
-  -- function num : 0_0
+function UIHomePhotoInfoController:closeBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomePhotoInfoController:OnShow(uiParams)
   self._inited = false
   self._switchAnim = "UIHomePhotoInfoController_ui_switching"
   self._type = uiParams[1]
@@ -23,16 +13,20 @@ UIHomePhotoInfoController.OnShow = function(self, uiParams)
   self._itemModule = self:GetModule(ItemModule)
   self._itemCountPerRow = 4
   self._index = 0
-  self._number2color = {[1] = Color(0.2, 0.2, 1), [2] = Color(0.3, 0.3, 1), [3] = Color(0.4, 0.4, 1), [4] = Color(0.5, 0.5, 1), [5] = Color(0.1, 0.1, 1), [6] = Color(0.6, 0.6, 1)}
+  self._number2color = {
+    [1] = Color(0.2, 0.2, 1),
+    [2] = Color(0.3, 0.3, 1),
+    [3] = Color(0.4, 0.4, 1),
+    [4] = Color(0.5, 0.5, 1),
+    [5] = Color(0.1, 0.1, 1),
+    [6] = Color(0.6, 0.6, 1)
+  }
   self:GetComponent()
   self:OnValue()
   self._inited = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.GetComponent = function(self)
-  -- function num : 0_2
+function UIHomePhotoInfoController:GetComponent()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "scrollView")
   self._countTex = self:GetUIComponent("UILocalizationText", "count")
   self._rateTex = self:GetUIComponent("UILocalizationText", "rateTex")
@@ -51,43 +45,33 @@ UIHomePhotoInfoController.GetComponent = function(self)
   self._selectInfo = self:GetGameObject("selectInfo")
   self._noSelectInfo = self:GetGameObject("noSelectInfo")
   self._btnPool = self:GetUIComponent("UISelectObjectPath", "btnPool")
-  self._btnItem = (self._btnPool):SpawnObject("UIHomeCommonCloseBtn")
-  ;
-  (self._btnItem):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._btnItem = self._btnPool:SpawnObject("UIHomeCommonCloseBtn")
+  self._btnItem:SetData(function()
     self:closeBtnOnClick()
-  end
-, nil, true)
+  end, nil, true)
   self._fullLineImgGo = self:GetGameObject("FullLineImg")
   self._singleLineImgGo = self:GetGameObject("SingleLineImg")
-  ;
-  (self._singleLineImgGo):SetActive(true)
-  ;
-  (self._fullLineImgGo):SetActive(false)
+  self._singleLineImgGo:SetActive(true)
+  self._fullLineImgGo:SetActive(false)
   self._anim = self:GetUIComponent("Animation", "uiAnim")
   self.getPath = self:GetGameObject("getPath")
   self.lockTxt = self:GetUIComponent("RectTransform", "lockTxt")
   self.pathPool = self:GetUIComponent("UISelectObjectPath", "pathPool")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomePhotoInfoController:OnValue()
   self:_GetItems()
   self:_InitSrollView()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIHomePhotoItemClick, self._index)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIHomePhotoItemClick, self._index)
   self:ShowInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController._GetItems = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomePhotoInfoController:_GetItems()
   self._items = {}
   self._count = 0
-  local cfgs = (Cfg.cfg_item_photo)({Group = self._type})
+  local cfgs = Cfg.cfg_item_photo({
+    Group = self._type
+  })
   if cfgs and next(cfgs) then
     for i = 1, #cfgs do
       local cfg = cfgs[i]
@@ -96,71 +80,50 @@ UIHomePhotoInfoController._GetItems = function(self)
       item.showID = cfg.ItemID
       item.showValue = cfg.ShowValue
       item.Index = cfg.Index
-      local itemCount = (self._itemModule):GetItemCount(item.countID)
+      local itemCount = self._itemModule:GetItemCount(item.countID)
       item.count = itemCount
-      if itemCount > 0 then
+      if 0 < itemCount then
         self._count = self._count + 1
       end
-      ;
-      (table.insert)(self._items, item)
+      table.insert(self._items, item)
     end
   end
-  do
-    self:SortList()
-    self._max = #self._items
-    if #self._items <= 0 then
-      (Log.error)("###[UIHomePhotoInfoController] self._items is nil ! type --> ", self._type)
-    end
-    ;
-    (self._countTex):SetText(self._count .. "/" .. self._max)
-    self._rate = self._count / self._max
-    local tmpTex = (math.floor)(self._rate * 100 + 0.5) .. "%%"
-    ;
-    (self._rateTex):SetText((StringTable.Get)("str_homeland_photo_current_rate", tmpTex))
-    local cfg = (Cfg.cfg_home_photo_layout)({Group = self._type})
-    if cfg and next(cfg) then
-      local title = (cfg[1]).Title
-      ;
-      (self._typeTex):SetText((StringTable.Get)(title))
-    end
+  self:SortList()
+  self._max = #self._items
+  if #self._items <= 0 then
+    Log.error("###[UIHomePhotoInfoController] self._items is nil ! type --> ", self._type)
+  end
+  self._countTex:SetText(self._count .. "/" .. self._max)
+  self._rate = self._count / self._max
+  local tmpTex = math.floor(self._rate * 100 + 0.5) .. "%%"
+  self._rateTex:SetText(StringTable.Get("str_homeland_photo_current_rate", tmpTex))
+  local cfg = Cfg.cfg_home_photo_layout({
+    Group = self._type
+  })
+  if cfg and next(cfg) then
+    local title = cfg[1].Title
+    self._typeTex:SetText(StringTable.Get(title))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.SortList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (table.sort)(self._items, function(a, b)
-    -- function num : 0_5_0
-    do return a.Index < b.Index end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UIHomePhotoInfoController:SortList()
+  table.sort(self._items, function(a, b)
+    return a.Index < b.Index
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController._InitSrollView = function(self)
-  -- function num : 0_6
-  (self._scrollView):InitListView(self:GetRowCount(), function(scrollView, index)
-    -- function num : 0_6_0 , upvalues : self
+function UIHomePhotoInfoController:_InitSrollView()
+  self._scrollView:InitListView(self:GetRowCount(), function(scrollView, index)
     return self:InitListInfo(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.GetRowCount = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local row = (math.ceil)(self._max / self._itemCountPerRow)
+function UIHomePhotoInfoController:GetRowCount()
+  local row = math.ceil(self._max / self._itemCountPerRow)
   return row
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.InitListInfo = function(self, scrollView, index)
-  -- function num : 0_8
+function UIHomePhotoInfoController:InitListInfo(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -174,8 +137,8 @@ UIHomePhotoInfoController.InitListInfo = function(self, scrollView, index)
   for i = 1, self._itemCountPerRow do
     local item = rowList[i]
     local itemIndex = index * self._itemCountPerRow + i
-    if self._max < itemIndex then
-      (item:GetGameObject()):SetActive(false)
+    if itemIndex > self._max then
+      item:GetGameObject():SetActive(false)
     else
       self:ShowItem(item, itemIndex)
     end
@@ -183,186 +146,127 @@ UIHomePhotoInfoController.InitListInfo = function(self, scrollView, index)
   return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.ShowItem = function(self, item, index)
-  -- function num : 0_9 , upvalues : _ENV
-  local data = (self._items)[index]
-  ;
-  (item:GetGameObject()):SetActive(true)
+function UIHomePhotoInfoController:ShowItem(item, index)
+  local data = self._items[index]
+  item:GetGameObject():SetActive(true)
   if data ~= nil then
     item:SetData(index, data, function(idx)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    self._index = idx
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUIHomePhotoItemClick, self._index)
-    self:ShowInfo()
-  end
-, self._number2color, not self._inited)
+      self._index = idx
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUIHomePhotoItemClick, self._index)
+      self:ShowInfo()
+    end, self._number2color, not self._inited)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.ShowInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._selectInfo):SetActive(self._index ~= 0)
-  ;
-  (self._noSelectInfo):SetActive(self._index == 0)
-  ;
-  (self._anim):Play(self._switchAnim)
+function UIHomePhotoInfoController:ShowInfo()
+  self._selectInfo:SetActive(self._index ~= 0)
+  self._noSelectInfo:SetActive(self._index == 0)
+  self._anim:Play(self._switchAnim)
   if self._index == 0 then
-    return 
+    return
   end
-  local item = (self._items)[self._index]
-  local cfg = (Cfg.cfg_item)[item.showID]
+  local item = self._items[self._index]
+  local cfg = Cfg.cfg_item[item.showID]
   if not cfg then
-    (Log.error)("###[UIHomePhotoInfoController] cfg_item is nil ! id --> ", item.id)
+    Log.error("###[UIHomePhotoInfoController] cfg_item is nil ! id --> ", item.id)
   end
-  ;
-  (self._icon):LoadImage(cfg.Icon)
-  ;
-  (self._singleLineImgGo):SetActive(true)
-  ;
-  (self._fullLineImgGo):SetActive(false)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R3 in 'UnsetPending'
-
-  if item.count > 0 then
-    (self._color).color = (UIForgeData.qualityColors)[cfg.Color]
-    ;
-    (self._name):SetText((StringTable.Get)(cfg.Name))
+  self._icon:LoadImage(cfg.Icon)
+  self._singleLineImgGo:SetActive(true)
+  self._fullLineImgGo:SetActive(false)
+  if 0 < item.count then
+    self._color.color = UIForgeData.qualityColors[cfg.Color]
+    self._name:SetText(StringTable.Get(cfg.Name))
     local desc = cfg.RpIntro
     if item.showValue then
-      local cfg_build = (Cfg.cfg_item_architecture)[item.showID]
+      local cfg_build = Cfg.cfg_item_architecture[item.showID]
       if not cfg_build then
-        (Log.error)("###[UIHomePhotoInfoController] cfg_build is nil ! id --> ", item.showID)
-        ;
-        (Log.exception)("cfg_item_architecture为空，配置id=", item.showID)
-        return 
+        Log.error("###[UIHomePhotoInfoController] cfg_build is nil ! id --> ", item.showID)
+        Log.exception("cfg_item_architecture为空，配置id=", item.showID)
+        return
       end
       desc = cfg_build.Des
       local size = ""
       if cfg_build.Size then
         for i = 1, #cfg_build.Size do
           if i == 1 then
-            do
-              size = size .. "*"
-              size = size .. (cfg_build.Size)[i]
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
+          else
+            size = size .. "*"
           end
+          size = size .. cfg_build.Size[i]
         end
       end
-      ;
-      (self._size):SetText(size)
-      ;
-      (self._live):SetText(cfg_build.LivableValue)
+      self._size:SetText(size)
+      self._live:SetText(cfg_build.LivableValue)
       local costTime = self:GetCostTime(cfg_build.CostTime)
-      ;
-      (self._time):SetText(costTime)
+      self._time:SetText(costTime)
     end
-    ;
-    (self._desc):SetText((StringTable.Get)(desc))
-    ;
-    (self._value2):SetActive(item.showValue ~= nil)
-    ;
-    (self._value3):SetActive(item.showValue ~= nil)
+    self._desc:SetText(StringTable.Get(desc))
+    self._value2:SetActive(item.showValue ~= nil)
+    self._value3:SetActive(item.showValue ~= nil)
     if item.showValue ~= nil then
-      (self._singleLineImgGo):SetActive(false)
-      ;
-      (self._fullLineImgGo):SetActive(true)
+      self._singleLineImgGo:SetActive(false)
+      self._fullLineImgGo:SetActive(true)
     end
   else
     self:ShowPath(cfg.Color)
   end
-  ;
-  (self._lock):SetActive(item.count <= 0)
-  ;
-  (self._unlock):SetActive(item.count > 0)
-  -- DECOMPILER ERROR: 15 unprocessed JMP targets
+  self._lock:SetActive(not (0 < item.count))
+  self._unlock:SetActive(0 < item.count)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.ShowPath = function(self, color)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomePhotoInfoController:ShowPath(color)
   local paths = self:GetPath()
   local count = #paths
-  ;
-  (self.getPath):SetActive(count > 0)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  if count > 0 then
-    (self.lockTxt).anchoredPosition = Vector2(415, -26)
-    ;
-    (self.pathPool):SpawnObjects("UIHomePhotoInfoGetPathItem", count)
-    local pools = (self.pathPool):GetAllSpawnList()
+  self.getPath:SetActive(0 < count)
+  if 0 < count then
+    self.lockTxt.anchoredPosition = Vector2(415, -26)
+    self.pathPool:SpawnObjects("UIHomePhotoInfoGetPathItem", count)
+    local pools = self.pathPool:GetAllSpawnList()
     for i = 1, count do
       local item = pools[i]
       local path = paths[i]
-      local tocolor = (UIForgeData.qualityColors)[color]
-      local desc = (StringTable.Get)(path.desc)
+      local tocolor = UIForgeData.qualityColors[color]
+      local desc = StringTable.Get(path.desc)
       item:SetData(desc, tocolor)
     end
   else
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R4 in 'UnsetPending'
-
-    (self.lockTxt).anchoredPosition = Vector2(415, -185)
+    self.lockTxt.anchoredPosition = Vector2(415, -185)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.GetPath = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomePhotoInfoController:GetPath()
   local ways = {}
-  local item = (self._items)[self._index]
-  local cfg = (Cfg.cfg_item_getway)[item.showID]
-  local cfg_item = (Cfg.cfg_item)[item.showID]
+  local item = self._items[self._index]
+  local cfg = Cfg.cfg_item_getway[item.showID]
+  local cfg_item = Cfg.cfg_item[item.showID]
   local color = cfg_item.color
   if cfg then
-    local count = (table.count)(cfg)
+    local count = table.count(cfg)
     for i = 1, count - 1 do
       local id = cfg["Getway" .. tostring(i)]
       if id then
         local t = UIItemGetWayData:New()
         t:SetData(id)
         if t:CheckChapter() then
-          (table.insert)(ways, t)
+          table.insert(ways, t)
         end
       end
     end
   end
-  do
-    return ways
-  end
+  return ways
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.GetCostTime = function(self, sec)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomePhotoInfoController:GetCostTime(sec)
   if sec then
-    local timeStr = (HelperProxy:GetInstance()):Time2Tex(sec)
+    local timeStr = HelperProxy:GetInstance():Time2Tex(sec)
     return timeStr
   else
-    do
-      do return "" end
-    end
+    return ""
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomePhotoInfoController.OnHide = function(self)
-  -- function num : 0_14
+function UIHomePhotoInfoController:OnHide()
   if self._closeCb then
-    (self._closeCb)()
+    self._closeCb()
   end
 end
-
-

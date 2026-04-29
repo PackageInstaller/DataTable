@@ -1,24 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_destroy_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDestroyEffect", BuffLogicBase)
 BuffLogicDestroyEffect = BuffLogicDestroyEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDestroyEffect.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDestroyEffect:Constructor(buffInstance, logicParam)
   self._objName = logicParam.objName
   self._time = logicParam.time
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDestroyEffect.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicDestroyEffect:DoLogic()
   local buffResult = BuffResultDestroyEffect:New(self._objName, self._time)
   return buffResult
 end
-
-

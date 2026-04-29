@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_effect_on_trap_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridEffectOnTrapInstruction", BaseInstruction)
 PlayGridEffectOnTrapInstruction = PlayGridEffectOnTrapInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridEffectOnTrapInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridEffectOnTrapInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._trapId = tonumber(paramList.trapId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectOnTrapInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayGridEffectOnTrapInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local scopeGridRange = phaseContext:GetScopeGridRange()
   if not scopeGridRange then
     return InstructionConst.PhaseEnd
@@ -28,19 +18,19 @@ PlayGridEffectOnTrapInstruction.DoInstruction = function(self, TT, casterEntity,
   end
   local curScopeGridRangeIndex = phaseContext:GetCurScopeGridRangeIndex()
   if maxScopeRangeCount < curScopeGridRangeIndex then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local utilSvc = world:GetService("UtilData")
-  for _,range in pairs(scopeGridRange) do
+  for _, range in pairs(scopeGridRange) do
     if range then
       local posList = range[curScopeGridRangeIndex]
-      for _,pos in ipairs(posList) do
+      for _, pos in ipairs(posList) do
         local traps = utilSvc:GetTrapsAtPos(pos)
         if traps then
-          for _,trap in ipairs(traps) do
-            if (trap:TrapRender()):GetTrapID() == self._trapId then
+          for _, trap in ipairs(traps) do
+            if trap:TrapRender():GetTrapID() == self._trapId then
               effectService:CreateWorldPositionEffect(self._effectID, pos)
             end
           end
@@ -50,15 +40,13 @@ PlayGridEffectOnTrapInstruction.DoInstruction = function(self, TT, casterEntity,
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridEffectOnTrapInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayGridEffectOnTrapInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

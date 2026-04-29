@@ -1,54 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_hit_back_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseHitBackParam", SkillPhaseParamBase)
 SkillPhaseHitBackParam = SkillPhaseHitBackParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseHitBackParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseHitBackParam:Constructor(t)
   self._hitAnim = t.hitAnim
   self._hitEffectID = t.hitEffectID or 0
   self._turnToTarget = t.turnToTarget or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseHitBackParam.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseHitBackParam:GetCacheTable()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseHitBackParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseHitBackParam:GetPhaseType()
   return SkillViewPhaseType.HitBack
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseHitBackParam.GetHitAnim = function(self)
-  -- function num : 0_3
+function SkillPhaseHitBackParam:GetHitAnim()
   return self._hitAnim
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseHitBackParam.GetHitEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseHitBackParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseHitBackParam.GetTurnToTarget = function(self)
-  -- function num : 0_5
+function SkillPhaseHitBackParam:GetTurnToTarget()
   return self._turnToTarget
 end
-
-

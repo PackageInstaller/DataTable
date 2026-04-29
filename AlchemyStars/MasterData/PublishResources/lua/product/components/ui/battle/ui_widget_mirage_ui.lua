@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_mirage_ui.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetMirageUI", UICustomWidget)
 UIWidgetMirageUI = UIWidgetMirageUI
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetMirageUI.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetMirageUI:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetMirageUI:InitWidget()
   self._chooseGridRoot = self:GetUIComponent("UISelectObjectPath", "ChooseGridRoot")
-  self._chooseGridWidget = (self._chooseGridRoot):SpawnObject("UIWidgetMirageChooseGrid")
+  self._chooseGridWidget = self._chooseGridRoot:SpawnObject("UIWidgetMirageChooseGrid")
   self._countDownObj = self:GetGameObject("CountDown")
   self._countDownTimeText = self:GetUIComponent("UILocalizationText", "CountDownTime")
   self._stepObj = self:GetGameObject("Step")
@@ -26,24 +16,16 @@ UIWidgetMirageUI.InitWidget = function(self)
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.OnReset = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetMirageUI:OnReset()
   self._countDownNum = 30
   local strNum = tostring(self._countDownNum) .. "s"
-  ;
-  (self._countDownTimeText):SetText(strNum)
+  self._countDownTimeText:SetText(strNum)
   self._countDownMs = self._countDownNum * 1000
   self._remainStep = 5
-  ;
-  (self._stepNumText):SetText(tostring(self._remainStep))
+  self._stepNumText:SetText(tostring(self._remainStep))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.RegisterEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetMirageUI:RegisterEvent()
   self:AttachEvent(GameEventType.ShowMirageChooseGrid, self.ShowMirageChooseGrid)
   self:AttachEvent(GameEventType.UIMirageCancelChoose, self.HandleUICancelChoose)
   self:AttachEvent(GameEventType.UIMirageChooseGridConfirm, self.HandleUIChooseGridConfirm)
@@ -52,116 +34,73 @@ UIWidgetMirageUI.RegisterEvent = function(self)
   self:AttachEvent(GameEventType.RefreshMirageStep, self.RefreshMirageStep)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.IsAutoFighting = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):IsAutoFighting()
+function UIWidgetMirageUI:IsAutoFighting()
+  return GameGlobal.GetUIModule(MatchModule):IsAutoFighting()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.ShowAutoFightForbiddenMsg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):ShowAutoFightForbiddenMsg()
+function UIWidgetMirageUI:ShowAutoFightForbiddenMsg()
+  return GameGlobal.GetUIModule(MatchModule):ShowAutoFightForbiddenMsg()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.CancelActiveSkillSwitchTimer = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelActiveSkillSwitchTimer)
+function UIWidgetMirageUI:CancelActiveSkillSwitchTimer()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelActiveSkillSwitchTimer)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.ShowMirageChooseGrid = function(self, show)
-  -- function num : 0_7
-  (self._chooseGridWidget):ShowChooseGridPanel(show)
+function UIWidgetMirageUI:ShowMirageChooseGrid(show)
+  self._chooseGridWidget:ShowChooseGridPanel(show)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.ShowMirageEnterUI = function(self, show)
-  -- function num : 0_8
-  (self._countDownObj):SetActive(show)
-  ;
-  (self._stepObj):SetActive(show)
+function UIWidgetMirageUI:ShowMirageEnterUI(show)
+  self._countDownObj:SetActive(show)
+  self._stepObj:SetActive(show)
   if not show then
     self:OnReset()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.HandleUICancelChoose = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._chooseGridWidget):RefreshMiragePickUpGrid(false)
-  ;
-  (self._chooseGridWidget):SetPickUpConfirmBtnState(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MirageUIClearPickUp)
+function UIWidgetMirageUI:HandleUICancelChoose()
+  self._chooseGridWidget:RefreshMiragePickUpGrid(false)
+  self._chooseGridWidget:SetPickUpConfirmBtnState(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MirageUIClearPickUp)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.HandleUIChooseGridConfirm = function(self, autoFight)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MirageUIConfirmPickUp, autoFight)
+function UIWidgetMirageUI:HandleUIChooseGridConfirm(autoFight)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MirageUIConfirmPickUp, autoFight)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.HandleUIChooseGridGray = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local text = (StringTable.Get)("str_battle_need_choose_one_grid")
-  ;
-  (ToastManager.ShowToast)(text)
+function UIWidgetMirageUI:HandleUIChooseGridGray()
+  local text = StringTable.Get("str_battle_need_choose_one_grid")
+  ToastManager.ShowToast(text)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.RefreshMirageStep = function(self, RemainStep)
-  -- function num : 0_12 , upvalues : _ENV
+function UIWidgetMirageUI:RefreshMirageStep(RemainStep)
   self._remainStep = RemainStep
-  ;
-  (self._stepNumText):SetText(tostring(RemainStep))
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MirageUIRefreshStep, self._remainStep)
+  self._stepNumText:SetText(tostring(RemainStep))
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MirageUIRefreshStep, self._remainStep)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self._countDownObj).activeSelf and self._countDownMs > 0 then
-    local deltaTime = (GameGlobal:GetInstance()):GetUnscaledDeltaTime()
+function UIWidgetMirageUI:OnUpdate(deltaTimeMS)
+  if self._countDownObj.activeSelf and self._countDownMs > 0 then
+    local deltaTime = GameGlobal:GetInstance():GetUnscaledDeltaTime()
     self._countDownMs = self._countDownMs - deltaTime
     self:RefreshCountDownNum()
-    if self._countDownMs <= 0 and self._remainStep > 0 then
-      (self._chooseGridWidget):ShowChooseGridPanel(false)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MirageUICountDownOver)
+    if self._countDownMs <= 0 and 0 < self._remainStep then
+      self._chooseGridWidget:ShowChooseGridPanel(false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.MirageUICountDownOver)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetMirageUI.RefreshCountDownNum = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIWidgetMirageUI:RefreshCountDownNum()
   local refreshNumSec = 0
-  if self._countDownMs < 0 then
+  if 0 > self._countDownMs then
     refreshNumSec = 0
   else
-    refreshNumSec = (math.ceil)(self._countDownMs / 1000)
+    refreshNumSec = math.ceil(self._countDownMs / 1000)
   end
   if self._countDownNum ~= refreshNumSec then
     self._countDownNum = refreshNumSec
     local timeNumStr = tostring(self._countDownNum) .. "s"
-    ;
-    (self._countDownTimeText):SetText(timeNumStr)
+    self._countDownTimeText:SetText(timeNumStr)
   end
 end
-
-

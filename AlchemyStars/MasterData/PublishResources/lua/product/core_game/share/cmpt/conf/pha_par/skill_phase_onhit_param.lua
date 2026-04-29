@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_onhit_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseOnHitParam", SkillPhaseParamBase)
 SkillPhaseOnHitParam = SkillPhaseOnHitParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseOnHitParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseOnHitParam:Constructor(t)
   self._castEffectID = t.castEffectID
   self._castAnimation = t.castAnimation
   self._hitPointDelay = t.hitPointDelay
@@ -17,25 +10,14 @@ SkillPhaseOnHitParam.Constructor = function(self, t)
   self._hitEffectID = t.hitEffectID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseOnHitParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseOnHitParam:GetPhaseType()
   return SkillViewPhaseType.OnHit
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseOnHitParam.GetSkillScopeRows = function(self)
-  -- function num : 0_2
+function SkillPhaseOnHitParam:GetSkillScopeRows()
   return self._rows
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseOnHitParam.GetSkillScopeColumns = function(self)
-  -- function num : 0_3
+function SkillPhaseOnHitParam:GetSkillScopeColumns()
   return self._columns
 end
-
-

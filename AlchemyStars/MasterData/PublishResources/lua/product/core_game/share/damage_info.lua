@@ -1,18 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/damage_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DamageInfo", Object)
 DamageInfo = DamageInfo
-local DamageType = {Invalid = 0, Normal = 1, Real = 2, Recover = 3, Guard = 4, Miss = 5, Critical = 6, Burn = 21, Poison = 22, Bleed = 23, Explode = 24, RealReflexive = 25, RealDead = 26, NoElementNormal = 27, RealTransmit = 28, RecoverTransmit = 29}
+local DamageType = {
+  Invalid = 0,
+  Normal = 1,
+  Real = 2,
+  Recover = 3,
+  Guard = 4,
+  Miss = 5,
+  Critical = 6,
+  Burn = 21,
+  Poison = 22,
+  Bleed = 23,
+  Explode = 24,
+  RealReflexive = 25,
+  RealDead = 26,
+  NoElementNormal = 27,
+  RealTransmit = 28,
+  RecoverTransmit = 29
+}
 _enum("DamageType", DamageType)
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
 
-DamageInfo.Constructor = function(self, damageValue, damageType)
-  -- function num : 0_0 , upvalues : _ENV
+function DamageInfo:Constructor(damageValue, damageType)
   if damageValue then
-    self._damageValue = (math.ceil)(damageValue)
+    self._damageValue = math.ceil(damageValue)
   else
     self._damageValue = nil
   end
@@ -48,10 +58,7 @@ DamageInfo.Constructor = function(self, damageValue, damageType)
   self._damageStatisticsType = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.Clone = function(self, other)
-  -- function num : 0_1 , upvalues : _ENV
+function DamageInfo:Clone(other)
   self._damageValue = other._damageValue
   self._damageType = other._damageType
   self._changeHP = other._changeHP
@@ -67,10 +74,10 @@ DamageInfo.Clone = function(self, other)
   self._comboCount = other._comboCount
   self._shieldLayer = nil
   if other._mazeDamageList then
-    self._mazeDamageList = (table.clone)(other._mazeDamageList)
+    self._mazeDamageList = table.clone(other._mazeDamageList)
   end
   if other._mazeTeamMembersDamageList then
-    self._mazeTeamMembersDamageList = (table.clone)(other._mazeTeamMembersDamageList)
+    self._mazeTeamMembersDamageList = table.clone(other._mazeTeamMembersDamageList)
   end
   self._singlePet = other._singlePet
   self._showPosition = other._showPosition
@@ -85,56 +92,35 @@ DamageInfo.Clone = function(self, other)
   self._multiHPSwitchCount = other._multiHPSwitchCount
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetDamageValue = function(self)
-  -- function num : 0_2
+function DamageInfo:GetDamageValue()
   return self._damageValue
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetMazeDamageList = function(self)
-  -- function num : 0_3
+function DamageInfo:GetMazeDamageList()
   return self._mazeDamageList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetMazeDamageList = function(self, mazeDamageList)
-  -- function num : 0_4
+function DamageInfo:SetMazeDamageList(mazeDamageList)
   self._mazeDamageList = mazeDamageList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetMazeDamageValue = function(self, entityID)
-  -- function num : 0_5
+function DamageInfo:GetMazeDamageValue(entityID)
   if not self._mazeDamageList then
     return 0
   end
-  return (self._mazeDamageList)[entityID]
+  return self._mazeDamageList[entityID]
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.AddMazeDamage = function(self, entityID, damageValue)
-  -- function num : 0_6
+function DamageInfo:AddMazeDamage(entityID, damageValue)
   if not self._mazeDamageList then
     self._mazeDamageList = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._mazeDamageList)[entityID] = damageValue
+  self._mazeDamageList[entityID] = damageValue
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.MergeDamageInfo = function(self, damageInfo)
-  -- function num : 0_7 , upvalues : _ENV
+function DamageInfo:MergeDamageInfo(damageInfo)
   if self._damageType ~= damageInfo:GetDamageType() then
-    return 
+    return
   end
   self._damageValue = self._damageValue + damageInfo:GetDamageValue()
   self._changeHP = self._changeHP + damageInfo:GetChangeHP()
@@ -143,71 +129,49 @@ DamageInfo.MergeDamageInfo = function(self, damageInfo)
     if not self._mazeDamageList then
       self._mazeDamageList = {}
     end
-    for eid,val in pairs(mazeDamageList) do
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._mazeDamageList)[eid] = ((self._mazeDamageList)[eid] or 0) + val
+    for eid, val in pairs(mazeDamageList) do
+      self._mazeDamageList[eid] = (self._mazeDamageList[eid] or 0) + val
     end
   end
-  do
-    local mazeTeamMemberDamageList = damageInfo:GetMazeTeamMemberDamageList()
-    if mazeTeamMemberDamageList then
-      if not self._mazeTeamMembersDamageList then
-        self._mazeTeamMembersDamageList = {}
-      end
-      for eid,v in pairs(mazeTeamMemberDamageList) do
-        local saveDamageInfo = (self._mazeTeamMembersDamageList)[eid]
-        -- DECOMPILER ERROR at PC57: Confused about usage of register: R10 in 'UnsetPending'
-
-        if not saveDamageInfo then
-          (self._mazeTeamMembersDamageList)[eid] = v
-        else
-          local saveDamageInfoChangeHp = saveDamageInfo:GetChangeHP()
-          local saveDamageInfoDamageValue = saveDamageInfo:GetDamageValue()
-          saveDamageInfo:SetChangeHP(saveDamageInfoChangeHp + v:GetChangeHP())
-          saveDamageInfo:SetDamageValue(saveDamageInfoDamageValue + v:GetDamageValue())
-        end
+  local mazeTeamMemberDamageList = damageInfo:GetMazeTeamMemberDamageList()
+  if mazeTeamMemberDamageList then
+    if not self._mazeTeamMembersDamageList then
+      self._mazeTeamMembersDamageList = {}
+    end
+    for eid, v in pairs(mazeTeamMemberDamageList) do
+      local saveDamageInfo = self._mazeTeamMembersDamageList[eid]
+      if not saveDamageInfo then
+        self._mazeTeamMembersDamageList[eid] = v
+      else
+        local saveDamageInfoChangeHp = saveDamageInfo:GetChangeHP()
+        local saveDamageInfoDamageValue = saveDamageInfo:GetDamageValue()
+        saveDamageInfo:SetChangeHP(saveDamageInfoChangeHp + v:GetChangeHP())
+        saveDamageInfo:SetDamageValue(saveDamageInfoDamageValue + v:GetDamageValue())
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetMazeTeamMemberDamageList = function(self)
-  -- function num : 0_8
+function DamageInfo:GetMazeTeamMemberDamageList()
   return self._mazeTeamMembersDamageList
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetMazeTeamMemberDamageList = function(self, mazeDamageList)
-  -- function num : 0_9
+function DamageInfo:SetMazeTeamMemberDamageList(mazeDamageList)
   self._mazeTeamMembersDamageList = mazeDamageList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetMazeTeamMemberDamageInfo = function(self, entityID)
-  -- function num : 0_10 , upvalues : _ENV, DamageType
+function DamageInfo:GetMazeTeamMemberDamageInfo(entityID)
   if not self._mazeTeamMembersDamageList then
     return DamageInfo:New(0, DamageType.Invalid)
   end
-  return (self._mazeTeamMembersDamageList)[entityID]
+  return self._mazeTeamMembersDamageList[entityID]
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.AddMazeTeamMemberDamageInfo = function(self, entityID, damageInfo)
-  -- function num : 0_11 , upvalues : DamageType
+function DamageInfo:AddMazeTeamMemberDamageInfo(entityID, damageInfo)
   if not self._mazeTeamMembersDamageList then
     self._mazeTeamMembersDamageList = {}
   end
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._mazeTeamMembersDamageList)[entityID] = damageInfo
+  self._mazeTeamMembersDamageList[entityID] = damageInfo
   if not self._elementType then
     self._elementType = damageInfo:GetElementType()
   end
@@ -234,576 +198,328 @@ DamageInfo.AddMazeTeamMemberDamageInfo = function(self, entityID, damageInfo)
     self._shieldCostDamage = self._shieldCostDamage + damageInfo:GetShieldCostDamage()
     self._isHpShieldGuard = self._shieldCostDamage == self._changeHP
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetSinglePet = function(self)
-  -- function num : 0_12
+function DamageInfo:GetSinglePet()
   return self._singlePet or 0
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetSinglePet = function(self, singlePet)
-  -- function num : 0_13
+function DamageInfo:SetSinglePet(singlePet)
   self._singlePet = singlePet
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetDamageType = function(self)
-  -- function num : 0_14
+function DamageInfo:GetDamageType()
   return self._damageType
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetDropAssetList = function(self)
-  -- function num : 0_15
+function DamageInfo:GetDropAssetList()
   return self._dropAssetList
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetDropAssetList = function(self, dropAssetList)
-  -- function num : 0_16
+function DamageInfo:SetDropAssetList(dropAssetList)
   self._dropAssetList = dropAssetList
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetDamageValue = function(self, damage)
-  -- function num : 0_17 , upvalues : _ENV
-  self._damageValue = (math.floor)(damage)
+function DamageInfo:SetDamageValue(damage)
+  self._damageValue = math.floor(damage)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetDamageType = function(self, damageType)
-  -- function num : 0_18
+function DamageInfo:SetDamageType(damageType)
   self._damageType = damageType
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetAttackerEntityID = function(self, damageSrcEntityId)
-  -- function num : 0_19
+function DamageInfo:SetAttackerEntityID(damageSrcEntityId)
   self._attackerEntityId = damageSrcEntityId
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetAttackerEntityID = function(self)
-  -- function num : 0_20
+function DamageInfo:GetAttackerEntityID()
   return self._attackerEntityId
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetTargetEntityID = function(self, targetEntityId)
-  -- function num : 0_21
+function DamageInfo:SetTargetEntityID(targetEntityId)
   self._targetEntityId = targetEntityId
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetTargetEntityID = function(self)
-  -- function num : 0_22
+function DamageInfo:GetTargetEntityID()
   return self._targetEntityId
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.IsTriggerHPLock = function(self)
-  -- function num : 0_23
+function DamageInfo:IsTriggerHPLock()
   return self._isTriggerHPLock
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetTriggerHPLock = function(self, val)
-  -- function num : 0_24
+function DamageInfo:SetTriggerHPLock(val)
   self._isTriggerHPLock = val
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetTriggerSecKill = function(self, val)
-  -- function num : 0_25
+function DamageInfo:SetTriggerSecKill(val)
   self._isTriggerSecKill = val
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.IsTriggerSecKill = function(self)
-  -- function num : 0_26
+function DamageInfo:IsTriggerSecKill()
   return self._isTriggerSecKill
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetShieldLayer = function(self, layer)
-  -- function num : 0_27
+function DamageInfo:SetShieldLayer(layer)
   self._shieldLayer = layer
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetShieldLayer = function(self)
-  -- function num : 0_28
+function DamageInfo:GetShieldLayer()
   return self._shieldLayer
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetComboCount = function(self, count)
-  -- function num : 0_29
+function DamageInfo:SetComboCount(count)
   self._comboCount = count
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetComboCount = function(self)
-  -- function num : 0_30
+function DamageInfo:GetComboCount()
   return self._comboCount
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetChangeHP = function(self, val)
-  -- function num : 0_31
+function DamageInfo:SetChangeHP(val)
   self._changeHP = val
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetChangeHP = function(self)
-  -- function num : 0_32
+function DamageInfo:GetChangeHP()
   return self._changeHP
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetShowPosition = function(self, pos)
-  -- function num : 0_33
+function DamageInfo:SetShowPosition(pos)
   self._showPosition = pos
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetShowPosition = function(self)
-  -- function num : 0_34
+function DamageInfo:GetShowPosition()
   return self._showPosition
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetElementType = function(self, element)
-  -- function num : 0_35
+function DamageInfo:SetElementType(element)
   self._elementType = element
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetElementType = function(self)
-  -- function num : 0_36
+function DamageInfo:GetElementType()
   return self._elementType
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetShowType = function(self, type)
-  -- function num : 0_37
+function DamageInfo:SetShowType(type)
   self._showType = type
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetShowType = function(self)
-  -- function num : 0_38
+function DamageInfo:GetShowType()
   return self._showType
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetHPShield = function(self, val)
-  -- function num : 0_39
+function DamageInfo:SetHPShield(val)
   self._hpShield = val
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetHPShield = function(self)
-  -- function num : 0_40
+function DamageInfo:GetHPShield()
   return self._hpShield
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetHPShieldDelta = function(self, val)
-  -- function num : 0_41
+function DamageInfo:SetHPShieldDelta(val)
   self._hpShieldDelta = val
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetHPShieldDelta = function(self)
-  -- function num : 0_42
+function DamageInfo:GetHPShieldDelta()
   return self._hpShieldDelta
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetHPShieldGuard = function(self, val)
-  -- function num : 0_43
+function DamageInfo:SetHPShieldGuard(val)
   self._isHpShieldGuard = val
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.IsHPShieldGuard = function(self)
-  -- function num : 0_44
+function DamageInfo:IsHPShieldGuard()
   return self._isHpShieldGuard
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetBeHitRefreshBuff = function(self, val)
-  -- function num : 0_45
+function DamageInfo:SetBeHitRefreshBuff(val)
   self._beHitRefreshBuff = val
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetBeHitRefreshBuff = function(self)
-  -- function num : 0_46
+function DamageInfo:GetBeHitRefreshBuff()
   return self._beHitRefreshBuff
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetPlayBuffResult = function(self, val)
-  -- function num : 0_47
+function DamageInfo:SetPlayBuffResult(val)
   self._playBuffResult = val
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetPlayBuffResult = function(self)
-  -- function num : 0_48
+function DamageInfo:GetPlayBuffResult()
   return self._playBuffResult
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetDamageStageIndex = function(self, val)
-  -- function num : 0_49
+function DamageInfo:SetDamageStageIndex(val)
   self._damageStageIndex = val
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetDamageStageIndex = function(self)
-  -- function num : 0_50
+function DamageInfo:GetDamageStageIndex()
   return self._damageStageIndex
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetRenderGridPos = function(self, gridPos)
-  -- function num : 0_51
+function DamageInfo:SetRenderGridPos(gridPos)
   self._renderGridPos = gridPos
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetRenderGridPos = function(self)
-  -- function num : 0_52
+function DamageInfo:GetRenderGridPos()
   return self._renderGridPos
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetRandHalfDamageIndex = function(self, val)
-  -- function num : 0_53
+function DamageInfo:SetRandHalfDamageIndex(val)
   self._randHalfDamageIndex = val
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetRandHalfDamageIndex = function(self)
-  -- function num : 0_54
+function DamageInfo:GetRandHalfDamageIndex()
   return self._randHalfDamageIndex
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetAttackPos = function(self, attackPos)
-  -- function num : 0_55
+function DamageInfo:SetAttackPos(attackPos)
   self._attackPos = attackPos
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetAttackPos = function(self)
-  -- function num : 0_56
+function DamageInfo:GetAttackPos()
   return self._attackPos
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetHpAndShieldChangeValue = function(self, val)
-  -- function num : 0_57
+function DamageInfo:SetHpAndShieldChangeValue(val)
   self._hpAndShieldChangeValue = val
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetHpAndShieldChangeValue = function(self)
-  -- function num : 0_58
+function DamageInfo:GetHpAndShieldChangeValue()
   return self._hpAndShieldChangeValue
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetShieldCostDamage = function(self, val)
-  -- function num : 0_59
+function DamageInfo:SetShieldCostDamage(val)
   self._shieldCostDamage = val
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetShieldCostDamage = function(self)
-  -- function num : 0_60
+function DamageInfo:GetShieldCostDamage()
   return self._shieldCostDamage
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetCurSkillDamageIndex = function(self, val)
-  -- function num : 0_61
+function DamageInfo:SetCurSkillDamageIndex(val)
   self._curSkillDamageIndex = val
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetCurSkillDamageIndex = function(self)
-  -- function num : 0_62
+function DamageInfo:GetCurSkillDamageIndex()
   return self._curSkillDamageIndex
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetNormalAttackIndex = function(self)
-  -- function num : 0_63
+function DamageInfo:GetNormalAttackIndex()
   return self._normalAttackIndex
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetNormalAttackIndex = function(self, index)
-  -- function num : 0_64
+function DamageInfo:SetNormalAttackIndex(index)
   self._normalAttackIndex = index
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetCurseHp = function(self, val)
-  -- function num : 0_65
+function DamageInfo:SetCurseHp(val)
   self._curseHp = val
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetCurseHp = function(self)
-  -- function num : 0_66
+function DamageInfo:GetCurseHp()
   return self._curseHp
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetCurseHpDelta = function(self, val)
-  -- function num : 0_67
+function DamageInfo:SetCurseHpDelta(val)
   self._curseHpDelta = val
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetCurseHpDelta = function(self)
-  -- function num : 0_68
+function DamageInfo:GetCurseHpDelta()
   return self._curseHpDelta
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetSkillEffectType = function(self, skillEffectType)
-  -- function num : 0_69
+function DamageInfo:SetSkillEffectType(skillEffectType)
   self._skillEffectType = skillEffectType
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetSkillEffectType = function(self)
-  -- function num : 0_70
+function DamageInfo:GetSkillEffectType()
   return self._skillEffectType
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetSkillID = function(self, skillID)
-  -- function num : 0_71
+function DamageInfo:SetSkillID(skillID)
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetSkillID = function(self)
-  -- function num : 0_72
+function DamageInfo:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.IsMultiHPSwitch = function(self)
-  -- function num : 0_73
-  do return self._multiHPSwitch == true end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DamageInfo:IsMultiHPSwitch()
+  return self._multiHPSwitch == true
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetMultiHPSwitch = function(self, state)
-  -- function num : 0_74
+function DamageInfo:SetMultiHPSwitch(state)
   self._multiHPSwitch = state
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetNewMultiHPStage = function(self)
-  -- function num : 0_75
+function DamageInfo:GetNewMultiHPStage()
   return self._newMultiHPStage
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetNewMultiHPStage = function(self, stage)
-  -- function num : 0_76
+function DamageInfo:SetNewMultiHPStage(stage)
   self._newMultiHPStage = stage
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetMultiHPFinalHP = function(self, hp)
-  -- function num : 0_77
+function DamageInfo:SetMultiHPFinalHP(hp)
   self._multiHPFinalHP = hp
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetMultiHPFinalHP = function(self)
-  -- function num : 0_78
+function DamageInfo:GetMultiHPFinalHP()
   return self._multiHPFinalHP
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetMultiHPCurMaxHP = function(self, maxHP)
-  -- function num : 0_79
+function DamageInfo:SetMultiHPCurMaxHP(maxHP)
   self._multiHPCurMaxHP = maxHP
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetMultiHPCurMaxHP = function(self)
-  -- function num : 0_80
+function DamageInfo:GetMultiHPCurMaxHP()
   return self._multiHPCurMaxHP
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetMultiHPSwitchCount = function(self, count)
-  -- function num : 0_81
+function DamageInfo:SetMultiHPSwitchCount(count)
   self._multiHPSwitchCount = count
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetMultiHPSwitchCount = function(self)
-  -- function num : 0_82
+function DamageInfo:GetMultiHPSwitchCount()
   return self._multiHPSwitchCount
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetInitShield = function(self, state)
-  -- function num : 0_83
+function DamageInfo:SetInitShield(state)
   self._initHPShield = state
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.IsInitShield = function(self)
-  -- function num : 0_84
-  do return self._initHPShield == true end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function DamageInfo:IsInitShield()
+  return self._initHPShield == true
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.AddSyncDamageInfo = function(self, damageInfo)
-  -- function num : 0_85 , upvalues : _ENV
-  (table.insert)(self._syncDamageInfoList, damageInfo)
+function DamageInfo:AddSyncDamageInfo(damageInfo)
+  table.insert(self._syncDamageInfoList, damageInfo)
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetSyncDamageInfo = function(self)
-  -- function num : 0_86
+function DamageInfo:GetSyncDamageInfo()
   return self._syncDamageInfoList
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetChainIndex = function(self)
-  -- function num : 0_87
+function DamageInfo:GetChainIndex()
   return self._chainIndex
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetChainIndex = function(self, chainIndex)
-  -- function num : 0_88
+function DamageInfo:SetChainIndex(chainIndex)
   self._chainIndex = chainIndex
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetDamageStatisticsType = function(self)
-  -- function num : 0_89
+function DamageInfo:GetDamageStatisticsType()
   return self._damageStatisticsType
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetDamageStatisticsType = function(self, damageStatisticsType)
-  -- function num : 0_90
+function DamageInfo:SetDamageStatisticsType(damageStatisticsType)
   self._damageStatisticsType = damageStatisticsType
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.SetDamageStatisticsAttackerEntityID = function(self, damageSrcEntityID)
-  -- function num : 0_91
+function DamageInfo:SetDamageStatisticsAttackerEntityID(damageSrcEntityID)
   self._damageStatisticsAttackerEntityID = damageSrcEntityID
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R1 in 'UnsetPending'
-
-DamageInfo.GetDamageStatisticsAttackerEntityID = function(self)
-  -- function num : 0_92
+function DamageInfo:GetDamageStatisticsAttackerEntityID()
   return self._damageStatisticsAttackerEntityID
 end
-
-

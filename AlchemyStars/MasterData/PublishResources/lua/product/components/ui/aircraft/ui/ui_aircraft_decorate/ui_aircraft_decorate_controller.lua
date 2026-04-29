@@ -1,22 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_decorate/ui_aircraft_decorate_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftDecorateController", UIController)
 UIAircraftDecorateController = UIAircraftDecorateController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftDecorateController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIAircraftDecorate)
+function UIAircraftDecorateController:OnShow(uiParams)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIAircraftDecorate)
   self._uiDepth = self:GetDepth()
-  ;
-  ((GameGlobal.UIStateManager)()):SetDepthRaycast(self._uiDepth, false)
+  GameGlobal.UIStateManager():SetDepthRaycast(self._uiDepth, false)
   self._decorateMng = uiParams[1]
-  self._aircraftModule = ((GameGlobal.GameLogic)()):GetModule(AircraftModule)
-  self._itemModule = ((GameGlobal.GameLogic)()):GetModule(ItemModule)
-  self._airMain = (self._aircraftModule):GetClientMain()
+  self._aircraftModule = GameGlobal.GameLogic():GetModule(AircraftModule)
+  self._itemModule = GameGlobal.GameLogic():GetModule(ItemModule)
+  self._airMain = self._aircraftModule:GetClientMain()
   self._showDescItemID = nil
   self._tweenTime = 0.2
   self._tabItemRectTransform = {}
@@ -25,16 +17,14 @@ UIAircraftDecorateController.OnShow = function(self, uiParams)
   self._openTabChild = 201
   self._isFirstDetail = true
   self._isDetaiOpen = false
-  self._colorBlue = Color(0, 0.86274509803922, 1, 1)
-  self._colorGreen = Color(0.6156862745098, 0.93333333333333, 0.10980392156863, 1)
-  self._colorRed = Color(0.93333333333333, 0.20392156862745, 0.10980392156863, 1)
+  self._colorBlue = Color(0, 0.8627450980392157, 1, 1)
+  self._colorGreen = Color(0.615686274509804, 0.9333333333333333, 0.10980392156862745, 1)
+  self._colorRed = Color(0.9333333333333333, 0.20392156862745098, 0.10980392156862745, 1)
   local commonTopRoot = self:GetUIComponent("UISelectObjectPath", "TopButton")
   local backBtns = commonTopRoot:SpawnObject("UICommonTopButton")
   backBtns:SetData(function()
-    -- function num : 0_0_0 , upvalues : self
-    (self._decorateMng):Back()
-  end
-, nil, nil, true)
+    self._decorateMng:Back()
+  end, nil, nil, true)
   self._tabContent = self:GetUIComponent("UISelectObjectPath", "TabContent")
   self._rootLeft = self:GetGameObject("Left")
   self._rootTop = self:GetGameObject("Top")
@@ -45,12 +35,9 @@ UIAircraftDecorateController.OnShow = function(self, uiParams)
   self._textAtmosphere = self:GetUIComponent("UILocalizationText", "TextAtmosphere")
   self._rotateMask = self:GetGameObject("RotateMask")
   self._rotater = self:GetUIComponent("UIRotater", "Rotater")
-  ;
-  ((self._rotater).onAngleChanged):AddListener(function(angle)
-    -- function num : 0_0_1 , upvalues : self
-    (self._decorateMng):OnRotate(angle)
-  end
-)
+  self._rotater.onAngleChanged:AddListener(function(angle)
+    self._decorateMng:OnRotate(angle)
+  end)
   self._rotaterRect = self:GetUIComponent("RectTransform", "Rotater")
   self:AttachEvent(GameEventType.UIAircraftShowRotater, self._OnShowRotater)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.OnUIDepthChanged)
@@ -71,106 +58,72 @@ UIAircraftDecorateController.OnShow = function(self, uiParams)
   self._searchResult = FurnitureSearchResult:New()
   self._furnitureDic = {}
   self:_OnValue()
-  ;
-  (self._decorateMng):OnDecorateUIShow(self:GetGameObject("furnitureBtns"))
+  self._decorateMng:OnDecorateUIShow(self:GetGameObject("furnitureBtns"))
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.OnUIDepthChanged = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftDecorateController:OnUIDepthChanged()
   local depth = self:GetDepth()
   if self._uiDepth ~= depth then
     AirLog("装修UI深度变化：", depth)
-    ;
-    ((GameGlobal.UIStateManager)()):SetDepthRaycast(self._uiDepth, true)
+    GameGlobal.UIStateManager():SetDepthRaycast(self._uiDepth, true)
     self._uiDepth = depth
-    ;
-    ((GameGlobal.UIStateManager)()):SetDepthRaycast(self._uiDepth, false)
+    GameGlobal.UIStateManager():SetDepthRaycast(self._uiDepth, false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._decorateMng):OnDecorateUIClose()
+function UIAircraftDecorateController:OnHide()
+  self._decorateMng:OnDecorateUIClose()
   self._furnitureDic = nil
-  ;
-  ((GameGlobal.UIStateManager)()):SetDepthRaycast(self._uiDepth, true)
+  GameGlobal.UIStateManager():SetDepthRaycast(self._uiDepth, true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftDecorateController:_OnValue()
   self:_InitFurnitureTabs()
   for i = self._tabCount, 1, -1 do
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(((self._tabs)[i]):ItemMoveRectTransform())
-    local height = ((self._tabs)[i]):OnGetMaskSizeDeltaHeight()
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._tabs[i]:ItemMoveRectTransform())
+    local height = self._tabs[i]:OnGetMaskSizeDeltaHeight()
     self:_OnChangeLayout(i, height)
   end
-  local atmosphereNum = (self._aircraftModule):CalFurnitureAmbient(true)
+  local atmosphereNum = self._aircraftModule:CalFurnitureAmbient(true)
   self:_OnRefreshAtmosphere(atmosphereNum)
   self:_OnSwitchDecorateModel(true, self._openTabChild)
   self:_OnRefreshRoomTitle()
   self:_BeginDecorateClearAllPet()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._InitFurnitureTabs = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftDecorateController:_InitFurnitureTabs()
   local tempTab = {}
-  local cfg_aircraft_furniture_tab = (Cfg.cfg_aircraft_furniture_tab1)({})
+  local cfg_aircraft_furniture_tab = Cfg.cfg_aircraft_furniture_tab1({})
   for i = 1, #cfg_aircraft_furniture_tab do
-    (table.insert)(tempTab, cfg_aircraft_furniture_tab[i])
+    table.insert(tempTab, cfg_aircraft_furniture_tab[i])
   end
-  self._tabCount = (table.count)(tempTab)
-  ;
-  (self._tabContent):SpawnObjects("UIAircraftDecorateTabItem", self._tabCount)
-  self._tabs = (self._tabContent):GetAllSpawnList()
+  self._tabCount = table.count(tempTab)
+  self._tabContent:SpawnObjects("UIAircraftDecorateTabItem", self._tabCount)
+  self._tabs = self._tabContent:GetAllSpawnList()
   for i = 1, self._tabCount do
     local itemData = tempTab[i]
-    ;
-    ((self._tabs)[i]):SetData(i, itemData, function(enum)
-    -- function num : 0_4_0 , upvalues : self
-    self:_OnSelectTabChild(enum)
-  end
-, function(idx, height, doTween)
-    -- function num : 0_4_1 , upvalues : self
-    self:_OnChangeLayout(idx, height, doTween)
-  end
-)
+    self._tabs[i]:SetData(i, itemData, function(enum)
+      self:_OnSelectTabChild(enum)
+    end, function(idx, height, doTween)
+      self:_OnChangeLayout(idx, height, doTween)
+    end)
   end
   for i = 1, self._tabCount do
-    local itemRT = ((self._tabs)[i]):ItemRectTransform()
-    ;
-    (table.insert)(self._tabItemRectTransform, itemRT)
-    ;
-    (table.insert)(self._tabOpenState, false)
+    local itemRT = self._tabs[i]:ItemRectTransform()
+    table.insert(self._tabItemRectTransform, itemRT)
+    table.insert(self._tabOpenState, false)
   end
   self._tabRectTransform = self:GetUIComponent("RectTransform", "TabContent")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._tabRectTransform)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._tabRectTransform)
   local leftGrid = self:GetUIComponent("GridLayoutGroup", "TabContent")
-  -- DECOMPILER ERROR at PC92: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._tabRectTransform).sizeDelta = Vector2((leftGrid.cellSize).x, (leftGrid.cellSize).y * self._tabCount + (leftGrid.spacing).y * (self._tabCount - 1))
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._tabRectTransform).anchoredPosition = Vector2(0, 0)
+  self._tabRectTransform.sizeDelta = Vector2(leftGrid.cellSize.x, leftGrid.cellSize.y * self._tabCount + leftGrid.spacing.y * (self._tabCount - 1))
+  self._tabRectTransform.anchoredPosition = Vector2(0, 0)
   leftGrid.enabled = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnSelectTabChild = function(self, tabChild, force)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftDecorateController:_OnSelectTabChild(tabChild, force)
   if self._tablChild == tabChild and not force then
-    return 
+    return
   end
   self._tablChild = tabChild
   if self._isFirstDetail == true then
@@ -180,89 +133,60 @@ UIAircraftDecorateController._OnSelectTabChild = function(self, tabChild, force)
     self:_RefrenshDetailScrollView()
   end
   self:BtnCloseDescOnClick()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateSmallTabClick, self._tablChild)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateSmallTabClick, self._tablChild)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._RefrenshDetailScrollView = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIAircraftDecorateController:_RefrenshDetailScrollView()
   self._furnitureDataList = self:_GetFurnitureList()
-  local furnitureDataListCount = (table.count)(self._furnitureDataList)
-  ;
-  (self._detailScrollView):SetListItemCount(furnitureDataListCount)
-  ;
-  (self._detailScrollView):MovePanelToItemIndex(0, 0)
+  local furnitureDataListCount = table.count(self._furnitureDataList)
+  self._detailScrollView:SetListItemCount(furnitureDataListCount)
+  self._detailScrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._GetFurnitureList = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIAircraftDecorateController:_GetFurnitureList()
   local tempList = {}
-  local furnitureListAll = (self._aircraftModule):GetFurnitureList()
-  for k,value in pairs(furnitureListAll) do
-    local cfg_item_furniture = (Cfg.cfg_item_furniture)[value:GetTemplateID()]
+  local furnitureListAll = self._aircraftModule:GetFurnitureList()
+  for k, value in pairs(furnitureListAll) do
+    local cfg_item_furniture = Cfg.cfg_item_furniture[value:GetTemplateID()]
     if not cfg_item_furniture then
-      (Log.exception)("玩家已有道具：", value.ID, "，在家居道具表cfg_item_furniture.xlsx里没找到")
-      return 
+      Log.exception("玩家已有道具：", value.ID, "，在家居道具表cfg_item_furniture.xlsx里没找到")
+      return
     end
     if cfg_item_furniture.Tab == self._tablChild then
-      (table.insert)(tempList, value)
+      table.insert(tempList, value)
     end
   end
-  if (table.count)(tempList) > 0 then
-    (table.sort)(tempList, function(a, b)
-    -- function num : 0_7_0 , upvalues : self
-    if a:IsNewFurniture() == b:IsNewFurniture() then
-      local remainsNumA = (self._aircraftModule):GetRemainsFurnitureItemNumByItemID(a:GetTemplateID())
-      local remainsNumB = (self._aircraftModule):GetRemainsFurnitureItemNumByItemID(b:GetTemplateID())
-      if (a:GetTemplate()).BagSortIndex >= (b:GetTemplate()).BagSortIndex then
-        do
-          do return (remainsNumA <= 0 or remainsNumB <= 0) and remainsNumA ~= 0 or remainsNumB ~= 0 end
-          do return remainsNumB == 0 end
-          do return a:IsNewFurniture() end
-          -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  if table.count(tempList) > 0 then
+    table.sort(tempList, function(a, b)
+      if a:IsNewFurniture() == b:IsNewFurniture() then
+        local remainsNumA = self._aircraftModule:GetRemainsFurnitureItemNumByItemID(a:GetTemplateID())
+        local remainsNumB = self._aircraftModule:GetRemainsFurnitureItemNumByItemID(b:GetTemplateID())
+        if 0 < remainsNumA and 0 < remainsNumB or remainsNumA == 0 and remainsNumB == 0 then
+          return a:GetTemplate().BagSortIndex < b:GetTemplate().BagSortIndex
         end
+        return remainsNumB == 0
       end
-    end
-  end
-)
+      return a:IsNewFurniture()
+    end)
   end
   return tempList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._BeginDecorateClearAllPet = function(self)
-  -- function num : 0_8
+function UIAircraftDecorateController:_BeginDecorateClearAllPet()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._EndDecorateShowAllPet = function(self)
-  -- function num : 0_9
+function UIAircraftDecorateController:_EndDecorateShowAllPet()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._InitDetailScrollView = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIAircraftDecorateController:_InitDetailScrollView()
   self._furnitureDataList = self:_GetFurnitureList()
-  local furnitureDataListCount = (table.count)(self._furnitureDataList)
-  ;
-  (self._detailScrollView):InitListView(furnitureDataListCount, function(scrollView, index)
-    -- function num : 0_10_0 , upvalues : self
+  local furnitureDataListCount = table.count(self._furnitureDataList)
+  self._detailScrollView:InitListView(furnitureDataListCount, function(scrollView, index)
     return self:_OnInitDetailScrollView(scrollView, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnInitDetailScrollView = function(self, scrollView, index)
-  -- function num : 0_11
+function UIAircraftDecorateController:_OnInitDetailScrollView(scrollView, index)
   if index < 0 then
     return nil
   end
@@ -279,118 +203,73 @@ UIAircraftDecorateController._OnInitDetailScrollView = function(self, scrollView
   return item
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._ShowDecorateItem = function(self, decorateItem, itemIndex)
-  -- function num : 0_12
-  local data = (self._furnitureDataList)[itemIndex]
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._furnitureDic)[data:GetTemplateID()] = decorateItem
-  ;
-  (decorateItem:GetGameObject()):SetActive(true)
+function UIAircraftDecorateController:_ShowDecorateItem(decorateItem, itemIndex)
+  local data = self._furnitureDataList[itemIndex]
+  self._furnitureDic[data:GetTemplateID()] = decorateItem
+  decorateItem:GetGameObject():SetActive(true)
   if data ~= nil then
     decorateItem:SetData(itemIndex, data, function(item)
-    -- function num : 0_12_0 , upvalues : self
-    self:_OnSelectItem(item)
-  end
-)
+      self:_OnSelectItem(item)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnSelectItem = function(self, item)
-  -- function num : 0_13 , upvalues : _ENV
+function UIAircraftDecorateController:_OnSelectItem(item)
   self:_OnRefreshDescWindow(item)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateSelectItem, item)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateSelectItem, item)
   self:StartTask(self._OnReadFurniture, self, item)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnReadFurniture = function(self, TT, item)
-  -- function num : 0_14
+function UIAircraftDecorateController:_OnReadFurniture(TT, item)
   if not item:IsNewFurniture() then
-    return 
+    return
   end
-  ;
-  (self._aircraftModule):PushViewNewFurniture(item:GetTemplateID())
+  self._aircraftModule:PushViewNewFurniture(item:GetTemplateID())
   item:SetOldFurniture()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnRefreshDescWindow = function(self, item)
-  -- function num : 0_15 , upvalues : _ENV
+function UIAircraftDecorateController:_OnRefreshDescWindow(item)
   local itemID = item:GetTemplateID()
   if self._showDescItemID == itemID then
-    return 
+    return
   end
   self._showDescItemID = itemID
-  ;
-  (self._descWindowAnim):Play("uieff_AircraftDecorate_DescWindow")
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._descCanvasGroup).blocksRaycasts = true
-  local cfg_item_furniture = (Cfg.cfg_item_furniture)[itemID]
-  local cfg_item = (Cfg.cfg_item)[itemID]
-  local itemCount = (self._itemModule):GetItemCount(itemID)
-  local useCount = (self._aircraftModule):GetFurnitureItemNumInBagByItemID(itemID)
-  local remainsNum = (self._aircraftModule):GetRemainsFurnitureItemNumByItemID(itemID)
-  ;
-  (self._textDescName):SetText((StringTable.Get)(cfg_item.Name))
-  ;
-  (self._textDesc):SetText((StringTable.Get)(cfg_item.RpIntro))
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._textDescRoot).anchoredPosition = Vector2(0, 0)
-  ;
-  (self._rawImageDesc):LoadImage(cfg_item.Icon)
+  self._descWindowAnim:Play("uieff_AircraftDecorate_DescWindow")
+  self._descCanvasGroup.blocksRaycasts = true
+  local cfg_item_furniture = Cfg.cfg_item_furniture[itemID]
+  local cfg_item = Cfg.cfg_item[itemID]
+  local itemCount = self._itemModule:GetItemCount(itemID)
+  local useCount = self._aircraftModule:GetFurnitureItemNumInBagByItemID(itemID)
+  local remainsNum = self._aircraftModule:GetRemainsFurnitureItemNumByItemID(itemID)
+  self._textDescName:SetText(StringTable.Get(cfg_item.Name))
+  self._textDesc:SetText(StringTable.Get(cfg_item.RpIntro))
+  self._textDescRoot.anchoredPosition = Vector2(0, 0)
+  self._rawImageDesc:LoadImage(cfg_item.Icon)
   local atmosphere = cfg_item_furniture.Atmosphere
-  local lfAv, lfMv = (self._aircraftModule):CalCentralPetWorkSkill()
-  local newAtmosphere = atmosphere + (math.floor)(atmosphere * lfMv) + (math.floor)(lfAv)
-  ;
-  (self._textDescAtmosphere):SetText(newAtmosphere)
+  local lfAv, lfMv = self._aircraftModule:CalCentralPetWorkSkill()
+  local newAtmosphere = atmosphere + math.floor(atmosphere * lfMv) + math.floor(lfAv)
+  self._textDescAtmosphere:SetText(newAtmosphere)
   local remainsNumStr = "<color=#ffd800>" .. remainsNum .. "</color>"
   local itemCountStr = "<color=#a0a0a0>" .. itemCount .. "</color>"
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self._textDescCount).text = remainsNumStr .. "/" .. itemCountStr
-  ;
-  (self._btnDescFind):SetActive(useCount > 0)
-  ;
-  (self._btnDescPut):SetActive(remainsNum > 0)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._textDescCount.text = remainsNumStr .. "/" .. itemCountStr
+  self._btnDescFind:SetActive(0 < useCount)
+  self._btnDescPut:SetActive(0 < remainsNum)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnChangeLayout = function(self, tabIndex, height, doTween)
-  -- function num : 0_16 , upvalues : _ENV
+function UIAircraftDecorateController:_OnChangeLayout(tabIndex, height, doTween)
   if doTween and self._isDetaiOpen then
-    return 
+    return
   end
-  local isOpenTab = (self._tabOpenState)[tabIndex] == false
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._tabOpenState)[tabIndex] = isOpenTab
+  local isOpenTab = self._tabOpenState[tabIndex] == false
+  self._tabOpenState[tabIndex] = isOpenTab
   self._isDetaiOpen = true
   local changeSizeDelta = Vector2(0, 0)
   if isOpenTab then
     changeSizeDelta = Vector2(0, height)
-    ;
-    ((self._tabs)[tabIndex]):OpenMovePos(doTween)
+    self._tabs[tabIndex]:OpenMovePos(doTween)
   else
     changeSizeDelta = Vector2(0, -height)
-    ;
-    ((self._tabs)[tabIndex]):CloseMovePos(doTween)
+    self._tabs[tabIndex]:CloseMovePos(doTween)
   end
   for i = 1, self._tabCount do
     local changePosition = Vector2(0, 0)
@@ -405,219 +284,133 @@ UIAircraftDecorateController._OnChangeLayout = function(self, tabIndex, height, 
     else
       changePosition = Vector2(0, height)
     end
-    local targetPos = ((self._tabItemRectTransform)[i]).anchoredPosition + changePosition
-    -- DECOMPILER ERROR at PC87: Confused about usage of register: R12 in 'UnsetPending'
-
+    local targetPos = self._tabItemRectTransform[i].anchoredPosition + changePosition
     if not doTween then
-      ((self._tabItemRectTransform)[i]).anchoredPosition = targetPos
+      self._tabItemRectTransform[i].anchoredPosition = targetPos
       self._isDetaiOpen = false
     else
-      local tweener = ((self._tabItemRectTransform)[i]):DOAnchorPos(targetPos, self._tweenTime)
+      local tweener = self._tabItemRectTransform[i]:DOAnchorPos(targetPos, self._tweenTime)
     end
   end
   local tabRootTargetPos = Vector2(0, 0)
-  -- DECOMPILER ERROR at PC107: Confused about usage of register: R7 in 'UnsetPending'
-
   if not doTween then
-    (self._tabRectTransform).sizeDelta = (self._tabRectTransform).sizeDelta + changeSizeDelta
+    self._tabRectTransform.sizeDelta = self._tabRectTransform.sizeDelta + changeSizeDelta
     tabRootTargetPos = Vector2(0, 0)
-    -- DECOMPILER ERROR at PC114: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._tabRectTransform).anchoredPosition = tabRootTargetPos
+    self._tabRectTransform.anchoredPosition = tabRootTargetPos
   else
-    tabRootTargetPos = (self._tabRectTransform).anchoredPosition + changeSizeDelta
+    tabRootTargetPos = self._tabRectTransform.anchoredPosition + changeSizeDelta
     self._isDetaiOpen = false
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIAircraftDecorateBigTabClick, tabIndex, isOpenTab)
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIAircraftDecorateBigTabClick, tabIndex, isOpenTab)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.BtnCloseDescOnClick = function(self)
-  -- function num : 0_17
-  if (self._descCanvasGroup).alpha == 1 then
-    (self._descWindowAnim):Play("uieff_AircraftDecorate_DescWindow_Fade")
+function UIAircraftDecorateController:BtnCloseDescOnClick()
+  if self._descCanvasGroup.alpha == 1 then
+    self._descWindowAnim:Play("uieff_AircraftDecorate_DescWindow_Fade")
   end
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._descCanvasGroup).blocksRaycasts = false
+  self._descCanvasGroup.blocksRaycasts = false
   self._showDescItemID = nil
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.BtnFindOnClick = function(self)
-  -- function num : 0_18
+function UIAircraftDecorateController:BtnFindOnClick()
   local findItemID = self._showDescItemID
-  ;
-  (self._decorateMng):TryPopTip(function()
-    -- function num : 0_18_0 , upvalues : self, findItemID
+  self._decorateMng:TryPopTip(function()
     self:_searchFur(findItemID)
     self:BtnCloseDescOnClick()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._searchFur = function(self, id)
-  -- function num : 0_19
-  local target = (self._searchResult):Search(id)
-  ;
-  (self._decorateMng):FocusFurniture(target)
+function UIAircraftDecorateController:_searchFur(id)
+  local target = self._searchResult:Search(id)
+  self._decorateMng:FocusFurniture(target)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.BtnPutOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if (self._decorateMng):TryAddFurniture(self._showDescItemID) then
+function UIAircraftDecorateController:BtnPutOnClick()
+  if self._decorateMng:TryAddFurniture(self._showDescItemID) then
     self:BtnCloseDescOnClick()
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_no_space"))
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_no_space"))
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnSwitchDecorateModel = function(self, show, openTabChild)
-  -- function num : 0_21
-  (self._rootTop):SetActive(show)
-  ;
-  (self._rootBottom):SetActive(show)
-  ;
-  (self._rootLeft):SetActive(show)
-  ;
-  (self._rootRight):SetActive(show)
+function UIAircraftDecorateController:_OnSwitchDecorateModel(show, openTabChild)
+  self._rootTop:SetActive(show)
+  self._rootBottom:SetActive(show)
+  self._rootLeft:SetActive(show)
+  self._rootRight:SetActive(show)
   if show then
     local tabChild = openTabChild
-    if not tabChild then
-      tabChild = self._tablChild
-    end
+    tabChild = tabChild or self._tablChild
     self:_OnSelectTabChild(tabChild, true)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnRefreshAtmosphere = function(self, atmosphereNum)
-  -- function num : 0_22
-  local realAmbient = (self._aircraftModule):CalFurnitureAmbient(true)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIAircraftDecorateController:_OnRefreshAtmosphere(atmosphereNum)
+  local realAmbient = self._aircraftModule:CalFurnitureAmbient(true)
   if atmosphereNum < realAmbient then
-    (self._textAtmosphere).color = self._colorRed
+    self._textAtmosphere.color = self._colorRed
+  elseif atmosphereNum > realAmbient then
+    self._textAtmosphere.color = self._colorGreen
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-    if realAmbient < atmosphereNum then
-      (self._textAtmosphere).color = self._colorGreen
-    else
-      -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._textAtmosphere).color = self._colorBlue
-    end
+    self._textAtmosphere.color = self._colorBlue
   end
-  local CurCentralAmbientLimit = (self._aircraftModule):GetCurCentralAmbientLimit()
-  if CurCentralAmbientLimit < atmosphereNum then
+  local CurCentralAmbientLimit = self._aircraftModule:GetCurCentralAmbientLimit()
+  if atmosphereNum > CurCentralAmbientLimit then
     atmosphereNum = CurCentralAmbientLimit
   end
-  ;
-  (self._textAtmosphere):SetText(atmosphereNum)
+  self._textAtmosphere:SetText(atmosphereNum)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnShowRotater = function(self, show, angle, offset)
-  -- function num : 0_23
+function UIAircraftDecorateController:_OnShowRotater(show, angle, offset)
   if show then
-    (self._rotater):SetAngle(angle)
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._rotaterRect).anchoredPosition = offset
+    self._rotater:SetAngle(angle)
+    self._rotaterRect.anchoredPosition = offset
   end
-  ;
-  (self._rotateMask):SetActive(show)
+  self._rotateMask:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.BtnAtmosphereOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIAmbientPanel")
+function UIAircraftDecorateController:BtnAtmosphereOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIAmbientPanel")
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.BtnRepealOnClick = function(self)
-  -- function num : 0_25
-  (self._decorateMng):Revert()
+function UIAircraftDecorateController:BtnRepealOnClick()
+  self._decorateMng:Revert()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.BtnClearOnClick = function(self)
-  -- function num : 0_26
-  (self._decorateMng):RemoveAll()
+function UIAircraftDecorateController:BtnClearOnClick()
+  self._decorateMng:RemoveAll()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.BtnSaveOnClick = function(self)
-  -- function num : 0_27
-  (self._decorateMng):Save()
+function UIAircraftDecorateController:BtnSaveOnClick()
+  self._decorateMng:Save()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.BtnSwitchRoomLeftOnClick = function(self)
-  -- function num : 0_28
-  (self._decorateMng):SwitchArea(-1)
+function UIAircraftDecorateController:BtnSwitchRoomLeftOnClick()
+  self._decorateMng:SwitchArea(-1)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.BtnSwitchRoomRightOnClick = function(self)
-  -- function num : 0_29
-  (self._decorateMng):SwitchArea(1)
+function UIAircraftDecorateController:BtnSwitchRoomRightOnClick()
+  self._decorateMng:SwitchArea(1)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController._OnRefreshRoomTitle = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local curArea = (self._decorateMng):CurrentArea()
-  local cfg_aircraft_area = (Cfg.cfg_aircraft_area)[curArea]
-  ;
-  (self._textRoomTitle):SetText((StringTable.Get)(cfg_aircraft_area.Name))
+function UIAircraftDecorateController:_OnRefreshRoomTitle()
+  local curArea = self._decorateMng:CurrentArea()
+  local cfg_aircraft_area = Cfg.cfg_aircraft_area[curArea]
+  self._textRoomTitle:SetText(StringTable.Get(cfg_aircraft_area.Name))
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.RotateMaskOnClick = function(self)
-  -- function num : 0_31
+function UIAircraftDecorateController:RotateMaskOnClick()
   self:_OnShowRotater(false)
-  ;
-  (self._decorateMng):ShowFurTip()
+  self._decorateMng:ShowFurTip()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.GetTabItem = function(self, itemIndex)
-  -- function num : 0_32
+function UIAircraftDecorateController:GetTabItem(itemIndex)
   local tabTwo = itemIndex % 100
   local tabOne = itemIndex - tabTwo
   if tabOne == 0 or tabTwo == 0 then
     return nil
   end
-  local tabOneItem = (self._tabs)[tabOne]
+  local tabOneItem = self._tabs[tabOne]
   if not tabOneItem then
     return nil
   end
@@ -628,32 +421,21 @@ UIAircraftDecorateController.GetTabItem = function(self, itemIndex)
   return nil
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.GetFurnitureItemByID = function(self, tplID)
-  -- function num : 0_33 , upvalues : _ENV
+function UIAircraftDecorateController:GetFurnitureItemByID(tplID)
   local index = -1
   for i = 1, #self._furnitureDataList do
-    if ((self._furnitureDataList)[i]):GetTemplateID() == tplID then
+    if self._furnitureDataList[i]:GetTemplateID() == tplID then
       index = i
       break
     end
   end
-  do
-    ;
-    (self._detailScrollView):MovePanelToItemIndex(index - 1, 0)
-    if (self._furnitureDic)[tplID] == nil then
-      (Log.exception)("找不到引导需要的家具，请注册新账号:", tplID)
-    end
-    return ((self._furnitureDic)[tplID]):GetBG()
+  self._detailScrollView:MovePanelToItemIndex(index - 1, 0)
+  if self._furnitureDic[tplID] == nil then
+    Log.exception("找不到引导需要的家具，请注册新账号:", tplID)
   end
+  return self._furnitureDic[tplID]:GetBG()
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftDecorateController.GetScrollRect = function(self)
-  -- function num : 0_34
+function UIAircraftDecorateController:GetScrollRect()
   return self:GetUIComponent("ScrollRect", "ScrollViewDynamic")
 end
-
-

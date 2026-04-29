@@ -1,8 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/module/messages/match_queue_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local GameMatchError = {GME_Succ = 0, GME_Failed = 1, GME_OutOfTime = 2, GME_InMatchQueue = 3, GME_InMatch = 4, GME_CreateMatchFailed = 5, GME_CreateGroupFailed = 6}
+local GameMatchError = {
+  GME_Succ = 0,
+  GME_Failed = 1,
+  GME_OutOfTime = 2,
+  GME_InMatchQueue = 3,
+  GME_InMatch = 4,
+  GME_CreateMatchFailed = 5,
+  GME_CreateGroupFailed = 6
+}
 _enum("GameMatchError", GameMatchError)
-

@@ -1,91 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/ui_simple_haute_couture_draw_enter_ani_diy_ged.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureDrawEnterAniDIY_GED", UICustomWidget)
 UISimpleHauteCoutureDrawEnterAniDIY_GED = UISimpleHauteCoutureDrawEnterAniDIY_GED
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureDrawEnterAniDIY_GED.Constructor = function(self)
-  -- function num : 0_0
+function UISimpleHauteCoutureDrawEnterAniDIY_GED:Constructor()
   self._clipLength = -1
   self._camera = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawEnterAniDIY_GED.OnShow = function(self)
-  -- function num : 0_1
+function UISimpleHauteCoutureDrawEnterAniDIY_GED:OnShow()
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawEnterAniDIY_GED.InitWidgets = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISimpleHauteCoutureDrawEnterAniDIY_GED:InitWidgets()
   local aniGo = self:GetGameObject("Animation")
   local animation = aniGo:GetComponent("Animation")
-  local clips = (HelperProxy:GetInstance()):GetAllAnimationClip(animation)
+  local clips = HelperProxy:GetInstance():GetAllAnimationClip(animation)
   if clips and clips.Length > 0 then
     local clip = clips[0]
     self._clipLength = clip.length
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawEnterAniDIY_GED.GetClipLength = function(self)
-  -- function num : 0_3
+function UISimpleHauteCoutureDrawEnterAniDIY_GED:GetClipLength()
   return self._clipLength
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawEnterAniDIY_GED.Play = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._camera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UISimpleHauteCoutureMainController")
+function UISimpleHauteCoutureDrawEnterAniDIY_GED:Play()
+  self._camera = GameGlobal.UIStateManager():GetControllerCamera("UISimpleHauteCoutureMainController")
   self:Shot()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureDrawEnterAniDIY_GED.Shot = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISimpleHauteCoutureDrawEnterAniDIY_GED:Shot()
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "Animation")
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).width = (UnityEngine.Screen).width
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).height = (UnityEngine.Screen).height
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).OwnerCamera = self._camera
-  ;
-  (self._shot):CleanRenderTexture()
+  self._shot.width = UnityEngine.Screen.width
+  self._shot.height = UnityEngine.Screen.height
+  self._shot.blurTimes = 0
+  self._shot.OwnerCamera = self._camera
+  self._shot:CleanRenderTexture()
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
     YIELD(TT, 1533)
-    local rt = (self._shot):RefreshBlurTexture()
-    local cacheRt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
+    local rt = self._shot:RefreshBlurTexture()
+    local cacheRt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
     YIELD(TT)
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cacheRt)
+    UnityEngine.Graphics.Blit(rt, cacheRt)
     local texGo = self:GetGameObject("Tex")
     local renderer = texGo:GetComponent("MeshRenderer")
     local csMaterial = renderer.material
     csMaterial:SetTexture("_MainTex", rt)
     renderer.material = csMaterial
-  end
-)
+  end)
 end
-
-

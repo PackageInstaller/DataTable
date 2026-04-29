@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/AnniversaryLogin/ui_activity_anniversary_login_tab_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityAnniversaryLoginTabReward", UICustomWidget)
 UIActivityAnniversaryLoginTabReward = UIActivityAnniversaryLoginTabReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityAnniversaryLoginTabReward.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityAnniversaryLoginTabReward:OnShow(uiParams)
   self._isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabReward.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityAnniversaryLoginTabReward:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabReward.SetData = function(self, campaign, component, refreshCallback, closeCallback, tipsCallback, btnCallback)
-  -- function num : 0_2
+function UIActivityAnniversaryLoginTabReward:SetData(campaign, component, refreshCallback, closeCallback, tipsCallback, btnCallback)
   self._campaign = campaign
   self._component = component
   self._refreshCallback = refreshCallback
@@ -31,36 +18,22 @@ UIActivityAnniversaryLoginTabReward.SetData = function(self, campaign, component
   self._btnCallback = btnCallback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabReward.Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local state = (self._component):GetTimeRewardState(1)
-  local rewards = (self._component):GetReviewRewards()
-  local objs = (UIWidgetHelper.SpawnObjects)(self, "_pool", "UIActivityAnniversaryLoginItem", #rewards)
-  for i,v in ipairs(objs) do
+function UIActivityAnniversaryLoginTabReward:Refresh()
+  local state = self._component:GetTimeRewardState(1)
+  local rewards = self._component:GetReviewRewards()
+  local objs = UIWidgetHelper.SpawnObjects(self, "_pool", "UIActivityAnniversaryLoginItem", #rewards)
+  for i, v in ipairs(objs) do
     v:SetData(rewards[i], state, self._tipsCallback)
   end
   local showBtn = state == ETimeRewardRewardStatus.E_TIME_REWARD_CAN_RECV
-  ;
-  (self:GetGameObject("ClaimBtn")):SetActive(showBtn)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self:GetGameObject("ClaimBtn"):SetActive(showBtn)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabReward.BgBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._refreshCallback)(UIActivityAnniversaryLoginState.TabPre)
+function UIActivityAnniversaryLoginTabReward:BgBtnOnClick(go)
+  self._refreshCallback(UIActivityAnniversaryLoginState.TabPre)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityAnniversaryLoginTabReward.ClaimBtnOnClick = function(self, go)
-  -- function num : 0_5
-  local id = (self._component):GetTimeRewardId(1)
-  ;
-  (self._btnCallback)(self._component, id)
+function UIActivityAnniversaryLoginTabReward:ClaimBtnOnClick(go)
+  local id = self._component:GetTimeRewardId(1)
+  self._btnCallback(self._component, id)
 end
-
-

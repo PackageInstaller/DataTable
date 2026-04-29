@@ -1,116 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/main/ui_activity_returnsystem_get_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemGetItem", UIController)
 UIActivityReturnSystemGetItem = UIActivityReturnSystemGetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemGetItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityReturnSystemGetItem:Constructor()
   self.imgPetOffset = Vector2(-40, -120)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemGetItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityReturnSystemGetItem:OnShow(uiParams)
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
-  self.tranPet = (self:GetGameObject("imgIcon")):GetComponent(typeof(UnityEngine.RectTransform))
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.tranPet).anchoredPosition = self.imgPetOffset
+  self.tranPet = self:GetGameObject("imgIcon"):GetComponent(typeof(UnityEngine.RectTransform))
+  self.tranPet.anchoredPosition = self.imgPetOffset
   self.txtPetName = self:GetUIComponent("UILocalizationText", "txtPetName")
   self.txtPet = self:GetUIComponent("UILocalizationText", "txtPet")
   self.poolAwards = self:GetUIComponent("UISelectObjectPath", "awards")
   self.selectInfoPool = self:GetUIComponent("UISelectObjectPath", "selectInfoPool")
-  self.tips = (self.selectInfoPool):SpawnObject("UISelectInfo")
+  self.tips = self.selectInfoPool:SpawnObject("UISelectInfo")
   self:AttachEvent(GameEventType.AircraftInteractiveEventRewardShowItemTips, self.ShowItemInfo)
   self.awards = uiParams[1]
   self.petIcon = uiParams[2]
   self.petName = uiParams[3]
   self.greeting = uiParams[4]
   self:Flush()
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemGetItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityReturnSystemGetItem:OnHide()
   if self.imgIcon then
-    (self.imgIcon):DestoryLastImage()
+    self.imgIcon:DestoryLastImage()
     self.imgIcon = nil
   end
   self:DetachEvent(GameEventType.AircraftInteractiveEventRewardShowItemTips, self.ShowItemInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemGetItem.Flush = function(self)
-  -- function num : 0_3
-  (self.imgIcon):DestoryLastImage()
-  ;
-  (self.imgIcon):LoadImage(self.petIcon)
-  ;
-  (self.txtPetName):SetText(self.petName)
-  ;
-  (self.txtPet):SetText(self.greeting)
+function UIActivityReturnSystemGetItem:Flush()
+  self.imgIcon:DestoryLastImage()
+  self.imgIcon:LoadImage(self.petIcon)
+  self.txtPetName:SetText(self.petName)
+  self.txtPet:SetText(self.greeting)
   self:FlushAwards()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemGetItem.FlushAwards = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local len = (table.count)(self.awards)
-  ;
-  (self.poolAwards):SpawnObjects("UIActivityReturnSystemTabLoginAwardItem", len)
-  local uiAwards = (self.poolAwards):GetAllSpawnList()
-  for i,uiAward in ipairs(uiAwards) do
-    uiAward:Flush((self.awards)[i])
+function UIActivityReturnSystemGetItem:FlushAwards()
+  local len = table.count(self.awards)
+  self.poolAwards:SpawnObjects("UIActivityReturnSystemTabLoginAwardItem", len)
+  local uiAwards = self.poolAwards:GetAllSpawnList()
+  for i, uiAward in ipairs(uiAwards) do
+    uiAward:Flush(self.awards[i])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemGetItem.ShowItemInfo = function(self, matid, pos)
-  -- function num : 0_5
-  (self.tips):SetData(matid, pos)
+function UIActivityReturnSystemGetItem:ShowItemInfo(matid, pos)
+  self.tips:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemGetItem.bgOnClick = function(self)
-  -- function num : 0_6
+function UIActivityReturnSystemGetItem:bgOnClick()
   self:_PlayAnimOut()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemGetItem.imgCloseOnClick = function(self)
-  -- function num : 0_7
+function UIActivityReturnSystemGetItem:imgCloseOnClick()
   self:_PlayAnimOut()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemGetItem._PlayAnimOut = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityReturnSystemGetItem:_PlayAnimOut()
   self.anim = self:GetUIComponent("Animation", "animation")
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
     self:Lock("UIActivityReturnSystemGetItem_PlayAnimOut")
-    ;
-    (self.anim):Play("uieff_Return_GetItem_Fade")
+    self.anim:Play("uieff_Return_GetItem_Fade")
     YIELD(TT, 200)
     self:UnLock("UIActivityReturnSystemGetItem_PlayAnimOut")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

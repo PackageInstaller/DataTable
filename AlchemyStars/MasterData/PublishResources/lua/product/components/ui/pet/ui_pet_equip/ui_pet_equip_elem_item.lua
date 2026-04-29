@@ -1,53 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_elem_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipElemItem", UICustomWidget)
 UIPetEquipElemItem = UIPetEquipElemItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipElemItem.Constructor = function(self)
-  -- function num : 0_0
+function UIPetEquipElemItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipElemItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetEquipElemItem:OnShow(uiParams)
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._attName = self:GetUIComponent("UILocalizationText", "attName")
   self._elem = self:GetUIComponent("Image", "elem")
-  self._elem2str = {[1] = "str_pet_filter_water_element", [2] = "str_pet_filter_fire_element", [3] = "str_pet_filter_sen_element", [4] = "str_pet_filter_electricity_element", [6] = "str_tale_pet_att_none"}
+  self._elem2str = {
+    [1] = "str_pet_filter_water_element",
+    [2] = "str_pet_filter_fire_element",
+    [3] = "str_pet_filter_sen_element",
+    [4] = "str_pet_filter_electricity_element",
+    [6] = "str_tale_pet_att_none"
+  }
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipElemItem.SetData = function(self, elem, value)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._attName):SetText((StringTable.Get)("str_pet_equip_property_restraint_value", (StringTable.Get)((self._elem2str)[elem])) .. "+" .. value * 100 .. "%")
-  local cfg_elem = (Cfg.cfg_pet_element)[elem]
+function UIPetEquipElemItem:SetData(elem, value)
+  self._attName:SetText(StringTable.Get("str_pet_equip_property_restraint_value", StringTable.Get(self._elem2str[elem])) .. "+" .. value * 100 .. "%")
+  local cfg_elem = Cfg.cfg_pet_element[elem]
   if cfg_elem then
     local icon = cfg_elem.Icon
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._elem).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(icon))
+    self._elem.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(icon))
   else
-    do
-      ;
-      (Log.fatal)("###[UIPetEquipElemItem] cfg_elem is nil ! id --> ", elem)
-    end
+    Log.fatal("###[UIPetEquipElemItem] cfg_elem is nil ! id --> ", elem)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipElemItem.OnHide = function(self)
-  -- function num : 0_3
+function UIPetEquipElemItem:OnHide()
   self._attName = nil
   self._elem = nil
   self._elem2str = nil
 end
-
-

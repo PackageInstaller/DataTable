@@ -1,115 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/blackfist_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("BlackfistComponent", ICampaignComponent)
 BlackfistComponent = BlackfistComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BlackfistComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function BlackfistComponent:Constructor()
   self.m_component_info = BlackfistComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BlackfistComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = BlackfistComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function BlackfistComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function BlackfistComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_BLACKFIST
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function BlackfistComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.GetCampaignMissionComponentId = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function BlackfistComponent:GetCampaignMissionComponentId()
   return ECampaignMissionComponentId.ECampaignMissionComponentId_Blackfist
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.GetCampaignMissionParamKeyMap = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function BlackfistComponent:GetCampaignMissionParamKeyMap()
   local ComponentInfo = self:ComponentInfo()
   local nCfgId = self:GetComponetCfgId(ComponentInfo.m_campaign_id, ComponentInfo.m_component_id)
-  return {[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId, [ECampaignMissionParamKey.ECampaignMissionParamKey_BlackfistdayId] = ComponentInfo.cur_day_index}
+  return {
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] = nCfgId,
+    [ECampaignMissionParamKey.ECampaignMissionParamKey_BlackfistdayId] = ComponentInfo.cur_day_index
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_7 , upvalues : _ENV
+function BlackfistComponent:CampaignComponentPushNotify(notify_data)
   if BlackfistComponentNotifyType.BlackfistComponentNotify_ScoreChanged == notify_data.m_notify_type then
     local ev = NotifyBlackfistScoreChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnScoreChanged(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][BlackfistComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][BlackfistComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.OnScoreChanged = function(self, notify_data)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.m_component_info).score_infos = notify_data.score
+function BlackfistComponent:OnScoreChanged(notify_data)
+  self.m_component_info.score_infos = notify_data.score
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.OnEnterBlackFist = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(timeModule:GetServerTime() / 1000)
-  ;
-  (LocalDB.SetInt)("LAST_ENTER_BLACKFIST_TIME" .. (((GameGlobal.GameLogic)()).msdkAuthorityInfo).open_id, curTime)
+function BlackfistComponent:OnEnterBlackFist()
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(timeModule:GetServerTime() / 1000)
+  LocalDB.SetInt("LAST_ENTER_BLACKFIST_TIME" .. GameGlobal.GameLogic().msdkAuthorityInfo.open_id, curTime)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BlackfistComponent.ShowRedDot = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function BlackfistComponent:ShowRedDot()
   if not self:ComponentIsOpen() then
     return false
   end
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local nextRefreshTime = loginModule:GetCampaignRefreshTime()
   local lastRefreshTime = nextRefreshTime - 86400
-  local enterTime = (LocalDB.GetInt)("LAST_ENTER_BLACKFIST_TIME" .. (((GameGlobal.GameLogic)()).msdkAuthorityInfo).open_id, 0)
-  local ret = enterTime < lastRefreshTime
-  do return ret end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local enterTime = LocalDB.GetInt("LAST_ENTER_BLACKFIST_TIME" .. GameGlobal.GameLogic().msdkAuthorityInfo.open_id, 0)
+  local ret = lastRefreshTime > enterTime
+  return ret
 end
-
-

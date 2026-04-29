@@ -1,36 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_reset_ai_after_transformation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicResetAIAfterTransformation", BuffLogicBase)
 BuffLogicResetAIAfterTransformation = BuffLogicResetAIAfterTransformation
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetAIAfterTransformation.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicResetAIAfterTransformation:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetAIAfterTransformation.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local myCasterEntity = (self._buffInstance):Entity()
+function BuffLogicResetAIAfterTransformation:DoLogic()
+  local myCasterEntity = self._buffInstance:Entity()
   if not myCasterEntity:HasAI() then
-    return 
+    return
   end
-  ;
-  (myCasterEntity:AI()):SetRuntimeData("RoundCount", 0)
-  ;
-  (myCasterEntity:AI()):SetRuntimeData("NextRoundCount", 1)
-  local MonsterID = (myCasterEntity:MonsterID()):GetMonsterID()
-  local cfgService = (self._world):GetService("Config")
+  myCasterEntity:AI():SetRuntimeData("RoundCount", 0)
+  myCasterEntity:AI():SetRuntimeData("NextRoundCount", 1)
+  local MonsterID = myCasterEntity:MonsterID():GetMonsterID()
+  local cfgService = self._world:GetService("Config")
   local monsterConfigData = cfgService:GetMonsterConfigData()
   local monsterStep = monsterConfigData:GetMonsterStep(MonsterID)
   local attributeCmpt = myCasterEntity:Attributes()
   attributeCmpt:Modify("Mobility", monsterStep, 1, MultModifyOperator.PLUS)
-  ;
-  (myCasterEntity:AI()):SetMobilityTotal(monsterStep)
+  myCasterEntity:AI():SetMobilityTotal(monsterStep)
   local aiList = monsterConfigData:GetMonsterAIID(MonsterID)
   myCasterEntity:ReplaceAI(AILogicPeriodType.Main, aiList[1], nil, true)
   local monsterAntiAttackAIIDList = monsterConfigData:GetMonsterAntiAttackAIID(MonsterID)
@@ -39,8 +26,5 @@ BuffLogicResetAIAfterTransformation.DoLogic = function(self)
   else
     myCasterEntity:ClearAI(AILogicPeriodType.Anti)
   end
-  ;
-  (myCasterEntity:AI()):ReSelectWorkSkill()
+  myCasterEntity:AI():ReSelectWorkSkill()
 end
-
-

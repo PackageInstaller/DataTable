@@ -1,59 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n24/specialtask/ui_n24_special_task_award_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN24SpecialTaskAwardItem", UICustomWidget)
 UIN24SpecialTaskAwardItem = UIN24SpecialTaskAwardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN24SpecialTaskAwardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN24SpecialTaskAwardItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskAwardItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIN24SpecialTaskAwardItem:_GetComponents()
   self._bg = self:GetUIComponent("Image", "bg")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "ImgIcon")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskAwardItem.SetData = function(self, roleAsset, callback, lock)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN24SpecialTaskAwardItem:SetData(roleAsset, callback, lock)
   self.roleAsset = roleAsset
   self._callback = callback
   self._lock = lock
-  local cfg = (Cfg.cfg_item)[(self.roleAsset).assetid]
+  local cfg = Cfg.cfg_item[self.roleAsset.assetid]
   local icon = cfg.Icon
   local count = roleAsset.count
-  ;
-  (self._imgIcon):LoadImage(icon)
-  ;
-  (self._txtCount):SetText(self:FormatCount(count))
+  self._imgIcon:LoadImage(icon)
+  self._txtCount:SetText(self:FormatCount(count))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskAwardItem.ImgIconOnClick = function(self, go)
-  -- function num : 0_3
+function UIN24SpecialTaskAwardItem:ImgIconOnClick(go)
   if not self._lock then
-    (self._callback)((self.roleAsset).assetid, (go.transform).position)
+    self._callback(self.roleAsset.assetid, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN24SpecialTaskAwardItem.FormatCount = function(self, count)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN24SpecialTaskAwardItem:FormatCount(count)
   if count < 1000 then
     return count
   end
-  return (math.floor)(count / 1000) .. "k"
+  return math.floor(count / 1000) .. "k"
 end
-
-

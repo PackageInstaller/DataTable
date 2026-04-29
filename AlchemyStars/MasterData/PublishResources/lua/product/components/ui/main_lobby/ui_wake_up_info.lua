@@ -1,28 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_wake_up_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWakeUpInfo", UICustomWidget)
 UIWakeUpInfo = UIWakeUpInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWakeUpInfo.OnShow = function(self)
-  -- function num : 0_0
+function UIWakeUpInfo:OnShow()
   self._go = self:GetGameObject("go")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpInfo.SetData = function(self, friendid, fwakeup)
-  -- function num : 0_1
-  (self._go):SetActive(false)
+function UIWakeUpInfo:SetData(friendid, fwakeup)
+  self._go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWakeUpInfo.WakeUpOnClick = function(self, go)
-  -- function num : 0_2
+function UIWakeUpInfo:WakeUpOnClick(go)
 end
-
-

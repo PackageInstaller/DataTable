@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftArea", Object)
 AircraftArea = AircraftArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftArea.Constructor = function(self, main, id, areaGo, room, getTile)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftArea:Constructor(main, id, areaGo, room, getTile)
   self._main = main
   self._id = id
-  self._floor = ((Cfg.cfg_aircraft_area)[id]).Floor
+  self._floor = Cfg.cfg_aircraft_area[id].Floor
   self._go = areaGo
   self._room = room
   self._isLock = self:checkLock()
@@ -20,147 +13,98 @@ AircraftArea.Constructor = function(self, main, id, areaGo, room, getTile)
   end
   self._tileGetter = getTile
   local box = areaGo:GetComponent(typeof(UnityEngine.BoxCollider))
-  local pos = (areaGo.transform).position + box.center - (areaGo.transform).forward * ((box.size).z / 2)
+  local pos = areaGo.transform.position + box.center - areaGo.transform.forward * (box.size.z / 2)
   self._center = pos
   self._furnitures = {}
   self:FlushEditData()
   self._entered = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.Refresh = function(self, room)
-  -- function num : 0_1
+function AircraftArea:Refresh(room)
   self._room = room
   self._isLock = self:checkLock()
   self:FlushEditData()
   self._entered = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.checkLock = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local space = ((Cfg.cfg_aircraft_area)[self._id]).SpaceId
+function AircraftArea:checkLock()
+  local space = Cfg.cfg_aircraft_area[self._id].SpaceId
   self._spaceID = space
   if space then
     if not self._room then
       return true
     end
-    local type = (self._room):LogicRoomType()
-    if AirRoomType.AmusementBegin <= type and type <= AirRoomType.AmusementEnd and (self._room):Level() <= 1 then
+    local type = self._room:LogicRoomType()
+    if type >= AirRoomType.AmusementBegin and type <= AirRoomType.AmusementEnd and self._room:Level() <= 1 then
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for id,surface in pairs(self._surfaces) do
+function AircraftArea:Dispose()
+  for id, surface in pairs(self._surfaces) do
     surface:Dispose()
   end
-  for _,furniture in pairs(self._furnitures) do
+  for _, furniture in pairs(self._furnitures) do
     furniture:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.Floor = function(self)
-  -- function num : 0_4
+function AircraftArea:Floor()
   return self._floor
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.CenterPos = function(self)
-  -- function num : 0_5
+function AircraftArea:CenterPos()
   return self._center
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.IsThis = function(self, go)
-  -- function num : 0_6
-  do return self._go == go end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AircraftArea:IsThis(go)
+  return self._go == go
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.ID = function(self)
-  -- function num : 0_7
+function AircraftArea:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.CameraID = function(self)
-  -- function num : 0_8
+function AircraftArea:CameraID()
   return self._defaultCameraId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.GetCameraCfg = function(self, type)
-  -- function num : 0_9
-  return (self._cameraCfg)[type]
+function AircraftArea:GetCameraCfg(type)
+  return self._cameraCfg[type]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.GetFurniture = function(self, id)
-  -- function num : 0_10 , upvalues : _ENV
-  for _,fur in pairs(self._furnitures) do
+function AircraftArea:GetFurniture(id)
+  for _, fur in pairs(self._furnitures) do
     if fur:CfgID() == id then
       return fur
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.Furnitures = function(self)
-  -- function num : 0_11
+function AircraftArea:Furnitures()
   return self._furnitures
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.SpaceID = function(self)
-  -- function num : 0_12
+function AircraftArea:SpaceID()
   return self._spaceID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.FlushEditData = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg = (Cfg.cfg_aircraft_area)[self._id]
+function AircraftArea:FlushEditData()
+  local cfg = Cfg.cfg_aircraft_area[self._id]
   local cfgSurs = AircraftGrids[cfg.Floor]
-  self._defaultCameraId = (cfg.Cam)[1]
+  self._defaultCameraId = cfg.Cam[1]
   self._cameraCfg = {}
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._cameraCfg)[LocationType.Floor] = self._defaultCameraId
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (cfg.Cam)[2] and (cfg.Cam)[2] > 0 then
-    (self._cameraCfg)[LocationType.Wall] = (cfg.Cam)[2]
+  self._cameraCfg[LocationType.Floor] = self._defaultCameraId
+  if cfg.Cam[2] and cfg.Cam[2] > 0 then
+    self._cameraCfg[LocationType.Wall] = cfg.Cam[2]
   end
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (cfg.Cam)[3] and (cfg.Cam)[3] > 0 then
-    (self._cameraCfg)[LocationType.Ceiling] = (cfg.Cam)[3]
+  if cfg.Cam[3] and 0 < cfg.Cam[3] then
+    self._cameraCfg[LocationType.Ceiling] = cfg.Cam[3]
   end
   local surfaces = {}
-  for id,cfgSur in pairs(cfgSurs) do
+  for id, cfgSur in pairs(cfgSurs) do
     local w = cfgSur.Width
     local h = cfgSur.Height
     local cfgTiles = cfgSur.Tiles
@@ -168,20 +112,17 @@ AircraftArea.FlushEditData = function(self)
     local count = 0
     for i = 1, w do
       for j = 1, h do
-        local cfgTile = (cfgTiles[i])[j]
+        local cfgTile = cfgTiles[i][j]
         if cfgTile and self:checkTile(cfgTile) then
           if tiles[i] == nil then
             tiles[i] = {}
           end
-          -- DECOMPILER ERROR at PC84: Confused about usage of register: R23 in 'UnsetPending'
-
-          ;
-          (tiles[i])[j] = (self._tileGetter)(cfg.Floor, id, i, j)
+          tiles[i][j] = self._tileGetter(cfg.Floor, id, i, j)
           count = count + 1
         end
       end
     end
-    if count > 0 then
+    if 0 < count then
       surfaces[id] = AircraftSurface:New(cfgSur, tiles)
     end
   end
@@ -189,55 +130,44 @@ AircraftArea.FlushEditData = function(self)
   self:RefreshFurniture()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.RefreshSurfaces = function(self, room)
-  -- function num : 0_14 , upvalues : _ENV
+function AircraftArea:RefreshSurfaces(room)
   self._room = room
   self._isLock = self:checkLock()
   if self._surfaces then
-    for _,sur in pairs(self._surfaces) do
+    for _, sur in pairs(self._surfaces) do
       sur:Dispose()
     end
   end
-  do
-    self._surfaces = nil
-    local cfg = (Cfg.cfg_aircraft_area)[self._id]
-    local cfgSurs = AircraftGrids[cfg.Floor]
-    local surfaces = {}
-    for id,cfgSur in pairs(cfgSurs) do
-      local w = cfgSur.Width
-      local h = cfgSur.Height
-      local cfgTiles = cfgSur.Tiles
-      local tiles = {}
-      local count = 0
-      for i = 1, w do
-        for j = 1, h do
-          local cfgTile = (cfgTiles[i])[j]
-          if cfgTile and self:checkTile(cfgTile) then
-            if tiles[i] == nil then
-              tiles[i] = {}
-            end
-            -- DECOMPILER ERROR at PC62: Confused about usage of register: R24 in 'UnsetPending'
-
-            ;
-            (tiles[i])[j] = (self._tileGetter)(cfg.Floor, id, i, j)
-            count = count + 1
+  self._surfaces = nil
+  local cfg = Cfg.cfg_aircraft_area[self._id]
+  local cfgSurs = AircraftGrids[cfg.Floor]
+  local surfaces = {}
+  for id, cfgSur in pairs(cfgSurs) do
+    local w = cfgSur.Width
+    local h = cfgSur.Height
+    local cfgTiles = cfgSur.Tiles
+    local tiles = {}
+    local count = 0
+    for i = 1, w do
+      for j = 1, h do
+        local cfgTile = cfgTiles[i][j]
+        if cfgTile and self:checkTile(cfgTile) then
+          if tiles[i] == nil then
+            tiles[i] = {}
           end
+          tiles[i][j] = self._tileGetter(cfg.Floor, id, i, j)
+          count = count + 1
         end
       end
-      if count > 0 then
-        surfaces[id] = AircraftSurface:New(cfgSur, tiles)
-      end
     end
-    self._surfaces = surfaces
+    if 0 < count then
+      surfaces[id] = AircraftSurface:New(cfgSur, tiles)
+    end
   end
+  self._surfaces = surfaces
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.checkTile = function(self, cfg)
-  -- function num : 0_15
+function AircraftArea:checkTile(cfg)
   if cfg.Area1 == self._id or cfg.Area2 == self._id then
     if self._isLock then
       return cfg.Unlock
@@ -247,49 +177,40 @@ AircraftArea.checkTile = function(self, cfg)
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.RefreshFurniture = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function AircraftArea:RefreshFurniture()
   local destroyFurs = {}
-  for id,fur in pairs(self._furnitures) do
+  for id, fur in pairs(self._furnitures) do
     fur:Dispose()
-    ;
-    (table.insert)(destroyFurs, fur:InstanceID())
+    table.insert(destroyFurs, fur:InstanceID())
   end
   self._furnitures = {}
   local allFurnitures = self:GetAllFurniture()
-  if not allFurnitures then
-    allFurnitures = {}
-  end
-  for _,fur in pairs(allFurnitures) do
+  allFurnitures = allFurnitures or {}
+  for _, fur in pairs(allFurnitures) do
     if fur.area_id == self._id then
-      local surface = (self._surfaces)[fur.surface]
+      local surface = self._surfaces[fur.surface]
       if surface == nil then
-        (Log.exception)("严重错误！找不到家具所在的面。区域:", self._id, "，", "家具ID：", fur.asset_id, "面ID:", fur.surface)
+        Log.exception("严重错误！找不到家具所在的面。区域:", self._id, "，", "家具ID：", fur.asset_id, "面ID:", fur.surface)
       end
-      local req = (ResourceManager:GetInstance()):SyncLoadAsset(fur.asset_id .. ".prefab", LoadType.GameObject)
-      local gridPos = Vector2((GridHelper.ToFloat)(fur.pos_x), (GridHelper.ToFloat)(fur.pos_z))
-      local fp, fr = (GridHelper.GetFurniturePosRot)(surface, gridPos, fur.rot)
+      local req = ResourceManager:GetInstance():SyncLoadAsset(fur.asset_id .. ".prefab", LoadType.GameObject)
+      local gridPos = Vector2(GridHelper.ToFloat(fur.pos_x), GridHelper.ToFloat(fur.pos_z))
+      local fp, fr = GridHelper.GetFurniturePosRot(surface, gridPos, fur.rot)
       local furniture = AircraftFurniture:New(req, nil, self._floor, self._id)
       furniture:SetDecorateData(fur, false, fp, fr)
-      -- DECOMPILER ERROR at PC88: Confused about usage of register: R14 in 'UnsetPending'
-
-      ;
-      (self._furnitures)[furniture:InstanceID()] = furniture
-      local grids = (GridHelper.FurnitureOccupyGrids)(furniture, furniture:GridPosition(), furniture:GridRotY())
+      self._furnitures[furniture:InstanceID()] = furniture
+      local grids = GridHelper.FurnitureOccupyGrids(furniture, furniture:GridPosition(), furniture:GridRotY())
       local tiles = surface:Tiles()
       local otiles = {}
-      for _,pos in ipairs(grids) do
+      for _, pos in ipairs(grids) do
         if tiles[pos.x] == nil then
-          (Log.error)("找不到列")
+          Log.error("找不到列")
         end
-        local tile = (tiles[pos.x])[pos.y]
+        local tile = tiles[pos.x][pos.y]
         if tile == nil then
-          (Log.exception)("面上找不到家具占据的格子。", "面:", surface:ID(), "，家具:", fur.asset_id, "，区域:", self._id, "，格子坐标:", pos.x, ",", pos.y)
+          Log.exception("面上找不到家具占据的格子。", "面:", surface:ID(), "，家具:", fur.asset_id, "，区域:", self._id, "，格子坐标:", pos.x, ",", pos.y)
         end
         if tile:Occupied(furniture:Layer()) then
-          (Log.fatal)("格子已被占据，", "家具id：", fur.asset_id, "，区域：", self._id, "，面：", surface:ID())
+          Log.fatal("格子已被占据，", "家具id：", fur.asset_id, "，区域：", self._id, "，面：", surface:ID())
         end
         otiles[#otiles + 1] = tile
       end
@@ -298,70 +219,45 @@ AircraftArea.RefreshFurniture = function(self)
     end
   end
   if self._room then
-    local defaultFurs = (self._room):GetDefaultFurniture()
-    if defaultFurs and #defaultFurs > 0 then
-      for _,fur in pairs(defaultFurs) do
-        -- DECOMPILER ERROR at PC181: Confused about usage of register: R9 in 'UnsetPending'
-
-        (self._furnitures)[fur:InstanceID()] = fur
+    local defaultFurs = self._room:GetDefaultFurniture()
+    if defaultFurs and 0 < #defaultFurs then
+      for _, fur in pairs(defaultFurs) do
+        self._furnitures[fur:InstanceID()] = fur
       end
     end
   end
-  do
-    ;
-    (self._main):OnFurnituresDestroy(destroyFurs)
-  end
+  self._main:OnFurnituresDestroy(destroyFurs)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.GetSurface = function(self, id)
-  -- function num : 0_17
-  return (self._surfaces)[id]
+function AircraftArea:GetSurface(id)
+  return self._surfaces[id]
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.Surfaces = function(self)
-  -- function num : 0_18
+function AircraftArea:Surfaces()
   return self._surfaces
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.OnEnter = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function AircraftArea:OnEnter()
   if not self._entered then
-    for id,surface in pairs(self._surfaces) do
+    for id, surface in pairs(self._surfaces) do
       surface:Show()
     end
     self._entered = true
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.OnExit = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function AircraftArea:OnExit()
   self._entered = false
-  for id,surface in pairs(self._surfaces) do
+  for id, surface in pairs(self._surfaces) do
     surface:Hide()
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.GetFurnitureByInsID = function(self, id)
-  -- function num : 0_21
-  return (self._furnitures)[id]
+function AircraftArea:GetFurnitureByInsID(id)
+  return self._furnitures[id]
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftArea.GetAllFurniture = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  local airModule = (GameGlobal.GetModule)(AircraftModule)
+function AircraftArea:GetAllFurniture()
+  local airModule = GameGlobal.GetModule(AircraftModule)
   return airModule:GetFurnitureByArea(self._id)
 end
-
-

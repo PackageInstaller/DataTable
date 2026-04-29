@@ -1,30 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/idol_ap/ui_n25_idol_ap_event_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolApEventItem", UICustomWidget)
 UIN25IdolApEventItem = UIN25IdolApEventItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolApEventItem.Constructor = function(self)
-  -- function num : 0_0
-  self.weekDay2Tex = {[1] = "str_n25_idol_y_concert_Monday", [2] = "str_n25_idol_y_concert_Tuesday", [3] = "str_n25_idol_y_concert_Wednesday", [4] = "str_n25_idol_y_concert_Thursday", [5] = "str_n25_idol_y_concert_Friday", [6] = "str_n25_idol_y_concert_Saturday", [7] = "str_n25_idol_y_concert_Sunday"}
+function UIN25IdolApEventItem:Constructor()
+  self.weekDay2Tex = {
+    [1] = "str_n25_idol_y_concert_Monday",
+    [2] = "str_n25_idol_y_concert_Tuesday",
+    [3] = "str_n25_idol_y_concert_Wednesday",
+    [4] = "str_n25_idol_y_concert_Thursday",
+    [5] = "str_n25_idol_y_concert_Friday",
+    [6] = "str_n25_idol_y_concert_Saturday",
+    [7] = "str_n25_idol_y_concert_Sunday"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEventItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolApEventItem:OnShow(uiParams)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEventItem.SetData = function(self, eventid, status, weekDay, roomid, light)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25IdolApEventItem:SetData(eventid, status, weekDay, roomid, light)
   self.eventid = eventid
-  self.cfg = ((Cfg.cfg_component_idol_event)({EventId = eventid}))[1]
+  self.cfg = Cfg.cfg_component_idol_event({EventId = eventid})[1]
   self.weekDay = weekDay
   self.roomid = roomid
   self.status = status
@@ -32,19 +27,13 @@ UIN25IdolApEventItem.SetData = function(self, eventid, status, weekDay, roomid, 
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEventItem.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25IdolApEventItem:OnHide()
   if self.timer then
-    ((GameGlobal.Timer)()):CancelEvent(self.timer)
+    GameGlobal.Timer():CancelEvent(self.timer)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEventItem.GetComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25IdolApEventItem:GetComponents()
   self.descTex = self:GetUIComponent("UILocalizationText", "desc")
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.bg = self:GetUIComponent("Image", "bg")
@@ -55,82 +44,51 @@ UIN25IdolApEventItem.GetComponents = function(self)
   self.anim = self:GetUIComponent("Animation", "UIN25Idol_ApItem")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEventItem.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local desc = (self.cfg).Desc
-  local iconImg = (self.cfg).PetHead
-  ;
-  (self.icon):LoadImage(iconImg)
-  ;
-  (self.descTex):SetText((StringTable.Get)(desc))
-  local weekTex = (self.weekDay2Tex)[self.weekDay]
-  ;
-  (self.weekTex):SetText((StringTable.Get)(weekTex))
+function UIN25IdolApEventItem:OnValue()
+  local desc = self.cfg.Desc
+  local iconImg = self.cfg.PetHead
+  self.icon:LoadImage(iconImg)
+  self.descTex:SetText(StringTable.Get(desc))
+  local weekTex = self.weekDay2Tex[self.weekDay]
+  self.weekTex:SetText(StringTable.Get(weekTex))
   if self.status == UIIdolApEventStatus.Ready then
-    ((self.statusImg).gameObject):SetActive(false)
+    self.statusImg.gameObject:SetActive(false)
   else
-    ;
-    ((self.statusImg).gameObject):SetActive(true)
-    local sprite = nil
+    self.statusImg.gameObject:SetActive(true)
+    local sprite
     if self.status == UIIdolApEventStatus.Pass then
       sprite = "n25_yczjm_di08"
     else
       sprite = "n25_yczjm_di09"
     end
-    -- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.statusImg).sprite = (self.atlas):GetSprite(sprite)
+    self.statusImg.sprite = self.atlas:GetSprite(sprite)
   end
-  do
-    local roomSp = nil
-    if self.roomid == IdolTrainType.IdolTrainType_Music then
-      roomSp = "n25_yczjm_di10"
-    else
-      if self.roomid == IdolTrainType.IdolTrainType_Dance then
-        roomSp = "n25_yczjm_di12"
-      else
-        roomSp = "n25_yczjm_di11"
-      end
-    end
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.bg).sprite = (self.atlas):GetSprite(roomSp)
-    ;
-    (self.lightGo):SetActive(self.light)
+  local roomSp
+  if self.roomid == IdolTrainType.IdolTrainType_Music then
+    roomSp = "n25_yczjm_di10"
+  elseif self.roomid == IdolTrainType.IdolTrainType_Dance then
+    roomSp = "n25_yczjm_di12"
+  else
+    roomSp = "n25_yczjm_di11"
   end
+  self.bg.sprite = self.atlas:GetSprite(roomSp)
+  self.lightGo:SetActive(self.light)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEventItem.PlayIn = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (self.anim):Play("uieff_UIN25IdolApItem_light_in")
+function UIN25IdolApEventItem:PlayIn()
+  self.anim:Play("uieff_UIN25IdolApItem_light_in")
   if self.timer then
-    ((GameGlobal.Timer)()):CancelEvent(self.timer)
+    GameGlobal.Timer():CancelEvent(self.timer)
   end
-  self.timer = ((GameGlobal.Timer)()):AddEvent(333, function()
-    -- function num : 0_6_0 , upvalues : self
+  self.timer = GameGlobal.Timer():AddEvent(333, function()
     self:PlayLoop()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEventItem.PlayOut = function(self)
-  -- function num : 0_7
-  (self.anim):Play("uieff_UIN25IdolApItem_light_out")
+function UIN25IdolApEventItem:PlayOut()
+  self.anim:Play("uieff_UIN25IdolApItem_light_out")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolApEventItem.PlayLoop = function(self)
-  -- function num : 0_8
-  (self.anim):Play("uieff_UIN25IdolApItem_light_loop")
+function UIN25IdolApEventItem:PlayLoop()
+  self.anim:Play("uieff_UIN25IdolApItem_light_loop")
 end
-
-

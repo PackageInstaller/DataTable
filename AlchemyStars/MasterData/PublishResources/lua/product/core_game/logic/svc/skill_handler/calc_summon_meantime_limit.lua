@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_summon_meantime_limit.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_SummonMeantimeLimit", Object)
 SkillEffectCalc_SummonMeantimeLimit = SkillEffectCalc_SummonMeantimeLimit
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_SummonMeantimeLimit.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_SummonMeantimeLimit:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonMeantimeLimit.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_SummonMeantimeLimit:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillEffectParamSummon = skillEffectCalcParam.skillEffectParam
   local trapID = skillEffectParamSummon:GetTrapID()
   local limitCount = skillEffectParamSummon:GetLimitCount()
@@ -27,43 +17,38 @@ SkillEffectCalc_SummonMeantimeLimit.DoSkillEffectCalculator = function(self, ski
   if ignoreBlock then
     blockFlag = 0
   end
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local posRange = skillEffectCalcParam.skillRange
-  if absPosArray and #absPosArray > 0 then
+  if absPosArray and 0 < #absPosArray then
     posRange = absPosArray
   end
   local summonPosList = {}
-  for _,gridPos in ipairs(posRange) do
-    if trapServiceLogic:CanSummonTrapOnPos(gridPos, trapID, blockFlag, false) and (table.count)(summonPosList) <= limitCount and self:_CheckOverlapCanSummon(gridPos, trapID, skillEffectCalcParam) then
-      (table.insert)(summonPosList, gridPos)
+  for _, gridPos in ipairs(posRange) do
+    if trapServiceLogic:CanSummonTrapOnPos(gridPos, trapID, blockFlag, false) and limitCount >= table.count(summonPosList) and self:_CheckOverlapCanSummon(gridPos, trapID, skillEffectCalcParam) then
+      table.insert(summonPosList, gridPos)
     end
   end
   if #summonPosList == 0 then
-    return 
+    return
   end
   local result = SkillEffectResultSummonMeantimeLimit:New(trapID, summonPosList)
   local destroyEntityID = {}
   local skillResultList = {}
-  local battleFlags = (self._world):BattleFlags()
+  local battleFlags = self._world:BattleFlags()
   local summonMeantimeLimitEntityID = {}
   local checkTrapIDs = skillEffectParamSummon:GetCheckTrapID()
-  for i,checkTrapID in ipairs(checkTrapIDs) do
+  for i, checkTrapID in ipairs(checkTrapIDs) do
     local entityIDList = battleFlags:GetSummonMeantimeLimitEntityID(checkTrapID)
-    ;
-    (table.appendArray)(summonMeantimeLimitEntityID, entityIDList)
+    table.appendArray(summonMeantimeLimitEntityID, entityIDList)
   end
-  ;
-  (table.sort)(summonMeantimeLimitEntityID, function(a, b)
-    -- function num : 0_1_0
-    do return a < b end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local meantimeCount = (table.count)(summonMeantimeLimitEntityID) + (table.count)(summonPosList)
-  for _,gridPos in ipairs(summonPosList) do
-    for _,entityID in ipairs(summonMeantimeLimitEntityID) do
-      local targetEntity = (self._world):GetEntityByID(entityID)
-      if targetEntity and not targetEntity:HasDeadMark() and targetEntity:GetGridPosition() == gridPos and (targetEntity:Trap()):GetTrapLevel() ~= -1 then
+  table.sort(summonMeantimeLimitEntityID, function(a, b)
+    return a < b
+  end)
+  local meantimeCount = table.count(summonMeantimeLimitEntityID) + table.count(summonPosList)
+  for _, gridPos in ipairs(summonPosList) do
+    for _, entityID in ipairs(summonMeantimeLimitEntityID) do
+      local targetEntity = self._world:GetEntityByID(entityID)
+      if targetEntity and not targetEntity:HasDeadMark() and targetEntity:GetGridPosition() == gridPos and targetEntity:Trap():GetTrapLevel() ~= -1 then
         meantimeCount = meantimeCount - 1
       end
     end
@@ -73,71 +58,55 @@ SkillEffectCalc_SummonMeantimeLimit.DoSkillEffectCalculator = function(self, ski
     local curEntityID = summonMeantimeLimitEntityID[curIndex]
     meantimeCount = meantimeCount - 1
     curIndex = curIndex + 1
-    ;
-    (table.insert)(destroyEntityID, curEntityID)
-    if not trapDieSkillID or trapDieSkillID > 0 then
-      local curEntity = (self._world):GetEntityByID(curEntityID)
-      local skillLogicSvc = (self._world):GetService("SkillLogic")
+    table.insert(destroyEntityID, curEntityID)
+    if trapDieSkillID and 0 < trapDieSkillID then
+      local curEntity = self._world:GetEntityByID(curEntityID)
+      local skillLogicSvc = self._world:GetService("SkillLogic")
       skillLogicSvc:CalcSkillEffect(curEntity, trapDieSkillID)
-      local skillResult = (curEntity:SkillContext()):GetResultContainer()
-      ;
-      (table.insert)(skillResultList, skillResult)
+      local skillResult = curEntity:SkillContext():GetResultContainer()
+      table.insert(skillResultList, skillResult)
     end
   end
-  do
-    result:SetDestroyEntityID(destroyEntityID)
-    result:SetTrapDieSkillResult(skillResultList)
-    result:SetReplaceAttr(replaceAttr)
-    return result
-  end
+  result:SetDestroyEntityID(destroyEntityID)
+  result:SetTrapDieSkillResult(skillResultList)
+  result:SetReplaceAttr(replaceAttr)
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_SummonMeantimeLimit._CheckOverlapCanSummon = function(self, pos, trapId, skillEffectCalcParam)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_SummonMeantimeLimit:_CheckOverlapCanSummon(pos, trapId, skillEffectCalcParam)
   local skillEffectParamSummon = skillEffectCalcParam.skillEffectParam
   if not skillEffectParamSummon:IsTrapOverlap() then
-    local boardCmpt = ((self._world):GetBoardEntity()):Board()
+    local boardCmpt = self._world:GetBoardEntity():Board()
     local repeatTraps = boardCmpt:GetPieceEntities(pos, function(e)
-    -- function num : 0_2_0 , upvalues : skillEffectCalcParam, self, _ENV, trapId
-    local isOwner = false
-    if e:HasSummoner() then
-      if (e:Summoner()):GetSummonerEntityID() == skillEffectCalcParam.casterEntityID then
-        isOwner = true
-      else
-        local summonerID = (e:Summoner()):GetSummonerEntityID()
-        local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-        if casterEntity:HasPet() then
-          local cTeam = ((casterEntity:Pet()):GetOwnerTeamEntity()):Team()
-          local entities = cTeam:GetTeamPetEntities()
-          for _,petEntity in ipairs(entities) do
-            if summonerID == petEntity:GetID() then
-              isOwner = true
-              break
+      local isOwner = false
+      if e:HasSummoner() then
+        if e:Summoner():GetSummonerEntityID() == skillEffectCalcParam.casterEntityID then
+          isOwner = true
+        else
+          local summonerID = e:Summoner():GetSummonerEntityID()
+          local casterEntity = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+          if casterEntity:HasPet() then
+            local cTeam = casterEntity:Pet():GetOwnerTeamEntity():Team()
+            local entities = cTeam:GetTeamPetEntities()
+            for _, petEntity in ipairs(entities) do
+              if summonerID == petEntity:GetID() then
+                isOwner = true
+                break
+              end
             end
           end
         end
-      end
-    else
-      do
+      else
         isOwner = true
-        do return isOwner and (((e:Trap()):GetTrapID() == trapId and not e:HasDeadMark())) end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
       end
-    end
-  end
-)
-    if #repeatTraps > 0 then
+      return isOwner and e:HasTrap() and e:Trap():GetTrapID() == trapId and not e:HasDeadMark()
+    end)
+    if 0 < #repeatTraps then
       return false
     else
       return true
     end
   else
-    do
-      do return true end
-    end
+    return true
   end
 end
-
-

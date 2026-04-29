@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyController", UIController)
 UIMainLobbyController = UIMainLobbyController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyController:LoadDataOnEnter(TT, res, uiParams)
   if GameSingle then
     self:SingleLoadDataOnEnter()
   else
@@ -16,123 +9,84 @@ UIMainLobbyController.LoadDataOnEnter = function(self, TT, res, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.SingleLoadDataOnEnter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbyController:SingleLoadDataOnEnter()
   self:Task_InitMulitDress(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.MultipleLoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainLobbyController:MultipleLoadDataOnEnter(TT, res, uiParams)
   self.mCampaign = self:GetModule(CampaignModule)
-  self._latestCampObj = (self.mCampaign):GetLatestCampaignObj(TT)
-  self.grassData = (self.mCampaign):GetGraveRobberData()
-  ;
-  (self.grassData):RequestCampaign(TT)
+  self._latestCampObj = self.mCampaign:GetLatestCampaignObj(TT)
+  self.grassData = self.mCampaign:GetGraveRobberData()
+  self.grassData:RequestCampaign(TT)
   local roleModule = self:GetModule(RoleModule)
   if roleModule ~= nil then
     roleModule:GetRecoverData(TT, 0)
   end
-  local talePetModule = (GameGlobal.GetModule)(TalePetModule)
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
   local ret = talePetModule:RequestTrailLevelData(TT)
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   petModule:ClearAllPetSortInfo()
-  local seasonTaskModule = (GameGlobal.GetModule)(SeasonTaskModule)
+  local seasonTaskModule = GameGlobal.GetModule(SeasonTaskModule)
   seasonTaskModule:ReqSeasonTaskInfoData(TT)
   self:LoadExtraEntryData(TT)
   self:LoadCenterData(TT)
   self:Task_InitMulitDress(TT)
-  res:SetSucc((self:GetModule(LoginModule)):IsLogin())
+  res:SetSucc(self:GetModule(LoginModule):IsLogin())
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.Task_InitMulitDress = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIMainLobbyController:Task_InitMulitDress(TT)
   self._signInModule = self:GetModule(SignInModule)
-  local res, replay = (self._signInModule):HandleGetMainDressUpReq(TT)
+  local res, replay = self._signInModule:HandleGetMainDressUpReq(TT)
   if res:GetSucc() then
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.LoadCenterData = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMainLobbyController:LoadCenterData(TT)
   self._centerEntryData = MainLobbyCenterData:New()
-  ;
-  (self._centerEntryData):LoadCampaignData(TT)
+  self._centerEntryData:LoadCampaignData(TT)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.SetYearSign = function(self)
-  -- function num : 0_5
+function UIMainLobbyController:SetYearSign()
   local yearSign = self:GetUIComponent("UISelectObjectPath", "yearSign")
   if not yearSign then
-    return 
+    return
   end
   self._yearSign = yearSign:SpawnObject("UIMainLobbyYearSign")
-  ;
-  (self._yearSign):SetData()
+  self._yearSign:SetData()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.SetCerebSign = function(self)
-  -- function num : 0_6
+function UIMainLobbyController:SetCerebSign()
   local cerebSign = self:GetUIComponent("UISelectObjectPath", "cerebSign")
   if not cerebSign then
-    return 
+    return
   end
   self._cerebSign = cerebSign:SpawnObject("UIMainLobbyCerebSign")
-  ;
-  (self._cerebSign):SetData()
+  self._cerebSign:SetData()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.SetCenterEnter = function(self)
-  -- function num : 0_7
+function UIMainLobbyController:SetCenterEnter()
   local campaignCenter = self:GetUIComponent("UISelectObjectPath", "campaignCenter")
   self._campaignCenter = campaignCenter:SpawnObject("UIMainLobbyCampCenter")
-  ;
-  (self._campaignCenter):SetData(self._centerEntryData)
+  self._campaignCenter:SetData(self._centerEntryData)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.LoadExtraEntryData = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMainLobbyController:LoadExtraEntryData(TT)
   self._extraEntryData = MainLobbyExtraData:New()
-  ;
-  (self._extraEntryData):LoadCampaignData(TT)
+  self._extraEntryData:LoadCampaignData(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.SetCampaignSideEntrys = function(self)
-  -- function num : 0_9
+function UIMainLobbyController:SetCampaignSideEntrys()
   local extraEntry = self:GetUIComponent("UISelectObjectPath", "UIMainLobbyExtraCampEntry")
   self._main_extra_entry = extraEntry:SpawnObject("UIMainLobbyExtraCampEntry")
-  ;
-  (self._main_extra_entry):SetData(self._extraEntryData)
+  self._main_extra_entry:SetData(self._extraEntryData)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.OnShow = function(self, uiParams)
-  -- function num : 0_10 , upvalues : _ENV
+function UIMainLobbyController:OnShow(uiParams)
   saveQRClickLastTime = 0
   self.SaveQRLeftTimeTex = self:GetUIComponent("UILocalizationText", "SaveQRLeftTimeTex")
   local saveQRLeftTimeStr = self:GetSaveBtnLeftTimeStr()
-  ;
-  (Log.debug)("saveQRLeftTimeStr=", saveQRLeftTimeStr)
-  ;
-  (self.SaveQRLeftTimeTex):SetText(saveQRLeftTimeStr)
+  Log.debug("saveQRLeftTimeStr=", saveQRLeftTimeStr)
+  self.SaveQRLeftTimeTex:SetText(saveQRLeftTimeStr)
   if GameSingle then
     self:SingleOnShow(uiParams)
   else
@@ -140,49 +94,42 @@ UIMainLobbyController.OnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.GetSaveBtnLeftTimeStr = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIMainLobbyController:GetSaveBtnLeftTimeStr()
   local str = ""
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   local leftTime = loginModule:GetSingleTimeTick() - svrTimeModule:GetServerTime() * 0.001
-  local day = (math.floor)(leftTime / 86400)
-  if day >= 1 then
-    str = (string.format)((StringTable.Get)("str_set_download_day"), day)
+  local day = math.floor(leftTime / 86400)
+  if 1 <= day then
+    str = string.format(StringTable.Get("str_set_download_day"), day)
     return str
   end
   leftTime = loginModule:GetSingleTimeTick() - svrTimeModule:GetServerTime() * 0.001
-  local hour = (math.floor)((leftTime) / 3600)
-  if hour >= 1 then
-    str = (string.format)((StringTable.Get)("str_set_download_hour"), hour)
+  local hour = math.floor(leftTime / 3600)
+  if 1 <= hour then
+    str = string.format(StringTable.Get("str_set_download_hour"), hour)
     return str
   end
   leftTime = loginModule:GetSingleTimeTick() - svrTimeModule:GetServerTime() * 0.001
-  local minutes = (math.floor)((leftTime) / 60)
-  if minutes >= 1 then
-    str = (string.format)((StringTable.Get)("str_set_download_minute"), minutes)
+  local minutes = math.floor(leftTime / 60)
+  if 1 <= minutes then
+    str = string.format(StringTable.Get("str_set_download_minute"), minutes)
     return str
   end
   return str
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.SingleOnShow = function(self, uiParams)
-  -- function num : 0_12 , upvalues : _ENV
+function UIMainLobbyController:SingleOnShow(uiParams)
   self:_GetComponents()
   self:AddListener()
   self:_OnValueOnSingle(uiParams)
-  ;
-  (UIBgmHelper.PlayMainBgm)()
+  UIBgmHelper.PlayMainBgm()
   if self._anniversaryEffectEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._anniversaryEffectEvent)
+    GameGlobal.Timer():CancelEvent(self._anniversaryEffectEvent)
     self._anniversaryEffectEvent = nil
   end
   self:_PlayAnim("light_in")
-  local sModule = (GameGlobal.GetModule)(SerialAutoFightModule)
+  local sModule = GameGlobal.GetModule(SerialAutoFightModule)
   if sModule then
     local jumpData = sModule:GetJumpData()
     if jumpData then
@@ -191,41 +138,32 @@ UIMainLobbyController.SingleOnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.MultipleOnShow = function(self, uiParams)
-  -- function num : 0_13 , upvalues : _ENV
+function UIMainLobbyController:MultipleOnShow(uiParams)
   self._inited = false
   self:SetCenterEnter()
   self:SetYearSign()
   self:SetCerebSign()
   self:SetCampaignSideEntrys()
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (UnityEngine.Input).multiTouchEnabled = false
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("MainUIEnter", {}, true)
+  UnityEngine.Input.multiTouchEnabled = false
+  GameGlobal.UAReportForceGuideEvent("MainUIEnter", {}, true)
   self:_GetComponents()
   self._roleModule = self:GetModule(RoleModule)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   self._loginModule = self:GetModule(LoginModule)
   self:_OnValue(uiParams)
   self:AddListener()
-  local funcModule = (self:GetModule(RoleModule)).uiModule
+  local funcModule = self:GetModule(RoleModule).uiModule
   funcModule:LockAchievementFinishPanel(false)
-  ;
-  (UIBgmHelper.PlayMainBgm)()
+  UIBgmHelper.PlayMainBgm()
   self:CheckFixedStatus()
-  ;
-  (self._roleModule):LoginCompleteEvent()
+  self._roleModule:LoginCompleteEvent()
   self:_CheckPreDownLoadPV()
   if self._anniversaryEffectEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._anniversaryEffectEvent)
+    GameGlobal.Timer():CancelEvent(self._anniversaryEffectEvent)
     self._anniversaryEffectEvent = nil
   end
   self:_PlayAnim("light_in")
-  local sModule = (GameGlobal.GetModule)(SerialAutoFightModule)
+  local sModule = GameGlobal.GetModule(SerialAutoFightModule)
   if sModule then
     local jumpData = sModule:GetJumpData()
     if jumpData then
@@ -234,74 +172,62 @@ UIMainLobbyController.MultipleOnShow = function(self, uiParams)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController._PlayAnim = function(self, key, callback)
-  -- function num : 0_14 , upvalues : _ENV
+function UIMainLobbyController:_PlayAnim(key, callback)
   local tb = {
-["in"] = {animName = "uieff_UIMainLobbyController_in", duration = 1000}
-, 
-light_in = {animName = "uieff_UIMainLobbyController_Anniversary_in", duration = 1067}
-, 
-hide = {animName = "uieff_UIMainLobbyController_hide", duration = 267}
-, 
-show = {animName = "uieff_UIMainLobbyController_show", duration = 367}
-}
-  ;
-  (UIWidgetHelper.PlayAnimation)(self, "uianim", (tb[key]).animName, (tb[key]).duration, callback)
+    ["in"] = {
+      animName = "uieff_UIMainLobbyController_in",
+      duration = 1000
+    },
+    light_in = {
+      animName = "uieff_UIMainLobbyController_Anniversary_in",
+      duration = 1067
+    },
+    hide = {
+      animName = "uieff_UIMainLobbyController_hide",
+      duration = 267
+    },
+    show = {
+      animName = "uieff_UIMainLobbyController_show",
+      duration = 367
+    }
+  }
+  UIWidgetHelper.PlayAnimation(self, "uianim", tb[key].animName, tb[key].duration, callback)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.CheckFixedStatus = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  do return  end
+function UIMainLobbyController:CheckFixedStatus()
+  do return end
   local roleModule = self:GetModule(RoleModule)
   if not roleModule:GetIsFix() then
-    return 
+    return
   end
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, (StringTable.Get)("str_shop_resourceerror_title"), (StringTable.Get)("str_shop_resourceerror_desc"), function(param)
-    -- function num : 0_15_0 , upvalues : _ENV, roleModule
-    (Log.error)("UIMainLobbyController:CheckFixedStatus click")
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.Ok, StringTable.Get("str_shop_resourceerror_title"), StringTable.Get("str_shop_resourceerror_desc"), function(param)
+    Log.error("UIMainLobbyController:CheckFixedStatus click")
     roleModule:SetIsFixItem(false)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController._CheckCutSceneOut = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (CutsceneManager.ExcuteCutsceneOut)()
+function UIMainLobbyController:_CheckCutSceneOut()
+  CutsceneManager.ExcuteCutsceneOut()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController._GetComponents = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local testFuncEntry = (UIWidgetHelper.SpawnObject)(self, "TestFunc", "UITestFuncEntry", "UITestFuncEntry.prefab")
+function UIMainLobbyController:_GetComponents()
+  local testFuncEntry = UIWidgetHelper.SpawnObject(self, "TestFunc", "UITestFuncEntry", "UITestFuncEntry.prefab")
   testFuncEntry:SetData("UITestFuncMainLobby", "UITestFunc_MainLobby.prefab")
   self.SaveQRBtn = self:GetGameObject("SaveQRBtn")
-  ;
-  (self.SaveQRBtn):SetActive((not GameSingle and APPVER_1430))
+  self.SaveQRBtn:SetActive(not GameSingle and APPVER_1430)
   self._canvasGroupUiAnim = self:GetUIComponent("CanvasGroup", "uianim")
   self.weChatBtn = self:GetGameObject("weChatBtn")
-  ;
-  (self.weChatBtn):SetActive(not GameSingle)
+  self.weChatBtn:SetActive(not GameSingle)
   self.NoticeBtn = self:GetGameObject("NoticeBtn")
-  ;
-  (self.NoticeBtn):SetActive(not GameSingle)
+  self.NoticeBtn:SetActive(not GameSingle)
   self.MailBtn = self:GetGameObject("MailBtn")
-  ;
-  (self.MailBtn):SetActive(not GameSingle)
+  self.MailBtn:SetActive(not GameSingle)
   self._discoveryGuideGO = self:GetGameObject("discoveryGuideGO")
   local toptips = self:GetUIComponent("UISelectObjectPath", "toptips")
   self._toptipsInfo = toptips:SpawnObject("UITopTipsContext")
   self._missionName = self:GetUIComponent("RollingText", "missionName")
   self._noticeRed = self:GetGameObject("NoticeRed")
-  ;
-  (self._noticeRed):SetActive(false)
+  self._noticeRed:SetActive(false)
   self._homeAwardCountGo = self:GetGameObject("homeAwardGo")
   self._homeAwardCountText = self:GetUIComponent("UILocalizationText", "homeAwardCountTex")
   self._gambleIcon = self:GetUIComponent("RawImageLoader", "gambleIcon")
@@ -323,60 +249,41 @@ UIMainLobbyController._GetComponents = function(self)
   self.missionRed = self:GetGameObject("missionRed")
   self._cg = self:GetUIComponent("RawImageLoader", "cg")
   self._screenShot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() or GameSingle then
+  if EngineGameHelper.EnableAppleVerifyBulletin() or GameSingle then
     self._homeObj = self:GetGameObject("HomeBtn")
-    ;
-    (self._homeObj):SetActive(false)
+    self._homeObj:SetActive(false)
   end
   self._atlas = self:GetAsset("UIMainLobbyFinal.spriteatlas", LoadType.SpriteAtlas)
   self._uiCanvasGroup = self:GetUIComponent("CanvasGroup", "UICanvas")
   self._centerCanvasGroup = self:GetUIComponent("CanvasGroup", "Center")
   self._leftUpGroup = self:GetUIComponent("CanvasGroup", "LeftUp")
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.ShowRoleInfo = function(self)
-  -- function num : 0_18
+function UIMainLobbyController:ShowRoleInfo()
   local role = self:GetUIComponent("UISelectObjectPath", "UIMainLobbyRole")
   self._main_role = role:SpawnObject("UIMainLobbyRole")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.MainActivityEntry = function(self)
-  -- function num : 0_19
+function UIMainLobbyController:MainActivityEntry()
   local sop = self:GetUIComponent("UISelectObjectPath", "activityMainEntry")
   self._main_camp_entry = sop:SpawnObject("UIMainLobbyMainCampaignEntry")
-  ;
-  (self._main_camp_entry):SetData(self._latestCampObj, self)
+  self._main_camp_entry:SetData(self._latestCampObj, self)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.SeasonEntry = function(self)
-  -- function num : 0_20
+function UIMainLobbyController:SeasonEntry()
   local seasonEntry = self:GetUIComponent("UISelectObjectPath", "UIMainLobbySeasonEntry")
   self._season_entry = seasonEntry:SpawnObject("UIMainLobbySeasonEntry")
-  ;
-  (self._season_entry):SetData()
+  self._season_entry:SetData()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController._OnValueOnSingle = function(self, uiParams)
-  -- function num : 0_21
+function UIMainLobbyController:_OnValueOnSingle(uiParams)
   self:SetUIMainLobbyBg(uiParams)
   local s = self:GetGameObject("sumBtn")
   s:SetActive(false)
   self:ShowRoleInfo()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController._OnValue = function(self, uiParams)
-  -- function num : 0_22 , upvalues : _ENV
+function UIMainLobbyController:_OnValue(uiParams)
   self:SetUIMainLobbyBg(uiParams)
   self:MainActivityEntry()
   self:_RefreshFunctionLockStatus()
@@ -392,8 +299,7 @@ UIMainLobbyController._OnValue = function(self, uiParams)
   self:InitScrollView()
   self:CheckHomeRed()
   self._gamebleBtn = UIMainLobbyBtnGamble:New(self._gambleIcon, self._gambleFreeMul, self._gambleFreeSin, self._gambleNew)
-  ;
-  (self._gamebleBtn):InitGambleRed(self._gambleRed)
+  self._gamebleBtn:InitGambleRed(self._gambleRed)
   self:OnUpdateGamble()
   self:OnUpdateWeChatRed()
   self:OnUpdateWeChatMainTalk()
@@ -402,343 +308,253 @@ UIMainLobbyController._OnValue = function(self, uiParams)
   self:SetWakeUp()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.SetUIMainLobbyBg = function(self, uiParams)
-  -- function num : 0_23
+function UIMainLobbyController:SetUIMainLobbyBg(uiParams)
   local mainLobbyBg = self:GetUIComponent("UISelectObjectPath", "UIMainLobbyBg")
   self._main_lobby_bg = mainLobbyBg:SpawnObject("UIMainLobbyBg")
-  ;
-  (self._main_lobby_bg):SetData(uiParams[1])
+  self._main_lobby_bg:SetData(uiParams[1])
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.OnUpdateGamble = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local fnRefreshNewRed = function()
-    -- function num : 0_24_0 , upvalues : self, _ENV
+function UIMainLobbyController:OnUpdateGamble()
+  local function fnRefreshNewRed()
     self._updateGambleEvent = self:StartTask(function(TT)
-      -- function num : 0_24_0_0 , upvalues : self, _ENV
       local module = self:GetModule(GambleModule)
+      
       local ack = module:ApplyAllPoolInfo(TT)
       if ack:GetSucc() then
-        (self._gamebleBtn):RefreshNew()
-        ;
-        (self._gamebleBtn):RefreshRed()
+        self._gamebleBtn:RefreshNew()
+        self._gamebleBtn:RefreshRed()
       else
-        ;
-        (Log.notice)("[DrawCard] promotion time up, refresh pools failed")
+        Log.notice("[DrawCard] promotion time up, refresh pools failed")
       end
       self._updateGambleEvent = nil
-    end
-)
+    end)
   end
-
+  
   fnRefreshNewRed()
   local refreshTime = 60
-  self._updateGambleTimer = ((GameGlobal.Timer)()):AddEventTimes(1000 * refreshTime, TimerTriggerCount.Infinite, fnRefreshNewRed)
+  self._updateGambleTimer = GameGlobal.Timer():AddEventTimes(1000 * refreshTime, TimerTriggerCount.Infinite, fnRefreshNewRed)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.SetWakeUp = function(self)
-  -- function num : 0_25
+function UIMainLobbyController:SetWakeUp()
   local wakeup = self:GetUIComponent("UISelectObjectPath", "WakeUp")
   if wakeup then
     wakeup:SpawnObject("UIWakeUpMain")
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.InitScrollView = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  (Log.debug)("###[UIMainLobbyController] InitScrollView !")
+function UIMainLobbyController:InitScrollView()
+  Log.debug("###[UIMainLobbyController] InitScrollView !")
   self._scroll = self:GetGameObject("scroll")
   self._main_scroll_pool = self:GetUIComponent("UISelectObjectPath", "scroll")
-  self._main_scroll = (self._main_scroll_pool):SpawnObject("UIMainLobbyScroll")
-  self._main_scroll_inited = (self._main_scroll):SetData(true)
+  self._main_scroll = self._main_scroll_pool:SpawnObject("UIMainLobbyScroll")
+  self._main_scroll_inited = self._main_scroll:SetData(true)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.MissionInfo = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function UIMainLobbyController:MissionInfo()
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local discoveryData = missionModule:GetDiscoveryData()
   if not discoveryData then
-    (Log.fatal)("### DiscoveryData nil.")
-    return 
+    Log.fatal("### DiscoveryData nil.")
+    return
   end
   local tmp_val, canPlayNode = discoveryData:GetCanPlayChapterNode()
   if not canPlayNode then
     local count = 0
-    for key,chapter in pairs(discoveryData.chapters) do
+    for key, chapter in pairs(discoveryData.chapters) do
       local section = discoveryData:GetDiscoverySectionByChapterId(chapter.id)
       if not section.isBetween then
         count = count + 1
       end
     end
-    local str = (StringTable.Get)("str_main_lobby_finish", count + 1)
-    ;
-    (self._missionName):RefreshText(str)
+    local str = StringTable.Get("str_main_lobby_finish", count + 1)
+    self._missionName:RefreshText(str)
   else
-    do
-      local canPlayStages = canPlayNode:GetCanPlayStages()
-      local currentMissionID = (canPlayStages[1]).id
-      local missionName = "1-1"
-      local cfg_mission = (Cfg.cfg_mission)[currentMissionID]
-      if cfg_mission then
-        missionName = (StringTable.Get)(cfg_mission.Name)
-      end
-      local missionIndex = (DiscoveryStage.GetStageIndexString)(currentMissionID)
-      local strMissionName = missionIndex .. " " .. missionName
-      ;
-      (self._missionName):RefreshText(strMissionName)
+    local canPlayStages = canPlayNode:GetCanPlayStages()
+    local currentMissionID = canPlayStages[1].id
+    local missionName = "1-1"
+    local cfg_mission = Cfg.cfg_mission[currentMissionID]
+    if cfg_mission then
+      missionName = StringTable.Get(cfg_mission.Name)
     end
+    local missionIndex = DiscoveryStage.GetStageIndexString(currentMissionID)
+    local strMissionName = missionIndex .. " " .. missionName
+    self._missionName:RefreshText(strMissionName)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.CheckNewNotice = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  local state = (self._roleModule):CheckModuleUnlock(GameModuleID.MD_Notify)
+function UIMainLobbyController:CheckNewNotice()
+  local state = self._roleModule:CheckModuleUnlock(GameModuleID.MD_Notify)
   if state == false then
-    (self._noticeRed):SetActive(false)
-    return 
+    self._noticeRed:SetActive(false)
+    return
   end
-  self._noticeData = (self._loginModule):GetNoticeData()
+  self._noticeData = self._loginModule:GetNoticeData()
   if self._noticeData == nil then
-    (Log.fatal)("###main notice data is nil !")
-    return 
+    Log.fatal("###main notice data is nil !")
+    return
   end
   self:CheckNoticeRed()
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.CheckNoticeRed = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UIMainLobbyController:CheckNoticeRed()
   if self._noticeData == nil then
-    return 
+    return
   end
-  local systemState = (self._noticeData):GetNoticeNewStateWithGroup(NoticeType.System)
-  local activeState = (self._noticeData):GetNoticeNewStateWithGroup(NoticeType.Active)
-  ;
-  (self._noticeRed):SetActive(systemState or activeState)
+  local systemState = self._noticeData:GetNoticeNewStateWithGroup(NoticeType.System)
+  local activeState = self._noticeData:GetNoticeNewStateWithGroup(NoticeType.Active)
+  self._noticeRed:SetActive(systemState or activeState)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.OnShowChangeMainCg = function(self, show)
-  -- function num : 0_30 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIMainLobbyController:OnShowChangeMainCg(show)
   if show == UIPetAndBgMoveType.Bg or show == UIPetAndBgMoveType.Pet then
-    (self._canvasGroupUiAnim).alpha = 0.5
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
+    self._canvasGroupUiAnim.alpha = 0.5
     if self._uiCanvasGroup then
-      (self._uiCanvasGroup).alpha = 0.5
+      self._uiCanvasGroup.alpha = 0.5
     end
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
     if self._centerCanvasGroup then
-      (self._centerCanvasGroup).enabled = true
+      self._centerCanvasGroup.enabled = true
     end
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
     if self._leftUpGroup then
-      (self._leftUpGroup).alpha = 0.5
+      self._leftUpGroup.alpha = 0.5
     end
     if self._main_lobby_bg then
-      (self._main_lobby_bg):SetVoiceCanvasGroup(0.5)
+      self._main_lobby_bg:SetVoiceCanvasGroup(0.5)
     end
     if self._main_role then
-      (self._main_role):SetRoleCanvasGroup(0.5)
+      self._main_role:SetRoleCanvasGroup(0.5)
     end
-  else
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-    if show == UIPetAndBgMoveType.None then
-      (self._canvasGroupUiAnim).alpha = 1
-      -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._uiCanvasGroup then
-        (self._uiCanvasGroup).alpha = 1
-      end
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._centerCanvasGroup then
-        (self._centerCanvasGroup).enabled = false
-      end
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._leftUpGroup then
-        (self._leftUpGroup).alpha = 1
-      end
-      if self._main_lobby_bg then
-        (self._main_lobby_bg):SetVoiceCanvasGroup(1)
-      end
-      if self._main_role then
-        (self._main_role):SetRoleCanvasGroup(1)
-      end
+  elseif show == UIPetAndBgMoveType.None then
+    self._canvasGroupUiAnim.alpha = 1
+    if self._uiCanvasGroup then
+      self._uiCanvasGroup.alpha = 1
+    end
+    if self._centerCanvasGroup then
+      self._centerCanvasGroup.enabled = false
+    end
+    if self._leftUpGroup then
+      self._leftUpGroup.alpha = 1
+    end
+    if self._main_lobby_bg then
+      self._main_lobby_bg:SetVoiceCanvasGroup(1)
+    end
+    if self._main_role then
+      self._main_role:SetRoleCanvasGroup(1)
     end
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.GetBgIDAndType = function(self)
-  -- function num : 0_31
-  return (self._main_lobby_bg):GetBgIDAndType()
+function UIMainLobbyController:GetBgIDAndType()
+  return self._main_lobby_bg:GetBgIDAndType()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.GetBgSetting = function(self)
-  -- function num : 0_32
-  return (self._main_lobby_bg):GetBgSetting()
+function UIMainLobbyController:GetBgSetting()
+  return self._main_lobby_bg:GetBgSetting()
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.ChooseAssistantBtnOnClick = function(self)
-  -- function num : 0_33 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_ChooseAssistantController"}, true)
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_CHANGE_ASSISTANT)
+function UIMainLobbyController:ChooseAssistantBtnOnClick()
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_ChooseAssistantController"
+  }, true)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_CHANGE_ASSISTANT)
   self:ShowDialog("UIChooseMainCgController")
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.WatchModeBtnOnClick = function(self, go)
-  -- function num : 0_34
+function UIMainLobbyController:WatchModeBtnOnClick(go)
   self:_PlayAnim("hide", function()
-    -- function num : 0_34_0 , upvalues : self
     self:_SetUI_WatchMode("hide")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.WatchModePanelOnClick = function(self, go)
-  -- function num : 0_35
+function UIMainLobbyController:WatchModePanelOnClick(go)
   self:_SetBackBtn_WatchMode()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyController.WatchModeBackBtnOnClick = function(self, go)
-  -- function num : 0_36
+function UIMainLobbyController:WatchModeBackBtnOnClick(go)
   self:_SetUI_WatchMode("show")
   self:_PlayAnim("show")
 end
 
 local saveQRClickGap = 10000
 local saveQRClickLastTime = 0
--- DECOMPILER ERROR at PC121: Confused about usage of register: R2 in 'UnsetPending'
 
-UIMainLobbyController.SaveQRBtnOnClick = function(self, go)
-  -- function num : 0_37 , upvalues : _ENV, saveQRClickLastTime, saveQRClickGap
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIMainLobbyController:SaveQRBtnOnClick(go)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   if saveQRClickLastTime ~= 0 and svrTimeModule:GetServerTime() - saveQRClickLastTime < saveQRClickGap then
-    (ToastManager.ShowToast)((StringTable.Get)("str_set_download_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_set_download_tips"))
+    return
   end
   saveQRClickLastTime = svrTimeModule:GetServerTime()
-  ;
-  (Log.debug)("saveQRClickLastTime", saveQRClickLastTime)
+  Log.debug("saveQRClickLastTime", saveQRClickLastTime)
   self:ShowDialog("UISaveQRTipNew")
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController._SetUI_WatchMode = function(self, key)
-  -- function num : 0_38 , upvalues : _ENV
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-hide = {"WatchModePanel", "WatchModeBackBtn"}
-, 
-show = {"Left", "LeftDown", "Right", "RightDown", "LeftUp", "RightUp"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, key)
+function UIMainLobbyController:_SetUI_WatchMode(key)
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    hide = {
+      "WatchModePanel",
+      "WatchModeBackBtn"
+    },
+    show = {
+      "Left",
+      "LeftDown",
+      "Right",
+      "RightDown",
+      "LeftUp",
+      "RightUp"
+    }
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, key)
   if key == "hide" then
     self._watchMode_backBtn = true
   else
     self._watchMode_backBtn = nil
   end
-  do
-    local func = (key == "hide" and function()
-    -- function num : 0_38_0 , upvalues : self
-    self:_SetBackBtn_WatchMode()
-  end
-)
-    ;
-    (self._main_lobby_bg):SetWatchMode(func)
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if self._main_lobby_bg then
+    local func = key == "hide" and function()
+      self:_SetBackBtn_WatchMode()
+    end
+    self._main_lobby_bg:SetWatchMode(func)
   end
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController._SetBackBtn_WatchMode = function(self)
-  -- function num : 0_39
+function UIMainLobbyController:_SetBackBtn_WatchMode()
   if self._watchMode_backBtn ~= nil then
     self._watchMode_backBtn = not self._watchMode_backBtn
-    ;
-    (self:GetGameObject("WatchModeBackBtn")):SetActive(self._watchMode_backBtn)
+    self:GetGameObject("WatchModeBackBtn"):SetActive(self._watchMode_backBtn)
   end
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.CheckGuideShow = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function UIMainLobbyController:CheckGuideShow()
   local module = self:GetModule(MissionModule)
   local discoveryData = module:GetDiscoveryData()
   local chapters = discoveryData:GetVisibleChapters()
-  local needChapter = ((Cfg.cfg_guide_const).guide_discovery_btn_chapter).IntValue
-  if chapters and (table.count)(chapters) < needChapter and not (GuideHelper.GuideInProgress)() and self._discoveryGuideGO then
-    (self._discoveryGuideGO):SetActive(true)
-  end
-  if self._discoveryGuideGO then
-    (self._discoveryGuideGO):SetActive(false)
-  end
-  if self._discoveryGuideGO then
-    (self._discoveryGuideGO):SetActive(false)
+  local needChapter = Cfg.cfg_guide_const.guide_discovery_btn_chapter.IntValue
+  if chapters and needChapter > table.count(chapters) then
+    if not GuideHelper.GuideInProgress() then
+      if self._discoveryGuideGO then
+        self._discoveryGuideGO:SetActive(true)
+      end
+    elseif self._discoveryGuideGO then
+      self._discoveryGuideGO:SetActive(false)
+    end
+  elseif self._discoveryGuideGO then
+    self._discoveryGuideGO:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.ShowGuideStep = function(self, param)
-  -- function num : 0_41
-  (self._discoveryGuideGO):SetActive(false)
+function UIMainLobbyController:ShowGuideStep(param)
+  self._discoveryGuideGO:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.GuideDone = function(self)
-  -- function num : 0_42
+function UIMainLobbyController:GuideDone()
   self:CheckGuideShow()
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.UIClose = function(self)
-  -- function num : 0_43
+function UIMainLobbyController:UIClose()
   self:CheckGuideShow()
 end
 
--- DECOMPILER ERROR at PC142: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.AddListener = function(self)
-  -- function num : 0_44 , upvalues : _ENV
+function UIMainLobbyController:AddListener()
   self:AttachEvent(GameEventType.CheckCardNew, self.CheckCardNew)
   self:AttachEvent(GameEventType.ItemCountChanged, self.CheckPetRed)
   self:AttachEvent(GameEventType.RolePropertyChanged, self.CheckPetRed)
@@ -761,85 +577,71 @@ UIMainLobbyController.AddListener = function(self)
   self:AttachEvent(GameEventType.WatchPetSkinStory, self.CheckPetRed)
 end
 
--- DECOMPILER ERROR at PC145: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.RefreshCampSampleInfo = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function UIMainLobbyController:RefreshCampSampleInfo()
   self:Lock("UIMainLobbyController:RefreshCampSampleInfo")
   self:StartTask(function(TT)
-    -- function num : 0_45_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    local campModule = (GameGlobal.GetModule)(CampaignModule)
+    local campModule = GameGlobal.GetModule(CampaignModule)
     self._latestCampObj = campModule:GetLatestCampaignObj(TT)
     if self._main_camp_entry then
-      (self._main_camp_entry):RefreshCampSampleInfo(self._latestCampObj, self)
+      self._main_camp_entry:RefreshCampSampleInfo(self._latestCampObj, self)
     end
     if self._extraEntryData then
-      (self._extraEntryData):RefreshCampSampleInfo()
+      self._extraEntryData:RefreshCampSampleInfo()
       if self._main_extra_entry then
-        (self._main_extra_entry):RefreshCampSampleInfo(self._extraEntryData)
+        self._main_extra_entry:RefreshCampSampleInfo(self._extraEntryData)
       end
     end
     if self._centerEntryData then
-      (self._centerEntryData):RefreshCampSampleInfo(TT)
+      self._centerEntryData:RefreshCampSampleInfo(TT)
       if self._campaignCenter then
-        (self._campaignCenter):RefreshCampSampleInfo(self._centerEntryData)
+        self._campaignCenter:RefreshCampSampleInfo(self._centerEntryData)
       end
     end
     if self._season_entry then
-      (self._season_entry):OnAfterUILayerChanged()
+      self._season_entry:OnAfterUILayerChanged()
     end
     if self._yearSign then
-      (self._yearSign):OnAfterUILayerChanged()
+      self._yearSign:OnAfterUILayerChanged()
     end
     if self._cerebSign then
-      (self._cerebSign):OnAfterUILayerChanged()
+      self._cerebSign:OnAfterUILayerChanged()
     end
     self:UnLock("UIMainLobbyController:RefreshCampSampleInfo")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC148: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.OnAfterUILayerChanged = function(self)
-  -- function num : 0_46 , upvalues : _ENV
+function UIMainLobbyController:OnAfterUILayerChanged()
   if GameSingle then
-    return 
+    return
   end
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
-    (Log.debug)("###[UIMainLobbyController] OnAfterUILayerChanged !")
-    local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
+    Log.debug("###[UIMainLobbyController] OnAfterUILayerChanged !")
+    local uiModule = GameGlobal.GetUIModule(CampaignModule)
     uiModule:OnUIShowEnd(self:GetName())
     if self._buttom_btns ~= nil then
-      (self._buttom_btns):ChkEducationRed()
+      self._buttom_btns:ChkEducationRed()
     end
     if self._inited then
       self:InitScrollView()
       self:RefreshCampSampleInfo()
     end
-    ;
-    (UIBgmHelper.PlayMainBgm)()
-    if (GuideHelper.GuideInProgress)() then
-      return 
+    UIBgmHelper.PlayMainBgm()
+    if GuideHelper.GuideInProgress() then
+      return
     end
     self:ShowOpenList()
     self:ShowChatUnLockBGM()
     self:UpdateDrawCardRed()
     if self._spRequest ~= nil then
-      (self._spRequest):Request()
+      self._spRequest:Request()
     end
   end
-  do
-    self._inited = true
-  end
+  self._inited = true
 end
 
--- DECOMPILER ERROR at PC151: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.ShowChatUnLockBGM = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function UIMainLobbyController:ShowChatUnLockBGM()
   local uiMainModule = self:GetUIModule(SignInModule)
   local unlockBGMs = uiMainModule:GetUnLockBGMs()
   if unlockBGMs and next(unlockBGMs) then
@@ -847,154 +649,127 @@ UIMainLobbyController.ShowChatUnLockBGM = function(self)
     uiMainModule:RemoveBGM1()
     local title = ""
     local title_en = ""
-    local cfg = (Cfg.cfg_role_music)[bgm]
+    local cfg = Cfg.cfg_role_music[bgm]
     if not cfg then
-      (Log.error)("###[UIMainLobbyController] cfg is nil ! id --> ", bgm)
+      Log.error("###[UIMainLobbyController] cfg is nil ! id --> ", bgm)
     else
-      title = (StringTable.Get)("str_main_lobby_un_lock_music_tips", (StringTable.Get)(cfg.Name))
+      title = StringTable.Get("str_main_lobby_un_lock_music_tips", StringTable.Get(cfg.Name))
     end
     self:ShowDialog("UIAircraftUnlockFileController", title, title_en, true)
   end
 end
 
--- DECOMPILER ERROR at PC154: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.CheckShowAutoPop = function(self)
-  -- function num : 0_48 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+function UIMainLobbyController:CheckShowAutoPop()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
-    if (GuideHelper.GuideInProgress)() then
-      return 
+    if GuideHelper.GuideInProgress() then
+      return
     end
     self:ShowOpenList()
   end
 end
 
--- DECOMPILER ERROR at PC157: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.ShowOpenList = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function UIMainLobbyController:ShowOpenList()
   if not self._openListObj then
     self._openListObj = UIMainLobbyOpenList:New()
-    ;
-    (self._openListObj):SetData(self:GetName())
+    self._openListObj:SetData(self:GetName())
   end
-  ;
-  (self._openListObj):ShowOpenList()
+  self._openListObj:ShowOpenList()
 end
 
--- DECOMPILER ERROR at PC160: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.OnAutoOpenListFail = function(self)
-  -- function num : 0_50 , upvalues : _ENV
-  (Log.debug)("#OpenList# OnAutoOpenListFail")
+function UIMainLobbyController:OnAutoOpenListFail()
+  Log.debug("#OpenList# OnAutoOpenListFail")
   if self._delayCheckAutoPopEvent ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._delayCheckAutoPopEvent)
+    GameGlobal.Timer():CancelEvent(self._delayCheckAutoPopEvent)
     self._delayCheckAutoPopEvent = nil
   end
-  self._delayCheckAutoPopEvent = ((GameGlobal.RealTimer)()):AddEvent(1, function()
-    -- function num : 0_50_0 , upvalues : self
+  self._delayCheckAutoPopEvent = GameGlobal.RealTimer():AddEvent(1, function()
     self:CheckShowAutoPop()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC163: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.RemoveListener = function(self)
-  -- function num : 0_51
+function UIMainLobbyController:RemoveListener()
 end
 
--- DECOMPILER ERROR at PC166: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.OnHide = function(self)
-  -- function num : 0_52 , upvalues : _ENV
+function UIMainLobbyController:OnHide()
   if self._openListObj then
-    (self._openListObj):Dispose()
+    self._openListObj:Dispose()
     self._openListObj = nil
   end
   if self._startPhyTimerEvent ~= nil then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerEvent)
     self._startPhyTimerEvent = nil
   end
   if self._startPhyTimerLoopEvent ~= nil then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._startPhyTimerLoopEvent)
+    GameGlobal.RealTimer():CancelEvent(self._startPhyTimerLoopEvent)
     self._startPhyTimerLoopEvent = nil
   end
   self:RemoveListener()
   if self._showTimeEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._showTimeEvent)
+    GameGlobal.RealTimer():CancelEvent(self._showTimeEvent)
     self._showTimeEvent = nil
   end
   if self._phyEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._phyEvent)
+    GameGlobal.RealTimer():CancelEvent(self._phyEvent)
     self._phyEvent = nil
   end
-  ;
-  (Log.debug)("###main - OnHide")
+  Log.debug("###main - OnHide")
   if self._scrollEvent then
-    (Log.debug)("###main - cancel")
-    ;
-    ((GameGlobal.Timer)()):CancelEvent(self._scrollEvent)
+    Log.debug("###main - cancel")
+    GameGlobal.Timer():CancelEvent(self._scrollEvent)
     self._scrollEvent = nil
   end
   self._audioPlayID = nil
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   self:StopWeChatTalkTimer()
   if self._monthcardRefreshEvent ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._monthcardRefreshEvent)
+    GameGlobal.Timer():CancelEvent(self._monthcardRefreshEvent)
     self._monthcardRefreshEvent = nil
   end
   if self._delayCheckAutoPopEvent ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._delayCheckAutoPopEvent)
+    GameGlobal.Timer():CancelEvent(self._delayCheckAutoPopEvent)
     self._delayCheckAutoPopEvent = nil
   end
   if self._phyEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._phyEvent)
+    GameGlobal.RealTimer():CancelEvent(self._phyEvent)
     self._phyEvent = nil
   end
   if self._spRequest ~= nil then
-    (self._spRequest):Dispose()
+    self._spRequest:Dispose()
     self._spRequest = nil
   end
   if self._updateGambleTimer ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self._updateGambleTimer)
+    GameGlobal.Timer():CancelEvent(self._updateGambleTimer)
     self._updateGambleTimer = nil
   end
   if self._updateGambleEvent ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self._updateGambleEvent)
+    GameGlobal.TaskManager():KillTask(self._updateGambleEvent)
     self._updateGambleEvent = nil
   end
   if self._anniversaryEffectEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._anniversaryEffectEvent)
+    GameGlobal.Timer():CancelEvent(self._anniversaryEffectEvent)
     self._anniversaryEffectEvent = nil
   end
   self:UnLock("UIMainLobbyController:RefreshCampSampleInfo")
 end
 
--- DECOMPILER ERROR at PC169: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController._CheckMailStatus = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function UIMainLobbyController:_CheckMailStatus()
   local mailUnReadGo = self:GetGameObject("MailUnRead")
-  local mailModule = (GameGlobal.GetModule)(MailModule)
+  local mailModule = GameGlobal.GetModule(MailModule)
   local hasNewMail = mailModule:HaveNewMail()
   mailUnReadGo:SetActive(hasNewMail)
 end
 
--- DECOMPILER ERROR at PC172: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.CheckPetRed = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function UIMainLobbyController:CheckPetRed()
   local isShow = false
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   isShow = petModule:CheckNewPetForMainUI()
   if not isShow then
     local pets = petModule:GetPets()
-    for _,pet in pairs(pets) do
+    for _, pet in pairs(pets) do
       local isSkin = pet:IsShowSkinRedPoint()
       local isRed = isSkin
       if isRed then
@@ -1003,41 +778,26 @@ UIMainLobbyController.CheckPetRed = function(self)
       end
     end
   end
-  do
-    ;
-    (self._cardNew):SetActive(isShow)
-  end
+  self._cardNew:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.CheckCardNew = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function UIMainLobbyController:CheckCardNew()
   local active = false
-  local petModule = (GameGlobal.GetModule)(PetModule)
+  local petModule = GameGlobal.GetModule(PetModule)
   active = petModule:CheckNewPetForMainUI()
-  ;
-  (self._cardNew):SetActive(active)
+  self._cardNew:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.CheckHomeRed = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function UIMainLobbyController:CheckHomeRed()
   local homeModule = self:GetModule(HomelandModule)
   local count = homeModule:GetMainRedCount()
-  ;
-  (self._homeAwardCountGo):SetActive(count > 0)
-  if count > 0 then
-    (self._homeAwardCountText):SetText(count)
+  self._homeAwardCountGo:SetActive(0 < count)
+  if 0 < count then
+    self._homeAwardCountText:SetText(count)
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC181: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController._RefreshFunctionLockStatus = function(self)
-  -- function num : 0_57 , upvalues : _ENV
+function UIMainLobbyController:_RefreshFunctionLockStatus()
   local homeImg = self:GetUIComponent("Image", "HomeBtnView")
   local s = self:GetUIComponent("UISelectObjectPath", "HomeBtn")
   local homeButtonFunction = s:SpawnObject("UIMainLobbyLockBtn")
@@ -1058,14 +818,10 @@ UIMainLobbyController._RefreshFunctionLockStatus = function(self)
   local sumButtonFunction = s:SpawnObject("UIMainLobbyLockBtn")
   sumButtonFunction:SetFunctionType(GameModuleID.MD_Gamble)
   sumButtonFunction:SetLockViewCallback(function()
-    -- function num : 0_57_0 , upvalues : self
-    (self._gamebleBtn):ShowNewAndRed(false)
-  end
-, function()
-    -- function num : 0_57_1 , upvalues : self
-    (self._gamebleBtn):ShowNewAndRed(true)
-  end
-)
+    self._gamebleBtn:ShowNewAndRed(false)
+  end, function()
+    self._gamebleBtn:ShowNewAndRed(true)
+  end)
   local wechatImg = self:GetUIComponent("Image", "weChatBtnView")
   local s = self:GetUIComponent("UISelectObjectPath", "weChatBtn")
   local weChatBtnFunction = s:SpawnObject("UIMainLobbyLockBtn")
@@ -1073,332 +829,237 @@ UIMainLobbyController._RefreshFunctionLockStatus = function(self)
   weChatBtnFunction:SetColorImage(wechatImg)
 end
 
--- DECOMPILER ERROR at PC184: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.MissionBtnOnClick = function(self, go)
-  -- function num : 0_58 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_Discovery"}, true)
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_EXPLORE)
-  self.grassData = ((GameGlobal.GetModule)(CampaignModule)):GetGraveRobberData()
-  if (self.grassData):IsOpenGraveRobber() and (self.grassData):HasCanPlayNode() then
-    (DiscoveryData.EnterStateUIDiscovery)(7, nil)
+function UIMainLobbyController:MissionBtnOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_Discovery"
+  }, true)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_EXPLORE)
+  self.grassData = GameGlobal.GetModule(CampaignModule):GetGraveRobberData()
+  if self.grassData:IsOpenGraveRobber() and self.grassData:HasCanPlayNode() then
+    DiscoveryData.EnterStateUIDiscovery(7, nil)
   else
-    ;
-    (DiscoveryData.EnterStateUIDiscovery)(1)
+    DiscoveryData.EnterStateUIDiscovery(1)
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUIExplore)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUIExplore)
 end
 
--- DECOMPILER ERROR at PC187: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.MailBtnOnClick = function(self)
-  -- function num : 0_59 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_MailController"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyController:MailBtnOnClick()
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_MailController"
+  }, true)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Mail)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_MAIL)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_MAIL)
   self:ShowDialog("UIMailController")
 end
 
--- DECOMPILER ERROR at PC190: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.WeChatBtnOnClick = function(self)
-  -- function num : 0_60 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_WeChatController"}, true)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.WeChatBtnClick)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyController:WeChatBtnOnClick()
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_WeChatController"
+  }, true)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.WeChatBtnClick)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_WeChat)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_TERMINAL)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_TERMINAL)
   self:ShowDialog("UIWeChatController")
 end
 
--- DECOMPILER ERROR at PC193: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.NoticeBtnOnClick = function(self)
-  -- function num : 0_61 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"UINoticeController"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyController:NoticeBtnOnClick()
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "UINoticeController"
+  }, true)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Notify)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_NOTICE)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_NOTICE)
   local openType = NoticeType.Active
   if self._noticeData == nil then
-    self._noticeData = (self._loginModule):GetNoticeData()
+    self._noticeData = self._loginModule:GetNoticeData()
   end
-  do
-    if self._noticeData then
-      local systemState = (self._noticeData):GetNoticeNewStateWithGroup(NoticeType.System)
-      if systemState then
-        openType = NoticeType.System
-      end
+  if self._noticeData then
+    local systemState = self._noticeData:GetNoticeNewStateWithGroup(NoticeType.System)
+    if systemState then
+      openType = NoticeType.System
     end
-    self:ShowDialog("UINoticeController", openType)
   end
+  self:ShowDialog("UINoticeController", openType)
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.HeartBtnOnClick = function(self, go)
-  -- function num : 0_62 , upvalues : _ENV
-  (Log.info)("SingleUserData=============" .. ((UnityEngine.PlayerPrefs).GetString)("SingleUserData"))
+function UIMainLobbyController:HeartBtnOnClick(go)
+  Log.info("SingleUserData=============" .. UnityEngine.PlayerPrefs.GetString("SingleUserData"))
   if GameSingle then
     self:ShowDialog("UIHeartSpiritController")
-    return 
+    return
   end
-  ;
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_HeartSpiritController"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_HeartSpiritController"
+  }, true)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Pet)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_unlock"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_unlock"))
+    return
   end
-  ;
-  ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_PET)
+  GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_PET)
   self:ShowDialog("UIHeartSpiritController")
 end
 
--- DECOMPILER ERROR at PC199: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.UnlockAndSummonOnClick = function(self, go)
-  -- function num : 0_63
-  (self._gamebleBtn):OnClicked()
+function UIMainLobbyController:UnlockAndSummonOnClick(go)
+  self._gamebleBtn:OnClicked()
 end
 
--- DECOMPILER ERROR at PC202: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.HomeBtnOnClick = function(self, go)
-  -- function num : 0_64 , upvalues : _ENV
-  (((GameGlobal.GetModule)(HomelandModule)):GetUIModule()):LoadHomeland()
+function UIMainLobbyController:HomeBtnOnClick(go)
+  GameGlobal.GetModule(HomelandModule):GetUIModule():LoadHomeland()
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_65
+function UIMainLobbyController:OnUpdate(deltaTimeMS)
   if self._scroll and self._main_scroll_inited then
-    (self._main_scroll):OnUpdate(deltaTimeMS)
+    self._main_scroll:OnUpdate(deltaTimeMS)
   end
   if self._main_lobby_bg then
-    (self._main_lobby_bg):OnUpdate(deltaTimeMS)
+    self._main_lobby_bg:OnUpdate(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC208: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.ShowUIMainLobbyButtomBtns = function(self)
-  -- function num : 0_66
+function UIMainLobbyController:ShowUIMainLobbyButtomBtns()
   local buttom_btns = self:GetUIComponent("UISelectObjectPath", "UIMainLobbyButtomBtns")
   self._buttom_btns = buttom_btns:SpawnObject("UIMainLobbyButtomBtns")
-  ;
-  (self._buttom_btns):SetData()
+  self._buttom_btns:SetData()
 end
 
--- DECOMPILER ERROR at PC211: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.GetCurrentPhyTimer = function(self)
-  -- function num : 0_67
+function UIMainLobbyController:GetCurrentPhyTimer()
   local main_top_icon = self:GetUIComponent("UISelectObjectPath", "UIMainLobbyTopIcon")
   self._main_top_icon = main_top_icon:SpawnObject("UIMainLobbyTopIcon")
-  ;
-  (self._main_top_icon):SetData(self._toptipsInfo)
+  self._main_top_icon:SetData(self._toptipsInfo)
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.UpdateDrawCardRed = function(self)
-  -- function num : 0_68
+function UIMainLobbyController:UpdateDrawCardRed()
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.OnUpdateWeChatRed = function(self)
-  -- function num : 0_69 , upvalues : _ENV
-  local state = (self._roleModule):CheckModuleUnlock(GameModuleID.MD_WeChat)
+function UIMainLobbyController:OnUpdateWeChatRed()
+  local state = self._roleModule:CheckModuleUnlock(GameModuleID.MD_WeChat)
   if state == false then
-    (self._weChatRedGO):SetActive(false)
-    ;
-    (self._weChatCountGO):SetActive(false)
-    return 
+    self._weChatRedGO:SetActive(false)
+    self._weChatCountGO:SetActive(false)
+    return
   end
   if self._weChatRedGO then
     local module = self:GetModule(QuestChatModule)
-    local chats = (module:GetWeChatProxy()):GetUnReadChats()
+    local chats = module:GetWeChatProxy():GetUnReadChats()
     local count = #chats
-    if count > 0 then
-      (self._weChatRedGO):SetActive(true)
-      ;
-      (self._weChatCountGO):SetActive(false)
+    if 0 < count then
+      self._weChatRedGO:SetActive(true)
+      self._weChatCountGO:SetActive(false)
     else
-      ;
-      (self._weChatCountGO):SetActive(false)
-      ;
-      (self._weChatRedGO):SetActive((module:GetWeChatProxy()):HasRed())
+      self._weChatCountGO:SetActive(false)
+      self._weChatRedGO:SetActive(module:GetWeChatProxy():HasRed())
     end
   end
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.OnUpdateWeChatMainTalk = function(self)
-  -- function num : 0_70 , upvalues : _ENV
-  local state = (self._roleModule):CheckModuleUnlock(GameModuleID.MD_WeChat)
+function UIMainLobbyController:OnUpdateWeChatMainTalk()
+  local state = self._roleModule:CheckModuleUnlock(GameModuleID.MD_WeChat)
   if state == false then
-    (self._weChatTalkGO):SetActive(false)
-    return 
+    self._weChatTalkGO:SetActive(false)
+    return
   end
   local module = self:GetModule(QuestChatModule)
-  self.weChatTalkTxts = (module:GetWeChatProxy()):GetRandomUnReadChats()
-  local isConstructor = (module:GetWeChatProxy()):IsConstructor()
+  self.weChatTalkTxts = module:GetWeChatProxy():GetRandomUnReadChats()
+  local isConstructor = module:GetWeChatProxy():IsConstructor()
   self:StopWeChatTalkTimer()
   if self.weChatTalkTxts and #self.weChatTalkTxts > 0 then
     if #self.weChatTalkTxts >= 1 then
       if isConstructor then
-        local trigger = (UICommonHelper:GetInstance()):TrggerLocalRecordTime((self._roleModule):GetPstId() .. "WeChatMainTalk")
+        local trigger = UICommonHelper:GetInstance():TrggerLocalRecordTime(self._roleModule:GetPstId() .. "WeChatMainTalk")
         if trigger then
-          (self._weChatTalkGO):SetActive(true)
+          self._weChatTalkGO:SetActive(true)
           self.maxWeChatTalkCount = #self.weChatTalkTxts
           self:AddWeChatTalkTimer()
-          ;
-          (module:GetWeChatProxy()):SetIsConstructor(false)
+          module:GetWeChatProxy():SetIsConstructor(false)
         else
-          ;
-          (self._weChatTalkGO):SetActive(false)
-          ;
-          (module:GetWeChatProxy()):SetIsConstructor(false)
+          self._weChatTalkGO:SetActive(false)
+          module:GetWeChatProxy():SetIsConstructor(false)
         end
       else
-        do
-          ;
-          (self._weChatTalkGO):SetActive(true)
-          self.maxWeChatTalkCount = #self.weChatTalkTxts
-          self:AddWeChatTalkTimer()
-          ;
-          (self._weChatTalkGO):SetActive(false)
-          ;
-          (self._weChatTalkGO):SetActive(false)
-          ;
-          (module:GetWeChatProxy()):SetIsConstructor(false)
-        end
+        self._weChatTalkGO:SetActive(true)
+        self.maxWeChatTalkCount = #self.weChatTalkTxts
+        self:AddWeChatTalkTimer()
       end
+    else
+      self._weChatTalkGO:SetActive(false)
     end
+  else
+    self._weChatTalkGO:SetActive(false)
+    module:GetWeChatProxy():SetIsConstructor(false)
   end
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.AddWeChatTalkTimer = function(self)
-  -- function num : 0_71 , upvalues : _ENV
+function UIMainLobbyController:AddWeChatTalkTimer()
   self.weChatTalkIndex = 1
-  self.weChatTalkTimer = ((GameGlobal.Timer)()):AddEventTimes(3000, TimerTriggerCount.Infinite, self.OnWeChatTalkLoop, self)
+  self.weChatTalkTimer = GameGlobal.Timer():AddEventTimes(3000, TimerTriggerCount.Infinite, self.OnWeChatTalkLoop, self)
   self:OnWeChatTalkLoop()
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.OnWeChatTalkLoop = function(self)
-  -- function num : 0_72 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIMainLobbyController:OnWeChatTalkLoop()
   if self.weChatTalkIndex <= self.maxWeChatTalkCount then
     if self.weChatTalkIndex == 1 then
-      (self._weChatMainIconRaw).color = Color(1, 1, 1, 1)
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._weChatMainIconRaw01).color = Color(1, 1, 1, 0)
-      ;
-      (self._weChatMainIcon):LoadImage((self.weChatTalkTxts)[self.weChatTalkIndex])
-      ;
-      (self._weChatTalkAni):Play("uieff_UIMainLobbyController_wechattalk_in")
+      self._weChatMainIconRaw.color = Color(1, 1, 1, 1)
+      self._weChatMainIconRaw01.color = Color(1, 1, 1, 0)
+      self._weChatMainIcon:LoadImage(self.weChatTalkTxts[self.weChatTalkIndex])
+      self._weChatTalkAni:Play("uieff_UIMainLobbyController_wechattalk_in")
     else
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._weChatMainIconRaw).color = Color(1, 1, 1, 1)
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._weChatMainIconRaw01).color = Color(1, 1, 1, 0)
-      ;
-      (self._weChatMainIcon):LoadImage((self.weChatTalkTxts)[self.weChatTalkIndex - 1])
-      ;
-      (self._weChatMainIcon01):LoadImage((self.weChatTalkTxts)[self.weChatTalkIndex])
-      ;
-      (self._weChatTalkAni):Play("uieff_UIMainLobbyController_wechattalk_cut")
+      self._weChatMainIconRaw.color = Color(1, 1, 1, 1)
+      self._weChatMainIconRaw01.color = Color(1, 1, 1, 0)
+      self._weChatMainIcon:LoadImage(self.weChatTalkTxts[self.weChatTalkIndex - 1])
+      self._weChatMainIcon01:LoadImage(self.weChatTalkTxts[self.weChatTalkIndex])
+      self._weChatTalkAni:Play("uieff_UIMainLobbyController_wechattalk_cut")
     end
     self.weChatTalkIndex = self.weChatTalkIndex + 1
   else
     self:StopWeChatTalkTimer()
-    ;
-    (self._weChatTalkAni):Play("uieff_UIMainLobbyController_wechattalk_out")
+    self._weChatTalkAni:Play("uieff_UIMainLobbyController_wechattalk_out")
   end
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.StopWeChatTalkTimer = function(self)
-  -- function num : 0_73 , upvalues : _ENV
+function UIMainLobbyController:StopWeChatTalkTimer()
   if self.weChatTalkTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self.weChatTalkTimer)
+    GameGlobal.Timer():CancelEvent(self.weChatTalkTimer)
     self.weChatTalkTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC232: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController._CheckWoldBossRedPoint = function(self)
-  -- function num : 0_74 , upvalues : _ENV
+function UIMainLobbyController:_CheckWoldBossRedPoint()
   local show = false
   local worldBossModule = self:GetModule(WorldBossModule)
   local redPointData = worldBossModule:GetWorldBossRedPoint()
   show = redPointData:MainLobbyHaveRedPoint()
-  ;
-  (self.missionRed):SetActive(show)
+  self.missionRed:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC235: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController.ShowAutoTestLogs = function(self)
-  -- function num : 0_75 , upvalues : _ENV
+function UIMainLobbyController:ShowAutoTestLogs()
   if EDITOR then
     self:ShowDialog("UIBattleAutoTest")
   end
 end
 
--- DECOMPILER ERROR at PC238: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController._CheckGuide = function(self)
-  -- function num : 0_76 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.HomelandUnlock)
+function UIMainLobbyController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.HomelandUnlock)
 end
 
--- DECOMPILER ERROR at PC241: Confused about usage of register: R2 in 'UnsetPending'
-
-UIMainLobbyController._CheckPreDownLoadPV = function(self)
-  -- function num : 0_77 , upvalues : _ENV
+function UIMainLobbyController:_CheckPreDownLoadPV()
   if not self._preDownLoadPv then
     self._preDownLoadPv = UIMainLobbyDownLoadPV:New()
   end
-  ;
-  (self._preDownLoadPv):CheckPreDownLoadPV()
+  self._preDownLoadPv:CheckPreDownLoadPV()
 end
-
-

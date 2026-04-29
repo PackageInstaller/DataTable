@@ -1,15 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/guide/guide_check.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local GUIDE_CHECK_TYPE = {GUIDE_CHECK_TYPE_END; GCT_ITEM_COUNT_EQUAL_OR_GREATER = 1, GCT_MODULE_UNLOCK = 2, GCT_MISSION_PASS = 3, GCT_AIRCRAFT_ROOM_BUILD = 4, GCT_HOMELAND_FREE_BUIND = 5, GCT_WECHAT_TALKED = 6, GCT_HAS_PET = 7}
+local GUIDE_CHECK_TYPE = {
+  GCT_ITEM_COUNT_EQUAL_OR_GREATER = 1,
+  GCT_MODULE_UNLOCK = 2,
+  GCT_MISSION_PASS = 3,
+  GCT_AIRCRAFT_ROOM_BUILD = 4,
+  GCT_HOMELAND_FREE_BUIND = 5,
+  GCT_WECHAT_TALKED = 6,
+  GCT_HAS_PET = 7,
+  GUIDE_CHECK_TYPE_END
+}
 _enum("GUIDE_CHECK_TYPE", GUIDE_CHECK_TYPE)
 _class("GuideCheckParam", Object)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-GuideCheckParam.Constructor = function(self)
-  -- function num : 0_0
+function GuideCheckParam:Constructor()
   self.CheckType = 0
   self.CheckParam1 = 0
   self.CheckParam2 = 0
@@ -18,18 +20,13 @@ GuideCheckParam.Constructor = function(self)
 end
 
 _class("GuideCheck", Object)
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-GuideCheck.Constructor = function(self, guideModule)
-  -- function num : 0_1
+function GuideCheck:Constructor(guideModule)
   self._guideModule = guideModule
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck.CheckGuideStartCondition = function(self, guideID)
-  -- function num : 0_2 , upvalues : _ENV
-  local check_config = (Cfg.cfg_guide_check)[guideID]
+function GuideCheck:CheckGuideStartCondition(guideID)
+  local check_config = Cfg.cfg_guide_check[guideID]
   if check_config == nil then
     return true
   end
@@ -43,51 +40,33 @@ GuideCheck.CheckGuideStartCondition = function(self, guideID)
   return true
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck._Check = function(self, param)
-  -- function num : 0_3 , upvalues : GUIDE_CHECK_TYPE
+function GuideCheck:_Check(param)
   if param.CheckType == GUIDE_CHECK_TYPE.GCT_ITEM_COUNT_EQUAL_OR_GREATER then
     return self:_CheckItemCountEqualOrGreater(param)
+  elseif param.CheckType == GUIDE_CHECK_TYPE.GCT_MODULE_UNLOCK then
+    return self:_CheckModuleUnlock(param)
+  elseif param.CheckType == GUIDE_CHECK_TYPE.GCT_MISSION_PASS then
+    return self:_ChecMissionPassed(param)
+  elseif param.CheckType == GUIDE_CHECK_TYPE.GCT_AIRCRAFT_ROOM_BUILD then
+    return self:_ChecAircraftRoom(param)
+  elseif param.CheckType == GUIDE_CHECK_TYPE.GCT_HOMELAND_FREE_BUIND then
+    return self:_ChecHomelandFreeBuild(param)
+  elseif param.CheckType == GUIDE_CHECK_TYPE.GCT_WECHAT_TALKED then
+    return self:_CheckWeChatTalked(param)
+  elseif param.CheckType == GUIDE_CHECK_TYPE.GCT_HAS_PET then
+    return self:_CheckHasPet(param)
   else
-    if param.CheckType == GUIDE_CHECK_TYPE.GCT_MODULE_UNLOCK then
-      return self:_CheckModuleUnlock(param)
-    else
-      if param.CheckType == GUIDE_CHECK_TYPE.GCT_MISSION_PASS then
-        return self:_ChecMissionPassed(param)
-      else
-        if param.CheckType == GUIDE_CHECK_TYPE.GCT_AIRCRAFT_ROOM_BUILD then
-          return self:_ChecAircraftRoom(param)
-        else
-          if param.CheckType == GUIDE_CHECK_TYPE.GCT_HOMELAND_FREE_BUIND then
-            return self:_ChecHomelandFreeBuild(param)
-          else
-            if param.CheckType == GUIDE_CHECK_TYPE.GCT_WECHAT_TALKED then
-              return self:_CheckWeChatTalked(param)
-            else
-              if param.CheckType == GUIDE_CHECK_TYPE.GCT_HAS_PET then
-                return self:_CheckHasPet(param)
-              else
-                return false
-              end
-            end
-          end
-        end
-      end
-    end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck._Config2CheckParam = function(self, CheckStartCondition)
-  -- function num : 0_4 , upvalues : _ENV
+function GuideCheck:_Config2CheckParam(CheckStartCondition)
   local paramList = ArrayList:New()
   if CheckStartCondition == nil then
     return paramList
   end
-  for _,condition in ipairs(CheckStartCondition) do
-    local content = (string.split)(condition, ",")
+  for _, condition in ipairs(CheckStartCondition) do
+    local content = string.split(condition, ",")
     local param = GuideCheckParam:New()
     param.CheckType = tonumber(content[1])
     if content[2] ~= nil then
@@ -107,24 +86,18 @@ GuideCheck._Config2CheckParam = function(self, CheckStartCondition)
   return paramList
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck._CheckItemCountEqualOrGreater = function(self, param)
-  -- function num : 0_5 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function GuideCheck:_CheckItemCountEqualOrGreater(param)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local itemCount = itemModule:GetItemCount(param.CheckParam1)
-  if param.CheckParam2 <= itemCount then
+  if itemCount >= param.CheckParam2 then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck._CheckModuleUnlock = function(self, param)
-  -- function num : 0_6 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function GuideCheck:_CheckModuleUnlock(param)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local bUnlock = roleModule:CheckModuleUnlock(param.CheckParam1)
   if bUnlock then
     return true
@@ -133,11 +106,8 @@ GuideCheck._CheckModuleUnlock = function(self, param)
   end
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck._ChecMissionPassed = function(self, param)
-  -- function num : 0_7 , upvalues : _ENV
-  local missionModule = (GameGlobal.GetModule)(MissionModule)
+function GuideCheck:_ChecMissionPassed(param)
+  local missionModule = GameGlobal.GetModule(MissionModule)
   local bpassed = missionModule:IsPassMissionID(param.CheckParam1)
   if bpassed then
     return true
@@ -146,11 +116,8 @@ GuideCheck._ChecMissionPassed = function(self, param)
   end
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck._ChecAircraftRoom = function(self, param)
-  -- function num : 0_8 , upvalues : _ENV
-  local airModule = (GameGlobal.GetModule)(AircraftModule)
+function GuideCheck:_ChecAircraftRoom(param)
+  local airModule = GameGlobal.GetModule(AircraftModule)
   local spaceid = param.CheckParam1
   local roomid = param.CheckParam2
   local room = airModule:GetRoom(param.CheckParam1)
@@ -164,50 +131,36 @@ GuideCheck._ChecAircraftRoom = function(self, param)
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck._ChecHomelandFreeBuild = function(self, param)
-  -- function num : 0_9 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function GuideCheck:_ChecHomelandFreeBuild(param)
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local itemCount = itemModule:GetItemCount(param.CheckParam1)
   if itemCount < param.CheckParam2 then
     return false
   end
-  local homelandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local homelandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homelandModule:GetClient()
   local buildManager = homelandClient:BuildManager()
   local unPutCount = buildManager:GetBuildCount(param.CheckParam1)
-  do return param.CheckParam2 <= unPutCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return unPutCount >= param.CheckParam2
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck._CheckWeChatTalked = function(self, param)
-  -- function num : 0_10 , upvalues : _ENV
+function GuideCheck:_CheckWeChatTalked(param)
   local speakerId = param.CheckParam1
   local talkId = param.CheckParam2
-  local questChatModule = (GameGlobal.GetModule)(QuestChatModule)
+  local questChatModule = GameGlobal.GetModule(QuestChatModule)
   local weChatProxy = questChatModule:GetWeChatProxy()
   local talks = weChatProxy:GetTalks(speakerId)
-  if #talks > 0 then
-    for _,value in pairs(talks) do
+  if 0 < #talks then
+    for _, value in pairs(talks) do
       if value.talkId == talkId then
         return false
       end
     end
   end
-  do
-    return true
-  end
+  return true
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-GuideCheck._CheckHasPet = function(self, param)
-  -- function num : 0_11 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function GuideCheck:_CheckHasPet(param)
+  local petModule = GameGlobal.GetModule(PetModule)
   return petModule:HasPet(param.CheckParam1)
 end
-
-

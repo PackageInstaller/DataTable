@@ -1,34 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/shop/ui_n33_lottery_get_item_row_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_get_item_controller_item")
 require("ui_n33_lottery_get_item_ui_item")
 _class("UIN33LotteryGetItemRowItem", UIGetItemControllerItem)
 UIN33LotteryGetItemRowItem = UIN33LotteryGetItemRowItem
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33LotteryGetItemRowItem.GetUIItem = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN33LotteryGetItemRowItem:GetUIItem()
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIN33LotteryGetItemUIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.N33Lottery)
+  self.uiItem:SetForm(UIItemForm.N33Lottery)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33LotteryGetItemRowItem._DoClickCallback = function(self, go)
-  -- function num : 0_1
-  (self._clickCallback)((self._templateData).award_type, self._item_id, self._itemCount)
+function UIN33LotteryGetItemRowItem:_DoClickCallback(go)
+  self._clickCallback(self._templateData.award_type, self._item_id, self._itemCount)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33LotteryGetItemRowItem._SetUIItemData = function(self, nameColor)
-  -- function num : 0_2
-  (self.uiItem):SetData({count = (self._templateData).item_count, icon = (self._templateData).icon, awardType = (self._templateData).award_type})
+function UIN33LotteryGetItemRowItem:_SetUIItemData(nameColor)
+  self.uiItem:SetData({
+    count = self._templateData.item_count,
+    icon = self._templateData.icon,
+    awardType = self._templateData.award_type
+  })
 end
-
-

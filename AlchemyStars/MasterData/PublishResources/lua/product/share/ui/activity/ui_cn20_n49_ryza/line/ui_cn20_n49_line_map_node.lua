@@ -1,138 +1,80 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn20_n49_ryza/line/ui_cn20_n49_line_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN20N49LineMapNode", UICustomWidget)
 UICN20N49LineMapNode = UICN20N49LineMapNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN20N49LineMapNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UICN20N49LineMapNode:OnShow(uiParams)
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self._starGo = self:GetGameObject("star_normal")
   self._passStarList = {}
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._passStarList)[1] = self:GetUIComponent("Image", "normal_Star1")
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._passStarList)[2] = self:GetUIComponent("Image", "normal_Star2")
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._passStarList)[3] = self:GetUIComponent("Image", "normal_Star3")
+  self._passStarList[1] = self:GetUIComponent("Image", "normal_Star1")
+  self._passStarList[2] = self:GetUIComponent("Image", "normal_Star2")
+  self._passStarList[3] = self:GetUIComponent("Image", "normal_Star3")
   self._passStarNoList = {}
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._passStarNoList)[1] = self:GetUIComponent("Image", "normal_Star1_no")
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._passStarNoList)[2] = self:GetUIComponent("Image", "normal_Star2_no")
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._passStarNoList)[3] = self:GetUIComponent("Image", "normal_Star3_no")
+  self._passStarNoList[1] = self:GetUIComponent("Image", "normal_Star1_no")
+  self._passStarNoList[2] = self:GetUIComponent("Image", "normal_Star2_no")
+  self._passStarNoList[3] = self:GetUIComponent("Image", "normal_Star3_no")
   self._bg_plot = self:GetUIComponent("RawImageLoader", "bg_plot_img")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineMapNode.Destroy = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._matReq = (UIWidgetHelper.DisposeLocalizedTMPMaterial)(self._matReq)
+function UICN20N49LineMapNode:Destroy()
+  self._matReq = UIWidgetHelper.DisposeLocalizedTMPMaterial(self._matReq)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineMapNode.SetStarSp = function(self, normapStar, normalNoStar, bossStar, bossNoStar)
-  -- function num : 0_2
+function UICN20N49LineMapNode:SetStarSp(normapStar, normalNoStar, bossStar, bossNoStar)
   self._normapStar = normapStar
   self._normalNoStar = normalNoStar
   self._bossStar = bossStar
   self._bossNoStar = bossNoStar
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineMapNode.SetData = function(self, lineCfg, passInfo, cb)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN20N49LineMapNode:SetData(lineCfg, passInfo, cb)
   self._missionID = lineCfg.CampaignMissionId
   self._callback = cb
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
   self:_SetRectTransform(lineCfg)
-  self:_SetName(missionCfg.Type, (StringTable.Get)(missionCfg.Name))
+  self:_SetName(missionCfg.Type, StringTable.Get(missionCfg.Name))
   self:_SetState(missionCfg.Type)
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
   self._isBossNode = missionCfg.Type == DiscoveryStageType.FightBoss
   self:_SetStar(passInfo)
   self:_SetPlay(passInfo)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineMapNode._SetState = function(self, state)
-  -- function num : 0_4 , upvalues : _ENV
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"bg_normal"}
-, 
-{"bg_boss"}
-, 
-{"bg_plot"}
-}, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+function UICN20N49LineMapNode:_SetState(state)
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {"bg_normal"},
+    {"bg_boss"},
+    {"bg_plot"}
+  }, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineMapNode._SetRectTransform = function(self, lineCfg)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+function UICN20N49LineMapNode:_SetRectTransform(lineCfg)
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineMapNode._SetName = function(self, state, text)
-  -- function num : 0_6 , upvalues : _ENV
-  local tb = {"name", "boss_name", "story_name"}
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, tb[state], text)
+function UICN20N49LineMapNode:_SetName(state, text)
+  local tb = {
+    "name",
+    "boss_name",
+    "story_name"
+  }
+  UIWidgetHelper.SetLocalizationText(self, tb[state], text)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineMapNode._SetStar = function(self, passInfo)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._starGo):SetActive(not self._isStoryNode)
+function UICN20N49LineMapNode:_SetStar(passInfo)
+  self._starGo:SetActive(not self._isStoryNode)
   if not self._isStoryNode then
     local missionModule = self:GetModule(MissionModule)
     local stars = passInfo and missionModule:ParseStarInfo(passInfo.star) or 0
     for i = 1, 3 do
-      local star = (self._passStarList)[i]
-      local star_no = (self._passStarNoList)[i]
+      local star = self._passStarList[i]
+      local star_no = self._passStarNoList[i]
       if self._isBossNode then
         star.sprite = self._bossStar
         star_no.sprite = self._bossNoStar
@@ -140,30 +82,17 @@ UICN20N49LineMapNode._SetStar = function(self, passInfo)
         star.sprite = self._normapStar
         star_no.sprite = self._normalNoStar
       end
-      ;
-      (star_no.gameObject):SetActive(i > stars)
-      ;
-      (star.gameObject):SetActive(i <= stars)
+      star_no.gameObject:SetActive(not (i <= stars))
+      star.gameObject:SetActive(i <= stars)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineMapNode._SetPlay = function(self, passInfo)
-  -- function num : 0_8
-  local isShow = not passInfo or passInfo.pass_without_help ~= 0
-  ;
-  (self._bg_plot):LoadImage(isShow and "cn20_lsxxg_di18" or "cn20_lsxxg_di17")
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UICN20N49LineMapNode:_SetPlay(passInfo)
+  local isShow = passInfo and passInfo.pass_without_help ~= 0
+  self._bg_plot:LoadImage(isShow and "cn20_lsxxg_di18" or "cn20_lsxxg_di17")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN20N49LineMapNode.BtnOnClick = function(self, go)
-  -- function num : 0_9
-  (self._callback)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+function UICN20N49LineMapNode:BtnOnClick(go)
+  self._callback(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
-
-

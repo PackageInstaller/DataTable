@@ -1,42 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rewarding_reward/ui_activity_n_plus_six_reward_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixRewardController", UIController)
 UIActivityNPlusSixRewardController = UIActivityNPlusSixRewardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixRewardController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityNPlusSixRewardController:LoadDataOnEnter(TT, res, uiParams)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_HALLOWEEN, ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_HALLOWEEN, ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  self._questComponent = (self._localProcess):GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST)
-  self._questComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST)
+  self._questComponent = self._localProcess:GetComponent(ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST)
+  self._questComponentInfo = self._localProcess:GetComponentInfo(ECampaignN6ComponentID.ECAMPAIGN_N6_QUEST)
   self:RefreshData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.RefreshData = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._questInfoList = (self._questComponent):GetQuestInfo()
-  ;
-  (self._questComponent):SortQuestInfoByCampaignQuestStatus(self._questInfoList)
+function UIActivityNPlusSixRewardController:RefreshData()
+  self._questInfoList = self._questComponent:GetQuestInfo()
+  self._questComponent:SortQuestInfoByCampaignQuestStatus(self._questInfoList)
   local onePageCount = 6
-  self._pageCount = (math.ceil)(#self._questInfoList / onePageCount)
+  self._pageCount = math.ceil(#self._questInfoList / onePageCount)
   if self._pageCount <= 0 then
     self._pageCount = 1
   end
@@ -44,40 +32,28 @@ UIActivityNPlusSixRewardController.RefreshData = function(self)
   for i = 1, self._pageCount do
     local pageData = {}
     for j = 1, onePageCount do
-      local data = (self._questInfoList)[(i - 1) * onePageCount + j]
+      local data = self._questInfoList[(i - 1) * onePageCount + j]
       if data then
         pageData[#pageData + 1] = data
       end
     end
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._pageDatas)[#self._pageDatas + 1] = pageData
+    self._pageDatas[#self._pageDatas + 1] = pageData
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityNPlusSixRewardController:OnShow(uiParams)
   self._currentPage = 1
   self._showBtn = self:GetGameObject("ShowBtn")
   self._btnPanel = self:GetGameObject("BtnPanel")
-  ;
-  (self._showBtn):SetActive(false)
-  ;
-  (self._btnPanel):SetActive(true)
+  self._showBtn:SetActive(false)
+  self._btnPanel:SetActive(true)
   self._buildingDatas = uiParams[1]
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-)
+  self._backBtn:SetData(function()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end)
   local s = self:GetUIComponent("UISelectObjectPath", "itemTips")
   self._tips = s:SpawnObject("UISelectInfo")
   self._leftBtnGo = self:GetGameObject("LeftBtn")
@@ -88,97 +64,71 @@ UIActivityNPlusSixRewardController.OnShow = function(self, uiParams)
   self._pageLabel = self:GetUIComponent("UILocalizationText", "Page")
   self._buildingIcon = self:GetGameObject("BuildingIcon")
   self._buildingIconLoader = self:GetUIComponent("RawImageLoader", "BuildingIcon")
-  ;
-  (self._buildingIcon):SetActive(false)
+  self._buildingIcon:SetActive(false)
   self._currentSelectQuest = nil
   self:RefreshUI()
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:AttachEvent(GameEventType.NPlusSixBuildingRewardGet, self.Refresh)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityNPlusSixRewardController:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
   self:DetachEvent(GameEventType.NPlusSixBuildingRewardGet, self.Refresh)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.CloseCoro = function(self, TT)
-  -- function num : 0_4
+function UIActivityNPlusSixRewardController:CloseCoro(TT)
   self:Lock("UIActivityNPlusSixMainController_CloseCoro")
   self:CloseDialog()
   self:UnLock("UIActivityNPlusSixMainController_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.ShowBtnOnClick = function(self)
-  -- function num : 0_5
-  (self._showBtn):SetActive(false)
-  ;
-  (self._btnPanel):SetActive(true)
+function UIActivityNPlusSixRewardController:ShowBtnOnClick()
+  self._showBtn:SetActive(false)
+  self._btnPanel:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_6
-  (self._tips):SetData(itemId, pos)
+function UIActivityNPlusSixRewardController:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.Refresh = function(self)
-  -- function num : 0_7
+function UIActivityNPlusSixRewardController:Refresh()
   self:RefreshData()
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.RefreshUI = function(self)
-  -- function num : 0_8
+function UIActivityNPlusSixRewardController:RefreshUI()
   if self._currentPage <= 1 then
-    (self._leftBtnGo):SetActive(false)
+    self._leftBtnGo:SetActive(false)
   else
-    ;
-    (self._leftBtnGo):SetActive(true)
+    self._leftBtnGo:SetActive(true)
   end
-  if self._pageCount <= self._currentPage then
-    (self._rightBtnGo):SetActive(false)
+  if self._currentPage >= self._pageCount then
+    self._rightBtnGo:SetActive(false)
   else
-    ;
-    (self._rightBtnGo):SetActive(true)
+    self._rightBtnGo:SetActive(true)
   end
-  ;
-  (self._pageLabel):SetText(self._currentPage .. "/" .. self._pageCount)
+  self._pageLabel:SetText(self._currentPage .. "/" .. self._pageCount)
   self:RefreshRedPoint()
-  local pageData = (self._pageDatas)[self._currentPage]
+  local pageData = self._pageDatas[self._currentPage]
   local contents = self:GetUIComponent("UISelectObjectPath", "Content")
   contents:SpawnObjects("UIActivityNPlusSixRewardInfoItem", #pageData)
   self._rewardItems = contents:GetAllSpawnList()
   if not self._rewardItems then
-    return 
+    return
   end
   for i = 1, #pageData do
-    ((self._rewardItems)[i]):Refresh(pageData[i], self._questComponent, self)
+    self._rewardItems[i]:Refresh(pageData[i], self._questComponent, self)
   end
   self:RefreshSelectItem()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.RefreshRedPoint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityNPlusSixRewardController:RefreshRedPoint()
   if self._currentPage <= 1 then
-    (self._leftRedPoint):SetActive(false)
+    self._leftRedPoint:SetActive(false)
   else
     local hasRed = false
     for i = 1, self._currentPage - 1 do
-      local pageData = (self._pageDatas)[i]
+      local pageData = self._pageDatas[i]
       for j = 1, #pageData do
         local data = pageData[j]
         local status = data:Status()
@@ -187,95 +137,72 @@ UIActivityNPlusSixRewardController.RefreshRedPoint = function(self)
           break
         end
       end
-    end
-    do
-      if not hasRed then
-        do
-          (self._leftRedPoint):SetActive(hasRed)
-          if self._pageCount <= self._currentPage then
-            (self._rightRedPoint):SetActive(false)
-          else
-            local hasRed = false
-            for i = self._currentPage + 1, self._pageCount do
-              local pageData = (self._pageDatas)[i]
-              for j = 1, #pageData do
-                local data = pageData[j]
-                local status = data:Status()
-                if status == QuestStatus.QUEST_Completed then
-                  hasRed = true
-                  break
-                end
-              end
-            end
-            do
-              if not hasRed then
-                do
-                  (self._rightRedPoint):SetActive(hasRed)
-                  local hasRed = false
-                  for i = 1, #self._questInfoList do
-                    local status = ((self._questInfoList)[i]):Status()
-                    if status == QuestStatus.QUEST_Completed then
-                      hasRed = true
-                      break
-                    end
-                  end
-                  do
-                    ;
-                    (self._rewardRedPoint):SetActive(hasRed)
-                  end
-                end
-              end
-            end
-          end
-        end
+      if hasRed then
+        break
       end
     end
+    self._leftRedPoint:SetActive(hasRed)
   end
+  if self._currentPage >= self._pageCount then
+    self._rightRedPoint:SetActive(false)
+  else
+    local hasRed = false
+    for i = self._currentPage + 1, self._pageCount do
+      local pageData = self._pageDatas[i]
+      for j = 1, #pageData do
+        local data = pageData[j]
+        local status = data:Status()
+        if status == QuestStatus.QUEST_Completed then
+          hasRed = true
+          break
+        end
+      end
+      if hasRed then
+        break
+      end
+    end
+    self._rightRedPoint:SetActive(hasRed)
+  end
+  local hasRed = false
+  for i = 1, #self._questInfoList do
+    local status = self._questInfoList[i]:Status()
+    if status == QuestStatus.QUEST_Completed then
+      hasRed = true
+      break
+    end
+  end
+  self._rewardRedPoint:SetActive(hasRed)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.SelectRewardItem = function(self, quest)
-  -- function num : 0_10
+function UIActivityNPlusSixRewardController:SelectRewardItem(quest)
   self._currentSelectQuest = quest
   self:RefreshSelectItem()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.RefreshSelectItem = function(self)
-  -- function num : 0_11
+function UIActivityNPlusSixRewardController:RefreshSelectItem()
   if not self._rewardItems then
-    return 
+    return
   end
   for i = 1, #self._rewardItems do
-    if ((self._rewardItems)[i]):GetQuest() == self._currentSelectQuest then
-      ((self._rewardItems)[i]):SetSelectStatus(true)
+    if self._rewardItems[i]:GetQuest() == self._currentSelectQuest then
+      self._rewardItems[i]:SetSelectStatus(true)
     else
-      ;
-      ((self._rewardItems)[i]):SetSelectStatus(false)
+      self._rewardItems[i]:SetSelectStatus(false)
     end
   end
   if self._currentSelectQuest then
-    (self._buildingIcon):SetActive(false)
-    local questInfo = (self._currentSelectQuest):QuestInfo()
-    ;
-    (self._buildingIconLoader):LoadImage(questInfo.Icon)
+    self._buildingIcon:SetActive(false)
+    local questInfo = self._currentSelectQuest:QuestInfo()
+    self._buildingIconLoader:LoadImage(questInfo.Icon)
   else
-    do
-      ;
-      (self._buildingIcon):SetActive(false)
-    end
+    self._buildingIcon:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.LeftBtnOnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N6PageTurn)
+function UIActivityNPlusSixRewardController:LeftBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N6PageTurn)
   if self._currentPage <= 1 then
-    return 
+    return
   end
   self:SetLastPageInfo()
   self._currentPage = self._currentPage - 1
@@ -283,13 +210,10 @@ UIActivityNPlusSixRewardController.LeftBtnOnClick = function(self)
   self:PlayPageAnimation()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.RightBtnOnClick = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N6PageTurn)
-  if self._pageCount <= self._currentPage then
-    return 
+function UIActivityNPlusSixRewardController:RightBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N6PageTurn)
+  if self._currentPage >= self._pageCount then
+    return
   end
   self:SetLastPageInfo()
   self._currentPage = self._currentPage + 1
@@ -297,66 +221,52 @@ UIActivityNPlusSixRewardController.RightBtnOnClick = function(self)
   self:PlayPageAnimation()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.SetLastPageInfo = function(self)
-  -- function num : 0_14
+function UIActivityNPlusSixRewardController:SetLastPageInfo()
   local lastPageLabel = self:GetUIComponent("UILocalizationText", "LastPage")
   lastPageLabel:SetText(self._currentPage .. "/" .. self._pageCount)
-  local pageData = (self._pageDatas)[self._currentPage]
+  local pageData = self._pageDatas[self._currentPage]
   local contents = self:GetUIComponent("UISelectObjectPath", "LastContent")
   contents:SpawnObjects("UIActivityNPlusSixRewardInfoItem", #pageData)
   local rewardItems = contents:GetAllSpawnList()
   if not rewardItems then
-    return 
+    return
   end
   for i = 1, #pageData do
-    (rewardItems[i]):Refresh(pageData[i], self._questComponent, self)
+    rewardItems[i]:Refresh(pageData[i], self._questComponent, self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.PlayPageAnimation = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV
+function UIActivityNPlusSixRewardController:PlayPageAnimation()
+  GameGlobal.TaskManager():StartTask(function(TT)
     self:Lock("UIActivityNPlusSixRewardController_PlayPageAnimation")
     local animation = self:GetUIComponent("Animation", "Anim")
     animation:Play("uieff_N6_reward_Switch")
     YIELD(TT, 500)
     self:UnLock("UIActivityNPlusSixRewardController_PlayPageAnimation")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.GetRewardBtnOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.GetRewards, self)
+function UIActivityNPlusSixRewardController:GetRewardBtnOnClick()
+  GameGlobal.TaskManager():StartTask(self.GetRewards, self)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.GetRewards = function(self, TT)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityNPlusSixRewardController:GetRewards(TT)
   local questList = {}
   for i = 1, #self._questInfoList do
-    local status = ((self._questInfoList)[i]):Status()
+    local status = self._questInfoList[i]:Status()
     if status == QuestStatus.QUEST_Completed then
-      questList[#questList + 1] = (self._questInfoList)[i]
+      questList[#questList + 1] = self._questInfoList[i]
     end
   end
   if #questList <= 0 then
-    return 
+    return
   end
   self:Lock("UIActivityNPlusSixRewardController_GetRewards")
   local rewards = {}
   local ret = 0
   for i = 1, #questList do
     local res = AsyncRequestRes:New()
-    local tmpRet, tmpRewards = (self._questComponent):HandleQuestTake(TT, res, (questList[i]):ID())
+    local tmpRet, tmpRewards = self._questComponent:HandleQuestTake(TT, res, questList[i]:ID())
     if tmpRet ~= 0 then
       ret = tmpRet
       break
@@ -367,82 +277,64 @@ UIActivityNPlusSixRewardController.GetRewards = function(self, TT)
       end
     end
   end
-  do
-    if ret == 0 then
-      self:ShowRewards(rewards)
-    else
-      ;
-      (Log.error)("GetRewards error")
-    end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingRewardGet)
-    self:UnLock("UIActivityNPlusSixRewardController_GetRewards")
+  if ret == 0 then
+    self:ShowRewards(rewards)
+  else
+    Log.error("GetRewards error")
   end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingRewardGet)
+  self:UnLock("UIActivityNPlusSixRewardController_GetRewards")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.ShowRewards = function(self, rewards)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityNPlusSixRewardController:ShowRewards(rewards)
   local petIdList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if petModule:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
+  if table.count(petIdList) > 0 then
     self:ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_18_0 , upvalues : _ENV, self, rewards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards)
-  end
-)
-    return 
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", rewards)
+    end)
+    return
   end
   self:ShowDialog("UIGetItemController", rewards)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixRewardController.ReviewBtnOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local storyIds = (self._buildingDatas):GetCanReviewStory()
-  if storyIds == nil or (table.count)(storyIds) <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_discovery_no_can_review_plot"))
-    return 
+function UIActivityNPlusSixRewardController:ReviewBtnOnClick()
+  local storyIds = self._buildingDatas:GetCanReviewStory()
+  if storyIds == nil or table.count(storyIds) <= 0 then
+    ToastManager.ShowToast(StringTable.Get("str_discovery_no_can_review_plot"))
+    return
   end
   local canReviewStages = {}
-  local cfgs = (Cfg.cfg_component_n_plus_six_plot_review)({})
+  local cfgs = Cfg.cfg_component_n_plus_six_plot_review({})
   if cfgs then
     for i = 1, #storyIds do
       local cfg = cfgs[storyIds[i]]
       local curStage = DiscoveryStage:New()
       curStage.id = cfg.ID
-      curStage.longDesc = (StringTable.Get)(cfg.Des)
-      curStage.name = (StringTable.Get)(cfg.Name)
-      curStage.stageIdx = (StringTable.Get)(cfg.StageIndexTitle)
-      curStage.fullname = (StringTable.Get)(cfg.FullName)
+      curStage.longDesc = StringTable.Get(cfg.Des)
+      curStage.name = StringTable.Get(cfg.Name)
+      curStage.stageIdx = StringTable.Get(cfg.StageIndexTitle)
+      curStage.fullname = StringTable.Get(cfg.FullName)
       local storyList = DiscoveryStoryList:New()
       local slist = {}
       storyList.stageId = cfg.ID
       local storyListCfg = cfg.StoryList
       for i = 1, #storyListCfg do
         local story = DiscoveryStory:New()
-        story:Init((storyListCfg[i])[1], (storyListCfg[i])[2])
-        ;
-        (table.insert)(slist, story)
+        story:Init(storyListCfg[i][1], storyListCfg[i][2])
+        table.insert(slist, story)
       end
       storyList.list = slist
       curStage.story = storyList
-      ;
-      (table.insert)(canReviewStages, curStage)
+      table.insert(canReviewStages, curStage)
     end
   end
-  do
-    local tempStage = canReviewStages[1]
-    self:ShowDialog("UIPlot", tempStage, canReviewStages, false, true, (StringTable.Get)("str_n_plus_six_plot_review_stage_title"))
-  end
+  local tempStage = canReviewStages[1]
+  self:ShowDialog("UIPlot", tempStage, canReviewStages, false, true, StringTable.Get("str_n_plus_six_plot_review_stage_title"))
 end
-
-

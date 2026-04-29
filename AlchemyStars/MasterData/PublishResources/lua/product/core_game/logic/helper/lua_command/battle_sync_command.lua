@@ -1,76 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/battle_sync_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("entity_commands")
 _class("BattleSyncCommand", IEntityCommand)
 BattleSyncCommand = BattleSyncCommand
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleSyncCommand.Constructor = function(self)
-  -- function num : 0_0
+function BattleSyncCommand:Constructor()
   self._commandType = "BattleSync"
   self._syncLog = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleSyncCommand.GetCommandType = function(self)
-  -- function num : 0_1
+function BattleSyncCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleSyncCommand.GetExecStateID = function(self)
-  -- function num : 0_2
+function BattleSyncCommand:GetExecStateID()
   return 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleSyncCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function BattleSyncCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleSyncCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function BattleSyncCommand:DependRoundCount()
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleSyncCommand.GetCmdSyncLog = function(self)
-  -- function num : 0_5
+function BattleSyncCommand:GetCmdSyncLog()
   return self._syncLog
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleSyncCommand.SetCmdSyncLog = function(self, data)
-  -- function num : 0_6
+function BattleSyncCommand:SetCmdSyncLog(data)
   self._syncLog = data
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleSyncCommand.ToNetMessage = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function BattleSyncCommand:ToNetMessage()
   local msg = CEventLuaCommand:New()
   msg.cmd = echo(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleSyncCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_8 , upvalues : _ENV
+function BattleSyncCommand:FromNetMessage(msg)
   local cmd = ohce(msg.cmd)
   self._syncLog = cmd:GetCmdSyncLog()
 end
-
-

@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/state/s_maze_state_worldboss.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeState_WorldBoss", SMazeStateBase)
 SMazeState_WorldBoss = SMazeState_WorldBoss
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeState_WorldBoss.OnEnter = function(self, fromBattle)
-  -- function num : 0_0
+function SMazeState_WorldBoss:OnEnter(fromBattle)
   self:ShowDialog("UISeasonMazeWorldBossSelectPopUp", fromBattle)
 end
-
-

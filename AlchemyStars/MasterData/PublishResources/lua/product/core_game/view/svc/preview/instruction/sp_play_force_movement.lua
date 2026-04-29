@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_force_movement.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayForceMovementInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayForceMovementInstruction = SkillPreviewPlayForceMovementInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayForceMovementInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayForceMovementInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local previewEffectCalcService = world:GetService("PreviewCalcEffect")
   local scopeGridList = previewContext:GetScopeResult()
@@ -19,44 +12,31 @@ SkillPreviewPlayForceMovementInstruction.DoInstruction = function(self, TT, cast
   self:_DoPresentation(TT, world, result)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayForceMovementInstruction._DoPresentation = function(self, TT, world, result)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayForceMovementInstruction:_DoPresentation(TT, world, result)
   local taskIDs = {}
   local array = result:GetMoveResult()
-  for _,info in ipairs(array) do
+  for _, info in ipairs(array) do
     local entity = world:GetEntityByID(info.targetID)
     if info.isMoved then
       local tid = self:_DoSingleTarget(TT, world, info, entity)
       if tid then
-        (table.insert)(taskIDs, tid)
+        table.insert(taskIDs, tid)
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDs) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDs) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayForceMovementInstruction._DoSingleTarget = function(self, TT, world, info, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayForceMovementInstruction:_DoSingleTarget(TT, world, info, entity)
   local boardServiceRender = world:GetService("BoardRender")
   local entitySvc = world:GetService("RenderEntity")
   local ghostEntity = entitySvc:CreateGhost(info.v2OldPos, entity, "AtkUltPreview")
   ghostEntity:AddGridMove(BattleConst.ForceMovementPreviewSpeed, info.v2NewPos, info.v2OldPos)
-  return ((GameGlobal.TaskManager)()):CoreGameStartTask(self._IsMoveFinished, self, ghostEntity)
+  return GameGlobal.TaskManager():CoreGameStartTask(self._IsMoveFinished, self, ghostEntity)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayForceMovementInstruction._IsMoveFinished = function(self, TT, entity)
-  -- function num : 0_3
+function SkillPreviewPlayForceMovementInstruction:_IsMoveFinished(TT, entity)
   return not entity:HasGridMove()
 end
-
-

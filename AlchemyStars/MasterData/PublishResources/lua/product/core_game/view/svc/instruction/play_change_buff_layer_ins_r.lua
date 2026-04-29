@@ -1,30 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_change_buff_layer_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayChangeBuffLayerInstruction", BaseInstruction)
 PlayChangeBuffLayerInstruction = PlayChangeBuffLayerInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayChangeBuffLayerInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayChangeBuffLayerInstruction:Constructor(paramList)
   self._stageIndex = tonumber(paramList.stageIndex) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayChangeBuffLayerInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayChangeBuffLayerInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local buffResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ChangeBuffLayer, self._stageIndex)
-  if not buffResultArray or (table.count)(buffResultArray) == 0 then
-    return 
+  if not buffResultArray or table.count(buffResultArray) == 0 then
+    return
   end
   local playBuffService = world:GetService("PlayBuff")
-  for _,result in ipairs(buffResultArray) do
+  for _, result in ipairs(buffResultArray) do
     local entityID = result:GetEntityID()
     local entity = world:GetEntityByID(entityID)
     local buffEffectType = result:GetTargetBuffEffectType()
@@ -35,12 +25,9 @@ PlayChangeBuffLayerInstruction.DoInstruction = function(self, TT, casterEntity, 
     if viewInstance then
       viewInstance:SetLayerCount(TT, layerCount)
       if entity:HasPetPstID() then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, (entity:PetPstID()):GetPstID(), layerCount)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, entity:PetPstID():GetPstID(), layerCount)
       end
     end
   end
-  ;
-  (world:EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
-
-

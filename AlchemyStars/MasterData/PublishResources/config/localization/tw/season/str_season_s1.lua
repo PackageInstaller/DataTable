@@ -1,8 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/season/str_season_s1.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_season_s1_main_btn_medal = "偕行套組", str_season_s1_main_btn_collage = "伊芙的收藏盒", str_season_s1_main_btn_exchange = "記憶工坊", str_season_s1_main_btn_quest = "記憶碎片", str_season_s1_main_btn_go = "進入夢境", str_season_s1_main_btn_intro = "活動說明", str_season_s1_main_btn_story = "劇情回顧", str_season_s1_main_btn_fin = "已集齊", str_season_s1_main_btn_lock = "探索已結束", str_season_s1_main_btn_over = "探索已結束", str_season_s1_main_time_action = "夢境探索剩餘時間 {1}", str_season_s1_main_time_exchange = "工坊兌換剩餘時間 {1}", str_season_s1_exchange_desc = "「我的新裙子，好看嗎？嘻嘻……\n          那下次可以陪我一起去買裙子嗎？」", str_season_s1_exchange_detail = "預覽", str_season_s1_exchange_remain = "剩餘 {1}", str_season_s1_exchange_buy = "購買", str_season_s1_exchange_buy_count = "購買數量", str_season_s1_collection = "無名寶物", str_season_s1_cg = "往昔留痕", str_season_s1_music = "記憶之聲", str_season_s1_soldout = "已售罄", str_season_s1_quest_tab = "夢境", str_season_s1_quest_tab_with_space = "夢 境", str_season_s1_quest_desc_1 = "點選已收集的碎片可查看詳情", str_season_s1_share_tip = "「我會活下去……\n         和周圍愛我的人一起活下去！」", str_season_s1_backtrack_map_list_name = "遺忘甦醒之日", str_season_s1_backtrack_map_list_title = "紅油扳手伊芙之夢", str_season_s1_backtrack_map_list_desc = "酷熱沙塵中的溫暖聚落，居住地、尾巴街、赤眼谷，都承載了伊芙的回憶。"}
+local config = {
+  str_season_s1_main_btn_medal = "偕行套組",
+  str_season_s1_main_btn_collage = "伊芙的收藏盒",
+  str_season_s1_main_btn_exchange = "記憶工坊",
+  str_season_s1_main_btn_quest = "記憶碎片",
+  str_season_s1_main_btn_go = "進入夢境",
+  str_season_s1_main_btn_intro = "活動說明",
+  str_season_s1_main_btn_story = "劇情回顧",
+  str_season_s1_main_btn_fin = "已集齊",
+  str_season_s1_main_btn_lock = "探索已結束",
+  str_season_s1_main_btn_over = "探索已結束",
+  str_season_s1_main_time_action = "夢境探索剩餘時間 {1}",
+  str_season_s1_main_time_exchange = "工坊兌換剩餘時間 {1}",
+  str_season_s1_exchange_desc = "「我的新裙子，好看嗎？嘻嘻……\n          那下次可以陪我一起去買裙子嗎？」",
+  str_season_s1_exchange_detail = "預覽",
+  str_season_s1_exchange_remain = "剩餘 {1}",
+  str_season_s1_exchange_buy = "購買",
+  str_season_s1_exchange_buy_count = "購買數量",
+  str_season_s1_collection = "無名寶物",
+  str_season_s1_cg = "往昔留痕",
+  str_season_s1_music = "記憶之聲",
+  str_season_s1_soldout = "已售罄",
+  str_season_s1_quest_tab = "夢境",
+  str_season_s1_quest_tab_with_space = "夢 境",
+  str_season_s1_quest_desc_1 = "點選已收集的碎片可查看詳情",
+  str_season_s1_share_tip = "「我會活下去……\n         和周圍愛我的人一起活下去！」",
+  str_season_s1_backtrack_map_list_name = "遺忘甦醒之日",
+  str_season_s1_backtrack_map_list_title = "紅油扳手伊芙之夢",
+  str_season_s1_backtrack_map_list_desc = "酷熱沙塵中的溫暖聚落，居住地、尾巴街、赤眼谷，都承載了伊芙的回憶。"
+}
 return config
-

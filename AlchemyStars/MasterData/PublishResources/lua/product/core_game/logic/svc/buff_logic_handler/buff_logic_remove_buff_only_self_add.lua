@@ -1,56 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_remove_buff_only_self_add.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRemoveBuffOnlySelfAdd", BuffLogicBase)
 BuffLogicRemoveBuffOnlySelfAdd = BuffLogicRemoveBuffOnlySelfAdd
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveBuffOnlySelfAdd.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicRemoveBuffOnlySelfAdd:Constructor(buffInstance, logicParam)
   self._buffEffectTypeList = logicParam.buffEffectTypeList
   self._targetType = logicParam.targetType
   self._targetParam = logicParam.targetParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveBuffOnlySelfAdd.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local owner = (self._buffInstance):Entity()
-  local world = (self._buffInstance):World()
+function BuffLogicRemoveBuffOnlySelfAdd:DoLogic(notify)
+  local owner = self._buffInstance:Entity()
+  local world = self._buffInstance:World()
   local buffSvc = world:GetService("BuffLogic")
   local es = buffSvc:CalcBuffTargetEntities(self._targetType, self._targetParam, owner)
   local result = BuffResultRemoveBuffOnlySelfAdd:New()
-  for i,e in ipairs(es) do
+  for i, e in ipairs(es) do
     local buffComponent = e:BuffComponent()
     if buffComponent then
       local buffSeqIDs = {}
       local buffArray = buffComponent:GetBuffArray()
-      local buffCopy = (table.shallowcopy)(buffArray)
-      for _,buffInstance in ipairs(buffCopy) do
+      local buffCopy = table.shallowcopy(buffArray)
+      for _, buffInstance in ipairs(buffCopy) do
         local buffEffectType = buffInstance:GetBuffEffectType()
-        if (table.icontains)(self._buffEffectTypeList, buffEffectType) then
+        if table.icontains(self._buffEffectTypeList, buffEffectType) then
           local context = buffInstance:Context()
-          if context and context.casterEntity and (context.casterEntity):GetID() == owner:GetID() then
+          if context and context.casterEntity and context.casterEntity:GetID() == owner:GetID() then
             local buffSeqID = buffInstance:BuffSeq()
-            ;
-            (table.insert)(buffSeqIDs, buffSeqID)
+            table.insert(buffSeqIDs, buffSeqID)
           end
         end
       end
-      for _,buffSeqID in ipairs(buffSeqIDs) do
+      for _, buffSeqID in ipairs(buffSeqIDs) do
         buffComponent:RemoveBuffBySeq(buffSeqID, NTBuffUnload:New())
       end
       result:AddRemovedInfo(e:GetID(), buffSeqIDs)
     end
   end
   local buffArray = result:GetBuffArray()
-  if not buffArray or (table.count)(buffArray) == 0 then
-    return 
+  if not buffArray or table.count(buffArray) == 0 then
+    return
   end
   return result
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer_actitity_two/score/ui_summer_activity_two_score_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummerActivityTwoScoreRewardItem", UICustomWidget)
 UISummerActivityTwoScoreRewardItem = UISummerActivityTwoScoreRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummerActivityTwoScoreRewardItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISummerActivityTwoScoreRewardItem:OnShow()
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._qualityImg = self:GetUIComponent("Image", "quality")
@@ -16,58 +9,36 @@ UISummerActivityTwoScoreRewardItem.OnShow = function(self)
   self._uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardItem.OnHide = function(self)
-  -- function num : 0_1
+function UISummerActivityTwoScoreRewardItem:OnHide()
   self._uiCommonAtlas = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardItem.Refresh = function(self, rewardData, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UISummerActivityTwoScoreRewardItem:Refresh(rewardData, callback)
   self._rewardData = rewardData
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._countLabel).text = rewardData.count
-  local ItemTempleate = (Cfg.cfg_item)[rewardData.assetid]
-  ;
-  (self._iconImg):LoadImage(ItemTempleate.Icon)
+  self._countLabel.text = rewardData.count
+  local ItemTempleate = Cfg.cfg_item[rewardData.assetid]
+  self._iconImg:LoadImage(ItemTempleate.Icon)
   self:SetQuality(ItemTempleate.Color)
   self._callback = callback
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardItem.SetQuality = function(self, quality)
-  -- function num : 0_3 , upvalues : _ENV
+function UISummerActivityTwoScoreRewardItem:SetQuality(quality)
   if quality <= 0 then
-    (self._qualityGo):SetActive(false)
-    return 
+    self._qualityGo:SetActive(false)
+    return
   end
-  local qualityName = (UIEnum.ItemColorFrame)(quality)
+  local qualityName = UIEnum.ItemColorFrame(quality)
   if qualityName ~= "" then
-    (self._qualityGo):SetActive(true)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._qualityImg).sprite = (self._uiCommonAtlas):GetSprite(qualityName)
+    self._qualityGo:SetActive(true)
+    self._qualityImg.sprite = self._uiCommonAtlas:GetSprite(qualityName)
   else
-    ;
-    (self._qualityGo):SetActive(false)
+    self._qualityGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummerActivityTwoScoreRewardItem.btnOnClick = function(self)
-  -- function num : 0_4
+function UISummerActivityTwoScoreRewardItem:btnOnClick()
   if self._callback then
-    (self._callback)((self._rewardData).assetid, ((self._go).transform).position)
+    self._callback(self._rewardData.assetid, self._go.transform.position)
   end
 end
-
-

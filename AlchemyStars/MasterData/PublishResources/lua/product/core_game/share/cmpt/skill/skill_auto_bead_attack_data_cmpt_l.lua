@@ -1,111 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/skill/skill_auto_bead_attack_data_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillAutoBeadAttackDataComponent", Object)
 SkillAutoBeadAttackDataComponent = SkillAutoBeadAttackDataComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAutoBeadAttackDataComponent.Constructor = function(self)
-  -- function num : 0_0
+function SkillAutoBeadAttackDataComponent:Constructor()
   self._autoBeadSkillData = {}
   self._currentAutoBeadID = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackDataComponent.ClearAutoBeadAttackData = function(self)
-  -- function num : 0_1
+function SkillAutoBeadAttackDataComponent:ClearAutoBeadAttackData()
   self._autoBeadSkillData = {}
   self:ClearCurrentAutoBeadID()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackDataComponent.ClearCurrentAutoBeadID = function(self)
-  -- function num : 0_2
+function SkillAutoBeadAttackDataComponent:ClearCurrentAutoBeadID()
   self._currentAutoBeadID = 0
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackDataComponent.SetCurrentAutoBeadID = function(self, autoBeadID)
-  -- function num : 0_3
+function SkillAutoBeadAttackDataComponent:SetCurrentAutoBeadID(autoBeadID)
   self._currentAutoBeadID = autoBeadID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackDataComponent.GetCurrentAutoBeadID = function(self)
-  -- function num : 0_4
+function SkillAutoBeadAttackDataComponent:GetCurrentAutoBeadID()
   return self._currentAutoBeadID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackDataComponent.GetAutoBeadAttackDataList = function(self)
-  -- function num : 0_5
+function SkillAutoBeadAttackDataComponent:GetAutoBeadAttackDataList()
   return self._autoBeadSkillData
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackDataComponent.GetAutoBeadAttackData = function(self, skillIndex)
-  -- function num : 0_6
-  return (self._autoBeadSkillData)[skillIndex]
+function SkillAutoBeadAttackDataComponent:GetAutoBeadAttackData(skillIndex)
+  return self._autoBeadSkillData[skillIndex]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAutoBeadAttackDataComponent.AddAutoBeadAttackData = function(self, autoBeadID, skillID, skillIndex, skillTurnIndex, skillBeadIndex, skillExtraIndex, skillRepeatIndex)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillAutoBeadAttackDataComponent:AddAutoBeadAttackData(autoBeadID, skillID, skillIndex, skillTurnIndex, skillBeadIndex, skillExtraIndex, skillRepeatIndex)
   local attackData = SkillAutoBeadAttackData:New(autoBeadID, skillID, skillIndex, skillTurnIndex, skillBeadIndex, skillExtraIndex, skillRepeatIndex)
-  ;
-  (table.insert)(self._autoBeadSkillData, attackData)
+  table.insert(self._autoBeadSkillData, attackData)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SkillAutoBeadAttackData = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function Entity:SkillAutoBeadAttackData()
   if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-    local debugInfo = (debug.getinfo)(2, "S")
+    local debugInfo = debug.getinfo(2, "S")
     local filePath = debugInfo.short_src
-    local renderIndex = (string.find)(filePath, "_r.lua")
+    local renderIndex = string.find(filePath, "_r.lua")
     if renderIndex ~= nil then
-      (Log.exception)("render file :", filePath, " call SkillAutoBeadAttackData() ", (Log.traceback)())
+      Log.exception("render file :", filePath, " call SkillAutoBeadAttackData() ", Log.traceback())
       return nil
     end
   end
-  do
-    return self:GetComponent((self.WEComponentsEnum).SkillAutoBeadAttackData)
-  end
+  return self:GetComponent(self.WEComponentsEnum.SkillAutoBeadAttackData)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSkillAutoBeadAttackData = function(self)
-  -- function num : 0_9
-  return self:HasComponent((self.WEComponentsEnum).SkillAutoBeadAttackData)
+function Entity:HasSkillAutoBeadAttackData()
+  return self:HasComponent(self.WEComponentsEnum.SkillAutoBeadAttackData)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSkillAutoBeadAttackData = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SkillAutoBeadAttackData
+function Entity:AddSkillAutoBeadAttackData()
+  local index = self.WEComponentsEnum.SkillAutoBeadAttackData
   local component = SkillAutoBeadAttackDataComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveSkillAutoBeadAttackData = function(self)
-  -- function num : 0_11
+function Entity:RemoveSkillAutoBeadAttackData()
   if self:HasSkillAutoBeadAttackData() then
-    self:RemoveComponent((self.WEComponentsEnum).SkillAutoBeadAttackData)
+    self:RemoveComponent(self.WEComponentsEnum.SkillAutoBeadAttackData)
   end
 end
-
-

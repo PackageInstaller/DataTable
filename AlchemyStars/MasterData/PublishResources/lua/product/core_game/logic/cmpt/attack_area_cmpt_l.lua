@@ -1,65 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/attack_area_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AttackAreaComponent", Object)
 AttackAreaComponent = AttackAreaComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AttackAreaComponent.Constructor = function(self, type)
-  -- function num : 0_0
+function AttackAreaComponent:Constructor(type)
   self._type = type
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackAreaComponent.GetAttackAreaType = function(self)
-  -- function num : 0_1
+function AttackAreaComponent:GetAttackAreaType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AttackAreaComponent.GetAttackArea = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local boardService = ((self._entity)._world):GetService("BoardLogic")
+function AttackAreaComponent:GetAttackArea()
+  local boardService = self._entity._world:GetService("BoardLogic")
   if self._type == AttackAreaType.AIArea then
     return boardService.AIArea
-  else
-    if self._type == AttackAreaType.PlayerArea then
-      return boardService.PlayerArea
-    end
+  elseif self._type == AttackAreaType.PlayerArea then
+    return boardService.PlayerArea
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AttackArea = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).AttackArea)
+function Entity:AttackArea()
+  return self:GetComponent(self.WEComponentsEnum.AttackArea)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAttackArea = function(self, type)
-  -- function num : 0_4 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AttackArea
+function Entity:AddAttackArea(type)
+  local index = self.WEComponentsEnum.AttackArea
   local component = AttackAreaComponent:New(type)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceAttackArea = function(self, type)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AttackArea
-  local component = self:GetComponent((self.WEComponentsEnum).AttackArea)
-  if not component then
-    component = AttackAreaComponent:New(type)
-  end
+function Entity:ReplaceAttackArea(type)
+  local index = self.WEComponentsEnum.AttackArea
+  local component = self:GetComponent(self.WEComponentsEnum.AttackArea)
+  component = component or AttackAreaComponent:New(type)
   component._type = type
   self:ReplaceComponent(index, component)
 end
-
-

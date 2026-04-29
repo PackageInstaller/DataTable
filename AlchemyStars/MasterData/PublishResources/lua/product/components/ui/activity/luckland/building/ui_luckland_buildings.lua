@@ -1,75 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/building/ui_luckland_buildings.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandBuildings", UIController)
 UILuckLandBuildings = UILuckLandBuildings
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandBuildings.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandBuildings:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UILuckLandBuildings:OnShow(uiParams)
   self._perRowCount = 2
-  self._levelBuildDatas = (LuckLandData:GetInstance()):CurBuildingDatas()
+  self._levelBuildDatas = LuckLandData:GetInstance():CurBuildingDatas()
   self:_InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandBuildings:OnHide()
   if self._task then
-    ((GameGlobal.TaskManager)()):KillTask(self._task)
+    GameGlobal.TaskManager():KillTask(self._task)
     self._task = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings._InitWidget = function(self)
-  -- function num : 0_3
+function UILuckLandBuildings:_InitWidget()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings._OnValue = function(self)
-  -- function num : 0_4
+function UILuckLandBuildings:_OnValue()
   self:_InitDynamicScrollView()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings._InitDynamicScrollView = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._scrollView):InitListView((math.ceil)((self._levelBuildDatas):TotalCount() / self._perRowCount), function(scrollview, index)
-    -- function num : 0_5_0 , upvalues : self
+function UILuckLandBuildings:_InitDynamicScrollView()
+  self._scrollView:InitListView(math.ceil(self._levelBuildDatas:TotalCount() / self._perRowCount), function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
   self:Lock("UILuckLandBuildings")
   self._task = self:StartTask(function(TT)
-    -- function num : 0_5_1 , upvalues : self, _ENV
     self:_DynamicListPlayAnimation(TT)
     YIELD(TT, 300)
     self:UnLock("UILuckLandBuildings")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_6
+function UILuckLandBuildings:_OnGetItemByIndex(scrollview, index)
   local item = scrollview:NewListViewItem("UILuckLandBuildingItem")
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if not item.IsInitHandlerCalled then
@@ -80,74 +51,54 @@ UILuckLandBuildings._OnGetItemByIndex = function(self, scrollview, index)
   for i = 1, self._perRowCount do
     local itemWidget = itemWidgets[i]
     if itemWidget then
-      itemWidget:SetData((self._levelBuildDatas):GetBuildDataByIndex(index * self._perRowCount + i))
+      itemWidget:SetData(self._levelBuildDatas:GetBuildDataByIndex(index * self._perRowCount + i))
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings._RefreshScrollView = function(self)
-  -- function num : 0_7
-  (self._scrollView):SetListItemCount(4)
-  ;
-  (self._scrollView):MovePanelToItemIndex(0, 0)
+function UILuckLandBuildings:_RefreshScrollView()
+  self._scrollView:SetListItemCount(4)
+  self._scrollView:MovePanelToItemIndex(0, 0)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings.CancleBtnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UILuckLandBuildings:CancleBtnOnClick(go)
   self:Lock("UILuckLandBuildings")
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    (self._animation):Play("uieff_UILuckLandBuildings_out")
+    self._animation:Play("uieff_UILuckLandBuildings_out")
     YIELD(TT, 333)
     self:UnLock("UILuckLandBuildings")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings.HelpBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UILuckLandBuildings:HelpBtnOnClick(go)
   self:ShowDialog("UIIntroLoader", "UILuckLandBuildings")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandBuildings._DynamicListPlayAnimation = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
-  local showTabIds = (self._scrollView):GetVisibleItemIDsInScrollView()
+function UILuckLandBuildings:_DynamicListPlayAnimation(TT)
+  local showTabIds = self._scrollView:GetVisibleItemIDsInScrollView()
   local items = {}
   for index = 0, showTabIds.Count - 1 do
-    local id = (math.floor)(showTabIds[index])
-    local item = (self._scrollView):GetShownItemByItemIndex(id)
+    local id = math.floor(showTabIds[index])
+    local item = self._scrollView:GetShownItemByItemIndex(id)
     local rowPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local rowList = rowPool:GetAllSpawnList()
     if rowList then
       for i = 1, #rowList do
-        (item.gameObject):SetActive(false)
+        item.gameObject:SetActive(false)
         local data = {}
         data.index = index
         data.gameObject = item.gameObject
         data.widget = rowList[i]
-        ;
-        (table.insert)(items, data)
+        table.insert(items, data)
       end
     end
   end
   for i = 1, #items do
     local data = items[i]
     YIELD(TT, data.index * 50)
-    ;
-    (data.gameObject):SetActive(true)
-    ;
-    (data.widget):PlayAnimation()
+    data.gameObject:SetActive(true)
+    data.widget:PlayAnimation()
   end
 end
-
-

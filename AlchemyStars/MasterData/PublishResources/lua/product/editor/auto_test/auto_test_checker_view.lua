@@ -1,136 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_checker_view.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CheckUIPetLayerCount_Test", AutoTestCheckPointBase)
 CheckUIPetLayerCount_Test = CheckUIPetLayerCount_Test
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CheckUIPetLayerCount_Test.BeforeCheck = function(self)
-  -- function num : 0_0
+function CheckUIPetLayerCount_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CheckUIPetLayerCount_Test.Check = function(self, notify)
-  -- function num : 0_1
-  local expect = (self._args).expect
-  local pstid = ((self._entity):PetPstID()):GetPstID()
-  local svc = (self._world):GetService("AutoTest")
+function CheckUIPetLayerCount_Test:Check(notify)
+  local expect = self._args.expect
+  local pstid = self._entity:PetPstID():GetPstID()
+  local svc = self._world:GetService("AutoTest")
   local num = svc:ReadBlackBoard_Test("UIPetAccNum_" .. pstid) or 0
   self._message = " UIPetLayerCount:" .. num .. " expect:" .. expect
-  do return num == expect end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return num == expect
 end
 
 _class("CheckUIPetPassiveSkillBuffLayerCount_Test", AutoTestCheckPointBase)
 CheckUIPetPassiveSkillBuffLayerCount_Test = CheckUIPetPassiveSkillBuffLayerCount_Test
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-CheckUIPetPassiveSkillBuffLayerCount_Test.BeforeCheck = function(self)
-  -- function num : 0_2
+function CheckUIPetPassiveSkillBuffLayerCount_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CheckUIPetPassiveSkillBuffLayerCount_Test.Check = function(self, notify)
-  -- function num : 0_3
-  local expect = (self._args).expect
-  local pstid = ((self._entity):PetPstID()):GetPstID()
-  local svc = (self._world):GetService("AutoTest")
+function CheckUIPetPassiveSkillBuffLayerCount_Test:Check(notify)
+  local expect = self._args.expect
+  local pstid = self._entity:PetPstID():GetPstID()
+  local svc = self._world:GetService("AutoTest")
   local num = svc:ReadBlackBoard_Test("UIPetBuffLayerNum_" .. pstid) or 0
   self._message = " UIPetBuffLayerCount:" .. num .. " expect:" .. expect
-  do return num == expect end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return num == expect
 end
 
 _class("CheckUIBuffIcon_Test", AutoTestCheckPointBase)
 CheckUIBuffIcon_Test = CheckUIBuffIcon_Test
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-CheckUIBuffIcon_Test.BeforeCheck = function(self)
-  -- function num : 0_4
+function CheckUIBuffIcon_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CheckUIBuffIcon_Test.Check = function(self, notify)
-  -- function num : 0_5
-  local buffID = (self._args).buffID
-  local expect = (self._args).expect
-  local entityID = (self._entity):GetID()
+function CheckUIBuffIcon_Test:Check(notify)
+  local buffID = self._args.buffID
+  local expect = self._args.expect
+  local entityID = self._entity:GetID()
   local layer = 0
-  local svc = (self._world):GetService("AutoTest")
+  local svc = self._world:GetService("AutoTest")
   local t = svc:ReadBlackBoard_Test("UIHPBuff_" .. entityID)
-  layer = not t or t[buffID] or 0
-  self._message = " UI Buff Icon LayerCount:" .. (layer) .. " expect:" .. expect
-  do return layer == expect end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if t then
+    layer = t[buffID] or 0
+  end
+  self._message = " UI Buff Icon LayerCount:" .. layer .. " expect:" .. expect
+  return layer == expect
 end
 
 _class("CheckUIHPShieldExist_Test", AutoTestCheckPointBase)
 CheckUIHPShieldExist_Test = CheckUIHPShieldExist_Test
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-CheckUIHPShieldExist_Test.BeforeCheck = function(self)
-  -- function num : 0_6
+function CheckUIHPShieldExist_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CheckUIHPShieldExist_Test.Check = function(self, notify)
-  -- function num : 0_7
-  local val = ((self._entity):HP()):GetShieldValue()
-  if val <= 0 then
-    do return not (self._args).exist end
-    do return val == 0 end
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function CheckUIHPShieldExist_Test:Check(notify)
+  local val = self._entity:HP():GetShieldValue()
+  if self._args.exist then
+    return 0 < val
+  else
+    return val == 0
   end
 end
 
 _class("CheckUILayerShieldCount_Test", AutoTestCheckPointBase)
 CheckUILayerShieldCount_Test = CheckUILayerShieldCount_Test
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-CheckUILayerShieldCount_Test.BeforeCheck = function(self)
-  -- function num : 0_8
+function CheckUILayerShieldCount_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CheckUILayerShieldCount_Test.Check = function(self, notify)
-  -- function num : 0_9
-  local expect = (self._args).expect
-  local entityID = (self._entity):GetID()
-  local svc = (self._world):GetService("AutoTest")
+function CheckUILayerShieldCount_Test:Check(notify)
+  local expect = self._args.expect
+  local entityID = self._entity:GetID()
+  local svc = self._world:GetService("AutoTest")
   local cnt = svc:ReadBlackBoard_Test("UIHPLayerShieldCount_" .. entityID, 0)
   self._message = " UI LayerShieldCount:" .. cnt .. " expect:" .. expect
-  do return expect == cnt end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return expect == cnt
 end
 
 _class("CheckRenderPieceType_Test", AutoTestCheckPointBase)
 CheckRenderPieceType_Test = CheckRenderPieceType_Test
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
 
-CheckRenderPieceType_Test.BeforeCheck = function(self)
-  -- function num : 0_10
+function CheckRenderPieceType_Test:BeforeCheck()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-CheckRenderPieceType_Test.Check = function(self, notify)
-  -- function num : 0_11 , upvalues : _ENV
-  local pos = (Vector2.Index2Pos)((self._args).pos)
-  local svc = (self._world):GetService("Piece")
+function CheckRenderPieceType_Test:Check(notify)
+  local pos = Vector2.Index2Pos(self._args.pos)
+  local svc = self._world:GetService("Piece")
   local entity = svc:FindPieceEntity(pos)
-  local pieceType = (entity:Piece()):GetPieceType()
-  self._message = "pos=" .. (self._args).pos .. " pieceType=" .. pieceType .. " expect=" .. (self._args).pieceType
-  if pieceType == (self._args).pieceType then
+  local pieceType = entity:Piece():GetPieceType()
+  self._message = "pos=" .. self._args.pos .. " pieceType=" .. pieceType .. " expect=" .. self._args.pieceType
+  if pieceType == self._args.pieceType then
     return true
   end
   return false
 end
-
-

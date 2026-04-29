@@ -1,15 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/rank/cfg_rank.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, RankType = 2, Icon = 3, Limit = 4, BrostcastCycle = 5, ClientCacheTime = 6, Name = 7}
+local key = {
+  ID = 1,
+  RankType = 2,
+  Icon = 3,
+  Limit = 4,
+  BrostcastCycle = 5,
+  ClientCacheTime = 6,
+  Name = 7
+}
 local config = {
-{1, 1, "21020101_icon", 100, 10, 5, "玩家等级榜"}
-, 
-{2, 2, "21020102_icon", 100, 10, 5, "玩家消费榜"}
-, 
-{3, 3, "21020103_icon", 100, 10, 5, "玩家活跃榜"}
+  {
+    1,
+    1,
+    "21020101_icon",
+    100,
+    10,
+    5,
+    "玩家等级榜"
+  },
+  {
+    2,
+    2,
+    "21020102_icon",
+    100,
+    10,
+    5,
+    "玩家消费榜"
+  },
+  {
+    3,
+    3,
+    "21020103_icon",
+    100,
+    10,
+    5,
+    "玩家活跃榜"
+  }
 }
 return config, "ID", key
-

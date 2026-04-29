@@ -1,77 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_sailing_plan/ui_shop_sailing_plan_special_quest.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopSailingPlanSpecialQuest", UICustomWidget)
 UIShopSailingPlanSpecialQuest = UIShopSailingPlanSpecialQuest
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSailingPlanSpecialQuest.Constructor = function(self)
-  -- function num : 0_0
+function UIShopSailingPlanSpecialQuest:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanSpecialQuest.SetData = function(self, idx, quest, callback, buyState, yieldTime)
-  -- function num : 0_1
+function UIShopSailingPlanSpecialQuest:SetData(idx, quest, callback, buyState, yieldTime)
   self:GetComponents()
   self._quest = quest
   self._questinfo = quest:QuestInfo()
-  self._rewards = (self._questinfo).rewards
+  self._rewards = self._questinfo.rewards
   self._callback = callback
   self._buyState = buyState
   self:OnValue()
   self:PlayAnim(yieldTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanSpecialQuest.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopSailingPlanSpecialQuest:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanSpecialQuest.PlayAnim = function(self, yieldTime)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIShopSailingPlanSpecialQuest:PlayAnim(yieldTime)
   if yieldTime then
-    (self._root).alpha = 0
+    self._root.alpha = 0
     if yieldTime == 0 then
-      (self._anim):Play()
+      self._anim:Play()
     else
       if self._event then
-        ((GameGlobal.Timer)()):CancelEvent(self._event)
+        GameGlobal.Timer():CancelEvent(self._event)
         self._event = nil
       end
-      self._event = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_3_0 , upvalues : self
-    (self._anim):Play()
-  end
-)
+      self._event = GameGlobal.Timer():AddEvent(yieldTime, function()
+        self._anim:Play()
+      end)
     end
   else
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._rootTr).anchoredPosition = Vector2(0, 0)
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._root).alpha = 1
+    self._rootTr.anchoredPosition = Vector2(0, 0)
+    self._root.alpha = 1
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanSpecialQuest.GetComponents = function(self)
-  -- function num : 0_4
+function UIShopSailingPlanSpecialQuest:GetComponents()
   self._pools = self:GetUIComponent("UISelectObjectPath", "pools")
   self._root = self:GetUIComponent("CanvasGroup", "Root")
   self._rootTr = self:GetUIComponent("RectTransform", "Root")
@@ -81,46 +52,31 @@ UIShopSailingPlanSpecialQuest.GetComponents = function(self)
   self._got = self:GetGameObject("got")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanSpecialQuest.OnValue = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopSailingPlanSpecialQuest:OnValue()
   local count = #self._rewards
-  ;
-  (self._pools):SpawnObjects("UIShopSailingPlanItem", count)
-  local pools = (self._pools):GetAllSpawnList()
-  local status = (self._questinfo).status
+  self._pools:SpawnObjects("UIShopSailingPlanItem", count)
+  local pools = self._pools:GetAllSpawnList()
+  local status = self._questinfo.status
   for i = 1, count do
     local item = pools[i]
-    local roleAsset = (self._rewards)[i]
+    local roleAsset = self._rewards[i]
     item:SetData(i, roleAsset, function(id, pos)
-    -- function num : 0_5_0 , upvalues : self
-    self:ItemOnClick(id, pos)
-  end
-, true, status, self._buyState, nil, true, false, 0.85)
+      self:ItemOnClick(id, pos)
+    end, true, status, self._buyState, nil, true, false, 0.85)
   end
   local lock = true
   local lockImg = true
-  if status == QuestStatus.QUEST_Completed then
-    lock = not self._buyState or self._buyState == BuyGiftStateType.EBGST_INIT
+  if self._buyState and self._buyState ~= BuyGiftStateType.EBGST_INIT then
+    lock = status ~= QuestStatus.QUEST_Completed
     lockImg = status < QuestStatus.QUEST_Completed
-    ;
-    (self._lock):SetActive(lock)
-    ;
-    (self._lockImg):SetActive(lockImg)
-    ;
-    (self._got):SetActive(status == QuestStatus.QUEST_Taken)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
   end
+  self._lock:SetActive(lock)
+  self._lockImg:SetActive(lockImg)
+  self._got:SetActive(status == QuestStatus.QUEST_Taken)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSailingPlanSpecialQuest.ItemOnClick = function(self, id, pos)
-  -- function num : 0_6
+function UIShopSailingPlanSpecialQuest:ItemOnClick(id, pos)
   if self._callback then
-    (self._callback)((self._questinfo).quest_id, id, pos)
+    self._callback(self._questinfo.quest_id, id, pos)
   end
 end
-
-

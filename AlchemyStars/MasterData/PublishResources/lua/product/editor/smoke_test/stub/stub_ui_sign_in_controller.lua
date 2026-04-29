@@ -1,17 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/stub/stub_ui_sign_in_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 if not SMOKE_TEST_ENABLED then
-  return 
+  return
 end
-;
-(Log.warn)("TestRobotModule: UISignInController stub!")
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
+Log.warn("TestRobotModule: UISignInController stub!")
 
-UISignInController.CheckAndSignIn = function(self)
-  -- function num : 0_0
+function UISignInController:CheckAndSignIn()
 end
-
-

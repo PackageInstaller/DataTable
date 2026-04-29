@@ -1,50 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_coffin_musume_candle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_CoffinMusumeCandle", SkillEffectResultBase)
 SkillEffectResult_CoffinMusumeCandle = SkillEffectResult_CoffinMusumeCandle
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResult_CoffinMusumeCandle.__EFFECT_TYPE = SkillEffectType.CoffinMusumeCandle
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_CoffinMusumeCandle.Constructor = function(self, lights, addHPResult, damageResult, damageParam)
-  -- function num : 0_0
+function SkillEffectResult_CoffinMusumeCandle:Constructor(lights, addHPResult, damageResult, damageParam)
   self._selectedLights = lights
   self._addHPResult = addHPResult
   self._damageResult = damageResult
   self._damageParam = damageParam
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_CoffinMusumeCandle.GetSelectedLights = function(self)
-  -- function num : 0_1
+function SkillEffectResult_CoffinMusumeCandle:GetSelectedLights()
   return self._selectedLights
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_CoffinMusumeCandle.GetAddHPResult = function(self)
-  -- function num : 0_2
+function SkillEffectResult_CoffinMusumeCandle:GetAddHPResult()
   return self._addHPResult
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_CoffinMusumeCandle.GetDamageResult = function(self)
-  -- function num : 0_3
+function SkillEffectResult_CoffinMusumeCandle:GetDamageResult()
   return self._damageResult
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_CoffinMusumeCandle.GetDamageParam = function(self)
-  -- function num : 0_4
+function SkillEffectResult_CoffinMusumeCandle:GetDamageParam()
   return self._damageParam
 end
-
-

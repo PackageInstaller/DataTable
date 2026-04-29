@@ -1,45 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_part/ui_discovery_part_indexer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiscoveryPartIndexer", UICustomWidget)
 UIDiscoveryPartIndexer = UIDiscoveryPartIndexer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiscoveryPartIndexer.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIDiscoveryPartIndexer:OnShow(uiParams)
   self:InitWidget()
   self:Select(false)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartIndexer.InitWidget = function(self)
-  -- function num : 0_1
+function UIDiscoveryPartIndexer:InitWidget()
   self.imageTr = self:GetUIComponent("RectTransform", "ImageTr")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartIndexer.SetData = function(self)
-  -- function num : 0_2
+function UIDiscoveryPartIndexer:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiscoveryPartIndexer.Select = function(self, bselect)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIDiscoveryPartIndexer:Select(bselect)
   if bselect then
-    (self.imageTr).sizeDelta = Vector2(48, 22)
+    self.imageTr.sizeDelta = Vector2(48, 22)
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.imageTr).sizeDelta = Vector2(23, 22)
+    self.imageTr.sizeDelta = Vector2(23, 22)
   end
 end
-
-

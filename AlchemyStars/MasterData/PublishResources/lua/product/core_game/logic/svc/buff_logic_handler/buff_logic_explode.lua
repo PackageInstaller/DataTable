@@ -1,31 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_explode.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddExplode", BuffLogicBase)
 BuffLogicAddExplode = BuffLogicAddExplode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddExplode.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddExplode:Constructor(buffInstance, logicParam)
   self._damagePercent = logicParam.damagePercent
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddExplode.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddExplode:DoLogic(notify)
   local caster = notify:GetAttackerEntity()
   local defender = notify:GetDefenderEntity()
-  local blsvc = (self._world):GetService("BuffLogic")
-  local damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), caster, defender, {percent = self._damagePercent, baseDamage = notify:GetDamageValue(), formulaID = 16})
+  local blsvc = self._world:GetService("BuffLogic")
+  local damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), caster, defender, {
+    percent = self._damagePercent,
+    baseDamage = notify:GetDamageValue(),
+    formulaID = 16
+  })
   if damageInfo:GetDamageType() == DamageType.Real then
     damageInfo:SetDamageType(DamageType.Explode)
   end
-  local combo = ((self._world):GetService("Battle")):GetLogicComboNum()
+  local combo = self._world:GetService("Battle"):GetLogicComboNum()
   local buffResult = BuffResultExplode:New(combo, damageInfo)
   return buffResult
 end
-
-

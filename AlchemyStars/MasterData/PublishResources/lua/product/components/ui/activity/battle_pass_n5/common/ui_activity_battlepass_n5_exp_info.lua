@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/common/ui_activity_battlepass_n5_exp_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5ExpInfo", UICustomWidget)
 UIActivityBattlePassN5ExpInfo = UIActivityBattlePassN5ExpInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5ExpInfo._GetComponents = function(self)
-  -- function num : 0_0
+function UIActivityBattlePassN5ExpInfo:_GetComponents()
   self._txtTitle1 = self:GetUIComponent("UILocalizationText", "txtTitle1")
   self._txtTitle2 = self:GetUIComponent("UILocalizationText", "txtTitle2")
   self._txtTitle3 = self:GetUIComponent("UILocalizationText", "txtTitle3")
@@ -19,34 +12,23 @@ UIActivityBattlePassN5ExpInfo._GetComponents = function(self)
   self._txtProgress = self:GetUIComponent("UILocalizationText", "txtProgress")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassN5ExpInfo:OnShow()
   self._isOpen = true
   self:_GetComponents()
-  local isZh = (UIActivityZhHelper.IsZh)()
-  ;
-  (self:GetGameObject("txtTitle1_zh")):SetActive(isZh)
-  ;
-  (self:GetGameObject("txtTitle1")):SetActive(not isZh)
-  self._seq = (((DG.Tweening).DOTween).Sequence)()
+  local isZh = UIActivityZhHelper.IsZh()
+  self:GetGameObject("txtTitle1_zh"):SetActive(isZh)
+  self:GetGameObject("txtTitle1"):SetActive(not isZh)
+  self._seq = DG.Tweening.DOTween.Sequence()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityBattlePassN5ExpInfo:OnHide()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo.SetData = function(self, campaign, componentInfo, upgrade)
-  -- function num : 0_3
+function UIActivityBattlePassN5ExpInfo:SetData(campaign, componentInfo, upgrade)
   self._campaign = campaign
   self._componentInfo = componentInfo
-  self:_SetIcon((self._componentInfo).m_item_id)
+  self:_SetIcon(self._componentInfo.m_item_id)
   if not upgrade then
     self:_SetExpNormal()
   else
@@ -54,98 +36,66 @@ UIActivityBattlePassN5ExpInfo.SetData = function(self, campaign, componentInfo, 
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo._SetTitle = function(self, lv)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._txtTitle1):SetText("Lv.")
+function UIActivityBattlePassN5ExpInfo:_SetTitle(lv)
+  self._txtTitle1:SetText("Lv.")
   if lv < 10 then
     lv = "<color=#7f7f7f>0</color>" .. lv
   end
-  ;
-  (self._txtTitle2):SetText(lv)
-  ;
-  (self._txtTitle3):SetText((StringTable.Get)("str_activity_battlepass_n5_main_title"))
-  local strId = (UIActivityBattlePassHelper.GetStrIdInCampaign)(self._campaign, "str_activity_battlepass_n5_main_title_2")
-  ;
-  (self._txtTitle4):SetText((StringTable.Get)(strId))
+  self._txtTitle2:SetText(lv)
+  self._txtTitle3:SetText(StringTable.Get("str_activity_battlepass_n5_main_title"))
+  local strId = UIActivityBattlePassHelper.GetStrIdInCampaign(self._campaign, "str_activity_battlepass_n5_main_title_2")
+  self._txtTitle4:SetText(StringTable.Get(strId))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo._SetExp = function(self, lv, progress)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityBattlePassN5ExpInfo:_SetExp(lv, progress)
   self:_SetTitle(lv)
-  local maxProgress = (self._componentInfo).m_level_max_progress
-  local maxLv = (self._componentInfo).m_max_level
+  local maxProgress = self._componentInfo.m_level_max_progress
+  local maxLv = self._componentInfo.m_max_level
   local formatStr = "%s<color=#FF0000>/</color><size=30>%s</size>"
-  ;
-  (self._txtProgress):SetText((string.format)(formatStr, progress, maxProgress))
+  self._txtProgress:SetText(string.format(formatStr, progress, maxProgress))
   local rate = progress / maxProgress
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-  if rate ~= nil and rate >= 0 and rate <= 1 then
-    (self._imgProgressValue).fillAmount = rate
+  if rate ~= nil and 0 <= rate and rate <= 1 then
+    self._imgProgressValue.fillAmount = rate
   end
   local max = lv == maxLv and progress == maxProgress
-  ;
-  ((self._txtProgress).gameObject):SetActive(not max)
+  self._txtProgress.gameObject:SetActive(not max)
   self:_SetMaxObj(max)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo._SetMaxObj = function(self, isShow)
-  -- function num : 0_6 , upvalues : _ENV
-  local isZh = (UIActivityZhHelper.IsZh)()
-  ;
-  (self:GetGameObject("max_zh")):SetActive(not isZh or isShow)
-  ;
-  (self:GetGameObject("max")):SetActive((not isZh and isShow))
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIActivityBattlePassN5ExpInfo:_SetMaxObj(isShow)
+  local isZh = UIActivityZhHelper.IsZh()
+  self:GetGameObject("max_zh"):SetActive(isZh and isShow)
+  self:GetGameObject("max"):SetActive(not isZh and isShow)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo._SetIcon = function(self, itemId)
-  -- function num : 0_7 , upvalues : _ENV
-  self._cfg_item = (Cfg.cfg_item)[itemId]
+function UIActivityBattlePassN5ExpInfo:_SetIcon(itemId)
+  self._cfg_item = Cfg.cfg_item[itemId]
   if self._cfg_item == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. itemId)
-    return 
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. itemId)
+    return
   end
-  local icon = (self._cfg_item).Icon
-  ;
-  (self._imgIcon):LoadImage(icon)
+  local icon = self._cfg_item.Icon
+  self._imgIcon:LoadImage(icon)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo._SetExpNormal = function(self)
-  -- function num : 0_8
-  self._curLv = (self._componentInfo).m_current_level
-  self._curProgress = (self._componentInfo).m_current_progress
+function UIActivityBattlePassN5ExpInfo:_SetExpNormal()
+  self._curLv = self._componentInfo.m_current_level
+  self._curProgress = self._componentInfo.m_current_progress
   self:_SetExp(self._curLv, self._curProgress)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo._SetExpUpgrade = function(self)
-  -- function num : 0_9
+function UIActivityBattlePassN5ExpInfo:_SetExpUpgrade()
   self._expIncreaseAnimTime = 1
   local curLv = self._curLv
   local curProgress = self._curProgress
-  local targetLv = (self._componentInfo).m_current_level
-  local targetProgress = (self._componentInfo).m_current_progress
-  local maxProgress = (self._componentInfo).m_level_max_progress
+  local targetLv = self._componentInfo.m_current_level
+  local targetProgress = self._componentInfo.m_current_progress
+  local maxProgress = self._componentInfo.m_level_max_progress
   if curLv < targetLv then
     self:_PlayFillAmount(curLv, maxProgress, function()
-    -- function num : 0_9_0 , upvalues : self, targetLv, targetProgress
-    self:_SetExp(targetLv, 0)
-    self:_PlayFillAmount(targetLv, targetProgress)
-  end
-)
+      self:_SetExp(targetLv, 0)
+      self:_PlayFillAmount(targetLv, targetProgress)
+    end)
   else
     self:_PlayFillAmount(targetLv, targetProgress)
   end
@@ -153,27 +103,17 @@ UIActivityBattlePassN5ExpInfo._SetExpUpgrade = function(self)
   self._curProgress = targetProgress
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5ExpInfo._PlayFillAmount = function(self, lv, progress, callback)
-  -- function num : 0_10 , upvalues : _ENV
-  local maxProgress = (self._componentInfo).m_level_max_progress
+function UIActivityBattlePassN5ExpInfo:_PlayFillAmount(lv, progress, callback)
+  local maxProgress = self._componentInfo.m_level_max_progress
   local rate = progress / maxProgress
-  local tweener = (((self._imgProgressValue):DOFillAmount(rate, self._expIncreaseAnimTime)):OnUpdate(function()
-    -- function num : 0_10_0 , upvalues : _ENV, self, maxProgress, lv
-    local value = (math.floor)((self._imgProgressValue).fillAmount * maxProgress)
+  local tweener = self._imgProgressValue:DOFillAmount(rate, self._expIncreaseAnimTime):OnUpdate(function()
+    local value = math.floor(self._imgProgressValue.fillAmount * maxProgress)
     self:_SetExp(lv, value)
-  end
-)):OnComplete(function()
-    -- function num : 0_10_1 , upvalues : self, lv, progress, callback
+  end):OnComplete(function()
     self:_SetExp(lv, progress)
     if callback then
       callback()
     end
-  end
-)
-  ;
-  (self._seq):Append(tweener)
+  end)
+  self._seq:Append(tweener)
 end
-
-

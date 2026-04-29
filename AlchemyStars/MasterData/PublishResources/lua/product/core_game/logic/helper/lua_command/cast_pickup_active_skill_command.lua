@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/cast_pickup_active_skill_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CastPickUpActiveSkillCommand", IEntityCommand)
 CastPickUpActiveSkillCommand = CastPickUpActiveSkillCommand
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CastPickUpActiveSkillCommand.Constructor = function(self)
-  -- function num : 0_0
+function CastPickUpActiveSkillCommand:Constructor()
   self._commandType = "CastPickUpActiveSkill"
   self._activeSkillID = -1
   self._casterPstID = -1
@@ -23,10 +16,7 @@ CastPickUpActiveSkillCommand.Constructor = function(self)
   self._tetrisDirIndex = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetExecStateID = function(self, runAtClient)
-  -- function num : 0_1 , upvalues : _ENV
+function CastPickUpActiveSkillCommand:GetExecStateID(runAtClient)
   if runAtClient then
     return GameStateID.PickUpActiveSkillTarget
   else
@@ -34,171 +24,104 @@ CastPickUpActiveSkillCommand.GetExecStateID = function(self, runAtClient)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetCommandType = function(self)
-  -- function num : 0_2
+function CastPickUpActiveSkillCommand:GetCommandType()
   return self._commandType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function CastPickUpActiveSkillCommand:IsExecExcluded()
   return 1
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function CastPickUpActiveSkillCommand:DependRoundCount()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetCmdActiveSkillID = function(self)
-  -- function num : 0_5
+function CastPickUpActiveSkillCommand:GetCmdActiveSkillID()
   return self._activeSkillID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetCmdCasterPstID = function(self)
-  -- function num : 0_6
+function CastPickUpActiveSkillCommand:GetCmdCasterPstID()
   return self._casterPstID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.SetCmdActiveSkillID = function(self, activeSkillID)
-  -- function num : 0_7
+function CastPickUpActiveSkillCommand:SetCmdActiveSkillID(activeSkillID)
   self._activeSkillID = activeSkillID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.SetCmdCasterPstID = function(self, pstID)
-  -- function num : 0_8
+function CastPickUpActiveSkillCommand:SetCmdCasterPstID(pstID)
   self._casterPstID = pstID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.SetCmdPickUpResult = function(self, result)
-  -- function num : 0_9 , upvalues : _ENV
+function CastPickUpActiveSkillCommand:SetCmdPickUpResult(result)
   if result then
     self._pickUpPosList = {}
-    for _,v in ipairs(result) do
+    for _, v in ipairs(result) do
       local pos = Vector2(v.x, v.y)
-      ;
-      (table.insert)(self._pickUpPosList, pos)
+      table.insert(self._pickUpPosList, pos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetCmdPickUpResult = function(self)
-  -- function num : 0_10
+function CastPickUpActiveSkillCommand:GetCmdPickUpResult()
   return self._pickUpPosList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.SetCmdPickUpExtraParamResult = function(self, result)
-  -- function num : 0_11 , upvalues : _ENV
+function CastPickUpActiveSkillCommand:SetCmdPickUpExtraParamResult(result)
   self._pickUpExtraParamList = {}
   if result then
-    for index,value in ipairs(result) do
-      (table.insert)(self._pickUpExtraParamList, value)
+    for index, value in ipairs(result) do
+      table.insert(self._pickUpExtraParamList, value)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetCmdPickUpExtraParamResult = function(self)
-  -- function num : 0_12
+function CastPickUpActiveSkillCommand:GetCmdPickUpExtraParamResult()
   return self._pickUpExtraParamList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetCmdCasterTrapEntityID = function(self)
-  -- function num : 0_13
+function CastPickUpActiveSkillCommand:GetCmdCasterTrapEntityID()
   return self._casterTrapEntityID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.SetCmdCasterTrapEntityID = function(self, trapEntityID)
-  -- function num : 0_14
+function CastPickUpActiveSkillCommand:SetCmdCasterTrapEntityID(trapEntityID)
   self._casterTrapEntityID = trapEntityID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.SetPickUpDirectionResult = function(self, directionPickupPosList, directionList, lastPickUpDirection)
-  -- function num : 0_15
+function CastPickUpActiveSkillCommand:SetPickUpDirectionResult(directionPickupPosList, directionList, lastPickUpDirection)
   self._directionPickupPos = directionPickupPosList
   self._pickUpDirList = directionList
   self._lastPickUpDirection = lastPickUpDirection
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetDirectionPickupData = function(self)
-  -- function num : 0_16
+function CastPickUpActiveSkillCommand:GetDirectionPickupData()
   return self._directionPickupPos, self._pickUpDirList, self._lastPickUpDirection
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.SetReflectDir = function(self, dir)
-  -- function num : 0_17
+function CastPickUpActiveSkillCommand:SetReflectDir(dir)
   self._reflectDir = dir
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetReflectDir = function(self)
-  -- function num : 0_18
+function CastPickUpActiveSkillCommand:GetReflectDir()
   return self._reflectDir
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.SetPickUpPetPstID = function(self, petPstID)
-  -- function num : 0_19
+function CastPickUpActiveSkillCommand:SetPickUpPetPstID(petPstID)
   self._pickUpPetPstID = petPstID
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetPickUpPetPstID = function(self)
-  -- function num : 0_20
+function CastPickUpActiveSkillCommand:GetPickUpPetPstID()
   return self._pickUpPetPstID
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.SetPickUpTetrisDirIndex = function(self, index)
-  -- function num : 0_21
+function CastPickUpActiveSkillCommand:SetPickUpTetrisDirIndex(index)
   self._tetrisDirIndex = index
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.GetPickUpTetrisDirIndex = function(self)
-  -- function num : 0_22
+function CastPickUpActiveSkillCommand:GetPickUpTetrisDirIndex()
   return self._tetrisDirIndex
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.ToNetMessage = function(self)
-  -- function num : 0_23 , upvalues : _ENV
+function CastPickUpActiveSkillCommand:ToNetMessage()
   local msg = CEventCastPickUpActiveSkillCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -207,34 +130,25 @@ CastPickUpActiveSkillCommand.ToNetMessage = function(self)
   msg.CmdIndex = self.CmdIndex
   msg.ActiveSkillID = self._activeSkillID
   msg.CasterPstID = self._casterPstID
-  for i,pos in ipairs(self._pickUpPosList) do
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-    (msg.PickUpPosList)[#msg.PickUpPosList + 1] = (Vector2.Pos2Index)(pos)
+  for i, pos in ipairs(self._pickUpPosList) do
+    msg.PickUpPosList[#msg.PickUpPosList + 1] = Vector2.Pos2Index(pos)
   end
-  for dir,pos in pairs(self._directionPickupPos) do
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R7 in 'UnsetPending'
-
-    (msg.DirectionPickUpPos)[dir] = (Vector2.Pos2Index)(pos)
+  for dir, pos in pairs(self._directionPickupPos) do
+    msg.DirectionPickUpPos[dir] = Vector2.Pos2Index(pos)
   end
   msg.PickUpDirList = self._pickUpDirList
   msg.LastPickUpDirection = self._lastPickUpDirection
   msg.ReflectDir = self._reflectDir
   msg.CasterTrapEntityID = self._casterTrapEntityID
-  for i,param in ipairs(self._pickUpExtraParamList) do
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R7 in 'UnsetPending'
-
-    (msg.PickUpExtraParamList)[#msg.PickUpExtraParamList + 1] = param
+  for i, param in ipairs(self._pickUpExtraParamList) do
+    msg.PickUpExtraParamList[#msg.PickUpExtraParamList + 1] = param
   end
   msg.PickUpPetPstID = self._pickUpPetPstID
   msg.TetrisDirIndex = self._tetrisDirIndex
   return msg
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-CastPickUpActiveSkillCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_24 , upvalues : _ENV
+function CastPickUpActiveSkillCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -242,24 +156,18 @@ CastPickUpActiveSkillCommand.FromNetMessage = function(self, msg)
   self.CmdIndex = msg.CmdIndex
   self._activeSkillID = msg.ActiveSkillID
   self._casterPstID = msg.CasterPstID
-  for i,v in ipairs(msg.PickUpPosList) do
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._pickUpPosList)[#self._pickUpPosList + 1] = (Vector2.Index2Pos)(v)
+  for i, v in ipairs(msg.PickUpPosList) do
+    self._pickUpPosList[#self._pickUpPosList + 1] = Vector2.Index2Pos(v)
   end
-  for k,v in pairs(msg.DirectionPickUpPos) do
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._directionPickupPos)[k] = (Vector2.Index2Pos)(v)
+  for k, v in pairs(msg.DirectionPickUpPos) do
+    self._directionPickupPos[k] = Vector2.Index2Pos(v)
   end
   self._pickUpDirList = msg.PickUpDirList
   self._lastPickUpDirection = msg.LastPickUpDirection
   self._reflectDir = msg.ReflectDir
   self._casterTrapEntityID = msg.CasterTrapEntityID
-  for i,v in ipairs(msg.PickUpExtraParamList) do
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R7 in 'UnsetPending'
-
-    (self._pickUpExtraParamList)[#self._pickUpExtraParamList + 1] = v
+  for i, v in ipairs(msg.PickUpExtraParamList) do
+    self._pickUpExtraParamList[#self._pickUpExtraParamList + 1] = v
   end
   if msg.PickUpPetPstID == 0 then
     self._pickUpPetPstID = nil
@@ -268,5 +176,3 @@ CastPickUpActiveSkillCommand.FromNetMessage = function(self, msg)
   end
   self._tetrisDirIndex = msg.TetrisDirIndex
 end
-
-

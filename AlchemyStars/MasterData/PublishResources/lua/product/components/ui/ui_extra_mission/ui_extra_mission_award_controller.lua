@@ -1,291 +1,179 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_extra_mission/ui_extra_mission_award_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIExtraMissionAwardController", UIController)
 UIExtraMissionAwardController = UIExtraMissionAwardController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIExtraMissionAwardController.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIExtraMissionAwardController:OnShow(uiParams)
   self._getTypes = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._getTypes)[1] = self:GetGameObject("getType_01")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._getTypes)[2] = self:GetGameObject("getType_02")
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._getTypes)[3] = self:GetGameObject("getType_03")
+  self._getTypes[1] = self:GetGameObject("getType_01")
+  self._getTypes[2] = self:GetGameObject("getType_02")
+  self._getTypes[3] = self:GetGameObject("getType_03")
   self._starAwards = {}
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._starAwards)[1] = self:GetUIComponent("UILocalizationText", "StarAward_01")
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._starAwards)[2] = self:GetUIComponent("UILocalizationText", "StarAward_02")
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._starAwards)[3] = self:GetUIComponent("UILocalizationText", "StarAward_03")
+  self._starAwards[1] = self:GetUIComponent("UILocalizationText", "StarAward_01")
+  self._starAwards[2] = self:GetUIComponent("UILocalizationText", "StarAward_02")
+  self._starAwards[3] = self:GetUIComponent("UILocalizationText", "StarAward_03")
   self._cantGetTexts = {}
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._cantGetTexts)[1] = self:GetUIComponent("UILocalizationText", "cantGetText1")
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._cantGetTexts)[2] = self:GetUIComponent("UILocalizationText", "cantGetText2")
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._cantGetTexts)[3] = self:GetUIComponent("UILocalizationText", "cantGetText3")
+  self._cantGetTexts[1] = self:GetUIComponent("UILocalizationText", "cantGetText1")
+  self._cantGetTexts[2] = self:GetUIComponent("UILocalizationText", "cantGetText2")
+  self._cantGetTexts[3] = self:GetUIComponent("UILocalizationText", "cantGetText3")
   self._awardContents = {}
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._awardContents)[1] = self:GetUIComponent("UISelectObjectPath", "awardContent_01")
-  -- DECOMPILER ERROR at PC70: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._awardContents)[2] = self:GetUIComponent("UISelectObjectPath", "awardContent_02")
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._awardContents)[3] = self:GetUIComponent("UISelectObjectPath", "awardContent_03")
+  self._awardContents[1] = self:GetUIComponent("UISelectObjectPath", "awardContent_01")
+  self._awardContents[2] = self:GetUIComponent("UISelectObjectPath", "awardContent_02")
+  self._awardContents[3] = self:GetUIComponent("UISelectObjectPath", "awardContent_03")
   self._nStarCounts = {}
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(ExtMissionModule)
+function UIExtraMissionAwardController:LoadDataOnEnter(TT, res, uiParams)
+  self._module = GameGlobal.GetModule(ExtMissionModule)
   self._extraMissionID = uiParams[1]
   if self._module then
     self:OnInitData(TT)
     res:SetSucc(true)
   else
-    ;
-    (Log.fatal)("module is nil!")
+    Log.fatal("module is nil!")
     res:SetSucc(false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIExtraMissionAwardController:OnValue()
   if self._awardInfo then
-    self.m_nStarCount = (self._awardInfo).m_nStarCount
+    self.m_nStarCount = self._awardInfo.m_nStarCount
     self._currentStarNumber = self:GetUIComponent("UILocalizationText", "currentStarNumber")
-    ;
-    (self._currentStarNumber):SetText(self.m_nStarCount .. "")
-    local vecAward = (self._awardInfo).m_vecAward
+    self._currentStarNumber:SetText(self.m_nStarCount .. "")
+    local vecAward = self._awardInfo.m_vecAward
     local idx = 0
     self._awardList = {}
-    for key,value in (HelperProxy:GetInstance()):pairsByKeys(vecAward) do
+    for key, value in HelperProxy:GetInstance():pairsByKeys(vecAward) do
       idx = idx + 1
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._nStarCounts)[idx] = value.m_nStarCount
+      self._nStarCounts[idx] = value.m_nStarCount
       local nAwardRecord = value.m_nAwardStat
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._awardList)[idx] = {}
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (self._awardList)[idx] = value.m_vecAwardItem
-      self:InitListViews(idx, (self._awardList)[idx])
+      self._awardList[idx] = {}
+      self._awardList[idx] = value.m_vecAwardItem
+      self:InitListViews(idx, self._awardList[idx])
       self:InitGetType(idx, nAwardRecord)
-      self:GetCuurentStar(idx, (self._nStarCounts)[idx])
+      self:GetCuurentStar(idx, self._nStarCounts[idx])
     end
   else
-    do
-      ;
-      (Log.fatal)("award info is nil!")
-    end
+    Log.fatal("award info is nil!")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.OnInitData = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local res = (self._module):Request_GetDetail_ExtMission(TT, self._extraMissionID)
+function UIExtraMissionAwardController:OnInitData(TT)
+  local res = self._module:Request_GetDetail_ExtMission(TT, self._extraMissionID)
   local result = res:GetResult()
   if result == 0 then
-    self._awardInfo = (self._module):UI_GetExtMissionAward(self._extraMissionID)
+    self._awardInfo = self._module:UI_GetExtMissionAward(self._extraMissionID)
   else
-    local errmsg = (self._module):GetErrorMsg(result)
-    ;
-    (ToastManager.ShowToast)(errmsg)
+    local errmsg = self._module:GetErrorMsg(result)
+    ToastManager.ShowToast(errmsg)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.InitListViews = function(self, scrollViewIndex, awardList)
-  -- function num : 0_4 , upvalues : _ENV
-  ((self._awardContents)[scrollViewIndex]):SpawnObjects("UIExtraMissionAwardControllerItem", (table.count)(awardList))
-  local spawns = ((self._awardContents)[scrollViewIndex]):GetAllSpawnList()
-  for i = 1, (table.count)(spawns) do
-    self:ShowItem(spawns[i], awardList[i], R12_PC24)
+function UIExtraMissionAwardController:InitListViews(scrollViewIndex, awardList)
+  self._awardContents[scrollViewIndex]:SpawnObjects("UIExtraMissionAwardControllerItem", table.count(awardList))
+  local spawns = self._awardContents[scrollViewIndex]:GetAllSpawnList()
+  for i = 1, table.count(spawns) do
+    self:ShowItem(spawns[i], awardList[i], i)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.GetCuurentStar = function(self, index, stars)
-  -- function num : 0_5
-  ((self._starAwards)[index]):SetText(stars .. "")
+function UIExtraMissionAwardController:GetCuurentStar(index, stars)
+  self._starAwards[index]:SetText(stars .. "")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.ShowItem = function(self, item, awardItem, index)
-  -- function num : 0_6 , upvalues : _ENV
-  local ItemTempleate = (Cfg.cfg_item)[awardItem.assetid]
+function UIExtraMissionAwardController:ShowItem(item, awardItem, index)
+  local ItemTempleate = Cfg.cfg_item[awardItem.assetid]
   if ItemTempleate then
-    local itemInfo = {item_id = awardItem.assetid, item_count = awardItem.count, icon = ItemTempleate.Icon, item_name = ItemTempleate.Name, simple_desc = ItemTempleate.RpIntro, color = ItemTempleate.Color}
-    ;
-    (item:GetGameObject()):SetActive(true)
+    local itemInfo = {
+      item_id = awardItem.assetid,
+      item_count = awardItem.count,
+      icon = ItemTempleate.Icon,
+      item_name = ItemTempleate.Name,
+      simple_desc = ItemTempleate.RpIntro,
+      color = ItemTempleate.Color
+    }
+    item:GetGameObject():SetActive(true)
     item:SetData(itemInfo, index, function(id, pos)
-    -- function num : 0_6_0 , upvalues : self
-    self:ShowSelectInfo(id, pos)
-  end
-, Color(1, 1, 1, 1))
+      self:ShowSelectInfo(id, pos)
+    end, Color(1, 1, 1, 1))
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.ShowSelectInfo = function(self, id, pos)
-  -- function num : 0_7
-  (self._selectInfo):SetData(id, pos)
+function UIExtraMissionAwardController:ShowSelectInfo(id, pos)
+  self._selectInfo:SetData(id, pos)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.bgOnClick = function(self)
-  -- function num : 0_8
+function UIExtraMissionAwardController:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.InitGetType = function(self, index, state)
-  -- function num : 0_9
+function UIExtraMissionAwardController:InitGetType(index, state)
   self:InitStageGetType(index, state)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.InitStageGetType = function(self, index, getType)
-  -- function num : 0_10 , upvalues : _ENV
-  local stageObjTransform = ((self._getTypes)[index]):GetComponent("Transform")
+function UIExtraMissionAwardController:InitStageGetType(index, getType)
+  local stageObjTransform = self._getTypes[index]:GetComponent("Transform")
   local count = stageObjTransform.childCount
   for i = 1, count - 1 do
     local go = stageObjTransform:GetChild(i)
     if go then
-      (go.gameObject):SetActive(false)
+      go.gameObject:SetActive(false)
     end
   end
   if getType == EnumAwardRecord.Getting then
-    ((stageObjTransform:GetChild(1)).gameObject):SetActive(true)
-  else
-    if getType == EnumAwardRecord.HaveDown then
-      ((stageObjTransform:GetChild(2)).gameObject):SetActive(true)
-    else
-      if getType == EnumAwardRecord.Disable then
-        ((stageObjTransform:GetChild(3)).gameObject):SetActive(true)
-        ;
-        ((self._cantGetTexts)[index]):SetText("<color=red>" .. self.m_nStarCount .. "</color>/" .. (self._nStarCounts)[index])
-      end
-    end
+    stageObjTransform:GetChild(1).gameObject:SetActive(true)
+  elseif getType == EnumAwardRecord.HaveDown then
+    stageObjTransform:GetChild(2).gameObject:SetActive(true)
+  elseif getType == EnumAwardRecord.Disable then
+    stageObjTransform:GetChild(3).gameObject:SetActive(true)
+    self._cantGetTexts[index]:SetText("<color=red>" .. self.m_nStarCount .. "</color>/" .. self._nStarCounts[index])
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.btnStage1OnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.GetClick, self, self._extraMissionID, 1)
+function UIExtraMissionAwardController:btnStage1OnClick()
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
+  GameGlobal.TaskManager():StartTask(self.GetClick, self, self._extraMissionID, 1)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.btnStage2OnClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.GetClick, self, self._extraMissionID, 2)
+function UIExtraMissionAwardController:btnStage2OnClick()
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
+  GameGlobal.TaskManager():StartTask(self.GetClick, self, self._extraMissionID, 2)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.btnStage3OnClick = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.GetModule)(PetModule)):GetAllPetsSnapshoot()
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.GetClick, self, self._extraMissionID, 3)
+function UIExtraMissionAwardController:btnStage3OnClick()
+  GameGlobal.GetModule(PetModule):GetAllPetsSnapshoot()
+  GameGlobal.TaskManager():StartTask(self.GetClick, self, self._extraMissionID, 3)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIExtraMissionAwardController.GetClick = function(self, TT, extID, idx)
-  -- function num : 0_14 , upvalues : _ENV
+function UIExtraMissionAwardController:GetClick(TT, extID, idx)
   self:Lock("UIExtraMissionAwardController:GetClick")
-  local res = (self._module):Request_GetAward(TT, extID, (self._nStarCounts)[idx])
+  local res = self._module:Request_GetAward(TT, extID, self._nStarCounts[idx])
   self:UnLock("UIExtraMissionAwardController:GetClick")
   local result = res:GetResult()
   if result == 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CancelRedPoint, self._extraMissionID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CancelRedPoint, self._extraMissionID)
     self:InitStageGetType(idx, EnumAwardRecord.HaveDown)
     local tempPets = {}
-    local pets = (self._awardList)[idx]
-    if #pets > 0 then
+    local pets = self._awardList[idx]
+    if 0 < #pets then
       for i = 1, #pets do
-        local ispet = ((GameGlobal.GetModule)(PetModule)):IsPetID((pets[i]).assetid)
+        local ispet = GameGlobal.GetModule(PetModule):IsPetID(pets[i].assetid)
         if ispet then
-          (table.insert)(tempPets, pets[i])
+          table.insert(tempPets, pets[i])
         end
       end
     end
-    do
-      do
-        if #tempPets > 0 then
-          self:ShowDialog("UIPetObtain", tempPets, function()
-    -- function num : 0_14_0 , upvalues : _ENV, self, idx
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", (self._awardList)[idx])
-  end
-)
-        else
-          self:ShowDialog("UIGetItemController", (self._awardList)[idx])
-        end
-        local errmsg = (self._module):GetErrorMsg(result)
-        ;
-        (ToastManager.ShowToast)(errmsg)
-      end
+    if 0 < #tempPets then
+      self:ShowDialog("UIPetObtain", tempPets, function()
+        GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+        self:ShowDialog("UIGetItemController", self._awardList[idx])
+      end)
+    else
+      self:ShowDialog("UIGetItemController", self._awardList[idx])
     end
+  else
+    local errmsg = self._module:GetErrorMsg(result)
+    ToastManager.ShowToast(errmsg)
   end
 end
-
-

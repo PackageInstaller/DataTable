@@ -1,37 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/cast_pick_up_chain_skill_command_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 _class("CastPickUpChainSkillCommandHandler", CommandBaseHandler)
 CastPickUpChainSkillCommandHandler = CastPickUpChainSkillCommandHandler
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CastPickUpChainSkillCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function CastPickUpChainSkillCommandHandler:DoHandleCommand(cmd)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local pickUpGridPos = cmd:GetCmdPickUpResult()
   if pickUpGridPos and not self:IsPosNil(pickUpGridPos) and self:IsGridPosValid(pickUpGridPos) then
-    local utilData = (self._world):GetService("UtilData")
+    local utilData = self._world:GetService("UtilData")
     if not utilData:IsPosDimensionDoor(pickUpGridPos) then
       local logicPickUpCmpt = teamEntity:LogicPickUp()
       logicPickUpCmpt:SetLogicPickUpGridPos(pickUpGridPos)
       logicPickUpCmpt:SetLogicPickUpGridSafePos(pickUpGridPos)
-      ;
-      ((self._world):BattleStat()):SetCastChainByDimensionDoorState(true)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.PickUpChainSkillTargetFinish, 1)
-      return 
+      self._world:BattleStat():SetCastChainByDimensionDoorState(true)
+      self._world:EventDispatcher():Dispatch(GameEventType.PickUpChainSkillTargetFinish, 1)
+      return
     end
   end
-  do
-    local errorMsg = "ChainSkillPickUp Invalid GridPos:"
-    if pickUpGridPos then
-      errorMsg = errorMsg .. tostring(pickUpGridPos)
-    end
-    self:_HandleServerSyncFailed(BattleFailedType.ChainPathPickUpGridPosInvalid, errorMsg)
+  local errorMsg = "ChainSkillPickUp Invalid GridPos:"
+  if pickUpGridPos then
+    errorMsg = errorMsg .. tostring(pickUpGridPos)
   end
+  self:_HandleServerSyncFailed(BattleFailedType.ChainPathPickUpGridPosInvalid, errorMsg)
 end
-
-

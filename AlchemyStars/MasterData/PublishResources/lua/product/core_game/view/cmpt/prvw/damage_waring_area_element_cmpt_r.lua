@@ -1,79 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/damage_waring_area_element_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DamageWarningAreaElementComponent", Object)
 DamageWarningAreaElementComponent = DamageWarningAreaElementComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DamageWarningAreaElementComponent.Constructor = function(self, areaEntityID, entityConfigID)
-  -- function num : 0_0
+function DamageWarningAreaElementComponent:Constructor(areaEntityID, entityConfigID)
   self._ownerEntityID = areaEntityID
   self._entityConfigID = entityConfigID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DamageWarningAreaElementComponent.GetOwnerEntityID = function(self)
-  -- function num : 0_1
+function DamageWarningAreaElementComponent:GetOwnerEntityID()
   return self._ownerEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DamageWarningAreaElementComponent.ClearOwnerEntityID = function(self)
-  -- function num : 0_2
+function DamageWarningAreaElementComponent:ClearOwnerEntityID()
   self._ownerEntityID = nil
   self._entityConfigID = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DamageWarningAreaElementComponent.GetEntityConfigID = function(self)
-  -- function num : 0_3
+function DamageWarningAreaElementComponent:GetEntityConfigID()
   return self._entityConfigID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.DamageWarningAreaElement = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).DamageWarningAreaElement)
+function Entity:DamageWarningAreaElement()
+  return self:GetComponent(self.WEComponentsEnum.DamageWarningAreaElement)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasDamageWarningAreaElement = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).DamageWarningAreaElement)
+function Entity:HasDamageWarningAreaElement()
+  return self:HasComponent(self.WEComponentsEnum.DamageWarningAreaElement)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddDamageWarningAreaElement = function(self, areaEntityID)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).DamageWarningAreaElement
+function Entity:AddDamageWarningAreaElement(areaEntityID)
+  local index = self.WEComponentsEnum.DamageWarningAreaElement
   local component = DamageWarningAreaElementComponent:New(areaEntityID)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceDamageWarningAreaElement = function(self, areaEntityID, entityConfigID)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).DamageWarningAreaElement
+function Entity:ReplaceDamageWarningAreaElement(areaEntityID, entityConfigID)
+  local index = self.WEComponentsEnum.DamageWarningAreaElement
   local component = DamageWarningAreaElementComponent:New(areaEntityID, entityConfigID)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveDamageWarningAreaElement = function(self)
-  -- function num : 0_8
+function Entity:RemoveDamageWarningAreaElement()
   if self:HasDamageWarningAreaElement() then
-    self:RemoveComponent((self.WEComponentsEnum).DamageWarningAreaElement)
+    self:RemoveComponent(self.WEComponentsEnum.DamageWarningAreaElement)
   end
 end
-
-

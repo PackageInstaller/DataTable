@@ -1,171 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_add_buff_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillAddBuffEffectParam", SkillEffectParamBase)
 SkillAddBuffEffectParam = SkillAddBuffEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillAddBuffEffectParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillAddBuffEffectParam:Constructor(t)
   self._buffProb = t.prob or 0
-  if not t.probType then
-    self._buffProbType = SkillAddBuffPropType.Default
-    self._buffID = t.buffID
-    self._buffRoundCount = t.buffRoundCount
-    if not t.addBuffType then
-      self._addBuffType = SkillAddBuffType.Default
-      self._remove = t.remove or false
-      if not t.buffTargetType then
-        self._buffTargetType = BuffTargetType.SkillTarget
-        self._transmitAttack = t.transmitAttack or false
-        self._isTransmitFinalAtk = t.isTransmitFinalAtk or false
-        self._transmitDefence = t.transmitDefence or false
-        self._transmitFinalDefense = t.isTransmitFinalDefense or false
-        self._buffTargetParam = t.buffTargetParam
-        self._buffCountParam = t.buffCountParam
-        self._buffInitLayer = t.buffInitLayer
-        self._addToNonMissDamageTarget = t.addToNonMissDamageTarget
-        self._mustHaveSkillTarget = t.mustHaveSkillTarget or false
-        self._featureShopSelectCellID = t.featureShopSelectCellID
-      end
-    end
-  end
+  self._buffProbType = t.probType or SkillAddBuffPropType.Default
+  self._buffID = t.buffID
+  self._buffRoundCount = t.buffRoundCount
+  self._addBuffType = t.addBuffType or SkillAddBuffType.Default
+  self._remove = t.remove or false
+  self._buffTargetType = t.buffTargetType or BuffTargetType.SkillTarget
+  self._transmitAttack = t.transmitAttack or false
+  self._isTransmitFinalAtk = t.isTransmitFinalAtk or false
+  self._transmitDefence = t.transmitDefence or false
+  self._transmitFinalDefense = t.isTransmitFinalDefense or false
+  self._buffTargetParam = t.buffTargetParam
+  self._buffCountParam = t.buffCountParam
+  self._buffInitLayer = t.buffInitLayer
+  self._addToNonMissDamageTarget = t.addToNonMissDamageTarget
+  self._mustHaveSkillTarget = t.mustHaveSkillTarget or false
+  self._featureShopSelectCellID = t.featureShopSelectCellID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetBuffTargetParam = function(self)
-  -- function num : 0_1
+function SkillAddBuffEffectParam:GetBuffTargetParam()
   return self._buffTargetParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillAddBuffEffectParam:GetEffectType()
   return SkillEffectType.AddBuff
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetBuffProb = function(self)
-  -- function num : 0_3
+function SkillAddBuffEffectParam:GetBuffProb()
   return self._buffProb
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetBuffProbType = function(self)
-  -- function num : 0_4
+function SkillAddBuffEffectParam:GetBuffProbType()
   return self._buffProbType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetBuffID = function(self)
-  -- function num : 0_5
+function SkillAddBuffEffectParam:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetBuffRoundCount = function(self)
-  -- function num : 0_6
+function SkillAddBuffEffectParam:GetBuffRoundCount()
   return self._buffRoundCount
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetAddBuffType = function(self)
-  -- function num : 0_7
+function SkillAddBuffEffectParam:GetAddBuffType()
   return self._addBuffType
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetRemove = function(self)
-  -- function num : 0_8
+function SkillAddBuffEffectParam:GetRemove()
   return self._remove
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetBuffTargetType = function(self)
-  -- function num : 0_9
+function SkillAddBuffEffectParam:GetBuffTargetType()
   return self._buffTargetType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.TransmitAttack = function(self)
-  -- function num : 0_10
+function SkillAddBuffEffectParam:TransmitAttack()
   return self._transmitAttack
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.IsTransmitFinalAttack = function(self)
-  -- function num : 0_11
+function SkillAddBuffEffectParam:IsTransmitFinalAttack()
   return self._isTransmitFinalAtk
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.TransmitDefence = function(self)
-  -- function num : 0_12
+function SkillAddBuffEffectParam:TransmitDefence()
   return self._transmitDefence
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.IsTransmitFinalDefense = function(self)
-  -- function num : 0_13
+function SkillAddBuffEffectParam:IsTransmitFinalDefense()
   return self._transmitFinalDefense
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetBuffCountParam = function(self)
-  -- function num : 0_14
+function SkillAddBuffEffectParam:GetBuffCountParam()
   return self._buffCountParam
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.SetBuffInitLayer = function(self, layer)
-  -- function num : 0_15
+function SkillAddBuffEffectParam:SetBuffInitLayer(layer)
   self._buffInitLayer = layer
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetBuffInitLayer = function(self)
-  -- function num : 0_16
+function SkillAddBuffEffectParam:GetBuffInitLayer()
   return self._buffInitLayer
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.CanAddToNonMissDamageTarget = function(self)
-  -- function num : 0_17
+function SkillAddBuffEffectParam:CanAddToNonMissDamageTarget()
   return self._addToNonMissDamageTarget
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.MustHaveSkillTarget = function(self)
-  -- function num : 0_18
+function SkillAddBuffEffectParam:MustHaveSkillTarget()
   return self._mustHaveSkillTarget
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillAddBuffEffectParam.GetfeatureShopSelectCellID = function(self)
-  -- function num : 0_19
+function SkillAddBuffEffectParam:GetfeatureShopSelectCellID()
   return self._featureShopSelectCellID
 end
-
-

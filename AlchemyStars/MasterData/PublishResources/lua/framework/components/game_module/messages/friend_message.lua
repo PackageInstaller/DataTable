@@ -1,722 +1,663 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/game_module/messages/friend_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local friendMessageDef = {CLSID_CEventGetOnlinePlayer = 27000, CLSID_CEventGetOnlinePlayerResult = 27001, CLSID_CEventGetFriendList = 27002, CLSID_CEventGetFriendListResult = 27003, CLSID_CEventGetFriendInvitationList = 27004, CLSID_CEventGetFriendInvitationListResult = 27005, CLSID_CEventGetSocialBlackList = 27006, CLSID_CEventGetSocialBlackListResult = 27007, CLSID_CEventAddFriend = 27008, CLSID_CEventAddFriendResult = 27009, CLSID_CEventProcessAddFriend = 27010, CLSID_CEventProcessAddFriendResult = 27011, CLSID_CEventUpdateSocialBlackList = 27012, CLSID_CEventUpdateSocialBlackListResult = 27013, CLSID_CEventDelFriend = 27014, CLSID_CEventDelFriendResult = 27015, CLSID_CEventUpdateIntimacy = 27016, CLSID_CEventUpdateIntimacyResult = 27017, CLSID_CEventPushUpdateFriendInvitation = 27018, CLSID_CEventPushUpdateFriendOtherInvitation = 27019, CLSID_CEventPushUpdateFriendList = 27020, CLSID_CEventEnterChatFriendModule = 27021, CLSID_CEventEnterChatFriendModuleResult = 27022, CLSID_CEventLeaveChatFriendModule = 27023, CLSID_CEventLeaveChatFriendModuleResult = 27024, CLSID_CEventSelectChatFriend = 27025, CLSID_CEventSelectChatFriendResult = 27026, CLSID_CEventPushClientRecvMaxMsgIdAck = 27027, CLSID_CEventPushHaveNewFriendMsg = 27028, CLSID_CEventPushHaveNewFriendMsgInner = 27029, CLSID_CEventSendFriendMsg = 27030, CLSID_CEventSendFriendMsgResult = 27031, CLSID_CEventPushFriendMsg = 27032, CLSID_CEventSearchFriend = 27033, CLSID_CEventSearchFriendResult = 27034, CLSID_CEventPushHaveNewMsg = 27035, CLSID_CEventOutSidePushNewMsg = 27036, CLSID_CEventGetPlayerDetailInfo = 27037, CLSID_CEventGetPlayerDetailInfoResult = 27038, CLSID_CEventSetFriendRemarkName = 27039, CLSID_CEventSetFriendRemarkNameResult = 27040, CLSID_CEventRefreshRecommendPlayer = 27041, CLSID_CEventRefreshRecommendPlayerResult = 27042, CLSID_CEventRefreshFriendOnlineState = 27043, CLSID_CEventRefreshFriendOnlineStateResult = 27044, CLSID_CEventBothwayFriendReq = 27045, CLSID_CEventBothwayFriendResult = 27046}
-;
-(table.append)(MessageDef, friendMessageDef)
+local friendMessageDef = {
+  CLSID_CEventGetOnlinePlayer = 27000,
+  CLSID_CEventGetOnlinePlayerResult = 27001,
+  CLSID_CEventGetFriendList = 27002,
+  CLSID_CEventGetFriendListResult = 27003,
+  CLSID_CEventGetFriendInvitationList = 27004,
+  CLSID_CEventGetFriendInvitationListResult = 27005,
+  CLSID_CEventGetSocialBlackList = 27006,
+  CLSID_CEventGetSocialBlackListResult = 27007,
+  CLSID_CEventAddFriend = 27008,
+  CLSID_CEventAddFriendResult = 27009,
+  CLSID_CEventProcessAddFriend = 27010,
+  CLSID_CEventProcessAddFriendResult = 27011,
+  CLSID_CEventUpdateSocialBlackList = 27012,
+  CLSID_CEventUpdateSocialBlackListResult = 27013,
+  CLSID_CEventDelFriend = 27014,
+  CLSID_CEventDelFriendResult = 27015,
+  CLSID_CEventUpdateIntimacy = 27016,
+  CLSID_CEventUpdateIntimacyResult = 27017,
+  CLSID_CEventPushUpdateFriendInvitation = 27018,
+  CLSID_CEventPushUpdateFriendOtherInvitation = 27019,
+  CLSID_CEventPushUpdateFriendList = 27020,
+  CLSID_CEventEnterChatFriendModule = 27021,
+  CLSID_CEventEnterChatFriendModuleResult = 27022,
+  CLSID_CEventLeaveChatFriendModule = 27023,
+  CLSID_CEventLeaveChatFriendModuleResult = 27024,
+  CLSID_CEventSelectChatFriend = 27025,
+  CLSID_CEventSelectChatFriendResult = 27026,
+  CLSID_CEventPushClientRecvMaxMsgIdAck = 27027,
+  CLSID_CEventPushHaveNewFriendMsg = 27028,
+  CLSID_CEventPushHaveNewFriendMsgInner = 27029,
+  CLSID_CEventSendFriendMsg = 27030,
+  CLSID_CEventSendFriendMsgResult = 27031,
+  CLSID_CEventPushFriendMsg = 27032,
+  CLSID_CEventSearchFriend = 27033,
+  CLSID_CEventSearchFriendResult = 27034,
+  CLSID_CEventPushHaveNewMsg = 27035,
+  CLSID_CEventOutSidePushNewMsg = 27036,
+  CLSID_CEventGetPlayerDetailInfo = 27037,
+  CLSID_CEventGetPlayerDetailInfoResult = 27038,
+  CLSID_CEventSetFriendRemarkName = 27039,
+  CLSID_CEventSetFriendRemarkNameResult = 27040,
+  CLSID_CEventRefreshRecommendPlayer = 27041,
+  CLSID_CEventRefreshRecommendPlayerResult = 27042,
+  CLSID_CEventRefreshFriendOnlineState = 27043,
+  CLSID_CEventRefreshFriendOnlineStateResult = 27044,
+  CLSID_CEventBothwayFriendReq = 27045,
+  CLSID_CEventBothwayFriendResult = 27046
+}
+table.append(MessageDef, friendMessageDef)
 _class("CEventGetOnlinePlayer", CCallRequestEvent)
 CEventGetOnlinePlayer = CEventGetOnlinePlayer
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetOnlinePlayer.Constructor = function(self)
-  -- function num : 0_0
+function CEventGetOnlinePlayer:Constructor()
   self.page_number = 0
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetOnlinePlayer._proto = {
-[1] = {"page_number", "int"}
+  [1] = {
+    "page_number",
+    "int"
+  }
 }
 _class("CEventGetOnlinePlayerResult", CCallReplyEvent)
 CEventGetOnlinePlayerResult = CEventGetOnlinePlayerResult
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetOnlinePlayerResult.Constructor = function(self)
-  -- function num : 0_1
+function CEventGetOnlinePlayerResult:Constructor()
   self.ret = 0
   self.player_list = {}
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetOnlinePlayerResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"player_list", "list<role_simple_info>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "player_list",
+    "list<role_simple_info>"
+  }
 }
 _class("CEventGetFriendList", CCallRequestEvent)
 CEventGetFriendList = CEventGetFriendList
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetFriendList.Constructor = function(self)
-  -- function num : 0_2
+function CEventGetFriendList:Constructor()
 end
-
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventGetFriendList._proto = {}
 _class("CEventGetFriendListResult", CCallReplyEvent)
 CEventGetFriendListResult = CEventGetFriendListResult
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetFriendListResult.Constructor = function(self)
-  -- function num : 0_3
+function CEventGetFriendListResult:Constructor()
   self.ret = 0
   self.friend_list = {}
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetFriendListResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"friend_list", "map<int64,social_info_mobile>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "friend_list",
+    "map<int64,social_info_mobile>"
+  }
 }
 _class("CEventGetFriendInvitationList", CCallRequestEvent)
 CEventGetFriendInvitationList = CEventGetFriendInvitationList
--- DECOMPILER ERROR at PC137: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetFriendInvitationList.Constructor = function(self)
-  -- function num : 0_4
+function CEventGetFriendInvitationList:Constructor()
 end
-
--- DECOMPILER ERROR at PC140: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventGetFriendInvitationList._proto = {}
 _class("CEventGetFriendInvitationListResult", CCallReplyEvent)
 CEventGetFriendInvitationListResult = CEventGetFriendInvitationListResult
--- DECOMPILER ERROR at PC149: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetFriendInvitationListResult.Constructor = function(self)
-  -- function num : 0_5
+function CEventGetFriendInvitationListResult:Constructor()
   self.ret = 0
   self.invitation_list = {}
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetFriendInvitationListResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"invitation_list", "list<social_invitation_info_mobile>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "invitation_list",
+    "list<social_invitation_info_mobile>"
+  }
 }
 _class("CEventGetSocialBlackList", CCallRequestEvent)
 CEventGetSocialBlackList = CEventGetSocialBlackList
--- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetSocialBlackList.Constructor = function(self)
-  -- function num : 0_6
+function CEventGetSocialBlackList:Constructor()
 end
-
--- DECOMPILER ERROR at PC174: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventGetSocialBlackList._proto = {}
 _class("CEventGetSocialBlackListResult", CCallReplyEvent)
 CEventGetSocialBlackListResult = CEventGetSocialBlackListResult
--- DECOMPILER ERROR at PC183: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetSocialBlackListResult.Constructor = function(self)
-  -- function num : 0_7
+function CEventGetSocialBlackListResult:Constructor()
   self.ret = 0
   self.black_list = {}
 end
 
--- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetSocialBlackListResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"black_list", "map<int64,social_player_info>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "black_list",
+    "map<int64,social_player_info>"
+  }
 }
 _class("CEventAddFriend", CCallRequestEvent)
 CEventAddFriend = CEventAddFriend
--- DECOMPILER ERROR at PC205: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventAddFriend.Constructor = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function CEventAddFriend:Constructor()
   self.send_invt = send_invitation:New()
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventAddFriend._proto = {
-[1] = {"send_invt", "send_invitation"}
+  [1] = {
+    "send_invt",
+    "send_invitation"
+  }
 }
 _class("CEventAddFriendResult", CCallReplyEvent)
 CEventAddFriendResult = CEventAddFriendResult
--- DECOMPILER ERROR at PC222: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventAddFriendResult.Constructor = function(self)
-  -- function num : 0_9
+function CEventAddFriendResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventAddFriendResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventProcessAddFriend", CCallRequestEvent)
 CEventProcessAddFriend = CEventProcessAddFriend
--- DECOMPILER ERROR at PC239: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventProcessAddFriend.Constructor = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function CEventProcessAddFriend:Constructor()
   self.proc_invt = process_invitation:New()
 end
 
--- DECOMPILER ERROR at PC247: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventProcessAddFriend._proto = {
-[1] = {"proc_invt", "process_invitation"}
+  [1] = {
+    "proc_invt",
+    "process_invitation"
+  }
 }
 _class("CEventProcessAddFriendResult", CCallReplyEvent)
 CEventProcessAddFriendResult = CEventProcessAddFriendResult
--- DECOMPILER ERROR at PC256: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventProcessAddFriendResult.Constructor = function(self)
-  -- function num : 0_11
+function CEventProcessAddFriendResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC264: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventProcessAddFriendResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventUpdateSocialBlackList", CCallRequestEvent)
 CEventUpdateSocialBlackList = CEventUpdateSocialBlackList
--- DECOMPILER ERROR at PC273: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventUpdateSocialBlackList.Constructor = function(self)
-  -- function num : 0_12
+function CEventUpdateSocialBlackList:Constructor()
   self.black_pstid = 0
   self.is_del = false
 end
 
--- DECOMPILER ERROR at PC286: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventUpdateSocialBlackList._proto = {
-[1] = {"black_pstid", "int64"}
-, 
-[2] = {"is_del", "bool"}
+  [1] = {
+    "black_pstid",
+    "int64"
+  },
+  [2] = {"is_del", "bool"}
 }
 _class("CEventUpdateSocialBlackListResult", CCallReplyEvent)
 CEventUpdateSocialBlackListResult = CEventUpdateSocialBlackListResult
--- DECOMPILER ERROR at PC295: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventUpdateSocialBlackListResult.Constructor = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function CEventUpdateSocialBlackListResult:Constructor()
   self.ret = 0
   self.player_info = social_player_info:New()
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventUpdateSocialBlackListResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"player_info", "social_player_info"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "player_info",
+    "social_player_info"
+  }
 }
 _class("CEventDelFriend", CCallRequestEvent)
 CEventDelFriend = CEventDelFriend
--- DECOMPILER ERROR at PC317: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventDelFriend.Constructor = function(self)
-  -- function num : 0_14
+function CEventDelFriend:Constructor()
   self.peer_pstid = 0
 end
 
--- DECOMPILER ERROR at PC325: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventDelFriend._proto = {
-[1] = {"peer_pstid", "int64"}
+  [1] = {"peer_pstid", "int64"}
 }
 _class("CEventDelFriendResult", CCallReplyEvent)
 CEventDelFriendResult = CEventDelFriendResult
--- DECOMPILER ERROR at PC334: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventDelFriendResult.Constructor = function(self)
-  -- function num : 0_15
+function CEventDelFriendResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC342: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventDelFriendResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventUpdateIntimacy", CCallRequestEvent)
 CEventUpdateIntimacy = CEventUpdateIntimacy
--- DECOMPILER ERROR at PC351: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventUpdateIntimacy.Constructor = function(self)
-  -- function num : 0_16
+function CEventUpdateIntimacy:Constructor()
   self.friend_pstid = 0
   self.change_value = 0
 end
 
--- DECOMPILER ERROR at PC364: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventUpdateIntimacy._proto = {
-[1] = {"friend_pstid", "int64"}
-, 
-[2] = {"change_value", "int"}
+  [1] = {
+    "friend_pstid",
+    "int64"
+  },
+  [2] = {
+    "change_value",
+    "int"
+  }
 }
 _class("CEventUpdateIntimacyResult", CCallReplyEvent)
 CEventUpdateIntimacyResult = CEventUpdateIntimacyResult
--- DECOMPILER ERROR at PC373: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventUpdateIntimacyResult.Constructor = function(self)
-  -- function num : 0_17
+function CEventUpdateIntimacyResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC381: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventUpdateIntimacyResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventPushUpdateFriendInvitation", CSvrPushEvent)
 CEventPushUpdateFriendInvitation = CEventPushUpdateFriendInvitation
--- DECOMPILER ERROR at PC390: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushUpdateFriendInvitation.Constructor = function(self)
-  -- function num : 0_18
+function CEventPushUpdateFriendInvitation:Constructor()
   self.bHaveNewInvitation = false
 end
 
--- DECOMPILER ERROR at PC398: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushUpdateFriendInvitation._proto = {
-[1] = {"bHaveNewInvitation", "bool"}
+  [1] = {
+    "bHaveNewInvitation",
+    "bool"
+  }
 }
 _class("CEventPushUpdateFriendOtherInvitation", CSvrPushEvent)
 CEventPushUpdateFriendOtherInvitation = CEventPushUpdateFriendOtherInvitation
--- DECOMPILER ERROR at PC407: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushUpdateFriendOtherInvitation.Constructor = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function CEventPushUpdateFriendOtherInvitation:Constructor()
   self.receiver_pstid = 0
   self.simple_info = role_simple_info:New()
   self.is_del = false
   self.is_pass = false
 end
 
--- DECOMPILER ERROR at PC430: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushUpdateFriendOtherInvitation._proto = {
-[1] = {"receiver_pstid", "int64"}
-, 
-[2] = {"simple_info", "role_simple_info"}
-, 
-[3] = {"is_del", "bool"}
-, 
-[4] = {"is_pass", "bool"}
+  [1] = {
+    "receiver_pstid",
+    "int64"
+  },
+  [2] = {
+    "simple_info",
+    "role_simple_info"
+  },
+  [3] = {"is_del", "bool"},
+  [4] = {"is_pass", "bool"}
 }
 _class("CEventPushUpdateFriendList", CSvrPushEvent)
 CEventPushUpdateFriendList = CEventPushUpdateFriendList
--- DECOMPILER ERROR at PC439: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushUpdateFriendList.Constructor = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function CEventPushUpdateFriendList:Constructor()
   self.update_info = social_info_mobile:New()
   self.update_type = 0
 end
 
--- DECOMPILER ERROR at PC452: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushUpdateFriendList._proto = {
-[1] = {"update_info", "social_info_mobile"}
-, 
-[2] = {"update_type", "int"}
+  [1] = {
+    "update_info",
+    "social_info_mobile"
+  },
+  [2] = {
+    "update_type",
+    "int"
+  }
 }
 _class("CEventEnterChatFriendModule", CCallRequestEvent)
 CEventEnterChatFriendModule = CEventEnterChatFriendModule
--- DECOMPILER ERROR at PC461: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventEnterChatFriendModule.Constructor = function(self)
-  -- function num : 0_21
+function CEventEnterChatFriendModule:Constructor()
 end
-
--- DECOMPILER ERROR at PC464: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventEnterChatFriendModule._proto = {}
 _class("CEventEnterChatFriendModuleResult", CCallReplyEvent)
 CEventEnterChatFriendModuleResult = CEventEnterChatFriendModuleResult
--- DECOMPILER ERROR at PC473: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventEnterChatFriendModuleResult.Constructor = function(self)
-  -- function num : 0_22
+function CEventEnterChatFriendModuleResult:Constructor()
   self.ret = 0
   self.friend_list = {}
   self.bHaveInvitation = false
   self.bIsGotInvitationList = false
 end
 
--- DECOMPILER ERROR at PC496: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventEnterChatFriendModuleResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"friend_list", "map<int64,social_info_mobile>"}
-, 
-[3] = {"bHaveInvitation", "bool"}
-, 
-[4] = {"bIsGotInvitationList", "bool"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "friend_list",
+    "map<int64,social_info_mobile>"
+  },
+  [3] = {
+    "bHaveInvitation",
+    "bool"
+  },
+  [4] = {
+    "bIsGotInvitationList",
+    "bool"
+  }
 }
 _class("CEventLeaveChatFriendModule", CCallRequestEvent)
 CEventLeaveChatFriendModule = CEventLeaveChatFriendModule
--- DECOMPILER ERROR at PC505: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventLeaveChatFriendModule.Constructor = function(self)
-  -- function num : 0_23
+function CEventLeaveChatFriendModule:Constructor()
 end
-
--- DECOMPILER ERROR at PC508: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventLeaveChatFriendModule._proto = {}
 _class("CEventLeaveChatFriendModuleResult", CCallReplyEvent)
 CEventLeaveChatFriendModuleResult = CEventLeaveChatFriendModuleResult
--- DECOMPILER ERROR at PC517: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventLeaveChatFriendModuleResult.Constructor = function(self)
-  -- function num : 0_24
+function CEventLeaveChatFriendModuleResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC525: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventLeaveChatFriendModuleResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventSelectChatFriend", CCallRequestEvent)
 CEventSelectChatFriend = CEventSelectChatFriend
--- DECOMPILER ERROR at PC534: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSelectChatFriend.Constructor = function(self)
-  -- function num : 0_25
+function CEventSelectChatFriend:Constructor()
   self.select_friend = 0
 end
 
--- DECOMPILER ERROR at PC542: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSelectChatFriend._proto = {
-[1] = {"select_friend", "int64"}
+  [1] = {
+    "select_friend",
+    "int64"
+  }
 }
 _class("CEventSelectChatFriendResult", CCallReplyEvent)
 CEventSelectChatFriendResult = CEventSelectChatFriendResult
--- DECOMPILER ERROR at PC551: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSelectChatFriendResult.Constructor = function(self)
-  -- function num : 0_26
+function CEventSelectChatFriendResult:Constructor()
   self.ret = 0
   self.sender_pstid = 0
   self.msg_list = {}
 end
 
--- DECOMPILER ERROR at PC569: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSelectChatFriendResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"sender_pstid", "int64"}
-, 
-[3] = {"msg_list", "list<chat_message_info>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "sender_pstid",
+    "int64"
+  },
+  [3] = {
+    "msg_list",
+    "list<chat_message_info>"
+  }
 }
 _class("CEventPushClientRecvMaxMsgIdAck", CCliPushEvent)
 CEventPushClientRecvMaxMsgIdAck = CEventPushClientRecvMaxMsgIdAck
--- DECOMPILER ERROR at PC578: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushClientRecvMaxMsgIdAck.Constructor = function(self)
-  -- function num : 0_27
+function CEventPushClientRecvMaxMsgIdAck:Constructor()
   self.sender_pstid = 0
   self.recv_msg_max_id = 0
 end
 
--- DECOMPILER ERROR at PC591: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushClientRecvMaxMsgIdAck._proto = {
-[1] = {"sender_pstid", "int64"}
-, 
-[2] = {"recv_msg_max_id", "uint64"}
+  [1] = {
+    "sender_pstid",
+    "int64"
+  },
+  [2] = {
+    "recv_msg_max_id",
+    "uint64"
+  }
 }
 _class("CEventPushHaveNewFriendMsg", CSvrPushEvent)
 CEventPushHaveNewFriendMsg = CEventPushHaveNewFriendMsg
--- DECOMPILER ERROR at PC600: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushHaveNewFriendMsg.Constructor = function(self)
-  -- function num : 0_28
+function CEventPushHaveNewFriendMsg:Constructor()
 end
-
--- DECOMPILER ERROR at PC603: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventPushHaveNewFriendMsg._proto = {}
 _class("CEventPushHaveNewFriendMsgInner", CSvrPushEvent)
 CEventPushHaveNewFriendMsgInner = CEventPushHaveNewFriendMsgInner
--- DECOMPILER ERROR at PC612: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushHaveNewFriendMsgInner.Constructor = function(self)
-  -- function num : 0_29
+function CEventPushHaveNewFriendMsgInner:Constructor()
   self.msg_player_list = {}
 end
 
--- DECOMPILER ERROR at PC620: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushHaveNewFriendMsgInner._proto = {
-[1] = {"msg_player_list", "list<int64>"}
+  [1] = {
+    "msg_player_list",
+    "list<int64>"
+  }
 }
 _class("CEventSendFriendMsg", CCallRequestEvent)
 CEventSendFriendMsg = CEventSendFriendMsg
--- DECOMPILER ERROR at PC629: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSendFriendMsg.Constructor = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function CEventSendFriendMsg:Constructor()
   self.select_friend = 0
   self.send_message = ""
   self.friend_msg_type = FRIEND_CHAT_MSG_TYPE.FRIEND_CHAT_MSG_TYPE_STR
   self.emoji_id = 0
 end
 
--- DECOMPILER ERROR at PC652: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSendFriendMsg._proto = {
-[1] = {"select_friend", "int64"}
-, 
-[2] = {"send_message", "string"}
-, 
-[3] = {"friend_msg_type", "short"}
-, 
-[4] = {"emoji_id", "short"}
+  [1] = {
+    "select_friend",
+    "int64"
+  },
+  [2] = {
+    "send_message",
+    "string"
+  },
+  [3] = {
+    "friend_msg_type",
+    "short"
+  },
+  [4] = {"emoji_id", "short"}
 }
 _class("CEventSendFriendMsgResult", CCallReplyEvent)
 CEventSendFriendMsgResult = CEventSendFriendMsgResult
--- DECOMPILER ERROR at PC661: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSendFriendMsgResult.Constructor = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function CEventSendFriendMsgResult:Constructor()
   self.ret = 0
   self.send_msg = chat_message_info:New()
 end
 
--- DECOMPILER ERROR at PC674: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSendFriendMsgResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"send_msg", "chat_message_info"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "send_msg",
+    "chat_message_info"
+  }
 }
 _class("CEventPushFriendMsg", CSvrPushEvent)
 CEventPushFriendMsg = CEventPushFriendMsg
--- DECOMPILER ERROR at PC683: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushFriendMsg.Constructor = function(self)
-  -- function num : 0_32
+function CEventPushFriendMsg:Constructor()
   self.sender_pstid = 0
   self.msg_list = {}
 end
 
--- DECOMPILER ERROR at PC696: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushFriendMsg._proto = {
-[1] = {"sender_pstid", "int64"}
-, 
-[2] = {"msg_list", "list<chat_message_info>"}
+  [1] = {
+    "sender_pstid",
+    "int64"
+  },
+  [2] = {
+    "msg_list",
+    "list<chat_message_info>"
+  }
 }
 _class("CEventSearchFriend", CCallRequestEvent)
 CEventSearchFriend = CEventSearchFriend
--- DECOMPILER ERROR at PC705: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSearchFriend.Constructor = function(self)
-  -- function num : 0_33
+function CEventSearchFriend:Constructor()
   self.search_pstid_list = {}
 end
 
--- DECOMPILER ERROR at PC713: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSearchFriend._proto = {
-[1] = {"search_pstid_list", "list<int64>"}
+  [1] = {
+    "search_pstid_list",
+    "list<int64>"
+  }
 }
 _class("CEventSearchFriendResult", CCallReplyEvent)
 CEventSearchFriendResult = CEventSearchFriendResult
--- DECOMPILER ERROR at PC722: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSearchFriendResult.Constructor = function(self)
-  -- function num : 0_34
+function CEventSearchFriendResult:Constructor()
   self.ret = 0
   self.player_info_list = {}
 end
 
--- DECOMPILER ERROR at PC735: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSearchFriendResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"player_info_list", "list<social_player_info>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "player_info_list",
+    "list<social_player_info>"
+  }
 }
 _class("CEventPushHaveNewMsg", CSvrPushEvent)
 CEventPushHaveNewMsg = CEventPushHaveNewMsg
--- DECOMPILER ERROR at PC744: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventPushHaveNewMsg.Constructor = function(self)
-  -- function num : 0_35
+function CEventPushHaveNewMsg:Constructor()
   self.sender_pstid = 0
   self.send_time = 0
 end
 
--- DECOMPILER ERROR at PC757: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventPushHaveNewMsg._proto = {
-[1] = {"sender_pstid", "int64"}
-, 
-[2] = {"send_time", "time"}
+  [1] = {
+    "sender_pstid",
+    "int64"
+  },
+  [2] = {"send_time", "time"}
 }
 _class("CEventOutSidePushNewMsg", CSvrPushEvent)
 CEventOutSidePushNewMsg = CEventOutSidePushNewMsg
--- DECOMPILER ERROR at PC766: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventOutSidePushNewMsg.Constructor = function(self)
-  -- function num : 0_36
+function CEventOutSidePushNewMsg:Constructor()
 end
-
--- DECOMPILER ERROR at PC769: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventOutSidePushNewMsg._proto = {}
 _class("CEventGetPlayerDetailInfo", CCallRequestEvent)
 CEventGetPlayerDetailInfo = CEventGetPlayerDetailInfo
--- DECOMPILER ERROR at PC778: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetPlayerDetailInfo.Constructor = function(self)
-  -- function num : 0_37
+function CEventGetPlayerDetailInfo:Constructor()
   self.pst_id = 0
 end
 
--- DECOMPILER ERROR at PC786: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetPlayerDetailInfo._proto = {
-[1] = {"pst_id", "int64"}
+  [1] = {"pst_id", "int64"}
 }
 _class("CEventGetPlayerDetailInfoResult", CCallReplyEvent)
 CEventGetPlayerDetailInfoResult = CEventGetPlayerDetailInfoResult
--- DECOMPILER ERROR at PC795: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetPlayerDetailInfoResult.Constructor = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function CEventGetPlayerDetailInfoResult:Constructor()
   self.ret = 0
   self.m_social_info = social_player_detail_info:New()
 end
 
--- DECOMPILER ERROR at PC808: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetPlayerDetailInfoResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_social_info", "social_player_detail_info"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "m_social_info",
+    "social_player_detail_info"
+  }
 }
 _class("CEventSetFriendRemarkName", CCallRequestEvent)
 CEventSetFriendRemarkName = CEventSetFriendRemarkName
--- DECOMPILER ERROR at PC817: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSetFriendRemarkName.Constructor = function(self)
-  -- function num : 0_39
+function CEventSetFriendRemarkName:Constructor()
   self.pst_id = 0
   self.remark_name = ""
 end
 
--- DECOMPILER ERROR at PC830: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSetFriendRemarkName._proto = {
-[1] = {"pst_id", "int64"}
-, 
-[2] = {"remark_name", "string"}
+  [1] = {"pst_id", "int64"},
+  [2] = {
+    "remark_name",
+    "string"
+  }
 }
 _class("CEventSetFriendRemarkNameResult", CCallReplyEvent)
 CEventSetFriendRemarkNameResult = CEventSetFriendRemarkNameResult
--- DECOMPILER ERROR at PC839: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventSetFriendRemarkNameResult.Constructor = function(self)
-  -- function num : 0_40
+function CEventSetFriendRemarkNameResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC847: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventSetFriendRemarkNameResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventRefreshRecommendPlayer", CCallRequestEvent)
 CEventRefreshRecommendPlayer = CEventRefreshRecommendPlayer
--- DECOMPILER ERROR at PC856: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRefreshRecommendPlayer.Constructor = function(self)
-  -- function num : 0_41
+function CEventRefreshRecommendPlayer:Constructor()
   self.bRefresh = false
 end
 
--- DECOMPILER ERROR at PC864: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRefreshRecommendPlayer._proto = {
-[1] = {"bRefresh", "bool"}
+  [1] = {"bRefresh", "bool"}
 }
 _class("CEventRefreshRecommendPlayerResult", CCallReplyEvent)
 CEventRefreshRecommendPlayerResult = CEventRefreshRecommendPlayerResult
--- DECOMPILER ERROR at PC873: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRefreshRecommendPlayerResult.Constructor = function(self)
-  -- function num : 0_42
+function CEventRefreshRecommendPlayerResult:Constructor()
   self.rec_vec = {}
 end
 
--- DECOMPILER ERROR at PC881: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRefreshRecommendPlayerResult._proto = {
-[2] = {"rec_vec", "list<social_recommend>"}
+  [2] = {
+    "rec_vec",
+    "list<social_recommend>"
+  }
 }
 _class("CEventRefreshFriendOnlineState", CCallRequestEvent)
 CEventRefreshFriendOnlineState = CEventRefreshFriendOnlineState
--- DECOMPILER ERROR at PC890: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRefreshFriendOnlineState.Constructor = function(self)
-  -- function num : 0_43
+function CEventRefreshFriendOnlineState:Constructor()
 end
-
--- DECOMPILER ERROR at PC893: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventRefreshFriendOnlineState._proto = {}
 _class("CEventRefreshFriendOnlineStateResult", CCallReplyEvent)
 CEventRefreshFriendOnlineStateResult = CEventRefreshFriendOnlineStateResult
--- DECOMPILER ERROR at PC902: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRefreshFriendOnlineStateResult.Constructor = function(self)
-  -- function num : 0_44
+function CEventRefreshFriendOnlineStateResult:Constructor()
   self.update_friend_list = {}
 end
 
--- DECOMPILER ERROR at PC910: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRefreshFriendOnlineStateResult._proto = {
-[1] = {"update_friend_list", "list<social_info_mobile>"}
+  [1] = {
+    "update_friend_list",
+    "list<social_info_mobile>"
+  }
 }
 _class("CEventBothwayFriendReq", CCallRequestEvent)
 CEventBothwayFriendReq = CEventBothwayFriendReq
--- DECOMPILER ERROR at PC919: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventBothwayFriendReq.Constructor = function(self)
-  -- function num : 0_45
+function CEventBothwayFriendReq:Constructor()
   self.pst_id = 0
 end
 
--- DECOMPILER ERROR at PC927: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventBothwayFriendReq._proto = {
-[1] = {"pst_id", "int64"}
+  [1] = {"pst_id", "int64"}
 }
 _class("CEventBothwayFriendResult", CCallReplyEvent)
 CEventBothwayFriendResult = CEventBothwayFriendResult
--- DECOMPILER ERROR at PC936: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventBothwayFriendResult.Constructor = function(self)
-  -- function num : 0_46
+function CEventBothwayFriendResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC944: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventBothwayFriendResult._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
-

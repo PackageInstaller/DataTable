@@ -1,72 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_direct_line_blocked.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_DirectLineBlocked", SkillScopeCalculator_Base)
 SkillScopeCalculator_DirectLineBlocked = SkillScopeCalculator_DirectLineBlocked
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_DirectLineBlocked.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_DirectLineBlocked:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local casterPos = centerPos
   local bodyAreaArray = bodyArea
   local effectDirType = 1
   local size = scopeParam[1]
-  if not scopeParam[2] or not GetBlockFlagByValue(scopeParam[2]) then
-    local blockFlag = BlockFlag.Skill
-  end
+  local blockFlag = scopeParam[2] and GetBlockFlagByValue(scopeParam[2]) or BlockFlag.Skill
   local isCenterInRange = scopeParam[3]
   local isBackward = scopeParam[4]
   local isBlockSkill = effectDirType == 1
   local boayArea = {}
-  for i,p in ipairs(bodyAreaArray) do
-    (table.insert)(boayArea, Vector2(casterPos.x + p.x, casterPos.y + p.y))
+  for i, p in ipairs(bodyAreaArray) do
+    table.insert(boayArea, Vector2(casterPos.x + p.x, casterPos.y + p.y))
   end
   local targetArea = {}
   local wholeArea = {}
-  for i,p in ipairs(boayArea) do
+  for i, p in ipairs(boayArea) do
     for index = 1, size do
       local directpos = Vector2(p.x + casterDir.x * index, p.y + casterDir.y * index)
-      if not isBlockSkill or not (self._gridFilter):IsPosBlock(directpos, blockFlag) then
-        do
-          self:_InsertTargetGrid(targetArea, directpos, wholeArea)
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC73: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if isBlockSkill and self._gridFilter:IsPosBlock(directpos, blockFlag) then
+        break
       end
+      self:_InsertTargetGrid(targetArea, directpos, wholeArea)
     end
   end
-  if isCenterInRange and not (self._gridFilter):IsPosBlock(centerPos, blockFlag) then
+  if isCenterInRange and not self._gridFilter:IsPosBlock(centerPos, blockFlag) then
     self:_InsertTargetGrid(targetArea, centerPos, wholeArea)
   end
   if isBackward then
-    for i,p in ipairs(boayArea) do
+    for i, p in ipairs(boayArea) do
       for index = 1, size do
         local backwardPos = Vector2(p.x - casterDir.x * index, p.y - casterDir.y * index)
-        if not isBlockSkill or not (self._gridFilter):IsPosBlock(backwardPos, blockFlag) then
-          do
-            self:_InsertTargetGrid(targetArea, backwardPos, wholeArea)
-            -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC124: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if isBlockSkill and self._gridFilter:IsPosBlock(backwardPos, blockFlag) then
+          break
         end
+        self:_InsertTargetGrid(targetArea, backwardPos, wholeArea)
       end
     end
   end
-  local result = nil
+  local result
   if isBlockSkill then
     result = SkillScopeResult:New(SkillScopeType.DirectLineBlocked, casterPos, targetArea, wholeArea)
   else
     result = SkillScopeResult:New(SkillScopeType.DirectLine, casterPos, targetArea, wholeArea)
   end
-  do return result end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
+  return result
 end
-
-

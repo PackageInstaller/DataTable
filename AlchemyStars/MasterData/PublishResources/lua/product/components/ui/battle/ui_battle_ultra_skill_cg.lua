@@ -1,152 +1,107 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_ultra_skill_cg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleUltraSkillCG", UIController)
 UIBattleUltraSkillCG = UIBattleUltraSkillCG
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleUltraSkillCG.OnShow = function(self, arg)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattleUltraSkillCG:OnShow(arg)
   local uiParams = arg[1]
   if not self:SenityCheck(uiParams) then
-    return 
+    return
   end
   self:SyncLoadAllAsset(uiParams)
-  self.toolbox = self:FetchUIComponents((self._fxresReq).Obj)
+  self.toolbox = self:FetchUIComponents(self._fxresReq.Obj)
   local go = self:GetGameObject("SafeArea")
-  ;
-  ((self.toolbox).csRTrsfmEffect):SetParent(go.transform, false)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self.toolbox).csRTrsfmEffect).localPosition = Vector3.zero
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self.toolbox).csRTrsfmEffect).localScale = Vector3.one
+  self.toolbox.csRTrsfmEffect:SetParent(go.transform, false)
+  self.toolbox.csRTrsfmEffect.localPosition = Vector3.zero
+  self.toolbox.csRTrsfmEffect.localScale = Vector3.one
   self:Refresh(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleUltraSkillCG.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattleUltraSkillCG:Dispose()
   self.toolbox = nil
   if self._fxresReq then
-    (self._fxresReq):Dispose()
+    self._fxresReq:Dispose()
     self._fxresReq = nil
   end
   if self._cgMatReq then
-    (self._cgMatReq):Dispose()
+    self._cgMatReq:Dispose()
     self._cgMatReq = nil
   end
   if self._iconMatReq then
-    (self._iconMatReq):Dispose()
+    self._iconMatReq:Dispose()
     self._iconMatReq = nil
   end
-  ;
-  ((UIBattleUltraSkillCG.super).Dispose)(self)
+  UIBattleUltraSkillCG.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleUltraSkillCG.SenityCheck = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBattleUltraSkillCG:SenityCheck(uiParams)
   local resmgr = ResourceManager:GetInstance()
   if not resmgr:HasResource(uiParams.effectRes) then
-    (Log.fatal)(self._className, "invalid effectRes: ", tostring(uiParams.effectRes))
+    Log.fatal(self._className, "invalid effectRes: ", tostring(uiParams.effectRes))
     return false
   end
   if not resmgr:HasResource(uiParams.petCGMat) then
-    (Log.fatal)(self._className, "invalid petCG: ", tostring(uiParams.petCGMat))
+    Log.fatal(self._className, "invalid petCG: ", tostring(uiParams.petCGMat))
     return false
   end
   if not resmgr:HasResource(uiParams.petIconMat) then
-    (Log.fatal)(self._className, "invalid petIcon: ", tostring(uiParams.petIconMat))
+    Log.fatal(self._className, "invalid petIcon: ", tostring(uiParams.petIconMat))
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleUltraSkillCG.SyncLoadAllAsset = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBattleUltraSkillCG:SyncLoadAllAsset(uiParams)
   local resmgr = ResourceManager:GetInstance()
   self._fxresReq = resmgr:SyncLoadAsset(uiParams.effectRes, LoadType.GameObject)
   self._cgMatReq = resmgr:SyncLoadAsset(uiParams.petCGMat, LoadType.Mat)
   self._iconMatReq = resmgr:SyncLoadAsset(uiParams.petIconMat, LoadType.Mat)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleUltraSkillCG.FetchUIComponents = function(self, go)
-  -- function num : 0_4
+function UIBattleUltraSkillCG:FetchUIComponents(go)
   local toolbox = {}
   toolbox.csGOEffect = go
   toolbox.csRTrsfmEffect = go:GetComponent("RectTransform")
   local csTrsfmEffect = go.transform
-  toolbox.csGORoleCG = (csTrsfmEffect:Find("name/root/role")).gameObject
-  toolbox.csRawImageRoleCG = (toolbox.csGORoleCG):GetComponent("RawImage")
-  toolbox.csGOIcon = (csTrsfmEffect:Find("name/name01/roleicon")).gameObject
-  toolbox.csRawImageIcon = (toolbox.csGOIcon):GetComponent("RawImage")
-  local csGOSkillName = (csTrsfmEffect:Find("name/name01/skill")).gameObject
+  toolbox.csGORoleCG = csTrsfmEffect:Find("name/root/role").gameObject
+  toolbox.csRawImageRoleCG = toolbox.csGORoleCG:GetComponent("RawImage")
+  toolbox.csGOIcon = csTrsfmEffect:Find("name/name01/roleicon").gameObject
+  toolbox.csRawImageIcon = toolbox.csGOIcon:GetComponent("RawImage")
+  local csGOSkillName = csTrsfmEffect:Find("name/name01/skill").gameObject
   toolbox.csTextSkillName = csGOSkillName:GetComponent("UILocalizationText")
-  local csGOSkillNameDeco0 = (csTrsfmEffect:Find("name/Text")).gameObject
+  local csGOSkillNameDeco0 = csTrsfmEffect:Find("name/Text").gameObject
   toolbox.csTextSkillNameDeco0 = csGOSkillNameDeco0:GetComponent("UILocalizationText")
-  local csGOSkillNameDeco1 = (csTrsfmEffect:Find("name/Text1")).gameObject
+  local csGOSkillNameDeco1 = csTrsfmEffect:Find("name/Text1").gameObject
   toolbox.csTextSkillNameDeco1 = csGOSkillNameDeco1:GetComponent("UILocalizationText")
   toolbox.csEffectWithImageEffect = go:GetComponent("EffectWithImageEffect")
   return toolbox
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleUltraSkillCG.Refresh = function(self, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
+function UIBattleUltraSkillCG:Refresh(uiParams)
   local toolbox = self.toolbox
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R3 in 'UnsetPending'
-
-  if toolbox.csRawImageRoleCG and self._cgMatReq and (self._cgMatReq).Obj then
-    (toolbox.csRawImageRoleCG).material = (self._cgMatReq).Obj
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((toolbox.csRawImageRoleCG).transform).localPosition = Vector3((uiParams.offsetPos).x, (uiParams.offsetPos).y, 0)
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((toolbox.csRawImageRoleCG).transform).localScale = Vector3(uiParams.offsetScale, uiParams.offsetScale, 1)
+  if toolbox.csRawImageRoleCG and self._cgMatReq and self._cgMatReq.Obj then
+    toolbox.csRawImageRoleCG.material = self._cgMatReq.Obj
+    toolbox.csRawImageRoleCG.transform.localPosition = Vector3(uiParams.offsetPos.x, uiParams.offsetPos.y, 0)
+    toolbox.csRawImageRoleCG.transform.localScale = Vector3(uiParams.offsetScale, uiParams.offsetScale, 1)
   end
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-  if toolbox.csRawImageIcon and self._iconMatReq and (self._iconMatReq).Obj then
-    (toolbox.csRawImageIcon).material = (self._iconMatReq).Obj
+  if toolbox.csRawImageIcon and self._iconMatReq and self._iconMatReq.Obj then
+    toolbox.csRawImageIcon.material = self._iconMatReq.Obj
   end
-  local strSkillName = (StringTable.Get)("str_skill_name_" .. uiParams.skillID)
+  local strSkillName = StringTable.Get("str_skill_name_" .. uiParams.skillID)
   if toolbox.csTextSkillName then
-    (toolbox.csTextSkillName):SetText(strSkillName)
+    toolbox.csTextSkillName:SetText(strSkillName)
   end
   if toolbox.csTextSkillNameDeco0 then
-    (toolbox.csTextSkillNameDeco0):SetText(strSkillName)
+    toolbox.csTextSkillNameDeco0:SetText(strSkillName)
   end
   if toolbox.csTextSkillNameDeco1 then
-    (toolbox.csTextSkillNameDeco1):SetText(strSkillName)
+    toolbox.csTextSkillNameDeco1:SetText(strSkillName)
   end
-  local csTrsfm = (self:GetGameObject()).transform
+  local csTrsfm = self:GetGameObject().transform
   local csTrsfmUIContainer = csTrsfm.parent
   local csTrsfmDepth = csTrsfmUIContainer.parent
-  local csGOCamera = (csTrsfmDepth:Find("Camera")).gameObject
+  local csGOCamera = csTrsfmDepth:Find("Camera").gameObject
   local csCamera = csGOCamera:GetComponent("Camera")
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R9 in 'UnsetPending'
-
   if toolbox.csEffectWithImageEffect then
-    (toolbox.csEffectWithImageEffect).imageCamera = csCamera
+    toolbox.csEffectWithImageEffect.imageCamera = csCamera
   end
-  ;
-  ((self.toolbox).csGOEffect):SetActive(true)
+  self.toolbox.csGOEffect:SetActive(true)
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_pet_try_Plus/ui_activity_pet_try_plus_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityPetTryPlusItem", UICustomWidget)
 UIActivityPetTryPlusItem = UIActivityPetTryPlusItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPetTryPlusItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityPetTryPlusItem:OnShow(uiParams)
   self._go = self:GetGameObject("go")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryPlusItem._GetComponents = function(self)
-  -- function num : 0_1
+function UIActivityPetTryPlusItem:_GetComponents()
   self._head = self:GetUIComponent("RawImageLoader", "head")
   self._headRawImage = self:GetUIComponent("RawImage", "head")
   self._decorate = self:GetUIComponent("Transform", "decorate")
@@ -26,18 +16,12 @@ UIActivityPetTryPlusItem._GetComponents = function(self)
   self._starTab = {}
   for i = 1, 6 do
     local star = self:GetGameObject("star" .. i)
-    -- DECOMPILER ERROR at PC46: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._starTab)[i] = star
+    self._starTab[i] = star
   end
   self._rect = self:GetUIComponent("RectTransform", "go")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryPlusItem.SetData = function(self, index, data, offset, isShowBelong)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityPetTryPlusItem:SetData(index, data, offset, isShowBelong)
   self:_GetComponents()
   self._idx = index
   self._data = data
@@ -49,68 +33,42 @@ UIActivityPetTryPlusItem.SetData = function(self, index, data, offset, isShowBel
   self:AttachEvent(GameEventType.OnSummerTwoPetTryItemClick, self.OnSummerTwoPetTryItemClick)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryPlusItem.Active = function(self, active)
-  -- function num : 0_3
-  (self._go):SetActive(active)
+function UIActivityPetTryPlusItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryPlusItem._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  ((self._belong).gameObject):SetActive(self._isShowBelong)
-  ;
-  (self._belong):LoadImage((self._data).logo)
-  if not self._isShowBelong or (self._data).icon then
-    (self._head):LoadImage((self._data).cg)
-    local cfg = (Cfg.pet_cg_transform)({ResName = (self._data).cg, UIName = "UIBattleResultComplete"})
-    if cfg then
-      cfg = cfg[1]
-      -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      ((self._head).transform).localPosition = Vector3((cfg.CGTransform)[1] - 40, (cfg.CGTransform)[2] - 100, 0)
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      ((self._head).transform).localScale = Vector3((cfg.CGTransform)[3], (cfg.CGTransform)[3], (cfg.CGTransform)[3])
-    end
-    local clipAngle = 0.4445
-    ;
-    ((self._headRawImage).material):SetFloat("_ClipAngle", clipAngle)
-    for i = 0, (self._decorate).childCount - 1 do
-      ((((self._decorate):GetChild(i)):GetComponent(typeof((UnityEngine.UI).Image))).material):SetFloat("_ClipAngle", clipAngle)
-    end
-    ;
-    (self._name):SetText((self._data).name)
-    do
-      if self._offset then
-        local offset = self._offset
-        -- DECOMPILER ERROR at PC102: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        ((self._offsetPos).transform).localPosition = Vector3(offset[1], offset[2], 0)
-      end
-      -- DECOMPILER ERROR at PC106: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._element).sprite = (self._data).element
-      for i = 1, #self._starTab do
-        ((self._starTab)[i]):SetActive(i <= (self._data).star)
-      end
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
-    end
+function UIActivityPetTryPlusItem:_OnValue()
+  self._belong.gameObject:SetActive(self._isShowBelong)
+  self._belong:LoadImage(self._data.logo)
+  if not self._isShowBelong or self._data.icon then
+  end
+  self._head:LoadImage(self._data.cg)
+  local cfg = Cfg.pet_cg_transform({
+    ResName = self._data.cg,
+    UIName = "UIBattleResultComplete"
+  })
+  if cfg then
+    cfg = cfg[1]
+    self._head.transform.localPosition = Vector3(cfg.CGTransform[1] - 40, cfg.CGTransform[2] - 100, 0)
+    self._head.transform.localScale = Vector3(cfg.CGTransform[3], cfg.CGTransform[3], cfg.CGTransform[3])
+  end
+  local clipAngle = 0.4445
+  self._headRawImage.material:SetFloat("_ClipAngle", clipAngle)
+  for i = 0, self._decorate.childCount - 1 do
+    self._decorate:GetChild(i):GetComponent(typeof(UnityEngine.UI.Image)).material:SetFloat("_ClipAngle", clipAngle)
+  end
+  self._name:SetText(self._data.name)
+  if self._offset then
+    local offset = self._offset
+    self._offsetPos.transform.localPosition = Vector3(offset[1], offset[2], 0)
+  end
+  self._element.sprite = self._data.element
+  for i = 1, #self._starTab do
+    self._starTab[i]:SetActive(i <= self._data.star)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPetTryPlusItem.detailsbtnOnClick = function(self, go)
-  -- function num : 0_5
-  local id = (self._data).petid
+function UIActivityPetTryPlusItem:detailsbtnOnClick(go)
+  local id = self._data.petid
   self:ShowDialog("UIShopPetDetailController", id)
 end
-
-

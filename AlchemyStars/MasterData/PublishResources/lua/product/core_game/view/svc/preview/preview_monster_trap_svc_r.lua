@@ -1,233 +1,164 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/preview_monster_trap_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewMonsterTrapService", BaseService)
 PreviewMonsterTrapService = PreviewMonsterTrapService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewMonsterTrapService.Constructor = function(self, world)
-  -- function num : 0_0
+function PreviewMonsterTrapService:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
+  self._configService = self._world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.Initialize = function(self)
-  -- function num : 0_1
+function PreviewMonsterTrapService:Initialize()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.Dispose = function(self)
-  -- function num : 0_2
+function PreviewMonsterTrapService:Dispose()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.CheckPreviewMonsterAction = function(self, posTouch, offset)
-  -- function num : 0_3
+function PreviewMonsterTrapService:CheckPreviewMonsterAction(posTouch, offset)
   local isTouchMonster, touchMonsterEntityID = self:IsClickMonster(posTouch, offset)
   if isTouchMonster then
     self:ClearPreviewMonster(posTouch)
     self:ClearPreviewTrap(posTouch)
     self:ShowInUIBar(touchMonsterEntityID)
     self:_ShowPreviewMonsterAction(touchMonsterEntityID, posTouch, offset)
-    return 
+    return
   end
   local isTouchTrap, touchTrapEntityID = self:IsClickTrap(posTouch, offset)
   if isTouchTrap then
     self:ClearPreviewMonster(posTouch)
     self:ClearPreviewTrap(posTouch)
     self:_ShowPreviewTrapAction(touchTrapEntityID, posTouch, offset)
-    return 
+    return
   end
   self:ClearMonsterTrapPreview()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.ClearMonsterTrapPreview = function(self)
-  -- function num : 0_4
+function PreviewMonsterTrapService:ClearMonsterTrapPreview()
   if self:ClearPreviewMonster() then
     self:HideHideInUIBar()
-    return 
+    return
   end
   if self:ClearPreviewTrap() then
     self:HideHideInUIBar()
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.IsClickMonster = function(self, touchPosition, offset)
-  -- function num : 0_5 , upvalues : _ENV
-  local previewEnvCmpt = ((self._world):GetPreviewEntity()):PreviewEnv()
+function PreviewMonsterTrapService:IsClickMonster(touchPosition, offset)
+  local previewEnvCmpt = self._world:GetPreviewEntity():PreviewEnv()
   local clickCount = previewEnvCmpt:GetMonsterClickCount()
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(group:GetEntities()) do
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(group:GetEntities()) do
     local buffView = e:BuffView()
     if e:IsOnGridPosition(touchPosition) then
-      do
-        if EDITOR then
-          local aiDebugModule = (GameGlobal.GetModule)(AIDebugModule)
-          aiDebugModule:SetSelectMonsterID((e:MonsterID()):GetMonsterID(), e:GetID())
-        end
-        -- DECOMPILER ERROR at PC67: Unhandled construct in 'MakeBoolean' P1
-
-        if not buffView:HasBuffEffect(BuffEffectType.NotShowBossHP) and e:HasRide() and (e:Ride()):IsOnlyRiderCanClick() and (e:Ride()):GetRiderID() == e:GetID() then
-          return true, e:GetID()
-        end
-        do
-          do
-            local isRider = (math.fmod)(clickCount, 2) == 0
+      if EDITOR then
+        local aiDebugModule = GameGlobal.GetModule(AIDebugModule)
+        aiDebugModule:SetSelectMonsterID(e:MonsterID():GetMonsterID(), e:GetID())
+      end
+      if not buffView:HasBuffEffect(BuffEffectType.NotShowBossHP) then
+        if e:HasRide() then
+          if e:Ride():IsOnlyRiderCanClick() then
+            if e:Ride():GetRiderID() == e:GetID() then
+              return true, e:GetID()
+            end
+          else
+            local isRider = math.fmod(clickCount, 2) == 0
             if isRider then
               previewEnvCmpt:SetMonsterClickCount(clickCount + 1)
-              return true, (e:Ride()):GetRiderID()
+              return true, e:Ride():GetRiderID()
             else
               previewEnvCmpt:SetMonsterClickCount(clickCount + 1)
-              return true, (e:Ride()):GetMountID()
+              return true, e:Ride():GetMountID()
             end
-            previewEnvCmpt:SetMonsterClickCount(0)
-            do return true, e:GetID() end
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC107: LeaveBlock: unexpected jumping out IF_STMT
-
           end
+        else
+          previewEnvCmpt:SetMonsterClickCount(0)
+          return true, e:GetID()
         end
       end
     end
   end
   previewEnvCmpt:SetMonsterClickCount(0)
-  do return false, nil end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return false, nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.IsClickTrap = function(self, posTouch, offset)
-  -- function num : 0_6 , upvalues : _ENV
+function PreviewMonsterTrapService:IsClickTrap(posTouch, offset)
   local listFindTrapID = {}
   listFindTrapID = self:_FindTrapByPos(posTouch)
-  if (table.count)(listFindTrapID) > 0 then
+  if table.count(listFindTrapID) > 0 then
     local sortTrapID = self:_SortByTrapLevel(listFindTrapID)
-    local configService = (self._world):GetService("Config")
+    local configService = self._world:GetService("Config")
     for i = 1, sortTrapID:Size() do
       local sortData = sortTrapID:GetAt(i)
       local entityTrap = sortData:GetTrapEntity()
-      local utilSvc = (self._world):GetService("UtilData")
+      local utilSvc = self._world:GetService("UtilData")
       local skillID = utilSvc:GetTrapPreviewSkillID(entityTrap)
-      if skillID and skillID > 0 then
+      if skillID and 0 < skillID then
         local skillConfigData = configService:GetSkillConfigData(skillID, entityTrap)
         local skillPreviewType = skillConfigData:GetSkillPreviewType()
         if SkillPreviewType.Tips == skillPreviewType or SkillPreviewType.ScopeAndTips == skillPreviewType or SkillPreviewType.TrapActiveSkill == skillPreviewType or SkillPreviewType.TrapDesc == skillPreviewType or SkillPreviewType.TrapScopeAndTips == skillPreviewType or SkillPreviewType.PetTrapMoveArrow == skillPreviewType then
           return true, sortData:GetTrapID()
         end
       else
-        do
-          do
-            local trapConfigData = configService:GetTrapConfigData()
-            if trapConfigData:IsShowDescTips((entityTrap:TrapRender()):GetTrapID()) then
-              return true, sortData:GetTrapID()
-            end
-            -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC88: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        local trapConfigData = configService:GetTrapConfigData()
+        if trapConfigData:IsShowDescTips(entityTrap:TrapRender():GetTrapID()) then
+          return true, sortData:GetTrapID()
         end
       end
     end
   end
-  do
-    return false, nil
-  end
+  return false, nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.ClearPreviewMonster = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local reBoard = (self._world):GetRenderBoardEntity()
-  do
-    if EDITOR then
-      local aiDebugModule = (GameGlobal.GetModule)(AIDebugModule)
-      aiDebugModule:ClearSelectMonsterID()
-    end
-    if reBoard:HasPreviewMonsterAction() then
-      local previewCmpt = reBoard:PreviewMonsterAction()
-      if previewCmpt:IsShowMonsterAction() then
-        local entityID = previewCmpt:GetMonsterEntityID()
-        local e = (self._world):GetEntityByID(entityID)
-        ;
-        (Log.notice)("Entity ID:", e:GetID(), "GridPosition:", tostring((e:GridLocation()).Position))
-        reBoard:ReplacePreviewMonsterAction(false, entityID)
-        self:_HidePreviewMonster(entityID, reBoard)
-        return true
-      end
-    end
-    do
-      return false
+function PreviewMonsterTrapService:ClearPreviewMonster()
+  local reBoard = self._world:GetRenderBoardEntity()
+  if EDITOR then
+    local aiDebugModule = GameGlobal.GetModule(AIDebugModule)
+    aiDebugModule:ClearSelectMonsterID()
+  end
+  if reBoard:HasPreviewMonsterAction() then
+    local previewCmpt = reBoard:PreviewMonsterAction()
+    if previewCmpt:IsShowMonsterAction() then
+      local entityID = previewCmpt:GetMonsterEntityID()
+      local e = self._world:GetEntityByID(entityID)
+      Log.notice("Entity ID:", e:GetID(), "GridPosition:", tostring(e:GridLocation().Position))
+      reBoard:ReplacePreviewMonsterAction(false, entityID)
+      self:_HidePreviewMonster(entityID, reBoard)
+      return true
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.HidePreviewTrap = function(self)
-  -- function num : 0_8
-  local renderEntityService = (self._world):GetService("RenderEntity")
+function PreviewMonsterTrapService:HidePreviewTrap()
+  local renderEntityService = self._world:GetService("RenderEntity")
   renderEntityService:DestroyMonsterPreviewAreaOutlineEntity()
-  ;
-  ((self._world):GetService("PreviewActiveSkill")):_RevertAllConvertElement(true)
-  local prvwActiveSkillSvc = (self._world):GetService("PreviewActiveSkill")
+  self._world:GetService("PreviewActiveSkill"):_RevertAllConvertElement(true)
+  local prvwActiveSkillSvc = self._world:GetService("PreviewActiveSkill")
   prvwActiveSkillSvc:HideSkillTips()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.ClearPreviewTrap = function(self)
-  -- function num : 0_9
-  local reBoard = (self._world):GetRenderBoardEntity()
-  do
-    if reBoard:HasPreviewTrapAction() then
-      local previewCmpt = reBoard:PreviewTrapAction()
-      if previewCmpt:IsShowTrapAction() then
-        reBoard:ReplacePreviewTrapAction()
-        previewCmpt:ShowTrapAction(false)
-        self:HidePreviewTrap()
-        return true
-      end
+function PreviewMonsterTrapService:ClearPreviewTrap()
+  local reBoard = self._world:GetRenderBoardEntity()
+  if reBoard:HasPreviewTrapAction() then
+    local previewCmpt = reBoard:PreviewTrapAction()
+    if previewCmpt:IsShowTrapAction() then
+      reBoard:ReplacePreviewTrapAction()
+      previewCmpt:ShowTrapAction(false)
+      self:HidePreviewTrap()
+      return true
     end
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService._ShowPreviewMonsterAction = function(self, monsterEntityID, touchPosition, offset)
-  -- function num : 0_10
-  local reBoard = (self._world):GetRenderBoardEntity()
+function PreviewMonsterTrapService:_ShowPreviewMonsterAction(monsterEntityID, touchPosition, offset)
+  local reBoard = self._world:GetRenderBoardEntity()
   reBoard:ReplacePreviewMonsterAction(true, monsterEntityID)
   local previewCmpt = reBoard:PreviewMonsterAction()
   previewCmpt:SetTouchPosition(touchPosition, offset)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService._ShowPreviewTrapAction = function(self, trapEntityID, touchPosition, offset)
-  -- function num : 0_11
-  local reBoard = (self._world):GetRenderBoardEntity()
+function PreviewMonsterTrapService:_ShowPreviewTrapAction(trapEntityID, touchPosition, offset)
+  local reBoard = self._world:GetRenderBoardEntity()
   if not reBoard:HasPreviewTrapAction() then
     reBoard:AddPreviewTrapAction()
   end
@@ -237,21 +168,18 @@ PreviewMonsterTrapService._ShowPreviewTrapAction = function(self, trapEntityID, 
   previewCmpt:SetTrapPreviewData(trapEntityID, touchPosition, offset)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.ShowInUIBar = function(self, entityID)
-  -- function num : 0_12 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local entity = (self._world):GetEntityByID(entityID)
+function PreviewMonsterTrapService:ShowInUIBar(entityID)
+  local utilDataSvc = self._world:GetService("UtilData")
+  local entity = self._world:GetEntityByID(entityID)
   if self:IsNeedShowUIHPBar(entityID) then
     local HPCmpt = entity:HP()
     local maxHP = HPCmpt:GetMaxHP()
     local HP = HPCmpt:GetRedHP()
     local hpPercent = HP / maxHP
-    local shieldValue = (HPCmpt:GetShieldValue())
-    local templateID, hpBarType, elementType = nil, nil, nil
-    local sepHPList = (entity:HP()):GetHPLockSepList()
-    local sepHpUnlockedList = (entity:HP()):GetHPLockUnlockedIndexList()
+    local shieldValue = HPCmpt:GetShieldValue()
+    local templateID, hpBarType, elementType
+    local sepHPList = entity:HP():GetHPLockSepList()
+    local sepHpUnlockedList = entity:HP():GetHPLockUnlockedIndexList()
     local showCurseHp = HPCmpt:GetShowCurseHp()
     local curseHpVal = HPCmpt:GetCurseHpValue()
     local isWorldBoss = false
@@ -262,7 +190,7 @@ PreviewMonsterTrapService.ShowInUIBar = function(self, entityID)
     local worldBossCurStage = 0
     local UIBossHPType = BossUIHPType.Normal
     if entity:MonsterID() then
-      templateID = (entity:MonsterID()):GetMonsterID()
+      templateID = entity:MonsterID():GetMonsterID()
       local cMonsterId = entity:MonsterID()
       if cMonsterId:IsWorldBoss() then
         isWorldBoss = true
@@ -270,137 +198,136 @@ PreviewMonsterTrapService.ShowInUIBar = function(self, entityID)
         worldBossCurHPImageID = hpCmpt:GetCurStageImage()
         worldBossPreHPImageID = hpCmpt:GetPreStageImage()
         worldBossCurStageHpPercent = 1 - hpCmpt:GetCurStageHPPercent()
-        worldBossTotalDamage = (BattleStatHelper.GetMonsterBeHitDamageValue)(entityID)
+        worldBossTotalDamage = BattleStatHelper.GetMonsterBeHitDamageValue(entityID)
         worldBossCurStage = hpCmpt:GetCurStage()
       end
-      do
-        do
-          local monsterConfigData = (self._configService):GetMonsterConfigData()
-          UIBossHPType = monsterConfigData:GetBossUIHPType(templateID)
-          if entity:HasBoss() then
-            if (entity:MonsterID()):IsEliteMonster() then
-              hpBarType = HPBarType.EliteBoss
-            else
-              hpBarType = HPBarType.Boss
-            end
-          else
-            if (entity:MonsterID()):IsEliteMonster() then
-              hpBarType = HPBarType.EliteMonster
-            else
-              hpBarType = HPBarType.NormalMonster
-            end
-          end
-          elementType = utilDataSvc:GetEntityAttributeByName(entity, "Element")
-          if entity:TrapID() then
-            templateID = (entity:TrapID()):GetTrapID()
-            hpBarType = HPBarType.Trap
-          end
-          local greyVal = utilDataSvc:GetEntityBuffValue(entity, "GreyHPValue") or 0
-          local hpEnergyBuffEffectType = utilDataSvc:GetEntityBuffValue(entity, "HPEnergyBuffEffectType")
-          local hpEnergyVal = 0
-          local maxHPEnergyVal = 0
-          if hpEnergyBuffEffectType then
-            hpEnergyVal = utilDataSvc:GetBuffLayer(entity, hpEnergyBuffEffectType)
-            local bvinst = (InnerGameHelperRender.GetSingleBuffByBuffEffect)(entityID, hpEnergyBuffEffectType)
-            if bvinst then
-              maxHPEnergyVal = (bvinst:BuffConfigData()):GetMaxLayerCount()
-            end
-            maxHPEnergyVal = (math.max)(hpEnergyVal, maxHPEnergyVal)
-          end
-          do
-            local info = {pstId = entityID, tplId = templateID, HPBarType = hpBarType, sepHPList = sepHPList, sepHpUnlockedList = sepHpUnlockedList, entity = entity, percent = hpPercent, hP = HP, HP = HP, maxHP = maxHP, shieldValue = shieldValue, curElement = elementType, attack = utilDataSvc:GetEntityAttack(entity) or 0, greyVal = greyVal, hpEnergyVal = hpEnergyVal, maxHPEnergyVal = maxHPEnergyVal, showCurseHp = showCurseHp, curseHpVal = curseHpVal, isWorldBoss = isWorldBoss, worldBossCurImageID = worldBossCurHPImageID, worldBossPreImageID = worldBossPreHPImageID, worldBossCurStageHpPercent = worldBossCurStageHpPercent, worldBossTotalDamage = worldBossTotalDamage, worldBossCurStage = worldBossCurStage, UIBossHPType = UIBossHPType}
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreviewMonsterReplaceHPBar, info)
-          end
+      local monsterConfigData = self._configService:GetMonsterConfigData()
+      UIBossHPType = monsterConfigData:GetBossUIHPType(templateID)
+      if entity:HasBoss() then
+        if entity:MonsterID():IsEliteMonster() then
+          hpBarType = HPBarType.EliteBoss
+        else
+          hpBarType = HPBarType.Boss
         end
+      elseif entity:MonsterID():IsEliteMonster() then
+        hpBarType = HPBarType.EliteMonster
+      else
+        hpBarType = HPBarType.NormalMonster
       end
+      elementType = utilDataSvc:GetEntityAttributeByName(entity, "Element")
     end
+    if entity:TrapID() then
+      templateID = entity:TrapID():GetTrapID()
+      hpBarType = HPBarType.Trap
+    end
+    local greyVal = utilDataSvc:GetEntityBuffValue(entity, "GreyHPValue") or 0
+    local hpEnergyBuffEffectType = utilDataSvc:GetEntityBuffValue(entity, "HPEnergyBuffEffectType")
+    local hpEnergyVal = 0
+    local maxHPEnergyVal = 0
+    if hpEnergyBuffEffectType then
+      hpEnergyVal = utilDataSvc:GetBuffLayer(entity, hpEnergyBuffEffectType)
+      local bvinst = InnerGameHelperRender.GetSingleBuffByBuffEffect(entityID, hpEnergyBuffEffectType)
+      if bvinst then
+        maxHPEnergyVal = bvinst:BuffConfigData():GetMaxLayerCount()
+      end
+      maxHPEnergyVal = math.max(hpEnergyVal, maxHPEnergyVal)
+    end
+    local info = {
+      pstId = entityID,
+      tplId = templateID,
+      HPBarType = hpBarType,
+      sepHPList = sepHPList,
+      sepHpUnlockedList = sepHpUnlockedList,
+      entity = entity,
+      percent = hpPercent,
+      hP = HP,
+      HP = HP,
+      maxHP = maxHP,
+      shieldValue = shieldValue,
+      curElement = elementType,
+      attack = utilDataSvc:GetEntityAttack(entity) or 0,
+      greyVal = greyVal,
+      hpEnergyVal = hpEnergyVal,
+      maxHPEnergyVal = maxHPEnergyVal,
+      showCurseHp = showCurseHp,
+      curseHpVal = curseHpVal,
+      isWorldBoss = isWorldBoss,
+      worldBossCurImageID = worldBossCurHPImageID,
+      worldBossPreImageID = worldBossPreHPImageID,
+      worldBossCurStageHpPercent = worldBossCurStageHpPercent,
+      worldBossTotalDamage = worldBossTotalDamage,
+      worldBossCurStage = worldBossCurStage,
+      UIBossHPType = UIBossHPType
+    }
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PreviewMonsterReplaceHPBar, info)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.HideHideInUIBar = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RevokePreviewMonsterReplaceHPBar)
+function PreviewMonsterTrapService:HideHideInUIBar()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RevokePreviewMonsterReplaceHPBar)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService._HidePreviewMonster = function(self, monsterEntityID, boardEntity)
-  -- function num : 0_14
+function PreviewMonsterTrapService:_HidePreviewMonster(monsterEntityID, boardEntity)
   local previewCmpt = boardEntity:PreviewMonsterAction()
   previewCmpt:KillPreviewTask()
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  local entityList = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).MonsterAttackRange)
+  local renderEntityService = self._world:GetService("RenderEntity")
+  local entityList = self._world:GetGroupEntities(self._world.BW_WEMatchers.MonsterAttackRange)
   renderEntityService:DestroyMonsterPreviewAreaOutlineEntity()
-  local previewActiveSkillSvc = (self._world):GetService("PreviewActiveSkill")
-  ;
-  ((self._world):GetService("MonsterShowRender")):MonsterGridAnimDown()
-  local previewActiveSkillSvc = (self._world):GetService("PreviewActiveSkill")
+  local previewActiveSkillSvc = self._world:GetService("PreviewActiveSkill")
+  self._world:GetService("MonsterShowRender"):MonsterGridAnimDown()
+  local previewActiveSkillSvc = self._world:GetService("PreviewActiveSkill")
   previewActiveSkillSvc:HideSkillTips()
   self:_RemoveMonsterAttackText(monsterEntityID)
-  local monsterEntity = (self._world):GetEntityByID(monsterEntityID)
+  local monsterEntity = self._world:GetEntityByID(monsterEntityID)
   if monsterEntity then
-    local resContainer = (monsterEntity:SkillRoutine()):GetResultContainer()
+    local resContainer = monsterEntity:SkillRoutine():GetResultContainer()
     if resContainer then
       resContainer:Clear()
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService._RemoveMonsterAttackText = function(self, monsterEntityID)
-  -- function num : 0_15 , upvalues : _ENV
-  local monsterEntity = (self._world):GetEntityByID(monsterEntityID)
+function PreviewMonsterTrapService:_RemoveMonsterAttackText(monsterEntityID)
+  local monsterEntity = self._world:GetEntityByID(monsterEntityID)
   local holderCmp = monsterEntity:EffectHolder()
   if not holderCmp then
-    return 
+    return
   end
   local idDic = holderCmp:GetEffectIDEntityDic()
   local entityList = idDic[BattleConst.MonsterAttackRangeTextEffect]
   if entityList then
-    for k,entityId in pairs(entityList) do
-      local entity = (self._world):GetEntityByID(entityId)
+    for k, entityId in pairs(entityList) do
+      local entity = self._world:GetEntityByID(entityId)
       if entity then
-        (self._world):DestroyEntity(entity)
+        self._world:DestroyEntity(entity)
       end
     end
     idDic[BattleConst.MonsterAttackRangeTextEffect] = nil
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.IsNeedShowUIHPBar = function(self, entityID)
-  -- function num : 0_16
-  local entity = (self._world):GetEntityByID(entityID)
+function PreviewMonsterTrapService:IsNeedShowUIHPBar(entityID)
+  local entity = self._world:GetEntityByID(entityID)
   if entity:HasBoss() then
     return true
   else
-    if entity:HasHP() then
-      do return (entity:HP()):IsShowHPSlider() end
-    end
+    return entity:HasHP() and entity:HP():IsShowHPSlider()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService._FindTrapByPos = function(self, posTouch)
-  -- function num : 0_17 , upvalues : _ENV
+function PreviewMonsterTrapService:_FindTrapByPos(posTouch)
   local listFindTrapID = {}
-  local teTrap = (self._world):GetGroupEntities(((self._world).BW_WEMatchers).Trap)
-  for _,eTrap in ipairs(teTrap) do
-    if (eTrap:TrapRender()):IsHasShow() and eTrap:IsViewVisible() then
+  local teTrap = self._world:GetGroupEntities(self._world.BW_WEMatchers.Trap)
+  for _, eTrap in ipairs(teTrap) do
+    if eTrap:TrapRender():IsHasShow() and eTrap:IsViewVisible() then
       local cBodyArea = eTrap:BodyArea()
-      if not cBodyArea or not cBodyArea:GetArea() then
-        local tv2Relative = {Vector2.zero}
-      end
+      local tv2Relative = cBodyArea and cBodyArea:GetArea() or {
+        Vector2.zero
+      }
       local v2GridPos = eTrap:GetGridPosition()
-      for __,v2Relative in ipairs(tv2Relative) do
+      for __, v2Relative in ipairs(tv2Relative) do
         if posTouch == v2GridPos + v2Relative then
-          (table.insert)(listFindTrapID, eTrap:GetID())
+          table.insert(listFindTrapID, eTrap:GetID())
         end
       end
     end
@@ -408,10 +335,7 @@ PreviewMonsterTrapService._FindTrapByPos = function(self, posTouch)
   return listFindTrapID
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService._SortByTrapLevel = function(self, listTrapEntityID)
-  -- function num : 0_18 , upvalues : _ENV
+function PreviewMonsterTrapService:_SortByTrapLevel(listTrapEntityID)
   local sortTrapID = SortedArray:New(Algorithm.COMPARE_CUSTOM, SortData_TrapLevel.CompareByTrapLevel)
   for i = 1, #listTrapEntityID do
     sortTrapID:Insert(SortData_TrapLevel:New(self._world, listTrapEntityID[i]))
@@ -421,32 +345,21 @@ end
 
 _class("SortData_TrapLevel", Object)
 SortData_TrapLevel = SortData_TrapLevel
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
 
-SortData_TrapLevel.Constructor = function(self, world, nEntityID)
-  -- function num : 0_19
+function SortData_TrapLevel:Constructor(world, nEntityID)
   self.m_entityTrap = world:GetEntityByID(nEntityID)
   self.m_nTrapID = nEntityID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SortData_TrapLevel.GetTrapID = function(self)
-  -- function num : 0_20
+function SortData_TrapLevel:GetTrapID()
   return self.m_nTrapID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SortData_TrapLevel.GetTrapEntity = function(self)
-  -- function num : 0_21
+function SortData_TrapLevel:GetTrapEntity()
   return self.m_entityTrap
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SortData_TrapLevel.CompareByTrapLevel = function(sortDataA, sortDataB)
-  -- function num : 0_22 , upvalues : _ENV
+function SortData_TrapLevel.CompareByTrapLevel(sortDataA, sortDataB)
   local entityA = sortDataA:GetTrapEntity()
   local trapRenderA = entityA:TrapRender()
   local entityB = sortDataB:GetTrapEntity()
@@ -461,25 +374,17 @@ SortData_TrapLevel.CompareByTrapLevel = function(sortDataA, sortDataB)
   return nTrapLevelA - nTrapLevelB
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.ShowPreviewTrap = function(self, trapEntityID, touchPosition, offset)
-  -- function num : 0_23
+function PreviewMonsterTrapService:ShowPreviewTrap(trapEntityID, touchPosition, offset)
   self:_ShowPreviewTrapAction(trapEntityID, touchPosition, offset)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewMonsterTrapService.CheckPreviewTrapAction = function(self, posTouch, offset)
-  -- function num : 0_24
+function PreviewMonsterTrapService:CheckPreviewTrapAction(posTouch, offset)
   local isTouchTrap, touchTrapEntityID = self:IsClickTrap(posTouch, offset)
   if isTouchTrap then
     self:ClearPreviewMonster(posTouch)
     self:ClearPreviewTrap(posTouch)
     self:_ShowPreviewTrapAction(touchTrapEntityID, posTouch, offset)
-    return 
+    return
   end
   self:ClearMonsterTrapPreview()
 end
-
-

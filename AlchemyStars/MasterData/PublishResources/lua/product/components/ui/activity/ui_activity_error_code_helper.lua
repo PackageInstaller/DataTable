@@ -1,89 +1,82 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_error_code_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityErrorHelper", Object)
 UIActivityErrorHelper = UIActivityErrorHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityErrorHelper.CheckErrorCode = function(result, campaignId, refreshCallback, closeCallback)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.info)("UIActivityErrorHelper.CheckErrorCode(), result =", result)
-  ;
-  (UIActivityErrorHelper.ShowErrorToast)(result, true)
-  if refreshCallback and (UIActivityErrorHelper.IsErrorNeedRefresh)(result) then
+function UIActivityErrorHelper.CheckErrorCode(result, campaignId, refreshCallback, closeCallback)
+  Log.info("UIActivityErrorHelper.CheckErrorCode(), result =", result)
+  UIActivityErrorHelper.ShowErrorToast(result, true)
+  if refreshCallback and UIActivityErrorHelper.IsErrorNeedRefresh(result) then
     refreshCallback()
   end
-  if closeCallback and (UIActivityErrorHelper.IsErrorNeedClose)(result) then
+  if closeCallback and UIActivityErrorHelper.IsErrorNeedClose(result) then
     closeCallback()
   end
-  if campaignId and (UIActivityErrorHelper.IsErrorNeedCloseAll)(result) then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, campaignId)
+  if campaignId and UIActivityErrorHelper.IsErrorNeedCloseAll(result) then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, campaignId)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityErrorHelper.ShowErrorToast = function(result, hideErrorId)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityErrorHelper.ShowErrorToast(result, hideErrorId)
   local strId = "str_activity_error_" .. result
-  local errorStr = (StringTable.Get)(strId)
+  local errorStr = StringTable.Get(strId)
   local noStr = "ERR:" .. strId
-  if not hideErrorId or not "%s" then
-    local formatStr = errorStr == noStr or "%s [%s]"
-  end
-  local msg = (string.format)(formatStr, errorStr, result)
-  ;
-  (ToastManager.ShowToast)(msg)
-end
-
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityErrorHelper.IsErrorNeedRefresh = function(result)
-  -- function num : 0_2 , upvalues : _ENV
-  do
-    if not CampaignModule.ErrorRefreshList then
-      local temp = {CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CONFIG_CHANGE, CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_Cross_Day, CampaignErrorType.E_EXCHANGEITEM_COMPONENT_NOT_FOUND_ITEM, CampaignErrorType.E_EXCHANGEITEM_COMPONENT_ITEM_LOCK, CampaignErrorType.E_EXCHANGEITEM_COMPONENT_EXCHANGE_LIMIT, CampaignErrorType.E_EXCHANGEITEM_COMPONENT_COST_ITEM_NOT_ENOUGH, CampaignErrorType.E_COMPONENT_CUMULATIVE_LOGIN_ERROR_DAY, CampaignErrorType.E_COMPONENT_CUMULATIVE_LOGIN_DAY_NO_OPEN, CampaignErrorType.E_COMPONENT_CUMULATIVE_LOGIN_RECEIVED, CampaignErrorType.E_COMPONENT_CUMULATIVE_LOGIN_EXPIRED, CampaignErrorType.E_COMPONENT_PersonProgress_Not_Exist_Progress, CampaignErrorType.E_COMPONENT_PersonProgress_Reward_Received, CampaignErrorType.E_COMPONENT_PersonProgress_Not_Reach_Progress, CampaignErrorType.E_COMPONENT_STORY_IS_RECVED, CampaignErrorType.E_COMPONENT_STORY_CAM_POINT_NOT_ENOUGH, CampaignErrorType.E_COMPONENT_LOTTERY_COST_ITEM_NOT_ENOUGH, CampaignErrorType.E_COMPONENT_LOTTERY_JACKPOT_LOTTERY_COUNT_NOT_ENOUGH, CampaignErrorType.E_COMPONENT_LOTTERY_JACKPOT_LOCK, CampaignErrorType.E_COMPONENT_LOTTERY_EXPEND_ITEM_ERROR, CampaignErrorType.E_COMPONENT_LOTTERY_ADD_REWARD_ERROR}
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R2 in 'UnsetPending'
-
-      CampaignModule.ErrorRefreshList = (table.reverse)(temp)
-    end
-    do return (CampaignModule.ErrorRefreshList)[result] ~= nil end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  if errorStr ~= noStr then
+    local formatStr = hideErrorId and "%s" or "%s [%s]"
+    local msg = string.format(formatStr, errorStr, result)
+    ToastManager.ShowToast(msg)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityErrorHelper.IsErrorNeedClose = function(result)
-  -- function num : 0_3 , upvalues : _ENV
-  do
-    if not CampaignModule.ErrorCloseList then
-      local temp = {CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR, CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_ID_ERROR, CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CONFIG_ERROR, CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK, CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NOT_COMPLETE, CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE}
-      -- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
-
-      CampaignModule.ErrorCloseList = (table.reverse)(temp)
-    end
-    do return (CampaignModule.ErrorCloseList)[result] ~= nil end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityErrorHelper.IsErrorNeedRefresh(result)
+  if not CampaignModule.ErrorRefreshList then
+    local temp = {
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CONFIG_CHANGE,
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_Cross_Day,
+      CampaignErrorType.E_EXCHANGEITEM_COMPONENT_NOT_FOUND_ITEM,
+      CampaignErrorType.E_EXCHANGEITEM_COMPONENT_ITEM_LOCK,
+      CampaignErrorType.E_EXCHANGEITEM_COMPONENT_EXCHANGE_LIMIT,
+      CampaignErrorType.E_EXCHANGEITEM_COMPONENT_COST_ITEM_NOT_ENOUGH,
+      CampaignErrorType.E_COMPONENT_CUMULATIVE_LOGIN_ERROR_DAY,
+      CampaignErrorType.E_COMPONENT_CUMULATIVE_LOGIN_DAY_NO_OPEN,
+      CampaignErrorType.E_COMPONENT_CUMULATIVE_LOGIN_RECEIVED,
+      CampaignErrorType.E_COMPONENT_CUMULATIVE_LOGIN_EXPIRED,
+      CampaignErrorType.E_COMPONENT_PersonProgress_Not_Exist_Progress,
+      CampaignErrorType.E_COMPONENT_PersonProgress_Reward_Received,
+      CampaignErrorType.E_COMPONENT_PersonProgress_Not_Reach_Progress,
+      CampaignErrorType.E_COMPONENT_STORY_IS_RECVED,
+      CampaignErrorType.E_COMPONENT_STORY_CAM_POINT_NOT_ENOUGH,
+      CampaignErrorType.E_COMPONENT_LOTTERY_COST_ITEM_NOT_ENOUGH,
+      CampaignErrorType.E_COMPONENT_LOTTERY_JACKPOT_LOTTERY_COUNT_NOT_ENOUGH,
+      CampaignErrorType.E_COMPONENT_LOTTERY_JACKPOT_LOCK,
+      CampaignErrorType.E_COMPONENT_LOTTERY_EXPEND_ITEM_ERROR,
+      CampaignErrorType.E_COMPONENT_LOTTERY_ADD_REWARD_ERROR
+    }
+    CampaignModule.ErrorRefreshList = table.reverse(temp)
   end
+  return CampaignModule.ErrorRefreshList[result] ~= nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityErrorHelper.IsErrorNeedCloseAll = function(result)
-  -- function num : 0_4 , upvalues : _ENV
-  do
-    if not CampaignModule.ErrorCloseAllList then
-      local temp = {CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED, CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN}
-      -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-      CampaignModule.ErrorCloseAllList = (table.reverse)(temp)
-    end
-    do return (CampaignModule.ErrorCloseAllList)[result] ~= nil end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityErrorHelper.IsErrorNeedClose(result)
+  if not CampaignModule.ErrorCloseList then
+    local temp = {
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR,
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_ID_ERROR,
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CONFIG_ERROR,
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK,
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NOT_COMPLETE,
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE
+    }
+    CampaignModule.ErrorCloseList = table.reverse(temp)
   end
+  return CampaignModule.ErrorCloseList[result] ~= nil
 end
 
-
+function UIActivityErrorHelper.IsErrorNeedCloseAll(result)
+  if not CampaignModule.ErrorCloseAllList then
+    local temp = {
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED,
+      CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
+    }
+    CampaignModule.ErrorCloseAllList = table.reverse(temp)
+  end
+  return CampaignModule.ErrorCloseAllList[result] ~= nil
+end

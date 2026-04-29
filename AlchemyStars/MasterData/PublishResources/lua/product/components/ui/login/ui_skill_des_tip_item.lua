@@ -1,68 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/login/ui_skill_des_tip_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISkillDesTipItem", UICustomWidget)
 UISkillDesTipItem = UISkillDesTipItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISkillDesTipItem.Constructor = function(self)
-  -- function num : 0_0
+function UISkillDesTipItem:Constructor()
   self._skillID = 0
   self._skillType = 0
   self._callBack = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillDesTipItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISkillDesTipItem:OnShow(uiParams)
   self._skillDesText = self:GetUIComponent("UILocalizationText", "skillDes")
   self._rectTran = self:GetUIComponent("RectTransform", "UISkillDesTipItem")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillDesTipItem.SetData = function(self, skillType, skillID, localPosition, callBack)
-  -- function num : 0_2 , upvalues : _ENV
+function UISkillDesTipItem:SetData(skillType, skillID, localPosition, callBack)
   self._skillType = skillType
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rectTran).localPosition = localPosition
+  self._rectTran.localPosition = localPosition
   self._callBack = callBack
-  local cfg = nil
+  local cfg
   if self._skillType == 0 then
     cfg = BattleSkillCfg(skillID)
   else
-    cfg = (Cfg.cfg_work_skill)[skillID]
+    cfg = Cfg.cfg_work_skill[skillID]
   end
   if cfg then
     self._skillID = skillID
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._skillDesText).text = (StringTable.Get)(cfg.Desc)
+    self._skillDesText.text = StringTable.Get(cfg.Desc)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillDesTipItem.closeBtnOnClick = function(self, go)
-  -- function num : 0_3
+function UISkillDesTipItem:closeBtnOnClick(go)
   if self._callBack then
-    (self._callBack)()
+    self._callBack()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISkillDesTipItem.closeBgBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISkillDesTipItem:closeBgBtnOnClick(go)
   if self._callBack then
-    (self._callBack)()
+    self._callBack()
   end
 end
-
-

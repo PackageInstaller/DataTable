@@ -1,25 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/world_boss/world_boss_init.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("WorldBoss_Init", Common_AsyncBase)
 WorldBoss_Init = WorldBoss_Init
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-WorldBoss_Init.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local worldBossModule = (GameGlobal.GetModule)(WorldBossModule)
+function WorldBoss_Init:TaskFunc(TT, status)
+  local worldBossModule = GameGlobal.GetModule(WorldBossModule)
   local result = worldBossModule:ReqWorldBossData(TT)
   if result.m_call_err ~= CallResultType.Normal then
-    (Log.exception)(self._className, "ReqWorldBossData failed. ")
+    Log.exception(self._className, "ReqWorldBossData failed. ")
     status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
     status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-    return 
+    return
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
 end
-
-

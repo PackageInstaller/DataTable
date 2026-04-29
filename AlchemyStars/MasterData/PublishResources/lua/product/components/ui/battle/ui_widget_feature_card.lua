@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureCard", UICustomWidget)
 UIWidgetFeatureCard = UIWidgetFeatureCard
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureCard.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureCard:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if self._player and (self._player):IsPlaying() then
-    (self._player):Stop()
+function UIWidgetFeatureCard:OnHide()
+  if self._player and self._player:IsPlaying() then
+    self._player:Stop()
   end
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.InitWidget = function(self)
-  -- function num : 0_2
+function UIWidgetFeatureCard:InitWidget()
   self.enableFakeInput = true
   self._imageNormal = self:GetUIComponent("Image", "ImageNormal")
   self._imageNormalGo = self:GetGameObject("ImageNormal")
@@ -47,246 +34,164 @@ UIWidgetFeatureCard.InitWidget = function(self)
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.IsAutoFighting = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return ((GameGlobal.GetUIModule)(MatchModule)):IsAutoFighting()
+function UIWidgetFeatureCard:IsAutoFighting()
+  return GameGlobal.GetUIModule(MatchModule):IsAutoFighting()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.InitLocalData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cardAnimNames = {[FeatureCardType.A] = "UIWidgetFeatureCard_sun", [FeatureCardType.B] = "UIWidgetFeatureCard_moon", [FeatureCardType.C] = "UIWidgetFeatureCard_star"}
+function UIWidgetFeatureCard:InitLocalData()
+  self._cardAnimNames = {
+    [FeatureCardType.A] = "UIWidgetFeatureCard_sun",
+    [FeatureCardType.B] = "UIWidgetFeatureCard_moon",
+    [FeatureCardType.C] = "UIWidgetFeatureCard_star"
+  }
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.RegisterEvent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIWidgetFeatureCard:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureUIPlayDrawCard, self._OnFeatureUIPlayDrawCard)
   self:AttachEvent(GameEventType.FeatureUIRefreshCardNum, self._OnFeatureUIRefreshCardNum)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard._OnFeatureUIPlayDrawCard = function(self, cardType)
-  -- function num : 0_6 , upvalues : _ENV
-  local cardAnimName = (self._cardAnimNames)[cardType]
+function UIWidgetFeatureCard:_OnFeatureUIPlayDrawCard(cardType)
+  local cardAnimName = self._cardAnimNames[cardType]
   if cardAnimName then
     self._player = EZTL_Player:New()
-    local tl = EZTL_Sequence:New({EZTL_PlayAnimation:New(self._anim, cardAnimName), EZTL_Callback:New(function()
-    -- function num : 0_6_0 , upvalues : self
-    self:RefreshCardNum()
-  end
-)}, "抽牌ui动效")
-    ;
-    (self._player):Play(tl)
+    local tl = EZTL_Sequence:New({
+      EZTL_PlayAnimation:New(self._anim, cardAnimName),
+      EZTL_Callback:New(function()
+        self:RefreshCardNum()
+      end)
+    }, "抽牌ui动效")
+    self._player:Play(tl)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard._OnFeatureUIRefreshCardNum = function(self)
-  -- function num : 0_7
+function UIWidgetFeatureCard:_OnFeatureUIRefreshCardNum()
   self:RefreshCardNum()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.SetUIBattle = function(self, uiBattle)
-  -- function num : 0_8
+function UIWidgetFeatureCard:SetUIBattle(uiBattle)
   self._uiBattle = uiBattle
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.GetUIBattle = function(self)
-  -- function num : 0_9
+function UIWidgetFeatureCard:GetUIBattle()
   return self._uiBattle
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.SetData = function(self, skillInitData)
-  -- function num : 0_10
+function UIWidgetFeatureCard:SetData(skillInitData)
   self._cardInitData = skillInitData
-  self._skillDic = (self._cardInitData):GetCardSkillDic()
+  self._skillDic = self._cardInitData:GetCardSkillDic()
   self:RefreshCardNum()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.RefreshCardNum = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cardNum = (FeatureServiceHelper.GetCurCardCount)()
-  ;
-  (self._cardCountText):SetText(cardNum)
-  if cardNum > 0 then
-    (self._imageNormalGo):SetActive(false)
-    ;
-    (self._imageWarningGo):SetActive(true)
-    ;
-    (self._imageFullFrontGo):SetActive(true)
-    ;
-    (self._imageNotFullFrontGo):SetActive(false)
+function UIWidgetFeatureCard:RefreshCardNum()
+  local cardNum = FeatureServiceHelper.GetCurCardCount()
+  self._cardCountText:SetText(cardNum)
+  if 0 < cardNum then
+    self._imageNormalGo:SetActive(false)
+    self._imageWarningGo:SetActive(true)
+    self._imageFullFrontGo:SetActive(true)
+    self._imageNotFullFrontGo:SetActive(false)
   else
-    ;
-    (self._imageNormalGo):SetActive(true)
-    ;
-    (self._imageWarningGo):SetActive(false)
+    self._imageNormalGo:SetActive(true)
+    self._imageWarningGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.UIWidgetFeatureCardOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  if self:IsAutoFighting() or (InnerGameHelperRender.IsPuzzleState)() or (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+function UIWidgetFeatureCard:UIWidgetFeatureCardOnClick(go)
+  if self:IsAutoFighting() or InnerGameHelperRender.IsPuzzleState() or InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
   self:OnClickUI()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.OnClickUI = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIWidgetFeatureCard:OnClickUI()
   local canCastSkill = true
   if canCastSkill then
-    local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
-    local enableInput = (GameGlobal:GetInstance()):IsInputEnable()
+    local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
+    local enableInput = GameGlobal:GetInstance():IsInputEnable()
     if coreGameStateID == GameStateID.WaitInput and enableInput == true then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, self._skillID)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._skillID)
       self:ShowCardInfoUI()
-    else
-      if coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
-        if self._switchTimeEvent == nil then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UISwitchActiveSkillUI)
-          self:ShowCardInfoUI()
-          ;
-          (Log.notice)("preclickhead card skill", self._skillID)
-          self._switchTimeEvent = ((GameGlobal.Timer)()):AddEvent(self._switchTimeLength, function()
-    -- function num : 0_13_0 , upvalues : self, _ENV
-    self._switchTimeEvent = nil
-    ;
-    (Log.notice)("preview card skill", self._skillID)
-  end
-)
-        else
-          ;
-          (Log.notice)("still in switch", self._skillID)
-        end
+    elseif coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
+      if self._switchTimeEvent == nil then
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.UISwitchActiveSkillUI)
+        self:ShowCardInfoUI()
+        Log.notice("preclickhead card skill", self._skillID)
+        self._switchTimeEvent = GameGlobal.Timer():AddEvent(self._switchTimeLength, function()
+          self._switchTimeEvent = nil
+          Log.notice("preview card skill", self._skillID)
+        end)
+      else
+        Log.notice("still in switch", self._skillID)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.ShowCardInfoUI = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, true, FeatureType.Card)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelActiveSkillCast)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PauseGuideWeakLine)
+function UIWidgetFeatureCard:ShowCardInfoUI()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, true, FeatureType.Card)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelActiveSkillCast)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PauseGuideWeakLine)
   local canCast = true
-  local castCb = function(castSkillID, pickUpType, delayCloseMs)
-    -- function num : 0_14_0 , upvalues : self
+  
+  local function castCb(castSkillID, pickUpType, delayCloseMs)
     self:OnCastSkill(castSkillID, pickUpType, delayCloseMs)
   end
-
-  local cancelCb = function(curSkillID)
-    -- function num : 0_14_1 , upvalues : self
+  
+  local function cancelCb(curSkillID)
     self:OnCancelSkill(curSkillID)
   end
-
-  ;
-  ((self._uiBattle):GetFeatureCardUI((self._cardInitData):GetUiType())):Init(self._cardInitData, castCb, cancelCb)
-  ;
-  (self._uiBattle):ShowFeatureCardInfo(true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
+  
+  self._uiBattle:GetFeatureCardUI(self._cardInitData:GetUiType()):Init(self._cardInitData, castCb, cancelCb)
+  self._uiBattle:ShowFeatureCardInfo(true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.OnCastSkill = function(self, castSkillID, pickUpType, delayCloseMs)
-  -- function num : 0_15 , upvalues : _ENV
+function UIWidgetFeatureCard:OnCastSkill(castSkillID, pickUpType, delayCloseMs)
   self:Lock("UIAnimOnCast")
   if pickUpType == SkillPickUpType.None then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastPersonaSkill, castSkillID)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIResetLastPreviewPetId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CastPersonaSkill, castSkillID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIResetLastPreviewPetId)
+    self:HideCardInfoUI(delayCloseMs)
+  elseif pickUpType == SkillPickUpType.PickSwitchInstruction then
+    Log.fatal("[UIWidgetFeaturePersonaSkill] cast skill pick up type error:", pickUpType)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, true)
+    local petPstID = 0
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
     self:HideCardInfoUI(delayCloseMs)
   else
-    if pickUpType == SkillPickUpType.PickSwitchInstruction then
-      (Log.fatal)("[UIWidgetFeaturePersonaSkill] cast skill pick up type error:", pickUpType)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnablePickUpSkillCast, true)
-      local petPstID = 0
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
-      self:HideCardInfoUI(delayCloseMs)
-    else
-      do
-        ;
-        (Log.fatal)("[UIWidgetFeaturePersonaSkill] cast skill pick up type error:", pickUpType)
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnablePickUpSkillCast, false)
-        local petPstID = 0
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
-        self:HideCardInfoUI(delayCloseMs)
-      end
-    end
+    Log.fatal("[UIWidgetFeaturePersonaSkill] cast skill pick up type error:", pickUpType)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, false)
+    local petPstID = 0
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
+    self:HideCardInfoUI(delayCloseMs)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.OnCancelSkill = function(self, curSkillID)
-  -- function num : 0_16 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopPreviewFeatureSkill, false, true, curSkillID, FeatureType.Card)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, -1)
+function UIWidgetFeatureCard:OnCancelSkill(curSkillID)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopPreviewFeatureSkill, false, true, curSkillID, FeatureType.Card)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, -1)
   self:HideCardInfoUI()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.HideCardInfoUI = function(self, delayCloseMs)
-  -- function num : 0_17 , upvalues : _ENV
-  if delayCloseMs and delayCloseMs > 0 then
+function UIWidgetFeatureCard:HideCardInfoUI(delayCloseMs)
+  if delayCloseMs and 0 < delayCloseMs then
     if self._timerHandler then
-      ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+      GameGlobal.Timer():CancelEvent(self._timerHandler)
       self._timerHandler = nil
     end
-    self._timerHandler = ((GameGlobal.Timer)()):AddEvent(delayCloseMs, function()
-    -- function num : 0_17_0 , upvalues : self, _ENV
-    self:UnLock("UIAnimOnCast")
-    ;
-    (self._uiBattle):ShowFeatureCardInfo(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.Card)
-  end
-)
+    self._timerHandler = GameGlobal.Timer():AddEvent(delayCloseMs, function()
+      self:UnLock("UIAnimOnCast")
+      self._uiBattle:ShowFeatureCardInfo(false)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.Card)
+    end)
   else
     self:UnLock("UIAnimOnCast")
-    ;
-    (self._uiBattle):ShowFeatureCardInfo(false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.Card)
+    self._uiBattle:ShowFeatureCardInfo(false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, false, FeatureType.Card)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureCard.OnSwitchActiveSkillUI = function(self)
-  -- function num : 0_18
+function UIWidgetFeatureCard:OnSwitchActiveSkillUI()
   self:HideCardInfoUI()
 end
-
-

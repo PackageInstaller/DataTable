@@ -1,48 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ani_pop_star/stn_ani_pop_star_find_room.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("AniPopStar_FindRoom", CTestRobot_Base)
 AniPopStar_FindRoom = AniPopStar_FindRoom
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AniPopStar_FindRoom.OnWorking = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function AniPopStar_FindRoom:OnWorking()
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local aniPopInfo = anipopModule:GetAniPopInfo()
   local curSeason = aniPopInfo.cur_season
   local roundInfo = aniPopInfo.round_info
-  local levelInfo = (roundInfo.level_list)[roundInfo.mission_index]
-  if levelInfo == nil then
+  local levelInfo = roundInfo.level_list[roundInfo.mission_index]
+  if nil == levelInfo then
     self.m_nLogicResult = 0
   else
     self.m_nLogicResult = 1
   end
   self.m_pReturnData = aniPopInfo
-  local progressInfo = (self.m_pManager):GetProgressInfo()
+  local progressInfo = self.m_pManager:GetProgressInfo()
   if roundInfo.mission_index ~= 0 then
     progressInfo:TickProgress(roundInfo.mission_index + aniPopInfo.cur_season * 100)
   end
-  return ((AniPopStar_FindRoom.super).OnWorking)(self)
+  return AniPopStar_FindRoom.super.OnWorking(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AniPopStar_FindRoom.OnBegin = function(self, ...)
-  -- function num : 0_1 , upvalues : _ENV
+function AniPopStar_FindRoom:OnBegin(...)
   if self.m_pActionTree then
-    local listScanID = (self.m_pActionTree):GetScanActionID()
-    local nTreeID = (self.m_pActionTree):GetTreeID()
-    self:PrintLog("ScanPath TreeID = ", nTreeID, ", Path = [", (table.concat)(listScanID, ","), "]")
-    ;
-    (self.m_pActionTree):ResetScanActionID()
+    local listScanID = self.m_pActionTree:GetScanActionID()
+    local nTreeID = self.m_pActionTree:GetTreeID()
+    self:PrintLog("ScanPath TreeID = ", nTreeID, ", Path = [", table.concat(listScanID, ","), "]")
+    self.m_pActionTree:ResetScanActionID()
   end
-  do
-    local nReturn = ((AniPopStar_FindRoom.super).OnBegin)(self, ...)
-    return nReturn
-  end
+  local nReturn = AniPopStar_FindRoom.super.OnBegin(self, ...)
+  return nReturn
 end
-
-

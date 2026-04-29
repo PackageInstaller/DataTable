@@ -1,61 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/task/ui_homeland_fix_building.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandFixBuilding", UIController)
 UIHomelandFixBuilding = UIHomelandFixBuilding
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandFixBuilding.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandFixBuilding:OnShow(uiParams)
   self:InitWidget()
   local matObj = self:GetAsset("uieff_n17_fix_building_success.mat", LoadType.Mat)
-  local mat = (self.tip).fontMaterial
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.tip).fontMaterial = matObj
-  ;
-  ((self.tip).fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  local mat = self.tip.fontMaterial
+  self.tip.fontMaterial = matObj
+  self.tip.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
   self:Lock(self:GetName())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideHomelandMainUI, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideHomelandMainUI, false)
   self._active = true
   self:StartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, self, uiParams
     YIELD(TT, 2200)
     if not self._active then
-      return 
+      return
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ResetOneBuilding, uiParams[2], true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ResetOneBuilding, uiParams[2], true)
     YIELD(TT, 1800)
     if not self._active then
-      return 
+      return
     end
     self:CloseDialog()
     self:UnLock(self:GetName())
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnHomeLandSpecialCheck, uiParams[1])
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowHideHomelandMainUI, true)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnHomeLandSpecialCheck, uiParams[1])
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowHideHomelandMainUI, true)
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandFixBuilding.OnHide = function(self)
-  -- function num : 0_1
+function UIHomelandFixBuilding:OnHide()
   self._active = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandFixBuilding.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomelandFixBuilding:InitWidget()
   self.tip = self:GetUIComponent("UILocalizedTMP", "tip")
 end
-
-

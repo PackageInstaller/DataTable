@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/monster_drop_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MonsterDropConfigData", Object)
 MonsterDropConfigData = MonsterDropConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterDropConfigData.Constructor = function(self)
-  -- function num : 0_0
+function MonsterDropConfigData:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDropConfigData.GetMonsterDropItemID = function(self, dropID)
-  -- function num : 0_1 , upvalues : _ENV
-  local monsterDropConfig = (Cfg.cfg_monster_drop)[dropID]
+function MonsterDropConfigData:GetMonsterDropItemID(dropID)
+  local monsterDropConfig = Cfg.cfg_monster_drop[dropID]
   return monsterDropConfig.DropItem
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDropConfigData.GetMonsterDropMinCount = function(self, dropID)
-  -- function num : 0_2 , upvalues : _ENV
-  local monsterDropConfig = (Cfg.cfg_monster_drop)[dropID]
+function MonsterDropConfigData:GetMonsterDropMinCount(dropID)
+  local monsterDropConfig = Cfg.cfg_monster_drop[dropID]
   return monsterDropConfig.MinCount
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDropConfigData.GetMonsterDropMaxCount = function(self, dropID)
-  -- function num : 0_3 , upvalues : _ENV
-  local monsterDropConfig = (Cfg.cfg_monster_drop)[dropID]
+function MonsterDropConfigData:GetMonsterDropMaxCount(dropID)
+  local monsterDropConfig = Cfg.cfg_monster_drop[dropID]
   return monsterDropConfig.MaxCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterDropConfigData.GetMonsterDropProbability = function(self, dropID)
-  -- function num : 0_4 , upvalues : _ENV
-  local monsterDropConfig = (Cfg.cfg_monster_drop)[dropID]
+function MonsterDropConfigData:GetMonsterDropProbability(dropID)
+  local monsterDropConfig = Cfg.cfg_monster_drop[dropID]
   return monsterDropConfig.Probability
 end
-
-

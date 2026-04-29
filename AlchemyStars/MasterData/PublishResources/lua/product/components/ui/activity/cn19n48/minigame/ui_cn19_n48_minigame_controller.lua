@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn19n48/minigame/ui_cn19_n48_minigame_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN19N48MiniGameController", UIController)
 UICN19N48MiniGameController = UICN19N48MiniGameController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN19N48MiniGameController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICN19N48MiniGameController:Constructor()
   self._curOrderform = Orderform:New(0, 0, 0, nil, 0, 0)
   self._gameState = MiniGameState.Start
   self._score = 0
@@ -20,7 +13,11 @@ UICN19N48MiniGameController.Constructor = function(self)
   self._skillTime = 0
   self._clickInterval = 0
   self._orderformCount = 0
-  self._guestOrderformList = {false, false, false}
+  self._guestOrderformList = {
+    false,
+    false,
+    false
+  }
   self._guestOrderformListLength = #self._guestOrderformList
   self._guestWidgets = {}
   self._guestOrderformWidgets = {}
@@ -41,27 +38,21 @@ UICN19N48MiniGameController.Constructor = function(self)
   self._createdGuideOrderform = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UICN19N48MiniGameController:OnShow(uiParams)
   self._stage_id = uiParams[1]
   self._component = uiParams[2]
   self._componentInfo = uiParams[3]
   self._lastBGMResName = uiParams[4]
   self._callback = uiParams[5]
-  self._cfg_stage = (Cfg.cfg_component_mini_game_mission)[self._stage_id]
-  self._cfg_minigame = (Cfg.cfg_summer_minigame)[1]
-  self._bonus = (self._cfg_minigame).Bonus
-  self._orderformInterval = (self._cfg_minigame).OrderFormInterval
+  self._cfg_stage = Cfg.cfg_component_mini_game_mission[self._stage_id]
+  self._cfg_minigame = Cfg.cfg_summer_minigame[1]
+  self._bonus = self._cfg_minigame.Bonus
+  self._orderformInterval = self._cfg_minigame.OrderFormInterval
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN19N48MiniGameController:_GetComponents()
   self._pause = self:GetGameObject("Puase")
   self._start = self:GetGameObject("Start")
   self._countdownImg = self:GetUIComponent("Image", "CountDown")
@@ -72,57 +63,27 @@ UICN19N48MiniGameController._GetComponents = function(self)
   self._bounsValue = self:GetUIComponent("UILocalizationText", "BounsValue")
   self._totalScore = self:GetUIComponent("UILocalizationText", "TotalScore")
   self._skillPointImg = self:GetUIComponent("Image", "SkillPoint")
-  self._skillPointMaterial = (self._skillPointImg).material
+  self._skillPointMaterial = self._skillPointImg.material
   self._guestItem = self:GetUIComponent("UISelectObjectPath", "GuestItem")
   self._guestOrderformItem = self:GetUIComponent("UISelectObjectPath", "GuestOrderformItem")
   self._guestScoreItem = self:GetUIComponent("UISelectObjectPath", "GuestScoreItem")
   self._stepImg = {}
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stepImg)[OrderformStep.Weight] = self:GetUIComponent("Image", "Weight")
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stepImg)[OrderformStep.Ingredient] = self:GetUIComponent("Image", "Ingredient")
-  -- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stepImg)[OrderformStep.Jam] = self:GetUIComponent("Image", "Jam")
+  self._stepImg[OrderformStep.Weight] = self:GetUIComponent("Image", "Weight")
+  self._stepImg[OrderformStep.Ingredient] = self:GetUIComponent("Image", "Ingredient")
+  self._stepImg[OrderformStep.Jam] = self:GetUIComponent("Image", "Jam")
   self._stepAnimation = {}
-  -- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stepAnimation)[OrderformStep.Weight] = self:GetUIComponent("Animation", "Weight")
-  -- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stepAnimation)[OrderformStep.Ingredient] = self:GetUIComponent("Animation", "Ingredient")
-  -- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stepAnimation)[OrderformStep.Jam] = self:GetUIComponent("Animation", "Jam")
+  self._stepAnimation[OrderformStep.Weight] = self:GetUIComponent("Animation", "Weight")
+  self._stepAnimation[OrderformStep.Ingredient] = self:GetUIComponent("Animation", "Ingredient")
+  self._stepAnimation[OrderformStep.Jam] = self:GetUIComponent("Animation", "Jam")
   self._plateRoot = self:GetUIComponent("RectTransform", "root")
   self._plateRootCanvasGroup = self:GetUIComponent("CanvasGroup", "root")
-  self._plateRootRectTransformPosition = (self._plateRoot).anchoredPosition
+  self._plateRootRectTransformPosition = self._plateRoot.anchoredPosition
   self._atlas = self:GetAsset("CN19N48MiniGame.spriteatlas", LoadType.SpriteAtlas)
   self._guestgameObject = {}
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._guestgameObject)[1] = self:GetGameObject("Guest1")
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._guestgameObject)[2] = self:GetGameObject("Guest2")
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._guestgameObject)[3] = self:GetGameObject("Guest3")
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._guestgameObject)[4] = self:GetGameObject("Guest4")
+  self._guestgameObject[1] = self:GetGameObject("Guest1")
+  self._guestgameObject[2] = self:GetGameObject("Guest2")
+  self._guestgameObject[3] = self:GetGameObject("Guest3")
+  self._guestgameObject[4] = self:GetGameObject("Guest4")
   self:_GetWeightIngredientJamObj()
   self._skillObj = self:GetGameObject("Skill")
   self._plateAnimation = self:GetUIComponent("Animation", "Plate")
@@ -140,70 +101,63 @@ UICN19N48MiniGameController._GetComponents = function(self)
   self._rageObj = self:GetGameObject("Rage")
   self._fireSpine = self:GetUIComponent("SpineLoader", "FireSpine")
   self._skillAreaTMP = {}
-  -- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillAreaTMP)[1] = self:GetUIComponent("UILocalizedTMP", "SkillArea")
-  -- DECOMPILER ERROR at PC242: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillAreaTMP)[2] = self:GetUIComponent("UILocalizedTMP", "SkillArea (1)")
-  -- DECOMPILER ERROR at PC248: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillAreaTMP)[3] = self:GetUIComponent("UILocalizedTMP", "SkillArea (2)")
-  -- DECOMPILER ERROR at PC254: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillAreaTMP)[4] = self:GetUIComponent("UILocalizedTMP", "SkillArea (3)")
-  -- DECOMPILER ERROR at PC260: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillAreaTMP)[5] = self:GetUIComponent("UILocalizedTMP", "SkillArea (4)")
-  -- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._skillAreaTMP)[6] = self:GetUIComponent("UILocalizedTMP", "SkillArea (5)")
+  self._skillAreaTMP[1] = self:GetUIComponent("UILocalizedTMP", "SkillArea")
+  self._skillAreaTMP[2] = self:GetUIComponent("UILocalizedTMP", "SkillArea (1)")
+  self._skillAreaTMP[3] = self:GetUIComponent("UILocalizedTMP", "SkillArea (2)")
+  self._skillAreaTMP[4] = self:GetUIComponent("UILocalizedTMP", "SkillArea (3)")
+  self._skillAreaTMP[5] = self:GetUIComponent("UILocalizedTMP", "SkillArea (4)")
+  self._skillAreaTMP[6] = self:GetUIComponent("UILocalizedTMP", "SkillArea (5)")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._GetWeightIngredientJamObj = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN19N48MiniGameController:_GetWeightIngredientJamObj()
   self._WIJObjs = {
-[OrderformStep.Weight] = {
-[1] = {[Weight.Small] = self:GetGameObject("SmallBtn"), [Weight.Big] = self:GetGameObject("BigBtn")}
-, 
-[2] = {[Weight.Small] = self:GetGameObject("SmallBtn_Pop"), [Weight.Big] = self:GetGameObject("BigBtn_Pop")}
-}
-, 
-[OrderformStep.Ingredient] = {
-[1] = {[Ingredient.Chocolate] = self:GetGameObject("ChocolateBtn"), [Ingredient.Coco] = self:GetGameObject("CocoBtn"), [Ingredient.Pudding] = self:GetGameObject("PuddingBtn"), [Ingredient.Taro] = self:GetGameObject("TaroBtn")}
-, 
-[2] = {[Ingredient.Chocolate] = self:GetGameObject("ChocolateBtn_Pop"), [Ingredient.Coco] = self:GetGameObject("CocoBtn_Pop"), [Ingredient.Pudding] = self:GetGameObject("PuddingBtn_Pop"), [Ingredient.Taro] = self:GetGameObject("TaroBtn_Pop")}
-}
-, 
-[OrderformStep.Jam] = {
-[1] = {[Jam.Strawberry] = self:GetGameObject("StrawberryBtn"), [Jam.Matcha] = self:GetGameObject("MatchaBtn"), [Jam.Biolac] = self:GetGameObject("BiolacBtn"), [Jam.Mango] = self:GetGameObject("MangoBtn")}
-, 
-[2] = {[Jam.Strawberry] = self:GetGameObject("Strawberry_Pop"), [Jam.Matcha] = self:GetGameObject("Matcha_Pop"), [Jam.Biolac] = self:GetGameObject("Biolac_Pop"), [Jam.Mango] = self:GetGameObject("Mango_Pop")}
-}
-}
+    [OrderformStep.Weight] = {
+      [1] = {
+        [Weight.Small] = self:GetGameObject("SmallBtn"),
+        [Weight.Big] = self:GetGameObject("BigBtn")
+      },
+      [2] = {
+        [Weight.Small] = self:GetGameObject("SmallBtn_Pop"),
+        [Weight.Big] = self:GetGameObject("BigBtn_Pop")
+      }
+    },
+    [OrderformStep.Ingredient] = {
+      [1] = {
+        [Ingredient.Chocolate] = self:GetGameObject("ChocolateBtn"),
+        [Ingredient.Coco] = self:GetGameObject("CocoBtn"),
+        [Ingredient.Pudding] = self:GetGameObject("PuddingBtn"),
+        [Ingredient.Taro] = self:GetGameObject("TaroBtn")
+      },
+      [2] = {
+        [Ingredient.Chocolate] = self:GetGameObject("ChocolateBtn_Pop"),
+        [Ingredient.Coco] = self:GetGameObject("CocoBtn_Pop"),
+        [Ingredient.Pudding] = self:GetGameObject("PuddingBtn_Pop"),
+        [Ingredient.Taro] = self:GetGameObject("TaroBtn_Pop")
+      }
+    },
+    [OrderformStep.Jam] = {
+      [1] = {
+        [Jam.Strawberry] = self:GetGameObject("StrawberryBtn"),
+        [Jam.Matcha] = self:GetGameObject("MatchaBtn"),
+        [Jam.Biolac] = self:GetGameObject("BiolacBtn"),
+        [Jam.Mango] = self:GetGameObject("MangoBtn")
+      },
+      [2] = {
+        [Jam.Strawberry] = self:GetGameObject("Strawberry_Pop"),
+        [Jam.Matcha] = self:GetGameObject("Matcha_Pop"),
+        [Jam.Biolac] = self:GetGameObject("Biolac_Pop"),
+        [Jam.Mango] = self:GetGameObject("Mango_Pop")
+      }
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._timeValue):SetText((self._cfg_stage).Time)
-  ;
-  (self._scoreValue):SetText(self._score)
-  ;
-  (self._bounsValue):SetText((self._cfg_minigame).Bonus)
-  ;
-  (self._totalScore):SetText((StringTable.Get)("str_n20_minigame_score", self._score))
-  ;
-  (self._trashSpine):SetAnimation(0, "shut", false)
+function UICN19N48MiniGameController:_OnValue()
+  self._timeValue:SetText(self._cfg_stage.Time)
+  self._scoreValue:SetText(self._score)
+  self._bounsValue:SetText(self._cfg_minigame.Bonus)
+  self._totalScore:SetText(StringTable.Get("str_n20_minigame_score", self._score))
+  self._trashSpine:SetAnimation(0, "shut", false)
   self:_RefreshSkillEffect(0)
   self:_SetWeightIngredientJamObj()
   self:_HideHighLightObj()
@@ -215,194 +169,129 @@ UICN19N48MiniGameController._OnValue = function(self)
   self:_SetViceEffect(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._SetViceEffect = function(self, bool)
-  -- function num : 0_5
-  (self._normalObj):SetActive(bool)
-  ;
-  (self._rageObj):SetActive(not bool)
+function UICN19N48MiniGameController:_SetViceEffect(bool)
+  self._normalObj:SetActive(bool)
+  self._rageObj:SetActive(not bool)
   if not bool then
-    (self._fireSpine):SetAnimation(0, "move", true)
+    self._fireSpine:SetAnimation(0, "move", true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._SetSkillAreaTMP = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UICN19N48MiniGameController:_SetSkillAreaTMP()
   if self._materialReq then
-    (self._materialReq):Dispose()
+    self._materialReq:Dispose()
     self._materialReq = nil
   end
-  self._materialReq = (ResourceManager:GetInstance()):SyncLoadAsset("ui_n20_skillarea_name.mat", LoadType.Mat)
-  if self._materialReq and (self._materialReq).Obj then
-    self._material = (self._materialReq).Obj
-    for _,tmp in pairs(self._skillAreaTMP) do
+  self._materialReq = ResourceManager:GetInstance():SyncLoadAsset("ui_n20_skillarea_name.mat", LoadType.Mat)
+  if self._materialReq and self._materialReq.Obj then
+    self._material = self._materialReq.Obj
+    for _, tmp in pairs(self._skillAreaTMP) do
       local oldMaterial = tmp.fontMaterial
       tmp.fontMaterial = self._material
-      ;
-      (tmp.fontMaterial):SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
+      tmp.fontMaterial:SetTexture("_MainTex", oldMaterial:GetTexture("_MainTex"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._SetWeightIngredientJamObj = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  for key,value in pairs(Ingredient) do
-    ((((self._WIJObjs)[OrderformStep.Ingredient])[1])[value]):SetActive((table.icontains)((self._cfg_stage).Ingredient, value))
+function UICN19N48MiniGameController:_SetWeightIngredientJamObj()
+  for key, value in pairs(Ingredient) do
+    self._WIJObjs[OrderformStep.Ingredient][1][value]:SetActive(table.icontains(self._cfg_stage.Ingredient, value))
   end
-  for key,value in pairs(Jam) do
-    ((((self._WIJObjs)[OrderformStep.Jam])[1])[value]):SetActive((table.icontains)((self._cfg_stage).Jam, value))
+  for key, value in pairs(Jam) do
+    self._WIJObjs[OrderformStep.Jam][1][value]:SetActive(table.icontains(self._cfg_stage.Jam, value))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._Close = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN19N48MiniGameController:_Close()
   self:CloseDialog()
-  ;
-  (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+  AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.PauseBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
-  ;
-  (self._pause):SetActive(true)
+function UICN19N48MiniGameController:PauseBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
+  self._pause:SetActive(true)
   self._gameState = MiniGameState.Pause
-  ;
-  (self._gameStateAnimation):Play((MGAnimations.MiniGameState)[self._gameState])
+  self._gameStateAnimation:Play(MGAnimations.MiniGameState[self._gameState])
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.ExitBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UICN19N48MiniGameController:ExitBtnOnClick()
   self:Lock("UICN19N48MiniGameControllerPauseOut")
   self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    (self._gameStateAnimation):Play("uieffanim_UIN20MiniGame_Puase_out")
+    self._gameStateAnimation:Play("uieffanim_UIN20MiniGame_Puase_out")
     YIELD(TT, 333)
-    ;
-    (self._pause):SetActive(false)
+    self._pause:SetActive(false)
     self:_GameOver(self._score > 0)
     self:UnLock("UICN19N48MiniGameControllerPauseOut")
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.ContinueBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UICN19N48MiniGameController:ContinueBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   self:Lock("UICN19N48MiniGameControllerPauseOut")
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
-    (self._gameStateAnimation):Play("uieffanim_UIN20MiniGame_Puase_out")
+    self._gameStateAnimation:Play("uieffanim_UIN20MiniGame_Puase_out")
     YIELD(TT, 333)
-    ;
-    (self._pause):SetActive(false)
+    self._pause:SetActive(false)
     self._gameState = MiniGameState.Playing
     self:UnLock("UICN19N48MiniGameControllerPauseOut")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._StartCountDown = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._start):SetActive(true)
-  ;
-  (self._gameStateAnimation):Play((MGAnimations.MiniGameState)[self._gameState])
+function UICN19N48MiniGameController:_StartCountDown()
+  self._start:SetActive(true)
+  self._gameStateAnimation:Play(MGAnimations.MiniGameState[self._gameState])
   self._cd = 4
-  ;
-  (self._countdownImgObj):SetActive(false)
-  self._StartTimer = ((GameGlobal.Timer)()):AddEventTimes(1033, TimerTriggerCount.Infinite, self._OnCountDown, self)
+  self._countdownImgObj:SetActive(false)
+  self._StartTimer = GameGlobal.Timer():AddEventTimes(1033, TimerTriggerCount.Infinite, self._OnCountDown, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._OnCountDown = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UICN19N48MiniGameController:_OnCountDown()
   self._cd = self._cd - 1
   if self._cd <= 0 then
     self:Lock("UICN19N48MiniGameControllerStartOut")
     self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : _ENV, self
-    YIELD(TT, 100)
-    ;
-    (self._gameStateAnimation):Play("uieffanim_UIN20MiniGame_Start_out")
-    YIELD(TT, 333)
-    if self._StartTimer then
-      ((GameGlobal.Timer)()):CancelEvent(self._StartTimer)
-      self._StartTimer = nil
-      self._gameState = MiniGameState.Playing
-      ;
-      (AudioHelperController.StopBGM)()
-      ;
-      (AudioHelperController.PlayBGM)(CriAudioIDConst.BGMMiniGame, AudioConstValue.BGMCrossFadeTime)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN19N48MiniGameController)
-    end
-    ;
-    (self._start):SetActive(false)
-    self:UnLock("UICN19N48MiniGameControllerStartOut")
-  end
-, self)
+      YIELD(TT, 100)
+      self._gameStateAnimation:Play("uieffanim_UIN20MiniGame_Start_out")
+      YIELD(TT, 333)
+      if self._StartTimer then
+        GameGlobal.Timer():CancelEvent(self._StartTimer)
+        self._StartTimer = nil
+        self._gameState = MiniGameState.Playing
+        AudioHelperController.StopBGM()
+        AudioHelperController.PlayBGM(CriAudioIDConst.BGMMiniGame, AudioConstValue.BGMCrossFadeTime)
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UICN19N48MiniGameController)
+      end
+      self._start:SetActive(false)
+      self:UnLock("UICN19N48MiniGameControllerStartOut")
+    end, self)
   else
     if self._cd == 3 then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameStart)
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameStart)
     end
     local str = "n48_game_count" .. self._cd
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._countdownImg).sprite = (self._atlas):GetSprite(str)
-    ;
-    (self._countdownImgObj):SetActive(true)
-    ;
-    (self._cdAnimation):Stop()
-    ;
-    (self._cdAnimation):Play((MGAnimations.MiniGameState).Cd)
+    self._countdownImg.sprite = self._atlas:GetSprite(str)
+    self._countdownImgObj:SetActive(true)
+    self._cdAnimation:Stop()
+    self._cdAnimation:Play(MGAnimations.MiniGameState.Cd)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._NextOrderformCreateTime = function(self)
-  -- function num : 0_14
+function UICN19N48MiniGameController:_NextOrderformCreateTime()
   self._refreshTime = self:_GetOrderFormRefreshTime()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._GetTimeScore = function(self, time)
-  -- function num : 0_15
-  local timescore = ((self._cfg_minigame).TimeScore)[2]
+function UICN19N48MiniGameController:_GetTimeScore(time)
+  local timescore = self._cfg_minigame.TimeScore[2]
   if time <= timescore[1] then
-    return (((self._cfg_minigame).TimeScore)[1])[3]
+    return self._cfg_minigame.TimeScore[1][3]
+  elseif time > timescore[2] then
+    return self._cfg_minigame.TimeScore[3][3]
   else
-    if timescore[2] < time then
-      return (((self._cfg_minigame).TimeScore)[3])[3]
-    else
-      return timescore[3]
-    end
+    return timescore[3]
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_16
+function UICN19N48MiniGameController:OnUpdate(deltaTimeMS)
   self:_UpdateTime(deltaTimeMS)
   self:_UpdateSkillEffect(deltaTimeMS)
   self:_UpdateSkill(deltaTimeMS)
@@ -411,99 +300,72 @@ UICN19N48MiniGameController.OnUpdate = function(self, deltaTimeMS)
   self:_UpdateScore(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._UpdateSkillEffect = function(self, ms)
-  -- function num : 0_17 , upvalues : _ENV
+function UICN19N48MiniGameController:_UpdateSkillEffect(ms)
   if self._gameState ~= MiniGameState.Playing then
-    return 
+    return
   end
   if self._skillPointDelta < self._skillPoint then
-    self._skillPointDelta = (math.min)(self._skillPointDelta + ms * 0.001, self._skillPoint)
-    local percent = self._skillPointDelta / (self._cfg_minigame).IceSoulPoint
+    self._skillPointDelta = math.min(self._skillPointDelta + ms * 0.001, self._skillPoint)
+    local percent = self._skillPointDelta / self._cfg_minigame.IceSoulPoint
     self:_RefreshSkillEffect(percent)
-    if percent >= 1 then
-      (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameSkillStart)
+    if 1 <= percent then
+      AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameSkillStart)
       self:_PlaySkillAnimation(true)
       self:_SetViceEffect(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._UpdateSkill = function(self, ms)
-  -- function num : 0_18 , upvalues : _ENV
+function UICN19N48MiniGameController:_UpdateSkill(ms)
   if self._gameState ~= MiniGameState.Skill then
-    return 
+    return
   end
   self._skillTime = self._skillTime + ms * 0.001
   self._clickInterval = self._clickInterval - ms * 0.001
-  if (self._cfg_minigame).IceSoulTime < self._skillTime then
-    (self._gameStateskillAnimation):Play(((MGAnimations.MiniGameState)[self._gameState]).End)
-    ;
-    ((GameGlobal.Timer)()):AddEvent(566, function()
-    -- function num : 0_18_0 , upvalues : self, _ENV
-    self:_SetViceEffect(true)
-    ;
-    (self._gameStateskillAnimation):Stop()
-    ;
-    (self._skillObj):SetActive(false)
-    ;
-    (AudioHelperController.SetBGMMixerGroup)(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.DefaultMixerValue)
-  end
-)
+  if self._skillTime > self._cfg_minigame.IceSoulTime then
+    self._gameStateskillAnimation:Play(MGAnimations.MiniGameState[self._gameState].End)
+    GameGlobal.Timer():AddEvent(566, function()
+      self:_SetViceEffect(true)
+      self._gameStateskillAnimation:Stop()
+      self._skillObj:SetActive(false)
+      AudioHelperController.SetBGMMixerGroup(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.DefaultMixerValue)
+    end)
     self:_AudoComplementedWhenSkillEnd()
     self:_RefreshSkillEffect(0)
     self._skillTime = 0
     self._gameState = MiniGameState.Playing
   else
-    self:_RefreshSkillEffect(1 - self._skillTime / (self._cfg_minigame).IceSoulTime)
+    self:_RefreshSkillEffect(1 - self._skillTime / self._cfg_minigame.IceSoulTime)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._AudoComplementedWhenSkillEnd = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UICN19N48MiniGameController:_AudoComplementedWhenSkillEnd()
   if self._autoDoOrderformIndex <= 0 then
-    return 
+    return
   end
-  local orderform = (self._guestOrderformList)[self._autoDoOrderformIndex]
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  if orderform and orderform:CanDo() and (self._curOrderform)._weight > 0 then
-    (self._curOrderform)._weight = orderform._weight
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._curOrderform)._ingredient = orderform._ingredient
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._curOrderform)._jam = orderform._jam
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._curOrderform)._step = OrderformStep.Delivery
+  local orderform = self._guestOrderformList[self._autoDoOrderformIndex]
+  if orderform and orderform:CanDo() and 0 < self._curOrderform._weight then
+    self._curOrderform._weight = orderform._weight
+    self._curOrderform._ingredient = orderform._ingredient
+    self._curOrderform._jam = orderform._jam
+    self._curOrderform._step = OrderformStep.Delivery
     self:_Delivery(self._autoDoOrderformIndex, true)
   else
     self:_CurOrderformClear()
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._CreateNewOrderform = function(self, ms)
-  -- function num : 0_20 , upvalues : _ENV
+function UICN19N48MiniGameController:_CreateNewOrderform(ms)
   if self._gameState ~= MiniGameState.Playing and self._gameState ~= MiniGameState.Skill then
-    return 
+    return
   end
-  if (self._guideModule):GuideInProgress() and not (self._guestOrderformList)[self._guideIndex] and not self._createdGuideOrderform then
-    self:_CreateGuideOrderform()
-    self._createdGuideOrderform = true
+  if self._guideModule:GuideInProgress() then
+    if not self._guestOrderformList[self._guideIndex] and not self._createdGuideOrderform then
+      self:_CreateGuideOrderform()
+      self._createdGuideOrderform = true
+    end
+    return
   end
-  do return  end
   self._refreshTime = self._refreshTime - ms
   if self._refreshTime <= 0 then
     self:_CreateOrderform()
@@ -511,51 +373,38 @@ UICN19N48MiniGameController._CreateNewOrderform = function(self, ms)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._CheckOrderformReady = function(self)
-  -- function num : 0_21
+function UICN19N48MiniGameController:_CheckOrderformReady()
   for i = 1, self._guestOrderformListLength do
-    local orderform = (self._guestOrderformList)[i]
+    local orderform = self._guestOrderformList[i]
     if orderform then
       local widgetIndex = orderform._widgetIndex
-      if orderform:CanDo() and (self._curOrderform):Equal(orderform) then
-        ((self._guestOrderformWidgets)[widgetIndex]):PlayReadyAnimation(true)
+      if orderform:CanDo() and self._curOrderform:Equal(orderform) then
+        self._guestOrderformWidgets[widgetIndex]:PlayReadyAnimation(true)
       else
-        ;
-        ((self._guestOrderformWidgets)[widgetIndex]):PlayReadyAnimation(false)
+        self._guestOrderformWidgets[widgetIndex]:PlayReadyAnimation(false)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._Guideing = function(self, ms)
-  -- function num : 0_22
+function UICN19N48MiniGameController:_Guideing(ms)
   if self._guideTime > 0 then
     self._guideTime = self._guideTime - ms * 0.001
     return false
   end
-  if (self._guestOrderformList)[self._guideIndex] then
-    local orderform = ((self._guestOrderformList)[self._guideIndex]):CanDo()
-  end
-  do return not (self._guideModule):GuideInProgress() or orderform or self._guideTime < 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local orderform = self._guestOrderformList[self._guideIndex] and self._guestOrderformList[self._guideIndex]:CanDo()
+  return self._guideModule:GuideInProgress() and (orderform or self._guideTime < 0)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._UpdateGuestOrderformList = function(self, ms)
-  -- function num : 0_23 , upvalues : _ENV
+function UICN19N48MiniGameController:_UpdateGuestOrderformList(ms)
   if self._gameState ~= MiniGameState.Playing and self._gameState ~= MiniGameState.Skill then
-    return 
+    return
   end
   if self:_Guideing(ms) then
-    return 
+    return
   end
   for i = 1, self._guestOrderformListLength do
-    local orderform = (self._guestOrderformList)[i]
+    local orderform = self._guestOrderformList[i]
     if orderform then
       local widgetIndex = orderform._widgetIndex
       local guest = orderform._guest
@@ -565,183 +414,111 @@ UICN19N48MiniGameController._UpdateGuestOrderformList = function(self, ms)
           orderform._state = OrderformState.Waiting
           self:_CheckOrderformReady()
         end
-      else
-        if orderform._state == OrderformState.Waiting then
-          orderform._elapseWaitingTime = orderform._elapseWaitingTime + ms * 0.001
-          if orderform._waitingTime <= orderform._elapseWaitingTime then
-            orderform._state = OrderformState.TimeOut
-          else
-            local preMood = ((self._guestOrderformWidgets)[widgetIndex]):GetCurrentMood()
-            ;
-            ((self._guestOrderformWidgets)[widgetIndex]):_Update(ms)
-            local curMood = ((self._guestOrderformWidgets)[widgetIndex]):GetCurrentMood()
-            if preMood ~= curMood and curMood == GuestMood.Impatient then
-              ((self._guestOrderformWidgets)[widgetIndex]):PlayAnimation("twinkle01")
-            end
-            ;
-            ((self._guestWidgets)[guest]):_Update(curMood)
-          end
+      elseif orderform._state == OrderformState.Waiting then
+        orderform._elapseWaitingTime = orderform._elapseWaitingTime + ms * 0.001
+        if orderform._elapseWaitingTime >= orderform._waitingTime then
+          orderform._state = OrderformState.TimeOut
         else
-          do
-            do
-              if orderform._state == OrderformState.TimeOut then
-                (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameFail)
-                ;
-                ((self._guestOrderformWidgets)[widgetIndex]):_Update(ms)
-                ;
-                ((self._guestOrderformWidgets)[widgetIndex]):PlayAnimation("twinkle02")
-                ;
-                ((self._guestWidgets)[guest]):_Update(GuestMood.Impatient)
-                orderform._state = OrderformState.TimeOutAnimation
-              else
-                if orderform._state == OrderformState.TimeOutAnimation then
-                  orderform._timeOutAnimation = orderform._timeOutAnimation - ms * 0.001
-                  if orderform._timeOutAnimation <= 0 then
-                    ((self._guestOrderformWidgets)[widgetIndex]):PlayAnimation("out")
-                    ;
-                    ((self._guestWidgets)[guest]):PlayAnimation(GuestMood.Impatient)
-                    orderform._state = OrderformState.DisAppearing
-                  end
-                else
-                  if orderform._state == OrderformState.Fail then
-                    ((self._guestOrderformWidgets)[widgetIndex]):PlayAnimation("out")
-                    ;
-                    ((self._guestWidgets)[guest]):_Update(GuestMood.Impatient)
-                    ;
-                    ((self._guestWidgets)[guest]):PlayAnimation(GuestMood.Impatient)
-                    orderform._state = OrderformState.DisAppearing
-                  else
-                    if orderform._state == OrderformState.Success then
-                      ((self._guestOrderformWidgets)[widgetIndex]):SetActive(false)
-                      self:_ShowGuestScore(orderform._score, widgetIndex)
-                      ;
-                      ((self._guestWidgets)[guest]):_Update(GuestMood.Happy)
-                      ;
-                      ((self._guestWidgets)[guest]):Happy(orderform, GuestMood.Happy)
-                      orderform._state = OrderformState.DisAppearing
-                    else
-                      if orderform._state == OrderformState.DisAppearing then
-                        orderform._disAppearingTime = orderform._disAppearingTime - ms * 0.001
-                        -- DECOMPILER ERROR at PC219: Confused about usage of register: R9 in 'UnsetPending'
-
-                        if orderform._disAppearingTime <= 0 then
-                          (self._guestOrderformList)[i] = false
-                          ;
-                          ((self._guestWidgets)[guest]):SetActive(false)
-                          ;
-                          ((self._guestOrderformWidgets)[widgetIndex]):SetActive(false)
-                          ;
-                          ((self._guestScoreWidgets)[widgetIndex]):SetActive(false)
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-              -- DECOMPILER ERROR at PC235: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC235: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC235: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC235: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC235: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC235: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC235: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
+          local preMood = self._guestOrderformWidgets[widgetIndex]:GetCurrentMood()
+          self._guestOrderformWidgets[widgetIndex]:_Update(ms)
+          local curMood = self._guestOrderformWidgets[widgetIndex]:GetCurrentMood()
+          if preMood ~= curMood and curMood == GuestMood.Impatient then
+            self._guestOrderformWidgets[widgetIndex]:PlayAnimation("twinkle01")
           end
+          self._guestWidgets[guest]:_Update(curMood)
+        end
+      elseif orderform._state == OrderformState.TimeOut then
+        AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameFail)
+        self._guestOrderformWidgets[widgetIndex]:_Update(ms)
+        self._guestOrderformWidgets[widgetIndex]:PlayAnimation("twinkle02")
+        self._guestWidgets[guest]:_Update(GuestMood.Impatient)
+        orderform._state = OrderformState.TimeOutAnimation
+      elseif orderform._state == OrderformState.TimeOutAnimation then
+        orderform._timeOutAnimation = orderform._timeOutAnimation - ms * 0.001
+        if 0 >= orderform._timeOutAnimation then
+          self._guestOrderformWidgets[widgetIndex]:PlayAnimation("out")
+          self._guestWidgets[guest]:PlayAnimation(GuestMood.Impatient)
+          orderform._state = OrderformState.DisAppearing
+        end
+      elseif orderform._state == OrderformState.Fail then
+        self._guestOrderformWidgets[widgetIndex]:PlayAnimation("out")
+        self._guestWidgets[guest]:_Update(GuestMood.Impatient)
+        self._guestWidgets[guest]:PlayAnimation(GuestMood.Impatient)
+        orderform._state = OrderformState.DisAppearing
+      elseif orderform._state == OrderformState.Success then
+        self._guestOrderformWidgets[widgetIndex]:SetActive(false)
+        self:_ShowGuestScore(orderform._score, widgetIndex)
+        self._guestWidgets[guest]:_Update(GuestMood.Happy)
+        self._guestWidgets[guest]:Happy(orderform, GuestMood.Happy)
+        orderform._state = OrderformState.DisAppearing
+      elseif orderform._state == OrderformState.DisAppearing then
+        orderform._disAppearingTime = orderform._disAppearingTime - ms * 0.001
+        if 0 >= orderform._disAppearingTime then
+          self._guestOrderformList[i] = false
+          self._guestWidgets[guest]:SetActive(false)
+          self._guestOrderformWidgets[widgetIndex]:SetActive(false)
+          self._guestScoreWidgets[widgetIndex]:SetActive(false)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._ClearGuestOrderformList = function(self)
-  -- function num : 0_24
+function UICN19N48MiniGameController:_ClearGuestOrderformList()
   for i = 1, self._guestOrderformListLength do
-    if (self._guestOrderformList)[i] then
-      ((self._guestOrderformWidgets)[((self._guestOrderformList)[i])._widgetIndex]):SetActive(false)
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._guestOrderformList)[i] = false
+    if self._guestOrderformList[i] then
+      self._guestOrderformWidgets[self._guestOrderformList[i]._widgetIndex]:SetActive(false)
+      self._guestOrderformList[i] = false
     end
   end
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._UpdateScore = function(self, ms)
-  -- function num : 0_25 , upvalues : _ENV
+function UICN19N48MiniGameController:_UpdateScore(ms)
   if (self._gameState == MiniGameState.Playing or self._gameState == MiniGameState.Skill) and self._tempScore < self._score then
     self._tempScore = self._tempScore + self._tempScoreDelta
-    if self._score <= self._tempScore then
+    if self._tempScore >= self._score then
       self._tempScore = self._score
     end
-    ;
-    (self._scoreValue):SetText(self._tempScore)
+    self._scoreValue:SetText(self._tempScore)
   end
   if self._gameState == MiniGameState.Over and self._tempScore < self._score then
     self._tempScore = self._tempScore + self._tempScoreDelta
-    if self._score <= self._tempScore then
+    if self._tempScore >= self._score then
       self._tempScore = self._score
     end
-    ;
-    (self._totalScore):SetText((StringTable.Get)("str_n20_minigame_score", self._tempScore))
+    self._totalScore:SetText(StringTable.Get("str_n20_minigame_score", self._tempScore))
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._UpdateHighLightObj = function(self, step)
-  -- function num : 0_26 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
+function UICN19N48MiniGameController:_UpdateHighLightObj(step)
   if self._curOrderform then
     if step == OrderformStep.Weight then
-      (self._highLightObj)[OrderformStep.Weight] = (((self._WIJObjs)[OrderformStep.Weight])[2])[(self._curOrderform)._weight]
-      ;
-      ((self._highLightObj)[OrderformStep.Weight]):SetActive(true)
+      self._highLightObj[OrderformStep.Weight] = self._WIJObjs[OrderformStep.Weight][2][self._curOrderform._weight]
+      self._highLightObj[OrderformStep.Weight]:SetActive(true)
     end
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
     if step == OrderformStep.Ingredient then
-      (self._highLightObj)[OrderformStep.Ingredient] = (((self._WIJObjs)[OrderformStep.Ingredient])[2])[(self._curOrderform)._ingredient]
-      ;
-      ((self._highLightObj)[OrderformStep.Ingredient]):SetActive(true)
+      self._highLightObj[OrderformStep.Ingredient] = self._WIJObjs[OrderformStep.Ingredient][2][self._curOrderform._ingredient]
+      self._highLightObj[OrderformStep.Ingredient]:SetActive(true)
     end
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
     if step == OrderformStep.Jam then
-      (self._highLightObj)[OrderformStep.Jam] = (((self._WIJObjs)[OrderformStep.Jam])[2])[(self._curOrderform)._jam]
-      ;
-      ((self._highLightObj)[OrderformStep.Jam]):SetActive(true)
+      self._highLightObj[OrderformStep.Jam] = self._WIJObjs[OrderformStep.Jam][2][self._curOrderform._jam]
+      self._highLightObj[OrderformStep.Jam]:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._UpdateTime = function(self, ms)
-  -- function num : 0_27 , upvalues : _ENV
+function UICN19N48MiniGameController:_UpdateTime(ms)
   if self._gameState ~= MiniGameState.Playing then
-    return 
+    return
   end
   if self:_Guideing(ms) then
-    return 
+    return
   end
   self._elapseDeltaTime = self._elapseDeltaTime + ms * 0.001
   if self._elapseDeltaTime >= 1 then
     self._elapseTime = self._elapseTime + 1
-    local remainTime = (self._cfg_stage).Time - self._elapseTime
-    ;
-    (self._timeValue):SetText(remainTime)
+    local remainTime = self._cfg_stage.Time - self._elapseTime
+    self._timeValue:SetText(remainTime)
     self._elapseDeltaTime = 0
     if remainTime <= 0 then
       self:_GameOver(true)
@@ -749,503 +526,328 @@ UICN19N48MiniGameController._UpdateTime = function(self, ms)
   end
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._GetOrderFormRefreshTime = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UICN19N48MiniGameController:_GetOrderFormRefreshTime()
   local min = 0
   local max = 0
   if self._gameState == MiniGameState.Playing then
-    min = ((self._cfg_stage).RefreshTimeZone)[1]
-    max = ((self._cfg_stage).RefreshTimeZone)[2]
-  else
-    if self._gameState == MiniGameState.Skill then
-      min = ((self._cfg_stage).RefreshTimeZoneFever)[1]
-      max = ((self._cfg_stage).RefreshTimeZoneFever)[2]
-    end
+    min = self._cfg_stage.RefreshTimeZone[1]
+    max = self._cfg_stage.RefreshTimeZone[2]
+  elseif self._gameState == MiniGameState.Skill then
+    min = self._cfg_stage.RefreshTimeZoneFever[1]
+    max = self._cfg_stage.RefreshTimeZoneFever[2]
   end
-  return (math.random)((math.floor)(min * 1000), (math.floor)(max * 1000))
+  return math.random(math.floor(min * 1000), math.floor(max * 1000))
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._CreateOrderform = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function UICN19N48MiniGameController:_CreateOrderform()
   local index = self:_RandomGuestIndex()
   if index <= 0 then
-    return 
+    return
   end
   local cfg_orderform = self:_RandomOrderformCfg()
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
   if cfg_orderform then
-    (self._guestOrderformList)[index] = Orderform:New(cfg_orderform.Weight, cfg_orderform.Ingredient, cfg_orderform.Jam, cfg_orderform.Guest, cfg_orderform.WaitTime, index)
+    self._guestOrderformList[index] = Orderform:New(cfg_orderform.Weight, cfg_orderform.Ingredient, cfg_orderform.Jam, cfg_orderform.Guest, cfg_orderform.WaitTime, index)
     self:_ShowGuestWidget(cfg_orderform.Guest, index)
     self:_ShowGuestOrderformWidget(index)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._CreateGuideOrderform = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UICN19N48MiniGameController:_CreateGuideOrderform()
   local index = self._guideIndex
-  local cfg_orderform = (Cfg.cfg_summer_minigame_orderforms)[(self._cfg_minigame).GuideOrderform]
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._guestOrderformList)[index] = Orderform:New(cfg_orderform.Weight, cfg_orderform.Ingredient, cfg_orderform.Jam, cfg_orderform.Guest, cfg_orderform.WaitTime, index)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._guestOrderformList)[index])._state = OrderformState.Waiting
+  local cfg_orderform = Cfg.cfg_summer_minigame_orderforms[self._cfg_minigame.GuideOrderform]
+  self._guestOrderformList[index] = Orderform:New(cfg_orderform.Weight, cfg_orderform.Ingredient, cfg_orderform.Jam, cfg_orderform.Guest, cfg_orderform.WaitTime, index)
+  self._guestOrderformList[index]._state = OrderformState.Waiting
   self:_ShowGuestWidget(cfg_orderform.Guest, index)
   self:_ShowGuestOrderformWidget(index)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._RandomGuestIndex = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UICN19N48MiniGameController:_RandomGuestIndex()
   local temp = {}
   for i = 1, #self._guestOrderformList do
-    if not (self._guestOrderformList)[i] then
-      (table.insert)(temp, i)
+    if not self._guestOrderformList[i] then
+      table.insert(temp, i)
     end
   end
-  if #temp > 0 then
-    return temp[(math.random)(1, #temp)]
+  if 0 < #temp then
+    return temp[math.random(1, #temp)]
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._RandomOrderformCfg = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local ids = (self._cfg_stage).OrderFormID
+function UICN19N48MiniGameController:_RandomOrderformCfg()
+  local ids = self._cfg_stage.OrderFormID
   local cfg_orderforms = Cfg.cfg_summer_minigame_orderforms
   local orderforms = {}
   for i = 1, #ids do
     local cfg_orderform = cfg_orderforms[ids[i]]
     if self:_Eliminate(cfg_orderform.Guest) then
-      (table.insert)(orderforms, cfg_orderform)
+      table.insert(orderforms, cfg_orderform)
     end
   end
-  if (table.count)(orderforms) > 0 then
-    return orderforms[(math.random)(1, #orderforms)]
+  if table.count(orderforms) > 0 then
+    return orderforms[math.random(1, #orderforms)]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.SmallBtnOnClick = function(self, go)
-  -- function num : 0_33 , upvalues : _ENV
+function UICN19N48MiniGameController:SmallBtnOnClick(go)
   self:_Do(OrderformStep.Weight, Weight.Small)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.BigBtnOnClick = function(self, go)
-  -- function num : 0_34 , upvalues : _ENV
+function UICN19N48MiniGameController:BigBtnOnClick(go)
   self:_Do(OrderformStep.Weight, Weight.Big)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.ChocolateBtnOnClick = function(self, go)
-  -- function num : 0_35 , upvalues : _ENV
+function UICN19N48MiniGameController:ChocolateBtnOnClick(go)
   self:_Do(OrderformStep.Ingredient, Ingredient.Chocolate)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.PuddingBtnOnClick = function(self, go)
-  -- function num : 0_36 , upvalues : _ENV
+function UICN19N48MiniGameController:PuddingBtnOnClick(go)
   self:_Do(OrderformStep.Ingredient, Ingredient.Pudding)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.CocoBtnOnClick = function(self, go)
-  -- function num : 0_37 , upvalues : _ENV
+function UICN19N48MiniGameController:CocoBtnOnClick(go)
   self:_Do(OrderformStep.Ingredient, Ingredient.Coco)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.TaroBtnOnClick = function(self, go)
-  -- function num : 0_38 , upvalues : _ENV
+function UICN19N48MiniGameController:TaroBtnOnClick(go)
   self:_Do(OrderformStep.Ingredient, Ingredient.Taro)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.StrawberryRealBtnOnClick = function(self, go)
-  -- function num : 0_39 , upvalues : _ENV
+function UICN19N48MiniGameController:StrawberryRealBtnOnClick(go)
   self:_Do(OrderformStep.Jam, Jam.Strawberry)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.MatchaRealBtnOnClick = function(self, go)
-  -- function num : 0_40 , upvalues : _ENV
+function UICN19N48MiniGameController:MatchaRealBtnOnClick(go)
   self:_Do(OrderformStep.Jam, Jam.Matcha)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.BiolacRealBtnOnClick = function(self, go)
-  -- function num : 0_41 , upvalues : _ENV
+function UICN19N48MiniGameController:BiolacRealBtnOnClick(go)
   self:_Do(OrderformStep.Jam, Jam.Biolac)
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.MangoRealBtnOnClick = function(self, go)
-  -- function num : 0_42 , upvalues : _ENV
+function UICN19N48MiniGameController:MangoRealBtnOnClick(go)
   self:_Do(OrderformStep.Jam, Jam.Mango)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.Guest1OnClick = function(self, go)
-  -- function num : 0_43
+function UICN19N48MiniGameController:Guest1OnClick(go)
   self:_Delivery(1, false)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.Guest2OnClick = function(self, go)
-  -- function num : 0_44
+function UICN19N48MiniGameController:Guest2OnClick(go)
   self:_Delivery(2, false)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.Guest3OnClick = function(self, go)
-  -- function num : 0_45
+function UICN19N48MiniGameController:Guest3OnClick(go)
   self:_Delivery(3, false)
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.Guest4OnClick = function(self, go)
-  -- function num : 0_46
+function UICN19N48MiniGameController:Guest4OnClick(go)
   self:_Delivery(4, false)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._Do = function(self, step, param)
-  -- function num : 0_47 , upvalues : _ENV
-  if not (self._curOrderform):Do(step, param) then
-    return 
+function UICN19N48MiniGameController:_Do(step, param)
+  if not self._curOrderform:Do(step, param) then
+    return
   end
   local imgs = OrderformImg.Img
-  local img = nil
+  local img
   if step <= OrderformStep.Weight then
-    (((self._stepImg)[OrderformStep.Weight]).gameObject):SetActive(true)
-    img = (self._atlas):GetSprite((imgs[step])[param])
+    self._stepImg[OrderformStep.Weight].gameObject:SetActive(true)
+    img = self._atlas:GetSprite(imgs[step][param])
   else
-    ;
-    (((self._stepImg)[OrderformStep.Weight]).gameObject):SetActive(false)
-    img = (self._atlas):GetSprite(((imgs[step])[(self._curOrderform)._weight])[param])
+    self._stepImg[OrderformStep.Weight].gameObject:SetActive(false)
+    img = self._atlas:GetSprite(imgs[step][self._curOrderform._weight][param])
   end
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._stepImg)[step]).sprite = img
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._stepImg)[step]).color = (OrderformImg.ImgColor)[true]
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(StepAudio[step])
-  ;
-  ((self._stepAnimation)[step]):Play((MGAnimations.OrderformStep)[step])
+  self._stepImg[step].sprite = img
+  self._stepImg[step].color = OrderformImg.ImgColor[true]
+  AudioHelperController.PlayUISoundAutoRelease(StepAudio[step])
+  self._stepAnimation[step]:Play(MGAnimations.OrderformStep[step])
   self:_UpdateHighLightObj(step)
-  if (self._curOrderform)._step == OrderformStep.Delivery then
+  if self._curOrderform._step == OrderformStep.Delivery then
     self:_CheckOrderformReady()
   end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._HideCurOrderformImg = function(self)
-  -- function num : 0_48 , upvalues : _ENV
-  for key,value in pairs(OrderformStep) do
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R6 in 'UnsetPending'
-
+function UICN19N48MiniGameController:_HideCurOrderformImg()
+  for key, value in pairs(OrderformStep) do
     if value <= OrderformStep.Jam then
-      ((self._stepImg)[value]).color = (OrderformImg.ImgColor)[false]
+      self._stepImg[value].color = OrderformImg.ImgColor[false]
     end
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._InitGuestOrderformWights = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function UICN19N48MiniGameController:_InitGuestOrderformWights()
   local v2 = Vector2(0.5, 0.5)
-  ;
-  (self._guestOrderformItem):SpawnObjects("UICN19N48MiniGameOrderformItem", self._guestOrderformListLength)
-  self._guestOrderformWidgets = (self._guestOrderformItem):GetAllSpawnList()
-  for key,value in pairs(self._guestOrderformWidgets) do
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
-    ((value.view).transform).anchorMin = v2
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((value.view).transform).anchorMax = v2
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((value.view).transform).pivot = v2
+  self._guestOrderformItem:SpawnObjects("UICN19N48MiniGameOrderformItem", self._guestOrderformListLength)
+  self._guestOrderformWidgets = self._guestOrderformItem:GetAllSpawnList()
+  for key, value in pairs(self._guestOrderformWidgets) do
+    value.view.transform.anchorMin = v2
+    value.view.transform.anchorMax = v2
+    value.view.transform.pivot = v2
     value:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._ShowGuestOrderformWidget = function(self, index)
-  -- function num : 0_50
-  ((self._guestOrderformWidgets)[index]):SetActive(true)
-  ;
-  ((self._guestOrderformWidgets)[index]):SetPosition((((self._guestgameObject)[index]).transform).position, self._orderformWidgetOffset)
-  ;
-  ((self._guestOrderformWidgets)[index]):SetData((self._guestOrderformList)[index])
+function UICN19N48MiniGameController:_ShowGuestOrderformWidget(index)
+  self._guestOrderformWidgets[index]:SetActive(true)
+  self._guestOrderformWidgets[index]:SetPosition(self._guestgameObject[index].transform.position, self._orderformWidgetOffset)
+  self._guestOrderformWidgets[index]:SetData(self._guestOrderformList[index])
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._InitGuestScoreWights = function(self)
-  -- function num : 0_51 , upvalues : _ENV
+function UICN19N48MiniGameController:_InitGuestScoreWights()
   local v2 = Vector2(0.5, 0.5)
-  ;
-  (self._guestScoreItem):SpawnObjects("UICN19N48MiniGameScore", self._guestOrderformListLength)
-  self._guestScoreWidgets = (self._guestScoreItem):GetAllSpawnList()
-  for key,value in pairs(self._guestScoreWidgets) do
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R7 in 'UnsetPending'
-
-    ((value.view).transform).anchorMin = v2
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((value.view).transform).anchorMax = v2
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    ((value.view).transform).pivot = v2
+  self._guestScoreItem:SpawnObjects("UICN19N48MiniGameScore", self._guestOrderformListLength)
+  self._guestScoreWidgets = self._guestScoreItem:GetAllSpawnList()
+  for key, value in pairs(self._guestScoreWidgets) do
+    value.view.transform.anchorMin = v2
+    value.view.transform.anchorMax = v2
+    value.view.transform.pivot = v2
     value:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._ShowGuestScore = function(self, score, index)
-  -- function num : 0_52
-  ((self._guestScoreWidgets)[index]):SetActive(true)
-  ;
-  ((self._guestScoreWidgets)[index]):SetPosition((((self._guestgameObject)[index]).transform).position, self._scoreWidgetOffset)
-  ;
-  ((self._guestScoreWidgets)[index]):SetData(score)
+function UICN19N48MiniGameController:_ShowGuestScore(score, index)
+  self._guestScoreWidgets[index]:SetActive(true)
+  self._guestScoreWidgets[index]:SetPosition(self._guestgameObject[index].transform.position, self._scoreWidgetOffset)
+  self._guestScoreWidgets[index]:SetData(score)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._InitGuestWidgets = function(self)
-  -- function num : 0_53 , upvalues : _ENV
-  local ids = (self._cfg_stage).OrderFormID
+function UICN19N48MiniGameController:_InitGuestWidgets()
+  local ids = self._cfg_stage.OrderFormID
   local cfg_orderforms = Cfg.cfg_summer_minigame_orderforms
   local guestIds = {}
   for i = 1, #ids do
     local cfg_orderform = cfg_orderforms[ids[i]]
-    if not (table.icontains)(guestIds, cfg_orderform.Guest) then
-      (table.insert)(guestIds, cfg_orderform.Guest)
+    if not table.icontains(guestIds, cfg_orderform.Guest) then
+      table.insert(guestIds, cfg_orderform.Guest)
     end
   end
-  if #guestIds > 0 then
-    local widgets = (self._guestItem):SpawnObjects("UICN19N48MiniGameGuest", #guestIds)
+  if 0 < #guestIds then
+    local widgets = self._guestItem:SpawnObjects("UICN19N48MiniGameGuest", #guestIds)
     for i = 1, #guestIds do
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R9 in 'UnsetPending'
-
-      (self._guestWidgets)[guestIds[i]] = widgets[i]
-      ;
-      ((self._guestWidgets)[guestIds[i]]):SetActive(false)
+      self._guestWidgets[guestIds[i]] = widgets[i]
+      self._guestWidgets[guestIds[i]]:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._ShowGuestWidget = function(self, id, index)
-  -- function num : 0_54 , upvalues : _ENV
-  if (self._guestWidgets)[id] then
-    ((self._guestWidgets)[id]):SetActive(true)
-    ;
-    ((self._guestWidgets)[id]):SetPosition((((self._guestgameObject)[index]).transform).position, self._guestWidgetOffet)
-    ;
-    ((self._guestWidgets)[id]):SetData(id)
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameGuestAppear)
+function UICN19N48MiniGameController:_ShowGuestWidget(id, index)
+  if self._guestWidgets[id] then
+    self._guestWidgets[id]:SetActive(true)
+    self._guestWidgets[id]:SetPosition(self._guestgameObject[index].transform.position, self._guestWidgetOffet)
+    self._guestWidgets[id]:SetData(id)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameGuestAppear)
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.SKillBtnOnClick = function(self, go)
-  -- function num : 0_55 , upvalues : _ENV
-  if self._skillPointDelta < (self._cfg_minigame).IceSoulPoint then
-    return 
+function UICN19N48MiniGameController:SKillBtnOnClick(go)
+  if self._skillPointDelta < self._cfg_minigame.IceSoulPoint then
+    return
   end
-  if (self._cfg_stage).Time <= self._elapseTime then
-    return 
+  if self._elapseTime >= self._cfg_stage.Time then
+    return
   end
   if self._gameState == MiniGameState.Skill then
-    return 
+    return
   end
   self._gameState = MiniGameState.Skill
-  ;
-  (self._viceSpineObj):SetActive(true)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameSkillLoop)
-  ;
-  (AudioHelperController.SetBGMMixerGroup)(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.AuroralTimeMixerValue)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(1500, function()
-    -- function num : 0_55_0 , upvalues : self
-    (self._viceSpineObj):SetActive(false)
+  self._viceSpineObj:SetActive(true)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameSkillLoop)
+  AudioHelperController.SetBGMMixerGroup(AudioConstValue.AuroralTimeMixerGroupName, AudioConstValue.AuroralTimeMixerValue)
+  GameGlobal.Timer():AddEvent(1500, function()
+    self._viceSpineObj:SetActive(false)
     self:_DoSkill()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._DoSkill = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function UICN19N48MiniGameController:_DoSkill()
   self._skillPoint = 0
   self._skillPointDelta = 0
   self._skillTime = 0
   self._clickInterval = 0
   self._autoDoOrderformIndex = 0
-  ;
-  (self._skillObj):SetActive(true)
+  self._skillObj:SetActive(true)
   self:_SetSkillAreaTMP()
-  ;
-  (self._fireSpine):SetAnimation(0, "crazy", true)
+  self._fireSpine:SetAnimation(0, "crazy", true)
   self:_PlaySkillAnimation(false)
   self:_CurOrderformClear()
-  ;
-  (self._gameStateskillAnimation):Play(((MGAnimations.MiniGameState)[self._gameState]).Start)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(633, function()
-    -- function num : 0_56_0 , upvalues : self, _ENV
-    (self._gameStateskillAnimation):Play(((MGAnimations.MiniGameState)[self._gameState]).Loop)
-  end
-)
+  self._gameStateskillAnimation:Play(MGAnimations.MiniGameState[self._gameState].Start)
+  GameGlobal.Timer():AddEvent(633, function()
+    self._gameStateskillAnimation:Play(MGAnimations.MiniGameState[self._gameState].Loop)
+  end)
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._PlaySkillAnimation = function(self, enable)
-  -- function num : 0_57 , upvalues : _ENV
-  (self._skillFullFx):SetActive(enable)
+function UICN19N48MiniGameController:_PlaySkillAnimation(enable)
+  self._skillFullFx:SetActive(enable)
   if enable then
-    (self._skillAnimation):Play((MGAnimations.Other).Skill)
+    self._skillAnimation:Play(MGAnimations.Other.Skill)
   else
-    ;
-    (self._skillAnimation):Stop()
+    self._skillAnimation:Stop()
   end
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.SkillAreaOnClick = function(self, go)
-  -- function num : 0_58 , upvalues : _ENV
+function UICN19N48MiniGameController:SkillAreaOnClick(go)
   if self._gameState == MiniGameState.Skill and self._clickInterval <= 0 then
-    self._clickInterval = (self._cfg_minigame).ClickInterval
+    self._clickInterval = self._cfg_minigame.ClickInterval
     self:_AutoDo()
   end
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._AutoDo = function(self)
-  -- function num : 0_59 , upvalues : _ENV
+function UICN19N48MiniGameController:_AutoDo()
   self:_RefreshAutoOrderformIndex()
   if self._autoDoOrderformIndex <= 0 then
-    return 
+    return
   end
-  local orderform = (self._guestOrderformList)[self._autoDoOrderformIndex]
+  local orderform = self._guestOrderformList[self._autoDoOrderformIndex]
   if orderform then
     local step = 0
     local param = 0
     if orderform._step == OrderformStep.Weight then
       step = orderform._step
       param = orderform._weight
-    else
-      if orderform._step == OrderformStep.Ingredient then
-        step = orderform._step
-        param = orderform._ingredient
-      else
-        if orderform._step == OrderformStep.Jam then
-          step = orderform._step
-          param = orderform._jam
-        else
-          if orderform._step == OrderformStep.Delivery then
-            self:_Delivery(self._autoDoOrderformIndex, false)
-            step = 0
-            param = 0
-          end
-        end
-      end
+    elseif orderform._step == OrderformStep.Ingredient then
+      step = orderform._step
+      param = orderform._ingredient
+    elseif orderform._step == OrderformStep.Jam then
+      step = orderform._step
+      param = orderform._jam
+    elseif orderform._step == OrderformStep.Delivery then
+      self:_Delivery(self._autoDoOrderformIndex, false)
+      step = 0
+      param = 0
     end
-    if step > 0 and param > 0 then
+    if 0 < step and 0 < param then
       self:_Do(step, param)
       orderform:NextStep()
     end
   end
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._RefreshAutoOrderformIndex = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function UICN19N48MiniGameController:_RefreshAutoOrderformIndex()
   if self._autoDoOrderformIndex <= 0 then
     self._autoDoOrderformIndex = self:_GetACandoOrderformIndex()
   else
-    local orderform = (self._guestOrderformList)[self._autoDoOrderformIndex]
+    local orderform = self._guestOrderformList[self._autoDoOrderformIndex]
     if not orderform or not orderform:CanDo() then
-      if OrderformStep.Weight < (self._curOrderform)._step then
+      if self._curOrderform._step > OrderformStep.Weight then
         local newIndex = self:_GetReplaceAutoOrderformIndex()
         if newIndex <= 0 then
           self:_CurOrderformClear()
         else
-          -- DECOMPILER ERROR at PC33: Confused about usage of register: R3 in 'UnsetPending'
-
-          ;
-          ((self._guestOrderformList)[newIndex])._step = (self._curOrderform)._step
+          self._guestOrderformList[newIndex]._step = self._curOrderform._step
           self._autoDoOrderformIndex = newIndex
         end
       else
-        do
-          self._autoDoOrderformIndex = self:_GetACandoOrderformIndex()
-        end
+        self._autoDoOrderformIndex = self:_GetACandoOrderformIndex()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._GetReplaceAutoOrderformIndex = function(self)
-  -- function num : 0_61
+function UICN19N48MiniGameController:_GetReplaceAutoOrderformIndex()
   for i = 1, self._guestOrderformListLength do
-    local orderform = (self._guestOrderformList)[i]
+    local orderform = self._guestOrderformList[i]
     if orderform and orderform:CanDo() and not self:_IsWrong(orderform) then
       return i
     end
@@ -1253,114 +855,77 @@ UICN19N48MiniGameController._GetReplaceAutoOrderformIndex = function(self)
   return 0
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._GetACandoOrderformIndex = function(self)
-  -- function num : 0_62
+function UICN19N48MiniGameController:_GetACandoOrderformIndex()
   for i = 1, self._guestOrderformListLength do
-    if (self._guestOrderformList)[i] and ((self._guestOrderformList)[i]):CanDo() then
+    if self._guestOrderformList[i] and self._guestOrderformList[i]:CanDo() then
       return i
     end
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._IsWrong = function(self, orderform)
-  -- function num : 0_63
-  if (self._curOrderform)._weight > 0 and (self._curOrderform)._weight ~= orderform._weight then
+function UICN19N48MiniGameController:_IsWrong(orderform)
+  if self._curOrderform._weight > 0 and self._curOrderform._weight ~= orderform._weight then
     return true
   end
-  if (self._curOrderform)._ingredient > 0 and (self._curOrderform)._ingredient ~= orderform._ingredient then
+  if 0 < self._curOrderform._ingredient and self._curOrderform._ingredient ~= orderform._ingredient then
     return true
   end
-  if (self._curOrderform)._jam > 0 and (self._curOrderform)._jam ~= orderform._jam then
+  if 0 < self._curOrderform._jam and self._curOrderform._jam ~= orderform._jam then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.TrashBtnOnClick = function(self, go)
-  -- function num : 0_64 , upvalues : _ENV
+function UICN19N48MiniGameController:TrashBtnOnClick(go)
   self:Lock("UICN19N48MiniGameController:Trash")
-  ;
-  (self._plateAnimation):Play((MGAnimations.Other).Trash)
-  ;
-  (self._trashSpine):SetAnimation(0, "open", false)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(100, function()
-    -- function num : 0_64_0 , upvalues : self, _ENV
-    (self._plateAnimation):Stop()
+  self._plateAnimation:Play(MGAnimations.Other.Trash)
+  self._trashSpine:SetAnimation(0, "open", false)
+  GameGlobal.Timer():AddEvent(100, function()
+    self._plateAnimation:Stop()
     self:_CurOrderformClear()
     self:_ReSetPlatePosition()
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameTrash)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameTrash)
     self:UnLock("UICN19N48MiniGameController:Trash")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._ReSetPlatePosition = function(self)
-  -- function num : 0_65
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._plateRoot).anchoredPosition = self._plateRootRectTransformPosition
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._plateRootCanvasGroup).alpha = 1
+function UICN19N48MiniGameController:_ReSetPlatePosition()
+  self._plateRoot.anchoredPosition = self._plateRootRectTransformPosition
+  self._plateRootCanvasGroup.alpha = 1
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._CurOrderformClear = function(self)
-  -- function num : 0_66
-  (self._curOrderform):Clear()
+function UICN19N48MiniGameController:_CurOrderformClear()
+  self._curOrderform:Clear()
   self:_HideCurOrderformImg()
   self:_HideHighLightObj()
   self:_CheckOrderformReady()
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._HideHighLightObj = function(self)
-  -- function num : 0_67 , upvalues : _ENV
-  for key,value in pairs(OrderformStep) do
-    if (self._highLightObj)[value] then
-      ((self._highLightObj)[value]):SetActive(false)
+function UICN19N48MiniGameController:_HideHighLightObj()
+  for key, value in pairs(OrderformStep) do
+    if self._highLightObj[value] then
+      self._highLightObj[value]:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_68 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1ClickNormal)
+function UICN19N48MiniGameController:ConfirmBtnOnClick(go)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1ClickNormal)
   self:Lock("UICN19N48MiniGameControllerFinishOut")
   self:StartTask(function(TT)
-    -- function num : 0_68_0 , upvalues : self, _ENV
-    (self._gameStateAnimation):Play("uieffanim_UICN19N48MiniGame_Finish_out")
+    self._gameStateAnimation:Play("uieffanim_UICN19N48MiniGame_Finish_out")
     YIELD(TT, 733)
     self:_PlayGameOverStory()
     self:UnLock("UICN19N48MiniGameControllerFinishOut")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._Delivery = function(self, index, ignoreState)
-  -- function num : 0_69 , upvalues : _ENV
-  if (self._curOrderform)._step == OrderformStep.Delivery then
-    local waitingOrderform = (self._guestOrderformList)[index]
+function UICN19N48MiniGameController:_Delivery(index, ignoreState)
+  if self._curOrderform._step == OrderformStep.Delivery then
+    local waitingOrderform = self._guestOrderformList[index]
     if waitingOrderform and (waitingOrderform._state == OrderformState.Waiting or ignoreState) then
-      if (self._curOrderform):Equal(waitingOrderform) then
+      if self._curOrderform:Equal(waitingOrderform) then
         self:_GuideGameing()
         self:_WhenOrderformSuccess(index)
       else
@@ -1370,133 +935,83 @@ UICN19N48MiniGameController._Delivery = function(self, index, ignoreState)
       self:_CurOrderformClear()
     end
   else
-    do
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_n20_minigame_nofinish"))
-    end
+    ToastManager.ShowToast(StringTable.Get("str_n20_minigame_nofinish"))
   end
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._WhenOrderformSuccess = function(self, index)
-  -- function num : 0_70 , upvalues : _ENV
+function UICN19N48MiniGameController:_WhenOrderformSuccess(index)
   self._orderformCount = self._orderformCount + 1
   if self._gameState == MiniGameState.Playing then
-    self._skillPoint = (math.min)(self._skillPoint + 1, (self._cfg_minigame).IceSoulPoint)
+    self._skillPoint = math.min(self._skillPoint + 1, self._cfg_minigame.IceSoulPoint)
   end
-  local time = 1 - ((self._guestOrderformList)[index])._elapseWaitingTime / ((self._guestOrderformList)[index])._waitingTime
-  local scoreDelta = (math.floor)((self._cfg_stage).BaseScore * self:_GetTimeScore(time * 100) * self._bonus)
+  local time = 1 - self._guestOrderformList[index]._elapseWaitingTime / self._guestOrderformList[index]._waitingTime
+  local scoreDelta = math.floor(self._cfg_stage.BaseScore * self:_GetTimeScore(time * 100) * self._bonus)
   self._score = self._score + scoreDelta
-  self._bonus = (self._cfg_minigame).Bonus + (self._cfg_minigame).BonusDelta * self._orderformCount
-  ;
-  (self._bounsValue):SetText(self._bonus)
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._guestOrderformList)[index])._score = scoreDelta
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._guestOrderformList)[index])._state = OrderformState.Success
-  self._tempScoreDelta = (math.ceil)((self._score - self._tempScore) / App.TargetFrame * 2)
-  ;
-  (self._scoreAnimation):Play((MGAnimations.Other).Score)
-  ;
-  (self._bounsAnimation):Play((MGAnimations.Other).Bouns)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameSuccess)
+  self._bonus = self._cfg_minigame.Bonus + self._cfg_minigame.BonusDelta * self._orderformCount
+  self._bounsValue:SetText(self._bonus)
+  self._guestOrderformList[index]._score = scoreDelta
+  self._guestOrderformList[index]._state = OrderformState.Success
+  self._tempScoreDelta = math.ceil((self._score - self._tempScore) / App.TargetFrame * 2)
+  self._scoreAnimation:Play(MGAnimations.Other.Score)
+  self._bounsAnimation:Play(MGAnimations.Other.Bouns)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameSuccess)
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._GuideGameing = function(self)
-  -- function num : 0_71
+function UICN19N48MiniGameController:_GuideGameing()
   if self:_Guideing() then
     self._guideTime = 1.5
   end
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._WhenOrderformFail = function(self, index)
-  -- function num : 0_72 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._guestOrderformList)[index])._score = 0
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._guestOrderformList)[index])._state = OrderformState.Fail
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameFail)
+function UICN19N48MiniGameController:_WhenOrderformFail(index)
+  self._guestOrderformList[index]._score = 0
+  self._guestOrderformList[index]._state = OrderformState.Fail
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameFail)
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._RefreshSkillEffect = function(self, percent)
-  -- function num : 0_73 , upvalues : _ENV
+function UICN19N48MiniGameController:_RefreshSkillEffect(percent)
   local mask_y, pos_y = self:_GetSkillEffectParam(percent)
-  ;
-  (self._skillPointMaterial):SetTextureOffset("_MaskTex", Vector2(0, mask_y))
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._skillParticleSystemRect).anchoredPosition = Vector3(0, pos_y, 0)
+  self._skillPointMaterial:SetTextureOffset("_MaskTex", Vector2(0, mask_y))
+  self._skillParticleSystemRect.anchoredPosition = Vector3(0, pos_y, 0)
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._GetSkillEffectParam = function(self, percent)
-  -- function num : 0_74
+function UICN19N48MiniGameController:_GetSkillEffectParam(percent)
   if percent == 0 then
     return 0.5, -160
   end
-  if percent == 1 then
+  if percent == 1.0 then
     return 0, 215
   end
   return 0.425 - 0.335 * percent, -100 + 300 * percent
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._RecordGuest = function(self, guest)
-  -- function num : 0_75 , upvalues : _ENV
+function UICN19N48MiniGameController:_RecordGuest(guest)
   local temp = {}
   local flag = false
-  for key,value in pairs(self._guestRecord) do
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self._guestRecord)[key] = (self._guestRecord)[key] + 1
-    if self._orderformInterval <= (self._guestRecord)[key] then
-      (table.insert)(temp, key)
+  for key, value in pairs(self._guestRecord) do
+    self._guestRecord[key] = self._guestRecord[key] + 1
+    if self._guestRecord[key] >= self._orderformInterval then
+      table.insert(temp, key)
     end
     if key == guest then
       flag = true
     end
   end
   for i = 1, #temp do
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R8 in 'UnsetPending'
-
-    (self._guestRecord)[temp[i]] = nil
+    self._guestRecord[temp[i]] = nil
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
   if not flag and guest then
-    (self._guestRecord)[guest] = 1
+    self._guestRecord[guest] = 1
   end
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._Eliminate = function(self, guest)
-  -- function num : 0_76 , upvalues : _ENV
+function UICN19N48MiniGameController:_Eliminate(guest)
   for i = 1, #self._guestOrderformList do
-    if (self._guestOrderformList)[i] and ((self._guestOrderformList)[i])._guest == guest then
+    if self._guestOrderformList[i] and self._guestOrderformList[i]._guest == guest then
       return false
     end
   end
-  for key,value in pairs(self._guestRecord) do
+  for key, value in pairs(self._guestRecord) do
     if key == guest then
       return false
     end
@@ -1504,100 +1019,68 @@ UICN19N48MiniGameController._Eliminate = function(self, guest)
   return true
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._GameOver = function(self, playstory)
-  -- function num : 0_77 , upvalues : _ENV
+function UICN19N48MiniGameController:_GameOver(playstory)
   self._gameState = MiniGameState.Over
   self._playstory = playstory
   self:_ShowFinish()
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._PlayGameOverStory = function(self)
-  -- function num : 0_78 , upvalues : _ENV
-  if self._playstory and (table.icontains)((self._cfg_stage).StoryActiveType, 2) and ((((self._componentInfo).mission_info_list)[self._stage_id]).mission_info).story_mask & 2 == 0 then
-    ((GameGlobal.GetModule)(StoryModule)):StartStory(((self._cfg_stage).StoryID)[(math.max)(1, (table.count)((self._cfg_stage).StoryID))], function()
-    -- function num : 0_78_0 , upvalues : self, _ENV
-    self:StartTask(function(TT)
-      -- function num : 0_78_0_0 , upvalues : _ENV, self
-      local res = AsyncRequestRes:New()
-      res = (self._component):HandleStoryMsg(TT, res, self._stage_id, 2)
-      if self._callback then
-        (self._callback)()
-      end
-      self:_Close()
-    end
-)
-  end
-)
+function UICN19N48MiniGameController:_PlayGameOverStory()
+  if self._playstory and table.icontains(self._cfg_stage.StoryActiveType, 2) and self._componentInfo.mission_info_list[self._stage_id].mission_info.story_mask & 2 == 0 then
+    GameGlobal.GetModule(StoryModule):StartStory(self._cfg_stage.StoryID[math.max(1, table.count(self._cfg_stage.StoryID))], function()
+      self:StartTask(function(TT)
+        local res = AsyncRequestRes:New()
+        res = self._component:HandleStoryMsg(TT, res, self._stage_id, 2)
+        if self._callback then
+          self._callback()
+        end
+        self:_Close()
+      end)
+    end)
   else
     if self._callback then
-      (self._callback)()
+      self._callback()
     end
     self:_Close()
   end
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._ShowFinish = function(self)
-  -- function num : 0_79 , upvalues : _ENV
-  (self._finish):SetActive(true)
-  ;
-  (self._scoreValue):SetText(self._score)
+function UICN19N48MiniGameController:_ShowFinish()
+  self._finish:SetActive(true)
+  self._scoreValue:SetText(self._score)
   self._tempScore = 0
-  self._tempScoreDelta = (math.ceil)(self._score / App.TargetFrame)
-  ;
-  (self._gameStateAnimation):Play((MGAnimations.MiniGameState)[self._gameState])
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1GameFinish)
+  self._tempScoreDelta = math.ceil(self._score / App.TargetFrame)
+  self._gameStateAnimation:Play(MGAnimations.MiniGameState[self._gameState])
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1GameFinish)
   self:_SendScoreToServer()
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController._SendScoreToServer = function(self)
-  -- function num : 0_80 , upvalues : _ENV
+function UICN19N48MiniGameController:_SendScoreToServer()
   self:StartTask(function(TT)
-    -- function num : 0_80_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    res = (self._component):HandleScoreMsg(TT, res, self._stage_id, self._score)
+    res = self._component:HandleScoreMsg(TT, res, self._stage_id, self._score)
     if not res:GetSucc() then
-      (Log.error)("handle score msg fail.")
+      Log.error("handle score msg fail.")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.GuideGameGuest = function(self)
-  -- function num : 0_81 , upvalues : _ENV
-  local cfg_orderform = (Cfg.cfg_summer_minigame_orderforms)[(self._cfg_minigame).GuideOrderform]
-  if cfg_orderform and (self._guestWidgets)[cfg_orderform.Guest] then
-    return (((self._guestWidgets)[cfg_orderform.Guest]).view).gameObject
+function UICN19N48MiniGameController:GuideGameGuest()
+  local cfg_orderform = Cfg.cfg_summer_minigame_orderforms[self._cfg_minigame.GuideOrderform]
+  if cfg_orderform and self._guestWidgets[cfg_orderform.Guest] then
+    return self._guestWidgets[cfg_orderform.Guest].view.gameObject
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.GuideOrderformItem = function(self)
-  -- function num : 0_82
-  return (((self._guestOrderformWidgets)[self._guideIndex]).view).gameObject
+function UICN19N48MiniGameController:GuideOrderformItem()
+  return self._guestOrderformWidgets[self._guideIndex].view.gameObject
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN19N48MiniGameController.OnHide = function(self)
-  -- function num : 0_83
+function UICN19N48MiniGameController:OnHide()
   if self._materialReq then
-    (self._materialReq):Dispose()
+    self._materialReq:Dispose()
     self._materialReq = nil
   end
   self._material = nil
 end
-
-

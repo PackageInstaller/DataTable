@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/pick_up_policy_register.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PickUpPolicy_CalcParam", Object)
 PickUpPolicy_CalcParam = PickUpPolicy_CalcParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpPolicy_CalcParam.Constructor = function(self, TT, petEntity, activeSkillID, policyParam)
-  -- function num : 0_0
+function PickUpPolicy_CalcParam:Constructor(TT, petEntity, activeSkillID, policyParam)
   self.TT = TT
   self.petEntity = petEntity
   self.activeSkillID = activeSkillID
   self.policyParam = policyParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.CalcPickUpByPolicy = function(self, TT, petEntity, activeSkillID, policy, policyParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local classType = (self._pickUpPolicyCalculatorDic)[policy]
+function AutoFightService:CalcPickUpByPolicy(TT, petEntity, activeSkillID, policy, policyParam)
+  local classType = self._pickUpPolicyCalculatorDic[policy]
   if classType == nil then
     classType = PickUpPolicy_Default
   end
@@ -30,227 +20,60 @@ AutoFightService.CalcPickUpByPolicy = function(self, TT, petEntity, activeSkillI
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.RegistPickUpPolicyCalculator = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function AutoFightService:RegistPickUpPolicyCalculator()
   self._pickUpPolicyCalculatorDic = {}
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.MovePathEndPos] = PickUpPolicy_MovePathEndPos
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetFei] = PickUpPolicy_PetFei
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetJiaBaiLie] = PickUpPolicy_PetJiaBaiLie
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetSaiKa] = PickUpPolicy_PetSaiKa
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.NearestPos] = PickUpPolicy_NearestPos
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.HeroPos] = PickUpPolicy_HeroPos
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetXiNuoPu] = PickUpPolicy_PetXiNuoPu
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetYuSen] = PickUpPolicy_PetYuSen
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetSaiKaReverse] = PickUpPolicy_PetSaiKaReverse
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetLuoYi] = PickUpPolicy_PetLuoYi
-  -- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetQingTong] = PickUpPolicy_PetQingTong
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetLen] = PickUpPolicy_PetLen
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetGiles] = PickUpPolicy_PetGiles
-  -- DECOMPILER ERROR at PC71: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetVice] = PickUpPolicy_PetVice
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetReinhardt] = PickUpPolicy_PetReinhardt
-  -- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.FeatureMasterSkill] = PickUpPolicy_FeatureMasterSkill
-  -- DECOMPILER ERROR at PC86: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetSPKaLian] = PickUpPolicy_PetSPKaLian
-  -- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetSPKaLianWithDamage] = PickUpPolicy_PetSPKaLianWithDamage
-  -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetFeiYa] = PickUpPolicy_PetFeiYa
-  -- DECOMPILER ERROR at PC101: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetJudge] = PickUpPolicy_PetJudge
-  -- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.Pet1601701] = PickUpPolicy_Pet1601701
-  -- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.Pet1601751] = PickUpPolicy_Pet1601751
-  -- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetZhongxuMain] = PickUpPolicy_PetZhongxuMain
-  -- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetZhongxuExtra] = PickUpPolicy_PetZhongxuExtra
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetYeliyaMain] = PickUpPolicy_PetYeliyaMain
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetYeliyaExtra] = PickUpPolicy_PetYeliyaExtra
-  -- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetLingEn] = PickUpPolicy_PetLingEn
-  -- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetDiNa] = PickUpPolicy_PetDiNa
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetNaNuSaiEr] = PickUpPolicy_PetNaNuSaiEr
-  -- DECOMPILER ERROR at PC151: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetANaTuoLi] = PickUpPolicy_PetANaTuoLi
-  -- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.FeatureMasterSkillExtra] = PickUpPolicy_FeatureMasterSkillExtra
-  -- DECOMPILER ERROR at PC161: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetSorkBekk] = PickUpPolicy_PetSorkBekk
-  -- DECOMPILER ERROR at PC166: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetDanTang] = PickUpPolicy_PetDanTang
-  -- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PickupConvertWithWeight] = PickUpPolicy_PickUpConvertWithWeight
-  -- DECOMPILER ERROR at PC176: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.Pet1502051SPBaiLan] = PickUpPolicy_Pet1502051SPBaiLan
-  -- DECOMPILER ERROR at PC181: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.LocalTeamSelectGrid1x4Or2x2Convert] = PickUpPolicy_LocalTeamSelectGrid1x4Or2x2Convert
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.LocalTeamSelectCenterGridFor3x3Convert] = PickUpPolicy_LocalTeamSelectCenterGridFor3x3Convert
-  -- DECOMPILER ERROR at PC191: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.LocalTeamSelectCornerGridsFor3x3Convert] = PickUpPolicy_LocalTeamSelectCornerGridsFor3x3Convert
-  -- DECOMPILER ERROR at PC196: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.LocalTeamSelectCenterGridFor1xCrossConvert] = PickUpPolicy_LocalTeamSelectCenterGridFor1xCrossConvert
-  -- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.LocalTeamPickupConvertWithWeight] = PickUpPolicy_LocalTeamPickUpConvertWithWeight
-  -- DECOMPILER ERROR at PC206: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetLarrey] = PickUpPolicy_PetLarrey
-  -- DECOMPILER ERROR at PC211: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetSinan] = PickUpPolicy_PetSinan
-  -- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetJocelyn] = PickUpPolicy_PetJocelyn
-  -- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetKangNa] = PickUpPolicy_PetKangNa
-  -- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetYiSha] = PickUpPolicy_PetYiSha
-  -- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetYisitawan] = PickUpPolicy_YiSiTaWan
-  -- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetShe] = PickUpPolicy_PetShe
-  -- DECOMPILER ERROR at PC241: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetAlGore] = PickUpPolicy_PetAlGore
-  -- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetChenNi] = PickUpPolicy_PetChenNi
-  -- DECOMPILER ERROR at PC251: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetPrima] = PickUpPolicy_PetPrima
-  -- DECOMPILER ERROR at PC256: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetZeta1] = PickUpPolicy_PetZeta1
-  -- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetBatiya] = PickUpPolicy_PetBatiya
-  -- DECOMPILER ERROR at PC266: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetWilliam] = PickUpPolicy_PetWilliam
-  -- DECOMPILER ERROR at PC271: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._pickUpPolicyCalculatorDic)[PickPosPolicy.PetMoye] = PickUpPolicy_PetMoye
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.MovePathEndPos] = PickUpPolicy_MovePathEndPos
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetFei] = PickUpPolicy_PetFei
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetJiaBaiLie] = PickUpPolicy_PetJiaBaiLie
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetSaiKa] = PickUpPolicy_PetSaiKa
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.NearestPos] = PickUpPolicy_NearestPos
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.HeroPos] = PickUpPolicy_HeroPos
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetXiNuoPu] = PickUpPolicy_PetXiNuoPu
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetYuSen] = PickUpPolicy_PetYuSen
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetSaiKaReverse] = PickUpPolicy_PetSaiKaReverse
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetLuoYi] = PickUpPolicy_PetLuoYi
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetQingTong] = PickUpPolicy_PetQingTong
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetLen] = PickUpPolicy_PetLen
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetGiles] = PickUpPolicy_PetGiles
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetVice] = PickUpPolicy_PetVice
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetReinhardt] = PickUpPolicy_PetReinhardt
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.FeatureMasterSkill] = PickUpPolicy_FeatureMasterSkill
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetSPKaLian] = PickUpPolicy_PetSPKaLian
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetSPKaLianWithDamage] = PickUpPolicy_PetSPKaLianWithDamage
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetFeiYa] = PickUpPolicy_PetFeiYa
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetJudge] = PickUpPolicy_PetJudge
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.Pet1601701] = PickUpPolicy_Pet1601701
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.Pet1601751] = PickUpPolicy_Pet1601751
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetZhongxuMain] = PickUpPolicy_PetZhongxuMain
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetZhongxuExtra] = PickUpPolicy_PetZhongxuExtra
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetYeliyaMain] = PickUpPolicy_PetYeliyaMain
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetYeliyaExtra] = PickUpPolicy_PetYeliyaExtra
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetLingEn] = PickUpPolicy_PetLingEn
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetDiNa] = PickUpPolicy_PetDiNa
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetNaNuSaiEr] = PickUpPolicy_PetNaNuSaiEr
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetANaTuoLi] = PickUpPolicy_PetANaTuoLi
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.FeatureMasterSkillExtra] = PickUpPolicy_FeatureMasterSkillExtra
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetSorkBekk] = PickUpPolicy_PetSorkBekk
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetDanTang] = PickUpPolicy_PetDanTang
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PickupConvertWithWeight] = PickUpPolicy_PickUpConvertWithWeight
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.Pet1502051SPBaiLan] = PickUpPolicy_Pet1502051SPBaiLan
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.LocalTeamSelectGrid1x4Or2x2Convert] = PickUpPolicy_LocalTeamSelectGrid1x4Or2x2Convert
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.LocalTeamSelectCenterGridFor3x3Convert] = PickUpPolicy_LocalTeamSelectCenterGridFor3x3Convert
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.LocalTeamSelectCornerGridsFor3x3Convert] = PickUpPolicy_LocalTeamSelectCornerGridsFor3x3Convert
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.LocalTeamSelectCenterGridFor1xCrossConvert] = PickUpPolicy_LocalTeamSelectCenterGridFor1xCrossConvert
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.LocalTeamPickupConvertWithWeight] = PickUpPolicy_LocalTeamPickUpConvertWithWeight
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetLarrey] = PickUpPolicy_PetLarrey
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetSinan] = PickUpPolicy_PetSinan
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetJocelyn] = PickUpPolicy_PetJocelyn
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetKangNa] = PickUpPolicy_PetKangNa
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetYiSha] = PickUpPolicy_PetYiSha
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetYisitawan] = PickUpPolicy_YiSiTaWan
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetShe] = PickUpPolicy_PetShe
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetAlGore] = PickUpPolicy_PetAlGore
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetChenNi] = PickUpPolicy_PetChenNi
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetPrima] = PickUpPolicy_PetPrima
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetZeta1] = PickUpPolicy_PetZeta1
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetBatiya] = PickUpPolicy_PetBatiya
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetWilliam] = PickUpPolicy_PetWilliam
+  self._pickUpPolicyCalculatorDic[PickPosPolicy.PetMoye] = PickUpPolicy_PetMoye
 end
-
-

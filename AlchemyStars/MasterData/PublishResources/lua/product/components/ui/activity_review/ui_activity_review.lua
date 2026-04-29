@@ -1,52 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/ui_activity_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReview", UIController)
 UIActivityReview = UIActivityReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReview.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  local count = ((GameGlobal.GetModule)(RoleModule)):GetReviewCoinAddedCount()
-  local tmpRes = ((GameGlobal.GetModule)(CampaignModule)):EnterCampaignReiew(TT)
+function UIActivityReview:LoadDataOnEnter(TT, res)
+  local count = GameGlobal.GetModule(RoleModule):GetReviewCoinAddedCount()
+  local tmpRes = GameGlobal.GetModule(CampaignModule):EnterCampaignReiew(TT)
   if tmpRes and tmpRes:GetSucc() then
     self._addedCoinCount = count
     res:SetSucc(true)
   else
-    ;
-    ((GameGlobal.GetModule)(CampaignModule)):ShowErrorToast(tmpRes:GetResult())
+    GameGlobal.GetModule(CampaignModule):ShowErrorToast(tmpRes:GetResult())
     res:SetSucc(false)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReview.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityReview:OnShow(uiParams)
   self:InitWidget()
-  local topWidget = (self.topBtn):SpawnObject("UICommonTopButton")
+  local topWidget = self.topBtn:SpawnObject("UICommonTopButton")
   topWidget:SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
     self:SwitchState(UIStateType.UIExtraSelect)
-  end
-, function()
-    -- function num : 0_1_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", self:GetName())
-  end
-)
-  self._topCurrency = (self.toptips):SpawnObject("UICurrencyMenu")
-  ;
-  (self._topCurrency):SetData({RoleAssetID.RoleAssetActiveToken})
-  local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
+  end)
+  self._topCurrency = self.toptips:SpawnObject("UICurrencyMenu")
+  self._topCurrency:SetData({
+    RoleAssetID.RoleAssetActiveToken
+  })
+  local uiModule = GameGlobal.GetUIModule(CampaignModule)
   self._data = uiModule:GetReviewData()
-  self._dataList = (self._data):GetAllOpenedList()
+  self._dataList = self._data:GetAllOpenedList()
   local paddingLeft = -135
   local paddingRight = 414
   local del1 = 580
   local del2 = 241
-  local sWidth = ((self.safeArea).rect).width
+  local sWidth = self.safeArea.rect.width
   local width = paddingLeft
   for i = 1, #self._dataList do
     local value = i % 2
@@ -57,66 +43,53 @@ UIActivityReview.OnShow = function(self, uiParams)
     end
   end
   width = width + paddingRight
-  -- DECOMPILER ERROR at PC65: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self.contentTr).sizeDelta = Vector2((math.max)(sWidth, width), ((self.safeArea).rect).height)
-  local items = (self.content):SpawnObjects("UIActivityReviewItem", #self._dataList)
-  for index,item in ipairs(items) do
-    item:SetData((self._dataList)[index], index, index == #self._dataList)
+  self.contentTr.sizeDelta = Vector2(math.max(sWidth, width), self.safeArea.rect.height)
+  local items = self.content:SpawnObjects("UIActivityReviewItem", #self._dataList)
+  for index, item in ipairs(items) do
+    item:SetData(self._dataList[index], index, index == #self._dataList)
   end
   if self._addedCoinCount and self._addedCoinCount > 0 then
-    local coinToptip = (self._topCurrency):GetItemByTypeId(RoleAssetID.RoleAssetActiveToken)
-    local count = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(RoleAssetID.RoleAssetActiveToken)
-    local from = (math.max)(count - self._addedCoinCount, 0)
+    local coinToptip = self._topCurrency:GetItemByTypeId(RoleAssetID.RoleAssetActiveToken)
+    local count = GameGlobal.GetModule(ItemModule):GetItemCount(RoleAssetID.RoleAssetActiveToken)
+    local from = math.max(count - self._addedCoinCount, 0)
     local to = count
-    local max = ((Cfg.cfg_global).ActiveReviewTokenMax).IntValue
+    local max = Cfg.cfg_global.ActiveReviewTokenMax.IntValue
     if from ~= to then
-      local tl = EZTL_Sequence:New({EZTL_PlayAnimation:New(self.anim, "UIActivityReview_uianim", "Animation"), EZTL_TextUpAnimFormat:New(coinToptip:GetUIText(), from, to, 500, "%s/" .. max, "文字滚动")}, "顶条物品数量滚动")
+      local tl = EZTL_Sequence:New({
+        EZTL_PlayAnimation:New(self.anim, "UIActivityReview_uianim", "Animation"),
+        EZTL_TextUpAnimFormat:New(coinToptip:GetUIText(), from, to, 500, "%s/" .. max, "文字滚动")
+      }, "顶条物品数量滚动")
       self._eftPlayer = EZTL_Player:New()
-      ;
-      ((self.anim).gameObject):SetActive(true)
-      ;
-      (self.AddValue):SetText("+" .. tostring(self._addedCoinCount))
-      ;
-      (coinToptip:GetUIText()):SetText(from .. "/" .. max)
-      ;
-      (self._eftPlayer):Play(tl)
+      self.anim.gameObject:SetActive(true)
+      self.AddValue:SetText("+" .. tostring(self._addedCoinCount))
+      coinToptip:GetUIText():SetText(from .. "/" .. max)
+      self._eftPlayer:Play(tl)
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReview.InitWidget = function(self)
-  -- function num : 0_2
+function UIActivityReview:InitWidget()
   self.topBtn = self:GetUIComponent("UISelectObjectPath", "topBtn")
   self.toptips = self:GetUIComponent("UISelectObjectPath", "toptips")
   self.content = self:GetUIComponent("UISelectObjectPath", "Content")
   self.contentTr = self:GetUIComponent("RectTransform", "Content")
   self.safeArea = self:GetUIComponent("RectTransform", "SafeArea")
   self.anim = self:GetUIComponent("Animation", "anim")
-  ;
-  ((self.anim).gameObject):SetActive(false)
+  self.anim.gameObject:SetActive(false)
   self.AddValue = self:GetUIComponent("UILocalizationText", "AddValue")
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "shot")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReview.OnHide = function(self)
-  -- function num : 0_3
-  if self._eftPlayer and (self._eftPlayer):IsPlaying() then
-    (self._eftPlayer):Stop()
+function UIActivityReview:OnHide()
+  if self._eftPlayer then
+    if self._eftPlayer:IsPlaying() then
+      self._eftPlayer:Stop()
+    end
+    self._eftPlayer = nil
   end
-  self._eftPlayer = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReview._InitItem = function(self, scrollview, index)
-  -- function num : 0_4
+function UIActivityReview:_InitItem(scrollview, index)
   if index < 0 then
     return nil
   end
@@ -127,19 +100,11 @@ UIActivityReview._InitItem = function(self, scrollview, index)
     item.IsInitHandlerCalled = true
   end
   local itemWidget = cellPool:SpawnObject("UIActivityReviewItem")
-  itemWidget:SetData((self._dataList)[index], index, #self._dataList == index)
-  do return item end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  itemWidget:SetData(self._dataList[index], index, #self._dataList == index)
+  return item
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReview.GetShotImage = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-  return (self._shot):RefreshBlurTexture()
+function UIActivityReview:GetShotImage()
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  return self._shot:RefreshBlurTexture()
 end
-
-

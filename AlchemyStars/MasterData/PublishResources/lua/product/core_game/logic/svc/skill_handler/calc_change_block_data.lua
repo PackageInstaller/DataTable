@@ -1,44 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_change_block_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ChangeBlockData", Object)
 SkillEffectCalc_ChangeBlockData = SkillEffectCalc_ChangeBlockData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ChangeBlockData.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ChangeBlockData:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ChangeBlockData.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ChangeBlockData:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam.skillEffectParam
   local change = skillParam:GetChangeType()
   local centerPos = skillEffectCalcParam.centerPos
-  local boardCmpt = ((self._world):GetBoardEntity()):Board()
+  local boardCmpt = self._world:GetBoardEntity():Board()
   local blockData = boardCmpt:FindBlockByPos(centerPos)
   local es = boardCmpt:GetPieceEntities(centerPos, function(e)
-    -- function num : 0_1_0 , upvalues : _ENV
-    do return not e:Trap() or (e:Trap()):GetTrapType() == TrapType.TerrainAbyss end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-)
+    return e:Trap() and e:Trap():GetTrapType() == TrapType.TerrainAbyss
+  end)
   if #es == 0 then
     return SkillEffectResultChangeBlockData:New(false, change)
   end
   local e = es[1]
   if change == "push" then
     blockData:AddBlock(e:GetID(), 0)
-  else
-    if change == "pop" then
-      blockData:AddBlock(e:GetID(), (e:BlockFlag()):GetBlockFlag())
-    end
+  elseif change == "pop" then
+    blockData:AddBlock(e:GetID(), e:BlockFlag():GetBlockFlag())
   end
   return SkillEffectResultChangeBlockData:New(true, change)
 end
-
-

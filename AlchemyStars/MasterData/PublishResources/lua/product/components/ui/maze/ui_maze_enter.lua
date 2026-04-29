@@ -1,96 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/maze/ui_maze_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMazeEnter", UIController)
 UIMazeEnter = UIMazeEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMazeEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMazeEnter:OnShow(uiParams)
   local module = self:GetModule(MissionModule)
   local data = module:GetDiscoveryData()
   self:UnLock("UIMazeEnterShowDialog")
   self._txtTime = self:GetUIComponent("UILocalizationText", "txtTime")
   self._btn = self:GetUIComponent("UISelectObjectPath", "btn")
-  self._backBtns = (self._btn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self._backBtns = self._btn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, nil)
+  end, nil)
   self:CountDown()
-  self._countTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_0_1 , upvalues : self
+  self._countTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:CountDown()
-  end
-)
+  end)
   self._btnEnterGo = self:GetGameObject("btnEnter")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeEnter.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMazeEnter:OnHide()
   if self._countTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countTimer)
+    GameGlobal.Timer():CancelEvent(self._countTimer)
     self._countTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeEnter.btnEnterOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Maze_Enter, "mj_01")
+function UIMazeEnter:btnEnterOnClick(go)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Maze_Enter, "mj_01")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeEnter.CountDown = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self._mazeModule = (GameGlobal.GetModule)(MazeModule)
-  local time = (math.floor)((self._mazeModule):GetSecToFinish())
-  ;
-  (self._txtTime):SetText((StringTable.Get)("str_discovery_maze_end_time", self:Time2Str(time)))
+function UIMazeEnter:CountDown()
+  self._mazeModule = GameGlobal.GetModule(MazeModule)
+  local time = math.floor(self._mazeModule:GetSecToFinish())
+  self._txtTime:SetText(StringTable.Get("str_discovery_maze_end_time", self:Time2Str(time)))
   if time <= 0 then
-    ((GameGlobal.TaskManager)()):StartTask(self.RequestUpdateMazeInfo, self)
+    GameGlobal.TaskManager():StartTask(self.RequestUpdateMazeInfo, self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeEnter.RequestUpdateMazeInfo = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local res = (self._mazeModule):RequestMazeVersion(TT)
+function UIMazeEnter:RequestUpdateMazeInfo(TT)
+  local res = self._mazeModule:RequestMazeVersion(TT)
   if res:GetSucc() then
-    (Log.fatal)("[Maze] update maze info error:", res:GetResult())
+  else
+    Log.fatal("[Maze] update maze info error:", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMazeEnter.Time2Str = function(self, time)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMazeEnter:Time2Str(time)
   local returnStr = ""
-  if time > 86400 then
-    local day = (math.floor)(time / 60 / 60 / 24)
-    day = day .. (StringTable.Get)("str_maze_open_time_day_str")
-    local hour = (math.floor)(time / 60 / 60) % 24
+  if 86400 < time then
+    local day = math.floor(time / 60 / 60 / 24)
+    day = day .. StringTable.Get("str_maze_open_time_day_str")
+    local hour = math.floor(time / 60 / 60) % 24
     if hour < 10 then
-      hour = "0" .. hour .. (StringTable.Get)("str_maze_open_time_hour_str")
+      hour = "0" .. hour .. StringTable.Get("str_maze_open_time_hour_str")
     else
-      hour = hour .. (StringTable.Get)("str_maze_open_time_hour_str")
+      hour = hour .. StringTable.Get("str_maze_open_time_hour_str")
     end
     returnStr = day .. hour
   else
-    do
-      returnStr = (HelperProxy:GetInstance()):FormatTime(time)
-      return returnStr
-    end
+    returnStr = HelperProxy:GetInstance():FormatTime(time)
   end
+  return returnStr
 end
-
-

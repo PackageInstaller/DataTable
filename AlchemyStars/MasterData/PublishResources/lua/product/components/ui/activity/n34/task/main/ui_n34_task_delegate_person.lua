@@ -1,57 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/main/ui_n34_task_delegate_person.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN34TaskDelegatePerson", UIController)
 UIN34TaskDelegatePerson = UIN34TaskDelegatePerson
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN34TaskDelegatePerson.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN34TaskDelegatePerson:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N34, ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY, ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N34, ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY, ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
   if res and not res:GetSucc() then
-    return 
+    return
   end
   if not self._campaign then
     res:SetSucc(false)
-    return 
+    return
   end
-  local localProcess = (self._campaign):GetLocalProcess()
+  local localProcess = self._campaign:GetLocalProcess()
   if not localProcess then
     res:SetSucc(false)
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   self._surveyComponent = localProcess:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
   self._surveyComponentInfo = localProcess:GetComponentInfo(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
   self._questComponent = localProcess:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
   self._questComponentInfo = localProcess:GetComponentInfo(ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local sample = (self._campaign):GetSample()
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  local sample = self._campaign:GetSample()
   if not sample then
-    return 
+    return
   end
   self._activeEndTime = sample.end_time
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN34TaskDelegatePerson:OnShow(uiParams)
   self._taskData = uiParams[1]
   self._currentDelegatePerson = uiParams[2]
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtn = btns:SpawnObject("UICommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN34TaskRefreshEvent)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN34TaskRefreshEvent)
     self:CloseDialog()
-  end
-, nil, nil, false)
+  end, nil, nil, false)
   self._itemCountLabel = self:GetUIComponent("UILocalizationText", "ItemCount")
   self._itemTips = self:GetGameObject("ItemTips")
   self._delegatePersonLoader = self:GetUIComponent("SpineLoader", "DelegatePersonLoader")
@@ -90,437 +76,304 @@ UIN34TaskDelegatePerson.OnShow = function(self, uiParams)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.OnHide = function(self)
-  -- function num : 0_2
+function UIN34TaskDelegatePerson:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.Init = function(self)
-  -- function num : 0_3
-  (self._itemTips):SetActive(false)
+function UIN34TaskDelegatePerson:Init()
+  self._itemTips:SetActive(false)
   self:Refresh(true)
   self:RefreshPanelStatus()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.Refresh = function(self, playAnim)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local num = itemModule:GetItemCount((self._taskData):GetItemId())
-  if num > 9999999 then
+function UIN34TaskDelegatePerson:Refresh(playAnim)
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local num = itemModule:GetItemCount(self._taskData:GetItemId())
+  if 9999999 < num then
     num = 9999999
   end
-  ;
-  (self._itemCountLabel):SetText((UIActivityCustomHelper.GetItemCountStr)(7, num, "#CFCFCF", "#CFCFCF"))
+  self._itemCountLabel:SetText(UIActivityCustomHelper.GetItemCountStr(7, num, "#CFCFCF", "#CFCFCF"))
   self:RefreshDelegatePersonUI()
   self:RefreshTaskUI(playAnim)
   self:RefreshProgressUI()
   self:RefreshRed()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.ShowTips = function(self, itemId, pos)
-  -- function num : 0_5
-  (self._tips):SetData(itemId, pos)
+function UIN34TaskDelegatePerson:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.RefreshRed = function(self)
-  -- function num : 0_6
-  (self._acceptAllRed):SetActive((self._currentDelegatePerson):ShowAcceptAllRed())
+function UIN34TaskDelegatePerson:RefreshRed()
+  self._acceptAllRed:SetActive(self._currentDelegatePerson:ShowAcceptAllRed())
   self:_RefreshAcceptRedGo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson._RefreshAcceptRedGo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local num = itemModule:GetItemCount((self._taskData):GetItemId())
-  if (self._currentTask):GetCost() > num then
-    (self._acceptRedGo):SetActive(not self._currentTask)
-    ;
-    (self._acceptRedGo):SetActive(false)
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function UIN34TaskDelegatePerson:_RefreshAcceptRedGo()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local num = itemModule:GetItemCount(self._taskData:GetItemId())
+  if self._currentTask then
+    self._acceptRedGo:SetActive(num >= self._currentTask:GetCost())
+  else
+    self._acceptRedGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.SwitchPanel = function(self, panelType)
-  -- function num : 0_8
+function UIN34TaskDelegatePerson:SwitchPanel(panelType)
   if panelType == self._panelType then
-    return 
+    return
   end
   self._panelType = panelType
   self:RefreshPanelStatus(true)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.RefreshPanelStatus = function(self, playAnim)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._taskPanel):SetActive(self._panelType == 1)
-  ;
-  (self._personInfoPanel):SetActive(self._panelType == 2)
-  ;
-  (self._taskSelect):SetActive(self._panelType == 1)
-  ;
-  (self._personSelect):SetActive(self._panelType == 2)
+function UIN34TaskDelegatePerson:RefreshPanelStatus(playAnim)
+  self._taskPanel:SetActive(self._panelType == 1)
+  self._personInfoPanel:SetActive(self._panelType == 2)
+  self._taskSelect:SetActive(self._panelType == 1)
+  self._personSelect:SetActive(self._panelType == 2)
   if playAnim then
     self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    self:Lock("UIN34TaskDelegatePerson_RefreshPanelStatus")
-    if self._panelType == 1 then
-      local tasks = (self._currentDelegatePerson):GetShowTask(3)
-      local items = (self._taskLoader):GetAllSpawnList()
-      for i = 1, #items do
-        (items[i]):SetActive(false)
-      end
-      ;
-      (self._anim):Play("uieff_UIN34TaskDelegatePerson_SwitchTask")
-      YIELD(TT, 100)
-      local showTaskCount = (math.min)(#tasks, #items)
-      for i = 1, showTaskCount do
-        (items[i]):SetActive(true)
-        ;
-        (items[i]):PlayAnimation()
-        YIELD(TT, 66)
-      end
-    else
-      do
-        if self._panelType == 2 then
-          local items = (self._progressLoader):GetAllSpawnList()
-          for i = 1, #items do
-            (items[i]):SetActive(false)
-          end
-          ;
-          (self._anim):Play("uieff_UIN34TaskDelegatePerson_SwitchPerson")
-          YIELD(TT, 300)
-          for i = 1, #items do
-            (items[i]):SetActive(true)
-            ;
-            (items[i]):PlayAnimation()
-            YIELD(TT, 66)
-          end
+      self:Lock("UIN34TaskDelegatePerson_RefreshPanelStatus")
+      if self._panelType == 1 then
+        local tasks = self._currentDelegatePerson:GetShowTask(3)
+        local items = self._taskLoader:GetAllSpawnList()
+        for i = 1, #items do
+          items[i]:SetActive(false)
         end
-        do
-          self:UnLock("UIN34TaskDelegatePerson_RefreshPanelStatus")
+        self._anim:Play("uieff_UIN34TaskDelegatePerson_SwitchTask")
+        YIELD(TT, 100)
+        local showTaskCount = math.min(#tasks, #items)
+        for i = 1, showTaskCount do
+          items[i]:SetActive(true)
+          items[i]:PlayAnimation()
+          YIELD(TT, 66)
+        end
+      elseif self._panelType == 2 then
+        local items = self._progressLoader:GetAllSpawnList()
+        for i = 1, #items do
+          items[i]:SetActive(false)
+        end
+        self._anim:Play("uieff_UIN34TaskDelegatePerson_SwitchPerson")
+        YIELD(TT, 300)
+        for i = 1, #items do
+          items[i]:SetActive(true)
+          items[i]:PlayAnimation()
+          YIELD(TT, 66)
         end
       end
-    end
+      self:UnLock("UIN34TaskDelegatePerson_RefreshPanelStatus")
+    end, self)
   end
-, self)
-  end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.RefreshProgressUI = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (self._personDesLabel):SetText((self._currentDelegatePerson):GetDes())
-  local str = (self._currentDelegatePerson):GetCompleteTaskCount() .. "/" .. (self._currentDelegatePerson):GetAllTaskCount()
-  ;
-  (self._completeTaskCountLabel):SetText((StringTable.Get)("str_n34_task_person_progress_tips", str))
-  ;
-  (self._rewardDesLabel):SetText((StringTable.Get)((self._currentDelegatePerson):GetFinaleRewardDes()))
-  ;
-  (self._rewardIconLoader):LoadImage((self._currentDelegatePerson):GetFinaleRewardIcon())
-  local status = (self._currentDelegatePerson):GetFinaleRewardStatus()
-  ;
-  (self._rewardGetBtn):SetActive(false)
-  ;
-  (self._rewardUnComplete):SetActive(false)
-  ;
-  (self._rewardHasGet):SetActive(false)
+function UIN34TaskDelegatePerson:RefreshProgressUI()
+  self._personDesLabel:SetText(self._currentDelegatePerson:GetDes())
+  local str = self._currentDelegatePerson:GetCompleteTaskCount() .. "/" .. self._currentDelegatePerson:GetAllTaskCount()
+  self._completeTaskCountLabel:SetText(StringTable.Get("str_n34_task_person_progress_tips", str))
+  self._rewardDesLabel:SetText(StringTable.Get(self._currentDelegatePerson:GetFinaleRewardDes()))
+  self._rewardIconLoader:LoadImage(self._currentDelegatePerson:GetFinaleRewardIcon())
+  local status = self._currentDelegatePerson:GetFinaleRewardStatus()
+  self._rewardGetBtn:SetActive(false)
+  self._rewardUnComplete:SetActive(false)
+  self._rewardHasGet:SetActive(false)
   if status == 0 then
-    (self._rewardUnComplete):SetActive(true)
-  else
-    if status == 1 then
-      (self._rewardGetBtn):SetActive(true)
-    else
-      if status == 2 then
-        (self._rewardHasGet):SetActive(true)
-      end
-    end
+    self._rewardUnComplete:SetActive(true)
+  elseif status == 1 then
+    self._rewardGetBtn:SetActive(true)
+  elseif status == 2 then
+    self._rewardHasGet:SetActive(true)
   end
-  local progress = (self._currentDelegatePerson):GetProgress()
-  ;
-  (self._progressLoader):SpawnObjects("UIN34TaskDelegatePersonProgressItem", #progress)
-  local items = (self._progressLoader):GetAllSpawnList()
+  local progress = self._currentDelegatePerson:GetProgress()
+  self._progressLoader:SpawnObjects("UIN34TaskDelegatePersonProgressItem", #progress)
+  local items = self._progressLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetData(progress[i], function(data)
-    -- function num : 0_10_0 , upvalues : self
-    self:StartTask(self.GetProgressRewardCoro, self, data)
-  end
-, function(id, pos)
-    -- function num : 0_10_1 , upvalues : self
-    self:ShowTips(id, pos)
-  end
-)
+    items[i]:SetData(progress[i], function(data)
+      self:StartTask(self.GetProgressRewardCoro, self, data)
+    end, function(id, pos)
+      self:ShowTips(id, pos)
+    end)
   end
   self:RefreshTaskRed()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.RefreshTaskRed = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local status = (self._currentDelegatePerson):GetFinaleRewardStatus()
+function UIN34TaskDelegatePerson:RefreshTaskRed()
+  local status = self._currentDelegatePerson:GetFinaleRewardStatus()
   local rewardRed = status == 1
   if not rewardRed then
-    local progress = (self._currentDelegatePerson):GetProgress()
+    local progress = self._currentDelegatePerson:GetProgress()
     if progress then
-      for k,subProgress in pairs(progress) do
+      for k, subProgress in pairs(progress) do
         local status = subProgress:GetStatus()
         rewardRed = status == 1
-      end
-    end
-  end
-  if not rewardRed then
-    (self._taskRedGo):SetActive(rewardRed)
-    -- DECOMPILER ERROR: 4 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.GetProgressRewardCoro = function(self, TT, data)
-  -- function num : 0_12 , upvalues : _ENV
-  self:Lock("UIN34TaskDelegatePerson_GetProgressRewardCoro")
-  local res = AsyncRequestRes:New()
-  res:SetSucc(true)
-  ;
-  (self._questComponent):HandleQuestTake(TT, res, data:GetQuestId())
-  if not res:GetSucc() then
-    (Log.error)("Get reward failed. res : ", res:GetResult())
-  else
-    local awards = data:GetRewards()
-    self:ShowDialog("UIGetItemController", awards)
-    ;
-    (self._taskData):RefreshPersonInfo()
-    self:Refresh()
-  end
-  do
-    self:UnLock("UIN34TaskDelegatePerson_GetProgressRewardCoro")
-  end
-end
-
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.RefreshTaskUI = function(self, playAnim)
-  -- function num : 0_13 , upvalues : _ENV
-  local tasks = (self._currentDelegatePerson):GetShowTask(3)
-  ;
-  (self._taskLoader):SpawnObjects("UIN34TaskDelegatePersonTaskItem", #tasks)
-  local items = (self._taskLoader):GetAllSpawnList()
-  if #tasks <= 0 then
-    self._currentTaskItem = nil
-    self._currentTask = nil
-    ;
-    (self._acceptAllBtn):SetActive(false)
-    ;
-    (self._acceptBtn):SetActive(false)
-    ;
-    (self._empty):SetActive(true)
-    ;
-    (self._scroll):SetActive(false)
-  else
-    ;
-    (self._empty):SetActive(false)
-    ;
-    (self._scroll):SetActive(true)
-    self._currentTask = tasks[1]
-    ;
-    (self._acceptAllBtn):SetActive(true)
-    ;
-    (self._acceptBtn):SetActive(true)
-    local totalCost = 0
-    do
-      for i = 1, #tasks do
-        local cost = (tasks[i]):GetCost()
-        totalCost = totalCost + cost
-      end
-    end
-    ;
-    (self._acceptAllCountLabel):SetText(totalCost)
-    ;
-    (self._acceptCountLabel):SetText((self._currentTask):GetCost())
-  end
-  do
-    for i = 1, #items do
-      local selected = false
-      local task = tasks[i]
-      if task ~= self._currentTask then
-        do
-          selected = not task
-          if selected then
-            self._currentTaskItem = items[i]
-          end
-          ;
-          (items[i]):SetData(tasks[i], selected, function(data)
-    -- function num : 0_13_0 , upvalues : self, items, i
-    if self._currentTask == data then
-      return 
-    end
-    ;
-    (self._currentTaskItem):UnSelect()
-    self._currentTask = data
-    self._currentTaskItem = items[i]
-    ;
-    (self._currentTaskItem):Select()
-    ;
-    (self._acceptCountLabel):SetText((self._currentTask):GetCost())
-    self:_RefreshAcceptRedGo()
-  end
-, function(id, pos)
-    -- function num : 0_13_1 , upvalues : self
-    self:ShowTips(id, pos)
-  end
-)
-          -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out IF_STMT
-
+        if rewardRed then
+          break
         end
       end
     end
-    if playAnim then
-      self:StartTask(function(TT)
-    -- function num : 0_13_2 , upvalues : self, items, _ENV
-    self:Lock("UIN34TaskDelegatePerson_RefreshTaskUI")
-    for i = 1, #items do
-      (items[i]):SetActive(false)
-    end
-    YIELD(TT, 100)
-    for i = 1, #items do
-      (items[i]):SetActive(true)
-      ;
-      (items[i]):PlayAnimation()
-      YIELD(TT, 66)
-    end
-    self:UnLock("UIN34TaskDelegatePerson_RefreshTaskUI")
   end
-, self)
-    else
-      for i = 1, #items do
-        (items[i]):PlayAnimation()
+  self._taskRedGo:SetActive(rewardRed)
+end
+
+function UIN34TaskDelegatePerson:GetProgressRewardCoro(TT, data)
+  self:Lock("UIN34TaskDelegatePerson_GetProgressRewardCoro")
+  local res = AsyncRequestRes:New()
+  res:SetSucc(true)
+  self._questComponent:HandleQuestTake(TT, res, data:GetQuestId())
+  if not res:GetSucc() then
+    Log.error("Get reward failed. res : ", res:GetResult())
+  else
+    local awards = data:GetRewards()
+    self:ShowDialog("UIGetItemController", awards)
+    self._taskData:RefreshPersonInfo()
+    self:Refresh()
+  end
+  self:UnLock("UIN34TaskDelegatePerson_GetProgressRewardCoro")
+end
+
+function UIN34TaskDelegatePerson:RefreshTaskUI(playAnim)
+  local tasks = self._currentDelegatePerson:GetShowTask(3)
+  self._taskLoader:SpawnObjects("UIN34TaskDelegatePersonTaskItem", #tasks)
+  local items = self._taskLoader:GetAllSpawnList()
+  if #tasks <= 0 then
+    self._currentTaskItem = nil
+    self._currentTask = nil
+    self._acceptAllBtn:SetActive(false)
+    self._acceptBtn:SetActive(false)
+    self._empty:SetActive(true)
+    self._scroll:SetActive(false)
+  else
+    self._empty:SetActive(false)
+    self._scroll:SetActive(true)
+    self._currentTask = tasks[1]
+    self._acceptAllBtn:SetActive(true)
+    self._acceptBtn:SetActive(true)
+    local totalCost = 0
+    for i = 1, #tasks do
+      local cost = tasks[i]:GetCost()
+      totalCost = totalCost + cost
+    end
+    self._acceptAllCountLabel:SetText(totalCost)
+    self._acceptCountLabel:SetText(self._currentTask:GetCost())
+  end
+  for i = 1, #items do
+    local selected = false
+    local task = tasks[i]
+    if task then
+      selected = task == self._currentTask
+      if selected then
+        self._currentTaskItem = items[i]
       end
     end
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
+    items[i]:SetData(tasks[i], selected, function(data)
+      if self._currentTask == data then
+        return
+      end
+      self._currentTaskItem:UnSelect()
+      self._currentTask = data
+      self._currentTaskItem = items[i]
+      self._currentTaskItem:Select()
+      self._acceptCountLabel:SetText(self._currentTask:GetCost())
+      self:_RefreshAcceptRedGo()
+    end, function(id, pos)
+      self:ShowTips(id, pos)
+    end)
   end
-end
-
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.RefreshDelegatePersonUI = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (self._delegatePersonLoader):LoadSpine((self._currentDelegatePerson):GetSpine())
-  ;
-  (self._delegatePersonNameLabel):SetText((self._currentDelegatePerson):GetName())
-  local totalTrust = (self._currentDelegatePerson):GetTotalTrust()
-  local trustValue = (self._currentDelegatePerson):GetTrustValue()
-  local progress = trustValue / totalTrust
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._delegateProgress).fillAmount = progress
-  ;
-  (self._progressLabel):SetText((math.floor)(progress * 100) .. "%")
-  if progress >= 1 then
-    (self._complete):SetActive(true)
+  if playAnim then
+    self:StartTask(function(TT)
+      self:Lock("UIN34TaskDelegatePerson_RefreshTaskUI")
+      for i = 1, #items do
+        items[i]:SetActive(false)
+      end
+      YIELD(TT, 100)
+      for i = 1, #items do
+        items[i]:SetActive(true)
+        items[i]:PlayAnimation()
+        YIELD(TT, 66)
+      end
+      self:UnLock("UIN34TaskDelegatePerson_RefreshTaskUI")
+    end, self)
   else
-    ;
-    (self._complete):SetActive(false)
+    for i = 1, #items do
+      items[i]:PlayAnimation()
+    end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.ItemBtnOnClick = function(self)
-  -- function num : 0_15
-  (self._itemTips):SetActive(true)
+function UIN34TaskDelegatePerson:RefreshDelegatePersonUI()
+  self._delegatePersonLoader:LoadSpine(self._currentDelegatePerson:GetSpine())
+  self._delegatePersonNameLabel:SetText(self._currentDelegatePerson:GetName())
+  local totalTrust = self._currentDelegatePerson:GetTotalTrust()
+  local trustValue = self._currentDelegatePerson:GetTrustValue()
+  local progress = trustValue / totalTrust
+  self._delegateProgress.fillAmount = progress
+  self._progressLabel:SetText(math.floor(progress * 100) .. "%")
+  if 1 <= progress then
+    self._complete:SetActive(true)
+  else
+    self._complete:SetActive(false)
+  end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.TipsMaskOnClick = function(self)
-  -- function num : 0_16
-  (self._itemTips):SetActive(false)
+function UIN34TaskDelegatePerson:ItemBtnOnClick()
+  self._itemTips:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
+function UIN34TaskDelegatePerson:TipsMaskOnClick()
+  self._itemTips:SetActive(false)
+end
 
-UIN34TaskDelegatePerson.TaskBtnOnClick = function(self)
-  -- function num : 0_17
+function UIN34TaskDelegatePerson:TaskBtnOnClick()
   if not self:CheckActivityStatus() then
-    return 
+    return
   end
   self:SwitchPanel(1)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.PersonBtnOnClick = function(self)
-  -- function num : 0_18
+function UIN34TaskDelegatePerson:PersonBtnOnClick()
   if not self:CheckActivityStatus() then
-    return 
+    return
   end
   self:SwitchPanel(2)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.AcceptAllBtnOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN34TaskDelegatePerson:AcceptAllBtnOnClick()
   if not self:CheckActivityStatus() then
-    return 
+    return
   end
-  local tasks = (self._currentDelegatePerson):GetShowTask(3)
+  local tasks = self._currentDelegatePerson:GetShowTask(3)
   if #tasks <= 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n34_task_delegate_task_empty_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n34_task_delegate_task_empty_tips"))
+    return
   end
   local totalCost = 0
   for i = 1, #tasks do
-    local cost = (tasks[i]):GetCost()
+    local cost = tasks[i]:GetCost()
     totalCost = totalCost + cost
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local num = itemModule:GetItemCount((self._taskData):GetItemId())
-  if num < totalCost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n34_task_delegate_task_not_enought_tips"))
-    return 
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local num = itemModule:GetItemCount(self._taskData:GetItemId())
+  if totalCost > num then
+    ToastManager.ShowToast(StringTable.Get("str_n34_task_delegate_task_not_enought_tips"))
+    return
   end
   self:StartTask(self.AcceptAllBtnOnClickCoro, self, tasks)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.AcceptAllBtnOnClickCoro = function(self, TT, tasks)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN34TaskDelegatePerson:AcceptAllBtnOnClickCoro(TT, tasks)
   self:Lock("UIN34TaskDelegatePerson_AcceptAllBtnOnClickCoro")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   for i = 1, #tasks do
-    (self._questComponent):HandleQuestTake(TT, res, (tasks[i]):GetQuestId())
+    self._questComponent:HandleQuestTake(TT, res, tasks[i]:GetQuestId())
     if not res:GetSucc() then
-      (Log.error)("Get reward failed. res : ", res:GetResult())
+      Log.error("Get reward failed. res : ", res:GetResult())
       self:UnLock("UIN34TaskDelegatePerson_AcceptAllBtnOnClickCoro")
-      return 
+      return
     end
   end
   local awards = {}
   local items = {}
   for i = 1, #tasks do
-    local rewards = (tasks[i]):GetRewards()
+    local rewards = tasks[i]:GetRewards()
     for j = 1, #rewards do
       local reward = rewards[j]
       if not items[reward.assetid] then
@@ -529,61 +382,51 @@ UIN34TaskDelegatePerson.AcceptAllBtnOnClickCoro = function(self, TT, tasks)
       items[reward.assetid] = items[reward.assetid] + reward.count
     end
   end
-  for id,count in pairs(items) do
+  for id, count in pairs(items) do
     awards[#awards + 1] = {assetid = id, count = count}
   end
-  local taskItems = (self._taskLoader):GetAllSpawnList()
-  if #taskItems > 0 then
+  local taskItems = self._taskLoader:GetAllSpawnList()
+  if 0 < #taskItems then
     for i = 1, #taskItems do
       local item = taskItems[i]
       item:PlayGetAnimation()
       YIELD(TT, 666)
     end
   end
-  do
-    self:ShowDialog("UIGetItemController", awards)
-    ;
-    (self._taskData):RefreshPersonInfo()
-    self:Refresh()
-    self:UnLock("UIN34TaskDelegatePerson_AcceptAllBtnOnClickCoro")
-  end
+  self:ShowDialog("UIGetItemController", awards)
+  self._taskData:RefreshPersonInfo()
+  self:Refresh()
+  self:UnLock("UIN34TaskDelegatePerson_AcceptAllBtnOnClickCoro")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.AcceptBtnOnClick = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN34TaskDelegatePerson:AcceptBtnOnClick()
   if not self:CheckActivityStatus() then
-    return 
+    return
   end
   if self._currentTask == nil then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n34_task_delegate_task_empty_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n34_task_delegate_task_empty_tips"))
+    return
   end
-  local cost = (self._currentTask):GetCost()
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local num = itemModule:GetItemCount((self._taskData):GetItemId())
-  if num < cost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n34_task_delegate_task_not_enought_tips"))
-    return 
+  local cost = self._currentTask:GetCost()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local num = itemModule:GetItemCount(self._taskData:GetItemId())
+  if cost > num then
+    ToastManager.ShowToast(StringTable.Get("str_n34_task_delegate_task_not_enought_tips"))
+    return
   end
   self:StartTask(self.AcceptBtnOnClickCoro, self)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.AcceptBtnOnClickCoro = function(self, TT)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN34TaskDelegatePerson:AcceptBtnOnClickCoro(TT)
   self:Lock("UIN34TaskDelegatePerson_AcceptBtnOnClickCoro")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._questComponent):HandleQuestTake(TT, res, (self._currentTask):GetQuestId())
+  self._questComponent:HandleQuestTake(TT, res, self._currentTask:GetQuestId())
   if not res:GetSucc() then
-    (Log.error)("Get reward failed. res : ", res:GetResult())
+    Log.error("Get reward failed. res : ", res:GetResult())
   else
-    local taskItems = (self._taskLoader):GetAllSpawnList()
-    if #taskItems > 0 then
+    local taskItems = self._taskLoader:GetAllSpawnList()
+    if 0 < #taskItems then
       for i = 1, #taskItems do
         local item = taskItems[i]
         if item:GetData() == self._currentTask then
@@ -593,78 +436,55 @@ UIN34TaskDelegatePerson.AcceptBtnOnClickCoro = function(self, TT)
         end
       end
     end
-    do
-      do
-        local awards = (self._currentTask):GetRewards()
-        self:ShowDialog("UIGetItemController", awards)
-        ;
-        (self._taskData):RefreshPersonInfo()
-        self:Refresh()
-        self:UnLock("UIN34TaskDelegatePerson_AcceptBtnOnClickCoro")
-      end
-    end
+    local awards = self._currentTask:GetRewards()
+    self:ShowDialog("UIGetItemController", awards)
+    self._taskData:RefreshPersonInfo()
+    self:Refresh()
   end
+  self:UnLock("UIN34TaskDelegatePerson_AcceptBtnOnClickCoro")
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.RewardGetBtnOnClick = function(self)
-  -- function num : 0_23
+function UIN34TaskDelegatePerson:RewardGetBtnOnClick()
   if not self:CheckActivityStatus() then
-    return 
+    return
   end
-  ;
-  (self._currentDelegatePerson):GetFinalReward()
+  self._currentDelegatePerson:GetFinalReward()
   self:RefreshProgressUI()
   self:ShowDialog("UIN34DelegatePersonTips", self._currentDelegatePerson, function()
-    -- function num : 0_23_0 , upvalues : self
     self:ShowDialog("UIActivityN34TaskInfomationMainController")
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.RewardUnCompleteOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN34TaskDelegatePerson:RewardUnCompleteOnClick()
   if not self:CheckActivityStatus() then
-    return 
+    return
   end
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_n34_task_delegate_person_uncomplete_tips"))
+  ToastManager.ShowToast(StringTable.Get("str_n34_task_delegate_person_uncomplete_tips"))
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.IsActivityEnd = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIN34TaskDelegatePerson:IsActivityEnd()
   if not self._activeEndTime then
     return true
   end
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(self._activeEndTime - nowTime)
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._activeEndTime - nowTime)
   if seconds <= 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN34TaskDelegatePerson.CheckActivityStatus = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIN34TaskDelegatePerson:CheckActivityStatus()
   if self:IsActivityEnd() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n34_task_activity_end"))
+    ToastManager.ShowToast(StringTable.Get("str_n34_task_activity_end"))
     self:SwitchState(UIStateType.UIMain)
     return false
   end
-  if not (self._surveyComponent):ComponentIsOpen() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n34_task_activity_end"))
+  if not self._surveyComponent:ComponentIsOpen() then
+    ToastManager.ShowToast(StringTable.Get("str_n34_task_activity_end"))
     self:SwitchState(UIStateType.UIActivityN34MainController)
     return false
   end
   return true
 end
-
-

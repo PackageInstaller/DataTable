@@ -1,156 +1,125 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview_puzzle_svc_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewPuzzleService", BaseService)
 PreviewPuzzleService = PreviewPuzzleService
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewPuzzleService.PreEnterPuzzle = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewPuzzleService:PreEnterPuzzle()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewPuzzleCmpt = previewEntity:PreviewPuzzle()
   if previewPuzzleCmpt == nil then
-    (Log.fatal)("PreEnterPuzzle puzzle component is nil")
-    return 
+    Log.fatal("PreEnterPuzzle puzzle component is nil")
+    return
   end
   previewPuzzleCmpt:SetPuzzleState(PuzzleStateType.PreEnter)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPuzzleService.EnterPuzzle = function(self, entityID, pickUpParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewPuzzleService:EnterPuzzle(entityID, pickUpParam)
+  local previewEntity = self._world:GetPreviewEntity()
   local previewPuzzleCmpt = previewEntity:PreviewPuzzle()
   if previewPuzzleCmpt == nil then
-    (Log.fatal)("EnterPuzzle puzzle component is nil")
-    return 
+    Log.fatal("EnterPuzzle puzzle component is nil")
+    return
   end
-  local petEntity = (self._world):GetEntityByID(entityID)
+  local petEntity = self._world:GetEntityByID(entityID)
   if not petEntity then
-    (Log.fatal)("EnterPuzzle pet entity is nil")
-    return 
+    Log.fatal("EnterPuzzle pet entity is nil")
+    return
   end
   local prePickUpCmpt = petEntity:PreviewPickUpComponent()
   if not prePickUpCmpt then
-    (Log.fatal)("EnterPuzzle PreviewPickUpComponent is nil")
-    return 
+    Log.fatal("EnterPuzzle PreviewPickUpComponent is nil")
+    return
   end
   local pickUpPos = prePickUpCmpt:GetLastPickUpGridPos()
   previewPuzzleCmpt:SetCenterPos(pickUpPos)
   previewPuzzleCmpt:AddPuzzleGridPos(pickUpPos)
   previewPuzzleCmpt:SetPuzzleGridEffID(pickUpParam.PuzzleGirdEffID)
   previewPuzzleCmpt:SetCasterEntityID(entityID)
-  local trapServiceRender = (self._world):GetService("TrapRender")
+  local trapServiceRender = self._world:GetService("TrapRender")
   trapServiceRender:OnTakeOutTrapFormPiece(pickUpPos)
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   local pieceEntity = pieceSvc:FindPieceEntity(pickUpPos)
   pieceEntity:SetViewVisible(false)
   previewPuzzleCmpt:SetGapTilePos(pickUpPos)
   local puzzleScopeInfo = pickUpParam.PuzzleScope
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-  local scopeResult = scopeCalculator:ComputeScopeRange(puzzleScopeInfo.ScopeType, puzzleScopeInfo.ScopeParam, pickUpPos, (petEntity:BodyArea()):GetArea(), petEntity:GetGridDirection(), puzzleScopeInfo.TargetType, pickUpPos, petEntity)
+  local scopeResult = scopeCalculator:ComputeScopeRange(puzzleScopeInfo.ScopeType, puzzleScopeInfo.ScopeParam, pickUpPos, petEntity:BodyArea():GetArea(), petEntity:GetGridDirection(), puzzleScopeInfo.TargetType, pickUpPos, petEntity)
   previewPuzzleCmpt:SetPuzzleRange(scopeResult:GetAttackRange())
   previewPuzzleCmpt:SetPuzzleState(PuzzleStateType.Enter)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPuzzleService.LeavePuzzle = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewPuzzleService:LeavePuzzle()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewPuzzleCmpt = previewEntity:PreviewPuzzle()
   if previewPuzzleCmpt == nil then
-    (Log.fatal)("LeavePuzzle puzzle component is nil")
-    return 
+    Log.fatal("LeavePuzzle puzzle component is nil")
+    return
   end
   local entityID = previewPuzzleCmpt:GetCasterEntityID()
-  local petEntity = (self._world):GetEntityByID(entityID)
+  local petEntity = self._world:GetEntityByID(entityID)
   if not petEntity then
-    (Log.fatal)("LeavePuzzle pet entity is nil")
-    return 
+    Log.fatal("LeavePuzzle pet entity is nil")
+    return
   end
   local prePickUpCmpt = petEntity:PreviewPickUpComponent()
   if not prePickUpCmpt then
-    (Log.fatal)("LeavePuzzle PreviewPickUpComponent is nil")
-    return 
+    Log.fatal("LeavePuzzle PreviewPickUpComponent is nil")
+    return
   end
   prePickUpCmpt:ClearGridPos()
   prePickUpCmpt:AddGridPosList(previewPuzzleCmpt:GetPuzzleGridPosList())
   previewEntity:ReplacePreviewPuzzle()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPuzzleService.PuzzlePickUpGrid = function(self, pickUpGridPos)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self.DoMovePuzzleGrid, self, pickUpGridPos)
+function PreviewPuzzleService:PuzzlePickUpGrid(pickUpGridPos)
+  GameGlobal.TaskManager():CoreGameStartTask(self.DoMovePuzzleGrid, self, pickUpGridPos)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPuzzleService.DoMovePuzzleGrid = function(self, TT, pickUpPos)
-  -- function num : 0_4 , upvalues : _ENV
-  local pieceSvc = (self._world):GetService("Piece")
-  local boardRSvc = (self._world):GetService("BoardRender")
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewPuzzleService:DoMovePuzzleGrid(TT, pickUpPos)
+  local pieceSvc = self._world:GetService("Piece")
+  local boardRSvc = self._world:GetService("BoardRender")
+  local previewEntity = self._world:GetPreviewEntity()
   local previewPuzzleCmpt = previewEntity:PreviewPuzzle()
   if previewPuzzleCmpt == nil then
-    (Log.fatal)("PreEnterPuzzle puzzle component is nil")
-    return 
+    Log.fatal("PreEnterPuzzle puzzle component is nil")
+    return
   end
   previewPuzzleCmpt:SetPuzzleState(PuzzleStateType.Moving)
-  local puzzleEffEntity = nil
+  local puzzleEffEntity
   local puzzleEffID = previewPuzzleCmpt:GetPuzzleGridEffID()
-  do
-    if puzzleEffID > 0 then
-      local effSvc = (self._world):GetService("Effect")
-      puzzleEffEntity = effSvc:CreateWorldPositionEffect(puzzleEffID, pickUpPos)
-    end
-    local gapPos = previewPuzzleCmpt:GetGapTilePos()
-    local gapPieceEntity = pieceSvc:FindPieceEntity(gapPos)
-    local pickUpPieceEntity = pieceSvc:FindPieceEntity(pickUpPos)
-    local env = previewEntity:PreviewEnv()
-    local pickUpPieceType = env:GetPieceType(pickUpPos)
-    local gapPieceType = env:GetPieceType(gapPos)
-    local trapServiceRender = (self._world):GetService("TrapRender")
-    trapServiceRender:OnTakeOutTrapFormPiece(pickUpPos)
-    pickUpPieceEntity:RemoveGridMove()
-    pickUpPieceEntity:AddGridMove(BattleConst.ConveySpeed, gapPos, pickUpPos)
-    puzzleEffEntity:AddGridMove(BattleConst.ConveySpeed, gapPos, pickUpPos)
-    while 1 do
-      if pickUpPieceEntity:HasGridMove() or puzzleEffEntity:HasGridMove() then
-        YIELD(TT)
-        -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC86: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
-    end
-    pickUpPieceEntity:SetGridPosition(pickUpPos)
-    pickUpPieceEntity:SetLocation(pickUpPos, pickUpPieceEntity:GetGridDirection())
-    boardRSvc:ChangeGridEntity(gapPieceType, pickUpPos)
-    pickUpPieceEntity:SetViewVisible(false)
-    gapPieceEntity:SetViewVisible(true)
-    boardRSvc:ChangeGridEntity(pickUpPieceType, gapPos)
-    ;
-    (self._world):DestroyEntity(puzzleEffEntity)
-    env:SetPieceType(gapPos, pickUpPieceType)
-    env:SetPieceType(pickUpPos, gapPieceType)
-    previewPuzzleCmpt:SetGapTilePos(pickUpPos)
-    previewPuzzleCmpt:AddPuzzleGridPos(pickUpPos)
-    previewPuzzleCmpt:SetPuzzleState(PuzzleStateType.Enter)
+  if 0 < puzzleEffID then
+    local effSvc = self._world:GetService("Effect")
+    puzzleEffEntity = effSvc:CreateWorldPositionEffect(puzzleEffID, pickUpPos)
   end
+  local gapPos = previewPuzzleCmpt:GetGapTilePos()
+  local gapPieceEntity = pieceSvc:FindPieceEntity(gapPos)
+  local pickUpPieceEntity = pieceSvc:FindPieceEntity(pickUpPos)
+  local env = previewEntity:PreviewEnv()
+  local pickUpPieceType = env:GetPieceType(pickUpPos)
+  local gapPieceType = env:GetPieceType(gapPos)
+  local trapServiceRender = self._world:GetService("TrapRender")
+  trapServiceRender:OnTakeOutTrapFormPiece(pickUpPos)
+  pickUpPieceEntity:RemoveGridMove()
+  pickUpPieceEntity:AddGridMove(BattleConst.ConveySpeed, gapPos, pickUpPos)
+  puzzleEffEntity:AddGridMove(BattleConst.ConveySpeed, gapPos, pickUpPos)
+  while pickUpPieceEntity:HasGridMove() or puzzleEffEntity:HasGridMove() do
+    YIELD(TT)
+  end
+  pickUpPieceEntity:SetGridPosition(pickUpPos)
+  pickUpPieceEntity:SetLocation(pickUpPos, pickUpPieceEntity:GetGridDirection())
+  boardRSvc:ChangeGridEntity(gapPieceType, pickUpPos)
+  pickUpPieceEntity:SetViewVisible(false)
+  gapPieceEntity:SetViewVisible(true)
+  boardRSvc:ChangeGridEntity(pickUpPieceType, gapPos)
+  self._world:DestroyEntity(puzzleEffEntity)
+  env:SetPieceType(gapPos, pickUpPieceType)
+  env:SetPieceType(pickUpPos, gapPieceType)
+  previewPuzzleCmpt:SetGapTilePos(pickUpPos)
+  previewPuzzleCmpt:AddPuzzleGridPos(pickUpPos)
+  previewPuzzleCmpt:SetPuzzleState(PuzzleStateType.Enter)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewPuzzleService.IsPuzzleState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local previewEntity = (self._world):GetPreviewEntity()
+function PreviewPuzzleService:IsPuzzleState()
+  local previewEntity = self._world:GetPreviewEntity()
   local previewPuzzleCmpt = previewEntity:PreviewPuzzle()
   if previewPuzzleCmpt == nil then
     return false
@@ -160,5 +129,3 @@ PreviewPuzzleService.IsPuzzleState = function(self)
   end
   return false
 end
-
-

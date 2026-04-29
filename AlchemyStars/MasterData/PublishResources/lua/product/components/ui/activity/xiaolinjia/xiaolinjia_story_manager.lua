@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/xiaolinjia_story_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("XiaoLinJiaStoryManager", Object)
 XiaoLinJiaStoryManager = XiaoLinJiaStoryManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-XiaoLinJiaStoryManager.Constructor = function(self, storyName, uiController)
-  -- function num : 0_0 , upvalues : _ENV
+function XiaoLinJiaStoryManager:Constructor(storyName, uiController)
   self.sessionID = 1
   self.dialogList = {}
   self.isPlayingSession = false
@@ -24,188 +17,126 @@ XiaoLinJiaStoryManager.Constructor = function(self, storyName, uiController)
   self.hasShowedResult = false
   local storyCfg = Cfg[storyName]
   if not storyCfg then
-    (Log.exception)("剧情配置不存在", storyCfg)
+    Log.exception("剧情配置不存在", storyCfg)
   end
-  for _,v in pairs(storyCfg({})) do
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R9 in 'UnsetPending'
-
-    (self.dialogList)[v.ID] = v
+  for _, v in pairs(storyCfg({})) do
+    self.dialogList[v.ID] = v
   end
   self.doneStartSessionMap = {}
   self.doneEndSessionMap = {}
   self.sessionLength = #self.dialogList
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.GetDialogList = function(self)
-  -- function num : 0_1
+function XiaoLinJiaStoryManager:GetDialogList()
   return self.dialogList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.GetFirstMissionData = function(self)
-  -- function num : 0_2
-  return (self.dialogList)[1]
+function XiaoLinJiaStoryManager:GetFirstMissionData()
+  return self.dialogList[1]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.GetCurSessionID = function(self)
-  -- function num : 0_3
+function XiaoLinJiaStoryManager:GetCurSessionID()
   return self.sessionID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.GetCurSessionData = function(self)
-  -- function num : 0_4
+function XiaoLinJiaStoryManager:GetCurSessionData()
   return self.curSessionData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.GetCurSessionIsQuestion = function(self)
-  -- function num : 0_5
+function XiaoLinJiaStoryManager:GetCurSessionIsQuestion()
   return self.curIsQuestion
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.GetCurQuestionIndex = function(self)
-  -- function num : 0_6
+function XiaoLinJiaStoryManager:GetCurQuestionIndex()
   return self.curQuestionIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.SetCurPlayerSelectIndex = function(self, index)
-  -- function num : 0_7
+function XiaoLinJiaStoryManager:SetCurPlayerSelectIndex(index)
   self.curPlayerSelectIndex = index
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.StartSession = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if (self.doneStartSessionMap)[self.sessionID] then
-    return 
+function XiaoLinJiaStoryManager:StartSession()
+  if self.doneStartSessionMap[self.sessionID] then
+    return
   end
-  local curSession = (self.dialogList)[self.sessionID]
+  local curSession = self.dialogList[self.sessionID]
   if curSession.Topic then
     self.curIsQuestion = true
     self.curQuestionIndex = self.curQuestionIndex + 1
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.curSessionData)[1] = curSession
+    self.curSessionData[1] = curSession
   else
     self.curIsQuestion = false
     self.curSessionData = {}
     local longSpeekContent = ""
     if curSession.Continuous then
       local tempSessionID = self.sessionID
-      while ((self.dialogList)[tempSessionID]).Continuous do
-        (table.insert)(self.curSessionData, (self.dialogList)[tempSessionID])
-        local content = ((self.dialogList)[tempSessionID]).Content
-        if (string.len)(longSpeekContent) < (string.len)(content) then
+      while self.dialogList[tempSessionID].Continuous do
+        table.insert(self.curSessionData, self.dialogList[tempSessionID])
+        local content = self.dialogList[tempSessionID].Content
+        if string.len(content) > string.len(longSpeekContent) then
           longSpeekContent = content
         end
         tempSessionID = tempSessionID + 1
       end
-      do
-        do
-          do
-            self.sessionID = tempSessionID - 1
-            -- DECOMPILER ERROR at PC58: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self.curSessionData)[1] = curSession
-            longSpeekContent = ((self.curSessionData)[1]).Content
-            self.curShowStopTime = self.curRunTime + self:GetkeepWaitTime(longSpeekContent)
-            self.isPlayingSession = true
-            ;
-            (self.uiController):OnSessionStart()
-            -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self.doneStartSessionMap)[self.sessionID] = true
-          end
-        end
-      end
+      self.sessionID = tempSessionID - 1
+    else
+      self.curSessionData[1] = curSession
+      longSpeekContent = self.curSessionData[1].Content
     end
+    self.curShowStopTime = self.curRunTime + self:GetkeepWaitTime(longSpeekContent)
+    self.isPlayingSession = true
   end
+  self.uiController:OnSessionStart()
+  self.doneStartSessionMap[self.sessionID] = true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.GetkeepWaitTime = function(self, str)
-  -- function num : 0_9 , upvalues : _ENV
-  local len = (string.len)(str)
-  if len > 10 then
+function XiaoLinJiaStoryManager:GetkeepWaitTime(str)
+  local len = string.len(str)
+  if 10 < len then
     local time = (len - 10) * 0.03
     return 0.5 + time
   else
-    do
-      do return 0.5 end
-    end
+    return 0.5
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.SetAuto = function(self, flag)
-  -- function num : 0_10
+function XiaoLinJiaStoryManager:SetAuto(flag)
   self.isAuto = flag
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.GetAuto = function(self)
-  -- function num : 0_11
+function XiaoLinJiaStoryManager:GetAuto()
   return self.isAuto
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.Update = function(self, deltaTimeMS)
-  -- function num : 0_12
+function XiaoLinJiaStoryManager:Update(deltaTimeMS)
   if self.isEnd then
-    return 
+    return
   end
   self.curRunTime = self.curRunTime + deltaTimeMS / 1000
   if not self.isPlayingSession then
-    return 
+    return
   end
   if self.curIsQuestion then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC23: Unhandled construct in 'MakeBoolean' P1
-
-  if self.isAuto and self.curShowStopTime < self.curRunTime then
-    self.curShowStopTime = 99999
-    self:EndSession()
-  end
-  if self.curShowStopTime < self.curRunTime then
+  if self.isAuto then
+    if self.curRunTime > self.curShowStopTime then
+      self.curShowStopTime = 99999
+      self:EndSession()
+    end
+  elseif self.curRunTime > self.curShowStopTime then
     self.canJumpToNextSession = true
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.TouchScreenAndJumpToNextSession = function(self)
-  -- function num : 0_13
+function XiaoLinJiaStoryManager:TouchScreenAndJumpToNextSession()
   if self.canJumpToNextSession then
     self:EndSession()
     self.canJumpToNextSession = false
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.TouchQuestionResultPanelAndJumpToNextSession = function(self)
-  -- function num : 0_14
+function XiaoLinJiaStoryManager:TouchQuestionResultPanelAndJumpToNextSession()
   self.canJumpToNextSession = true
   if self.canJumpToNextSession then
     self:EndSession()
@@ -213,63 +144,45 @@ XiaoLinJiaStoryManager.TouchQuestionResultPanelAndJumpToNextSession = function(s
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.EndSession = function(self, jumpID)
-  -- function num : 0_15 , upvalues : _ENV
+function XiaoLinJiaStoryManager:EndSession(jumpID)
   self.isPlayingSession = false
   self.curShowStopTime = 99999
-  if ((self.curSessionData)[1]).CheckResult == 1 and not self.hasShowedResult then
-    (self.uiController):ShowClosingPanel()
+  if self.curSessionData[1].CheckResult == 1 and not self.hasShowedResult then
+    self.uiController:ShowClosingPanel()
     self.hasShowedResult = true
-    return 
+    return
   end
   if self.curIsQuestion then
-    local optionsJump = ((self.curSessionData)[1]).OptionsJump
+    local optionsJump = self.curSessionData[1].OptionsJump
     self.sessionID = optionsJump[self.curPlayerSelectIndex]
   else
-    do
-      if not jumpID then
-        jumpID = ((self.curSessionData)[1]).Jump
-      end
-      if jumpID then
-        self.sessionID = jumpID
-      else
-        self.sessionID = self.sessionID + 1
-      end
-      if (self.doneEndSessionMap)[self.sessionID] then
-        return 
-      end
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self.doneEndSessionMap)[self.sessionID] = true
-      ;
-      ((GameGlobal.UIStateManager)()):Lock("XiaoLinJiaStoryManager_EndSession")
-      self.endTask = ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, _ENV
-    (self.uiController):OnSessionEnd(TT)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("XiaoLinJiaStoryManager_EndSession")
+    jumpID = jumpID or self.curSessionData[1].Jump
+    if jumpID then
+      self.sessionID = jumpID
+    else
+      self.sessionID = self.sessionID + 1
+    end
+  end
+  if self.doneEndSessionMap[self.sessionID] then
+    return
+  end
+  self.doneEndSessionMap[self.sessionID] = true
+  GameGlobal.UIStateManager():Lock("XiaoLinJiaStoryManager_EndSession")
+  self.endTask = GameGlobal.TaskManager():StartTask(function(TT)
+    self.uiController:OnSessionEnd(TT)
+    GameGlobal.UIStateManager():UnLock("XiaoLinJiaStoryManager_EndSession")
     if self.sessionID <= self.sessionLength then
       self:StartSession()
     else
       self.isEnd = true
-      ;
-      (self.uiController):OnExit()
+      self.uiController:OnExit()
     end
-  end
-)
-    end
-  end
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.GetCanJumpSession = function(self)
-  -- function num : 0_16
+function XiaoLinJiaStoryManager:GetCanJumpSession()
   local tmpSession = self.sessionID
-  while tmpSession ~= self.sessionLength and not ((self.dialogList)[tmpSession]).CheckResult and not ((self.dialogList)[tmpSession]).Options do
+  while tmpSession ~= self.sessionLength and not self.dialogList[tmpSession].CheckResult and not self.dialogList[tmpSession].Options do
     tmpSession = tmpSession + 1
   end
   if tmpSession == self.sessionID then
@@ -278,45 +191,30 @@ XiaoLinJiaStoryManager.GetCanJumpSession = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.JumpSession = function(self)
-  -- function num : 0_17
+function XiaoLinJiaStoryManager:JumpSession()
   local tmpSession = self.sessionID
-  while tmpSession ~= self.sessionLength and not ((self.dialogList)[tmpSession]).CheckResult and not ((self.dialogList)[tmpSession]).Options do
+  while tmpSession ~= self.sessionLength and not self.dialogList[tmpSession].CheckResult and not self.dialogList[tmpSession].Options do
     tmpSession = tmpSession + 1
   end
   if tmpSession == self.sessionID then
-    return 
+    return
   end
   self.canJumpToNextSession = false
   self:EndSession(tmpSession)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.IsPlayingSession = function(self)
-  -- function num : 0_18
+function XiaoLinJiaStoryManager:IsPlayingSession()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.ForceEnd = function(self)
-  -- function num : 0_19
+function XiaoLinJiaStoryManager:ForceEnd()
   self.isEnd = true
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-XiaoLinJiaStoryManager.OnDispose = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function XiaoLinJiaStoryManager:OnDispose()
   self.isEnd = true
   if self.endTask then
-    ((GameGlobal.TaskManager)()):KillTask(self.endTask)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("XiaoLinJiaStoryManager_EndSession")
+    GameGlobal.TaskManager():KillTask(self.endTask)
+    GameGlobal.UIStateManager():UnLock("XiaoLinJiaStoryManager_EndSession")
     self.endTask = nil
   end
 end
-
-

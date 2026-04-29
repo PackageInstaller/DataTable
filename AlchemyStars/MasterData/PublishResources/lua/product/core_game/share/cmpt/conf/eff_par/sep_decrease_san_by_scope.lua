@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_decrease_san_by_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParam_DecreaseSanByScope", SkillEffectParamBase)
 SkillEffectParam_DecreaseSanByScope = SkillEffectParam_DecreaseSanByScope
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_DecreaseSanByScope.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_DecreaseSanByScope:Constructor(t)
   self._sanPerGrid = t.sanPerGrid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DecreaseSanByScope.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParam_DecreaseSanByScope:GetEffectType()
   return SkillEffectType.DecreaseSanByScope
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_DecreaseSanByScope.GetSanPerGrid = function(self)
-  -- function num : 0_2
+function SkillEffectParam_DecreaseSanByScope:GetSanPerGrid()
   return self._sanPerGrid
 end
-
-

@@ -1,76 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/crew/ui_s4_trade_crew_control_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeCrewControlTab", UICustomWidget)
 UIS4TradeCrewControlTab = UIS4TradeCrewControlTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeCrewControlTab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIS4TradeCrewControlTab:OnShow(uiParams)
   self:_GetComponents()
   self:AttachEvent(GameEventType.OnS4TradeCrewBuy, self._InitComponents)
   self:AttachEvent(GameEventType.OnS4TradeCrewChange, self.OnS4TradeCrewChange)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewControlTab._GetComponents = function(self)
-  -- function num : 0_1
+function UIS4TradeCrewControlTab:_GetComponents()
   self._occupyBlock = self:GetUIComponent("UISelectObjectPath", "occupyBlock")
   self._crewBlock = self:GetUIComponent("UISelectObjectPath", "crewBlock")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewControlTab.SetData = function(self, tradeData, selectID)
-  -- function num : 0_2
+function UIS4TradeCrewControlTab:SetData(tradeData, selectID)
   self._tradeData = tradeData
   self._selectID = selectID
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewControlTab.OnS4TradeCrewChange = function(self)
-  -- function num : 0_3
+function UIS4TradeCrewControlTab:OnS4TradeCrewChange()
   self:_InitComponents()
   self:PlayInAnim()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewControlTab._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local occupyCrews = (self._tradeData):GetCrewsByHarbourID(self._selectID)
-  local showCrews = (self._tradeData):GetAllBuyCrewsExceptID(self._selectID)
-  self._occupyCrews = (self._occupyBlock):SpawnObjects("UIS4TradeCrewItem", (table.count)(occupyCrews))
-  self._normalCrews = (self._crewBlock):SpawnObjects("UIS4TradeCrewItem", (table.count)(showCrews))
+function UIS4TradeCrewControlTab:_InitComponents()
+  local occupyCrews = self._tradeData:GetCrewsByHarbourID(self._selectID)
+  local showCrews = self._tradeData:GetAllBuyCrewsExceptID(self._selectID)
+  self._occupyCrews = self._occupyBlock:SpawnObjects("UIS4TradeCrewItem", table.count(occupyCrews))
+  self._normalCrews = self._crewBlock:SpawnObjects("UIS4TradeCrewItem", table.count(showCrews))
   local index = 1
-  for _,id in pairs(occupyCrews) do
-    local crew = (self._occupyCrews)[index]
+  for _, id in pairs(occupyCrews) do
+    local crew = self._occupyCrews[index]
     crew:SetData(self._tradeData, id, self._selectID)
     index = index + 1
   end
   index = 1
-  for _,id in pairs(showCrews) do
-    local crew = (self._normalCrews)[index]
+  for _, id in pairs(showCrews) do
+    local crew = self._normalCrews[index]
     crew:SetData(self._tradeData, id, self._selectID)
     index = index + 1
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeCrewControlTab.PlayInAnim = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for index,crew in pairs(self._occupyCrews) do
+function UIS4TradeCrewControlTab:PlayInAnim()
+  for index, crew in pairs(self._occupyCrews) do
     crew:PlayInAnim(index)
   end
-  for index,crew in pairs(self._normalCrews) do
+  for index, crew in pairs(self._normalCrews) do
     crew:PlayInAnim(index)
   end
 end
-
-

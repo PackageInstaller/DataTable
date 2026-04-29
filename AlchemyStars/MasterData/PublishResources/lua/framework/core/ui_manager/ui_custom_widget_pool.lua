@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/ui_custom_widget_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICustomWidgetPool", Object)
 UICustomWidgetPool = UICustomWidgetPool
 local TABLE_CLEAR = table.clear
--- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
 
-UICustomWidgetPool.Constructor = function(self, parent, dynamicInfoOfEngine)
-  -- function num : 0_0
+function UICustomWidgetPool:Constructor(parent, dynamicInfoOfEngine)
   self.parent = parent
   self.uiCustomWidgets = {}
   self.dynamicInfoOfEngine = dynamicInfoOfEngine
 end
 
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.Dispose = function(self)
-  -- function num : 0_1
+function UICustomWidgetPool:Dispose()
   local uiCustomWidgets = self.uiCustomWidgets
   for i = 1, #uiCustomWidgets do
     local uiCustomWidget = uiCustomWidgets[i]
@@ -30,10 +20,7 @@ UICustomWidgetPool.Dispose = function(self)
   self.dynamicInfoOfEngine = nil
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.ClearWidgets = function(self)
-  -- function num : 0_2
+function UICustomWidgetPool:ClearWidgets()
   local uiCustomWidgets = self.uiCustomWidgets
   for i = 1, #uiCustomWidgets do
     local uiCustomWidget = uiCustomWidgets[i]
@@ -43,47 +30,31 @@ UICustomWidgetPool.ClearWidgets = function(self)
   self.uiCustomWidgets = {}
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.GetAllSpawnList = function(self)
-  -- function num : 0_3
+function UICustomWidgetPool:GetAllSpawnList()
   return self.uiCustomWidgets
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.SpawnObject = function(self, uiCustomWidgetName)
-  -- function num : 0_4
+function UICustomWidgetPool:SpawnObject(uiCustomWidgetName)
   local haveItemCount = #self.uiCustomWidgets
   if haveItemCount == 0 then
-    local go = (self.dynamicInfoOfEngine):SpawnOneObject("0")
+    local go = self.dynamicInfoOfEngine:SpawnOneObject("0")
     return self:CreateScript(uiCustomWidgetName, go)
   else
-    do
-      do return self:SpawnObjectFromPool() end
-    end
+    return self:SpawnObjectFromPool()
   end
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.AsyncSpawnObject = function(self, TT, uiCustomWidgetName)
-  -- function num : 0_5
+function UICustomWidgetPool:AsyncSpawnObject(TT, uiCustomWidgetName)
   local haveItemCount = #self.uiCustomWidgets
   if haveItemCount == 0 then
     local go = self:AsyncCreateResources(TT, "0")
     return self:CreateScript(uiCustomWidgetName, go)
   else
-    do
-      self:SpawnObjectFromPool()
-    end
+    self:SpawnObjectFromPool()
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.SpawnObjects = function(self, uiCustomWidgetName, count, outSpawnList)
-  -- function num : 0_6 , upvalues : TABLE_CLEAR
+function UICustomWidgetPool:SpawnObjects(uiCustomWidgetName, count, outSpawnList)
   if outSpawnList then
     TABLE_CLEAR(outSpawnList)
     self:SpawnObjectsInternal(uiCustomWidgetName, count, outSpawnList)
@@ -94,10 +65,7 @@ UICustomWidgetPool.SpawnObjects = function(self, uiCustomWidgetName, count, outS
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.AsyncSpawnObjects = function(self, TT, uiCustomWidgetName, count, outSpawnList)
-  -- function num : 0_7 , upvalues : TABLE_CLEAR
+function UICustomWidgetPool:AsyncSpawnObjects(TT, uiCustomWidgetName, count, outSpawnList)
   if outSpawnList then
     TABLE_CLEAR(outSpawnList)
     self:AsyncSpawnObjectsInternal(TT, uiCustomWidgetName, count, outSpawnList)
@@ -108,109 +76,82 @@ UICustomWidgetPool.AsyncSpawnObjects = function(self, TT, uiCustomWidgetName, co
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.Engine = function(self)
-  -- function num : 0_8
+function UICustomWidgetPool:Engine()
   return self.dynamicInfoOfEngine
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.SpawnObjectsInternal = function(self, uiCustomWidgetName, count, outSpawnList)
-  -- function num : 0_9 , upvalues : _ENV
+function UICustomWidgetPool:SpawnObjectsInternal(uiCustomWidgetName, count, outSpawnList)
   if self.uiCustomWidgets == nil then
-    (Log.fatal)("uiCustomWidgets为空：", (debug.traceback)())
+    Log.fatal("uiCustomWidgets为空：", debug.traceback())
   end
   local haveItemCount = #self.uiCustomWidgets
   local subNum = haveItemCount - count
   for i = 1, -subNum do
-    local go = (self.dynamicInfoOfEngine):SpawnOneObject(haveItemCount + i - 1)
+    local go = self.dynamicInfoOfEngine:SpawnOneObject(haveItemCount + i - 1)
     if not self:CreateScript(uiCustomWidgetName, go) then
-      return 
+      return
     end
   end
   self:AfterSpawnObjects(count, outSpawnList)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.AsyncSpawnObjectsInternal = function(self, TT, uiCustomWidgetName, count, outSpawnList)
-  -- function num : 0_10
+function UICustomWidgetPool:AsyncSpawnObjectsInternal(TT, uiCustomWidgetName, count, outSpawnList)
   local haveItemCount = #self.uiCustomWidgets
   local subNum = haveItemCount - count
   for i = 1, -subNum do
     local go = self:AsyncCreateResources(TT, haveItemCount + i - 1)
     if not self:CreateScript(uiCustomWidgetName, go) then
-      return 
+      return
     end
   end
   self:AfterSpawnObjects(count, outSpawnList)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.CreateUICustomWidget = function(self, uiCustomWidgetName)
-  -- function num : 0_11 , upvalues : _ENV
+function UICustomWidgetPool:CreateUICustomWidget(uiCustomWidgetName)
   local uiCustomWidget = _createInstance(uiCustomWidgetName)
   if not uiCustomWidget then
-    (Log.fatal)("[UI] UICustomWidgetPool:CreateUICustomWidget Error, No UICustomWidget of name = ", uiCustomWidgetName)
+    Log.fatal("[UI] UICustomWidgetPool:CreateUICustomWidget Error, No UICustomWidget of name = ", uiCustomWidgetName)
   else
     if not uiCustomWidget:IsChildOf("UICustomWidget") then
-      (Log.fatal)("[UI] UICustomWidgetPool:CreateUICustomWidget Fail, ", uiCustomWidgetName, " is not inherited from UICustomWidget!")
-      return 
+      Log.fatal("[UI] UICustomWidgetPool:CreateUICustomWidget Fail, ", uiCustomWidgetName, " is not inherited from UICustomWidget!")
+      return
     end
     uiCustomWidget:SetName(uiCustomWidgetName)
   end
   return uiCustomWidget
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.SurplusSpawnItem = function(self, uiCustomWidget, enable)
-  -- function num : 0_12
+function UICustomWidgetPool:SurplusSpawnItem(uiCustomWidget, enable)
   uiCustomWidget:Enable(enable)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.CreateScript = function(self, uiCustomWidgetName, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UICustomWidgetPool:CreateScript(uiCustomWidgetName, go)
   if uiCustomWidgetName then
     local uiCustomWidget = self:CreateUICustomWidget(uiCustomWidgetName)
     if not uiCustomWidget then
-      (Log.fatal)("[UI] UICustomWidgetPool:CreateScript Error, ", uiCustomWidgetName)
-      return 
+      Log.fatal("[UI] UICustomWidgetPool:CreateScript Error, ", uiCustomWidgetName)
+      return
     end
     local view = go:GetComponent("UIView")
     if not view then
-      (Log.fatal)("[UI] UICustomWidgetPool:CreateScript Error, View is Null ", uiCustomWidgetName)
-      return 
+      Log.fatal("[UI] UICustomWidgetPool:CreateScript Error, View is Null ", uiCustomWidgetName)
+      return
     end
     uiCustomWidget:Load(view, self.parent)
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.uiCustomWidgets)[#self.uiCustomWidgets + 1] = uiCustomWidget
+    self.uiCustomWidgets[#self.uiCustomWidgets + 1] = uiCustomWidget
     return uiCustomWidget
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.AsyncCreateResources = function(self, TT, name)
-  -- function num : 0_14 , upvalues : _ENV
-  local req = nil
-  if (self.dynamicInfoOfEngine).selectType == (UISelectObjectPath.SelectType).selectByPath then
-    req = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, (self.dynamicInfoOfEngine).m_ObjectName, LoadType.GameObject)
+function UICustomWidgetPool:AsyncCreateResources(TT, name)
+  local req
+  if self.dynamicInfoOfEngine.selectType == UISelectObjectPath.SelectType.selectByPath then
+    req = ResourceManager:GetInstance():AsyncLoadAsset(TT, self.dynamicInfoOfEngine.m_ObjectName, LoadType.GameObject)
   end
-  return (self.dynamicInfoOfEngine):CallAfterLoad(name, req)
+  return self.dynamicInfoOfEngine:CallAfterLoad(name, req)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.AfterSpawnObjects = function(self, count, outSpawnList)
-  -- function num : 0_15
+function UICustomWidgetPool:AfterSpawnObjects(count, outSpawnList)
   local uiCustomWidgets = self.uiCustomWidgets
   for i = 1, #uiCustomWidgets do
     local uiCustomWidget = uiCustomWidgets[i]
@@ -223,18 +164,12 @@ UICustomWidgetPool.AfterSpawnObjects = function(self, count, outSpawnList)
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UICustomWidgetPool.SpawnObjectFromPool = function(self)
-  -- function num : 0_16
+function UICustomWidgetPool:SpawnObjectFromPool()
   for i = 1, #self.uiCustomWidgets do
-    local uiCustomWidget = (self.uiCustomWidgets)[i]
+    local uiCustomWidget = self.uiCustomWidgets[i]
     uiCustomWidget:Enable(i == 1)
   end
   if #self.uiCustomWidgets > 0 then
-    return (self.uiCustomWidgets)[1]
+    return self.uiCustomWidgets[1]
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/season4/cfg_skill_view_8004029.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlaySummonTrap,trapID=8004033; PlaySummonTrap,trapID=8004034; PlaySummonTrap,trapID=8004035; PlaySummonTrap,trapID=8004036; PlaySummonTrap,trapID=8004037; PlaySummonTrap,trapID=8004038; PlaySummonTrap,trapID=8004039; PlaySummonTrap,trapID=8004040; Wait,waitTime=300; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlaySummonTrap,trapID=8004033; PlaySummonTrap,trapID=8004034; PlaySummonTrap,trapID=8004035; PlaySummonTrap,trapID=8004036; PlaySummonTrap,trapID=8004037; PlaySummonTrap,trapID=8004038; PlaySummonTrap,trapID=8004039; PlaySummonTrap,trapID=8004040; Wait,waitTime=300; "
+    }
+  }
 }
 return config, "ID", key
-

@@ -1,48 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Entrust/line/ui_n30_entrust_finish_popup.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN30EntrustFinishPopup", UIController)
 UIN30EntrustFinishPopup = UIN30EntrustFinishPopup
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30EntrustFinishPopup.Constructor = function(self)
-  -- function num : 0_0
+function UIN30EntrustFinishPopup:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustFinishPopup.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1
+function UIN30EntrustFinishPopup:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustFinishPopup.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN30EntrustFinishPopup:OnShow(uiParams)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustFinishPopup.OnHide = function(self)
-  -- function num : 0_3
+function UIN30EntrustFinishPopup:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustFinishPopup.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4
+function UIN30EntrustFinishPopup:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30EntrustFinishPopup.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN30EntrustFinishPopup:OnActivityCloseEvent(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
-
-

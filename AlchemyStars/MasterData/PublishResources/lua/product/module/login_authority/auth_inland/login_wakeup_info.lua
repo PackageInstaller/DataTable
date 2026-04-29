@@ -1,41 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/login_authority/auth_inland/login_wakeup_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LoginWakeUpResult", Object)
 LoginWakeUpResult = LoginWakeUpResult
-local MSDKError = nil
+local MSDKError
 if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-  MSDKError = (GCloud.MSDK).MSDKError
+  MSDKError = GCloud.MSDK.MSDKError
 end
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-LoginWakeUpResult.Constructor = function(self)
-  -- function num : 0_0 , upvalues : MSDKError
+function LoginWakeUpResult:Constructor()
   self.wakeupChannel = nil
   self.retCode = MSDKError.INVALID
   self.openid = nil
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginWakeUpResult.Reset = function(self)
-  -- function num : 0_1 , upvalues : MSDKError
+function LoginWakeUpResult:Reset()
   self.wakeupChannel = nil
   self.retCode = MSDKError.INVALID
   self.openid = nil
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-LoginWakeUpResult.CopyFromMsdk = function(self, src)
-  -- function num : 0_2
+function LoginWakeUpResult:CopyFromMsdk(src)
   if src then
     self.wakeupChannel = src.Channel
     self.retCode = src.RetCode
     self.openid = src.OpenId
   end
 end
-
-

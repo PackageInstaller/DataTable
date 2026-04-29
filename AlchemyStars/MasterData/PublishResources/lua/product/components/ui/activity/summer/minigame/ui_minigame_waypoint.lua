@@ -1,22 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/minigame/ui_minigame_waypoint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMiniGameWayPoint", UICustomWidget)
 UIMiniGameWayPoint = UIMiniGameWayPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMiniGameWayPoint.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._ziImg = {[ScoreType.B] = "B", [ScoreType.A] = "A", [ScoreType.S] = "S"}
+function UIMiniGameWayPoint:OnShow(uiParams)
+  self._ziImg = {
+    [ScoreType.B] = "B",
+    [ScoreType.A] = "A",
+    [ScoreType.S] = "S"
+  }
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameWayPoint._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMiniGameWayPoint:_GetComponents()
   self._di = self:GetGameObject("di")
   self._tu = self:GetUIComponent("RawImageLoader", "tu")
   self._tuRect = self:GetUIComponent("RectTransform", "tu")
@@ -31,10 +25,7 @@ UIMiniGameWayPoint._GetComponents = function(self)
   self._atlas = self:GetAsset("UISummer.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameWayPoint.SetData = function(self, stagecontroller, missionID, cfg, miss_info, servertime, callback, showNew)
-  -- function num : 0_2
+function UIMiniGameWayPoint:SetData(stagecontroller, missionID, cfg, miss_info, servertime, callback, showNew)
   self._stageController = stagecontroller
   self._missionID = missionID
   self._cfg = cfg
@@ -45,82 +36,44 @@ UIMiniGameWayPoint.SetData = function(self, stagecontroller, missionID, cfg, mis
   self:_SetUIInfo()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameWayPoint._SetUIInfo = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._tu):LoadImage((string.format)("xiahuo_game_%stu", (self._cfg).Bg))
-  ;
-  (self._newFlag):SetActive(self._showNew)
-  self:RefreshRedpointStateZi((self._miss_info).mission_info)
+function UIMiniGameWayPoint:_SetUIInfo()
+  self._tu:LoadImage(string.format("xiahuo_game_%stu", self._cfg.Bg))
+  self._newFlag:SetActive(self._showNew)
+  self:RefreshRedpointStateZi(self._miss_info.mission_info)
   self:RefreshUnLockState(self._serverTime)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameWayPoint.RefreshUnLockState = function(self, servertime)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMiniGameWayPoint:RefreshUnLockState(servertime)
   self._serverTime = servertime
-  if self._serverTime < (self._miss_info).unlock_time then
-    (self._name):SetText((self._stageController):_GetRemainTime((self._miss_info).unlock_time - self._serverTime))
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._name).alignment = (UnityEngine.TextAnchor).MiddleRight
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._nameBg).sprite = (self._atlas):GetSprite("xiahuo_game_di8")
-    ;
-    (self._lock):SetActive(true)
+  if self._miss_info.unlock_time > self._serverTime then
+    self._name:SetText(self._stageController:_GetRemainTime(self._miss_info.unlock_time - self._serverTime))
+    self._name.alignment = UnityEngine.TextAnchor.MiddleRight
+    self._nameBg.sprite = self._atlas:GetSprite("xiahuo_game_di8")
+    self._lock:SetActive(true)
   else
-    ;
-    (self._name):SetText((StringTable.Get)((self._cfg).Title))
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._name).alignment = (UnityEngine.TextAnchor).MiddleCenter
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._nameBg).sprite = (self._atlas):GetSprite("xiahuo_game_di7")
-    ;
-    (self._lock):SetActive(false)
+    self._name:SetText(StringTable.Get(self._cfg.Title))
+    self._name.alignment = UnityEngine.TextAnchor.MiddleCenter
+    self._nameBg.sprite = self._atlas:GetSprite("xiahuo_game_di7")
+    self._lock:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameWayPoint.RefreshRedpointStateZi = function(self, miss_info)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMiniGameWayPoint:RefreshRedpointStateZi(miss_info)
   local showredpoint = self:_CheckRedpoint(miss_info)
-  ;
-  (self._redPoint):SetActive(showredpoint)
-  ;
-  (self._stateObj):SetActive(not showredpoint and ScoreType.S <= miss_info.mission_grade)
-  if ScoreType.B <= miss_info.mission_grade then
-    (self._ziObj):SetActive(true)
-    ;
-    (self._zi):LoadImage((string.format)("xiahuo_game_%szi", (self._ziImg)[miss_info.mission_grade]))
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._tuRect).anchoredPosition = Vector2(-72.5, 43.5)
+  self._redPoint:SetActive(showredpoint)
+  self._stateObj:SetActive(not showredpoint and miss_info.mission_grade >= ScoreType.S)
+  if miss_info.mission_grade >= ScoreType.B then
+    self._ziObj:SetActive(true)
+    self._zi:LoadImage(string.format("xiahuo_game_%szi", self._ziImg[miss_info.mission_grade]))
+    self._tuRect.anchoredPosition = Vector2(-72.5, 43.5)
   else
-    (self._ziObj):SetActive(false)
-    -- DECOMPILER ERROR at PC54: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._tuRect).anchoredPosition = Vector2(-20.7, 43.5)
+    self._ziObj:SetActive(false)
+    self._tuRect.anchoredPosition = Vector2(-20.7, 43.5)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameWayPoint._CheckRedpoint = function(self, miss_info)
-  -- function num : 0_6 , upvalues : _ENV
-  for key,value in pairs(ScoreType) do
+function UIMiniGameWayPoint:_CheckRedpoint(miss_info)
+  for key, value in pairs(ScoreType) do
     if value <= miss_info.mission_grade and miss_info.reward_mask & value == 0 then
       return true
     end
@@ -128,17 +81,10 @@ UIMiniGameWayPoint._CheckRedpoint = function(self, miss_info)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMiniGameWayPoint.BtnOnClick = function(self, go)
-  -- function num : 0_7
+function UIMiniGameWayPoint:BtnOnClick(go)
   if self._showNew then
     self._showNew = false
-    ;
-    (self._newFlag):SetActive(self._showNew)
+    self._newFlag:SetActive(self._showNew)
   end
-  ;
-  (self._callBack)(self._missionID)
+  self._callBack(self._missionID)
 end
-
-

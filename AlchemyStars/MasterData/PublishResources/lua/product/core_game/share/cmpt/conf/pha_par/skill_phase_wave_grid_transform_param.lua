@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_wave_grid_transform_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseWaveGridTransformParam", SkillPhaseParamBase)
 SkillPhaseWaveGridTransformParam = SkillPhaseWaveGridTransformParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseWaveGridTransformParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseWaveGridTransformParam:Constructor(t)
   self._crossGridEffectID = t.crossGridEffectID
   self._otherGridEffectID = t.otherGridEffectID
   self._columnInternalTime = t.columnInternalTime
@@ -21,91 +14,65 @@ SkillPhaseWaveGridTransformParam.Constructor = function(self, t)
   self._effLayerScale = t.effLayerScale
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseWaveGridTransformParam:GetCacheTable()
   local t = {}
   if self._crossGridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._crossGridEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._crossGridEffectID].ResPath,
+      1
+    })
   end
-  if self._otherGridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._otherGridEffectID]).ResPath, 1})
+  if 0 < self._otherGridEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._otherGridEffectID].ResPath,
+      1
+    })
   end
-  if self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+  if 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseWaveGridTransformParam:GetPhaseType()
   return SkillViewPhaseType.WaveGridTransform
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetCrossGridEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseWaveGridTransformParam:GetCrossGridEffectID()
   return self._crossGridEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetOtherGridEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseWaveGridTransformParam:GetOtherGridEffectID()
   return self._otherGridEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetColumnInternalTime = function(self)
-  -- function num : 0_5
+function SkillPhaseWaveGridTransformParam:GetColumnInternalTime()
   return self._columnInternalTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetHitAnimName = function(self)
-  -- function num : 0_6
+function SkillPhaseWaveGridTransformParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetHitEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseWaveGridTransformParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetGridWaitEffectTime = function(self)
-  -- function num : 0_8
+function SkillPhaseWaveGridTransformParam:GetGridWaitEffectTime()
   return self._gridEffectWaitTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetHitWaitTime = function(self)
-  -- function num : 0_9
+function SkillPhaseWaveGridTransformParam:GetHitWaitTime()
   return self._hitWaitTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetEffDefaultScale = function(self)
-  -- function num : 0_10
+function SkillPhaseWaveGridTransformParam:GetEffDefaultScale()
   return self._effDefaultScale
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseWaveGridTransformParam.GetEffLayerScale = function(self)
-  -- function num : 0_11
+function SkillPhaseWaveGridTransformParam:GetEffLayerScale()
   return self._effLayerScale
 end
-
-

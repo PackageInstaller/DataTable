@@ -1,53 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/stage/ui_season_task_level_stage_s2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTaskLevelStageS2", UIController)
 UISeasonTaskLevelStageS2 = UISeasonTaskLevelStageS2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTaskLevelStageS2.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTaskLevelStageS2:LoadDataOnEnter(TT, res)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SEASON_TASK_MISSION, ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION)
-  self._component = (self._campaign):GetComponent(ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION)
-  self._componentInfo = (self._campaign):GetComponentInfo(ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_SEASON_TASK_MISSION, ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION)
+  self._component = self._campaign:GetComponent(ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION)
+  self._componentInfo = self._campaign:GetComponentInfo(ECampaignSeasonTaskMissionComponentID.ECAMPAIGN_SEASON_TASK_MISSION)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EngineInput)()).multiTouchEnabled = false
+function UISeasonTaskLevelStageS2:OnShow(uiParams)
+  GameGlobal.EngineInput().multiTouchEnabled = false
   self._atlas = self:GetAsset("UIStage.spriteatlas", LoadType.SpriteAtlas)
   self._gradeAtlas = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
   self._module = self:GetModule(MissionModule)
   self._missionID = uiParams[1]
   self._eventPoint = uiParams[2]
-  self._missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  self._missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   self._curPanel = UISeasonLevelStagePanelMode.BattleInfo
   self:_GetComponents()
   self:_OnValue()
   self:_ShowMainUI(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonTaskLevelStageS2:_GetComponents()
   self._enemyPool = self:GetUIComponent("UISelectObjectPath", "enemy_normal")
   self._bgImg = self:GetUIComponent("RawImageLoader", "bgImg")
-  self._tips = (self:GetUIComponent("UISelectObjectPath", "itemTips")):SpawnObject("UISelectInfo")
-  self._uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
-  self._backBtn = (UIWidgetHelper.SpawnObject)(self, "btns", "UISeasonTopBtn")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_2_0 , upvalues : self
+  self._tips = self:GetUIComponent("UISelectObjectPath", "itemTips"):SpawnObject("UISelectInfo")
+  self._uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
+  self._backBtn = UIWidgetHelper.SpawnObject(self, "btns", "UISeasonTopBtn")
+  self._backBtn:SetData(function()
     self:Close()
-  end
-, nil, nil, nil)
+  end, nil, nil, nil)
   self._panelBattleInfoGo = self:GetGameObject("PanelBattleInfo")
   self._panelAwardsInfoGo = self:GetGameObject("PanelAwardsInfo")
   self._chapterNormalNameText = self:GetUIComponent("UILocalizedTMP", "ChapterNameNormal")
@@ -57,60 +40,37 @@ UISeasonTaskLevelStageS2._GetComponents = function(self)
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EngineInput)()).multiTouchEnabled = true
+function UISeasonTaskLevelStageS2:OnHide()
+  GameGlobal.EngineInput().multiTouchEnabled = true
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.RefreshPanelShow = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._panelAwardsInfoGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
-  ;
-  (self._panelBattleInfoGo):SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UISeasonTaskLevelStageS2:RefreshPanelShow()
+  self._panelAwardsInfoGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo)
+  self._panelBattleInfoGo:SetActive(self._curPanel == UISeasonLevelStagePanelMode.BattleInfo)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.RefreshPanelBg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonTaskLevelStageS2:RefreshPanelBg()
   local bgName = "exp_s2_map_di10"
   if self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo then
     bgName = "exp_s2_map_di10"
   else
     bgName = "exp_s2_map_di11"
   end
-  ;
-  (self._bgImg):LoadImage(bgName)
+  self._bgImg:LoadImage(bgName)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.RefreshPanelText = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
+function UISeasonTaskLevelStageS2:RefreshPanelText()
   if self._curPanel == UISeasonLevelStagePanelMode.AwardsInfo then
-    (self._awardsPanelBtnText).color = Color(0.384, 0.333, 0.259, 1)
+    self._awardsPanelBtnText.color = Color(0.384, 0.333, 0.259, 1)
     self._battleInfoPanelBtnText = Color(0.522, 0.424, 0.263, 1)
   else
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._awardsPanelBtnText).color = Color(0.522, 0.424, 0.263, 1)
+    self._awardsPanelBtnText.color = Color(0.522, 0.424, 0.263, 1)
     self._battleInfoPanelBtnText = Color(0.384, 0.333, 0.259, 1)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2._OnValue = function(self)
-  -- function num : 0_7
+function UISeasonTaskLevelStageS2:_OnValue()
   self:RefreshPanelShow()
   self:RefreshPanelBg()
   self:RefreshPanelText()
@@ -119,151 +79,106 @@ UISeasonTaskLevelStageS2._OnValue = function(self)
   self:RefreshRecommendLv()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.BtnFightOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local ctx = (self._module):TeamCtx()
-  ctx:Init(TeamOpenerType.Campaign, {self._missionID, (self._component):GetCampaignMissionComponentId(), ((self._component):GetCampaignMissionParamKeyMap()), nil})
+function UISeasonTaskLevelStageS2:BtnFightOnClick(go)
+  local ctx = self._module:TeamCtx()
+  ctx:Init(TeamOpenerType.Campaign, {
+    self._missionID,
+    self._component:GetCampaignMissionComponentId(),
+    self._component:GetCampaignMissionParamKeyMap(),
+    nil
+  })
   ctx:ShowDialogUITeams()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.ShowTips = function(self, itemId, pos)
-  -- function num : 0_9
-  (self._tips):SetData(itemId, pos)
+function UISeasonTaskLevelStageS2:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.BgOnClick = function(self)
-  -- function num : 0_10
+function UISeasonTaskLevelStageS2:BgOnClick()
   self:Close()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.InitChapterName = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (self._chapterNormalNameText):SetText((StringTable.Get)((self._missionCfg).Name))
-  ;
-  (self._wordsNormalContent):SetText((StringTable.Get)((self._missionCfg).Desc))
+function UISeasonTaskLevelStageS2:InitChapterName()
+  self._chapterNormalNameText:SetText(StringTable.Get(self._missionCfg.Name))
+  self._wordsNormalContent:SetText(StringTable.Get(self._missionCfg.Desc))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.InitEnemys = function(self)
-  -- function num : 0_12
+function UISeasonTaskLevelStageS2:InitEnemys()
   self:_InitEnemy()
   self:_RefreshEnemyArea()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2._InitEnemy = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local enemyObj = (self._enemyPool):SpawnObject("UIStageEnemy")
-  local recommendAwaken = (self._missionCfg).RecommendAwaken or 0
-  local recommendLV = (self._missionCfg).RecommendLV or 0
-  local color = (Color(1, 1, 1, 1))
-  local enemyTitleBgSprite, enemyTitleBg2Sprite = nil, nil
-  enemyObj:Flush(recommendAwaken, recommendLV, (self._missionCfg).FightLevel, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true, true)
+function UISeasonTaskLevelStageS2:_InitEnemy()
+  local enemyObj = self._enemyPool:SpawnObject("UIStageEnemy")
+  local recommendAwaken = self._missionCfg.RecommendAwaken or 0
+  local recommendLV = self._missionCfg.RecommendLV or 0
+  local color = Color(1, 1, 1, 1)
+  local enemyTitleBgSprite, enemyTitleBg2Sprite
+  enemyObj:Flush(recommendAwaken, recommendLV, self._missionCfg.FightLevel, color, enemyTitleBgSprite, enemyTitleBg2Sprite, true, true, true)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2._RefreshEnemyArea = function(self)
-  -- function num : 0_14
+function UISeasonTaskLevelStageS2:_RefreshEnemyArea()
   self._enemyNormalGo = self:GetGameObject("enemy_normal")
-  ;
-  (self._enemyNormalGo):SetActive(true)
+  self._enemyNormalGo:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.RefreshRecommendLv = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UISeasonTaskLevelStageS2:RefreshRecommendLv()
   local imgGrade = self:GetUIComponent("Image", "imgGrade")
   local lvText = self:GetUIComponent("UILocalizationText", "RecommendLvText")
-  local recommendAwaken = (self._missionCfg).RecommendAwaken or 0
-  local recommendLV = (self._missionCfg).RecommendLV or 0
-  imgGrade.sprite = (self._gradeAtlas):GetSprite((UIPetModule.GetAwakeSpriteNameByParam)(3, recommendAwaken))
+  local recommendAwaken = self._missionCfg.RecommendAwaken or 0
+  local recommendLV = self._missionCfg.RecommendLV or 0
+  imgGrade.sprite = self._gradeAtlas:GetSprite(UIPetModule.GetAwakeSpriteNameByParam(3, recommendAwaken))
   local lvStr = tostring(recommendLV)
   lvText:SetText(lvStr)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.Close = function(self)
-  -- function num : 0_16
+function UISeasonTaskLevelStageS2:Close()
   self:_CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2._CloseDialogWithAnim = function(self, callback)
-  -- function num : 0_17 , upvalues : _ENV
-  (UIWidgetHelper.PlayAnimation)(self, "UICanvas", "uieff_Stage_out", 433, function()
-    -- function num : 0_17_0 , upvalues : callback, self
+function UISeasonTaskLevelStageS2:_CloseDialogWithAnim(callback)
+  UIWidgetHelper.PlayAnimation(self, "UICanvas", "uieff_Stage_out", 433, function()
     if callback then
       callback()
     end
     self:_Resume()
     self:_ShowMainUI(true)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2._Resume = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UISeasonTaskLevelStageS2:_Resume()
   if self._eventPoint then
-    (self._eventPoint):InterruptExpress()
+    self._eventPoint:InterruptExpress()
   end
-  local seasonManager = (self._uiSeasonModule):SeasonManager()
-  local player = (seasonManager:SeasonPlayerManager()):GetPlayer()
+  local seasonManager = self._uiSeasonModule:SeasonManager()
+  local player = seasonManager:SeasonPlayerManager():GetPlayer()
   player:PlayAnimation(SeasonPlayerAnimation.Stand)
-  local seasonAudio = (seasonManager:SeasonAudioManager()):GetSeasonAudio()
+  local seasonAudio = seasonManager:SeasonAudioManager():GetSeasonAudio()
   if seasonAudio then
     seasonAudio:PlayVoice(false)
   end
-  ;
-  ((seasonManager:SeasonCameraManager()):SeasonCamera()):TryResumeSize()
-  ;
-  (self:GetModule(SeasonModule)):ClearLevelExpress()
+  seasonManager:SeasonCameraManager():SeasonCamera():TryResumeSize()
+  self:GetModule(SeasonModule):ClearLevelExpress()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.BattleInfoPanelBtnOnClick = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UISeasonTaskLevelStageS2:BattleInfoPanelBtnOnClick()
   self._curPanel = UISeasonLevelStagePanelMode.BattleInfo
   self:RefreshPanelShow()
   self:RefreshPanelBg()
   self:RefreshPanelText()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2.AwardsPanelBtnOnClick = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISeasonTaskLevelStageS2:AwardsPanelBtnOnClick()
   self._curPanel = UISeasonLevelStagePanelMode.AwardsInfo
   self:RefreshPanelShow()
   self:RefreshPanelBg()
   self:RefreshPanelText()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTaskLevelStageS2._ShowMainUI = function(self, show)
-  -- function num : 0_21 , upvalues : _ENV
-  local controller = ((GameGlobal.UIStateManager)()):GetController((UISeasonHelper.CurSeasonSceneUI)())
+function UISeasonTaskLevelStageS2:_ShowMainUI(show)
+  local controller = GameGlobal.UIStateManager():GetController(UISeasonHelper.CurSeasonSceneUI())
   if controller then
     controller:SetShow(show)
   end
 end
-
-

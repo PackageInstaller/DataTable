@@ -1,92 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/render_monster_weak_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RenderMonsterWeakComponent", Object)
 RenderMonsterWeakComponent = RenderMonsterWeakComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RenderMonsterWeakComponent.Constructor = function(self)
-  -- function num : 0_0
+function RenderMonsterWeakComponent:Constructor()
   self._renderMonsterWeakList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMonsterWeakComponent.GetMonsterWeakList = function(self)
-  -- function num : 0_1
+function RenderMonsterWeakComponent:GetMonsterWeakList()
   return self._renderMonsterWeakList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMonsterWeakComponent.AddEffectEntity = function(self, key, effEntityID, edgePos)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
-  if not (self._renderMonsterWeakList)[key] then
-    (self._renderMonsterWeakList)[key] = {}
+function RenderMonsterWeakComponent:AddEffectEntity(key, effEntityID, edgePos)
+  if not self._renderMonsterWeakList[key] then
+    self._renderMonsterWeakList[key] = {}
   end
-  local curData = (self._renderMonsterWeakList)[key]
+  local curData = self._renderMonsterWeakList[key]
   curData[effEntityID] = edgePos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMonsterWeakComponent.GetEffectEntity = function(self, key)
-  -- function num : 0_3
-  return (self._renderMonsterWeakList)[key]
+function RenderMonsterWeakComponent:GetEffectEntity(key)
+  return self._renderMonsterWeakList[key]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RenderMonsterWeakComponent.RemoveEffectEntity = function(self, key)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._renderMonsterWeakList)[key] = nil
+function RenderMonsterWeakComponent:RemoveEffectEntity(key)
+  self._renderMonsterWeakList[key] = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RenderMonsterWeak = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).RenderMonsterWeak)
+function Entity:RenderMonsterWeak()
+  return self:GetComponent(self.WEComponentsEnum.RenderMonsterWeak)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasRenderMonsterWeak = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).RenderMonsterWeak)
+function Entity:HasRenderMonsterWeak()
+  return self:HasComponent(self.WEComponentsEnum.RenderMonsterWeak)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddRenderMonsterWeak = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderMonsterWeak
+function Entity:AddRenderMonsterWeak()
+  local index = self.WEComponentsEnum.RenderMonsterWeak
   local component = RenderMonsterWeakComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceRenderMonsterWeak = function(self, roundTeam)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).RenderMonsterWeak
+function Entity:ReplaceRenderMonsterWeak(roundTeam)
+  local index = self.WEComponentsEnum.RenderMonsterWeak
   local component = RenderMonsterWeakComponent:New(roundTeam)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveRenderMonsterWeak = function(self)
-  -- function num : 0_9
+function Entity:RemoveRenderMonsterWeak()
   if self:HasRenderMonsterWeak() then
-    self:RemoveComponent((self.WEComponentsEnum).RenderMonsterWeak)
+    self:RemoveComponent(self.WEComponentsEnum.RenderMonsterWeak)
   end
 end
-
-

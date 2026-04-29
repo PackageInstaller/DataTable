@@ -1,61 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_cn6_n35_game/ui_cn6_n35_game_get_clothes.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UI_CN6_N35_GameGetClothes", UIController)
 UI_CN6_N35_GameGetClothes = UI_CN6_N35_GameGetClothes
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UI_CN6_N35_GameGetClothes.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UI_CN6_N35_GameGetClothes:OnShow(uiParams)
   self:GetComponents()
   self._rewards = uiParams[1]
   self._len = #self._rewards
-  ;
-  (Log.debug)("###[UI_CN6_N35_GameGetClothes] rewards len : ", self._len)
+  Log.debug("###[UI_CN6_N35_GameGetClothes] rewards len : ", self._len)
   self._showIdx = 1
   self:ShowAward()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UI_CN6_N35_GameGetClothes.GetComponents = function(self)
-  -- function num : 0_1
+function UI_CN6_N35_GameGetClothes:GetComponents()
   self._nameTex = self:GetUIComponent("UILocalizationText", "nameTex")
   self._descTex = self:GetUIComponent("UILocalizationText", "descTex")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UI_CN6_N35_GameGetClothes.ShowAward = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local award = (self._rewards)[self._showIdx]
+function UI_CN6_N35_GameGetClothes:ShowAward()
+  local award = self._rewards[self._showIdx]
   local itemid = award.assetid
-  local cfg = (Cfg.cfg_item)[itemid]
+  local cfg = Cfg.cfg_item[itemid]
   local icon = cfg.Icon
-  ;
-  (self._icon):LoadImage(icon)
+  self._icon:LoadImage(icon)
   local name = cfg.Name
   local desc = cfg.Intro
-  ;
-  (self._nameTex):SetText((StringTable.Get)(name))
-  ;
-  (self._descTex):SetText((StringTable.Get)(desc))
+  self._nameTex:SetText(StringTable.Get(name))
+  self._descTex:SetText(StringTable.Get(desc))
   self:PlayAnim(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UI_CN6_N35_GameGetClothes.PlayAnim = function(self, show)
-  -- function num : 0_3
+function UI_CN6_N35_GameGetClothes:PlayAnim(show)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UI_CN6_N35_GameGetClothes.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UI_CN6_N35_GameGetClothes:BgOnClick(go)
   if self._showIdx == self._len then
     self:CloseDialog()
   else
@@ -65,11 +42,6 @@ UI_CN6_N35_GameGetClothes.BgOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UI_CN6_N35_GameGetClothes.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5
+function UI_CN6_N35_GameGetClothes:CloseBtnOnClick(go)
   self:BgOnClick(go)
 end
-
-

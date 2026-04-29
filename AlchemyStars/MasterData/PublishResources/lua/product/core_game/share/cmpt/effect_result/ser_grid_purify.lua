@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_grid_purify.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_GridPurify", SkillEffectResultBase)
 SkillEffectResult_GridPurify = SkillEffectResult_GridPurify
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_GridPurify.Constructor = function(self, v2GridPos, trapIDArray)
-  -- function num : 0_0
+function SkillEffectResult_GridPurify:Constructor(v2GridPos, trapIDArray)
   self._gridPos = v2GridPos
   self._trapIDArray = trapIDArray
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_GridPurify.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_GridPurify:GetEffectType()
   return SkillEffectType.GridPurify
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_GridPurify.GetGridPos = function(self)
-  -- function num : 0_2
+function SkillEffectResult_GridPurify:GetGridPos()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_GridPurify.GetPurifiedTrapIDs = function(self)
-  -- function num : 0_3
+function SkillEffectResult_GridPurify:GetPurifiedTrapIDs()
   return self._trapIDArray
 end
-
-

@@ -1,23 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/entry/ui_side_enter_item_n4_cc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_campaign")
 _class("UISideEnterItemN4CC", UISideEnterItem_Campaign)
 UISideEnterItemN4CC = UISideEnterItemN4CC
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItemN4CC._CalcNew = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISideEnterItemN4CC:_CalcNew()
   if not self._campaign then
     return false
   end
-  local sample = (self._campaign):GetSample()
-  if sample then
-    local new = sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_CAN_CHALLENGE)
-  end
+  local sample = self._campaign:GetSample()
+  local new = sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_CAN_CHALLENGE)
   return new
 end
-
-

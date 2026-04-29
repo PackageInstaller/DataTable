@@ -1,60 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_ride_on_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayRideOnInstruction", BaseInstruction)
 PlayRideOnInstruction = PlayRideOnInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRideOnInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayRideOnInstruction:Constructor(paramList)
   self._rideOnDelay = tonumber(paramList.rideOnDelay)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRideOnInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayRideOnInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local resultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local resultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = resultContainer:GetEffectResultByArray(SkillEffectType.RideOn)
   if not result then
-    return 
+    return
   end
   local trapSvc = world:GetService("TrapRender")
-  local trapIDList = (result:GetTrapIDList())
-  local newTrapID = nil
-  do
-    if trapIDList then
-      local trapEntityList = {}
-      for _,trapEntityID in ipairs(trapIDList) do
-        local trapEntity = world:GetEntityByID(trapEntityID)
-        if trapEntity then
-          newTrapID = trapEntityID
-          ;
-          (table.insert)(trapEntityList, trapEntity)
-        end
-      end
-      trapSvc:ShowTraps(TT, trapEntityList, true)
-    end
-    YIELD(TT, self._rideOnDelay)
-    local rideRenderSvc = world:GetService("RideRender")
-    local monsterMountID = result:GetMonsterMountID()
-    local trapMountID = result:GetTrapMountID()
-    if newTrapID then
-      rideRenderSvc:ReplaceRideRender(casterEntity:GetID(), newTrapID)
-    else
-      if monsterMountID then
-        rideRenderSvc:ReplaceRideRender(casterEntity:GetID(), monsterMountID)
-      else
-        if trapMountID then
-          rideRenderSvc:ReplaceRideRender(casterEntity:GetID(), trapMountID)
-        end
+  local trapIDList = result:GetTrapIDList()
+  local newTrapID
+  if trapIDList then
+    local trapEntityList = {}
+    for _, trapEntityID in ipairs(trapIDList) do
+      local trapEntity = world:GetEntityByID(trapEntityID)
+      if trapEntity then
+        newTrapID = trapEntityID
+        table.insert(trapEntityList, trapEntity)
       end
     end
+    trapSvc:ShowTraps(TT, trapEntityList, true)
+  end
+  YIELD(TT, self._rideOnDelay)
+  local rideRenderSvc = world:GetService("RideRender")
+  local monsterMountID = result:GetMonsterMountID()
+  local trapMountID = result:GetTrapMountID()
+  if newTrapID then
+    rideRenderSvc:ReplaceRideRender(casterEntity:GetID(), newTrapID)
+  elseif monsterMountID then
+    rideRenderSvc:ReplaceRideRender(casterEntity:GetID(), monsterMountID)
+  elseif trapMountID then
+    rideRenderSvc:ReplaceRideRender(casterEntity:GetID(), trapMountID)
   end
 end
-
-

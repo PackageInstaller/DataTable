@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/pt/activity/cn7_n36/str_cn7_n36_blackbox.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn7_n36_blackbox_title = "Entrega Precária", str_cn7_n36_blackbox_intro = "Eclipsites se tornam mais prevalentes no Continente Astra, representando uma ameaça crescente para as rotas de entrega. À medida que os colossos ressurgem, os celestitas e seus companheiros se tornam mais proativos. Certas facções reconhecem as notáveis habilidades de vôo e manobras de longo alcance do Colossus, confiando-lhes carregamentos especiais e arriscados.", str_cn7_n36_blackbox_intro_title = "Informações de jogabilidade de entrega precária", str_cn7_n36_blackbox_intro_head_1 = "Modo Caixa de Pandora", str_cn7_n36_blackbox_intro_body_1 = "1. A entrega precária se enquadra no Modo Caixa de Pandora\n2.O Modo Caixa de Pandora consiste em 6 estágios, cada um compreendendo 2-3 subestágios.\n3. Os estágios da Caixa de Pandora apresentam um mecanismo de desbloqueio. A conclusão de qualquer subestágio dentro de um estágio da Caixa de Pandora desbloqueia o próximo estágio.\n4. Não há mecanismo de desbloqueio entre os subestágios, então você pode desafiá-los livremente.\n5. Diferentes aurorianos devem ser implantados ao desafiar subestágios dentro do mesmo estágio da Caixa de Pandora.", str_cn7_n36_blackbox_intro_head_2 = "Troféu do Desafio", str_cn7_n36_blackbox_intro_body_2 = "1. Cada estágio da Caixa de Pandora tem de 3 a 5 Troféus de Desafio, e diferentes Troféus de Desafio têm diferentes condições de desafio.\n2. Os navegadores precisam concluir o número necessário de estágios de waypoint com as escalações necessárias de acordo com o conteúdo do Troféu para obter os Troféus e recompensas correspondentes.\n3.Como não há ordem entre os Troféus, os Navegantes são livres para desafiar cada Troféu várias vezes.\n4. Uma vez obtido o Troféu de Desafio, ele permanecerá mesmo quando a formação do palco for redefinida.", str_cn7_n36_blackbox_intro_head_3 = "Formação do Desafio", str_cn7_n36_blackbox_intro_body_3 = "1.A mesma formação auroriana não pode ser usada em diferentes subestágios de um estágio da Caixa de Pandora.\n2.A mesma restrição não se aplica aos estágios da Caixa de Pandora.\n3.Cada subfase pode ser desafiada com uma única formação.\n4. A formação do palco pode ser redefinida, e redefinir a formação não afetará os Troféus de Desafio obtidos.", str_cn7_n36_blackbox_diff_unlock_tips = "Limpar qualquer {1} sub-estágio para desbloquear.", str_cn7_n36_blackbox1_name = "EX1 - Trovoada", str_cn7_n36_blackbox2_name = "EX2 - Ambição Inútil", str_cn7_n36_blackbox3_name = "EX3 - Dilema", str_cn7_n36_blackbox4_name = "looo  3IE -  N", str_cn7_n36_blackbox5_name = "EX5 - Destruição", str_cn7_n36_blackbox6_name = "EX6 - Inferno", str_cn7_n36_blackbox1_sub_name_1 = "EX1-1 Trovoada - Relâmpago Ameaçador", str_cn7_n36_blackbox1_sub_name_2 = "EX1-2 Trovoada - Rocha Inquebrável", str_cn7_n36_blackbox2_sub_name_1 = "EX2-1 Ambição Inútil - Dano", str_cn7_n36_blackbox2_sub_name_2 = "EX2-2 Ambição Inútil - Assalto", str_cn7_n36_blackbox3_sub_name_1 = "EX3-1 Dilema - Beira", str_cn7_n36_blackbox3_sub_name_2 = "EX3-2 Dilema - Ferido", str_cn7_n36_blackbox3_sub_name_3 = "EX3-3 Dilema - Defesa", str_cn7_n36_blackbox4_sub_name_1 = "EX4-1 Alteração - Restaurar", str_cn7_n36_blackbox4_sub_name_2 = "EX4-2 Alteração - Agravar", str_cn7_n36_blackbox5_sub_name_1 = "EX5-1 Destruição - Cicatrizes", str_cn7_n36_blackbox5_sub_name_2 = "EX5-2 Destruição - Contaminação", str_cn7_n36_blackbox6_sub_name_1 = "EX6-1 Inferno - A Chamada", str_cn7_n36_blackbox6_sub_name_2 = "EX6-2 Inferno - Sobreviver", str_cn7_n36_blackbox6_sub_name_3 = "EX6-3 Inferno - O Preço"}
+local config = {
+  str_cn7_n36_blackbox_title = "Entrega Precária",
+  str_cn7_n36_blackbox_intro = "Eclipsites se tornam mais prevalentes no Continente Astra, representando uma ameaça crescente para as rotas de entrega. À medida que os colossos ressurgem, os celestitas e seus companheiros se tornam mais proativos. Certas facções reconhecem as notáveis habilidades de vôo e manobras de longo alcance do Colossus, confiando-lhes carregamentos especiais e arriscados.",
+  str_cn7_n36_blackbox_intro_title = "Informações de jogabilidade de entrega precária",
+  str_cn7_n36_blackbox_intro_head_1 = "Modo Caixa de Pandora",
+  str_cn7_n36_blackbox_intro_body_1 = "1. A entrega precária se enquadra no Modo Caixa de Pandora\n2.O Modo Caixa de Pandora consiste em 6 estágios, cada um compreendendo 2-3 subestágios.\n3. Os estágios da Caixa de Pandora apresentam um mecanismo de desbloqueio. A conclusão de qualquer subestágio dentro de um estágio da Caixa de Pandora desbloqueia o próximo estágio.\n4. Não há mecanismo de desbloqueio entre os subestágios, então você pode desafiá-los livremente.\n5. Diferentes aurorianos devem ser implantados ao desafiar subestágios dentro do mesmo estágio da Caixa de Pandora.",
+  str_cn7_n36_blackbox_intro_head_2 = "Troféu do Desafio",
+  str_cn7_n36_blackbox_intro_body_2 = "1. Cada estágio da Caixa de Pandora tem de 3 a 5 Troféus de Desafio, e diferentes Troféus de Desafio têm diferentes condições de desafio.\n2. Os navegadores precisam concluir o número necessário de estágios de waypoint com as escalações necessárias de acordo com o conteúdo do Troféu para obter os Troféus e recompensas correspondentes.\n3.Como não há ordem entre os Troféus, os Navegantes são livres para desafiar cada Troféu várias vezes.\n4. Uma vez obtido o Troféu de Desafio, ele permanecerá mesmo quando a formação do palco for redefinida.",
+  str_cn7_n36_blackbox_intro_head_3 = "Formação do Desafio",
+  str_cn7_n36_blackbox_intro_body_3 = "1.A mesma formação auroriana não pode ser usada em diferentes subestágios de um estágio da Caixa de Pandora.\n2.A mesma restrição não se aplica aos estágios da Caixa de Pandora.\n3.Cada subfase pode ser desafiada com uma única formação.\n4. A formação do palco pode ser redefinida, e redefinir a formação não afetará os Troféus de Desafio obtidos.",
+  str_cn7_n36_blackbox_diff_unlock_tips = "Limpar qualquer {1} sub-estágio para desbloquear.",
+  str_cn7_n36_blackbox1_name = "EX1 - Trovoada",
+  str_cn7_n36_blackbox2_name = "EX2 - Ambição Inútil",
+  str_cn7_n36_blackbox3_name = "EX3 - Dilema",
+  str_cn7_n36_blackbox4_name = "looo  3IE -  N",
+  str_cn7_n36_blackbox5_name = "EX5 - Destruição",
+  str_cn7_n36_blackbox6_name = "EX6 - Inferno",
+  str_cn7_n36_blackbox1_sub_name_1 = "EX1-1 Trovoada - Relâmpago Ameaçador",
+  str_cn7_n36_blackbox1_sub_name_2 = "EX1-2 Trovoada - Rocha Inquebrável",
+  str_cn7_n36_blackbox2_sub_name_1 = "EX2-1 Ambição Inútil - Dano",
+  str_cn7_n36_blackbox2_sub_name_2 = "EX2-2 Ambição Inútil - Assalto",
+  str_cn7_n36_blackbox3_sub_name_1 = "EX3-1 Dilema - Beira",
+  str_cn7_n36_blackbox3_sub_name_2 = "EX3-2 Dilema - Ferido",
+  str_cn7_n36_blackbox3_sub_name_3 = "EX3-3 Dilema - Defesa",
+  str_cn7_n36_blackbox4_sub_name_1 = "EX4-1 Alteração - Restaurar",
+  str_cn7_n36_blackbox4_sub_name_2 = "EX4-2 Alteração - Agravar",
+  str_cn7_n36_blackbox5_sub_name_1 = "EX5-1 Destruição - Cicatrizes",
+  str_cn7_n36_blackbox5_sub_name_2 = "EX5-2 Destruição - Contaminação",
+  str_cn7_n36_blackbox6_sub_name_1 = "EX6-1 Inferno - A Chamada",
+  str_cn7_n36_blackbox6_sub_name_2 = "EX6-2 Inferno - Sobreviver",
+  str_cn7_n36_blackbox6_sub_name_3 = "EX6-3 Inferno - O Preço"
+}
 return config
-

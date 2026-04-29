@@ -1,41 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_isolate_convert_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_grid_range_convert_ins_r")
 _class("PlayIsolateConvertInstruction", BaseInstruction)
 PlayIsolateConvertInstruction = PlayIsolateConvertInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayIsolateConvertInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
-  local cRoutine = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayIsolateConvertInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local cRoutine = casterEntity:SkillRoutine():GetResultContainer()
   local results = cRoutine:GetEffectResultsAsArray(SkillEffectType.IsolateConvert)
   local result = results[1]
   if not result then
-    return 
+    return
   end
   local tConvertInfo = {}
   local world = casterEntity:GetOwnerWorld()
   local tAtomicData = result:GetAtomicDataArray()
-  for _,atomicData in ipairs(tAtomicData) do
+  for _, atomicData in ipairs(tAtomicData) do
     local traps = {}
     local pos = atomicData:GetPosition()
     local oldPieceType = atomicData:GetOldPieceType()
     local newPieceType = atomicData:GetTargetPieceType()
     local flushTrapIds = atomicData:GetDestroyedTrapArray()
-    for i,v in ipairs(flushTrapIds) do
+    for i, v in ipairs(flushTrapIds) do
       local e = world:GetEntityByID(v)
-      ;
-      (table.insert)(traps, e)
+      table.insert(traps, e)
     end
     local trapServiceRender = world:GetService("TrapRender")
     trapServiceRender:PlayTrapDieSkill(TT, traps)
-    for _,trap in ipairs(traps) do
+    for _, trap in ipairs(traps) do
       trapServiceRender:DestroyTrap(TT, trap)
     end
-    if newPieceType and PieceType.None <= newPieceType and newPieceType <= PieceType.Any then
+    if newPieceType and newPieceType >= PieceType.None and newPieceType <= PieceType.Any then
       local boardServiceR = world:GetService("BoardRender")
       local newGridEntity = boardServiceR:ReCreateGridEntity(newPieceType, pos)
       if newGridEntity then
@@ -43,24 +35,15 @@ PlayIsolateConvertInstruction.DoInstruction = function(self, TT, casterEntity, p
         pieceSvc:SetPieceEntityAnimNormal(newGridEntity)
       end
     end
-    do
-      do
-        local convertInfo = NTGridConvert_ConvertInfo:New(pos, oldPieceType, newPieceType)
-        ;
-        (table.insert)(tConvertInfo, convertInfo)
-        -- DECOMPILER ERROR at PC97: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    local convertInfo = NTGridConvert_ConvertInfo:New(pos, oldPieceType, newPieceType)
+    table.insert(tConvertInfo, convertInfo)
   end
   local svcPlaySkill = world:GetService("PlaySkill")
   local svcPlayBuff = world:GetService("PlayBuff")
-  if #tConvertInfo > 0 then
+  if 0 < #tConvertInfo then
     local notify = NTGridConvert:New(casterEntity, tConvertInfo)
     notify:SetConvertEffectType(SkillEffectType.IsolateConvert)
     notify.__attackPosMatchRequired = true
     svcPlayBuff:PlayBuffView(TT, notify)
   end
 end
-
-

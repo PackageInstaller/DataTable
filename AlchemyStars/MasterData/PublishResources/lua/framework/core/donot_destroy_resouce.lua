@@ -1,150 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/donot_destroy_resouce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-CacheResLevel = {Minimum = 1, Suitable = 2, Maximum = 3, Empty = 4}
+CacheResLevel = {
+  Minimum = 1,
+  Suitable = 2,
+  Maximum = 3,
+  Empty = 4
+}
 _class("DonotDestroyResource", Object)
 DonotDestroyResource = DonotDestroyResource
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-DonotDestroyResource.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function DonotDestroyResource:Constructor()
   self._resTable = {}
   self._resCount = {}
   self._resLevel = CacheResLevel.Minimum
-  self._cfgDonotDestroy = (Cfg.cfg_regular_resource)({})
-  for i,v in ipairs(self._cfgDonotDestroy) do
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._resCount)[v.ResName] = v.DonotDestroyCount
+  self._cfgDonotDestroy = Cfg.cfg_regular_resource({})
+  for i, v in ipairs(self._cfgDonotDestroy) do
+    self._resCount[v.ResName] = v.DonotDestroyCount
   end
   self._cacheing = false
   self._uiResCache = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DonotDestroyResource.GetResCount = function(self, resName)
-  -- function num : 0_1
-  return (self._resCount)[resName] or 0
+function DonotDestroyResource:GetResCount(resName)
+  return self._resCount[resName] or 0
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DonotDestroyResource.GetUIRes = function(self, uiPrefab)
-  -- function num : 0_2
-  return (self._uiResCache)[uiPrefab]
+function DonotDestroyResource:GetUIRes(uiPrefab)
+  return self._uiResCache[uiPrefab]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DonotDestroyResource.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  for k,v in pairs(self._resTable) do
-    for i,r in ipairs(v) do
+function DonotDestroyResource:Dispose()
+  for k, v in pairs(self._resTable) do
+    for i, r in ipairs(v) do
       r:Dispose()
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-DonotDestroyResource.ChangeCacheLevel = function(self, TT, level)
-  -- function num : 0_4 , upvalues : _ENV
+function DonotDestroyResource:ChangeCacheLevel(TT, level)
   if self._cacheing then
-    return 
+    return
   end
-  if not level then
-    level = CacheResLevel.Minimum
-  end
+  level = level or CacheResLevel.Minimum
   if self._resLevel == level then
-    return 
+    return
   end
   self._cacheing = true
   self._resLevel = level
   local resArray = self._cfgDonotDestroy
-  for i,v in ipairs(resArray) do
-    if not (self._resTable)[v.ResName] then
-      local t = {}
-    end
+  for i, v in ipairs(resArray) do
+    local t = self._resTable[v.ResName] or {}
     local count = 1
     if level == CacheResLevel.Suitable then
       count = v.DonotDestroyCount - #t
-    else
-      if level == CacheResLevel.Maximum then
-        count = v.CacheCount - #t
-      else
-        if level == CacheResLevel.Empty then
-          count = -#t
-        end
-      end
+    elseif level == CacheResLevel.Maximum then
+      count = v.CacheCount - #t
+    elseif level == CacheResLevel.Empty then
+      count = -#t
     end
     for n = 1, count do
-      local res = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, v.ResName, LoadType[v.LoadType])
+      local res = ResourceManager:GetInstance():AsyncLoadAsset(TT, v.ResName, LoadType[v.LoadType])
       t[#t + 1] = res
     end
     if count < 0 then
       for n = 1, -count do
-        (t[#t]):Dispose()
+        t[#t]:Dispose()
         t[#t] = nil
       end
     end
-    do
-      do
-        -- DECOMPILER ERROR at PC81: Confused about usage of register: R11 in 'UnsetPending'
-
-        ;
-        (self._resTable)[v.ResName] = t
-        -- DECOMPILER ERROR at PC82: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    self._resTable[v.ResName] = t
   end
   local uiPrefab = "UIBattle.prefab"
-  local uiRes = (self._uiResCache)[uiPrefab]
-  if level == CacheResLevel.Maximum and not uiRes then
-    uiRes = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, uiPrefab, LoadType.GameObject)
-    -- DECOMPILER ERROR at PC104: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._uiResCache)[uiPrefab] = uiRes
-  end
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R6 in 'UnsetPending'
-
-  if uiRes then
-    (self._uiResCache)[uiPrefab] = nil
+  local uiRes = self._uiResCache[uiPrefab]
+  if level == CacheResLevel.Maximum then
+    if not uiRes then
+      uiRes = ResourceManager:GetInstance():AsyncLoadAsset(TT, uiPrefab, LoadType.GameObject)
+      self._uiResCache[uiPrefab] = uiRes
+    end
+  elseif uiRes then
+    self._uiResCache[uiPrefab] = nil
   end
   self._cacheing = false
-  ;
-  (Log.prof)("[donnotDestoryResource] change cache  finished!!")
+  Log.prof("[donnotDestoryResource] change cache  finished!!")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-DonotDestroyResource.GetRes = function(self, resName)
-  -- function num : 0_5
-  local res = (self._resTable)[resName]
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._resTable)[resName] = {}
+function DonotDestroyResource:GetRes(resName)
+  local res = self._resTable[resName]
+  self._resTable[resName] = {}
   return res
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-DonotDestroyResource.PutRes = function(self, resName, res)
-  -- function num : 0_6
-  local t = (self._resTable)[resName]
+function DonotDestroyResource:PutRes(resName, res)
+  local t = self._resTable[resName]
   if not t then
     t = {}
-    -- DECOMPILER ERROR at PC7: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._resTable)[resName] = t
+    self._resTable[resName] = t
   end
   t[#t + 1] = res
 end
-
-

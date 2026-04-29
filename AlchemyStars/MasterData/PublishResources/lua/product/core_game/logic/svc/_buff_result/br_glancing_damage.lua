@@ -1,18 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_glancing_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultSetGlancingDamage", BuffResultBase)
 BuffResultSetGlancingDamage = BuffResultSetGlancingDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSetGlancingDamage.Constructor = function(self, mulValue, maxValue)
-  -- function num : 0_0
+function BuffResultSetGlancingDamage:Constructor(mulValue, maxValue)
   self._mulValue = mulValue
   self._maxValue = maxValue
 end
 
 _class("BuffResultRemoveGlancingDamage", BuffResultBase)
 BuffResultRemoveGlancingDamage = BuffResultRemoveGlancingDamage
-

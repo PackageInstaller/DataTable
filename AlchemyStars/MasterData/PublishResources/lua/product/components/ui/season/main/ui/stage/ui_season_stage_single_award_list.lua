@@ -1,93 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/stage/ui_season_stage_single_award_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonStageSingleAwardList", UICustomWidget)
 UISeasonStageSingleAwardList = UISeasonStageSingleAwardList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonStageSingleAwardList.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonStageSingleAwardList:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardList.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonStageSingleAwardList:InitWidget()
   self._bgResMap = {}
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._bgResMap)[UISeasonLevelDiff.Normal] = "exp_s1_map_di24"
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._bgResMap)[UISeasonLevelDiff.Hard] = "exp_s1_map_di35"
+  self._bgResMap[UISeasonLevelDiff.Normal] = "exp_s1_map_di24"
+  self._bgResMap[UISeasonLevelDiff.Hard] = "exp_s1_map_di35"
   self._awardsGen = self:GetUIComponent("UISelectObjectPath", "Awards")
   self._bgImg = self:GetUIComponent("Image", "BgImg")
   self._atlas = self:GetAsset("UIS1Main.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardList.OnHide = function(self)
-  -- function num : 0_2
+function UISeasonStageSingleAwardList:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardList.SetData = function(self, awardList)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonStageSingleAwardList:SetData(awardList)
   self._awardList = awardList
-  local levelDiff = (self._awardList).levelDiff
-  do
-    if levelDiff then
-      local bgName = (self._bgResMap)[levelDiff]
-      -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-      if bgName then
-        (self._bgImg).sprite = (self._atlas):GetSprite(bgName)
-      end
+  local levelDiff = self._awardList.levelDiff
+  if levelDiff then
+    local bgName = self._bgResMap[levelDiff]
+    if bgName then
+      self._bgImg.sprite = self._atlas:GetSprite(bgName)
     end
-    local count = #self._awardList
-    ;
-    (self._awardsGen):SpawnObjects("UISeasonStageAwardItem", count)
-    local list = (self._awardsGen):GetAllSpawnList()
-    self._list = list
-    for i,v in ipairs(list) do
-      v:Flush((self._awardList)[i], levelDiff)
-    end
+  end
+  local count = #self._awardList
+  self._awardsGen:SpawnObjects("UISeasonStageAwardItem", count)
+  local list = self._awardsGen:GetAllSpawnList()
+  self._list = list
+  for i, v in ipairs(list) do
+    v:Flush(self._awardList[i], levelDiff)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardList.SetWaitAnim = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonStageSingleAwardList:SetWaitAnim()
   if self._list then
-    for index,awardCell in ipairs(self._list) do
+    for index, awardCell in ipairs(self._list) do
       awardCell:SetWaitAnim()
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonStageSingleAwardList.PlayAnim = function(self, totalAnimDelay)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonStageSingleAwardList:PlayAnim(totalAnimDelay)
   if self._list then
     local curCellDelay = 50
     if totalAnimDelay then
       curCellDelay = curCellDelay + totalAnimDelay
     end
     local eachItemDelay = 50
-    for index,awardCell in ipairs(self._list) do
+    for index, awardCell in ipairs(self._list) do
       awardCell:PlayAnim(curCellDelay)
       curCellDelay = curCellDelay + eachItemDelay
     end
   end
 end
-
-

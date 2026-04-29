@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/collect_card/open/ui_collect_card_open_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICollectCardOpenItem", UICustomWidget)
 UICollectCardOpenItem = UICollectCardOpenItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICollectCardOpenItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UICollectCardOpenItem:OnShow(uiParam)
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._nameTex = self:GetUIComponent("UILocalizationText", "NameTex")
   self._specialBg = self:GetGameObject("SpecialBg")
@@ -17,57 +10,35 @@ UICollectCardOpenItem.OnShow = function(self, uiParam)
   self._anim = self:GetUIComponent("Animation", "UICollectCardOpenItem")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardOpenItem.SetData = function(self, idx, cardid)
-  -- function num : 0_1 , upvalues : _ENV
+function UICollectCardOpenItem:SetData(idx, cardid)
   self._cardid = cardid
-  self._cfg = (Cfg.cfg_component_collect_card)[self._cardid]
-  local icon = (self._cfg).Icon
-  ;
-  (self._icon):LoadImage(icon)
-  local cfgName = (self._cfg).Name
-  ;
-  (self._nameTex):SetText((StringTable.Get)(cfgName))
-  ;
-  (self._specialBg):SetActive((self._cfg).Type == 2)
-  ;
-  (self._normalBg):SetActive((self._cfg).Type == 1)
+  self._cfg = Cfg.cfg_component_collect_card[self._cardid]
+  local icon = self._cfg.Icon
+  self._icon:LoadImage(icon)
+  local cfgName = self._cfg.Name
+  self._nameTex:SetText(StringTable.Get(cfgName))
+  self._specialBg:SetActive(self._cfg.Type == 2)
+  self._normalBg:SetActive(self._cfg.Type == 1)
   self:PlayAnim(idx)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardOpenItem.PlayAnim = function(self, idx)
-  -- function num : 0_2 , upvalues : _ENV
+function UICollectCardOpenItem:PlayAnim(idx)
   local yieldTime = idx // 5 * 66
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._root).alpha = 0
-  if yieldTime > 0 then
+  self._root.alpha = 0
+  if 0 < yieldTime then
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
-    self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._anim):Play()
-  end
-)
+    self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._anim:Play()
+    end)
   else
-    ;
-    (self._anim):Play()
+    self._anim:Play()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICollectCardOpenItem.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICollectCardOpenItem:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
-
-

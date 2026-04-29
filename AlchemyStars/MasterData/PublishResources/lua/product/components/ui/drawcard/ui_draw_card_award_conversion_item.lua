@@ -1,34 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_award_conversion_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardConversionItem", UICustomWidget)
 UIDrawCardAwardConversionItem = UIDrawCardAwardConversionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardConversionItem.OnShow = function(self)
-  -- function num : 0_0
+function UIDrawCardAwardConversionItem:OnShow()
   self.ConversionItem = self:GetUIComponent("UISelectObjectPath", "ConversionItem")
-  ;
-  (self.ConversionItem):SpawnObjects("UIDrawCardAwardConversionOneItem", 5)
+  self.ConversionItem:SpawnObjects("UIDrawCardAwardConversionOneItem", 5)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionItem.SetData = function(self, idx, callback)
-  -- function num : 0_1 , upvalues : _ENV
-  local conversecfg = (Cfg.cfg_drawcard_conversion_data)[idx]
-  local items = (self.ConversionItem):GetAllSpawnList()
-  for index,value in ipairs(items) do
+function UIDrawCardAwardConversionItem:SetData(idx, callback)
+  local conversecfg = Cfg.cfg_drawcard_conversion_data[idx]
+  local items = self.ConversionItem:GetAllSpawnList()
+  for index, value in ipairs(items) do
     value:SetData(conversecfg, index)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionItem.OnHide = function(self)
-  -- function num : 0_2
+function UIDrawCardAwardConversionItem:OnHide()
 end
-
-

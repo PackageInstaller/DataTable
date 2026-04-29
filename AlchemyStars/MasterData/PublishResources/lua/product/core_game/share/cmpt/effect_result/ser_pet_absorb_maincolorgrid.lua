@@ -1,47 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_pet_absorb_maincolorgrid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultPetAbsorbMaintainColorGrid", SkillEffectResultBase)
 SkillEffectResultPetAbsorbMaintainColorGrid = SkillEffectResultPetAbsorbMaintainColorGrid
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultPetAbsorbMaintainColorGrid.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectResultPetAbsorbMaintainColorGrid:GetEffectType()
   return SkillEffectType.PetAbsorbMaintainColorGrid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetAbsorbMaintainColorGrid.Constructor = function(self, trapIDs)
-  -- function num : 0_1
+function SkillEffectResultPetAbsorbMaintainColorGrid:Constructor(trapIDs)
   self._trapIDs = trapIDs
   self._trapSkillResult = {}
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetAbsorbMaintainColorGrid.AddTrapSkillResult = function(self, trapID, skillResult)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._trapSkillResult)[trapID] = skillResult
+function SkillEffectResultPetAbsorbMaintainColorGrid:AddTrapSkillResult(trapID, skillResult)
+  self._trapSkillResult[trapID] = skillResult
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetAbsorbMaintainColorGrid.GetTrapSkillResult = function(self, trapID)
-  -- function num : 0_3
-  return (self._trapSkillResult)[trapID]
+function SkillEffectResultPetAbsorbMaintainColorGrid:GetTrapSkillResult(trapID)
+  return self._trapSkillResult[trapID]
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultPetAbsorbMaintainColorGrid.GetTrapIDs = function(self)
-  -- function num : 0_4
+function SkillEffectResultPetAbsorbMaintainColorGrid:GetTrapIDs()
   return self._trapIDs
 end
-
-

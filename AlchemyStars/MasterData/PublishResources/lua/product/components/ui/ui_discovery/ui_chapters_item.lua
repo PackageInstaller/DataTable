@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_chapters_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChaptersItem", UICustomWidget)
 UIChaptersItem = UIChaptersItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChaptersItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.grassData = (self.mCampaign):GetGraveRobberData()
+function UIChaptersItem:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.grassData = self.mCampaign:GetGraveRobberData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChaptersItem.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIChaptersItem:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._imgBGMask = self:GetGameObject("imgBGMask")
@@ -25,62 +15,37 @@ UIChaptersItem.OnShow = function(self)
   self:AttachEvent(GameEventType.GrassClose, self.FlushGrass)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChaptersItem.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIChaptersItem:OnHide()
   self:DetachEvent(GameEventType.GrassClose, self.FlushGrass)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChaptersItem.Flush = function(self, chapter, curChapter)
-  -- function num : 0_3 , upvalues : _ENV
+function UIChaptersItem:Flush(chapter, curChapter)
   self._chapter = chapter
   self._curChapter = curChapter
-  ;
-  (self._txtName):SetText(chapter.index_name .. (StringTable.Get)("str_common_colon") .. chapter.name)
-  ;
-  (self._imgBGMask):SetActive(chapter.id ~= curChapter.id)
+  self._txtName:SetText(chapter.index_name .. StringTable.Get("str_common_colon") .. chapter.name)
+  self._imgBGMask:SetActive(chapter.id ~= curChapter.id)
   if chapter.id == curChapter.id then
-    local color = Color(0.55294117647059, 0.52156862745098, 0.47843137254902)
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._txtName).color = color
+    local color = Color(0.5529411764705883, 0.5215686274509804, 0.47843137254901963)
+    self._txtName.color = color
   else
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R3 in 'UnsetPending'
-
-    (self._txtName).color = Color.white
+    self._txtName.color = Color.white
   end
   local module = self:GetModule(MissionModule)
   local data = module:GetDiscoveryData()
   local chapterAwardData = data.chapterAwardData
   local chapterAward = chapterAwardData:GetChapterAwardChapterByChapterId(chapter.id)
-  ;
-  (self._imgRed):SetActive(chapterAward and chapterAward:CanCollect() or false)
+  self._imgRed:SetActive(chapterAward and chapterAward:CanCollect() or false)
   self:FlushGrass()
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChaptersItem.FlushGrass = function(self)
-  -- function num : 0_4
-  local canPlay = (self.grassData):IsChapterCanPlay((self._chapter).id)
-  ;
-  (self.imgGrass):SetActive(false)
+function UIChaptersItem:FlushGrass()
+  local canPlay = self.grassData:IsChapterCanPlay(self._chapter.id)
+  self.imgGrass:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChaptersItem.imgBGOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  if (self._chapter).id ~= (self._curChapter).id then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiscoveryFlushChapter, (self._chapter).id)
+function UIChaptersItem:imgBGOnClick(go)
+  if self._chapter.id ~= self._curChapter.id then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.DiscoveryFlushChapter, self._chapter.id)
   end
-  ;
-  ((GameGlobal.UIStateManager)()):CloseDialog("UIChapters")
+  GameGlobal.UIStateManager():CloseDialog("UIChapters")
 end
-
-

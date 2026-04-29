@@ -1,206 +1,181 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_cn1/quest/ui_battlepass_cn1_quest_tab_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattlePassCN1QuestTabBtn", UICustomWidget)
 UIBattlePassCN1QuestTabBtn = UIBattlePassCN1QuestTabBtn
-local UIBattlePassCN1QuestTabBtnState = {Lock = 1, Off = 2, On = 3}
+local UIBattlePassCN1QuestTabBtnState = {
+  Lock = 1,
+  Off = 2,
+  On = 3
+}
 _enum("UIBattlePassCN1QuestTabBtnState", UIBattlePassCN1QuestTabBtnState)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIBattlePassCN1QuestTabBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIBattlePassCN1QuestTabBtn:OnShow(uiParams)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBattlePassCN1QuestTabBtn:OnHide()
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn.SetData = function(self, index, campaign, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBattlePassCN1QuestTabBtn:SetData(index, campaign, callback)
   self._index = index
   self._campaign = campaign
   self._callback = callback
-  self._cmptId = (UIActivityBattlePassHelper.Component_Quest)(self._campaign, index)
+  self._cmptId, self._component, self._componentInfo = UIActivityBattlePassHelper.Component_Quest(self._campaign, index)
   self:_SetUiStyle(index)
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn.Refresh = function(self, selected)
-  -- function num : 0_3
+function UIBattlePassCN1QuestTabBtn:Refresh(selected)
   self._state = self:_CheckState(selected)
   self:_SetState(self._state)
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn.PlayAnimationInSequence = function(self, index)
-  -- function num : 0_4 , upvalues : _ENV
+function UIBattlePassCN1QuestTabBtn:PlayAnimationInSequence(index)
   local animName, duration = "UIeff_UIBattlePassCN1QuestTabBtn_in", 333
   local delay = index * 60
-  ;
-  (UIWidgetHelper.PlayAnimationInSequence)(self, "_anim", "_root", animName, delay, duration, nil, false)
+  UIWidgetHelper.PlayAnimationInSequence(self, "_anim", "_root", animName, delay, duration, nil, false)
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn._CheckState = function(self, selected)
-  -- function num : 0_5 , upvalues : _ENV, UIBattlePassCN1QuestTabBtnState
+function UIBattlePassCN1QuestTabBtn:_CheckState(selected)
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local unlockTime = (self._componentInfo).m_unlock_time
-  local closeTime = (self._componentInfo).m_close_time
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local unlockTime = self._componentInfo.m_unlock_time
+  local closeTime = self._componentInfo.m_close_time
   self._notStart = curTime < unlockTime
-  self._isClosed = closeTime < curTime
-  if not self._notStart then
-    local isLock = self._isClosed
-  end
+  self._isClosed = curTime > closeTime
+  local isLock = self._notStart or self._isClosed
   local state = UIBattlePassCN1QuestTabBtnState.Off
-  -- DECOMPILER ERROR at PC38: Unhandled construct in 'MakeBoolean' P3
-
-  if ((selected and UIBattlePassCN1QuestTabBtnState.On) or isLock) then
-    do return state end
-    -- DECOMPILER ERROR: 5 unprocessed JMP targets
-  end
+  state = selected and UIBattlePassCN1QuestTabBtnState.On or state
+  state = isLock and UIBattlePassCN1QuestTabBtnState.Lock or state
+  return state
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn._SetState = function(self, state)
-  -- function num : 0_6 , upvalues : UIBattlePassCN1QuestTabBtnState, _ENV
+function UIBattlePassCN1QuestTabBtn:_SetState(state)
   local widgetGroup = {
-[UIBattlePassCN1QuestTabBtnState.Lock] = {"LockBtn"}
-, 
-[UIBattlePassCN1QuestTabBtnState.Off] = {"OffBtn"}
-, 
-[UIBattlePassCN1QuestTabBtnState.On] = {"OnBtn"}
-}
-  self._stateObj = (UIWidgetHelper.GetObjGroupByWidgetName)(self, widgetGroup, self._stateObj)
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(self._stateObj, state)
+    [UIBattlePassCN1QuestTabBtnState.Lock] = {"LockBtn"},
+    [UIBattlePassCN1QuestTabBtnState.Off] = {"OffBtn"},
+    [UIBattlePassCN1QuestTabBtnState.On] = {"OnBtn"}
+  }
+  self._stateObj = UIWidgetHelper.GetObjGroupByWidgetName(self, widgetGroup, self._stateObj)
+  UIWidgetHelper.SetObjGroupShow(self._stateObj, state)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn._GetImageStyleInfo = function(self, index, state)
-  -- function num : 0_7 , upvalues : _ENV, UIBattlePassCN1QuestTabBtnState
-  local tb = (UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName)(self._campaign, self, "_Extra")
-  local ImgIdx = {[1] = "_Img_Sprite_1", [2] = "_Img_Sprite_2", [3] = "_Img_Sprite_3"}
-  local strIdx = {[1] = "_Txt_StrId_1", [2] = "_Txt_StrId_2", [3] = "_Txt_StrId_3"}
-  local bgSt = {[UIBattlePassCN1QuestTabBtnState.Lock] = "_Bg_Lock", [UIBattlePassCN1QuestTabBtnState.Off] = "_Bg_Off", [UIBattlePassCN1QuestTabBtnState.On] = "_Bg_On"}
-  local imgSt = {[UIBattlePassCN1QuestTabBtnState.Lock] = "_Img_Color_Lock", [UIBattlePassCN1QuestTabBtnState.Off] = "_Img_Color_Off", [UIBattlePassCN1QuestTabBtnState.On] = "_Img_Color_On"}
-  local txtSt = {[UIBattlePassCN1QuestTabBtnState.Lock] = "_Txt_Color_Lock", [UIBattlePassCN1QuestTabBtnState.Off] = "_Txt_Color_Off", [UIBattlePassCN1QuestTabBtnState.On] = "_Txt_Color_On"}
+function UIBattlePassCN1QuestTabBtn:_GetImageStyleInfo(index, state)
+  local tb = UIBattlePassStyleHelper.GetStyleInfo_KeyWidgetName(self._campaign, self, "_Extra")
+  local ImgIdx = {
+    [1] = "_Img_Sprite_1",
+    [2] = "_Img_Sprite_2",
+    [3] = "_Img_Sprite_3"
+  }
+  local strIdx = {
+    [1] = "_Txt_StrId_1",
+    [2] = "_Txt_StrId_2",
+    [3] = "_Txt_StrId_3"
+  }
+  local bgSt = {
+    [UIBattlePassCN1QuestTabBtnState.Lock] = "_Bg_Lock",
+    [UIBattlePassCN1QuestTabBtnState.Off] = "_Bg_Off",
+    [UIBattlePassCN1QuestTabBtnState.On] = "_Bg_On"
+  }
+  local imgSt = {
+    [UIBattlePassCN1QuestTabBtnState.Lock] = "_Img_Color_Lock",
+    [UIBattlePassCN1QuestTabBtnState.Off] = "_Img_Color_Off",
+    [UIBattlePassCN1QuestTabBtnState.On] = "_Img_Color_On"
+  }
+  local txtSt = {
+    [UIBattlePassCN1QuestTabBtnState.Lock] = "_Txt_Color_Lock",
+    [UIBattlePassCN1QuestTabBtnState.Off] = "_Txt_Color_Off",
+    [UIBattlePassCN1QuestTabBtnState.On] = "_Txt_Color_On"
+  }
   local tb_out = {
-bgInfos = {tb[bgSt[state]]}
-, 
-imgInfos = {tb[ImgIdx[index]], tb[imgSt[state]]}
-, 
-txtInfos = {tb[strIdx[index]], tb[txtSt[state]]}
-}
+    bgInfos = {
+      tb[bgSt[state]]
+    },
+    imgInfos = {
+      tb[ImgIdx[index]],
+      tb[imgSt[state]]
+    },
+    txtInfos = {
+      tb[strIdx[index]],
+      tb[txtSt[state]]
+    }
+  }
   return tb_out
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn._SetUiStyle = function(self, index)
-  -- function num : 0_8 , upvalues : UIBattlePassCN1QuestTabBtnState, _ENV
+function UIBattlePassCN1QuestTabBtn:_SetUiStyle(index)
   local tb = {
-[UIBattlePassCN1QuestTabBtnState.Lock] = {bg = "bg_lock", img = "img_lock", txt = "txt_lock"}
-, 
-[UIBattlePassCN1QuestTabBtnState.Off] = {bg = "bg_off", img = "img_off", txt = "txt_off"}
-, 
-[UIBattlePassCN1QuestTabBtnState.On] = {bg = "bg_on", img = "img_on", txt = "txt_on"}
-}
-  for st,widget in ipairs(tb) do
+    [UIBattlePassCN1QuestTabBtnState.Lock] = {
+      bg = "bg_lock",
+      img = "img_lock",
+      txt = "txt_lock"
+    },
+    [UIBattlePassCN1QuestTabBtnState.Off] = {
+      bg = "bg_off",
+      img = "img_off",
+      txt = "txt_off"
+    },
+    [UIBattlePassCN1QuestTabBtnState.On] = {
+      bg = "bg_on",
+      img = "img_on",
+      txt = "txt_on"
+    }
+  }
+  for st, widget in ipairs(tb) do
     local styleInfo = self:_GetImageStyleInfo(index, st)
-    for _,info in ipairs(styleInfo.bgInfos) do
-      (UIStyleHelper.FitStyle_Widget)(info, self, widget.bg)
+    for _, info in ipairs(styleInfo.bgInfos) do
+      UIStyleHelper.FitStyle_Widget(info, self, widget.bg)
     end
-    for _,info in ipairs(styleInfo.imgInfos) do
-      (UIStyleHelper.FitStyle_Widget)(info, self, widget.img)
+    for _, info in ipairs(styleInfo.imgInfos) do
+      UIStyleHelper.FitStyle_Widget(info, self, widget.img)
     end
-    for _,info in ipairs(styleInfo.txtInfos) do
-      (UIStyleHelper.FitStyle_Widget)(info, self, widget.txt)
+    for _, info in ipairs(styleInfo.txtInfos) do
+      UIStyleHelper.FitStyle_Widget(info, self, widget.txt)
     end
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn.LockBtnOnClick = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIBattlePassCN1QuestTabBtn:LockBtnOnClick()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self._notStart then
-    (Log.info)("UIBattlePassCN1QuestTabBtn:LockBtnOnClick() NotStart")
+    Log.info("UIBattlePassCN1QuestTabBtn:LockBtnOnClick() NotStart")
     local svrTimeModule = self:GetModule(SvrTimeModule)
-    local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-    local endTime = (self._componentInfo).m_unlock_time
+    local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+    local endTime = self._componentInfo.m_unlock_time
     local stamp = endTime - curTime
     if stamp <= 0 then
       self:Refresh()
-      return 
+      return
     end
-    local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-    local str = (StringTable.Get)("str_activity_battlepass_tab_quest_group_notstart", timeStr)
-    ;
-    (ToastManager.ShowToast)(str)
+    local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+    local str = StringTable.Get("str_activity_battlepass_tab_quest_group_notstart", timeStr)
+    ToastManager.ShowToast(str)
   else
-    do
-      ;
-      (Log.info)("UIBattlePassCN1QuestTabBtn:LockBtnOnClick() IsClosed")
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_battlepass_tab_quest_group_over"))
-    end
+    Log.info("UIBattlePassCN1QuestTabBtn:LockBtnOnClick() IsClosed")
+    ToastManager.ShowToast(StringTable.Get("str_activity_battlepass_tab_quest_group_over"))
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn.OffBtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.info)("UIBattlePassCN1QuestTabBtn:OffBtnOnClick()")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIBattlePassCN1QuestTabBtn:OffBtnOnClick()
+  Log.info("UIBattlePassCN1QuestTabBtn:OffBtnOnClick()")
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
   if self._callback then
-    (self._callback)(self._index)
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn.OnBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.info)("UIBattlePassCN1QuestTabBtn:OnBtnOnClick()")
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundSwitch)
+function UIBattlePassCN1QuestTabBtn:OnBtnOnClick()
+  Log.info("UIBattlePassCN1QuestTabBtn:OnBtnOnClick()")
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundSwitch)
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_12
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UIBattlePassCN1QuestTabBtn:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIBattlePassCN1QuestTabBtn._CheckPoint = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local isShow = (UIActivityBattlePassHelper.CalcRed_Quest)(self._campaign, self._index)
-  ;
-  (self:GetGameObject("red")):SetActive(isShow)
+function UIBattlePassCN1QuestTabBtn:_CheckPoint()
+  local isShow = UIActivityBattlePassHelper.CalcRed_Quest(self._campaign, self._index)
+  self:GetGameObject("red"):SetActive(isShow)
 end
-
-

@@ -1,57 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_defence_by_caster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeDefenceByCaster", BuffViewBase)
 BuffViewChangeDefenceByCaster = BuffViewChangeDefenceByCaster
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeDefenceByCaster.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeDefenceByCaster:PlayView(TT)
   local entity = self._entity
   if entity:HasTeam() then
     entity = entity:GetTeamLeaderPetEntity()
   end
   if entity:MaterialAnimationComponent() then
-    (entity:MaterialAnimationComponent()):PlayDefup()
+    entity:MaterialAnimationComponent():PlayDefup()
   end
-  local cfg = (self._viewInstance):BuffConfigData()
+  local cfg = self._viewInstance:BuffConfigData()
   local effectID = cfg:GetExecEffectID()
   if effectID then
-    ((self._world):GetService("Effect")):CreateEffect(effectID, self._entity)
+    self._world:GetService("Effect"):CreateEffect(effectID, self._entity)
   end
   local result = self._buffResult
   local casterID = result:GetEntityID()
-  do
-    if result:ShowLight() and casterID then
-      local casterEntity = (self._world):GetEntityByID(casterID)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, (casterEntity:PetPstID()):GetPstID(), true)
-    end
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  if result:ShowLight() and casterID then
+    local casterEntity = self._world:GetEntityByID(casterID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, casterEntity:PetPstID():GetPstID(), true)
   end
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
 
 _class("BuffViewUndoChangeDefenceByCaster", BuffViewBase)
 BuffViewUndoChangeDefenceByCaster = BuffViewUndoChangeDefenceByCaster
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewUndoChangeDefenceByCaster.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewUndoChangeDefenceByCaster:PlayView(TT)
   local result = self._buffResult
   local black = result:ShowBlack()
   local casterID = result:GetEntityID()
-  do
-    if black and casterID then
-      local casterEntity = (self._world):GetEntityByID(casterID)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((result.casterEntity):PetPstID()):GetPstID(), false)
-    end
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+  if black and casterID then
+    local casterEntity = self._world:GetEntityByID(casterID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, result.casterEntity:PetPstID():GetPstID(), false)
   end
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
-
-

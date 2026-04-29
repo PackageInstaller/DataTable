@@ -1,56 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/general_effect_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GeneralEffectCalculator", Object)
 GeneralEffectCalculator = GeneralEffectCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-GeneralEffectCalculator.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function GeneralEffectCalculator:Constructor(world)
   self._world = world
   self._foreachTargetCalculator = ForEachTargetCalculator:New(world)
   self._skillEffectTargetSorter = SkillEffectTargetSorter:New(world)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-GeneralEffectCalculator.DoGeneralEffectCalc = function(self, casterEntity, skillEffectParam, scopeFilterParam)
-  -- function num : 0_1 , upvalues : _ENV
+function GeneralEffectCalculator:DoGeneralEffectCalc(casterEntity, skillEffectParam, scopeFilterParam)
   local skillScopeResult = self:_CalcSkillEffectScopeResult(casterEntity, skillEffectParam)
   local targetIDList = self:_CalcSkillEffectTargetList(casterEntity, skillScopeResult, skillEffectParam)
-  targetIDList = (self._skillEffectTargetSorter):DoSortTargetList(casterEntity, targetIDList, skillEffectParam, skillScopeResult)
-  local resultList = (self._foreachTargetCalculator):DoTargetEffectCalculate(casterEntity, skillScopeResult, targetIDList, skillEffectParam, scopeFilterParam)
-  for _,v in ipairs(resultList) do
+  targetIDList = self._skillEffectTargetSorter:DoSortTargetList(casterEntity, targetIDList, skillEffectParam, skillScopeResult)
+  local resultList = self._foreachTargetCalculator:DoTargetEffectCalculate(casterEntity, skillScopeResult, targetIDList, skillEffectParam, scopeFilterParam)
+  for _, v in ipairs(resultList) do
     local skillResult = v
     skillResult:SetSkillEffectScopeResult(skillScopeResult)
   end
   return resultList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-GeneralEffectCalculator._CalcSkillEffectScopeResult = function(self, casterEntity, skillEffectParam)
-  -- function num : 0_2
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function GeneralEffectCalculator:_CalcSkillEffectScopeResult(casterEntity, skillEffectParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeType = skillEffectParam:GetSkillEffectScopeType()
-  do
-    if scopeType ~= nil then
-      local casterPos = (casterEntity:GridLocation()).Position
-      scopeResult = utilScopeSvc:CalcSkillEffectScopeResult(skillEffectParam, casterPos, casterEntity)
-    end
-    return scopeResult
+  if scopeType ~= nil then
+    local casterPos = casterEntity:GridLocation().Position
+    scopeResult = utilScopeSvc:CalcSkillEffectScopeResult(skillEffectParam, casterPos, casterEntity)
   end
+  return scopeResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-GeneralEffectCalculator._CalcSkillEffectTargetList = function(self, casterEntity, scopeResult, skillEffectParam)
-  -- function num : 0_3 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function GeneralEffectCalculator:_CalcSkillEffectTargetList(casterEntity, scopeResult, skillEffectParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local targetEntityIDArray = scopeResult:GetTargetIDs()
   local skillID = skillEffectResultContainer:GetSkillID()
   local filterParam = skillEffectParam:GetScopeFilterParam()
@@ -58,19 +40,15 @@ GeneralEffectCalculator._CalcSkillEffectTargetList = function(self, casterEntity
   local skillEffectTargetType = skillEffectParam:GetSkillEffectTargetType()
   if skillEffectTargetType ~= nil then
     local skillEffectTargetTypeParam = skillEffectParam:GetSkillEffectTargetTypeParam()
-    local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+    local utilScopeSvc = self._world:GetService("UtilScopeCalc")
     targetEntityIDArray = utilScopeSvc:SelectSkillTarget(casterEntity, skillEffectTargetType, scopeResult, nil, skillEffectTargetTypeParam)
     local fitterTargetIDs = {}
-    for _,id in ipairs(targetEntityIDArray) do
-      if not (table.icontains)(fitterTargetIDs, id) then
-        (table.insert)(fitterTargetIDs, id)
+    for _, id in ipairs(targetEntityIDArray) do
+      if not table.icontains(fitterTargetIDs, id) then
+        table.insert(fitterTargetIDs, id)
       end
     end
     targetEntityIDArray = fitterTargetIDs
   end
-  do
-    return targetEntityIDArray
-  end
+  return targetEntityIDArray
 end
-
-

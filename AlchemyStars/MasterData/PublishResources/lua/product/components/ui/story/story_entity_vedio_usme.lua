@@ -1,17 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/story/story_entity_vedio_usme.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StoryEntityVedioUsme", StoryEntityMovable)
 StoryEntityVedioUsme = StoryEntityVedioUsme
-local StoryVideoPlayerStatus = {Stop = 1, Dechead = 7, WaitPrep = 3, Prep = 4, Ready = 5, Playing = 6, PlayEnd = 2, Error = 8, StopProcessing = 9}
+local StoryVideoPlayerStatus = {
+  Stop = 1,
+  Dechead = 7,
+  WaitPrep = 3,
+  Prep = 4,
+  Ready = 5,
+  Playing = 6,
+  PlayEnd = 2,
+  Error = 8,
+  StopProcessing = 9
+}
 _enum("StoryVideoPlayerStatus", StoryVideoPlayerStatus)
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
 
-StoryEntityVedioUsme.Constructor = function(self, ID, gameObject, request, storyManager, resourceName)
-  -- function num : 0_0 , upvalues : _ENV
-  ((StoryEntityVedioUsme.super).Constructor)(self, ID, gameObject, request, storyManager)
+function StoryEntityVedioUsme:Constructor(ID, gameObject, request, storyManager, resourceName)
+  StoryEntityVedioUsme.super.Constructor(self, ID, gameObject, request, storyManager)
   self._entiyType = StoryEntityType.Usme
   self._resourceName = resourceName
   self._storyManager = storyManager
@@ -21,126 +24,93 @@ StoryEntityVedioUsme.Constructor = function(self, ID, gameObject, request, story
   self:_InitDefaultValue()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme._GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._videoPlayerObj = (((self._gameObject).transform):Find("FullScreenArea/VideoPlayer")).gameObject
-  self._skipAudioObj = (((self._gameObject).transform):Find("FullScreenArea/SkipAudioBtn")).gameObject
-  self._subTitle = (((self._gameObject).transform):Find("FullScreenArea/Subtitle")).gameObject
-  self._videoSubtitleText = (self._subTitle):GetComponent("UILocalizationText")
-  ;
-  ((UIEventTriggerListener.Get)(self._videoPlayerObj)).onClick = function()
-    -- function num : 0_1_0 , upvalues : self
+function StoryEntityVedioUsme:_GetComponents()
+  self._videoPlayerObj = self._gameObject.transform:Find("FullScreenArea/VideoPlayer").gameObject
+  self._skipAudioObj = self._gameObject.transform:Find("FullScreenArea/SkipAudioBtn").gameObject
+  self._subTitle = self._gameObject.transform:Find("FullScreenArea/Subtitle").gameObject
+  self._videoSubtitleText = self._subTitle:GetComponent("UILocalizationText")
+  UIEventTriggerListener.Get(self._videoPlayerObj).onClick = function()
     if self._isCanShowSkipBtn then
       self:PlayVideoOnClick()
     end
   end
-
-  ;
-  ((UIEventTriggerListener.Get)(self._skipAudioObj)).onClick = function()
-    -- function num : 0_1_1 , upvalues : self
+  UIEventTriggerListener.Get(self._skipAudioObj).onClick = function()
     self:SkipAudioBtnOnClick()
   end
-
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme._InitDefaultValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function StoryEntityVedioUsme:_InitDefaultValue()
   self._isPauseAudio = false
   self._isShowSkipBtn = false
   self._isCanShowSkipBtn = false
   self._isfirstShow = true
   self._subTitledArray = {}
-  self.videoName = (self._resourceName).Resource
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._gameObject).transform).localPosition = Vector3.zero
+  self.videoName = self._resourceName.Resource
+  self._gameObject.transform.localPosition = Vector3.zero
   self._loopPv = false
   self._noWarp = true
   if CriWare.CriManaMovieControllerForUI then
     self._noWarp = false
   else
     require("tolua.reflection")
-    ;
-    (tolua.loadassembly)("CriMw.CriWare.Runtime")
+    tolua.loadassembly("CriMw.CriWare.Runtime")
     self._type = typeof("CriWare.CriManaMovieControllerForUI")
     self._playerType = typeof("CriWare.CriMana.Player")
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.Destroy = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((StoryEntityVedioUsme.super).Destroy)(self)
+function StoryEntityVedioUsme:Destroy()
+  StoryEntityVedioUsme.super.Destroy(self)
   if self._prepareVideTask ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self._prepareVideTask)
+    GameGlobal.TaskManager():KillTask(self._prepareVideTask)
     self._prepareVideTask = nil
   end
   if self._waitPlayVedioTask ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self._waitPlayVedioTask)
+    GameGlobal.TaskManager():KillTask(self._waitPlayVedioTask)
     self._waitPlayVedioTask = nil
   end
   if self._delayHideJumpBtnTask ~= nil then
-    ((GameGlobal.TaskManager)()):KillTask(self._delayHideJumpBtnTask)
+    GameGlobal.TaskManager():KillTask(self._delayHideJumpBtnTask)
     self._delayHideJumpBtnTask = nil
   end
-  ;
-  (AudioHelperController.PlayBGM)(self.originBGM, AudioConstValue.BGMCrossFadeTime)
+  AudioHelperController.PlayBGM(self.originBGM, AudioConstValue.BGMCrossFadeTime)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme._TriggerKeyframe = function(self, keyframeData)
-  -- function num : 0_4 , upvalues : _ENV
-  ((StoryEntityVedioUsme.super)._TriggerKeyframe)(self, keyframeData)
+function StoryEntityVedioUsme:_TriggerKeyframe(keyframeData)
+  StoryEntityVedioUsme.super._TriggerKeyframe(self, keyframeData)
   self:_TriggerLoop(keyframeData)
   self:_TriggerActive(keyframeData)
   self:_TriggerScreenType(keyframeData)
   self:_TriggerSlince(keyframeData)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme._TriggerActive = function(self, keyframeData)
-  -- function num : 0_5 , upvalues : _ENV
+function StoryEntityVedioUsme:_TriggerActive(keyframeData)
   if self._isfirstShow then
-    if (self._storyManager):GetAuto() then
-      (self._storyManager):SetAuto(false)
+    if self._storyManager:GetAuto() then
+      self._storyManager:SetAuto(false)
       self._playVedioBackAuto = true
     end
     self:PlayVedio()
     if keyframeData.Layer == nil then
-      (self._storyManager):SetLayer((self._gameObject).transform, 999)
+      self._storyManager:SetLayer(self._gameObject.transform, 999)
     end
-    self._delayCanShowBtnTask = (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
-    YIELD(TT, 5000)
-    self._isCanShowSkipBtn = true
-  end
-, self)
+    self._delayCanShowBtnTask = TaskManager:GetInstance():StartTask(function(TT)
+      YIELD(TT, 5000)
+      self._isCanShowSkipBtn = true
+    end, self)
     self._isfirstShow = false
   end
   if keyframeData.Active then
-    (self._videoPlayerObj):SetActive(true)
+    self._videoPlayerObj:SetActive(true)
     self:ResumeVedio()
-  else
-    if keyframeData.Active == false then
-      (self._videoPlayerObj):SetActive(false)
-      self:PauseVedio()
-    end
+  elseif keyframeData.Active == false then
+    self._videoPlayerObj:SetActive(false)
+    self:PauseVedio()
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme._TriggerScreenType = function(self, keyframeData)
-  -- function num : 0_6 , upvalues : _ENV
-  local rectTf = (self._videoPlayerObj):GetComponent("RectTransform")
+function StoryEntityVedioUsme:_TriggerScreenType(keyframeData)
+  local rectTf = self._videoPlayerObj:GetComponent("RectTransform")
   if keyframeData.FullScreen then
     rectTf.anchorMin = Vector2.zero
     rectTf.anchorMax = Vector2.one
@@ -152,22 +122,15 @@ StoryEntityVedioUsme._TriggerScreenType = function(self, keyframeData)
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme._TriggerSlince = function(self, keyframeData)
-  -- function num : 0_7
+function StoryEntityVedioUsme:_TriggerSlince(keyframeData)
   if keyframeData.Slince == true then
-    (self._criVideoPlayer):SetVolume(0)
+    self._criVideoPlayer:SetVolume(0)
   else
-    ;
-    (self._criVideoPlayer):SetVolume(1)
+    self._criVideoPlayer:SetVolume(1)
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme._TriggerLoop = function(self, keyframeData)
-  -- function num : 0_8
+function StoryEntityVedioUsme:_TriggerLoop(keyframeData)
   if keyframeData.Loop == true then
     self._loopPv = true
   else
@@ -175,11 +138,8 @@ StoryEntityVedioUsme._TriggerLoop = function(self, keyframeData)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme._TriggerScale = function(self, keyframeData)
-  -- function num : 0_9 , upvalues : _ENV
-  local rectTf = (self._videoPlayerObj):GetComponent("RectTransform")
+function StoryEntityVedioUsme:_TriggerScale(keyframeData)
+  local rectTf = self._videoPlayerObj:GetComponent("RectTransform")
   if keyframeData.Scale ~= nil then
     rectTf.localScale = Vector3(keyframeData.Scale, keyframeData.Scale, keyframeData.Scale)
   else
@@ -187,220 +147,154 @@ StoryEntityVedioUsme._TriggerScale = function(self, keyframeData)
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.PlayVedio = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self._videoPlayerObj).activeSelf == false then
-    (self._videoPlayerObj):SetActive(true)
-    ;
-    (self._gameObject):SetActive(true)
+function StoryEntityVedioUsme:PlayVedio()
+  if self._videoPlayerObj.activeSelf == false then
+    self._videoPlayerObj:SetActive(true)
+    self._gameObject:SetActive(true)
   end
   if self._criVideoPlayer == nil then
-    self._criVideoPlayer = (self._videoPlayerObj):AddComponent(typeof(CriUIVideoPlayer))
-    ;
-    (self._criVideoPlayer):PlayUSMEBySofdec2(self.videoName .. ".usme", self._loopPv, true, function(content)
-    -- function num : 0_10_0 , upvalues : self
-    (self._videoSubtitleText):SetText(content)
+    self._criVideoPlayer = self._videoPlayerObj:AddComponent(typeof(CriUIVideoPlayer))
+    self._criVideoPlayer:PlayUSMEBySofdec2(self.videoName .. ".usme", self._loopPv, true, function(content)
+      self._videoSubtitleText:SetText(content)
+    end, function()
+    end)
   end
-, function()
-    -- function num : 0_10_1
-  end
-)
-  end
-  self._prepareVideTask = (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_10_2 , upvalues : self, _ENV
-    while not (self._videoPlayerObj).activeInHierarchy do
+  self._prepareVideTask = TaskManager:GetInstance():StartTask(function(TT)
+    while not self._videoPlayerObj.activeInHierarchy do
       YIELD(TT)
     end
-    ;
-    (self._subTitle):SetActive(true)
-    while not (self._subTitle).activeInHierarchy do
+    self._subTitle:SetActive(true)
+    while not self._subTitle.activeInHierarchy do
       YIELD(TT)
     end
-    ;
-    (self._videoPlayerObj):SetActive(true)
-    self.originBGM = (AudioHelperController.GetCurrentBgm)()
-    ;
-    (AudioHelperController.StopBGM)()
-    self._waitPlayVedioTask = (TaskManager:GetInstance()):StartTask(self.WaitPlayVedio, self)
-  end
-)
+    self._videoPlayerObj:SetActive(true)
+    self.originBGM = AudioHelperController.GetCurrentBgm()
+    AudioHelperController.StopBGM()
+    self._waitPlayVedioTask = TaskManager:GetInstance():StartTask(self.WaitPlayVedio, self)
+  end)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.GetLanguageKey = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local ls = {[1] = LanguageType.zh, [2] = LanguageType.tw, [4] = LanguageType.us, [8] = LanguageType.kr, [16] = LanguageType.jp, [32] = LanguageType.pt, [64] = LanguageType.es, [128] = LanguageType.idn, [256] = LanguageType.th}
-  local languageType = (Localization.GetCurLanguage)()
+function StoryEntityVedioUsme:GetLanguageKey()
+  local ls = {
+    [1] = LanguageType.zh,
+    [2] = LanguageType.tw,
+    [4] = LanguageType.us,
+    [8] = LanguageType.kr,
+    [16] = LanguageType.jp,
+    [32] = LanguageType.pt,
+    [64] = LanguageType.es,
+    [128] = LanguageType.idn,
+    [256] = LanguageType.th
+  }
+  local languageType = Localization.GetCurLanguage()
   local languageIndex = 0
-  for k,v in pairs(ls) do
+  for k, v in pairs(ls) do
     if languageType == v then
       languageIndex = k
       break
     end
   end
-  do
-    return languageIndex
-  end
+  return languageIndex
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.WaitPlayVedio = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV, StoryVideoPlayerStatus
+function StoryEntityVedioUsme:WaitPlayVedio(TT)
   local bEndPlay = false
   local currentVideoStatus = ""
-  while 1 do
-    currentVideoStatus = (self._criVideoPlayer):GetPlayerStatus()
+  while true do
+    currentVideoStatus = self._criVideoPlayer:GetPlayerStatus()
     if self._isPauseAudio then
       YIELD(TT)
     end
     if currentVideoStatus == StoryVideoPlayerStatus.Playing then
       YIELD(TT)
+    elseif currentVideoStatus == StoryVideoPlayerStatus.Dechead then
+      YIELD(TT)
+    elseif currentVideoStatus == StoryVideoPlayerStatus.WaitPrep then
+      YIELD(TT)
+    elseif currentVideoStatus == StoryVideoPlayerStatus.Prep then
+      YIELD(TT)
+    elseif currentVideoStatus == StoryVideoPlayerStatus.Ready then
+      YIELD(TT)
     else
-      if currentVideoStatus == StoryVideoPlayerStatus.Dechead then
-        YIELD(TT)
-      else
-        if currentVideoStatus == StoryVideoPlayerStatus.WaitPrep then
-          YIELD(TT)
-        else
-          if currentVideoStatus == StoryVideoPlayerStatus.Prep then
-            YIELD(TT)
-          else
-            if currentVideoStatus == StoryVideoPlayerStatus.Ready then
-              YIELD(TT)
-            else
-              ;
-              (Log.debug)("WaitPlayVedio bEndPlay", currentVideoStatus)
-              bEndPlay = true
-            end
-          end
-        end
-      end
+      Log.debug("WaitPlayVedio bEndPlay", currentVideoStatus)
+      bEndPlay = true
+    end
+    if bEndPlay then
+      break
     end
   end
-  if not bEndPlay then
-    (Log.debug)("WaitPlayVedio Stop", currentVideoStatus)
-    ;
-    (self._criVideoPlayer):Stop()
-    self:PlayVedioComplete()
-  end
+  Log.debug("WaitPlayVedio Stop", currentVideoStatus)
+  self._criVideoPlayer:Stop()
+  self:PlayVedioComplete()
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.PauseVedio = function(self)
-  -- function num : 0_13
+function StoryEntityVedioUsme:PauseVedio()
   self._isPauseAudio = true
-  ;
-  (self._criVideoPlayer):Pause(true)
+  self._criVideoPlayer:Pause(true)
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.ResumeVedio = function(self)
-  -- function num : 0_14
+function StoryEntityVedioUsme:ResumeVedio()
   self._isPauseAudio = false
-  ;
-  (self._criVideoPlayer):Pause(false)
+  self._criVideoPlayer:Pause(false)
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.SkipVedio = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function StoryEntityVedioUsme:SkipVedio()
   self._isPauseAudio = false
-  ;
-  (self._videoPlayerObj):SetActive(false)
-  ;
-  (self._skipAudioObj):SetActive(false)
-  ;
-  (self._criVideoPlayer):Stop()
-  ;
-  (Log.sys)("开始跳过剧情")
+  self._videoPlayerObj:SetActive(false)
+  self._skipAudioObj:SetActive(false)
+  self._criVideoPlayer:Stop()
+  Log.sys("开始跳过剧情")
   if not self._storyManager then
-    (Log.warn)("storyManager在确认跳过前已被置空")
-    ;
-    (Log.sys)("结束跳过剧情")
-    return 
+    Log.warn("storyManager在确认跳过前已被置空")
+    Log.sys("结束跳过剧情")
+    return
   end
-  ;
-  (self._storyManager):SkipParagraph()
-  ;
-  (Log.sys)("结束跳过剧情")
+  self._storyManager:SkipParagraph()
+  Log.sys("结束跳过剧情")
   if self._playVedioBackAuto then
-    (self._storyManager):SetAuto(true)
+    self._storyManager:SetAuto(true)
   end
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.PlayVedioComplete = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  (self._skipAudioObj):SetActive(false)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._videoSubtitleText).text = ""
-  ;
-  (self._subTitle):SetActive(false)
-  ;
-  (self._videoPlayerObj):SetActive(false)
+function StoryEntityVedioUsme:PlayVedioComplete()
+  self._skipAudioObj:SetActive(false)
+  self._videoSubtitleText.text = ""
+  self._subTitle:SetActive(false)
+  self._videoPlayerObj:SetActive(false)
   if self._playVedioBackAuto then
-    (self._storyManager):SetAuto(true)
+    self._storyManager:SetAuto(true)
   end
-  ;
-  (Log.debug)("PlayAudioComplete Stop", tostring((self._criVideoPlayer):GetPlayerStatus()))
+  Log.debug("PlayAudioComplete Stop", tostring(self._criVideoPlayer:GetPlayerStatus()))
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.SkipAudioBtnOnClick = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function StoryEntityVedioUsme:SkipAudioBtnOnClick()
   self:PauseVedio()
-  ;
-  (self._skipAudioObj):SetActive(false)
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_story_skip_confirm"), function(param)
-    -- function num : 0_17_0 , upvalues : self
+  self._skipAudioObj:SetActive(false)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_story_skip_confirm"), function(param)
     self:SkipVedio()
-  end
-, nil, function(param)
-    -- function num : 0_17_1 , upvalues : self
+  end, nil, function(param)
     self:ResumeVedio()
-  end
-, nil)
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-StoryEntityVedioUsme.PlayVideoOnClick = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  if (self._videoPlayerObj).activeInHierarchy == false then
-    return 
+function StoryEntityVedioUsme:PlayVideoOnClick()
+  if self._videoPlayerObj.activeInHierarchy == false then
+    return
   end
   if self._isShowSkipBtn == true then
-    (self._skipAudioObj):SetActive(false)
+    self._skipAudioObj:SetActive(false)
     self._isShowSkipBtn = false
     if self._delayHideJumpBtnTask ~= nil then
-      ((GameGlobal.TaskManager)()):KillTask(self._delayHideJumpBtnTask)
+      GameGlobal.TaskManager():KillTask(self._delayHideJumpBtnTask)
       self._delayHideJumpBtnTask = nil
     end
-    return 
+    return
   end
   self._isShowSkipBtn = true
-  ;
-  (self._skipAudioObj):SetActive(true)
-  self._delayHideJumpBtnTask = (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_18_0 , upvalues : _ENV, self
+  self._skipAudioObj:SetActive(true)
+  self._delayHideJumpBtnTask = TaskManager:GetInstance():StartTask(function(TT)
     YIELD(TT, 3000)
-    ;
-    (self._skipAudioObj):SetActive(false)
+    self._skipAudioObj:SetActive(false)
     self._isShowSkipBtn = false
-  end
-, self)
+  end, self)
 end
-
-

@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity_review/helper/ui_activity_review_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReviewData", Object)
 UIActivityReviewData = UIActivityReviewData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReviewData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIActivityReviewData:Constructor()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   self._isReviewLocked = not roleModule:CheckModuleUnlock(GameModuleID.MD_CAMPAIGNREVIEW)
   if self._isReviewLocked then
-    return 
+    return
   end
-  self._camModule = (GameGlobal.GetModule)(CampaignModule)
-  self._allCampaignObjs = (self._camModule):GetAllReviewCampaignSample()
+  self._camModule = GameGlobal.GetModule(CampaignModule)
+  self._allCampaignObjs = self._camModule:GetAllReviewCampaignSample()
   self._reviewActivities = {}
   self:RegisterActivity(19001, UIReviewActivityN1)
   self:RegisterActivity(19002, UIReviewActivityN2)
@@ -34,30 +27,20 @@ UIActivityReviewData.Constructor = function(self)
   self:RegisterActivity(19016, UIReviewActivityN16)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.RegisterActivity = function(self, id, type)
-  -- function num : 0_1 , upvalues : _ENV
-  local instance = _createInstance(type._className, id, (self._allCampaignObjs)[id], #self._reviewActivities + 1)
-  ;
-  (table.insert)(self._reviewActivities, instance)
+function UIActivityReviewData:RegisterActivity(id, type)
+  local instance = _createInstance(type._className, id, self._allCampaignObjs[id], #self._reviewActivities + 1)
+  table.insert(self._reviewActivities, instance)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.IsLocked = function(self)
-  -- function num : 0_2
+function UIActivityReviewData:IsLocked()
   return self._isReviewLocked
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.HasUnlockableItem = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityReviewData:HasUnlockableItem()
   if self:IsLocked() then
     return false
   end
-  for index,activity in ipairs(self._reviewActivities) do
+  for index, activity in ipairs(self._reviewActivities) do
     if activity:CanUnlock() then
       return true
     end
@@ -65,14 +48,11 @@ UIActivityReviewData.HasUnlockableItem = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.HasCollectableItem = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityReviewData:HasCollectableItem()
   if self:IsLocked() then
     return false
   end
-  for index,activity in ipairs(self._reviewActivities) do
+  for index, activity in ipairs(self._reviewActivities) do
     if activity:HasRedPoint() then
       return true
     end
@@ -80,77 +60,59 @@ UIActivityReviewData.HasCollectableItem = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.GetListAll = function(self)
-  -- function num : 0_5
+function UIActivityReviewData:GetListAll()
   return self._reviewActivities
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.GetAllOpenedList = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityReviewData:GetAllOpenedList()
   if self:IsLocked() then
     return nil
   end
   local list = {}
-  for index,value in ipairs(self._reviewActivities) do
+  for index, value in ipairs(self._reviewActivities) do
     if value:IsOpen() then
-      (table.insert)(list, value)
+      table.insert(list, value)
     end
   end
   return list
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.GetBattleExitParam = function(self, campType, comID, missionCreateInfo, isWin, battleresultRt)
-  -- function num : 0_7 , upvalues : _ENV
+function UIActivityReviewData:GetBattleExitParam(campType, comID, missionCreateInfo, isWin, battleresultRt)
   if self:IsLocked() then
     return nil
   end
-  for index,value in ipairs(self._reviewActivities) do
+  for index, value in ipairs(self._reviewActivities) do
     if value:ActivityType() == campType then
       return value:GetBattleExitParam(comID, missionCreateInfo, isWin, battleresultRt)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.OnActivityUnlock = function(self, data)
-  -- function num : 0_8 , upvalues : _ENV
-  self._allCampaignObjs = (self._camModule):GetAllReviewCampaignSample()
-  local obj = (self._allCampaignObjs)[data:ActivityID()]
+function UIActivityReviewData:OnActivityUnlock(data)
+  self._allCampaignObjs = self._camModule:GetAllReviewCampaignSample()
+  local obj = self._allCampaignObjs[data:ActivityID()]
   if not obj then
     ReviewError("活动解锁成功，但module中获取不到活动Obj：", data:ActivityID())
   end
   data:UpdateCampaignObj(obj)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.GetActivityByType = function(self, type)
-  -- function num : 0_9 , upvalues : _ENV
+function UIActivityReviewData:GetActivityByType(type)
   if self:IsLocked() then
     return nil
   end
-  for index,value in ipairs(self._reviewActivities) do
+  for index, value in ipairs(self._reviewActivities) do
     if value:ActivityType() == type then
       return value
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReviewData.ContainsID = function(self, campID)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityReviewData:ContainsID(campID)
   if self:IsLocked() then
     return false
   end
-  for index,value in ipairs(self._reviewActivities) do
+  for index, value in ipairs(self._reviewActivities) do
     if value:ActivityID() == campID then
       return true
     end
@@ -158,22 +120,17 @@ UIActivityReviewData.ContainsID = function(self, campID)
   return false
 end
 
-ReviewError = function(...)
-  -- function num : 0_11 , upvalues : _ENV
+function ReviewError(...)
   if EDITOR then
-    (Log.exception)("[Review] ", ...)
+    Log.exception("[Review] ", ...)
   else
-    ;
-    (Log.error)("[Review] ", ...)
+    Log.error("[Review] ", ...)
   end
 end
 
-NewRoleAsset = function(id, count)
-  -- function num : 0_12 , upvalues : _ENV
+function NewRoleAsset(id, count)
   local asset = RoleAsset:New()
   asset.assetid = id
   asset.count = count
   return asset
 end
-
-

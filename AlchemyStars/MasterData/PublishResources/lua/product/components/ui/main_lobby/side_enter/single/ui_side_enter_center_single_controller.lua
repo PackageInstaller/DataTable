@@ -1,66 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/single/ui_side_enter_center_single_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterCenterSingleController", UIController)
 UISideEnterCenterSingleController = UISideEnterCenterSingleController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterCenterSingleController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISideEnterCenterSingleController:LoadDataOnEnter(TT, res, uiParams)
   local id = uiParams and uiParams[1] or 0
-  ;
-  (Log.info)("UISideEnterCenterSingleController:LoadDataOnEnter() id = ", id)
-  local class, prefab = (UISideEnterConst.GetCfg_SideEnterContent_Info)(id, ESideEnterContentType.Single)
-  if (string.isnullorempty)(class) or (string.isnullorempty)(prefab) then
+  Log.info("UISideEnterCenterSingleController:LoadDataOnEnter() id = ", id)
+  local class, prefab = UISideEnterConst.GetCfg_SideEnterContent_Info(id, ESideEnterContentType.Single)
+  if string.isnullorempty(class) or string.isnullorempty(prefab) then
     res:SetSucc(false)
-    return 
+    return
   end
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_pool", class, prefab)
+  local obj = UIWidgetHelper.SpawnObject(self, "_pool", class, prefab)
   obj:OnInit(ESideEnterContentType.Single, function()
-    -- function num : 0_0_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
   self._campaign = obj._campaign
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterSingleController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISideEnterCenterSingleController:OnShow(uiParams)
   self:AddListener()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterSingleController.OnHide = function(self)
-  -- function num : 0_2
+function UISideEnterCenterSingleController:OnHide()
   self:DetachListener()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterSingleController.AddListener = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISideEnterCenterSingleController:AddListener()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterSingleController.DetachListener = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISideEnterCenterSingleController:DetachListener()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterSingleController.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_5
-  if self._campaign and (self._campaign)._id == id then
+function UISideEnterCenterSingleController:OnActivityCloseEvent(id)
+  if self._campaign and self._campaign._id == id then
     self:CloseDialog()
   end
 end
-
-

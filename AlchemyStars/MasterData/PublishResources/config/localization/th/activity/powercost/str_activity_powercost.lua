@@ -1,8 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/th/activity/powercost/str_activity_powercost.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_activity_powercost_main_title = "แรลลี่คาร์นิวัล", str_activity_powercost_intro = "แรลลี่เพลิงลุกโชนยอดฮิตได้ดึงดูดผู้เข้าร่วมและผู้สังเกตการณ์มาได้มากมาย พร้อมทั้งยังสร้างบรรยากาศคาร์นิวัลขึ้นด้วย และทุกคนต่างก็ได้ร้องเพลงและเต้นรำตามใจพวกเขา สนุกกันแบบสุดเหวี่ยงไปเลย", str_activity_powercost_time_main = "เวลาอีเวนต์ที่เหลือ: {1}", str_activity_powercost_time_refresh = "นับถอยหลังรีเฟรช: {1}", str_activity_powercost_desc = "ปริซึมที่ใช้ไป", str_activity_powercost_main_title_n29 = "ตระเวนรายสัปดาห์", str_activity_powercost_intro_n29 = "<color=#ffffff></color>ความเจริญและความสงบสุขในตอนกลางวันไม่อาจรับประกันความปลอดภัยในยามค่ำคืนได้ เมื่อดวงอาทิตย์ลับขอบฟ้าและม่านสีดำปกคลุมท้องฟ้าและพื้นดินเบื้องล่าง อากาศแห่งความอันตรายอย่างร้ายกาจเข้าครอบงำอัมบราตัน ดูเหมือนว่าทุกคนคุ้นเคยกับสิ่งนี้ อย่างไรก็ตาม มีผู้ที่ไม่เชื่อในความชั่วร้าย—ซึ่งพยายามขับไล่อันตรายเหล่านี้ออกจากภูมิทัศน์ยามพลบค่ำของ Umbraton โดยเริ่มการลาดตระเวนที่แทบไม่ได้หลับใหล...", str_activity_powercost_2_time_tex1 = "เวลากิจกรรมการตระเวนกินปริซึมประจำสัปดาห์ที่เหลืออยู่: {1}", str_activity_powercost_2_time_tex2 = "รีเซ็ตใน {1}", str_activity_powercost_2_get_btn = "รับ", str_activity_powercost_2_get_btn2 = "รับแล้ว"}
+local config = {
+  str_activity_powercost_main_title = "แรลลี่คาร์นิวัล",
+  str_activity_powercost_intro = "แรลลี่เพลิงลุกโชนยอดฮิตได้ดึงดูดผู้เข้าร่วมและผู้สังเกตการณ์มาได้มากมาย พร้อมทั้งยังสร้างบรรยากาศคาร์นิวัลขึ้นด้วย และทุกคนต่างก็ได้ร้องเพลงและเต้นรำตามใจพวกเขา สนุกกันแบบสุดเหวี่ยงไปเลย",
+  str_activity_powercost_time_main = "เวลาอีเวนต์ที่เหลือ: {1}",
+  str_activity_powercost_time_refresh = "นับถอยหลังรีเฟรช: {1}",
+  str_activity_powercost_desc = "ปริซึมที่ใช้ไป",
+  str_activity_powercost_main_title_n29 = "ตระเวนรายสัปดาห์",
+  str_activity_powercost_intro_n29 = "<color=#ffffff></color>ความเจริญและความสงบสุขในตอนกลางวันไม่อาจรับประกันความปลอดภัยในยามค่ำคืนได้ เมื่อดวงอาทิตย์ลับขอบฟ้าและม่านสีดำปกคลุมท้องฟ้าและพื้นดินเบื้องล่าง อากาศแห่งความอันตรายอย่างร้ายกาจเข้าครอบงำอัมบราตัน ดูเหมือนว่าทุกคนคุ้นเคยกับสิ่งนี้ อย่างไรก็ตาม มีผู้ที่ไม่เชื่อในความชั่วร้าย—ซึ่งพยายามขับไล่อันตรายเหล่านี้ออกจากภูมิทัศน์ยามพลบค่ำของ Umbraton โดยเริ่มการลาดตระเวนที่แทบไม่ได้หลับใหล...",
+  str_activity_powercost_2_time_tex1 = "เวลากิจกรรมการตระเวนกินปริซึมประจำสัปดาห์ที่เหลืออยู่: {1}",
+  str_activity_powercost_2_time_tex2 = "รีเซ็ตใน {1}",
+  str_activity_powercost_2_get_btn = "รับ",
+  str_activity_powercost_2_get_btn2 = "รับแล้ว"
+}
 return config
-

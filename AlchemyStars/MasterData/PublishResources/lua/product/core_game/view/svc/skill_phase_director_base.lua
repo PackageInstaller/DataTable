@@ -1,131 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/skill_phase_director_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPhaseDirectorBase", Object)
 SkillPhaseDirectorBase = SkillPhaseDirectorBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseDirectorBase.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillPhaseDirectorBase:Constructor(world)
   self._world = world
   self._phaseIndex = 0
   self._delayInfo = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDirectorBase.NextPhaseIndex = function(self, casterEntity, skillPhaseArray)
-  -- function num : 0_1
+function SkillPhaseDirectorBase:NextPhaseIndex(casterEntity, skillPhaseArray)
   if self._phaseIndex < #skillPhaseArray then
     self._phaseIndex = self._phaseIndex + 1
     return self._phaseIndex
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDirectorBase.CurPhaseIndex = function(self)
-  -- function num : 0_2
+function SkillPhaseDirectorBase:CurPhaseIndex()
   return self._phaseIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDirectorBase.CreateDelayInfo = function(self, index)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._delayInfo)[index] = SkillPhaseTaskRunData:New()
-  return (self._delayInfo)[index]
+function SkillPhaseDirectorBase:CreateDelayInfo(index)
+  self._delayInfo[index] = SkillPhaseTaskRunData:New()
+  return self._delayInfo[index]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDirectorBase.DoPlaySkillPhase = function(self, TT, casterEntity, skillPhaseArray, funcDic)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillPhaseDirectorBase:DoPlaySkillPhase(TT, casterEntity, skillPhaseArray, funcDic)
   local phaseTaskIDArray = {}
-  local oldpos = (casterEntity:GridLocation()).Position
-  local olddir = (casterEntity:GridLocation()).Direction
+  local oldpos = casterEntity:GridLocation().Position
+  local olddir = casterEntity:GridLocation().Direction
   local revert_pos_dir = false
-  do
-    for phaseIndex = 1, #skillPhaseArray do
-      local phaseData = skillPhaseArray[phaseIndex]
-      local phaseParam = phaseData:GetPhaseParam()
-      local phaseType = phaseParam:GetPhaseType()
-      local func = funcDic[phaseType]
-      func:PrepareToPlay(TT, casterEntity, phaseParam)
-    end
+  for phaseIndex = 1, #skillPhaseArray do
+    local phaseData = skillPhaseArray[phaseIndex]
+    local phaseParam = phaseData:GetPhaseParam()
+    local phaseType = phaseParam:GetPhaseType()
+    local func = funcDic[phaseType]
+    func:PrepareToPlay(TT, casterEntity, phaseParam)
   end
-  do
-    while 1 do
-      while 1 do
-        if self:NextPhaseIndex(casterEntity, skillPhaseArray) then
-          local phaseIndex = self:CurPhaseIndex()
-          local phaseData = skillPhaseArray[phaseIndex]
-          if phaseData == nil then
-            (Log.fatal)("phase end ---------- phaseIndex= " .. phaseIndex)
-          else
-            while not self:_CheckPhaseCanStart(skillPhaseArray, phaseIndex) do
-              YIELD(TT)
-            end
-            local runData = self:CreateDelayInfo(phaseIndex)
-            local phaseData = skillPhaseArray[phaseIndex]
-            local posdirParam = phaseData:GetPosDirParam()
-            local phaseParam = phaseData:GetPhaseParam()
-            local phaseType = phaseParam:GetPhaseType()
-            local func = funcDic[phaseType]
-            ;
-            (Log.notice)("entity " .. casterEntity:GetID() .. " start skill phase " .. phaseIndex, " phaseType=", GetEnumKey("SkillViewPhaseType", phaseType))
-            if posdirParam then
-              revert_pos_dir = true
-              local pos = posdirParam:GetPos()
-              local dir = posdirParam:GetDir()
-              casterEntity:SetLocation(pos, dir)
-            end
-            do
-              local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : func, casterEntity, phaseParam, phaseIndex, runData, _ENV
-    func:BeginPlay(TT, casterEntity, phaseParam)
-    func:PlayFlight(TT, casterEntity, phaseParam, phaseIndex)
-    func:EndPlay(TT, casterEntity, phaseParam)
-    runData.EndTick = (GameGlobal:GetInstance()):GetCurrentTime()
+  while self:NextPhaseIndex(casterEntity, skillPhaseArray) do
+    local phaseIndex = self:CurPhaseIndex()
+    local phaseData = skillPhaseArray[phaseIndex]
+    if phaseData == nil then
+      Log.fatal("phase end ---------- phaseIndex= " .. phaseIndex)
+      break
+    end
+    while not self:_CheckPhaseCanStart(skillPhaseArray, phaseIndex) do
+      YIELD(TT)
+    end
+    local runData = self:CreateDelayInfo(phaseIndex)
+    local phaseData = skillPhaseArray[phaseIndex]
+    local posdirParam = phaseData:GetPosDirParam()
+    local phaseParam = phaseData:GetPhaseParam()
+    local phaseType = phaseParam:GetPhaseType()
+    local func = funcDic[phaseType]
+    Log.notice("entity " .. casterEntity:GetID() .. " start skill phase " .. phaseIndex, " phaseType=", GetEnumKey("SkillViewPhaseType", phaseType))
+    if posdirParam then
+      revert_pos_dir = true
+      local pos = posdirParam:GetPos()
+      local dir = posdirParam:GetDir()
+      casterEntity:SetLocation(pos, dir)
+    end
+    local taskID = GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      func:BeginPlay(TT, casterEntity, phaseParam)
+      func:PlayFlight(TT, casterEntity, phaseParam, phaseIndex)
+      func:EndPlay(TT, casterEntity, phaseParam)
+      runData.EndTick = GameGlobal:GetInstance():GetCurrentTime()
+    end)
+    table.insert(phaseTaskIDArray, taskID)
   end
-)
-              ;
-              (table.insert)(phaseTaskIDArray, taskID)
-              -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC99: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-      end
-    end
-    do
-      while not (TaskHelper:GetInstance()):IsAllTaskFinished(phaseTaskIDArray) do
-        YIELD(TT)
-      end
-      if revert_pos_dir then
-        casterEntity:SetLocation(oldpos, olddir)
-      end
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(phaseTaskIDArray) do
+    YIELD(TT)
+  end
+  if revert_pos_dir then
+    casterEntity:SetLocation(oldpos, olddir)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseDirectorBase._CheckPhaseCanStart = function(self, skillPhaseArray, phaseIndex)
-  -- function num : 0_5 , upvalues : _ENV
-  local runndata = (self._delayInfo)[phaseIndex]
+function SkillPhaseDirectorBase:_CheckPhaseCanStart(skillPhaseArray, phaseIndex)
+  local runndata = self._delayInfo[phaseIndex]
   if runndata ~= nil then
     return false
   end
@@ -133,14 +83,14 @@ SkillPhaseDirectorBase._CheckPhaseCanStart = function(self, skillPhaseArray, pha
   local delayfromPhase = phaseData:GetDelayFromPhase() or 0
   local delayTime = phaseData:GetDelayMS()
   local delayType = phaseData:GetDelayType()
-  local curTick = (GameGlobal:GetInstance()):GetCurrentTime()
+  local curTick = GameGlobal:GetInstance():GetCurrentTime()
   if delayfromPhase <= 0 then
     return true
   end
   if delayfromPhase == phaseIndex then
     error("[skill] delayfromPhase == phaseIndex " .. phaseIndex)
   end
-  local prePhaseRundata = (self._delayInfo)[delayfromPhase]
+  local prePhaseRundata = self._delayInfo[delayfromPhase]
   if prePhaseRundata == nil then
     return false
   end
@@ -150,26 +100,19 @@ SkillPhaseDirectorBase._CheckPhaseCanStart = function(self, skillPhaseArray, pha
     else
       return false
     end
-  else
-    if delayType == SkillDelayType.Delay_AfterEnd then
-      if prePhaseRundata.EndTick > 0 and delayTime <= curTick - prePhaseRundata.EndTick then
-        return true
-      else
-        return false
-      end
+  elseif delayType == SkillDelayType.Delay_AfterEnd then
+    if 0 < prePhaseRundata.EndTick and delayTime <= curTick - prePhaseRundata.EndTick then
+      return true
     else
-      if delayType == SkillDelayType.Delay_AfterEvent then
-        if delayTime <= curTick - prePhaseRundata.StartTick then
-          return true
-        else
-          return false
-        end
-      else
-        ;
-        (Log.error)("[skill] error delaytype")
-      end
+      return false
     end
+  elseif delayType == SkillDelayType.Delay_AfterEvent then
+    if delayTime <= curTick - prePhaseRundata.StartTick then
+      return true
+    else
+      return false
+    end
+  else
+    Log.error("[skill] error delaytype")
   end
 end
-
-

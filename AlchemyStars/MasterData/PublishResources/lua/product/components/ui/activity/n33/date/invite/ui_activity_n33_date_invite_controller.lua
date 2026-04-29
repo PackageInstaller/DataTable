@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n33/date/invite/ui_activity_n33_date_invite_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN33DateInviteController", UIController)
 UIActivityN33DateInviteController = UIActivityN33DateInviteController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN33DateInviteController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIActivityN33DateInviteController:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateInviteController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityN33DateInviteController:OnShow(uiParams)
   self._cfg = uiParams[1]
   self._isStart = uiParams[2]
   self._callback = uiParams[3]
@@ -22,10 +12,7 @@ UIActivityN33DateInviteController.OnShow = function(self, uiParams)
   self:_Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateInviteController._GetComponent = function(self)
-  -- function num : 0_2
+function UIActivityN33DateInviteController:_GetComponent()
   self._petImg = self:GetUIComponent("RawImageLoader", "petImg")
   self._talkInfo = self:GetUIComponent("UILocalizationText", "talkInfo")
   self._inviteTxt = self:GetUIComponent("UILocalizationText", "inviteTxt")
@@ -36,79 +23,51 @@ UIActivityN33DateInviteController._GetComponent = function(self)
   self._tiptxt2Obj = self:GetGameObject("tiptxt2")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateInviteController._Init = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._petImg):LoadImage((self._cfg).PetImg)
-  ;
-  (self._inviteTitle):SetText((StringTable.Get)((self._cfg).EventTitle))
-  ;
-  (self._inviteTitle1):SetText((StringTable.Get)((self._cfg).EventTitle))
+function UIActivityN33DateInviteController:_Init()
+  self._petImg:LoadImage(self._cfg.PetImg)
+  self._inviteTitle:SetText(StringTable.Get(self._cfg.EventTitle))
+  self._inviteTitle1:SetText(StringTable.Get(self._cfg.EventTitle))
   if self._isStart then
-    (self._talkInfo):SetText((StringTable.Get)((self._cfg).StartEventTxt))
-    ;
-    (self._inviteTxt):SetText((StringTable.Get)("str_n33_date_invite_title1"))
-    ;
-    (self._inviteTxt1):SetText((StringTable.Get)("str_n33_date_invite_title1"))
-    ;
-    (self._tiptxt2Obj):SetActive(false)
+    self._talkInfo:SetText(StringTable.Get(self._cfg.StartEventTxt))
+    self._inviteTxt:SetText(StringTable.Get("str_n33_date_invite_title1"))
+    self._inviteTxt1:SetText(StringTable.Get("str_n33_date_invite_title1"))
+    self._tiptxt2Obj:SetActive(false)
   else
-    ;
-    (self._talkInfo):SetText((StringTable.Get)((self._cfg).EndEventTxt))
-    ;
-    (self._inviteTxt):SetText((StringTable.Get)("str_n33_date_invite_title2"))
-    ;
-    (self._inviteTxt1):SetText((StringTable.Get)("str_n33_date_invite_title2"))
-    ;
-    (self._tiptxt2Obj):SetActive(true)
+    self._talkInfo:SetText(StringTable.Get(self._cfg.EndEventTxt))
+    self._inviteTxt:SetText(StringTable.Get("str_n33_date_invite_title2"))
+    self._inviteTxt1:SetText(StringTable.Get("str_n33_date_invite_title2"))
+    self._tiptxt2Obj:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateInviteController.SetControllerEnd = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN33DateInviteController:SetControllerEnd()
   self._isStart = false
   self:_Init()
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : self, _ENV
     self:Lock("uieffanim_UIActivityN33DateInviteController_in")
-    ;
-    (self._anim):Play("uieffanim_UIActivityN33DateInviteController_in")
+    self._anim:Play("uieffanim_UIActivityN33DateInviteController_in")
     YIELD(TT, 734)
     self:UnLock("uieffanim_UIActivityN33DateInviteController_in")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateInviteController.BgBtnOnClick = function(self)
-  -- function num : 0_5
+function UIActivityN33DateInviteController:BgBtnOnClick()
   if self._isStart then
-    self:ShowDialog("UIStoryController", (self._cfg).StoryID, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:SetControllerEnd()
-  end
-)
+    self:ShowDialog("UIStoryController", self._cfg.StoryID, function()
+      self:SetControllerEnd()
+    end)
   else
     self:CloseDialog()
     if self._callback then
-      (self._callback)()
+      self._callback()
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN33DateInviteController._CloseAnim = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._anim):Play("uieffanim_UIActivityN33DateInviteController_out")
+function UIActivityN33DateInviteController:_CloseAnim(TT)
+  self._anim:Play("uieffanim_UIActivityN33DateInviteController_out")
   self:Lock("uieffanim_UIActivityN33DateInviteController_out")
   YIELD(TT, 334)
   self:UnLock("uieffanim_UIActivityN33DateInviteController_out")
   self:CloseDialog()
 end
-
-

@@ -1,146 +1,99 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/custom_profiler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PRecordInfo", Object)
 PRecordInfo = PRecordInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PRecordInfo.Constructor = function(self)
-  -- function num : 0_0
+function PRecordInfo:Constructor()
   self.stackindex = 1
   self.name = ""
   self.use_tick = 0
   self.begin_tick = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PRecordInfo._LessComparer = function(nItemIDA, nItemIDB)
-  -- function num : 0_1
+function PRecordInfo._LessComparer(nItemIDA, nItemIDB)
   local a = nItemIDA._info
   local b = nItemIDB._info
   if a.stackindex < b.stackindex then
     return 1
+  elseif a.stackindex > b.stackindex then
+    return -1
+  elseif a.use_tick > b.use_tick then
+    return 1
+  elseif a.use_tick < b.use_tick then
+    return -1
   else
-    if b.stackindex < a.stackindex then
-      return -1
-    else
-      if b.use_tick < a.use_tick then
-        return 1
-      else
-        if a.use_tick < b.use_tick then
-          return -1
-        else
-          return 0
-        end
-      end
-    end
+    return 0
   end
 end
 
 _class("ProfilerNode", Object)
 ProfilerNode = ProfilerNode
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-ProfilerNode.Constructor = function(self)
-  -- function num : 0_2
+function ProfilerNode:Constructor()
   self._info = nil
   self._parent_node = nil
   self._child_node_list = nil
 end
 
-local LuaProfiler = LuaProfiler
+local LuaProfiler = _ENV.LuaProfiler
 _class("ProfilerRecord", Object)
 ProfilerRecord = ProfilerRecord
 _class("CustomProfiler", Object)
 CustomProfiler = CustomProfiler
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
 
-CustomProfiler.Constructor = function(self)
-  -- function num : 0_3
+function CustomProfiler:Constructor()
   self._profiler_run = false
   self._stack_space = {}
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stack_space)[1] = "\t"
+  self._stack_space[1] = "\t"
   for i = 2, 100 do
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._stack_space)[i] = (self._stack_space)[i - 1] .. "\t"
+    self._stack_space[i] = self._stack_space[i - 1] .. "\t"
   end
   self:Init()
   self._frame_count = 1
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.Init = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CustomProfiler:Init()
   self._curStackIndex = 1
   self._profiler_data_list = ArrayList:New()
   self._profiler_tree_head = self:NewNode("ProflierBegin")
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._profiler_tree_head)._info).stackindex = 0
+  self._profiler_tree_head._info.stackindex = 0
   self._cur_node = nil
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.ClearFrameData = function(self)
-  -- function num : 0_5
+function CustomProfiler:ClearFrameData()
   self._profiler_tree_head = self:NewNode("ProflierBegin")
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._profiler_tree_head)._info).stackindex = 0
+  self._profiler_tree_head._info.stackindex = 0
   self._curStackIndex = 1
   self._cur_node = nil
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.Start = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.prof)("CustomProfiler:Start")
+function CustomProfiler:Start()
+  Log.prof("CustomProfiler:Start")
   self._profiler_run = true
   self._frame_count = 1
   self:ClearFrameData()
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.Print = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CustomProfiler:Print()
   if self._profiler_run == false then
-    (Log.error)("[AutoProfile] CustomProfiler not running")
-    return 
+    Log.error("[AutoProfile] CustomProfiler not running")
+    return
   end
-  local framecount = (self._profiler_data_list):Size()
-  ;
-  (Log.prof)("[AutoProfile] profile data list size=", framecount)
+  local framecount = self._profiler_data_list:Size()
+  Log.prof("[AutoProfile] profile data list size=", framecount)
   for i = 1, framecount do
-    local treeData = (self._profiler_data_list):GetAt(i)
+    local treeData = self._profiler_data_list:GetAt(i)
     self:PrintNodeData(treeData, i)
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.PrintNodeData = function(self, treeData, frameindex)
-  -- function num : 0_8 , upvalues : _ENV
+function CustomProfiler:PrintNodeData(treeData, frameindex)
   local sorted_array = SortedArray:New(Algorithm.COMPARE_CUSTOM, PRecordInfo._LessComparer)
   sorted_array:AllowDuplicate()
   local node = treeData
   self:PrintInfo(node._info, frameindex)
   if node._child_node_list == nil then
-    return 
+    return
   end
-  for _,childNode in pairs(node._child_node_list) do
+  for _, childNode in pairs(node._child_node_list) do
     sorted_array:Insert(childNode)
   end
   local n = sorted_array:Size()
@@ -150,109 +103,75 @@ CustomProfiler.PrintNodeData = function(self, treeData, frameindex)
   end
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.PrintInfo = function(self, info, frameindex)
-  -- function num : 0_9 , upvalues : _ENV
+function CustomProfiler:PrintInfo(info, frameindex)
   if info.stackindex > 0 and info.use_tick >= 1 then
-    (Log.prof)("[profiler] frame ", frameindex, " ", (self._stack_space)[info.stackindex], info.name, " use: ", info.use_tick)
+    Log.prof("[profiler] frame ", frameindex, " ", self._stack_space[info.stackindex], info.name, " use: ", info.use_tick)
   end
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.StoreSamepleData = function(self)
-  -- function num : 0_10
+function CustomProfiler:StoreSamepleData()
   if self._profiler_run == false then
-    return 
+    return
   end
-  ;
-  (self._profiler_data_list):PushBack(self._profiler_tree_head)
+  self._profiler_data_list:PushBack(self._profiler_tree_head)
   self:ClearFrameData()
   self._frame_count = self._frame_count + 1
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.Stop = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CustomProfiler:Stop()
   self:Print()
   self:ClearFrameData()
   self._profiler_run = false
   self._profiler_data_list = ArrayList:New()
-  ;
-  (Log.prof)("CustomProfiler:Stop")
+  Log.prof("CustomProfiler:Stop")
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.NewNode = function(self, samplename)
-  -- function num : 0_12 , upvalues : _ENV
+function CustomProfiler:NewNode(samplename)
   local info = PRecordInfo:New()
   info.name = samplename
-  info.begin_tick = (os.clock)()
+  info.begin_tick = os.clock()
   info.stackindex = self._curStackIndex
   local node = ProfilerNode:New()
   node._info = info
   return node
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.BeginSample = function(self, samplename)
-  -- function num : 0_13 , upvalues : _ENV
+function CustomProfiler:BeginSample(samplename)
   if self._profiler_run == false then
-    return 
+    return
   end
   if self._cur_node == nil then
     self._cur_node = self._profiler_tree_head
   end
-  local node = nil
-  if (self._cur_node)._child_node_list ~= nil then
-    node = ((self._cur_node)._child_node_list)[samplename]
+  local node
+  if self._cur_node._child_node_list ~= nil then
+    node = self._cur_node._child_node_list[samplename]
   else
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._cur_node)._child_node_list = {}
+    self._cur_node._child_node_list = {}
   end
   if node == nil then
     node = self:NewNode(samplename)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self._cur_node)._child_node_list)[samplename] = node
+    self._cur_node._child_node_list[samplename] = node
     node._parent_node = self._cur_node
   else
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (node._info).begin_tick = (os.clock)()
+    node._info.begin_tick = os.clock()
   end
   self._cur_node = node
   self._curStackIndex = self._curStackIndex + 1
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-CustomProfiler.EndSample = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function CustomProfiler:EndSample()
   if self._profiler_run == false then
-    return 
+    return
   end
   local node = self._cur_node
   if node == nil then
-    return 
+    return
   end
-  local curTick = (os.clock)()
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (node._info).use_tick = (node._info).use_tick + (curTick - (node._info).begin_tick) * 1000
-  self._cur_node = (self._cur_node)._parent_node
+  local curTick = os.clock()
+  node._info.use_tick = node._info.use_tick + (curTick - node._info.begin_tick) * 1000
+  self._cur_node = self._cur_node._parent_node
   if self._curStackIndex > 0 then
     self._curStackIndex = self._curStackIndex - 1
   end
 end
-
-

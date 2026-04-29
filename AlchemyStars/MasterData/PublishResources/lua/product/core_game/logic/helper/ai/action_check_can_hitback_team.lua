@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_can_hitback_team.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckCanHitBackTeam", AINewNode)
 ActionCheckCanHitBackTeam = ActionCheckCanHitBackTeam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckCanHitBackTeam.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckCanHitBackTeam:OnUpdate()
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return false
   end
   local selfPos = entityCaster:GetGridPosition()
   local entityPlayer = aiComponent:GetTargetDefault()
   local casterDir = entityCaster:GetGridDirection()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local hitBackDir = utilCalcSvc:CalcHitBackFront3Dir(selfPos, casterDir, entityPlayer, 1, nil)
   if hitBackDir then
     return AINewNodeStatus.Success
@@ -26,5 +19,3 @@ ActionCheckCanHitBackTeam.OnUpdate = function(self)
     return AINewNodeStatus.Failure
   end
 end
-
-

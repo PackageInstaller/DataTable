@@ -1,67 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/fsm/state_bounce_player_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("state")
 _class("StateBouncePlayerBase", State)
 StateBouncePlayerBase = StateBouncePlayerBase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-StateBouncePlayerBase.Init = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function StateBouncePlayerBase:Init()
   if not self.player then
-    self.player = (self.fsm):GetData()
-    self.playerData = (self.player):GetBouncePlayerData()
-    self.bounceData = (self.player):GetBounceData()
+    self.player = self.fsm:GetData()
+    self.playerData = self.player:GetBouncePlayerData()
+    self.bounceData = self.player:GetBounceData()
     local stateType = self:GetStateType()
     if stateType then
-      self._animationCfg = (Cfg.cfg_bounce_player_animation)[stateType]
+      self._animationCfg = Cfg.cfg_bounce_player_animation[stateType]
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.GetStateType = function(self)
-  -- function num : 0_1
+function StateBouncePlayerBase:GetStateType()
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.GetBehavior = function(self, behaviorName)
-  -- function num : 0_2
-  return (self.player):GetBehavior(behaviorName)
+function StateBouncePlayerBase:GetBehavior(behaviorName)
+  return self.player:GetBehavior(behaviorName)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.Destroy = function(self)
-  -- function num : 0_3
+function StateBouncePlayerBase:Destroy()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.OnJump = function(self)
-  -- function num : 0_4
+function StateBouncePlayerBase:OnJump()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.OnAttack = function(self)
-  -- function num : 0_5
+function StateBouncePlayerBase:OnAttack()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.PlayAnim = function(self)
-  -- function num : 0_6
+function StateBouncePlayerBase:PlayAnim()
   local aniName, duration = self:GetAniNameAndDuration()
   if not aniName then
     return 0
   end
-  local animBehaviour = (self.player):GetBehavior("BouncePlayerBeHaviorAnimation")
+  local animBehaviour = self.player:GetBehavior("BouncePlayerBeHaviorAnimation")
   if not animBehaviour then
     return 0
   end
@@ -69,59 +44,45 @@ StateBouncePlayerBase.PlayAnim = function(self)
   return duration
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.GetAniNameAndDuration = function(self)
-  -- function num : 0_7
+function StateBouncePlayerBase:GetAniNameAndDuration()
   if not self._animationCfg then
     return nil
   end
-  local name = (self._animationCfg).Name
+  local name = self._animationCfg.Name
   if not name or name == "" then
     return nil
   end
-  local duration = (self._animationCfg).Duration or 0
+  local duration = self._animationCfg.Duration or 0
   return name, duration
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.GetEffName = function(self)
-  -- function num : 0_8
+function StateBouncePlayerBase:GetEffName()
   if not self._animationCfg then
     return nil
   end
-  local name = (self._animationCfg).Eff
+  local name = self._animationCfg.Eff
   if not name or name == "" then
     return nil
   end
   return name
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.GetRectNames = function(self)
-  -- function num : 0_9
+function StateBouncePlayerBase:GetRectNames()
   if not self._animationCfg then
     return nil
   end
-  return (self._animationCfg).BaseRect, (self._animationCfg).WeaponRect
+  return self._animationCfg.BaseRect, self._animationCfg.WeaponRect
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.ShowDebugRect = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function StateBouncePlayerBase:ShowDebugRect()
   if not BounceDebug.ShowObjRect then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  if not (self.player).debugRect then
-    (self.player).debugRect = {}
+  if not self.player.debugRect then
+    self.player.debugRect = {}
   end
-  for k,v in pairs((self.player).debugRect) do
-    (v.gameObject):SetActive(false)
+  for k, v in pairs(self.player.debugRect) do
+    v.gameObject:SetActive(false)
   end
   local baseRectName, weaponName = self:GetRectNames()
   if baseRectName then
@@ -132,26 +93,21 @@ StateBouncePlayerBase.ShowDebugRect = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-StateBouncePlayerBase.ShowDebugRectBy = function(self, name, isWeapon)
-  -- function num : 0_11 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self.player).debugRect then
-    (self.player).debugRect = {}
+function StateBouncePlayerBase:ShowDebugRectBy(name, isWeapon)
+  if not self.player.debugRect then
+    self.player.debugRect = {}
   end
-  local image = ((self.player).debugRect)[name]
+  local image = self.player.debugRect[name]
   if not image then
     local viewBehavior = self:GetBehavior(BouncePlayerBeHaviorView:Name())
     if not viewBehavior then
-      return 
+      return
     end
     local rectRt = viewBehavior:GetBox(name)
     if not rectRt then
-      return 
+      return
     end
-    image = (rectRt.gameObject):AddComponent(typeof((UnityEngine.UI).Image))
+    image = rectRt.gameObject:AddComponent(typeof(UnityEngine.UI.Image))
     if image then
       if isWeapon then
         image.color = Color(1, 0, 0, 0.4)
@@ -159,16 +115,8 @@ StateBouncePlayerBase.ShowDebugRectBy = function(self, name, isWeapon)
         image.color = Color(0, 1, 0, 0.4)
       end
     end
-    -- DECOMPILER ERROR at PC56: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self.player).debugRect)[name] = image
+    self.player.debugRect[name] = image
   else
-    do
-      ;
-      (image.gameObject):SetActive(true)
-    end
+    image.gameObject:SetActive(true)
   end
 end
-
-

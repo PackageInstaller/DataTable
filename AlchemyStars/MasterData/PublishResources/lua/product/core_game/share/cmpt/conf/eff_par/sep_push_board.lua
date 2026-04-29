@@ -1,57 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_push_board.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectPushBoardParam", SkillEffectParamBase)
 SkillEffectPushBoardParam = SkillEffectPushBoardParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectPushBoardParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectPushBoardParam:Constructor(t)
   self._targetIndex = t.targetIndex or 0
   self._dir = Vector2(0, 1)
   if t.dir then
-    self._dir = Vector2((t.dir)[1], (t.dir)[2])
+    self._dir = Vector2(t.dir[1], t.dir[2])
   end
   self._pushStep = t.pushStep or 1
   self._disFromBoardEdge = t.disFromBoardEdge
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPushBoardParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectPushBoardParam:GetEffectType()
   return SkillEffectType.PushBoard
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPushBoardParam.GetTargetIndex = function(self)
-  -- function num : 0_2
+function SkillEffectPushBoardParam:GetTargetIndex()
   return self._targetIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPushBoardParam.GetDir = function(self)
-  -- function num : 0_3
+function SkillEffectPushBoardParam:GetDir()
   return self._dir
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPushBoardParam.GetPushStep = function(self)
-  -- function num : 0_4
+function SkillEffectPushBoardParam:GetPushStep()
   return self._pushStep
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPushBoardParam.GetDisFromBoardEdge = function(self)
-  -- function num : 0_5
+function SkillEffectPushBoardParam:GetDisFromBoardEdge()
   return self._disFromBoardEdge
 end
-
-

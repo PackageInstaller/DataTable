@@ -1,93 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_asset/ui_asset_component_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAssetComponentBase", Object)
 UIAssetComponentBase = UIAssetComponentBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAssetComponentBase.Constructor = function(self, owner, itemId, index, params)
-  -- function num : 0_0
+function UIAssetComponentBase:Constructor(owner, itemId, index, params)
   self._owner = owner
   self._id = itemId
   self._index = index
   self._params = params
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.AttachEvent = function(self, event, func)
-  -- function num : 0_1
-  (self._owner):AttachEvent(event, func)
+function UIAssetComponentBase:AttachEvent(event, func)
+  self._owner:AttachEvent(event, func)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.DetachEvent = function(self, event, func)
-  -- function num : 0_2
-  (self._owner):DetachEvent(event, func)
+function UIAssetComponentBase:DetachEvent(event, func)
+  self._owner:DetachEvent(event, func)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.LoadPrefab = function(self, prefab)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (string.endwith)(prefab, ".prefab") then
+function UIAssetComponentBase:LoadPrefab(prefab)
+  if not string.endwith(prefab, ".prefab") then
     prefab = prefab .. ".prefab"
   end
-  self._req = (ResourceManager:GetInstance()):SyncLoadAsset(prefab, LoadType.GameObject)
-  self._gameObject = (self._req).Obj
-  self._uiView = (self._gameObject):GetComponent(typeof(UIView))
-  local rect = (self._gameObject):GetComponent(typeof(UnityEngine.RectTransform))
-  rect:SetParent((self._owner):ComponentRoot())
-  ;
-  (self._gameObject):SetActive(true)
-  ;
-  (UIHelper.SetRectTransformToFillFullScreen)(rect)
+  self._req = ResourceManager:GetInstance():SyncLoadAsset(prefab, LoadType.GameObject)
+  self._gameObject = self._req.Obj
+  self._uiView = self._gameObject:GetComponent(typeof(UIView))
+  local rect = self._gameObject:GetComponent(typeof(UnityEngine.RectTransform))
+  rect:SetParent(self._owner:ComponentRoot())
+  self._gameObject:SetActive(true)
+  UIHelper.SetRectTransformToFillFullScreen(rect)
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.Reset = function(self, itemId, index, params)
-  -- function num : 0_4
+function UIAssetComponentBase:Reset(itemId, index, params)
   self._id = itemId
   self._index = index
   self._params = params
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.OnInit = function(self)
-  -- function num : 0_5
+function UIAssetComponentBase:OnInit()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.SetActive = function(self, active)
-  -- function num : 0_6
-  (self._gameObject):SetActive(active)
+function UIAssetComponentBase:SetActive(active)
+  self._gameObject:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.OnAdd = function(self)
-  -- function num : 0_7
+function UIAssetComponentBase:OnAdd()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.OnRemove = function(self)
-  -- function num : 0_8
+function UIAssetComponentBase:OnRemove()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.OnDestroy = function(self)
-  -- function num : 0_9
+function UIAssetComponentBase:OnDestroy()
   if self._req then
-    (self._req):Dispose()
+    self._req:Dispose()
     self._req = nil
   end
   if self._owner then
@@ -95,32 +59,18 @@ UIAssetComponentBase.OnDestroy = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.Index = function(self)
-  -- function num : 0_10
+function UIAssetComponentBase:Index()
   return self._index
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.GameObject = function(self)
-  -- function num : 0_11
+function UIAssetComponentBase:GameObject()
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.GetUIComponent = function(self, type, name)
-  -- function num : 0_12
-  return (self._uiView):GetUIComponent(type, name)
+function UIAssetComponentBase:GetUIComponent(type, name)
+  return self._uiView:GetUIComponent(type, name)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentBase.GetGameObject = function(self, name)
-  -- function num : 0_13
-  return (self._uiView):GetGameObject(name)
+function UIAssetComponentBase:GetGameObject(name)
+  return self._uiView:GetGameObject(name)
 end
-
-

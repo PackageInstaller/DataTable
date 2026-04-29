@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_backpack/ui_homeland_tool_level_up.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandToolLevelUp", UIController)
 UIHomelandToolLevelUp = UIHomelandToolLevelUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandToolLevelUp.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetHomelandBackpackData()
-  self.mItem = (GameGlobal.GetModule)(ItemModule)
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function UIHomelandToolLevelUp:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetHomelandBackpackData()
+  self.mItem = GameGlobal.GetModule(ItemModule)
+  self.mRole = GameGlobal.GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandToolLevelUp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandToolLevelUp:OnShow(uiParams)
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.imgQuality = self:GetUIComponent("Image", "imgQuality")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -28,96 +18,63 @@ UIHomelandToolLevelUp.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandToolLevelUp.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIHomelandToolLevelUp:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandToolLevelUp.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local item = (self.data):GetItemById(self.id)
+function UIHomelandToolLevelUp:Flush()
+  local item = self.data:GetItemById(self.id)
   local tpl = item:GetTemplate()
-  ;
-  (self.imgIcon):LoadImage(tpl.Icon)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.imgQuality).color = (UIForgeData.qualityColors)[tpl.Color]
-  ;
-  (self.txtName):SetText((StringTable.Get)(tpl.Name))
+  self.imgIcon:LoadImage(tpl.Icon)
+  self.imgQuality.color = UIForgeData.qualityColors[tpl.Color]
+  self.txtName:SetText(StringTable.Get(tpl.Name))
   local tplId = item:GetTemplateID()
-  local toolItem = (self.data):GetHomelandBackpackToolItemByTplId(tplId)
-  local toolItemNextLv = (self.data):GetHomelandBackpackToolItemByTplId(toolItem.tplIdNextLv)
+  local toolItem = self.data:GetHomelandBackpackToolItemByTplId(tplId)
+  local toolItemNextLv = self.data:GetHomelandBackpackToolItemByTplId(toolItem.tplIdNextLv)
   if toolItemNextLv then
-    local lvNextDesc = (StringTable.Get)("str_homeland_backpack_level_desc_" .. toolItemNextLv.tplId)
-    ;
-    (self.txtChangeDesc):SetText(lvNextDesc)
+    local lvNextDesc = StringTable.Get("str_homeland_backpack_level_desc_" .. toolItemNextLv.tplId)
+    self.txtChangeDesc:SetText(lvNextDesc)
   else
-    do
-      ;
-      (self.txtChangeDesc):SetText("")
-      if toolItem.cost then
-        local len = (table.count)(toolItem.cost)
-        ;
-        (self.cost):SpawnObjects("UIItemHomeland", len)
-        local uis = (self.cost):GetAllSpawnList()
-        for i,ui in ipairs(uis) do
-          local ra = (toolItem.cost)[i]
-          ui:Flush(ra, nil)
-          ui:TxtCountRedIfNotEnough(ra.count)
-        end
-      end
+    self.txtChangeDesc:SetText("")
+  end
+  if toolItem.cost then
+    local len = table.count(toolItem.cost)
+    self.cost:SpawnObjects("UIItemHomeland", len)
+    local uis = self.cost:GetAllSpawnList()
+    for i, ui in ipairs(uis) do
+      local ra = toolItem.cost[i]
+      ui:Flush(ra, nil)
+      ui:TxtCountRedIfNotEnough(ra.count)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandToolLevelUp.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandToolLevelUp:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandToolLevelUp.btnCloseOnClick = function(self, go)
-  -- function num : 0_5
+function UIHomelandToolLevelUp:btnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandToolLevelUp.btnConfirmOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  local item = (self.data):GetItemById(self.id)
+function UIHomelandToolLevelUp:btnConfirmOnClick(go)
+  local item = self.data:GetItemById(self.id)
   local tplId = item:GetTemplateID()
-  local toolItem = (self.data):GetHomelandBackpackToolItemByTplId(tplId)
+  local toolItem = self.data:GetHomelandBackpackToolItemByTplId(tplId)
   if not toolItem:IsCostEnough() then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_backpack_upgrade_cost_not_enough"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_backpack_upgrade_cost_not_enough"))
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioUpgradeProp)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioUpgradeProp)
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : self, toolItem, _ENV, item
     local key = "UIHomelandToolLevelUp_btnConfirmOnClick"
     self:Lock(key)
-    local res = (self.mItem):ItemUpgradeByTemplate(TT, toolItem.tplId)
+    local res = self.mItem:ItemUpgradeByTemplate(TT, toolItem.tplId)
     self:UnLock(key)
-    do
-      if (UIHomelandBackpackData.CheckCode)(res:GetResult()) then
-        local tpl = item:GetTemplate()
-        ;
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_backpack_tool_item_X_upgraded", (StringTable.Get)(tpl.Name)))
-      end
-      self:CloseDialog()
+    if UIHomelandBackpackData.CheckCode(res:GetResult()) then
+      local tpl = item:GetTemplate()
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_backpack_tool_item_X_upgraded", StringTable.Get(tpl.Name)))
     end
-  end
-, self)
+    self:CloseDialog()
+  end, self)
 end
-
-

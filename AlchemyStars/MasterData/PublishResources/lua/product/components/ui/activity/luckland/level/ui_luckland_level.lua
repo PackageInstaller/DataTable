@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/level/ui_luckland_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandLevel", UIController)
 UILuckLandLevel = UILuckLandLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandLevel.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UILuckLandLevel:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UILuckLandLevel:OnShow(uiParams)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._component = uiParams[1]
-  self._componentInfo = (self._component):GetComponentInfo()
+  self._componentInfo = self._component:GetComponentInfo()
   self._lineDatas = {}
   self._interval = 0
   self._preLineType = LuckLandLineType.None
@@ -29,10 +19,7 @@ UILuckLandLevel.OnShow = function(self, uiParams)
   self._canPlayAnimation = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandLevel:_InitWidget()
   self._remainTime = self:GetUIComponent("UILocalizationText", "RemainTime")
   self:_SetCommonTopButton()
   self._lines = self:GetUIComponent("UISelectObjectPath", "Lines")
@@ -44,105 +31,60 @@ UILuckLandLevel._InitWidget = function(self)
   self._redGO = {}
   self._choiceAnimation = {}
   self._lockAnimation = {}
-  for key,value in pairs(LuckLandLineType) do
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R6 in 'UnsetPending'
-
+  for key, value in pairs(LuckLandLineType) do
     if value ~= LuckLandLineType.None then
-      (self._btnsGO)[value] = self:GetGameObject("Btn" .. value)
-      -- DECOMPILER ERROR at PC52: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._choiceGO)[value] = self:GetGameObject("Choice" .. value)
-      -- DECOMPILER ERROR at PC59: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._lockGO)[value] = self:GetGameObject("Lock" .. value)
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._timeText)[value] = self:GetUIComponent("UILocalizationText", "Time" .. value)
-      -- DECOMPILER ERROR at PC74: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._redGO)[value] = self:GetGameObject("Red" .. value)
-      -- DECOMPILER ERROR at PC82: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._choiceAnimation)[value] = self:GetUIComponent("Animation", "Choice" .. value)
-      -- DECOMPILER ERROR at PC90: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self._lockAnimation)[value] = self:GetUIComponent("Animation", "Lock" .. value)
+      self._btnsGO[value] = self:GetGameObject("Btn" .. value)
+      self._choiceGO[value] = self:GetGameObject("Choice" .. value)
+      self._lockGO[value] = self:GetGameObject("Lock" .. value)
+      self._timeText[value] = self:GetUIComponent("UILocalizationText", "Time" .. value)
+      self._redGO[value] = self:GetGameObject("Red" .. value)
+      self._choiceAnimation[value] = self:GetUIComponent("Animation", "Choice" .. value)
+      self._lockAnimation[value] = self:GetUIComponent("Animation", "Lock" .. value)
       if value ~= LuckLandLineType.One then
-        ((self._choiceAnimation)[value]):Play("uieff_UILuckLandLevel_Choice_out")
+        self._choiceAnimation[value]:Play("uieff_UILuckLandLevel_Choice_out")
       end
     end
   end
   self._animation = self:GetUIComponent("Animation", "Animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UILuckLandLevel:_OnValue()
   self:_RefreshRemainTime()
   self:_LevelDataClassify()
   self:_RefreshLevelByType(LuckLandLineType.One, false, true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel.AfterUILayerChanged = function(self)
-  -- function num : 0_4
+function UILuckLandLevel:AfterUILayerChanged()
   self:_RefreshLevelByType(self._curLineType, true, false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._RefreshLevelByType = function(self, levelType, force, isClick)
-  -- function num : 0_5 , upvalues : _ENV
+function UILuckLandLevel:_RefreshLevelByType(levelType, force, isClick)
   if self._curLineType == levelType and not force then
-    return 
+    return
   end
   self._preLineType = self._curLineType
   self._curLineType = levelType
-  local curLineData = (self._lineDatas)[levelType]
-  do
-    if curLineData then
-      local count = (table.count)(curLineData)
-      ;
-      (self._nodes):SpawnObjects("UILuckLandLevelItem", count)
-      ;
-      (self._lines):SpawnObjects("UILuckLandLevelLine", count - 1)
-      self._nodeWidgets = (self._nodes):GetAllSpawnList()
-      self._lineWidgets = (self._lines):GetAllSpawnList()
-      for i = 1, count do
-        local unlock, timeUnlock = self:IsUnlock(curLineData[i])
-        ;
-        ((self._nodeWidgets)[i]):SetData(curLineData[i], i, self._component, unlock, self._canPlayAnimation)
-      end
-      for i = 1, count - 1 do
-        local nextNode = (self._nodeWidgets)[i + 1]
-        if nextNode and nextNode:IsUnlock() then
-          do
-            ((self._lineWidgets)[i]):SetData(i, not nextNode:IsInitial(), self._canPlayAnimation)
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC74: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-      self._canPlayAnimation = false
+  local curLineData = self._lineDatas[levelType]
+  if curLineData then
+    local count = table.count(curLineData)
+    self._nodes:SpawnObjects("UILuckLandLevelItem", count)
+    self._lines:SpawnObjects("UILuckLandLevelLine", count - 1)
+    self._nodeWidgets = self._nodes:GetAllSpawnList()
+    self._lineWidgets = self._lines:GetAllSpawnList()
+    for i = 1, count do
+      local unlock, timeUnlock = self:IsUnlock(curLineData[i])
+      self._nodeWidgets[i]:SetData(curLineData[i], i, self._component, unlock, self._canPlayAnimation)
     end
-    self:_SwitchBtns(isClick)
+    for i = 1, count - 1 do
+      local nextNode = self._nodeWidgets[i + 1]
+      self._lineWidgets[i]:SetData(i, nextNode and nextNode:IsUnlock() and not nextNode:IsInitial(), self._canPlayAnimation)
+    end
+    self._canPlayAnimation = false
   end
+  self:_SwitchBtns(isClick)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel.OnUpdate = function(self, deltaTime)
-  -- function num : 0_6
+function UILuckLandLevel:OnUpdate(deltaTime)
   self._interval = self._interval + deltaTime
   if self._interval >= 1000 then
     self._interval = 0
@@ -150,251 +92,172 @@ UILuckLandLevel.OnUpdate = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._RefreshRemainTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-  local endTime = (self._componentInfo).m_close_time
+function UILuckLandLevel:_RefreshRemainTime()
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
+  local endTime = self._componentInfo.m_close_time
   if curTime < endTime then
-    (self._remainTime):SetText((StringTable.Get)("str_activity_common_remainingtime_3", (UIActivityHelper.GetFormatTimerStr)(endTime - curTime)))
+    self._remainTime:SetText(StringTable.Get("str_activity_common_remainingtime_3", UIActivityHelper.GetFormatTimerStr(endTime - curTime)))
   else
-    ;
-    (self._remainTime):SetText((StringTable.Get)("str_activity_common_notice_content"))
+    self._remainTime:SetText(StringTable.Get("str_activity_common_notice_content"))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._SetCommonTopButton = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local closeCallback = function()
-    -- function num : 0_8_0 , upvalues : self
+function UILuckLandLevel:_SetCommonTopButton()
+  local function closeCallback()
     self:_CloseByAnimation()
   end
-
-  local helpCallBack = function()
-    -- function num : 0_8_1 , upvalues : self
+  
+  local function helpCallBack()
     self:ShowDialog("UIIntroLoader", "UILuckLandLevel")
   end
-
-  local obj = (UIWidgetHelper.SpawnObject)(self, "BackBtns", "UINewCommonTopButton")
+  
+  local obj = UIWidgetHelper.SpawnObject(self, "BackBtns", "UINewCommonTopButton")
   obj:SetData(closeCallback, helpCallBack, nil, false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._CloseByAnimation = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UILuckLandLevel:_CloseByAnimation()
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
     self:Lock("UILuckLandLevel")
-    ;
-    (self._animation):Play("uieff_UILuckLandLevel_out")
+    self._animation:Play("uieff_UILuckLandLevel_out")
     if self._nodeWidgets then
-      for _,widget in pairs(self._nodeWidgets) do
+      for _, widget in pairs(self._nodeWidgets) do
         widget:PlayAnimation(false)
       end
     end
-    do
-      if self._lineWidgets then
-        for _,widget in pairs(self._lineWidgets) do
-          widget:PlayAnimation(false)
-        end
-      end
-      do
-        YIELD(TT, 333)
-        self:CloseDialog()
-        self:UnLock("UILuckLandLevel")
+    if self._lineWidgets then
+      for _, widget in pairs(self._lineWidgets) do
+        widget:PlayAnimation(false)
       end
     end
-  end
-)
+    YIELD(TT, 333)
+    self:CloseDialog()
+    self:UnLock("UILuckLandLevel")
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._LevelDataClassify = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_component_luck_land)({ComponentID = (self._component):GetComponentCfgId()})
+function UILuckLandLevel:_LevelDataClassify()
+  local cfgs = Cfg.cfg_component_luck_land({
+    ComponentID = self._component:GetComponentCfgId()
+  })
   if cfgs then
-    for _,cfg in pairs(cfgs) do
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-      if not (self._lineDatas)[cfg.Line] then
-        (self._lineDatas)[cfg.Line] = {}
+    for _, cfg in pairs(cfgs) do
+      if not self._lineDatas[cfg.Line] then
+        self._lineDatas[cfg.Line] = {}
       end
-      ;
-      (table.insert)((self._lineDatas)[cfg.Line], cfg)
+      table.insert(self._lineDatas[cfg.Line], cfg)
     end
   end
-  do
-    for _,lineDatas in pairs(self._lineDatas) do
-      (table.sort)(lineDatas, function(a, b)
-    -- function num : 0_10_0
-    do return a.MissionID < b.MissionID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    end
+  for _, lineDatas in pairs(self._lineDatas) do
+    table.sort(lineDatas, function(a, b)
+      return a.MissionID < b.MissionID
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel.Btn1OnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UILuckLandLevel:Btn1OnClick(go)
   self:_OnClickBtn(LuckLandLineType.One)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel.Btn2OnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UILuckLandLevel:Btn2OnClick(go)
   self:_OnClickBtn(LuckLandLineType.Two)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel.Btn3OnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
+function UILuckLandLevel:Btn3OnClick(go)
   self:_OnClickBtn(LuckLandLineType.Three)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel.Btn4OnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UILuckLandLevel:Btn4OnClick(go)
   self:_OnClickBtn(LuckLandLineType.Four)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._OnClickBtn = function(self, lineType)
-  -- function num : 0_15 , upvalues : _ENV
+function UILuckLandLevel:_OnClickBtn(lineType)
   local isUnlock, timeUnlock, id, time = self:_CheckLineIsUnlock(lineType)
   if isUnlock and timeUnlock then
     self:_RefreshLevelByType(lineType, false, true)
+  elseif not timeUnlock then
+    ToastManager.ShowToast(StringTable.Get("str_luckland_road_time_locked_tips"))
   else
-    if not timeUnlock then
-      (ToastManager.ShowToast)((StringTable.Get)("str_luckland_road_time_locked_tips"))
-    else
-      local cfg = (Cfg.cfg_luckland_client_mission)[id]
-      if cfg then
-        (ToastManager.ShowToast)((StringTable.Get)("str_luckland_road_level_locked", (StringTable.Get)(cfg.Name)))
-      end
+    local cfg = Cfg.cfg_luckland_client_mission[id]
+    if cfg then
+      ToastManager.ShowToast(StringTable.Get("str_luckland_road_level_locked", StringTable.Get(cfg.Name)))
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._SwitchBtns = function(self, isClick)
-  -- function num : 0_16 , upvalues : _ENV
-  for key,value in pairs(LuckLandLineType) do
+function UILuckLandLevel:_SwitchBtns(isClick)
+  for key, value in pairs(LuckLandLineType) do
     if value ~= LuckLandLineType.None then
       local unlock, timeUnlock, id, time = self:_CheckLineIsUnlock(value)
       if isClick then
-        if value == self._curLineType and (self._choiceAnimation)[value] then
-          ((self._choiceAnimation)[value]):Play("uieff_UILuckLandLevel_Choice_in")
+        if value == self._curLineType and self._choiceAnimation[value] then
+          self._choiceAnimation[value]:Play("uieff_UILuckLandLevel_Choice_in")
         end
-        if value == self._preLineType and (self._choiceAnimation)[value] then
-          ((self._choiceAnimation)[value]):Play("uieff_UILuckLandLevel_Choice_out")
+        if value == self._preLineType and self._choiceAnimation[value] then
+          self._choiceAnimation[value]:Play("uieff_UILuckLandLevel_Choice_out")
         end
       end
       if not timeUnlock then
-        local curTime = (self._svrTimeModule):GetServerTime() * 0.001
+        local curTime = self._svrTimeModule:GetServerTime() * 0.001
         local endTime = time
         if curTime < endTime then
-          ((self._timeText)[value]):SetText((StringTable.Get)("str_luckland_road_time_locked", (UIActivityHelper.GetFormatTimerStr)(endTime - curTime)))
+          self._timeText[value]:SetText(StringTable.Get("str_luckland_road_time_locked", UIActivityHelper.GetFormatTimerStr(endTime - curTime)))
         end
       else
-        do
-          do
-            ;
-            ((self._timeText)[value]):SetText("")
-            ;
-            ((self._redGO)[value]):SetActive(false)
-            if unlock and timeUnlock then
-              if self._curLineType == value then
-                (LocalDB.SetInt)("LuckLandLevel_Unlock_Line_" .. ((GameGlobal.GetModule)(RoleModule)):GetPstId() .. value, 1)
-              end
-              local r = (LocalDB.GetInt)("LuckLandLevel_Unlock_Line_" .. ((GameGlobal.GetModule)(RoleModule)):GetPstId() .. value, 0) <= 0
-              if r then
-                ((self._redGO)[value]):SetActive(true)
-              end
-              local played = (LocalDB.GetInt)("LuckLandLevel_Unlock_Line_Lock_" .. ((GameGlobal.GetModule)(RoleModule)):GetPstId() .. value, 0)
-              if played <= 0 then
-                if (self._lockAnimation)[value] then
-                  ((self._lockAnimation)[value]):Play("uieff_Anim_UILuckLandLevel_Lock_out")
-                  ;
-                  (LocalDB.SetInt)("LuckLandLevel_Unlock_Line_Lock_" .. ((GameGlobal.GetModule)(RoleModule)):GetPstId() .. value, 1)
-                else
-                  ((self._lockGO)[value]):SetActive(false)
-                end
-              else
-                ((self._lockGO)[value]):SetActive(false)
-              end
-            else
-              ((self._lockGO)[value]):SetActive(true)
-            end
-            -- DECOMPILER ERROR at PC168: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC168: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC168: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC168: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC168: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        self._timeText[value]:SetText("")
+      end
+      self._redGO[value]:SetActive(false)
+      if unlock and timeUnlock then
+        if self._curLineType == value then
+          LocalDB.SetInt("LuckLandLevel_Unlock_Line_" .. GameGlobal.GetModule(RoleModule):GetPstId() .. value, 1)
         end
+        local r = LocalDB.GetInt("LuckLandLevel_Unlock_Line_" .. GameGlobal.GetModule(RoleModule):GetPstId() .. value, 0) <= 0
+        if r then
+          self._redGO[value]:SetActive(true)
+        end
+        local played = LocalDB.GetInt("LuckLandLevel_Unlock_Line_Lock_" .. GameGlobal.GetModule(RoleModule):GetPstId() .. value, 0)
+        if played <= 0 then
+          if self._lockAnimation[value] then
+            self._lockAnimation[value]:Play("uieff_Anim_UILuckLandLevel_Lock_out")
+            LocalDB.SetInt("LuckLandLevel_Unlock_Line_Lock_" .. GameGlobal.GetModule(RoleModule):GetPstId() .. value, 1)
+          else
+            self._lockGO[value]:SetActive(false)
+          end
+        else
+          self._lockGO[value]:SetActive(false)
+        end
+      else
+        self._lockGO[value]:SetActive(true)
       end
     end
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._CheckLineIsUnlock = function(self, lineType)
-  -- function num : 0_17
-  local lineData = (self._lineDatas)[lineType]
+function UILuckLandLevel:_CheckLineIsUnlock(lineType)
+  local lineData = self._lineDatas[lineType]
   if lineData[1] then
     return self:IsUnlock(lineData[1])
   end
   return false, false, 0, 0
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel.IsUnlock = function(self, cfg)
-  -- function num : 0_18 , upvalues : _ENV
+function UILuckLandLevel:IsUnlock(cfg)
   local preMissionUnlock = false
   local timeUnlock = false
   local needMissionID = 0
   local time = 0
   if cfg then
     needMissionID = cfg.NeedMissionId
-    time = ((GameGlobal.GetModule)(LoginModule)):GetTimeStampByTimeStr(cfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-    preMissionUnlock = needMissionID <= 0 or ((self._componentInfo).m_pass_mission_info)[needMissionID] ~= nil
+    time = GameGlobal.GetModule(LoginModule):GetTimeStampByTimeStr(cfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    preMissionUnlock = needMissionID <= 0 or self._componentInfo.m_pass_mission_info[needMissionID] ~= nil
     timeUnlock = self:_IsUnlock(cfg.UnlockTime)
   end
-  do return preMissionUnlock, timeUnlock, needMissionID, time end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return preMissionUnlock, timeUnlock, needMissionID, time
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandLevel._IsUnlock = function(self, UnlockTime)
-  -- function num : 0_19 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UILuckLandLevel:_IsUnlock(UnlockTime)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   local unlockTime = loginModule:GetTimeStampByTimeStr(UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local curTime = svrTimeModule:GetServerTime() * 0.001
-  do return unlockTime <= curTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return unlockTime <= curTime
 end
-
-

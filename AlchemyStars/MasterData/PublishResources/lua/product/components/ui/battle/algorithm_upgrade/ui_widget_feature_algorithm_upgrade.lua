@@ -1,81 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/algorithm_upgrade/ui_widget_feature_algorithm_upgrade.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureAlgorithmUpgrade", UICustomWidget)
 UIWidgetFeatureAlgorithmUpgrade = UIWidgetFeatureAlgorithmUpgrade
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureAlgorithmUpgrade.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureAlgorithmUpgrade:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlgorithmUpgrade.InitWidget = function(self)
-  -- function num : 0_1
+function UIWidgetFeatureAlgorithmUpgrade:InitWidget()
   self._imageNormalGo = self:GetGameObject("ImageNormal")
   self._imageWarningGo = self:GetGameObject("ImageWarning")
   self._imageNormal = self:GetUIComponent("Image", "ImageNormal")
   self._imageWarning = self:GetUIComponent("Image", "ImageWarning")
   self._txtOEValue = self:GetUIComponent("UILocalizationText", "OverloadEnergy")
-  ;
-  (self._imageWarningGo):SetActive(false)
+  self._imageWarningGo:SetActive(false)
   self:RegisterEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlgorithmUpgrade.RegisterEvent = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureAlgorithmUpgrade:RegisterEvent()
   self:AttachEvent(GameEventType.FeatureAUOEValueChange, self._OnFeatureAUOEValueChange)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlgorithmUpgrade.SetData = function(self, initData)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetFeatureAlgorithmUpgrade:SetData(initData)
   self._initData = initData
-  local maxValue, enterValue = (InnerGameHelperRender.GetFeatureAUOverloadEnergyInfo)()
+  local maxValue, enterValue = InnerGameHelperRender.GetFeatureAUOverloadEnergyInfo()
   self._maxValue = maxValue
   self:SetValue(enterValue)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlgorithmUpgrade.UIWidgetFeatureAlgorithmUpgradeOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  if (InnerGameHelperRender.IsPuzzleState)() then
-    return 
+function UIWidgetFeatureAlgorithmUpgrade:UIWidgetFeatureAlgorithmUpgradeOnClick(go)
+  if InnerGameHelperRender.IsPuzzleState() then
+    return
   end
-  if (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+  if InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
   self:ShowDialog("UIFeatureAlgorithmUpgradeInfo", self._initData)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlgorithmUpgrade.SetValue = function(self, oeValue)
-  -- function num : 0_5
+function UIWidgetFeatureAlgorithmUpgrade:SetValue(oeValue)
   self._curVal = oeValue
-  ;
-  (self._txtOEValue):SetText(oeValue)
+  self._txtOEValue:SetText(oeValue)
   local isNormal = oeValue < self._maxValue
-  ;
-  (self._imageNormalGo):SetActive(isNormal)
-  ;
-  (self._imageWarningGo):SetActive(not isNormal)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._imageNormalGo:SetActive(isNormal)
+  self._imageWarningGo:SetActive(not isNormal)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureAlgorithmUpgrade._OnFeatureAUOEValueChange = function(self, curValue)
-  -- function num : 0_6
+function UIWidgetFeatureAlgorithmUpgrade:_OnFeatureAUOEValueChange(curValue)
   self:SetValue(curValue)
 end
-
-

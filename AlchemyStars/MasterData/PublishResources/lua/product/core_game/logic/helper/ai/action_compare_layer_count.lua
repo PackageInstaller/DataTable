@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_compare_layer_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCompareLayerCount", AINewNode)
 ActionCompareLayerCount = ActionCompareLayerCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCompareLayerCount.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCompareLayerCount:OnUpdate()
   local buffID = self:GetLogicData(-1)
   local compareFlag = self:GetLogicData(-2)
   local count = self:GetLogicData(-3)
   local layerCount = 0
-  local cBuff = (self.m_entityOwn):BuffComponent()
+  local cBuff = self.m_entityOwn:BuffComponent()
   if cBuff then
     local instanbce = cBuff:GetBuffById(buffID)
     if instanbce then
@@ -22,33 +15,23 @@ ActionCompareLayerCount.OnUpdate = function(self)
       layerCount = cBuff:GetBuffValue(layerName) or 0
     end
   end
-  do
-    local satisfied = false
-    if layerCount ~= count then
-      satisfied = compareFlag ~= ComparisonOperator.EQ
-      if layerCount == count then
-        satisfied = compareFlag ~= ComparisonOperator.NE
-        if count >= layerCount then
-          satisfied = compareFlag ~= ComparisonOperator.GT
-          if count > layerCount then
-            satisfied = compareFlag ~= ComparisonOperator.GE
-            if layerCount >= count then
-              satisfied = compareFlag ~= ComparisonOperator.LT
-              if layerCount > count then
-                satisfied = compareFlag ~= ComparisonOperator.LE
-                if satisfied then
-                  return AINewNodeStatus.Success
-                else
-                  return AINewNodeStatus.Failure
-                end
-                -- DECOMPILER ERROR: 14 unprocessed JMP targets
-              end
-            end
-          end
-        end
-      end
-    end
+  local satisfied = false
+  if compareFlag == ComparisonOperator.EQ then
+    satisfied = layerCount == count
+  elseif compareFlag == ComparisonOperator.NE then
+    satisfied = layerCount ~= count
+  elseif compareFlag == ComparisonOperator.GT then
+    satisfied = count < layerCount
+  elseif compareFlag == ComparisonOperator.GE then
+    satisfied = count <= layerCount
+  elseif compareFlag == ComparisonOperator.LT then
+    satisfied = count > layerCount
+  elseif compareFlag == ComparisonOperator.LE then
+    satisfied = count >= layerCount
+  end
+  if satisfied then
+    return AINewNodeStatus.Success
+  else
+    return AINewNodeStatus.Failure
   end
 end
-
-

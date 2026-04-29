@@ -1,73 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_effect_by_under_grid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterEffectByUnderGridInstruction", BaseInstruction)
 PlayCasterEffectByUnderGridInstruction = PlayCasterEffectByUnderGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterEffectByUnderGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayCasterEffectByUnderGridInstruction:Constructor(paramList)
   self._redEffectID = paramList.redEffectID
   self._yellowEffectID = paramList.yellowEffectID
   self._blueEffectID = paramList.blueEffectID
   self._greenEffectID = paramList.greenEffectID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterEffectByUnderGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterEffectByUnderGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local e = casterEntity
-  do
-    if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() then
-      local cSuperEntity = casterEntity:SuperEntityComponent()
-      e = cSuperEntity:GetSuperEntity()
-    end
-    local gridPos = e:GetRenderGridPosition()
-    self._world = e:GetOwnerWorld()
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local pieceType = (utilDataSvc:GetPieceType(gridPos))
-    local effectID = nil
-    if pieceType == PieceType.Blue then
-      effectID = self._blueEffectID
-    else
-      if pieceType == PieceType.Red then
-        effectID = self._redEffectID
-      else
-        if pieceType == PieceType.Green then
-          effectID = self._greenEffectID
-        else
-          if pieceType == PieceType.Yellow then
-            effectID = self._yellowEffectID
-          end
-        end
-      end
-    end
-    local effect = ((self._world):GetService("Effect")):CreateEffect(self.effectID, e)
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() then
+    local cSuperEntity = casterEntity:SuperEntityComponent()
+    e = cSuperEntity:GetSuperEntity()
   end
+  local gridPos = e:GetRenderGridPosition()
+  self._world = e:GetOwnerWorld()
+  local utilDataSvc = self._world:GetService("UtilData")
+  local pieceType = utilDataSvc:GetPieceType(gridPos)
+  local effectID
+  if pieceType == PieceType.Blue then
+    effectID = self._blueEffectID
+  elseif pieceType == PieceType.Red then
+    effectID = self._redEffectID
+  elseif pieceType == PieceType.Green then
+    effectID = self._greenEffectID
+  elseif pieceType == PieceType.Yellow then
+    effectID = self._yellowEffectID
+  end
+  local effect = self._world:GetService("Effect"):CreateEffect(self.effectID, e)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterEffectByUnderGridInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCasterEffectByUnderGridInstruction:GetCacheResource()
   local t = {}
   if self._redEffectID and self._redEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._redEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._redEffectID].ResPath,
+      1
+    })
   end
-  if self._blueEffectID and self._blueEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._blueEffectID]).ResPath, 1})
+  if self._blueEffectID and 0 < self._blueEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._blueEffectID].ResPath,
+      1
+    })
   end
-  if self._yellowEffectID and self._yellowEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._yellowEffectID]).ResPath, 1})
+  if self._yellowEffectID and 0 < self._yellowEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._yellowEffectID].ResPath,
+      1
+    })
   end
-  if self._greenEffectID and self._greenEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._greenEffectID]).ResPath, 1})
+  if self._greenEffectID and 0 < self._greenEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._greenEffectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

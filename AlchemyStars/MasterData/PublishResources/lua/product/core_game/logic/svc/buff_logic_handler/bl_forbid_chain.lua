@@ -1,44 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_forbid_chain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetForbidChain", BuffLogicBase)
 BuffLogicSetForbidChain = BuffLogicSetForbidChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetForbidChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetForbidChain:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetForbidChain.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetForbidChain:DoLogic()
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
-  local entityService = (self._world):GetService("LogicEntity")
+  local entityService = self._world:GetService("LogicEntity")
   buffComponent:SetBuffValue("ForbidChainFlag", 1)
   return true
 end
 
 _class("BuffLogicResetForbidChain", BuffLogicBase)
 BuffLogicResetForbidChain = BuffLogicResetForbidChain
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetForbidChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicSetForbidChain:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetForbidChain.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetForbidChain:DoLogic()
+  local e = self._buffInstance:Entity()
   local buffComponent = e:BuffComponent()
-  local entityService = (self._world):GetService("LogicEntity")
+  local entityService = self._world:GetService("LogicEntity")
   buffComponent:SetBuffValue("ForbidChainFlag", nil)
   return true
 end
-
-

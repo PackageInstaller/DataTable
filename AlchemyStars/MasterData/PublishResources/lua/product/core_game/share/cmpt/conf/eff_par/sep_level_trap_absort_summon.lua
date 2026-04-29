@@ -1,67 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_level_trap_absort_summon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_damage_effect_param")
 _class("SkillEffectParamLevelTrapAbsortSummon", SkillEffectParamBase)
 SkillEffectParamLevelTrapAbsortSummon = SkillEffectParamLevelTrapAbsortSummon
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamLevelTrapAbsortSummon.Constructor = function(self, t)
-  -- function num : 0_0
-  if not t.checkTrapIDs then
-    self._checkTrapIDs = {}
-    if not t.modelLevels then
-      self._modelLevels = {}
-      self._transferDisabled = t.transferDisabled == 1
-      -- DECOMPILER ERROR: 1 unprocessed JMP targets
-    end
-  end
+function SkillEffectParamLevelTrapAbsortSummon:Constructor(t)
+  self._checkTrapIDs = t.checkTrapIDs or {}
+  self._modelLevels = t.modelLevels or {}
+  self._transferDisabled = t.transferDisabled == 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapAbsortSummon.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamLevelTrapAbsortSummon:GetEffectType()
   return SkillEffectType.LevelTrapAbsortSummon
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapAbsortSummon.GetCheckTrapIDs = function(self)
-  -- function num : 0_2
+function SkillEffectParamLevelTrapAbsortSummon:GetCheckTrapIDs()
   return self._checkTrapIDs
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapAbsortSummon.GetModelLevels = function(self)
-  -- function num : 0_3
+function SkillEffectParamLevelTrapAbsortSummon:GetModelLevels()
   return self._modelLevels
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapAbsortSummon.IsTransferDisabled = function(self)
-  -- function num : 0_4
+function SkillEffectParamLevelTrapAbsortSummon:IsTransferDisabled()
   return self._transferDisabled
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamLevelTrapAbsortSummon.GetTrapModelLevel = function(self, trapID)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillEffectParamLevelTrapAbsortSummon:GetTrapModelLevel(trapID)
   if self._modelLevels then
-    for level,id in ipairs(self._modelLevels) do
+    for level, id in ipairs(self._modelLevels) do
       if trapID == id then
         return level
       end
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
-
-

@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_campaign_gift_pack/ui_activity_gift_pack_get_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityGiftPackGetItem", UICustomWidget)
 UIActivityGiftPackGetItem = UIActivityGiftPackGetItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityGiftPackGetItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityGiftPackGetItem:OnShow()
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackGetItem.Flush = function(self, award)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityGiftPackGetItem:Flush(award)
   if not award then
-    (Log.fatal)("### award is nil.")
-    return 
+    Log.fatal("### award is nil.")
+    return
   end
-  ;
-  (self._imgIcon):LoadImage(award:GetIcon())
-  ;
-  (self._txtName):SetText(award:GetName())
-  ;
-  (self._txtCount):SetText("x" .. award:GetCount())
+  self._imgIcon:LoadImage(award:GetIcon())
+  self._txtName:SetText(award:GetName())
+  self._txtCount:SetText("x" .. award:GetCount())
   self.ra = RoleAsset:New()
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.ra).assetid = award:GetTemplateId()
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.ra).count = award:GetCount()
+  self.ra.assetid = award:GetTemplateId()
+  self.ra.count = award:GetCount()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackGetItem.BgOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  if RoleAssetID.RoleAssetPetSkinBegin <= (self.ra).assetid and (self.ra).assetid <= RoleAssetID.RoleAssetPetSkinEnd then
-    self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_TIPS, (self.ra).assetid - 4000000)
+function UIActivityGiftPackGetItem:BgOnClick(go)
+  if self.ra.assetid >= RoleAssetID.RoleAssetPetSkinBegin and self.ra.assetid <= RoleAssetID.RoleAssetPetSkinEnd then
+    self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUOT_TIPS, self.ra.assetid - 4000000)
   else
     self:ShowDialog("UIItemTips", self.ra, go, "UIActivityGiftPackDetail")
   end
 end
-
-

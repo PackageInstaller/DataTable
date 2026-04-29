@@ -1,71 +1,128 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/player_info/cfg_player_head_bg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, Icon = 2}
 local config = {
-{1, "head_bg_color_1"}
-, 
-{2, "head_bg_color_2"}
-, 
-{3, "head_bg_color_3"}
-, 
-{4, "head_bg_color_4"}
-, 
-{5, "head_bg_color_5"}
-, 
-{6, "head_bg_color_6"}
-, 
-{7, "head_bg_color_7"}
-, 
-{8, "head_bg_color_8"}
-, 
-{9, "head_bg_color_9"}
-, 
-{10, "head_bg_color_10"}
-, 
-{11, "head_bg_color_11"}
-, 
-{12, "head_bg_color_12"}
-, 
-{13, "head_bg_color_13"}
-, 
-{14, "head_bg_color_14"}
-, 
-{15, "head_bg_color_15"}
-, 
-{16, "head_bg_color_16"}
-, 
-{17, "head_bg_color_17"}
-, 
-{18, "head_bg_color_18"}
-, 
-{19, "head_bg_color_19"}
-, 
-{20, "head_bg_color_20"}
-, 
-{21, "head_bg_color_21"}
-, 
-{22, "head_bg_color_22"}
-, 
-{23, "head_bg_color_23"}
-, 
-{24, "head_bg_color_24"}
-, 
-{25, "head_bg_color_25"}
-, 
-{26, "head_bg_color_26"}
-, 
-{27, "head_bg_color_27"}
-, 
-{28, "head_bg_color_28"}
-, 
-{29, "head_bg_color_29"}
-, 
-{30, "head_bg_color_30"}
-, 
-{31, "head_bg_color_31"}
+  {
+    1,
+    "head_bg_color_1"
+  },
+  {
+    2,
+    "head_bg_color_2"
+  },
+  {
+    3,
+    "head_bg_color_3"
+  },
+  {
+    4,
+    "head_bg_color_4"
+  },
+  {
+    5,
+    "head_bg_color_5"
+  },
+  {
+    6,
+    "head_bg_color_6"
+  },
+  {
+    7,
+    "head_bg_color_7"
+  },
+  {
+    8,
+    "head_bg_color_8"
+  },
+  {
+    9,
+    "head_bg_color_9"
+  },
+  {
+    10,
+    "head_bg_color_10"
+  },
+  {
+    11,
+    "head_bg_color_11"
+  },
+  {
+    12,
+    "head_bg_color_12"
+  },
+  {
+    13,
+    "head_bg_color_13"
+  },
+  {
+    14,
+    "head_bg_color_14"
+  },
+  {
+    15,
+    "head_bg_color_15"
+  },
+  {
+    16,
+    "head_bg_color_16"
+  },
+  {
+    17,
+    "head_bg_color_17"
+  },
+  {
+    18,
+    "head_bg_color_18"
+  },
+  {
+    19,
+    "head_bg_color_19"
+  },
+  {
+    20,
+    "head_bg_color_20"
+  },
+  {
+    21,
+    "head_bg_color_21"
+  },
+  {
+    22,
+    "head_bg_color_22"
+  },
+  {
+    23,
+    "head_bg_color_23"
+  },
+  {
+    24,
+    "head_bg_color_24"
+  },
+  {
+    25,
+    "head_bg_color_25"
+  },
+  {
+    26,
+    "head_bg_color_26"
+  },
+  {
+    27,
+    "head_bg_color_27"
+  },
+  {
+    28,
+    "head_bg_color_28"
+  },
+  {
+    29,
+    "head_bg_color_29"
+  },
+  {
+    30,
+    "head_bg_color_30"
+  },
+  {
+    31,
+    "head_bg_color_31"
+  }
 }
 return config, "ID", key
-

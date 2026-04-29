@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_activity_plot_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityPlotEnter", UIController)
 UIActivityPlotEnter = UIActivityPlotEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPlotEnter.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIActivityPlotEnter:OnShow(uiParam)
   local titleId = uiParam[1]
   local titleName = uiParam[2]
   self._story = uiParam[3]
@@ -19,43 +12,26 @@ UIActivityPlotEnter.OnShow = function(self, uiParam)
   txtStageName:RefreshText(titleName or "")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPlotEnter.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityPlotEnter:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPlotEnter.EnterPlot = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityPlotEnter:EnterPlot()
   if not self._story then
-    (Log.error)("### [UIActivityPlotEnter] no story")
-    return 
+    Log.error("### [UIActivityPlotEnter] no story")
+    return
   end
   self:ShowDialog("UIStoryController", self._story, self._callback)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPlotEnter.imgBGOnClick = function(self, go)
-  -- function num : 0_3
+function UIActivityPlotEnter:imgBGOnClick(go)
   self:EnterPlot()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPlotEnter.btnEnterOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityPlotEnter:btnEnterOnClick(go)
   self:EnterPlot()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPlotEnter.bgOnClick = function(self, go)
-  -- function num : 0_5
+function UIActivityPlotEnter:bgOnClick(go)
   self:CloseDialog()
 end
-
-

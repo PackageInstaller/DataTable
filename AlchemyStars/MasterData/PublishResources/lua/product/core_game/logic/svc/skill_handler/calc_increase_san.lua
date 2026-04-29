@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_increase_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 SkillEffectIncreaseSanMode = {FixVal = 1, LossPercent = 2}
 _enum("SkillEffectIncreaseSanMode", SkillEffectIncreaseSanMode)
 _class("SkillEffectCalc_IncreaseSan", SkillEffectCalc_Base)
 SkillEffectCalc_IncreaseSan = SkillEffectCalc_IncreaseSan
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_IncreaseSan.CalculateOnSingleTarget = function(self, calcParam, targetEntityID)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_IncreaseSan:CalculateOnSingleTarget(calcParam, targetEntityID)
   if targetEntityID <= 0 then
-    return 
+    return
   end
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   if not lsvcFeature:HasFeatureType(FeatureType.Sanity) then
-    return 
+    return
   end
   local minVal = lsvcFeature:GetSanMinValue()
   local maxVal = lsvcFeature:GetSanMaxValue()
@@ -25,7 +18,7 @@ SkillEffectCalc_IncreaseSan.CalculateOnSingleTarget = function(self, calcParam, 
   local val = self:_GetIncreaseSanVal(param)
   local currentVal = lsvcFeature:GetSanValue()
   local finalVal = currentVal + val
-  if finalVal < minVal then
+  if minVal > finalVal then
     finalVal = minVal
   end
   if maxVal < finalVal then
@@ -35,27 +28,18 @@ SkillEffectCalc_IncreaseSan.CalculateOnSingleTarget = function(self, calcParam, 
   return SkillEffectResult_IncreaseSan:New(delta)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_IncreaseSan._GetIncreaseSanVal = function(self, param)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_IncreaseSan:_GetIncreaseSanVal(param)
   local mode = param:GetMode()
-  local lsvcFeature = (self._world):GetService("FeatureLogic")
+  local lsvcFeature = self._world:GetService("FeatureLogic")
   local val = 0
   if mode == SkillEffectIncreaseSanMode.FixVal then
     val = param:GetSanValue()
-  else
-    if mode == SkillEffectIncreaseSanMode.LossPercent then
-      local currentVal = lsvcFeature:GetSanValue()
-      local minVal = lsvcFeature:GetSanMinValue()
-      local maxVal = lsvcFeature:GetSanMaxValue()
-      val = param:GetSanValue() * (maxVal - currentVal)
-      val = (math.floor)(val + 0.5)
-    end
+  elseif mode == SkillEffectIncreaseSanMode.LossPercent then
+    local currentVal = lsvcFeature:GetSanValue()
+    local minVal = lsvcFeature:GetSanMinValue()
+    local maxVal = lsvcFeature:GetSanMaxValue()
+    val = param:GetSanValue() * (maxVal - currentVal)
+    val = math.floor(val + 0.5)
   end
-  do
-    return val
-  end
+  return val
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_train_hitback_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseTrainHitBackParam", SkillPhaseParamBase)
 SkillPhaseTrainHitBackParam = SkillPhaseTrainHitBackParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseTrainHitBackParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseTrainHitBackParam:Constructor(t)
   self._hitAnimationName = t.hitAnimationName
   self._hitFirstEffectID = t.hitFirstEffectID
   self._hitRepeatEffectID = t.hitRepeatEffectID
@@ -21,146 +14,96 @@ SkillPhaseTrainHitBackParam.Constructor = function(self, t)
   self._hideAnimationName = t.hideAnimationName
   self._showAnimationName = t.showAnimationName
   self._trainEffectID = t.trainEffectID
-  self._boardCenterPos = Vector2((t.boardCenterPos)[1], (t.boardCenterPos)[2])
+  self._boardCenterPos = Vector2(t.boardCenterPos[1], t.boardCenterPos[2])
   self._trainEffectDelay = t.trainEffectDelay
   self._finishDelayTime = t.finishDelayTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseTrainHitBackParam:GetCacheTable()
   local t = {}
-  t[#t + 1] = {((Cfg.cfg_effect)[self._hitFirstEffectID]).ResPath, 1}
-  t[#t + 1] = {((Cfg.cfg_effect)[self._hitRepeatEffectID]).ResPath, 1}
-  t[#t + 1] = {((Cfg.cfg_effect)[self._trainEffectID]).ResPath, 1}
+  t[#t + 1] = {
+    Cfg.cfg_effect[self._hitFirstEffectID].ResPath,
+    1
+  }
+  t[#t + 1] = {
+    Cfg.cfg_effect[self._hitRepeatEffectID].ResPath,
+    1
+  }
+  t[#t + 1] = {
+    Cfg.cfg_effect[self._trainEffectID].ResPath,
+    1
+  }
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseTrainHitBackParam:GetPhaseType()
   return SkillViewPhaseType.TrainHitBack
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetHitRepeatEffectIntervalTime = function(self)
-  -- function num : 0_3
+function SkillPhaseTrainHitBackParam:GetHitRepeatEffectIntervalTime()
   return self._hitRepeatEffectIntervalTime
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetHitAnimationName = function(self)
-  -- function num : 0_4
+function SkillPhaseTrainHitBackParam:GetHitAnimationName()
   return self._hitAnimation
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetHitFirstEffectID = function(self)
-  -- function num : 0_5
+function SkillPhaseTrainHitBackParam:GetHitFirstEffectID()
   return self._hitFirstEffectID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetHitRepeatEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseTrainHitBackParam:GetHitRepeatEffectID()
   return self._hitRepeatEffectID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetHideEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseTrainHitBackParam:GetHideEffectID()
   return self._hideEffectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetShowEffectID = function(self)
-  -- function num : 0_8
+function SkillPhaseTrainHitBackParam:GetShowEffectID()
   return self._showEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetHideAnimationName = function(self)
-  -- function num : 0_9
+function SkillPhaseTrainHitBackParam:GetHideAnimationName()
   return self._hideAnimationName
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetShowAnimationName = function(self)
-  -- function num : 0_10
+function SkillPhaseTrainHitBackParam:GetShowAnimationName()
   return self._showAnimationName
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetTrainEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseTrainHitBackParam:GetTrainEffectID()
   return self._trainEffectID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetBoardCenterPos = function(self)
-  -- function num : 0_12
+function SkillPhaseTrainHitBackParam:GetBoardCenterPos()
   return self._boardCenterPos
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetHideParam = function(self, hideIndex)
-  -- function num : 0_13
-  return (self._hideList)[hideIndex]
+function SkillPhaseTrainHitBackParam:GetHideParam(hideIndex)
+  return self._hideList[hideIndex]
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetShowParam = function(self, showIndex)
-  -- function num : 0_14
-  return (self._showList)[showIndex]
+function SkillPhaseTrainHitBackParam:GetShowParam(showIndex)
+  return self._showList[showIndex]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetMultiMonsterHitDelayTime = function(self)
-  -- function num : 0_15
+function SkillPhaseTrainHitBackParam:GetMultiMonsterHitDelayTime()
   return self._multiMonsterHitDelayTime
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetCasterInTrainHigh = function(self)
-  -- function num : 0_16
+function SkillPhaseTrainHitBackParam:GetCasterInTrainHigh()
   return self._casterInTrainHigh
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetHitBackSpeed = function(self)
-  -- function num : 0_17
+function SkillPhaseTrainHitBackParam:GetHitBackSpeed()
   return self._hitBackSpeed
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetTrainEffectDelay = function(self)
-  -- function num : 0_18
+function SkillPhaseTrainHitBackParam:GetTrainEffectDelay()
   return self._trainEffectDelay
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseTrainHitBackParam.GetFinishDelayTime = function(self)
-  -- function num : 0_19
+function SkillPhaseTrainHitBackParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
-
-

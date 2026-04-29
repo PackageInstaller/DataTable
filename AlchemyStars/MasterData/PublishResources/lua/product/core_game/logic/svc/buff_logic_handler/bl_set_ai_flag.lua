@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_ai_flag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetAIFlag", BuffLogicBase)
 BuffLogicSetAIFlag = BuffLogicSetAIFlag
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetAIFlag.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetAIFlag:Constructor(buffInstance, logicParam)
   self._flag = logicParam.flag
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetAIFlag.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetAIFlag:DoLogic()
+  local e = self._buffInstance:Entity()
   if e:HasAI() then
     local aiComponent = e:AI()
     aiComponent:SetRuntimeData(self._flag, true)
@@ -26,22 +16,15 @@ end
 
 _class("BuffLogicClearAIFlag", BuffLogicBase)
 BuffLogicClearAIFlag = BuffLogicClearAIFlag
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicClearAIFlag.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicClearAIFlag:Constructor(buffInstance, logicParam)
   self._flag = logicParam.flag
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicClearAIFlag.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
+function BuffLogicClearAIFlag:DoLogic()
+  local e = self._buffInstance:Entity()
   if e:HasAI() then
     local aiComponent = e:AI()
     aiComponent:SetRuntimeData(self._flag, false)
   end
 end
-
-

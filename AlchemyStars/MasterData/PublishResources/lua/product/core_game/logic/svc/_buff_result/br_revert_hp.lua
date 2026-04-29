@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_revert_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultSaveRevertHP", BuffResultBase)
 BuffResultSaveRevertHP = BuffResultSaveRevertHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultSaveRevertHP.Constructor = function(self, savedHP)
-  -- function num : 0_0
+function BuffResultSaveRevertHP:Constructor(savedHP)
   self._savedHP = savedHP
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultSaveRevertHP.GetSavedHP = function(self)
-  -- function num : 0_1
+function BuffResultSaveRevertHP:GetSavedHP()
   return self._savedHP
 end
 
 _class("BuffResultDoRevertHP", BuffResultBase)
 BuffResultDoRevertHP = BuffResultDoRevertHP
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultDoRevertHP.Constructor = function(self, damageInfo)
-  -- function num : 0_2
+function BuffResultDoRevertHP:Constructor(damageInfo)
   self._damageInfo = damageInfo
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultDoRevertHP.GetDamageInfo = function(self)
-  -- function num : 0_3
+function BuffResultDoRevertHP:GetDamageInfo()
   return self._damageInfo
 end
-
-

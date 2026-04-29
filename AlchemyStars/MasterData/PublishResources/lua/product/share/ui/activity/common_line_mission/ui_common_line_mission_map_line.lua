@@ -1,41 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/common_line_mission/ui_common_line_mission_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonLineMissionMapLine", UICustomWidget)
 UICommonLineMissionMapLine = UICommonLineMissionMapLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonLineMissionMapLine.OnShow = function(self)
-  -- function num : 0_0
+function UICommonLineMissionMapLine:OnShow()
   self._rect = self:GetUIComponent("RectTransform", "shape")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapLine.OnHide = function(self)
-  -- function num : 0_1
+function UICommonLineMissionMapLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonLineMissionMapLine.Flush = function(self, from, to)
-  -- function num : 0_2 , upvalues : _ENV
-  local dis = (Vector2.Distance)(from, to)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = Vector2(dis, ((self._rect).sizeDelta).y)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = from
+function UICommonLineMissionMapLine:Flush(from, to)
+  local dis = Vector2.Distance(from, to)
+  self._rect.sizeDelta = Vector2(dis, self._rect.sizeDelta.y)
+  self._rect.anchoredPosition = from
   local v = to - from
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._rect.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
-
-

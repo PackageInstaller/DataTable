@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_voice_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyVoiceItem", UICustomWidget)
 UIPetIntimacyVoiceItem = UIPetIntimacyVoiceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyVoiceItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetIntimacyVoiceItem:OnShow(uiParams)
   self._titleLabel = self:GetUIComponent("UILocalizationText", "Title")
   self._name1Label = self:GetUIComponent("UILocalizationText", "Name1")
   self._name2Label = self:GetUIComponent("UILocalizationText", "Name2")
@@ -18,114 +11,79 @@ UIPetIntimacyVoiceItem.OnShow = function(self, uiParams)
   self._titleGo = self:GetGameObject("Title")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoiceItem.Refresh = function(self, intimacyMainController, intimacyVoice, petData, data)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetIntimacyVoiceItem:Refresh(intimacyMainController, intimacyVoice, petData, data)
   self._intimacyMainController = intimacyMainController
   self._intimacyVoice = intimacyVoice
   self._data = data
   self._petData = petData
   self._isOpen = true
   self.condition = nil
-  if (self._data).isSkin then
-    self._isOpen = (self._data).skinUnLock
+  if self._data.isSkin then
+    self._isOpen = self._data.skinUnLock
   end
-  if (self._data).condition and (self._data).condition ~= -1 then
+  if self._data.condition and self._data.condition ~= -1 then
     if self._isOpen then
-      self._isOpen = (self._data).unLock
+      self._isOpen = self._data.unLock
     end
-    self.condition = (Cfg.pet_intimacy_condition)[(self._data).condition]
+    self.condition = Cfg.pet_intimacy_condition[self._data.condition]
   end
   self:RefreshVoiceStatus()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoiceItem.RefreshVoiceStatus = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIPetIntimacyVoiceItem:RefreshVoiceStatus()
   if self._isOpen then
-    (self._name1Label).text = (self._data).index .. "." .. (self._data).name
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._name2Label).text = (self._data).index .. "." .. (self._data).name
-    ;
-    (self._titleGo):SetActive(false)
-    ;
-    (self._name2Go):SetActive(true)
-    if (self._data).isPlay then
-      (self._voiceUnPlayGo):SetActive(false)
-      ;
-      (self._voicePlayGo):SetActive(true)
+    self._name1Label.text = self._data.index .. "." .. self._data.name
+    self._name2Label.text = self._data.index .. "." .. self._data.name
+    self._titleGo:SetActive(false)
+    self._name2Go:SetActive(true)
+    if self._data.isPlay then
+      self._voiceUnPlayGo:SetActive(false)
+      self._voicePlayGo:SetActive(true)
     else
-      ;
-      (self._voiceUnPlayGo):SetActive(true)
-      ;
-      (self._voicePlayGo):SetActive(false)
+      self._voiceUnPlayGo:SetActive(true)
+      self._voicePlayGo:SetActive(false)
     end
   else
-    if (self._data).isSkin then
-      if (self._data).skinUnLock then
-        (self._titleLabel):SetText((StringTable.Get)((self.condition).Des))
+    if self._data.isSkin then
+      if self._data.skinUnLock then
+        self._titleLabel:SetText(StringTable.Get(self.condition.Des))
       else
-        local skinid = (self._data).skinID
-        local cfg = (Cfg.cfg_pet_skin)[skinid]
+        local skinid = self._data.skinID
+        local cfg = Cfg.cfg_pet_skin[skinid]
         local name = cfg.SkinName
-        if (self._data).unLock then
-          (self._titleLabel):SetText((StringTable.Get)("str_affinity_only_skin_unlock_des", (StringTable.Get)(name)))
+        if self._data.unLock then
+          self._titleLabel:SetText(StringTable.Get("str_affinity_only_skin_unlock_des", StringTable.Get(name)))
         else
-          local addCond = (self.condition).AddDes
-          local _tex = nil
+          local addCond = self.condition.AddDes
+          local _tex
           if addCond then
-            _tex = (StringTable.Get)(addCond, (StringTable.Get)(name))
-            ;
-            (self._titleLabel):SetText(_tex)
+            _tex = StringTable.Get(addCond, StringTable.Get(name))
+            self._titleLabel:SetText(_tex)
           else
-            ;
-            (self._titleLabel):SetText((StringTable.Get)("str_affinity_only_skin_unlock_des", (StringTable.Get)(name)))
+            self._titleLabel:SetText(StringTable.Get("str_affinity_only_skin_unlock_des", StringTable.Get(name)))
           end
         end
       end
     else
-      do
-        ;
-        (self._titleLabel):SetText((StringTable.Get)((self.condition).Des))
-        ;
-        (self._voiceUnPlayGo):SetActive(true)
-        ;
-        (self._voicePlayGo):SetActive(false)
-        ;
-        (self._name2Go):SetActive(false)
-        ;
-        (self._titleGo):SetActive(true)
-      end
+      self._titleLabel:SetText(StringTable.Get(self.condition.Des))
     end
+    self._voiceUnPlayGo:SetActive(true)
+    self._voicePlayGo:SetActive(false)
+    self._name2Go:SetActive(false)
+    self._titleGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoiceItem.BtnVoicePlayOnClick = function(self, go)
-  -- function num : 0_3
+function UIPetIntimacyVoiceItem:BtnVoicePlayOnClick(go)
   if not self._isOpen then
-    return 
+    return
   end
-  ;
-  (self._intimacyVoice):PlayVoice(self._data, self)
+  self._intimacyVoice:PlayVoice(self._data, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyVoiceItem.BtnVoiceUnPlayOnClick = function(self, go)
-  -- function num : 0_4
+function UIPetIntimacyVoiceItem:BtnVoiceUnPlayOnClick(go)
   if not self._isOpen then
-    return 
+    return
   end
-  ;
-  (self._intimacyVoice):StopPlayVoice()
+  self._intimacyVoice:StopPlayVoice()
 end
-
-

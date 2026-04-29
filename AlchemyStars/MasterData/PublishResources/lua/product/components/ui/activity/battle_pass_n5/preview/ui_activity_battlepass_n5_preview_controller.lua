@@ -1,81 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/battle_pass_n5/preview/ui_activity_battlepass_n5_preview_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityBattlePassN5PreviewController", UIController)
 UIActivityBattlePassN5PreviewController = UIActivityBattlePassN5PreviewController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBattlePassN5PreviewController._GetLVRewardComponent = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityBattlePassN5PreviewController:_GetLVRewardComponent()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
-  return (self._campaign):GetComponent(cmptId)
+  return self._campaign:GetComponent(cmptId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController._GetLVRewardComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityBattlePassN5PreviewController:_GetLVRewardComponentInfo()
   local cmptId = ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD
-  return (self._campaign):GetComponentInfo(cmptId)
+  return self._campaign:GetComponentInfo(cmptId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController._GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityBattlePassN5PreviewController:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIActivityBattlePassN5PreviewController:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_LV_REWARD, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_1, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_2, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_QUEST_3, ECampaignBattlePassComponentID.ECAMPAIGN_BATTLEPASS_BUY_GIFT)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityBattlePassN5PreviewController:OnShow(uiParams)
   self:_AttachEvents()
   self._isOpen = true
   self:_GetComponents()
-  ;
-  (UIActivityBattlePassHelper.SetSpecialImg)(self._campaign, self:GetGameObject("imgRoot"), self:GetUIComponent("RawImageLoader", "img1"), self:GetName())
-  ;
-  (UIActivityBattlePassHelper.SetSpecialImg)(self._campaign, self:GetGameObject("imgRoot2"), self:GetUIComponent("RawImageLoader", "img2"), self:GetName())
+  UIActivityBattlePassHelper.SetSpecialImg(self._campaign, self:GetGameObject("imgRoot"), self:GetUIComponent("RawImageLoader", "img1"), self:GetName())
+  UIActivityBattlePassHelper.SetSpecialImg(self._campaign, self:GetGameObject("imgRoot2"), self:GetUIComponent("RawImageLoader", "img2"), self:GetName())
   self:_SetTitle()
   self:_SetRewards()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController.OnHide = function(self)
-  -- function num : 0_5
+function UIActivityBattlePassN5PreviewController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController._SetTitle = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityBattlePassN5PreviewController:_SetTitle()
   local txt = self:GetUIComponent("UILocalizationText", "title2")
-  local strId = (UIActivityBattlePassHelper.GetStrIdInCampaign)(self._campaign, "str_activity_battlepass_n5_main_title_2")
-  txt:SetText((StringTable.Get)(strId))
+  local strId = UIActivityBattlePassHelper.GetStrIdInCampaign(self._campaign, "str_activity_battlepass_n5_main_title_2")
+  txt:SetText(StringTable.Get(strId))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController._SetRewards = function(self)
-  -- function num : 0_7
+function UIActivityBattlePassN5PreviewController:_SetRewards()
   local component = self:_GetLVRewardComponent()
   local rewards = component:GetSortAdvancedRewards()
   self:_SpawnRewards(rewards, "rewardElite")
@@ -83,59 +52,37 @@ UIActivityBattlePassN5PreviewController._SetRewards = function(self)
   self:_SpawnRewards(rewards, "rewardStandard")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController._SpawnRewards = function(self, rewards, sopName)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityBattlePassN5PreviewController:_SpawnRewards(rewards, sopName)
   local sop = self:GetUIComponent("UISelectObjectPath", sopName)
-  sop:SpawnObjects("UIActivityBattlePassN5ItemIcon", (table.count)(rewards))
+  sop:SpawnObjects("UIActivityBattlePassN5ItemIcon", table.count(rewards))
   local items = sop:GetAllSpawnList()
-  for i,v in ipairs(items) do
-    v:SetData(R12_PC23, rewards[i], function(matid, pos)
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "itemInfoPool", matid, pos)
-  end
-, UIItemScale.Level3)
+  for i, v in ipairs(items) do
+    v:SetData(i, rewards[i], function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "itemInfoPool", matid, pos)
+    end, UIItemScale.Level3)
     local count = 3
-    v:PlayAnimationInSequence((math.floor)((i - 1) / count))
+    v:PlayAnimationInSequence(math.floor((i - 1) / count))
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController.CloseBtnOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.info)("UIActivityBattlePassN5PreviewController:CloseBtnOnClick")
+function UIActivityBattlePassN5PreviewController:CloseBtnOnClick(go)
+  Log.info("UIActivityBattlePassN5PreviewController:CloseBtnOnClick")
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController.nullOnClick = function(self, go)
-  -- function num : 0_10
+function UIActivityBattlePassN5PreviewController:nullOnClick(go)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController._AttachEvents = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityBattlePassN5PreviewController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController._DetachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIActivityBattlePassN5PreviewController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBattlePassN5PreviewController._CheckActivityClose = function(self, id)
-  -- function num : 0_13 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityBattlePassN5PreviewController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
-
-

@@ -1,93 +1,92 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_trap_move_and_damage_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTrapMoveAndDamageInstruction", BaseInstruction)
 PlayTrapMoveAndDamageInstruction = PlayTrapMoveAndDamageInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTrapMoveAndDamageInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTrapMoveAndDamageInstruction:Constructor(paramList)
   self._time = tonumber(paramList.time)
   self._speed = tonumber(paramList.speed)
-  if not self._time then
-    assert(self._speed, "PlayTrapMoveAndDamage指令需要配置移动参数")
-    self._moveAni = paramList.moveAni
-    self._moveEffID = tonumber(paramList.moveEffID)
-    self._idleAni = paramList.idleAni
-    self._idleEffID = tonumber(paramList.idleEffID)
-    self._outAni = paramList.outAni
-    self._outEffID = tonumber(paramList.outEffID)
-    self._attackAnimName = paramList.attackAni
-    self._attackEffectID = tonumber(paramList.attackEffectID)
-    self._attackAudioID = tonumber(paramList.attackAudioID)
-    self._attackAudioWaitTime = tonumber(paramList.attackAudioWaitTime)
-    self._hitDelayTime = tonumber(paramList.hitDelayTime) or 0
-    self._hitAnimName = paramList.hitAni or "Hit"
-    self._hitEffectID = tonumber(paramList.hitEffectID)
-  end
+  assert(self._time or self._speed, "PlayTrapMoveAndDamage指令需要配置移动参数")
+  self._moveAni = paramList.moveAni
+  self._moveEffID = tonumber(paramList.moveEffID)
+  self._idleAni = paramList.idleAni
+  self._idleEffID = tonumber(paramList.idleEffID)
+  self._outAni = paramList.outAni
+  self._outEffID = tonumber(paramList.outEffID)
+  self._attackAnimName = paramList.attackAni
+  self._attackEffectID = tonumber(paramList.attackEffectID)
+  self._attackAudioID = tonumber(paramList.attackAudioID)
+  self._attackAudioWaitTime = tonumber(paramList.attackAudioWaitTime)
+  self._hitDelayTime = tonumber(paramList.hitDelayTime) or 0
+  self._hitAnimName = paramList.hitAni or "Hit"
+  self._hitEffectID = tonumber(paramList.hitEffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapMoveAndDamageInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayTrapMoveAndDamageInstruction:GetCacheResource()
   local t = {}
   if self._moveEffID and self._moveEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._moveEffID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._moveEffID].ResPath,
+      1
+    })
   end
-  if self._idleEffID and self._idleEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._idleEffID]).ResPath, 1})
+  if self._idleEffID and 0 < self._idleEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._idleEffID].ResPath,
+      1
+    })
   end
-  if self._outEffID and self._outEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._outEffID]).ResPath, 1})
+  if self._outEffID and 0 < self._outEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._outEffID].ResPath,
+      1
+    })
   end
-  if self._attackEffectID and self._attackEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._damageEffID]).ResPath, 1})
+  if self._attackEffectID and 0 < self._attackEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._damageEffID].ResPath,
+      1
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterMoveGridByParamInstruction.GetCacheAudio = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayMonsterMoveGridByParamInstruction:GetCacheAudio()
   local t = {}
   if self._attackAudioID and self._attackAudioID > 0 then
-    (table.insert)(t, self._attackAudioID)
+    table.insert(t, self._attackAudioID)
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapMoveAndDamageInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayTrapMoveAndDamageInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local skillResult = routineComponent:GetEffectResultByArray(SkillEffectType.TrapMoveAndDamage)
   self._effSvc = world:GetService("Effect")
   self._skillID = routineComponent:GetSkillID()
   local walkResultList = skillResult:GetWalkResultList()
-  if #walkResultList > 0 then
+  if 0 < #walkResultList then
     self:_DoWalk(TT, casterEntity, walkResultList)
   end
   self._waitTaskID = {}
   local damageResult = skillResult:GetDamageResult()
   self:_PlayDamage(TT, casterEntity, damageResult)
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(self._waitTaskID) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(self._waitTaskID) do
     YIELD(TT)
   end
   local isOut = skillResult:IsOutBoard()
   if isOut then
-    casterEntity:SetAnimatorControllerTriggers({self._outAni})
+    casterEntity:SetAnimatorControllerTriggers({
+      self._outAni
+    })
     if self._outEffID and self._outEffID ~= 0 then
-      (self._effSvc):CreateEffect(self._outEffID, casterEntity)
+      self._effSvc:CreateEffect(self._outEffID, casterEntity)
     end
   end
   if isOut or damageResult then
@@ -96,10 +95,7 @@ PlayTrapMoveAndDamageInstruction.DoInstruction = function(self, TT, casterEntity
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapMoveAndDamageInstruction._DoWalk = function(self, TT, trapEntity, walkResultList)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayTrapMoveAndDamageInstruction:_DoWalk(TT, trapEntity, walkResultList)
   local world = trapEntity:GetOwnerWorld()
   local boardServiceRender = world:GetService("BoardRender")
   local moveSpeed = self._speed
@@ -107,16 +103,18 @@ PlayTrapMoveAndDamageInstruction._DoWalk = function(self, TT, trapEntity, walkRe
     moveSpeed = 1 / self._time * 1000
   end
   local hasWalkPoint = false
-  if #walkResultList > 0 then
+  if 0 < #walkResultList then
     hasWalkPoint = true
   end
   if hasWalkPoint then
-    trapEntity:SetAnimatorControllerTriggers({self._moveAni})
+    trapEntity:SetAnimatorControllerTriggers({
+      self._moveAni
+    })
     if self._moveEffID and self._moveEffID ~= 0 then
-      (self._effSvc):CreateEffect(self._moveEffID, trapEntity)
+      self._effSvc:CreateEffect(self._moveEffID, trapEntity)
     end
   end
-  for _,v in ipairs(walkResultList) do
+  for _, v in ipairs(walkResultList) do
     local walkRes = v
     local walkPos = walkRes:GetWalkPos()
     local curPos = boardServiceRender:GetRealEntityGridPos(trapEntity)
@@ -128,41 +126,37 @@ PlayTrapMoveAndDamageInstruction._DoWalk = function(self, TT, trapEntity, walkRe
     end
   end
   if hasWalkPoint then
-    trapEntity:SetAnimatorControllerTriggers({self._idleAni})
+    trapEntity:SetAnimatorControllerTriggers({
+      self._idleAni
+    })
     if self._idleEffID and self._idleEffID ~= 0 then
-      (self._effSvc):CreateEffect(self._idleEffID, trapEntity)
+      self._effSvc:CreateEffect(self._idleEffID, trapEntity)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTrapMoveAndDamageInstruction._PlayDamage = function(self, TT, trapEntity, damageResult)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayTrapMoveAndDamageInstruction:_PlayDamage(TT, trapEntity, damageResult)
   local world = trapEntity:GetOwnerWorld()
   if damageResult then
     local targetID = damageResult:GetTargetID()
     local targetEntity = world:GetEntityByID(targetID)
-    trapEntity:SetAnimatorControllerTriggers({self._attackAnimName})
-    do
-      if self._attackEffectID then
-        local attackEff = (self._effSvc):CreateEffect(self._attackEffectID, trapEntity)
-      end
-      local playSkillInsSvc = world:GetService("PlaySkillInstruction")
-      local audioTaskID = playSkillInsSvc:PlayAttackAudio(self._attackAudioWaitTime, trapEntity, self._attackAudioID)
-      ;
-      (table.insert)(self._waitTaskID, audioTaskID)
-      YIELD(TT, self._hitDelayTime)
-      local playSkillService = world:GetService("PlaySkill")
-      local damageInfo = damageResult:GetDamageInfo(1)
-      local damageGridPos = damageResult:GetGridPos()
-      local hitAnimName = self._hitAnimName
-      local hitEffectID = self._hitEffectID
-      local skillID = self._skillID
-      local beHitParam = (((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(trapEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(hitAnimName)):SetHandleBeHitParam_HitEffectID(hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(false)):SetHandleBeHitParam_SkillID(skillID)
-      playSkillService:HandleBeHit(TT, beHitParam)
+    trapEntity:SetAnimatorControllerTriggers({
+      self._attackAnimName
+    })
+    if self._attackEffectID then
+      local attackEff = self._effSvc:CreateEffect(self._attackEffectID, trapEntity)
     end
+    local playSkillInsSvc = world:GetService("PlaySkillInstruction")
+    local audioTaskID = playSkillInsSvc:PlayAttackAudio(self._attackAudioWaitTime, trapEntity, self._attackAudioID)
+    table.insert(self._waitTaskID, audioTaskID)
+    YIELD(TT, self._hitDelayTime)
+    local playSkillService = world:GetService("PlaySkill")
+    local damageInfo = damageResult:GetDamageInfo(1)
+    local damageGridPos = damageResult:GetGridPos()
+    local hitAnimName = self._hitAnimName
+    local hitEffectID = self._hitEffectID
+    local skillID = self._skillID
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(trapEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(hitAnimName):SetHandleBeHitParam_HitEffectID(hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(false):SetHandleBeHitParam_SkillID(skillID)
+    playSkillService:HandleBeHit(TT, beHitParam)
   end
 end
-
-

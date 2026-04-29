@@ -1,273 +1,183 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n23/cls/ui_n23_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N23Data", CampaignDataBase)
 N23Data = N23Data
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N23Data.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function N23Data:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function N23Data:Init()
   self.replays = {}
-  local cfg = (Cfg.cfg_n23_replay)()
-  for key,cfgv in pairs(cfg) do
+  local cfg = Cfg.cfg_n23_replay()
+  for key, cfgv in pairs(cfg) do
     local replay = N23Replay:New(cfgv.ID, self)
-    ;
-    (table.insert)(self.replays, replay)
+    table.insert(self.replays, replay)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetReplayById = function(self, id)
-  -- function num : 0_2 , upvalues : _ENV
-  for key,replay in pairs(self.replays) do
+function N23Data:GetReplayById(id)
+  for key, replay in pairs(self.replays) do
     if replay.id == id then
       return replay
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetReplayByExchangeId = function(self, exchangeId)
-  -- function num : 0_3 , upvalues : _ENV
-  for key,replay in pairs(self.replays) do
+function N23Data:GetReplayByExchangeId(exchangeId)
+  for key, replay in pairs(self.replays) do
     if replay.exchangeId == exchangeId then
       return replay
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.CheckRedAward = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function N23Data:CheckRedAward()
   local lp = self:GetLocalProcess()
-  local red = (self.mCampaign):CheckComponentRed(lp, ECampaignN23ComponentID.ECAMPAIGN_N23_CUMULATIVE_LOGIN)
+  local red = self.mCampaign:CheckComponentRed(lp, ECampaignN23ComponentID.ECAMPAIGN_N23_CUMULATIVE_LOGIN)
   return red
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.CheckRedFilm = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function N23Data:CheckRedFilm()
   local state = self:GetStateAdventure()
   if state == UISummerOneEnterBtnState.Normal then
-    return false
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.CheckRedAdventure = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function N23Data:CheckRedAdventure()
   local state = self:GetStateAdventure()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetLocalProcess()
-    local red = (self.mCampaign):CheckComponentRed(lp, ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
+    local red = self.mCampaign:CheckComponentRed(lp, ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
     return red
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.CheckRedNormal = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function N23Data:CheckRedNormal()
   local state = self:GetStateNormal()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetLocalProcess()
-    local redFixTeam = (self.mCampaign):CheckComponentRed(lp, ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION)
+    local redFixTeam = self.mCampaign:CheckComponentRed(lp, ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION)
     return redFixTeam
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.CheckRedShop = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function N23Data:CheckRedShop()
   local state = self:GetStateShop()
   if state == UISummerOneEnterBtnState.Normal then
     local lp = self:GetLocalProcess()
-    local redFixTeam = (self.mCampaign):CheckComponentRed(lp, ECampaignN23ComponentID.ECAMPAIGN_N23_SHOP)
+    local redFixTeam = self.mCampaign:CheckComponentRed(lp, ECampaignN23ComponentID.ECAMPAIGN_N23_SHOP)
     return redFixTeam
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetComponentAdventure = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
+function N23Data:GetComponentAdventure()
+  local c = self.activityCampaign:GetComponent(ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
   return c
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetComponentInfoAdventure = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
+function N23Data:GetComponentInfoAdventure()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_PANGOLIN)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetComponentNormal = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION)
+function N23Data:GetComponentNormal()
+  local c = self.activityCampaign:GetComponent(ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION)
   return c
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetComponentInfoNormal = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION)
+function N23Data:GetComponentInfoNormal()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_LINE_MISSION)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetComponentShop = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponent(ECampaignN23ComponentID.ECAMPAIGN_N23_SHOP)
+function N23Data:GetComponentShop()
+  local c = self.activityCampaign:GetComponent(ECampaignN23ComponentID.ECAMPAIGN_N23_SHOP)
   return c
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetComponentInfoShop = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local cInfo = (self.activityCampaign):GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_SHOP)
+function N23Data:GetComponentInfoShop()
+  local cInfo = self.activityCampaign:GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_SHOP)
   return cInfo
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetState = function(self, cInfo)
-  -- function num : 0_15 , upvalues : _ENV
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function N23Data:GetState(cInfo)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return UISummerOneEnterBtnState.NotOpen
+  elseif nowTimestamp > cInfo.m_close_time then
+    return UISummerOneEnterBtnState.Closed
+  elseif cInfo.m_b_unlock then
+    return UISummerOneEnterBtnState.Normal
   else
-    if cInfo.m_close_time < nowTimestamp then
-      return UISummerOneEnterBtnState.Closed
+    local cfgv = Cfg.cfg_campaign_mission[cInfo.m_need_mission_id]
+    if cfgv then
+      return UISummerOneEnterBtnState.Locked
     else
-      if cInfo.m_b_unlock then
-        return UISummerOneEnterBtnState.Normal
-      else
-        local cfgv = (Cfg.cfg_campaign_mission)[cInfo.m_need_mission_id]
-        if cfgv then
-          return UISummerOneEnterBtnState.Locked
-        else
-          return UISummerOneEnterBtnState.Normal
-        end
-      end
+      return UISummerOneEnterBtnState.Normal
     end
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetStateAdventure = function(self)
-  -- function num : 0_16
+function N23Data:GetStateAdventure()
   local cInfo = self:GetComponentInfoAdventure()
   return self:GetState(cInfo)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetStateNormal = function(self)
-  -- function num : 0_17
+function N23Data:GetStateNormal()
   local cInfo = self:GetComponentInfoNormal()
   return self:GetState(cInfo)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetStateShop = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_SHOP)
+function N23Data:GetStateShop()
+  local c = self.activityCampaign:GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_SHOP)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetStateAward = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local c = (self.activityCampaign):GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_CUMULATIVE_LOGIN)
+function N23Data:GetStateAward()
+  local c = self.activityCampaign:GetComponentInfo(ECampaignN23ComponentID.ECAMPAIGN_N23_CUMULATIVE_LOGIN)
   if c then
     return self:GetState(c)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.CheckNewFilm = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  if not (N23Data.HasPrefsFilm)() and self:GetStateAdventure() == UISummerOneEnterBtnState.Normal then
+function N23Data:CheckNewFilm()
+  if not N23Data.HasPrefsFilm() and self:GetStateAdventure() == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.CheckNewAdventure = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if not (N23Data.HasPrefsAdventure)() and self:GetStateAdventure() == UISummerOneEnterBtnState.Normal then
+function N23Data:CheckNewAdventure()
+  if not N23Data.HasPrefsAdventure() and self:GetStateAdventure() == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.CheckNewLine = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if not (N23Data.HasPrefsLine)() and self:GetStateNormal() == UISummerOneEnterBtnState.Normal then
+function N23Data:CheckNewLine()
+  if not N23Data.HasPrefsLine() and self:GetStateNormal() == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.CheckNewShop = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  if not (N23Data.HasPrefsShop)() and self:GetStateShop() == UISummerOneEnterBtnState.Normal then
+function N23Data:CheckNewShop()
+  if not N23Data.HasPrefsShop() and self:GetStateShop() == UISummerOneEnterBtnState.Normal then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetEggCount = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local total = (table.count)(self.replays)
+function N23Data:GetEggCount()
+  local total = table.count(self.replays)
   local unLockCount = 0
-  for index,replay in ipairs(self.replays) do
+  for index, replay in ipairs(self.replays) do
     if replay:IsUnlock() then
       unLockCount = unLockCount + 1
     end
@@ -275,135 +185,82 @@ N23Data.GetEggCount = function(self)
   return unLockCount, total
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetPstId = function()
-  -- function num : 0_25 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function N23Data.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetPrefsKey = function(str)
-  -- function num : 0_26 , upvalues : _ENV
-  local playerPrefsKey = (N23Data.GetPstId)() .. str
+function N23Data.GetPrefsKey(str)
+  local playerPrefsKey = N23Data.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetPrefsKeyMain = function()
-  -- function num : 0_27 , upvalues : _ENV
-  return (N23Data.GetPrefsKey)("UIN23DataPrefsKeyMain")
+function N23Data.GetPrefsKeyMain()
+  return N23Data.GetPrefsKey("UIN23DataPrefsKeyMain")
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetPrefsKeyFilm = function()
-  -- function num : 0_28 , upvalues : _ENV
-  return (N23Data.GetPrefsKey)("UIN23DataPrefsKeyFilm")
+function N23Data.GetPrefsKeyFilm()
+  return N23Data.GetPrefsKey("UIN23DataPrefsKeyFilm")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetPrefsKeyAdventure = function()
-  -- function num : 0_29 , upvalues : _ENV
-  return (N23Data.GetPrefsKey)("UIN23DataPrefsKeyAdventure")
+function N23Data.GetPrefsKeyAdventure()
+  return N23Data.GetPrefsKey("UIN23DataPrefsKeyAdventure")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetPrefsKeyLine = function()
-  -- function num : 0_30 , upvalues : _ENV
-  return (N23Data.GetPrefsKey)("UIN23DataPrefsKeyLine")
+function N23Data.GetPrefsKeyLine()
+  return N23Data.GetPrefsKey("UIN23DataPrefsKeyLine")
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.GetPrefsKeyShop = function()
-  -- function num : 0_31 , upvalues : _ENV
-  return (N23Data.GetPrefsKey)("UIN23DataPrefsKeyShop")
+function N23Data.GetPrefsKeyShop()
+  return N23Data.GetPrefsKey("UIN23DataPrefsKeyShop")
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.HasPrefsMain = function()
-  -- function num : 0_32 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N23Data.GetPrefsKeyMain)())
+function N23Data.HasPrefsMain()
+  return UnityEngine.PlayerPrefs.HasKey(N23Data.GetPrefsKeyMain())
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.SetPrefsMain = function()
-  -- function num : 0_33 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N23Data.GetPrefsKeyMain)(), 1)
+function N23Data.SetPrefsMain()
+  UnityEngine.PlayerPrefs.SetInt(N23Data.GetPrefsKeyMain(), 1)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.HasPrefsFilm = function()
-  -- function num : 0_34 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N23Data.GetPrefsKeyFilm)())
+function N23Data.HasPrefsFilm()
+  return UnityEngine.PlayerPrefs.HasKey(N23Data.GetPrefsKeyFilm())
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.SetPrefsFilm = function()
-  -- function num : 0_35 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N23Data.GetPrefsKeyFilm)(), 1)
+function N23Data.SetPrefsFilm()
+  UnityEngine.PlayerPrefs.SetInt(N23Data.GetPrefsKeyFilm(), 1)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.HasPrefsAdventure = function()
-  -- function num : 0_36 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N23Data.GetPrefsKeyAdventure)())
+function N23Data.HasPrefsAdventure()
+  return UnityEngine.PlayerPrefs.HasKey(N23Data.GetPrefsKeyAdventure())
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.SetPrefsAdventure = function()
-  -- function num : 0_37 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N23Data.GetPrefsKeyAdventure)(), 1)
+function N23Data.SetPrefsAdventure()
+  UnityEngine.PlayerPrefs.SetInt(N23Data.GetPrefsKeyAdventure(), 1)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.HasPrefsLine = function()
-  -- function num : 0_38 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N23Data.GetPrefsKeyLine)())
+function N23Data.HasPrefsLine()
+  return UnityEngine.PlayerPrefs.HasKey(N23Data.GetPrefsKeyLine())
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.SetPrefsLine = function()
-  -- function num : 0_39 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N23Data.GetPrefsKeyLine)(), 1)
+function N23Data.SetPrefsLine()
+  UnityEngine.PlayerPrefs.SetInt(N23Data.GetPrefsKeyLine(), 1)
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.HasPrefsShop = function()
-  -- function num : 0_40 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((N23Data.GetPrefsKeyShop)())
+function N23Data.HasPrefsShop()
+  return UnityEngine.PlayerPrefs.HasKey(N23Data.GetPrefsKeyShop())
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Data.SetPrefsShop = function()
-  -- function num : 0_41 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((N23Data.GetPrefsKeyShop)(), 1)
+function N23Data.SetPrefsShop()
+  UnityEngine.PlayerPrefs.SetInt(N23Data.GetPrefsKeyShop(), 1)
 end
 
 _class("N23Replay", Object)
 N23Replay = N23Replay
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
 
-N23Replay.Constructor = function(self, id, data)
-  -- function num : 0_42 , upvalues : _ENV
+function N23Replay:Constructor(id, data)
   self.id = id
-  local cfgv = (Cfg.cfg_n23_replay)[id]
+  local cfgv = Cfg.cfg_n23_replay[id]
   self.exchangeId = cfgv.ExchangeId
   self.index = cfgv.Index
   self.icon = cfgv.Icon
@@ -411,43 +268,31 @@ N23Replay.Constructor = function(self, id, data)
   self.data = data
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Replay.ViewSpine = function(self)
-  -- function num : 0_43
+function N23Replay:ViewSpine()
   if self.view then
-    return (self.view).spine
+    return self.view.spine
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Replay.ViewPlaySequence = function(self)
-  -- function num : 0_44
+function N23Replay:ViewPlaySequence()
   if self.view then
-    return (self.view).playSequence
+    return self.view.playSequence
   end
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Replay.ViewHideOnLoad = function(self)
-  -- function num : 0_45
-  do return not self.view or ((self.view).HideOnLoad and true) or false end
+function N23Replay:ViewHideOnLoad()
+  if self.view then
+    return self.view.HideOnLoad and true or false
+  end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-N23Replay.IsUnlock = function(self)
-  -- function num : 0_46 , upvalues : _ENV
-  local cInfo = (self.data):GetComponentInfoShop()
+function N23Replay:IsUnlock()
+  local cInfo = self.data:GetComponentInfoShop()
   local m_exchange_item_list = cInfo.m_exchange_item_list
-  for _,exchangeItem in ipairs(m_exchange_item_list) do
+  for _, exchangeItem in ipairs(m_exchange_item_list) do
     if exchangeItem.m_id == self.exchangeId and exchangeItem.m_can_exchange_count < exchangeItem.m_exchange_limit_count then
       return true
     end
   end
   return false
 end
-
-

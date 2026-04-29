@@ -1,35 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_escape.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_Escape", SkillEffectCalc_Base)
 SkillEffectCalc_Escape = SkillEffectCalc_Escape
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_Escape.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_Escape:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.insert)(results, result)
+      table.insert(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Escape._CalculateSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_1 , upvalues : _ENV
-  local targetEntity = (self._world):GetEntityByID(targetID)
+function SkillEffectCalc_Escape:_CalculateSingleTarget(skillEffectCalcParam, targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   if not targetEntity then
-    return 
+    return
   end
   if targetEntity:HasDeadMark() then
-    return 
+    return
   end
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local escapeType = param:GetEscapeType()
@@ -41,14 +31,11 @@ SkillEffectCalc_Escape._CalculateSingleTarget = function(self, skillEffectCalcPa
     if escapeParam then
       local chessPetCmpt = targetEntity:ChessPet()
       local chessPetClassID = chessPetCmpt:GetChessPetClassID()
+      if table.intable(escapeParam, chessPetClassID) then
+      else
+        addNum = false
+      end
     end
   end
-  if (table.intable)(escapeParam, chessPetClassID) then
-    do
-      addNum = false
-      return SkillEffectResult_Escape:New(targetID, skillEffectCalcParam.gridPos, disappear, addNum)
-    end
-  end
+  return SkillEffectResult_Escape:New(targetID, skillEffectCalcParam.gridPos, disappear, addNum)
 end
-
-

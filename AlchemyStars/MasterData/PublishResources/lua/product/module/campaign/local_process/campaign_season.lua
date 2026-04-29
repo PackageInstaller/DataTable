@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_season.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignSeason", ICampaignComponentLocalProcessBase)
 CCampaignSeason = CCampaignSeason
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignSeason.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignSeason:Constructor()
   self._seasonMisionComponet = nil
   self._seasonMisionCompInfo = nil
   self._questComponent = nil
@@ -40,24 +33,15 @@ CCampaignSeason.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignSeason:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_SEASON
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignSeason:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignSeason:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetSeasonMissionComponent()
   self:_GetQuestComponent()
@@ -75,164 +59,119 @@ CCampaignSeason.InitComponent = function(self, campaignObj)
   self:_GetLineTalentTreeComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetSeasonMissionComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._seasonMisionComponet = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
+function CCampaignSeason:_GetSeasonMissionComponent()
+  self._seasonMisionComponet = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.SEASON_MISSION)
   if not self._seasonMisionComponet then
-    return 
+    return
   end
-  self._seasonMisionCompInfo = (self._seasonMisionComponet):ComponentInfo()
+  self._seasonMisionCompInfo = self._seasonMisionComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetQuestComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.QUEST)
+function CCampaignSeason:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetShopComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._shopComponent = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.EXCHANGE_SHOP)
+function CCampaignSeason:_GetShopComponent()
+  self._shopComponent = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.EXCHANGE_SHOP)
   if not self._shopComponent then
-    return 
+    return
   end
-  self._shopCompInfo = (self._shopComponent):ComponentInfo()
+  self._shopCompInfo = self._shopComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetActionPointComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._actionPointComponent = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.ACTION_POINT)
+function CCampaignSeason:_GetActionPointComponent()
+  self._actionPointComponent = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.ACTION_POINT)
   if not self._actionPointComponent then
-    return 
+    return
   end
-  self._actionPointCompInfo = (self._actionPointComponent):ComponentInfo()
+  self._actionPointCompInfo = self._actionPointComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetQuestComponent2 = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._questComponent2 = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.QUEST_STORY)
+function CCampaignSeason:_GetQuestComponent2()
+  self._questComponent2 = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.QUEST_STORY)
   if not self._questComponent2 then
-    return 
+    return
   end
-  self._questComponentInfo2 = (self._questComponent2):ComponentInfo()
+  self._questComponentInfo2 = self._questComponent2:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetStoryComponent = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._storyComponent = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.STORY)
+function CCampaignSeason:_GetStoryComponent()
+  self._storyComponent = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.STORY)
   if not self._storyComponent then
-    return 
+    return
   end
-  self._storyComponentInfo = (self._storyComponent):ComponentInfo()
+  self._storyComponentInfo = self._storyComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetBusinessCommonComponent = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._businessComponet = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.BUSINESS)
+function CCampaignSeason:_GetBusinessCommonComponent()
+  self._businessComponet = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.BUSINESS)
   if not self._businessComponet then
-    return 
+    return
   end
-  self._businessComponetInfo = (self._businessComponet):ComponentInfo()
+  self._businessComponetInfo = self._businessComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetTotalProgressComponent = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._totalProgressComponent = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.TOTAL_PROCESS)
+function CCampaignSeason:_GetTotalProgressComponent()
+  self._totalProgressComponent = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.TOTAL_PROCESS)
   if not self._totalProgressComponent then
-    return 
+    return
   end
-  self._totalProgressComponentInfo = (self._totalProgressComponent):ComponentInfo()
+  self._totalProgressComponentInfo = self._totalProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetTalentProgressComponent = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self._talentProgressComponent = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.REWARD_PROCESS)
+function CCampaignSeason:_GetTalentProgressComponent()
+  self._talentProgressComponent = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.REWARD_PROCESS)
   if not self._talentProgressComponent then
-    return 
+    return
   end
-  self._talentProgressComponentInfo = (self._talentProgressComponent):ComponentInfo()
+  self._talentProgressComponentInfo = self._talentProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetLineMissionComponent = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  self._lineMissionComponet = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.LINE_MISSION)
+function CCampaignSeason:_GetLineMissionComponent()
+  self._lineMissionComponet = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.LINE_MISSION)
   if not self._lineMissionComponet then
-    return 
+    return
   end
-  self._lineMissionCompInfo = (self._lineMissionComponet):ComponentInfo()
+  self._lineMissionCompInfo = self._lineMissionComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetTalentTreeComponent = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  self._talentTreeComponet = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.TALENT_TREE)
+function CCampaignSeason:_GetTalentTreeComponent()
+  self._talentTreeComponet = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.TALENT_TREE)
   if not self._talentTreeComponet then
-    return 
+    return
   end
-  self._talentTreeCompInfo = (self._talentTreeComponet):ComponentInfo()
+  self._talentTreeCompInfo = self._talentTreeComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetLinePopStarMissionComponent = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  self._linepopstarMissionComponent = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.LINE_MISSION_POPSTAR)
+function CCampaignSeason:_GetLinePopStarMissionComponent()
+  self._linepopstarMissionComponent = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.LINE_MISSION_POPSTAR)
   if not self._linepopstarMissionComponent then
-    return 
+    return
   end
-  self._linepopstarMissionComponentInfo = (self._linepopstarMissionComponent):ComponentInfo()
+  self._linepopstarMissionComponentInfo = self._linepopstarMissionComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetLineBlackfistComponent = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  self._lineblackfistComponet = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.LINE_MISSION_BLACKFIST)
+function CCampaignSeason:_GetLineBlackfistComponent()
+  self._lineblackfistComponet = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.LINE_MISSION_BLACKFIST)
   if not self._lineblackfistComponet then
-    return 
+    return
   end
-  self._lineblackfistComponetInfo = (self._lineblackfistComponet):ComponentInfo()
+  self._lineblackfistComponetInfo = self._lineblackfistComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason._GetLineTalentTreeComponent = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  self._linetalentComponet = (self._campaignObj):GetComponent(ECCampaignSeasonComponentID.LINE_MISSION_TALEN)
+function CCampaignSeason:_GetLineTalentTreeComponent()
+  self._linetalentComponet = self._campaignObj:GetComponent(ECCampaignSeasonComponentID.LINE_MISSION_TALEN)
   if not self._linetalentComponet then
-    return 
+    return
   end
-  self._linetalentComponetInfo = (self._linetalentComponet):ComponentInfo()
+  self._linetalentComponetInfo = self._linetalentComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason.GetComponent = function(self, componentID)
-  -- function num : 0_18 , upvalues : _ENV
+function CCampaignSeason:GetComponent(componentID)
   if ECCampaignSeasonComponentID.SEASON_MISSION == componentID then
     return self._seasonMisionComponet
   end
@@ -278,10 +217,7 @@ CCampaignSeason.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeason.GetComponentInfo = function(self, componentID)
-  -- function num : 0_19 , upvalues : _ENV
+function CCampaignSeason:GetComponentInfo(componentID)
   if ECCampaignSeasonComponentID.SEASON_MISSION == componentID then
     return self._seasonMisionCompInfo
   end
@@ -326,5 +262,3 @@ CCampaignSeason.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

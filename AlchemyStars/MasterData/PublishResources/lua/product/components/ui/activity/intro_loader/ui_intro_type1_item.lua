@@ -1,30 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/intro_loader/ui_intro_type1_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIIntroType1Item", UICustomWidget)
 UIIntroType1Item = UIIntroType1Item
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIIntroType1Item.SetData = function(self, head, body)
-  -- function num : 0_0 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "txtHead", head)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtBody", body)
+function UIIntroType1Item:SetData(head, body)
+  UIWidgetHelper.SetLocalizationText(self, "txtHead", head)
+  UIWidgetHelper.SetLocalizationText(self, "txtBody", body)
   local txtBodyBk = self:GetUIComponent("UILocalizationText", "txtBodyBk")
   if txtBodyBk ~= nil then
     txtBodyBk:SetText(body)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIIntroType1Item.SetDataWithHeadTmp = function(self, head, body)
-  -- function num : 0_1 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizedTMPText)(self, "txtHead", head)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtBody", body)
+function UIIntroType1Item:SetDataWithHeadTmp(head, body)
+  UIWidgetHelper.SetLocalizedTMPText(self, "txtHead", head)
+  UIWidgetHelper.SetLocalizationText(self, "txtBody", body)
 end
-
-

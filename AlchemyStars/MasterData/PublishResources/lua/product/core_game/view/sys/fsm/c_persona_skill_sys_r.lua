@@ -1,54 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_persona_skill_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("persona_skill_system")
 _class("ClientPersonaSkillSystem_Render", PersonaSkillSystem)
 ClientPersonaSkillSystem_Render = ClientPersonaSkillSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientPersonaSkillSystem_Render._DoRenderPreFeatureSkillStart = function(self, TT)
-  -- function num : 0_0
-  ((self._world):MainCamera()):EnableEffectCamera(true)
-  local playSkillService = (self._world):GetService("PlaySkill")
+function ClientPersonaSkillSystem_Render:_DoRenderPreFeatureSkillStart(TT)
+  self._world:MainCamera():EnableEffectCamera(true)
+  local playSkillService = self._world:GetService("PlaySkill")
   playSkillService:ResetWaitFreeList()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderNotifyFeatureSkillStart = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_1
+function ClientPersonaSkillSystem_Render:_DoRenderNotifyFeatureSkillStart(TT, teamEntity, casterEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderWaitPlaySkillTaskFinish = function(self, TT)
-  -- function num : 0_2
-  local playSkillService = (self._world):GetService("PlaySkill")
+function ClientPersonaSkillSystem_Render:_DoRenderWaitPlaySkillTaskFinish(TT)
+  local playSkillService = self._world:GetService("PlaySkill")
   local listWaitTask = playSkillService:GetWaitFreeList()
   self:_WaitTasksEnd(TT, listWaitTask)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderWaitTeleportFinish = function(self, TT, listTrapTrigger, teamEntity, casterEntity)
-  -- function num : 0_3
-  local sPlaySkillInstruction = (self._world):GetService("PlaySkillInstruction")
+function ClientPersonaSkillSystem_Render:_DoRenderWaitTeleportFinish(TT, listTrapTrigger, teamEntity, casterEntity)
+  local sPlaySkillInstruction = self._world:GetService("PlaySkillInstruction")
   local listTrapTask = sPlaySkillInstruction:PlayTrapTrigger(TT, teamEntity, listTrapTrigger)
   self:_WaitTasksEnd(TT, listTrapTask)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderResetPieceAnim = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_4 , upvalues : _ENV
-  local pieceService = (self._world):GetService("Piece")
+function ClientPersonaSkillSystem_Render:_DoRenderResetPieceAnim(TT, teamEntity, casterEntity)
+  local pieceService = self._world:GetService("Piece")
   pieceService:RefreshPieceAnim()
   pieceService:RefreshMonsterAreaOutLine(TT)
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local result = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ResetGridElement)
-  local playBuffService = (self._world):GetService("PlayBuff")
+  local playBuffService = self._world:GetService("PlayBuff")
   if result then
     local array = result:GetResetGridData()
     playBuffService:PlayBuffView(TT, NTResetGridElement:New(array, casterEntity))
@@ -56,100 +37,70 @@ ClientPersonaSkillSystem_Render._DoRenderResetPieceAnim = function(self, TT, tea
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderResetPreview = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_5 , upvalues : _ENV
+function ClientPersonaSkillSystem_Render:_DoRenderResetPreview(TT, teamEntity, casterEntity)
   local previewConvertElementCmpt = casterEntity:PreviewConvertElement()
   if previewConvertElementCmpt ~= nil then
     previewConvertElementCmpt:SetTempConvertElementDic({})
   else
-    ;
-    (Log.notice)("Clear Convert Element no cmpt")
+    Log.notice("Clear Convert Element no cmpt")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderNotifyFeatureSkillFinish = function(self, TT, teamEntity, casterEntity, featureType, skillID)
-  -- function num : 0_6 , upvalues : _ENV
-  ((self._world):GetService("PlayBuff")):PlayBuffView(TT, NTFeatureSkillAttackEnd:New(featureType, skillID))
+function ClientPersonaSkillSystem_Render:_DoRenderNotifyFeatureSkillFinish(TT, teamEntity, casterEntity, featureType, skillID)
+  self._world:GetService("PlayBuff"):PlayBuffView(TT, NTFeatureSkillAttackEnd:New(featureType, skillID))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderShowAfterFeatureSkill = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_7
-  local playSkillService = (self._world):GetService("PlaySkill")
+function ClientPersonaSkillSystem_Render:_DoRenderShowAfterFeatureSkill(TT, teamEntity, casterEntity)
+  local playSkillService = self._world:GetService("PlaySkill")
   playSkillService:ShowPlayerEntity(teamEntity)
-  ;
-  ((self._world):MainCamera()):EnableEffectCamera(false)
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  self._world:MainCamera():EnableEffectCamera(false)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   previewActiveSkillService:StopDarkScreenImmediately()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderPlayFeatureSkill = function(self, isFinalAttack, teamEntity, casterEntity)
-  -- function num : 0_8 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local result = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.FeatureAttack)
+function ClientPersonaSkillSystem_Render:_DoRenderPlayFeatureSkill(isFinalAttack, teamEntity, casterEntity)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local result = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.FeatureAttack)
   local skillResult = result:GetSkillResult()
   local skillID = result:GetL2RFeatureAttackResult_SkillID()
-  local playSkillService = (self._world):GetService("PlaySkill")
-  local configService = (self._world):GetService("Config")
+  local playSkillService = self._world:GetService("PlaySkill")
+  local configService = self._world:GetService("Config")
   local skinId = 1
   local skillConfigData = configService:GetSkillConfigData(skillID, casterEntity)
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray(skinId)
-  ;
-  (casterEntity:SkillRoutine()):ClearSkillRoutine()
-  ;
-  (casterEntity:SkillRoutine()):SetResultContainer(skillResult)
+  casterEntity:SkillRoutine():ClearSkillRoutine()
+  casterEntity:SkillRoutine():SetResultContainer(skillResult)
   self:_CheckFreezeTime(casterEntity, isFinalAttack)
   local waitTaskID = playSkillService:StartSkillRoutine(casterEntity, skillPhaseArray, skillID)
   return waitTaskID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._CheckFreezeTime = function(self, casterEntity, isFinalAttack)
-  -- function num : 0_9 , upvalues : _ENV
+function ClientPersonaSkillSystem_Render:_CheckFreezeTime(casterEntity, isFinalAttack)
   if not isFinalAttack then
-    return 
+    return
   end
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local targetIDArray = scopeResult:GetTargetIDs()
-  if (table.count)(targetIDArray) <= 0 then
-    return 
+  if table.count(targetIDArray) <= 0 then
+    return
   end
   skillEffectResultContainer:SetFinalAttack(true)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderMonsterDead = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_10
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+function ClientPersonaSkillSystem_Render:_DoRenderMonsterDead(TT, teamEntity, casterEntity)
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:DoAllMonsterDeadRender(TT)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderResetPickUp = function(self)
-  -- function num : 0_11
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function ClientPersonaSkillSystem_Render:_DoRenderResetPickUp()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   pickUpTargetCmpt:Reset()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientPersonaSkillSystem_Render._DoRenderFeatureSkillEnd = function(self, TT, teamEntity, casterEntity)
-  -- function num : 0_12
+function ClientPersonaSkillSystem_Render:_DoRenderFeatureSkillEnd(TT, teamEntity, casterEntity)
   if casterEntity then
     casterEntity:RemoveRenderPickUpComponent()
   end
 end
-
-

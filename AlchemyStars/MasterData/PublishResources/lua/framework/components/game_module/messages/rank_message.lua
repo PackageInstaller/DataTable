@@ -1,164 +1,147 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/components/game_module/messages/rank_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local rankMessageDef = {CLSID_CEventRankDatum = 30000, CLSID_CEventRankDatumLevel = 30001, CLSID_CEventRankDatumActive = 30002, CLSID_CEventRankDatumConsume = 30003, CLSID_CEventRankDatumTest = 30004, CLSID_CEventRankRequestEvent = 30005, CLSID_CEventRankReplyEvent = 30006, CLSID_CEventRankRoleRequestPage = 30007, CLSID_CEventRankRoleReplyPage = 30008, CLSID_CEventRankRoleRequestTotal = 30009, CLSID_CEventRankRoleReplyTotal = 30010, CLSID_CEventRankRoleRequestUpdate = 30011, CLSID_CEventRankRoleReplyUpdate = 30012, CLSID_CEventRankRoleRequestDelete = 30013, CLSID_CEventRankRoleReplyDelete = 30014}
-;
-(table.append)(MessageDef, rankMessageDef)
-local RankRoleProcRet = {RP_SUCCESS = 0, RP_NOT_IN_USE = 1, RP_ARGS_ERR = 2, RP_CANT_IN_RANK = 3, RP_NOT_ENOUGH = 4, RP_NOT_IN_RANK = 5, RP_PROC_FAIL = 6, RP_UP_SAME = 7, RP_TYPE_ERR = 8}
+local rankMessageDef = {
+  CLSID_CEventRankDatum = 30000,
+  CLSID_CEventRankDatumLevel = 30001,
+  CLSID_CEventRankDatumActive = 30002,
+  CLSID_CEventRankDatumConsume = 30003,
+  CLSID_CEventRankDatumTest = 30004,
+  CLSID_CEventRankRequestEvent = 30005,
+  CLSID_CEventRankReplyEvent = 30006,
+  CLSID_CEventRankRoleRequestPage = 30007,
+  CLSID_CEventRankRoleReplyPage = 30008,
+  CLSID_CEventRankRoleRequestTotal = 30009,
+  CLSID_CEventRankRoleReplyTotal = 30010,
+  CLSID_CEventRankRoleRequestUpdate = 30011,
+  CLSID_CEventRankRoleReplyUpdate = 30012,
+  CLSID_CEventRankRoleRequestDelete = 30013,
+  CLSID_CEventRankRoleReplyDelete = 30014
+}
+table.append(MessageDef, rankMessageDef)
+local RankRoleProcRet = {
+  RP_SUCCESS = 0,
+  RP_NOT_IN_USE = 1,
+  RP_ARGS_ERR = 2,
+  RP_CANT_IN_RANK = 3,
+  RP_NOT_ENOUGH = 4,
+  RP_NOT_IN_RANK = 5,
+  RP_PROC_FAIL = 6,
+  RP_UP_SAME = 7,
+  RP_TYPE_ERR = 8
+}
 _enum("RankRoleProcRet", RankRoleProcRet)
 _class("CEventRankRequestEvent", CCallRequestEvent)
 CEventRankRequestEvent = CEventRankRequestEvent
--- DECOMPILER ERROR at PC46: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankRequestEvent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CEventRankRequestEvent:Constructor()
   self.m_rank_type = RANK_TYPE.RANK_TYPE_INVALID
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRankRequestEvent._proto = {
-[1] = {"m_rank_type", "int"}
+  [1] = {
+    "m_rank_type",
+    "int"
+  }
 }
 _class("CEventRankReplyEvent", CCallReplyEvent)
 CEventRankReplyEvent = CEventRankReplyEvent
--- DECOMPILER ERROR at PC63: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankReplyEvent.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CEventRankReplyEvent:Constructor()
   self.m_ret = RANK_SER_RET_NO.TR_RANK_TYPE_ERR
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRankReplyEvent._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
 _class("CEventRankRoleRequestPage", CEventRankRequestEvent)
 CEventRankRoleRequestPage = CEventRankRoleRequestPage
--- DECOMPILER ERROR at PC80: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankRoleRequestPage.Constructor = function(self)
-  -- function num : 0_2
+function CEventRankRoleRequestPage:Constructor()
   self.m_index = 0
   self.m_count = 0
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRankRoleRequestPage._proto = {
-[1] = {"m_index", "int"}
-, 
-[2] = {"m_count", "int"}
+  [1] = {"m_index", "int"},
+  [2] = {"m_count", "int"}
 }
 _class("CEventRankRoleReplyPage", CEventRankReplyEvent)
 CEventRankRoleReplyPage = CEventRankRoleReplyPage
--- DECOMPILER ERROR at PC102: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankRoleReplyPage.Constructor = function(self)
-  -- function num : 0_3
+function CEventRankRoleReplyPage:Constructor()
   self.m_index = 0
   self.m_count = 0
   self.m_rank_data = {}
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRankRoleReplyPage._proto = {
-[1] = {"m_index", "int"}
-, 
-[2] = {"m_count", "int"}
-, 
-[3] = {"m_rank_data", "list<buffer>"}
+  [1] = {"m_index", "int"},
+  [2] = {"m_count", "int"},
+  [3] = {
+    "m_rank_data",
+    "list<buffer>"
+  }
 }
 _class("CEventRankRoleRequestTotal", CEventRankRequestEvent)
 CEventRankRoleRequestTotal = CEventRankRoleRequestTotal
--- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankRoleRequestTotal.Constructor = function(self)
-  -- function num : 0_4
+function CEventRankRoleRequestTotal:Constructor()
 end
-
--- DECOMPILER ERROR at PC132: Confused about usage of register: R2 in 'UnsetPending'
 
 CEventRankRoleRequestTotal._proto = {}
 _class("CEventRankRoleReplyTotal", CEventRankReplyEvent)
 CEventRankRoleReplyTotal = CEventRankRoleReplyTotal
--- DECOMPILER ERROR at PC141: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankRoleReplyTotal.Constructor = function(self)
-  -- function num : 0_5
+function CEventRankRoleReplyTotal:Constructor()
   self.m_rank_data = {}
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRankRoleReplyTotal._proto = {
-[1] = {"m_rank_data", "list<buffer>"}
+  [1] = {
+    "m_rank_data",
+    "list<buffer>"
+  }
 }
 _class("CEventRankRoleRequestUpdate", CEventRankRequestEvent)
 CEventRankRoleRequestUpdate = CEventRankRoleRequestUpdate
--- DECOMPILER ERROR at PC158: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankRoleRequestUpdate.Constructor = function(self)
-  -- function num : 0_6
+function CEventRankRoleRequestUpdate:Constructor()
   self.m_pstid = 0
   self.m_value = 0
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRankRoleRequestUpdate._proto = {
-[1] = {"m_pstid", "int64"}
-, 
-[2] = {"m_value", "int64"}
+  [1] = {"m_pstid", "int64"},
+  [2] = {"m_value", "int64"}
 }
 _class("CEventRankRoleReplyUpdate", CEventRankReplyEvent)
 CEventRankRoleReplyUpdate = CEventRankRoleReplyUpdate
--- DECOMPILER ERROR at PC180: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankRoleReplyUpdate.Constructor = function(self)
-  -- function num : 0_7
+function CEventRankRoleReplyUpdate:Constructor()
   self.m_pstid = 0
   self.m_value = 0
 end
 
--- DECOMPILER ERROR at PC193: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRankRoleReplyUpdate._proto = {
-[1] = {"m_pstid", "int64"}
-, 
-[2] = {"m_value", "int64"}
+  [1] = {"m_pstid", "int64"},
+  [2] = {"m_value", "int64"}
 }
 _class("CEventRankRoleRequestDelete", CEventRankRequestEvent)
 CEventRankRoleRequestDelete = CEventRankRoleRequestDelete
--- DECOMPILER ERROR at PC202: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankRoleRequestDelete.Constructor = function(self)
-  -- function num : 0_8
+function CEventRankRoleRequestDelete:Constructor()
   self.m_pstid = 0
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRankRoleRequestDelete._proto = {
-[1] = {"m_pstid", "int64"}
+  [1] = {"m_pstid", "int64"}
 }
 _class("CEventRankRoleReplyDelete", CEventRankReplyEvent)
 CEventRankRoleReplyDelete = CEventRankRoleReplyDelete
--- DECOMPILER ERROR at PC219: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRankRoleReplyDelete.Constructor = function(self)
-  -- function num : 0_9
+function CEventRankRoleReplyDelete:Constructor()
   self.m_pstid = 0
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRankRoleReplyDelete._proto = {
-[1] = {"m_pstid", "int64"}
+  [1] = {"m_pstid", "int64"}
 }
-

@@ -1,41 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/dantang/ui_item_dantang.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIItemDanTang", UICustomWidget)
 UIItemDanTang = UIItemDanTang
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIItemDanTang.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function UIItemDanTang:Constructor()
+  self.mRole = GameGlobal.GetModule(RoleModule)
   self.colorTxtCount = Color.white
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemDanTang.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIItemDanTang:OnShow()
   self.bg = self:GetUIComponent("Image", "bg")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
-  self.colorTxtCount = (self.txtCount).color
+  self.colorTxtCount = self.txtCount.color
   self.first = self:GetGameObject("first")
   self.atlas = self:GetAsset("UIDantang.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemDanTang.OnHide = function(self)
-  -- function num : 0_2
-  (self.imgIcon):DestoryLastImage()
+function UIItemDanTang:OnHide()
+  self.imgIcon:DestoryLastImage()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemDanTang.Flush = function(self, roleAsset, funcClick, notShowTips, showNew, newState)
-  -- function num : 0_3 , upvalues : _ENV
+function UIItemDanTang:Flush(roleAsset, funcClick, notShowTips, showNew, newState)
   self.roleAsset = roleAsset
   local icon = ""
   local color = 1
@@ -45,73 +29,42 @@ UIItemDanTang.Flush = function(self, roleAsset, funcClick, notShowTips, showNew,
     color = 6
     count = roleAsset.count
   else
-    local cfg = (Cfg.cfg_item)[roleAsset.assetid]
+    local cfg = Cfg.cfg_item[roleAsset.assetid]
     icon = cfg.Icon
     color = cfg.Color
     count = roleAsset.count
   end
-  do
-    ;
-    (self.imgIcon):LoadImage(icon)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self.bg).sprite = (self.atlas):GetSprite("N17_produce_bg_item_" .. color)
-    ;
-    (self.txtCount):SetText(self:FormatCount(count))
-    ;
-    (self.first):SetActive(roleAsset.first ~= nil)
-    self.funcClick = funcClick
-    self._notShowTips = notShowTips
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemDanTang.FormatCount = function(self, count)
-  -- function num : 0_4 , upvalues : _ENV
-  if not count or count == "" then
-    return ""
-  end
-  if count > 999999 then
-    local c = (math.floor)(count * 0.0001)
-    return (StringTable.Get)("str_homeland_backpack_n_w", c)
-  else
-    do
-      do
-        if count > 99999 then
-          local c = (math.floor)(count * 0.001) * 0.1
-          return (StringTable.Get)("str_homeland_backpack_n_w", c)
-        end
-        return tostring(count)
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemDanTang.TxtCountRedIfNotEnough = function(self, cost)
-  -- function num : 0_5 , upvalues : _ENV
-  local c = (self.mRole):GetAssetCount((self.roleAsset).assetid) or 0
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-  if cost <= c then
-    (self.txtCount).color = self.colorTxtCount
-  else
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.txtCount).color = Color.red
-  end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemDanTang.SetNotShowTips = function(self, notShowTips)
-  -- function num : 0_6
+  self.imgIcon:LoadImage(icon)
+  self.bg.sprite = self.atlas:GetSprite("N17_produce_bg_item_" .. color)
+  self.txtCount:SetText(self:FormatCount(count))
+  self.first:SetActive(roleAsset.first ~= nil)
+  self.funcClick = funcClick
   self._notShowTips = notShowTips
 end
 
+function UIItemDanTang:FormatCount(count)
+  if not count or count == "" then
+    return ""
+  end
+  if 999999 < count then
+    local c = math.floor(count * 1.0E-4)
+    return StringTable.Get("str_homeland_backpack_n_w", c)
+  elseif 99999 < count then
+    local c = math.floor(count * 0.001) * 0.1
+    return StringTable.Get("str_homeland_backpack_n_w", c)
+  end
+  return tostring(count)
+end
 
+function UIItemDanTang:TxtCountRedIfNotEnough(cost)
+  local c = self.mRole:GetAssetCount(self.roleAsset.assetid) or 0
+  if cost <= c then
+    self.txtCount.color = self.colorTxtCount
+  else
+    self.txtCount.color = Color.red
+  end
+end
+
+function UIItemDanTang:SetNotShowTips(notShowTips)
+  self._notShowTips = notShowTips
+end

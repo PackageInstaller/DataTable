@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_secret_good_battle_pass.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_shop_secret_good")
 _class("UIShopSecretGoodBattlePass", UIShopSecretGood)
 UIShopSecretGoodBattlePass = UIShopSecretGoodBattlePass
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopSecretGoodBattlePass.OnChildShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopSecretGoodBattlePass:OnChildShow()
   self.uiNormalGO = self:GetGameObject("uiNormal")
   self.logo = self:GetUIComponent("RawImageLoader", "logo")
   self.uiCommonAtlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
@@ -29,203 +22,130 @@ UIShopSecretGoodBattlePass.OnChildShow = function(self)
   self.tag1txt = self:GetUIComponent("UILocalizationText", "tag1txt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretGoodBattlePass.RefreshPrice = function(self, subTabType, goodData, targetShopId)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopSecretGoodBattlePass:RefreshPrice(subTabType, goodData, targetShopId)
   self.subTabType = subTabType
   self.goodData = goodData
   self.targetShopId = targetShopId
   self.costType = RoleAssetID.RoleAssetGlow
   self.costCount = 0
   if self.goodData then
-    self.costType = (self.goodData):GetSaleType()
-    self.costCount = (self.goodData):GetSalePrice()
-    local itemModule = (GameGlobal.GetModule)(ItemModule)
-    local converType = (self.goodData):GetConvertType()
-    if converType and converType > 0 then
-      local convercount = itemModule:GetItemCount((self.goodData):GetConvertType())
-      local convertPrice = (self.goodData):GetConvertPrice()
-      if convertPrice <= convercount then
-        self.costType = (self.goodData):GetConvertType()
-        ;
-        (self.price1Txt):SetText(convertPrice)
+    self.costType = self.goodData:GetSaleType()
+    self.costCount = self.goodData:GetSalePrice()
+    local itemModule = GameGlobal.GetModule(ItemModule)
+    local converType = self.goodData:GetConvertType()
+    if converType and 0 < converType then
+      local convercount = itemModule:GetItemCount(self.goodData:GetConvertType())
+      local convertPrice = self.goodData:GetConvertPrice()
+      if convercount >= convertPrice then
+        self.costType = self.goodData:GetConvertType()
+        self.price1Txt:SetText(convertPrice)
         self.costCount = convertPrice
       end
     end
-    do
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.moneyIcon1).sprite = (self.uiCommonAtlas):GetSprite((ClientShop.GetCurrencyImageName)(self.costType))
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.moneyIcon2).sprite = (self.uiCommonAtlas):GetSprite((ClientShop.GetCurrencyImageName)(self.costType))
-      do
-        local timeLimit = (self.goodData):GetRefreshTimeStr()
-        ;
-        ((self.tag1GO).gameObject):SetActive(timeLimit ~= nil)
-        if timeLimit then
-          (self.tag1txt):SetText(timeLimit)
-        end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
-      end
+    self.moneyIcon1.sprite = self.uiCommonAtlas:GetSprite(ClientShop.GetCurrencyImageName(self.costType))
+    self.moneyIcon2.sprite = self.uiCommonAtlas:GetSprite(ClientShop.GetCurrencyImageName(self.costType))
+    local timeLimit = self.goodData:GetRefreshTimeStr()
+    self.tag1GO.gameObject:SetActive(timeLimit ~= nil)
+    if timeLimit then
+      self.tag1txt:SetText(timeLimit)
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretGoodBattlePass.RefreshSkin = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopSecretGoodBattlePass:RefreshSkin()
   self.isLock = false
   self.lockToastText = ""
   if self.goodData then
-    local itemId = (self.goodData):GetItemId()
-    if RoleAssetID.RoleAssetPetSkinBegin <= itemId and itemId <= RoleAssetID.RoleAssetPetSkinEnd then
+    local itemId = self.goodData:GetItemId()
+    if itemId >= RoleAssetID.RoleAssetPetSkinBegin and itemId <= RoleAssetID.RoleAssetPetSkinEnd then
       local skinid = itemId - RoleAssetID.RoleAssetPetSkinBegin
-      local cfg_pet_skin = (Cfg.cfg_pet_skin)[skinid]
+      local cfg_pet_skin = Cfg.cfg_pet_skin[skinid]
       if not cfg_pet_skin then
-        return 
+        return
       end
       local showIcon = cfg_pet_skin.SkinShopCG
       local petid = cfg_pet_skin.PetId
-      local cfg_pet = (Cfg.cfg_pet)[petid]
+      local cfg_pet = Cfg.cfg_pet[petid]
       local logo = cfg_pet.Logo
-      ;
-      (self.logo):LoadImage(logo)
-      ;
-      (self.icon):LoadImage(showIcon)
-      ;
-      (self.nameShadow):SetText((StringTable.Get)(cfg_pet.Name))
-      ;
-      (self.nameTxt):SetText((StringTable.Get)(cfg_pet.Name))
-      ;
-      (self.nameShadow2):SetText((StringTable.Get)(cfg_pet.Name))
-      ;
-      (self.nameTxt2):SetText((StringTable.Get)(cfg_pet.Name))
-      ;
-      (self.flagTextCollectGo):SetActive(cfg_pet_skin.SkinType == 2)
-      ;
-      (self.flagTextSpecialGo):SetActive(cfg_pet_skin.SkinType == 3)
-      ;
-      (self.skinNameNormalGo):SetActive(cfg_pet_skin.SkinType ~= 3)
-      ;
-      (self.skinNameSpecialGo):SetActive(cfg_pet_skin.SkinType == 3)
-      ;
-      (self.skinNameNormal):SetText((StringTable.Get)(cfg_pet_skin.SkinName))
-      ;
-      (self.skinNameSpecial):SetText((StringTable.Get)(cfg_pet_skin.SkinName))
-      -- DECOMPILER ERROR at PC121: Confused about usage of register: R8 in 'UnsetPending'
-
+      self.logo:LoadImage(logo)
+      self.icon:LoadImage(showIcon)
+      self.nameShadow:SetText(StringTable.Get(cfg_pet.Name))
+      self.nameTxt:SetText(StringTable.Get(cfg_pet.Name))
+      self.nameShadow2:SetText(StringTable.Get(cfg_pet.Name))
+      self.nameTxt2:SetText(StringTable.Get(cfg_pet.Name))
+      self.flagTextCollectGo:SetActive(cfg_pet_skin.SkinType == 2)
+      self.flagTextSpecialGo:SetActive(cfg_pet_skin.SkinType == 3)
+      self.skinNameNormalGo:SetActive(cfg_pet_skin.SkinType ~= 3)
+      self.skinNameSpecialGo:SetActive(cfg_pet_skin.SkinType == 3)
+      self.skinNameNormal:SetText(StringTable.Get(cfg_pet_skin.SkinName))
+      self.skinNameSpecial:SetText(StringTable.Get(cfg_pet_skin.SkinName))
       if cfg_pet_skin.SkinType == 1 then
-        (self.qualityIcon).sprite = (self._atlasBg):GetSprite("shop_shizhuang_di01")
+        self.qualityIcon.sprite = self._atlasBg:GetSprite("shop_shizhuang_di01")
+      elseif cfg_pet_skin.SkinType == 2 then
+        self.qualityIcon.sprite = self._atlasBg:GetSprite("shop_shizhuang_di01")
+      elseif cfg_pet_skin.SkinType == 3 then
+        self.qualityIcon.sprite = self._atlasBg:GetSprite("shop_shizhuang_di02")
+      elseif cfg_pet_skin.SkinType == 4 then
+        self.qualityIcon.sprite = self._atlasBg:GetSprite("shop_shizhuang_di06")
+      elseif cfg_pet_skin.SkinType == 5 then
+        self.qualityIcon.sprite = self._atlasBg:GetSprite("shop_shizhuang_di06")
       else
-        -- DECOMPILER ERROR at PC131: Confused about usage of register: R8 in 'UnsetPending'
-
-        if cfg_pet_skin.SkinType == 2 then
-          (self.qualityIcon).sprite = (self._atlasBg):GetSprite("shop_shizhuang_di01")
-        else
-          -- DECOMPILER ERROR at PC141: Confused about usage of register: R8 in 'UnsetPending'
-
-          if cfg_pet_skin.SkinType == 3 then
-            (self.qualityIcon).sprite = (self._atlasBg):GetSprite("shop_shizhuang_di02")
-          else
-            -- DECOMPILER ERROR at PC151: Confused about usage of register: R8 in 'UnsetPending'
-
-            if cfg_pet_skin.SkinType == 4 then
-              (self.qualityIcon).sprite = (self._atlasBg):GetSprite("shop_shizhuang_di06")
-            else
-              -- DECOMPILER ERROR at PC161: Confused about usage of register: R8 in 'UnsetPending'
-
-              if cfg_pet_skin.SkinType == 5 then
-                (self.qualityIcon).sprite = (self._atlasBg):GetSprite("shop_shizhuang_di06")
-              else
-                -- DECOMPILER ERROR at PC168: Confused about usage of register: R8 in 'UnsetPending'
-
-                (self.qualityIcon).sprite = (self._atlasBg):GetSprite("shop_shizhuang_di01")
-              end
-            end
-          end
-        end
+        self.qualityIcon.sprite = self._atlasBg:GetSprite("shop_shizhuang_di01")
       end
     end
   end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretGoodBattlePass.ActivityEndCb = function(self, activityEndCb)
-  -- function num : 0_3
+function UIShopSecretGoodBattlePass:ActivityEndCb(activityEndCb)
   self._activityEndCb = activityEndCb
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretGoodBattlePass.ShopBuySuccess = function(self, goodId)
-  -- function num : 0_4
+function UIShopSecretGoodBattlePass:ShopBuySuccess(goodId)
   goodId = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretGoodBattlePass.RefreshLock = function(self, islock, lockText)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopSecretGoodBattlePass:RefreshLock(islock, lockText)
   self.isLock = islock
-  ;
-  (self.isLockGO):SetActive(islock)
+  self.isLockGO:SetActive(islock)
   if islock then
-    (self.lockText):SetText((StringTable.Get)(lockText))
+    self.lockText:SetText(StringTable.Get(lockText))
     self.lockToastText = lockText
   else
-    ;
-    (self.lockText):SetText("")
+    self.lockText:SetText("")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopSecretGoodBattlePass.BgOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIShopSecretGoodBattlePass:BgOnClick()
   if self.isLock then
-    (ToastManager.ShowToast)((StringTable.Get)(self.lockToastText))
-    return 
+    ToastManager.ShowToast(StringTable.Get(self.lockToastText))
+    return
   end
-  local remainCount = (self.goodData):GetRemainCount()
+  local remainCount = self.goodData:GetRemainCount()
   if remainCount <= 0 then
-    return 
+    return
   end
-  local itemId = (self.goodData):GetItemId()
-  if RoleAssetID.RoleAssetPetSkinBegin <= itemId and itemId <= RoleAssetID.RoleAssetPetSkinEnd then
-    local goodid = (self.goodData):GetGoodId()
+  local itemId = self.goodData:GetItemId()
+  if itemId >= RoleAssetID.RoleAssetPetSkinBegin and itemId <= RoleAssetID.RoleAssetPetSkinEnd then
+    local goodid = self.goodData:GetGoodId()
     local item = SkinsShopItem:New(goodid)
     item:SetPrice(self.costCount)
     item:SetPriceItemId(self.costType)
     item:SetIsShowLeftTime(false)
     item:SetType(SkinsPayType.ConvertCost)
-    item:SetCostPrice((self.goodData):GetSalePrice())
-    item:SetCostPriceItemId((self.goodData):GetSaleType())
+    item:SetCostPrice(self.goodData:GetSalePrice())
+    item:SetCostPriceItemId(self.goodData:GetSaleType())
     item:SetConvertType(SkinsConvertPayType.BattlePass)
-    local skinid = (self.goodData):GetItemId() - RoleAssetID.RoleAssetPetSkinBegin
+    local skinid = self.goodData:GetItemId() - RoleAssetID.RoleAssetPetSkinBegin
     item:SetSkinId(skinid)
-    local cfg_top_tips = (Cfg.cfg_top_tips)[self.costType]
-    do
-      do
-        if cfg_top_tips then
-          local icon = cfg_top_tips.Icon
-          item:SetPriceIcon(icon)
-        end
-        self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUT_SHOP_DETAIL, item)
-        if (self.goodData):GetRemainCount() <= 1 then
-          self:ShowDialog("UIShopConfirmNormalController", self.goodData, self.subTabType)
-        else
-          self:ShowDialog("UIShopConfirmDetailController", self.goodData, self.subTabType)
-        end
-      end
+    local cfg_top_tips = Cfg.cfg_top_tips[self.costType]
+    if cfg_top_tips then
+      local icon = cfg_top_tips.Icon
+      item:SetPriceIcon(icon)
     end
+    self:ShowDialog("UIPetSkinsMainController", PetSkinUiOpenType.PSUT_SHOP_DETAIL, item)
+  elseif self.goodData:GetRemainCount() <= 1 then
+    self:ShowDialog("UIShopConfirmNormalController", self.goodData, self.subTabType)
+  else
+    self:ShowDialog("UIShopConfirmDetailController", self.goodData, self.subTabType)
   end
 end
-
-

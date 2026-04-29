@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rebuilding/ui_activity_n_plus_six_building__tips_ctr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixBuildingTipsController", UIController)
 UIActivityNPlusSixBuildingTipsController = UIActivityNPlusSixBuildingTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixBuildingTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityNPlusSixBuildingTipsController:OnShow(uiParams)
   self._buildingData = uiParams[1]
   self._score = self:GetUIComponent("UILocalizationText", "Score")
   self._title = self:GetUIComponent("UILocalizationText", "Title")
@@ -18,201 +11,150 @@ UIActivityNPlusSixBuildingTipsController.OnShow = function(self, uiParams)
   self._itemCountPanel = self:GetGameObject("ItemCountPanel")
   self._itemNotEnuogh = self:GetGameObject("ItemNotEnough")
   self._notEnoughBtn = self:GetGameObject("NotEnoughBtn")
-  local btnName = {[UIActivityNPlusSixBuildingStatus.CleanUp] = "str_n_plus_six_building_tips_cleanup_btn_name", [UIActivityNPlusSixBuildingStatus.CleanUpComplete] = "str_n_plus_six_building_tips_repair_btn_name", [UIActivityNPlusSixBuildingStatus.RepairComplete] = "str_n_plus_six_building_tips_decorate_btn_name"}
-  local titleName = {[UIActivityNPlusSixBuildingStatus.CleanUp] = "str_n_plus_six_building_tips_cleanup_title", [UIActivityNPlusSixBuildingStatus.CleanUpComplete] = "str_n_plus_six_building_tips_repair_title", [UIActivityNPlusSixBuildingStatus.RepairComplete] = "str_n_plus_six_building_tips_decorate_title"}
-  local status = (self._buildingData):GetStatusType()
-  local statusData = (self._buildingData):GetStatus()
-  local nextStatusData = (self._buildingData):GetNextStatusData()
-  local cost = (self._buildingData):GetCost()
+  local btnName = {
+    [UIActivityNPlusSixBuildingStatus.CleanUp] = "str_n_plus_six_building_tips_cleanup_btn_name",
+    [UIActivityNPlusSixBuildingStatus.CleanUpComplete] = "str_n_plus_six_building_tips_repair_btn_name",
+    [UIActivityNPlusSixBuildingStatus.RepairComplete] = "str_n_plus_six_building_tips_decorate_btn_name"
+  }
+  local titleName = {
+    [UIActivityNPlusSixBuildingStatus.CleanUp] = "str_n_plus_six_building_tips_cleanup_title",
+    [UIActivityNPlusSixBuildingStatus.CleanUpComplete] = "str_n_plus_six_building_tips_repair_title",
+    [UIActivityNPlusSixBuildingStatus.RepairComplete] = "str_n_plus_six_building_tips_decorate_title"
+  }
+  local status = self._buildingData:GetStatusType()
+  local statusData = self._buildingData:GetStatus()
+  local nextStatusData = self._buildingData:GetNextStatusData()
+  local cost = self._buildingData:GetCost()
   self._cost = 0
-  if cost and cost[1] and (cost[1])[2] then
-    (self._score):SetText((StringTable.Get)("str_n_plus_six_build_cost_tips", (cost[1])[2], (self._buildingData):GetName(), (StringTable.Get)(btnName[status])))
-    self._cost = (cost[1])[2]
+  if cost and cost[1] and cost[1][2] then
+    self._score:SetText(StringTable.Get("str_n_plus_six_build_cost_tips", cost[1][2], self._buildingData:GetName(), StringTable.Get(btnName[status])))
+    self._cost = cost[1][2]
   else
-    ;
-    (self._score):SetText((StringTable.Get)("str_n_plus_six_build_cost_tips", 0, (self._buildingData):GetName(), (StringTable.Get)(btnName[status])))
+    self._score:SetText(StringTable.Get("str_n_plus_six_build_cost_tips", 0, self._buildingData:GetName(), StringTable.Get(btnName[status])))
   end
-  -- DECOMPILER ERROR at PC124: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._title).text = (StringTable.Get)(titleName[status], (self._buildingData):GetName())
-  ;
-  (self._btnName):SetText((StringTable.Get)(btnName[status]))
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local itemCount = itemModule:GetItemCount((UIActivityNPlusSixConst.GetCoinItemId)())
-  ;
-  (self._currentItemCount):SetText(self:GetItemCountStr(itemCount))
-  if self._cost <= itemCount then
-    (self._itemCountPanel):SetActive(true)
-    ;
-    (self._itemNotEnuogh):SetActive(false)
-    ;
-    (self._notEnoughBtn):SetActive(false)
+  self._title.text = StringTable.Get(titleName[status], self._buildingData:GetName())
+  self._btnName:SetText(StringTable.Get(btnName[status]))
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local itemCount = itemModule:GetItemCount(UIActivityNPlusSixConst.GetCoinItemId())
+  self._currentItemCount:SetText(self:GetItemCountStr(itemCount))
+  if itemCount >= self._cost then
+    self._itemCountPanel:SetActive(true)
+    self._itemNotEnuogh:SetActive(false)
+    self._notEnoughBtn:SetActive(false)
     local targetItemCount = itemCount - self._cost
-    ;
-    (self._targetItemCount):SetText(self:GetItemCountStr(targetItemCount))
+    self._targetItemCount:SetText(self:GetItemCountStr(targetItemCount))
   else
-    do
-      ;
-      (self._itemCountPanel):SetActive(false)
-      ;
-      (self._itemNotEnuogh):SetActive(true)
-      ;
-      (self._notEnoughBtn):SetActive(true)
-      self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
-      local iconName = (UIActivityNPlusSixConst.GetItemIconName)()
-      if iconName then
-        (self._iconLoader):LoadImage(iconName)
-      end
-    end
+    self._itemCountPanel:SetActive(false)
+    self._itemNotEnuogh:SetActive(true)
+    self._notEnoughBtn:SetActive(true)
+  end
+  self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
+  local iconName = UIActivityNPlusSixConst.GetItemIconName()
+  if iconName then
+    self._iconLoader:LoadImage(iconName)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingTipsController.GetItemCountStr = function(self, count)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityNPlusSixBuildingTipsController:GetItemCountStr(count)
   local dight = 0
   local tmpCount = count
   if tmpCount < 0 then
     tmpCount = -tmpCount
   end
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  if count >= 0 then
-    for i = 1, 7 - (dight) do
+  if 0 <= count then
+    for i = 1, 7 - dight do
       pre = pre .. "0"
     end
   else
-    do
-      for i = 1, 7 - (dight) - 1 do
-        pre = pre .. "0"
-      end
-      do
-        if count > 0 then
-          return (string.format)("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", pre, count)
-        else
-          if count == 0 then
-            return (string.format)("<color=#5e5e5e>%s</color>", pre)
-          else
-            return (string.format)("<color=#5e5e5e>%s</color><color=#ff0000>%s</color>", pre, count)
-          end
-        end
-      end
+    for i = 1, 7 - dight - 1 do
+      pre = pre .. "0"
     end
   end
-end
-
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingTipsController.CloseBtnOnClick = function(self)
-  -- function num : 0_2
-  self:CloseDialog()
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingTipsController.CancelBtnOnClick = function(self)
-  -- function num : 0_3
-  self:CloseDialog()
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingTipsController.BuildingBtnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local itemCount = itemModule:GetItemCount((UIActivityNPlusSixConst.GetCoinItemId)())
-  if itemCount < self._cost then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n_plus_six_building_item_count_not_enouth"))
-    return 
+  if 0 < count then
+    return string.format("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", pre, count)
+  elseif count == 0 then
+    return string.format("<color=#5e5e5e>%s</color>", pre)
+  else
+    return string.format("<color=#5e5e5e>%s</color><color=#ff0000>%s</color>", pre, count)
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.Building, self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
+function UIActivityNPlusSixBuildingTipsController:CloseBtnOnClick()
+  self:CloseDialog()
+end
 
-UIActivityNPlusSixBuildingTipsController.Building = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityNPlusSixBuildingTipsController:CancelBtnOnClick()
+  self:CloseDialog()
+end
+
+function UIActivityNPlusSixBuildingTipsController:BuildingBtnOnClick()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local itemCount = itemModule:GetItemCount(UIActivityNPlusSixConst.GetCoinItemId())
+  if itemCount < self._cost then
+    ToastManager.ShowToast(StringTable.Get("str_n_plus_six_building_item_count_not_enouth"))
+    return
+  end
+  GameGlobal.TaskManager():StartTask(self.Building, self)
+end
+
+function UIActivityNPlusSixBuildingTipsController:Building(TT)
   self:Lock("UIActivityNPlusSixBuildingTipsController_Building")
-  local curStatus = (self._buildingData):GetStatusType()
-  local nextStatus = (self._buildingData):GetNextStatus()
+  local curStatus = self._buildingData:GetStatusType()
+  local nextStatus = self._buildingData:GetNextStatus()
   if not nextStatus then
     self:CloseDialog()
     self:UnLock("UIActivityNPlusSixBuildingTipsController_Building")
-    return 
+    return
   end
-  local buildingComponent = (self._buildingData):GetBuildingComponent()
+  local buildingComponent = self._buildingData:GetBuildingComponent()
   local res = AsyncRequestRes:New()
-  local result = buildingComponent:HandleBuild(TT, res, (self._buildingData):GetBuildingId(), nextStatus)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N6CommonBuilding)
+  local result = buildingComponent:HandleBuild(TT, res, self._buildingData:GetBuildingId(), nextStatus)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N6CommonBuilding)
   if result:GetSucc() then
-    local storyType = (self._buildingData):GetCompleteStoryType()
-    local storyId = (self._buildingData):GetCompleteStoryId()
-    ;
-    (self._buildingData):BuildingLevelUp()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingAllBuildingComplete)
-    if storyId and storyId > 0 then
+    local storyType = self._buildingData:GetCompleteStoryType()
+    local storyId = self._buildingData:GetCompleteStoryId()
+    self._buildingData:BuildingLevelUp()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingAllBuildingComplete)
+    if storyId and 0 < storyId then
       if storyType == 1 or storyType == 3 then
         self:ShowDialog("UIStoryBanner", storyId, StoryBannerShowType.HalfPortrait, function()
-    -- function num : 0_5_0 , upvalues : _ENV, self, curStatus
-    ((GameGlobal.TaskManager)()):StartTask(self.CompleteStory, self, curStatus)
-  end
-)
-      else
-        if storyType == 2 then
-          self:ShowDialog("UIStoryController", storyId, function()
-    -- function num : 0_5_1 , upvalues : _ENV, self, curStatus
-    ((GameGlobal.TaskManager)()):StartTask(self.CompleteStory, self, curStatus)
-  end
-)
-        end
+          GameGlobal.TaskManager():StartTask(self.CompleteStory, self, curStatus)
+        end)
+      elseif storyType == 2 then
+        self:ShowDialog("UIStoryController", storyId, function()
+          GameGlobal.TaskManager():StartTask(self.CompleteStory, self, curStatus)
+        end)
       end
       self:UnLock("UIActivityNPlusSixBuildingTipsController_Building")
       self:CloseDialog()
-      return 
+      return
     end
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N6ShowBuilding)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N6ShowBuilding)
     self:UnLock("UIActivityNPlusSixBuildingTipsController_Building")
     self:CloseDialog()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingBuildingComplete, self._buildingData)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingBuildingComplete, self._buildingData)
     YIELD(TT, 200)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
   else
-    do
-      ;
-      (Log.error)("HandleBuild error")
-      self:UnLock("UIActivityNPlusSixBuildingTipsController_Building")
-      self:CloseDialog()
-    end
+    Log.error("HandleBuild error")
+    self:UnLock("UIActivityNPlusSixBuildingTipsController_Building")
+    self:CloseDialog()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixBuildingTipsController.CompleteStory = function(self, TT, curStatus)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityNPlusSixBuildingTipsController:CompleteStory(TT, curStatus)
   self:Lock("UIActivityNPlusSixBuildingTipsController_CompleteStory")
-  local buildComponent = (self._buildingData):GetBuildingComponent()
+  local buildComponent = self._buildingData:GetBuildingComponent()
   local res = AsyncRequestRes:New()
-  buildComponent:HandleStory(TT, res, (self._buildingData):GetBuildingId(), curStatus)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N6ShowBuilding)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingBuildingComplete, self._buildingData)
+  buildComponent:HandleStory(TT, res, self._buildingData:GetBuildingId(), curStatus)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N6ShowBuilding)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingBuildingComplete, self._buildingData)
   YIELD(TT, 200)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixBuildingMainRefresh)
   self:UnLock("UIActivityNPlusSixBuildingTipsController_CompleteStory")
 end
-
-

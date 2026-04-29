@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/talent/common/ui_season_talent_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonTalentEntry", UICustomWidget)
 UISeasonTalentEntry = UISeasonTalentEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonTalentEntry.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonTalentEntry:OnShow(uiParams)
   self:GetComponents()
   self:AttachEvent(GameEventType.OnTalentTreeRedChange, self.OnTalentTreeRedChange)
   self:AttachEvent(GameEventType.OnOpenTalentLine, self.OnOpenTalentLine)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.AfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.OnOpenTalentLine = function(self)
-  -- function num : 0_1
+function UISeasonTalentEntry:OnOpenTalentLine()
   local open = self:CheckOpen()
   if open then
     local lock = self:GetLockState()
@@ -28,200 +18,137 @@ UISeasonTalentEntry.OnOpenTalentLine = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.GetComponents = function(self)
-  -- function num : 0_2
+function UISeasonTalentEntry:GetComponents()
   self._newGo = self:GetGameObject("new")
   self._redGo = self:GetGameObject("red")
   self._go = self:GetGameObject("rect")
   self._lockGo = self:GetGameObject("lock")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.AfterUILayerChanged = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonTalentEntry:AfterUILayerChanged()
   local uiController = self.uiOwner
   local uiname = uiController:GetName()
-  if ((GameGlobal.UIStateManager)()):IsTopUI(uiname) then
+  if GameGlobal.UIStateManager():IsTopUI(uiname) then
     self:OnTalentTreeRedChange()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.OnTalentTreeRedChange = function(self)
-  -- function num : 0_4
+function UISeasonTalentEntry:OnTalentTreeRedChange()
   self:SetData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonTalentEntry:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.InitTimer = function(self, sec)
-  -- function num : 0_6 , upvalues : _ENV
-  (Log.debug)("###[UISeasonTalentEntry] InitTimer sec:", sec)
+function UISeasonTalentEntry:InitTimer(sec)
+  Log.debug("###[UISeasonTalentEntry] InitTimer sec:", sec)
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
     self._timer = nil
   end
-  self._timer = ((GameGlobal.Timer)()):AddEvent(sec, function()
-    -- function num : 0_6_0 , upvalues : self
+  self._timer = GameGlobal.Timer():AddEvent(sec, function()
     self:ReLoadSeasonInfo()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.ReLoadSeasonInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (Log.debug)("###[UISeasonTalentEntry] start ReLoadSeasonInfo !")
+function UISeasonTalentEntry:ReLoadSeasonInfo()
+  Log.debug("###[UISeasonTalentEntry] start ReLoadSeasonInfo !")
   self:Lock("UISeasonTalentEntry:ReLoadSeasonInfo")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.OnReLoadSeasonInfo, self)
+  GameGlobal.TaskManager():StartTask(self.OnReLoadSeasonInfo, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.OnReLoadSeasonInfo = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  local res = ((GameGlobal.GetModule)(SeasonModule)):ForceRequestCurSeasonData(TT)
+function UISeasonTalentEntry:OnReLoadSeasonInfo(TT)
+  local res = GameGlobal.GetModule(SeasonModule):ForceRequestCurSeasonData(TT)
   self:UnLock("UISeasonTalentEntry:ReLoadSeasonInfo")
   if res and res:GetSucc() then
     self:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.SetData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  self._seasonObj = ((GameGlobal.GetModule)(SeasonModule)):GetCurSeasonObj()
+function UISeasonTalentEntry:SetData()
+  self._seasonObj = GameGlobal.GetModule(SeasonModule):GetCurSeasonObj()
   local open = self:CheckOpen()
-  ;
-  (self._go):SetActive(open)
+  self._go:SetActive(open)
   local lock = self:GetLockState()
-  ;
-  (self._lockGo):SetActive(lock)
+  self._lockGo:SetActive(lock)
   if lock then
-    self._line_component = (self._seasonObj):GetComponent(self._componentId_LineMission)
-    local unlockTime = ((self._line_component):GetComponentInfo()).m_unlock_time
-    local svrTime = (math.floor)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001)
-    if svrTime < unlockTime then
+    self._line_component = self._seasonObj:GetComponent(self._componentId_LineMission)
+    local unlockTime = self._line_component:GetComponentInfo().m_unlock_time
+    local svrTime = math.floor(GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001)
+    if unlockTime > svrTime then
       local sec = unlockTime - svrTime
       self:InitTimer(sec * 1000)
     end
   end
-  do
-    if open then
-      local new = self:CheckNew()
-      local red = self:CheckRed()
-      if new then
-        do
-          (self._newGo):SetActive(not lock)
-          ;
-          (self._redGo):SetActive(red and ((not new and not lock)))
-          -- DECOMPILER ERROR: 3 unprocessed JMP targets
-        end
-      end
-    end
+  if open then
+    local new = self:CheckNew()
+    local red = self:CheckRed()
+    self._newGo:SetActive(new and not lock)
+    self._redGo:SetActive(red and not new and not lock)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.GetLockState = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonTalentEntry:GetLockState()
   self._componentId_LineMission = ECCampaignSeasonComponentID.LINE_MISSION
   self._componentId_Tree = ECCampaignSeasonComponentID.TALENT_TREE
-  self._line_component = (self._seasonObj):GetComponent(self._componentId_LineMission)
-  local unlock = ((self._line_component):GetComponentInfo()).m_b_unlock
+  self._line_component = self._seasonObj:GetComponent(self._componentId_LineMission)
+  local unlock = self._line_component:GetComponentInfo().m_b_unlock
   if not unlock then
-    local svrTime = (math.floor)(((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001)
-    local unlockTime = ((self._line_component):GetComponentInfo()).m_unlock_time
-    local closeTime = ((self._line_component):GetComponentInfo()).m_close_time
-    local tips = nil
+    local svrTime = math.floor(GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001)
+    local unlockTime = self._line_component:GetComponentInfo().m_unlock_time
+    local closeTime = self._line_component:GetComponentInfo().m_close_time
+    local tips
     local iTimeIn = false
-    if unlockTime <= svrTime and svrTime < closeTime then
+    if svrTime >= unlockTime and svrTime < closeTime then
       iTimeIn = true
     end
     if iTimeIn then
-      local lockMission = ((self._line_component):GetComponentInfo()).m_need_mission_id
-      local cfg_mission = (Cfg.cfg_season_mission)[lockMission]
+      local lockMission = self._line_component:GetComponentInfo().m_need_mission_id
+      local cfg_mission = Cfg.cfg_season_mission[lockMission]
       local cfgName = ""
       if cfg_mission then
-        cfgName = (StringTable.Get)(cfg_mission.Name)
+        cfgName = StringTable.Get(cfg_mission.Name)
       end
-      tips = (StringTable.Get)("str_season_talent_tree_unlock_prelevel", cfgName)
-    else
-      do
-        if svrTime < unlockTime then
-          local lessTime = unlockTime - svrTime
-          local timeStr = (HelperProxy:GetInstance()):Time2Tex(lessTime)
-          tips = (StringTable.Get)("str_season_talent_tree_unlock_eta", timeStr)
-        else
-          do
-            do
-              if closeTime <= svrTime then
-                tips = (StringTable.Get)("str_activity_error_107")
-              end
-              do return true, tips end
-              do return false end
-            end
-          end
-        end
-      end
+      tips = StringTable.Get("str_season_talent_tree_unlock_prelevel", cfgName)
+    elseif svrTime < unlockTime then
+      local lessTime = unlockTime - svrTime
+      local timeStr = HelperProxy:GetInstance():Time2Tex(lessTime)
+      tips = StringTable.Get("str_season_talent_tree_unlock_eta", timeStr)
+    elseif svrTime >= closeTime then
+      tips = StringTable.Get("str_activity_error_107")
     end
+    return true, tips
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.CheckOpen = function(self)
-  -- function num : 0_11
+function UISeasonTalentEntry:CheckOpen()
   return true
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.BtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
+function UISeasonTalentEntry:BtnOnClick(go)
   local lock, lockTips = self:GetLockState()
   if lock then
-    (ToastManager.ShowToast)(lockTips)
-    return 
+    ToastManager.ShowToast(lockTips)
+    return
   end
   self:ShowDialog("UISeasonTalentLineMission")
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.CheckNew = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local lineCom = (self._seasonObj):GetComponent(self._componentId_LineMission)
-  local new = (UISeasonHelper.TalentTreeNew)(nil, lineCom)
+function UISeasonTalentEntry:CheckNew()
+  local lineCom = self._seasonObj:GetComponent(self._componentId_LineMission)
+  local new = UISeasonHelper.TalentTreeNew(nil, lineCom)
   return new
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonTalentEntry.CheckRed = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local lineCom = (self._seasonObj):GetComponent(self._componentId_LineMission)
-  local treeCom = (self._seasonObj):GetComponent(self._componentId_Tree)
-  local red = (UISeasonHelper.TalentTreeRed)(nil, lineCom, treeCom)
+function UISeasonTalentEntry:CheckRed()
+  local lineCom = self._seasonObj:GetComponent(self._componentId_LineMission)
+  local treeCom = self._seasonObj:GetComponent(self._componentId_Tree)
+  local red = UISeasonHelper.TalentTreeRed(nil, lineCom, treeCom)
   return red
 end
-
-

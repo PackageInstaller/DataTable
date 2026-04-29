@@ -1,107 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_vampire.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultVampire", BuffResultBase)
 BuffResultVampire = BuffResultVampire
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultVampire.Constructor = function(self, damageInfo)
-  -- function num : 0_0
+function BuffResultVampire:Constructor(damageInfo)
   self._damageInfo = damageInfo
   self._isAddSan = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.GetDamageInfo = function(self)
-  -- function num : 0_1
+function BuffResultVampire:GetDamageInfo()
   return self._damageInfo
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.SetOldSanValue = function(self, oldSan)
-  -- function num : 0_2
+function BuffResultVampire:SetOldSanValue(oldSan)
   self._oldSan = oldSan
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.SetModifySanValue = function(self, san)
-  -- function num : 0_3
+function BuffResultVampire:SetModifySanValue(san)
   self._modifySan = san
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.SetNewSanValue = function(self, newSan)
-  -- function num : 0_4
+function BuffResultVampire:SetNewSanValue(newSan)
   self._newSan = newSan
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.SetDebtValue = function(self, debt)
-  -- function num : 0_5
+function BuffResultVampire:SetDebtValue(debt)
   self._debt = debt
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.SetModifyTimes = function(self, times)
-  -- function num : 0_6
+function BuffResultVampire:SetModifyTimes(times)
   self._modifyTimes = times
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.SetAddSan = function(self, isAddSan)
-  -- function num : 0_7
+function BuffResultVampire:SetAddSan(isAddSan)
   self._isAddSan = isAddSan
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.IsAddSan = function(self)
-  -- function num : 0_8
+function BuffResultVampire:IsAddSan()
   return self._isAddSan
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.GetOldSanValue = function(self)
-  -- function num : 0_9
+function BuffResultVampire:GetOldSanValue()
   return self._oldSan
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.GetNewSanValue = function(self)
-  -- function num : 0_10
+function BuffResultVampire:GetNewSanValue()
   return self._newSan
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.GetModifySanValue = function(self)
-  -- function num : 0_11
+function BuffResultVampire:GetModifySanValue()
   return self._modifySan
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.GetDebtValue = function(self)
-  -- function num : 0_12
+function BuffResultVampire:GetDebtValue()
   return self._debt
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultVampire.GetModifyTimes = function(self)
-  -- function num : 0_13
+function BuffResultVampire:GetModifyTimes()
   return self._modifyTimes
 end
-
-

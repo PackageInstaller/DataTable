@@ -1,73 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/power2item_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("CampaignPower2itemComponent", ICampaignComponent)
 CampaignPower2itemComponent = CampaignPower2itemComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignPower2itemComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CampaignPower2itemComponent:Constructor()
   self.m_component_info = Power2ItemComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignPower2itemComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CampaignPower2itemComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = Power2ItemComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignPower2itemComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_2 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function CampaignPower2itemComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignPower2itemComponent.GetComponentInfo = function(self)
-  -- function num : 0_3
+function CampaignPower2itemComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignPower2itemComponent.GetComponentType = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function CampaignPower2itemComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_POWER2ITEM
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignPower2itemComponent.GetCampaignCount = function(self)
-  -- function num : 0_5
-  return (self.m_component_info).m_total_count
+function CampaignPower2itemComponent:GetCampaignCount()
+  return self.m_component_info.m_total_count
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignPower2itemComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_6 , upvalues : _ENV
+function CampaignPower2itemComponent:CampaignComponentPushNotify(notify_data)
   if StoryComponentNotifyType.StoryComponentNotifyType_PointChange == notify_data.m_notify_type then
     local ev = NotifyStoryComponentPointChanged:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R4 in 'UnsetPending'
-
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
-      (self.m_component_info).m_total_count = ev.m_total_count
+      self.m_component_info.m_total_count = ev.m_total_count
     else
-      ;
-      (Log.error)("[CampaignCom][CampaignPower2itemComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][CampaignPower2itemComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
-
-

@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn9/SouthSea/ui_activity_cn9_book_detail_pop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityCN9BookDetailPop", UIController)
 UIActivityCN9BookDetailPop = UIActivityCN9BookDetailPop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityCN9BookDetailPop.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIActivityCN9BookDetailPop:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN9BookDetailPop.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityCN9BookDetailPop:OnShow(uiParams)
   self._Name = uiParams[1]
   self._Icon = uiParams[2]
   self._Intro = uiParams[3]
@@ -23,31 +13,18 @@ UIActivityCN9BookDetailPop.OnShow = function(self, uiParams)
   self:LoadDetail()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN9BookDetailPop.InitWidget = function(self)
-  -- function num : 0_2
+function UIActivityCN9BookDetailPop:InitWidget()
   self._RawImage = self:GetUIComponent("RawImageLoader", "Icon")
   self._TitleText = self:GetUIComponent("UILocalizationText", "TitleText")
   self._TipsText = self:GetUIComponent("UILocalizationText", "TipsText")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN9BookDetailPop.LoadDetail = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._TitleText):SetText((StringTable.Get)(self._Name))
-  ;
-  (self._TipsText):SetText((StringTable.Get)(self._Intro))
-  ;
-  (self._RawImage):LoadImage(self._Icon)
+function UIActivityCN9BookDetailPop:LoadDetail()
+  self._TitleText:SetText(StringTable.Get(self._Name))
+  self._TipsText:SetText(StringTable.Get(self._Intro))
+  self._RawImage:LoadImage(self._Icon)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityCN9BookDetailPop.CloseBtnOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityCN9BookDetailPop:CloseBtnOnClick(go)
   self:CloseDialog()
 end
-
-

@@ -1,40 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_change_target_attribute_based_on_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ChangeTargetAttributeBasedOnDamage", Object)
 SkillEffectCalc_ChangeTargetAttributeBasedOnDamage = SkillEffectCalc_ChangeTargetAttributeBasedOnDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ChangeTargetAttributeBasedOnDamage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ChangeTargetAttributeBasedOnDamage:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ChangeTargetAttributeBasedOnDamage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ChangeTargetAttributeBasedOnDamage:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local addBuffParam = skillEffectCalcParam.skillEffectParam
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local stageIndex = addBuffParam:GetCheckDamageEffectResultWithStageIndex() or 1
   local skillResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage, stageIndex)
-  if not skillResultArray or (table.count)(skillResultArray) == 0 then
+  if not skillResultArray or table.count(skillResultArray) == 0 then
     return {}
   end
   local mulValue = addBuffParam:GetMulValue()
   local addValue = addBuffParam:GetAddValue()
   local attributeType = addBuffParam:GetAttributeType()
-  for _,v in ipairs(skillResultArray) do
+  for _, v in ipairs(skillResultArray) do
     local damageResult = v
     local targetEntityID = damageResult:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
     local damageInfo = damageResult:GetDamageInfo(1)
     local hasDamage = true
-    if (damageInfo and damageInfo:GetDamageType() == DamageType.Miss) or damageInfo:GetDamageType() == DamageType.Guard then
+    if damageInfo and damageInfo:GetDamageType() == DamageType.Miss or damageInfo:GetDamageType() == DamageType.Guard then
       hasDamage = false
     end
     if hasDamage and targetEntity then
@@ -46,46 +36,26 @@ SkillEffectCalc_ChangeTargetAttributeBasedOnDamage.DoSkillEffectCalculator = fun
       if add_value ~= 0 then
         if attributeType == CalcChangeTargetAttributeType.MaxHP then
           local damageInfoRecover = DamageInfo:New(add_value, DamageType.Recover)
-          local calcDamage = (self._world):GetService("CalcDamage")
+          local calcDamage = self._world:GetService("CalcDamage")
           calcDamage:AddTargetHP(entity:GetID(), damageInfoRecover)
         end
-        do
-          do
-            local result = SkillEffectResultChangeTargetAttributeBasedOnDamage:New(targetEntityID)
-            ;
-            (table.insert)(results, result)
-            -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC109: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+        local result = SkillEffectResultChangeTargetAttributeBasedOnDamage:New(targetEntityID)
+        table.insert(results, result)
       end
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ChangeTargetAttributeBasedOnDamage.EachApplyAddBlood = function(self, attacker, addBloodResult, skillType)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_ChangeTargetAttributeBasedOnDamage:EachApplyAddBlood(attacker, addBloodResult, skillType)
   local targetID = addBloodResult:GetTargetID()
   local healValue = addBloodResult:GetAddValue()
   local damageInfo = DamageInfo:New(healValue, DamageType.Recover)
-  local calcDamageSvc = (self._world):GetService("CalcDamage")
+  local calcDamageSvc = self._world:GetService("CalcDamage")
   calcDamageSvc:AddTargetHP(targetID, damageInfo)
   addBloodResult:SetDamageInfo(damageInfo)
-  local target = (self._world):GetEntityByID(targetID)
+  local target = self._world:GetEntityByID(targetID)
   if target:HasPetPstID() or target:HasTeam() then
-    ((self._world):GetDataLogger()):AddDataLog("OnSkillAddBlood", skillType, target, healValue)
+    self._world:GetDataLogger():AddDataLog("OnSkillAddBlood", skillType, target, healValue)
   end
 end
-
-

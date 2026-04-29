@@ -1,219 +1,86 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/affix_svc_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_service")
 _class("AffixService", BaseService)
 AffixService = AffixService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AffixService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function AffixService:Constructor(world)
   self._replaceMonsterIDList = {}
   self._world = world
   self._parseAffixParam = {}
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.TeamLeadOnlyInElementAttack] = IAffixParam
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangePetAttr] = AffixChangePetAttrParam
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.CloseAuroraTime] = IAffixParam
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangePetChainCount] = AffixChangePetChainCountParam
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangeMonsterAttr] = AffixChangeMonsterAttrParam
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplaceMonsterAI] = AffixReplaceMonsterAIParam
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplaceMonsterSkill] = AffixReplaceMonsterSkillIDParam
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangeTrapAttr] = AffixChangeTrapAttrParam
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.PlayerBeHitLimit] = AffixPlayerBeHitCountParam
-  -- DECOMPILER ERROR at PC54: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplaceLevelComplete] = AffixReplaceLevelCompleteTypeParam
-  -- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddAffixBuff] = AffixAddBuffParam
-  -- DECOMPILER ERROR at PC64: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangeWaveBeginMonsterID] = AffixChangeWaveIDParamBase
-  -- DECOMPILER ERROR at PC69: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangeWaveBeginTrapID] = AffixChangeWaveIDParamBase
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddWaveBeginMonsterIDAndPos] = AffixAddWaveIDParamBase
-  -- DECOMPILER ERROR at PC79: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddWaveBeginTrapIDAndPos] = AffixAddWaveTrapIDAndPosParamBase
-  -- DECOMPILER ERROR at PC84: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangeWaveInternalMonsterID] = AffixChangeWaveInternalIDParamBase
-  -- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangeWaveInternalTrapID] = AffixChangeWaveInternalIDParamBase
-  -- DECOMPILER ERROR at PC94: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddWaveInternalMonsterIDAndPos] = AffixAddWaveInternalIDParamBase
-  -- DECOMPILER ERROR at PC99: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddWaveInternalTrapIDAndPos] = AffixAddWaveInternalTrapIDAndPosParam
-  -- DECOMPILER ERROR at PC104: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangeAllMonsterAttr] = AffixChangeAllMonsterAttrParam
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangeLevelRound] = AffixChangeLevelRoundParam
-  -- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangeWaveInternalParam] = AffixChangeWaveInternalParam
-  -- DECOMPILER ERROR at PC119: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddWaveInternalParam] = AffixAddWaveInternalParam
-  -- DECOMPILER ERROR at PC124: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplaceMonsterBuff] = AffixReplaceMonsterBuffParam
-  -- DECOMPILER ERROR at PC129: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplaceMonsterEliteBuff] = AffixReplaceMonsterEliteBuffParam
-  -- DECOMPILER ERROR at PC134: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddMonsterBuff] = AffixAddMonsterBuffParam
-  -- DECOMPILER ERROR at PC139: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddMonsterEliteBuff] = AffixAddMonsterEliteBuffParam
-  -- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplaceTrapSkill] = AffixReplaceTrapSkillParam
-  -- DECOMPILER ERROR at PC149: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddTrapBuff] = AffixAddTrapBuffParam
-  -- DECOMPILER ERROR at PC154: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplaceTrapBuff] = AffixReplaceTrapBuffParam
-  -- DECOMPILER ERROR at PC159: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplaceMonsterSpSkill] = AffixReplaceMonsterSpSkillParam
-  -- DECOMPILER ERROR at PC164: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangePieceRefreshType] = AffixChangePieceRefreshTypeParam
-  -- DECOMPILER ERROR at PC169: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplaceFeatureModule] = AffixReplaceFeatureModule
-  -- DECOMPILER ERROR at PC174: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.NoAuroraTimeLimit] = IAffixParam
-  -- DECOMPILER ERROR at PC179: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ReplacePieceGenWeight] = AffixReplacePieceGenWeightParam
-  -- DECOMPILER ERROR at PC184: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.IncreasePetNoDefenceDamage] = AffixIncreasePetNoDefenceDamageParam
-  -- DECOMPILER ERROR at PC189: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.ChangePetAddBuffMaxRound] = AffixChangePetAddBuffMaxRoundParam
-  -- DECOMPILER ERROR at PC194: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._parseAffixParam)[AffixType.AddChainPathNum] = AffixAddChainPathNumParam
+  self._parseAffixParam[AffixType.TeamLeadOnlyInElementAttack] = IAffixParam
+  self._parseAffixParam[AffixType.ChangePetAttr] = AffixChangePetAttrParam
+  self._parseAffixParam[AffixType.CloseAuroraTime] = IAffixParam
+  self._parseAffixParam[AffixType.ChangePetChainCount] = AffixChangePetChainCountParam
+  self._parseAffixParam[AffixType.ChangeMonsterAttr] = AffixChangeMonsterAttrParam
+  self._parseAffixParam[AffixType.ReplaceMonsterAI] = AffixReplaceMonsterAIParam
+  self._parseAffixParam[AffixType.ReplaceMonsterSkill] = AffixReplaceMonsterSkillIDParam
+  self._parseAffixParam[AffixType.ChangeTrapAttr] = AffixChangeTrapAttrParam
+  self._parseAffixParam[AffixType.PlayerBeHitLimit] = AffixPlayerBeHitCountParam
+  self._parseAffixParam[AffixType.ReplaceLevelComplete] = AffixReplaceLevelCompleteTypeParam
+  self._parseAffixParam[AffixType.AddAffixBuff] = AffixAddBuffParam
+  self._parseAffixParam[AffixType.ChangeWaveBeginMonsterID] = AffixChangeWaveIDParamBase
+  self._parseAffixParam[AffixType.ChangeWaveBeginTrapID] = AffixChangeWaveIDParamBase
+  self._parseAffixParam[AffixType.AddWaveBeginMonsterIDAndPos] = AffixAddWaveIDParamBase
+  self._parseAffixParam[AffixType.AddWaveBeginTrapIDAndPos] = AffixAddWaveTrapIDAndPosParamBase
+  self._parseAffixParam[AffixType.ChangeWaveInternalMonsterID] = AffixChangeWaveInternalIDParamBase
+  self._parseAffixParam[AffixType.ChangeWaveInternalTrapID] = AffixChangeWaveInternalIDParamBase
+  self._parseAffixParam[AffixType.AddWaveInternalMonsterIDAndPos] = AffixAddWaveInternalIDParamBase
+  self._parseAffixParam[AffixType.AddWaveInternalTrapIDAndPos] = AffixAddWaveInternalTrapIDAndPosParam
+  self._parseAffixParam[AffixType.ChangeAllMonsterAttr] = AffixChangeAllMonsterAttrParam
+  self._parseAffixParam[AffixType.ChangeLevelRound] = AffixChangeLevelRoundParam
+  self._parseAffixParam[AffixType.ChangeWaveInternalParam] = AffixChangeWaveInternalParam
+  self._parseAffixParam[AffixType.AddWaveInternalParam] = AffixAddWaveInternalParam
+  self._parseAffixParam[AffixType.ReplaceMonsterBuff] = AffixReplaceMonsterBuffParam
+  self._parseAffixParam[AffixType.ReplaceMonsterEliteBuff] = AffixReplaceMonsterEliteBuffParam
+  self._parseAffixParam[AffixType.AddMonsterBuff] = AffixAddMonsterBuffParam
+  self._parseAffixParam[AffixType.AddMonsterEliteBuff] = AffixAddMonsterEliteBuffParam
+  self._parseAffixParam[AffixType.ReplaceTrapSkill] = AffixReplaceTrapSkillParam
+  self._parseAffixParam[AffixType.AddTrapBuff] = AffixAddTrapBuffParam
+  self._parseAffixParam[AffixType.ReplaceTrapBuff] = AffixReplaceTrapBuffParam
+  self._parseAffixParam[AffixType.ReplaceMonsterSpSkill] = AffixReplaceMonsterSpSkillParam
+  self._parseAffixParam[AffixType.ChangePieceRefreshType] = AffixChangePieceRefreshTypeParam
+  self._parseAffixParam[AffixType.ReplaceFeatureModule] = AffixReplaceFeatureModule
+  self._parseAffixParam[AffixType.NoAuroraTimeLimit] = IAffixParam
+  self._parseAffixParam[AffixType.ReplacePieceGenWeight] = AffixReplacePieceGenWeightParam
+  self._parseAffixParam[AffixType.IncreasePetNoDefenceDamage] = AffixIncreasePetNoDefenceDamageParam
+  self._parseAffixParam[AffixType.ChangePetAddBuffMaxRound] = AffixChangePetAddBuffMaxRoundParam
+  self._parseAffixParam[AffixType.AddChainPathNum] = AffixAddChainPathNumParam
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetAffixDataCmpt = function(self)
-  -- function num : 0_1
-  local affixDataCmpt = ((self._world):GetBoardEntity()):AffixData()
+function AffixService:GetAffixDataCmpt()
+  local affixDataCmpt = self._world:GetBoardEntity():AffixData()
   return affixDataCmpt
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.HasAffixData = function(self, affixType)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._world):GetRunningPosition() == WorldRunPostion.Performance then
+function AffixService:HasAffixData(affixType)
+  if self._world:GetRunningPosition() == WorldRunPostion.Performance then
     return false
   end
   local affixDataCmpt = self:GetAffixDataCmpt()
   return affixDataCmpt:HasAffixData(affixType)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetAffixData = function(self, affixType)
-  -- function num : 0_3
+function AffixService:GetAffixData(affixType)
   local affixDataCmpt = self:GetAffixDataCmpt()
   return affixDataCmpt:GetAffixDataList(affixType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ParseAffixData = function(self, affixList)
-  -- function num : 0_4 , upvalues : _ENV
+function AffixService:ParseAffixData(affixList)
   local affixDataCmpt = self:GetAffixDataCmpt()
-  if (table.count)(affixList) < 1 then
-    return 
+  if table.count(affixList) < 1 then
+    return
   end
-  for i,affixID in ipairs(affixList) do
-    local affixParamList = (Cfg.cfg_affix)[affixID]
-    if not affixParamList or not affixParamList.EntryParam or (table.count)(affixParamList.EntryParam) < 1 then
-      (Log.exception)("ParseAffixData cant find affixID :", affixID)
-      return 
+  for i, affixID in ipairs(affixList) do
+    local affixParamList = Cfg.cfg_affix[affixID]
+    if not (affixParamList and affixParamList.EntryParam) or 1 > table.count(affixParamList.EntryParam) then
+      Log.exception("ParseAffixData cant find affixID :", affixID)
+      return
     end
     for i = 2, #affixParamList.EntryParam do
-      local affixData = (affixParamList.EntryParam)[i]
-      local paramClassType = (self._parseAffixParam)[affixData.affixType]
+      local affixData = affixParamList.EntryParam[i]
+      local paramClassType = self._parseAffixParam[affixData.affixType]
       if paramClassType == nil then
-        (Log.exception)("ParseAffixData cant find affixType :", affixData.affixType)
-        return 
+        Log.exception("ParseAffixData cant find affixType :", affixData.affixType)
+        return
       end
       local affixParam = paramClassType:New(affixData, affixParamList.Type, i)
       affixParam:Init(self._world)
@@ -223,104 +90,70 @@ AffixService.ParseAffixData = function(self, affixList)
   affixDataCmpt:Sort()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService._ChangePetAttr = function(self, attrNum, type)
-  -- function num : 0_5 , upvalues : _ENV
+function AffixService:_ChangePetAttr(attrNum, type)
   if self:HasAffixData(AffixType.ChangePetAttr) then
     local affixChangePetAttrParamList = self:GetAffixData(AffixType.ChangePetAttr)
-    for _,param in ipairs(affixChangePetAttrParamList) do
+    for _, param in ipairs(affixChangePetAttrParamList) do
       if param:GetType() == type then
         return param:CalcAttr(attrNum)
       end
     end
   end
-  do
-    return attrNum
-  end
+  return attrNum
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangePetAttr = function(self, hp, sourceDefence)
-  -- function num : 0_6 , upvalues : _ENV
+function AffixService:ChangePetAttr(hp, sourceDefence)
   local maxHP = self:_ChangePetAttr(hp, ChangePetAttrType.AllPetMaxHPPercent)
   local curHP = self:_ChangePetAttr(maxHP, ChangePetAttrType.AllPetCurHPPercent)
   local defence = self:_ChangePetAttr(sourceDefence, ChangePetAttrType.AllPetDefence)
   return curHP, maxHP, defence
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.IsCloseAuroraTime = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function AffixService:IsCloseAuroraTime()
   return self:HasAffixData(AffixType.CloseAuroraTime)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.IsNoAuroraTimeLimit = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AffixService:IsNoAuroraTimeLimit()
   return self:HasAffixData(AffixType.NoAuroraTimeLimit)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangePetChainCount = function(self, configData)
-  -- function num : 0_9 , upvalues : _ENV
-  do
-    if self:HasAffixData(AffixType.ChangePetChainCount) then
-      local affixChangePetChainCountParam = self:GetAffixData(AffixType.ChangePetChainCount)
-      for _,param in ipairs(affixChangePetChainCountParam) do
-        configData._triggerParam = param:CalcChainCount(configData._triggerParam)
-      end
-      return configData
+function AffixService:ChangePetChainCount(configData)
+  if self:HasAffixData(AffixType.ChangePetChainCount) then
+    local affixChangePetChainCountParam = self:GetAffixData(AffixType.ChangePetChainCount)
+    for _, param in ipairs(affixChangePetChainCountParam) do
+      configData._triggerParam = param:CalcChainCount(configData._triggerParam)
     end
     return configData
   end
+  return configData
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangePetSkillChainCount = function(self, skillInfoList)
-  -- function num : 0_10 , upvalues : _ENV
+function AffixService:ChangePetSkillChainCount(skillInfoList)
   if self:HasAffixData(AffixType.ChangePetChainCount) then
     local affixChangePetChainCountParam = self:GetAffixData(AffixType.ChangePetChainCount)
-    for _,skillInfo in ipairs(skillInfoList) do
-      for _,param in ipairs(affixChangePetChainCountParam) do
+    for _, skillInfo in ipairs(skillInfoList) do
+      for _, param in ipairs(affixChangePetChainCountParam) do
         skillInfo.Chain = param:CalcChainCount(skillInfo.Chain)
       end
     end
   end
-  do
-    return skillInfoList
-  end
+  return skillInfoList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.IsTeamLeaderCanAttack = function(self, teamEntity, chainPathElementType)
-  -- function num : 0_11 , upvalues : _ENV
+function AffixService:IsTeamLeaderCanAttack(teamEntity, chainPathElementType)
   if self:HasAffixData(AffixType.TeamLeadOnlyInElementAttack) then
-    local battleService = (self._world):GetService("Battle")
-    local teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
+    local battleService = self._world:GetService("Battle")
+    local teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
     local elementCmpt = teamLeaderEntity:Element()
-    if not CanMatchPieceType(chainPathElementType, elementCmpt:GetPrimaryType()) and elementCmpt:HasSecondaryType() then
-      do
-        do return CanMatchPieceType(chainPathElementType, elementCmpt:GetSecondaryType()) end
-        return true
-      end
-    end
+    return not CanMatchPieceType(chainPathElementType, elementCmpt:GetPrimaryType()) and elementCmpt:HasSecondaryType() and CanMatchPieceType(chainPathElementType, elementCmpt:GetSecondaryType())
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.IsTeamLeaderUseSecondaryType = function(self, teamEntity, chainPathElementType)
-  -- function num : 0_12 , upvalues : _ENV
+function AffixService:IsTeamLeaderUseSecondaryType(teamEntity, chainPathElementType)
   if self:HasAffixData(AffixType.TeamLeadOnlyInElementAttack) then
-    local battleService = (self._world):GetService("Battle")
-    local teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
+    local battleService = self._world:GetService("Battle")
+    local teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
     local elementCmpt = teamLeaderEntity:Element()
     if CanMatchPieceType(chainPathElementType, elementCmpt:GetPrimaryType()) then
       return false
@@ -329,15 +162,10 @@ AffixService.IsTeamLeaderUseSecondaryType = function(self, teamEntity, chainPath
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetMonsterAttrNum = function(self, param, attrNum, attrType)
-  -- function num : 0_13 , upvalues : _ENV
+function AffixService:GetMonsterAttrNum(param, attrNum, attrType)
   if attrType == AffixAttrType.HP and param:GetMonsterHP() then
     return param:GetMonsterHP()
   end
@@ -350,75 +178,55 @@ AffixService.GetMonsterAttrNum = function(self, param, attrNum, attrType)
   return attrNum
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeMonsterAttr = function(self, monsterID, attrNum, attrType)
-  -- function num : 0_14 , upvalues : _ENV
+function AffixService:ChangeMonsterAttr(monsterID, attrNum, attrType)
   if self:HasAffixData(AffixType.ChangeMonsterAttr) then
     local affixChangeMonsterAttrParamList = self:GetAffixData(AffixType.ChangeMonsterAttr)
-    for _,param in ipairs(affixChangeMonsterAttrParamList) do
+    for _, param in ipairs(affixChangeMonsterAttrParamList) do
       if param:GetMonsterID() == monsterID then
         return self:GetMonsterAttrNum(param, attrNum, attrType)
       end
     end
   end
-  do
-    return attrNum
-  end
+  return attrNum
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeMonsterAI = function(self, monsterID, aiType, aiIDAndOrderList)
-  -- function num : 0_15 , upvalues : _ENV
+function AffixService:ChangeMonsterAI(monsterID, aiType, aiIDAndOrderList)
   if self:HasAffixData(AffixType.ReplaceMonsterAI) then
     local affixReplaceMonsterAIParamList = self:GetAffixData(AffixType.ReplaceMonsterAI)
-    for _,param in ipairs(affixReplaceMonsterAIParamList) do
+    for _, param in ipairs(affixReplaceMonsterAIParamList) do
       if param:GetMonsterID() == monsterID and param:GetAIType() == aiType then
-        local temp = (table.cloneconf)(aiIDAndOrderList)
-        for i,aiAndOrder in ipairs(temp) do
+        local temp = table.cloneconf(aiIDAndOrderList)
+        for i, aiAndOrder in ipairs(temp) do
           aiAndOrder[1] = param:ReplaceAI(aiAndOrder[1])
         end
         return temp
       end
     end
   end
-  do
-    return aiIDAndOrderList
-  end
+  return aiIDAndOrderList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeMonsterSkillID = function(self, monsterID, skillIDs)
-  -- function num : 0_16 , upvalues : _ENV
+function AffixService:ChangeMonsterSkillID(monsterID, skillIDs)
   if self:HasAffixData(AffixType.ReplaceMonsterSkill) then
     local affixReplaceMonsterAIParamList = self:GetAffixData(AffixType.ReplaceMonsterSkill)
-    local temp = (table.cloneconf)(skillIDs)
+    local temp = table.cloneconf(skillIDs)
     local bReplace = false
-    for _,param in ipairs(affixReplaceMonsterAIParamList) do
+    for _, param in ipairs(affixReplaceMonsterAIParamList) do
       if param:GetMonsterID() == monsterID then
         bReplace = true
-        for i,v in ipairs(temp) do
-          for k,skillID in ipairs(v) do
-            -- DECOMPILER ERROR at PC36: Confused about usage of register: R21 in 'UnsetPending'
-
-            (temp[i])[k] = param:ReplaceSkillID(skillID)
+        for i, v in ipairs(temp) do
+          for k, skillID in ipairs(v) do
+            temp[i][k] = param:ReplaceSkillID(skillID)
           end
         end
       end
     end
     return temp
   end
-  do
-    return skillIDs
-  end
+  return skillIDs
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetTrapAttrNum = function(self, param, attrNum, attrType)
-  -- function num : 0_17
+function AffixService:GetTrapAttrNum(param, attrNum, attrType)
   if attrType == "HP" and param:GetTrapHP() then
     return param:GetTrapHP()
   end
@@ -437,27 +245,19 @@ AffixService.GetTrapAttrNum = function(self, param, attrNum, attrType)
   return attrNum
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeTrapAttr = function(self, trapID, attrNum, attrType)
-  -- function num : 0_18 , upvalues : _ENV
+function AffixService:ChangeTrapAttr(trapID, attrNum, attrType)
   if self:HasAffixData(AffixType.ChangeTrapAttr) then
     local affixChangeTrapAttrParamList = self:GetAffixData(AffixType.ChangeTrapAttr)
-    for _,param in ipairs(affixChangeTrapAttrParamList) do
+    for _, param in ipairs(affixChangeTrapAttrParamList) do
       if param:GetTrapID() == trapID then
         return self:GetTrapAttrNum(param, attrNum, attrType)
       end
     end
   end
-  do
-    return attrNum
-  end
+  return attrNum
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetTrapSkillValue = function(self, param, value, skillType)
-  -- function num : 0_19
+function AffixService:GetTrapSkillValue(param, value, skillType)
   if skillType == "Trigger" and param:GetTriggerSkillID() then
     return param:GetTriggerSkillID()
   end
@@ -473,64 +273,43 @@ AffixService.GetTrapSkillValue = function(self, param, value, skillType)
   return value
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeTrapSkill = function(self, trapID, value, skillType)
-  -- function num : 0_20 , upvalues : _ENV
+function AffixService:ChangeTrapSkill(trapID, value, skillType)
   if self:HasAffixData(AffixType.ReplaceTrapSkill) then
     local affixChangeTrapAttrParamList = self:GetAffixData(AffixType.ReplaceTrapSkill)
-    for _,param in ipairs(affixChangeTrapAttrParamList) do
+    for _, param in ipairs(affixChangeTrapAttrParamList) do
       if param:GetTrapID() == trapID then
         return self:GetTrapSkillValue(param, value, skillType)
       end
     end
   end
-  do
-    return value
-  end
+  return value
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeLevelComplete = function(self)
-  -- function num : 0_21
+function AffixService:ChangeLevelComplete()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.IsEnoughPlayerBeHitCount = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function AffixService:IsEnoughPlayerBeHitCount()
   if self:HasAffixData(AffixType.PlayerBeHitLimit) then
     local affixPlayerBeHitCountParamList = self:GetAffixData(AffixType.PlayerBeHitLimit)
     local param = affixPlayerBeHitCountParamList[1]
-    local playerBeHitCount = ((self._world):BattleStat()):GetPlayerBeHitCount()
-    if param:GetPlayerBeHitCount() <= playerBeHitCount then
+    local playerBeHitCount = self._world:BattleStat():GetPlayerBeHitCount()
+    if playerBeHitCount >= param:GetPlayerBeHitCount() then
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetAffixLevelCompleteType = function(self, completeType)
-  -- function num : 0_23 , upvalues : _ENV
+function AffixService:GetAffixLevelCompleteType(completeType)
   if self:HasAffixData(AffixType.ReplaceLevelComplete) then
     local affixReplaceLevelCompleteTypeParamList = self:GetAffixData(AffixType.ReplaceLevelComplete)
     local param = affixReplaceLevelCompleteTypeParamList[1]
     return param:GetType()
   end
-  do
-    return completeType
-  end
+  return completeType
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetAffixLastWaveCompleteType = function(self, completeType)
-  -- function num : 0_24 , upvalues : _ENV
+function AffixService:GetAffixLastWaveCompleteType(completeType)
   if self:HasAffixData(AffixType.ReplaceLevelComplete) then
     local affixReplaceLevelCompleteTypeParamList = self:GetAffixData(AffixType.ReplaceLevelComplete)
     local param = affixReplaceLevelCompleteTypeParamList[1]
@@ -540,15 +319,10 @@ AffixService.GetAffixLastWaveCompleteType = function(self, completeType)
       return completeType
     end
   end
-  do
-    return completeType
-  end
+  return completeType
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetAffixLastWaveCompleteParam = function(self, completeParam)
-  -- function num : 0_25 , upvalues : _ENV
+function AffixService:GetAffixLastWaveCompleteParam(completeParam)
   if self:HasAffixData(AffixType.ReplaceLevelComplete) then
     local affixReplaceLevelCompleteTypeParamList = self:GetAffixData(AffixType.ReplaceLevelComplete)
     local param = affixReplaceLevelCompleteTypeParamList[1]
@@ -558,44 +332,37 @@ AffixService.GetAffixLastWaveCompleteParam = function(self, completeParam)
       return completeParam
     end
   end
-  do
-    return completeParam
-  end
+  return completeParam
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetAffixLevelCompleteParam = function(self, completeParam)
-  -- function num : 0_26 , upvalues : _ENV
+function AffixService:GetAffixLevelCompleteParam(completeParam)
   if self:HasAffixData(AffixType.ReplaceLevelComplete) then
     local affixReplaceLevelCompleteTypeParamList = self:GetAffixData(AffixType.ReplaceLevelComplete)
     local param = affixReplaceLevelCompleteTypeParamList[1]
     return param:GetParam()
   end
-  do
-    return completeParam
-  end
+  return completeParam
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.InitAffixBuff = function(self, GameStartBuffs)
-  -- function num : 0_27 , upvalues : _ENV
+function AffixService:InitAffixBuff(GameStartBuffs)
   if self:HasAffixData(AffixType.AddAffixBuff) then
     local affixAddBuffParamList = self:GetAffixData(AffixType.AddAffixBuff)
-    for _,param in ipairs(affixAddBuffParamList) do
+    for _, param in ipairs(affixAddBuffParamList) do
       local affixBuffList = param:GetAffixBuffIDList()
-      for _,id in ipairs(affixBuffList) do
-        local buffLogic = (self._world):GetService("BuffLogic")
-        local cfg = (Cfg.cfg_affix_buff)[id]
+      for _, id in ipairs(affixBuffList) do
+        local buffLogic = self._world:GetService("BuffLogic")
+        local cfg = Cfg.cfg_affix_buff[id]
         if cfg == nil then
-          (Log.fatal)("affix_buff not found: ", id)
-          return 
+          Log.fatal("affix_buff not found: ", id)
+          return
         end
-        for _,buffID in ipairs(cfg.BuffID) do
+        for _, buffID in ipairs(cfg.BuffID) do
           local ret = buffLogic:AddBuffByTargetType(buffID, cfg.BuffTargetType, cfg.BuffTargetParam)
-          for _,inst in ipairs(ret) do
-            GameStartBuffs[#GameStartBuffs + 1] = {inst:Entity(), inst:BuffSeq()}
+          for _, inst in ipairs(ret) do
+            GameStartBuffs[#GameStartBuffs + 1] = {
+              inst:Entity(),
+              inst:BuffSeq()
+            }
           end
         end
       end
@@ -603,93 +370,71 @@ AffixService.InitAffixBuff = function(self, GameStartBuffs)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeWaveMonsterRefreshParam = function(self, monsterWaveParam, waveCount)
-  -- function num : 0_28 , upvalues : _ENV
+function AffixService:ChangeWaveMonsterRefreshParam(monsterWaveParam, waveCount)
   if self:HasAffixData(AffixType.AddWaveBeginMonsterIDAndPos) then
     local monsterRefreshParam = monsterWaveParam:GetWaveBeginRefreshParam()
     local waveMonsterIDList = monsterWaveParam:GetWaveMonsterIDArray()
     self:AddWaveMonsterIDAndPos(monsterRefreshParam, waveCount, AffixType.AddWaveBeginMonsterIDAndPos, waveMonsterIDList)
   end
-  do
-    do
-      if self:HasAffixData(AffixType.AddWaveBeginTrapIDAndPos) then
-        local monsterRefreshParam = monsterWaveParam:GetWaveBeginRefreshParam()
-        self:AddWaveTrapIDAndPos(monsterRefreshParam, waveCount, AffixType.AddWaveBeginTrapIDAndPos)
-      end
-      if self:HasAffixData(AffixType.AddWaveInternalMonsterIDAndPos) then
-        local monsterRefreshDataList = monsterWaveParam:GetWaveInternalRefreshData()
-        for _,refreshData in ipairs(monsterRefreshDataList) do
-          self:AddWaveInternalMonsterIDAndPos(refreshData, monsterWaveParam, waveCount, AffixType.AddWaveInternalMonsterIDAndPos)
-        end
-      end
-      do
-        if self:HasAffixData(AffixType.AddWaveInternalTrapIDAndPos) then
-          local monsterRefreshDataList = monsterWaveParam:GetWaveInternalRefreshData()
-          for _,refreshData in ipairs(monsterRefreshDataList) do
-            self:AddWaveInternalTrapIDAndPos(refreshData, monsterWaveParam, waveCount, AffixType.AddWaveInternalTrapIDAndPos)
-          end
-        end
-        do
-          if self:HasAffixData(AffixType.ChangeWaveBeginMonsterID) then
-            local monsterRefreshParam = monsterWaveParam:GetWaveBeginRefreshParam()
-            local waveMonsterIDList = monsterWaveParam:GetWaveMonsterIDArray()
-            self:_ChangeWaveMonsterID(monsterRefreshParam, waveCount, AffixType.ChangeWaveBeginMonsterID, waveMonsterIDList)
-          end
-          do
-            do
-              if self:HasAffixData(AffixType.ChangeWaveBeginTrapID) then
-                local monsterRefreshParam = monsterWaveParam:GetWaveBeginRefreshParam()
-                self:_ChangeWaveTrapID(monsterRefreshParam, waveCount, AffixType.ChangeWaveBeginTrapID)
-              end
-              if self:HasAffixData(AffixType.ChangeWaveInternalMonsterID) then
-                local monsterRefreshDataList = monsterWaveParam:GetWaveInternalRefreshData()
-                local waveMonsterIDList = monsterWaveParam:GetWaveMonsterIDArray()
-                for _,refreshData in ipairs(monsterRefreshDataList) do
-                  self:ChangeWaveInternalMonsterID(refreshData, waveCount, AffixType.ChangeWaveInternalMonsterID, waveMonsterIDList)
-                end
-              end
-              do
-                if self:HasAffixData(AffixType.ChangeWaveInternalTrapID) then
-                  local monsterRefreshDataList = monsterWaveParam:GetWaveInternalRefreshData()
-                  for _,refreshData in ipairs(monsterRefreshDataList) do
-                    self:_ChangeWaveIntervalTrapID(refreshData, monsterWaveParam, waveCount, AffixType.ChangeWaveInternalTrapID)
-                  end
-                end
-                do
-                  return monsterWaveParam
-                end
-              end
-            end
-          end
-        end
-      end
+  if self:HasAffixData(AffixType.AddWaveBeginTrapIDAndPos) then
+    local monsterRefreshParam = monsterWaveParam:GetWaveBeginRefreshParam()
+    self:AddWaveTrapIDAndPos(monsterRefreshParam, waveCount, AffixType.AddWaveBeginTrapIDAndPos)
+  end
+  if self:HasAffixData(AffixType.AddWaveInternalMonsterIDAndPos) then
+    local monsterRefreshDataList = monsterWaveParam:GetWaveInternalRefreshData()
+    for _, refreshData in ipairs(monsterRefreshDataList) do
+      self:AddWaveInternalMonsterIDAndPos(refreshData, monsterWaveParam, waveCount, AffixType.AddWaveInternalMonsterIDAndPos)
     end
   end
+  if self:HasAffixData(AffixType.AddWaveInternalTrapIDAndPos) then
+    local monsterRefreshDataList = monsterWaveParam:GetWaveInternalRefreshData()
+    for _, refreshData in ipairs(monsterRefreshDataList) do
+      self:AddWaveInternalTrapIDAndPos(refreshData, monsterWaveParam, waveCount, AffixType.AddWaveInternalTrapIDAndPos)
+    end
+  end
+  if self:HasAffixData(AffixType.ChangeWaveBeginMonsterID) then
+    local monsterRefreshParam = monsterWaveParam:GetWaveBeginRefreshParam()
+    local waveMonsterIDList = monsterWaveParam:GetWaveMonsterIDArray()
+    self:_ChangeWaveMonsterID(monsterRefreshParam, waveCount, AffixType.ChangeWaveBeginMonsterID, waveMonsterIDList)
+  end
+  if self:HasAffixData(AffixType.ChangeWaveBeginTrapID) then
+    local monsterRefreshParam = monsterWaveParam:GetWaveBeginRefreshParam()
+    self:_ChangeWaveTrapID(monsterRefreshParam, waveCount, AffixType.ChangeWaveBeginTrapID)
+  end
+  if self:HasAffixData(AffixType.ChangeWaveInternalMonsterID) then
+    local monsterRefreshDataList = monsterWaveParam:GetWaveInternalRefreshData()
+    local waveMonsterIDList = monsterWaveParam:GetWaveMonsterIDArray()
+    for _, refreshData in ipairs(monsterRefreshDataList) do
+      self:ChangeWaveInternalMonsterID(refreshData, waveCount, AffixType.ChangeWaveInternalMonsterID, waveMonsterIDList)
+    end
+  end
+  if self:HasAffixData(AffixType.ChangeWaveInternalTrapID) then
+    local monsterRefreshDataList = monsterWaveParam:GetWaveInternalRefreshData()
+    for _, refreshData in ipairs(monsterRefreshDataList) do
+      self:_ChangeWaveIntervalTrapID(refreshData, monsterWaveParam, waveCount, AffixType.ChangeWaveInternalTrapID)
+    end
+  end
+  return monsterWaveParam
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.AddWaveInternalTrapIDAndPos = function(self, monsterRefreshData, monsterWaveParam, waveNum, type)
-  -- function num : 0_29 , upvalues : _ENV
+function AffixService:AddWaveInternalTrapIDAndPos(monsterRefreshData, monsterWaveParam, waveNum, type)
   local paramList = self:GetAffixData(type)
   local trapList = monsterRefreshData:GetInternalTrapIDDic()
-  for _,param in ipairs(paramList) do
+  for _, param in ipairs(paramList) do
     if param:GetRefreshID() == monsterRefreshData:GetInternalRefreshID() and param:GetWaveNum() == waveNum then
       local trapTransformParam = TrapTransformParam:New(param:GetID())
-      trapTransformParam:SetPositionList({param:GetPos()})
-      trapTransformParam:SetRotationList({param:GetRotation()})
-      ;
-      (table.insert)(trapList, trapTransformParam)
+      trapTransformParam:SetPositionList({
+        param:GetPos()
+      })
+      trapTransformParam:SetRotationList({
+        param:GetRotation()
+      })
+      table.insert(trapList, trapTransformParam)
     end
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.AddWaveInternalMonsterIDAndPos = function(self, monsterRefreshData, monsterWaveParam, waveNum, type)
-  -- function num : 0_30 , upvalues : _ENV
+function AffixService:AddWaveInternalMonsterIDAndPos(monsterRefreshData, monsterWaveParam, waveNum, type)
   local paramList = self:GetAffixData(type)
   local waveMonsterIDArray = monsterWaveParam:GetWaveMonsterIDArray()
   local monsterRefreshParam = monsterRefreshData:GetMonsterRefreshParam()
@@ -699,47 +444,44 @@ AffixService.AddWaveInternalMonsterIDAndPos = function(self, monsterRefreshData,
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
   local posType = monsterRefreshParam:GetMonsterRefreshPosType()
   local monsterPosAndOffSetArray = monsterRefreshParam:GetMonsterPosAndOffSetArray()
-  for _,param in ipairs(paramList) do
+  for _, param in ipairs(paramList) do
     if param:GetRefreshID() == monsterRefreshData:GetInternalRefreshID() and param:GetWaveNum() == waveNum then
-      (table.insert)(monsterIDArray, param:GetID())
-      ;
-      (table.insert)(monsterPosArray, param:GetPos())
-      ;
-      (table.insert)(waveMonsterIDArray, param:GetID())
-      ;
-      (table.insert)(monsterInternalIDArray, param:GetID())
+      table.insert(monsterIDArray, param:GetID())
+      table.insert(monsterPosArray, param:GetPos())
+      table.insert(waveMonsterIDArray, param:GetID())
+      table.insert(monsterInternalIDArray, param:GetID())
       if posType == MonsterRefreshPosType.PositionAndOffSet or posType == MonsterRefreshPosType.PositionAndOffSetMultiBoard then
-        monsterPosAndOffSetArray[#monsterPosAndOffSetArray + 1] = {MonsterPosType.Position, param:GetPos()}
+        monsterPosAndOffSetArray[#monsterPosAndOffSetArray + 1] = {
+          MonsterPosType.Position,
+          param:GetPos()
+        }
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeWaveInternalMonsterID = function(self, monsterRefreshData, waveNum, type, waveMonsterIDArray)
-  -- function num : 0_31 , upvalues : _ENV
+function AffixService:ChangeWaveInternalMonsterID(monsterRefreshData, waveNum, type, waveMonsterIDArray)
   local paramList = self:GetAffixData(type)
-  for _,param in ipairs(paramList) do
+  for _, param in ipairs(paramList) do
     if param:GetRefreshID() == monsterRefreshData:GetInternalRefreshID() and param:GetWaveNum() == waveNum then
       local refreshMonsterIDArray = monsterRefreshData:GetInternalMonsterIDDic()
       local monsterRefreshParam = monsterRefreshData:GetMonsterRefreshParam()
       local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
-      for i,monsterID in ipairs(monsterIDArray) do
+      for i, monsterID in ipairs(monsterIDArray) do
         if monsterID == param:GetSourceID() then
           monsterIDArray[i] = param:GetTargetID()
-          -- DECOMPILER ERROR at PC40: Confused about usage of register: R19 in 'UnsetPending'
-
-          ;
-          (self._replaceMonsterIDList)[monsterID] = {waveNum = waveNum, targetID = param:GetTargetID()}
+          self._replaceMonsterIDList[monsterID] = {
+            waveNum = waveNum,
+            targetID = param:GetTargetID()
+          }
         end
       end
-      for i,monsterID in ipairs(waveMonsterIDArray) do
+      for i, monsterID in ipairs(waveMonsterIDArray) do
         if monsterID == param:GetSourceID() then
           waveMonsterIDArray[i] = param:GetTargetID()
         end
       end
-      for i,monsterID in ipairs(refreshMonsterIDArray) do
+      for i, monsterID in ipairs(refreshMonsterIDArray) do
         if monsterID == param:GetSourceID() then
           refreshMonsterIDArray[i] = param:GetTargetID()
         end
@@ -748,24 +490,21 @@ AffixService.ChangeWaveInternalMonsterID = function(self, monsterRefreshData, wa
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService._ChangeWaveMonsterID = function(self, monsterRefreshParam, waveNum, type, waveMonsterIDArray)
-  -- function num : 0_32 , upvalues : _ENV
+function AffixService:_ChangeWaveMonsterID(monsterRefreshParam, waveNum, type, waveMonsterIDArray)
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local paramList = self:GetAffixData(type)
-  for _,param in ipairs(paramList) do
+  for _, param in ipairs(paramList) do
     if param:GetWaveNum() == waveNum then
-      for i,monsterID in ipairs(monsterIDArray) do
+      for i, monsterID in ipairs(monsterIDArray) do
         if monsterID == param:GetSourceID() then
           monsterIDArray[i] = param:GetTargetID()
-          -- DECOMPILER ERROR at PC30: Confused about usage of register: R17 in 'UnsetPending'
-
-          ;
-          (self._replaceMonsterIDList)[monsterID] = {waveNum = waveNum, targetID = param:GetTargetID()}
+          self._replaceMonsterIDList[monsterID] = {
+            waveNum = waveNum,
+            targetID = param:GetTargetID()
+          }
         end
       end
-      for i,monsterID in ipairs(waveMonsterIDArray) do
+      for i, monsterID in ipairs(waveMonsterIDArray) do
         if monsterID == param:GetSourceID() then
           waveMonsterIDArray[i] = param:GetTargetID()
         end
@@ -775,53 +514,49 @@ AffixService._ChangeWaveMonsterID = function(self, monsterRefreshParam, waveNum,
   return monsterRefreshParam
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.AddWaveTrapIDAndPos = function(self, monsterRefreshParam, waveCount, type)
-  -- function num : 0_33 , upvalues : _ENV
+function AffixService:AddWaveTrapIDAndPos(monsterRefreshParam, waveCount, type)
   local trapArray = monsterRefreshParam:GetTrapArray()
   local paramList = self:GetAffixData(type)
-  for _,param in ipairs(paramList) do
+  for _, param in ipairs(paramList) do
     local trapTransformParam = TrapTransformParam:New(param:GetID())
-    trapTransformParam:SetPositionList({param:GetPos()})
-    trapTransformParam:SetRotationList({param:GetRotation()})
+    trapTransformParam:SetPositionList({
+      param:GetPos()
+    })
+    trapTransformParam:SetRotationList({
+      param:GetRotation()
+    })
     trapArray[#trapArray + 1] = trapTransformParam
   end
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.AddWaveMonsterIDAndPos = function(self, monsterRefreshParam, waveCount, type, waveMonsterIDList)
-  -- function num : 0_34 , upvalues : _ENV
+function AffixService:AddWaveMonsterIDAndPos(monsterRefreshParam, waveCount, type, waveMonsterIDList)
   local monsterIDArray = monsterRefreshParam:GetMonsterIDArray()
   local monsterPosArray = monsterRefreshParam:GetMonsterPosArray()
   local monsterRotationArray = monsterRefreshParam:GetMonsterRotationArray()
   local posType = monsterRefreshParam:GetMonsterRefreshPosType()
   local monsterPosAndOffSetArray = monsterRefreshParam:GetMonsterPosAndOffSetArray()
   local paramList = self:GetAffixData(AffixType.AddWaveBeginMonsterIDAndPos)
-  for _,param in ipairs(paramList) do
+  for _, param in ipairs(paramList) do
     if param:GetWaveNum() == waveCount then
-      (table.insert)(monsterIDArray, param:GetID())
-      ;
-      (table.insert)(monsterPosArray, param:GetPos())
-      ;
-      (table.insert)(waveMonsterIDList, param:GetID())
+      table.insert(monsterIDArray, param:GetID())
+      table.insert(monsterPosArray, param:GetPos())
+      table.insert(waveMonsterIDList, param:GetID())
       if posType == MonsterRefreshPosType.PositionAndOffSet or posType == MonsterRefreshPosType.PositionAndOffSetMultiBoard then
-        monsterPosAndOffSetArray[#monsterPosAndOffSetArray + 1] = {MonsterPosType.Position, param:GetPos()}
+        monsterPosAndOffSetArray[#monsterPosAndOffSetArray + 1] = {
+          MonsterPosType.Position,
+          param:GetPos()
+        }
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService._ChangeWaveIntervalTrapID = function(self, monsterRefreshData, monsterWaveParam, waveNum, type)
-  -- function num : 0_35 , upvalues : _ENV
+function AffixService:_ChangeWaveIntervalTrapID(monsterRefreshData, monsterWaveParam, waveNum, type)
   local paramList = self:GetAffixData(type)
   local trapList = monsterRefreshData:GetInternalTrapIDDic()
-  for _,param in ipairs(paramList) do
+  for _, param in ipairs(paramList) do
     if param:GetRefreshID() == monsterRefreshData:GetInternalRefreshID() and param:GetWaveNum() == waveNum then
-      for i,trap in ipairs(trapList) do
+      for i, trap in ipairs(trapList) do
         if trap._trapID == param:GetSourceID() then
           trap._trapID = param:GetTargetID()
         end
@@ -830,14 +565,11 @@ AffixService._ChangeWaveIntervalTrapID = function(self, monsterRefreshData, mons
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService._ChangeWaveTrapID = function(self, monsterRefreshParam, waveCount, type)
-  -- function num : 0_36 , upvalues : _ENV
+function AffixService:_ChangeWaveTrapID(monsterRefreshParam, waveCount, type)
   local trapArray = monsterRefreshParam:GetTrapArray()
   local paramList = self:GetAffixData(AffixType.ChangeWaveBeginTrapID)
-  for _,param in ipairs(paramList) do
-    for i,trap in ipairs(trapArray) do
+  for _, param in ipairs(paramList) do
+    for i, trap in ipairs(trapArray) do
       if trap:GetTrapID() == param:GetSourceID() then
         trap._trapID = param:GetTargetID()
         break
@@ -846,10 +578,7 @@ AffixService._ChangeWaveTrapID = function(self, monsterRefreshParam, waveCount, 
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService._GetChangeAllMonsterAttrParam = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function AffixService:_GetChangeAllMonsterAttrParam()
   if self:HasAffixData(AffixType.ChangeAllMonsterAttr) then
     local affixChangeAllMonsterAttrParamList = self:GetAffixData(AffixType.ChangeAllMonsterAttr)
     local affixChangeAllMonsterAttrParam = affixChangeAllMonsterAttrParamList[1]
@@ -857,15 +586,10 @@ AffixService._GetChangeAllMonsterAttrParam = function(self)
     local y = affixChangeAllMonsterAttrParam:GetParamY()
     return y, z
   end
-  do
-    return 0, 1
-  end
+  return 0, 1
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeLevelRound = function(self, round)
-  -- function num : 0_38 , upvalues : _ENV
+function AffixService:ChangeLevelRound(round)
   if self:HasAffixData(AffixType.ChangeLevelRound) then
     local affixChangeLevelRoundParamList = self:GetAffixData(AffixType.ChangeLevelRound)
     local affixChangeLevelRoundParam = affixChangeLevelRoundParamList[1]
@@ -874,313 +598,224 @@ AffixService.ChangeLevelRound = function(self, round)
       round = 1
     end
   end
-  do
-    return round
-  end
+  return round
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeWaveInternalParam = function(self, param, refreshIndex, waveNum)
-  -- function num : 0_39 , upvalues : _ENV
+function AffixService:ChangeWaveInternalParam(param, refreshIndex, waveNum)
   if self:HasAffixData(AffixType.ChangeWaveInternalParam) then
     local affixChangeWaveInternalParamList = self:GetAffixData(AffixType.ChangeWaveInternalParam)
-    for _,affixChangeWaveInternalParam in ipairs(affixChangeWaveInternalParamList) do
+    for _, affixChangeWaveInternalParam in ipairs(affixChangeWaveInternalParamList) do
       if refreshIndex == affixChangeWaveInternalParam:GetRefreshIndex() and waveNum == affixChangeWaveInternalParam:GetWaveNum() then
         return affixChangeWaveInternalParam:GetParam()
       end
     end
   end
-  do
-    return param
-  end
+  return param
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.AddWaveInternalParam = function(self, waveNum)
-  -- function num : 0_40 , upvalues : _ENV
+function AffixService:AddWaveInternalParam(waveNum)
   local retParamList = {}
   if self:HasAffixData(AffixType.AddWaveInternalParam) then
     local affixAddWaveInternalParamList = self:GetAffixData(AffixType.AddWaveInternalParam)
-    for _,affixChangeWaveInternalParam in ipairs(affixAddWaveInternalParamList) do
+    for _, affixChangeWaveInternalParam in ipairs(affixAddWaveInternalParamList) do
       if waveNum == affixChangeWaveInternalParam:GetWaveNum() then
-        (table.insert)(retParamList, affixChangeWaveInternalParam)
+        table.insert(retParamList, affixChangeWaveInternalParam)
       end
     end
   end
-  do
-    return retParamList
-  end
+  return retParamList
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ChangeMonsterID = function(self, idList, waveNum)
-  -- function num : 0_41 , upvalues : _ENV
+function AffixService:ChangeMonsterID(idList, waveNum)
   local tmpIDList = {}
   if idList then
-    for i,id in ipairs(idList) do
+    for i, id in ipairs(idList) do
       tmpIDList[i] = id
-      if (self._replaceMonsterIDList)[id] and ((self._replaceMonsterIDList)[id]).waveNum == waveNum then
-        tmpIDList[i] = ((self._replaceMonsterIDList)[id]).targetID
+      if self._replaceMonsterIDList[id] and self._replaceMonsterIDList[id].waveNum == waveNum then
+        tmpIDList[i] = self._replaceMonsterIDList[id].targetID
       end
     end
   end
-  do
-    return tmpIDList
-  end
+  return tmpIDList
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ReplaceMonsterBuff = function(self, monsterID, buffList)
-  -- function num : 0_42 , upvalues : _ENV
+function AffixService:ReplaceMonsterBuff(monsterID, buffList)
   if self:HasAffixData(AffixType.ReplaceMonsterBuff) then
     local affixReplaceMonsterBuffParamList = self:GetAffixData(AffixType.ReplaceMonsterBuff)
-    for _,param in ipairs(affixReplaceMonsterBuffParamList) do
+    for _, param in ipairs(affixReplaceMonsterBuffParamList) do
       if param:GetMonsterID() == monsterID then
         return param:GetBuffList()
       end
     end
   end
-  do
-    return buffList
-  end
+  return buffList
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ReplaceMonsterEliteBuff = function(self, monsterID, buffList)
-  -- function num : 0_43 , upvalues : _ENV
+function AffixService:ReplaceMonsterEliteBuff(monsterID, buffList)
   if self:HasAffixData(AffixType.ReplaceMonsterEliteBuff) then
     local affixReplaceMonsterEliteBuffParamList = self:GetAffixData(AffixType.ReplaceMonsterEliteBuff)
-    for _,param in ipairs(affixReplaceMonsterEliteBuffParamList) do
+    for _, param in ipairs(affixReplaceMonsterEliteBuffParamList) do
       if param:GetMonsterID() == monsterID then
         return param:GetEliteBuffList()
       end
     end
   end
-  do
-    return buffList
-  end
+  return buffList
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.AddMonsterBuff = function(self, monsterID, buffList)
-  -- function num : 0_44 , upvalues : _ENV
+function AffixService:AddMonsterBuff(monsterID, buffList)
   if self:HasAffixData(AffixType.AddMonsterBuff) then
     local affixAddMonsterBuffParamList = self:GetAffixData(AffixType.AddMonsterBuff)
     local retBuffList = {}
     if buffList then
-      for i,v in ipairs(buffList) do
+      for i, v in ipairs(buffList) do
         retBuffList[i] = v
       end
     end
-    do
-      do
-        for _,param in ipairs(affixAddMonsterBuffParamList) do
-          if param:GetMonsterID() == monsterID then
-            (table.appendArray)(retBuffList, param:GetBuffList())
-          end
-        end
-        if #retBuffList > 0 then
-          return retBuffList
-        end
-        return buffList
+    for _, param in ipairs(affixAddMonsterBuffParamList) do
+      if param:GetMonsterID() == monsterID then
+        table.appendArray(retBuffList, param:GetBuffList())
       end
     end
+    if 0 < #retBuffList then
+      return retBuffList
+    end
   end
+  return buffList
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.AddMonsterEliteBuff = function(self, monsterID, buffList)
-  -- function num : 0_45 , upvalues : _ENV
+function AffixService:AddMonsterEliteBuff(monsterID, buffList)
   if self:HasAffixData(AffixType.AddMonsterEliteBuff) then
     local retBuffList = {}
     if buffList then
-      for i,v in ipairs(buffList) do
+      for i, v in ipairs(buffList) do
         retBuffList[i] = v
       end
     end
-    do
-      do
-        local affixAddMonsterEliteBuffParamList = self:GetAffixData(AffixType.AddMonsterEliteBuff)
-        for _,param in ipairs(affixAddMonsterEliteBuffParamList) do
-          if param:GetMonsterID() == monsterID then
-            (table.appendArray)(retBuffList, param:GetEliteBuffList())
-          end
-        end
-        if #retBuffList > 0 then
-          return retBuffList
-        end
-        return buffList
+    local affixAddMonsterEliteBuffParamList = self:GetAffixData(AffixType.AddMonsterEliteBuff)
+    for _, param in ipairs(affixAddMonsterEliteBuffParamList) do
+      if param:GetMonsterID() == monsterID then
+        table.appendArray(retBuffList, param:GetEliteBuffList())
       end
     end
+    if 0 < #retBuffList then
+      return retBuffList
+    end
   end
+  return buffList
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.AddTrapBuff = function(self, trapID, buffList)
-  -- function num : 0_46 , upvalues : _ENV
+function AffixService:AddTrapBuff(trapID, buffList)
   if self:HasAffixData(AffixType.AddTrapBuff) then
     local retBuffList = {}
     if buffList then
-      for i,v in ipairs(buffList) do
+      for i, v in ipairs(buffList) do
         retBuffList[i] = v
       end
     end
-    do
-      do
-        local affixAddTrapBuffParamList = self:GetAffixData(AffixType.AddTrapBuff)
-        for _,param in ipairs(affixAddTrapBuffParamList) do
-          if param:GetTrapID() == trapID then
-            (table.appendArray)(retBuffList, param:GetBuffList())
-          end
-        end
-        if #retBuffList > 0 then
-          return retBuffList
-        end
-        return buffList
+    local affixAddTrapBuffParamList = self:GetAffixData(AffixType.AddTrapBuff)
+    for _, param in ipairs(affixAddTrapBuffParamList) do
+      if param:GetTrapID() == trapID then
+        table.appendArray(retBuffList, param:GetBuffList())
       end
     end
+    if 0 < #retBuffList then
+      return retBuffList
+    end
   end
+  return buffList
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ReplaceTrapBuff = function(self, trapID, buffList)
-  -- function num : 0_47 , upvalues : _ENV
+function AffixService:ReplaceTrapBuff(trapID, buffList)
   if self:HasAffixData(AffixType.ReplaceTrapBuff) then
     local affixReplaceTrapBuffParamList = self:GetAffixData(AffixType.ReplaceTrapBuff)
-    for _,param in ipairs(affixReplaceTrapBuffParamList) do
+    for _, param in ipairs(affixReplaceTrapBuffParamList) do
       if param:GetTrapID() == trapID then
         return param:GetBuffList()
       end
     end
   end
-  do
-    return buffList
-  end
+  return buffList
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ReplaceMonsterSpSkill = function(self, monsterID, skillID, skillType)
-  -- function num : 0_48 , upvalues : _ENV
+function AffixService:ReplaceMonsterSpSkill(monsterID, skillID, skillType)
   if self:HasAffixData(AffixType.ReplaceMonsterSpSkill) then
     local affixReplaceMonsterSpSkillParamList = self:GetAffixData(AffixType.ReplaceMonsterSpSkill)
-    for _,param in ipairs(affixReplaceMonsterSpSkillParamList) do
+    for _, param in ipairs(affixReplaceMonsterSpSkillParamList) do
       if param:GetMonsterID() == monsterID and param:GetSkillType() == skillType then
         return param:GetSkillID()
       end
     end
   end
-  do
-    return skillID
-  end
+  return skillID
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ReplacePieceRefreshType = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function AffixService:ReplacePieceRefreshType()
   if self:HasAffixData(AffixType.ChangePieceRefreshType) then
     local affixChangePieceRefreshTypeParamList = self:GetAffixData(AffixType.ChangePieceRefreshType)
     local param = affixChangePieceRefreshTypeParamList[1]
     return param:GetPieceRefreshType(), param:GetFallingDirection(), param
   end
-  do
-    return PieceRefreshType.Inplace
-  end
+  return PieceRefreshType.Inplace
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ReplaceReplaceFeatureModule = function(self, FeatureList)
-  -- function num : 0_50 , upvalues : _ENV
+function AffixService:ReplaceReplaceFeatureModule(FeatureList)
   if self:HasAffixData(AffixType.ReplaceFeatureModule) then
     local affixReplaceFeatureModuleList = self:GetAffixData(AffixType.ReplaceFeatureModule)
-    for _,param in ipairs(affixReplaceFeatureModuleList) do
-      do return param:GetConfigTable() end
+    for _, param in ipairs(affixReplaceFeatureModuleList) do
+      return param:GetConfigTable()
     end
   end
-  do
-    return FeatureList
-  end
+  return FeatureList
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ProcessGeneratePieceAmount = function(self, curWeight)
-  -- function num : 0_51 , upvalues : _ENV
+function AffixService:ProcessGeneratePieceAmount(curWeight)
   if self:HasAffixData(AffixType.ReplacePieceGenWeight) then
     local affixReplacePieceGenWeightParamList = self:GetAffixData(AffixType.ReplacePieceGenWeight)
     local param = affixReplacePieceGenWeightParamList[1]
     if param then
       local replaceWeight = param:GetGeneratePieceAmount()
       if replaceWeight then
-        return (table.cloneconf)(replaceWeight)
+        return table.cloneconf(replaceWeight)
       end
     end
   end
-  do
-    return curWeight
-  end
+  return curWeight
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ProcessGeneratePieceWeight = function(self, curWeight)
-  -- function num : 0_52 , upvalues : _ENV
+function AffixService:ProcessGeneratePieceWeight(curWeight)
   if self:HasAffixData(AffixType.ReplacePieceGenWeight) then
     local affixReplacePieceGenWeightParamList = self:GetAffixData(AffixType.ReplacePieceGenWeight)
     local param = affixReplacePieceGenWeightParamList[1]
     if param then
       local replaceWeight = param:GetGeneratePieceWeight()
       if replaceWeight then
-        return (table.cloneconf)(replaceWeight)
+        return table.cloneconf(replaceWeight)
       end
     end
   end
-  do
-    return curWeight
-  end
+  return curWeight
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ProcessSupplyPieceWeight = function(self, curWeight)
-  -- function num : 0_53 , upvalues : _ENV
+function AffixService:ProcessSupplyPieceWeight(curWeight)
   if self:HasAffixData(AffixType.ReplacePieceGenWeight) then
     local affixReplacePieceGenWeightParamList = self:GetAffixData(AffixType.ReplacePieceGenWeight)
     local param = affixReplacePieceGenWeightParamList[1]
     if param then
       local replaceWeight = param:GetSupplyPieceWeight()
       if replaceWeight then
-        return (table.cloneconf)(replaceWeight)
+        return table.cloneconf(replaceWeight)
       end
     end
   end
-  do
-    return curWeight
-  end
+  return curWeight
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.HasIncreasePetNoDefenceDamage = function(self)
-  -- function num : 0_54 , upvalues : _ENV
+function AffixService:HasIncreasePetNoDefenceDamage()
   return self:HasAffixData(AffixType.IncreasePetNoDefenceDamage)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetIncreasePetNoDefenceDamageParam = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function AffixService:GetIncreasePetNoDefenceDamageParam()
   if self:HasAffixData(AffixType.IncreasePetNoDefenceDamage) then
     local affixIncreasePetNoDefenceDamageParamList = self:GetAffixData(AffixType.IncreasePetNoDefenceDamage)
     local param = affixIncreasePetNoDefenceDamageParamList[1]
@@ -1191,55 +826,39 @@ AffixService.GetIncreasePetNoDefenceDamageParam = function(self)
       end
     end
   end
-  do
-    return 0
-  end
+  return 0
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.HasChangePetAddBuffMaxRound = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function AffixService:HasChangePetAddBuffMaxRound()
   return self:HasAffixData(AffixType.ChangePetAddBuffMaxRound)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetChangePetAddBuffMaxRoundParam = function(self, buffEffectFlags)
-  -- function num : 0_57 , upvalues : _ENV
+function AffixService:GetChangePetAddBuffMaxRoundParam(buffEffectFlags)
   if not buffEffectFlags then
-    return 
+    return
   end
   if #buffEffectFlags == 0 then
-    return 
+    return
   end
   if self:HasAffixData(AffixType.ChangePetAddBuffMaxRound) then
     local affixChangePetAddBuffMaxRoundParamList = self:GetAffixData(AffixType.ChangePetAddBuffMaxRound)
     if affixChangePetAddBuffMaxRoundParamList then
-      for _,param in ipairs(affixChangePetAddBuffMaxRoundParamList) do
+      for _, param in ipairs(affixChangePetAddBuffMaxRoundParamList) do
         local effectFlagNum = param:GetEffectFlagNum()
-        if (table.icontains)(buffEffectFlags, effectFlagNum) then
+        if table.icontains(buffEffectFlags, effectFlagNum) then
           return param:GetChangeRound()
         end
       end
     end
   end
-  do
-    return 
-  end
+  return
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.HasAddChainPathNum = function(self)
-  -- function num : 0_58 , upvalues : _ENV
+function AffixService:HasAddChainPathNum()
   return self:HasAffixData(AffixType.AddChainPathNum)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.ProcessAddChainPathNum = function(self, oriChain)
-  -- function num : 0_59 , upvalues : _ENV
+function AffixService:ProcessAddChainPathNum(oriChain)
   if oriChain < 1 then
     return oriChain
   end
@@ -1254,15 +873,10 @@ AffixService.ProcessAddChainPathNum = function(self, oriChain)
       end
     end
   end
-  do
-    return oriChain
-  end
+  return oriChain
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-AffixService.GetAddChainPathNum = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function AffixService:GetAddChainPathNum()
   if self:HasAffixData(AffixType.AddChainPathNum) then
     local affixAddChainPathNumParamList = self:GetAffixData(AffixType.AddChainPathNum)
     local param = affixAddChainPathNumParamList[1]
@@ -1274,5 +888,3 @@ AffixService.GetAddChainPathNum = function(self)
     end
   end
 end
-
-

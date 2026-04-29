@@ -1,114 +1,73 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n9/ingame/ui_n9_ingame_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN9ImGameData", Object)
 UIN9ImGameData = UIN9ImGameData
-local UIN9AnswerResult = {IsRight = 1, HaveFaultTolerant = 2, Error = 3}
+local UIN9AnswerResult = {
+  IsRight = 1,
+  HaveFaultTolerant = 2,
+  Error = 3
+}
 _enum("UIN9AnswerResult", UIN9AnswerResult)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN9ImGameData.Constructor = function(self, args)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN9ImGameData:Constructor(args)
   if args.isGm then
-    self._questions = (UIN9Const.GetAssiginedSubjects)()
+    self._questions = UIN9Const.GetAssiginedSubjects()
   else
-    if not args:GenSubject() then
-      self._questions = {}
-      self._readyinter = 3
-      self._answerinter = args:GetAnswerTime()
-      self._listCount = 4
-      self._curQuestion = nil
-      self._seletAnswers = {}
-      self._trueRight = {}
-      self._totalCount = #self._questions
-      self._faultTolerantCount = args:GetFailedCount()
-      self._defultfaultTolerantCount = args:GetFailedCount()
-      self._cfgData = Cfg.cfg_subject_test_grade
-    end
+    self._questions = args:GenSubject() or {}
   end
+  self._readyinter = 3
+  self._answerinter = args:GetAnswerTime()
+  self._listCount = 4
+  self._curQuestion = nil
+  self._seletAnswers = {}
+  self._trueRight = {}
+  self._totalCount = #self._questions
+  self._faultTolerantCount = args:GetFailedCount()
+  self._defultfaultTolerantCount = args:GetFailedCount()
+  self._cfgData = Cfg.cfg_subject_test_grade
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetQuestions = function(self)
-  -- function num : 0_1
+function UIN9ImGameData:GetQuestions()
   return self._questions
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetOneQuestion = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN9ImGameData:GetOneQuestion()
   if #self._questions == 0 then
-    return 
+    return
   end
-  self._curQuestion = (table.remove)(self._questions, 1)
+  self._curQuestion = table.remove(self._questions, 1)
   return self._curQuestion
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetCurQuestion = function(self)
-  -- function num : 0_3
+function UIN9ImGameData:GetCurQuestion()
   return self._curQuestion
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetLastCount = function(self)
-  -- function num : 0_4
+function UIN9ImGameData:GetLastCount()
   return #self._questions
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetTotalCount = function(self)
-  -- function num : 0_5
+function UIN9ImGameData:GetTotalCount()
   return self._totalCount
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetTimeInter = function(self, OnReady)
-  -- function num : 0_6 , upvalues : _ENV
-  if OnReady ~= UIN9AnswerType.OnReady or not self._readyinter then
-    return self._answerinter
-  end
+function UIN9ImGameData:GetTimeInter(OnReady)
+  return OnReady == UIN9AnswerType.OnReady and self._readyinter or self._answerinter
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetAnswerCount = function(self)
-  -- function num : 0_7
+function UIN9ImGameData:GetAnswerCount()
   return self._listCount
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.SetTrueRight = function(self, nIndex, answer)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._trueRight)[nIndex] = answer
+function UIN9ImGameData:SetTrueRight(nIndex, answer)
+  self._trueRight[nIndex] = answer
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.SetSelects = function(self, nIndex, answer)
-  -- function num : 0_9
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._seletAnswers)[nIndex] = answer
+function UIN9ImGameData:SetSelects(nIndex, answer)
+  self._seletAnswers[nIndex] = answer
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetTrueRight = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN9ImGameData:GetTrueRight()
   local reightCount = 0
-  for key,value in pairs(self._trueRight) do
+  for key, value in pairs(self._trueRight) do
     if value == 1 then
       reightCount = reightCount + 1
     end
@@ -116,12 +75,9 @@ UIN9ImGameData.GetTrueRight = function(self)
   return reightCount
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.CheckAnswers = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN9ImGameData:CheckAnswers()
   local reightCount = 0
-  for key,value in pairs(self._seletAnswers) do
+  for key, value in pairs(self._seletAnswers) do
     if value == 1 then
       reightCount = reightCount + 1
     end
@@ -129,62 +85,40 @@ UIN9ImGameData.CheckAnswers = function(self)
   return reightCount
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetFaultTolerantCount = function(self)
-  -- function num : 0_12
+function UIN9ImGameData:GetFaultTolerantCount()
   return self._faultTolerantCount
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetDefultFaultTolerantCount = function(self)
-  -- function num : 0_13
+function UIN9ImGameData:GetDefultFaultTolerantCount()
   return self._defultfaultTolerantCount
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.RequceFaultTolerantCount = function(self)
-  -- function num : 0_14
+function UIN9ImGameData:RequceFaultTolerantCount()
   self._faultTolerantCount = self._faultTolerantCount - 1
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetUsedFaultTolerantCount = function(self)
-  -- function num : 0_15
+function UIN9ImGameData:GetUsedFaultTolerantCount()
   return self._defultfaultTolerantCount - self._faultTolerantCount
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetTestEvaluate = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN9ImGameData:GetTestEvaluate()
   local const = UIN9Const:New()
   local rightCount = self:GetTrueRight()
   local result = const:GetGradeResult(rightCount)
   return result
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN9ImGameData.GetAnswerState = function(self, selectIndex)
-  -- function num : 0_17 , upvalues : UIN9AnswerResult
-  local isRight = (self:GetCurQuestion()):CheckIsRight(selectIndex)
+function UIN9ImGameData:GetAnswerState(selectIndex)
+  local isRight = self:GetCurQuestion():CheckIsRight(selectIndex)
   if not isRight then
     self:RequceFaultTolerantCount()
   end
   if isRight then
     return UIN9AnswerResult.IsRight
+  elseif self:GetFaultTolerantCount() > 0 then
+    return UIN9AnswerResult.HaveFaultTolerant
   else
-    if self:GetFaultTolerantCount() > 0 then
-      return UIN9AnswerResult.HaveFaultTolerant
-    else
-      return UIN9AnswerResult.Error
-    end
+    return UIN9AnswerResult.Error
   end
   return UIN9AnswerResult.Error
 end
-
-

@@ -1,137 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/maze/maze_actor_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MazeActorManager", Object)
 MazeActorManager = MazeActorManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MazeActorManager.Constructor = function(self)
-  -- function num : 0_0
+function MazeActorManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeActorManager.Init = function(self, petData, origin)
-  -- function num : 0_1 , upvalues : _ENV
+function MazeActorManager:Init(petData, origin)
   self._petData = petData
-  local go, reqs = (HelperProxy:GetInstance()):LoadPet(petData:GetPetPrefab(PetSkinEffectPath.MODEL_MAZE), true)
-  self._eftReq = (ResourceManager:GetInstance()):SyncLoadAsset("eff_ingame_ludian_juesechuxian.prefab", LoadType.GameObject)
+  local go, reqs = HelperProxy:GetInstance():LoadPet(petData:GetPetPrefab(PetSkinEffectPath.MODEL_MAZE), true)
+  self._eftReq = ResourceManager:GetInstance():SyncLoadAsset("eff_ingame_ludian_juesechuxian.prefab", LoadType.GameObject)
   self._actorReqs = reqs
   self._actor = go
   origin.y = 0.3
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._actor).transform).position = origin
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._actor).transform).localScale = Vector3(1.5, 1.5, 1.5)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (((self._eftReq).Obj).transform).position = origin
-  ;
-  ((self._eftReq).Obj):SetActive(true)
-  ;
-  ((GameGlobal.UIStateManager)()):Lock("PlayMazeShowAnim")
-  self.delayEvent = ((GameGlobal.Timer)()):AddEvent(500, function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    (self._actor):SetActive(true)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("PlayMazeShowAnim")
+  self._actor.transform.position = origin
+  self._actor.transform.localScale = Vector3(1.5, 1.5, 1.5)
+  self._eftReq.Obj.transform.position = origin
+  self._eftReq.Obj:SetActive(true)
+  GameGlobal.UIStateManager():Lock("PlayMazeShowAnim")
+  self.delayEvent = GameGlobal.Timer():AddEvent(500, function()
+    self._actor:SetActive(true)
+    GameGlobal.UIStateManager():UnLock("PlayMazeShowAnim")
     self.delayEvent = nil
-  end
-)
-  self._animator = (self._actor):GetComponentInChildren(typeof(UnityEngine.Animator))
+  end)
+  self._animator = self._actor:GetComponentInChildren(typeof(UnityEngine.Animator))
   self._moveSpeed = 6
   self._arriveCB = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeActorManager.FefreshActor = function(self, petData, origin)
-  -- function num : 0_2 , upvalues : _ENV
-  local petChanged = (self._petData):GetTemplateID() ~= petData:GetTemplateID()
+function MazeActorManager:FefreshActor(petData, origin)
+  local petChanged = self._petData:GetTemplateID() ~= petData:GetTemplateID()
   self._petData = petData
   if petChanged then
-    for _,req in ipairs(self._actorReqs) do
+    for _, req in ipairs(self._actorReqs) do
       req:Dispose()
     end
-    local go, reqs = (HelperProxy:GetInstance()):LoadPet(petData:GetPetPrefab(PetSkinEffectPath.MODEL_MAZE), true)
+    local go, reqs = HelperProxy:GetInstance():LoadPet(petData:GetPetPrefab(PetSkinEffectPath.MODEL_MAZE), true)
     self._actorReqs = reqs
     self._actor = go
     origin.y = 0.3
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._actor).transform).position = origin
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._actor).transform).localScale = Vector3(1.5, 1.5, 1.5)
-    ;
-    (self._actor):SetActive(true)
-    self._animator = (self._actor):GetComponentInChildren(typeof(UnityEngine.Animator))
+    self._actor.transform.position = origin
+    self._actor.transform.localScale = Vector3(1.5, 1.5, 1.5)
+    self._actor:SetActive(true)
+    self._animator = self._actor:GetComponentInChildren(typeof(UnityEngine.Animator))
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeActorManager.MoveToTarget = function(self, target, onArrive, MoveTime)
-  -- function num : 0_3 , upvalues : _ENV
+function MazeActorManager:MoveToTarget(target, onArrive, MoveTime)
   local actorPos = self:ActorPosition()
   target.y = actorPos.y
-  local moveTime = nil
+  local moveTime
   if MoveTime then
     moveTime = MoveTime
   else
     moveTime = (target - actorPos):Magnitude() / self._moveSpeed
   end
-  ;
-  ((self._actor).transform):LookAt(target)
-  ;
-  (self._animator):SetBool("Move", true)
-  ;
-  ((((self._actor).transform):DOMove(target, moveTime)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_3_0 , upvalues : self, onArrive
-    (self._animator):SetBool("Move", false)
+  self._actor.transform:LookAt(target)
+  self._animator:SetBool("Move", true)
+  self._actor.transform:DOMove(target, moveTime):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
+    self._animator:SetBool("Move", false)
     onArrive()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeActorManager.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,req in ipairs(self._actorReqs) do
+function MazeActorManager:Dispose()
+  for _, req in ipairs(self._actorReqs) do
     req:Dispose()
   end
-  ;
-  (self._eftReq):Dispose()
+  self._eftReq:Dispose()
   if self.delayEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.delayEvent)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("PlayMazeShowAnim")
+    GameGlobal.Timer():CancelEvent(self.delayEvent)
+    GameGlobal.UIStateManager():UnLock("PlayMazeShowAnim")
     self.delayEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeActorManager.Update = function(self, deltaTime)
-  -- function num : 0_5
+function MazeActorManager:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MazeActorManager.ActorPosition = function(self)
-  -- function num : 0_6
-  return ((self._actor).transform).position
+function MazeActorManager:ActorPosition()
+  return self._actor.transform.position
 end
-
-

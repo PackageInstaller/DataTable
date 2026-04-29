@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_ecs/world/world_creation_context.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("WorldCreationContext", Object)
 WorldCreationContext = WorldCreationContext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-WorldCreationContext.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function WorldCreationContext:Constructor()
   self.WCC_StartCreationIndex = 1
   self.WCC_EntityCreationProto = Entity
   self.WCC_EntityIdThreshold = 100000000
@@ -16,11 +9,6 @@ WorldCreationContext.Constructor = function(self)
   self.WCC_StartEntityIdRender = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-WorldCreationContext.WCC_EntityTotalComponents = function(self)
-  -- function num : 0_1
+function WorldCreationContext:WCC_EntityTotalComponents()
   return 0
 end
-
-

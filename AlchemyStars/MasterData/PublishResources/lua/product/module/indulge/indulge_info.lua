@@ -1,43 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/indulge/indulge_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local IndulgeType = {InstructionType_Tips = 1, InstructionType_Logout = 2, InstructionType_OpenUrl = 3}
+local IndulgeType = {
+  InstructionType_Tips = 1,
+  InstructionType_Logout = 2,
+  InstructionType_OpenUrl = 3
+}
 _enum("IndulgeType", IndulgeType)
 _class("MobileindulgeInfo", Object)
 MobileindulgeInfo = MobileindulgeInfo
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-MobileindulgeInfo.Constructor = function(self)
-  -- function num : 0_0
+function MobileindulgeInfo:Constructor()
   self.type = 0
   self.title = ""
   self.msg = ""
   self.url = ""
   self.modal = 0
   self.data = ""
-  self.ratio = 0
+  self.ratio = 0.0
   self.ruleName = ""
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R1 in 'UnsetPending'
-
 MobileindulgeInfo._proto = {
-[1] = {"type", "int"}
-, 
-[2] = {"title", "string"}
-, 
-[3] = {"msg", "string"}
-, 
-[4] = {"url", "string"}
-, 
-[5] = {"modal", "int"}
-, 
-[6] = {"data", "string"}
-, 
-[7] = {"ratio", "double"}
-, 
-[8] = {"ruleName", "string"}
+  [1] = {"type", "int"},
+  [2] = {"title", "string"},
+  [3] = {"msg", "string"},
+  [4] = {"url", "string"},
+  [5] = {"modal", "int"},
+  [6] = {"data", "string"},
+  [7] = {"ratio", "double"},
+  [8] = {"ruleName", "string"}
 }
-

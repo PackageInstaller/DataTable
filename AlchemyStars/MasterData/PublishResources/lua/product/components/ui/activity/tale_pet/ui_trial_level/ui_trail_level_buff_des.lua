@@ -1,57 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_buff_des.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrailLevelBuffDes", UIController)
 UITrailLevelBuffDes = UITrailLevelBuffDes
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrailLevelBuffDes.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._talePetModule = (GameGlobal.GetModule)(TalePetModule)
-  ;
-  (self._talePetModule):ApplyBuffInfo(TT)
-  self._currentLevel = (self._talePetModule):GetBuffLevel()
-  self._exp = (self._talePetModule):GetBuffExp()
+function UITrailLevelBuffDes:LoadDataOnEnter(TT, res, uiParams)
+  self._talePetModule = GameGlobal.GetModule(TalePetModule)
+  self._talePetModule:ApplyBuffInfo(TT)
+  self._currentLevel, self._maxLevel = self._talePetModule:GetBuffLevel()
+  self._exp, self._maxExp = self._talePetModule:GetBuffExp()
   self._petDatas = {}
   self._talePetCount = 4
-  local cfgs = (Cfg.cfg_tale_pet)({})
-  for _,cfg in pairs(cfgs) do
+  local cfgs = Cfg.cfg_tale_pet({})
+  for _, cfg in pairs(cfgs) do
     local id = cfg.ID
-    local isRestriction = (self._talePetModule):HaveCallRestriction(id)
+    local isRestriction = self._talePetModule:HaveCallRestriction(id)
     if not isRestriction then
       local data = {}
       data.templateId = id
       data.sort = cfg.Sort
-      data.lock = not (self._talePetModule):IsGetTalePet(id)
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R13 in 'UnsetPending'
-
-      ;
-      (self._petDatas)[#self._petDatas + 1] = data
+      data.lock = not self._talePetModule:IsGetTalePet(id)
+      self._petDatas[#self._petDatas + 1] = data
     end
   end
-  ;
-  (table.sort)(self._petDatas, function(a, b)
-    -- function num : 0_0_0
-    do return a.sort < b.sort end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._petDatas, function(a, b)
+    return a.sort < b.sort
+  end)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffDes.OnShow = function(self)
-  -- function num : 0_1
+function UITrailLevelBuffDes:OnShow()
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseDialog()
-  end
-, nil)
+  end, nil)
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._levelLabel = self:GetUIComponent("UILocalizationText", "Level")
@@ -66,126 +45,79 @@ UITrailLevelBuffDes.OnShow = function(self)
   for i = 1, self._talePetCount do
     local pet = self:GetUIComponent("UISelectObjectPath", "Pet" .. i)
     local item = pet:SpawnObject("UITrailLevelBuffPetItem")
-    -- DECOMPILER ERROR at PC80: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._pets)[#self._pets + 1] = item
-    item:Refresh((self._petDatas)[i], self)
+    self._pets[#self._pets + 1] = item
+    item:Refresh(self._petDatas[i], self)
   end
   self:RefreshUI()
   self:RefreshButtonStatus()
   self._currentSelectPet = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffDes.OnPetClick = function(self, petItem)
-  -- function num : 0_2
+function UITrailLevelBuffDes:OnPetClick(petItem)
   if self._currentSelectPet == petItem then
-    return 
+    return
   end
   if self._currentSelectPet then
-    (self._currentSelectPet):UnSelect()
+    self._currentSelectPet:UnSelect()
   end
   self._currentSelectPet = petItem
-  ;
-  (self._currentSelectPet):Select()
+  self._currentSelectPet:Select()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffDes.RefreshUI = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_trail_level_buff_level)[self._currentLevel]
-  ;
-  (self._name):SetText((StringTable.Get)(cfg.BuffName))
-  ;
-  (self._talePetBuffDesLabel):SetText((StringTable.Get)(cfg.TalePetBuffDes))
-  ;
-  (self._normalPetBuffDesLabel):SetText((StringTable.Get)(cfg.NormalPetBuffDes1))
-  ;
-  (self._icon):LoadImage(cfg.BuffIcon)
-  local level, maxLevel = (self._talePetModule):GetBuffLevel()
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R4 in 'UnsetPending'
-
+function UITrailLevelBuffDes:RefreshUI()
+  local cfg = Cfg.cfg_trail_level_buff_level[self._currentLevel]
+  self._name:SetText(StringTable.Get(cfg.BuffName))
+  self._talePetBuffDesLabel:SetText(StringTable.Get(cfg.TalePetBuffDes))
+  self._normalPetBuffDesLabel:SetText(StringTable.Get(cfg.NormalPetBuffDes1))
+  self._icon:LoadImage(cfg.BuffIcon)
+  local level, maxLevel = self._talePetModule:GetBuffLevel()
   if maxLevel <= level then
-    (self._expBar).value = 1
-    ;
-    (self._expLabel):SetText((StringTable.Get)("str_tale_pet_buff_max_level"))
+    self._expBar.value = 1
+    self._expLabel:SetText(StringTable.Get("str_tale_pet_buff_max_level"))
   else
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._expBar).value = self._exp / self._maxExp
-    ;
-    (self._expLabel):SetText("(" .. self._exp .. "/" .. self._maxExp .. ")")
+    self._expBar.value = self._exp / self._maxExp
+    self._expLabel:SetText("(" .. self._exp .. "/" .. self._maxExp .. ")")
   end
-  ;
-  (self._levelLabel):SetText((StringTable.Get)("str_tale_pet_trail_level_buff_level1", self._currentLevel))
+  self._levelLabel:SetText(StringTable.Get("str_tale_pet_trail_level_buff_level1", self._currentLevel))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffDes.RefreshButtonStatus = function(self)
-  -- function num : 0_4
-  if self._maxLevel <= self._currentLevel then
-    (self._nextBtn):SetActive(false)
+function UITrailLevelBuffDes:RefreshButtonStatus()
+  if self._currentLevel >= self._maxLevel then
+    self._nextBtn:SetActive(false)
   else
-    ;
-    (self._nextBtn):SetActive(true)
+    self._nextBtn:SetActive(true)
   end
-  ;
-  (self._preBtn):SetActive(false)
+  self._preBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffDes.NextBtnOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UITrailLevelBuffDes:NextBtnOnClick()
   self:Lock("UITrailLevelBuffDes_PlayAnim")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayAnim, self, false)
+  GameGlobal.TaskManager():StartTask(self.PlayAnim, self, false)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffDes.PreBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UITrailLevelBuffDes:PreBtnOnClick()
   self:Lock("UITrailLevelBuffDes_PlayAnim")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayAnim, self, true)
+  GameGlobal.TaskManager():StartTask(self.PlayAnim, self, true)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffDes.PlayAnim = function(self, TT, isPre)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._anim):Play("uieff_uiTrailLevel_title01")
+function UITrailLevelBuffDes:PlayAnim(TT, isPre)
+  self._anim:Play("uieff_uiTrailLevel_title01")
   YIELD(TT, 460)
   if isPre then
     self._currentLevel = self._currentLevel - 1
-    ;
-    (self._nextBtn):SetActive(true)
-    ;
-    (self._preBtn):SetActive(false)
+    self._nextBtn:SetActive(true)
+    self._preBtn:SetActive(false)
     self:RefreshUI()
   else
     self._currentLevel = self._currentLevel + 1
-    ;
-    (self._nextBtn):SetActive(false)
-    ;
-    (self._preBtn):SetActive(true)
+    self._nextBtn:SetActive(false)
+    self._preBtn:SetActive(true)
     self:RefreshUI()
   end
   YIELD(TT, 730)
   self:UnLock("UITrailLevelBuffDes_PlayAnim")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrailLevelBuffDes.InsBtnOnClick = function(self)
-  -- function num : 0_8
+function UITrailLevelBuffDes:InsBtnOnClick()
   self:ShowDialog("UITrailLevelBuffIntroduce", self._currentLevel)
 end
-
-

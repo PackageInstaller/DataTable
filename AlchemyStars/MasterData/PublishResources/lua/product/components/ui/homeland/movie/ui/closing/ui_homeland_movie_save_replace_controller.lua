@@ -1,74 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/closing/ui_homeland_movie_save_replace_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieSaveReplaceController", UIController)
 UIHomelandMovieSaveReplaceController = UIHomelandMovieSaveReplaceController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieSaveReplaceController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMovieSaveReplaceController:OnShow(uiParams)
   self._homelandModule = self:GetModule(HomelandModule)
-  self._curPstId = (MoviePrepareData:GetInstance()):GetPstId()
+  self._curPstId = MoviePrepareData:GetInstance():GetPstId()
   self._records = uiParams[1]
   self:AttachEvent(GameEventType.UIHomelandMovieReplaceRecordSelect, self.OnRecordSelect)
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveReplaceController.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMovieSaveReplaceController:OnHide()
   self:DetachEvent(GameEventType.UIHomelandMovieReplaceRecordSelect, self.OnRecordSelect)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveReplaceController._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandMovieSaveReplaceController:_GetComponents()
   self._replaceList = self:GetUIComponent("UISelectObjectPath", "List")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveReplaceController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._replaceList):SpawnObjects("UIHomelandMovieReplaceRecordItem", (table.count)(self._records))
-  local spawnList = (self._replaceList):GetAllSpawnList()
+function UIHomelandMovieSaveReplaceController:_OnValue()
+  self._replaceList:SpawnObjects("UIHomelandMovieReplaceRecordItem", table.count(self._records))
+  local spawnList = self._replaceList:GetAllSpawnList()
   local idx = 1
-  for _,v in pairs(self._records) do
+  for _, v in pairs(self._records) do
     local pstId, record = v.pstid, v
-    ;
-    (spawnList[idx]):SetData(pstId, record)
+    spawnList[idx]:SetData(pstId, record)
     idx = idx + 1
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveReplaceController.QuitOnClick = function(self)
-  -- function num : 0_4
+function UIHomelandMovieSaveReplaceController:QuitOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieSaveReplaceController.OnRecordSelect = function(self, recordPstId)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMovieSaveReplaceController:OnRecordSelect(recordPstId)
   self:Lock("UIHomelandMovieSaveReplaceController_OnRecordSelect")
-  ;
-  (MovieDataManager:GetInstance()):SaveRecordData(recordPstId, function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+  MovieDataManager:GetInstance():SaveRecordData(recordPstId, function()
     self:UnLock("UIHomelandMovieSaveReplaceController_OnRecordSelect")
-    ;
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_movie_save_success_tip"))
+    ToastManager.ShowHomeToast(StringTable.Get("str_movie_save_success_tip"))
     self:CloseDialog()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIHomelandMovieSaved)
-  end
-)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIHomelandMovieSaved)
+  end)
 end
-
-

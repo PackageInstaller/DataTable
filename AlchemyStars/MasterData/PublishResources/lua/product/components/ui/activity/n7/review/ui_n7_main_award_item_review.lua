@@ -1,52 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/review/ui_n7_main_award_item_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN7MainAwardItemReview", UICustomWidget)
 UIN7MainAwardItemReview = UIN7MainAwardItemReview
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN7MainAwardItemReview.OnShow = function(self)
-  -- function num : 0_0
+function UIN7MainAwardItemReview:OnShow()
   self.anim = self:GetUIComponent("Animation", "UIN7MainAwardItemReview")
   self.notReach = self:GetGameObject("notReach")
   self.reach = self:GetGameObject("reach")
   self.next = self:GetGameObject("next")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainAwardItemReview.OnHide = function(self)
-  -- function num : 0_1
+function UIN7MainAwardItemReview:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainAwardItemReview.Flush = function(self, isReach, isNext, checkGot)
-  -- function num : 0_2
-  (self.next):SetActive(false)
-  ;
-  (self.notReach):SetActive(false)
-  ;
-  (self.reach):SetActive(false)
+function UIN7MainAwardItemReview:Flush(isReach, isNext, checkGot)
+  self.next:SetActive(false)
+  self.notReach:SetActive(false)
+  self.reach:SetActive(false)
   if isNext then
-    (self.next):SetActive(true)
+    self.next:SetActive(true)
+  elseif isReach and not checkGot then
+    self.reach:SetActive(true)
   else
-    if isReach and not checkGot then
-      (self.reach):SetActive(true)
-    else
-      ;
-      (self.notReach):SetActive(true)
-    end
+    self.notReach:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN7MainAwardItemReview.PlayAnim = function(self)
-  -- function num : 0_3
-  (self.anim):Play("uieff_N7_MainReview1")
+function UIN7MainAwardItemReview:PlayAnim()
+  self.anim:Play("uieff_N7_MainReview1")
 end
-
-

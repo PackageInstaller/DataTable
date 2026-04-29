@@ -1,48 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/shop/ui_activity_n21cc_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCRewardItem", UICustomWidget)
 UIActivityN21CCRewardItem = UIActivityN21CCRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCRewardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN21CCRewardItem:OnShow()
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCRewardItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN21CCRewardItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCRewardItem.Refresh = function(self, data)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN21CCRewardItem:Refresh(data)
   if data == nil then
-    (self._go):SetActive(false)
-    return 
+    self._go:SetActive(false)
+    return
   end
-  ;
-  (self._go):SetActive(true)
+  self._go:SetActive(true)
   self._data = data
-  ;
-  (self._countLabel):SetText(data.count)
-  local ItemTempleate = (Cfg.cfg_item)[data.assetid]
-  ;
-  (self._iconLoader):LoadImage(ItemTempleate.Icon)
+  self._countLabel:SetText(data.count)
+  local ItemTempleate = Cfg.cfg_item[data.assetid]
+  self._iconLoader:LoadImage(ItemTempleate.Icon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCRewardItem.BtnOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.N21CCShopRewardItemClick, (self._data).assetid, ((self._go).transform).position)
+function UIActivityN21CCRewardItem:BtnOnClick()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.N21CCShopRewardItemClick, self._data.assetid, self._go.transform.position)
 end
-
-

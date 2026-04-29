@@ -1,42 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_test/services/resource/unity_resource_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("i_resource_service")
 _class("UnityResourceService", Singleton)
 UnityResourceService = UnityResourceService
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UnityResourceService.Constructor = function(self)
-  -- function num : 0_0
+function UnityResourceService:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityResourceService.LoadGameObject = function(self, ResPath)
-  -- function num : 0_1 , upvalues : _ENV
-  local request = (ResourceManager:GetInstance()):SyncLoadAsset(ResPath, LoadType.GameObject)
+function UnityResourceService:LoadGameObject(ResPath)
+  local request = ResourceManager:GetInstance():SyncLoadAsset(ResPath, LoadType.GameObject)
   if request == nil then
-    (Log.fatal)("LoadGameObject failed", "[" .. ResPath .. "]")
-    return 
+    Log.fatal("LoadGameObject failed", "[" .. ResPath .. "]")
+    return
   end
   local u3dGo = request.Obj
   u3dGo:SetActive(true)
   return request
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UnityResourceService.DestroyView = function(self, view)
-  -- function num : 0_2
+function UnityResourceService:DestroyView(view)
   if view.ViewType == "UnitySimple" then
     view.Transform = nil
-    ;
-    (view.ResRequest):Dispose()
+    view.ResRequest:Dispose()
     view.ResRequest = nil
     view.GameObject = nil
   end
 end
-
-

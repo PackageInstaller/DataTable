@@ -1,52 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_teleport_and_summontrap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectTeleportAndSummonTrapResult", SkillEffectResultBase)
 SkillEffectTeleportAndSummonTrapResult = SkillEffectTeleportAndSummonTrapResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectTeleportAndSummonTrapResult.Constructor = function(self, trapPosList, teleportPos)
-  -- function num : 0_0
+function SkillEffectTeleportAndSummonTrapResult:Constructor(trapPosList, teleportPos)
   self._trapPosList = trapPosList
   self._teleportPos = teleportPos
   self._trapEntityIDList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTeleportAndSummonTrapResult.GetTrapPosList = function(self)
-  -- function num : 0_1
+function SkillEffectTeleportAndSummonTrapResult:GetTrapPosList()
   return self._trapPosList
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTeleportAndSummonTrapResult.GetTeleportPos = function(self)
-  -- function num : 0_2
+function SkillEffectTeleportAndSummonTrapResult:GetTeleportPos()
   return self._teleportPos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTeleportAndSummonTrapResult.GetEffectType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectTeleportAndSummonTrapResult:GetEffectType()
   return SkillEffectType.TeleportAndSummonTrap
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTeleportAndSummonTrapResult.GetTrapEntityIDList = function(self)
-  -- function num : 0_4
+function SkillEffectTeleportAndSummonTrapResult:GetTrapEntityIDList()
   return self._trapEntityIDList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectTeleportAndSummonTrapResult.AddTrapEntityID = function(self, entity)
-  -- function num : 0_5 , upvalues : _ENV
-  (table.insert)(self._trapEntityIDList, entity)
+function SkillEffectTeleportAndSummonTrapResult:AddTrapEntityID(entity)
+  table.insert(self._trapEntityIDList, entity)
 end
-
-

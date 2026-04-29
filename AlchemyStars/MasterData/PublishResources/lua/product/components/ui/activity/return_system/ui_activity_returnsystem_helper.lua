@@ -1,134 +1,102 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/ui_activity_returnsystem_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemHelper", Object)
 UIActivityReturnSystemHelper = UIActivityReturnSystemHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemHelper.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityReturnSystemHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.LoadDataOnEnter = function(TT, res)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignType = (UIActivityReturnSystemHelper.GetCampaignType)()
+function UIActivityReturnSystemHelper.LoadDataOnEnter(TT, res)
+  local campaignType = UIActivityReturnSystemHelper.GetCampaignType()
   local componentIds = {}
-  local campaign = (UIActivityHelper.LoadDataOnEnter)(TT, res, campaignType, componentIds)
+  local campaign = UIActivityHelper.LoadDataOnEnter(TT, res, campaignType, componentIds)
   return campaign
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.GetTabIndexByTabName = function(name)
-  -- function num : 0_2
-  local tb = {welecome = 1, login = 2, quest = 3, shop = 4, boost = 5}
+function UIActivityReturnSystemHelper.GetTabIndexByTabName(name)
+  local tb = {
+    welecome = 1,
+    login = 2,
+    quest = 3,
+    shop = 4,
+    boost = 5
+  }
   return tb[name] or 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.GetComponentIdByTabIndex = function(index)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityReturnSystemHelper.GetComponentIdByTabIndex(index)
   local tb = {
-[1] = {ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_COMPONENT}
-, 
-[2] = {ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_CUMULATIVE_LOGIN}
-, 
-[3] = {ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_QUEST, ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_PERSON_PROGRESS}
-, 
-[4] = {ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_SHOP, ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_POWER2ITEM}
-, 
-[5] = {ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_RES_HELP}
-}
+    [1] = {
+      ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_COMPONENT
+    },
+    [2] = {
+      ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_CUMULATIVE_LOGIN
+    },
+    [3] = {
+      ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_QUEST,
+      ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_PERSON_PROGRESS
+    },
+    [4] = {
+      ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_SHOP,
+      ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_POWER2ITEM
+    },
+    [5] = {
+      ECampaignPlayerBackphaseIIComponentID.ECAMPAIGN_BACK_PHASEII_RES_HELP
+    }
+  }
   return tb[index]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.GetCampaignType = function()
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityReturnSystemHelper.GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_BACK_PHASE_II
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.GetAllComponentId = function()
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityReturnSystemHelper.GetAllComponentId()
   local tb_out = {}
   for i = 1, 5 do
-    local tb = (UIActivityReturnSystemHelper.GetComponentIdByTabIndex)(i)
-    for _,v in ipairs(tb) do
-      (table.insert)(tb_out, v)
+    local tb = UIActivityReturnSystemHelper.GetComponentIdByTabIndex(i)
+    for _, v in ipairs(tb) do
+      table.insert(tb_out, v)
     end
   end
   return tb_out
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.GetComponentByTabName = function(campaign, name, i)
-  -- function num : 0_6 , upvalues : _ENV
-  if not i then
-    i = 1
-  end
-  local index = (UIActivityReturnSystemHelper.GetTabIndexByTabName)(name)
-  local ids = (UIActivityReturnSystemHelper.GetComponentIdByTabIndex)(index)
+function UIActivityReturnSystemHelper.GetComponentByTabName(campaign, name, i)
+  i = i or 1
+  local index = UIActivityReturnSystemHelper.GetTabIndexByTabName(name)
+  local ids = UIActivityReturnSystemHelper.GetComponentIdByTabIndex(index)
   local tb_out = {}
-  for _,v in ipairs(ids) do
-    (table.insert)(tb_out, campaign:GetComponent(v))
+  for _, v in ipairs(ids) do
+    table.insert(tb_out, campaign:GetComponent(v))
   end
   return tb_out[i]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.CheckCampaignRedPoint = function(campaign)
-  -- function num : 0_7 , upvalues : _ENV
-  local ids = (UIActivityReturnSystemHelper.GetAllComponentId)()
-  return campaign:CheckComponentRed((table.unpack)(ids))
+function UIActivityReturnSystemHelper.CheckCampaignRedPoint(campaign)
+  local ids = UIActivityReturnSystemHelper.GetAllComponentId()
+  return campaign:CheckComponentRed(table.unpack(ids))
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.GetShopRedPointKey = function()
-  -- function num : 0_8 , upvalues : _ENV
-  local key = (UIActivityHelper.GetLocalDBKeyWithPstId)("UIActivityReturnSystemShopRed_")
+function UIActivityReturnSystemHelper.GetShopRedPointKey()
+  local key = UIActivityHelper.GetLocalDBKeyWithPstId("UIActivityReturnSystemShopRed_")
   return key
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.GetShopRedPointTime = function()
-  -- function num : 0_9 , upvalues : _ENV
-  local timeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
+function UIActivityReturnSystemHelper.GetShopRedPointTime()
+  local timeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
   return nowTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.GetShopRedPoint = function()
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityReturnSystemHelper.GetShopRedPoint()
   local campaignLen = 864000
-  local key = (UIActivityReturnSystemHelper.GetShopRedPointKey)()
-  local time = (UIActivityReturnSystemHelper.GetShopRedPointTime)()
-  local isRed = not (LocalDB.HasKey)(key) or campaignLen <= (math.abs)((LocalDB.GetInt)(key) - time)
-  do return isRed end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local key = UIActivityReturnSystemHelper.GetShopRedPointKey()
+  local time = UIActivityReturnSystemHelper.GetShopRedPointTime()
+  local isRed = not LocalDB.HasKey(key) or campaignLen <= math.abs(LocalDB.GetInt(key) - time)
+  return isRed
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemHelper.SetShopRedPoint = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local key = (UIActivityReturnSystemHelper.GetShopRedPointKey)()
-  local time = (UIActivityReturnSystemHelper.GetShopRedPointTime)()
-  ;
-  (LocalDB.SetInt)(key, time)
+function UIActivityReturnSystemHelper.SetShopRedPoint()
+  local key = UIActivityReturnSystemHelper.GetShopRedPointKey()
+  local time = UIActivityReturnSystemHelper.GetShopRedPointTime()
+  LocalDB.SetInt(key, time)
 end
-
-

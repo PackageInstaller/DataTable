@@ -1,37 +1,123 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/south_sea/cfg_south_sea_antique.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ItemID = 2, Icon = 3, GameIcon = 4, Name = 5, Intro = 6}
+local key = {
+  ID = 1,
+  ItemID = 2,
+  Icon = 3,
+  GameIcon = 4,
+  Name = 5,
+  Intro = 6
+}
 local config = {
-{1, 7000706, "wwz_icon01", "n45_lzhcz_dj01", "str_cn9_item_7000706", "str_cn9_item_intro_7000706"}
-, 
-{2, 7000710, "wwz_icon02", "n45_lzhcz_dj02", "str_cn9_item_7000710", "str_cn9_item_intro_7000710"}
-, 
-{3, 7000700, "wwz_icon03", "n45_lzhcz_dj03", "str_cn9_item_7000700", "str_cn9_item_intro_7000700"}
-, 
-{4, 7000703, "wwz_icon04", "n45_lzhcz_dj04", "str_cn9_item_7000703", "str_cn9_item_intro_7000703"}
-, 
-{5, 7000701, "wwz_icon05", "n45_lzhcz_dj05", "str_cn9_item_7000701", "str_cn9_item_intro_7000701"}
-, 
-{6, 7000705, "wwz_icon06", "n45_lzhcz_dj06", "str_cn9_item_7000705", "str_cn9_item_intro_7000705"}
-, 
-{7, 7000708, "wwz_icon07", "n45_lzhcz_dj07", "str_cn9_item_7000708", "str_cn9_item_intro_7000708"}
-, 
-{8, 7000702, "wwz_icon08", "n45_lzhcz_dj08", "str_cn9_item_7000702", "str_cn9_item_intro_7000702"}
-, 
-{9, 7000712, "wwz_icon09", "n45_lzhcz_dj09", "str_cn9_item_7000712", "str_cn9_item_intro_7000712"}
-, 
-{10, 7000707, "wwz_icon10", "n45_lzhcz_dj010", "str_cn9_item_7000707", "str_cn9_item_intro_7000707"}
-, 
-{11, 7000713, "wwz_icon11", "n45_lzhcz_dj011", "str_cn9_item_7000713", "str_cn9_item_intro_7000713"}
-, 
-{12, 7000711, "wwz_icon12", "n45_lzhcz_dj012", "str_cn9_item_7000711", "str_cn9_item_intro_7000711"}
-, 
-{13, 7000709, "wwz_icon13", "n45_lzhcz_dj013", "str_cn9_item_7000709", "str_cn9_item_intro_7000709"}
-, 
-{14, 7000704, "wwz_icon14", "n45_lzhcz_dj014", "str_cn9_item_7000704", "str_cn9_item_intro_7000704"}
+  {
+    1,
+    7000706,
+    "wwz_icon01",
+    "n45_lzhcz_dj01",
+    "str_cn9_item_7000706",
+    "str_cn9_item_intro_7000706"
+  },
+  {
+    2,
+    7000710,
+    "wwz_icon02",
+    "n45_lzhcz_dj02",
+    "str_cn9_item_7000710",
+    "str_cn9_item_intro_7000710"
+  },
+  {
+    3,
+    7000700,
+    "wwz_icon03",
+    "n45_lzhcz_dj03",
+    "str_cn9_item_7000700",
+    "str_cn9_item_intro_7000700"
+  },
+  {
+    4,
+    7000703,
+    "wwz_icon04",
+    "n45_lzhcz_dj04",
+    "str_cn9_item_7000703",
+    "str_cn9_item_intro_7000703"
+  },
+  {
+    5,
+    7000701,
+    "wwz_icon05",
+    "n45_lzhcz_dj05",
+    "str_cn9_item_7000701",
+    "str_cn9_item_intro_7000701"
+  },
+  {
+    6,
+    7000705,
+    "wwz_icon06",
+    "n45_lzhcz_dj06",
+    "str_cn9_item_7000705",
+    "str_cn9_item_intro_7000705"
+  },
+  {
+    7,
+    7000708,
+    "wwz_icon07",
+    "n45_lzhcz_dj07",
+    "str_cn9_item_7000708",
+    "str_cn9_item_intro_7000708"
+  },
+  {
+    8,
+    7000702,
+    "wwz_icon08",
+    "n45_lzhcz_dj08",
+    "str_cn9_item_7000702",
+    "str_cn9_item_intro_7000702"
+  },
+  {
+    9,
+    7000712,
+    "wwz_icon09",
+    "n45_lzhcz_dj09",
+    "str_cn9_item_7000712",
+    "str_cn9_item_intro_7000712"
+  },
+  {
+    10,
+    7000707,
+    "wwz_icon10",
+    "n45_lzhcz_dj010",
+    "str_cn9_item_7000707",
+    "str_cn9_item_intro_7000707"
+  },
+  {
+    11,
+    7000713,
+    "wwz_icon11",
+    "n45_lzhcz_dj011",
+    "str_cn9_item_7000713",
+    "str_cn9_item_intro_7000713"
+  },
+  {
+    12,
+    7000711,
+    "wwz_icon12",
+    "n45_lzhcz_dj012",
+    "str_cn9_item_7000711",
+    "str_cn9_item_intro_7000711"
+  },
+  {
+    13,
+    7000709,
+    "wwz_icon13",
+    "n45_lzhcz_dj013",
+    "str_cn9_item_7000709",
+    "str_cn9_item_intro_7000709"
+  },
+  {
+    14,
+    7000704,
+    "wwz_icon14",
+    "n45_lzhcz_dj014",
+    "str_cn9_item_7000704",
+    "str_cn9_item_intro_7000704"
+  }
 }
 return config, "ID", key
-

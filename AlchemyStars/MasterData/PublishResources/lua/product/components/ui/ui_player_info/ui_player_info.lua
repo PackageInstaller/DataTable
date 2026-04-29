@@ -1,27 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_player_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local PlayerInfoType = {PlayerEdit = 1, Friend = 2, Stranger = 3, BlackList = 4, PlayerPreview = 5}
+local PlayerInfoType = {
+  PlayerEdit = 1,
+  Friend = 2,
+  Stranger = 3,
+  BlackList = 4,
+  PlayerPreview = 5
+}
 _enum("PlayerInfoType", PlayerInfoType)
-local PlayerInfoFrom = {MainLobby = 1, Chat = 2, WorldBoss = 3}
+local PlayerInfoFrom = {
+  MainLobby = 1,
+  Chat = 2,
+  WorldBoss = 3
+}
 _enum("PlayerInfoFrom", PlayerInfoFrom)
 _class("UIPlayerInfoController", UIController)
 UIPlayerInfoController = UIPlayerInfoController
--- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
 
-UIPlayerInfoController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPlayerInfoController:Constructor()
   self._roleModule = self:GetModule(RoleModule)
   self._itemModule = self:GetModule(ItemModule)
-  self._canShare = (self:GetModule(ShareModule)):CanShare()
+  self._canShare = self:GetModule(ShareModule):CanShare()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV, PlayerInfoFrom
+function UIPlayerInfoController:LoadDataOnEnter(TT, res, uiParams)
   self._from = uiParams[1]
   self._friendId = uiParams[2]
   self._chatFriendManager = uiParams[3]
@@ -30,47 +30,38 @@ UIPlayerInfoController.LoadDataOnEnter = function(self, TT, res, uiParams)
   if self._from == PlayerInfoFrom.MainLobby then
     self._isFriendMode = false
     self._isPlayerEditMode = true
+  elseif self._from == PlayerInfoFrom.Chat then
+    self._isFriendMode = true
+    self._isPlayerEditMode = false
+  elseif self._from == PlayerInfoFrom.WorldBoss then
+    self._isFriendMode = true
+    self._isPlayerEditMode = false
   else
-    if self._from == PlayerInfoFrom.Chat then
-      self._isFriendMode = true
-      self._isPlayerEditMode = false
-    else
-      if self._from == PlayerInfoFrom.WorldBoss then
-        self._isFriendMode = true
-        self._isPlayerEditMode = false
-      else
-        self._isFriendMode = false
-        self._isPlayerEditMode = true
-      end
-    end
+    self._isFriendMode = false
+    self._isPlayerEditMode = true
   end
   self:_RequestData(TT)
   self:_RefreshData()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RequestData = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPlayerInfoController:_RequestData(TT)
   self:Lock("UIPlayerInfoController_RequestData")
   if self._isFriendMode then
     self.friendWakeUp = nil
-    ;
-    (self._chatFriendManager):RequestFriendList(TT)
+    self._chatFriendManager:RequestFriendList(TT)
     local socialModule = self:GetModule(SocialModule)
-    ;
-    (Log.info)("###[wake] playerinfo self._friendId--", self._friendId)
+    Log.info("###[wake] playerinfo self._friendId--", self._friendId)
     local res, tempPlayerDetailInfo = socialModule:HandleGetPlayerDetailInfo(TT, self._friendId)
     if not res:GetSucc() then
-      (self._chatFriendManager):HandleErrorMsgCode(res:GetResult())
+      self._chatFriendManager:HandleErrorMsgCode(res:GetResult())
       self:UnLock("UIPlayerInfoController_RequestData")
-      return 
+      return
     end
     if self._friendId == nil or self._friendId == 0 then
-      (Log.error)("self._friendId == nil or == 0")
+      Log.error("self._friendId == nil or == 0")
       self:UnLock("UIPlayerInfoController_RequestData")
       self:CloseDialog()
-      return 
+      return
     end
     local playerDetailInfo = tempPlayerDetailInfo
     local simpleInfo = playerDetailInfo.simple_info
@@ -96,319 +87,140 @@ UIPlayerInfoController._RequestData = function(self, TT)
     self.friendWakeUp = simpleInfo.privilege_status
     local chatFriendData = ChatFriendData:New(simpleInfo.pstid, simpleInfo.head, simpleInfo.head_bg, simpleInfo.frame_id, simpleInfo.level, simpleInfo.nick, false, simpleInfo.is_online, simpleInfo.create_time, 0, simpleInfo.last_logout_time, simpleInfo.remark_name, simpleInfo.help_pet, simpleInfo.world_boss_info, simpleInfo.homeland_info, nil, nil, nil, nil, simpleInfo.open_id, simpleInfo.plat_id, simpleInfo.login_source, board_pet, back_id, background_type, pet_grade, pet_template_id, skin_id, is_hand_operate, handle_ope_spine_id)
     self._friendDetailData = ChatFriendDetailData:New(chatFriendData, playerDetailInfo)
-    self._friendData = (self._friendDetailData):GetFriendData()
+    self._friendData = self._friendDetailData:GetFriendData()
     if self._friendData then
-      (Log.info)("###[wake] p id --", (self._friendData)._friendId)
+      Log.info("###[wake] p id --", self._friendData._friendId)
     else
-      ;
-      (Log.info)("###[wake] p not id")
+      Log.info("###[wake] p not id")
     end
   end
-  do
-    do
-      if self._isPlayerEditMode and not GameSingle then
-        local res = (self._roleModule):Request_RoleImageInfo(TT)
-        if not res:GetSucc() then
-          (Log.debug)("###[UIPlayerInfoController] Request_RoleImageInfo Fail !")
-        end
-      end
-      self:UnLock("UIPlayerInfoController_RequestData")
+  if self._isPlayerEditMode and not GameSingle then
+    local res = self._roleModule:Request_RoleImageInfo(TT)
+    if not res:GetSucc() then
+      Log.debug("###[UIPlayerInfoController] Request_RoleImageInfo Fail !")
     end
   end
+  self:UnLock("UIPlayerInfoController_RequestData")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshData = function(self)
-  -- function num : 0_3 , upvalues : PlayerInfoType, _ENV
+function UIPlayerInfoController:_RefreshData()
   if self._isPlayerEditMode then
     self._infoType = PlayerInfoType.PlayerEdit
-    self._playerInfo = (self._roleModule):UI_GetPlayerInfo()
-    self._scheduleInfo = (self._roleModule):UI_GetPlayerScheduleInfo()
+    self._playerInfo = self._roleModule:UI_GetPlayerInfo()
+    self._scheduleInfo = self._roleModule:UI_GetPlayerScheduleInfo()
     self._worldBossModule = self:GetModule(WorldBossModule)
-    local headid = (self._playerInfo).m_nHeadImageID
-    local cfg_head = (Cfg.cfg_role_head_image)[headid]
-    local headbgid = (self._playerInfo).m_nHeadColorID
-    local cfg_head_bg = (Cfg.cfg_player_head_bg)[headbgid]
+    local headid = self._playerInfo.m_nHeadImageID
+    local cfg_head = Cfg.cfg_role_head_image[headid]
+    local headbgid = self._playerInfo.m_nHeadColorID
+    local cfg_head_bg = Cfg.cfg_player_head_bg[headbgid]
     if cfg_head_bg == nil then
-      (Log.debug)("###playerinfo - cfg_player_head_bg is nil ! id ", headbgid)
-      local bid = (HelperProxy:GetInstance()):GetHeadBgDefaultID()
-      cfg_head_bg = (Cfg.cfg_player_head_bg)[bid]
+      Log.debug("###playerinfo - cfg_player_head_bg is nil ! id ", headbgid)
+      local bid = HelperProxy:GetInstance():GetHeadBgDefaultID()
+      cfg_head_bg = Cfg.cfg_player_head_bg[bid]
     end
-    do
-      local frameid = (self._roleModule):GetHeadFrameID()
-      local cfg_head_frame = (Cfg.cfg_role_head_frame)[frameid]
-      local frameIcon = nil
-      if cfg_head_frame then
-        frameIcon = cfg_head_frame.Icon
-      else
-        local fid = (HelperProxy:GetInstance()):GetHeadFrameDefaultID()
-        frameIcon = ((Cfg.cfg_role_head_frame)[fid]).Icon
-      end
-      do
-        -- DECOMPILER ERROR at PC64: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._infoData).headIconName = cfg_head.Icon
-        -- DECOMPILER ERROR at PC67: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._infoData).headIconTag = cfg_head.Tag
-        -- DECOMPILER ERROR at PC70: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._infoData).headBgName = cfg_head_bg.Icon
-        -- DECOMPILER ERROR at PC72: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._infoData).headFrameIconName = frameIcon
-        -- DECOMPILER ERROR at PC76: Confused about usage of register: R8 in 'UnsetPending'
-
-        ;
-        (self._infoData).name = (self._playerInfo).m_stRoleName
-        local unixtime = (self._playerInfo).m_nCreateTime
-        local dateStr = (os.date)("%Y/%m/%d", unixtime)
-        -- DECOMPILER ERROR at PC85: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).createDate = dateStr
-        -- DECOMPILER ERROR at PC89: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).level = (self._playerInfo).m_player_lv
-        -- DECOMPILER ERROR at PC93: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).showID = (self._playerInfo).m_player_showid
-        -- DECOMPILER ERROR at PC97: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).sign = (self._playerInfo).m_stSignText
-        -- DECOMPILER ERROR at PC101: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).currMissionID = (self._scheduleInfo).m_player_current_missionid
-        -- DECOMPILER ERROR at PC105: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).star = (self._scheduleInfo).m_player_mission_star
-        -- DECOMPILER ERROR at PC109: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).petCount = (self._scheduleInfo).m_player_pet_count
-        -- DECOMPILER ERROR at PC113: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).achievementPoint = (self._scheduleInfo).m_player_achievement_point
-        -- DECOMPILER ERROR at PC117: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).achievementPointAll = (self._scheduleInfo).m_player_achievement_all_point
-        -- DECOMPILER ERROR at PC122: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).towerWater = ((self._scheduleInfo).m_player_tower_info).tower_water
-        -- DECOMPILER ERROR at PC127: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).towerFire = ((self._scheduleInfo).m_player_tower_info).tower_fire
-        -- DECOMPILER ERROR at PC132: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).towerWood = ((self._scheduleInfo).m_player_tower_info).tower_wood
-        -- DECOMPILER ERROR at PC137: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).towerThunder = ((self._scheduleInfo).m_player_tower_info).tower_thunder
-        -- DECOMPILER ERROR at PC141: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).difficultyMission = (self._playerInfo).m_difficulty_mission
-        -- DECOMPILER ERROR at PC145: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).sailingMission = (self._playerInfo).m_sailing_mission
-        -- DECOMPILER ERROR at PC149: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).titleUsed = (self._playerInfo).m_title_used
-        -- DECOMPILER ERROR at PC153: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).fifureUsed = (self._playerInfo).m_fifure_used
-        -- DECOMPILER ERROR at PC158: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).dan = (self._roleModule):GetWorldBossRecordDan()
-        -- DECOMPILER ERROR at PC163: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._infoData).grading = (self._roleModule):GetWorldBossRecordRank()
-        local expID = ((Cfg.cfg_aircraft_values)[36]).IntValue
-        if not expID then
-          (Log.debug)("###[UIPlayerInfoController] expID is nil !")
-        end
-        local exp = (self._roleModule):GetAssetCount(expID)
-        do
-          local rankValue = ((GameGlobal.GetModule)(AircraftModule)):GetLvByExp(exp)
-          -- DECOMPILER ERROR at PC186: Confused about usage of register: R13 in 'UnsetPending'
-
-          ;
-          (self._infoData).rankValue = rankValue
-          if self._isFriendMode then
-            if (self._chatFriendManager):IsMyFriend(self._friendId) then
-              self._infoType = PlayerInfoType.Friend
-            else
-              if (self._chatFriendManager):IsInBlackList(self._friendId) then
-                self._infoType = PlayerInfoType.BlackList
-              else
-                if self._friendId == (self._roleModule):GetPstId() then
-                  self._infoType = PlayerInfoType.PlayerPreview
-                else
-                  self._infoType = PlayerInfoType.Stranger
-                end
-              end
-            end
-            if self._friendData == nil then
-              self:CloseDialog()
-              return 
-            end
-            -- DECOMPILER ERROR at PC230: Confused about usage of register: R2 in 'UnsetPending'
-
-            -- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (self._infoData).headIconName = (self._friendData):GetHeadIconName()
-            -- DECOMPILER ERROR at PC236: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (self._infoData).headBgName = (self._friendData):GetHeadBgName()
-            -- DECOMPILER ERROR at PC241: Confused about usage of register: R1 in 'UnsetPending'
-
-            ;
-            (self._infoData).headFrameIconName = (self._friendData):GetHeadFrameName()
-            local friendName = (self._chatFriendManager):GetFriendName(self._friendData)
-            -- DECOMPILER ERROR at PC247: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).name = friendName
-            -- DECOMPILER ERROR at PC252: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).createDate = (self._friendData):GetCreateDateStr()
-            -- DECOMPILER ERROR at PC257: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).level = (self._friendData):GetLevel()
-            -- DECOMPILER ERROR at PC262: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).showID = (self._friendData):GetShowFriendId()
-            -- DECOMPILER ERROR at PC267: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).sign = (self._friendDetailData):GetDes()
-            -- DECOMPILER ERROR at PC272: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).currMissionID = (self._friendDetailData):GetCurrentMissionId()
-            -- DECOMPILER ERROR at PC277: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).star = (self._friendDetailData):GetStar()
-            -- DECOMPILER ERROR at PC282: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).petCount = (self._friendDetailData):GetPetCount()
-            -- DECOMPILER ERROR at PC287: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).achievementPoint = (self._friendDetailData):GetAchievementPoint()
-            -- DECOMPILER ERROR at PC292: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).achievementPointAll = (self._friendDetailData):GetAllAchievementPoint()
-            -- DECOMPILER ERROR at PC297: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).towerWater = (self._friendDetailData):GetTowerWater()
-            -- DECOMPILER ERROR at PC302: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).towerFire = (self._friendDetailData):GetTowerFire()
-            -- DECOMPILER ERROR at PC307: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).towerWood = (self._friendDetailData):GetTowerWood()
-            -- DECOMPILER ERROR at PC312: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).towerThunder = (self._friendDetailData):GetTowerThunder()
-            -- DECOMPILER ERROR at PC317: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).difficultyMission = (self._friendDetailData):GetDifficultyMission()
-            -- DECOMPILER ERROR at PC322: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).sailingMission = (self._friendDetailData):GetSailingMission()
-            -- DECOMPILER ERROR at PC327: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).titleUsed = (self._friendDetailData):GetTitleUsed()
-            -- DECOMPILER ERROR at PC332: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).fifureUsed = (self._friendDetailData):GetFifureUsed()
-            -- DECOMPILER ERROR at PC337: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).rankValue = (self._friendDetailData):GetRankValue()
-            -- DECOMPILER ERROR at PC342: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).dan = (self._friendDetailData):GetWorldBossRecordDan()
-            -- DECOMPILER ERROR at PC347: Confused about usage of register: R2 in 'UnsetPending'
-
-            ;
-            (self._infoData).grading = (self._friendDetailData):GetWorldBossRecordRank()
-          end
-          do
-            self:RefreshNewPool()
-          end
-        end
-      end
+    local frameid = self._roleModule:GetHeadFrameID()
+    local cfg_head_frame = Cfg.cfg_role_head_frame[frameid]
+    local frameIcon
+    if cfg_head_frame then
+      frameIcon = cfg_head_frame.Icon
+    else
+      local fid = HelperProxy:GetInstance():GetHeadFrameDefaultID()
+      frameIcon = Cfg.cfg_role_head_frame[fid].Icon
     end
+    self._infoData.headIconName = cfg_head.Icon
+    self._infoData.headIconTag = cfg_head.Tag
+    self._infoData.headBgName = cfg_head_bg.Icon
+    self._infoData.headFrameIconName = frameIcon
+    self._infoData.name = self._playerInfo.m_stRoleName
+    local unixtime = self._playerInfo.m_nCreateTime
+    local dateStr = os.date("%Y/%m/%d", unixtime)
+    self._infoData.createDate = dateStr
+    self._infoData.level = self._playerInfo.m_player_lv
+    self._infoData.showID = self._playerInfo.m_player_showid
+    self._infoData.sign = self._playerInfo.m_stSignText
+    self._infoData.currMissionID = self._scheduleInfo.m_player_current_missionid
+    self._infoData.star = self._scheduleInfo.m_player_mission_star
+    self._infoData.petCount = self._scheduleInfo.m_player_pet_count
+    self._infoData.achievementPoint = self._scheduleInfo.m_player_achievement_point
+    self._infoData.achievementPointAll = self._scheduleInfo.m_player_achievement_all_point
+    self._infoData.towerWater = self._scheduleInfo.m_player_tower_info.tower_water
+    self._infoData.towerFire = self._scheduleInfo.m_player_tower_info.tower_fire
+    self._infoData.towerWood = self._scheduleInfo.m_player_tower_info.tower_wood
+    self._infoData.towerThunder = self._scheduleInfo.m_player_tower_info.tower_thunder
+    self._infoData.difficultyMission = self._playerInfo.m_difficulty_mission
+    self._infoData.sailingMission = self._playerInfo.m_sailing_mission
+    self._infoData.titleUsed = self._playerInfo.m_title_used
+    self._infoData.fifureUsed = self._playerInfo.m_fifure_used
+    self._infoData.dan = self._roleModule:GetWorldBossRecordDan()
+    self._infoData.grading = self._roleModule:GetWorldBossRecordRank()
+    local expID = Cfg.cfg_aircraft_values[36].IntValue
+    if not expID then
+      Log.debug("###[UIPlayerInfoController] expID is nil !")
+    end
+    local exp = self._roleModule:GetAssetCount(expID)
+    local rankValue = GameGlobal.GetModule(AircraftModule):GetLvByExp(exp)
+    self._infoData.rankValue = rankValue
   end
+  if self._isFriendMode then
+    if self._chatFriendManager:IsMyFriend(self._friendId) then
+      self._infoType = PlayerInfoType.Friend
+    elseif self._chatFriendManager:IsInBlackList(self._friendId) then
+      self._infoType = PlayerInfoType.BlackList
+    elseif self._friendId == self._roleModule:GetPstId() then
+      self._infoType = PlayerInfoType.PlayerPreview
+    else
+      self._infoType = PlayerInfoType.Stranger
+    end
+    if self._friendData == nil then
+      self:CloseDialog()
+      return
+    end
+    self._infoData.headIconName, self._infoData.headIconTag = self._friendData:GetHeadIconName()
+    self._infoData.headBgName = self._friendData:GetHeadBgName()
+    self._infoData.headFrameIconName = self._friendData:GetHeadFrameName()
+    local friendName = self._chatFriendManager:GetFriendName(self._friendData)
+    self._infoData.name = friendName
+    self._infoData.createDate = self._friendData:GetCreateDateStr()
+    self._infoData.level = self._friendData:GetLevel()
+    self._infoData.showID = self._friendData:GetShowFriendId()
+    self._infoData.sign = self._friendDetailData:GetDes()
+    self._infoData.currMissionID = self._friendDetailData:GetCurrentMissionId()
+    self._infoData.star = self._friendDetailData:GetStar()
+    self._infoData.petCount = self._friendDetailData:GetPetCount()
+    self._infoData.achievementPoint = self._friendDetailData:GetAchievementPoint()
+    self._infoData.achievementPointAll = self._friendDetailData:GetAllAchievementPoint()
+    self._infoData.towerWater = self._friendDetailData:GetTowerWater()
+    self._infoData.towerFire = self._friendDetailData:GetTowerFire()
+    self._infoData.towerWood = self._friendDetailData:GetTowerWood()
+    self._infoData.towerThunder = self._friendDetailData:GetTowerThunder()
+    self._infoData.difficultyMission = self._friendDetailData:GetDifficultyMission()
+    self._infoData.sailingMission = self._friendDetailData:GetSailingMission()
+    self._infoData.titleUsed = self._friendDetailData:GetTitleUsed()
+    self._infoData.fifureUsed = self._friendDetailData:GetFifureUsed()
+    self._infoData.rankValue = self._friendDetailData:GetRankValue()
+    self._infoData.dan = self._friendDetailData:GetWorldBossRecordDan()
+    self._infoData.grading = self._friendDetailData:GetWorldBossRecordRank()
+  end
+  self:RefreshNewPool()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_4 , upvalues : _ENV
+function UIPlayerInfoController:OnShow(uiParams)
   self:AttachEvent(GameEventType.ModuleFriendNotifyNewMsg, self._RefreshFriendRedStatus)
   self:AttachEvent(GameEventType.UpdateFriendInvitation, self._RefreshFriendRedStatus)
   self._friendRedGo = self:GetGameObject("friendRed")
   if self._isFriendMode and self._friendData == nil then
-    return 
+    return
   end
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
   self._atlas = self:GetAsset("UIPlayerInfo.spriteatlas", LoadType.SpriteAtlas)
   self._atlasAwake = self:GetAsset("UIAwake.spriteatlas", LoadType.SpriteAtlas)
   self.newCenterCanvasGroup = self:GetUIComponent("CanvasGroup", "NewCenter")
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.newCenterCanvasGroup).alpha = 0
+  self.newCenterCanvasGroup.alpha = 0
   self.getComponetOver = false
-  ;
-  (TaskManager:GetInstance()):StartTask(self.Task_OnValue, self)
+  TaskManager:GetInstance():StartTask(self.Task_OnValue, self)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.Task_OnValue = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPlayerInfoController:Task_OnValue(TT)
   self:Lock("Task_OnValue")
   self:_InitiBg()
   YIELD(TT)
@@ -419,20 +231,16 @@ UIPlayerInfoController.Task_OnValue = function(self, TT)
   self:UnLock("Task_OnValue")
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.Task_InitOnValue = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV
+function UIPlayerInfoController:Task_InitOnValue(TT)
   if not self.getComponetOver then
-    return 
+    return
   end
   if self._isPlayerEditMode then
     self:SetHelpPets()
   else
     self:ShowFriendHelpPets()
   end
-  ;
-  (self.newCenterCanvasGroup):DOFade(1, 0.5)
+  self.newCenterCanvasGroup:DOFade(1, 0.5)
   self:ShowPlayerInfo()
   self:ShowPlayerTitleAndEmblazonry()
   self:ShowScheduleInfo()
@@ -446,10 +254,7 @@ UIPlayerInfoController.Task_InitOnValue = function(self, TT)
   self:_RefreshFirendLayoutBtns()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIPlayerInfoController:OnHide()
   self._helpPetIcon = nil
   self:DetachEvent(GameEventType.OnChapcterInfoChanged, self.OnChapcterInfoChanged)
   self:DetachEvent(GameEventType.OnPlayerHeadInfoChanged, self.OnPlayerHeadInfoChanged)
@@ -458,36 +263,24 @@ UIPlayerInfoController.OnHide = function(self)
   self:DetachEvent(GameEventType.OnPlayerEmblazonryChange, self.OnPlayerEmblazonryChange)
   self:DetachEvent(GameEventType.ChangeFriendInfoSuccess, self.ChangeFriendInfoSuccess)
   self:DetachEvent(GameEventType.RefreshPlayerInfoRedPoint, self.FlushRed)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPlayerInfoOpen, false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPlayerInfoOpen, false)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._GetComponents = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPlayerInfoController:_GetComponents()
   self._backBtnsGO = self:GetGameObject("backBtns")
   local btns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._backBtns = btns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_8_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:StartTask(function(TT)
-      -- function num : 0_8_0_0 , upvalues : self, _ENV
       self:Lock("uieff_UIPlayerInfoController_out")
-      ;
-      (self.newCenterAnim):Play("uieff_UIPlayerInfoController_out")
+      self.newCenterAnim:Play("uieff_UIPlayerInfoController_out")
       YIELD(TT, 100)
       self:CloseDialog()
       self:UnLock("uieff_UIPlayerInfoController_out")
-    end
-, self)
-  end
-, nil, nil, nil, nil, not self._isFriendMode, function()
-    -- function num : 0_8_1 , upvalues : self
+    end, self)
+  end, nil, nil, nil, nil, not self._isFriendMode, function()
     self:Share()
-  end
-)
+  end)
   self._nameTex = self:GetUIComponent("UILocalizationText", "name")
   self._nameRect = self:GetUIComponent("RectTransform", "nameRect")
   self._idTex = self:GetUIComponent("UILocalizationText", "id")
@@ -511,37 +304,14 @@ UIPlayerInfoController._GetComponents = function(self)
   self._friendhelppet = self:GetUIComponent("UISelectObjectPath", "friendhelppet")
   self._helpPetIcon = {}
   for i = 1, 4 do
-    -- DECOMPILER ERROR at PC125: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._helpPetIcon)[i] = {}
-    -- DECOMPILER ERROR at PC133: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._helpPetIcon)[i]).go = self:GetGameObject("helppeticon" .. i)
-    -- DECOMPILER ERROR at PC142: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._helpPetIcon)[i]).icon = self:GetUIComponent("RawImageLoader", "helppeticon" .. i)
-    -- DECOMPILER ERROR at PC150: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._helpPetIcon)[i]).levelObj = self:GetGameObject("helppetlevel" .. i)
-    -- DECOMPILER ERROR at PC159: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._helpPetIcon)[i]).level = self:GetUIComponent("UILocalizationText", "helppetlevel" .. i)
-    -- DECOMPILER ERROR at PC168: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._helpPetIcon)[i]).awake = self:GetUIComponent("Image", "helppetawake" .. i)
-    -- DECOMPILER ERROR at PC178: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._helpPetIcon)[i]).first = self:GetUIComponent("Image", "helppet" .. i .. "f")
-    -- DECOMPILER ERROR at PC188: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    ((self._helpPetIcon)[i]).second = self:GetUIComponent("Image", "helppet" .. i .. "s")
+    self._helpPetIcon[i] = {}
+    self._helpPetIcon[i].go = self:GetGameObject("helppeticon" .. i)
+    self._helpPetIcon[i].icon = self:GetUIComponent("RawImageLoader", "helppeticon" .. i)
+    self._helpPetIcon[i].levelObj = self:GetGameObject("helppetlevel" .. i)
+    self._helpPetIcon[i].level = self:GetUIComponent("UILocalizationText", "helppetlevel" .. i)
+    self._helpPetIcon[i].awake = self:GetUIComponent("Image", "helppetawake" .. i)
+    self._helpPetIcon[i].first = self:GetUIComponent("Image", "helppet" .. i .. "f")
+    self._helpPetIcon[i].second = self:GetUIComponent("Image", "helppet" .. i .. "s")
   end
   self._helppetholder = self:GetGameObject("helppetholder")
   self._noHelpTip = self:GetGameObject("noHelpTip")
@@ -552,40 +322,32 @@ UIPlayerInfoController._GetComponents = function(self)
   self._changeHeadBtn = self:GetUIComponent("EmptyImage", "changeHeadBtn")
   self._changeFriendNameObj = self:GetGameObject("changeFriendNameObj")
   self._chenghaoBtnRed = self:GetGameObject("chenghaoBtnRed")
-  ;
-  (self._chenghaoBtnRed):SetActive(false)
+  self._chenghaoBtnRed:SetActive(false)
   self._jinianBtnRed = self:GetGameObject("jinianBtnRed")
-  ;
-  (self._jinianBtnRed):SetActive(false)
+  self._jinianBtnRed:SetActive(false)
   self._jinianWallRed = self:GetGameObject("jinianWallRed")
-  ;
-  (self._jinianWallRed):SetActive(false)
+  self._jinianWallRed:SetActive(false)
   self.FriendBtn = self:GetGameObject("FriendBtn")
-  ;
-  (self.FriendBtn):SetActive(not GameSingle)
+  self.FriendBtn:SetActive(not GameSingle)
   self.signInBtn = self:GetGameObject("signInBtn")
-  ;
-  (self.signInBtn):SetActive(not GameSingle)
+  self.signInBtn:SetActive(not GameSingle)
   self.initMaoXian = false
   self.initJiNian = false
   self.initChenghao = false
   if not IsPc() and not EDITOR then
     self.wakeUp = self:GetUIComponent("UISelectObjectPath", "WakeUp")
     if self.wakeUp then
-      self._wakeUp = (self.wakeUp):SpawnObject("UIWakeUpInfo")
+      self._wakeUp = self.wakeUp:SpawnObject("UIWakeUpInfo")
     end
     self.wakeUpSimple = self:GetUIComponent("UISelectObjectPath", "WakeUpSimple")
     if self.wakeUpSimple then
-      self._wakeUpSimple = (self.wakeUpSimple):SpawnObject("UIWakeUpInfoSimple")
+      self._wakeUpSimple = self.wakeUpSimple:SpawnObject("UIWakeUpInfoSimple")
     end
   end
   self:_GetNewComponents()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._GetMaoxianComponent = function(self)
-  -- function num : 0_9
+function UIPlayerInfoController:_GetMaoxianComponent()
   self._missionProgressTex = self:GetUIComponent("UILocalizationText", "missionProgress")
   self._petCountTex = self:GetUIComponent("UILocalizationText", "petCount")
   self._achievementPointTex = self:GetUIComponent("UILocalizationText", "achievementPoint")
@@ -606,28 +368,19 @@ UIPlayerInfoController._GetMaoxianComponent = function(self)
   self.hideGo = self:GetGameObject("hideGo")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._GetJinianComponent = function(self)
-  -- function num : 0_10
+function UIPlayerInfoController:_GetJinianComponent()
   local medalWall = self:GetUIComponent("UISelectObjectPath", "medalWall")
   self._medalWall = medalWall:SpawnObject("UIMedalCard_New")
   if self._isPlayerEditMode then
-    (self._medalWall):SetData(nil, false, function()
-    -- function num : 0_10_0 , upvalues : self
-    self:FlushRed()
-  end
-)
+    self._medalWall:SetData(nil, false, function()
+      self:FlushRed()
+    end)
   else
-    ;
-    (self._medalWall):SetData((self._friendDetailData):GetMedalPlacementInfo())
+    self._medalWall:SetData(self._friendDetailData:GetMedalPlacementInfo())
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._GetChenghaoComponent = function(self)
-  -- function num : 0_11
+function UIPlayerInfoController:_GetChenghaoComponent()
   self._titleSetting = self:GetGameObject("titleSetting")
   self._titleIcon = self:GetUIComponent("RawImageLoader", "titleIcon")
   self._titleIconObj = self:GetGameObject("titleIcon")
@@ -636,10 +389,7 @@ UIPlayerInfoController._GetChenghaoComponent = function(self)
   self.firendNoTitleTips = self:GetGameObject("firendNoTitleTips")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._GetNewComponents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIPlayerInfoController:_GetNewComponents()
   self.zhuye_black_txt_obj = self:GetGameObject("zhuye_black_txt")
   self.zhuye_white_image_obj = self:GetGameObject("zhuye_white_image")
   self.maoxian_black_txt_obj = self:GetGameObject("maoxian_black_txt")
@@ -652,14 +402,10 @@ UIPlayerInfoController._GetNewComponents = function(self)
   self.MaoXian_pool = self:GetGameObject("MaoXian_pool")
   self.JiNian_pool = self:GetGameObject("JiNian_pool")
   self.ChengHao_pool = self:GetGameObject("ChengHao_pool")
-  ;
-  (self.Zhuye_pool):SetActive(true)
-  ;
-  (self.MaoXian_pool):SetActive(false)
-  ;
-  (self.JiNian_pool):SetActive(false)
-  ;
-  (self.ChengHao_pool):SetActive(false)
+  self.Zhuye_pool:SetActive(true)
+  self.MaoXian_pool:SetActive(false)
+  self.JiNian_pool:SetActive(false)
+  self.ChengHao_pool:SetActive(false)
   self.newCenterAnim = self:GetUIComponent("Animation", "UIPlayerInfoController")
   self.zhuYe_ButtonAnim = self:GetUIComponent("Animation", "ZhuYe_Button")
   self.maoXian_ButtonAnim = self:GetUIComponent("Animation", "MaoXian_Button")
@@ -687,13 +433,12 @@ UIPlayerInfoController._GetNewComponents = function(self)
   self._PhotoFunctionLock = self:GetGameObject("PhotoFunctionLock")
   self._realName = self:GetGameObject("realName")
   self._lockPhoto = self:GetGameObject("LockPhoto")
-  local module = (GameGlobal.GetModule)(RoleModule)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_HandBook)
   if isLock then
-    (self._lockPhoto):SetActive(true)
+    self._lockPhoto:SetActive(true)
   else
-    ;
-    (self._lockPhoto):SetActive(false)
+    self._lockPhoto:SetActive(false)
   end
   self._addFirendGo = self:GetGameObject("AddFirendGo")
   self._delteFriendGo = self:GetGameObject("DelteFriendGo")
@@ -708,257 +453,175 @@ UIPlayerInfoController._GetNewComponents = function(self)
   self:CheckLeftTitleRed()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._InitiBg = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIPlayerInfoController:_InitiBg()
   self._posAndScalePool = self:GetUIComponent("UISelectObjectPath", "posAndScale")
   self._fullArea = self:GetUIComponent("RectTransform", "FullArea")
-  local BGWidth = ((self._fullArea).rect).width
-  self._main_lobby_bg = (self._posAndScalePool):SpawnObject("UIPlayerInfoBg")
-  ;
-  (self._main_lobby_bg):SetData(self._isFriendMode, self._friendData, BGWidth)
-  local staticSpineSettings, dynamicSpineSettings = (self._main_lobby_bg):_GetSpineSettings()
+  local BGWidth = self._fullArea.rect.width
+  self._main_lobby_bg = self._posAndScalePool:SpawnObject("UIPlayerInfoBg")
+  self._main_lobby_bg:SetData(self._isFriendMode, self._friendData, BGWidth)
+  local staticSpineSettings, dynamicSpineSettings = self._main_lobby_bg:_GetSpineSettings()
   self._posAndRectT = self:GetUIComponent("RectTransform", "posAndScale")
-  local playerCfgConst1 = (Cfg.cfg_player_const)[1]
-  local playerCfgConst2 = (Cfg.cfg_player_const)[2]
+  local playerCfgConst1 = Cfg.cfg_player_const[1]
+  local playerCfgConst2 = Cfg.cfg_player_const[2]
   local delta = Vector2(playerCfgConst1[2], playerCfgConst2[2])
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R7 in 'UnsetPending'
-
-  if (Cfg.cfg_global)[staticSpineSettings] or (Cfg.cfg_global)[dynamicSpineSettings] then
-    (self._posAndRectT).anchoredPosition = Vector2(0, 0)
+  if Cfg.cfg_global[staticSpineSettings] or Cfg.cfg_global[dynamicSpineSettings] then
+    self._posAndRectT.anchoredPosition = Vector2(0, 0)
   else
-    -- DECOMPILER ERROR at PC60: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._posAndRectT).anchoredPosition = delta
+    self._posAndRectT.anchoredPosition = delta
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.CheckLeftTitleRed = function(self)
-  -- function num : 0_14
+function UIPlayerInfoController:CheckLeftTitleRed()
   self:_CheckRealName()
   self:_CheckSignIn()
   self:_CheckSetting()
   self:_RefreshFriendRedStatus()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._CheckRealName = function(self)
-  -- function num : 0_15 , upvalues : PlayerInfoType, _ENV
+function UIPlayerInfoController:_CheckRealName()
   local isEditSelf = self._infoType == PlayerInfoType.PlayerEdit or self._infoType == PlayerInfoType.PlayerPreview
   if isEditSelf then
-    local info = ((GameGlobal.GameLogic)()).ClientInfo
+    local info = GameGlobal.GameLogic().ClientInfo
     local isRealName = info.m_isRealName
-    ;
-    (self._realName):SetActive(isRealName)
+    self._realName:SetActive(isRealName)
   else
-    (self._realName):SetActive(false)
+    self._realName:SetActive(false)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.OnAfterUILayerChanged = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI(self:GetName())
+function UIPlayerInfoController:OnAfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self:GetName())
   if topui then
     self:_CheckSetting()
     self:_CheckSignIn()
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._CheckSetting = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  self.chessCfg = (Cfg.cfg_item_chess)({})
-  self.itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIPlayerInfoController:_CheckSetting()
+  self.chessCfg = Cfg.cfg_item_chess({})
+  self.itemModule = GameGlobal.GetModule(ItemModule)
   local hasNew = false
-  for _,v in pairs(self.chessCfg) do
-    local items = (self.itemModule):GetItemByTempId(v.ID)
-    for _,vitem in pairs(items) do
+  for _, v in pairs(self.chessCfg) do
+    local items = self.itemModule:GetItemByTempId(v.ID)
+    for _, vitem in pairs(items) do
       self.item = vitem
     end
-    if self.item and (self.item):IsNewOverlay() then
+    if self.item and self.item:IsNewOverlay() then
       hasNew = true
     end
   end
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
-  if not (LocalDB.HasKey)("FirstAutoFightRecord" .. roleModule:GetPstId()) then
+  local roleModule = GameGlobal.GetModule(RoleModule)
+  if not LocalDB.HasKey("FirstAutoFightRecord" .. roleModule:GetPstId()) then
     hasNew = true
   end
-  ;
-  (self._blindRed):SetActive(hasNew)
+  self._blindRed:SetActive(hasNew)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._CheckSignIn = function(self)
-  -- function num : 0_18
+function UIPlayerInfoController:_CheckSignIn()
   if self._signInModule == nil then
-    return 
+    return
   end
   if self._signInRed == nil then
-    return 
+    return
   end
   if self._helpPetIcon == nil then
-    return 
+    return
   end
-  local showRed = (self._signInModule):HaveTotalLoginReward()
-  if not showRed then
-    showRed = (self._signInModule):IsReSignInToday()
-  end
-  ;
-  (self._signInRed):SetActive(showRed)
+  local showRed = self._signInModule:HaveTotalLoginReward()
+  showRed = showRed or self._signInModule:IsReSignInToday()
+  self._signInRed:SetActive(showRed)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshFriendRedStatus = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local socialModule = (GameGlobal.GetModule)(SocialModule)
+function UIPlayerInfoController:_RefreshFriendRedStatus()
+  local socialModule = GameGlobal.GetModule(SocialModule)
   if socialModule:HaveNewMsg() or socialModule:HaveNewInvitation() then
-    (self._friendRedGo):SetActive(true)
+    self._friendRedGo:SetActive(true)
   else
-    ;
-    (self._friendRedGo):SetActive(false)
+    self._friendRedGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.RefreshNewPool = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIPlayerInfoController:RefreshNewPool()
   if self.Zhuye_pool == nil then
-    return 
+    return
   end
-  ;
-  (self.zhuye_black_txt_obj):SetActive(false)
-  ;
-  (self.zhuye_white_image_obj):SetActive(false)
-  ;
-  (self.maoxian_black_txt_obj):SetActive(false)
-  ;
-  (self.maoxian_white_image_obj):SetActive(false)
-  ;
-  (self.jinian_black_txt_obj):SetActive(false)
-  ;
-  (self.jinian_white_image_obj):SetActive(false)
-  ;
-  (self.chenghao_black_txt_obj):SetActive(false)
-  ;
-  (self.chenghao_white_image_obj):SetActive(false)
+  self.zhuye_black_txt_obj:SetActive(false)
+  self.zhuye_white_image_obj:SetActive(false)
+  self.maoxian_black_txt_obj:SetActive(false)
+  self.maoxian_white_image_obj:SetActive(false)
+  self.jinian_black_txt_obj:SetActive(false)
+  self.jinian_white_image_obj:SetActive(false)
+  self.chenghao_black_txt_obj:SetActive(false)
+  self.chenghao_white_image_obj:SetActive(false)
   if self.CurSelectInfoModTYpe == SelectPlayerInfoModType.Main then
     self:_PoolOut()
     self:_RefreshMainPanel()
-  else
-    if self.CurSelectInfoModTYpe == SelectPlayerInfoModType.Adv then
-      self:_PoolOut()
-      self:_RefreshMaoxianPanel()
-    else
-      if self.CurSelectInfoModTYpe == SelectPlayerInfoModType.Ann then
-        self:_PoolOut()
-        self:_RefreshJiNianPanel()
-      else
-        if self.CurSelectInfoModTYpe == SelectPlayerInfoModType.Til then
-          self:_PoolOut()
-          self:_RefreshChengHaoPanel()
-        end
-      end
-    end
+  elseif self.CurSelectInfoModTYpe == SelectPlayerInfoModType.Adv then
+    self:_PoolOut()
+    self:_RefreshMaoxianPanel()
+  elseif self.CurSelectInfoModTYpe == SelectPlayerInfoModType.Ann then
+    self:_PoolOut()
+    self:_RefreshJiNianPanel()
+  elseif self.CurSelectInfoModTYpe == SelectPlayerInfoModType.Til then
+    self:_PoolOut()
+    self:_RefreshChengHaoPanel()
   end
   self:_RefreshFirendLayoutBtns()
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._PoolOut = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIPlayerInfoController:_PoolOut()
   self:StartTask(function(TT)
-    -- function num : 0_21_0 , upvalues : self, _ENV
     self:Lock("_PoolOut")
     YIELD(TT, 167)
     if self.OldSelectInfoModTYpe ~= nil then
       if self.OldSelectInfoModTYpe == SelectPlayerInfoModType.Main then
-        (self.Zhuye_pool):SetActive(false)
-      else
-        if self.OldSelectInfoModTYpe == SelectPlayerInfoModType.Adv then
-          (self.MaoXian_pool):SetActive(false)
-        else
-          if self.OldSelectInfoModTYpe == SelectPlayerInfoModType.Ann then
-            (self.JiNian_pool):SetActive(false)
-          else
-            if self.OldSelectInfoModTYpe == SelectPlayerInfoModType.Til then
-              (self.ChengHao_pool):SetActive(false)
-            end
-          end
-        end
+        self.Zhuye_pool:SetActive(false)
+      elseif self.OldSelectInfoModTYpe == SelectPlayerInfoModType.Adv then
+        self.MaoXian_pool:SetActive(false)
+      elseif self.OldSelectInfoModTYpe == SelectPlayerInfoModType.Ann then
+        self.JiNian_pool:SetActive(false)
+      elseif self.OldSelectInfoModTYpe == SelectPlayerInfoModType.Til then
+        self.ChengHao_pool:SetActive(false)
       end
     end
     self:UnLock("_PoolOut")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshFirendLayoutBtns = function(self)
-  -- function num : 0_22 , upvalues : PlayerInfoType, PlayerInfoFrom
+function UIPlayerInfoController:_RefreshFirendLayoutBtns()
   local isEditSelf = self._infoType == PlayerInfoType.PlayerEdit or self._infoType == PlayerInfoType.PlayerPreview
   if isEditSelf then
-    (self.layout_self):SetActive(true)
-    ;
-    (self.layout_friend):SetActive(false)
+    self.layout_self:SetActive(true)
+    self.layout_friend:SetActive(false)
   else
-    (self.layout_self):SetActive(false)
-    ;
-    (self.layout_friend):SetActive(true)
+    self.layout_self:SetActive(false)
+    self.layout_friend:SetActive(true)
     if self._infoType == PlayerInfoType.Friend then
-      (self._addFirendGo):SetActive(false)
-      ;
-      (self._delteFriendGo):SetActive(true)
-      ;
-      (self._addBlackFirendGo):SetActive(true)
-      ;
-      (self._removeBlackFirendGo):SetActive(false)
+      self._addFirendGo:SetActive(false)
+      self._delteFriendGo:SetActive(true)
+      self._addBlackFirendGo:SetActive(true)
+      self._removeBlackFirendGo:SetActive(false)
     elseif self._infoType == PlayerInfoType.Stranger then
-      (self._addFirendGo):SetActive(true)
-      ;
-      (self._delteFriendGo):SetActive(false)
-      ;
-      (self._addBlackFirendGo):SetActive(true)
-      ;
-      (self._removeBlackFirendGo):SetActive(false)
+      self._addFirendGo:SetActive(true)
+      self._delteFriendGo:SetActive(false)
+      self._addBlackFirendGo:SetActive(true)
+      self._removeBlackFirendGo:SetActive(false)
     elseif self._infoType == PlayerInfoType.BlackList then
-      (self._addFirendGo):SetActive(false)
-      ;
-      (self._delteFriendGo):SetActive(false)
-      ;
-      (self._addBlackFirendGo):SetActive(false)
-      ;
-      (self._removeBlackFirendGo):SetActive(true)
+      self._addFirendGo:SetActive(false)
+      self._delteFriendGo:SetActive(false)
+      self._addBlackFirendGo:SetActive(false)
+      self._removeBlackFirendGo:SetActive(true)
     end
   end
   if self._from == PlayerInfoFrom.WorldBoss then
-    (self._addFirendGo):SetActive(false)
+    self._addFirendGo:SetActive(false)
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshMainPanel = function(self)
-  -- function num : 0_23
-  (self.Zhuye_pool):SetActive(true)
-  ;
-  (self.zhuye_black_txt_obj):SetActive(true)
-  ;
-  (self.zhuye_white_image_obj):SetActive(true)
+function UIPlayerInfoController:_RefreshMainPanel()
+  self.Zhuye_pool:SetActive(true)
+  self.zhuye_black_txt_obj:SetActive(true)
+  self.zhuye_white_image_obj:SetActive(true)
   self:NewLevelExp()
   if self._isFriendMode then
     self:_RefreshMainByFirend()
@@ -967,135 +630,87 @@ UIPlayerInfoController._RefreshMainPanel = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshMainBySelf = function(self)
-  -- function num : 0_24
-  (self.self_maoxian_zhuye_data_Obj):SetActive(true)
-  ;
-  (self.firend_maoxian_zhuye_data_Obj):SetActive(false)
+function UIPlayerInfoController:_RefreshMainBySelf()
+  self.self_maoxian_zhuye_data_Obj:SetActive(true)
+  self.firend_maoxian_zhuye_data_Obj:SetActive(false)
   self:_RefreshMainBase()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshMainByFirend = function(self)
-  -- function num : 0_25
+function UIPlayerInfoController:_RefreshMainByFirend()
   if self._friendDetailData then
     local curSwitch = true
     if curSwitch == false then
-      (self.self_maoxian_zhuye_data_Obj):SetActive(false)
-      ;
-      (self.firend_maoxian_zhuye_data_Obj):SetActive(true)
+      self.self_maoxian_zhuye_data_Obj:SetActive(false)
+      self.firend_maoxian_zhuye_data_Obj:SetActive(true)
     else
       self:_RefreshMainBase()
     end
   end
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshMainBase = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIPlayerInfoController:_RefreshMainBase()
   local bPlus = false
-  local petCount = (self._infoData).petCount
-  ;
-  (self.maoxian_get_pet_txt):SetText(petCount)
-  local achievementPoint = (self._infoData).achievementPoint
-  local achievementPointAll = (self._infoData).achievementPointAll
-  ;
-  (self.achie_maoxian_get_pet_txt):SetText(achievementPoint .. "/" .. achievementPointAll)
-  local dan = (self._infoData).dan
-  local grading = (self._infoData).grading
-  local danName = (UIWorldBossHelper.GetDanName)(dan, grading)
-  if (UIWorldBossHelper.IsNoDan)(dan, grading) then
-    ((self.mapxian_levelIcon).gameObject):SetActive(false)
-    ;
-    (self.maoxian_worldBossLevel):SetText((StringTable.Get)(danName))
-    ;
-    ((self.maoxian_worldBossLevel).gameObject):SetActive(true)
-    ;
-    ((((self.maoxian_worldBossLevel).transform).parent).gameObject):SetActive(false)
-    ;
-    ((((self.maoxian_worldBossLevel).transform).parent).gameObject):SetActive(true)
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.maoxian_worldBossLevelPaRect)
+  local petCount = self._infoData.petCount
+  self.maoxian_get_pet_txt:SetText(petCount)
+  local achievementPoint = self._infoData.achievementPoint
+  local achievementPointAll = self._infoData.achievementPointAll
+  self.achie_maoxian_get_pet_txt:SetText(achievementPoint .. "/" .. achievementPointAll)
+  local dan = self._infoData.dan
+  local grading = self._infoData.grading
+  local danName = UIWorldBossHelper.GetDanName(dan, grading)
+  if UIWorldBossHelper.IsNoDan(dan, grading) then
+    self.mapxian_levelIcon.gameObject:SetActive(false)
+    self.maoxian_worldBossLevel:SetText(StringTable.Get(danName))
+    self.maoxian_worldBossLevel.gameObject:SetActive(true)
+    self.maoxian_worldBossLevel.transform.parent.gameObject:SetActive(false)
+    self.maoxian_worldBossLevel.transform.parent.gameObject:SetActive(true)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.maoxian_worldBossLevelPaRect)
   else
-    local badgeBase = (UIWorldBossHelper.GetDanBadgeBase)(dan, grading)
-    ;
-    ((self.mapxian_levelIcon).gameObject):SetActive(true)
-    ;
-    (self.mapxian_levelIcon):LoadImage(badgeBase)
-    ;
-    (self.maoxian_worldBossLevel):SetText((StringTable.Get)(danName))
-    ;
-    ((self.maoxian_worldBossLevel).gameObject):SetActive(true)
-    local rankLevel = (self._roleModule):GetWorldBossRecordRank()
-    bPlus = (UIWorldBossHelper.IsPlusDan)(dan, rankLevel)
-    ;
-    ((((self.maoxian_worldBossLevel).transform).parent).gameObject):SetActive(false)
-    ;
-    ((((self.maoxian_worldBossLevel).transform).parent).gameObject):SetActive(true)
-    ;
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.maoxian_worldBossLevelPaRect)
+    local badgeBase = UIWorldBossHelper.GetDanBadgeBase(dan, grading)
+    self.mapxian_levelIcon.gameObject:SetActive(true)
+    self.mapxian_levelIcon:LoadImage(badgeBase)
+    self.maoxian_worldBossLevel:SetText(StringTable.Get(danName))
+    self.maoxian_worldBossLevel.gameObject:SetActive(true)
+    local rankLevel = self._roleModule:GetWorldBossRecordRank()
+    bPlus = UIWorldBossHelper.IsPlusDan(dan, rankLevel)
+    self.maoxian_worldBossLevel.transform.parent.gameObject:SetActive(false)
+    self.maoxian_worldBossLevel.transform.parent.gameObject:SetActive(true)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.maoxian_worldBossLevelPaRect)
   end
-  do
-    local uiPlusIcon = self:GetChildComponent(self.mapxian_levelIcon, "RectTransform", "PlusIcon")
-    if uiPlusIcon ~= nil then
-      (uiPlusIcon.gameObject):SetActive(bPlus)
-    end
+  local uiPlusIcon = self:GetChildComponent(self.mapxian_levelIcon, "RectTransform", "PlusIcon")
+  if uiPlusIcon ~= nil then
+    uiPlusIcon.gameObject:SetActive(bPlus)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.NewLevelExp = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local lv = (self._infoData).level
-  ;
-  (self._lvTex):SetText(lv)
-  local nPlayerExp = (self._roleModule):GetRoleExp()
+function UIPlayerInfoController:NewLevelExp()
+  local lv = self._infoData.level
+  self._lvTex:SetText(lv)
+  local nPlayerExp = self._roleModule:GetRoleExp()
   local expPercent = 0
   if self._isFriendMode then
-    ((self.cur_exp_txt).gameObject):SetActive(false)
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self.LevelUp_Slider).value = 0
-    return 
+    self.cur_exp_txt.gameObject:SetActive(false)
+    self.LevelUp_Slider.value = 0
+    return
   else
-    ;
-    ((self.cur_exp_txt).gameObject):SetActive(true)
+    self.cur_exp_txt.gameObject:SetActive(true)
   end
-  if lv == (HelperProxy:GetInstance()):GetMaxLevel() then
-    local curLvExp = (HelperProxy:GetInstance()):GetLevelExp(lv)
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.LevelUp_Slider).value = 1
+  if lv == HelperProxy:GetInstance():GetMaxLevel() then
+    local curLvExp = HelperProxy:GetInstance():GetLevelExp(lv)
+    self.LevelUp_Slider.value = 1
     local curLvExpStr = "<color=#bd9a71>" .. curLvExp .. "</color>"
-    ;
-    (self.cur_exp_txt):SetText(curLvExpStr .. "/" .. curLvExpStr)
+    self.cur_exp_txt:SetText(curLvExpStr .. "/" .. curLvExpStr)
   else
-    do
-      local curLvExp = (HelperProxy:GetInstance()):GetLevelExp(lv)
-      local nextLvExp = (HelperProxy:GetInstance()):GetLevelExp(lv + 1)
-      -- DECOMPILER ERROR at PC70: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (self.LevelUp_Slider).value = (nPlayerExp - curLvExp) / (nextLvExp - curLvExp)
-      local curLvExpStr = "<color=#bd9a71>" .. nPlayerExp - curLvExp .. "</color>"
-      local nextExpStr = "<color=#4c4b4b>" .. "/" .. nextLvExp - curLvExp .. "</color>"
-      ;
-      (self.cur_exp_txt):SetText(curLvExpStr .. nextExpStr)
-    end
+    local curLvExp = HelperProxy:GetInstance():GetLevelExp(lv)
+    local nextLvExp = HelperProxy:GetInstance():GetLevelExp(lv + 1)
+    self.LevelUp_Slider.value = (nPlayerExp - curLvExp) / (nextLvExp - curLvExp)
+    local curLvExpStr = "<color=#bd9a71>" .. nPlayerExp - curLvExp .. "</color>"
+    local nextExpStr = "<color=#4c4b4b>" .. "/" .. nextLvExp - curLvExp .. "</color>"
+    self.cur_exp_txt:SetText(curLvExpStr .. nextExpStr)
   end
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshMaoxianPanel = function(self)
-  -- function num : 0_28
+function UIPlayerInfoController:_RefreshMaoxianPanel()
   if not self.initMaoXian then
     self:_GetMaoxianComponent()
     self.initMaoXian = true
@@ -1103,82 +718,60 @@ UIPlayerInfoController._RefreshMaoxianPanel = function(self)
     self:RankValue()
     self:SetPlayerInfoHide()
   end
-  ;
-  (self.MaoXian_pool):SetActive(true)
-  ;
-  (self.maoxian_black_txt_obj):SetActive(true)
-  ;
-  (self.maoxian_white_image_obj):SetActive(true)
+  self.MaoXian_pool:SetActive(true)
+  self.maoxian_black_txt_obj:SetActive(true)
+  self.maoxian_white_image_obj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshJiNianPanel = function(self)
-  -- function num : 0_29
+function UIPlayerInfoController:_RefreshJiNianPanel()
   if not self.initJiNian then
     self:_GetJinianComponent()
     self.initJiNian = true
     self:FlushRed()
   end
-  ;
-  (self.JiNian_pool):SetActive(true)
-  ;
-  (self.jinian_black_txt_obj):SetActive(true)
-  ;
-  (self.jinian_white_image_obj):SetActive(true)
+  self.JiNian_pool:SetActive(true)
+  self.jinian_black_txt_obj:SetActive(true)
+  self.jinian_white_image_obj:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._RefreshChengHaoPanel = function(self)
-  -- function num : 0_30 , upvalues : PlayerInfoType
+function UIPlayerInfoController:_RefreshChengHaoPanel()
   if not self.initChenghao then
     self:_GetChenghaoComponent()
     self.initChenghao = true
     self:ShowPlayerTitleAndEmblazonry()
     self:FlushRed()
   end
-  ;
-  (self.ChengHao_pool):SetActive(true)
-  ;
-  (self.chenghao_black_txt_obj):SetActive(true)
-  ;
-  (self.chenghao_white_image_obj):SetActive(true)
+  self.ChengHao_pool:SetActive(true)
+  self.chenghao_black_txt_obj:SetActive(true)
+  self.chenghao_white_image_obj:SetActive(true)
   local isEditSelf = self._infoType == PlayerInfoType.PlayerEdit or self._infoType == PlayerInfoType.PlayerPreview
   if isEditSelf then
-    (self.firendNoTitleTips):SetActive(false)
-    if (self._infoData).titleUsed == -1 then
-      (self._titleSetting):SetActive(false)
-    elseif (self._infoData).titleUsed == 0 then
-      (self._titleSetting):SetActive(false)
+    self.firendNoTitleTips:SetActive(false)
+    if self._infoData.titleUsed == -1 then
+      self._titleSetting:SetActive(false)
+    elseif self._infoData.titleUsed == 0 then
+      self._titleSetting:SetActive(false)
     else
-      (self._titleSetting):SetActive(true)
+      self._titleSetting:SetActive(true)
     end
   else
-    (self._titleSetting):SetActive(false)
-    if (self._infoData).titleUsed == -1 then
-      (self.firendNoTitleTips):SetActive(true)
-      ;
-      (self._noTitleTips):SetActive(false)
-    elseif (self._infoData).titleUsed == 0 then
-      (self.firendNoTitleTips):SetActive(true)
-      ;
-      (self._noTitleTips):SetActive(false)
+    self._titleSetting:SetActive(false)
+    if self._infoData.titleUsed == -1 then
+      self.firendNoTitleTips:SetActive(true)
+      self._noTitleTips:SetActive(false)
+    elseif self._infoData.titleUsed == 0 then
+      self.firendNoTitleTips:SetActive(true)
+      self._noTitleTips:SetActive(false)
     else
-      (self.firendNoTitleTips):SetActive(false)
-      ;
-      (self._noTitleTips):SetActive(false)
+      self.firendNoTitleTips:SetActive(false)
+      self._noTitleTips:SetActive(false)
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._OnValue = function(self)
-  -- function num : 0_31
+function UIPlayerInfoController:_OnValue()
   if not self.getComponetOver then
-    return 
+    return
   end
   self:ShowPlayerInfo()
   self:ShowPlayerTitleAndEmblazonry()
@@ -1196,63 +789,45 @@ UIPlayerInfoController._OnValue = function(self)
   self:_RefreshFirendLayoutBtns()
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.SetWakeUp = function(self, TT)
-  -- function num : 0_32 , upvalues : _ENV
+function UIPlayerInfoController:SetWakeUp(TT)
   if IsPc() or EDITOR then
-    return 
+    return
   end
-  do
-    if self.wakeUp then
-      local friendid = nil
-      if self._isFriendMode then
-        friendid = self._friendId
-      end
-      ;
-      (self._wakeUp):SetData(friendid, self.friendWakeUp)
+  if self.wakeUp then
+    local friendid
+    if self._isFriendMode then
+      friendid = self._friendId
     end
-    YIELD(TT)
-    do
-      if self.wakeUpSimple then
-        local friendid = nil
-        if self._isFriendMode then
-          friendid = self._friendId
-        end
-        ;
-        (self._wakeUpSimple):SetData(friendid, self.friendWakeUp)
-      end
-      YIELD(TT)
-    end
+    self._wakeUp:SetData(friendid, self.friendWakeUp)
   end
+  YIELD(TT)
+  if self.wakeUpSimple then
+    local friendid
+    if self._isFriendMode then
+      friendid = self._friendId
+    end
+    self._wakeUpSimple:SetData(friendid, self.friendWakeUp)
+  end
+  YIELD(TT)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.SetPlayerInfoHide = function(self)
-  -- function num : 0_33
+function UIPlayerInfoController:SetPlayerInfoHide()
   if not self.initMaoXian then
-    return 
+    return
   end
-  ;
-  (self.hideGo):SetActive(false)
+  self.hideGo:SetActive(false)
   if self._isFriendMode and self._friendDetailData then
     local curSwitch = true
     if curSwitch == false then
-      (self._playerInfoSwitchGo):SetActive(false)
-      ;
-      (self.hideGo):SetActive(true)
+      self._playerInfoSwitchGo:SetActive(false)
+      self.hideGo:SetActive(true)
     else
-      ;
-      (self._playerInfoSwitchGo):SetActive(true)
+      self._playerInfoSwitchGo:SetActive(true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.AttachAllEvents = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UIPlayerInfoController:AttachAllEvents()
   self:AttachEvent(GameEventType.OnChapcterInfoChanged, self.OnChapcterInfoChanged)
   self:AttachEvent(GameEventType.OnPlayerHeadInfoChanged, self.OnPlayerHeadInfoChanged)
   self:AttachEvent(GameEventType.OnPlayerChangeHeadBadgeClick, self.OnPlayerHeadInfoChanged)
@@ -1263,343 +838,249 @@ UIPlayerInfoController.AttachAllEvents = function(self)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.OnAfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.RankValue = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function UIPlayerInfoController:RankValue()
   if not self.initMaoXian then
-    return 
+    return
   end
-  local airModule = (GameGlobal.GetModule)(AircraftModule)
-  local module = (GameGlobal.GetModule)(RoleModule)
+  local airModule = GameGlobal.GetModule(AircraftModule)
+  local module = GameGlobal.GetModule(RoleModule)
   if not module:CheckModuleUnlock(GameModuleID.MD_DIFFICULTYMISSION) then
-    (self._rank):SetActive(false)
+    self._rank:SetActive(false)
   else
-    ;
-    (self._rank):SetActive(true)
-    ;
-    (self._rankTex):SetText((self._infoData).rankValue)
+    self._rank:SetActive(true)
+    self._rankTex:SetText(self._infoData.rankValue)
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.OnPlayerHeadInfoChanged = function(self)
-  -- function num : 0_36
+function UIPlayerInfoController:OnPlayerHeadInfoChanged()
   self:_RefreshData()
   self:ShowPlayerHeadAndBg()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.OnPlayerEmblazonryChange = function(self)
-  -- function num : 0_37
+function UIPlayerInfoController:OnPlayerEmblazonryChange()
   self:_RefreshData()
   self:ShowPlayerTitleAndEmblazonry()
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.OnPlayerTitleInfoChanged = function(self)
-  -- function num : 0_38
+function UIPlayerInfoController:OnPlayerTitleInfoChanged()
   self:_RefreshData()
   self:ShowPlayerTitleAndEmblazonry()
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShowPlayerTitleAndEmblazonry = function(self)
-  -- function num : 0_39 , upvalues : _ENV
-  local icon = nil
-  if (self._infoData).fifureUsed == 0 then
-    local cfgs = (Cfg.cfg_item_fifure_extend)({Order = 1})
-    icon = (cfgs[1]).PlayerInfoFifureIcon
+function UIPlayerInfoController:ShowPlayerTitleAndEmblazonry()
+  local icon
+  if self._infoData.fifureUsed == 0 then
+    local cfgs = Cfg.cfg_item_fifure_extend({Order = 1})
+    icon = cfgs[1].PlayerInfoFifureIcon
   else
-    do
-      icon = ((Cfg.cfg_item_fifure_extend)[(self._infoData).fifureUsed]).PlayerInfoFifureIcon
-      ;
-      (self._emblazonryBg):LoadImage(icon)
-      ;
-      (self.emblazonryBgSmall):LoadImage(icon)
-      if self.initChenghao then
-        if (self._infoData).titleUsed == -1 then
-          (self._titleIconObj):SetActive(false)
-          ;
-          (self._noTitleTips):SetActive(true)
-        else
-          if (self._infoData).titleUsed == 0 then
-            (self._noTitleTips):SetActive(true)
-            ;
-            (self._titleIconObj):SetActive(false)
-          else
-            ;
-            (self._noTitleTips):SetActive(false)
-            ;
-            (self._titleIconObj):SetActive(true)
-            ;
-            (self._titleIcon):LoadImage(((Cfg.cfg_item_title_extend)[(self._infoData).titleUsed]).ChangeTitleIcon)
-          end
-        end
-      end
+    icon = Cfg.cfg_item_fifure_extend[self._infoData.fifureUsed].PlayerInfoFifureIcon
+  end
+  self._emblazonryBg:LoadImage(icon)
+  self.emblazonryBgSmall:LoadImage(icon)
+  if self.initChenghao then
+    if self._infoData.titleUsed == -1 then
+      self._titleIconObj:SetActive(false)
+      self._noTitleTips:SetActive(true)
+    elseif self._infoData.titleUsed == 0 then
+      self._noTitleTips:SetActive(true)
+      self._titleIconObj:SetActive(false)
+    else
+      self._noTitleTips:SetActive(false)
+      self._titleIconObj:SetActive(true)
+      self._titleIcon:LoadImage(Cfg.cfg_item_title_extend[self._infoData.titleUsed].ChangeTitleIcon)
     end
   end
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.UI_GetHeadFrameList = function(self)
-  -- function num : 0_40 , upvalues : _ENV
-  local cfg = (Cfg.cfg_role_head_frame)({})
+function UIPlayerInfoController:UI_GetHeadFrameList()
+  local cfg = Cfg.cfg_role_head_frame({})
   local frameList = {}
-  for i,v in (HelperProxy:GetInstance()):pairsByKeys(cfg) do
+  for i, v in HelperProxy:GetInstance():pairsByKeys(cfg) do
     local headFrame = {}
     headFrame.ID = v[1]
     headFrame.Icon = v[3]
-    ;
-    (table.insert)(frameList, headFrame)
+    table.insert(frameList, headFrame)
   end
   return frameList
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.FlushRed = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function UIPlayerInfoController:FlushRed()
   if GameSingle then
-    return 
+    return
   end
-  local headRed = (self._itemModule):HasNewSubTypeItem(ItemSubType.ItemSubType_Head, true)
-  if not (self._roleModule):CheckLimitedShowRed(ItemSubType.ItemSubType_Head) then
-    local headFrameRed = (self._itemModule):HasNewSubTypeItem(ItemSubType.ItemSubType_HeadFrame, true)
-    if not (self._roleModule):CheckLimitedShowRed(ItemSubType.ItemSubType_HeadFrame) then
-      self._tmpheadList = (self._roleModule):UI_GetHeadImageListByTag(0)
-      for i = 1, #self._tmpheadList do
-        local headitem = (self._tmpheadList)[i] or nil
-        local isOpen = false
-        local canUnLock = false
-        do
-          do
-            if headitem then
-              local lockInfo = (self._roleModule):UI_GetHeadImageLockInfo(headitem.m_nImageID)
-              if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
-                isOpen = true
-              end
-              if not isOpen then
-                canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
-              end
-            end
-            if not isOpen and canUnLock then
-              headRed = true
-            end
-            -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
+  local headRed = self._itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_Head, true)
+  headRed = self._roleModule:CheckLimitedShowRed(ItemSubType.ItemSubType_Head) or headRed
+  local headFrameRed = self._itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_HeadFrame, true)
+  headFrameRed = self._roleModule:CheckLimitedShowRed(ItemSubType.ItemSubType_HeadFrame) or headFrameRed
+  self._tmpheadList = self._roleModule:UI_GetHeadImageListByTag(0)
+  for i = 1, #self._tmpheadList do
+    local headitem = self._tmpheadList[i] or nil
+    local isOpen = false
+    local canUnLock = false
+    if headitem then
+      local lockInfo = self._roleModule:UI_GetHeadImageLockInfo(headitem.m_nImageID)
+      if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
+        isOpen = true
       end
-      self._tmpHeadFrameList = self:UI_GetHeadFrameList()
-      for i = 1, #self._tmpHeadFrameList do
-        local hide = false
-        local frame = (self._tmpHeadFrameList)[i] or nil
-        local canUnLock = false
-        local isOpen = false
-        do
-          do
-            if frame then
-              local lockInfo = (self._roleModule):UI_GetHeadFrameLockInfo(frame.ID)
-              if not lockInfo.m_bLock or (table.count)(lockInfo.m_lockConditionList) == 0 then
-                isOpen = true
-              end
-              if not isOpen then
-                canUnLock = (self._roleModule):UI_CheckLockConditionNew(lockInfo)
-              end
-            end
-            if not isOpen and canUnLock then
-              headFrameRed = true
-            end
-            -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out DO_STMT
-
-          end
-        end
+      if not isOpen then
+        canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
       end
-      if self._isFriendMode then
-        (self._goRedPoint):SetActive(false)
-      else
-        ;
-        (self._goRedPoint):SetActive(headRed or headFrameRed)
+    end
+    if not isOpen and canUnLock then
+      headRed = true
+    end
+  end
+  self._tmpHeadFrameList = self:UI_GetHeadFrameList()
+  for i = 1, #self._tmpHeadFrameList do
+    local hide = false
+    local frame = self._tmpHeadFrameList[i] or nil
+    local canUnLock = false
+    local isOpen = false
+    if frame then
+      local lockInfo = self._roleModule:UI_GetHeadFrameLockInfo(frame.ID)
+      if not lockInfo.m_bLock or table.count(lockInfo.m_lockConditionList) == 0 then
+        isOpen = true
       end
-      local emblazonryRed = (self._itemModule):HasNewSubTypeItem(ItemSubType.ItemSubType_Fifure, true)
-      if not (self._roleModule):CheckLimitedShowRed(ItemSubType.ItemSubType_Title) then
-        (self._emblazonryRedPoint):SetActive(emblazonryRed)
-        local titleRed = (self._itemModule):HasNewSubTypeItem(ItemSubType.ItemSubType_Title, true)
-        if (self._roleModule):CheckLimitedShowRed(ItemSubType.ItemSubType_Title) or self.initChenghao then
-          (self._titleRedPoint):SetActive(titleRed)
-          ;
-          (self._notitleredPoint):SetActive(titleRed)
-        end
-        if self._isFriendMode then
-          (self._chenghaoBtnRed):SetActive(false)
-        else
-          ;
-          (self._chenghaoBtnRed):SetActive(titleRed)
-        end
-        self.mMedal = (GameGlobal.GetModule)(MedalModule)
-        self.data = (self.mMedal):GetN22MedalEditData()
-        self.listData = UIMedalListData:New()
-        local client_medal_info = (self.mMedal):GetMedalVec()
-        ;
-        (self.listData):Init(client_medal_info)
-        local listAll = (self.listData):GetItemsByFilter(0)
-        local jinianRed = false
-        for _,item in ipairs(listAll) do
-          if item:IsReceive() then
-            local id = item:GetID()
-            local boardMedal = (self.data):GetBoardMedalById(id)
-          end
-          if not boardMedal or item:IsNew() then
-            jinianRed = true
-          end
-        end
-        if self._isFriendMode then
-          (self._jinianBtnRed):SetActive(false)
-          ;
-          (self._jinianWallRed):SetActive(false)
-        else
-          ;
-          (self._jinianBtnRed):SetActive(jinianRed)
-          ;
-          (self._jinianWallRed):SetActive(jinianRed)
-        end
+      if not isOpen then
+        canUnLock = self._roleModule:UI_CheckLockConditionNew(lockInfo)
+      end
+    end
+    if not isOpen and canUnLock then
+      headFrameRed = true
+    end
+  end
+  if self._isFriendMode then
+    self._goRedPoint:SetActive(false)
+  else
+    self._goRedPoint:SetActive(headRed or headFrameRed)
+  end
+  local emblazonryRed = self._itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_Fifure, true)
+  emblazonryRed = self._roleModule:CheckLimitedShowRed(ItemSubType.ItemSubType_Title) or emblazonryRed
+  self._emblazonryRedPoint:SetActive(emblazonryRed)
+  local titleRed = self._itemModule:HasNewSubTypeItem(ItemSubType.ItemSubType_Title, true)
+  titleRed = self._roleModule:CheckLimitedShowRed(ItemSubType.ItemSubType_Title) or titleRed
+  if self.initChenghao then
+    self._titleRedPoint:SetActive(titleRed)
+    self._notitleredPoint:SetActive(titleRed)
+  end
+  if self._isFriendMode then
+    self._chenghaoBtnRed:SetActive(false)
+  else
+    self._chenghaoBtnRed:SetActive(titleRed)
+  end
+  self.mMedal = GameGlobal.GetModule(MedalModule)
+  self.data = self.mMedal:GetN22MedalEditData()
+  self.listData = UIMedalListData:New()
+  local client_medal_info = self.mMedal:GetMedalVec()
+  self.listData:Init(client_medal_info)
+  local listAll = self.listData:GetItemsByFilter(0)
+  local jinianRed = false
+  for _, item in ipairs(listAll) do
+    if item:IsReceive() then
+      local id = item:GetID()
+      local boardMedal = self.data:GetBoardMedalById(id)
+      if boardMedal then
+      elseif item:IsNew() then
+        jinianRed = true
       end
     end
   end
+  if self._isFriendMode then
+    self._jinianBtnRed:SetActive(false)
+    self._jinianWallRed:SetActive(false)
+  else
+    self._jinianBtnRed:SetActive(jinianRed)
+    self._jinianWallRed:SetActive(jinianRed)
+  end
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.OnChapcterInfoChanged = function(self)
-  -- function num : 0_42
+function UIPlayerInfoController:OnChapcterInfoChanged()
   self:_RefreshData()
   self:ShowPlayerSignAndName()
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShowPlayerSignAndName = function(self)
-  -- function num : 0_43 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (string.len)((self._infoData).name) > 30 then
-    (self._userNameHorizontal).enabled = false
-    -- DECOMPILER ERROR at PC10: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._userNameContentSizeFitter).enabled = false
-    ;
-    (self._nameTex):SetText((self._infoData).name)
+function UIPlayerInfoController:ShowPlayerSignAndName()
+  if string.len(self._infoData.name) > 30 then
+    self._userNameHorizontal.enabled = false
+    self._userNameContentSizeFitter.enabled = false
+    self._nameTex:SetText(self._infoData.name)
   else
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._userNameHorizontal).enabled = true
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._userNameContentSizeFitter).enabled = true
-    ;
-    (self._nameTex):SetText((self._infoData).name)
+    self._userNameHorizontal.enabled = true
+    self._userNameContentSizeFitter.enabled = true
+    self._nameTex:SetText(self._infoData.name)
   end
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-  if (string.isnullorempty)((self._infoData).sign) then
-    (self._infoData).sign = (StringTable.Get)("str_player_info_set_your_sign")
+  if string.isnullorempty(self._infoData.sign) then
+    self._infoData.sign = StringTable.Get("str_player_info_set_your_sign")
   end
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._isFriendMode then
-    if (self._infoData).sign == (StringTable.Get)("str_player_info_set_your_sign") then
-      (self._infoData).sign = (StringTable.Get)("str_player_info_firend_no_set_sign")
+    if self._infoData.sign == StringTable.Get("str_player_info_set_your_sign") then
+      self._infoData.sign = StringTable.Get("str_player_info_firend_no_set_sign")
     end
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R1 in 'UnsetPending'
-
-    if (string.isnullorempty)((self._infoData).sign) then
-      (self._infoData).sign = (StringTable.Get)("str_player_info_firend_no_set_sign")
+    if string.isnullorempty(self._infoData.sign) then
+      self._infoData.sign = StringTable.Get("str_player_info_firend_no_set_sign")
     end
   end
-  ;
-  (self._signTex):SetText((self._infoData).sign)
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._nameRect)
+  self._signTex:SetText(self._infoData.sign)
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._nameRect)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShowCurrentAssistant = function(self)
-  -- function num : 0_44 , upvalues : _ENV
-  local petid = (self._roleModule):GetResId()
+function UIPlayerInfoController:ShowCurrentAssistant()
+  local petid = self._roleModule:GetResId()
   local asIsNil = false
   self._defaultPetID = 0
-  local grade, skin, asid = nil, nil, nil
+  local grade, skin, asid
   if petid and petid ~= 0 then
     self._defaultPetID = petid
     if petid == -1 then
       asIsNil = true
     end
-    grade = ((self._roleModule).m_choose_painting).pet_grade
-    skin = ((self._roleModule).m_choose_painting).skin_id
-    asid = ((self._roleModule).m_choose_painting).board_pet
+    grade = self._roleModule.m_choose_painting.pet_grade
+    skin = self._roleModule.m_choose_painting.skin_id
+    asid = self._roleModule.m_choose_painting.board_pet
     if asid == 3400050 then
       asid = 10015
     end
   else
-    self._defaultPetID = ((Cfg.cfg_global).main_default_spine_pet_id).IntValue
+    self._defaultPetID = Cfg.cfg_global.main_default_spine_pet_id.IntValue
     grade = 0
     skin = 0
     asid = 0
   end
-  ;
-  (self._uicgGo):SetActive(not asIsNil)
+  self._uicgGo:SetActive(not asIsNil)
   if asIsNil then
-    return 
+    return
   end
-  local petModule = (self:GetModule(PetModule))
-  local cfg_pet = nil
-  if grade > 0 then
-    cfg_pet = ((Cfg.cfg_pet_grade)({PetID = self._defaultPetID, Grade = grade}))[1]
+  local petModule = self:GetModule(PetModule)
+  local cfg_pet
+  if 0 < grade then
+    cfg_pet = Cfg.cfg_pet_grade({
+      PetID = self._defaultPetID,
+      Grade = grade
+    })[1]
   else
-    cfg_pet = (Cfg.cfg_pet)[self._defaultPetID]
+    cfg_pet = Cfg.cfg_pet[self._defaultPetID]
   end
   local resName = ""
-  local flagValue = (self._roleModule):GetExtFlag(CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE)
+  local flagValue = self._roleModule:GetExtFlag(CharExtFlag.CEFT_MAIN_UI_SHOW_SPINE)
   flagValue = true
   if cfg_pet then
     if asid and asid ~= 0 then
-      local cfg_as = (Cfg.cfg_only_assistant)[asid]
-      do
-        if not cfg_as then
-          (Log.error)("###[UIPlayerInfoController] cfg_as is nil ! id --> ", asid)
-        end
-        if flagValue then
-          resName = cfg_as.CG
-        else
-          do
-            resName = cfg_as.Spine
-            -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC89: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      local cfg_as = Cfg.cfg_only_assistant[asid]
+      if not cfg_as then
+        Log.error("###[UIPlayerInfoController] cfg_as is nil ! id --> ", asid)
       end
-    else
       if flagValue then
-        resName = (HelperProxy:GetInstance()):GetPetStaticBody(self._defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
+        resName = cfg_as.CG
       else
-        resName = (HelperProxy:GetInstance()):GetPetSpine(self._defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
+        resName = cfg_as.Spine
       end
+    elseif flagValue then
+      resName = HelperProxy:GetInstance():GetPetStaticBody(self._defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
+    else
+      resName = HelperProxy:GetInstance():GetPetSpine(self._defaultPetID, grade, skin, PetSkinEffectPath.NO_EFFECT)
     end
   else
-    ;
-    (Log.fatal)("###[UIPlayerInfoController] cfg_pet is nil ! id == ", self._defaultPetID)
+    Log.fatal("###[UIPlayerInfoController] cfg_pet is nil ! id == ", self._defaultPetID)
     if flagValue then
       resName = self._defaultPetID .. "_cg"
     else
@@ -1607,568 +1088,387 @@ UIPlayerInfoController.ShowCurrentAssistant = function(self)
     end
   end
   if flagValue then
-    (self._spineGo):SetActive(false)
-    ;
-    (self._cgGo):SetActive(true)
-    local size = ((Cfg.cfg_global).ui_interface_common_size).ArrayValue
-    ;
-    ((self._cgGo):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
-    ;
-    (self._cg):LoadImage(resName)
-    ;
-    (UICG.SetTransform)((self._cgGo).transform, "UIMainLobbyController", resName)
+    self._spineGo:SetActive(false)
+    self._cgGo:SetActive(true)
+    local size = Cfg.cfg_global.ui_interface_common_size.ArrayValue
+    self._cgGo:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
+    self._cg:LoadImage(resName)
+    UICG.SetTransform(self._cgGo.transform, "UIMainLobbyController", resName)
   else
-    do
-      ;
-      (self._spineGo):SetActive(true)
-      ;
-      (self._cgGo):SetActive(false)
-      ;
-      (self._spine):LoadSpine(resName)
-      ;
-      (UICG.SetTransform)((self._spineGo).transform, "UIMainLobbyController", resName)
-      self._spineSke = (self._spine).CurrentSkeleton
-      if not self._spineSke then
-        self._spineSke = (self._spine).CurrentMultiSkeleton
+    self._spineGo:SetActive(true)
+    self._cgGo:SetActive(false)
+    self._spine:LoadSpine(resName)
+    UICG.SetTransform(self._spineGo.transform, "UIMainLobbyController", resName)
+    self._spineSke = self._spine.CurrentSkeleton
+    if not self._spineSke then
+      self._spineSke = self._spine.CurrentMultiSkeleton
+    end
+    local cfg_pet
+    if 0 < grade then
+      cfg_pet = Cfg.cfg_pet_grade({
+        PetID = self._defaultPetID,
+        Grade = grade
+      })[1]
+    else
+      cfg_pet = Cfg.cfg_pet[self._selectID]
+    end
+    local dynamicSpineAnim
+    if cfg_pet and asid and asid ~= 0 then
+      local cfg_as = Cfg.cfg_only_assistant[asid]
+      if cfg_as then
+        dynamicSpineAnim = cfg_as.SpineAnim
       end
-      local cfg_pet = nil
-      if grade > 0 then
-        cfg_pet = ((Cfg.cfg_pet_grade)({PetID = self._defaultPetID, Grade = grade}))[1]
-      else
-        cfg_pet = (Cfg.cfg_pet)[self._selectID]
-      end
-      local dynamicSpineAnim = nil
+    end
+    if dynamicSpineAnim then
       do
-        if cfg_pet and asid and asid ~= 0 then
-          local cfg_as = (Cfg.cfg_only_assistant)[asid]
-          if cfg_as then
-            dynamicSpineAnim = cfg_as.SpineAnim
+        local function tryFunc()
+          if self._spineSke then
+            self._spineSke:Initialize(true)
+            
+            self._spineSke.AnimationState:SetAnimation(0, dynamicSpineAnim, true)
+            self._spine.AnimationState.Data.DefaultMix = 0
+            self._spineSke:Update(0)
           end
         end
-        if dynamicSpineAnim then
-          local tryFunc = function()
-    -- function num : 0_44_0 , upvalues : self, dynamicSpineAnim
-    if self._spineSke then
-      (self._spineSke):Initialize(true)
-      ;
-      ((self._spineSke).AnimationState):SetAnimation(0, dynamicSpineAnim, true)
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-      ;
-      (((self._spine).AnimationState).Data).DefaultMix = 0
-      ;
-      (self._spineSke):Update(0)
-    end
-  end
-
-          local succ = pcall(tryFunc)
-          if not succ then
-            (Log.error)("###[UIChooseAssistantController] set _dynamicSpineAnim fail ! anim:", dynamicSpineAnim)
-          end
+        
+        local succ = pcall(tryFunc)
+        if not succ then
+          Log.error("###[UIChooseAssistantController] set _dynamicSpineAnim fail ! anim:", dynamicSpineAnim)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShowPlayerInfo = function(self)
-  -- function num : 0_45 , upvalues : _ENV
+function UIPlayerInfoController:ShowPlayerInfo()
   self:ShowPlayerSignAndName()
   self:ShowPlayerHeadAndBg()
-  local id = (self._infoData).showID
-  ;
-  (self._idTex):SetText((StringTable.Get)("str_player_info_id") .. id)
+  local id = self._infoData.showID
+  self._idTex:SetText(StringTable.Get("str_player_info_id") .. id)
   self:LevelExp()
   self:ShowDate()
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShowDate = function(self)
-  -- function num : 0_46
-  (self._dateTex):SetText((self._infoData).createDate)
+function UIPlayerInfoController:ShowDate()
+  self._dateTex:SetText(self._infoData.createDate)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShowPlayerHeadAndBg = function(self)
-  -- function num : 0_47 , upvalues : _ENV, PlayerInfoType
-  (self._headIcon):LoadImage((self._infoData).headIconName)
-  ;
-  (HelperProxy:GetInstance()):GetHeadIconSizeWithTag(self._headIconRect, (self._infoData).headIconTag)
-  ;
-  (self._headBgIcon):LoadImage((self._infoData).headBgName)
-  ;
-  (self._frameIcon):LoadImage((self._infoData).headFrameIconName)
+function UIPlayerInfoController:ShowPlayerHeadAndBg()
+  self._headIcon:LoadImage(self._infoData.headIconName)
+  HelperProxy:GetInstance():GetHeadIconSizeWithTag(self._headIconRect, self._infoData.headIconTag)
+  self._headBgIcon:LoadImage(self._infoData.headBgName)
+  self._frameIcon:LoadImage(self._infoData.headFrameIconName)
   if self._infoType == PlayerInfoType.PlayerEdit then
-    (UIWorldBossHelper.InitSelfDanBadgeSimple)(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect)
+    UIWorldBossHelper.InitSelfDanBadgeSimple(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect)
   else
-    ;
-    (UIWorldBossHelper.InitOtherDanBadgeSimple)(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, (self._friendData):GetWorldBossInfo())
+    UIWorldBossHelper.InitOtherDanBadgeSimple(self._danBadgeGen, self._danBadgeGenGo, self._danBadgeGenRect, self._friendData:GetWorldBossInfo())
   end
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.LevelExp = function(self)
-  -- function num : 0_48 , upvalues : _ENV
-  local lv = (self._infoData).level
-  ;
-  (self._lvTex):SetText(lv)
+function UIPlayerInfoController:LevelExp()
+  local lv = self._infoData.level
+  self._lvTex:SetText(lv)
   if self._isPlayerEditMode then
-    local nPlayerExp = (self._roleModule):GetRoleExp()
+    local nPlayerExp = self._roleModule:GetRoleExp()
     local expPercent = 0
-    if lv == (HelperProxy:GetInstance()):GetMaxLevel() then
+    if lv == HelperProxy:GetInstance():GetMaxLevel() then
       expPercent = 1
     else
-      local curLvExp = (HelperProxy:GetInstance()):GetLevelExp(lv)
-      local nextLvExp = (HelperProxy:GetInstance()):GetLevelExp(lv + 1)
+      local curLvExp = HelperProxy:GetInstance():GetLevelExp(lv)
+      local nextLvExp = HelperProxy:GetInstance():GetLevelExp(lv + 1)
       local deltaExp = nextLvExp - curLvExp
-      if deltaExp > 0 then
+      if 0 < deltaExp then
         expPercent = (nPlayerExp - curLvExp) / deltaExp
       end
     end
-    do
-      local txtFilling = ((self._lvTex).gameObject):GetComponent("ArtFont")
-      txtFilling.Division = expPercent
-    end
+    local txtFilling = self._lvTex.gameObject:GetComponent("ArtFont")
+    txtFilling.Division = expPercent
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShowScheduleInfo = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function UIPlayerInfoController:ShowScheduleInfo()
   if not self.initMaoXian then
-    return 
+    return
   end
-  local currMissionID = (self._infoData).currMissionID
-  local cfg_mission = (Cfg.cfg_mission)[currMissionID]
+  local currMissionID = self._infoData.currMissionID
+  local cfg_mission = Cfg.cfg_mission[currMissionID]
   if cfg_mission then
-    local cfgName = (DiscoveryStage.GetStageIndexString)(currMissionID)
-    ;
-    (self._missionProgressTex):SetText(cfgName)
+    local cfgName = DiscoveryStage.GetStageIndexString(currMissionID)
+    self._missionProgressTex:SetText(cfgName)
   else
-    do
-      ;
-      (Log.fatal)("###uiplayerinfo - cfg_mission is nil ! id - ", currMissionID)
-      ;
-      (self._missionProgressTex):SetText("")
-      local petCount = (self._infoData).petCount
-      ;
-      (self._petCountTex):SetText(petCount)
-      local achievementPoint = "<size=38>" .. (self._infoData).achievementPoint .. "</size>"
-      local achievementPointAll = "<size=28>" .. (self._infoData).achievementPointAll .. "</size>"
-      ;
-      (self._achievementPointTex):SetText(achievementPoint .. "\n" .. "<size=28>/</size>" .. achievementPointAll)
-      ;
-      (self._tower_water):SetText((string.format)((StringTable.Get)("str_tower_cur_layer"), (self._infoData).towerWater))
-      ;
-      (self._tower_fire):SetText((string.format)((StringTable.Get)("str_tower_cur_layer"), (self._infoData).towerFire))
-      ;
-      (self._tower_wood):SetText((string.format)((StringTable.Get)("str_tower_cur_layer"), (self._infoData).towerWood))
-      ;
-      (self._tower_thunder):SetText((string.format)((StringTable.Get)("str_tower_cur_layer"), (self._infoData).towerThunder))
-      local diffMiss = (self._infoData).difficultyMission
-      ;
-      (self._difficultyMissionTex):SetText(diffMiss)
-      local sailingMission = (self._infoData).sailingMission
-      ;
-      (self._sailingMissionTex):SetText(sailingMission)
-      local module = (GameGlobal.GetModule)(RoleModule)
-      if not module:CheckModuleUnlock(GameModuleID.MD_SAILINGMISSION) then
-        (self._sailingObj):SetActive(false)
-      else
-        ;
-        (self._sailingObj):SetActive(true)
-      end
-      local dan = (self._infoData).dan
-      local grading = (self._infoData).grading
-      local danName = (UIWorldBossHelper.GetDanName)(dan, grading)
-      if (UIWorldBossHelper.IsNoDan)(dan, grading) then
-        (self._worldBossIconObj):SetActive(false)
-        ;
-        (self._worldBossLevelTex):SetText((StringTable.Get)(danName))
-      else
-        local badgeBase = (UIWorldBossHelper.GetDanBadgeBase)(dan, grading)
-        ;
-        (self._worldBossIconObj):SetActive(true)
-        ;
-        (self._worldBossIcon):LoadImage(badgeBase)
-        ;
-        (self._worldBossLevelTex):SetText((StringTable.Get)(danName))
-        ;
-        ((((self._worldBossLevelTex).transform).parent).gameObject):SetActive(false)
-        ;
-        ((((self._worldBossLevelTex).transform).parent).gameObject):SetActive(true)
-      end
-      do
-        ;
-        (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self._worldBossNode)
-      end
-    end
+    Log.fatal("###uiplayerinfo - cfg_mission is nil ! id - ", currMissionID)
+    self._missionProgressTex:SetText("")
   end
+  local petCount = self._infoData.petCount
+  self._petCountTex:SetText(petCount)
+  local achievementPoint = "<size=38>" .. self._infoData.achievementPoint .. "</size>"
+  local achievementPointAll = "<size=28>" .. self._infoData.achievementPointAll .. "</size>"
+  self._achievementPointTex:SetText(achievementPoint .. "\n" .. "<size=28>/</size>" .. achievementPointAll)
+  self._tower_water:SetText(string.format(StringTable.Get("str_tower_cur_layer"), self._infoData.towerWater))
+  self._tower_fire:SetText(string.format(StringTable.Get("str_tower_cur_layer"), self._infoData.towerFire))
+  self._tower_wood:SetText(string.format(StringTable.Get("str_tower_cur_layer"), self._infoData.towerWood))
+  self._tower_thunder:SetText(string.format(StringTable.Get("str_tower_cur_layer"), self._infoData.towerThunder))
+  local diffMiss = self._infoData.difficultyMission
+  self._difficultyMissionTex:SetText(diffMiss)
+  local sailingMission = self._infoData.sailingMission
+  self._sailingMissionTex:SetText(sailingMission)
+  local module = GameGlobal.GetModule(RoleModule)
+  if not module:CheckModuleUnlock(GameModuleID.MD_SAILINGMISSION) then
+    self._sailingObj:SetActive(false)
+  else
+    self._sailingObj:SetActive(true)
+  end
+  local dan = self._infoData.dan
+  local grading = self._infoData.grading
+  local danName = UIWorldBossHelper.GetDanName(dan, grading)
+  if UIWorldBossHelper.IsNoDan(dan, grading) then
+    self._worldBossIconObj:SetActive(false)
+    self._worldBossLevelTex:SetText(StringTable.Get(danName))
+  else
+    local badgeBase = UIWorldBossHelper.GetDanBadgeBase(dan, grading)
+    self._worldBossIconObj:SetActive(true)
+    self._worldBossIcon:LoadImage(badgeBase)
+    self._worldBossLevelTex:SetText(StringTable.Get(danName))
+    self._worldBossLevelTex.transform.parent.gameObject:SetActive(false)
+    self._worldBossLevelTex.transform.parent.gameObject:SetActive(true)
+  end
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._worldBossNode)
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.SetViewFriendStatus = function(self)
-  -- function num : 0_50 , upvalues : PlayerInfoType, _ENV
+function UIPlayerInfoController:SetViewFriendStatus()
   local isEditSelf = self._infoType == PlayerInfoType.PlayerEdit
   local isShowSelf = isEditSelf or self._infoType == PlayerInfoType.PlayerPreview
-  ;
-  (self._emblazonrySetting):SetActive(isEditSelf)
-  ;
-  (self._nameSetting):SetActive(isEditSelf)
+  self._emblazonrySetting:SetActive(isEditSelf)
+  self._nameSetting:SetActive(isEditSelf)
   if not isEditSelf then
-    (self._goRedPoint):SetActive(false)
+    self._goRedPoint:SetActive(false)
   end
-  ;
-  (self._btnManageHelp):SetActive(isEditSelf)
-  ;
-  (self._helppetholder):SetActive(isEditSelf)
-  ;
-  (self._friendhelppetObj):SetActive(not isEditSelf)
-  -- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._changeHeadBtn).enabled = isEditSelf
+  self._btnManageHelp:SetActive(isEditSelf)
+  self._helppetholder:SetActive(isEditSelf)
+  self._friendhelppetObj:SetActive(not isEditSelf)
+  self._changeHeadBtn.enabled = isEditSelf
   if self.initChenghao then
-    (self._titleSetting):SetActive(isEditSelf)
+    self._titleSetting:SetActive(isEditSelf)
   end
   if self._infoType == PlayerInfoType.Friend then
-    (self._changeFriendNameObj):SetActive(true)
+    self._changeFriendNameObj:SetActive(true)
+  elseif self._infoType == PlayerInfoType.Stranger then
+  elseif self._infoType == PlayerInfoType.BlackList then
+  else
+    self._changeFriendNameObj:SetActive(false)
   end
-  if self._infoType ~= PlayerInfoType.Stranger or self._infoType == PlayerInfoType.BlackList then
-    (self._changeFriendNameObj):SetActive(false)
-    if GameSingle then
-      (self._nameSetting):SetActive(false)
-    end
-    -- DECOMPILER ERROR: 10 unprocessed JMP targets
+  if GameSingle then
+    self._nameSetting:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.headOnClick = function(self)
-  -- function num : 0_51
+function UIPlayerInfoController:headOnClick()
   self:ShowDialog("UIChangeHeadController", self._playerInfo, function()
-    -- function num : 0_51_0 , upvalues : self
     self:FlushRed()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.signBtnOnClick = function(self)
-  -- function num : 0_52 , upvalues : PlayerInfoType
+function UIPlayerInfoController:signBtnOnClick()
   if self._infoType ~= PlayerInfoType.PlayerEdit then
-    return 
+    return
   end
   self:ShowDialog("UIChangeSignController", self._playerInfo)
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.nameBtnOnClick = function(self)
-  -- function num : 0_53
+function UIPlayerInfoController:nameBtnOnClick()
   self:ShowDialog("UIChangeNameController", self._playerInfo)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.titleBtnOnClick = function(self)
-  -- function num : 0_54
+function UIPlayerInfoController:titleBtnOnClick()
   self:ShowDialog("UIChangeTitleController", self._playerInfo)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.emblazonryBtnOnClick = function(self)
-  -- function num : 0_55
+function UIPlayerInfoController:emblazonryBtnOnClick()
   self:ShowDialog("UIChangeEmblazonryController", self._playerInfo)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.SetHelpPets = function(self)
-  -- function num : 0_56 , upvalues : _ENV
-  local isLock = not (self._roleModule):CheckModuleUnlock(GameModuleID.MD_HelpPet)
+function UIPlayerInfoController:SetHelpPets()
+  local isLock = not self._roleModule:CheckModuleUnlock(GameModuleID.MD_HelpPet)
   if isLock then
-    (self._helpPetGO):SetActive(true)
-    return 
+    self._helpPetGO:SetActive(true)
+    return
   end
-  ;
-  (self._helpPetGO):SetActive(true)
+  self._helpPetGO:SetActive(true)
   if GameSingle then
-    (self._helpPetGO):SetActive(false)
-    return 
+    self._helpPetGO:SetActive(false)
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_56_0 , upvalues : self, _ENV
     local helpPetModule = self:GetModule(HelpPetModule)
     local res = helpPetModule:RequestHelpPet_SupportInfo(TT)
     if res:GetSucc() then
-      local _elements = {[1] = ElementType.ElementType_Blue, [2] = ElementType.ElementType_Red, [3] = ElementType.ElementType_Green, [4] = ElementType.ElementType_Yellow}
+      local _elements = {
+        [1] = ElementType.ElementType_Blue,
+        [2] = ElementType.ElementType_Red,
+        [3] = ElementType.ElementType_Green,
+        [4] = ElementType.ElementType_Yellow
+      }
       local _infos = {}
       for i = 1, #_elements do
         local elem = _elements[i]
         local _info = helpPetModule:UI_FindSupportPet(elem)
         if _info then
-          (table.insert)(_infos, _info)
+          table.insert(_infos, _info)
         end
       end
       if not self._helpPetIcon then
-        return 
+        return
       end
       local petModule = self:GetModule(PetModule)
       local showHelpPetCount = 4
       local noHelpPetCount = 0
       for i = 1, showHelpPetCount do
-        local helpPetIcon = (self._helpPetIcon)[i]
+        local helpPetIcon = self._helpPetIcon[i]
         if helpPetIcon and _infos[i] then
-          ((((helpPetIcon.go).transform).parent).gameObject):SetActive(true)
-          local tempId = _infos[i] and (_infos[i]).m_nTemplateID or 0
-          local helpPetLevel = (_infos[i]).m_nLevel
+          helpPetIcon.go.transform.parent.gameObject:SetActive(true)
+          local tempId = _infos[i] and _infos[i].m_nTemplateID or 0
+          local helpPetLevel = _infos[i].m_nLevel
           local pet = petModule:GetPetByTemplateId(tempId)
           if pet then
             local grade = pet:GetPetGrade()
-            local head = (HelperProxy:GetInstance()):GetPetHead(tempId, grade, pet:GetSkinId(), PetSkinEffectPath.HEAD_ICON_PLAYER_INFO_HELP)
-            ;
-            (helpPetIcon.icon):LoadImage(head)
-            ;
-            ((helpPetIcon.icon).gameObject):SetActive(true)
-            ;
-            (helpPetIcon.level):SetText("Lv." .. helpPetLevel)
-            ;
-            ((helpPetIcon.levelObj).gameObject):SetActive(true)
+            local head = HelperProxy:GetInstance():GetPetHead(tempId, grade, pet:GetSkinId(), PetSkinEffectPath.HEAD_ICON_PLAYER_INFO_HELP)
+            helpPetIcon.icon:LoadImage(head)
+            helpPetIcon.icon.gameObject:SetActive(true)
+            helpPetIcon.level:SetText("Lv." .. helpPetLevel)
+            helpPetIcon.levelObj.gameObject:SetActive(true)
             self:ShowElement(helpPetIcon, pet)
-            ;
-            ((helpPetIcon.awake).gameObject):SetActive(true)
-            local spriteName = (UIPetModule.GetAwakeSpriteName)(tempId, grade)
-            -- DECOMPILER ERROR at PC137: Confused about usage of register: R19 in 'UnsetPending'
-
-            ;
-            (helpPetIcon.awake).sprite = (self._atlasAwake):GetSprite(spriteName)
+            helpPetIcon.awake.gameObject:SetActive(true)
+            local spriteName = UIPetModule.GetAwakeSpriteName(tempId, grade)
+            helpPetIcon.awake.sprite = self._atlasAwake:GetSprite(spriteName)
           else
-            do
-              do
-                do
-                  ;
-                  ((helpPetIcon.icon).gameObject):SetActive(false)
-                  ;
-                  ((((helpPetIcon.go).transform).parent).gameObject):SetActive(false)
-                  ;
-                  ((helpPetIcon.awake).gameObject):SetActive(false)
-                  ;
-                  ((helpPetIcon.levelObj).gameObject):SetActive(false)
-                  ;
-                  ((helpPetIcon.first).gameObject):SetActive(false)
-                  ;
-                  ((helpPetIcon.second).gameObject):SetActive(false)
-                  noHelpPetCount = noHelpPetCount + 1
-                  ;
-                  ((((helpPetIcon.go).transform).parent).gameObject):SetActive(false)
-                  ;
-                  ((helpPetIcon.awake).gameObject):SetActive(false)
-                  ;
-                  ((helpPetIcon.first).gameObject):SetActive(false)
-                  ;
-                  ((helpPetIcon.second).gameObject):SetActive(false)
-                  ;
-                  ((helpPetIcon.levelObj).gameObject):SetActive(false)
-                  noHelpPetCount = noHelpPetCount + 1
-                  -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out DO_STMT
-
-                  -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                  -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_STMT
-
-                  -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                  -- DECOMPILER ERROR at PC201: LeaveBlock: unexpected jumping out IF_STMT
-
-                end
-              end
-            end
+            helpPetIcon.icon.gameObject:SetActive(false)
+            helpPetIcon.go.transform.parent.gameObject:SetActive(false)
+            helpPetIcon.awake.gameObject:SetActive(false)
+            helpPetIcon.levelObj.gameObject:SetActive(false)
+            helpPetIcon.first.gameObject:SetActive(false)
+            helpPetIcon.second.gameObject:SetActive(false)
+            noHelpPetCount = noHelpPetCount + 1
           end
+        else
+          helpPetIcon.go.transform.parent.gameObject:SetActive(false)
+          helpPetIcon.awake.gameObject:SetActive(false)
+          helpPetIcon.first.gameObject:SetActive(false)
+          helpPetIcon.second.gameObject:SetActive(false)
+          helpPetIcon.levelObj.gameObject:SetActive(false)
+          noHelpPetCount = noHelpPetCount + 1
         end
       end
       if noHelpPetCount == showHelpPetCount then
-        (self._helppetholder):SetActive(false)
-        ;
-        (self._noHelpTip):SetActive(true)
+        self._helppetholder:SetActive(false)
+        self._noHelpTip:SetActive(true)
       else
-        ;
-        (self._helppetholder):SetActive(true)
-        ;
-        (self._noHelpTip):SetActive(false)
+        self._helppetholder:SetActive(true)
+        self._noHelpTip:SetActive(false)
       end
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShowFriendHelpPets = function(self)
-  -- function num : 0_57
+function UIPlayerInfoController:ShowFriendHelpPets()
   local maxPetCount = 4
   self._petList = {}
-  ;
-  (self._friendhelppet):SpawnObjects("UINewChatPetItem", maxPetCount, self._petList)
-  local petList = (self._friendData):GetPetDataList()
+  self._friendhelppet:SpawnObjects("UINewChatPetItem", maxPetCount, self._petList)
+  local petList = self._friendData:GetPetDataList()
   for i = 1, maxPetCount do
     if petList and petList[i] then
-      ((self._petList)[i]):Refresh(petList[i])
+      self._petList[i]:Refresh(petList[i])
     else
-      ;
-      ((self._petList)[i]):Refresh(nil)
+      self._petList[i]:Refresh(nil)
     end
   end
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.btnManageHelpOnClick = function(self)
-  -- function num : 0_58 , upvalues : _ENV
-  local isLock = not (self._roleModule):CheckModuleUnlock(GameModuleID.MD_HelpPet)
+function UIPlayerInfoController:btnManageHelpOnClick()
+  local isLock = not self._roleModule:CheckModuleUnlock(GameModuleID.MD_HelpPet)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_zhuzhan_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_zhuzhan_tips"))
+    return
   end
   self:ShowDialog("UIHelpPetManageController", function()
-    -- function num : 0_58_0 , upvalues : self
     self:SetHelpPets()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShowElement = function(self, trans, pet)
-  -- function num : 0_59 , upvalues : _ENV
+function UIPlayerInfoController:ShowElement(trans, pet)
   if pet == nil then
-    return 
+    return
   end
-  local cfg_pet_element = (Cfg.cfg_pet_element)({})
+  local cfg_pet_element = Cfg.cfg_pet_element({})
   if cfg_pet_element then
     local _1stElement = pet:GetPetFirstElement()
     if _1stElement then
-      ((trans.first).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (trans.first).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[_1stElement]).Icon .. "_battle"))
+      trans.first.gameObject:SetActive(true)
+      trans.first.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[_1stElement].Icon .. "_battle"))
     else
-      ;
-      ((trans.first).gameObject):SetActive(false)
+      trans.first.gameObject:SetActive(false)
     end
     local _2ndElement = pet:GetPetSecondElement()
     if _2ndElement then
-      ((trans.second).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R6 in 'UnsetPending'
-
-      ;
-      (trans.second).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[_2ndElement]).Icon .. "_battle"))
+      trans.second.gameObject:SetActive(true)
+      trans.second.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[_2ndElement].Icon .. "_battle"))
     else
-      ;
-      ((trans.second).gameObject):SetActive(false)
+      trans.second.gameObject:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.idCopyOnClick = function(self, go)
-  -- function num : 0_60 , upvalues : _ENV
-  local copyid = (self._infoData).showID
-  ;
-  (HelperProxy:GetInstance()):CopyString(copyid)
-  ;
-  (ToastManager.ShowToast)((StringTable.Get)("str_player_info_id_copy_succ"))
+function UIPlayerInfoController:idCopyOnClick(go)
+  local copyid = self._infoData.showID
+  HelperProxy:GetInstance():CopyString(copyid)
+  ToastManager.ShowToast(StringTable.Get("str_player_info_id_copy_succ"))
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.FriendOptionsBtnOnClick = function(self)
-  -- function num : 0_61
+function UIPlayerInfoController:FriendOptionsBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.FriendOptionsBtnCloseOnClick = function(self)
-  -- function num : 0_62
+function UIPlayerInfoController:FriendOptionsBtnCloseOnClick()
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.addFriendBtnOnClick = function(self, go)
-  -- function num : 0_63 , upvalues : _ENV
+function UIPlayerInfoController:addFriendBtnOnClick(go)
   self:Lock("AddFriendBtnOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function()
-    -- function num : 0_63_0 , upvalues : _ENV, self
-    local socialModule = (GameGlobal.GetModule)(SocialModule)
+  GameGlobal.TaskManager():StartTask(function()
+    local socialModule = GameGlobal.GetModule(SocialModule)
     local res, invtInfo = socialModule:InvitationFriend(TT, self._friendId)
     if not res:GetSucc() then
       local retCode = res:GetResult()
       if retCode == SocialErrorCode.SOCIAL_INVITATION_MUTUAL_SUCCESS then
-        (ToastManager.ShowToast)((StringTable.Get)("str_chat_is_your_friend"))
+        ToastManager.ShowToast(StringTable.Get("str_chat_is_your_friend"))
       else
-        ;
-        (self._chatFriendManager):HandleErrorMsgCode(retCode)
+        self._chatFriendManager:HandleErrorMsgCode(retCode)
       end
     else
-      do
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_chat_send_request_add_friend_success"))
-        self:UnLock("AddFriendBtnOnClick")
-      end
+      ToastManager.ShowToast(StringTable.Get("str_chat_send_request_add_friend_success"))
     end
-  end
-, self)
+    self:UnLock("AddFriendBtnOnClick")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.deleteFriendBtnOnClick = function(self, go)
-  -- function num : 0_64
+function UIPlayerInfoController:deleteFriendBtnOnClick(go)
   self:ShowDialog("UIChatDeleteFriendController", self._friendData, self._chatFriendManager)
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.setBlackListBtnOnClick = function(self, go)
-  -- function num : 0_65
+function UIPlayerInfoController:setBlackListBtnOnClick(go)
   if not self._friendData then
-    return 
+    return
   end
   self:ShowDialog("UIChatAddBlacklistController", self._friendData, self._chatFriendManager)
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.removeBlackListBtnOnClick = function(self, go)
-  -- function num : 0_66
+function UIPlayerInfoController:removeBlackListBtnOnClick(go)
   if not self._friendData then
-    return 
+    return
   end
   self:ShowDialog("UIChatRemoveBlacklistController", self._friendData, self._chatFriendManager)
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ChangeFriendInfoSuccess = function(self, go)
-  -- function num : 0_67 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_67_0 , upvalues : _ENV, self
-    local socialModule = (GameGlobal.GetModule)(SocialModule)
+function UIPlayerInfoController:ChangeFriendInfoSuccess(go)
+  GameGlobal.TaskManager():StartTask(function(TT)
+    local socialModule = GameGlobal.GetModule(SocialModule)
     socialModule.immedRefresh = true
     self:_RequestData(TT)
     self:_RefreshData()
@@ -2176,65 +1476,43 @@ UIPlayerInfoController.ChangeFriendInfoSuccess = function(self, go)
     self:SetViewFriendStatus()
     YIELD(TT)
     self:_RefreshFirendLayoutBtns()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ChangeFriendNameBtnOnClick = function(self, go)
-  -- function num : 0_68
+function UIPlayerInfoController:ChangeFriendNameBtnOnClick(go)
   if not self._friendData then
-    return 
+    return
   end
   self:ShowDialog("UIChatSetNoteNameController", self._friendData, self._chatFriendManager)
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.Share = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function UIPlayerInfoController:Share()
   self:Lock("UIPlayerInfoControllerShare")
   self:StartTask(function(TT)
-    -- function num : 0_69_0 , upvalues : self, _ENV
     self:ShareHideBtn(false)
     YIELD(TT)
     self:ShowDialog("UIShare", self:GetName(), ShareAnchorType.BottomLeft, function()
-      -- function num : 0_69_0_0 , upvalues : self
       self:ShareHideBtn(true)
-    end
-, ShareAnchorType.TopLeft, nil, nil, ShareSceneType.PlayerInfo)
+    end, ShareAnchorType.TopLeft, nil, nil, ShareSceneType.PlayerInfo)
     self:UnLock("UIPlayerInfoControllerShare")
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ShareHideBtn = function(self, show)
-  -- function num : 0_70
-  (self._backBtnsGO):SetActive(show)
-  ;
-  (self.layout_self):SetActive(show)
+function UIPlayerInfoController:ShareHideBtn(show)
+  self._backBtnsGO:SetActive(show)
+  self.layout_self:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ReportBtnOnClick = function(self, go)
-  -- function num : 0_71 , upvalues : _ENV
-  if ((GameGlobal.GetModule)(LoginModule)):CanReport() then
+function UIPlayerInfoController:ReportBtnOnClick(go)
+  if GameGlobal.GetModule(LoginModule):CanReport() then
     self:ShowDialog("UIReport", self:GetName(), self._friendDetailData)
   end
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ZhuYe_ButtonOnClick = function(self, go)
-  -- function num : 0_72 , upvalues : _ENV
+function UIPlayerInfoController:ZhuYe_ButtonOnClick(go)
   if self.CurSelectInfoModTYpe ~= SelectPlayerInfoModType.Main then
-    (self.zhuYe_ButtonAnim):Play("uieff_UIPlayerInfoController_ZhuYe_Button_in")
-    ;
-    (self.zhuYe_poolAnim):Play("uieff_UIPlayerInfoController_Zhuye_pool_in")
+    self.zhuYe_ButtonAnim:Play("uieff_UIPlayerInfoController_ZhuYe_Button_in")
+    self.zhuYe_poolAnim:Play("uieff_UIPlayerInfoController_Zhuye_pool_in")
     self:_PlayButton_AnimOut(self.CurSelectInfoModTYpe)
     self.OldSelectInfoModTYpe = self.CurSelectInfoModTYpe
   else
@@ -2244,14 +1522,10 @@ UIPlayerInfoController.ZhuYe_ButtonOnClick = function(self, go)
   self:RefreshNewPool()
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.MaoXian_ButtonOnClick = function(self, go)
-  -- function num : 0_73 , upvalues : _ENV
+function UIPlayerInfoController:MaoXian_ButtonOnClick(go)
   if self.CurSelectInfoModTYpe ~= SelectPlayerInfoModType.Adv then
-    (self.maoXian_ButtonAnim):Play("uieff_UIPlayerInfoController_MaoXian_Button_in")
-    ;
-    (self.maoXian_poolAnim):Play("uieff_UIPlayerInfoController_MaoXian_pool_in")
+    self.maoXian_ButtonAnim:Play("uieff_UIPlayerInfoController_MaoXian_Button_in")
+    self.maoXian_poolAnim:Play("uieff_UIPlayerInfoController_MaoXian_pool_in")
     self:_PlayButton_AnimOut(self.CurSelectInfoModTYpe)
     self.OldSelectInfoModTYpe = self.CurSelectInfoModTYpe
   else
@@ -2261,14 +1535,10 @@ UIPlayerInfoController.MaoXian_ButtonOnClick = function(self, go)
   self:RefreshNewPool()
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.JiNian_ButtonOnClick = function(self, go)
-  -- function num : 0_74 , upvalues : _ENV
+function UIPlayerInfoController:JiNian_ButtonOnClick(go)
   if self.CurSelectInfoModTYpe ~= SelectPlayerInfoModType.Ann then
-    (self.jiNian_ButtonAnim):Play("uieff_UIPlayerInfoController_JiNian_Button_in")
-    ;
-    (self.jiNian_poolAnim):Play("uieff_UIPlayerInfoController_JiNian_pooll_in")
+    self.jiNian_ButtonAnim:Play("uieff_UIPlayerInfoController_JiNian_Button_in")
+    self.jiNian_poolAnim:Play("uieff_UIPlayerInfoController_JiNian_pooll_in")
     self:_PlayButton_AnimOut(self.CurSelectInfoModTYpe)
     self.OldSelectInfoModTYpe = self.CurSelectInfoModTYpe
   else
@@ -2278,14 +1548,10 @@ UIPlayerInfoController.JiNian_ButtonOnClick = function(self, go)
   self:RefreshNewPool()
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.ChengHao_ButtonOnClick = function(self, go)
-  -- function num : 0_75 , upvalues : _ENV
+function UIPlayerInfoController:ChengHao_ButtonOnClick(go)
   if self.CurSelectInfoModTYpe ~= SelectPlayerInfoModType.Til then
-    (self.chengHao_ButtonAnim):Play("uieff_UIPlayerInfoController_ChengHao_Button_in")
-    ;
-    (self.chengHao_poolAnim):Play("uieff_UIPlayerInfoController_ChengHao_pool_in")
+    self.chengHao_ButtonAnim:Play("uieff_UIPlayerInfoController_ChengHao_Button_in")
+    self.chengHao_poolAnim:Play("uieff_UIPlayerInfoController_ChengHao_pool_in")
     self:_PlayButton_AnimOut(self.CurSelectInfoModTYpe)
     self.OldSelectInfoModTYpe = self.CurSelectInfoModTYpe
   else
@@ -2295,146 +1561,106 @@ UIPlayerInfoController.ChengHao_ButtonOnClick = function(self, go)
   self:RefreshNewPool()
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController._PlayButton_AnimOut = function(self, CurSelectInfoModTYpe)
-  -- function num : 0_76 , upvalues : _ENV
+function UIPlayerInfoController:_PlayButton_AnimOut(CurSelectInfoModTYpe)
   if CurSelectInfoModTYpe == SelectPlayerInfoModType.Main then
-    (self.zhuYe_ButtonAnim):Play("uieff_UIPlayerInfoController_ZhuYe_Button_out")
-    ;
-    (self.zhuYe_poolAnim):Play("uieff_UIPlayerInfoController_Zhuye_pool_out")
-  else
-    if CurSelectInfoModTYpe == SelectPlayerInfoModType.Adv then
-      (self.maoXian_ButtonAnim):Play("uieff_UIPlayerInfoController_MaoXian_Button_out")
-      ;
-      (self.maoXian_poolAnim):Play("uieff_UIPlayerInfoController_MaoXian_pool_out")
-    else
-      if CurSelectInfoModTYpe == SelectPlayerInfoModType.Ann then
-        (self.jiNian_ButtonAnim):Play("uieff_UIPlayerInfoController_JiNian_Button_out")
-        ;
-        (self.jiNian_poolAnim):Play("uieff_UIPlayerInfoController_JiNian_pooll_out")
-      else
-        if CurSelectInfoModTYpe == SelectPlayerInfoModType.Til then
-          (self.chengHao_ButtonAnim):Play("uieff_UIPlayerInfoController_ChengHao_Button_out")
-          ;
-          (self.chengHao_poolAnim):Play("uieff_UIPlayerInfoController_ChengHao_pool_out")
-        end
-      end
-    end
+    self.zhuYe_ButtonAnim:Play("uieff_UIPlayerInfoController_ZhuYe_Button_out")
+    self.zhuYe_poolAnim:Play("uieff_UIPlayerInfoController_Zhuye_pool_out")
+  elseif CurSelectInfoModTYpe == SelectPlayerInfoModType.Adv then
+    self.maoXian_ButtonAnim:Play("uieff_UIPlayerInfoController_MaoXian_Button_out")
+    self.maoXian_poolAnim:Play("uieff_UIPlayerInfoController_MaoXian_pool_out")
+  elseif CurSelectInfoModTYpe == SelectPlayerInfoModType.Ann then
+    self.jiNian_ButtonAnim:Play("uieff_UIPlayerInfoController_JiNian_Button_out")
+    self.jiNian_poolAnim:Play("uieff_UIPlayerInfoController_JiNian_pooll_out")
+  elseif CurSelectInfoModTYpe == SelectPlayerInfoModType.Til then
+    self.chengHao_ButtonAnim:Play("uieff_UIPlayerInfoController_ChengHao_Button_out")
+    self.chengHao_poolAnim:Play("uieff_UIPlayerInfoController_ChengHao_pool_out")
   end
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.SignInBtnOnClick = function(self, go)
-  -- function num : 0_77
+function UIPlayerInfoController:SignInBtnOnClick(go)
   self:ShowDialog("UISignInController")
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.FriendBtnOnClick = function(self, go)
-  -- function num : 0_78 , upvalues : _ENV, PlayerInfoFrom
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_ChatController"}, true)
+function UIPlayerInfoController:FriendBtnOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_ChatController"
+  }, true)
   self:ShowDialog("UIChatController", function()
-    -- function num : 0_78_0 , upvalues : self, PlayerInfoFrom
     self:ShowDialog("UIPlayerInfoController", PlayerInfoFrom.MainLobby)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.SetupBtnOnClick = function(self, go)
-  -- function num : 0_79 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"UISetController"}, true)
+function UIPlayerInfoController:SetupBtnOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "UISetController"
+  }, true)
   self:ShowDialog("UISetController")
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.PhotoBtnOnClick = function(self, go)
-  -- function num : 0_80 , upvalues : _ENV
-  (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_BookEntryController"}, true)
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIPlayerInfoController:PhotoBtnOnClick(go)
+  GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+    "Click_BookEntryController"
+  }, true)
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_HandBook)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_tongyong116_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_tongyong116_tips"))
+    return
   end
   self:ShowDialog("UIBookEntryController")
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.NotitleBtnOnClick = function(self)
-  -- function num : 0_81
+function UIPlayerInfoController:NotitleBtnOnClick()
   self:ShowDialog("UIChangeTitleController", self._playerInfo)
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.MedalWallBigBtnOnClick = function(self)
-  -- function num : 0_82 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIPlayerInfoController:MedalWallBigBtnOnClick()
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_MEDAL)
   if isLock then
-    (ToastManager.ShowToast)((StringTable.Get)("str_function_lock_tongyong116_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_function_lock_tongyong116_tips"))
+    return
   end
-  local visitData = nil
+  local visitData
   if self._isPlayerEditMode then
     visitData = nil
   else
-    visitData = (self._friendDetailData):GetMedalPlacementInfo()
+    visitData = self._friendDetailData:GetMedalPlacementInfo()
   end
   if visitData then
     self:ShowDialog("UIMedalCardDetailController", visitData)
   else
     self:ShowDialog("UIMedalCardDetailController", nil, function()
-    -- function num : 0_82_0 , upvalues : self
-    self:FlushRed()
-  end
-)
+      self:FlushRed()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.AddFirendBtnOnClick = function(self)
-  -- function num : 0_83
+function UIPlayerInfoController:AddFirendBtnOnClick()
   self:addFriendBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.DelteFriendBtnOnClick = function(self)
-  -- function num : 0_84
+function UIPlayerInfoController:DelteFriendBtnOnClick()
   self:deleteFriendBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.AddBlackFirendBtnOnClick = function(self)
-  -- function num : 0_85
+function UIPlayerInfoController:AddBlackFirendBtnOnClick()
   self:setBlackListBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.RemoveBlackFirendBtnOnClick = function(self)
-  -- function num : 0_86
+function UIPlayerInfoController:RemoveBlackFirendBtnOnClick()
   self:removeBlackListBtnOnClick()
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R2 in 'UnsetPending'
-
-UIPlayerInfoController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_87
+function UIPlayerInfoController:OnUpdate(deltaTimeMS)
   if self._isFriendMode == nil or not self._isFriendMode then
   end
 end
 
-local SelectPlayerInfoModType = {Main = 0, Adv = 1, Ann = 2, Til = 3}
+local SelectPlayerInfoModType = {
+  Main = 0,
+  Adv = 1,
+  Ann = 2,
+  Til = 3
+}
 _enum("SelectPlayerInfoModType", SelectPlayerInfoModType)
-

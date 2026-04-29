@@ -1,30 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/skill_pickup_line_and_direction_inst_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPickUpLineAndDirectionInstructionSystem_Render", ReactiveSystem)
 SkillPickUpLineAndDirectionInstructionSystem_Render = SkillPickUpLineAndDirectionInstructionSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPickUpLineAndDirectionInstructionSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillPickUpLineAndDirectionInstructionSystem_Render:Constructor(world)
   self._world = world
   self._pickUpType = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local c = Collector:New({world:GetGroup((world.BW_WEMatchers).PickUpTarget)}, {"Added"})
+function SkillPickUpLineAndDirectionInstructionSystem_Render:GetTrigger(world)
+  local c = Collector:New({
+    world:GetGroup(world.BW_WEMatchers.PickUpTarget)
+  }, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPickUpLineAndDirectionInstructionSystem_Render:Filter(entity)
   local pickUpTargetCmpt = entity:PickUpTarget()
   local skillHandleType = pickUpTargetCmpt:GetPickUpTargetType()
   if skillHandleType == SkillPickUpType.LineAndDirectionInstruction then
@@ -33,140 +22,110 @@ SkillPickUpLineAndDirectionInstructionSystem_Render.Filter = function(self, enti
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function SkillPickUpLineAndDirectionInstructionSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     self:DoPickUp(entities[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render._OnInitializeShow = function(self, petEntity, skillConfigData, pickUpGridPos)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillPickUpLineAndDirectionInstructionSystem_Render:_OnInitializeShow(petEntity, skillConfigData, pickUpGridPos)
   local previewPickUpComponent = petEntity:PreviewPickUpComponent()
-  ;
-  (self._previewActiveSkill):ResetPreview()
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Empty, skillConfigData, petEntity, pickUpGridPos)
+  self._previewActiveSkill:ResetPreview()
+  GameGlobal.TaskManager():CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Empty, skillConfigData, petEntity, pickUpGridPos)
   self:UpdateUI(previewPickUpComponent)
 end
 
-local GetLogicDirection = function(dir)
-  -- function num : 0_5 , upvalues : _ENV
+local function GetLogicDirection(dir)
   local ret = Vector2.zero
   if dir.x > 0 then
     ret.x = 1
-  else
-    if dir.x < 0 then
-      ret.x = -1
-    end
+  elseif dir.x < 0 then
+    ret.x = -1
   end
-  if dir.y > 0 then
+  if 0 < dir.y then
     ret.y = 1
-  else
-    if dir.y < 0 then
-      ret.y = -1
-    end
+  elseif 0 > dir.y then
+    ret.y = -1
   end
   return ret
 end
 
-local GetTwoSideOffset = function(centerPos, dir)
-  -- function num : 0_6 , upvalues : _ENV
+local function GetTwoSideOffset(centerPos, dir)
   local ret = {}
   if dir.x ~= 0 then
-    (table.insert)(ret, Vector2(centerPos.x, centerPos.y + 1))
-    ;
-    (table.insert)(ret, Vector2(centerPos.x, centerPos.y - 1))
-  else
-    if dir.y ~= 0 then
-      (table.insert)(ret, Vector2(centerPos.x + 1, centerPos.y))
-      ;
-      (table.insert)(ret, Vector2(centerPos.x - 1, centerPos.y))
-    end
+    table.insert(ret, Vector2(centerPos.x, centerPos.y + 1))
+    table.insert(ret, Vector2(centerPos.x, centerPos.y - 1))
+  elseif dir.y ~= 0 then
+    table.insert(ret, Vector2(centerPos.x + 1, centerPos.y))
+    table.insert(ret, Vector2(centerPos.x - 1, centerPos.y))
   end
   return ret
 end
 
-local GetTwoSideArrowDirIndex = function(centerPos, dir)
-  -- function num : 0_7 , upvalues : _ENV
+local function GetTwoSideArrowDirIndex(centerPos, dir)
   local ret = {}
   if dir.x ~= 0 then
-    (table.insert)(ret, 1)
-    ;
-    (table.insert)(ret, 5)
-  else
-    if dir.y ~= 0 then
-      (table.insert)(ret, 3)
-      ;
-      (table.insert)(ret, 7)
-    end
+    table.insert(ret, 1)
+    table.insert(ret, 5)
+  elseif dir.y ~= 0 then
+    table.insert(ret, 3)
+    table.insert(ret, 7)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render._OnReadyToSelectDirectionShow = function(self, petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
-  -- function num : 0_8 , upvalues : GetLogicDirection, _ENV, GetTwoSideArrowDirIndex
+function SkillPickUpLineAndDirectionInstructionSystem_Render:_OnReadyToSelectDirectionShow(petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
   local previewPickUpComponent = petEntity:PreviewPickUpComponent()
   local firstPickUpPos = previewPickUpComponent:GetFirstValidPickUpGridPos()
   local casterPos = petEntity:GetRenderGridPosition()
   local mainDir = GetLogicDirection(firstPickUpPos - casterPos)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-  local lineResult = scopeCalculator:ComputeScopeRange(SkillScopeType.DirectLineBlockedEdgeFree, {9, 0, 1}, casterPos, {Vector2(0, 0)}, mainDir, nil, casterPos)
+  local lineResult = scopeCalculator:ComputeScopeRange(SkillScopeType.DirectLineBlockedEdgeFree, {
+    9,
+    0,
+    1
+  }, casterPos, {
+    Vector2(0, 0)
+  }, mainDir, nil, casterPos)
   local convGrids = lineResult:GetAttackRange()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   previewActiveSkillService:DoConvert(convGrids, "Silver", "Dark")
-  local arrowEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).PickUpArrow)):GetEntities()
-  do
-    if (table.count)(arrowEntities) == 0 then
-      local arrowIndexs = GetTwoSideArrowDirIndex(firstPickUpPos, mainDir)
-      ;
-      (self._previewActiveSkill):ShowDynamicPickUpArrow(arrowIndexs, true, firstPickUpPos)
-    end
-    if lastPickUpPos then
-      self:_ShowPickUpArrow(lastPickUpPos, firstPickUpPos, false)
-    end
-    self:_ShowPickUpArrow(pickUpGridPos, firstPickUpPos, false)
-    self:UpdateUI(previewPickUpComponent)
+  local arrowEntities = self._world:GetGroup(self._world.BW_WEMatchers.PickUpArrow):GetEntities()
+  if table.count(arrowEntities) == 0 then
+    local arrowIndexs = GetTwoSideArrowDirIndex(firstPickUpPos, mainDir)
+    self._previewActiveSkill:ShowDynamicPickUpArrow(arrowIndexs, true, firstPickUpPos)
   end
+  if lastPickUpPos then
+    self:_ShowPickUpArrow(lastPickUpPos, firstPickUpPos, false)
+  end
+  self:_ShowPickUpArrow(pickUpGridPos, firstPickUpPos, false)
+  self:UpdateUI(previewPickUpComponent)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render._OnHadToSelectDirectionShow = function(self, petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillPickUpLineAndDirectionInstructionSystem_Render:_OnHadToSelectDirectionShow(petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
   local previewPickUpComponent = petEntity:PreviewPickUpComponent()
   local firstPickUpPos = previewPickUpComponent:GetFirstValidPickUpGridPos()
   self:_ShowPickUpArrow(lastPickUpPos, firstPickUpPos, false)
   self:_ShowPickUpArrow(pickUpGridPos, firstPickUpPos, true)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
+  GameGlobal.TaskManager():CoreGameStartTask(self._DoPickUpInstruction, self, PickUpInstructionType.Valid, skillConfigData, petEntity, pickUpGridPos)
   self:UpdateUI(previewPickUpComponent)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render.DoPickUp = function(self, entity)
-  -- function num : 0_10 , upvalues : _ENV, GetLogicDirection, GetTwoSideOffset
+function SkillPickUpLineAndDirectionInstructionSystem_Render:DoPickUp(entity)
   local pickUpTargetCmpt = entity:PickUpTarget()
   self._pickUpType = pickUpTargetCmpt:GetPickUpTargetType()
-  self._previewActiveSkill = (self._world):GetService("PreviewActiveSkill")
-  local previewActiveSkill = (self._world):GetService("PreviewActiveSkill")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+  self._previewActiveSkill = self._world:GetService("PreviewActiveSkill")
+  local previewActiveSkill = self._world:GetService("PreviewActiveSkill")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpTargetCmpt = renderBoardEntity:PickUpTarget()
   local activeSkillID = pickUpTargetCmpt:GetCurActiveSkillID()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local pickUpGridPos = pickUpTargetCmpt:GetCurPickUpGridPos()
   local petEntityId = utilDataSvc:GetEntityIDByPstID(pickUpTargetCmpt:GetPetPstid())
-  local petEntity = (self._world):GetEntityByID(petEntityId)
-  local configService = (self._world):GetService("Config")
+  local petEntity = self._world:GetEntityByID(petEntityId)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(activeSkillID, petEntity)
   local petPstID = pickUpTargetCmpt:GetPetPstid()
   if not petEntity:HasPreviewPickUpComponent() then
@@ -177,85 +136,75 @@ SkillPickUpLineAndDirectionInstructionSystem_Render.DoPickUp = function(self, en
   local validGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpValidScopeList, petEntity)
   local invalidGridList = utilScopeSvc:BuildScopeGridList(skillConfigData._pickUpInvalidScopeList, petEntity)
   if alreadyPickUpCount == 0 then
-    for _,pos in ipairs(invalidGridList) do
-      if (table.intable)(validGridList, pos) then
-        (table.removev)(validGridList, pos)
+    for _, pos in ipairs(invalidGridList) do
+      if table.intable(validGridList, pos) then
+        table.removev(validGridList, pos)
       end
     end
   end
-  do
-    local pickTelIndex = tonumber((skillConfigData._pickUpParam)[1])
-    local lastPickUpPos = previewPickUpComponent:GetLastPickUpGridPos()
-    if alreadyPickUpCount == 0 and not (table.Vector2Include)(validGridList, pickUpGridPos) then
-      previewActiveSkill:PickUpInvalidGridCancelPreview(activeSkillID, petPstID)
-      if (AutoPickCheckHelperRender.IsAutoFightRunning)() then
-        (AutoPickCheckHelperRender.ReportAutoFightPickError)(ActivePickSkillCheckErrorStep.PickLineAndDirectionInsInvalid, ActivePickSkillCheckErrorType.None, activeSkillID, pickUpGridPos)
-      end
-      return 
+  local pickTelIndex = tonumber(skillConfigData._pickUpParam[1])
+  local lastPickUpPos = previewPickUpComponent:GetLastPickUpGridPos()
+  if alreadyPickUpCount == 0 and not table.Vector2Include(validGridList, pickUpGridPos) then
+    previewActiveSkill:PickUpInvalidGridCancelPreview(activeSkillID, petPstID)
+    if AutoPickCheckHelperRender.IsAutoFightRunning() then
+      AutoPickCheckHelperRender.ReportAutoFightPickError(ActivePickSkillCheckErrorStep.PickLineAndDirectionInsInvalid, ActivePickSkillCheckErrorType.None, activeSkillID, pickUpGridPos)
     end
-    utilScopeSvc:ChangeGameFSMState2PickUp()
-    if alreadyPickUpCount == 0 then
-      previewPickUpComponent:AddGridPos(pickUpGridPos)
-      self:_OnReadyToSelectDirectionShow(petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
-      if (skillConfigData._pickUpParam)[2] then
-        local turnToPick = tonumber((skillConfigData._pickUpParam)[3])
-        if turnToPick == 1 then
-          local casterPos = petEntity:GetRenderGridPosition()
-          local mainDir = GetLogicDirection(pickUpGridPos - casterPos)
-          petEntity:SetDirection(mainDir)
-        end
+    return
+  end
+  utilScopeSvc:ChangeGameFSMState2PickUp()
+  if alreadyPickUpCount == 0 then
+    previewPickUpComponent:AddGridPos(pickUpGridPos)
+    self:_OnReadyToSelectDirectionShow(petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
+    if skillConfigData._pickUpParam[2] then
+      local turnToPick = tonumber(skillConfigData._pickUpParam[3])
+      if turnToPick == 1 then
+        local casterPos = petEntity:GetRenderGridPosition()
+        local mainDir = GetLogicDirection(pickUpGridPos - casterPos)
+        petEntity:SetDirection(mainDir)
+      end
+    end
+  else
+    local firstPickUpPos = previewPickUpComponent:GetFirstValidPickUpGridPos()
+    if pickUpGridPos == firstPickUpPos then
+      previewPickUpComponent:ClearGridPos()
+      previewPickUpComponent:ClearDirection()
+      self:_OnInitializeShow(petEntity, skillConfigData, pickUpGridPos)
+      if AutoPickCheckHelperRender.IsAutoFightRunning() then
+        AutoPickCheckHelperRender.ReportAutoFightPickError(ActivePickSkillCheckErrorStep.PickLineAndDirectionInsRepeat, ActivePickSkillCheckErrorType.None, activeSkillID, pickUpGridPos)
       end
     else
-      do
-        local firstPickUpPos = previewPickUpComponent:GetFirstValidPickUpGridPos()
-        if pickUpGridPos == firstPickUpPos then
-          previewPickUpComponent:ClearGridPos()
-          previewPickUpComponent:ClearDirection()
-          self:_OnInitializeShow(petEntity, skillConfigData, pickUpGridPos)
-          if (AutoPickCheckHelperRender.IsAutoFightRunning)() then
-            (AutoPickCheckHelperRender.ReportAutoFightPickError)(ActivePickSkillCheckErrorStep.PickLineAndDirectionInsRepeat, ActivePickSkillCheckErrorType.None, activeSkillID, pickUpGridPos)
-          end
+      local casterPos = petEntity:GetRenderGridPosition()
+      local mainDir = GetLogicDirection(firstPickUpPos - casterPos)
+      local directionGridList = {}
+      local sidePos = GetTwoSideOffset(firstPickUpPos, mainDir)
+      for _, sideGrid in ipairs(sidePos) do
+        table.insert(directionGridList, sideGrid)
+      end
+      if table.Vector2Include(directionGridList, pickUpGridPos) then
+        if pickUpGridPos == lastPickUpPos then
+          previewPickUpComponent:RemoveGridPos(lastPickUpPos)
+          self:_OnReadyToSelectDirectionShow(petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
         else
-          local casterPos = petEntity:GetRenderGridPosition()
-          local mainDir = GetLogicDirection(firstPickUpPos - casterPos)
-          local directionGridList = {}
-          local sidePos = GetTwoSideOffset(firstPickUpPos, mainDir)
-          for _,sideGrid in ipairs(sidePos) do
-            (table.insert)(directionGridList, sideGrid)
+          if alreadyPickUpCount == 2 then
+            previewPickUpComponent:RemoveGridPos(lastPickUpPos)
           end
-          if (table.Vector2Include)(directionGridList, pickUpGridPos) then
-            if pickUpGridPos == lastPickUpPos then
-              previewPickUpComponent:RemoveGridPos(lastPickUpPos)
-              self:_OnReadyToSelectDirectionShow(petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
-            else
-              if alreadyPickUpCount == 2 then
-                previewPickUpComponent:RemoveGridPos(lastPickUpPos)
-              end
-              previewPickUpComponent:AddGridPos(pickUpGridPos)
-              self:_OnHadToSelectDirectionShow(petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
-            end
-          end
+          previewPickUpComponent:AddGridPos(pickUpGridPos)
+          self:_OnHadToSelectDirectionShow(petEntity, skillConfigData, pickUpGridPos, lastPickUpPos)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render.IsRepeatPickUP = function(self, lastPickUpPos, pickUpGridPos)
-  -- function num : 0_11
-  if lastPickUpPos.x ~= pickUpGridPos.x or lastPickUpPos.y ~= pickUpGridPos.y then
-    do return not lastPickUpPos end
-    do return false end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+function SkillPickUpLineAndDirectionInstructionSystem_Render:IsRepeatPickUP(lastPickUpPos, pickUpGridPos)
+  if lastPickUpPos then
+    return lastPickUpPos.x == pickUpGridPos.x and lastPickUpPos.y == pickUpGridPos.y
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render.UpdateUI = function(self, previewPickUpComponent)
-  -- function num : 0_12 , upvalues : _ENV
+function SkillPickUpLineAndDirectionInstructionSystem_Render:UpdateUI(previewPickUpComponent)
   local pickUpCount = previewPickUpComponent:GetAllValidPickUpGridPosCount()
   local pickUpGridList = previewPickUpComponent:GetAllValidPickUpGridPos()
   local leftPickUpNum = 0
@@ -265,58 +214,42 @@ SkillPickUpLineAndDirectionInstructionSystem_Render.UpdateUI = function(self, pr
     uiTextState = SkillPickUpTextStateType.Direction
     leftPickUpNum = 1
     canCast = false
-  else
-    if pickUpCount == 2 then
-      uiTextState = SkillPickUpTextStateType.Direction
-      leftPickUpNum = 0
-      canCast = true
-    else
-      if pickUpCount == 0 then
-        canCast = false
-        leftPickUpNum = 1
-        uiTextState = SkillPickUpTextStateType.Normal
-      end
-    end
+  elseif pickUpCount == 2 then
+    uiTextState = SkillPickUpTextStateType.Direction
+    leftPickUpNum = 0
+    canCast = true
+  elseif pickUpCount == 0 then
+    canCast = false
+    leftPickUpNum = 1
+    uiTextState = SkillPickUpTextStateType.Normal
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshPickUpNum, leftPickUpNum)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.EnablePickUpSkillCast, canCast)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangePickUpText, uiTextState)
+  self._world:EventDispatcher():Dispatch(GameEventType.RefreshPickUpNum, leftPickUpNum)
+  self._world:EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, canCast)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangePickUpText, uiTextState)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render._DoPickUpInstruction = function(self, TT, type, skillConfigData, casterEntity, pickUpGirdPos)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillPickUpLineAndDirectionInstructionSystem_Render:_DoPickUpInstruction(TT, type, skillConfigData, casterEntity, pickUpGirdPos)
   local taskIDList = {}
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
-  for i,v in ipairs(skillConfigData._previewParamList) do
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
+  for i, v in ipairs(skillConfigData._previewParamList) do
     if v:GetPreviewType() == SkillPreviewType.Instruction then
       local instructionParam = v
-      for _,skillPreviewConfigData in ipairs(instructionParam._previewList) do
+      for _, skillPreviewConfigData in ipairs(instructionParam._previewList) do
         local instructionSet = self:_GetInstructSet(type, skillPreviewConfigData)
         if instructionSet then
           local previewContext = self:_GetPreviewContext(type, skillPreviewConfigData, casterEntity, skillPreviewConfigData:GetID(), pickUpGirdPos)
-          local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
-          ;
-          (table.insert)(taskIDList, taskID)
+          local taskID = GameGlobal.TaskManager():CoreGameStartTask(previewActiveSkillService.DoPreviewInstruction, previewActiveSkillService, instructionSet, casterEntity, previewContext)
+          table.insert(taskIDList, taskID)
         end
       end
     end
   end
-  do
-    while not (TaskHelper:GetInstance()):IsAllTaskFinished(taskIDList) do
-      YIELD(TT)
-    end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(taskIDList) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render._GetInstructSet = function(self, type, skillPreviewConfigData)
-  -- function num : 0_14 , upvalues : _ENV
+function SkillPickUpLineAndDirectionInstructionSystem_Render:_GetInstructSet(type, skillPreviewConfigData)
   if type == PickUpInstructionType.Invalid then
     return skillPreviewConfigData:GetOnSelectInvalidInstructionSet()
   end
@@ -332,11 +265,8 @@ SkillPickUpLineAndDirectionInstructionSystem_Render._GetInstructSet = function(s
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render._GetPreviewContext = function(self, type, skillPreviewConfigData, casterEntity, id, pickUpGridPos)
-  -- function num : 0_15 , upvalues : _ENV
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+function SkillPickUpLineAndDirectionInstructionSystem_Render:_GetPreviewContext(type, skillPreviewConfigData, casterEntity, id, pickUpGridPos)
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   local context = previewPickUpComponent:GetPreviewContext(id)
   if not context then
@@ -349,18 +279,15 @@ SkillPickUpLineAndDirectionInstructionSystem_Render._GetPreviewContext = functio
   return context
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-SkillPickUpLineAndDirectionInstructionSystem_Render._ShowPickUpArrow = function(self, gridpos, centerPos, isSelect)
-  -- function num : 0_16 , upvalues : _ENV
+function SkillPickUpLineAndDirectionInstructionSystem_Render:_ShowPickUpArrow(gridpos, centerPos, isSelect)
   local dis = gridpos - centerPos
-  local arrowEntities = ((self._world):GetGroup(((self._world).BW_WEMatchers).PickUpArrow)):GetEntities()
-  for _,e in ipairs(arrowEntities) do
+  local arrowEntities = self._world:GetGroup(self._world.BW_WEMatchers.PickUpArrow):GetEntities()
+  for _, e in ipairs(arrowEntities) do
     local arrowPos = e:GetRenderGridPosition()
     local arrowDir = arrowPos - centerPos
-    local angle = ((Vector2.Angle)(dis, arrowDir))
-    local statTable = nil
-    if (math.abs)(angle) <= 1 then
+    local angle = Vector2.Angle(dis, arrowDir)
+    local statTable
+    if math.abs(angle) <= 1 then
       if isSelect == true then
         statTable = {select = true, idle = false}
       else
@@ -370,5 +297,3 @@ SkillPickUpLineAndDirectionInstructionSystem_Render._ShowPickUpArrow = function(
     end
   end
 end
-
-

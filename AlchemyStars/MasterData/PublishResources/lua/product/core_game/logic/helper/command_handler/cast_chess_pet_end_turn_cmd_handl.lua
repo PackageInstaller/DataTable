@@ -1,77 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/cast_chess_pet_end_turn_cmd_handl.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 _class("CastChessPetEndTurnCommandHandler", CommandBaseHandler)
 CastChessPetEndTurnCommandHandler = CastChessPetEndTurnCommandHandler
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CastChessPetEndTurnCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function CastChessPetEndTurnCommandHandler:DoHandleCommand(cmd)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   local turnType = cmd:GetCmdTurnType()
   if turnType == ChessTurnEndType.Single then
     local turnEndEntityID = cmd:GetCmdTurnEndEntityID()
     self:_HandleEndSingleChessPetTurn(turnEndEntityID)
-  else
-    do
-      if turnType == ChessTurnEndType.All then
-        self:_HandleEndAllChessPetTurn()
-      end
-    end
+  elseif turnType == ChessTurnEndType.All then
+    self:_HandleEndAllChessPetTurn()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommandHandler._HandleEndSingleChessPetTurn = function(self, turnEndEntityID)
-  -- function num : 0_1 , upvalues : _ENV
-  local casterPetEntity = (self._world):GetEntityByID(turnEndEntityID)
+function CastChessPetEndTurnCommandHandler:_HandleEndSingleChessPetTurn(turnEndEntityID)
+  local casterPetEntity = self._world:GetEntityByID(turnEndEntityID)
   if not casterPetEntity then
-    (Log.fatal)("Can not find chess entity")
-    return 
+    Log.fatal("Can not find chess entity")
+    return
   end
-  local chessSvc = (self._world):GetService("ChessLogic")
+  local chessSvc = self._world:GetService("ChessLogic")
   chessSvc:FinishChessPetTurn(false, turnEndEntityID)
   local isAllChessPetTurnEnd = chessSvc:IsAllChessPetTurnFinish()
   if isAllChessPetTurnEnd then
-    if (self._world):RunAtServer() then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 7)
+    if self._world:RunAtServer() then
+      self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 7)
     else
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.PreviewChessPetFinish, 2)
+      self._world:EventDispatcher():Dispatch(GameEventType.PreviewChessPetFinish, 2)
     end
-  else
-    if (self._world):RunAtClient() then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.PreviewChessPetFinish, 2)
-    end
+  elseif self._world:RunAtClient() then
+    self._world:EventDispatcher():Dispatch(GameEventType.PreviewChessPetFinish, 2)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CastChessPetEndTurnCommandHandler._HandleEndAllChessPetTurn = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local chessSvc = (self._world):GetService("ChessLogic")
+function CastChessPetEndTurnCommandHandler:_HandleEndAllChessPetTurn()
+  local chessSvc = self._world:GetService("ChessLogic")
   chessSvc:FinishChessPetTurn(true)
-  if (self._world):RunAtServer() then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 7)
+  if self._world:RunAtServer() then
+    self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 7)
   else
-    local utilDataSvc = (self._world):GetService("UtilData")
+    local utilDataSvc = self._world:GetService("UtilData")
     if utilDataSvc:GetCurMainStateID() == GameStateID.PreviewChessPet then
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.PreviewChessPetFinish, 2)
+      self._world:EventDispatcher():Dispatch(GameEventType.PreviewChessPetFinish, 2)
+    elseif utilDataSvc:GetCurMainStateID() == GameStateID.PickUpChessPet then
+      self._world:EventDispatcher():Dispatch(GameEventType.PickUpChessPetFinish, 4)
     else
-      if utilDataSvc:GetCurMainStateID() == GameStateID.PickUpChessPet then
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.PickUpChessPetFinish, 4)
+      if utilDataSvc:GetCurMainStateID() == GameStateID.WaitInput then
+        self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 7)
       else
-        if utilDataSvc:GetCurMainStateID() == GameStateID.WaitInput then
-          ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 7)
-        end
       end
     end
   end
 end
-
-

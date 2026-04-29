@@ -1,8 +1,2 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/customizable_all_monster_grid_filter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 CustomizableAllMonsterGridFilter = {ForceMovement = 1, ForceMovementIncludeMultiSize = 2}
 _enum("CustomizableAllMonsterGridFilter", CustomizableAllMonsterGridFilter)
-

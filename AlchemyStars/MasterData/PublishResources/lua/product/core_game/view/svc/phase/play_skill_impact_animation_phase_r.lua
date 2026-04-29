@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_impact_animation_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillImpactAnimationPhase", PlaySkillPhaseBase)
 PlaySkillImpactAnimationPhase = PlaySkillImpactAnimationPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillImpactAnimationPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillImpactAnimationPhase:PlayFlight(TT, casterEntity, phaseParam)
   local skillService = self:SkillService()
   local gridLocation = casterEntity:GridLocation()
   local center = gridLocation:Center()
-  local effectService = (self._world):GetService("Effect")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local effectService = self._world:GetService("Effect")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local res = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
   self:HideArmEffect(casterEntity)
   YIELD(TT, phaseParam:GetShowDelay())
@@ -33,10 +26,7 @@ PlaySkillImpactAnimationPhase.PlayFlight = function(self, TT, casterEntity, phas
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillImpactAnimationPhase.HideArmEffect = function(self, casterEntity)
-  -- function num : 0_1
+function PlaySkillImpactAnimationPhase:HideArmEffect(casterEntity)
   local cEffectHolder = casterEntity:EffectHolder()
   local dict = cEffectHolder:GetEffectIDEntityDic()
   local lEff, rEff = 24, 25
@@ -47,18 +37,13 @@ PlaySkillImpactAnimationPhase.HideArmEffect = function(self, casterEntity)
   dict[rEff] = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillImpactAnimationPhase.DestroyEntity = function(self, eIdList)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillImpactAnimationPhase:DestroyEntity(eIdList)
   if eIdList then
-    for i,v in ipairs(eIdList) do
-      local e = (self._world):GetEntityByID(v)
+    for i, v in ipairs(eIdList) do
+      local e = self._world:GetEntityByID(v)
       if e then
-        (self._world):DestroyEntity(e)
+        self._world:DestroyEntity(e)
       end
     end
   end
 end
-
-

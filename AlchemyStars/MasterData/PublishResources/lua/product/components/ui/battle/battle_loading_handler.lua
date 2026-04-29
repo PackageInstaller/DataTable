@@ -1,45 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/battle_loading_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BattleLoadingHandler", LoadingHandler)
 BattleLoadingHandler = BattleLoadingHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleLoadingHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.LoadingManager)()):CoreGameLoadingStart()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftLeaveToBattle)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SeasonLeaveToBattle)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnBattleStartLoading)
+function BattleLoadingHandler:PreLoadBeforeLoadLevel(TT)
+  GameGlobal.LoadingManager():CoreGameLoadingStart()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftLeaveToBattle)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SeasonLeaveToBattle)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnBattleStartLoading)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleLoadingHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
-  local enterData = ((GameGlobal.GetModule)(MatchModule)):GetMatchEnterData()
-  local enterPreferenceData = ((GameGlobal.GetModule)(MatchModule)):GetMatchEnterPreferenceData()
-  ;
-  (GameGlobal:GetInstance()):EnterCoreGame(enterData, enterPreferenceData)
+function BattleLoadingHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
+  local enterData = GameGlobal.GetModule(MatchModule):GetMatchEnterData()
+  local enterPreferenceData = GameGlobal.GetModule(MatchModule):GetMatchEnterPreferenceData()
+  GameGlobal:GetInstance():EnterCoreGame(enterData, enterPreferenceData)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleLoadingHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal:GetInstance()):GetCollector("CoreGameLoading")):Sample("BattleLoadingHandler:OnLoadingFinish() begin")
-  local matchModule = (GameGlobal.GetModule)(MatchModule)
+function BattleLoadingHandler:OnLoadingFinish(...)
+  GameGlobal:GetInstance():GetCollector("CoreGameLoading"):Sample("BattleLoadingHandler:OnLoadingFinish() begin")
+  local matchModule = GameGlobal.GetModule(MatchModule)
   if matchModule then
     matchModule:Loading(100)
   end
-  ;
-  ((GameGlobal:GetInstance()):GetCollector("CoreGameLoading")):Sample("BattleLoadingHandler:OnLoadingFinish()")
+  GameGlobal:GetInstance():GetCollector("CoreGameLoading"):Sample("BattleLoadingHandler:OnLoadingFinish()")
 end
-
-

@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_fly_effect_caster_to_team_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayFlyEffectCasterToTeamInstruction", BaseInstruction)
 PlayFlyEffectCasterToTeamInstruction = PlayFlyEffectCasterToTeamInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayFlyEffectCasterToTeamInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayFlyEffectCasterToTeamInstruction:Constructor(paramList)
   self._flyEffectID = tonumber(paramList.flyEffectID)
   self._hitEffectID = tonumber(paramList.hitEffectID)
   self._flySpeed = tonumber(paramList.flySpeed)
@@ -32,100 +25,82 @@ PlayFlyEffectCasterToTeamInstruction.Constructor = function(self, paramList)
   self._isBlock = tonumber(paramList.isBlock) or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectCasterToTeamInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayFlyEffectCasterToTeamInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local teamEntity = (world:Player()):GetCurrentTeamEntity()
+  local teamEntity = world:Player():GetCurrentTeamEntity()
   local targetEntity = teamEntity
-  local tran = nil
-  if casterEntity:HasSuperEntity() and (casterEntity:SuperEntityComponent()):IsUseSuperEntityView() then
-    tran = (((casterEntity:GetSuperEntity()):View()):GetGameObject()).transform
+  local tran
+  if casterEntity:HasSuperEntity() and casterEntity:SuperEntityComponent():IsUseSuperEntityView() then
+    tran = casterEntity:GetSuperEntity():View():GetGameObject().transform
   else
-    tran = ((casterEntity:View()):GetGameObject()).transform
+    tran = casterEntity:View():GetGameObject().transform
   end
   local castPos = tran:TransformPoint(Vector3(self._offsetX, self._offsetY, self._offsetZ))
-  do
-    if self._originalBoneName and self._originalBoneName ~= "" then
-      local boneTrans = (GameObjectHelper.FindChild)(tran, self._originalBoneName)
-      if boneTrans ~= nil then
-        castPos = boneTrans.position
-      end
+  if self._originalBoneName and self._originalBoneName ~= "" then
+    local boneTrans = GameObjectHelper.FindChild(tran, self._originalBoneName)
+    if boneTrans ~= nil then
+      castPos = boneTrans.position
     end
-    local targetPos = (targetEntity:Location()).Position
-    if self._targetPos and self._targetPos ~= "" then
-      local tran = ((targetEntity:View()):GetGameObject()).transform
-      local targetTrans = (GameObjectHelper.FindChild)(tran, self._targetPos)
-      if targetTrans ~= nil then
-        targetPos = targetTrans.position
-      end
-    end
-    do
-      local dir = targetPos - castPos
-      local effectService = world:GetService("Effect")
-      local effectEntity = effectService:CreatePositionEffect(self._flyEffectID, castPos)
-      YIELD(TT)
-      effectEntity:SetDirection(dir)
-      YIELD(TT, self._startWaitTime)
-      local distance = (Vector3.Distance)(castPos, targetPos)
-      local flyTime = 0
-      if self._flySpeed then
-        flyTime = distance * self._flySpeed
-      end
-      YIELD(TT)
-      local go = ((effectEntity:View()):GetGameObject())
-      local dotween = nil
-      if flyTime == 0 and self._flyTime then
-        flyTime = self._flyTime
-      end
-      dotween = (go.transform):DOMove(targetPos, flyTime / 1000, false)
-      do
-        if self._flyEaseType then
-          local easyType = ((DG.Tweening).Ease)[self._flyEaseType]
-          dotween:SetEase(easyType)
-        end
-        if dotween then
-          (dotween:SetEase(((DG.Tweening).Ease).InOutSine)):OnComplete(function()
-    -- function num : 0_1_0 , upvalues : go, world, effectEntity
-    go:SetActive(false)
-    world:DestroyEntity(effectEntity)
   end
-)
-        end
-        if self._isBlock == 1 then
-          YIELD(TT, flyTime)
-          if not dotween then
-            world:DestroyEntity(effectEntity)
-          end
-          local hitEffect = effectService:CreateEffect(self._hitEffectID, targetEntity)
-        else
-          do
-            ;
-            ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_1 , upvalues : _ENV, flyTime, dotween, world, effectEntity
+  local targetPos = targetEntity:Location().Position
+  if self._targetPos and self._targetPos ~= "" then
+    local tran = targetEntity:View():GetGameObject().transform
+    local targetTrans = GameObjectHelper.FindChild(tran, self._targetPos)
+    if targetTrans ~= nil then
+      targetPos = targetTrans.position
+    end
+  end
+  local dir = targetPos - castPos
+  local effectService = world:GetService("Effect")
+  local effectEntity = effectService:CreatePositionEffect(self._flyEffectID, castPos)
+  YIELD(TT)
+  effectEntity:SetDirection(dir)
+  YIELD(TT, self._startWaitTime)
+  local distance = Vector3.Distance(castPos, targetPos)
+  local flyTime = 0
+  if self._flySpeed then
+    flyTime = distance * self._flySpeed
+  end
+  YIELD(TT)
+  local go = effectEntity:View():GetGameObject()
+  local dotween
+  if flyTime == 0 and self._flyTime then
+    flyTime = self._flyTime
+  end
+  dotween = go.transform:DOMove(targetPos, flyTime / 1000.0, false)
+  if self._flyEaseType then
+    local easyType = DG.Tweening.Ease[self._flyEaseType]
+    dotween:SetEase(easyType)
+  end
+  if dotween then
+    dotween:SetEase(DG.Tweening.Ease.InOutSine):OnComplete(function()
+      go:SetActive(false)
+      world:DestroyEntity(effectEntity)
+    end)
+  end
+  if self._isBlock == 1 then
     YIELD(TT, flyTime)
     if not dotween then
       world:DestroyEntity(effectEntity)
     end
-  end
-)
-          end
-        end
+    local hitEffect = effectService:CreateEffect(self._hitEffectID, targetEntity)
+  else
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      YIELD(TT, flyTime)
+      if not dotween then
+        world:DestroyEntity(effectEntity)
       end
-    end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayFlyEffectCasterToTeamInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayFlyEffectCasterToTeamInstruction:GetCacheResource()
   local t = {}
   if self._flyEffectID and self._flyEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

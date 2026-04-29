@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/return_enter/ui_common_return_help.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICommonReturnHelp", UICustomWidget)
 UICommonReturnHelp = UICommonReturnHelp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICommonReturnHelp.Constructor = function(self)
-  -- function num : 0_0
+function UICommonReturnHelp:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonReturnHelp.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICommonReturnHelp:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonReturnHelp.SetData = function(self, left)
-  -- function num : 0_2 , upvalues : _ENV
+function UICommonReturnHelp:SetData(left)
   self._go = self:GetGameObject("rect")
   if self:ReturnHelpOpen() then
-    (self._go):SetActive(true)
+    self._go:SetActive(true)
     local layoutGroup = self:GetUIComponent("RectTransform", "layoutGroup")
     if left then
       layoutGroup.pivot = Vector2(0, 0.5)
@@ -33,37 +20,25 @@ UICommonReturnHelp.SetData = function(self, left)
       layoutGroup.anchoredPosition = Vector2(142, 0)
     end
   else
-    do
-      ;
-      (self._go):SetActive(false)
-    end
+    self._go:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonReturnHelp.ReturnHelpOpen = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local campaignType = (UIActivityReturnSystemHelper.GetCampaignType)()
-  local campaign = (UIActivityHelper.LoadCampaign_Local)(campaignType)
+function UICommonReturnHelp:ReturnHelpOpen()
+  local campaignType = UIActivityReturnSystemHelper.GetCampaignType()
+  local campaign = UIActivityHelper.LoadCampaign_Local(campaignType)
   local isOpen = campaign:CheckCampaignOpen()
   return isOpen
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonReturnHelp.OnHide = function(self)
-  -- function num : 0_4
+function UICommonReturnHelp:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICommonReturnHelp.returnHelpBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local campaignType = (UIActivityReturnSystemHelper.GetCampaignType)()
-  self:ShowDialog("UISideEnterCenterController", {campaign_type = campaignType, 
-params = {true}
-, single_mode = true})
+function UICommonReturnHelp:returnHelpBtnOnClick(go)
+  local campaignType = UIActivityReturnSystemHelper.GetCampaignType()
+  self:ShowDialog("UISideEnterCenterController", {
+    campaign_type = campaignType,
+    params = {true},
+    single_mode = true
+  })
 end
-
-

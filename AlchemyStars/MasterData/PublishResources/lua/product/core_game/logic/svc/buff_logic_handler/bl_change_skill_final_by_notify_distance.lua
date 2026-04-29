@@ -1,53 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_skill_final_by_notify_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSkillFinalByNotifyDistance", BuffLogicBase)
 BuffLogicChangeSkillFinalByNotifyDistance = BuffLogicChangeSkillFinalByNotifyDistance
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSkillFinalByNotifyDistance.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSkillFinalByNotifyDistance:Constructor(buffInstance, logicParam)
   self._distanceRate = logicParam.distanceRate
   self._effectList = logicParam.effectList
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._buffInstance).BuffLogicChangeSkillFinalByNotifyDistance_RunCount = 0
+  self._buffInstance.BuffLogicChangeSkillFinalByNotifyDistance_RunCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSkillFinalByNotifyDistance.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeSkillFinalByNotifyDistance_RunCount = (self._buffInstance).BuffLogicChangeSkillFinalByNotifyDistance_RunCount + 1
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._buffInstance)._effectList = self._effectList
+function BuffLogicChangeSkillFinalByNotifyDistance:DoLogic(notify)
+  self._buffInstance.BuffLogicChangeSkillFinalByNotifyDistance_RunCount = self._buffInstance.BuffLogicChangeSkillFinalByNotifyDistance_RunCount + 1
+  self._buffInstance._effectList = self._effectList
   local distance = notify:GetDistance()
   local rate = self._distanceRate * distance
-  local val = rate * (self._buffInstance).BuffLogicChangeSkillFinalByNotifyDistance_RunCount
-  for _,paramType in ipairs(self._effectList) do
-    (self._buffLogicService):ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, val)
+  local val = rate * self._buffInstance.BuffLogicChangeSkillFinalByNotifyDistance_RunCount
+  for _, paramType in ipairs(self._effectList) do
+    self._buffLogicService:ChangeSkillFinalParam(self._entity, self:GetBuffSeq(), paramType, val)
   end
 end
 
 _class("BuffLogicRevertSkillFinalByNotifyDistance", BuffLogicBase)
 BuffLogicRevertSkillFinalByNotifyDistance = BuffLogicRevertSkillFinalByNotifyDistance
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRevertSkillFinalByNotifyDistance.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._buffInstance).BuffLogicChangeSkillFinalByNotifyDistance_RunCount = 0
-  for _,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRevertSkillFinalByNotifyDistance:DoLogic()
+  self._buffInstance.BuffLogicChangeSkillFinalByNotifyDistance_RunCount = 0
+  for _, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveSkillFinalParam(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

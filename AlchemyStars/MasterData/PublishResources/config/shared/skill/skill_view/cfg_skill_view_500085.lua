@@ -1,21 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/cfg_skill_view_500085.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 1, 1, 0, 0, 
-{castEffectID = 512, castAnimation = "Atk", hitPointDelay = 363, onHitAnimation = "Hit", hitEffectID = 508, castTotalTime = 700, hpDelayTime = 0}
-}
-, 
-{2, 2, 43, 1, 0, 0, 
-{audioID = 5080, audioType = 1}
-}
-, 
-{3, 3, 0, 1, 1, 0, 
-{" PlayCasterBindEffect,effectID =504; "}
-}
+  {
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    {
+      castEffectID = 512,
+      castAnimation = "Atk",
+      hitPointDelay = 363,
+      onHitAnimation = "Hit",
+      hitEffectID = 508,
+      castTotalTime = 700,
+      hpDelayTime = 0
+    }
+  },
+  {
+    2,
+    2,
+    43,
+    1,
+    0,
+    0,
+    {audioID = 5080, audioType = 1}
+  },
+  {
+    3,
+    3,
+    0,
+    1,
+    1,
+    0,
+    {
+      " PlayCasterBindEffect,effectID =504; "
+    }
+  }
 }
 return config, "ID", key
-

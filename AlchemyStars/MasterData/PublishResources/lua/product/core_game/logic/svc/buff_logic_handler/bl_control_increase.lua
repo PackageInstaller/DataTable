@@ -1,36 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_control_increase.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDoControlIncrease", BuffLogicBase)
 BuffLogicDoControlIncrease = BuffLogicDoControlIncrease
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDoControlIncrease.Constructor = function(self, _buffIns, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicDoControlIncrease:Constructor(_buffIns, logicParam)
   self._val = tonumber(logicParam.val)
   assert(self._val, "DoControlIncrease: parameter [val] is required. ")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDoControlIncrease.DoLogic = function(self, notify)
-  -- function num : 0_1
+function BuffLogicDoControlIncrease:DoLogic(notify)
   local e = self:GetEntity()
-  ;
-  (self._buffLogicService):ChangeControlIncrease(e, self:GetBuffSeq(), self._val)
+  self._buffLogicService:ChangeControlIncrease(e, self:GetBuffSeq(), self._val)
 end
 
 _class("BuffLogicUndoControlIncrease", BuffLogicBase)
 BuffLogicUndoControlIncrease = BuffLogicUndoControlIncrease
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoControlIncrease.DoLogic = function(self, notify)
-  -- function num : 0_2
+function BuffLogicUndoControlIncrease:DoLogic(notify)
   local e = self:GetEntity()
-  ;
-  (self._buffLogicService):RemoveControlIncrease(e, self:GetBuffSeq())
+  self._buffLogicService:RemoveControlIncrease(e, self:GetBuffSeq())
 end
-
-

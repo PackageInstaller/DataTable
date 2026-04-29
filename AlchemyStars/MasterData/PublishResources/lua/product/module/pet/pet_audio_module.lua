@@ -1,62 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/pet/pet_audio_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetAudioModule", GameModule)
 PetAudioModule = PetAudioModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetAudioModule.RequestAdx2VoiceCueSheetByAnyAudioId = function(self, filed, petResId)
-  -- function num : 0_0 , upvalues : _ENV
+function PetAudioModule:RequestAdx2VoiceCueSheetByAnyAudioId(filed, petResId)
   if not USEADX2AUDIO then
-    return 
+    return
   end
   if petResId == nil or petResId <= 0 then
-    (Log.error)("RequestVoiceCueSheetByAnyAudioId petId invalid petResId")
-    return 
+    Log.error("RequestVoiceCueSheetByAnyAudioId petId invalid petResId")
+    return
   end
   local voiceId = self:MultiChooseOne(petResId, filed, nil, true, true)
   if voiceId == nil then
-    (Log.error)("RequestVoiceCueSheetByAnyAudioId not find voice id :", voiceId, " petId:", petResId)
+    Log.error("RequestVoiceCueSheetByAnyAudioId not find voice id :", voiceId, " petId:", petResId)
     return nil
   end
-  ;
-  (AudioHelperController.RequestUIVoice)(voiceId)
+  AudioHelperController.RequestUIVoice(voiceId)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.ReleaseAdx2VoiceCueSheetByAnyAudioId = function(self, filed, petResId)
-  -- function num : 0_1 , upvalues : _ENV
+function PetAudioModule:ReleaseAdx2VoiceCueSheetByAnyAudioId(filed, petResId)
   if not USEADX2AUDIO then
-    return 
+    return
   end
   if petResId == nil or petResId <= 0 then
-    (Log.error)("ReleaseAdx2VoiceCueSheetByAnyAudioId petId invalid petResId")
-    return 
+    Log.error("ReleaseAdx2VoiceCueSheetByAnyAudioId petId invalid petResId")
+    return
   end
   local voiceId = self:MultiChooseOne(petResId, filed, nil, true, true)
   if voiceId == nil then
-    (Log.error)("ReleaseAdx2VoiceCueSheetByAnyAudioId not find voice id :", voiceId, " petId:", petResId)
+    Log.error("ReleaseAdx2VoiceCueSheetByAnyAudioId not find voice id :", voiceId, " petId:", petResId)
     return nil
   end
-  ;
-  (AudioHelperController.ReleaseUIVoiceByAudioId)(voiceId)
+  AudioHelperController.ReleaseUIVoiceByAudioId(voiceId)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.PlayPetAudio = function(self, filed, petResId, notRand, bLoginVoice, voiceSkinID, click, replaceVoiceID)
-  -- function num : 0_2 , upvalues : _ENV
+function PetAudioModule:PlayPetAudio(filed, petResId, notRand, bLoginVoice, voiceSkinID, click, replaceVoiceID)
   local rz, pro = self:FildPriority(petResId, filed)
   if rz ~= true then
     return nil
   end
   if petResId == nil then
-    petResId = (self.mRoleModule):GetResId()
+    petResId = self.mRoleModule:GetResId()
   end
-  local petData = (self.mPetModule):GetPetByTemplateId(petResId)
+  local petData = self.mPetModule:GetPetByTemplateId(petResId)
   local voiceId = self:MultiChooseOne(petResId, filed, petData, notRand, bLoginVoice, voiceSkinID, click)
   if voiceId == nil then
     return nil
@@ -78,64 +63,49 @@ PetAudioModule.PlayPetAudio = function(self, filed, petResId, notRand, bLoginVoi
     self.mLoginPlayerId = self.mCurId
   end
   if self.mTimeEvent ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self.mTimeEvent)
+    GameGlobal.Timer():CancelEvent(self.mTimeEvent)
   end
-  self.mTimeEvent = ((GameGlobal.Timer)()):AddEvent(self.SSGAPTIME, function()
-    -- function num : 0_2_0 , upvalues : self
+  self.mTimeEvent = GameGlobal.Timer():AddEvent(self.SSGAPTIME, function()
     self.mTimeFinish = true
-  end
-)
+  end)
   return voiceId, self.mCurId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.RandomPlayPetLoginVoice = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg_pet_voice_table = (Cfg.cfg_pet_voice)({})
-  local l_TotalNum = (table.count)(cfg_pet_voice_table)
-  local l_random_num = (math.random)(l_TotalNum)
+function PetAudioModule:RandomPlayPetLoginVoice()
+  local cfg_pet_voice_table = Cfg.cfg_pet_voice({})
+  local l_TotalNum = table.count(cfg_pet_voice_table)
+  local l_random_num = math.random(l_TotalNum)
   local l_nIndex = 1
-  local l_Key = nil
-  for key,value in pairs(cfg_pet_voice_table) do
+  local l_Key
+  for key, value in pairs(cfg_pet_voice_table) do
     if l_nIndex == l_random_num then
       l_Key = key
       break
     end
     l_nIndex = l_nIndex + 1
   end
-  do
-    if l_Key == nil then
-      return 
-    end
-    local l_template = (Cfg.cfg_pet_voice)[l_Key]
-    if l_template == nil then
-      return 
-    end
-    local l_templateId = l_template.PetID
-    self:PlayPetAudio("LoginVoice", l_templateId, false, true)
+  if l_Key == nil then
+    return
   end
+  local l_template = Cfg.cfg_pet_voice[l_Key]
+  if l_template == nil then
+    return
+  end
+  local l_templateId = l_template.PetID
+  self:PlayPetAudio("LoginVoice", l_templateId, false, true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.StopAll = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function PetAudioModule:StopAll()
   if self.mCurId == nil or self.mCurId == self.mLoginPlayerId then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.StopUIVoice)(self.mCurId)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClosePetAudio, false)
+  AudioHelperController.StopUIVoice(self.mCurId)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClosePetAudio, false)
   self:ClearData()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.IsUnLock = function(self, ruleId, petData)
-  -- function num : 0_5 , upvalues : _ENV
-  local condition = (Cfg.pet_intimacy_condition)[ruleId]
+function PetAudioModule:IsUnLock(ruleId, petData)
+  local condition = Cfg.pet_intimacy_condition[ruleId]
   if condition == nil then
     return false
   end
@@ -146,86 +116,61 @@ PetAudioModule.IsUnLock = function(self, ruleId, petData)
     if petData:GetPetAffinityLevel() < condition.Value then
       return false
     end
-  else
-    if condition.ConditionType == PetIntimacyCondition.Grade then
-      if petData == nil then
-        return false
-      end
-      if petData:GetPetGrade() < condition.Value then
-        return false
-      end
-    else
-      if condition.ConditionType == PetIntimacyCondition.Three then
-        if petData == nil then
-          return false
-        end
-        if not petData:IsFinishedStory(condition.Value) then
-          return false
-        end
-      else
-        if condition.ConditionType == PetIntimacyCondition.Time then
-          local curt = TodayPastTimeSec()
-          if curt < condition.Value or condition.Value2 < curt then
-            return false
-          end
-        else
-          do
-            if condition.ConditionType == PetIntimacyCondition.ServerTime then
-              local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-              if not time_mod then
-                return false
-              end
-              local tmSecond = (math.floor)(time_mod:GetServerTime() / 1000)
-              if tmSecond < condition.Value or condition.Value2 < tmSecond then
-                return false
-              end
-            else
-              do
-                if condition.ConditionType == PetIntimacyCondition.AffinityEqual then
-                  if petData == nil then
-                    return false
-                  end
-                  if petData:GetPetAffinityLevel() ~= condition.Value then
-                    return false
-                  end
-                else
-                  if condition.ConditionType == PetIntimacyCondition.DateLock then
-                    local time_mod = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-                    local tmSecond = (math.floor)(time_mod:GetServerTime() / 1000)
-                    local l_month = tonumber((os.date)("%m", tmSecond))
-                    local l_day = tonumber((os.date)("%d", tmSecond))
-                    if l_month ~= condition.Value or l_day ~= condition.Value2 then
-                      return 
-                    end
-                  else
-                    do
-                      if condition.ConditionType == PetIntimacyCondition.SpeSkin then
-                        local skinid = condition.Value
-                        local petModule = (GameGlobal.GetModule)(PetModule)
-                        local haveSkin = petModule:HaveSkin(skinid)
-                        if not haveSkin then
-                          return false
-                        end
-                      end
-                      do
-                        return true
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+  elseif condition.ConditionType == PetIntimacyCondition.Grade then
+    if petData == nil then
+      return false
+    end
+    if petData:GetPetGrade() < condition.Value then
+      return false
+    end
+  elseif condition.ConditionType == PetIntimacyCondition.Three then
+    if petData == nil then
+      return false
+    end
+    if not petData:IsFinishedStory(condition.Value) then
+      return false
+    end
+  elseif condition.ConditionType == PetIntimacyCondition.Time then
+    local curt = TodayPastTimeSec()
+    if curt < condition.Value or curt > condition.Value2 then
+      return false
+    end
+  elseif condition.ConditionType == PetIntimacyCondition.ServerTime then
+    local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+    if not time_mod then
+      return false
+    end
+    local tmSecond = math.floor(time_mod:GetServerTime() / 1000)
+    if tmSecond < condition.Value or tmSecond > condition.Value2 then
+      return false
+    end
+  elseif condition.ConditionType == PetIntimacyCondition.AffinityEqual then
+    if petData == nil then
+      return false
+    end
+    if petData:GetPetAffinityLevel() ~= condition.Value then
+      return false
+    end
+  elseif condition.ConditionType == PetIntimacyCondition.DateLock then
+    local time_mod = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+    local tmSecond = math.floor(time_mod:GetServerTime() / 1000)
+    local l_month = tonumber(os.date("%m", tmSecond))
+    local l_day = tonumber(os.date("%d", tmSecond))
+    if l_month ~= condition.Value or l_day ~= condition.Value2 then
+      return
+    end
+  elseif condition.ConditionType == PetIntimacyCondition.SpeSkin then
+    local skinid = condition.Value
+    local petModule = GameGlobal.GetModule(PetModule)
+    local haveSkin = petModule:HaveSkin(skinid)
+    if not haveSkin then
+      return false
     end
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.ClearData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function PetAudioModule:ClearData()
   self.mCurrPetResId = nil
   self.mCurFiled = nil
   self.mCurFiledPro = nil
@@ -233,242 +178,193 @@ PetAudioModule.ClearData = function(self)
   self.mCurId = nil
   self.mLoginPlayerId = nil
   if self.mTimeEvent ~= nil then
-    ((GameGlobal.Timer)()):CancelEvent(self.mTimeEvent)
+    GameGlobal.Timer():CancelEvent(self.mTimeEvent)
   end
   self.mTimeEvent = nil
   self.mTimeFinish = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.FildPriority = function(self, petResId, filed)
-  -- function num : 0_7 , upvalues : _ENV
+function PetAudioModule:FildPriority(petResId, filed)
   if filed == nil then
     return false, nil
   end
-  local cfgpvp = (Cfg.cfg_pet_voice_priority)[filed]
+  local cfgpvp = Cfg.cfg_pet_voice_priority[filed]
   if cfgpvp == nil then
-    (Log.error)("cfg_pet_voice_priority ", filed, " error")
+    Log.error("cfg_pet_voice_priority ", filed, " error")
     return false, nil
   end
-  -- DECOMPILER ERROR at PC30: Unhandled construct in 'MakeBoolean' P1
-
-  -- DECOMPILER ERROR at PC30: Unhandled construct in 'MakeBoolean' P1
-
-  if petResId == self.mCurrPetResId and self.mCurFiled == filed and self.mTimeFinish ~= true then
-    return false, nil
-  end
-  if self.mCurFiledPro ~= nil and cfgpvp.Priority < self.mCurFiledPro then
-    return false, nil
+  if petResId == self.mCurrPetResId then
+    if self.mCurFiled == filed then
+      if self.mTimeFinish ~= true then
+        return false, nil
+      end
+    elseif self.mCurFiledPro ~= nil and cfgpvp.Priority < self.mCurFiledPro then
+      return false, nil
+    end
   end
   return true, cfgpvp.Priority
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.CheckPetDailyHasPlayAudio = function(self, petId, model)
-  -- function num : 0_8 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function PetAudioModule:CheckPetDailyHasPlayAudio(petId, model)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  local time_mod = (GameGlobal.GetModule)(SvrTimeModule)
-  local tmSecond = (math.floor)(time_mod:GetServerTime() / 1000)
-  local l_year = tonumber((os.date)("%y", tmSecond))
-  local l_month = tonumber((os.date)("%m", tmSecond))
-  local l_day = tonumber((os.date)("%d", tmSecond))
+  local time_mod = GameGlobal.GetModule(SvrTimeModule)
+  local tmSecond = math.floor(time_mod:GetServerTime() / 1000)
+  local l_year = tonumber(os.date("%y", tmSecond))
+  local l_month = tonumber(os.date("%m", tmSecond))
+  local l_day = tonumber(os.date("%d", tmSecond))
   local key = pstId .. petId .. l_year .. l_month .. l_day .. model
-  if ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.MultiChooseOne = function(self, petResId, filed, petData, notRand, ignorePetData, voiceSkinID, click)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg_pet_voice_skin, checkSkinID = nil, nil
+function PetAudioModule:MultiChooseOne(petResId, filed, petData, notRand, ignorePetData, voiceSkinID, click)
+  local cfg_pet_voice_skin, checkSkinID
   if voiceSkinID then
     checkSkinID = voiceSkinID
-  else
-    if petData then
-      checkSkinID = petData:GetSkinId()
-    end
+  elseif petData then
+    checkSkinID = petData:GetSkinId()
   end
   if petData then
-    local cfgs = (Cfg.cfg_pet_voice)({PetID = petResId, SkinID = checkSkinID})
+    local cfgs = Cfg.cfg_pet_voice({PetID = petResId, SkinID = checkSkinID})
     if cfgs and next(cfgs) then
       cfg_pet_voice_skin = cfgs[1]
     else
-      local _cfgs = (Cfg.cfg_pet_voice)({PetID = petResId, SkinID = nil})
+      local _cfgs = Cfg.cfg_pet_voice({PetID = petResId, SkinID = nil})
       if _cfgs and next(_cfgs) then
         cfg_pet_voice_skin = _cfgs[1]
       end
     end
   else
-    do
-      do
-        local _cfgs = (Cfg.cfg_pet_voice)({PetID = petResId, SkinID = nil})
-        if _cfgs and next(_cfgs) then
-          cfg_pet_voice_skin = _cfgs[1]
+    local _cfgs = Cfg.cfg_pet_voice({PetID = petResId, SkinID = nil})
+    if _cfgs and next(_cfgs) then
+      cfg_pet_voice_skin = _cfgs[1]
+    end
+  end
+  if not cfg_pet_voice_skin then
+    Log.debug("###[PetAudioModule] cfg_pet_voice_skin is nil ! id --> ", petResId)
+    return
+  end
+  if click and filed == "MainLobbyInteract" then
+    local cfgDaily = cfg_pet_voice_skin.MainLobbyDailyInteract
+    if cfgDaily and #cfgDaily == 2 then
+      local dailyVoiceId = cfgDaily[1]
+      local condition = cfgDaily[2]
+      if self:IsUnLock(condition, petData) then
+        local hasPlay = self:CheckPetDailyHasPlayAudio(petResId, "mainlobby1")
+        if not hasPlay then
+          return dailyVoiceId
         end
-        if not cfg_pet_voice_skin then
-          (Log.debug)("###[PetAudioModule] cfg_pet_voice_skin is nil ! id --> ", petResId)
-          return 
+      end
+    end
+  end
+  local randomWight
+  local cfg_priority = Cfg.cfg_pet_voice_priority[filed]
+  if cfg_priority and cfg_priority.RandomType then
+    randomWight = cfg_priority.RandomWeight
+  end
+  local cfgPetVoice
+  local ids = {}
+  local skinVal
+  if cfg_pet_voice_skin and cfg_pet_voice_skin[filed] then
+    skinVal = cfg_pet_voice_skin[filed]
+  end
+  if not skinVal then
+    Log.error("###[PetAudioModule] skinVal is nil ! id --> ", petResId, " | filed --> ", filed)
+    return
+  end
+  if type(skinVal) == "table" then
+    for key, value in ipairs(skinVal) do
+      if self.mCurrAudioResId == value[1] then
+      elseif value[2] == nil or value[2] == -1 then
+        local data = {}
+        data.id = value[1]
+        if value[3] then
+          data.skin = true
         end
-        if click and filed == "MainLobbyInteract" then
-          local cfgDaily = cfg_pet_voice_skin.MainLobbyDailyInteract
-          if cfgDaily and #cfgDaily == 2 then
-            local dailyVoiceId = cfgDaily[1]
-            local condition = cfgDaily[2]
-            if self:IsUnLock(condition, petData) then
-              local hasPlay = self:CheckPetDailyHasPlayAudio(petResId, "mainlobby1")
-              if not hasPlay then
-                return dailyVoiceId
-              end
-            end
-          end
+        table.insert(ids, data)
+      elseif self:IsUnLock(value[2], petData) == true or ignorePetData == true then
+        local data = {}
+        data.id = value[1]
+        if value[3] then
+          data.skin = true
         end
-        do
-          local randomWight = nil
-          local cfg_priority = (Cfg.cfg_pet_voice_priority)[filed]
-          if cfg_priority and cfg_priority.RandomType then
-            randomWight = cfg_priority.RandomWeight
-          end
-          local cfgPetVoice = nil
-          local ids = {}
-          local skinVal = nil
-          if cfg_pet_voice_skin and cfg_pet_voice_skin[filed] then
-            skinVal = cfg_pet_voice_skin[filed]
-          end
-          if not skinVal then
-            (Log.error)("###[PetAudioModule] skinVal is nil ! id --> ", petResId, " | filed --> ", filed)
-            return 
-          end
-          if type(skinVal) == "table" then
-            for key,value in ipairs(skinVal) do
-              if (self.mCurrAudioResId == value[1] and value[2] == nil) or value[2] == -1 then
-                local data = {}
-                data.id = value[1]
-                if value[3] then
-                  data.skin = true
-                end
-                ;
-                (table.insert)(ids, data)
-              else
-                do
-                  do
-                    if self:IsUnLock(value[2], petData) == true or ignorePetData == true then
-                      local data = {}
-                      data.id = value[1]
-                      if value[3] then
-                        data.skin = true
-                      end
-                      ;
-                      (table.insert)(ids, data)
-                    end
-                    -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-          else
-            if type(skinVal) == "number" then
-              return skinVal
-            else
-              ;
-              (Log.error)("PetAudioModule:MultiChooseOne type error")
-              return nil
-            end
-          end
-          if next(ids) then
-            if notRand then
-              local skinCfgList = (Cfg.cfg_pet_skin)({id = checkSkinID})
-              if skinCfgList then
-                local skinCfg = skinCfgList[1]
-                if skinCfg and skinCfg.UnlockType then
-                  local baseSkin = (table.icontains)(skinCfg.UnlockType, PetSkinUnlockType.PSUT_BASE)
-                  if baseSkin then
-                    return (ids[1]).id
-                  end
-                end
-              end
-              do
-                do
-                  do return (ids[#ids]).id end
-                  local skinWeight = 10
-                  if randomWight then
-                    skinWeight = randomWight[1]
-                  end
-                  local normWeight = 10
-                  if randomWight then
-                    normWeight = randomWight[2]
-                  end
-                  local weightList = {}
-                  local _weight = 0
-                  for i = 1, #ids do
-                    local data = ids[i]
-                    local unit = {}
-                    unit.id = data.id
-                    if data.skin then
-                      unit.weight = _weight + skinWeight
-                      _weight = _weight + skinWeight
-                    else
-                      unit.weight = _weight + normWeight
-                      _weight = _weight + normWeight
-                    end
-                    ;
-                    (table.insert)(weightList, unit)
-                  end
-                  local randomVal = (math.random)(1, _weight)
-                  for i = 1, #weightList do
-                    local unit = weightList[i]
-                    local weight = unit.weight
-                    if randomVal <= weight then
-                      return unit.id
-                    end
-                  end
-                end
-              end
-            end
+        table.insert(ids, data)
+      end
+    end
+  elseif type(skinVal) == "number" then
+    return skinVal
+  else
+    Log.error("PetAudioModule:MultiChooseOne type error")
+    return nil
+  end
+  if next(ids) then
+    if notRand then
+      local skinCfgList = Cfg.cfg_pet_skin({id = checkSkinID})
+      if skinCfgList then
+        local skinCfg = skinCfgList[1]
+        if skinCfg and skinCfg.UnlockType then
+          local baseSkin = table.icontains(skinCfg.UnlockType, PetSkinUnlockType.PSUT_BASE)
+          if baseSkin then
+            return ids[1].id
           end
         end
+      end
+      return ids[#ids].id
+    end
+    local skinWeight = 10
+    if randomWight then
+      skinWeight = randomWight[1]
+    end
+    local normWeight = 10
+    if randomWight then
+      normWeight = randomWight[2]
+    end
+    local weightList = {}
+    local _weight = 0
+    for i = 1, #ids do
+      local data = ids[i]
+      local unit = {}
+      unit.id = data.id
+      if data.skin then
+        unit.weight = _weight + skinWeight
+        _weight = _weight + skinWeight
+      else
+        unit.weight = _weight + normWeight
+        _weight = _weight + normWeight
+      end
+      table.insert(weightList, unit)
+    end
+    local randomVal = math.random(1, _weight)
+    for i = 1, #weightList do
+      local unit = weightList[i]
+      local weight = unit.weight
+      if randomVal <= weight then
+        return unit.id
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.PlayAudio = function(self, audioResId)
-  -- function num : 0_10 , upvalues : _ENV
+function PetAudioModule:PlayAudio(audioResId)
   if audioResId == nil then
     return nil
   end
   if self.mCurId ~= nil then
-    (AudioHelperController.StopUIVoice)(self.mCurId, self.FADEOUTTIME)
+    AudioHelperController.StopUIVoice(self.mCurId, self.FADEOUTTIME)
   end
-  local id = (AudioHelperController.RequestAndPlayUIVoiceAutoRelease)(audioResId)
+  local id = AudioHelperController.RequestAndPlayUIVoiceAutoRelease(audioResId)
   return id
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.UIStateHandle = function(self, uiStateType)
-  -- function num : 0_11
+function PetAudioModule:UIStateHandle(uiStateType)
   self:StopAll()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.Constructor = function(self)
-  -- function num : 0_12
+function PetAudioModule:Constructor()
   self.mCurrPetResId = nil
   self.mCurFiled = nil
   self.mCurFiledPro = nil
@@ -483,36 +379,24 @@ PetAudioModule.Constructor = function(self)
   self.FADEOUTTIME = 500
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.Init = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  ((PetAudioModule.super).Init)(self)
+function PetAudioModule:Init()
+  PetAudioModule.super.Init(self)
   self.mRoleModule = self:GetModule(RoleModule)
   self.mPetModule = self:GetModule(PetModule)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.Dispose = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((PetAudioModule.super).Dispose)(self)
+function PetAudioModule:Dispose()
+  PetAudioModule.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PetAudioModule.Update = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function PetAudioModule:Update()
   if self.mCurId == nil then
-    return 
+    return
   end
-  local isPlaying = (AudioHelperController.CheckUIVoicePlaying)(self.mCurId)
+  local isPlaying = AudioHelperController.CheckUIVoicePlaying(self.mCurId)
   if isPlaying ~= false then
-    return 
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClosePetAudio, true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClosePetAudio, true)
   self:ClearData()
 end
-
-

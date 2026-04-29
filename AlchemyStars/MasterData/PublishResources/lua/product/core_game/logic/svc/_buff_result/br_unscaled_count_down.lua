@@ -1,62 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/br_unscaled_count_down.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultStartUnscaledCountDown", BuffResultBase)
 BuffResultStartUnscaledCountDown = BuffResultStartUnscaledCountDown
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultStartUnscaledCountDown.Constructor = function(self, flagID, cdMs, showGlobalUI)
-  -- function num : 0_0
+function BuffResultStartUnscaledCountDown:Constructor(flagID, cdMs, showGlobalUI)
   self._flagID = flagID
   self._countDownValue = cdMs
   self._showGlobalUI = showGlobalUI
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultStartUnscaledCountDown.GetFlagID = function(self)
-  -- function num : 0_1
+function BuffResultStartUnscaledCountDown:GetFlagID()
   return self._flagID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultStartUnscaledCountDown.GetCountDownValue = function(self)
-  -- function num : 0_2
+function BuffResultStartUnscaledCountDown:GetCountDownValue()
   return self._countDownValue
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultStartUnscaledCountDown.GetShowGlobalUI = function(self)
-  -- function num : 0_3
+function BuffResultStartUnscaledCountDown:GetShowGlobalUI()
   return self._showGlobalUI
 end
 
 _class("BuffResultStopUnscaledCountDown", BuffResultBase)
 BuffResultStopUnscaledCountDown = BuffResultStopUnscaledCountDown
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultStopUnscaledCountDown.Constructor = function(self, flagID, hideGlobalUI)
-  -- function num : 0_4
+function BuffResultStopUnscaledCountDown:Constructor(flagID, hideGlobalUI)
   self._flagID = flagID
   self._hideGlobalUI = hideGlobalUI
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultStopUnscaledCountDown.GetFlagID = function(self)
-  -- function num : 0_5
+function BuffResultStopUnscaledCountDown:GetFlagID()
   return self._flagID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultStopUnscaledCountDown.GetHideGlobalUI = function(self)
-  -- function num : 0_6
+function BuffResultStopUnscaledCountDown:GetHideGlobalUI()
   return self._hideGlobalUI
 end
-
-

@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n19/p5/n19_p5_pool_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N19P5PoolData", Object)
 N19P5PoolData = N19P5PoolData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N19P5PoolData.Constructor = function(self, poolidx, petlist, monster, bigID)
-  -- function num : 0_0
+function N19P5PoolData:Constructor(poolidx, petlist, monster, bigID)
   self._idx = poolidx
   self._petList = petlist
   self._monster = monster
   self._bigID = bigID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N19P5PoolData.BigID = function(self)
-  -- function num : 0_1
+function N19P5PoolData:BigID()
   return self._bigID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N19P5PoolData.MonsterName = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function N19P5PoolData:MonsterName()
   return "n19p5_monster_name_" .. tostring(self._monster)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N19P5PoolData.PetList = function(self)
-  -- function num : 0_3
+function N19P5PoolData:PetList()
   return self._petList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N19P5PoolData.MonsterID = function(self)
-  -- function num : 0_4
+function N19P5PoolData:MonsterID()
   return self._monster
 end
-
-

@@ -1,82 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/sync_client_unscaled_count_down_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("entity_commands")
 _class("SyncClientUnscaledCountDownCommand", IEntityCommand)
 SyncClientUnscaledCountDownCommand = SyncClientUnscaledCountDownCommand
--- DECOMPILER ERROR at PC10: Confused about usage of register: R0 in 'UnsetPending'
-
 SyncClientUnscaledCountDownCommand.CommandType = "SyncClientUnscaledCountDown"
--- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
 
-SyncClientUnscaledCountDownCommand.Constructor = function(self)
-  -- function num : 0_0
+function SyncClientUnscaledCountDownCommand:Constructor()
   self._flagID = 0
   self._state = 0
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.GetCommandType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SyncClientUnscaledCountDownCommand:GetCommandType()
   return SyncClientUnscaledCountDownCommand.CommandType
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.GetExecStateID = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return {GameStateID.WaitInput, GameStateID.WaitInputChain, GameStateID.PickUpChainSkillTarget, GameStateID.WaveResultAward, GameStateID.MirageWaitInput}
+function SyncClientUnscaledCountDownCommand:GetExecStateID()
+  return {
+    GameStateID.WaitInput,
+    GameStateID.WaitInputChain,
+    GameStateID.PickUpChainSkillTarget,
+    GameStateID.WaveResultAward,
+    GameStateID.MirageWaitInput
+  }
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.IsExecExcluded = function(self)
-  -- function num : 0_3
+function SyncClientUnscaledCountDownCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.DependRoundCount = function(self)
-  -- function num : 0_4
+function SyncClientUnscaledCountDownCommand:DependRoundCount()
   return false
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.GetCmdFlagID = function(self)
-  -- function num : 0_5
+function SyncClientUnscaledCountDownCommand:GetCmdFlagID()
   return self._flagID
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.SetCmdFlagID = function(self, flagID)
-  -- function num : 0_6
+function SyncClientUnscaledCountDownCommand:SetCmdFlagID(flagID)
   self._flagID = flagID
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.GetCmdState = function(self)
-  -- function num : 0_7
+function SyncClientUnscaledCountDownCommand:GetCmdState()
   return self._state
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.SetCmdState = function(self, state)
-  -- function num : 0_8
+function SyncClientUnscaledCountDownCommand:SetCmdState(state)
   self._state = state
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.ToNetMessage = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SyncClientUnscaledCountDownCommand:ToNetMessage()
   local msg = CEventSyncClientUnscaledCountDownCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -88,10 +58,7 @@ SyncClientUnscaledCountDownCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R0 in 'UnsetPending'
-
-SyncClientUnscaledCountDownCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_10
+function SyncClientUnscaledCountDownCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -100,5 +67,3 @@ SyncClientUnscaledCountDownCommand.FromNetMessage = function(self, msg)
   self._flagID = msg.flagID
   self._state = msg.state
 end
-
-

@@ -1,26 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_data_set_hitback_dir_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewDataSetHitBackDirInstruction", SkillPreviewBaseInstruction)
 SkillPreviewDataSetHitBackDirInstruction = SkillPreviewDataSetHitBackDirInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewDataSetHitBackDirInstruction.Constructor = function(self, params)
-  -- function num : 0_0
+function SkillPreviewDataSetHitBackDirInstruction:Constructor(params)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewDataSetHitBackDirInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewDataSetHitBackDirInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = previewContext:GetWorld()
   local previewActiveSkillService = world:GetService("PreviewActiveSkill")
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   local dir = previewPickUpComponent:GetLastPickUpDirection()
   previewContext:SetHitBackDirType(dir)
 end
-
-

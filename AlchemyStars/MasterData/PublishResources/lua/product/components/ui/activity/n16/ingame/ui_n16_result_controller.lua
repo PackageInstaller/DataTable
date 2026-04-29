@@ -1,52 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n16/ingame/ui_n16_result_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN16ResultController", UIController)
 UIN16ResultController = UIN16ResultController
-local UIN16ResultType = {Fail = 1, Success = 2, TestResult = 3}
+local UIN16ResultType = {
+  Fail = 1,
+  Success = 2,
+  TestResult = 3
+}
 _enum("UIN16ResultType", UIN16ResultType)
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIN16ResultController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN16ResultController:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N16, ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N16, ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
   if res and res:GetSucc() then
-    self._localProcess = (self._campaign):GetLocalProcess()
-    local subjectComponentInfo = (self._localProcess):GetComponentInfo(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+    self._localProcess = self._campaign:GetLocalProcess()
+    local subjectComponentInfo = self._localProcess:GetComponentInfo(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
     self._endTime = subjectComponentInfo.m_close_time
   else
-    do
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityCloseEvent, (self._campaign)._id)
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityCloseEvent, self._campaign._id)
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN16ResultController:OnShow(uiParams)
   self.mats = {}
   self:InitWidget()
   self._grad = uiParams[1]
-  self:_SetGameType((self._grad):GetLevelType())
-  if not uiParams[2] then
-    self._ingameData = {}
-    self._gradData = uiParams[3]
-    self:_SendResultInfo(self)
-    self:ShowResult()
-    self:AttachEvent(GameEventType.OnN16SubjectRewardItemClicked, self.ShowTips)
-  end
+  self:_SetGameType(self._grad:GetLevelType())
+  self._ingameData = uiParams[2] or {}
+  self._gradData = uiParams[3]
+  self:_SendResultInfo(self)
+  self:ShowResult()
+  self:AttachEvent(GameEventType.OnN16SubjectRewardItemClicked, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.InitWidget = function(self)
-  -- function num : 0_2
+function UIN16ResultController:InitWidget()
   self.itemInfo = self:GetUIComponent("UISelectObjectPath", "ItemInfo")
   self.bg = self:GetUIComponent("RawImageLoader", "Bg")
   self.titleText = self:GetUIComponent("UILocalizedTMP", "TitleText")
@@ -74,420 +59,284 @@ UIN16ResultController.InitWidget = function(self)
   self:SetFontMat(self.titleTextContent, "uieff_n16_ingame_success.mat")
   self:SetFontMat(self.failText, "uieff_n16_ingame_fail.mat")
   self.anim = self:GetUIComponent("Animation", "go")
-  ;
-  (self.testResult):SetActive(false)
-  ;
-  (self.success):SetActive(false)
-  ;
-  (self.fail):SetActive(false)
+  self.testResult:SetActive(false)
+  self.success:SetActive(false)
+  self.fail:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN16ResultController:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
     self._event = nil
   end
   if self._resReqs then
-    for _,req in ipairs(self._resReqs) do
+    for _, req in ipairs(self._resReqs) do
       req:Dispose()
     end
   end
-  do
-    self._ingameData = nil
-    self.mats = nil
-    self:DetachEvent(GameEventType.OnN16SubjectRewardItemClicked, self.ShowTips)
-  end
+  self._ingameData = nil
+  self.mats = nil
+  self:DetachEvent(GameEventType.OnN16SubjectRewardItemClicked, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._SetGameType = function(self, nType)
-  -- function num : 0_4
+function UIN16ResultController:_SetGameType(nType)
   self._gameType = nType
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.SureButtonOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN16ResultController:SureButtonOnClick(go)
   self:Lock("UIN16ResultController")
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
     YIELD(TT, 433)
     self:UnLock("UIN16ResultController")
     self:CloseDialog()
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIN16AnswerController")
-  end
-, self)
+    GameGlobal.UIStateManager():CloseDialog("UIN16AnswerController")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.AgainButtonOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN16ResultController:AgainButtonOnClick(go)
   if self:CheckActivityOver() then
     self:SwitchState(UIStateType.UIActivityN16MainController)
-    return 
+    return
   end
   self:Lock("UIN16ResultController")
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     YIELD(TT, 433)
     self:UnLock("UIN16ResultController")
     self:CloseDialog()
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIN16AnswerController")
+    GameGlobal.UIStateManager():CloseDialog("UIN16AnswerController")
     self:ShowDialog("UIN16AnswerController", self._grad, self._gradData)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.OutButtonOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN16ResultController:OutButtonOnClick(go)
   self:Lock("UIN16ResultController")
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : _ENV, self
     YIELD(TT, 433)
     self:UnLock("UIN16ResultController")
     self:CloseDialog()
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIN16AnswerController")
-  end
-, self)
+    GameGlobal.UIStateManager():CloseDialog("UIN16AnswerController")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.TestSureButtonOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN16ResultController:TestSureButtonOnClick(go)
   self:Lock("UIN16ResultController")
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : _ENV, self
     YIELD(TT, 433)
     self:UnLock("UIN16ResultController")
     self:CloseDialog()
-    ;
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIN16AnswerController")
-  end
-, self)
+    GameGlobal.UIStateManager():CloseDialog("UIN16AnswerController")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.CoculateResult = function(self)
-  -- function num : 0_9 , upvalues : UIN16ResultType
+function UIN16ResultController:CoculateResult()
   if self._gameType == 2 then
     return UIN16ResultType.TestResult
   end
-  if (self._ingameData):CheckAnswers() == (self._ingameData):GetTotalCount() then
+  if self._ingameData:CheckAnswers() == self._ingameData:GetTotalCount() then
     return UIN16ResultType.Success
   end
   return UIN16ResultType.Fail
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.ShowResult = function(self)
-  -- function num : 0_10 , upvalues : UIN16ResultType
+function UIN16ResultController:ShowResult()
   local resultType = self:CoculateResult(self._gameType)
   self.curType = resultType
   if resultType == UIN16ResultType.Fail then
     self:_ShowOnFail()
     self:_LoadSpine(3)
-  else
-    if resultType == UIN16ResultType.Success then
-      self:_ShowOnSuccess()
-      self:_LoadSpine(2)
-      self:StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self
-    if self._gameType == 1 then
-      self:_GetRewards()
-    end
-  end
-, self)
-    else
-      if resultType == UIN16ResultType.TestResult then
-        self:_TestOver()
-        self:_LoadSpine(1)
+  elseif resultType == UIN16ResultType.Success then
+    self:_ShowOnSuccess()
+    self:_LoadSpine(2)
+    self:StartTask(function(TT)
+      if self._gameType == 1 then
+        self:_GetRewards()
       end
-    end
+    end, self)
+  elseif resultType == UIN16ResultType.TestResult then
+    self:_TestOver()
+    self:_LoadSpine(1)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.GetScrollViewParam = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIN16ResultController:GetScrollViewParam()
   local param = UIDynamicScrollViewInitParam:New()
   param.mItemDefaultWithPaddingSize = 150
   return param
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._ShowOnSuccess = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN16ResultController:_ShowOnSuccess()
   self:_ActiveGo()
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV
-    (self.anim):Play("uieff_Answer_Result")
+    self.anim:Play("uieff_Answer_Result")
     YIELD(TT, 330)
     self:ShowSuccessEffect()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.ShowSuccessEffect = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self._grad):GetHasComplete() then
-    self:_HadReward((self._grad):GetHasComplete())
+function UIN16ResultController:ShowSuccessEffect()
+  if self._grad:GetHasComplete() then
+    self:_HadReward(self._grad:GetHasComplete())
   else
-    local rewards = (self._gradData):GetRewards()
-    do
-      (self.rowItem):SpawnObjects("UIN16ResultRewardItem", #rewards)
-      local items = (self.rowItem):GetAllSpawnList()
-      for i = 1, #items do
-        (items[i]):Refresh(rewards[i])
-      end
-      self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : items, _ENV, self
+    local rewards = self._gradData:GetRewards()
+    self.rowItem:SpawnObjects("UIN16ResultRewardItem", #rewards)
+    local items = self.rowItem:GetAllSpawnList()
     for i = 1, #items do
-      YIELD(TT, 330)
-      self:_LoadEffect((items[i])._go)
+      items[i]:Refresh(rewards[i])
     end
-  end
-, self)
-    end
+    self:StartTask(function(TT)
+      for i = 1, #items do
+        YIELD(TT, 330)
+        self:_LoadEffect(items[i]._go)
+      end
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_14
-  (self._tips):SetData(itemId, pos)
+function UIN16ResultController:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._ShowOnFail = function(self)
-  -- function num : 0_15
+function UIN16ResultController:_ShowOnFail()
   self:_ActiveGo()
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._TestOver = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN16ResultController:_TestOver()
   self:_ActiveGo()
-  ;
-  (self.rightCountText):SetText((StringTable.Get)("str_activity_n16_questionindex", (self._ingameData):GetTrueRight()))
-  ;
-  (self.evaluateText):SetText((self._ingameData):GetTestEvaluate())
+  self.rightCountText:SetText(StringTable.Get("str_activity_n16_questionindex", self._ingameData:GetTrueRight()))
+  self.evaluateText:SetText(self._ingameData:GetTestEvaluate())
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._ActiveGo = function(self)
-  -- function num : 0_17 , upvalues : UIN16ResultType
-  (self.testResult):SetActive(self.curType == UIN16ResultType.TestResult)
-  ;
-  (self.success):SetActive(self.curType == UIN16ResultType.Success)
-  ;
-  (self.fail):SetActive(self.curType == UIN16ResultType.Fail)
-  ;
-  (self.spine):SetActive(self.curType ~= UIN16ResultType.TestResult)
-  ;
-  (self.cloud):SetActive(self.curType == UIN16ResultType.TestResult)
-  ;
-  (self.sureButton):SetActive(self.curType ~= UIN16ResultType.Fail and self.curType ~= UIN16ResultType.TestResult)
-  ;
-  (self.outButton):SetActive(self.curType == UIN16ResultType.Fail and self.curType ~= UIN16ResultType.TestResult)
-  ;
-  (self.againButton):SetActive(self.curType == UIN16ResultType.Fail and self.curType ~= UIN16ResultType.TestResult)
-  ;
-  (self.testSureButton):SetActive(self.curType == UIN16ResultType.TestResult)
-  -- DECOMPILER ERROR: 12 unprocessed JMP targets
+function UIN16ResultController:_ActiveGo()
+  self.testResult:SetActive(self.curType == UIN16ResultType.TestResult)
+  self.success:SetActive(self.curType == UIN16ResultType.Success)
+  self.fail:SetActive(self.curType == UIN16ResultType.Fail)
+  self.spine:SetActive(self.curType ~= UIN16ResultType.TestResult)
+  self.cloud:SetActive(self.curType == UIN16ResultType.TestResult)
+  self.sureButton:SetActive(self.curType ~= UIN16ResultType.Fail and self.curType ~= UIN16ResultType.TestResult)
+  self.outButton:SetActive(self.curType == UIN16ResultType.Fail and self.curType ~= UIN16ResultType.TestResult)
+  self.againButton:SetActive(self.curType == UIN16ResultType.Fail and self.curType ~= UIN16ResultType.TestResult)
+  self.testSureButton:SetActive(self.curType == UIN16ResultType.TestResult)
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._SendResultInfo = function(self, TT)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN16ResultController:_SendResultInfo(TT)
   if self._gameType == 1 then
     local resultType = self:CoculateResult(self._gameType)
   else
-    do
-      self:_SendMessage(TaskToken:New())
-    end
+    self:_SendMessage(TaskToken:New())
   end
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._GetRewards = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
+function UIN16ResultController:_GetRewards(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TaskToken:New(), res, ECampaignType.CAMPAIGN_TYPE_N16, ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+  self._campaign:LoadCampaignInfo(TaskToken:New(), res, ECampaignType.CAMPAIGN_TYPE_N16, ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
   res = AsyncRequestRes:New()
-  local subject = (self._localProcess):GetComponent(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
-  subject:HandleReward(TT, res, (self._grad)._levelId, (self._grad)._grade)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN16SubjectRefresh)
+  local subject = self._localProcess:GetComponent(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+  subject:HandleReward(TT, res, self._grad._levelId, self._grad._grade)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN16SubjectRefresh)
   if res and not res:GetSucc() then
-    (Log.error)("UIN16ResultController:_GetRewards()  error")
-    return 
+    Log.error("UIN16ResultController:_GetRewards()  error")
+    return
   end
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._SendMessage = function(self, TT)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN16ResultController:_SendMessage(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TaskToken:New(), res, ECampaignType.CAMPAIGN_TYPE_N16, ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+  self._campaign:LoadCampaignInfo(TaskToken:New(), res, ECampaignType.CAMPAIGN_TYPE_N16, ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
   res = AsyncRequestRes:New()
-  local subject = (self._localProcess):GetComponent(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
-  subject:HandleTestScore(TT, res, (self._ingameData):GetTrueRight())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN16SubjectRefresh)
+  local subject = self._localProcess:GetComponent(ECampaignN16ComponentID.ECAMPAIGN_N16_ANSWER_GAME)
+  subject:HandleTestScore(TT, res, self._ingameData:GetTrueRight())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN16SubjectRefresh)
   if res and not res:GetSucc() then
-    (Log.error)("UIN16ResultController:_SendMessage() upload score fail")
-    return 
+    Log.error("UIN16ResultController:_SendMessage() upload score fail")
+    return
   end
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._HadReward = function(self, bReward)
-  -- function num : 0_21 , upvalues : _ENV
-  (self:GetGameObject("RowItem")):SetActive(not bReward)
-  ;
-  (self:GetGameObject("HadReward")):SetActive(bReward)
-  ;
-  (self.hadReward):SetText((StringTable.Get)("str_activity_n16_hadreward"))
+function UIN16ResultController:_HadReward(bReward)
+  self:GetGameObject("RowItem"):SetActive(not bReward)
+  self:GetGameObject("HadReward"):SetActive(bReward)
+  self.hadReward:SetText(StringTable.Get("str_activity_n16_hadreward"))
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.SetFontMat = function(self, lable, resname)
-  -- function num : 0_22 , upvalues : _ENV
-  local res = (ResourceManager:GetInstance()):SyncLoadAsset(resname, LoadType.Mat)
+function UIN16ResultController:SetFontMat(lable, resname)
+  local res = ResourceManager:GetInstance():SyncLoadAsset(resname, LoadType.Mat)
   if not res then
-    return 
+    return
   end
-  ;
-  (table.insert)(self.mats, res)
+  table.insert(self.mats, res)
   local obj = res.Obj
   local mat = lable.fontMaterial
   lable.fontMaterial = obj
-  ;
-  (lable.fontMaterial):SetTexture("_MainTex", mat:GetTexture("_MainTex"))
+  lable.fontMaterial:SetTexture("_MainTex", mat:GetTexture("_MainTex"))
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._LoadSpine = function(self, nState)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN16ResultController:_LoadSpine(nState)
   local spineName = "jiaersi_n16_spine_idle"
   local aniName = "Story_norm"
   if nState == 1 then
     aniName = "Story_norm"
-  else
-    if nState == 2 then
-      aniName = "Story_smile"
-    else
-      if nState == 3 then
-        aniName = "Story_surprise"
-      end
-    end
+  elseif nState == 2 then
+    aniName = "Story_smile"
+  elseif nState == 3 then
+    aniName = "Story_surprise"
   end
-  if (string.isnullorempty)(spineName) then
-    return 
+  if string.isnullorempty(spineName) then
+    return
   end
   local name = nState == 3 and "Spine2" or "Spine"
   self._spine = self:GetUIComponent("SpineLoader", name)
   if not self._spineSke then
-    (self._spine):LoadSpine(spineName)
+    self._spine:LoadSpine(spineName)
   end
   if self._spine then
-    self._spineSke = (self._spine).CurrentSkeleton
+    self._spineSke = self._spine.CurrentSkeleton
     if not self._spineSke then
-      self._spineSke = (self._spine).CurrentMultiSkeleton
+      self._spineSke = self._spine.CurrentMultiSkeleton
     end
     if self._spineSke then
-      ((self._spineSke).AnimationState):SetAnimation(0, aniName, true)
+      self._spineSke.AnimationState:SetAnimation(0, aniName, true)
     end
   end
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController._LoadEffect = function(self, parentObj)
-  -- function num : 0_24 , upvalues : _ENV
+function UIN16ResultController:_LoadEffect(parentObj)
   local effName = "uieff_BattleResult_ExtraItem.prefab"
   if not self._resReqs then
     self._resReqs = {}
   end
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(effName, LoadType.GameObject)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(effName, LoadType.GameObject)
   local effectObj = req.Obj
   effectObj:SetActive(true)
-  ;
-  (effectObj.transform):SetParent(parentObj.transform)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (effectObj.transform).localScale = Vector3(1, 1, 1)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (effectObj.transform).position = (parentObj.transform).position
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._resReqs)[#self._resReqs + 1] = req
+  effectObj.transform:SetParent(parentObj.transform)
+  effectObj.transform.localScale = Vector3(1, 1, 1)
+  effectObj.transform.position = parentObj.transform.position
+  self._resReqs[#self._resReqs + 1] = req
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-UIN16ResultController.CheckActivityOver = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIN16ResultController:CheckActivityOver()
+  local timeModule = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = timeModule:GetServerTime() / 1000
-  do return self._endTime < nowTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return nowTime > self._endTime
 end
-
-

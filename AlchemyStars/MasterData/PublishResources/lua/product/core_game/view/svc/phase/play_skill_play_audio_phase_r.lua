@@ -1,70 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_play_audio_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPlayAudioPhase", PlaySkillPhaseBase)
 PlaySkillPlayAudioPhase = PlaySkillPlayAudioPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPlayAudioPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillPlayAudioPhase:PlayFlight(TT, casterEntity, phaseParam)
   local audioType = phaseParam:GetAudioType()
-  if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    return 
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    return
   end
   if audioType == SkillAudioType.Cast then
-    local skillEffectResultContainer = ((casterEntity:SkillRoutine()):GetResultContainer())
-    local isSlantAttack = nil
+    local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+    local isSlantAttack
     if phaseParam:GetSlantAudioID() then
       local attackPos = casterEntity:GetRenderGridPosition()
       local damageResult = skillEffectResultContainer:GetEffectResultsByType(SkillEffectType.Damage)
       if damageResult and #damageResult.array > 0 then
-        local damage = (damageResult.array)[1]
+        local damage = damageResult.array[1]
         local damagePos = damage:GetGridPos()
         if attackPos.x ~= damagePos.x and attackPos.y ~= damagePos.y then
           isSlantAttack = true
         end
       end
     end
-    do
-      do
-        local delayTime = phaseParam:GetSoundDelay(skillEffectResultContainer:IsLastNormalAttackAtOnGrid(), isSlantAttack)
-        if delayTime > 0 then
-          YIELD(TT, delayTime)
-        end
-        ;
-        (AudioHelperController.PlayInnerGameSfx)(phaseParam:GetAudioID(isSlantAttack))
-        if audioType == SkillAudioType.Hit then
-          local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-          local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
-          if not damageResult then
-            return 
-          end
-          local damageInfo = damageResult:GetDamageInfo(1)
-          if damageInfo and damageInfo:GetDamageType() == DamageType.Guard then
-            local beAttackEntityID = damageResult:GetTargetID()
-            local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
-            local hitSoundID = 2002
-            ;
-            (AudioHelperController.PlayInnerGameSfx)(hitSoundID)
-          else
-          end
-          do
-            if damageInfo and damageInfo:GetDamageType() == DamageType.Miss then
-              do
-                (AudioHelperController.PlayInnerGameSfx)(phaseParam:GetAudioID())
-                if audioType == SkillAudioType.Voice then
-                  (InnerGameHelperRender.InnerGamePlayPetVoid)(phaseParam:GetAudioID(), casterEntity)
-                end
-              end
-            end
-          end
-        end
-      end
+    local delayTime = phaseParam:GetSoundDelay(skillEffectResultContainer:IsLastNormalAttackAtOnGrid(), isSlantAttack)
+    if 0 < delayTime then
+      YIELD(TT, delayTime)
     end
+    AudioHelperController.PlayInnerGameSfx(phaseParam:GetAudioID(isSlantAttack))
+  elseif audioType == SkillAudioType.Hit then
+    local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+    local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
+    if not damageResult then
+      return
+    end
+    local damageInfo = damageResult:GetDamageInfo(1)
+    if damageInfo and damageInfo:GetDamageType() == DamageType.Guard then
+      local beAttackEntityID = damageResult:GetTargetID()
+      local targetEntity = self._world:GetEntityByID(beAttackEntityID)
+      local hitSoundID = 2002
+      AudioHelperController.PlayInnerGameSfx(hitSoundID)
+    elseif damageInfo and damageInfo:GetDamageType() == DamageType.Miss then
+    else
+      AudioHelperController.PlayInnerGameSfx(phaseParam:GetAudioID())
+    end
+  elseif audioType == SkillAudioType.Voice then
+    InnerGameHelperRender.InnerGamePlayPetVoid(phaseParam:GetAudioID(), casterEntity)
   end
 end
-
-

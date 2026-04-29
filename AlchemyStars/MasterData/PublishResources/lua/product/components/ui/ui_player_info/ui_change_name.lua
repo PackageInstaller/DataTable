@@ -1,38 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_player_info/ui_change_name.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIChangeNameController", UIController)
 UIChangeNameController = UIChangeNameController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIChangeNameController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIChangeNameController:OnShow(uiParams)
   self._playerInfo = uiParams[1]
-  self._cast_count = ((Cfg.cfg_global).change_chapter_name_cast).IntValue or 200
-  self._cast_id = ((Cfg.cfg_global).change_chapter_name_cast_item_id).IntValue or 3000003
-  self._nameMaxValue = ((Cfg.cfg_global).change_chapter_name_max_value_code).IntValue or 14
+  self._cast_count = Cfg.cfg_global.change_chapter_name_cast.IntValue or 200
+  self._cast_id = Cfg.cfg_global.change_chapter_name_cast_item_id.IntValue or 3000003
+  self._nameMaxValue = Cfg.cfg_global.change_chapter_name_max_value_code.IntValue or 14
   self._roleModule = self:GetModule(RoleModule)
-  local changeNameCount = (self._roleModule):GetChangeNameTimes()
-  ;
-  (Log.debug)("###[UIChangeNameController] changeNameCount --> ", changeNameCount)
+  local changeNameCount = self._roleModule:GetChangeNameTimes()
+  Log.debug("###[UIChangeNameController] changeNameCount --> ", changeNameCount)
   self._firstChange = changeNameCount <= 0
   self:_GetComponents()
   self:_OnValue()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeNameController.OnHide = function(self)
-  -- function num : 0_1
+function UIChangeNameController:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeNameController._GetComponents = function(self)
-  -- function num : 0_2
+function UIChangeNameController:_GetComponents()
   self._castTexLeft = self:GetUIComponent("UILocalizationText", "castLeft")
   self._castTexRight = self:GetUIComponent("UILocalizationText", "castRight")
   self._castImg = self:GetUIComponent("Image", "castImg")
@@ -45,181 +30,120 @@ UIChangeNameController._GetComponents = function(self)
   self._castImgFirst = self:GetUIComponent("Image", "castImgFirst")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeNameController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local nameShowMaxValue = ((Cfg.cfg_global).change_chapter_name_max_value_view).IntValue or 7
-  ;
-  (self._rulerTex):SetText((string.format)((StringTable.Get)("str_player_info_the_name_ruler"), nameShowMaxValue))
+function UIChangeNameController:_OnValue()
+  local nameShowMaxValue = Cfg.cfg_global.change_chapter_name_max_value_view.IntValue or 7
+  self._rulerTex:SetText(string.format(StringTable.Get("str_player_info_the_name_ruler"), nameShowMaxValue))
   local itemName = ""
-  local cfg_item = (Cfg.cfg_item)[self._cast_id]
+  local cfg_item = Cfg.cfg_item[self._cast_id]
   if cfg_item then
-    itemName = (StringTable.Get)(cfg_item.Name)
+    itemName = StringTable.Get(cfg_item.Name)
   else
-    ;
-    (Log.fatal)("###playerinfo - cfg_item is nil ! id - ", self._cast_id)
+    Log.fatal("###playerinfo - cfg_item is nil ! id - ", self._cast_id)
   end
   local castStr = self._cast_count .. " " .. itemName
   local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  local itemIcon = ((Cfg.cfg_global).change_chapter_name_cast_item_icon).StrValue or "toptoon_3000003"
-  ;
-  (self._castNormal):SetActive(not self._firstChange)
-  ;
-  (self._castFirst):SetActive(self._firstChange)
+  local itemIcon = Cfg.cfg_global.change_chapter_name_cast_item_icon.StrValue or "toptoon_3000003"
+  self._castNormal:SetActive(not self._firstChange)
+  self._castFirst:SetActive(self._firstChange)
   if self._firstChange then
-    (self._castTexLeftFirst):SetText((StringTable.Get)("str_player_info_change_name_cast_first"))
-    ;
-    (self._castTexRightFirst):SetText(castStr)
-    -- DECOMPILER ERROR at PC79: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._castImgFirst).sprite = atlas:GetSprite(itemIcon)
+    self._castTexLeftFirst:SetText(StringTable.Get("str_player_info_change_name_cast_first"))
+    self._castTexRightFirst:SetText(castStr)
+    self._castImgFirst.sprite = atlas:GetSprite(itemIcon)
   else
-    ;
-    (self._castTexLeft):SetText((StringTable.Get)("str_player_info_change_name_cast"))
-    ;
-    (self._castTexRight):SetText(castStr)
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._castImg).sprite = atlas:GetSprite(itemIcon)
+    self._castTexLeft:SetText(StringTable.Get("str_player_info_change_name_cast"))
+    self._castTexRight:SetText(castStr)
+    self._castImg.sprite = atlas:GetSprite(itemIcon)
   end
-  self._etl = (UICustomUIEventListener.Get)((self._inputField).gameObject)
+  self._etl = UICustomUIEventListener.Get(self._inputField.gameObject)
   self:AddUICustomEventListener(self._etl, UIEvent.Press, function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    if (self._inputField).touchScreenKeyboard then
+    if self._inputField.touchScreenKeyboard then
       pcall(self.ActiveKeyboard, self, false)
     end
-  end
-)
-  ;
-  ((self._inputField).onEndEdit):AddListener(function()
-    -- function num : 0_3_1 , upvalues : _ENV, self
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-    if (string.len)((self._inputField).text) <= 0 then
-      ((self._inputField).placeholder).enabled = true
+  end)
+  self._inputField.onEndEdit:AddListener(function()
+    if string.len(self._inputField.text) <= 0 then
+      self._inputField.placeholder.enabled = true
     end
-  end
-)
-  ;
-  ((self._inputField).onValueChanged):AddListener(function()
-    -- function num : 0_3_2 , upvalues : self, _ENV
-    local s = (self._inputField).text
-    if (string.match)(s, " ") then
-      (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
-      s = (string.gsub)(s, " ", "")
+  end)
+  self._inputField.onValueChanged:AddListener(function()
+    local s = self._inputField.text
+    if string.match(s, " ") then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
+      s = string.gsub(s, " ", "")
     end
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._inputField).text = s
-  end
-)
+    self._inputField.text = s
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeNameController.ActiveKeyboard = function(self, active)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ((self._inputField).touchScreenKeyboard).active = active
+function UIChangeNameController:ActiveKeyboard(active)
+  self._inputField.touchScreenKeyboard.active = active
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeNameController.backOnClick = function(self)
-  -- function num : 0_5
+function UIChangeNameController:backOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeNameController.changeBtnOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIChangeNameController:changeBtnOnClick()
   if self:CheckCreateNameError() then
-    return 
+    return
   end
   local idip_mng = self:GetModule(IdipgameModule)
   if idip_mng:TextBanHandle(IDIPBanType.IDIPBan_Nick) == true then
-    return 
+    return
   end
   self:Lock("UIChangeNameController:changeBtnOnClick")
   self:StartTask(self.OnchangeBtnOnClick, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeNameController.CheckCreateNameError = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  if (string.isnullorempty)((self._inputField).text) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_guide_create_no_name"))
+function UIChangeNameController:CheckCreateNameError()
+  if string.isnullorempty(self._inputField.text) then
+    ToastManager.ShowToast(StringTable.Get("str_guide_create_no_name"))
     return true
   end
-  self.newName = (self._inputField).text
-  if self._nameMaxValue < (HelperProxy:GetInstance()):GetCharLength(self.newName) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
+  self.newName = self._inputField.text
+  if HelperProxy:GetInstance():GetCharLength(self.newName) > self._nameMaxValue then
+    ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
     return true
   end
-  local oldName = (self._roleModule):GetName()
+  local oldName = self._roleModule:GetName()
   if oldName == self.newName then
-    (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_NEWNAME_THE_SAME_AS_OLD"))
+    ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_NEWNAME_THE_SAME_AS_OLD"))
     return true
   end
   if self._firstChange then
-    local mRole = (GameGlobal.GetModule)(RoleModule)
-    do
-      local count = mRole:GetGlow()
-      if count < self._cast_count then
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIShopCurrency1To2", self._cast_count - count)
-        return true
-      end
-      return false
+  else
+    local mRole = GameGlobal.GetModule(RoleModule)
+    local count = mRole:GetGlow()
+    if count < self._cast_count then
+      GameGlobal.UIStateManager():ShowDialog("UIShopCurrency1To2", self._cast_count - count)
+      return true
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIChangeNameController.OnchangeBtnOnClick = function(self, TT)
-  -- function num : 0_8 , upvalues : _ENV
-  local res = (self._roleModule):Request_AmendRoleName(TT, self.newName)
+function UIChangeNameController:OnchangeBtnOnClick(TT)
+  local res = self._roleModule:Request_AmendRoleName(TT, self.newName)
   self:UnLock("UIChangeNameController:changeBtnOnClick")
   if res:GetSucc() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnChapcterInfoChanged)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_player_info_change_name_succ"))
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnChapcterInfoChanged)
+    ToastManager.ShowToast(StringTable.Get("str_player_info_change_name_succ"))
     self:CloseDialog()
   else
     local errorCode = res:GetResult()
-    ;
-    (Log.fatal)("###playerinfo - RequestChangeName fail ! result - ", errorCode)
+    Log.fatal("###playerinfo - RequestChangeName fail ! result - ", errorCode)
     if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_INVALID then
-      (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
-    else
-      if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_LIMIT then
-        (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
-      else
-        if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
-          (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_DIRTY_NICK"))
-        else
-          if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_REPEAT then
-            (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_REPEAT"))
-          else
-            if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_SPE then
-              (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_CHANGE_NICK_SPE"))
-            else
-              if errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DUPLICATE_NICK then
-                (ToastManager.ShowToast)((StringTable.Get)("str_guide_ROLE_ERROR_DUPLICATE_NICK"))
-              end
-            end
-          end
-        end
-      end
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_INVALID"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_LIMIT then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_LIMIT"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DIRTY_NICK then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_DIRTY_NICK"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_REPEAT then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_REPEAT"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_CHANGE_NICK_SPE then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_CHANGE_NICK_SPE"))
+    elseif errorCode == ROLE_RESULT_CODE.ROLE_ERROR_DUPLICATE_NICK then
+      ToastManager.ShowToast(StringTable.Get("str_guide_ROLE_ERROR_DUPLICATE_NICK"))
     end
   end
 end
-
-

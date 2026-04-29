@@ -1,64 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/idol_y/ui_n25_idol_achieve_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25IdolAchieveReward", UICustomWidget)
 UIN25IdolAchieveReward = UIN25IdolAchieveReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25IdolAchieveReward.Constructor = function(self)
-  -- function num : 0_0
+function UIN25IdolAchieveReward:Constructor()
   self._parent = nil
   self._data = nil
   self._itemId = nil
   self._itemCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveReward.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN25IdolAchieveReward:OnShow(uiParams)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._iconImg = self:GetUIComponent("RawImage", "imgIcon")
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
-  ;
-  ((self._txtName).gameObject):SetActive(false)
+  self._txtName.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveReward.OnHide = function(self)
-  -- function num : 0_2
+function UIN25IdolAchieveReward:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveReward.SetData = function(self, parent, data)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25IdolAchieveReward:SetData(parent, data)
   self._parent = parent
   self._data = data
   if data == nil or #data < 2 then
-    return 
+    return
   end
   self._itemId = data[1]
   self._itemCount = data[2]
-  local cfgItem = (Cfg.cfg_item)[self._itemId]
+  local cfgItem = Cfg.cfg_item[self._itemId]
   if cfgItem ~= nil then
-    (self._iconLoader):LoadImage(cfgItem.Icon)
+    self._iconLoader:LoadImage(cfgItem.Icon)
   end
-  ;
-  (self._txtCount):SetText((string.format)("%d", self._itemCount))
+  self._txtCount:SetText(string.format("%d", self._itemCount))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25IdolAchieveReward.ButtonOnClick = function(self, go)
-  -- function num : 0_4
+function UIN25IdolAchieveReward:ButtonOnClick(go)
   if self._itemId ~= nil then
-    (self._parent):OnShowItemInfo(self._itemId, (go.transform).position)
+    self._parent:OnShowItemInfo(self._itemId, go.transform.position)
   end
 end
-
-

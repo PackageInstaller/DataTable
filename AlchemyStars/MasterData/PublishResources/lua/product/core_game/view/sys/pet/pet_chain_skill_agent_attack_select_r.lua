@@ -1,58 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/pet/pet_chain_skill_agent_attack_select_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("pet_chain_skill_attack_r")
 _class("PetChainSkillAgentAttackSelect", PetChainSkillAttack)
 PetChainSkillAgentAttackSelect = PetChainSkillAgentAttackSelect
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PetChainSkillAgentAttackSelect.DoPlayPetAgentChainAttackSelect = function(self, TT, casterEntity, chainTimeIndex)
-  -- function num : 0_0 , upvalues : _ENV
+function PetChainSkillAgentAttackSelect:DoPlayPetAgentChainAttackSelect(TT, casterEntity, chainTimeIndex)
   local buffViewCmpt = casterEntity:BuffView()
   local agentChainEntityID = buffViewCmpt:GetBuffValue("AgentChainEntityID")
-  local agentChainEntity = (self._world):GetEntityByID(agentChainEntityID)
+  local agentChainEntity = self._world:GetEntityByID(agentChainEntityID)
   if not agentChainEntity then
-    return 
+    return
   end
-  ;
-  (agentChainEntity:SkillRoutine()):ClearSkillRoutine()
+  agentChainEntity:SkillRoutine():ClearSkillRoutine()
   local agentDataList = self:_GetAgentChainAttackDataByEntityID(casterEntity:GetID())
   local chainAttackCount = #agentDataList
   if chainAttackCount <= 0 then
-    return 
+    return
   end
   if not agentDataList[chainTimeIndex] then
-    return 
+    return
   end
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  local playSkillService = (self._world):GetService("PlaySkill")
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  local playSkillService = self._world:GetService("PlaySkill")
   self:_OnResultDeadEntityAddDeadFlag(casterEntity:GetID(), chainTimeIndex)
   local agentData = agentDataList[chainTimeIndex]
-  local agentPos = (agentChainEntity:GridLocation()):GetGridPos()
-  local agentDir = (casterEntity:GridLocation()):GetGridDir()
+  local agentPos = agentChainEntity:GridLocation():GetGridPos()
+  local agentDir = casterEntity:GridLocation():GetGridDir()
   agentChainEntity:SetLocation(agentPos, agentDir)
   local results = agentData:GetEffectResultDict()
   local skillID = agentData:GetSkillID()
   local resContainer = SkillEffectResultContainer:New()
   resContainer:SetEffectResultDict(results)
   resContainer:SetScopeResult(agentData:GetScopeResult())
-  ;
-  (Log.fatal)("PlayChainSkill MultiStage Agent :", skillID)
+  Log.fatal("PlayChainSkill MultiStage Agent :", skillID)
   local isFinalAttack = agentData:IsFinalAttack()
   if chainAttackCount == chainTimeIndex and isFinalAttack then
     self:_CheckFinalAttack(resContainer, casterEntity)
   end
-  ;
-  (agentChainEntity:SkillRoutine()):SetResultContainer(resContainer)
+  agentChainEntity:SkillRoutine():SetResultContainer(resContainer)
   local skillPhaseArray = self:_GetChainSkillPhaseArray(agentChainEntity, skillID)
   local taskid = playSkillService:StartSkillRoutine(agentChainEntity, skillPhaseArray, skillID)
-  while not (TaskHelper:GetInstance()):IsTaskFinished(taskid, true) do
+  while not TaskHelper:GetInstance():IsTaskFinished(taskid, true) do
     YIELD(TT)
   end
   playBuffSvc:PlayBuffView(TT, NTSingleChainSkillAttackFinish:New(casterEntity, chainTimeIndex, 1))
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local chainTimes, extraTimes = utilData:OnGetPetChainTimesForRender(casterEntity)
   if extraTimes and chainTimeIndex == extraTimes then
     playBuffSvc:PlayBuffView(TT, NTExtraChainSkillAttackFinish:New(casterEntity, chainTimeIndex, 1))
@@ -60,14 +50,9 @@ PetChainSkillAgentAttackSelect.DoPlayPetAgentChainAttackSelect = function(self, 
   self:_ShowChainAttackMonsterDead(TT)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetChainSkillAgentAttackSelect._GetAgentChainAttackDataByEntityID = function(self, casterEntityID)
-  -- function num : 0_1 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local chainAtkResCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.ChainAttack)
+function PetChainSkillAgentAttackSelect:_GetAgentChainAttackDataByEntityID(casterEntityID)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local chainAtkResCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.ChainAttack)
   local chainAttackData = chainAtkResCmpt:GetPetAgentChainSkillDataList(casterEntityID)
   return chainAttackData
 end
-
-

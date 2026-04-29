@@ -1,62 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_pet_absorb_maincolorgrid.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectPetAbsorbMaintainColorGridParam", SkillEffectParamBase)
 SkillEffectPetAbsorbMaintainColorGridParam = SkillEffectPetAbsorbMaintainColorGridParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectPetAbsorbMaintainColorGridParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectPetAbsorbMaintainColorGridParam:Constructor(t)
   self._trapID = {}
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
   if type(t.trapID) == "number" then
-    (self._trapID)[t.trapID] = true
-  else
-    if type(t.trapID) == "table" then
-      for _,id in ipairs(t.trapID) do
-        -- DECOMPILER ERROR at PC21: Confused about usage of register: R7 in 'UnsetPending'
-
-        (self._trapID)[id] = true
-      end
+    self._trapID[t.trapID] = true
+  elseif type(t.trapID) == "table" then
+    for _, id in ipairs(t.trapID) do
+      self._trapID[id] = true
     end
   end
-  do
-    if not t.notifyTrapSkillTrapIDList then
-      self._notifyTrapSkillTrapIDList = {}
-      self._notifySecondPieceType = t.notifySecondPieceType
-    end
-  end
+  self._notifyTrapSkillTrapIDList = t.notifyTrapSkillTrapIDList or {}
+  self._notifySecondPieceType = t.notifySecondPieceType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPetAbsorbMaintainColorGridParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectPetAbsorbMaintainColorGridParam:GetEffectType()
   return SkillEffectType.PetAbsorbMaintainColorGrid
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPetAbsorbMaintainColorGridParam.GetTrapID = function(self)
-  -- function num : 0_2
+function SkillEffectPetAbsorbMaintainColorGridParam:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPetAbsorbMaintainColorGridParam.GetNotifyTrapSkillTrapIDList = function(self)
-  -- function num : 0_3
+function SkillEffectPetAbsorbMaintainColorGridParam:GetNotifyTrapSkillTrapIDList()
   return self._notifyTrapSkillTrapIDList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectPetAbsorbMaintainColorGridParam.GetNotifySecondPieceType = function(self)
-  -- function num : 0_4
+function SkillEffectPetAbsorbMaintainColorGridParam:GetNotifySecondPieceType()
   return self._notifySecondPieceType
 end
-
-

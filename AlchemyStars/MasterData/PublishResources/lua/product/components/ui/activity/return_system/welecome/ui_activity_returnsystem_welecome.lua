@@ -1,82 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/return_system/welecome/ui_activity_returnsystem_welecome.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityReturnSystemWelecome", UICustomWidget)
 UIActivityReturnSystemWelecome = UIActivityReturnSystemWelecome
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityReturnSystemWelecome.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityReturnSystemWelecome:OnShow()
   self.txtHint = self:GetUIComponent("UILocalizationText", "txtHint")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemWelecome.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityReturnSystemWelecome:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemWelecome.SetData = function(self, campaign, remainingTimeCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityReturnSystemWelecome:SetData(campaign, remainingTimeCallback)
   self._campaign = campaign
-  self._component = (UIActivityReturnSystemHelper.GetComponentByTabName)(self._campaign, "welecome", 1)
+  self._component = UIActivityReturnSystemHelper.GetComponentByTabName(self._campaign, "welecome", 1)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemWelecome.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local isRecv = (self._component):IsRecvBackReward()
+function UIActivityReturnSystemWelecome:Flush()
+  local isRecv = self._component:IsRecvBackReward()
   local txtId = isRecv and "str_discovery_chapter_collected" or "str_return_system_get_award"
-  ;
-  (self.txtHint):SetText((StringTable.Get)(txtId))
+  self.txtHint:SetText(StringTable.Get(txtId))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemWelecome.imgIconOnClick = function(self, go)
-  -- function num : 0_4
+function UIActivityReturnSystemWelecome:imgIconOnClick(go)
   self:GetAward()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemWelecome.imgGetOnClick = function(self, go)
-  -- function num : 0_5
+function UIActivityReturnSystemWelecome:imgGetOnClick(go)
   self:GetAward()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityReturnSystemWelecome.GetAward = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local isRecv = (self._component):IsRecvBackReward()
+function UIActivityReturnSystemWelecome:GetAward()
+  local isRecv = self._component:IsRecvBackReward()
   if isRecv then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    (self._component):HandleRecvBackReward(TT, res)
+    self._component:HandleRecvBackReward(TT, res)
     if res:GetSucc() then
-      (self._component):SetRecvBackRewardGot()
+      self._component:SetRecvBackRewardGot()
       self:Flush()
-      local awards = (self._component):GetAwards()
+      local awards = self._component:GetAwards()
       self:ShowDialog("UIGetItemController", awards)
     else
-      do
-        ;
-        (Log.fatal)("### HandleRecvBackReward failed.")
-      end
+      Log.fatal("### HandleRecvBackReward failed.")
     end
-  end
-, self)
+  end, self)
 end
-
-

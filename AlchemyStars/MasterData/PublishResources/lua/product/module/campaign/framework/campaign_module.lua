@@ -1,20 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/framework/campaign_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CampaignModule", GameModule)
 CampaignModule = CampaignModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CampaignModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CampaignModule:Constructor()
   self.m_component_factory = CampaignComponentFactory:New()
-  ;
-  (self.m_component_factory):InitComponentRegister(self)
+  self.m_component_factory:InitComponentRegister(self)
   self.m_adapter_pool = CampaignComponentLocalProcessPool:New()
-  ;
-  (self.m_adapter_pool):InitComponentRegister(self)
+  self.m_adapter_pool:InitComponentRegister(self)
   self.m_campaign_manager = CampaignManager:New(self)
   self.m_LastCampaignLoadInfoListTime = 0
   self.m_LastCampaignLoadInfoOpenTime = 0
@@ -22,81 +13,51 @@ CampaignModule.Constructor = function(self)
   self.campaign_review_time_start = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Init = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.cb = (GameHelper:GetInstance()):CreateCallback(self.OnLoginFinish, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnCreateMe, self.cb)
-  ;
-  (self.caller):RegisterPushHandler(CEventStepChangeNotify, self.HandleCampaignStepChange, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventCampaignPushNotify, self.HandleCampaignProtoPushNotify, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventChangeCampaignSampleNotify, self.HandleChangeCampaignSampleNotify, self)
+function CampaignModule:Init()
+  self.cb = GameHelper:GetInstance():CreateCallback(self.OnLoginFinish, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnCreateMe, self.cb)
+  self.caller:RegisterPushHandler(CEventStepChangeNotify, self.HandleCampaignStepChange, self)
+  self.caller:RegisterPushHandler(CEventCampaignPushNotify, self.HandleCampaignProtoPushNotify, self)
+  self.caller:RegisterPushHandler(CEventChangeCampaignSampleNotify, self.HandleChangeCampaignSampleNotify, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((CampaignModule.super).Dispose)(self)
+function CampaignModule:Dispose()
+  CampaignModule.super.Dispose(self)
   self.m_campaign_manager = nil
   if self.cb ~= nil then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnCreateMe, self.cb)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnCreateMe, self.cb)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.OnLoginFinish = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.LoadCampaignInfoListTask, self)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.CampaignReviewLoadInfoList, self)
+function CampaignModule:OnLoginFinish()
+  GameGlobal.TaskManager():StartTask(self.LoadCampaignInfoListTask, self)
+  GameGlobal.TaskManager():StartTask(self.CampaignReviewLoadInfoList, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.LoadCampaignInfoListTask = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function CampaignModule:LoadCampaignInfoListTask(TT)
   local res = AsyncRequestRes:New()
   self:CampaignLoadInfoList(TT, res)
   if res.m_result ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] LoadCampaignInfoListTask failed!")
+    Log.fatal("[Campaign][CampaignModule] LoadCampaignInfoListTask failed!")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.SetCampaignLoadInfoListResResult = function(self, res, eResult)
-  -- function num : 0_5
+function CampaignModule:SetCampaignLoadInfoListResResult(res, eResult)
   res.m_result = eResult
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_LastCampaignLoadInfoListRes).m_result = eResult
+  self.m_LastCampaignLoadInfoListRes.m_result = eResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.SetCampaignLoadInfoListResSuccess = function(self, res, bSetSuccess)
-  -- function num : 0_6
+function CampaignModule:SetCampaignLoadInfoListResSuccess(res, bSetSuccess)
   res:SetSucc(bSetSuccess)
-  ;
-  (self.m_LastCampaignLoadInfoListRes):SetSucc(bSetSuccess)
+  self.m_LastCampaignLoadInfoListRes:SetSucc(bSetSuccess)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CampaignLoadInfoList = function(self, TT, res)
-  -- function num : 0_7 , upvalues : _ENV
-  local l_curTime = (os.time)()
-  if l_curTime - self.m_LastCampaignLoadInfoListTime <= 2 and self.m_LastCampaignLoadInfoListRes ~= nil and (self.m_LastCampaignLoadInfoListRes):GetSucc() then
-    res.m_result = (self.m_LastCampaignLoadInfoListRes).m_result
+function CampaignModule:CampaignLoadInfoList(TT, res)
+  local l_curTime = os.time()
+  if l_curTime - self.m_LastCampaignLoadInfoListTime <= 2 and self.m_LastCampaignLoadInfoListRes ~= nil and self.m_LastCampaignLoadInfoListRes:GetSucc() then
+    res.m_result = self.m_LastCampaignLoadInfoListRes.m_result
     res:SetSucc(true)
-    return 
+    return
   end
   self.m_LastCampaignLoadInfoListTime = l_curTime
   self.m_LastCampaignLoadInfoListRes = AsyncRequestRes:New()
@@ -104,333 +65,277 @@ CampaignModule.CampaignLoadInfoList = function(self, TT, res)
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignLoadInfoList Call failed!")
+    Log.fatal("[Campaign][CampaignModule] CampaignLoadInfoList Call failed!")
     self:SetCampaignLoadInfoListResResult(res, CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR)
-    return 
+    return
   end
   local replyEvent = CEventReplyCampaignLoadInfoList(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignLoadInfoList failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] CampaignLoadInfoList failed with replyEvent == nil")
     self:SetCampaignLoadInfoListResResult(res, CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE)
-    return 
+    return
   end
   self:SetCampaignLoadInfoListResResult(res, replyEvent.ret)
   if replyEvent.ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignLoadInfoList failed with ret= ", replyEvent.ret)
-    return 
+    Log.fatal("[Campaign][CampaignModule] CampaignLoadInfoList failed with ret= ", replyEvent.ret)
+    return
   else
     self:SetCampaignLoadInfoListResSuccess(res, true)
     for i = 1, #replyEvent.sample_list do
-      (self.m_campaign_manager):UpdateCampaignSampleInfo((replyEvent.sample_list)[i])
+      self.m_campaign_manager:UpdateCampaignSampleInfo(replyEvent.sample_list[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CampaignComProtoLoadInfo = function(self, TT, res, a_campaign_id)
-  -- function num : 0_8 , upvalues : _ENV
+function CampaignModule:CampaignComProtoLoadInfo(TT, res, a_campaign_id)
   local request = CEventRequestCampaignLoadInfo:New()
   request.m_id = a_campaign_id
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignComProtoLoadInfo Call failed!")
+    Log.fatal("[Campaign][CampaignModule] CampaignComProtoLoadInfo Call failed!")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
-    return 
+    return
   end
   local replyEvent = CEventReplyCampaignLoadInfo(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignComProtoLoadInfo failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] CampaignComProtoLoadInfo failed with replyEvent == nil")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
-    return 
+    return
   end
   res.m_result = replyEvent.ret
   if replyEvent.ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignComProtoLoadInfo failed with ret= ", replyEvent.ret)
-    return 
+    Log.fatal("[Campaign][CampaignModule] CampaignComProtoLoadInfo failed with ret= ", replyEvent.ret)
+    return
   else
     res:SetSucc(true)
-    ;
-    (self.m_campaign_manager):InitCampaignObj(a_campaign_id, replyEvent.m_campaign_load_info)
+    self.m_campaign_manager:InitCampaignObj(a_campaign_id, replyEvent.m_campaign_load_info)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CampaignListComProtoLoadInfo = function(self, TT, res, a_campaign_id_list)
-  -- function num : 0_9 , upvalues : _ENV
+function CampaignModule:CampaignListComProtoLoadInfo(TT, res, a_campaign_id_list)
   local request = CEventRequestCampaignPreviewList:New()
   request.campaign_list = a_campaign_id_list
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignListComProtoLoadInfo Call failed!")
+    Log.fatal("[Campaign][CampaignModule] CampaignListComProtoLoadInfo Call failed!")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
-    return 
+    return
   end
   local replyEvent = CEventReplyCampaignPreviewList(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignListComProtoLoadInfo failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] CampaignListComProtoLoadInfo failed with replyEvent == nil")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
-    return 
+    return
   end
   res.m_result = replyEvent.ret
   if replyEvent.ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignListComProtoLoadInfo failed with ret= ", replyEvent.ret)
-    return 
+    Log.fatal("[Campaign][CampaignModule] CampaignListComProtoLoadInfo failed with ret= ", replyEvent.ret)
+    return
   else
     res:SetSucc(true)
-    for k,v in pairs(replyEvent.m_campaign_preview_info_list) do
-      (self.m_campaign_manager):InitCampaignObj(k, v)
+    for k, v in pairs(replyEvent.m_campaign_preview_info_list) do
+      self.m_campaign_manager:InitCampaignObj(k, v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CampaignClearNewFlag = function(self, TT, res, campaignID)
-  -- function num : 0_10 , upvalues : _ENV
+function CampaignModule:CampaignClearNewFlag(TT, res, campaignID)
   local request = CEventRequestCampaignClearNewFlag:New()
   request.m_campaign_id = campaignID
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignClearNewFlag Call failed!")
+    Log.fatal("[Campaign][CampaignModule] CampaignClearNewFlag Call failed!")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
-    return 
+    return
   end
   local replyEvent = CEventReplyCampaignClearNewFlag(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignClearNewFlag failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] CampaignClearNewFlag failed with replyEvent == nil")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
-    return 
+    return
   end
   res.m_result = replyEvent.m_ret
   if replyEvent.m_ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignClearNewFlag failed with ret= ", replyEvent.m_ret)
-    return 
+    Log.fatal("[Campaign][CampaignModule] CampaignClearNewFlag failed with ret= ", replyEvent.m_ret)
+    return
   else
     res:SetSucc(true)
-    ;
-    (self.m_campaign_manager):UpdateCampaignStep(campaignID, ECampaignStep.CAMPAIGN_STEP_NEW, false)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, campaignID, nil, nil)
+    self.m_campaign_manager:UpdateCampaignStep(campaignID, ECampaignStep.CAMPAIGN_STEP_NEW, false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, campaignID, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignManager.SetRemind = function(self, TT, res, a_campaign_id, is_close_remind)
-  -- function num : 0_11 , upvalues : _ENV
-  local campaign_obj = (self.m_campaign_manager):GetCampaignObj(a_campaign_id)
+function CampaignManager:SetRemind(TT, res, a_campaign_id, is_close_remind)
+  local campaign_obj = self.m_campaign_manager:GetCampaignObj(a_campaign_id)
   if not campaign_obj then
-    (Log.fatal)("[Campaign][CampaignModule] SetRemind not found campaign! ", a_campaign_id)
+    Log.fatal("[Campaign][CampaignModule] SetRemind not found campaign! ", a_campaign_id)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_ID_ERROR
-    return 
+    return
   end
   local request = CEventRequestCampaignSetRemind:New()
   request.campaign_id = a_campaign_id
   request.is_close_remind = is_close_remind
-  request.cfg_version = (campaign_obj.m_sample_info).config_version
+  request.cfg_version = campaign_obj.m_sample_info.config_version
   request.com_last_interactive_time = campaign_obj.m_server_time
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] SetRemind Call failed!")
+    Log.fatal("[Campaign][CampaignModule] SetRemind Call failed!")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
-    return 
+    return
   end
   local replyEvent = CEventReplyCampaignSetRemind(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] SetRemind failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] SetRemind failed with replyEvent == nil")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
-    return 
+    return
   end
   res.m_result = replyEvent.ret
   if replyEvent.ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] SetRemind failed with ret= ", replyEvent.ret)
-    return 
+    Log.fatal("[Campaign][CampaignModule] SetRemind failed with ret= ", replyEvent.ret)
+    return
   else
     res:SetSucc(true)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CampaignComProtoRequest = function(self, TT, res, a_campaign_id, a_component_id, req, rep)
-  -- function num : 0_12 , upvalues : _ENV
+function CampaignModule:CampaignComProtoRequest(TT, res, a_campaign_id, a_component_id, req, rep)
   local request = CEventCampaignRequest:New()
   request.m_id = a_campaign_id
   request.m_component_id = a_component_id
-  request.m_opt = (req.GetHandleCode)()
-  local ret, msg = (lua_dc.SaveStream)(req._className, req)
+  request.m_opt = req.GetHandleCode()
+  local ret, msg = lua_dc.SaveStream(req._className, req)
   if not ret then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignComProtoRequest SaveStream failed! _classname:", req._classname, ", msg:", msg)
-    return 
+    Log.fatal("[Campaign][CampaignModule] CampaignComProtoRequest SaveStream failed! _classname:", req._classname, ", msg:", msg)
+    return
   else
     request.m_req_data = msg
   end
-  local campaign_obj = (self.m_campaign_manager):GetCampaignObj(a_campaign_id)
-  if campaign_obj ~= nil and campaign_obj.m_sample_info ~= nil then
-    request.m_config_version = (campaign_obj.m_sample_info).config_version
+  local campaign_obj = self.m_campaign_manager:GetCampaignObj(a_campaign_id)
+  if nil ~= campaign_obj and nil ~= campaign_obj.m_sample_info then
+    request.m_config_version = campaign_obj.m_sample_info.config_version
     request.m_last_interactive_time = campaign_obj.m_server_time
-    ;
-    (Log.debug)("[Campaign][CampaignModule] CampaignProtoRequest id:", a_campaign_id, "ver:", request.m_config_version)
+    Log.debug("[Campaign][CampaignModule] CampaignProtoRequest id:", a_campaign_id, "ver:", request.m_config_version)
   end
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignProtoRequest Call failed!")
+    Log.fatal("[Campaign][CampaignModule] CampaignProtoRequest Call failed!")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
-    return 
+    return
   end
   local replyEvent = CEventCampaignReply(reply.msg)
   if replyEvent == nil then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignProtoRequest failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] CampaignProtoRequest failed with replyEvent == nil")
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
-    return 
+    return
   end
   res.m_result = replyEvent.ret
   if replyEvent.ret == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CONFIG_CHANGE then
-    (Log.debug)("[Campaign][CampaignModule] CampaignProtoRequest failed with E_CAMPAIGN_ERROR_TYPE_CONFIG_CHANGE, ret= ", replyEvent.ret)
+    Log.debug("[Campaign][CampaignModule] CampaignProtoRequest failed with E_CAMPAIGN_ERROR_TYPE_CONFIG_CHANGE, ret= ", replyEvent.ret)
   end
   if res.m_result == CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    local ret, msg = (lua_dc.LoadStream)(rep._className, replyEvent.m_rep_data, rep)
+    local ret, msg = lua_dc.LoadStream(rep._className, replyEvent.m_rep_data, rep)
     if not ret then
-      (Log.error)("[Campaign][CampaignModule]CampaignProtoRequest lua_dc.LoadStream, _className:", rep._className, ", msg = ", msg)
+      Log.error("[Campaign][CampaignModule]CampaignProtoRequest lua_dc.LoadStream, _className:", rep._className, ", msg = ", msg)
     end
-    if campaign_obj ~= nil then
+    if nil ~= campaign_obj then
       campaign_obj:UpdateComponentStep(a_component_id, replyEvent.m_component_step)
     else
-      ;
-      (Log.error)("[Campaign][CampaignModule] CampaignProtoRequest Request is error. Result: ", res.m_result, ", a_id:", a_campaign_id, ", a_component_id: ", a_component_id)
+      Log.error("[Campaign][CampaignModule] CampaignProtoRequest Request is error. Result: ", res.m_result, ", a_id:", a_campaign_id, ", a_component_id: ", a_component_id)
     end
     res:SetSucc(true)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.HandleCampaignStepChange = function(self, msg)
-  -- function num : 0_13 , upvalues : _ENV
-  (Log.debug)("[Campaign][CampaignModule] HandleCampaignStepChange msg:", (msg.m_process):to_string())
-  ;
-  (self.m_campaign_manager):SetCampaignStep((msg.m_process).id, (msg.m_process).step)
-  self:SetComponentSteps((msg.m_process).id, msg.m_component_steps)
-  local questModule = (GameGlobal.GetModule)(QuestModule)
+function CampaignModule:HandleCampaignStepChange(msg)
+  Log.debug("[Campaign][CampaignModule] HandleCampaignStepChange msg:", msg.m_process:to_string())
+  self.m_campaign_manager:SetCampaignStep(msg.m_process.id, msg.m_process.step)
+  self:SetComponentSteps(msg.m_process.id, msg.m_component_steps)
+  local questModule = GameGlobal.GetModule(QuestModule)
   questModule:CalcRedPoint()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnSeasonQuestRedUpdate)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnSeasonQuestRedUpdate)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.HandleCampaignProtoPushNotify = function(self, msg)
-  -- function num : 0_14 , upvalues : _ENV
-  local campaign_obj = (self.m_campaign_manager):GetCampaignObj(msg.m_campaign_id)
+function CampaignModule:HandleCampaignProtoPushNotify(msg)
+  local campaign_obj = self.m_campaign_manager:GetCampaignObj(msg.m_campaign_id)
   if campaign_obj then
     campaign_obj:CampaignComProtoPushNotify(msg)
   else
-    ;
-    (Log.debug)("[Campaign][CampaignModule] CampaignComProtoPushNotify GetCampaignObj error! id:", msg.m_campaign_id)
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.LoadDataAndCampaignComProtoPushNotify, self, msg)
+    Log.debug("[Campaign][CampaignModule] CampaignComProtoPushNotify GetCampaignObj error! id:", msg.m_campaign_id)
+    GameGlobal.TaskManager():StartTask(self.LoadDataAndCampaignComProtoPushNotify, self, msg)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.LoadDataAndCampaignComProtoPushNotify = function(self, TT, msg)
-  -- function num : 0_15 , upvalues : _ENV
+function CampaignModule:LoadDataAndCampaignComProtoPushNotify(TT, msg)
   local res = AsyncRequestRes:New()
   self:CampaignComProtoLoadInfo(TT, res, msg.m_campaign_id)
   if res.m_result ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.error)("[Campaign][CampaignModule] LoadDataAndCampaignComProtoPushNotify load error!", res.m_result, " id:", msg.m_campaign_id)
-    return 
+    Log.error("[Campaign][CampaignModule] LoadDataAndCampaignComProtoPushNotify load error!", res.m_result, " id:", msg.m_campaign_id)
+    return
   end
-  local campaign_obj = (self.m_campaign_manager):GetCampaignObj(msg.m_campaign_id)
+  local campaign_obj = self.m_campaign_manager:GetCampaignObj(msg.m_campaign_id)
   if campaign_obj then
     campaign_obj:CampaignComProtoPushNotify(msg)
   else
-    ;
-    (Log.error)("[Campaign][CampaignModule] LoadDataAndCampaignComProtoPushNotify GetCampaignObj error! id:", msg.m_campaign_id)
+    Log.error("[Campaign][CampaignModule] LoadDataAndCampaignComProtoPushNotify GetCampaignObj error! id:", msg.m_campaign_id)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.HandleChangeCampaignSampleNotify = function(self, msg)
-  -- function num : 0_16 , upvalues : _ENV
+function CampaignModule:HandleChangeCampaignSampleNotify(msg)
   for i = 1, #msg.sample_list do
-    local new_or_change_camp = (msg.sample_list)[i]
-    local camp_obj = (self.m_campaign_manager):GetCampaignObj(new_or_change_camp.id)
-    do
-      do
-        if camp_obj and (camp_obj:GetSampleInfo()).config_version ~= new_or_change_camp.config_version then
-          local res = AsyncRequestRes:New()
-          ;
-          ((GameGlobal.TaskManager)()):StartTask(self.CampaignComProtoLoadInfo, self, res, new_or_change_camp.id)
-        end
-        ;
-        (self.m_campaign_manager):UpdateCampaignSampleInfo((msg.sample_list)[i])
-        -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    local new_or_change_camp = msg.sample_list[i]
+    local camp_obj = self.m_campaign_manager:GetCampaignObj(new_or_change_camp.id)
+    if camp_obj and camp_obj:GetSampleInfo().config_version ~= new_or_change_camp.config_version then
+      local res = AsyncRequestRes:New()
+      GameGlobal.TaskManager():StartTask(self.CampaignComProtoLoadInfo, self, res, new_or_change_camp.id)
     end
+    self.m_campaign_manager:UpdateCampaignSampleInfo(msg.sample_list[i])
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCampaignLocalProcess = function(self, campaign_type)
-  -- function num : 0_17 , upvalues : _ENV
-  local adapter_obj = (self.m_adapter_pool):GetLocalProcess(campaign_type)
+function CampaignModule:GetCampaignLocalProcess(campaign_type)
+  local adapter_obj = self.m_adapter_pool:GetLocalProcess(campaign_type)
   if not adapter_obj then
-    (Log.error)("[Campaign][CampaignModule] GetCampaignLocalProcess not found! campaign_type:", campaign_type)
+    Log.error("[Campaign][CampaignModule] GetCampaignLocalProcess not found! campaign_type:", campaign_type)
     return nil
   end
   return adapter_obj
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCampaignLocalProcessByCampaignId = function(self, TT, campaign_type, campaign_id)
-  -- function num : 0_18 , upvalues : _ENV
+function CampaignModule:GetCampaignLocalProcessByCampaignId(TT, campaign_type, campaign_id)
   local l_pLocalProcess = self:GetCampaignLocalProcess(campaign_type)
   if not l_pLocalProcess then
     return nil
   end
   local l_Obj = l_pLocalProcess:CampaignObjInfo()
-  if not l_Obj or not l_Obj.m_sample_info or (l_Obj.m_sample_info).id ~= campaign_id then
-    l_Obj = (self.m_campaign_manager):GetCampaignObj(campaign_id)
-    do
-      if not l_Obj then
-        local res = AsyncRequestRes:New()
-        self:CampaignComProtoLoadInfo(TT, res, campaign_id)
-        if res and res:GetSucc() then
-          l_Obj = (self.m_campaign_manager):GetCampaignObj(campaign_id)
-        else
-          return nil
-        end
+  if not (l_Obj and l_Obj.m_sample_info) or l_Obj.m_sample_info.id ~= campaign_id then
+    l_Obj = self.m_campaign_manager:GetCampaignObj(campaign_id)
+    if not l_Obj then
+      local res = AsyncRequestRes:New()
+      self:CampaignComProtoLoadInfo(TT, res, campaign_id)
+      if res and res:GetSucc() then
+        l_Obj = self.m_campaign_manager:GetCampaignObj(campaign_id)
+      else
+        return nil
       end
-      l_pLocalProcess:InitComponent(l_Obj)
-      return l_pLocalProcess
     end
+    l_pLocalProcess:InitComponent(l_Obj)
   end
+  return l_pLocalProcess
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCampaignLocalProcessByCampaignId_Local = function(self, campaign_type, campaign_id)
-  -- function num : 0_19
+function CampaignModule:GetCampaignLocalProcessByCampaignId_Local(campaign_type, campaign_id)
   local l_pLocalProcess = self:GetCampaignLocalProcess(campaign_type)
   if not l_pLocalProcess then
     return nil
   end
   local l_Obj = l_pLocalProcess:CampaignObjInfo()
-  if not l_Obj or not l_Obj.m_sample_info or (l_Obj.m_sample_info).id ~= campaign_id then
-    l_Obj = (self.m_campaign_manager):GetCampaignObj(campaign_id)
+  if not (l_Obj and l_Obj.m_sample_info) or l_Obj.m_sample_info.id ~= campaign_id then
+    l_Obj = self.m_campaign_manager:GetCampaignObj(campaign_id)
     if not l_Obj then
       return nil
     end
@@ -439,80 +344,63 @@ CampaignModule.GetCampaignLocalProcessByCampaignId_Local = function(self, campai
   return l_pLocalProcess
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetSampleByType = function(self, campaign_type)
-  -- function num : 0_20
-  return (self.m_campaign_manager):GetSampleByType(campaign_type)
+function CampaignModule:GetSampleByType(campaign_type)
+  return self.m_campaign_manager:GetSampleByType(campaign_type)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetOpenSampleByType = function(self, campaign_type)
-  -- function num : 0_21
-  return (self.m_campaign_manager):GetOpenSampleByType(campaign_type)
+function CampaignModule:GetOpenSampleByType(campaign_type)
+  return self.m_campaign_manager:GetOpenSampleByType(campaign_type)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.SetComponentSteps = function(self, campaign_id, component_steps)
-  -- function num : 0_22 , upvalues : _ENV
-  local campaign_object = (self.m_campaign_manager):GetCampaignObj(campaign_id)
+function CampaignModule:SetComponentSteps(campaign_id, component_steps)
+  local campaign_object = self.m_campaign_manager:GetCampaignObj(campaign_id)
   if not campaign_object then
-    (Log.debug)("[Campaign][CampaignModule] SetComponentSteps not found! ", campaign_id)
-    return 
+    Log.debug("[Campaign][CampaignModule] SetComponentSteps not found! ", campaign_id)
+    return
   end
-  for key,value in pairs(component_steps) do
-    local component = (campaign_object.m_component_dict)[key]
+  for key, value in pairs(component_steps) do
+    local component = campaign_object.m_component_dict[key]
     if component then
       component:UpdateComponentStep(value)
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCampaignInfo_Local = function(self, campaignType, ...)
-  -- function num : 0_23 , upvalues : _ENV
+function CampaignModule:GetCampaignInfo_Local(campaignType, ...)
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local campaign = {}
   campaign._type = campaignType
   campaign._id = -1
-  campaign._sample = (self.m_campaign_manager):GetSampleByType(campaign._type)
+  campaign._sample = self.m_campaign_manager:GetSampleByType(campaign._type)
   if not campaign._sample then
     return campaign._id
   end
-  campaign._id = (campaign._sample).id
-  if not (campaign._sample):IsShow(curTime) then
+  campaign._id = campaign._sample.id
+  if not campaign._sample:IsShow(curTime) then
     campaign._sample = nil
     return campaign._id
   end
   local component = {}
   local emptyFlag = false
   campaign._localProcess = self:GetCampaignLocalProcess(campaign._type)
-  emptyFlag = self:_GetCampaignComponent(campaign._localProcess, ...)
+  emptyFlag, component = self:_GetCampaignComponent(campaign._localProcess, ...)
   campaign._component = component
   return campaign._id
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetAllOpenCampaignCompInfo = function(self, TT, res)
-  -- function num : 0_24 , upvalues : _ENV
-  local l_openCampaignTable = nil
+function CampaignModule:GetAllOpenCampaignCompInfo(TT, res)
+  local l_openCampaignTable
   local l_openList = {}
-  l_openCampaignTable = (self.m_campaign_manager):GetAllOpenSampleCampaign()
-  local l_curTime = (os.time)()
+  l_openCampaignTable, l_openList = self.m_campaign_manager:GetAllOpenSampleCampaign()
+  local l_curTime = os.time()
   if l_curTime - self.m_LastCampaignLoadInfoOpenTime >= 10 then
     self.m_LastCampaignLoadInfoOpenTime = l_curTime
     self:CampaignLoadInfoList(TT, res)
     if not res or not res:GetSucc() then
       return {}
     end
-    -- DECOMPILER ERROR at PC30: Overwrote pending register: R4 in 'AssignReg'
-
-    l_openCampaignTable = (self.m_campaign_manager):GetAllOpenSampleCampaign()
+    l_openCampaignTable, l_openList = self.m_campaign_manager:GetAllOpenSampleCampaign()
   end
   if not l_openCampaignTable then
     return {}
@@ -520,28 +408,25 @@ CampaignModule.GetAllOpenCampaignCompInfo = function(self, TT, res)
   return l_openList
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCampaignInfo = function(self, TT, res, campaignType, ...)
-  -- function num : 0_25 , upvalues : _ENV
+function CampaignModule:GetCampaignInfo(TT, res, campaignType, ...)
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local campaign = {}
   campaign._type = campaignType
   campaign._id = -1
-  campaign._sample = (self.m_campaign_manager):GetSampleByType(campaign._type)
-  if not campaign._sample or not (campaign._sample):IsShow(curTime) then
+  campaign._sample = self.m_campaign_manager:GetSampleByType(campaign._type)
+  if not campaign._sample or not campaign._sample:IsShow(curTime) then
     self:CampaignLoadInfoList(TT, res)
     if res and res:GetSucc() then
-      campaign._sample = (self.m_campaign_manager):GetSampleByType(campaign._type)
+      campaign._sample = self.m_campaign_manager:GetSampleByType(campaign._type)
     end
   end
   if not campaign._sample then
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
     return campaign._id
   end
-  campaign._id = (campaign._sample).id
-  if not (campaign._sample):IsShow(curTime) then
+  campaign._id = campaign._sample.id
+  if not campaign._sample:IsShow(curTime) then
     campaign._sample = nil
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
     return campaign._id
@@ -551,167 +436,131 @@ CampaignModule.GetCampaignInfo = function(self, TT, res, campaignType, ...)
   return campaign._id
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCampaignComponent = function(self, TT, res, campaign, ...)
-  -- function num : 0_26
+function CampaignModule:GetCampaignComponent(TT, res, campaign, ...)
   if not campaign then
-    return 
+    return
   end
   local component = {}
   local emptyFlag = false
-  emptyFlag = self:_GetCampaignComponent(campaign._localProcess, ...)
+  emptyFlag, component = self:_GetCampaignComponent(campaign._localProcess, ...)
   if emptyFlag then
     self:CampaignComProtoLoadInfo(TT, res, campaign._id)
     if res and res:GetSucc() then
-      local _obj = (self.m_campaign_manager):GetCampaignObj(campaign._id)
-      ;
-      (campaign._localProcess):InitComponent(_obj)
-      -- DECOMPILER ERROR at PC36: Overwrote pending register: R4 in 'AssignReg'
-
-      emptyFlag = self:_GetCampaignComponent(campaign._localProcess, ...)
+      local _obj = self.m_campaign_manager:GetCampaignObj(campaign._id)
+      campaign._localProcess:InitComponent(_obj)
+      emptyFlag, component = self:_GetCampaignComponent(campaign._localProcess, ...)
     end
   end
-  do
-    campaign._component = component
-  end
+  campaign._component = component
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule._GetCampaignComponent = function(self, localProcess, ...)
-  -- function num : 0_27 , upvalues : _ENV
+function CampaignModule:_GetCampaignComponent(localProcess, ...)
   local emptyFlag = false
   local component = {}
   if not localProcess or not localProcess:CampaignObjInfo() then
     emptyFlag = true
     return emptyFlag, component
   end
-  local args = {...}
-  for _,v in pairs(args) do
+  local args = {
+    ...
+  }
+  for _, v in pairs(args) do
     local cmpt = localProcess:GetComponent(v)
     component[v] = cmpt
     if not cmpt then
       emptyFlag = true
-      ;
-      (Log.info)("CampaignModule:GetCampaignComponent() component == nil, componentId = ", v)
+      Log.info("CampaignModule:GetCampaignComponent() component == nil, componentId = ", v)
     end
   end
   return emptyFlag, component
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CampaignSwitchState = function(self, showError, toState, defaultState, uiParamsTable, campaignId, ...)
-  -- function num : 0_28 , upvalues : _ENV
-  local sample = (self.m_campaign_manager):GetSampleByID(campaignId)
+function CampaignModule:CampaignSwitchState(showError, toState, defaultState, uiParamsTable, campaignId, ...)
+  local sample = self.m_campaign_manager:GetSampleByID(campaignId)
   if sample and self:CheckComponentOpen(self:GetCampaignLocalProcess(sample.camp_type), ...) then
-    if not uiParamsTable then
-      uiParamsTable = {}
-    end
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(toState, (table.unpack)(uiParamsTable))
+    uiParamsTable = uiParamsTable or {}
+    GameGlobal.UIStateManager():SwitchState(toState, table.unpack(uiParamsTable))
   else
     if showError then
       self:ShowErrorToast(CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK, true)
     end
-    ;
-    ((GameGlobal.UIStateManager)()):SwitchState(defaultState)
+    GameGlobal.UIStateManager():SwitchState(defaultState)
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.SwitchState_Safe = function(self, showError, stateInfos)
-  -- function num : 0_29 , upvalues : _ENV
-  local curTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() / 1000
-  local checkSample = function(campaignId)
-    -- function num : 0_29_0 , upvalues : self, curTime
-    local sample = (self.m_campaign_manager):GetSampleByID(campaignId)
+function CampaignModule:SwitchState_Safe(showError, stateInfos)
+  local curTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() / 1000
+  
+  local function checkSample(campaignId)
+    local sample = self.m_campaign_manager:GetSampleByID(campaignId)
     if sample and sample:IsShow(curTime) then
       return true
     end
     return false
   end
-
-  local checkComponent = function(campaignId, componentId)
-    -- function num : 0_29_1 , upvalues : self, curTime
-    local sample = (self.m_campaign_manager):GetSampleByID(campaignId)
-    do
-      if sample and sample:IsShow(curTime) then
-        local lp = self:GetCampaignLocalProcessByCampaignId_Local(sample.camp_type, sample.id)
-        if self:CheckComponentOpen(lp, componentId) then
-          return true
-        end
+  
+  local function checkComponent(campaignId, componentId)
+    local sample = self.m_campaign_manager:GetSampleByID(campaignId)
+    if sample and sample:IsShow(curTime) then
+      local lp = self:GetCampaignLocalProcessByCampaignId_Local(sample.camp_type, sample.id)
+      if self:CheckComponentOpen(lp, componentId) then
+        return true
       end
-      return false
     end
+    return false
   end
-
-  local result = nil
-  for i,v in ipairs(stateInfos) do
+  
+  local result
+  for i, v in ipairs(stateInfos) do
     local check = true
     local campaignId, componentId = v.campaignId, v.componentId
-    if campaignId ~= nil and componentId ~= nil and not checkComponent(campaignId, componentId) then
-      check = false
-      result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE
-    end
-    if campaignId ~= nil and not checkSample(campaignId) then
+    if campaignId ~= nil and componentId ~= nil then
+      if not checkComponent(campaignId, componentId) then
+        check = false
+        result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_CLOSE
+      end
+    elseif campaignId ~= nil and not checkSample(campaignId) then
       check = false
       result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
     end
     if check then
       local stateType = v.stateType
-      if not v.uiParamsTable then
-        local uiParamsTable = {}
-      end
-      ;
-      ((GameGlobal.UIStateManager)()):SwitchState(stateType, (table.unpack)(uiParamsTable))
+      local uiParamsTable = v.uiParamsTable or {}
+      GameGlobal.UIStateManager():SwitchState(stateType, table.unpack(uiParamsTable))
       break
     end
   end
-  do
-    if showError and result ~= nil then
-      (UIActivityErrorHelper.ShowErrorToast)(result, true)
-    end
+  if showError and result ~= nil then
+    UIActivityErrorHelper.ShowErrorToast(result, true)
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetComponentByComponentId = function(self, cfgComponentId)
-  -- function num : 0_30
+function CampaignModule:GetComponentByComponentId(cfgComponentId)
   local cam_id, comp_id, com_type = self:ParseCfgComponentID(cfgComponentId)
-  local sample = (self.m_campaign_manager):GetSampleByID(cam_id)
-  do
-    if sample then
-      local localProcess = self:GetCampaignLocalProcess(sample.camp_type)
-      if localProcess then
-        return localProcess:GetComponent(comp_id)
-      end
+  local sample = self.m_campaign_manager:GetSampleByID(cam_id)
+  if sample then
+    local localProcess = self:GetCampaignLocalProcess(sample.camp_type)
+    if localProcess then
+      return localProcess:GetComponent(comp_id)
     end
-    return nil
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetSampleByID = function(self, cfgComponentId)
-  -- function num : 0_31
+function CampaignModule:GetSampleByID(cfgComponentId)
   local cam_id, comp_id, com_type = self:ParseCfgComponentID(cfgComponentId)
-  local sample = (self.m_campaign_manager):GetSampleByID(cam_id)
+  local sample = self.m_campaign_manager:GetSampleByID(cam_id)
   return sample
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CheckComponentOpen = function(self, localProcess, ...)
-  -- function num : 0_32 , upvalues : _ENV
+function CampaignModule:CheckComponentOpen(localProcess, ...)
   if not localProcess then
     return false
   end
-  local args = {...}
-  for _,v in pairs(args) do
+  local args = {
+    ...
+  }
+  for _, v in pairs(args) do
     local component = localProcess:GetComponent(v)
     if not component or not component:ComponentIsOpen() then
       return false
@@ -720,15 +569,14 @@ CampaignModule.CheckComponentOpen = function(self, localProcess, ...)
   return true
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CheckComponentRed = function(self, localProcess, ...)
-  -- function num : 0_33 , upvalues : _ENV
+function CampaignModule:CheckComponentRed(localProcess, ...)
   if not localProcess then
     return false
   end
-  local args = {...}
-  for _,v in pairs(args) do
+  local args = {
+    ...
+  }
+  for _, v in pairs(args) do
     local component = localProcess:GetComponent(v)
     if component and component:HaveRedPoint() then
       return true
@@ -737,45 +585,27 @@ CampaignModule.CheckComponentRed = function(self, localProcess, ...)
   return false
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CheckErrorCode = function(self, result, campaignId, refreshCallback, closeCallback)
-  -- function num : 0_34 , upvalues : _ENV
-  return (UIActivityErrorHelper.CheckErrorCode)(result, campaignId, refreshCallback, closeCallback)
+function CampaignModule:CheckErrorCode(result, campaignId, refreshCallback, closeCallback)
+  return UIActivityErrorHelper.CheckErrorCode(result, campaignId, refreshCallback, closeCallback)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.ShowErrorToast = function(self, result, hideErrorId)
-  -- function num : 0_35 , upvalues : _ENV
-  return (UIActivityErrorHelper.ShowErrorToast)(result, hideErrorId)
+function CampaignModule:ShowErrorToast(result, hideErrorId)
+  return UIActivityErrorHelper.ShowErrorToast(result, hideErrorId)
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.IsErrorNeedRefresh = function(self, result)
-  -- function num : 0_36 , upvalues : _ENV
-  return (UIActivityErrorHelper.IsErrorNeedRefresh)(result)
+function CampaignModule:IsErrorNeedRefresh(result)
+  return UIActivityErrorHelper.IsErrorNeedRefresh(result)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.IsErrorNeedClose = function(self, result)
-  -- function num : 0_37 , upvalues : _ENV
-  return (UIActivityErrorHelper.IsErrorNeedClose)(result)
+function CampaignModule:IsErrorNeedClose(result)
+  return UIActivityErrorHelper.IsErrorNeedClose(result)
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.IsErrorNeedCloseAll = function(self, result)
-  -- function num : 0_38 , upvalues : _ENV
-  return (UIActivityErrorHelper.IsErrorNeedCloseAll)(result)
+function CampaignModule:IsErrorNeedCloseAll(result)
+  return UIActivityErrorHelper.IsErrorNeedCloseAll(result)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.ParseCfgComponentID = function(self, cfg_id)
-  -- function num : 0_39 , upvalues : _ENV
+function CampaignModule:ParseCfgComponentID(cfg_id)
   local camp_id = cfg_id // CampaignConfigDefine.CONFIG_CAMPAIGN_ID_MOD
   local tmp_id = cfg_id % CampaignConfigDefine.CONFIG_CAMPAIGN_ID_MOD
   local comp_id = tmp_id % CampaignConfigDefine.CONFIG_COMPONENT_TYPE_MOD
@@ -783,166 +613,128 @@ CampaignModule.ParseCfgComponentID = function(self, cfg_id)
   return camp_id, comp_id, comp_type
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.ParseCampaignMissionParams = function(self, ParamsMap)
-  -- function num : 0_40 , upvalues : _ENV
-  do
-    if ParamsMap[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] then
-      local nComCfgId = ParamsMap[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId]
-      return self:ParseCfgComponentID(nComCfgId)
-    end
-    return nil
+function CampaignModule:ParseCampaignMissionParams(ParamsMap)
+  if ParamsMap[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId] then
+    local nComCfgId = ParamsMap[ECampaignMissionParamKey.ECampaignMissionParamKey_ComCfgId]
+    return self:ParseCfgComponentID(nComCfgId)
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetLatestCampaignObj = function(self, TT)
-  -- function num : 0_41
+function CampaignModule:GetLatestCampaignObj(TT)
   self:LoadCampaignInfoListTask(TT)
   if self.m_campaign_manager then
-    return (self.m_campaign_manager):GetLatestCampaignObj()
+    return self.m_campaign_manager:GetLatestCampaignObj()
   end
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCampaignSampleDic = function(self)
-  -- function num : 0_42
-  return (self.m_campaign_manager):GetCampaignObjDic()
+function CampaignModule:GetCampaignSampleDic()
+  return self.m_campaign_manager:GetCampaignObjDic()
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertMatchResult = function(self, recvResult)
-  -- function num : 0_43 , upvalues : _ENV
+function CampaignModule:Module_ConvertMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_Campaign
   uiMatchResult.m_nSubMatchType = recvResult.sub_type
   uiMatchResult.m_nID = recvResult.mission_id
-  local cfgMission = (Cfg.cfg_campaign_mission)[uiMatchResult.m_nID]
-  local strStageName = (StringTable.Get)(cfgMission.Name)
+  local cfgMission = Cfg.cfg_campaign_mission[uiMatchResult.m_nID]
+  local strStageName = StringTable.Get(cfgMission.Name)
   uiMatchResult.m_stShowName = strStageName
-  uiMatchResult.m_stShowDesc = (StringTable.Get)(cfgMission.Desc)
+  uiMatchResult.m_stShowDesc = StringTable.Get(cfgMission.Desc)
   uiMatchResult.m_vecCondition = {}
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R5 in 'UnsetPending'
-
   if cfgMission.IgnoreThreeStar == 0 then
-    (uiMatchResult.m_vecCondition)[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
-    -- DECOMPILER ERROR at PC49: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
+    uiMatchResult.m_vecCondition[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
+    uiMatchResult.m_vecCondition[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
+    uiMatchResult.m_vecCondition[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
   end
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
   uiMatchResult.m_vecAwardPerfect = recvResult.star_rewards
   uiMatchResult.m_vecFirstPassAward = recvResult.first_rewards
   uiMatchResult.m_matchResRolInfo = recvResult.match_result_role_info
-  if (table.count)((recvResult.combat_simulator_result).rewards) > 0 then
-    (table.appendArray)(uiMatchResult.m_vecAwardNormal, (recvResult.combat_simulator_result).rewards)
+  if 0 < table.count(recvResult.combat_simulator_result.rewards) then
+    table.appendArray(uiMatchResult.m_vecAwardNormal, recvResult.combat_simulator_result.rewards)
   end
-  if (table.count)((recvResult.combat_simulator_result).random_rewards) > 0 then
-    (table.appendArray)(uiMatchResult.m_vecExtAward, (recvResult.combat_simulator_result).random_rewards)
+  if 0 < table.count(recvResult.combat_simulator_result.random_rewards) then
+    table.appendArray(uiMatchResult.m_vecExtAward, recvResult.combat_simulator_result.random_rewards)
   end
-  if (table.count)((recvResult.combat_simulator_result).extra_rewards) > 0 then
-    (table.appendArray)(uiMatchResult.m_vecDoubleExtAward, (recvResult.combat_simulator_result).extra_rewards)
+  if 0 < table.count(recvResult.combat_simulator_result.extra_rewards) then
+    table.appendArray(uiMatchResult.m_vecDoubleExtAward, recvResult.combat_simulator_result.extra_rewards)
   end
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertConquestMatchResult = function(self, recvResult)
-  -- function num : 0_44 , upvalues : _ENV
+function CampaignModule:Module_ConvertConquestMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_Conquest
   uiMatchResult.m_nID = recvResult.mission_id
   local comp_cfg_id = recvResult.comp_cfg_id
   local day_index = recvResult.random_index
-  local cfgMission = (Cfg.cfg_component_battlefield)({CampaignMissionID = uiMatchResult.m_nID})
-  local strStageName = (StringTable.Get)((cfgMission[1]).MissionName)
+  local cfgMission = Cfg.cfg_component_battlefield({
+    CampaignMissionID = uiMatchResult.m_nID
+  })
+  local strStageName = StringTable.Get(cfgMission[1].MissionName)
   uiMatchResult.m_stShowName = strStageName
   uiMatchResult.m_vecAwardNormal = recvResult.wave_award
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertBloodsuckerMatchResult = function(self, recvResult)
-  -- function num : 0_45 , upvalues : _ENV
+function CampaignModule:Module_ConvertBloodsuckerMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_MiniMaze
   uiMatchResult.m_nID = recvResult.mission_id
   local comp_cfg_id = recvResult.comp_cfg_id
-  local cfgMission = (Cfg.cfg_component_bloodsucker)({CampaignMissionID = uiMatchResult.m_nID})
-  local strStageName = (StringTable.Get)((cfgMission[1]).MissionName)
+  local cfgMission = Cfg.cfg_component_bloodsucker({
+    CampaignMissionID = uiMatchResult.m_nID
+  })
+  local strStageName = StringTable.Get(cfgMission[1].MissionName)
   uiMatchResult.m_stShowName = strStageName
   uiMatchResult.wave = recvResult.pass_wave_index
   uiMatchResult.m_vecFirstPassAward = recvResult.first_rewards
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertBlackFistMatchResult = function(self, recvResult)
-  -- function num : 0_46 , upvalues : _ENV
+function CampaignModule:Module_ConvertBlackFistMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_BlackFist
   uiMatchResult.m_nID = recvResult.mission_id
-  local strStageName = nil
-  local cfg_blackfist_mission = (Cfg.cfg_blackfist_mission)[uiMatchResult.m_nID]
+  local strStageName
+  local cfg_blackfist_mission = Cfg.cfg_blackfist_mission[uiMatchResult.m_nID]
   if cfg_blackfist_mission and cfg_blackfist_mission.MissionName then
-    strStageName = (StringTable.Get)(cfg_blackfist_mission.MissionName)
+    strStageName = StringTable.Get(cfg_blackfist_mission.MissionName)
   else
-    strStageName = (StringTable.Get)("str_n7_black_fight_" .. uiMatchResult.m_nID)
+    strStageName = StringTable.Get("str_n7_black_fight_" .. uiMatchResult.m_nID)
   end
   uiMatchResult.m_stShowName = strStageName
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
-  if (table.count)((recvResult.combat_simulator_result).rewards) > 0 then
-    (table.appendArray)(uiMatchResult.m_vecAwardNormal, (recvResult.combat_simulator_result).rewards)
+  if table.count(recvResult.combat_simulator_result.rewards) > 0 then
+    table.appendArray(uiMatchResult.m_vecAwardNormal, recvResult.combat_simulator_result.rewards)
   end
-  if (table.count)((recvResult.combat_simulator_result).random_rewards) > 0 then
-    (table.appendArray)(uiMatchResult.m_vecExtAward, (recvResult.combat_simulator_result).random_rewards)
+  if 0 < table.count(recvResult.combat_simulator_result.random_rewards) then
+    table.appendArray(uiMatchResult.m_vecExtAward, recvResult.combat_simulator_result.random_rewards)
   end
-  if (table.count)((recvResult.combat_simulator_result).extra_rewards) > 0 then
-    (table.appendArray)(uiMatchResult.m_vecDoubleExtAward, (recvResult.combat_simulator_result).extra_rewards)
+  if 0 < table.count(recvResult.combat_simulator_result.extra_rewards) then
+    table.appendArray(uiMatchResult.m_vecDoubleExtAward, recvResult.combat_simulator_result.extra_rewards)
   end
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertChessMatchResult = function(self, recvResult)
-  -- function num : 0_47 , upvalues : _ENV
+function CampaignModule:Module_ConvertChessMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_Chess
   uiMatchResult.m_nID = recvResult.mission_id
-  local cfgMission = (Cfg.cfg_chess_mission)[uiMatchResult.m_nID]
-  local strStageName = (StringTable.Get)(cfgMission.Name)
+  local cfgMission = Cfg.cfg_chess_mission[uiMatchResult.m_nID]
+  local strStageName = StringTable.Get(cfgMission.Name)
   uiMatchResult.m_stShowName = strStageName
-  uiMatchResult.m_stShowDesc = (StringTable.Get)(cfgMission.Desc)
-  local cfg_campaign_mission = (Cfg.cfg_campaign_mission)[uiMatchResult.m_nID]
+  uiMatchResult.m_stShowDesc = StringTable.Get(cfgMission.Desc)
+  local cfg_campaign_mission = Cfg.cfg_campaign_mission[uiMatchResult.m_nID]
   uiMatchResult.m_vecCondition = {}
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
   if cfgMission.IgnoreThreeStar == 0 then
-    (uiMatchResult.m_vecCondition)[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
+    uiMatchResult.m_vecCondition[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
+    uiMatchResult.m_vecCondition[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
+    uiMatchResult.m_vecCondition[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
   end
   if cfg_campaign_mission and cfg_campaign_mission.Name then
-    strStageName = (StringTable.Get)(cfg_campaign_mission.Name)
+    strStageName = StringTable.Get(cfg_campaign_mission.Name)
   end
   uiMatchResult.m_stShowName = strStageName
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
@@ -951,30 +743,19 @@ CampaignModule.Module_ConvertChessMatchResult = function(self, recvResult)
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertSeasonMatchResult = function(self, recvResult)
-  -- function num : 0_48 , upvalues : _ENV
+function CampaignModule:Module_ConvertSeasonMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_Season
   uiMatchResult.m_nID = recvResult.mission_id
-  local cfgMission = (Cfg.cfg_season_mission)[uiMatchResult.m_nID]
-  local strStageName = (StringTable.Get)(cfgMission.Name)
+  local cfgMission = Cfg.cfg_season_mission[uiMatchResult.m_nID]
+  local strStageName = StringTable.Get(cfgMission.Name)
   uiMatchResult.m_stShowName = strStageName
-  uiMatchResult.m_stShowDesc = (StringTable.Get)(cfgMission.Desc)
+  uiMatchResult.m_stShowDesc = StringTable.Get(cfgMission.Desc)
   uiMatchResult.m_vecCondition = {}
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
   if cfgMission.ShowCondition == 1 then
-    (uiMatchResult.m_vecCondition)[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
+    uiMatchResult.m_vecCondition[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
+    uiMatchResult.m_vecCondition[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
+    uiMatchResult.m_vecCondition[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
   end
   uiMatchResult.m_matchResRolInfo = recvResult.match_result_role_info
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
@@ -985,34 +766,23 @@ CampaignModule.Module_ConvertSeasonMatchResult = function(self, recvResult)
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertPopStarMatchResult = function(self, recvResult)
-  -- function num : 0_49 , upvalues : _ENV
+function CampaignModule:Module_ConvertPopStarMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_PopStar
   uiMatchResult.m_nID = recvResult.mission_id
-  local cfgMission = (Cfg.cfg_popstar_mission)[uiMatchResult.m_nID]
-  local strStageName = (StringTable.Get)(cfgMission.Name)
+  local cfgMission = Cfg.cfg_popstar_mission[uiMatchResult.m_nID]
+  local strStageName = StringTable.Get(cfgMission.Name)
   uiMatchResult.m_stShowName = strStageName
-  uiMatchResult.m_stShowDesc = (StringTable.Get)(cfgMission.Desc)
-  local cfg_campaign_mission = (Cfg.cfg_campaign_mission)[uiMatchResult.m_nID]
+  uiMatchResult.m_stShowDesc = StringTable.Get(cfgMission.Desc)
+  local cfg_campaign_mission = Cfg.cfg_campaign_mission[uiMatchResult.m_nID]
   uiMatchResult.m_vecCondition = {}
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R6 in 'UnsetPending'
-
   if cfgMission.IgnoreThreeStar == 0 then
-    (uiMatchResult.m_vecCondition)[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
-    -- DECOMPILER ERROR at PC44: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
+    uiMatchResult.m_vecCondition[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
+    uiMatchResult.m_vecCondition[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
+    uiMatchResult.m_vecCondition[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
   end
   if cfg_campaign_mission and cfg_campaign_mission.Name then
-    strStageName = (StringTable.Get)(cfg_campaign_mission.Name)
+    strStageName = StringTable.Get(cfg_campaign_mission.Name)
   end
   uiMatchResult.m_stShowName = strStageName
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
@@ -1022,85 +792,66 @@ CampaignModule.Module_ConvertPopStarMatchResult = function(self, recvResult)
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertAniPopStarMatchResult = function(self, recvResult, battleStatistics)
-  -- function num : 0_50 , upvalues : _ENV
+function CampaignModule:Module_ConvertAniPopStarMatchResult(recvResult, battleStatistics)
   local uiMatchResult = UI_MatchResult:New()
-  local aniPopModule = (GameGlobal.GetModule)(AnipopModule)
+  local aniPopModule = GameGlobal.GetModule(AnipopModule)
   local aniPopInfo = aniPopModule:GetAniPopInfo()
   local roundInfo = aniPopInfo.round_info
   uiMatchResult.m_nMatchType = MatchType.MT_PopStarPro
-  uiMatchResult.m_nID = ((roundInfo.level_list)[recvResult.mission_index]).level_id
+  uiMatchResult.m_nID = roundInfo.level_list[recvResult.mission_index].level_id
   local curMissionCfg = {}
-  local missionCfgs = (Cfg.cfg_anipop_mission)({})
-  for _,missionCfg in pairs(missionCfgs) do
-    if (table.icontains)(missionCfg.FightLevelArray, uiMatchResult.m_nID) then
+  local missionCfgs = Cfg.cfg_anipop_mission({})
+  for _, missionCfg in pairs(missionCfgs) do
+    if table.icontains(missionCfg.FightLevelArray, uiMatchResult.m_nID) then
       curMissionCfg = missionCfg
       break
     end
   end
-  do
-    local strStageName = (StringTable.Get)(curMissionCfg.Name)
-    uiMatchResult.layer_mission_num = recvResult.mission_index
-    uiMatchResult.m_ext_star_rewards = recvResult.relics
-    uiMatchResult.m_ext_skill_rewards = recvResult.skill_relics
-    uiMatchResult.m_stShowName = strStageName
-    uiMatchResult.m_vecAwardNormal = recvResult.rewards
-    uiMatchResult.m_vecFirstPassAward = recvResult.first_rewards
-    uiMatchResult.m_vecAwardPerfect = recvResult.star_rewards
-    uiMatchResult._starNum = battleStatistics.GainChest
-    return uiMatchResult
-  end
+  local strStageName = StringTable.Get(curMissionCfg.Name)
+  uiMatchResult.layer_mission_num = recvResult.mission_index
+  uiMatchResult.m_ext_star_rewards = recvResult.relics
+  uiMatchResult.m_ext_skill_rewards = recvResult.skill_relics
+  uiMatchResult.m_stShowName = strStageName
+  uiMatchResult.m_vecAwardNormal = recvResult.rewards
+  uiMatchResult.m_vecFirstPassAward = recvResult.first_rewards
+  uiMatchResult.m_vecAwardPerfect = recvResult.star_rewards
+  uiMatchResult._starNum = battleStatistics.GainChest
+  return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertEightPetsMatchResult = function(self, recvResult)
-  -- function num : 0_51 , upvalues : _ENV
+function CampaignModule:Module_ConvertEightPetsMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_EightPets
   uiMatchResult.m_nID = recvResult.mission_id
-  local cfgMission = (Cfg.cfg_eight_pets_mission)[uiMatchResult.m_nID]
-  local strStageName = (StringTable.Get)(cfgMission.Name)
+  local cfgMission = Cfg.cfg_eight_pets_mission[uiMatchResult.m_nID]
+  local strStageName = StringTable.Get(cfgMission.Name)
   uiMatchResult.m_stShowName = strStageName
-  uiMatchResult.m_stShowDesc = (StringTable.Get)(cfgMission.Desc)
+  uiMatchResult.m_stShowDesc = StringTable.Get(cfgMission.Desc)
   uiMatchResult.m_vecCondition = {}
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R5 in 'UnsetPending'
-
   if cfgMission.IgnoreThreeStar == 0 then
-    (uiMatchResult.m_vecCondition)[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (uiMatchResult.m_vecCondition)[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
+    uiMatchResult.m_vecCondition[1] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition1, 0)
+    uiMatchResult.m_vecCondition[2] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition2, 0)
+    uiMatchResult.m_vecCondition[3] = self:_ConvertCondition(recvResult.star_condition, cfgMission.ThreeStarCondition3, 0)
   end
   uiMatchResult.m_vecAwardNormal = recvResult.rewards
   uiMatchResult.m_vecAwardPerfect = {}
   uiMatchResult.m_vecFirstPassAward = recvResult.first_rewards
   uiMatchResult.m_matchResRolInfo = recvResult.match_result_role_info
   if recvResult.combat_simulator_result ~= nil then
-    if (table.count)((recvResult.combat_simulator_result).rewards) > 0 then
-      (table.appendArray)(uiMatchResult.m_vecAwardNormal, (recvResult.combat_simulator_result).rewards)
+    if 0 < table.count(recvResult.combat_simulator_result.rewards) then
+      table.appendArray(uiMatchResult.m_vecAwardNormal, recvResult.combat_simulator_result.rewards)
     end
-    if (table.count)((recvResult.combat_simulator_result).random_rewards) > 0 then
-      (table.appendArray)(uiMatchResult.m_vecExtAward, (recvResult.combat_simulator_result).random_rewards)
+    if 0 < table.count(recvResult.combat_simulator_result.random_rewards) then
+      table.appendArray(uiMatchResult.m_vecExtAward, recvResult.combat_simulator_result.random_rewards)
     end
-    if (table.count)((recvResult.combat_simulator_result).extra_rewards) > 0 then
-      (table.appendArray)(uiMatchResult.m_vecDoubleExtAward, (recvResult.combat_simulator_result).extra_rewards)
+    if 0 < table.count(recvResult.combat_simulator_result.extra_rewards) then
+      table.appendArray(uiMatchResult.m_vecDoubleExtAward, recvResult.combat_simulator_result.extra_rewards)
     end
   end
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Module_ConvertSeasonMazeMatchResult = function(self, recvResult)
-  -- function num : 0_52 , upvalues : _ENV
+function CampaignModule:Module_ConvertSeasonMazeMatchResult(recvResult)
   local uiMatchResult = UI_MatchResult:New()
   uiMatchResult.m_nMatchType = MatchType.MT_SeasonMaze
   uiMatchResult.m_nID = recvResult.mission_id
@@ -1110,10 +861,7 @@ CampaignModule.Module_ConvertSeasonMazeMatchResult = function(self, recvResult)
   return uiMatchResult
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule._ConvertCondition = function(self, vecPassCondition, nConditionID, nParam)
-  -- function num : 0_53 , upvalues : _ENV
+function CampaignModule:_ConvertCondition(vecPassCondition, nConditionID, nParam)
   local uiExtCondition = UI_DetailExtCondition:New()
   uiExtCondition.m_nID = nConditionID
   uiExtCondition.m_nParam = nParam
@@ -1122,38 +870,28 @@ CampaignModule._ConvertCondition = function(self, vecPassCondition, nConditionID
   return uiExtCondition
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Get3StarConditionDesc = function(self, condition_id, colorStr)
-  -- function num : 0_54 , upvalues : _ENV
-  local star_condition = (Cfg.cfg_threestarcondition)[condition_id]
+function CampaignModule:Get3StarConditionDesc(condition_id, colorStr)
+  local star_condition = Cfg.cfg_threestarcondition[condition_id]
   if not star_condition then
     return nil
   else
     local paramStrArray = star_condition.ConditionNumber
     local paramCount = #paramStrArray
     local ret = "no condition"
-    if not colorStr then
-      colorStr = "FFFFFF"
-    end
+    colorStr = colorStr or "FFFFFF"
     if paramCount == 1 then
-      ret = (StringTable.Get)(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
+      ret = StringTable.Get(star_condition.Name, tonumber(paramStrArray[1]), colorStr)
+    elseif paramCount == 2 then
+      ret = StringTable.Get(star_condition.Name, tonumber(paramStrArray[2]), colorStr)
     else
-      if paramCount == 2 then
-        ret = (StringTable.Get)(star_condition.Name, tonumber(paramStrArray[2]), colorStr)
-      else
-        ret = (StringTable.Get)(star_condition.Name)
-      end
+      ret = StringTable.Get(star_condition.Name)
     end
     return ret
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule._IsConditionPass = function(self, vecCondition, nConditionID)
-  -- function num : 0_55 , upvalues : _ENV
-  for _,conditionPass in pairs(vecCondition) do
+function CampaignModule:_IsConditionPass(vecCondition, nConditionID)
+  for _, conditionPass in pairs(vecCondition) do
     if conditionPass == nConditionID then
       return true
     end
@@ -1161,11 +899,8 @@ CampaignModule._IsConditionPass = function(self, vecCondition, nConditionID)
   return false
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.IsFightMission = function(self, missionID)
-  -- function num : 0_56 , upvalues : _ENV
-  local config = (Cfg.cfg_campaign_mission)[missionID]
+function CampaignModule:IsFightMission(missionID)
+  local config = Cfg.cfg_campaign_mission[missionID]
   if config then
     if config.Type == MissionType.MissionType_Story then
       return false
@@ -1175,62 +910,39 @@ CampaignModule.IsFightMission = function(self, missionID)
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.IsFightChessMission = function(self, missionID)
-  -- function num : 0_57 , upvalues : _ENV
-  local c = (Cfg.cfg_chess_mission)[missionID]
-  do return c ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function CampaignModule:IsFightChessMission(missionID)
+  local c = Cfg.cfg_chess_mission[missionID]
+  return c ~= nil
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.IsPopStarMission = function(self, missionID)
-  -- function num : 0_58 , upvalues : _ENV
-  local c = (Cfg.cfg_popstar_mission)[missionID]
-  do return c ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function CampaignModule:IsPopStarMission(missionID)
+  local c = Cfg.cfg_popstar_mission[missionID]
+  return c ~= nil
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.Has3StarCondition = function(self, mission_id)
-  -- function num : 0_59
-  if not self:IsFightMission(mission_id) and not self:IsFightChessMission(mission_id) then
-    return self:IsPopStarMission(mission_id)
-  end
+function CampaignModule:Has3StarCondition(mission_id)
+  return self:IsFightMission(mission_id) or self:IsFightChessMission(mission_id) or self:IsPopStarMission(mission_id)
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.ExitBattle = function(self, missionCreateInfo, isWin, battleresultRt)
-  -- function num : 0_60 , upvalues : _ENV
+function CampaignModule:ExitBattle(missionCreateInfo, isWin, battleresultRt)
   local campID, comID, comType = self:ParseCampaignMissionParams(missionCreateInfo.CampaignMissionParams)
-  local campConfig = (Cfg.cfg_campaign)[campID]
+  local campConfig = Cfg.cfg_campaign[campID]
   if not campConfig then
-    (Log.exception)("退局找不到活动ID:", campID)
-    return 
+    Log.exception("退局找不到活动ID:", campID)
+    return
   end
   local campType = campConfig.CampaignType
-  local stateInfos = (CampaignConst.GetCampaignUIStateParams)(campID, campType, comID, missionCreateInfo, isWin, battleresultRt)
+  local stateInfos = CampaignConst.GetCampaignUIStateParams(campID, campType, comID, missionCreateInfo, isWin, battleresultRt)
   self:SwitchState_Safe(true, stateInfos)
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.OpenCampaignMainUI = function(self, TT, uiName, comType)
-  -- function num : 0_61 , upvalues : _ENV
+function CampaignModule:OpenCampaignMainUI(TT, uiName, comType)
   YIELD(TT)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog(uiName, comType)
+  GameGlobal.UIStateManager():ShowDialog(uiName, comType)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.HandleCampaignGetMatchMissionArrayExReward = function(self, TT, eMatchType, nMissionIdArray)
-  -- function num : 0_62 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestCampaignGetMatchMissionArrayExReward)
+function CampaignModule:HandleCampaignGetMatchMissionArrayExReward(TT, eMatchType, nMissionIdArray)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestCampaignGetMatchMissionArrayExReward)
   request.eMatchType = eMatchType
   request.nArrMissionId = nMissionIdArray
   local reply = self:Call(TT, request)
@@ -1244,11 +956,8 @@ CampaignModule.HandleCampaignGetMatchMissionArrayExReward = function(self, TT, e
   return AsyncRes, reply_msg.campaign_reward_map
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.HandleCampaignGetMatchMissionExReward = function(self, TT, eMatchType, nMissionId)
-  -- function num : 0_63 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventRequestCampaignGetMatchMissionExReward)
+function CampaignModule:HandleCampaignGetMatchMissionExReward(TT, eMatchType, nMissionId)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventRequestCampaignGetMatchMissionExReward)
   request.eMatchType = eMatchType
   request.nMissionId = nMissionId
   local reply = self:Call(TT, request)
@@ -1262,62 +971,52 @@ CampaignModule.HandleCampaignGetMatchMissionExReward = function(self, TT, eMatch
   return AsyncRes, reply_msg.campaign_reward
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CheckMissionCanAutoFight = function(self, missionCreateInfo)
-  -- function num : 0_64 , upvalues : _ENV
-  local cfg = (Cfg.cfg_global).auto_fight_need_pass
+function CampaignModule:CheckMissionCanAutoFight(missionCreateInfo)
+  local cfg = Cfg.cfg_global.auto_fight_need_pass
   local errorStr = ""
   if cfg and cfg.StrValue then
     errorStr = cfg.StrValue
   end
   local campID, comID, comType = self:ParseCampaignMissionParams(missionCreateInfo.CampaignMissionParams)
-  local missionCfg = (Cfg.cfg_campaign_mission)[missionCreateInfo.nCampaignMissionId]
+  local missionCfg = Cfg.cfg_campaign_mission[missionCreateInfo.nCampaignMissionId]
   if not missionCfg then
     return false, errorStr
   end
   local enableParam = missionCfg.EnableAutoFight
-  do
-    if enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_DISABLE then
-      local cfgGlobal = (Cfg.cfg_global).auto_fight_can_not_use
-      return false, cfgGlobal.StrValue
-    end
-    if enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_ENABLE then
-      return true
-    end
-    if enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_NEED_UNLOCK then
-      local component = {}
-      local emptyFlag = false
-      local _obj = (self.m_campaign_manager):GetCampaignObj(campID)
-      if _obj then
-        local cmptInfo = _obj:GetComponentInfo(comID)
-        if cmptInfo and cmptInfo and cmptInfo.m_pass_mission_info then
-          local passInfo = (cmptInfo.m_pass_mission_info)[missionCreateInfo.nCampaignMissionId]
-          if passInfo then
-            return true
-          else
-            return false, errorStr
-          end
+  if enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_DISABLE then
+    local cfgGlobal = Cfg.cfg_global.auto_fight_can_not_use
+    return false, cfgGlobal.StrValue
+  end
+  if enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_ENABLE then
+    return true
+  end
+  if enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_NEED_UNLOCK then
+    local component = {}
+    local emptyFlag = false
+    local _obj = self.m_campaign_manager:GetCampaignObj(campID)
+    if _obj then
+      local cmptInfo = _obj:GetComponentInfo(comID)
+      if cmptInfo and cmptInfo and cmptInfo.m_pass_mission_info then
+        local passInfo = cmptInfo.m_pass_mission_info[missionCreateInfo.nCampaignMissionId]
+        if passInfo then
+          return true
+        else
+          return false, errorStr
         end
       end
     end
-    do
-      return false, errorStr
-    end
   end
+  return false, errorStr
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CheckEightPetsMissionCanAutoFight = function(self, missionCreateInfo)
-  -- function num : 0_65 , upvalues : _ENV
-  local cfg = (Cfg.cfg_global).auto_fight_need_pass
+function CampaignModule:CheckEightPetsMissionCanAutoFight(missionCreateInfo)
+  local cfg = Cfg.cfg_global.auto_fight_need_pass
   local errorStr = ""
   if cfg and cfg.StrValue then
     errorStr = cfg.StrValue
   end
   local campID, comID, comType = self:ParseCampaignMissionParams(missionCreateInfo.CampaignMissionParams)
-  local missionCfg = (Cfg.cfg_eight_pets_mission)[missionCreateInfo.mission_id]
+  local missionCfg = Cfg.cfg_eight_pets_mission[missionCreateInfo.mission_id]
   if not missionCfg then
     return false, errorStr
   end
@@ -1329,11 +1028,11 @@ CampaignModule.CheckEightPetsMissionCanAutoFight = function(self, missionCreateI
     return true
   end
   if enableParam == CampainMissionCanAutoFightType.E_CAMPAIGN_MISSION_CAN_AUTO_FIGHT_NEED_UNLOCK then
-    local obj = (self.m_campaign_manager):GetCampaignObj(campID)
+    local obj = self.m_campaign_manager:GetCampaignObj(campID)
     if obj then
       local cmptInfo = obj:GetComponentInfo(comID)
       if cmptInfo and cmptInfo and cmptInfo.m_pass_mission_info then
-        local passInfo = (cmptInfo.m_pass_mission_info)[missionCreateInfo.mission_id]
+        local passInfo = cmptInfo.m_pass_mission_info[missionCreateInfo.mission_id]
         if passInfo then
           return true
         else
@@ -1342,25 +1041,17 @@ CampaignModule.CheckEightPetsMissionCanAutoFight = function(self, missionCreateI
       end
     end
   end
-  do
-    return false, errorStr
-  end
+  return false, errorStr
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetGraveRobberData = function(self)
-  -- function num : 0_66 , upvalues : _ENV
+function CampaignModule:GetGraveRobberData()
   if not self.graveRobberData then
     self.graveRobberData = GraveRobberData:New()
   end
   return self.graveRobberData
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetSummerTwoLevelData = function(self, TT)
-  -- function num : 0_67 , upvalues : _ENV
+function CampaignModule:GetSummerTwoLevelData(TT)
   local res = AsyncRequestRes:New()
   res.m_result = 0
   res.m_call_err = CallResultType.Normal
@@ -1371,136 +1062,97 @@ CampaignModule.GetSummerTwoLevelData = function(self, TT)
     return nil
   end
   if not campaign or not campaign:CheckComponentOpen() then
-    return 
+    return
   end
   local missionComponentInfo = campaign:GetComponentInfo(ECampaignSummerIIComponentID.ECAMPAIGN_SUMMERII_MISSION)
   return UISummerActivityTwoLevelDatas:New(missionComponentInfo)
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetSummer1Data = function(self)
-  -- function num : 0_68 , upvalues : _ENV
+function CampaignModule:GetSummer1Data()
   if not self._summer1Data then
     self._summer1Data = Summer1Data:New()
   end
   return self._summer1Data
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN5Data = function(self)
-  -- function num : 0_69 , upvalues : _ENV
+function CampaignModule:GetN5Data()
   if not self._uIN5NewFlagRedPoint then
     self._uIN5NewFlagRedPoint = UIN5NewFlagRedPoint:New()
   end
   return self._uIN5NewFlagRedPoint
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN7BlackFightData = function(self)
-  -- function num : 0_70 , upvalues : _ENV
+function CampaignModule:GetN7BlackFightData()
   if not self._blackFightData then
     self._blackFightData = BlackFightData:New()
   end
   return self._blackFightData
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetEveSinsaNewFlagRedPoint = function(self)
-  -- function num : 0_71 , upvalues : _ENV
+function CampaignModule:GetEveSinsaNewFlagRedPoint()
   if not self._eveSinsaNewFlagRedPoint then
     self._eveSinsaNewFlagRedPoint = UIActivityEveSinaNewFlagRedPoint:New()
   end
   return self._eveSinsaNewFlagRedPoint
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN11Data = function(self)
-  -- function num : 0_72 , upvalues : _ENV
+function CampaignModule:GetN11Data()
   if not self._n11Data then
     self._n11Data = N11Data:New()
   end
   return self._n11Data
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN20AVGData = function(self)
-  -- function num : 0_73 , upvalues : _ENV
+function CampaignModule:GetN20AVGData()
   if not self._n20AvgData then
     self._n20AvgData = N20AVGData:New()
   end
   return self._n20AvgData
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN22Data = function(self)
-  -- function num : 0_74 , upvalues : _ENV
+function CampaignModule:GetN22Data()
   if not self._n22Data then
     self._n22Data = N22Data:New()
   end
   return self._n22Data
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN23Data = function(self)
-  -- function num : 0_75 , upvalues : _ENV
+function CampaignModule:GetN23Data()
   if not self._n23Data then
     self._n23Data = N23Data:New()
   end
   return self._n23Data
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN24Data = function(self)
-  -- function num : 0_76 , upvalues : _ENV
+function CampaignModule:GetN24Data()
   if not self._n24Data then
     self._n24Data = N24Data:New()
   end
   return self._n24Data
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN25Data = function(self)
-  -- function num : 0_77 , upvalues : _ENV
+function CampaignModule:GetN25Data()
   if not self._n25Data then
     self._n25Data = N25Data:New()
   end
   return self._n25Data
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN7DataReview = function(self)
-  -- function num : 0_78 , upvalues : _ENV
+function CampaignModule:GetN7DataReview()
   if not self._n7DataReview then
     self._n7DataReview = N7DataReview:New()
   end
   return self._n7DataReview
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetN28AVGData = function(self)
-  -- function num : 0_79 , upvalues : _ENV
+function CampaignModule:GetN28AVGData()
   if not self._n28AvgData then
     self._n28AvgData = N28AVGData:New()
   end
   return self._n28AvgData
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetDoubleDropValue = function(self, TT)
-  -- function num : 0_80 , upvalues : _ENV
+function CampaignModule:GetDoubleDropValue(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   local campaign = UIActivityCampaign:New()
@@ -1529,29 +1181,26 @@ CampaignModule.GetDoubleDropValue = function(self, TT)
   return rewardDoubleComponentInfo.ExRewardPercent
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.EnterCampaignReiew = function(self, TT)
-  -- function num : 0_81 , upvalues : _ENV
+function CampaignModule:EnterCampaignReiew(TT)
   local res = AsyncRequestRes:New()
   local request = CEventEnterCampaignReviewReq:New()
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] EnterCampaignReiew Call failed!")
+    Log.fatal("[Campaign][CampaignModule] EnterCampaignReiew Call failed!")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
     return res
   end
   local replyEvent = CEventEnterCampaignReviewRes(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] EnterCampaignReiew failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] EnterCampaignReiew failed with replyEvent == nil")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
     return res
   end
   if replyEvent.ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] EnterCampaignReiew failed with ret= ", replyEvent.ret)
+    Log.fatal("[Campaign][CampaignModule] EnterCampaignReiew failed with ret= ", replyEvent.ret)
     res:SetSucc(false)
     return res
   else
@@ -1561,65 +1210,59 @@ CampaignModule.EnterCampaignReiew = function(self, TT)
   end
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CampaignReviewLoadInfoList = function(self, TT)
-  -- function num : 0_82 , upvalues : _ENV
+function CampaignModule:CampaignReviewLoadInfoList(TT)
   local res = AsyncRequestRes:New()
   local request = CEventRequestCampaignReviewLoadInfoList:New()
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignReviewLoadInfoList Call failed!")
+    Log.fatal("[Campaign][CampaignModule] CampaignReviewLoadInfoList Call failed!")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
-    return 
+    return
   end
   local replyEvent = CEventReplyCampaignReviewLoadInfoList(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignReviewLoadInfoList failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] CampaignReviewLoadInfoList failed with replyEvent == nil")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
-    return 
+    return
   end
   if replyEvent.ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignReviewLoadInfoList failed with ret= ", replyEvent.ret)
+    Log.fatal("[Campaign][CampaignModule] CampaignReviewLoadInfoList failed with ret= ", replyEvent.ret)
     res:SetSucc(false)
-    return 
+    return
   else
     res:SetSucc(true)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS
     self.campaign_review_time_start = replyEvent.campaing_review_time_start
     for i = 1, #replyEvent.sample_list do
-      (self.m_campaign_manager):UpdateCampaignSampleInfo((replyEvent.sample_list)[i])
+      self.m_campaign_manager:UpdateCampaignSampleInfo(replyEvent.sample_list[i])
     end
   end
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.HandUnlockReviewCampaign = function(self, TT, capaign_id)
-  -- function num : 0_83 , upvalues : _ENV
+function CampaignModule:HandUnlockReviewCampaign(TT, capaign_id)
   local request = CEventUnlockCampaignReq:New()
   request.campaign_id = capaign_id
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   local res = AsyncRequestRes:New()
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] HandUnlockReviewCampaign Call failed!")
+    Log.fatal("[Campaign][CampaignModule] HandUnlockReviewCampaign Call failed!")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
     return res
   end
   local replyEvent = CEventUnlockCampaignRes(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] HandUnlockReviewCampaign failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] HandUnlockReviewCampaign failed with replyEvent == nil")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
     return res
   end
   if replyEvent.ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] HandUnlockReviewCampaign failed with ret= ", replyEvent.ret)
+    Log.fatal("[Campaign][CampaignModule] HandUnlockReviewCampaign failed with ret= ", replyEvent.ret)
     res:SetSucc(false)
     res.m_result = replyEvent.ret
     return res
@@ -1628,105 +1271,67 @@ CampaignModule.HandUnlockReviewCampaign = function(self, TT, capaign_id)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS
     self.campaign_review_time_start = reply.campaing_review_time_start
     for i = 1, #replyEvent.sample_list do
-      (self.m_campaign_manager):UpdateCampaignSampleInfo((replyEvent.sample_list)[i])
+      self.m_campaign_manager:UpdateCampaignSampleInfo(replyEvent.sample_list[i])
     end
     return res
   end
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetAllReviewCampaignSample = function(self)
-  -- function num : 0_84
-  return (self.m_campaign_manager):GetAllCampaignReviewSample()
+function CampaignModule:GetAllReviewCampaignSample()
+  return self.m_campaign_manager:GetAllCampaignReviewSample()
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetReviewCampaignSampleByCampaignId = function(self, campaign_id)
-  -- function num : 0_85
-  return (self.m_campaign_manager):GetSampleByID(campaign_id, true)
+function CampaignModule:GetReviewCampaignSampleByCampaignId(campaign_id)
+  return self.m_campaign_manager:GetSampleByID(campaign_id, true)
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetReviewData = function(self)
-  -- function num : 0_86
+function CampaignModule:GetReviewData()
   local uiModule = self.uiModule
   return uiModule:GetReviewData()
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.SetDB = function(self, id, capName, funcName)
-  -- function num : 0_87 , upvalues : _ENV
-  local login_mod = ((GameGlobal.GameLogic)()):GetModule(LoginModule)
+function CampaignModule:SetDB(id, capName, funcName)
+  local login_mod = GameGlobal.GameLogic():GetModule(LoginModule)
   local dbkey = login_mod:GetRoleShowID() .. capName .. funcName .. id
-  ;
-  (LocalDB.SetInt)(dbkey, 1)
+  LocalDB.SetInt(dbkey, 1)
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetDB = function(self, id, capName, funcName)
-  -- function num : 0_88 , upvalues : _ENV
-  local login_mod = ((GameGlobal.GameLogic)()):GetModule(LoginModule)
+function CampaignModule:GetDB(id, capName, funcName)
+  local login_mod = GameGlobal.GameLogic():GetModule(LoginModule)
   local dbkey = login_mod:GetRoleShowID() .. capName .. funcName .. id
-  return (LocalDB.GetInt)(dbkey, 0)
+  return LocalDB.GetInt(dbkey, 0)
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.IsActivityReview = function(self, campaignID)
-  -- function num : 0_89 , upvalues : _ENV
+function CampaignModule:IsActivityReview(campaignID)
   local uiMod = self:GetUIModule(CampaignModule)
-  return (uiMod:GetReviewData()):ContainsID(campaignID)
+  return uiMod:GetReviewData():ContainsID(campaignID)
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetSeniorSkinDuplicateRewardIndexs = function(self, cfgs, cmpInfo)
-  -- function num : 0_90 , upvalues : _ENV
+function CampaignModule:GetSeniorSkinDuplicateRewardIndexs(cfgs, cmpInfo)
   if not cfgs or not next(cfgs) then
     return nil
   end
   local idxs = {}
   local iModule = self:GetModule(ItemModule)
-  for index,cfg in ipairs(cfgs) do
+  for index, cfg in ipairs(cfgs) do
     if cfg.ReplaceRewardID and cfg.ReplaceRewardID > 0 then
       if cfg.RewardCount > 1 then
-        (Log.exception)("高级时装需要替换奖励，但原奖励的数量不为1，无法判断:", cfg.ID)
+        Log.exception("高级时装需要替换奖励，但原奖励的数量不为1，无法判断:", cfg.ID)
         return nil
       end
-      if RoleAssetID.RoleAssetPetSkinBegin < cfg.RewardID and cfg.RewardID < RoleAssetID.RoleAssetPetSkinEnd then
-        local time = (cmpInfo.skin_gain_time)[cfg.RewardID]
-        if time or time < cmpInfo.m_unlock_time then
+      if cfg.RewardID > RoleAssetID.RoleAssetPetSkinBegin and cfg.RewardID < RoleAssetID.RoleAssetPetSkinEnd then
+        local time = cmpInfo.skin_gain_time[cfg.RewardID]
+        if not time then
+        elseif time < cmpInfo.m_unlock_time then
           idxs[#idxs + 1] = index
         end
       else
-        do
-          local count = iModule:GetItemCount(cfg.RewardID)
-          if count == 0 then
-            do
-              local tmp, item = next(iModule:GetItemByTempId(cfg.RewardID))
-              if item:GetGainTime() < cmpInfo.m_unlock_time then
-                idxs[#idxs + 1] = index
-              end
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC75: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
+        local count = iModule:GetItemCount(cfg.RewardID)
+        if count == 0 then
+        else
+          local tmp, item = next(iModule:GetItemByTempId(cfg.RewardID))
+          if item:GetGainTime() < cmpInfo.m_unlock_time then
+            idxs[#idxs + 1] = index
           end
         end
       end
@@ -1735,20 +1340,14 @@ CampaignModule.GetSeniorSkinDuplicateRewardIndexs = function(self, cfgs, cmpInfo
   return idxs
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCurHauteCouture = function(self)
-  -- function num : 0_91 , upvalues : _ENV
+function CampaignModule:GetCurHauteCouture()
   local uiMod = self:GetUIModule(CampaignModule)
-  return (uiMod:GetHauteCoutureData()):GetCurHauteCouture()
+  return uiMod:GetHauteCoutureData():GetCurHauteCouture()
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCurHauteCouture_Review = function(self, isAsync, fnAsync)
-  -- function num : 0_92 , upvalues : _ENV
+function CampaignModule:GetCurHauteCouture_Review(isAsync, fnAsync)
   local uiMod = self:GetUIModule(CampaignModule)
-  local reviewData = (uiMod:GetHauteCoutureData()):GetCurHauteCoutureReview()
+  local reviewData = uiMod:GetHauteCoutureData():GetCurHauteCoutureReview()
   if not isAsync then
     return reviewData
   end
@@ -1756,12 +1355,9 @@ CampaignModule.GetCurHauteCouture_Review = function(self, isAsync, fnAsync)
     fnAsync(reviewData)
     return reviewData
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_92_0 , upvalues : _ENV, uiMod, fnAsync
+  GameGlobal.TaskManager():StartTask(function(TT)
     local lockName = "CampaignModule:GetCurHauteCouture_Review"
-    ;
-    ((GameGlobal.UIStateManager)()):Lock(lockName)
+    GameGlobal.UIStateManager():Lock(lockName)
     local campaign = UIActivityCampaign:New()
     local resC = AsyncRequestRes:New()
     campaign:LoadCampaignInfo(TT, resC, ECampaignType.CAMPAIGN_TYPE_SENIOR_SKIN_COPY)
@@ -1770,131 +1366,99 @@ CampaignModule.GetCurHauteCouture_Review = function(self, isAsync, fnAsync)
     hauteCoutureData:RefreshCurInfo()
     local reviewData = hauteCoutureData:GetCurHauteCoutureReview()
     fnAsync(reviewData)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
-  end
-)
+    GameGlobal.UIStateManager():UnLock(lockName)
+  end)
   return reviewData
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.RefreshCurHauteCoutureInfo = function(self)
-  -- function num : 0_93 , upvalues : _ENV
+function CampaignModule:RefreshCurHauteCoutureInfo()
   local uiMod = self:GetUIModule(CampaignModule)
-  ;
-  (uiMod:GetHauteCoutureData()):RefreshCurInfo()
+  uiMod:GetHauteCoutureData():RefreshCurInfo()
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.ProcressPetEnhance = function(self, oriPet, missionComponentId)
-  -- function num : 0_94 , upvalues : _ENV
+function CampaignModule:ProcressPetEnhance(oriPet, missionComponentId)
   local hasEnhance = false
-  local enhanceGrade, enhanceAwakening, enhanceEquip, enhanceLv, enhanceEquipRefineLv, correctCfg = nil, nil, nil, nil, nil, nil
+  local enhanceGrade, enhanceAwakening, enhanceEquip, enhanceLv, enhanceEquipRefineLv, correctCfg
   local petTemplateId = oriPet:GetTemplateID()
-  local cfgGroup = (Cfg.cfg_campaign_mission_pet_correct)({ComponentID = missionComponentId, PetId = petTemplateId})
-  if cfgGroup and #cfgGroup > 0 then
+  local cfgGroup = Cfg.cfg_campaign_mission_pet_correct({ComponentID = missionComponentId, PetId = petTemplateId})
+  if cfgGroup and 0 < #cfgGroup then
     correctCfg = cfgGroup[1]
   end
   if correctCfg then
     if correctCfg.GradeLv then
       local oriValue = oriPet:GetPetGrade()
       local maxValue = oriPet:GetMaxGrade()
-      if oriValue < correctCfg.GradeLv and correctCfg.GradeLv <= maxValue then
+      if oriValue < correctCfg.GradeLv and maxValue >= correctCfg.GradeLv then
         hasEnhance = true
         enhanceGrade = correctCfg.GradeLv
       end
     end
-    do
-      if correctCfg.AwakeningLv then
-        local oriValue = oriPet:GetPetAwakening()
-        local maxValue = oriPet:GetMaxAwakening()
-        if oriValue < correctCfg.AwakeningLv and correctCfg.AwakeningLv <= maxValue then
-          hasEnhance = true
-          enhanceAwakening = correctCfg.AwakeningLv
-        end
+    if correctCfg.AwakeningLv then
+      local oriValue = oriPet:GetPetAwakening()
+      local maxValue = oriPet:GetMaxAwakening()
+      if oriValue < correctCfg.AwakeningLv and maxValue >= correctCfg.AwakeningLv then
+        hasEnhance = true
+        enhanceAwakening = correctCfg.AwakeningLv
       end
-      do
-        if correctCfg.EquipLv then
-          local oriValue = oriPet:GetEquipLv()
-          local maxValue = 0
-          local petId = oriPet:GetTemplateID()
-          local cfg_equip = (Cfg.cfg_pet_equip)({PetID = petId})
-          if cfg_equip and #cfg_equip > 0 then
-            maxValue = (cfg_equip[#cfg_equip]).Level
-          else
-            maxValue = 10
-          end
-          if oriValue < correctCfg.EquipLv and correctCfg.EquipLv <= maxValue then
-            hasEnhance = true
-            enhanceEquip = correctCfg.EquipLv
-          end
-        end
-        do
-          if enhanceGrade and correctCfg.Level then
-            local grade = enhanceGrade
-            local maxValue = self:_CalcPetMaxLevel(oriPet:GetTemplateID(), grade)
-            if correctCfg.Level <= maxValue then
-              hasEnhance = true
-              enhanceLv = correctCfg.Level
-            end
-          end
-          do
-            if correctCfg.EquipRefineLv then
-              local oriValue = oriPet:GetEquipRefineLv()
-              local maxValue = oriPet:GetEquipRefineMaxLv()
-              if oriValue < correctCfg.EquipRefineLv and correctCfg.EquipRefineLv <= maxValue then
-                hasEnhance = true
-                enhanceEquipRefineLv = correctCfg.EquipRefineLv
-              end
-            end
-            do
-              if hasEnhance then
-                local codeCheckPetData = _G.pet_data
-                local tempData = codeCheckPetData:New()
-                tempData.template_id = oriPet:GetTemplateID()
-                local tmpPet = Pet:New(tempData)
-                tempData.pet_pstid = oriPet:GetPstID()
-                if not enhanceGrade or not enhanceGrade then
-                  tempData.grade = oriPet:GetPetGrade()
-                  if not enhanceLv or not enhanceLv then
-                    tempData.level = oriPet:GetPetLevel()
-                    if not enhanceAwakening or not enhanceAwakening then
-                      tempData.awakening = oriPet:GetPetAwakening()
-                      if not enhanceEquip or not enhanceEquip then
-                        tempData.equip_lv = oriPet:GetEquipLv()
-                        if not enhanceEquipRefineLv or not enhanceEquipRefineLv then
-                          do
-                            tempData.equip_refine_lv = oriPet:GetEquipRefineLv()
-                            tempData.affinity_level = oriPet:GetPetAffinityLevel()
-                            tmpPet:SetData(tempData)
-                            tmpPet:CalAttr()
-                            do return tmpPet, hasEnhance end
-                            do return oriPet, hasEnhance end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+    end
+    if correctCfg.EquipLv then
+      local oriValue = oriPet:GetEquipLv()
+      local maxValue = 0
+      local petId = oriPet:GetTemplateID()
+      local cfg_equip = Cfg.cfg_pet_equip({PetID = petId})
+      if cfg_equip and 0 < #cfg_equip then
+        maxValue = cfg_equip[#cfg_equip].Level
+      else
+        maxValue = 10
+      end
+      if oriValue < correctCfg.EquipLv and maxValue >= correctCfg.EquipLv then
+        hasEnhance = true
+        enhanceEquip = correctCfg.EquipLv
+      end
+    end
+    if enhanceGrade and correctCfg.Level then
+      local grade = enhanceGrade
+      local maxValue = self:_CalcPetMaxLevel(oriPet:GetTemplateID(), grade)
+      if maxValue >= correctCfg.Level then
+        hasEnhance = true
+        enhanceLv = correctCfg.Level
+      end
+    else
+    end
+    if correctCfg.EquipRefineLv then
+      local oriValue = oriPet:GetEquipRefineLv()
+      local maxValue = oriPet:GetEquipRefineMaxLv()
+      if oriValue < correctCfg.EquipRefineLv and maxValue >= correctCfg.EquipRefineLv then
+        hasEnhance = true
+        enhanceEquipRefineLv = correctCfg.EquipRefineLv
       end
     end
   end
+  if hasEnhance then
+    local codeCheckPetData = _G.pet_data
+    local tempData = codeCheckPetData:New()
+    tempData.template_id = oriPet:GetTemplateID()
+    local tmpPet = Pet:New(tempData)
+    tempData.pet_pstid = oriPet:GetPstID()
+    tempData.grade = enhanceGrade and enhanceGrade or oriPet:GetPetGrade()
+    tempData.level = enhanceLv and enhanceLv or oriPet:GetPetLevel()
+    tempData.awakening = enhanceAwakening and enhanceAwakening or oriPet:GetPetAwakening()
+    tempData.equip_lv = enhanceEquip and enhanceEquip or oriPet:GetEquipLv()
+    tempData.equip_refine_lv = enhanceEquipRefineLv and enhanceEquipRefineLv or oriPet:GetEquipRefineLv()
+    tempData.affinity_level = oriPet:GetPetAffinityLevel()
+    tmpPet:SetData(tempData)
+    tmpPet:CalAttr()
+    return tmpPet, hasEnhance
+  else
+    return oriPet, hasEnhance
+  end
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.ProcressCampaignPetEnhance = function(self, oriPet, missionId)
-  -- function num : 0_95 , upvalues : _ENV
+function CampaignModule:ProcressCampaignPetEnhance(oriPet, missionId)
   local hasEnhance = false
-  local enhanceGrade, enhanceAwakening, enhanceEquip, enhanceLv, enhanceEquipRefineLv, correctCfg = nil, nil, nil, nil, nil, nil
-  local cfgGroup = (Cfg.cfg_campaign_mission)({CampaignMissionId = missionId})
-  if cfgGroup and #cfgGroup > 0 then
+  local enhanceGrade, enhanceAwakening, enhanceEquip, enhanceLv, enhanceEquipRefineLv, correctCfg
+  local cfgGroup = Cfg.cfg_campaign_mission({CampaignMissionId = missionId})
+  if cfgGroup and 0 < #cfgGroup then
     correctCfg = cfgGroup[1]
   end
   if correctCfg then
@@ -1911,95 +1475,71 @@ CampaignModule.ProcressCampaignPetEnhance = function(self, oriPet, missionId)
         hasEnhance = true
         enhanceGrade = toGrade
         local maxLvValue = self:_CalcPetMaxLevel(oriPet:GetTemplateID(), toGrade)
-        if maxLvValue < toLv then
+        if toLv > maxLvValue then
           toLv = maxLvValue
         end
         enhanceLv = toLv
-      else
-        do
-          if toGrade == oriValue then
-            local oriLvValue = oriPet:GetPetLevel()
-            local maxLvValue = self:_CalcPetMaxLevel(oriPet:GetTemplateID(), toGrade)
-            if maxLvValue < toLv then
-              toLv = maxLvValue
-            end
-            if oriLvValue < toLv then
-              hasEnhance = true
-              enhanceLv = toLv
-            end
-          end
-          do
-            if correctCfg.PetEquip then
-              local oriValue = oriPet:GetEquipLv()
-              local maxValue = 0
-              local petId = oriPet:GetTemplateID()
-              local cfg_equip = (Cfg.cfg_pet_equip)({PetID = petId})
-              if cfg_equip and #cfg_equip > 0 then
-                maxValue = (cfg_equip[#cfg_equip]).Level
-              else
-                maxValue = 10
-              end
-              if oriValue < correctCfg.PetEquip and correctCfg.PetEquip <= maxValue then
-                hasEnhance = true
-                enhanceEquip = correctCfg.PetEquip
-              end
-            end
-            do
-              if correctCfg.EquipRefineLv then
-                local oriValue = oriPet:GetEquipRefineLv()
-                local maxValue = oriPet:GetEquipRefineMaxLv()
-                if oriValue < correctCfg.EquipRefineLv and correctCfg.EquipRefineLv <= maxValue then
-                  hasEnhance = true
-                  enhanceEquipRefineLv = correctCfg.EquipRefineLv
-                end
-              end
-              do
-                if hasEnhance then
-                  local codeCheckPetData = _G.pet_data
-                  local tempData = codeCheckPetData:New()
-                  tempData.template_id = oriPet:GetTemplateID()
-                  local tmpPet = Pet:New(tempData)
-                  tempData.pet_pstid = oriPet:GetPstID()
-                  if not enhanceGrade or not enhanceGrade then
-                    tempData.grade = oriPet:GetPetGrade()
-                    if not enhanceLv or not enhanceLv then
-                      tempData.level = oriPet:GetPetLevel()
-                      if not enhanceAwakening or not enhanceAwakening then
-                        tempData.awakening = oriPet:GetPetAwakening()
-                        if not enhanceEquip or not enhanceEquip then
-                          tempData.equip_lv = oriPet:GetEquipLv()
-                          if not enhanceEquipRefineLv or not enhanceEquipRefineLv then
-                            do
-                              tempData.equip_refine_lv = oriPet:GetEquipRefineLv()
-                              tempData.affinity_level = oriPet:GetPetAffinityLevel()
-                              tempData.b_pet_like = oriPet:IsLike()
-                              tmpPet:SetData(tempData)
-                              tmpPet:CalAttr()
-                              do return tmpPet, hasEnhance end
-                              do return oriPet, hasEnhance end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+      elseif toGrade == oriValue then
+        local oriLvValue = oriPet:GetPetLevel()
+        local maxLvValue = self:_CalcPetMaxLevel(oriPet:GetTemplateID(), toGrade)
+        if toLv > maxLvValue then
+          toLv = maxLvValue
+        end
+        if oriLvValue < toLv then
+          hasEnhance = true
+          enhanceLv = toLv
         end
       end
     end
+    if correctCfg.PetEquip then
+      local oriValue = oriPet:GetEquipLv()
+      local maxValue = 0
+      local petId = oriPet:GetTemplateID()
+      local cfg_equip = Cfg.cfg_pet_equip({PetID = petId})
+      if cfg_equip and 0 < #cfg_equip then
+        maxValue = cfg_equip[#cfg_equip].Level
+      else
+        maxValue = 10
+      end
+      if oriValue < correctCfg.PetEquip and maxValue >= correctCfg.PetEquip then
+        hasEnhance = true
+        enhanceEquip = correctCfg.PetEquip
+      end
+    end
+    if correctCfg.EquipRefineLv then
+      local oriValue = oriPet:GetEquipRefineLv()
+      local maxValue = oriPet:GetEquipRefineMaxLv()
+      if oriValue < correctCfg.EquipRefineLv and maxValue >= correctCfg.EquipRefineLv then
+        hasEnhance = true
+        enhanceEquipRefineLv = correctCfg.EquipRefineLv
+      end
+    end
+  end
+  if hasEnhance then
+    local codeCheckPetData = _G.pet_data
+    local tempData = codeCheckPetData:New()
+    tempData.template_id = oriPet:GetTemplateID()
+    local tmpPet = Pet:New(tempData)
+    tempData.pet_pstid = oriPet:GetPstID()
+    tempData.grade = enhanceGrade and enhanceGrade or oriPet:GetPetGrade()
+    tempData.level = enhanceLv and enhanceLv or oriPet:GetPetLevel()
+    tempData.awakening = enhanceAwakening and enhanceAwakening or oriPet:GetPetAwakening()
+    tempData.equip_lv = enhanceEquip and enhanceEquip or oriPet:GetEquipLv()
+    tempData.equip_refine_lv = enhanceEquipRefineLv and enhanceEquipRefineLv or oriPet:GetEquipRefineLv()
+    tempData.affinity_level = oriPet:GetPetAffinityLevel()
+    tempData.b_pet_like = oriPet:IsLike()
+    tmpPet:SetData(tempData)
+    tmpPet:CalAttr()
+    return tmpPet, hasEnhance
+  else
+    return oriPet, hasEnhance
   end
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule._CalcPetMaxLevel = function(self, templateId, grade)
-  -- function num : 0_96 , upvalues : _ENV
-  local cfgs = (Cfg["cfg_pet_level_" .. templateId .. "_" .. grade])()
+function CampaignModule:_CalcPetMaxLevel(templateId, grade)
+  local cfgs = Cfg["cfg_pet_level_" .. templateId .. "_" .. grade]()
   local max = 1
-  for _,c in pairs(cfgs) do
+  for _, c in pairs(cfgs) do
     if max < c.Level then
       max = c.Level
     end
@@ -2007,24 +1547,15 @@ CampaignModule._CalcPetMaxLevel = function(self, templateId, grade)
   return max
 end
 
--- DECOMPILER ERROR at PC299: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCampaignManager = function(self)
-  -- function num : 0_97
+function CampaignModule:GetCampaignManager()
   return self.m_campaign_manager
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.GetCampaignObj = function(self, campaignID)
-  -- function num : 0_98
-  return (self.m_campaign_manager):GetCampaignObj(campaignID)
+function CampaignModule:GetCampaignObj(campaignID)
+  return self.m_campaign_manager:GetCampaignObj(campaignID)
 end
 
--- DECOMPILER ERROR at PC305: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CampaignTeamRecord = function(self, TT, campaign_id, component_id, num, mission)
-  -- function num : 0_99 , upvalues : _ENV
+function CampaignModule:CampaignTeamRecord(TT, campaign_id, component_id, num, mission)
   local request = CEventCampaignTeamRecordReq:New()
   request.num = num
   request.mission = mission
@@ -2033,20 +1564,20 @@ CampaignModule.CampaignTeamRecord = function(self, TT, campaign_id, component_id
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignTeamRecord Call failed!")
+    Log.fatal("[Campaign][CampaignModule] CampaignTeamRecord Call failed!")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
     return nil
   end
   local replyEvent = CEventCampaignTeamRecordRes(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignTeamRecord failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] CampaignTeamRecord failed with replyEvent == nil")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
     return nil
   end
   if replyEvent.ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignTeamRecord failed with ret= ", replyEvent.ret)
+    Log.fatal("[Campaign][CampaignModule] CampaignTeamRecord failed with ret= ", replyEvent.ret)
     res:SetSucc(false)
     return nil
   end
@@ -2055,38 +1586,31 @@ CampaignModule.CampaignTeamRecord = function(self, TT, campaign_id, component_id
   return replyEvent
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.IsDisposed = function(self)
-  -- function num : 0_100
-  do return self.m_campaign_manager == nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function CampaignModule:IsDisposed()
+  return self.m_campaign_manager == nil
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R0 in 'UnsetPending'
-
-CampaignModule.CampaignLoadComponentRank = function(self, TT, res, component_cfg_id, sub_key)
-  -- function num : 0_101 , upvalues : _ENV
+function CampaignModule:CampaignLoadComponentRank(TT, res, component_cfg_id, sub_key)
   local request = CEventCampaignLoadComponentRankReq:New()
   request.component_cfg_id = component_cfg_id
   request.rank_sub_key = sub_key
   local game_module = self:GetModule(LoginModule)
   local reply = game_module:Call(TT, request)
   if not reply:Succ() then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignReviewLoadInfoList Call failed!")
+    Log.fatal("[Campaign][CampaignModule] CampaignReviewLoadInfoList Call failed!")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_NET_ERROR
     return nil
   end
   local replyEvent = CEventCampaignLoadComponentRankRes(reply.msg)
   if not replyEvent then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignLoadComponentRank failed with replyEvent == nil")
+    Log.fatal("[Campaign][CampaignModule] CampaignLoadComponentRank failed with replyEvent == nil")
     res:SetSucc(false)
     res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_FAILURE
     return nil
   end
   if replyEvent.ret ~= CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS then
-    (Log.fatal)("[Campaign][CampaignModule] CampaignLoadComponentRank failed with ret= ", replyEvent.ret)
+    Log.fatal("[Campaign][CampaignModule] CampaignLoadComponentRank failed with ret= ", replyEvent.ret)
     res:SetSucc(false)
     return nil
   else
@@ -2095,5 +1619,3 @@ CampaignModule.CampaignLoadComponentRank = function(self, TT, res, component_cfg
     return replyEvent.rank_list
   end
 end
-
-

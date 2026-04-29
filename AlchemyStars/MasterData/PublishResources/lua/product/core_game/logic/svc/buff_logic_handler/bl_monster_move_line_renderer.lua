@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_monster_move_line_renderer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicInitMonsterMoveGroupLineRenderer", BuffLogicBase)
 BuffLogicInitMonsterMoveGroupLineRenderer = BuffLogicInitMonsterMoveGroupLineRenderer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicInitMonsterMoveGroupLineRenderer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicInitMonsterMoveGroupLineRenderer:Constructor(buffInstance, logicParam)
   self._effectID = logicParam.effectID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicInitMonsterMoveGroupLineRenderer.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local utilCalcServiceShare = (self._world):GetService("UtilCalc")
-  local ownerMonsterIDCmpt = (self._entity):MonsterID()
+function BuffLogicInitMonsterMoveGroupLineRenderer:DoLogic(notify)
+  local utilCalcServiceShare = self._world:GetService("UtilCalc")
+  local ownerMonsterIDCmpt = self._entity:MonsterID()
   local myGroupMonsterList = utilCalcServiceShare:FindMonsterByMoveGroupID(ownerMonsterIDCmpt:GetMoveGroupID())
-  if #myGroupMonsterList > 1 then
+  if 1 < #myGroupMonsterList then
     local hasLineFlag = false
-    for i,monsterEntity in ipairs(myGroupMonsterList) do
+    for i, monsterEntity in ipairs(myGroupMonsterList) do
       local monsterIDCmpt = monsterEntity:MonsterID()
       if monsterIDCmpt:HasMoveGroupLine() then
         hasLineFlag = true
@@ -29,44 +19,34 @@ BuffLogicInitMonsterMoveGroupLineRenderer.DoLogic = function(self, notify)
     end
     if not hasLineFlag then
       ownerMonsterIDCmpt:SetMoveGroupLineState(true)
-      ;
-      (Log.info)("LineHolder:", (self._entity):GetID())
-      return {self._effectID, ownerMonsterIDCmpt:GetMoveGroupID()}
+      Log.info("LineHolder:", self._entity:GetID())
+      return {
+        self._effectID,
+        ownerMonsterIDCmpt:GetMoveGroupID()
+      }
     end
   end
 end
 
 _class("BuffLogicUpdateMonsterMoveGroupLineRenderer", BuffLogicBase)
 BuffLogicUpdateMonsterMoveGroupLineRenderer = BuffLogicUpdateMonsterMoveGroupLineRenderer
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUpdateMonsterMoveGroupLineRenderer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicUpdateMonsterMoveGroupLineRenderer:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUpdateMonsterMoveGroupLineRenderer.DoLogic = function(self, notify)
-  -- function num : 0_3
+function BuffLogicUpdateMonsterMoveGroupLineRenderer:DoLogic(notify)
 end
 
 _class("BuffLogicDeleteMonsterMoveGroupLineRenderer", BuffLogicBase)
 BuffLogicDeleteMonsterMoveGroupLineRenderer = BuffLogicDeleteMonsterMoveGroupLineRenderer
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDeleteMonsterMoveGroupLineRenderer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_4
+function BuffLogicDeleteMonsterMoveGroupLineRenderer:Constructor(buffInstance, logicParam)
   self._effectID = logicParam.effectID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDeleteMonsterMoveGroupLineRenderer.DoLogic = function(self, notify)
-  -- function num : 0_5
-  local monsterIDCmpt = (self._entity):MonsterID()
+function BuffLogicDeleteMonsterMoveGroupLineRenderer:DoLogic(notify)
+  local monsterIDCmpt = self._entity:MonsterID()
   if monsterIDCmpt:HasMoveGroupLine() then
     return self._effectID
   end
 end
-
-

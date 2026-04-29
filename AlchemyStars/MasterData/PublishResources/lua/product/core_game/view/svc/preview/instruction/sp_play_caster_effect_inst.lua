@@ -1,43 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_caster_effect_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCasterEffectInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCasterEffectInstruction = SkillPreviewPlayCasterEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCasterEffectInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayCasterEffectInstruction:Constructor(params)
   self._effectID = tonumber(params.EffectID)
   self._isPet1702361 = tonumber(params.isPet1702361)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCasterEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayCasterEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayCasterEffectInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPreviewPlayCasterEffectInstruction:DoInstruction(TT, casterEntity, previewContext)
   local playEntity = casterEntity
-  do
-    if self._isPet1702361 == 1 then
-      local sPreviewSkill = (previewContext:GetWorld()):GetService("PreviewActiveSkill")
-      playEntity = sPreviewSkill:GetPet1702361Entity(playEntity, previewContext)
-    end
-    local effectService = (previewContext:GetWorld()):GetService("Effect")
-    effectService:CreateEffect(tonumber(self._effectID), playEntity)
+  if self._isPet1702361 == 1 then
+    local sPreviewSkill = previewContext:GetWorld():GetService("PreviewActiveSkill")
+    playEntity = sPreviewSkill:GetPet1702361Entity(playEntity, previewContext)
   end
+  local effectService = previewContext:GetWorld():GetService("Effect")
+  effectService:CreateEffect(tonumber(self._effectID), playEntity)
 end
-
-

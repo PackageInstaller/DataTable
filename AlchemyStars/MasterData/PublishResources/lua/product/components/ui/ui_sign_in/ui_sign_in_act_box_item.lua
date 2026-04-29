@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sign_in/ui_sign_in_act_box_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISignInActBoxItem", UICustomWidget)
 UISignInActBoxItem = UISignInActBoxItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISignInActBoxItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISignInActBoxItem:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInActBoxItem.SetData = function(self, index, data, callback, showName, hideNumber)
-  -- function num : 0_1
+function UISignInActBoxItem:SetData(index, data, callback, showName, hideNumber)
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
   self._itemid = data.assetid
   self._itemCount = data.count
@@ -24,26 +14,17 @@ UISignInActBoxItem.SetData = function(self, index, data, callback, showName, hid
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInActBoxItem._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[self._itemid]
+function UISignInActBoxItem:_OnValue()
+  local cfg = Cfg.cfg_item[self._itemid]
   if cfg == nil then
-    (Log.fatal)("[quest] error --> cfg_item is nil ! id --> " .. self._itemid)
+    Log.fatal("[quest] error --> cfg_item is nil ! id --> " .. self._itemid)
   end
   local icon = cfg.Icon
-  ;
-  (self._icon):LoadImage(icon)
+  self._icon:LoadImage(icon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISignInActBoxItem.BgOnClick = function(self, go)
-  -- function num : 0_3
+function UISignInActBoxItem:BgOnClick(go)
   if self._callback then
-    (self._callback)(self._itemid, (go.transform).position)
+    self._callback(self._itemid, go.transform.position)
   end
 end
-
-

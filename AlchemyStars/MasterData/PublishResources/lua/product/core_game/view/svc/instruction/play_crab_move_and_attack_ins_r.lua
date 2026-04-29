@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_crab_move_and_attack_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCrabMoveAndAttackInstruction", BaseInstruction)
 PlayCrabMoveAndAttackInstruction = PlayCrabMoveAndAttackInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCrabMoveAndAttackInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCrabMoveAndAttackInstruction:Constructor(paramList)
   self._time = tonumber(paramList.time)
   self._speed = tonumber(paramList.speed)
   self._materialAnim = paramList.materialAnim
@@ -20,67 +13,55 @@ PlayCrabMoveAndAttackInstruction.Constructor = function(self, paramList)
   self._oneMoveHitTime = tonumber(paramList.oneMoveHitTime) or 20
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCrabMoveAndAttackInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCrabMoveAndAttackInstruction:GetCacheResource()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCrabMoveAndAttackInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayCrabMoveAndAttackInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local crabMoveAndAttackResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.CrabMoveAndAttack)
   if not crabMoveAndAttackResult then
-    return 
+    return
   end
   local attackMoveStep = crabMoveAndAttackResult:GetAttackMoveStep() or 0
   local teleportResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Teleport)
   if teleportResult then
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, casterEntity, teleportResult
-    self:_PlayTeleportResult(TT, casterEntity, teleportResult)
-  end
-)
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      self:_PlayTeleportResult(TT, casterEntity, teleportResult)
+    end)
   end
   local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
   if damageResult then
     local beAttackEntityID = damageResult:GetTargetID()
-    do
-      local targetEntity = world:GetEntityByID(beAttackEntityID)
-      if targetEntity then
-        ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_2_1 , upvalues : self, attackMoveStep, _ENV, casterEntity, damageResult, skillID, targetEntity
-    local waitHitTime = self._baseHitTime + self._oneMoveHitTime * attackMoveStep
-    YIELD(TT, waitHitTime)
-    self:_PlayDamageResult(TT, casterEntity, damageResult, skillID)
-    if targetEntity:HasTeam() then
-      targetEntity = targetEntity:GetTeamLeaderPetEntity()
-    end
-    targetEntity:PlayMaterialAnim(self._materialAnim)
-  end
-)
-      end
+    local targetEntity = world:GetEntityByID(beAttackEntityID)
+    if targetEntity then
+      GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+        local waitHitTime = self._baseHitTime + self._oneMoveHitTime * attackMoveStep
+        YIELD(TT, waitHitTime)
+        self:_PlayDamageResult(TT, casterEntity, damageResult, skillID)
+        if targetEntity:HasTeam() then
+          targetEntity = targetEntity:GetTeamLeaderPetEntity()
+        end
+        targetEntity:PlayMaterialAnim(self._materialAnim)
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCrabMoveAndAttackInstruction._PlayTeleportResult = function(self, TT, casterEntity, teleportResult)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayCrabMoveAndAttackInstruction:_PlayTeleportResult(TT, casterEntity, teleportResult)
   local world = casterEntity:GetOwnerWorld()
   local posOld = teleportResult:GetPosOld()
   local posNew = teleportResult:GetPosNew()
-  local distance = (Vector2.Distance)(posNew, posOld)
+  local distance = Vector2.Distance(posNew, posOld)
   local speed = self._speed
   if self._time then
     speed = distance / self._time * 1000
@@ -103,7 +84,7 @@ PlayCrabMoveAndAttackInstruction._PlayTeleportResult = function(self, TT, caster
   casterEntity:SetPosition(viewPos)
   local trapIDList = teleportResult:GetTriggerTrapIDList()
   local trapEntityList = {}
-  for _,v in ipairs(trapIDList) do
+  for _, v in ipairs(trapIDList) do
     local trapEntity = world:GetEntityByID(v)
     trapEntityList[#trapEntityList + 1] = trapEntity
   end
@@ -113,14 +94,10 @@ PlayCrabMoveAndAttackInstruction._PlayTeleportResult = function(self, TT, caster
   renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
   renderEntityService:CreateMonsterAreaOutlineEntity(casterEntity)
   self:_PlayCasterControlGridDown(casterEntity, 1)
-  ;
-  (world:GetService("PlayBuff")):PlayBuffView(TT, NTTeleport:New(casterEntity, posOld, posNew))
+  world:GetService("PlayBuff"):PlayBuffView(TT, NTTeleport:New(casterEntity, posOld, posNew))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCrabMoveAndAttackInstruction._PlayCasterControlGridDown = function(self, casterEntity, enable)
-  -- function num : 0_4 , upvalues : _ENV
+function PlayCrabMoveAndAttackInstruction:_PlayCasterControlGridDown(casterEntity, enable)
   if casterEntity:MonsterID() then
     local monsterIDCmpt = casterEntity:MonsterID()
     monsterIDCmpt:SetNeedGridDownEnable(enable == 1)
@@ -128,7 +105,7 @@ PlayCrabMoveAndAttackInstruction._PlayCasterControlGridDown = function(self, cas
     local trapRender = casterEntity:TrapRender()
     trapRender:SetNeedGridDownEnable(enable == 1)
   else
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local bodyAreaCmpt = casterEntity:BodyArea()
@@ -144,13 +121,9 @@ PlayCrabMoveAndAttackInstruction._PlayCasterControlGridDown = function(self, cas
       pieceSvc:SetPieceAnimNormal(pos)
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCrabMoveAndAttackInstruction._PlayDamageResult = function(self, TT, casterEntity, damageResult, skillID)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayCrabMoveAndAttackInstruction:_PlayDamageResult(TT, casterEntity, damageResult, skillID)
   local world = casterEntity:GetOwnerWorld()
   local beAttackEntityID = damageResult:GetTargetID()
   local targetEntity = world:GetEntityByID(beAttackEntityID)
@@ -158,9 +131,7 @@ PlayCrabMoveAndAttackInstruction._PlayDamageResult = function(self, TT, casterEn
   local damageGridPos = damageResult:GetGridPos()
   local playFinalAttack = false
   local deathClear = false
-  local beHitParam = ((((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName(self._hitAnimName)):SetHandleBeHitParam_HitEffectID(self._hitEffectID)):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget)):SetHandleBeHitParam_DeathClear(deathClear)):SetHandleBeHitParam_IsFinalHit(playFinalAttack)):SetHandleBeHitParam_SkillID(skillID)
+  local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName(self._hitAnimName):SetHandleBeHitParam_HitEffectID(self._hitEffectID):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_HitTurnTarget(self._turnToTarget):SetHandleBeHitParam_DeathClear(deathClear):SetHandleBeHitParam_IsFinalHit(playFinalAttack):SetHandleBeHitParam_SkillID(skillID)
   local playSkillService = world:GetService("PlaySkill")
   playSkillService:HandleBeHit(TT, beHitParam)
 end
-
-

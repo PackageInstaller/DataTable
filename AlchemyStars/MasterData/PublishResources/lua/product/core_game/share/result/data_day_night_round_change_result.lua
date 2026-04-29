@@ -1,38 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_day_night_round_change_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataDayNightRoundChangeResult", Object)
 DataDayNightRoundChangeResult = DataDayNightRoundChangeResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataDayNightRoundChangeResult.Constructor = function(self, curState, oldState, restRound)
-  -- function num : 0_0
+function DataDayNightRoundChangeResult:Constructor(curState, oldState, restRound)
   self._curState = curState
   self._oldState = oldState
   self._restRound = restRound
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataDayNightRoundChangeResult.GetCurState = function(self)
-  -- function num : 0_1
+function DataDayNightRoundChangeResult:GetCurState()
   return self._curState
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataDayNightRoundChangeResult.GetOldState = function(self)
-  -- function num : 0_2
+function DataDayNightRoundChangeResult:GetOldState()
   return self._oldState
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataDayNightRoundChangeResult.GetRestRound = function(self)
-  -- function num : 0_3
+function DataDayNightRoundChangeResult:GetRestRound()
   return self._restRound
 end
-
-

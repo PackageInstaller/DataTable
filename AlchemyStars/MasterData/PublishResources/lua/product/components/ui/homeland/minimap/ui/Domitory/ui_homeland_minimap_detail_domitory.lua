@@ -1,109 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/Domitory/ui_homeland_minimap_detail_domitory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapDetailDomitory", UIHomelandMinimapDetailBase)
 UIHomelandMinimapDetailDomitory = UIHomelandMinimapDetailDomitory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapDetailDomitory.OnShow = function(self)
-  -- function num : 0_0
+function UIHomelandMinimapDetailDomitory:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailDomitory.OnClose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((UIHomelandMinimapDetailDomitory.super).OnClose)(self)
+function UIHomelandMinimapDetailDomitory:OnClose()
+  UIHomelandMinimapDetailDomitory.super.OnClose(self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailDomitory.OnInitDone = function(self)
-  -- function num : 0_2
+function UIHomelandMinimapDetailDomitory:OnInitDone()
   self:_SetSkin()
   self:_SetDomitory()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailDomitory._SetSkin = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandMinimapDetailDomitory:_SetSkin()
   local iconData = self:GetIconData()
   if not iconData then
-    return 
+    return
   end
-  local building = (self:GetIconData()):GetParam()
-  local cfg = (Cfg.cfg_item_architecture)[building:GetBuildId()]
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "NameTxt", (StringTable.Get)(cfg.Name))
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "ContentTxt", (StringTable.Get)(cfg.Des))
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "Skin", cfg.Icon)
+  local building = self:GetIconData():GetParam()
+  local cfg = Cfg.cfg_item_architecture[building:GetBuildId()]
+  UIWidgetHelper.SetLocalizationText(self, "NameTxt", StringTable.Get(cfg.Name))
+  UIWidgetHelper.SetLocalizationText(self, "ContentTxt", StringTable.Get(cfg.Des))
+  UIWidgetHelper.SetRawImage(self, "Skin", cfg.Icon)
   self._nameTxt = self:GetUIComponent("UILocalizationText", "NameTxt")
   self._titleRect = self:GetUIComponent("RectTransform", "Title")
   if self._titleRect then
-    local titleWidth = (self._nameTxt).preferredWidth
-    if titleWidth > 350 then
+    local titleWidth = self._nameTxt.preferredWidth
+    if 350 < titleWidth then
       titleWidth = 350
     end
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._titleRect).sizeDelta = Vector2(titleWidth, ((self._titleRect).sizeDelta).y)
+    self._titleRect.sizeDelta = Vector2(titleWidth, self._titleRect.sizeDelta.y)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailDomitory._SetDomitory = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local homeLandModule = (GameGlobal.GetModule)(HomelandModule)
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local building = (self:GetIconData()):GetParam()
+function UIHomelandMinimapDetailDomitory:_SetDomitory()
+  local homeLandModule = GameGlobal.GetModule(HomelandModule)
+  local petModule = GameGlobal.GetModule(PetModule)
+  local building = self:GetIconData():GetParam()
   local room = homeLandModule:GetDomitoryByPstID(building:GetBuildPstId())
   local petLoader = self:GetUIComponent("UISelectObjectPath", "Domitory")
   local pets = petLoader:SpawnObjects("UIHomelandMinimapDetailPetItem", 4)
-  local building = (self:GetIconData()):GetParam()
+  local building = self:GetIconData():GetParam()
   for i = 1, 4 do
-    local petpstid = (room.petList)[i]
-    local pet = nil
-    if petpstid and petpstid > 0 then
+    local petpstid = room.petList[i]
+    local pet
+    if petpstid and 0 < petpstid then
       pet = petModule:GetPet(petpstid)
     end
-    ;
-    (pets[i]):SetData(pet)
+    pets[i]:SetData(pet)
   end
   local name = room.name
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_homeland_domitory_default_name")
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_homeland_domitory_default_name")
   end
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "txtTitle", name)
+  UIWidgetHelper.SetLocalizationText(self, "txtTitle", name)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailDomitory.CloseBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapCloseDetailUI)
+function UIHomelandMinimapDetailDomitory:CloseBtnOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapCloseDetailUI)
   self:OnClose()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailDomitory.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIHomelandMinimapDetailDomitory:ConfirmBtnOnClick(go)
   self:CloseBtnOnClick(go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapDetailDomitory.GetCloseAnimtionName = function(self)
-  -- function num : 0_7
+function UIHomelandMinimapDetailDomitory:GetCloseAnimtionName()
   return "UIHomelandMinimapDetailDomitory_out"
 end
-
-

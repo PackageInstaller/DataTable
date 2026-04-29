@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/luckland_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LuckLandData", Singleton)
 LuckLandData = LuckLandData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LuckLandData.Init = function(self, missionID, threeDec, lucklandCmpt, lucklandInfoCmpt)
-  -- function num : 0_0 , upvalues : _ENV
+function LuckLandData:Init(missionID, threeDec, lucklandCmpt, lucklandInfoCmpt)
   self._curMissionID = missionID
   self._curCardDatas = UILuckLandCardDataLevel:New(missionID)
   self._curBuildingDatas = LuckLandBuildDataLevel:New(missionID)
@@ -18,53 +11,30 @@ LuckLandData.Init = function(self, missionID, threeDec, lucklandCmpt, lucklandIn
   self._lucklandInfoCmpt = lucklandInfoCmpt
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandData.GetCurMissionID = function(self)
-  -- function num : 0_1
+function LuckLandData:GetCurMissionID()
   return self._curMissionID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandData.CurCardDatas = function(self)
-  -- function num : 0_2
+function LuckLandData:CurCardDatas()
   return self._curCardDatas
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandData.CurBuildingDatas = function(self)
-  -- function num : 0_3
+function LuckLandData:CurBuildingDatas()
   return self._curBuildingDatas
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandData.CurGameData = function(self)
-  -- function num : 0_4
+function LuckLandData:CurGameData()
   return self._luckLandGameData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandData.CurThreeDecData = function(self)
-  -- function num : 0_5
+function LuckLandData:CurThreeDecData()
   return self._lucklandThreeDec
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandData.CurLuckLandCmpt = function(self)
-  -- function num : 0_6
+function LuckLandData:CurLuckLandCmpt()
   return self._lucklandCmpt
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LuckLandData.CurLuckLandInfoCmpt = function(self)
-  -- function num : 0_7
+function LuckLandData:CurLuckLandInfoCmpt()
   return self._lucklandInfoCmpt
 end
-
-

@@ -1,10 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/trap_effect_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local TrapEffectType = {None = 0, Auras = 1, RuneChange = 5, EnhancePiece = 6, ShowCountDownType = 7}
+local TrapEffectType = {
+  None = 0,
+  Auras = 1,
+  RuneChange = 5,
+  EnhancePiece = 6,
+  ShowCountDownType = 7
+}
 _enum("TrapEffectType", TrapEffectType)
-local TrapHeadShowType = {HeadShowRound = 1, GridShowRound = 2, GridShowAnim = 3, HeadShowLevel = 4, HeadShowSummonIndex = 5}
+local TrapHeadShowType = {
+  HeadShowRound = 1,
+  GridShowRound = 2,
+  GridShowAnim = 3,
+  HeadShowLevel = 4,
+  HeadShowSummonIndex = 5
+}
 _enum("TrapHeadShowType", TrapHeadShowType)
-

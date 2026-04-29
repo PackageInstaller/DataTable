@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/input/handle_input_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HandleInputSystem_Render", Object)
 HandleInputSystem_Render = HandleInputSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HandleInputSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function HandleInputSystem_Render:Constructor(world)
   self._world = world
-  self._timeService = (self._world):GetService("Time")
+  self._timeService = self._world:GetService("Time")
   self._inputComponent = world:Input()
   self._pickUpCmpt = world:PickUp()
   self._chessPickUpCmpt = world:ChessPickUp()
-  self._popStarPickUpCmpt = (self._world):PopStarPickUp()
+  self._popStarPickUpCmpt = self._world:PopStarPickUp()
   self._miragePickUpCmpt = world:MiragePickUp()
   self._click = false
   self._doubleClick = false
@@ -33,245 +26,196 @@ HandleInputSystem_Render.Constructor = function(self, world)
   self._lastFramePosArray = {}
   self._inputUIArray = {"black_mask", "GuideMask"}
   self._hitPointOffset = Vector3(0, 0, 0)
-  self._cancelChainPathFunc = (GameHelper:GetInstance()):CreateCallback(self.CancelChainPath, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.CancelChainPath, self._cancelChainPathFunc)
+  self._cancelChainPathFunc = GameHelper:GetInstance():CreateCallback(self.CancelChainPath, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.CancelChainPath, self._cancelChainPathFunc)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render.TearDown = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.CancelChainPath, self._cancelChainPathFunc)
+function HandleInputSystem_Render:TearDown()
+  GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.CancelChainPath, self._cancelChainPathFunc)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render.Execute = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local touchCount = (UnityEngine.Input).touchCount
-  if touchCount > 1 then
-    return 
+function HandleInputSystem_Render:Execute()
+  local touchCount = UnityEngine.Input.touchCount
+  if 1 < touchCount then
+    return
   end
   local hasInput = self:_UpdateInputState()
   local isWaitInputState = self:_IsWaitInputState()
   local isActiveSkillInputState = self:_IsActiveSkillInputState()
   local isMirageWaitInputState = self:_IsMirageWaitInputState()
-  if (self._world):MatchType() == MatchType.MT_Chess then
+  if self._world:MatchType() == MatchType.MT_Chess then
     self:_UpdateChessInputState()
-  else
-    if isMirageWaitInputState then
-      self:_UpdateMirageInputState()
+  elseif isMirageWaitInputState then
+    self:_UpdateMirageInputState()
+  elseif isWaitInputState == true then
+    if (self._world:MatchType() == MatchType.MT_PopStar or self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro) and not self._inputComponent:IsPreviewActiveSkill() then
+      self:_UpdatePopStarInputState()
     else
-      if isWaitInputState == true then
-        if ((self._world):MatchType() == MatchType.MT_PopStar or (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro) and not (self._inputComponent):IsPreviewActiveSkill() then
-          self:_UpdatePopStarInputState()
-        else
-          local utilStatSvc = (self._world):GetService("UtilData")
-          if not utilStatSvc:GetStatAutoFight() then
-            self:_UpdateMultiDragState(hasInput)
-          end
-        end
-      else
-        do
-          if isActiveSkillInputState == true then
-            self:_UpdateActiveSkillInputState()
-          end
-        end
+      local utilStatSvc = self._world:GetService("UtilData")
+      if not utilStatSvc:GetStatAutoFight() then
+        self:_UpdateMultiDragState(hasInput)
       end
+    end
+  else
+    if isActiveSkillInputState == true then
+      self:_UpdateActiveSkillInputState()
+    else
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._UpdateDragState = function(self, hasInput)
-  -- function num : 0_3 , upvalues : _ENV
+function HandleInputSystem_Render:_UpdateDragState(hasInput)
   self:_UpdateTouchState()
   if hasInput ~= true then
-    return 
+    return
   end
   local castRes = self:_DoRayCast()
   if castRes ~= true then
-    return 
+    return
   end
-  local originalHitPoint = (self._hitInfo).point
-  local hitPoint = Vector3(originalHitPoint.x + (self._hitPointOffset).x, originalHitPoint.y, originalHitPoint.z + (self._hitPointOffset).z)
+  local originalHitPoint = self._hitInfo.point
+  local hitPoint = Vector3(originalHitPoint.x + self._hitPointOffset.x, originalHitPoint.y, originalHitPoint.z + self._hitPointOffset.z)
   self:_CreateTestObj(hitPoint)
   self:_SetInputComponent(hitPoint)
   self:InputDirty()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._UpdateMultiDragState = function(self, hasInput)
-  -- function num : 0_4
+function HandleInputSystem_Render:_UpdateMultiDragState(hasInput)
   self:_UpdateTouchState()
   if hasInput ~= true then
-    return 
+    return
   end
   local castRes = self:_DoMultiPointRayCast()
   if castRes ~= true then
-    self:_RefreshInputData()
-    self:InputDirty()
   end
+  self:_RefreshInputData()
+  self:InputDirty()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._UpdateActiveSkillInputState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local mouseClick = ((UnityEngine.Input).GetMouseButtonDown)(0)
+function HandleInputSystem_Render:_UpdateActiveSkillInputState()
+  local mouseClick = UnityEngine.Input.GetMouseButtonDown(0)
   if not mouseClick then
-    return 
+    return
   end
   local castRes = self:_DoRayCast()
   if castRes ~= true then
-    return 
+    return
   end
-  self:_CreateTestObj((self._hitInfo).point)
-  ;
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.TouchInput, {input = "PickUp", hitPoint = (self._hitInfo).point})
-  ;
-  (self._pickUpCmpt):SetClickPos((self._hitInfo).point)
+  self:_CreateTestObj(self._hitInfo.point)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.TouchInput, {
+    input = "PickUp",
+    hitPoint = self._hitInfo.point
+  })
+  self._pickUpCmpt:SetClickPos(self._hitInfo.point)
   self:_PickUpDirty()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._UpdateChessInputState = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local mouseClick = ((UnityEngine.Input).GetMouseButtonDown)(0)
+function HandleInputSystem_Render:_UpdateChessInputState()
+  local mouseClick = UnityEngine.Input.GetMouseButtonDown(0)
   if not mouseClick then
-    return 
+    return
   end
   local castRes = self:_DoRayCast()
   if castRes ~= true then
-    return 
+    return
   end
-  self:_CreateTestObj((self._hitInfo).point)
-  ;
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.TouchInput, {input = "PickUp", hitPoint = (self._hitInfo).point})
-  ;
-  (self._chessPickUpCmpt):SetChessClickPos((self._hitInfo).point)
+  self:_CreateTestObj(self._hitInfo.point)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.TouchInput, {
+    input = "PickUp",
+    hitPoint = self._hitInfo.point
+  })
+  self._chessPickUpCmpt:SetChessClickPos(self._hitInfo.point)
   self:_ChessPickUpDirty()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._UpdatePopStarInputState = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local mouseClick = ((UnityEngine.Input).GetMouseButtonDown)(0)
+function HandleInputSystem_Render:_UpdatePopStarInputState()
+  local mouseClick = UnityEngine.Input.GetMouseButtonDown(0)
   if not mouseClick then
-    return 
+    return
   end
   local castRes = self:_DoRayCast()
   if castRes ~= true then
-    return 
+    return
   end
-  self:_CreateTestObj((self._hitInfo).point)
-  ;
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.TouchInput, {input = "PickUp", hitPoint = (self._hitInfo).point})
-  ;
-  (self._popStarPickUpCmpt):SetPopStarClickPos((self._hitInfo).point)
+  self:_CreateTestObj(self._hitInfo.point)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.TouchInput, {
+    input = "PickUp",
+    hitPoint = self._hitInfo.point
+  })
+  self._popStarPickUpCmpt:SetPopStarClickPos(self._hitInfo.point)
   self:_PopStarPickUpDirty()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._UpdateMirageInputState = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local mouseClick = ((UnityEngine.Input).GetMouseButtonDown)(0)
+function HandleInputSystem_Render:_UpdateMirageInputState()
+  local mouseClick = UnityEngine.Input.GetMouseButtonDown(0)
   if not mouseClick then
-    return 
+    return
   end
   local castRes = self:_DoRayCast()
   if castRes ~= true then
-    return 
+    return
   end
-  self:_CreateTestObj((self._hitInfo).point)
-  ;
-  ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.TouchInput, {input = "PickUp", hitPoint = (self._hitInfo).point})
-  ;
-  (self._miragePickUpCmpt):SetClickPos((self._hitInfo).point)
+  self:_CreateTestObj(self._hitInfo.point)
+  GameGlobal.GameRecorder():RecordAction(GameRecordAction.TouchInput, {
+    input = "PickUp",
+    hitPoint = self._hitInfo.point
+  })
+  self._miragePickUpCmpt:SetClickPos(self._hitInfo.point)
   self:_MiragePickUpDirty()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._SetInputComponent = function(self, hitPoint)
-  -- function num : 0_9
+function HandleInputSystem_Render:_SetInputComponent(hitPoint)
   if self._doubleClick then
-    (self._inputComponent):SetDoubleClickPos(hitPoint)
-  else
-    if self._dragging then
-      (self._inputComponent):SetTouchMovePosition(hitPoint)
-    else
-      if self._beginDrag then
-        (self._inputComponent):SetTouchBeginPosition(hitPoint)
-      else
-        if self._endDrag then
-          (self._inputComponent):SetTouchEndPosition(hitPoint)
-          self._endDrag = false
-          self._doubleClick = false
-        end
-      end
-    end
+    self._inputComponent:SetDoubleClickPos(hitPoint)
+  elseif self._dragging then
+    self._inputComponent:SetTouchMovePosition(hitPoint)
+  elseif self._beginDrag then
+    self._inputComponent:SetTouchBeginPosition(hitPoint)
+  elseif self._endDrag then
+    self._inputComponent:SetTouchEndPosition(hitPoint)
+    self._endDrag = false
+    self._doubleClick = false
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._RefreshInputData = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local currentTimeMS = (self._timeService):GetCurrentTimeMs()
+function HandleInputSystem_Render:_RefreshInputData()
+  local currentTimeMS = self._timeService:GetCurrentTimeMs()
   if self._doubleClick then
     local deltaLength = currentTimeMS - self._lastDoubleClickTime
-    if #self._lastFramePosArray > 0 and (HelperProxy:GetInstance()):GetFixTimeLen(27) < deltaLength then
-      local firstHitPoint = (self._lastFramePosArray)[1]
-      ;
-      (self._inputComponent):SetDoubleClickPos(firstHitPoint)
-      ;
-      ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.TouchInput, {input = "DoubleClick", hitPoint = firstHitPoint})
+    if #self._lastFramePosArray > 0 and deltaLength > HelperProxy:GetInstance():GetFixTimeLen(27) then
+      local firstHitPoint = self._lastFramePosArray[1]
+      self._inputComponent:SetDoubleClickPos(firstHitPoint)
+      GameGlobal.GameRecorder():RecordAction(GameRecordAction.TouchInput, {
+        input = "DoubleClick",
+        hitPoint = firstHitPoint
+      })
     end
-  else
-    do
-      -- DECOMPILER ERROR at PC47: Unhandled construct in 'MakeBoolean' P1
-
-      if self._dragging and #self._lastFramePosArray > 0 then
-        (self._inputComponent):SetTouchMovePositionList(self._lastFramePosArray)
-        ;
-        ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.TouchInput, {input = "Dragging", hitPoint = (self._lastFramePosArray)[1]})
-      end
-      do
-        -- DECOMPILER ERROR at PC70: Unhandled construct in 'MakeBoolean' P1
-
-        if self._beginDrag and #self._lastFramePosArray > 0 then
-          local firstHitPoint = (self._lastFramePosArray)[1]
-          ;
-          (self._inputComponent):SetTouchBeginPosition(firstHitPoint)
-          ;
-          ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.TouchInput, {input = "BeginDrag", hitPoint = firstHitPoint})
-        end
-        if self._endDrag then
-          (self._inputComponent):SetTouchEndPosition(nil)
-          self._endDrag = false
-          self._doubleClick = false
-          ;
-          ((GameGlobal.GameRecorder)()):RecordAction(GameRecordAction.TouchInput, {input = "EndDrag"})
-        end
-      end
+  elseif self._dragging then
+    if #self._lastFramePosArray > 0 then
+      self._inputComponent:SetTouchMovePositionList(self._lastFramePosArray)
+      GameGlobal.GameRecorder():RecordAction(GameRecordAction.TouchInput, {
+        input = "Dragging",
+        hitPoint = self._lastFramePosArray[1]
+      })
     end
+  elseif self._beginDrag then
+    if #self._lastFramePosArray > 0 then
+      local firstHitPoint = self._lastFramePosArray[1]
+      self._inputComponent:SetTouchBeginPosition(firstHitPoint)
+      GameGlobal.GameRecorder():RecordAction(GameRecordAction.TouchInput, {input = "BeginDrag", hitPoint = firstHitPoint})
+    end
+  elseif self._endDrag then
+    self._inputComponent:SetTouchEndPosition(nil)
+    self._endDrag = false
+    self._doubleClick = false
+    GameGlobal.GameRecorder():RecordAction(GameRecordAction.TouchInput, {input = "EndDrag"})
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._UpdateInputState = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local mouseClick = ((UnityEngine.Input).GetMouseButtonDown)(0)
-  local mouseHoldDown = ((UnityEngine.Input).GetMouseButton)(0)
-  local mouseRelease = ((UnityEngine.Input).GetMouseButtonUp)(0)
+function HandleInputSystem_Render:_UpdateInputState()
+  local mouseClick = UnityEngine.Input.GetMouseButtonDown(0)
+  local mouseHoldDown = UnityEngine.Input.GetMouseButton(0)
+  local mouseRelease = UnityEngine.Input.GetMouseButtonUp(0)
   if mouseClick then
     self:_OnMouseClick()
   else
@@ -289,12 +233,9 @@ HandleInputSystem_Render._UpdateInputState = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._OnMouseClick = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local currentTimeMS = (self._timeService):GetCurrentTimeMs()
-  if currentTimeMS - self._lastClickTime < (HelperProxy:GetInstance()):GetFixTimeLen(222) then
+function HandleInputSystem_Render:_OnMouseClick()
+  local currentTimeMS = self._timeService:GetCurrentTimeMs()
+  if currentTimeMS - self._lastClickTime < HelperProxy:GetInstance():GetFixTimeLen(222) then
     self._doubleClick = true
     self._lastDoubleClickTime = currentTimeMS
   else
@@ -303,38 +244,30 @@ HandleInputSystem_Render._OnMouseClick = function(self)
   self._lastClickTime = currentTimeMS
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._OnMouseHoldDown = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local currentInputPos = (UnityEngine.Input).mousePosition
-  local currentTimeMS = (self._timeService):GetCurrentTimeMs()
+function HandleInputSystem_Render:_OnMouseHoldDown()
+  local currentInputPos = UnityEngine.Input.mousePosition
+  local currentTimeMS = self._timeService:GetCurrentTimeMs()
   if self._heldDown ~= true then
     self._lastHeldDownTime = currentTimeMS
     self._heldDownPos = currentInputPos
     self._heldDown = true
   end
   local deltaTime = currentTimeMS - self._lastHeldDownTime
-  if deltaTime > 10 then
+  if 10 < deltaTime then
     self._longPress = true
     self._click = false
     if self._dragging == false then
       if self._beginDrag == false and self._doubleClick == false then
         self._beginDrag = true
-      else
-        if currentInputPos ~= self._heldDownPos then
-          self._dragging = true
-          self._beginDrag = false
-        end
+      elseif currentInputPos ~= self._heldDownPos then
+        self._dragging = true
+        self._beginDrag = false
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._OnMouseUp = function(self)
-  -- function num : 0_14
+function HandleInputSystem_Render:_OnMouseUp()
   if self._dragging == true or self._beginDrag == true then
     self._endDrag = true
   end
@@ -347,287 +280,191 @@ HandleInputSystem_Render._OnMouseUp = function(self)
   self._doubleClick = false
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._DoMultiPointRayCast = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local camera = (self._world):MainCamera()
+function HandleInputSystem_Render:_DoMultiPointRayCast()
+  local camera = self._world:MainCamera()
   if not camera then
     return false
   end
   self._lastFramePosArray = {}
-  local posData = (InputHelper.LastFramePositionArray)()
+  local posData = InputHelper.LastFramePositionArray()
   local inputPos = posData[0]
   local ray = camera:ScreenPointToRay(inputPos)
-  local layMask = 2 ^ (LayerMask.NameToLayer)("Stage")
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(ray, nil, self._rayCastMaxDistance, layMask)
-  do
-    if castRes == true then
-      local isCastUI = self:_CheckInputPosCastUI(inputPos)
-      -- DECOMPILER ERROR at PC41: Confused about usage of register: R9 in 'UnsetPending'
-
-      if isCastUI == false then
-        (self._lastFramePosArray)[#self._lastFramePosArray + 1] = hitInfo.point
-      end
+  local layMask = 2 ^ LayerMask.NameToLayer("Stage")
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(ray, nil, self._rayCastMaxDistance, layMask)
+  if castRes == true then
+    local isCastUI = self:_CheckInputPosCastUI(inputPos)
+    if isCastUI == false then
+      self._lastFramePosArray[#self._lastFramePosArray + 1] = hitInfo.point
     end
-    local hitInfoCount = #self._lastFramePosArray
-    if hitInfoCount > 0 then
-      return true
-    end
-    return false
   end
+  local hitInfoCount = #self._lastFramePosArray
+  if 0 < hitInfoCount then
+    return true
+  end
+  return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._DoRayCast = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local camera = (self._world):MainCamera()
+function HandleInputSystem_Render:_DoRayCast()
+  local camera = self._world:MainCamera()
   if not camera then
     return false
   end
-  local inputPos = (UnityEngine.Input).mousePosition
+  local inputPos = UnityEngine.Input.mousePosition
   local ray = camera:ScreenPointToRay(inputPos)
-  local layMask = 2 ^ (LayerMask.NameToLayer)("Stage")
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(ray, nil, self._rayCastMaxDistance, layMask)
-  do
-    if castRes == true then
-      local isCastUI = self:_IsCastUI()
-      if isCastUI then
-        return false
-      end
+  local layMask = 2 ^ LayerMask.NameToLayer("Stage")
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(ray, nil, self._rayCastMaxDistance, layMask)
+  if castRes == true then
+    local isCastUI = self:_IsCastUI()
+    if isCastUI then
+      return false
     end
-    self._hitInfo = hitInfo
-    return castRes
   end
+  self._hitInfo = hitInfo
+  return castRes
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._CheckInputPosCastUI = function(self, inputPos)
-  -- function num : 0_17 , upvalues : _ENV
-  local eventSystem = ((UnityEngine.EventSystems).EventSystem).current
-  if (InputHelper.IsPointerOverGameObject)() then
-    local pointer = ((UnityEngine.EventSystems).PointerEventData):New(eventSystem)
+function HandleInputSystem_Render:_CheckInputPosCastUI(inputPos)
+  local eventSystem = UnityEngine.EventSystems.EventSystem.current
+  if InputHelper.IsPointerOverGameObject() then
+    local pointer = UnityEngine.EventSystems.PointerEventData:New(eventSystem)
     pointer.position = inputPos
-    local raycastResults = (UIHelper.CreateEventSystemRaycastResultList)()
+    local raycastResults = UIHelper.CreateEventSystemRaycastResultList()
     eventSystem:RaycastAll(pointer, raycastResults)
     for i = 1, raycastResults.Count do
-      local go = (raycastResults:get_Item(i - 1)).gameObject
-      local isContain = (table.icontains)(self._inputUIArray, go.name)
-      -- DECOMPILER ERROR at PC39: Confused about usage of register: R11 in 'UnsetPending'
-
+      local go = raycastResults:get_Item(i - 1).gameObject
+      local isContain = table.icontains(self._inputUIArray, go.name)
       if isContain == false then
-        (self._inputComponent)._touchHasBegin = false
+        self._inputComponent._touchHasBegin = false
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._IsCastUI = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local inputPos = (UnityEngine.Input).mousePosition
-  local eventSystem = ((UnityEngine.EventSystems).EventSystem).current
-  if (InputHelper.IsPointerOverGameObject)() then
-    local pointer = ((UnityEngine.EventSystems).PointerEventData):New(eventSystem)
+function HandleInputSystem_Render:_IsCastUI()
+  local inputPos = UnityEngine.Input.mousePosition
+  local eventSystem = UnityEngine.EventSystems.EventSystem.current
+  if InputHelper.IsPointerOverGameObject() then
+    local pointer = UnityEngine.EventSystems.PointerEventData:New(eventSystem)
     pointer.position = inputPos
-    local raycastResults = (UIHelper.CreateEventSystemRaycastResultList)()
+    local raycastResults = UIHelper.CreateEventSystemRaycastResultList()
     eventSystem:RaycastAll(pointer, raycastResults)
     for i = 1, raycastResults.Count do
-      local go = (raycastResults:get_Item(i - 1)).gameObject
-      -- DECOMPILER ERROR at PC38: Confused about usage of register: R10 in 'UnsetPending'
-
+      local go = raycastResults:get_Item(i - 1).gameObject
       if go.name ~= "black_mask" then
-        (self._inputComponent)._touchHasBegin = false
+        self._inputComponent._touchHasBegin = false
         return true
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render.InputDirty = function(self)
-  -- function num : 0_19
-  local component = (self._world):GetUniqueComponent(((self._world).BW_UniqueComponentsEnum).Input)
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).Input, component)
+function HandleInputSystem_Render:InputDirty()
+  local component = self._world:GetUniqueComponent(self._world.BW_UniqueComponentsEnum.Input)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.Input, component)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._PickUpDirty = function(self)
-  -- function num : 0_20
-  local component = (self._world):GetUniqueComponent(((self._world).BW_UniqueComponentsEnum).PickUp)
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).PickUp, component)
+function HandleInputSystem_Render:_PickUpDirty()
+  local component = self._world:GetUniqueComponent(self._world.BW_UniqueComponentsEnum.PickUp)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.PickUp, component)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render.TouchDirty = function(self)
-  -- function num : 0_21
-  local touchCmpt = (self._world):GetUniqueComponent(((self._world).BW_UniqueComponentsEnum).Touch)
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).Touch, touchCmpt)
+function HandleInputSystem_Render:TouchDirty()
+  local touchCmpt = self._world:GetUniqueComponent(self._world.BW_UniqueComponentsEnum.Touch)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.Touch, touchCmpt)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._ChessPickUpDirty = function(self)
-  -- function num : 0_22
-  local component = (self._world):GetUniqueComponent(((self._world).BW_UniqueComponentsEnum).ChessPickUp)
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).ChessPickUp, component)
+function HandleInputSystem_Render:_ChessPickUpDirty()
+  local component = self._world:GetUniqueComponent(self._world.BW_UniqueComponentsEnum.ChessPickUp)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.ChessPickUp, component)
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._PopStarPickUpDirty = function(self)
-  -- function num : 0_23
-  local component = (self._world):GetUniqueComponent(((self._world).BW_UniqueComponentsEnum).PopStarPickUp)
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).PopStarPickUp, component)
+function HandleInputSystem_Render:_PopStarPickUpDirty()
+  local component = self._world:GetUniqueComponent(self._world.BW_UniqueComponentsEnum.PopStarPickUp)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.PopStarPickUp, component)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._MiragePickUpDirty = function(self)
-  -- function num : 0_24
-  local component = (self._world):GetUniqueComponent(((self._world).BW_UniqueComponentsEnum).MiragePickUp)
-  ;
-  (self._world):SetUniqueComponent(((self._world).BW_UniqueComponentsEnum).MiragePickUp, component)
+function HandleInputSystem_Render:_MiragePickUpDirty()
+  local component = self._world:GetUniqueComponent(self._world.BW_UniqueComponentsEnum.MiragePickUp)
+  self._world:SetUniqueComponent(self._world.BW_UniqueComponentsEnum.MiragePickUp, component)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._CreateTestObj = function(self, hitPoint)
-  -- function num : 0_25 , upvalues : _ENV
+function HandleInputSystem_Render:_CreateTestObj(hitPoint)
   if not EDITOR then
-    return 
+    return
   end
   if self.sphere == nil then
-    self.sphere = ((UnityEngine.GameObject).CreatePrimitive)((UnityEngine.PrimitiveType).Sphere)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.sphere).name = "Test"
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self.sphere).transform).localScale = Vector3(0.1, 0, 0.1)
+    self.sphere = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Sphere)
+    self.sphere.name = "Test"
+    self.sphere.transform.localScale = Vector3(0.1, 0, 0.1)
   end
   local newPos = Vector3(hitPoint.x, hitPoint.y, hitPoint.z)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self.sphere).transform).position = newPos
+  self.sphere.transform.position = newPos
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._LookAtPlayer = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  local cameraCmpt = (self._world):MainCamera()
+function HandleInputSystem_Render:_LookAtPlayer()
+  local cameraCmpt = self._world:MainCamera()
   if cameraCmpt == nil then
-    return 
+    return
   end
   if self._boardCenterObj == nil then
-    self._boardCenterObj = ((UnityEngine.GameObject).CreatePrimitive)((UnityEngine.PrimitiveType).Sphere)
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._boardCenterObj).name = "BoardCenter"
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._boardCenterObj).transform).localScale = Vector3(0.1, 0, 0.1)
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._boardCenterObj).transform).position = Vector3(0, 0, 1)
+    self._boardCenterObj = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Sphere)
+    self._boardCenterObj.name = "BoardCenter"
+    self._boardCenterObj.transform.localScale = Vector3(0.1, 0, 0.1)
+    self._boardCenterObj.transform.position = Vector3(0, 0, 1)
   end
   local cameraObj = cameraCmpt:Camera()
-  ;
-  ((cameraObj.gameObject).transform):LookAt((self._boardCenterObj).transform)
+  cameraObj.gameObject.transform:LookAt(self._boardCenterObj.transform)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._CreateLookAtObj = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local cameraCmpt = (self._world):MainCamera()
+function HandleInputSystem_Render:_CreateLookAtObj()
+  local cameraCmpt = self._world:MainCamera()
   if cameraCmpt == nil then
-    return 
+    return
   end
   local cameraObj = cameraCmpt:Camera()
-  local cameraForward = ((cameraObj.gameObject).transform).forward
-  local cameraPosition = ((cameraObj.gameObject).transform).position
+  local cameraForward = cameraObj.gameObject.transform.forward
+  local cameraPosition = cameraObj.gameObject.transform.position
   local castDistance = 2000
-  local layMask = 2 ^ (LayerMask.NameToLayer)("Stage")
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(cameraPosition, cameraForward, nil, castDistance, layMask)
+  local layMask = 2 ^ LayerMask.NameToLayer("Stage")
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(cameraPosition, cameraForward, nil, castDistance, layMask)
   if castRes ~= true then
-    return 
+    return
   end
   local hitPoint = hitInfo.point
   if self.sphere == nil then
-    self.sphere = ((UnityEngine.GameObject).CreatePrimitive)((UnityEngine.PrimitiveType).Sphere)
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.sphere).name = "LookAt"
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    ((self.sphere).transform).localScale = Vector3(0.1, 0, 0.1)
+    self.sphere = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Sphere)
+    self.sphere.name = "LookAt"
+    self.sphere.transform.localScale = Vector3(0.1, 0, 0.1)
   end
   local newPos = Vector3(hitPoint.x, hitPoint.y, hitPoint.z)
-  -- DECOMPILER ERROR at PC61: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  ((self.sphere).transform).position = newPos
-  local rayDistance = (Vector3.Distance)(cameraPosition, hitPoint)
-  ;
-  ((UnityEngine.Debug).DrawRay)(cameraPosition, cameraForward * rayDistance, Color.green)
+  self.sphere.transform.position = newPos
+  local rayDistance = Vector3.Distance(cameraPosition, hitPoint)
+  UnityEngine.Debug.DrawRay(cameraPosition, cameraForward * rayDistance, Color.green)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render.CancelChainPath = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function HandleInputSystem_Render:CancelChainPath()
   self:_OnMouseUp()
-  local cameraCmpt = (self._world):MainCamera()
+  local cameraCmpt = self._world:MainCamera()
   if cameraCmpt:IsFocusPlayer() then
     cameraCmpt:DoMoveCamera(false)
   end
   self._lastMousePosition = nil
-  ;
-  (Log.notice)("HandleInput CancelChainPath")
+  Log.notice("HandleInput CancelChainPath")
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._IsWaitInputState = function(self)
-  -- function num : 0_29
-  local utilDataSvc = (self._world):GetService("UtilData")
+function HandleInputSystem_Render:_IsWaitInputState()
+  local utilDataSvc = self._world:GetService("UtilData")
   local isInput = utilDataSvc:GetMainStateInputEnable()
-  if (self._inputComponent):IsPreviewActiveSkill() then
+  if self._inputComponent:IsPreviewActiveSkill() then
     isInput = true
   end
   return isInput
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._IsActiveSkillInputState = function(self)
-  -- function num : 0_30 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function HandleInputSystem_Render:_IsActiveSkillInputState()
+  local utilDataSvc = self._world:GetService("UtilData")
   local gameFsmStateID = utilDataSvc:GetCurMainStateID()
   if gameFsmStateID == GameStateID.PickUpActiveSkillTarget or gameFsmStateID == GameStateID.PreviewActiveSkill then
     return true
@@ -638,11 +475,8 @@ HandleInputSystem_Render._IsActiveSkillInputState = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._IsMirageWaitInputState = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function HandleInputSystem_Render:_IsMirageWaitInputState()
+  local utilDataSvc = self._world:GetService("UtilData")
   local gameFsmStateID = utilDataSvc:GetCurMainStateID()
   if gameFsmStateID == GameStateID.MirageWaitInput and not utilDataSvc:GetStatAutoFight() then
     return true
@@ -650,30 +484,27 @@ HandleInputSystem_Render._IsMirageWaitInputState = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._UpdateTouchState = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  local gridTouchComponent = (self._world):GridTouch()
+function HandleInputSystem_Render:_UpdateTouchState()
+  local gridTouchComponent = self._world:GridTouch()
   local touchState = gridTouchComponent:GetGridTouchStateID()
-  local mainCameraCmpt = (self._world):MainCamera()
+  local mainCameraCmpt = self._world:MainCamera()
   if touchState == GridTouchStateID.Drag and mainCameraCmpt:IsMovingToFocus() then
     mainCameraCmpt:MoveCameraToFocusImmediately()
   end
   local isFocusPlayer = mainCameraCmpt:IsFocusPlayer()
   if not isFocusPlayer then
     self._lastMousePosition = nil
-    return 
+    return
   end
-  local curMousePos = (UnityEngine.Input).mousePosition
+  local curMousePos = UnityEngine.Input.mousePosition
   if self._lastMousePosition == nil then
     self._lastMousePosition = curMousePos
   end
-  local mouseHoldDown = ((UnityEngine.Input).GetMouseButton)(0)
+  local mouseHoldDown = UnityEngine.Input.GetMouseButton(0)
   if not mouseHoldDown then
-    return 
+    return
   end
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local cameraParam = levelConfigData:GetCameraParam()
   local moveSpeed = cameraParam:GetTouchMoveCameraSpeed()
@@ -681,10 +512,10 @@ HandleInputSystem_Render._UpdateTouchState = function(self)
   if hitPoint ~= nil then
     local moveEdge = cameraParam:GetMoveCameraEdge()
     local moveEdgeSpeed = cameraParam:GetTouchMoveCameraEdgeSpeed()
-    local boardServiceRender = (self._world):GetService("BoardRender")
+    local boardServiceRender = self._world:GetService("BoardRender")
     local gridPos = boardServiceRender:BoardRenderPos2FloatGridPos(hitPoint)
-    local x = (math.abs)(gridPos.x)
-    local y = (math.abs)(gridPos.y)
+    local x = math.abs(gridPos.x)
+    local y = math.abs(gridPos.y)
     if x <= 1 or y <= 1 or moveEdge <= x or moveEdge <= y then
       moveSpeed = moveEdgeSpeed
     end
@@ -693,95 +524,73 @@ HandleInputSystem_Render._UpdateTouchState = function(self)
       moveSpeed = modifiedSpeed
     end
   end
-  do
-    local mouseDelta = curMousePos - self._lastMousePosition
-    local deltaMove = mouseDelta * moveSpeed
-    local mainCameraCmpt = (self._world):MainCamera()
-    local cameraCmpt = mainCameraCmpt:Camera()
-    local targetCameraPos = self:_CalcTargetCameraPos(deltaMove)
-    -- DECOMPILER ERROR at PC101: Confused about usage of register: R17 in 'UnsetPending'
-
-    ;
-    (cameraCmpt.transform).position = targetCameraPos
-    self._lastMousePosition = curMousePos
-  end
+  local mouseDelta = curMousePos - self._lastMousePosition
+  local deltaMove = mouseDelta * moveSpeed
+  local mainCameraCmpt = self._world:MainCamera()
+  local cameraCmpt = mainCameraCmpt:Camera()
+  local targetCameraPos = self:_CalcTargetCameraPos(deltaMove)
+  cameraCmpt.transform.position = targetCameraPos
+  self._lastMousePosition = curMousePos
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._CalcTargetCameraPos = function(self, moveDir)
-  -- function num : 0_33 , upvalues : _ENV
-  local mainCameraCmpt = (self._world):MainCamera()
+function HandleInputSystem_Render:_CalcTargetCameraPos(moveDir)
+  local mainCameraCmpt = self._world:MainCamera()
   local cameraObj = mainCameraCmpt:Camera()
-  local curCameraPos = (cameraObj.transform).position
-  local worldMoveDir = (cameraObj.transform):TransformDirection(moveDir)
+  local curCameraPos = cameraObj.transform.position
+  local worldMoveDir = cameraObj.transform:TransformDirection(moveDir)
   local targetCameraPos = curCameraPos + worldMoveDir
   local targetFocusPos = mainCameraCmpt:GetFocusTargetPos()
   if targetFocusPos ~= nil then
     local deltaDir = targetCameraPos - targetFocusPos
-    local localDeltaDir = (cameraObj.transform):InverseTransformDirection(deltaDir)
-    local configService = (self._world):GetService("Config")
+    local localDeltaDir = cameraObj.transform:InverseTransformDirection(deltaDir)
+    local configService = self._world:GetService("Config")
     local levelConfigData = configService:GetLevelConfigData()
     local cameraParam = levelConfigData:GetCameraParam()
     local cameraMaxHorizatalLeft = cameraParam:GetCameraMaxHorizatalLeft()
     local cameraMaxHorizatalRight = cameraParam:GetCameraMaxHorizatalRight()
     local cameraMaxVerticalUp = cameraParam:GetCameraMaxVerticalUp()
     local cameraMaxVerticalDown = cameraParam:GetCameraMaxVerticalDown()
-    if localDeltaDir.x < 0 and cameraMaxHorizatalLeft < (math.abs)(localDeltaDir.x) then
+    if localDeltaDir.x < 0 and cameraMaxHorizatalLeft < math.abs(localDeltaDir.x) then
       localDeltaDir.x = -cameraMaxHorizatalLeft
-    else
-      if localDeltaDir.x > 0 and cameraMaxHorizatalRight < localDeltaDir.x then
-        localDeltaDir.x = cameraMaxHorizatalRight
-      end
+    elseif localDeltaDir.x > 0 and cameraMaxHorizatalRight < localDeltaDir.x then
+      localDeltaDir.x = cameraMaxHorizatalRight
     end
-    if localDeltaDir.y > 0 and cameraMaxHorizatalRight < localDeltaDir.y then
+    if 0 < localDeltaDir.y and cameraMaxHorizatalRight < localDeltaDir.y then
       localDeltaDir.y = cameraMaxHorizatalRight
-    else
-      if localDeltaDir.y < 0 and cameraMaxVerticalDown < (math.abs)(localDeltaDir.y) then
-        localDeltaDir.y = -cameraMaxVerticalDown
-      end
+    elseif 0 > localDeltaDir.y and cameraMaxVerticalDown < math.abs(localDeltaDir.y) then
+      localDeltaDir.y = -cameraMaxVerticalDown
     end
-    targetCameraPos = targetFocusPos + (cameraObj.transform):TransformDirection(localDeltaDir)
+    targetCameraPos = targetFocusPos + cameraObj.transform:TransformDirection(localDeltaDir)
   end
-  do
-    return targetCameraPos
-  end
+  return targetCameraPos
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._CalcHitPoint = function(self, inputPos)
-  -- function num : 0_34 , upvalues : _ENV
-  local cameraCmpt = (self._world):MainCamera()
+function HandleInputSystem_Render:_CalcHitPoint(inputPos)
+  local cameraCmpt = self._world:MainCamera()
   if cameraCmpt == nil then
     return nil
   end
   local ray = cameraCmpt:ScreenPointToRay(inputPos)
-  local layMask = 2 ^ (LayerMask.NameToLayer)("Stage")
-  local castRes, hitInfo = ((UnityEngine.Physics).Raycast)(ray, nil, self._rayCastMaxDistance, layMask)
+  local layMask = 2 ^ LayerMask.NameToLayer("Stage")
+  local castRes, hitInfo = UnityEngine.Physics.Raycast(ray, nil, self._rayCastMaxDistance, layMask)
   if castRes == true then
     return hitInfo.point
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-HandleInputSystem_Render._DoModifyCameraMoveFactor = function(self, gridX, gridY)
-  -- function num : 0_35 , upvalues : _ENV
+function HandleInputSystem_Render:_DoModifyCameraMoveFactor(gridX, gridY)
   if not IsPc() then
-    return 
+    return
   end
-  local configService = (self._world):GetService("Config")
+  local configService = self._world:GetService("Config")
   local levelConfigData = configService:GetLevelConfigData()
   local cameraParam = levelConfigData:GetCameraParam()
   local moveEdgeSpeed = cameraParam:GetTouchMoveCameraEdgeSpeed()
   local baseWidth = 1920
-  local rate = baseWidth / (UnityEngine.Screen).width
+  local rate = baseWidth / UnityEngine.Screen.width
   local edgeFactor = moveEdgeSpeed * rate
-  if gridY >= 5 then
+  if 5 <= gridY then
     return edgeFactor
   end
 end
-
-

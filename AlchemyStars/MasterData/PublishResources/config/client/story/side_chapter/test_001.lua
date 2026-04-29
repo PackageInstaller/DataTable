@@ -1,11 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/story/side_chapter/test_001.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-return {ID = 1, Name = "test_001", Category = "SideStory", 
-Paragraphs = {}
-, UpdateTimestamp = 1614567090.3623, CreateTimestamp = 1614567090.3623, 
-Entities = {}
+return {
+  ID = 1,
+  Name = "test_001",
+  Category = "SideStory",
+  Paragraphs = {},
+  UpdateTimestamp = 1.6145670903623452E9,
+  CreateTimestamp = 1.6145670903623452E9,
+  Entities = {}
 }
-

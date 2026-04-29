@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/shop/shop_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ShopModule", GameModule)
 ShopModule = ShopModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ShopModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ShopModule:Constructor()
   self._blackMarketData = {}
   self._blackMarketConfig = {}
   self._mysteryMarketData = {}
@@ -23,128 +16,89 @@ ShopModule.Constructor = function(self)
   self._lastGetPriceTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self.caller):UnRegisterPushHandler(CEventPushDiamondData)
-  ;
-  (self.caller):UnRegisterPushHandler(CEventPushCommonTimeIds)
+function ShopModule:Dispose()
+  self.caller:UnRegisterPushHandler(CEventPushDiamondData)
+  self.caller:UnRegisterPushHandler(CEventPushCommonTimeIds)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetClientShop = function(self)
-  -- function num : 0_2
+function ShopModule:GetClientShop()
   return self._clientShop
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.Init = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ShopModule:Init()
   self:AttachEvent(GameEventType.UIQuestDailyReset, self._RefreshGiftMarketData)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushDiamondData, self._HandlePushDiamondData, self)
-  ;
-  (self.caller):RegisterPushHandler(CEventPushCommonTimeIds, self._HandlePushCommonTimeIds, self)
+  self.caller:RegisterPushHandler(CEventPushDiamondData, self._HandlePushDiamondData, self)
+  self.caller:RegisterPushHandler(CEventPushCommonTimeIds, self._HandlePushCommonTimeIds, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetLocalPriceOnlyForLoginLoad = function(self)
-  -- function num : 0_4
+function ShopModule:GetLocalPriceOnlyForLoginLoad()
   self:_GetLocalPrice_Private()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule._GetLocalPrice_Private = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ShopModule:_GetLocalPrice_Private()
   local midasIds = {}
   if self._payMarketConfig then
-    for k,cfgv in pairs(self._payMarketConfig) do
+    for k, cfgv in pairs(self._payMarketConfig) do
       if cfgv then
         local midasId = cfgv[ConfigKey.ConfigKey_MidasItemId]
-        if midasId and not (string.isnullorempty)(midasId) then
-          (table.insert)(midasIds, midasId)
+        if midasId and not string.isnullorempty(midasId) then
+          table.insert(midasIds, midasId)
         end
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("### _payMarketConfig nil.")
-      if self._giftMarketConfig then
-        for k,cfgv in pairs(self._giftMarketConfig) do
-          if cfgv and self:_ConfirmOnShow(cfgv) then
-            local midasId = cfgv[ConfigKey.ConfigKey_MidasItemId]
-            if midasId and not (string.isnullorempty)(midasId) then
-              (table.insert)(midasIds, midasId)
-            end
-          end
-        end
-      else
-        do
-          ;
-          (Log.fatal)("### _giftMarketConfig nil.")
-          if self._skinMarketConfig then
-            for k,cfgv in pairs(self._skinMarketConfig) do
-              if cfgv and self:_ConfirmOnShow(cfgv) then
-                local midasId = cfgv[ConfigKey.ConfigKey_MidasItemId]
-                if midasId and not (string.isnullorempty)(midasId) then
-                  (table.insert)(midasIds, midasId)
-                end
-              end
-            end
-          else
-            do
-              ;
-              (Log.fatal)("### _skinMarketConfig nil.")
-              if midasIds and (table.count)(midasIds) > 0 then
-                local mPay = (GameGlobal.GetModule)(PayModule)
-                mPay:GetLocalPrice(midasIds)
-              else
-                do
-                  ;
-                  (Log.fatal)("### [shop] midasIds empty. did not call GetLocalPrice.")
-                end
-              end
-            end
-          end
+    Log.fatal("### _payMarketConfig nil.")
+  end
+  if self._giftMarketConfig then
+    for k, cfgv in pairs(self._giftMarketConfig) do
+      if cfgv and self:_ConfirmOnShow(cfgv) then
+        local midasId = cfgv[ConfigKey.ConfigKey_MidasItemId]
+        if midasId and not string.isnullorempty(midasId) then
+          table.insert(midasIds, midasId)
         end
       end
     end
+  else
+    Log.fatal("### _giftMarketConfig nil.")
   end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.FillInitData = function(self, all_market_info, total_diamond_count, skin_market_data)
-  -- function num : 0_6 , upvalues : _ENV
-  self._mysteryMarketData = (all_market_info.market_datas)[MarketType.Shop_MysteryMarket]
-  self._blackMarketData = (all_market_info.market_datas)[MarketType.Shop_BlackMarket]
-  self._payMarketData = (all_market_info.market_datas)[MarketType.Shop_PayMarket]
-  do
-    if self._payMarketData then
-      local tmp_log_str = ""
-      for k,v in pairs((self._payMarketData).goods) do
-        tmp_log_str = tmp_log_str .. tostring(v.goods_id) .. "   "
+  if self._skinMarketConfig then
+    for k, cfgv in pairs(self._skinMarketConfig) do
+      if cfgv and self:_ConfirmOnShow(cfgv) then
+        local midasId = cfgv[ConfigKey.ConfigKey_MidasItemId]
+        if midasId and not string.isnullorempty(midasId) then
+          table.insert(midasIds, midasId)
+        end
       end
-      ;
-      (Log.debug)("self._payMarketData.goods :", tmp_log_str)
     end
-    self._giftMarketData = all_market_info.month_card_data
-    self._ClientGiftSaleNums = {}
-    self._diamondCount = total_diamond_count
-    self._SkinMarketData = skin_market_data
+  else
+    Log.fatal("### _skinMarketConfig nil.")
+  end
+  if midasIds and table.count(midasIds) > 0 then
+    local mPay = GameGlobal.GetModule(PayModule)
+    mPay:GetLocalPrice(midasIds)
+  else
+    Log.fatal("### [shop] midasIds empty. did not call GetLocalPrice.")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
+function ShopModule:FillInitData(all_market_info, total_diamond_count, skin_market_data)
+  self._mysteryMarketData = all_market_info.market_datas[MarketType.Shop_MysteryMarket]
+  self._blackMarketData = all_market_info.market_datas[MarketType.Shop_BlackMarket]
+  self._payMarketData = all_market_info.market_datas[MarketType.Shop_PayMarket]
+  if self._payMarketData then
+    local tmp_log_str = ""
+    for k, v in pairs(self._payMarketData.goods) do
+      tmp_log_str = tmp_log_str .. tostring(v.goods_id) .. "   "
+    end
+    Log.debug("self._payMarketData.goods :", tmp_log_str)
+  end
+  self._giftMarketData = all_market_info.month_card_data
+  self._ClientGiftSaleNums = {}
+  self._diamondCount = total_diamond_count
+  self._SkinMarketData = skin_market_data
+end
 
-ShopModule.FillInitConfig = function(self, all_market_config)
-  -- function num : 0_7
+function ShopModule:FillInitConfig(all_market_config)
   self._blackMarketConfig = all_market_config.black_market_config
   self._mysteryMarketConfig = all_market_config.mystery_market_config
   self._payMarketConfig = all_market_config.pay_market_config
@@ -153,87 +107,61 @@ ShopModule.FillInitConfig = function(self, all_market_config)
   self._skinMarketConfig = all_market_config.skin_market_config
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule._HandlePushDiamondData = function(self, diamondData)
-  -- function num : 0_8 , upvalues : _ENV
+function ShopModule:_HandlePushDiamondData(diamondData)
   if self._not1stIn then
     local delta = diamondData.diamond_count - self._diamondCount
-    if delta > 0 then
+    if 0 < delta then
       local a = RoleAsset:New()
       a.assetid = RoleAssetID.RoleAssetDiamond
       a.count = delta
-      ;
-      ((GameGlobal.UIStateManager)()):ShowDialog("UIShopRechargeGain", {a})
+      GameGlobal.UIStateManager():ShowDialog("UIShopRechargeGain", {a})
     end
   else
-    do
-      self._not1stIn = true
-      self._diamondCount = diamondData.diamond_count
-      self._freeDiamondCount = diamondData.free_diamond_count
-      ;
-      (Log.debug)("current _diamondCount:", self._diamondCount, "_freeDiamondCount : ", self._freeDiamondCount)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.DiamondCountChanged)
-    end
+    self._not1stIn = true
   end
+  self._diamondCount = diamondData.diamond_count
+  self._freeDiamondCount = diamondData.free_diamond_count
+  Log.debug("current _diamondCount:", self._diamondCount, "_freeDiamondCount : ", self._freeDiamondCount)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.DiamondCountChanged)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetLocalPrice = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local srvTime = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(srvTime:GetServerTime() / 1000)
+function ShopModule:GetLocalPrice()
+  local srvTime = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(srvTime:GetServerTime() / 1000)
   if curTime - self._lastGetPriceTime < 10 then
-    return 
+    return
   end
   self:_GetLocalPrice_Private()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetDiamondCount = function(self)
-  -- function num : 0_10
+function ShopModule:GetDiamondCount()
   return self._diamondCount, self._freeDiamondCount
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule._ConfirmOnShow = function(self, cfgv)
-  -- function num : 0_11 , upvalues : _ENV
-  local srvTime = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(srvTime:GetServerTime() / 1000)
+function ShopModule:_ConfirmOnShow(cfgv)
+  local srvTime = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(srvTime:GetServerTime() / 1000)
   local showEndTIme = tonumber(cfgv[ConfigKey.ConfigKey_ShowEndTime])
-  if curTime > showEndTIme then
-    do return curTime == nil or showEndTIme == nil end
-    ;
-    (Log.error)("curTime : ", curTime, "showEndTIme : ", showEndTIme)
-    do return true end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  if curTime ~= nil and showEndTIme ~= nil then
+    return curTime <= showEndTIme
+  else
+    Log.error("curTime : ", curTime, "showEndTIme : ", showEndTIme)
+    return true
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule._HandlePushCommonTimeIds = function(self, msgData)
-  -- function num : 0_12 , upvalues : _ENV
-  if self._giftMarketData ~= nil and (self._giftMarketData).goods ~= nil then
-    for key,value in pairs((self._giftMarketData).goods) do
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-      if (msgData.data)[value.gift_id] ~= nil then
-        ((self._giftMarketData).goods)[key] = (msgData.data)[value.gift_id]
+function ShopModule:_HandlePushCommonTimeIds(msgData)
+  if self._giftMarketData ~= nil and self._giftMarketData.goods ~= nil then
+    for key, value in pairs(self._giftMarketData.goods) do
+      if msgData.data[value.gift_id] ~= nil then
+        self._giftMarketData.goods[key] = msgData.data[value.gift_id]
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.BuyItem = function(self, TT, market_type, goods_id, buy_num, currency_type, selling_price, ids)
-  -- function num : 0_13 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventBuyItem)
+function ShopModule:BuyItem(TT, market_type, goods_id, buy_num, currency_type, selling_price, ids)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventBuyItem)
   request.market_type = market_type
   request.goods_id = goods_id == nil and 1 or goods_id
   request.buy_num = buy_num == nil and 1 or buy_num
@@ -246,59 +174,47 @@ ShopModule.BuyItem = function(self, TT, market_type, goods_id, buy_num, currency
   if reply.res ~= CallResultType.Normal then
     return SHOP_CODE.SHOP_SERVER_RETURN_ERROR
   end
-  return (reply.msg).ret
+  return reply.msg.ret
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.BuyGift = function(self, TT, giftID)
-  -- function num : 0_14 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventBuyGift)
+function ShopModule:BuyGift(TT, giftID)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventBuyGift)
   request.gift_id = giftID
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return SHOP_CODE.SHOP_SERVER_RETURN_ERROR
   end
-  return (reply.msg).ret
+  return reply.msg.ret
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ApplyRefreshBlackMarket = function(self, TT)
-  -- function num : 0_15 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyRefreshMarketData)
+function ShopModule:ApplyRefreshBlackMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyRefreshMarketData)
   request.market_type = MarketType.Shop_BlackMarket
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return SHOP_CODE.SHOP_SERVER_RETURN_ERROR, {}
   end
-  self._blackMarketData = (reply.msg).market_data
-  self._blackMarketConfig = (reply.msg).market_config
-  return (reply.msg).ret, self._blackMarketData
+  self._blackMarketData = reply.msg.market_data
+  self._blackMarketConfig = reply.msg.market_config
+  return reply.msg.ret, self._blackMarketData
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetBlackMarketData = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:GetBlackMarketData(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_BlackMarket
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return {}, 0
   end
-  if (reply.msg).update_data then
-    self._blackMarketData = (reply.msg).market_data
-    self._blackMarketConfig = (reply.msg).market_config
+  if reply.msg.update_data then
+    self._blackMarketData = reply.msg.market_data
+    self._blackMarketConfig = reply.msg.market_config
   end
-  return self._blackMarketData, (reply.msg).refresh_leave_second
+  return self._blackMarketData, reply.msg.refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestGetBlackMarket = function(self, TT)
-  -- function num : 0_17 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:RequestGetBlackMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_BlackMarket
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -308,103 +224,82 @@ ShopModule.RequestGetBlackMarket = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).update_data then
-    self._blackMarketData = (reply.msg).market_data
-    self._blackMarketConfig = (reply.msg).market_config
+  res:SetResult(reply.msg.ret)
+  if reply.msg.update_data then
+    self._blackMarketData = reply.msg.market_data
+    self._blackMarketConfig = reply.msg.market_config
   end
-  self._refresh_leave_second = (reply.msg).refresh_leave_second
+  self._refresh_leave_second = reply.msg.refresh_leave_second
   return res
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetBlackMarketConfig = function(self)
-  -- function num : 0_18
+function ShopModule:GetBlackMarketConfig()
   return self._blackMarketConfig
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ApplyRefreshMysteryMarket = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyRefreshMarketData)
+function ShopModule:ApplyRefreshMysteryMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyRefreshMarketData)
   request.market_type = MarketType.Shop_MysteryMarket
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return SHOP_CODE.SHOP_SERVER_RETURN_ERROR, {}
   end
-  self._mysteryMarketData = (reply.msg).market_data
-  self._mysteryMarketConfig = (reply.msg).market_config
-  return (reply.msg).ret, self._mysteryMarketData
+  self._mysteryMarketData = reply.msg.market_data
+  self._mysteryMarketConfig = reply.msg.market_config
+  return reply.msg.ret, self._mysteryMarketData
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetMysteryMarketData = function(self, TT)
-  -- function num : 0_20 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:GetMysteryMarketData(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_MysteryMarket
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return {}
   end
-  if (reply.msg).update_data then
-    self._mysteryMarketData = (reply.msg).market_data
-    self._mysteryMarketConfig = (reply.msg).market_config
+  if reply.msg.update_data then
+    self._mysteryMarketData = reply.msg.market_data
+    self._mysteryMarketConfig = reply.msg.market_config
   end
-  return self._mysteryMarketData, (reply.msg).refresh_leave_second
+  return self._mysteryMarketData, reply.msg.refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetMysteryMarketConfig = function(self)
-  -- function num : 0_21
+function ShopModule:GetMysteryMarketConfig()
   return self._mysteryMarketConfig
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetRecommendIds = function(self, TT)
-  -- function num : 0_22 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyAdvertisingData)
+function ShopModule:GetRecommendIds(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyAdvertisingData)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return {}
   end
-  self._recommendData = (reply.msg).advertising_data
-  self._monthCardInfoList = (reply.msg).month_card_list
-  self._market_config = (reply.msg).market_config
+  self._recommendData = reply.msg.advertising_data
+  self._monthCardInfoList = reply.msg.month_card_list
+  self._market_config = reply.msg.market_config
   return self._recommendData
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetMonthGiftData = function(self)
-  -- function num : 0_23
+function ShopModule:GetMonthGiftData()
   return self._monthCardInfoList, self._market_config
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetMonthCardInfo = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function ShopModule:GetMonthCardInfo()
   if self._monthCardInfoList then
-    local goodsInfo = (self._monthCardInfoList)[1]
+    local goodsInfo = self._monthCardInfoList[1]
     if goodsInfo then
       local id = goodsInfo.gift_id
-      local cfgServer = nil
+      local cfgServer
       if self._market_config then
-        cfgServer = (self._market_config)[id]
+        cfgServer = self._market_config[id]
       end
       if not cfgServer and self._giftMarketConfig then
-        cfgServer = (self._giftMarketConfig)[id]
+        cfgServer = self._giftMarketConfig[id]
       end
-      local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
+      local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
       if cfgServer and cfgClient and cfgClient.GiftType == ShopGiftType.SGT_MonthCard then
         local giftInfo = {}
         giftInfo.ID = id
-        local mPay = (GameGlobal.GetModule)(PayModule)
+        local mPay = GameGlobal.GetModule(PayModule)
         local goodPriceList = mPay:GetGoodPriceList()
         local goodPrice = goodPriceList[cfgServer[ConfigKey.ConfigKey_MidasItemId]]
         if goodPrice then
@@ -413,8 +308,8 @@ ShopModule.GetMonthCardInfo = function(self)
         else
           giftInfo.NowPrice = cfgServer[ConfigKey.ConfigKey_NowPrice]
         end
-        giftInfo.DirectAssetList = (GiftPackShopData.ItemString2List)(cfgServer[ConfigKey.ConfigKey_DirectAssetList])
-        giftInfo.CycleAcceptAssetList = (GiftPackShopData.ItemString2List)(cfgServer[ConfigKey.ConfigKey_CycleAcceptAssetList])
+        giftInfo.DirectAssetList = GiftPackShopData.ItemString2List(cfgServer[ConfigKey.ConfigKey_DirectAssetList])
+        giftInfo.CycleAcceptAssetList = GiftPackShopData.ItemString2List(cfgServer[ConfigKey.ConfigKey_CycleAcceptAssetList])
         giftInfo.DeadlineTime = goodsInfo.deadline_time
         giftInfo.deadline_timestamp = goodsInfo.deadline_timestamp
         giftInfo.selled_num = goodsInfo.selled_num
@@ -425,23 +320,18 @@ ShopModule.GetMonthCardInfo = function(self)
       end
     end
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.confirmIfExist = function(self, TT, recommendId)
-  -- function num : 0_25 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyAdvertisingData)
+function ShopModule:confirmIfExist(TT, recommendId)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyAdvertisingData)
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return SHOP_CODE.SHOP_SERVER_RETURN_ERROR, {}
   end
-  self._recommendData = (reply.msg).advertising_data
+  self._recommendData = reply.msg.advertising_data
   local exist = false
-  for key,value in pairs(self._recommendData) do
+  for key, value in pairs(self._recommendData) do
     if value == recommendId then
       exist = true
     end
@@ -449,11 +339,8 @@ ShopModule.confirmIfExist = function(self, TT, recommendId)
   return exist, self._recommendData
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestXingzuanMarket = function(self, TT)
-  -- function num : 0_26 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:RequestXingzuanMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_XingZuan
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -463,34 +350,25 @@ ShopModule.RequestXingzuanMarket = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._XingzuanMarketData = (reply.msg).market_data
-    self._XingzuanMarketConfig = (reply.msg).market_config
-    self._refresh_leave_second = (reply.msg).refresh_leave_second
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._XingzuanMarketData = reply.msg.market_data
+    self._XingzuanMarketConfig = reply.msg.market_config
+    self._refresh_leave_second = reply.msg.refresh_leave_second
   end
   return res
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetXingzuanData = function(self)
-  -- function num : 0_27
+function ShopModule:GetXingzuanData()
   return self._XingzuanMarketData, self._XingzuanMarketConfig, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ExchangeRedDotChecker = function(self)
-  -- function num : 0_28
+function ShopModule:ExchangeRedDotChecker()
   return false
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestHuiyaoMarket = function(self, TT)
-  -- function num : 0_29 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:RequestHuiyaoMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_HuiYao
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -500,27 +378,21 @@ ShopModule.RequestHuiyaoMarket = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._HuiYaoMarketData = (reply.msg).market_data
-    self._HuiYaoMarketConfig = (reply.msg).market_config
-    self._refresh_leave_second = (reply.msg).refresh_leave_second
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._HuiYaoMarketData = reply.msg.market_data
+    self._HuiYaoMarketConfig = reply.msg.market_config
+    self._refresh_leave_second = reply.msg.refresh_leave_second
   end
   return res
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetHuiyaoData = function(self)
-  -- function num : 0_30
+function ShopModule:GetHuiyaoData()
   return self._HuiYaoMarketData, self._HuiYaoMarketConfig, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestGlowMarket = function(self, TT)
-  -- function num : 0_31 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:RequestGlowMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_GuangPo
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -530,27 +402,21 @@ ShopModule.RequestGlowMarket = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._GuangPoMarketData = (reply.msg).market_data
-    self._GuangPoMarketConfig = (reply.msg).market_config
-    self._refresh_leave_second = (reply.msg).refresh_leave_second
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._GuangPoMarketData = reply.msg.market_data
+    self._GuangPoMarketConfig = reply.msg.market_config
+    self._refresh_leave_second = reply.msg.refresh_leave_second
   end
   return res
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetGlowData = function(self)
-  -- function num : 0_32
+function ShopModule:GetGlowData()
   return self._GuangPoMarketData, self._GuangPoMarketConfig, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestHongPiaoMarket = function(self, TT)
-  -- function num : 0_33 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:RequestHongPiaoMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_HongPiao
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -560,27 +426,21 @@ ShopModule.RequestHongPiaoMarket = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._HongPiaoMarketData = (reply.msg).market_data
-    self._HongPiaoMarketConfig = (reply.msg).market_config
-    self._refresh_leave_second = (reply.msg).refresh_leave_second
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._HongPiaoMarketData = reply.msg.market_data
+    self._HongPiaoMarketConfig = reply.msg.market_config
+    self._refresh_leave_second = reply.msg.refresh_leave_second
   end
   return res
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetHongPiaoData = function(self)
-  -- function num : 0_34
+function ShopModule:GetHongPiaoData()
   return self._HongPiaoMarketData, self._HongPiaoMarketConfig, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestSeasonMarket = function(self, TT)
-  -- function num : 0_35 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:RequestSeasonMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_Season
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -590,94 +450,72 @@ ShopModule.RequestSeasonMarket = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._SeasonMarketData = (reply.msg).market_data
-    self._SeasonMarketConfig = (reply.msg).market_config
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._SeasonMarketData = reply.msg.market_data
+    self._SeasonMarketConfig = reply.msg.market_config
     self._refresh_leave_second = self:SeasonRefreshTime()
   end
   return res
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetSeasonMarketData = function(self, TT)
-  -- function num : 0_36 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:GetSeasonMarketData(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_Season
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return {}, 0
   end
-  if (reply.msg).update_data then
-    self._SeasonMarketData = (reply.msg).market_data
-    self._SeasonMarketConfig = (reply.msg).market_config
+  if reply.msg.update_data then
+    self._SeasonMarketData = reply.msg.market_data
+    self._SeasonMarketConfig = reply.msg.market_config
     self._refresh_leave_second = self:SeasonRefreshTime()
   end
   return self._SeasonMarketData, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.SeasonRefreshTime = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function ShopModule:SeasonRefreshTime()
   local info = self._SeasonMarketData
   local cfgs = self._SeasonMarketConfig
-  local timeGap = nil
-  local serverTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local timeGap
+  local serverTimeModule = GameGlobal.GetModule(SvrTimeModule)
   if info and next(info) and cfgs and next(cfgs) then
-    local nextTime = nil
-    for _,goods in pairs(info.goods) do
+    local nextTime
+    for _, goods in pairs(info.goods) do
       local cfg = cfgs[goods.goods_id]
       if not nextTime then
         nextTime = cfg[ConfigKey.ConfigKey_ShowEndTime]
       else
-        nextTime = (math.min)(nextTime, cfg[ConfigKey.ConfigKey_ShowEndTime])
+        nextTime = math.min(nextTime, cfg[ConfigKey.ConfigKey_ShowEndTime])
       end
     end
     if nextTime then
-      timeGap = nextTime - (math.ceil)(serverTimeModule:GetServerTime() * 0.001)
+      timeGap = nextTime - math.ceil(serverTimeModule:GetServerTime() * 0.001)
     else
-      ;
-      (Log.error)("###[season shop] nextTime is nil !")
+      Log.error("###[season shop] nextTime is nil !")
       timeGap = 99999999999
     end
   else
-    do
-      ;
-      (Log.error)("###[season shop] info or cfgs is nil !")
-      timeGap = 99999999999
-      return timeGap
-    end
+    Log.error("###[season shop] info or cfgs is nil !")
+    timeGap = 99999999999
   end
+  return timeGap
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetSeasonData = function(self)
-  -- function num : 0_38
+function ShopModule:GetSeasonData()
   return self._SeasonMarketData, self._SeasonMarketConfig, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetSeasonMarketConfig = function(self)
-  -- function num : 0_39
+function ShopModule:GetSeasonMarketConfig()
   return self._SeasonMarketConfig
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ExchangeGetBlackMarketData = function(self)
-  -- function num : 0_40
+function ShopModule:ExchangeGetBlackMarketData()
   return self._blackMarketData, self._blackMarketConfig, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestFurnitureMarket = function(self, TT)
-  -- function num : 0_41 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:RequestFurnitureMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_Furniture
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -687,27 +525,21 @@ ShopModule.RequestFurnitureMarket = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._FurnitureMarketData = (reply.msg).market_data
-    self._FurnitureMarketConfig = (reply.msg).market_config
-    self._refresh_leave_second = (reply.msg).refresh_leave_second
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._FurnitureMarketData = reply.msg.market_data
+    self._FurnitureMarketConfig = reply.msg.market_config
+    self._refresh_leave_second = reply.msg.refresh_leave_second
   end
   return res
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetFurnitureData = function(self)
-  -- function num : 0_42
+function ShopModule:GetFurnitureData()
   return self._FurnitureMarketData, self._FurnitureMarketConfig, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestFurniturePreciousMarket = function(self, TT)
-  -- function num : 0_43 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:RequestFurniturePreciousMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_Furniture_Precious
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -717,27 +549,21 @@ ShopModule.RequestFurniturePreciousMarket = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._FurniturePreciousMarketData = (reply.msg).market_data
-    self._FurniturePreciousMarketConfig = (reply.msg).market_config
-    self._refresh_leave_second = (reply.msg).refresh_leave_second
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._FurniturePreciousMarketData = reply.msg.market_data
+    self._FurniturePreciousMarketConfig = reply.msg.market_config
+    self._refresh_leave_second = reply.msg.refresh_leave_second
   end
   return res
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetFurniturePreciousData = function(self)
-  -- function num : 0_44
+function ShopModule:GetFurniturePreciousData()
   return self._FurniturePreciousMarketData, self._FurniturePreciousMarketConfig, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestWorldBossMarket = function(self, TT)
-  -- function num : 0_45 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:RequestWorldBossMarket(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_WorldBoss
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -747,63 +573,47 @@ ShopModule.RequestWorldBossMarket = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._WorldBossMarketData = (reply.msg).market_data
-    self._WorldBossMarketConfig = (reply.msg).market_config
-    self._refresh_leave_second = (reply.msg).refresh_leave_second
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._WorldBossMarketData = reply.msg.market_data
+    self._WorldBossMarketConfig = reply.msg.market_config
+    self._refresh_leave_second = reply.msg.refresh_leave_second
   else
-    ;
-    (Log.error)("err RequestWorldBossMarket err code: " .. (reply.msg).ret)
+    Log.error("err RequestWorldBossMarket err code: " .. reply.msg.ret)
   end
   return self._WorldBossMarketData, self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetBattlePassMarketData = function(self, TT)
-  -- function num : 0_46 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyMarketData)
+function ShopModule:GetBattlePassMarketData(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyMarketData)
   request.market_type = MarketType.Shop_BattlePass
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return {}
   end
-  if (reply.msg).update_data then
-    self._battlePassMarketData = (reply.msg).market_data
-    self._battlePassMarketConfig = (reply.msg).market_config
+  if reply.msg.update_data then
+    self._battlePassMarketData = reply.msg.market_data
+    self._battlePassMarketConfig = reply.msg.market_config
   end
-  return self._battlePassMarketData, (reply.msg).refresh_leave_second
+  return self._battlePassMarketData, reply.msg.refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetBattlePassMarketConfig = function(self)
-  -- function num : 0_47
+function ShopModule:GetBattlePassMarketConfig()
   return self._battlePassMarketConfig
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetWorldBossMarketConfig = function(self)
-  -- function num : 0_48
+function ShopModule:GetWorldBossMarketConfig()
   return self._WorldBossMarketConfig
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetExchangeRefreshTime = function(self)
-  -- function num : 0_49
+function ShopModule:GetExchangeRefreshTime()
   return self._refresh_leave_second
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ApplyPayMarketData = function(self, TT)
-  -- function num : 0_50 , upvalues : _ENV
-  local payModule = ((GameGlobal.GameLogic)()):GetModule(PayModule)
+function ShopModule:ApplyPayMarketData(TT)
+  local payModule = GameGlobal.GameLogic():GetModule(PayModule)
   payModule:RequestGetBalanceNormal()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyPayMarketData)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyPayMarketData)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -812,29 +622,23 @@ ShopModule.ApplyPayMarketData = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._payMarketData = (reply.msg).market_data
-    self._payMarketConfig = (reply.msg).market_config
-    self._monthCardInfoList = (reply.msg).month_card_list
-    self._giftMarketConfig = (reply.msg).gift_market_config
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._payMarketData = reply.msg.market_data
+    self._payMarketConfig = reply.msg.market_config
+    self._monthCardInfoList = reply.msg.month_card_list
+    self._giftMarketConfig = reply.msg.gift_market_config
   end
   return res
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetPayMarketData = function(self)
-  -- function num : 0_51
+function ShopModule:GetPayMarketData()
   return self._payMarketData, self._payMarketConfig, self._monthCardInfoList, self._giftMarketConfig
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ApplyGiftMarketData = function(self, TT)
-  -- function num : 0_52 , upvalues : _ENV
-  (((GameGlobal.GameLogic)()):GetModule(PayModule)):RequestGetBalanceNormal()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplyGiftMarketData)
+function ShopModule:ApplyGiftMarketData(TT)
+  GameGlobal.GameLogic():GetModule(PayModule):RequestGetBalanceNormal()
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplyGiftMarketData)
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
@@ -843,114 +647,83 @@ ShopModule.ApplyGiftMarketData = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._giftMarketData = (reply.msg).market_data
-    self._giftMarketConfig = (reply.msg).market_config
-    ;
-    (Log.debug)("self._giftMarketData : ", (cjson.encode)(self._giftMarketData))
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._giftMarketData = reply.msg.market_data
+    self._giftMarketConfig = reply.msg.market_config
+    Log.debug("self._giftMarketData : ", cjson.encode(self._giftMarketData))
     self:_ConfirmModifySaledNum()
     self:_FiltUnshowGifts()
   end
   return res
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetGiftMarketData = function(self)
-  -- function num : 0_53
+function ShopModule:GetGiftMarketData()
   return self._giftMarketData, self._giftMarketConfig
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ClientSaledGift = function(self, ID)
-  -- function num : 0_54 , upvalues : _ENV
-  for k,v in pairs((self._giftMarketData).goods) do
+function ShopModule:ClientSaledGift(ID)
+  for k, v in pairs(self._giftMarketData.goods) do
     if v.gift_id == ID then
       v.selled_num = v.selled_num + 1
-      -- DECOMPILER ERROR at PC13: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._ClientGiftSaleNums)[ID] = v.selled_num
+      self._ClientGiftSaleNums[ID] = v.selled_num
       break
     end
   end
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule._ConfirmModifySaledNum = function(self)
-  -- function num : 0_55 , upvalues : _ENV
-  for k,v in pairs((self._giftMarketData).goods) do
-    local clientNum = (self._ClientGiftSaleNums)[v.gift_id]
-    if v.selled_num ~= 0 and clientNum and v.selled_num < clientNum then
+function ShopModule:_ConfirmModifySaledNum()
+  for k, v in pairs(self._giftMarketData.goods) do
+    local clientNum = self._ClientGiftSaleNums[v.gift_id]
+    if v.selled_num ~= 0 and clientNum and clientNum > v.selled_num then
       v.selled_num = clientNum
     end
   end
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule._FiltUnshowGifts = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function ShopModule:_FiltUnshowGifts()
   local retTable = {}
-  for _k,goods in pairs((self._giftMarketData).goods) do
-    local cfg = (self._giftMarketConfig)[goods.gift_id]
+  for _k, goods in pairs(self._giftMarketData.goods) do
+    local cfg = self._giftMarketConfig[goods.gift_id]
     local strShowEndTime = cfg[ConfigKey.ConfigKey_ShowEndTime]
     local strShowBeginTime = cfg[ConfigKey.ConfigKey_ShowBeginTime]
     local giftType = tonumber(cfg[ConfigKey.ConfigKey_ShopGiftType])
     if strShowEndTime ~= nil and strShowBeginTime ~= nil and giftType ~= ShopGiftType.SGT_MonthCard and giftType ~= ShopGiftType.SGT_BattlePassGift then
-      local svrTime = (GameGlobal.GetModule)(SvrTimeModule)
+      local svrTime = GameGlobal.GetModule(SvrTimeModule)
       local nowTime = svrTime:GetServerTime() / 1000
       local showEndTime = tonumber(strShowEndTime)
       local showBeginTime = tonumber(strShowBeginTime)
       local deadlineTime = goods.deadline_time
       if giftType == ShopGiftType.SGT_WeekCard then
-        if deadlineTime > 0 then
-          (table.insert)(retTable, goods)
-        else
-          if nowTime < showEndTime and showBeginTime < nowTime and goods.selled_num < tonumber(cfg[ConfigKey.ConfigKey_SaleNum]) then
-            (table.insert)(retTable, goods)
+        if 0 < deadlineTime then
+          table.insert(retTable, goods)
+        elseif nowTime < showEndTime and nowTime > showBeginTime and tonumber(cfg[ConfigKey.ConfigKey_SaleNum]) > goods.selled_num then
+          table.insert(retTable, goods)
+        end
+      elseif nowTime < showEndTime and nowTime > showBeginTime then
+        if tonumber(cfg[ConfigKey.ConfigKey_RefreshMethod]) == RefreshMethod.RM_OneOff then
+          if tonumber(cfg[ConfigKey.ConfigKey_SaleNum]) > goods.selled_num then
+            table.insert(retTable, goods)
+          elseif giftType == ShopGiftType.SGT_WeekCard and goods.deadline_time > 0 then
+            table.insert(retTable, goods)
           end
+        else
+          table.insert(retTable, goods)
+        end
+      elseif giftType == ShopGiftType.SGT_WeekCard then
+        if goods.deadline_time > 0 then
+          table.insert(retTable, goods)
         end
       else
-        if nowTime < showEndTime and showBeginTime < nowTime then
-          if tonumber(cfg[ConfigKey.ConfigKey_RefreshMethod]) == RefreshMethod.RM_OneOff then
-            if goods.selled_num < tonumber(cfg[ConfigKey.ConfigKey_SaleNum]) then
-              (table.insert)(retTable, goods)
-            else
-              if giftType == ShopGiftType.SGT_WeekCard and goods.deadline_time > 0 then
-                (table.insert)(retTable, goods)
-              end
-            end
-          else
-            ;
-            (table.insert)(retTable, goods)
-          end
-        else
-          -- DECOMPILER ERROR at PC133: Unhandled construct in 'MakeBoolean' P1
-
-          if giftType == ShopGiftType.SGT_WeekCard and goods.deadline_time > 0 then
-            (table.insert)(retTable, goods)
-          end
-        end
+        Log.debug("showEndTime : ", showEndTime, "nowTime : ", nowTime, "showBeginTime", showBeginTime)
       end
     end
-    ;
-    (Log.debug)("showEndTime : ", showEndTime, "nowTime : ", nowTime, "showBeginTime", showBeginTime)
   end
-  -- DECOMPILER ERROR at PC147: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._giftMarketData).goods = retTable
+  self._giftMarketData.goods = retTable
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ApplyDiamondExchangeGlow = function(self, TT, diamondCount, glowCount)
-  -- function num : 0_57 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventDiamondExchangeGlow)
+function ShopModule:ApplyDiamondExchangeGlow(TT, diamondCount, glowCount)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventDiamondExchangeGlow)
   request.diamond_count = diamondCount
   request.exchange_glow_count = glowCount
   local res = AsyncRequestRes:New()
@@ -961,15 +734,12 @@ ShopModule.ApplyDiamondExchangeGlow = function(self, TT, diamondCount, glowCount
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
+  res:SetResult(reply.msg.ret)
   return res
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ApplyGlowExchangeFurnitureCoin = function(self, TT, glowCount, furnitureCoinCount)
-  -- function num : 0_58 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventGlowExchangeFurnitureCoin)
+function ShopModule:ApplyGlowExchangeFurnitureCoin(TT, glowCount, furnitureCoinCount)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventGlowExchangeFurnitureCoin)
   request.glow_count = glowCount
   request.exchange_coin_count = furnitureCoinCount
   local res = AsyncRequestRes:New()
@@ -980,15 +750,12 @@ ShopModule.ApplyGlowExchangeFurnitureCoin = function(self, TT, glowCount, furnit
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
+  res:SetResult(reply.msg.ret)
   return res
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.RequestPhysicalData = function(self, TT)
-  -- function num : 0_59 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventReqExchangePhyInfo)
+function ShopModule:RequestPhysicalData(TT)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventReqExchangePhyInfo)
   local reply = self:Call(TT, request)
   local res = AsyncRequestRes:New()
   if reply.res ~= CallResultType.Normal then
@@ -997,41 +764,31 @@ ShopModule.RequestPhysicalData = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  self._leftExchangePhyState = (reply.msg).left_info
-  self._rightExchangePhyState = (reply.msg).right_info
-  self._validLeftPhyState = (reply.msg).valid_left_infos
+  res:SetResult(reply.msg.ret)
+  self._leftExchangePhyState = reply.msg.left_info
+  self._rightExchangePhyState = reply.msg.right_info
+  self._validLeftPhyState = reply.msg.valid_left_infos
   return res
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetCurExchangePhyState = function(self)
-  -- function num : 0_60
+function ShopModule:GetCurExchangePhyState()
   return self._leftExchangePhyState, self._rightExchangePhyState
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetCurExchangePhyValidLeftState = function(self)
-  -- function num : 0_61 , upvalues : _ENV
+function ShopModule:GetCurExchangePhyValidLeftState()
   local uniqueList = {}
   local res = {}
-  for _,value in pairs(self._validLeftPhyState) do
-    if not (table.icontains)(uniqueList, value.cost_id) then
-      (table.insert)(res, value)
-      ;
-      (table.insert)(uniqueList, value.cost_id)
+  for _, value in pairs(self._validLeftPhyState) do
+    if not table.icontains(uniqueList, value.cost_id) then
+      table.insert(res, value)
+      table.insert(uniqueList, value.cost_id)
     end
   end
   return res
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.BuyPhysicalPower = function(self, TT, exchangeType, item_count)
-  -- function num : 0_62 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventReqExchangePhyPoint)
+function ShopModule:BuyPhysicalPower(TT, exchangeType, item_count)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventReqExchangePhyPoint)
   request.exchange_type = exchangeType
   request.count = item_count
   local reply = self:Call(TT, request)
@@ -1042,26 +799,18 @@ ShopModule.BuyPhysicalPower = function(self, TT, exchangeType, item_count)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R7 in 'UnsetPending'
-
+  res:SetResult(reply.msg.ret)
   if exchangeType == ExchangePhyPointType.EPPT_LEFT then
-    (self._leftExchangePhyState).cur_times = (self._leftExchangePhyState).cur_times + (reply.msg).item_cost
+    self._leftExchangePhyState.cur_times = self._leftExchangePhyState.cur_times + reply.msg.item_cost
   else
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._rightExchangePhyState).cur_times = (self._rightExchangePhyState).cur_times + 1
+    self._rightExchangePhyState.cur_times = self._rightExchangePhyState.cur_times + 1
   end
   return res
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ApplySkinMarketData = function(self, TT)
-  -- function num : 0_63 , upvalues : _ENV
-  (((GameGlobal.GameLogic)()):GetModule(PayModule)):RequestGetBalanceNormal()
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventApplySkinMarketData)
+function ShopModule:ApplySkinMarketData(TT)
+  GameGlobal.GameLogic():GetModule(PayModule):RequestGetBalanceNormal()
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventApplySkinMarketData)
   local reply = self:Call(TT, request)
   local res = AsyncRequestRes:New()
   if reply.res ~= CallResultType.Normal then
@@ -1070,27 +819,21 @@ ShopModule.ApplySkinMarketData = function(self, TT)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
-  if (reply.msg).ret == SHOP_CODE.SHOP_SUCCESS then
-    self._SkinMarketData = (reply.msg).data
-    self._skinMarketConfig = (reply.msg).market_config
-    self._new_mark_skins = (reply.msg).new_mark_goods
+  res:SetResult(reply.msg.ret)
+  if reply.msg.ret == SHOP_CODE.SHOP_SUCCESS then
+    self._SkinMarketData = reply.msg.data
+    self._skinMarketConfig = reply.msg.market_config
+    self._new_mark_skins = reply.msg.new_mark_goods
   end
   return res
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetSkinsMarketData = function(self)
-  -- function num : 0_64
+function ShopModule:GetSkinsMarketData()
   return self._SkinMarketData, self._skinMarketConfig, self._new_mark_skins
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.CEventBuyPetSkin = function(self, TT, goods_id)
-  -- function num : 0_65 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventBuyPetSkin)
+function ShopModule:CEventBuyPetSkin(TT, goods_id)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventBuyPetSkin)
   request.goods_id = goods_id
   local res = AsyncRequestRes:New()
   local reply = self:Call(TT, request)
@@ -1100,143 +843,112 @@ ShopModule.CEventBuyPetSkin = function(self, TT, goods_id)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
+  res:SetResult(reply.msg.ret)
   return res
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ShowMonthCardRedPoint = function(self)
-  -- function num : 0_66 , upvalues : _ENV
+function ShopModule:ShowMonthCardRedPoint()
   if self._monthCardInfoList and self._market_config then
-    local goodsInfo = (self._monthCardInfoList)[1]
+    local goodsInfo = self._monthCardInfoList[1]
     if goodsInfo then
       local id = goodsInfo.gift_id
-      local cfgServer = (self._market_config)[id]
-      local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
+      local cfgServer = self._market_config[id]
+      local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
       if cfgServer and cfgClient and cfgClient.GiftType == ShopGiftType.SGT_MonthCard then
         return self:_CheckMonthCardRedAndTips(goodsInfo)
       end
     end
-    do
-      do
-        do return false, false, 0 end
-        if not self._initMonthCardData or not self._initMaketConfig then
-          return false, 0
-        end
-        for key,value in pairs((self._initMonthCardData).goods) do
-          local id = value.gift_id
-          local cfgv = (self._initMaketConfig)[id]
-          local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
-          if cfgv and cfgClient then
-            local strShopGiftType = cfgv[ConfigKey.ConfigKey_ShopGiftType]
-            local isMonthCard = tonumber(strShopGiftType) == ShopGiftType.SGT_MonthCard
-            if isMonthCard then
-              return self:_CheckMonthCardRedAndTips(value)
-            end
-          end
-        end
-        do return false, false, 0 end
-        -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    return false, false, 0
+  end
+  if not self._initMonthCardData or not self._initMaketConfig then
+    return false, 0
+  end
+  for key, value in pairs(self._initMonthCardData.goods) do
+    local id = value.gift_id
+    local cfgv = self._initMaketConfig[id]
+    local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
+    if cfgv and cfgClient then
+      local strShopGiftType = cfgv[ConfigKey.ConfigKey_ShopGiftType]
+      local isMonthCard = tonumber(strShopGiftType) == ShopGiftType.SGT_MonthCard
+      if isMonthCard then
+        return self:_CheckMonthCardRedAndTips(value)
       end
     end
   end
+  return false, false, 0
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetGoodsPrice = function(self, marketType, goodsID)
-  -- function num : 0_67 , upvalues : _ENV
-  local mPay = (GameGlobal.GetModule)(PayModule)
+function ShopModule:GetGoodsPrice(marketType, goodsID)
+  local mPay = GameGlobal.GetModule(PayModule)
   local goodPriceList = mPay:GetGoodPriceList()
-  if marketType == MarketType.Shop_GiftMarket and self._giftMarketData and self._giftMarketConfig then
-    for _,value in pairs((self._giftMarketData).goods) do
-      local goodsInfo = value
-      local id = goodsInfo.gift_id
-      if id == goodsID then
-        local cfgServer = (self._giftMarketConfig)[id]
-        local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
-        if cfgServer and cfgClient then
-          if goodPriceList[cfgServer[ConfigKey.ConfigKey_MidasItemId]] then
-            return (goodPriceList[cfgServer[ConfigKey.ConfigKey_MidasItemId]]).price
-          else
-            ;
-            (Log.error)("###[ShopModule] lxs 价格列表里没有这个mdsid：", ConfigKey.ConfigKey_MidasItemId)
-            return cfgServer[ConfigKey.ConfigKey_NowPrice]
-          end
-        end
-      end
-    end
-  end
-  do
-    if marketType == MarketType.Shop_SkinMarket and self._SkinMarketData and self._skinMarketConfig then
-      for _,value in pairs(self._SkinMarketData) do
+  if marketType == MarketType.Shop_GiftMarket then
+    if self._giftMarketData and self._giftMarketConfig then
+      for _, value in pairs(self._giftMarketData.goods) do
         local goodsInfo = value
-        local id = goodsInfo.goodid
+        local id = goodsInfo.gift_id
         if id == goodsID then
-          local cfgServer = (self._giftMarketConfig)[id]
-          local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
+          local cfgServer = self._giftMarketConfig[id]
+          local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
           if cfgServer and cfgClient then
             if goodPriceList[cfgServer[ConfigKey.ConfigKey_MidasItemId]] then
-              return (goodPriceList[cfgServer[ConfigKey.ConfigKey_MidasItemId]]).price
+              return goodPriceList[cfgServer[ConfigKey.ConfigKey_MidasItemId]].price
             else
-              ;
-              (Log.error)("###[ShopModule] lxs 价格列表里没有这个mdsid：", ConfigKey.ConfigKey_MidasItemId)
+              Log.error("###[ShopModule] lxs 价格列表里没有这个mdsid：", ConfigKey.ConfigKey_MidasItemId)
               return cfgServer[ConfigKey.ConfigKey_NowPrice]
             end
           end
         end
       end
     end
-    do
-      return 0
+  elseif marketType == MarketType.Shop_SkinMarket and self._SkinMarketData and self._skinMarketConfig then
+    for _, value in pairs(self._SkinMarketData) do
+      local goodsInfo = value
+      local id = goodsInfo.goodid
+      if id == goodsID then
+        local cfgServer = self._giftMarketConfig[id]
+        local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
+        if cfgServer and cfgClient then
+          if goodPriceList[cfgServer[ConfigKey.ConfigKey_MidasItemId]] then
+            return goodPriceList[cfgServer[ConfigKey.ConfigKey_MidasItemId]].price
+          else
+            Log.error("###[ShopModule] lxs 价格列表里没有这个mdsid：", ConfigKey.ConfigKey_MidasItemId)
+            return cfgServer[ConfigKey.ConfigKey_NowPrice]
+          end
+        end
+      end
     end
   end
+  return 0
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule._CheckMonthCardRedAndTips = function(self, monthCard)
-  -- function num : 0_68 , upvalues : _ENV
-  (self:GetMonthCardState(monthCard))
-  local state = nil
-  local redKey, tipsKey = nil, nil
+function ShopModule:_CheckMonthCardRedAndTips(monthCard)
+  local state = self:GetMonthCardState(monthCard)
+  local redKey, tipsKey
   if state == 2 then
     redKey = self:GetMonthCardWillOutDataRedKey(monthCard)
     tipsKey = self:GetMonthCardWillOutDataTipsKey(monthCard)
+  elseif state == 3 then
+    redKey = self:GetMonthCardOutDataRedKey(monthCard)
+    tipsKey = self:GetMonthCardOutDataTipsKey(monthCard)
   else
-    if state == 3 then
-      redKey = self:GetMonthCardOutDataRedKey(monthCard)
-      tipsKey = self:GetMonthCardOutDataTipsKey(monthCard)
-    else
-      return false, false, state
-    end
+    return false, false, state
   end
-  local isRed = (LocalDB.GetInt)(redKey) == 0
-  local isTips = (LocalDB.GetInt)(tipsKey) == 0
-  do return isRed, isTips, state end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  local isRed = LocalDB.GetInt(redKey) == 0
+  local isTips = LocalDB.GetInt(tipsKey) == 0
+  return isRed, isTips, state
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule._RefreshGiftMarketData = function(self)
-  -- function num : 0_69 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_69_0 , upvalues : self, _ENV
+function ShopModule:_RefreshGiftMarketData()
+  GameGlobal.TaskManager():StartTask(function(TT)
     local res = self:ApplyGiftMarketData(TT)
     if res and res:GetSucc() then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CheckMonthCardRedpoint)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.CheckMonthCardRedpoint)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.CEventTakeFurnitureReward = function(self, TT, shop_id, goods_id)
-  -- function num : 0_70 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventTakeFurnitureReward)
+function ShopModule:CEventTakeFurnitureReward(TT, shop_id, goods_id)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventTakeFurnitureReward)
   request.shop_id = shop_id
   request.goods_id = goods_id
   local res = AsyncRequestRes:New()
@@ -1247,59 +959,46 @@ ShopModule.CEventTakeFurnitureReward = function(self, TT, shop_id, goods_id)
     return res
   end
   res:SetSucc(true)
-  res:SetResult((reply.msg).ret)
+  res:SetResult(reply.msg.ret)
   return res
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.CancelNewMark = function(self, marketType, goods_id)
-  -- function num : 0_71 , upvalues : _ENV
-  local msg = (NetMessageFactory:GetInstance()):CreateMessage(CEventCancelGoodNewMark)
+function ShopModule:CancelNewMark(marketType, goods_id)
+  local msg = NetMessageFactory:GetInstance():CreateMessage(CEventCancelGoodNewMark)
   msg.market_type = marketType
   msg.goods_id = goods_id
   self:Push(msg)
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetHomelandShopLocalRecord = function(self, key, defaultValue)
-  -- function num : 0_72 , upvalues : _ENV
+function ShopModule:GetHomelandShopLocalRecord(key, defaultValue)
   key = "HomelandShopLocalRecord" .. key
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  return (LocalDB.GetInt)(key .. loginModule:GetRoleShowID(), defaultValue)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  return LocalDB.GetInt(key .. loginModule:GetRoleShowID(), defaultValue)
 end
 
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.SetHomelandShopLocalRecord = function(self, key, value)
-  -- function num : 0_73 , upvalues : _ENV
+function ShopModule:SetHomelandShopLocalRecord(key, value)
   key = "HomelandShopLocalRecord" .. key
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  ;
-  (LocalDB.SetInt)(key .. loginModule:GetRoleShowID(), value)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  LocalDB.SetInt(key .. loginModule:GetRoleShowID(), value)
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetHomelandShopTabNew = function(self)
-  -- function num : 0_74 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function ShopModule:GetHomelandShopTabNew()
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   local unlock = homelandModule:CheckFunctionUnlock(HomelandUnlockType.E_HOMELAND_UNLOCK_SHOP_ARC_UI)
   if not unlock then
     return false
   end
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local srvTime = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(srvTime:GetServerTime() * 0.001)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local srvTime = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(srvTime:GetServerTime() * 0.001)
   local t = {}
-  local cfg = (Cfg.cfg_shop_furniture_goods)()
-  for _,value in pairs(cfg) do
-    if value.FurnitureType == FurnitureShopType.FRN_Set and not (table.icontains)(t, value.BelongShopId) then
-      (table.insert)(t, value.BelongShopId)
+  local cfg = Cfg.cfg_shop_furniture_goods()
+  for _, value in pairs(cfg) do
+    if value.FurnitureType == FurnitureShopType.FRN_Set and not table.icontains(t, value.BelongShopId) then
+      table.insert(t, value.BelongShopId)
       local beginTime = loginModule:GetTimeStampByTimeStr(value.ShowBeginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
       local endTime = loginModule:GetTimeStampByTimeStr(value.ShowEndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      if beginTime <= curTime and curTime < endTime then
+      if curTime >= beginTime and curTime < endTime then
         local record = self:GetHomelandShopLocalRecord(value.BelongShopId, 0)
         if record <= 0 then
           return true
@@ -1310,375 +1009,293 @@ ShopModule.GetHomelandShopTabNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.FakeMidasProvide = function(self, TT, gift_id)
-  -- function num : 0_75 , upvalues : _ENV
-  local request = (NetMessageFactory:GetInstance()):CreateMessage(CEventFakeMidasProvide)
+function ShopModule:FakeMidasProvide(TT, gift_id)
+  local request = NetMessageFactory:GetInstance():CreateMessage(CEventFakeMidasProvide)
   request.goods_midas_id = gift_id
   local reply = self:Call(TT, request)
   if reply.res ~= CallResultType.Normal then
     return false
   end
-  return true, (reply.msg).ret
+  return true, reply.msg.ret
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetHomelandRechargeTabNew = function(self)
-  -- function num : 0_76 , upvalues : _ENV
+function ShopModule:GetHomelandRechargeTabNew()
   if not self._giftMarketData or not self._giftMarketConfig then
     return false
   end
   local newList = {}
-  local serGoods = (self._giftMarketData).goods
+  local serGoods = self._giftMarketData.goods
   local rechargeList = {}
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local srvTime = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(srvTime:GetServerTime() * 0.001)
-  for i,good in ipairs(serGoods) do
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local srvTime = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(srvTime:GetServerTime() * 0.001)
+  for i, good in ipairs(serGoods) do
     local id = good.gift_id
-    local cfgv = (self._giftMarketConfig)[id]
-    local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
+    local cfgv = self._giftMarketConfig[id]
+    local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
     if cfgv and cfgClient then
       local strShopGiftType = cfgv[ConfigKey.ConfigKey_ShopGiftType]
       if tonumber(strShopGiftType) == ShopGiftType.SGT_RechargeGift and good.selled_num == 0 then
         local beginTime = loginModule:GetTimeStampByTimeStr(cfgClient.ShowBeginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
         local endTime = loginModule:GetTimeStampByTimeStr(cfgClient.ShowEndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-        if beginTime <= curTime and curTime < endTime then
-          (table.insert)(rechargeList, id)
+        if curTime >= beginTime and curTime < endTime then
+          table.insert(rechargeList, id)
         end
       end
     end
   end
   for i = 1, #rechargeList do
     local key = "UIShopGiftPackItem" .. self:GetNewFlagKey(rechargeList[i])
-    if (LocalDB.GetInt)(key, 0) == 0 then
-      (table.insert)(newList, rechargeList[i])
+    if LocalDB.GetInt(key, 0) == 0 then
+      table.insert(newList, rechargeList[i])
     end
   end
-  do return #newList > 0, newList end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < #newList, newList
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetExchangeTabNew = function(self)
-  -- function num : 0_77
+function ShopModule:GetExchangeTabNew()
   return false
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetExchangeTab_SeasonNew = function(self)
-  -- function num : 0_78 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_shop_season_goods)({})
+function ShopModule:GetExchangeTab_SeasonNew()
+  local cfgs = Cfg.cfg_shop_season_goods({})
   local activeCfgs = {}
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local serverTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local serverTimeModule = GameGlobal.GetModule(SvrTimeModule)
   local serverTime = serverTimeModule:GetServerTime() * 0.001
   if cfgs and next(cfgs) then
-    for key,value in pairs(cfgs) do
+    for key, value in pairs(cfgs) do
       local beginTimeStr = value.BeginTime
       local endTimeStr = value.EndTime
       local timeType = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
       local beginTime = loginModule:GetTimeStampByTimeStr(beginTimeStr, timeType)
       local endTime = loginModule:GetTimeStampByTimeStr(endTimeStr, timeType)
-      if beginTime <= serverTime and beginTime < endTime then
-        (table.insert)(activeCfgs, value.ID)
+      if serverTime >= beginTime and beginTime < endTime then
+        table.insert(activeCfgs, value.ID)
       end
     end
   end
-  do
-    do
-      if activeCfgs and next(activeCfgs) then
-        local idList = self:Exchange_Season_Local_IDList()
-        for idx,id in pairs(activeCfgs) do
-          if (table.icontains)(idList, id) then
-            do
-              (Log.debug)("###[ShopModule] 赛季商店有新上架的商品，id:", id)
-              do return true end
-              -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+  if activeCfgs and next(activeCfgs) then
+    local idList = self:Exchange_Season_Local_IDList()
+    for idx, id in pairs(activeCfgs) do
+      if table.icontains(idList, id) then
+      else
+        Log.debug("###[ShopModule] 赛季商店有新上架的商品，id:", id)
+        return true
       end
-      return false
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.Exchange_Season_Local_Key = function(self)
-  -- function num : 0_79 , upvalues : _ENV
-  local pstid = ((GameGlobal.GetModule)(RoleModule)):GetPstId()
+function ShopModule:Exchange_Season_Local_Key()
+  local pstid = GameGlobal.GetModule(RoleModule):GetPstId()
   local key = "ExchangeSeasonShop" .. pstid
   return key
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.Exchange_Season_Local_IDList = function(self)
-  -- function num : 0_80 , upvalues : _ENV
+function ShopModule:Exchange_Season_Local_IDList()
   local key = self:Exchange_Season_Local_Key()
-  local lastID_str = (LocalDB.GetString)(key, "")
+  local lastID_str = LocalDB.GetString(key, "")
   local idList = {}
-  if not (string.isnullorempty)(lastID_str) then
-    local idStrList = (string.split)(lastID_str, ",")
+  if not string.isnullorempty(lastID_str) then
+    local idStrList = string.split(lastID_str, ",")
     if idStrList and next(idStrList) then
-      for index,isStr in ipairs(idStrList) do
-        (table.insert)(idList, tonumber(isStr))
+      for index, isStr in ipairs(idStrList) do
+        table.insert(idList, tonumber(isStr))
       end
     end
   end
-  do
-    return idList
-  end
+  return idList
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.ClearExchangeTab_SeasonNew = function(self)
-  -- function num : 0_81 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_shop_season_goods)({})
+function ShopModule:ClearExchangeTab_SeasonNew()
+  local cfgs = Cfg.cfg_shop_season_goods({})
   local activeCfgs = {}
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local serverTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local serverTimeModule = GameGlobal.GetModule(SvrTimeModule)
   local serverTime = serverTimeModule:GetServerTime() * 0.001
   if cfgs and next(cfgs) then
-    for key,value in pairs(cfgs) do
+    for key, value in pairs(cfgs) do
       local beginTimeStr = value.BeginTime
       local endTimeStr = value.EndTime
       local timeType = Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone
       local beginTime = loginModule:GetTimeStampByTimeStr(beginTimeStr, timeType)
       local endTime = loginModule:GetTimeStampByTimeStr(endTimeStr, timeType)
-      if beginTime <= serverTime and beginTime < endTime then
-        (table.insert)(activeCfgs, value.ID)
+      if serverTime >= beginTime and beginTime < endTime then
+        table.insert(activeCfgs, value.ID)
       end
     end
   end
-  do
-    local idList = self:Exchange_Season_Local_IDList()
-    local saveMap = {}
-    for _,id in pairs(idList) do
+  local idList = self:Exchange_Season_Local_IDList()
+  local saveMap = {}
+  for _, id in pairs(idList) do
+    saveMap[id] = true
+  end
+  if activeCfgs and next(activeCfgs) then
+    for _, id in pairs(activeCfgs) do
       saveMap[id] = true
     end
-    if activeCfgs and next(activeCfgs) then
-      for _,id in pairs(activeCfgs) do
-        saveMap[id] = true
-      end
+  end
+  if saveMap and table.count(saveMap) > 0 then
+    local saveVal = ""
+    for id, value in pairs(saveMap) do
+      saveVal = saveVal .. tostring(id) .. ","
     end
-    do
-      if saveMap and (table.count)(saveMap) > 0 then
-        local saveVal = ""
-        for id,value in pairs(saveMap) do
-          saveVal = saveVal .. tostring(id) .. ","
-        end
-        if not (string.isnullorempty)(saveVal) then
-          local key = self:Exchange_Season_Local_Key()
-          ;
-          (LocalDB.SetString)(key, saveVal)
-        end
-      end
+    if not string.isnullorempty(saveVal) then
+      local key = self:Exchange_Season_Local_Key()
+      LocalDB.SetString(key, saveVal)
     end
   end
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.CancelRechargeGiftNewMark = function(self, goods_id)
-  -- function num : 0_82 , upvalues : _ENV
+function ShopModule:CancelRechargeGiftNewMark(goods_id)
   local key = "UIShopGiftPackItem" .. self:GetNewFlagKey(goods_id)
-  ;
-  (LocalDB.SetInt)(key, 1)
+  LocalDB.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetNewFlagKey = function(self, id)
-  -- function num : 0_83 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function ShopModule:GetNewFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. id
   return key
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetMonthCardOutDataRedKey = function(self, monthCardData)
-  -- function num : 0_84 , upvalues : _ENV
+function ShopModule:GetMonthCardOutDataRedKey(monthCardData)
   local stamp = monthCardData.deadline_timestamp
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "mcd_out_data_red" .. stamp
   return key
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetMonthCardOutDataTipsKey = function(self, monthCardData)
-  -- function num : 0_85 , upvalues : _ENV
+function ShopModule:GetMonthCardOutDataTipsKey(monthCardData)
   local stamp = monthCardData.deadline_timestamp
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "mcd_out_data_tips" .. stamp
   return key
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetMonthCardWillOutDataRedKey = function(self, monthCardData)
-  -- function num : 0_86 , upvalues : _ENV
+function ShopModule:GetMonthCardWillOutDataRedKey(monthCardData)
   local stamp = monthCardData.deadline_timestamp
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "mcd_will_out_data_red" .. stamp
   return key
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetMonthCardWillOutDataTipsKey = function(self, monthCardData)
-  -- function num : 0_87 , upvalues : _ENV
+function ShopModule:GetMonthCardWillOutDataTipsKey(monthCardData)
   local stamp = monthCardData.deadline_timestamp
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "mcd_will_out_data_tips1" .. stamp
   return key
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetMonthCardState = function(self, monthCardData)
-  -- function num : 0_88 , upvalues : _ENV
+function ShopModule:GetMonthCardState(monthCardData)
   local stamp = monthCardData.deadline_timestamp
   if stamp == 0 then
     return 0
   end
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-  local d, h, m, s = (UICommonHelper.S2DHMS)(monthCardData.deadline_time)
-  local leftDays = (math.ceil)(d)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
+  local d, h, m, s = UICommonHelper.S2DHMS(monthCardData.deadline_time)
+  local leftDays = math.ceil(d)
   if leftDays == 1 then
     return 2
   end
-  do
-    if leftDays <= 0 then
-      local limit = ((Cfg.cfg_global).MonthCardOutDateLimit).IntValue
-      if limit < nowTimestamp - stamp then
-        return 0
-      else
-        return 3
-      end
+  if leftDays <= 0 then
+    local limit = Cfg.cfg_global.MonthCardOutDateLimit.IntValue
+    if limit < nowTimestamp - stamp then
+      return 0
+    else
+      return 3
     end
-    return 1
   end
+  return 1
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetRechargeTabNew = function(self)
-  -- function num : 0_89 , upvalues : _ENV
+function ShopModule:GetRechargeTabNew()
   if not self._giftMarketData or not self._giftMarketConfig then
     return false
   end
   local newList = {}
-  local serGoods = (self._giftMarketData).goods
+  local serGoods = self._giftMarketData.goods
   local rechargeList = {}
-  for i,good in ipairs(serGoods) do
+  for i, good in ipairs(serGoods) do
     local id = good.gift_id
-    local cfgv = (self._giftMarketConfig)[id]
-    local cfgClient = (Cfg.cfg_shop_giftmarket_goods)[id]
+    local cfgv = self._giftMarketConfig[id]
+    local cfgClient = Cfg.cfg_shop_giftmarket_goods[id]
     if cfgv and cfgClient then
       local strShopGiftType = cfgv[ConfigKey.ConfigKey_ShopGiftType]
       if tonumber(strShopGiftType) == ShopGiftType.SGT_RechargeGift then
-        (table.insert)(rechargeList, id)
+        table.insert(rechargeList, id)
       end
     end
   end
   for i = 1, #rechargeList do
     local key = "UIShopGiftPackItem" .. self:GetNewFlagKey(rechargeList[i])
-    if (LocalDB.GetInt)(key, 0) == 0 then
-      (table.insert)(newList, rechargeList[i])
+    if LocalDB.GetInt(key, 0) == 0 then
+      table.insert(newList, rechargeList[i])
     end
   end
-  do return #newList > 0, newList end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 0 < #newList, newList
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetSecretTabNew = function(self)
-  -- function num : 0_90
+function ShopModule:GetSecretTabNew()
   local isNew = false
   isNew = self:GetAllBattlePassTabNew()
-  if not isNew then
-    isNew = self:GetExchangeTab_SeasonNew()
+  isNew = isNew or self:GetExchangeTab_SeasonNew()
+  return isNew
+end
+
+function ShopModule:GetAllBattlePassTabNew()
+  local isNew = false
+  for i, v in pairs(BattlePassMarketType) do
+    isNew = self:GetBattlePassTabNew(v)
+    if isNew then
+      break
+    end
   end
   return isNew
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetAllBattlePassTabNew = function(self)
-  -- function num : 0_91 , upvalues : _ENV
-  local isNew = false
-  for i,v in pairs(BattlePassMarketType) do
-    isNew = self:GetBattlePassTabNew(v)
-  end
-  do
-    if not isNew then
-      return isNew
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.GetBattlePassTabNew = function(self, nestSuIndex)
-  -- function num : 0_92 , upvalues : _ENV
-  for id,cfg in pairs((Cfg.cfg_shop_battlepass_goods)()) do
-    local payState = {[BattlePassMarketType.Shop_BattlePass_Pay] = 1, [BattlePassMarketType.Shop_BattlePass_Free] = 0}
+function ShopModule:GetBattlePassTabNew(nestSuIndex)
+  for id, cfg in pairs(Cfg.cfg_shop_battlepass_goods()) do
+    local payState = {
+      [BattlePassMarketType.Shop_BattlePass_Pay] = 1,
+      [BattlePassMarketType.Shop_BattlePass_Free] = 0
+    }
     if payState[nestSuIndex] == cfg.PayType then
-      local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-      local loginModule = (GameGlobal.GetModule)(LoginModule)
-      local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+      local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+      local loginModule = GameGlobal.GetModule(LoginModule)
+      local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
       local beginTime = loginModule:GetTimeStampByTimeStr(cfg.BeginTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
       local endTime = loginModule:GetTimeStampByTimeStr(cfg.EndTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-      if beginTime and beginTime < curTime and endTime and curTime < endTime then
+      if beginTime and curTime > beginTime and endTime and curTime < endTime then
         local itemId = cfg.ItemId
-        local itemModule = (GameGlobal.GetModule)(ItemModule)
+        local itemModule = GameGlobal.GetModule(ItemModule)
         local itemCount = itemModule:GetItemCount(itemId)
-        local canBuyBackGroud = ((Cfg.cfg_item)[itemId]).ItemSubType == ItemSubType.ItemSubType_BackGroudPicture and itemCount == 0
+        local canBuyBackGroud = Cfg.cfg_item[itemId].ItemSubType == ItemSubType.ItemSubType_BackGroudPicture and itemCount == 0
         local haveSkin = false
-        if RoleAssetID.RoleAssetPetSkinBegin <= itemId and itemId <= RoleAssetID.RoleAssetPetSkinEnd then
+        if itemId >= RoleAssetID.RoleAssetPetSkinBegin and itemId <= RoleAssetID.RoleAssetPetSkinEnd then
           local skinid = itemId - RoleAssetID.RoleAssetPetSkinBegin
-          local petModule = (GameGlobal.GetModule)(PetModule)
+          local petModule = GameGlobal.GetModule(PetModule)
           haveSkin = petModule:HaveSkin(skinid)
         end
-        if (((Cfg.cfg_item)[itemId]).ItemSubType ~= ItemSubType.ItemSubType_BackGroudPicture or canBuyBackGroud) and not haveSkin then
+        if (Cfg.cfg_item[itemId].ItemSubType ~= ItemSubType.ItemSubType_BackGroudPicture or canBuyBackGroud) and not haveSkin then
           local key = "UIShoBattlePassGood" .. self:GetNewFlagKey(cfg.ID)
-          if (LocalDB.GetInt)(key, 0) == 0 then
+          if LocalDB.GetInt(key, 0) == 0 then
             return true
           end
         end
       end
     end
   end
-  do return false end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  return false
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-ShopModule.SetBattlePassTabNew = function(self, goodId)
-  -- function num : 0_93 , upvalues : _ENV
+function ShopModule:SetBattlePassTabNew(goodId)
   local key = "UIShoBattlePassGood" .. self:GetNewFlagKey(goodId)
-  ;
-  (LocalDB.SetInt)(key, 1)
+  LocalDB.SetInt(key, 1)
 end
-
-

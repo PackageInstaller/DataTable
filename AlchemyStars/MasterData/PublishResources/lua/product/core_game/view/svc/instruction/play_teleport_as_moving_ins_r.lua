@@ -1,44 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_teleport_as_moving_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayTeleportAsMovingInstruction", BaseInstruction)
 PlayTeleportAsMovingInstruction = PlayTeleportAsMovingInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayTeleportAsMovingInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayTeleportAsMovingInstruction:Constructor(paramList)
   self._time = tonumber(paramList.time)
   self._speed = tonumber(paramList.speed)
   self._stageIndex = tonumber(paramList.stageIndex) or 1
-  if not self._time then
-    assert(self._speed, "PlayTeleportAsMoving指令需要配置time参数")
-    self._notifyBuff = tonumber(paramList.notifyBuff) or 1
-    self._leftAnimName = paramList.leftAnimName
-    self._rightAnimName = paramList.rightAnimName
-    self._animName = paramList.animName
-    self._moveSetDir = tonumber(paramList.moveSetDir)
-    self._moveUseResDir = tonumber(paramList.moveUseResDir)
-    self._dontSetGridDown = paramList.dontSetGridDown
-  end
+  assert(self._time or self._speed, "PlayTeleportAsMoving指令需要配置time参数")
+  self._notifyBuff = tonumber(paramList.notifyBuff) or 1
+  self._leftAnimName = paramList.leftAnimName
+  self._rightAnimName = paramList.rightAnimName
+  self._animName = paramList.animName
+  self._moveSetDir = tonumber(paramList.moveSetDir)
+  self._moveUseResDir = tonumber(paramList.moveUseResDir)
+  self._dontSetGridDown = paramList.dontSetGridDown
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTeleportAsMovingInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayTeleportAsMovingInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local teleportResult = routineComponent:GetEffectResultByArray(SkillEffectType.Teleport, self._stageIndex)
   if not teleportResult then
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local teleportedEntityID = teleportResult:GetTargetID()
   local teleportedEntity = world:GetEntityByID(teleportedEntityID)
   if not teleportedEntity then
-    return 
+    return
   end
   local posOld = teleportResult:GetPosOld()
   local posNew = teleportResult:GetPosNew()
@@ -48,19 +36,17 @@ PlayTeleportAsMovingInstruction.DoInstruction = function(self, TT, casterEntity,
   end
   if posOld == posNew then
     if self._notifyBuff == 1 then
-      (world:GetService("PlayBuff")):PlayBuffView(TT, NTTeleport:New(casterEntity, posOld, posNew))
+      world:GetService("PlayBuff"):PlayBuffView(TT, NTTeleport:New(casterEntity, posOld, posNew))
     end
-    return 
+    return
   end
-  local animName = nil
+  local animName
   if posOld.x < posNew.x then
     animName = self._leftAnimName
+  elseif posOld.x > posNew.x then
+    animName = self._rightAnimName
   else
-    if posNew.x < posOld.x then
-      animName = self._rightAnimName
-    else
-      animName = self._animName
-    end
+    animName = self._animName
   end
   if animName then
     casterEntity:SetAnimatorControllerTriggers({animName})
@@ -71,108 +57,87 @@ PlayTeleportAsMovingInstruction.DoInstruction = function(self, TT, casterEntity,
     local oldColor = teleportResult:GetColorOld()
     boardService:ReCreateGridEntity(oldColor, oldPos)
   end
-  do
+  YIELD(TT)
+  local distance = Vector2.Distance(posNew, posOld)
+  local speed = self._speed
+  if self._time then
+    speed = distance / self._time * 1000
+  end
+  if casterEntity:HasMonsterID() then
+    local renderEntityService = world:GetService("RenderEntity")
+    renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
+  end
+  if not self._dontSetGridDown then
+    self:_PlayCasterControlGridDown(casterEntity, 0)
+  end
+  while teleportedEntity:HasGridMove() do
+    local gridMoveComponent = teleportedEntity:GridMove()
     YIELD(TT)
-    local distance = (Vector2.Distance)(posNew, posOld)
-    local speed = self._speed
-    if self._time then
-      speed = distance / self._time * 1000
+  end
+  local boardServiceRender = world:GetService("BoardRender")
+  local gridPos = boardServiceRender:GetRealEntityGridPos(teleportedEntity)
+  if self._moveSetDir and self._moveSetDir == 1 then
+    local moveDir = (posNew - posOld):SetNormalize()
+    teleportedEntity:SetDirection(moveDir)
+  end
+  teleportedEntity:AddGridMove(speed, posNew, gridPos)
+  while teleportedEntity:HasGridMove() do
+    YIELD(TT)
+  end
+  local viewPos = posNew:Clone()
+  local offset = teleportedEntity:GetGridOffset()
+  if offset then
+    viewPos = viewPos + offset
+  end
+  teleportedEntity:SetPosition(viewPos)
+  local trapServiceRender = world:GetService("TrapRender")
+  local pieceService = world:GetService("Piece")
+  if casterEntity:HasPetPstID() then
+    local boardService = world:GetService("BoardRender")
+    local newColor = teleportResult:GetColorNew()
+    local newPos = teleportResult:GetPosNew()
+    boardService:ReCreateGridEntity(newColor, newPos)
+    trapServiceRender:ShowHideTrapAtPos(newPos, false)
+    local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+    local teamLeaderEntity = teamEntity:Team():GetTeamLeaderEntity()
+    local pets = teamEntity:Team():GetTeamPetEntities()
+    for i, petEntity in ipairs(pets) do
+      petEntity:SetPosition(posNew, dir)
     end
-    do
-      if casterEntity:HasMonsterID() then
-        local renderEntityService = world:GetService("RenderEntity")
-        renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
-      end
-      if not self._dontSetGridDown then
-        self:_PlayCasterControlGridDown(casterEntity, 0)
-      end
-      do
-        while teleportedEntity:HasGridMove() do
-          local gridMoveComponent = teleportedEntity:GridMove()
-          YIELD(TT)
-        end
-        local boardServiceRender = world:GetService("BoardRender")
-        local gridPos = boardServiceRender:GetRealEntityGridPos(teleportedEntity)
-        do
-          if self._moveSetDir and self._moveSetDir == 1 then
-            local moveDir = (posNew - posOld):SetNormalize()
-            teleportedEntity:SetDirection(moveDir)
-          end
-          teleportedEntity:AddGridMove(speed, posNew, gridPos)
-          while teleportedEntity:HasGridMove() do
-            YIELD(TT)
-          end
-          local viewPos = posNew:Clone()
-          local offset = teleportedEntity:GetGridOffset()
-          if offset then
-            viewPos = viewPos + offset
-          end
-          teleportedEntity:SetPosition(viewPos)
-          local trapServiceRender = world:GetService("TrapRender")
-          local pieceService = world:GetService("Piece")
-          if casterEntity:HasPetPstID() then
-            local boardService = world:GetService("BoardRender")
-            local newColor = teleportResult:GetColorNew()
-            local newPos = teleportResult:GetPosNew()
-            boardService:ReCreateGridEntity(newColor, newPos)
-            trapServiceRender:ShowHideTrapAtPos(newPos, false)
-            local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-            local teamLeaderEntity = (teamEntity:Team()):GetTeamLeaderEntity()
-            local pets = (teamEntity:Team()):GetTeamPetEntities()
-            for i,petEntity in ipairs(pets) do
-              petEntity:SetPosition(posNew, dir)
-            end
-            teamEntity:SetLocation(posNew, dir)
-            teamLeaderEntity:SetLocation(posNew, dir)
-            pieceService:RemovePrismAt(newPos)
-          else
-            do
-              if casterEntity:HasMonsterID() then
-                local trapIDList = teleportResult:GetTriggerTrapIDList()
-                local trapEntityList = {}
-                for _,v in ipairs(trapIDList) do
-                  local trapEntity = world:GetEntityByID(v)
-                  trapEntityList[#trapEntityList + 1] = trapEntity
-                end
-                local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
-                sPlaySkillInstruction:PlayTrapTrigger(TT, casterEntity, trapEntityList)
-                local renderEntityService = world:GetService("RenderEntity")
-                renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
-                renderEntityService:CreateMonsterAreaOutlineEntity(casterEntity)
-                if self._moveSetDir and self._moveSetDir == 1 then
-                  casterEntity:SetDirection(dir)
-                end
-              else
-                do
-                  if casterEntity:HasTrapID() and casterEntity:HasTrapRoundInfoRender() then
-                    local eid = (casterEntity:TrapRoundInfoRender()):GetRoundInfoEntityID()
-                    if eid then
-                      local eff = world:GetEntityByID(eid)
-                      eff:AddGridMove(self._speed, posNew, posOld)
-                    end
-                  end
-                  do
-                    if not self._dontSetGridDown then
-                      self:_PlayCasterControlGridDown(casterEntity, 1)
-                    end
-                    if self._notifyBuff == 1 then
-                      (world:GetService("PlayBuff")):PlayBuffView(TT, NTTeleport:New(casterEntity, posOld, posNew))
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
-      end
+    teamEntity:SetLocation(posNew, dir)
+    teamLeaderEntity:SetLocation(posNew, dir)
+    pieceService:RemovePrismAt(newPos)
+  elseif casterEntity:HasMonsterID() then
+    local trapIDList = teleportResult:GetTriggerTrapIDList()
+    local trapEntityList = {}
+    for _, v in ipairs(trapIDList) do
+      local trapEntity = world:GetEntityByID(v)
+      trapEntityList[#trapEntityList + 1] = trapEntity
     end
+    local sPlaySkillInstruction = world:GetService("PlaySkillInstruction")
+    sPlaySkillInstruction:PlayTrapTrigger(TT, casterEntity, trapEntityList)
+    local renderEntityService = world:GetService("RenderEntity")
+    renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
+    renderEntityService:CreateMonsterAreaOutlineEntity(casterEntity)
+    if self._moveSetDir and self._moveSetDir == 1 then
+      casterEntity:SetDirection(dir)
+    end
+  elseif casterEntity:HasTrapID() and casterEntity:HasTrapRoundInfoRender() then
+    local eid = casterEntity:TrapRoundInfoRender():GetRoundInfoEntityID()
+    if eid then
+      local eff = world:GetEntityByID(eid)
+      eff:AddGridMove(self._speed, posNew, posOld)
+    end
+  end
+  if not self._dontSetGridDown then
+    self:_PlayCasterControlGridDown(casterEntity, 1)
+  end
+  if self._notifyBuff == 1 then
+    world:GetService("PlayBuff"):PlayBuffView(TT, NTTeleport:New(casterEntity, posOld, posNew))
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayTeleportAsMovingInstruction._PlayCasterControlGridDown = function(self, casterEntity, enable)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayTeleportAsMovingInstruction:_PlayCasterControlGridDown(casterEntity, enable)
   if casterEntity:MonsterID() then
     local monsterIDCmpt = casterEntity:MonsterID()
     monsterIDCmpt:SetNeedGridDownEnable(enable == 1)
@@ -180,7 +145,7 @@ PlayTeleportAsMovingInstruction._PlayCasterControlGridDown = function(self, cast
     local trapRender = casterEntity:TrapRender()
     trapRender:SetNeedGridDownEnable(enable == 1)
   else
-    return 
+    return
   end
   local world = casterEntity:GetOwnerWorld()
   local bodyAreaCmpt = casterEntity:BodyArea()
@@ -196,7 +161,4 @@ PlayTeleportAsMovingInstruction._PlayCasterControlGridDown = function(self, cast
       pieceSvc:SetPieceAnimNormal(pos)
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
-
-

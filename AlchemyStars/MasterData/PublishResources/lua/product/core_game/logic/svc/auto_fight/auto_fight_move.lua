@@ -1,22 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/auto_fight/auto_fight_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("auto_fight_service")
--- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoFightService._AutoMovePath = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  if (self._world):MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
+function AutoFightService:_AutoMovePath(TT)
+  if self._world:MatchType(GetMatchTypeType.NoLinkLine) == MatchType.MT_PopStarPro then
     return self:_AutoPopGrid(TT)
   end
-  local tmpSpeed = nil
-  if (BattleConst.TimeSpeedList)[BattleConst.Speed2Index] < (HelperProxy:GetInstance()):GetGameTimeScale() then
-    (Log.info)("AutoFight SetTimeSpeed ", (BattleConst.TimeSpeedList)[BattleConst.Speed2Index], " ")
-    tmpSpeed = (HelperProxy:GetInstance()):GetGameTimeScale()
-    ;
-    (HelperProxy:GetInstance()):SetGameTimeScale((BattleConst.TimeSpeedList)[BattleConst.Speed2Index])
+  local tmpSpeed
+  if HelperProxy:GetInstance():GetGameTimeScale() > BattleConst.TimeSpeedList[BattleConst.Speed2Index] then
+    Log.info("AutoFight SetTimeSpeed ", BattleConst.TimeSpeedList[BattleConst.Speed2Index], " ")
+    tmpSpeed = HelperProxy:GetInstance():GetGameTimeScale()
+    HelperProxy:GetInstance():SetGameTimeScale(BattleConst.TimeSpeedList[BattleConst.Speed2Index])
   end
   self._lastConvertColor = 0
   self._randPieceColor = false
@@ -24,147 +16,129 @@ AutoFightService._AutoMovePath = function(self, TT)
   local env = self._env
   local teamEntity = env.TeamEntity
   local chainPath, pieceType = self:GetAutoChainPath(TT, teamEntity)
-  if not chainPath or (table.count)(chainPath) == 0 then
-    (Log.info)("[AutoFightService:_AutoMovePath] not chainPath or table.count(chainPath) == 0.   set chainPath = {teamEntity:GetGridPosition()}")
-    chainPath = {teamEntity:GetGridPosition()}
+  if not chainPath or table.count(chainPath) == 0 then
+    Log.info("[AutoFightService:_AutoMovePath] not chainPath or table.count(chainPath) == 0.   set chainPath = {teamEntity:GetGridPosition()}")
+    chainPath = {
+      teamEntity:GetGridPosition()
+    }
     pieceType = 0
   end
-  do
-    if (self._world):RunAtServer() then
-      local cmd = MovePathDoneCommand:New()
-      cmd.EntityID = teamEntity:GetID()
-      cmd:SetChainPath(chainPath)
-      cmd:SetElementType(pieceType)
-      teamEntity:ReceiveCommand(cmd)
-      return 
+  if self._world:RunAtServer() then
+    local cmd = MovePathDoneCommand:New()
+    cmd.EntityID = teamEntity:GetID()
+    cmd:SetChainPath(chainPath)
+    cmd:SetElementType(pieceType)
+    teamEntity:ReceiveCommand(cmd)
+    return
+  end
+  local canMoveArrowService = self._world:GetService("CanMoveArrow")
+  if canMoveArrowService then
+    canMoveArrowService:ShowCanMoveArrow(false)
+  end
+  if #chainPath == 1 then
+    self:ClearChainPathGhost()
+    local cmd = MovePathDoneCommand:New()
+    cmd:SetChainPath(chainPath)
+    cmd:SetElementType(PieceType.None)
+    self._world:Player():SendCommand(cmd)
+    local gameFsmCmpt = self._world:GameFSM()
+    while gameFsmCmpt:CurStateID() == GameStateID.WaitInput do
+      YIELD(TT, 100)
     end
-    local canMoveArrowService = (self._world):GetService("CanMoveArrow")
-    if canMoveArrowService then
-      canMoveArrowService:ShowCanMoveArrow(false)
+    if tmpSpeed then
+      Log.fatal("AutoFight ResumeSpeed")
+      HelperProxy:GetInstance():SetGameTimeScale(tmpSpeed)
     end
-    if #chainPath == 1 then
-      self:ClearChainPathGhost()
-      local cmd = MovePathDoneCommand:New()
-      cmd:SetChainPath(chainPath)
-      cmd:SetElementType(PieceType.None)
-      ;
-      ((self._world):Player()):SendCommand(cmd)
-      local gameFsmCmpt = (self._world):GameFSM()
-      while gameFsmCmpt:CurStateID() == GameStateID.WaitInput do
-        YIELD(TT, 100)
-      end
-      if tmpSpeed then
-        (Log.fatal)("AutoFight ResumeSpeed")
-        ;
-        (HelperProxy:GetInstance()):SetGameTimeScale(tmpSpeed)
-      end
-      return 
+    return
+  end
+  local previewEntity = self._world:GetPreviewEntity()
+  local linklineService = self._world:GetService("LinkLine")
+  linklineService:ShowBoardPieceMap()
+  local leaderId = teamEntity:Team():GetTeamLeaderEntityID()
+  local linkageRenderService = self._world:GetService("LinkageRender")
+  local showPath = {}
+  for _, pos in ipairs(chainPath) do
+    table.insert(showPath, pos)
+    linklineService:_OnPieceInsertIntoChain(showPath)
+    previewEntity:ReplacePreviewChainPath(showPath, pieceType, PieceType.None)
+    linkageRenderService:ShowLinkageInfo(showPath, pieceType)
+    linkageRenderService:ShowChainSkillIcon(leaderId)
+    YIELD(TT, 100)
+  end
+  if previewEntity then
+    local previewChainPathCmpt = previewEntity:PreviewChainPath()
+    if previewChainPathCmpt then
+      previewChainPathCmpt:SetLinkLineState(false)
     end
-    do
-      local previewEntity = (self._world):GetPreviewEntity()
-      local linklineService = (self._world):GetService("LinkLine")
-      linklineService:ShowBoardPieceMap()
-      local leaderId = (teamEntity:Team()):GetTeamLeaderEntityID()
-      local linkageRenderService = (self._world):GetService("LinkageRender")
-      local showPath = {}
-      for _,pos in ipairs(chainPath) do
-        (table.insert)(showPath, pos)
-        linklineService:_OnPieceInsertIntoChain(showPath)
-        previewEntity:ReplacePreviewChainPath(showPath, pieceType, PieceType.None)
-        linkageRenderService:ShowLinkageInfo(showPath, pieceType)
-        linkageRenderService:ShowChainSkillIcon(leaderId)
-        YIELD(TT, 100)
-      end
-      do
-        if previewEntity then
-          local previewChainPathCmpt = previewEntity:PreviewChainPath()
-          if previewChainPathCmpt then
-            previewChainPathCmpt:SetLinkLineState(false)
-          end
-        end
-        local isLocal = (self._world):GetGameTurn() == GameTurnType.LocalPlayerTurn
-        ;
-        ((self._world):EventDispatcher()):Dispatch(GameEventType.FlushPetChainSkillItem, isLocal, #chainPath, pieceType)
-        linklineService:ShowChainPathCancelArea(false)
-        local pieceService = (self._world):GetService("Piece")
-        local boardService = (self._world):GetService("BoardLogic")
-        pieceService:RefreshPieceAnim()
-        self:ClearChainPathGhost()
-        local cmd = MovePathDoneCommand:New()
-        cmd:SetChainPath(chainPath)
-        cmd:SetElementType(pieceType)
-        ;
-        ((self._world):Player()):SendCommand(cmd)
-        local linkageRenderService = (self._world):GetService("LinkageRender")
-        linkageRenderService:ClearLinkRender()
-        if tmpSpeed then
-          (Log.info)("AutoFight ResumeSpeed")
-          ;
-          (HelperProxy:GetInstance()):SetGameTimeScale(tmpSpeed)
-        end
-        local gameFsmCmpt = (self._world):GameFSM()
-        while gameFsmCmpt:CurStateID() == GameStateID.WaitInput do
-          YIELD(TT, 100)
-        end
-        -- DECOMPILER ERROR: 4 unprocessed JMP targets
-      end
-    end
+  end
+  local isLocal = self._world:GetGameTurn() == GameTurnType.LocalPlayerTurn
+  self._world:EventDispatcher():Dispatch(GameEventType.FlushPetChainSkillItem, isLocal, #chainPath, pieceType)
+  linklineService:ShowChainPathCancelArea(false)
+  local pieceService = self._world:GetService("Piece")
+  local boardService = self._world:GetService("BoardLogic")
+  pieceService:RefreshPieceAnim()
+  self:ClearChainPathGhost()
+  local cmd = MovePathDoneCommand:New()
+  cmd:SetChainPath(chainPath)
+  cmd:SetElementType(pieceType)
+  self._world:Player():SendCommand(cmd)
+  local linkageRenderService = self._world:GetService("LinkageRender")
+  linkageRenderService:ClearLinkRender()
+  if tmpSpeed then
+    Log.info("AutoFight ResumeSpeed")
+    HelperProxy:GetInstance():SetGameTimeScale(tmpSpeed)
+  end
+  local gameFsmCmpt = self._world:GameFSM()
+  while gameFsmCmpt:CurStateID() == GameStateID.WaitInput do
+    YIELD(TT, 100)
   end
 end
 
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.ClearChainPathGhost = function(self)
-  -- function num : 0_1
-  local syncMoveServiceRender = (self._world):GetService("SyncMoveRender")
+function AutoFightService:ClearChainPathGhost()
+  local syncMoveServiceRender = self._world:GetService("SyncMoveRender")
   if syncMoveServiceRender then
     syncMoveServiceRender:ClearPreview()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.GetAutoChainPath = function(self, TT, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
+function AutoFightService:GetAutoChainPath(TT, teamEntity)
   if not self._env or not self._autoMoving then
     self:_BuildMoveEnv(teamEntity)
   end
   local env = self._env
   if env.MVP then
-    return (table.unpack)(env.MVP)
+    return table.unpack(env.MVP)
   end
   if env.LevelPolicy == LevelPosPolicy.GotoExitPos and env.ExitPos then
     self:_MoveToExit(TT)
+  elseif env.LevelPolicy == LevelPosPolicy.GotoTrapPos and env.UnlockPos then
+    self:_MoveToUnlockPos(TT)
   else
-    if env.LevelPolicy == LevelPosPolicy.GotoTrapPos and env.UnlockPos then
-      self:_MoveToUnlockPos(TT)
-    else
-      self:_CalcMVP2(TT)
-    end
+    self:_CalcMVP2(TT)
   end
   if not env.MVP then
-    (Log.debug)("自动连线无路可走，原地爆炸。")
+    Log.debug("自动连线无路可走，原地爆炸。")
     env.MVP = {
-{env.PlayerPos}
-, PieceType.None, 1}
+      {
+        env.PlayerPos
+      },
+      PieceType.None,
+      1
+    }
   end
-  return (table.unpack)(env.MVP)
+  return table.unpack(env.MVP)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcMVP = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
-  local t1 = (os.clock)()
+function AutoFightService:_CalcMVP(TT)
+  local t1 = os.clock()
   self:_CalcAllMovePath()
-  local t2 = (os.clock)()
+  local t2 = os.clock()
   local env = self._env
-  ;
-  (Log.debug)("[AutoFight] _CalcAllMovePath() path count=", #env.ChainPaths, " use time =", (t2 - t1) * 1000)
+  Log.debug("[AutoFight] _CalcAllMovePath() path count=", #env.ChainPaths, " use time =", (t2 - t1) * 1000)
   if #env.ChainPaths == 0 then
-    return 
+    return
   end
-  t1 = (os.clock)()
+  t1 = os.clock()
   local startTime = t1
   local deltaTime = 0
   local maxEvalue = 0
@@ -172,22 +146,21 @@ AutoFightService._CalcMVP = function(self, TT)
   local maxEvalueChain = 0
   local MVP = {}
   for i = 1, #env.ChainPaths do
-    local chainPath = ((env.ChainPaths)[i])[1]
-    local pieceType = ((env.ChainPaths)[i])[2]
-    local _maxEvalueNormal = ((env.ChainPaths)[i])[3]
+    local chainPath = env.ChainPaths[i][1]
+    local pieceType = env.ChainPaths[i][2]
+    local _maxEvalueNormal = env.ChainPaths[i][3]
     local _maxChainCnt = #chainPath
     local _maxChainAttCnt = self:_CalcChainAttackCount(chainPath[_maxChainCnt], _maxChainCnt, pieceType)
     local _maxEvalueChain = _maxChainAttCnt * BattleConst.AutoFightChainAttackValue
     local _maxEvalue = _maxEvalueNormal + _maxEvalueChain
-    deltaTime = (os.clock)() - startTime
-    if TT and BattleConst.LogicYieldTime < deltaTime then
+    deltaTime = os.clock() - startTime
+    if TT and deltaTime > BattleConst.LogicYieldTime then
       YIELD(TT)
-      ;
-      (Log.debug)("[AutoFight] calcMVP path i=", i, " use time=", (deltaTime) * 1000)
+      Log.debug("[AutoFight] calcMVP path i=", i, " use time=", deltaTime * 1000)
       deltaTime = 0
-      startTime = (os.clock)()
+      startTime = os.clock()
     end
-    local len = #chainPath - (math.min)(#chainPath // 2, 5)
+    local len = #chainPath - math.min(#chainPath // 2, 5)
     for n = #chainPath - 1, len, -1 do
       local chainAttCnt = self:_CalcChainAttackCount(chainPath[n], n, pieceType)
       local evalChain = chainAttCnt * BattleConst.AutoFightChainAttackValue
@@ -199,235 +172,182 @@ AutoFightService._CalcMVP = function(self, TT)
         _maxEvalueNormal = evalNormal
         _maxChainCnt = n
       end
-      deltaTime = (os.clock)() - startTime
-      if TT and BattleConst.LogicYieldTime < deltaTime then
+      deltaTime = os.clock() - startTime
+      if TT and deltaTime > BattleConst.LogicYieldTime then
         YIELD(TT)
-        ;
-        (Log.debug)("[AutoFight] calcMVP path i=", i, " use time=", (deltaTime) * 1000)
+        Log.debug("[AutoFight] calcMVP path i=", i, " use time=", deltaTime * 1000)
         deltaTime = 0
-        startTime = (os.clock)()
+        startTime = os.clock()
       end
     end
-    if _maxChainCnt > 0 then
+    if 0 < _maxChainCnt then
       for i = _maxChainCnt + 1, #chainPath do
         chainPath[i] = nil
       end
     end
-    do
-      do
-        if maxEvalue < _maxEvalue then
-          maxEvalue = _maxEvalue
-          maxEvalueChain = _maxEvalueChain
-          maxEvalueNormal = _maxEvalueNormal
-          MVP = {chainPath, pieceType, maxEvalue}
-          if TT and DEBUG_AUTO_FIGHT then
-            self:ShowLinkLine(TT, chainPath, pieceType)
-          end
-        end
-        -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out DO_STMT
-
+    if maxEvalue < _maxEvalue then
+      maxEvalue = _maxEvalue
+      maxEvalueChain = _maxEvalueChain
+      maxEvalueNormal = _maxEvalueNormal
+      MVP = {
+        chainPath,
+        pieceType,
+        maxEvalue
+      }
+      if TT and DEBUG_AUTO_FIGHT then
+        self:ShowLinkLine(TT, chainPath, pieceType)
       end
     end
   end
   env.MVP = MVP
   local baseValue = self:_CalcChainPathBaseValue(MVP[1], MVP[2])
-  if MVP[3] <= baseValue then
+  if baseValue >= MVP[3] then
     self:_MoveToMonster()
     maxEvalueNormal = 1
     maxEvalueChain = 0
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshMVPText, (string.format)("V[%d]=N[%d]+C[%d]", maxEvalue, maxEvalueNormal, maxEvalueChain))
+  self._world:EventDispatcher():Dispatch(GameEventType.RefreshMVPText, string.format("V[%d]=N[%d]+C[%d]", maxEvalue, maxEvalueNormal, maxEvalueChain))
   local st = {}
-  for i,pos in ipairs((env.MVP)[1]) do
-    st[#st + 1] = (Vector2.Pos2Index)(pos)
+  for i, pos in ipairs(env.MVP[1]) do
+    st[#st + 1] = Vector2.Pos2Index(pos)
   end
-  local s = (table.concat)(st, " ")
-  t2 = (os.clock)()
-  ;
-  (Log.debug)("[AutoFight] calcMVP use time=", (t2 - t1) * 1000, " chainPath=[", s, "] pieceType=", (env.MVP)[2], " evalue=", (env.MVP)[3])
+  local s = table.concat(st, " ")
+  t2 = os.clock()
+  Log.debug("[AutoFight] calcMVP use time=", (t2 - t1) * 1000, " chainPath=[", s, "] pieceType=", env.MVP[2], " evalue=", env.MVP[3])
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcMVP2 = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
-  local t1 = (os.clock)()
+function AutoFightService:_CalcMVP2(TT)
+  local t1 = os.clock()
   self:_CalcAllMovePath(TT)
-  local t2 = (os.clock)()
+  local t2 = os.clock()
   local env = self._env
-  ;
-  (Log.debug)("[AutoFight] _CalcAllMovePath() path count=", #env.ChainPaths, " use time =", (t2 - t1) * 1000)
+  Log.debug("[AutoFight] _CalcAllMovePath() path count=", #env.ChainPaths, " use time =", (t2 - t1) * 1000)
   if #env.ChainPaths == 0 then
-    return 
+    return
   end
-  local MVP = (env.ChainPaths)[1]
+  local MVP = env.ChainPaths[1]
   env.MVP = MVP
   local baseValue = self:_CalcChainPathBaseValue(MVP[1], MVP[2])
-  if MVP[3] <= baseValue then
+  if baseValue >= MVP[3] then
     self:_MoveToMonster()
   end
   local st = {}
-  for i,pos in ipairs((env.MVP)[1]) do
-    st[#st + 1] = (Vector2.Pos2Index)(pos)
+  for i, pos in ipairs(env.MVP[1]) do
+    st[#st + 1] = Vector2.Pos2Index(pos)
   end
-  local s = (table.concat)(st, " ")
-  local usetime = (os.clock)() - t2
-  ;
-  (Log.debug)("[AutoFight] calcMVP2  chainPath=[", s, "] pieceType=", MVP[2], " evalue=", MVP[3], " use time=", usetime)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshMVPText, "MVP=" .. MVP[3])
+  local s = table.concat(st, " ")
+  local usetime = os.clock() - t2
+  Log.debug("[AutoFight] calcMVP2  chainPath=[", s, "] pieceType=", MVP[2], " evalue=", MVP[3], " use time=", usetime)
+  self._world:EventDispatcher():Dispatch(GameEventType.RefreshMVPText, "MVP=" .. MVP[3])
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcAllMovePath = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  local startPosIndex = self:_Pos2Index((self._env).PlayerPos)
+function AutoFightService:_CalcAllMovePath(TT)
+  local startPosIndex = self:_Pos2Index(self._env.PlayerPos)
   local chainPathIdx = {startPosIndex}
   local depth = 100
-  if (self._env).Benumb then
+  if self._env.Benumb then
     depth = 1
   end
   depth = self:CalcMaxMoveStep(depth)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._env).ThinkStartTime = (os.clock)()
+  self._env.ThinkStartTime = os.clock()
   self:_NextMove(TT, chainPathIdx, PieceType.Any, depth)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._NextMove = function(self, TT, chainPathIdx, prevPieceType, depth)
-  -- function num : 0_6 , upvalues : _ENV
+function AutoFightService:_NextMove(TT, chainPathIdx, prevPieceType, depth)
   local env = self._env
   if depth == 0 then
-    return 
+    return
   end
   local startPosIdx = chainPathIdx[#chainPathIdx]
-  local ct = (env.ConnectMap)[startPosIdx]
+  local ct = env.ConnectMap[startPosIdx]
   if not ct then
-    return 
+    return
   end
-  if #chainPathIdx > 1 and (env.DimensionDoorPos)[startPosIdx] then
-    return 
+  if 1 < #chainPathIdx and env.DimensionDoorPos[startPosIdx] then
+    return
   end
-  local utilData = (self._world):GetService("UtilData")
-  if #chainPathIdx > 1 then
-    local startPieceType = (env.BoardPosPieces)[startPosIdx]
-    do
-      do
-        if #chainPathIdx == 2 then
-          local mapForFirstChainPath = utilData:GetMapForFirstChainPath()
-          if mapForFirstChainPath then
-            startPieceType = mapForFirstChainPath
+  local utilData = self._world:GetService("UtilData")
+  if 1 < #chainPathIdx then
+    local startPieceType = env.BoardPosPieces[startPosIdx]
+    if #chainPathIdx == 2 then
+      local mapForFirstChainPath = utilData:GetMapForFirstChainPath()
+      if mapForFirstChainPath then
+        startPieceType = mapForFirstChainPath
+      end
+    end
+    if prevPieceType == PieceType.Any then
+      prevPieceType = startPieceType
+    end
+  end
+  if table.icontains(env.PrismPos, startPosIdx) and 1 < #chainPathIdx then
+    local prevPosIdx = chainPathIdx[#chainPathIdx - 1]
+    self:_DoPrismChange(startPosIdx, prevPosIdx)
+  end
+  for i = 1, 8 do
+    if startPosIdx ~= chainPathIdx[#chainPathIdx] then
+      return
+    end
+    local posIdx = ct[i]
+    if posIdx then
+      local posPieceType = env.BoardPosPieces[posIdx]
+      local isFirstStepUseMapPiece = false
+      if #chainPathIdx == 1 then
+        local mapForFirstChainPath = utilData:GetMapForFirstChainPath()
+        if mapForFirstChainPath then
+          posPieceType = mapForFirstChainPath
+          isFirstStepUseMapPiece = true
+        end
+      end
+      local canMatchMapPieceType = false
+      if not isFirstStepUseMapPiece then
+        local mapPieceType = env.MapByPosition[posIdx]
+        if mapPieceType and (mapPieceType == PieceType.Any or self:CanMatchPieceType(mapPieceType, prevPieceType)) then
+          canMatchMapPieceType = true
+          posPieceType = prevPieceType
+        end
+      end
+      local isBlockMoveWithTrapWall = utilData:IsPosBlockMoveForTrapWallPosIndex(startPosIdx, posIdx)
+      if (self:CanMatchPieceType(posPieceType, prevPieceType) or canMatchMapPieceType) and not table.icontains(chainPathIdx, posIdx) and isBlockMoveWithTrapWall == false then
+        chainPathIdx[#chainPathIdx + 1] = posIdx
+        env.forward = true
+        if posPieceType == PieceType.Any then
+          posPieceType = prevPieceType
+        end
+        self:_NextMove(TT, chainPathIdx, posPieceType, depth - 1)
+        if env.forward and 1 < #chainPathIdx then
+          env.forward = false
+          local chainPath = {}
+          for n = 1, #chainPathIdx do
+            chainPath[#chainPath + 1] = self:_Index2Pos(chainPathIdx[n])
+          end
+          local pathPieceType = posPieceType
+          for i = #chainPath, 1, -1 do
+            local calcBlockChainPos = chainPath[i]
+            if not utilData:IsPosBlockLinkLineForChainChainEnd(calcBlockChainPos) then
+              break
+            end
+            self:_PopChainPath(chainPathIdx)
+            chainPath[i] = nil
+          end
+          local val = self:_CalcChainPathValue(chainPath, #chainPath, pathPieceType, env)
+          self:_InsertChainPath(chainPath, pathPieceType, val)
+          if DEBUG_AUTO_FIGHT then
+            self:ShowLinkLine(TT, chainPath, pathPieceType)
+          end
+          env.maxlen = #chainPathIdx
+          env.cutlen = self:_CalcChainPathComplexityLen(chainPathIdx)
+          local useTime = os.clock() - env.ThinkStartTime
+          if TT and useTime > BattleConst.LogicYieldTime then
+            YIELD(TT)
+            env.ThinkStartTime = os.clock()
           end
         end
-        if prevPieceType == PieceType.Any then
-          prevPieceType = startPieceType
+        if startPosIdx == chainPathIdx[#chainPathIdx - 1] then
+          self:_PopChainPath(chainPathIdx)
         end
-        do
-          if (table.icontains)(env.PrismPos, startPosIdx) and #chainPathIdx > 1 then
-            local prevPosIdx = chainPathIdx[#chainPathIdx - 1]
-            self:_DoPrismChange(startPosIdx, prevPosIdx)
-          end
-          for i = 1, 8 do
-            if startPosIdx ~= chainPathIdx[#chainPathIdx] then
-              return 
-            end
-            local posIdx = ct[i]
-            if posIdx then
-              local posPieceType = (env.BoardPosPieces)[posIdx]
-              local isFirstStepUseMapPiece = false
-              do
-                if #chainPathIdx == 1 then
-                  local mapForFirstChainPath = utilData:GetMapForFirstChainPath()
-                  if mapForFirstChainPath then
-                    posPieceType = mapForFirstChainPath
-                    isFirstStepUseMapPiece = true
-                  end
-                end
-                local canMatchMapPieceType = false
-                do
-                  if not isFirstStepUseMapPiece then
-                    local mapPieceType = (env.MapByPosition)[posIdx]
-                    if mapPieceType and (mapPieceType == PieceType.Any or self:CanMatchPieceType(mapPieceType, prevPieceType)) then
-                      canMatchMapPieceType = true
-                      posPieceType = prevPieceType
-                    end
-                  end
-                  local isBlockMoveWithTrapWall = utilData:IsPosBlockMoveForTrapWallPosIndex(startPosIdx, posIdx)
-                  if (self:CanMatchPieceType(posPieceType, prevPieceType) or canMatchMapPieceType) and not (table.icontains)(chainPathIdx, posIdx) and isBlockMoveWithTrapWall == false then
-                    chainPathIdx[#chainPathIdx + 1] = posIdx
-                    env.forward = true
-                    if posPieceType == PieceType.Any then
-                      posPieceType = prevPieceType
-                    end
-                    self:_NextMove(TT, chainPathIdx, posPieceType, depth - 1)
-                    if env.forward and #chainPathIdx > 1 then
-                      env.forward = false
-                      local chainPath = {}
-                      for n = 1, #chainPathIdx do
-                        chainPath[#chainPath + 1] = self:_Index2Pos(chainPathIdx[n])
-                      end
-                      local pathPieceType = posPieceType
-                      for i = #chainPath, 1, -1 do
-                        local calcBlockChainPos = chainPath[i]
-                        if utilData:IsPosBlockLinkLineForChainChainEnd(calcBlockChainPos) then
-                          do
-                            self:_PopChainPath(chainPathIdx)
-                            chainPath[i] = nil
-                            -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                            -- DECOMPILER ERROR at PC171: LeaveBlock: unexpected jumping out IF_STMT
-
-                          end
-                        end
-                      end
-                      local val = self:_CalcChainPathValue(chainPath, #chainPath, pathPieceType, env)
-                      self:_InsertChainPath(chainPath, pathPieceType, val)
-                      if DEBUG_AUTO_FIGHT then
-                        self:ShowLinkLine(TT, chainPath, pathPieceType)
-                      end
-                      env.maxlen = #chainPathIdx
-                      env.cutlen = self:_CalcChainPathComplexityLen(chainPathIdx)
-                      local useTime = (os.clock)() - env.ThinkStartTime
-                      if TT and BattleConst.LogicYieldTime < useTime then
-                        YIELD(TT)
-                        env.ThinkStartTime = (os.clock)()
-                      end
-                    end
-                    do
-                      if startPosIdx == chainPathIdx[#chainPathIdx - 1] then
-                        self:_PopChainPath(chainPathIdx)
-                      end
-                      if env.maxlen - #chainPathIdx == 4 then
-                        for n = #chainPathIdx, env.cutlen, -1 do
-                          self:_PopChainPath(chainPathIdx)
-                        end
-                      end
-                      do
-                        -- DECOMPILER ERROR at PC236: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC236: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC236: LeaveBlock: unexpected jumping out IF_STMT
-
-                        -- DECOMPILER ERROR at PC236: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC236: LeaveBlock: unexpected jumping out DO_STMT
-
-                        -- DECOMPILER ERROR at PC236: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                        -- DECOMPILER ERROR at PC236: LeaveBlock: unexpected jumping out IF_STMT
-
-                      end
-                    end
-                  end
-                end
-              end
-            end
+        if env.maxlen - #chainPathIdx == 4 then
+          for n = #chainPathIdx, env.cutlen, -1 do
+            self:_PopChainPath(chainPathIdx)
           end
         end
       end
@@ -435,26 +355,18 @@ AutoFightService._NextMove = function(self, TT, chainPathIdx, prevPieceType, dep
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._PopChainPath = function(self, chainPathIdx)
-  -- function num : 0_7 , upvalues : _ENV
+function AutoFightService:_PopChainPath(chainPathIdx)
   local len = #chainPathIdx
-  do
-    if (table.icontains)((self._env).PrismPos, chainPathIdx[len]) then
-      local prevPosIdx = chainPathIdx[len - 1]
-      self:_UndoPrismChange(chainPathIdx[len], prevPosIdx)
-    end
-    chainPathIdx[len] = nil
+  if table.icontains(self._env.PrismPos, chainPathIdx[len]) then
+    local prevPosIdx = chainPathIdx[len - 1]
+    self:_UndoPrismChange(chainPathIdx[len], prevPosIdx)
   end
+  chainPathIdx[len] = nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._InsertChainPath = function(self, chainPath, pieceType, val)
-  -- function num : 0_8 , upvalues : _ENV
+function AutoFightService:_InsertChainPath(chainPath, pieceType, val)
   local env = self._env
-  local checklen = #chainPath - (math.min)(#chainPath // 2, 5)
+  local checklen = #chainPath - math.min(#chainPath // 2, 5)
   local maxChainCnt = #chainPath
   for n = #chainPath - 1, checklen, -1 do
     local evalue = self:_CalcChainPathValue(chainPath, n, pieceType, env)
@@ -463,122 +375,102 @@ AutoFightService._InsertChainPath = function(self, chainPath, pieceType, val)
       maxChainCnt = n
     end
   end
-  if maxChainCnt > 0 then
+  if 0 < maxChainCnt then
     for i = maxChainCnt + 1, #chainPath do
       chainPath[i] = nil
     end
   end
-  do
-    local utilData = (self._world):GetService("UtilData")
-    for i = #chainPath, 1, -1 do
-      local calcBlockChainPos = chainPath[i]
-      if utilData:IsPosBlockLinkLineForChainChainEnd(calcBlockChainPos) then
-        do
-          chainPath[i] = nil
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC49: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  local utilData = self._world:GetService("UtilData")
+  for i = #chainPath, 1, -1 do
+    local calcBlockChainPos = chainPath[i]
+    if not utilData:IsPosBlockLinkLineForChainChainEnd(calcBlockChainPos) then
+      break
     end
-    local doInsert = false
-    for idx,result in ipairs(env.ChainPaths) do
-      if result[3] < val then
-        (table.insert)(env.ChainPaths, idx, {chainPath, pieceType, val})
-        doInsert = true
-        break
-      end
+    chainPath[i] = nil
+  end
+  local doInsert = false
+  for idx, result in ipairs(env.ChainPaths) do
+    if val > result[3] then
+      table.insert(env.ChainPaths, idx, {
+        chainPath,
+        pieceType,
+        val
+      })
+      doInsert = true
+      break
     end
-    do
-      if not doInsert and #env.ChainPaths < BattleConst.AutoFightPathCountCut then
-        (table.insert)(env.ChainPaths, {chainPath, pieceType, val})
-      end
-      -- DECOMPILER ERROR at PC100: Confused about usage of register: R9 in 'UnsetPending'
-
-      if doInsert and BattleConst.AutoFightPathCountCut < #env.ChainPaths then
-        (env.ChainPaths)[#env.ChainPaths] = nil
-      end
-    end
+  end
+  if not doInsert and #env.ChainPaths < BattleConst.AutoFightPathCountCut then
+    table.insert(env.ChainPaths, {
+      chainPath,
+      pieceType,
+      val
+    })
+  end
+  if doInsert and #env.ChainPaths > BattleConst.AutoFightPathCountCut then
+    env.ChainPaths[#env.ChainPaths] = nil
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcChainPathComplexityLen = function(self, chainPathIdx)
-  -- function num : 0_9 , upvalues : _ENV
-  if (self._env).HighConnectRateCutLen > 0 then
-    return (self._env).HighConnectRateCutLen
+function AutoFightService:_CalcChainPathComplexityLen(chainPathIdx)
+  if self._env.HighConnectRateCutLen > 0 then
+    return self._env.HighConnectRateCutLen
   end
   local m = BattleConst.AutoFightMoveEnhanced and 2 or 1
   local cc = 1
   local len = #chainPathIdx
-  for i,idx in ipairs(chainPathIdx) do
-    cc = cc * (table.count)(((self._env).ConnectMap)[idx])
-    if (BattleConst.AutoFightPathComplexity)[m] < cc then
+  for i, idx in ipairs(chainPathIdx) do
+    cc = cc * table.count(self._env.ConnectMap[idx])
+    if cc > BattleConst.AutoFightPathComplexity[m] then
       len = i - 1
       break
     end
   end
-  do
-    return len
-  end
+  return len
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcChainPathValue = function(self, chainPath, len, pieceType, env)
-  -- function num : 0_10 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
+function AutoFightService:_CalcChainPathValue(chainPath, len, pieceType, env)
+  local utilData = self._world:GetService("UtilData")
   local superChainCount = utilData:GetCurrentTeamSuperChainCount()
   local val = 0
   local petCnt = 1
-  local moveEntities = (env.PieceTypeMovePets)[pieceType]
+  local moveEntities = env.PieceTypeMovePets[pieceType]
   if moveEntities then
     petCnt = #moveEntities
   end
   local trapPosVal = 0
-  for i,pos in ipairs(chainPath) do
-    if len >= i then
-      local posIdx = self:_Pos2Index(pos)
-      local posVal = (env.BoardPosEvalue)[posIdx]
-      if not posVal then
-        (Log.info)("[AutoFight] error _CalcChainPathValue posVal nil , pos: ", pos.x, " ", pos.y, " posIdx:", posIdx)
-      end
-      if posVal then
-        val = val + posVal
-      end
-      if (env.BoardPosCanAttack)[posIdx] then
-        local chainParam = (math.min)(i, BattleConst.SuperChainCount)
-        local attackVal = BattleConst.AutoFightNormalAttackPosValue * (1 + BattleConst.AutoFightNormalAttackChainParam * chainParam)
-        val = val + attackVal
-      end
-      do
-        local posVal = (env.TrapPosEvalue)[posIdx]
-        if posVal then
-          trapPosVal = trapPosVal + posVal
-        end
-        do
-          local posInfo = (env.ElementBuffPos)[posIdx]
-          if posInfo and posInfo[pieceType] then
-            val = val + posInfo[pieceType]
-          end
-          -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC71: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+  for i, pos in ipairs(chainPath) do
+    if len < i then
+      break
+    end
+    local posIdx = self:_Pos2Index(pos)
+    local posVal = env.BoardPosEvalue[posIdx]
+    if not posVal then
+      Log.info("[AutoFight] error _CalcChainPathValue posVal nil , pos: ", pos.x, " ", pos.y, " posIdx:", posIdx)
+    end
+    if posVal then
+      val = val + posVal
+    end
+    if env.BoardPosCanAttack[posIdx] then
+      local chainParam = math.min(i, BattleConst.SuperChainCount)
+      local attackVal = BattleConst.AutoFightNormalAttackPosValue * (1 + BattleConst.AutoFightNormalAttackChainParam * chainParam)
+      val = val + attackVal
+    end
+    local posVal = env.TrapPosEvalue[posIdx]
+    if posVal then
+      trapPosVal = trapPosVal + posVal
+    end
+    local posInfo = env.ElementBuffPos[posIdx]
+    if posInfo and posInfo[pieceType] then
+      val = val + posInfo[pieceType]
     end
   end
-  val = (val) * petCnt + (trapPosVal)
-  if superChainCount < len then
+  val = val * petCnt + trapPosVal
+  if len > superChainCount then
     val = val + BattleConst.AutoFightSuperChainAddPathValue
   end
   local chainAttackCnt = self:_CalcChainAttackCount2(chainPath[len], len, pieceType)
-  local chainParam = (math.min)(len, BattleConst.SuperChainCount)
+  local chainParam = math.min(len, BattleConst.SuperChainCount)
   val = val + chainAttackCnt * BattleConst.AutoFightChainAttackValue * (1 + BattleConst.AutoFightChainAttackChainParam * chainParam)
   if val <= 0 then
     val = 1
@@ -586,13 +478,10 @@ AutoFightService._CalcChainPathValue = function(self, chainPath, len, pieceType,
   return val
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcChainPathBaseValue = function(self, chainPath, pieceType)
-  -- function num : 0_11 , upvalues : _ENV
+function AutoFightService:_CalcChainPathBaseValue(chainPath, pieceType)
   local env = self._env
   local petCnt = 1
-  local moveEntities = (env.PieceTypeMovePets)[pieceType]
+  local moveEntities = env.PieceTypeMovePets[pieceType]
   if moveEntities then
     petCnt = #moveEntities
   end
@@ -600,14 +489,11 @@ AutoFightService._CalcChainPathBaseValue = function(self, chainPath, pieceType)
   return val
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcMoveEntities = function(self, pieceType)
-  -- function num : 0_12 , upvalues : _ENV
-  local teamEntity = (self._env).TeamEntity
-  local leaderId = (teamEntity:Team()):GetTeamLeaderEntityID()
+function AutoFightService:_CalcMoveEntities(pieceType)
+  local teamEntity = self._env.TeamEntity
+  local leaderId = teamEntity:Team():GetTeamLeaderEntityID()
   local moveEntities = {}
-  for _,e in ipairs((teamEntity:Team()):GetTeamPetEntities()) do
+  for _, e in ipairs(teamEntity:Team():GetTeamPetEntities()) do
     local elementCmpt = e:Element()
     local primaryType = elementCmpt:GetPrimaryType()
     local sencondardType = elementCmpt:GetSecondaryType()
@@ -620,32 +506,29 @@ AutoFightService._CalcMoveEntities = function(self, pieceType)
   return moveEntities
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcChainAttackCount = function(self, skillPos, chainCount, pieceType)
-  -- function num : 0_13 , upvalues : _ENV
-  local skillEntities = ((self._env).PieceTypeMovePets)[pieceType]
+function AutoFightService:_CalcChainAttackCount(skillPos, chainCount, pieceType)
+  local skillEntities = self._env.PieceTypeMovePets[pieceType]
   if skillEntities == nil or #skillEntities == 0 then
     return 0
   end
-  local t1 = (os.clock)()
+  local t1 = os.clock()
   local configSvc = self._configService
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
-  local affixService = (self._world):GetService("Affix")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
+  local buffLogicSvc = self._world:GetService("BuffLogic")
+  local affixService = self._world:GetService("Affix")
   if affixService:HasAddChainPathNum() then
     chainCount = affixService:ProcessAddChainPathNum(chainCount)
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local attackCnt = 0
-  for _,e in ipairs(skillEntities) do
-    local chainCountFix = (e:Attributes()):GetAttribute("ChainSkillReleaseFix")
+  for _, e in ipairs(skillEntities) do
+    local chainCountFix = e:Attributes():GetAttribute("ChainSkillReleaseFix")
     local finalChainCount = chainCount + chainCountFix
     local chainExtraFix = utilData:GetEntityBuffValue(e, "ChangeExtraChainSkillReleaseFixForSkill")
     local skillInfoCmpt = e:SkillInfo()
     local chainSkillID = utilData:GetChainSkillByChainCount(e, finalChainCount, chainExtraFix)
-    if chainSkillID > 0 then
+    if 0 < chainSkillID then
       local skillConfigData = configSvc:GetSkillConfigData(chainSkillID)
       skillConfigData = utilData:ProcessChianSkillConfig(skillConfigData, e)
       local skillTargetType = skillConfigData:GetSkillTargetType()
@@ -653,50 +536,46 @@ AutoFightService._CalcChainAttackCount = function(self, skillPos, chainCount, pi
       utilScopeSvc:ExpandMaxChainSkillScope(e, chainSkillID, scopeResult, skillPos)
       local targetEntityIDArray = targetSelector:DoSelectSkillTarget(e, skillTargetType, scopeResult, chainSkillID)
       local hitCnt = 0
-      for _,targetID in ipairs(targetEntityIDArray) do
-        local targetEntity = (self._world):GetEntityByID(targetID)
+      for _, targetID in ipairs(targetEntityIDArray) do
+        local targetEntity = self._world:GetEntityByID(targetID)
         if targetEntity and targetEntity:HasBuff() and buffLogicSvc:CheckCanBeMagicAttack(e, targetEntity) then
           hitCnt = hitCnt + 1
         end
       end
-      attackCnt = attackCnt + (hitCnt)
+      attackCnt = attackCnt + hitCnt
     end
   end
-  local t2 = (os.clock)()
-  ;
-  (Log.debug)("[AutoFight] _CalcChainAttackCount() pos=", (Vector2.Pos2Index)(skillPos), " use time=", (t2 - t1) * 1000)
+  local t2 = os.clock()
+  Log.debug("[AutoFight] _CalcChainAttackCount() pos=", Vector2.Pos2Index(skillPos), " use time=", (t2 - t1) * 1000)
   return attackCnt
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._CalcChainAttackCount2 = function(self, skillPos, chainCount, pieceType)
-  -- function num : 0_14 , upvalues : _ENV
-  local chainSkillAttackOffset = (self._env).ChainSkillAttackOffset
-  local chainSkillAttackCount = (self._env).ChainSkillAttackCount
-  local skillEntities = ((self._env).PieceTypeMovePets)[pieceType]
+function AutoFightService:_CalcChainAttackCount2(skillPos, chainCount, pieceType)
+  local chainSkillAttackOffset = self._env.ChainSkillAttackOffset
+  local chainSkillAttackCount = self._env.ChainSkillAttackCount
+  local skillEntities = self._env.PieceTypeMovePets[pieceType]
   if skillEntities == nil or #skillEntities == 0 or skillPos == nil then
     return 0
   end
   local skillPosIdx = self:_Pos2Index(skillPos)
-  local t1 = (os.clock)()
+  local t1 = os.clock()
   local configSvc = self._configService
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
-  local buffLogicSvc = (self._world):GetService("BuffLogic")
-  local utilData = (self._world):GetService("UtilData")
-  local affixService = (self._world):GetService("Affix")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
+  local buffLogicSvc = self._world:GetService("BuffLogic")
+  local utilData = self._world:GetService("UtilData")
+  local affixService = self._world:GetService("Affix")
   if affixService:HasAddChainPathNum() then
     chainCount = affixService:ProcessAddChainPathNum(chainCount)
   end
   local attackCnt = 0
-  for _,e in ipairs(skillEntities) do
-    local chainCountFix = (e:Attributes()):GetAttribute("ChainSkillReleaseFix")
+  for _, e in ipairs(skillEntities) do
+    local chainCountFix = e:Attributes():GetAttribute("ChainSkillReleaseFix")
     local finalChainCount = chainCount + chainCountFix
     local skillInfoCmpt = e:SkillInfo()
     local chainExtraFix = utilData:GetEntityBuffValue(e, "ChangeExtraChainSkillReleaseFixForSkill")
     local chainSkillID = utilData:GetChainSkillByChainCount(e, finalChainCount, chainExtraFix)
-    if chainSkillID > 0 then
+    if 0 < chainSkillID then
       local hitCnt = 0
       local cache = chainSkillAttackCount[chainSkillID]
       if cache and cache[skillPosIdx] then
@@ -713,75 +592,40 @@ AutoFightService._CalcChainAttackCount2 = function(self, skillPos, chainCount, p
             local scopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, skillPos, e)
             utilScopeSvc:ExpandMaxChainSkillScope(e, chainSkillID, scopeResult, skillPos)
             range = scopeResult:GetAttackRange()
-            for _,pos in ipairs(range) do
+            for _, pos in ipairs(range) do
               offset[#offset + 1] = pos - skillPos
             end
           end
-          do
-            do
-              chainSkillAttackOffset[chainSkillID] = offset
-              chainSkillAttackCount[chainSkillID] = {}
-              for _,diff in ipairs(offset) do
-                range[#range + 1] = skillPos + diff
-              end
-              do
-                do
-                  do
-                    for i,pos in ipairs(range) do
-                      local monster = ((self._env).MonsterDict)[self:_Pos2Index(R38_PC147)]
-                      if monster and buffLogicSvc:CheckCanBeMagicAttack(R38_PC147, monster) then
-                        hitCnt = hitCnt + 1
-                      end
-                    end
-                    -- DECOMPILER ERROR at PC161: Confused about usage of register: R30 in 'UnsetPending'
-
-                    ;
-                    (chainSkillAttackCount[chainSkillID])[skillPosIdx] = hitCnt
-                    attackCnt = attackCnt + (hitCnt)
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC163: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
+          chainSkillAttackOffset[chainSkillID] = offset
+          chainSkillAttackCount[chainSkillID] = {}
+        else
+          for _, diff in ipairs(offset) do
+            range[#range + 1] = skillPos + diff
           end
         end
+        for i, pos in ipairs(range) do
+          local monster = self._env.MonsterDict[self:_Pos2Index(pos)]
+          if monster and buffLogicSvc:CheckCanBeMagicAttack(e, monster) then
+            hitCnt = hitCnt + 1
+          end
+        end
+        chainSkillAttackCount[chainSkillID][skillPosIdx] = hitCnt
       end
+      attackCnt = attackCnt + hitCnt
     end
   end
-  local t2 = (os.clock)()
+  local t2 = os.clock()
   return attackCnt
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.ShowLinkLine = function(self, TT, chainPath, pieceType)
-  -- function num : 0_15 , upvalues : _ENV
-  local linkageRenderService = (self._world):GetService("LinkageRender")
+function AutoFightService:ShowLinkLine(TT, chainPath, pieceType)
+  local linkageRenderService = self._world:GetService("LinkageRender")
   linkageRenderService:ClearLinkRender()
   linkageRenderService:DestroyAllLinkedNum()
   linkageRenderService:DestroyAllLinkLine()
   linkageRenderService:DestroyLinkedGridEffect()
   local chain_path = chainPath
-  for i,v in ipairs(chain_path) do
+  for i, v in ipairs(chain_path) do
     if i ~= 1 then
       local dir = chain_path[i - 1] - chain_path[i]
       linkageRenderService:CreateLineRender(chain_path[i - 1], chain_path[i], i, v, dir, pieceType)
@@ -791,29 +635,26 @@ AutoFightService.ShowLinkLine = function(self, TT, chainPath, pieceType)
   YIELD(TT, 1000)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._MoveToExit = function(self, TT)
-  -- function num : 0_16 , upvalues : _ENV
-  local startPosIndex = self:_Pos2Index((self._env).PlayerPos)
-  local exitPosIndex = self:_Pos2Index((self._env).ExitPos)
+function AutoFightService:_MoveToExit(TT)
+  local startPosIndex = self:_Pos2Index(self._env.PlayerPos)
+  local exitPosIndex = self:_Pos2Index(self._env.ExitPos)
   local endPosIdx = self:_FindPosIndexNeareastExit(exitPosIndex, startPosIndex)
-  local pieceType = ((self._env).BoardPosPieces)[endPosIdx]
+  local pieceType = self._env.BoardPosPieces[endPosIdx]
   if endPosIdx == startPosIndex then
-    return 
+    return
   end
   local chainPathIdx = {endPosIdx}
   local ret = self:_FindPosTraceBackToStart(chainPathIdx, startPosIndex, pieceType)
   if chainPathIdx[1] ~= startPosIndex then
-    return 
+    return
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local mapForFirstChainPath = utilData:GetMapForFirstChainPath()
   local chainPath = {}
   pieceType = PieceType.Any
   local log = ""
-  for i,posIdx in ipairs(chainPathIdx) do
-    local piece = ((self._env).BoardPosPieces)[posIdx]
+  for i, posIdx in ipairs(chainPathIdx) do
+    local piece = self._env.BoardPosPieces[posIdx]
     if mapForFirstChainPath and i == 2 then
       piece = mapForFirstChainPath
     end
@@ -821,58 +662,47 @@ AutoFightService._MoveToExit = function(self, TT)
       pieceType = piece
     else
     end
-    if ((piece ~= PieceType.None and piece ~= PieceType.Any and pieceType ~= PieceType.Any and piece ~= pieceType) or ((self._env).Benumb and i > 1) or (i <= 1 or not ((self._env).DimensionDoorPos)[posIdx])) then
-      do
-        (table.insert)(chainPath, self:_Index2Pos(posIdx))
-        log = log .. posIdx .. " "
-        -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC100: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if piece ~= PieceType.None and piece ~= PieceType.Any and pieceType ~= PieceType.Any and piece ~= pieceType or self._env.Benumb and 1 < i or 1 < i and self._env.DimensionDoorPos[posIdx] then
+      break
     end
+    table.insert(chainPath, self:_Index2Pos(posIdx))
+    log = log .. posIdx .. " "
   end
-  -- DECOMPILER ERROR at PC108: Confused about usage of register: R12 in 'UnsetPending'
-
-  ;
-  (self._env).MVP = {chainPath, pieceType, 1}
-  ;
-  (Log.debug)("[AutoFight] MoveToExit path=", log, " pieceType=", pieceType)
+  self._env.MVP = {
+    chainPath,
+    pieceType,
+    1
+  }
+  Log.debug("[AutoFight] MoveToExit path=", log, " pieceType=", pieceType)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._FindPosIndexNeareastExit = function(self, exitPosIndex, startPosIndex)
-  -- function num : 0_17 , upvalues : _ENV
-  if ((self._env).ConnectMap)[exitPosIndex] then
+function AutoFightService:_FindPosIndexNeareastExit(exitPosIndex, startPosIndex)
+  if self._env.ConnectMap[exitPosIndex] then
     return exitPosIndex
   end
-  local boardService = (self._world):GetService("BoardLogic")
+  local boardService = self._world:GetService("BoardLogic")
   local ringMax = boardService:GetCurBoardRingMax()
-  for i,off in ipairs(ringMax) do
+  for i, off in ipairs(ringMax) do
     local posIdx = self:_PosIndexAddOffset(exitPosIndex, off)
-    if posIdx ~= startPosIndex and ((self._env).ConnectMap)[posIdx] then
+    if posIdx ~= startPosIndex and self._env.ConnectMap[posIdx] then
       return posIdx
     end
   end
   return startPosIndex
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._FindPosTraceBackToStart = function(self, chainPathIdx, startPosIdx, pieceType)
-  -- function num : 0_18 , upvalues : _ENV
+function AutoFightService:_FindPosTraceBackToStart(chainPathIdx, startPosIdx, pieceType)
   local posIdx = chainPathIdx[1]
-  local ct = ((self._env).ConnectMap)[posIdx]
+  local ct = self._env.ConnectMap[posIdx]
   for i = 1, 8 do
     local nextPosIdx = ct[i]
     if nextPosIdx == startPosIdx then
-      (table.insert)(chainPathIdx, 1, startPosIdx)
+      table.insert(chainPathIdx, 1, startPosIdx)
       return true
     end
-    local nextPieceType = ((self._env).BoardPosPieces)[nextPosIdx]
-    if nextPosIdx and not (table.icontains)(chainPathIdx, nextPosIdx) and self:CanMatchPieceType(pieceType, nextPieceType) then
-      (table.insert)(chainPathIdx, 1, nextPosIdx)
+    local nextPieceType = self._env.BoardPosPieces[nextPosIdx]
+    if nextPosIdx and not table.icontains(chainPathIdx, nextPosIdx) and self:CanMatchPieceType(pieceType, nextPieceType) then
+      table.insert(chainPathIdx, 1, nextPosIdx)
       if pieceType == PieceType.Any then
         pieceType = nextPieceType
       end
@@ -880,48 +710,43 @@ AutoFightService._FindPosTraceBackToStart = function(self, chainPathIdx, startPo
       if ret then
         return true
       else
-        ;
-        (table.remove)(chainPathIdx, 1)
+        table.remove(chainPathIdx, 1)
       end
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._MoveToUnlockPos = function(self, TT)
-  -- function num : 0_19 , upvalues : _ENV
-  local startPosIndex = self:_Pos2Index((self._env).PlayerPos)
-  local unlockPos = (self._env).UnlockPos
+function AutoFightService:_MoveToUnlockPos(TT)
+  local startPosIndex = self:_Pos2Index(self._env.PlayerPos)
+  local unlockPos = self._env.UnlockPos
   local exitPosIndex = 0
   local nearDistance = 200
-  for i,posIdx in ipairs(unlockPos) do
+  for i, posIdx in ipairs(unlockPos) do
     local dis = self:_PosIndexDistance(posIdx, startPosIndex)
-    if dis < nearDistance then
+    if nearDistance > dis then
       exitPosIndex = posIdx
       nearDistance = dis
     end
   end
   local endPosIdx = self:_FindPosIndexNeareastExit(exitPosIndex, startPosIndex)
-  local pieceType = ((self._env).BoardPosPieces)[endPosIdx]
+  local pieceType = self._env.BoardPosPieces[endPosIdx]
   if endPosIdx == startPosIndex then
-    return 
+    return
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local mapForFirstChainPath = utilData:GetMapForFirstChainPath()
   local chainPathIdx = {endPosIdx}
   local ret = self:_FindPosTraceBackToStart(chainPathIdx, startPosIndex, pieceType)
-  ;
-  (Log.debug)("[AutoFight] _MoveToUnlockPos trace back path:", (table.concat)(chainPathIdx, " "))
+  Log.debug("[AutoFight] _MoveToUnlockPos trace back path:", table.concat(chainPathIdx, " "))
   if chainPathIdx[1] ~= startPosIndex then
-    return 
+    return
   end
   local chainPath = {}
   pieceType = PieceType.Any
   local log = ""
-  for i,posIdx in ipairs(chainPathIdx) do
-    local piece = ((self._env).BoardPosPieces)[posIdx]
+  for i, posIdx in ipairs(chainPathIdx) do
+    local piece = self._env.BoardPosPieces[posIdx]
     if mapForFirstChainPath and i == 2 then
       piece = mapForFirstChainPath
     end
@@ -929,143 +754,114 @@ AutoFightService._MoveToUnlockPos = function(self, TT)
       pieceType = piece
     else
     end
-    if ((piece ~= PieceType.None and piece ~= PieceType.Any and pieceType ~= PieceType.Any and piece ~= pieceType) or ((self._env).Benumb and i > 1) or (i <= 1 or not ((self._env).DimensionDoorPos)[posIdx])) then
-      do
-        (table.insert)(chainPath, self:_Index2Pos(posIdx))
-        log = log .. posIdx .. " "
-        -- DECOMPILER ERROR at PC123: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC123: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if piece ~= PieceType.None and piece ~= PieceType.Any and pieceType ~= PieceType.Any and piece ~= pieceType or self._env.Benumb and 1 < i or 1 < i and self._env.DimensionDoorPos[posIdx] then
+      break
     end
+    table.insert(chainPath, self:_Index2Pos(posIdx))
+    log = log .. posIdx .. " "
   end
-  -- DECOMPILER ERROR at PC131: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self._env).MVP = {chainPath, pieceType, 1}
-  ;
-  (Log.debug)("[AutoFight] _MoveToUnlockPos path=", log)
+  self._env.MVP = {
+    chainPath,
+    pieceType,
+    1
+  }
+  Log.debug("[AutoFight] _MoveToUnlockPos path=", log)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService._MoveToMonster = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  local startPosIndex = self:_Pos2Index((self._env).PlayerPos)
+function AutoFightService:_MoveToMonster()
+  local startPosIndex = self:_Pos2Index(self._env.PlayerPos)
   local exitPosIndex = 0
   local nearDistance = 200
-  if #(self._env).BossPos > 0 then
-    for i,posIdx in ipairs((self._env).BossPos) do
+  if 0 < #self._env.BossPos then
+    for i, posIdx in ipairs(self._env.BossPos) do
       local dis = self:_PosIndexDistance(posIdx, startPosIndex)
-      if dis < nearDistance then
+      if nearDistance > dis then
         exitPosIndex = posIdx
         nearDistance = dis
       end
     end
   else
-    do
-      for i,posIdx in ipairs((self._env).MonsterPos) do
-        local dis = self:_PosIndexDistance(posIdx, startPosIndex)
-        if dis < nearDistance then
-          exitPosIndex = posIdx
-          nearDistance = dis
-        end
-      end
-      do
-        if exitPosIndex == 0 then
-          return 
-        end
-        local endPosIdx = self:_FindPosIndexNeareastExit(exitPosIndex, startPosIndex)
-        local pieceType = ((self._env).BoardPosPieces)[endPosIdx]
-        if endPosIdx == startPosIndex then
-          return 
-        end
-        local chainPathIdx = {endPosIdx}
-        local ret = self:_FindPosTraceBackToStart(chainPathIdx, startPosIndex, pieceType)
-        if chainPathIdx[1] ~= startPosIndex then
-          return 
-        end
-        local utilData = (self._world):GetService("UtilData")
-        local mapForFirstChainPath = utilData:GetMapForFirstChainPath()
-        local chainPath = {}
-        pieceType = PieceType.Any
-        local log = ""
-        for i,posIdx in ipairs(chainPathIdx) do
-          local piece = ((self._env).BoardPosPieces)[posIdx]
-          if mapForFirstChainPath and i == 2 then
-            piece = mapForFirstChainPath
-          end
-          if piece ~= PieceType.None and pieceType == PieceType.Any then
-            pieceType = piece
-          else
-          end
-          if ((piece ~= PieceType.None and piece ~= PieceType.Any and pieceType ~= PieceType.Any and piece ~= pieceType) or ((self._env).Benumb and i > 1) or (i <= 1 or not ((self._env).DimensionDoorPos)[posIdx])) then
-            do
-              (table.insert)(chainPath, self:_Index2Pos(posIdx))
-              log = log .. posIdx .. " "
-              -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC137: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-        -- DECOMPILER ERROR at PC145: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._env).MVP = {chainPath, pieceType, 1}
-        ;
-        (Log.debug)("[AutoFight] _MoveToMonster path=", log)
+    for i, posIdx in ipairs(self._env.MonsterPos) do
+      local dis = self:_PosIndexDistance(posIdx, startPosIndex)
+      if nearDistance > dis then
+        exitPosIndex = posIdx
+        nearDistance = dis
       end
     end
   end
+  if exitPosIndex == 0 then
+    return
+  end
+  local endPosIdx = self:_FindPosIndexNeareastExit(exitPosIndex, startPosIndex)
+  local pieceType = self._env.BoardPosPieces[endPosIdx]
+  if endPosIdx == startPosIndex then
+    return
+  end
+  local chainPathIdx = {endPosIdx}
+  local ret = self:_FindPosTraceBackToStart(chainPathIdx, startPosIndex, pieceType)
+  if chainPathIdx[1] ~= startPosIndex then
+    return
+  end
+  local utilData = self._world:GetService("UtilData")
+  local mapForFirstChainPath = utilData:GetMapForFirstChainPath()
+  local chainPath = {}
+  pieceType = PieceType.Any
+  local log = ""
+  for i, posIdx in ipairs(chainPathIdx) do
+    local piece = self._env.BoardPosPieces[posIdx]
+    if mapForFirstChainPath and i == 2 then
+      piece = mapForFirstChainPath
+    end
+    if piece ~= PieceType.None and pieceType == PieceType.Any then
+      pieceType = piece
+    else
+    end
+    if piece ~= PieceType.None and piece ~= PieceType.Any and pieceType ~= PieceType.Any and piece ~= pieceType or self._env.Benumb and 1 < i or 1 < i and self._env.DimensionDoorPos[posIdx] then
+      break
+    end
+    table.insert(chainPath, self:_Index2Pos(posIdx))
+    log = log .. posIdx .. " "
+  end
+  self._env.MVP = {
+    chainPath,
+    pieceType,
+    1
+  }
+  Log.debug("[AutoFight] _MoveToMonster path=", log)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.CanMatchPieceType = function(self, t1, t2)
-  -- function num : 0_21 , upvalues : _ENV
-  if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+function AutoFightService:CanMatchPieceType(t1, t2)
+  if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
     return true
   else
     return CanMatchPieceType(t1, t2)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoFightService.CalcMaxMoveStep = function(self, defaultStep)
-  -- function num : 0_22 , upvalues : _ENV
+function AutoFightService:CalcMaxMoveStep(defaultStep)
   local maxStep = defaultStep
-  if (self._world):LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
-    local lsvcFeature = (self._world):GetService("FeatureLogic")
+  if self._world:LinkLineType() == ELinkLineType.ELLT_LINE_NoElementCostStep then
+    local lsvcFeature = self._world:GetService("FeatureLogic")
     if lsvcFeature:HasFeatureType(FeatureType.StepPoint) then
       local autoMoveLimit = 9
       local curStep = lsvcFeature:GetCurStepPoint()
       if curStep then
         maxStep = curStep
-        maxStep = (math.min)(maxStep, autoMoveLimit)
+        maxStep = math.min(maxStep, autoMoveLimit)
       end
     else
-      do
-        maxStep = 9
-        local teamEntity = (self._env).TeamEntity
-        if teamEntity then
-          local buffCmpt = teamEntity:BuffComponent()
-          if buffCmpt then
-            local buffSetPoint = buffCmpt:GetBuffValue("NoFeatureStepPoint")
-            if buffSetPoint then
-              maxStep = buffSetPoint
-            end
+      maxStep = 9
+      local teamEntity = self._env.TeamEntity
+      if teamEntity then
+        local buffCmpt = teamEntity:BuffComponent()
+        if buffCmpt then
+          local buffSetPoint = buffCmpt:GetBuffValue("NoFeatureStepPoint")
+          if buffSetPoint then
+            maxStep = buffSetPoint
           end
-        end
-        do
-          return maxStep
         end
       end
     end
   end
+  return maxStep
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/input/chess_input_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChessInputSystem_Render", UniqueReactiveSystem)
 ChessInputSystem_Render = ChessInputSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChessInputSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_0 , upvalues : _ENV
+function ChessInputSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -18,44 +11,36 @@ ChessInputSystem_Render.IsInterested = function(self, index, previousComponent, 
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render.Filter = function(self, world)
-  -- function num : 0_1
+function ChessInputSystem_Render:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
+function ChessInputSystem_Render:ExecuteWorld(world)
   self._world = world
   local chessPickUpCmpt = world:ChessPickUp()
   local clickRenderPos = chessPickUpCmpt:GetChessClickPos()
   local boardServiceRender = world:GetService("BoardRender")
   local gridPos = boardServiceRender:BoardRenderPos2GridPos(clickRenderPos)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local stateId = utilDataSvc:GetCurMainStateID()
   if stateId == GameStateID.WaitInput or stateId == GameStateID.PreviewChessPet or stateId == GameStateID.PickUpChessPet then
     self:SetChessPickUpGrid(chessPickUpCmpt, gridPos, stateId)
   else
-    ;
-    (Log.fatal)("### invalid state. stateId=", stateId)
+    Log.fatal("### invalid state. stateId=", stateId)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render.SetChessPickUpGrid = function(self, cPickUp, gridPos, stateId)
-  -- function num : 0_3 , upvalues : _ENV
-  local utilData = (self._world):GetService("UtilData")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local guideService = (self._world):GetService("Guide")
+function ChessInputSystem_Render:SetChessPickUpGrid(cPickUp, gridPos, stateId)
+  local utilData = self._world:GetService("UtilData")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local guideService = self._world:GetService("Guide")
   local isGuide, isValid = guideService:IsGuideAndPieceValid(gridPos.x, gridPos.y)
-  if isGuide and isValid then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
-  else
-    return 
+  if isGuide then
+    if isValid then
+      self._world:EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
+    else
+      return
+    end
   end
   local pickUpResCmpt = renderBoardEntity:PickUpChessResult()
   pickUpResCmpt:SetChessPickUpPos(gridPos)
@@ -65,27 +50,22 @@ ChessInputSystem_Render.SetChessPickUpGrid = function(self, cPickUp, gridPos, st
   local selectHookChess, curPickUpHookChessEntityID = self:CheckChessHookChess(gridPos, pickUpResCmpt)
   if selectMonster then
     self:_HandleChessInputPickMonster(gridPos, curPickUpMonsterEntityID)
+  elseif not selectMonster and selectHookChess and pickUpChessPetEntityID then
+    self:_HandleChessInputPickMonster(gridPos, curPickUpHookChessEntityID)
   else
-    if not selectMonster and selectHookChess and pickUpChessPetEntityID then
-      self:_HandleChessInputPickMonster(gridPos, curPickUpHookChessEntityID)
+    pickUpResCmpt:SetPickUpMonsterEntityID(nil)
+    local selectChessPet, curPickUpChessPetEntityID = self:CheckPickUpChessPet(gridPos)
+    if selectChessPet then
+      self:_HandleChessInputPickChessPet(gridPos, curPickUpChessPetEntityID)
     else
-      pickUpResCmpt:SetPickUpMonsterEntityID(nil)
-      local selectChessPet, curPickUpChessPetEntityID = self:CheckPickUpChessPet(gridPos)
-      if selectChessPet then
-        self:_HandleChessInputPickChessPet(gridPos, curPickUpChessPetEntityID)
-      else
-        self:_HandleChessInputPickGrid(gridPos)
-      end
+      self:_HandleChessInputPickGrid(gridPos)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render.CheckPickUpMonster = function(self, touchPosition)
-  -- function num : 0_4 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(group:GetEntities()) do
+function ChessInputSystem_Render:CheckPickUpMonster(touchPosition)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(group:GetEntities()) do
     if not e:HasGhost() and not e:HasGuideGhost() and e:IsOnGridPosition(touchPosition) then
       return true, e:GetID()
     end
@@ -93,26 +73,20 @@ ChessInputSystem_Render.CheckPickUpMonster = function(self, touchPosition)
   return false, nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render.CheckChessHookChess = function(self, touchPosition, pickUpResCmpt)
-  -- function num : 0_5 , upvalues : _ENV
+function ChessInputSystem_Render:CheckChessHookChess(touchPosition, pickUpResCmpt)
   local attackRange = pickUpResCmpt:GetChessPetAttackRange()
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
-  for _,e in ipairs(group:GetEntities()) do
-    if e:IsOnGridPosition(touchPosition) and (table.intable)(attackRange, touchPosition) then
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
+  for _, e in ipairs(group:GetEntities()) do
+    if e:IsOnGridPosition(touchPosition) and table.intable(attackRange, touchPosition) then
       return true, e:GetID()
     end
   end
   return false, nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render.CheckPickUpChessPet = function(self, touchPosition)
-  -- function num : 0_6 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).ChessPet)
-  for _,e in ipairs(group:GetEntities()) do
+function ChessInputSystem_Render:CheckPickUpChessPet(touchPosition)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.ChessPet)
+  for _, e in ipairs(group:GetEntities()) do
     if not e:HasDeadMark() and e:IsOnGridPosition(touchPosition) then
       return true, e:GetID()
     end
@@ -120,74 +94,55 @@ ChessInputSystem_Render.CheckPickUpChessPet = function(self, touchPosition)
   return false, nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render._HandleChessInputPickChessPet = function(self, gridPos, pickEntityID)
-  -- function num : 0_7 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function ChessInputSystem_Render:_HandleChessInputPickChessPet(gridPos, pickEntityID)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpResCmpt = renderBoardEntity:PickUpChessResult()
   local lastPickUpPetEntityID = pickUpResCmpt:GetPickUpChessPetEntityID()
   if pickEntityID ~= lastPickUpPetEntityID then
     pickUpResCmpt:SetChessPickUpTargetChanged(true)
     local stateID = self:_GetChessInputMainStateID()
-    if stateID ~= GameStateID.PreviewChessPet then
-      if stateID == GameStateID.PickUpChessPet then
-        do
-          pickUpResCmpt:SetChessPickUpTargetChanged(true)
-          pickUpResCmpt:SetChessPickUpResultType(ChessPickUpTargetType.ChessPet)
-          pickUpResCmpt:SetPickUpChessPetEntityID(pickEntityID)
-          renderBoardEntity:ReplacePickUpChessResult()
-          pickUpResCmpt:SetChessPickUpTargetChanged(false)
-          pickUpResCmpt:SetChessPickUpResultType(ChessPickUpTargetType.ChessPet)
-          pickUpResCmpt:SetPickUpChessPetEntityID(pickEntityID)
-          renderBoardEntity:ReplacePickUpChessResult()
-        end
-      end
+    if stateID == GameStateID.PreviewChessPet or stateID == GameStateID.PickUpChessPet then
+    else
+      pickUpResCmpt:SetChessPickUpTargetChanged(true)
+      pickUpResCmpt:SetChessPickUpResultType(ChessPickUpTargetType.ChessPet)
+      pickUpResCmpt:SetPickUpChessPetEntityID(pickEntityID)
+      renderBoardEntity:ReplacePickUpChessResult()
     end
+  else
+    pickUpResCmpt:SetChessPickUpTargetChanged(false)
+    pickUpResCmpt:SetChessPickUpResultType(ChessPickUpTargetType.ChessPet)
+    pickUpResCmpt:SetPickUpChessPetEntityID(pickEntityID)
+    renderBoardEntity:ReplacePickUpChessResult()
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render._HandleChessInputPickMonster = function(self, gridPos, pickEntityID)
-  -- function num : 0_8 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function ChessInputSystem_Render:_HandleChessInputPickMonster(gridPos, pickEntityID)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpResCmpt = renderBoardEntity:PickUpChessResult()
   local lastPickUpMonsterEntityID = pickUpResCmpt:GetPickUpMonsterEntityID()
   if lastPickUpMonsterEntityID == nil then
     pickUpResCmpt:SetChessPickUpTargetChanged(true)
+  elseif pickEntityID ~= lastPickUpMonsterEntityID then
+    pickUpResCmpt:SetChessPickUpTargetChanged(true)
   else
-    if pickEntityID ~= lastPickUpMonsterEntityID then
-      pickUpResCmpt:SetChessPickUpTargetChanged(true)
-    else
-      pickUpResCmpt:SetChessPickUpTargetChanged(false)
-    end
+    pickUpResCmpt:SetChessPickUpTargetChanged(false)
   end
   pickUpResCmpt:SetChessPickUpResultType(ChessPickUpTargetType.Monster)
   pickUpResCmpt:SetPickUpMonsterEntityID(pickEntityID)
   renderBoardEntity:ReplacePickUpChessResult()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render._HandleChessInputPickGrid = function(self, gridPos)
-  -- function num : 0_9 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function ChessInputSystem_Render:_HandleChessInputPickGrid(gridPos)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local pickUpResCmpt = renderBoardEntity:PickUpChessResult()
   local lastPickUpTargetType = pickUpResCmpt:GetChessPickUpResultType()
   pickUpResCmpt:SetChessPickUpResultType(ChessPickUpTargetType.Grid)
   renderBoardEntity:ReplacePickUpChessResult()
-  ;
-  (Log.notice)("ChessPickUp nothing : ", gridPos)
+  Log.notice("ChessPickUp nothing : ", gridPos)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChessInputSystem_Render._GetChessInputMainStateID = function(self)
-  -- function num : 0_10
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ChessInputSystem_Render:_GetChessInputMainStateID()
+  local utilDataSvc = self._world:GetService("UtilData")
   local stateId = utilDataSvc:GetCurMainStateID()
   return stateId
 end
-
-

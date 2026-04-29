@@ -1,18 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/help_pet/help_pet_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local EnumHelpPetOperateType = {E_Del = 0, E_Add = 1}
 _enum("EnumHelpPetOperateType", EnumHelpPetOperateType)
-local EnumHelpSourceType = {E_HelpSource_System = 0, E_HelpSource_Friend = 1, E_HelpSource_Default = 2}
+local EnumHelpSourceType = {
+  E_HelpSource_System = 0,
+  E_HelpSource_Friend = 1,
+  E_HelpSource_Default = 2
+}
 _enum("EnumHelpSourceType", EnumHelpSourceType)
 _class("DHelpPet_PetData", Object)
 DHelpPet_PetData = DHelpPet_PetData
--- DECOMPILER ERROR at PC23: Confused about usage of register: R2 in 'UnsetPending'
 
-DHelpPet_PetData.Constructor = function(self)
-  -- function num : 0_0
+function DHelpPet_PetData:Constructor()
   self.m_nPlayerID = 0
   self.m_nTemplateID = 0
   self.m_nPstID = 0
@@ -26,112 +23,119 @@ DHelpPet_PetData.Constructor = function(self)
   self.m_nAwakeLock = 0
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R2 in 'UnsetPending'
-
 DHelpPet_PetData._proto = {
-[1] = {"m_nPlayerID", "int64"}
-, 
-[2] = {"m_nTemplateID", "int"}
-, 
-[3] = {"m_nPstID", "int64"}
-, 
-[4] = {"m_nLevel", "int"}
-, 
-[5] = {"m_nAwake", "int"}
-, 
-[6] = {"m_nGrade", "int"}
-, 
-[7] = {"m_nEquipLevel", "int"}
-, 
-[8] = {"m_nSkinID", "int"}
-, 
-[9] = {"m_nSourceType", "int"}
-, 
-[10] = {"m_nEquipRefineLevel", "int"}
-, 
-[11] = {"m_nAwakeLock", "int"}
+  [1] = {
+    "m_nPlayerID",
+    "int64"
+  },
+  [2] = {
+    "m_nTemplateID",
+    "int"
+  },
+  [3] = {"m_nPstID", "int64"},
+  [4] = {"m_nLevel", "int"},
+  [5] = {"m_nAwake", "int"},
+  [6] = {"m_nGrade", "int"},
+  [7] = {
+    "m_nEquipLevel",
+    "int"
+  },
+  [8] = {"m_nSkinID", "int"},
+  [9] = {
+    "m_nSourceType",
+    "int"
+  },
+  [10] = {
+    "m_nEquipRefineLevel",
+    "int"
+  },
+  [11] = {
+    "m_nAwakeLock",
+    "int"
+  }
 }
 _class("DHelpPet_PetState", Object)
 DHelpPet_PetState = DHelpPet_PetState
--- DECOMPILER ERROR at PC90: Confused about usage of register: R2 in 'UnsetPending'
 
-DHelpPet_PetState.Constructor = function(self)
-  -- function num : 0_1
+function DHelpPet_PetState:Constructor()
   self.m_nTemplateID = 0
   self.m_nPetPstID = 0
   self.m_nFightCount = 0
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R2 in 'UnsetPending'
-
 DHelpPet_PetState._proto = {
-[1] = {"m_nTemplateID", "int"}
-, 
-[2] = {"m_nPetPstID", "int64"}
-, 
-[3] = {"m_nFightCount", "int"}
+  [1] = {
+    "m_nTemplateID",
+    "int"
+  },
+  [2] = {
+    "m_nPetPstID",
+    "int64"
+  },
+  [3] = {
+    "m_nFightCount",
+    "int"
+  }
 }
 _class("DHelpPet_FightData", Object)
 DHelpPet_FightData = DHelpPet_FightData
--- DECOMPILER ERROR at PC117: Confused about usage of register: R2 in 'UnsetPending'
 
-DHelpPet_FightData.Constructor = function(self)
-  -- function num : 0_2
+function DHelpPet_FightData:Constructor()
   self.m_nPlayerID = 0
   self.m_tmFight = 0
   self.m_nLevelID = 0
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R2 in 'UnsetPending'
-
 DHelpPet_FightData._proto = {
-[1] = {"m_nPlayerID", "int64"}
-, 
-[2] = {"m_tmFight", "time"}
-, 
-[3] = {"m_nLevelID", "int"}
+  [1] = {
+    "m_nPlayerID",
+    "int64"
+  },
+  [2] = {"m_tmFight", "time"},
+  [3] = {"m_nLevelID", "int"}
 }
 _class("DHelpPet_SupportPet", Object)
 DHelpPet_SupportPet = DHelpPet_SupportPet
--- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
 
-DHelpPet_SupportPet.Constructor = function(self)
-  -- function num : 0_3
+function DHelpPet_SupportPet:Constructor()
   self.m_nTemplateID = 0
   self.m_nPetPstID = 0
   self.m_vecFightData = {}
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R2 in 'UnsetPending'
-
 DHelpPet_SupportPet._proto = {
-[1] = {"m_nTemplateID", "int"}
-, 
-[2] = {"m_nPetPstID", "int64"}
-, 
-[4] = {"m_vecFightData", "list<DHelpPet_FightData>"}
+  [1] = {
+    "m_nTemplateID",
+    "int"
+  },
+  [2] = {
+    "m_nPetPstID",
+    "int64"
+  },
+  [4] = {
+    "m_vecFightData",
+    "list<DHelpPet_FightData>"
+  }
 }
 _class("DHelpPet_HelpData", Object)
 DHelpPet_HelpData = DHelpPet_HelpData
--- DECOMPILER ERROR at PC171: Confused about usage of register: R2 in 'UnsetPending'
 
-DHelpPet_HelpData.Constructor = function(self)
-  -- function num : 0_4
+function DHelpPet_HelpData:Constructor()
   self.m_nPlayerID = 0
   self.m_nPetPstID = 0
   self.m_tmFight = 0
   self.m_nLevelID = 0
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R2 in 'UnsetPending'
-
 DHelpPet_HelpData._proto = {
-[1] = {"m_nPlayerID", "int64"}
-, 
-[2] = {"m_nPetPstID", "int64"}
-, 
-[3] = {"m_tmFight", "time"}
-, 
-[4] = {"m_nLevelID", "int"}
+  [1] = {
+    "m_nPlayerID",
+    "int64"
+  },
+  [2] = {
+    "m_nPetPstID",
+    "int64"
+  },
+  [3] = {"m_tmFight", "time"},
+  [4] = {"m_nLevelID", "int"}
 }
-

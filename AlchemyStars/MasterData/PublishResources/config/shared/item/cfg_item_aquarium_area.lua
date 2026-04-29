@@ -1,15 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/item/cfg_item_aquarium_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ActivityArea = 2, MaxFishCount = 3, BirthPos = 4}
-local config = {
-[5241018] = {5241018, 
-{0.5, 0.7, 0.7, 1.6, 1.6, 1.8}
-, 10, 
-{0.3, 1.5, 0}
+local key = {
+  ID = 1,
+  ActivityArea = 2,
+  MaxFishCount = 3,
+  BirthPos = 4
 }
+local config = {
+  [5241018] = {
+    5241018,
+    {
+      0.5,
+      0.7,
+      0.7,
+      1.6,
+      1.6,
+      1.8
+    },
+    10,
+    {
+      0.3,
+      1.5,
+      0
+    }
+  }
 }
 return config, "ID", key
-

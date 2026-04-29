@@ -1,19 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/StateAVGStory/n28_state_avg_story_auto.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("n28_state_avg_story_base")
 _class("N28StateAVGStoryAuto", N28StateAVGStoryBase)
 N28StateAVGStoryAuto = N28StateAVGStoryAuto
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-N28StateAVGStoryAuto.OnEnter = function(self, TT, ...)
-  -- function num : 0_0
+function N28StateAVGStoryAuto:OnEnter(TT, ...)
   self:Init()
-  self.storyManager = (self.data):StoryManager()
-  ;
-  (self.storyManager):SetAuto(true, 1)
+  self.storyManager = self.data:StoryManager()
+  self.storyManager:SetAuto(true, 1)
   self:FlushButtonAuto(true)
   self:ShowHideButtonReview(false)
   self:ShowHideButtonShowHideUI(false)
@@ -23,11 +15,8 @@ N28StateAVGStoryAuto.OnEnter = function(self, TT, ...)
   self:ShowHideButtonEvidenceBook(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryAuto.OnExit = function(self, TT)
-  -- function num : 0_1
-  (self.storyManager):SetAuto(false, 1)
+function N28StateAVGStoryAuto:OnExit(TT)
+  self.storyManager:SetAuto(false, 1)
   self:FlushButtonAuto(false)
   self:ShowHideButtonReview(true)
   self:ShowHideButtonShowHideUI(true)
@@ -37,27 +26,14 @@ N28StateAVGStoryAuto.OnExit = function(self, TT)
   self:ShowHideButtonEvidenceBook(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryAuto.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_2
+function N28StateAVGStoryAuto:OnUpdate(deltaTimeMS)
   self:UpdateDriveByState(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N28StateAVGStoryAuto.FlushButtonAuto = function(self, isAuto)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
+function N28StateAVGStoryAuto:FlushButtonAuto(isAuto)
   if isAuto then
-    ((self.ui).imgAuto).sprite = (self.atlas):GetSprite("N28_avg_jq_icon05")
+    self.ui.imgAuto.sprite = self.atlas:GetSprite("N28_avg_jq_icon05")
   else
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self.ui).imgAuto).sprite = (self.atlas):GetSprite("N28_avg_jq_icon04")
+    self.ui.imgAuto.sprite = self.atlas:GetSprite("N28_avg_jq_icon04")
   end
 end
-
-

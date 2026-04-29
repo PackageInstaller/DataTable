@@ -1,115 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/mini_mail_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("MiniMailComponent", ICampaignComponent)
 MiniMailComponent = MiniMailComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MiniMailComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function MiniMailComponent:Constructor()
   self.m_component_info = MiniMailComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function MiniMailComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = MiniMailComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function MiniMailComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function MiniMailComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_MINI_MAIL
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function MiniMailComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.HandleReadMiniMail = function(self, TT, asyncRes, id)
-  -- function num : 0_5 , upvalues : _ENV
+function MiniMailComponent:HandleReadMiniMail(TT, asyncRes, id)
   local request = HandleReadMiniMailReq:New()
   request.id = id
   local response = HandleReadMiniMailReply:New()
   local ComponentInfo = self:ComponentInfo()
-  ;
-  (self.m_campaign_com_module):CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
+  self.m_campaign_com_module:CampaignComProtoRequest(TT, asyncRes, ComponentInfo.m_campaign_id, ComponentInfo.m_component_id, request, response)
   if CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_SUCCESS ~= asyncRes.m_result then
-    (Log.error)("[CampaignCom][MiniMailComponent] HandleReadMiniMail ret:", asyncRes.m_result)
+    Log.error("[CampaignCom][MiniMailComponent] HandleReadMiniMail ret:", asyncRes.m_result)
     return asyncRes.m_result
   end
-  local iv = ((self.m_component_info).infos)[id]
+  local iv = self.m_component_info.infos[id]
   if iv ~= nil then
     iv.state = MiniMailStateType.MMST_Read
   end
   return asyncRes.m_result
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.OnAdd = function(self, value)
-  -- function num : 0_6
+function MiniMailComponent:OnAdd(value)
   if self.m_component_info == nil then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self.m_component_info).infos)[value.id] = value
+  self.m_component_info.infos[value.id] = value
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.GetInfos = function(self)
-  -- function num : 0_7
-  return (self.m_component_info).infos
+function MiniMailComponent:GetInfos()
+  return self.m_component_info.infos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.GetLatelyUnlockTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local tv = nil
-  for key,value in pairs((self.m_component_info).infos) do
-    if value.state == MiniMailStateType.MMST_Unread and value.unlock_time > 0 and (tv == nil or value.unlock_time < tv) then
+function MiniMailComponent:GetLatelyUnlockTime()
+  local tv
+  for key, value in pairs(self.m_component_info.infos) do
+    if value.state == MiniMailStateType.MMST_Unread and value.unlock_time > 0 and (tv == nil or tv > value.unlock_time) then
       tv = value.unlock_time
     end
   end
   return tv
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.GetAllUnreadNum = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function MiniMailComponent:GetAllUnreadNum()
   local num = 0
   local maxnum = 0
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  for key,value in pairs((self.m_component_info).infos) do
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  for key, value in pairs(self.m_component_info.infos) do
     if value.state == MiniMailStateType.MMST_Unread then
-      if value.unlock_time <= curTime then
+      if curTime >= value.unlock_time then
         num = num + 1
       else
         maxnum = maxnum + 1
@@ -119,43 +81,30 @@ MiniMailComponent.GetAllUnreadNum = function(self)
   return num, maxnum
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.GetUnreadNum = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function MiniMailComponent:GetUnreadNum()
   local num = 0
-  local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  for key,value in pairs((self.m_component_info).infos) do
-    if value.state == MiniMailStateType.MMST_Unread and value.unlock_time <= curTime then
+  local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  for key, value in pairs(self.m_component_info.infos) do
+    if value.state == MiniMailStateType.MMST_Unread and curTime >= value.unlock_time then
       num = num + 1
     end
   end
   return num
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.HaveRedPoint = function(self)
-  -- function num : 0_11
-  do return not self:ComponentIsOpen() or self:GetUnreadNum() > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function MiniMailComponent:HaveRedPoint()
+  return self:ComponentIsOpen() and self:GetUnreadNum() > 0
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MiniMailComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_12 , upvalues : _ENV
+function MiniMailComponent:CampaignComponentPushNotify(notify_data)
   if MiniMailComponentNotifyType.MiniMailComponentNotifyType_Add == notify_data.m_notify_type then
     local ev = NotifyMiniMailAdd:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:OnAdd(ev.infos)
     else
-      ;
-      (Log.error)("[CampaignCom][MiniMailComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][MiniMailComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
-
-

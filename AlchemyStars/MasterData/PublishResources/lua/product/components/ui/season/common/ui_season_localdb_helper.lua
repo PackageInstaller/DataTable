@@ -1,108 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/ui_season_localdb_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonLocalDBHelper", Object)
 UISeasonLocalDBHelper = UISeasonLocalDBHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonLocalDBHelper.CurSeason_GetKey = function(str)
-  -- function num : 0_0 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UISeasonLocalDBHelper.CurSeason_GetKey(str)
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   local seasonId = seasonModule:GetCurSeasonID()
-  local str_id = (string.format)("UISeason_%d_%s_", seasonId, str)
-  local key = (UIActivityHelper.GetLocalDBKeyWithPstId)(str_id)
+  local str_id = string.format("UISeason_%d_%s_", seasonId, str)
+  local key = UIActivityHelper.GetLocalDBKeyWithPstId(str_id)
   return key
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper._SeasonBtn_GetKey = function(btnName, funcName)
-  -- function num : 0_1 , upvalues : _ENV
-  return (UISeasonLocalDBHelper.CurSeason_GetKey)(btnName .. "_" .. funcName .. "_")
+function UISeasonLocalDBHelper._SeasonBtn_GetKey(btnName, funcName)
+  return UISeasonLocalDBHelper.CurSeason_GetKey(btnName .. "_" .. funcName .. "_")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper.SeasonBtn_Has = function(btnName, funcName)
-  -- function num : 0_2 , upvalues : _ENV
-  local key = (UISeasonLocalDBHelper._SeasonBtn_GetKey)(btnName, funcName)
-  return (LocalDB.HasKey)(key)
+function UISeasonLocalDBHelper.SeasonBtn_Has(btnName, funcName)
+  local key = UISeasonLocalDBHelper._SeasonBtn_GetKey(btnName, funcName)
+  return LocalDB.HasKey(key)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper.SeasonBtn_Get = function(btnName, funcName, value)
-  -- function num : 0_3 , upvalues : _ENV
-  if not value then
-    value = 1
-  end
-  local key = (UISeasonLocalDBHelper._SeasonBtn_GetKey)(btnName, funcName)
-  return (LocalDB.GetInt)(key, value)
+function UISeasonLocalDBHelper.SeasonBtn_Get(btnName, funcName, value)
+  value = value or 1
+  local key = UISeasonLocalDBHelper._SeasonBtn_GetKey(btnName, funcName)
+  return LocalDB.GetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper.SeasonBtn_Set = function(btnName, funcName, value)
-  -- function num : 0_4 , upvalues : _ENV
-  if not value then
-    value = 1
-  end
-  local key = (UISeasonLocalDBHelper._SeasonBtn_GetKey)(btnName, funcName)
-  ;
-  (LocalDB.SetInt)(key, value)
+function UISeasonLocalDBHelper.SeasonBtn_Set(btnName, funcName, value)
+  value = value or 1
+  local key = UISeasonLocalDBHelper._SeasonBtn_GetKey(btnName, funcName)
+  LocalDB.SetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper.SeasonBtn_Delete = function(btnName, funcName)
-  -- function num : 0_5 , upvalues : _ENV
-  local key = (UISeasonLocalDBHelper._SeasonBtn_GetKey)(btnName, funcName)
-  ;
-  (LocalDB.Delete)(key)
+function UISeasonLocalDBHelper.SeasonBtn_Delete(btnName, funcName)
+  local key = UISeasonLocalDBHelper._SeasonBtn_GetKey(btnName, funcName)
+  LocalDB.Delete(key)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper.Season_GetKey = function(seasonId, str)
-  -- function num : 0_6 , upvalues : _ENV
-  str = (string.format)("UISeason_%d_%s_", seasonId, str)
-  local key = (UIActivityHelper.GetLocalDBKeyWithPstId)(str)
+function UISeasonLocalDBHelper.Season_GetKey(seasonId, str)
+  str = string.format("UISeason_%d_%s_", seasonId, str)
+  local key = UIActivityHelper.GetLocalDBKeyWithPstId(str)
   return key
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper._SeasonFinalPlotBtnShowed_GetKey = function(seasonId)
-  -- function num : 0_7 , upvalues : _ENV
-  return (UISeasonLocalDBHelper.Season_GetKey)(seasonId, "finalPlotBtnShowed")
+function UISeasonLocalDBHelper._SeasonFinalPlotBtnShowed_GetKey(seasonId)
+  return UISeasonLocalDBHelper.Season_GetKey(seasonId, "finalPlotBtnShowed")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper.SeasonFinalPlotBtnShowed_Has = function(seasonId)
-  -- function num : 0_8 , upvalues : _ENV
-  local key = (UISeasonLocalDBHelper._SeasonFinalPlotBtnShowed_GetKey)(seasonId)
-  return (LocalDB.HasKey)(key)
+function UISeasonLocalDBHelper.SeasonFinalPlotBtnShowed_Has(seasonId)
+  local key = UISeasonLocalDBHelper._SeasonFinalPlotBtnShowed_GetKey(seasonId)
+  return LocalDB.HasKey(key)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper.SeasonFinalPlotBtnShowed_Set = function(seasonId)
-  -- function num : 0_9 , upvalues : _ENV
-  local key = (UISeasonLocalDBHelper._SeasonFinalPlotBtnShowed_GetKey)(seasonId)
-  ;
-  (LocalDB.SetInt)(key, 1)
+function UISeasonLocalDBHelper.SeasonFinalPlotBtnShowed_Set(seasonId)
+  local key = UISeasonLocalDBHelper._SeasonFinalPlotBtnShowed_GetKey(seasonId)
+  LocalDB.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonLocalDBHelper.SeasonFinalPlotBtnShowed_Delete = function(seasonId)
-  -- function num : 0_10 , upvalues : _ENV
-  local key = (UISeasonLocalDBHelper._SeasonFinalPlotBtnShowed_GetKey)(seasonId)
-  ;
-  (LocalDB.Delete)(key)
+function UISeasonLocalDBHelper.SeasonFinalPlotBtnShowed_Delete(seasonId)
+  local key = UISeasonLocalDBHelper._SeasonFinalPlotBtnShowed_GetKey(seasonId)
+  LocalDB.Delete(key)
 end
-
-

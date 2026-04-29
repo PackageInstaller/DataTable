@@ -1,27 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_increase_add_defense_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewIncreaseAddDefense", BuffViewBase)
 BuffViewIncreaseAddDefense = BuffViewIncreaseAddDefense
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewIncreaseAddDefense.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InOutQueue, ((self._entity):PetPstID()):GetPstID(), true)
+function BuffViewIncreaseAddDefense:PlayView(TT)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.InOutQueue, self._entity:PetPstID():GetPstID(), true)
   YIELD(TT, 1500)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.InOutQueue, ((self._entity):PetPstID()):GetPstID(), false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.InOutQueue, self._entity:PetPstID():GetPstID(), false)
 end
 
 _class("BuffViewResetIncreaseAddDefense", BuffViewBase)
 BuffViewResetIncreaseAddDefense = BuffViewResetIncreaseAddDefense
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewResetIncreaseAddDefense.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, ((self._entity):PetPstID()):GetPstID(), false)
+function BuffViewResetIncreaseAddDefense:PlayView(TT)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, self._entity:PetPstID():GetPstID(), false)
 end
-
-

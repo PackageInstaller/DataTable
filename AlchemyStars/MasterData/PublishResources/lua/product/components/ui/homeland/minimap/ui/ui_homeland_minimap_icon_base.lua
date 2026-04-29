@@ -1,34 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/ui_homeland_minimap_icon_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconBase", UICustomWidget)
 UIHomelandMinimapIconBase = UIHomelandMinimapIconBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconBase.InternalInitialize = function(self, iconData, minimapStatus, isIconList)
-  -- function num : 0_0 , upvalues : _ENV
-  local homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandMinimapIconBase:InternalInitialize(iconData, minimapStatus, isIconList)
+  local homelandModule = GameGlobal.GetModule(HomelandModule)
   local uiHomelandModule = homelandModule:GetUIModule()
   local homelandClient = uiHomelandModule:GetClient()
   self._miniMapManager = homelandClient:GetMinimapManager()
-  self._isIconList = not isIconList or true
+  self._isIconList = isIconList and true
   if not self._isIconList then
     if self._addExpansionCallback == nil then
-      self._addExpansionCallback = (GameHelper:GetInstance()):CreateCallback(self.AddIconMarkHandler, self)
-      ;
-      ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnAddMinimapIconMark, self._addExpansionCallback)
+      self._addExpansionCallback = GameHelper:GetInstance():CreateCallback(self.AddIconMarkHandler, self)
+      GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnAddMinimapIconMark, self._addExpansionCallback)
     end
     if self._initExpansionCallback == nil then
-      self._initExpansionCallback = (GameHelper:GetInstance()):CreateCallback(self.InitIconMarkHandler, self)
-      ;
-      ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnInitMinimapIconMark, self._initExpansionCallback)
+      self._initExpansionCallback = GameHelper:GetInstance():CreateCallback(self.InitIconMarkHandler, self)
+      GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnInitMinimapIconMark, self._initExpansionCallback)
     end
     if self._removeExpansionCallback == nil then
-      self._removeExpansionCallback = (GameHelper:GetInstance()):CreateCallback(self.RemoveIconMarkHandler, self)
-      ;
-      ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.OnRemoveMinimapIconMark, self._removeExpansionCallback)
+      self._removeExpansionCallback = GameHelper:GetInstance():CreateCallback(self.RemoveIconMarkHandler, self)
+      GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.OnRemoveMinimapIconMark, self._removeExpansionCallback)
     end
   end
   self.anim = self:GetUIComponent("Animation", "Anim")
@@ -39,171 +29,124 @@ UIHomelandMinimapIconBase.InternalInitialize = function(self, iconData, minimapS
     self:OnIconInListInit()
   end
   if not self._isIconList then
-    local markType = (self._iconData):GetMarkType()
-    local markId = (self._iconData):GetMarkId()
+    local markType = self._iconData:GetMarkType()
+    local markId = self._iconData:GetMarkId()
     if markType and markId and self:CanShowIconMark(markType, markId) then
       self:ShowMarkEffect()
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.Release = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMinimapIconBase:Release()
   if not self._isIconList then
     if self._addExpansionCallback then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnAddMinimapIconMark, self._addExpansionCallback)
+      GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnAddMinimapIconMark, self._addExpansionCallback)
       self._addExpansionCallback = nil
     end
     if self._initExpansionCallback then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnInitMinimapIconMark, self._initExpansionCallback)
+      GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnInitMinimapIconMark, self._initExpansionCallback)
       self._initExpansionCallback = nil
     end
     if self._removeExpansionCallback then
-      ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.OnRemoveMinimapIconMark, self._removeExpansionCallback)
+      GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.OnRemoveMinimapIconMark, self._removeExpansionCallback)
       self._removeExpansionCallback = nil
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.AddIconMarkHandler = function(self, type, id)
-  -- function num : 0_2
+function UIHomelandMinimapIconBase:AddIconMarkHandler(type, id)
   if self._isIconList then
-    return 
+    return
   end
   if not self:IsMarkSelf(type, id) then
-    return 
+    return
   end
-  ;
-  (self._miniMapManager):SetIconMarkStatus(type, id, false)
+  self._miniMapManager:SetIconMarkStatus(type, id, false)
   self:ShowMarkEffect()
-  local minimap = (self._iconData):GetMinimap()
+  local minimap = self._iconData:GetMinimap()
   minimap:AddMarkIcon(self._iconData)
-  ;
-  (self._iconData):SetMarkType(type)
-  ;
-  (self._iconData):SetMarkId(id)
+  self._iconData:SetMarkType(type)
+  self._iconData:SetMarkId(id)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.InitIconMarkHandler = function(self, type, id)
-  -- function num : 0_3
+function UIHomelandMinimapIconBase:InitIconMarkHandler(type, id)
   if self._isIconList then
-    return 
+    return
   end
   if not self:IsMarkSelf(type, id) then
-    return 
+    return
   end
   if not self:CanShowIconMark(type, id) then
-    (self._iconData):SetMarkType(nil)
-    ;
-    (self._iconData):SetMarkId(nil)
-    return 
+    self._iconData:SetMarkType(nil)
+    self._iconData:SetMarkId(nil)
+    return
   end
   self:ShowMarkEffect()
-  local minimap = (self._iconData):GetMinimap()
+  local minimap = self._iconData:GetMinimap()
   minimap:InitMarkIcon(self._iconData)
-  ;
-  (self._iconData):SetMarkType(type)
-  ;
-  (self._iconData):SetMarkId(id)
+  self._iconData:SetMarkType(type)
+  self._iconData:SetMarkId(id)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.RemoveIconMarkHandler = function(self, type, id)
-  -- function num : 0_4
+function UIHomelandMinimapIconBase:RemoveIconMarkHandler(type, id)
   if self._isIconList then
-    return 
+    return
   end
   if not self:IsMarkSelf(type, id) then
-    return 
+    return
   end
-  ;
-  (self._miniMapManager):SetIconMarkStatus(type, id, false)
+  self._miniMapManager:SetIconMarkStatus(type, id, false)
   self:HideMarkEffect()
-  local minimap = (self._iconData):GetMinimap()
+  local minimap = self._iconData:GetMinimap()
   minimap:RemoveMarkIcon(self._iconData)
-  ;
-  (self._iconData):SetMarkType(nil)
-  ;
-  (self._iconData):SetMarkId(nil)
+  self._iconData:SetMarkType(nil)
+  self._iconData:SetMarkId(nil)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.ShowMarkEffect = function(self)
-  -- function num : 0_5
+function UIHomelandMinimapIconBase:ShowMarkEffect()
   if self.markEffect then
-    (self.markEffect):SetActive(true)
+    self.markEffect:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.HideMarkEffect = function(self)
-  -- function num : 0_6
+function UIHomelandMinimapIconBase:HideMarkEffect()
   if self.markEffect then
-    (self.markEffect):SetActive(false)
+    self.markEffect:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.IsMarkSelf = function(self, type, id)
-  -- function num : 0_7
+function UIHomelandMinimapIconBase:IsMarkSelf(type, id)
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.CanShowIconMark = function(self, type, id)
-  -- function num : 0_8
-  do return (self._miniMapManager):GetIconMarkStatus(type, id) == false end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHomelandMinimapIconBase:CanShowIconMark(type, id)
+  return self._miniMapManager:GetIconMarkStatus(type, id) == false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.GetIconData = function(self)
-  -- function num : 0_9
+function UIHomelandMinimapIconBase:GetIconData()
   return self._iconData
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.BtnOnClick = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHomelandMinimapIconBase:BtnOnClick()
   if self._isIconList then
-    return 
+    return
   end
-  if not (self._iconData):GetCanClick() then
-    return 
+  if not self._iconData:GetCanClick() then
+    return
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapClickIcon, self)
-  local markType = (self._iconData):GetMarkType()
-  local markId = (self._iconData):GetMarkId()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapClickIcon, self)
+  local markType = self._iconData:GetMarkType()
+  local markId = self._iconData:GetMarkId()
   if markType and markId then
-    (self._miniMapManager):SetIconMarkStatus(markType, markId, true)
+    self._miniMapManager:SetIconMarkStatus(markType, markId, true)
     self:HideMarkEffect()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.OnInitDone = function(self, minimapStatus)
-  -- function num : 0_11
+function UIHomelandMinimapIconBase:OnInitDone(minimapStatus)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.Selected = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomelandMinimapIconBase:Selected()
   local animation = self:GetAnimation()
   self:OnSelected()
   if animation then
@@ -214,10 +157,7 @@ UIHomelandMinimapIconBase.Selected = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.UnSelected = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomelandMinimapIconBase:UnSelected()
   local animation = self:GetAnimation()
   if animation then
     local animName = self:GetAnimationName(MinimapIconAnimationType.UNSELECT)
@@ -225,94 +165,54 @@ UIHomelandMinimapIconBase.UnSelected = function(self)
       animation:Play(animName)
     end
   else
-    do
-      self:OnUnSelected()
-    end
+    self:OnUnSelected()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.OnSelected = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.error)("选中")
+function UIHomelandMinimapIconBase:OnSelected()
+  Log.error("选中")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.OnUnSelected = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  (Log.error)("取消选中")
+function UIHomelandMinimapIconBase:OnUnSelected()
+  Log.error("取消选中")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.OnMutilSelected = function(self, minimap)
-  -- function num : 0_16
+function UIHomelandMinimapIconBase:OnMutilSelected(minimap)
   minimap:SetMultiSelectCircleStatus(true, self:GetMutilSelectedPosition())
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.OnMutilUnSelected = function(self, minimap)
-  -- function num : 0_17
+function UIHomelandMinimapIconBase:OnMutilUnSelected(minimap)
   minimap:SetMultiSelectCircleStatus(false, nil)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.GetMutilSelectedPosition = function(self)
-  -- function num : 0_18
+function UIHomelandMinimapIconBase:GetMutilSelectedPosition()
   local go = self:GetGameObject()
-  return (go.transform).position
+  return go.transform.position
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.GetIconMultiSelectPositionOffset = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIHomelandMinimapIconBase:GetIconMultiSelectPositionOffset()
   return Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.CanShow = function(self)
-  -- function num : 0_20
+function UIHomelandMinimapIconBase:CanShow()
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.GetShowIconOffset = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIHomelandMinimapIconBase:GetShowIconOffset()
   return Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.GetShowName = function(self)
-  -- function num : 0_22
-  return (self._iconData):GetShowName()
+function UIHomelandMinimapIconBase:GetShowName()
+  return self._iconData:GetShowName()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.OnIconInListInit = function(self)
-  -- function num : 0_23
+function UIHomelandMinimapIconBase:OnIconInListInit()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.GetAnimation = function(self)
-  -- function num : 0_24
+function UIHomelandMinimapIconBase:GetAnimation()
   return self.anim
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconBase.GetAnimationName = function(self, animType)
-  -- function num : 0_25
+function UIHomelandMinimapIconBase:GetAnimationName(animType)
   return ""
 end
-
-

@@ -1,36 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_scan_trap_on_pickup_pos_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayScanTrapOnPickupPosInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayScanTrapOnPickupPosInstruction = SkillPreviewPlayScanTrapOnPickupPosInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayScanTrapOnPickupPosInstruction.GetCacheResource = function(self)
-  -- function num : 0_0
+function SkillPreviewPlayScanTrapOnPickupPosInstruction:GetCacheResource()
   return {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayScanTrapOnPickupPosInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local previewActiveSkillService = (previewContext:GetWorld()):GetService("PreviewActiveSkill")
+function SkillPreviewPlayScanTrapOnPickupPosInstruction:DoInstruction(TT, casterEntity, previewContext)
+  local previewActiveSkillService = previewContext:GetWorld():GetService("PreviewActiveSkill")
   local world = casterEntity:GetOwnerWorld()
-  local scanResult = (world:GetService("UtilData")):GetScanSelection()
+  local scanResult = world:GetService("UtilData"):GetScanSelection()
   local trapID = scanResult.trapID
-  if not trapID or not (Cfg.cfg_trap)[trapID] then
-    return 
+  if not trapID or not Cfg.cfg_trap[trapID] then
+    return
   end
-  local resPath = ((Cfg.cfg_trap)[trapID]).ResPath
-  local effectEntity = (world:GetService("Effect")):CreateEffectEntity()
+  local resPath = Cfg.cfg_trap[trapID].ResPath
+  local effectEntity = world:GetService("Effect"):CreateEffectEntity()
   effectEntity:ReplaceAsset(NativeUnityPrefabAsset:New(resPath[1]))
   effectEntity:SetPosition(previewContext:GetPickUpPos())
   effectEntity:AddEffect(-1)
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID())
 end
-
-

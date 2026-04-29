@@ -1,38 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_overload_energy_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeAUOEValue", BuffViewBase)
 BuffViewChangeAUOEValue = BuffViewChangeAUOEValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeAUOEValue.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeAUOEValue:IsNotifyMatch(notify)
   local result = self._buffResult
-  if result.attacker ~= notify:GetAttackerEntity() or result.defender ~= notify:GetDefenderEntity() or result.attackPos ~= notify:GetAttackPos() or result.targetPos ~= notify:GetTargetPos() then
-    do return notify:GetNotifyType() ~= NotifyType.NormalEachAttackEnd end
-    do
-      if notify:GetNotifyType() == NotifyType.PlayerBeHit then
-        local damageIndexMatch = true
-        damageIndexMatch = not result.damageIndex or not notify:GetDamageIndex() or result.damageIndex == notify:GetDamageIndex()
-        return (result.attackPos == notify:GetAttackPos() and result.targetPos == notify:GetTargetPos() and result.attackerEntity == notify:GetAttackerEntity() and result.defenderEntity == notify:GetDefenderEntity() and damageIndexMatch)
-      end
-      do return true end
-      -- DECOMPILER ERROR: 7 unprocessed JMP targets
+  if notify:GetNotifyType() == NotifyType.NormalEachAttackEnd then
+    return result.attacker == notify:GetAttackerEntity() and result.defender == notify:GetDefenderEntity() and result.attackPos == notify:GetAttackPos() and result.targetPos == notify:GetTargetPos()
+  elseif notify:GetNotifyType() == NotifyType.PlayerBeHit then
+    local damageIndexMatch = true
+    if result.damageIndex and notify:GetDamageIndex() then
+      damageIndexMatch = result.damageIndex == notify:GetDamageIndex()
     end
+    return result.attackPos == notify:GetAttackPos() and result.targetPos == notify:GetTargetPos() and result.attackerEntity == notify:GetAttackerEntity() and result.defenderEntity == notify:GetDefenderEntity() and damageIndexMatch
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangeAUOEValue.PlayView = function(self, TT)
-  -- function num : 0_1
+function BuffViewChangeAUOEValue:PlayView(TT)
   local result = self._buffResult
-  local featureSvc = (self._world):GetService("FeatureRender")
+  local featureSvc = self._world:GetService("FeatureRender")
   if featureSvc then
     featureSvc:NotifyAUOEValueChange(result:GetCurValue(), result:GetOldValue(), result:GetRealModifyValue())
   end
 end
-
-

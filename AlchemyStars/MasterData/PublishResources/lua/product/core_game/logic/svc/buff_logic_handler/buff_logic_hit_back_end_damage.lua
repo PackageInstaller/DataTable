@@ -1,43 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_hit_back_end_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicHitBackEndDamage", BuffLogicBase)
 BuffLogicHitBackEndDamage = BuffLogicHitBackEndDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicHitBackEndDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicHitBackEndDamage:Constructor(buffInstance, logicParam)
   self._percent = logicParam.percent
   self._addition = logicParam.addition or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicHitBackEndDamage.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicHitBackEndDamage:DoLogic(notify)
   local attacker = notify:GetNotifyEntity()
   local defenderId = notify:GetDefenderId()
   if defenderId == nil or defenderId <= 0 then
-    return 
+    return
   end
-  local targetEntity = (self._world):GetEntityByID(defenderId)
-  local curHp = (targetEntity:Attributes()):GetCurrentHP()
+  local targetEntity = self._world:GetEntityByID(defenderId)
+  local curHp = targetEntity:Attributes():GetCurrentHP()
   if curHp == nil then
-    return 
+    return
   end
   local addPercent = self:GetTotalAdditionByHitBackDistance(notify)
-  local blsvc = (self._world):GetService("BuffLogic")
-  local damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), attacker, targetEntity, {percent = self._percent, addPercent = addPercent, formulaID = 9})
+  local blsvc = self._world:GetService("BuffLogic")
+  local damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), attacker, targetEntity, {
+    percent = self._percent,
+    addPercent = addPercent,
+    formulaID = 9
+  })
   local buffResult = BuffResultHitBackEndDamage:New(defenderId, damageInfo)
   return buffResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicHitBackEndDamage.GetTotalAdditionByHitBackDistance = function(self, data)
-  -- function num : 0_2
+function BuffLogicHitBackEndDamage:GetTotalAdditionByHitBackDistance(data)
   local posStart = data:GetPosStart()
   local posEnd = data:GetPosEnd()
   if posStart and posEnd then
@@ -53,9 +44,5 @@ BuffLogicHitBackEndDamage.GetTotalAdditionByHitBackDistance = function(self, dat
     end
     return self._addition * dis
   end
-  do
-    return 0
-  end
+  return 0
 end
-
-

@@ -1,143 +1,107 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/common/ui_n25_entry_btn_idol.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25EntryBtnIdol", UIN25EntryBtnBase)
 UIN25EntryBtnIdol = UIN25EntryBtnIdol
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25EntryBtnIdol.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN25EntryBtnIdol:OnShow(uiParams)
   self:InitWidget()
   self.stageCount = 0
   self.secondsPerDay = 86400
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnIdol.OnHide = function(self)
-  -- function num : 0_1
+function UIN25EntryBtnIdol:OnHide()
   self:CancelTimeEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnIdol.RefreshState = function(self, activityConst)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25EntryBtnIdol:RefreshState(activityConst)
   self.activityConst = activityConst
   self:RefreshStageCount()
   self:RefreshStateInternal()
   self:CancelTimeEvent()
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     self:RefreshStateInternal()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnIdol.RefreshStageCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN25EntryBtnIdol:RefreshStageCount()
   self.stageCount = 1
-  local c, cInfo = (self.activityConst):GetIdolComponent()
-  if cInfo == nil then
-    return 
+  local c, cInfo = self.activityConst:GetIdolComponent()
+  if nil == cInfo then
+    return
   end
   local cId = cInfo.m_campaign_id * 100000 + cInfo.m_component_type * 100 + cInfo.m_component_id
-  local cfgs = (Cfg.cfg_component_idol_round)({ComponentID = cId})
-  for k,v in pairs(cfgs) do
-    if v.UnlockTime and self.stageCount < v.UnlockTime then
+  local cfgs = Cfg.cfg_component_idol_round({ComponentID = cId})
+  for k, v in pairs(cfgs) do
+    if v.UnlockTime and v.UnlockTime > self.stageCount then
       self.stageCount = v.UnlockTime
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnIdol.RefreshStateInternal = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN25EntryBtnIdol:RefreshStateInternal()
   local idol_open_state = 0
   local idol_open_state_key = "UIN25IdolOpenStateKey_fk"
-  local c, cInfo = (self.activityConst):GetIdolComponent()
-  if cInfo == nil then
-    return 
+  local c, cInfo = self.activityConst:GetIdolComponent()
+  if nil == cInfo then
+    return
   end
-  local new = (self.activityConst):CheckGameIdolNew()
-  local red = (self.activityConst):CheckGameIdolRed()
+  local new = self.activityConst:CheckGameIdolNew()
+  local red = self.activityConst:CheckGameIdolRed()
   self:SetLock(true)
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   local unlockTime = cInfo.m_unlock_time
   local closeTime = cInfo.m_close_time
-  local state = (self.activityConst):GetStateGameIdol()
+  local state = self.activityConst:GetStateGameIdol()
   if state == UISummerOneEnterBtnState.NotOpen then
     local unlockTime = cInfo.m_unlock_time
-    local seconds = (math.floor)(unlockTime - nowTimestamp)
-    local timeStr = (UIActivityN25Const.GetTimeString)(seconds)
-    local timeTips = (StringTable.Get)("str_n25_activity_remain_open_time", timeStr)
+    local seconds = math.floor(unlockTime - nowTimestamp)
+    local timeStr = UIActivityN25Const.GetTimeString(seconds)
+    local timeTips = StringTable.Get("str_n25_activity_remain_open_time", timeStr)
     self:SetLeftTime(timeTips)
-  else
-    do
-      if state == UISummerOneEnterBtnState.Locked then
-        self:SetLeftTimeShow(true)
-        self:SetLeftTime((StringTable.Get)("str_n25_hardlevel_locktip"))
-        self:CancelTimeEvent()
-      else
-        if state == UISummerOneEnterBtnState.Normal then
-          self:SetLock(false)
-          local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-          local curStage = (math.floor)((nowTimestamp - unlockTime) / self.secondsPerDay) + 1
-          local timeTips = nil
-          if curStage <= 1 then
-            idol_open_state = 1
-          else
-            if curStage <= 2 then
-              idol_open_state = 2
-            else
-              idol_open_state = 3
-            end
-          end
-          local val = (LocalDB.GetInt)(idol_open_state_key, 0)
-          if idol_open_state ~= 1 or idol_open_state == 2 then
-            if idol_open_state == val then
-              red = red
-              red = idol_open_state ~= val
-              local timeGo = self:GetGameObject("leftTime")
-              do
-                local showTime = false
-                if (idol_open_state == 3 and idol_open_state == val) or idol_open_state == 1 then
-                  showTime = true
-                elseif idol_open_state == 2 then
-                  showTime = true
-                end
-                timeGo:SetActive(showTime)
-                if showTime then
-                  local seconds = (math.floor)(unlockTime + curStage * self.secondsPerDay - nowTimestamp)
-                  local timeStr = (UIActivityN25Const.GetTimeString)(seconds)
-                  timeTips = (StringTable.Get)("str_n25_activity_next_open", timeStr)
-                end
-                self:SetLeftTime(timeTips)
-                if state == UISummerOneEnterBtnState.Closed then
-                  self:SetLeftTime((StringTable.Get)("str_n25_activity_end"))
-                  self:CancelTimeEvent()
-                end
-                self:SetNewAndRed(new, red)
-                -- DECOMPILER ERROR: 11 unprocessed JMP targets
-              end
-            end
-          end
-        end
-      end
+  elseif state == UISummerOneEnterBtnState.Locked then
+    self:SetLeftTimeShow(true)
+    self:SetLeftTime(StringTable.Get("str_n25_hardlevel_locktip"))
+    self:CancelTimeEvent()
+  elseif state == UISummerOneEnterBtnState.Normal then
+    self:SetLock(false)
+    local nowTimestamp = UICommonHelper.GetNowTimestamp()
+    local curStage = math.floor((nowTimestamp - unlockTime) / self.secondsPerDay) + 1
+    local timeTips
+    if curStage <= 1 then
+      idol_open_state = 1
+    elseif curStage <= 2 then
+      idol_open_state = 2
+    else
+      idol_open_state = 3
     end
+    local val = LocalDB.GetInt(idol_open_state_key, 0)
+    if red or idol_open_state == 1 then
+    elseif idol_open_state == 2 then
+      red = idol_open_state ~= val
+    else
+      red = idol_open_state ~= val
+    end
+    local timeGo = self:GetGameObject("leftTime")
+    local showTime = false
+    if idol_open_state == 3 then
+    elseif idol_open_state ~= val then
+    elseif idol_open_state == 1 then
+      showTime = true
+    elseif idol_open_state == 2 then
+      showTime = true
+    end
+    timeGo:SetActive(showTime)
+    if showTime then
+      local seconds = math.floor(unlockTime + curStage * self.secondsPerDay - nowTimestamp)
+      local timeStr = UIActivityN25Const.GetTimeString(seconds)
+      timeTips = StringTable.Get("str_n25_activity_next_open", timeStr)
+    end
+    self:SetLeftTime(timeTips)
+  elseif state == UISummerOneEnterBtnState.Closed then
+    self:SetLeftTime(StringTable.Get("str_n25_activity_end"))
+    self:CancelTimeEvent()
   end
+  self:SetNewAndRed(new, red)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnIdol.CancelTimeEvent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+function UIN25EntryBtnIdol:CancelTimeEvent()
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
 end
-
-

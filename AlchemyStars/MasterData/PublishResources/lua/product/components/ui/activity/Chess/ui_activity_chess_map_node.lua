@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/Chess/ui_activity_chess_map_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN15ChessMapNode", UICustomWidget)
 UIN15ChessMapNode = UIN15ChessMapNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN15ChessMapNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN15ChessMapNode:OnShow(uiParams)
   self:_InitWidget()
   self._isonClick = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15ChessMapNode._InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN15ChessMapNode:_InitWidget()
   self.bg = self:GetUIComponent("Image", "bg")
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.name2 = self:GetUIComponent("UILocalizationText", "name_boss")
@@ -26,174 +16,117 @@ UIN15ChessMapNode._InitWidget = function(self)
   self.star1 = self:GetUIComponent("Image", "Star1")
   self.star2 = self:GetUIComponent("Image", "Star2")
   self.star3 = self:GetUIComponent("Image", "Star3")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
-  self._stars = {self.star1, self.star2, self.star3}
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
+  self._stars = {
+    self.star1,
+    self.star2,
+    self.star3
+  }
   self._atlas = self:GetAsset("UIChess.spriteatlas", LoadType.SpriteAtlas)
-  self._anim = (self:GetGameObject()):GetComponent("Animation")
+  self._anim = self:GetGameObject():GetComponent("Animation")
   self._btn = self:GetGameObject("btn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15ChessMapNode.SetData = function(self, lineCfg, passInfo, cb, last, last2)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN15ChessMapNode:SetData(lineCfg, passInfo, cb, last, last2)
   self._missionID = lineCfg.MissionID
   self._onClick = cb
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0.5, 0)
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0.5, 0)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
-  local missionCfg = (Cfg.cfg_chess_mission)[self._missionID]
+  self._rectTransform.anchorMax = Vector2(0.5, 0)
+  self._rectTransform.anchorMin = Vector2(0.5, 0)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+  local missionCfg = Cfg.cfg_chess_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_chess_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_chess_mission中找不到配置:", self._missionID)
   end
-  ;
-  (self.name):SetText((StringTable.Get)(missionCfg.Name))
-  ;
-  (self.name2):SetText((StringTable.Get)(missionCfg.Name))
-  ;
-  ((self.name).gameObject):SetActive(true)
-  ;
-  ((self.name2).gameObject):SetActive(false)
+  self.name:SetText(StringTable.Get(missionCfg.Name))
+  self.name2:SetText(StringTable.Get(missionCfg.Name))
+  self.name.gameObject:SetActive(true)
+  self.name2.gameObject:SetActive(false)
   local hardParam = 1
-  local typeCfg = (UIN15ChessController.NodeCfg)[MatchType.MT_Chess]
-  local bg = nil
-  local mask = (typeCfg[hardParam]).press
-  local lock = (typeCfg[hardParam]).lock
-  local textColor, shadowColor = nil, nil
+  local typeCfg = UIN15ChessController.NodeCfg[MatchType.MT_Chess]
+  local bg
+  local mask = typeCfg[hardParam].press
+  local lock = typeCfg[hardParam].lock
+  local textColor, shadowColor
   if passInfo then
-    textColor = (typeCfg[hardParam]).textColor
-    shadowColor = (typeCfg[hardParam]).textShadow
+    textColor = typeCfg[hardParam].textColor
+    shadowColor = typeCfg[hardParam].textShadow
     local module = self:GetModule(MissionModule)
     local stars = module:ParseStarInfo(passInfo.star)
-    bg = (typeCfg[hardParam]).normal
+    bg = typeCfg[hardParam].normal
     for i = 1, 3 do
-      do
-        local pass = i <= stars
-        if not pass or not (typeCfg[hardParam]).passStar then
-          local url = (typeCfg[hardParam]).normalStar
-        end
-        -- DECOMPILER ERROR at PC108: Confused about usage of register: R22 in 'UnsetPending'
-
-        ;
-        ((self._stars)[i]).sprite = (self._atlas):GetSprite(url)
-        ;
-        (((self._stars)[i]).gameObject):SetActive(not (string.isnullorempty)(url))
-      end
+      local pass = i <= stars
+      local url = pass and typeCfg[hardParam].passStar or typeCfg[hardParam].normalStar
+      self._stars[i].sprite = self._atlas:GetSprite(url)
+      self._stars[i].gameObject:SetActive(not string.isnullorempty(url))
     end
-    ;
-    ((self.lock).gameObject):SetActive(false)
+    self.lock.gameObject:SetActive(false)
   else
-    textColor = (typeCfg[hardParam]).textColor
-    shadowColor = (typeCfg[hardParam]).textShadow
-    bg = (typeCfg[hardParam]).normal
+    textColor = typeCfg[hardParam].textColor
+    shadowColor = typeCfg[hardParam].textShadow
+    bg = typeCfg[hardParam].normal
     local stars = 0
     for i = 1, 3 do
       local pass = i <= stars
-      if not pass or not (typeCfg[hardParam]).passStar then
-        local url = (typeCfg[hardParam]).normalStar
-      end
-      -- DECOMPILER ERROR at PC155: Confused about usage of register: R21 in 'UnsetPending'
-
-      ;
-      ((self._stars)[i]).sprite = (self._atlas):GetSprite(url)
-      ;
-      (((self._stars)[i]).gameObject):SetActive(not (string.isnullorempty)(url))
+      local url = pass and typeCfg[hardParam].passStar or typeCfg[hardParam].normalStar
+      self._stars[i].sprite = self._atlas:GetSprite(url)
+      self._stars[i].gameObject:SetActive(not string.isnullorempty(url))
     end
-    ;
-    ((self.lock).gameObject):SetActive(false)
+    self.lock.gameObject:SetActive(false)
   end
   self:_SetRed(false)
-  -- DECOMPILER ERROR at PC180: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self.bg).sprite = (self._atlas):GetSprite(bg)
-  -- DECOMPILER ERROR at PC186: Confused about usage of register: R14 in 'UnsetPending'
-
-  ;
-  (self.mask).sprite = (self._atlas):GetSprite(mask)
+  self.bg.sprite = self._atlas:GetSprite(bg)
+  self.mask.sprite = self._atlas:GetSprite(mask)
   if last2 then
-    local cfg = (Cfg.cfg_component_chess)({MissionID = self._missionID})
-    if cfg[1] and (cfg[1]).NeedMissionId then
-      ((self.lock).gameObject):SetActive(true)
-      local roleModule = (GameGlobal.GetModule)(RoleModule)
+    local cfg = Cfg.cfg_component_chess({
+      MissionID = self._missionID
+    })
+    if cfg[1] and cfg[1].NeedMissionId then
+      self.lock.gameObject:SetActive(true)
+      local roleModule = GameGlobal.GetModule(RoleModule)
       local pstid = roleModule:GetPstId()
-      local dbStr = "chess" .. (cfg[1]).NeedMissionId .. pstid
-      local dbHas = (LocalDB.GetInt)(dbStr, 0)
-      ;
-      (self.star):SetActive(true)
-      ;
-      (self._btn):SetActive(true)
+      local dbStr = "chess" .. cfg[1].NeedMissionId .. pstid
+      local dbHas = LocalDB.GetInt(dbStr, 0)
+      self.star:SetActive(true)
+      self._btn:SetActive(true)
       if dbHas and dbHas == 1 then
         dbHas = dbHas + 1
-        ;
-        (LocalDB.SetInt)(dbStr, dbHas)
+        LocalDB.SetInt(dbStr, dbHas)
         local lockName = "UIN15ChessMapNode:_anim"
         self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, lockName, _ENV
-    self:Lock(lockName)
-    YIELD(TT, 666)
-    ;
-    (self._anim):Play("uieffanim_N15_UIN15ChessMapNode_open01")
-    YIELD(TT, 1100)
-    self._isonClick = true
-    self:UnLock(lockName)
-  end
-)
+          self:Lock(lockName)
+          YIELD(TT, 666)
+          self._anim:Play("uieffanim_N15_UIN15ChessMapNode_open01")
+          YIELD(TT, 1100)
+          self._isonClick = true
+          self:UnLock(lockName)
+        end)
       else
         self._isonClick = true
-        ;
-        ((self.lock).gameObject):SetActive(false)
+        self.lock.gameObject:SetActive(false)
       end
     end
   elseif last then
-    ((self.lock).gameObject):SetActive(true)
-    ;
-    (self.star):SetActive(false)
-    ;
-    (self._btn):SetActive(false)
-    ;
-    ((self.mask).gameObject):SetActive(false)
-    ;
-    (self.name):SetText("<color=#bfbfbf>" .. (StringTable.Get)("str_toast_manager_not_open") .. "</color>")
+    self.lock.gameObject:SetActive(true)
+    self.star:SetActive(false)
+    self._btn:SetActive(false)
+    self.mask.gameObject:SetActive(false)
+    self.name:SetText("<color=#bfbfbf>" .. StringTable.Get("str_toast_manager_not_open") .. "</color>")
   else
-    (self.star):SetActive(true)
-    ;
-    (self._btn):SetActive(true)
-    ;
-    ((self.lock).gameObject):SetActive(false)
+    self.star:SetActive(true)
+    self._btn:SetActive(true)
+    self.lock.gameObject:SetActive(false)
     self._isonClick = true
   end
-  -- DECOMPILER ERROR: 12 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15ChessMapNode._SetRed = function(self, isShow)
-  -- function num : 0_3
+function UIN15ChessMapNode:_SetRed(isShow)
   local redObj = self:GetGameObject("red")
   redObj:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN15ChessMapNode.btnOnClick = function(self, go)
-  -- function num : 0_4
+function UIN15ChessMapNode:btnOnClick(go)
   if self._onClick and self._isonClick then
-    (self._onClick)(self._missionID, self._rectTransform)
+    self._onClick(self._missionID, self._rectTransform)
   end
 end
-
-

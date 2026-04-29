@@ -1,35 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/framework/component_data_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ComponentDataHelper", Object)
 ComponentDataHelper = ComponentDataHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ComponentDataHelper.Constructor = function(self)
-  -- function num : 0_0
+function ComponentDataHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ComponentDataHelper.ParseData = function(a_data, a_out_data)
-  -- function num : 0_1 , upvalues : _ENV
+function ComponentDataHelper.ParseData(a_data, a_out_data)
   if a_data then
-    local ret, msg = (lua_dc.LoadStream)(a_out_data._className, a_data, a_out_data)
+    local ret, msg = lua_dc.LoadStream(a_out_data._className, a_data, a_out_data)
     if not ret then
-      (Log.error)("[Campaign][ComponentDataHelper] ParseData lua_dc.LoadStream, _className:", a_out_data._className, ", msg = ", msg)
+      Log.error("[Campaign][ComponentDataHelper] ParseData lua_dc.LoadStream, _className:", a_out_data._className, ", msg = ", msg)
       return false
     else
       return true
     end
   else
-    do
-      ;
-      (Log.error)("[Campaign][ComponentDataHelper] ParseDataid: a_data is nil!")
-      return false
-    end
+    Log.error("[Campaign][ComponentDataHelper] ParseDataid: a_data is nil!")
   end
+  return false
 end
-
-

@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_monster_move_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayMonsterMoveGridInstruction", BaseInstruction)
 PlayMonsterMoveGridInstruction = PlayMonsterMoveGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayMonsterMoveGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayMonsterMoveGridInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterMoveGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayMonsterMoveGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.MonsterMoveGrid)
   if not results then
-    (Log.fatal)("no results")
-    return 
+    Log.fatal("no results")
+    return
   end
   local result = results[1]
   self._world = casterEntity:GetOwnerWorld()
@@ -29,49 +19,40 @@ PlayMonsterMoveGridInstruction.DoInstruction = function(self, TT, casterEntity, 
   self:_DoWalk(TT, casterEntity, walkResultList, casterIsDead)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterMoveGridInstruction._DoWalk = function(self, TT, monsterEntity, walkResultList, casterIsDead)
-  -- function num : 0_2 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function PlayMonsterMoveGridInstruction:_DoWalk(TT, monsterEntity, walkResultList, casterIsDead)
+  local boardServiceRender = self._world:GetService("BoardRender")
   local moveSpeed = self:_GetMoveSpeed(monsterEntity)
   local hasWalkPoint = false
-  if #walkResultList > 0 then
+  if 0 < #walkResultList then
     hasWalkPoint = true
   end
   if hasWalkPoint then
     self:StartMoveAnimation(monsterEntity, true)
     boardServiceRender:RefreshPiece(monsterEntity, true, true)
   end
-  local pieceSvc = (self._world):GetService("Piece")
-  for _,v in ipairs(walkResultList) do
+  local pieceSvc = self._world:GetService("Piece")
+  for _, v in ipairs(walkResultList) do
     local walkRes = v
     local walkPos = walkRes:GetWalkPos()
-    local boardServiceRender = (self._world):GetService("BoardRender")
+    local boardServiceRender = self._world:GetService("BoardRender")
     local curPos = boardServiceRender:GetRealEntityGridPos(monsterEntity)
     monsterEntity:AddGridMove(moveSpeed, walkPos, curPos)
     local walkDir = walkPos - curPos
     local bodyAreaCmpt = monsterEntity:BodyArea()
     local areaCount = bodyAreaCmpt:GetAreaCount()
-    do
-      if areaCount == 4 then
-        local leftDownPos = Vector2(curPos.x - 0.5, curPos.y - 0.5)
-        walkDir = walkPos - leftDownPos
-      end
-      monsterEntity:SetDirection(walkDir)
-      do
-        local newGridType = walkRes:GetNewGridType()
-        while monsterEntity:HasGridMove() do
-          YIELD(TT)
-        end
-        self:_PlayArrivePos(TT, monsterEntity, walkRes)
-        pieceSvc:SetPieceAnimMoveDone(walkPos)
-        -- DECOMPILER ERROR at PC81: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if areaCount == 4 then
+      local leftDownPos = Vector2(curPos.x - 0.5, curPos.y - 0.5)
+      walkDir = walkPos - leftDownPos
     end
+    monsterEntity:SetDirection(walkDir)
+    local newGridType = walkRes:GetNewGridType()
+    while monsterEntity:HasGridMove() do
+      YIELD(TT)
+    end
+    self:_PlayArrivePos(TT, monsterEntity, walkRes)
+    pieceSvc:SetPieceAnimMoveDone(walkPos)
   end
-  for _,v in ipairs(walkResultList) do
+  for _, v in ipairs(walkResultList) do
     local walkRes = v
     local walkPos = walkRes:GetWalkPos()
     local newGridType = walkRes:GetNewGridType()
@@ -84,54 +65,39 @@ PlayMonsterMoveGridInstruction._DoWalk = function(self, TT, monsterEntity, walkR
     boardServiceRender:RefreshPiece(monsterEntity, false, true)
   end
   if casterIsDead then
-    local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+    local sMonsterShowRender = self._world:GetService("MonsterShowRender")
     sMonsterShowRender:_DoOneMonsterDead(TT, monsterEntity)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterMoveGridInstruction._PlayArrivePos = function(self, TT, monsterEntity, walkRes)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayMonsterMoveGridInstruction:_PlayArrivePos(TT, monsterEntity, walkRes)
   local trapResList = walkRes:GetWalkTrapResultList()
-  for _,v in ipairs(trapResList) do
+  for _, v in ipairs(trapResList) do
     local walkTrapRes = v
     local trapEntityID = walkTrapRes:GetTrapEntityID()
-    local trapEntity = (self._world):GetEntityByID(trapEntityID)
+    local trapEntity = self._world:GetEntityByID(trapEntityID)
     local trapSkillRes = walkTrapRes:GetTrapResult()
     local skillEffectResultContainer = trapSkillRes:GetResultContainer()
-    ;
-    (trapEntity:SkillRoutine()):SetResultContainer(skillEffectResultContainer)
-    ;
-    (Log.debug)("[AIMove] PlayArrivePos() monster=", monsterEntity:GetID(), " pos=", walkRes:GetWalkPos(), " play trapid=", trapEntity:GetID(), " defender=", ((skillEffectResultContainer:GetScopeResult()):GetTargetIDs())[1])
-    local trapSvc = (self._world):GetService("TrapRender")
+    trapEntity:SkillRoutine():SetResultContainer(skillEffectResultContainer)
+    Log.debug("[AIMove] PlayArrivePos() monster=", monsterEntity:GetID(), " pos=", walkRes:GetWalkPos(), " play trapid=", trapEntity:GetID(), " defender=", skillEffectResultContainer:GetScopeResult():GetTargetIDs()[1])
+    local trapSvc = self._world:GetService("TrapRender")
     trapSvc:PlayTrapTriggerSkill(TT, trapEntity, false, monsterEntity)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterMoveGridInstruction._GetMoveSpeed = function(self, casterEntity)
-  -- function num : 0_4
-  local cfgSvc = (self._world):GetService("Config")
+function PlayMonsterMoveGridInstruction:_GetMoveSpeed(casterEntity)
+  local cfgSvc = self._world:GetService("Config")
   local configData = cfgSvc:GetMonsterConfigData()
   local monsterIDCmpt = casterEntity:MonsterID()
   local monsterID = monsterIDCmpt:GetMonsterID()
   local speed = configData:GetMonsterSpeed(monsterID)
-  if not speed then
-    speed = 1
-  end
+  speed = speed or 1
   return speed
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMonsterMoveGridInstruction.StartMoveAnimation = function(self, targetEntity, isMove)
-  -- function num : 0_5
+function PlayMonsterMoveGridInstruction:StartMoveAnimation(targetEntity, isMove)
   local curVal = targetEntity:GetAnimatorControllerBoolsData("Move")
   if curVal ~= isMove then
     targetEntity:SetAnimatorControllerBools({Move = isMove})
   end
 end
-
-

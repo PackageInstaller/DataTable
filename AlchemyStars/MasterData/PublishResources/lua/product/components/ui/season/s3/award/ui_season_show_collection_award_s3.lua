@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/award/ui_season_show_collection_award_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonShowCollectionAwardS3", UIController)
 UISeasonShowCollectionAwardS3 = UISeasonShowCollectionAwardS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonShowCollectionAwardS3.GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonShowCollectionAwardS3:GetComponents()
   self._trans = self:GetGameObject()
   self._beforeTime = 200
   self._inited = false
@@ -16,10 +9,7 @@ UISeasonShowCollectionAwardS3.GetComponents = function(self)
   self._bg = self:GetUIComponent("RectTransform", "canvasGroup")
   self._iconBg = self:GetUIComponent("Image", "IconBg")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "ImgIcon")
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._bg).localScale = Vector3(1, 1, 1)
+  self._bg.localScale = Vector3(1, 1, 1)
   self._titleText = self:GetUIComponent("UILocalizationText", "TitleText")
   self._titleTextGo = self:GetGameObject("TitleText")
   self._itemNameText = self:GetUIComponent("UILocalizationText", "ItemNameText")
@@ -31,34 +21,25 @@ UISeasonShowCollectionAwardS3.GetComponents = function(self)
   self._tips = s:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowCollectionAwardS3.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonShowCollectionAwardS3:OnShow(uiParams)
   self._closeCallback = uiParams[2]
   self:GetComponents()
-  local item_module = ((GameGlobal.GetModule)(ItemModule))
-  -- DECOMPILER ERROR at PC8: Overwrote pending register: R3 in 'AssignReg'
-
-  local roleAsset = .end
+  local item_module = GameGlobal.GetModule(ItemModule)
+  local roleAsset
   if not uiParams[1] then
-    (Log.fatal)("###[UISeasonShowCollectionAwardS3] uiParams[1] is nil !")
+    Log.fatal("###[UISeasonShowCollectionAwardS3] uiParams[1] is nil !")
   end
   roleAsset = uiParams[1]
   self:CreateData(roleAsset)
   self:FlushItem(self._itemData)
   self._inited = true
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
   self:DispatchEvent(GameEventType.OnSeasonCollectionObtained, roleAsset.assetid)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowCollectionAwardS3.FlushItem = function(self, itemData)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeasonShowCollectionAwardS3:FlushItem(itemData)
   if not itemData then
-    return 
+    return
   end
   local icon = ""
   local color = 1
@@ -71,7 +52,7 @@ UISeasonShowCollectionAwardS3.FlushItem = function(self, itemData)
     color = 6
     count = itemData.count
   else
-    local cfg = (Cfg.cfg_item)[itemData.item_id]
+    local cfg = Cfg.cfg_item[itemData.item_id]
     icon = cfg.Icon
     color = cfg.Color
     count = itemData.count
@@ -79,77 +60,54 @@ UISeasonShowCollectionAwardS3.FlushItem = function(self, itemData)
     intro = itemData.simple_desc
     desc = itemData.item_des
   end
-  do
-    ;
-    (self._imgIcon):LoadImage(icon)
-    ;
-    (self._itemNameText):SetText((StringTable.Get)(name))
-    ;
-    (self._itemIntroText):SetText((StringTable.Get)(intro))
-    ;
-    (self._itemDetailText):SetText((StringTable.Get)(desc))
-  end
+  self._imgIcon:LoadImage(icon)
+  self._itemNameText:SetText(StringTable.Get(name))
+  self._itemIntroText:SetText(StringTable.Get(intro))
+  self._itemDetailText:SetText(StringTable.Get(desc))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowCollectionAwardS3.CreateData = function(self, roleAsset)
-  -- function num : 0_3 , upvalues : _ENV
-  local itemTempleate = (Cfg.cfg_item)[roleAsset.assetid]
+function UISeasonShowCollectionAwardS3:CreateData(roleAsset)
+  local itemTempleate = Cfg.cfg_item[roleAsset.assetid]
   if itemTempleate then
-    self._itemData = {item_id = roleAsset.assetid, item_count = roleAsset.count, item_des = itemTempleate.RpIntro, icon = itemTempleate.Icon, item_name = itemTempleate.Name, simple_desc = itemTempleate.Intro, color = itemTempleate.Color}
+    self._itemData = {
+      item_id = roleAsset.assetid,
+      item_count = roleAsset.count,
+      item_des = itemTempleate.RpIntro,
+      icon = itemTempleate.Icon,
+      item_name = itemTempleate.Name,
+      simple_desc = itemTempleate.Intro,
+      color = itemTempleate.Color
+    }
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowCollectionAwardS3.ClosePanel = function(self)
-  -- function num : 0_4
+function UISeasonShowCollectionAwardS3:ClosePanel()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowCollectionAwardS3.OnHide = function(self)
-  -- function num : 0_5
+function UISeasonShowCollectionAwardS3:OnHide()
   if self._closeCallback then
-    (self._closeCallback)()
+    self._closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowCollectionAwardS3.IconBgOnClick = function(self, go)
-  -- function num : 0_6
+function UISeasonShowCollectionAwardS3:IconBgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonShowCollectionAwardS3.BgOnClick = function(self, go)
-  -- function num : 0_7
+function UISeasonShowCollectionAwardS3:BgOnClick(go)
   self:ClosePanel()
 end
 
 local modf = math.modf
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
 
-UISeasonShowCollectionAwardS3._FormatItemCount = function(self, itemCount)
-  -- function num : 0_8 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):FormatItemCount(itemCount)
+function UISeasonShowCollectionAwardS3:_FormatItemCount(itemCount)
+  return HelperProxy:GetInstance():FormatItemCount(itemCount)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonShowCollectionAwardS3.CloseBtnOnClick = function(self, go)
-  -- function num : 0_9
+function UISeasonShowCollectionAwardS3:CloseBtnOnClick(go)
   self:ClosePanel()
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UISeasonShowCollectionAwardS3.ShowTips = function(self, itemId, pos)
-  -- function num : 0_10
-  (self._tips):SetData(itemId, pos)
+function UISeasonShowCollectionAwardS3:ShowTips(itemId, pos)
+  self._tips:SetData(itemId, pos)
 end
-
-

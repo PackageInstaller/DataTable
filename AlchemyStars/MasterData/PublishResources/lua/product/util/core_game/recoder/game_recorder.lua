@@ -1,84 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/recoder/game_recorder.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GameRecorder", Object)
 GameRecorder = GameRecorder
-GameRecordAction = {StartMatch = 1, UIInput = 2, TouchInput = 3, NetInput = 4, MatchResult = 5}
+GameRecordAction = {
+  StartMatch = 1,
+  UIInput = 2,
+  TouchInput = 3,
+  NetInput = 4,
+  MatchResult = 5
+}
 _enum("GameRecordAction", GameRecordAction)
--- DECOMPILER ERROR at PC19: Confused about usage of register: R0 in 'UnsetPending'
 
-GameRecorder.Constructor = function(self)
-  -- function num : 0_0
+function GameRecorder:Constructor()
   self._record = nil
   self._lastPoint = nil
   self._disableRecoder = true
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R0 in 'UnsetPending'
-
-GameRecorder.Dispose = function(self)
-  -- function num : 0_1
+function GameRecorder:Dispose()
   self._record = nil
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-GameRecorder.StartRecord = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function GameRecorder:StartRecord()
   if self._disableRecoder then
-    return 
+    return
   end
-  ;
-  (Log.debug)("GameRecorder:StartRecord() ---------------")
+  Log.debug("GameRecorder:StartRecord() ---------------")
   self._record = {}
-  self._startTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  self._startTime = GameGlobal:GetInstance():GetCurrentTime()
   local dir = EngineGameHelper.StoragePath .. "GameRecordLog/"
-  ;
-  (App.MakeDir)(dir)
-  self._filePath = dir .. "GameRecordLog" .. (os.date)("%y%m%d%H%M%S") .. ".lua"
+  App.MakeDir(dir)
+  self._filePath = dir .. "GameRecordLog" .. os.date("%y%m%d%H%M%S") .. ".lua"
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R0 in 'UnsetPending'
-
-GameRecorder.StopRecord = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function GameRecorder:StopRecord()
   if self._disableRecoder then
-    return 
+    return
   end
-  ;
-  (Log.debug)("GameRecorder:StopRecord() ---------------")
-  local file = (io.open)(self._filePath, "w")
+  Log.debug("GameRecorder:StopRecord() ---------------")
+  local file = io.open(self._filePath, "w")
   local out = echo(self._record)
   file:write(out)
-  ;
-  (io.close)(file)
+  io.close(file)
   self._record = nil
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R0 in 'UnsetPending'
-
-GameRecorder.RecordAction = function(self, action, params)
-  -- function num : 0_4 , upvalues : _ENV
+function GameRecorder:RecordAction(action, params)
   if self._disableRecoder then
-    return 
+    return
   end
-  local isAutoFighting = (BattleStatHelper.GetAutoFightStat)()
+  local isAutoFighting = BattleStatHelper.GetAutoFightStat()
   if isAutoFighting then
-    return 
+    return
   end
   if action == GameRecordAction.TouchInput and params.input == "Dragging" then
     if params.hitPoint == self._lastPoint then
-      return 
+      return
     else
       self._lastPoint = params.hitPoint
     end
   end
   local t = self._record
-  t[#t + 1] = {time = (GameGlobal:GetInstance()):GetCurrentTime() - self._startTime, action = action, actionName = GetEnumKey("GameRecordAction", action)}
-  ;
-  (table.append)(t[#t], params)
+  t[#t + 1] = {
+    time = GameGlobal:GetInstance():GetCurrentTime() - self._startTime,
+    action = action,
+    actionName = GetEnumKey("GameRecordAction", action)
+  }
+  table.append(t[#t], params)
 end
-
-

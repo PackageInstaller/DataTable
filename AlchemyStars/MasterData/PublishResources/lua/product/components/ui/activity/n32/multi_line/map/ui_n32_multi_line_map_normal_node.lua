@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/map/ui_n32_multi_line_map_normal_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineMapNormalNode", UICustomWidget)
 UIN32MultiLineMapNormalNode = UIN32MultiLineMapNormalNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineMapNormalNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN32MultiLineMapNormalNode:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapNormalNode.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN32MultiLineMapNormalNode:InitWidget()
   self.bg = self:GetUIComponent("Image", "bg")
   self.name = self:GetUIComponent("UILocalizedTMP", "name")
   self.name2 = self:GetUIComponent("UILocalizationText", "name_boss")
@@ -25,174 +15,180 @@ UIN32MultiLineMapNormalNode.InitWidget = function(self)
   self.star1 = self:GetUIComponent("Image", "Star1")
   self.star2 = self:GetUIComponent("Image", "Star2")
   self.star3 = self:GetUIComponent("Image", "Star3")
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
-  self._stars = {self.star1, self.star2, self.star3}
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
+  self._stars = {
+    self.star1,
+    self.star2,
+    self.star3
+  }
   self._atlas = self:GetAsset("UIN32Multiline.spriteatlas", LoadType.SpriteAtlas)
   self._anim = self:GetUIComponent("Animation", "Anim")
   self._bgGo = self:GetGameObject("bg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapNormalNode.GetNodeCfg = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN32MultiLineMapNormalNode:GetNodeCfg()
   local NodeCfg = {SLeval = 111111, Passed = 888}
   NodeCfg[DiscoveryStageType.FightNormal] = {
-[1] = {normal = "n32_dzm_dt_di02", press = "", lock = "", textColor = Color(0.25490196078431, 0.15686274509804, 0.066666666666667), textShadow = Color(0 / 255, 0 / 255, 0 / 255), normalStar = "n32_dzm_dt_di07", passStar = "n32_dzm_dt_di06"}
-, 
-[2] = {normal = "", press = "", lock = "", textColor = Color(0.94509803921569, 1, 0.45882352941176), textShadow = Color(0.43529411764706, 0.20392156862745, 0.098039215686275), normalStar = "n32_dzm_dt_di07", passStar = "n32_dzm_dt_di06"}
-}
+    [1] = {
+      normal = "n32_dzm_dt_di02",
+      press = "",
+      lock = "",
+      textColor = Color(0.2549019607843137, 0.1568627450980392, 0.06666666666666667),
+      textShadow = Color(0 / 255, 0 / 255, 0 / 255),
+      normalStar = "n32_dzm_dt_di07",
+      passStar = "n32_dzm_dt_di06"
+    },
+    [2] = {
+      normal = "",
+      press = "",
+      lock = "",
+      textColor = Color(0.9450980392156862, 1.0, 0.4588235294117647),
+      textShadow = Color(0.43529411764705883, 0.20392156862745098, 0.09803921568627451),
+      normalStar = "n32_dzm_dt_di07",
+      passStar = "n32_dzm_dt_di06"
+    }
+  }
   NodeCfg[DiscoveryStageType.FightBoss] = {
-[1] = {normal = "n32_dzm_dt_di03", press = "", lock = "", textColor = (Color.New)(0.83137254901961, 0.58039215686275, 0.35686274509804), textShadow = (Color.New)(1, 1, 1), normalStar = "n32_dzm_dt_di07", passStar = "n32_dzm_dt_di06"}
-, 
-[2] = {normal = "", press = "", lock = "", textColor = (Color.New)(1, 1, 1), textShadow = (Color.New)(0.93333333333333, 0 / 255, 0.13333333333333), normalStar = "", passStar = ""}
-}
+    [1] = {
+      normal = "n32_dzm_dt_di03",
+      press = "",
+      lock = "",
+      textColor = Color.New(0.8313725490196079, 0.5803921568627451, 0.3568627450980392),
+      textShadow = Color.New(1.0, 1.0, 1.0),
+      normalStar = "n32_dzm_dt_di07",
+      passStar = "n32_dzm_dt_di06"
+    },
+    [2] = {
+      normal = "",
+      press = "",
+      lock = "",
+      textColor = Color.New(1.0, 1.0, 1.0),
+      textShadow = Color.New(0.9333333333333333, 0 / 255, 0.13333333333333333),
+      normalStar = "",
+      passStar = ""
+    }
+  }
   NodeCfg[DiscoveryStageType.Plot] = {
-[1] = {normal = "n32_dzm_dt_di04", press = "", lock = "", textColor = (Color.New)(0.25490196078431, 0.15686274509804, 0.066666666666667), textShadow = (Color.New)(0 / 255, 0 / 255, 0 / 255)}
-, 
-[2] = {normal = "", press = "", lock = "", textColor = (Color.New)(0.94509803921569, 1, 0.45882352941176), textShadow = (Color.New)(0.43529411764706, 0.20392156862745, 0.098039215686275)}
-}
+    [1] = {
+      normal = "n32_dzm_dt_di04",
+      press = "",
+      lock = "",
+      textColor = Color.New(0.2549019607843137, 0.1568627450980392, 0.06666666666666667),
+      textShadow = Color.New(0 / 255, 0 / 255, 0 / 255)
+    },
+    [2] = {
+      normal = "",
+      press = "",
+      lock = "",
+      textColor = Color.New(0.9450980392156862, 1.0, 0.4588235294117647),
+      textShadow = Color.New(0.43529411764705883, 0.20392156862745098, 0.09803921568627451)
+    }
+  }
   NodeCfg[NodeCfg.SLeval] = {
-[1] = {normal = "", press = "", lock = "", textColor = (Color.New)(1, 1, 1), textShadow = (Color.New)(0.086274509803922, 0.16470588235294, 0.23921568627451), normalStar = "", passStar = ""}
-, 
-[2] = {normal = "", press = "", lock = "", textColor = (Color.New)(1, 1, 1), textShadow = (Color.New)(0.086274509803922, 0.16470588235294, 0.23921568627451), normalStar = "", passStar = ""}
-}
+    [1] = {
+      normal = "",
+      press = "",
+      lock = "",
+      textColor = Color.New(1.0, 1.0, 1.0),
+      textShadow = Color.New(0.08627450980392157, 0.16470588235294117, 0.23921568627450981),
+      normalStar = "",
+      passStar = ""
+    },
+    [2] = {
+      normal = "",
+      press = "",
+      lock = "",
+      textColor = Color.New(1.0, 1.0, 1.0),
+      textShadow = Color.New(0.08627450980392157, 0.16470588235294117, 0.23921568627450981),
+      normalStar = "",
+      passStar = ""
+    }
+  }
   return NodeCfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapNormalNode.SetData = function(self, levelId, multilineData, cb)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN32MultiLineMapNormalNode:SetData(levelId, multilineData, cb)
   self._levelId = levelId
-  local lineCfg = (Cfg.cfg_component_multiline_mission)[levelId]
+  local lineCfg = Cfg.cfg_component_multiline_mission[levelId]
   local passInfo = multilineData:GetPassMissionInfo(lineCfg.MissionID)
   self._missionID = lineCfg.MissionID
   self._onClick = cb
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
   end
-  ;
-  (self.name):SetText((StringTable.Get)(missionCfg.Name))
-  ;
-  (self.name2):SetText((StringTable.Get)(missionCfg.Name))
-  ;
-  ((self.name).gameObject):SetActive(missionCfg.Type ~= DiscoveryStageType.FightBoss)
-  ;
-  ((self.name2).gameObject):SetActive(missionCfg.Type == DiscoveryStageType.FightBoss)
-  ;
-  (self.bg_normal_plotGo):SetActive(missionCfg.Type ~= DiscoveryStageType.FightBoss)
-  ;
-  (self.bg_bossGo):SetActive(missionCfg.Type == DiscoveryStageType.FightBoss)
+  self.name:SetText(StringTable.Get(missionCfg.Name))
+  self.name2:SetText(StringTable.Get(missionCfg.Name))
+  self.name.gameObject:SetActive(missionCfg.Type ~= DiscoveryStageType.FightBoss)
+  self.name2.gameObject:SetActive(missionCfg.Type == DiscoveryStageType.FightBoss)
+  self.bg_normal_plotGo:SetActive(missionCfg.Type ~= DiscoveryStageType.FightBoss)
+  self.bg_bossGo:SetActive(missionCfg.Type == DiscoveryStageType.FightBoss)
   local NodeCfg = self:GetNodeCfg()
   local hardParam = 1
-  local typeCfg = nil
+  local typeCfg
   if lineCfg.WayPointType == 4 then
     typeCfg = NodeCfg[NodeCfg.SLeval]
   else
     typeCfg = NodeCfg[missionCfg.Type]
   end
-  local bg, textColor, shadowColor = nil, nil, nil
+  local bg, textColor, shadowColor
   if passInfo then
-    textColor = (typeCfg[hardParam]).textColor
+    textColor = typeCfg[hardParam].textColor
     local module = self:GetModule(MissionModule)
     local stars = module:ParseStarInfo(passInfo.star)
-    bg = (typeCfg[hardParam]).normal
+    bg = typeCfg[hardParam].normal
     for i = 1, 3 do
       local pass = i <= stars
-      if not pass or not (typeCfg[hardParam]).passStar then
-        local url = (typeCfg[hardParam]).normalStar
-      end
-      -- DECOMPILER ERROR at PC124: Confused about usage of register: R21 in 'UnsetPending'
-
-      ;
-      ((self._stars)[i]).sprite = (self._atlas):GetSprite(url)
-      ;
-      (((self._stars)[i]).gameObject):SetActive(not (string.isnullorempty)(url))
+      local url = pass and typeCfg[hardParam].passStar or typeCfg[hardParam].normalStar
+      self._stars[i].sprite = self._atlas:GetSprite(url)
+      self._stars[i].gameObject:SetActive(not string.isnullorempty(url))
     end
-    ;
-    (self.star):SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
+    self.star:SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
   else
-    textColor = (typeCfg[hardParam]).textColor
-    bg = (typeCfg[hardParam]).normal
+    textColor = typeCfg[hardParam].textColor
+    bg = typeCfg[hardParam].normal
     local stars = 0
     for i = 1, 3 do
       local pass = i <= stars
-      if not pass or not (typeCfg[hardParam]).passStar then
-        local url = (typeCfg[hardParam]).normalStar
-      end
-      -- DECOMPILER ERROR at PC174: Confused about usage of register: R20 in 'UnsetPending'
-
-      ;
-      ((self._stars)[i]).sprite = (self._atlas):GetSprite(url)
-      ;
-      (((self._stars)[i]).gameObject):SetActive(not (string.isnullorempty)(url))
+      local url = pass and typeCfg[hardParam].passStar or typeCfg[hardParam].normalStar
+      self._stars[i].sprite = self._atlas:GetSprite(url)
+      self._stars[i].gameObject:SetActive(not string.isnullorempty(url))
     end
-    ;
-    (self.star):SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
+    self.star:SetActive(missionCfg.Type ~= DiscoveryStageType.Plot)
   end
   self:_SetRed(false)
-  -- DECOMPILER ERROR at PC204: Confused about usage of register: R13 in 'UnsetPending'
-
-  ;
-  (self.bg).sprite = (self._atlas):GetSprite(bg)
+  self.bg.sprite = self._atlas:GetSprite(bg)
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-  -- DECOMPILER ERROR: 17 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapNormalNode._SetRed = function(self, isShow)
-  -- function num : 0_4
+function UIN32MultiLineMapNormalNode:_SetRed(isShow)
   local redObj = self:GetGameObject("red")
   redObj:SetActive(isShow)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapNormalNode.BtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN32MultiLineMapNormalNode:BtnOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local lockName = "UIN32MultiLineMapNormalNode_click_ani"
     self:Lock(lockName)
-    ;
-    (self._anim):Play("uieff_UIN32MultiLineMapNormalNode_click")
+    self._anim:Play("uieff_UIN32MultiLineMapNormalNode_click")
     YIELD(TT, 367)
     self:UnLock(lockName)
-    ;
-    (self._onClick)(self._levelId, self._missionID, self._isStoryNode, (self._rectTransform).position)
-  end
-)
+    self._onClick(self._levelId, self._missionID, self._isStoryNode, self._rectTransform.position)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapNormalNode.SetVisible = function(self, bVisible)
-  -- function num : 0_6
-  (self:GetGameObject()):SetActive(bVisible)
+function UIN32MultiLineMapNormalNode:SetVisible(bVisible)
+  self:GetGameObject():SetActive(bVisible)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapNormalNode.GetPosition = function(self)
-  -- function num : 0_7
-  return ((self:GetGameObject()).transform).position
+function UIN32MultiLineMapNormalNode:GetPosition()
+  return self:GetGameObject().transform.position
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapNormalNode.PlayEnterAni = function(self)
-  -- function num : 0_8
-  (self._anim):Play("uieff_UIN32MultiLineMapNormalNode_in")
+function UIN32MultiLineMapNormalNode:PlayEnterAni()
+  self._anim:Play("uieff_UIN32MultiLineMapNormalNode_in")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineMapNormalNode.GetMissionID = function(self)
-  -- function num : 0_9
+function UIN32MultiLineMapNormalNode:GetMissionID()
   return self._missionID
 end
-
-

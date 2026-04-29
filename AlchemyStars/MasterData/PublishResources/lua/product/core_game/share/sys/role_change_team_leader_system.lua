@@ -1,31 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/role_change_team_leader_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("RoleChangeTeamLeaderSystem", MainStateSystem)
 RoleChangeTeamLeaderSystem = RoleChangeTeamLeaderSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-RoleChangeTeamLeaderSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RoleChangeTeamLeaderSystem:_GetMainStateID()
   return GameStateID.RoleChangeTeamLeader
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleChangeTeamLeaderSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function RoleChangeTeamLeaderSystem:_OnMainStateEnter(TT)
   self:_DoRenderChangeTeamLeader(TT)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RoleChangeTeamLeaderFinish, 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.RoleChangeTeamLeaderFinish, 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RoleChangeTeamLeaderSystem._DoRenderChangeTeamLeader = function(self, TT)
-  -- function num : 0_2
+function RoleChangeTeamLeaderSystem:_DoRenderChangeTeamLeader(TT)
 end
-
-

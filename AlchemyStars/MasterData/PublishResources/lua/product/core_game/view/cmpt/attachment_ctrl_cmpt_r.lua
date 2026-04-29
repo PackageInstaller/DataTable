@@ -1,115 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/attachment_ctrl_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AttachmentControllerComponent", Object)
 AttachmentControllerComponent = AttachmentControllerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AttachmentControllerComponent.Constructor = function(self)
-  -- function num : 0_0
+function AttachmentControllerComponent:Constructor()
   self._resReq = nil
   self._resName = ""
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AttachmentControllerComponent.SetResRequest = function(self, resReq)
-  -- function num : 0_1
+function AttachmentControllerComponent:SetResRequest(resReq)
   self._resReq = resReq
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AttachmentControllerComponent.SetResName = function(self, resName)
-  -- function num : 0_2
+function AttachmentControllerComponent:SetResName(resName)
   self._resName = resName
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AttachmentControllerComponent.GetResRequest = function(self)
-  -- function num : 0_3
+function AttachmentControllerComponent:GetResRequest()
   return self._resReq
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AttachmentControllerComponent.GetResName = function(self)
-  -- function num : 0_4
+function AttachmentControllerComponent:GetResName()
   return self._resName
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AttachmentControllerComponent.Dispose = function(self)
-  -- function num : 0_5
+function AttachmentControllerComponent:Dispose()
   if self._resReq then
-    (self._resReq):Dispose()
+    self._resReq:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AttachmentController = function(self)
-  -- function num : 0_6
-  return self:GetComponent((self.WEComponentsEnum).AttachmentController)
+function Entity:AttachmentController()
+  return self:GetComponent(self.WEComponentsEnum.AttachmentController)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAttachmentController = function(self)
-  -- function num : 0_7
-  return self:HasComponent((self.WEComponentsEnum).AttachmentController)
+function Entity:HasAttachmentController()
+  return self:HasComponent(self.WEComponentsEnum.AttachmentController)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAttachmentController = function(self, resName)
-  -- function num : 0_8 , upvalues : _ENV
+function Entity:AddAttachmentController(resName)
   self:RemoveAttachmentController()
-  local gameObj = ((self:View()).ViewWrapper).GameObject
-  local resReq = (ResourceManager:GetInstance()):SyncLoadAsset(resName .. ".prefab", LoadType.GameObject)
+  local gameObj = self:View().ViewWrapper.GameObject
+  local resReq = ResourceManager:GetInstance():SyncLoadAsset(resName .. ".prefab", LoadType.GameObject)
   local tmpRoot = resReq.Obj
-  ;
-  (tmpRoot.transform):SetParent(gameObj.transform, false)
+  tmpRoot.transform:SetParent(gameObj.transform, false)
   tmpRoot:SetActive(false)
-  local index = (self.WEComponentsEnum).AttachmentController
+  local index = self.WEComponentsEnum.AttachmentController
   local component = AttachmentControllerComponent:New()
   component:SetResRequest(resReq)
   component:SetResName(resName)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAttachmentController = function(self)
-  -- function num : 0_9
+function Entity:RemoveAttachmentController()
   if self:HasAttachmentController() then
-    self:RemoveComponent((self.WEComponentsEnum).AttachmentController)
+    self:RemoveComponent(self.WEComponentsEnum.AttachmentController)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetAttachmentAnimationTrigger = function(self, animName)
-  -- function num : 0_10
-  local attachComponent = nil
+function Entity:SetAttachmentAnimationTrigger(animName)
+  local attachComponent
   if self:HasAttachmentController() then
     attachComponent = self:AttachmentController()
   else
-    return 
+    return
   end
   local attachResReq = attachComponent:GetResRequest()
   if attachResReq == nil then
-    return 
+    return
   end
   local attachGameObj = attachResReq.Obj
   local attachResName = attachComponent:GetResName()
-  local attachRoot = (attachGameObj.transform):Find("Root")
+  local attachRoot = attachGameObj.transform:Find("Root")
   if not attachRoot then
-    return 
+    return
   end
   local attachAnimator = attachRoot:GetComponent("Animator")
   if attachAnimator then
@@ -117,25 +79,22 @@ Entity.SetAttachmentAnimationTrigger = function(self, animName)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetAttachmentAnimationBool = function(self, animName, isTrue)
-  -- function num : 0_11
-  local attachComponent = nil
+function Entity:SetAttachmentAnimationBool(animName, isTrue)
+  local attachComponent
   if self:HasAttachmentController() then
     attachComponent = self:AttachmentController()
   else
-    return 
+    return
   end
   local attachResReq = attachComponent:GetResRequest()
   if attachResReq == nil then
-    return 
+    return
   end
   local attachGameObj = attachResReq.Obj
   local attachResName = attachComponent:GetResName()
-  local attachRoot = (attachGameObj.transform):Find("Root")
+  local attachRoot = attachGameObj.transform:Find("Root")
   if not attachRoot then
-    return 
+    return
   end
   local attachAnimator = attachRoot:GetComponent("Animator")
   if attachAnimator then
@@ -143,22 +102,17 @@ Entity.SetAttachmentAnimationBool = function(self, animName, isTrue)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SetAttachmentVisible = function(self, isShow)
-  -- function num : 0_12
-  local attachComponent = nil
+function Entity:SetAttachmentVisible(isShow)
+  local attachComponent
   if self:HasAttachmentController() then
     attachComponent = self:AttachmentController()
   else
-    return 
+    return
   end
   local attachResReq = attachComponent:GetResRequest()
   if attachResReq == nil then
-    return 
+    return
   end
   local attachGameObj = attachResReq.Obj
   attachGameObj:SetActive(isShow)
 end
-
-

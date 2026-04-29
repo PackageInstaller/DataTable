@@ -1,54 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_transitions.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressTransitions", SeasonMapExpressBase)
 SeasonMapExpressTransitions = SeasonMapExpressTransitions
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressTransitions.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).Transitions
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+function SeasonMapExpressTransitions:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Transitions
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
   self._controllerName = "UISeasonTransitions"
   self._controller = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressTransitions.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpressTransitions:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressTransitions.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMapExpressTransitions:OnPlay()
   if self._content ~= nil then
     self._controller = nil
     self._state = SeasonExpressState.Playing
     if self._content == true then
-      ((GameGlobal.UIStateManager)()):ShowDialog(self._controllerName, function()
-    -- function num : 0_2_0 , upvalues : self
-    self:Next()
-  end
-)
-    else
-      if self._content == false then
-        self._controller = ((GameGlobal.UIStateManager)()):GetController(self._controllerName)
-        if self._controller then
-          (self._controller):Close(function()
-    -- function num : 0_2_1 , upvalues : self
-    (self._controller):CloseDialog()
-    self._controller = nil
-    self:Next()
-  end
-)
-        end
+      GameGlobal.UIStateManager():ShowDialog(self._controllerName, function()
+        self:Next()
+      end)
+    elseif self._content == false then
+      self._controller = GameGlobal.UIStateManager():GetController(self._controllerName)
+      if self._controller then
+        self._controller:Close(function()
+          self._controller:CloseDialog()
+          self._controller = nil
+          self:Next()
+        end)
       end
     end
   end
 end
-
-

@@ -1,140 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/toast_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ToastManager", Singleton)
 ToastManager = ToastManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ToastManager.ShowToast = function(textContent)
-  -- function num : 0_0 , upvalues : _ENV
-  (ToastManager:GetInstance()):_ShowToastText(textContent)
+function ToastManager.ShowToast(textContent)
+  ToastManager:GetInstance():_ShowToastText(textContent)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ToastManager.ShowHomeToast = function(textContent)
-  -- function num : 0_1 , upvalues : _ENV
-  (ToastManager:GetInstance()):_ShowToastTextHome(textContent)
+function ToastManager.ShowHomeToast(textContent)
+  ToastManager:GetInstance():_ShowToastTextHome(textContent)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ToastManager.ShowLockTip = function()
-  -- function num : 0_2 , upvalues : _ENV
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUnlockModule)
-  ;
-  (ToastManager:GetInstance()):_showLockTips()
+function ToastManager.ShowLockTip()
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUnlockModule)
+  ToastManager:GetInstance():_showLockTips()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ToastManager.Init = function(self, uiRootGameObject)
-  -- function num : 0_3 , upvalues : _ENV
-  self._toastRoot = ((uiRootGameObject.transform):Find("UICameras/depth_high/UI/ToastCanvas/ToastRoot")).gameObject
-  self._toastText = (((uiRootGameObject.transform):Find("UICameras/depth_high/UI/ToastCanvas/ToastRoot/Info/ToastText")).gameObject):GetComponent("UILocalizationText")
-  self._toastRootHome = ((uiRootGameObject.transform):Find("UICameras/depth_high/UI/ToastCanvas/ToastRoot_home")).gameObject
-  self._toastTextHome = (((uiRootGameObject.transform):Find("UICameras/depth_high/UI/ToastCanvas/ToastRoot_home/Info/ToastText")).gameObject):GetComponent("UILocalizationText")
-  self._lockTips = ((uiRootGameObject.transform):Find("UICameras/depth_high/UI/UILockTips")).gameObject
+function ToastManager:Init(uiRootGameObject)
+  self._toastRoot = uiRootGameObject.transform:Find("UICameras/depth_high/UI/ToastCanvas/ToastRoot").gameObject
+  self._toastText = uiRootGameObject.transform:Find("UICameras/depth_high/UI/ToastCanvas/ToastRoot/Info/ToastText").gameObject:GetComponent("UILocalizationText")
+  self._toastRootHome = uiRootGameObject.transform:Find("UICameras/depth_high/UI/ToastCanvas/ToastRoot_home").gameObject
+  self._toastTextHome = uiRootGameObject.transform:Find("UICameras/depth_high/UI/ToastCanvas/ToastRoot_home/Info/ToastText").gameObject:GetComponent("UILocalizationText")
+  self._lockTips = uiRootGameObject.transform:Find("UICameras/depth_high/UI/UILockTips").gameObject
   self._original = Vector3(0, 100, 0)
   self._animInteval = 1500
   self._toastEvent = nil
   self._lockEvent = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ToastManager.Dispose = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function ToastManager:Dispose()
   self._toastRoot = nil
   self._toastText = nil
   self._lockTips = nil
-  ;
-  ((ToastManager.super).Dispose)(self)
+  ToastManager.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ToastManager._ShowToastText = function(self, textContent)
-  -- function num : 0_5
+function ToastManager:_ShowToastText(textContent)
   if self._toastRoot and self._toastText then
     self:_UpdateToast(textContent)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ToastManager._ShowToastTextHome = function(self, textContent)
-  -- function num : 0_6
+function ToastManager:_ShowToastTextHome(textContent)
   if self._toastRootHome and self._toastTextHome then
     self:_UpdateToastHome(textContent)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ToastManager._UpdateToast = function(self, textContent)
-  -- function num : 0_7 , upvalues : _ENV
+function ToastManager:_UpdateToast(textContent)
   if self._toastEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._toastEvent)
+    GameGlobal.Timer():CancelEvent(self._toastEvent)
     self._toastEvent = nil
-    ;
-    (self._toastRoot):SetActive(false)
+    self._toastRoot:SetActive(false)
   end
-  ;
-  (self._toastRoot):SetActive(true)
-  ;
-  (self._toastText):SetText(textContent)
-  self._toastEvent = ((GameGlobal.Timer)()):AddEvent(self._animInteval, function()
-    -- function num : 0_7_0 , upvalues : self
-    (self._toastText):SetText("")
-    ;
-    (self._toastRoot):SetActive(false)
+  self._toastRoot:SetActive(true)
+  self._toastText:SetText(textContent)
+  self._toastEvent = GameGlobal.Timer():AddEvent(self._animInteval, function()
+    self._toastText:SetText("")
+    self._toastRoot:SetActive(false)
     self._toastEvent = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ToastManager._UpdateToastHome = function(self, textContent)
-  -- function num : 0_8 , upvalues : _ENV
+function ToastManager:_UpdateToastHome(textContent)
   if self._toastEventHome then
-    ((GameGlobal.Timer)()):CancelEvent(self._toastEventHome)
+    GameGlobal.Timer():CancelEvent(self._toastEventHome)
     self._toastEventHome = nil
-    ;
-    (self._toastRootHome):SetActive(false)
+    self._toastRootHome:SetActive(false)
   end
-  ;
-  (self._toastRootHome):SetActive(true)
-  ;
-  (self._toastTextHome):SetText(textContent)
-  self._toastEventHome = ((GameGlobal.Timer)()):AddEvent(self._animInteval, function()
-    -- function num : 0_8_0 , upvalues : self
-    (self._toastTextHome):SetText("")
-    ;
-    (self._toastRootHome):SetActive(false)
+  self._toastRootHome:SetActive(true)
+  self._toastTextHome:SetText(textContent)
+  self._toastEventHome = GameGlobal.Timer():AddEvent(self._animInteval, function()
+    self._toastTextHome:SetText("")
+    self._toastRootHome:SetActive(false)
     self._toastEventHome = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ToastManager._showLockTips = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function ToastManager:_showLockTips()
   if self._lockEvent ~= nil then
-    return 
+    return
   end
-  ;
-  (self._lockTips):SetActive(true)
-  self._lockEvent = ((GameGlobal.Timer)()):AddEvent(2000, function()
-    -- function num : 0_9_0 , upvalues : self
-    (self._lockTips):SetActive(false)
+  self._lockTips:SetActive(true)
+  self._lockEvent = GameGlobal.Timer():AddEvent(2000, function()
+    self._lockTips:SetActive(false)
     self._lockEvent = nil
-  end
-)
+  end)
 end
-
-

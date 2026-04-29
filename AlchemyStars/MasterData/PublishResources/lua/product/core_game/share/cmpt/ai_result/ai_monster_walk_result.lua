@@ -1,103 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/ai_result/ai_monster_walk_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("WalkTriggerTrapResult", Object)
 WalkTriggerTrapResult = WalkTriggerTrapResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-WalkTriggerTrapResult.Constructor = function(self)
-  -- function num : 0_0
+function WalkTriggerTrapResult:Constructor()
   self._trapEntityID = -1
   self._skillResult = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-WalkTriggerTrapResult.SetTrapEntityID = function(self, id)
-  -- function num : 0_1
+function WalkTriggerTrapResult:SetTrapEntityID(id)
   self._trapEntityID = id
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-WalkTriggerTrapResult.GetTrapEntityID = function(self)
-  -- function num : 0_2
+function WalkTriggerTrapResult:GetTrapEntityID()
   return self._trapEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-WalkTriggerTrapResult.SetTrapResult = function(self, res)
-  -- function num : 0_3
+function WalkTriggerTrapResult:SetTrapResult(res)
   self._skillResult = res
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-WalkTriggerTrapResult.GetTrapResult = function(self)
-  -- function num : 0_4
+function WalkTriggerTrapResult:GetTrapResult()
   return self._skillResult
 end
 
 _class("MonsterWalkResult", Object)
 MonsterWalkResult = MonsterWalkResult
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterWalkResult.Constructor = function(self)
-  -- function num : 0_5
+function MonsterWalkResult:Constructor()
   self._walkPos = nil
   self._trapResultList = {}
   self._passedPosList = {}
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWalkResult.GetWalkPos = function(self)
-  -- function num : 0_6
+function MonsterWalkResult:GetWalkPos()
   return self._walkPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWalkResult.SetWalkPos = function(self, pos)
-  -- function num : 0_7
+function MonsterWalkResult:SetWalkPos(pos)
   self._walkPos = pos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWalkResult.GetWalkTrapResultList = function(self)
-  -- function num : 0_8
+function MonsterWalkResult:GetWalkTrapResultList()
   return self._trapResultList
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWalkResult.AddWalkTrap = function(self, trapEntityID, skillResult)
-  -- function num : 0_9 , upvalues : _ENV
+function MonsterWalkResult:AddWalkTrap(trapEntityID, skillResult)
   local res = WalkTriggerTrapResult:New()
   res:SetTrapEntityID(trapEntityID)
   res:SetTrapResult(skillResult)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._trapResultList)[#self._trapResultList + 1] = res
+  self._trapResultList[#self._trapResultList + 1] = res
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWalkResult.SetWalkPassedGrid = function(self, grids)
-  -- function num : 0_10
+function MonsterWalkResult:SetWalkPassedGrid(grids)
   self._passedPosList = grids
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterWalkResult.GetWalkPassedGrid = function(self)
-  -- function num : 0_11
+function MonsterWalkResult:GetWalkPassedGrid()
   return self._passedPosList
 end
-
-

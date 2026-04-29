@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/buff/ui_season_buff_progress_cell_s2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuffProgressCellS2", UICustomWidget)
 UISeasonBuffProgressCellS2 = UISeasonBuffProgressCellS2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuffProgressCellS2.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuffProgressCellS2:OnShow(uiParams)
   self.bgGo = self:GetGameObject("Bg")
   self.frontGo = self:GetGameObject("Front")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuffProgressCellS2.SetData = function(self, index, isOn)
-  -- function num : 0_1
+function UISeasonBuffProgressCellS2:SetData(index, isOn)
   self._index = index
-  ;
-  (self.frontGo):SetActive(isOn)
+  self.frontGo:SetActive(isOn)
 end
-
-

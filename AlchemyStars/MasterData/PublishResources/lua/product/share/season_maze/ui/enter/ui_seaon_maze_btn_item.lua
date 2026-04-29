@@ -1,95 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/enter/ui_seaon_maze_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeaonMazeBtnItem", UICustomWidget)
 UISeaonMazeBtnItem = UISeaonMazeBtnItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeaonMazeBtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeaonMazeBtnItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeaonMazeBtnItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeaonMazeBtnItem:InitWidget()
   self.seasonMazeBtnNew = self:GetGameObject("SeasonMazeBtnNew")
   self.uISeaonMazeBtnItem = self:GetGameObject("UISeaonMazeBtnItem")
   self.point = self:GetGameObject("Point")
-  ;
-  (self.point):SetActive(false)
+  self.point:SetActive(false)
   self.Over = self:GetGameObject("Over")
-  ;
-  (self.Over):SetActive(false)
+  self.Over:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeaonMazeBtnItem.SetData = function(self, id, action, first, cb)
-  -- function num : 0_2 , upvalues : _ENV
+function UISeaonMazeBtnItem:SetData(id, action, first, cb)
   self.cb = cb
-  self._seasonMazeModule = (GameGlobal.GetModule)(SeasonMazeModule)
+  self._seasonMazeModule = GameGlobal.GetModule(SeasonMazeModule)
   if self._seasonMazeModule == nil then
-    (self.uISeaonMazeBtnItem):SetActive(false)
-    return 
+    self.uISeaonMazeBtnItem:SetActive(false)
+    return
   end
-  self._sample = (self._seasonMazeModule):GetCurSample()
+  self._sample = self._seasonMazeModule:GetCurSample()
   if self._sample == nil then
-    (self.uISeaonMazeBtnItem):SetActive(false)
-    return 
+    self.uISeaonMazeBtnItem:SetActive(false)
+    return
   end
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (self._svrTimeModule):GetServerTime() * 0.001
-  local endTime = (self._sample).end_time
-  if endTime < curTime then
-    (self.Over):SetActive(true)
-    return 
+  local curTime = self._svrTimeModule:GetServerTime() * 0.001
+  local endTime = self._sample.end_time
+  if curTime > endTime then
+    self.Over:SetActive(true)
+    return
   end
-  if not (self._sample).is_open then
-    (self.uISeaonMazeBtnItem):SetActive(false)
-    return 
+  if not self._sample.is_open then
+    self.uISeaonMazeBtnItem:SetActive(false)
+    return
   end
-  ;
-  (self.uISeaonMazeBtnItem):SetActive(true)
-  ;
-  (self.seasonMazeBtnNew):SetActive(false)
+  self.uISeaonMazeBtnItem:SetActive(true)
+  self.seasonMazeBtnNew:SetActive(false)
   local new, red = self:CheckNewAndRed()
   if new then
-    (self.seasonMazeBtnNew):SetActive(true)
+    self.seasonMazeBtnNew:SetActive(true)
   end
   if red then
-    (self.point):SetActive(true)
+    self.point:SetActive(true)
   else
-    ;
-    (self.point):SetActive(false)
+    self.point:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeaonMazeBtnItem.CheckNewAndRed = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeaonMazeBtnItem:CheckNewAndRed()
   local new = false
   local red = false
-  if not (UIActivityHelper.HasLocalDB)("UISeasonMazeEnterController_Processs_New") then
+  if not UIActivityHelper.HasLocalDB("UISeasonMazeEnterController_Processs_New") then
     new = true
   end
-  if not (UIActivityHelper.HasLocalDB)("UISeasonMazeEnterController_HandBook_New") then
+  if not UIActivityHelper.HasLocalDB("UISeasonMazeEnterController_HandBook_New") then
     new = true
   end
-  if not (UIActivityHelper.HasLocalDB)("UISeasonMazeEnterController_BanPet_New") then
+  if not UIActivityHelper.HasLocalDB("UISeasonMazeEnterController_BanPet_New") then
     new = true
   end
-  if (LocalDB.HasKey)("UISeasonMazeEnterController_Boss_New") and (LocalDB.GetInt)("UISeasonMazeEnterController_Boss_New") == 1 then
+  if LocalDB.HasKey("UISeasonMazeEnterController_Boss_New") and LocalDB.GetInt("UISeasonMazeEnterController_Boss_New") == 1 then
     new = true
   end
-  if not (LocalDB.HasKey)("UISeasonMazeEnterController_Enter_Game_New") and (self._sample):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
+  if not LocalDB.HasKey("UISeasonMazeEnterController_Enter_Game_New") and self._sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
     new = true
   end
-  if (self._sample):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD) then
+  if self._sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_REWARD) then
     red = true
   end
   if new then
@@ -98,39 +77,29 @@ UISeaonMazeBtnItem.CheckNewAndRed = function(self)
   return new, red
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeaonMazeBtnItem.BgOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+function UISeaonMazeBtnItem:BgOnClick(go)
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   if seasonModule:CheckSeasonClose_ShowClientError(self._seasonId) then
-    return 
+    return
   end
-  if (self.Over).activeSelf then
-    return 
+  if self.Over.activeSelf then
+    return
   end
-  self._sample = (self._seasonMazeModule):GetCurSample()
+  self._sample = self._seasonMazeModule:GetCurSample()
   if self._sample == nil then
-    (self.uISeaonMazeBtnItem):SetActive(false)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_world_boss_season_end"))
-    return 
+    self.uISeaonMazeBtnItem:SetActive(false)
+    ToastManager.ShowToast(StringTable.Get("str_world_boss_season_end"))
+    return
   end
-  if not (self._sample).is_open then
-    (self.uISeaonMazeBtnItem):SetActive(false)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_world_boss_season_end"))
-    return 
+  if not self._sample.is_open then
+    self.uISeaonMazeBtnItem:SetActive(false)
+    ToastManager.ShowToast(StringTable.Get("str_world_boss_season_end"))
+    return
   end
   self:ShowDialog("UISeasonMazeEnterController", function()
-    -- function num : 0_4_0 , upvalues : self
     if self.cb then
-      (self.cb)()
+      self.cb()
     end
-  end
-)
-  ;
-  (UIActivityHelper.SetLocalDB)("S5SeasonMazeBtnNew")
+  end)
+  UIActivityHelper.SetLocalDB("S5SeasonMazeBtnNew")
 end
-
-

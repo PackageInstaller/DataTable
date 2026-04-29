@@ -1,61 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_monster_move_grid_to_skill_range_far.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectMonsterMoveGridToSkillRangeFarResult", SkillEffectResultBase)
 SkillEffectMonsterMoveGridToSkillRangeFarResult = SkillEffectMonsterMoveGridToSkillRangeFarResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectMonsterMoveGridToSkillRangeFarResult.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectMonsterMoveGridToSkillRangeFarResult:GetEffectType()
   return SkillEffectType.MonsterMoveGridToSkillRangeFar
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridToSkillRangeFarResult.Constructor = function(self, walkResultList, isDead)
-  -- function num : 0_1
+function SkillEffectMonsterMoveGridToSkillRangeFarResult:Constructor(walkResultList, isDead)
   self._walkResultList = walkResultList
   self._isDead = isDead
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridToSkillRangeFarResult.GetWalkResultList = function(self)
-  -- function num : 0_2
+function SkillEffectMonsterMoveGridToSkillRangeFarResult:GetWalkResultList()
   return self._walkResultList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectMonsterMoveGridToSkillRangeFarResult.IsCasterDead = function(self)
-  -- function num : 0_3
+function SkillEffectMonsterMoveGridToSkillRangeFarResult:IsCasterDead()
   return self._isDead
 end
 
 _class("MonsterMoveSkillRangeFarResult", MonsterWalkResult)
 MonsterMoveSkillRangeFarResult = MonsterMoveSkillRangeFarResult
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterMoveSkillRangeFarResult.Constructor = function(self)
-  -- function num : 0_4
+function MonsterMoveSkillRangeFarResult:Constructor()
   self._flushTrapID = nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSkillRangeFarResult.SetFlushTrapID = function(self, trapID)
-  -- function num : 0_5
+function MonsterMoveSkillRangeFarResult:SetFlushTrapID(trapID)
   self._flushTrapID = trapID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterMoveSkillRangeFarResult.GetFlushTrapID = function(self)
-  -- function num : 0_6
+function MonsterMoveSkillRangeFarResult:GetFlushTrapID()
   return self._flushTrapID
 end
-
-

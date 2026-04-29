@@ -1,63 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamBase", Object)
 FeatureEffectParamBase = FeatureEffectParamBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamBase.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamBase:Constructor(t)
   self._oriData = t
   self._featureTypeBySet = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBase.SetFeatureType = function(self, featureType)
-  -- function num : 0_1
+function FeatureEffectParamBase:SetFeatureType(featureType)
   self._featureTypeBySet = featureType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBase.GetFeatureType = function(self)
-  -- function num : 0_2
+function FeatureEffectParamBase:GetFeatureType()
   return self._featureTypeBySet or -1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBase._RefreshData = function(self, t)
-  -- function num : 0_3
+function FeatureEffectParamBase:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBase.ReplaceByCustomCfg = function(self, t)
-  -- function num : 0_4
+function FeatureEffectParamBase:ReplaceByCustomCfg(t)
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBase.CopyFrom = function(self, param)
-  -- function num : 0_5 , upvalues : _ENV
+function FeatureEffectParamBase:CopyFrom(param)
   if param then
-    for k,v in pairs(param) do
+    for k, v in pairs(param) do
       self[k] = v
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamBase.CloneSelf = function(self)
-  -- function num : 0_6
+function FeatureEffectParamBase:CloneSelf()
   local param = self:New()
   param:CopyFrom(self)
   return param
 end
-
-

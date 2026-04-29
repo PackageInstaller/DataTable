@@ -1,98 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/game_block/main/ui_s4_trade_game_main_choice_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS4TradeGameMainChoiceItem", UICustomWidget)
 UIS4TradeGameMainChoiceItem = UIS4TradeGameMainChoiceItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS4TradeGameMainChoiceItem.Constructor = function(self)
-  -- function num : 0_0
+function UIS4TradeGameMainChoiceItem:Constructor()
   self._isSelect = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIS4TradeGameMainChoiceItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIS4TradeGameMainChoiceItem:_GetComponents()
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._infoGroup = self:GetUIComponent("UISelectObjectPath", "infoGroup")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._selectMark = self:GetUIComponent("Image", "selectMark")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceItem.SetData = function(self, tradeData, group, selectCB)
-  -- function num : 0_3
+function UIS4TradeGameMainChoiceItem:SetData(tradeData, group, selectCB)
   self._tradeData = tradeData
   self._group = group
   self._selectCB = selectCB
   self:_InitComponents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceItem._InitComponents = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._infos = (self._infoGroup):SpawnObjects("UIS4TradeGameMainChoiceInfoItem", (table.count)(self._group))
-  for i,infoItem in pairs(self._infos) do
-    infoItem:SetData((self._group)[i], i == (table.count)(self._infos))
+function UIS4TradeGameMainChoiceItem:_InitComponents()
+  self._infos = self._infoGroup:SpawnObjects("UIS4TradeGameMainChoiceInfoItem", table.count(self._group))
+  for i, infoItem in pairs(self._infos) do
+    infoItem:SetData(self._group[i], i == table.count(self._infos))
   end
-  ;
-  (self._title):SetText((StringTable.Get)(((Cfg.cfg_component_business_option)[((self._group)[1]).optionID]).OptionName))
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._title:SetText(StringTable.Get(Cfg.cfg_component_business_option[self._group[1].optionID].OptionName))
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceItem.SetSelect = function(self, isSelect)
-  -- function num : 0_5 , upvalues : _ENV
+function UIS4TradeGameMainChoiceItem:SetSelect(isSelect)
   if self._isSelect == isSelect then
-    return 
+    return
   end
   self._isSelect = isSelect
-  for _,info in pairs(self._infos) do
+  for _, info in pairs(self._infos) do
     info:SetSelect(isSelect)
   end
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R2 in 'UnsetPending'
-
   if isSelect then
-    (self._title).color = Color(0.89019607843137, 0.86274509803922, 0.7843137254902)
-    ;
-    (self._selectMark):DOFade(1, 0.3)
+    self._title.color = Color(0.8901960784313725, 0.8627450980392157, 0.7843137254901961)
+    self._selectMark:DOFade(1, 0.3)
   else
-    -- DECOMPILER ERROR at PC35: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._title).color = Color(0.34509803921569, 0.27843137254902, 0.25490196078431)
-    ;
-    (self._selectMark):DOFade(0, 0.3)
+    self._title.color = Color(0.34509803921568627, 0.2784313725490196, 0.2549019607843137)
+    self._selectMark:DOFade(0, 0.3)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceItem.GetOptionDataTb = function(self)
-  -- function num : 0_6
+function UIS4TradeGameMainChoiceItem:GetOptionDataTb()
   return self._group
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS4TradeGameMainChoiceItem.BtnOnClick = function(self)
-  -- function num : 0_7
+function UIS4TradeGameMainChoiceItem:BtnOnClick()
   if self._selectCB then
-    (self._selectCB)(self)
+    self._selectCB(self)
   end
 end
-
-

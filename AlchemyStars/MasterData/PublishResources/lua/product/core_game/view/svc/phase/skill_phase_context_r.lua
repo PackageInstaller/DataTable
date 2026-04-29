@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/skill_phase_context_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPhaseContext", Object)
 SkillPhaseContext = SkillPhaseContext
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseContext.Constructor = function(self, world, casterEntity)
-  -- function num : 0_0
+function SkillPhaseContext:Constructor(world, casterEntity)
   self._world = world
   self._casterEntity = casterEntity
   self._curDamageResultIndex = 1
@@ -29,233 +22,131 @@ SkillPhaseContext.Constructor = function(self, world, casterEntity)
   self._curSummonOnFixPosIndex = 1
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurDamageResultIndex = function(self, damageIndex)
-  -- function num : 0_1
+function SkillPhaseContext:SetCurDamageResultIndex(damageIndex)
   self._curDamageResultIndex = damageIndex
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurDamageResultIndex = function(self)
-  -- function num : 0_2
+function SkillPhaseContext:GetCurDamageResultIndex()
   return self._curDamageResultIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurDamageResultStageIndex = function(self, damageStageIndex)
-  -- function num : 0_3
+function SkillPhaseContext:SetCurDamageResultStageIndex(damageStageIndex)
   self._curDamageResultStageIndex = damageStageIndex
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurDamageResultStageIndex = function(self)
-  -- function num : 0_4
+function SkillPhaseContext:GetCurDamageResultStageIndex()
   return self._curDamageResultStageIndex
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurBuffResultIndex = function(self, buffIndex)
-  -- function num : 0_5
+function SkillPhaseContext:SetCurBuffResultIndex(buffIndex)
   self._curBuffResultIndex = buffIndex
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurBuffResultIndex = function(self)
-  -- function num : 0_6
+function SkillPhaseContext:GetCurBuffResultIndex()
   return self._curBuffResultIndex
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurDamageInfoIndex = function(self, damageInfoIndex)
-  -- function num : 0_7
+function SkillPhaseContext:SetCurDamageInfoIndex(damageInfoIndex)
   self._curDamageInfoIndex = damageInfoIndex
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurDamageInfoIndex = function(self)
-  -- function num : 0_8
+function SkillPhaseContext:GetCurDamageInfoIndex()
   return self._curDamageInfoIndex
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurSummonInEverythingIndex = function(self, index)
-  -- function num : 0_9
+function SkillPhaseContext:SetCurSummonInEverythingIndex(index)
   self._curSummonInEverythingIndex = index
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurSummonInEverythingIndex = function(self)
-  -- function num : 0_10
+function SkillPhaseContext:GetCurSummonInEverythingIndex()
   return self._curSummonInEverythingIndex
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurSummonOnFixPosIndex = function(self, index)
-  -- function num : 0_11
+function SkillPhaseContext:SetCurSummonOnFixPosIndex(index)
   self._curSummonOnFixPosIndex = index
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurSummonOnFixPosIndex = function(self)
-  -- function num : 0_12
+function SkillPhaseContext:GetCurSummonOnFixPosIndex()
   return self._curSummonOnFixPosIndex
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurTargetEntityID = function(self)
-  -- function num : 0_13
+function SkillPhaseContext:GetCurTargetEntityID()
   return self._curTargetEntityID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurTargetEntityID = function(self, targetID)
-  -- function num : 0_14
+function SkillPhaseContext:SetCurTargetEntityID(targetID)
   self._curTargetEntityID = targetID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.AddPhaseTask = function(self, taskID)
-  -- function num : 0_15
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._waitTaskList)[#self._waitTaskList + 1] = taskID
+function SkillPhaseContext:AddPhaseTask(taskID)
+  self._waitTaskList[#self._waitTaskList + 1] = taskID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetPhaseTaskList = function(self)
-  -- function num : 0_16
+function SkillPhaseContext:GetPhaseTaskList()
   return self._waitTaskList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurGridPos = function(self)
-  -- function num : 0_17
+function SkillPhaseContext:GetCurGridPos()
   return self._curGridPos
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurGridPos = function(self, gridPos)
-  -- function num : 0_18
+function SkillPhaseContext:SetCurGridPos(gridPos)
   self._curGridPos = gridPos
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetScopeGridList = function(self, gridPosArr)
-  -- function num : 0_19
+function SkillPhaseContext:SetScopeGridList(gridPosArr)
   self._scopeGridList = gridPosArr
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetScopeGridRange = function(self, gridRange, maxRangeCount)
-  -- function num : 0_20
+function SkillPhaseContext:SetScopeGridRange(gridRange, maxRangeCount)
   self._scopeGridRange = gridRange
   self._maxRangeCount = maxRangeCount
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetScopeGridRange = function(self)
-  -- function num : 0_21
+function SkillPhaseContext:GetScopeGridRange()
   return self._scopeGridRange
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetMaxRangeCount = function(self)
-  -- function num : 0_22
+function SkillPhaseContext:GetMaxRangeCount()
   return self._maxRangeCount
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurScopeGridRangeIndex = function(self, index)
-  -- function num : 0_23
+function SkillPhaseContext:SetCurScopeGridRangeIndex(index)
   self._curScopeGridRangeIndex = index
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurScopeGridRangeIndex = function(self)
-  -- function num : 0_24
+function SkillPhaseContext:GetCurScopeGridRangeIndex()
   return self._curScopeGridRangeIndex
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetHUDTargets = function(self)
-  -- function num : 0_25
+function SkillPhaseContext:GetHUDTargets()
   return self._eHUDTargets
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetHUDTargets = function(self, huds)
-  -- function num : 0_26
+function SkillPhaseContext:SetHUDTargets(huds)
   self._eHUDTargets = huds
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurResultIndexByType = function(self, effectType, index)
-  -- function num : 0_27
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._curEffectResultMap)[effectType] = index
+function SkillPhaseContext:SetCurResultIndexByType(effectType, index)
+  self._curEffectResultMap[effectType] = index
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurResultIndexByType = function(self, effectType)
-  -- function num : 0_28
-  return (self._curEffectResultMap)[effectType] or -1
+function SkillPhaseContext:GetCurResultIndexByType(effectType)
+  return self._curEffectResultMap[effectType] or -1
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetSpecialScopeResultList = function(self, specialScopeResultList)
-  -- function num : 0_29
+function SkillPhaseContext:SetSpecialScopeResultList(specialScopeResultList)
   self._specialScopeResultList = specialScopeResultList
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetSpecialScopeResultList = function(self)
-  -- function num : 0_30
+function SkillPhaseContext:GetSpecialScopeResultList()
   return self._specialScopeResultList
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.SetCurDamageIndex = function(self, damageIndex)
-  -- function num : 0_31
+function SkillPhaseContext:SetCurDamageIndex(damageIndex)
   self._curDamageIndex = damageIndex
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseContext.GetCurDamageIndex = function(self)
-  -- function num : 0_32
+function SkillPhaseContext:GetCurDamageIndex()
   return self._curDamageIndex
 end
-
-

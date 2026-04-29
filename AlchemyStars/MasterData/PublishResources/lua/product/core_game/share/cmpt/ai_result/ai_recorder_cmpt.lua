@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/ai_result/ai_recorder_cmpt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AIRecorderComponent", Object)
 AIRecorderComponent = AIRecorderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AIRecorderComponent.Constructor = function(self)
-  -- function num : 0_0
+function AIRecorderComponent:Constructor()
   self._aiResultCollectionDict = nil
   self._aiCastSkillSequece = nil
   self._aiWalkSequence = nil
@@ -20,10 +13,7 @@ AIRecorderComponent.Constructor = function(self)
   self._parallelPlayResultCollectionDict = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.ClearAIRecorder = function(self)
-  -- function num : 0_1
+function AIRecorderComponent:ClearAIRecorder()
   self._aiResultCollectionDict = nil
   self._aiCastSkillSequece = nil
   self._aiWalkSequence = nil
@@ -34,137 +24,91 @@ AIRecorderComponent.ClearAIRecorder = function(self)
   self._orderRotateBodyAreaSequence = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.AddOrderResult = function(self, order)
-  -- function num : 0_2
-  local res = (self._orderResultList)[order]
+function AIRecorderComponent:AddOrderResult(order)
+  local res = self._orderResultList[order]
   if res then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._orderResultList)[order] = {}
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._orderCastSkillSequence)[order] = {}
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._orderWalkSequence)[order] = {}
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._orderRotateBodyAreaSequence)[order] = {}
-  self._aiResultCollectionDict = (self._orderResultList)[order]
-  self._aiCastSkillSequece = (self._orderCastSkillSequence)[order]
-  self._aiWalkSequence = (self._orderWalkSequence)[order]
-  self._aiRotateBodyAreaSequence = (self._orderRotateBodyAreaSequence)[order]
+  self._orderResultList[order] = {}
+  self._orderCastSkillSequence[order] = {}
+  self._orderWalkSequence[order] = {}
+  self._orderRotateBodyAreaSequence[order] = {}
+  self._aiResultCollectionDict = self._orderResultList[order]
+  self._aiCastSkillSequece = self._orderCastSkillSequence[order]
+  self._aiWalkSequence = self._orderWalkSequence[order]
+  self._aiRotateBodyAreaSequence = self._orderRotateBodyAreaSequence[order]
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.AddRotateBodyAreaResult = function(self, casterEntityID, aiResult)
-  -- function num : 0_3 , upvalues : _ENV
-  if not (table.icontains)(self._aiRotateBodyAreaSequence, casterEntityID) then
-    (table.insert)(self._aiRotateBodyAreaSequence, casterEntityID)
+function AIRecorderComponent:AddRotateBodyAreaResult(casterEntityID, aiResult)
+  if not table.icontains(self._aiRotateBodyAreaSequence, casterEntityID) then
+    table.insert(self._aiRotateBodyAreaSequence, casterEntityID)
   end
-  local collection = (self._aiResultCollectionDict)[casterEntityID]
+  local collection = self._aiResultCollectionDict[casterEntityID]
   if not collection then
     collection = AIResultCollection:New()
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._aiResultCollectionDict)[casterEntityID] = collection
+    self._aiResultCollectionDict[casterEntityID] = collection
   end
   collection:AddRotateBodyAreaResult(aiResult)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.AddWalkResult = function(self, casterEntityID, aiResult)
-  -- function num : 0_4 , upvalues : _ENV
-  if not (table.icontains)(self._aiWalkSequence, casterEntityID) then
-    (table.insert)(self._aiWalkSequence, casterEntityID)
+function AIRecorderComponent:AddWalkResult(casterEntityID, aiResult)
+  if not table.icontains(self._aiWalkSequence, casterEntityID) then
+    table.insert(self._aiWalkSequence, casterEntityID)
   end
-  local collection = (self._aiResultCollectionDict)[casterEntityID]
+  local collection = self._aiResultCollectionDict[casterEntityID]
   if not collection then
     collection = AIResultCollection:New()
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._aiResultCollectionDict)[casterEntityID] = collection
+    self._aiResultCollectionDict[casterEntityID] = collection
   end
   collection:AddWalkResult(aiResult)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.FindWalkResultByCasterID = function(self, casterEntityID)
-  -- function num : 0_5
+function AIRecorderComponent:FindWalkResultByCasterID(casterEntityID)
   if self._aiResultCollectionDict then
-    return (self._aiResultCollectionDict)[casterEntityID]
+    return self._aiResultCollectionDict[casterEntityID]
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.AddNormalAttackResult = function(self, casterEntityID, aiResult)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (table.icontains)(self._aiWalkSequence, casterEntityID) then
-    (table.insert)(self._aiWalkSequence, casterEntityID)
+function AIRecorderComponent:AddNormalAttackResult(casterEntityID, aiResult)
+  if not table.icontains(self._aiWalkSequence, casterEntityID) then
+    table.insert(self._aiWalkSequence, casterEntityID)
   end
-  local collection = (self._aiResultCollectionDict)[casterEntityID]
+  local collection = self._aiResultCollectionDict[casterEntityID]
   if not collection then
     collection = AIResultCollection:New()
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._aiResultCollectionDict)[casterEntityID] = collection
+    self._aiResultCollectionDict[casterEntityID] = collection
   end
   collection:AddNormalAttackResult(aiResult)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.GetAISpellResultByCasterEntityID = function(self, casterEntityID)
-  -- function num : 0_7 , upvalues : _ENV
+function AIRecorderComponent:GetAISpellResultByCasterEntityID(casterEntityID)
   local ret = {}
-  for order,aiCastSkillQueue in pairs(self._orderResultList) do
+  for order, aiCastSkillQueue in pairs(self._orderResultList) do
     local collection = aiCastSkillQueue[casterEntityID]
     if collection then
       local aiResultList = collection:GetSpellResultList()
-      ;
-      (table.appendArray)(ret, aiResultList)
+      table.appendArray(ret, aiResultList)
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.GetAllParallelSpellResultList = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function AIRecorderComponent:GetAllParallelSpellResultList()
   local ret = {}
-  for order,aiCastSkillQueue in pairs(self._orderResultList) do
-    for k,collection in pairs(aiCastSkillQueue) do
+  for order, aiCastSkillQueue in pairs(self._orderResultList) do
+    for k, collection in pairs(aiCastSkillQueue) do
       local aiResultList = collection:GetSpellResultList()
-      for _,aiResult in ipairs(aiResultList) do
+      for _, aiResult in ipairs(aiResultList) do
         local parallelID = aiResult:GetParallelID()
         if parallelID then
           if not ret[parallelID] then
             ret[parallelID] = {}
           end
           local casterID = aiResult:GetCasterEntityID()
-          -- DECOMPILER ERROR at PC32: Confused about usage of register: R20 in 'UnsetPending'
-
-          if not (ret[parallelID])[casterID] then
-            (ret[parallelID])[casterID] = {}
+          if not ret[parallelID][casterID] then
+            ret[parallelID][casterID] = {}
           end
-          ;
-          (table.insert)((ret[parallelID])[casterID], aiResult)
+          table.insert(ret[parallelID][casterID], aiResult)
         end
       end
     end
@@ -172,122 +116,72 @@ AIRecorderComponent.GetAllParallelSpellResultList = function(self)
   return ret
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.AddSpellResult = function(self, casterEntityID, aiResult)
-  -- function num : 0_9 , upvalues : _ENV
-  if not (table.icontains)(self._aiCastSkillSequece, casterEntityID) then
-    (table.insert)(self._aiCastSkillSequece, casterEntityID)
+function AIRecorderComponent:AddSpellResult(casterEntityID, aiResult)
+  if not table.icontains(self._aiCastSkillSequece, casterEntityID) then
+    table.insert(self._aiCastSkillSequece, casterEntityID)
   end
-  local collection = (self._aiResultCollectionDict)[casterEntityID]
+  local collection = self._aiResultCollectionDict[casterEntityID]
   if not collection then
     collection = AIResultCollection:New()
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._aiResultCollectionDict)[casterEntityID] = collection
+    self._aiResultCollectionDict[casterEntityID] = collection
   end
   collection:AddSpellResult(aiResult)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.GetOrderList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function AIRecorderComponent:GetOrderList()
   local list = {}
-  for order,res in pairs(self._orderResultList) do
+  for order, res in pairs(self._orderResultList) do
     list[#list + 1] = order
   end
-  ;
-  (table.sort)(list)
+  table.sort(list)
   return list
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.SetCurrentOrder = function(self, order)
-  -- function num : 0_11
-  self._aiResultCollectionDict = (self._orderResultList)[order]
-  self._aiCastSkillSequece = (self._orderCastSkillSequence)[order]
-  self._aiWalkSequence = (self._orderWalkSequence)[order]
-  self._aiRotateBodyAreaSequence = (self._orderRotateBodyAreaSequence)[order]
+function AIRecorderComponent:SetCurrentOrder(order)
+  self._aiResultCollectionDict = self._orderResultList[order]
+  self._aiCastSkillSequece = self._orderCastSkillSequence[order]
+  self._aiWalkSequence = self._orderWalkSequence[order]
+  self._aiRotateBodyAreaSequence = self._orderRotateBodyAreaSequence[order]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.GetAICasterIDList = function(self)
-  -- function num : 0_12
-  if not self._aiCastSkillSequece then
-    return {}
-  end
+function AIRecorderComponent:GetAICasterIDList()
+  return self._aiCastSkillSequece or {}
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.GetAIWalkerIDList = function(self)
-  -- function num : 0_13
-  if not self._aiWalkSequence then
-    return {}
-  end
+function AIRecorderComponent:GetAIWalkerIDList()
+  return self._aiWalkSequence or {}
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.GetAIRotateBodyAreaIDList = function(self)
-  -- function num : 0_14
-  if not self._aiRotateBodyAreaSequence then
-    return {}
-  end
+function AIRecorderComponent:GetAIRotateBodyAreaIDList()
+  return self._aiRotateBodyAreaSequence or {}
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-AIRecorderComponent.GetAIResultCollection = function(self, casterEntityID)
-  -- function num : 0_15
-  return (self._aiResultCollectionDict)[casterEntityID]
+function AIRecorderComponent:GetAIResultCollection(casterEntityID)
+  return self._aiResultCollectionDict[casterEntityID]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AIRecorder = function(self)
-  -- function num : 0_16
-  return self:GetComponent((self.WEComponentsEnum).AIRecorder)
+function Entity:AIRecorder()
+  return self:GetComponent(self.WEComponentsEnum.AIRecorder)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasAIRecorder = function(self)
-  -- function num : 0_17
-  return self:HasComponent((self.WEComponentsEnum).AIRecorder)
+function Entity:HasAIRecorder()
+  return self:HasComponent(self.WEComponentsEnum.AIRecorder)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddAIRecorder = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AIRecorder
+function Entity:AddAIRecorder()
+  local index = self.WEComponentsEnum.AIRecorder
   local component = AIRecorderComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceAIRecorder = function(self, component)
-  -- function num : 0_19 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).AIRecorder
-  if not component then
-    component = AIRecorderComponent:New()
-  end
+function Entity:ReplaceAIRecorder(component)
+  local index = self.WEComponentsEnum.AIRecorder
+  component = component or AIRecorderComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveAIRecorder = function(self)
-  -- function num : 0_20
+function Entity:RemoveAIRecorder()
   if self:HasAIRecorder() then
-    self:RemoveComponent((self.WEComponentsEnum).AIRecorder)
+    self:RemoveComponent(self.WEComponentsEnum.AIRecorder)
   end
 end
-
-

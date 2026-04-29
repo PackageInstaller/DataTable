@@ -1,51 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_add_layer_by_scope_grid_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddLayerByScopeGridCount", BuffLogicBase)
 BuffLogicAddLayerByScopeGridCount = BuffLogicAddLayerByScopeGridCount
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddLayerByScopeGridCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddLayerByScopeGridCount:Constructor(buffInstance, logicParam)
   self._gridType = logicParam.gridType
   self._perGridCount = logicParam.perGridCount
   self._perLayerCount = logicParam.perLayerCount
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._buffInstance)._buffLayerName = ((self._buffInstance)._buffsvc):GetBuffLayerName(self._layerType)
-    self._dontDisplay = logicParam.dontDisplay
-  end
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._buffInstance._buffLayerName = self._buffInstance._buffsvc:GetBuffLayerName(self._layerType)
+  self._dontDisplay = logicParam.dontDisplay
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddLayerByScopeGridCount.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicAddLayerByScopeGridCount:DoLogic(notify)
   if notify:GetNotifyType() ~= NotifyType.ActiveSkillAttackStart then
-    return 
+    return
   end
-  local e = (self._buffInstance):Entity()
-  local boardSvc = (self._world):GetService("BoardLogic")
+  local e = self._buffInstance:Entity()
+  local boardSvc = self._world:GetService("BoardLogic")
   local scopeResult = notify:GetScopeResult()
   local scopeRange = scopeResult:GetAttackRange()
   local gridCount = 0
-  for i,pos in ipairs(scopeRange) do
+  for i, pos in ipairs(scopeRange) do
     if boardSvc:GetPieceType(pos) == self._gridType then
       gridCount = gridCount + 1
     end
   end
   local layerAdd = 0
-  while self._perGridCount <= gridCount do
+  while gridCount >= self._perGridCount do
     gridCount = gridCount - self._perGridCount
     layerAdd = layerAdd + self._perLayerCount
   end
-  local svc = (self._world):GetService("BuffLogic")
+  local svc = self._world:GetService("BuffLogic")
   local curMarkLayer, buffinst = svc:AddBuffLayer(e, self._layerType, layerAdd)
   local buffResult = BuffResultAddLayer:New(curMarkLayer, self._dontDisplay)
   local layerName = svc:GetBuffLayerName(self._layerType)
@@ -54,5 +39,3 @@ BuffLogicAddLayerByScopeGridCount.DoLogic = function(self, notify)
   buffResult:SetTotalLayer(totalLayerCount)
   return buffResult
 end
-
-

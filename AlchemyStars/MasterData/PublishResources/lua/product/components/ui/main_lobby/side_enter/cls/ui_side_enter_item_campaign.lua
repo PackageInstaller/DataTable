@@ -1,111 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/cls/ui_side_enter_item_campaign.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UISideEnterItem_Campaign", UISideEnterItem_Base)
 UISideEnterItem_Campaign = UISideEnterItem_Campaign
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItem_Campaign.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISideEnterItem_Campaign:OnShow(uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign.OnHide = function(self)
-  -- function num : 0_1
+function UISideEnterItem_Campaign:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._LoadCampaign = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local campaignType, campaignId = (self._btnCfg).CampaignType, (self._btnCfg).CampaignId
-  local customFunc = (UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc)(campaignType)
+function UISideEnterItem_Campaign:_LoadCampaign(TT)
+  local campaignType, campaignId = self._btnCfg.CampaignType, self._btnCfg.CampaignId
+  local customFunc = UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc(campaignType)
   self._campaign = nil
   if customFunc then
     local res = AsyncRequestRes:New()
-    self._campaign = (UIActivityHelper.LoadCampaign)(TT, res, campaignType, campaignId)
+    self._campaign = UIActivityHelper.LoadCampaign(TT, res, campaignType, campaignId)
   else
-    do
-      self._campaign = (UIActivityHelper.LoadCampaign_Local)(campaignType, campaignId)
-    end
+    self._campaign = UIActivityHelper.LoadCampaign_Local(campaignType, campaignId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._CheckOpen = function(self, TT)
-  -- function num : 0_3
+function UISideEnterItem_Campaign:_CheckOpen(TT)
   self:_LoadCampaign(TT)
-  return (self._campaign):CheckCampaignOpen()
+  return self._campaign:CheckCampaignOpen()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign.GetSideEnterRawImage = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    return cfg.SideEnterIcon
-  end
+function UISideEnterItem_Campaign:GetSideEnterRawImage()
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  return cfg and cfg.SideEnterIcon
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign.DoShow = function(self)
-  -- function num : 0_5
+function UISideEnterItem_Campaign:DoShow()
   self:_SetTitle()
   self:_SetBg()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._CalcNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return (UIActivityHelper.CheckCampaignSampleNewPoint)(self._campaign) and 1 or 0
+function UISideEnterItem_Campaign:_CalcNew()
+  return UIActivityHelper.CheckCampaignSampleNewPoint(self._campaign) and 1 or 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._CalcRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (UIActivityHelper.CheckCampaignSampleRedPoint)(self._campaign) and 1 or 0
+function UISideEnterItem_Campaign:_CalcRed()
+  return UIActivityHelper.CheckCampaignSampleRedPoint(self._campaign) and 1 or 0
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._SetTitle = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local widgetName = (self._btnCfg).AutoUITitle
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    local strId = cfg.CampaignName
-  end
+function UISideEnterItem_Campaign:_SetTitle()
+  local widgetName = self._btnCfg.AutoUITitle
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  local strId = cfg and cfg.CampaignName
   if widgetName and strId then
-    (UIWidgetHelper.SetLocalizationText)(self, widgetName, (StringTable.Get)(strId))
+    UIWidgetHelper.SetLocalizationText(self, widgetName, StringTable.Get(strId))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._SetBg = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local widgetName = (self._btnCfg).AutoUIBg
+function UISideEnterItem_Campaign:_SetBg()
+  local widgetName = self._btnCfg.AutoUIBg
   local sideEnterIcon = self:GetSideEnterRawImage()
   if widgetName and sideEnterIcon then
-    (UIWidgetHelper.SetRawImage)(self, widgetName, sideEnterIcon)
+    UIWidgetHelper.SetRawImage(self, widgetName, sideEnterIcon)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._AttachEvents = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISideEnterItem_Campaign:_AttachEvents()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
@@ -113,10 +70,7 @@ UISideEnterItem_Campaign._AttachEvents = function(self)
   self:AttachEvent(GameEventType.UISideEnterItemRefreshRedNew, self._OnUISideEnterItemRefreshRedNew)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._DetachEvents = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UISideEnterItem_Campaign:_DetachEvents()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
@@ -124,49 +78,32 @@ UISideEnterItem_Campaign._DetachEvents = function(self)
   self:DetachEvent(GameEventType.UISideEnterItemRefreshRedNew, self._OnUISideEnterItemRefreshRedNew)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_12
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UISideEnterItem_Campaign:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._OnQuestUpdate = function(self)
-  -- function num : 0_13
+function UISideEnterItem_Campaign:_OnQuestUpdate()
   if self._campaign then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._OnUISideEnterItemRefreshRedNew = function(self)
-  -- function num : 0_14
+function UISideEnterItem_Campaign:_OnUISideEnterItemRefreshRedNew()
   if self._campaign then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._OnAfterUILayerChanged = function(self)
-  -- function num : 0_15
+function UISideEnterItem_Campaign:_OnAfterUILayerChanged()
   if self._campaign then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_Campaign._OnCampaignClose = function(self, id)
-  -- function num : 0_16
-  if self._campaign and (self._campaign)._id == id then
-    (self._setShowCallback)(false)
+function UISideEnterItem_Campaign:_OnCampaignClose(id)
+  if self._campaign and self._campaign._id == id then
+    self._setShowCallback(false)
   end
 end
-
-

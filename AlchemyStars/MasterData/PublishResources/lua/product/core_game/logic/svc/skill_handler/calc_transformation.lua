@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_transformation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_Transformation", Object)
 SkillEffectCalc_Transformation = SkillEffectCalc_Transformation
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_Transformation.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_Transformation:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Transformation.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_Transformation:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam.skillEffectParam
   return SkillTransformationEffectResult:New(skillEffectCalcParam.casterEntityID, skillParam:GetTargetMonsterID(), skillParam:GetUseHpPercent())
 end
-
-

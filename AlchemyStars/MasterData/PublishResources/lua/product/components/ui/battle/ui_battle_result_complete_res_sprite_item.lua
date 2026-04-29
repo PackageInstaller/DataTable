@@ -1,36 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_battle_result_complete_res_sprite_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBattleResultCompleteResSpriteItem", UICustomWidget)
 UIBattleResultCompleteResSpriteItem = UIBattleResultCompleteResSpriteItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBattleResultCompleteResSpriteItem.Constructor = function(self)
-  -- function num : 0_0
+function UIBattleResultCompleteResSpriteItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultCompleteResSpriteItem.OnShow = function(self)
-  -- function num : 0_1
+function UIBattleResultCompleteResSpriteItem:OnShow()
   self._icon = self:GetUIComponent("Image", "icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultCompleteResSpriteItem.OnHide = function(self)
-  -- function num : 0_2
+function UIBattleResultCompleteResSpriteItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBattleResultCompleteResSpriteItem.SetData = function(self, index, sprite, win)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._icon).sprite = sprite
+function UIBattleResultCompleteResSpriteItem:SetData(index, sprite, win)
+  self._icon.sprite = sprite
 end
-
-

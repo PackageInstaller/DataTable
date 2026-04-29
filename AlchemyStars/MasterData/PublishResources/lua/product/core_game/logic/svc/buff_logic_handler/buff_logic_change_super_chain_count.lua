@@ -1,61 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_super_chain_count.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeSuperChainCount", BuffLogicBase)
 BuffLogicChangeSuperChainCount = BuffLogicChangeSuperChainCount
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeSuperChainCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeSuperChainCount:Constructor(buffInstance, logicParam)
   self._addValue = logicParam.addValue or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeSuperChainCount.DoLogic = function(self, notify)
-  -- function num : 0_1
-  local teamEntity = nil
-  if (self._entity):HasTeam() then
+function BuffLogicChangeSuperChainCount:DoLogic(notify)
+  local teamEntity
+  if self._entity:HasTeam() then
     teamEntity = self._entity
-  else
-    if (self._entity):HasPet() then
-      teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-    end
+  elseif self._entity:HasPet() then
+    teamEntity = self._entity:Pet():GetOwnerTeamEntity()
   end
   if teamEntity then
     local cpt = teamEntity:Attributes()
-    local modifyID = (self._buffInstance):BuffSeq()
+    local modifyID = self._buffInstance:BuffSeq()
     cpt:Modify("SuperChainCountAddValue", self._addValue, modifyID)
   end
 end
 
 _class("BuffLogicRemoveChangeSuperChainCount", BuffLogicBase)
 BuffLogicRemoveChangeSuperChainCount = BuffLogicRemoveChangeSuperChainCount
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveChangeSuperChainCount.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveChangeSuperChainCount:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveChangeSuperChainCount.DoLogic = function(self, notify)
-  -- function num : 0_3
-  local teamEntity = nil
-  if (self._entity):HasTeam() then
+function BuffLogicRemoveChangeSuperChainCount:DoLogic(notify)
+  local teamEntity
+  if self._entity:HasTeam() then
     teamEntity = self._entity
-  else
-    if (self._entity):HasPet() then
-      teamEntity = ((self._entity):Pet()):GetOwnerTeamEntity()
-    end
+  elseif self._entity:HasPet() then
+    teamEntity = self._entity:Pet():GetOwnerTeamEntity()
   end
   if teamEntity then
     local cpt = teamEntity:Attributes()
-    local modifyID = (self._buffInstance):BuffSeq()
+    local modifyID = self._buffInstance:BuffSeq()
     cpt:RemoveModify("SuperChainCountAddValue", modifyID)
   end
 end
-
-

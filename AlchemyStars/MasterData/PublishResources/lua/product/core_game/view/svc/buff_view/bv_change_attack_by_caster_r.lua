@@ -1,39 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_attack_by_caster_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeAttackByCaster", BuffViewBase)
 BuffViewChangeAttackByCaster = BuffViewChangeAttackByCaster
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeAttackByCaster.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeAttackByCaster:PlayView(TT)
   local entity = self._entity
   if entity:HasMaterialAnimationComponent() then
-    (entity:MaterialAnimationComponent()):PlayAtkup()
+    entity:MaterialAnimationComponent():PlayAtkup()
   end
-  local cfg = (self._viewInstance):BuffConfigData()
+  local cfg = self._viewInstance:BuffConfigData()
   local effectID = cfg:GetExecEffectID()
   if effectID then
-    ((self._world):GetService("Effect")):CreateEffect(effectID, self._entity)
+    self._world:GetService("Effect"):CreateEffect(effectID, self._entity)
   end
   local result = self._buffResult
   if result:GetLight() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, result:GetCasterPstID(), true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, result:GetCasterPstID(), true)
   end
 end
 
 _class("BuffViewUndoChangeAttackByCaster", BuffViewBase)
 BuffViewUndoChangeAttackByCaster = BuffViewUndoChangeAttackByCaster
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewUndoChangeAttackByCaster.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewUndoChangeAttackByCaster:PlayView(TT)
   local result = self._buffResult
   if result:GetBlack() then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivatePassive, result:GetCasterPstID(), false)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivatePassive, result:GetCasterPstID(), false)
   end
 end
-
-

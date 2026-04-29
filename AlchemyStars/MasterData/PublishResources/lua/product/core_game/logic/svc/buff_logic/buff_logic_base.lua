@@ -1,146 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic/buff_logic_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicBase", Object)
 BuffLogicBase = BuffLogicBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicBase.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicBase:Constructor(buffInstance, logicParam)
   self._buffInstance = buffInstance
   self._entity = buffInstance:Entity()
   self._world = buffInstance:World()
-  self._buffLogicService = (self._world):GetService("BuffLogic")
-  self._buffComponent = (self._entity):BuffComponent()
+  self._buffLogicService = self._world:GetService("BuffLogic")
+  self._buffComponent = self._entity:BuffComponent()
   self._logicParam = logicParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.SetLogicIndex = function(self, index)
-  -- function num : 0_1
+function BuffLogicBase:SetLogicIndex(index)
   self._logicIndex = index
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetLogicIndex = function(self)
-  -- function num : 0_2
+function BuffLogicBase:GetLogicIndex()
   return self._logicIndex
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.NeedCheckGameTurn = function(self)
-  -- function num : 0_3
+function BuffLogicBase:NeedCheckGameTurn()
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.DoLogic = function(self, notify, triggers, index)
-  -- function num : 0_4
+function BuffLogicBase:DoLogic(notify, triggers, index)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.DoOverlap = function(self, logicParam, context)
-  -- function num : 0_5 , upvalues : _ENV
-  (Log.exception)(self:GetLogicName(), " DoOverlap() not implemented!")
+function BuffLogicBase:DoOverlap(logicParam, context)
+  Log.exception(self:GetLogicName(), " DoOverlap() not implemented!")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetLogicName = function(self)
-  -- function num : 0_6
-  return (self._logicParam).logic
+function BuffLogicBase:GetLogicName()
+  return self._logicParam.logic
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetBuffSeq = function(self)
-  -- function num : 0_7
-  return (self._buffInstance)._buffSeq
+function BuffLogicBase:GetBuffSeq()
+  return self._buffInstance._buffSeq
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetWorld = function(self)
-  -- function num : 0_8
+function BuffLogicBase:GetWorld()
   return self._world
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetEntity = function(self)
-  -- function num : 0_9
+function BuffLogicBase:GetEntity()
   return self._entity
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetCasterEntity = function(self)
-  -- function num : 0_10
-  local casterEntity = (self._buffInstance):Context() and ((self._buffInstance):Context()).casterEntity or nil
-  if not casterEntity then
-    casterEntity = self:GetEntity()
-  end
+function BuffLogicBase:GetCasterEntity()
+  local casterEntity = self._buffInstance:Context() and self._buffInstance:Context().casterEntity or nil
+  casterEntity = casterEntity or self:GetEntity()
   return casterEntity
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetBuffComponent = function(self)
-  -- function num : 0_11
+function BuffLogicBase:GetBuffComponent()
   return self._buffComponent
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetLogicParam = function(self)
-  -- function num : 0_12
+function BuffLogicBase:GetLogicParam()
   return self._logicParam
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetBuffLogicService = function(self)
-  -- function num : 0_13
+function BuffLogicBase:GetBuffLogicService()
   return self._buffLogicService
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.UpdateTeamDefenceLogic = function(self, teamEntity)
-  -- function num : 0_14
-  local battleService = (self._world):GetService("Battle")
+function BuffLogicBase:UpdateTeamDefenceLogic(teamEntity)
+  local battleService = self._world:GetService("Battle")
   battleService:UpdateTeamDefenceLogic(teamEntity)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.GetBuffSourceEntity = function(self)
-  -- function num : 0_15
-  local buffComponent = (self._entity):BuffComponent()
+function BuffLogicBase:GetBuffSourceEntity()
+  local buffComponent = self._entity:BuffComponent()
   if buffComponent then
-    local buffSource = buffComponent:GetBuffSourceByBuffID((self._buffInstance):BuffID())
-    local buffLogicService = (self._world):GetService("BuffLogic")
+    local buffSource = buffComponent:GetBuffSourceByBuffID(self._buffInstance:BuffID())
+    local buffLogicService = self._world:GetService("BuffLogic")
     return buffLogicService:GetBuffSourceEntity(buffSource)
   end
-  do
-    return nil
-  end
+  return nil
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBase.PrintBuffLogicLog = function(self, ...)
-  -- function num : 0_16 , upvalues : _ENV
-  if self._world and (self._world):IsDevelopEnv() then
-    (Log.debug)(...)
+function BuffLogicBase:PrintBuffLogicLog(...)
+  if self._world and self._world:IsDevelopEnv() then
+    Log.debug(...)
   end
 end
-
-

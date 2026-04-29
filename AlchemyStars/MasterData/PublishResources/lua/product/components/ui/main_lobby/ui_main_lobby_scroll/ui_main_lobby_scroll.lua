@@ -1,334 +1,279 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_scroll/ui_main_lobby_scroll.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyScroll", UICustomWidget)
 UIMainLobbyScroll = UIMainLobbyScroll
-local UIMainCarourselType = {None = 0, Mission = 1, ExtMission = 2, DrawCardNewPool = 3, Activity = 4, Gift = 5, TempSignIn = 6, Skin = 7, Campaign = 8}
+local UIMainCarourselType = {
+  None = 0,
+  Mission = 1,
+  ExtMission = 2,
+  DrawCardNewPool = 3,
+  Activity = 4,
+  Gift = 5,
+  TempSignIn = 6,
+  Skin = 7,
+  Campaign = 8
+}
 _enum("UIMainCarourselType", UIMainCarourselType)
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
 
-UIMainLobbyScroll.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
-  self._missionModule = (GameGlobal.GetModule)(MissionModule)
-  self._shopModule = (GameGlobal.GetModule)(ShopModule)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIMainLobbyScroll:OnShow()
+  self._roleModule = GameGlobal.GetModule(RoleModule)
+  self._missionModule = GameGlobal.GetModule(MissionModule)
+  self._shopModule = GameGlobal.GetModule(ShopModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
   self:AttachEvent(GameEventType.AfterUILayerChanged, self.OnAfterUILayerChanged)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbyScroll:OnHide()
   if self._scrollEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._scrollEvent)
+    GameGlobal.Timer():CancelEvent(self._scrollEvent)
     self._scrollEvent = nil
   end
   if self._spRequest ~= nil then
-    (self._spRequest):Dispose()
+    self._spRequest:Dispose()
     self._spRequest = nil
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll.SetData = function(self, inited)
-  -- function num : 0_2
+function UIMainLobbyScroll:SetData(inited)
   return true
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll.InitScrollView = function(self)
-  -- function num : 0_3
+function UIMainLobbyScroll:InitScrollView()
   self._isDarging = false
   self._currIdx = 1
   self:_CreateScrollData()
   self:_CreateScrollItem()
   self:_CreateScrollEvent()
   self._grid = self:GetUIComponent("UISelectObjectPath", "grid")
-  ;
-  (self._grid):SpawnObjects("UIMainLobbyScrollIdx", self._count)
-  self._idxItems = (self._grid):GetAllSpawnList()
+  self._grid:SpawnObjects("UIMainLobbyScrollIdx", self._count)
+  self._idxItems = self._grid:GetAllSpawnList()
   for i = 1, #self._idxItems do
-    ((self._idxItems)[i]):SetData(i, self._currIdx)
+    self._idxItems[i]:SetData(i, self._currIdx)
   end
   self._inited = true
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll.OnAfterUILayerChanged = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI((self.uiOwner):GetName())
+function UIMainLobbyScroll:OnAfterUILayerChanged()
+  local topui = GameGlobal.UIStateManager():IsTopUI(self.uiOwner:GetName())
   if topui then
     self:InitScrollView()
     if self._spRequest ~= nil then
-      (self._spRequest):Request()
+      self._spRequest:Request()
     end
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll._CreateScrollData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMainLobbyScroll:_CreateScrollData()
   self._cfg_main_carousel = {}
   self._carouselTab = {}
   local tmp_cfg_main_carousel = {}
-  local max = ((Cfg.cfg_global).MainBannerMaxCount).IntValue or 6
-  local cfg_main_c_all = (Cfg.cfg_main_caroursel)({})
+  local max = Cfg.cfg_global.MainBannerMaxCount.IntValue or 6
+  local cfg_main_c_all = Cfg.cfg_main_caroursel({})
   local t_cfg_main_c_all = {}
-  for key,value in pairs(cfg_main_c_all) do
-    (table.insert)(t_cfg_main_c_all, value)
+  for key, value in pairs(cfg_main_c_all) do
+    table.insert(t_cfg_main_c_all, value)
   end
-  ;
-  (table.sort)(t_cfg_main_c_all, function(a, b)
-    -- function num : 0_5_0
-    do return a.Order < b.Order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  if (EngineGameHelper.EnableAppleVerifyBulletin)() then
-    (table.insert)(self._cfg_main_carousel, (Cfg.cfg_main_caroursel)[101])
+  table.sort(t_cfg_main_c_all, function(a, b)
+    return a.Order < b.Order
+  end)
+  if EngineGameHelper.EnableAppleVerifyBulletin() then
+    table.insert(self._cfg_main_carousel, Cfg.cfg_main_caroursel[101])
   else
-    for i = 1, (table.count)(t_cfg_main_c_all) do
+    for i = 1, table.count(t_cfg_main_c_all) do
       local info = t_cfg_main_c_all[i]
       if not info.Minimum then
         local closeTime = info.CloseTime
         if info.IsResident then
-          closeTime = (HelperProxy:GetInstance()):ResidentTimeString()
+          closeTime = HelperProxy:GetInstance():ResidentTimeString()
         end
         if self:_CheckMainCarourseEventIsOpen(info.ModuleID, info.OpenType, info.OpenParam, info.OpenTime, closeTime, info.PrivateZoneID, info.ID) then
-          (table.insert)(tmp_cfg_main_carousel, info)
+          table.insert(tmp_cfg_main_carousel, info)
         end
       end
     end
   end
-  do
-    local insertCount = nil
-    if #tmp_cfg_main_carousel < max then
-      insertCount = #tmp_cfg_main_carousel
-    else
-      insertCount = max
-    end
-    for i = 1, insertCount do
-      local data = tmp_cfg_main_carousel[i]
-      ;
-      (table.insert)(self._cfg_main_carousel, data)
-    end
-    local count = (table.count)(self._cfg_main_carousel)
-    if count == 0 then
-      (Log.debug)("###[UIMainLobbyController] _cfg_main_carousel count == 0 ! minimum start !")
-      local minimumCfg = (Cfg.cfg_main_caroursel)({Minimum = 1})
-      if minimumCfg and (table.count)(minimumCfg) > 0 then
-        (table.insert)(self._cfg_main_carousel, minimumCfg[1])
-      end
-    end
-    do
-      count = (table.count)(self._cfg_main_carousel)
-      if count == 0 then
-        (Log.error)("###mainlobby cfg_main_caroursel count == 0")
-      end
-      self._count = count
-      local cfg_item_left = {}
-      cfg_item_left.idx = 1
-      cfg_item_left.data = (self._cfg_main_carousel)[self._count]
-      ;
-      (table.insert)(self._carouselTab, cfg_item_left)
-      for i = 1, self._count do
-        local cfg_item_middle = {}
-        cfg_item_middle.idx = i + 1
-        cfg_item_middle.data = (self._cfg_main_carousel)[i]
-        ;
-        (table.insert)(self._carouselTab, cfg_item_middle)
-      end
-      local cfg_item_right = {}
-      cfg_item_right.idx = self._count + 1
-      cfg_item_right.data = (self._cfg_main_carousel)[1]
-      ;
-      (table.insert)(self._carouselTab, cfg_item_right)
+  local insertCount
+  if max > #tmp_cfg_main_carousel then
+    insertCount = #tmp_cfg_main_carousel
+  else
+    insertCount = max
+  end
+  for i = 1, insertCount do
+    local data = tmp_cfg_main_carousel[i]
+    table.insert(self._cfg_main_carousel, data)
+  end
+  local count = table.count(self._cfg_main_carousel)
+  if count == 0 then
+    Log.debug("###[UIMainLobbyController] _cfg_main_carousel count == 0 ! minimum start !")
+    local minimumCfg = Cfg.cfg_main_caroursel({Minimum = 1})
+    if minimumCfg and table.count(minimumCfg) > 0 then
+      table.insert(self._cfg_main_carousel, minimumCfg[1])
     end
   end
+  count = table.count(self._cfg_main_carousel)
+  if count == 0 then
+    Log.error("###mainlobby cfg_main_caroursel count == 0")
+  end
+  self._count = count
+  local cfg_item_left = {}
+  cfg_item_left.idx = 1
+  cfg_item_left.data = self._cfg_main_carousel[self._count]
+  table.insert(self._carouselTab, cfg_item_left)
+  for i = 1, self._count do
+    local cfg_item_middle = {}
+    cfg_item_middle.idx = i + 1
+    cfg_item_middle.data = self._cfg_main_carousel[i]
+    table.insert(self._carouselTab, cfg_item_middle)
+  end
+  local cfg_item_right = {}
+  cfg_item_right.idx = self._count + 1
+  cfg_item_right.data = self._cfg_main_carousel[1]
+  table.insert(self._carouselTab, cfg_item_right)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll._CheckMainCarourseEventIsOpen = function(self, ModuleID, OpenType, OpenParam, OpenTime, CloseTime, PrivateZoneID, ID)
-  -- function num : 0_6 , upvalues : _ENV, UIMainCarourselType
-  do
-    if PrivateZoneID and next(PrivateZoneID) then
+function UIMainLobbyScroll:_CheckMainCarourseEventIsOpen(ModuleID, OpenType, OpenParam, OpenTime, CloseTime, PrivateZoneID, ID)
+  if PrivateZoneID and next(PrivateZoneID) then
+    local have = false
+    for i = 1, #PrivateZoneID do
+      if PrivateZoneID[i] == self._roleModule:GetZoneIdType() then
+        have = true
+      end
+    end
+    if not have then
+      return false
+    end
+  end
+  if ModuleID ~= nil then
+    if ModuleID == GameModuleID.MD_QuestGrowth then
+      local questModule = self:GetModule(QuestModule)
+      return questModule:IsGrowthVisible()
+    else
+      local state = self._roleModule:CheckModuleUnlock(ModuleID)
+      if not state then
+        return false
+      end
+    end
+  end
+  if OpenType ~= nil then
+    if OpenType == UIMainCarourselType.Mission then
+      local pass = self._missionModule:IsPassMissionID(OpenParam[1])
+      if not pass then
+        return false
+      end
+    elseif OpenType == UIMainCarourselType.DrawCardNewPool then
+      local poolid = OpenParam[1]
+      local gambleModule = self:GetModule(GambleModule)
+      local pools = gambleModule:GetPrizePools()
       local have = false
-      for i = 1, #PrivateZoneID do
-        if PrivateZoneID[i] == (self._roleModule):GetZoneIdType() then
+      for i = 1, #pools do
+        local pool = pools[i]
+        if pool.prize_pool_id == poolid then
           have = true
+          break
         end
       end
       if not have then
         return false
       end
-    end
-    if ModuleID ~= nil then
-      if ModuleID == GameModuleID.MD_QuestGrowth then
-        local questModule = self:GetModule(QuestModule)
-        return questModule:IsGrowthVisible()
-      else
-        do
-          do
-            local state = (self._roleModule):CheckModuleUnlock(ModuleID)
-            if not state then
-              return false
-            end
-            if OpenType ~= nil then
-              if OpenType == UIMainCarourselType.Mission then
-                local pass = (self._missionModule):IsPassMissionID(OpenParam[1])
-                if not pass then
-                  return false
-                end
-              else
-                do
-                  if OpenType == UIMainCarourselType.DrawCardNewPool then
-                    local poolid = OpenParam[1]
-                    local gambleModule = self:GetModule(GambleModule)
-                    local pools = gambleModule:GetPrizePools()
-                    local have = false
-                    for i = 1, #pools do
-                      local pool = pools[i]
-                      if pool.prize_pool_id == poolid then
-                        have = true
-                        break
-                      end
-                    end
-                    do
-                      do
-                        if not have then
-                          return false
-                        end
-                        if OpenType == UIMainCarourselType.Activity then
-                          local id = OpenParam[1]
-                          local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-                          local sample = (campaignModule.m_campaign_manager):GetSampleByID(id)
-                          if not sample then
-                            return false
-                          end
-                        else
-                          do
-                            if OpenType == UIMainCarourselType.Gift then
-                              local ids = OpenParam
-                              local giftInfo, giftCfg = (self._shopModule):GetGiftMarketData()
-                              local giftList = giftInfo.goods
-                              local have = false
-                              for i = 1, #ids do
-                                local id = ids[i]
-                                for _,v in pairs(giftList) do
-                                  if v.gift_id == id then
-                                    local id_giftCfg = giftCfg[id]
-                                    if id_giftCfg and id_giftCfg[ConfigKey.ConfigKey_SaleNum] then
-                                      local maxTimes = tonumber(id_giftCfg[ConfigKey.ConfigKey_SaleNum])
-                                      if v.selled_num < maxTimes then
-                                        have = true
-                                        break
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                              do
-                                do
-                                  if have == true or have == false then
-                                    return false
-                                  end
-                                  if OpenType == UIMainCarourselType.TempSignIn then
-                                    return false
-                                  else
-                                    if OpenType == UIMainCarourselType.Skin and OpenParam then
-                                      local ids = OpenParam
-                                      local skinsInfo, skinsCfg = (self._shopModule):GetSkinsMarketData()
-                                      local skinsList = skinsInfo
-                                      local svrTime = (self._svrTimeModule):GetServerTime() / 1000
-                                      local have = false
-                                      for i = 1, #ids do
-                                        local id = ids[i]
-                                        for _,v in pairs(skinsList) do
-                                          if v.goodid == id and svrTime < v.endtime then
-                                            have = true
-                                            break
-                                          end
-                                        end
-                                      end
-                                      do
-                                        do
-                                          if have == true or have == false then
-                                            return false
-                                          end
-                                          if OpenType == UIMainCarourselType.Campaign and OpenParam then
-                                            local campaignType = OpenParam[1]
-                                            local campaignStep = OpenParam[2]
-                                            if campaignStep == ECampaignStep.CAMPAIGN_STEP_HIDE then
-                                              local c_module = (GameGlobal.GetModule)(CampaignModule)
-                                              local mainSample = c_module:GetSampleByType(campaignType)
-                                              if not mainSample then
-                                                return false
-                                              end
-                                              local svrTime = (self._svrTimeModule):GetServerTime() * 0.001
-                                              if not mainSample:IsShow(svrTime) then
-                                                return false
-                                              end
-                                              local hide = mainSample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_HIDE)
-                                              if hide then
-                                                return false
-                                              end
-                                            end
-                                          end
-                                          do
-                                            if OpenTime ~= nil and CloseTime ~= nil then
-                                              local open = (self._loginModule):GetTimeStampByTimeStr(OpenTime)
-                                              local close = (self._loginModule):GetTimeStampByTimeStr(CloseTime)
-                                              local svrTime = (self._svrTimeModule):GetServerTime() / 1000
-                                              if svrTime < open or close < svrTime then
-                                                return false
-                                              end
-                                            end
-                                            do
-                                              return true
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
+    elseif OpenType == UIMainCarourselType.Activity then
+      local id = OpenParam[1]
+      local campaignModule = GameGlobal.GetModule(CampaignModule)
+      local sample = campaignModule.m_campaign_manager:GetSampleByID(id)
+      if not sample then
+        return false
+      end
+    elseif OpenType == UIMainCarourselType.Gift then
+      local ids = OpenParam
+      local giftInfo, giftCfg = self._shopModule:GetGiftMarketData()
+      local giftList = giftInfo.goods
+      local have = false
+      for i = 1, #ids do
+        local id = ids[i]
+        for _, v in pairs(giftList) do
+          if v.gift_id == id then
+            local id_giftCfg = giftCfg[id]
+            if id_giftCfg and id_giftCfg[ConfigKey.ConfigKey_SaleNum] then
+              local maxTimes = tonumber(id_giftCfg[ConfigKey.ConfigKey_SaleNum])
+              if maxTimes > v.selled_num then
+                have = true
+                break
               end
             end
           end
         end
+        if have == true then
+          break
+        end
+      end
+      if have == false then
+        return false
+      end
+    elseif OpenType == UIMainCarourselType.TempSignIn then
+      return false
+    elseif OpenType == UIMainCarourselType.Skin then
+      if not OpenParam then
+        goto lbl_242
+      end
+      local ids = OpenParam
+      local skinsInfo, skinsCfg = self._shopModule:GetSkinsMarketData()
+      local skinsList = skinsInfo
+      local svrTime = self._svrTimeModule:GetServerTime() / 1000
+      local have = false
+      for i = 1, #ids do
+        local id = ids[i]
+        for _, v in pairs(skinsList) do
+          if v.goodid == id and svrTime < v.endtime then
+            have = true
+            break
+          end
+        end
+        if have == true then
+          break
+        end
+      end
+      if have == false then
+        return false
+      end
+    elseif OpenType == UIMainCarourselType.Campaign and OpenParam then
+      local campaignType = OpenParam[1]
+      local campaignStep = OpenParam[2]
+      if campaignStep == ECampaignStep.CAMPAIGN_STEP_HIDE then
+        local c_module = GameGlobal.GetModule(CampaignModule)
+        local mainSample = c_module:GetSampleByType(campaignType)
+        if not mainSample then
+          return false
+        end
+        local svrTime = self._svrTimeModule:GetServerTime() * 0.001
+        if not mainSample:IsShow(svrTime) then
+          return false
+        end
+        local hide = mainSample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_HIDE)
+        if hide then
+          return false
+        end
+      else
       end
     end
   end
+  ::lbl_242::
+  if OpenTime ~= nil and CloseTime ~= nil then
+    local open = self._loginModule:GetTimeStampByTimeStr(OpenTime)
+    local close = self._loginModule:GetTimeStampByTimeStr(CloseTime)
+    local svrTime = self._svrTimeModule:GetServerTime() / 1000
+    if open > svrTime or close < svrTime then
+      return false
+    end
+  end
+  return true
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll._CreateScrollItem = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMainLobbyScroll:_CreateScrollItem()
   self._content = self:GetUIComponent("RectTransform", "Content")
   self._scroll = self:GetGameObject("scroll")
   local scrollRect = self:GetUIComponent("RectTransform", "scroll")
-  self._width = (scrollRect.sizeDelta).x
+  self._width = scrollRect.sizeDelta.x
   self._targetPosX = self._currIdx * self._width * -1
   if self._spRequest ~= nil then
-    (self._spRequest):Dispose()
+    self._spRequest:Dispose()
     self._spRequest = nil
   end
   self._spRequest = MainLobbyShopPriceRequest:New()
@@ -337,181 +282,138 @@ UIMainLobbyScroll._CreateScrollItem = function(self)
   itemPool:SpawnObjects("UIMainLobbyScrollItem", #self._carouselTab)
   local items = itemPool:GetAllSpawnList()
   for i = 1, #self._carouselTab do
-    (items[i]):SetData((self._carouselTab)[i], function(idx)
-    -- function num : 0_7_0 , upvalues : _ENV, self
-    ((GameGlobal.GetModule)(RoleModule)):OnHomePageEnter(CLICKENTRANCE.CE_SCROLL)
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("UIMainClick", {"Click_Advertising_" .. idx}, true)
-    local jumpType = (((self._carouselTab)[idx]).data).JumpType
-    local jumpParam = (((self._carouselTab)[idx]).data).JumpParam
-    if jumpType then
-      local jumpModule = self:GetUIModule(QuestModule)
-      jumpModule:SetJumpUIData(jumpType, jumpParam)
-      jumpModule:Jump()
-    end
-  end
-, function(eventData)
-    -- function num : 0_7_1 , upvalues : self, _ENV
-    if self._count <= 1 then
-      return 
-    end
-    self._bDragPosX = (eventData.position).x
-    self._isDarging = true
-    if self._scrollEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._scrollEvent)
-      self._scrollEvent = nil
-    end
-    self._tmpContentPosX = ((self._content).anchoredPosition).x
-  end
-, function(eventData)
-    -- function num : 0_7_2 , upvalues : self, _ENV
-    if self._count <= 1 then
-      return 
-    end
-    local t_x = (eventData.delta).x
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._content).anchoredPosition = Vector2(((self._content).anchoredPosition).x + t_x, 0)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-    if self._width * -0.5 < ((self._content).anchoredPosition).x then
-      (self._content).anchoredPosition = Vector2(((self._content).anchoredPosition).x - self._count * self._width, 0)
-    end
-    -- DECOMPILER ERROR at PC57: Confused about usage of register: R2 in 'UnsetPending'
-
-    if ((self._content).anchoredPosition).x <= -(self._count * self._width + self._width * 0.5) then
-      (self._content).anchoredPosition = Vector2(((self._content).anchoredPosition).x + self._count * self._width, 0)
-    end
-  end
-, function(eventData)
-    -- function num : 0_7_3 , upvalues : self, _ENV
-    if self._count <= 1 then
-      return 
-    end
-    local posx = (math.abs)(((self._content).anchoredPosition).x)
-    local c, d = (math.modf)(posx / self._width)
-    local tmpIdx = self._currIdx
-    self._eDragPosX = (eventData.position).x
-    if self._eDragPosX < self._bDragPosX then
-      if d > 0.1 then
-        tmpIdx = c + 1
-      else
-        tmpIdx = c
+    items[i]:SetData(self._carouselTab[i], function(idx)
+      GameGlobal.GetModule(RoleModule):OnHomePageEnter(CLICKENTRANCE.CE_SCROLL)
+      GameGlobal.UAReportForceGuideEvent("UIMainClick", {
+        "Click_Advertising_" .. idx
+      }, true)
+      local jumpType = self._carouselTab[idx].data.JumpType
+      local jumpParam = self._carouselTab[idx].data.JumpParam
+      if jumpType then
+        local jumpModule = self:GetUIModule(QuestModule)
+        jumpModule:SetJumpUIData(jumpType, jumpParam)
+        jumpModule:Jump()
       end
-    else
-      if d < 0.9 then
+    end, function(eventData)
+      if self._count <= 1 then
+        return
+      end
+      self._bDragPosX = eventData.position.x
+      self._isDarging = true
+      if self._scrollEvent then
+        GameGlobal.Timer():CancelEvent(self._scrollEvent)
+        self._scrollEvent = nil
+      end
+      self._tmpContentPosX = self._content.anchoredPosition.x
+    end, function(eventData)
+      if self._count <= 1 then
+        return
+      end
+      local t_x = eventData.delta.x
+      self._content.anchoredPosition = Vector2(self._content.anchoredPosition.x + t_x, 0)
+      if self._content.anchoredPosition.x > self._width * -0.5 then
+        self._content.anchoredPosition = Vector2(self._content.anchoredPosition.x - self._count * self._width, 0)
+      end
+      if self._content.anchoredPosition.x <= -(self._count * self._width + self._width * 0.5) then
+        self._content.anchoredPosition = Vector2(self._content.anchoredPosition.x + self._count * self._width, 0)
+      end
+    end, function(eventData)
+      if self._count <= 1 then
+        return
+      end
+      local posx = math.abs(self._content.anchoredPosition.x)
+      local c, d = math.modf(posx / self._width)
+      local tmpIdx = self._currIdx
+      self._eDragPosX = eventData.position.x
+      if self._eDragPosX < self._bDragPosX then
+        if 0.1 < d then
+          tmpIdx = c + 1
+        else
+          tmpIdx = c
+        end
+      elseif d < 0.9 then
         tmpIdx = c
       else
         tmpIdx = c + 1
       end
-    end
-    if self._count < tmpIdx then
-      self._currIdx = (tmpIdx) % self._count
-    else
-      if tmpIdx <= 0 then
+      if tmpIdx > self._count then
+        self._currIdx = tmpIdx % self._count
+      elseif tmpIdx <= 0 then
         self._currIdx = self._count
       else
         self._currIdx = tmpIdx
       end
-    end
-    for i = 1, #self._idxItems do
-      ((self._idxItems)[i]):Flush(self._currIdx)
-    end
-    self._targetPosX = self:_CalcPosX(tmpIdx)
-    self._isDarging = false
-    self:_CreateScrollEvent()
-  end
-)
-    ;
-    (items[i]):BookPrice(self._spRequest)
+      for i = 1, #self._idxItems do
+        self._idxItems[i]:Flush(self._currIdx)
+      end
+      self._targetPosX = self:_CalcPosX(tmpIdx)
+      self._isDarging = false
+      self:_CreateScrollEvent()
+    end)
+    items[i]:BookPrice(self._spRequest)
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll._CreateScrollEvent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIMainLobbyScroll:_CreateScrollEvent()
   local deltaTime = 5000
   local dir = 1
   if self._scrollEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._scrollEvent)
+    GameGlobal.Timer():CancelEvent(self._scrollEvent)
     self._scrollEvent = nil
   end
-  if self._count > 1 then
-    self._scrollEvent = ((GameGlobal.Timer)()):AddEventTimes(deltaTime, TimerTriggerCount.Infinite, function()
-    -- function num : 0_8_0 , upvalues : self, dir
-    if not self._isDarging then
-      local idx = self._currIdx
-      if dir == 1 then
-        idx = self._currIdx + 1
-      else
-        idx = self._currIdx - 1
-      end
-      if idx < 1 then
-        idx = self._count
-      else
-        if self._count < idx then
+  if 1 < self._count then
+    self._scrollEvent = GameGlobal.Timer():AddEventTimes(deltaTime, TimerTriggerCount.Infinite, function()
+      if not self._isDarging then
+        local idx = self._currIdx
+        if dir == 1 then
+          idx = self._currIdx + 1
+        else
+          idx = self._currIdx - 1
+        end
+        if idx < 1 then
+          idx = self._count
+        elseif idx > self._count then
           idx = 1
         end
+        self._currIdx = idx
+        for i = 1, #self._idxItems do
+          self._idxItems[i]:Flush(self._currIdx)
+        end
+        self._targetPosX = self:_CalcPosX(self._currIdx)
       end
-      self._currIdx = idx
-      for i = 1, #self._idxItems do
-        ((self._idxItems)[i]):Flush(self._currIdx)
-      end
-      self._targetPosX = self:_CalcPosX(self._currIdx)
-    end
-  end
-)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll._CalcPosX = function(self, idx)
-  -- function num : 0_9
+function UIMainLobbyScroll:_CalcPosX(idx)
   local posx = 0
   if not idx or self._count <= 1 then
     return posx
   end
   posx = idx * self._width
-  return -(posx)
+  return -posx
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-UIMainLobbyScroll.OnUpdate = function(self, dms)
-  -- function num : 0_10 , upvalues : _ENV
+function UIMainLobbyScroll:OnUpdate(dms)
   if not self._inited then
-    return 
+    return
   end
   if self._count <= 1 then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC39: Confused about usage of register: R2 in 'UnsetPending'
-
   if not self._isDarging then
-    if (math.abs)((math.abs)(((self._content).anchoredPosition).x) - (math.abs)(self._targetPosX)) > 1 then
-      (self._content).anchoredPosition = Vector2((Mathf.Lerp)(((self._content).anchoredPosition).x, self._targetPosX, 0.5), 0)
-      -- DECOMPILER ERROR at PC58: Confused about usage of register: R2 in 'UnsetPending'
-
-      if self._width * -0.5 < ((self._content).anchoredPosition).x then
-        (self._content).anchoredPosition = Vector2(((self._content).anchoredPosition).x - self._count * self._width, 0)
+    if 1 < math.abs(math.abs(self._content.anchoredPosition.x) - math.abs(self._targetPosX)) then
+      self._content.anchoredPosition = Vector2(Mathf.Lerp(self._content.anchoredPosition.x, self._targetPosX, 0.5), 0)
+      if self._content.anchoredPosition.x > self._width * -0.5 then
+        self._content.anchoredPosition = Vector2(self._content.anchoredPosition.x - self._count * self._width, 0)
         self._targetPosX = self._targetPosX - self._count * self._width
       end
-      -- DECOMPILER ERROR at PC88: Confused about usage of register: R2 in 'UnsetPending'
-
-      if ((self._content).anchoredPosition).x <= -(self._count * self._width + self._width * 0.5) then
-        (self._content).anchoredPosition = Vector2(((self._content).anchoredPosition).x + self._count * self._width, 0)
+      if self._content.anchoredPosition.x <= -(self._count * self._width + self._width * 0.5) then
+        self._content.anchoredPosition = Vector2(self._content.anchoredPosition.x + self._count * self._width, 0)
         self._targetPosX = self._targetPosX + self._count * self._width
       end
     else
-      -- DECOMPILER ERROR at PC103: Confused about usage of register: R2 in 'UnsetPending'
-
-      ;
-      (self._content).anchoredPosition = Vector2(self._targetPosX, ((self._content).anchoredPosition).y)
+      self._content.anchoredPosition = Vector2(self._targetPosX, self._content.anchoredPosition.y)
     end
   end
 end
-
-

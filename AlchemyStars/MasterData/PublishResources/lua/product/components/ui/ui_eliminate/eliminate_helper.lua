@@ -1,142 +1,120 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/eliminate_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EliminateHelper", Object)
 EliminateHelper = EliminateHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EliminateHelper.CheckFetter = function(groupID, petList, petID)
-  -- function num : 0_0 , upvalues : _ENV
+function EliminateHelper.CheckFetter(groupID, petList, petID)
   if petID == 0 then
     return false
   end
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local curPetID = (petModule:GetPet(petID)):GetTemplateID()
+  local petModule = GameGlobal.GetModule(PetModule)
+  local curPetID = petModule:GetPet(petID):GetTemplateID()
   local curPetList = {}
-  for _,v in pairs(petList) do
+  for _, v in pairs(petList) do
     local pet = petModule:GetPet(v)
     if pet then
-      (table.insert)(curPetList, pet:GetTemplateID())
+      table.insert(curPetList, pet:GetTemplateID())
     end
   end
-  local eliminateGroup = (EliminateHelper.GetPetFetter)(groupID, curPetID)
-  for _,eliminateID in pairs(eliminateGroup) do
-    if (table.icontains)(curPetList, eliminateID) then
+  local eliminateGroup = EliminateHelper.GetPetFetter(groupID, curPetID)
+  for _, eliminateID in pairs(eliminateGroup) do
+    if table.icontains(curPetList, eliminateID) then
       return true, eliminateID
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EliminateHelper.GetPetFetter = function(groupID, petID)
-  -- function num : 0_1 , upvalues : _ENV
-  if not (Cfg.cfg_anipop_fetters)({FettersID = groupID, PetAID = petID}) then
-    local fetterAInfos = {}
-  end
-  if not (Cfg.cfg_anipop_fetters)({FettersID = groupID, PetBID = petID}) then
-    local fetterBInfos = {}
-  end
+function EliminateHelper.GetPetFetter(groupID, petID)
+  local fetterAInfos = Cfg.cfg_anipop_fetters({FettersID = groupID, PetAID = petID}) or {}
+  local fetterBInfos = Cfg.cfg_anipop_fetters({FettersID = groupID, PetBID = petID}) or {}
   local eliminateGroup = {}
-  for _,fetterAInfo in pairs(fetterAInfos) do
-    (table.insert)(eliminateGroup, fetterAInfo.PetBID)
+  for _, fetterAInfo in pairs(fetterAInfos) do
+    table.insert(eliminateGroup, fetterAInfo.PetBID)
   end
-  for _,fetterBInfo in pairs(fetterBInfos) do
-    (table.insert)(eliminateGroup, fetterBInfo.PetAID)
+  for _, fetterBInfo in pairs(fetterBInfos) do
+    table.insert(eliminateGroup, fetterBInfo.PetAID)
   end
   return eliminateGroup
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EliminateHelper.GuideCheckFetter = function(missionID, groupID, petID)
-  -- function num : 0_2 , upvalues : _ENV
-  local guideCfg = (Cfg.cfg_mission_guide)[missionID]
+function EliminateHelper.GuideCheckFetter(missionID, groupID, petID)
+  local guideCfg = Cfg.cfg_mission_guide[missionID]
   local petList = guideCfg.BattlePetList
   local pets = {}
-  for _,v in pairs(petList) do
-    (table.insert)(pets, v[1])
+  for _, v in pairs(petList) do
+    table.insert(pets, v[1])
   end
-  local eliminateGroup = (EliminateHelper.GetPetFetter)(groupID, petID)
-  for _,eliminateID in pairs(eliminateGroup) do
-    if (table.icontains)(pets, eliminateID) then
+  local eliminateGroup = EliminateHelper.GetPetFetter(groupID, petID)
+  for _, eliminateID in pairs(eliminateGroup) do
+    if table.icontains(pets, eliminateID) then
       return true, eliminateID
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EliminateHelper.GetCampIcon = function(campID)
-  -- function num : 0_3
-  local icons = {[1001] = "qdhl_new_logo06", [1002] = "qdhl_new_logo05", [1005] = "qdhl_new_logo01", [1003] = "qdhl_new_logo04", [1006] = "qdhl_new_logo03", [1004] = "qdhl_new_logo02", [1009] = "qdhl_new_logo07"}
+function EliminateHelper.GetCampIcon(campID)
+  local icons = {
+    [1001] = "qdhl_new_logo06",
+    [1002] = "qdhl_new_logo05",
+    [1005] = "qdhl_new_logo01",
+    [1003] = "qdhl_new_logo04",
+    [1006] = "qdhl_new_logo03",
+    [1004] = "qdhl_new_logo02",
+    [1009] = "qdhl_new_logo07"
+  }
   return icons[campID]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EliminateHelper.GetAwardList = function()
-  -- function num : 0_4 , upvalues : _ENV
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function EliminateHelper.GetAwardList()
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local anipopInfo = anipopModule:GetAniPopInfo()
   local curSeason = anipopInfo.cur_season
-  local hardID = (anipopInfo.week_info).hard_id
-  local hardCfg = (Cfg.cfg_anipop_hard)[hardID]
-  local scoreSequenceId = ((Cfg.cfg_anipop_season)[curSeason]).ScoreSequenceId
+  local hardID = anipopInfo.week_info.hard_id
+  local hardCfg = Cfg.cfg_anipop_hard[hardID]
+  local scoreSequenceId = Cfg.cfg_anipop_season[curSeason].ScoreSequenceId
   local awardList = {}
   local groupID = hardCfg.ScoreGroupId
-  if (EliminateHelper.IsAniPopUseNewCfg)() then
+  if EliminateHelper.IsAniPopUseNewCfg() then
     groupID = hardCfg.NewScoreGroupId
   end
-  local awardCfgs = (Cfg.cfg_anipop_score)({})
-  for _,cfg in pairs(awardCfgs) do
+  local awardCfgs = Cfg.cfg_anipop_score({})
+  for _, cfg in pairs(awardCfgs) do
     if cfg.GroupId == groupID and cfg.ScoreSequenceId == scoreSequenceId then
-      for __,v in pairs(cfg.ItemList) do
+      for __, v in pairs(cfg.ItemList) do
         local itemInfo = {}
         itemInfo.ID = v[1]
         itemInfo.Num = v[2]
         itemInfo.Score = cfg.Score
         itemInfo.CfgID = cfg.ID
-        ;
-        (table.insert)(awardList, itemInfo)
-        do break end
+        table.insert(awardList, itemInfo)
+        break
       end
     end
   end
   return awardList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EliminateHelper.CheckAwardRed = function()
-  -- function num : 0_5 , upvalues : _ENV
-  local awardList = (EliminateHelper.GetAwardList)()
-  local anipopModule = (GameGlobal.GetModule)(AnipopModule)
+function EliminateHelper.CheckAwardRed()
+  local awardList = EliminateHelper.GetAwardList()
+  local anipopModule = GameGlobal.GetModule(AnipopModule)
   local anipopInfo = anipopModule:GetAniPopInfo()
   local weekInfo = anipopInfo.week_info
-  for _,award in pairs(awardList) do
-    if award.Score <= weekInfo.total_score and not (table.icontains)(weekInfo.score_received, award.CfgID) then
+  for _, award in pairs(awardList) do
+    if award.Score <= weekInfo.total_score and not table.icontains(weekInfo.score_received, award.CfgID) then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EliminateHelper.CheckExistFetter = function(groupID, petID)
-  -- function num : 0_6 , upvalues : _ENV
+function EliminateHelper.CheckExistFetter(groupID, petID)
   if petID == 0 then
     return false
   end
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  local curPetID = (petModule:GetPet(petID)):GetTemplateID()
-  local eliminateGroup = (EliminateHelper.GetPetFetter)(groupID, curPetID)
-  for _,petID in pairs(eliminateGroup) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  local curPetID = petModule:GetPet(petID):GetTemplateID()
+  local eliminateGroup = EliminateHelper.GetPetFetter(groupID, curPetID)
+  for _, petID in pairs(eliminateGroup) do
     local pet = petModule:GetPetByTemplateId(petID)
     if pet then
       return true
@@ -145,28 +123,21 @@ EliminateHelper.CheckExistFetter = function(groupID, petID)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-EliminateHelper.IsAniPopUseNewCfg = function()
-  -- function num : 0_7 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
+function EliminateHelper.IsAniPopUseNewCfg()
+  local loginModule = GameGlobal.GetModule(LoginModule)
   local timeTransform = 1
   local timeStr = "2024-06-17 05:00:00"
   local switchTime = 0
   if timeTransform == 0 then
     switchTime = loginModule:GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_GMT)
-  else
-    if timeTransform == 1 then
-      switchTime = loginModule:GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
-    end
+  elseif timeTransform == 1 then
+    switchTime = loginModule:GetTimeStampByTimeStr(timeStr, Enum_DateTimeZoneType.E_ZoneType_ServerTimeZone)
   end
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local svrTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local svrTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   if switchTime <= svrTime then
     return true
   else
     return false
   end
 end
-
-

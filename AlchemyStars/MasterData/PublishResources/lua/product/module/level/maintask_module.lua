@@ -1,36 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/level/maintask_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MainTaskModule", GameModule)
 MainTaskModule = MainTaskModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MainTaskModule.Constructor = function(self)
-  -- function num : 0_0
+function MainTaskModule:Constructor()
   self.chapterList = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MainTaskModule.Init = function(self)
-  -- function num : 0_1
+function MainTaskModule:Init()
   self:ParseCfg()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MainTaskModule.ParseCfg = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function MainTaskModule:ParseCfg()
   self.chapterList = {}
-  for _,v in pairs(ChapterConfig) do
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R6 in 'UnsetPending'
-
-    if not (self.chapterList)[v.ID] then
-      (self.chapterList)[v.ID] = ChapterInfo:New(v)
+  for _, v in pairs(ChapterConfig) do
+    if not self.chapterList[v.ID] then
+      self.chapterList[v.ID] = ChapterInfo:New(v)
     end
   end
 end
-
-

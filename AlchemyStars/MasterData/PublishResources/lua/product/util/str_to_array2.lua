@@ -1,66 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/str_to_array2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("StrToArray2", Singleton)
 StrToArray2 = StrToArray2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-StrToArray2.Constructor = function(self)
-  -- function num : 0_0
+function StrToArray2:Constructor()
   self._cache = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-StrToArray2.DefaultNumConvert = function(self, value)
-  -- function num : 0_1 , upvalues : _ENV
+function StrToArray2:DefaultNumConvert(value)
   return tonumber(value)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-StrToArray2.GetArray = function(self, str, firstSplit, secondSplit, valueConvertFunc, cache)
-  -- function num : 0_2 , upvalues : _ENV
+function StrToArray2:GetArray(str, firstSplit, secondSplit, valueConvertFunc, cache)
   if not str then
     return {}
   end
-  local array = (self._cache)[str]
+  local array = self._cache[str]
   if array then
     return array
   end
   array = {}
-  local tempArray = (string.split)(str, firstSplit)
-  for k,v in pairs(tempArray) do
-    local values = (str.split)(v, secondSplit)
+  local tempArray = string.split(str, firstSplit)
+  for k, v in pairs(tempArray) do
+    local values = str.split(v, secondSplit)
     local ret = {}
-    for k,v in pairs(values) do
-      local value = nil
+    for k, v in pairs(values) do
+      local value
       if valueConvertFunc then
         value = valueConvertFunc()
       else
         value = self:DefaultNumConvert(v)
       end
-      ;
-      (table.insert)(ret, value)
+      table.insert(ret, value)
     end
-    ;
-    (table.insert)(array, ret)
+    table.insert(array, ret)
   end
-  -- DECOMPILER ERROR at PC57: Confused about usage of register: R8 in 'UnsetPending'
-
   if cache then
-    (self._cache)[str] = array
+    self._cache[str] = array
   end
   return array
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-StrToArray2.ClearCache = function(self)
-  -- function num : 0_3
+function StrToArray2:ClearCache()
   self._cache = {}
 end
-
-

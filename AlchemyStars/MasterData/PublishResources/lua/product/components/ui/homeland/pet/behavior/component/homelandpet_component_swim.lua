@@ -1,139 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/component/homelandpet_component_swim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_component_base")
 _class("HomelandPetComponentSwim", HomelandPetComponentBase)
 HomelandPetComponentSwim = HomelandPetComponentSwim
-local HomelandPetSwimBehaviorType = {Float = 1, Swim = 2, FastSwim = 3, MAX = 3}
+local HomelandPetSwimBehaviorType = {
+  Float = 1,
+  Swim = 2,
+  FastSwim = 3,
+  MAX = 3
+}
 _enum("HomelandPetSwimBehaviorType", HomelandPetSwimBehaviorType)
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-HomelandPetComponentSwim.Constructor = function(self, componentType, pet, behavior)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetComponentSwim.super).Constructor)(self, componentType, pet, behavior)
+function HomelandPetComponentSwim:Constructor(componentType, pet, behavior)
+  HomelandPetComponentSwim.super.Constructor(self, componentType, pet, behavior)
   self._building = nil
-  self._animation = (self._pet):GetAnimation()
+  self._animation = self._pet:GetAnimation()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.ReLoadPetComponent = function(self)
-  -- function num : 0_1
-  self._animation = (self._pet):GetAnimation()
+function HomelandPetComponentSwim:ReLoadPetComponent()
+  self._animation = self._pet:GetAnimation()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  self._moveComponent = (self._behavior):GetComponent(HomelandPetComponentType.Move)
+function HomelandPetComponentSwim:Init()
+  self._moveComponent = self._behavior:GetComponent(HomelandPetComponentType.Move)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.Play = function(self, building)
-  -- function num : 0_3 , upvalues : _ENV
+function HomelandPetComponentSwim:Play(building)
   self._building = building
   self.state = HomelandPetComponentState.Running
-  self._finishTime = (GameGlobal:GetInstance()):GetCurrentTime()
+  self._finishTime = GameGlobal:GetInstance():GetCurrentTime()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.OnExcute = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandPetComponentSwim:OnExcute()
   if self.state == HomelandPetComponentState.Resting and not self._animation then
-    self._animation = (self._pet):GetAnimation()
+    self._animation = self._pet:GetAnimation()
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.Update = function(self, dms)
-  -- function num : 0_5 , upvalues : _ENV, HomelandPetSwimBehaviorType
-  ((HomelandPetComponentSwim.super).Update)(self, dms)
+function HomelandPetComponentSwim:Update(dms)
+  HomelandPetComponentSwim.super.Update(self, dms)
   if self.state == HomelandPetComponentState.Running then
     if not self._building then
       self:Exit()
     end
-    local swimFinish = (self._swimBehaviorType == HomelandPetSwimBehaviorType.Swim or self._swimBehaviorType == HomelandPetSwimBehaviorType.FastSwim) and (self._moveComponent).state == HomelandPetComponentState.Success
-    local timeFinish = self._finishTime <= (GameGlobal:GetInstance()):GetCurrentTime()
+    local swimFinish = (self._swimBehaviorType == HomelandPetSwimBehaviorType.Swim or self._swimBehaviorType == HomelandPetSwimBehaviorType.FastSwim) and self._moveComponent.state == HomelandPetComponentState.Success
+    local timeFinish = GameGlobal:GetInstance():GetCurrentTime() >= self._finishTime
     if swimFinish or timeFinish then
       self:NextBehavior()
     end
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.NextBehavior = function(self)
-  -- function num : 0_6 , upvalues : _ENV, HomelandPetSwimBehaviorType
-  self._swimBehaviorType = (math.random)(1, HomelandPetSwimBehaviorType.Swim)
+function HomelandPetComponentSwim:NextBehavior()
+  self._swimBehaviorType = math.random(1, HomelandPetSwimBehaviorType.Swim)
   local time = 10000
-  self._finishTime = (GameGlobal:GetInstance()):GetCurrentTime() + time
-  ;
-  (self._moveComponent):Stop()
-  ;
-  (self._moveComponent):Resting()
+  self._finishTime = GameGlobal:GetInstance():GetCurrentTime() + time
+  self._moveComponent:Stop()
+  self._moveComponent:Resting()
   if self._swimBehaviorType == HomelandPetSwimBehaviorType.Float then
     self:OnFloat()
-  else
-    if self._swimBehaviorType == HomelandPetSwimBehaviorType.Swim then
-      self:OnSwim()
-    end
+  elseif self._swimBehaviorType == HomelandPetSwimBehaviorType.Swim then
+    self:OnSwim()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.OnFloat = function(self)
-  -- function num : 0_7
+function HomelandPetComponentSwim:OnFloat()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.OnSwim = function(self)
-  -- function num : 0_8
-  local targetPos = (self._building):GetSwimRandomPos()
-  ;
-  (self._moveComponent):SetTarget(targetPos)
-  ;
-  (self._pet):SetSpeed((self._pet).walkSpeed)
+function HomelandPetComponentSwim:OnSwim()
+  local targetPos = self._building:GetSwimRandomPos()
+  self._moveComponent:SetTarget(targetPos)
+  self._pet:SetSpeed(self._pet.walkSpeed)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.OnFastSwim = function(self)
-  -- function num : 0_9
-  local targetPos = (self._building):GetSwimRandomPos()
-  ;
-  (self._moveComponent):SetTarget(targetPos)
-  ;
-  (self._pet):SetSpeed((self._pet).runSpeed)
+function HomelandPetComponentSwim:OnFastSwim()
+  local targetPos = self._building:GetSwimRandomPos()
+  self._moveComponent:SetTarget(targetPos)
+  self._pet:SetSpeed(self._pet.runSpeed)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.Exit = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((HomelandPetComponentSwim.super).Exit)(self)
+function HomelandPetComponentSwim:Exit()
+  HomelandPetComponentSwim.super.Exit(self)
   self.state = HomelandPetComponentState.Success
-  ;
-  (self._pet):SetSpeed((self._pet).walkSpeed)
+  self._pet:SetSpeed(self._pet.walkSpeed)
   self._building = nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPetComponentSwim.Dispose = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((HomelandPetComponentSwim.super).Dispose)()
-  ;
-  (self._pet):SetSpeed((self._pet).walkSpeed)
+function HomelandPetComponentSwim:Dispose()
+  HomelandPetComponentSwim.super.Dispose()
+  self._pet:SetSpeed(self._pet.walkSpeed)
   self._building = nil
 end
-
-

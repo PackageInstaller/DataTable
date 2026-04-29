@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/task/ui_homeland_task_guide.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIhomelandTaskGuide", UICustomWidget)
 UIhomelandTaskGuide = UIhomelandTaskGuide
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIhomelandTaskGuide.Constructor = function(self)
-  -- function num : 0_0
+function UIhomelandTaskGuide:Constructor()
   self._btnWidgets = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIhomelandTaskGuide.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIhomelandTaskGuide:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIhomelandTaskGuide._GetComponents = function(self)
-  -- function num : 0_2
+function UIhomelandTaskGuide:_GetComponents()
   self._guideBtns = self:GetUIComponent("UISelectObjectPath", "GuideBtns")
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._guideTaskDone = self:GetGameObject("GuideTaskDone")
@@ -34,79 +21,60 @@ UIhomelandTaskGuide._GetComponents = function(self)
   self._descripution = self:GetGameObject("Descripution")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIhomelandTaskGuide.SetData = function(self, questData)
-  -- function num : 0_3 , upvalues : _ENV
+function UIhomelandTaskGuide:SetData(questData)
   self._allQuests = questData
   local defaultGroupID = 1
   local initDefault = false
-  self._btnWidgets = (self._guideBtns):SpawnObjects("UIHomelandTaskGuideBtn", #self._allQuests)
-  for groupID,quests in pairs(self._allQuests) do
+  self._btnWidgets = self._guideBtns:SpawnObjects("UIHomelandTaskGuideBtn", #self._allQuests)
+  for groupID, quests in pairs(self._allQuests) do
     if not self:_CheckAllQuestDone(quests) and not initDefault then
       defaultGroupID = groupID
       initDefault = true
     end
-    ;
-    ((self._btnWidgets)[groupID]):SetData(groupID, function(groupID)
-    -- function num : 0_3_0 , upvalues : self
-    self:_RefreshUIInfo(groupID)
-  end
-)
+    self._btnWidgets[groupID]:SetData(groupID, function(groupID)
+      self:_RefreshUIInfo(groupID)
+    end)
   end
   self:_RefreshUIInfo(defaultGroupID)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIhomelandTaskGuide._RefreshUIInfo = function(self, groupID)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,widget in pairs(self._btnWidgets) do
+function UIhomelandTaskGuide:_RefreshUIInfo(groupID)
+  for _, widget in pairs(self._btnWidgets) do
     widget:RefreshBtn(groupID)
   end
-  local cfg = (Cfg.cfg_homeland_task_group)[groupID]
-  ;
-  (self._taskName):SetText((StringTable.Get)(cfg.GroupTitle))
-  local quests = (self._allQuests)[groupID]
+  local cfg = Cfg.cfg_homeland_task_group[groupID]
+  self._taskName:SetText(StringTable.Get(cfg.GroupTitle))
+  local quests = self._allQuests[groupID]
   local preQuestsDone = true
-  if groupID > 1 then
-    preQuestsDone = self:_CheckAllQuestDone((self._allQuests)[groupID - 1])
+  if 1 < groupID then
+    preQuestsDone = self:_CheckAllQuestDone(self._allQuests[groupID - 1])
   end
-  ;
-  (self._parent):SetActive(preQuestsDone)
-  ;
-  (self._descripution):SetActive(not preQuestsDone)
+  self._parent:SetActive(preQuestsDone)
+  self._descripution:SetActive(not preQuestsDone)
   if not preQuestsDone then
-    return 
+    return
   end
   local done = self:_CheckAllQuestDone(quests)
-  ;
-  (self._icon):LoadImage(cfg.GroupIcon)
-  ;
-  (self._guideTaskDone):SetActive(done)
-  self._rewardsWidgets = (self._rewards):SpawnObjects("UIHomelandTaskGuideRewardItem", #cfg.Reward)
-  for key,widget in pairs(self._rewardsWidgets) do
+  self._icon:LoadImage(cfg.GroupIcon)
+  self._guideTaskDone:SetActive(done)
+  self._rewardsWidgets = self._rewards:SpawnObjects("UIHomelandTaskGuideRewardItem", #cfg.Reward)
+  for key, widget in pairs(self._rewardsWidgets) do
     local roleAsset = {}
-    roleAsset.assetid = ((cfg.Reward)[key])[1]
-    roleAsset.count = ((cfg.Reward)[key])[2]
+    roleAsset.assetid = cfg.Reward[key][1]
+    roleAsset.count = cfg.Reward[key][2]
     widget:SetData(roleAsset, done)
   end
-  self._contentWidgets = (self._content):SpawnObjects("UIHomelandTaskGuideItem", #quests)
-  for key,widget in pairs(self._contentWidgets) do
+  self._contentWidgets = self._content:SpawnObjects("UIHomelandTaskGuideItem", #quests)
+  for key, widget in pairs(self._contentWidgets) do
     widget:SetData(quests[key])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIhomelandTaskGuide._CheckAllQuestDone = function(self, quests)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,quest in pairs(quests) do
-    if (quest:QuestInfo()).status < QuestStatus.QUEST_Taken then
+function UIhomelandTaskGuide:_CheckAllQuestDone(quests)
+  for _, quest in pairs(quests) do
+    if quest:QuestInfo().status < QuestStatus.QUEST_Taken then
       return false
     end
   end
   return true
 end
-
-

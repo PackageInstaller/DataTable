@@ -1,55 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/detective/ui_n29_detective_login.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29DetectiveLogin", UIController)
 UIN29DetectiveLogin = UIN29DetectiveLogin
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29DetectiveLogin.Constructor = function(self)
-  -- function num : 0_0
+function UIN29DetectiveLogin:Constructor()
   self._cdEnd = {tick = 0, period = 30000}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._campaign = (UIActivityCampaign.New)()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N29, ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE, ECampaignN29ComponentID.ECAMPAIGN_N29_QUEST)
-  self._localProcess = (self._campaign):GetLocalProcess()
+function UIN29DetectiveLogin:LoadDataOnEnter(TT, res, uiParams)
+  self._campaign = UIActivityCampaign.New()
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N29, ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE, ECampaignN29ComponentID.ECAMPAIGN_N29_QUEST)
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._detectiveComponent = (self._localProcess):GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
-  self._questComponent = (self._localProcess):GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_QUEST)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._detectiveComponent = self._localProcess:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_DETECTIVE)
+  self._questComponent = self._localProcess:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_QUEST)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN29DetectiveLogin:OnShow(uiParams)
   self._uiWidget = self:GetUIComponent("RectTransform", "uiWidget")
   self._btnAnywhere = self:GetUIComponent("RectTransform", "btnAnywhere")
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
-  self._redCollection = (self:View()):GetUIComponent("UISelectObjectPath", "redCollection")
+  self._redCollection = self:View():GetUIComponent("UISelectObjectPath", "redCollection")
   self._redCollectionSpawn = nil
   self._txtEndDuration = self:GetUIComponent("UILocalizationText", "txtEndDuration")
   self._animation = self:GetUIComponent("Animation", "animation")
   self._plotMask = self:GetUIComponent("RectTransform", "plotMask")
-  ;
-  ((self._plotMask).gameObject):SetActive(false)
+  self._plotMask.gameObject:SetActive(false)
   self._localDb = UIN29DetectiveLocalDb:New()
-  ;
-  (self._localDb):GameLoadDB()
-  ;
-  (self._localDb):ViewedLoadDB()
-  ;
-  (self._localDb):BreakPosition()
+  self._localDb:GameLoadDB()
+  self._localDb:ViewedLoadDB()
+  self._localDb:BreakPosition()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
   self:EnterFullScreenBg(false)
   self:InitCommonTopButton()
@@ -58,120 +39,80 @@ UIN29DetectiveLogin.OnShow = function(self, uiParams)
   self:CheckGuide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.OnHide = function(self)
-  -- function num : 0_3
+function UIN29DetectiveLogin:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._cdEnd).tick = (self._cdEnd).tick + deltaTimeMS
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-  if (self._cdEnd).period <= (self._cdEnd).tick then
-    (self._cdEnd).tick = 0
+function UIN29DetectiveLogin:OnUpdate(deltaTimeMS)
+  self._cdEnd.tick = self._cdEnd.tick + deltaTimeMS
+  if self._cdEnd.tick >= self._cdEnd.period then
+    self._cdEnd.tick = 0
     self:FlushEndDuration()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN29DetectiveLogin:OnActivityCloseEvent(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.GetChildComponent = function(self, parent, componentTypeName, name)
-  -- function num : 0_6
-  local child = (parent.transform):Find(name)
+function UIN29DetectiveLogin:GetChildComponent(parent, componentTypeName, name)
+  local child = parent.transform:Find(name)
   if child == nil then
     return nil
   end
   return child:GetComponent(componentTypeName)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.EnterFullScreenBg = function(self, isEnter)
-  -- function num : 0_7
-  ((self._uiWidget).gameObject):SetActive(not isEnter)
-  ;
-  ((self._btnAnywhere).gameObject):SetActive(isEnter)
+function UIN29DetectiveLogin:EnterFullScreenBg(isEnter)
+  self._uiWidget.gameObject:SetActive(not isEnter)
+  self._btnAnywhere.gameObject:SetActive(isEnter)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.InitCommonTopButton = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local fnHelp = function()
-    -- function num : 0_8_0 , upvalues : self
+function UIN29DetectiveLogin:InitCommonTopButton()
+  local function fnHelp()
     self:ShowDialog("UIN29DetectiveReasoning", 3)
   end
-
-  self._backBtns = (self._ltBtn):SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_8_1 , upvalues : _ENV, self
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN29MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-, fnHelp, function()
-    -- function num : 0_8_2 , upvalues : self, _ENV
+  
+  self._backBtns = self._ltBtn:SpawnObject("UICommonTopButton")
+  self._backBtns:SetData(function()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN29MainController, UIStateType.UIMain, nil, self._campaign._id)
+  end, fnHelp, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-, false, function()
-    -- function num : 0_8_3 , upvalues : self
+  end, false, function()
     self:EnterFullScreenBg(true)
-  end
-)
-  ;
-  (((self._ltBtn):Engine()).gameObject):SetActive(false)
+  end)
+  self._ltBtn:Engine().gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.FlushCollectionRedDot = function(self)
-  -- function num : 0_9
+function UIN29DetectiveLogin:FlushCollectionRedDot()
   local showRedDot = false
-  if not showRedDot then
-    showRedDot = (self._localDb):GetEndCGReddot()
-  end
-  if not showRedDot then
-    showRedDot = (self._localDb):GetMemoryReddot()
-  end
-  if not showRedDot then
-    showRedDot = (self._localDb):GetAchieveReddot()
-  end
-  if ((self._redCollection).gameObject).activeSelf ~= showRedDot then
-    ((self._redCollection).gameObject):SetActive(showRedDot)
+  showRedDot = showRedDot or self._localDb:GetEndCGReddot()
+  showRedDot = showRedDot or self._localDb:GetMemoryReddot()
+  showRedDot = showRedDot or self._localDb:GetAchieveReddot()
+  if self._redCollection.gameObject.activeSelf ~= showRedDot then
+    self._redCollection.gameObject:SetActive(showRedDot)
   end
   if showRedDot and self._redCollectionSpawn == nil then
-    self._redCollectionSpawn = (self._redCollection):SpawnOneObject("ManualLoad0")
+    self._redCollectionSpawn = self._redCollection:SpawnOneObject("ManualLoad0")
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.ReFlushCollectionRedDot = function(self)
-  -- function num : 0_10
-  (self._localDb):ViewedLoadDB()
+function UIN29DetectiveLogin:ReFlushCollectionRedDot()
+  self._localDb:ViewedLoadDB()
   self:FlushCollectionRedDot()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.GetFormatTimerStr = function(self, deltaTime, txtColor)
-  -- function num : 0_11 , upvalues : _ENV
-  local id = {day = "str_activity_common_day", hour = "str_activity_common_hour", min = "str_activity_common_minute", zero = "str_activity_common_less_minute", over = "str_activity_error_107", clrFormat = "<color=#%s>%s</color>"}
+function UIN29DetectiveLogin:GetFormatTimerStr(deltaTime, txtColor)
+  local id = {
+    day = "str_activity_common_day",
+    hour = "str_activity_common_hour",
+    min = "str_activity_common_minute",
+    zero = "str_activity_common_less_minute",
+    over = "str_activity_error_107",
+    clrFormat = "<color=#%s>%s</color>"
+  }
   if txtColor == nil then
     txtColor = "D0BA95"
   end
@@ -179,75 +120,51 @@ UIN29DetectiveLogin.GetFormatTimerStr = function(self, deltaTime, txtColor)
   local hour = 0
   local min = 0
   local second = 0
-  if deltaTime >= 0 then
-    day = (UIActivityHelper.Time2Str)(deltaTime)
+  if 0 <= deltaTime then
+    day, hour, min, second = UIActivityHelper.Time2Str(deltaTime)
   end
-  local timeStr = nil
-  if day > 0 and hour > 0 then
-    timeStr = (string.format)(id.clrFormat, txtColor, day) .. (StringTable.Get)(id.day)
-    timeStr = timeStr .. (string.format)(id.clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
+  local timeStr
+  if 0 < day and 0 < hour then
+    timeStr = string.format(id.clrFormat, txtColor, day) .. StringTable.Get(id.day)
+    timeStr = timeStr .. string.format(id.clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+  elseif 0 < day then
+    timeStr = string.format(id.clrFormat, txtColor, day) .. StringTable.Get(id.day)
+  elseif 0 < hour and 0 < min then
+    timeStr = string.format(id.clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+    timeStr = timeStr .. string.format(id.clrFormat, txtColor, min) .. StringTable.Get(id.min)
+  elseif 0 < hour then
+    timeStr = string.format(id.clrFormat, txtColor, hour) .. StringTable.Get(id.hour)
+  elseif 0 < min then
+    timeStr = string.format(id.clrFormat, txtColor, min) .. StringTable.Get(id.min)
   else
-    if day > 0 then
-      timeStr = (string.format)(id.clrFormat, txtColor, day) .. (StringTable.Get)(id.day)
-    else
-      if hour > 0 and min > 0 then
-        timeStr = (string.format)(id.clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
-        timeStr = timeStr .. (string.format)(id.clrFormat, txtColor, min) .. (StringTable.Get)(id.min)
-      else
-        if hour > 0 then
-          timeStr = (string.format)(id.clrFormat, txtColor, hour) .. (StringTable.Get)(id.hour)
-        else
-          if min > 0 then
-            timeStr = (string.format)(id.clrFormat, txtColor, min) .. (StringTable.Get)(id.min)
-          else
-            timeStr = (string.format)(id.clrFormat, txtColor, (StringTable.Get)(id.zero))
-          end
-        end
-      end
-    end
+    timeStr = string.format(id.clrFormat, txtColor, StringTable.Get(id.zero))
   end
   return timeStr
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.FlushEndDuration = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local endTime = ((self._detectiveComponent):GetComponentInfo()).m_close_time
+function UIN29DetectiveLogin:FlushEndDuration()
+  local endTime = self._detectiveComponent:GetComponentInfo().m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local deltaTime = (math.max)(endTime - curTime, 0)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local deltaTime = math.max(endTime - curTime, 0)
   local timerStr = self:GetFormatTimerStr(deltaTime)
-  local txtValue = (StringTable.Get)("str_n29_detective_end_title", timerStr)
-  ;
-  (self._txtEndDuration):SetText(txtValue)
+  local txtValue = StringTable.Get("str_n29_detective_end_title", timerStr)
+  self._txtEndDuration:SetText(txtValue)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.BtnAnywhereOnClick = function(self, go)
-  -- function num : 0_13
+function UIN29DetectiveLogin:BtnAnywhereOnClick(go)
   self:EnterFullScreenBg(false)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.BtnIntroOnClick = function(self, go)
-  -- function num : 0_14
+function UIN29DetectiveLogin:BtnIntroOnClick(go)
   self:ShowDialog("UIIntroLoader", "UIN29DetectiveLoginIntro")
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.ExistBreak = function(self)
-  -- function num : 0_15
-  return (self._localDb):ExistBreak()
+function UIN29DetectiveLogin:ExistBreak()
+  return self._localDb:ExistBreak()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.BtnStartNewGameOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN29DetectiveLogin:BtnStartNewGameOnClick(go)
   if self:ExistBreak() then
     self:ShowDialog("UIN29DetectiveBreakLoad")
   else
@@ -255,125 +172,79 @@ UIN29DetectiveLogin.BtnStartNewGameOnClick = function(self, go)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.BtnLoadArchivingOnClick = function(self, go)
-  -- function num : 0_17
+function UIN29DetectiveLogin:BtnLoadArchivingOnClick(go)
   self:ShowDialog("UIN29DetectiveArchiveLoad")
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.BtnCollectionOnClick = function(self, go)
-  -- function num : 0_18 , upvalues : _ENV
-  local endTime = ((self._questComponent):GetComponentInfo()).m_close_time
+function UIN29DetectiveLogin:BtnCollectionOnClick(go)
+  local endTime = self._questComponent:GetComponentInfo().m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   if endTime <= curTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
   else
     self:ShowDialog("UIN29DetectiveCollection")
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.BtnExitOnClick = function(self, go)
-  -- function num : 0_19 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN29MainController, UIStateType.UIMain, nil, (self._campaign)._id)
+function UIN29DetectiveLogin:BtnExitOnClick(go)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN29MainController, UIStateType.UIMain, nil, self._campaign._id)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.OnStartPlayGame = function(self, gameType, idStage)
-  -- function num : 0_20 , upvalues : _ENV
-  local endTime = ((self._detectiveComponent):GetComponentInfo()).m_close_time
+function UIN29DetectiveLogin:OnStartPlayGame(gameType, idStage)
+  local endTime = self._detectiveComponent:GetComponentInfo().m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   if endTime <= curTime then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
   else
     self:StartTask(self.OnStartPlayGameTask, self, gameType, idStage)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.OnStartPlayGameTask = function(self, TT, gameType, idStage)
-  -- function num : 0_21 , upvalues : _ENV
+function UIN29DetectiveLogin:OnStartPlayGameTask(TT, gameType, idStage)
   self:Lock("UIN29DetectiveLogin:OnStartPlayGameTask")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
   if gameType == UIN29DetectiveLocalDb.Game_New then
-    local allStage = (self._localDb):GetAllStage()
-    idStage = (allStage[idStage]).ID
-    ;
-    (self._detectiveComponent):HandleStartGame(TT, res, CurDetectiveInfo:New())
-    ;
-    (self._localDb):GameIdReasoning(UIN29DetectiveLocalDb.Game_Continue)
+    local allStage = self._localDb:GetAllStage()
+    idStage = allStage[idStage].ID
+    self._detectiveComponent:HandleStartGame(TT, res, CurDetectiveInfo:New())
+    self._localDb:GameIdReasoning(UIN29DetectiveLocalDb.Game_Continue)
+  elseif gameType == UIN29DetectiveLocalDb.Game_Archive then
+    local archiveLoadData = self._localDb:ArchiveLoadData()
+    self._detectiveComponent:HandleStartGame(TT, res, archiveLoadData)
+    self._localDb:GameIdReasoning(UIN29DetectiveLocalDb.Game_Continue_Reasoning)
+  end
+  if not res:GetSucc() then
+    ToastManager.ShowToast(StringTable.Get("str_activity_finished"))
+  elseif gameType == UIN29DetectiveLocalDb.Game_New then
+    self._plotMask.gameObject:SetActive(true)
+    self:ShowDialog("UIStoryController", 50470000, function()
+      self:OnDetective(gameType, idStage)
+    end)
   else
-    do
-      do
-        if gameType == UIN29DetectiveLocalDb.Game_Archive then
-          local archiveLoadData = (self._localDb):ArchiveLoadData()
-          ;
-          (self._detectiveComponent):HandleStartGame(TT, res, archiveLoadData)
-          ;
-          (self._localDb):GameIdReasoning(UIN29DetectiveLocalDb.Game_Continue_Reasoning)
-        end
-        if not res:GetSucc() then
-          (ToastManager.ShowToast)((StringTable.Get)("str_activity_finished"))
-        else
-          if gameType == UIN29DetectiveLocalDb.Game_New then
-            ((self._plotMask).gameObject):SetActive(true)
-            self:ShowDialog("UIStoryController", 50470000, function()
-    -- function num : 0_21_0 , upvalues : self, gameType, idStage
     self:OnDetective(gameType, idStage)
   end
-)
-          else
-            self:OnDetective(gameType, idStage)
-          end
-        end
-        self:UnLock("UIN29DetectiveLogin:OnStartPlayGameTask")
-      end
-    end
-  end
+  self:UnLock("UIN29DetectiveLogin:OnStartPlayGameTask")
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.OnDetective = function(self, gameType, idStage)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN29DetectiveLogin:OnDetective(gameType, idStage)
   if gameType == UIN29DetectiveLocalDb.Game_Archive then
     self:ShowDialog("UIN29DetectiveReasoning", idStage)
+  elseif gameType == UIN29DetectiveLocalDb.Game_Continue_Reasoning then
+    self:ShowDialog("UIN29DetectiveReasoning", idStage)
+  elseif gameType == UIN29DetectiveLocalDb.Game_Continue_ReasoningPlot then
+    local allStage = self._localDb:GetAllStage()
+    self._localDb:AfterReasoningPlot(allStage[idStage].AfterReasoningPlot, true, nil, function()
+      self._localDb:PlayEndingPlot(true)
+    end)
   else
-    if gameType == UIN29DetectiveLocalDb.Game_Continue_Reasoning then
-      self:ShowDialog("UIN29DetectiveReasoning", idStage)
-    else
-      if gameType == UIN29DetectiveLocalDb.Game_Continue_ReasoningPlot then
-        local allStage = (self._localDb):GetAllStage()
-        ;
-        (self._localDb):AfterReasoningPlot((allStage[idStage]).AfterReasoningPlot, true, nil, function()
-    -- function num : 0_22_0 , upvalues : self
-    (self._localDb):PlayEndingPlot(true)
-  end
-)
-      else
-        do
-          self:SwitchState(UIStateType.UIActivityN29DetectiveMapController, idStage)
-        end
-      end
-    end
+    self:SwitchState(UIStateType.UIActivityN29DetectiveMapController, idStage)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29DetectiveLogin.CheckGuide = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN29DetectiveLogin)
+function UIN29DetectiveLogin:CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN29DetectiveLogin)
 end
-
-

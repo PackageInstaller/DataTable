@@ -1,26 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/room/empty/ui_season_maze_room_empty.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRoomEmpty", UISeasonMazeRoomBase)
 UISeasonMazeRoomEmpty = UISeasonMazeRoomEmpty
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRoomEmpty.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeRoomEmpty:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRoomEmpty.OnShowUI = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRoomEmpty:OnShowUI(uiParams)
   self:ShowDialog("UISeasonMazeRoomPopBox", SeasonMazeRoomType.SMRT_Empty, function()
-    -- function num : 0_1_0 , upvalues : self
     self:OnHideUI()
-  end
-)
+  end)
 end
-
-

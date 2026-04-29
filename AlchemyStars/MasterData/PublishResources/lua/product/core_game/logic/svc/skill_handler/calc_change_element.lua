@@ -1,58 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_change_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_ChangeElement", SkillEffectCalc_Base)
 SkillEffectCalc_ChangeElement = SkillEffectCalc_ChangeElement
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ChangeElement.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ChangeElement:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ChangeElement.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ChangeElement:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam.skillEffectParam
   local type = skillParam:GetType()
   local targetElement = skillParam:GetElement()
   local targetID = skillEffectCalcParam.casterEntityID
   if type == EffectChangeElementType.ByCurrentTeamLeader then
-    local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+    local teamEntity = self._world:Player():GetLocalTeamEntity()
     local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
     local elementCmpt = teamLeaderEntity:Element()
     targetElement = elementCmpt:GetPrimaryType()
-    targetID = (skillEffectCalcParam:GetTargetEntityIDs())[1]
-  else
-    do
-      if type == EffectChangeElementType.RestoreMonsterCfgElement then
-        local entity = (self._world):GetEntityByID(targetID)
-        if entity:HasMonsterID() then
-          local monsterID = (entity:MonsterID()):GetMonsterID()
-          local configService = (self._world):GetService("Config")
-          local monsterConfigData = configService:GetMonsterConfigData()
-          targetElement = monsterConfigData:GetMonsterElementType(monsterID)
-        end
-      end
-      do
-        if skillParam:IsChangeSuperElement() then
-          local entity = (self._world):GetEntityByID(targetID)
-          local superEntity = entity:GetSuperEntity()
-          if superEntity then
-            targetID = superEntity:GetID()
-          end
-        end
-        do
-          local result = SkillEffectResultChangeElement:New(targetID, targetElement)
-          return result
-        end
-      end
+    targetID = skillEffectCalcParam:GetTargetEntityIDs()[1]
+  elseif type == EffectChangeElementType.RestoreMonsterCfgElement then
+    local entity = self._world:GetEntityByID(targetID)
+    if entity:HasMonsterID() then
+      local monsterID = entity:MonsterID():GetMonsterID()
+      local configService = self._world:GetService("Config")
+      local monsterConfigData = configService:GetMonsterConfigData()
+      targetElement = monsterConfigData:GetMonsterElementType(monsterID)
     end
   end
+  if skillParam:IsChangeSuperElement() then
+    local entity = self._world:GetEntityByID(targetID)
+    local superEntity = entity:GetSuperEntity()
+    if superEntity then
+      targetID = superEntity:GetID()
+    end
+  end
+  local result = SkillEffectResultChangeElement:New(targetID, targetElement)
+  return result
 end
-
-

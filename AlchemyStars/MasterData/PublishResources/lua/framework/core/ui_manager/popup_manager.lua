@@ -1,19 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/ui_manager/popup_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local _PopupPriority = {Invalid = 0, Normal = 1, Guide = 2, Network = 3, System = 4}
+local _PopupPriority = {
+  Invalid = 0,
+  Normal = 1,
+  Guide = 2,
+  Network = 3,
+  System = 4
+}
 _enum("PopupPriority", _PopupPriority)
 PopupPriority = PopupPriority
 _class("PopupManager", Singleton)
 PopupManager = PopupManager
 local PrefabSuffix = ".prefab"
 local SHALLOW_COPY = table.shallowcopy
--- DECOMPILER ERROR at PC23: Confused about usage of register: R3 in 'UnsetPending'
 
-PopupManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopupManager:Constructor()
   self.popupList = ArrayList:New()
   self.curPopup = nil
   self.priorityFilter = PopupPriority.Normal
@@ -21,63 +20,46 @@ PopupManager.Constructor = function(self)
   self.switchLock = false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.Dispose = function(self)
-  -- function num : 0_1 , upvalues : SHALLOW_COPY, _ENV
+function PopupManager:Dispose()
   if self.name2MsgBox then
     local name2MsgBox = SHALLOW_COPY(self.name2MsgBox)
-    for k,v in pairs(name2MsgBox) do
+    for k, v in pairs(name2MsgBox) do
       v:UnLoad()
       v:Dispose()
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.Alert = function(uiMsgBoxName, priority, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  if (GameGlobal:GetInstance()):IsDisposing() then
-    (Log.debug)("[UIPopup] PopupManager.Alert return,cause game disposing,", uiMsgBoxName, (debug.traceback)())
-    return 
+function PopupManager.Alert(uiMsgBoxName, priority, ...)
+  if GameGlobal:GetInstance():IsDisposing() then
+    Log.debug("[UIPopup] PopupManager.Alert return,cause game disposing,", uiMsgBoxName, debug.traceback())
+    return
   else
-    ;
-    (Log.debug)("[UIPopup] PopupManager.Alert,", uiMsgBoxName, (debug.traceback)())
+    Log.debug("[UIPopup] PopupManager.Alert,", uiMsgBoxName, debug.traceback())
   end
   local popup = Popup:New(uiMsgBoxName, priority, ...)
-  ;
-  ((GameGlobal.UIStateManager)()):ShowPopup(popup)
+  GameGlobal.UIStateManager():ShowPopup(popup)
   return popup
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.GetSwitchLock = function(self)
-  -- function num : 0_3
+function PopupManager:GetSwitchLock()
   return self.switchLock
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.SetSwitchLock = function(self, value)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.debug)("[UIPopup] PopupManager:SetSwitchLock,", value)
+function PopupManager:SetSwitchLock(value)
+  Log.debug("[UIPopup] PopupManager:SetSwitchLock,", value)
   self.switchLock = value
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.SetPopupPriorityFilter = function(self, TT, value, bOnlyFilter)
-  -- function num : 0_5
+function PopupManager:SetPopupPriorityFilter(TT, value, bOnlyFilter)
   if value then
     if not bOnlyFilter then
       self.priorityFilter = value
     end
     local deletePopup = {}
-    for i = 1, (self.popupList):Size() do
-      local popup = (self.popupList):GetAt(i)
-      if popup:Priority() < value then
+    for i = 1, self.popupList:Size() do
+      local popup = self.popupList:GetAt(i)
+      if value > popup:Priority() then
         deletePopup[#deletePopup + 1] = popup
       end
     end
@@ -88,175 +70,129 @@ PopupManager.SetPopupPriorityFilter = function(self, TT, value, bOnlyFilter)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.GetPriorityFilter = function(self)
-  -- function num : 0_6
+function PopupManager:GetPriorityFilter()
   return self.priorityFilter
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.OpenPopup = function(self, TT, popup)
-  -- function num : 0_7 , upvalues : _ENV
+function PopupManager:OpenPopup(TT, popup)
   if not popup then
-    (Log.fatal)("[UIPopup] PopupManager:OpenPopup, popup is nil,return")
-    return 
+    Log.fatal("[UIPopup] PopupManager:OpenPopup, popup is nil,return")
+    return
   end
   if popup:Priority() < self.priorityFilter then
-    (Log.fatal)("[UIPopup] PopupManager:OpenPopup, priority=", popup:Priority(), " is lower than filter=", self.priorityFilter, ",return")
-    return 
+    Log.fatal("[UIPopup] PopupManager:OpenPopup, priority=", popup:Priority(), " is lower than filter=", self.priorityFilter, ",return")
+    return
   end
-  local index = (self.popupList):Find(popup)
+  local index = self.popupList:Find(popup)
   if index ~= -1 then
-    (Log.fatal)("[UIPopup] PopupManager:OpenPopup, popup had open,return")
-    return 
+    Log.fatal("[UIPopup] PopupManager:OpenPopup, popup had open,return")
+    return
   end
-  if not self.curPopup or (self.curPopup):Priority() < popup:Priority() then
-    (Log.debug)("[UIPopup] PopupManager:OpenPopup,", popup.uiMsgBoxName, ", open and add to popuplist")
+  if not self.curPopup or popup:Priority() > self.curPopup:Priority() then
+    Log.debug("[UIPopup] PopupManager:OpenPopup,", popup.uiMsgBoxName, ", open and add to popuplist")
     if self.curPopup then
-      (self.curPopup):Close(TT, false)
+      self.curPopup:Close(TT, false)
     end
     self.curPopup = popup
-    ;
-    (self.curPopup):Open(TT)
+    self.curPopup:Open(TT)
   else
-    ;
-    (Log.debug)("[UIPopup] PopupManager:OpenPopup,", popup.uiMsgBoxName, ", just add to popuplist")
+    Log.debug("[UIPopup] PopupManager:OpenPopup,", popup.uiMsgBoxName, ", just add to popuplist")
   end
   local index = -1
-  for i = 1, (self.popupList):Size() do
-    local p = (self.popupList):GetAt(i)
-    if p:Priority() < popup:Priority() then
+  for i = 1, self.popupList:Size() do
+    local p = self.popupList:GetAt(i)
+    if popup:Priority() > p:Priority() then
       index = i
       break
     end
   end
-  do
-    if index < 0 then
-      (self.popupList):PushBack(popup)
-    else
-      ;
-      (self.popupList):Insert(popup, index)
-    end
+  if index < 0 then
+    self.popupList:PushBack(popup)
+  else
+    self.popupList:Insert(popup, index)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.ClosePopup = function(self, TT, popup)
-  -- function num : 0_8 , upvalues : _ENV
+function PopupManager:ClosePopup(TT, popup)
   if not popup then
-    (Log.fatal)("[UIPopup] PopupManager:ClosePopup, popup is nil,return")
-    return 
+    Log.fatal("[UIPopup] PopupManager:ClosePopup, popup is nil,return")
+    return
   end
-  local oldSize = (self.popupList):Size()
-  local index = (self.popupList):Remove(popup)
+  local oldSize = self.popupList:Size()
+  local index = self.popupList:Remove(popup)
   if self.curPopup == popup then
-    (Log.debug)("[UIPopup] PopupManager:ClosePopup ", popup.uiMsgBoxName, " which is curPopup, close and remove from popuplist")
+    Log.debug("[UIPopup] PopupManager:ClosePopup ", popup.uiMsgBoxName, " which is curPopup, close and remove from popuplist")
     popup:Close(TT)
-    if (self.popupList):Size() > 0 then
-      self.curPopup = (self.popupList):GetAt(1)
-      ;
-      (Log.debug)("[UIPopup] PopupManager:ClosePopup, open popup ", (self.curPopup).uiMsgBoxName, " from popupList")
-      ;
-      (self.curPopup):Open(TT)
+    if self.popupList:Size() > 0 then
+      self.curPopup = self.popupList:GetAt(1)
+      Log.debug("[UIPopup] PopupManager:ClosePopup, open popup ", self.curPopup.uiMsgBoxName, " from popupList")
+      self.curPopup:Open(TT)
     else
       self.curPopup = nil
     end
+  elseif oldSize == 0 then
+    Log.debug("[UIPopup] PopupManager:ClosePopup ", popup.uiMsgBoxName, " which isn't curPopup, and popuplist is empty")
+  elseif index == -1 then
+    Log.debug("[UIPopup] PopupManager:ClosePopup ", popup.uiMsgBoxName, " which isn't curPopup, not in popuplist")
   else
-    if oldSize == 0 then
-      (Log.debug)("[UIPopup] PopupManager:ClosePopup ", popup.uiMsgBoxName, " which isn\'t curPopup, and popuplist is empty")
-    else
-      if index == -1 then
-        (Log.debug)("[UIPopup] PopupManager:ClosePopup ", popup.uiMsgBoxName, " which isn\'t curPopup, not in popuplist")
-      else
-        ;
-        (Log.debug)("[UIPopup] PopupManager:ClosePopup ", popup.uiMsgBoxName, " which isn\'t curPopup, just remove from popuplist")
-      end
-    end
+    Log.debug("[UIPopup] PopupManager:ClosePopup ", popup.uiMsgBoxName, " which isn't curPopup, just remove from popuplist")
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.GetUIMessageBox = function(self, TT, uiMsgBoxName)
-  -- function num : 0_9 , upvalues : _ENV, PrefabSuffix
-  local uiMsgBox = (self.name2MsgBox)[uiMsgBoxName]
+function PopupManager:GetUIMessageBox(TT, uiMsgBoxName)
+  local uiMsgBox = self.name2MsgBox[uiMsgBoxName]
   if uiMsgBox then
     return true, uiMsgBox
   else
     local uiMsgBox = self:CreateUIMessageBox(uiMsgBoxName)
     if not uiMsgBox then
-      return 
+      return
     end
     uiMsgBox:SetName(uiMsgBoxName)
-    local uiView, resRequest = (UIResourceManager.GetViewAsync)(TT, uiMsgBoxName, uiMsgBoxName .. PrefabSuffix)
+    local uiView, resRequest = UIResourceManager.GetViewAsync(TT, uiMsgBoxName, uiMsgBoxName .. PrefabSuffix)
     if not uiView then
-      (Log.fatal)("[UI] PopupManager:GetUIMessageBox Error, View is Null, ", uiMsgBoxName)
-      return 
+      Log.fatal("[UI] PopupManager:GetUIMessageBox Error, View is Null, ", uiMsgBoxName)
+      return
     end
     return false, uiMsgBox, uiView, resRequest
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.SetUIMessageBox = function(self, uiMsgBoxName, uiMsgBox, uiView, resRequest)
-  -- function num : 0_10
+function PopupManager:SetUIMessageBox(uiMsgBoxName, uiMsgBox, uiView, resRequest)
   if uiMsgBox == nil or uiView == nil then
-    return 
+    return
   end
   uiMsgBox:Load(uiView, resRequest)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self.name2MsgBox)[uiMsgBoxName] = uiMsgBox
+  self.name2MsgBox[uiMsgBoxName] = uiMsgBox
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.Clear = function(self, TT)
-  -- function num : 0_11
+function PopupManager:Clear(TT)
   if self.curPopup then
-    (self.curPopup):Close(TT)
+    self.curPopup:Close(TT)
     self.curPopup = nil
   end
-  ;
-  (self.popupList):Clear()
+  self.popupList:Clear()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.GetCurShowingPriority = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function PopupManager:GetCurShowingPriority()
   if not self.curPopup then
     return PopupPriority.Invalid
   end
-  return (self.curPopup):Priority()
+  return self.curPopup:Priority()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.HasPopup = function(self)
-  -- function num : 0_13
-  do return (self.popupList):Size() > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PopupManager:HasPopup()
+  return self.popupList:Size() > 0
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-PopupManager.CreateUIMessageBox = function(self, uiMsgBoxName)
-  -- function num : 0_14 , upvalues : _ENV
+function PopupManager:CreateUIMessageBox(uiMsgBoxName)
   local uiMsgBox = _createInstance(uiMsgBoxName)
   if not uiMsgBox then
-    (Log.fatal)("[UI] PopupManager:CreateUIMessageBox Error, No UIMessageBox of name = ", uiMsgBoxName)
+    Log.fatal("[UI] PopupManager:CreateUIMessageBox Error, No UIMessageBox of name = ", uiMsgBoxName)
   end
   if not uiMsgBox:IsChildOf("UIMessageBox") then
-    (Log.fatal)("[UI] PopupManager:CreateUIMessageBox Fail, ", uiMsgBoxName, " is not inherited from UIMessageBox!")
-    return 
+    Log.fatal("[UI] PopupManager:CreateUIMessageBox Fail, ", uiMsgBoxName, " is not inherited from UIMessageBox!")
+    return
   end
   return uiMsgBox
 end
-
-

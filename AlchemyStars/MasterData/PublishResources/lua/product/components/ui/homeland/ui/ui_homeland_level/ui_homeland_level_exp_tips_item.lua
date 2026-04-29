@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_level/ui_homeland_level_exp_tips_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandLevelExpTipsItem", UICustomWidget)
 UIHomelandLevelExpTipsItem = UIHomelandLevelExpTipsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandLevelExpTipsItem.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandLevelExpTipsItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelExpTipsItem.OnShow = function(self)
-  -- function num : 0_1
+function UIHomelandLevelExpTipsItem:OnShow()
   self.txtFM = self:GetUIComponent("UILocalizationText", "txtFM")
   self.txtPT = self:GetUIComponent("UILocalizationText", "txtPT")
   self.txtFMValue = self:GetUIComponent("UILocalizationText", "txtFMValue")
   self.txtPTValue = self:GetUIComponent("UILocalizationText", "txtPTValue")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelExpTipsItem.Flush = function(self, i)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.txtFM):SetText((StringTable.Get)("str_homeland_level_first_manufacture_" .. i))
-  ;
-  (self.txtFMValue):SetText((StringTable.Get)("str_homeland_level_first_manufacture_val_" .. i))
-  ;
-  (self.txtPT):SetText((StringTable.Get)("str_homeland_level_first_plant_tree_" .. i))
-  ;
-  (self.txtPTValue):SetText((StringTable.Get)("str_homeland_level_first_plant_tree_val_" .. i))
+function UIHomelandLevelExpTipsItem:Flush(i)
+  self.txtFM:SetText(StringTable.Get("str_homeland_level_first_manufacture_" .. i))
+  self.txtFMValue:SetText(StringTable.Get("str_homeland_level_first_manufacture_val_" .. i))
+  self.txtPT:SetText(StringTable.Get("str_homeland_level_first_plant_tree_" .. i))
+  self.txtPTValue:SetText(StringTable.Get("str_homeland_level_first_plant_tree_val_" .. i))
 end
-
-

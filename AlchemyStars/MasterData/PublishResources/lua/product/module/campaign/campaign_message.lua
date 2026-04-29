@@ -1,83 +1,97 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/campaign_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local campaignMessageDef = {CLSID_CEventRequestCampaignLoadInfoList = 35000, CLSID_CEventReplyCampaignLoadInfoList = 35001, CLSID_CEventRequestCampaignLoadInfo = 35002, CLSID_CEventReplyCampaignLoadInfo = 35003, CLSID_CEventCampaignRequest = 35004, CLSID_CEventCampaignReply = 35005, CLSID_CEventCampaignPushNotify = 35006, CLSID_CEventStepChangeNotify = 35007, CLSID_CEventChangeCampaignSampleNotify = 35008, CLSID_CEventRequestCampaignSetRemind = 35009, CLSID_CEventReplyCampaignSetRemind = 35010, CLSID_CEventRequestCampaignClearNewFlag = 35011, CLSID_CEventReplyCampaignClearNewFlag = 35012, CLSID_CEventRequestCampaignGetMatchMissionExReward = 35013, CLSID_CEventReplyCampaignGetMatchMissionExReward = 35014, CLSID_CEventRequestCampaignGetMatchMissionArrayExReward = 35015, CLSID_CEventReplyCampaignGetMatchMissionArrayExReward = 35016, CLSID_CEventUnlockCampaignReq = 35017, CLSID_CEventUnlockCampaignRes = 35018, CLSID_CEventRequestCampaignReviewLoadInfoList = 35019, CLSID_CEventReplyCampaignReviewLoadInfoList = 35020, CLSID_CEventEnterCampaignReviewReq = 35021, CLSID_CEventEnterCampaignReviewRes = 35022, CLSID_CEventCampaignLoadComponentRankReq = 35023, CLSID_CEventCampaignLoadComponentRankRes = 35024, CLSID_CEventCampaignTeamRecordReq = 35025, CLSID_CEventCampaignTeamRecordRes = 35026, CLSID_CEventRequestCampaignPreviewList = 35027, CLSID_CEventReplyCampaignPreviewList = 35028}
-;
-(table.append)(MessageDef, campaignMessageDef)
+local campaignMessageDef = {
+  CLSID_CEventRequestCampaignLoadInfoList = 35000,
+  CLSID_CEventReplyCampaignLoadInfoList = 35001,
+  CLSID_CEventRequestCampaignLoadInfo = 35002,
+  CLSID_CEventReplyCampaignLoadInfo = 35003,
+  CLSID_CEventCampaignRequest = 35004,
+  CLSID_CEventCampaignReply = 35005,
+  CLSID_CEventCampaignPushNotify = 35006,
+  CLSID_CEventStepChangeNotify = 35007,
+  CLSID_CEventChangeCampaignSampleNotify = 35008,
+  CLSID_CEventRequestCampaignSetRemind = 35009,
+  CLSID_CEventReplyCampaignSetRemind = 35010,
+  CLSID_CEventRequestCampaignClearNewFlag = 35011,
+  CLSID_CEventReplyCampaignClearNewFlag = 35012,
+  CLSID_CEventRequestCampaignGetMatchMissionExReward = 35013,
+  CLSID_CEventReplyCampaignGetMatchMissionExReward = 35014,
+  CLSID_CEventRequestCampaignGetMatchMissionArrayExReward = 35015,
+  CLSID_CEventReplyCampaignGetMatchMissionArrayExReward = 35016,
+  CLSID_CEventUnlockCampaignReq = 35017,
+  CLSID_CEventUnlockCampaignRes = 35018,
+  CLSID_CEventRequestCampaignReviewLoadInfoList = 35019,
+  CLSID_CEventReplyCampaignReviewLoadInfoList = 35020,
+  CLSID_CEventEnterCampaignReviewReq = 35021,
+  CLSID_CEventEnterCampaignReviewRes = 35022,
+  CLSID_CEventCampaignLoadComponentRankReq = 35023,
+  CLSID_CEventCampaignLoadComponentRankRes = 35024,
+  CLSID_CEventCampaignTeamRecordReq = 35025,
+  CLSID_CEventCampaignTeamRecordRes = 35026,
+  CLSID_CEventRequestCampaignPreviewList = 35027,
+  CLSID_CEventReplyCampaignPreviewList = 35028
+}
+table.append(MessageDef, campaignMessageDef)
 _class("CEventRequestCampaignLoadInfoList", CCallRequestEvent)
 CEventRequestCampaignLoadInfoList = CEventRequestCampaignLoadInfoList
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCampaignLoadInfoList.Constructor = function(self)
-  -- function num : 0_0
+function CEventRequestCampaignLoadInfoList:Constructor()
 end
-
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventRequestCampaignLoadInfoList._proto = {}
 _class("CEventReplyCampaignLoadInfoList", CCallReplyEvent)
 CEventReplyCampaignLoadInfoList = CEventReplyCampaignLoadInfoList
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCampaignLoadInfoList.Constructor = function(self)
-  -- function num : 0_1
+function CEventReplyCampaignLoadInfoList:Constructor()
   self.ret = 0
   self.sample_list = {}
   self.recomond_index = 0
   self.campaing_review_time_start = 0
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCampaignLoadInfoList._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"sample_list", "list<campaign_sample>"}
-, 
-[3] = {"recomond_index", "int"}
-, 
-[4] = {"campaing_review_time_start", "time"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "sample_list",
+    "list<campaign_sample>"
+  },
+  [3] = {
+    "recomond_index",
+    "int"
+  },
+  [4] = {
+    "campaing_review_time_start",
+    "time"
+  }
 }
 _class("CEventRequestCampaignLoadInfo", CCallRequestEvent)
 CEventRequestCampaignLoadInfo = CEventRequestCampaignLoadInfo
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCampaignLoadInfo.Constructor = function(self)
-  -- function num : 0_2
+function CEventRequestCampaignLoadInfo:Constructor()
   self.m_id = 0
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestCampaignLoadInfo._proto = {
-[1] = {"m_id", "int"}
+  [1] = {"m_id", "int"}
 }
 _class("CEventReplyCampaignLoadInfo", CCallReplyEvent)
 CEventReplyCampaignLoadInfo = CEventReplyCampaignLoadInfo
--- DECOMPILER ERROR at PC107: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCampaignLoadInfo.Constructor = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CEventReplyCampaignLoadInfo:Constructor()
   self.ret = 0
   self.m_campaign_load_info = CampaignLoadInfo:New()
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCampaignLoadInfo._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_campaign_load_info", "CampaignLoadInfo"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "m_campaign_load_info",
+    "CampaignLoadInfo"
+  }
 }
 _class("CEventCampaignRequest", CCallRequestEvent)
 CEventCampaignRequest = CEventCampaignRequest
--- DECOMPILER ERROR at PC129: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCampaignRequest.Constructor = function(self)
-  -- function num : 0_4
+function CEventCampaignRequest:Constructor()
   self.m_id = 0
   self.m_component_id = 0
   self.m_opt = 0
@@ -86,424 +100,397 @@ CEventCampaignRequest.Constructor = function(self)
   self.m_req_data = ""
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCampaignRequest._proto = {
-[1] = {"m_id", "int"}
-, 
-[2] = {"m_component_id", "int"}
-, 
-[3] = {"m_opt", "int"}
-, 
-[4] = {"m_config_version", "int"}
-, 
-[5] = {"m_last_interactive_time", "time"}
-, 
-[6] = {"m_req_data", "buffer"}
+  [1] = {"m_id", "int"},
+  [2] = {
+    "m_component_id",
+    "int"
+  },
+  [3] = {"m_opt", "int"},
+  [4] = {
+    "m_config_version",
+    "int"
+  },
+  [5] = {
+    "m_last_interactive_time",
+    "time"
+  },
+  [6] = {"m_req_data", "buffer"}
 }
 _class("CEventCampaignReply", CCallReplyEvent)
 CEventCampaignReply = CEventCampaignReply
--- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCampaignReply.Constructor = function(self)
-  -- function num : 0_5
+function CEventCampaignReply:Constructor()
   self.ret = 0
   self.m_component_step = 0
   self.m_rep_data = ""
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCampaignReply._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_component_step", "int"}
-, 
-[3] = {"m_rep_data", "buffer"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "m_component_step",
+    "int"
+  },
+  [3] = {"m_rep_data", "buffer"}
 }
 _class("CEventCampaignPushNotify", CSvrPushEvent)
 CEventCampaignPushNotify = CEventCampaignPushNotify
--- DECOMPILER ERROR at PC198: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCampaignPushNotify.Constructor = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function CEventCampaignPushNotify:Constructor()
   self.m_campaign_id = 0
   self.m_component_id = 0
   self.m_component_step = 0
   self.m_push_data = ICampaignNotifyDataInfo:New()
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCampaignPushNotify._proto = {
-[1] = {"m_campaign_id", "int"}
-, 
-[2] = {"m_component_id", "int"}
-, 
-[3] = {"m_component_step", "int"}
-, 
-[4] = {"m_push_data", "ICampaignNotifyDataInfo"}
+  [1] = {
+    "m_campaign_id",
+    "int"
+  },
+  [2] = {
+    "m_component_id",
+    "int"
+  },
+  [3] = {
+    "m_component_step",
+    "int"
+  },
+  [4] = {
+    "m_push_data",
+    "ICampaignNotifyDataInfo"
+  }
 }
 _class("CEventStepChangeNotify", CSvrPushEvent)
 CEventStepChangeNotify = CEventStepChangeNotify
--- DECOMPILER ERROR at PC230: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventStepChangeNotify.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function CEventStepChangeNotify:Constructor()
   self.m_process = campaign_process:New()
   self.m_component_steps = {}
 end
 
--- DECOMPILER ERROR at PC243: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventStepChangeNotify._proto = {
-[1] = {"m_process", "campaign_process"}
-, 
-[2] = {"m_component_steps", "map<int,int>"}
+  [1] = {
+    "m_process",
+    "campaign_process"
+  },
+  [2] = {
+    "m_component_steps",
+    "map<int,int>"
+  }
 }
 _class("CEventChangeCampaignSampleNotify", CSvrPushEvent)
 CEventChangeCampaignSampleNotify = CEventChangeCampaignSampleNotify
--- DECOMPILER ERROR at PC252: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventChangeCampaignSampleNotify.Constructor = function(self)
-  -- function num : 0_8
+function CEventChangeCampaignSampleNotify:Constructor()
   self.sample_list = {}
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventChangeCampaignSampleNotify._proto = {
-[1] = {"sample_list", "list<campaign_sample>"}
+  [1] = {
+    "sample_list",
+    "list<campaign_sample>"
+  }
 }
 _class("CEventRequestCampaignSetRemind", CCallRequestEvent)
 CEventRequestCampaignSetRemind = CEventRequestCampaignSetRemind
--- DECOMPILER ERROR at PC269: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCampaignSetRemind.Constructor = function(self)
-  -- function num : 0_9
+function CEventRequestCampaignSetRemind:Constructor()
   self.campaign_id = 0
   self.is_close_remind = false
   self.cfg_version = 0
   self.com_last_interactive_time = 0
 end
 
--- DECOMPILER ERROR at PC292: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestCampaignSetRemind._proto = {
-[1] = {"campaign_id", "int"}
-, 
-[2] = {"is_close_remind", "bool"}
-, 
-[3] = {"cfg_version", "int"}
-, 
-[4] = {"com_last_interactive_time", "time"}
+  [1] = {
+    "campaign_id",
+    "int"
+  },
+  [2] = {
+    "is_close_remind",
+    "bool"
+  },
+  [3] = {
+    "cfg_version",
+    "int"
+  },
+  [4] = {
+    "com_last_interactive_time",
+    "time"
+  }
 }
 _class("CEventReplyCampaignSetRemind", CCallReplyEvent)
 CEventReplyCampaignSetRemind = CEventReplyCampaignSetRemind
--- DECOMPILER ERROR at PC301: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCampaignSetRemind.Constructor = function(self)
-  -- function num : 0_10
+function CEventReplyCampaignSetRemind:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC309: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCampaignSetRemind._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventRequestCampaignClearNewFlag", CCallRequestEvent)
 CEventRequestCampaignClearNewFlag = CEventRequestCampaignClearNewFlag
--- DECOMPILER ERROR at PC318: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCampaignClearNewFlag.Constructor = function(self)
-  -- function num : 0_11
+function CEventRequestCampaignClearNewFlag:Constructor()
   self.m_campaign_id = 0
 end
 
--- DECOMPILER ERROR at PC326: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestCampaignClearNewFlag._proto = {
-[1] = {"m_campaign_id", "int"}
+  [1] = {
+    "m_campaign_id",
+    "int"
+  }
 }
 _class("CEventReplyCampaignClearNewFlag", CCallReplyEvent)
 CEventReplyCampaignClearNewFlag = CEventReplyCampaignClearNewFlag
--- DECOMPILER ERROR at PC335: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCampaignClearNewFlag.Constructor = function(self)
-  -- function num : 0_12
+function CEventReplyCampaignClearNewFlag:Constructor()
   self.m_ret = 0
 end
 
--- DECOMPILER ERROR at PC343: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCampaignClearNewFlag._proto = {
-[1] = {"m_ret", "int"}
+  [1] = {"m_ret", "int"}
 }
 _class("CEventRequestCampaignGetMatchMissionExReward", CCallRequestEvent)
 CEventRequestCampaignGetMatchMissionExReward = CEventRequestCampaignGetMatchMissionExReward
--- DECOMPILER ERROR at PC352: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCampaignGetMatchMissionExReward.Constructor = function(self)
-  -- function num : 0_13
+function CEventRequestCampaignGetMatchMissionExReward:Constructor()
   self.eMatchType = 0
   self.nMissionId = 0
 end
 
--- DECOMPILER ERROR at PC365: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestCampaignGetMatchMissionExReward._proto = {
-[1] = {"eMatchType", "int"}
-, 
-[2] = {"nMissionId", "int"}
+  [1] = {"eMatchType", "int"},
+  [2] = {"nMissionId", "int"}
 }
 _class("CEventReplyCampaignGetMatchMissionExReward", CCallReplyEvent)
 CEventReplyCampaignGetMatchMissionExReward = CEventReplyCampaignGetMatchMissionExReward
--- DECOMPILER ERROR at PC374: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCampaignGetMatchMissionExReward.Constructor = function(self)
-  -- function num : 0_14
+function CEventReplyCampaignGetMatchMissionExReward:Constructor()
   self.campaign_reward = {}
 end
 
--- DECOMPILER ERROR at PC382: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCampaignGetMatchMissionExReward._proto = {
-[1] = {"campaign_reward", "list<RoleAsset>"}
+  [1] = {
+    "campaign_reward",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventRequestCampaignGetMatchMissionArrayExReward", CCallRequestEvent)
 CEventRequestCampaignGetMatchMissionArrayExReward = CEventRequestCampaignGetMatchMissionArrayExReward
--- DECOMPILER ERROR at PC391: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCampaignGetMatchMissionArrayExReward.Constructor = function(self)
-  -- function num : 0_15
+function CEventRequestCampaignGetMatchMissionArrayExReward:Constructor()
   self.eMatchType = 0
   self.nArrMissionId = {}
 end
 
--- DECOMPILER ERROR at PC404: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestCampaignGetMatchMissionArrayExReward._proto = {
-[1] = {"eMatchType", "int"}
-, 
-[2] = {"nArrMissionId", "list<int>"}
+  [1] = {"eMatchType", "int"},
+  [2] = {
+    "nArrMissionId",
+    "list<int>"
+  }
 }
 _class("CEventReplyCampaignGetMatchMissionArrayExReward", CCallReplyEvent)
 CEventReplyCampaignGetMatchMissionArrayExReward = CEventReplyCampaignGetMatchMissionArrayExReward
--- DECOMPILER ERROR at PC413: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCampaignGetMatchMissionArrayExReward.Constructor = function(self)
-  -- function num : 0_16
+function CEventReplyCampaignGetMatchMissionArrayExReward:Constructor()
   self.campaign_reward_map = {}
 end
 
--- DECOMPILER ERROR at PC421: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCampaignGetMatchMissionArrayExReward._proto = {
-[1] = {"campaign_reward_map", "map<int,list<RoleAsset>>"}
+  [1] = {
+    "campaign_reward_map",
+    "map<int,list<RoleAsset>>"
+  }
 }
 _class("CEventUnlockCampaignReq", CCallRequestEvent)
 CEventUnlockCampaignReq = CEventUnlockCampaignReq
--- DECOMPILER ERROR at PC430: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventUnlockCampaignReq.Constructor = function(self)
-  -- function num : 0_17
+function CEventUnlockCampaignReq:Constructor()
   self.campaign_id = 0
 end
 
--- DECOMPILER ERROR at PC438: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventUnlockCampaignReq._proto = {
-[1] = {"campaign_id", "int"}
+  [1] = {
+    "campaign_id",
+    "int"
+  }
 }
 _class("CEventUnlockCampaignRes", CCallReplyEvent)
 CEventUnlockCampaignRes = CEventUnlockCampaignRes
--- DECOMPILER ERROR at PC447: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventUnlockCampaignRes.Constructor = function(self)
-  -- function num : 0_18
+function CEventUnlockCampaignRes:Constructor()
   self.ret = 0
   self.sample_list = {}
   self.recomond_index = 0
   self.campaing_review_time_start = 0
 end
 
--- DECOMPILER ERROR at PC470: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventUnlockCampaignRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"sample_list", "list<campaign_sample>"}
-, 
-[3] = {"recomond_index", "int"}
-, 
-[4] = {"campaing_review_time_start", "time"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "sample_list",
+    "list<campaign_sample>"
+  },
+  [3] = {
+    "recomond_index",
+    "int"
+  },
+  [4] = {
+    "campaing_review_time_start",
+    "time"
+  }
 }
 _class("CEventRequestCampaignReviewLoadInfoList", CCallRequestEvent)
 CEventRequestCampaignReviewLoadInfoList = CEventRequestCampaignReviewLoadInfoList
--- DECOMPILER ERROR at PC479: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCampaignReviewLoadInfoList.Constructor = function(self)
-  -- function num : 0_19
+function CEventRequestCampaignReviewLoadInfoList:Constructor()
 end
-
--- DECOMPILER ERROR at PC482: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventRequestCampaignReviewLoadInfoList._proto = {}
 _class("CEventReplyCampaignReviewLoadInfoList", CCallReplyEvent)
 CEventReplyCampaignReviewLoadInfoList = CEventReplyCampaignReviewLoadInfoList
--- DECOMPILER ERROR at PC491: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCampaignReviewLoadInfoList.Constructor = function(self)
-  -- function num : 0_20
+function CEventReplyCampaignReviewLoadInfoList:Constructor()
   self.ret = 0
   self.sample_list = {}
   self.recomond_index = 0
   self.campaing_review_time_start = 0
 end
 
--- DECOMPILER ERROR at PC514: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCampaignReviewLoadInfoList._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"sample_list", "list<campaign_sample>"}
-, 
-[3] = {"recomond_index", "int"}
-, 
-[4] = {"campaing_review_time_start", "time"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "sample_list",
+    "list<campaign_sample>"
+  },
+  [3] = {
+    "recomond_index",
+    "int"
+  },
+  [4] = {
+    "campaing_review_time_start",
+    "time"
+  }
 }
 _class("CEventEnterCampaignReviewReq", CCallRequestEvent)
 CEventEnterCampaignReviewReq = CEventEnterCampaignReviewReq
--- DECOMPILER ERROR at PC523: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventEnterCampaignReviewReq.Constructor = function(self)
-  -- function num : 0_21
+function CEventEnterCampaignReviewReq:Constructor()
 end
-
--- DECOMPILER ERROR at PC526: Confused about usage of register: R1 in 'UnsetPending'
 
 CEventEnterCampaignReviewReq._proto = {}
 _class("CEventEnterCampaignReviewRes", CCallReplyEvent)
 CEventEnterCampaignReviewRes = CEventEnterCampaignReviewRes
--- DECOMPILER ERROR at PC535: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventEnterCampaignReviewRes.Constructor = function(self)
-  -- function num : 0_22
+function CEventEnterCampaignReviewRes:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC543: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventEnterCampaignReviewRes._proto = {
-[1] = {"ret", "int"}
+  [1] = {"ret", "int"}
 }
 _class("CEventCampaignLoadComponentRankReq", CCallRequestEvent)
 CEventCampaignLoadComponentRankReq = CEventCampaignLoadComponentRankReq
--- DECOMPILER ERROR at PC552: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCampaignLoadComponentRankReq.Constructor = function(self)
-  -- function num : 0_23
+function CEventCampaignLoadComponentRankReq:Constructor()
   self.component_cfg_id = 0
   self.rank_sub_key = 0
 end
 
--- DECOMPILER ERROR at PC565: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCampaignLoadComponentRankReq._proto = {
-[1] = {"component_cfg_id", "int"}
-, 
-[2] = {"rank_sub_key", "int"}
+  [1] = {
+    "component_cfg_id",
+    "int"
+  },
+  [2] = {
+    "rank_sub_key",
+    "int"
+  }
 }
 _class("CEventCampaignLoadComponentRankRes", CCallReplyEvent)
 CEventCampaignLoadComponentRankRes = CEventCampaignLoadComponentRankRes
--- DECOMPILER ERROR at PC574: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCampaignLoadComponentRankRes.Constructor = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function CEventCampaignLoadComponentRankRes:Constructor()
   self.ret = 0
   self.rank_list = RankShowSimpleInfo:New()
 end
 
--- DECOMPILER ERROR at PC587: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCampaignLoadComponentRankRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"rank_list", "RankShowSimpleInfo"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "rank_list",
+    "RankShowSimpleInfo"
+  }
 }
 _class("CEventCampaignTeamRecordReq", CCallRequestEvent)
 CEventCampaignTeamRecordReq = CEventCampaignTeamRecordReq
--- DECOMPILER ERROR at PC596: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCampaignTeamRecordReq.Constructor = function(self)
-  -- function num : 0_25
+function CEventCampaignTeamRecordReq:Constructor()
   self.num = 0
   self.mission = 0
   self.campaign_id = 0
   self.component_id = 0
 end
 
--- DECOMPILER ERROR at PC619: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCampaignTeamRecordReq._proto = {
-[1] = {"num", "int"}
-, 
-[2] = {"mission", "int"}
-, 
-[3] = {"campaign_id", "int"}
-, 
-[4] = {"component_id", "int"}
+  [1] = {"num", "int"},
+  [2] = {"mission", "int"},
+  [3] = {
+    "campaign_id",
+    "int"
+  },
+  [4] = {
+    "component_id",
+    "int"
+  }
 }
 _class("CEventCampaignTeamRecordRes", CCallReplyEvent)
 CEventCampaignTeamRecordRes = CEventCampaignTeamRecordRes
--- DECOMPILER ERROR at PC628: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventCampaignTeamRecordRes.Constructor = function(self)
-  -- function num : 0_26
+function CEventCampaignTeamRecordRes:Constructor()
   self.ret = 0
   self.info = {}
   self.next_num = 0
 end
 
--- DECOMPILER ERROR at PC646: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventCampaignTeamRecordRes._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "list<campaign_mtr_role>"}
-, 
-[3] = {"next_num", "int"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "list<campaign_mtr_role>"
+  },
+  [3] = {"next_num", "int"}
 }
 _class("CEventRequestCampaignPreviewList", CCallRequestEvent)
 CEventRequestCampaignPreviewList = CEventRequestCampaignPreviewList
--- DECOMPILER ERROR at PC655: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventRequestCampaignPreviewList.Constructor = function(self)
-  -- function num : 0_27
+function CEventRequestCampaignPreviewList:Constructor()
   self.campaign_list = {}
 end
 
--- DECOMPILER ERROR at PC663: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventRequestCampaignPreviewList._proto = {
-[1] = {"campaign_list", "list<int>"}
+  [1] = {
+    "campaign_list",
+    "list<int>"
+  }
 }
 _class("CEventReplyCampaignPreviewList", CCallReplyEvent)
 CEventReplyCampaignPreviewList = CEventReplyCampaignPreviewList
--- DECOMPILER ERROR at PC672: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventReplyCampaignPreviewList.Constructor = function(self)
-  -- function num : 0_28
+function CEventReplyCampaignPreviewList:Constructor()
   self.ret = 0
   self.m_campaign_preview_info_list = {}
 end
 
--- DECOMPILER ERROR at PC685: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventReplyCampaignPreviewList._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"m_campaign_preview_info_list", "map<int,CampaignLoadInfo>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "m_campaign_preview_info_list",
+    "map<int,CampaignLoadInfo>"
+  }
 }
-

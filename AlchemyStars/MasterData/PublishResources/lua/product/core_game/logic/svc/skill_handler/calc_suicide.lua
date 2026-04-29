@@ -1,68 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_suicide.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalcSuicide", Object)
 SkillEffectCalcSuicide = SkillEffectCalcSuicide
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalcSuicide.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalcSuicide:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
-  self._monsterShowLogic = (self._world):GetService("MonsterShowLogic")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
+  self._monsterShowLogic = self._world:GetService("MonsterShowLogic")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcSuicide.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalcSuicide:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.appendArray)(results, result)
+      table.appendArray(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalcSuicide._CalculateSingleTarget = function(self, skillEffectCalcParam, defenderEntityID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalcSuicide:_CalculateSingleTarget(skillEffectCalcParam, defenderEntityID)
   local skillSuicideParam = skillEffectCalcParam.skillEffectParam
-  local defender = (self._world):GetEntityByID(defenderEntityID)
+  local defender = self._world:GetEntityByID(defenderEntityID)
   if defender == nil then
-    (Log.notice)("CalculationForeachTarget defender is null ", defenderEntityID)
+    Log.notice("CalculationForeachTarget defender is null ", defenderEntityID)
     local skillResult = SkillSuicideEffectResult:New(-1)
     return skillResult
   end
-  do
-    local skillResultList = {}
-    if defender:HasMonsterID() then
-      (defender:Attributes()):Modify("HP", 0)
-      ;
-      (self._monsterShowLogic):AddMonsterDeadMark(defender)
-      ;
-      (Log.debug)("SkillEffectCalcSuicide ModifyHP =0 defender=", defender:GetID())
-      skillResultList[#skillResultList + 1] = SkillSuicideEffectResult:New(defenderEntityID)
-    else
-      if defender:HasChessPet() then
-        (defender:Attributes()):Modify("HP", 0)
-        local chessSvc = (self._world):GetService("ChessLogic")
-        chessSvc:AddChessPetDeadMark(defender)
-        ;
-        (Log.debug)("SkillEffectCalcSuicide ModifyHP =0 defender=", defender:GetID())
-        skillResultList[#skillResultList + 1] = SkillSuicideEffectResult:New(defenderEntityID)
-      end
-    end
-    do
-      return skillResultList
-    end
+  local skillResultList = {}
+  if defender:HasMonsterID() then
+    defender:Attributes():Modify("HP", 0)
+    self._monsterShowLogic:AddMonsterDeadMark(defender)
+    Log.debug("SkillEffectCalcSuicide ModifyHP =0 defender=", defender:GetID())
+    skillResultList[#skillResultList + 1] = SkillSuicideEffectResult:New(defenderEntityID)
+  elseif defender:HasChessPet() then
+    defender:Attributes():Modify("HP", 0)
+    local chessSvc = self._world:GetService("ChessLogic")
+    chessSvc:AddChessPetDeadMark(defender)
+    Log.debug("SkillEffectCalcSuicide ModifyHP =0 defender=", defender:GetID())
+    skillResultList[#skillResultList + 1] = SkillSuicideEffectResult:New(defenderEntityID)
   end
+  return skillResultList
 end
-
-

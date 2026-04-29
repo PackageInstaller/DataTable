@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_collect_objects_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseCollectObjectsParam", SkillPhaseParamBase)
 SkillPhaseCollectObjectsParam = SkillPhaseCollectObjectsParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseCollectObjectsParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseCollectObjectsParam:Constructor(t)
   self._duaration = t.duaration
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCollectObjectsParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseCollectObjectsParam:GetPhaseType()
   return SkillViewPhaseType.CollectObjects
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCollectObjectsParam.GetCacheTable = function(self)
-  -- function num : 0_2
+function SkillPhaseCollectObjectsParam:GetCacheTable()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCollectObjectsParam.GetDuaration = function(self)
-  -- function num : 0_3
+function SkillPhaseCollectObjectsParam:GetDuaration()
   return self._duaration
 end
-
-

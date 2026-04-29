@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_select_skill_with_attribute_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlaySelectSkillWithAttributeInstruction", BaseInstruction)
 PlaySelectSkillWithAttributeInstruction = PlaySelectSkillWithAttributeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySelectSkillWithAttributeInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySelectSkillWithAttributeInstruction:Constructor(paramList)
   self._skill = tonumber(paramList.skill)
   self._attribute = paramList.attribute
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySelectSkillWithAttributeInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlaySelectSkillWithAttributeInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local skillID = 0
   local utilDataSvc = world:GetService("UtilData")
   local attribute = utilDataSvc:GetEntityAttributeByName(casterEntity, self._attribute) or 0
-  if attribute > 0 then
+  if 0 < attribute then
     skillID = self._skill + attribute
   end
   if skillID == 0 then
-    return 
+    return
   end
   local playSkillSvc = world:GetService("PlaySkill")
   local configSvc = world:GetService("Config")
@@ -34,5 +24,3 @@ PlaySelectSkillWithAttributeInstruction.DoInstruction = function(self, TT, caste
   local skillPhaseArray = skillConfigData:GetSkillPhaseArray()
   playSkillSvc:_SkillRoutineTask(TT, casterEntity, skillPhaseArray, skillID)
 end
-
-

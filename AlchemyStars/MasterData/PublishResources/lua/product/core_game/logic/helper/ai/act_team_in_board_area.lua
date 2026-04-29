@@ -1,26 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/act_team_in_board_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local AITeamInBoardAreaType = {UpArea = 1, DownArea = 2, LeftArea = 3, RightArea = 4}
+local AITeamInBoardAreaType = {
+  UpArea = 1,
+  DownArea = 2,
+  LeftArea = 3,
+  RightArea = 4
+}
 _enum("AITeamInBoardAreaType", AITeamInBoardAreaType)
 require("action_is_base")
 _class("ActionTeamInBoardArea", ActionIsBase)
 ActionTeamInBoardArea = ActionTeamInBoardArea
--- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
 
-ActionTeamInBoardArea.Constructor = function(self)
-  -- function num : 0_0
+function ActionTeamInBoardArea:Constructor()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R1 in 'UnsetPending'
-
-ActionTeamInBoardArea.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionTeamInBoardArea:OnUpdate()
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return AINewNodeStatus.Failure
   end
   local areaType = self:GetLogicData(-1)
@@ -35,39 +30,34 @@ ActionTeamInBoardArea.OnUpdate = function(self)
   return AINewNodeStatus.Failure
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-ActionTeamInBoardArea.IsTeamInBoardArea = function(self, areaType, excludeEqual)
-  -- function num : 0_2 , upvalues : AITeamInBoardAreaType
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ActionTeamInBoardArea:IsTeamInBoardArea(areaType, excludeEqual)
+  local utilDataSvc = self._world:GetService("UtilData")
   local posCenter = utilDataSvc:GetBoardCenterPos()
-  local localTeamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local localTeamEntity = self._world:Player():GetLocalTeamEntity()
   local teamPos = localTeamEntity:GetGridPosition()
-  if excludeEqual and excludeEqual == 1 then
-    if posCenter.y >= teamPos.y then
-      do return areaType ~= AITeamInBoardAreaType.UpArea end
-      do return posCenter.y <= teamPos.y end
-      if excludeEqual and excludeEqual == 1 then
-        if teamPos.y >= posCenter.y then
-          do return areaType ~= AITeamInBoardAreaType.DownArea end
-          do return teamPos.y <= posCenter.y end
-          if excludeEqual and excludeEqual == 1 then
-            if teamPos.x >= posCenter.x then
-              do return areaType ~= AITeamInBoardAreaType.LeftArea end
-              do return teamPos.x <= posCenter.x end
-              if excludeEqual and excludeEqual == 1 then
-                if posCenter.x >= teamPos.x then
-                  do return areaType ~= AITeamInBoardAreaType.RightArea end
-                  do return posCenter.x <= teamPos.x end
-                  -- DECOMPILER ERROR: 16 unprocessed JMP targets
-                end
-              end
-            end
-          end
-        end
-      end
+  if areaType == AITeamInBoardAreaType.UpArea then
+    if excludeEqual and excludeEqual == 1 then
+      return teamPos.y > posCenter.y
+    else
+      return teamPos.y >= posCenter.y
+    end
+  elseif areaType == AITeamInBoardAreaType.DownArea then
+    if excludeEqual and excludeEqual == 1 then
+      return teamPos.y < posCenter.y
+    else
+      return teamPos.y <= posCenter.y
+    end
+  elseif areaType == AITeamInBoardAreaType.LeftArea then
+    if excludeEqual and excludeEqual == 1 then
+      return teamPos.x < posCenter.x
+    else
+      return teamPos.x <= posCenter.x
+    end
+  elseif areaType == AITeamInBoardAreaType.RightArea then
+    if excludeEqual and excludeEqual == 1 then
+      return teamPos.x > posCenter.x
+    else
+      return teamPos.x >= posCenter.x
     end
   end
 end
-
-

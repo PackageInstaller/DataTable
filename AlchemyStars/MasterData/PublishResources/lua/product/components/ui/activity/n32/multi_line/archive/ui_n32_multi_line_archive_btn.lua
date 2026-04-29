@@ -1,28 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n32/multi_line/archive/ui_n32_multi_line_archive_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN32MultiLineArchiveBtn", UICustomWidget)
 UIN32MultiLineArchiveBtn = UIN32MultiLineArchiveBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN32MultiLineArchiveBtn.OnShow = function(self)
-  -- function num : 0_0
+function UIN32MultiLineArchiveBtn:OnShow()
   self._animInfo = {
-["in"] = {"uieff_UIN32MultiLineArchiveBtn_in", 233}
-, 
-switch1 = {"uieff_UIN32MultiLineArchiveBtn_switch01", 167}
-, 
-switch2 = {"uieff_UIN32MultiLineArchiveBtn_switch02", 400}
-}
+    ["in"] = {
+      "uieff_UIN32MultiLineArchiveBtn_in",
+      233
+    },
+    switch1 = {
+      "uieff_UIN32MultiLineArchiveBtn_switch01",
+      167
+    },
+    switch2 = {
+      "uieff_UIN32MultiLineArchiveBtn_switch02",
+      400
+    }
+  }
   self:InitComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveBtn.InitComponent = function(self)
-  -- function num : 0_1
+function UIN32MultiLineArchiveBtn:InitComponent()
   self._textnText = self:GetUIComponent("UILocalizationText", "textn")
   self._textsText = self:GetUIComponent("UILocalizationText", "texts")
   self._redPoint = self:GetGameObject("redPoint")
@@ -31,24 +28,16 @@ UIN32MultiLineArchiveBtn.InitComponent = function(self)
   self._anim = self:GetUIComponent("Animation", "anim")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveBtn.InitUI = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._textnText):SetText((StringTable.Get)((self._info).PetName))
-  ;
-  (self._textsText):SetText((StringTable.Get)((self._info).PetName))
-  ;
-  (self._redPoint):SetActive(self._isRed)
+function UIN32MultiLineArchiveBtn:InitUI()
+  self._textnText:SetText(StringTable.Get(self._info.PetName))
+  self._textsText:SetText(StringTable.Get(self._info.PetName))
+  self._redPoint:SetActive(self._isRed)
   if self._index == self._selectIndex then
     self:PlayAnim("in")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveBtn.SetData = function(self, index, selectIndex, info, isRed, callBack)
-  -- function num : 0_3
+function UIN32MultiLineArchiveBtn:SetData(index, selectIndex, info, isRed, callBack)
   self._index = index
   self._callBack = callBack
   self._info = info
@@ -58,10 +47,7 @@ UIN32MultiLineArchiveBtn.SetData = function(self, index, selectIndex, info, isRe
   self:InitUI()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveBtn.Refresh = function(self, selectIndex, lastIndex)
-  -- function num : 0_4
+function UIN32MultiLineArchiveBtn:Refresh(selectIndex, lastIndex)
   self._selectIndex = selectIndex
   if self._index == self._selectIndex then
     self:PlayAnim("switch2")
@@ -71,42 +57,27 @@ UIN32MultiLineArchiveBtn.Refresh = function(self, selectIndex, lastIndex)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveBtn.RefreshRed = function(self, isRed)
-  -- function num : 0_5
+function UIN32MultiLineArchiveBtn:RefreshRed(isRed)
   self._isRed = isRed
-  ;
-  (self._redPoint):SetActive(isRed)
+  self._redPoint:SetActive(isRed)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveBtn.BtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIN32MultiLineArchiveBtn:BtnOnClick(go)
   if self._callBack then
-    (self._callBack)(self._index)
+    self._callBack(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN32MultiLineArchiveBtn.PlayAnim = function(self, name, callBack)
-  -- function num : 0_7 , upvalues : _ENV
-  local animinfo = (self._animInfo)[name]
+function UIN32MultiLineArchiveBtn:PlayAnim(name, callBack)
+  local animinfo = self._animInfo[name]
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : name, self, animinfo, _ENV, callBack
     local lockName = "UIN32MultiLineArchive:" .. name
     self:Lock(lockName)
-    ;
-    (self._anim):Play(animinfo[1])
+    self._anim:Play(animinfo[1])
     YIELD(TT, animinfo[2])
     self:UnLock(lockName)
     if callBack then
       callBack()
     end
-  end
-)
+  end)
 end
-
-

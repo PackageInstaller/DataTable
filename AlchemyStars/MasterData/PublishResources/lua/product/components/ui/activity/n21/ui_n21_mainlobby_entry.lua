@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21/ui_n21_mainlobby_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN21MainLobbyEntry", UICustomWidget)
 UIN21MainLobbyEntry = UIN21MainLobbyEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN21MainLobbyEntry.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN21MainLobbyEntry:Constructor()
   self._campaignModule = self:GetModule(CampaignModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN21MainLobbyEntry:OnShow(uiParams)
   self:_GetComponents()
   self:_InitNewFlagAndRedPoint()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry._GetComponents = function(self)
-  -- function num : 0_2
+function UIN21MainLobbyEntry:_GetComponents()
   self._redPoint = self:GetGameObject("RedPoint")
   self._newFlag = self:GetGameObject("NewFlag")
   self._gameGo = self:GetGameObject("gameGo")
@@ -32,100 +19,68 @@ UIN21MainLobbyEntry._GetComponents = function(self)
   self._questTex = self:GetUIComponent("RollingText", "questTex")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.CheckText = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN21MainLobbyEntry:CheckText()
   local questOpen = self:QuestOpen()
   local gameOpen = self:GameOpen()
-  ;
-  (self._questGo):SetActive(false)
-  ;
-  (self._gameGo):SetActive(false)
+  self._questGo:SetActive(false)
+  self._gameGo:SetActive(false)
   if questOpen then
-    (self._questGo):SetActive(true)
-    ;
-    (self._questTex):RefreshText((StringTable.Get)("str_n21_main_lobby_quest"))
-  else
-    if gameOpen then
-      (self._gameGo):SetActive(true)
-      ;
-      (self._gameTex):RefreshText((StringTable.Get)("str_n21_main_lobby_game"))
-    end
+    self._questGo:SetActive(true)
+    self._questTex:RefreshText(StringTable.Get("str_n21_main_lobby_quest"))
+  elseif gameOpen then
+    self._gameGo:SetActive(true)
+    self._gameTex:RefreshText(StringTable.Get("str_n21_main_lobby_game"))
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.GameOpen = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cInfo = (self._campaign):GetComponentInfo(ECampaignN21ComponentID.ECAMPAIGN_N21_MINI_GAME)
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+function UIN21MainLobbyEntry:GameOpen()
+  local cInfo = self._campaign:GetComponentInfo(ECampaignN21ComponentID.ECAMPAIGN_N21_MINI_GAME)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return false
-  else
-    if cInfo.m_close_time < nowTimestamp then
-      return false
-    end
+  elseif nowTimestamp > cInfo.m_close_time then
+    return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.QuestOpen = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN21MainLobbyEntry:QuestOpen()
   do return false end
-  local cInfo = (self._campaign):GetComponentInfo(ECampaignN21ComponentID.ECAMPAIGN_N21_PANGOLIN)
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
+  local cInfo = self._campaign:GetComponentInfo(ECampaignN21ComponentID.ECAMPAIGN_N21_PANGOLIN)
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
   if nowTimestamp < cInfo.m_unlock_time then
     return false
-  else
-    if cInfo.m_close_time < nowTimestamp then
-      return false
-    end
+  elseif nowTimestamp > cInfo.m_close_time then
+    return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry._InitNewFlagAndRedPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.RequestData, self)
+function UIN21MainLobbyEntry:_InitNewFlagAndRedPoint()
+  GameGlobal.TaskManager():StartTask(self.RequestData, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.SetData_uiMainLobbyController = function(self, controller)
-  -- function num : 0_7
+function UIN21MainLobbyEntry:SetData_uiMainLobbyController(controller)
   self._uiMainLobbyController = controller
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry._Entry = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN21MainLobbyEntry:_Entry()
   self:SwitchState(UIStateType.UIN21Controller)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.RequestData = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN21MainLobbyEntry:RequestData(TT)
   self:Lock("UIN21MainLobbyEntry_InitNewFlagAndRedPoint")
   local res = AsyncRequestRes:New()
   self._loginModule = self:GetModule(LoginModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N21, ECampaignN21ComponentID.ECAMPAIGN_N21_CUMULATIVE_LOGIN, ECampaignN21ComponentID.ECAMPAIGN_N21_LEVEL_COMMON, ECampaignN21ComponentID.ECAMPAIGN_N21_LOTTERY, ECampaignN21ComponentID.ECAMPAIGN_N21_MINI_GAME, ECampaignN21ComponentID.ECAMPAIGN_N21_PANGOLIN, ECampaignN21ComponentID.ECAMPAIGN_N21_POWER2ITEM, ECampaignN21ComponentID.ECAMPAIGN_N21_LEVEL_FIXTEAM)
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N21, ECampaignN21ComponentID.ECAMPAIGN_N21_CUMULATIVE_LOGIN, ECampaignN21ComponentID.ECAMPAIGN_N21_LEVEL_COMMON, ECampaignN21ComponentID.ECAMPAIGN_N21_LOTTERY, ECampaignN21ComponentID.ECAMPAIGN_N21_MINI_GAME, ECampaignN21ComponentID.ECAMPAIGN_N21_PANGOLIN, ECampaignN21ComponentID.ECAMPAIGN_N21_POWER2ITEM, ECampaignN21ComponentID.ECAMPAIGN_N21_LEVEL_FIXTEAM)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   self._key = "N21MainLobbyNew2" .. openID
   self._new = true
-  if (LocalDB.GetInt)(self._key, 0) == 1 then
+  if LocalDB.GetInt(self._key, 0) == 1 then
     self._new = false
   end
   self._red = self:Red()
@@ -133,10 +88,7 @@ UIN21MainLobbyEntry.RequestData = function(self, TT)
   self:UnLock("UIN21MainLobbyEntry_InitNewFlagAndRedPoint")
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.Red = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN21MainLobbyEntry:Red()
   local redSignIn = self:_CheckRedPoint(self.SignInRed, ECampaignN21ComponentID.ECAMPAIGN_N21_CUMULATIVE_LOGIN)
   local redPool = self:_CheckRedPoint(self.PoolRed, ECampaignN21ComponentID.ECAMPAIGN_N21_LOTTERY)
   local redTry = self:_CheckRedPoint(self.PetTryRed, ECampaignN21ComponentID.ECAMPAIGN_N21_LEVEL_FIXTEAM)
@@ -146,85 +98,54 @@ UIN21MainLobbyEntry.Red = function(self)
   return redSignIn or redPool or redTry or redLine or redGame or redQuest
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.CheckGameRed = function(self, componentid)
-  -- function num : 0_11 , upvalues : _ENV
-  local component = (self._campaign):GetComponent(componentid)
+function UIN21MainLobbyEntry:CheckGameRed(componentid)
+  local component = self._campaign:GetComponent(componentid)
+  local cfgId = component and component:GetComponentCfgId()
+  local cfg = Cfg.cfg_component_minigame_explore_limit({ComponentID = cfgId})
+  local c1, c2 = HomelandFindTreasureConst.GetSingleCount(cfg and cfg[1])
+  local unlock = false
+  local component = self._campaign:GetComponent(componentid)
   if component then
-    local cfgId = component:GetComponentCfgId()
-  end
-  local cfg = (Cfg.cfg_component_minigame_explore_limit)({ComponentID = cfgId})
-  if cfg then
-    local c1, c2 = (HomelandFindTreasureConst.GetSingleCount)(cfg[1])
-    local unlock = false
-    local component = (self._campaign):GetComponent(componentid)
-    if component then
-      local curTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-      local unlockTime = component:ComponentUnLockTime()
-      local stamp = unlockTime - curTime
-      if not component:ComponentIsClose() then
-        unlock = false
-      else
-        if stamp > 0 then
-          unlock = false
-        else
-          if not component:ComponentIsUnLock() then
-            unlock = false
-          else
-            unlock = true
-          end
-        end
-      end
-    end
-    do
-      do return not unlock or c2 > 0 end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
+    local curTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+    local unlockTime = component:ComponentUnLockTime()
+    local stamp = unlockTime - curTime
+    if not component:ComponentIsClose() then
+      unlock = false
+    elseif 0 < stamp then
+      unlock = false
+    elseif not component:ComponentIsUnLock() then
+      unlock = false
+    else
+      unlock = true
     end
   end
+  return unlock and 0 < c2
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry._CheckRedPoint = function(self, obj, ...)
-  -- function num : 0_12
-  local bShow = (self._campaign):CheckComponentRed(...)
+function UIN21MainLobbyEntry:_CheckRedPoint(obj, ...)
+  local bShow = self._campaign:CheckComponentRed(...)
   return bShow
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.EntryBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.EntryBtnOnClickCoro, self)
+function UIN21MainLobbyEntry:EntryBtnOnClick(go)
+  GameGlobal.TaskManager():StartTask(self.EntryBtnOnClickCoro, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry.EntryBtnOnClickCoro = function(self, TT)
-  -- function num : 0_14 , upvalues : _ENV
-  (UIActivityHelper.PlayFirstPlot_Campaign)(self._campaign, function()
-    -- function num : 0_14_0 , upvalues : self
+function UIN21MainLobbyEntry:EntryBtnOnClickCoro(TT)
+  UIActivityHelper.PlayFirstPlot_Campaign(self._campaign, function()
     self:_Entry()
-  end
-)
+  end)
   if self._new then
-    (LocalDB.SetInt)(self._key, 1)
+    LocalDB.SetInt(self._key, 1)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN21MainLobbyEntry._RefreshNewFlagAndRedPoint = function(self, isShowNew, isShowRed, existNotReadPaper)
-  -- function num : 0_15
-  (self._newFlag):SetActive(isShowNew)
+function UIN21MainLobbyEntry:_RefreshNewFlagAndRedPoint(isShowNew, isShowRed, existNotReadPaper)
+  self._newFlag:SetActive(isShowNew)
   if isShowNew then
-    (self._redPoint):SetActive(false)
+    self._redPoint:SetActive(false)
   else
-    ;
-    (self._redPoint):SetActive(isShowRed or existNotReadPaper)
+    self._redPoint:SetActive(isShowRed or existNotReadPaper)
   end
   self:CheckText()
 end
-
-

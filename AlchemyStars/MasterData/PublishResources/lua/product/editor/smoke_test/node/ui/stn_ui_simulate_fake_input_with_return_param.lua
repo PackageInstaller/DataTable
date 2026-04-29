@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/ui/stn_ui_simulate_fake_input_with_return_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("stn_ui_simulate_fake_input")
 _class("UISimulate_FakeInputWithReturnParam", UISimulate_FakeInput)
 UISimulate_FakeInputWithReturnParam = UISimulate_FakeInputWithReturnParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimulate_FakeInputWithReturnParam._HandleFakeEvent = function(self, ...)
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
+function UISimulate_FakeInputWithReturnParam:_HandleFakeEvent(...)
   if type(self.m_pRunData) == "table" then
-    (self.m_fakeParam).args = self.m_pRunData
+    self.m_fakeParam.args = self.m_pRunData
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.m_fakeParam).args = {self.m_pRunData}
+    self.m_fakeParam.args = {
+      self.m_pRunData
+    }
   end
-  self:PrintLog("FakeInput, UI = ", (self.m_fakeParam).ui, ", Input = ", (self.m_fakeParam).input)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FakeInput, self.m_fakeParam)
+  self:PrintLog("FakeInput, UI = ", self.m_fakeParam.ui, ", Input = ", self.m_fakeParam.input)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.FakeInput, self.m_fakeParam)
 end
-
-

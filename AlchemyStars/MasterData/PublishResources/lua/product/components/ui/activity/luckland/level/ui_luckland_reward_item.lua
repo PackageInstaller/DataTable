@@ -1,49 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/level/ui_luckland_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandRewardItem", UICustomWidget)
 UILuckLandRewardItem = UILuckLandRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandRewardItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandRewardItem:OnShow(uiParams)
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRewardItem._InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandRewardItem:_InitWidget()
   self._item = self:GetUIComponent("UISelectObjectPath", "Item")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRewardItem.SetData = function(self, data, showTips)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandRewardItem:SetData(data, showTips)
   self._data = data
   self._showTips = showTips
-  local cfgItem = (Cfg.cfg_item)[(self._data).assetid]
+  local cfgItem = Cfg.cfg_item[self._data.assetid]
   if cfgItem then
     local awardData = {}
     awardData.id = cfgItem.ID
     awardData.icon = cfgItem.Icon
     awardData.color = cfgItem.Color
-    awardData.count = tostring((self._data).count)
-    awardData.type = (self._data).type
-    self._itemWidget = (self._item):SpawnObject("UIAwardItem")
-    ;
-    (self._itemWidget):Flush(awardData)
+    awardData.count = tostring(self._data.count)
+    awardData.type = self._data.type
+    self._itemWidget = self._item:SpawnObject("UIAwardItem")
+    self._itemWidget:Flush(awardData)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandRewardItem.TipsBtnOnClick = function(self, go)
-  -- function num : 0_3
-  (self._showTips)((self._data).assetid, (go.transform).position)
+function UILuckLandRewardItem:TipsBtnOnClick(go)
+  self._showTips(self._data.assetid, go.transform.position)
 end
-
-

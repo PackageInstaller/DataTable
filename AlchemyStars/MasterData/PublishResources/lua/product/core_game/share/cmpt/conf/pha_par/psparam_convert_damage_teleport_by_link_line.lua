@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/psparam_convert_damage_teleport_by_link_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseConvertDamageTeleportByLinkLineParam", SkillPhaseParamBase)
 SkillPhaseConvertDamageTeleportByLinkLineParam = SkillPhaseConvertDamageTeleportByLinkLineParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseConvertDamageTeleportByLinkLineParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPhaseConvertDamageTeleportByLinkLineParam:Constructor(t)
   self._cameraEffID = t.cameraEffID
   self._cameraEffAnimOut = t.cameraEffAnimOut
   self._sceneEffID = t.sceneEffID
   self._sceneEffPos = Vector2.zero
   if t.sceneEffPos then
-    self._sceneEffPos = Vector2((t.sceneEffPos).x, (t.sceneEffPos).y)
+    self._sceneEffPos = Vector2(t.sceneEffPos.x, t.sceneEffPos.y)
   end
   self._sceneEffAnimIn = t.sceneEffAnimIn
   self._sceneEffAnimIdle = t.sceneEffAnimIdle
@@ -36,295 +29,208 @@ SkillPhaseConvertDamageTeleportByLinkLineParam.Constructor = function(self, t)
   self._appearDelayTime = t.appearDelayTime
   self._attackAnim = t.attackAnim
   self._attackAudioID = t.attackAudioID
-  if not t.gatherEffIDList then
-    self._gatherEffIDList = {}
-    self._attackEffID = t.attackEffID
-    self._attackEffDelayTime = t.attackEffDelayTime
-    self._attackEffTime = t.attackEffTime
-    self._hitAnim = t.hitAnim
-    self._hitDelayTime = t.hitDelayTime
-    self._sceneOutDelayTime = t.sceneOutDelayTime
-    self._endDelayTime = t.endDelayTime
-  end
+  self._gatherEffIDList = t.gatherEffIDList or {}
+  self._attackEffID = t.attackEffID
+  self._attackEffDelayTime = t.attackEffDelayTime
+  self._attackEffTime = t.attackEffTime
+  self._hitAnim = t.hitAnim
+  self._hitDelayTime = t.hitDelayTime
+  self._sceneOutDelayTime = t.sceneOutDelayTime
+  self._endDelayTime = t.endDelayTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetCacheTable()
   local t = {}
   if self._cameraEffID and self._cameraEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._cameraEffID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._cameraEffID].ResPath,
+      1
+    })
   end
-  if self._sceneEffID and self._sceneEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._sceneEffID]).ResPath, 1})
+  if self._sceneEffID and 0 < self._sceneEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._sceneEffID].ResPath,
+      1
+    })
   end
-  if self._convertEffID and self._convertEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._convertEffID]).ResPath, 2})
+  if self._convertEffID and 0 < self._convertEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._convertEffID].ResPath,
+      2
+    })
   end
-  if self._disappearEffID and self._disappearEffID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._disappearEffID]).ResPath, 1})
+  if self._disappearEffID and 0 < self._disappearEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._disappearEffID].ResPath,
+      1
+    })
   end
-  if #self._gatherEffIDList > 0 then
-    for _,value in ipairs(self._gatherEffIDList) do
-      if value and value > 0 then
-        (table.insert)(t, {((Cfg.cfg_effect)[value]).ResPath, 1})
+  if 0 < #self._gatherEffIDList then
+    for _, value in ipairs(self._gatherEffIDList) do
+      if value and 0 < value then
+        table.insert(t, {
+          Cfg.cfg_effect[value].ResPath,
+          1
+        })
       end
     end
   end
-  do
-    if self._appearEffID and self._appearEffID > 0 then
-      (table.insert)(t, {((Cfg.cfg_effect)[self._appearEffID]).ResPath, 1})
-    end
-    if self._attackEffID and self._attackEffID > 0 then
-      (table.insert)(t, {((Cfg.cfg_effect)[self._attackEffID]).ResPath, 1})
-    end
-    return t
+  if self._appearEffID and 0 < self._appearEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._appearEffID].ResPath,
+      1
+    })
   end
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetCacheAudio = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local t = {}
-  if self._startAudioID and self._startAudioID > 0 then
-    (table.insert)(t, self._startAudioID)
-  end
-  if self._convertAudioID and self._convertAudioID > 0 then
-    (table.insert)(t, self._convertAudioID)
-  end
-  if self._teleportAudioID and self._teleportAudioID > 0 then
-    (table.insert)(t, self._teleportAudioID)
-  end
-  if self._attackAudioID and self._attackAudioID > 0 then
-    (table.insert)(t, self._attackAudioID)
+  if self._attackEffID and 0 < self._attackEffID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._attackEffID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetCacheAudio()
+  local t = {}
+  if self._startAudioID and self._startAudioID > 0 then
+    table.insert(t, self._startAudioID)
+  end
+  if self._convertAudioID and 0 < self._convertAudioID then
+    table.insert(t, self._convertAudioID)
+  end
+  if self._teleportAudioID and 0 < self._teleportAudioID then
+    table.insert(t, self._teleportAudioID)
+  end
+  if self._attackAudioID and 0 < self._attackAudioID then
+    table.insert(t, self._attackAudioID)
+  end
+  return t
+end
 
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetPhaseType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetPhaseType()
   return SkillViewPhaseType.ConvertDamageTeleportByLinkLine
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetCameraEffID = function(self)
-  -- function num : 0_4
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetCameraEffID()
   return self._cameraEffID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetCameraEffAnimOut = function(self)
-  -- function num : 0_5
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetCameraEffAnimOut()
   return self._cameraEffAnimOut
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetSceneEffID = function(self)
-  -- function num : 0_6
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetSceneEffID()
   return self._sceneEffID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetSceneEffPos = function(self)
-  -- function num : 0_7
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetSceneEffPos()
   return self._sceneEffPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetSceneEffAnimIn = function(self)
-  -- function num : 0_8
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetSceneEffAnimIn()
   return self._sceneEffAnimIn
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetSceneEffAnimIdle = function(self)
-  -- function num : 0_9
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetSceneEffAnimIdle()
   return self._sceneEffAnimIdle
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetSceneEffAnimOut = function(self)
-  -- function num : 0_10
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetSceneEffAnimOut()
   return self._sceneEffAnimOut
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetStartAudioID = function(self)
-  -- function num : 0_11
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetStartAudioID()
   return self._startAudioID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetConvertEffID = function(self)
-  -- function num : 0_12
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetConvertEffID()
   return self._convertEffID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetConvertEffAnimOut = function(self)
-  -- function num : 0_13
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetConvertEffAnimOut()
   return self._convertEffAnimOut
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetConvertAudioID = function(self)
-  -- function num : 0_14
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetConvertAudioID()
   return self._convertAudioID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetBeginDelayTime = function(self)
-  -- function num : 0_15
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetBeginDelayTime()
   return self._beginDelayTime
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetMoveSpeedTime = function(self)
-  -- function num : 0_16
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetMoveSpeedTime()
   return self._moveSpeedTime
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetMoveAnim = function(self)
-  -- function num : 0_17
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetMoveAnim()
   return self._moveAnim
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetMoveTrailEffect = function(self)
-  -- function num : 0_18
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetMoveTrailEffect()
   return self._moveTrailEffect
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetTeleportDelayTime = function(self)
-  -- function num : 0_19
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetTeleportDelayTime()
   return self._teleportDelayTime
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetTeleportAudioID = function(self)
-  -- function num : 0_20
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetTeleportAudioID()
   return self._teleportAudioID
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetDisappearEffID = function(self)
-  -- function num : 0_21
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetDisappearEffID()
   return self._disappearEffID
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetDisappearTime = function(self)
-  -- function num : 0_22
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetDisappearTime()
   return self._disappearTime
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetAppearEffID = function(self)
-  -- function num : 0_23
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetAppearEffID()
   return self._appearEffID
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetAppearDelayTime = function(self)
-  -- function num : 0_24
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetAppearDelayTime()
   return self._appearDelayTime
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetAttackAnim = function(self)
-  -- function num : 0_25
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetAttackAnim()
   return self._attackAnim
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetAttackAudioID = function(self)
-  -- function num : 0_26
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetAttackAudioID()
   return self._attackAudioID
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetGatherEffIDList = function(self)
-  -- function num : 0_27
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetGatherEffIDList()
   return self._gatherEffIDList
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetAttackEffID = function(self)
-  -- function num : 0_28
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetAttackEffID()
   return self._attackEffID
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetAttackEffDelayTime = function(self)
-  -- function num : 0_29
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetAttackEffDelayTime()
   return self._attackEffDelayTime
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetHitAnim = function(self)
-  -- function num : 0_30
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetHitAnim()
   return self._hitAnim
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetHitDelayTime = function(self)
-  -- function num : 0_31
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetHitDelayTime()
   return self._hitDelayTime
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetAttackEffTime = function(self)
-  -- function num : 0_32
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetAttackEffTime()
   return self._attackEffTime
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetSceneOutDelayTime = function(self)
-  -- function num : 0_33
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetSceneOutDelayTime()
   return self._sceneOutDelayTime
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseConvertDamageTeleportByLinkLineParam.GetEndDelayTime = function(self)
-  -- function num : 0_34
+function SkillPhaseConvertDamageTeleportByLinkLineParam:GetEndDelayTime()
   return self._endDelayTime
 end
-
-

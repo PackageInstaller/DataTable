@@ -1,51 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/ui_homeland_level/ui_homeland_level_sign_pop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandLevelSignPop", UIController)
 UIHomelandLevelSignPop = UIHomelandLevelSignPop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandLevelSignPop.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetHomelandLevelData()
+function UIHomelandLevelSignPop:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetHomelandLevelData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelSignPop.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandLevelSignPop:OnShow(uiParams)
   self.Content = self:GetUIComponent("UISelectObjectPath", "Content")
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelSignPop.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandLevelSignPop:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelSignPop.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local levels = (self.data).levels
-  ;
-  (self.Content):SpawnObjects("UIHomelandLevelSignPopItem", #levels)
-  local uis = (self.Content):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+function UIHomelandLevelSignPop:Flush()
+  local levels = self.data.levels
+  self.Content:SpawnObjects("UIHomelandLevelSignPopItem", #levels)
+  local uis = self.Content:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     local level = levels[i]
     ui:Flush(level)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandLevelSignPop.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandLevelSignPop:bgOnClick(go)
   self:CloseDialog()
 end
-
-

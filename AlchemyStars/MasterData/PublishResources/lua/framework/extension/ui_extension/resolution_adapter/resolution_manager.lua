@@ -1,8 +1,3 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/extension/ui_extension/resolution_adapter/resolution_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local openSafeWide = true
 local openFitMaxWidthHeight = true
 local PIXELSIZE_BASEHEIGHT = 1080
@@ -26,11 +21,9 @@ local ANCHOR_MAX_HEIGHT = MIN_WIDTH_HEIGHT_RATIO_H * (PIXELSIZE_BASEWIDTH / MIN_
 local FIX_SAFEAREA_ANDROID_KEY = "FixSafeareaAndroidKey"
 local MAX_SCREEN_CHANGE_SCALE = 1
 local RuntimePlatform = UnityEngine.RuntimePlatform
--- DECOMPILER ERROR at PC45: Confused about usage of register: R20 in 'UnsetPending'
 
-ResolutionManager.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV, SCREEN
-  (Log.debug)("[UIResolution] unity safearea:", SCREEN.safeArea, ", unity screen width:", SCREEN.width, ", height:", SCREEN.height)
+function ResolutionManager:Constructor()
+  Log.debug("[UIResolution] unity safearea:", SCREEN.safeArea, ", unity screen width:", SCREEN.width, ", height:", SCREEN.height)
   self.data = nil
   self.bOpenSafeWide = false
   self.bSafeWide = false
@@ -44,46 +37,35 @@ ResolutionManager.Constructor = function(self)
   self.blackSideBottomRectTrans = nil
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.CalculateBlack = function(self)
-  -- function num : 0_1 , upvalues : _ENV, openFitMaxWidthHeight, ANCHOR_MAX_WIDTH, ANCHOR_MAX_HEIGHT
-  if _G.APPVER1220 or not self then
-    self = (GameGlobal.ResolutionManager)()
+function ResolutionManager:CalculateBlack()
+  if not _G.APPVER1220 then
   end
+  self = self or GameGlobal.ResolutionManager()
   if openFitMaxWidthHeight then
-    local blackWidth = (math.ceil)(((ResolutionManager.RealWidth)() - ANCHOR_MAX_WIDTH) * 0.5)
+    local blackWidth = math.ceil((ResolutionManager.RealWidth() - ANCHOR_MAX_WIDTH) * 0.5)
     if blackWidth < 0 then
       blackWidth = 0
     end
     self.blackWidth = blackWidth
-    local blackHeight = (math.ceil)(((ResolutionManager.RealHeight)() - ANCHOR_MAX_HEIGHT) * 0.5)
+    local blackHeight = math.ceil((ResolutionManager.RealHeight() - ANCHOR_MAX_HEIGHT) * 0.5)
     if blackHeight < 0 then
       blackHeight = 0
     end
     self.blackHeight = blackHeight
     self:RefreshPermanentBlackSides()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIBlackChange)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIBlackChange)
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV, openFitMaxWidthHeight
-  (ResolutionManager.CalculateBlack)(self)
-  ;
-  (Log.debug)("[UIResolution]realWidth=", (ResolutionManager.RealWidth)(), " realHeight=", (ResolutionManager.RealHeight)(), ",openFitMaxWidthHeight=", openFitMaxWidthHeight, ",blackWidth=", self.blackWidth, ",blackHeight=", self.blackHeight)
-  self.data = (Cfg.cfg_device_safe_area)()
+function ResolutionManager:Init()
+  ResolutionManager.CalculateBlack(self)
+  Log.debug("[UIResolution]realWidth=", ResolutionManager.RealWidth(), " realHeight=", ResolutionManager.RealHeight(), ",openFitMaxWidthHeight=", openFitMaxWidthHeight, ",blackWidth=", self.blackWidth, ",blackHeight=", self.blackHeight)
+  self.data = Cfg.cfg_device_safe_area()
   self:SetResolution()
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.InitAfterUI = function(self, uiRootGameObject)
-  -- function num : 0_3
-  local permanentBlackSidesTrans = (uiRootGameObject.transform):Find("UICameras/depth_top/UI/TopPanel/PermanentBlackSides")
+function ResolutionManager:InitAfterUI(uiRootGameObject)
+  local permanentBlackSidesTrans = uiRootGameObject.transform:Find("UICameras/depth_top/UI/TopPanel/PermanentBlackSides")
   self.permanentBlackSides = permanentBlackSidesTrans.gameObject
   self.blackSideLeftRectTrans = permanentBlackSidesTrans:GetChild(0)
   self.blackSideRightRectTrans = permanentBlackSidesTrans:GetChild(1)
@@ -92,497 +74,376 @@ ResolutionManager.InitAfterUI = function(self, uiRootGameObject)
   self:RefreshPermanentBlackSides()
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.CalculateUIResolution = function()
-  -- function num : 0_4 , upvalues : _ENV, SCREEN, PIXELSIZE_BASEWIDTH, PIXELSIZE_BASEHEIGHT
-  if not self then
-    self = (GameGlobal.ResolutionManager)()
-    local vector2 = Vector2(SCREEN.width, SCREEN.height)
-    local scaleFactor = 0
-    scaleFactor = (Mathf.Min)(vector2.x / PIXELSIZE_BASEWIDTH, vector2.y / PIXELSIZE_BASEHEIGHT)
-    local sizeDelta = Vector2(SCREEN.width / scaleFactor, SCREEN.height / scaleFactor)
-    local info = (ResolutionManager.GeAnchorInfo)(-1)
-    local blackW = info.x * sizeDelta.x * 2
-    local w = 0
-    if sizeDelta.x - blackW < PIXELSIZE_BASEWIDTH then
-      w = PIXELSIZE_BASEWIDTH + blackW
-    else
-      w = sizeDelta.x
-    end
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R6 in 'UnsetPending'
-
-    self.canvasRefrenceWidth = w
-    ;
-    (Log.info)("[Resolution] Canvas默认宽度:", w)
+function ResolutionManager.CalculateUIResolution()
+  self = self or GameGlobal.ResolutionManager()
+  local vector2 = Vector2(SCREEN.width, SCREEN.height)
+  local scaleFactor = 0
+  scaleFactor = Mathf.Min(vector2.x / PIXELSIZE_BASEWIDTH, vector2.y / PIXELSIZE_BASEHEIGHT)
+  local sizeDelta = Vector2(SCREEN.width / scaleFactor, SCREEN.height / scaleFactor)
+  local info = ResolutionManager.GeAnchorInfo(-1)
+  local blackW = info.x * sizeDelta.x * 2
+  local w = 0
+  if sizeDelta.x - blackW < PIXELSIZE_BASEWIDTH then
+    w = PIXELSIZE_BASEWIDTH + blackW
+  else
+    w = sizeDelta.x
   end
+  self.canvasRefrenceWidth = w
+  Log.info("[Resolution] Canvas默认宽度:", w)
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.RefreshPermanentBlackSides = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function ResolutionManager:RefreshPermanentBlackSides()
   if not self.permanentBlackSides then
-    return 
+    return
   end
   if self.blackWidth == 0 and self.blackHeight == 0 then
     if _G.APPVER1220 then
-      (self.permanentBlackSides):SetActive(false)
+      self.permanentBlackSides:SetActive(false)
     else
-      ;
-      (self.permanentBlackSides):SetActive(true)
+      self.permanentBlackSides:SetActive(true)
     end
   else
-    ;
-    (self.permanentBlackSides):SetActive(true)
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.blackSideLeftRectTrans).sizeDelta = Vector2(self.blackWidth, 0)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.blackSideRightRectTrans).sizeDelta = Vector2(self.blackWidth, 0)
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.blackSideTopRectTrans).sizeDelta = Vector2(0, self.blackHeight)
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self.blackSideBottomRectTrans).sizeDelta = Vector2(0, self.blackHeight)
+    self.permanentBlackSides:SetActive(true)
+    self.blackSideLeftRectTrans.sizeDelta = Vector2(self.blackWidth, 0)
+    self.blackSideRightRectTrans.sizeDelta = Vector2(self.blackWidth, 0)
+    self.blackSideTopRectTrans.sizeDelta = Vector2(0, self.blackHeight)
+    self.blackSideBottomRectTrans.sizeDelta = Vector2(0, self.blackHeight)
   end
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.InvokeBangWidthChangedListeners = function(uiBangWidth)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIHelper.InvokeBangWidthChangeListeners)(uiBangWidth)
+function ResolutionManager.InvokeBangWidthChangedListeners(uiBangWidth)
+  UIHelper.InvokeBangWidthChangeListeners(uiBangWidth)
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.BangWidthLocalDBKey = function()
-  -- function num : 0_7 , upvalues : BANG_WIDTH_KEY, BANG_WIDTH_REGISTERED_KEY
+function ResolutionManager.BangWidthLocalDBKey()
   return BANG_WIDTH_KEY, BANG_WIDTH_REGISTERED_KEY
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.GeFullScreenAnchorInfo = function()
-  -- function num : 0_8 , upvalues : _ENV, FULL_SCREEN_ANCHOR_INFO
-  local realWidth = (ResolutionManager.RealWidth)()
-  local realHeight = (ResolutionManager.RealHeight)()
-  local blackWidth = (ResolutionManager.BlackWidth)()
-  local blackHeight = (ResolutionManager.BlackHeight)()
+function ResolutionManager.GeFullScreenAnchorInfo()
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
+  local blackWidth = ResolutionManager.BlackWidth()
+  local blackHeight = ResolutionManager.BlackHeight()
   local minY = blackHeight / realHeight
   local MaxY = 1 - minY
   local minX = blackWidth / realWidth
   local MaxX = 1 - minX
   local vec4 = Vector4(minX, minY, MaxX, MaxY)
-  local depth_top = ((UnityEngine.GameObject).Find)("depth_top")
+  local depth_top = UnityEngine.GameObject.Find("depth_top")
   if depth_top then
     local depth_topTran = depth_top.transform
     local cameraTran = depth_topTran:Find("Camera")
     if cameraTran then
       local camera = cameraTran:GetComponent("Camera")
-      -- DECOMPILER ERROR at PC43: Unhandled construct in 'MakeBoolean' P1
-
-      if camera and vec4 ~= FULL_SCREEN_ANCHOR_INFO then
-        camera.enabled = true
-      else
-        camera.enabled = false
+      if camera then
+        if vec4 ~= FULL_SCREEN_ANCHOR_INFO then
+          camera.enabled = true
+        else
+          camera.enabled = false
+        end
       end
     end
   end
-  do
-    return vec4
-  end
+  return vec4
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.GeAnchorInfo = function(curBangWidth)
-  -- function num : 0_9 , upvalues : _ENV, FULL_SCREEN_ANCHOR_INFO
-  local realWidth = (ResolutionManager.RealWidth)()
-  local realHeight = (ResolutionManager.RealHeight)()
-  local blackWidth = (ResolutionManager.BlackWidth)()
-  local blackHeight = (ResolutionManager.BlackHeight)()
+function ResolutionManager.GeAnchorInfo(curBangWidth)
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
+  local blackWidth = ResolutionManager.BlackWidth()
+  local blackHeight = ResolutionManager.BlackHeight()
   local minY = blackHeight / realHeight
   local MaxY = 1 - minY
-  local bangWidth = nil
-  if curBangWidth and curBangWidth >= 0 then
+  local bangWidth
+  if curBangWidth and 0 <= curBangWidth then
     bangWidth = curBangWidth
   else
-    bangWidth = (ResolutionManager.BangWidth)()
+    bangWidth = ResolutionManager.BangWidth()
   end
-  local vec4 = nil
-  if bangWidth < blackWidth then
+  local vec4
+  if blackWidth > bangWidth then
     local minX = blackWidth / realWidth
     local MaxX = 1 - minX
     vec4 = Vector4(minX, minY, MaxX, MaxY)
   else
-    do
-      vec4 = (ResolutionManager.GeAnchorInfoBySafeArea)(curBangWidth)
-      vec4.y = minY
-      vec4.w = MaxY
-      local depth_top = ((UnityEngine.GameObject).Find)("depth_top")
-      if depth_top then
-        local depth_topTran = depth_top.transform
-        local cameraTran = depth_topTran:Find("Camera")
-        if cameraTran then
-          local camera = cameraTran:GetComponent("Camera")
-          -- DECOMPILER ERROR at PC66: Unhandled construct in 'MakeBoolean' P1
-
-          if camera and vec4 ~= FULL_SCREEN_ANCHOR_INFO then
-            camera.enabled = true
-          else
-            camera.enabled = false
-          end
+    vec4 = ResolutionManager.GeAnchorInfoBySafeArea(curBangWidth)
+    vec4.y = minY
+    vec4.w = MaxY
+  end
+  local depth_top = UnityEngine.GameObject.Find("depth_top")
+  if depth_top then
+    local depth_topTran = depth_top.transform
+    local cameraTran = depth_topTran:Find("Camera")
+    if cameraTran then
+      local camera = cameraTran:GetComponent("Camera")
+      if camera then
+        if vec4 ~= FULL_SCREEN_ANCHOR_INFO then
+          camera.enabled = true
+        else
+          camera.enabled = false
         end
-      end
-      do
-        return vec4
       end
     end
   end
+  return vec4
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.GeAnchorInfoBySafeArea = function(uiBangWidth)
-  -- function num : 0_10 , upvalues : _ENV, RuntimePlatform, SCREEN
-  local x, y, w, h = nil, nil, nil, nil
-  local realWidth = (ResolutionManager.RealWidth)()
-  local realHeight = ((ResolutionManager.RealHeight)())
-  local bangWidth, byEngine = nil, nil
-  if uiBangWidth and uiBangWidth >= 0 then
+function ResolutionManager.GeAnchorInfoBySafeArea(uiBangWidth)
+  local x, y, w, h
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
+  local bangWidth, byEngine
+  if uiBangWidth and 0 <= uiBangWidth then
     bangWidth = uiBangWidth
   else
-    bangWidth = (ResolutionManager.BangWidth)()
+    bangWidth, byEngine = ResolutionManager.BangWidth()
   end
   if byEngine then
     if PLATFORM == RuntimePlatform.Android then
-      realWidth = (ResolutionManager.RealWidth)()
-      realHeight = (ResolutionManager.RealHeight)()
+      realWidth = ResolutionManager.RealWidth()
+      realHeight = ResolutionManager.RealHeight()
       x = bangWidth
       y = 0
       w = realWidth - x * 2
       h = realHeight
     else
-      realWidth = (ResolutionManager.ScreenWidth)()
-      realHeight = (ResolutionManager.ScreenHeight)()
+      realWidth = ResolutionManager.ScreenWidth()
+      realHeight = ResolutionManager.ScreenHeight()
       local safeArea = SCREEN.safeArea
       x = safeArea.x
       y = 0
       w = safeArea.width
       h = realHeight
     end
-  else
-    do
-      if bangWidth >= 0 then
-        x = (ResolutionManager.GetSafeAreaByBang)(bangWidth)
-      end
-      local vec4 = (ResolutionManager.GeAnchorInfoBySafeAreaInternal)(x, y, w, h, realWidth, realHeight)
-      return vec4
+  elseif 0 <= bangWidth then
+    x, y, w, h = ResolutionManager.GetSafeAreaByBang(bangWidth)
+  end
+  local vec4 = ResolutionManager.GeAnchorInfoBySafeAreaInternal(x, y, w, h, realWidth, realHeight)
+  return vec4
+end
+
+function ResolutionManager.BangWidth()
+  local isBangWidthRegistered = LocalDB.GetInt(BANG_WIDTH_REGISTERED_KEY)
+  if 0 < isBangWidthRegistered then
+    local w = LocalDB.GetInt(BANG_WIDTH_KEY)
+    if 100 < w then
+      w = 100
+      Log.debug("[fx] w >100 old pakge reset")
+      LocalDB.SetInt(BANG_WIDTH_KEY, 100)
     end
   end
-end
-
--- DECOMPILER ERROR at PC78: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.BangWidth = function()
-  -- function num : 0_11 , upvalues : _ENV, BANG_WIDTH_REGISTERED_KEY, BANG_WIDTH_KEY
-  local isBangWidthRegistered = (LocalDB.GetInt)(BANG_WIDTH_REGISTERED_KEY)
-  do
-    if isBangWidthRegistered > 0 then
-      local w = (LocalDB.GetInt)(BANG_WIDTH_KEY)
-      if w > 100 then
-        w = 100
-        ;
-        (Log.debug)("[fx] w >100 old pakge reset")
-        ;
-        (LocalDB.SetInt)(BANG_WIDTH_KEY, 100)
-      end
-    end
-    if (ResolutionManager.TheResolutionType)() ~= ResolutionType.SafeWide then
-      return 0
-    end
-    if _G.APPVER1220 or not (ResolutionManager.SafeAreaExist)() then
-      return 0
-    end
-    if isBangWidthRegistered > 0 then
-      local w = (LocalDB.GetInt)(BANG_WIDTH_KEY)
-      local bangCanvasPixel = (ResolutionManager.GetBangCanvasPixelWidthByPercent)(w / 100)
-      if (ResolutionManager.ConfigBangWidth)() < bangCanvasPixel then
-        (Log.debug)("bangCanvasPixel2", bangCanvasPixel, "ConfigBangWidth", (ResolutionManager.ConfigBangWidth)())
-        return (ResolutionManager.ConfigBangWidth)()
-      end
-      ;
-      (Log.debug)("[UIResolution]Get Bang from Local DB ", w, " canvas pixel width ", bangCanvasPixel)
-      return bangCanvasPixel
-    end
-    do
-      return (ResolutionManager.ConfigBangWidth)()
-    end
+  if ResolutionManager.TheResolutionType() ~= ResolutionType.SafeWide then
+    return 0
   end
+  if not _G.APPVER1220 then
+  end
+  if not ResolutionManager.SafeAreaExist() then
+    return 0
+  end
+  if 0 < isBangWidthRegistered then
+    local w = LocalDB.GetInt(BANG_WIDTH_KEY)
+    local bangCanvasPixel = ResolutionManager.GetBangCanvasPixelWidthByPercent(w / 100)
+    if bangCanvasPixel > ResolutionManager.ConfigBangWidth() then
+      Log.debug("bangCanvasPixel2", bangCanvasPixel, "ConfigBangWidth", ResolutionManager.ConfigBangWidth())
+      return ResolutionManager.ConfigBangWidth()
+    end
+    Log.debug("[UIResolution]Get Bang from Local DB ", w, " canvas pixel width ", bangCanvasPixel)
+    return bangCanvasPixel
+  end
+  return ResolutionManager.ConfigBangWidth()
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.GetBangCanvasPixelWidthByPercent = function(percent)
-  -- function num : 0_12 , upvalues : _ENV
-  return (ResolutionManager.ConfigBangWidth)() * percent
+function ResolutionManager.GetBangCanvasPixelWidthByPercent(percent)
+  return ResolutionManager.ConfigBangWidth() * percent
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.SafeAreaExist = function()
-  -- function num : 0_13 , upvalues : _ENV, SCREEN, SCREEN_STANDARDRATE
-  local lessBlack = (ResolutionManager.CheckSafeWidthLessBlackWidth)()
+function ResolutionManager.SafeAreaExist()
+  local lessBlack = ResolutionManager.CheckSafeWidthLessBlackWidth()
   if lessBlack then
     return false
   end
-  do return (SCREEN.safeArea).width < SCREEN.width and SCREEN_STANDARDRATE < SCREEN.width / SCREEN.height end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return SCREEN.safeArea.width < SCREEN.width and SCREEN.width / SCREEN.height > SCREEN_STANDARDRATE
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.CheckSafeWidthLessBlackWidth = function()
-  -- function num : 0_14 , upvalues : _ENV
-  if (ResolutionManager.TheResolutionType)() ~= ResolutionType.SafeWide then
+function ResolutionManager.CheckSafeWidthLessBlackWidth()
+  if ResolutionManager.TheResolutionType() ~= ResolutionType.SafeWide then
     return false
   end
-  local maxBangWidth = (ResolutionManager.GetBangCanvasPixelWidthByPercent)(1)
-  local blackWidth = (ResolutionManager.BlackWidth)()
+  local maxBangWidth = ResolutionManager.GetBangCanvasPixelWidthByPercent(1)
+  local blackWidth = ResolutionManager.BlackWidth()
   if maxBangWidth <= blackWidth then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.ConfigBangWidth = function()
-  -- function num : 0_15 , upvalues : _ENV, SCREEN, SCREEN_STANDARDRATE, RuntimePlatform
+function ResolutionManager.ConfigBangWidth()
   if not _G.APPVER1220 then
-    local res = 0
-    if SCREEN.width / SCREEN.height <= SCREEN_STANDARDRATE then
-      return res, true
-    end
-    local screenWidth = SCREEN.width
-    local rate = (ResolutionManager.RealWidth)() / screenWidth
-    local width = (SCREEN.safeArea).width
-    width = (ResolutionManager.FixSafeAreaWidth)()
-    local w = (screenWidth - width) * rate
-    if w > 0 then
-      if PLATFORM == RuntimePlatform.IPhonePlayer then
-        res = w * 0.5
-      else
-        res = w
-      end
-    end
-    ;
-    (Log.debug)("[UIResolution]Get Bang from Unity ", res)
+  end
+  local res = 0
+  if SCREEN.width / SCREEN.height <= SCREEN_STANDARDRATE then
     return res, true
   end
+  local screenWidth = SCREEN.width
+  local rate = ResolutionManager.RealWidth() / screenWidth
+  local width = SCREEN.safeArea.width
+  width = ResolutionManager.FixSafeAreaWidth()
+  local w = (screenWidth - width) * rate
+  if 0 < w then
+    if PLATFORM == RuntimePlatform.IPhonePlayer then
+      res = w * 0.5
+    else
+      res = w
+    end
+  end
+  Log.debug("[UIResolution]Get Bang from Unity ", res)
+  return res, true
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.OldConfigBangWidth = function()
-  -- function num : 0_16 , upvalues : _ENV, SCREEN, RuntimePlatform
+function ResolutionManager.OldConfigBangWidth()
   local byEngine = false
-  local realWidth = (ResolutionManager.RealWidth)()
-  local safeWidth = (ResolutionManager.SafeWideWidth)()
+  local realWidth = ResolutionManager.RealWidth()
+  local safeWidth = ResolutionManager.SafeWideWidth()
   local res = 0
   local w = 0
   if safeWidth <= 0 then
     byEngine = true
-    safeWidth = (SCREEN.safeArea).width
+    safeWidth = SCREEN.safeArea.width
     if PLATFORM == RuntimePlatform.Android then
-      local screenWidth = (ResolutionManager.ScreenWidth)()
+      local screenWidth = ResolutionManager.ScreenWidth()
       local rate = realWidth / screenWidth
       w = (screenWidth - safeWidth) * rate
     else
-      do
-        realWidth = (ResolutionManager.ScreenWidth)()
-        w = realWidth - safeWidth
-        w = realWidth - safeWidth
-        if w > 0 then
-          if PLATFORM == RuntimePlatform.Android and byEngine then
-            res = w
-          else
-            res = (w) * 0.5 * ((ResolutionManager.RealWidth)() / realWidth)
-          end
-        end
-        if byEngine then
-          (Log.debug)("[UIResolution]Get Bang from Unity ", res)
-        else
-          ;
-          (Log.debug)("[UIResolution]Get Bang from Our Config ", res)
-        end
-        return res, byEngine
-      end
+      realWidth = ResolutionManager.ScreenWidth()
+      w = realWidth - safeWidth
+    end
+  else
+    w = realWidth - safeWidth
+  end
+  if 0 < w then
+    if PLATFORM == RuntimePlatform.Android and byEngine then
+      res = w
+    else
+      res = w * 0.5 * (ResolutionManager.RealWidth() / realWidth)
     end
   end
+  if byEngine then
+    Log.debug("[UIResolution]Get Bang from Unity ", res)
+  else
+    Log.debug("[UIResolution]Get Bang from Our Config ", res)
+  end
+  return res, byEngine
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.FixSafeAreaWidth = function()
-  -- function num : 0_17 , upvalues : _ENV, SCREEN, FIX_SAFEAREA_ANDROID_KEY, MAX_SCREEN_CHANGE_SCALE
+function ResolutionManager.FixSafeAreaWidth()
   if not IsAndroid() then
-    return (SCREEN.safeArea).width
+    return SCREEN.safeArea.width
   end
-  if not (SCREEN.safeArea).x == 0 then
-    return (SCREEN.safeArea).width
+  if not SCREEN.safeArea.x == 0 then
+    return SCREEN.safeArea.width
   end
-  local localscale = (LocalDB.GetFloat)(FIX_SAFEAREA_ANDROID_KEY)
+  local localscale = LocalDB.GetFloat(FIX_SAFEAREA_ANDROID_KEY)
   if localscale == nil or localscale == 0 then
-    localscale = (SCREEN.safeArea).width / (SCREEN.safeArea).height
-    ;
-    (LocalDB.SetFloat)(FIX_SAFEAREA_ANDROID_KEY, localscale)
+    localscale = SCREEN.safeArea.width / SCREEN.safeArea.height
+    LocalDB.SetFloat(FIX_SAFEAREA_ANDROID_KEY, localscale)
   end
-  do
-    if localscale ~= nil then
-      local curScale = (SCREEN.safeArea).width / (SCREEN.safeArea).height
-      if curScale ~= localscale then
-        if MAX_SCREEN_CHANGE_SCALE < (math.abs)(curScale - localscale) then
-          return (SCREEN.safeArea).width
-        end
-        return (SCREEN.safeArea).height * (localscale)
+  if localscale ~= nil then
+    local curScale = SCREEN.safeArea.width / SCREEN.safeArea.height
+    if curScale ~= localscale then
+      if math.abs(curScale - localscale) > MAX_SCREEN_CHANGE_SCALE then
+        return SCREEN.safeArea.width
       end
+      return SCREEN.safeArea.height * localscale
     end
-    return (SCREEN.safeArea).width
   end
+  return SCREEN.safeArea.width
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.RealWidth = function()
-  -- function num : 0_18 , upvalues : _ENV, SCREEN_STANDARDRATE, PIXELSIZE_BASEHEIGHT, PIXELSIZE_BASEWIDTH
-  local screenRate = (ResolutionManager.ScreenWidth)() / (ResolutionManager.ScreenHeight)()
-  if SCREEN_STANDARDRATE < screenRate then
+function ResolutionManager.RealWidth()
+  local screenRate = ResolutionManager.ScreenWidth() / ResolutionManager.ScreenHeight()
+  if screenRate > SCREEN_STANDARDRATE then
     return PIXELSIZE_BASEHEIGHT * screenRate
   else
     return PIXELSIZE_BASEWIDTH
   end
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.RealHeight = function()
-  -- function num : 0_19 , upvalues : _ENV, SCREEN_STANDARDRATE, PIXELSIZE_BASEHEIGHT, PIXELSIZE_BASEWIDTH
-  local screenRate = (ResolutionManager.ScreenWidth)() / (ResolutionManager.ScreenHeight)()
-  if SCREEN_STANDARDRATE <= screenRate then
+function ResolutionManager.RealHeight()
+  local screenRate = ResolutionManager.ScreenWidth() / ResolutionManager.ScreenHeight()
+  if screenRate >= SCREEN_STANDARDRATE then
     return PIXELSIZE_BASEHEIGHT
   else
     return PIXELSIZE_BASEWIDTH / screenRate
   end
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.ScreenWidth = function()
-  -- function num : 0_20 , upvalues : SCREEN
+function ResolutionManager.ScreenWidth()
   return SCREEN.width
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.ScreenHeight = function()
-  -- function num : 0_21 , upvalues : SCREEN
+function ResolutionManager.ScreenHeight()
   return SCREEN.height
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.BlackWidth = function()
-  -- function num : 0_22 , upvalues : _ENV
-  return ((GameGlobal.ResolutionManager)()).blackWidth
+function ResolutionManager.BlackWidth()
+  return GameGlobal.ResolutionManager().blackWidth
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.BlackHeight = function()
-  -- function num : 0_23 , upvalues : _ENV
-  return ((GameGlobal.ResolutionManager)()).blackHeight
+function ResolutionManager.BlackHeight()
+  return GameGlobal.ResolutionManager().blackHeight
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.BaseWidth = function()
-  -- function num : 0_24 , upvalues : PIXELSIZE_BASEWIDTH
+function ResolutionManager.BaseWidth()
   return PIXELSIZE_BASEWIDTH
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.BaseHeight = function()
-  -- function num : 0_25 , upvalues : PIXELSIZE_BASEHEIGHT
+function ResolutionManager.BaseHeight()
   return PIXELSIZE_BASEHEIGHT
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.SafeWideWidth = function()
-  -- function num : 0_26 , upvalues : _ENV
-  local resolutionMng = (GameGlobal.ResolutionManager)()
-  if resolutionMng.bOpenSafeWide and resolutionMng.bSafeWide then
-    (Log.debug)("[UIResolution]current device is safewide type！")
+function ResolutionManager.SafeWideWidth()
+  local resolutionMng = GameGlobal.ResolutionManager()
+  if resolutionMng.bOpenSafeWide then
+    if resolutionMng.bSafeWide then
+      Log.debug("[UIResolution]current device is safewide type！")
+    end
+  else
+    Log.debug("[UIResolution]safewide type is not open！")
   end
-  ;
-  (Log.debug)("[UIResolution]safewide type is not open！")
   return resolutionMng.safeWideWidthByConfig
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.SetResolution = function(self)
-  -- function num : 0_27 , upvalues : openSafeWide, _ENV, EQUAL_IGNORE_CASE
+function ResolutionManager:SetResolution()
   if openSafeWide then
-    local deviceModel = (UIHelper.GetDeviceModel)()
-    ;
-    (Log.debug)("[UIResolution]ResolutionManager:SetResolution, ", deviceModel)
+    local deviceModel = UIHelper.GetDeviceModel()
+    Log.debug("[UIResolution]ResolutionManager:SetResolution, ", deviceModel)
     local nowSafeAreaWidth = -1
-    for deviceName,device in next do
+    for deviceName, device in next, self.data, nil do
       if EQUAL_IGNORE_CASE(deviceName, deviceModel) then
         nowSafeAreaWidth = device.safeWidth
         break
       end
     end
-    do
-      do
-        if nowSafeAreaWidth ~= -1 then
-          (Log.debug)("[UIResolution]ResolutionManager:SetResolution, nowSafeAreaWidth ", nowSafeAreaWidth)
-          self:SetDeviceReslutionInfo(true, nowSafeAreaWidth, true)
-        else
-          self:SetDeviceReslutionInfo(true, 0, false)
-        end
-        self:SetDeviceReslutionInfo(false, 0, false)
-      end
+    if nowSafeAreaWidth ~= -1 then
+      Log.debug("[UIResolution]ResolutionManager:SetResolution, nowSafeAreaWidth ", nowSafeAreaWidth)
+      self:SetDeviceReslutionInfo(true, nowSafeAreaWidth, true)
+    else
+      self:SetDeviceReslutionInfo(true, 0, false)
     end
+  else
+    self:SetDeviceReslutionInfo(false, 0, false)
   end
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.SetDeviceReslutionInfo = function(self, bOpenSafeWide, safeWideWidth, bSafeWide)
-  -- function num : 0_28 , upvalues : _ENV
-  (Log.debug)("[UIResolution]ResolutionManager:SetDeviceReslutionInfo, bOpenSafeWide= ", bOpenSafeWide, ", safeWideWidth= ", safeWideWidth, ", bSafeWide= ", bSafeWide)
+function ResolutionManager:SetDeviceReslutionInfo(bOpenSafeWide, safeWideWidth, bSafeWide)
+  Log.debug("[UIResolution]ResolutionManager:SetDeviceReslutionInfo, bOpenSafeWide= ", bOpenSafeWide, ", safeWideWidth= ", safeWideWidth, ", bSafeWide= ", bSafeWide)
   self.bOpenSafeWide = bOpenSafeWide
   self.safeWideWidthByConfig = safeWideWidth
   self.bSafeWide = bSafeWide
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.TheResolutionType = function()
-  -- function num : 0_29 , upvalues : _ENV
-  local resolutionMng = (GameGlobal.ResolutionManager)()
+function ResolutionManager.TheResolutionType()
+  local resolutionMng = GameGlobal.ResolutionManager()
   if resolutionMng.bOpenSafeWide then
     return ResolutionType.SafeWide
   else
@@ -590,31 +451,27 @@ ResolutionManager.TheResolutionType = function()
   end
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.GetSafeAreaByBang = function(bangWidth)
-  -- function num : 0_30 , upvalues : SCREEN, _ENV
-  local x, y, w, h = 0, nil, nil, nil
+function ResolutionManager.GetSafeAreaByBang(bangWidth)
+  local x, y, w, h = 0
   local insets = bangWidth
-  if SCREEN.height < SCREEN.width then
+  if SCREEN.width > SCREEN.height then
     x = insets
     y = 0
   else
     x = 0
     y = insets
   end
-  local realWidth = (ResolutionManager.RealWidth)()
-  local realHeight = (ResolutionManager.RealHeight)()
+  local realWidth = ResolutionManager.RealWidth()
+  local realHeight = ResolutionManager.RealHeight()
   w = realWidth - x * 2
   h = realHeight - y * 2
   return x, y, w, h
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.GeAnchorInfoBySafeAreaInternal = function(x, y, w, h, realWidth, realHeight)
-  -- function num : 0_31 , upvalues : _ENV
-  (Log.debug)("[UIResolution]New safe area applied : LeftBottom x=", x, " LeftBottom y=", y, " w=", w, " h=", h, " on full extents ScreenWidth=", (ResolutionManager.ScreenWidth)(), " ScreenHeight=", (ResolutionManager.ScreenHeight)(), ",\n RealWidth=", realWidth, ", RealHeight=", realHeight)
+function ResolutionManager.GeAnchorInfoBySafeAreaInternal(x, y, w, h, realWidth, realHeight)
+  Log.debug("[UIResolution]New safe area applied : LeftBottom x=", x, " LeftBottom y=", y, " w=", w, " h=", h, " on full extents ScreenWidth=", ResolutionManager.ScreenWidth(), " ScreenHeight=", ResolutionManager.ScreenHeight(), [[
+,
+ RealWidth=]], realWidth, ", RealHeight=", realHeight)
   local anchorMinX = x / realWidth
   local anchorMinY = y / realHeight
   local anchorMaxX = (x + w) / realWidth
@@ -622,13 +479,7 @@ ResolutionManager.GeAnchorInfoBySafeAreaInternal = function(x, y, w, h, realWidt
   return Vector4(anchorMinX, anchorMinY, anchorMaxX, anchorMaxY)
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R20 in 'UnsetPending'
-
-ResolutionManager.IsAspectOutofSupport = function()
-  -- function num : 0_32 , upvalues : _ENV, MAX_WIDTH_HEIGHT_RATIO_W, MAX_WIDTH_HEIGHT_RATIO_H, MIN_WIDTH_HEIGHT_RATIO_W, MIN_WIDTH_HEIGHT_RATIO_H
-  local aspect = (ResolutionManager.ScreenWidth)() / (ResolutionManager.ScreenHeight)()
-  do return MAX_WIDTH_HEIGHT_RATIO_W / MAX_WIDTH_HEIGHT_RATIO_H < aspect or aspect < MIN_WIDTH_HEIGHT_RATIO_W / MIN_WIDTH_HEIGHT_RATIO_H end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function ResolutionManager.IsAspectOutofSupport()
+  local aspect = ResolutionManager.ScreenWidth() / ResolutionManager.ScreenHeight()
+  return aspect > MAX_WIDTH_HEIGHT_RATIO_W / MAX_WIDTH_HEIGHT_RATIO_H or aspect < MIN_WIDTH_HEIGHT_RATIO_W / MIN_WIDTH_HEIGHT_RATIO_H
 end
-
-

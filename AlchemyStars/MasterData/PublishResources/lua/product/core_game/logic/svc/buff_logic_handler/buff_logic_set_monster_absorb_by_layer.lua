@@ -1,75 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_monster_absorb_by_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetMonsterAbsorbByLayer", BuffLogicBase)
 BuffLogicSetMonsterAbsorbByLayer = BuffLogicSetMonsterAbsorbByLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetMonsterAbsorbByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    self._oneLayerAddMulValue = logicParam.oneLayerAddMulValue or 0
-    self._oneLayerAddValue = logicParam.oneLayerAddValue or 0
-    self._mulBaseValue = logicParam.mulBaseValue or false
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-    if not logicParam.effectList then
-      (self._buffInstance)._effectList = {}
-    end
-  end
+function BuffLogicSetMonsterAbsorbByLayer:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._oneLayerAddMulValue = logicParam.oneLayerAddMulValue or 0
+  self._oneLayerAddValue = logicParam.oneLayerAddValue or 0
+  self._mulBaseValue = logicParam.mulBaseValue or false
+  self._buffInstance._effectList = logicParam.effectList or {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetMonsterAbsorbByLayer.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local curMarkLayer = (self._buffLogicService):GetBuffLayer(e, self._layerType)
+function BuffLogicSetMonsterAbsorbByLayer:DoLogic()
+  local e = self._buffInstance:Entity()
+  local curMarkLayer = self._buffLogicService:GetBuffLayer(e, self._layerType)
   local change = 0
   if self._oneLayerAddMulValue ~= 0 then
     change = self._oneLayerAddMulValue * curMarkLayer
   end
   if self._oneLayerAddValue ~= 0 then
-    change = (math.floor)(self._oneLayerAddValue * curMarkLayer)
+    change = math.floor(self._oneLayerAddValue * curMarkLayer)
   end
-  for k,paramType in ipairs((self._buffInstance)._effectList) do
+  for k, paramType in ipairs(self._buffInstance._effectList) do
     local effChangeValue = change
-    do
-      do
-        if self._mulBaseValue then
-          local baseValue = (self._buffLogicService):GetMonsterSkillAbsorbBaseValue(self._entity, paramType)
-          if baseValue then
-            effChangeValue = baseValue * effChangeValue
-          end
-        end
-        ;
-        (self._buffLogicService):ChangeMonsterSkillAbsorb(self._entity, self:GetBuffSeq(), paramType, effChangeValue)
-        -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
+    if self._mulBaseValue then
+      local baseValue = self._buffLogicService:GetMonsterSkillAbsorbBaseValue(self._entity, paramType)
+      if baseValue then
+        effChangeValue = baseValue * effChangeValue
       end
     end
+    self._buffLogicService:ChangeMonsterSkillAbsorb(self._entity, self:GetBuffSeq(), paramType, effChangeValue)
   end
 end
 
 _class("BuffLogicRemoveMonsterAbsorbByLayer", BuffLogicBase)
 BuffLogicRemoveMonsterAbsorbByLayer = BuffLogicRemoveMonsterAbsorbByLayer
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveMonsterAbsorbByLayer.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicRemoveMonsterAbsorbByLayer:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveMonsterAbsorbByLayer.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  for k,paramType in ipairs((self._buffInstance)._effectList) do
-    (self._buffLogicService):RemoveMonsterSkillAbsorb(self._entity, self:GetBuffSeq(), paramType)
+function BuffLogicRemoveMonsterAbsorbByLayer:DoLogic()
+  local e = self._buffInstance:Entity()
+  for k, paramType in ipairs(self._buffInstance._effectList) do
+    self._buffLogicService:RemoveMonsterSkillAbsorb(self._entity, self:GetBuffSeq(), paramType)
   end
 end
-
-

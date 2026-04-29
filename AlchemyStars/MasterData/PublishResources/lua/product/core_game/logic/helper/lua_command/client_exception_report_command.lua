@@ -1,59 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/lua_command/client_exception_report_command.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-ClientExceptionReportType = {CastPickupActiveSkillCommand = 1, ChangeTeamLeaderCommand = 2, BattleUIModuleTeamOrder = 3, AutoFightPickError = 4}
+ClientExceptionReportType = {
+  CastPickupActiveSkillCommand = 1,
+  ChangeTeamLeaderCommand = 2,
+  BattleUIModuleTeamOrder = 3,
+  AutoFightPickError = 4
+}
 _class("ClientExceptionReportCommand", IEntityCommand)
 ClientExceptionReportCommand = ClientExceptionReportCommand
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientExceptionReportCommand.Constructor = function(self, reportType, tag, msg)
-  -- function num : 0_0
+function ClientExceptionReportCommand:Constructor(reportType, tag, msg)
   self._reportType = reportType
   self._msg = msg
   self._tag = tag
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.GetEntityID = function(self)
-  -- function num : 0_1
+function ClientExceptionReportCommand:GetEntityID()
   return self.EntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.GetCommandType = function(self)
-  -- function num : 0_2
+function ClientExceptionReportCommand:GetCommandType()
   return "ClientExceptionReport"
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.GetExecStateID = function(self)
-  -- function num : 0_3
+function ClientExceptionReportCommand:GetExecStateID()
   return 0
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.IsExecExcluded = function(self)
-  -- function num : 0_4
+function ClientExceptionReportCommand:IsExecExcluded()
   return 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.DependRoundCount = function(self)
-  -- function num : 0_5
+function ClientExceptionReportCommand:DependRoundCount()
   return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.ToNetMessage = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function ClientExceptionReportCommand:ToNetMessage()
   local msg = CEventClientExceptionReportCommand:New()
   msg.EntityID = self.EntityID
   msg.RoundCount = self.RoundCount
@@ -66,10 +46,7 @@ ClientExceptionReportCommand.ToNetMessage = function(self)
   return msg
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.FromNetMessage = function(self, msg)
-  -- function num : 0_7
+function ClientExceptionReportCommand:FromNetMessage(msg)
   self.EntityID = msg.EntityID
   self.RoundCount = msg.RoundCount
   self.ClientWaitInput = msg.ClientWaitInput
@@ -80,17 +57,11 @@ ClientExceptionReportCommand.FromNetMessage = function(self, msg)
   self._msg = msg.msg
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.GetReportType = function(self)
-  -- function num : 0_8
+function ClientExceptionReportCommand:GetReportType()
   return self._reportType
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.CreateCastPickupActiveException = function(uiWidgetBattlePet, logicCheckLog)
-  -- function num : 0_9 , upvalues : _ENV
+function ClientExceptionReportCommand.CreateCastPickupActiveException(uiWidgetBattlePet, logicCheckLog)
   local t = {}
   if uiWidgetBattlePet then
     t.uiPetPstID = uiWidgetBattlePet.petPstID
@@ -117,63 +88,55 @@ ClientExceptionReportCommand.CreateCastPickupActiveException = function(uiWidget
   return cmd
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.CreateChangeTeamLeaderReport = function(petIDArray, oldPetPstID, newPetPstID)
-  -- function num : 0_10 , upvalues : _ENV
-  local t = {petIDArray = petIDArray, oldPetPstID = oldPetPstID, newPetPstID = newPetPstID}
+function ClientExceptionReportCommand.CreateChangeTeamLeaderReport(petIDArray, oldPetPstID, newPetPstID)
+  local t = {
+    petIDArray = petIDArray,
+    oldPetPstID = oldPetPstID,
+    newPetPstID = newPetPstID
+  }
   local cmd = ClientExceptionReportCommand:New(ClientExceptionReportType.ChangeTeamLeaderCommand, "[ClientReport]ChangeTeamLeader", t)
   return cmd
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.CreateBattleUIModuleReport = function(req)
-  -- function num : 0_11 , upvalues : _ENV
-  local renderState = (GameGlobal:GetMainWorld()):RenderBattleStat()
-  if renderState._currentTeamOrderRequest or not req then
-    local t = {finishedSequenceNoDic = renderState._finishedSequenceNoDic, changeTeamOrderViewQueue = renderState._changeTeamOrderViewQueue, viewQueueSequenceNo = renderState._viewQueueSequenceNo, 
-currentTeamOrderRequest = {}
-, isChangeTeamOrderViewDisabled = renderState._isChangeTeamOrderViewDisabled, 
-eventRequest = {}
-}
-    local cmd = ClientExceptionReportCommand:New(ClientExceptionReportType.BattleUIModuleTeamOrder, "[ClientReport]CreateBattleUIModuleReport", t)
-    return cmd
-  end
+function ClientExceptionReportCommand.CreateBattleUIModuleReport(req)
+  local renderState = GameGlobal:GetMainWorld():RenderBattleStat()
+  local t = {
+    finishedSequenceNoDic = renderState._finishedSequenceNoDic,
+    changeTeamOrderViewQueue = renderState._changeTeamOrderViewQueue,
+    viewQueueSequenceNo = renderState._viewQueueSequenceNo,
+    currentTeamOrderRequest = renderState._currentTeamOrderRequest or {},
+    isChangeTeamOrderViewDisabled = renderState._isChangeTeamOrderViewDisabled,
+    eventRequest = req or {}
+  }
+  local cmd = ClientExceptionReportCommand:New(ClientExceptionReportType.BattleUIModuleTeamOrder, "[ClientReport]CreateBattleUIModuleReport", t)
+  return cmd
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientExceptionReportCommand.CreateAutoFightPickErrorReport = function(activeSkillID, errorStep, errorType, pickPosList, tryPickList, curPickPos)
-  -- function num : 0_12 , upvalues : _ENV
-  local t = {activeSkillID = activeSkillID, errorStep = errorStep, errorType = errorType}
-  do
-    if pickPosList then
-      local tmpPickList = {}
-      for i,v in ipairs(pickPosList) do
-        (table.insert)(tmpPickList, Vector2(v.x, v.y))
-      end
-      t.pickGridList = tmpPickList
+function ClientExceptionReportCommand.CreateAutoFightPickErrorReport(activeSkillID, errorStep, errorType, pickPosList, tryPickList, curPickPos)
+  local t = {
+    activeSkillID = activeSkillID,
+    errorStep = errorStep,
+    errorType = errorType
+  }
+  if pickPosList then
+    local tmpPickList = {}
+    for i, v in ipairs(pickPosList) do
+      table.insert(tmpPickList, Vector2(v.x, v.y))
     end
+    t.pickGridList = tmpPickList
+  end
+  if tryPickList then
+    local tmpTryPickList = {}
     if tryPickList then
-      local tmpTryPickList = {}
-      if tryPickList then
-        for i,v in ipairs(tryPickList) do
-          (table.insert)(tmpTryPickList, Vector2(v.x, v.y))
-        end
-      end
-      do
-        do
-          t.tryPickList = tmpTryPickList
-          if curPickPos then
-            t.curPickPos = curPickPos
-          end
-          local cmd = ClientExceptionReportCommand:New(ClientExceptionReportType.AutoFightPickError, "[ClientReport]AutoFightPickError", t)
-          return cmd
-        end
+      for i, v in ipairs(tryPickList) do
+        table.insert(tmpTryPickList, Vector2(v.x, v.y))
       end
     end
+    t.tryPickList = tmpTryPickList
   end
+  if curPickPos then
+    t.curPickPos = curPickPos
+  end
+  local cmd = ClientExceptionReportCommand:New(ClientExceptionReportType.AutoFightPickError, "[ClientReport]AutoFightPickError", t)
+  return cmd
 end
-
-

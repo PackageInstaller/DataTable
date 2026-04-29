@@ -1,26 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s2/common/ui_s2_btn_icon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS2BtnIcon", UICustomWidget)
 UIS2BtnIcon = UIS2BtnIcon
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS2BtnIcon.SetData = function(self, uiName)
-  -- function num : 0_0
+function UIS2BtnIcon:SetData(uiName)
   self:_SetImage(uiName)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS2BtnIcon._SetImage = function(self, uiName)
-  -- function num : 0_1 , upvalues : _ENV
-  local tb = {UIS2MedalBtn = "exp_s2_zjm_di01_icon", UIS2QuestBtn = "exp_s2_zjm_di02_icon", UIS2ExchangeBtn = "exp_s2_zjm_di03_icon", UIS2CollageBtn = "exp_s2_zjm_di04_icon", UIS2GoBtn = "exp_s2_zjm_di05_icon"}
+function UIS2BtnIcon:_SetImage(uiName)
+  local tb = {
+    UIS2MedalBtn = "exp_s2_zjm_di01_icon",
+    UIS2QuestBtn = "exp_s2_zjm_di02_icon",
+    UIS2ExchangeBtn = "exp_s2_zjm_di03_icon",
+    UIS2CollageBtn = "exp_s2_zjm_di04_icon",
+    UIS2GoBtn = "exp_s2_zjm_di05_icon"
+  }
   local atlasName = "UIS2Main.spriteatlas"
   local spriteName = tb[uiName]
-  ;
-  (UIWidgetHelper.SetImageSprite)(self, "Icon3", atlasName, spriteName)
+  UIWidgetHelper.SetImageSprite(self, "Icon3", atlasName, spriteName)
 end
-
-

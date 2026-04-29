@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/story/ui_n28_avg_story_gain_evidence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGStoryGainEvidence", UICustomWidget)
 UIN28AVGStoryGainEvidence = UIN28AVGStoryGainEvidence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGStoryGainEvidence.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGStoryGainEvidence:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryGainEvidence.OnShow = function(self)
-  -- function num : 0_1
+function UIN28AVGStoryGainEvidence:OnShow()
   self._evidenceStateText = self:GetUIComponent("UILocalizationText", "evidenceStateText")
   self._evidenceInfoText = self:GetUIComponent("UILocalizationText", "evidenceInfoText")
   self._evidenceTitleText = self:GetUIComponent("UILocalizationText", "evidenceTitleText")
@@ -25,104 +15,66 @@ UIN28AVGStoryGainEvidence.OnShow = function(self)
   self._content = self:GetUIComponent("RectTransform", "content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryGainEvidence.OnHide = function(self)
-  -- function num : 0_2
+function UIN28AVGStoryGainEvidence:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryGainEvidence.Flush = function(self, evienceCfg, isAuto, isNewGet, lastEvidenceCfg, callback)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._anim):Play("uieff_UIN28AVGStoryGainEvidence_in")
+function UIN28AVGStoryGainEvidence:Flush(evienceCfg, isAuto, isNewGet, lastEvidenceCfg, callback)
+  self._anim:Play("uieff_UIN28AVGStoryGainEvidence_in")
   self.callback = callback
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGetItem)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGetItem)
   if isNewGet then
     self:Lock("UIN28AVGStoryGainEvidence_GainEvidence")
     self:SetPanel(evienceCfg, "str_avg_n28_evidence_get")
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    YIELD(TT, 500)
-    self:UnLock("UIN28AVGStoryGainEvidence_GainEvidence")
-  end
-, self)
+    GameGlobal.TaskManager():StartTask(function(TT)
+      YIELD(TT, 500)
+      self:UnLock("UIN28AVGStoryGainEvidence_GainEvidence")
+    end, self)
   else
     self:PlayUpdateAnim(evienceCfg, lastEvidenceCfg)
   end
-  -- DECOMPILER ERROR at PC36: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._content).anchoredPosition = Vector2(0, 0)
+  self._content.anchoredPosition = Vector2(0, 0)
   if isAuto then
-    (self.callback)()
+    self.callback()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryGainEvidence.SetPanel = function(self, cfg, title)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._evidenceStateText):SetText((StringTable.Get)(title))
-  local intro = self:_DoEscape((StringTable.Get)(cfg.EvidenceIntro))
-  ;
-  (self._evidenceInfoText):SetText(intro)
-  ;
-  (self._evidenceTitleText):SetText((StringTable.Get)(cfg.EvidenceName))
-  ;
-  (self._iconRawImage):LoadImage(cfg.EvidenceIcon)
+function UIN28AVGStoryGainEvidence:SetPanel(cfg, title)
+  self._evidenceStateText:SetText(StringTable.Get(title))
+  local intro = self:_DoEscape(StringTable.Get(cfg.EvidenceIntro))
+  self._evidenceInfoText:SetText(intro)
+  self._evidenceTitleText:SetText(StringTable.Get(cfg.EvidenceName))
+  self._iconRawImage:LoadImage(cfg.EvidenceIcon)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryGainEvidence.PlayUpdateAnim = function(self, evienceCfg, lastEvidenceCfg)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN28AVGStoryGainEvidence:PlayUpdateAnim(evienceCfg, lastEvidenceCfg)
   self:Lock("UIN28AVGStoryGainEvidence_GainEvidence")
   self:SetPanel(lastEvidenceCfg, "str_avg_n28_evidence_update")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self, evienceCfg
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 500)
-    ;
-    (self._anim):Play("uieff_UIN28AVGStoryGainEvidence_cut")
+    self._anim:Play("uieff_UIN28AVGStoryGainEvidence_cut")
     YIELD(TT, 500)
     self:SetPanel(evienceCfg, "str_avg_n28_evidence_update")
     YIELD(TT, 433)
     self:UnLock("UIN28AVGStoryGainEvidence_GainEvidence")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryGainEvidence.BtnOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  (self._anim):Play("uieff_UIN28AVGStoryGainEvidence_out")
+function UIN28AVGStoryGainEvidence:BtnOnClick(go)
+  self._anim:Play("uieff_UIN28AVGStoryGainEvidence_out")
   self:Lock("UIN28AVGStoryGainEvidence_GainEvidence")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT, 933)
     self:UnLock("UIN28AVGStoryGainEvidence_GainEvidence")
-    ;
-    (self.callback)()
-  end
-, self)
+    self.callback()
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGStoryGainEvidence._DoEscape = function(self, strContent)
-  -- function num : 0_7 , upvalues : _ENV
-  strContent = (string.gsub)(strContent, "$$", "$")
-  local name = ((GameGlobal.GetModule)(RoleModule)):GetName()
-  if (string.isnullorempty)(name) then
-    name = (StringTable.Get)("str_guide_moren_name")
+function UIN28AVGStoryGainEvidence:_DoEscape(strContent)
+  strContent = string.gsub(strContent, "$$", "$")
+  local name = GameGlobal.GetModule(RoleModule):GetName()
+  if string.isnullorempty(name) then
+    name = StringTable.Get("str_guide_moren_name")
   end
-  strContent = (string.gsub)(strContent, "PlayerName", name)
+  strContent = string.gsub(strContent, "PlayerName", name)
   return strContent
 end
-
-

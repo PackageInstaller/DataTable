@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/eight_pets/mission/ui_n33_eight_pets_stage_reward.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN33EightPetsStageReward", UICustomWidget)
 UIN33EightPetsStageReward = UIN33EightPetsStageReward
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN33EightPetsStageReward.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN33EightPetsStageReward:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsStageReward.InitWidget = function(self)
-  -- function num : 0_1
+function UIN33EightPetsStageReward:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.count = self:GetUIComponent("UILocalizationText", "count")
   self.awardText = self:GetUIComponent("UILocalizationText", "awardText")
@@ -23,44 +13,30 @@ UIN33EightPetsStageReward.InitWidget = function(self)
   self.uiNormal = self:GetGameObject("uiNormal")
   self.ui3Star = self:GetGameObject("ui3Star")
   self.uiLimit = self:GetGameObject("uiLimit")
-  ;
-  (self.uiLimit):SetActive(false)
+  self.uiLimit:SetActive(false)
   self.animation = self:GetGameObject("animation")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsStageReward.SetData = function(self, award, rewardType, clickCb)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN33EightPetsStageReward:SetData(award, rewardType, clickCb)
   self.clickCb = clickCb
-  ;
-  (self.uiNormal):SetActive(false)
-  ;
-  (self.uiFirst):SetActive(rewardType == AwardType.ThreeStar)
-  ;
-  (self.ui3Star):SetActive(rewardType == AwardType.First)
+  self.uiNormal:SetActive(false)
+  self.uiFirst:SetActive(rewardType == AwardType.ThreeStar)
+  self.ui3Star:SetActive(rewardType == AwardType.First)
   if rewardType == AwardType.ThreeStar then
-    (self.awardText):SetText((StringTable.Get)("str_n33_level_3star_award"))
+    self.awardText:SetText(StringTable.Get("str_n33_level_3star_award"))
   elseif rewardType == AwardType.First then
-    (self.awardText):SetText((StringTable.Get)("str_n33_level_firstpass_ward"))
+    self.awardText:SetText(StringTable.Get("str_n33_level_firstpass_ward"))
   end
   self.rewardItemId = award.ItemID
-  local cfg = (Cfg.cfg_item)[award.ItemID]
+  local cfg = Cfg.cfg_item[award.ItemID]
   if cfg then
-    (self.icon):LoadImage(cfg.Icon)
+    self.icon:LoadImage(cfg.Icon)
   end
-  ;
-  (self.count):SetText(award.Count)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  self.count:SetText(award.Count)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN33EightPetsStageReward.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIN33EightPetsStageReward:BtnOnClick(go)
   if self.clickCb then
-    (self.clickCb)(self.rewardItemId, go)
+    self.clickCb(self.rewardItemId, go)
   end
 end
-
-

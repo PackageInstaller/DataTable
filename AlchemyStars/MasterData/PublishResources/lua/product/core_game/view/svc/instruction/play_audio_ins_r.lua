@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_audio_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAudioInstruction", BaseInstruction)
 PlayAudioInstruction = PlayAudioInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAudioInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAudioInstruction:Constructor(paramList)
   self._audioID = tonumber(paramList.audioID)
   local audioType = paramList.audioType
   if audioType == nil then
@@ -19,66 +12,47 @@ PlayAudioInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAudioInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    return 
+function PlayAudioInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    return
   end
   if self._audioType == SkillAudioType.Cast then
-    local playingID = (AudioHelperController.PlayInnerGameSfx)(self._audioID)
+    local playingID = AudioHelperController.PlayInnerGameSfx(self._audioID)
     local effectCpmt = casterEntity:EffectHolder()
     if not effectCpmt then
       casterEntity:AddEffectHolder()
       effectCpmt = casterEntity:EffectHolder()
     end
     effectCpmt:AttachAudioID(self._audioID, playingID)
-  else
-    do
-      if self._audioType == SkillAudioType.Hit then
-        self:_PlayHitAudio(casterEntity, phaseContext)
-      else
-        if self._audioType == SkillAudioType.Voice then
-          (InnerGameHelperRender.InnerGamePlayPetVoid)(self._audioID, casterEntity)
-        end
-      end
-    end
+  elseif self._audioType == SkillAudioType.Hit then
+    self:_PlayHitAudio(casterEntity, phaseContext)
+  elseif self._audioType == SkillAudioType.Voice then
+    InnerGameHelperRender.InnerGamePlayPetVoid(self._audioID, casterEntity)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAudioInstruction._PlayHitAudio = function(self, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayAudioInstruction:_PlayHitAudio(casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local damageResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.Damage)
   if not damageResult then
-    return 
+    return
   end
   local damageInfo = damageResult:GetDamageInfo(1)
   if damageInfo and damageInfo:GetDamageType() == DamageType.Guard then
     local beAttackEntityID = damageResult:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(beAttackEntityID)
+    local targetEntity = self._world:GetEntityByID(beAttackEntityID)
     local hitSoundID = 2002
-    ;
-    (AudioHelperController.PlayInnerGameSfx)(hitSoundID)
+    AudioHelperController.PlayInnerGameSfx(hitSoundID)
+  elseif damageInfo and damageInfo:GetDamageType() == DamageType.Miss then
   else
-  end
-  do
-    if damageInfo and damageInfo:GetDamageType() == DamageType.Miss then
-      (AudioHelperController.PlayInnerGameSfx)(self._audioID)
-    end
+    AudioHelperController.PlayInnerGameSfx(self._audioID)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAudioInstruction.GetCacheAudio = function(self)
-  -- function num : 0_3
+function PlayAudioInstruction:GetCacheAudio()
   if self._audioID and self._audioID > 0 then
-    return {self._audioID}
+    return {
+      self._audioID
+    }
   end
 end
-
-

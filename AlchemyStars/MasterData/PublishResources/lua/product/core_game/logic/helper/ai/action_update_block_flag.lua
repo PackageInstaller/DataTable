@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_update_block_flag.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionUpdateBlockFlag", AINewNode)
 ActionUpdateBlockFlag = ActionUpdateBlockFlag
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionUpdateBlockFlag.OnBegin = function(self)
-  -- function num : 0_0
-  local cGridLocation = (self.m_entityOwn):GridLocation()
+function ActionUpdateBlockFlag:OnBegin()
+  local cGridLocation = self.m_entityOwn:GridLocation()
   local pos = cGridLocation.Position
-  local sBoard = (self._world):GetService("BoardLogic")
+  local sBoard = self._world:GetService("BoardLogic")
   local isRemove = self:GetLogicData(-1)
   if isRemove then
     sBoard:RemoveEntityBlockFlag(self.m_entityOwn, pos)
@@ -21,11 +14,6 @@ ActionUpdateBlockFlag.OnBegin = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionUpdateBlockFlag.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionUpdateBlockFlag:OnUpdate()
   return AINewNodeStatus.Success
 end
-
-

@@ -1,8 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/death_show_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-DeathShowType = {None = 0, DissolveDark = 1, DissolveLight = 2}
+DeathShowType = {
+  None = 0,
+  DissolveDark = 1,
+  DissolveLight = 2
+}
 _enum("DeathShowType", DeathShowType)
-

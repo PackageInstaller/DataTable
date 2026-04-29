@@ -1,123 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/cardbag/ui_luckland_card_data_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandCardDataLevel", Object)
 UILuckLandCardDataLevel = UILuckLandCardDataLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandCardDataLevel.Constructor = function(self, missionID)
-  -- function num : 0_0
+function UILuckLandCardDataLevel:Constructor(missionID)
   self._uniqueID = 0
   self._cardDatas = {}
   self._missionID = missionID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel._InitAllCards = function(self, missionID, containBuilding)
-  -- function num : 0_1 , upvalues : _ENV
+function UILuckLandCardDataLevel:_InitAllCards(missionID, containBuilding)
   local tempList = {}
-  local insertFunc = function(cardID)
-    -- function num : 0_1_0 , upvalues : _ENV, tempList
-    if not (table.icontains)(tempList, cardID) then
-      (table.insert)(tempList, cardID)
+  
+  local function insertFunc(cardID)
+    if not table.icontains(tempList, cardID) then
+      table.insert(tempList, cardID)
     end
   end
-
-  self._missionCfg = (Cfg.cfg_luckland_client_mission)[missionID]
+  
+  self._missionCfg = Cfg.cfg_luckland_client_mission[missionID]
   if self._missionCfg then
-    if (self._missionCfg).InitCardBagList then
-      for i = 1, #(self._missionCfg).InitCardBagList do
-        insertFunc(((self._missionCfg).InitCardBagList)[i])
+    if self._missionCfg.InitCardBagList then
+      for i = 1, #self._missionCfg.InitCardBagList do
+        insertFunc(self._missionCfg.InitCardBagList[i])
       end
     end
-    do
-      if (self._missionCfg).BuildList and containBuilding then
-        for _,buildingID in pairs((self._missionCfg).BuildList) do
-          local buildingCfg = (Cfg.cfg_luckland_client_build)[buildingID]
-          if buildingCfg and buildingCfg.BuildType == LuckLandBuildingType.Main then
-            if buildingCfg.CardPool then
-              for _,poolID in pairs(buildingCfg.CardPool) do
-                local poolCfg = (Cfg.cfg_luckland_client_card_pool)[poolID]
+    if self._missionCfg.BuildList and containBuilding then
+      for _, buildingID in pairs(self._missionCfg.BuildList) do
+        local buildingCfg = Cfg.cfg_luckland_client_build[buildingID]
+        if buildingCfg and buildingCfg.BuildType == LuckLandBuildingType.Main then
+          if buildingCfg.CardPool then
+            for _, poolID in pairs(buildingCfg.CardPool) do
+              local poolCfg = Cfg.cfg_luckland_client_card_pool[poolID]
+              if poolCfg and poolCfg.Cards then
+                for _, cardID in pairs(poolCfg.Cards) do
+                  insertFunc(cardID)
+                end
+              end
+            end
+          end
+          local maxLevel = buildingCfg.MaxLevel
+          for i = buildingCfg.ID + 1, buildingCfg.ID + maxLevel - 1 do
+            buildingCfg = Cfg.cfg_luckland_client_build[i]
+            if buildingCfg and buildingCfg.BuildType == LuckLandBuildingType.Main and buildingCfg.CardPool then
+              for _, poolID in pairs(buildingCfg.CardPool) do
+                local poolCfg = Cfg.cfg_luckland_client_card_pool[poolID]
                 if poolCfg and poolCfg.Cards then
-                  for _,cardID in pairs(poolCfg.Cards) do
+                  for _, cardID in pairs(poolCfg.Cards) do
                     insertFunc(cardID)
                   end
                 end
               end
             end
-            do
-              local maxLevel = buildingCfg.MaxLevel
-              for i = buildingCfg.ID + 1, buildingCfg.ID + maxLevel - 1 do
-                buildingCfg = (Cfg.cfg_luckland_client_build)[i]
-                if buildingCfg and buildingCfg.BuildType == LuckLandBuildingType.Main and buildingCfg.CardPool then
-                  for _,poolID in pairs(buildingCfg.CardPool) do
-                    local poolCfg = (Cfg.cfg_luckland_client_card_pool)[poolID]
-                    if poolCfg and poolCfg.Cards then
-                      for _,cardID in pairs(poolCfg.Cards) do
-                        insertFunc(cardID)
-                      end
-                    end
-                  end
-                end
-              end
-              do
-                -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC117: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
           end
         end
       end
-      for i = 1, #tempList do
-        self:AddCardData(tempList[i])
-      end
     end
+  end
+  for i = 1, #tempList do
+    self:AddCardData(tempList[i])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.Reset = function(self, containBuilding)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandCardDataLevel:Reset(containBuilding)
   self._uniqueID = 0
-  ;
-  (table.clear)(self._cardDatas)
+  table.clear(self._cardDatas)
   self:_InitAllCards(self._missionID, containBuilding)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.TotalCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (table.count)(self._cardDatas)
+function UILuckLandCardDataLevel:TotalCount()
+  return table.count(self._cardDatas)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.CurDeleteCost = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  return (LuckLandInnerGameHelper.GetDeleteCardCost)()
+function UILuckLandCardDataLevel:CurDeleteCost()
+  return LuckLandInnerGameHelper.GetDeleteCardCost()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.GetCardDataByIndex = function(self, index)
-  -- function num : 0_5
-  return (self._cardDatas)[index]
+function UILuckLandCardDataLevel:GetCardDataByIndex(index)
+  return self._cardDatas[index]
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.GetCardDataByUniqueID = function(self, uniqueID)
-  -- function num : 0_6 , upvalues : _ENV
-  for _,cardData in pairs(self._cardDatas) do
+function UILuckLandCardDataLevel:GetCardDataByUniqueID(uniqueID)
+  for _, cardData in pairs(self._cardDatas) do
     if cardData:UniqueID() == uniqueID then
       return cardData
     end
@@ -125,129 +87,92 @@ UILuckLandCardDataLevel.GetCardDataByUniqueID = function(self, uniqueID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.AddCardData = function(self, id, uniqueID, pos)
-  -- function num : 0_7 , upvalues : _ENV
+function UILuckLandCardDataLevel:AddCardData(id, uniqueID, pos)
   if not uniqueID then
     self._uniqueID = self._uniqueID + 1
     uniqueID = self._uniqueID
   end
   if pos then
-    (table.insert)(self._cardDatas, pos, UILuckLandCardData:New(uniqueID, id))
+    table.insert(self._cardDatas, pos, UILuckLandCardData:New(uniqueID, id))
   else
-    ;
-    (table.insert)(self._cardDatas, UILuckLandCardData:New(uniqueID, id))
+    table.insert(self._cardDatas, UILuckLandCardData:New(uniqueID, id))
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.DeleteCardByID = function(self, uniqueID)
-  -- function num : 0_8 , upvalues : _ENV
-  local count = (table.count)(self._cardDatas)
-  if count > 1 then
-    for _,cardData in pairs(self._cardDatas) do
+function UILuckLandCardDataLevel:DeleteCardByID(uniqueID)
+  local count = table.count(self._cardDatas)
+  if 1 < count then
+    for _, cardData in pairs(self._cardDatas) do
       if cardData:UniqueID() == uniqueID then
-        (table.removev)(self._cardDatas, cardData)
-        return 
+        table.removev(self._cardDatas, cardData)
+        return
       end
     end
   else
-    do
-      ;
-      (Log.info)("UILuckLandCardDataLevel delete card data error, keep at least one card.")
-    end
+    Log.info("UILuckLandCardDataLevel delete card data error, keep at least one card.")
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.IsOnlyOne = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  do return (table.count)(self._cardDatas) == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UILuckLandCardDataLevel:IsOnlyOne()
+  return table.count(self._cardDatas) == 1
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.DrawCard = function(self, datas)
-  -- function num : 0_10 , upvalues : _ENV
-  local contain = function(data)
-    -- function num : 0_10_0 , upvalues : datas, _ENV
+function UILuckLandCardDataLevel:DrawCard(datas)
+  local function contain(data)
     if datas then
-      for _,value in pairs(datas) do
+      for _, value in pairs(datas) do
         if value == data then
           return true
         end
       end
     end
-    do
-      return false
-    end
+    return false
   end
-
+  
   local t = {}
-  for _,cardData in pairs(self._cardDatas) do
+  for _, cardData in pairs(self._cardDatas) do
     if not contain(cardData) then
-      (table.insert)(t, cardData)
+      table.insert(t, cardData)
     end
   end
-  if #t >= 1 then
-    return t[(math.random)(1, #t)]
+  if 1 <= #t then
+    return t[math.random(1, #t)]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.Putback = function(self, cardDatas)
-  -- function num : 0_11 , upvalues : _ENV
+function UILuckLandCardDataLevel:Putback(cardDatas)
   if cardDatas then
-    for _,cardData in pairs(cardDatas) do
-      (table.insert)(self._cardDatas, cardData)
+    for _, cardData in pairs(cardDatas) do
+      table.insert(self._cardDatas, cardData)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.Sort = function(self, comp)
-  -- function num : 0_12 , upvalues : _ENV
-  (table.sort)(self._cardDatas, comp)
+function UILuckLandCardDataLevel:Sort(comp)
+  table.sort(self._cardDatas, comp)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.ResetAllCardDatasFromInnerGame = function(self, entityPets)
-  -- function num : 0_13 , upvalues : _ENV
-  (table.clear)(self._cardDatas)
+function UILuckLandCardDataLevel:ResetAllCardDatasFromInnerGame(entityPets)
+  table.clear(self._cardDatas)
   if entityPets then
     local count = #entityPets
-    if count > 0 then
+    if 0 < count then
       for i = 1, count do
         local pet = entityPets[i]
-        ;
-        (table.insert)(self._cardDatas, UILuckLandCardData:New(pet:ID(), pet:GetTemplateID()))
+        table.insert(self._cardDatas, UILuckLandCardData:New(pet:ID(), pet:GetTemplateID()))
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardDataLevel.ContainPet = function(self, templateID)
-  -- function num : 0_14 , upvalues : _ENV
+function UILuckLandCardDataLevel:ContainPet(templateID)
   if self._cardDatas then
-    for _,data in pairs(self._cardDatas) do
+    for _, data in pairs(self._cardDatas) do
       if data:ID() == templateID then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
-
-

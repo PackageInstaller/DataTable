@@ -1,54 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_maintain_color_trap_effect.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeMaintainColorTrapEffect", BuffLogicBase)
 BuffLogicChangeMaintainColorTrapEffect = BuffLogicChangeMaintainColorTrapEffect
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeMaintainColorTrapEffect.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffLogicChangeMaintainColorTrapEffect:Constructor(buffInstance, logicParam)
   self._isInit = tonumber(logicParam.isInit) or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeMaintainColorTrapEffect.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:GetGridPosition())
-  local gridPos = nil
-  local pos, beforePieceType, afterPieceType = nil, nil, nil
+function BuffLogicChangeMaintainColorTrapEffect:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  local gridPos = e:GetGridPosition()
+  local pos, beforePieceType, afterPieceType
   local notifyType = notify:GetNotifyType()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local pieceType = utilDataSvc:GetPieceType(gridPos)
   if notifyType == NotifyType.GridConvert then
     local convertInfo = notify:GetConvertInfoAt(gridPos)
     if not convertInfo then
-      return 
+      return
     end
     pos = convertInfo:GetPos()
     if pos ~= gridPos then
-      return 
+      return
     end
     beforePieceType = convertInfo:GetBeforePieceType()
     afterPieceType = convertInfo:GetAfterPieceType()
-  else
-    do
-      if notifyType == NotifyType.BuffLoad or notifyType == NotifyType.ActiveSkillAttackEnd or notifyType == NotifyType.TrapShow then
-        pos = gridPos
-        beforePieceType = 0
-        afterPieceType = pieceType
-      end
-      ;
-      (self._buffComponent):SetBuffValue("MaintainColorPieceType", afterPieceType)
-      local buffResult = BuffResultChangeMaintainColorTrapEffect:New(notifyType, pos, beforePieceType, afterPieceType)
-      buffResult:SetIsInit(self._isInit)
-      return buffResult
-    end
+  elseif notifyType == NotifyType.BuffLoad or notifyType == NotifyType.ActiveSkillAttackEnd or notifyType == NotifyType.TrapShow then
+    pos = gridPos
+    beforePieceType = 0
+    afterPieceType = pieceType
   end
+  self._buffComponent:SetBuffValue("MaintainColorPieceType", afterPieceType)
+  local buffResult = BuffResultChangeMaintainColorTrapEffect:New(notifyType, pos, beforePieceType, afterPieceType)
+  buffResult:SetIsInit(self._isInit)
+  return buffResult
 end
-
-

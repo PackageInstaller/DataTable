@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/pop_star/pop_star_battle_enter_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("PopStarBattleEnterSystem", MainStateSystem)
 PopStarBattleEnterSystem = PopStarBattleEnterSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarBattleEnterSystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function PopStarBattleEnterSystem:_GetMainStateID()
   return GameStateID.PopStarBattleEnter
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleEnterSystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function PopStarBattleEnterSystem:_OnMainStateEnter(TT)
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoLogicInitBattleState()
   self:_DoRenderShowBattleEnter(TT, teamEntity)
   local type, dir = self:_DoLogicGetPieceRefreshType()
@@ -27,66 +17,43 @@ PopStarBattleEnterSystem._OnMainStateEnter = function(self, TT)
   self:_DoLogicSwitchMainFsmState()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleEnterSystem._DoLogicInitBattleState = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local configSvc = (self._world):GetService("Config")
-  local star3CalcSvc = (self._world):GetService("Star3Calc")
-  local battleStatCmpt = (self._world):BattleStat()
+function PopStarBattleEnterSystem:_DoLogicInitBattleState()
+  local configSvc = self._world:GetService("Config")
+  local star3CalcSvc = self._world:GetService("Star3Calc")
+  local battleStatCmpt = self._world:BattleStat()
   local levelConfigData = configSvc:GetLevelConfigData()
   local roundCount = levelConfigData:GetLevelRoundCount()
   battleStatCmpt:InitLevelRound(roundCount)
   battleStatCmpt:SetTotalWaveCount(levelConfigData:GetWaveCount())
-  local threeStarConditions = configSvc:GetPopStar3StarCondition(((self._world).BW_WorldInfo).missionID)
-  for _,conditionID in ipairs(threeStarConditions) do
+  local threeStarConditions = configSvc:GetPopStar3StarCondition(self._world.BW_WorldInfo.missionID)
+  for _, conditionID in ipairs(threeStarConditions) do
     local ret = star3CalcSvc:BeZeroProgress(conditionID)
     battleStatCmpt:UpdateA3StarProgress(conditionID, ret)
   end
   battleStatCmpt._matchResult = {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleEnterSystem._DoLogicGetPieceRefreshType = function(self)
-  -- function num : 0_3
-  local affixSvc = (self._world):GetService("Affix")
+function PopStarBattleEnterSystem:_DoLogicGetPieceRefreshType()
+  local affixSvc = self._world:GetService("Affix")
   return affixSvc:ReplacePieceRefreshType()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleEnterSystem._DoLogicAssembleFeature = function(self)
-  -- function num : 0_4
-  local featureLogicSvc = (self._world):GetService("FeatureLogic")
+function PopStarBattleEnterSystem:_DoLogicAssembleFeature()
+  local featureLogicSvc = self._world:GetService("FeatureLogic")
   if featureLogicSvc and featureLogicSvc:CanEnableFeature() then
     featureLogicSvc:DoInitFeatureList()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleEnterSystem._DoLogicSwitchMainFsmState = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.PopStarBattleEnterFinish, 1)
+function PopStarBattleEnterSystem:_DoLogicSwitchMainFsmState()
+  self._world:EventDispatcher():Dispatch(GameEventType.PopStarBattleEnterFinish, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleEnterSystem._DoRenderShowBattleEnter = function(self, TT, teamEntity)
-  -- function num : 0_6
+function PopStarBattleEnterSystem:_DoRenderShowBattleEnter(TT, teamEntity)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleEnterSystem._DoRenderShowBoard = function(self, TT)
-  -- function num : 0_7
+function PopStarBattleEnterSystem:_DoRenderShowBoard(TT)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarBattleEnterSystem._DoRenderAssembleFeature = function(self, TT)
-  -- function num : 0_8
+function PopStarBattleEnterSystem:_DoRenderAssembleFeature(TT)
 end
-
-

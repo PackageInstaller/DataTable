@@ -1,31 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_round_result_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("round_result_system")
 _class("ClientRoundResultSystem_Render", RoundResultSystem)
 ClientRoundResultSystem_Render = ClientRoundResultSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientRoundResultSystem_Render._DoRenderShowRoundEnd = function(self, TT, battleCalcResult)
-  -- function num : 0_0 , upvalues : _ENV
-  local utilStatSvc = (self._world):GetService("UtilData")
-  local l_role_module = (GameGlobal.GetModule)(RoleModule)
+function ClientRoundResultSystem_Render:_DoRenderShowRoundEnd(TT, battleCalcResult)
+  local utilStatSvc = self._world:GetService("UtilData")
+  local l_role_module = GameGlobal.GetModule(RoleModule)
   if not l_role_module:CheckModuleUnlock(GameModuleID.MD_ForceGuideEnd) then
-    local attrGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Attributes)
+    local attrGroup = self._world:GetGroup(self._world.BW_WEMatchers.Attributes)
     local l_strTemp = ""
-    for i,e in ipairs(attrGroup:GetEntities()) do
-      local l_ePetMonster = nil
+    for i, e in ipairs(attrGroup:GetEntities()) do
+      local l_ePetMonster
       local l_templateId = 0
       if e:HasMonsterID() then
         l_ePetMonster = "monster"
-        l_templateId = (e:MonsterID()):GetMonsterID()
-      else
-        if e:HasTeam() then
-          l_ePetMonster = "team"
-          l_templateId = 0
-        end
+        l_templateId = e:MonsterID():GetMonsterID()
+      elseif e:HasTeam() then
+        l_ePetMonster = "team"
+        l_templateId = 0
       end
       if l_ePetMonster ~= nil then
         local val = utilStatSvc:GetCurrentLogicHP(e)
@@ -35,96 +26,63 @@ ClientRoundResultSystem_Render._DoRenderShowRoundEnd = function(self, TT, battle
       end
     end
     local curRound = utilStatSvc:GetStatCurWaveRoundNum()
-    ;
-    (GameGlobal.UAReportForceGuideEvent)("FightRoundInfo", {curRound, l_strTemp}, false, true)
+    GameGlobal.UAReportForceGuideEvent("FightRoundInfo", {curRound, l_strTemp}, false, true)
   end
-  do
-    if battleCalcResult then
-      return 
-    end
-    local configService = (self._world):GetService("Config")
-    local levelConfigData = configService:GetLevelConfigData()
-    if utilStatSvc:GetStatIsRealZeroRound() and not utilStatSvc:GetStatLevelCompleteLimitAllRoundCount() and (self._world):MatchType(GetMatchTypeType.WorldBossBattle) ~= MatchType.MT_WorldBoss and levelConfigData:GetOutOfRoundType() == 0 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowZeroRoundWarning, true)
-      YIELD(TT, 2000)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowZeroRoundWarning, false)
-    end
+  if battleCalcResult then
+    return
+  end
+  local configService = self._world:GetService("Config")
+  local levelConfigData = configService:GetLevelConfigData()
+  if utilStatSvc:GetStatIsRealZeroRound() and not utilStatSvc:GetStatLevelCompleteLimitAllRoundCount() and self._world:MatchType(GetMatchTypeType.WorldBossBattle) ~= MatchType.MT_WorldBoss and levelConfigData:GetOutOfRoundType() == 0 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowZeroRoundWarning, true)
+    YIELD(TT, 2000)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowZeroRoundWarning, false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoundResultSystem_Render._DoRenderNotifyRoundResultStart = function(self, TT, teamEntity)
-  -- function num : 0_1 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function ClientRoundResultSystem_Render:_DoRenderNotifyRoundResultStart(TT, teamEntity)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTRoundResultStart:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoundResultSystem_Render._DoRenderNotifyRoundTurnEnd = function(self, TT, teamEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  local svc = (self._world):GetService("PlayBuff")
+function ClientRoundResultSystem_Render:_DoRenderNotifyRoundTurnEnd(TT, teamEntity)
+  local svc = self._world:GetService("PlayBuff")
   svc:PlayBuffView(TT, NTRoundTurnEnd:New())
   svc:PlayBuffView(TT, NTEnemyTurnEnd:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoundResultSystem_Render._DoRenderInWave = function(self, TT, traps, monsters)
-  -- function num : 0_3
-  local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
+function ClientRoundResultSystem_Render:_DoRenderInWave(TT, traps, monsters)
+  local sMonsterShowRender = self._world:GetService("MonsterShowRender")
   sMonsterShowRender:PlaySpawnInWave(TT, traps, monsters)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoundResultSystem_Render._DoRenderTrapAction = function(self, TT)
-  -- function num : 0_4
-  local playAISvc = (self._world):GetService("PlayAI")
+function ClientRoundResultSystem_Render:_DoRenderTrapAction(TT)
+  local playAISvc = self._world:GetService("PlayAI")
   if playAISvc == nil then
-    return 
+    return
   end
   playAISvc:DoCommonRountine(TT)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoundResultSystem_Render._DoRenderRefreshCombinedWaveInfoOnRoundResult = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.BattleUIRefreshCombinedWaveInfoOnRoundResult)
+function ClientRoundResultSystem_Render:_DoRenderRefreshCombinedWaveInfoOnRoundResult(TT)
+  self._world:EventDispatcher():Dispatch(GameEventType.BattleUIRefreshCombinedWaveInfoOnRoundResult)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoundResultSystem_Render._DoRenderCalcTrapStateNonFightClub = function(self, TT, calcStateTraps)
-  -- function num : 0_6 , upvalues : _ENV
-  local trapServiceRender = (self._world):GetService("TrapRender")
+function ClientRoundResultSystem_Render:_DoRenderCalcTrapStateNonFightClub(TT, calcStateTraps)
+  local trapServiceRender = self._world:GetService("TrapRender")
   trapServiceRender:RenderTrapState(TT, TrapDestroyType.DestroyAtRoundResult, calcStateTraps)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoundResultSystem_Render._UpdateTrapGridRound = function(self, TT)
-  -- function num : 0_7
-  local svc = (self._world):GetService("TrapRender")
+function ClientRoundResultSystem_Render:_UpdateTrapGridRound(TT)
+  local svc = self._world:GetService("TrapRender")
   svc:UpdateTrapGridRound()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoundResultSystem_Render._DoRenderBuffBeforeTrapRoundCount = function(self, TT, teamEntity)
-  -- function num : 0_8 , upvalues : _ENV
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+function ClientRoundResultSystem_Render:_DoRenderBuffBeforeTrapRoundCount(TT, teamEntity)
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayBuffView(TT, NTMonsterRoundBeforeTrapRoundCount:New(teamEntity))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientRoundResultSystem_Render._DoSaveDetailMatchLogger = function(self, TT)
-  -- function num : 0_9
-  ((self._world):GetDetailMatchLogger()):SaveDetailMatchLog()
+function ClientRoundResultSystem_Render:_DoSaveDetailMatchLogger(TT)
+  self._world:GetDetailMatchLogger():SaveDetailMatchLog()
 end
-
-

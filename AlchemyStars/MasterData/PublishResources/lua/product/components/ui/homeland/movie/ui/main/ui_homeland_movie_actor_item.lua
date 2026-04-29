@@ -1,78 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/movie/ui/main/ui_homeland_movie_actor_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMovieActorItem", UICustomWidget)
 UIHomelandMovieActorItem = UIHomelandMovieActorItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMovieActorItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMovieActorItem:Constructor()
   self._data = nil
   self._movieData = nil
   self._widgets = nil
   self._singleHeight = 252
   self._doubleHeight = 421
-  self._cfg = (Cfg.cfg_homeland_movice_item)({})
+  self._cfg = Cfg.cfg_homeland_movice_item({})
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMovieActorItem:OnShow(uiParams)
   self._widgets = {}
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIHomelandMovieActorItem:InitWidget()
   self._typeTitle = self:GetUIComponent("UILocalizationText", "typeTitle")
   self._actorItemParent = self:GetUIComponent("UISelectObjectPath", "actorItemParent")
   self.layout = self:GetUIComponent("LayoutElement", "layout")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorItem.SetData = function(self, data, movieData, isActor)
-  -- function num : 0_3
+function UIHomelandMovieActorItem:SetData(data, movieData, isActor)
   self._data = data
   self._movieData = movieData
   self:InitData(isActor)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorItem.GetData = function(self)
-  -- function num : 0_4
+function UIHomelandMovieActorItem:GetData()
   return self._data
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMovieActorItem.InitData = function(self, isActor)
-  -- function num : 0_5 , upvalues : _ENV
-  local movie = (self._cfg)[self._data]
-  ;
-  (self._typeTitle):SetText((StringTable.Get)(movie.Name))
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
+function UIHomelandMovieActorItem:InitData(isActor)
+  local movie = self._cfg[self._data]
+  self._typeTitle:SetText(StringTable.Get(movie.Name))
   if #movie.SelectList > 5 then
-    (self.layout).minHeight = self._doubleHeight
+    self.layout.minHeight = self._doubleHeight
   else
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self.layout).minHeight = self._singleHeight
+    self.layout.minHeight = self._singleHeight
   end
-  self._widgets = (self._actorItemParent):SpawnObjects("UIHomelandMovieActorListItem", #movie.SelectList)
+  self._widgets = self._actorItemParent:SpawnObjects("UIHomelandMovieActorListItem", #movie.SelectList)
   local index = 1
-  for i,v in pairs(movie.SelectList) do
-    ((self._widgets)[index]):SetData(v, self._movieData, isActor)
+  for i, v in pairs(movie.SelectList) do
+    self._widgets[index]:SetData(v, self._movieData, isActor)
     index = index + 1
   end
 end
-
-

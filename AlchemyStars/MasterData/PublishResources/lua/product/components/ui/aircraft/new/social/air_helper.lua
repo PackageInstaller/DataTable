@@ -1,311 +1,233 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/social/air_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirHelper", Object)
 AirHelper = AirHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirHelper.GetArea = function(pet, areas, airMain, areaType)
-  -- function num : 0_0 , upvalues : _ENV
-  if not areaType then
-    local areaType = pet:GetWanderingArea()
-  end
+function AirHelper.GetArea(pet, areas, airMain, areaType)
+  local areaType = areaType or pet:GetWanderingArea()
   if areaType then
-    local targetArea = nil
-    for _,area in ipairs(areas) do
+    local targetArea
+    for _, area in ipairs(areas) do
       if areaType == area:GetRestAreaType() then
         targetArea = area
         break
       end
     end
-    do
-      if targetArea then
-        return targetArea
-      else
-        return (AirHelper.CreateArea)(pet, areas, airMain, areaType)
-      end
+    if targetArea then
+      return targetArea
+    else
+      return AirHelper.CreateArea(pet, areas, airMain, areaType)
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.CreateArea = function(pet, areas, airMain, areaType)
-  -- function num : 0_1 , upvalues : _ENV
-  if not areaType then
-    local areaType = (pet:GetWanderingArea())
-  end
-  local area = nil
+function AirHelper.CreateArea(pet, areas, airMain, areaType)
+  local areaType = areaType or pet:GetWanderingArea()
+  local area
   if areaType then
     area = AirSocialHappyArea:New(airMain)
     area:SetRestAreaType(areaType)
   end
-  ;
-  (table.insert)(areas, area)
+  table.insert(areas, area)
   return area
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.IsActionSeqFurniture = function(furniture)
-  -- function num : 0_2 , upvalues : _ENV
+function AirHelper.IsActionSeqFurniture(furniture)
   if furniture then
     local fType = furniture:Type()
-    local cfgs = (Cfg.cfg_aircraft_action_sequence)({seqType = fType})
-    if (table.count)(cfgs) <= 0 then
-      do
-        do return not cfgs end
-        do return false end
-        do return false end
-        -- DECOMPILER ERROR: 4 unprocessed JMP targets
-      end
+    local cfgs = Cfg.cfg_aircraft_action_sequence({seqType = fType})
+    if cfgs then
+      return table.count(cfgs) > 0
+    else
+      return false
     end
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.GetPetTempIdsByShiLi = function(targetShiLi)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet)({})
+function AirHelper.GetPetTempIdsByShiLi(targetShiLi)
+  local cfgs = Cfg.cfg_pet({})
   local tbl = {}
-  for key,petCfg in pairs(cfgs) do
+  for key, petCfg in pairs(cfgs) do
     local tags = petCfg.Tags
     if tags and tags[1] then
       local shili = tags[1]
       if shili == targetShiLi then
-        (table.insert)(tbl, petCfg.ID)
+        table.insert(tbl, petCfg.ID)
       end
     end
   end
   return tbl
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.GetCloserAndFarAwayer = function(pets)
-  -- function num : 0_4 , upvalues : _ENV
-  local _pets = (table.toArray)(pets)
+function AirHelper.GetCloserAndFarAwayer(pets)
+  local _pets = table.toArray(pets)
   local closer = {}
   local farAwayer = {}
-  for index,pet in ipairs(_pets) do
-    local clonePets = (table.shallowcopy)(_pets)
-    ;
-    (table.remove)(clonePets, index)
-    for _,pet2 in ipairs(clonePets) do
+  for index, pet in ipairs(_pets) do
+    local clonePets = table.shallowcopy(_pets)
+    table.remove(clonePets, index)
+    for _, pet2 in ipairs(clonePets) do
       local isCloser = pet:IsCloserToMe(pet2:TemplateID())
       if isCloser then
         if not closer[pet:TemplateID()] then
           closer[pet:TemplateID()] = {}
         end
-        ;
-        (table.insert)(closer[pet:TemplateID()], pet2:TemplateID())
+        table.insert(closer[pet:TemplateID()], pet2:TemplateID())
       end
       local isFaraway = pet:IsFarAwayFromMe(pet2:TemplateID())
       if isFaraway then
         if not farAwayer[pet:TemplateID()] then
           farAwayer[pet:TemplateID()] = {}
         end
-        ;
-        (table.insert)(farAwayer[pet:TemplateID()], pet2:TemplateID())
+        table.insert(farAwayer[pet:TemplateID()], pet2:TemplateID())
       end
     end
   end
   return closer, farAwayer
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.InSphere = function(targetPos, centerPos, radius)
-  -- function num : 0_5 , upvalues : _ENV
-  local value = (math.pow)(targetPos.x - centerPos.x, 2) + (math.pow)(targetPos.y - centerPos.y, 2) + (math.pow)(targetPos.z - centerPos.z, 2)
-  do return value <= radius * radius end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AirHelper.InSphere(targetPos, centerPos, radius)
+  local value = math.pow(targetPos.x - centerPos.x, 2) + math.pow(targetPos.y - centerPos.y, 2) + math.pow(targetPos.z - centerPos.z, 2)
+  return value <= radius * radius
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.RandomRelationPet = function(main, mainPet)
-  -- function num : 0_6 , upvalues : _ENV
+function AirHelper.RandomRelationPet(main, mainPet)
   local random = false
   if main then
     local pets = main:GetPets(function(_pet)
-    -- function num : 0_6_0 , upvalues : mainPet, _ENV
-    if _pet:PstID() == mainPet:PstID() then
-      return false
-    end
-    local state = _pet:GetState()
-    if state == AirPetState.Wandering or state == AirPetState.OnFurniture then
-      if (AirHelper.InSphere)(_pet:WorldPosition(), mainPet:WorldPosition(), 0.5) then
-        return true
-      else
+      if _pet:PstID() == mainPet:PstID() then
         return false
       end
-    end
-    return false
-  end
-)
-    for index,pet in ipairs(pets) do
+      local state = _pet:GetState()
+      if state == AirPetState.Wandering or state == AirPetState.OnFurniture then
+        if AirHelper.InSphere(_pet:WorldPosition(), mainPet:WorldPosition(), 0.5) then
+          return true
+        else
+          return false
+        end
+      end
+      return false
+    end)
+    for index, pet in ipairs(pets) do
       local far = mainPet:IsFarAwayFromMe(pet)
       mainPet.yuanli = false
       if far then
         pet.yuanli = true
         pet.yuanlilog = mainPet:PetName() .. "远离" .. pet:PetName()
-        ;
-        (Log.error)(pet.yuanlilog)
+        Log.error(pet.yuanlilog)
         random = true
         break
       end
     end
-    do
-      for index,pet in ipairs(pets) do
-        local far = pet:IsFarAwayFromMe(mainPet)
-        pet.yuanli = false
-        if far then
-          pet.yuanli = true
-          pet.yuanlilog = pet:PetName() .. "远离" .. mainPet:PetName()
-          ;
-          (Log.error)(pet.yuanlilog)
-          main:RandomActionForPet(pet)
-        end
-      end
-      do
-        return random
+    for index, pet in ipairs(pets) do
+      local far = pet:IsFarAwayFromMe(mainPet)
+      pet.yuanli = false
+      if far then
+        pet.yuanli = true
+        pet.yuanlilog = pet:PetName() .. "远离" .. mainPet:PetName()
+        Log.error(pet.yuanlilog)
+        main:RandomActionForPet(pet)
       end
     end
   end
+  return random
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.CalcPetList = function(petTempIDs)
-  -- function num : 0_7 , upvalues : _ENV
-  if (table.count)(petTempIDs) > 1 then
+function AirHelper.CalcPetList(petTempIDs)
+  if table.count(petTempIDs) > 1 then
     local ret = petTempIDs[1]
-    if (table.count)(petTempIDs) >= 2 then
+    if table.count(petTempIDs) >= 2 then
       for i = 2, #petTempIDs do
         ret = ret ~ petTempIDs[i]
       end
     end
-    do
-      do return ret end
-    end
+    return ret
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.CheckSocialGroupTalk = function(petList, type, param)
-  -- function num : 0_8
+function AirHelper.CheckSocialGroupTalk(petList, type, param)
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.GetSocialTalkIsTalkList = function()
-  -- function num : 0_9 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function AirHelper.GetSocialTalkIsTalkList()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  local groupTalk1 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk1")
-  local groupTalk2 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk2")
-  local groupTalk3 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk3")
-  local groupTalk4 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk4")
-  local groupTalk5 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk5")
+  local groupTalk1 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk1")
+  local groupTalk2 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk2")
+  local groupTalk3 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk3")
+  local groupTalk4 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk4")
+  local groupTalk5 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk5")
   local ret = {}
-  ;
-  (table.insert)(ret, groupTalk1)
-  ;
-  (table.insert)(ret, groupTalk2)
-  ;
-  (table.insert)(ret, groupTalk3)
-  ;
-  (table.insert)(ret, groupTalk4)
-  ;
-  (table.insert)(ret, groupTalk5)
+  table.insert(ret, groupTalk1)
+  table.insert(ret, groupTalk2)
+  table.insert(ret, groupTalk3)
+  table.insert(ret, groupTalk4)
+  table.insert(ret, groupTalk5)
   return ret
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.SetSocialTalkIsTalk = function(id)
-  -- function num : 0_10 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function AirHelper.SetSocialTalkIsTalk(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
-  local groupTalk1 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk1")
-  local groupTalk2 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk2")
-  local groupTalk3 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk3")
-  local groupTalk4 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk4")
-  local groupTalk5 = ((UnityEngine.PlayerPrefs).GetInt)(pstId .. "LastSocialTalk5")
+  local groupTalk1 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk1")
+  local groupTalk2 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk2")
+  local groupTalk3 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk3")
+  local groupTalk4 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk4")
+  local groupTalk5 = UnityEngine.PlayerPrefs.GetInt(pstId .. "LastSocialTalk5")
   if not groupTalk1 then
-    ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk1", id)
-    return 
+    UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk1", id)
+    return
   end
   if not groupTalk2 then
-    ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk2", id)
-    return 
+    UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk2", id)
+    return
   end
   if not groupTalk3 then
-    ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk3", id)
-    return 
+    UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk3", id)
+    return
   end
   if not groupTalk4 then
-    ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk4", id)
-    return 
+    UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk4", id)
+    return
   end
   if not groupTalk5 then
-    ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk5", id)
-    return 
+    UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk5", id)
+    return
   end
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk5", id)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk4", groupTalk5)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk3", groupTalk4)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk2", groupTalk3)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(pstId .. "LastSocialTalk1", groupTalk2)
+  UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk5", id)
+  UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk4", groupTalk5)
+  UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk3", groupTalk4)
+  UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk2", groupTalk3)
+  UnityEngine.PlayerPrefs.SetInt(pstId .. "LastSocialTalk1", groupTalk2)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AirHelper.GetGroupTalk = function(petList)
-  -- function num : 0_11 , upvalues : _ENV
+function AirHelper.GetGroupTalk(petList)
   local paramPetTemplIDs = {}
-  for i,pet in pairs(petList) do
-    (table.insert)(paramPetTemplIDs, pet:TemplateID())
+  for i, pet in pairs(petList) do
+    table.insert(paramPetTemplIDs, pet:TemplateID())
   end
-  local lastTalkIDList = (AirHelper.GetSocialTalkIsTalkList)()
-  local param = (AirHelper.CalcPetList)(paramPetTemplIDs)
-  local cfgTable = (Cfg.cfg_aircraft_group_talk)()
+  local lastTalkIDList = AirHelper.GetSocialTalkIsTalkList()
+  local param = AirHelper.CalcPetList(paramPetTemplIDs)
+  local cfgTable = Cfg.cfg_aircraft_group_talk()
   local validCfgIDList = {}
-  for id,cfg in ipairs(cfgTable) do
+  for id, cfg in ipairs(cfgTable) do
     local petIDList = cfg.GroupMember
-    local num = (AirHelper.CalcPetList)(petIDList)
-    if num == param and not (table.icontains)(lastTalkIDList, id) and (AirHelper.CheckSocialGroupTalk)(petList, cfg.ConditionType, cfg.ConditionParam) then
-      (table.insert)(validCfgIDList, id)
+    local num = AirHelper.CalcPetList(petIDList)
+    if num == param and not table.icontains(lastTalkIDList, id) and AirHelper.CheckSocialGroupTalk(petList, cfg.ConditionType, cfg.ConditionParam) then
+      table.insert(validCfgIDList, id)
     end
   end
-  local cfg, id = nil, nil
+  local cfg, id
   if #validCfgIDList == 1 then
     id = validCfgIDList[1]
     cfg = cfgTable[id]
-  else
-    if #validCfgIDList > 2 then
-      local idIndex = (math.random)(1, #validCfgIDList)
-      id = validCfgIDList[idIndex]
-      cfg = cfgTable[id]
-    end
+  elseif 2 < #validCfgIDList then
+    local idIndex = math.random(1, #validCfgIDList)
+    id = validCfgIDList[idIndex]
+    cfg = cfgTable[id]
   end
-  do
-    if id then
-      (AirHelper.SetSocialTalkIsTalk)(id)
-    end
-    return cfg
+  if id then
+    AirHelper.SetSocialTalkIsTalk(id)
   end
+  return cfg
 end
-
-

@@ -1,11 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/sailing/cfg_sailing_reward_custom.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, RollInterval = 2, ExtraCellCount = 3}
+local key = {
+  ID = 1,
+  RollInterval = 2,
+  ExtraCellCount = 3
+}
 local config = {
-{1, 6000, 5}
+  {
+    1,
+    6000,
+    5
+  }
 }
 return config, "ID", key
-

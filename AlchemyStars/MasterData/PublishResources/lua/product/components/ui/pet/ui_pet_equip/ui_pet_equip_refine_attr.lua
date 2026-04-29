@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_refine_attr.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipRefineAttr", UICustomWidget)
 UIPetEquipRefineAttr = UIPetEquipRefineAttr
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipRefineAttr.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetEquipRefineAttr:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineAttr.InitWidget = function(self)
-  -- function num : 0_1
+function UIPetEquipRefineAttr:InitWidget()
   self.attackGo = self:GetGameObject("attackGo")
   self.line1Go = self:GetGameObject("line1Go")
   self.defenseGo = self:GetGameObject("defenseGo")
@@ -29,75 +19,57 @@ UIPetEquipRefineAttr.InitWidget = function(self)
   self.lifeLvTxt = self:GetUIComponent("UILocalizationText", "lifeLvTxt")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineAttr.SetData = function(self, petTemplateId, petLv)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = (UIPetEquipHelper.GetRefineCfg)(petTemplateId, petLv)
+function UIPetEquipRefineAttr:SetData(petTemplateId, petLv)
+  local cfg = UIPetEquipHelper.GetRefineCfg(petTemplateId, petLv)
   if not cfg then
-    return 
+    return
   end
   local preAttack = 0
   local preDefense = 0
   local preHp = 0
-  do
-    if petLv > 1 then
-      local preCfg = (UIPetEquipHelper.GetRefineCfg)(petTemplateId, petLv - 1)
-      if preCfg then
-        preAttack = preCfg.Attack
-        preDefense = preCfg.Defence
-        preHp = preCfg.Health
-      end
+  if 1 < petLv then
+    local preCfg = UIPetEquipHelper.GetRefineCfg(petTemplateId, petLv - 1)
+    if preCfg then
+      preAttack = preCfg.Attack
+      preDefense = preCfg.Defence
+      preHp = preCfg.Health
     end
-    local attack, defense, life = nil, nil, nil
-    if preAttack < cfg.Attack then
-      attack = {}
-      attack.base = preAttack
-      attack.up = cfg.Attack
-    end
-    if preDefense < cfg.Defence then
-      defense = {}
-      defense.base = preDefense
-      defense.up = cfg.Defence
-    end
-    if preHp < cfg.Health then
-      life = {}
-      life.base = preHp
-      life.up = cfg.Health
-    end
-    self:_Refresh(attack, defense, life)
   end
+  local attack, defense, life
+  if preAttack < cfg.Attack then
+    attack = {}
+    attack.base = preAttack
+    attack.up = cfg.Attack
+  end
+  if preDefense < cfg.Defence then
+    defense = {}
+    defense.base = preDefense
+    defense.up = cfg.Defence
+  end
+  if preHp < cfg.Health then
+    life = {}
+    life.base = preHp
+    life.up = cfg.Health
+  end
+  self:_Refresh(attack, defense, life)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipRefineAttr._Refresh = function(self, attack, defense, life)
-  -- function num : 0_3
-  (self.attackGo):SetActive(attack ~= nil)
-  ;
-  (self.line1Go):SetActive(attack ~= nil and defense ~= nil or life ~= nil)
+function UIPetEquipRefineAttr:_Refresh(attack, defense, life)
+  self.attackGo:SetActive(attack ~= nil)
+  self.line1Go:SetActive(attack ~= nil and (defense ~= nil or life ~= nil))
   if attack then
-    (self.attackBaseTxt):SetText("+" .. attack.base)
-    ;
-    (self.attackLvTxt):SetText("+" .. attack.up - attack.base)
+    self.attackBaseTxt:SetText("+" .. attack.base)
+    self.attackLvTxt:SetText("+" .. attack.up - attack.base)
   end
-  ;
-  (self.defenseGo):SetActive(defense ~= nil)
-  ;
-  (self.line2Go):SetActive(defense ~= nil and life ~= nil)
+  self.defenseGo:SetActive(defense ~= nil)
+  self.line2Go:SetActive(defense ~= nil and life ~= nil)
   if defense then
-    (self.defenseBaseTxt):SetText("+" .. defense.base)
-    ;
-    (self.defenseLvTxt):SetText("+" .. defense.up - defense.base)
+    self.defenseBaseTxt:SetText("+" .. defense.base)
+    self.defenseLvTxt:SetText("+" .. defense.up - defense.base)
   end
-  ;
-  (self.lifeGo):SetActive(life ~= nil)
+  self.lifeGo:SetActive(life ~= nil)
   if life then
-    (self.lifeBaseTxt):SetText("+" .. life.base)
-    ;
-    (self.lifeLvTxt):SetText("+" .. life.up - life.base)
+    self.lifeBaseTxt:SetText("+" .. life.base)
+    self.lifeLvTxt:SetText("+" .. life.up - life.base)
   end
-  -- DECOMPILER ERROR: 10 unprocessed JMP targets
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_enemy_info/ui_enemy_book_tip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEnemyBookTip", UIController)
 UIEnemyBookTip = UIEnemyBookTip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEnemyBookTip.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIEnemyBookTip:OnShow(uiParam)
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self._imgCG = self:GetUIComponent("RawImageLoader", "cgoffset")
@@ -19,87 +12,58 @@ UIEnemyBookTip.OnShow = function(self, uiParam)
   self._body = self:GetUIComponent("UILocalizationText", "body")
   local topButton = self:GetUIComponent("UISelectObjectPath", "topbtn")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.topButtonWidget:SetData(function()
     self:CloseDialog()
-  end
-)
+  end)
   self._enemis = uiParam[1]
   self:Init()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyBookTip.OnHide = function(self)
-  -- function num : 0_1
+function UIEnemyBookTip:OnHide()
   if self._imgCG then
-    (self._imgCG):DestoryLastImage()
+    self._imgCG:DestoryLastImage()
     self._imgCG = nil
   end
   self._backBtns = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyBookTip.Init = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEnemyBookTip:Init()
   self._monsters = {}
-  for i,v in ipairs(self._enemis) do
+  for i, v in ipairs(self._enemis) do
     local enemy = Enemy:New()
     enemy:Init(v)
-    ;
-    (table.insert)(self._monsters, enemy)
+    table.insert(self._monsters, enemy)
   end
   self:Flush(self._currIdx)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyBookTip.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local enemy = (self._monsters)[1]
-  ;
-  (self._txtName):SetText(enemy.name)
-  ;
-  (self._txtDesc):SetText((StringTable.Get)("str_discovery_enemy_intr") .. enemy.desc)
+function UIEnemyBookTip:Flush()
+  local enemy = self._monsters[1]
+  self._txtName:SetText(enemy.name)
+  self._txtDesc:SetText(StringTable.Get("str_discovery_enemy_intr") .. enemy.desc)
   if enemy.power then
-    (self._powerTex):SetText((StringTable.Get)("str_discovery_enemy_power") .. enemy.power)
+    self._powerTex:SetText(StringTable.Get("str_discovery_enemy_power") .. enemy.power)
   else
-    ;
-    (self._powerTex):SetText("")
+    self._powerTex:SetText("")
   end
   local staticBody = enemy.staticBody
-  local size = ((Cfg.cfg_global).ui_interface_common_monster_size).ArrayValue
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._tranCG).sizeDelta = Vector2(size[1], size[2])
-  ;
-  (UICG.SetTransform)(self._tranCG, "UIEnemyTip", staticBody)
-  ;
-  (self._imgCG):LoadImage(staticBody)
-  ;
-  (self._isBoss):SetActive(enemy.isBoss)
+  local size = Cfg.cfg_global.ui_interface_common_monster_size.ArrayValue
+  self._tranCG.sizeDelta = Vector2(size[1], size[2])
+  UICG.SetTransform(self._tranCG, "UIEnemyTip", staticBody)
+  self._imgCG:LoadImage(staticBody)
+  self._isBoss:SetActive(enemy.isBoss)
   local strArea = ""
-  strArea = (StringTable.Get)("str_discovery_enemy_grid", enemy.area)
+  strArea = StringTable.Get("str_discovery_enemy_grid", enemy.area)
   local strStep = ""
   if enemy.canMove then
-    strStep = (StringTable.Get)("str_discovery_enemy_grid", enemy.step)
+    strStep = StringTable.Get("str_discovery_enemy_grid", enemy.step)
   else
-    strStep = (StringTable.Get)("str_discovery_enemy_cant_move")
+    strStep = StringTable.Get("str_discovery_enemy_cant_move")
   end
-  ;
-  (self._body):SetText(strArea)
-  ;
-  (self._move):SetText(strStep)
+  self._body:SetText(strArea)
+  self._move:SetText(strStep)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEnemyBookTip.bgOnClick = function(self)
-  -- function num : 0_4
+function UIEnemyBookTip:bgOnClick()
   self:CloseDialog()
 end
-
-

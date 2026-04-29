@@ -1,146 +1,90 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/input/season_maze_input_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeInputManager", Object)
 SeasonMazeInputManager = SeasonMazeInputManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeInputManager.Constructor = function(self, mn)
-  -- function num : 0_0
+function SeasonMazeInputManager:Constructor(mn)
   self._manager = mn
   self._lockKey = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputManager.OnInit = function(self, seasonID)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMazeInputManager:OnInit(seasonID)
   if EDITOR or IsPc() then
     self._seasonInput = SeasonMazeInputPc:New(function(objs)
-    -- function num : 0_1_0 , upvalues : self
-    self:_OnClick(objs)
-  end
-)
+      self:_OnClick(objs)
+    end)
   else
     self._seasonInput = SeasonMazeInputMobile:New(function(objs)
-    -- function num : 0_1_1 , upvalues : self
-    self:_OnClick(objs)
-  end
-)
+      self:_OnClick(objs)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputManager.Update = function(self, deltaTime)
-  -- function num : 0_2
+function SeasonMazeInputManager:Update(deltaTime)
   if self:IsLocked() then
-    return 
+    return
   end
-  ;
-  (self._seasonInput):Update(deltaTime)
+  self._seasonInput:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputManager.Dispose = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._seasonInput):Dispose()
+function SeasonMazeInputManager:Dispose()
+  self._seasonInput:Dispose()
   self._seasonInput = nil
-  for key,count in pairs(self._lockKey) do
+  for key, count in pairs(self._lockKey) do
     for i = 1, count do
-      ((GameGlobal.UIStateManager)()):UnLock(key)
+      GameGlobal.UIStateManager():UnLock(key)
     end
   end
   self._lockKey = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputManager.GetInput = function(self)
-  -- function num : 0_4
+function SeasonMazeInputManager:GetInput()
   return self._seasonInput
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputManager.GetClickUnLockZone = function(self)
-  -- function num : 0_5
-  return (self._seasonInput):GetClickUnLockZone()
+function SeasonMazeInputManager:GetClickUnLockZone()
+  return self._seasonInput:GetClickUnLockZone()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputManager._OnClick = function(self, results)
-  -- function num : 0_6 , upvalues : _ENV
+function SeasonMazeInputManager:_OnClick(results)
   if not results or #results == 0 then
-    return 
+    return
   end
-  for _,result in ipairs(results) do
-    local gameObject = (result.transform).gameObject
+  for _, result in ipairs(results) do
+    local gameObject = result.transform.gameObject
     local layer = gameObject.layer
     if layer == SMazeSceneLayer.Room then
-      (self._manager):OnClickRoom(gameObject)
-      return 
-    else
-      if layer == SMazeSceneLayer.Arrow then
-        (self._manager):OnClickArrow(gameObject)
-        return 
-      end
+      self._manager:OnClickRoom(gameObject)
+      return
+    elseif layer == SMazeSceneLayer.Arrow then
+      self._manager:OnClickArrow(gameObject)
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputManager.LockInput = function(self, name)
-  -- function num : 0_7 , upvalues : _ENV
-  local count = (self._lockKey)[name]
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
+function SeasonMazeInputManager:LockInput(name)
+  local count = self._lockKey[name]
   if not count then
-    (self._lockKey)[name] = 1
+    self._lockKey[name] = 1
   else
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._lockKey)[name] = count + 1
+    self._lockKey[name] = count + 1
   end
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(name)
+  GameGlobal.UIStateManager():Lock(name)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputManager.UnlockInput = function(self, name)
-  -- function num : 0_8 , upvalues : _ENV
-  local count = (self._lockKey)[name]
+function SeasonMazeInputManager:UnlockInput(name)
+  local count = self._lockKey[name]
   if not count then
-    (Log.error)("SeasonMazeInputManager:未锁定 不可解锁", name)
+    Log.error("SeasonMazeInputManager:未锁定 不可解锁", name)
   else
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
     if count == 1 then
-      (self._lockKey)[name] = nil
+      self._lockKey[name] = nil
     else
-      -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._lockKey)[name] = count - 1
+      self._lockKey[name] = count - 1
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(name)
+    GameGlobal.UIStateManager():UnLock(name)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeInputManager.IsLocked = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  do return next(self._lockKey) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonMazeInputManager:IsLocked()
+  return next(self._lockKey) ~= nil
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/optimize/ui_corgame_performance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICoreGamePerformanceController", UIController)
 UICoreGamePerformanceController = UICoreGamePerformanceController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICoreGamePerformanceController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UICoreGamePerformanceController:OnShow(uiParams)
   self._fpsText = self:GetUIComponent("UILocalizationText", "fps")
   self._info = self:GetUIComponent("UILocalizationText", "info")
   self:AttachEvent(GameEventType.UpdateTestScenceInfo, self.UpdateTestScenceInfo)
@@ -17,139 +10,83 @@ UICoreGamePerformanceController.OnShow = function(self, uiParams)
   self._fpsTextGO = self:GetGameObject("fps")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.CloseButton = function(self, state, fpsState)
-  -- function num : 0_1 , upvalues : _ENV
-  local sceneRoot = (GameObjectHelper.Find)("Script")
+function UICoreGamePerformanceController:CloseButton(state, fpsState)
+  local sceneRoot = GameObjectHelper.Find("Script")
   if state then
-    (self.buttonGO):SetActive(false)
+    self.buttonGO:SetActive(false)
   else
-    ;
-    (self.buttonGO):SetActive(true)
+    self.buttonGO:SetActive(true)
   end
   if fpsState then
-    (self._fpsTextGO):SetActive(false)
+    self._fpsTextGO:SetActive(false)
   else
-    ;
-    (self._fpsTextGO):SetActive(true)
+    self._fpsTextGO:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICoreGamePerformanceController:Dispose()
   self:DetachEvent(GameEventType.UpdateTestScenceInfo)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.DelaySendFPSInfo = function(self, TT, sceneName, themeID)
-  -- function num : 0_3 , upvalues : _ENV
+function UICoreGamePerformanceController:DelaySendFPSInfo(TT, sceneName, themeID)
   YIELD(TT, 4000)
-  local fpsNumber = nil
-  for s in (string.gmatch)((self._fpsText).text, "%d+") do
+  local fpsNumber
+  for s in string.gmatch(self._fpsText.text, "%d+") do
     fpsNumber = s
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UpdateTestScenceFPS, sceneName, themeID, fpsNumber)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UpdateTestScenceFPS, sceneName, themeID, fpsNumber)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.UpdateTestScenceInfo = function(self, sceneName, themeID)
-  -- function num : 0_4 , upvalues : _ENV
+function UICoreGamePerformanceController:UpdateTestScenceInfo(sceneName, themeID)
   if not sceneName or sceneName == "" then
-    (Log.fatal)("")
-    return 
+    Log.fatal("")
+    return
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._info).text = "当前场景：" .. sceneName .. "  ThemeID：" .. tostring(themeID)
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(self.DelaySendFPSInfo, self, sceneName, themeID)
+  self._info.text = "当前场景：" .. sceneName .. "  ThemeID：" .. tostring(themeID)
+  GameGlobal.TaskManager():CoreGameStartTask(self.DelaySendFPSInfo, self, sceneName, themeID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.StopOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopTestScence)
+function UICoreGamePerformanceController:StopOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopTestScence)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.BeginOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BeginTestScence, ScenePerfTestType.OnlySceneTheme)
+function UICoreGamePerformanceController:BeginOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BeginTestScence, ScenePerfTestType.OnlySceneTheme)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.BeginWithMonsterOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BeginTestScence, ScenePerfTestType.SceneAndMonster)
+function UICoreGamePerformanceController:BeginWithMonsterOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BeginTestScence, ScenePerfTestType.SceneAndMonster)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.BeginWithTextureOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BeginTestScence, ScenePerfTestType.SceneAndTexture)
+function UICoreGamePerformanceController:BeginWithTextureOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BeginTestScence, ScenePerfTestType.SceneAndTexture)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.BeginWithStatsOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.BeginTestScence, ScenePerfTestType.SceneAndStatsData)
+function UICoreGamePerformanceController:BeginWithStatsOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.BeginTestScence, ScenePerfTestType.SceneAndStatsData)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.OutOnClick = function(self, go)
-  -- function num : 0_10 , upvalues : _ENV
+function UICoreGamePerformanceController:OutOnClick(go)
   self:SwitchState(UIStateType.UIMain)
-  ;
-  (GameGlobal:GetInstance()):ExitPerformanceGame()
+  GameGlobal:GetInstance():ExitPerformanceGame()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.OpenCheatUIOnClick = function(self, go)
-  -- function num : 0_11
+function UICoreGamePerformanceController:OpenCheatUIOnClick(go)
   self:ShowDialog("UIBattleCheat", nil, nil, nil, true)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.SwitchSceneOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  local sceneName = (self:GetUIComponent("InputField", "SceneName")).text
-  local themeID = tonumber((self:GetUIComponent("InputField", "ThemeID")).text)
-  if not themeID then
-    themeID = 8
-  end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SwitchScene, sceneName, themeID)
+function UICoreGamePerformanceController:SwitchSceneOnClick(go)
+  local sceneName = self:GetUIComponent("InputField", "SceneName").text
+  local themeID = tonumber(self:GetUIComponent("InputField", "ThemeID").text)
+  themeID = themeID or 8
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SwitchScene, sceneName, themeID)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.BeginMonsterOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PerfMonsterStat)
+function UICoreGamePerformanceController:BeginMonsterOnClick(go)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PerfMonsterStat)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICoreGamePerformanceController.SwitchMonsterOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  local monsterName = (self:GetUIComponent("InputField", "MonsterName")).text
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SwitchMonster, monsterName)
+function UICoreGamePerformanceController:SwitchMonsterOnClick(go)
+  local monsterName = self:GetUIComponent("InputField", "MonsterName").text
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SwitchMonster, monsterName)
 end
-
-

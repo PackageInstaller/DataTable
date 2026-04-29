@@ -1,26 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5Progress/ui_n5_progress_item_simple.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5ProgressItemSimple", UIN5ProgressItem)
 UIN5ProgressItemSimple = UIN5ProgressItemSimple
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5ProgressItemSimple.Constructor = function(self)
-  -- function num : 0_0
+function UIN5ProgressItemSimple:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItemSimple._FillInfoArea = function(self)
-  -- function num : 0_1
+function UIN5ProgressItemSimple:_FillInfoArea()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ProgressItemSimple._SetUIByRank = function(self)
-  -- function num : 0_2
+function UIN5ProgressItemSimple:_SetUIByRank()
 end
-
-

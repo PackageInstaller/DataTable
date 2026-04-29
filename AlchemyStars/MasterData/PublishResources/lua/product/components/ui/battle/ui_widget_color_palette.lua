@@ -1,114 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_color_palette.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetColorPalette", UICustomWidget)
 UIWidgetColorPalette = UIWidgetColorPalette
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetColorPalette.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWidgetColorPalette:OnShow(uiParams)
   self._curPieceTypes = {}
   self._animationNames = {
-[PieceType.Blue] = {"uieff_UIWidgetColorPalette_blue_open", "uieff_UIWidgetColorPalette_blue_loop"}
-, 
-[PieceType.Red] = {"uieff_UIWidgetColorPalette_red_open", "uieff_UIWidgetColorPalette_red_loop"}
-, 
-[PieceType.Green] = {"uieff_UIWidgetColorPalette_green_open", "uieff_UIWidgetColorPalette_green_loop"}
-, 
-[PieceType.Yellow] = {"uieff_UIWidgetColorPalette_yellow_open", "uieff_UIWidgetColorPalette_yellow_loop"}
-}
+    [PieceType.Blue] = {
+      "uieff_UIWidgetColorPalette_blue_open",
+      "uieff_UIWidgetColorPalette_blue_loop"
+    },
+    [PieceType.Red] = {
+      "uieff_UIWidgetColorPalette_red_open",
+      "uieff_UIWidgetColorPalette_red_loop"
+    },
+    [PieceType.Green] = {
+      "uieff_UIWidgetColorPalette_green_open",
+      "uieff_UIWidgetColorPalette_green_loop"
+    },
+    [PieceType.Yellow] = {
+      "uieff_UIWidgetColorPalette_yellow_open",
+      "uieff_UIWidgetColorPalette_yellow_loop"
+    }
+  }
   self:InitWidget()
   self:AttachEvent(GameEventType.ColorPaletteRefresh, self.OnColorPaletteChange)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetColorPalette.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetColorPalette:InitWidget()
   self._colorGO = {}
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._colorGO)[PieceType.Blue] = self:GetGameObject("Blue")
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._colorGO)[PieceType.Red] = self:GetGameObject("Red")
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._colorGO)[PieceType.Green] = self:GetGameObject("Green")
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._colorGO)[PieceType.Yellow] = self:GetGameObject("Yellow")
+  self._colorGO[PieceType.Blue] = self:GetGameObject("Blue")
+  self._colorGO[PieceType.Red] = self:GetGameObject("Red")
+  self._colorGO[PieceType.Green] = self:GetGameObject("Green")
+  self._colorGO[PieceType.Yellow] = self:GetGameObject("Yellow")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetColorPalette.SetData = function(self, pstID)
-  -- function num : 0_2
+function UIWidgetColorPalette:SetData(pstID)
   self._pstID = pstID
   self:_Clear()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetColorPalette.OnColorPaletteChange = function(self, pstID, pieceTypes)
-  -- function num : 0_3 , upvalues : _ENV
+function UIWidgetColorPalette:OnColorPaletteChange(pstID, pieceTypes)
   if self._pstID == pstID and pieceTypes then
-    if #pieceTypes > 0 then
+    if 0 < #pieceTypes then
       local newPieceTypes = {}
-      for _,pieceType in ipairs(pieceTypes) do
-        if pieceType ~= PieceType.Any and not (table.icontains)(self._curPieceTypes, pieceType) then
-          (table.insert)(newPieceTypes, pieceType)
-          ;
-          (table.insert)(self._curPieceTypes, pieceType)
+      for _, pieceType in ipairs(pieceTypes) do
+        if pieceType ~= PieceType.Any and not table.icontains(self._curPieceTypes, pieceType) then
+          table.insert(newPieceTypes, pieceType)
+          table.insert(self._curPieceTypes, pieceType)
         end
       end
-      for _,pieceType in ipairs(newPieceTypes) do
-        if (self._colorGO)[pieceType] then
-          local go = (self._colorGO)[pieceType]
+      for _, pieceType in ipairs(newPieceTypes) do
+        if self._colorGO[pieceType] then
+          local go = self._colorGO[pieceType]
           go:SetActive(true)
           local animation = go:GetComponent("Animation")
-          local animationNames = (self._animationNames)[pieceType]
+          local animationNames = self._animationNames[pieceType]
           animation.enabled = false
           animation.enabled = true
-          animation:PlayQueued(animationNames[1], (UnityEngine.QueueMode).PlayNow)
-          animation:PlayQueued(animationNames[2], (UnityEngine.QueueMode).CompleteOthers)
+          animation:PlayQueued(animationNames[1], UnityEngine.QueueMode.PlayNow)
+          animation:PlayQueued(animationNames[2], UnityEngine.QueueMode.CompleteOthers)
         end
       end
     else
-      do
-        self:_Clear()
-      end
+      self:_Clear()
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetColorPalette._Clear = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for _,go in pairs(self._colorGO) do
+function UIWidgetColorPalette:_Clear()
+  for _, go in pairs(self._colorGO) do
     go:SetActive(false)
   end
-  ;
-  (table.clear)(self._curPieceTypes)
+  table.clear(self._curPieceTypes)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetColorPalette.PlayAnimation = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for _,pieceType in ipairs(self._curPieceTypes) do
-    if (self._colorGO)[pieceType] then
-      local go = (self._colorGO)[pieceType]
+function UIWidgetColorPalette:PlayAnimation()
+  for _, pieceType in ipairs(self._curPieceTypes) do
+    if self._colorGO[pieceType] then
+      local go = self._colorGO[pieceType]
       if go.activeSelf then
         local animation = go:GetComponent("Animation")
-        local animationNames = (self._animationNames)[pieceType]
+        local animationNames = self._animationNames[pieceType]
         animation.enabled = false
         animation.enabled = true
         animation:Play(animationNames[2])
@@ -116,5 +87,3 @@ UIWidgetColorPalette.PlayAnimation = function(self)
     end
   end
 end
-
-

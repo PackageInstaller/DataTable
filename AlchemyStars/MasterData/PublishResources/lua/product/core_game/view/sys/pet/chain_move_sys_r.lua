@@ -1,41 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/pet/chain_move_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ChainMoveSystem_Render", Object)
 ChainMoveSystem_Render = ChainMoveSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ChainMoveSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function ChainMoveSystem_Render:Constructor(world)
   self._world = world
-  self.group = world:GetGroup((world.BW_WEMatchers).ChainMove)
+  self.group = world:GetGroup(world.BW_WEMatchers.ChainMove)
   self._configService = world:GetService("Config")
   self._listTrapTask = nil
   self._chainMoveTaskIDs = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render.Execute = function(self)
-  -- function num : 0_1
+function ChainMoveSystem_Render:Execute()
   if self.group ~= nil then
-    (self.group):HandleForeach(self, self.UpdateChainMove)
+    self.group:HandleForeach(self, self.UpdateChainMove)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render.UpdateChainMove = function(self, e)
-  -- function num : 0_2 , upvalues : _ENV
-  if (e:MoveFSM()):GetMoveFSMCurStateID() ~= PlayerActionStateID.Move then
-    return 
+function ChainMoveSystem_Render:UpdateChainMove(e)
+  if e:MoveFSM():GetMoveFSMCurStateID() ~= PlayerActionStateID.Move then
+    return
   end
   local move_cmpt = e:ChainMove()
   local chain_path = move_cmpt:GetChainPath()
   local path_index = move_cmpt:GetPathIndex()
-  if #chain_path < path_index then
+  if path_index > #chain_path then
     e:RemoveChainMove()
     self:_HandlePetMoveEnd(e)
   else
@@ -43,24 +30,20 @@ ChainMoveSystem_Render.UpdateChainMove = function(self, e)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._HandlePetMoveEnd = function(self, e)
-  -- function num : 0_3 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
+function ChainMoveSystem_Render:_HandlePetMoveEnd(e)
+  local effectService = self._world:GetService("Effect")
   effectService:ShowChainMoveEffect(e, false)
   e:SetAnimatorControllerBools({Move = false})
   e:SetAnimatorControllerBools({MoveSpecial = false})
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.MoveFinish, 2, e:GetID())
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  if #(self.group):GetEntities() == 0 then
-    local teamEntity = (e:Pet()):GetOwnerTeamEntity()
-    local teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
+  self._world:EventDispatcher():Dispatch(GameEventType.MoveFinish, 2, e:GetID())
+  local boardServiceRender = self._world:GetService("BoardRender")
+  if #self.group:GetEntities() == 0 then
+    local teamEntity = e:Pet():GetOwnerTeamEntity()
+    local teamLeader = teamEntity:Team():GetTeamLeaderEntity()
     local position = boardServiceRender:GetRealEntityGridPos(teamLeader)
     local direction = teamLeader:GetDirection()
-    local es = (teamEntity:Team()):GetTeamPetEntities()
-    for i,petEntity in ipairs(es) do
+    local es = teamEntity:Team():GetTeamPetEntities()
+    for i, petEntity in ipairs(es) do
       if petEntity:GetID() ~= teamLeader:GetID() then
         petEntity:SetLocation(position, direction)
         petEntity:SetViewVisible(false)
@@ -70,17 +53,11 @@ ChainMoveSystem_Render._HandlePetMoveEnd = function(self, e)
     self:RemoveCutChainPath()
     teamEntity:RemovePlayerMovingFlag()
   else
-    do
-      ;
-      (Log.notice)("_HandlePetMoveEnd chain path not null")
-    end
+    Log.notice("_HandlePetMoveEnd chain path not null")
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._HandlePetMove = function(self, e)
-  -- function num : 0_4
+function ChainMoveSystem_Render:_HandlePetMove(e)
   local move_cmpt = e:ChainMove()
   local chain_path = move_cmpt:GetChainPath()
   local path_index = move_cmpt:GetPathIndex()
@@ -88,53 +65,48 @@ ChainMoveSystem_Render._HandlePetMove = function(self, e)
   local speed = move_cmpt:GetSpeed()
   move_cmpt:SetCurGridPathIndex(path_index)
   local dest_pos = chain_path[path_index]
-  local timeService = (self._world):GetService("Time")
+  local timeService = self._world:GetService("Time")
   local curtime = timeService:GetCurrentTimeMs()
-  if curtime < start_time then
-    return 
+  if start_time > curtime then
+    return
   end
   if e:HasGridMove() then
-    return 
+    return
   end
   if e:HasViewExtension() then
     e:SetViewVisible(true)
   end
-  local teamEntity = (e:Pet()):GetOwnerTeamEntity()
-  local teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
-  do
-    if teamLeader:GetID() ~= e:GetID() and self:_AfterFrontPet(path_index, e) then
-      local effectService = (self._world):GetService("Effect")
-      effectService:ShowChainMoveEffect(e, false)
-      e:SetAnimatorControllerBools({Move = false})
-      e:SetAnimatorControllerBools({MoveSpecial = false})
-      return 
-    end
-    local boardServiceRender = (self._world):GetService("BoardRender")
-    local syncMoveServiceRender = (self._world):GetService("SyncMoveRender")
-    local autoBeadServiceRender = (self._world):GetService("AutoBeadRender")
-    local cur_pos = boardServiceRender:GetRealEntityGridPos(e)
-    if cur_pos == dest_pos then
-      syncMoveServiceRender:OnArriveAtPos(e, path_index, teamEntity)
-      self:_ArriveAtPos(e, cur_pos)
-    else
-      syncMoveServiceRender:OnGridMoveToPos(e, path_index, speed, teamEntity)
-      autoBeadServiceRender:OnGridMoveToPos(e, speed, cur_pos, dest_pos, teamEntity)
-      self:_GridMoveToPos(e, speed, cur_pos, dest_pos, teamEntity)
-    end
+  local teamEntity = e:Pet():GetOwnerTeamEntity()
+  local teamLeader = teamEntity:Team():GetTeamLeaderEntity()
+  if teamLeader:GetID() ~= e:GetID() and self:_AfterFrontPet(path_index, e) then
+    local effectService = self._world:GetService("Effect")
+    effectService:ShowChainMoveEffect(e, false)
+    e:SetAnimatorControllerBools({Move = false})
+    e:SetAnimatorControllerBools({MoveSpecial = false})
+    return
+  end
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local syncMoveServiceRender = self._world:GetService("SyncMoveRender")
+  local autoBeadServiceRender = self._world:GetService("AutoBeadRender")
+  local cur_pos = boardServiceRender:GetRealEntityGridPos(e)
+  if cur_pos == dest_pos then
+    syncMoveServiceRender:OnArriveAtPos(e, path_index, teamEntity)
+    self:_ArriveAtPos(e, cur_pos)
+  else
+    syncMoveServiceRender:OnGridMoveToPos(e, path_index, speed, teamEntity)
+    autoBeadServiceRender:OnGridMoveToPos(e, speed, cur_pos, dest_pos, teamEntity)
+    self:_GridMoveToPos(e, speed, cur_pos, dest_pos, teamEntity)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._ArriveAtPos = function(self, e, posCur)
-  -- function num : 0_5 , upvalues : _ENV
+function ChainMoveSystem_Render:_ArriveAtPos(e, posCur)
   local move_cmpt = e:ChainMove()
   local chain_path = move_cmpt:GetChainPath()
   local path_index = move_cmpt:GetPathIndex()
   local start_time = move_cmpt:GetStartTime()
   local speed = move_cmpt:GetSpeed()
-  local teamEntity = (e:Pet()):GetOwnerTeamEntity()
-  local teamLeader = (teamEntity:Team()):GetTeamLeaderEntity()
+  local teamEntity = e:Pet():GetOwnerTeamEntity()
+  local teamLeader = teamEntity:Team():GetTeamLeaderEntity()
   if teamLeader:GetID() == e:GetID() then
     self:_AfterPlayerMoveOneTile(e, path_index, chain_path)
   else
@@ -143,101 +115,77 @@ ChainMoveSystem_Render._ArriveAtPos = function(self, e, posCur)
       e:SetViewVisible(false)
     end
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local timeService = (self._world):GetService("Time")
-  if teamEntity:HasTeamDeadMark() and (teamEntity:TeamDeadMark()):GetDeadGridPos() == boardServiceRender:GetRealEntityGridPos(e) then
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local timeService = self._world:GetService("Time")
+  if teamEntity:HasTeamDeadMark() and teamEntity:TeamDeadMark():GetDeadGridPos() == boardServiceRender:GetRealEntityGridPos(e) then
     move_cmpt:SetPathIndex(#chain_path)
-    return 
+    return
   end
-  local trapServiceRender = (self._world):GetService("TrapRender")
+  local trapServiceRender = self._world:GetService("TrapRender")
   if path_index <= #chain_path then
     trapServiceRender:ShowHideTrapByChainMove(posCur, false, e)
-    if path_index > 1 and not self:_IsAnyPetAtChainPos(path_index - 1) then
+    if 1 < path_index and not self:_IsAnyPetAtChainPos(path_index - 1) then
       trapServiceRender:ShowHideTrapByChainMove(chain_path[path_index - 1], true, e)
     end
   end
-  do
-    if path_index <= #chain_path and path_index == 2 and self:_IsAllPetLeaveChainPos(1) then
-      local playBuffSvc = (self._world):GetService("PlayBuff")
-      do
-        ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : playBuffSvc, _ENV, e, chain_path
-    playBuffSvc:PlayBuffView(TT, NTPlayerFirstMoveEnd:New(e, chain_path[1]))
+  if path_index <= #chain_path and path_index == 2 and self:_IsAllPetLeaveChainPos(1) then
+    local playBuffSvc = self._world:GetService("PlayBuff")
+    GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+      playBuffSvc:PlayBuffView(TT, NTPlayerFirstMoveEnd:New(e, chain_path[1]))
+    end)
   end
-)
-      end
-    end
-    path_index = path_index + 1
-    move_cmpt:SetPathIndex(path_index)
-    move_cmpt:AddPathArriveTime(path_index, timeService:GetCurrentTimeMs())
-    local hasNormalAttack = self:_CheckNormalAttack(e)
-    if hasNormalAttack == true then
-      local effectService = (self._world):GetService("Effect")
-      effectService:ShowChainMoveEffect(e, false)
-      ;
-      ((self._world):EventDispatcher()):Dispatch(GameEventType.MoveFinish, 1, e:GetID())
-    else
-      do
-        self:UpdateChainMove(e)
-      end
-    end
+  path_index = path_index + 1
+  move_cmpt:SetPathIndex(path_index)
+  move_cmpt:AddPathArriveTime(path_index, timeService:GetCurrentTimeMs())
+  local hasNormalAttack = self:_CheckNormalAttack(e)
+  if hasNormalAttack == true then
+    local effectService = self._world:GetService("Effect")
+    effectService:ShowChainMoveEffect(e, false)
+    self._world:EventDispatcher():Dispatch(GameEventType.MoveFinish, 1, e:GetID())
+  else
+    self:UpdateChainMove(e)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._OnTeamMemberArrivePos = function(self, e, path_index, chain_path)
-  -- function num : 0_6 , upvalues : _ENV
+function ChainMoveSystem_Render:_OnTeamMemberArrivePos(e, path_index, chain_path)
   if path_index < 1 then
-    return 
+    return
   end
   local last_pos = chain_path[path_index]
   local ntPlayerEachMoveEnd = NTPlayerEachMoveEnd:New(e, last_pos, nil, nil, path_index)
-  local playBuffSvc = (self._world):GetService("PlayBuff")
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : playBuffSvc, ntPlayerEachMoveEnd
+  local playBuffSvc = self._world:GetService("PlayBuff")
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     playBuffSvc:PlayBuffView(TT, ntPlayerEachMoveEnd)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._CheckNormalAttack = function(self, e)
-  -- function num : 0_7 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function ChainMoveSystem_Render:_CheckNormalAttack(e)
+  local boardServiceRender = self._world:GetService("BoardRender")
   local pathNormalAttackData = self:_GetPetNormalAttackData(e)
   local position = boardServiceRender:GetRealEntityGridPos(e)
   local pathPointAttackData = pathNormalAttackData:GetPathPointAttackData(position)
   if pathPointAttackData == nil then
-    (Log.fatal)("no pathPointAttackData:", e:GetID(), " pos ", position.x, " ", position.y)
+    Log.fatal("no pathPointAttackData:", e:GetID(), " pos ", position.x, " ", position.y)
     return false
   else
     local pathPointAttackCount = pathPointAttackData:GetPathPointAttackCount()
-    if pathPointAttackCount > 0 then
+    if 0 < pathPointAttackCount then
       return true
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._GetPetNormalAttackData = function(self, e)
-  -- function num : 0_8 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local normalAtkResCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.NormalAttack)
+function ChainMoveSystem_Render:_GetPetNormalAttackData(e)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local normalAtkResCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.NormalAttack)
   local pathNormalAttackData = normalAtkResCmpt:GetPetNormalAttackResult(e:GetID())
   return pathNormalAttackData
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._GridMoveToPos = function(self, e, speed, curPos, destPos, teamEntity)
-  -- function num : 0_9 , upvalues : _ENV
-  local effectService = (self._world):GetService("Effect")
+function ChainMoveSystem_Render:_GridMoveToPos(e, speed, curPos, destPos, teamEntity)
+  local effectService = self._world:GetService("Effect")
   effectService:ShowChainMoveEffect(e, true)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local normalSkillBeforeMove = utilDataSvc:GetEntityBuffValue(e, "NormalSkillBeforeMove")
   if normalSkillBeforeMove then
     e:SetAnimatorControllerBools({MoveSpecial = true})
@@ -245,7 +193,7 @@ ChainMoveSystem_Render._GridMoveToPos = function(self, e, speed, curPos, destPos
     e:SetAnimatorControllerBools({Move = true})
   end
   e:SetDirection(destPos - curPos)
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local gridPos = boardServiceRender:GetRealEntityGridPos(e)
   e:AddGridMove(speed, destPos, gridPos)
   local move_cmpt = e:ChainMove()
@@ -257,162 +205,136 @@ ChainMoveSystem_Render._GridMoveToPos = function(self, e, speed, curPos, destPos
     self:_RemoveLinkLine(path_index)
   end
   local chainPathPoint = chain_path[path_index]
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local pieceType = utilData:FindPieceElement(chainPathPoint)
-  local playbufsvc = (self._world):GetService("PlayBuff")
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : playbufsvc, _ENV, e, chainPathPoint, pieceType, path_index, leader, teamEntity
+  local playbufsvc = self._world:GetService("PlayBuff")
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     playbufsvc:PlayBuffView(TT, NTPlayerEachMoveStart:New(e, chainPathPoint, pieceType, path_index))
     if leader:GetID() == e:GetID() then
       playbufsvc:PlayBuffView(TT, NTTeamLeaderEachMoveStart:New(e, chainPathPoint, pieceType))
       playbufsvc:PlayBuffView(TT, NTTeamEachMoveStart:New(teamEntity, chainPathPoint, pieceType))
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._AfterFrontPet = function(self, pathIndex, e)
-  -- function num : 0_10 , upvalues : _ENV
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local petRoundTeam = (renderBoardEntity:RenderRoundTeam()):GetRoundTeam()
+function ChainMoveSystem_Render:_AfterFrontPet(pathIndex, e)
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local petRoundTeam = renderBoardEntity:RenderRoundTeam():GetRoundTeam()
   local myIndex = 1
-  for i,petEntityID in ipairs(petRoundTeam) do
+  for i, petEntityID in ipairs(petRoundTeam) do
     if e:GetID() == petEntityID then
       myIndex = i
       break
     end
   end
-  do
-    local timeService = (self._world):GetService("Time")
-    if myIndex ~= 1 then
-      local PrePetEntityID = petRoundTeam[myIndex - 1]
-      local petEntity = (self._world):GetEntityByID(PrePetEntityID)
-      local preChainMoveComponent = petEntity:ChainMove()
-      if petEntity:ChainMove() then
-        local chainMoveComponent = e:ChainMove()
-        local renderBoardEntity = (self._world):GetRenderBoardEntity()
-        local normalAtkCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.NormalAttack)
-        local attackCount = (table.count)(normalAtkCmpt:GetPlayNormalSkillSequence())
-        if attackCount == 0 then
-          return false
+  local timeService = self._world:GetService("Time")
+  if myIndex ~= 1 then
+    local PrePetEntityID = petRoundTeam[myIndex - 1]
+    local petEntity = self._world:GetEntityByID(PrePetEntityID)
+    local preChainMoveComponent = petEntity:ChainMove()
+    if petEntity:ChainMove() then
+      local chainMoveComponent = e:ChainMove()
+      local renderBoardEntity = self._world:GetRenderBoardEntity()
+      local normalAtkCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.NormalAttack)
+      local attackCount = table.count(normalAtkCmpt:GetPlayNormalSkillSequence())
+      if attackCount == 0 then
+        return false
+      end
+      local index = petEntity:ChainMove():GetCurGridPathIndex()
+      if index ~= 0 and pathIndex > index then
+        if not chainMoveComponent:IsWait() then
+          chainMoveComponent:SetWaitState(true)
         end
-        local index = (petEntity:ChainMove()):GetCurGridPathIndex()
-        if index ~= 0 and index < pathIndex then
-          if not chainMoveComponent:IsWait() then
-            chainMoveComponent:SetWaitState(true)
+        return true
+      else
+        local canMoveTime = chainMoveComponent:GetCanMoveTime()
+        if canMoveTime == 0 then
+          local targetPathIndex = pathIndex + 1
+          local prePetArriveTime = preChainMoveComponent:GetPathArriveTime(targetPathIndex)
+          if not prePetArriveTime then
+            return true
           end
-          return true
+          local waitAttactTime = normalAtkCmpt:GetNormalSkillWaitTimeDic(myIndex, pathIndex)
+          if waitAttactTime < 0 then
+            waitAttactTime = 0
+          end
+          waitAttactTime = waitAttactTime * 1000
+          local startWaitTime = normalAtkCmpt:GetPathMoveStartWaitTime() * 1000
+          canMoveTime = prePetArriveTime + waitAttactTime + startWaitTime
+          chainMoveComponent:SetCanMoveTime(canMoveTime)
+        end
+        canMoveTime = chainMoveComponent:GetCanMoveTime()
+        if canMoveTime < timeService:GetCurrentTimeMs() then
+          chainMoveComponent:SetWaitState(false)
+          chainMoveComponent:SetCanMoveTime(0)
+          return false
         else
-          local canMoveTime = chainMoveComponent:GetCanMoveTime()
-          if canMoveTime == 0 then
-            local targetPathIndex = pathIndex + 1
-            local prePetArriveTime = preChainMoveComponent:GetPathArriveTime(targetPathIndex)
-            if not prePetArriveTime then
-              return true
-            end
-            local waitAttactTime = normalAtkCmpt:GetNormalSkillWaitTimeDic(myIndex, pathIndex)
-            if waitAttactTime < 0 then
-              waitAttactTime = 0
-            end
-            waitAttactTime = waitAttactTime * 1000
-            local startWaitTime = normalAtkCmpt:GetPathMoveStartWaitTime() * 1000
-            canMoveTime = prePetArriveTime + waitAttactTime + startWaitTime
-            chainMoveComponent:SetCanMoveTime(canMoveTime)
-          end
-          do
-            do
-              canMoveTime = chainMoveComponent:GetCanMoveTime()
-              if canMoveTime < timeService:GetCurrentTimeMs() then
-                chainMoveComponent:SetWaitState(false)
-                chainMoveComponent:SetCanMoveTime(0)
-                return false
-              else
-                return true
-              end
-              do return false end
-            end
-          end
+          return true
         end
       end
     end
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._HasPetOnNextPathPoint = function(self, pathIndex)
-  -- function num : 0_11 , upvalues : _ENV
-  for i,ee in ipairs((self.group):GetEntities()) do
-    if (ee:ChainMove()):GetPathIndex() == pathIndex + 1 then
+function ChainMoveSystem_Render:_HasPetOnNextPathPoint(pathIndex)
+  for i, ee in ipairs(self.group:GetEntities()) do
+    if ee:ChainMove():GetPathIndex() == pathIndex + 1 then
       return true
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._IsAllPetLeaveChainPos = function(self, chainIdx)
-  -- function num : 0_12 , upvalues : _ENV
-  for i,ee in ipairs((self.group):GetEntities()) do
-    if (ee:ChainMove()):GetPathIndex() <= chainIdx then
+function ChainMoveSystem_Render:_IsAllPetLeaveChainPos(chainIdx)
+  for i, ee in ipairs(self.group:GetEntities()) do
+    if chainIdx >= ee:ChainMove():GetPathIndex() then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._IsAnyPetAtChainPos = function(self, chainIdx)
-  -- function num : 0_13 , upvalues : _ENV
-  for i,ee in ipairs((self.group):GetEntities()) do
-    if (ee:ChainMove()):GetPathIndex() == chainIdx then
+function ChainMoveSystem_Render:_IsAnyPetAtChainPos(chainIdx)
+  for i, ee in ipairs(self.group:GetEntities()) do
+    if ee:ChainMove():GetPathIndex() == chainIdx then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._AfterPlayerMoveOneTile = function(self, e, pathIndex, chainPath)
-  -- function num : 0_14 , upvalues : _ENV
+function ChainMoveSystem_Render:_AfterPlayerMoveOneTile(e, pathIndex, chainPath)
   if pathIndex < 1 then
-    return 
+    return
   end
   local last_pos = chainPath[pathIndex]
-  local pieceSvc = (self._world):GetService("Piece")
+  local pieceSvc = self._world:GetService("Piece")
   local pieceEntity = pieceSvc:FindPieceEntity(last_pos)
   if self:_IsNeedHidePiece(pathIndex, chainPath) then
     pieceEntity:SetViewVisible(false)
   else
-    ;
-    ((self._world):GetService("Piece")):SetPieceAnimMoveDone(last_pos)
+    self._world:GetService("Piece"):SetPieceAnimMoveDone(last_pos)
   end
-  local teamEntity = (e:Pet()):GetOwnerTeamEntity()
+  local teamEntity = e:Pet():GetOwnerTeamEntity()
   local teamLeaderEntity = teamEntity:GetTeamLeaderPetEntity()
   teamEntity:SetLocation(last_pos, teamLeaderEntity:GetRenderGridDirection())
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local pieceType = utilData:FindPieceElement(last_pos)
   local pieceEffectType = PieceEffectType.Normal
   if utilData:IsPrismPiece(last_pos) then
     pieceEffectType = utilData:GetBoardPieceEffectType(last_pos)
   end
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  local playBuffSvc = self._world:GetService("PlayBuff")
   local ntPlayerEachMoveEnd = NTPlayerEachMoveEnd:New(e, last_pos, pieceType, nil, pathIndex)
   ntPlayerEachMoveEnd:SetPieceEffectType(pieceEffectType)
-  local ntPetChainMoveBegin = nil
+  local ntPetChainMoveBegin
   if pathIndex == 1 then
     ntPetChainMoveBegin = NTPetChainMoveBegin:New(e, last_pos, pieceType, nil, pathIndex)
     ntPetChainMoveBegin:SetPieceEffectType(pieceEffectType)
   end
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : ntPetChainMoveBegin, playBuffSvc, ntPlayerEachMoveEnd, teamLeaderEntity, e, _ENV, last_pos, pieceType, pieceEffectType, teamEntity
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     if ntPetChainMoveBegin then
       playBuffSvc:PlayBuffView(TT, ntPetChainMoveBegin)
     end
@@ -425,97 +347,79 @@ ChainMoveSystem_Render._AfterPlayerMoveOneTile = function(self, e, pathIndex, ch
       ntTeamEachMoveEnd:SetPieceEffectType(pieceEffectType)
       playBuffSvc:PlayBuffView(TT, ntTeamEachMoveEnd)
     end
-  end
-)
-  if pathIndex > 1 then
-    local renderBoardEntity = (self._world):GetRenderBoardEntity()
-    local normalAtkCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.NormalAttack)
+  end)
+  if 1 < pathIndex then
+    local renderBoardEntity = self._world:GetRenderBoardEntity()
+    local normalAtkCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.NormalAttack)
     local triggerTraps = normalAtkCmpt:GetChainPathTriggerTrap(pathIndex)
-    local trapServiceRender = (self._world):GetService("TrapRender")
+    local trapServiceRender = self._world:GetService("TrapRender")
     if triggerTraps then
       trapServiceRender:ChainMovePlayTrapTrigger(triggerTraps, e)
     end
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render.IsChainPathFstPos = function(self, targetEntity, pos)
-  -- function num : 0_15 , upvalues : _ENV
+function ChainMoveSystem_Render:IsChainPathFstPos(targetEntity, pos)
   local cChainMove = targetEntity:ChainMove()
   local chainPath = cChainMove:GetChainPath()
-  if pos ~= chainPath[1] then
-    do return not chainPath or (table.count)(chainPath) <= 0 end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if chainPath and table.count(chainPath) > 0 then
+    return pos == chainPath[1]
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._RemoveLinkageNum = function(self, index)
-  -- function num : 0_16 , upvalues : _ENV
-  local entityPoolService = (self._world):GetService("EntityPool")
-  local reBoard = (self._world):GetRenderBoardEntity()
+function ChainMoveSystem_Render:_RemoveLinkageNum(index)
+  local entityPoolService = self._world:GetService("EntityPool")
+  local reBoard = self._world:GetRenderBoardEntity()
   local linkRendererDataCmpt = reBoard:LinkRendererData()
   local allEntities = linkRendererDataCmpt:GetLinkageNumEntityList()
-  local linkageRenderService = (self._world):GetService("LinkageRender")
+  local linkageRenderService = self._world:GetService("LinkageRender")
   local remove_list = {}
-  for _,linkageNumEntity in ipairs(allEntities) do
+  for _, linkageNumEntity in ipairs(allEntities) do
     local linkageNumCmp = linkageNumEntity:LinkageNum()
     if linkageNumCmp:GetLinkageIndex() == index then
       linkageRenderService:DestroyLinkNum(linkageNumEntity)
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._RemoveLinkLine = function(self, index)
-  -- function num : 0_17 , upvalues : _ENV
-  local entityPoolService = (self._world):GetService("EntityPool")
-  local linkageRenderService = (self._world):GetService("LinkageRender")
-  local reBoard = (self._world):GetRenderBoardEntity()
+function ChainMoveSystem_Render:_RemoveLinkLine(index)
+  local entityPoolService = self._world:GetService("EntityPool")
+  local linkageRenderService = self._world:GetService("LinkageRender")
+  local reBoard = self._world:GetRenderBoardEntity()
   local linkRendererDataCmpt = reBoard:LinkRendererData()
   local allEntities = linkRendererDataCmpt:GetLinkLineEntityList()
-  for _,linkLineEntity in ipairs(allEntities) do
+  for _, linkLineEntity in ipairs(allEntities) do
     local LinkLineIndex = linkLineEntity:LinkLineIndex()
     if LinkLineIndex:GetPathIndex() == index then
       linkageRenderService:DestroyLinkLine(linkLineEntity)
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render.RemoveCutChainPath = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
+function ChainMoveSystem_Render:RemoveCutChainPath()
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
   local renderChainPathCmpt = renderBoardEntity:RenderChainPath()
   local cutRenderChainPath = renderChainPathCmpt:GetRenderCutChainPath()
-  local pieceServiceRender = (self._world):GetService("Piece")
-  local sBoardRender = (self._world):GetService("BoardRender")
-  local ePreview = (self._world):GetPreviewEntity()
-  for index,pos in pairs(cutRenderChainPath) do
+  local pieceServiceRender = self._world:GetService("Piece")
+  local sBoardRender = self._world:GetService("BoardRender")
+  local ePreview = self._world:GetPreviewEntity()
+  for index, pos in pairs(cutRenderChainPath) do
     self:_RemoveLinkageNum(index)
     self:_RemoveLinkLine(index)
     pieceServiceRender:SetPieceAnimNormal(pos)
   end
   if cutRenderChainPath then
     local indexArray = {}
-    for index,pos in pairs(cutRenderChainPath) do
-      (table.insert)(indexArray, index)
+    for index, pos in pairs(cutRenderChainPath) do
+      table.insert(indexArray, index)
     end
-    ;
-    (table.sort)(indexArray, function(a, b)
-    -- function num : 0_18_0
-    do return b < a end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-    for _,tarIndex in ipairs(indexArray) do
+    table.sort(indexArray, function(a, b)
+      return b < a
+    end)
+    for _, tarIndex in ipairs(indexArray) do
       local pos = cutRenderChainPath[tarIndex]
       if ePreview then
         local cPreviewEnv = ePreview:PreviewEnv()
@@ -527,11 +431,8 @@ ChainMoveSystem_Render.RemoveCutChainPath = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-ChainMoveSystem_Render._IsNeedHidePiece = function(self, index, chainPath)
-  -- function num : 0_19
-  local utilDataSvc = (self._world):GetService("UtilData")
+function ChainMoveSystem_Render:_IsNeedHidePiece(index, chainPath)
+  local utilDataSvc = self._world:GetService("UtilData")
   if not utilDataSvc:IsPieceRefreshTypeDestroy() then
     return false
   end
@@ -547,5 +448,3 @@ ChainMoveSystem_Render._IsNeedHidePiece = function(self, index, chainPath)
   end
   return true
 end
-
-

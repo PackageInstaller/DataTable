@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/require/ui_n0_cook_mat_require_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookMatRequireController", UIController)
 UIN0CookMatRequireController = UIN0CookMatRequireController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookMatRequireController.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN0CookMatRequireController:LoadDataOnEnter(TT, res)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN0CookMatRequireController:OnShow(uiParams)
   self._cookData = uiParams[1]
   self._backCall = uiParams[2]
-  local com, comInfo = (self._cookData):GetComponnet()
+  local com, comInfo = self._cookData:GetComponnet()
   self._component = com
   self._foodData = comInfo
   self._taskTb = {}
@@ -28,120 +18,82 @@ UIN0CookMatRequireController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireController.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN0CookMatRequireController:InitWidget()
   self._spineLoader = self:GetGameObject("spineLoader")
   self._content = self:GetUIComponent("UISelectObjectPath", "content")
   self._contentRect = self:GetUIComponent("RectTransform", "content")
   self._itemInfo = self:GetUIComponent("UISelectObjectPath", "itemInfo")
-  self._selectInfo = (self._itemInfo):SpawnObject("UISelectInfo")
+  self._selectInfo = self._itemInfo:SpawnObject("UISelectInfo")
   self._anim = self:GetUIComponent("Animation", "anim")
   local btns = self:GetUIComponent("UISelectObjectPath", "topBtn")
   local backBtn = btns:SpawnObject("UICommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self._CloseFunc, self)
-  end
-, nil, nil)
+    GameGlobal.TaskManager():StartTask(self._CloseFunc, self)
+  end, nil, nil)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireController._CloseFunc = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN0CookMatRequireController:_CloseFunc(TT)
   self:Lock("UIN0CookMatRequireController_Close")
-  ;
-  (self._anim):Play("uieff_N0_CookMatRequireController_out")
-  local time = ((self._anim):GetClip("uieff_N0_CookMatRequireController_out")).length
+  self._anim:Play("uieff_N0_CookMatRequireController_out")
+  local time = self._anim:GetClip("uieff_N0_CookMatRequireController_out").length
   YIELD(TT, time * 1000)
   self:UnLock("UIN0CookMatRequireController_Close")
   self:CloseDialog()
   if self._backCall then
-    (self._backCall)()
+    self._backCall()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireController.GetInfo = function(self)
-  -- function num : 0_4
+function UIN0CookMatRequireController:GetInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireController.RefreshTaskList = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local campaign = (self._cookData):GetCampaign()
+function UIN0CookMatRequireController:RefreshTaskList()
+  local campaign = self._cookData:GetCampaign()
   self:_Sort()
-  ;
-  (self._content):SpawnObjects("UIN0CookMatRequireItem", #self._taskTb)
-  self._widgets = (self._content):GetAllSpawnList()
-  for i,v in pairs(self._widgets) do
-    local task = (self._taskTb)[i]
-    v:SetData(task, self._component, campaign, (self._cookData):GetComponentId(), i, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:_ReceiveCallback()
-  end
-, function(tplId, pos)
-    -- function num : 0_5_1 , upvalues : self
-    self:OnItemClicked(tplId, pos)
-  end
-)
+  self._content:SpawnObjects("UIN0CookMatRequireItem", #self._taskTb)
+  self._widgets = self._content:GetAllSpawnList()
+  for i, v in pairs(self._widgets) do
+    local task = self._taskTb[i]
+    v:SetData(task, self._component, campaign, self._cookData:GetComponentId(), i, function()
+      self:_ReceiveCallback()
+    end, function(tplId, pos)
+      self:OnItemClicked(tplId, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireController._ReceiveCallback = function(self)
-  -- function num : 0_6
+function UIN0CookMatRequireController:_ReceiveCallback()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireController._Sort = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN0CookMatRequireController:_Sort()
   self._taskTb = {}
-  local tb = (self._foodData).task_list
+  local tb = self._foodData.task_list
   local unFinish = {}
   local received = {}
-  for _,task in pairs(tb) do
+  for _, task in pairs(tb) do
     if task.status == NewYearDinner_Status.E_NewYearDinner_Status_UN_FINISH then
-      (table.insert)(unFinish, task)
-    else
-      if task.status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
-        (table.insert)(self._taskTb, task)
-      else
-        if task.status == NewYearDinner_Status.E_NewYearDinner_Status_RECVED then
-          (table.insert)(received, task)
-        end
-      end
+      table.insert(unFinish, task)
+    elseif task.status == NewYearDinner_Status.E_NewYearDinner_Status_CAN_RECV then
+      table.insert(self._taskTb, task)
+    elseif task.status == NewYearDinner_Status.E_NewYearDinner_Status_RECVED then
+      table.insert(received, task)
     end
   end
-  for _,task in pairs(unFinish) do
-    (table.insert)(self._taskTb, task)
+  for _, task in pairs(unFinish) do
+    table.insert(self._taskTb, task)
   end
-  for _,task in pairs(received) do
-    (table.insert)(self._taskTb, task)
+  for _, task in pairs(received) do
+    table.insert(self._taskTb, task)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireController.OnItemClicked = function(self, matid, pos)
-  -- function num : 0_8
-  (self._selectInfo):SetData(matid, pos)
+function UIN0CookMatRequireController:OnItemClicked(matid, pos)
+  self._selectInfo:SetData(matid, pos)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN0CookMatRequireController.OnActivityCloseEvent = function(self, campaignId)
-  -- function num : 0_9
-  local campaign = (self._cookData):GetCampaign()
+function UIN0CookMatRequireController:OnActivityCloseEvent(campaignId)
+  local campaign = self._cookData:GetCampaign()
   if campaign and campaign._id == campaignId then
     self:CloseDialog()
   end
 end
-
-

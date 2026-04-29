@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/common/ui_home_top_tips.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeTopTips", UIController)
 UIHomeTopTips = UIHomeTopTips
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeTopTips.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeTopTips:OnShow(uiParams)
   local enum = uiParams[1]
   self.go = uiParams[2]
   self.uiName = uiParams[3]
-  self.uiCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self.uiName)
-  local cfg = (Cfg.cfg_top_tips)[enum]
+  self.uiCamera = GameGlobal.UIStateManager():GetControllerCamera(self.uiName)
+  local cfg = Cfg.cfg_top_tips[enum]
   if cfg == nil then
-    (Log.fatal)("[toptip] error --> cfg is nil ! enum --> " .. enum)
-    return 
+    Log.fatal("[toptip] error --> cfg is nil ! enum --> " .. enum)
+    return
   end
   self.bg = self:GetGameObject("bg")
-  local passEvent = (self.bg):GetComponent("PassEventComponent")
+  local passEvent = self.bg:GetComponent("PassEventComponent")
   passEvent:SetClickCallback(function()
-    -- function num : 0_0_0 , upvalues : self
     self:bgOnClick()
-  end
-)
-  self._black_mask = (((((self:GetGameObject()).transform).parent).parent):Find("BGMaskCanvas/black_mask")):GetComponent(typeof((UnityEngine.UI).Image))
-  -- DECOMPILER ERROR at PC52: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._black_mask).raycastTarget = false
+  end)
+  self._black_mask = self:GetGameObject().transform.parent.parent:Find("BGMaskCanvas/black_mask"):GetComponent(typeof(UnityEngine.UI.Image))
+  self._black_mask.raycastTarget = false
   self.rect = self:GetUIComponent("RectTransform", "rect")
   local layoutElement = self:GetUIComponent("LayoutElement", "rect")
   self.width = layoutElement.preferredWidth
@@ -37,46 +25,25 @@ UIHomeTopTips.OnShow = function(self, uiParams)
   self.txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self.txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self.atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.imgIcon).sprite = (self.atlas):GetSprite(cfg.Icon)
-  ;
-  (self.txtTitle):SetText((StringTable.Get)(cfg.Title))
-  ;
-  (self.txtDesc):SetText((StringTable.Get)(cfg.Intr))
+  self.imgIcon.sprite = self.atlas:GetSprite(cfg.Icon)
+  self.txtTitle:SetText(StringTable.Get(cfg.Title))
+  self.txtDesc:SetText(StringTable.Get(cfg.Intr))
   self:FlushPos()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeTopTips.FlushPos = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomeTopTips:FlushPos()
   if self.go then
-    local posScreen = (self.uiCamera):WorldToScreenPoint(((self.go).transform).position)
-    local camera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-    local res, pos = ((UnityEngine.RectTransformUtility).ScreenPointToLocalPointInRectangle)((self.rect).parent, posScreen, camera, nil)
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self.rect).anchoredPosition = pos
+    local posScreen = self.uiCamera:WorldToScreenPoint(self.go.transform.position)
+    local camera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+    local res, pos = UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.rect.parent, posScreen, camera, nil)
+    self.rect.anchoredPosition = pos
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeTopTips.OnHide = function(self)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._black_mask).raycastTarget = true
+function UIHomeTopTips:OnHide()
+  self._black_mask.raycastTarget = true
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeTopTips.bgOnClick = function(self)
-  -- function num : 0_3
+function UIHomeTopTips:bgOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activityintro/ui_activityintro_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityIntroController", UIController)
 UIActivityIntroController = UIActivityIntroController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityIntroController.Constructor = function(self)
-  -- function num : 0_0
+function UIActivityIntroController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityIntroController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityIntroController:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UIActivityIntroController] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UIActivityIntroController] self._cfg is nil. param --> ", self._param)
   end
   self:InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityIntroController.InitWidget = function(self)
-  -- function num : 0_2
+function UIActivityIntroController:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._titleBg = self:GetUIComponent("RectTransform", "TitleBg")
   self._titleBgImg = self:GetUIComponent("Image", "TitleBg")
@@ -42,93 +29,57 @@ UIActivityIntroController.InitWidget = function(self)
   self._btnImgClickGo = self:GetGameObject("ConfirmBtn2")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityIntroController._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._bg):LoadImage((self._cfg).BG)
-  ;
-  (self._btnImgNormal):LoadImage((self._cfg).BtnNormal)
-  ;
-  (self._btnImgClick):LoadImage((self._cfg).BtnClick)
-  ;
-  (self._title):SetText((StringTable.Get)((self._cfg).Title))
-  ;
-  (self._subTitle):SetText((StringTable.Get)((self._cfg).SubTitle))
-  ;
-  (self._content):SetText((StringTable.Get)((self._cfg).Intro))
-  do
-    if (self._cfg).TitlePosOffset then
-      local titleGroup = self:GetUIComponent("RectTransform", "TitleGroup")
-      titleGroup.anchoredPosition = Vector2(((self._cfg).TitlePosOffset)[1], ((self._cfg).TitlePosOffset)[2])
-    end
-    ;
-    ((self._titleBg).gameObject):SetActive(false)
-    if (self._cfg).TitleTextBgAtlas and (self._cfg).TitleTextBgInfo then
-      local atlas = self:GetAsset(((self._cfg).TitleTextBgAtlas)[1], LoadType.SpriteAtlas)
-      local spriteId = ((self._cfg).TitleTextBgAtlas)[2]
-      -- DECOMPILER ERROR at PC83: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._titleBgImg).sprite = atlas:GetSprite(spriteId)
-      local width = (self._title).preferredWidth + ((self._cfg).TitleTextBgInfo)[1]
-      local height = ((self._cfg).TitleTextBgInfo)[2]
-      -- DECOMPILER ERROR at PC98: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._titleBg).sizeDelta = Vector2(width, height)
-      ;
-      ((self._titleBg).gameObject):SetActive(true)
-    end
-    do
-      if (self._cfg).BgPosOffset then
-        (((self._bg).gameObject):GetComponent("RectTransform")).anchoredPosition = Vector2(((self._cfg).BgPosOffset)[1], ((self._cfg).BgPosOffset)[2])
-      end
-      if (self._cfg).ConfirmBtnInfo then
-        ((self._btnImgNormalGo):GetComponent("RectTransform")).anchoredPosition = Vector2(((self._cfg).ConfirmBtnInfo)[1], ((self._cfg).ConfirmBtnInfo)[2])
-        ;
-        ((self._btnImgClickGo):GetComponent("RectTransform")).anchoredPosition = Vector2(((self._cfg).ConfirmBtnInfo)[1], ((self._cfg).ConfirmBtnInfo)[2])
-        ;
-        ((self._btnImgNormalGo):GetComponent("RectTransform")).sizeDelta = Vector2(((self._cfg).ConfirmBtnInfo)[3], ((self._cfg).ConfirmBtnInfo)[4])
-        ;
-        ((self._btnImgClickGo):GetComponent("RectTransform")).sizeDelta = Vector2(((self._cfg).ConfirmBtnInfo)[3], ((self._cfg).ConfirmBtnInfo)[4])
-      end
-      self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnImgGo), UIEvent.Press, function(go)
-    -- function num : 0_3_0 , upvalues : self
-    (self._btnImgClickGo):SetActive(true)
-    ;
-    (self._btnImgNormalGo):SetActive(false)
+function UIActivityIntroController:_OnValue()
+  self._bg:LoadImage(self._cfg.BG)
+  self._btnImgNormal:LoadImage(self._cfg.BtnNormal)
+  self._btnImgClick:LoadImage(self._cfg.BtnClick)
+  self._title:SetText(StringTable.Get(self._cfg.Title))
+  self._subTitle:SetText(StringTable.Get(self._cfg.SubTitle))
+  self._content:SetText(StringTable.Get(self._cfg.Intro))
+  if self._cfg.TitlePosOffset then
+    local titleGroup = self:GetUIComponent("RectTransform", "TitleGroup")
+    titleGroup.anchoredPosition = Vector2(self._cfg.TitlePosOffset[1], self._cfg.TitlePosOffset[2])
   end
-)
-      self:AddUICustomEventListener((UICustomUIEventListener.Get)(self._btnImgGo), UIEvent.Release, function(go)
-    -- function num : 0_3_1 , upvalues : self
-    (self._btnImgNormalGo):SetActive(true)
-    ;
-    (self._btnImgClickGo):SetActive(false)
+  self._titleBg.gameObject:SetActive(false)
+  if self._cfg.TitleTextBgAtlas and self._cfg.TitleTextBgInfo then
+    local atlas = self:GetAsset(self._cfg.TitleTextBgAtlas[1], LoadType.SpriteAtlas)
+    local spriteId = self._cfg.TitleTextBgAtlas[2]
+    self._titleBgImg.sprite = atlas:GetSprite(spriteId)
+    local width = self._title.preferredWidth + self._cfg.TitleTextBgInfo[1]
+    local height = self._cfg.TitleTextBgInfo[2]
+    self._titleBg.sizeDelta = Vector2(width, height)
+    self._titleBg.gameObject:SetActive(true)
   end
-)
-      if self._cfg and not (string.isnullorempty)((self._cfg).ShowAnim) then
-        (self._animation):Play((self._cfg).ShowAnim)
-      end
-    end
+  if self._cfg.BgPosOffset then
+    self._bg.gameObject:GetComponent("RectTransform").anchoredPosition = Vector2(self._cfg.BgPosOffset[1], self._cfg.BgPosOffset[2])
+  end
+  if self._cfg.ConfirmBtnInfo then
+    self._btnImgNormalGo:GetComponent("RectTransform").anchoredPosition = Vector2(self._cfg.ConfirmBtnInfo[1], self._cfg.ConfirmBtnInfo[2])
+    self._btnImgClickGo:GetComponent("RectTransform").anchoredPosition = Vector2(self._cfg.ConfirmBtnInfo[1], self._cfg.ConfirmBtnInfo[2])
+    self._btnImgNormalGo:GetComponent("RectTransform").sizeDelta = Vector2(self._cfg.ConfirmBtnInfo[3], self._cfg.ConfirmBtnInfo[4])
+    self._btnImgClickGo:GetComponent("RectTransform").sizeDelta = Vector2(self._cfg.ConfirmBtnInfo[3], self._cfg.ConfirmBtnInfo[4])
+  end
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnImgGo), UIEvent.Press, function(go)
+    self._btnImgClickGo:SetActive(true)
+    self._btnImgNormalGo:SetActive(false)
+  end)
+  self:AddUICustomEventListener(UICustomUIEventListener.Get(self._btnImgGo), UIEvent.Release, function(go)
+    self._btnImgNormalGo:SetActive(true)
+    self._btnImgClickGo:SetActive(false)
+  end)
+  if self._cfg and not string.isnullorempty(self._cfg.ShowAnim) then
+    self._animation:Play(self._cfg.ShowAnim)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityIntroController.ConfirmBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityIntroController:ConfirmBtnOnClick(go)
   self:Lock("UIActivityIntroController:OnHide")
-  if self._cfg and not (string.isnullorempty)((self._cfg).HideAnim) then
-    (self._animation):Play((self._cfg).HideAnim)
+  if self._cfg and not string.isnullorempty(self._cfg.HideAnim) then
+    self._animation:Play(self._cfg.HideAnim)
   end
   self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, self
     YIELD(TT, 600)
     self:UnLock("UIActivityIntroController:OnHide")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

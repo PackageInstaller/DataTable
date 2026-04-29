@@ -1,125 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/data/ui_haute_couture_data_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCouturePLM", UIHauteCoutureDataBase)
 UIHauteCouturePLM = UIHauteCouturePLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCouturePLM.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCouturePLM:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.CostItemID = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHauteCouturePLM:CostItemID()
   return RoleAssetID.RoleAssetDrawCardSeniorSkinPLM
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.ShopGoodsOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIHauteCoutureDrawV2Controller")
+function UIHauteCouturePLM:ShopGoodsOnClick()
+  GameGlobal.UIStateManager():ShowDialog("UIHauteCoutureDrawV2Controller")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.BuyItem = function(self)
-  -- function num : 0_3
+function UIHauteCouturePLM:BuyItem()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.IsReview = function(self)
-  -- function num : 0_4
+function UIHauteCouturePLM:IsReview()
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.HC_Type = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHauteCouturePLM:HC_Type()
   return HauteCoutureType.HC_PLM
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetMainUIInfo = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHauteCouturePLM:GetMainUIInfo()
   return "UIHauteCoutureDrawMainPLM.prefab", UIHauteCoutureDrawMainPLM
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetMainUIBgInfo = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIHauteCouturePLM:GetMainUIBgInfo()
   return "UIHauteCoutureDrawBgPLM.prefab", UIHauteCoutureDrawBgPLM
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetGetItemUIInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIHauteCouturePLM:GetGetItemUIInfo()
   return "UIHauteCoutureDrawGetItemMainPLM.prefab", UIHauteCoutureDrawGetItemMainPLM
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetChargeUIInfo = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIHauteCouturePLM:GetChargeUIInfo()
   return "UIHauteCoutureDrawChargeMainPLM.prefab", UIHauteCoutureDrawChargeMainPLM
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetChargeUIBgInfo = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIHauteCouturePLM:GetChargeUIBgInfo()
   return "UIHauteCoutureDrawChargeBgPLM.prefab", UIHauteCoutureDrawChargeBgPLM
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetRulesUIInfo = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHauteCouturePLM:GetRulesUIInfo()
   return "UIHauteCoutureDrawRulesMainPLM.prefab", UIHauteCoutureDrawRulesMainPLM
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetRulesUIBgInfo = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHauteCouturePLM:GetRulesUIBgInfo()
   return "UIHauteCoutureDrawRulesBgPLM.prefab", UIHauteCoutureDrawRulesBgPLM
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetVideoUIInfo = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHauteCouturePLM:GetVideoUIInfo()
   return "UIHauteCoutureDrawVideoMainPLM.prefab", UIHauteCoutureDrawVideoMainPLM
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetDynamicProbablityUIInfo = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIHauteCouturePLM:GetDynamicProbablityUIInfo()
   return "UIHauteCoutureDrawDynamicProbabilityMainPLM.prefab", UIHauteCoutureDrawDynamicProbabilityMainPLM
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.GetDynamicProbablityUIBgInfo = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIHauteCouturePLM:GetDynamicProbablityUIBgInfo()
   return "UIHauteCoutureDrawDynamicProbabilityBgPLM.prefab", UIHauteCoutureDrawDynamicProbabilityBgPLM
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCouturePLM.SideEnterText = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  return (StringTable.Get)("str_senior_skin_draw_lobby_enter_title4")
+function UIHauteCouturePLM:SideEnterText()
+  return StringTable.Get("str_senior_skin_draw_lobby_enter_title4")
 end
-
-

@@ -1,38 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/season/stn_season_get_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("common_async_base")
 _class("Season_GetData", Common_AsyncBase)
 Season_GetData = Season_GetData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Season_GetData.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  local runData = (self.m_pManager):GetMissionRunData()
+function Season_GetData:TaskFunc(TT, status)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
+  local runData = self.m_pManager:GetMissionRunData()
   local componentID = runData:GetComponentID()
-  ;
-  (self._manager):AsyncGM_OpenAllCampaign(TT, status, componentID)
+  self._manager:AsyncGM_OpenAllCampaign(TT, status, componentID)
   local resLoadInfoList = AsyncRequestRes:New()
   campaignModule:CampaignLoadInfoList(TT, resLoadInfoList)
   local resProtoLoadInfo = AsyncRequestRes:New()
   campaignModule:CampaignComProtoLoadInfo(TT, resProtoLoadInfo, componentID)
   campaignModule:LoadCampaignInfoListTask(TT)
-  local seasonModule = (GameGlobal.GetModule)(SeasonModule)
+  local seasonModule = GameGlobal.GetModule(SeasonModule)
   for i = 1, 3 do
     local resSeason = seasonModule:ForceRequestCurSeasonData(TT)
     if resSeason:GetSucc() then
       status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
       status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
-      return 
+      return
     end
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-  ;
-  (self._manager):Exception_DeclareExceptionThrew("获取赛季基础信息失败")
+  self._manager:Exception_DeclareExceptionThrew("获取赛季基础信息失败")
 end
-
-

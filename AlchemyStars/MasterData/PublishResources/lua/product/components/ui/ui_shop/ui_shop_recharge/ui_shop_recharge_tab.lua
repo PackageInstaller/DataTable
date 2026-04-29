@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recharge/ui_shop_recharge_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopRechargeTab", UICustomWidget)
 UIShopRechargeTab = UIShopRechargeTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopRechargeTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopRechargeTab:Constructor()
   self.shopModule = self:GetModule(ShopModule)
-  self.clientShop = (self.shopModule):GetClientShop()
-  self._data = (self.clientShop):GetRechargeShopData()
-  self._giftData = (self.clientShop):GetGiftPackShopData()
+  self.clientShop = self.shopModule:GetClientShop()
+  self._data = self.clientShop:GetRechargeShopData()
+  self._giftData = self.clientShop:GetGiftPackShopData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopRechargeTab:OnShow()
   self:AttachEvent(GameEventType.UpdateRechargeShop, self.Flush)
   self:AttachEvent(GameEventType.UpdateGiftPackShop, self.Flush)
   self:AttachEvent(GameEventType.AppResume, self._RequestGetBalanceNormal)
@@ -27,196 +17,130 @@ UIShopRechargeTab.OnShow = function(self)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopRechargeTab:OnHide()
   self:DetachEvent(GameEventType.UpdateRechargeShop, self.Flush)
   self:DetachEvent(GameEventType.UpdateGiftPackShop, self.Flush)
   self:DetachEvent(GameEventType.AppResume, self._RequestGetBalanceNormal)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.Flush = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local items = (self._data):GetGoods()
-  local giftItems = ((self._giftData):GetRechargeGiftGoods())
-  -- DECOMPILER ERROR at PC6: Overwrote pending register: R3 in 'AssignReg'
-
-  local monthCard = .end
-  local count = (table.count)(items) + (table.count)(giftItems)
+function UIShopRechargeTab:Flush()
+  local items = self._data:GetGoods()
+  local giftItems = self._giftData:GetRechargeGiftGoods()
+  local monthCard
+  local count = table.count(items) + table.count(giftItems)
   if monthCard then
     count = count + 1
   end
-  ;
-  (self._content):SpawnObjects("UIShopRechargeItem", count)
-  local uiItems = (self._content):GetAllSpawnList()
-  local cfg = (Cfg.cfg_shop_recharge_sort)({})
+  self._content:SpawnObjects("UIShopRechargeItem", count)
+  local uiItems = self._content:GetAllSpawnList()
+  local cfg = Cfg.cfg_shop_recharge_sort({})
   local allDatas = {}
-  for key,value in pairs(cfg) do
+  for key, value in pairs(cfg) do
     local t = {}
     t.sort = value.Sort
     if key == UIShopRechargeSortType.Gift then
       t.type = UIShopRechargeSortType.Gift
       t.data = giftItems
-      t.count = (table.count)(giftItems)
-    else
-      if key == UIShopRechargeSortType.MonthCard then
-        t.type = UIShopRechargeSortType.MonthCard
-        t.data = monthCard
-        t.count = 1
-      else
-        if key == UIShopRechargeSortType.Recharge then
-          t.type = UIShopRechargeSortType.Recharge
-          t.data = items
-          t.count = (table.count)(items)
-        end
-      end
+      t.count = table.count(giftItems)
+    elseif key == UIShopRechargeSortType.MonthCard then
+      t.type = UIShopRechargeSortType.MonthCard
+      t.data = monthCard
+      t.count = 1
+    elseif key == UIShopRechargeSortType.Recharge then
+      t.type = UIShopRechargeSortType.Recharge
+      t.data = items
+      t.count = table.count(items)
     end
-    ;
-    (table.insert)(allDatas, t)
+    table.insert(allDatas, t)
   end
-  ;
-  (table.sort)(allDatas, function(a, b)
-    -- function num : 0_3_0
-    do return a.sort < b.sort end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(allDatas, function(a, b)
+    return a.sort < b.sort
+  end)
   local index = 0
-  for _,value in ipairs(allDatas) do
+  for _, value in ipairs(allDatas) do
     if value.type == UIShopRechargeSortType.Gift then
-      for _,data in ipairs(value.data) do
+      for _, data in ipairs(value.data) do
         index = index + 1
-        ;
-        (uiItems[index]):Flush(data:GetId(), false, true)
+        uiItems[index]:Flush(data:GetId(), false, true)
       end
-    else
-      do
-        if value.type == UIShopRechargeSortType.MonthCard and value.data then
-          index = index + 1
-          ;
-          (uiItems[index]):Flush((value.data):GetId(), true)
-          self._monthCardWidget = uiItems[index]
-        end
-        if value.type == UIShopRechargeSortType.Recharge then
-          for _,data in ipairs(value.data) do
-            index = index + 1
-            ;
-            (uiItems[index]):Flush(data:GetId())
-          end
-        end
-        do
-          -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC149: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    elseif value.type == UIShopRechargeSortType.MonthCard then
+      if value.data then
+        index = index + 1
+        uiItems[index]:Flush(value.data:GetId(), true)
+        self._monthCardWidget = uiItems[index]
+      end
+    elseif value.type == UIShopRechargeSortType.Recharge then
+      for _, data in ipairs(value.data) do
+        index = index + 1
+        uiItems[index]:Flush(data:GetId())
       end
     end
   end
   self:InAnimation()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.Update = function(self, deltaTimeMS)
-  -- function num : 0_4
+function UIShopRechargeTab:Update(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.SetData = function(self, param)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Recharge)
+function UIShopRechargeTab:SetData(param)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Recharge)
   self._param = param
   self:JumpItem()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.RefreshPanel = function(self, subTabType)
-  -- function num : 0_6
+function UIShopRechargeTab:RefreshPanel(subTabType)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.ExcuteHideLogic = function(self, callBack)
-  -- function num : 0_7
+function UIShopRechargeTab:ExcuteHideLogic(callBack)
   if callBack then
     callBack(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.JumpItem = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if not (self._param)[4] then
-    local jumpId = not self._param or 0
-  end
-  if jumpId then
-    local monthCard = (self._data):GetMonthCardGoods()
-    if monthCard and monthCard:GetId() == jumpId then
-      if not (self._param)[2] then
-        (self._monthCardWidget):OpenUIShopGiftPackDetail(ShopMainTabType.Recharge)
+function UIShopRechargeTab:JumpItem()
+  if self._param then
+    local jumpId = self._param[4] or 0
+    if jumpId then
+      local monthCard = self._data:GetMonthCardGoods()
+      if monthCard and monthCard:GetId() == jumpId then
+        self._monthCardWidget:OpenUIShopGiftPackDetail(self._param[2] or ShopMainTabType.Recharge)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab._RequestGetBalanceNormal = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIShopRechargeTab:_RequestGetBalanceNormal()
   local controller = self.uiOwner
   if controller and controller.curMainTabType and controller.curMainTabType == ShopMainTabType.Recharge then
-    ((GameGlobal.GetModule)(PayModule)):RequestGetBalanceNormal()
+    GameGlobal.GetModule(PayModule):RequestGetBalanceNormal()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.InAnimation = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local uiItems = (self._content):GetAllSpawnList()
-  for k,v in pairs(uiItems) do
-    (v:GetGameObject()):SetActive(false)
+function UIShopRechargeTab:InAnimation()
+  local uiItems = self._content:GetAllSpawnList()
+  for k, v in pairs(uiItems) do
+    v:GetGameObject():SetActive(false)
   end
   self:StartSafeTask("UIShopRechargeTab::InAnimation", function(lockName, TT)
-    -- function num : 0_10_0 , upvalues : _ENV, uiItems
     local animLength = 0
-    for k,v in pairs(uiItems) do
-      (v:GetGameObject()):SetActive(true)
-      animLength = (math.max)(animLength, v:PlayInAnimation())
+    for k, v in pairs(uiItems) do
+      v:GetGameObject():SetActive(true)
+      animLength = math.max(animLength, v:PlayInAnimation())
       if k % 2 == 0 then
         YIELD(TT)
         YIELD(TT)
       end
     end
-    if animLength > 0 then
+    if 0 < animLength then
       YIELD(TT, animLength)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.ShowSelf = function(self)
-  -- function num : 0_11
-  (self._anim):Stop()
-  ;
-  (self._anim):Play()
+function UIShopRechargeTab:ShowSelf()
+  self._anim:Stop()
+  self._anim:Play()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeTab.HideSelf = function(self)
-  -- function num : 0_12
+function UIShopRechargeTab:HideSelf()
 end
-
-

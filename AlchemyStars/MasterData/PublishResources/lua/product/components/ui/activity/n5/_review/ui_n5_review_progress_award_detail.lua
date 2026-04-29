@@ -1,116 +1,79 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/_review/ui_n5_review_progress_award_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5ReviewProgressAwardDetail", UIController)
 UIN5ReviewProgressAwardDetail = UIN5ReviewProgressAwardDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5ReviewProgressAwardDetail.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UIN5ReviewProgressAwardDetail:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN5ReviewProgressAwardDetail:OnShow(uiParams)
   self:InitWidget()
   self.CallBack = uiParams[1]
-  local uiModule = (GameGlobal.GetUIModule)(CampaignModule)
-  self._reviewData = (uiModule:GetReviewData()):GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N5)
-  self._campaign = (self._reviewData):GetDetailInfo()
-  self._progressCom = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_POINT_PROGRESS, 1)
-  self._progressInfo = (self._progressCom):GetComponentInfo()
+  local uiModule = GameGlobal.GetUIModule(CampaignModule)
+  self._reviewData = uiModule:GetReviewData():GetActivityByType(ECampaignType.CAMPAIGN_TYPE_REVIEW_N5)
+  self._campaign = self._reviewData:GetDetailInfo()
+  self._progressCom = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_POINT_PROGRESS, 1)
+  self._progressInfo = self._progressCom:GetComponentInfo()
   self.selectInfoLoader = self:GetUIComponent("UISelectObjectPath", "selectInfo")
   self._allAwards = {}
-  for progress,award in pairs((self._progressInfo).m_progress_rewards) do
-    (table.insert)(self._allAwards, {Progress = progress, AwardID = (award[1]).assetid, Count = (award[1]).count})
+  for progress, award in pairs(self._progressInfo.m_progress_rewards) do
+    table.insert(self._allAwards, {
+      Progress = progress,
+      AwardID = award[1].assetid,
+      Count = award[1].count
+    })
   end
-  ;
-  (table.sort)(self._allAwards, function(a, b)
-    -- function num : 0_1_0
-    do return a.Progress < b.Progress end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(self._allAwards, function(a, b)
+    return a.Progress < b.Progress
+  end)
   local delay = 0
-  local uis = (self.awards):SpawnObjects("UIN5ReviewProgressAwardDetailItem", #self._allAwards)
-  for index,award in ipairs(self._allAwards) do
+  local uis = self.awards:SpawnObjects("UIN5ReviewProgressAwardDetailItem", #self._allAwards)
+  for index, award in ipairs(self._allAwards) do
     local item = uis[index]
-    item:SetData(award.AwardID, award.Count, award.Progress, (table.icontains)((self._progressInfo).m_received_progress, award.Progress), award.Progress <= (self._reviewData):ProgressPercent(), function(id, go)
-    -- function num : 0_1_1 , upvalues : self
-    self:OnClickAward(id, go)
-  end
-, function(progress)
-    -- function num : 0_1_2 , upvalues : self
-    self:GetReward(progress)
-  end
-)
+    item:SetData(award.AwardID, award.Count, award.Progress, table.icontains(self._progressInfo.m_received_progress, award.Progress), self._reviewData:ProgressPercent() >= award.Progress, function(id, go)
+      self:OnClickAward(id, go)
+    end, function(progress)
+      self:GetReward(progress)
+    end)
     item:PlayEnterAni(delay)
     delay = delay + 30
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetail.GetReward = function(self, progress)
-  -- function num : 0_2
+function UIN5ReviewProgressAwardDetail:GetReward(progress)
   self:StartTask(self.GetRewardCoro, self, progress)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetail.GetRewardCoro = function(self, TT, progress)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN5ReviewProgressAwardDetail:GetRewardCoro(TT, progress)
   self:Lock("UIN5ReviewProgressAwardDetail")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  local rewards = (self._progressCom):HandleReceiveReward(TT, res, progress)
-  if rewards and #rewards > 0 then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
-    ;
-    (self.CallBack)()
+  local rewards = self._progressCom:HandleReceiveReward(TT, res, progress)
+  if rewards and 0 < #rewards then
+    UIActivityHelper.ShowUIGetRewards(rewards)
+    self.CallBack()
   end
   self:UnLock("UIN5ReviewProgressAwardDetail")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetail.InitWidget = function(self)
-  -- function num : 0_4
+function UIN5ReviewProgressAwardDetail:InitWidget()
   self.awards = self:GetUIComponent("UISelectObjectPath", "awards")
   self.animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetail.CloseOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN5ReviewProgressAwardDetail:CloseOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : self, _ENV
     local lockName = "UIN5ReviewProgressAwardDetail_OutAni"
     self:Lock(lockName)
-    ;
-    (self.animation):Play("uieff_N24_Main_Review_SafeArea_bg_out01")
+    self.animation:Play("uieff_N24_Main_Review_SafeArea_bg_out01")
     YIELD(TT, 120)
     self:UnLock(lockName)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5ReviewProgressAwardDetail.OnClickAward = function(self, itemID, go)
-  -- function num : 0_6
+function UIN5ReviewProgressAwardDetail:OnClickAward(itemID, go)
   if not self._selectInfo then
-    self._selectInfo = (self.selectInfoLoader):SpawnObject("UISelectInfo")
+    self._selectInfo = self.selectInfoLoader:SpawnObject("UISelectInfo")
   end
-  ;
-  (self._selectInfo):SetData(itemID, (go.transform).position)
+  self._selectInfo:SetData(itemID, go.transform.position)
 end
-
-

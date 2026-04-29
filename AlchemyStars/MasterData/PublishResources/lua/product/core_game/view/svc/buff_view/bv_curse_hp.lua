@@ -1,138 +1,118 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_curse_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewEnableCurseHPCharge", BuffViewBase)
 BuffViewEnableCurseHPCharge = BuffViewEnableCurseHPCharge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewEnableCurseHPCharge.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewEnableCurseHPCharge:PlayView(TT)
   local entity = self:Entity()
   local curCurseHpVal = 0
   if entity:HasPet() then
-    entity = (entity:Pet()):GetOwnerTeamEntity()
+    entity = entity:Pet():GetOwnerTeamEntity()
   end
   local hpCmpt = entity:HP()
   hpCmpt:SetShowCurseHp(true)
   hpCmpt:SetCurseHpValue(curCurseHpVal)
-  local playDamageSvc = (self._world):GetService("PlayDamage")
+  local playDamageSvc = self._world:GetService("PlayDamage")
   local damageInfo = DamageInfo:New(0, DamageType.Recover)
   damageInfo:SetCurseHp(curCurseHpVal)
   damageInfo:SetCurseHpDelta(nil)
   playDamageSvc:UpdateTargetHPBar(TT, entity, damageInfo)
   local viewParams = self:ViewParams()
   if not viewParams then
-    return 
+    return
   end
   local effectID = viewParams.curseEffectID
   if not effectID then
-    return 
+    return
   end
-  local sEffect = (self._world):GetService("Effect")
+  local sEffect = self._world:GetService("Effect")
   local cEffectHolder = entity:EffectHolder()
-  do
-    if entity:HasTeam() then
-      local eTeamLeader = (entity:Team()):GetTeamLeaderEntity()
-      cEffectHolder = eTeamLeader:EffectHolder()
-    end
-    local eEffect = sEffect:CreateEffect(effectID, entity)
-    local effEntityId = eEffect:GetID()
-    if cEffectHolder then
-      cEffectHolder:AttachEffect("CurseHpEffect", effEntityId)
-    end
-    local waitTime = viewParams.startAnimLength
-    local loopAnimName = viewParams.loopAnim
-    ;
-    ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_0_0 , upvalues : _ENV, waitTime, self, effEntityId, loopAnimName
+  if entity:HasTeam() then
+    local eTeamLeader = entity:Team():GetTeamLeaderEntity()
+    cEffectHolder = eTeamLeader:EffectHolder()
+  end
+  local eEffect = sEffect:CreateEffect(effectID, entity)
+  local effEntityId = eEffect:GetID()
+  if cEffectHolder then
+    cEffectHolder:AttachEffect("CurseHpEffect", effEntityId)
+  end
+  local waitTime = viewParams.startAnimLength
+  local loopAnimName = viewParams.loopAnim
+  GameGlobal.TaskManager():CoreGameStartTask(function(TT)
     YIELD(TT, waitTime)
-    local effEntity = (self._world):GetEntityByID(effEntityId)
+    local effEntity = self._world:GetEntityByID(effEntityId)
     if not effEntity then
-      return 
+      return
     end
     local effView = effEntity:View()
     if not effView then
-      return 
+      return
     end
     local viewWrapper = effView.ViewWrapper
     if not viewWrapper then
-      return 
+      return
     end
-    local animMonoCmpt = (viewWrapper.GameObject):GetComponent("Animation")
+    local animMonoCmpt = viewWrapper.GameObject:GetComponent("Animation")
     if animMonoCmpt then
       animMonoCmpt:Play(loopAnimName)
     end
-  end
-)
-  end
+  end)
 end
 
 _class("BuffViewDisableCurseHPCharge", BuffViewBase)
 BuffViewDisableCurseHPCharge = BuffViewDisableCurseHPCharge
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewDisableCurseHPCharge.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewDisableCurseHPCharge:PlayView(TT)
   local entity = self:Entity()
   local curCurseHpVal = 0
   if entity:HasPet() then
-    entity = (entity:Pet()):GetOwnerTeamEntity()
+    entity = entity:Pet():GetOwnerTeamEntity()
   end
   local hpCmpt = entity:HP()
   hpCmpt:SetShowCurseHp(false)
   hpCmpt:SetCurseHpValue(curCurseHpVal)
-  local playDamageSvc = (self._world):GetService("PlayDamage")
+  local playDamageSvc = self._world:GetService("PlayDamage")
   local damageInfo = DamageInfo:New(0, DamageType.Recover)
   damageInfo:SetCurseHp(curCurseHpVal)
   damageInfo:SetCurseHpDelta(nil)
   playDamageSvc:UpdateTargetHPBar(TT, entity, damageInfo)
   local viewParams = self:ViewParams()
   if not viewParams then
-    return 
+    return
   end
   local waitTime = viewParams.endAnimLength
   local endAnimName = viewParams.endAnim
   if not endAnimName then
-    return 
+    return
   end
   local cEffectHolder = entity:EffectHolder()
-  do
-    if entity:HasTeam() then
-      local eTeamLeader = (entity:Team()):GetTeamLeaderEntity()
-      cEffectHolder = eTeamLeader:EffectHolder()
-    end
-    if cEffectHolder then
-      local effects = cEffectHolder:GetEffectList("CurseHpEffect")
-      if effects and (table.count)(effects) > 0 then
-        do
-          for _,effId in ipairs(effects) do
-            ((GameGlobal.TaskManager)()):CoreGameStartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, effId, endAnimName, _ENV, waitTime
-    local effEntity = (self._world):GetEntityByID(effId)
-    if not effEntity then
-      return 
-    end
-    local effView = effEntity:View()
-    if not effView then
-      return 
-    end
-    local viewWrapper = effView.ViewWrapper
-    if not viewWrapper then
-      return 
-    end
-    local animMonoCmpt = (viewWrapper.GameObject):GetComponent("Animation")
-    if animMonoCmpt then
-      animMonoCmpt:Play(endAnimName)
-    end
-    YIELD(TT, waitTime)
-    local sEffect = (self._world):GetService("Effect")
-    sEffect:DestroyEffectByID(effId)
+  if entity:HasTeam() then
+    local eTeamLeader = entity:Team():GetTeamLeaderEntity()
+    cEffectHolder = eTeamLeader:EffectHolder()
   end
-)
+  if cEffectHolder then
+    local effects = cEffectHolder:GetEffectList("CurseHpEffect")
+    if effects and 0 < table.count(effects) then
+      for _, effId in ipairs(effects) do
+        GameGlobal.TaskManager():CoreGameStartTask(function(TT)
+          local effEntity = self._world:GetEntityByID(effId)
+          if not effEntity then
+            return
           end
-        end
+          local effView = effEntity:View()
+          if not effView then
+            return
+          end
+          local viewWrapper = effView.ViewWrapper
+          if not viewWrapper then
+            return
+          end
+          local animMonoCmpt = viewWrapper.GameObject:GetComponent("Animation")
+          if animMonoCmpt then
+            animMonoCmpt:Play(endAnimName)
+          end
+          YIELD(TT, waitTime)
+          local sEffect = self._world:GetService("Effect")
+          sEffect:DestroyEffectByID(effId)
+        end)
       end
     end
   end
@@ -140,35 +120,30 @@ end
 
 _class("BuffViewChargeCurseHP", BuffViewBase)
 BuffViewChargeCurseHP = BuffViewChargeCurseHP
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChargeCurseHP.IsNotifyMatch = function(self, notify)
-  -- function num : 0_2
+function BuffViewChargeCurseHP:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChargeCurseHP.PlayView = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function BuffViewChargeCurseHP:PlayView(TT)
   local result = self._buffResult
   local eid = result:GetEntityID()
-  local entity = (self._world):GetEntityByID(eid)
+  local entity = self._world:GetEntityByID(eid)
   local curCurseHpVal = result:GetCurseHPVal()
   local curseHpDeltaVal = result:GetChangedVal()
   if entity:HasPet() then
-    entity = (entity:Pet()):GetOwnerTeamEntity()
+    entity = entity:Pet():GetOwnerTeamEntity()
   end
   local hpCmpt = entity:HP()
   hpCmpt:SetCurseHpValue(curCurseHpVal)
-  local playDamageSvc = (self._world):GetService("PlayDamage")
+  local playDamageSvc = self._world:GetService("PlayDamage")
   local damageInfo = DamageInfo:New(0, DamageType.Recover)
   damageInfo:SetCurseHp(curCurseHpVal)
   damageInfo:SetCurseHpDelta(nil)
   playDamageSvc:UpdateTargetHPBar(TT, entity, damageInfo)
   local bShowDamage = result:GetShowDamage()
   if bShowDamage then
-    local hudDamageInfo = nil
+    local hudDamageInfo
     local showDamageElementType = result:GetShowDamageElementType()
     if showDamageElementType then
       if showDamageElementType == ElementType.ElementType_None then
@@ -183,5 +158,3 @@ BuffViewChargeCurseHP.PlayView = function(self, TT)
     end
   end
 end
-
-

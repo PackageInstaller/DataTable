@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_show_effect_when_team_in_skill_scope_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewShowEffectWhenTeamInSkillScope", BuffViewBase)
 BuffViewShowEffectWhenTeamInSkillScope = BuffViewShowEffectWhenTeamInSkillScope
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewShowEffectWhenTeamInSkillScope.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewShowEffectWhenTeamInSkillScope:PlayView(TT)
   local buffResult = self._buffResult
   local match = buffResult:GetMatch()
   local effectId = buffResult:GetEffectId()
   local resultBuffId = buffResult:GetBuffID()
   local resultBuffSeq = buffResult:GetBuffSeq()
-  local teamEntity = ((self._world):Player()):GetLocalTeamEntity()
+  local teamEntity = self._world:Player():GetLocalTeamEntity()
   local teamEntityLeader = teamEntity:GetTeamLeaderPetEntity()
   local effectHolderCmpt = teamEntityLeader:EffectHolder()
   if not effectHolderCmpt then
@@ -29,55 +22,44 @@ BuffViewShowEffectWhenTeamInSkillScope.PlayView = function(self, TT)
       hasCreate = true
     end
     if not hasCreate then
-      local effectService = (self._world):GetService("Effect")
+      local effectService = self._world:GetService("Effect")
       local effEntity = effectService:CreateEffect(effectId, teamEntityLeader)
     end
   else
-    do
-      local petList = (teamEntity:Team()):GetTeamPetEntities()
-      for i,entity in ipairs(petList) do
-        self:_ClearEffect(entity, effectId)
-      end
-      do
-        local playBuffService = (self._world):GetService("PlayBuff")
-        local buffViewComponent = teamEntity:BuffView()
-        if buffViewComponent then
-          local viewIns = buffViewComponent:GetBuffViewInstanceArray()
-          for _,inst in ipairs(viewIns) do
-            local nuffSeq = inst:BuffSeq()
-            local buffID = inst:BuffID()
-            local buffEffectType = inst:GetBuffEffectType()
-            if (table.intable)(resultBuffSeq, nuffSeq) then
-              if match then
-                playBuffService:PlayAddBuff(TT, inst, teamEntity:GetID())
-              else
-                playBuffService:PlayRemoveBuff(TT, inst, NTBuffUnload:New())
-              end
-            end
-          end
+    local petList = teamEntity:Team():GetTeamPetEntities()
+    for i, entity in ipairs(petList) do
+      self:_ClearEffect(entity, effectId)
+    end
+  end
+  local playBuffService = self._world:GetService("PlayBuff")
+  local buffViewComponent = teamEntity:BuffView()
+  if buffViewComponent then
+    local viewIns = buffViewComponent:GetBuffViewInstanceArray()
+    for _, inst in ipairs(viewIns) do
+      local nuffSeq = inst:BuffSeq()
+      local buffID = inst:BuffID()
+      local buffEffectType = inst:GetBuffEffectType()
+      if table.intable(resultBuffSeq, nuffSeq) then
+        if match then
+          playBuffService:PlayAddBuff(TT, inst, teamEntity:GetID())
+        else
+          playBuffService:PlayRemoveBuff(TT, inst, NTBuffUnload:New())
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewShowEffectWhenTeamInSkillScope.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewShowEffectWhenTeamInSkillScope:IsNotifyMatch(notify)
   if notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveStart or notify:GetNotifyType() == NotifyType.TeamLeaderEachMoveEnd then
-    local movePos = (self._buffResult):GetMovePos()
+    local movePos = self._buffResult:GetMovePos()
     return movePos == notify:GetPos()
   else
     return true
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewShowEffectWhenTeamInSkillScope._ClearEffect = function(self, entity, effectId)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffViewShowEffectWhenTeamInSkillScope:_ClearEffect(entity, effectId)
   local effectHolderCmpt = entity:EffectHolder()
   if not effectHolderCmpt then
     entity:AddEffectHolder()
@@ -86,16 +68,14 @@ BuffViewShowEffectWhenTeamInSkillScope._ClearEffect = function(self, entity, eff
   local idDic = effectHolderCmpt:GetEffectIDEntityDic()
   local effectList = idDic[effectId]
   if effectList then
-    for k,entityID in pairs(effectList) do
+    for k, entityID in pairs(effectList) do
       if entityID then
-        local entity = (self._world):GetEntityByID(entityID)
+        local entity = self._world:GetEntityByID(entityID)
         if entity then
-          (self._world):DestroyEntity(entity)
+          self._world:DestroyEntity(entity)
         end
       end
     end
     idDic[effectId] = nil
   end
 end
-
-

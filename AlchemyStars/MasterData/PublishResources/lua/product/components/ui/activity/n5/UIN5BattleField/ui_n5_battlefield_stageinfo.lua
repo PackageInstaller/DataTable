@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5BattleField/ui_n5_battlefield_stageinfo.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5BattleFieldStageInfo", UIController)
 UIN5BattleFieldStageInfo = UIN5BattleFieldStageInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5BattleFieldStageInfo.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN5BattleFieldStageInfo:Constructor()
   self._missionModule = self:GetModule(MissionModule)
   self._totalWave = 0
   self._totalMilitaryExploit = 0
@@ -24,22 +17,18 @@ UIN5BattleFieldStageInfo.Constructor = function(self)
   self._tempTodayMilitaryExploitDelta = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN5BattleFieldStageInfo:OnShow(uiParams)
   self._cfg_battlefiled = uiParams[1]
   self._cfg_conquest_mission = uiParams[2]
   self._componentInfo = uiParams[3]
-  self._cfg_conquest_level_waves = (Cfg.cfg_conquest_level_wave)({LevelID = ((self._cfg_conquest_mission)[1]).LevelID})
+  self._cfg_conquest_level_waves = Cfg.cfg_conquest_level_wave({
+    LevelID = self._cfg_conquest_mission[1].LevelID
+  })
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo._GetComponents = function(self)
-  -- function num : 0_2
+function UIN5BattleFieldStageInfo:_GetComponents()
   self._uianim = self:GetGameObject("uianim")
   self._stageName = self:GetUIComponent("UILocalizationText", "StageName")
   self._content = self:GetUIComponent("UIRichText", "Content")
@@ -53,85 +42,63 @@ UIN5BattleFieldStageInfo._GetComponents = function(self)
   self._recommendPetText = self:GetUIComponent("UILocalizationText", "RecommendPetText")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._stageName):SetText((StringTable.Get)((self._cfg_battlefiled).MissionName))
-  ;
-  (self._content):SetText((StringTable.Get)((self._cfg_battlefiled).MissionDec))
-  ;
-  (self._recommendInfo):SetText((StringTable.Get)(((self._cfg_conquest_mission)[1]).RecommendDesc))
-  ;
-  (self._curPassWaveText):SetText((StringTable.Get)("str_n5_battlefield_battle_pass_wave"))
-  ;
-  (self._curMilitaryExploitText):SetText((StringTable.Get)("str_n5_battlefield_today_militaryexploit"))
-  ;
-  (self._recommendPetText):SetText((StringTable.Get)("str_n5_recommend_pet"))
-  self._totalWave = ((self._cfg_conquest_mission)[1]).WaveCount
+function UIN5BattleFieldStageInfo:_OnValue()
+  self._stageName:SetText(StringTable.Get(self._cfg_battlefiled.MissionName))
+  self._content:SetText(StringTable.Get(self._cfg_battlefiled.MissionDec))
+  self._recommendInfo:SetText(StringTable.Get(self._cfg_conquest_mission[1].RecommendDesc))
+  self._curPassWaveText:SetText(StringTable.Get("str_n5_battlefield_battle_pass_wave"))
+  self._curMilitaryExploitText:SetText(StringTable.Get("str_n5_battlefield_today_militaryexploit"))
+  self._recommendPetText:SetText(StringTable.Get("str_n5_recommend_pet"))
+  self._totalWave = self._cfg_conquest_mission[1].WaveCount
   self._totalMilitaryExploit = self:_CalcTotalMilitaryExploit()
-  self._todayWave = ((((self._componentInfo).m_battlefield_info).m_challenge_mission_info)[(self._cfg_battlefiled).CampaignMissionID]).wave_index
-  self._todayMilitaryExploit = ((((self._componentInfo).m_battlefield_info).m_challenge_mission_info)[(self._cfg_battlefiled).CampaignMissionID]).military_exploit
+  self._todayWave = self._componentInfo.m_battlefield_info.m_challenge_mission_info[self._cfg_battlefiled.CampaignMissionID].wave_index
+  self._todayMilitaryExploit = self._componentInfo.m_battlefield_info.m_challenge_mission_info[self._cfg_battlefiled.CampaignMissionID].military_exploit
   self._tempTotalWaveDelta = self._totalWave / App.TargetFrame
   self._tempTotalMilitaryExploitDelta = self._totalMilitaryExploit / App.TargetFrame
   self._tempTodayWaveDelta = self._todayWave / App.TargetFrame
   self._tempTodayMilitaryExploitDelta = self._todayMilitaryExploit / App.TargetFrame
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo.InfoBtnOnClick = function(self, go)
-  -- function num : 0_4
-  self:ShowDialog("UIN5BattleFieldEnemyInfo", (self._cfg_conquest_mission)[1], self._componentInfo)
+function UIN5BattleFieldStageInfo:InfoBtnOnClick(go)
+  self:ShowDialog("UIN5BattleFieldEnemyInfo", self._cfg_conquest_mission[1], self._componentInfo)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo.BattleBtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local ctx = (self._missionModule):TeamCtx()
-  ctx:Init(TeamOpenerType.Conquest, {((self._cfg_conquest_mission)[1]).MissionID, EConquestMissionComponentType.ECONMCT_BATTLEFIELD, (self._cfg_battlefiled).ComponentID, ((self._componentInfo).m_battlefield_info).m_cur_index, ((self._cfg_conquest_mission)[1]).LevelID})
+function UIN5BattleFieldStageInfo:BattleBtnOnClick(go)
+  local ctx = self._missionModule:TeamCtx()
+  ctx:Init(TeamOpenerType.Conquest, {
+    self._cfg_conquest_mission[1].MissionID,
+    EConquestMissionComponentType.ECONMCT_BATTLEFIELD,
+    self._cfg_battlefiled.ComponentID,
+    self._componentInfo.m_battlefield_info.m_cur_index,
+    self._cfg_conquest_mission[1].LevelID
+  })
   self:Lock("DoEnterTeam")
   ctx:ShowDialogUITeams()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo.CloseBtnOnClick = function(self)
-  -- function num : 0_6
+function UIN5BattleFieldStageInfo:CloseBtnOnClick()
   self:_Close()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo._Close = function(self)
-  -- function num : 0_7
+function UIN5BattleFieldStageInfo:_Close()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo._CalcTotalMilitaryExploit = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN5BattleFieldStageInfo:_CalcTotalMilitaryExploit()
   local militaryexploit = 0
   if self._cfg_conquest_level_waves then
-    for key,value in pairs(self._cfg_conquest_level_waves) do
-      if value.WaveIndex <= ((self._cfg_conquest_mission)[1]).WaveCount then
-        militaryexploit = militaryexploit + (value.WaveFirstPassAward)[2]
+    for key, value in pairs(self._cfg_conquest_level_waves) do
+      if value.WaveIndex <= self._cfg_conquest_mission[1].WaveCount then
+        militaryexploit = militaryexploit + value.WaveFirstPassAward[2]
       end
     end
   end
-  do
-    return militaryexploit
-  end
+  return militaryexploit
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_9
+function UIN5BattleFieldStageInfo:OnUpdate(deltaTimeMS)
   if self._tempTotalWave == self._totalWave and self._tempTotalMilitaryExploit == self._totalMilitaryExploit and self._tempTodayWave == self._todayWave and self._tempTodayMilitaryExploit == self._todayMilitaryExploit then
-    return 
+    return
   end
   self._tempTotalWave = self:_UpdataText(self._totalWave, self._tempTotalWave, self._tempTotalWaveDelta, self._waveValue)
   self._tempTotalMilitaryExploit = self:_UpdataText(self._totalMilitaryExploit, self._tempTotalMilitaryExploit, self._tempTotalMilitaryExploitDelta, self._totalMilitaryExploitValue)
@@ -139,10 +106,7 @@ UIN5BattleFieldStageInfo.OnUpdate = function(self, deltaTimeMS)
   self._tempTodayMilitaryExploit = self:_UpdataText(self._todayMilitaryExploit, self._tempTodayMilitaryExploit, self._tempTodayMilitaryExploitDelta, self._todayMilitaryExploitValue)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5BattleFieldStageInfo._UpdataText = function(self, targetValue, curValue, delta, text)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN5BattleFieldStageInfo:_UpdataText(targetValue, curValue, delta, text)
   if curValue < targetValue then
     curValue = curValue + delta
     if targetValue <= curValue then
@@ -151,8 +115,6 @@ UIN5BattleFieldStageInfo._UpdataText = function(self, targetValue, curValue, del
   else
     curValue = targetValue
   end
-  text:SetText((math.ceil)(curValue))
+  text:SetText(math.ceil(curValue))
   return curValue
 end
-
-

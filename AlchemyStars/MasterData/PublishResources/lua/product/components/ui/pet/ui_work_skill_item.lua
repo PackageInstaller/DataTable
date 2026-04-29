@@ -1,19 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_work_skill_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorkSkillItem", UICustomWidget)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorkSkillItem.Constructor = function(self)
-  -- function num : 0_0
+function UIWorkSkillItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorkSkillItem.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWorkSkillItem:OnShow(uiParams)
   self._skillInfo = nil
   self._skillIconRawImageLoader = self:GetUIComponent("RawImageLoader", "skillIcon")
   self._skillDes = self:GetUIComponent("UILocalizationText", "skillDes")
@@ -21,22 +11,15 @@ UIWorkSkillItem.OnShow = function(self, uiParams)
   self._rectTransform = self:GetUIComponent("RectTransform", "UIWorkSkillItem")
   self._uiItemAtlas = self:GetAsset("UISpiritDetail.spriteatlas", LoadType.SpriteAtlas)
   self._showTipBtnGo = self:GetGameObject("showTipBtn")
-  ;
-  (self._showTipBtnGo):SetActive(false)
+  self._showTipBtnGo:SetActive(false)
   self._callback = nil
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorkSkillItem.OnHide = function(self)
-  -- function num : 0_2
+function UIWorkSkillItem:OnHide()
   self:Release()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorkSkillItem.Release = function(self)
-  -- function num : 0_3
+function UIWorkSkillItem:Release()
   self._skillInfo = nil
   self._skillIconRawImageLoader = nil
   self._skillDes = nil
@@ -44,17 +27,14 @@ UIWorkSkillItem.Release = function(self)
   self._uiItemAtlas = nil
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorkSkillItem.showTipBtnOnClick = function(self, go)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWorkSkillItem:showTipBtnOnClick(go)
   if self.isExceed == false then
-    return 
+    return
   end
   if self._callback then
     self._isOnClickChainSkill = false
     local vePos = Vector3(-225, 0, 0)
-    local worldPos = (self._rectTransform):TransformPoint(vePos)
+    local worldPos = self._rectTransform:TransformPoint(vePos)
     local index = 0
     index = self._index
     if self._index == 0 then
@@ -63,43 +43,27 @@ UIWorkSkillItem.showTipBtnOnClick = function(self, go)
     if self._isChainSkill == true then
       self._isOnClickChainSkill = true
     end
-    ;
-    (self._callback)(1, self._skillInfo, worldPos)
+    self._callback(1, self._skillInfo, worldPos)
   end
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorkSkillItem.CheckDesExceed = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self.isExceed = (ExtendText.StringEllipsis)(self._skillDes, 1083)
+function UIWorkSkillItem:CheckDesExceed()
+  self.isExceed = ExtendText.StringEllipsis(self._skillDes, 1083)
   if self.isExceed then
-    (self._showTipBtnGo):SetActive(true)
+    self._showTipBtnGo:SetActive(true)
   else
-    ;
-    (self._showTipBtnGo):SetActive(false)
+    self._showTipBtnGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorkSkillItem.SetData = function(self, skillInfo, callback)
-  -- function num : 0_6 , upvalues : _ENV
+function UIWorkSkillItem:SetData(skillInfo, callback)
   self._skillInfo = skillInfo
   self._callback = callback
-  local cfg = (Cfg.cfg_work_skill)[skillInfo]
+  local cfg = Cfg.cfg_work_skill[skillInfo]
   if cfg then
-    (self._skillIconRawImageLoader):LoadImage(cfg.Icon)
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._skillName).text = (StringTable.Get)(cfg.Name)
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._skillDes).text = (StringTable.Get)(cfg.Desc)
+    self._skillIconRawImageLoader:LoadImage(cfg.Icon)
+    self._skillName.text = StringTable.Get(cfg.Name)
+    self._skillDes.text = StringTable.Get(cfg.Desc)
   end
   self:CheckDesExceed()
 end
-
-

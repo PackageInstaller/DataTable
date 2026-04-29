@@ -1,51 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_extra_camp_entry/ui_main_lobby_senior_skin_kl_review2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_main_lobby_extra_base")
 _class("UIMainLobbySeniorSkinKLReview2", UIMainLobbyExtraBase)
 UIMainLobbySeniorSkinKLReview2 = UIMainLobbySeniorSkinKLReview2
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbySeniorSkinKLReview2.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+function UIMainLobbySeniorSkinKLReview2:OnShow()
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   self:AttachEvent(GameEventType.RefreshSeniorSkinRedPoint, self.RefreshSampleData)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinKLReview2.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIMainLobbySeniorSkinKLReview2:OnHide()
   self:DetachEvent(GameEventType.RefreshSeniorSkinRedPoint, self.RefreshSampleData)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinKLReview2.RefreshView = function(self)
-  -- function num : 0_2
+function UIMainLobbySeniorSkinKLReview2:RefreshView()
   self:SetRed()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinKLReview2.BtnOnClick = function(self, go)
-  -- function num : 0_3
+function UIMainLobbySeniorSkinKLReview2:BtnOnClick(go)
   if self:CheckCampaignOpen() then
     self:ShowDialog("UIHauteCoutureDrawControllerKLReview2")
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbySeniorSkinKLReview2.SetRed = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIMainLobbySeniorSkinKLReview2:SetRed()
   local redGo = self:GetGameObject("redGo")
-  if self._sample_info then
-    local red = (self._sample_info):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_RAFFLE)
-  end
+  local red = self._sample_info and self._sample_info:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_RAFFLE)
   redGo:SetActive(red)
 end
-
-

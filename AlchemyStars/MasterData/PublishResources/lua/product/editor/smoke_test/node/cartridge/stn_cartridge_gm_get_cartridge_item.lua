@@ -1,28 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/cartridge/stn_cartridge_gm_get_cartridge_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_state_node")
 _class("Cartridge_CheatGetCartridgeItem", Common_AsyncBase)
 Cartridge_CheatGetCartridgeItem = Cartridge_CheatGetCartridgeItem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-Cartridge_CheatGetCartridgeItem.TaskFunc = function(self, TT, status)
-  -- function num : 0_0 , upvalues : _ENV
-  local runData = (self._manager):GetMissionRunData()
-  local gmproxy = (GameGlobal.GetModule)(GMProxyModule)
-  local strcmd = (string.format)("add_asset %s %s %s", (LocalDB.GetString)("OpenIdTest"), runData:GetCartridgeID(), 1)
+function Cartridge_CheatGetCartridgeItem:TaskFunc(TT, status)
+  local runData = self._manager:GetMissionRunData()
+  local gmproxy = GameGlobal.GetModule(GMProxyModule)
+  local strcmd = string.format("add_asset %s %s %s", LocalDB.GetString("OpenIdTest"), runData:GetCartridgeID(), 1)
   status:SetMessage(strcmd)
   local addResResult = gmproxy:SendCmdTask(TT, strcmd)
   if addResResult.m_call_err ~= CallResultType.Normal then
-    (Log.exception)(self._className, "GM command failed: ", strcmd)
+    Log.exception(self._className, "GM command failed: ", strcmd)
     status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
     status:SetResult(ST_ASYNC_OPERATION_RESULT.ERROR)
-    return 
+    return
   end
   status:SetStatus(ST_ASYNC_OPERATION_STATUS.FINISHED)
   status:SetResult(ST_ASYNC_OPERATION_RESULT.SUCCESS)
 end
-
-

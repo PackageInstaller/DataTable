@@ -1,21 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_san_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeSanValue", BuffViewBase)
 BuffViewChangeSanValue = BuffViewChangeSanValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeSanValue.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeSanValue:PlayView(TT)
   local result = self._buffResult
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     featureSvcRender:NotifySanValueChange(result:GetCurSan(), result:GetOldSan(), result:GetRealModifyValue(), result:GetForceRefresh())
-    local svcPlayBuff = (self._world):GetService("PlayBuff")
+    local svcPlayBuff = self._world:GetService("PlayBuff")
     svcPlayBuff:PlayBuffView(TT, NTSanValueChange:New(result:GetCurSan(), result:GetOldSan(), result:GetDebtVal(), result:GetModifyTimes()))
   end
 end
-
-

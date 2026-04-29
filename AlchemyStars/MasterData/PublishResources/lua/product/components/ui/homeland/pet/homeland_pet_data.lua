@@ -1,56 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/homeland_pet_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPetData", Object)
 HomelandPetData = HomelandPetData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetData.Constructor = function(self, tmpID, pstID, level, awake, breakL, skin)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetData:Constructor(tmpID, pstID, level, awake, breakL, skin)
   self._tmpID = tmpID
   self._pstID = pstID
   self._awake = awake
   self._level = level
   self._break = breakL
   self._skin = skin
-  self._prefab = (HelperProxy:GetInstance()):GetPetPrefab(tmpID, awake, skin, PetSkinEffectPath.MODEL_AIRCRAFT)
+  self._prefab = HelperProxy:GetInstance():GetPetPrefab(tmpID, awake, skin, PetSkinEffectPath.MODEL_AIRCRAFT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetData.TmpID = function(self)
-  -- function num : 0_1
+function HomelandPetData:TmpID()
   return self._tmpID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetData.PstID = function(self)
-  -- function num : 0_2
+function HomelandPetData:PstID()
   return self._pstID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetData.Awake = function(self)
-  -- function num : 0_3
+function HomelandPetData:Awake()
   return self._awake
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetData.SkinID = function(self)
-  -- function num : 0_4
+function HomelandPetData:SkinID()
   return self._skin
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetData.Prefab = function(self)
-  -- function num : 0_5
+function HomelandPetData:Prefab()
   return self._prefab
 end
-
-

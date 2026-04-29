@@ -1,110 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_discovery/ui_discovery_diff/ui_diff_node_root.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffNodeRoot", UICustomWidget)
 UIDiffNodeRoot = UIDiffNodeRoot
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffNodeRoot.Constructor = function(self)
-  -- function num : 0_0
+function UIDiffNodeRoot:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeRoot.SetData = function(self, diffChapter)
-  -- function num : 0_1
+function UIDiffNodeRoot:SetData(diffChapter)
   self._chapterData = diffChapter
   self:GetComponents()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeRoot.GetComponents = function(self)
-  -- function num : 0_2
+function UIDiffNodeRoot:GetComponents()
   self._nodePool = self:GetUIComponent("UISelectObjectPath", "nodePool")
   self._linePool = self:GetUIComponent("UISelectObjectPath", "linePool")
   self._lineNextPool = self:GetUIComponent("UISelectObjectPath", "lineNextPool")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeRoot.OnValue = function(self)
-  -- function num : 0_3
+function UIDiffNodeRoot:OnValue()
   self:NodePool()
   self:Lines()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeRoot.Lines = function(self)
-  -- function num : 0_4
+function UIDiffNodeRoot:Lines()
   local lineCount = #self._tab - 1
   if lineCount < 0 then
     lineCount = 0
   end
-  ;
-  (self._linePool):SpawnObjects("UIDiffPathItem", lineCount)
-  local spawnLines = (self._linePool):GetAllSpawnList()
+  self._linePool:SpawnObjects("UIDiffPathItem", lineCount)
+  local spawnLines = self._linePool:GetAllSpawnList()
   for i = 1, #spawnLines do
     if i <= lineCount then
       local line = spawnLines[i]
-      ;
-      (line:GetGameObject()):SetActive(true)
-      local node1Pos = ((self._tab)[i]):Pos()
-      local node2Pos = ((self._tab)[i + 1]):Pos()
+      line:GetGameObject():SetActive(true)
+      local node1Pos = self._tab[i]:Pos()
+      local node2Pos = self._tab[i + 1]:Pos()
       line:SetData(node1Pos, node2Pos)
     else
-      do
-        do
-          local line = spawnLines[i]
-          ;
-          (line:GetGameObject()):SetActive(false)
-          -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC46: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      local line = spawnLines[i]
+      line:GetGameObject():SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffNodeRoot.NodePool = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local uiModule = (GameGlobal.GetUIModule)(DifficultyMissionModule)
-  local node = (self._nodePool):SpawnObject("UIDiffNodePool")
-  local nodes = (self._chapterData):Nodes()
+function UIDiffNodeRoot:NodePool()
+  local uiModule = GameGlobal.GetUIModule(DifficultyMissionModule)
+  local node = self._nodePool:SpawnObject("UIDiffNodePool")
+  local nodes = self._chapterData:Nodes()
   self._tab = {}
   for i = 1, #nodes do
     local id = nodes[i]
     local node = uiModule:GetNode(id)
     if node:Lock() == DiffMissionNodeStatus.Open then
-      (table.insert)(self._tab, node)
+      table.insert(self._tab, node)
     else
       break
     end
   end
-  do
-    local chapterid = (self._chapterData):ID()
-    local allPass = uiModule:AllPass(chapterid)
-    if allPass then
-      local cfg = (Cfg.cfg_difficulty_mission_chapter_desc)[chapterid]
-      local nextChapter = cfg.NextChapter
-      local node = DiffMissionNode:New(nil, chapterid, nextChapter, nil, true)
-      ;
-      (table.insert)(self._tab, node)
-    end
-    do
-      node:SetData(self._tab, self._chapterData)
-    end
+  local chapterid = self._chapterData:ID()
+  local allPass = uiModule:AllPass(chapterid)
+  if allPass then
+    local cfg = Cfg.cfg_difficulty_mission_chapter_desc[chapterid]
+    local nextChapter = cfg.NextChapter
+    local node = DiffMissionNode:New(nil, chapterid, nextChapter, nil, true)
+    table.insert(self._tab, node)
   end
+  node:SetData(self._tab, self._chapterData)
 end
-
-

@@ -1,41 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/data_select_next_buff_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("DataSelectNextBuffInstruction", BaseInstruction)
 DataSelectNextBuffInstruction = DataSelectNextBuffInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSelectNextBuffInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function DataSelectNextBuffInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSelectNextBuffInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function DataSelectNextBuffInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local addBuffResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.AddBuff)
   local buffIndex = phaseContext:GetCurBuffResultIndex()
   buffIndex = buffIndex + 1
   phaseContext:SetCurBuffResultIndex(buffIndex)
   if not addBuffResultArray then
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
-  if #addBuffResultArray < buffIndex then
+  if buffIndex > #addBuffResultArray then
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   local buffResult = addBuffResultArray[buffIndex]
   if buffResult == nil or next(buffResult._newBuffArray) == nil then
     phaseContext:SetCurTargetEntityID(-1)
-    return 
+    return
   end
   local targetEntityID = buffResult:GetEntityID()
   phaseContext:SetCurTargetEntityID(targetEntityID)
 end
-
-

@@ -1,95 +1,75 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_home_secret_msg_switch.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeSecretMsgSwitch", Object)
 UIHomeSecretMsgSwitch = UIHomeSecretMsgSwitch
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeSecretMsgSwitch.Constructor = function(self, msgs, text1, text2)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomeSecretMsgSwitch:Constructor(msgs, text1, text2)
   self._msgs = msgs
-  self._trans1 = (text1.gameObject):GetComponent(typeof(UnityEngine.RectTransform))
-  self._trans2 = (text2.gameObject):GetComponent(typeof(UnityEngine.RectTransform))
-  self._height = ((self._trans1).sizeDelta).y
+  self._trans1 = text1.gameObject:GetComponent(typeof(UnityEngine.RectTransform))
+  self._trans2 = text2.gameObject:GetComponent(typeof(UnityEngine.RectTransform))
+  self._height = self._trans1.sizeDelta.y
   self._waitTime = 2000
   self._moveTime = 1000
   self._text1 = text1
   self._text2 = text2
   self._items = {
-{Rect = self._trans1, Text = self._text1}
-, 
-{Rect = self._trans2, Text = self._text2}
-}
-  if #self._msgs ~= 0 or #self._msgs == 1 then
-    (self._text1):RefreshText((self._msgs)[1])
-    ;
-    ((self._text2).gameObject):SetActive(false)
+    {
+      Rect = self._trans1,
+      Text = self._text1
+    },
+    {
+      Rect = self._trans2,
+      Text = self._text2
+    }
+  }
+  if #self._msgs == 0 then
+  elseif #self._msgs == 1 then
+    self._text1:RefreshText(self._msgs[1])
+    self._text2.gameObject:SetActive(false)
   else
     self._cur = 1
-    self._first = (self._items)[1]
-    self._temp = (self._items)[2]
-    ;
-    ((self._first).Text):RefreshText((self._msgs)[1])
-    ;
-    ((self._temp).Text):RefreshText((self._msgs)[2])
-    ;
-    ((GameGlobal.TaskManager)()):StartTask(self.anim, self)
+    self._first = self._items[1]
+    self._temp = self._items[2]
+    self._first.Text:RefreshText(self._msgs[1])
+    self._temp.Text:RefreshText(self._msgs[2])
+    GameGlobal.TaskManager():StartTask(self.anim, self)
   end
   self._active = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeSecretMsgSwitch.Dispose = function(self)
-  -- function num : 0_1
+function UIHomeSecretMsgSwitch:Dispose()
   self._active = false
   if self._moving then
-    (self._trans1):DOKill()
-    ;
-    (self._trans2):DOKill()
+    self._trans1:DOKill()
+    self._trans2:DOKill()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeSecretMsgSwitch.anim = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  while 1 do
+function UIHomeSecretMsgSwitch:anim(TT)
+  while true do
     YIELD(TT, self._waitTime)
     if not self._active then
-      return 
+      return
     end
     self._moving = true
-    ;
-    ((self._first).Rect):DOAnchorPosY(self._height, self._moveTime / 1000)
-    ;
-    ((self._temp).Rect):DOAnchorPosY(0, self._moveTime / 1000)
+    self._first.Rect:DOAnchorPosY(self._height, self._moveTime / 1000)
+    self._temp.Rect:DOAnchorPosY(0, self._moveTime / 1000)
     YIELD(TT, self._moveTime)
     YIELD(TT)
     if not self._active then
-      return 
+      return
     end
     self._moving = false
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    ((self._first).Rect).anchoredPosition = Vector2(0, -self._height)
+    self._first.Rect.anchoredPosition = Vector2(0, -self._height)
     self._cur = self._cur + 1
-    if #self._msgs < self._cur then
+    if self._cur > #self._msgs then
       self._cur = 1
     end
     local next = self._cur + 1
-    if #self._msgs < next then
+    if next > #self._msgs then
       next = 1
     end
-    ;
-    ((self._first).Text):RefreshText((self._msgs)[next])
+    self._first.Text:RefreshText(self._msgs[next])
     local t = self._temp
     self._temp = self._first
     self._first = t
   end
 end
-
-

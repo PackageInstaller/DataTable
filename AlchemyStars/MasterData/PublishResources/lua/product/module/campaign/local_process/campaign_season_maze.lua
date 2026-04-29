@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_season_maze.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignSeasonMaze", ICampaignComponentLocalProcessBase)
 CCampaignSeasonMaze = CCampaignSeasonMaze
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignSeasonMaze.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignSeasonMaze:Constructor()
   self._seasonMazeComponet = nil
   self._seasonMazeCompInfo = nil
   self._totalProgressComponent = nil
@@ -16,55 +9,37 @@ CCampaignSeasonMaze.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonMaze.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignSeasonMaze:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_SEASON_MAZE
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonMaze.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignSeasonMaze:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonMaze.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignSeasonMaze:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetSeasonMazeComponent()
   self:_GetTotalProgressComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonMaze._GetSeasonMazeComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._seasonMazeComponet = (self._campaignObj):GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
+function CCampaignSeasonMaze:_GetSeasonMazeComponent()
+  self._seasonMazeComponet = self._campaignObj:GetComponent(ECCampaignSeasonMazeComponentID.SEASON_MAZE)
   if not self._seasonMazeComponet then
-    return 
+    return
   end
-  self._seasonMazeCompInfo = (self._seasonMazeComponet):ComponentInfo()
+  self._seasonMazeCompInfo = self._seasonMazeComponet:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonMaze._GetTotalProgressComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._totalProgressComponent = (self._campaignObj):GetComponent(ECCampaignSeasonMazeComponentID.TOTAL_PROCESS)
+function CCampaignSeasonMaze:_GetTotalProgressComponent()
+  self._totalProgressComponent = self._campaignObj:GetComponent(ECCampaignSeasonMazeComponentID.TOTAL_PROCESS)
   if not self._totalProgressComponent then
-    return 
+    return
   end
-  self._totalProgressComponentInfo = (self._totalProgressComponent):ComponentInfo()
+  self._totalProgressComponentInfo = self._totalProgressComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonMaze.GetComponent = function(self, componentID)
-  -- function num : 0_6 , upvalues : _ENV
+function CCampaignSeasonMaze:GetComponent(componentID)
   if ECCampaignSeasonMazeComponentID.SEASON_MAZE == componentID then
     return self._seasonMazeComponet
   end
@@ -74,10 +49,7 @@ CCampaignSeasonMaze.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignSeasonMaze.GetComponentInfo = function(self, componentID)
-  -- function num : 0_7 , upvalues : _ENV
+function CCampaignSeasonMaze:GetComponentInfo(componentID)
   if ECCampaignSeasonMazeComponentID.SEASON_MAZE == componentID then
     return self._seasonMazeCompInfo
   end
@@ -86,5 +58,3 @@ CCampaignSeasonMaze.GetComponentInfo = function(self, componentID)
   end
   return nil
 end
-
-

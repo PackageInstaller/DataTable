@@ -1,66 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/guide/guide_link_line_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("GuideLinkLineComponent", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-GuideLinkLineComponent.Constructor = function(self)
-  -- function num : 0_0
+function GuideLinkLineComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideLinkLineComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_1
+function GuideLinkLineComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-GuideLinkLineComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_2
+function GuideLinkLineComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GuideLinkLine = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).GuideLinkLine)
+function Entity:GuideLinkLine()
+  return self:GetComponent(self.WEComponentsEnum.GuideLinkLine)
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasGuideLinkLine = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).GuideLinkLine)
+function Entity:HasGuideLinkLine()
+  return self:HasComponent(self.WEComponentsEnum.GuideLinkLine)
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddGuideLinkLine = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuideLinkLine
+function Entity:AddGuideLinkLine()
+  local index = self.WEComponentsEnum.GuideLinkLine
   local component = GuideLinkLineComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceGuideLinkLine = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).GuideLinkLine
+function Entity:ReplaceGuideLinkLine()
+  local index = self.WEComponentsEnum.GuideLinkLine
   local component = GuideLinkLineComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveGuideLinkLine = function(self)
-  -- function num : 0_7
+function Entity:RemoveGuideLinkLine()
   if self:HasGuideLinkLine() then
-    self:RemoveComponent((self.WEComponentsEnum).GuideLinkLine)
+    self:RemoveComponent(self.WEComponentsEnum.GuideLinkLine)
   end
 end
-
-

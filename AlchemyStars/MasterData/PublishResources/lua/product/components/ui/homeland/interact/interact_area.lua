@@ -1,72 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/interact/interact_area.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("InteractArea", Object)
 InteractArea = InteractArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-InteractArea.Constructor = function(self, build, distance)
-  -- function num : 0_0
+function InteractArea:Constructor(build, distance)
   self._build = build
   self.interactDistance = distance
   self.active = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractArea.Dispose = function(self)
-  -- function num : 0_1
+function InteractArea:Dispose()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractArea.IsActive = function(self)
-  -- function num : 0_2
+function InteractArea:IsActive()
   return self.active
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractArea.SetActive = function(self, active)
-  -- function num : 0_3
+function InteractArea:SetActive(active)
   self.active = active
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractArea.GetBuild = function(self)
-  -- function num : 0_4
+function InteractArea:GetBuild()
   return self._build
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractArea.InteractArea = function(self)
-  -- function num : 0_5
+function InteractArea:InteractArea()
   if not self._build then
-    return 
+    return
   end
-  ;
-  (self._build):EnterInteractArea()
+  self._build:EnterInteractArea()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractArea.UnInteractArea = function(self)
-  -- function num : 0_6
+function InteractArea:UnInteractArea()
   if not self._build then
-    return 
+    return
   end
-  ;
-  (self._build):LeaveInteractArea()
+  self._build:LeaveInteractArea()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractArea.IsTrigger = function(self, pos)
-  -- function num : 0_7 , upvalues : _ENV
+function InteractArea:IsTrigger(pos)
   local interactPos = self:_GetInteractPosition()
   if not interactPos then
     return false
@@ -74,19 +44,13 @@ InteractArea.IsTrigger = function(self, pos)
   if not pos then
     return false
   end
-  local distance = (Vector3.Distance)(interactPos, pos)
-  do return distance <= self.interactDistance end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local distance = Vector3.Distance(interactPos, pos)
+  return distance <= self.interactDistance
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-InteractArea._GetInteractPosition = function(self)
-  -- function num : 0_8
+function InteractArea:_GetInteractPosition()
   if not self._build then
     return nil
   end
-  return (self._build):GetInteractAreaPosition()
+  return self._build:GetInteractAreaPosition()
 end
-
-

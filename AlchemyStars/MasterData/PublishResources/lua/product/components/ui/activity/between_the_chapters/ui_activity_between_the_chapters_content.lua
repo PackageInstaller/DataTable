@@ -1,87 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/between_the_chapters/ui_activity_between_the_chapters_content.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_center_content_base")
 _class("UIActivityBetweenTheChaptersContent", UISideEnterCenterContentBase)
 UIActivityBetweenTheChaptersContent = UIActivityBetweenTheChaptersContent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityBetweenTheChaptersContent._SetRemainingTime = function(self, widgetName, descId, endTime, customTimeStr)
-  -- function num : 0_0 , upvalues : _ENV
-  local obj = (UIWidgetHelper.SpawnObject)(self, widgetName, "UIActivityCommonRemainingTime")
+function UIActivityBetweenTheChaptersContent:_SetRemainingTime(widgetName, descId, endTime, customTimeStr)
+  local obj = UIWidgetHelper.SpawnObject(self, widgetName, "UIActivityCommonRemainingTime")
   if customTimeStr then
     obj:SetCustomTimeStr_Common_1()
   end
   obj:SetAdvanceText(descId)
   obj:SetData(endTime, nil, function()
-    -- function num : 0_0_0 , upvalues : self
     self:_UpdateRemainingTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent.DoInit = function(self, params)
-  -- function num : 0_1 , upvalues : _ENV
-  if params then
-    self._campaignType = params.campaign_type
-    if not params or not params.component_ids then
-      self._componentIds = {}
-      if params then
-        self._campaignId = params.campaign_id
-        self._componentId_drop = ECampaignCelebrationComponentID.ECAMPAIGN_CELEBRATION_MISSION_DROP
-        self._componentId_person = ECampaignCelebrationComponentID.ECAMPAIGN_CELEBRATION_PERSON_PROGRESS
-        self._campaign = self._data
-      end
-    end
-  end
+function UIActivityBetweenTheChaptersContent:DoInit(params)
+  self._campaignType = params and params.campaign_type
+  self._componentIds = params and params.component_ids or {}
+  self._campaignId = params and params.campaign_id
+  self._componentId_drop = ECampaignCelebrationComponentID.ECAMPAIGN_CELEBRATION_MISSION_DROP
+  self._componentId_person = ECampaignCelebrationComponentID.ECAMPAIGN_CELEBRATION_PERSON_PROGRESS
+  self._campaign = self._data
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent.DoShow = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._campaign):CheckCampaignClose_ShowClientError() then
-    return 
+function UIActivityBetweenTheChaptersContent:DoShow()
+  if self._campaign:CheckCampaignClose_ShowClientError() then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self
-    (self._campaign):ClearCampaignNew(TT)
-  end
-)
+    self._campaign:ClearCampaignNew(TT)
+  end)
   self:AddListener()
-  self._clientCfg = (Cfg.cfg_campaign_between_the_chapters)({})
+  self._clientCfg = Cfg.cfg_campaign_between_the_chapters({})
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent.DoHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (UIWidgetHelper.ClearWidgets)(self, "_tipsPool")
+function UIActivityBetweenTheChaptersContent:DoHide()
+  UIWidgetHelper.ClearWidgets(self, "_tipsPool")
   self:DetachListener()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent.DoDestroy = function(self)
-  -- function num : 0_4
+function UIActivityBetweenTheChaptersContent:DoDestroy()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._Refresh = function(self, notFirst)
-  -- function num : 0_5 , upvalues : _ENV
-  self._component_drop = (self._campaign):GetComponent(self._componentId_drop)
+function UIActivityBetweenTheChaptersContent:_Refresh(notFirst)
+  self._component_drop = self._campaign:GetComponent(self._componentId_drop)
   if not self._component_drop then
-    (Log.exception)("UIActivityBetweenTheChaptersContent:_Refresh() drop component == nil")
+    Log.exception("UIActivityBetweenTheChaptersContent:_Refresh() drop component == nil")
   end
-  self._component_person = (self._campaign):GetComponent(self._componentId_person)
+  self._component_person = self._campaign:GetComponent(self._componentId_person)
   if not self._component_person then
-    (Log.exception)("UIActivityBetweenTheChaptersContent:_Refresh() person progress component == nil")
+    Log.exception("UIActivityBetweenTheChaptersContent:_Refresh() person progress component == nil")
   end
   self:_SetUI()
   self:_InitData()
@@ -93,64 +61,53 @@ UIActivityBetweenTheChaptersContent._Refresh = function(self, notFirst)
   self:_UpdateRemainingTime()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._SetUI = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local maxCount = ((self._clientCfg)[#self._clientCfg]).NeedValue
-  local curCount = ((self._component_drop):GetComponentInfo()).m_total_count
-  curCount = (math.min)(curCount, maxCount)
+function UIActivityBetweenTheChaptersContent:_SetUI()
+  local maxCount = self._clientCfg[#self._clientCfg].NeedValue
+  local curCount = self._component_drop:GetComponentInfo().m_total_count
+  curCount = math.min(curCount, maxCount)
   local c_gray, c_yellow = "#4C4C4B", "#FEA226"
   local c1 = curCount == maxCount and c_yellow or c_gray
-  local s1 = (UIActivityHelper.GetColorText)(c1, curCount)
+  local s1 = UIActivityHelper.GetColorText(c1, curCount)
   local c2 = c_yellow
-  local s2 = (UIActivityHelper.GetColorText)(c2, maxCount)
-  local txtProc = (StringTable.Get)("str_between_chapters_num", s1, s2)
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "processText", txtProc)
-  local txtBroad = (StringTable.Get)("str_between_chapters_title")
-  ;
-  (UIWidgetHelper.SetLocalizationText)(self, "broadcastText", txtBroad)
+  local s2 = UIActivityHelper.GetColorText(c2, maxCount)
+  local txtProc = StringTable.Get("str_between_chapters_num", s1, s2)
+  UIWidgetHelper.SetLocalizationText(self, "processText", txtProc)
+  local txtBroad = StringTable.Get("str_between_chapters_title")
+  UIWidgetHelper.SetLocalizationText(self, "broadcastText", txtBroad)
   self:_SetHourGlass(curCount)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._SetHourGlass = function(self, curCount)
-  -- function num : 0_7 , upvalues : _ENV
-  local state = (curCount <= 4 and 1) or (curCount <= 9 and 2) or 3
-  local objs = (UIWidgetHelper.GetObjGroupByWidgetName)(self, {
-{"hourglass_1"}
-, 
-{"hourglass_2"}
-, 
-{"hourglass_3"}
-})
-  ;
-  (UIWidgetHelper.SetObjGroupShow)(objs, state)
+function UIActivityBetweenTheChaptersContent:_SetHourGlass(curCount)
+  local state = curCount <= 4 and 1 or curCount <= 9 and 2 or 3
+  local objs = UIWidgetHelper.GetObjGroupByWidgetName(self, {
+    {
+      "hourglass_1"
+    },
+    {
+      "hourglass_2"
+    },
+    {
+      "hourglass_3"
+    }
+  })
+  UIWidgetHelper.SetObjGroupShow(objs, state)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._UpdateRemainingTime = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local lineComponent = (self._campaign):GetComponent(ECampaignCelebrationComponentID.ECAMPAIGN_CELEBRATION_MISSION_DROP)
-  local endTime = (lineComponent:GetComponentInfo()).m_close_time
+function UIActivityBetweenTheChaptersContent:_UpdateRemainingTime()
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local lineComponent = self._campaign:GetComponent(ECampaignCelebrationComponentID.ECAMPAIGN_CELEBRATION_MISSION_DROP)
+  local endTime = lineComponent:GetComponentInfo().m_close_time
   local stamp = endTime - curTime
-  if stamp > 0 then
+  if 0 < stamp then
     self:_SetRemainingTime("reminetime", nil, endTime, true)
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._InitData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local rewards = ((self._component_person):GetComponentInfo()).m_progress_rewards
-  for key,value in ipairs(self._clientCfg) do
+function UIActivityBetweenTheChaptersContent:_InitData()
+  local rewards = self._component_person:GetComponentInfo().m_progress_rewards
+  for key, value in ipairs(self._clientCfg) do
     value._id = value.ID
     value._title = value.Title
     value._valueNum = value.NeedValue
@@ -159,50 +116,37 @@ UIActivityBetweenTheChaptersContent._InitData = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._SetCellList = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIActivityBetweenTheChaptersContent:_SetCellList()
   local cellDatas = self._clientCfg
-  self._cells = (UIWidgetHelper.SpawnObjects)(self, "Content", "UIActivityBetweenTheChaptersAwardCell", #cellDatas)
-  for i,v in ipairs(self._cells) do
+  self._cells = UIWidgetHelper.SpawnObjects(self, "Content", "UIActivityBetweenTheChaptersAwardCell", #cellDatas)
+  for i, v in ipairs(self._cells) do
     v:SetData(i, cellDatas[i], function(index)
-    -- function num : 0_10_0 , upvalues : _ENV, self
-    for i,v in ipairs(self._cells) do
-      v:SetSelected(i == index)
-    end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-, function(index)
-    -- function num : 0_10_1 , upvalues : self
-    self:GetTotalAward(index)
-  end
-, function(matid, pos)
-    -- function num : 0_10_2 , upvalues : _ENV, self
-    (UIWidgetHelper.SetAwardItemTips)(self, "_tipsPool", matid, pos)
-  end
-)
+      for i, v in ipairs(self._cells) do
+        v:SetSelected(i == index)
+      end
+    end, function(index)
+      self:GetTotalAward(index)
+    end, function(matid, pos)
+      UIWidgetHelper.SetAwardItemTips(self, "_tipsPool", matid, pos)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._InitScrollPos = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIActivityBetweenTheChaptersContent:_InitScrollPos()
   local canGetIdx = self:_CheckCanGetIndex()
   if canGetIdx ~= 0 then
     local content = self:GetUIComponent("RectTransform", "Content")
     local height = (canGetIdx - 1) * 152
-    content.anchoredPosition = Vector2((content.anchoredPosition).x, height)
+    content.anchoredPosition = Vector2(content.anchoredPosition.x, height)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._CheckCanGetIndex = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  for i,v in ipairs(self._clientCfg) do
-    local tb_check = {[ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = true, [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = true}
+function UIActivityBetweenTheChaptersContent:_CheckCanGetIndex()
+  for i, v in ipairs(self._clientCfg) do
+    local tb_check = {
+      [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV] = true,
+      [ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK] = true
+    }
     if tb_check[v._state] then
       return i
     end
@@ -210,91 +154,59 @@ UIActivityBetweenTheChaptersContent._CheckCanGetIndex = function(self)
   return 1
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._PlayAnimInSeq = function(self)
-  -- function num : 0_13
+function UIActivityBetweenTheChaptersContent:_PlayAnimInSeq()
   local canGetIdx = self:_CheckCanGetIndex()
   for i = canGetIdx, #self._cells do
-    local obj = (self._cells)[i]
+    local obj = self._cells[i]
     obj:PlayAnimationInSequence(i)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent.GetTotalAward = function(self, index)
-  -- function num : 0_14
-  (self._component_person):Start_HandleReceiveReward(index, function(res, rewards)
-    -- function num : 0_14_0 , upvalues : self
+function UIActivityBetweenTheChaptersContent:GetTotalAward(index)
+  self._component_person:Start_HandleReceiveReward(index, function(res, rewards)
     self:_OnReceiveRewards(res, rewards)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._OnReceiveRewards = function(self, res, rewards)
-  -- function num : 0_15 , upvalues : _ENV
+function UIActivityBetweenTheChaptersContent:_OnReceiveRewards(res, rewards)
   if self.view == nil then
-    return 
+    return
   end
   if res:GetSucc() then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+    UIActivityHelper.ShowUIGetRewards(rewards)
   else
-    ;
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._CheckCanReceive = function(self, count)
-  -- function num : 0_16
-  local corCount = ((self._component_drop):GetComponentInfo()).m_total_count
-  do return count <= corCount end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIActivityBetweenTheChaptersContent:_CheckCanReceive(count)
+  local corCount = self._component_drop:GetComponentInfo().m_total_count
+  return count <= corCount
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent._GetReceivedState = function(self, count)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityBetweenTheChaptersContent:_GetReceivedState(count)
   local state = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_LOCK
-  local process = ((self._component_person):GetComponentInfo()).m_received_progress
+  local process = self._component_person:GetComponentInfo().m_received_progress
   if self:_CheckCanReceive(count) then
     state = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_CAN_RECV
   end
-  for index,value in pairs(process) do
+  for index, value in pairs(process) do
     if count == value then
       state = ECumulativeLoginRewardStatus.E_CUMULATIVE_LOGIN_REWARD_RECVED
       break
     end
   end
-  do
-    return state
-  end
+  return state
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent.AddListener = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIActivityBetweenTheChaptersContent:AddListener()
   self:AttachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent.DetachListener = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityBetweenTheChaptersContent:DetachListener()
   self:DetachEvent(GameEventType.OnUIGetItemCloseInQuest, self.OnUIGetItemCloseInQuest)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityBetweenTheChaptersContent.OnUIGetItemCloseInQuest = function(self)
-  -- function num : 0_20
+function UIActivityBetweenTheChaptersContent:OnUIGetItemCloseInQuest()
   self:_Refresh(true)
 end
-
-

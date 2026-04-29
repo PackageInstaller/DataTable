@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_ride_on.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectRideOnResult", SkillEffectResultBase)
 SkillEffectRideOnResult = SkillEffectRideOnResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectRideOnResult.Constructor = function(self, curMountID, oldPos, monsterMountID, trapMountID, trapID, summonPosList, height, centerOffset)
-  -- function num : 0_0
+function SkillEffectRideOnResult:Constructor(curMountID, oldPos, monsterMountID, trapMountID, trapID, summonPosList, height, centerOffset)
   self._curMountID = curMountID
   self._oldPos = oldPos
   self._monsterMountID = monsterMountID
@@ -20,81 +13,46 @@ SkillEffectRideOnResult.Constructor = function(self, curMountID, oldPos, monster
   self._centerOffset = centerOffset
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectRideOnResult:GetEffectType()
   return SkillEffectType.RideOn
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetCurMountID = function(self)
-  -- function num : 0_2
+function SkillEffectRideOnResult:GetCurMountID()
   return self._curMountID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetOldPos = function(self)
-  -- function num : 0_3
+function SkillEffectRideOnResult:GetOldPos()
   return self._oldPos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetMonsterMountID = function(self)
-  -- function num : 0_4
+function SkillEffectRideOnResult:GetMonsterMountID()
   return self._monsterMountID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetTrapMountID = function(self)
-  -- function num : 0_5
+function SkillEffectRideOnResult:GetTrapMountID()
   return self._trapMountID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetTrapID = function(self)
-  -- function num : 0_6
+function SkillEffectRideOnResult:GetTrapID()
   return self._trapID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetSummonPosList = function(self)
-  -- function num : 0_7
+function SkillEffectRideOnResult:GetSummonPosList()
   return self._summonPosList
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetHeight = function(self)
-  -- function num : 0_8
+function SkillEffectRideOnResult:GetHeight()
   return self._height
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetCenterOffset = function(self)
-  -- function num : 0_9
+function SkillEffectRideOnResult:GetCenterOffset()
   return self._centerOffset
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.SetTrapIDList = function(self, trapIDList)
-  -- function num : 0_10
+function SkillEffectRideOnResult:SetTrapIDList(trapIDList)
   self._trapIDList = trapIDList
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectRideOnResult.GetTrapIDList = function(self)
-  -- function num : 0_11
+function SkillEffectRideOnResult:GetTrapIDList()
   return self._trapIDList
 end
-
-

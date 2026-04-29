@@ -1,35 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_teleport_and_replace_bodyarea.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_TeleportAndReplaceBodyArea", Object)
 SkillEffectCalc_TeleportAndReplaceBodyArea = SkillEffectCalc_TeleportAndReplaceBodyArea
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_TeleportAndReplaceBodyArea.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_TeleportAndReplaceBodyArea:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_TeleportAndReplaceBodyArea.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_TeleportAndReplaceBodyArea:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local targetID = targets[1]
-  local targetEntity = (self._world):GetEntityByID(targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   if targetEntity then
     casterEntity = targetEntity
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local sourcePos = casterEntity:GetGridPosition()
-  local stageIndex = (skillEffectCalcParam.skillEffectParam):GetSkillEffectDamageStageIndex()
+  local stageIndex = skillEffectCalcParam.skillEffectParam:GetSkillEffectDamageStageIndex()
   local param = skillEffectCalcParam:GetSkillEffectParam()
-  local boardSvc = (self._world):GetService("BoardLogic")
+  local boardSvc = self._world:GetService("BoardLogic")
   boardSvc:RemovePosBlock(casterEntity, sourcePos, BlockFlag.MonsterLand)
   local pos = param:GetTargetPos()
   local vDir = param:GetTargetDir()
@@ -40,12 +30,8 @@ SkillEffectCalc_TeleportAndReplaceBodyArea.DoSkillEffectCalculator = function(se
   casterEntity:SetGridOffsetAndDamageOffset(gridOffSet, damageOffSet)
   local colorOld = utilData:FindPieceElement(sourcePos)
   local skillEffectResultChangeBodyArea = SkillEffectResultChangeBodyArea:New(casterEntity:GetID(), newBodyArea)
-  ;
-  (table.insert)(results, skillEffectResultChangeBodyArea)
+  table.insert(results, skillEffectResultChangeBodyArea)
   local result = SkillEffectResult_Teleport:New(casterEntity:GetID(), sourcePos, colorOld, pos, vDir, stageIndex)
-  ;
-  (table.insert)(results, result)
+  table.insert(results, result)
   return results
 end
-
-

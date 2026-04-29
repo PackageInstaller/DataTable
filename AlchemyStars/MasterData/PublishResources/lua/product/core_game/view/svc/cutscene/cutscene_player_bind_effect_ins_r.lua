@@ -1,37 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/cutscene/cutscene_player_bind_effect_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("cutscene_base_ins_r")
 _class("CutscenePlayerBindEffectInstruction", CutsceneBaseInstruction)
 CutscenePlayerBindEffectInstruction = CutscenePlayerBindEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CutscenePlayerBindEffectInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function CutscenePlayerBindEffectInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePlayerBindEffectInstruction.DoInstruction = function(self, TT, phaseContext)
-  -- function num : 0_1
+function CutscenePlayerBindEffectInstruction:DoInstruction(TT, phaseContext)
   local world = phaseContext:GetCutsceneWorld()
-  local playerEntity = (world:Player()):GetLocalTeamEntity()
+  local playerEntity = world:Player():GetLocalTeamEntity()
   local effectService = world:GetService("Effect")
   local effect = effectService:CreateEffect(self._effectID, playerEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CutscenePlayerBindEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function CutscenePlayerBindEffectInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

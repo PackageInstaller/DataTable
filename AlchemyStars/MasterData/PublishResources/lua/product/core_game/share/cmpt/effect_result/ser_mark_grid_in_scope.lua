@@ -1,42 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_mark_grid_in_scope.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_MarkGridInScope", SkillEffectResultBase)
 SkillEffectResult_MarkGridInScope = SkillEffectResult_MarkGridInScope
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_MarkGridInScope.Constructor = function(self, tv2Mark, tv2Clear)
-  -- function num : 0_0
-  if not tv2Mark then
-    self._tv2Mark = {}
-    if not tv2Clear then
-      self._tv2Clear = {}
-    end
-  end
+function SkillEffectResult_MarkGridInScope:Constructor(tv2Mark, tv2Clear)
+  self._tv2Mark = tv2Mark or {}
+  self._tv2Clear = tv2Clear or {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MarkGridInScope.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResult_MarkGridInScope:GetEffectType()
   return SkillEffectType.MarkGridInScope
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MarkGridInScope.GetMarkGrids = function(self)
-  -- function num : 0_2
+function SkillEffectResult_MarkGridInScope:GetMarkGrids()
   return self._tv2MarkResult
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_MarkGridInScope.GetClearGrids = function(self)
-  -- function num : 0_3
+function SkillEffectResult_MarkGridInScope:GetClearGrids()
   return self._tv2Clear
 end
-
-

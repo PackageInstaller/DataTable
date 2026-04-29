@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_diff_mission/ui_diff_stage_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDiffStageItem", UICustomWidget)
 UIDiffStageItem = UIDiffStageItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDiffStageItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIDiffStageItem:OnShow(uiParam)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageItem.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDiffStageItem:GetComponents()
   self._nameTex = self:GetUIComponent("UILocalizationText", "name")
   self._typeImg = self:GetUIComponent("Image", "type")
   self._finishGo = self:GetGameObject("finish")
@@ -25,102 +15,71 @@ UIDiffStageItem.GetComponents = function(self)
   self._atlas = self:GetAsset("UIDiffMission.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageItem.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._nameTex):SetText((StringTable.Get)((self._stage):Name()))
-  local team = (self._stage):Team()
+function UIDiffStageItem:OnValue()
+  self._nameTex:SetText(StringTable.Get(self._stage:Name()))
+  local team = self._stage:Team()
   local pets = team:GetPets()
   local finish = false
   if pets and next(pets) then
-    for _,pstid in pairs(pets) do
-      if pstid > 0 then
+    for _, pstid in pairs(pets) do
+      if 0 < pstid then
         finish = true
         break
       end
     end
   end
-  do
-    ;
-    (self._finishGo):SetActive(finish)
-    local teamCount = 5
-    ;
-    (self._teamPool):SpawnObjects("UIDiffStageTeamItem", teamCount)
-    local pools = (self._teamPool):GetAllSpawnList()
-    for i = 1, #pools do
-      local item = pools[i]
-      item:SetData(pets[i])
-    end
-    local sprite = nil
-    if (self._stage):Type() == DiffMissionType.Boss then
-      sprite = (self._atlas):GetSprite("map_black_icon15")
-    else
-      sprite = (self._atlas):GetSprite("map_black_icon12")
-    end
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._typeImg).sprite = sprite
-    -- DECOMPILER ERROR at PC77: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self._rect).anchoredPosition = self._pos
+  self._finishGo:SetActive(finish)
+  local teamCount = 5
+  self._teamPool:SpawnObjects("UIDiffStageTeamItem", teamCount)
+  local pools = self._teamPool:GetAllSpawnList()
+  for i = 1, #pools do
+    local item = pools[i]
+    item:SetData(pets[i])
   end
+  local sprite
+  if self._stage:Type() == DiffMissionType.Boss then
+    sprite = self._atlas:GetSprite("map_black_icon15")
+  else
+    sprite = self._atlas:GetSprite("map_black_icon12")
+  end
+  self._typeImg.sprite = sprite
+  self._rect.anchoredPosition = self._pos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageItem.FlushTeam = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local team = (self._stage):Team()
+function UIDiffStageItem:FlushTeam()
+  local team = self._stage:Team()
   local pets = team:GetPets()
   local finish = false
   if pets and next(pets) then
-    for _,pstid in pairs(pets) do
-      if pstid > 0 then
+    for _, pstid in pairs(pets) do
+      if 0 < pstid then
         finish = true
         break
       end
     end
   end
-  do
-    ;
-    (self._finishGo):SetActive(finish)
-    local teamCount = 5
-    ;
-    (self._teamPool):SpawnObjects("UIDiffStageTeamItem", teamCount)
-    local pools = (self._teamPool):GetAllSpawnList()
-    for i = 1, #pools do
-      local item = pools[i]
-      item:SetData(pets[i])
-    end
+  self._finishGo:SetActive(finish)
+  local teamCount = 5
+  self._teamPool:SpawnObjects("UIDiffStageTeamItem", teamCount)
+  local pools = self._teamPool:GetAllSpawnList()
+  for i = 1, #pools do
+    local item = pools[i]
+    item:SetData(pets[i])
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageItem.SetData = function(self, stage, pos, cb)
-  -- function num : 0_4
+function UIDiffStageItem:SetData(stage, pos, cb)
   self._stage = stage
   self._cb = cb
   self._pos = pos
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageItem.OnHide = function(self)
-  -- function num : 0_5
+function UIDiffStageItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDiffStageItem.BgOnClick = function(self, go)
-  -- function num : 0_6
+function UIDiffStageItem:BgOnClick(go)
   if self._cb then
-    (self._cb)(self._stage)
+    self._cb(self._stage)
   end
 end
-
-

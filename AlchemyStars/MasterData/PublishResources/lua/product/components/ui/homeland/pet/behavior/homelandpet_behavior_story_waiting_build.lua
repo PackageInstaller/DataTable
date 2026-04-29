@@ -1,92 +1,61 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_story_waiting_build.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorStoryWaitingBuild", HomelandPetBehaviorBase)
 HomelandPetBehaviorStoryWaitingBuild = HomelandPetBehaviorStoryWaitingBuild
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorStoryWaitingBuild.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryWaitingBuild.super).Constructor)(self, behaviorType, pet)
+function HomelandPetBehaviorStoryWaitingBuild:Constructor(behaviorType, pet)
+  HomelandPetBehaviorStoryWaitingBuild.super.Constructor(self, behaviorType, pet)
   self._animationComponent = self:GetComponent(HomelandPetComponentType.InteractionAnimation)
   self._bubbleComponent = self:GetComponent(HomelandPetComponentType.Bubble)
   self._modeChangeProcessType = HomelandPetModeChangeProcessType.Custom
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingBuild.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryWaitingBuild.super).Enter)(self)
-  ;
-  (self._bubbleComponent):Show()
+function HomelandPetBehaviorStoryWaitingBuild:Enter()
+  HomelandPetBehaviorStoryWaitingBuild.super.Enter(self)
+  self._bubbleComponent:Show()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingBuild.Exit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandPetBehaviorStoryWaitingBuild.super).Exit)(self)
+function HomelandPetBehaviorStoryWaitingBuild:Exit()
+  HomelandPetBehaviorStoryWaitingBuild.super.Exit(self)
   if self._interactPoint then
-    (self._interactPoint):SetInteractObject(nil)
+    self._interactPoint:SetInteractObject(nil)
     self._interactPoint = nil
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, false, self._pet, self._holdbuilding, false, nil)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, false, self._pet, self._holdbuilding, false, nil)
   self._holdbuilding = nil
-  ;
-  (self._pet):SetInteractingBuilding(nil)
-  ;
-  (self._pet):SetNavMeshObstacleEnabled(true)
+  self._pet:SetInteractingBuilding(nil)
+  self._pet:SetNavMeshObstacleEnabled(true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingBuild.CanInterrupt = function(self)
-  -- function num : 0_3
+function HomelandPetBehaviorStoryWaitingBuild:CanInterrupt()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorStoryWaitingBuild.TriggerSucc = function(self, furniture, interactID, id)
-  -- function num : 0_4 , upvalues : _ENV
+function HomelandPetBehaviorStoryWaitingBuild:TriggerSucc(furniture, interactID, id)
   local succ = true
-  self.triggerSuccParam = {furniture, interactID, id}
+  self.triggerSuccParam = {
+    furniture,
+    interactID,
+    id
+  }
   self._interactPoint = furniture:GetPetInteractPoint()
   if self._interactPoint then
-    local targetTr = furniture:GetInteractTransform((self._interactPoint):GetIndex())
+    local targetTr = furniture:GetInteractTransform(self._interactPoint:GetIndex())
     if targetTr.childCount > 0 then
-      (self._pet):SetPosition(targetTr.position)
-      ;
-      (self._pet):SetRotation(targetTr.rotation)
-      local cfgBuildingPet = (Cfg.cfg_homeland_building_pet)[interactID]
-      ;
-      (self._animationComponent):Play(cfgBuildingPet, furniture, self._interactPoint, targetTr, targetTr:GetChild(0), 86400000)
+      self._pet:SetPosition(targetTr.position)
+      self._pet:SetRotation(targetTr.rotation)
+      local cfgBuildingPet = Cfg.cfg_homeland_building_pet[interactID]
+      self._animationComponent:Play(cfgBuildingPet, furniture, self._interactPoint, targetTr, targetTr:GetChild(0), 86400000)
     else
-      do
-        do
-          ;
-          (Log.error)("###[HomelandPetBehaviorStoryWaitingBuild] 剧情触发失败，因为targetTr.childCount < 0,id[", id, "]")
-          succ = false
-          ;
-          (self._interactPoint):SetInteractObject(self._pet)
-          ;
-          (self._pet):SetInteractingBuilding(furniture)
-          self._holdbuilding = furniture
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, true, self._pet, self._holdbuilding, false, nil)
-          ;
-          (Log.error)("###[HomelandPetBehaviorStoryWaitingBuild] 剧情触发失败，因为没有家具交互点,id[", id, "]")
-          succ = false
-          return succ
-        end
-      end
+      Log.error("###[HomelandPetBehaviorStoryWaitingBuild] 剧情触发失败，因为targetTr.childCount < 0,id[", id, "]")
+      succ = false
     end
+    self._interactPoint:SetInteractObject(self._pet)
+    self._pet:SetInteractingBuilding(furniture)
+    self._holdbuilding = furniture
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetBehaviorInteractingFurniture, true, self._pet, self._holdbuilding, false, nil)
+  else
+    Log.error("###[HomelandPetBehaviorStoryWaitingBuild] 剧情触发失败，因为没有家具交互点,id[", id, "]")
+    succ = false
   end
+  return succ
 end
-
-

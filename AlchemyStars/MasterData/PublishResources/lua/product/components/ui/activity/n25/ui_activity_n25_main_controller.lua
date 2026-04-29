@@ -1,131 +1,100 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/ui_activity_n25_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN25MainController", UIController)
 UIActivityN25MainController = UIActivityN25MainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN25MainController.Constructor = function(self, ui_root_transform)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN25MainController:Constructor(ui_root_transform)
   self.normalEntryBtn = nil
   self.hardEntryBtn = nil
   self.idolEntryBtn = nil
   self.bloodSuckerEntryBtn = nil
   self.mCampaign = self:GetModule(CampaignModule)
-  self.strsLeftTime = {"str_n25_left_time_d_h", "str_n25_left_time_d", "str_n25_left_time_h_m", "str_n25_left_time_h", "str_n25_left_time_m"}
-  self.strsLineLeftTime = {"str_n25_line_left_time_d_h", "str_n23_line_left_time_d", "str_n25_line_left_time_h_m", "str_n25_line_left_time_h", "str_n25_line_left_time_m"}
+  self.strsLeftTime = {
+    "str_n25_left_time_d_h",
+    "str_n25_left_time_d",
+    "str_n25_left_time_h_m",
+    "str_n25_left_time_h",
+    "str_n25_left_time_m"
+  }
+  self.strsLineLeftTime = {
+    "str_n25_line_left_time_d_h",
+    "str_n23_line_left_time_d",
+    "str_n25_line_left_time_h_m",
+    "str_n25_line_left_time_h",
+    "str_n25_line_left_time_m"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityN25MainController:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
   self._activityConst = UIActivityN25Const:New()
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.OnShow = function(self, uiParam)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityN25MainController:OnShow(uiParam)
   self.screenShot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
   self._eventRed = self:GetGameObject("EventRed")
   self._loginRed = self:GetGameObject("LoginRed")
   self.animation = self:GetUIComponent("Animation", "animation")
   self.showBtn = self:GetGameObject("ShowBtn")
-  ;
-  (self.showBtn):SetActive(false)
+  self.showBtn:SetActive(false)
   self._timeLabel = self:GetUIComponent("UILocalizationText", "Time")
   self._btnPanel = self:GetGameObject("BtnPanel")
   self._topBtn = self:GetGameObject("TopBtn")
   self.shotImage = self:GetUIComponent("RawImage", "ScrrenTex")
   self.shotImageGo = self:GetGameObject("ScrrenTex")
-  ;
-  (self.shotImageGo):SetActive(false)
+  self.shotImageGo:SetActive(false)
   local btns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   local backBtn = btns:SpawnObject("UINewCommonTopButton")
   backBtn:SetData(function()
-    -- function num : 0_2_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, false, function()
-    -- function num : 0_2_1 , upvalues : self
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, false, function()
     self:SetButtonShowStatus(false)
-  end
-)
+  end)
   self:AttachEvent(GameEventType.OnActivityTotalAwardGot, self.ForceUpdate)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.ForceUpdate)
   self:AttachEvent(GameEventType.ItemCountChanged, self.SetExchangeBtn)
   self:InitUI()
-  ;
-  (UIActivityN25Const.ClearEnterNewStatus)()
+  UIActivityN25Const.ClearEnterNewStatus()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN25MainController:OnHide()
   self:DetachEvent(GameEventType.OnActivityTotalAwardGot, self.ForceUpdate)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self.ForceUpdate)
   self:DetachEvent(GameEventType.ItemCountChanged, self.SetExchangeBtn)
   self:CancelTimerEventNormal()
   if self.screenShot then
-    (self.screenShot):CleanRenderTexture()
+    self.screenShot:CleanRenderTexture()
     self.screenShot = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_4
+function UIActivityN25MainController:OnUpdate(deltaTimeMS)
   self:RefreshUI()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.CloseCoro = function(self, TT)
-  -- function num : 0_5 , upvalues : _ENV
+function UIActivityN25MainController:CloseCoro(TT)
   self:Lock("UIActivityN21CCMainController_CloseCoro")
   self:SwitchState(UIStateType.UIMain)
   self:UnLock("UIActivityN21CCMainController_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.SetButtonShowStatus = function(self, isShow)
-  -- function num : 0_6
-  (self.showBtn):SetActive(not isShow)
+function UIActivityN25MainController:SetButtonShowStatus(isShow)
+  self.showBtn:SetActive(not isShow)
   if isShow then
-    (self.animation):Play("uianim_UIActivityN25MainController_in2")
+    self.animation:Play("uianim_UIActivityN25MainController_in2")
   else
-    ;
-    (self.animation):Play("uianim_UIActivityN25MainController_in1")
+    self.animation:Play("uianim_UIActivityN25MainController_in1")
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.PlayEnterAnim = function(self)
-  -- function num : 0_7
+function UIActivityN25MainController:PlayEnterAnim()
   self:StartTask(self.PlayEnterAnimCoro, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.PlayEnterAnimCoro = function(self, TT)
-  -- function num : 0_8
+function UIActivityN25MainController:PlayEnterAnimCoro(TT)
   self:_CheckGuide()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.InitUI = function(self)
-  -- function num : 0_9
+function UIActivityN25MainController:InitUI()
   self:SetSpineAndBgm()
   self:RefreshRedAndNew()
   self:SetNormalLevelBtn()
@@ -138,187 +107,133 @@ UIActivityN25MainController.InitUI = function(self)
   self:PlayEnterAnim()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController._CheckGuide = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN25MainController)
+function UIActivityN25MainController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIActivityN25MainController)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.RefreshUI = function(self)
-  -- function num : 0_11
+function UIActivityN25MainController:RefreshUI()
   self:RefreshActivityRemainTime()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.RefreshButtonStatus = function(self)
-  -- function num : 0_12
+function UIActivityN25MainController:RefreshButtonStatus()
   self:FlushRedPointStageNormal()
   self:FlushNormalStage()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.FlushNormalStage = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityN25MainController:FlushNormalStage()
   if not self.normalEntryBtn then
-    (Log.fatal)("### FlushNormalStage, btn is nil")
-    return 
+    Log.fatal("### FlushNormalStage, btn is nil")
+    return
   end
-  ;
-  (self.normalEntryBtn):SetLock(true)
-  local c, cInfo = (self._activityConst):GetLineComponent()
+  self.normalEntryBtn:SetLock(true)
+  local c, cInfo = self._activityConst:GetLineComponent()
   if not cInfo then
-    (Log.fatal)("### GetLineComponent nil.")
-    return 
+    Log.fatal("### GetLineComponent nil.")
+    return
   end
   local componentId = ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION
-  local state = (self._activityConst):GetStateNormal()
-  if state ~= UISummerOneEnterBtnState.NotOpen or state == UISummerOneEnterBtnState.Closed then
+  local state = self._activityConst:GetStateNormal()
+  if state == UISummerOneEnterBtnState.NotOpen then
+  elseif state == UISummerOneEnterBtnState.Closed then
     self:CancelTimerEventNormal()
-    ;
-    (self.normalEntryBtn):SetLeftTime((StringTable.Get)("str_activity_finished"))
+    self.normalEntryBtn:SetLeftTime(StringTable.Get("str_activity_finished"))
+  elseif state == UISummerOneEnterBtnState.Normal then
+    self.normalEntryBtn:SetLock(false)
+    self.normalEntryBtn:SetLeftTimeShow(false)
+    local closeTime = cInfo.m_close_time
+    local leftSeconds = UICommonHelper.CalcLeftSeconds(closeTime)
+    self:RegisterTimeEvent(leftSeconds, componentId)
   else
-    if state == UISummerOneEnterBtnState.Normal then
-      (self.normalEntryBtn):SetLock(false)
-      ;
-      (self.normalEntryBtn):SetLeftTimeShow(false)
-      local closeTime = cInfo.m_close_time
-      local leftSeconds = (UICommonHelper.CalcLeftSeconds)(closeTime)
-      self:RegisterTimeEvent(leftSeconds, componentId)
-    else
-      do
-        ;
-        (Log.fatal)("### state=", state)
-      end
-    end
+    Log.fatal("### state=", state)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.RegisterTimeEvent = function(self, seconds, componentId)
-  -- function num : 0_14 , upvalues : _ENV
+function UIActivityN25MainController:RegisterTimeEvent(seconds, componentId)
   if componentId == ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION then
     self:CancelTimerEventNormal()
   else
-    ;
-    (Log.warn)("### RegisterTimeEvent componentId=", componentId)
-    return 
+    Log.warn("### RegisterTimeEvent componentId=", componentId)
+    return
   end
   if seconds < 60 then
     seconds = 60
   end
   local ms = seconds * 1000
-  local te = ((GameGlobal.Timer)()):AddEvent(ms, function()
-    -- function num : 0_14_0 , upvalues : self, componentId, _ENV
+  local te = GameGlobal.Timer():AddEvent(ms, function()
     self:StartTask(function(TT)
-      -- function num : 0_14_0_0 , upvalues : self, componentId, _ENV
-      (self._activityConst):ForceUpdate(TT)
+      self._activityConst:ForceUpdate(TT)
       if componentId == ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION then
         self:FlushNormalStage()
       end
-    end
-, self)
-  end
-)
+    end, self)
+  end)
   if componentId == ECampaignN25ComponentID.ECAMPAIGN_N25_LINE_MISSION then
     self.teNormal = te
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.FlushRedPointStageNormal = function(self)
-  -- function num : 0_15
+function UIActivityN25MainController:FlushRedPointStageNormal()
   if self.normalEntryBtn then
-    if not (self._activityConst):CheckRedNormal() and not (self._activityConst):CheckRedTryPet() then
-      local red = (self._activityConst):CheckRedShop()
-    end
-    local new = (self._activityConst):CheckNewNormal()
-    ;
-    (self.normalEntryBtn):SetNewAndRed(new, red)
+    local red = self._activityConst:CheckRedNormal() or self._activityConst:CheckRedTryPet() or self._activityConst:CheckRedShop()
+    local new = self._activityConst:CheckNewNormal()
+    self.normalEntryBtn:SetNewAndRed(new, red)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.RefreshActivityRemainTime = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  local endTime = (self._activityConst):GetActiveEndTime()
-  local nowTime = (self._timeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(endTime - nowTime)
+function UIActivityN25MainController:RefreshActivityRemainTime()
+  local endTime = self._activityConst:GetActiveEndTime()
+  local nowTime = self._timeModule:GetServerTime() / 1000
+  local seconds = math.floor(endTime - nowTime)
   if seconds <= 0 then
     seconds = 0
   end
-  if (self._activityConst):IsActivityEnd() then
-    (self._timeLabel):SetText((StringTable.Get)("str_n25_activity_end"))
-    return 
+  if self._activityConst:IsActivityEnd() then
+    self._timeLabel:SetText(StringTable.Get("str_n25_activity_end"))
+    return
   end
-  local status = (self._activityConst):GetStatus()
+  local status = self._activityConst:GetStatus()
   if seconds == 0 and status == 1 then
-    (self._activityConst):SetStatus(2)
-    return 
+    self._activityConst:SetStatus(2)
+    return
   end
-  local timeStr = ((UIActivityN25Const.GetTimeString)(seconds))
-  local timeTips = nil
-  local c, cInfo = (self._activityConst):GetLineComponent()
+  local timeStr = UIActivityN25Const.GetTimeString(seconds)
+  local timeTips
+  local c, cInfo = self._activityConst:GetLineComponent()
   if cInfo then
     local lineEndTime = cInfo.m_close_time
-    local lineSeconds = (math.floor)(lineEndTime - nowTime)
-    if lineSeconds > 0 then
-      local timeStr = (UIActivityN25Const.GetTimeString)(lineSeconds)
-      timeTips = (StringTable.Get)("str_n25_activity_remain_time", timeStr)
-      ;
-      (self._timeLabel):SetText(timeTips)
-      return 
+    local lineSeconds = math.floor(lineEndTime - nowTime)
+    if 0 < lineSeconds then
+      local timeStr = UIActivityN25Const.GetTimeString(lineSeconds)
+      timeTips = StringTable.Get("str_n25_activity_remain_time", timeStr)
+      self._timeLabel:SetText(timeTips)
+      return
     end
   end
-  do
-    timeTips = (StringTable.Get)("str_n25_activity_remain_time", timeStr)
-    ;
-    (self._timeLabel):SetText(timeTips)
-  end
+  timeTips = StringTable.Get("str_n25_activity_remain_time", timeStr)
+  self._timeLabel:SetText(timeTips)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.CancelTimerEventNormal = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityN25MainController:CancelTimerEventNormal()
   if self.teNormal then
-    ((GameGlobal.Timer)()):CancelEvent(self.teNormal)
+    GameGlobal.Timer():CancelEvent(self.teNormal)
     self.teNormal = nil
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.RefreshRedAndNew = function(self)
-  -- function num : 0_18
-  (self._eventRed):SetActive((self._activityConst):IsShowBattlePassRed())
-  ;
-  (self._loginRed):SetActive((self._activityConst):CheckRedAward())
+function UIActivityN25MainController:RefreshRedAndNew()
+  self._eventRed:SetActive(self._activityConst:IsShowBattlePassRed())
+  self._loginRed:SetActive(self._activityConst:CheckRedAward())
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.ForceUpdate = function(self, callback)
-  -- function num : 0_19
+function UIActivityN25MainController:ForceUpdate(callback)
   self:StartTask(self.ReLoadData, self, callback)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.ReLoadData = function(self, TT, callback)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityN25MainController:ReLoadData(TT, callback)
   self:Lock("UIActivityN25MainController_ReLoadData")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._activityConst):LoadData(TT, res)
+  self._activityConst:LoadData(TT, res)
   self:RefreshRedAndNew()
   self:UnLock("UIActivityN25MainController_ReLoadData")
   if callback and type(callback) == "function" then
@@ -326,240 +241,163 @@ UIActivityN25MainController.ReLoadData = function(self, TT, callback)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.ShowBtnOnClick = function(self)
-  -- function num : 0_21
+function UIActivityN25MainController:ShowBtnOnClick()
   self:SetButtonShowStatus(true)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.EventOnClick = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  (UIActivityBattlePassHelper.OpenMainController)()
+function UIActivityN25MainController:EventOnClick()
+  UIActivityBattlePassHelper.OpenMainController()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.LoginOnClick = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  if (self._activityConst):IsActivityEnd() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n25_activity_end"))
-    return 
+function UIActivityN25MainController:LoginOnClick()
+  if self._activityConst:IsActivityEnd() then
+    ToastManager.ShowToast(StringTable.Get("str_n25_activity_end"))
+    return
   end
   self:ShowDialog("UIActivityTotalLoginAwardController", false, ECampaignType.CAMPAIGN_TYPE_N25, ECampaignN25ComponentID.ECAMPAIGN_N25_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.SetNormalLevelBtn = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UIActivityN25MainController:SetNormalLevelBtn()
   local normalEntry = self:_SpawnObject("NormalLevelBtn", "UIN25EntryBtnBase")
   self.normalEntryBtn = normalEntry
-  local isNew = (self._activityConst):CheckNewNormal()
-  if not (self._activityConst):CheckRedNormal() and not (self._activityConst):CheckRedTryPet() then
-    local isRed = (self._activityConst):CheckRedShop()
-  end
-  local state = (self._activityConst):GetStateNormal()
+  local isNew = self._activityConst:CheckNewNormal()
+  local isRed = self._activityConst:CheckRedNormal() or self._activityConst:CheckRedTryPet() or self._activityConst:CheckRedShop()
+  local state = self._activityConst:GetStateNormal()
   if state == UISummerOneEnterBtnState.Normal then
     normalEntry:SetLock(false)
   else
     normalEntry:SetLock(true)
   end
   normalEntry:SetData(function()
-    -- function num : 0_24_0 , upvalues : self, _ENV
-    local s = (self._activityConst):GetStateNormal()
+    local s = self._activityConst:GetStateNormal()
     if s == UISummerOneEnterBtnState.Normal then
       self:SwitchState(UIStateType.UIN25Line, self._activityConst)
     else
       self:_ShowBtnErrorMsg(s)
     end
-  end
-)
+  end)
   normalEntry:SetNewAndRed(isNew, isRed)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.SetHardLevelBtn = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIActivityN25MainController:SetHardLevelBtn()
   local hardEntry = self:_SpawnObject("HardLevelBtn", "UIN25EntryBtnHardLevel")
   self.hardEntryBtn = hardEntry
   hardEntry:SetData(function()
-    -- function num : 0_25_0 , upvalues : self, _ENV
-    local s = (self._activityConst):GetStateHard()
+    local s = self._activityConst:GetStateHard()
     if s == UISummerOneEnterBtnState.Normal then
-      (N25Data.SetPrefsHard)()
+      N25Data.SetPrefsHard()
       self:SwitchState(UIStateType.UIActivtiyN25HardLevelController)
+    elseif s == UISummerOneEnterBtnState.Locked then
+      ToastManager.ShowToast(StringTable.Get("str_n25_hardlevel_locktip"))
     else
-      if s == UISummerOneEnterBtnState.Locked then
-        (ToastManager.ShowToast)((StringTable.Get)("str_n25_hardlevel_locktip"))
-      else
-        self:_ShowBtnErrorMsg(s)
-      end
+      self:_ShowBtnErrorMsg(s)
     end
-  end
-)
+  end)
   hardEntry:RefreshState(self._activityConst)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController._ShowBtnErrorMsg = function(self, btnState)
-  -- function num : 0_26 , upvalues : _ENV
+function UIActivityN25MainController:_ShowBtnErrorMsg(btnState)
   local errType = 0
   if btnState == UISummerOneEnterBtnState.NotOpen then
     errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
-  else
-    if btnState == UISummerOneEnterBtnState.Closed then
-      errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-    end
+  elseif btnState == UISummerOneEnterBtnState.Closed then
+    errType = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
   end
-  ;
-  (self.mCampaign):ShowErrorToast(errType, true)
+  self.mCampaign:ShowErrorToast(errType, true)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.SetExchangeBtn = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function UIActivityN25MainController:SetExchangeBtn()
   local componentId = ECampaignN25ComponentID.ECAMPAIGN_N25_SHOP
   local obj = self:_SpawnObject("ExchangeBtn", "UIActivityCommonComponentEnter")
-  local campain = (self._activityConst):GetCampaign()
-  local red = (self._activityConst):CheckRedShop()
+  local campain = self._activityConst:GetCampaign()
+  local red = self._activityConst:CheckRedShop()
   obj:SetRed("red", function()
-    -- function num : 0_27_0 , upvalues : campain, componentId
-    if campain:CheckComponentOpen(componentId) then
-      return campain:CheckComponentRed(componentId)
-    end
-  end
-)
-  local component, componentInfo = (self._activityConst):GetShopComponent()
+    return campain:CheckComponentOpen(componentId) and campain:CheckComponentRed(componentId)
+  end)
+  local component, componentInfo = self._activityConst:GetShopComponent()
   local icon, count = component:GetCostItemIconText()
   if icon then
     obj:SetIcon("icon", icon)
   end
-  local fmtStr = (UIActivityN20MainController.GetItemCountStr)(count, "#847D7D", "#ffe671")
+  local fmtStr = UIActivityN20MainController.GetItemCountStr(count, "#847D7D", "#ffe671")
   obj:SetText("text", fmtStr)
-  obj:SetText("txtNumbg", (UIActivityN20MainController.GetItemCountStr)(count, "#312E1B", "#312E1B"))
+  obj:SetText("txtNumbg", UIActivityN20MainController.GetItemCountStr(count, "#312E1B", "#312E1B"))
   obj:SetData(campain, function()
-    -- function num : 0_27_1 , upvalues : campain, _ENV
     if campain:CheckCampaignClose_ShowClientError() then
-      return 
+      return
     end
-    ;
-    (UIActivityHelper.OpenCampaignShop)(campain)
-  end
-)
+    UIActivityHelper.OpenCampaignShop(campain)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.SetIdolBtn = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIActivityN25MainController:SetIdolBtn()
   local idolEntry = self:_SpawnObject("IdolBtn", "UIN25EntryBtnIdol")
   self.idolEntryBtn = idolEntry
   idolEntry:SetData(function()
-    -- function num : 0_28_0 , upvalues : self, _ENV
-    local s = (self._activityConst):GetStateGameIdol()
+    local s = self._activityConst:GetStateGameIdol()
     if s == UISummerOneEnterBtnState.Normal then
-      local c, cInfo = (self._activityConst):GetIdolComponent()
+      local c, cInfo = self._activityConst:GetIdolComponent()
       if cInfo.m_b_unlock then
         self:OpenIdol()
       else
         self:ForceUpdate(function()
-      -- function num : 0_28_0_0 , upvalues : self
-      self:OpenIdol()
-    end
-)
+          self:OpenIdol()
+        end)
       end
+    elseif s == UISummerOneEnterBtnState.Locked then
+      ToastManager.ShowToast(StringTable.Get("str_n25_hardlevel_locktip"))
     else
-      do
-        if s == UISummerOneEnterBtnState.Locked then
-          (ToastManager.ShowToast)((StringTable.Get)("str_n25_hardlevel_locktip"))
-        else
-          self:_ShowBtnErrorMsg(s)
-        end
-      end
+      self:_ShowBtnErrorMsg(s)
     end
-  end
-)
+  end)
   idolEntry:RefreshState(self._activityConst)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.OpenIdol = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  (N25Data.SetPrefsGameIdol)()
-  ;
-  (UIActivityHelper.PlayFirstPlot_Component)((self._activityConst)._campaign, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL, function()
-    -- function num : 0_29_0 , upvalues : self, _ENV
+function UIActivityN25MainController:OpenIdol()
+  N25Data.SetPrefsGameIdol()
+  UIActivityHelper.PlayFirstPlot_Component(self._activityConst._campaign, ECampaignN25ComponentID.ECAMPAIGN_N25_IDOL, function()
     self:SwitchState(UIStateType.UIN25IdolLogin, self._activityConst)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.SetBloodSuckerBtn = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function UIActivityN25MainController:SetBloodSuckerBtn()
   local bloodSuckerEntry = self:_SpawnObject("BloodSuckerBtn", "UIN25EntryBtnBloodSucker")
   self.bloodSuckerEntryBtn = bloodSuckerEntry
   bloodSuckerEntry:SetData(function()
-    -- function num : 0_30_0 , upvalues : self, _ENV
-    local s = (self._activityConst):GetStateGameBloodSucker()
+    local s = self._activityConst:GetStateGameBloodSucker()
     if s == UISummerOneEnterBtnState.Normal then
       self:OpenBloodSucker()
     else
       self:_ShowBtnErrorMsg(s)
     end
-  end
-)
+  end)
   bloodSuckerEntry:RefreshState(self._activityConst)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.OpenBloodSucker = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  (UIActivityHelper.Snap)(self.screenShot, ((self:GetUIComponent("RectTransform", "SafeArea")).rect).size, ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName()), function(cache_rt)
-    -- function num : 0_31_0 , upvalues : _ENV, self
-    (N25Data.SetPrefsGameBloodSucker)()
+function UIActivityN25MainController:OpenBloodSucker()
+  UIActivityHelper.Snap(self.screenShot, self:GetUIComponent("RectTransform", "SafeArea").rect.size, GameGlobal.UIStateManager():GetControllerCamera(self:GetName()), function(cache_rt)
+    N25Data.SetPrefsGameBloodSucker()
     self:SwitchState(UIStateType.UIN25VampireMain, cache_rt)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.InfoBtnOnClick = function(self)
-  -- function num : 0_32
+function UIActivityN25MainController:InfoBtnOnClick()
   self:ShowDialog("UIIntroLoader", "UIN25Intro")
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_33
+function UIActivityN25MainController:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN25MainController.SetSpineAndBgm = function(self)
-  -- function num : 0_34 , upvalues : _ENV
+function UIActivityN25MainController:SetSpineAndBgm()
   self._spine = self:GetUIComponent("SpineLoader", "Spine")
-  local spine, bgm = (self._activityConst):GetSpineAndBgm()
+  local spine, bgm = self._activityConst:GetSpineAndBgm()
   if spine then
-    (self._spine):LoadSpine(spine)
+    self._spine:LoadSpine(spine)
   end
   if bgm then
-    (AudioHelperController.PlayBGM)(bgm, AudioConstValue.BGMCrossFadeTime)
+    AudioHelperController.PlayBGM(bgm, AudioConstValue.BGMCrossFadeTime)
   end
 end
-
-

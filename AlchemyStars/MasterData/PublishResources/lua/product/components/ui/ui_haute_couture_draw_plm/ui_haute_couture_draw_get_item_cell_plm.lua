@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/ui_haute_couture_draw_get_item_cell_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawGetItemCellPLM", UICustomWidget)
 UIHauteCoutureDrawGetItemCellPLM = UIHauteCoutureDrawGetItemCellPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawGetItemCellPLM.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHauteCoutureDrawGetItemCellPLM:Constructor()
   self._atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemCellPLM.OnShow = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawGetItemCellPLM:OnShow()
   self.qualitybg = self:GetUIComponent("Image", "qualitybg")
   self.imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
@@ -24,44 +14,27 @@ UIHauteCoutureDrawGetItemCellPLM.OnShow = function(self)
   self.bg = self:GetUIComponent("Image", "bg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemCellPLM.SetData = function(self, itemInfo, showName, clickCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHauteCoutureDrawGetItemCellPLM:SetData(itemInfo, showName, clickCallback)
   self._item_id = itemInfo.item_id
   self._item_index = itemInfo.item_index
   if showName then
-    (self.name):SetText((StringTable.Get)(itemInfo.item_name))
+    self.name:SetText(StringTable.Get(itemInfo.item_name))
   else
-    ;
-    (self.name):SetText("")
+    self.name:SetText("")
   end
-  ;
-  (self.txtCount):SetText(itemInfo.item_count)
+  self.txtCount:SetText(itemInfo.item_count)
   local icon = itemInfo.icon
-  ;
-  (self.imgIcon):LoadImage(icon)
+  self.imgIcon:LoadImage(icon)
   local quality = itemInfo.color
-  -- DECOMPILER ERROR at PC35: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.qualitybg).sprite = (self._atlas):GetSprite("spirit_shengji_se" .. quality)
+  self.qualitybg.sprite = self._atlas:GetSprite("spirit_shengji_se" .. quality)
   self._clickCallback = clickCallback
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemCellPLM.EnableInteract = function(self, enable)
-  -- function num : 0_3
+function UIHauteCoutureDrawGetItemCellPLM:EnableInteract(enable)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemCellPLM.BgOnClick = function(self, go)
-  -- function num : 0_4
+function UIHauteCoutureDrawGetItemCellPLM:BgOnClick(go)
   if self._clickCallback then
-    (self._clickCallback)(self._item_index, (go.transform).position)
+    self._clickCallback(self._item_index, go.transform.position)
   end
 end
-
-

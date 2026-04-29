@@ -1,46 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/SpecialTask/SpecialTask/ui_special_task_misc.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UISpecialTaskToolFunctions = {GetRemainTime = function(time)
-  -- function num : 0_0 , upvalues : _ENV
-  local day, hour, minute = nil, nil, nil
-  day = (math.floor)(time / 86400)
-  hour = (math.floor)(time / 3600) % 24
-  minute = (math.floor)(time / 60) % 60
-  local timestring = ""
-  if day > 0 then
-    timestring = day .. (StringTable.Get)("str_activity_common_day")
-    if hour > 0 then
-      timestring = timestring .. hour .. (StringTable.Get)("str_activity_common_hour")
-    end
-  else
-    if hour > 0 then
-      timestring = hour .. (StringTable.Get)("str_activity_common_hour")
-      if minute > 0 then
-        timestring = timestring .. minute .. (StringTable.Get)("str_activity_common_minute")
+local UISpecialTaskToolFunctions = {
+  GetRemainTime = function(time)
+    local day, hour, minute
+    day = math.floor(time / 86400)
+    hour = math.floor(time / 3600) % 24
+    minute = math.floor(time / 60) % 60
+    local timestring = ""
+    if 0 < day then
+      timestring = day .. StringTable.Get("str_activity_common_day")
+      if 0 < hour then
+        timestring = timestring .. hour .. StringTable.Get("str_activity_common_hour")
       end
+    elseif 0 < hour then
+      timestring = hour .. StringTable.Get("str_activity_common_hour")
+      if 0 < minute then
+        timestring = timestring .. minute .. StringTable.Get("str_activity_common_minute")
+      end
+    elseif 0 < minute then
+      timestring = minute .. StringTable.Get("str_activity_common_minute")
     else
-      if minute > 0 then
-        timestring = minute .. (StringTable.Get)("str_activity_common_minute")
-      else
-        timestring = (StringTable.Get)("str_activity_common_less_minute")
-      end
+      timestring = StringTable.Get("str_activity_common_less_minute")
     end
+    return timestring
+  end,
+  GetLocalDBInt = function(key, defaultValue)
+    local loginModule = GameGlobal.GetModule(LoginModule)
+    return LocalDB.GetInt(key .. loginModule:GetRoleShowID(), defaultValue)
+  end,
+  SetLocalDBInt = function(key, value)
+    local loginModule = GameGlobal.GetModule(LoginModule)
+    return LocalDB.SetInt(key .. loginModule:GetRoleShowID(), value)
   end
-  return timestring
-end
-, GetLocalDBInt = function(key, defaultValue)
-  -- function num : 0_1 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  return (LocalDB.GetInt)(key .. loginModule:GetRoleShowID(), defaultValue)
-end
-, SetLocalDBInt = function(key, value)
-  -- function num : 0_2 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  return (LocalDB.SetInt)(key .. loginModule:GetRoleShowID(), value)
-end
 }
 _enum("UISpecialTaskToolFunctions", UISpecialTaskToolFunctions)
-

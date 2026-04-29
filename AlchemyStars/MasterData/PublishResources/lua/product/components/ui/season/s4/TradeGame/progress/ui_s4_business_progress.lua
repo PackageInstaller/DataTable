@@ -1,23 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s4/TradeGame/progress/ui_s4_business_progress.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UIS4BusinessStatus = {CPPS_Accepted = 1, CPPS_Completed = 2, CPPS_Taken = 3}
+local UIS4BusinessStatus = {
+  CPPS_Accepted = 1,
+  CPPS_Completed = 2,
+  CPPS_Taken = 3
+}
 _enum("UIS4BusinessStatus", UIS4BusinessStatus)
 _class("UIS4BusinessProgress", UICustomWidget)
 UIS4BusinessProgress = UIS4BusinessProgress
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-UIS4BusinessProgress.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIS4BusinessProgress:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4BusinessProgress.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS4BusinessProgress:InitWidget()
   self.icon = self:GetUIComponent("Image", "Icon")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._condition = self:GetUIComponent("UILocalizationText", "Condition")
@@ -33,16 +27,10 @@ UIS4BusinessProgress.InitWidget = function(self)
   self.CanGetCanvas = self:GetUIComponent("CanvasGroup", "CanGet")
   self.eff = self:GetGameObject("eff")
   self.eff2 = self:GetGameObject("eff2")
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.canvas).alpha = 0
+  self.canvas.alpha = 0
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4BusinessProgress.SetData = function(self, number, status, progress, rewards, callback)
-  -- function num : 0_2
+function UIS4BusinessProgress:SetData(number, status, progress, rewards, callback)
   self.number = number
   self.status = status
   self.progress = progress
@@ -54,137 +42,77 @@ UIS4BusinessProgress.SetData = function(self, number, status, progress, rewards,
   self:SetAwards()
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4BusinessProgress.SetOrderNumber = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIS4BusinessProgress:SetOrderNumber()
   if self.number <= 2 then
-    local colorStr = (string.format)("<color=#A36E56>%s</color>", self.number)
-    ;
-    (self.numberTxt):SetText(colorStr)
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.icon).sprite = (self._atlas):GetSprite("exp_s4_paoshang_task_rare1")
+    local colorStr = string.format("<color=#A36E56>%s</color>", self.number)
+    self.numberTxt:SetText(colorStr)
+    self.icon.sprite = self._atlas:GetSprite("exp_s4_paoshang_task_rare1")
+  elseif self.number <= 4 then
+    local colorStr = string.format("<color=#B5B7B8>%s</color>", self.number)
+    self.numberTxt:SetText(colorStr)
+    self.icon.sprite = self._atlas:GetSprite("exp_s4_paoshang_task_rare2")
   else
-    do
-      if self.number <= 4 then
-        local colorStr = (string.format)("<color=#B5B7B8>%s</color>", self.number)
-        ;
-        (self.numberTxt):SetText(colorStr)
-        -- DECOMPILER ERROR at PC36: Confused about usage of register: R2 in 'UnsetPending'
-
-        ;
-        (self.icon).sprite = (self._atlas):GetSprite("exp_s4_paoshang_task_rare2")
-      else
-        do
-          local colorStr = (string.format)("<color=#C3A665>%s</color>", self.number)
-          ;
-          (self.numberTxt):SetText(colorStr)
-          -- DECOMPILER ERROR at PC52: Confused about usage of register: R2 in 'UnsetPending'
-
-          ;
-          (self.icon).sprite = (self._atlas):GetSprite("exp_s4_paoshang_task_rare3")
-        end
-      end
-    end
+    local colorStr = string.format("<color=#C3A665>%s</color>", self.number)
+    self.numberTxt:SetText(colorStr)
+    self.icon.sprite = self._atlas:GetSprite("exp_s4_paoshang_task_rare3")
   end
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4BusinessProgress.SetStatus = function(self)
-  -- function num : 0_4 , upvalues : UIS4BusinessStatus
+function UIS4BusinessProgress:SetStatus()
   if self.status == UIS4BusinessStatus.CPPS_Accepted then
-    (self.notGet):SetActive(true)
-    ;
-    (self.canGet):SetActive(false)
-    ;
-    (self.got):SetActive(false)
-  else
-    if self.status == UIS4BusinessStatus.CPPS_Completed then
-      (self.canGet):SetActive(true)
-      if (self.notGet).activeSelf then
-        (self.eff):SetActive(true)
-        ;
-        (self.eff2):SetActive(true)
-        ;
-        (self._anim):Play("uianim_UIS4BusinessProgress_receive")
-      else
-        -- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self.CanGetCanvas).alpha = 1
-      end
-      ;
-      (self.notGet):SetActive(false)
-      ;
-      (self.got):SetActive(false)
+    self.notGet:SetActive(true)
+    self.canGet:SetActive(false)
+    self.got:SetActive(false)
+  elseif self.status == UIS4BusinessStatus.CPPS_Completed then
+    self.canGet:SetActive(true)
+    if self.notGet.activeSelf then
+      self.eff:SetActive(true)
+      self.eff2:SetActive(true)
+      self._anim:Play("uianim_UIS4BusinessProgress_receive")
     else
-      if self.status == UIS4BusinessStatus.CPPS_Taken then
-        (self.notGet):SetActive(false)
-        ;
-        (self.canGet):SetActive(false)
-        ;
-        (self.got):SetActive(true)
-      end
+      self.CanGetCanvas.alpha = 1
     end
+    self.notGet:SetActive(false)
+    self.got:SetActive(false)
+  elseif self.status == UIS4BusinessStatus.CPPS_Taken then
+    self.notGet:SetActive(false)
+    self.canGet:SetActive(false)
+    self.got:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4BusinessProgress.SetTitleText = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local titleStr = (StringTable.Get)("str_season_s4_trade_total_process_title_" .. self.number)
-  ;
-  (self._name):SetText(titleStr)
-  local introStr = (StringTable.Get)("str_season_s4_trade_total_process_intro_" .. self.number)
-  ;
-  (self._condition):SetText(introStr)
+function UIS4BusinessProgress:SetTitleText(go)
+  local titleStr = StringTable.Get("str_season_s4_trade_total_process_title_" .. self.number)
+  self._name:SetText(titleStr)
+  local introStr = StringTable.Get("str_season_s4_trade_total_process_intro_" .. self.number)
+  self._condition:SetText(introStr)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4BusinessProgress.GetBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIS4BusinessProgress:GetBtnOnClick(go)
   if self._callback then
-    (self._callback)(self.progress)
+    self._callback(self.progress)
   end
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4BusinessProgress.SetAwards = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local count = (table.count)(self.rewards)
-  self.awardItems = (self.AwardsPool):SpawnObjects("UISeasonItemS4", count)
-  for i,v in ipairs(self.awardItems) do
+function UIS4BusinessProgress:SetAwards()
+  local count = table.count(self.rewards)
+  self.awardItems = self.AwardsPool:SpawnObjects("UISeasonItemS4", count)
+  for i, v in ipairs(self.awardItems) do
     v:SetRect(0.8)
     local ra = RoleAsset:New()
-    ra.assetid = ((self.rewards)[i]).assetid
-    ra.count = ((self.rewards)[i]).count
+    ra.assetid = self.rewards[i].assetid
+    ra.count = self.rewards[i].count
     v:Flush(ra)
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-UIS4BusinessProgress.PlayProgressAnimIn = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIS4BusinessProgress:PlayProgressAnimIn()
   local LockName = "UIS4DiaryItem_AnimIN"
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.canvas).alpha = 0
+  self.canvas.alpha = 0
   self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : _ENV, self
     YIELD(TT, self.number * 60)
-    if not (tolua.isnull)(self._anim) then
-      (self._anim):Play("uianim_UIS4BusinessProgress_in")
+    if not tolua.isnull(self._anim) then
+      self._anim:Play("uianim_UIS4BusinessProgress_in")
     end
-  end
-)
+  end)
 end
-
-

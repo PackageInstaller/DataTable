@@ -1,29 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_get_item_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawGetItemBase", UICustomWidget)
 UIHauteCoutureDrawGetItemBase = UIHauteCoutureDrawGetItemBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawGetItemBase.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawGetItemBase:Constructor()
   self.controller = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemBase.InitWidgetsBase = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawGetItemBase:InitWidgetsBase()
   self.controller = self.uiOwner
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawGetItemBase.BgOnClick = function(self)
-  -- function num : 0_2
-  (self.controller):CloseDialog()
+function UIHauteCoutureDrawGetItemBase:BgOnClick()
+  self.controller:CloseDialog()
 end
-
-

@@ -1,252 +1,196 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/dynamic_cg.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DynamicCG", Object)
 DynamicCG = DynamicCG
-local DynamicCGType = {Spine = 1, Live2D = 2, None = 3}
-_enum("DynamicCGType", DynamicCGType)
-local Live2DSize = {l2d_1602111 = 0.6, l2d_1602112 = 2.2, l2d_1602121 = 0.6, l2d_1602122 = 0.6, l2d_1502132 = 0.6, l2d_1602113 = 0.6, l2d_1500563 = 0.65, l2d_1501573 = 1, l2d_1601563 = 0.65}
-local live2DRTSize = {
-l2d_1602162 = {4096, 4096}
-, 
-l2d_1601482 = {4096, 4096}
+local DynamicCGType = {
+  Spine = 1,
+  Live2D = 2,
+  None = 3
 }
--- DECOMPILER ERROR at PC37: Confused about usage of register: R3 in 'UnsetPending'
+_enum("DynamicCGType", DynamicCGType)
+local Live2DSize = {
+  l2d_1602111 = 0.6,
+  l2d_1602112 = 2.2,
+  l2d_1602121 = 0.6,
+  l2d_1602122 = 0.6,
+  l2d_1502132 = 0.6,
+  l2d_1602113 = 0.6,
+  l2d_1500563 = 0.65,
+  l2d_1501573 = 1,
+  l2d_1601563 = 0.65
+}
+local live2DRTSize = {
+  l2d_1602162 = {4096, 4096},
+  l2d_1601482 = {4096, 4096}
+}
 
-DynamicCG.ReplaceL2D = function(l2dResName, force)
-  -- function num : 0_0 , upvalues : _ENV
-  do
-    if not APPVER1250 or force then
-      local name = (string.split)(l2dResName, "_")
-      if name[1] == "l2d" then
-        return name[2] .. "_spine_idle"
-      end
+function DynamicCG.ReplaceL2D(l2dResName, force)
+  if not APPVER1250 or force then
+    local name = string.split(l2dResName, "_")
+    if name[1] == "l2d" then
+      return name[2] .. "_spine_idle"
     end
-    return l2dResName
   end
+  return l2dResName
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCG.SyncLoad = function(resName, loaderCmpt, gameObject)
-  -- function num : 0_1 , upvalues : DynamicCGType, _ENV
+function DynamicCG.SyncLoad(resName, loaderCmpt, gameObject)
   local dynCGType = DynamicCGType.Spine
-  if (string.startwith)(resName, "l2d_") then
+  if string.startwith(resName, "l2d_") then
     dynCGType = DynamicCGType.Live2D
     if not APPVER1250 then
-      local replaceSpine = (DynamicCG.ReplaceL2D)(resName)
+      local replaceSpine = DynamicCG.ReplaceL2D(resName)
       if replaceSpine then
         resName = replaceSpine
         dynCGType = DynamicCGType.Spine
       else
-        ;
-        (Log.fatal)("不支持l2d版本的客户端，找不到l2d对应的spine代替资源", resName)
+        Log.fatal("不支持l2d版本的客户端，找不到l2d对应的spine代替资源", resName)
         return DynamicCGHandle:New(resName, DynamicCGType.None, loaderCmpt, gameObject)
       end
     end
   end
-  do
-    local loader = loaderCmpt
-    if ((dynCGType == DynamicCGType.Spine and not (typeof(SpineLoader)):IsInstanceOfType(loader)) or not APPVER1250 or dynCGType ~= DynamicCGType.Live2D or not (typeof(Live2DLoader)):IsInstanceOfType(loader)) and not gameObject then
-      gameObject = loader.gameObject
-      loader = nil
-    end
-    if loader then
-      local dcgHandle = DynamicCGHandle:New(resName, dynCGType, loader, nil)
-      dcgHandle:LoadSync()
-      return dcgHandle
+  local loader = loaderCmpt
+  if loader and (not (dynCGType ~= DynamicCGType.Spine or typeof(SpineLoader):IsInstanceOfType(loader)) or APPVER1250 and dynCGType == DynamicCGType.Live2D and not typeof(Live2DLoader):IsInstanceOfType(loader)) and not gameObject then
+    gameObject = loader.gameObject
+    loader = nil
+  end
+  if loader then
+    local dcgHandle = DynamicCGHandle:New(resName, dynCGType, loader, nil)
+    dcgHandle:LoadSync()
+    return dcgHandle
+  elseif not gameObject then
+    Log.fatal("[DynamicCG] Load error, gameObject is nil and loader is nil!")
+    return
+  else
+    local loaderGO = gameObject
+    loaderGO = UnityEngine.GameObject:New(resName)
+    loaderGO.transform:SetParent(gameObject.transform, false)
+    loaderGO:AddComponent(typeof(UnityEngine.RectTransform)).sizeDelta = Vector2(2048, 2048)
+    if dynCGType == DynamicCGType.Spine then
+      loader = loaderGO:AddComponent(typeof(SpineLoader))
     else
-      do
-        if not gameObject then
-          (Log.fatal)("[DynamicCG] Load error, gameObject is nil and loader is nil!")
-          return 
-        else
-          local loaderGO = gameObject
-          loaderGO = (UnityEngine.GameObject):New(resName)
-          ;
-          (loaderGO.transform):SetParent(gameObject.transform, false)
-          ;
-          (loaderGO:AddComponent(typeof(UnityEngine.RectTransform))).sizeDelta = Vector2(2048, 2048)
-          if dynCGType == DynamicCGType.Spine then
-            loader = loaderGO:AddComponent(typeof(SpineLoader))
-          else
-            loader = loaderGO:AddComponent(typeof(Live2DLoader))
-          end
-          local dcgHandle = DynamicCGHandle:New(resName, dynCGType, loader, loaderGO)
-          dcgHandle:LoadSync()
-          return dcgHandle
-        end
-      end
+      loader = loaderGO:AddComponent(typeof(Live2DLoader))
     end
+    local dcgHandle = DynamicCGHandle:New(resName, dynCGType, loader, loaderGO)
+    dcgHandle:LoadSync()
+    return dcgHandle
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCG.AsyncLoad = function(TT, resName, loaderCmpt, gameObject)
-  -- function num : 0_2 , upvalues : DynamicCGType, _ENV
+function DynamicCG.AsyncLoad(TT, resName, loaderCmpt, gameObject)
   local dynCGType = DynamicCGType.Spine
-  if (string.startwith)(resName, "l2d_") then
+  if string.startwith(resName, "l2d_") then
     dynCGType = DynamicCGType.Live2D
     if not APPVER1250 then
-      local replaceSpine = (DynamicCG.ReplaceL2D)(resName)
+      local replaceSpine = DynamicCG.ReplaceL2D(resName)
       if replaceSpine then
         resName = replaceSpine
         dynCGType = DynamicCGType.Spine
       else
-        ;
-        (Log.fatal)("不支持l2d版本的客户端，找不到l2d对应的spine代替资源", resName)
+        Log.fatal("不支持l2d版本的客户端，找不到l2d对应的spine代替资源", resName)
         return DynamicCGHandle:New(resName, DynamicCGType.None, loaderCmpt, gameObject)
       end
     end
   end
-  do
-    local loader = loaderCmpt
-    if ((dynCGType == DynamicCGType.Spine and not (typeof(SpineLoader)):IsInstanceOfType(loader)) or not APPVER1250 or dynCGType ~= DynamicCGType.Live2D or not (typeof(Live2DLoader)):IsInstanceOfType(loader)) and not gameObject then
-      gameObject = loader.gameObject
-      loader = nil
-    end
-    if loader then
-      local dcgHandle = DynamicCGHandle:New(resName, dynCGType, loader, true)
-      dcgHandle:LoadAsync(TT)
-      return dcgHandle
+  local loader = loaderCmpt
+  if loader and (not (dynCGType ~= DynamicCGType.Spine or typeof(SpineLoader):IsInstanceOfType(loader)) or APPVER1250 and dynCGType == DynamicCGType.Live2D and not typeof(Live2DLoader):IsInstanceOfType(loader)) and not gameObject then
+    gameObject = loader.gameObject
+    loader = nil
+  end
+  if loader then
+    local dcgHandle = DynamicCGHandle:New(resName, dynCGType, loader, true)
+    dcgHandle:LoadAsync(TT)
+    return dcgHandle
+  elseif not gameObject then
+    Log.fatal("[DynamicCG] Load error, gameObject is nil and loader is nil!")
+    return
+  else
+    local loaderGO = gameObject
+    loaderGO = UnityEngine.GameObject:New(resName)
+    loaderGO.transform:SetParent(gameObject.transform, false)
+    loaderGO:AddComponent(typeof(UnityEngine.RectTransform)).sizeDelta = Vector2(2048, 2048)
+    if dynCGType == DynamicCGType.Spine then
+      loader = loaderGO:AddComponent(typeof(SpineLoader))
     else
-      do
-        if not gameObject then
-          (Log.fatal)("[DynamicCG] Load error, gameObject is nil and loader is nil!")
-          return 
-        else
-          local loaderGO = gameObject
-          loaderGO = (UnityEngine.GameObject):New(resName)
-          ;
-          (loaderGO.transform):SetParent(gameObject.transform, false)
-          ;
-          (loaderGO:AddComponent(typeof(UnityEngine.RectTransform))).sizeDelta = Vector2(2048, 2048)
-          if dynCGType == DynamicCGType.Spine then
-            loader = loaderGO:AddComponent(typeof(SpineLoader))
-          else
-            loader = loaderGO:AddComponent(typeof(Live2DLoader))
-          end
-          local dcgHandle = DynamicCGHandle:New(resName, dynCGType, loader, loaderGO)
-          dcgHandle:LoadAsync(TT)
-          return dcgHandle
-        end
-      end
+      loader = loaderGO:AddComponent(typeof(Live2DLoader))
     end
+    local dcgHandle = DynamicCGHandle:New(resName, dynCGType, loader, loaderGO)
+    dcgHandle:LoadAsync(TT)
+    return dcgHandle
   end
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCG.ProcessLive2DCamSize = function(resName, loader)
-  -- function num : 0_3 , upvalues : Live2DSize
+function DynamicCG.ProcessLive2DCamSize(resName, loader)
   local camSize = Live2DSize[resName]
-  if not camSize then
-    camSize = 0.5
-  end
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (loader.RTCam).orthographicSize = camSize
+  camSize = camSize or 0.5
+  loader.RTCam.orthographicSize = camSize
 end
 
 _class("DynamicCGHandle", Object)
 DynamicCGHandle = DynamicCGHandle
--- DECOMPILER ERROR at PC55: Confused about usage of register: R3 in 'UnsetPending'
 
-DynamicCGHandle.Constructor = function(self, resName, dynamicCGType, loader, gameObject)
-  -- function num : 0_4 , upvalues : _ENV
+function DynamicCGHandle:Constructor(resName, dynamicCGType, loader, gameObject)
   self._resName = resName
   self._dynamicCGType = dynamicCGType
   self._loader = {}
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._loader)[dynamicCGType] = loader
+  self._loader[dynamicCGType] = loader
   self._gameObject = gameObject
   if not gameObject and loader then
     self._gameObject = loader.gameObject
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R5 in 'UnsetPending'
-
   DynamicCGHandle.Instance = self
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.LoadSync = function(self)
-  -- function num : 0_5 , upvalues : DynamicCGType
+function DynamicCGHandle:LoadSync()
   local dynCGType = self._dynamicCGType
   if dynCGType == DynamicCGType.Spine then
-    ((self._loader)[dynCGType]):LoadSpine(self._resName)
-  else
-    if dynCGType == DynamicCGType.Live2D then
-      ((self._loader)[dynCGType]):LoadLive2D(self._resName)
-      self:OnLoadLive2D()
-    end
+    self._loader[dynCGType]:LoadSpine(self._resName)
+  elseif dynCGType == DynamicCGType.Live2D then
+    self._loader[dynCGType]:LoadLive2D(self._resName)
+    self:OnLoadLive2D()
   end
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.LoadAsync = function(self, TT)
-  -- function num : 0_6 , upvalues : _ENV, DynamicCGType
+function DynamicCGHandle:LoadAsync(TT)
   local id = GetCurTaskId()
   local sameFrame = true
   local loaded = false
   local dynCGType = self._dynamicCGType
   if dynCGType == DynamicCGType.Spine then
-    ((self._loader)[dynCGType]):AsyncLoadSpine(self._resName, function()
-    -- function num : 0_6_0 , upvalues : loaded, sameFrame, _ENV, TT, id
-    loaded = true
-    if not sameFrame then
-      RESUME(TT, id)
-    end
-  end
-)
+    self._loader[dynCGType]:AsyncLoadSpine(self._resName, function()
+      loaded = true
+      if not sameFrame then
+        RESUME(TT, id)
+      end
+    end)
     sameFrame = false
     if not loaded then
       SUSPEND(TT)
     end
-  else
-    if dynCGType == DynamicCGType.Live2D then
-      ((self._loader)[dynCGType]):AsyncLoadLive2D(self._resName, function()
-    -- function num : 0_6_1 , upvalues : loaded, self, sameFrame, _ENV, TT, id
-    loaded = true
-    self:OnLoadLive2D()
-    if not sameFrame then
-      RESUME(TT, id)
-    end
-  end
-)
-      sameFrame = false
-      if not loaded then
-        SUSPEND(TT)
+  elseif dynCGType == DynamicCGType.Live2D then
+    self._loader[dynCGType]:AsyncLoadLive2D(self._resName, function()
+      loaded = true
+      self:OnLoadLive2D()
+      if not sameFrame then
+        RESUME(TT, id)
       end
+    end)
+    sameFrame = false
+    if not loaded then
+      SUSPEND(TT)
     end
   end
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.OnLoadLive2D = function(self)
-  -- function num : 0_7 , upvalues : DynamicCGType, Live2DSize, live2DRTSize
-  local loader = (self._loader)[DynamicCGType.Live2D]
+function DynamicCGHandle:OnLoadLive2D()
+  local loader = self._loader[DynamicCGType.Live2D]
   loader:PlayAnimation("idle")
   local camSize = Live2DSize[self._resName]
-  if not camSize then
-    camSize = 0.5
-  end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
+  camSize = camSize or 0.5
   if loader.RTCam then
-    (loader.RTCam).orthographicSize = camSize
+    loader.RTCam.orthographicSize = camSize
   end
   local rtSize = live2DRTSize[self._resName]
   if rtSize and loader.RTCam then
-    local rt = (loader.RTCam).targetTexture
+    local rt = loader.RTCam.targetTexture
     if rt.width ~= rtSize[1] or rt.height ~= rtSize[2] then
       rt:Release()
       rt.width = rtSize[1]
@@ -256,358 +200,177 @@ DynamicCGHandle.OnLoadLive2D = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.GetOrAddComponent = function(gameObject, classType)
-  -- function num : 0_8 , upvalues : _ENV
+function DynamicCGHandle.GetOrAddComponent(gameObject, classType)
   local cmpt = gameObject:GetComponent(typeof(classType))
-  if not cmpt then
-    cmpt = gameObject:AddComponent(typeof(classType))
-  end
+  cmpt = cmpt or gameObject:AddComponent(typeof(classType))
   return cmpt
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.ChangeDynamicCG = function(self, resName, keepLive2DUIRenderEnv)
-  -- function num : 0_9 , upvalues : DynamicCGType, _ENV
+function DynamicCGHandle:ChangeDynamicCG(resName, keepLive2DUIRenderEnv)
   self._resName = resName
   local dynCGType = DynamicCGType.Spine
-  if (string.startwith)(resName, "l2d_") then
+  if string.startwith(resName, "l2d_") then
     dynCGType = DynamicCGType.Live2D
     if not APPVER1250 then
-      local replaceSpine = (DynamicCG.ReplaceL2D)(resName)
+      local replaceSpine = DynamicCG.ReplaceL2D(resName)
       if replaceSpine then
         resName = replaceSpine
         self._resName = resName
         dynCGType = DynamicCGType.Spine
       else
-        ;
-        (Log.fatal)("不支持l2d版本的客户端，找不到l2d对应的spine代替资源", resName)
+        Log.fatal("不支持l2d版本的客户端，找不到l2d对应的spine代替资源", resName)
         self._dynamicCGType = DynamicCGType.None
-        return 
+        return
       end
     end
   end
-  do
-    if dynCGType ~= self._dynamicCGType then
-      if dynCGType == DynamicCGType.Spine then
-        if (self._loader)[self._dynamicCGType] then
-          ((self._loader)[self._dynamicCGType]):DestroyCurrentLive2D(not keepLive2DUIRenderEnv)
-        end
-        self._gameObject = (((self._gameObject).transform).parent).gameObject
-        -- DECOMPILER ERROR at PC59: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._loader)[dynCGType] = (DynamicCGHandle.GetOrAddComponent)(self._gameObject, SpineLoader)
+  if dynCGType ~= self._dynamicCGType then
+    if dynCGType == DynamicCGType.Spine then
+      if self._loader[self._dynamicCGType] then
+        self._loader[self._dynamicCGType]:DestroyCurrentLive2D(not keepLive2DUIRenderEnv)
+      end
+      self._gameObject = self._gameObject.transform.parent.gameObject
+      self._loader[dynCGType] = DynamicCGHandle.GetOrAddComponent(self._gameObject, SpineLoader)
+    else
+      if self._loader[self._dynamicCGType] then
+        self._loader[self._dynamicCGType]:DestroyCurrentSpine()
+      end
+      if not self._loader[dynCGType] then
+        local live2dLoaderGO = UnityEngine.GameObject:New(resName)
+        live2dLoaderGO.transform:SetParent(self._gameObject.transform, false)
+        live2dLoaderGO:AddComponent(typeof(UnityEngine.RectTransform)).sizeDelta = Vector2(2048, 2048)
+        self._gameObject = live2dLoaderGO
+        self._loader[dynCGType] = live2dLoaderGO:AddComponent(typeof(Live2DLoader))
       else
-        if (self._loader)[self._dynamicCGType] then
-          ((self._loader)[self._dynamicCGType]):DestroyCurrentSpine()
-        end
-        if not (self._loader)[dynCGType] then
-          local live2dLoaderGO = (UnityEngine.GameObject):New(resName)
-          ;
-          (live2dLoaderGO.transform):SetParent((self._gameObject).transform, false)
-          ;
-          (live2dLoaderGO:AddComponent(typeof(UnityEngine.RectTransform))).sizeDelta = Vector2(2048, 2048)
-          self._gameObject = live2dLoaderGO
-          -- DECOMPILER ERROR at PC104: Confused about usage of register: R5 in 'UnsetPending'
-
-          ;
-          (self._loader)[dynCGType] = live2dLoaderGO:AddComponent(typeof(Live2DLoader))
-        else
-          do
-            self._gameObject = ((self._loader)[dynCGType]).gameObject
-            self._dynamicCGType = dynCGType
-          end
-        end
+        self._gameObject = self._loader[dynCGType].gameObject
       end
     end
   end
+  self._dynamicCGType = dynCGType
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.ChangeDynamicCGSync = function(self, resName, keepLive2DUIRenderEnv)
-  -- function num : 0_10
+function DynamicCGHandle:ChangeDynamicCGSync(resName, keepLive2DUIRenderEnv)
   if resName == self._resName then
-    return 
+    return
   end
   self:ChangeDynamicCG(resName, keepLive2DUIRenderEnv)
   self:LoadSync()
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.ChangeDynamicCGAsync = function(self, TT, resName, keepLive2DUIRenderEnv)
-  -- function num : 0_11
+function DynamicCGHandle:ChangeDynamicCGAsync(TT, resName, keepLive2DUIRenderEnv)
   if resName == self._resName then
-    return 
+    return
   end
   self:ChangeDynamicCG(resName, keepLive2DUIRenderEnv)
   self:LoadAsync(TT)
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.DestroyCurrentCG = function(self, keepLive2DUIRenderEnv)
-  -- function num : 0_12 , upvalues : DynamicCGType
+function DynamicCGHandle:DestroyCurrentCG(keepLive2DUIRenderEnv)
   local dynamicCGType = self._dynamicCGType
   if dynamicCGType == DynamicCGType.Spine then
-    ((self._loader)[dynamicCGType]):DestroyCurrentSpine()
-  else
-    if dynamicCGType == DynamicCGType.Live2D then
-      ((self._loader)[dynamicCGType]):DestroyCurrentLive2D(not keepLive2DUIRenderEnv)
-    end
+    self._loader[dynamicCGType]:DestroyCurrentSpine()
+  elseif dynamicCGType == DynamicCGType.Live2D then
+    self._loader[dynamicCGType]:DestroyCurrentLive2D(not keepLive2DUIRenderEnv)
   end
   self._resName = nil
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.Release = function(self)
-  -- function num : 0_13 , upvalues : DynamicCGType, _ENV
+function DynamicCGHandle:Release()
   local dynamicCGType = self._dynamicCGType
   if dynamicCGType == DynamicCGType.Spine then
-    ((self._loader)[dynamicCGType]):DestroyCurrentSpine()
-  else
-    if dynamicCGType == DynamicCGType.Live2D then
-      ((self._loader)[dynamicCGType]):DestroyCurrentLive2D(true)
-      ;
-      ((UnityEngine.Object).Destroy)(self._gameObject)
-    end
+    self._loader[dynamicCGType]:DestroyCurrentSpine()
+  elseif dynamicCGType == DynamicCGType.Live2D then
+    self._loader[dynamicCGType]:DestroyCurrentLive2D(true)
+    UnityEngine.Object.Destroy(self._gameObject)
   end
   self._gameObject = nil
   self._loader = nil
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.SetAnimMixTime = function(self, mixTime)
-  -- function num : 0_14 , upvalues : DynamicCGType
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
+function DynamicCGHandle:SetAnimMixTime(mixTime)
   if self._dynamicCGType == DynamicCGType.Spine then
-    ((((self._loader)[self._dynamicCGType]).AnimationState).Data).DefaultMix = mixTime
+    self._loader[self._dynamicCGType].AnimationState.Data.DefaultMix = mixTime
+  else
   end
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.InitializeSpine = function(self)
-  -- function num : 0_15 , upvalues : DynamicCGType, _ENV
+function DynamicCGHandle:InitializeSpine()
   local dynamicCGType = self._dynamicCGType
   if dynamicCGType == DynamicCGType.Spine then
-    local spineSke = ((self._loader)[dynamicCGType]).CurrentSkeleton
-    if not spineSke then
-      spineSke = ((self._loader)[dynamicCGType]).CurrentMultiSkeleton
-    end
+    local spineSke = self._loader[dynamicCGType].CurrentSkeleton
+    spineSke = spineSke or self._loader[dynamicCGType].CurrentMultiSkeleton
     if spineSke then
       spineSke:Initialize(true)
     else
-      ;
-      (Log.fatal)("[DynamicCG] InitializeSpine while spineSke is nil")
+      Log.fatal("[DynamicCG] InitializeSpine while spineSke is nil")
     end
-  else
-    do
-      if dynamicCGType == DynamicCGType.Live2D then
-        ((self._loader)[dynamicCGType]):DestroyCurrentLive2D(false)
-        ;
-        ((self._loader)[dynamicCGType]):LoadLive2D(self._resName)
-      end
-    end
+  elseif dynamicCGType == DynamicCGType.Live2D then
+    self._loader[dynamicCGType]:DestroyCurrentLive2D(false)
+    self._loader[dynamicCGType]:LoadLive2D(self._resName)
   end
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.SetStartAnimation = function(self, animName)
-  -- function num : 0_16 , upvalues : DynamicCGType, _ENV
+function DynamicCGHandle:SetStartAnimation(animName)
   local dynamicCGType = self._dynamicCGType
   if dynamicCGType == DynamicCGType.Spine then
-    local spineSke = ((self._loader)[dynamicCGType]).CurrentSkeleton
-    if not spineSke then
-      spineSke = ((self._loader)[dynamicCGType]).CurrentMultiSkeleton
-    end
+    local spineSke = self._loader[dynamicCGType].CurrentSkeleton
+    spineSke = spineSke or self._loader[dynamicCGType].CurrentMultiSkeleton
     if spineSke then
       spineSke.startingAnimation = animName
     else
-      ;
-      (Log.fatal)("[DynamicCG] SetStartAnimation while spineSke is nil")
+      Log.fatal("[DynamicCG] SetStartAnimation while spineSke is nil")
     end
-  else
-    do
-      -- DECOMPILER ERROR at PC26: Confused about usage of register: R3 in 'UnsetPending'
-
-      if dynamicCGType == DynamicCGType.Live2D then
-        ((self._loader)[dynamicCGType]).StartAnimation = animName
-      end
-    end
+  elseif dynamicCGType == DynamicCGType.Live2D then
+    self._loader[dynamicCGType].StartAnimation = animName
   end
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.SetAnimation = function(self, trackOrLayerID, animName, loop)
-  -- function num : 0_17 , upvalues : DynamicCGType, _ENV
+function DynamicCGHandle:SetAnimation(trackOrLayerID, animName, loop)
   local dynamicCGType = self._dynamicCGType
   if dynamicCGType == DynamicCGType.Spine then
-    local spineSke = ((self._loader)[dynamicCGType]).CurrentSkeleton
-    if not spineSke then
-      spineSke = ((self._loader)[dynamicCGType]).CurrentMultiSkeleton
-    end
+    local spineSke = self._loader[dynamicCGType].CurrentSkeleton
+    spineSke = spineSke or self._loader[dynamicCGType].CurrentMultiSkeleton
     if spineSke then
-      (spineSke.AnimationState):SetAnimation(trackOrLayerID, animName, loop)
+      spineSke.AnimationState:SetAnimation(trackOrLayerID, animName, loop)
     else
-      ;
-      (Log.fatal)("[DynamicCG] SetAnimation while spineSke is nil")
+      Log.fatal("[DynamicCG] SetAnimation while spineSke is nil")
     end
-  else
-    do
-      if dynamicCGType == DynamicCGType.Live2D then
-        ((self._loader)[dynamicCGType]):PlayAnimation(animName, trackOrLayerID, 3, loop)
-      end
-    end
+  elseif dynamicCGType == DynamicCGType.Live2D then
+    self._loader[dynamicCGType]:PlayAnimation(animName, trackOrLayerID, 3, loop)
   end
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.SetAnimationWithTrackEntryReturn = function(self, trackOrLayerID, animName, loop)
-  -- function num : 0_18 , upvalues : DynamicCGType, _ENV
+function DynamicCGHandle:SetAnimationWithTrackEntryReturn(trackOrLayerID, animName, loop)
   local dynamicCGType = self._dynamicCGType
   if dynamicCGType == DynamicCGType.Spine then
-    local spineSke = ((self._loader)[dynamicCGType]).CurrentSkeleton
-    if not spineSke then
-      spineSke = ((self._loader)[dynamicCGType]).CurrentMultiSkeleton
-    end
+    local spineSke = self._loader[dynamicCGType].CurrentSkeleton
+    spineSke = spineSke or self._loader[dynamicCGType].CurrentMultiSkeleton
     if spineSke then
-      return (spineSke.AnimationState):SetAnimation(trackOrLayerID, animName, loop)
+      return spineSke.AnimationState:SetAnimation(trackOrLayerID, animName, loop)
     else
-      ;
-      (Log.fatal)("[DynamicCG] SetAnimationWithTrackEntryReturn while spineSke is nil")
+      Log.fatal("[DynamicCG] SetAnimationWithTrackEntryReturn while spineSke is nil")
     end
-  else
-    do
-      if dynamicCGType == DynamicCGType.Live2D then
-        ((self._loader)[dynamicCGType]):PlayAnimation(animName, trackOrLayerID, 3, loop)
-        local cam = ((self._loader)[dynamicCGType]).RTCam
-        if cam then
-          local l2dTF = (cam.transform):GetChild(0)
-          if l2dTF then
-            require("tolua.reflection")
-            ;
-            (tolua.loadassembly)("Assembly-CSharp")
-            local animationListType = typeof("AnimationClipList")
-            local property = (tolua.getproperty)(animationListType, "Animations")
-          end
-        end
-      end
-      if property then
-        local field = (tolua.getfield)(animationListType, "Animations")
-        if field then
-          local animationClipListCmpt = (l2dTF.gameObject):GetComponent(animationListType)
-          local value = field:Get(animationClipListCmpt)
-          field:Destroy()
-          for i = 0, value.Length - 1 do
-            local anim = value[i]
-            if anim.name == animName then
-              return anim
-            end
-          end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC100: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.GetCurDynamicCGType = function(self)
-  -- function num : 0_19
-  return self._dynamicCGType
-end
-
--- DECOMPILER ERROR at PC103: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.Update = function(self, delteTime)
-  -- function num : 0_20 , upvalues : DynamicCGType, _ENV
-  local dynamicCGType = self._dynamicCGType
-  do
-    if dynamicCGType == DynamicCGType.Spine then
-      local spineSke = ((self._loader)[dynamicCGType]).CurrentSkeleton
-      if not spineSke then
-        spineSke = ((self._loader)[dynamicCGType]).CurrentMultiSkeleton
-      end
-      if spineSke then
-        spineSke:Update(delteTime)
-      else
-        ;
-        (Log.fatal)("[DynamicCG] Update while spineSke is nil")
-      end
-    else
-    end
-    if dynamicCGType == DynamicCGType.Live2D then
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC106: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.SetColor = function(self, color)
-  -- function num : 0_21 , upvalues : DynamicCGType, _ENV
-  local dynamicCGType = self._dynamicCGType
-  if dynamicCGType == DynamicCGType.Spine then
-    local spineSke = ((self._loader)[dynamicCGType]).CurrentSkeleton
-    if spineSke then
-      spineSke.color = color
-    else
-      spineSke = ((self._loader)[dynamicCGType]).CurrentMultiSkeleton
-      if spineSke then
-        local skeleton = spineSke.Skeleton
-        skeleton.R = color.r
-        skeleton.G = color.g
-        skeleton.B = color.b
-        skeleton.A = color.a
-      else
-        do
-          do
-            ;
-            (Log.fatal)("[DynamicCG] SetColor while spineSke is nil")
-            if dynamicCGType == DynamicCGType.Live2D then
-              ((self._loader)[self._dynamicCGType]):SetColor(color)
-            end
-          end
-        end
-      end
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC109: Confused about usage of register: R3 in 'UnsetPending'
-
-DynamicCGHandle.SetAlpha = function(self, alpha)
-  -- function num : 0_22 , upvalues : DynamicCGType, _ENV
-  local dynamicCGType = self._dynamicCGType
-  if dynamicCGType == DynamicCGType.Spine then
-    local spineSke = ((self._loader)[dynamicCGType]).CurrentSkeleton
-    if spineSke then
-      local color = spineSke.color
-      color.a = alpha
-      spineSke.color = color
-    else
-      do
-        spineSke = ((self._loader)[dynamicCGType]).CurrentMultiSkeleton
-        if spineSke then
-          local skeleton = spineSke.Skeleton
-          skeleton.A = alpha
+  elseif dynamicCGType == DynamicCGType.Live2D then
+    self._loader[dynamicCGType]:PlayAnimation(animName, trackOrLayerID, 3, loop)
+    local cam = self._loader[dynamicCGType].RTCam
+    if cam then
+      local l2dTF = cam.transform:GetChild(0)
+      if l2dTF then
+        require("tolua.reflection")
+        tolua.loadassembly("Assembly-CSharp")
+        local animationListType = typeof("AnimationClipList")
+        local property = tolua.getproperty(animationListType, "Animations")
+        if property then
         else
-          do
-            do
-              ;
-              (Log.fatal)("[DynamicCG] SetAlpha while spineSke is nil")
-              if dynamicCGType == DynamicCGType.Live2D then
-                ((self._loader)[dynamicCGType]):SetOpacity(alpha)
+          local field = tolua.getfield(animationListType, "Animations")
+          if field then
+            local animationClipListCmpt = l2dTF.gameObject:GetComponent(animationListType)
+            local value = field:Get(animationClipListCmpt)
+            field:Destroy()
+            for i = 0, value.Length - 1 do
+              local anim = value[i]
+              if anim.name == animName then
+                return anim
               end
             end
           end
@@ -617,19 +380,78 @@ DynamicCGHandle.SetAlpha = function(self, alpha)
   end
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R3 in 'UnsetPending'
+function DynamicCGHandle:GetCurDynamicCGType()
+  return self._dynamicCGType
+end
 
-DynamicCGHandle.SetMatFloat = function(self, param, value)
-  -- function num : 0_23 , upvalues : DynamicCGType, _ENV
+function DynamicCGHandle:Update(delteTime)
   local dynamicCGType = self._dynamicCGType
   if dynamicCGType == DynamicCGType.Spine then
-    local spineSke = ((self._loader)[dynamicCGType]).CurrentSkeleton
+    local spineSke = self._loader[dynamicCGType].CurrentSkeleton
+    spineSke = spineSke or self._loader[dynamicCGType].CurrentMultiSkeleton
     if spineSke then
-      spineSke.material = (UnityEngine.Material):New(spineSke.material)
-      ;
-      (spineSke.material):SetFloat(param, value)
+      spineSke:Update(delteTime)
     else
-      spineSke = ((self._loader)[dynamicCGType]).CurrentMultiSkeleton
+      Log.fatal("[DynamicCG] Update while spineSke is nil")
+    end
+  elseif dynamicCGType == DynamicCGType.Live2D then
+  end
+end
+
+function DynamicCGHandle:SetColor(color)
+  local dynamicCGType = self._dynamicCGType
+  if dynamicCGType == DynamicCGType.Spine then
+    local spineSke = self._loader[dynamicCGType].CurrentSkeleton
+    if spineSke then
+      spineSke.color = color
+    else
+      spineSke = self._loader[dynamicCGType].CurrentMultiSkeleton
+      if spineSke then
+        local skeleton = spineSke.Skeleton
+        skeleton.R = color.r
+        skeleton.G = color.g
+        skeleton.B = color.b
+        skeleton.A = color.a
+      else
+        Log.fatal("[DynamicCG] SetColor while spineSke is nil")
+      end
+    end
+  elseif dynamicCGType == DynamicCGType.Live2D then
+    self._loader[self._dynamicCGType]:SetColor(color)
+  end
+end
+
+function DynamicCGHandle:SetAlpha(alpha)
+  local dynamicCGType = self._dynamicCGType
+  if dynamicCGType == DynamicCGType.Spine then
+    local spineSke = self._loader[dynamicCGType].CurrentSkeleton
+    if spineSke then
+      local color = spineSke.color
+      color.a = alpha
+      spineSke.color = color
+    else
+      spineSke = self._loader[dynamicCGType].CurrentMultiSkeleton
+      if spineSke then
+        local skeleton = spineSke.Skeleton
+        skeleton.A = alpha
+      else
+        Log.fatal("[DynamicCG] SetAlpha while spineSke is nil")
+      end
+    end
+  elseif dynamicCGType == DynamicCGType.Live2D then
+    self._loader[dynamicCGType]:SetOpacity(alpha)
+  end
+end
+
+function DynamicCGHandle:SetMatFloat(param, value)
+  local dynamicCGType = self._dynamicCGType
+  if dynamicCGType == DynamicCGType.Spine then
+    local spineSke = self._loader[dynamicCGType].CurrentSkeleton
+    if spineSke then
+      spineSke.material = UnityEngine.Material:New(spineSke.material)
+      spineSke.material:SetFloat(param, value)
+    else
+      spineSke = self._loader[dynamicCGType].CurrentMultiSkeleton
       if spineSke then
         spineSke.UseInstanceMaterials = true
         spineSke:UpdateMesh()
@@ -642,17 +464,9 @@ DynamicCGHandle.SetMatFloat = function(self, param, value)
           end
         end
       else
-        do
-          do
-            ;
-            (Log.fatal)("[DynamicCG] SetMatFloat while spineSke is nil")
-            if dynamicCGType == DynamicCGType.Live2D then
-            end
-          end
-        end
+        Log.fatal("[DynamicCG] SetMatFloat while spineSke is nil")
       end
     end
+  elseif dynamicCGType == DynamicCGType.Live2D then
   end
 end
-
-

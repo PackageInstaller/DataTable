@@ -1,64 +1,42 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/diary/ui_homeland_dairy_contents_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeLandDiaryContentsController", UIController)
 UIHomeLandDiaryContentsController = UIHomeLandDiaryContentsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeLandDiaryContentsController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
-  self._petModule = (GameGlobal.GetModule)(PetModule)
-  self._homelandEventInfo = (self._homelandModule):GetHomeLandEventInfo()
-  self._homelandDiaryCfg = (Cfg.cfg_homeland_dairy_item)({})
-  self._homelandEventCfg = (Cfg.cfg_homeland_event)({})
+function UIHomeLandDiaryContentsController:LoadDataOnEnter(TT, res, uiParams)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
+  self._petModule = GameGlobal.GetModule(PetModule)
+  self._homelandEventInfo = self._homelandModule:GetHomeLandEventInfo()
+  self._homelandDiaryCfg = Cfg.cfg_homeland_dairy_item({})
+  self._homelandEventCfg = Cfg.cfg_homeland_event({})
   self._rowpPerCount = 3
   self._diaryItems = {}
   self._finishDairys = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController._InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeLandDiaryContentsController:_InitWidget()
   self._messgaeSvList = self:GetUIComponent("UIDynamicScrollView", "messgaeSv")
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIHomeLandDiaryContentsController:OnShow(uiParams)
   self:GetFinishDairyEvent()
   self:RefreshData()
   self:_InitWidget()
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.OnHide = function(self)
-  -- function num : 0_3
+function UIHomeLandDiaryContentsController:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.GetFinishDairyEvent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomeLandDiaryContentsController:GetFinishDairyEvent()
   self._finishDairys = {}
-  for i,v in pairs((self._homelandEventInfo).finish_event_list) do
-    (table.insert)(self._finishDairys, i)
+  for i, v in pairs(self._homelandEventInfo.finish_event_list) do
+    table.insert(self._finishDairys, i)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.RefreshData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for index,value in pairs(self._homelandDiaryCfg) do
+function UIHomeLandDiaryContentsController:RefreshData()
+  for index, value in pairs(self._homelandDiaryCfg) do
     local state = 1
     if self:CheckInFinish(value.EventId) then
       state = 2
@@ -76,27 +54,17 @@ UIHomeLandDiaryContentsController.RefreshData = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.Refresh = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHomeLandDiaryContentsController:Refresh()
   self._showListInfo = self:GetSortData()
   self._itemGroupCount = #self._showListInfo
-  local count = (math.ceil)(self._itemGroupCount / self._rowpPerCount)
-  ;
-  (self._messgaeSvList):InitListView(count, function(scrollview, index)
-    -- function num : 0_6_0 , upvalues : self
+  local count = math.ceil(self._itemGroupCount / self._rowpPerCount)
+  self._messgaeSvList:InitListView(count, function(scrollview, index)
     return self:_OnGetDiaryItemGroupCell(scrollview, index)
-  end
-)
-  ;
-  (self._messgaeSvList):RefreshAllShownItem()
+  end)
+  self._messgaeSvList:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController._OnGetDiaryItemGroupCell = function(self, scrollview, index)
-  -- function num : 0_7
+function UIHomeLandDiaryContentsController:_OnGetDiaryItemGroupCell(scrollview, index)
   local item = scrollview:NewListViewItem("cellItem")
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -107,203 +75,141 @@ UIHomeLandDiaryContentsController._OnGetDiaryItemGroupCell = function(self, scro
   for i = 1, self._rowpPerCount do
     local diaryItem = rowList[i]
     local itemIndex = index * self._rowpPerCount + i
-    if #self._showListInfo < itemIndex then
-      (diaryItem:GetGameObject()):SetActive(false)
+    if itemIndex > #self._showListInfo then
+      diaryItem:GetGameObject():SetActive(false)
     else
       self:ShowDiaryItem(diaryItem, itemIndex)
-      -- DECOMPILER ERROR at PC40: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._diaryItems)[itemIndex] = diaryItem
+      self._diaryItems[itemIndex] = diaryItem
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.ShowDiaryItem = function(self, diaryItem, index)
-  -- function num : 0_8
-  local config = (self._showListInfo)[index]
+function UIHomeLandDiaryContentsController:ShowDiaryItem(diaryItem, index)
+  local config = self._showListInfo[index]
   local isnew, islock = self:CheckIsNewOrIsLock(config)
-  ;
-  (diaryItem:GetGameObject()):SetActive(true)
+  diaryItem:GetGameObject():SetActive(true)
   if config ~= nil then
     diaryItem:InitData(config, function(id)
-    -- function num : 0_8_0
-  end
-, index, isnew, islock, self._homelandEventCfg, #self._homelandDiaryCfg)
+    end, index, isnew, islock, self._homelandEventCfg, #self._homelandDiaryCfg)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.GetCellItemState = function(self)
-  -- function num : 0_9
+function UIHomeLandDiaryContentsController:GetCellItemState()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController._GetEventData = function(self, eventId)
-  -- function num : 0_10 , upvalues : _ENV
-  for i,v in pairs(self._homelandDiaryCfg) do
+function UIHomeLandDiaryContentsController:_GetEventData(eventId)
+  for i, v in pairs(self._homelandDiaryCfg) do
     if v.EventId == eventId then
       return i, v
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController._SpawnObject = function(self, className, widgetName, count)
-  -- function num : 0_11
+function UIHomeLandDiaryContentsController:_SpawnObject(className, widgetName, count)
   local spCount = count == nil and 1 or count
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className, spCount)
   return obj
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController._AttachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIHomeLandDiaryContentsController:_AttachEvents()
   self:AttachEvent(GameEventType.OnHomeLandDiaryGotoPage, self.OnHomeLandDiaryGotoPage)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController._DetachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIHomeLandDiaryContentsController:_DetachEvents()
   self:DetachEvent(GameEventType.OnHomeLandDiaryGotoPage, self.OnHomeLandDiaryGotoPage)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController._SetFunction = function(self)
-  -- function num : 0_14
+function UIHomeLandDiaryContentsController:_SetFunction()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.closebtnOnClick = function(self)
-  -- function num : 0_15
+function UIHomeLandDiaryContentsController:closebtnOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.OnHomeLandDiaryGotoPage = function(self)
-  -- function num : 0_16
+function UIHomeLandDiaryContentsController:OnHomeLandDiaryGotoPage()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.CheckIsNewOrIsLock = function(self, data)
-  -- function num : 0_17 , upvalues : _ENV
+function UIHomeLandDiaryContentsController:CheckIsNewOrIsLock(data)
   local isNew, isLock = true, true
-  for i,v in pairs(((self._homelandModule):GetHomelandDairyInfo()).is_readed_dairy) do
+  for i, v in pairs(self._homelandModule:GetHomelandDairyInfo().is_readed_dairy) do
     if data.ID == v then
       isNew = false
       break
     end
   end
-  do
-    for k = 1, #self._finishDairys do
-      if (self._finishDairys)[k] == data.EventId then
-        isLock = false
-        break
-      end
-    end
-    do
-      if isNew then
-        return not isLock, isLock
-      end
+  for k = 1, #self._finishDairys do
+    if self._finishDairys[k] == data.EventId then
+      isLock = false
+      break
     end
   end
+  return isNew and not isLock, isLock
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.GetSortData = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIHomeLandDiaryContentsController:GetSortData()
   local gotIdList = {}
   local ungetIdList = {}
   local finishied = self._finishDairys
   for i = 1, #self._homelandDiaryCfg do
     local hadGot = false
     for k = #finishied, 1, -1 do
-      if finishied[k] == ((self._homelandDiaryCfg)[i]).EventId then
+      if finishied[k] == self._homelandDiaryCfg[i].EventId then
         hadGot = true
-        ;
-        (table.insert)(gotIdList, (self._homelandDiaryCfg)[i])
+        table.insert(gotIdList, self._homelandDiaryCfg[i])
         break
       end
     end
-    do
-      do
-        if not hadGot then
-          (table.insert)(ungetIdList, (self._homelandDiaryCfg)[i])
-        end
-        -- DECOMPILER ERROR at PC36: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    if not hadGot then
+      table.insert(ungetIdList, self._homelandDiaryCfg[i])
     end
   end
-  local sortfun = function(x, y)
-    -- function num : 0_18_0
+  
+  local function sortfun(x, y)
     if not x.petStar then
       x.petStar = 0
     end
     if not y.petStar then
       y.petStar = 0
     end
-    if x.petId == y.petId then
-      if x.ID >= y.ID then
-        do return x.petStar ~= y.petStar end
-        do return x.petId < y.petId end
-        do return y.petStar < x.petStar end
-        -- DECOMPILER ERROR: 5 unprocessed JMP targets
+    if x.petStar == y.petStar then
+      if x.petId == y.petId then
+        return x.ID < y.ID
+      else
+        return x.petId < y.petId
       end
     end
+    return x.petStar > y.petStar
   end
-
-  local sortfungot = function(x, y)
-    -- function num : 0_18_1
-    do return x.time < y.time end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  
+  local function sortfungot(x, y)
+    return x.time < y.time
   end
-
+  
   local sortedCfgList = gotIdList
-  ;
-  (table.sort)(sortedCfgList, sortfungot)
-  ;
-  (table.sort)(ungetIdList, sortfun)
+  table.sort(sortedCfgList, sortfungot)
+  table.sort(ungetIdList, sortfun)
   for i = 1, #ungetIdList do
-    (table.insert)(sortedCfgList, ungetIdList[i])
+    table.insert(sortedCfgList, ungetIdList[i])
   end
   return sortedCfgList
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.GetPetInfoByEventId = function(self, eventId)
-  -- function num : 0_19 , upvalues : _ENV
+function UIHomeLandDiaryContentsController:GetPetInfoByEventId(eventId)
   local petInfo = {}
-  for key,value in pairs(self._homelandEventCfg) do
+  for key, value in pairs(self._homelandEventCfg) do
     if eventId == value.ID then
-      petInfo = (Cfg.cfg_pet)[value.PetID]
+      petInfo = Cfg.cfg_pet[value.PetID]
     end
   end
   return petInfo
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.CheckInFinish = function(self, eventId)
-  -- function num : 0_20 , upvalues : _ENV
+function UIHomeLandDiaryContentsController:CheckInFinish(eventId)
   local eventlist = self._finishDairys
-  for key,value in pairs(eventlist) do
+  for key, value in pairs(eventlist) do
     if eventId == value then
       return true
     end
@@ -311,12 +217,9 @@ UIHomeLandDiaryContentsController.CheckInFinish = function(self, eventId)
   return false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.CheckHadRead = function(self, Id)
-  -- function num : 0_21 , upvalues : _ENV
-  local readlist = ((self._homelandModule):GetHomelandDairyInfo()).is_readed_dairy
-  for key,value in pairs(readlist) do
+function UIHomeLandDiaryContentsController:CheckHadRead(Id)
+  local readlist = self._homelandModule:GetHomelandDairyInfo().is_readed_dairy
+  for key, value in pairs(readlist) do
     if Id == value then
       return true
     end
@@ -324,20 +227,15 @@ UIHomeLandDiaryContentsController.CheckHadRead = function(self, Id)
   return false
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryContentsController.GetEventTime = function(self, eventId)
-  -- function num : 0_22 , upvalues : _ENV
-  local list = (self._homelandEventInfo).finish_event_list
+function UIHomeLandDiaryContentsController:GetEventTime(eventId)
+  local list = self._homelandEventInfo.finish_event_list
   if not list then
-    return 
+    return
   end
-  for key,value in pairs(list) do
+  for key, value in pairs(list) do
     if eventId == key then
       return value
     end
   end
   return nil
 end
-
-

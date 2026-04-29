@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/world/unique_player_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayerComponent", Object)
 PlayerComponent = PlayerComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayerComponent.Constructor = function(self, world)
-  -- function num : 0_0
+function PlayerComponent:Constructor(world)
   self._world = world
   self._localTeamEntity = nil
   self._remoteTeamEntity = nil
@@ -16,171 +9,105 @@ PlayerComponent.Constructor = function(self, world)
   self._networkEntity = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.GetCurrentTeamEntity = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self._world):GetGameTurn() == GameTurnType.RemotePlayerTurn then
+function PlayerComponent:GetCurrentTeamEntity()
+  if self._world:GetGameTurn() == GameTurnType.RemotePlayerTurn then
     return self._remoteTeamEntity
   end
   return self._localTeamEntity
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.GetCurrentEnemyTeamEntity = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if (self._world):GetGameTurn() == GameTurnType.RemotePlayerTurn then
+function PlayerComponent:GetCurrentEnemyTeamEntity()
+  if self._world:GetGameTurn() == GameTurnType.RemotePlayerTurn then
     return self._localTeamEntity
   end
   return self._remoteTeamEntity
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.GetLocalTeamEntity = function(self)
-  -- function num : 0_3
+function PlayerComponent:GetLocalTeamEntity()
   return self._localTeamEntity
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.SetLocalTeamEntity = function(self, entity)
-  -- function num : 0_4
+function PlayerComponent:SetLocalTeamEntity(entity)
   self._localTeamEntity = entity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.IsLocalTeamEntity = function(self, entity)
-  -- function num : 0_5
-  do return self._localTeamEntity == entity end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PlayerComponent:IsLocalTeamEntity(entity)
+  return self._localTeamEntity == entity
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.GetRemoteTeamEntity = function(self)
-  -- function num : 0_6
+function PlayerComponent:GetRemoteTeamEntity()
   return self._remoteTeamEntity
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.SetRemoteTeamEntity = function(self, entity)
-  -- function num : 0_7
+function PlayerComponent:SetRemoteTeamEntity(entity)
   self._remoteTeamEntity = entity
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.GetPreviewTeamEntity = function(self)
-  -- function num : 0_8
-  if not self._previewTeamEntity then
-    return self:GetCurrentTeamEntity()
-  end
+function PlayerComponent:GetPreviewTeamEntity()
+  return self._previewTeamEntity or self:GetCurrentTeamEntity()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.SetPreviewTeamEntity = function(self, entity)
-  -- function num : 0_9
+function PlayerComponent:SetPreviewTeamEntity(entity)
   self._previewTeamEntity = entity
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.GetPetEntityByPetPstID = function(self, pstid)
-  -- function num : 0_10 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).PetPstID)
-  for i,e in ipairs(group:GetEntities()) do
-    if (e:PetPstID()):GetPstID() == pstid then
+function PlayerComponent:GetPetEntityByPetPstID(pstid)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.PetPstID)
+  for i, e in ipairs(group:GetEntities()) do
+    if e:PetPstID():GetPstID() == pstid then
       return e
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.GetAllTeamEntities = function(self)
-  -- function num : 0_11
-  return {self._localTeamEntity, self._remoteTeamEntity}
+function PlayerComponent:GetAllTeamEntities()
+  return {
+    self._localTeamEntity,
+    self._remoteTeamEntity
+  }
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.SetAddPartnerTempTeam = function(self, tempTeamEntity)
-  -- function num : 0_12
+function PlayerComponent:SetAddPartnerTempTeam(tempTeamEntity)
   self._addPartnerTempTeam = tempTeamEntity
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.GetAddPartnerTempTeam = function(self)
-  -- function num : 0_13
+function PlayerComponent:GetAddPartnerTempTeam()
   return self._addPartnerTempTeam
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.IsAddingPartner = function(self)
-  -- function num : 0_14
-  do return self._addPartnerTempTeam ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PlayerComponent:IsAddingPartner()
+  return self._addPartnerTempTeam ~= nil
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.SendCommand = function(self, cmd)
-  -- function num : 0_15
-  (self._networkEntity):PushCommand(cmd)
+function PlayerComponent:SendCommand(cmd)
+  self._networkEntity:PushCommand(cmd)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.SetNetworkEntity = function(self, networkEntity)
-  -- function num : 0_16
+function PlayerComponent:SetNetworkEntity(networkEntity)
   self._networkEntity = networkEntity
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayerComponent.GetNetworkEntity = function(self)
-  -- function num : 0_17
+function PlayerComponent:GetNetworkEntity()
   return self._networkEntity
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.Player = function(self)
-  -- function num : 0_18
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).Player)
+function BaseWorld:Player()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.Player)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.HasPlayer = function(self)
-  -- function num : 0_19
-  return self:HasUniqueComponent((self.BW_UniqueComponentsEnum).Player)
+function BaseWorld:HasPlayer()
+  return self:HasUniqueComponent(self.BW_UniqueComponentsEnum.Player)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.AddPlayer = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function BaseWorld:AddPlayer()
   local component = PlayerComponent:New(self)
-  local index = (self.BW_UniqueComponentsEnum).Player
+  local index = self.BW_UniqueComponentsEnum.Player
   self:SetUniqueComponent(index, component)
   return component
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BaseWorld.RemovePlayer = function(self)
-  -- function num : 0_21
+function BaseWorld:RemovePlayer()
   if self:HasPlayer() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).Player, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.Player, nil)
   end
 end
-
-

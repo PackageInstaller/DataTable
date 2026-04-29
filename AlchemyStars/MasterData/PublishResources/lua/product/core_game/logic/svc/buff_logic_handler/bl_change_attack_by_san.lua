@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_attack_by_san.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttackBySan", BuffLogicBase)
 BuffLogicChangeAttackBySan = BuffLogicChangeAttackBySan
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackBySan.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAttackBySan:Constructor(buffInstance, logicParam)
   self._mulValue = logicParam.mulValue or 0
   self._baseSan = logicParam.baseSan or 100
   self._minValue = logicParam.minValue
@@ -17,44 +10,36 @@ BuffLogicChangeAttackBySan.Constructor = function(self, buffInstance, logicParam
   self._attackSourceParam = logicParam.attackSourceParam
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackBySan.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local featureLogicSvc = (self._world):GetService("FeatureLogic")
+function BuffLogicChangeAttackBySan:DoLogic()
+  local featureLogicSvc = self._world:GetService("FeatureLogic")
   if not featureLogicSvc then
-    return 
+    return
   end
   if not featureLogicSvc:HasFeatureType(FeatureType.Sanity) then
-    return 
+    return
   end
   local curSanValue = featureLogicSvc:GetSanValue()
-  local entity = (self._buffInstance):Entity()
+  local entity = self._buffInstance:Entity()
   local baseAttack = self:ChangeAttackBySan_CalcBaseAttack()
   local changeSan = curSanValue - self._baseSan
   local newChangeValue = changeSan * self._mulValue
   if self._minValue then
-    newChangeValue = (math.max)(newChangeValue, self._minValue)
+    newChangeValue = math.max(newChangeValue, self._minValue)
   end
   if self._maxValue then
-    newChangeValue = (math.min)(newChangeValue, self._maxValue)
+    newChangeValue = math.min(newChangeValue, self._maxValue)
   end
-  local attack = (math.floor)(baseAttack * newChangeValue)
-  ;
-  (Log.debug)("CalcChangeAttackBySan entity=", entity:GetID(), " baseAttack=", baseAttack, " curSanValue=", curSanValue, " newChangeValue=", newChangeValue, " deltaAttack=", attack)
-  ;
-  (self._buffLogicService):ChangeBaseAttack(entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, attack)
+  local attack = math.floor(baseAttack * newChangeValue)
+  Log.debug("CalcChangeAttackBySan entity=", entity:GetID(), " baseAttack=", baseAttack, " curSanValue=", curSanValue, " newChangeValue=", newChangeValue, " deltaAttack=", attack)
+  self._buffLogicService:ChangeBaseAttack(entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix, attack)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackBySan.ChangeAttackBySan_CalcBaseAttack = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local sourceEntity = (self._buffInstance):Entity()
+function BuffLogicChangeAttackBySan:ChangeAttackBySan_CalcBaseAttack()
+  local sourceEntity = self._buffInstance:Entity()
   if self._attackSourceType == 1 then
     local specialPetTemplateID = self._attackSourceParam
-    local petPstIDGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).PetPstID)
-    for i,e in ipairs(petPstIDGroup:GetEntities()) do
+    local petPstIDGroup = self._world:GetGroup(self._world.BW_WEMatchers.PetPstID)
+    for i, e in ipairs(petPstIDGroup:GetEntities()) do
       local petPstIDCmpt = e:PetPstID()
       local tmplateID = petPstIDCmpt:GetTemplateID()
       if specialPetTemplateID == tmplateID then
@@ -63,22 +48,15 @@ BuffLogicChangeAttackBySan.ChangeAttackBySan_CalcBaseAttack = function(self)
       end
     end
   end
-  do
-    local lsvcFormula = (self._world):GetService("Formula")
-    local baseAttack = lsvcFormula:CalcAttack(sourceEntity)
-    return baseAttack
-  end
+  local lsvcFormula = self._world:GetService("Formula")
+  local baseAttack = lsvcFormula:CalcAttack(sourceEntity)
+  return baseAttack
 end
 
 _class("BuffLogicRemoveAttackBySan", BuffLogicBase)
 BuffLogicRemoveAttackBySan = BuffLogicRemoveAttackBySan
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveAttackBySan.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local entity = (self._buffInstance):Entity()
-  ;
-  (self._buffLogicService):RemoveBaseAttack(entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
+function BuffLogicRemoveAttackBySan:DoLogic()
+  local entity = self._buffInstance:Entity()
+  self._buffLogicService:RemoveBaseAttack(entity, self:GetBuffSeq(), ModifyBaseAttackType.AttackConstantFix)
 end
-
-

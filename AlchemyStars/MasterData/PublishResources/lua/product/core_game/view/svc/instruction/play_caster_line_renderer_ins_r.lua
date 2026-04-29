@@ -1,112 +1,91 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_caster_line_renderer_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayCasterLineRendererInstruction", BaseInstruction)
 PlayCasterLineRendererInstruction = PlayCasterLineRendererInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCasterLineRendererInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCasterLineRendererInstruction:Constructor(paramList)
   local group = paramList.group
-  self._group = (string.split)(group, "|")
+  self._group = string.split(group, "|")
   self._current = paramList.lineCurrent
   self._target = paramList.lineTarget
   self._targerEffectType = tonumber(paramList.targerEffectType)
   self._lineEffectID = tonumber(paramList.lineEffectID)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterLineRendererInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayCasterLineRendererInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local effectService = world:GetService("Effect")
   local targetGroupEntities = {}
-  if (table.intable)(self._group, "Monster") then
-    local monsterGroup = world:GetGroup((world.BW_WEMatchers).MonsterID)
-    ;
-    (table.appendArray)(targetGroupEntities, monsterGroup:GetEntities())
+  if table.intable(self._group, "Monster") then
+    local monsterGroup = world:GetGroup(world.BW_WEMatchers.MonsterID)
+    table.appendArray(targetGroupEntities, monsterGroup:GetEntities())
     if world:MatchType() == MatchType.MT_BlackFist then
-      local teamEntity = (casterEntity:Pet()):GetOwnerTeamEntity()
-      local enemyTeam = (teamEntity:Team()):GetEnemyTeamEntity()
+      local teamEntity = casterEntity:Pet():GetOwnerTeamEntity()
+      local enemyTeam = teamEntity:Team():GetEnemyTeamEntity()
       targetGroupEntities[#targetGroupEntities + 1] = enemyTeam
     end
   end
-  do
-    do
-      if (table.intable)(self._group, "Trap") then
-        local trapGroup = world:GetGroup((world.BW_WEMatchers).Trap)
-        ;
-        (table.appendArray)(targetGroupEntities, trapGroup:GetEntities())
+  if table.intable(self._group, "Trap") then
+    local trapGroup = world:GetGroup(world.BW_WEMatchers.Trap)
+    table.appendArray(targetGroupEntities, trapGroup:GetEntities())
+  end
+  if #targetGroupEntities == 0 then
+    return
+  end
+  local targetRoot = GameObjectHelper.FindChild(casterEntity:View().ViewWrapper.GameObject.transform, self._target)
+  if not targetRoot then
+    return
+  end
+  for i, entity in ipairs(targetGroupEntities) do
+    local effectLineRenderer = entity:EffectLineRenderer()
+    if entity:IsViewVisible() and self:OnCheckEntityBuffEffect(entity) then
+      local entityViewRoot = entity:View().ViewWrapper.GameObject.transform
+      local curRoot = GameObjectHelper.FindChild(entityViewRoot, self._current)
+      if not curRoot and EDITOR then
+        if entity:TrapID() then
+          Log.exception("TrapID:", entity:TrapID():GetTrapID(), "no  :", self._current)
+        elseif entity:MonsterID() then
+          Log.exception("MonsterID:", entity:MonsterID():GetMonsterID(), "no  :", self._current)
+        end
       end
-      if #targetGroupEntities == 0 then
-        return 
-      end
-      local targetRoot = (GameObjectHelper.FindChild)((((casterEntity:View()).ViewWrapper).GameObject).transform, self._target)
-      if not targetRoot then
-        return 
-      end
-      for i,entity in ipairs(targetGroupEntities) do
-        local effectLineRenderer = entity:EffectLineRenderer()
-        if entity:IsViewVisible() and self:OnCheckEntityBuffEffect(entity) then
-          local entityViewRoot = (((entity:View()).ViewWrapper).GameObject).transform
-          local curRoot = (GameObjectHelper.FindChild)(entityViewRoot, self._current)
-          if not curRoot and EDITOR then
-            if entity:TrapID() then
-              (Log.exception)("TrapID:", (entity:TrapID()):GetTrapID(), "no  :", self._current)
-            else
-              if entity:MonsterID() then
-                (Log.exception)("MonsterID:", (entity:MonsterID()):GetMonsterID(), "no  :", self._current)
-              end
+      if curRoot then
+        if not effectLineRenderer then
+          entity:AddEffectLineRenderer()
+          effectLineRenderer = entity:EffectLineRenderer()
+        end
+        local effectHolderCmpt = entity:EffectHolder()
+        if not effectHolderCmpt then
+          entity:AddEffectHolder()
+          effectHolderCmpt = entity:EffectHolder()
+        end
+        local effectEntityIdList = effectHolderCmpt:GetEffectIDEntityDic()[self._lineEffectID]
+        local effect
+        if effectEntityIdList then
+          effect = world:GetEntityByID(effectEntityIdList[1])
+        end
+        if not effect then
+          effect = effectService:CreateEffect(self._lineEffectID, entity)
+          effectHolderCmpt:AttachPermanentEffect(effect:GetID())
+        end
+        YIELD(TT)
+        if effect and effect:View() and effect:View():GetGameObject() then
+          local go = effect:View():GetGameObject()
+          local renderers
+          renderers = go:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
+          for i = 0, renderers.Length - 1 do
+            local line = renderers[i]
+            if line then
+              line.gameObject:SetActive(true)
             end
           end
-          if curRoot then
-            if not effectLineRenderer then
-              entity:AddEffectLineRenderer()
-              effectLineRenderer = entity:EffectLineRenderer()
-            end
-            local effectHolderCmpt = entity:EffectHolder()
-            if not effectHolderCmpt then
-              entity:AddEffectHolder()
-              effectHolderCmpt = entity:EffectHolder()
-            end
-            local effectEntityIdList = (effectHolderCmpt:GetEffectIDEntityDic())[self._lineEffectID]
-            local effect = nil
-            if effectEntityIdList then
-              effect = world:GetEntityByID(effectEntityIdList[1])
-            end
-            if not effect then
-              effect = effectService:CreateEffect(self._lineEffectID, entity)
-              effectHolderCmpt:AttachPermanentEffect(effect:GetID())
-            end
-            YIELD(TT)
-            if effect and effect:View() and (effect:View()):GetGameObject() then
-              local go = ((effect:View()):GetGameObject())
-              local renderers = nil
-              renderers = go:GetComponentsInChildren(typeof(UnityEngine.LineRenderer), true)
-              for i = 0, renderers.Length - 1 do
-                local line = renderers[i]
-                if line then
-                  (line.gameObject):SetActive(true)
-                end
-              end
-              effectLineRenderer:InitEffectLineRenderer(casterEntity:GetID(), curRoot, targetRoot, entityViewRoot, renderers, effect:GetID())
-              effectLineRenderer:SetEffectLineRendererShow(casterEntity:GetID(), true)
-            end
-          end
+          effectLineRenderer:InitEffectLineRenderer(casterEntity:GetID(), curRoot, targetRoot, entityViewRoot, renderers, effect:GetID())
+          effectLineRenderer:SetEffectLineRendererShow(casterEntity:GetID(), true)
         end
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayCasterLineRendererInstruction.OnCheckEntityBuffEffect = function(self, entity)
-  -- function num : 0_2
+function PlayCasterLineRendererInstruction:OnCheckEntityBuffEffect(entity)
   local pass = false
   local buffView = entity:BuffView()
   if buffView and buffView:HasBuffEffect(self._targerEffectType) then
@@ -114,5 +93,3 @@ PlayCasterLineRendererInstruction.OnCheckEntityBuffEffect = function(self, entit
   end
   return pass
 end
-
-

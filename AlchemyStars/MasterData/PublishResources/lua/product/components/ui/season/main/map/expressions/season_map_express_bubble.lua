@@ -1,60 +1,34 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_bubble.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressBubble", SeasonMapExpressBase)
 SeasonMapExpressBubble = SeasonMapExpressBubble
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressBubble.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).Bubble
-  self._autoBinder = AutoEventBinder:New((GameGlobal.EventDispatcher)())
+function SeasonMapExpressBubble:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Bubble
+  self._autoBinder = AutoEventBinder:New(GameGlobal.EventDispatcher())
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBubble.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpressBubble:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBubble.Dispose = function(self)
-  -- function num : 0_2
-  ((self.super).Dispose)(self)
-  ;
-  (self._autoBinder):UnBindAllEvents()
+function SeasonMapExpressBubble:Dispose()
+  self.super.Dispose(self)
+  self._autoBinder:UnBindAllEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBubble.OnPlay = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonMapExpressBubble:OnPlay()
   self._state = SeasonExpressState.Playing
-  local topui = ((GameGlobal.UIStateManager)()):IsTopUI((UISeasonHelper.CurSeasonSceneUI)())
+  local topui = GameGlobal.UIStateManager():IsTopUI(UISeasonHelper.CurSeasonSceneUI())
   if topui then
     self:_ShowBubble()
   else
-    ;
-    (self._autoBinder):BindEvent(GameEventType.SeasonTryShowEventBubble, self, self._ShowBubble)
-    local uiSeasonModule = (GameGlobal.GetUIModule)(SeasonModule)
+    self._autoBinder:BindEvent(GameEventType.SeasonTryShowEventBubble, self, self._ShowBubble)
+    local uiSeasonModule = GameGlobal.GetUIModule(SeasonModule)
     uiSeasonModule:AppendWaitShowBubbleCallback(self)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressBubble._ShowBubble = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._autoBinder):UnBindAllEvents()
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonBubble", self._content, self._eventPoint, function()
-    -- function num : 0_4_0 , upvalues : self
+function SeasonMapExpressBubble:_ShowBubble()
+  self._autoBinder:UnBindAllEvents()
+  GameGlobal.UIStateManager():ShowDialog("UISeasonBubble", self._content, self._eventPoint, function()
     self:Next()
-  end
-)
+  end)
 end
-
-

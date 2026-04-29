@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/config/luckland_affix_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLAffixConfigData", Object)
 LLAffixConfigData = LLAffixConfigData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLAffixConfigData.Constructor = function(self, ID)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_luckland_client_affix)[ID]
+function LLAffixConfigData:Constructor(ID)
+  self._cfg = Cfg.cfg_luckland_client_affix[ID]
   if not self._cfg then
-    (Log.exception)("[LuckLand] affix config is nil, id=", ID)
+    Log.exception("[LuckLand] affix config is nil, id=", ID)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LLAffixConfigData.GetData = function(self)
-  -- function num : 0_1
+function LLAffixConfigData:GetData()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LLAffixConfigData.GetID = function(self)
-  -- function num : 0_2
-  return (self._cfg).ID
+function LLAffixConfigData:GetID()
+  return self._cfg.ID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LLAffixConfigData.GetAffixType = function(self)
-  -- function num : 0_3
-  return (self._cfg).Type
+function LLAffixConfigData:GetAffixType()
+  return self._cfg.Type
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LLAffixConfigData.GetTypeParam = function(self)
-  -- function num : 0_4
-  return (self._cfg).Param
+function LLAffixConfigData:GetTypeParam()
+  return self._cfg.Param
 end
-
-

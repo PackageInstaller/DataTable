@@ -1,75 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/tale_pet/ui_trial_level/ui_trail_level_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local TrailLevelLayerType = {Normal = 0, Final = 1}
 _enum("TrailLevelLayerType", TrailLevelLayerType)
 _class("UITrailLevelLayerData", Object)
 UITrailLevelLayerData = UITrailLevelLayerData
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-UITrailLevelLayerData.Constructor = function(self, cfg)
-  -- function num : 0_0 , upvalues : _ENV
+function UITrailLevelLayerData:Constructor(cfg)
   self._layerId = cfg.ID
-  self._layerName = (StringTable.Get)(cfg.LayerName)
+  self._layerName = StringTable.Get(cfg.LayerName)
   self._layerType = cfg.LayerType
   self._layerIcon = cfg.LayerIcon
-  local levelCfgs = (Cfg.cfg_tale_stage)({Type = 2, Tier = self._layerId})
+  local levelCfgs = Cfg.cfg_tale_stage({
+    Type = 2,
+    Tier = self._layerId
+  })
   self._levelDatas = {}
   if levelCfgs then
     for i = 1, #levelCfgs do
       local data = UITrailLevelData:New(levelCfgs[i])
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R8 in 'UnsetPending'
-
-      ;
-      (self._levelDatas)[#self._levelDatas + 1] = data
+      self._levelDatas[#self._levelDatas + 1] = data
     end
   end
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelLayerData.GetLayerId = function(self)
-  -- function num : 0_1
+function UITrailLevelLayerData:GetLayerId()
   return self._layerId
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelLayerData.GetLayerName = function(self)
-  -- function num : 0_2
+function UITrailLevelLayerData:GetLayerName()
   return self._layerName
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelLayerData.GetLayerIcon = function(self)
-  -- function num : 0_3
+function UITrailLevelLayerData:GetLayerIcon()
   return self._layerIcon
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelLayerData.GetLayerType = function(self)
-  -- function num : 0_4
+function UITrailLevelLayerData:GetLayerType()
   return self._layerType
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelLayerData.GetLevelDatas = function(self)
-  -- function num : 0_5
+function UITrailLevelLayerData:GetLevelDatas()
   return self._levelDatas
 end
 
 _class("UITrailLevelData", Object)
 UITrailLevelData = UITrailLevelData
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
 
-UITrailLevelData.Constructor = function(self, cfg)
-  -- function num : 0_6 , upvalues : _ENV
-  local talePetModule = (GameGlobal.GetModule)(TalePetModule)
+function UITrailLevelData:Constructor(cfg)
+  local talePetModule = GameGlobal.GetModule(TalePetModule)
   self._id = cfg.ID
   self._type = cfg.Type
   self._levelLayer = cfg.Tier
@@ -77,87 +53,52 @@ UITrailLevelData.Constructor = function(self, cfg)
   self._firstDropId = cfg.FirstDropId
   self._levelBg = cfg.LevelBg
   self._icon = cfg.Icon
-  self._name = (StringTable.Get)(cfg.Name)
+  self._name = StringTable.Get(cfg.Name)
   self._elementIcon1 = cfg.ElementIcon1
   self._elementIcon2 = cfg.ElementIcon2
   self._hasComplete = talePetModule:HasCompletLevel(self._id)
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetId = function(self)
-  -- function num : 0_7
+function UITrailLevelData:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetType = function(self)
-  -- function num : 0_8
+function UITrailLevelData:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetLevelLayer = function(self)
-  -- function num : 0_9
+function UITrailLevelData:GetLevelLayer()
   return self._levelLayer
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetFightLevelId = function(self)
-  -- function num : 0_10
+function UITrailLevelData:GetFightLevelId()
   return self._fightLevelId
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetFirstDropId = function(self)
-  -- function num : 0_11
+function UITrailLevelData:GetFirstDropId()
   return self._firstDropId
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetLevelBg = function(self)
-  -- function num : 0_12
+function UITrailLevelData:GetLevelBg()
   return self._levelBg
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetIcon = function(self)
-  -- function num : 0_13
+function UITrailLevelData:GetIcon()
   return self._icon
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetName = function(self)
-  -- function num : 0_14
+function UITrailLevelData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetElementIcon1 = function(self)
-  -- function num : 0_15
+function UITrailLevelData:GetElementIcon1()
   return self._elementIcon1
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.GetElementIcon2 = function(self)
-  -- function num : 0_16
+function UITrailLevelData:GetElementIcon2()
   return self._elementIcon2
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-UITrailLevelData.IsComplete = function(self)
-  -- function num : 0_17
+function UITrailLevelData:IsComplete()
   return self._hasComplete
 end
-
-

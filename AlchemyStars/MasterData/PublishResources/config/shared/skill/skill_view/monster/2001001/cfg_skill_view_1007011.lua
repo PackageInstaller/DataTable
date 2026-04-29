@@ -1,21 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2001001/cfg_skill_view_1007011.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
+}
 local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayCasterAnimation,animName = Skill02; PlayAudio,audioID = 7006,audioType=1; PlayCasterBindEffect,effectID=PARAM.effectID1; Wait,waitTime=500; PlayCasterHUDVisible,visible=0; Wait,waitTime=900; PlayRoleTeleport,type=5,onlySelf=0; "}
-}
-, 
-{2, 2, 0, 2, 1, 600, 
-{" PlayRoleTeleport, type=6; PlayCasterHUDVisible,visible=1; PlayCasterAnimation,animName = Skill022; PlayCasterBindEffect,effectID=PARAM.effectID2; Wait,waitTime=500; DataSelectScopeGridRange,effectType=1; DataSortScopeGridRange,sortType=1; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeEffect,effectID=PARAM.effectID3,label=playRangeEffect; DataSelectNextScopeGridRange,label=selectNextGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=PARAM.effectID4,turnToTarget=1,deathClear=0; "}
-}
-, 
-{3, 3, 0, 2, 2, 200, 
-{" PlaySummonTrap,trapID=60; "}
-}
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayCasterAnimation,animName = Skill02; PlayAudio,audioID = 7006,audioType=1; PlayCasterBindEffect,effectID=PARAM.effectID1; Wait,waitTime=500; PlayCasterHUDVisible,visible=0; Wait,waitTime=900; PlayRoleTeleport,type=5,onlySelf=0; "
+    }
+  },
+  {
+    2,
+    2,
+    0,
+    2,
+    1,
+    600,
+    {
+      " PlayRoleTeleport, type=6; PlayCasterHUDVisible,visible=1; PlayCasterAnimation,animName = Skill022; PlayCasterBindEffect,effectID=PARAM.effectID2; Wait,waitTime=500; DataSelectScopeGridRange,effectType=1; DataSortScopeGridRange,sortType=1; DataSelectScopeGridRangeIndex,index=1; Jump,condition=CheckCurrentScopeGridRangeIndexValid,result=0,goto=phaseEnd; PlayGridRangeEffect,effectID=PARAM.effectID3,label=playRangeEffect; DataSelectNextScopeGridRange,label=selectNextGridRange; Jump,condition=CheckCurrentScopeGridRangeIndexValid,goto=playRangeEffect; DataSelectDamage,damageIndex = 1; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=PARAM.effectID4,turnToTarget=1,deathClear=0; "
+    }
+  },
+  {
+    3,
+    3,
+    0,
+    2,
+    2,
+    200,
+    {
+      " PlaySummonTrap,trapID=60; "
+    }
+  }
 }
 return config, "ID", key
-

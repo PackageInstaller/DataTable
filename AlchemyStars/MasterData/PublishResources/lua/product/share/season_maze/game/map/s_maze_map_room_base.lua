@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/map/s_maze_map_room_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeMapRoomBase", Object)
 SMazeMapRoomBase = SMazeMapRoomBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeMapRoomBase.Constructor = function(self, svrData, node)
-  -- function num : 0_0 , upvalues : _ENV
+function SMazeMapRoomBase:Constructor(svrData, node)
   self._id = svrData.cfg_id
   if svrData.type == SeasonMazeRoomType.SMRT_PVE and svrData.is_bomb then
     self._type = SeasonMazeRoomType.SMRT_Empty
@@ -23,255 +16,171 @@ SMazeMapRoomBase.Constructor = function(self, svrData, node)
   self._awardAssets = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (self._req):Dispose()
+function SMazeMapRoomBase:Dispose()
+  self._req:Dispose()
   self._req = nil
   self._node = nil
   self._gameObject = nil
   self._transform = nil
   self._active = false
-  for k,v in pairs(self._events) do
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(k, v)
+  for k, v in pairs(self._events) do
+    GameGlobal.EventDispatcher():RemoveCallbackListener(k, v)
   end
   self._events = nil
   self._triggering = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.Type = function(self)
-  -- function num : 0_2
+function SMazeMapRoomBase:Type()
   return self._type
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.ID = function(self)
-  -- function num : 0_3
+function SMazeMapRoomBase:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.NodeID = function(self)
-  -- function num : 0_4
-  return (self._node):ID()
+function SMazeMapRoomBase:NodeID()
+  return self._node:ID()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.Node = function(self)
-  -- function num : 0_5
+function SMazeMapRoomBase:Node()
   return self._node
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.GameObject = function(self)
-  -- function num : 0_6
+function SMazeMapRoomBase:GameObject()
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.ShowDialog = function(self, name, ...)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog(name, ...)
+function SMazeMapRoomBase:ShowDialog(name, ...)
+  GameGlobal.UIStateManager():ShowDialog(name, ...)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.OnCross = function(self)
-  -- function num : 0_8
+function SMazeMapRoomBase:OnCross()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.Trigger = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SMazeMapRoomBase:Trigger()
   if self._triggering then
-    (Log.info)("房间不处理重复触发:", self._className, self._id, self._type)
-    return 
+    Log.info("房间不处理重复触发:", self._className, self._id, self._type)
+    return
   end
   self._triggering = true
   self:OnTrigger()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.OnTrigger = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (Log.exception)("子类必须重写OnTrigger方法", (debug.traceback)())
+function SMazeMapRoomBase:OnTrigger()
+  Log.exception("子类必须重写OnTrigger方法", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.OnTriggerComplete = function(self, ...)
-  -- function num : 0_11 , upvalues : _ENV
-  (Log.exception)("子类必须重写OnTriggerComplete方法", (debug.traceback)())
+function SMazeMapRoomBase:OnTriggerComplete(...)
+  Log.exception("子类必须重写OnTriggerComplete方法", debug.traceback())
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.Finish = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function SMazeMapRoomBase:Finish()
   self._triggering = false
-  ;
-  (SMazeAdaptor.OnRoomSettleFinish)(self)
+  SMazeAdaptor.OnRoomSettleFinish(self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.BindEvent = function(self, eventType, func)
-  -- function num : 0_13 , upvalues : _ENV
-  local callback = (self._events)[eventType]
+function SMazeMapRoomBase:BindEvent(eventType, func)
+  local callback = self._events[eventType]
   if callback then
-    (Log.fatal)("不可重复监听事件:", eventType, (debug.traceback)())
-    return 
+    Log.fatal("不可重复监听事件:", eventType, debug.traceback())
+    return
   end
-  callback = (GameHelper:GetInstance()):CreateCallback(func, self)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._events)[eventType] = callback
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(eventType, callback)
+  callback = GameHelper:GetInstance():CreateCallback(func, self)
+  self._events[eventType] = callback
+  GameGlobal.EventDispatcher():AddCallbackListener(eventType, callback)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.UnBindEvent = function(self, eventType)
-  -- function num : 0_14 , upvalues : _ENV
-  local callback = (self._events)[eventType]
+function SMazeMapRoomBase:UnBindEvent(eventType)
+  local callback = self._events[eventType]
   if callback then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(eventType, callback)
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._events)[eventType] = nil
+    GameGlobal.EventDispatcher():RemoveCallbackListener(eventType, callback)
+    self._events[eventType] = nil
   else
-    ;
-    (Log.fatal)("未监听该事件，不用解绑:", eventType)
+    Log.fatal("未监听该事件，不用解绑:", eventType)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase._LoadModel = function(self, type)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg = (Cfg.cfg_season_maze_room_view)[type]
+function SMazeMapRoomBase:_LoadModel(type)
+  local cfg = Cfg.cfg_season_maze_room_view[type]
   if type == SeasonMazeRoomType.SMRT_Resource then
-    local roomCfg = (Cfg.cfg_component_season_maze_room_res)[self._id]
+    local roomCfg = Cfg.cfg_component_season_maze_room_res[self._id]
     if not roomCfg then
-      (Log.exception)("cfg_component_season_maze_room_res 中找不到配置:", self._id)
+      Log.exception("cfg_component_season_maze_room_res 中找不到配置:", self._id)
     end
-    local prefab = ((cfg.CustomParam)[roomCfg.ResType]).Prefab .. ".prefab"
-    self._req = (ResourceManager:GetInstance()):SyncLoadAsset(prefab, LoadType.GameObject)
+    local prefab = cfg.CustomParam[roomCfg.ResType].Prefab .. ".prefab"
+    self._req = ResourceManager:GetInstance():SyncLoadAsset(prefab, LoadType.GameObject)
   else
-    do
-      self._req = (ResourceManager:GetInstance()):SyncLoadAsset(cfg.Prefab .. ".prefab", LoadType.GameObject)
-      self._gameObject = (self._req).Obj
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._gameObject).layer = SMazeSceneLayer.Room
-      ;
-      (self._gameObject):SetActive(true)
-      self._transform = (self._gameObject).transform
-      -- DECOMPILER ERROR at PC63: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._transform).position = (self._node):Position()
-      -- DECOMPILER ERROR at PC67: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._transform).rotation = Quaternion.identity
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._transform).localScale = Vector3.one * cfg.Scale
-      self._animation = (self._gameObject):GetComponentInChildren(typeof(UnityEngine.Animation))
-      self._animName = {OpenLoop = cfg.OpenLoopAni, Open_To_Close = cfg.OpenOutAni, CloseLoop = cfg.CloseLoopAni, Open_To_Hightlight = cfg.TouchInAni, HightlightLoop = cfg.TouchLoopAni, Hightlight_To_Open = cfg.TouchOutAni, Open_To_Stay = cfg.StayInAni, StayLoop = cfg.StayLoopAni, Open_To_Close = cfg.StayOutAni}
-    end
+    self._req = ResourceManager:GetInstance():SyncLoadAsset(cfg.Prefab .. ".prefab", LoadType.GameObject)
   end
+  self._gameObject = self._req.Obj
+  self._gameObject.layer = SMazeSceneLayer.Room
+  self._gameObject:SetActive(true)
+  self._transform = self._gameObject.transform
+  self._transform.position = self._node:Position()
+  self._transform.rotation = Quaternion.identity
+  self._transform.localScale = Vector3.one * cfg.Scale
+  self._animation = self._gameObject:GetComponentInChildren(typeof(UnityEngine.Animation))
+  self._animName = {
+    OpenLoop = cfg.OpenLoopAni,
+    Open_To_Close = cfg.OpenOutAni,
+    CloseLoop = cfg.CloseLoopAni,
+    Open_To_Hightlight = cfg.TouchInAni,
+    HightlightLoop = cfg.TouchLoopAni,
+    Hightlight_To_Open = cfg.TouchOutAni,
+    Open_To_Stay = cfg.StayInAni,
+    StayLoop = cfg.StayLoopAni,
+    Open_To_Close = cfg.StayOutAni
+  }
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.SetAwardAssets = function(self, assets)
-  -- function num : 0_16
+function SMazeMapRoomBase:SetAwardAssets(assets)
   self._awardAssets = assets
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.GetAndClearAwardAssets = function(self)
-  -- function num : 0_17
+function SMazeMapRoomBase:GetAndClearAwardAssets()
   local tmp = self._awardAssets
   self._awardAssets = nil
   return tmp
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.Anim_HighLight = function(self, highLight)
-  -- function num : 0_18
+function SMazeMapRoomBase:Anim_HighLight(highLight)
   if highLight then
-    (self._animation):Play((self._animName).Open_To_Hightlight)
-    ;
-    (self._animation):PlayQueued((self._animName).HightlightLoop)
+    self._animation:Play(self._animName.Open_To_Hightlight)
+    self._animation:PlayQueued(self._animName.HightlightLoop)
   else
-    ;
-    (self._animation):Play((self._animName).Hightlight_To_Open)
-    ;
-    (self._animation):PlayQueued((self._animName).OpenLoop)
+    self._animation:Play(self._animName.Hightlight_To_Open)
+    self._animation:PlayQueued(self._animName.OpenLoop)
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.Anim_Init = function(self, state)
-  -- function num : 0_19 , upvalues : _ENV
+function SMazeMapRoomBase:Anim_Init(state)
   if state == SMazeNodeState.StayTemp then
-    (self._animation):Play((self._animName).StayLoop)
+    self._animation:Play(self._animName.StayLoop)
+  elseif state == SMazeNodeState.UnReachable then
+    self._animation:Play(self._animName.CloseLoop)
   else
-    if state == SMazeNodeState.UnReachable then
-      (self._animation):Play((self._animName).CloseLoop)
+    if state == SMazeNodeState.Reachable then
+      self._animation:Play(self._animName.OpenLoop)
     else
-      if state == SMazeNodeState.Reachable then
-        (self._animation):Play((self._animName).OpenLoop)
-      end
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeMapRoomBase.Anim_State = function(self, oldState, newState)
-  -- function num : 0_20 , upvalues : _ENV
+function SMazeMapRoomBase:Anim_State(oldState, newState)
   if oldState == SMazeNodeState.Reachable and newState == SMazeNodeState.UnReachable then
-    (self._animation):Play((self._animName).Open_To_Close)
-    ;
-    (self._animation):PlayQueued((self._animName).CloseLoop)
-    return 
+    self._animation:Play(self._animName.Open_To_Close)
+    self._animation:PlayQueued(self._animName.CloseLoop)
+    return
   end
   if oldState == SMazeNodeState.Reachable and newState == SMazeNodeState.StayTemp then
-    (self._animation):Play((self._animName).Open_To_Stay)
-    ;
-    (self._animation):PlayQueued((self._animName).StayLoop)
-    return 
+    self._animation:Play(self._animName.Open_To_Stay)
+    self._animation:PlayQueued(self._animName.StayLoop)
+    return
   end
   if oldState == SMazeNodeState.StayTemp and newState == SMazeNodeState.UnReachable then
-    (self._animation):Play((self._animName).Open_To_Close)
-    ;
-    (self._animation):PlayQueued((self._animName).CloseLoop)
-    return 
+    self._animation:Play(self._animName.Open_To_Close)
+    self._animation:PlayQueued(self._animName.CloseLoop)
+    return
   end
-  ;
-  (Log.error)("不处理的动画状态:", oldState, newState)
+  Log.error("不处理的动画状态:", oldState, newState)
 end
-
-

@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_medal/ui_medal_list/ui_medal_list_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMedalListItem", UICustomWidget)
 UIMedalListItem = UIMedalListItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMedalListItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMedalListItem:Constructor()
   self.itemData = nil
   self.callBack = nil
   self._atlas = self:GetAsset("UIMedal.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIMedalListItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItem.InitWidget = function(self)
-  -- function num : 0_2
+function UIMedalListItem:InitWidget()
   self.select = self:GetGameObject("select")
   self.red = self:GetGameObject("red")
   self.lock = self:GetGameObject("lock")
@@ -32,70 +19,39 @@ UIMedalListItem.InitWidget = function(self)
   self.iconRt = self:GetUIComponent("RectTransform", "icon")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItem.GetData = function(self)
-  -- function num : 0_3
+function UIMedalListItem:GetData()
   return self.itemData
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItem.GetID = function(self)
-  -- function num : 0_4
-  return (self.itemData):GetTemplID()
+function UIMedalListItem:GetID()
+  return self.itemData:GetTemplID()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItem.SetData = function(self, itemData, isSelect, callback)
-  -- function num : 0_5 , upvalues : _ENV
+function UIMedalListItem:SetData(itemData, isSelect, callback)
   self.itemData = itemData
   self.callBack = callback
-  ;
-  (self.select):SetActive(isSelect)
-  ;
-  (self.lock):SetActive(not itemData:IsReceive())
+  self.select:SetActive(isSelect)
+  self.lock:SetActive(not itemData:IsReceive())
   local cfgMedal = itemData:GetTempl()
-  local iconSp = (self._atlas):GetSprite(cfgMedal.Icon)
-  do
-    if iconSp then
-      local rect = iconSp.rect
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.icon).sprite = iconSp
-      -- DECOMPILER ERROR at PC30: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self.iconRt).sizeDelta = Vector2(rect.width * 0.4, rect.height * 0.4)
-    end
-    ;
-    (self.red):SetActive(itemData:IsNew())
+  local iconSp = self._atlas:GetSprite(cfgMedal.Icon)
+  if iconSp then
+    local rect = iconSp.rect
+    self.icon.sprite = iconSp
+    self.iconRt.sizeDelta = Vector2(rect.width * 0.4, rect.height * 0.4)
   end
+  self.red:SetActive(itemData:IsNew())
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItem.SetSelect = function(self, bSelect)
-  -- function num : 0_6
-  (self.select):SetActive(bSelect)
+function UIMedalListItem:SetSelect(bSelect)
+  self.select:SetActive(bSelect)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItem.BgOnClick = function(self, go)
-  -- function num : 0_7
+function UIMedalListItem:BgOnClick(go)
   if self.callBack then
-    (self.callBack)(self)
+    self.callBack(self)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMedalListItem.SetNewReviewed = function(self)
-  -- function num : 0_8
-  (self.red):SetActive(false)
+function UIMedalListItem:SetNewReviewed()
+  self.red:SetActive(false)
 end
-
-

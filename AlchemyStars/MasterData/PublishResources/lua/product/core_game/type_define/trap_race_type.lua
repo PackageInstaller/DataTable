@@ -1,8 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/trap_race_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-TrapRaceType = {Team = 1, Pet = 2, Monster = 3, All = 4, FilterByBuff = 5, FriendTeam = 6, EnemyTeam = 7, AllTeam = 8, ChessPet = 9, None = 10, MAX = 99}
-PvpTrapRaceType = {[TrapRaceType.Team] = TrapRaceType.FriendTeam, [TrapRaceType.Pet] = TrapRaceType.FriendTeam, [TrapRaceType.Monster] = TrapRaceType.EnemyTeam}
-
+TrapRaceType = {
+  Team = 1,
+  Pet = 2,
+  Monster = 3,
+  All = 4,
+  FilterByBuff = 5,
+  FriendTeam = 6,
+  EnemyTeam = 7,
+  AllTeam = 8,
+  ChessPet = 9,
+  None = 10,
+  MAX = 99
+}
+PvpTrapRaceType = {
+  [TrapRaceType.Team] = TrapRaceType.FriendTeam,
+  [TrapRaceType.Pet] = TrapRaceType.FriendTeam,
+  [TrapRaceType.Monster] = TrapRaceType.EnemyTeam
+}

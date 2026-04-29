@@ -1,8 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/tw/activity/n33/str_n33_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n33_shop_intro_title = "【抓抓樂娃娃機】玩法說明", str_n33_shop_intro_head_1 = "【抓抓樂娃娃機】：", str_n33_shop_intro_body_1 = "1、共有6台【娃娃機】，導航員可消耗【抓抓樂代幣】在【娃娃機】中夾娃娃。\n2、夾娃娃分為【隨緣夾】和【強力夾】，分別可獲得1次和10次獎勵。【抓抓樂代幣】足夠時，導航員可選擇任意一種方式夾娃娃。當【娃娃機】中獎勵不足10個時，【強力夾】可根據剩餘獎勵數量，消耗等額的【抓抓樂代幣】夾娃娃。\n3、每台【娃娃機】都有一隻【閃光娃娃】。【娃娃機】需要按照順序解鎖，只有獲得上一台【娃娃機】的【閃光娃娃】後，才能解鎖下一台。", str_n33_shop_intro_head_2 = "【抓抓樂代幣】道具使用：", str_n33_shop_intro_body_2 = "1、活動期間，可在【抓抓樂娃娃機】玩法中，消耗【抓抓樂代幣】夾娃娃，獲得獎勵。\n2、當【抓抓樂代幣】停止掉落後，【抓抓樂娃娃機】還會開放3天，請盡速使用剩餘的【抓抓樂代幣】。【抓抓樂娃娃機】關閉後，未使用的【抓抓樂代幣】將按照1:10的比例轉換成白夜幣。", str_n33_shop_award_rest_num = "剩餘", str_n33_shop_big_get = "閃光get!", str_n33_shop_open_soon = "敬請期待", str_n33_shop_tab_left_item_number = "剩餘：", str_n33_shop_loop_box_reset_tips = "已成功獲得所有閃光娃娃！", str_n33_shop_lottery_one = "隨緣夾", str_n33_shop_lottery_ten = "強力夾", str_n33_shop_grid_sell_out = "補貨中", str_n33_shop_tips_11101 = "隨緣試試", str_n33_shop_tips_1121 = "果然如此～", str_n33_shop_tips_1122 = "運氣不錯啊", str_n33_shop_tips_1123 = "一發入魂！！！", str_n33_shop_tips_1210 = "給我閃光吧，娃娃機！", str_n33_shop_tips_1221 = "可惡，這都沒夾中～", str_n33_shop_tips_1222 = "意料之中～", str_n33_shop_tips_1223 = "不愧是強力夾！", str_n33_shop_tips_2110 = "前一台娃娃機抓到閃光娃娃後才能解鎖這台喔～", str_n33_shop_tips_2120 = "閃光娃娃還在，一定要拿下！", str_n33_shop_tips_21301 = "閃光娃娃沒了，但還是可以繼續試手氣", str_n33_shop_tips_21401 = "這台娃娃機中已經沒有娃娃了～", str_n33_shop_rule_description = "玩法說明", str_n33_shop_unlock_tips = "新娃娃解鎖！"}
+local config = {
+  str_n33_shop_intro_title = "【抓抓樂娃娃機】玩法說明",
+  str_n33_shop_intro_head_1 = "【抓抓樂娃娃機】：",
+  str_n33_shop_intro_body_1 = "1、共有6台【娃娃機】，導航員可消耗【抓抓樂代幣】在【娃娃機】中夾娃娃。\n2、夾娃娃分為【隨緣夾】和【強力夾】，分別可獲得1次和10次獎勵。【抓抓樂代幣】足夠時，導航員可選擇任意一種方式夾娃娃。當【娃娃機】中獎勵不足10個時，【強力夾】可根據剩餘獎勵數量，消耗等額的【抓抓樂代幣】夾娃娃。\n3、每台【娃娃機】都有一隻【閃光娃娃】。【娃娃機】需要按照順序解鎖，只有獲得上一台【娃娃機】的【閃光娃娃】後，才能解鎖下一台。",
+  str_n33_shop_intro_head_2 = "【抓抓樂代幣】道具使用：",
+  str_n33_shop_intro_body_2 = "1、活動期間，可在【抓抓樂娃娃機】玩法中，消耗【抓抓樂代幣】夾娃娃，獲得獎勵。\n2、當【抓抓樂代幣】停止掉落後，【抓抓樂娃娃機】還會開放3天，請盡速使用剩餘的【抓抓樂代幣】。【抓抓樂娃娃機】關閉後，未使用的【抓抓樂代幣】將按照1:10的比例轉換成白夜幣。",
+  str_n33_shop_award_rest_num = "剩餘",
+  str_n33_shop_big_get = "閃光get!",
+  str_n33_shop_open_soon = "敬請期待",
+  str_n33_shop_tab_left_item_number = "剩餘：",
+  str_n33_shop_loop_box_reset_tips = "已成功獲得所有閃光娃娃！",
+  str_n33_shop_lottery_one = "隨緣夾",
+  str_n33_shop_lottery_ten = "強力夾",
+  str_n33_shop_grid_sell_out = "補貨中",
+  str_n33_shop_tips_11101 = "隨緣試試",
+  str_n33_shop_tips_1121 = "果然如此～",
+  str_n33_shop_tips_1122 = "運氣不錯啊",
+  str_n33_shop_tips_1123 = "一發入魂！！！",
+  str_n33_shop_tips_1210 = "給我閃光吧，娃娃機！",
+  str_n33_shop_tips_1221 = "可惡，這都沒夾中～",
+  str_n33_shop_tips_1222 = "意料之中～",
+  str_n33_shop_tips_1223 = "不愧是強力夾！",
+  str_n33_shop_tips_2110 = "前一台娃娃機抓到閃光娃娃後才能解鎖這台喔～",
+  str_n33_shop_tips_2120 = "閃光娃娃還在，一定要拿下！",
+  str_n33_shop_tips_21301 = "閃光娃娃沒了，但還是可以繼續試手氣",
+  str_n33_shop_tips_21401 = "這台娃娃機中已經沒有娃娃了～",
+  str_n33_shop_rule_description = "玩法說明",
+  str_n33_shop_unlock_tips = "新娃娃解鎖！"
+}
 return config
-

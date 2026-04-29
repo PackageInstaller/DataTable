@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_grade_interface_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGradeInterfaceController", UIController)
 UIGradeInterfaceController = UIGradeInterfaceController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGradeInterfaceController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIGradeInterfaceController:Constructor()
   self._fromPos = 0
   self._itemCountPerRow = 1
   self._petInfo = nil
@@ -16,27 +9,22 @@ UIGradeInterfaceController.Constructor = function(self)
   self._attMaxNum = 5
   self.effPlayer = nil
   self._petVoiceID = -1
-  self._waitTime = ((Cfg.cfg_global).shakeWaitTime).IntValue or 2000
-  self._shakeX = ((Cfg.cfg_global).shakeOffsetX).IntValue or 10
-  self._shakeY = ((Cfg.cfg_global).shakeOffsetY).IntValue or 10
+  self._waitTime = Cfg.cfg_global.shakeWaitTime.IntValue or 2000
+  self._shakeX = Cfg.cfg_global.shakeOffsetX.IntValue or 10
+  self._shakeY = Cfg.cfg_global.shakeOffsetY.IntValue or 10
   self._closeState = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.GetPetInfos = function(self)
-  -- function num : 0_1
+function UIGradeInterfaceController:GetPetInfos()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIGradeInterfaceController:GetComponents()
   self._bodyLoader = self:GetUIComponent("RawImageLoader", "BodyLoader")
   local sop = self:GetUIComponent("UISelectObjectPath", "mainmenu")
   self.currencyMenu = sop:SpawnObject("UICurrencyMenu")
-  ;
-  (self.currencyMenu):SetData({RoleAssetID.RoleAssetGold})
+  self.currencyMenu:SetData({
+    RoleAssetID.RoleAssetGold
+  })
   self._needGoldTex = self:GetUIComponent("UILocalizationText", "needGoldCount")
   self._leftLine = self:GetUIComponent("Graphic", "leftLine")
   self._consumeName = self:GetUIComponent("Graphic", "consumeName")
@@ -46,8 +34,7 @@ UIGradeInterfaceController.GetComponents = function(self)
   self._consumeRect = self:GetUIComponent("RectTransform", "xiaohaobi")
   self._bg = self:GetGameObject("bg")
   self._MaterialBtnForGuideGo = self:GetGameObject("MaterialBtnForGuide")
-  ;
-  (self._MaterialBtnForGuideGo):SetActive(false)
+  self._MaterialBtnForGuideGo:SetActive(false)
   self._left = self:GetUIComponent("Transform", "left")
   self._right = self:GetUIComponent("Transform", "right")
   self._center = self:GetUIComponent("Transform", "center")
@@ -61,101 +48,56 @@ UIGradeInterfaceController.GetComponents = function(self)
   self:AttachEvent(GameEventType.CloseUIBackPackBox, self.RefreshItemCount)
   local topButton = self:GetUIComponent("UISelectObjectPath", "TopButtons")
   self.topButtonWidget = topButton:SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_2_0 , upvalues : self, _ENV
-    if self.effPlayer and (self.effPlayer).IsPlaying then
-      (self.effPlayer):Stop()
+  self.topButtonWidget:SetData(function()
+    if self.effPlayer and self.effPlayer.IsPlaying then
+      self.effPlayer:Stop()
     end
     self:StopTween()
     self:DetachEvent(GameEventType.PetUpGradeEvent, self.PetBreakSucceed)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayInOutAnimation, true)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayInOutAnimation, true)
     if self.closeCb then
-      (self.closeCb)()
+      self.closeCb()
       self.closeCb = nil
       self.SkipTransitionAmin = true
     end
     self:Lock("self._animRoot:Play")
-    ;
-    (self._animRoot):Play("uieff_GradeInterface_Out")
-    ;
-    ((GameGlobal.Timer)()):AddEvent(417, function()
-      -- function num : 0_2_0_0 , upvalues : self
+    self._animRoot:Play("uieff_GradeInterface_Out")
+    GameGlobal.Timer():AddEvent(417, function()
       self:UnLock("self._animRoot:Play")
       self:CloseDialog()
-    end
-)
-  end
-, function()
-    -- function num : 0_2_1 , upvalues : self
+    end)
+  end, function()
     self:ShowDialog("UIHelpController", "UIGradeInterfaceController")
-  end
-, function()
-    -- function num : 0_2_2 , upvalues : _ENV
-    (UICommonHelper:GetInstance()):SwitchToUIMain()
-  end
-)
+  end, function()
+    UICommonHelper:GetInstance():SwitchToUIMain()
+  end)
   self._leftView = self:GetUIComponent("UIView", "rectLeft")
   self._centerView = self:GetUIComponent("UIView", "rectCenter")
   self._rightView = self:GetUIComponent("UIView", "rectRight")
   self._leftLua = UIGradeInfoItem:New()
   self._centerLua = UIGradeInfoItem:New()
   self._rightLua = UIGradeInfoItem:New()
-  ;
-  (self._leftLua):SetView(self._leftView)
-  ;
-  (self._centerLua):SetView(self._centerView)
-  ;
-  (self._rightLua):SetView(self._rightView)
-  ;
-  (self._leftLua):OnShowItem()
-  ;
-  (self._centerLua):OnShowItem()
-  ;
-  (self._rightLua):OnShowItem()
+  self._leftLua:SetView(self._leftView)
+  self._centerLua:SetView(self._centerView)
+  self._rightLua:SetView(self._rightView)
+  self._leftLua:OnShowItem()
+  self._centerLua:OnShowItem()
+  self._rightLua:OnShowItem()
   self._rectLeft = self:GetUIComponent("RectTransform", "rectLeft")
-  -- DECOMPILER ERROR at PC194: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectLeft).anchoredPosition = Vector2(-200, 0)
+  self._rectLeft.anchoredPosition = Vector2(-200, 0)
   self._rectCenter = self:GetUIComponent("RectTransform", "rectCenter")
-  -- DECOMPILER ERROR at PC205: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectCenter).anchoredPosition = Vector2(0, 0)
+  self._rectCenter.anchoredPosition = Vector2(0, 0)
   self._rectRight = self:GetUIComponent("RectTransform", "rectRight")
-  -- DECOMPILER ERROR at PC216: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._rectRight).anchoredPosition = Vector2(200, 0)
+  self._rectRight.anchoredPosition = Vector2(200, 0)
   self._alphaLeft = self:GetUIComponent("CanvasGroup", "rectLeft")
-  -- DECOMPILER ERROR at PC223: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaLeft).alpha = 0
-  -- DECOMPILER ERROR at PC225: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaLeft).blocksRaycasts = false
+  self._alphaLeft.alpha = 0
+  self._alphaLeft.blocksRaycasts = false
   self._alphaCenter = self:GetUIComponent("CanvasGroup", "rectCenter")
-  -- DECOMPILER ERROR at PC232: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaCenter).alpha = 1
-  -- DECOMPILER ERROR at PC234: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaCenter).blocksRaycasts = true
+  self._alphaCenter.alpha = 1
+  self._alphaCenter.blocksRaycasts = true
   self._alphaRight = self:GetUIComponent("CanvasGroup", "rectRight")
-  -- DECOMPILER ERROR at PC241: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaRight).alpha = 0
-  -- DECOMPILER ERROR at PC243: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._alphaRight).blocksRaycasts = false
+  self._alphaRight.alpha = 0
+  self._alphaRight.blocksRaycasts = false
   self._content = self:GetUIComponent("RectTransform", "PetContent")
   self._bgCgCenter = self:GetUIComponent("RawImageLoader", "drawIconCenterCg")
   self._bgCgLeft = self:GetUIComponent("RawImageLoader", "drawIconLeftCg")
@@ -164,26 +106,14 @@ UIGradeInterfaceController.GetComponents = function(self)
   self._bgCgRectCenter = self:GetUIComponent("RectTransform", "drawIconCenter")
   self._bgCgRectRight = self:GetUIComponent("RectTransform", "drawIconRight")
   self._bgCgGroupLeft = self:GetUIComponent("CanvasGroup", "drawIconLeft")
-  -- DECOMPILER ERROR at PC285: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._bgCgGroupLeft).alpha = 0
+  self._bgCgGroupLeft.alpha = 0
   self._bgCgGroupCenter = self:GetUIComponent("CanvasGroup", "drawIconCenter")
-  -- DECOMPILER ERROR at PC292: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._bgCgGroupCenter).alpha = 1
+  self._bgCgGroupCenter.alpha = 1
   self._bgCgGroupRight = self:GetUIComponent("CanvasGroup", "drawIconRight")
-  -- DECOMPILER ERROR at PC299: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._bgCgGroupRight).alpha = 0
+  self._bgCgGroupRight.alpha = 0
   self._gradeShowPool = self:GetUIComponent("UISelectObjectPath", "gradeShowPool")
   self._gradeShowPoolCanvasGroup = self:GetUIComponent("CanvasGroup", "gradeShowPool")
-  -- DECOMPILER ERROR at PC311: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._gradeShowPoolCanvasGroup).blocksRaycasts = false
+  self._gradeShowPoolCanvasGroup.blocksRaycasts = false
   self._closeBg = self:GetGameObject("closeBg")
   self._bgAnim = self:GetUIComponent("Animation", "bgAnim")
   self._uiAnim = self:GetUIComponent("Animation", "uiAnim")
@@ -192,152 +122,109 @@ UIGradeInterfaceController.GetComponents = function(self)
   self._openGiftTips = self:GetGameObject("openGiftTips")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  self._petModule = ((GameGlobal.GameLogic)()):GetModule(PetModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIGradeInterfaceController:OnShow(uiParams)
+  self._petModule = GameGlobal.GameLogic():GetModule(PetModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
   self:RequestAllPetInfos()
   local petid = uiParams[1]
   self.closeCb = uiParams[2]
   self:GetComponents()
   self._currIndex = self:FindOpenPetIndex(petid)
   self._currIndexTemp = self._currIndex
-  self._petInfo = (self._petInfos)[self._currIndex]
-  self._curMaxLv = (self._petInfo):GetMaxLevel()
-  self._curAtk = (self._petInfo):GetPetAttack()
-  self._curDef = (self._petInfo):GetPetDefence()
-  self._curHp = (self._petInfo):GetPetHealth()
-  self._petPstID = (self._petInfo):GetPstID()
+  self._petInfo = self._petInfos[self._currIndex]
+  self._curMaxLv = self._petInfo:GetMaxLevel()
+  self._curAtk = self._petInfo:GetPetAttack()
+  self._curDef = self._petInfo:GetPetDefence()
+  self._curHp = self._petInfo:GetPetHealth()
+  self._petPstID = self._petInfo:GetPstID()
   self:OnShowInfos()
   self:InitPetScrollView()
-  if ((GameGlobal.GetModule)(GuideModule)):IsGuideProcess(5110) then
-    (self._MaterialBtnForGuideGo):SetActive(true)
+  if GameGlobal.GetModule(GuideModule):IsGuideProcess(5110) then
+    self._MaterialBtnForGuideGo:SetActive(true)
   else
-    ;
-    (self._MaterialBtnForGuideGo):SetActive(false)
+    self._MaterialBtnForGuideGo:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.OnShowInfos = function(self)
-  -- function num : 0_4
-  if (self._petInfos)[self._currIndex - 1] then
-    (self._leftLua):SetData(self._currIndex - 1, (self._petInfos)[self._currIndex - 1])
+function UIGradeInterfaceController:OnShowInfos()
+  if self._petInfos[self._currIndex - 1] then
+    self._leftLua:SetData(self._currIndex - 1, self._petInfos[self._currIndex - 1])
   end
-  if (self._petInfos)[self._currIndex] then
-    (self._centerLua):SetData(self._currIndex, (self._petInfos)[self._currIndex])
+  if self._petInfos[self._currIndex] then
+    self._centerLua:SetData(self._currIndex, self._petInfos[self._currIndex])
   end
-  if (self._petInfos)[self._currIndex + 1] then
-    (self._rightLua):SetData(self._currIndex + 1, (self._petInfos)[self._currIndex + 1])
+  if self._petInfos[self._currIndex + 1] then
+    self._rightLua:SetData(self._currIndex + 1, self._petInfos[self._currIndex + 1])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.RequestAllPetInfos = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local petInfos = ((self._petModule).uiModule):GetSortedPets()
+function UIGradeInterfaceController:RequestAllPetInfos()
+  local petInfos = self._petModule.uiModule:GetSortedPets()
   self._petInfos = {}
   for i = 1, #petInfos do
     local petInfo = petInfos[i]
     if petInfo:GetMaxGrade() ~= petInfo:GetPetGrade() then
-      (table.insert)(self._petInfos, petInfo)
+      table.insert(self._petInfos, petInfo)
     end
   end
-  self._listShowItemCount = (table.count)(self._petInfos)
+  self._listShowItemCount = table.count(self._petInfos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.FindOpenPetIndex = function(self, petid)
-  -- function num : 0_6
+function UIGradeInterfaceController:FindOpenPetIndex(petid)
   if self._petInfos then
     for index = 1, #self._petInfos do
-      if ((self._petInfos)[index]):GetTemplateID() == petid then
+      if self._petInfos[index]:GetTemplateID() == petid then
         return index
       end
     end
   end
-  do
-    return 1
-  end
+  return 1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.InitPetScrollView = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIGradeInterfaceController:InitPetScrollView()
   self._itemTable = {}
   self._scrollViewHelper = H3DScrollViewHelper:New(self, "PetScrollView", "UIGradePetDetailItem", function(index, uiwidget)
-    -- function num : 0_7_0 , upvalues : self
     return self:_OnShowItem(index, uiwidget)
-  end
-, function(index, uiwidget)
-    -- function num : 0_7_1 , upvalues : self
+  end, function(index, uiwidget)
     return self:_OnHideItem(index, uiwidget)
-  end
-)
-  ;
-  (self._scrollViewHelper):SetGroupChangedCallback(function(index, item)
-    -- function num : 0_7_2 , upvalues : self, _ENV
-    if self._listShowItemCount < index + 1 then
-      return 
+  end)
+  self._scrollViewHelper:SetGroupChangedCallback(function(index, item)
+    if index + 1 > self._listShowItemCount then
+      return
     end
     self:_ShowCurrIndexInfo(index + 1)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetListIndexChanged, (self._petInfo):GetTemplateID())
-  end
-)
-  ;
-  (self._scrollViewHelper):SetValueChangedCallback(function(group, value, contentSize, itemSize)
-    -- function num : 0_7_3 , upvalues : self
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetListIndexChanged, self._petInfo:GetTemplateID())
+  end)
+  self._scrollViewHelper:SetValueChangedCallback(function(group, value, contentSize, itemSize)
     self:_OnValueChangedCallBack(group + 1, value, contentSize, itemSize)
-  end
-)
-  self._scrollRectWidth = ((self:GetUIComponent("RectTransform", "PetScrollView")).sizeDelta).x
+  end)
+  self._scrollRectWidth = self:GetUIComponent("RectTransform", "PetScrollView").sizeDelta.x
   local safeArea = self:GetUIComponent("RectTransform", "SafeArea")
-  ;
-  (self._scrollViewHelper):Init(self._listShowItemCount, self._currIndex, (safeArea.rect).size)
-  ;
-  (self._scrollViewHelper):SetNextPageOffset(0.12)
+  self._scrollViewHelper:Init(self._listShowItemCount, self._currIndex, safeArea.rect.size)
+  self._scrollViewHelper:SetNextPageOffset(0.12)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController._OnShowItem = function(self, index, uiwidget)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._itemTable)[index] == nil then
-    (self._itemTable)[index] = uiwidget
+function UIGradeInterfaceController:_OnShowItem(index, uiwidget)
+  if self._itemTable[index] == nil then
+    self._itemTable[index] = uiwidget
   end
-  local petData = (self._petInfos)[index]
+  local petData = self._petInfos[index]
   uiwidget:SetData(index, petData, self._currIndex)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController._OnHideItem = function(self, index, uiwidget)
-  -- function num : 0_9
-  if (self._itemTable)[index] == nil then
-    return 
+function UIGradeInterfaceController:_OnHideItem(index, uiwidget)
+  if self._itemTable[index] == nil then
+    return
   end
   uiwidget:OnHideCallBack()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController._ShowCurrIndexInfo = function(self, index)
-  -- function num : 0_10 , upvalues : _ENV
+function UIGradeInterfaceController:_ShowCurrIndexInfo(index)
   self._currIndex = index
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GradeCheckIsCurrent, self._currIndex)
-  self._petInfo = (self._petInfos)[index]
-  self._petPstID = (self._petInfo):GetPstID()
-  local jumpData = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetJumpData()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GradeCheckIsCurrent, self._currIndex)
+  self._petInfo = self._petInfos[index]
+  self._petPstID = self._petInfo:GetPstID()
+  local jumpData = GameGlobal.GetModule(SerialAutoFightModule):GetJumpData()
   jumpData:Track_From()
   jumpData:Track_Pet()
   jumpData:Track_Pet(self._petPstID)
@@ -346,315 +233,204 @@ UIGradeInterfaceController._ShowCurrIndexInfo = function(self, index)
   self._currIndexTemp = self._currIndex
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController._OnValueChangedCallBack = function(self, group, value, contentSize, itemSize)
-  -- function num : 0_11 , upvalues : _ENV
-  local leftRightDis = (math.abs)(((self._left).position).x - ((self._right).position).x)
-  local centerPosition = (self._center).position
+function UIGradeInterfaceController:_OnValueChangedCallBack(group, value, contentSize, itemSize)
+  local leftRightDis = math.abs(self._left.position.x - self._right.position.x)
+  local centerPosition = self._center.position
   for i = self._currIndex - 1, self._currIndex + 1 do
-    if (self._itemTable)[i] then
-      ((self._itemTable)[i]):ChangeCanvasGroupAlpha(leftRightDis, centerPosition.x)
+    if self._itemTable[i] then
+      self._itemTable[i]:ChangeCanvasGroupAlpha(leftRightDis, centerPosition.x)
     end
   end
-  do
-    if ((self._content).localPosition).x > 0 or ((self._content).localPosition).x < -((self._content).sizeDelta).x + self._scrollRectWidth then
-      return 
-    end
-    local c2c = ((self._itemTable)[self._currIndex]):GetC2C()
-    local nameRate = c2c / leftRightDis
-    local posx = nameRate * 200
-    -- DECOMPILER ERROR at PC58: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._rectCenter).anchoredPosition = Vector2(posx, 0)
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._rectLeft).anchoredPosition = Vector2(posx - 200, 0)
-    -- DECOMPILER ERROR at PC70: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._rectRight).anchoredPosition = Vector2(posx + 200, 0)
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._alphaCenter).alpha = 1 - nameRate * 2
-    -- DECOMPILER ERROR at PC78: Confused about usage of register: R10 in 'UnsetPending'
-
-    if c2c < 0 then
-      (self._alphaLeft).alpha = 0
-      -- DECOMPILER ERROR at PC81: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._alphaRight).alpha = nameRate * 2
-    else
-      -- DECOMPILER ERROR at PC87: Confused about usage of register: R10 in 'UnsetPending'
-
-      if c2c > 0 then
-        (self._alphaLeft).alpha = nameRate * 2
-        -- DECOMPILER ERROR at PC89: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._alphaRight).alpha = 0
-      else
-        -- DECOMPILER ERROR at PC92: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._alphaLeft).alpha = 0
-        -- DECOMPILER ERROR at PC94: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._alphaRight).alpha = 0
-      end
-    end
-    local cgRate = c2c / leftRightDis
-    local posx_cg = cgRate * 300
-    -- DECOMPILER ERROR at PC102: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgCgRectCenter).anchoredPosition = Vector2(posx, 0)
-    -- DECOMPILER ERROR at PC108: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgCgRectLeft).anchoredPosition = Vector2(posx - 300, 0)
-    -- DECOMPILER ERROR at PC114: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgCgRectRight).anchoredPosition = Vector2(posx + 300, 0)
-    -- DECOMPILER ERROR at PC118: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self._bgCgGroupCenter).alpha = 1 - cgRate * 2
-    -- DECOMPILER ERROR at PC122: Confused about usage of register: R12 in 'UnsetPending'
-
-    if c2c < 0 then
-      (self._bgCgGroupLeft).alpha = 0
-      -- DECOMPILER ERROR at PC125: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (self._bgCgGroupRight).alpha = cgRate * 2
-    else
-      -- DECOMPILER ERROR at PC131: Confused about usage of register: R12 in 'UnsetPending'
-
-      if c2c > 0 then
-        (self._bgCgGroupLeft).alpha = cgRate * 2
-        -- DECOMPILER ERROR at PC133: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._bgCgGroupRight).alpha = 0
-      else
-        -- DECOMPILER ERROR at PC136: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._bgCgGroupLeft).alpha = 0
-        -- DECOMPILER ERROR at PC138: Confused about usage of register: R12 in 'UnsetPending'
-
-        ;
-        (self._bgCgGroupRight).alpha = 0
-      end
-    end
+  if self._content.localPosition.x > 0 or self._content.localPosition.x < -self._content.sizeDelta.x + self._scrollRectWidth then
+    return
+  end
+  local c2c = self._itemTable[self._currIndex]:GetC2C()
+  local nameRate = c2c / leftRightDis
+  local posx = nameRate * 200
+  self._rectCenter.anchoredPosition = Vector2(posx, 0)
+  self._rectLeft.anchoredPosition = Vector2(posx - 200, 0)
+  self._rectRight.anchoredPosition = Vector2(posx + 200, 0)
+  self._alphaCenter.alpha = 1 - nameRate * 2
+  if c2c < 0 then
+    self._alphaLeft.alpha = 0
+    self._alphaRight.alpha = nameRate * 2
+  elseif 0 < c2c then
+    self._alphaLeft.alpha = nameRate * 2
+    self._alphaRight.alpha = 0
+  else
+    self._alphaLeft.alpha = 0
+    self._alphaRight.alpha = 0
+  end
+  local cgRate = c2c / leftRightDis
+  local posx_cg = cgRate * 300
+  self._bgCgRectCenter.anchoredPosition = Vector2(posx, 0)
+  self._bgCgRectLeft.anchoredPosition = Vector2(posx - 300, 0)
+  self._bgCgRectRight.anchoredPosition = Vector2(posx + 300, 0)
+  self._bgCgGroupCenter.alpha = 1 - cgRate * 2
+  if c2c < 0 then
+    self._bgCgGroupLeft.alpha = 0
+    self._bgCgGroupRight.alpha = cgRate * 2
+  elseif 0 < c2c then
+    self._bgCgGroupLeft.alpha = cgRate * 2
+    self._bgCgGroupRight.alpha = 0
+  else
+    self._bgCgGroupLeft.alpha = 0
+    self._bgCgGroupRight.alpha = 0
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.OnHide = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIGradeInterfaceController:OnHide()
   self:DetachEvent(GameEventType.ItemCountChanged, self.OnItemCountChanged)
   self:DetachEvent(GameEventType.OnOpenGiftsSucc, self.RefreshItemCount)
   self:DetachEvent(GameEventType.CloseUIBackPackBox, self.RefreshItemCount)
   if self._petVoiceID > 0 then
-    (AudioHelperController.StopUIVoice)(self._petVoiceID)
+    AudioHelperController.StopUIVoice(self._petVoiceID)
     self._petVoiceID = -1
   end
   if self.goldEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.goldEvent)
+    GameGlobal.Timer():CancelEvent(self.goldEvent)
   end
   if self._changeCgEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._changeCgEvent)
+    GameGlobal.Timer():CancelEvent(self._changeCgEvent)
   end
   if self._secondAnimEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._secondAnimEvent)
+    GameGlobal.Timer():CancelEvent(self._secondAnimEvent)
   end
   if self._closeEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._closeEvent)
+    GameGlobal.Timer():CancelEvent(self._closeEvent)
   end
   if self._thirdEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._thirdEvent)
+    GameGlobal.Timer():CancelEvent(self._thirdEvent)
   end
   if self._audioEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._audioEvent)
+    GameGlobal.Timer():CancelEvent(self._audioEvent)
   end
   if self._scrollViewHelper then
-    (self._scrollViewHelper):Dispose()
+    self._scrollViewHelper:Dispose()
   end
   self:Release()
-  local jumpData = ((GameGlobal.GetModule)(SerialAutoFightModule)):GetJumpData()
+  local jumpData = GameGlobal.GetModule(SerialAutoFightModule):GetJumpData()
   jumpData:Track_From()
   jumpData:Track_Pet()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.OnItemCountChanged = function(self)
-  -- function num : 0_13
-  (self._centerLua):ShowConsumMaterial()
+function UIGradeInterfaceController:OnItemCountChanged()
+  self._centerLua:ShowConsumMaterial()
   if self._leftLua then
-    (self._leftLua):ShowConsumMaterial()
+    self._leftLua:ShowConsumMaterial()
   end
   if self._rightLua then
-    (self._rightLua):ShowConsumMaterial()
+    self._rightLua:ShowConsumMaterial()
   end
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_14
+function UIGradeInterfaceController:OnUpdate(deltaTimeMS)
   if self.effPlayer then
-    (self.effPlayer):Update(deltaTimeMS / 1000)
+    self.effPlayer:Update(deltaTimeMS / 1000)
   end
   if self._showPanel then
-    (self._showPanel):OnUpdate(deltaTimeMS)
+    self._showPanel:OnUpdate(deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.Release = function(self)
-  -- function num : 0_15
+function UIGradeInterfaceController:Release()
   self._petModule = nil
   self._petInfo = nil
   self._petPstID = 0
   if self._centerLua then
-    (self._centerLua):Dispose()
+    self._centerLua:Dispose()
     self._centerLua = nil
   end
   if self._leftLua then
-    (self._leftLua):Dispose()
+    self._leftLua:Dispose()
     self._leftLua = nil
   end
   if self._rightLua then
-    (self._rightLua):Dispose()
+    self._rightLua:Dispose()
     self._rightLua = nil
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.Refresh = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  self._oldCgName = (self._petInfo):GetPetStaticBody(PetSkinEffectPath.BODY_GRADE)
+function UIGradeInterfaceController:Refresh()
+  self._oldCgName = self._petInfo:GetPetStaticBody(PetSkinEffectPath.BODY_GRADE)
   self:ShowInfo()
   self:ShowBigCg()
   self:ShowNeedGold()
   local imageLoader = self:GetUIComponent("RawImageLoader", "BgLoader")
-  ;
-  (UICommonHelper:GetInstance()):ChangePetTagBackground((self._petInfo):GetTemplateID(), imageLoader, false)
+  UICommonHelper:GetInstance():ChangePetTagBackground(self._petInfo:GetTemplateID(), imageLoader, false)
   self._currIndexTemp = self._currIndex
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.ShowNeedGold = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  local gradeLevel = (self._petInfo):GetPetGrade()
-  if (self._petInfo):GetMaxGrade() == gradeLevel then
-    return 
+function UIGradeInterfaceController:ShowNeedGold()
+  local gradeLevel = self._petInfo:GetPetGrade()
+  if self._petInfo:GetMaxGrade() == gradeLevel then
+    return
   end
-  local cfg = (Cfg.cfg_pet_grade)({PetID = (self._petInfo):GetTemplateID(), Grade = gradeLevel + 1})
-  local gradeNeedItemList = (cfg[1]).NeedItem
+  local cfg = Cfg.cfg_pet_grade({
+    PetID = self._petInfo:GetTemplateID(),
+    Grade = gradeLevel + 1
+  })
+  local gradeNeedItemList = cfg[1].NeedItem
   self._needGoldCount = 0
-  for key,value in pairs(gradeNeedItemList) do
-    local data = (string.split)(value, ",")
+  for key, value in pairs(gradeNeedItemList) do
+    local data = string.split(value, ",")
     if tonumber(data[1]) == RoleAssetID.RoleAssetGold then
       self._needGoldCount = tonumber(data[2])
       break
     end
   end
-  do
-    ;
-    (self._needGoldTex):SetText(self._needGoldCount)
-    local goldEnough = false
-    local bagNum = ((self._roleModule):GetGold())
-    local color = nil
-    if bagNum < self._needGoldCount then
-      color = Color(0.97647058823529, 0.21176470588235, 0.21176470588235)
-    else
-      goldEnough = true
-      color = Color(0.98039215686275, 0.92941176470588, 0.36078431372549)
-    end
-    -- DECOMPILER ERROR at PC74: Confused about usage of register: R7 in 'UnsetPending'
-
-    if color ~= nil then
-      (self._leftLine).color = color
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._consumeName).color = color
-      -- DECOMPILER ERROR at PC78: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._needcoin).color = color
-      -- DECOMPILER ERROR at PC80: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._rightLine).color = color
-    end
-    if goldEnough then
-      self:ShowOpenGiftTips()
-    end
+  self._needGoldTex:SetText(self._needGoldCount)
+  local goldEnough = false
+  local bagNum = self._roleModule:GetGold()
+  local color
+  if bagNum < self._needGoldCount then
+    color = Color(0.9764705882352941, 0.21176470588235294, 0.21176470588235294)
+  else
+    goldEnough = true
+    color = Color(0.9803921568627451, 0.9294117647058824, 0.3607843137254902)
+  end
+  if color ~= nil then
+    self._leftLine.color = color
+    self._consumeName.color = color
+    self._needcoin.color = color
+    self._rightLine.color = color
+  end
+  if goldEnough then
+    self:ShowOpenGiftTips()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.ShowOpenGiftTips = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UIGradeInterfaceController:ShowOpenGiftTips()
   self._canOpenGift = false
   local show = false
-  local canGrade = (self._centerLua):CanGradeClick()
+  local canGrade = self._centerLua:CanGradeClick()
   if canGrade then
     local needList = {}
-    local needMatList = (self._centerLua):GetNeedMatList()
+    local needMatList = self._centerLua:GetNeedMatList()
     if needMatList then
       for i = 1, #needMatList do
-        (table.insert)(needList, needMatList[i])
+        table.insert(needList, needMatList[i])
       end
     end
-    do
-      do
-        if (table.count)(needList) > 0 and self:CheckGiftEnough(needList) then
-          show = true
-        end
-        ;
-        (self._openGiftTips):SetActive(show)
-      end
+    if table.count(needList) > 0 and self:CheckGiftEnough(needList) then
+      show = true
     end
   end
+  self._openGiftTips:SetActive(show)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.CheckGiftEnough = function(self, needList)
-  -- function num : 0_19 , upvalues : _ENV
+function UIGradeInterfaceController:CheckGiftEnough(needList)
   local matList = needList
-  local giftEnough, giftDatas = (HelperProxy:GetInstance()):GetGiftsFromNeedMat(needList)
+  local giftEnough, giftDatas = HelperProxy:GetInstance():GetGiftsFromNeedMat(needList)
   self._giftDatas = giftDatas
   self._canOpenGift = giftEnough
   return giftEnough
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.ShowInfo = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  if self._currIndex < self._currIndexTemp then
-    (self._rectRight).anchoredPosition = (self._rectRight).anchoredPosition - Vector2(400, 0)
+function UIGradeInterfaceController:ShowInfo()
+  if self._currIndexTemp > self._currIndex then
+    self._rectRight.anchoredPosition = self._rectRight.anchoredPosition - Vector2(400, 0)
     local rightLuaTemp = self._rightLua
     self._rightLua = self._centerLua
     self._centerLua = self._leftLua
@@ -667,57 +443,35 @@ UIGradeInterfaceController.ShowInfo = function(self)
     self._alphaRight = self._alphaCenter
     self._alphaCenter = self._alphaLeft
     self._alphaLeft = alphaRightTemp
-    if (self._petInfos)[self._currIndex - 1] then
-      (self._leftLua):RefreshData(self._currIndex - 1, (self._petInfos)[self._currIndex - 1], false)
+    if self._petInfos[self._currIndex - 1] then
+      self._leftLua:RefreshData(self._currIndex - 1, self._petInfos[self._currIndex - 1], false)
     end
-  else
-    do
-      -- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-      if self._currIndexTemp < self._currIndex then
-        (self._rectLeft).anchoredPosition = (self._rectLeft).anchoredPosition + Vector2(400, 0)
-        local leftLuaTemp = self._leftLua
-        self._leftLua = self._centerLua
-        self._centerLua = self._rightLua
-        self._rightLua = leftLuaTemp
-        local leftRectTemp = self._rectLeft
-        self._rectLeft = self._rectCenter
-        self._rectCenter = self._rectRight
-        self._rectRight = leftRectTemp
-        local alphaLeftTemp = self._alphaLeft
-        self._alphaLeft = self._alphaCenter
-        self._alphaCenter = self._alphaRight
-        self._alphaRight = alphaLeftTemp
-        if (self._petInfos)[self._currIndex + 1] then
-          (self._rightLua):RefreshData(self._currIndex + 1, (self._petInfos)[self._currIndex + 1], false)
-        end
-      end
-      do
-        -- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._alphaCenter).blocksRaycasts = true
-        -- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._alphaRight).blocksRaycasts = false
-        -- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._alphaLeft).blocksRaycasts = false
-      end
+  elseif self._currIndexTemp < self._currIndex then
+    self._rectLeft.anchoredPosition = self._rectLeft.anchoredPosition + Vector2(400, 0)
+    local leftLuaTemp = self._leftLua
+    self._leftLua = self._centerLua
+    self._centerLua = self._rightLua
+    self._rightLua = leftLuaTemp
+    local leftRectTemp = self._rectLeft
+    self._rectLeft = self._rectCenter
+    self._rectCenter = self._rectRight
+    self._rectRight = leftRectTemp
+    local alphaLeftTemp = self._alphaLeft
+    self._alphaLeft = self._alphaCenter
+    self._alphaCenter = self._alphaRight
+    self._alphaRight = alphaLeftTemp
+    if self._petInfos[self._currIndex + 1] then
+      self._rightLua:RefreshData(self._currIndex + 1, self._petInfos[self._currIndex + 1], false)
     end
   end
+  self._alphaCenter.blocksRaycasts = true
+  self._alphaRight.blocksRaycasts = false
+  self._alphaLeft.blocksRaycasts = false
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.ShowBigCg = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  if self._currIndex < self._currIndexTemp then
-    (self._bgCgRectRight).anchoredPosition = (self._bgCgRectRight).anchoredPosition - Vector2(600, 0)
+function UIGradeInterfaceController:ShowBigCg()
+  if self._currIndexTemp > self._currIndex then
+    self._bgCgRectRight.anchoredPosition = self._bgCgRectRight.anchoredPosition - Vector2(600, 0)
     local bgCgTemp = self._bgCgRight
     self._bgCgRight = self._bgCgCenter
     self._bgCgCenter = self._bgCgLeft
@@ -730,432 +484,295 @@ UIGradeInterfaceController.ShowBigCg = function(self)
     self._bgCgGroupRight = self._bgCgGroupCenter
     self._bgCgGroupCenter = self._bgCgGroupLeft
     self._bgCgGroupLeft = bgCgGroupTemp
-  else
-    do
-      if self._currIndexTemp < self._currIndex then
-        local bgCgTemp = self._bgCgLeft
-        self._bgCgLeft = self._bgCgCenter
-        self._bgCgCenter = self._bgCgRight
-        self._bgCgRight = bgCgTemp
-        local bgCgRectTemp = self._bgCgRectLeft
-        -- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._bgCgRectLeft).anchoredPosition = (self._bgCgRectLeft).anchoredPosition + Vector2(600, 0)
-        self._bgCgRectLeft = self._bgCgRectCenter
-        self._bgCgRectCenter = self._bgCgRectRight
-        self._bgCgRectRight = bgCgRectTemp
-        local bgCgGroupTemp = self._bgCgGroupLeft
-        self._bgCgGroupLeft = self._bgCgGroupCenter
-        self._bgCgGroupCenter = self._bgCgGroupRight
-        self._bgCgGroupRight = bgCgGroupTemp
-      end
-      do
-        local size = ((Cfg.cfg_global).ui_interface_common_size).ArrayValue
-        if (self._itemTable)[self._currIndex - 1] then
-          local leftCgName = ((self._itemTable)[self._currIndex - 1]):GetCgName()
-          ;
-          (UICG.SetTransform)((self._bgCgLeft).transform, self:GetName() .. "_color", leftCgName)
-          ;
-          ((self._bgCgLeft):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
-          ;
-          (self._bgCgLeft):LoadImage(leftCgName)
-          local loadAlpha = self:GetUIComponent("LoadAlphaPost", "drawIconLeftCg")
-          loadAlpha:SetData()
-        end
-        do
-          if (self._itemTable)[self._currIndex] then
-            local centerCgName = ((self._itemTable)[self._currIndex]):GetCgName()
-            ;
-            (UICG.SetTransform)((self._bgCgCenter).transform, self:GetName() .. "_color", centerCgName)
-            ;
-            ((self._bgCgCenter):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
-            ;
-            (self._bgCgCenter):LoadImage(centerCgName)
-            local loadAlpha = self:GetUIComponent("LoadAlphaPost", "drawIconCenterCg")
-            loadAlpha:SetData()
-          end
-          do
-            if (self._itemTable)[self._currIndex + 1] then
-              local rightCgName = ((self._itemTable)[self._currIndex + 1]):GetCgName()
-              ;
-              (UICG.SetTransform)((self._bgCgRight).transform, self:GetName() .. "_color", rightCgName)
-              ;
-              ((self._bgCgRight):GetComponent("RectTransform")).sizeDelta = Vector2(size[1], size[2])
-              ;
-              (self._bgCgRight):LoadImage(rightCgName)
-              local loadAlpha = self:GetUIComponent("LoadAlphaPost", "drawIconRightCg")
-              loadAlpha:SetData()
-            end
-          end
-        end
-      end
-    end
+  elseif self._currIndexTemp < self._currIndex then
+    local bgCgTemp = self._bgCgLeft
+    self._bgCgLeft = self._bgCgCenter
+    self._bgCgCenter = self._bgCgRight
+    self._bgCgRight = bgCgTemp
+    local bgCgRectTemp = self._bgCgRectLeft
+    self._bgCgRectLeft.anchoredPosition = self._bgCgRectLeft.anchoredPosition + Vector2(600, 0)
+    self._bgCgRectLeft = self._bgCgRectCenter
+    self._bgCgRectCenter = self._bgCgRectRight
+    self._bgCgRectRight = bgCgRectTemp
+    local bgCgGroupTemp = self._bgCgGroupLeft
+    self._bgCgGroupLeft = self._bgCgGroupCenter
+    self._bgCgGroupCenter = self._bgCgGroupRight
+    self._bgCgGroupRight = bgCgGroupTemp
+  end
+  local size = Cfg.cfg_global.ui_interface_common_size.ArrayValue
+  if self._itemTable[self._currIndex - 1] then
+    local leftCgName = self._itemTable[self._currIndex - 1]:GetCgName()
+    UICG.SetTransform(self._bgCgLeft.transform, self:GetName() .. "_color", leftCgName)
+    self._bgCgLeft:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
+    self._bgCgLeft:LoadImage(leftCgName)
+    local loadAlpha = self:GetUIComponent("LoadAlphaPost", "drawIconLeftCg")
+    loadAlpha:SetData()
+  end
+  if self._itemTable[self._currIndex] then
+    local centerCgName = self._itemTable[self._currIndex]:GetCgName()
+    UICG.SetTransform(self._bgCgCenter.transform, self:GetName() .. "_color", centerCgName)
+    self._bgCgCenter:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
+    self._bgCgCenter:LoadImage(centerCgName)
+    local loadAlpha = self:GetUIComponent("LoadAlphaPost", "drawIconCenterCg")
+    loadAlpha:SetData()
+  end
+  if self._itemTable[self._currIndex + 1] then
+    local rightCgName = self._itemTable[self._currIndex + 1]:GetCgName()
+    UICG.SetTransform(self._bgCgRight.transform, self:GetName() .. "_color", rightCgName)
+    self._bgCgRight:GetComponent("RectTransform").sizeDelta = Vector2(size[1], size[2])
+    self._bgCgRight:LoadImage(rightCgName)
+    local loadAlpha = self:GetUIComponent("LoadAlphaPost", "drawIconRightCg")
+    loadAlpha:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.RefreshItemCount = function(self)
-  -- function num : 0_22
-  if (self._petInfos)[self._currIndex - 1] then
-    (self._leftLua):RefreshItemCount()
+function UIGradeInterfaceController:RefreshItemCount()
+  if self._petInfos[self._currIndex - 1] then
+    self._leftLua:RefreshItemCount()
   end
-  if (self._petInfos)[self._currIndex] then
-    (self._centerLua):RefreshItemCount()
+  if self._petInfos[self._currIndex] then
+    self._centerLua:RefreshItemCount()
   end
-  if (self._petInfos)[self._currIndex + 1] then
-    (self._rightLua):RefreshItemCount()
+  if self._petInfos[self._currIndex + 1] then
+    self._rightLua:RefreshItemCount()
   end
   self:ShowNeedGold()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.GradeButtonOnClick = function(self, go)
-  -- function num : 0_23 , upvalues : _ENV
+function UIGradeInterfaceController:GradeButtonOnClick(go)
   if self._canOpenGift then
-    local title = (StringTable.Get)("str_pet_config_grade_open_gift_title")
+    local title = StringTable.Get("str_pet_config_grade_open_gift_title")
     self:ShowDialog("UIOpenGiftGetMatController", self._giftDatas, title)
-  else
-    do
-      if (self._centerLua):GradeButtonOnClick() then
-        local bagNum = (self._roleModule):GetGold()
-        if bagNum < self._needGoldCount then
-          self:GoldDOShakePosition()
-          return 
-        end
-        local pstID = (self._petInfo):GetPstID()
-        local uiModule = (self._petModule).uiModule
-        self._skillVaryInfosParams = uiModule:GetDiffWithGrade(self._petInfo, false)
-        self:StartGrade(pstID)
-      end
+  elseif self._centerLua:GradeButtonOnClick() then
+    local bagNum = self._roleModule:GetGold()
+    if bagNum < self._needGoldCount then
+      self:GoldDOShakePosition()
+      return
     end
+    local pstID = self._petInfo:GetPstID()
+    local uiModule = self._petModule.uiModule
+    self._skillVaryInfosParams = uiModule:GetDiffWithGrade(self._petInfo, false)
+    self:StartGrade(pstID)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.GoldDOShakePosition = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  if self._goldTweer and (self._goldTweer):IsPlaying() then
-    return 
+function UIGradeInterfaceController:GoldDOShakePosition()
+  if self._goldTweer and self._goldTweer:IsPlaying() then
+    return
   end
   if self._goldTweer then
-    (self._goldTweer):Kill()
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._consumeRect).anchoredPosition = Vector2(0, 0)
+    self._goldTweer:Kill()
+    self._consumeRect.anchoredPosition = Vector2(0, 0)
   end
   if self.goldEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self.goldEvent)
+    GameGlobal.Timer():CancelEvent(self.goldEvent)
   end
   self:SetColor(false)
-  self._goldTweer = ((self._consumeRect):DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0))):OnComplete(function()
-    -- function num : 0_24_0 , upvalues : self
+  self._goldTweer = self._consumeRect:DOShakePosition(1, Vector3(self._shakeX, self._shakeY, 0)):OnComplete(function()
     self:StartTimer()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.StartTimer = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  self.goldEvent = ((GameGlobal.Timer)()):AddEvent(self._waitTime, function()
-    -- function num : 0_25_0 , upvalues : self
+function UIGradeInterfaceController:StartTimer()
+  self.goldEvent = GameGlobal.Timer():AddEvent(self._waitTime, function()
     self:SetColor(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.SetColor = function(self, isDefaultColor)
-  -- function num : 0_26 , upvalues : _ENV
-  local color = nil
+function UIGradeInterfaceController:SetColor(isDefaultColor)
+  local color
   if isDefaultColor then
-    local bagNum = (self._roleModule):GetGold()
+    local bagNum = self._roleModule:GetGold()
     if bagNum < self._needGoldCount then
-      color = Color(0.97647058823529, 0.21176470588235, 0.21176470588235)
+      color = Color(0.9764705882352941, 0.21176470588235294, 0.21176470588235294)
     end
   else
-    do
-      color = Color(0.97647058823529, 0.21176470588235, 0.21176470588235)
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-      if color ~= nil then
-        (self._leftLine).color = color
-        -- DECOMPILER ERROR at PC27: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._consumeName).color = color
-        -- DECOMPILER ERROR at PC29: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._needcoin).color = color
-        -- DECOMPILER ERROR at PC31: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._rightLine).color = color
-      end
-    end
+    color = Color(0.9764705882352941, 0.21176470588235294, 0.21176470588235294)
+  end
+  if color ~= nil then
+    self._leftLine.color = color
+    self._consumeName.color = color
+    self._needcoin.color = color
+    self._rightLine.color = color
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.StopTween = function(self)
-  -- function num : 0_27
-  (self._centerLua):StopTween()
+function UIGradeInterfaceController:StopTween()
+  self._centerLua:StopTween()
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.StartGrade = function(self, pstID)
-  -- function num : 0_28 , upvalues : _ENV
+function UIGradeInterfaceController:StartGrade(pstID)
   self:Lock("UIGradeInterfaceController:StartGrade")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.GradeCallBack, self, pstID)
+  GameGlobal.TaskManager():StartTask(self.GradeCallBack, self, pstID)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.GradeCallBack = function(self, TT, pstID)
-  -- function num : 0_29 , upvalues : _ENV
-  local res = (self._petModule):RequestPetBreak(TT, pstID)
+function UIGradeInterfaceController:GradeCallBack(TT, pstID)
+  local res = self._petModule:RequestPetBreak(TT, pstID)
   if res:GetSucc() then
-    (Log.debug)("###[UIGradeInterfaceController]up grade !!!")
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundGradeUp)
-    local varyPetInfo = (self._petModule):GetPet(self._petPstID)
-    do
-      self._petInfo = varyPetInfo
-      ;
-      ((self._petModule).uiModule):SetCurSelctPet(varyPetInfo)
-      self._showPanel = (self._gradeShowPool):SpawnObject("UIGradeShowGrowth")
-      ;
-      (self._showPanel):SetData(self._petInfo, self._skillVaryInfosParams, self._curMaxLv, self._curAtk, self._curDef, self._curHp)
-      local currGrade = (self._petInfo):GetPetGrade()
-      local skinid = ((self._petInfo):GetSkinId())
-      local cfg_pet_voice = nil
-      local cfgs = (Cfg.cfg_pet_voice)({PetID = (self._petInfo):GetTemplateID(), SkinID = skinid})
-      if cfgs and next(cfgs) then
-        cfg_pet_voice = cfgs[1]
-      else
-        cfg_pet_voice = ((Cfg.cfg_pet_voice)({PetID = (self._petInfo):GetTemplateID(), SkinID = nil}))[1]
-      end
-      if cfg_pet_voice then
-        local gradeDesc, _gradeDesc = nil, nil
-        if currGrade == 1 then
-          _gradeDesc = cfg_pet_voice.Grade1Up
-        else
-          if currGrade == 2 then
-            _gradeDesc = cfg_pet_voice.Grade2Up
-          else
-            if currGrade == 3 then
-              _gradeDesc = cfg_pet_voice.Grade3Up
-            end
-          end
-        end
-        if _gradeDesc then
-          gradeDesc = (_gradeDesc[1])[1]
-        end
-        if gradeDesc == nil then
-          (Log.error)("###星灵觉醒成功，星灵-->", (self._petInfo):GetTemplateID(), "，当前觉醒阶段-->", currGrade, "，但是GradeUp文本字段为空")
-        else
-          local cfg_audio = ((AudioHelperController.GetCfgAudio)(gradeDesc))
-          local texDesc = nil
-          if cfg_audio then
-            texDesc = cfg_audio.Content
-          else
-            ;
-            (Log.error)("###cfg_audio is nil ! id --> ", gradeDesc)
-          end
-          ;
-          (self._desc1):SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(texDesc)))
-          ;
-          (self._desc2):SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)(texDesc)))
-        end
-      else
-        do
-          do
-            ;
-            (Log.error)("###cfg_pet_voice is nil ! id --> ", (self._petInfo):GetTemplateID(), "| skinid --> ", skinid)
-            ;
-            ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetUpGradeEvent, self._petPstID)
-            ;
-            (self._bgAnim):Play("UIGradeInterfaceController_bg")
-            ;
-            (self._uiAnim):Play("UIGradeInterfaceController_RightAnchor")
-            if self._changeCgEvent then
-              ((GameGlobal.Timer)()):CancelEvent(self._changeCgEvent)
-            end
-            self._changeCgEvent = ((GameGlobal.Timer)()):AddEvent(2466, function()
-    -- function num : 0_29_0 , upvalues : self
-    self:ChangeCgEvent()
-  end
-)
-            if self._secondAnimEvent then
-              ((GameGlobal.Timer)()):CancelEvent(self._secondAnimEvent)
-            end
-            self._secondAnimEvent = ((GameGlobal.Timer)()):AddEvent(6000, function()
-    -- function num : 0_29_1 , upvalues : self
-    self:SecondAnimEvent()
-  end
-)
-            if self._audioEvent then
-              ((GameGlobal.Timer)()):CancelEvent(self._audioEvent)
-            end
-            self._audioEvent = ((GameGlobal.Timer)()):AddEvent(3000, function()
-    -- function num : 0_29_2 , upvalues : self, _ENV, currGrade
-    local tplID = (self._petInfo):GetTemplateID()
-    local pm = (GameGlobal.GetModule)(PetAudioModule)
-    if currGrade == 1 then
-      pm:PlayPetAudio("Grade1Up", tplID)
+    Log.debug("###[UIGradeInterfaceController]up grade !!!")
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundGradeUp)
+    local varyPetInfo = self._petModule:GetPet(self._petPstID)
+    self._petInfo = varyPetInfo
+    self._petModule.uiModule:SetCurSelctPet(varyPetInfo)
+    self._showPanel = self._gradeShowPool:SpawnObject("UIGradeShowGrowth")
+    self._showPanel:SetData(self._petInfo, self._skillVaryInfosParams, self._curMaxLv, self._curAtk, self._curDef, self._curHp)
+    local currGrade = self._petInfo:GetPetGrade()
+    local skinid = self._petInfo:GetSkinId()
+    local cfg_pet_voice
+    local cfgs = Cfg.cfg_pet_voice({
+      PetID = self._petInfo:GetTemplateID(),
+      SkinID = skinid
+    })
+    if cfgs and next(cfgs) then
+      cfg_pet_voice = cfgs[1]
     else
-      if currGrade == 2 then
-        pm:PlayPetAudio("Grade2Up", tplID)
+      cfg_pet_voice = Cfg.cfg_pet_voice({
+        PetID = self._petInfo:GetTemplateID(),
+        SkinID = nil
+      })[1]
+    end
+    if cfg_pet_voice then
+      local gradeDesc, _gradeDesc
+      if currGrade == 1 then
+        _gradeDesc = cfg_pet_voice.Grade1Up
+      elseif currGrade == 2 then
+        _gradeDesc = cfg_pet_voice.Grade2Up
+      elseif currGrade == 3 then
+        _gradeDesc = cfg_pet_voice.Grade3Up
+      end
+      if _gradeDesc then
+        gradeDesc = _gradeDesc[1][1]
+      end
+      if gradeDesc == nil then
+        Log.error("###星灵觉醒成功，星灵-->", self._petInfo:GetTemplateID(), "，当前觉醒阶段-->", currGrade, "，但是GradeUp文本字段为空")
       else
-        if currGrade == 3 then
-          pm:PlayPetAudio("Grade3Up", tplID)
+        local cfg_audio = AudioHelperController.GetCfgAudio(gradeDesc)
+        local texDesc
+        if cfg_audio then
+          texDesc = cfg_audio.Content
+        else
+          Log.error("###cfg_audio is nil ! id --> ", gradeDesc)
         end
+        self._desc1:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(texDesc)))
+        self._desc2:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get(texDesc)))
       end
+    else
+      Log.error("###cfg_pet_voice is nil ! id --> ", self._petInfo:GetTemplateID(), "| skinid --> ", skinid)
     end
-  end
-)
-          end
-          self:UnLock("UIGradeInterfaceController:StartGrade")
-          ;
-          (Log.fatal)(" up grade  failed !!! result --> ", res:GetResult())
-        end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PetUpGradeEvent, self._petPstID)
+    self._bgAnim:Play("UIGradeInterfaceController_bg")
+    self._uiAnim:Play("UIGradeInterfaceController_RightAnchor")
+    if self._changeCgEvent then
+      GameGlobal.Timer():CancelEvent(self._changeCgEvent)
+    end
+    self._changeCgEvent = GameGlobal.Timer():AddEvent(2466, function()
+      self:ChangeCgEvent()
+    end)
+    if self._secondAnimEvent then
+      GameGlobal.Timer():CancelEvent(self._secondAnimEvent)
+    end
+    self._secondAnimEvent = GameGlobal.Timer():AddEvent(6000, function()
+      self:SecondAnimEvent()
+    end)
+    if self._audioEvent then
+      GameGlobal.Timer():CancelEvent(self._audioEvent)
+    end
+    self._audioEvent = GameGlobal.Timer():AddEvent(3000, function()
+      local tplID = self._petInfo:GetTemplateID()
+      local pm = GameGlobal.GetModule(PetAudioModule)
+      if currGrade == 1 then
+        pm:PlayPetAudio("Grade1Up", tplID)
+      elseif currGrade == 2 then
+        pm:PlayPetAudio("Grade2Up", tplID)
+      elseif currGrade == 3 then
+        pm:PlayPetAudio("Grade3Up", tplID)
       end
-    end
+    end)
+  else
+    self:UnLock("UIGradeInterfaceController:StartGrade")
+    Log.fatal(" up grade  failed !!! result --> ", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.SecondAnimEvent = function(self)
-  -- function num : 0_30
+function UIGradeInterfaceController:SecondAnimEvent()
   self._closeState = 1
   self:UnLock("UIGradeInterfaceController:StartGrade")
   self:closeBgOnClick()
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.ChangeCgEvent = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PetUpGradeChangeCgEvent, self._petPstID)
+function UIGradeInterfaceController:ChangeCgEvent()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PetUpGradeChangeCgEvent, self._petPstID)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.PetUpGradeChangeCgEvent = function(self, pstid)
-  -- function num : 0_32 , upvalues : _ENV
+function UIGradeInterfaceController:PetUpGradeChangeCgEvent(pstid)
   if pstid == self._petPstID then
-    local centerCgName = (self._petInfo):GetPetStaticBody(PetSkinEffectPath.BODY_GRADE)
-    ;
-    (UICG.SetTransform)((self._bgCgCenter).transform, self:GetName() .. "_color", centerCgName)
-    ;
-    (self._bgCgCenter):LoadImage(centerCgName)
+    local centerCgName = self._petInfo:GetPetStaticBody(PetSkinEffectPath.BODY_GRADE)
+    UICG.SetTransform(self._bgCgCenter.transform, self:GetName() .. "_color", centerCgName)
+    self._bgCgCenter:LoadImage(centerCgName)
     local loadAlpha = self:GetUIComponent("LoadAlphaPost", "drawIconCenterCg")
     loadAlpha:SetData()
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.PetBreakSucceed = function(self, pstid)
-  -- function num : 0_33
-  (self._closeBg):SetActive(true)
+function UIGradeInterfaceController:PetBreakSucceed(pstid)
+  self._closeBg:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.CanClose = function(self)
-  -- function num : 0_34
+function UIGradeInterfaceController:CanClose()
   self._closeState = 2
   self:UnLock("UIGradeInterfaceController:StartGrade")
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.closeBgOnClick = function(self)
-  -- function num : 0_35 , upvalues : _ENV
+function UIGradeInterfaceController:closeBgOnClick()
   if self._closeState == 1 then
     self:Lock("UIGradeInterfaceController:StartGrade")
-    ;
-    (self._bgAnim):Play("UIGradeInterfaceController_bg_1")
-    ;
-    (self._uiAnim):Play("UIGradeInterfaceController_RightAnchor_1")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayAnimation_UIGradePetDetailItem, (self._petInfo):GetPstID())
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._gradeShowPoolCanvasGroup).blocksRaycasts = true
+    self._bgAnim:Play("UIGradeInterfaceController_bg_1")
+    self._uiAnim:Play("UIGradeInterfaceController_RightAnchor_1")
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayAnimation_UIGradePetDetailItem, self._petInfo:GetPstID())
+    self._gradeShowPoolCanvasGroup.blocksRaycasts = true
     if self._thirdEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._thirdEvent)
+      GameGlobal.Timer():CancelEvent(self._thirdEvent)
     end
-    self._thirdEvent = ((GameGlobal.Timer)()):AddEvent(1500, function()
-    -- function num : 0_35_0 , upvalues : _ENV
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetUpGradeThird)
-  end
-)
+    self._thirdEvent = GameGlobal.Timer():AddEvent(1500, function()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetUpGradeThird)
+    end)
     if self._closeEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._closeEvent)
+      GameGlobal.Timer():CancelEvent(self._closeEvent)
     end
-    self._closeEvent = ((GameGlobal.Timer)()):AddEvent(4000, function()
-    -- function num : 0_35_1 , upvalues : self
-    self:CanClose()
-  end
-)
-  else
-    if self._closeState == 2 then
-      local lockId = "UIGradeInterfaceController:closeBgOnClick_closeState_2"
-      do
-        self:Lock(lockId)
-        ;
-        (self._uiAnim):Play("UIGradeInterfaceController_RightAnchor_Out")
-        self:StartTask(function(TT)
-    -- function num : 0_35_2 , upvalues : self, _ENV, lockId
-    if self.closeCb then
-      (self.closeCb)()
-      self.closeCb = nil
-      self.SkipTransitionAmin = true
-    end
-    YIELD(TT, 533)
-    self:UnLock(lockId)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PlayInOutAnimation, true)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideGradeUpDone, (self._petInfo):GetPetGrade())
-    self:CloseDialog()
-  end
-, self)
+    self._closeEvent = GameGlobal.Timer():AddEvent(4000, function()
+      self:CanClose()
+    end)
+  elseif self._closeState == 2 then
+    local lockId = "UIGradeInterfaceController:closeBgOnClick_closeState_2"
+    self:Lock(lockId)
+    self._uiAnim:Play("UIGradeInterfaceController_RightAnchor_Out")
+    self:StartTask(function(TT)
+      if self.closeCb then
+        self.closeCb()
+        self.closeCb = nil
+        self.SkipTransitionAmin = true
       end
-    end
+      YIELD(TT, 533)
+      self:UnLock(lockId)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PlayInOutAnimation, true)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideGradeUpDone, self._petInfo:GetPetGrade())
+      self:CloseDialog()
+    end, self)
   end
 end
 
-VaryType = {fight = 0, work = 1, drawing = 2}
+VaryType = {
+  fight = 0,
+  work = 1,
+  drawing = 2
+}
 _enum("VaryType", VaryType)
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGradeInterfaceController.GetGuideItem = function(self)
-  -- function num : 0_36
-  return (self._rightLua):GetGuideItem()
+function UIGradeInterfaceController:GetGuideItem()
+  return self._rightLua:GetGuideItem()
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGradeInterfaceController.MaterialBtnForGuideOnClick = function(self, go)
-  -- function num : 0_37
-  (self._MaterialBtnForGuideGo):SetActive(false)
-  return (self._centerLua):ClickGuideItem()
+function UIGradeInterfaceController:MaterialBtnForGuideOnClick(go)
+  self._MaterialBtnForGuideGo:SetActive(false)
+  return self._centerLua:ClickGuideItem()
 end
-
-

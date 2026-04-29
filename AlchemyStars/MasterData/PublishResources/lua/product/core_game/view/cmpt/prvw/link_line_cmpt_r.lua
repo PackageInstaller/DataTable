@@ -1,84 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/prvw/link_line_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkLineComponent", Object)
 LinkLineComponent = LinkLineComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkLineComponent.Constructor = function(self, pos, dir)
-  -- function num : 0_0 , upvalues : _ENV
-  if not pos then
-    self._head_grid_pos = Vector2(-1, -1)
-    if not dir then
-      self._line_dir = Vector2(0, 0)
-    end
-  end
+function LinkLineComponent:Constructor(pos, dir)
+  self._head_grid_pos = pos or Vector2(-1, -1)
+  self._line_dir = dir or Vector2(0, 0)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineComponent.Destructor = function(self)
-  -- function num : 0_1
+function LinkLineComponent:Destructor()
   self._head_grid_pos = nil
   self._line_dir = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineComponent.Dispose = function(self)
-  -- function num : 0_2
+function LinkLineComponent:Dispose()
   self._head_grid_pos = nil
   self._line_dir = nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkLineComponent.GetGridPos = function(self)
-  -- function num : 0_3
+function LinkLineComponent:GetGridPos()
   return self._head_grid_pos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LinkLine = function(self)
-  -- function num : 0_4
-  return self:GetComponent((self.WEComponentsEnum).LinkLine)
+function Entity:LinkLine()
+  return self:GetComponent(self.WEComponentsEnum.LinkLine)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLinkLine = function(self)
-  -- function num : 0_5
-  return self:HasComponent((self.WEComponentsEnum).LinkLine)
+function Entity:HasLinkLine()
+  return self:HasComponent(self.WEComponentsEnum.LinkLine)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLinkLine = function(self, area)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkLine
+function Entity:AddLinkLine(area)
+  local index = self.WEComponentsEnum.LinkLine
   local component = LinkLineComponent:New(area)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLinkLine = function(self, pos, dir)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LinkLine
+function Entity:ReplaceLinkLine(pos, dir)
+  local index = self.WEComponentsEnum.LinkLine
   local component = LinkLineComponent:New(pos, dir)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLinkLine = function(self)
-  -- function num : 0_8
+function Entity:RemoveLinkLine()
   if self:HasLinkLine() then
-    self:RemoveComponent((self.WEComponentsEnum).LinkLine)
+    self:RemoveComponent(self.WEComponentsEnum.LinkLine)
   end
 end
-
-

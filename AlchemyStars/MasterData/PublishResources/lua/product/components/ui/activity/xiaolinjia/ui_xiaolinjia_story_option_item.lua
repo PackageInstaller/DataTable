@@ -1,109 +1,81 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_story_option_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaStoryOptionItem", UICustomWidget)
 UIXiaoLinJiaStoryOptionItem = UIXiaoLinJiaStoryOptionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaStoryOptionItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.atlas = (self:RootUIOwner()):GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
-  self.bgList = {self:GetGameObject("bg1"), self:GetGameObject("bg2")}
-  self.headObjList = {self:GetGameObject("Head1"), self:GetGameObject("Head2"), self:GetGameObject("Head3"), self:GetGameObject("Head4")}
-  self.headList = {self:GetUIComponent("Image", "Head2"), self:GetUIComponent("Image", "Head3"), self:GetUIComponent("Image", "Head4")}
+function UIXiaoLinJiaStoryOptionItem:OnShow()
+  self.atlas = self:RootUIOwner():GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
+  self.bgList = {
+    self:GetGameObject("bg1"),
+    self:GetGameObject("bg2")
+  }
+  self.headObjList = {
+    self:GetGameObject("Head1"),
+    self:GetGameObject("Head2"),
+    self:GetGameObject("Head3"),
+    self:GetGameObject("Head4")
+  }
+  self.headList = {
+    self:GetUIComponent("Image", "Head2"),
+    self:GetUIComponent("Image", "Head3"),
+    self:GetUIComponent("Image", "Head4")
+  }
   self.root = self:GetGameObject("root")
   self.headRoot = self:GetGameObject("headRoot")
   self.content = self:GetUIComponent("UILocalizationText", "content")
   self.anim = self:GetUIComponent("Animation", "anim")
-  self.animTime = {[1] = 150, [2] = 225}
+  self.animTime = {
+    [1] = 150,
+    [2] = 225
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryOptionItem.SetData = function(self, index, data, otherPlayerAnswer, missionCfg, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIXiaoLinJiaStoryOptionItem:SetData(index, data, otherPlayerAnswer, missionCfg, callback)
   self.index = index
   self.data = data
   self.callback = callback
-  ;
-  ((self.bgList)[index]):SetActive(true)
-  ;
-  (self.content):SetText((StringTable.Get)(data))
-  for _,v in pairs(self.headObjList) do
+  self.bgList[index]:SetActive(true)
+  self.content:SetText(StringTable.Get(data))
+  for _, v in pairs(self.headObjList) do
     v:SetActive(false)
   end
-  ;
-  (self.headRoot):SetActive(false)
+  self.headRoot:SetActive(false)
   for i = 1, #otherPlayerAnswer do
-    local head = (self.headObjList)[i + 1]
+    local head = self.headObjList[i + 1]
     head:SetActive(self.index == otherPlayerAnswer[i])
   end
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.headList)[1]).sprite = (self.atlas):GetSprite(missionCfg.ClosingHeadIcon)
-  -- DECOMPILER ERROR at PC58: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.headList)[2]).sprite = (self.atlas):GetSprite((missionCfg.OtherPlayerHeads)[1])
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  ((self.headList)[3]).sprite = (self.atlas):GetSprite((missionCfg.OtherPlayerHeads)[2])
+  self.headList[1].sprite = self.atlas:GetSprite(missionCfg.ClosingHeadIcon)
+  self.headList[2].sprite = self.atlas:GetSprite(missionCfg.OtherPlayerHeads[1])
+  self.headList[3].sprite = self.atlas:GetSprite(missionCfg.OtherPlayerHeads[2])
   self:PlayInAnim()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryOptionItem.PlayInAnim = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self.root):SetActive(false)
+function UIXiaoLinJiaStoryOptionItem:PlayInAnim()
+  self.root:SetActive(false)
   self.optionItemAnimTask = self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : self, _ENV
     self:Lock("UIXiaoLinJiaStoryOptionItem_PlayInAnim")
-    YIELD(TT, (self.animTime)[self.index])
-    if not (tolua.isnull)(self.root) and not (tolua.isnull)(self.anim) then
-      (self.root):SetActive(true)
-      ;
-      (self.anim):Play("uieffanim_UIXiaoLinJiaStoryOptionItem_in")
+    YIELD(TT, self.animTime[self.index])
+    if not tolua.isnull(self.root) and not tolua.isnull(self.anim) then
+      self.root:SetActive(true)
+      self.anim:Play("uieffanim_UIXiaoLinJiaStoryOptionItem_in")
     end
     self:UnLock("UIXiaoLinJiaStoryOptionItem_PlayInAnim")
     self.optionItemAnimTask = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryOptionItem.ShowAllSelectResult = function(self)
-  -- function num : 0_3
-  (self.headRoot):SetActive(true)
-  ;
-  (self.anim):Play("uieffanim_UIXiaoLinJiaStoryOptionItem_select")
+function UIXiaoLinJiaStoryOptionItem:ShowAllSelectResult()
+  self.headRoot:SetActive(true)
+  self.anim:Play("uieffanim_UIXiaoLinJiaStoryOptionItem_select")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryOptionItem.SelectBtnOnClick = function(self)
-  -- function num : 0_4
-  ((self.headObjList)[1]):SetActive(true)
-  ;
-  (self.callback)(self.index)
+function UIXiaoLinJiaStoryOptionItem:SelectBtnOnClick()
+  self.headObjList[1]:SetActive(true)
+  self.callback(self.index)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaStoryOptionItem.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIXiaoLinJiaStoryOptionItem:OnHide()
   if self.optionItemAnimTask then
     self:UnLock("UIXiaoLinJiaStoryOptionItem_PlayInAnim")
-    ;
-    ((GameGlobal.TaskManager)()):KillTask(self.optionItemAnimTask)
+    GameGlobal.TaskManager():KillTask(self.optionItemAnimTask)
     self.optionItemAnimTask = nil
   end
 end
-
-

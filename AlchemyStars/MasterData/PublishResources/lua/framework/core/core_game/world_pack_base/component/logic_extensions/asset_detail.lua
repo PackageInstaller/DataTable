@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/component/logic_extensions/asset_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("IAssetDetail", Object)
 IAssetDetail = IAssetDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-IAssetDetail.Constructor = function(self, resPath)
-  -- function num : 0_0
+function IAssetDetail:Constructor(resPath)
   self.AssetType = "undefinition"
   self.AsyncLoad = false
   self._ResPath = resPath
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-IAssetDetail.GenerateView = function(self, resource_service, finish_callback, ...)
-  -- function num : 0_1
+function IAssetDetail:GenerateView(resource_service, finish_callback, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-IAssetDetail.GetResPath = function(self)
-  -- function num : 0_2
+function IAssetDetail:GetResPath()
   return self._ResPath
 end
-
-

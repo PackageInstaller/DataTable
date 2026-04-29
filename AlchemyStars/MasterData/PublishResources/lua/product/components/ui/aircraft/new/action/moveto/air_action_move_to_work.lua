@@ -1,92 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/moveto/air_action_move_to_work.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionMoveToWork", AirActionBase)
 AirActionMoveToWork = AirActionMoveToWork
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionMoveToWork.Constructor = function(self, main, pet)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionMoveToWork:Constructor(main, pet)
   self._main = main
   self._pet = pet
-  local room = (self._main):GetRoomBySpaceID((self._pet):GetSpace())
+  local room = self._main:GetRoomBySpaceID(self._pet:GetSpace())
   self._holder = room:GetPointHolder()
-  self._point = (self._holder):PopPoint()
-  ;
-  (self._pet):SetState(AirPetState.MoveToWork)
+  self._point = self._holder:PopPoint()
+  self._pet:SetState(AirPetState.MoveToWork)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWork.Start = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._moveToAction = AirActionMoveToDo:New(self._pet, (self._holder):Floor(), (self._point):Pos(), AircraftPetMoveType.ToWork, self._main)
-  ;
-  (self._moveToAction):Start()
+function AirActionMoveToWork:Start()
+  self._moveToAction = AirActionMoveToDo:New(self._pet, self._holder:Floor(), self._point:Pos(), AircraftPetMoveType.ToWork, self._main)
+  self._moveToAction:Start()
   self._running = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWork.IsOver = function(self)
-  -- function num : 0_2
+function AirActionMoveToWork:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWork.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function AirActionMoveToWork:Update(deltaTimeMS)
   if self._running then
-    (self._moveToAction):Update(deltaTimeMS)
-    if (self._moveToAction):IsOver() then
+    self._moveToAction:Update(deltaTimeMS)
+    if self._moveToAction:IsOver() then
       self._running = false
       self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWork.Duration = function(self)
-  -- function num : 0_4
+function AirActionMoveToWork:Duration()
   return nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWork.CurrentTime = function(self)
-  -- function num : 0_5
+function AirActionMoveToWork:CurrentTime()
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWork.Stop = function(self)
-  -- function num : 0_6
+function AirActionMoveToWork:Stop()
   if self._running then
     self._running = false
   else
-    ;
-    (self._main):StartWorkingAction(self._pet)
+    self._main:StartWorkingAction(self._pet)
   end
-  ;
-  (self._holder):ReleasePoint(self._point)
+  self._holder:ReleasePoint(self._point)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWork.Dispose = function(self)
-  -- function num : 0_7
+function AirActionMoveToWork:Dispose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionMoveToWork.Pets = function(self)
-  -- function num : 0_8
-  return {self._pet}
+function AirActionMoveToWork:Pets()
+  return {
+    self._pet
+  }
 end
-
-

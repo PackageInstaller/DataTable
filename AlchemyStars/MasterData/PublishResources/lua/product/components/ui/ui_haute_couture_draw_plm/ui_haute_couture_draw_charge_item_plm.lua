@@ -1,50 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_plm/ui_haute_couture_draw_charge_item_plm.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawChargeItemPLM", UIHauteCoutureDrawChargeItemBase)
 UIHauteCoutureDrawChargeItemPLM = UIHauteCoutureDrawChargeItemPLM
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawChargeItemPLM.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHauteCoutureDrawChargeItemPLM:OnShow(uiParams)
   self:InitWidgets()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeItemPLM.OnHide = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDrawChargeItemPLM:OnHide()
   self:ClearTimer()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeItemPLM.InitWidgets = function(self, uiParams)
-  -- function num : 0_2
+function UIHauteCoutureDrawChargeItemPLM:InitWidgets(uiParams)
   self:InitWidgetsBase()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeItemPLM.PlayAnimIn = function(self, id)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHauteCoutureDrawChargeItemPLM:PlayAnimIn(id)
   self._anim = self:GetUIComponent("Animation", "anim")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, id, self
     YIELD(TT, id * 15)
-    ;
-    (self._anim):Play("uieff_UIHauteCoutureDrawChargeItemPLM_in")
-  end
-)
+    self._anim:Play("uieff_UIHauteCoutureDrawChargeItemPLM_in")
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawChargeItemPLM.GetCountStrKey = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDrawChargeItemPLM:GetCountStrKey()
   return "str_senior_skin_draw_gift_count_gl"
 end
-
-

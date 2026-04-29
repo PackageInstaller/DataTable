@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/avg/graph/line/ui_n20_avg_graph_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN20AVGGraphLine", UICustomWidget)
 UIN20AVGGraphLine = UIN20AVGGraphLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN20AVGGraphLine.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN20AVGData()
+function UIN20AVGGraphLine:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN20AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLine.OnShow = function(self)
-  -- function num : 0_1
+function UIN20AVGGraphLine:OnShow()
   self.go = self:GetGameObject()
   self.root = self:GetGameObject("root")
   self.s = self:GetUIComponent("RectTransform", "s")
@@ -25,82 +15,54 @@ UIN20AVGGraphLine.OnShow = function(self)
   self.poolCurve = self:GetUIComponent("UISelectObjectPath", "curve")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLine.OnHide = function(self)
-  -- function num : 0_2
+function UIN20AVGGraphLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLine.Flush = function(self, line)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN20AVGGraphLine:Flush(line)
   self.line = line
   local sNodeId = line.sNodeId
   local eNodeId = line.eNodeId
-  local nodeS = (self.data):GetNodeById(sNodeId)
-  local nodeE = (self.data):GetNodeById(eNodeId)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R6 in 'UnsetPending'
-
+  local nodeS = self.data:GetNodeById(sNodeId)
+  local nodeE = self.data:GetNodeById(eNodeId)
   if IsUnityEditor() then
-    (self.go).name = nodeS.id .. "." .. nodeS.title .. "_" .. nodeE.id .. "." .. nodeE.title
+    self.go.name = nodeS.id .. "." .. nodeS.title .. "_" .. nodeE.id .. "." .. nodeE.title
   end
   local stateS = nodeS:State()
   local stateE = nodeE:State()
   if nodeS:IsHide() then
     if stateS == AVGStoryNodeState.Complete then
-      (self.root):SetActive(true)
+      self.root:SetActive(true)
     else
-      ;
-      (self.root):SetActive(false)
+      self.root:SetActive(false)
     end
+  elseif stateS == AVGStoryNodeState.Complete and stateE then
+    self.root:SetActive(true)
   else
-    if stateS == AVGStoryNodeState.Complete and stateE then
-      (self.root):SetActive(true)
-    else
-      ;
-      (self.root):SetActive(false)
-    end
+    self.root:SetActive(false)
   end
   self:FlushLine()
-  -- DECOMPILER ERROR at PC76: Confused about usage of register: R8 in 'UnsetPending'
-
   if sNodeId == 10 and eNodeId == 11 then
-    ((self.e).transform).localRotation = (Quaternion.Euler)(0, 0, 90)
+    self.e.transform.localRotation = Quaternion.Euler(0, 0, 90)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLine.FlushLine = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local eNodeId = (self.line).eNodeId
-  local nodeE = (self.data):GetNodeById(eNodeId)
+function UIN20AVGGraphLine:FlushLine()
+  local eNodeId = self.line.eNodeId
+  local nodeE = self.data:GetNodeById(eNodeId)
   local stateE = nodeE:State()
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.s).anchoredPosition = (self.line).posS
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.e).anchoredPosition = (self.line).posE
+  self.s.anchoredPosition = self.line.posS
+  self.e.anchoredPosition = self.line.posE
   local isDot = stateE == AVGStoryNodeState.CantPlay
   self:FlushStraight(isDot)
   self:FlushCurve(isDot)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLine.FlushStraight = function(self, isDot)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN20AVGGraphLine:FlushStraight(isDot)
   local posLs = self:GetAllPos()
-  local len = (table.count)(posLs) - 1
-  ;
-  (self.poolStraight):SpawnObjects("UIN20AVGGraphLineStraight", len)
-  local uis = (self.poolStraight):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+  local len = table.count(posLs) - 1
+  self.poolStraight:SpawnObjects("UIN20AVGGraphLineStraight", len)
+  local uis = self.poolStraight:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     local index = i + 1
     local s = posLs[index - 1]
     local e = posLs[index]
@@ -108,45 +70,32 @@ UIN20AVGGraphLine.FlushStraight = function(self, isDot)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLine.FlushCurve = function(self, isDot)
-  -- function num : 0_6 , upvalues : _ENV
-  if not (self.line).posLs then
-    return 
+function UIN20AVGGraphLine:FlushCurve(isDot)
+  if not self.line.posLs then
+    return
   end
-  if (table.count)((self.line).posLs) < 1 then
-    return 
+  if table.count(self.line.posLs) < 1 then
+    return
   end
   local posLs = self:GetAllPos()
-  local count = (table.count)(posLs)
+  local count = table.count(posLs)
   local len = count - 2
-  ;
-  (self.poolCurve):SpawnObjects("UIN20AVGGraphLineCurve", len)
-  local uis = (self.poolCurve):GetAllSpawnList()
-  for i,ui in ipairs(uis) do
+  self.poolCurve:SpawnObjects("UIN20AVGGraphLineCurve", len)
+  local uis = self.poolCurve:GetAllSpawnList()
+  for i, ui in ipairs(uis) do
     local index = i + 1
     ui:Flush(posLs[index - 1], posLs[index], posLs[index + 1], isDot)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN20AVGGraphLine.GetAllPos = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN20AVGGraphLine:GetAllPos()
   local posLs = {}
-  ;
-  (table.insert)(posLs, (self.line).posS)
-  if (self.line).posLs then
-    for i,pos in ipairs((self.line).posLs) do
-      (table.insert)(posLs, pos)
+  table.insert(posLs, self.line.posS)
+  if self.line.posLs then
+    for i, pos in ipairs(self.line.posLs) do
+      table.insert(posLs, pos)
     end
   end
-  do
-    ;
-    (table.insert)(posLs, (self.line).posE)
-    return posLs
-  end
+  table.insert(posLs, self.line.posE)
+  return posLs
 end
-
-

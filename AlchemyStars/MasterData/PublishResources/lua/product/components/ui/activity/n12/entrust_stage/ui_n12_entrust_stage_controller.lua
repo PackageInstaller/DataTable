@@ -1,194 +1,128 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/entrust_stage/ui_n12_entrust_stage_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12EntrustStageController", UIController)
 UIN12EntrustStageController = UIN12EntrustStageController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12EntrustStageController._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_0
+function UIN12EntrustStageController:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._SpawnObjects = function(self, widgetName, className, count)
-  -- function num : 0_1
+function UIN12EntrustStageController:_SpawnObjects(widgetName, className, count)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local objs = {}
   pool:SpawnObjects(className, count, objs)
   return objs
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._PlayAnim = function(self, widgetName, animName, time, callback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN12EntrustStageController:_PlayAnim(widgetName, animName, time, callback)
   local anim = self:GetUIComponent("Animation", widgetName)
   self:Lock(animName)
   anim:Play(animName)
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, time, self, animName, callback
     YIELD(TT, time)
     self:UnLock(animName)
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._GetRoleId = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN12EntrustStageController:_GetRoleId()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   return pstId
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._InitWidget = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN12EntrustStageController:_InitWidget()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_4_0 , upvalues : self, _ENV
-    ((self._campaign)._campaign_module):CampaignSwitchState(true, UIStateType.UIN12MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-, function()
-    -- function num : 0_4_1 , upvalues : self
+  self._backBtns:SetData(function()
+    self._campaign._campaign_module:CampaignSwitchState(true, UIStateType.UIN12MainController, UIStateType.UIMain, nil, self._campaign._id)
+  end, function()
     self:ShowDialog("UIN12EntrustStageIntroController", "UIN12EntrustStageIntroController")
-  end
-, nil, false)
+  end, nil, false)
   local bg = self:GetGameObject("_bg")
   bg:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN12EntrustStageController:LoadDataOnEnter(TT, res, uiParams)
   self._campaignType = ECampaignType.CAMPAIGN_TYPE_N12
   self._componentId = ECampaignN12ComponentID.ECAMPAIGN_N12_ENTRUST
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
+  self._campaign:LoadCampaignInfo(TT, res, self._campaignType, self._componentId)
   if res and not res:GetSucc() then
-    (self._campaign):CheckErrorCode(res.m_result, nil, nil)
-    return 
+    self._campaign:CheckErrorCode(res.m_result, nil, nil)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController.OnShow = function(self, uiParams)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN12EntrustStageController:OnShow(uiParams)
   self:_AttachEvents()
   self._isOpen = true
-  ;
-  (UIActivityN12Helper.EntrustClearNew)()
-  ;
-  (UIActivityHelper.PlayFirstPlot_Component)(self._campaign, self._componentId, function()
-    -- function num : 0_6_0 , upvalues : self
+  UIActivityN12Helper.EntrustClearNew()
+  UIActivityHelper.PlayFirstPlot_Component(self._campaign, self._componentId, function()
     self:_Init()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController.OnHide = function(self)
-  -- function num : 0_7
+function UIN12EntrustStageController:OnHide()
   self:_DetachEvents()
   self._isOpen = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._Init = function(self)
-  -- function num : 0_8
+function UIN12EntrustStageController:_Init()
   self:_InitWidget()
   self:_Refresh()
   self:_RecordEnteredEntrust()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._Refresh = function(self)
-  -- function num : 0_9
+function UIN12EntrustStageController:_Refresh()
   self:_SetNode()
   self:_SetLine()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._RecordEnteredEntrust = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  (N12ToolFunctions.SetLocalDBInt)(N12OperationRecordKey.EnteredEntrust, 1)
+function UIN12EntrustStageController:_RecordEnteredEntrust()
+  N12ToolFunctions.SetLocalDBInt(N12OperationRecordKey.EnteredEntrust, 1)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._SetNode = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local component = (self._campaign):GetComponent(self._componentId)
+function UIN12EntrustStageController:_SetNode()
+  local component = self._campaign:GetComponent(self._componentId)
   local tb = component:GetAllLevelId()
-  local objs = self:_SpawnObjects("_nodes", "UIN12EntrustStageNode", (table.count)(tb))
-  for i,v in ipairs(objs) do
+  local objs = self:_SpawnObjects("_nodes", "UIN12EntrustStageNode", table.count(tb))
+  for i, v in ipairs(objs) do
     v:SetData(self._campaign, tb[i])
     v:SetPos(component:GetStagePointPos(tb[i]))
-    local cfg = (Cfg.cfg_n12_entrust_anim)[1]
+    local cfg = Cfg.cfg_n12_entrust_anim[1]
     local delayTime = cfg.StageNodeDelayTime
     v:PlayAnim(i, "_anim", "uieff_StageNode_In", i * delayTime, 500)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._SetLine = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local component = (self._campaign):GetComponent(self._componentId)
+function UIN12EntrustStageController:_SetLine()
+  local component = self._campaign:GetComponent(self._componentId)
   local tb = component:GetAllLevelId()
-  local objs = self:_SpawnObjects("_lines", "UIN12EntrustStageLine", (table.count)(tb) - 1)
-  for i,v in ipairs(objs) do
+  local objs = self:_SpawnObjects("_lines", "UIN12EntrustStageLine", table.count(tb) - 1)
+  for i, v in ipairs(objs) do
     local from = component:GetStagePointPos(tb[i])
     local to = component:GetStagePointPos(tb[i + 1])
     v:SetPos(from, to)
-    local cfg = (Cfg.cfg_n12_entrust_anim)[1]
+    local cfg = Cfg.cfg_n12_entrust_anim[1]
     local delayTime = cfg.StageLineDelayTime
     local time = cfg.StageLineTime
     v:PlayAnim(i, "shape", i * delayTime, 100)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._AttachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIN12EntrustStageController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._DetachEvents = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN12EntrustStageController:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12EntrustStageController._CheckActivityClose = function(self, id)
-  -- function num : 0_15 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN12EntrustStageController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
-
-

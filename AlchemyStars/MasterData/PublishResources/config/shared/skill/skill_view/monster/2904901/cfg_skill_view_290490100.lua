@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2904901/cfg_skill_view_290490100.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" PlayAudio,audioID=6252,audioType=1; PlayHorsemanIntro,introModel=2904900.prefab,introAnimateTrigger=Birth,introMaterialAnimateName=eff_2904900_birth_xiaoshi,introEffectID=290490101,introStateTimeMs=1600,realIntroEffectID=290490102,realStateTimeMs=800,realMaterialAnimateName=eff_2904900_birth_chuxian; PlayCasterVisible,visible=1; PlayCasterHUDVisible,visible=1; Wait,waitTime=1600; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " PlayAudio,audioID=6252,audioType=1; PlayHorsemanIntro,introModel=2904900.prefab,introAnimateTrigger=Birth,introMaterialAnimateName=eff_2904900_birth_xiaoshi,introEffectID=290490101,introStateTimeMs=1600,realIntroEffectID=290490102,realStateTimeMs=800,realMaterialAnimateName=eff_2904900_birth_chuxian; PlayCasterVisible,visible=1; PlayCasterHUDVisible,visible=1; Wait,waitTime=1600; "
+    }
+  }
 }
 return config, "ID", key
-

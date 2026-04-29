@@ -1,127 +1,72 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/logic_chain_damage_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LogicChainDamageComponent", Object)
 LogicChainDamageComponent = LogicChainDamageComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LogicChainDamageComponent.Constructor = function(self)
-  -- function num : 0_0
+function LogicChainDamageComponent:Constructor()
   self._chainDamageList = {}
   self._chainRecoverList = {}
   self._enable = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainDamageComponent.Clear = function(self)
-  -- function num : 0_1
+function LogicChainDamageComponent:Clear()
   self._chainDamageList = {}
   self._chainRecoverList = {}
   self._enable = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainDamageComponent.GetChainDamageEnable = function(self)
-  -- function num : 0_2
+function LogicChainDamageComponent:GetChainDamageEnable()
   return self._enable
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainDamageComponent.SetChainDamageEnable = function(self, enable)
-  -- function num : 0_3
+function LogicChainDamageComponent:SetChainDamageEnable(enable)
   self._enable = enable
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainDamageComponent.GetChainDamageList = function(self)
-  -- function num : 0_4
+function LogicChainDamageComponent:GetChainDamageList()
   return self._chainDamageList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainDamageComponent.SetChainDamageList = function(self, entityID, value)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._chainDamageList)[entityID] = value
+function LogicChainDamageComponent:SetChainDamageList(entityID, value)
+  self._chainDamageList[entityID] = value
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainDamageComponent.GetChainDamageEntityID = function(self, entityID)
-  -- function num : 0_6
-  return (self._chainDamageList)[entityID]
+function LogicChainDamageComponent:GetChainDamageEntityID(entityID)
+  return self._chainDamageList[entityID]
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainDamageComponent.GetChainRecoverList = function(self)
-  -- function num : 0_7
+function LogicChainDamageComponent:GetChainRecoverList()
   return self._chainRecoverList
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainDamageComponent.SetChainRecoverList = function(self, entityID, value)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R3 in 'UnsetPending'
-
-  (self._chainRecoverList)[entityID] = value
+function LogicChainDamageComponent:SetChainRecoverList(entityID, value)
+  self._chainRecoverList[entityID] = value
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LogicChainDamageComponent.GetChainRecoverEntityID = function(self, entityID)
-  -- function num : 0_9
-  return (self._chainRecoverList)[entityID]
+function LogicChainDamageComponent:GetChainRecoverEntityID(entityID)
+  return self._chainRecoverList[entityID]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.LogicChainDamage = function(self)
-  -- function num : 0_10
-  return self:GetComponent((self.WEComponentsEnum).LogicChainDamage)
+function Entity:LogicChainDamage()
+  return self:GetComponent(self.WEComponentsEnum.LogicChainDamage)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasLogicChainDamage = function(self)
-  -- function num : 0_11
-  return self:HasComponent((self.WEComponentsEnum).LogicChainDamage)
+function Entity:HasLogicChainDamage()
+  return self:HasComponent(self.WEComponentsEnum.LogicChainDamage)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddLogicChainDamage = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicChainDamage
+function Entity:AddLogicChainDamage()
+  local index = self.WEComponentsEnum.LogicChainDamage
   local component = LogicChainDamageComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceLogicChainDamage = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).LogicChainDamage
+function Entity:ReplaceLogicChainDamage()
+  local index = self.WEComponentsEnum.LogicChainDamage
   local component = LogicChainDamageComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveLogicChainDamage = function(self)
-  -- function num : 0_14
+function Entity:RemoveLogicChainDamage()
   if self:HasLogicChainDamage() then
-    self:RemoveComponent((self.WEComponentsEnum).LogicChainDamage)
+    self:RemoveComponent(self.WEComponentsEnum.LogicChainDamage)
   end
 end
-
-

@@ -1,35 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/preview_monster_action_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewMonsterActionSystem_Render", ReactiveSystem)
 PreviewMonsterActionSystem_Render = PreviewMonsterActionSystem_Render
-local PreviewMonsterType = {SkillRange = 1, SkillRangeWithAttackRange = 2, ProSkillRange = 3, DeathAreaRange = 4, Tips = 5, SkillRangeWithArrow = 6}
+local PreviewMonsterType = {
+  SkillRange = 1,
+  SkillRangeWithAttackRange = 2,
+  ProSkillRange = 3,
+  DeathAreaRange = 4,
+  Tips = 5,
+  SkillRangeWithArrow = 6
+}
 _enum("PreviewMonsterType", PreviewMonsterType)
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-PreviewMonsterActionSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:Constructor(world)
   self._world = world
-  self._neighbourArray = {Vector2(0, 1), Vector2(1, 0), Vector2(0, -1), Vector2(-1, 0)}
+  self._neighbourArray = {
+    Vector2(0, 1),
+    Vector2(1, 0),
+    Vector2(0, -1),
+    Vector2(-1, 0)
+  }
   self._arrowResPathDic = {}
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._arrowResPathDic)[ElementType.ElementType_Blue] = "eff_gezi_hybs_yulan_bai.prefab"
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._arrowResPathDic)[ElementType.ElementType_Red] = "eff_gezi_hybs_yulan_bai.prefab"
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._arrowResPathDic)[ElementType.ElementType_Green] = "eff_gezi_hybs_yulan_bai.prefab"
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._arrowResPathDic)[ElementType.ElementType_Yellow] = "eff_gezi_hybs_yulan_bai.prefab"
+  self._arrowResPathDic[ElementType.ElementType_Blue] = "eff_gezi_hybs_yulan_bai.prefab"
+  self._arrowResPathDic[ElementType.ElementType_Red] = "eff_gezi_hybs_yulan_bai.prefab"
+  self._arrowResPathDic[ElementType.ElementType_Green] = "eff_gezi_hybs_yulan_bai.prefab"
+  self._arrowResPathDic[ElementType.ElementType_Yellow] = "eff_gezi_hybs_yulan_bai.prefab"
   self._outlineResPath = "eff_gezi_bossyj_normal.prefab"
   self._outlineProResPath = "eff_gezi_bossyj_pro.prefab"
   self._attackAreaResPath = "eff_gezi_hybs_yulan_honggezi.prefab"
@@ -37,26 +30,19 @@ PreviewMonsterActionSystem_Render.Constructor = function(self, world)
   self._configService = world:GetService("Config")
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).PreviewMonsterAction)
-  local c = Collector:New({group}, {"AddedOrRemoved"})
+function PreviewMonsterActionSystem_Render:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.PreviewMonsterAction)
+  local c = Collector:New({group}, {
+    "AddedOrRemoved"
+  })
   return c
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render.Filter = function(self, entity)
-  -- function num : 0_2
+function PreviewMonsterActionSystem_Render:Filter(entity)
   return true
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_3 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:ExecuteEntities(entities)
   for i = 1, #entities do
     local boardEntity = entities[i]
     if boardEntity:HasPreviewMonsterAction() then
@@ -65,381 +51,275 @@ PreviewMonsterActionSystem_Render.ExecuteEntities = function(self, entities)
       local monsterEntityID = previewCmpt:GetMonsterEntityID()
       if isShow then
         self:_ShowMonsterAction(monsterEntityID, boardEntity)
+      else
       end
     else
-      do
-        do
-          ;
-          (Log.debug)("[Preview] 预览怪物技能： 时机不到")
-          -- DECOMPILER ERROR at PC27: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC27: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC27: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      Log.debug("[Preview] 预览怪物技能： 时机不到")
     end
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowMonsterAction = function(self, monsterEntityID, boardEntity)
-  -- function num : 0_4 , upvalues : _ENV
-  local monsterEntity = (self._world):GetEntityByID(monsterEntityID)
+function PreviewMonsterActionSystem_Render:_ShowMonsterAction(monsterEntityID, boardEntity)
+  local monsterEntity = self._world:GetEntityByID(monsterEntityID)
   local buffView = monsterEntity:BuffView()
   if buffView and buffView:HasBuffEffect(BuffEffectType.NotShowPreviewSkill) then
-    return 
+    return
   end
   local cMonsterID = monsterEntity:MonsterID()
   local monsterID = cMonsterID:GetMonsterID()
   local configService = self._configService
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
+  local monsterConfigData = self._configService:GetMonsterConfigData()
   local hybridMode, hybridParam = monsterConfigData:GetHybridSkillPreviewMode(monsterID)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local hasReplacePreviewSkill = utilDataSvc:IsAIChangePreviewSkillID(monsterEntity)
-  if hybridMode > 0 and not hasReplacePreviewSkill then
+  if 0 < hybridMode and not hasReplacePreviewSkill then
     self:_StartHybridSkillPreview(monsterEntityID, boardEntity, hybridMode, hybridParam)
   else
     self:_StartPlainSkillPreview(monsterEntityID, boardEntity)
   end
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._StartPlainSkillPreview = function(self, monsterEntityID, boardEntity)
-  -- function num : 0_5 , upvalues : _ENV
-  local monsterEntity = (self._world):GetEntityByID(monsterEntityID)
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PreviewMonsterActionSystem_Render:_StartPlainSkillPreview(monsterEntityID, boardEntity)
+  local monsterEntity = self._world:GetEntityByID(monsterEntityID)
+  local utilDataSvc = self._world:GetService("UtilData")
   local monsterSkillID = utilDataSvc:GetAIPreviewSkillID(monsterEntity)
-  if monsterSkillID == 0 then
-    (Log.fatal)("[Preview]，怪物技能预览时发现技能编号非法： monsterEntityID = " .. monsterEntityID)
+  if 0 == monsterSkillID then
+    Log.fatal("[Preview]，怪物技能预览时发现技能编号非法： monsterEntityID = " .. monsterEntityID)
   end
   local skillConfig = BattleSkillCfg(monsterSkillID)
   if not skillConfig or not skillConfig.ViewID then
-    (Log.fatal)("[Preview] 无技能表现，不预览")
-    return 
+    Log.fatal("[Preview] 无技能表现，不预览")
+    return
   end
   self:_ShowSkillPreview(monsterEntity, monsterSkillID)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowSkillPreview = function(self, monsterEntity, monsterSkillID)
-  -- function num : 0_6 , upvalues : _ENV, PreviewMonsterType
-  local skillConfigData = (self._configService):GetSkillConfigData(monsterSkillID, monsterEntity)
+function PreviewMonsterActionSystem_Render:_ShowSkillPreview(monsterEntity, monsterSkillID)
+  local skillConfigData = self._configService:GetSkillConfigData(monsterSkillID, monsterEntity)
   local skillPreviewType = skillConfigData:GetSkillPreviewType()
   local skillPreviewParam = skillConfigData:GetSkillPreviewParam()
   local dirCount = 0
-  local previewUserCenter, lessMobility, calcMobiUseBlock = nil, nil, nil
+  local previewUserCenter, lessMobility, calcMobiUseBlock
   if skillPreviewParam and skillPreviewParam ~= 0 then
     dirCount = skillPreviewParam.Direction
     previewUserCenter = skillPreviewParam.PreviewUserCenter
     lessMobility = skillPreviewParam.LessMobility
     calcMobiUseBlock = skillPreviewParam.CalcMobiUseBlock
   end
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   if SkillPreviewType.Scope == skillPreviewType then
-    local utilDataSvc = (self._world):GetService("UtilData")
-    local configsvc = (self._world):GetService("Config")
+    local utilDataSvc = self._world:GetService("UtilData")
+    local configsvc = self._world:GetService("Config")
     local monsterMobility = utilDataSvc:GetAIMobilityConfig(monsterEntity)
-    if lessMobility and monsterMobility <= lessMobility then
-      local listWalkRange = {[1] = monsterEntity:GetGridPosition()}
+    if lessMobility and lessMobility >= monsterMobility then
+      local listWalkRange = {
+        [1] = monsterEntity:GetGridPosition()
+      }
       self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
     else
-      do
-        do
-          local listWalkRange = self:_ShowArrow(monsterEntity, lessMobility, calcMobiUseBlock)
-          self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
-          if SkillPreviewType.Tips == skillPreviewType then
-            previewActiveSkillService:_ShowSkillTips(skillConfigData)
-          else
-            if SkillPreviewType.ScopeAndTips == skillPreviewType then
-              local listWalkRange = self:_ShowArrow(monsterEntity, lessMobility)
-              self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-              previewActiveSkillService:_ShowSkillTips(skillConfigData)
-            else
-              do
-                if SkillPreviewType.ReplaceOtherSkillScopeAndTips == skillPreviewType then
-                  local replaceSkillConfigData = (self._configService):GetSkillConfigData(skillPreviewParam.SkillID, monsterEntity)
-                  local listWalkRange = self:_ShowArrow(monsterEntity, lessMobility)
-                  self:_ShowSkillRange(monsterEntity, replaceSkillConfigData, listWalkRange, dirCount, previewUserCenter)
-                  previewActiveSkillService:_ShowSkillTips(replaceSkillConfigData)
-                else
-                  do
-                    if SkillPreviewType.ScopeWithCasterPos == skillPreviewType then
-                      local listWalkRange = {[1] = monsterEntity:GetGridPosition()}
-                      self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-                    else
-                      do
-                        if SkillPreviewType.ScopeWithCasterPosAndTips == skillPreviewType then
-                          previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                          local casterPos = monsterEntity:GetGridPosition()
-                          if previewUserCenter then
-                            for _,v in ipairs(previewUserCenter) do
-                              if v.x ~= casterPos.x and v.y ~= casterPos.y then
-                                casterPos = Vector2(v.x, v.y)
-                                break
-                              end
-                            end
-                          end
-                          do
-                            do
-                              local listWalkRange = {[1] = casterPos}
-                              self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-                              if SkillPreviewType.ScopeAndEffectScope == skillPreviewType then
-                                local effectIndex = skillPreviewParam.effectIndex
-                                if not effectIndex then
-                                  (Log.fatal)("Skill Preview Config Failed SkillID:", monsterSkillID)
-                                end
-                                self:_ShowSkillRangeWithEffect(effectIndex, skillConfigData, monsterEntity)
-                              else
-                                do
-                                  if SkillPreviewType.ScopeAndEffectScopeAndTips == skillPreviewType then
-                                    local effectIndex = skillPreviewParam.effectIndex
-                                    if not effectIndex then
-                                      (Log.fatal)("Skill Preview Config Failed SkillID:", monsterSkillID)
-                                    end
-                                    self:_ShowSkillRangeWithEffect(effectIndex, skillConfigData, monsterEntity)
-                                    previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                                  else
-                                    do
-                                      if SkillPreviewType.ScopeAndTipsAndMoveParam == skillPreviewType then
-                                        self:_ShowArrowPreviewParam(monsterEntity, skillPreviewParam)
-                                        local listWalkRange = {}
-                                        self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-                                        previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                                      else
-                                        do
-                                          if SkillPreviewType.ScopeCanConfig == skillPreviewType then
-                                            do
-                                              if (table.icontains)(skillPreviewParam, PreviewMonsterType.SkillRange) then
-                                                local listWalkRange = {}
-                                                self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-                                              end
-                                              if (table.icontains)(skillPreviewParam, PreviewMonsterType.DeathAreaRange) then
-                                                self:_ShowDeathRange(monsterEntity, skillConfigData)
-                                              end
-                                              if (table.icontains)(skillPreviewParam, PreviewMonsterType.Tips) then
-                                                previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                                              end
-                                              do
-                                                if (table.icontains)(skillPreviewParam, PreviewMonsterType.SkillRangeWithAttackRange) then
-                                                  local listWalkRange = {[1] = monsterEntity:GetGridPosition()}
-                                                  self:_SkillRangeWithAttackRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-                                                end
-                                                do
-                                                  if (table.icontains)(skillPreviewParam, PreviewMonsterType.SkillRangeWithArrow) then
-                                                    local listWalkRange = self:_ShowArrowCheckBlock(monsterEntity)
-                                                    self:_SkillRangeWithAttackRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-                                                  end
-                                                  if SkillPreviewType.ScopeSilverGrid == skillPreviewType then
-                                                    local listWalkRange = self:_ShowArrow(monsterEntity)
-                                                    previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                                                    self:_ShowSkillRangeAsSilverGrid(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-                                                  else
-                                                    do
-                                                      if SkillPreviewType.ScopeAndTipsAndArrowWithMoveParam == skillPreviewType then
-                                                        local listWalkRange = self:_ShowArrowWithMoveParam(monsterEntity, skillPreviewParam)
-                                                        self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-                                                        previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                                                      else
-                                                        do
-                                                          if SkillPreviewType.N29DrillerMoveAttack == skillPreviewType then
-                                                            self:_ShowDrillerMoveAttack(monsterEntity, skillConfigData)
-                                                          else
-                                                            if SkillPreviewType.TeleportRangeAndDamageRange == skillPreviewType then
-                                                              local damageAreaSkillConfigData = (self._configService):GetSkillConfigData(skillPreviewParam.DamageScopeSkillID, monsterEntity)
-                                                              local listWalkRange = self:_ShowArrowPreviewParamSub(monsterEntity, skillPreviewParam.TeleportScope)
-                                                              self:_ShowSkillRange(monsterEntity, damageAreaSkillConfigData, listWalkRange, dirCount, previewUserCenter)
-                                                              previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                                                            else
-                                                              do
-                                                                if SkillPreviewType.Crab == skillPreviewType then
-                                                                  previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                                                                  self:_ShowCrabMoveAttack(monsterEntity, skillConfigData)
-                                                                else
-                                                                  if SkillPreviewType.MoveGroupScope == skillPreviewType then
-                                                                    self:_ShowMonsterGroupMoveAttack(monsterEntity, skillConfigData)
-                                                                    previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                                                                  else
-                                                                    if SkillPreviewType.ShowSelectMonsterScopeAndTips == skillPreviewType then
-                                                                      self:_ShowShowSelectMonsterScopeAndTips(monsterEntity, skillConfigData, skillPreviewParam)
-                                                                      previewActiveSkillService:_ShowSkillTips(skillConfigData)
-                                                                    end
-                                                                  end
-                                                                end
-                                                              end
-                                                            end
-                                                          end
-                                                        end
-                                                      end
-                                                    end
-                                                  end
-                                                end
-                                              end
-                                            end
-                                          end
-                                        end
-                                      end
-                                    end
-                                  end
-                                end
-                              end
-                            end
-                          end
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-          end
+      local listWalkRange = self:_ShowArrow(monsterEntity, lessMobility, calcMobiUseBlock)
+      self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
+    end
+  elseif SkillPreviewType.Tips == skillPreviewType then
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+  elseif SkillPreviewType.ScopeAndTips == skillPreviewType then
+    local listWalkRange = self:_ShowArrow(monsterEntity, lessMobility)
+    self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+  elseif SkillPreviewType.ReplaceOtherSkillScopeAndTips == skillPreviewType then
+    local replaceSkillConfigData = self._configService:GetSkillConfigData(skillPreviewParam.SkillID, monsterEntity)
+    local listWalkRange = self:_ShowArrow(monsterEntity, lessMobility)
+    self:_ShowSkillRange(monsterEntity, replaceSkillConfigData, listWalkRange, dirCount, previewUserCenter)
+    previewActiveSkillService:_ShowSkillTips(replaceSkillConfigData)
+  elseif SkillPreviewType.ScopeWithCasterPos == skillPreviewType then
+    local listWalkRange = {
+      [1] = monsterEntity:GetGridPosition()
+    }
+    self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
+  elseif SkillPreviewType.ScopeWithCasterPosAndTips == skillPreviewType then
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+    local casterPos = monsterEntity:GetGridPosition()
+    if previewUserCenter then
+      for _, v in ipairs(previewUserCenter) do
+        if v.x ~= casterPos.x and v.y ~= casterPos.y then
+          casterPos = Vector2(v.x, v.y)
+          break
         end
       end
     end
+    local listWalkRange = {
+      [1] = casterPos
+    }
+    self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
+  elseif SkillPreviewType.ScopeAndEffectScope == skillPreviewType then
+    local effectIndex = skillPreviewParam.effectIndex
+    if not effectIndex then
+      Log.fatal("Skill Preview Config Failed SkillID:", monsterSkillID)
+    end
+    self:_ShowSkillRangeWithEffect(effectIndex, skillConfigData, monsterEntity)
+  elseif SkillPreviewType.ScopeAndEffectScopeAndTips == skillPreviewType then
+    local effectIndex = skillPreviewParam.effectIndex
+    if not effectIndex then
+      Log.fatal("Skill Preview Config Failed SkillID:", monsterSkillID)
+    end
+    self:_ShowSkillRangeWithEffect(effectIndex, skillConfigData, monsterEntity)
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+  elseif SkillPreviewType.ScopeAndTipsAndMoveParam == skillPreviewType then
+    self:_ShowArrowPreviewParam(monsterEntity, skillPreviewParam)
+    local listWalkRange = {}
+    self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+  elseif SkillPreviewType.ScopeCanConfig == skillPreviewType then
+    if table.icontains(skillPreviewParam, PreviewMonsterType.SkillRange) then
+      local listWalkRange = {}
+      self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
+    end
+    if table.icontains(skillPreviewParam, PreviewMonsterType.DeathAreaRange) then
+      self:_ShowDeathRange(monsterEntity, skillConfigData)
+    end
+    if table.icontains(skillPreviewParam, PreviewMonsterType.Tips) then
+      previewActiveSkillService:_ShowSkillTips(skillConfigData)
+    end
+    if table.icontains(skillPreviewParam, PreviewMonsterType.SkillRangeWithAttackRange) then
+      local listWalkRange = {
+        [1] = monsterEntity:GetGridPosition()
+      }
+      self:_SkillRangeWithAttackRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
+    end
+    if table.icontains(skillPreviewParam, PreviewMonsterType.SkillRangeWithArrow) then
+      local listWalkRange = self:_ShowArrowCheckBlock(monsterEntity)
+      self:_SkillRangeWithAttackRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
+    end
+  elseif SkillPreviewType.ScopeSilverGrid == skillPreviewType then
+    local listWalkRange = self:_ShowArrow(monsterEntity)
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+    self:_ShowSkillRangeAsSilverGrid(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
+  elseif SkillPreviewType.ScopeAndTipsAndArrowWithMoveParam == skillPreviewType then
+    local listWalkRange = self:_ShowArrowWithMoveParam(monsterEntity, skillPreviewParam)
+    self:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+  elseif SkillPreviewType.N29DrillerMoveAttack == skillPreviewType then
+    self:_ShowDrillerMoveAttack(monsterEntity, skillConfigData)
+  elseif SkillPreviewType.TeleportRangeAndDamageRange == skillPreviewType then
+    local damageAreaSkillConfigData = self._configService:GetSkillConfigData(skillPreviewParam.DamageScopeSkillID, monsterEntity)
+    local listWalkRange = self:_ShowArrowPreviewParamSub(monsterEntity, skillPreviewParam.TeleportScope)
+    self:_ShowSkillRange(monsterEntity, damageAreaSkillConfigData, listWalkRange, dirCount, previewUserCenter)
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+  elseif SkillPreviewType.Crab == skillPreviewType then
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+    self:_ShowCrabMoveAttack(monsterEntity, skillConfigData)
+  elseif SkillPreviewType.MoveGroupScope == skillPreviewType then
+    self:_ShowMonsterGroupMoveAttack(monsterEntity, skillConfigData)
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
+  elseif SkillPreviewType.ShowSelectMonsterScopeAndTips == skillPreviewType then
+    self:_ShowShowSelectMonsterScopeAndTips(monsterEntity, skillConfigData, skillPreviewParam)
+    previewActiveSkillService:_ShowSkillTips(skillConfigData)
   end
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._StartHybridSkillPreview = function(self, monsterEntityID, boardEntity, mode, param)
-  -- function num : 0_7 , upvalues : _ENV
-  local entity = ((self._world):GetEntityByID(monsterEntityID))
-  local curParam = nil
+function PreviewMonsterActionSystem_Render:_StartHybridSkillPreview(monsterEntityID, boardEntity, mode, param)
+  local entity = self._world:GetEntityByID(monsterEntityID)
+  local curParam
   local buffView = entity:BuffView()
   if buffView then
     curParam = buffView:GetBuffValue("HybridSkillPreviewParam")
   end
-  if not curParam then
-    curParam = param
-  end
-  local cPrvwMstrAct = (boardEntity:PreviewMonsterAction())
-  local tid = nil
+  curParam = curParam or param
+  local cPrvwMstrAct = boardEntity:PreviewMonsterAction()
+  local tid
   if mode == MonsterActionHybridPreviewMode.Carousel then
     tid = self:_HybridPreview_Carousel(entity, curParam)
-  else
-    if mode == MonsterActionHybridPreviewMode.RoundBasedCarousel then
-      local utilDataSvc = (self._world):GetService("UtilData")
-      local roundCount = utilDataSvc:GetEntityAIRuntimeData(entity, "RoundCount")
-      if not roundCount or roundCount <= 0 then
-        roundCount = 0
-      end
-      roundCount = roundCount + 1
-      tid = self:_HybridPreview_RoundBasedCarousel(entity, curParam, roundCount)
-    else
-      do
-        if mode == MonsterActionHybridPreviewMode.TotalRoundBasedCarousel then
-          local roundCount = (BattleStatHelper.GetLevelTotalRoundCount)()
-          if #param < roundCount then
-            roundCount = roundCount % #param
-            if roundCount == 0 then
-              roundCount = #param
-            end
-          end
-          tid = self:_HybridPreview_RoundBasedCarousel(entity, curParam, roundCount)
-        else
-          do
-            if mode == MonsterActionHybridPreviewMode.AlphaFixedByRound then
-              self:_HybridPreview_AlphaFixedByRound(entity, curParam)
-            else
-              if mode == MonsterActionHybridPreviewMode.N34BossStateCarousel then
-                tid = self:_HybridPreview_N34BossStateCarousel(entity, curParam)
-              else
-                if mode == MonsterActionHybridPreviewMode.StateCarousel then
-                  tid = self:_HybridPreview_StateCarousel(entity, curParam)
-                end
-              end
-            end
-            if type(tid) == "number" then
-              cPrvwMstrAct:SetPreviewTaskID(tid)
-            end
-          end
-        end
+  elseif mode == MonsterActionHybridPreviewMode.RoundBasedCarousel then
+    local utilDataSvc = self._world:GetService("UtilData")
+    local roundCount = utilDataSvc:GetEntityAIRuntimeData(entity, "RoundCount")
+    if not roundCount or roundCount <= 0 then
+      roundCount = 0
+    end
+    roundCount = roundCount + 1
+    tid = self:_HybridPreview_RoundBasedCarousel(entity, curParam, roundCount)
+  elseif mode == MonsterActionHybridPreviewMode.TotalRoundBasedCarousel then
+    local roundCount = BattleStatHelper.GetLevelTotalRoundCount()
+    if roundCount > #param then
+      roundCount = roundCount % #param
+      if roundCount == 0 then
+        roundCount = #param
       end
     end
+    tid = self:_HybridPreview_RoundBasedCarousel(entity, curParam, roundCount)
+  elseif mode == MonsterActionHybridPreviewMode.AlphaFixedByRound then
+    self:_HybridPreview_AlphaFixedByRound(entity, curParam)
+  elseif mode == MonsterActionHybridPreviewMode.N34BossStateCarousel then
+    tid = self:_HybridPreview_N34BossStateCarousel(entity, curParam)
+  elseif mode == MonsterActionHybridPreviewMode.StateCarousel then
+    tid = self:_HybridPreview_StateCarousel(entity, curParam)
+  end
+  if type(tid) == "number" then
+    cPrvwMstrAct:SetPreviewTaskID(tid)
   end
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._HybridPreview_Carousel = function(self, entity, param)
-  -- function num : 0_8 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_HybridPreview_Carousel(entity, param)
   local cMonsterID = entity:MonsterID()
   local monsterID = cMonsterID:GetMonsterID()
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
+  local monsterConfigData = self._configService:GetMonsterConfigData()
   local monsterSkill = monsterConfigData:GetMonsterSkillIDs(monsterID)
-  local skillRow = (param[1])[1]
-  local tipSkillIndex = (param[2])[1]
+  local skillRow = param[1][1]
+  local tipSkillIndex = param[2][1]
   local skills = monsterSkill[skillRow]
   if not skills then
-    return 
+    return
   end
-  if tipSkillIndex and tipSkillIndex > 0 then
-    local skillConfigData = (self._configService):GetSkillConfigData(skills[tipSkillIndex], entity)
-    local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  if tipSkillIndex and 0 < tipSkillIndex then
+    local skillConfigData = self._configService:GetSkillConfigData(skills[tipSkillIndex], entity)
+    local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
     previewActiveSkillService:_ShowSkillTips(skillConfigData)
   end
-  do
-    return (TaskManager:GetInstance()):CoreGameStartTask(self._TaskFnCarousel, self, skills, entity)
-  end
+  return TaskManager:GetInstance():CoreGameStartTask(self._TaskFnCarousel, self, skills, entity)
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._HybridPreview_RoundBasedCarousel = function(self, entity, param, roundCount)
-  -- function num : 0_9 , upvalues : _ENV
-  if #param < roundCount then
+function PreviewMonsterActionSystem_Render:_HybridPreview_RoundBasedCarousel(entity, param, roundCount)
+  if roundCount > #param then
     roundCount = 1
   end
   local skillGroup = param[roundCount]
   if not skillGroup or #skillGroup <= 0 then
-    return 
+    return
   end
-  return (TaskManager:GetInstance()):CoreGameStartTask(self._TaskFnCarousel, self, skillGroup, entity)
+  return TaskManager:GetInstance():CoreGameStartTask(self._TaskFnCarousel, self, skillGroup, entity)
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._TaskFnCarousel = function(self, TT, tSkillID, casterEntity)
-  -- function num : 0_10 , upvalues : _ENV
-  local renderEntityService = (self._world):GetService("RenderEntity")
+function PreviewMonsterActionSystem_Render:_TaskFnCarousel(TT, tSkillID, casterEntity)
+  local renderEntityService = self._world:GetService("RenderEntity")
   local currentSkillIndex = 1
-  while 1 do
+  while true do
     local monsterSkillID = tSkillID[currentSkillIndex]
     self:_ShowSkillPreview(casterEntity, monsterSkillID)
-    local skillConfigData = (self._configService):GetSkillConfigData(monsterSkillID, casterEntity)
-    local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+    local skillConfigData = self._configService:GetSkillConfigData(monsterSkillID, casterEntity)
+    local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
     previewActiveSkillService:_ShowSkillTips(skillConfigData)
     YIELD(TT, BattleConst.PreviewMonsterInternal)
     renderEntityService:DestroyMonsterPreviewAreaOutlineEntity()
-    ;
-    ((self._world):GetService("PreviewActiveSkill")):_RevertAllConvertElement(true)
+    self._world:GetService("PreviewActiveSkill"):_RevertAllConvertElement(true)
     currentSkillIndex = currentSkillIndex % #tSkillID + 1
   end
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._CalcMoveArrowDir = function(self, monsterPos, bodyArea, targetPos)
-  -- function num : 0_11 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_CalcMoveArrowDir(monsterPos, bodyArea, targetPos)
   local x = 0
   local y = 0
   local onTheRight = true
   local onTheLeft = true
   local onTheTop = true
   local onTheBottom = true
-  for _,bodyAreaPos in ipairs(bodyArea) do
+  for _, bodyAreaPos in ipairs(bodyArea) do
     local curAreaPos = monsterPos + bodyAreaPos
-    if curAreaPos.x <= targetPos.x then
+    if targetPos.x >= curAreaPos.x then
       onTheLeft = false
     end
     if targetPos.x <= curAreaPos.x then
       onTheRight = false
     end
-    if curAreaPos.y <= targetPos.y then
+    if targetPos.y >= curAreaPos.y then
       onTheBottom = false
     end
     if targetPos.y <= curAreaPos.y then
@@ -448,26 +328,19 @@ PreviewMonsterActionSystem_Render._CalcMoveArrowDir = function(self, monsterPos,
   end
   if onTheLeft then
     x = 1
-  else
-    if onTheRight then
-      x = -1
-    end
+  elseif onTheRight then
+    x = -1
   end
   if onTheTop then
     y = -1
-  else
-    if onTheBottom then
-      y = 1
-    end
+  elseif onTheBottom then
+    y = 1
   end
   return Vector2(x, y)
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._CalcMonsterMoveRange_Han = function(self, monsterEntity, bBase, bFilterInvalid, lessMobility, calcMobiUseBlock)
-  -- function num : 0_12 , upvalues : _ENV
-  local monsterBasePos = (monsterEntity:GridLocation()).Position
+function PreviewMonsterActionSystem_Render:_CalcMonsterMoveRange_Han(monsterEntity, bBase, bFilterInvalid, lessMobility, calcMobiUseBlock)
+  local monsterBasePos = monsterEntity:GridLocation().Position
   local bodyAreaCmpt = monsterEntity:BodyArea()
   local monsterBodyArea = bodyAreaCmpt:GetArea()
   local nBodyAreaCount = 0
@@ -476,72 +349,59 @@ PreviewMonsterActionSystem_Render._CalcMonsterMoveRange_Han = function(self, mon
   else
     nBodyAreaCount = #monsterBodyArea
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
-  local configsvc = (self._world):GetService("Config")
+  local utilDataSvc = self._world:GetService("UtilData")
+  local configsvc = self._world:GetService("Config")
   local monsterMobility = utilDataSvc:GetAIMobilityConfig(monsterEntity)
-  local monsterID = (monsterEntity:MonsterID()):GetMonsterID()
+  local monsterID = monsterEntity:MonsterID():GetMonsterID()
   local monsterConfigData = configsvc:GetMonsterConfigData()
   local canMove = monsterConfigData:CanMove(monsterID)
-  local canTurn = (monsterConfigData:CanTurn(monsterID))
-  local listWalkRange = nil
+  local canTurn = monsterConfigData:CanTurn(monsterID)
+  local listWalkRange
   if lessMobility then
     monsterMobility = monsterMobility - lessMobility
   end
   if canMove then
-    if monsterMobility > 0 then
+    if 0 < monsterMobility then
       local cbFilter = Callback:New(1, utilDataSvc.IsPosAccessibleMonsterMove, utilDataSvc)
-      local monsterBlockData = (monsterEntity:MonsterID()):GetMonsterBlockData()
-      listWalkRange = (ComputeScopeRange.ComputeRange_PreviewWithStepAndBlock)(monsterBasePos, monsterBodyArea, bBase, monsterMobility, monsterBlockData, cbFilter)
+      local monsterBlockData = monsterEntity:MonsterID():GetMonsterBlockData()
+      listWalkRange = ComputeScopeRange.ComputeRange_PreviewWithStepAndBlock(monsterBasePos, monsterBodyArea, bBase, monsterMobility, monsterBlockData, cbFilter)
     else
-      do
-        do return {monsterBasePos} end
-        listWalkRange = (ComputeScopeRange.ComputeBodyArea)(monsterBasePos, nBodyAreaCount, 0)
-        local listReturn = {}
-        local utilDataSvc = (self._world):GetService("UtilData")
-        for key,value in pairs(listWalkRange) do
-          local posWalk = value:GetPos()
-          local isBlocked = false
-          if bFilterInvalid then
-            isBlocked = utilDataSvc:IsPosBlock(posWalk, (monsterEntity:MonsterID()):GetMonsterBlockData())
-            do
-              do
-                if isBlocked then
-                  local posPlayer = (((self._world):Player()):GetPreviewTeamEntity()):GetGridPosition()
-                  if posPlayer == posWalk or utilDataSvc:GetMonsterAtPos(posWalk) then
-                    isBlocked = false
-                  end
-                end
-                if isBlocked and bBase and (table.icontains)(monsterBodyArea, posWalk - monsterBasePos) then
-                  isBlocked = false
-                end
-                isBlocked = utilDataSvc:IsValidPiecePos(posWalk)
-                if isBlocked == false then
-                  listReturn[#listReturn + 1] = posWalk
-                end
-                -- DECOMPILER ERROR at PC138: LeaveBlock: unexpected jumping out DO_STMT
-
-                -- DECOMPILER ERROR at PC138: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC138: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
-          end
+      return {monsterBasePos}
+    end
+  else
+    listWalkRange = ComputeScopeRange.ComputeBodyArea(monsterBasePos, nBodyAreaCount, 0)
+  end
+  local listReturn = {}
+  local utilDataSvc = self._world:GetService("UtilData")
+  for key, value in pairs(listWalkRange) do
+    local posWalk = value:GetPos()
+    local isBlocked = false
+    if bFilterInvalid then
+      isBlocked = utilDataSvc:IsPosBlock(posWalk, monsterEntity:MonsterID():GetMonsterBlockData())
+      if isBlocked then
+        local posPlayer = self._world:Player():GetPreviewTeamEntity():GetGridPosition()
+        if posPlayer == posWalk or utilDataSvc:GetMonsterAtPos(posWalk) then
+          isBlocked = false
         end
-        return listReturn
       end
+      if isBlocked and bBase and table.icontains(monsterBodyArea, posWalk - monsterBasePos) then
+        isBlocked = false
+      end
+    else
+      isBlocked = utilDataSvc:IsValidPiecePos(posWalk)
+    end
+    if false == isBlocked then
+      listReturn[#listReturn + 1] = posWalk
     end
   end
+  return listReturn
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._GetSkillRange = function(self, monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
-  -- function num : 0_13 , upvalues : _ENV
-  local monsterBasePos = (monsterEntity:GridLocation()).Position
-  local textPos = nil
+function PreviewMonsterActionSystem_Render:_GetSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
+  local monsterBasePos = monsterEntity:GridLocation().Position
+  local textPos
   if previewUserCenter then
-    for _,v in ipairs(previewUserCenter) do
+    for _, v in ipairs(previewUserCenter) do
       if v.x ~= monsterBasePos.x and v.y ~= monsterBasePos.y then
         monsterBasePos = Vector2(v.x, v.y)
         textPos = monsterBasePos
@@ -549,89 +409,80 @@ PreviewMonsterActionSystem_Render._GetSkillRange = function(self, monsterEntity,
       end
     end
   end
-  do
-    local nSkillScopeType = skillConfigData:GetSkillScopeType()
-    local bOnlyBaseMoveRange = true
-    if SkillScopeType.NRowsMColumns == nSkillScopeType then
-      bOnlyBaseMoveRange = false
-    end
-    local monsterBaseMoveRange = nil
-    if listWalkRange == nil then
+  local nSkillScopeType = skillConfigData:GetSkillScopeType()
+  local bOnlyBaseMoveRange = true
+  if SkillScopeType.NRowsMColumns == nSkillScopeType then
+    bOnlyBaseMoveRange = false
+  end
+  local monsterBaseMoveRange
+  if nil == listWalkRange then
+    monsterBaseMoveRange = self:_CalcMonsterMoveRange_Han(monsterEntity, bOnlyBaseMoveRange, true, lessMobility)
+  else
+    local bodyArea = monsterEntity:BodyArea():GetArea()
+    if bOnlyBaseMoveRange and table.count(bodyArea) > 1 and SkillPreviewType.ScopeWithCasterPos ~= skillConfigData:GetSkillPreviewType() and SkillPreviewType.ScopeWithCasterPosAndTips ~= skillConfigData:GetSkillPreviewType() and SkillPreviewType.ScopeAndTipsAndArrowWithMoveParam ~= skillConfigData:GetSkillPreviewType() then
       monsterBaseMoveRange = self:_CalcMonsterMoveRange_Han(monsterEntity, bOnlyBaseMoveRange, true, lessMobility)
     else
-      local bodyArea = (monsterEntity:BodyArea()):GetArea()
-      if bOnlyBaseMoveRange and (table.count)(bodyArea) > 1 and SkillPreviewType.ScopeWithCasterPos ~= skillConfigData:GetSkillPreviewType() and SkillPreviewType.ScopeWithCasterPosAndTips ~= skillConfigData:GetSkillPreviewType() and SkillPreviewType.ScopeAndTipsAndArrowWithMoveParam ~= skillConfigData:GetSkillPreviewType() then
-        monsterBaseMoveRange = self:_CalcMonsterMoveRange_Han(monsterEntity, bOnlyBaseMoveRange, true, lessMobility)
-      else
-        monsterBaseMoveRange = listWalkRange
-      end
-    end
-    do
-      if (table.icontains)(monsterBaseMoveRange, monsterBasePos) == false then
-        monsterBaseMoveRange[#monsterBaseMoveRange + 1] = monsterBasePos
-      end
-      local casterDirList = {}
-      if dirCount == 4 then
-        casterDirList = {Vector2(0, 1), Vector2(0, -1), Vector2(1, 0), Vector2(-1, 0)}
-      else
-        if dirCount == 8 then
-          casterDirList = {Vector2(0, 1), Vector2(0, -1), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 1), Vector2(1, -1), Vector2(-1, 1), Vector2(-1, -1)}
-        else
-          casterDirList = {}
-        end
-      end
-      local skillAttackRange = {}
-      for _,movePos in pairs(monsterBaseMoveRange) do
-        if #casterDirList > 0 then
-          for k,dir in pairs(casterDirList) do
-            local range = self:_CreatePreviewRange(skillConfigData, movePos, monsterEntity, dir)
-            for _,gridPos in pairs(range) do
-              local alreadyInRange = (table.icontains)(skillAttackRange, gridPos)
-              if not alreadyInRange then
-                skillAttackRange[#skillAttackRange + 1] = gridPos
-              end
-            end
-          end
-        else
-          do
-            local range = self:_CreatePreviewRange(skillConfigData, movePos, monsterEntity)
-            for _,gridPos in pairs(range) do
-              local alreadyInRange = (table.icontains)(skillAttackRange, gridPos)
-              if not alreadyInRange then
-                skillAttackRange[#skillAttackRange + 1] = gridPos
-              end
-            end
-            do
-              -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out DO_STMT
-
-              -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC216: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
-      end
-      return skillAttackRange
+      monsterBaseMoveRange = listWalkRange
     end
   end
+  if false == table.icontains(monsterBaseMoveRange, monsterBasePos) then
+    monsterBaseMoveRange[#monsterBaseMoveRange + 1] = monsterBasePos
+  end
+  local casterDirList = {}
+  if dirCount == 4 then
+    casterDirList = {
+      Vector2(0, 1),
+      Vector2(0, -1),
+      Vector2(1, 0),
+      Vector2(-1, 0)
+    }
+  elseif dirCount == 8 then
+    casterDirList = {
+      Vector2(0, 1),
+      Vector2(0, -1),
+      Vector2(1, 0),
+      Vector2(-1, 0),
+      Vector2(1, 1),
+      Vector2(1, -1),
+      Vector2(-1, 1),
+      Vector2(-1, -1)
+    }
+  else
+    casterDirList = {}
+  end
+  local skillAttackRange = {}
+  for _, movePos in pairs(monsterBaseMoveRange) do
+    if 0 < #casterDirList then
+      for k, dir in pairs(casterDirList) do
+        local range = self:_CreatePreviewRange(skillConfigData, movePos, monsterEntity, dir)
+        for _, gridPos in pairs(range) do
+          local alreadyInRange = table.icontains(skillAttackRange, gridPos)
+          if not alreadyInRange then
+            skillAttackRange[#skillAttackRange + 1] = gridPos
+          end
+        end
+      end
+    else
+      local range = self:_CreatePreviewRange(skillConfigData, movePos, monsterEntity)
+      for _, gridPos in pairs(range) do
+        local alreadyInRange = table.icontains(skillAttackRange, gridPos)
+        if not alreadyInRange then
+          skillAttackRange[#skillAttackRange + 1] = gridPos
+        end
+      end
+    end
+  end
+  return skillAttackRange
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowSkillRange = function(self, monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
-  -- function num : 0_14 , upvalues : _ENV
-  local renderEntityService = (self._world):GetService("RenderEntity")
+function PreviewMonsterActionSystem_Render:_ShowSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
+  local renderEntityService = self._world:GetService("RenderEntity")
   local skillAttackRange = self:_GetSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
   renderEntityService:CreatePreviewAreaOutlineEntity(skillAttackRange, EntityConfigIDRender.MoveRange)
-  ;
-  (Log.debug)("[Preview] 预览怪物技能： 标示技能范围<" .. skillConfigData:GetSkillName() .. ">")
+  Log.debug("[Preview] 预览怪物技能： 标示技能范围<" .. skillConfigData:GetSkillName() .. ">")
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._GetSkillRangeWithAttackRange = function(self, monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
-  -- function num : 0_15 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_GetSkillRangeWithAttackRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
   local nSkillScopeType = skillConfigData:GetSkillScopeType()
   local bOnlyBaseMoveRange = true
   if SkillScopeType.NRowsMColumns == nSkillScopeType then
@@ -639,21 +490,33 @@ PreviewMonsterActionSystem_Render._GetSkillRangeWithAttackRange = function(self,
   end
   local casterDirList = {}
   if dirCount == 4 then
-    casterDirList = {Vector2(0, 1), Vector2(0, -1), Vector2(1, 0), Vector2(-1, 0)}
+    casterDirList = {
+      Vector2(0, 1),
+      Vector2(0, -1),
+      Vector2(1, 0),
+      Vector2(-1, 0)
+    }
+  elseif dirCount == 8 then
+    casterDirList = {
+      Vector2(0, 1),
+      Vector2(0, -1),
+      Vector2(1, 0),
+      Vector2(-1, 0),
+      Vector2(1, 1),
+      Vector2(1, -1),
+      Vector2(-1, 1),
+      Vector2(-1, -1)
+    }
   else
-    if dirCount == 8 then
-      casterDirList = {Vector2(0, 1), Vector2(0, -1), Vector2(1, 0), Vector2(-1, 0), Vector2(1, 1), Vector2(1, -1), Vector2(-1, 1), Vector2(-1, -1)}
-    else
-      casterDirList = {}
-    end
+    casterDirList = {}
   end
   local skillAttackRange = {}
-  if #casterDirList > 0 then
-    for i,movePos in ipairs(listWalkRange) do
-      for k,dir in pairs(casterDirList) do
+  if 0 < #casterDirList then
+    for i, movePos in ipairs(listWalkRange) do
+      for k, dir in pairs(casterDirList) do
         local range = self:_CreatePreviewRangeUseAttackRange(skillConfigData, movePos, monsterEntity, dir)
-        for _,gridPos in pairs(range) do
-          local alreadyInRange = (table.icontains)(skillAttackRange, gridPos)
+        for _, gridPos in pairs(range) do
+          local alreadyInRange = table.icontains(skillAttackRange, gridPos)
           if not alreadyInRange then
             skillAttackRange[#skillAttackRange + 1] = gridPos
           end
@@ -661,66 +524,47 @@ PreviewMonsterActionSystem_Render._GetSkillRangeWithAttackRange = function(self,
       end
     end
   else
-    do
-      for i,movePos in ipairs(listWalkRange) do
-        local range = self:_CreatePreviewRangeUseAttackRange(skillConfigData, movePos, monsterEntity)
-        for _,gridPos in pairs(range) do
-          local alreadyInRange = (table.icontains)(skillAttackRange, gridPos)
-          if not alreadyInRange then
-            skillAttackRange[#skillAttackRange + 1] = gridPos
-          end
+    for i, movePos in ipairs(listWalkRange) do
+      local range = self:_CreatePreviewRangeUseAttackRange(skillConfigData, movePos, monsterEntity)
+      for _, gridPos in pairs(range) do
+        local alreadyInRange = table.icontains(skillAttackRange, gridPos)
+        if not alreadyInRange then
+          skillAttackRange[#skillAttackRange + 1] = gridPos
         end
-      end
-      do
-        return skillAttackRange
       end
     end
   end
+  return skillAttackRange
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._CreatePreviewRangeUseAttackRange = function(self, skillConfigData, movePos, monsterEntity, dir)
-  -- function num : 0_16
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function PreviewMonsterActionSystem_Render:_CreatePreviewRangeUseAttackRange(skillConfigData, movePos, monsterEntity, dir)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillAttackRange = {}
-  local rangResult = nil
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local rangResult
+  local utilDataSvc = self._world:GetService("UtilData")
   rangResult = utilDataSvc:GetAISkillScopeResult(monsterEntity)
-  if not rangResult then
-    rangResult = utilScopeSvc:CalcSkillScope(skillConfigData, movePos, monsterEntity, dir)
-  end
+  rangResult = rangResult or utilScopeSvc:CalcSkillScope(skillConfigData, movePos, monsterEntity, dir)
   skillAttackRange = rangResult:GetAttackRange()
   return skillAttackRange
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._SkillRangeWithAttackRange = function(self, monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
-  -- function num : 0_17 , upvalues : _ENV
-  local renderEntityService = (self._world):GetService("RenderEntity")
+function PreviewMonsterActionSystem_Render:_SkillRangeWithAttackRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
+  local renderEntityService = self._world:GetService("RenderEntity")
   local skillAttackRange = self:_GetSkillRangeWithAttackRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter, lessMobility)
   renderEntityService:CreatePreviewAreaOutlineEntity(skillAttackRange, EntityConfigIDRender.MoveRange)
-  ;
-  (Log.debug)("[Preview] 预览怪物技能： 标示技能范围<" .. skillConfigData:GetSkillName() .. ">")
+  Log.debug("[Preview] 预览怪物技能： 标示技能范围<" .. skillConfigData:GetSkillName() .. ">")
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowSkillRangeAsSilverGrid = function(self, monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-  -- function num : 0_18
+function PreviewMonsterActionSystem_Render:_ShowSkillRangeAsSilverGrid(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
   local skillAttackRange = self:_GetSkillRange(monsterEntity, skillConfigData, listWalkRange, dirCount, previewUserCenter)
-  local rsvcPreviewActive = (self._world):GetService("PreviewActiveSkill")
+  local rsvcPreviewActive = self._world:GetService("PreviewActiveSkill")
   rsvcPreviewActive:DoConvert(skillAttackRange, "Silver")
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._FilerSkillRange = function(self, skillRange)
-  -- function num : 0_19 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_FilerSkillRange(skillRange)
   local skillAttackRange = {}
-  local utilDataSvc = (self._world):GetService("UtilData")
-  for _,gridPos in ipairs(skillRange) do
+  local utilDataSvc = self._world:GetService("UtilData")
+  for _, gridPos in ipairs(skillRange) do
     if utilDataSvc:IsValidPiecePos(gridPos) and not utilDataSvc:IsPosBlock(gridPos, BlockFlag.Skill | BlockFlag.SkillSkip) then
       skillAttackRange[#skillAttackRange + 1] = gridPos
     end
@@ -728,131 +572,110 @@ PreviewMonsterActionSystem_Render._FilerSkillRange = function(self, skillRange)
   return skillAttackRange
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._CreatePreviewRange = function(self, skillConfigData, movePos, monsterEntity, dir)
-  -- function num : 0_20
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function PreviewMonsterActionSystem_Render:_CreatePreviewRange(skillConfigData, movePos, monsterEntity, dir)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillAttackRange = {}
-  local rangResult = nil
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local rangResult
+  local utilDataSvc = self._world:GetService("UtilData")
   rangResult = utilDataSvc:GetAISkillScopeResult(monsterEntity)
-  if not rangResult then
-    rangResult = utilScopeSvc:CalcSkillScope(skillConfigData, movePos, monsterEntity, dir)
-  end
+  rangResult = rangResult or utilScopeSvc:CalcSkillScope(skillConfigData, movePos, monsterEntity, dir)
   skillAttackRange = self:_FilerSkillRange(rangResult:GetWholeGridRange())
   return skillAttackRange
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowArrowCheckBlock = function(self, monsterEntity, lessMobility, calcMobiUseBlock)
-  -- function num : 0_21 , upvalues : _ENV
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  local monsterPos = (monsterEntity:GridLocation()).Position
+function PreviewMonsterActionSystem_Render:_ShowArrowCheckBlock(monsterEntity, lessMobility, calcMobiUseBlock)
+  local renderEntityService = self._world:GetService("RenderEntity")
+  local monsterPos = monsterEntity:GridLocation().Position
   local bodyAreaCmpt = monsterEntity:BodyArea()
-  local bodyArea = (bodyAreaCmpt:GetArea())
-  local block = nil
-  local monsterRaceType = (monsterEntity:MonsterID()):GetMonsterRaceType()
+  local bodyArea = bodyAreaCmpt:GetArea()
+  local block
+  local monsterRaceType = monsterEntity:MonsterID():GetMonsterRaceType()
   if monsterRaceType == MonsterRaceType.Land then
     block = BlockFlag.MonsterLand
-  else
-    if monsterRaceType == MonsterRaceType.Fly then
-      block = BlockFlag.MonsterFly
-    end
+  elseif monsterRaceType == MonsterRaceType.Fly then
+    block = BlockFlag.MonsterFly
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local elementType = utilDataSvc:GetEntityElementPrimaryType(monsterEntity)
   local monsterMoveRange = self:_CalcMonsterMoveRange_Han(monsterEntity, false, true, lessMobility, calcMobiUseBlock)
   local retRange = {}
-  for i,pos in ipairs(monsterMoveRange) do
+  for i, pos in ipairs(monsterMoveRange) do
     if not utilDataSvc:IsPosBlock(pos, block) then
-      (table.insert)(retRange, pos)
+      table.insert(retRange, pos)
     end
   end
-  for _,targetPos in ipairs(retRange) do
-    if self:_IsPosInMine(targetPos, monsterPos, bodyArea) == false then
+  for _, targetPos in ipairs(retRange) do
+    if false == self:_IsPosInMine(targetPos, monsterPos, bodyArea) then
       local arrowDir = self:_CalcMoveArrowDir(monsterPos, bodyArea, targetPos)
       renderEntityService:CreateMoveRangeArrowEntity(targetPos, arrowDir, EntityConfigIDRender.MoveRangeArrow)
     end
   end
-  ;
-  (Log.debug)("[Preview] 预览怪物技能： 标示行动范围<三角箭头>>")
+  Log.debug("[Preview] 预览怪物技能： 标示行动范围<三角箭头>>")
   return retRange
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowArrow = function(self, monsterEntity, lessMobility, calcMobiUseBlock)
-  -- function num : 0_22 , upvalues : _ENV
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  local monsterPos = (monsterEntity:GridLocation()).Position
+function PreviewMonsterActionSystem_Render:_ShowArrow(monsterEntity, lessMobility, calcMobiUseBlock)
+  local renderEntityService = self._world:GetService("RenderEntity")
+  local monsterPos = monsterEntity:GridLocation().Position
   local bodyAreaCmpt = monsterEntity:BodyArea()
   local bodyArea = bodyAreaCmpt:GetArea()
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local elementType = utilDataSvc:GetEntityElementPrimaryType(monsterEntity)
   local monsterMoveRange = self:_CalcMonsterMoveRange_Han(monsterEntity, false, true, lessMobility, calcMobiUseBlock)
-  for _,targetPos in ipairs(monsterMoveRange) do
-    if self:_IsPosInMine(targetPos, monsterPos, bodyArea) == false then
+  for _, targetPos in ipairs(monsterMoveRange) do
+    if false == self:_IsPosInMine(targetPos, monsterPos, bodyArea) then
       local arrowDir = self:_CalcMoveArrowDir(monsterPos, bodyArea, targetPos)
       renderEntityService:CreateMoveRangeArrowEntity(targetPos, arrowDir, EntityConfigIDRender.MoveRangeArrow)
     end
   end
-  ;
-  (Log.debug)("[Preview] 预览怪物技能： 标示行动范围<三角箭头>>")
+  Log.debug("[Preview] 预览怪物技能： 标示行动范围<三角箭头>>")
   return monsterMoveRange
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowArrowPreviewParam = function(self, monsterEntity, skillPreviewParam)
-  -- function num : 0_23 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_ShowArrowPreviewParam(monsterEntity, skillPreviewParam)
   local arrowPosList = {}
   local monsterPos = monsterEntity:GetGridPosition()
-  local bodyArea = (monsterEntity:BodyArea()):GetArea()
+  local bodyArea = monsterEntity:BodyArea():GetArea()
   local scopeType = skillPreviewParam.scopeType
   local scopeParam = skillPreviewParam.scopeParam
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local utilData = (self._world):GetService("UtilData")
-  local renderEntityService = (self._world):GetService("RenderEntity")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local utilData = self._world:GetService("UtilData")
+  local renderEntityService = self._world:GetService("RenderEntity")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local scopeResult = scopeCalculator:ComputeScopeRange(scopeType, scopeParam, monsterPos, bodyArea)
   local attackRange = scopeResult:GetAttackRange()
-  for _,pos in pairs(attackRange) do
+  for _, pos in pairs(attackRange) do
     if utilData:IsValidPiecePos(pos) then
-      (table.insert)(arrowPosList, pos)
+      table.insert(arrowPosList, pos)
     end
   end
-  for _,targetPos in ipairs(arrowPosList) do
-    if self:_IsPosInMine(targetPos, monsterPos, bodyArea) == false then
+  for _, targetPos in ipairs(arrowPosList) do
+    if false == self:_IsPosInMine(targetPos, monsterPos, bodyArea) then
       local arrowDir = self:_CalcMoveArrowDir(monsterPos, bodyArea, targetPos)
       renderEntityService:CreateMoveRangeArrowEntity(targetPos, arrowDir, EntityConfigIDRender.MoveRangeArrow)
     end
   end
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowArrowPreviewParamSub = function(self, monsterEntity, skillPreviewParam)
-  -- function num : 0_24 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_ShowArrowPreviewParamSub(monsterEntity, skillPreviewParam)
   local arrowPosList = {}
   local monsterPos = monsterEntity:GetGridPosition()
-  local bodyArea = (monsterEntity:BodyArea()):GetArea()
+  local bodyArea = monsterEntity:BodyArea():GetArea()
   local scopeType = skillPreviewParam.scopeType
   local scopeParam = skillPreviewParam.scopeParam
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local utilData = (self._world):GetService("UtilData")
-  local renderEntityService = (self._world):GetService("RenderEntity")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local utilData = self._world:GetService("UtilData")
+  local renderEntityService = self._world:GetService("RenderEntity")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local scopeResult = scopeCalculator:ComputeScopeRange(scopeType, scopeParam, monsterPos, bodyArea, monsterEntity:GetGridDirection(), SkillTargetType.Team, monsterPos, monsterEntity)
   local attackRange = scopeResult:GetAttackRange()
-  for _,pos in pairs(attackRange) do
+  for _, pos in pairs(attackRange) do
     if utilData:IsValidPiecePos(pos) then
-      (table.insert)(arrowPosList, pos)
+      table.insert(arrowPosList, pos)
     end
   end
-  for _,targetPos in ipairs(arrowPosList) do
-    if self:_IsPosInMine(targetPos, monsterPos, bodyArea) == false then
+  for _, targetPos in ipairs(arrowPosList) do
+    if false == self:_IsPosInMine(targetPos, monsterPos, bodyArea) then
       local arrowDir = self:_CalcMoveArrowDir(monsterPos, bodyArea, targetPos)
       renderEntityService:CreateMoveRangeArrowEntity(targetPos, arrowDir, EntityConfigIDRender.MoveRangeArrow)
     end
@@ -860,55 +683,46 @@ PreviewMonsterActionSystem_Render._ShowArrowPreviewParamSub = function(self, mon
   return arrowPosList
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowArrowWithMoveParam = function(self, monsterEntity, skillPreviewParam)
-  -- function num : 0_25 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_ShowArrowWithMoveParam(monsterEntity, skillPreviewParam)
   local arrowPosList = {}
   local moveOffsetList = {}
   local canMovePosList = {}
   local monsterPos = monsterEntity:GetGridPosition()
-  local bodyArea = (monsterEntity:BodyArea()):GetArea()
+  local bodyArea = monsterEntity:BodyArea():GetArea()
   local moveOffsetPosList = skillPreviewParam.moveOffsetPosList
   if moveOffsetPosList then
-    for _,v in ipairs(moveOffsetPosList) do
+    for _, v in ipairs(moveOffsetPosList) do
       local offset = Vector2(v.x, v.y)
-      ;
-      (table.insert)(moveOffsetList, offset)
+      table.insert(moveOffsetList, offset)
       local movePos = monsterPos + offset
-      if skillPreviewParam.minX <= movePos.x and movePos.x <= skillPreviewParam.maxX then
-        (table.insert)(canMovePosList, movePos)
+      if movePos.x >= skillPreviewParam.minX and movePos.x <= skillPreviewParam.maxX then
+        table.insert(canMovePosList, movePos)
       end
     end
   end
-  do
-    local utilData = (self._world):GetService("UtilData")
-    for _,offset in ipairs(moveOffsetList) do
-      for _,bodyPos in ipairs(bodyArea) do
-        local offsetBodyPos = offset + bodyPos
-        if not (table.icontains)(bodyArea, offsetBodyPos) then
-          local pos = monsterPos + offsetBodyPos
-          if utilData:IsValidPiecePos(pos) and not (table.icontains)(arrowPosList, pos) then
-            (table.insert)(arrowPosList, pos)
-          end
+  local utilData = self._world:GetService("UtilData")
+  for _, offset in ipairs(moveOffsetList) do
+    for _, bodyPos in ipairs(bodyArea) do
+      local offsetBodyPos = offset + bodyPos
+      if not table.icontains(bodyArea, offsetBodyPos) then
+        local pos = monsterPos + offsetBodyPos
+        if utilData:IsValidPiecePos(pos) and not table.icontains(arrowPosList, pos) then
+          table.insert(arrowPosList, pos)
         end
       end
     end
-    local renderEntityService = (self._world):GetService("RenderEntity")
-    for _,targetPos in ipairs(arrowPosList) do
-      if self:_IsPosInMine(targetPos, monsterPos, bodyArea) == false then
-        local arrowDir = self:_CalcMoveArrowDir(monsterPos, bodyArea, targetPos)
-        renderEntityService:CreateMoveRangeArrowEntity(targetPos, arrowDir, EntityConfigIDRender.MoveRangeArrow)
-      end
-    end
-    return canMovePosList
   end
+  local renderEntityService = self._world:GetService("RenderEntity")
+  for _, targetPos in ipairs(arrowPosList) do
+    if false == self:_IsPosInMine(targetPos, monsterPos, bodyArea) then
+      local arrowDir = self:_CalcMoveArrowDir(monsterPos, bodyArea, targetPos)
+      renderEntityService:CreateMoveRangeArrowEntity(targetPos, arrowDir, EntityConfigIDRender.MoveRangeArrow)
+    end
+  end
+  return canMovePosList
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._IsPosInMine = function(self, targetPos, basePos, bodyArea)
-  -- function num : 0_26
+function PreviewMonsterActionSystem_Render:_IsPosInMine(targetPos, basePos, bodyArea)
   for i = 1, #bodyArea do
     local posWork = basePos + bodyArea[i]
     if targetPos == posWork then
@@ -918,48 +732,39 @@ PreviewMonsterActionSystem_Render._IsPosInMine = function(self, targetPos, baseP
   return false
 end
 
--- DECOMPILER ERROR at PC100: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowSkillRangeWithEffect = function(self, effectIndex, skillConfigData, monsterEntity)
-  -- function num : 0_27 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_ShowSkillRangeWithEffect(effectIndex, skillConfigData, monsterEntity)
   local effectParam = skillConfigData:GetSkillEffectByIndex(effectIndex)
   effectParam:GetSkillEffectScopeType()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local casterPos = monsterEntity:GetGridPosition()
   local effectScopeResult = utilScopeSvc:CalcSkillEffectScopeResult(effectParam, casterPos, monsterEntity)
   local effectScopeRange = effectScopeResult:GetWholeGridRange()
   local skillScopeRange = self:_CreatePreviewRange(skillConfigData, casterPos, monsterEntity)
   local normalRange = {}
-  for _,pos in ipairs(skillScopeRange) do
-    if not (table.Vector2Include)(effectScopeRange, pos) then
-      (table.insert)(normalRange, pos)
+  for _, pos in ipairs(skillScopeRange) do
+    if not table.Vector2Include(effectScopeRange, pos) then
+      table.insert(normalRange, pos)
     end
   end
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  for _,gridPos in pairs(effectScopeRange) do
+  local renderEntityService = self._world:GetService("RenderEntity")
+  for _, gridPos in pairs(effectScopeRange) do
     renderEntityService:CreateAreaEntityFromEntityPool(gridPos, EntityConfigIDRender.MoveRangeGrid)
   end
   renderEntityService:CreatePreviewAreaOutlineEntity(effectScopeRange, EntityConfigIDRender.MoveRangePro)
   renderEntityService:CreatePreviewAreaOutlineEntity(normalRange, EntityConfigIDRender.MoveRange)
 end
 
--- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowDeathRange = function(self, monsterEntity, skillConfigData)
-  -- function num : 0_28 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_ShowDeathRange(monsterEntity, skillConfigData)
   local casterPos = monsterEntity:GetGridPosition()
   local range = self:_CreatePreviewRange(skillConfigData, casterPos, monsterEntity)
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  for _,pos in ipairs(range) do
+  local renderEntityService = self._world:GetService("RenderEntity")
+  for _, pos in ipairs(range) do
     renderEntityService:CreateDeathRangeEntity(pos, EntityConfigIDRender.DeathArea)
   end
 end
 
--- DECOMPILER ERROR at PC106: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._GetSkillListByRoundCount = function(self, entity)
-  -- function num : 0_29
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PreviewMonsterActionSystem_Render:_GetSkillListByRoundCount(entity)
+  local utilDataSvc = self._world:GetService("UtilData")
   local roundCount = utilDataSvc:GetEntityAIRuntimeData(entity, "RoundCount")
   if not roundCount or roundCount <= 0 then
     roundCount = 0
@@ -967,115 +772,96 @@ PreviewMonsterActionSystem_Render._GetSkillListByRoundCount = function(self, ent
   roundCount = roundCount + 1
   local cMonsterID = entity:MonsterID()
   local monsterID = cMonsterID:GetMonsterID()
-  local monsterConfigData = (self._configService):GetMonsterConfigData()
+  local monsterConfigData = self._configService:GetMonsterConfigData()
   local skillIDs = monsterConfigData:GetMonsterSkillIDs(monsterID)
-  if #skillIDs < roundCount then
+  if roundCount > #skillIDs then
     roundCount = 1
   end
   local skillGroup = skillIDs[roundCount]
   if not skillGroup or #skillGroup <= 0 then
-    return 
+    return
   end
   return roundCount, skillGroup
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._HybridPreview_AlphaFixedByRound = function(self, entity, param)
-  -- function num : 0_30 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_HybridPreview_AlphaFixedByRound(entity, param)
   local roundCount, skillIDGroup = self:_GetSkillListByRoundCount(entity)
-  local trapID = (param[1])[1]
-  local monsterClassID = (param[2])[1]
+  local trapID = param[1][1]
+  local monsterClassID = param[2][1]
   local skillID = skillIDGroup[1]
   if roundCount == AIAlphaRoundCount.First then
     skillID = self:_CalcSkillIDByTrapInRangeAndRideState(entity, trapID, monsterClassID, skillIDGroup)
-  else
-    if roundCount == AIAlphaRoundCount.Second then
-      skillID = self:_CalcSkillIDByRideState(entity, skillIDGroup)
-    end
+  elseif roundCount == AIAlphaRoundCount.Second then
+    skillID = self:_CalcSkillIDByRideState(entity, skillIDGroup)
   end
   self:_ShowSkillPreview(entity, skillID)
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._CheckRideState = function(self, entity)
-  -- function num : 0_31 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_CheckRideState(entity)
   if entity:HasRide() then
     local rideCmpt = entity:Ride()
     local mountID = rideCmpt:GetMountID()
-    local mountEntity = (self._world):GetEntityByID(mountID)
+    local mountEntity = self._world:GetEntityByID(mountID)
     if mountEntity then
       if mountEntity:HasMonsterID() then
         return AIRideStateType.RideOnMonster
-      else
-        if mountEntity:HasTrapID() then
-          return AIRideStateType.RideOnTrap
-        end
+      elseif mountEntity:HasTrapID() then
+        return AIRideStateType.RideOnTrap
       end
     end
   end
-  do
-    return AIRideStateType.NoRide
-  end
+  return AIRideStateType.NoRide
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._CalcSkillIDByTrapInRangeAndRideState = function(self, entity, trapID, monsterClassID, skillIDGroup)
-  -- function num : 0_32 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_CalcSkillIDByTrapInRangeAndRideState(entity, trapID, monsterClassID, skillIDGroup)
   local skillID = skillIDGroup[AIEntityInTargetRangeType.NoRideInRange]
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local skillConfigData = (self._configService):GetSkillConfigData(skillID)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local skillConfigData = self._configService:GetSkillConfigData(skillID)
   local targetType = skillConfigData:GetSkillTargetType()
   local casterPos = entity:GetGridPosition()
   local casterDir = entity:GetGridDirection()
   local skillScopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, casterPos, entity, casterDir)
-  local targetSelector = (self._world):GetSkillScopeTargetSelector()
+  local targetSelector = self._world:GetSkillScopeTargetSelector()
   local targetEntityIDList = targetSelector:DoSelectSkillTarget(entity, SkillTargetType.MonsterTrap, skillScopeResult, skillID)
   local trapEntityIDs = {}
-  for _,targetID in ipairs(targetEntityIDList) do
-    local targetEntity = (self._world):GetEntityByID(targetID)
-    if targetEntity:HasTrapID() and (targetEntity:TrapID()):GetTrapID() == trapID then
-      (table.insert)(trapEntityIDs, targetID)
-      if targetEntity:HasRide() and (targetEntity:Ride()):GetRiderID() == entity:GetID() then
+  for _, targetID in ipairs(targetEntityIDList) do
+    local targetEntity = self._world:GetEntityByID(targetID)
+    if targetEntity:HasTrapID() and targetEntity:TrapID():GetTrapID() == trapID then
+      table.insert(trapEntityIDs, targetID)
+      if targetEntity:HasRide() and targetEntity:Ride():GetRiderID() == entity:GetID() then
         return skillIDGroup[AIEntityInTargetRangeType.RideOnTrapInRange]
       end
     end
-    if targetEntity:HasMonsterID() and (targetEntity:MonsterID()):GetMonsterClassID() == monsterClassID and targetEntity:HasRide() and (targetEntity:Ride()):GetRiderID() == entity:GetID() then
+    if targetEntity:HasMonsterID() and targetEntity:MonsterID():GetMonsterClassID() == monsterClassID and targetEntity:HasRide() and targetEntity:Ride():GetRiderID() == entity:GetID() then
       return skillIDGroup[AIEntityInTargetRangeType.RideOnMonsterInRange]
     end
   end
-  if #trapEntityIDs > 0 then
+  if 0 < #trapEntityIDs then
     return skillID
   end
   return skillIDGroup[AIEntityInTargetRangeType.NotInRange]
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._CalcSkillIDByRideState = function(self, entity, skillIDGroup)
-  -- function num : 0_33
+function PreviewMonsterActionSystem_Render:_CalcSkillIDByRideState(entity, skillIDGroup)
   local rideState = self:_CheckRideState(entity)
   local skillID = skillIDGroup[rideState]
   return skillID
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowDrillerMoveAttack = function(self, monsterEntity, skillConfigData)
-  -- function num : 0_34 , upvalues : _ENV
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
-  local renderEntityService = (self._world):GetService("RenderEntity")
+function PreviewMonsterActionSystem_Render:_ShowDrillerMoveAttack(monsterEntity, skillConfigData)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
+  local renderEntityService = self._world:GetService("RenderEntity")
   local casterPos = monsterEntity:GetGridPosition()
   local casterDir = monsterEntity:GetGridDirection()
   local skillScopeResult = utilScopeSvc:CalcSkillScope(skillConfigData, casterPos, monsterEntity, casterDir)
   local walkPosList = skillScopeResult:GetAttackRange()
   local wholeRange = skillScopeResult:GetWholeGridRange()
   local lastMovePos = casterPos
-  for _,movePos in ipairs(walkPosList) do
+  for _, movePos in ipairs(walkPosList) do
     if movePos ~= casterPos then
-      local arrowDir = self:_CalcMoveArrowDir(lastMovePos, {Vector2(0, 0)}, movePos)
+      local arrowDir = self:_CalcMoveArrowDir(lastMovePos, {
+        Vector2(0, 0)
+      }, movePos)
       renderEntityService:CreateMoveRangeArrowEntity(movePos, arrowDir, EntityConfigIDRender.MoveRangeArrow)
       lastMovePos = movePos
     end
@@ -1083,97 +869,83 @@ PreviewMonsterActionSystem_Render._ShowDrillerMoveAttack = function(self, monste
   renderEntityService:CreatePreviewAreaOutlineEntity(wholeRange, EntityConfigIDRender.MoveRange)
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._HybridPreview_N34BossStateCarousel = function(self, entity, param)
-  -- function num : 0_35 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_HybridPreview_N34BossStateCarousel(entity, param)
   local groupIndex = N34BossStateType.NotArrive
   local buffViewCmpt = entity:BuffView()
   if buffViewCmpt and buffViewCmpt:HasBuffEffect(BuffEffectType.Palsy) then
     groupIndex = N34BossStateType.Palsy
   else
-    local utilData = (self._world):GetService("UtilData")
+    local utilData = self._world:GetService("UtilData")
     local buffValue = utilData:GetEntityBuffValue(entity, BattleConst.N34BossArriveBuffValueKey)
     if buffValue then
       groupIndex = N34BossStateType.Arrived
     end
   end
-  do
-    local skillGroup = param[groupIndex]
-    if not skillGroup or #skillGroup <= 0 then
-      return 
-    end
-    return (TaskManager:GetInstance()):CoreGameStartTask(self._TaskFnCarousel, self, skillGroup, entity)
+  local skillGroup = param[groupIndex]
+  if not skillGroup or #skillGroup <= 0 then
+    return
   end
+  return TaskManager:GetInstance():CoreGameStartTask(self._TaskFnCarousel, self, skillGroup, entity)
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._HybridPreview_StateCarousel = function(self, entity, param)
-  -- function num : 0_36 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_HybridPreview_StateCarousel(entity, param)
   local groupIndex = 1
   local curState = 1
   local buffView = entity:BuffView()
-  curState = not buffView or buffView:GetBuffValue("HybridSkillPreviewState") or 1
+  if buffView then
+    curState = buffView:GetBuffValue("HybridSkillPreviewState") or 1
+  end
   groupIndex = curState
   local skillGroup = param[groupIndex]
   if not skillGroup or #skillGroup <= 0 then
-    return 
+    return
   end
-  return (TaskManager:GetInstance()):CoreGameStartTask(self._TaskFnCarousel, self, skillGroup, entity)
+  return TaskManager:GetInstance():CoreGameStartTask(self._TaskFnCarousel, self, skillGroup, entity)
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowCrabMoveAttack = function(self, monsterEntity, skillConfigData)
-  -- function num : 0_37 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_ShowCrabMoveAttack(monsterEntity, skillConfigData)
   local monsterPos = monsterEntity:GetGridPosition()
   local monsterDir = monsterEntity:GetGridDirection()
-  local bodyArea = (monsterEntity:BodyArea()):GetArea()
+  local bodyArea = monsterEntity:BodyArea():GetArea()
   local arrowPosList = {}
   local skillAttackRange = {}
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local skillTargetType = skillConfigData:GetSkillTargetType()
   local scopeType = skillConfigData:GetSkillScopeType()
   local scopeParam = skillConfigData:GetSkillScopeParam()
-  local scopeParamPreview = (table.cloneconf)(scopeParam)
+  local scopeParamPreview = table.cloneconf(scopeParam)
   scopeParamPreview[5] = 0
   local scopeResult = scopeCalculator:ComputeScopeRange(scopeType, scopeParamPreview, monsterPos, bodyArea, monsterDir, skillTargetType, monsterPos, monsterEntity)
-  for _,pos in ipairs(scopeResult:GetAttackRange()) do
+  for _, pos in ipairs(scopeResult:GetAttackRange()) do
     if monsterDir.x ~= 0 then
       if pos.x == monsterPos.x then
-        (table.insert)(arrowPosList, pos)
+        table.insert(arrowPosList, pos)
       else
-        ;
-        (table.insert)(skillAttackRange, pos)
+        table.insert(skillAttackRange, pos)
       end
-    else
-      if monsterDir.y ~= 0 then
-        if pos.y == monsterPos.y then
-          (table.insert)(arrowPosList, pos)
-        else
-          ;
-          (table.insert)(skillAttackRange, pos)
-        end
+    elseif monsterDir.y ~= 0 then
+      if pos.y == monsterPos.y then
+        table.insert(arrowPosList, pos)
+      else
+        table.insert(skillAttackRange, pos)
       end
     end
   end
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  local posPlayer = (((self._world):Player()):GetPreviewTeamEntity()):GetGridPosition()
-  ;
-  (table.removev)(arrowPosList, posPlayer)
+  local renderEntityService = self._world:GetService("RenderEntity")
+  local posPlayer = self._world:Player():GetPreviewTeamEntity():GetGridPosition()
+  table.removev(arrowPosList, posPlayer)
   local showArrowPosList = {}
-  for _,targetPos in ipairs(arrowPosList) do
-    for _,bodyPos in ipairs(bodyArea) do
+  for _, targetPos in ipairs(arrowPosList) do
+    for _, bodyPos in ipairs(bodyArea) do
       local posWork = targetPos + bodyPos
-      if not (table.icontains)(showArrowPosList, posWork) then
-        (table.insert)(showArrowPosList, posWork)
+      if not table.icontains(showArrowPosList, posWork) then
+        table.insert(showArrowPosList, posWork)
       end
     end
   end
-  for _,targetPos in ipairs(showArrowPosList) do
-    if self:_IsPosInMine(targetPos, monsterPos, bodyArea) == false then
+  for _, targetPos in ipairs(showArrowPosList) do
+    if false == self:_IsPosInMine(targetPos, monsterPos, bodyArea) then
       local arrowDir = self:_CalcMoveArrowDir(monsterPos, bodyArea, targetPos)
       renderEntityService:CreateMoveRangeArrowEntity(targetPos, arrowDir, EntityConfigIDRender.MoveRangeArrow)
     end
@@ -1181,90 +953,79 @@ PreviewMonsterActionSystem_Render._ShowCrabMoveAttack = function(self, monsterEn
   renderEntityService:CreatePreviewAreaOutlineEntity(skillAttackRange, EntityConfigIDRender.MoveRange)
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowMonsterGroupMoveAttack = function(self, monsterEntity, skillConfigData)
-  -- function num : 0_38 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_ShowMonsterGroupMoveAttack(monsterEntity, skillConfigData)
   local monsterIDCmpt = monsterEntity:MonsterID()
   local groupID = monsterIDCmpt:GetMoveGroupID()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local sameGroupMonsterList = utilCalcSvc:FindMonsterByMoveGroupID(groupID)
   local monsterPos = monsterEntity:GetGridPosition()
   local monsterDir = monsterEntity:GetGridDirection()
-  local bodyArea = (table.clone)((monsterEntity:BodyArea()):GetArea())
-  for i,monster in ipairs(sameGroupMonsterList) do
+  local bodyArea = table.clone(monsterEntity:BodyArea():GetArea())
+  for i, monster in ipairs(sameGroupMonsterList) do
     if monsterEntity:GetID() ~= monster:GetID() then
       local pos = monster:GetGridPosition()
       local area = pos - monsterPos
-      ;
-      (table.insert)(bodyArea, area)
+      table.insert(bodyArea, area)
       utilCalcSvc:RemoveEntityBlockFlag(monster, monster:GetGridPosition())
     end
   end
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
   local skillTargetType = skillConfigData:GetSkillTargetType()
   local scopeType = skillConfigData:GetSkillScopeType()
   local scopeParam = skillConfigData:GetSkillScopeParam()
-  local scopeParamPreview = (table.cloneconf)(scopeParam)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local scopeParamPreview = table.cloneconf(scopeParam)
+  local utilDataSvc = self._world:GetService("UtilData")
   local monsterMobility = utilDataSvc:GetAIMobilityConfig(monsterEntity)
-  local configSvc = (self._world):GetService("Config")
+  local configSvc = self._world:GetService("Config")
   local monsterConfigData = configSvc:GetMonsterConfigData()
   local monsterID = monsterIDCmpt:GetMonsterID()
-  local canMove = (monsterConfigData:CanMove(monsterID))
-  local listWalkRangeList = nil
-  if canMove and monsterMobility > 0 then
+  local canMove = monsterConfigData:CanMove(monsterID)
+  local listWalkRangeList
+  if canMove and 0 < monsterMobility then
     local cbFilter = Callback:New(1, utilDataSvc.IsPosAccessibleMonsterMove, utilDataSvc)
-    local monsterBlockData = (monsterEntity:MonsterID()):GetMonsterBlockData()
-    listWalkRangeList = (ComputeScopeRange.ComputeRange_PreviewWithStepAndBlock)(monsterPos, bodyArea, true, monsterMobility, monsterBlockData, cbFilter)
+    local monsterBlockData = monsterEntity:MonsterID():GetMonsterBlockData()
+    listWalkRangeList = ComputeScopeRange.ComputeRange_PreviewWithStepAndBlock(monsterPos, bodyArea, true, monsterMobility, monsterBlockData, cbFilter)
   end
-  do
-    local listWalkRange = {}
-    for key,value in pairs(listWalkRangeList) do
-      local posWalk = value:GetPos()
-      local isBlocked = false
-      isBlocked = utilDataSvc:IsPosBlock(posWalk, (monsterEntity:MonsterID()):GetMonsterBlockData())
-      do
-        do
-          if isBlocked then
-            local posPlayer = (((self._world):Player()):GetPreviewTeamEntity()):GetGridPosition()
-            if posPlayer == posWalk or utilDataSvc:GetMonsterAtPos(posWalk) then
-              isBlocked = false
-            end
-          end
-          if isBlocked == false then
-            listWalkRange[#listWalkRange + 1] = posWalk
-          end
-          -- DECOMPILER ERROR at PC144: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+  local listWalkRange = {}
+  for key, value in pairs(listWalkRangeList) do
+    local posWalk = value:GetPos()
+    local isBlocked = false
+    isBlocked = utilDataSvc:IsPosBlock(posWalk, monsterEntity:MonsterID():GetMonsterBlockData())
+    if isBlocked then
+      local posPlayer = self._world:Player():GetPreviewTeamEntity():GetGridPosition()
+      if posPlayer == posWalk or utilDataSvc:GetMonsterAtPos(posWalk) then
+        isBlocked = false
       end
     end
-    local casterDirList = {Vector2(0, 1), Vector2(0, -1), Vector2(1, 0), Vector2(-1, 0)}
-    local skillAttackRange = {}
-    for i,movePos in ipairs(listWalkRange) do
-      for k,dir in pairs(casterDirList) do
-        local scopeResult = scopeCalculator:ComputeScopeRange(scopeType, scopeParamPreview, movePos, bodyArea, R42_PC182, skillTargetType, movePos, monsterEntity)
-        local range = self:_FilerSkillRange(scopeResult:GetWholeGridRange())
-        ;
-        (table.Vector2Append)(skillAttackRange, range, skillAttackRange)
-      end
+    if false == isBlocked then
+      listWalkRange[#listWalkRange + 1] = posWalk
     end
-    local renderEntityService = (self._world):GetService("RenderEntity")
-    for _,monster in ipairs(sameGroupMonsterList) do
-      if monster:GetID() ~= monsterEntity:GetID() then
-        utilCalcSvc:SetEntityBlockFlag(monster, monster:GetGridPosition())
-      end
-    end
-    renderEntityService:CreatePreviewAreaOutlineEntity(skillAttackRange, EntityConfigIDRender.MoveRange)
   end
+  local casterDirList = {
+    Vector2(0, 1),
+    Vector2(0, -1),
+    Vector2(1, 0),
+    Vector2(-1, 0)
+  }
+  local skillAttackRange = {}
+  for i, movePos in ipairs(listWalkRange) do
+    for k, dir in pairs(casterDirList) do
+      local scopeResult = scopeCalculator:ComputeScopeRange(scopeType, scopeParamPreview, movePos, bodyArea, dir, skillTargetType, movePos, monsterEntity)
+      local range = self:_FilerSkillRange(scopeResult:GetWholeGridRange())
+      table.Vector2Append(skillAttackRange, range, skillAttackRange)
+    end
+  end
+  local renderEntityService = self._world:GetService("RenderEntity")
+  for _, monster in ipairs(sameGroupMonsterList) do
+    if monster:GetID() ~= monsterEntity:GetID() then
+      utilCalcSvc:SetEntityBlockFlag(monster, monster:GetGridPosition())
+    end
+  end
+  renderEntityService:CreatePreviewAreaOutlineEntity(skillAttackRange, EntityConfigIDRender.MoveRange)
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R1 in 'UnsetPending'
-
-PreviewMonsterActionSystem_Render._ShowShowSelectMonsterScopeAndTips = function(self, monsterEntity, skillConfigData, skillPreviewParam)
-  -- function num : 0_39 , upvalues : _ENV
+function PreviewMonsterActionSystem_Render:_ShowShowSelectMonsterScopeAndTips(monsterEntity, skillConfigData, skillPreviewParam)
   local monsterClassID = skillPreviewParam.monsterClassID
   local moveScopeType = skillPreviewParam.moveScopeType
   local moveScopeParam = skillPreviewParam.moveScopeParam
@@ -1272,31 +1033,30 @@ PreviewMonsterActionSystem_Render._ShowShowSelectMonsterScopeAndTips = function(
   local attackScopeParam = skillPreviewParam.attackScopeParam
   local skillTargetType = skillConfigData:GetSkillTargetType()
   local monsterEntityList = {}
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,monsterEntity in ipairs(monsterGroup:GetEntities()) do
-    if (table.icontains)(monsterClassID, (monsterEntity:MonsterID()):GetMonsterClassID()) then
-      (table.insert)(monsterEntityList, monsterEntity)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, monsterEntity in ipairs(monsterGroup:GetEntities()) do
+    if table.icontains(monsterClassID, monsterEntity:MonsterID():GetMonsterClassID()) then
+      table.insert(monsterEntityList, monsterEntity)
     end
   end
-  if (table.count)(monsterEntityList) == 0 then
-    return 
+  if table.count(monsterEntityList) == 0 then
+    return
   end
-  local renderEntityService = (self._world):GetService("RenderEntity")
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local renderEntityService = self._world:GetService("RenderEntity")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-  for _,monsterEntity in ipairs(monsterEntityList) do
+  for _, monsterEntity in ipairs(monsterEntityList) do
     local monsterPos = monsterEntity:GetGridPosition()
     local monsterDir = monsterEntity:GetGridDirection()
-    local bodyArea = (monsterEntity:BodyArea()):GetArea()
+    local bodyArea = monsterEntity:BodyArea():GetArea()
     local moveScopeResult = scopeCalculator:ComputeScopeRange(moveScopeType, moveScopeParam, monsterPos, bodyArea, monsterDir, skillTargetType, monsterPos, monsterEntity)
     local attackScopeResult = scopeCalculator:ComputeScopeRange(attackScopeType, attackScopeParam, monsterPos, bodyArea, monsterDir, skillTargetType, monsterPos, monsterEntity)
     local arrowPosList = moveScopeResult:GetAttackRange()
     local skillAttackRange = attackScopeResult:GetAttackRange()
-    local posPlayer = (((self._world):Player()):GetPreviewTeamEntity()):GetGridPosition()
-    ;
-    (table.removev)(arrowPosList, posPlayer)
-    for _,targetPos in ipairs(arrowPosList) do
-      if self:_IsPosInMine(targetPos, monsterPos, bodyArea) == false then
+    local posPlayer = self._world:Player():GetPreviewTeamEntity():GetGridPosition()
+    table.removev(arrowPosList, posPlayer)
+    for _, targetPos in ipairs(arrowPosList) do
+      if false == self:_IsPosInMine(targetPos, monsterPos, bodyArea) then
         local arrowDir = self:_CalcMoveArrowDir(monsterPos, bodyArea, targetPos)
         renderEntityService:CreateMoveRangeArrowEntity(targetPos, arrowDir, EntityConfigIDRender.MoveRangeArrow)
       end
@@ -1304,5 +1064,3 @@ PreviewMonsterActionSystem_Render._ShowShowSelectMonsterScopeAndTips = function(
     renderEntityService:CreatePreviewAreaOutlineEntity(skillAttackRange, EntityConfigIDRender.MoveRange)
   end
 end
-
-

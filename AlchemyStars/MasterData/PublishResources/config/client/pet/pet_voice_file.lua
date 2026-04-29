@@ -1,70 +1,184 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/pet_voice_file.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, VoiceType = 2, VoiceFilter = 3, HideFilter = 4}
+local key = {
+  ID = 1,
+  VoiceType = 2,
+  VoiceFilter = 3,
+  HideFilter = 4
+}
 local empty = {}
 local config = {
-{1, "MainLobbyWelcome", 
-{401, 402, 403, 404, 405}
-, empty}
-, 
-{2, "MainLobbyInteract", empty, 
-{601}
-}
-, 
-{3, "Leisure", empty, empty}
-, 
-{4, "Appointment", empty, empty}
-, 
-{5, "Obtain", empty, empty}
-, 
-{6, "LevelUp", empty, empty}
-, 
-{7, "Grade1Up", empty, empty}
-, 
-{8, "Grade2Up", empty, empty}
-, 
-{9, "Grade3Up", empty, empty}
-, 
-{10, "Formation", empty, empty}
-, 
-{11, "Charge", empty, empty}
-, 
-{12, "StandBy", empty, empty}
-, 
-{13, "Skill", empty, empty}
-, 
-{14, "ChainSkill", empty, empty}
-, 
-{15, "TeamLeaderAppear", empty, empty}
-, 
-{16, "BattleSucceed", empty, empty}
-, 
-{17, "BattleFail", empty, empty}
-, 
-{18, "LoginVoice", empty, empty}
-, 
-{19, "AircraftInteract", empty, empty}
-, 
-{20, "AircraftClick", empty, empty}
-, 
-{21, "ReceiveGift", empty, empty}
-, 
-{22, "ReceiveLoveGift", empty, empty}
-, 
-{23, "Story1", empty, empty}
-, 
-{24, "Story2", empty, empty}
-, 
-{25, "Story3", empty, empty}
-, 
-{26, "Excute", empty, empty}
-, 
-{27, "Special1", empty, empty}
-, 
-{28, "NewYear", empty, empty}
+  {
+    1,
+    "MainLobbyWelcome",
+    {
+      401,
+      402,
+      403,
+      404,
+      405
+    },
+    empty
+  },
+  {
+    2,
+    "MainLobbyInteract",
+    empty,
+    {601}
+  },
+  {
+    3,
+    "Leisure",
+    empty,
+    empty
+  },
+  {
+    4,
+    "Appointment",
+    empty,
+    empty
+  },
+  {
+    5,
+    "Obtain",
+    empty,
+    empty
+  },
+  {
+    6,
+    "LevelUp",
+    empty,
+    empty
+  },
+  {
+    7,
+    "Grade1Up",
+    empty,
+    empty
+  },
+  {
+    8,
+    "Grade2Up",
+    empty,
+    empty
+  },
+  {
+    9,
+    "Grade3Up",
+    empty,
+    empty
+  },
+  {
+    10,
+    "Formation",
+    empty,
+    empty
+  },
+  {
+    11,
+    "Charge",
+    empty,
+    empty
+  },
+  {
+    12,
+    "StandBy",
+    empty,
+    empty
+  },
+  {
+    13,
+    "Skill",
+    empty,
+    empty
+  },
+  {
+    14,
+    "ChainSkill",
+    empty,
+    empty
+  },
+  {
+    15,
+    "TeamLeaderAppear",
+    empty,
+    empty
+  },
+  {
+    16,
+    "BattleSucceed",
+    empty,
+    empty
+  },
+  {
+    17,
+    "BattleFail",
+    empty,
+    empty
+  },
+  {
+    18,
+    "LoginVoice",
+    empty,
+    empty
+  },
+  {
+    19,
+    "AircraftInteract",
+    empty,
+    empty
+  },
+  {
+    20,
+    "AircraftClick",
+    empty,
+    empty
+  },
+  {
+    21,
+    "ReceiveGift",
+    empty,
+    empty
+  },
+  {
+    22,
+    "ReceiveLoveGift",
+    empty,
+    empty
+  },
+  {
+    23,
+    "Story1",
+    empty,
+    empty
+  },
+  {
+    24,
+    "Story2",
+    empty,
+    empty
+  },
+  {
+    25,
+    "Story3",
+    empty,
+    empty
+  },
+  {
+    26,
+    "Excute",
+    empty,
+    empty
+  },
+  {
+    27,
+    "Special1",
+    empty,
+    empty
+  },
+  {
+    28,
+    "NewYear",
+    empty,
+    empty
+  }
 }
 return config, "ID", key
-

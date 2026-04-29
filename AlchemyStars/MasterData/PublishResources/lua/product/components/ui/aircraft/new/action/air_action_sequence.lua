@@ -1,17 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_sequence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionSequence", AirActionBase)
 AirActionSequence = AirActionSequence
-local SeqPhase = {Begin = 1, Loop = 2, Finish = 3, None = 4}
--- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
+local SeqPhase = {
+  Begin = 1,
+  Loop = 2,
+  Finish = 3,
+  None = 4
+}
 
-AirActionSequence.Constructor = function(self, pet, pos, rot, endPos, seqMaker, index, curLoopCount, startCallBack, loopCallBack, stopCallBack)
-  -- function num : 0_0 , upvalues : SeqPhase
+function AirActionSequence:Constructor(pet, pos, rot, endPos, seqMaker, index, curLoopCount, startCallBack, loopCallBack, stopCallBack)
   if pet == nil then
-    return 
+    return
   end
   self._pos = pos
   self._rot = rot
@@ -22,133 +20,103 @@ AirActionSequence.Constructor = function(self, pet, pos, rot, endPos, seqMaker, 
   self._pet = pet
   self._seqMaker = seqMaker
   self._index = index
-  self._onceLoopCount = (self._seqMaker):GetOnceLoopCount()
-  self._maxLoopCount = (self._seqMaker):GetLoopCount()
+  self._onceLoopCount = self._seqMaker:GetOnceLoopCount()
+  self._maxLoopCount = self._seqMaker:GetLoopCount()
   self._state = SeqPhase.None
   self._curLoopCount = curLoopCount or 1
 end
 
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionSequence.Start = function(self)
-  -- function num : 0_1 , upvalues : SeqPhase
-  (self._pet):SetPosition(self._pos)
-  ;
-  (self._pet):SetRotation(self._rot)
+function AirActionSequence:Start()
+  self._pet:SetPosition(self._pos)
+  self._pet:SetRotation(self._rot)
   self._curTime = 0
   self._running = true
   if self._startCallBack then
-    (self._startCallBack)()
+    self._startCallBack()
   end
-  ;
-  (self._pet):SetNaviEnable(false)
-  self._beginSeq = (self._seqMaker):GetBeginSeq()
-  if (self._seqMaker):HasBegin() then
-    (self._pet):Anim_CrossFade((self._beginSeq)[1])
+  self._pet:SetNaviEnable(false)
+  self._beginSeq = self._seqMaker:GetBeginSeq()
+  if self._seqMaker:HasBegin() then
+    self._pet:Anim_CrossFade(self._beginSeq[1])
     self._state = SeqPhase.Begin
-  else
-    if (self._seqMaker):HasLoop() then
-      self._state = SeqPhase.Loop
-    else
-      if (self._seqMaker):HasFinish() then
-        self._state = SeqPhase.Finish
-      end
-    end
+  elseif self._seqMaker:HasLoop() then
+    self._state = SeqPhase.Loop
+  elseif self._seqMaker:HasFinish() then
+    self._state = SeqPhase.Finish
   end
 end
 
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionSequence.Update = function(self, deltaTimeMS)
-  -- function num : 0_2 , upvalues : SeqPhase
+function AirActionSequence:Update(deltaTimeMS)
   if not self._running then
-    return 
+    return
   end
   if self._state == SeqPhase.Begin then
     self._curTime = self._curTime + deltaTimeMS
-    if (self._beginSeq)[2] < self._curTime then
-      if (self._seqMaker):HasLoop() then
+    if self._curTime > self._beginSeq[2] then
+      if self._seqMaker:HasLoop() then
         self._state = SeqPhase.Loop
-      else
-        if (self._seqMaker):HasFinish() then
-          self._state = SeqPhase.Finish
-        end
+      elseif self._seqMaker:HasFinish() then
+        self._state = SeqPhase.Finish
       end
       self._curTime = 0
     end
-  else
-    if self._state == SeqPhase.Loop then
-      if self._curLoopCount <= self._maxLoopCount then
-        do
-          if self._curTime == 0 then
-            local round = self._curLoopCount % self._onceLoopCount
-            if round == 0 then
-              round = self._onceLoopCount
-            end
-            self._loopSeq = (self._seqMaker):GetLoopSeq(round, self._index)
-            ;
-            (self._pet):Anim_CrossFade((self._loopSeq)[1])
-          end
-          self._curTime = self._curTime + deltaTimeMS
-          if (self._loopSeq)[2] < self._curTime then
-            self._curTime = 0
-            self._curLoopCount = self._curLoopCount + 1
-            if self._loopCallBack then
-              (self._loopCallBack)(self._curLoopCount, self._index)
-            end
-          end
-          self._curTime = 0
-          self._state = SeqPhase.Finish
-          if self._state == SeqPhase.Finish then
-            if self._curTime == 0 then
-              self._finishSeq = (self._seqMaker):GetFinishSeq(self._index)
-              if self._finishSeq and (self._finishSeq)[1] then
-                (self._pet):Anim_CrossFade((self._finishSeq)[1])
-              end
-            end
-            self._curTime = self._curTime + deltaTimeMS
-            if (self._finishSeq)[2] < self._curTime then
-              self._state = SeqPhase.None
-              self._curTime = 0
-              self._running = false
-              self:Stop()
-            end
-          end
+  elseif self._state == SeqPhase.Loop then
+    if self._curLoopCount <= self._maxLoopCount then
+      if self._curTime == 0 then
+        local round = self._curLoopCount % self._onceLoopCount
+        if round == 0 then
+          round = self._onceLoopCount
+        end
+        self._loopSeq = self._seqMaker:GetLoopSeq(round, self._index)
+        self._pet:Anim_CrossFade(self._loopSeq[1])
+      end
+      self._curTime = self._curTime + deltaTimeMS
+      if self._curTime > self._loopSeq[2] then
+        self._curTime = 0
+        self._curLoopCount = self._curLoopCount + 1
+        if self._loopCallBack then
+          self._loopCallBack(self._curLoopCount, self._index)
         end
       end
+    else
+      self._curTime = 0
+      self._state = SeqPhase.Finish
+    end
+  elseif self._state == SeqPhase.Finish then
+    if self._curTime == 0 then
+      self._finishSeq = self._seqMaker:GetFinishSeq(self._index)
+      if self._finishSeq and self._finishSeq[1] then
+        self._pet:Anim_CrossFade(self._finishSeq[1])
+      end
+    end
+    self._curTime = self._curTime + deltaTimeMS
+    if self._curTime > self._finishSeq[2] then
+      self._state = SeqPhase.None
+      self._curTime = 0
+      self._running = false
+      self:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionSequence.IsOver = function(self)
-  -- function num : 0_3
+function AirActionSequence:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionSequence.Stop = function(self)
-  -- function num : 0_4
+function AirActionSequence:Stop()
   if self._running then
     self._running = false
   end
-  ;
-  (self._pet):SetPosition(self._endPos)
-  ;
-  (self._pet):Anim_Stand()
+  self._pet:SetPosition(self._endPos)
+  self._pet:Anim_Stand()
   if self._stopCallBack then
-    (self._stopCallBack)()
+    self._stopCallBack()
   end
   self:LogStop()
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionSequence.GetPets = function(self)
-  -- function num : 0_5
-  return {self._pet}
+function AirActionSequence:GetPets()
+  return {
+    self._pet
+  }
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/pet_pstid_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetPstIDComponent", Object)
 PetPstIDComponent = PetPstIDComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetPstIDComponent.Constructor = function(self)
-  -- function num : 0_0
+function PetPstIDComponent:Constructor()
   self._pstID = 0
   self._petTemplateID = 0
   self._petCampID = 0
@@ -20,180 +13,103 @@ PetPstIDComponent.Constructor = function(self)
   self._weikeChainSkillNotifyCountTable = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.GetPstID = function(self)
-  -- function num : 0_1
+function PetPstIDComponent:GetPstID()
   return self._pstID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.GetTemplateID = function(self)
-  -- function num : 0_2
+function PetPstIDComponent:GetTemplateID()
   return self._petTemplateID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.GetPetCampID = function(self)
-  -- function num : 0_3
+function PetPstIDComponent:GetPetCampID()
   return self._petCampID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
+function PetPstIDComponent:GetRoundNormalAttackDirTable(round)
+  return self._roundNormalAttackDirTable[round] or {}
+end
 
-PetPstIDComponent.GetRoundNormalAttackDirTable = function(self, round)
-  -- function num : 0_4
-  if not (self._roundNormalAttackDirTable)[round] then
-    return {}
+function PetPstIDComponent:SetRoundNormalAttackDir(round, dir)
+  if not self._roundNormalAttackDirTable[round] then
+    self._roundNormalAttackDirTable[round] = {}
   end
+  table.insert(self._roundNormalAttackDirTable[round], dir)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.SetRoundNormalAttackDir = function(self, round, dir)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._roundNormalAttackDirTable)[round] then
-    (self._roundNormalAttackDirTable)[round] = {}
-  end
-  ;
-  (table.insert)((self._roundNormalAttackDirTable)[round], dir)
+function PetPstIDComponent:ClearRoundNormalAttackDir(round)
+  self._roundNormalAttackDirTable[round] = {}
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.ClearRoundNormalAttackDir = function(self, round)
-  -- function num : 0_6
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._roundNormalAttackDirTable)[round] = {}
-end
-
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.InitPstID = function(self, petPstID, petTemplateID, petCampID, isLegendPet)
-  -- function num : 0_7
+function PetPstIDComponent:InitPstID(petPstID, petTemplateID, petCampID, isLegendPet)
   self._pstID = petPstID
   self._petTemplateID = petTemplateID
   self._petCampID = petCampID
   self._isLegendPet = isLegendPet
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.SetResID = function(self, resID)
-  -- function num : 0_8
+function PetPstIDComponent:SetResID(resID)
   self._resID = resID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.GetResID = function(self)
-  -- function num : 0_9
+function PetPstIDComponent:GetResID()
   return self._resID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.IsLegendPet = function(self)
-  -- function num : 0_10
+function PetPstIDComponent:IsLegendPet()
   return self._isLegendPet
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.SetHelpPet = function(self, val)
-  -- function num : 0_11
+function PetPstIDComponent:SetHelpPet(val)
   self._isHelpPet = val
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.IsHelpPet = function(self)
-  -- function num : 0_12
+function PetPstIDComponent:IsHelpPet()
   return self._isHelpPet
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.SetTeamOrderBeforeDead = function(self, val)
-  -- function num : 0_13
+function PetPstIDComponent:SetTeamOrderBeforeDead(val)
   self._teamOrderBeforeDead = val
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.GetTeamOrderBeforeDead = function(self)
-  -- function num : 0_14
+function PetPstIDComponent:GetTeamOrderBeforeDead()
   return self._teamOrderBeforeDead
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.TickWeikeChainSkillNotifyCount = function(self, notifyType)
-  -- function num : 0_15
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._weikeChainSkillNotifyCountTable)[notifyType] then
-    (self._weikeChainSkillNotifyCountTable)[notifyType] = 0
+function PetPstIDComponent:TickWeikeChainSkillNotifyCount(notifyType)
+  if not self._weikeChainSkillNotifyCountTable[notifyType] then
+    self._weikeChainSkillNotifyCountTable[notifyType] = 0
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._weikeChainSkillNotifyCountTable)[notifyType] = (self._weikeChainSkillNotifyCountTable)[notifyType] + 1
-  return (self._weikeChainSkillNotifyCountTable)[notifyType]
+  self._weikeChainSkillNotifyCountTable[notifyType] = self._weikeChainSkillNotifyCountTable[notifyType] + 1
+  return self._weikeChainSkillNotifyCountTable[notifyType]
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-PetPstIDComponent.GetWeikeChainSkillNotifyCount = function(self, notifyType)
-  -- function num : 0_16
-  return (self._weikeChainSkillNotifyCountTable)[notifyType] or 0
+function PetPstIDComponent:GetWeikeChainSkillNotifyCount(notifyType)
+  return self._weikeChainSkillNotifyCountTable[notifyType] or 0
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PetPstID = function(self)
-  -- function num : 0_17
-  return self:GetComponent((self.WEComponentsEnum).PetPstID)
+function Entity:PetPstID()
+  return self:GetComponent(self.WEComponentsEnum.PetPstID)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPetPstID = function(self)
-  -- function num : 0_18
-  return self:HasComponent((self.WEComponentsEnum).PetPstID)
+function Entity:HasPetPstID()
+  return self:HasComponent(self.WEComponentsEnum.PetPstID)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPetPstID = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PetPstID
+function Entity:AddPetPstID()
+  local index = self.WEComponentsEnum.PetPstID
   local component = PetPstIDComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePetPstID = function(self, petPstID, petTemplateID, petCampID, IsLegendPet)
-  -- function num : 0_20 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PetPstID
+function Entity:ReplacePetPstID(petPstID, petTemplateID, petCampID, IsLegendPet)
+  local index = self.WEComponentsEnum.PetPstID
   local component = PetPstIDComponent:New()
   component:InitPstID(petPstID, petTemplateID, petCampID, IsLegendPet)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePetPstID = function(self)
-  -- function num : 0_21
+function Entity:RemovePetPstID()
   if self:HasPetPstID() then
-    self:RemoveComponent((self.WEComponentsEnum).PetPstID)
+    self:RemoveComponent(self.WEComponentsEnum.PetPstID)
   end
 end
-
-

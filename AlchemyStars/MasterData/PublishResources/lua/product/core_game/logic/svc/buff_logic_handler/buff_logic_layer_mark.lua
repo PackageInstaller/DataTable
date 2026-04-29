@@ -1,75 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_layer_mark.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicLayerMark", BuffLogicBase)
 BuffLogicLayerMark = BuffLogicLayerMark
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicLayerMark.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicLayerMark:Constructor(buffInstance, logicParam)
   self._maxLayer = logicParam.maxLayer or 0
   self._layer = logicParam.layer
-  if not logicParam.layerName then
-    self._layerName = (self._buffInstance):GetBuffLayerName()
-  end
+  self._layerName = logicParam.layerName or self._buffInstance:GetBuffLayerName()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicLayerMark.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local ctx = (self._buffInstance):Context()
+function BuffLogicLayerMark:DoLogic(notify)
+  local ctx = self._buffInstance:Context()
   local casterEntity = ctx.casterEntity
   local casterEntityID = 0
   if casterEntity then
     casterEntityID = casterEntity:GetID()
   end
-  local curMarkLayer = (self._buffInstance):AddLayerCount(self._layer)
-  ;
-  (self._buffComponent):SetBuffValue(self._layerName, curMarkLayer)
+  local curMarkLayer = self._buffInstance:AddLayerCount(self._layer)
+  self._buffComponent:SetBuffValue(self._layerName, curMarkLayer)
   local res = BuffResultLayerMark:New(curMarkLayer, casterEntityID)
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicLayerMark.DoOverlap = function(self, logicParam, context)
-  -- function num : 0_2 , upvalues : _ENV
+function BuffLogicLayerMark:DoOverlap(logicParam, context)
   local casterEntity = context.casterEntity
   local casterEntityID = 0
   if casterEntity then
     casterEntityID = casterEntity:GetID()
   end
-  local curMarkLayer = (self._buffInstance):AddLayerCount(self._layer)
-  ;
-  (self._buffComponent):SetBuffValue(self._layerName, curMarkLayer)
+  local curMarkLayer = self._buffInstance:AddLayerCount(self._layer)
+  self._buffComponent:SetBuffValue(self._layerName, curMarkLayer)
   local res = BuffResultLayerMark:New(curMarkLayer, casterEntityID)
   return res
 end
 
 _class("BuffLogicRemoveLayerMark", BuffLogicBase)
 BuffLogicRemoveLayerMark = BuffLogicRemoveLayerMark
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveLayerMark.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
-  if not logicParam.layerName then
-    self._layerName = (self._buffInstance):GetBuffLayerName()
-  end
+function BuffLogicRemoveLayerMark:Constructor(buffInstance, logicParam)
+  self._layerName = logicParam.layerName or self._buffInstance:GetBuffLayerName()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRemoveLayerMark.DoLogic = function(self, notify)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._buffComponent):SetBuffValue(self._layerName, 0)
-  ;
-  (self._buffInstance):SetLayerCount(0)
+function BuffLogicRemoveLayerMark:DoLogic(notify)
+  self._buffComponent:SetBuffValue(self._layerName, 0)
+  self._buffInstance:SetLayerCount(0)
   local res = BuffResultLayerMark:New(0)
   return res
 end
-
-

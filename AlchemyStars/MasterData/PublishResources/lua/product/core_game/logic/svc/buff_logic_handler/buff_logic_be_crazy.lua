@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_be_crazy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicBeCrazy", BuffLogicBase)
 BuffLogicBeCrazy = BuffLogicBeCrazy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicBeCrazy.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicBeCrazy:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicBeCrazy.DoLogic = function(self)
-  -- function num : 0_1
-  (self._entity):ReplaceCrazyMode()
+function BuffLogicBeCrazy:DoLogic()
+  self._entity:ReplaceCrazyMode()
 end
-
-

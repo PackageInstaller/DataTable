@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s7/theme/ui_s7_title.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIS7Title", UICustomWidget)
 UIS7Title = UIS7Title
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIS7Title.OnShow = function(self)
-  -- function num : 0_0
+function UIS7Title:OnShow()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS7Title._SetTexture = function(self, targetWidget, srcName)
-  -- function num : 0_1 , upvalues : _ENV
+function UIS7Title:_SetTexture(targetWidget, srcName)
   local test = self:_LoadAsset(srcName, LoadType.Mat)
   if test then
     local srcMat = self:GetAsset(srcName, LoadType.Mat)
     local eftImg = self:GetUIComponent("RawImage", targetWidget)
-    ;
-    (eftImg.material):SetTexture("_MainTex", srcMat.mainTexture)
+    eftImg.material:SetTexture("_MainTex", srcMat.mainTexture)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIS7Title._LoadAsset = function(self, name, type)
-  -- function num : 0_2 , upvalues : _ENV
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset(name, type)
+function UIS7Title:_LoadAsset(name, type)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(name, type)
   if req == nil or req.Obj == nil then
-    (Log.info)("UIS7Title:_LoadAsset() name =", name, "type =", type)
-    return 
+    Log.info("UIS7Title:_LoadAsset() name =", name, "type =", type)
+    return
   end
   return req.Obj
 end
-
-

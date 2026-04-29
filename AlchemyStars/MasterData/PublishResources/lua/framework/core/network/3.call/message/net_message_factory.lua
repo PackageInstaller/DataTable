@@ -1,58 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/network/3.call/message/net_message_factory.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("NetMessageFactory", Singleton)
 NetMessageFactory = NetMessageFactory
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-NetMessageFactory.Constructor = function(self)
-  -- function num : 0_0
+function NetMessageFactory:Constructor()
   self.msgObjs = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-NetMessageFactory.RegisterMessage = function(self, msg)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self.msgObjs)[msg.clsid] then
-    (Log.fatal)("NetMessageFactory:RegisterMessage duplicated clsid class ", msg._className, " clsid ", msg.clsid)
+function NetMessageFactory:RegisterMessage(msg)
+  if self.msgObjs[msg.clsid] then
+    Log.fatal("NetMessageFactory:RegisterMessage duplicated clsid class ", msg._className, " clsid ", msg.clsid)
   end
-  -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.msgObjs)[msg.clsid] = msg
+  self.msgObjs[msg.clsid] = msg
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-NetMessageFactory.RegisterEvents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("RegisterEvents")
-  for k,v in pairs(self.msgObjs) do
-    (NetCallerLua.RegisterEvents)(v.clsid, v:EventType(), v:Encrypt(), v:Reliable(), v._className)
+function NetMessageFactory:RegisterEvents()
+  Log.debug("RegisterEvents")
+  for k, v in pairs(self.msgObjs) do
+    NetCallerLua.RegisterEvents(v.clsid, v:EventType(), v:Encrypt(), v:Reliable(), v._className)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-NetMessageFactory.CreateMessageWithId = function(self, clsid)
-  -- function num : 0_3 , upvalues : _ENV
-  local msg = (self.msgObjs)[clsid]
+function NetMessageFactory:CreateMessageWithId(clsid)
+  local msg = self.msgObjs[clsid]
   if msg then
     return msg:New()
   else
-    ;
-    (Log.fatal)("unknown message with clsid: ", clsid)
+    Log.fatal("unknown message with clsid: ", clsid)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-NetMessageFactory.CreateMessage = function(self, type, ...)
-  -- function num : 0_4
+function NetMessageFactory:CreateMessage(type, ...)
   return type:New()
 end
-
-

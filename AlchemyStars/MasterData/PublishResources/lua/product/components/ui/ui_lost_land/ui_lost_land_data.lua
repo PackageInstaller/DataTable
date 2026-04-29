@@ -1,15 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local UILostLandEnterType = {EASY = 1, DIFF = 2, HELL = 3}
+local UILostLandEnterType = {
+  EASY = 1,
+  DIFF = 2,
+  HELL = 3
+}
 _enum("UILostLandEnterType", UILostLandEnterType)
-local UILostLandEnterLockType = {UNLOCK = 1, LOCK = 2, CANUNLOCK = 3, CHOOSE = 4}
+local UILostLandEnterLockType = {
+  UNLOCK = 1,
+  LOCK = 2,
+  CANUNLOCK = 3,
+  CHOOSE = 4
+}
 _enum("UILostLandEnterLockType", UILostLandEnterLockType)
-local UILostLandMissionType = {NORMAL = 1, BOSS = 2, PLOT = 3}
+local UILostLandMissionType = {
+  NORMAL = 1,
+  BOSS = 2,
+  PLOT = 3
+}
 _enum("UILostLandMissionType", UILostLandMissionType)
-local UILostLandMissionLockType = {PASS = 1, UNLOCK = 2, LOCK = 3}
+local UILostLandMissionLockType = {
+  PASS = 1,
+  UNLOCK = 2,
+  LOCK = 3
+}
 _enum("UILostLandMissionLockType", UILostLandMissionLockType)
 local UILostLandFilterType = {AND = 1, OR = 2}
 _enum("UILostLandFilterType", UILostLandFilterType)
@@ -17,13 +29,11 @@ local UILostLandRecommendAwardStatus = {Got = 1, Not = 2}
 _enum("UILostLandRecommendAwardStatus", UILostLandRecommendAwardStatus)
 _class("UILostLandEnterData", Object)
 UILostLandEnterData = UILostLandEnterData
--- DECOMPILER ERROR at PC55: Confused about usage of register: R6 in 'UnsetPending'
 
-UILostLandEnterData.Constructor = function(self, enterid, lockType, svrCfg, levelGroupCfg)
-  -- function num : 0_0 , upvalues : _ENV
-  local cfg = (Cfg.cfg_lost_land_enter)[enterid]
+function UILostLandEnterData:Constructor(enterid, lockType, svrCfg, levelGroupCfg)
+  local cfg = Cfg.cfg_lost_land_enter[enterid]
   if not cfg then
-    (Log.error)("###[UILostLandEnterData] cfg_lost_land_enter is nil ! id --> ", enterid)
+    Log.error("###[UILostLandEnterData] cfg_lost_land_enter is nil ! id --> ", enterid)
   end
   self._type = svrCfg.difficulty
   self._lockType = lockType
@@ -32,9 +42,15 @@ UILostLandEnterData.Constructor = function(self, enterid, lockType, svrCfg, leve
   self._name = cfg.EnterName
   self._recommendGrade = cfg.RecommendGrade
   self._recommendLv = cfg.RecommendLv
-  local width = {[1] = 0, [2] = 0}
+  local width = {
+    [1] = 0,
+    [2] = 0
+  }
   if cfg.ShowItemWidth then
-    width = {[1] = (cfg.ShowItemWidth)[1], [2] = (cfg.ShowItemWidth)[2]}
+    width = {
+      [1] = cfg.ShowItemWidth[1],
+      [2] = cfg.ShowItemWidth[2]
+    }
   end
   self._width = width
   self._condition = svrCfg.unlock_condition
@@ -42,12 +58,9 @@ UILostLandEnterData.Constructor = function(self, enterid, lockType, svrCfg, leve
   self._viewAward = self:CreateViewAward(levelGroupCfg)
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.CreateViewAward = function(self, levelGroupCfg)
-  -- function num : 0_1 , upvalues : _ENV
+function UILostLandEnterData:CreateViewAward(levelGroupCfg)
   local awardMap = {}
-  for key,value in pairs(levelGroupCfg) do
+  for key, value in pairs(levelGroupCfg) do
     local diff = value.difficulty
     if diff == self._type then
       local awards = value.award
@@ -62,164 +75,113 @@ UILostLandEnterData.CreateViewAward = function(self, levelGroupCfg)
     end
   end
   local _awardList = {}
-  for key,value in pairs(awardMap) do
+  for key, value in pairs(awardMap) do
     local itemAsset = ItemAsset:New()
     itemAsset.assetid = key
     itemAsset.count = value
-    ;
-    (table.insert)(_awardList, itemAsset)
+    table.insert(_awardList, itemAsset)
   end
-  ;
-  (table.sort)(_awardList, function(a, b)
-    -- function num : 0_1_0 , upvalues : _ENV
-    local cfg_a = (Cfg.cfg_item)[a.assetid]
-    local cfg_b = (Cfg.cfg_item)[b.assetid]
-    if cfg_a.BagSortIndex == cfg_b.BagSortIndex then
-      if a.assetid >= b.assetid then
-        do return cfg_a.Color ~= cfg_b.Color end
-        do return cfg_b.BagSortIndex < cfg_a.BagSortIndex end
-        do return cfg_b.Color < cfg_a.Color end
-        -- DECOMPILER ERROR: 6 unprocessed JMP targets
+  table.sort(_awardList, function(a, b)
+    local cfg_a = Cfg.cfg_item[a.assetid]
+    local cfg_b = Cfg.cfg_item[b.assetid]
+    if cfg_a.Color == cfg_b.Color then
+      if cfg_a.BagSortIndex == cfg_b.BagSortIndex then
+        return a.assetid < b.assetid
+      else
+        return cfg_a.BagSortIndex > cfg_b.BagSortIndex
       end
+    else
+      return cfg_a.Color > cfg_b.Color
     end
-  end
-)
+  end)
   return _awardList
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.CreateMissionTable = function(self, levelGroupCfg)
-  -- function num : 0_2 , upvalues : _ENV
+function UILostLandEnterData:CreateMissionTable(levelGroupCfg)
   local missionTable = {}
-  for key,value in pairs(levelGroupCfg) do
+  for key, value in pairs(levelGroupCfg) do
     local diff = value.difficulty
     if diff == self._type then
       if not missionTable[value.group_seq_id] then
         missionTable[value.group_seq_id] = {}
       end
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R9 in 'UnsetPending'
-
-      ;
-      (missionTable[value.group_seq_id])[value.seq_in_group] = key
+      missionTable[value.group_seq_id][value.seq_in_group] = key
     end
   end
   return missionTable
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetEnterID = function(self)
-  -- function num : 0_3
+function UILostLandEnterData:GetEnterID()
   return self._enterID
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetType = function(self)
-  -- function num : 0_4
+function UILostLandEnterData:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetLockState = function(self)
-  -- function num : 0_5
+function UILostLandEnterData:GetLockState()
   return self._lockType
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.UnLock = function(self)
-  -- function num : 0_6 , upvalues : UILostLandEnterLockType
+function UILostLandEnterData:UnLock()
   self._lockType = UILostLandEnterLockType.UNLOCK
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetCg = function(self)
-  -- function num : 0_7
+function UILostLandEnterData:GetCg()
   return self._cg
 end
 
--- DECOMPILER ERROR at PC79: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetName = function(self)
-  -- function num : 0_8
+function UILostLandEnterData:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC82: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetViewAward = function(self)
-  -- function num : 0_9
+function UILostLandEnterData:GetViewAward()
   return self._viewAward
 end
 
--- DECOMPILER ERROR at PC85: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetRecommendLv = function(self)
-  -- function num : 0_10
+function UILostLandEnterData:GetRecommendLv()
   return self._recommendLv
 end
 
--- DECOMPILER ERROR at PC88: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetRecommendGrade = function(self)
-  -- function num : 0_11
+function UILostLandEnterData:GetRecommendGrade()
   return self._recommendGrade
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetCondition = function(self)
-  -- function num : 0_12
+function UILostLandEnterData:GetCondition()
   return self._condition
 end
 
--- DECOMPILER ERROR at PC94: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetMissionTable = function(self)
-  -- function num : 0_13
+function UILostLandEnterData:GetMissionTable()
   return self._missionTable
 end
 
--- DECOMPILER ERROR at PC97: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandEnterData.GetItemShowWidth = function(self)
-  -- function num : 0_14
+function UILostLandEnterData:GetItemShowWidth()
   return self._width
 end
 
 _class("UILostLandMissionData", Object)
 UILostLandMissionData = UILostLandMissionData
--- DECOMPILER ERROR at PC106: Confused about usage of register: R6 in 'UnsetPending'
 
-UILostLandMissionData.Constructor = function(self, missionid, svrCfg, missionInfo, currentid)
-  -- function num : 0_15 , upvalues : _ENV, UILostLandMissionType, UILostLandMissionLockType
+function UILostLandMissionData:Constructor(missionid, svrCfg, missionInfo, currentid)
   self._id = missionid
-  local cfg = (Cfg.cfg_lost_land_mission)[missionid]
+  local cfg = Cfg.cfg_lost_land_mission[missionid]
   if not cfg then
-    (Log.error)("###[UILostLandMissionData] cfg_lost_land_mission is nil ! id --> ", missionid)
+    Log.error("###[UILostLandMissionData] cfg_lost_land_mission is nil ! id --> ", missionid)
   end
   self._type = nil
   if svrCfg.level_type == 1 then
     self._type = UILostLandMissionType.NORMAL
-  else
-    if svrCfg.level_type == 2 then
-      self._type = UILostLandMissionType.BOSS
-    end
+  elseif svrCfg.level_type == 2 then
+    self._type = UILostLandMissionType.BOSS
   end
   self._passTimes = missionInfo.pass_time
   if currentid ~= nil then
     if currentid == missionid then
       self._lock = UILostLandMissionLockType.UNLOCK
+    elseif self._passTimes <= 0 then
+      self._lock = UILostLandMissionLockType.LOCK
     else
-      if self._passTimes <= 0 then
-        self._lock = UILostLandMissionLockType.LOCK
-      else
-        self._lock = UILostLandMissionLockType.PASS
-      end
+      self._lock = UILostLandMissionLockType.PASS
     end
   else
     self._lock = UILostLandMissionLockType.PASS
@@ -233,81 +195,46 @@ UILostLandMissionData.Constructor = function(self, missionid, svrCfg, missionInf
   self._levelid = missionInfo.level_id
 end
 
--- DECOMPILER ERROR at PC109: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetLockType = function(self)
-  -- function num : 0_16
+function UILostLandMissionData:GetLockType()
   return self._lock
 end
 
--- DECOMPILER ERROR at PC112: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetPassTimes = function(self)
-  -- function num : 0_17
+function UILostLandMissionData:GetPassTimes()
   return self._passTimes
 end
 
--- DECOMPILER ERROR at PC115: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetLevelID = function(self)
-  -- function num : 0_18
+function UILostLandMissionData:GetLevelID()
   return self._levelid
 end
 
--- DECOMPILER ERROR at PC118: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetType = function(self)
-  -- function num : 0_19
+function UILostLandMissionData:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetID = function(self)
-  -- function num : 0_20
+function UILostLandMissionData:GetID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC124: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetWord = function(self)
-  -- function num : 0_21
+function UILostLandMissionData:GetWord()
   return self._word
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetAward = function(self)
-  -- function num : 0_22
+function UILostLandMissionData:GetAward()
   return self._award
 end
 
--- DECOMPILER ERROR at PC130: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetPetAward = function(self)
-  -- function num : 0_23
+function UILostLandMissionData:GetPetAward()
   return self._petAward
 end
 
--- DECOMPILER ERROR at PC133: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetMissionName = function(self)
-  -- function num : 0_24
+function UILostLandMissionData:GetMissionName()
   return self._missionName
 end
 
--- DECOMPILER ERROR at PC136: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetRecommendLv = function(self)
-  -- function num : 0_25
+function UILostLandMissionData:GetRecommendLv()
   return self._recommendLv
 end
 
--- DECOMPILER ERROR at PC139: Confused about usage of register: R6 in 'UnsetPending'
-
-UILostLandMissionData.GetRecommendGrade = function(self)
-  -- function num : 0_26
+function UILostLandMissionData:GetRecommendGrade()
   return self._recommendGrade
 end
-
-

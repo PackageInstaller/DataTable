@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/build/ui_season_build_program_s3.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBuildProgramS3", UICustomWidget)
 UISeasonBuildProgramS3 = UISeasonBuildProgramS3
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBuildProgramS3.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonBuildProgramS3:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildProgramS3.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBuildProgramS3:InitWidget()
   self.unFinishGo = self:GetGameObject("unFinish")
   self.finishGo = self:GetGameObject("finish")
   self.unOpenGo = self:GetGameObject("unOpen")
@@ -24,73 +14,50 @@ UISeasonBuildProgramS3.InitWidget = function(self)
   self.step3 = self:GetUIComponent("UISelectObjectPath", "step3")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildProgramS3.InitWithRewardClickCb = function(self, cb)
-  -- function num : 0_2
+function UISeasonBuildProgramS3:InitWithRewardClickCb(cb)
   self.rewardClickCb = cb
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildProgramS3.SetData = function(self, context, buildClickCb)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonBuildProgramS3:SetData(context, buildClickCb)
   self._context = context
   self._buildClickCb = buildClickCb
-  local level = (self._context):GetCurLevel()
-  local isLevelFull = (self._context):BuildLevelIsFull()
+  local level = self._context:GetCurLevel()
+  local isLevelFull = self._context:BuildLevelIsFull()
   local isOpen = true
-  do
-    if not isLevelFull then
-      local quest = (self._context):GetQuestByBuildLevel(level)
-      isOpen = quest.Open
-    end
-    if not isOpen then
-      (self.unOpenGo):SetActive(true)
-      ;
-      (self.unFinishGo):SetActive(false)
-      ;
-      (self.finishGo):SetActive(false)
-    else
-      ;
-      (self.unOpenGo):SetActive(false)
-      ;
-      (self.unFinishGo):SetActive(not isLevelFull)
-      ;
-      (self.finishGo):SetActive(isLevelFull)
-    end
-    local cfg = (self._context):GetBuildCfgByLevel(level)
-    local showCfg = (Cfg.cfg_season_castle_show)[cfg.ID]
-    if showCfg then
-      (self.txtTitle):SetText((StringTable.Get)(showCfg.Title))
-    end
-    if not isLevelFull and isOpen then
-      self:RefreshStepsUI()
-    end
+  if not isLevelFull then
+    local quest = self._context:GetQuestByBuildLevel(level)
+    isOpen = quest.Open
+  end
+  if not isOpen then
+    self.unOpenGo:SetActive(true)
+    self.unFinishGo:SetActive(false)
+    self.finishGo:SetActive(false)
+  else
+    self.unOpenGo:SetActive(false)
+    self.unFinishGo:SetActive(not isLevelFull)
+    self.finishGo:SetActive(isLevelFull)
+  end
+  local cfg = self._context:GetBuildCfgByLevel(level)
+  local showCfg = Cfg.cfg_season_castle_show[cfg.ID]
+  if showCfg then
+    self.txtTitle:SetText(StringTable.Get(showCfg.Title))
+  end
+  if not isLevelFull and isOpen then
+    self:RefreshStepsUI()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildProgramS3.RefreshStepsUI = function(self)
-  -- function num : 0_4
+function UISeasonBuildProgramS3:RefreshStepsUI()
   self:_CheckStepsUI()
-  ;
-  (self.step1Widget):SetData(self._context)
-  ;
-  (self.step3Widget):SetData(self._context, self._buildClickCb, self.rewardClickCb)
+  self.step1Widget:SetData(self._context)
+  self.step3Widget:SetData(self._context, self._buildClickCb, self.rewardClickCb)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBuildProgramS3._CheckStepsUI = function(self)
-  -- function num : 0_5
+function UISeasonBuildProgramS3:_CheckStepsUI()
   if not self.step1Widget then
-    self.step1Widget = (self.step1):SpawnObject("UISeasonBuildProgramStep1S3")
+    self.step1Widget = self.step1:SpawnObject("UISeasonBuildProgramStep1S3")
   end
   if not self.step3Widget then
-    self.step3Widget = (self.step3):SpawnObject("UISeasonBuildProgramStep3S3")
+    self.step3Widget = self.step3:SpawnObject("UISeasonBuildProgramStep3S3")
   end
 end
-
-

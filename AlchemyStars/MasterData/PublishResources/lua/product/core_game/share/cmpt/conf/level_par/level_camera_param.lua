@@ -1,19 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/level_camera_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LevelCameraParam", Object)
 LevelCameraParam = LevelCameraParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelCameraParam.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function LevelCameraParam:Constructor()
   self._fov = 0.5
   self._near_clip_distance = 100
   self._far_clip_distance = 2000
   self._camera_position = Vector3(397.3, 506.7, -396.7)
-  self._camera_rotation = (Quaternion.Euler)(42, -45, 0)
+  self._camera_rotation = Quaternion.Euler(42, -45, 0)
   self._camera_rotation_vector3 = Vector3(42, -45, 0)
   self._runType = CameraRunType.None
   self._runRotationBeginVector3 = Vector3(-10, -45, 0)
@@ -28,156 +21,99 @@ LevelCameraParam.Constructor = function(self)
   self._cameraMaxVerticalDown = BattleConst.CameraMaxVerticalDown
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetRunType = function(self)
-  -- function num : 0_1
+function LevelCameraParam:GetRunType()
   return self._runType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetRunTimeLen = function(self)
-  -- function num : 0_2
+function LevelCameraParam:GetRunTimeLen()
   return self._runTimeLen
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetRunDelayTime = function(self)
-  -- function num : 0_3
+function LevelCameraParam:GetRunDelayTime()
   return self._runDelayTime
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetRunRotationBeginVector3 = function(self)
-  -- function num : 0_4
+function LevelCameraParam:GetRunRotationBeginVector3()
   return self._runRotationBeginVector3
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetCameraRotationVector3 = function(self)
-  -- function num : 0_5
+function LevelCameraParam:GetCameraRotationVector3()
   return self._camera_rotation_vector3
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetFov = function(self)
-  -- function num : 0_6
+function LevelCameraParam:GetFov()
   return self._fov
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetNearClipDistance = function(self)
-  -- function num : 0_7
+function LevelCameraParam:GetNearClipDistance()
   return self._near_clip_distance
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetFarClipDistance = function(self)
-  -- function num : 0_8
+function LevelCameraParam:GetFarClipDistance()
   return self._far_clip_distance
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetCameraPosition = function(self)
-  -- function num : 0_9
+function LevelCameraParam:GetCameraPosition()
   return self._camera_position
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetCameraRotation = function(self)
-  -- function num : 0_10
+function LevelCameraParam:GetCameraRotation()
   return self._camera_rotation
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetTouchMoveCameraSpeed = function(self)
-  -- function num : 0_11
+function LevelCameraParam:GetTouchMoveCameraSpeed()
   return self._touchMoveCameraSpeed
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetTouchMoveCameraEdgeSpeed = function(self)
-  -- function num : 0_12
+function LevelCameraParam:GetTouchMoveCameraEdgeSpeed()
   return self._touchMoveCameraEdgeSpeed
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetMoveCameraEdge = function(self)
-  -- function num : 0_13
+function LevelCameraParam:GetMoveCameraEdge()
   return self._moveCameraEdge
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetCameraMaxHorizatalLeft = function(self)
-  -- function num : 0_14
+function LevelCameraParam:GetCameraMaxHorizatalLeft()
   return self._cameraMaxHorizatalLeft
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetCameraMaxHorizatalRight = function(self)
-  -- function num : 0_15
+function LevelCameraParam:GetCameraMaxHorizatalRight()
   return self._cameraMaxHorizatalRight
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetCameraMaxVerticalUp = function(self)
-  -- function num : 0_16
+function LevelCameraParam:GetCameraMaxVerticalUp()
   return self._cameraMaxVerticalUp
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.GetCameraMaxVerticalDown = function(self)
-  -- function num : 0_17
+function LevelCameraParam:GetCameraMaxVerticalDown()
   return self._cameraMaxVerticalDown
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.ResetFov = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function LevelCameraParam:ResetFov()
   self._fov = self._config_fov or 0.5
   local defaultAspect = BattleConst.CameraDefaultAspect
-  local aspect = (UnityEngine.Screen).width / (UnityEngine.Screen).height
-  if aspect < defaultAspect then
+  local aspect = UnityEngine.Screen.width / UnityEngine.Screen.height
+  if defaultAspect > aspect then
     self._fov = self._config_fov + (defaultAspect - aspect) * 6
   end
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam.ParseCameraParam = function(self, gridConfigData)
-  -- function num : 0_19 , upvalues : _ENV
+function LevelCameraParam:ParseCameraParam(gridConfigData)
   self._config_fov = gridConfigData.Fov
   self:ResetFov()
   self._near_clip_distance = gridConfigData.NearClipDistance
   self._far_clip_distance = gridConfigData.FarClipDistance
-  local numberArray = (string.split)(gridConfigData.CameraPosition, ",")
+  local numberArray = string.split(gridConfigData.CameraPosition, ",")
   local positionX = tonumber(numberArray[1])
   local positionY = tonumber(numberArray[2])
   local positionZ = tonumber(numberArray[3])
   local cameraPos = Vector3(positionX, positionY, positionZ)
   self._camera_position = cameraPos
-  local rotationNumberArray = (string.split)(gridConfigData.CameraRotation, ",")
+  local rotationNumberArray = string.split(gridConfigData.CameraRotation, ",")
   local rotationX = tonumber(rotationNumberArray[1])
   local rotationY = tonumber(rotationNumberArray[2])
   local rotationZ = tonumber(rotationNumberArray[3])
-  local cameraRotation = (Quaternion.Euler)(rotationX, rotationY, rotationZ)
+  local cameraRotation = Quaternion.Euler(rotationX, rotationY, rotationZ)
   self._camera_rotation = cameraRotation
   self._camera_rotation_vector3 = Vector3(rotationX, rotationY, rotationZ)
   if gridConfigData.TouchMoveCameraSpeed then
@@ -190,10 +126,10 @@ LevelCameraParam.ParseCameraParam = function(self, gridConfigData)
     self._moveCameraEdge = gridConfigData.MoveCameraEdge
   end
   if gridConfigData.CameraMaxDistance then
-    self._cameraMaxHorizatalLeft = (gridConfigData.CameraMaxDistance)[1]
-    self._cameraMaxHorizatalRight = (gridConfigData.CameraMaxDistance)[2]
-    self._cameraMaxVerticalUp = (gridConfigData.CameraMaxDistance)[3]
-    self._cameraMaxVerticalDown = (gridConfigData.CameraMaxDistance)[4]
+    self._cameraMaxHorizatalLeft = gridConfigData.CameraMaxDistance[1]
+    self._cameraMaxHorizatalRight = gridConfigData.CameraMaxDistance[2]
+    self._cameraMaxVerticalUp = gridConfigData.CameraMaxDistance[3]
+    self._cameraMaxVerticalDown = gridConfigData.CameraMaxDistance[4]
   end
   self._runType = gridConfigData.CameraRunType
   if self._runType == CameraRunType.XRotation then
@@ -201,14 +137,9 @@ LevelCameraParam.ParseCameraParam = function(self, gridConfigData)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelCameraParam._ParseXRotationParam = function(self, param)
-  -- function num : 0_20 , upvalues : _ENV
-  local ruNumberArray = (string.split)(param[1], ",")
+function LevelCameraParam:_ParseXRotationParam(param)
+  local ruNumberArray = string.split(param[1], ",")
   self._runRotationBeginVector3 = Vector3(tonumber(ruNumberArray[1]), tonumber(ruNumberArray[2]), tonumber(ruNumberArray[3]))
   self._runTimeLen = tonumber(param[2])
   self._runDelayTime = tonumber(param[3])
 end
-
-

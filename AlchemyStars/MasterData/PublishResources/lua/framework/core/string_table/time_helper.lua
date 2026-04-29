@@ -1,85 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/string_table/time_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
--- DECOMPILER ERROR at PC3: Confused about usage of register: R0 in 'UnsetPending'
-
 _G._NOW0 = os.time
 local CS_TIME_DELTA = 0
 local newGetCurLanguage = Localization.GetCurLanguage
--- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
 
-Localization.GetCurLanguage = function()
-  -- function num : 0_0 , upvalues : newGetCurLanguage
+function Localization.GetCurLanguage()
   return newGetCurLanguage(true)
 end
 
-LanguageType = {zh = "zh", tw = "tw", us = "us", kr = "kr", jp = "jp", pt = "pt", es = "es", idn = "idn", th = "th"}
-local language = (Localization.GetCurLanguage)()
+LanguageType = {
+  zh = "zh",
+  tw = "tw",
+  us = "us",
+  kr = "kr",
+  jp = "jp",
+  pt = "pt",
+  es = "es",
+  idn = "idn",
+  th = "th"
+}
+local language = Localization.GetCurLanguage()
 local toint = math.tointeger
--- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
 
-_G._now = function(unit)
-  -- function num : 0_1 , upvalues : _ENV, CS_TIME_DELTA
+function _G._now(unit)
   local t0 = _NOW0(unit)
   local t1 = t0 + CS_TIME_DELTA
   return t1
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-_G._time = function(t)
-  -- function num : 0_2 , upvalues : _ENV
-  return (os.date)("*t", t)
+function _G._time(t)
+  return os.date("*t", t)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-_G._utcTime = function(t)
-  -- function num : 0_3 , upvalues : _ENV
-  return (os.date)("!*t", t)
+function _G._utcTime(t)
+  return os.date("!*t", t)
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R4 in 'UnsetPending'
-
-_G._utc2Local = function(data)
-  -- function num : 0_4 , upvalues : _ENV
-  local now = (os.time)(data)
-  local diff = (os.difftime)(_NOW0(), _NOW0(_utcTime(_NOW0())))
+function _G._utc2Local(data)
+  local now = os.time(data)
+  local diff = os.difftime(_NOW0(), _NOW0(_utcTime(_NOW0())))
   local t = diff / 3600
   now = now + diff
-  return (os.date)("%Y-%m-%d %H:%M:%S", now)
+  return os.date("%Y-%m-%d %H:%M:%S", now)
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R4 in 'UnsetPending'
-
-_G._curTimeZone = function()
-  -- function num : 0_5 , upvalues : _ENV
-  return (os.difftime)(_NOW0(), _NOW0(_utcTime(_NOW0()))) / 3600
+function _G._curTimeZone()
+  return os.difftime(_NOW0(), _NOW0(_utcTime(_NOW0()))) / 3600
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.AdjustTimeCS = function(servertime)
-  -- function num : 0_6 , upvalues : CS_TIME_DELTA, _ENV
+function _G.AdjustTimeCS(servertime)
   CS_TIME_DELTA = servertime - _NOW0()
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.SameDay = function(t1, t2)
-  -- function num : 0_7 , upvalues : _ENV
+function _G.SameDay(t1, t2)
   local d1 = _time(t1)
   local d2 = _time(t2)
-  do return d1.year == d2.year and d1.month == d2.month and d1.day == d2.day end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return d1.year == d2.year and d1.month == d2.month and d1.day == d2.day
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.SameWeek = function(t1, t2)
-  -- function num : 0_8 , upvalues : _ENV
+function _G.SameWeek(t1, t2)
   local d1 = _time(t1)
   local d2 = _time(t2)
   local w1 = d1.wday
@@ -92,207 +69,129 @@ _G.SameWeek = function(t1, t2)
   end
   d1 = _time(t1 - w1 * 86400)
   d2 = _time(t2 - w2 * 86400)
-  do return d1.year == d2.year and d1.month == d2.month and d1.day == d2.day end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return d1.year == d2.year and d1.month == d2.month and d1.day == d2.day
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.SameMonth = function(t1, t2)
-  -- function num : 0_9 , upvalues : _ENV
+function _G.SameMonth(t1, t2)
   local d1 = _time(t1)
   local d2 = _time(t2)
-  do return d1.year == d2.year and d1.month == d2.month end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return d1.year == d2.year and d1.month == d2.month
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.Day0time = function(t)
-  -- function num : 0_10 , upvalues : _ENV
-  local l_GMT_zero_time = (math.floor)(t / 86400) * 86400
+function _G.Day0time(t)
+  local l_GMT_zero_time = math.floor(t / 86400) * 86400
   local l_time_zone_diff = _curTimeZone() * 3600
   local l_zone_zero_time = l_GMT_zero_time - l_time_zone_diff
-  if t - l_zone_zero_time >= 86400 then
+  if 86400 <= t - l_zone_zero_time then
     l_zone_zero_time = l_zone_zero_time + 86400
   end
   return l_zone_zero_time
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.TodayPastTimeSec = function(t)
-  -- function num : 0_11 , upvalues : _ENV
-  if not t then
-    local t1 = _NOW0()
-  end
+function _G.TodayPastTimeSec(t)
+  local t1 = t or _NOW0()
   local l_today_sec = t1 - Day0time(t1)
   return l_today_sec
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.Day24time = function(t)
-  -- function num : 0_12 , upvalues : _ENV
-  if not t then
-    return (math.ceil)(_NOW0() / 86400) * 86400
-  end
+function _G.Day24time(t)
+  return math.ceil((t or _NOW0()) / 86400) * 86400
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.GetDayKeyNum = function(t)
-  -- function num : 0_13 , upvalues : _ENV
-  if not t then
-    local now = _now()
-  end
+function _G.GetDayKeyNum(t)
+  local now = t or _now()
   local d = _time(now)
   local dk = d.year * 10000 + d.month * 100 + d.day
   return dk
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.DaysBetweenTwoDate = function(t1, t2)
-  -- function num : 0_14 , upvalues : _ENV
+function _G.DaysBetweenTwoDate(t1, t2)
   local oldtime = _time(t1)
   local newtime = _time(t2)
   if oldtime.year == newtime.year then
     return newtime.yday - oldtime.yday
+  elseif oldtime.year > newtime.year then
+    return -DaysBetweenTwoDate(t2, t1)
   else
-    if newtime.year < oldtime.year then
-      return -DaysBetweenTwoDate(t2, t1)
-    else
-      local day = 0
-      for i = oldtime.year, newtime.year do
-        local isLeap = i % 4 == 0 and i % 100 ~= 0 and i % 400 == 0
-        if not isLeap or not 365 then
-          day = day + (i ~= oldtime.year or 366) - oldtime.yday
-          if not isLeap or not 365 then
-            do
-              day = day + (i == newtime.year or 366)
-              day = day + newtime.yday
-              -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC68: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
-        end
+    local day = 0
+    for i = oldtime.year, newtime.year do
+      local isLeap = i % 4 == 0 and i % 100 ~= 0 and i % 400 == 0
+      if i == oldtime.year then
+        day = day + (isLeap and 365 or 366) - oldtime.yday
+      elseif i ~= newtime.year then
+        day = day + (isLeap and 365 or 366)
+      else
+        day = day + newtime.yday
       end
-      return day
     end
+    return day
   end
-  -- DECOMPILER ERROR: 9 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.InDayTime = function(range, now)
-  -- function num : 0_15 , upvalues : _ENV
+function _G.InDayTime(range, now)
   local t0 = Day0time(now) / 60000
   local s = t0 + range[1] * 600 + range[2]
   local e = t0 + range[3] * 600 + range[4]
-  do return s <= t0 and t0 <= e end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return t0 >= s and t0 <= e
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.DaysInclude = function(t1, t2, hour)
-  -- function num : 0_16 , upvalues : _ENV
+function _G.DaysInclude(t1, t2, hour)
   return SameDay(t1 - hour * 60 * 60 * 1000, t2 - hour * 60 * 60 * 1000)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R4 in 'UnsetPending'
-
 if language ~= LanguageType.us then
-  _G.TimeToDate = function(t, s)
-  -- function num : 0_17 , upvalues : _ENV
-  local d = _time(t)
-  if not s or s == "sec" then
-    return (string.format)("%04d-%02d-%02d %02d:%02d:%02d", d.year, d.month, d.day, d.hour, d.min, d.sec)
-  else
-    if s == "day" then
-      return (string.format)("%04d-%02d-%02d", d.year, d.month, d.day)
-    else
-      if s == "hour" then
-        return (string.format)("%04d-%02d-%02d %02d", d.year, d.month, d.day, d.hour)
-      else
-        if s == "min" then
-          return (string.format)("%04d-%02d-%02d %02d:%02d", d.year, d.month, d.day, d.hour, d.min)
-        end
-      end
+  function _G.TimeToDate(t, s)
+    local d = _time(t)
+    
+    if not s or s == "sec" then
+      return string.format("%04d-%02d-%02d %02d:%02d:%02d", d.year, d.month, d.day, d.hour, d.min, d.sec)
+    elseif s == "day" then
+      return string.format("%04d-%02d-%02d", d.year, d.month, d.day)
+    elseif s == "hour" then
+      return string.format("%04d-%02d-%02d %02d", d.year, d.month, d.day, d.hour)
+    elseif s == "min" then
+      return string.format("%04d-%02d-%02d %02d:%02d", d.year, d.month, d.day, d.hour, d.min)
     end
   end
-end
-
-  -- DECOMPILER ERROR at PC83: Confused about usage of register: R4 in 'UnsetPending'
-
-  _G.TimeToDateNoY = function(s)
-  -- function num : 0_18 , upvalues : _ENV
-  local d = _time(s)
-  return (string.format)("%02d-%02d %02d:%02d", d.month, d.day, d.hour, d.min)
-end
-
+  
+  function _G.TimeToDateNoY(s)
+    local d = _time(s)
+    return string.format("%02d-%02d %02d:%02d", d.month, d.day, d.hour, d.min)
+  end
 else
-  -- DECOMPILER ERROR at PC87: Confused about usage of register: R4 in 'UnsetPending'
-
-  _G.TimeToDate = function(t, s)
-  -- function num : 0_19 , upvalues : _ENV
-  local d = _time(t)
-  if not s or s == "sec" then
-    return (string.format)("%04d/%02d/%02d %02d:%02d:%02d", d.year, d.month, d.day, d.hour, d.min, d.sec)
-  else
-    if s == "day" then
-      return (string.format)("%04d/%02d/%02d", d.year, d.month, d.day)
-    else
-      if s == "hour" then
-        return (string.format)("%04d/%02d/%02d %02d", d.year, d.month, d.day, d.hour)
-      else
-        if s == "min" then
-          return (string.format)("%04d/%02d/%02d %02d:%02d", d.year, d.month, d.day, d.hour, d.min)
-        end
-      end
+  function _G.TimeToDate(t, s)
+    local d = _time(t)
+    
+    if not s or s == "sec" then
+      return string.format("%04d/%02d/%02d %02d:%02d:%02d", d.year, d.month, d.day, d.hour, d.min, d.sec)
+    elseif s == "day" then
+      return string.format("%04d/%02d/%02d", d.year, d.month, d.day)
+    elseif s == "hour" then
+      return string.format("%04d/%02d/%02d %02d", d.year, d.month, d.day, d.hour)
+    elseif s == "min" then
+      return string.format("%04d/%02d/%02d %02d:%02d", d.year, d.month, d.day, d.hour, d.min)
     end
+  end
+  
+  function _G.TimeToDateNoY(s)
+    local d = _time(s)
+    return string.format("%02d/%02d %02d:%02d", d.month, d.day, d.hour, d.min)
   end
 end
 
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R4 in 'UnsetPending'
-
-  _G.TimeToDateNoY = function(s)
-  -- function num : 0_20 , upvalues : _ENV
-  local d = _time(s)
-  return (string.format)("%02d/%02d %02d:%02d", d.month, d.day, d.hour, d.min)
-end
-
-end
--- DECOMPILER ERROR at PC93: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.ToDay = function(sec)
-  -- function num : 0_21 , upvalues : _ENV
+function _G.ToDay(sec)
   local day = sec / 86400 - sec / 86400 % 1
   local hour = sec / 86400 % 1 * 60 * 24 * 1
-  return (string.format)((StringTable.Get)("str_common_days"), day) .. ToHour(hour)
+  return string.format(StringTable.Get("str_common_days"), day) .. ToHour(hour)
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.ToHour = function(seconds)
-  -- function num : 0_22 , upvalues : _ENV
+function _G.ToHour(seconds)
   local hour = seconds / 3600 - seconds / 3600 % 1
   local min = seconds / 3600 % 1 * 60 * 60 * 1
   return hour .. ":" .. ToMinutes(min)
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.ToMinutes = function(seconds)
-  -- function num : 0_23
+function _G.ToMinutes(seconds)
   local minutes = seconds / 60 - seconds / 60 % 1
   seconds = seconds / 60 % 1 * 60 - seconds / 60 % 1 * 60 % 1
   if seconds <= 9 then
@@ -304,279 +203,205 @@ _G.ToMinutes = function(seconds)
   return minutes .. ":" .. seconds
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.ToTiming = function(seconds)
-  -- function num : 0_24 , upvalues : _ENV
-  if seconds > 86400 then
+function _G.ToTiming(seconds)
+  if 86400 < seconds then
     return ToDay(seconds)
+  elseif 3600 < seconds then
+    return ToHour(seconds)
+  elseif 60 < seconds then
+    return ToMinutes(seconds)
   else
-    if seconds > 3600 then
-      return ToHour(seconds)
-    else
-      if seconds > 60 then
-        return ToMinutes(seconds)
-      else
-        return "" .. seconds
-      end
-    end
+    return "" .. seconds
   end
 end
-
--- DECOMPILER ERROR at PC109: Confused about usage of register: R4 in 'UnsetPending'
 
 if language ~= LanguageType.us then
-  _G.ToTimingFormat2 = function(seconds)
-  -- function num : 0_25 , upvalues : _ENV, toint
-  if seconds > 3600 then
-    local format = nil
-    local hour = seconds / 3600 - seconds / 3600 % 1
-    local min = seconds / 3600 % 1 * 60 * 60
-    local minutes = min / 60 - min / 60 % 1
-    seconds = min / 60 % 1 * 60 - min / 60 % 1 * 60 % 1
-    format = (StringTable.Get)("str_common_hhmmss", toint(hour), toint(minutes), toint(seconds))
-    return format
-  else
-    do
-      if seconds > 60 then
-        local format = nil
-        local minutes = (seconds) / 60 - (seconds) / 60 % 1
-        seconds = (seconds) / 60 % 1 * 60 - (seconds) / 60 % 1 * 60 % 1
-        format = (StringTable.Get)("str_common_mmss", toint(minutes), toint(seconds))
-        return format
-      else
-        do
-          local format = (StringTable.Get)("str_common_ss", seconds)
-          do return format end
-        end
-      end
+  function _G.ToTimingFormat2(seconds)
+    if 3600 < seconds then
+      local format
+      
+      local hour = seconds / 3600 - seconds / 3600 % 1
+      local min = seconds / 3600 % 1 * 60 * 60
+      local minutes = min / 60 - min / 60 % 1
+      seconds = min / 60 % 1 * 60 - min / 60 % 1 * 60 % 1
+      format = StringTable.Get("str_common_hhmmss", toint(hour), toint(minutes), toint(seconds))
+      return format
+    elseif 60 < seconds then
+      local format
+      local minutes = seconds / 60 - seconds / 60 % 1
+      seconds = seconds / 60 % 1 * 60 - seconds / 60 % 1 * 60 % 1
+      format = StringTable.Get("str_common_mmss", toint(minutes), toint(seconds))
+      return format
+    else
+      local format = StringTable.Get("str_common_ss", seconds)
+      return format
     end
   end
-end
-
 else
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R4 in 'UnsetPending'
-
-  _G.ToTimingFormat2 = function(seconds)
-  -- function num : 0_26 , upvalues : toint
-  if seconds > 3600 then
-    local format = nil
-    local hour = seconds / 3600 - seconds / 3600 % 1
-    local min = seconds / 3600 % 1 * 60 * 60
-    local minutes = min / 60 - min / 60 % 1
-    seconds = min / 60 % 1 * 60 - min / 60 % 1 * 60 % 1
-    format = toint(hour) .. ":" .. toint(minutes) .. ":" .. toint(seconds)
-    return format
-  else
-    do
-      if seconds > 60 then
-        local format = nil
-        local minutes = (seconds) / 60 - (seconds) / 60 % 1
-        seconds = (seconds) / 60 % 1 * 60 - (seconds) / 60 % 1 * 60 % 1
-        format = toint(minutes) .. ":" .. toint(seconds)
-        return format
-      else
-        do
-          local format = seconds
-          do return format end
-        end
-      end
+  function _G.ToTimingFormat2(seconds)
+    if 3600 < seconds then
+      local format
+      
+      local hour = seconds / 3600 - seconds / 3600 % 1
+      local min = seconds / 3600 % 1 * 60 * 60
+      local minutes = min / 60 - min / 60 % 1
+      seconds = min / 60 % 1 * 60 - min / 60 % 1 * 60 % 1
+      format = toint(hour) .. ":" .. toint(minutes) .. ":" .. toint(seconds)
+      return format
+    elseif 60 < seconds then
+      local format
+      local minutes = seconds / 60 - seconds / 60 % 1
+      seconds = seconds / 60 % 1 * 60 - seconds / 60 % 1 * 60 % 1
+      format = toint(minutes) .. ":" .. toint(seconds)
+      return format
+    else
+      local format = seconds
+      return format
     end
   end
 end
 
-end
--- DECOMPILER ERROR at PC116: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.ToTimingFormat = function(seconds)
-  -- function num : 0_27 , upvalues : _ENV
-  if seconds > 3600 then
-    local format = nil
+function _G.ToTimingFormat(seconds)
+  if 3600 < seconds then
+    local format
     local hour = seconds / 3600 - seconds / 3600 % 1
     local min = seconds / 3600 % 1 * 60 * 60
-    if (math.floor)(hour / 10) == 0 then
+    if math.floor(hour / 10) == 0 then
       format = "0" .. hour .. ":"
     else
       format = hour .. ":"
     end
     local minutes = min / 60 - min / 60 % 1
     seconds = min / 60 % 1 * 60 - min / 60 % 1 * 60 % 1
-    if (math.floor)(minutes / 10) == 0 then
+    if math.floor(minutes / 10) == 0 then
       format = format .. "0" .. minutes .. ":"
     else
       format = format .. minutes .. ":"
     end
-    if (math.floor)((seconds) / 10) == 0 then
+    if math.floor(seconds / 10) == 0 then
+      format = format .. "0" .. seconds
+    else
+      format = format .. seconds
+    end
+    return format
+  elseif 60 < seconds then
+    local format
+    local minutes = seconds / 60 - seconds / 60 % 1
+    seconds = seconds / 60 % 1 * 60 - seconds / 60 % 1 * 60 % 1
+    if math.floor(minutes / 10) == 0 then
+      format = "0" .. minutes .. ":"
+    else
+      format = minutes .. ":"
+    end
+    if math.floor(seconds / 10) == 0 then
       format = format .. "0" .. seconds
     else
       format = format .. seconds
     end
     return format
   else
-    do
-      if seconds > 60 then
-        local format = nil
-        local minutes = (seconds) / 60 - (seconds) / 60 % 1
-        seconds = (seconds) / 60 % 1 * 60 - (seconds) / 60 % 1 * 60 % 1
-        if (math.floor)(minutes / 10) == 0 then
-          format = "0" .. minutes .. ":"
-        else
-          format = minutes .. ":"
-        end
-        if (math.floor)((seconds) / 10) == 0 then
-          format = format .. "0" .. seconds
-        else
-          format = format .. seconds
-        end
-        return format
-      else
-        do
-          local format = nil
-          if (math.floor)((seconds) / 10) == 0 then
-            format = "0" .. seconds
-          else
-            format = seconds
-          end
-          do return "00:" .. format end
-        end
-      end
+    local format
+    if math.floor(seconds / 10) == 0 then
+      format = "0" .. seconds
+    else
+      format = seconds
     end
+    return "00:" .. format
   end
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.ToTimingFormat3 = function(seconds)
-  -- function num : 0_28 , upvalues : _ENV
-  if seconds > 3600 then
-    local format = nil
+function _G.ToTimingFormat3(seconds)
+  if 3600 < seconds then
+    local format
     local hour = seconds / 3600 - seconds / 3600 % 1
     local min = seconds / 3600 % 1 * 60 * 60
-    if (math.floor)(hour / 10) == 0 then
+    if math.floor(hour / 10) == 0 then
       format = "0" .. hour .. ":"
     else
       format = hour .. ":"
     end
     local minutes = min / 60 - min / 60 % 1
     seconds = min / 60 % 1 * 60 - min / 60 % 1 * 60 % 1
-    if (math.floor)(minutes / 10) == 0 then
+    if math.floor(minutes / 10) == 0 then
       format = format .. "0" .. minutes .. ":"
     else
       format = format .. minutes .. ":"
     end
-    if (math.floor)((seconds) / 10) == 0 then
+    if math.floor(seconds / 10) == 0 then
+      format = format .. "0" .. seconds
+    else
+      format = format .. seconds
+    end
+    return format
+  elseif 60 < seconds then
+    local format
+    local minutes = seconds / 60 - seconds / 60 % 1
+    seconds = seconds / 60 % 1 * 60 - seconds / 60 % 1 * 60 % 1
+    if math.floor(minutes / 10) == 0 then
+      format = "00:0" .. minutes .. ":"
+    else
+      format = "00:" .. minutes .. ":"
+    end
+    if math.floor(seconds / 10) == 0 then
       format = format .. "0" .. seconds
     else
       format = format .. seconds
     end
     return format
   else
-    do
-      if seconds > 60 then
-        local format = nil
-        local minutes = (seconds) / 60 - (seconds) / 60 % 1
-        seconds = (seconds) / 60 % 1 * 60 - (seconds) / 60 % 1 * 60 % 1
-        if (math.floor)(minutes / 10) == 0 then
-          format = "00:0" .. minutes .. ":"
-        else
-          format = "00:" .. minutes .. ":"
-        end
-        if (math.floor)((seconds) / 10) == 0 then
-          format = format .. "0" .. seconds
-        else
-          format = format .. seconds
-        end
-        return format
-      else
-        do
-          local format = nil
-          if (math.floor)((seconds) / 10) == 0 then
-            format = "0" .. seconds
-          else
-            format = seconds
-          end
-          do return "00:00:" .. format end
-        end
-      end
+    local format
+    if math.floor(seconds / 10) == 0 then
+      format = "0" .. seconds
+    else
+      format = seconds
     end
+    return "00:00:" .. format
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.ToTimingFormat4 = function(miliSeconds)
-  -- function num : 0_29 , upvalues : _ENV
-  local tenMiliSeconds = (math.floor)(miliSeconds % 1000 / 10)
-  local seconds = (math.floor)(miliSeconds / 1000)
-  local minutes = (math.floor)(seconds / 60)
-  local hours = (math.floor)(minutes / 60)
-  return (string.format)("%02d:%02d:%02d:%02d", hours % 100, minutes % 60, seconds % 60, tenMiliSeconds)
+function _G.ToTimingFormat4(miliSeconds)
+  local tenMiliSeconds = math.floor(miliSeconds % 1000 / 10)
+  local seconds = math.floor(miliSeconds / 1000)
+  local minutes = math.floor(seconds / 60)
+  local hours = math.floor(minutes / 60)
+  return string.format("%02d:%02d:%02d:%02d", hours % 100, minutes % 60, seconds % 60, tenMiliSeconds)
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.TimeToDate2 = function(t, s)
-  -- function num : 0_30 , upvalues : _ENV
+function _G.TimeToDate2(t, s)
   local d = _time(t)
   if not s or s == "sec" then
-    return (string.format)("%04d-%02d-%02d %02d-%02d-%06.3f", d.year, d.month, d.day, d.hour, d.min, d.sec)
-  else
-    if s == "day" then
-      return (string.format)("%04d-%02d-%02d", d.year, d.month, d.day)
-    else
-      if s == "hour" then
-        return (string.format)("%04d-%02d-%02d %02d", d.year, d.month, d.day, d.hour)
-      else
-        if s == "min" then
-          return (string.format)("%04d-%02d-%02d %02d-%02d", d.year, d.month, d.day, d.hour, d.min)
-        end
-      end
-    end
+    return string.format("%04d-%02d-%02d %02d-%02d-%06.3f", d.year, d.month, d.day, d.hour, d.min, d.sec)
+  elseif s == "day" then
+    return string.format("%04d-%02d-%02d", d.year, d.month, d.day)
+  elseif s == "hour" then
+    return string.format("%04d-%02d-%02d %02d", d.year, d.month, d.day, d.hour)
+  elseif s == "min" then
+    return string.format("%04d-%02d-%02d %02d-%02d", d.year, d.month, d.day, d.hour, d.min)
   end
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.TimeToDate3 = function(t, s)
-  -- function num : 0_31 , upvalues : _ENV
+function _G.TimeToDate3(t, s)
   local d = _time(t)
   if not s or s == "sec" then
-    return (string.format)("%04d/%02d/%02d %02d/%02d/%06.3f", d.year, d.month, d.day, d.hour, d.min, d.sec)
-  else
-    if s == "day" then
-      return (string.format)("%04d/%02d/%02d", d.year, d.month, d.day)
-    else
-      if s == "hour" then
-        return (string.format)("%04d/%02d/%02d %02d", d.year, d.month, d.day, d.hour)
-      else
-        if s == "min" then
-          return (string.format)("%04d/%02d/%02d %02d:%02d", d.year, d.month, d.day, d.hour, d.min)
-        end
-      end
-    end
+    return string.format("%04d/%02d/%02d %02d/%02d/%06.3f", d.year, d.month, d.day, d.hour, d.min, d.sec)
+  elseif s == "day" then
+    return string.format("%04d/%02d/%02d", d.year, d.month, d.day)
+  elseif s == "hour" then
+    return string.format("%04d/%02d/%02d %02d", d.year, d.month, d.day, d.hour)
+  elseif s == "min" then
+    return string.format("%04d/%02d/%02d %02d:%02d", d.year, d.month, d.day, d.hour, d.min)
   end
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R4 in 'UnsetPending'
-
-_G.TimeToDate4 = function(t, s)
-  -- function num : 0_32 , upvalues : _ENV
+function _G.TimeToDate4(t, s)
   local d = _time(t)
   if not s or s == "sec" then
-    return (string.format)("%04d.%02d.%02d %02d.%02d.%06.3f", d.year, d.month, d.day, d.hour, d.min, d.sec)
-  else
-    if s == "day" then
-      return (string.format)("%04d.%02d.%02d", d.year, d.month, d.day)
-    else
-      if s == "hour" then
-        return (string.format)("%04d.%02d.%02d %02d", d.year, d.month, d.day, d.hour)
-      else
-        if s == "min" then
-          return (string.format)("%04d.%02d.%02d %02d:%02d", d.year, d.month, d.day, d.hour, d.min)
-        end
-      end
-    end
+    return string.format("%04d.%02d.%02d %02d.%02d.%06.3f", d.year, d.month, d.day, d.hour, d.min, d.sec)
+  elseif s == "day" then
+    return string.format("%04d.%02d.%02d", d.year, d.month, d.day)
+  elseif s == "hour" then
+    return string.format("%04d.%02d.%02d %02d", d.year, d.month, d.day, d.hour)
+  elseif s == "min" then
+    return string.format("%04d.%02d.%02d %02d:%02d", d.year, d.month, d.day, d.hour, d.min)
   end
 end
-
-

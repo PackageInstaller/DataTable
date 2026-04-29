@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_rubik_cube_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayRubikCubeInstruction", BaseInstruction)
 PlayRubikCubeInstruction = PlayRubikCubeInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayRubikCubeInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayRubikCubeInstruction:Constructor(paramList)
   self._rotateRootName = "RubikCubeRotateRoot"
   self._rotateRootPos = Vector3(-1, -3.5, 0)
   self._rotateTime = tonumber(paramList.rotateTime) or 3000
@@ -21,16 +14,13 @@ PlayRubikCubeInstruction.Constructor = function(self, paramList)
   self._glowEffectID2 = tonumber(paramList.glowEffectID2)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayRubikCubeInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.RubikCube)
   if resultArray == nil then
-    (Log.fatal)("PlayRubikCubeInstruction, result is nil.")
-    return 
+    Log.fatal("PlayRubikCubeInstruction, result is nil.")
+    return
   end
   local playSkillInstructionService = world:GetService("PlaySkillInstruction")
   local pieceService = world:GetService("Piece")
@@ -43,22 +33,14 @@ PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
   local renderBoardEntity = world:GetRenderBoardEntity()
   local renderBoardComponent = renderBoardEntity:RenderBoard()
   local renderMultiBoardComponent = renderBoardEntity:RenderMultiBoard()
-  local rotateRoot = ((UnityEngine.GameObject).Find)(self._rotateRootName)
-  if not rotateRoot then
-    rotateRoot = (UnityEngine.GameObject):New(self._rotateRootName)
-  end
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (rotateRoot.transform).position = self._rotateRootPos
-  -- DECOMPILER ERROR at PC66: Confused about usage of register: R19 in 'UnsetPending'
-
-  ;
-  (rotateRoot.transform).localEulerAngles = Vector3.zero
-  local rubikModle = ((UnityEngine.GameObject).Find)("mfro_pfb_magiccube")
-  local rubikRotateModle = ((UnityEngine.GameObject).Find)("mfro_mod_magiccube_01")
+  local rotateRoot = UnityEngine.GameObject.Find(self._rotateRootName)
+  rotateRoot = rotateRoot or UnityEngine.GameObject:New(self._rotateRootName)
+  rotateRoot.transform.position = self._rotateRootPos
+  rotateRoot.transform.localEulerAngles = Vector3.zero
+  local rubikModle = UnityEngine.GameObject.Find("mfro_pfb_magiccube")
+  local rubikRotateModle = UnityEngine.GameObject.Find("mfro_mod_magiccube_01")
   local sceneEffectScale = Vector3(0.998, 0.998, 0.998)
-  for moveIndex,v in ipairs(resultArray) do
+  for moveIndex, v in ipairs(resultArray) do
     local targetAngle = v:GetRubikCubeTargetAngle()
     local arrPiece = {}
     local allEntity = {}
@@ -66,57 +48,63 @@ PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
     local prismResult = v:GetRubikCubePrisms()
     local convertResult = v:GetConvertColors()
     local trapDestoryList = v:GetTrapDestroyList()
-    for i,r in ipairs(convertResult) do
+    for i, r in ipairs(convertResult) do
       local oldPos, newPos, oldPieceType, newPieceType, fromBoard, toBoard = r[1], r[2], r[3], r[4], r[5], r[6]
-      local pieceEntity = nil
+      local pieceEntity
       if fromBoard == 1 then
         pieceEntity = pieceService:FindPieceEntity(oldPos)
       else
         pieceEntity = PieceMultiService:FindPieceEntity(fromBoard, oldPos)
       end
       if pieceEntity then
-        local t = {pieceEntity, oldPos, newPos, fromBoard, toBoard}
+        local t = {
+          pieceEntity,
+          oldPos,
+          newPos,
+          fromBoard,
+          toBoard
+        }
         allEntity[#allEntity + 1] = t
       end
     end
-    for i,r in ipairs(entityResult) do
-      local eid, oldPos, newPos, fromBoard, toBoard = (table.unpack)(r)
+    for i, r in ipairs(entityResult) do
+      local eid, oldPos, newPos, fromBoard, toBoard = table.unpack(r)
       local e = world:GetEntityByID(eid)
       if e then
-        local t = {e, oldPos, newPos, fromBoard, toBoard}
+        local t = {
+          e,
+          oldPos,
+          newPos,
+          fromBoard,
+          toBoard
+        }
         allEntity[#allEntity + 1] = t
       end
     end
-    for i,v in ipairs(allEntity) do
+    for i, v in ipairs(allEntity) do
       local e = v[1]
       local oldPos = v[2]
       local newPos = v[3]
       local fromBoard = v[4]
       local toBoard = v[5]
-      do
-        if e:HasView() then
-          local entityTransform = ((e:View()):GetGameObject()).transform
-          entityTransform.parent = rotateRoot.transform
-        end
-        if e:MonsterID() then
-          self:_ShowMonsterHPBar(e, false)
-          if fromBoard == 1 then
-            renderEntityService:DestroyMonsterAreaOutLineEntity(e)
-            local curPos = boardServiceRender:GetRealEntityGridPos(e)
-            local pos = curPos - (e:GridLocation()):GetGridOffset()
-            local bodyArea = (e:BodyArea()):GetArea()
-            for _,area in ipairs(bodyArea) do
-              local workPos = area + pos
-              local curPieceAnim = pieceService:GetPieceAnimation(workPos)
-              if curPieceAnim == "Down" then
-                pieceService:SetPieceAnimUp(workPos)
-              end
+      if e:HasView() then
+        local entityTransform = e:View():GetGameObject().transform
+        entityTransform.parent = rotateRoot.transform
+      end
+      if e:MonsterID() then
+        self:_ShowMonsterHPBar(e, false)
+        if fromBoard == 1 then
+          renderEntityService:DestroyMonsterAreaOutLineEntity(e)
+          local curPos = boardServiceRender:GetRealEntityGridPos(e)
+          local pos = curPos - e:GridLocation():GetGridOffset()
+          local bodyArea = e:BodyArea():GetArea()
+          for _, area in ipairs(bodyArea) do
+            local workPos = area + pos
+            local curPieceAnim = pieceService:GetPieceAnimation(workPos)
+            if curPieceAnim == "Down" then
+              pieceService:SetPieceAnimUp(workPos)
             end
           end
-        end
-        do
-          -- DECOMPILER ERROR at PC220: LeaveBlock: unexpected jumping out DO_STMT
-
         end
       end
     end
@@ -124,129 +112,63 @@ PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
     local cutAngle = Vector3(0, 0, 0)
     local glowAngle = Vector3(0, 0, 0)
     local aloneBoardID = v:GetAloneBoard()
-    -- DECOMPILER ERROR at PC247: Confused about usage of register: R38 in 'UnsetPending'
-
     if aloneBoardID == 6 then
-      (rubikModle.transform).localEulerAngles = Vector3(0, 0, 0)
+      rubikModle.transform.localEulerAngles = Vector3(0, 0, 0)
       cutPos = Vector3(-1, -3.5, 0.5)
       cutAngle = Vector3(0, 90, 0)
       glowAngle = Vector3(0, 270, 0)
-    else
-      -- DECOMPILER ERROR at PC275: Confused about usage of register: R38 in 'UnsetPending'
-
-      if aloneBoardID == 5 then
-        (rubikModle.transform).localEulerAngles = Vector3(0, 180, 0)
-        cutPos = Vector3(-1, -3.5, -0.5)
-        cutAngle = Vector3(0, 90, 0)
-        glowAngle = Vector3(0, 90, 0)
-      else
-        -- DECOMPILER ERROR at PC303: Confused about usage of register: R38 in 'UnsetPending'
-
-        if aloneBoardID == 2 then
-          (rubikModle.transform).localEulerAngles = Vector3(0, 90, 0)
-          cutPos = Vector3(-0.5, -3.5, 0)
-          cutAngle = Vector3(0, 0, 0)
-          glowAngle = Vector3(0, 0, 0)
-        else
-          -- DECOMPILER ERROR at PC331: Confused about usage of register: R38 in 'UnsetPending'
-
-          if aloneBoardID == 4 then
-            (rubikModle.transform).localEulerAngles = Vector3(0, 270, 0)
-            cutPos = Vector3(-1.5, -3.5, 0)
-            cutAngle = Vector3(0, 0, 0)
-            glowAngle = Vector3(0, 180, 0)
-          end
-        end
-      end
+    elseif aloneBoardID == 5 then
+      rubikModle.transform.localEulerAngles = Vector3(0, 180, 0)
+      cutPos = Vector3(-1, -3.5, -0.5)
+      cutAngle = Vector3(0, 90, 0)
+      glowAngle = Vector3(0, 90, 0)
+    elseif aloneBoardID == 2 then
+      rubikModle.transform.localEulerAngles = Vector3(0, 90, 0)
+      cutPos = Vector3(-0.5, -3.5, 0)
+      cutAngle = Vector3(0, 0, 0)
+      glowAngle = Vector3(0, 0, 0)
+    elseif aloneBoardID == 4 then
+      rubikModle.transform.localEulerAngles = Vector3(0, 270, 0)
+      cutPos = Vector3(-1.5, -3.5, 0)
+      cutAngle = Vector3(0, 0, 0)
+      glowAngle = Vector3(0, 180, 0)
     end
     local startEffect = effectService:CreateWorldPositionEffect(self._startEffectID, cutPos)
-    local startEffectObj = (startEffect:View()):GetGameObject()
-    -- DECOMPILER ERROR at PC359: Confused about usage of register: R40 in 'UnsetPending'
-
-    ;
-    (startEffectObj.transform).localEulerAngles = cutAngle
-    -- DECOMPILER ERROR at PC361: Confused about usage of register: R40 in 'UnsetPending'
-
-    ;
-    (startEffectObj.transform).localScale = sceneEffectScale
+    local startEffectObj = startEffect:View():GetGameObject()
+    startEffectObj.transform.localEulerAngles = cutAngle
+    startEffectObj.transform.localScale = sceneEffectScale
     YIELD(TT, self._startWaitTime)
     local glowEffect1 = effectService:CreateWorldPositionEffect(self._glowEffectID1, self._rotateRootPos)
-    local glowEffectObj1 = (glowEffect1:View()):GetGameObject()
+    local glowEffectObj1 = glowEffect1:View():GetGameObject()
     local glowEffect2 = effectService:CreateWorldPositionEffect(self._glowEffectID2, self._rotateRootPos)
-    local glowEffectObj2 = (glowEffect2:View()):GetGameObject()
-    -- DECOMPILER ERROR at PC384: Confused about usage of register: R44 in 'UnsetPending'
-
-    ;
-    (glowEffectObj2.transform).parent = rotateRoot.transform
-    -- DECOMPILER ERROR at PC386: Confused about usage of register: R44 in 'UnsetPending'
-
-    ;
-    (glowEffectObj1.transform).localEulerAngles = glowAngle
-    -- DECOMPILER ERROR at PC388: Confused about usage of register: R44 in 'UnsetPending'
-
-    ;
-    (glowEffectObj1.transform).localScale = sceneEffectScale
-    -- DECOMPILER ERROR at PC390: Confused about usage of register: R44 in 'UnsetPending'
-
-    ;
-    (glowEffectObj2.transform).localEulerAngles = glowAngle
-    -- DECOMPILER ERROR at PC392: Confused about usage of register: R44 in 'UnsetPending'
-
-    ;
-    (glowEffectObj2.transform).localScale = sceneEffectScale
+    local glowEffectObj2 = glowEffect2:View():GetGameObject()
+    glowEffectObj2.transform.parent = rotateRoot.transform
+    glowEffectObj1.transform.localEulerAngles = glowAngle
+    glowEffectObj1.transform.localScale = sceneEffectScale
+    glowEffectObj2.transform.localEulerAngles = glowAngle
+    glowEffectObj2.transform.localScale = sceneEffectScale
     local rotateEffect = effectService:CreateWorldPositionEffect(self._rotateEffectID, cutPos)
-    local rotateEffectObj = (rotateEffect:View()):GetGameObject()
-    -- DECOMPILER ERROR at PC403: Confused about usage of register: R46 in 'UnsetPending'
-
-    ;
-    (rotateEffectObj.transform).parent = rotateRoot.transform
-    -- DECOMPILER ERROR at PC405: Confused about usage of register: R46 in 'UnsetPending'
-
-    ;
-    (rotateEffectObj.transform).localEulerAngles = cutAngle
-    -- DECOMPILER ERROR at PC407: Confused about usage of register: R46 in 'UnsetPending'
-
-    ;
-    (rotateEffectObj.transform).localScale = sceneEffectScale
-    -- DECOMPILER ERROR at PC410: Confused about usage of register: R46 in 'UnsetPending'
-
-    ;
-    (rubikRotateModle.transform).parent = rotateRoot.transform
-    ;
-    (rotateRoot.transform):DORotate(targetAngle, self._rotateTime / 1000)
+    local rotateEffectObj = rotateEffect:View():GetGameObject()
+    rotateEffectObj.transform.parent = rotateRoot.transform
+    rotateEffectObj.transform.localEulerAngles = cutAngle
+    rotateEffectObj.transform.localScale = sceneEffectScale
+    rubikRotateModle.transform.parent = rotateRoot.transform
+    rotateRoot.transform:DORotate(targetAngle, self._rotateTime / 1000)
     local completeEffect = effectService:CreateWorldPositionEffect(self._completeEffectID, cutPos)
-    local completeEffectObj = (completeEffect:View()):GetGameObject()
-    -- DECOMPILER ERROR at PC426: Confused about usage of register: R48 in 'UnsetPending'
-
-    ;
-    (completeEffectObj.transform).localEulerAngles = cutAngle
-    -- DECOMPILER ERROR at PC428: Confused about usage of register: R48 in 'UnsetPending'
-
-    ;
-    (completeEffectObj.transform).localScale = sceneEffectScale
+    local completeEffectObj = completeEffect:View():GetGameObject()
+    completeEffectObj.transform.localEulerAngles = cutAngle
+    completeEffectObj.transform.localScale = sceneEffectScale
     YIELD(TT, self._rotateTime)
-    -- DECOMPILER ERROR at PC435: Confused about usage of register: R48 in 'UnsetPending'
-
-    ;
-    (rubikRotateModle.transform).parent = rubikModle.transform
-    -- DECOMPILER ERROR at PC442: Confused about usage of register: R48 in 'UnsetPending'
-
-    ;
-    (rubikRotateModle.transform).localEulerAngles = Vector3(0, 0, 0)
-    -- DECOMPILER ERROR at PC449: Confused about usage of register: R48 in 'UnsetPending'
-
-    ;
-    (rubikRotateModle.transform).localPosition = Vector3(0, 0, 0)
-    -- DECOMPILER ERROR at PC456: Confused about usage of register: R48 in 'UnsetPending'
-
-    ;
-    (rubikModle.transform).localEulerAngles = Vector3(0, 0, 0)
-    for i,r in ipairs(entityResult) do
-      local eid, oldPos, newPos, fromBoard, toBoard = (table.unpack)(r)
+    rubikRotateModle.transform.parent = rubikModle.transform
+    rubikRotateModle.transform.localEulerAngles = Vector3(0, 0, 0)
+    rubikRotateModle.transform.localPosition = Vector3(0, 0, 0)
+    rubikModle.transform.localEulerAngles = Vector3(0, 0, 0)
+    for i, r in ipairs(entityResult) do
+      local eid, oldPos, newPos, fromBoard, toBoard = table.unpack(r)
       local e = world:GetEntityByID(eid)
       if e then
         if e:HasView() then
-          local entityTransform = ((e:View()):GetGameObject()).transform
+          local entityTransform = e:View():GetGameObject().transform
           if toBoard == 1 then
             entityTransform.parent = nil
           else
@@ -254,28 +176,18 @@ PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
             entityTransform.parent = boardRoot.transform
           end
         end
-        do
-          if e:MonsterID() and toBoard == 1 then
-            self:_ShowMonsterHPBar(e, true)
-          end
-          do
-            local locationComponent = e:Location()
-            if locationComponent then
-              e:SetPosition(newPos)
-            end
-            -- DECOMPILER ERROR at PC505: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC505: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC505: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if e:MonsterID() and toBoard == 1 then
+          self:_ShowMonsterHPBar(e, true)
+        end
+        local locationComponent = e:Location()
+        if locationComponent then
+          e:SetPosition(newPos)
         end
       end
     end
-    for i,r in ipairs(convertResult) do
+    for i, r in ipairs(convertResult) do
       local oldPos, newPos, oldPieceType, newPieceType, fromBoard, toBoard = r[1], r[2], r[3], r[4], r[5], r[6]
-      local pieceEntity = nil
+      local pieceEntity
       if fromBoard == 1 then
         pieceEntity = pieceService:FindPieceEntity(oldPos)
       else
@@ -283,7 +195,7 @@ PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
       end
       if pieceEntity then
         if pieceEntity:HasView() then
-          local entityTransform = ((pieceEntity:View()):GetGameObject()).transform
+          local entityTransform = pieceEntity:View():GetGameObject().transform
           if fromBoard == 1 then
             entityTransform.parent = nil
           else
@@ -291,26 +203,16 @@ PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
             entityTransform.parent = boardRoot.transform
           end
         end
-        do
-          do
-            local locationComponent = pieceEntity:Location()
-            if locationComponent then
-              pieceEntity:SetPosition(oldPos)
-            end
-            -- DECOMPILER ERROR at PC557: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC557: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC557: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        local locationComponent = pieceEntity:Location()
+        if locationComponent then
+          pieceEntity:SetPosition(oldPos)
         end
       end
     end
     local notRefreshPrism = true
-    for _,r in ipairs(convertResult) do
+    for _, r in ipairs(convertResult) do
       local oldPos, newPos, oldPieceType, newPieceType, fromBoard, toBoard = r[1], r[2], r[3], r[4], r[5], r[6]
-      local newGridEntity = nil
+      local newGridEntity
       if toBoard == 1 then
         newGridEntity = boardServiceRender:ReCreateGridEntity(newPieceType, newPos, false, false, notRefreshPrism)
       else
@@ -319,54 +221,40 @@ PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
         PieceMultiService:SetPieceAnimDown(toBoard, newPos)
       end
     end
-    for i,r in ipairs(convertResult) do
+    for i, r in ipairs(convertResult) do
       local oldPos, newPos, oldPieceType, newPieceType, fromBoard, toBoard = r[1], r[2], r[3], r[4], r[5], r[6]
-      local pieceEntity = nil
+      local pieceEntity
       if fromBoard == 1 then
         pieceEntity = pieceService:FindPieceEntity(oldPos)
       else
         pieceEntity = PieceMultiService:FindPieceEntity(fromBoard, oldPos)
       end
       if pieceEntity and pieceEntity:HasView() then
-        local entityTransform = ((pieceEntity:View()):GetGameObject()).transform
-        -- DECOMPILER ERROR at PC639: Unhandled construct in 'MakeBoolean' P1
-
-        if fromBoard == 1 and entityTransform.parent ~= nil then
-          entityTransform.parent = nil
-        end
-        do
+        local entityTransform = pieceEntity:View():GetGameObject().transform
+        if fromBoard == 1 then
+          if entityTransform.parent ~= nil then
+            entityTransform.parent = nil
+          end
+        else
           local boardRoot = renderMultiBoardComponent:GetMultiBoardRootGameObject(fromBoard)
           if entityTransform.parent ~= boardRoot.transform then
             entityTransform.parent = boardRoot.transform
           end
-          local locationComponent = pieceEntity:Location()
-          if locationComponent then
-            pieceEntity:SetPosition(oldPos)
-          end
-          local go = (pieceEntity:View()):GetGameObject()
-          -- DECOMPILER ERROR at PC667: Confused about usage of register: R64 in 'UnsetPending'
-
-          ;
-          (go.transform).localEulerAngles = Vector3(0, 0, 0)
-          local pieceComponent = pieceEntity:Piece()
-          do
-            local curPiecePrefabObj = pieceComponent:GetBaseLayerObj()
-            -- DECOMPILER ERROR at PC680: Confused about usage of register: R66 in 'UnsetPending'
-
-            if curPiecePrefabObj then
-              (curPiecePrefabObj.transform).localEulerAngles = Vector3(0, 0, 0)
-            end
-            -- DECOMPILER ERROR at PC681: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC681: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC681: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        end
+        local locationComponent = pieceEntity:Location()
+        if locationComponent then
+          pieceEntity:SetPosition(oldPos)
+        end
+        local go = pieceEntity:View():GetGameObject()
+        go.transform.localEulerAngles = Vector3(0, 0, 0)
+        local pieceComponent = pieceEntity:Piece()
+        local curPiecePrefabObj = pieceComponent:GetBaseLayerObj()
+        if curPiecePrefabObj then
+          curPiecePrefabObj.transform.localEulerAngles = Vector3(0, 0, 0)
         end
       end
     end
-    for _,r in pairs(prismResult) do
+    for _, r in pairs(prismResult) do
       local oldPos, newPos, fromBoard, toBoard, pieceEffectType = r[1], r[2], r[3], r[4], r[5]
       if fromBoard == 1 then
         pieceService:SetPieceRenderEffect(oldPos, PieceEffectType.Normal)
@@ -380,7 +268,7 @@ PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
       end
     end
     local donotPlayDie = true
-    for _,entityID in ipairs(trapDestoryList) do
+    for _, entityID in ipairs(trapDestoryList) do
       local entity = world:GetEntityByID(entityID)
       trapSvc:PlayTrapDieSkill(TT, {entity}, donotPlayDie)
     end
@@ -390,16 +278,11 @@ PlayRubikCubeInstruction.DoInstruction = function(self, TT, casterEntity, phaseC
   pieceService:RefreshMonsterAreaOutLine(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayRubikCubeInstruction._ShowMonsterHPBar = function(self, monsterEntity, isShow)
-  -- function num : 0_2
+function PlayRubikCubeInstruction:_ShowMonsterHPBar(monsterEntity, isShow)
   local cHP = monsterEntity:HP()
   if not cHP then
-    return 
+    return
   end
   cHP:SetShowHPSliderState(isShow)
   monsterEntity:ReplaceHPComponent()
 end
-
-

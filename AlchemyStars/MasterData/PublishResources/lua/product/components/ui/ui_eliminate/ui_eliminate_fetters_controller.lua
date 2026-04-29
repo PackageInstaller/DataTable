@@ -1,59 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_eliminate/ui_eliminate_fetters_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEliminateFettersController", UIController)
 UIEliminateFettersController = UIEliminateFettersController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEliminateFettersController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIEliminateFettersController:OnShow(uiParams)
   local fettersID = uiParams[1]
   local topBarPool = self:GetUIComponent("UISelectObjectPath", "CommonTopBar")
   local topBtns = topBarPool:SpawnObject("UINewCommonTopButton")
   topBtns:SetData(function()
-    -- function num : 0_0_0 , upvalues : self
     self:_Close()
-  end
-)
-  self._fettersCfgList = (Cfg.cfg_anipop_fetters)({FettersID = fettersID})
+  end)
+  self._fettersCfgList = Cfg.cfg_anipop_fetters({FettersID = fettersID})
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
   self._anim = self:GetUIComponent("Animation", "anim")
   self:_InitComponent()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateFettersController._InitComponent = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._widgets = (self._content):SpawnObjects("UIEliminateFettersItem", #self._fettersCfgList)
-  for i,widget in pairs(self._widgets) do
-    widget:SetData((self._fettersCfgList)[i])
+function UIEliminateFettersController:_InitComponent()
+  self._widgets = self._content:SpawnObjects("UIEliminateFettersItem", #self._fettersCfgList)
+  for i, widget in pairs(self._widgets) do
+    widget:SetData(self._fettersCfgList[i])
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateFettersController._CheckGuide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.CN7PopStarStep4)
+function UIEliminateFettersController:_CheckGuide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.CN7PopStarStep4)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEliminateFettersController._Close = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIEliminateFettersController:_Close()
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
     self:Lock("uieff_UIEliminateFettersController_out")
-    ;
-    (self._anim):Play("uieff_UIEliminateFettersController_out")
+    self._anim:Play("uieff_UIEliminateFettersController_out")
     YIELD(TT, 400)
     self:UnLock("uieff_UIEliminateFettersController_out")
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

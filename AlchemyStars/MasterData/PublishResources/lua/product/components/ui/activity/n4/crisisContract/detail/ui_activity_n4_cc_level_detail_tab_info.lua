@@ -1,83 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n4/crisisContract/detail/ui_activity_n4_cc_level_detail_tab_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN4CCLevelDetailTabInfo", UICustomWidget)
 UIActivityN4CCLevelDetailTabInfo = UIActivityN4CCLevelDetailTabInfo
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN4CCLevelDetailTabInfo.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN4CCLevelDetailTabInfo:OnShow(uiParams)
   self:InitWidget()
   self:AttachEvent(GameEventType.OnCCAffixChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTabInfo.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityN4CCLevelDetailTabInfo:OnHide()
   self:DetachEvent(GameEventType.OnCCAffixChanged, self._Refresh)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTabInfo.InitWidget = function(self)
-  -- function num : 0_2
+function UIActivityN4CCLevelDetailTabInfo:InitWidget()
   self.txtAff = self:GetUIComponent("UILocalizationText", "txtAff")
   self.txtEff = self:GetUIComponent("UILocalizationText", "txtEff")
   local effPool = self:GetUIComponent("UISelectObjectPath", "effPool")
   self.effItems = effPool:SpawnObjects("UIActivityN4CCLevelDetailEffItem", 3)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTabInfo.Init = function(self, context)
-  -- function num : 0_3
+function UIActivityN4CCLevelDetailTabInfo:Init(context)
   self._context = context
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTabInfo.SetData = function(self, cfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UIActivityN4CCLevelDetailTabInfo:SetData(cfg)
   self._cfg = cfg
-  self._maxAffixNum = (self._cfg).AffixNum
+  self._maxAffixNum = self._cfg.AffixNum
   local desc = {}
-  for k,subDescKey in pairs((self._cfg).BossDesc) do
-    (table.insert)(desc, (StringTable.Get)(subDescKey))
+  for k, subDescKey in pairs(self._cfg.BossDesc) do
+    table.insert(desc, StringTable.Get(subDescKey))
   end
-  ;
-  (self.txtAff):SetText((table.concat)(desc, "\n"))
+  self.txtAff:SetText(table.concat(desc, "\n"))
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN4CCLevelDetailTabInfo._Refresh = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local affixArray = (self._context):GetAffix((self._cfg).CampaignMissionId)
+function UIActivityN4CCLevelDetailTabInfo:_Refresh()
+  local affixArray = self._context:GetAffix(self._cfg.CampaignMissionId)
   local num = 0
   if affixArray then
     num = #affixArray
   end
-  ;
-  (self.txtEff):SetText(num .. "/" .. self._maxAffixNum)
-  for i,v in ipairs(self.effItems) do
-    local bLock, effId = nil, nil
-    if self._maxAffixNum < i then
+  self.txtEff:SetText(num .. "/" .. self._maxAffixNum)
+  for i, v in ipairs(self.effItems) do
+    local bLock, effId
+    if i > self._maxAffixNum then
       bLock = true
-    else
-      if i <= num then
-        effId = affixArray[i]
-      end
+    elseif num >= i then
+      effId = affixArray[i]
     end
     v:SetData(effId, bLock, function()
-    -- function num : 0_5_0 , upvalues : self
-    self:ShowDialog("UIActivityN4CCAffixSelectController", self._context, self._cfg)
-  end
-)
+      self:ShowDialog("UIActivityN4CCAffixSelectController", self._context, self._cfg)
+    end)
   end
 end
-
-

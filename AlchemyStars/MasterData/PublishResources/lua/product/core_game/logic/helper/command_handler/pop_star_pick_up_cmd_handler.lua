@@ -1,42 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/command_handler/pop_star_pick_up_cmd_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("command_base_handler")
 _class("PopStarPickUpCommandHandler", CommandBaseHandler)
 PopStarPickUpCommandHandler = PopStarPickUpCommandHandler
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PopStarPickUpCommandHandler.DoHandleCommand = function(self, cmd)
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.notice)("Handle PopStarPickUpCommand")
+function PopStarPickUpCommandHandler:DoHandleCommand(cmd)
+  Log.notice("Handle PopStarPickUpCommand")
   local gridPos = cmd:GetCmdPickUpPos()
   local isValid = self:CheckPickUpPosValid(gridPos)
   if not isValid then
-    return 
+    return
   end
-  local popStarSvc = (self._world):GetService("PopStarLogic")
+  local popStarSvc = self._world:GetService("PopStarLogic")
   local connectPieces = popStarSvc:CalculatePopStarConnectPieces(gridPos)
   if connectPieces and #connectPieces == 0 then
-    return 
+    return
   end
   popStarSvc:SetPopConnectPieces(connectPieces)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.WaitInputFinish, 1)
+  self._world:EventDispatcher():Dispatch(GameEventType.WaitInputFinish, 1)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PopStarPickUpCommandHandler.CheckPickUpPosValid = function(self, gridPos)
-  -- function num : 0_1 , upvalues : _ENV
-  local utilDataSvc = (self._world):GetService("UtilData")
+function PopStarPickUpCommandHandler:CheckPickUpPosValid(gridPos)
+  local utilDataSvc = self._world:GetService("UtilData")
   local isValid = utilDataSvc:IsValidPiecePos(gridPos)
   if not isValid then
-    (Log.fatal)("PopStarPickUpCommand Invalid pos error, pick pos: ", (Vector2.Pos2Index)(gridPos))
+    Log.fatal("PopStarPickUpCommand Invalid pos error, pick pos: ", Vector2.Pos2Index(gridPos))
     return false
   end
   return true
 end
-
-

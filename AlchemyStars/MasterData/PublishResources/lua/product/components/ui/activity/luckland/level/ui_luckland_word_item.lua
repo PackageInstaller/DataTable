@@ -1,32 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/level/ui_luckland_word_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandWordItem", UICustomWidget)
 UILuckLandWordItem = UILuckLandWordItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandWordItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILuckLandWordItem:OnShow(uiParams)
   self:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandWordItem._InitWidget = function(self)
-  -- function num : 0_1
+function UILuckLandWordItem:_InitWidget()
   self._desc = self:GetUIComponent("UILocalizationText", "Desc")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandWordItem.SetData = function(self, index, id)
-  -- function num : 0_2 , upvalues : _ENV
+function UILuckLandWordItem:SetData(index, id)
   self._index = index
-  self._wordCfg = (Cfg.cfg_luckland_client_word)[id]
-  ;
-  (self._desc):SetText((StringTable.Get)((self._wordCfg).Name))
+  self._wordCfg = Cfg.cfg_luckland_client_word[id]
+  self._desc:SetText(StringTable.Get(self._wordCfg.Name))
 end
-
-

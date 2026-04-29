@@ -1,102 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/cmpt/super_entity_cmpt_l.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SuperEntityComponent", Object)
 SuperEntityComponent = SuperEntityComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SuperEntityComponent.Constructor = function(self, entity)
-  -- function num : 0_0
+function SuperEntityComponent:Constructor(entity)
   self._superEntity = entity
   self._useSuperView = false
   self._useSuperPetAttackData = false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SuperEntityComponent.GetSuperEntity = function(self)
-  -- function num : 0_1
+function SuperEntityComponent:GetSuperEntity()
   return self._superEntity
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SuperEntityComponent.IsUseSuperEntityView = function(self)
-  -- function num : 0_2
+function SuperEntityComponent:IsUseSuperEntityView()
   return self._useSuperView
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SuperEntityComponent.SetUseSuperEntityViewState = function(self, state)
-  -- function num : 0_3
+function SuperEntityComponent:SetUseSuperEntityViewState(state)
   self._useSuperView = state
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SuperEntityComponent.IsUseSuperPetAttackData = function(self)
-  -- function num : 0_4
+function SuperEntityComponent:IsUseSuperPetAttackData()
   return self._useSuperPetAttackData
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SuperEntityComponent.SetUseSuperPetAttackData = function(self, state)
-  -- function num : 0_5
+function SuperEntityComponent:SetUseSuperPetAttackData(state)
   self._useSuperPetAttackData = state
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SuperEntityComponent.GetBuffSkillHolderCasterEntityID = function(self)
-  -- function num : 0_6
+function SuperEntityComponent:GetBuffSkillHolderCasterEntityID()
   return self._buffCasterEntityID
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SuperEntityComponent.SetBuffSkillHolderCasterEntityID = function(self, buffCasterEntityID)
-  -- function num : 0_7
+function SuperEntityComponent:SetBuffSkillHolderCasterEntityID(buffCasterEntityID)
   self._buffCasterEntityID = buffCasterEntityID
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.SuperEntityComponent = function(self)
-  -- function num : 0_8
-  return self:GetComponent((self.WEComponentsEnum).SuperEntity)
+function Entity:SuperEntityComponent()
+  return self:GetComponent(self.WEComponentsEnum.SuperEntity)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddSuperEntity = function(self, entity)
-  -- function num : 0_9 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).SuperEntity
+function Entity:AddSuperEntity(entity)
+  local index = self.WEComponentsEnum.SuperEntity
   local component = SuperEntityComponent:New(entity)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.GetSuperEntity = function(self)
-  -- function num : 0_10
-  local index = (self.WEComponentsEnum).SuperEntity
+function Entity:GetSuperEntity()
+  local index = self.WEComponentsEnum.SuperEntity
   local superEntityCmp = self:GetComponent(index)
   if not superEntityCmp then
-    return 
+    return
   end
   return superEntityCmp:GetSuperEntity()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasSuperEntity = function(self)
-  -- function num : 0_11
-  local index = (self.WEComponentsEnum).SuperEntity
+function Entity:HasSuperEntity()
+  local index = self.WEComponentsEnum.SuperEntity
   return self:HasComponent(index)
 end
-
-

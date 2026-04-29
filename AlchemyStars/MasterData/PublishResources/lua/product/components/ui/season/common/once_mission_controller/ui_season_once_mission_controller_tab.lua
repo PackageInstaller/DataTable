@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/common/once_mission_controller/ui_season_once_mission_controller_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonOnceMissionControllerTab", UICustomWidget)
 UISeasonOnceMissionControllerTab = UISeasonOnceMissionControllerTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonOnceMissionControllerTab.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonOnceMissionControllerTab:OnShow(uiParams)
   self:InitWidget()
   self:Deselect()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.OnHide = function(self)
-  -- function num : 0_1
+function UISeasonOnceMissionControllerTab:OnHide()
   self:CancelTimer()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonOnceMissionControllerTab:InitWidget()
   self.title = self:GetUIComponent("UILocalizationText", "Title")
   self.new = self:GetGameObject("New")
   self.locked = self:GetGameObject("Locked")
@@ -36,167 +23,115 @@ UISeasonOnceMissionControllerTab.InitWidget = function(self)
   self.rootRawImage = self:GetUIComponent("RawImageLoader", "Root")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.SetData = function(self, onceMissionData, idx, cpt, onSelect)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonOnceMissionControllerTab:SetData(onceMissionData, idx, cpt, onSelect)
   self._index = idx
   self._onSelect = onSelect
   self._onceMissionData = onceMissionData
   self._cpt = cpt
   self._firstCheckTimeUnlock = true
-  local cfg = (Cfg.cfg_season_brance_tab)[cpt:GetComponentCfgId()]
+  local cfg = Cfg.cfg_season_brance_tab[cpt:GetComponentCfgId()]
   if cfg then
-    (self.title):SetText((StringTable.Get)(cfg.TabName))
-    ;
-    (self.logoTitle):LoadImage(cfg.TabNamePic)
-    ;
-    (self.rootRawImage):LoadImage(cfg.TabPicture)
+    self.title:SetText(StringTable.Get(cfg.TabName))
+    self.logoTitle:LoadImage(cfg.TabNamePic)
+    self.rootRawImage:LoadImage(cfg.TabPicture)
   end
   self:RefreshTime()
   self:RefreshNew()
   self:RefreshState()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.RefreshState = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonOnceMissionControllerTab:RefreshState()
   self:CancelTimer()
-  local state = (self._onceMissionData):GetCompState(self._cpt)
-  ;
-  (self._notOpenGo):SetActive(state == SeasonOnceMissionData.ComState_NotOpen)
-  ;
-  (self.closed):SetActive(state == SeasonOnceMissionData.ComState_Closed)
-  ;
-  (self.locked):SetActive(state == SeasonOnceMissionData.ComState_OpenButLock)
-  local cmpInfo = (self._cpt):GetComponentInfo()
+  local state = self._onceMissionData:GetCompState(self._cpt)
+  self._notOpenGo:SetActive(state == SeasonOnceMissionData.ComState_NotOpen)
+  self.closed:SetActive(state == SeasonOnceMissionData.ComState_Closed)
+  self.locked:SetActive(state == SeasonOnceMissionData.ComState_OpenButLock)
+  local cmpInfo = self._cpt:GetComponentInfo()
   if cmpInfo.m_need_mission_id > 0 then
-    local missionName = ((Cfg.cfg_season_mission)[cmpInfo.m_need_mission_id]).Name
-    local lvName = (StringTable.Get)(missionName)
-    ;
-    (self.lockText):SetText((StringTable.Get)("str_season_level_pre_condition_tip", lvName))
+    local missionName = Cfg.cfg_season_mission[cmpInfo.m_need_mission_id].Name
+    local lvName = StringTable.Get(missionName)
+    self.lockText:SetText(StringTable.Get("str_season_level_pre_condition_tip", lvName))
   end
-  if state ~= SeasonOnceMissionData.ComState_Closed or state == SeasonOnceMissionData.ComState_NotOpen then
-    self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_4_0 , upvalues : self
-    self:RefreshTime()
-  end
-)
-  end
-  if (state ~= SeasonOnceMissionData.ComState_OpenButLock or state == SeasonOnceMissionData.ComState_Normal) then
-    -- DECOMPILER ERROR: 8 unprocessed JMP targets
+  if state == SeasonOnceMissionData.ComState_Closed then
+  elseif state == SeasonOnceMissionData.ComState_NotOpen then
+    self._timerHandler = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
+      self:RefreshTime()
+    end)
+  elseif state == SeasonOnceMissionData.ComState_OpenButLock then
+  elseif state == SeasonOnceMissionData.ComState_Normal then
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.RefreshNew = function(self)
-  -- function num : 0_5
-  local bNew = (self._onceMissionData):HasNewByComp(self._cpt)
-  ;
-  (self.new):SetActive(bNew)
+function UISeasonOnceMissionControllerTab:RefreshNew()
+  local bNew = self._onceMissionData:HasNewByComp(self._cpt)
+  self.new:SetActive(bNew)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.Deselect = function(self)
-  -- function num : 0_6
+function UISeasonOnceMissionControllerTab:Deselect()
   self:_PlayAnim("down")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.Select = function(self)
-  -- function num : 0_7
+function UISeasonOnceMissionControllerTab:Select()
   self:_PlayAnim("up")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.RootOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local state = (self._onceMissionData):GetCompState(self._cpt)
+function UISeasonOnceMissionControllerTab:RootOnClick(go)
+  local state = self._onceMissionData:GetCompState(self._cpt)
   if state == SeasonOnceMissionData.ComState_Closed then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-  else
-    if state == SeasonOnceMissionData.ComState_NotOpen then
-      (ToastManager.ShowToast)((StringTable.Get)("str_season_s5_branch_tab_lock"))
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+  elseif state == SeasonOnceMissionData.ComState_NotOpen then
+    ToastManager.ShowToast(StringTable.Get("str_season_s5_branch_tab_lock"))
+  elseif state == SeasonOnceMissionData.ComState_OpenButLock then
+    if self._firstCheckTimeUnlock then
+      self._firstCheckTimeUnlock = false
+      self:RequestOnceMissionData()
     else
-      if state == SeasonOnceMissionData.ComState_OpenButLock then
-        if self._firstCheckTimeUnlock then
-          self._firstCheckTimeUnlock = false
-          self:RequestOnceMissionData()
-        else
-          local cmpInfo = (self._cpt):GetComponentInfo()
-          if cmpInfo.m_need_mission_id > 0 then
-            local missionName = ((Cfg.cfg_season_mission)[cmpInfo.m_need_mission_id]).Name
-            local lvName = (StringTable.Get)(missionName)
-            ;
-            (ToastManager.ShowToast)((StringTable.Get)("str_season_level_pre_condition_tip", lvName))
-          end
-        end
-      else
-        do
-          if state == SeasonOnceMissionData.ComState_Normal then
-            (self._onSelect)(self._index)
-          end
-        end
+      local cmpInfo = self._cpt:GetComponentInfo()
+      if cmpInfo.m_need_mission_id > 0 then
+        local missionName = Cfg.cfg_season_mission[cmpInfo.m_need_mission_id].Name
+        local lvName = StringTable.Get(missionName)
+        ToastManager.ShowToast(StringTable.Get("str_season_level_pre_condition_tip", lvName))
       end
     end
+  elseif state == SeasonOnceMissionData.ComState_Normal then
+    self._onSelect(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.ReadNew = function(self)
-  -- function num : 0_9
-  local bNew = (self._onceMissionData):HasNewByComp(self._cpt)
+function UISeasonOnceMissionControllerTab:ReadNew()
+  local bNew = self._onceMissionData:HasNewByComp(self._cpt)
   if bNew then
-    (self._onceMissionData):SetNewAsReadBy(self._cpt)
+    self._onceMissionData:SetNewAsReadBy(self._cpt)
     self:RefreshNew()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.CancelTimer = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISeasonOnceMissionControllerTab:CancelTimer()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.RequestOnceMissionData = function(self)
-  -- function num : 0_11
+function UISeasonOnceMissionControllerTab:RequestOnceMissionData()
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self
     self:Lock("UISeasonOnceMissionControllerTab:CancelTimer")
-    ;
-    (self._onceMissionData):ForceLoadData(TT)
+    self._onceMissionData:ForceLoadData(TT)
     self:RefreshState()
     self:UnLock("UISeasonOnceMissionControllerTab:CancelTimer")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab.RefreshTime = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local cInfo = (self._cpt):GetComponentInfo()
+function UISeasonOnceMissionControllerTab:RefreshTime()
+  local cInfo = self._cpt:GetComponentInfo()
   if not cInfo then
-    return 
+    return
   end
   local openTime = cInfo.m_unlock_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  local timeStr = (StringTable.Get)("str_season_debris_locktime", (UIActivityCustomHelper.GetTimeString)(openTime - curTime))
-  ;
-  (self.openCountDown):SetText(timeStr)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  local timeStr = StringTable.Get("str_season_debris_locktime", UIActivityCustomHelper.GetTimeString(openTime - curTime))
+  self.openCountDown:SetText(timeStr)
   if openTime <= curTime then
     self:CancelTimer()
     if self._firstCheckTimeUnlock then
@@ -206,22 +141,18 @@ UISeasonOnceMissionControllerTab.RefreshTime = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonOnceMissionControllerTab._PlayAnim = function(self, idx, callback)
-  -- function num : 0_13 , upvalues : _ENV
+function UISeasonOnceMissionControllerTab:_PlayAnim(idx, callback)
   local tb = {
-up = {animName = "uieff_UISeasonOnceMissionControllerTab_up"}
-, 
-down = {animName = "uieff_UISeasonOnceMissionControllerTab_down"}
-}
+    up = {
+      animName = "uieff_UISeasonOnceMissionControllerTab_up"
+    },
+    down = {
+      animName = "uieff_UISeasonOnceMissionControllerTab_down"
+    }
+  }
   if tb[idx] ~= nil then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", (tb[idx]).animName, (tb[idx]).duration, callback)
-  else
-    if callback ~= nil then
-      callback()
-    end
+    UIWidgetHelper.PlayAnimation(self, "_anim", tb[idx].animName, tb[idx].duration, callback)
+  elseif callback ~= nil then
+    callback()
   end
 end
-
-

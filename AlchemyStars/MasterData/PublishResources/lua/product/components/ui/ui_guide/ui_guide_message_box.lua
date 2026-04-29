@@ -1,82 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_guide/ui_guide_message_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGuideMessageBox", UIMessageBox)
 UIGuideMessageBox = UIGuideMessageBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGuideMessageBox.Constructor = function(self)
-  -- function num : 0_0
+function UIGuideMessageBox:Constructor()
   self.closeCallback = nil
   self.isShow = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideMessageBox.OnShow = function(self)
-  -- function num : 0_1
+function UIGuideMessageBox:OnShow()
   local pool = self:GetUIComponent("UISelectObjectPath", "GuideLoader")
   local guideScript = pool:SpawnObject("UIGuide")
   self.guideScript = guideScript
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideMessageBox.Alert = function(self, popup, params)
-  -- function num : 0_2 , upvalues : _ENV
-  (Log.debug)("UIGuideMessageBox:Alert")
+function UIGuideMessageBox:Alert(popup, params)
+  Log.debug("UIGuideMessageBox:Alert")
   if self.isShow then
-    (GuideHelper.GuideLoadLock)(false, "Button")
-    return 
+    GuideHelper.GuideLoadLock(false, "Button")
+    return
   end
   self.isShow = true
-  ;
-  (self.guideScript):Init(params[1])
+  self.guideScript:Init(params[1])
   self.closeCallback = self:GetCallBack(popup)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideMessageBox.ClearCallback = function(self)
-  -- function num : 0_3
+function UIGuideMessageBox:ClearCallback()
   if self.isShow then
     self.isShow = false
     if self.closeCallback then
-      (self.closeCallback)()
+      self.closeCallback()
       self.closeCallback = nil
     end
-    ;
-    (self.guideScript):RemoveClick()
+    self.guideScript:RemoveClick()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideMessageBox.CloseGuid = function(self)
-  -- function num : 0_4
+function UIGuideMessageBox:CloseGuid()
   if self.closeCallback then
-    (self.closeCallback)()
+    self.closeCallback()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideMessageBox.GetCallBack = function(self, popup, btnCallback, param)
-  -- function num : 0_5 , upvalues : _ENV
+function UIGuideMessageBox:GetCallBack(popup, btnCallback, param)
   return function()
-    -- function num : 0_5_0 , upvalues : btnCallback, param, self, _ENV, popup
     if btnCallback then
       btnCallback(param)
     end
     self:SetShow(false)
-    ;
-    (Log.debug)("[UIPopup] UIMessageBox:GetCallBack request ClosePopup")
-    ;
-    ((GameGlobal.GuideMessageBoxMng)()):ClosePopup(popup)
+    Log.debug("[UIPopup] UIMessageBox:GetCallBack request ClosePopup")
+    GameGlobal.GuideMessageBoxMng():ClosePopup(popup)
   end
-
 end
-
-

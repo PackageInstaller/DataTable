@@ -1,14 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/pet/cfg_pet_view_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, CgOffset = 2, SpineOffset = 3}
+local key = {
+  ID = 1,
+  CgOffset = 2,
+  SpineOffset = 3
+}
 local common = {
-{0, 0}
+  {0, 0}
 }
 local config = {
-[1600011] = {1600011, common[1], common[1]}
+  [1600011] = {
+    1600011,
+    common[1],
+    common[1]
+  }
 }
 return config, "ID", key
-

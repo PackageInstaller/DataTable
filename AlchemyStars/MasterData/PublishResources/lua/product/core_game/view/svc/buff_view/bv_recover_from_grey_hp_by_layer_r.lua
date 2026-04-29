@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_recover_from_grey_hp_by_layer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("_buff_view_base_r")
 _class("BuffViewRecoverFromGreyHPByLayer", BuffViewBase)
 BuffViewRecoverFromGreyHPByLayer = BuffViewRecoverFromGreyHPByLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRecoverFromGreyHPByLayer.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0
+function BuffViewRecoverFromGreyHPByLayer:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewRecoverFromGreyHPByLayer.PlayView = function(self, TT)
-  -- function num : 0_1
-  local damageInfo = (self._buffResult):GetDamageInfo()
-  local playDamageService = (self._world):GetService("PlayDamage")
+function BuffViewRecoverFromGreyHPByLayer:PlayView(TT)
+  local damageInfo = self._buffResult:GetDamageInfo()
+  local playDamageService = self._world:GetService("PlayDamage")
   playDamageService:AsyncUpdateHPAndDisplayDamage(self._entity, damageInfo)
   local result = self._buffResult
   local greyHPVal = result:GetFinalGreyHPVal()
-  ;
-  (self._entity):ReplaceGreyHP(greyHPVal)
+  self._entity:ReplaceGreyHP(greyHPVal)
 end
-
-

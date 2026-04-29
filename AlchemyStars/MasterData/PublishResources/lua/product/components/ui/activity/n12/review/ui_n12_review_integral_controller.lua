@@ -1,52 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/review/ui_n12_review_integral_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12IntegralController_Review", UIController)
 UIN12IntegralController_Review = UIN12IntegralController_Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12IntegralController_Review.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12IntegralController_Review:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N12)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N12)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._progressInfo = (self._campaign):GetComponentInfo(ECampaignReviewN12ComponentID.ECAMPAIGN_REVIEW_ReviewN12_POINT_PROGRESS)
-  self._story_component = ((self._campaign):GetLocalProcess())._storyComponent
-  self._storyInfo = (self._campaign):GetComponentInfo(ECampaignReviewN12ComponentID.ECAMPAIGN_REVIEW_ReviewN12_STORY)
-  self._componentID = (self._story_component):GetComponetCfgId((self._campaign)._id, (self._storyInfo).m_component_id)
-  self._cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
+  self._progressInfo = self._campaign:GetComponentInfo(ECampaignReviewN12ComponentID.ECAMPAIGN_REVIEW_ReviewN12_POINT_PROGRESS)
+  self._story_component = self._campaign:GetLocalProcess()._storyComponent
+  self._storyInfo = self._campaign:GetComponentInfo(ECampaignReviewN12ComponentID.ECAMPAIGN_REVIEW_ReviewN12_STORY)
+  self._componentID = self._story_component:GetComponetCfgId(self._campaign._id, self._storyInfo.m_component_id)
+  self._cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12IntegralController_Review:OnShow(uiParams)
   self:_GetComponent()
   self:_SetValue(uiParams)
   self:_SetShow()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review._GetComponent = function(self)
-  -- function num : 0_2
+function UIN12IntegralController_Review:_GetComponent()
   self._surprised = self:GetGameObject("_surprised")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review._SetValue = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
-  self._photoCfg = (Cfg.cfg_n12_photo_wall)()
+function UIN12IntegralController_Review:_SetValue(uiParams)
+  self._photoCfg = Cfg.cfg_n12_photo_wall()
   self._atlas = self:GetAsset("UIN12.spriteatlas", LoadType.SpriteAtlas)
   self._commonTopBtn = nil
   self._wall = {}
@@ -54,121 +37,87 @@ UIN12IntegralController_Review._SetValue = function(self, uiParams)
   self:_SetDate()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review._SetDate = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local storyCfg = (Cfg.cfg_component_story)[self._componentID]
+function UIN12IntegralController_Review:_SetDate()
+  local storyCfg = Cfg.cfg_component_story[self._componentID]
   local storyidList = storyCfg.StoryID
   local storycountList = storyCfg.UnlockCount
   local lastid = 0
   for i = 1, #storyidList do
     local date = {}
-    date.last = (table.icontains)((self._storyInfo).m_recieved_reward_story, lastid)
+    date.last = table.icontains(self._storyInfo.m_recieved_reward_story, lastid)
     date.storyid = storyidList[i]
     lastid = date.storyid
     date.needcount = storycountList and storycountList[i] or 0
-    local photo = (self._photoCfg)[date.storyid]
+    local photo = self._photoCfg[date.storyid]
     date.photo = photo
-    if not (date.photo).LockIcon ~= date.last then
-      do
-        date.lock = date.needcount > (self._storyInfo).m_total_count
-        date.lock = true
-        if (date.photo).Surprised then
-          self._surprisedidx = i
-        end
-        ;
-        (table.insert)(self._storyDate, date)
-        -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC59: LeaveBlock: unexpected jumping out IF_STMT
-
-      end
+    if self._storyInfo.m_total_count >= date.needcount then
+      date.lock = not date.photo.LockIcon == date.last
+    else
+      date.lock = true
     end
+    if date.photo.Surprised then
+      self._surprisedidx = i
+    end
+    table.insert(self._storyDate, date)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review._SetShow = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._surprised):SetActive(false)
+function UIN12IntegralController_Review:_SetShow()
+  self._surprised:SetActive(false)
   local backBtn = self:GetUIComponent("UISelectObjectPath", "_backbtn")
   self._commonTopBtn = backBtn:SpawnObject("UICommonTopButton")
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_5_0 , upvalues : self, _ENV
+  self._commonTopBtn:SetData(function()
     if self:CheckOpen() then
-      return 
+      return
     end
     self:SwitchState(UIStateType.UIN12MainController_Review)
-  end
-)
-  local wallRoot = (self:GetGameObject("_wall")).transform
+  end)
+  local wallRoot = self:GetGameObject("_wall").transform
   for i = 1, wallRoot.childCount do
     local item = wallRoot:GetChild(i - 1)
     local loader = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
     local wall = loader:SpawnObject("UIN12PhotoReviewItem")
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self._wall)[#self._wall + 1] = wall
-    local cfg = (self._storyDate)[i]
+    self._wall[#self._wall + 1] = wall
+    local cfg = self._storyDate[i]
     wall:SetData(i, cfg, self._story_component, self._storyInfo, function(idx)
-    -- function num : 0_5_1 , upvalues : self
-    ((self._wall)[idx]):SetRed(false)
-    local nextWall = (self._wall)[idx + 1]
-    if nextWall and nextWall:GetsEnough() then
-      nextWall:SetRed(true, false)
-    end
-    if ((self._wall)[idx]):GetSurprised() then
-      (self._surprised):SetActive(true)
-    end
-  end
-, function()
-    -- function num : 0_5_2 , upvalues : self
-    return self:CheckOpen()
-  end
-)
+      self._wall[idx]:SetRed(false)
+      local nextWall = self._wall[idx + 1]
+      if nextWall and nextWall:GetsEnough() then
+        nextWall:SetRed(true, false)
+      end
+      if self._wall[idx]:GetSurprised() then
+        self._surprised:SetActive(true)
+      end
+    end, function()
+      return self:CheckOpen()
+    end)
   end
   local iteminfo = self:GetUIComponent("UISelectObjectPath", "_ItemInfo")
   self._iteminfo = iteminfo:SpawnObject("UISelectInfo")
-  if ((self._wall)[self._surprisedidx]):CheckStoryGotAwards() then
-    (self._surprised):SetActive(true)
+  if self._wall[self._surprisedidx]:CheckStoryGotAwards() then
+    self._surprised:SetActive(true)
   end
   self:_Roll2Target()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review._GetState = function(self, idx)
-  -- function num : 0_6
+function UIN12IntegralController_Review:_GetState(idx)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review._GetAllAward = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN12IntegralController_Review:_GetAllAward()
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     local c = self._progress_component
     local res = AsyncRequestRes:New()
     local awards = c:HandleOneKeyReceiveRewards(TT, res)
-    if awards and (table.count)(awards) > 0 then
-      (UIBlackFightReputationItem.ShowRewards)(awards)
+    if awards and table.count(awards) > 0 then
+      UIBlackFightReputationItem.ShowRewards(awards)
       self:_SetReputationsGot()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review._SetReputationsGot = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if self._reputations and (table.count)(self._reputations) > 0 then
-    for index,v in ipairs(self._reputations) do
+function UIN12IntegralController_Review:_SetReputationsGot()
+  if self._reputations and table.count(self._reputations) > 0 then
+    for index, v in ipairs(self._reputations) do
       if v.gotState == N12IntegralState.CanGet then
         v.gotState = N12IntegralState.Got
       end
@@ -176,59 +125,48 @@ UIN12IntegralController_Review._SetReputationsGot = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review._Roll2Target = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIN12IntegralController_Review:_Roll2Target()
   local reputations = self._reputations
   if not reputations then
-    return 
+    return
   end
-  if (table.count)(reputations) <= 0 then
-    return 
+  if table.count(reputations) <= 0 then
+    return
   end
-  local target = nil
-  for i,v in ipairs(reputations) do
+  local target
+  for i, v in ipairs(reputations) do
     if v.gotState == N12IntegralState.CanGet then
       target = i
       break
     end
   end
-  do
-    if not target then
-      for i,v in ipairs(reputations) do
-        if v.gotState == nil then
-          target = i
-          break
-        end
+  if not target then
+    for i, v in ipairs(reputations) do
+      if v.gotState == nil then
+        target = i
+        break
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review.CheckOpen = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  if not (self._campaign):CheckComponentOpen(ECampaignReviewN12ComponentID.ECAMPAIGN_REVIEW_ReviewN12_POINT_PROGRESS) then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_activity_over"))
+function UIN12IntegralController_Review:CheckOpen()
+  if not self._campaign:CheckComponentOpen(ECampaignReviewN12ComponentID.ECAMPAIGN_REVIEW_ReviewN12_POINT_PROGRESS) then
+    ToastManager.ShowToast(StringTable.Get("str_n12_activity_over"))
     self:SwitchState(UIStateType.UIMain)
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralController_Review._InitReputation = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  self._curReputation = (self._progressInfo).m_current_progress
+function UIN12IntegralController_Review:_InitReputation()
+  self._curReputation = self._progressInfo.m_current_progress
   self._reputations = {}
-  local receiveds = (self._progressInfo).m_received_progress
-  local progresses = (self._progressInfo).m_progress_rewards
-  local special = (self._progressInfo).m_special_rewards
-  if progresses and (table.count)(progresses) > 0 then
-    for key,reward in pairs(progresses) do
+  local receiveds = self._progressInfo.m_received_progress
+  local progresses = self._progressInfo.m_progress_rewards
+  local special = self._progressInfo.m_special_rewards
+  if progresses and table.count(progresses) > 0 then
+    for key, reward in pairs(progresses) do
       local rd = N12IntegralData:New()
       rd.reputation = key
       rd.awards = reward
@@ -236,7 +174,7 @@ UIN12IntegralController_Review._InitReputation = function(self)
         rd.isSpecial = true
       end
       local hasGot = false
-      hasGot = (self._progress_component):IsReceivedProgress(key)
+      hasGot = self._progress_component:IsReceivedProgress(key)
       if key <= self._curReputation then
         if hasGot then
           rd.gotState = N12IntegralState.Got
@@ -246,17 +184,10 @@ UIN12IntegralController_Review._InitReputation = function(self)
       else
         rd.gotState = nil
       end
-      ;
-      (table.insert)(self._reputations, rd)
+      table.insert(self._reputations, rd)
     end
-    ;
-    (table.sort)(self._reputations, function(a, b)
-    -- function num : 0_11_0
-    do return a.reputation < b.reputation end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+    table.sort(self._reputations, function(a, b)
+      return a.reputation < b.reputation
+    end)
   end
 end
-
-

@@ -1,30 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_explode_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddExplode", BuffViewBase)
 BuffViewAddExplode = BuffViewAddExplode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddExplode.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0 , upvalues : _ENV
-  local combo = ((self._world):GetService("RenderBattle")):GetComboNum()
-  ;
-  (Log.debug)("BuffViewAddExplode:IsNotifyMatch() show combo=", combo, " view combo=", (self._buffResult).combo)
-  do return (self._buffResult):GetCombo() <= combo end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BuffViewAddExplode:IsNotifyMatch(notify)
+  local combo = self._world:GetService("RenderBattle"):GetComboNum()
+  Log.debug("BuffViewAddExplode:IsNotifyMatch() show combo=", combo, " view combo=", self._buffResult.combo)
+  return combo >= self._buffResult:GetCombo()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddExplode.PlayView = function(self, TT, notify)
-  -- function num : 0_1
-  local effectService = (self._world):GetService("Effect")
-  local effectID = (self:ViewParams()).ExecEffectID
+function BuffViewAddExplode:PlayView(TT, notify)
+  local effectService = self._world:GetService("Effect")
+  local effectID = self:ViewParams().ExecEffectID
   effectService:CreateEffect(effectID, notify:GetDefenderEntity())
-  local playBuffSvc = (self._world):GetService("PlayBuff")
+  local playBuffSvc = self._world:GetService("PlayBuff")
   playBuffSvc:PlayDamageBuff(TT, self)
 end
-
-

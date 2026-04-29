@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_multi_stage_damage_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillMultiStageDamagePhase", PlaySkillPhaseBase)
 PlaySkillMultiStageDamagePhase = PlaySkillMultiStageDamagePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillMultiStageDamagePhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillMultiStageDamagePhase:PlayFlight(TT, casterEntity, phaseParam)
   local effectParam = phaseParam
   local turnToTarget = effectParam:GetTurnToTarget()
   local hitAnimName = effectParam:GetHitAnimName()
@@ -18,76 +11,64 @@ PlaySkillMultiStageDamagePhase.PlayFlight = function(self, TT, casterEntity, pha
   local intervalTime = effectParam:GetIntervalTime()
   local random = effectParam:GetRandom()
   local randomPercent = effectParam:GetRandomPercent()
-  local castPos = (casterEntity:GridLocation()).Position
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local castPos = casterEntity:GridLocation().Position
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local damageResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
-  do
-    if isFinalAttack then
-      local targetEntityID = self:_SortDistanceForFinalAttack(castPos, damageResultArray)
-      skillEffectResultContainer:SetFinalAttackEntityID(targetEntityID)
+  if isFinalAttack then
+    local targetEntityID = self:_SortDistanceForFinalAttack(castPos, damageResultArray)
+    skillEffectResultContainer:SetFinalAttackEntityID(targetEntityID)
+  end
+  if damageResultArray == nil then
+    return
+  end
+  local hasTargetDamageResultArray = {}
+  for _, v in ipairs(damageResultArray) do
+    local damageResult = v
+    local targetEntityID = damageResult:GetTargetID()
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
+    if targetEntity then
+      table.insert(hasTargetDamageResultArray, damageResult)
     end
-    if damageResultArray == nil then
-      return 
-    end
-    local hasTargetDamageResultArray = {}
-    for _,v in ipairs(damageResultArray) do
-      local damageResult = v
-      local targetEntityID = damageResult:GetTargetID()
-      local targetEntity = (self._world):GetEntityByID(targetEntityID)
-      if targetEntity then
-        (table.insert)(hasTargetDamageResultArray, damageResult)
-      end
-    end
-    if (table.count)(hasTargetDamageResultArray) == 0 then
-      return 
-    end
-    local utilCalcSvc = (self._world):GetService("UtilCalc")
-    local playSkillService = (self._world):GetService("PlaySkill")
-    local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
-    local listTask = {}
-    for i = 1, (table.count)(hasTargetDamageResultArray) do
-      local damageResult = hasTargetDamageResultArray[i]
-      local damageInfo = damageResult:GetDamageInfo(1)
-      local nTargetID = damageResult:GetTargetID()
-      local targetEntity = (self._world):GetEntityByID(nTargetID)
-      local damageGridPos = damageResult:GetGridPos()
-      local damageInfoList, damageStageValueList = utilCalcSvc:DamageInfoSplitMultiStage(damageInfo, stageCount, random, randomPercent)
-      local nTask = ((GameGlobal.TaskManager)()):CoreGameStartTask(playSkillService.HandleBeHitMultiStage, playSkillService, casterEntity, targetEntity, hitAnimName, hitEffectID, damageInfoList, damageGridPos, turnToTarget, isFinalAttack, skillID, damageStageValueList, intervalTime)
-      ;
-      (table.insert)(listTask, nTask)
-    end
-    do
-      while not (TaskHelper:GetInstance()):IsAllTaskFinished(listTask) do
-        YIELD(TT)
-      end
-    end
+  end
+  if table.count(hasTargetDamageResultArray) == 0 then
+    return
+  end
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local playSkillService = self._world:GetService("PlaySkill")
+  local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
+  local listTask = {}
+  for i = 1, table.count(hasTargetDamageResultArray) do
+    local damageResult = hasTargetDamageResultArray[i]
+    local damageInfo = damageResult:GetDamageInfo(1)
+    local nTargetID = damageResult:GetTargetID()
+    local targetEntity = self._world:GetEntityByID(nTargetID)
+    local damageGridPos = damageResult:GetGridPos()
+    local damageInfoList, damageStageValueList = utilCalcSvc:DamageInfoSplitMultiStage(damageInfo, stageCount, random, randomPercent)
+    local nTask = GameGlobal.TaskManager():CoreGameStartTask(playSkillService.HandleBeHitMultiStage, playSkillService, casterEntity, targetEntity, hitAnimName, hitEffectID, damageInfoList, damageGridPos, turnToTarget, isFinalAttack, skillID, damageStageValueList, intervalTime)
+    table.insert(listTask, nTask)
+  end
+  while not TaskHelper:GetInstance():IsAllTaskFinished(listTask) do
+    YIELD(TT)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillMultiStageDamagePhase._SortDistanceForFinalAttack = function(self, castPos, damageResultArray)
-  -- function num : 0_1 , upvalues : _ENV
-  local CmpDistancefunc = function(res1, res2)
-    -- function num : 0_1_0 , upvalues : _ENV, castPos
-    local dis1 = (math.abs)(castPos.x - (res1:GetGridPos()).x) + (math.abs)(castPos.y - (res1:GetGridPos()).y)
-    local dis2 = (math.abs)(castPos.x - (res2:GetGridPos()).x) + (math.abs)(castPos.y - (res2:GetGridPos()).y)
-    do return dis2 < dis1 end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function PlaySkillMultiStageDamagePhase:_SortDistanceForFinalAttack(castPos, damageResultArray)
+  local function CmpDistancefunc(res1, res2)
+    local dis1 = math.abs(castPos.x - res1:GetGridPos().x) + math.abs(castPos.y - res1:GetGridPos().y)
+    
+    local dis2 = math.abs(castPos.x - res2:GetGridPos().x) + math.abs(castPos.y - res2:GetGridPos().y)
+    return dis1 > dis2
   end
-
-  ;
-  (table.sort)(damageResultArray, CmpDistancefunc)
-  for _,v in ipairs(damageResultArray) do
+  
+  table.sort(damageResultArray, CmpDistancefunc)
+  for _, v in ipairs(damageResultArray) do
     local result = v
     local targetEntityID = result:GetTargetID()
-    local targetEntity = (self._world):GetEntityByID(targetEntityID)
+    local targetEntity = self._world:GetEntityByID(targetEntityID)
     if targetEntity:HasDeadFlag() then
       return targetEntityID
     end
   end
 end
-
-

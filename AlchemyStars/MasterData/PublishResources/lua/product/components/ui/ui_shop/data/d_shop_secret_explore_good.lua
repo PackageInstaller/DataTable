@@ -1,41 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/d_shop_secret_explore_good.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("d_shop_secret_good_base")
 _class("DShopSecretExploreGood", DShopSecretGoodBase)
 DShopSecretExploreGood = DShopSecretExploreGood
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DShopSecretExploreGood.Refresh = function(self, goodinfo, goodconfig)
-  -- function num : 0_0 , upvalues : _ENV
-  (DShopSecretGoodBase.Refresh)(self, goodinfo, goodconfig)
+function DShopSecretExploreGood:Refresh(goodinfo, goodconfig)
+  DShopSecretGoodBase.Refresh(self, goodinfo, goodconfig)
   if not self.cfg then
-    (Log.error)("服务器传来的商品配置缺失 商品id：" .. tostring(self.goodId) .. " 防御..使用本地配置")
-    self.localCfg = (Cfg.cfg_shop_mystery_goods)[self.goodId]
+    Log.error("服务器传来的商品配置缺失 商品id：" .. tostring(self.goodId) .. " 防御..使用本地配置")
+    self.localCfg = Cfg.cfg_shop_mystery_goods[self.goodId]
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretExploreGood.GetRemainTotalCount = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  return (self.cfg and (self.cfg)[ConfigKey.ConfigKey_SaleNum]) or (self.localCfg and (self.localCfg).SaleNum) or 1
+function DShopSecretExploreGood:GetRemainTotalCount()
+  return self.cfg and self.cfg[ConfigKey.ConfigKey_SaleNum] or self.localCfg and self.localCfg.SaleNum or 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretExploreGood.ShowRemain = function(self)
-  -- function num : 0_2
+function DShopSecretExploreGood:ShowRemain()
   return true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopSecretExploreGood.ShowSaleTag = function(self)
-  -- function num : 0_3
+function DShopSecretExploreGood:ShowSaleTag()
   return false
 end
-
-

@@ -1,150 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPhaseParamBase", Object)
 SkillPhaseParamBase = SkillPhaseParamBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseParamBase.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParamBase:Constructor(t)
   if t then
     self._hitTurnToTarget = t.hitTurnToTarget
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase.GetCacheTable = function(self, skillConfig, skinId)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.fatal)(self._className .. " not implicate GetCacheTable() !!!")
+function SkillPhaseParamBase:GetCacheTable(skillConfig, skinId)
+  Log.fatal(self._className .. " not implicate GetCacheTable() !!!")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase.GetSoundCacheTable = function(self)
-  -- function num : 0_2
+function SkillPhaseParamBase:GetSoundCacheTable()
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase.GetVoiceCacheTable = function(self)
-  -- function num : 0_3
+function SkillPhaseParamBase:GetVoiceCacheTable()
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase.HitTurnToTarget = function(self)
-  -- function num : 0_4
+function SkillPhaseParamBase:HitTurnToTarget()
   return self._hitTurnToTarget
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase.AddEffectIDToListID = function(self, listID, nEffectID)
-  -- function num : 0_5
-  if nEffectID and nEffectID > 0 then
+function SkillPhaseParamBase:AddEffectIDToListID(listID, nEffectID)
+  if nEffectID and 0 < nEffectID then
     listID[#listID + 1] = nEffectID
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase.GetCacheTableFromListID = function(self, listID)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillPhaseParamBase:GetCacheTableFromListID(listID)
   local t = {}
-  local nMaxCount = (table.count)(listID)
+  local nMaxCount = table.count(listID)
   for i = 1, nMaxCount do
     local nEffectID = listID[i]
-    if nEffectID and nEffectID > 0 then
-      t[#t + 1] = {((Cfg.cfg_effect)[nEffectID]).ResPath, 1}
+    if nEffectID and 0 < nEffectID then
+      t[#t + 1] = {
+        Cfg.cfg_effect[nEffectID].ResPath,
+        1
+      }
     end
   end
   return t
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase.GenerateCacheTableElementByID = function(self, effectID, cacheCount)
-  -- function num : 0_7 , upvalues : _ENV
-  if not cacheCount then
-    cacheCount = 1
-  end
-  if type(effectID) ~= "number" then
+function SkillPhaseParamBase:GenerateCacheTableElementByID(effectID, cacheCount)
+  cacheCount = cacheCount or 1
+  if "number" ~= type(effectID) then
     return nil
   end
-  local cfg = (Cfg.cfg_effect)[effectID]
+  local cfg = Cfg.cfg_effect[effectID]
   if not cfg then
-    (Log.exception)(self._className, "找不到特效：", tostring(effectID), "\n", (Log.traceback)())
-    return 
+    Log.exception(self._className, "找不到特效：", tostring(effectID), "\n", Log.traceback())
+    return
   end
-  return {cfg.ResPath, cacheCount}
+  return {
+    cfg.ResPath,
+    cacheCount
+  }
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase._TransID = function(self, nID)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillPhaseParamBase:_TransID(nID)
   local listID = {}
   if type(nID) == "table" then
     listID = nID
-  else
-    if nID then
-      (table.insert)(listID, nID)
-    end
+  elseif nID then
+    table.insert(listID, nID)
   end
   return listID
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase._CalcScopeRangeGridNum = function(self, scopeType, scopeParam)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillPhaseParamBase:_CalcScopeRangeGridNum(scopeType, scopeParam)
   local gridNum = 1
   if scopeType == SkillScopeType.NRowsMColumns then
     local skillNRowsMColumnsScopeParam = scopeParam
     local columns = skillNRowsMColumnsScopeParam:GetSkillScopeColumns()
     local rows = skillNRowsMColumnsScopeParam:GetSkillScopeRows()
-    local yMoveCount = (math.floor)((rows - 1) / 2 + 0.5)
-    local xMoveCount = (math.floor)((columns - 1) / 2 + 0.5)
+    local yMoveCount = math.floor((rows - 1) / 2 + 0.5)
+    local xMoveCount = math.floor((columns - 1) / 2 + 0.5)
     local yNum = yMoveCount * 2 + 1
-    if yNum > 9 then
+    if 9 < yNum then
       yNum = 9
     end
     local xNum = xMoveCount * 2 + 1
-    if xNum > 9 then
+    if 9 < xNum then
       xNum = 9
     end
     gridNum = xNum * yNum
+  else
   end
-  do
-    return gridNum
-  end
+  return gridNum
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseParamBase.GetEffectResCacheInfo = function(self, effectID, count)
-  -- function num : 0_10 , upvalues : _ENV
-  if not count then
-    count = 1
-  end
+function SkillPhaseParamBase:GetEffectResCacheInfo(effectID, count)
+  count = count or 1
   if not effectID then
     return nil
   end
-  if not (Cfg.cfg_effect)[effectID] then
-    (Log.exception)(self._className, "effectID not found: ", tostring(effectID))
+  if not Cfg.cfg_effect[effectID] then
+    Log.exception(self._className, "effectID not found: ", tostring(effectID))
     return nil
   end
-  local resPath = ((Cfg.cfg_effect)[effectID]).ResPath
-  if not (ResourceManager:GetInstance()):HasResource(resPath) then
-    (Log.exception)(self._className, "res not found: ", tostring(resPath))
+  local resPath = Cfg.cfg_effect[effectID].ResPath
+  if not ResourceManager:GetInstance():HasResource(resPath) then
+    Log.exception(self._className, "res not found: ", tostring(resPath))
     return nil
   end
   return {resPath, count}
 end
-
-

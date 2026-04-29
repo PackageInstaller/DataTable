@@ -1,36 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/world_boss/ui_season_maze_world_boss.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeWorldBoss", UICustomWidget)
 UISeasonMazeWorldBoss = UISeasonMazeWorldBoss
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeWorldBoss.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISeasonMazeWorldBoss:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBoss.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonMazeWorldBoss:InitWidget()
   self.turn = self:GetGameObject("Turn")
   self.go = self:GetUIComponent("Image", "Go")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBoss.SetData = function(self)
-  -- function num : 0_2
+function UISeasonMazeWorldBoss:SetData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeWorldBoss.GoOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):ShowDialog("UISeasonMazeWorldBossDetailPopUp", true)
+function UISeasonMazeWorldBoss:GoOnClick(go)
+  GameGlobal.UIStateManager():ShowDialog("UISeasonMazeWorldBossDetailPopUp", true)
 end
-
-

@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/common/ui_homeland_message_box.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMessageBox", UIController)
 UIHomelandMessageBox = UIHomelandMessageBox
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMessageBox.Constructor = function(self)
-  -- function num : 0_0
+function UIHomelandMessageBox:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandMessageBox:OnShow(uiParams)
   self.txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self.txtDesc = self:GetUIComponent("UILocalizationText", "txtDesc")
   self.btn1 = self:GetGameObject("btn1")
@@ -32,83 +22,53 @@ UIHomelandMessageBox.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox.OnHide = function(self)
-  -- function num : 0_2
+function UIHomelandMessageBox:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox.Flush = function(self)
-  -- function num : 0_3
+function UIHomelandMessageBox:Flush()
   if self.hideCloseBtn then
-    (self._btnClose):SetActive(false)
+    self._btnClose:SetActive(false)
   else
-    ;
-    (self._btnClose):SetActive(true)
+    self._btnClose:SetActive(true)
   end
   if self.strTitle and self.strTitle ~= "" then
-    (self.txtTitle):SetText(self.strTitle)
-    ;
-    (self._txtTitleGo):SetActive(true)
-    ;
-    (self._titleBg):SetActive(true)
+    self.txtTitle:SetText(self.strTitle)
+    self._txtTitleGo:SetActive(true)
+    self._titleBg:SetActive(true)
   else
-    ;
-    (self._txtTitleGo):SetActive(false)
-    ;
-    (self._titleBg):SetActive(false)
+    self._txtTitleGo:SetActive(false)
+    self._titleBg:SetActive(false)
   end
-  ;
-  (self.txtDesc):SetText(self.strDesc)
+  self.txtDesc:SetText(self.strDesc)
   if self.btn1Data then
-    (self.btn1):SetActive(true)
-    ;
-    (self.txt1):SetText((self.btn1Data)[1])
+    self.btn1:SetActive(true)
+    self.txt1:SetText(self.btn1Data[1])
   else
-    ;
-    (self.btn1):SetActive(false)
+    self.btn1:SetActive(false)
   end
   if self.btn1Data then
-    (self.btn2):SetActive(true)
-    ;
-    (self.txt2):SetText((self.btn2Data)[1])
+    self.btn2:SetActive(true)
+    self.txt2:SetText(self.btn2Data[1])
   else
-    ;
-    (self.btn2):SetActive(true)
+    self.btn2:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox.btnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIHomelandMessageBox:btnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox.btn1OnClick = function(self, go)
-  -- function num : 0_5
+function UIHomelandMessageBox:btn1OnClick(go)
   self:ClickBtnX(self.btn1Data)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox.btn2OnClick = function(self, go)
-  -- function num : 0_6
+function UIHomelandMessageBox:btn2OnClick(go)
   self:ClickBtnX(self.btn2Data)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMessageBox.ClickBtnX = function(self, btnXData)
-  -- function num : 0_7
+function UIHomelandMessageBox:ClickBtnX(btnXData)
   if btnXData[2] then
-    (btnXData[2])()
+    btnXData[2]()
   end
   self:CloseDialog()
 end
-
-

@@ -1,224 +1,149 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/cls/ui_side_enter_item_luckland.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UISideEnterItem_LuckLand", UISideEnterItem_Base)
 UISideEnterItem_LuckLand = UISideEnterItem_LuckLand
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterItem_LuckLand.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UISideEnterItem_LuckLand:OnShow(uiParams)
   self:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand.OnHide = function(self)
-  -- function num : 0_1
+function UISideEnterItem_LuckLand:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._LoadCampaign = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  local campaignType, campaignId = (self._btnCfg).CampaignType, (self._btnCfg).CampaignId
-  local customFunc = (UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc)(campaignType)
+function UISideEnterItem_LuckLand:_LoadCampaign(TT)
+  local campaignType, campaignId = self._btnCfg.CampaignType, self._btnCfg.CampaignId
+  local customFunc = UIActivityHelper.CheckCampaignSampleRedPoint_CustomFunc(campaignType)
   self._campaign = nil
   if customFunc then
     local res = AsyncRequestRes:New()
-    self._campaign = (UIActivityHelper.LoadCampaign)(TT, res, campaignType, campaignId)
+    self._campaign = UIActivityHelper.LoadCampaign(TT, res, campaignType, campaignId)
   else
-    do
-      self._campaign = (UIActivityHelper.LoadCampaign_Local)(campaignType, campaignId)
-      local localProcess = (self._campaign):GetLocalProcess()
-      self._component = localProcess:GetComponent(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
-      self._componentInfo = localProcess:GetComponentInfo(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
-    end
+    self._campaign = UIActivityHelper.LoadCampaign_Local(campaignType, campaignId)
   end
+  local localProcess = self._campaign:GetLocalProcess()
+  self._component = localProcess:GetComponent(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
+  self._componentInfo = localProcess:GetComponentInfo(ECampaignN11CenterComponentID.ECAMPAIGN_N11_LUCK_LAND)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._CheckOpen = function(self, TT)
-  -- function num : 0_3
+function UISideEnterItem_LuckLand:_CheckOpen(TT)
   self:_LoadCampaign(TT)
-  return (self._campaign):CheckCampaignOpen()
+  return self._campaign:CheckCampaignOpen()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand.GetSideEnterRawImage = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    return cfg.SideEnterIcon
-  end
+function UISideEnterItem_LuckLand:GetSideEnterRawImage()
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  return cfg and cfg.SideEnterIcon
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand.DoShow = function(self)
-  -- function num : 0_5
+function UISideEnterItem_LuckLand:DoShow()
   self:_SetTitle()
   self:_SetBg()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._CalcNew = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  return (UIActivityHelper.CheckCampaignSampleNewPoint)(self._campaign) and 1 or 0
+function UISideEnterItem_LuckLand:_CalcNew()
+  return UIActivityHelper.CheckCampaignSampleNewPoint(self._campaign) and 1 or 0
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._CalcRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISideEnterItem_LuckLand:_CalcRed()
   if not self._component then
     return false
   end
   self._lineDatas = {}
-  local cfgs = (Cfg.cfg_component_luck_land)({ComponentID = (self._component):GetComponentCfgId()})
+  local cfgs = Cfg.cfg_component_luck_land({
+    ComponentID = self._component:GetComponentCfgId()
+  })
   if cfgs then
-    for _,cfg in pairs(cfgs) do
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-      if not (self._lineDatas)[cfg.Line] then
-        (self._lineDatas)[cfg.Line] = {}
+    for _, cfg in pairs(cfgs) do
+      if not self._lineDatas[cfg.Line] then
+        self._lineDatas[cfg.Line] = {}
       end
-      ;
-      (table.insert)((self._lineDatas)[cfg.Line], cfg)
+      table.insert(self._lineDatas[cfg.Line], cfg)
     end
   end
-  do
-    for _,lineDatas in pairs(self._lineDatas) do
-      (table.sort)(lineDatas, function(a, b)
-    -- function num : 0_7_0
-    do return a.MissionID < b.MissionID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  for _, lineDatas in pairs(self._lineDatas) do
+    table.sort(lineDatas, function(a, b)
+      return a.MissionID < b.MissionID
+    end)
   end
-)
+  for i = 1, #self._lineDatas do
+    local r1 = self:IsUnlock(self._lineDatas[i][1])
+    local r2 = LocalDB.GetInt("LuckLandLevel_Unlock_Line_" .. GameGlobal.GetModule(RoleModule):GetPstId() .. i, 0) <= 0
+    if r1 and r2 then
+      return true
     end
-    for i = 1, #self._lineDatas do
-      local r1 = self:IsUnlock(((self._lineDatas)[i])[1])
-      local r2 = (LocalDB.GetInt)("LuckLandLevel_Unlock_Line_" .. ((GameGlobal.GetModule)(RoleModule)):GetPstId() .. i, 0) <= 0
-      if r1 and r2 then
-        return true
-      end
-    end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand.IsUnlock = function(self, cfg)
-  -- function num : 0_8
+function UISideEnterItem_LuckLand:IsUnlock(cfg)
   local preMissionUnlock = false
   local timeUnlock = false
-  if cfg.NeedMissionId > 0 and ((self._componentInfo).m_pass_mission_info)[cfg.NeedMissionId] == nil then
-    preMissionUnlock = not cfg
+  if cfg then
+    preMissionUnlock = cfg.NeedMissionId <= 0 or self._componentInfo.m_pass_mission_info[cfg.NeedMissionId] ~= nil
     timeUnlock = self:_IsUnlock(cfg.UnlockTime)
-    do return not preMissionUnlock or timeUnlock end
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
   end
+  return preMissionUnlock and timeUnlock
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._IsUnlock = function(self, UnlockTime)
-  -- function num : 0_9 , upvalues : _ENV
-  local loginModule = (GameGlobal.GetModule)(LoginModule)
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+function UISideEnterItem_LuckLand:_IsUnlock(UnlockTime)
+  local loginModule = GameGlobal.GetModule(LoginModule)
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
   local unlockTime = loginModule:GetTimeStampByTimeStr(UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
   local curTime = svrTimeModule:GetServerTime() * 0.001
-  do return unlockTime <= curTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return unlockTime <= curTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._SetTitle = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local widgetName = (self._btnCfg).AutoUITitle
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    local strId = cfg.CampaignName
-  end
+function UISideEnterItem_LuckLand:_SetTitle()
+  local widgetName = self._btnCfg.AutoUITitle
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  local strId = cfg and cfg.CampaignName
   if widgetName and strId then
-    (UIWidgetHelper.SetLocalizationText)(self, widgetName, (StringTable.Get)(strId))
+    UIWidgetHelper.SetLocalizationText(self, widgetName, StringTable.Get(strId))
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._SetBg = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local widgetName = (self._btnCfg).AutoUIBg
+function UISideEnterItem_LuckLand:_SetBg()
+  local widgetName = self._btnCfg.AutoUIBg
   local sideEnterIcon = self:GetSideEnterRawImage()
   if widgetName and sideEnterIcon then
-    (UIWidgetHelper.SetRawImage)(self, widgetName, sideEnterIcon)
+    UIWidgetHelper.SetRawImage(self, widgetName, sideEnterIcon)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._AttachEvents = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UISideEnterItem_LuckLand:_AttachEvents()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:AttachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._DetachEvents = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UISideEnterItem_LuckLand:_DetachEvents()
   self:DetachEvent(GameEventType.AfterUILayerChanged, self._OnAfterUILayerChanged)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._OnCampaignClose)
   self:DetachEvent(GameEventType.CampaignComponentStepChange, self._OnComponentStepChange)
   self:DetachEvent(GameEventType.QuestUpdate, self._OnQuestUpdate)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_14
-  if self._campaign and (self._campaign)._id == campaign_id then
+function UISideEnterItem_LuckLand:_OnComponentStepChange(campaign_id, component_id, component_step)
+  if self._campaign and self._campaign._id == campaign_id then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._OnQuestUpdate = function(self)
-  -- function num : 0_15
+function UISideEnterItem_LuckLand:_OnQuestUpdate()
   if self._campaign then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._OnAfterUILayerChanged = function(self)
-  -- function num : 0_16
+function UISideEnterItem_LuckLand:_OnAfterUILayerChanged()
   if self._campaign then
     self:_CheckPoint()
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterItem_LuckLand._OnCampaignClose = function(self, id)
-  -- function num : 0_17
-  if self._campaign and (self._campaign)._id == id then
-    (self._setShowCallback)(false)
+function UISideEnterItem_LuckLand:_OnCampaignClose(id)
+  if self._campaign and self._campaign._id == id then
+    self._setShowCallback(false)
   end
 end
-
-

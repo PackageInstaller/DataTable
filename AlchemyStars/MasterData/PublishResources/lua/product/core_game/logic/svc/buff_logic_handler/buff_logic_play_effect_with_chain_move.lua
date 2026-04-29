@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_play_effect_with_chain_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local PlayEffectWithChainMoveType = {Normal = 1, Zhongxu = 2}
 _enum("PlayEffectWithChainMoveType", PlayEffectWithChainMoveType)
 _class("BuffPlayEffectWithChainMoveZhongxuViewParam", Object)
 BuffPlayEffectWithChainMoveZhongxuViewParam = BuffPlayEffectWithChainMoveZhongxuViewParam
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffPlayEffectWithChainMoveZhongxuViewParam.Constructor = function(self, cfgTb)
-  -- function num : 0_0
+function BuffPlayEffectWithChainMoveZhongxuViewParam:Constructor(cfgTb)
   if cfgTb then
     self._transAudioID = cfgTb.transAudioID
     self._transAnim = cfgTb.transAnim
@@ -28,10 +21,8 @@ end
 
 _class("BuffLogicPlayEffectWithChainMove", BuffLogicBase)
 BuffLogicPlayEffectWithChainMove = BuffLogicPlayEffectWithChainMove
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicPlayEffectWithChainMove.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_1 , upvalues : PlayEffectWithChainMoveType, _ENV
+function BuffLogicPlayEffectWithChainMove:Constructor(buffInstance, logicParam)
   self._permanentEffectID = logicParam.permanentEffectID
   self._pieceType = logicParam.pieceType
   self._normalEffectID = logicParam.normalEffectID
@@ -42,23 +33,20 @@ BuffLogicPlayEffectWithChainMove.Constructor = function(self, buffInstance, logi
   end
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicPlayEffectWithChainMove.DoLogic = function(self, notify)
-  -- function num : 0_2 , upvalues : PlayEffectWithChainMoveType, _ENV
+function BuffLogicPlayEffectWithChainMove:DoLogic(notify)
   local notifyType = notify:GetNotifyType()
-  if self._useType == PlayEffectWithChainMoveType.Zhongxu and (self._world):GetGameTurn() == GameTurnType.RemotePlayerTurn then
-    return 
+  if self._useType == PlayEffectWithChainMoveType.Zhongxu and self._world:GetGameTurn() == GameTurnType.RemotePlayerTurn then
+    return
   end
   if notifyType == NotifyType.PlayerMoveStart then
     return self:_OnPlayerMoveStart(notify)
   end
   if notifyType ~= NotifyType.PlayerEachMoveStart and notifyType ~= NotifyType.PlayerEachMoveEnd and notifyType ~= NotifyType.PetChainMoveBegin then
-    return 
+    return
   end
   local typeParam = {}
-  local e = (self._buffInstance):Entity()
-  local teamEntity = (e:Pet()):GetOwnerTeamEntity()
+  local e = self._buffInstance:Entity()
+  local teamEntity = e:Pet():GetOwnerTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local chainPath = logicChainPathCmpt:GetLogicChainPath()
   local notifyPos = notify:GetPos()
@@ -68,52 +56,47 @@ BuffLogicPlayEffectWithChainMove.DoLogic = function(self, notify)
   local isEnd = notifyPos == chainPath[#chainPath]
   local isMatch = self:_CheckMatchType(chainPath)
   if not isMatch then
-    return 
+    return
   end
   if self._useType == PlayEffectWithChainMoveType.Normal then
-    local isSpecial = false
-    local moveEffectID = self._normalEffectID
-    if chainPathIndex > 1 and chainPathIndex < (table.count)(chainPath) then
-      local lastPos = chainPath[chainPathIndex - 1]
-      local lastDir = notifyPos - lastPos
-      local nextPos = chainPath[chainPathIndex + 1]
-      local curDir = nextPos - notifyPos
-      local diffAngle = (Vector2.Angle)(lastDir, curDir)
-      diffAngle = (math.floor)(diffAngle + 0.5)
-      if diffAngle >= 90 then
-        isSpecial = true
-        moveEffectID = self._specialEffectID
-      end
-    end
-    if self._useType == PlayEffectWithChainMoveType.Zhongxu then
-      -- DECOMPILER ERROR at PC118: Unhandled construct in 'MakeBoolean' P1
-
-      if notifyType == NotifyType.PetChainMoveBegin and notify:GetEntityID() ~= e:GetID() then
-        return 
-      end
-      if notify:GetEntityID() ~= e:GetID() then
-        return 
-      end
-      local teamCmpt = teamEntity:Team()
-      local isTeamLeader = teamCmpt:IsTeamLeaderByEntityId(e:GetID())
-      typeParam.isTeamLeader = isTeamLeader
-      typeParam.chainPathCount = #chainPath
-      typeParam.specialParam = self._zhongxuSpecialParam
-    end
-    local buffResult = BuffResultPlayEffectWithChainMove:New(notifyType, notifyPos, isStart, isEnd, self._permanentEffectID, moveEffectID, self._useType, typeParam)
-    do return buffResult end
-    -- DECOMPILER ERROR: 8 unprocessed JMP targets
   end
+  local isSpecial = false
+  local moveEffectID = self._normalEffectID
+  if 1 < chainPathIndex and chainPathIndex < table.count(chainPath) then
+    local lastPos = chainPath[chainPathIndex - 1]
+    local lastDir = notifyPos - lastPos
+    local nextPos = chainPath[chainPathIndex + 1]
+    local curDir = nextPos - notifyPos
+    local diffAngle = Vector2.Angle(lastDir, curDir)
+    diffAngle = math.floor(diffAngle + 0.5)
+    if 90 <= diffAngle then
+      isSpecial = true
+      moveEffectID = self._specialEffectID
+    end
+  end
+  if self._useType == PlayEffectWithChainMoveType.Zhongxu then
+    if notifyType == NotifyType.PetChainMoveBegin then
+      if notify:GetEntityID() ~= e:GetID() then
+        return
+      end
+    elseif notify:GetEntityID() ~= e:GetID() then
+      return
+    end
+    local teamCmpt = teamEntity:Team()
+    local isTeamLeader = teamCmpt:IsTeamLeaderByEntityId(e:GetID())
+    typeParam.isTeamLeader = isTeamLeader
+    typeParam.chainPathCount = #chainPath
+    typeParam.specialParam = self._zhongxuSpecialParam
+  end
+  local buffResult = BuffResultPlayEffectWithChainMove:New(notifyType, notifyPos, isStart, isEnd, self._permanentEffectID, moveEffectID, self._useType, typeParam)
+  return buffResult
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicPlayEffectWithChainMove._CheckMatchType = function(self, chainPath)
-  -- function num : 0_3
+function BuffLogicPlayEffectWithChainMove:_CheckMatchType(chainPath)
   if not self._pieceType then
     return true
   end
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
   for index = 1, #chainPath do
     local pos = chainPath[index]
@@ -125,14 +108,11 @@ BuffLogicPlayEffectWithChainMove._CheckMatchType = function(self, chainPath)
   return false
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicPlayEffectWithChainMove._OnPlayerMoveStart = function(self, notify)
-  -- function num : 0_4 , upvalues : PlayEffectWithChainMoveType, _ENV
+function BuffLogicPlayEffectWithChainMove:_OnPlayerMoveStart(notify)
   local notifyType = notify:GetNotifyType()
   local typeParam = {}
-  local e = (self._buffInstance):Entity()
-  local teamEntity = (e:Pet()):GetOwnerTeamEntity()
+  local e = self._buffInstance:Entity()
+  local teamEntity = e:Pet():GetOwnerTeamEntity()
   local logicChainPathCmpt = teamEntity:LogicChainPath()
   local chainPath = logicChainPathCmpt:GetLogicChainPath()
   local notifyPos = chainPath[1]
@@ -148,7 +128,4 @@ BuffLogicPlayEffectWithChainMove._OnPlayerMoveStart = function(self, notify)
     local buffResult = BuffResultPlayEffectWithChainMove:New(notifyType, notifyPos, isStart, isEnd, self._permanentEffectID, moveEffectID, self._useType, typeParam)
     return buffResult
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

@@ -1,77 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/game/prop/s_maze_prop_bomb.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SMazeProp_Bomb", SMazePropBase)
 SMazeProp_Bomb = SMazeProp_Bomb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SMazeProp_Bomb.SetTarget = function(self, target)
-  -- function num : 0_0
+function SMazeProp_Bomb:SetTarget(target)
   self._target = target
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeProp_Bomb.GetTarget = function(self)
-  -- function num : 0_1
+function SMazeProp_Bomb:GetTarget()
   return self._target
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeProp_Bomb.Use = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function SMazeProp_Bomb:Use(TT)
   if not self._target then
-    (Log.exception)("严重错误 炸弹还未选择目标 不可以使用")
+    Log.exception("严重错误 炸弹还未选择目标 不可以使用")
   end
-  local cpt = (((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()):GetMazeComponent()
+  local cpt = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj():GetMazeComponent()
   local res = AsyncRequestRes:New()
-  local result = cpt:HandleSeasonMazeUseOnce(TT, res, self:CfgID(), (self._target):ID())
+  local result = cpt:HandleSeasonMazeUseOnce(TT, res, self:CfgID(), self._target:ID())
   if res:GetSucc() then
-    (Log.info)("炸弹道具使用成功")
+    Log.info("炸弹道具使用成功")
     self._assets = {}
-    for _,eft in pairs(result.reward) do
-      local asset = (SeasonMazeTool:GetInstance()):Effect2Asset(eft, eft.value_min)
-      ;
-      (table.insert)(self._assets, asset)
+    for _, eft in pairs(result.reward) do
+      local asset = SeasonMazeTool:GetInstance():Effect2Asset(eft, eft.value_min)
+      table.insert(self._assets, asset)
       if asset:Type() == SeasonMazeEffectType.SMET_Pro then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnUISeasonMazeAttChanged, asset:SubParam())
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.OnUISeasonMazeAttChanged, asset:SubParam())
       end
     end
-    local req = (ResourceManager:GetInstance()):SyncLoadAsset("eff_pfb_zhadan.prefab", LoadType.GameObject)
+    local req = ResourceManager:GetInstance():SyncLoadAsset("eff_pfb_zhadan.prefab", LoadType.GameObject)
     local eft = req.Obj
     local tr = eft.transform
-    tr.position = (self._target):Position() + Vector3(0, 0.1, 0)
+    tr.position = self._target:Position() + Vector3(0, 0.1, 0)
     tr.rotation = Quaternion.identity
     tr.localScale = Vector3.one
     eft:SetActive(true)
     YIELD(TT, 1200)
-    local cpt = (((GameGlobal.GetModule)(SeasonMazeModule)):CurSeasonObj()):GetMazeComponent()
-    local svrData = ((cpt:GetComponentInfo()).rooms)[(self._target):ID()]
-    local battleRoom = (self._target):Room()
+    local cpt = GameGlobal.GetModule(SeasonMazeModule):CurSeasonObj():GetMazeComponent()
+    local svrData = cpt:GetComponentInfo().rooms[self._target:ID()]
+    local battleRoom = self._target:Room()
     battleRoom:Boom(svrData)
     YIELD(TT, 1800)
     req:Dispose()
     return true
   else
-    do
-      ;
-      (Log.error)("炸弹道具使用失败:", res:GetResult())
-      if ((GameGlobal.GetModule)(SeasonMazeModule)):CheckSeasonMazeClose(res) then
-        return false
-      end
-      do return false end
+    Log.error("炸弹道具使用失败:", res:GetResult())
+    if GameGlobal.GetModule(SeasonMazeModule):CheckSeasonMazeClose(res) then
+      return false
     end
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SMazeProp_Bomb.RewardAsset = function(self)
-  -- function num : 0_3
+function SMazeProp_Bomb:RewardAsset()
   return self._assets
 end
-
-

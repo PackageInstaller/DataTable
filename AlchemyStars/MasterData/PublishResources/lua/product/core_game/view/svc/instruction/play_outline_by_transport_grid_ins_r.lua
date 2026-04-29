@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_outline_by_transport_grid_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayOutlineByTransportGridInstruction", BaseInstruction)
 PlayOutlineByTransportGridInstruction = PlayOutlineByTransportGridInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayOutlineByTransportGridInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayOutlineByTransportGridInstruction:Constructor(paramList)
   self._effectID = tonumber(paramList.effectID)
   self._radius = tonumber(paramList.radius) or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayOutlineByTransportGridInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayOutlineByTransportGridInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local effectResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.TransportByRange)
   if effectResult == nil then
-    return 
+    return
   end
   local pieceDataList = effectResult:GetPieceDataList()
   local posList = effectResult:GetOutlineRange()
   local outlineEntityList = self:CreateAreaOutlineEntity(casterEntity, posList)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayOutlineByTransportGridInstruction.CreateAreaOutlineEntity = function(self, casterEntity, gridList)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayOutlineByTransportGridInstruction:CreateAreaOutlineEntity(casterEntity, gridList)
   local world = casterEntity:GetOwnerWorld()
   local boardServiceRender = world:GetService("BoardRender")
   local effectService = world:GetService("Effect")
@@ -43,11 +30,11 @@ PlayOutlineByTransportGridInstruction.CreateAreaOutlineEntity = function(self, c
     effectCpmt = casterEntity:EffectHolder()
   end
   local outlineEntityList = {}
-  for _,pos in ipairs(gridList) do
+  for _, pos in ipairs(gridList) do
     local roundPosList = boardServiceRender:GetRoundPosList(pos)
     for i = 1, #roundPosList do
       local roundPos = roundPosList[i]
-      if not (table.icontains)(gridList, roundPos) then
+      if not table.icontains(gridList, roundPos) then
         local outlineEntity = effectService:CreatePositionEffect(self._effectID, Vector3(0, 1000, 0))
         effectCpmt:AttachIdleEffect(outlineEntity:GetID())
         local gridOutlineHeight = 0
@@ -62,15 +49,13 @@ PlayOutlineByTransportGridInstruction.CreateAreaOutlineEntity = function(self, c
   return outlineEntityList
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayOutlineByTransportGridInstruction.GetCacheResource = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayOutlineByTransportGridInstruction:GetCacheResource()
   local t = {}
   if self._effectID and self._effectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._effectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._effectID].ResPath,
+      1
+    })
   end
   return t
 end
-
-

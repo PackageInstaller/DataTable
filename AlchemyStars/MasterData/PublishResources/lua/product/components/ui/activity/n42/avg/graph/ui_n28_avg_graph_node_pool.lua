@@ -1,202 +1,125 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n42/avg/graph/ui_n28_avg_graph_node_pool.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN28AVGGraphNodePool", UICustomWidget)
 UIN28AVGGraphNodePool = UIN28AVGGraphNodePool
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN28AVGGraphNodePool.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mCampaign = (GameGlobal.GetModule)(CampaignModule)
-  self.data = (self.mCampaign):GetN28AVGData()
+function UIN28AVGGraphNodePool:Constructor()
+  self.mCampaign = GameGlobal.GetModule(CampaignModule)
+  self.data = self.mCampaign:GetN28AVGData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN28AVGGraphNodePool:OnShow()
   self.go = self:GetGameObject()
-  self.rt = (self.go):GetComponent(typeof(UnityEngine.RectTransform))
-  ;
-  (UICommonHelper:GetInstance()):RectTransformAnchor2Left(self.rt)
+  self.rt = self.go:GetComponent(typeof(UnityEngine.RectTransform))
+  UICommonHelper:GetInstance():RectTransformAnchor2Left(self.rt)
   self.root = self:GetGameObject("root")
   self.poolNormal = self:GetUIComponent("UISelectObjectPath", "normal")
   self.poolEnd = self:GetUIComponent("UISelectObjectPath", "end")
   self.poolHide = self:GetUIComponent("UISelectObjectPath", "hide")
   self.goNormal = self:GetGameObject("normal")
-  ;
-  (self.goNormal):SetActive(false)
+  self.goNormal:SetActive(false)
   self.goEnd = self:GetGameObject("end")
-  ;
-  (self.goEnd):SetActive(false)
+  self.goEnd:SetActive(false)
   self.goHide = self:GetGameObject("hide")
-  ;
-  (self.goHide):SetActive(false)
+  self.goHide:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.OnHide = function(self)
-  -- function num : 0_2
+function UIN28AVGGraphNodePool:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.Flush = function(self, id, endId, endNodeId)
-  -- function num : 0_3 , upvalues : _ENV
-  self.node = (self.data):GetNodeById(id)
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R4 in 'UnsetPending'
-
+function UIN28AVGGraphNodePool:Flush(id, endId, endNodeId)
+  self.node = self.data:GetNodeById(id)
   if IsUnityEditor() then
-    (self.go).name = (self.node).id .. (self.node).title
+    self.go.name = self.node.id .. self.node.title
   end
-  if (self.node):IsHide() then
-    if (self.node):IsSatisfyVisible() then
-      (self.root):SetActive(true)
+  if self.node:IsHide() then
+    if self.node:IsSatisfyVisible() then
+      self.root:SetActive(true)
       self:FlushPos()
-      ;
-      (self.goNormal):SetActive(false)
-      ;
-      (self.goEnd):SetActive(false)
-      ;
-      (self.goHide):SetActive(true)
-      self.hide = (self.poolHide):SpawnObject("UIN28AVGGraphNodeHide")
-      ;
-      (self.hide):Flush(id)
-      ;
-      (self.hide):FlushCurPos(endId)
+      self.goNormal:SetActive(false)
+      self.goEnd:SetActive(false)
+      self.goHide:SetActive(true)
+      self.hide = self.poolHide:SpawnObject("UIN28AVGGraphNodeHide")
+      self.hide:Flush(id)
+      self.hide:FlushCurPos(endId)
     else
-      ;
-      (self.root):SetActive(false)
+      self.root:SetActive(false)
     end
   else
-    local state = (self.node):State()
+    local state = self.node:State()
     if state then
-      (self.root):SetActive(true)
+      self.root:SetActive(true)
       self:FlushPos()
-      ;
-      (self.goHide):SetActive(false)
-      if (self.node):IsEnd() and state ~= N28AVGStoryNodeState.CantPlay then
-        (self.goNormal):SetActive(false)
-        ;
-        (self.goEnd):SetActive(true)
-        self.ending = (self.poolEnd):SpawnObject("UIN28AVGGraphNodeEnd")
-        ;
-        (self.ending):Flush(id)
-        ;
-        (self.ending):FlushCurPos(endId, endNodeId)
+      self.goHide:SetActive(false)
+      if self.node:IsEnd() and state ~= N28AVGStoryNodeState.CantPlay then
+        self.goNormal:SetActive(false)
+        self.goEnd:SetActive(true)
+        self.ending = self.poolEnd:SpawnObject("UIN28AVGGraphNodeEnd")
+        self.ending:Flush(id)
+        self.ending:FlushCurPos(endId, endNodeId)
       else
-        ;
-        (self.goNormal):SetActive(true)
-        ;
-        (self.goEnd):SetActive(false)
-        self.normal = (self.poolNormal):SpawnObject("UIN28AVGGraphNodeNormal")
-        ;
-        (self.normal):Flush(id)
-        ;
-        (self.normal):FlushCurPos(endId)
+        self.goNormal:SetActive(true)
+        self.goEnd:SetActive(false)
+        self.normal = self.poolNormal:SpawnObject("UIN28AVGGraphNodeNormal")
+        self.normal:Flush(id)
+        self.normal:FlushCurPos(endId)
       end
     else
-      ;
-      (self.root):SetActive(false)
+      self.root:SetActive(false)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.FlushPos = function(self)
-  -- function num : 0_4
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self.rt).anchoredPosition = (self.node).pos
+function UIN28AVGGraphNodePool:FlushPos()
+  self.rt.anchoredPosition = self.node.pos
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.NormalOnClick = function(self, go)
-  -- function num : 0_5
+function UIN28AVGGraphNodePool:NormalOnClick(go)
   self:CheckShowDialogUIN28AVGNodeDetails(go)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.EndOnClick = function(self, go)
-  -- function num : 0_6
+function UIN28AVGGraphNodePool:EndOnClick(go)
   self:CheckShowDialogUIN28AVGNodeDetails(go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.HideOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
+function UIN28AVGGraphNodePool:HideOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV, go
-    if (self.node):IsHideNew() then
+    if self.node:IsHideNew() then
       local key = "UIN28AVGGraphNodeOnClickNode"
       self:Lock(key)
-      local nodeId = (self.node).id
+      local nodeId = self.node.id
       local avgStoryMissionInfo = AVGStoryMissionInfo:New()
       avgStoryMissionInfo.mission_id = nodeId
       avgStoryMissionInfo.new_mark = false
       avgStoryMissionInfo.end_formation_info = AVGStoryFormationInfo:New()
-      local hp, strategies, evidences = (self.node):StartData()
-      -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (avgStoryMissionInfo.end_formation_info).leader_hp = hp
-      -- DECOMPILER ERROR at PC27: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (avgStoryMissionInfo.end_formation_info).teammate_affinity = strategies
-      -- DECOMPILER ERROR at PC29: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (avgStoryMissionInfo.end_formation_info).evidence = evidences
-      local com = (self.data):GetComponentAVG()
+      local hp, strategies, evidences = self.node:StartData()
+      avgStoryMissionInfo.end_formation_info.leader_hp = hp
+      avgStoryMissionInfo.end_formation_info.teammate_affinity = strategies
+      avgStoryMissionInfo.end_formation_info.evidence = evidences
+      local com = self.data:GetComponentAVG()
       local res = AsyncRequestRes:New()
       local ret = com:HandleUpdateNodeData(TT, res, avgStoryMissionInfo)
-      if (N28AVGData.CheckCode)(res) then
-        (self.data):Update()
-        ;
-        (self.hide):FlushNew()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AVGFlushNewRed)
+      if N28AVGData.CheckCode(res) then
+        self.data:Update()
+        self.hide:FlushNew()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.AVGFlushNewRed)
       end
       self:UnLock(key)
     end
-    do
-      self:ShowDialogUIN28AVGNodeDetails(go)
-    end
-  end
-, self)
+    self:ShowDialogUIN28AVGNodeDetails(go)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.CheckShowDialogUIN28AVGNodeDetails = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
-  local state = (self.node):State()
+function UIN28AVGGraphNodePool:CheckShowDialogUIN28AVGNodeDetails(go)
+  local state = self.node:State()
   if state == N28AVGStoryNodeState.CantPlay then
-    return 
+    return
   end
   self:ShowDialogUIN28AVGNodeDetails(go)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.ShowDialogUIN28AVGNodeDetails = function(self, go)
-  -- function num : 0_9
-  self:ShowDialog("UIN28AVGNodeDetails", (self.node).id)
+function UIN28AVGGraphNodePool:ShowDialogUIN28AVGNodeDetails(go)
+  self:ShowDialog("UIN28AVGNodeDetails", self.node.id)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN28AVGGraphNodePool.GetWidgetHide = function(self)
-  -- function num : 0_10
+function UIN28AVGGraphNodePool:GetWidgetHide()
   return self.hide
 end
-
-

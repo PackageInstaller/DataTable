@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw_v2/ui_haute_couture_draw_prize_item_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDrawPrizeItemBase", UICustomWidget)
 UIHauteCoutureDrawPrizeItemBase = UIHauteCoutureDrawPrizeItemBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDrawPrizeItemBase.Constructor = function(self)
-  -- function num : 0_0
+function UIHauteCoutureDrawPrizeItemBase:Constructor()
   self._coinNum = 0
   self._itemId = 0
   self._itemCount = 0
@@ -18,19 +11,16 @@ UIHauteCoutureDrawPrizeItemBase.Constructor = function(self)
   self.clickCb = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemBase.SetData = function(self, prizeSortOrder, componentId, specail, ctx, replaced)
-  -- function num : 0_1 , upvalues : _ENV
-  self._data = ((Cfg.cfg_component_senior_skin_weight)({ComponentID = componentId, RewardSortOrder = prizeSortOrder}))[1]
+function UIHauteCoutureDrawPrizeItemBase:SetData(prizeSortOrder, componentId, specail, ctx, replaced)
+  self._data = Cfg.cfg_component_senior_skin_weight({ComponentID = componentId, RewardSortOrder = prizeSortOrder})[1]
   if replaced then
-    self._itemId = (self._data).ReplaceRewardID
-    self._itemCount = (self._data).ReplaceRewardCount
+    self._itemId = self._data.ReplaceRewardID
+    self._itemCount = self._data.ReplaceRewardCount
   else
-    self._itemId = (self._data).RewardID
-    self._itemCount = (self._data).RewardCount
+    self._itemId = self._data.RewardID
+    self._itemCount = self._data.RewardCount
   end
-  self._coinNum = (self._data).AppendGlow
+  self._coinNum = self._data.AppendGlow
   self._specail = specail
   self._replaced = replaced
   self._ctx = ctx
@@ -39,69 +29,43 @@ UIHauteCoutureDrawPrizeItemBase.SetData = function(self, prizeSortOrder, compone
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemBase.SetClickCb = function(self, cb)
-  -- function num : 0_2
+function UIHauteCoutureDrawPrizeItemBase:SetClickCb(cb)
   self.clickCb = cb
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemBase._OnValue = function(self)
-  -- function num : 0_3
+function UIHauteCoutureDrawPrizeItemBase:_OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemBase.GetPrizeId = function(self)
-  -- function num : 0_4
+function UIHauteCoutureDrawPrizeItemBase:GetPrizeId()
   return self._itemId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemBase.GetCfgID = function(self)
-  -- function num : 0_5
-  return (self._data).ID
+function UIHauteCoutureDrawPrizeItemBase:GetCfgID()
+  return self._data.ID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemBase._InsertReward = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIHauteCoutureDrawPrizeItemBase:_InsertReward()
   local reward = RoleAsset:New()
   if self._replaced then
-    reward.assetid = (self._data).ReplaceRewardID
-    reward.count = (self._data).ReplaceRewardCount
+    reward.assetid = self._data.ReplaceRewardID
+    reward.count = self._data.ReplaceRewardCount
   else
-    reward.assetid = (self._data).RewardID
-    reward.count = (self._data).RewardCount
+    reward.assetid = self._data.RewardID
+    reward.count = self._data.RewardCount
   end
-  ;
-  (table.insert)(self._assetList, reward)
-  if (self._data).AppendGlow and (self._data).AppendGlow > 0 then
+  table.insert(self._assetList, reward)
+  if self._data.AppendGlow and self._data.AppendGlow > 0 then
     local rewardCoin = RoleAsset:New()
     rewardCoin.assetid = RoleAssetID.RoleAssetGlow
-    rewardCoin.count = (self._data).AppendGlow
-    ;
-    (table.insert)(self._assetList, rewardCoin)
+    rewardCoin.count = self._data.AppendGlow
+    table.insert(self._assetList, rewardCoin)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemBase.IsSpecailPrize = function(self)
-  -- function num : 0_7
+function UIHauteCoutureDrawPrizeItemBase:IsSpecailPrize()
   return self._specail
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDrawPrizeItemBase.IsHauteCouture = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  do return RoleAssetID.RoleAssetPetSkinBegin < self._itemId and self._itemId < RoleAssetID.RoleAssetPetSkinEnd end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIHauteCoutureDrawPrizeItemBase:IsHauteCouture()
+  return self._itemId > RoleAssetID.RoleAssetPetSkinBegin and self._itemId < RoleAssetID.RoleAssetPetSkinEnd
 end
-
-

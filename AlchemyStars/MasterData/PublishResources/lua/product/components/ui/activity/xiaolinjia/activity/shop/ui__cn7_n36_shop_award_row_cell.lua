@@ -1,77 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/activity/shop/ui__cn7_n36_shop_award_row_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN7N36ShopAwardRowCell", UICustomWidget)
 UICN7N36ShopAwardRowCell = UICN7N36ShopAwardRowCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36ShopAwardRowCell.Constructor = function(self)
-  -- function num : 0_0
+function UICN7N36ShopAwardRowCell:Constructor()
   self.rowCellItemNum = 3
   self._cellGens = {}
   self._awardCells = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36ShopAwardRowCell.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UICN7N36ShopAwardRowCell:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36ShopAwardRowCell._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN7N36ShopAwardRowCell:_GetComponents()
   self.cellsArea = self:GetUIComponent("UISelectObjectPath", "CellsArea")
   self._cellsGen1 = self:GetUIComponent("UISelectObjectPath", "CellGen1")
   self._cellsGen2 = self:GetUIComponent("UISelectObjectPath", "CellGen2")
   self._cellsGen3 = self:GetUIComponent("UISelectObjectPath", "CellGen3")
-  ;
-  (table.insert)(self._cellGens, self._cellsGen1)
-  ;
-  (table.insert)(self._cellGens, self._cellsGen2)
-  ;
-  (table.insert)(self._cellGens, self._cellsGen3)
-  for index,value in ipairs(self._cellGens) do
+  table.insert(self._cellGens, self._cellsGen1)
+  table.insert(self._cellGens, self._cellsGen2)
+  table.insert(self._cellGens, self._cellsGen3)
+  for index, value in ipairs(self._cellGens) do
     local cellCtrl = value:SpawnObject("UICN7N36ShopAwardCell")
-    ;
-    (table.insert)(self._awardCells, cellCtrl)
+    table.insert(self._awardCells, cellCtrl)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36ShopAwardRowCell.SetData = function(self)
-  -- function num : 0_3
+function UICN7N36ShopAwardRowCell:SetData()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36ShopAwardRowCell.InitData = function(self, data, itemInfoCallBack, rowIndex)
-  -- function num : 0_4
+function UICN7N36ShopAwardRowCell:InitData(data, itemInfoCallBack, rowIndex)
   self._data = data
   self._itemInfoCallback = itemInfoCallBack
   self._rowIndex = rowIndex
   self:_FillCells()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36ShopAwardRowCell._FillCells = function(self)
-  -- function num : 0_5
+function UICN7N36ShopAwardRowCell:_FillCells()
   for i = 1, #self._awardCells do
-    if #self._data < i then
-      (((self._awardCells)[i]):GetGameObject()):SetActive(false)
+    if i > #self._data then
+      self._awardCells[i]:GetGameObject():SetActive(false)
     else
-      ;
-      (((self._awardCells)[i]):GetGameObject()):SetActive(true)
-      ;
-      ((self._awardCells)[i]):InitData((self._data)[i], self._itemInfoCallback, true, i * self._rowIndex)
+      self._awardCells[i]:GetGameObject():SetActive(true)
+      self._awardCells[i]:InitData(self._data[i], self._itemInfoCallback, true, i * self._rowIndex)
     end
   end
 end
-
-

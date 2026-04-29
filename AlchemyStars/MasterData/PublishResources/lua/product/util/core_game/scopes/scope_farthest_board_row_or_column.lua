@@ -1,74 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_farthest_board_row_or_column.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FarthestBoardRowOrColumn", SkillScopeCalculator_Base)
 SkillScopeCalculator_FarthestBoardRowOrColumn = SkillScopeCalculator_FarthestBoardRowOrColumn
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FarthestBoardRowOrColumn.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  if not scopeParam[1] then
-    local scopeStageType = FarthestBoardRowOrColumnStageType.Start
-  end
+function SkillScopeCalculator_FarthestBoardRowOrColumn:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local scopeStageType = scopeParam[1] or FarthestBoardRowOrColumnStageType.Start
   local calcBlock = scopeParam[2] or 0
-  local world = (self._gridFilter)._world
-  local teamLeader = (world:Player()):GetLocalTeamEntity()
+  local world = self._gridFilter._world
+  local teamLeader = world:Player():GetLocalTeamEntity()
   local teamPos = teamLeader:GetGridPosition()
   local boardServiceLogic = world:GetService("BoardLogic")
   local maxLen = boardServiceLogic:GetCurBoardMaxLen()
   local utilDataSvc = world:GetService("UtilData")
   local dirExtendList = {}
-  ;
-  (table.insert)(dirExtendList, Vector2(0, 1))
-  ;
-  (table.insert)(dirExtendList, Vector2(-1, 0))
-  ;
-  (table.insert)(dirExtendList, Vector2(0, -1))
-  ;
-  (table.insert)(dirExtendList, Vector2(1, 0))
+  table.insert(dirExtendList, Vector2(0, 1))
+  table.insert(dirExtendList, Vector2(-1, 0))
+  table.insert(dirExtendList, Vector2(0, -1))
+  table.insert(dirExtendList, Vector2(1, 0))
   local disBoardList = {}
-  for _,dir in ipairs(dirExtendList) do
+  for _, dir in ipairs(dirExtendList) do
     local dis = 0
     local gridPosList = {}
     for i = 1, maxLen do
       local nextPos = Vector2(teamPos.x + i * dir.x, teamPos.y + i * dir.y)
-      if (self._gridFilter):IsValidPiecePos(nextPos) and not utilDataSvc:IsExtraBoardPos(nextPos) then
-        local add = true
-        do
-          local isBlocked = boardServiceLogic:IsPosBlock(nextPos, BlockFlag.MonsterLand)
-          if calcBlock == 1 and nextPos ~= centerPos and isBlocked then
-            add = false
-          end
-          if add then
-            dis = i
-            ;
-            (table.insert)(gridPosList, nextPos)
-          end
-          -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC111: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if not self._gridFilter:IsValidPiecePos(nextPos) or utilDataSvc:IsExtraBoardPos(nextPos) then
+        break
+      end
+      local add = true
+      local isBlocked = boardServiceLogic:IsPosBlock(nextPos, BlockFlag.MonsterLand)
+      if calcBlock == 1 and nextPos ~= centerPos and isBlocked then
+        add = false
+      end
+      if add then
+        dis = i
+        table.insert(gridPosList, nextPos)
       end
     end
-    ;
-    (table.insert)(disBoardList, {dis = dis, dir = dir, gridPosList = gridPosList})
+    table.insert(disBoardList, {
+      dis = dis,
+      dir = dir,
+      gridPosList = gridPosList
+    })
   end
   local farestDisData = disBoardList[1]
-  local resultDisList = {disBoardList[1]}
-  for _,data in ipairs(disBoardList) do
-    if farestDisData.dis < data.dis then
-      (table.clear)(resultDisList)
-      ;
-      (table.insert)(resultDisList, data)
+  local resultDisList = {
+    disBoardList[1]
+  }
+  for _, data in ipairs(disBoardList) do
+    if data.dis > farestDisData.dis then
+      table.clear(resultDisList)
+      table.insert(resultDisList, data)
       farestDisData = data
-    else
-      if data.dis == farestDisData.dis then
-        (table.insert)(resultDisList, data)
-      end
+    elseif data.dis == farestDisData.dis then
+      table.insert(resultDisList, data)
     end
   end
   local farestDir = farestDisData.dir
@@ -76,33 +59,27 @@ SkillScopeCalculator_FarthestBoardRowOrColumn.CalcRange = function(self, scopeTy
   if scopeStageType == FarthestBoardRowOrColumnStageType.Start then
     local targetPos = Vector2(teamPos.x + farestDisData.dis * farestDir.x, teamPos.y + farestDisData.dis * farestDir.y)
     cross_area = {targetPos}
-  else
-    do
-      if scopeStageType == FarthestBoardRowOrColumnStageType.BeforePlayer then
-        local targetPos = teamPos + farestDir
+  elseif scopeStageType == FarthestBoardRowOrColumnStageType.BeforePlayer then
+    local targetPos = teamPos + farestDir
+    cross_area = {targetPos}
+  elseif scopeStageType == FarthestBoardRowOrColumnStageType.End then
+    local oppositeDir = Vector2(-farestDir.x, -farestDir.y)
+    for _, data in ipairs(disBoardList) do
+      if oppositeDir == data.dir then
+        local targetPos = Vector2(teamPos.x + data.dis * data.dir.x, teamPos.y + data.dis * data.dir.y)
         cross_area = {targetPos}
-      else
-        do
-          if scopeStageType == FarthestBoardRowOrColumnStageType.End then
-            local oppositeDir = Vector2(-farestDir.x, -farestDir.y)
-            for _,data in ipairs(disBoardList) do
-              if oppositeDir == data.dir then
-                local targetPos = Vector2(teamPos.x + data.dis * (data.dir).x, teamPos.y + data.dis * (data.dir).y)
-                cross_area = {targetPos}
-                break
-              end
-            end
-          end
-          do
-            local result = SkillScopeResult:New(SkillScopeType.FarthestBoardRowOrColumn, centerPos, cross_area, cross_area)
-            return result
-          end
-        end
+        break
       end
     end
   end
+  local result = SkillScopeResult:New(SkillScopeType.FarthestBoardRowOrColumn, centerPos, cross_area, cross_area)
+  return result
 end
 
-local FarthestBoardRowOrColumnStageType = {Start = 1, BeforePlayer = 2, End = 3, Max = 9}
+local FarthestBoardRowOrColumnStageType = {
+  Start = 1,
+  BeforePlayer = 2,
+  End = 3,
+  Max = 9
+}
 _enum("FarthestBoardRowOrColumnStageType", FarthestBoardRowOrColumnStageType)
-

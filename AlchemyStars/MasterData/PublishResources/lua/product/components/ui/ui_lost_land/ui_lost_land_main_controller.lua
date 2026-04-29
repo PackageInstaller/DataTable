@@ -1,18 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_main_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandMainController", UIController)
 UILostLandMainController = UILostLandMainController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandMainController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._module = (GameGlobal.GetModule)(LostAreaModule)
-  self._uiModule = (GameGlobal.GetUIModule)(LostAreaModule)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._enterData = (self._uiModule):GetEnterData()
+function UILostLandMainController:OnShow(uiParams)
+  self._module = GameGlobal.GetModule(LostAreaModule)
+  self._uiModule = GameGlobal.GetUIModule(LostAreaModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._enterData = self._uiModule:GetEnterData()
   self:GetComponents()
   local resetTime = uiParams[1]
   if resetTime then
@@ -22,208 +15,133 @@ UILostLandMainController.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.OnLostLandTimeReset, self.OnLostLandTimeReset)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.GetComponents = function(self)
-  -- function num : 0_1
+function UILostLandMainController:GetComponents()
   local ltBtns = self:GetUIComponent("UISelectObjectPath", "btnBack")
   self._backBtn = ltBtns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_1_0 , upvalues : self
+  self._backBtn:SetData(function()
     self:CloseController()
-  end
-)
+  end)
   self._resetGo = self:GetGameObject("reset")
-  ;
-  (self._resetGo):SetActive(false)
+  self._resetGo:SetActive(false)
   self._timerTex = self:GetUIComponent("UILocalizationText", "timerTex")
   self._enterPool = self:GetUIComponent("UISelectObjectPath", "enterPool")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.CloseController = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UILostLandMainController:CloseController()
   self:SwitchState(UIStateType.UIDiscovery)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.ResetAnim = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._resetGo):SetActive(true)
-  ;
-  ((GameGlobal.Timer)()):AddEvent(3000, function()
-    -- function num : 0_3_0 , upvalues : self
+function UILostLandMainController:ResetAnim()
+  self._resetGo:SetActive(true)
+  GameGlobal.Timer():AddEvent(3000, function()
     if self._resetGo then
-      (self._resetGo):SetActive(false)
+      self._resetGo:SetActive(false)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.OnLostLandTimeReset = function(self)
-  -- function num : 0_4
+function UILostLandMainController:OnLostLandTimeReset()
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.OnValue = function(self)
-  -- function num : 0_5
+function UILostLandMainController:OnValue()
   self:InitTimer()
   self:InitEnterData()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.InitEnterData = function(self)
-  -- function num : 0_6
+function UILostLandMainController:InitEnterData()
   local count = #self._enterData
-  ;
-  (self._enterPool):SpawnObjects("UILostLandMainItem", count)
-  self._enterPools = (self._enterPool):GetAllSpawnList()
+  self._enterPool:SpawnObjects("UILostLandMainItem", count)
+  self._enterPools = self._enterPool:GetAllSpawnList()
   for i = 1, #self._enterPools do
-    local item = (self._enterPools)[i]
-    item:SetData(i, (self._enterData)[i], function(idx)
-    -- function num : 0_6_0 , upvalues : self
-    self:EnterItemClick(idx)
-  end
-)
+    local item = self._enterPools[i]
+    item:SetData(i, self._enterData[i], function(idx)
+      self:EnterItemClick(idx)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.EnterItemClick = function(self, idx)
-  -- function num : 0_7 , upvalues : _ENV
-  local enterData = (self._enterData)[idx]
+function UILostLandMainController:EnterItemClick(idx)
+  local enterData = self._enterData[idx]
   local state = enterData:GetLockState()
   if state == UILostLandEnterLockType.UNLOCK then
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_lost_land_choose_enter_pop_tips"), function(param)
-    -- function num : 0_7_0 , upvalues : _ENV, idx, self, enterData
-    (Log.debug)("###[UILostLandMainController] 难度选择", idx)
+    PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_lost_land_choose_enter_pop_tips"), function(param)
+      Log.debug("###[UILostLandMainController] 难度选择", idx)
+      self:ChooseEnter(enterData)
+    end, nil, function(param)
+      Log.debug("###[UILostLandMainController] 取消难度选择")
+    end, nil)
+  elseif state == UILostLandEnterLockType.CANUNLOCK then
+    self:UnLockEnter(idx)
+  elseif state == UILostLandEnterLockType.LOCK then
+    ToastManager.ShowToast(StringTable.Get("str_lost_land_enter_lock_tips"))
+  elseif state == UILostLandEnterLockType.CHOOSE then
     self:ChooseEnter(enterData)
   end
-, nil, function(param)
-    -- function num : 0_7_1 , upvalues : _ENV
-    (Log.debug)("###[UILostLandMainController] 取消难度选择")
-  end
-, nil)
-  else
-    if state == UILostLandEnterLockType.CANUNLOCK then
-      self:UnLockEnter(idx)
-    else
-      if state == UILostLandEnterLockType.LOCK then
-        (ToastManager.ShowToast)((StringTable.Get)("str_lost_land_enter_lock_tips"))
-      else
-        if state == UILostLandEnterLockType.CHOOSE then
-          self:ChooseEnter(enterData)
-        end
-      end
-    end
-  end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.ChooseEnter = function(self, enterdata)
-  -- function num : 0_8
-  (self._uiModule):ChooseEnter(enterdata)
+function UILostLandMainController:ChooseEnter(enterdata)
+  self._uiModule:ChooseEnter(enterdata)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.UnLockEnter = function(self, idx)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.debug)("###[UILostLandMainController] 开始解锁 idx --> ", idx)
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self._OnUnLockEnter, self, idx)
+function UILostLandMainController:UnLockEnter(idx)
+  Log.debug("###[UILostLandMainController] 开始解锁 idx --> ", idx)
+  GameGlobal.TaskManager():StartTask(self._OnUnLockEnter, self, idx)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController._OnUnLockEnter = function(self, TT, idx)
-  -- function num : 0_10 , upvalues : _ENV
-  local enterData = (self._enterData)[idx]
+function UILostLandMainController:_OnUnLockEnter(TT, idx)
+  local enterData = self._enterData[idx]
   local unlockid = enterData:GetEnterID()
-  local res = (self._module):RequestLostAreaUnlockOnedifficulty(TT, unlockid)
+  local res = self._module:RequestLostAreaUnlockOnedifficulty(TT, unlockid)
   if res:GetSucc() then
-    (Log.debug)("###[UILostLandMainController] 解锁成功")
-    ;
-    ((self._enterData)[idx]):UnLock()
-    ;
-    ((self._enterPools)[idx]):FlushData((self._enterData)[idx])
+    Log.debug("###[UILostLandMainController] 解锁成功")
+    self._enterData[idx]:UnLock()
+    self._enterPools[idx]:FlushData(self._enterData[idx])
   else
-    ;
-    (Log.debug)("###[UILostLandMainController] 解锁失败,res-->", res:GetResult())
+    Log.debug("###[UILostLandMainController] 解锁失败,res-->", res:GetResult())
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.OnHide = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UILostLandMainController:OnHide()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.InitTimer = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  self._resetTime = (self._uiModule):GetResetTime()
+function UILostLandMainController:InitTimer()
+  self._resetTime = self._uiModule:GetResetTime()
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
-  self._timerEvent = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_12_0 , upvalues : self
+  self._timerEvent = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:SetTimerTex()
-  end
-)
+  end)
   self:SetTimerTex()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.SetTimerTex = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local svrTime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
+function UILostLandMainController:SetTimerTex()
+  local svrTime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
   local sec = self._resetTime - svrTime
   if sec < 0 then
     self:TimeReset()
   else
-    local timeTex = (self._uiModule):Time2Tex(sec)
-    ;
-    (self._timerTex):SetText((StringTable.Get)("str_lost_land_reset_time_tips", timeTex))
+    local timeTex = self._uiModule:Time2Tex(sec)
+    self._timerTex:SetText(StringTable.Get("str_lost_land_reset_time_tips", timeTex))
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.TimeReset = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  (Log.debug)("###[UILostLandMainController] 时间到，迷失之地重置")
+function UILostLandMainController:TimeReset()
+  Log.debug("###[UILostLandMainController] 时间到，迷失之地重置")
   if self._timerEvent then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerEvent)
+    GameGlobal.Timer():CancelEvent(self._timerEvent)
     self._timerEvent = nil
   end
   self:ResetAnim()
-  ;
-  (self._uiModule):ResetTime(UILostLandResetTimeDialog.Main)
+  self._uiModule:ResetTime(UILostLandResetTimeDialog.Main)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMainController.weekBtnOnClick = function(self)
-  -- function num : 0_15
+function UILostLandMainController:weekBtnOnClick()
   self:ShowDialog("UILostLandWeekInfoController")
 end
-
-

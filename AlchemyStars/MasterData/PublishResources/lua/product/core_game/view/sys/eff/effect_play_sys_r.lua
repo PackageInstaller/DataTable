@@ -1,91 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/eff/effect_play_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("EffectPlaySystem_Render", Object)
 EffectPlaySystem_Render = EffectPlaySystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-EffectPlaySystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function EffectPlaySystem_Render:Constructor(world)
   self.world = world
-  self.group = world:GetGroup((world.BW_WEMatchers).EffectController)
+  self.group = world:GetGroup(world.BW_WEMatchers.EffectController)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectPlaySystem_Render.Execute = function(self)
-  -- function num : 0_1
-  (self.group):HandleForeach(self, self.UpdateEffect)
+function EffectPlaySystem_Render:Execute()
+  self.group:HandleForeach(self, self.UpdateEffect)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectPlaySystem_Render.UpdateEffect = function(self, e)
-  -- function num : 0_2 , upvalues : _ENV
-  local timeService = (self.world):GetService("Time")
+function EffectPlaySystem_Render:UpdateEffect(e)
+  local timeService = self.world:GetService("Time")
   local effCtrl = e:EffectController()
   effCtrl.CurrentTime = effCtrl.CurrentTime + timeService:GetDeltaTimeMs()
-  if effCtrl.Duration > 0 and effCtrl.Duration < effCtrl.CurrentTime then
+  if effCtrl.Duration > 0 and effCtrl.CurrentTime > effCtrl.Duration then
     local cb = effCtrl:GetDestroyCallback()
     if cb then
       cb()
     end
-    do
-      do
-        if e:HasView() then
-          local effObj = (e:View()):GetGameObject()
-          -- DECOMPILER ERROR at PC41: Confused about usage of register: R6 in 'UnsetPending'
-
-          if tostring(effObj) ~= "null" and effObj.transform then
-            (effObj.transform).parent = nil
-          end
-        end
-        ;
-        (self.world):DestroyEntity(e)
-        local effectType = effCtrl:GetEffectType()
-        if effectType == EffectType.FollowHead then
-          self:_UpdateFollowHeadEffect(e, effCtrl)
-        else
-          if effectType == EffectType.Path then
-            self:_UpdatePathEffect(e, effCtrl)
-          else
-            if effectType == EffectType.Bind then
-              self:_UpdateBindEffect(e, effCtrl)
-            else
-              if effectType == EffectType.UI then
-                self:_UpdateUIEffect(e, effCtrl)
-              end
-            end
-          end
-        end
+    if e:HasView() then
+      local effObj = e:View():GetGameObject()
+      if tostring(effObj) ~= "null" and effObj.transform then
+        effObj.transform.parent = nil
       end
     end
+    self.world:DestroyEntity(e)
+  end
+  local effectType = effCtrl:GetEffectType()
+  if effectType == EffectType.FollowHead then
+    self:_UpdateFollowHeadEffect(e, effCtrl)
+  elseif effectType == EffectType.Path then
+    self:_UpdatePathEffect(e, effCtrl)
+  elseif effectType == EffectType.Bind then
+    self:_UpdateBindEffect(e, effCtrl)
+  elseif effectType == EffectType.UI then
+    self:_UpdateUIEffect(e, effCtrl)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectPlaySystem_Render._UpdateFollowHeadEffect = function(self, e, effCtrl)
-  -- function num : 0_3 , upvalues : _ENV
+function EffectPlaySystem_Render:_UpdateFollowHeadEffect(e, effCtrl)
   local heightOffset = effCtrl:GetHeightOffset()
   local holderEntity = effCtrl:GetBindEntity()
   if holderEntity == nil then
-    (Log.fatal)("EffectPlaySystem_Render effect holder is null")
-    return 
+    Log.fatal("EffectPlaySystem_Render effect holder is null")
+    return
   end
   local hodlerEntityCmpt = holderEntity:View()
   if hodlerEntityCmpt == nil then
-    (self.world):DestroyEntity(e)
-    return 
+    self.world:DestroyEntity(e)
+    return
   end
   e:SetViewVisible(holderEntity:IsViewVisible())
   if not holderEntity:IsViewVisible() then
-    return 
+    return
   end
-  local holderObj = ((holderEntity:View()):GetGameObject())
-  local effectObj = nil
+  local holderObj = holderEntity:View():GetGameObject()
+  local effectObj
   local effectViewCmpt = e:View()
   if effectViewCmpt ~= nil then
     effectObj = effectViewCmpt:GetGameObject()
@@ -97,142 +68,110 @@ EffectPlaySystem_Render._UpdateFollowHeadEffect = function(self, e, effCtrl)
       hpOffset = hpCmpt:GetHPOffset()
     end
     hpOffset = hpOffset - Vector3(0, BattleConst.HeadBuffHeightOffset, 0)
-    local ownerObj = ((holderEntity:View()).ViewWrapper).GameObject
-    local skinnedMeshRender = (GameObjectHelper.FindFirstSkinedMeshRender)(ownerObj)
+    local ownerObj = holderEntity:View().ViewWrapper.GameObject
+    local skinnedMeshRender = GameObjectHelper.FindFirstSkinedMeshRender(ownerObj)
     if not skinnedMeshRender then
-      return 
+      return
     end
-    local skinnedMeshPosition = (skinnedMeshRender.transform).position + (hpOffset)
-    local meshExtents = (GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent)(ownerObj)
+    local skinnedMeshPosition = skinnedMeshRender.transform.position + hpOffset
+    local meshExtents = GameObjectHelper.FindFirstSkinedMeshRenderBoundsExtent(ownerObj)
     local convertExtents = Vector3(0, meshExtents.x * 2, 0)
     local targetPos = skinnedMeshPosition + convertExtents
-    local effectTras = (((e:View()).ViewWrapper).GameObject).transform
+    local effectTras = e:View().ViewWrapper.GameObject.transform
     effectTras.position = targetPos
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectPlaySystem_Render._UpdatePathEffect = function(self, e, effCtrl)
-  -- function num : 0_4 , upvalues : _ENV
+function EffectPlaySystem_Render:_UpdatePathEffect(e, effCtrl)
   local viewCmpt = e:View()
   if viewCmpt == nil then
-    return 
+    return
   end
   local viewObj = viewCmpt:GetGameObject()
   if viewObj == nil then
-    return 
+    return
   end
-  local curRenderPos = (viewObj.transform).position
-  local boardSvc = (self.world):GetService("BoardRender")
-  local targetRenderPos = boardSvc:GridPos2RenderPos((e:EffectController()):GetTargetGridPos())
+  local curRenderPos = viewObj.transform.position
+  local boardSvc = self.world:GetService("BoardRender")
+  local targetRenderPos = boardSvc:GridPos2RenderPos(e:EffectController():GetTargetGridPos())
   local moveSpeed = effCtrl:GetMoveSpeed()
-  local distance = (Vector2.Distance)(targetRenderPos, curRenderPos)
-  local timeService = (self._world):GetService("Time")
+  local distance = Vector2.Distance(targetRenderPos, curRenderPos)
+  local timeService = self._world:GetService("Time")
   local deltaTimeMS = timeService:GetDeltaTimeMs()
   local movement = deltaTimeMS * moveSpeed / 1000
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R13 in 'UnsetPending'
-
   if distance < movement then
-    (viewObj.transform).position = targetRenderPos
-    return 
+    viewObj.transform.position = targetRenderPos
+    return
   else
-    local lerpPos = (Vector3.Lerp)(curRenderPos, targetRenderPos, movement / distance)
-    -- DECOMPILER ERROR at PC50: Confused about usage of register: R14 in 'UnsetPending'
-
-    ;
-    (viewObj.transform).position = lerpPos
+    local lerpPos = Vector3.Lerp(curRenderPos, targetRenderPos, movement / distance)
+    viewObj.transform.position = lerpPos
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectPlaySystem_Render._UpdateBindEffect = function(self, e, effCtrl)
-  -- function num : 0_5 , upvalues : _ENV
+function EffectPlaySystem_Render:_UpdateBindEffect(e, effCtrl)
   local followMove = effCtrl:GetFollowMove()
   local followRotate = effCtrl:GetFollowRotate()
   local followRotateCaster = effCtrl:GetFollowRotateCaster()
   local effView = e:View()
   if not effView then
-    return 
+    return
   end
   local effectObj = effView:GetGameObject()
   if not effectObj or tostring(effectObj) == "null" then
-    return 
+    return
   end
   if not followMove or not followRotate then
     local holderEntity = effCtrl:GetBindEntity()
     if holderEntity == nil then
-      (Log.notice)("特效绑定的Entity为空！")
-      return 
+      Log.notice("特效绑定的Entity为空！")
+      return
     end
     local hodlerEntityCmpt = holderEntity:View()
     if hodlerEntityCmpt == nil then
-      (Log.notice)("特效绑定的Entity的View为空！")
-      return 
+      Log.notice("特效绑定的Entity的View为空！")
+      return
     end
-    local holderObj = (holderEntity:View()):GetGameObject()
+    local holderObj = holderEntity:View():GetGameObject()
     if holderObj == nil or tostring(holderObj) == "null" then
-      (Log.notice)("特效绑定的Entity的View的GameObject为空！")
-      return 
+      Log.notice("特效绑定的Entity的View的GameObject为空！")
+      return
     end
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R11 in 'UnsetPending'
-
     if followMove then
-      (effectObj.transform).position = (holderObj.transform).position
+      effectObj.transform.position = holderObj.transform.position
       local offSet = effCtrl:GetPosOffSet()
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R12 in 'UnsetPending'
-
       if offSet then
-        (effectObj.transform).position = (effectObj.transform).position + offSet
+        effectObj.transform.position = effectObj.transform.position + offSet
       end
     end
-    do
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R11 in 'UnsetPending'
-
-      if followRotate then
-        (effectObj.transform).rotation = (holderObj.transform).rotation
-      else
-        if followRotateCaster then
-          local casterEntityID = effCtrl:GetEffectCasterID()
-          local casterEntity = (self.world):GetEntityByID(casterEntityID)
-          if casterEntity then
-            local casterView = casterEntity:View()
-            local casterObj = casterView:GetGameObject()
-            if casterObj then
-              local direction = (effectObj.transform).position - (casterObj.transform).position
-              -- DECOMPILER ERROR at PC107: Confused about usage of register: R16 in 'UnsetPending'
-
-              ;
-              (effectObj.transform).rotation = (Quaternion.LookRotation)(direction)
-            end
-          else
-            do
-              ;
-              (Log.notice)("特效配置为旋转至面向施法者，但没有施法者或绑定者信息")
-            end
-          end
+    if followRotate then
+      effectObj.transform.rotation = holderObj.transform.rotation
+    elseif followRotateCaster then
+      local casterEntityID = effCtrl:GetEffectCasterID()
+      local casterEntity = self.world:GetEntityByID(casterEntityID)
+      if casterEntity then
+        local casterView = casterEntity:View()
+        local casterObj = casterView:GetGameObject()
+        if casterObj then
+          local direction = effectObj.transform.position - casterObj.transform.position
+          effectObj.transform.rotation = Quaternion.LookRotation(direction)
         end
+      else
+        Log.notice("特效配置为旋转至面向施法者，但没有施法者或绑定者信息")
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-EffectPlaySystem_Render._UpdateUIEffect = function(self, e, effCtrl)
-  -- function num : 0_6
+function EffectPlaySystem_Render:_UpdateUIEffect(e, effCtrl)
   local effCtrl = e:EffectController()
   local effectType = effCtrl:GetEffectType()
-  local mainCameraCmpt = (self.world):MainCamera()
+  local mainCameraCmpt = self.world:MainCamera()
   local hudCanvas = mainCameraCmpt:HUDCanvas()
-  local trans = (((e:View()).ViewWrapper).GameObject).transform
-  local pos = (e:EffectController()):GetTargetGridPos()
+  local trans = e:View().ViewWrapper.GameObject.transform
+  local pos = e:EffectController():GetTargetGridPos()
   if pos then
-    local renderBattleService = (self.world):GetService("RenderBattle")
+    local renderBattleService = self.world:GetService("RenderBattle")
     local hudWorldPos = renderBattleService:GridPos2HudWorldPos(pos)
     trans.position = hudWorldPos
   end
 end
-
-

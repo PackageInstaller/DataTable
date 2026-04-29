@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_feature_step_point.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeFeatureStepPoint", BuffViewBase)
 BuffViewChangeFeatureStepPoint = BuffViewChangeFeatureStepPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeFeatureStepPoint.IsNotifyMatch = function(self, notify)
-  -- function num : 0_0
+function BuffViewChangeFeatureStepPoint:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangeFeatureStepPoint.PlayView = function(self, TT)
-  -- function num : 0_1
+function BuffViewChangeFeatureStepPoint:PlayView(TT)
   local result = self._buffResult
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     featureSvcRender:NotifyStepPointChange(result:GetCurCount(), result:GetOldCount())
   end
@@ -25,19 +15,14 @@ end
 
 _class("BuffViewChangeFeatureMaxStepPoint", BuffViewBase)
 BuffViewChangeFeatureMaxStepPoint = BuffViewChangeFeatureMaxStepPoint
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeFeatureMaxStepPoint.IsNotifyMatch = function(self, notify)
-  -- function num : 0_2
+function BuffViewChangeFeatureMaxStepPoint:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangeFeatureMaxStepPoint.PlayView = function(self, TT)
-  -- function num : 0_3
+function BuffViewChangeFeatureMaxStepPoint:PlayView(TT)
   local result = self._buffResult
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     featureSvcRender:NotifyMaxStepPointChange(result:GetCurCount(), result:GetOldCount())
   end
@@ -45,19 +30,14 @@ end
 
 _class("BuffViewChangeFeatureRecoverStepPoint", BuffViewBase)
 BuffViewChangeFeatureRecoverStepPoint = BuffViewChangeFeatureRecoverStepPoint
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeFeatureRecoverStepPoint.IsNotifyMatch = function(self, notify)
-  -- function num : 0_4
+function BuffViewChangeFeatureRecoverStepPoint:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangeFeatureRecoverStepPoint.PlayView = function(self, TT)
-  -- function num : 0_5
+function BuffViewChangeFeatureRecoverStepPoint:PlayView(TT)
   local result = self._buffResult
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     featureSvcRender:NotifyRecoverStepPointChange(result:GetCurCount(), result:GetOldCount())
   end
@@ -65,19 +45,14 @@ end
 
 _class("BuffViewChangeFeatureRecoverStepPointForLinkUI", BuffViewBase)
 BuffViewChangeFeatureRecoverStepPointForLinkUI = BuffViewChangeFeatureRecoverStepPointForLinkUI
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeFeatureRecoverStepPointForLinkUI.IsNotifyMatch = function(self, notify)
-  -- function num : 0_6
+function BuffViewChangeFeatureRecoverStepPointForLinkUI:IsNotifyMatch(notify)
   return true
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewChangeFeatureRecoverStepPointForLinkUI.PlayView = function(self, TT)
-  -- function num : 0_7
+function BuffViewChangeFeatureRecoverStepPointForLinkUI:PlayView(TT)
   local result = self._buffResult
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     local flagID = result:GetFlagID()
     local isRevert = result:GetIsRevert()
@@ -88,5 +63,3 @@ BuffViewChangeFeatureRecoverStepPointForLinkUI.PlayView = function(self, TT)
     end
   end
 end
-
-

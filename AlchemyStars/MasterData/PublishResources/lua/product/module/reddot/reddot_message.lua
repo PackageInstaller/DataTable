@@ -1,80 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/reddot/reddot_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local reddotMessageDef = {CLSID_CEventGetRedDotStatusReq = 37000, CLSID_CEventGetRedDotStatusRes = 37001, CLSID_CEventListenRedDotStatus = 37002, CLSID_CEventUnListenRedDotStatus = 37003, CLSID_CEventNotifyLightRedDot = 37004}
-;
-(table.append)(MessageDef, reddotMessageDef)
+local reddotMessageDef = {
+  CLSID_CEventGetRedDotStatusReq = 37000,
+  CLSID_CEventGetRedDotStatusRes = 37001,
+  CLSID_CEventListenRedDotStatus = 37002,
+  CLSID_CEventUnListenRedDotStatus = 37003,
+  CLSID_CEventNotifyLightRedDot = 37004
+}
+table.append(MessageDef, reddotMessageDef)
 _class("CEventGetRedDotStatusReq", CCallRequestEvent)
 CEventGetRedDotStatusReq = CEventGetRedDotStatusReq
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetRedDotStatusReq.Constructor = function(self)
-  -- function num : 0_0
+function CEventGetRedDotStatusReq:Constructor()
   self.check_list = {}
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetRedDotStatusReq._proto = {
-[1] = {"check_list", "list<int>"}
+  [1] = {"check_list", "list<int>"}
 }
 _class("CEventGetRedDotStatusRes", CCallReplyEvent)
 CEventGetRedDotStatusRes = CEventGetRedDotStatusRes
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventGetRedDotStatusRes.Constructor = function(self)
-  -- function num : 0_1
+function CEventGetRedDotStatusRes:Constructor()
   self.red_dot_list = {}
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventGetRedDotStatusRes._proto = {
-[1] = {"red_dot_list", "list<int>"}
+  [1] = {
+    "red_dot_list",
+    "list<int>"
+  }
 }
 _class("CEventListenRedDotStatus", CCliPushEvent)
 CEventListenRedDotStatus = CEventListenRedDotStatus
--- DECOMPILER ERROR at PC56: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventListenRedDotStatus.Constructor = function(self)
-  -- function num : 0_2
+function CEventListenRedDotStatus:Constructor()
   self.red_dot_list = {}
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventListenRedDotStatus._proto = {
-[1] = {"red_dot_list", "list<int>"}
+  [1] = {
+    "red_dot_list",
+    "list<int>"
+  }
 }
 _class("CEventUnListenRedDotStatus", CCliPushEvent)
 CEventUnListenRedDotStatus = CEventUnListenRedDotStatus
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventUnListenRedDotStatus.Constructor = function(self)
-  -- function num : 0_3
+function CEventUnListenRedDotStatus:Constructor()
   self.red_dot_list = {}
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventUnListenRedDotStatus._proto = {
-[1] = {"red_dot_list", "list<int>"}
+  [1] = {
+    "red_dot_list",
+    "list<int>"
+  }
 }
 _class("CEventNotifyLightRedDot", CSvrPushEvent)
 CEventNotifyLightRedDot = CEventNotifyLightRedDot
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
 
-CEventNotifyLightRedDot.Constructor = function(self)
-  -- function num : 0_4
+function CEventNotifyLightRedDot:Constructor()
   self.red_dot_status = {}
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R1 in 'UnsetPending'
-
 CEventNotifyLightRedDot._proto = {
-[1] = {"red_dot_status", "map<int,bool>"}
+  [1] = {
+    "red_dot_status",
+    "map<int,bool>"
+  }
 }
-

@@ -1,8 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/cn15_n44/str_cn15_n44_lesson.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn15_n44_lesson_1 = "デイリー補給", str_cn15_n44_lesson_2 = "イベント【デイリー補給】開催期間中、毎日活躍度による宝箱の受け取り時、追加で【デイリー補給箱】を獲得できます"}
+local config = {
+  str_cn15_n44_lesson_1 = "デイリー補給",
+  str_cn15_n44_lesson_2 = "イベント【デイリー補給】開催期間中、毎日活躍度による宝箱の受け取り時、追加で【デイリー補給箱】を獲得できます"
+}
 return config
-

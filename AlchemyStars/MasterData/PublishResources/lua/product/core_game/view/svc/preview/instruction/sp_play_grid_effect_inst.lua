@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_grid_effect_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayGridEffectInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayGridEffectInstruction = SkillPreviewPlayGridEffectInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayGridEffectInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayGridEffectInstruction:Constructor(params)
   self._effectID = tonumber(params.effectID)
   self._playType = tonumber(params.playType)
   if params.x and params.y then
@@ -19,46 +12,37 @@ SkillPreviewPlayGridEffectInstruction.Constructor = function(self, params)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayGridEffectInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayGridEffectInstruction:GetCacheResource()
   local res = {}
-  local effRes = {((Cfg.cfg_effect)[self._effectID]).ResPath, 1}
-  ;
-  (table.insert)(res, effRes)
+  local effRes = {
+    Cfg.cfg_effect[self._effectID].ResPath,
+    1
+  }
+  table.insert(res, effRes)
   return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayGridEffectInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_2 , upvalues : _ENV
-  local previewActiveSkillService = (previewContext:GetWorld()):GetService("PreviewActiveSkill")
+function SkillPreviewPlayGridEffectInstruction:DoInstruction(TT, casterEntity, previewContext)
+  local previewActiveSkillService = previewContext:GetWorld():GetService("PreviewActiveSkill")
   local world = casterEntity:GetOwnerWorld()
   local previewPickUpComponent = casterEntity:ActiveSkillPickUpComponent()
   local useEffectID = self._effectID
   if self._playType == 1 then
-    local effectEntity = (world:GetService("Effect")):CreateWorldPositionEffect(useEffectID, self._girdPos)
+    local effectEntity = world:GetService("Effect"):CreateWorldPositionEffect(useEffectID, self._girdPos)
     previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID(), useEffectID)
   else
-    do
-      local renderBoardEntity = world:GetRenderBoardEntity()
-      local renderBoardCmpt = renderBoardEntity:RenderBoard()
-      local effectSvc = world:GetService("Effect")
-      local utilData = world:GetService("UtilData")
-      local gridEntityData = utilData:GetReplicaGridEntityData()
-      local gridCount = (table.count)(gridEntityData)
-      ;
-      (Log.fatal)("GridCount:", gridCount)
-      if gridEntityData then
-        for pos,_ in pairs(gridEntityData) do
-          local effectEntity = effectSvc:CreateWorldPositionDirectionEffect(useEffectID, pos)
-          previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID(), useEffectID)
-        end
+    local renderBoardEntity = world:GetRenderBoardEntity()
+    local renderBoardCmpt = renderBoardEntity:RenderBoard()
+    local effectSvc = world:GetService("Effect")
+    local utilData = world:GetService("UtilData")
+    local gridEntityData = utilData:GetReplicaGridEntityData()
+    local gridCount = table.count(gridEntityData)
+    Log.fatal("GridCount:", gridCount)
+    if gridEntityData then
+      for pos, _ in pairs(gridEntityData) do
+        local effectEntity = effectSvc:CreateWorldPositionDirectionEffect(useEffectID, pos)
+        previewPickUpComponent:AddPickUpEffectEntityID(effectEntity:GetID(), useEffectID)
       end
     end
   end
 end
-
-

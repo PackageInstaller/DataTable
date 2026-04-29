@@ -1,32 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_teams/ui_team_change_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITeamChangeStar", UICustomWidget)
 UITeamChangeStar = UITeamChangeStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITeamChangeStar.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UITeamChangeStar:Constructor()
   self._atlas = self:GetAsset("UITeamChange.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITeamChangeStar.SetData = function(self, blue)
-  -- function num : 0_1
+function UITeamChangeStar:SetData(blue)
   self._starImg = self:GetUIComponent("Image", "img")
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
   if blue then
-    (self._starImg).sprite = (self._atlas):GetSprite("spirit_xing1_frame")
+    self._starImg.sprite = self._atlas:GetSprite("spirit_xing1_frame")
   else
-    -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._starImg).sprite = (self._atlas):GetSprite("spirit_xing2_frame")
+    self._starImg.sprite = self._atlas:GetSprite("spirit_xing2_frame")
   end
 end
-
-

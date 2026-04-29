@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_preview_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedPreviewItem", UICustomWidget)
 UIHomelandBreedPreviewItem = UIHomelandBreedPreviewItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedPreviewItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandBreedPreviewItem:Constructor()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._itemWidget = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedPreviewItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedPreviewItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedPreviewItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedPreviewItem:_GetComponents()
   self._item = self:GetUIComponent("UISelectObjectPath", "Item")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._probability = self:GetUIComponent("UILocalizationText", "Probability")
@@ -31,63 +18,45 @@ UIHomelandBreedPreviewItem._GetComponents = function(self)
   self._got = self:GetGameObject("Got")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedPreviewItem.SetData = function(self, previewType, seed, data)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandBreedPreviewItem:SetData(previewType, seed, data)
   self._seed = seed
   self._data = data
-  self._itemWidget = (self._item):SpawnObject("UIHomelandBreedItem")
-  local cfg = (Cfg.cfg_item)[((self._data).cfg).ID]
-  ;
-  (self._itemWidget):SetData(cfg)
-  ;
-  (self._name):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._got):SetActive(not self:_Got(((self._data).cfg).ID))
+  self._itemWidget = self._item:SpawnObject("UIHomelandBreedItem")
+  local cfg = Cfg.cfg_item[self._data.cfg.ID]
+  self._itemWidget:SetData(cfg)
+  self._name:SetText(StringTable.Get(cfg.Name))
+  self._got:SetActive(not self:_Got(self._data.cfg.ID))
   if previewType == HomelandBreedPreviewType.Mutation then
-    (self._probabilityBg):SetActive(true)
+    self._probabilityBg:SetActive(true)
     local probabilityStr = self:_GetProbability()
-    ;
-    (self._probability):SetText(probabilityStr)
+    self._probability:SetText(probabilityStr)
   else
-    do
-      ;
-      (self._probabilityBg):SetActive(false)
-    end
+    self._probabilityBg:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedPreviewItem._GetProbability = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local probability = ((self._data).getProbalilityFunc)((self._data).cfg)
-  local cfgs = (Cfg.cfg_homeland_breed_const)({})
+function UIHomelandBreedPreviewItem:_GetProbability()
+  local probability = self._data.getProbalilityFunc(self._data.cfg)
+  local cfgs = Cfg.cfg_homeland_breed_const({})
   for i = 1, #cfgs do
     local cfg = cfgs[i]
     if probability <= cfg.Probability then
-      return (StringTable.Get)(cfg.Desc)
+      return StringTable.Get(cfg.Desc)
     end
   end
   local cfg = cfgs[#cfgs]
-  return (StringTable.Get)(cfg.Desc)
+  return StringTable.Get(cfg.Desc)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedPreviewItem._Got = function(self, id)
-  -- function num : 0_5 , upvalues : _ENV
-  local ids = (((self._homelandModule):GetHomelandInfo()).cultivation_info).already_cultivation_list
-  if not ids or (table.count)(ids) <= 0 then
+function UIHomelandBreedPreviewItem:_Got(id)
+  local ids = self._homelandModule:GetHomelandInfo().cultivation_info.already_cultivation_list
+  if not ids or table.count(ids) <= 0 then
     return false
   end
-  for _,_id in pairs(ids) do
+  for _, _id in pairs(ids) do
     if _id == id then
       return true
     end
   end
   return false
 end
-
-

@@ -1,133 +1,95 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_stamp_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_StampDamage", Object)
 SkillEffectCalc_StampDamage = SkillEffectCalc_StampDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_StampDamage.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_StampDamage:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_StampDamage.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_StampDamage:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
+  for _, targetID in ipairs(targets) do
     local result = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
     if result then
-      (table.appendArray)(results, result)
+      table.appendArray(results, result)
     end
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_StampDamage._CalculateSingleTarget = function(self, skillEffectCalcParam, defenderEntityID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_StampDamage:_CalculateSingleTarget(skillEffectCalcParam, defenderEntityID)
   local skillDamageParam = skillEffectCalcParam.skillEffectParam
   local percents = skillDamageParam:GetDamagePercent()
   local damageFormulaID = skillDamageParam:GetDamageFormulaID()
-  local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local defender = (self._world):GetEntityByID(defenderEntityID)
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local defender = self._world:GetEntityByID(defenderEntityID)
   if defender == nil then
-    (Log.notice)("CalculationForeachTarget defender is null ", defenderEntityID)
+    Log.notice("CalculationForeachTarget defender is null ", defenderEntityID)
     local skillResult = SkillDamageEffectResult:New(nil, -1, 0, 0, nil)
     return skillResult
   end
-  do
-    local defenderPos = (defender:GridLocation()).Position
-    local defenderAreaList = {}
-    local defenderAreaCmpt = defender:BodyArea()
-    local defenderArea = defenderAreaCmpt:GetArea()
-    for _,areaOffset in ipairs(defenderArea) do
-      local areaPos = Vector2(defenderPos.x + areaOffset.x, defenderPos.y + areaOffset.y)
-      defenderAreaList[#defenderAreaList + 1] = areaPos
-    end
-    if skillEffectCalcParam.skillRange == nil then
-      skillEffectCalcParam.skillRange = {}
-      -- DECOMPILER ERROR at PC64: Confused about usage of register: R12 in 'UnsetPending'
-
-      ;
-      (skillEffectCalcParam.skillRange)[#skillEffectCalcParam.skillRange + 1] = skillEffectCalcParam.gridPos
-    end
-    local configService = (self._world):GetService("Config")
-    local skillConfigData = configService:GetSkillConfigData(skillEffectCalcParam.skillID)
-    local skillType = skillConfigData:GetSkillType()
-    local attrModifyType = ModifySkillParamType.ChainSkill
-    if skillType == SkillType.Active then
-      attrModifyType = ModifySkillParamType.ActiveSkill
-    end
-    local attackRangeList = {}
-    for _,skillRangePos in ipairs(skillEffectCalcParam.skillRange) do
-      if skillRangePos._className == nil then
-        for _,curPos in ipairs(skillRangePos) do
-          for _,areaPos in ipairs(defenderAreaList) do
-            if curPos == areaPos then
-              attackRangeList[#attackRangeList + 1] = curPos
-            end
-          end
-        end
-      else
-        do
-          for _,areaPos in ipairs(defenderAreaList) do
-            if skillRangePos == areaPos then
-              attackRangeList[#attackRangeList + 1] = skillRangePos
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC119: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
-      end
-    end
-    local addDamageRate = (skillEffectCalcParam.skillEffectParam):GetAddDamageByStamp()
-    local addDamageBuffId = (skillEffectCalcParam.skillEffectParam):GetBuffID()
-    local buffService = (self._world):GetService("BuffLogic")
-    local formulaService = (self._world):GetService("Formula")
-    local svcCalcDamage = (self._world):GetService("CalcDamage")
-    local battleStatCmpt = (self._world):BattleStat()
-    local skillResultList = {}
-    for _,damagePos in ipairs(attackRangeList) do
-      local DamageCoefficient = 0
-      local defenderBuffComp = defender:BuffComponent()
-      local buffInstance = defenderBuffComp:GetBuffById(addDamageBuffId)
-      do
-        if buffInstance then
-          local count = buffInstance:GetLayerCount()
-          DamageCoefficient = count * addDamageRate
-        end
-        if DamageCoefficient > 0 then
-          (Log.debug)("Buff have stamp , and DamageCoefficient = ", DamageCoefficient)
-        end
-        buffService:ChangeSkillFinalParam(attacker, 1, attrModifyType, DamageCoefficient)
-        local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
-        local totalDamage, listDamageInfo = (self._skillEffectService):ComputeSkillDamage(attacker, skillEffectCalcParam.attackPos, defender, R38_PC186, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex, nil, nil, R45_PC186)
-        buffService:RemoveSkillFinalParam(attacker, R38_PC186, attrModifyType)
-        -- DECOMPILER ERROR at PC195: Overwrote pending register: R38 in 'AssignReg'
-
-        do
-          local skillResult = SkillDamageEffectResult:New(R37_PC198, R38_PC186, totalDamage, listDamageInfo)
-          skillResultList[#skillResultList + 1] = skillResult
-          -- DECOMPILER ERROR at PC202: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
-      end
-    end
-    return skillResultList
+  local defenderPos = defender:GridLocation().Position
+  local defenderAreaList = {}
+  local defenderAreaCmpt = defender:BodyArea()
+  local defenderArea = defenderAreaCmpt:GetArea()
+  for _, areaOffset in ipairs(defenderArea) do
+    local areaPos = Vector2(defenderPos.x + areaOffset.x, defenderPos.y + areaOffset.y)
+    defenderAreaList[#defenderAreaList + 1] = areaPos
   end
+  if skillEffectCalcParam.skillRange == nil then
+    skillEffectCalcParam.skillRange = {}
+    skillEffectCalcParam.skillRange[#skillEffectCalcParam.skillRange + 1] = skillEffectCalcParam.gridPos
+  end
+  local configService = self._world:GetService("Config")
+  local skillConfigData = configService:GetSkillConfigData(skillEffectCalcParam.skillID)
+  local skillType = skillConfigData:GetSkillType()
+  local attrModifyType = ModifySkillParamType.ChainSkill
+  if skillType == SkillType.Active then
+    attrModifyType = ModifySkillParamType.ActiveSkill
+  end
+  local attackRangeList = {}
+  for _, skillRangePos in ipairs(skillEffectCalcParam.skillRange) do
+    if skillRangePos._className == nil then
+      for _, curPos in ipairs(skillRangePos) do
+        for _, areaPos in ipairs(defenderAreaList) do
+          if curPos == areaPos then
+            attackRangeList[#attackRangeList + 1] = curPos
+          end
+        end
+      end
+    else
+      for _, areaPos in ipairs(defenderAreaList) do
+        if skillRangePos == areaPos then
+          attackRangeList[#attackRangeList + 1] = skillRangePos
+        end
+      end
+    end
+  end
+  local addDamageRate = skillEffectCalcParam.skillEffectParam:GetAddDamageByStamp()
+  local addDamageBuffId = skillEffectCalcParam.skillEffectParam:GetBuffID()
+  local buffService = self._world:GetService("BuffLogic")
+  local formulaService = self._world:GetService("Formula")
+  local svcCalcDamage = self._world:GetService("CalcDamage")
+  local battleStatCmpt = self._world:BattleStat()
+  local skillResultList = {}
+  for _, damagePos in ipairs(attackRangeList) do
+    local DamageCoefficient = 0
+    local defenderBuffComp = defender:BuffComponent()
+    local buffInstance = defenderBuffComp:GetBuffById(addDamageBuffId)
+    if buffInstance then
+      local count = buffInstance:GetLayerCount()
+      DamageCoefficient = count * addDamageRate
+    end
+    if 0 < DamageCoefficient then
+      Log.debug("Buff have stamp , and DamageCoefficient = ", DamageCoefficient)
+    end
+    buffService:ChangeSkillFinalParam(attacker, 1, attrModifyType, DamageCoefficient)
+    local damageStageIndex = skillDamageParam:GetSkillEffectDamageStageIndex()
+    local totalDamage, listDamageInfo = self._skillEffectService:ComputeSkillDamage(attacker, skillEffectCalcParam.attackPos, defender, damagePos, skillEffectCalcParam.skillID, skillDamageParam, SkillEffectType.Damage, damageStageIndex, nil, nil, damagePos)
+    buffService:RemoveSkillFinalParam(attacker, 1, attrModifyType)
+    local skillResult = SkillDamageEffectResult:New(damagePos, defenderEntityID, totalDamage, listDamageInfo)
+    skillResultList[#skillResultList + 1] = skillResult
+  end
+  return skillResultList
 end
-
-

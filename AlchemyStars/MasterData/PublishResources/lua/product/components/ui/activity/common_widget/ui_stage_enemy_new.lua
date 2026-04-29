@@ -1,48 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_stage_enemy_new.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIStageEnemyNew", UICustomWidget)
 UIStageEnemyNew = UIStageEnemyNew
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIStageEnemyNew.OnShow = function(self)
-  -- function num : 0_0
+function UIStageEnemyNew:OnShow()
   self._enemyMsg = self:GetUIComponent("UISelectObjectPath", "enemyMsg")
   self._enemyTitleTex = self:GetUIComponent("UILocalizationText", "enemyTitleTex")
   self._enemyTitleBg2go = self:GetGameObject("GameObjecte2")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIStageEnemyNew.Flush = function(self, recommendAwaken, recommendLV, levelId, color, titleBgSprite, titleBg2Sprite, isChess, noLv, noTitle)
-  -- function num : 0_1
-  local enemy = (self._enemyMsg):SpawnObject("UIEnemyMsgStageNew")
+function UIStageEnemyNew:Flush(recommendAwaken, recommendLV, levelId, color, titleBgSprite, titleBg2Sprite, isChess, noLv, noTitle)
+  local enemy = self._enemyMsg:SpawnObject("UIEnemyMsgStageNew")
   enemy:SetData(levelId, nil, isChess, noLv)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self._enemyTitleTex).color = color
+  self._enemyTitleTex.color = color
   if titleBgSprite == nil and titleBgSprite == nil then
     if not noLv then
-      ((self._enemyTitleBg2go).gameObject):SetActive(false)
+      self._enemyTitleBg2go.gameObject:SetActive(false)
     else
-      ;
-      ((self._enemyTitleBg2go).gameObject):SetActive(true)
+      self._enemyTitleBg2go.gameObject:SetActive(true)
     end
   else
-    -- DECOMPILER ERROR at PC33: Confused about usage of register: R11 in 'UnsetPending'
-
     if not noLv then
-      (self._enemyTitleBg).sprite = titleBgSprite
+      self._enemyTitleBg.sprite = titleBgSprite
     end
-    ;
-    ((self._enemyTitleBg2go).gameObject):SetActive(true)
+    self._enemyTitleBg2go.gameObject:SetActive(true)
   end
   if noTitle then
-    ((self._enemyTitleBg2go).gameObject):SetActive(false)
+    self._enemyTitleBg2go.gameObject:SetActive(false)
   end
 end
-
-

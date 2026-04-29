@@ -1,196 +1,151 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/reviewN6/ui_n6_main_controller_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN6MainController_Review", UIController)
 UIN6MainController_Review = UIN6MainController_Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN6MainController_Review.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._timeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN6MainController_Review:LoadDataOnEnter(TT, res, uiParams)
+  self._timeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N6, ECampaignReviewN6ComponentID.BUILD, ECampaignReviewN6ComponentID.QUEST, ECampaignReviewN6ComponentID.LINE_MISSION, ECampaignReviewN6ComponentID.STORY, ECampaignReviewN6ComponentID.POINT_PROGRESS)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N6, ECampaignReviewN6ComponentID.BUILD, ECampaignReviewN6ComponentID.QUEST, ECampaignReviewN6ComponentID.LINE_MISSION, ECampaignReviewN6ComponentID.STORY, ECampaignReviewN6ComponentID.POINT_PROGRESS)
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
   if res and not res:GetSucc() then
-    (self._campaignModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    self._campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
-  self._buildComponent = (self._localProcess):GetComponent(ECampaignReviewN6ComponentID.BUILD)
-  self._buildComponentInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN6ComponentID.BUILD)
-  self._questComponent = (self._localProcess):GetComponent(ECampaignReviewN6ComponentID.QUEST)
-  self._questComponentInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN6ComponentID.QUEST)
-  self._lineMissionComponet = (self._localProcess):GetComponent(ECampaignReviewN6ComponentID.LINE_MISSION)
-  self._lineMissionCompInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN6ComponentID.LINE_MISSION)
-  self._storyComponent = (self._localProcess):GetComponent(ECampaignReviewN6ComponentID.STORY)
-  self._storyComponentInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN6ComponentID.STORY)
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._name = (StringTable.Get)(cfg_campaign.CampaignName)
-  self._subName = (StringTable.Get)(cfg_campaign.CampaignSubtitle)
+  self._buildComponent = self._localProcess:GetComponent(ECampaignReviewN6ComponentID.BUILD)
+  self._buildComponentInfo = self._localProcess:GetComponentInfo(ECampaignReviewN6ComponentID.BUILD)
+  self._questComponent = self._localProcess:GetComponent(ECampaignReviewN6ComponentID.QUEST)
+  self._questComponentInfo = self._localProcess:GetComponentInfo(ECampaignReviewN6ComponentID.QUEST)
+  self._lineMissionComponet = self._localProcess:GetComponent(ECampaignReviewN6ComponentID.LINE_MISSION)
+  self._lineMissionCompInfo = self._localProcess:GetComponentInfo(ECampaignReviewN6ComponentID.LINE_MISSION)
+  self._storyComponent = self._localProcess:GetComponent(ECampaignReviewN6ComponentID.STORY)
+  self._storyComponentInfo = self._localProcess:GetComponentInfo(ECampaignReviewN6ComponentID.STORY)
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._name = StringTable.Get(cfg_campaign.CampaignName)
+  self._subName = StringTable.Get(cfg_campaign.CampaignSubtitle)
   local missionEndTime = 0
   if self._lineMissionCompInfo then
-    missionEndTime = (self._lineMissionCompInfo).m_close_time
+    missionEndTime = self._lineMissionCompInfo.m_close_time
   end
-  local componentId = (self._buildComponent):GetComponentCfgId((self._campaign)._id, (self._buildComponentInfo).m_component_id)
+  local componentId = self._buildComponent:GetComponentCfgId(self._campaign._id, self._buildComponentInfo.m_component_id)
   self._buildingDatas = UIActivityN6ReviewBuildingDatas:New(componentId, self._localProcess)
   self._plotId = nil
   local plotIdList = cfg_campaign.FirstEnterStoryID
-  if plotIdList and #plotIdList > 0 then
+  if plotIdList and 0 < #plotIdList then
     self._plotId = plotIdList[1]
   end
   self._playPlot = self:IsFirstEnter()
   self:RefreshData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.IsFirstEnter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN6MainController_Review:IsFirstEnter()
   local key = self:GetFirstEnterKey()
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.SetFirstEnter = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN6MainController_Review:SetFirstEnter()
   local key = self:GetFirstEnterKey()
-  local value = ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  local value = UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.GetFirstEnterKey = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIN6MainController_Review:GetFirstEnterKey()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "N6MainController_Review"
   return key
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.RefreshData = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  self._itemCount = itemModule:GetItemCount((UIActivityNPlusSixConst.GetCoinItemId)())
+function UIN6MainController_Review:RefreshData()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  self._itemCount = itemModule:GetItemCount(UIActivityNPlusSixConst.GetCoinItemId())
   self._showFinalPlot = false
   if self._storyComponent then
-    self._showFinalPlot = (self._storyComponent):ComponentIsOpen()
+    self._showFinalPlot = self._storyComponent:ComponentIsOpen()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.IsShowFinalPlotRed = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN6MainController_Review:IsShowFinalPlotRed()
   if not self._storyComponentInfo then
     return false
   end
-  if not (self._storyComponent):ComponentIsOpen() then
+  if not self._storyComponent:ComponentIsOpen() then
     return false
   end
-  local list = (self._storyComponentInfo).m_recieved_reward_story
+  local list = self._storyComponentInfo.m_recieved_reward_story
   if not list then
     return true
   end
-  if (table.count)(list) <= 0 then
+  if table.count(list) <= 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.IsShowBuildingRed = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN6MainController_Review:IsShowBuildingRed()
   if not self:IsBuildingComponentEnable() then
     return false
   end
-  if (self._questComponent):HaveRedPoint() then
+  if self._questComponent:HaveRedPoint() then
     return true
   end
-  if (self._buildComponent):HaveEventRedPoint() then
+  if self._buildComponent:HaveEventRedPoint() then
     return true
   end
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  if (self._buildingDatas):HaveCanBuilding(itemModule:GetItemCount((UIActivityNPlusSixConst.GetCoinItemId)())) then
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  if self._buildingDatas:HaveCanBuilding(itemModule:GetItemCount(UIActivityNPlusSixConst.GetCoinItemId())) then
     return true
   end
-  if (self._buildingDatas):IsFirstEnterBuilding() then
+  if self._buildingDatas:IsFirstEnterBuilding() then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.IsShowLevelRed = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (self._campaign):CheckComponentRed(ECampaignReviewN6ComponentID.LINE_MISSION)
+function UIN6MainController_Review:IsShowLevelRed()
+  return self._campaign:CheckComponentRed(ECampaignReviewN6ComponentID.LINE_MISSION)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.IsBuildingComponentEnable = function(self)
-  -- function num : 0_8
+function UIN6MainController_Review:IsBuildingComponentEnable()
   if not self._buildComponent then
     return false
   end
-  return (self._buildComponent):ComponentIsOpen()
+  return self._buildComponent:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.IsQuestComponentEnable = function(self)
-  -- function num : 0_9
+function UIN6MainController_Review:IsQuestComponentEnable()
   if not self._questComponent then
     return false
   end
-  return (self._questComponent):ComponentIsOpen()
+  return self._questComponent:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.IsMissionComponentEnable = function(self)
-  -- function num : 0_10
+function UIN6MainController_Review:IsMissionComponentEnable()
   if not self._lineMissionComponet then
     return false
   end
-  return (self._lineMissionComponet):ComponentIsOpen()
+  return self._lineMissionComponet:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.IsStoryComponentEnable = function(self)
-  -- function num : 0_11
+function UIN6MainController_Review:IsStoryComponentEnable()
   if not self._storyComponent then
     return false
   end
-  return (self._storyComponent):ComponentIsOpen()
+  return self._storyComponent:ComponentIsOpen()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.OnShow = function(self, uiParams)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN6MainController_Review:OnShow(uiParams)
   self._levelUnOpen = self:GetGameObject("LevelUnOpen")
   self._loginUnOpen = self:GetGameObject("LoginUnOpen")
   self._atlas = self:GetAsset("NPlusSix.spriteatlas", LoadType.SpriteAtlas)
@@ -202,8 +157,7 @@ UIN6MainController_Review.OnShow = function(self, uiParams)
   self._bgLoader = self:GetUIComponent("RawImageLoader", "BG")
   self._spine = self:GetUIComponent("SpineLoader", "spine")
   self._showBtn = self:GetGameObject("ShowBtn")
-  ;
-  (self._showBtn):SetActive(false)
+  self._showBtn:SetActive(false)
   self._scoreLabel = self:GetUIComponent("UILocalizationText", "Score")
   self._finalPlotBtn = self:GetGameObject("FinalPlotBtn")
   self._finalPlotRed = self:GetGameObject("FinalPlotRed")
@@ -218,28 +172,20 @@ UIN6MainController_Review.OnShow = function(self, uiParams)
   self._buildingLockTipsLabel = self:GetUIComponent("UILocalizationText", "BuildingLockTipsLabel")
   self._desLabel = self:GetUIComponent("UILocalizationText", "Des")
   self._backBtn = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtn):SetData(function()
-    -- function num : 0_12_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.CloseCoro, self)
-  end
-, nil, nil, false, function()
-    -- function num : 0_12_1 , upvalues : self
+  self._backBtn:SetData(function()
+    GameGlobal.TaskManager():StartTask(self.CloseCoro, self)
+  end, nil, nil, false, function()
     self:HideBtnOnClick()
-  end
-)
-  ;
-  (self._finalPlotRed):SetActive(false)
-  ;
-  (self._buildingRed):SetActive(false)
-  ;
-  (self._eventRed):SetActive(false)
+  end)
+  self._finalPlotRed:SetActive(false)
+  self._buildingRed:SetActive(false)
+  self._eventRed:SetActive(false)
   self:AttachEvent(GameEventType.NPlusSixMainRefresh, self.HandleRefreshEvent)
   self:AttachEvent(GameEventType.CampaignComponentStepChange, self.OnComponentStepChange)
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
-  local iconName = (UIActivityNPlusSixConst.GetItemIconName)()
+  local iconName = UIActivityNPlusSixConst.GetItemIconName()
   if iconName then
-    (self._iconLoader):LoadImage(iconName)
+    self._iconLoader:LoadImage(iconName)
   end
   local rt = uiParams[1]
   local dragonFly = self:GetGameObject("uieff_n6_in")
@@ -249,240 +195,152 @@ UIN6MainController_Review.OnShow = function(self, uiParams)
     local mat = bg.material
     mat:SetTexture("_MainTex", rt)
   else
-    do
-      dragonFly:SetActive(false)
-      if self._playPlot and self._plotId and self._plotId > 0 then
-        self:Lock("nplussixplaystory")
-        ;
-        ((GameGlobal.Timer)()):AddEvent(1033, function()
-    -- function num : 0_12_2 , upvalues : self
-    self:UnLock("nplussixplaystory")
-    self:ShowDialog("UIStoryController", self._plotId, function()
-      -- function num : 0_12_2_0 , upvalues : self
-      self:_TriggerGuide(false)
-    end
-)
+    dragonFly:SetActive(false)
   end
-)
-      else
-        self:_TriggerGuide(true)
-      end
-      self:SetFirstEnter()
-      self:RefreshUI()
-      self:RefreshButtonStatus()
-    end
+  if self._playPlot and self._plotId and self._plotId > 0 then
+    self:Lock("nplussixplaystory")
+    GameGlobal.Timer():AddEvent(1033, function()
+      self:UnLock("nplussixplaystory")
+      self:ShowDialog("UIStoryController", self._plotId, function()
+        self:_TriggerGuide(false)
+      end)
+    end)
+  else
+    self:_TriggerGuide(true)
   end
+  self:SetFirstEnter()
+  self:RefreshUI()
+  self:RefreshButtonStatus()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.RefreshButtonStatus = function(self)
-  -- function num : 0_13
-  (self._levelUnOpen):SetActive(not self:IsMissionComponentEnable())
+function UIN6MainController_Review:RefreshButtonStatus()
+  self._levelUnOpen:SetActive(not self:IsMissionComponentEnable())
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review._TriggerGuide = function(self, needYield)
-  -- function num : 0_14 , upvalues : _ENV
+function UIN6MainController_Review:_TriggerGuide(needYield)
   self:StartTask(function(TT)
-    -- function num : 0_14_0 , upvalues : self, needYield, _ENV
     self:Lock("UIN6MainController_Review")
     if needYield then
       YIELD(TT, 533)
     end
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN6MainController_Review)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN6MainController_Review)
     self:_CheckBuildingGuide()
     self:UnLock("UIN6MainController_Review")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review._CheckBuildingGuide = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  if (self._lineMissionCompInfo).m_cur_mission > 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN6MainController_ReviewBuilding)
+function UIN6MainController_Review:_CheckBuildingGuide()
+  if self._lineMissionCompInfo.m_cur_mission > 0 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.GuideOpenUI, GuideOpenUI.UIN6MainController_ReviewBuilding)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.OnHide = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UIN6MainController_Review:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
   self:DetachEvent(GameEventType.NPlusSixMainRefresh, self.HandleRefreshEvent)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_17
+function UIN6MainController_Review:OnUpdate(deltaTimeMS)
   if self:IsBuildingComponentEnable() then
-    (self._unLockTips):SetActive(false)
-    ;
-    (self._timeUnLockBtn):SetActive(false)
-    ;
-    (self._buildingUnLock):SetActive(false)
+    self._unLockTips:SetActive(false)
+    self._timeUnLockBtn:SetActive(false)
+    self._buildingUnLock:SetActive(false)
   else
-    ;
-    (self._unLockTips):SetActive(true)
-    ;
-    (self._timeUnLockBtn):SetActive(true)
-    ;
-    (self._buildingUnLock):SetActive(true)
+    self._unLockTips:SetActive(true)
+    self._timeUnLockBtn:SetActive(true)
+    self._buildingUnLock:SetActive(true)
   end
   self:RefreshButtonStatus()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.CloseCoro = function(self, TT)
-  -- function num : 0_18 , upvalues : _ENV
+function UIN6MainController_Review:CloseCoro(TT)
   self:Lock("UIN6MainController_Review_CloseCoro")
   self:SwitchState(UIStateType.UIActivityReview)
   self:UnLock("UIN6MainController_Review_CloseCoro")
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.HandleRefreshEvent = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self.RequestComponentData, self)
+function UIN6MainController_Review:HandleRefreshEvent()
+  GameGlobal.TaskManager():StartTask(self.RequestComponentData, self)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.RequestComponentData = function(self, TT)
-  -- function num : 0_20 , upvalues : _ENV
+function UIN6MainController_Review:RequestComponentData(TT)
   self:Lock("UIN6MainController_Review_RequestComponentData")
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local res = AsyncRequestRes:New()
   res.m_result = 0
   res.m_call_err = CallResultType.Normal
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N6, ECampaignReviewN6ComponentID.BUILD, ECampaignN6ComponentID.LINE_MISSION, ECampaignN6ComponentID.STORY)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N6, ECampaignReviewN6ComponentID.BUILD, ECampaignN6ComponentID.LINE_MISSION, ECampaignN6ComponentID.STORY)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   self:RefreshData()
   self:RefreshUI()
   self:UnLock("UIN6MainController_Review_RequestComponentData")
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.RefreshUI = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._scoreLabel).text = self:GetItemCountStr(self._itemCount)
-  ;
-  (self._finalPlotBtn):SetActive(self._showFinalPlot)
+function UIN6MainController_Review:RefreshUI()
+  self._scoreLabel.text = self:GetItemCountStr(self._itemCount)
+  self._finalPlotBtn:SetActive(self._showFinalPlot)
   if self._showFinalPlot then
-    (self._desLabel):SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)("str_n_plus_six_activity_des2")))
+    self._desLabel:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get("str_n_plus_six_activity_des2")))
   else
-    ;
-    (self._desLabel):SetText((HelperProxy:GetInstance()):ReplacePlayerName((StringTable.Get)("str_n_plus_six_activity_des1")))
+    self._desLabel:SetText(HelperProxy:GetInstance():ReplacePlayerName(StringTable.Get("str_n_plus_six_activity_des1")))
   end
   self:RefreshImageStyle()
   self:RefreshRed()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.RefreshImageStyle = function(self)
-  -- function num : 0_22
-  if (self._buildingDatas):IsAllBuildingComplete() then
-    (self._bgLoader):LoadImage("n6_home_bg_complete")
-    ;
-    (self._spine):LoadSpine("event_n6_2_spine_idle")
-    ;
-    (self._topBgLoader):LoadImage("n6_home_bg1_kv2")
-    ;
-    (self._bottomBgLoader):LoadImage("n6_home_bg2_kv2")
-    -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._levelBtnBg).sprite = (self._atlas):GetSprite("n6_home_btn_battle1")
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._buildingBtnBg).sprite = (self._atlas):GetSprite("n6_home_btn_rebuild1")
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._eventBtnBg).sprite = (self._atlas):GetSprite("n6_home_btn_book1")
+function UIN6MainController_Review:RefreshImageStyle()
+  if self._buildingDatas:IsAllBuildingComplete() then
+    self._bgLoader:LoadImage("n6_home_bg_complete")
+    self._spine:LoadSpine("event_n6_2_spine_idle")
+    self._topBgLoader:LoadImage("n6_home_bg1_kv2")
+    self._bottomBgLoader:LoadImage("n6_home_bg2_kv2")
+    self._levelBtnBg.sprite = self._atlas:GetSprite("n6_home_btn_battle1")
+    self._buildingBtnBg.sprite = self._atlas:GetSprite("n6_home_btn_rebuild1")
+    self._eventBtnBg.sprite = self._atlas:GetSprite("n6_home_btn_book1")
   else
-    ;
-    (self._bgLoader):LoadImage("n6_home_bg")
-    ;
-    (self._spine):LoadSpine("event_n6_1_spine_idle")
-    ;
-    (self._topBgLoader):LoadImage("n6_home_bg1")
-    ;
-    (self._bottomBgLoader):LoadImage("n6_home_bg2")
-    -- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._levelBtnBg).sprite = (self._atlas):GetSprite("n6_home_btn_battle")
-    -- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._buildingBtnBg).sprite = (self._atlas):GetSprite("n6_home_btn_rebuild")
-    -- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._eventBtnBg).sprite = (self._atlas):GetSprite("n6_home_btn_book")
+    self._bgLoader:LoadImage("n6_home_bg")
+    self._spine:LoadSpine("event_n6_1_spine_idle")
+    self._topBgLoader:LoadImage("n6_home_bg1")
+    self._bottomBgLoader:LoadImage("n6_home_bg2")
+    self._levelBtnBg.sprite = self._atlas:GetSprite("n6_home_btn_battle")
+    self._buildingBtnBg.sprite = self._atlas:GetSprite("n6_home_btn_rebuild")
+    self._eventBtnBg.sprite = self._atlas:GetSprite("n6_home_btn_book")
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.GetItemCountStr = function(self, count)
-  -- function num : 0_23 , upvalues : _ENV
+function UIN6MainController_Review:GetItemCountStr(count)
   local dight = 0
   local tmpCount = count
-  while tmpCount > 0 do
-    tmpCount = (math.floor)(tmpCount / 10)
+  while 0 < tmpCount do
+    tmpCount = math.floor(tmpCount / 10)
     dight = dight + 1
   end
   local pre = ""
-  for i = 1, 7 - (dight) do
+  for i = 1, 7 - dight do
     pre = pre .. "0"
   end
-  if count > 0 then
-    return (string.format)("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", pre, count)
+  if 0 < count then
+    return string.format("<color=#5e5e5e>%s</color><color=#f2c641>%s</color>", pre, count)
   else
-    return (string.format)("<color=#5e5e5e>%s</color>", pre)
+    return string.format("<color=#5e5e5e>%s</color>", pre)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.RefreshRed = function(self)
-  -- function num : 0_24
-  (self._finalPlotRed):SetActive(self:IsShowFinalPlotRed())
-  ;
-  (self._buildingRed):SetActive(self:IsShowBuildingRed())
-  ;
-  (self._levelRed):SetActive(self:IsShowLevelRed())
+function UIN6MainController_Review:RefreshRed()
+  self._finalPlotRed:SetActive(self:IsShowFinalPlotRed())
+  self._buildingRed:SetActive(self:IsShowBuildingRed())
+  self._levelRed:SetActive(self:IsShowLevelRed())
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.PlayButtonAnim = function(self, btnName, animName, callback)
-  -- function num : 0_25 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : self, btnName, animName, _ENV, callback
+function UIN6MainController_Review:PlayButtonAnim(btnName, animName, callback)
+  GameGlobal.TaskManager():StartTask(function(TT)
     self:Lock("PlayButtonAnim" .. btnName)
     local animation = self:GetUIComponent("Animation", btnName)
     animation:Play(animName)
@@ -491,230 +349,159 @@ UIN6MainController_Review.PlayButtonAnim = function(self, btnName, animName, cal
       callback()
     end
     self:UnLock("PlayButtonAnim" .. btnName)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.LevelBtnOnClick = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIN6MainController_Review:LevelBtnOnClick()
   if not self:IsMissionComponentEnable() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n_plus_six_mission_component_close_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n_plus_six_mission_component_close_tips"))
+    return
   end
   self:PlayButtonAnim("LevelBtn", "uieff_N6_Main_Btn", function()
-    -- function num : 0_26_0 , upvalues : self, _ENV
-    (self._campaignModule):CampaignSwitchState(true, UIStateType.UIActivityN6LineMissionReview, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-)
+    self._campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN6LineMissionReview, UIStateType.UIMain, nil, self._campaign._id)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.BuildingBtnOnClick = function(self)
-  -- function num : 0_27
+function UIN6MainController_Review:BuildingBtnOnClick()
   if not self:IsBuildingComponentEnable() then
-    return 
+    return
   end
   self:PlayButtonAnim("BuildingBtn", "uieff_N6_Main_Btn", function()
-    -- function num : 0_27_0 , upvalues : self
     self:ShowDialog("UIActivityN6ReviewBuildingMainController", self._buildingDatas)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.FinalPlotBtnOnClick = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIN6MainController_Review:FinalPlotBtnOnClick()
   if not self:IsStoryComponentEnable() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n_plus_six_final_plot_component_close_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n_plus_six_final_plot_component_close_tips"))
+    return
   end
-  local componentId = (self._storyComponent):GetComponentCfgId((self._campaign)._id, (self._storyComponentInfo).m_component_id)
-  local cfg_component_story = (Cfg.cfg_component_story)[componentId]
+  local componentId = self._storyComponent:GetComponentCfgId(self._campaign._id, self._storyComponentInfo.m_component_id)
+  local cfg_component_story = Cfg.cfg_component_story[componentId]
   if not cfg_component_story then
-    (Log.error)("cfg_component_story is nil")
-    return 
+    Log.error("cfg_component_story is nil")
+    return
   end
   local storyIdList = cfg_component_story.StoryID
-  if storyIdList == nil or (table.count)(storyIdList) <= 0 then
-    (Log.error)("story list is nil")
+  if storyIdList == nil or table.count(storyIdList) <= 0 then
+    Log.error("story list is nil")
   end
   self:ShowDialog("UIStoryController", storyIdList[1], function()
-    -- function num : 0_28_0 , upvalues : _ENV, self, storyIdList
-    ((GameGlobal.TaskManager)()):StartTask(self.CompleteFinalPlot, self, storyIdList[1])
-  end
-)
+    GameGlobal.TaskManager():StartTask(self.CompleteFinalPlot, self, storyIdList[1])
+  end)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.CompleteFinalPlot = function(self, TT, storyId)
-  -- function num : 0_29 , upvalues : _ENV
+function UIN6MainController_Review:CompleteFinalPlot(TT, storyId)
   self:Lock("UIN6MainController_Review_CompleteFinalPlot")
   local request = AsyncRequestRes:New()
-  local rewards = (self._storyComponent):HandleStoryTake(TT, request, storyId)
-  if request:GetSucc() and rewards and (table.count)(rewards) > 0 then
-    self:ShowRewards(rewards)
+  local rewards = self._storyComponent:HandleStoryTake(TT, request, storyId)
+  if request:GetSucc() then
+    if rewards and table.count(rewards) > 0 then
+      self:ShowRewards(rewards)
+    end
+  else
+    Log.error("CompleteFinalPlot")
   end
-  ;
-  (Log.error)("CompleteFinalPlot")
-  ;
-  (self._finalPlotRed):SetActive(self:IsShowFinalPlotRed())
+  self._finalPlotRed:SetActive(self:IsShowFinalPlotRed())
   self:UnLock("UIN6MainController_Review_CompleteFinalPlot")
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.ShowRewards = function(self, rewards)
-  -- function num : 0_30 , upvalues : _ENV
+function UIN6MainController_Review:ShowRewards(rewards)
   local petIdList = {}
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local petModule = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if petModule:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
+  if table.count(petIdList) > 0 then
     self:ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_30_0 , upvalues : _ENV, self, rewards
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    self:ShowDialog("UIGetItemController", rewards)
-  end
-)
-    return 
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      self:ShowDialog("UIGetItemController", rewards)
+    end)
+    return
   end
   self:ShowDialog("UIGetItemController", rewards)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.TimeUnLockBtnOnClick = function(self)
-  -- function num : 0_31
+function UIN6MainController_Review:TimeUnLockBtnOnClick()
   self:ShowBuildingLockTips()
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.BuildingLockTipsOnClick = function(self)
-  -- function num : 0_32
-  (self._buildingLockTips):SetActive(false)
+function UIN6MainController_Review:BuildingLockTipsOnClick()
+  self._buildingLockTips:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.GetBuildingUnLockTimeStr = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UIN6MainController_Review:GetBuildingUnLockTimeStr()
   local seconds = 0
   if self._buildComponentInfo then
-    local openTime = (self._buildComponentInfo).m_unlock_time
-    local nowTime = (self._timeModule):GetServerTime() / 1000
+    local openTime = self._buildComponentInfo.m_unlock_time
+    local nowTime = self._timeModule:GetServerTime() / 1000
     seconds = openTime - nowTime
     if seconds < 0 then
       seconds = 0
     end
   end
-  do
-    local timeStr = ""
-    if seconds >= 86400 then
-      local day = (math.ceil)(seconds / 3600 / 24)
-      timeStr = (StringTable.Get)("str_n_plus_six_day", day)
-    else
-      do
-        if seconds >= 3600 then
-          local hour = (math.ceil)(seconds / 3600)
-          timeStr = (StringTable.Get)("str_n_plus_six_hour", hour)
-        else
-          do
-            do
-              local minus = (math.ceil)(seconds / 60)
-              if minus <= 0 then
-                minus = 1
-              end
-              timeStr = (StringTable.Get)("str_n_plus_six_minus", minus)
-              return timeStr
-            end
-          end
-        end
-      end
+  local timeStr = ""
+  if 86400 <= seconds then
+    local day = math.ceil(seconds / 3600 / 24)
+    timeStr = StringTable.Get("str_n_plus_six_day", day)
+  elseif 3600 <= seconds then
+    local hour = math.ceil(seconds / 3600)
+    timeStr = StringTable.Get("str_n_plus_six_hour", hour)
+  else
+    local minus = math.ceil(seconds / 60)
+    if minus <= 0 then
+      minus = 1
     end
+    timeStr = StringTable.Get("str_n_plus_six_minus", minus)
   end
+  return timeStr
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.ShowBuildingLockTips = function(self)
-  -- function num : 0_34 , upvalues : _ENV
-  (self._buildingLockTips):SetActive(true)
+function UIN6MainController_Review:ShowBuildingLockTips()
+  self._buildingLockTips:SetActive(true)
   local seconds = 0
   if self._buildComponentInfo then
-    local openTime = (self._buildComponentInfo).m_unlock_time
-    local nowTime = (self._timeModule):GetServerTime() / 1000
+    local openTime = self._buildComponentInfo.m_unlock_time
+    local nowTime = self._timeModule:GetServerTime() / 1000
     seconds = openTime - nowTime
     if seconds < 0 then
       seconds = 0
     end
   end
-  do
-    local timeStr = ""
-    if seconds >= 86400 then
-      local day = (math.ceil)(seconds / 3600 / 24)
-      timeStr = (StringTable.Get)("str_n_plus_six_day", day)
-    else
-      do
-        if seconds >= 3600 then
-          local hour = (math.ceil)(seconds / 3600)
-          timeStr = (StringTable.Get)("str_n_plus_six_hour", hour)
-        else
-          do
-            do
-              local minus = (math.ceil)(seconds / 60)
-              if minus <= 0 then
-                minus = 1
-              end
-              timeStr = (StringTable.Get)("str_n_plus_six_minus", minus)
-              -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-              ;
-              (self._buildingLockTipsLabel).text = (StringTable.Get)("str_n_plus_six_unlock_rebuilding_time_tips", timeStr)
-            end
-          end
-        end
-      end
+  local timeStr = ""
+  if 86400 <= seconds then
+    local day = math.ceil(seconds / 3600 / 24)
+    timeStr = StringTable.Get("str_n_plus_six_day", day)
+  elseif 3600 <= seconds then
+    local hour = math.ceil(seconds / 3600)
+    timeStr = StringTable.Get("str_n_plus_six_hour", hour)
+  else
+    local minus = math.ceil(seconds / 60)
+    if minus <= 0 then
+      minus = 1
     end
+    timeStr = StringTable.Get("str_n_plus_six_minus", minus)
   end
+  self._buildingLockTipsLabel.text = StringTable.Get("str_n_plus_six_unlock_rebuilding_time_tips", timeStr)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.ShowBtnOnClick = function(self)
-  -- function num : 0_35
+function UIN6MainController_Review:ShowBtnOnClick()
   local topBtn = self:GetGameObject("TopBtn")
   topBtn:SetActive(true)
-  ;
-  (self._showBtn):SetActive(false)
+  self._showBtn:SetActive(false)
   local anim = self:GetUIComponent("Animation", "Anim")
   anim:Play("uieff_N6_Main_Show")
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.HideBtnOnClick = function(self)
-  -- function num : 0_36
+function UIN6MainController_Review:HideBtnOnClick()
   local topBtn = self:GetGameObject("TopBtn")
   topBtn:SetActive(false)
-  ;
-  (self._showBtn):SetActive(true)
+  self._showBtn:SetActive(true)
   local anim = self:GetUIComponent("Animation", "Anim")
   anim:Play("uieff_N6_Main_Hide")
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN6MainController_Review.OnComponentStepChange = function(self, campaign_id, component_id, component_step)
-  -- function num : 0_37
+function UIN6MainController_Review:OnComponentStepChange(campaign_id, component_id, component_step)
 end
-
-

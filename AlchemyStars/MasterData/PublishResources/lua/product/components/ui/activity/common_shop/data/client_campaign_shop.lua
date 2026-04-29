@@ -1,190 +1,149 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_shop/data/client_campaign_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ClientCampaignShop", Object)
 ClientCampaignShop = ClientCampaignShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientCampaignShop.Constructor = function(self)
-  -- function num : 0_0
+function ClientCampaignShop:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignShop.OpenCampaignShop = function(campaignType, campaignId, backFun, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  local shopStateTab = {[ECampaignType.CAMPAIGN_TYPE_N9] = "UIActivityShopControllerN9", [ECampaignType.CAMPAIGN_TYPE_N11] = "UIN11Shop", [ECampaignType.CAMPAIGN_TYPE_N14] = "UIN14Shop", [ECampaignType.CAMPAIGN_TYPE_N16] = "UIActivityShopControllerN16", [ECampaignType.CAMPAIGN_TYPE_N18] = "UIN18Shop", [ECampaignType.CAMPAIGN_TYPE_N22] = "UIActivtiyN22ShopController", [ECampaignType.CAMPAIGN_TYPE_N23] = "UIN23Shop", [ECampaignType.CAMPAIGN_TYPE_N25] = "UIN25Shop"}
-  local shopTab = {[ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN] = "UICampaignShopController", [ECampaignType.CAMPAIGN_TYPE_N26] = "UIActivityN26Shop", [ECampaignType.CAMPAIGN_TYPE_N28] = "UIActivityN28Shop", [ECampaignType.CAMPAIGN_TYPE_N31] = "UIActivityN31Shop", [ECampaignType.CAMPAIGN_TYPE_INLAND_N9] = "UIN38Shop"}
+function ClientCampaignShop.OpenCampaignShop(campaignType, campaignId, backFun, ...)
+  local shopStateTab = {
+    [ECampaignType.CAMPAIGN_TYPE_N9] = "UIActivityShopControllerN9",
+    [ECampaignType.CAMPAIGN_TYPE_N11] = "UIN11Shop",
+    [ECampaignType.CAMPAIGN_TYPE_N14] = "UIN14Shop",
+    [ECampaignType.CAMPAIGN_TYPE_N16] = "UIActivityShopControllerN16",
+    [ECampaignType.CAMPAIGN_TYPE_N18] = "UIN18Shop",
+    [ECampaignType.CAMPAIGN_TYPE_N22] = "UIActivtiyN22ShopController",
+    [ECampaignType.CAMPAIGN_TYPE_N23] = "UIN23Shop",
+    [ECampaignType.CAMPAIGN_TYPE_N25] = "UIN25Shop"
+  }
+  local shopTab = {
+    [ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN] = "UICampaignShopController",
+    [ECampaignType.CAMPAIGN_TYPE_N26] = "UIActivityN26Shop",
+    [ECampaignType.CAMPAIGN_TYPE_N28] = "UIActivityN28Shop",
+    [ECampaignType.CAMPAIGN_TYPE_N31] = "UIActivityN31Shop",
+    [ECampaignType.CAMPAIGN_TYPE_INLAND_N9] = "UIN38Shop"
+  }
   local uiName = shopStateTab[campaignType]
-  if not (string.isnullorempty)(uiName) then
-    ((GameGlobal.UIStateManager)()):SwitchState(uiName, campaignType, campaignId, backFun, ...)
+  if not string.isnullorempty(uiName) then
+    GameGlobal.UIStateManager():SwitchState(uiName, campaignType, campaignId, backFun, ...)
   else
     uiName = shopTab[campaignType]
-    if not (string.isnullorempty)(uiName) then
-      ((GameGlobal.UIStateManager)()):ShowDialog(uiName, campaignType, campaignId, backFun, ...)
+    if not string.isnullorempty(uiName) then
+      GameGlobal.UIStateManager():ShowDialog(uiName, campaignType, campaignId, backFun, ...)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignShop.CheckBuy = function(saleType, price, withToast)
-  -- function num : 0_2 , upvalues : _ENV
+function ClientCampaignShop.CheckBuy(saleType, price, withToast)
   local showToast = withToast or false
   local result = true
-  local roleModule = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+  local roleModule = GameGlobal.GameLogic():GetModule(RoleModule)
   if saleType == RoleAssetID.RoleAssetGlow then
     local diamond = roleModule:GetGlow()
-    if diamond < price then
-      (ToastManager.ShowToast)((StringTable.Get)("str_common_stop_pay"))
+    if price > diamond then
+      ToastManager.ShowToast(StringTable.Get("str_common_stop_pay"))
+      result = false
+    end
+  elseif saleType == RoleAssetID.RoleAssetGold then
+    local gold = roleModule:GetGold()
+    if price > gold then
+      if showToast then
+        ToastManager.ShowToast(StringTable.Get("str_shop_buy_no_gold"))
+      end
+      result = false
+    end
+  elseif saleType == RoleAssetID.RoleAssetMazeCoin then
+    local mazeCoin = roleModule:GetMazeCoin()
+    if price > mazeCoin then
+      if showToast then
+        ToastManager.ShowToast(StringTable.Get("str_shop_buy_no_maze"))
+      end
       result = false
     end
   else
-    do
-      if saleType == RoleAssetID.RoleAssetGold then
-        local gold = roleModule:GetGold()
-        if gold < price then
-          if showToast then
-            (ToastManager.ShowToast)((StringTable.Get)("str_shop_buy_no_gold"))
-          end
-          result = false
-        end
-      else
-        do
-          if saleType == RoleAssetID.RoleAssetMazeCoin then
-            local mazeCoin = roleModule:GetMazeCoin()
-            if mazeCoin < price then
-              if showToast then
-                (ToastManager.ShowToast)((StringTable.Get)("str_shop_buy_no_maze"))
-              end
-              result = false
-            end
-          else
-            do
-              local itemMd = ((GameGlobal.GameLogic)()):GetModule(ItemModule)
-              do
-                local money = itemMd:GetItemCount(saleType)
-                if money < price then
-                  if showToast then
-                    (ToastManager.ShowToast)((StringTable.Get)("str_shop_buy_no_maze"))
-                  end
-                  result = false
-                end
-                return result
-              end
-            end
-          end
-        end
+    local itemMd = GameGlobal.GameLogic():GetModule(ItemModule)
+    local money = itemMd:GetItemCount(saleType)
+    if price > money then
+      if showToast then
+        ToastManager.ShowToast(StringTable.Get("str_shop_buy_no_maze"))
       end
+      result = false
     end
   end
+  return result
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignShop.GetCurrencyImageName = function(saleType)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
+function ClientCampaignShop.GetCurrencyImageName(saleType)
   if not ClientCampaignShop.SaleType2ImageName then
-    ClientCampaignShop.SaleType2ImageName = {[RoleAssetID.RoleAssetGlow] = ((Cfg.cfg_top_tips)[RoleAssetID.RoleAssetGlow]).Icon, [RoleAssetID.RoleAssetGold] = ((Cfg.cfg_top_tips)[RoleAssetID.RoleAssetGold]).Icon, [RoleAssetID.RoleAssetMazeCoin] = ((Cfg.cfg_top_tips)[RoleAssetID.RoleAssetMazeCoin]).Icon}
+    ClientCampaignShop.SaleType2ImageName = {
+      [RoleAssetID.RoleAssetGlow] = Cfg.cfg_top_tips[RoleAssetID.RoleAssetGlow].Icon,
+      [RoleAssetID.RoleAssetGold] = Cfg.cfg_top_tips[RoleAssetID.RoleAssetGold].Icon,
+      [RoleAssetID.RoleAssetMazeCoin] = Cfg.cfg_top_tips[RoleAssetID.RoleAssetMazeCoin].Icon
+    }
   end
-  local icon = (ClientCampaignShop.SaleType2ImageName)[saleType]
+  local icon = ClientCampaignShop.SaleType2ImageName[saleType]
   if icon then
     return icon
   end
-  local cfgItem = (Cfg.cfg_item)[saleType]
+  local cfgItem = Cfg.cfg_item[saleType]
   if cfgItem then
     return cfgItem.Icon
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignShop.GetMoney = function(saleType)
-  -- function num : 0_4 , upvalues : _ENV
-  local roleModule = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+function ClientCampaignShop.GetMoney(saleType)
+  local roleModule = GameGlobal.GameLogic():GetModule(RoleModule)
   local money = 0
   if saleType == RoleAssetID.RoleAssetPhyPoint then
     money = roleModule:GetHealthPoint()
+  elseif saleType == RoleAssetID.RoleAssetGlow then
+    money = roleModule:GetGlow()
+  elseif saleType == RoleAssetID.RoleAssetGold then
+    money = roleModule:GetGold()
+  elseif saleType == RoleAssetID.RoleAssetMazeCoin then
+    money = roleModule:GetMazeCoin()
   else
-    if saleType == RoleAssetID.RoleAssetGlow then
-      money = roleModule:GetGlow()
-    else
-      if saleType == RoleAssetID.RoleAssetGold then
-        money = roleModule:GetGold()
-      else
-        if saleType == RoleAssetID.RoleAssetMazeCoin then
-          money = roleModule:GetMazeCoin()
-        else
-          local itemMd = ((GameGlobal.GameLogic)()):GetModule(ItemModule)
-          money = itemMd:GetItemCount(saleType)
-        end
-      end
-    end
+    local itemMd = GameGlobal.GameLogic():GetModule(ItemModule)
+    money = itemMd:GetItemCount(saleType)
   end
-  do
-    return money
-  end
+  return money
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignShop.CheckIsGoodsGroupUnlock = function(unlockTime, curTime)
-  -- function num : 0_5
-  if unlockTime >= curTime then
-    do return not unlockTime or not curTime end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function ClientCampaignShop.CheckIsGoodsGroupUnlock(unlockTime, curTime)
+  if unlockTime and curTime then
+    return unlockTime < curTime
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignShop.CheckIsGoodsGroupCanShow = function(showTime, curTime)
-  -- function num : 0_6
-  if showTime >= curTime then
-    do return not showTime or not curTime end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function ClientCampaignShop.CheckIsGoodsGroupCanShow(showTime, curTime)
+  if showTime and curTime then
+    return showTime < curTime
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignShop.CheckIsGoodsGroupClose = function(closeTime, curTime)
-  -- function num : 0_7
-  if closeTime >= curTime then
-    do return not closeTime or not curTime end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function ClientCampaignShop.CheckIsGoodsGroupClose(closeTime, curTime)
+  if closeTime and curTime then
+    return closeTime < curTime
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-ClientCampaignShop.CheckGoodsShowRedPoint = function(goodsInfo)
-  -- function num : 0_8 , upvalues : _ENV
+function ClientCampaignShop.CheckGoodsShowRedPoint(goodsInfo)
   if not goodsInfo then
     return false
   end
   if goodsInfo.m_is_show_red_point then
-    local svrTimeModule = ((GameGlobal.GameLogic)()):GetModule(SvrTimeModule)
-    local nowTime = (math.floor)(svrTimeModule:GetServerTime() / 1000)
+    local svrTimeModule = GameGlobal.GameLogic():GetModule(SvrTimeModule)
+    local nowTime = math.floor(svrTimeModule:GetServerTime() / 1000)
     if goodsInfo.m_unlock_time > 0 and nowTime < goodsInfo.m_unlock_time then
       return false
     end
-    if goodsInfo.m_exchange_limit_count ~= -1 and goodsInfo.m_can_exchange_count <= 0 then
+    if goodsInfo.m_exchange_limit_count ~= -1 and 0 >= goodsInfo.m_can_exchange_count then
       return false
     end
-    return (ClientCampaignShop.CheckBuy)(goodsInfo.m_cost_item_id, goodsInfo.m_cost_count)
+    return ClientCampaignShop.CheckBuy(goodsInfo.m_cost_item_id, goodsInfo.m_cost_count)
   end
-  do
-    return false
-  end
+  return false
 end
-
-

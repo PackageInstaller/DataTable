@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/breed/ui_homeland_breed_clone.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandBreedClone", UICustomWidget)
 UIHomelandBreedClone = UIHomelandBreedClone
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandBreedClone.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandBreedClone:Constructor()
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
   self._seedData = nil
   self._resultSeedData = nil
   self._refreshInterval = 0
   self._atlas = self:GetAsset("UIHomelandBreed.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIHomelandBreedClone:OnShow(uiParams)
   self:_GetComponents()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._GetComponents = function(self)
-  -- function num : 0_2
+function UIHomelandBreedClone:_GetComponents()
   self._curPossess = self:GetUIComponent("UILocalizationText", "CurPossess")
   self._cloneTime = self:GetUIComponent("UILocalizationText", "CloneTime")
   self._seed = self:GetUIComponent("UISelectObjectPath", "Seed")
@@ -41,152 +28,81 @@ UIHomelandBreedClone._GetComponents = function(self)
   self._costBgObj = self:GetGameObject("CostBg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._OnValue = function(self)
-  -- function num : 0_3
-  self._seedWidget = (self._seed):SpawnObject("UIHomelandBreedItem")
-  self._resultSeedWidget = (self._resultSeed):SpawnObject("UIHomelandBreedItem")
+function UIHomelandBreedClone:_OnValue()
+  self._seedWidget = self._seed:SpawnObject("UIHomelandBreedItem")
+  self._resultSeedWidget = self._resultSeed:SpawnObject("UIHomelandBreedItem")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone.SetData = function(self, breedInfo)
-  -- function num : 0_4
+function UIHomelandBreedClone:SetData(breedInfo)
   self:_InitBreedInfo(breedInfo)
   self:_RefreshUIInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._InitBreedInfo = function(self, breedInfo)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandBreedClone:_InitBreedInfo(breedInfo)
   self._breedInfo = breedInfo
   self._directionalCultivation = nil
   if self._breedInfo then
-    self._directionalCultivation = ((breedInfo.client_info).directional_cultivation)[1]
+    self._directionalCultivation = breedInfo.client_info.directional_cultivation[1]
   end
   self._seedData = nil
   self._resultSeedData = nil
   if self._directionalCultivation then
-    self._seedData = (Cfg.cfg_item)[(self._directionalCultivation).seed_id]
-    self._resultSeedData = (Cfg.cfg_item)[(((self._breedInfo).cultivation_result)[1]).assetid]
+    self._seedData = Cfg.cfg_item[self._directionalCultivation.seed_id]
+    self._resultSeedData = Cfg.cfg_item[self._breedInfo.cultivation_result[1].assetid]
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone.RefreshBreedInfo = function(self, breedInfo)
-  -- function num : 0_6
+function UIHomelandBreedClone:RefreshBreedInfo(breedInfo)
   self._breedInfo = breedInfo
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._RefreshUIInfo = function(self)
-  -- function num : 0_7
+function UIHomelandBreedClone:_RefreshUIInfo()
   self:_RefreshSeedInfo()
   self:_RefreshBtn()
   self:_RefreshTime()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._RefreshSeedInfo = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._seedWidget):SetData(self._seedData)
-  ;
-  (self._resultSeedWidget):SetData(self._resultSeedData)
-  local curPossessStr = (StringTable.Get)("str_homeland_breed_clone_desc2")
+function UIHomelandBreedClone:_RefreshSeedInfo()
+  self._seedWidget:SetData(self._seedData)
+  self._resultSeedWidget:SetData(self._resultSeedData)
+  local curPossessStr = StringTable.Get("str_homeland_breed_clone_desc2")
   if self._seedData then
-    local cfgSeed = (Cfg.cfg_item_tree_seed)[(self._seedData).ID]
-    local cfg = (Cfg.cfg_item)[cfgSeed.TreeId]
-    local str = (string.format)("<color=#faab2a>%s</color>", (StringTable.Get)(cfg.Name) .. ":" .. (self._itemModule):GetItemCount(cfg.ID))
-    curPossessStr = (StringTable.Get)("str_homeland_breed_clone_desc3") .. str
+    local cfgSeed = Cfg.cfg_item_tree_seed[self._seedData.ID]
+    local cfg = Cfg.cfg_item[cfgSeed.TreeId]
+    local str = string.format("<color=#faab2a>%s</color>", StringTable.Get(cfg.Name) .. ":" .. self._itemModule:GetItemCount(cfg.ID))
+    curPossessStr = StringTable.Get("str_homeland_breed_clone_desc3") .. str
   end
-  do
-    ;
-    (self._curPossess):SetText(curPossessStr)
-    ;
-    (self._costBgObj):SetActive(self._seedData ~= nil)
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
+  self._curPossess:SetText(curPossessStr)
+  self._costBgObj:SetActive(self._seedData ~= nil)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._RefreshBtn = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIHomelandBreedClone:_RefreshBtn()
   if not self._seedData then
-    (self._cloneSpeedUpBtn).sprite = (self._atlas):GetSprite("n17_plant_icon6")
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._cloneSpeedUpBtnText).color = Color(0.49803921568627, 0.49803921568627, 0.49803921568627)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._cloneBtn).sprite = (self._atlas):GetSprite("n17_plant_di7")
-    ;
-    (self._cloneBtnText):SetText((StringTable.Get)("str_homeland_breed_start"))
+    self._cloneSpeedUpBtn.sprite = self._atlas:GetSprite("n17_plant_icon6")
+    self._cloneSpeedUpBtnText.color = Color(0.4980392156862745, 0.4980392156862745, 0.4980392156862745)
+    self._cloneBtn.sprite = self._atlas:GetSprite("n17_plant_di7")
+    self._cloneBtnText:SetText(StringTable.Get("str_homeland_breed_start"))
+  elseif self.uiOwner:GetCurBreedState() == HomelandBreedState.Cloning then
+    self._cloneSpeedUpBtn.sprite = self._atlas:GetSprite("n17_plant_icon5")
+    self._cloneSpeedUpBtnText.color = Color(0.43137254901960786, 0.6470588235294118, 0.15294117647058825)
+    self._cloneBtn.sprite = self._atlas:GetSprite("n17_plant_di6")
+    self._cloneBtnText:SetText(StringTable.Get("str_homeland_breed_end"))
+  elseif self.uiOwner:GetCurBreedState() == HomelandBreedState.CloneReap then
+    self._cloneSpeedUpBtn.sprite = self._atlas:GetSprite("n17_plant_icon6")
+    self._cloneSpeedUpBtnText.color = Color(0.4980392156862745, 0.4980392156862745, 0.4980392156862745)
+    self._cloneBtn.sprite = self._atlas:GetSprite("n17_plant_di6")
+    self._cloneBtnText:SetText(StringTable.Get("str_homeland_breed_reap"))
   else
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-    if (self.uiOwner):GetCurBreedState() == HomelandBreedState.Cloning then
-      (self._cloneSpeedUpBtn).sprite = (self._atlas):GetSprite("n17_plant_icon5")
-      -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._cloneSpeedUpBtnText).color = Color(0.43137254901961, 0.64705882352941, 0.15294117647059)
-      -- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-      ;
-      (self._cloneBtn).sprite = (self._atlas):GetSprite("n17_plant_di6")
-      ;
-      (self._cloneBtnText):SetText((StringTable.Get)("str_homeland_breed_end"))
-    else
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-      if (self.uiOwner):GetCurBreedState() == HomelandBreedState.CloneReap then
-        (self._cloneSpeedUpBtn).sprite = (self._atlas):GetSprite("n17_plant_icon6")
-        -- DECOMPILER ERROR at PC83: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._cloneSpeedUpBtnText).color = Color(0.49803921568627, 0.49803921568627, 0.49803921568627)
-        -- DECOMPILER ERROR at PC89: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._cloneBtn).sprite = (self._atlas):GetSprite("n17_plant_di6")
-        ;
-        (self._cloneBtnText):SetText((StringTable.Get)("str_homeland_breed_reap"))
-      else
-        -- DECOMPILER ERROR at PC103: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._cloneSpeedUpBtn).sprite = (self._atlas):GetSprite("n17_plant_icon6")
-        -- DECOMPILER ERROR at PC110: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._cloneSpeedUpBtnText).color = Color(0.49803921568627, 0.49803921568627, 0.49803921568627)
-        -- DECOMPILER ERROR at PC116: Confused about usage of register: R1 in 'UnsetPending'
-
-        ;
-        (self._cloneBtn).sprite = (self._atlas):GetSprite("n17_plant_di6")
-        ;
-        (self._cloneBtnText):SetText((StringTable.Get)("str_homeland_breed_start"))
-      end
-    end
+    self._cloneSpeedUpBtn.sprite = self._atlas:GetSprite("n17_plant_icon6")
+    self._cloneSpeedUpBtnText.color = Color(0.4980392156862745, 0.4980392156862745, 0.4980392156862745)
+    self._cloneBtn.sprite = self._atlas:GetSprite("n17_plant_di6")
+    self._cloneBtnText:SetText(StringTable.Get("str_homeland_breed_start"))
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone.Update = function(self, deltaTime)
-  -- function num : 0_10 , upvalues : _ENV
-  if (self.uiOwner):GetCurBreedState() ~= HomelandBreedState.Cloning then
-    return 
+function UIHomelandBreedClone:Update(deltaTime)
+  if self.uiOwner:GetCurBreedState() ~= HomelandBreedState.Cloning then
+    return
   end
   self._refreshInterval = self._refreshInterval + deltaTime
   if self._refreshInterval >= 1000 then
@@ -195,102 +111,72 @@ UIHomelandBreedClone.Update = function(self, deltaTime)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._RefreshTime = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIHomelandBreedClone:_RefreshTime()
   local timeStr = "00:00:00"
-  if (self.uiOwner):GetCurBreedState() == HomelandBreedState.Cloning then
-    local remainTime = (self._homelandModule):GetLandEndTime(self._breedInfo) - (self._svrTimeModule):GetServerTime() * 0.001
-    timeStr = (HomelandBreedTool.GetTimeStr)(remainTime)
+  if self.uiOwner:GetCurBreedState() == HomelandBreedState.Cloning then
+    local remainTime = self._homelandModule:GetLandEndTime(self._breedInfo) - self._svrTimeModule:GetServerTime() * 0.001
+    timeStr = HomelandBreedTool.GetTimeStr(remainTime)
     if remainTime <= 0 then
-      (self.uiOwner):SetCurBreedState(HomelandBreedState.CloneReap)
+      self.uiOwner:SetCurBreedState(HomelandBreedState.CloneReap)
       self:_RefreshUIInfo()
     end
-  else
-    do
-      if self._seedData and (self.uiOwner):GetCurBreedState() == HomelandBreedState.None then
-        local cfgSeed = (Cfg.cfg_item_tree_seed)[(self._seedData).ID]
-        local cfgTreeAttribute = (Cfg.cfg_item_tree_attribute)[cfgSeed.TreeId]
-        local cfg = (Cfg.cfg_homeland_rarity)({Species = cfgTreeAttribute.Species, Rarity = cfgTreeAttribute.Rarity})
-        timeStr = (HomelandBreedTool.GetTimeStr)((cfg[1]).DirectionalTime)
-      end
-      do
-        ;
-        (self._cloneTime):SetText(timeStr)
-      end
-    end
+  elseif self._seedData and self.uiOwner:GetCurBreedState() == HomelandBreedState.None then
+    local cfgSeed = Cfg.cfg_item_tree_seed[self._seedData.ID]
+    local cfgTreeAttribute = Cfg.cfg_item_tree_attribute[cfgSeed.TreeId]
+    local cfg = Cfg.cfg_homeland_rarity({
+      Species = cfgTreeAttribute.Species,
+      Rarity = cfgTreeAttribute.Rarity
+    })
+    timeStr = HomelandBreedTool.GetTimeStr(cfg[1].DirectionalTime)
   end
+  self._cloneTime:SetText(timeStr)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone.SeedBtnOnClick = function(self, go)
-  -- function num : 0_12 , upvalues : _ENV
-  if (self.uiOwner):GetCurBreedState() == HomelandBreedState.Cloning or (self.uiOwner):GetCurBreedState() == HomelandBreedState.CloneReap then
-    self:ShowDialog("UIItemTipsHomeland", (self._seedData).ID, go)
-    return 
+function UIHomelandBreedClone:SeedBtnOnClick(go)
+  if self.uiOwner:GetCurBreedState() == HomelandBreedState.Cloning or self.uiOwner:GetCurBreedState() == HomelandBreedState.CloneReap then
+    self:ShowDialog("UIItemTipsHomeland", self._seedData.ID, go)
+    return
   end
   self:ShowDialog("UIHomelandBackpack", 4, function(item)
-    -- function num : 0_12_0 , upvalues : _ENV
-    local cfgSeed = (Cfg.cfg_item_tree_seed)[item:GetTemplateID()]
-    do return not cfgSeed or (item:GetTemplate()).ItemSubType == ItemSubType.ItemSubType_Seed end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
-  end
-, function(item)
-    -- function num : 0_12_1 , upvalues : _ENV, self
+    local cfgSeed = Cfg.cfg_item_tree_seed[item:GetTemplateID()]
+    return cfgSeed and item:GetTemplate().ItemSubType == ItemSubType.ItemSubType_Seed
+  end, function(item)
     if item:GetCount() < 2 then
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_clone_noenough"))
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_clone_noenough"))
       return false
     end
     self._seedData = item:GetTemplate()
-    local cfgtree = (Cfg.cfg_item_tree_seed)[(self._seedData).ID]
-    self._resultSeedData = (Cfg.cfg_item)[cfgtree.TreeId]
+    local cfgtree = Cfg.cfg_item_tree_seed[self._seedData.ID]
+    self._resultSeedData = Cfg.cfg_item[cfgtree.TreeId]
     self:_RefreshUIInfo()
     return true
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone.ResultSeedBtnOnClick = function(self, go)
-  -- function num : 0_13 , upvalues : _ENV
-  if (self.uiOwner):GetCurBreedState() == HomelandBreedState.Cloning or (self.uiOwner):GetCurBreedState() == HomelandBreedState.CloneReap then
-    self:ShowDialog("UIItemTipsHomeland", (self._resultSeedData).ID, go)
-    return 
+function UIHomelandBreedClone:ResultSeedBtnOnClick(go)
+  if self.uiOwner:GetCurBreedState() == HomelandBreedState.Cloning or self.uiOwner:GetCurBreedState() == HomelandBreedState.CloneReap then
+    self:ShowDialog("UIItemTipsHomeland", self._resultSeedData.ID, go)
+    return
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone.CloneSpeedUpBtnOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
-  local state = (self.uiOwner):GetCurBreedState()
+function UIHomelandBreedClone:CloneSpeedUpBtnOnClick(go)
+  local state = self.uiOwner:GetCurBreedState()
   if state == HomelandBreedState.Cloning then
     local id, time = self:_GetAccelerateItemInfo()
-    local resultID = (((self._breedInfo).cultivation_result)[1]).assetid
-    local helpTime = ((Cfg.cfg_item_tree_attribute)[resultID]).HelpAllTime
-    self:ShowDialog("UIHomelandAccelerate", (StringTable.Get)("str_homeland_breed_speedup_desc"), (self._homelandModule):GetLandEndTime(self._breedInfo), id, time, function(id, count)
-    -- function num : 0_14_0 , upvalues : self
-    self:_UseItem(id, count)
-  end
-, helpTime)
-  else
-    do
-      if state ~= HomelandBreedState.CloneReap then
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_nospeedup"))
-      end
-    end
+    local resultID = self._breedInfo.cultivation_result[1].assetid
+    local helpTime = Cfg.cfg_item_tree_attribute[resultID].HelpAllTime
+    self:ShowDialog("UIHomelandAccelerate", StringTable.Get("str_homeland_breed_speedup_desc"), self._homelandModule:GetLandEndTime(self._breedInfo), id, time, function(id, count)
+      self:_UseItem(id, count)
+    end, helpTime)
+  elseif state ~= HomelandBreedState.CloneReap then
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_nospeedup"))
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._GetAccelerateItemInfo = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item_cultivation)({})
-  for _,value in pairs(cfg) do
+function UIHomelandBreedClone:_GetAccelerateItemInfo()
+  local cfg = Cfg.cfg_item_cultivation({})
+  for _, value in pairs(cfg) do
     if value.ItemAttrType == CultivationItemType.E_ACCELERATION then
       return value.ID, value.Time
     end
@@ -298,182 +184,130 @@ UIHomelandBreedClone._GetAccelerateItemInfo = function(self)
   return 0, 0
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone.CloneBtnOnClick = function(self, go)
-  -- function num : 0_16 , upvalues : _ENV
+function UIHomelandBreedClone:CloneBtnOnClick(go)
   if not self._seedData then
-    (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_clone_noenough"))
-    return 
+    ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_clone_noenough"))
+    return
   end
-  if (self.uiOwner):GetCurBreedState() == HomelandBreedState.None then
+  if self.uiOwner:GetCurBreedState() == HomelandBreedState.None then
     self:_StartClone()
-  else
-    if (self.uiOwner):GetCurBreedState() == HomelandBreedState.Cloning then
-      self:_CancleClone()
-    else
-      if (self.uiOwner):GetCurBreedState() == HomelandBreedState.CloneReap then
-        self:_CloneReap()
-      end
-    end
+  elseif self.uiOwner:GetCurBreedState() == HomelandBreedState.Cloning then
+    self:_CancleClone()
+  elseif self.uiOwner:GetCurBreedState() == HomelandBreedState.CloneReap then
+    self:_CloneReap()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._StartClone = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UIHomelandBreedClone:_StartClone()
   self:Lock("UIHomelandStartClone")
   self:StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : _ENV, self
     local clietCultivationInfo = ClietCultivationInfo:New()
     local directionalCultivation = DirectionalCultivation:New()
-    directionalCultivation.seed_id = (self._seedData).ID
-    ;
-    (table.insert)(clietCultivationInfo.directional_cultivation, directionalCultivation)
-    clietCultivationInfo.land_pstid = (self.uiOwner).buildingPstId
-    local res = (self._homelandModule):HandleCultivation(TT, clietCultivationInfo)
+    directionalCultivation.seed_id = self._seedData.ID
+    table.insert(clietCultivationInfo.directional_cultivation, directionalCultivation)
+    clietCultivationInfo.land_pstid = self.uiOwner.buildingPstId
+    local res = self._homelandModule:HandleCultivation(TT, clietCultivationInfo)
     if res:GetSucc() then
-      self:_InitBreedInfo((self.uiOwner):RefreshCultivationInfo())
-      ;
-      (self.uiOwner):SetCurBreedState(HomelandBreedState.Cloning)
+      self:_InitBreedInfo(self.uiOwner:RefreshCultivationInfo())
+      self.uiOwner:SetCurBreedState(HomelandBreedState.Cloning)
       self:_RefreshUIInfo()
-      ;
-      ((self.uiOwner).breedLand):PlantTree()
+      self.uiOwner.breedLand:PlantTree()
     end
     self:UnLock("UIHomelandStartClone")
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandCloseBreedUI)
-  end
-, self)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandCloseBreedUI)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._CancleClone = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local callBack = function()
-    -- function num : 0_18_0 , upvalues : self, _ENV
+function UIHomelandBreedClone:_CancleClone()
+  local function callBack()
     self:Lock("UIHomelandCancleClone")
+    
     self:StartTask(function(TT)
-      -- function num : 0_18_0_0 , upvalues : self, _ENV
-      local res = (self._homelandModule):HandleCancelCultivation(TT, (self.uiOwner).buildingPstId)
+      local res = self._homelandModule:HandleCancelCultivation(TT, self.uiOwner.buildingPstId)
       if res:GetSucc() then
-        self:_InitBreedInfo((self.uiOwner):RefreshCultivationInfo())
-        ;
-        (self.uiOwner):SetCurBreedState(HomelandBreedState.None)
+        self:_InitBreedInfo(self.uiOwner:RefreshCultivationInfo())
+        self.uiOwner:SetCurBreedState(HomelandBreedState.None)
         self:_RefreshUIInfo()
-        ;
-        ((self.uiOwner).breedLand):Clear()
+        self.uiOwner.breedLand:Clear()
       else
-        ;
-        (Log.fatal)("Cancel breed failed:", res:GetResult())
-        ;
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_error_" .. res:GetResult()))
+        Log.fatal("Cancel breed failed:", res:GetResult())
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_error_" .. res:GetResult()))
         self:_RefreshUIInfo()
       end
       self:UnLock("UIHomelandCancleClone")
-    end
-, self)
+    end, self)
   end
-
+  
   local title = ""
-  local desc = (StringTable.Get)("str_homeland_breed_end_desc")
-  local leftBtn = {(StringTable.Get)("str_common_cancel"), function(param)
-    -- function num : 0_18_1
-  end
-}
-  local rightBtn = {(StringTable.Get)("str_common_ok"), function(param)
-    -- function num : 0_18_2 , upvalues : callBack
-    if callBack then
-      callBack()
+  local desc = StringTable.Get("str_homeland_breed_end_desc")
+  local leftBtn = {
+    StringTable.Get("str_common_cancel"),
+    function(param)
     end
-  end
-}
+  }
+  local rightBtn = {
+    StringTable.Get("str_common_ok"),
+    function(param)
+      if callBack then
+        callBack()
+      end
+    end
+  }
   self:ShowDialog("UIHomelandMessageBox", title, desc, leftBtn, rightBtn, true)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._CloneReap = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIHomelandBreedClone:_CloneReap()
   self:Lock("UIHomelandCloneReap")
   self:StartTask(function(TT)
-    -- function num : 0_19_0 , upvalues : self, _ENV
-    local res, items, exp, first = (self._homelandModule):HandlePickupCultivation(TT, (self.uiOwner).buildingPstId)
+    local res, items, exp, first = self._homelandModule:HandlePickupCultivation(TT, self.uiOwner.buildingPstId)
     if res:GetSucc() then
-      do
-        if exp > 0 then
-          local roleAsset = {}
-          roleAsset.exp = true
-          roleAsset.first = first
-          roleAsset.assetid = -1
-          roleAsset.count = exp
-        end
-        self:ShowDialog("UIHomelandBreedResult", self._seedData, self._seedData, items, function()
-      -- function num : 0_19_0_0 , upvalues : self
-      self:_BreedResultCallBack()
-    end
-, HomelandBreedUIType.Clone)
-        ;
-        ((self.uiOwner).breedLand):Clear()
-        if exp > 0 then
-          (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_add_exp", exp))
-        end
-        YIELD(TT, 1000)
-        do
-          local uiModule = (GameGlobal.GetUIModule)(HomelandModule)
-          uiModule:TryPopLevelUpTip()
-          self:UnLock("UIHomelandCloneReap")
-        end
+      if 0 < exp then
+        local roleAsset = {}
+        roleAsset.exp = true
+        roleAsset.first = first
+        roleAsset.assetid = -1
+        roleAsset.count = exp
       end
+      self:ShowDialog("UIHomelandBreedResult", self._seedData, self._seedData, items, function()
+        self:_BreedResultCallBack()
+      end, HomelandBreedUIType.Clone)
+      self.uiOwner.breedLand:Clear()
+      if 0 < exp then
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_add_exp", exp))
+      end
+      YIELD(TT, 1000)
+      local uiModule = GameGlobal.GetUIModule(HomelandModule)
+      uiModule:TryPopLevelUpTip()
     end
-  end
-, self)
+    self:UnLock("UIHomelandCloneReap")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._BreedResultCallBack = function(self)
-  -- function num : 0_20 , upvalues : _ENV
-  self:_InitBreedInfo((self.uiOwner):RefreshCultivationInfo())
-  ;
-  (self.uiOwner):SetCurBreedState(HomelandBreedState.None)
+function UIHomelandBreedClone:_BreedResultCallBack()
+  self:_InitBreedInfo(self.uiOwner:RefreshCultivationInfo())
+  self.uiOwner:SetCurBreedState(HomelandBreedState.None)
   self:_RefreshUIInfo()
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._SelectItemCallBakc = function(self)
-  -- function num : 0_21
-  self:_InitBreedInfo((self.uiOwner):RefreshCultivationInfo())
+function UIHomelandBreedClone:_SelectItemCallBakc()
+  self:_InitBreedInfo(self.uiOwner:RefreshCultivationInfo())
   self:_RefreshUIInfo()
-  ;
-  ((self.uiOwner).breedLand):RefreshPhases()
+  self.uiOwner.breedLand:RefreshPhases()
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandBreedClone._UseItem = function(self, id, count)
-  -- function num : 0_22 , upvalues : _ENV
+function UIHomelandBreedClone:_UseItem(id, count)
   self:Lock("UIHomelandBreedClone")
   self:StartTask(function(TT)
-    -- function num : 0_22_0 , upvalues : _ENV, id, count, self
     local roleAsset = RoleAsset:New()
     roleAsset.assetid = id
     roleAsset.count = count
-    local res = (self._homelandModule):HandleAccelerateCultivation(TT, (self.uiOwner).buildingPstId, roleAsset)
+    local res = self._homelandModule:HandleAccelerateCultivation(TT, self.uiOwner.buildingPstId, roleAsset)
     if res:GetSucc() then
       self:_SelectItemCallBakc()
     else
-      ;
-      (Log.fatal)("Breed accelerate failed:", res:GetResult())
-      ;
-      (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_breed_error_" .. res:GetResult()))
+      Log.fatal("Breed accelerate failed:", res:GetResult())
+      ToastManager.ShowHomeToast(StringTable.Get("str_homeland_breed_error_" .. res:GetResult()))
     end
     self:UnLock("UIHomelandBreedClone")
-  end
-, self)
+  end, self)
 end
-
-

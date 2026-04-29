@@ -1,77 +1,116 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_driller_move_target_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_DrillerMoveTargetPos", SkillScopeCalculator_Base)
 SkillScopeCalculator_DrillerMoveTargetPos = SkillScopeCalculator_DrillerMoveTargetPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_DrillerMoveTargetPos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local world = ((self._hub)._gridFilter)._world
+function SkillScopeCalculator_DrillerMoveTargetPos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local world = self._hub._gridFilter._world
   local utilScopeSvc = world:GetService("UtilScopeCalc")
   local utilData = world:GetService("UtilData")
   local randomSvc = world:GetService("RandomLogic")
   local trapIDList = scopeParam.trapIDList
   local resultPosList = {}
   self._areas = {
-{min_x = 1, max_x = 3, min_y = 1, max_y = 3, center_x = 2, center_y = 2}
-, 
-{min_x = 1, max_x = 3, min_y = 4, max_y = 6, center_x = 2, center_y = 5}
-, 
-{min_x = 1, max_x = 3, min_y = 7, max_y = 9, center_x = 2, center_y = 8}
-, 
-{min_x = 4, max_x = 6, min_y = 1, max_y = 3, center_x = 5, center_y = 2}
-, 
-{min_x = 4, max_x = 6, min_y = 4, max_y = 6, center_x = 5, center_y = 5}
-, 
-{min_x = 4, max_x = 6, min_y = 7, max_y = 9, center_x = 5, center_y = 8}
-, 
-{min_x = 7, max_x = 9, min_y = 1, max_y = 3, center_x = 8, center_y = 2}
-, 
-{min_x = 7, max_x = 9, min_y = 4, max_y = 6, center_x = 8, center_y = 5}
-, 
-{min_x = 7, max_x = 9, min_y = 7, max_y = 9, center_x = 8, center_y = 8}
-}
+    {
+      min_x = 1,
+      max_x = 3,
+      min_y = 1,
+      max_y = 3,
+      center_x = 2,
+      center_y = 2
+    },
+    {
+      min_x = 1,
+      max_x = 3,
+      min_y = 4,
+      max_y = 6,
+      center_x = 2,
+      center_y = 5
+    },
+    {
+      min_x = 1,
+      max_x = 3,
+      min_y = 7,
+      max_y = 9,
+      center_x = 2,
+      center_y = 8
+    },
+    {
+      min_x = 4,
+      max_x = 6,
+      min_y = 1,
+      max_y = 3,
+      center_x = 5,
+      center_y = 2
+    },
+    {
+      min_x = 4,
+      max_x = 6,
+      min_y = 4,
+      max_y = 6,
+      center_x = 5,
+      center_y = 5
+    },
+    {
+      min_x = 4,
+      max_x = 6,
+      min_y = 7,
+      max_y = 9,
+      center_x = 5,
+      center_y = 8
+    },
+    {
+      min_x = 7,
+      max_x = 9,
+      min_y = 1,
+      max_y = 3,
+      center_x = 8,
+      center_y = 2
+    },
+    {
+      min_x = 7,
+      max_x = 9,
+      min_y = 4,
+      max_y = 6,
+      center_x = 8,
+      center_y = 5
+    },
+    {
+      min_x = 7,
+      max_x = 9,
+      min_y = 7,
+      max_y = 9,
+      center_x = 8,
+      center_y = 8
+    }
+  }
   local areaTrapCount = self:_CalcAreasTrapCount(trapIDList, casterPos)
   local minAreas = self:_FindMinTrapAreas(areaTrapCount)
   local tarPos = self:_CalcTarPosInMinAreas(minAreas, casterPos)
-  ;
-  (table.insert)(resultPosList, tarPos)
+  table.insert(resultPosList, tarPos)
   local result = SkillScopeResult:New(SkillScopeType.DrillerMoveTargetPos, centerPos, resultPosList, resultPosList)
   return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMoveTargetPos._CheckPosHasTrap = function(self, pos, trapIDList)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_DrillerMoveTargetPos:_CheckPosHasTrap(pos, trapIDList)
   local bFindTrap = false
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local utilSvc = world:GetService("UtilData")
   local array = utilSvc:GetTrapsAtPos(pos)
-  for _,eTrap in ipairs(array) do
+  for _, eTrap in ipairs(array) do
     local cTrap = eTrap:Trap()
-    if cTrap and not eTrap:HasDeadMark() and (table.icontains)(trapIDList, cTrap:GetTrapID()) then
+    if cTrap and not eTrap:HasDeadMark() and table.icontains(trapIDList, cTrap:GetTrapID()) then
       bFindTrap = true
       break
     end
   end
-  do
-    return bFindTrap
-  end
+  return bFindTrap
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMoveTargetPos._CalcAreasTrapCount = function(self, trapIDList, casterPos)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillScopeCalculator_DrillerMoveTargetPos:_CalcAreasTrapCount(trapIDList, casterPos)
   local areaTrapCount = {}
-  for areaIndex,areaInfo in ipairs(self._areas) do
+  for areaIndex, areaInfo in ipairs(self._areas) do
     local trapCount = 0
-    local isCasterInArea = areaInfo.min_x <= casterPos.x and casterPos.x <= areaInfo.max_x and areaInfo.min_y <= casterPos.y and casterPos.y <= areaInfo.max_y
+    local isCasterInArea = casterPos.x >= areaInfo.min_x and casterPos.x <= areaInfo.max_x and casterPos.y >= areaInfo.min_y and casterPos.y <= areaInfo.max_y
     if not isCasterInArea then
       for posX = areaInfo.min_x, areaInfo.max_x do
         for posY = areaInfo.min_y, areaInfo.max_y do
@@ -86,45 +125,36 @@ SkillScopeCalculator_DrillerMoveTargetPos._CalcAreasTrapCount = function(self, t
     end
     areaTrapCount[areaIndex] = trapCount
   end
-  do return areaTrapCount end
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  return areaTrapCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMoveTargetPos._FindMinTrapAreas = function(self, areaTrapCount)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillScopeCalculator_DrillerMoveTargetPos:_FindMinTrapAreas(areaTrapCount)
   local minTrapCount = 1000
   local minAreas = {}
-  for areaIndex,trapCount in ipairs(areaTrapCount) do
-    if trapCount >= 0 then
+  for areaIndex, trapCount in ipairs(areaTrapCount) do
+    if 0 <= trapCount then
       if trapCount < minTrapCount then
         minAreas = {areaIndex}
         minTrapCount = trapCount
-      else
-        if trapCount == minTrapCount then
-          (table.insert)(minAreas, areaIndex)
-        end
+      elseif trapCount == minTrapCount then
+        table.insert(minAreas, areaIndex)
       end
     end
   end
   return minAreas
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_DrillerMoveTargetPos._CalcTarPosInMinAreas = function(self, minAreas, casterPos)
-  -- function num : 0_4 , upvalues : _ENV
+function SkillScopeCalculator_DrillerMoveTargetPos:_CalcTarPosInMinAreas(minAreas, casterPos)
   local tarPos = casterPos
-  if #minAreas > 0 then
+  if 0 < #minAreas then
     local minDis = 1000
     local nearestAreaIndex = -1
-    local nearestAreaCenter = nil
-    for index,areaIndex in ipairs(minAreas) do
-      local areaInfo = (self._areas)[areaIndex]
+    local nearestAreaCenter
+    for index, areaIndex in ipairs(minAreas) do
+      local areaInfo = self._areas[areaIndex]
       local areaCenter = Vector2(areaInfo.center_x, areaInfo.center_y)
-      local crossDis = (math.abs)(areaCenter.x - casterPos.x) + (math.abs)(areaCenter.y - casterPos.y)
-      if crossDis < minDis then
+      local crossDis = math.abs(areaCenter.x - casterPos.x) + math.abs(areaCenter.y - casterPos.y)
+      if minDis > crossDis then
         minDis = crossDis
         nearestAreaIndex = areaIndex
         nearestAreaCenter = areaCenter
@@ -132,9 +162,5 @@ SkillScopeCalculator_DrillerMoveTargetPos._CalcTarPosInMinAreas = function(self,
     end
     tarPos = nearestAreaCenter
   end
-  do
-    return tarPos
-  end
+  return tarPos
 end
-
-

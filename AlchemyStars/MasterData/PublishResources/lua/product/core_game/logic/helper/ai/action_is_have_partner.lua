@@ -1,37 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_have_partner.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsHavePartner", AINewNode)
 ActionIsHavePartner = ActionIsHavePartner
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsHavePartner.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionIsHavePartner:OnUpdate()
   local listParnter = self:_FindMonsterByGroupOther(self.m_entityOwn)
-  local nParnterCount = (table.count)(listParnter)
-  if listParnter and nParnterCount > 0 then
-    for key,value in ipairs(listParnter) do
-      if (AINewNode.IsEntityDead)(value) then
+  local nParnterCount = table.count(listParnter)
+  if listParnter and 0 < nParnterCount then
+    for key, value in ipairs(listParnter) do
+      if AINewNode.IsEntityDead(value) then
         nParnterCount = nParnterCount - 1
       end
     end
   end
-  do
-    self:PrintLog("找到同组伙伴数量 = ", nParnterCount)
-    if nParnterCount > 0 then
-      return AINewNodeStatus.Success
-    end
-    return AINewNodeStatus.Failure
+  self:PrintLog("找到同组伙伴数量 = ", nParnterCount)
+  if 0 < nParnterCount then
+    return AINewNodeStatus.Success
   end
+  return AINewNodeStatus.Failure
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsHavePartner._GetMonsterGroupID = function(self, entityWork)
-  -- function num : 0_1
+function ActionIsHavePartner:_GetMonsterGroupID(entityWork)
   local cmptMonsterID = entityWork:MonsterID()
   if not cmptMonsterID then
     return nil
@@ -39,24 +27,19 @@ ActionIsHavePartner._GetMonsterGroupID = function(self, entityWork)
   return cmptMonsterID:GetMonsterGroupID()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionIsHavePartner._FindMonsterByGroupOther = function(self, entityOwn)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionIsHavePartner:_FindMonsterByGroupOther(entityOwn)
   local listTarget = {}
   local nGroupID = self:_GetMonsterGroupID(entityOwn)
   if not nGroupID then
     return listTarget
   end
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
   local entityList = group:GetEntities()
-  for key,value in ipairs(entityList) do
+  for key, value in ipairs(entityList) do
     local nMonsterGroupID = self:_GetMonsterGroupID(value)
     if nMonsterGroupID == nGroupID and value ~= entityOwn then
-      (table.insert)(listTarget, value)
+      table.insert(listTarget, value)
     end
   end
   return listTarget
 end
-
-

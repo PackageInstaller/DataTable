@@ -1,20 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_select_pos_distance_form_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_SelectPosDistanceFormPlayer", SkillScopeCalculator_Base)
 SkillScopeCalculator_SelectPosDistanceFormPlayer = SkillScopeCalculator_SelectPosDistanceFormPlayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_SelectPosDistanceFormPlayer.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_SelectPosDistanceFormPlayer:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   if not scopeParam then
-    (Log.fatal)("### scopeParam is nil. centerPos=", centerPos)
-    return 
+    Log.fatal("### scopeParam is nil. centerPos=", centerPos)
+    return
   end
-  local world = (self._gridFilter)._world
+  local world = self._gridFilter._world
   local posList = scopeParam.pos
   local count = scopeParam.count or 1
   local sortType = scopeParam.sortType
@@ -26,58 +19,39 @@ SkillScopeCalculator_SelectPosDistanceFormPlayer.CalcRange = function(self, scop
     blockFlag = 0
   end
   local posScope = {}
-  for i,v in ipairs(posList) do
-    (table.insert)(posScope, Vector2(v[1], v[2]))
+  for i, v in ipairs(posList) do
+    table.insert(posScope, Vector2(v[1], v[2]))
   end
-  local teamLeader = (world:Player()):GetCurrentTeamEntity()
-  local teamPos = (teamLeader:GridLocation()).Position
+  local teamLeader = world:Player():GetCurrentTeamEntity()
+  local teamPos = teamLeader:GridLocation().Position
   local sortedByDis = {}
   if sortType == 1 then
     sortedByDis = HelperProxy:SortPosByCenterPosDistance(teamPos, posScope)
-  else
-    if sortType == 2 then
-      local tmpSortedByDis = HelperProxy:SortPosByCenterPosDistance(teamPos, posScope)
-      for i = #tmpSortedByDis, 1, -1 do
-        (table.insert)(sortedByDis, tmpSortedByDis[i])
-      end
+  elseif sortType == 2 then
+    local tmpSortedByDis = HelperProxy:SortPosByCenterPosDistance(teamPos, posScope)
+    for i = #tmpSortedByDis, 1, -1 do
+      table.insert(sortedByDis, tmpSortedByDis[i])
     end
   end
-  do
-    local resultScope = {}
-    local boardServiceLogic = world:GetService("BoardLogic")
-    for i,pos in ipairs(sortedByDis) do
-      local isBlocked = boardServiceLogic:IsPosBlock(pos, blockFlag)
-      if not isBlocked then
-        if isTable and isTable == 1 then
-          (table.insert)(resultScope, pos)
-        else
-          if count > (table.count)(resultScope) then
-            do
-              local curPosToTargetPosDis = (Vector2.Distance)(centerPos, pos)
-              if limitDis == nil or curPosToTargetPosDis <= limitDis then
-                resultScope = pos
-                break
-              end
-              -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-              -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_STMT
-
-              -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-              -- DECOMPILER ERROR at PC120: LeaveBlock: unexpected jumping out IF_STMT
-
-            end
-          end
+  local resultScope = {}
+  local boardServiceLogic = world:GetService("BoardLogic")
+  for i, pos in ipairs(sortedByDis) do
+    local isBlocked = boardServiceLogic:IsPosBlock(pos, blockFlag)
+    if not isBlocked then
+      if isTable and isTable == 1 then
+        table.insert(resultScope, pos)
+        if count <= table.count(resultScope) then
+          break
+        end
+      else
+        local curPosToTargetPosDis = Vector2.Distance(centerPos, pos)
+        if limitDis == nil or limitDis >= curPosToTargetPosDis then
+          resultScope = pos
+          break
         end
       end
     end
-    local result = SkillScopeResult:New(SkillScopeType.SelectPosDistanceFormPlayer, centerPos, resultScope, resultScope)
-    return result
   end
+  local result = SkillScopeResult:New(SkillScopeType.SelectPosDistanceFormPlayer, centerPos, resultScope, resultScope)
+  return result
 end
-
-

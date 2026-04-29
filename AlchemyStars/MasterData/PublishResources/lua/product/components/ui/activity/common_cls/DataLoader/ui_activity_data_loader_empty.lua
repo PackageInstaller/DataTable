@@ -1,21 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_cls/DataLoader/ui_activity_data_loader_empty.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityDataLoaderEmpty", Object)
 UIActivityDataLoaderEmpty = UIActivityDataLoaderEmpty
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDataLoaderEmpty.SetData = function(self, params)
-  -- function num : 0_0
+function UIActivityDataLoaderEmpty:SetData(params)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDataLoaderEmpty.LoadData = function(self, TT, res)
-  -- function num : 0_1
+function UIActivityDataLoaderEmpty:LoadData(TT, res)
   return nil
 end
-
-

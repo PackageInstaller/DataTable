@@ -1,42 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_damage_count_by_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_DamageCountByBuffLayer", SkillEffectCalc_Damage)
 SkillEffectCalc_DamageCountByBuffLayer = SkillEffectCalc_DamageCountByBuffLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_DamageCountByBuffLayer.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_DamageCountByBuffLayer:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_DamageCountByBuffLayer.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_DamageCountByBuffLayer:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterEntityID = skillEffectCalcParam.casterEntityID
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   local targetIDList = skillEffectCalcParam:GetTargetEntityIDs()
   local skillEffectParam = skillEffectCalcParam:GetSkillEffectParam()
   local buffEffectType = skillEffectParam:GetAddPercentBuffEffectType()
-  local buffSvc = (self._world):GetService("BuffLogic")
+  local buffSvc = self._world:GetService("BuffLogic")
   local skillResultList = {}
   local buffPreCount = skillEffectParam:GetBuffPreCount()
   if #targetIDList == 1 and targetIDList[1] == -1 then
     return {}
   end
-  for _,targetID in ipairs(targetIDList) do
-    local targetEntity = (self._world):GetEntityByID(targetID)
+  for _, targetID in ipairs(targetIDList) do
+    local targetEntity = self._world:GetEntityByID(targetID)
     local curLayerCount = buffSvc:GetBuffLayer(targetEntity, buffEffectType)
     local i = 1
     while buffPreCount <= curLayerCount do
       local results = self:_CalculateSingleTarget(skillEffectCalcParam, targetID)
-      for _,result in ipairs(results) do
+      for _, result in ipairs(results) do
         result:SetDamageIndex(i)
-        ;
-        (table.insert)(skillResultList, result)
+        table.insert(skillResultList, result)
       end
       i = i + 1
       curLayerCount = curLayerCount - buffPreCount
@@ -44,5 +33,3 @@ SkillEffectCalc_DamageCountByBuffLayer.DoSkillEffectCalculator = function(self, 
   end
   return skillResultList
 end
-
-

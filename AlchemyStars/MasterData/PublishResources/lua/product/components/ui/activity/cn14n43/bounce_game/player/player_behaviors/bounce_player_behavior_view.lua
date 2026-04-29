@@ -1,78 +1,55 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/player/player_behaviors/bounce_player_behavior_view.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BouncePlayerBeHaviorView", BouncePlayerBeHaviorBase)
 BouncePlayerBeHaviorView = BouncePlayerBeHaviorView
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BouncePlayerBeHaviorView.Constructor = function(self, playerPrefabName, parentRt, initPos)
-  -- function num : 0_0 , upvalues : _ENV
+function BouncePlayerBeHaviorView:Constructor(playerPrefabName, parentRt, initPos)
   self._gameObject = nil
   self._curPosition = initPos
-  self._resRequest = (ResourceManager:GetInstance()):SyncLoadAsset(playerPrefabName, LoadType.GameObject)
-  if not self._resRequest or not (self._resRequest).Obj then
-    (Log.fatal)("加载怪物资源失败")
-    return 
+  self._resRequest = ResourceManager:GetInstance():SyncLoadAsset(playerPrefabName, LoadType.GameObject)
+  if not self._resRequest or not self._resRequest.Obj then
+    Log.fatal("加载怪物资源失败")
+    return
   end
-  self._gameObject = (self._resRequest).Obj
-  ;
-  (self._gameObject):SetActive(true)
-  self._gameObjectRt = (self._gameObject):GetComponent("RectTransform")
+  self._gameObject = self._resRequest.Obj
+  self._gameObject:SetActive(true)
+  self._gameObjectRt = self._gameObject:GetComponent("RectTransform")
   self:SetParent(parentRt)
   self:SetPosition(initPos)
-  self._boxRootRt = ((self._gameObject).transform):Find("box")
-  self._boxRootPos = (self._boxRootRt).anchoredPosition
+  self._boxRootRt = self._gameObject.transform:Find("box")
+  self._boxRootPos = self._boxRootRt.anchoredPosition
   self._boxRect = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorView.Name = function(self)
-  -- function num : 0_1
+function BouncePlayerBeHaviorView:Name()
   return "BouncePlayerBeHaviorView"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorView.GetGameObject = function(self)
-  -- function num : 0_2
+function BouncePlayerBeHaviorView:GetGameObject()
   return self._gameObject
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorView.OnRelease = function(self)
-  -- function num : 0_3
+function BouncePlayerBeHaviorView:OnRelease()
   if self._resRequest then
-    (self._resRequest):Dispose()
+    self._resRequest:Dispose()
     self._resRequest = nil
   end
   self._gameObject = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorView.GetBox = function(self, name)
-  -- function num : 0_4
+function BouncePlayerBeHaviorView:GetBox(name)
   if self._gameObject == nil then
     return nil
   end
-  local tran = (self._gameObject).transform
+  local tran = self._gameObject.transform
   return tran:Find("box/" .. name)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorView.GetRect = function(self, name)
-  -- function num : 0_5 , upvalues : _ENV
-  local rectData = (self._boxRect)[name]
+function BouncePlayerBeHaviorView:GetRect(name)
+  local rectData = self._boxRect[name]
   if not rectData then
     local boxRt = self:GetBox(name)
     if not boxRt then
-      (Log.error)("BouncePlayerBeHaviorView no box/" .. name)
-      return 
+      Log.error("BouncePlayerBeHaviorView no box/" .. name)
+      return
     end
     rectData = {}
     local originRect = boxRt.rect
@@ -80,59 +57,34 @@ BouncePlayerBeHaviorView.GetRect = function(self, name)
     rectData[1] = originRect
     rectData[2] = originRect.x + originPos.x
     rectData[3] = originRect.y + originPos.y
-    -- DECOMPILER ERROR at PC30: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._boxRect)[name] = rectData
+    self._boxRect[name] = rectData
   end
-  do
-    local pos = (self._gameObjectRt).anchoredPosition
-    local retRect = rectData[1]
-    retRect.x = rectData[2] + (self._boxRootPos).x + pos.x
-    retRect.y = rectData[3] + (self._boxRootPos).y + pos.y
-    return retRect
-  end
+  local pos = self._gameObjectRt.anchoredPosition
+  local retRect = rectData[1]
+  retRect.x = rectData[2] + self._boxRootPos.x + pos.x
+  retRect.y = rectData[3] + self._boxRootPos.y + pos.y
+  return retRect
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorView.SetParent = function(self, parent)
-  -- function num : 0_6 , upvalues : _ENV
+function BouncePlayerBeHaviorView:SetParent(parent)
   if self._gameObject == nil then
-    return 
+    return
   end
-  ;
-  ((self._gameObject).transform):SetParent(parent)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  ((self._gameObject).transform).localScale = Vector3(1, 1, 1)
+  self._gameObject.transform:SetParent(parent)
+  self._gameObject.transform.localScale = Vector3(1, 1, 1)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorView.SetPosition = function(self, position)
-  -- function num : 0_7
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._gameObjectRt).anchoredPosition = position
+function BouncePlayerBeHaviorView:SetPosition(position)
+  self._gameObjectRt.anchoredPosition = position
   self._curPosition = position
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorView.GetPosition = function(self)
-  -- function num : 0_8
+function BouncePlayerBeHaviorView:GetPosition()
   return self._curPosition
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BouncePlayerBeHaviorView.SetVisible = function(self, bVisible)
-  -- function num : 0_9
+function BouncePlayerBeHaviorView:SetVisible(bVisible)
   if self._gameObject then
-    (self._gameObject):SetActive(bVisible)
+    self._gameObject:SetActive(bVisible)
   end
 end
-
-

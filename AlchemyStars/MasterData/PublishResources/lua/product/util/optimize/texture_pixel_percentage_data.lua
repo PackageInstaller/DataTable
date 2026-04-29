@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/optimize/texture_pixel_percentage_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TexturePixelPercentageData", Object)
 TexturePixelPercentageData = TexturePixelPercentageData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TexturePixelPercentageData.Constructor = function(self, textureName, materialName, material, obj, texture, pixPercentage, pixCount)
-  -- function num : 0_0
+function TexturePixelPercentageData:Constructor(textureName, materialName, material, obj, texture, pixPercentage, pixCount)
   self.textureName = textureName
   self.materialName = materialName
   self.material = material
@@ -18,113 +11,67 @@ TexturePixelPercentageData.Constructor = function(self, textureName, materialNam
   self.pixCount = pixCount
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.GetTextureName = function(self)
-  -- function num : 0_1
+function TexturePixelPercentageData:GetTextureName()
   return self.textureName
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.GetMaterialName = function(self)
-  -- function num : 0_2
+function TexturePixelPercentageData:GetMaterialName()
   return self.materialName
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.GetMaterial = function(self)
-  -- function num : 0_3
+function TexturePixelPercentageData:GetMaterial()
   return self.material
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.GetObj = function(self)
-  -- function num : 0_4
+function TexturePixelPercentageData:GetObj()
   return self.obj
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.SetObj = function(self, obj)
-  -- function num : 0_5
+function TexturePixelPercentageData:SetObj(obj)
   self.obj = obj
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.GetTexture = function(self)
-  -- function num : 0_6
+function TexturePixelPercentageData:GetTexture()
   return self.texture
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.GetPixPercentage = function(self)
-  -- function num : 0_7
+function TexturePixelPercentageData:GetPixPercentage()
   return self.pixPercentage
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.SetPixPercentage = function(self, pixPercentage)
-  -- function num : 0_8
+function TexturePixelPercentageData:SetPixPercentage(pixPercentage)
   self.pixPercentage = pixPercentage
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.GetPixCount = function(self)
-  -- function num : 0_9
+function TexturePixelPercentageData:GetPixCount()
   return self.pixCount
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageData.SetPixCount = function(self, pixCount)
-  -- function num : 0_10
+function TexturePixelPercentageData:SetPixCount(pixCount)
   self.pixCount = pixCount
 end
 
 _class("TexturePixelPercentageDataRoot", Object)
 TexturePixelPercentageDataRoot = TexturePixelPercentageDataRoot
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-TexturePixelPercentageDataRoot.Constructor = function(self, prefab, name, dataList)
-  -- function num : 0_11
+function TexturePixelPercentageDataRoot:Constructor(prefab, name, dataList)
   self.prefab = prefab
   self.name = name
   self.dataList = dataList
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageDataRoot.GetPrefabName = function(self)
-  -- function num : 0_12
+function TexturePixelPercentageDataRoot:GetPrefabName()
   return self.prefab
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageDataRoot.GetName = function(self)
-  -- function num : 0_13
+function TexturePixelPercentageDataRoot:GetName()
   return self.name
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageDataRoot.GetDataList = function(self)
-  -- function num : 0_14
+function TexturePixelPercentageDataRoot:GetDataList()
   return self.dataList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-TexturePixelPercentageDataRoot.SetDataList = function(self, dataList)
-  -- function num : 0_15
+function TexturePixelPercentageDataRoot:SetDataList(dataList)
   self.dataList = dataList
 end
-
-

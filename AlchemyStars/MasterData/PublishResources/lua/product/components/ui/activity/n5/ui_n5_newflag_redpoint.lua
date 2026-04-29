@@ -1,89 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/ui_n5_newflag_redpoint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5NewFlagRedPoint", Object)
 UIN5NewFlagRedPoint = UIN5NewFlagRedPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5NewFlagRedPoint.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._campaignModule = (GameGlobal.GetModule)(CampaignModule)
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
+function UIN5NewFlagRedPoint:Constructor()
+  self._campaignModule = GameGlobal.GetModule(CampaignModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint.RequestCampaign = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._RequestCampaign, self)
+function UIN5NewFlagRedPoint:RequestCampaign()
+  GameGlobal.TaskManager():StartTask(self._RequestCampaign, self)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint._RequestCampaign = function(self, TT)
-  -- function num : 0_2
+function UIN5NewFlagRedPoint:_RequestCampaign(TT)
   self:_RequestCampaignN5(TT)
   self:_RequestCampaignBattlePass(TT)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint._RequestCampaignN5 = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN5NewFlagRedPoint:_RequestCampaignN5(TT)
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N5, ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD, ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N5, ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD, ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
   if res:GetSucc() then
-    self._fixteamMissionComponent = (self._campaign):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
-    self._fixteamMissionComponentInfo = (self._campaign):GetComponentInfo(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
-    self._battlefieldComponent = (self._campaign):GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
-    self._battlefieldComponentInfo = (self._campaign):GetComponentInfo(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
+    self._fixteamMissionComponent = self._campaign:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
+    self._fixteamMissionComponentInfo = self._campaign:GetComponentInfo(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM)
+    self._battlefieldComponent = self._campaign:GetComponent(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
+    self._battlefieldComponentInfo = self._campaign:GetComponentInfo(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint._RequestCampaignBattlePass = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIN5NewFlagRedPoint:_RequestCampaignBattlePass(TT)
   local res = AsyncRequestRes:New()
   self._battlePassCampaign = UIActivityCampaign:New()
-  ;
-  (self._battlePassCampaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
+  self._battlePassCampaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_BATTLEPASS)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint.LoginRewardRedPoint = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if self._campaign and (self._campaign):CheckComponentOpen(ECampaignN5ComponentID.ECAMPAIGN_N5_CUMULATIVE_LOGIN) then
-    return (self._campaign):CheckComponentRed(ECampaignN5ComponentID.ECAMPAIGN_N5_CUMULATIVE_LOGIN)
-  end
+function UIN5NewFlagRedPoint:LoginRewardRedPoint()
+  return self._campaign and self._campaign:CheckComponentOpen(ECampaignN5ComponentID.ECAMPAIGN_N5_CUMULATIVE_LOGIN) and self._campaign:CheckComponentRed(ECampaignN5ComponentID.ECAMPAIGN_N5_CUMULATIVE_LOGIN)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint.MilitaryExploitRedPoint = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  if self._campaign and (self._campaign):CheckComponentOpen(ECampaignN5ComponentID.ECAMPAIGN_N5_PERSON_PROGRESS) then
-    return (self._campaign):CheckComponentRed(ECampaignN5ComponentID.ECAMPAIGN_N5_PERSON_PROGRESS)
-  end
+function UIN5NewFlagRedPoint:MilitaryExploitRedPoint()
+  return self._campaign and self._campaign:CheckComponentOpen(ECampaignN5ComponentID.ECAMPAIGN_N5_PERSON_PROGRESS) and self._campaign:CheckComponentRed(ECampaignN5ComponentID.ECAMPAIGN_N5_PERSON_PROGRESS)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint.BattlePassRedPoint = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  return (UIActivityBattlePassHelper.CheckCampaignRedPoint)(self._battlePassCampaign)
+function UIN5NewFlagRedPoint:BattlePassRedPoint()
+  return UIActivityBattlePassHelper.CheckCampaignRedPoint(self._battlePassCampaign)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint.PetStageRedPoint = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  if not self._campaign or not (self._campaign):CheckComponentOpen(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM) then
+function UIN5NewFlagRedPoint:PetStageRedPoint()
+  if not self._campaign or not self._campaign:CheckComponentOpen(ECampaignN5ComponentID.ECAMPAIGN_N5_LINE_MISSION_FIXTEAM) then
     return false
   end
   if not self._fixteamMissionComponent then
@@ -92,64 +55,44 @@ UIN5NewFlagRedPoint.PetStageRedPoint = function(self)
   if not self._fixteamMissionComponentInfo then
     return false
   end
-  local cfgs = (Cfg.cfg_campaign_pet_try)({CampaignId = (self._campaign)._type})
+  local cfgs = Cfg.cfg_campaign_pet_try({
+    CampaignId = self._campaign._type
+  })
   local lock = false
   if cfgs then
-    for key,value in pairs(cfgs) do
-      if not (self._fixteamMissionComponent):IsPassCamMissionID(value.CampaignMissionId) then
+    for key, value in pairs(cfgs) do
+      if not self._fixteamMissionComponent:IsPassCamMissionID(value.CampaignMissionId) then
         lock = true
         break
       end
     end
   end
-  do
-    return not (self._fixteamMissionComponentInfo).m_b_unlock or lock
-  end
+  return self._fixteamMissionComponentInfo.m_b_unlock and lock
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint.BattleFieldReSetRedPoint = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  if not self._battlefieldComponentInfo or not (self._campaign):CheckComponentOpen(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD) then
+function UIN5NewFlagRedPoint:BattleFieldReSetRedPoint()
+  if not self._battlefieldComponentInfo or not self._campaign:CheckComponentOpen(ECampaignN5ComponentID.ECAMPAIGN_N5_BATTLEFIELD) then
     return false
   end
-  local challenge_mission_info = ((self._battlefieldComponentInfo).m_battlefield_info).m_challenge_mission_info
+  local challenge_mission_info = self._battlefieldComponentInfo.m_battlefield_info.m_challenge_mission_info
   local challenged = true
-  for key,value in pairs(challenge_mission_info) do
+  for key, value in pairs(challenge_mission_info) do
     if value.military_exploit > 0 then
       challenged = false
       break
     end
   end
-  do
-    return challenged
-  end
+  return challenged
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint.HaveRedPoint = function(self)
-  -- function num : 0_10
-  if not self:LoginRewardRedPoint() and not self:MilitaryExploitRedPoint() and not self:PetStageRedPoint() then
-    return self:BattleFieldReSetRedPoint()
-  end
+function UIN5NewFlagRedPoint:HaveRedPoint()
+  return self:LoginRewardRedPoint() or self:MilitaryExploitRedPoint() or self:PetStageRedPoint() or self:BattleFieldReSetRedPoint()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint.UnLockNew = function(self)
-  -- function num : 0_11
-  if self._campaign then
-    return (self._campaign):CheckCampaignNew()
-  end
+function UIN5NewFlagRedPoint:UnLockNew()
+  return self._campaign and self._campaign:CheckCampaignNew()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN5NewFlagRedPoint.HaveNewFlag = function(self)
-  -- function num : 0_12
+function UIN5NewFlagRedPoint:HaveNewFlag()
   return self:UnLockNew()
 end
-
-

@@ -1,148 +1,89 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_door_opener.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftDoorOpener", Object)
 AircraftDoorOpener = AircraftDoorOpener
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftDoorOpener.Constructor = function(self, transformLeft, transformRight)
-  -- function num : 0_0 , upvalues : _ENV
+function AircraftDoorOpener:Constructor(transformLeft, transformRight)
   self._left = transformLeft
   self._right = transformRight
   self._leftDefault = Vector3(0, 0, 0)
   self._rightDefault = Vector3(0, 0, 0)
   self._leftEnd = Vector3(0, 0, -20)
   self._rightEnd = Vector3(0, 0, 20)
-  self._leftEndRot = (Quaternion.Euler)(0, 0, -20)
-  self._rightEndRot = (Quaternion.Euler)(0, 0, 20)
+  self._leftEndRot = Quaternion.Euler(0, 0, -20)
+  self._rightEndRot = Quaternion.Euler(0, 0, 20)
   self._leftDefaultRot = Quaternion.identity
   self._rightDefaultRot = Quaternion.identity
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._left).eulerAngles = self._leftDefault
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._right).eulerAngles = self._rightDefault
+  self._left.eulerAngles = self._leftDefault
+  self._right.eulerAngles = self._rightDefault
   self._speed = 30
   self._stayTime = 1300
   self._state = AirStairDoorState.Idle
-  self._totalDua = (math.abs)((self._leftEnd).z - (self._leftDefault).z) / self._speed * 1000
+  self._totalDua = math.abs(self._leftEnd.z - self._leftDefault.z) / self._speed * 1000
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDoorOpener.Open = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if self._state ~= AirStairDoorState.Opening or self._state == AirStairDoorState.Stay then
+function AircraftDoorOpener:Open()
+  if self._state == AirStairDoorState.Opening then
+  elseif self._state == AirStairDoorState.Stay then
     self._timer = 0
-  else
-    if self._state == AirStairDoorState.Closing then
-      self._state = AirStairDoorState.Opening
-      local leftZ = ((self._left).eulerAngles).z
-      self._duration = (math.abs)(leftZ - (self._leftDefault).z) / self._speed * 1000
-      self._timer = 0
-      self._leftTarget = self._leftEnd
-      self._rightTarget = self._rightEnd
-    else
-      do
-        if self._state == AirStairDoorState.Idle then
-          self._state = AirStairDoorState.Opening
-          self._duration = self._totalDua
-          self._timer = 0
-          self._leftTarget = self._leftEnd
-          self._rightTarget = self._rightEnd
-        end
-      end
-    end
+  elseif self._state == AirStairDoorState.Closing then
+    self._state = AirStairDoorState.Opening
+    local leftZ = self._left.eulerAngles.z
+    self._duration = math.abs(leftZ - self._leftDefault.z) / self._speed * 1000
+    self._timer = 0
+    self._leftTarget = self._leftEnd
+    self._rightTarget = self._rightEnd
+  elseif self._state == AirStairDoorState.Idle then
+    self._state = AirStairDoorState.Opening
+    self._duration = self._totalDua
+    self._timer = 0
+    self._leftTarget = self._leftEnd
+    self._rightTarget = self._rightEnd
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDoorOpener.Init = function(self)
-  -- function num : 0_2
+function AircraftDoorOpener:Init()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDoorOpener.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : _ENV
-  if self._state ~= AirStairDoorState.Idle or self._state == AirStairDoorState.Opening then
+function AircraftDoorOpener:Update(deltaTimeMS)
+  if self._state == AirStairDoorState.Idle then
+  elseif self._state == AirStairDoorState.Opening then
     self._timer = self._timer + deltaTimeMS
     local t = self._timer / self._duration
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    if t > 1 then
-      (self._left).eulerAngles = self._leftEnd
-      -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._right).eulerAngles = self._rightEnd
+    if 1 < t then
+      self._left.eulerAngles = self._leftEnd
+      self._right.eulerAngles = self._rightEnd
       self._timer = 0
       self._duration = self._stayTime
       self._state = AirStairDoorState.Stay
     else
-      local leftR = (self._left).rotation
-      local rightR = (self._right).rotation
-      -- DECOMPILER ERROR at PC43: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._left).rotation = (Quaternion.Lerp)(leftR, self._leftEndRot, t)
-      -- DECOMPILER ERROR at PC51: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._right).rotation = (Quaternion.Lerp)(rightR, self._rightEndRot, t)
+      local leftR = self._left.rotation
+      local rightR = self._right.rotation
+      self._left.rotation = Quaternion.Lerp(leftR, self._leftEndRot, t)
+      self._right.rotation = Quaternion.Lerp(rightR, self._rightEndRot, t)
     end
-  else
-    do
-      if self._state == AirStairDoorState.Stay then
-        self._timer = self._timer + deltaTimeMS
-        if self._duration < self._timer then
-          self._timer = 0
-          self._duration = self._totalDua
-          self._state = AirStairDoorState.Closing
-        end
-      else
-        if self._state == AirStairDoorState.Closing then
-          self._timer = self._timer + deltaTimeMS
-          local t = self._timer / self._duration
-          -- DECOMPILER ERROR at PC87: Confused about usage of register: R3 in 'UnsetPending'
-
-          if t > 1 then
-            (self._left).eulerAngles = self._leftDefault
-            -- DECOMPILER ERROR at PC90: Confused about usage of register: R3 in 'UnsetPending'
-
-            ;
-            (self._right).eulerAngles = self._rightDefault
-            self._timer = 0
-            self._duration = 0
-            self._state = AirStairDoorState.Idle
-          else
-            local leftR = (self._left).rotation
-            local rightR = (self._right).rotation
-            -- DECOMPILER ERROR at PC108: Confused about usage of register: R5 in 'UnsetPending'
-
-            ;
-            (self._left).rotation = (Quaternion.Lerp)(leftR, self._leftDefaultRot, t)
-            -- DECOMPILER ERROR at PC116: Confused about usage of register: R5 in 'UnsetPending'
-
-            ;
-            (self._right).rotation = (Quaternion.Lerp)(rightR, self._rightDefaultRot, t)
-          end
-        end
-      end
+  elseif self._state == AirStairDoorState.Stay then
+    self._timer = self._timer + deltaTimeMS
+    if self._timer > self._duration then
+      self._timer = 0
+      self._duration = self._totalDua
+      self._state = AirStairDoorState.Closing
+    end
+  elseif self._state == AirStairDoorState.Closing then
+    self._timer = self._timer + deltaTimeMS
+    local t = self._timer / self._duration
+    if 1 < t then
+      self._left.eulerAngles = self._leftDefault
+      self._right.eulerAngles = self._rightDefault
+      self._timer = 0
+      self._duration = 0
+      self._state = AirStairDoorState.Idle
+    else
+      local leftR = self._left.rotation
+      local rightR = self._right.rotation
+      self._left.rotation = Quaternion.Lerp(leftR, self._leftDefaultRot, t)
+      self._right.rotation = Quaternion.Lerp(rightR, self._rightDefaultRot, t)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftDoorOpener.Dispose = function(self)
-  -- function num : 0_4
+function AircraftDoorOpener:Dispose()
 end
-
-

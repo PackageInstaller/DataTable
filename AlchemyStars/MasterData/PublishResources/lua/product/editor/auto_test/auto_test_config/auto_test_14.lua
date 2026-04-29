@@ -1,47 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_config/auto_test_14.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 AutoTest_14 = {
-cases = {
-[1] = {
-[1] = {action = "WaitGameFsm", 
-args = {id = 5}
+  cases = {
+    [1] = {
+      [1] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      [2] = {
+        action = "SetTeamPowerFull",
+        args = {}
+      },
+      [3] = {
+        action = "SetTeamPosition",
+        args = {name = "team", pos = 502}
+      },
+      [4] = {
+        action = "CheckEntityPos",
+        args = {
+          name = "p1",
+          pos = 603,
+          trigger = 30
+        }
+      },
+      [5] = {
+        action = "FakeCastSkill",
+        args = {
+          name = "p1",
+          pickUpPos = {
+            [1] = 603.0
+          }
+        }
+      },
+      [6] = {
+        action = "WaitGameFsm",
+        args = {id = 5}
+      },
+      name = "移动到自身周围1圈内的任意位置"
+    }
+  },
+  name = "匹皮主动技",
+  petList = {
+    [1] = {
+      affinity = 1,
+      awakening = 0,
+      equiplv = 1,
+      grade = 0,
+      id = 1300591,
+      level = 1,
+      name = "p1"
+    }
+  },
+  setup = {
+    [1] = {
+      args = {levelID = 1, matchType = 1},
+      setup = "LevelBasic"
+    }
+  }
 }
-, 
-[2] = {action = "SetTeamPowerFull", 
-args = {}
-}
-, 
-[3] = {action = "SetTeamPosition", 
-args = {name = "team", pos = 502}
-}
-, 
-[4] = {action = "CheckEntityPos", 
-args = {name = "p1", pos = 603, trigger = 30}
-}
-, 
-[5] = {action = "FakeCastSkill", 
-args = {name = "p1", 
-pickUpPos = {[1] = 603}
-}
-}
-, 
-[6] = {action = "WaitGameFsm", 
-args = {id = 5}
-}
-, name = "移动到自身周围1圈内的任意位置"}
-}
-, name = "匹皮主动技", 
-petList = {
-[1] = {affinity = 1, awakening = 0, equiplv = 1, grade = 0, id = 1300591, level = 1, name = "p1"}
-}
-, 
-setup = {
-[1] = {
-args = {levelID = 1, matchType = 1}
-, setup = "LevelBasic"}
-}
-}
-

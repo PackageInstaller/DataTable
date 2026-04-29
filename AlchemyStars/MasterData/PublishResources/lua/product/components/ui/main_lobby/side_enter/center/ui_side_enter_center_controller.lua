@@ -1,73 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/side_enter/center/ui_side_enter_center_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISideEnterCenterController", UIController)
 UISideEnterCenterController = UISideEnterCenterController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISideEnterCenterController._SetCommonTopButton = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  (((self._tabPages)[self._tabIndex]):GetHelpIntrKey())
-  local helpKey = nil
-  local helpCb = nil
+function UISideEnterCenterController:_SetCommonTopButton()
+  local helpKey = self._tabPages[self._tabIndex]:GetHelpIntrKey()
+  local helpCb
   if helpKey then
-    helpCb = function()
-    -- function num : 0_0_0 , upvalues : _ENV, helpKey
-    (UIActivityHelper.ShowActivityIntro)(helpKey)
+    function helpCb()
+      UIActivityHelper.ShowActivityIntro(helpKey)
+    end
   end
-
-  end
-  local obj = (UIWidgetHelper.SpawnObject)(self, "_backBtns", "UINewCommonTopButton")
+  local obj = UIWidgetHelper.SpawnObject(self, "_backBtns", "UINewCommonTopButton")
   obj:SetData(function()
-    -- function num : 0_0_1 , upvalues : self
     self:_BackFunc()
-  end
-, helpCb, nil, true)
+  end, helpCb, nil, true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._BackFunc = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  if (self:Manager()):CurUIStateType() == UIStateType.UISideEnterCenter then
+function UISideEnterCenterController:_BackFunc()
+  if self:Manager():CurUIStateType() == UIStateType.UISideEnterCenter then
     self:SwitchState(UIStateType.UIMain)
   else
     self:_Shot(function()
-    -- function num : 0_1_0 , upvalues : _ENV, self
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", "uieff_UISideEnterCenterController_out", 333, function()
-      -- function num : 0_1_0_0 , upvalues : _ENV, self
-      (UIBgmHelper.PlayMainBgm)()
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SideEnterRefresh)
-      self:CloseDialog()
-    end
-)
-  end
-)
+      UIWidgetHelper.PlayAnimation(self, "_anim", "uieff_UISideEnterCenterController_out", 333, function()
+        UIBgmHelper.PlayMainBgm()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.SideEnterRefresh)
+        self:CloseDialog()
+      end)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2
+function UISideEnterCenterController:LoadDataOnEnter(TT, res, uiParams)
   self:_LoadData(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UISideEnterCenterController:OnShow(uiParams)
   self:AttachEvent(GameEventType.OpenContentByCampaignType, self.OpenContentByCampaignType)
   self:ManualSetUnderLayerUIVisble(false)
   self._active = true
   self:AddListener()
   local gridTransform = self:GetUIComponent("RectTransform", "_tabBtns")
-  ;
-  (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(gridTransform)
-  self.viewPortWidth = ((self:GetUIComponent("RectTransform", "Viewport")).rect).width
+  UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(gridTransform)
+  self.viewPortWidth = self:GetUIComponent("RectTransform", "Viewport").rect.width
   self.contentRect = self:GetUIComponent("RectTransform", "_tabBtns")
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "shot")
   self:_SetTabSelect_OnShow(self._firstPageIndex, self._firstPageParams)
@@ -77,32 +50,26 @@ UISideEnterCenterController.OnShow = function(self, uiParams)
   self._tipsInfo = tipsPool:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.OnHide = function(self)
-  -- function num : 0_4
+function UISideEnterCenterController:OnHide()
   self:DetachListener()
   if self._playerTweener then
-    (self._playerTweener):Kill()
+    self._playerTweener:Kill()
     self._playerTweener = nil
   end
   if self._contentTweener then
-    (self._contentTweener):Kill()
+    self._contentTweener:Kill()
     self._contentTweener = nil
   end
   self._active = false
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
   end
   self:ManualSetUnderLayerUIVisble(true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_5
-  local content = nil
-  local tabPage = (self._tabPages)[self._tabIndex]
+function UISideEnterCenterController:OnUpdate(deltaTimeMS)
+  local content
+  local tabPage = self._tabPages[self._tabIndex]
   if tabPage ~= nil then
     content = tabPage:GetContent()
   end
@@ -111,68 +78,46 @@ UISideEnterCenterController.OnUpdate = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._CalcCenterParams = function(self, uiParams)
-  -- function num : 0_6
-  if not uiParams or not uiParams[1] then
-    local tb = {}
-  end
+function UISideEnterCenterController:_CalcCenterParams(uiParams)
+  local tb = uiParams and uiParams[1] or {}
   self._singleMode = tb.single_mode or false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._CalcFirstTab = function(self, uiParams)
-  -- function num : 0_7 , upvalues : _ENV
-  if not uiParams or not uiParams[1] then
-    local tb = {}
-  end
-  for i,v in ipairs(self._showTb) do
+function UISideEnterCenterController:_CalcFirstTab(uiParams)
+  local tb = uiParams and uiParams[1] or {}
+  for i, v in ipairs(self._showTb) do
     local cfg = v._mainCfg
-    if cfg then
-      local contentParams = cfg.ContentParams
-    end
-    -- DECOMPILER ERROR at PC23: Unhandled construct in 'MakeBoolean' P1
-
-    if tb.campaign_id and tb.campaign_id == contentParams.campaign_id then
-      return i, tb.params
-    end
-    if tb.campaign_type and tb.campaign_type == contentParams.campaign_type then
+    local contentParams = cfg and cfg.ContentParams
+    if tb.campaign_id then
+      if tb.campaign_id == contentParams.campaign_id then
+        return i, tb.params
+      end
+    elseif tb.campaign_type and tb.campaign_type == contentParams.campaign_type then
       return i, tb.params
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._CalcPreLoadPages = function(self)
-  -- function num : 0_8
-  return {self._firstPageIndex}
+function UISideEnterCenterController:_CalcPreLoadPages()
+  return {
+    self._firstPageIndex
+  }
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._LoadData = function(self, TT, res, uiParams)
-  -- function num : 0_9 , upvalues : _ENV
+function UISideEnterCenterController:_LoadData(TT, res, uiParams)
   local lockName = "UISideEnterCenterController_LoadData"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
+  GameGlobal.UIStateManager():Lock(lockName)
   local campModule = self:GetModule(CampaignModule)
   campModule:LoadCampaignInfoListTask(TT)
   self:_LoadTabBtnData(TT)
   self:_CalcCenterParams(uiParams)
-  self._firstPageIndex = self:_CalcFirstTab(uiParams)
+  self._firstPageIndex, self._firstPageParams = self:_CalcFirstTab(uiParams)
   if self._singleMode and self._firstPageIndex == nil then
     res:SetSucc(false)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
-    ;
-    (Log.error)("UISideEnterCenterController:_LoadData() single mode and first page is nil, 活动中心 单窗口模式 传入参数找不到要显示的页签")
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
-    ;
-    (UIWidgetHelper.ClearWidgets)(self, "_centerLoaderPool")
+    ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
+    Log.error("UISideEnterCenterController:_LoadData() single mode and first page is nil, 活动中心 单窗口模式 传入参数找不到要显示的页签")
+    GameGlobal.UIStateManager():UnLock(lockName)
+    UIWidgetHelper.ClearWidgets(self, "_centerLoaderPool")
     return false
   end
   self._firstPageIndex = self._firstPageIndex or 1
@@ -180,523 +125,355 @@ UISideEnterCenterController._LoadData = function(self, TT, res, uiParams)
   self:_SetTabBtns(self._showTb)
   self:_SetTabPages(self._showTb)
   if #self._showTb == 0 then
-    (Log.error)("UISideEnterCenterController:_LoadData() tab count == 0, 活动中心没有可显示的内容")
+    Log.error("UISideEnterCenterController:_LoadData() tab count == 0, 活动中心没有可显示的内容")
     if res then
       res:SetSucc(false)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SideEnterRefresh)
-      ;
-      (ToastManager.ShowToast)((StringTable.Get)("str_activity_error_109"))
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.SideEnterRefresh)
+      ToastManager.ShowToast(StringTable.Get("str_activity_error_109"))
     else
       self:_BackFunc()
     end
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     return false
   end
   local preLoadPages = self:_CalcPreLoadPages()
-  for _,v in ipairs(preLoadPages) do
+  for _, v in ipairs(preLoadPages) do
     self:_LoadTabPageData(TT, v)
   end
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock(lockName)
+  GameGlobal.UIStateManager():UnLock(lockName)
   return true
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._LoadDataAndRefresh = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UISideEnterCenterController:_LoadDataAndRefresh()
   if self._refreshTaskId and self._refreshTaskId ~= -1 then
-    return 
+    return
   end
   if self._transitionMask == nil then
     self._transitionMask = self:GetUIComponent("CanvasGroup", "transitionMask")
   end
   local lockName = "UISideEnterCenterController:_LoadDataAndRefresh()"
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  self._refreshTaskId = (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_10_0 , upvalues : self, _ENV, lockName
+  GameGlobal.UIStateManager():Lock(lockName)
+  self._refreshTaskId = TaskManager:GetInstance():StartTask(function(TT)
     self:_TransitionMask(TT, 0, 1, true, 100)
     self:_SwitchTabPage(TT, 0)
     if not self:_LoadData(TT) then
-      ((GameGlobal.UIStateManager)()):UnLock(lockName)
+      GameGlobal.UIStateManager():UnLock(lockName)
       self._refreshTaskId = nil
-      return 
+      return
     end
     local index = 1
     self:_SwitchTabPage(TT, index)
     self:_SwitchTabBtn(index)
     self:_TransitionMask(TT, 1, 0, false, 100)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     self._refreshTaskId = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._TransitionMask = function(self, TT, alphaBegin, alphaEnd, visibleEnd, transLen)
-  -- function num : 0_11 , upvalues : _ENV
+function UISideEnterCenterController:_TransitionMask(TT, alphaBegin, alphaEnd, visibleEnd, transLen)
   local transTick = 0
   local transAlpha = alphaBegin
   local speed = (alphaEnd - alphaBegin) / transLen
   local instGameGlobal = GameGlobal:GetInstance()
-  ;
-  ((self._transitionMask).gameObject):SetActive(true)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R10 in 'UnsetPending'
-
-  ;
-  (self._transitionMask).alpha = transAlpha
-  do
-    while transTick < transLen do
-      local deltaTime = instGameGlobal:GetDeltaTime()
-      transTick = transTick + deltaTime
-      transAlpha = transAlpha + deltaTime * speed
-      transAlpha = (math.max)(transAlpha, 0)
-      transAlpha = (math.min)(transAlpha, 1)
-      -- DECOMPILER ERROR at PC34: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._transitionMask).alpha = transAlpha
-      YIELD(TT)
-    end
-    ;
-    ((self._transitionMask).gameObject):SetActive(visibleEnd)
+  self._transitionMask.gameObject:SetActive(true)
+  self._transitionMask.alpha = transAlpha
+  while transLen > transTick do
+    local deltaTime = instGameGlobal:GetDeltaTime()
+    transTick = transTick + deltaTime
+    transAlpha = transAlpha + deltaTime * speed
+    transAlpha = math.max(transAlpha, 0)
+    transAlpha = math.min(transAlpha, 1)
+    self._transitionMask.alpha = transAlpha
+    YIELD(TT)
   end
+  self._transitionMask.gameObject:SetActive(visibleEnd)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._LoadTabBtnData = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
-  local cfgList = (UISideEnterConst.GetCfgList_SideEnterCenter)()
-  self._showTb = (UISideEnterConst.SpawnSideEnterLoader)(TT, self, "_centerLoaderPool", cfgList, function()
-    -- function num : 0_12_0 , upvalues : self
+function UISideEnterCenterController:_LoadTabBtnData(TT)
+  local cfgList = UISideEnterConst.GetCfgList_SideEnterCenter()
+  self._showTb = UISideEnterConst.SpawnSideEnterLoader(TT, self, "_centerLoaderPool", cfgList, function()
     self:_LoadDataAndRefresh()
-  end
-, function()
-    -- function num : 0_12_1
-  end
-)
+  end, function()
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._LoadTabPageData = function(self, TT, index)
-  -- function num : 0_13
-  if index and (self._tabPages)[index] then
-    return ((self._tabPages)[index]):LoadData(TT)
+function UISideEnterCenterController:_LoadTabPageData(TT, index)
+  if index and self._tabPages[index] then
+    return self._tabPages[index]:LoadData(TT)
   end
   return true
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SetSingleMode = function(self, singleMode)
-  -- function num : 0_14
-  (self:GetGameObject("ScrollView")):SetActive(not singleMode)
+function UISideEnterCenterController:_SetSingleMode(singleMode)
+  self:GetGameObject("ScrollView"):SetActive(not singleMode)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SetHideUIMode = function(self, hide)
-  -- function num : 0_15
-  (self:GetGameObject("_backBtns")):SetActive(not hide)
+function UISideEnterCenterController:_SetHideUIMode(hide)
+  self:GetGameObject("_backBtns"):SetActive(not hide)
   if not self._singleMode then
-    (self:GetGameObject("ScrollView")):SetActive(not hide)
+    self:GetGameObject("ScrollView"):SetActive(not hide)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SetTabBtns = function(self, showTb)
-  -- function num : 0_16 , upvalues : _ENV
-  self._tabBtns = (UIWidgetHelper.SpawnObjects)(self, "_tabBtns", "UIActivityCommonTextTabBtn", #showTb)
-  for i,v in ipairs(self._tabBtns) do
+function UISideEnterCenterController:_SetTabBtns(showTb)
+  self._tabBtns = UIWidgetHelper.SpawnObjects(self, "_tabBtns", "UIActivityCommonTextTabBtn", #showTb)
+  for i, v in ipairs(self._tabBtns) do
     v:SetData(i, {
-indexWidgets = {}
-, 
-onoffWidgets = {
-{"OnBtn"}
-, 
-{"OffBtn"}
-}
-, 
-lockWidgets = {}
-, 
-titleWidgets = {}
-, titleText = "", callback = function(index, isOffBtnClick)
-    -- function num : 0_16_0 , upvalues : self
-    if isOffBtnClick then
-      self:_SetTabSelect(index)
-    end
-  end
-})
+      indexWidgets = {},
+      onoffWidgets = {
+        {"OnBtn"},
+        {"OffBtn"}
+      },
+      lockWidgets = {},
+      titleWidgets = {},
+      titleText = "",
+      callback = function(index, isOffBtnClick)
+        if isOffBtnClick then
+          self:_SetTabSelect(index)
+        end
+      end
+    })
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SetTabPages = function(self, showTb)
-  -- function num : 0_17 , upvalues : _ENV
-  self._tabPages = (UIWidgetHelper.SpawnObjects)(self, "_tabPages", "UISideEnterCenterTabPage", #showTb)
-  for i,v in ipairs(self._tabPages) do
+function UISideEnterCenterController:_SetTabPages(showTb)
+  self._tabPages = UIWidgetHelper.SpawnObjects(self, "_tabPages", "UISideEnterCenterTabPage", #showTb)
+  for i, v in ipairs(self._tabPages) do
     v:SetData(ESideEnterContentType.Center, function()
-    -- function num : 0_17_0
-  end
-, function(hide)
-    -- function num : 0_17_1 , upvalues : self
-    self:_SetHideUIMode(hide)
-  end
-, (showTb[i])._mainCfg)
+    end, function(hide)
+      self:_SetHideUIMode(hide)
+    end, showTb[i]._mainCfg)
   end
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SetTabSelect_OnShow = function(self, index, params)
-  -- function num : 0_18
+function UISideEnterCenterController:_SetTabSelect_OnShow(index, params)
   self._tabIndex = index
-  ;
-  ((self._tabPages)[index]):OnSelect(params)
-  if index and (self._tabBtns)[index] then
-    (((self._tabPages)[index]):GetGameObject()):SetActive(true)
+  self._tabPages[index]:OnSelect(params)
+  if index and self._tabBtns[index] then
+    self._tabPages[index]:GetGameObject():SetActive(true)
   end
   self:_SwitchTabBtn(index)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.GetCurContentWigetObject = function(self)
-  -- function num : 0_19
+function UISideEnterCenterController:GetCurContentWigetObject()
   if self._tabPages and self._tabIndex then
-    local tab = (self._tabPages)[self._tabIndex]
+    local tab = self._tabPages[self._tabIndex]
     if tab then
       return tab:GetGameObject(), tab
     end
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SetTabSelect = function(self, index, params)
-  -- function num : 0_20 , upvalues : _ENV
+function UISideEnterCenterController:_SetTabSelect(index, params)
   if self._tabIndex == index then
-    return 
+    return
   end
   if self._switchTaskId and self._switchTaskId ~= -1 then
-    return 
+    return
   end
   if index == nil then
-    return 
+    return
   end
   local lockName = "UISideEnterCenterController:_SetTabSelect_" .. index
-  ;
-  ((GameGlobal.UIStateManager)()):Lock(lockName)
-  self._switchTaskId = (TaskManager:GetInstance()):StartTask(function(TT)
-    -- function num : 0_20_0 , upvalues : self, index, _ENV, lockName, params
+  GameGlobal.UIStateManager():Lock(lockName)
+  self._switchTaskId = TaskManager:GetInstance():StartTask(function(TT)
     local res = self:_LoadTabPageData(TT, index)
     if not res then
-      ((GameGlobal.UIStateManager)()):UnLock(lockName)
+      GameGlobal.UIStateManager():UnLock(lockName)
       self._switchTaskId = nil
-      return 
+      return
     end
     self:_RefreshOtherShowTbBtns()
     self:_SwitchTabPage(TT, index, params)
     self:_SwitchTabBtn(index)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock(lockName)
+    GameGlobal.UIStateManager():UnLock(lockName)
     self._switchTaskId = nil
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._RefreshOtherShowTbBtns = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UISideEnterCenterController:_RefreshOtherShowTbBtns()
   local changed = false
   for i = 1, #self._showTb do
-    local cfg = ((self._showTb)[i]):GetCfg()
+    local cfg = self._showTb[i]:GetCfg()
     local btnKey = cfg.BtnKey
-    local btnCfg = (UISideEnterConst.GetCfg_SideEnterBtn)(btnKey)
-    if ((self._showTb)[i]):IsEnable() and not (UISideEnterBtnConst.CheckOpen)(nil, btnCfg) then
-      ((self._showTb)[i]):Enable(false)
-      ;
-      ((self._tabBtns)[i]):Enable(false)
+    local btnCfg = UISideEnterConst.GetCfg_SideEnterBtn(btnKey)
+    if self._showTb[i]:IsEnable() and not UISideEnterBtnConst.CheckOpen(nil, btnCfg) then
+      self._showTb[i]:Enable(false)
+      self._tabBtns[i]:Enable(false)
       changed = true
     end
   end
   if changed then
-    (((UnityEngine.UI).LayoutRebuilder).ForceRebuildLayoutImmediate)(self.contentRect)
+    UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.contentRect)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._IsTabEnable = function(self, tabIndex)
-  -- function num : 0_22
-  if #self._showTb < tabIndex or tabIndex < 1 then
+function UISideEnterCenterController:_IsTabEnable(tabIndex)
+  if tabIndex > #self._showTb or tabIndex < 1 then
     return false
   end
-  return ((self._showTb)[tabIndex]):IsEnable()
+  return self._showTb[tabIndex]:IsEnable()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SwitchTabPage = function(self, TT, index, params)
-  -- function num : 0_23
+function UISideEnterCenterController:_SwitchTabPage(TT, index, params)
   local preIndex = self._tabIndex
   self._tabIndex = index
-  if preIndex and (self._tabPages)[preIndex] then
-    ((self._tabPages)[preIndex]):OnDeselect()
+  if preIndex and self._tabPages[preIndex] then
+    self._tabPages[preIndex]:OnDeselect()
   end
-  if index and (self._tabPages)[index] then
-    ((self._tabPages)[index]):OnSelect(params)
+  if index and self._tabPages[index] then
+    self._tabPages[index]:OnSelect(params)
   end
-  if preIndex and (self._tabPages)[preIndex] then
-    (((self._tabPages)[preIndex]):GetGameObject()):SetActive(false)
+  if preIndex and self._tabPages[preIndex] then
+    self._tabPages[preIndex]:GetGameObject():SetActive(false)
   end
-  if index and (self._tabPages)[index] then
-    (((self._tabPages)[index]):GetGameObject()):SetActive(true)
+  if index and self._tabPages[index] then
+    self._tabPages[index]:GetGameObject():SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SwitchTabBtn = function(self, index)
-  -- function num : 0_24 , upvalues : _ENV
+function UISideEnterCenterController:_SwitchTabBtn(index)
   for i = 1, #self._tabBtns do
-    ((self._tabBtns)[i]):SetSelected(i == index)
+    self._tabBtns[i]:SetSelected(i == index)
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SideEnterTabRefresh)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SideEnterTabRefresh)
   self:_SetTabBtnPosition(index)
   self:_SetTabBtnEffect(index)
   self:_SetCommonTopButton()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SetTabBtnPosition = function(self, index)
-  -- function num : 0_25 , upvalues : _ENV
-  local btnTrans = (((self._tabBtns)[index]):GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
-  local posX = (btnTrans.anchoredPosition).x
-  local curPos = ((self.contentRect).anchoredPosition).x
-  local width = ((self.contentRect).rect).width
+function UISideEnterCenterController:_SetTabBtnPosition(index)
+  local btnTrans = self._tabBtns[index]:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
+  local posX = btnTrans.anchoredPosition.x
+  local curPos = self.contentRect.anchoredPosition.x
+  local width = self.contentRect.rect.width
   local areaWidth = 120
-  local targetPos = nil
-  local min = (math.min)(areaWidth - posX, 0)
-  local max = (math.max)(self.viewPortWidth - (posX + areaWidth), self.viewPortWidth - width)
+  local targetPos
+  local min = math.min(areaWidth - posX, 0)
+  local max = math.max(self.viewPortWidth - (posX + areaWidth), self.viewPortWidth - width)
   if curPos < min then
     targetPos = min
-  else
-    if max < curPos then
-      targetPos = max
-    end
+  elseif curPos > max then
+    targetPos = max
   end
   if targetPos then
-    if self._contentTweener and (self._contentTweener):IsPlaying() then
-      (self._contentTweener):Kill()
+    if self._contentTweener and self._contentTweener:IsPlaying() then
+      self._contentTweener:Kill()
     end
-    self._contentTweener = ((self.contentRect):DOAnchorPosX(targetPos, 0.4)):SetEase(((DG.Tweening).Ease).OutQuint)
+    self._contentTweener = self.contentRect:DOAnchorPosX(targetPos, 0.4):SetEase(DG.Tweening.Ease.OutQuint)
   end
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._SetTabBtnEffect = function(self, index)
-  -- function num : 0_26 , upvalues : _ENV
-  if index and (self._tabBtns)[index] then
-    local target = (((self._tabBtns)[index]):GetGameObject()).transform
+function UISideEnterCenterController:_SetTabBtnEffect(index)
+  if index and self._tabBtns[index] then
+    local target = self._tabBtns[index]:GetGameObject().transform
     local trans = self:GetUIComponent("RectTransform", "_selectBg")
     local duration = 0.3
-    local tx = (target.localPosition).x
-    if self._playerTweener and (self._playerTweener):IsPlaying() then
-      (self._playerTweener):Kill()
+    local tx = target.localPosition.x
+    if self._playerTweener and self._playerTweener:IsPlaying() then
+      self._playerTweener:Kill()
     end
-    self._playerTweener = (trans:DOLocalMoveX(tx, duration, true)):SetEase(((DG.Tweening).Ease).OutQuint)
+    self._playerTweener = trans:DOLocalMoveX(tx, duration, true):SetEase(DG.Tweening.Ease.OutQuint)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._Shot = function(self, callback)
-  -- function num : 0_27 , upvalues : _ENV
+function UISideEnterCenterController:_Shot(callback)
   local shot = self:GetScreenShot()
-  ;
-  (shot.gameObject):SetActive(true)
-  shot.OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
+  shot.gameObject:SetActive(true)
+  shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
   local rt = shot:RefreshBlurTexture()
-  local cache_rt = (UnityEngine.RenderTexture):New((UnityEngine.Screen).width, (UnityEngine.Screen).height, 16)
-  cache_rt.format = (UnityEngine.RenderTextureFormat).RGB111110Float
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_27_0 , upvalues : _ENV, self, rt, cache_rt, callback
+  local cache_rt = UnityEngine.RenderTexture:New(UnityEngine.Screen.width, UnityEngine.Screen.height, 16)
+  cache_rt.format = UnityEngine.RenderTextureFormat.RGB111110Float
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
     if not self._active then
-      return 
+      return
     end
-    ;
-    ((UnityEngine.Graphics).Blit)(rt, cache_rt)
+    UnityEngine.Graphics.Blit(rt, cache_rt)
     local a = self:GetUIComponent("RawImage", "rt")
     a.texture = cache_rt
     self:_HideUi()
     callback()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController._HideUi = function(self)
-  -- function num : 0_28
-  (self:GetGameObject("rt")):SetActive(true)
-  ;
-  (self:GetGameObject("shot")):SetActive(false)
-  ;
-  (self:GetGameObject("ScrollView")):SetActive(false)
-  ;
-  (self:GetGameObject("_tabPages")):SetActive(false)
-  ;
-  (self:GetGameObject("_backBtns")):SetActive(false)
+function UISideEnterCenterController:_HideUi()
+  self:GetGameObject("rt"):SetActive(true)
+  self:GetGameObject("shot"):SetActive(false)
+  self:GetGameObject("ScrollView"):SetActive(false)
+  self:GetGameObject("_tabPages"):SetActive(false)
+  self:GetGameObject("_backBtns"):SetActive(false)
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.LastBtnOnClick = function(self, go)
-  -- function num : 0_29
+function UISideEnterCenterController:LastBtnOnClick(go)
   local cur = self._tabIndex or 1
   for i = cur - 1, 1, -1 do
     if self:_IsTabEnable(i) then
       self:_SetTabSelect(i)
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.NextBtnOnClick = function(self, go)
-  -- function num : 0_30
+function UISideEnterCenterController:NextBtnOnClick(go)
   local cur = self._tabIndex or 1
   for i = cur + 1, #self._showTb do
     if self:_IsTabEnable(i) then
       self:_SetTabSelect(i)
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.AddListener = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function UISideEnterCenterController:AddListener()
   self:AttachEvent(GameEventType.OnCampaignCenterShowItemTips, self.ShowItemTips)
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.ShowItemTips = function(self, id, pos)
-  -- function num : 0_32
+function UISideEnterCenterController:ShowItemTips(id, pos)
   if self._tipsInfo then
-    (self._tipsInfo):SetData(id, pos)
+    self._tipsInfo:SetData(id, pos)
   end
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.DetachListener = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function UISideEnterCenterController:DetachListener()
   self:DetachEvent(GameEventType.OnCampaignCenterShowItemTips, self.ShowItemTips)
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.OnActivityCloseEvent = function(self, id)
-  -- function num : 0_34
+function UISideEnterCenterController:OnActivityCloseEvent(id)
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.GetScreenShot = function(self)
-  -- function num : 0_35
+function UISideEnterCenterController:GetScreenShot()
   return self._shot
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.OpenContentByCampaignType = function(self, param)
-  -- function num : 0_36
+function UISideEnterCenterController:OpenContentByCampaignType(param)
   local uiParams = {}
   uiParams[1] = param
   local i, p = self:_CalcFirstTab(uiParams)
   self:_SetTabSelect(i, p)
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.HideEntry = function(self, withAnim)
-  -- function num : 0_37 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._BottomCanvasGroup).blocksRaycasts = false
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._BackCanvasGroup).blocksRaycasts = false
+function UISideEnterCenterController:HideEntry(withAnim)
+  self._BottomCanvasGroup.blocksRaycasts = false
+  self._BackCanvasGroup.blocksRaycasts = false
   if withAnim then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", "uieff_UISideEnterCenterController_hide", 366)
+    UIWidgetHelper.PlayAnimation(self, "_anim", "uieff_UISideEnterCenterController_hide", 366)
   else
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._BottomCanvasGroup).alpha = 0
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._BackCanvasGroup).alpha = 0
+    self._BottomCanvasGroup.alpha = 0
+    self._BackCanvasGroup.alpha = 0
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-UISideEnterCenterController.ShowEntry = function(self, withAnim)
-  -- function num : 0_38 , upvalues : _ENV
+function UISideEnterCenterController:ShowEntry(withAnim)
   if withAnim then
-    (UIWidgetHelper.PlayAnimation)(self, "_anim", "uieff_UISideEnterCenterController_back", 627, function()
-    -- function num : 0_38_0 , upvalues : self
-    -- DECOMPILER ERROR at PC1: Confused about usage of register: R0 in 'UnsetPending'
-
-    (self._BottomCanvasGroup).blocksRaycasts = true
-    -- DECOMPILER ERROR at PC3: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._BackCanvasGroup).blocksRaycasts = true
-  end
-)
+    UIWidgetHelper.PlayAnimation(self, "_anim", "uieff_UISideEnterCenterController_back", 627, function()
+      self._BottomCanvasGroup.blocksRaycasts = true
+      self._BackCanvasGroup.blocksRaycasts = true
+    end)
   else
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._BottomCanvasGroup).blocksRaycasts = true
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._BackCanvasGroup).blocksRaycasts = true
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._BottomCanvasGroup).alpha = 1
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._BackCanvasGroup).alpha = 1
+    self._BottomCanvasGroup.blocksRaycasts = true
+    self._BackCanvasGroup.blocksRaycasts = true
+    self._BottomCanvasGroup.alpha = 1
+    self._BackCanvasGroup.alpha = 1
   end
 end
-
-

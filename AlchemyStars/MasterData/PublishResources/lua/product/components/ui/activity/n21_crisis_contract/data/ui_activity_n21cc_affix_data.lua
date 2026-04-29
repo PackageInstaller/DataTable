@@ -1,22 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n21_crisis_contract/data/ui_activity_n21cc_affix_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN21CCAffixData", Object)
 UIActivityN21CCAffixData = UIActivityN21CCAffixData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN21CCAffixData.Constructor = function(self, config, isSelected, affixGroupData)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN21CCAffixData:Constructor(config, isSelected, affixGroupData)
   self._affixGroupData = affixGroupData
   self._missionAffixId = config.ID
   local id = config.AffixID
   local score = config.AffixScore
   self._unlockScore = config.UnLockScore
-  local cfgs = (Cfg.cfg_affix)({ID = id})
+  local cfgs = Cfg.cfg_affix({ID = id})
   if cfgs == nil or #cfgs <= 0 then
-    return 
+    return
   end
   local cfg = cfgs[1]
   self._id = id
@@ -26,99 +19,60 @@ UIActivityN21CCAffixData.Constructor = function(self, config, isSelected, affixG
   local params = {}
   if paramsCfg and paramsCfg[1] then
     local p = paramsCfg[1]
-    for k,v in ipairs(p) do
+    for k, v in ipairs(p) do
       if type(v) == "string" then
-        params[#params + 1] = (StringTable.Get)(v)
-      else
-        if type(v) == "number" then
-          params[#params + 1] = v
-        end
+        params[#params + 1] = StringTable.Get(v)
+      elseif type(v) == "number" then
+        params[#params + 1] = v
       end
     end
   end
-  do
-    self._des = (StringTable.Get)(cfg.Desc, (table.unpack)(params))
-    self._score = score
-    self._level = cfg.Level
-    self._isSelected = isSelected
-  end
+  self._des = StringTable.Get(cfg.Desc, table.unpack(params))
+  self._score = score
+  self._level = cfg.Level
+  self._isSelected = isSelected
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.GetAffixGroupData = function(self)
-  -- function num : 0_1
+function UIActivityN21CCAffixData:GetAffixGroupData()
   return self._affixGroupData
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.GetMissionAffixId = function(self)
-  -- function num : 0_2
+function UIActivityN21CCAffixData:GetMissionAffixId()
   return self._missionAffixId
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.GetId = function(self)
-  -- function num : 0_3
+function UIActivityN21CCAffixData:GetId()
   return self._id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.GetLevel = function(self)
-  -- function num : 0_4
+function UIActivityN21CCAffixData:GetLevel()
   return self._level
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.GetType = function(self)
-  -- function num : 0_5
+function UIActivityN21CCAffixData:GetType()
   return self._type
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.GetCategoryType = function(self)
-  -- function num : 0_6
+function UIActivityN21CCAffixData:GetCategoryType()
   return self._categoryType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.GetDes = function(self)
-  -- function num : 0_7
+function UIActivityN21CCAffixData:GetDes()
   return self._des
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.GetScroe = function(self)
-  -- function num : 0_8
+function UIActivityN21CCAffixData:GetScroe()
   return self._score
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.IsSelected = function(self)
-  -- function num : 0_9
+function UIActivityN21CCAffixData:IsSelected()
   return self._isSelected
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.SetSelectStatus = function(self, status)
-  -- function num : 0_10
+function UIActivityN21CCAffixData:SetSelectStatus(status)
   self._isSelected = status
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN21CCAffixData.GetUnlockScore = function(self)
-  -- function num : 0_11
+function UIActivityN21CCAffixData:GetUnlockScore()
   return self._unlockScore
 end
-
-

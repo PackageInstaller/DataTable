@@ -1,60 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_controller_select_tab_red_point_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetControllerSelectTabRedPointBtn", UICustomWidget)
 UISetControllerSelectTabRedPointBtn = UISetControllerSelectTabRedPointBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetControllerSelectTabRedPointBtn.OnShow = function(self)
-  -- function num : 0_0
+function UISetControllerSelectTabRedPointBtn:OnShow()
   self.tgl = self:GetUIComponent("Toggle", "Toggle")
   self.toggleBG = self:GetGameObject("toggleBG")
   self.describeText = self:GetUIComponent("UILocalizationText", "describe")
   self.red = self:GetGameObject("_red")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetControllerSelectTabRedPointBtn.Init = function(self, index, describeText, tglGroup, onClickTabBtn, param)
-  -- function num : 0_1 , upvalues : _ENV
+function UISetControllerSelectTabRedPointBtn:Init(index, describeText, tglGroup, onClickTabBtn, param)
   self.index = index
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.tgl).group = tglGroup
-  ;
-  (self.toggleBG):SetActive(not (self.tgl).isOn)
+  self.tgl.group = tglGroup
+  self.toggleBG:SetActive(not self.tgl.isOn)
   self.onClickTabBtn = onClickTabBtn
   self.param = param
-  ;
-  (self.describeText):SetText((StringTable.Get)(describeText .. index))
+  self.describeText:SetText(StringTable.Get(describeText .. index))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetControllerSelectTabRedPointBtn.Select = function(self, select)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.tgl).isOn = select
-  ;
-  (self.toggleBG):SetActive(not select)
+function UISetControllerSelectTabRedPointBtn:Select(select)
+  self.tgl.isOn = select
+  self.toggleBG:SetActive(not select)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetControllerSelectTabRedPointBtn.ToggleOnClick = function(self, go)
-  -- function num : 0_3
-  (self.onClickTabBtn)(self.param, self.index)
+function UISetControllerSelectTabRedPointBtn:ToggleOnClick(go)
+  self.onClickTabBtn(self.param, self.index)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetControllerSelectTabRedPointBtn.SetRed = function(self, isRed)
-  -- function num : 0_4
-  (self.red):SetActive(isRed)
+function UISetControllerSelectTabRedPointBtn:SetRed(isRed)
+  self.red:SetActive(isRed)
 end
-
-

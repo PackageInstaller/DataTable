@@ -1,27 +1,68 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/item/cfg_item_cultivation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ItemAttrType = 2, Species = 3, Rarity = 4, TreeColour = 5, Time = 6}
+local key = {
+  ID = 1,
+  ItemAttrType = 2,
+  Species = 3,
+  Rarity = 4,
+  TreeColour = 5,
+  Time = 6
+}
 local config = {
-[5400001] = {5400001, 1, 1, 0, nil, 3600}
-, 
-[5401001] = {5401001, 2, 1, 1}
-, 
-[5401002] = {5401002, 2, 1, 2}
-, 
-[5401003] = {5401003, 2, 1, 3}
-, 
-[5402001] = {5402001, 3, 1, 1}
-, 
-[5402002] = {5402002, 3, 1, 2}
-, 
-[5402003] = {5402003, 3, 1, 3}
-, 
-[5403001] = {5403001, 4, 1, 0, 2}
-, 
-[5400002] = {5400002, 5, 1, 0}
+  [5400001] = {
+    5400001,
+    1,
+    1,
+    0,
+    nil,
+    3600
+  },
+  [5401001] = {
+    5401001,
+    2,
+    1,
+    1
+  },
+  [5401002] = {
+    5401002,
+    2,
+    1,
+    2
+  },
+  [5401003] = {
+    5401003,
+    2,
+    1,
+    3
+  },
+  [5402001] = {
+    5402001,
+    3,
+    1,
+    1
+  },
+  [5402002] = {
+    5402002,
+    3,
+    1,
+    2
+  },
+  [5402003] = {
+    5402003,
+    3,
+    1,
+    3
+  },
+  [5403001] = {
+    5403001,
+    4,
+    1,
+    0,
+    2
+  },
+  [5400002] = {
+    5400002,
+    5,
+    1,
+    0
+  }
 }
 return config, "ID", key
-

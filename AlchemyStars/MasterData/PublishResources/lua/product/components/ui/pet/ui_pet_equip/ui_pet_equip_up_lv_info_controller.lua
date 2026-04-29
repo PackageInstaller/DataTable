@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_up_lv_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipUpLvInfoController", UIController)
 UIPetEquipUpLvInfoController = UIPetEquipUpLvInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipUpLvInfoController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIPetEquipUpLvInfoController:Constructor()
   self._petModule = self:GetModule(PetModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIPetEquipUpLvInfoController:OnShow(uiParams)
   self:_GetComponents()
   self._petInfo = uiParams[1]
   self._equipLv = uiParams[2]
@@ -23,54 +13,41 @@ UIPetEquipUpLvInfoController.OnShow = function(self, uiParams)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController._GetComponents = function(self)
-  -- function num : 0_2
+function UIPetEquipUpLvInfoController:_GetComponents()
   self._skillGo = self:GetGameObject("skill")
   self._attGo = self:GetGameObject("att")
   self._skillPool = self:GetUIComponent("UISelectObjectPath", "skillPool")
   self._attPool = self:GetUIComponent("UISelectObjectPath", "attPool")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController._OnValue = function(self)
-  -- function num : 0_3
-  (self._skillGo):SetActive(self._skillID ~= nil)
-  ;
-  (self._attGo):SetActive(self._skillID == nil)
+function UIPetEquipUpLvInfoController:_OnValue()
+  self._skillGo:SetActive(self._skillID ~= nil)
+  self._attGo:SetActive(self._skillID == nil)
   if self._skillID then
     self:_ShowSkillInfos()
   else
     self:_ShowAttInfos()
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController._ShowSkillInfos = function(self)
-  -- function num : 0_4
+function UIPetEquipUpLvInfoController:_ShowSkillInfos()
   local skillData = self:_CreateSkillData()
   local spawnCount = #skillData
-  ;
-  (self._skillPool):SpawnObjects("UIPetEquipUpLvInfoSkillItem", spawnCount)
-  local items = (self._skillPool):GetAllSpawnList()
+  self._skillPool:SpawnObjects("UIPetEquipUpLvInfoSkillItem", spawnCount)
+  local items = self._skillPool:GetAllSpawnList()
   for i = 1, #items do
     local item = items[i]
     item:SetData(skillData[i])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController._CreateSkillData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIPetEquipUpLvInfoController:_CreateSkillData()
   local data = {}
-  local cfg_equip = (Cfg.cfg_pet_equip)({PetID = (self._petInfo):GetTemplateID()})
+  local cfg_equip = Cfg.cfg_pet_equip({
+    PetID = self._petInfo:GetTemplateID()
+  })
   if not cfg_equip then
-    (Log.fatal)("###[UIPetEquipUpLvInfoController] cfg_equip is nil ! id --> ", (self._petInfo):GetTemplateID())
+    Log.fatal("###[UIPetEquipUpLvInfoController] cfg_equip is nil ! id --> ", self._petInfo:GetTemplateID())
   end
   for i = 1, #cfg_equip do
     local cfgData = cfg_equip[i]
@@ -82,65 +59,49 @@ UIPetEquipUpLvInfoController._CreateSkillData = function(self)
       data[#data + 1] = skillDataCls
     end
   end
-  ;
-  (table.sort)(data, function(a, b)
-    -- function num : 0_5_0
-    do return a._lv < b._lv end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(data, function(a, b)
+    return a._lv < b._lv
+  end)
   return data
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController._GetEquipSkillDesc = function(self, lv)
-  -- function num : 0_6 , upvalues : _ENV
-  local skillID = (self._petInfo):GetPetPassiveSkill()
+function UIPetEquipUpLvInfoController:_GetEquipSkillDesc(lv)
+  local skillID = self._petInfo:GetPetPassiveSkill()
   local cfg = BattleSkillCfg(skillID)
   if cfg then
     local skillTypeTex = "str_pet_config_skill_equip"
     local skillIcon = cfg.Icon
     local skillName = cfg.Name
-    local descStr = (HelperProxy:GetInstance()):GetEquipSkillDesc(cfg.Desc, (self._petInfo):GetTemplateID(), lv, skillID)
+    local descStr = HelperProxy:GetInstance():GetEquipSkillDesc(cfg.Desc, self._petInfo:GetTemplateID(), lv, skillID)
     return descStr
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController._ShowAttInfos = function(self)
-  -- function num : 0_7
+function UIPetEquipUpLvInfoController:_ShowAttInfos()
   local attData = self:_CreateAttData()
   local spawnCount = #attData
-  ;
-  (self._attPool):SpawnObjects("UIPetEquipUpLvInfoAttItem", spawnCount)
-  local items = (self._attPool):GetAllSpawnList()
+  self._attPool:SpawnObjects("UIPetEquipUpLvInfoAttItem", spawnCount)
+  local items = self._attPool:GetAllSpawnList()
   for i = 1, #items do
     local item = items[i]
-    item:SetData(attData[i], (self._petInfo):GetPetFirstElement())
+    item:SetData(attData[i], self._petInfo:GetPetFirstElement())
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController._CreateAttData = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPetEquipUpLvInfoController:_CreateAttData()
   local data = {}
-  local cfg_equip = (Cfg.cfg_pet_equip)({PetID = (self._petInfo):GetTemplateID()})
+  local cfg_equip = Cfg.cfg_pet_equip({
+    PetID = self._petInfo:GetTemplateID()
+  })
   if not cfg_equip then
-    (Log.fatal)("###[UIPetEquipUpLvInfoController] cfg_equip is nil ! id --> ", (self._petInfo):GetTemplateID())
+    Log.fatal("###[UIPetEquipUpLvInfoController] cfg_equip is nil ! id --> ", self._petInfo:GetTemplateID())
   end
-  ;
-  (table.sort)(cfg_equip, function(a, b)
-    -- function num : 0_8_0
-    do return a.Level < b.Level end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(cfg_equip, function(a, b)
+    return a.Level < b.Level
+  end)
   for i = 1, #cfg_equip do
     local cfgData = cfg_equip[i]
-    if cfgData.Level > 1 then
+    if 1 < cfgData.Level then
       local cfgDataLast = cfg_equip[i - 1]
       local addPro = cfgData.PropertyRestraint - cfgDataLast.PropertyRestraint
       local addAtk = cfgData.Attack - cfgDataLast.Attack
@@ -154,60 +115,40 @@ UIPetEquipUpLvInfoController._CreateAttData = function(self)
       end
     end
   end
-  ;
-  (table.sort)(data, function(a, b)
-    -- function num : 0_8_1
-    do return a._lv < b._lv end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(data, function(a, b)
+    return a._lv < b._lv
+  end)
   return data
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController.OnHide = function(self)
-  -- function num : 0_9
+function UIPetEquipUpLvInfoController:OnHide()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipUpLvInfoController.bgOnClick = function(self)
-  -- function num : 0_10
+function UIPetEquipUpLvInfoController:bgOnClick()
   self:CloseDialog()
 end
 
 _class("UIEquipUpLvSkillCls", Object)
 UIEquipUpLvSkillCls = UIEquipUpLvSkillCls
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEquipUpLvSkillCls.Constructor = function(self)
-  -- function num : 0_11
+function UIEquipUpLvSkillCls:Constructor()
   self._lv = 0
   self._desc = ""
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEquipUpLvSkillCls.SetData = function(self, lv, desc)
-  -- function num : 0_12
+function UIEquipUpLvSkillCls:SetData(lv, desc)
   self._lv = lv
   self._desc = desc
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEquipUpLvSkillCls.GetData = function(self)
-  -- function num : 0_13
+function UIEquipUpLvSkillCls:GetData()
   return self._lv, self._desc
 end
 
 _class("UIEquipUpLvAttCls", Object)
 UIEquipUpLvAttCls = UIEquipUpLvAttCls
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEquipUpLvAttCls.Constructor = function(self)
-  -- function num : 0_14
+function UIEquipUpLvAttCls:Constructor()
   self._lv = 0
   self._elem = 0
   self._atk = 0
@@ -215,10 +156,7 @@ UIEquipUpLvAttCls.Constructor = function(self)
   self._hp = 0
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEquipUpLvAttCls.SetData = function(self, lv, elem, atk, def, hp)
-  -- function num : 0_15
+function UIEquipUpLvAttCls:SetData(lv, elem, atk, def, hp)
   self._lv = lv
   self._elem = elem
   self._atk = atk
@@ -226,11 +164,6 @@ UIEquipUpLvAttCls.SetData = function(self, lv, elem, atk, def, hp)
   self._hp = hp
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEquipUpLvAttCls.GetData = function(self)
-  -- function num : 0_16
+function UIEquipUpLvAttCls:GetData()
   return self._lv, self._elem, self._atk, self._def, self._hp
 end
-
-

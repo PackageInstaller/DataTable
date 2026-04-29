@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/ui_draw_card_award_conversion_for_other_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAwardConversionForOtherController", UIController)
 UIDrawCardAwardConversionForOtherController = UIDrawCardAwardConversionForOtherController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAwardConversionForOtherController.OnShow = function(self, uiParam)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardAwardConversionForOtherController:OnShow(uiParam)
   self._conversion = self:GetGameObject("Conversion")
   self.converseContent = self:GetUIComponent("UISelectObjectPath", "ConverseContent")
   self._atlas = self:GetAsset("UIDrawCard.spriteatlas", LoadType.SpriteAtlas)
@@ -19,42 +12,25 @@ UIDrawCardAwardConversionForOtherController.OnShow = function(self, uiParam)
   self:ConversiontagOnClick()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionForOtherController.ShowTips = function(self, itemId, pos)
-  -- function num : 0_1
-  (self._tipsPoolObj):SetActive(true)
-  ;
-  (self._tips):SetData(itemId, pos)
+function UIDrawCardAwardConversionForOtherController:ShowTips(itemId, pos)
+  self._tipsPoolObj:SetActive(true)
+  self._tips:SetData(itemId, pos)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionForOtherController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIDrawCardAwardConversionForOtherController:OnHide()
   self:DetachEvent(GameEventType.ShowItemTips, self.ShowTips)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionForOtherController.CloseOnClick = function(self)
-  -- function num : 0_3
+function UIDrawCardAwardConversionForOtherController:CloseOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAwardConversionForOtherController.ConversiontagOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIDrawCardAwardConversionForOtherController:ConversiontagOnClick()
   self:AttachEvent(GameEventType.ShowItemTips, self.ShowTips)
-  ;
-  (self._conversion):SetActive(true)
-  ;
-  (self.converseContent):SpawnObjects("UIDrawCardAwardConversionItem", 4)
-  local items = (self.converseContent):GetAllSpawnList()
-  for idx,value in ipairs(items) do
+  self._conversion:SetActive(true)
+  self.converseContent:SpawnObjects("UIDrawCardAwardConversionItem", 4)
+  local items = self.converseContent:GetAllSpawnList()
+  for idx, value in ipairs(items) do
     value:SetData(idx)
   end
 end
-
-

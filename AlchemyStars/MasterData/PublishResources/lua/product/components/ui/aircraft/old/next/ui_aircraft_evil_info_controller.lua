@@ -1,37 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/old/next/ui_aircraft_evil_info_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftEvilInfoController", UIController)
 UIAircraftEvilInfoController = UIAircraftEvilInfoController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftEvilInfoController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftEvilInfoController:OnShow(uiParams)
   self:InitWidget()
-  self.topBarWidget = (self.topbar):SpawnObject("UIAircraftTopBarItem")
-  ;
-  (self.topBarWidget):SetData(true, function()
-    -- function num : 0_0_0 , upvalues : self
+  self.topBarWidget = self.topbar:SpawnObject("UIAircraftTopBarItem")
+  self.topBarWidget:SetData(true, function()
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_0_1 , upvalues : _ENV
-    (ToastManager.ShowToast)((StringTable.Get)("str_aircraft_function_not_open"))
-  end
-)
-  self.evilShowWidget = (self.evilShow):SpawnObject("UIAircraftEvilShowItem")
-  ;
-  (self.evilShowWidget):SetData({1, 2, 3, 4, 5, 6})
+  end, function()
+    ToastManager.ShowToast(StringTable.Get("str_aircraft_function_not_open"))
+  end)
+  self.evilShowWidget = self.evilShow:SpawnObject("UIAircraftEvilShowItem")
+  self.evilShowWidget:SetData({
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  })
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftEvilInfoController.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftEvilInfoController:InitWidget()
   self.topbar = self:GetUIComponent("UISelectObjectPath", "Topbar")
   self.evilShow = self:GetUIComponent("UISelectObjectPath", "EvilShow")
 end
-
-

@@ -1,21 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_simple_haute_couture/common/pack_detail/ui_simple_haute_couture_gift_pack_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISimpleHauteCoutureGiftPackDetail", UIController)
 UISimpleHauteCoutureGiftPackDetail = UISimpleHauteCoutureGiftPackDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISimpleHauteCoutureGiftPackDetail._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UISimpleHauteCoutureGiftPackDetail:_GetComponents()
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._goTips = self:GetGameObject("tips")
   self._txtTips = self:GetUIComponent("UILocalizationText", "txtTips")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._goLimit = self:GetGameObject("limit")
-  ;
-  (self._goLimit):SetActive(false)
+  self._goLimit:SetActive(false)
   self._txtLimit = self:GetUIComponent("UILocalizationText", "txtLimit")
   self._imgPrice = self:GetUIComponent("Image", "imgPrice")
   self._txtPrice1 = self:GetUIComponent("UILocalizationText", "txtPrice1")
@@ -27,17 +19,14 @@ UISimpleHauteCoutureGiftPackDetail._GetComponents = function(self)
   self._atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISimpleHauteCoutureGiftPackDetail:OnShow(uiParams)
   self:_AttachEvents()
   self._campaign = uiParams[1]
   self._component = uiParams[2]
   self._gift2Id = uiParams[3]
   self._giftNum = uiParams[4]
   self._callback = uiParams[5]
-  local cfg = (Cfg.cfg_shop_common_goods)[self._gift2Id]
+  local cfg = Cfg.cfg_shop_common_goods[self._gift2Id]
   self._gift1Id = cfg.CurrencySkinID
   self:_GetComponents()
   self:_SetTitle()
@@ -49,318 +38,211 @@ UISimpleHauteCoutureGiftPackDetail.OnShow = function(self, uiParams)
   self:_SetAwardsDaily()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.OnHide = function(self)
-  -- function num : 0_2
+function UISimpleHauteCoutureGiftPackDetail:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._SetTitle = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_buy_gift)({GiftID = self._gift2Id})
+function UISimpleHauteCoutureGiftPackDetail:_SetTitle()
+  local cfg = Cfg.cfg_component_buy_gift({
+    GiftID = self._gift2Id
+  })
   if not cfg or next(cfg) == nil then
-    (Log.exception)("cfg_component_buy_gift中找不到礼包:", self._gift2Id)
+    Log.exception("cfg_component_buy_gift中找不到礼包:", self._gift2Id)
   end
   cfg = cfg[1]
-  ;
-  (self._txtName):SetText((StringTable.Get)((cfg.Name)[2], ((cfg.ExtraAward)[1])[2]))
+  self._txtName:SetText(StringTable.Get(cfg.Name[2], cfg.ExtraAward[1][2]))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._SetTips = function(self)
-  -- function num : 0_4
-  if (self._component).m_component_info then
+function UISimpleHauteCoutureGiftPackDetail:_SetTips()
+  if self._component.m_component_info then
     local strCycleType = self:GetCycleTypeStr()
-    ;
-    (self._txtTips):SetText(strCycleType)
-    ;
-    (self._goTips):SetActive(true)
+    self._txtTips:SetText(strCycleType)
+    self._goTips:SetActive(true)
   else
-    do
-      ;
-      (self._goTips):SetActive(false)
-    end
+    self._goTips:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._SetImg = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local cfg = (Cfg.cfg_shop_common_goods)[self._gift2Id]
+function UISimpleHauteCoutureGiftPackDetail:_SetImg()
+  local cfg = Cfg.cfg_shop_common_goods[self._gift2Id]
   if cfg.IconDetail then
-    (self._imgIcon):LoadImage(cfg.IconDetail)
+    self._imgIcon:LoadImage(cfg.IconDetail)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._SetLimit = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISimpleHauteCoutureGiftPackDetail:_SetLimit()
   local str = self:GetCountStr()
-  if (string.isnullorempty)(str) then
-    (self._goLimit):SetActive(false)
+  if string.isnullorempty(str) then
+    self._goLimit:SetActive(false)
   else
-    ;
-    (self._txtLimit):SetText(str)
-    ;
-    (self._goLimit):SetActive(true)
+    self._txtLimit:SetText(str)
+    self._goLimit:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._FlushPrice = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local price2 = (self._component):GetGiftPriceForShowById(self._gift2Id)
-  local price1 = ((Cfg.cfg_shop_common_goods)[self._gift1Id]).Price
-  ;
-  (self._txtPrice2):SetText(price2)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._imgPrice).sprite = (self._atlas):GetSprite(self:GetPriceIcon())
-  ;
-  (self._txtPrice1):SetText(price1)
+function UISimpleHauteCoutureGiftPackDetail:_FlushPrice()
+  local price2 = self._component:GetGiftPriceForShowById(self._gift2Id)
+  local price1 = Cfg.cfg_shop_common_goods[self._gift1Id].Price
+  self._txtPrice2:SetText(price2)
+  self._imgPrice.sprite = self._atlas:GetSprite(self:GetPriceIcon())
+  self._txtPrice1:SetText(price1)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._SetAwardsImmediately = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local lst = (self._component):GetGiftExtraAwardById(self._gift1Id)
+function UISimpleHauteCoutureGiftPackDetail:_SetAwardsImmediately()
+  local lst = self._component:GetGiftExtraAwardById(self._gift1Id)
   local awardsImmediately = {}
-  for i,item in ipairs(lst) do
+  for i, item in ipairs(lst) do
     local item = GiftPackShopItemAward:New(item.assetid, item.count)
-    ;
-    (table.insert)(awardsImmediately, item)
+    table.insert(awardsImmediately, item)
   end
-  ;
-  (self._sopImmediately):SpawnObjects("UISimpleHauteCoutureGiftPackGetItem", (table.count)(awardsImmediately))
-  local lstImmediately = (self._sopImmediately):GetAllSpawnList()
-  for i,ui in ipairs(lstImmediately) do
+  self._sopImmediately:SpawnObjects("UISimpleHauteCoutureGiftPackGetItem", table.count(awardsImmediately))
+  local lstImmediately = self._sopImmediately:GetAllSpawnList()
+  for i, ui in ipairs(lstImmediately) do
     ui:Flush(awardsImmediately[i])
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._SetAwardsDaily = function(self)
-  -- function num : 0_9
-  (self._goDaily):SetActive(false)
+function UISimpleHauteCoutureGiftPackDetail:_SetAwardsDaily()
+  self._goDaily:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.GetEndTime = function(self)
-  -- function num : 0_10
-  if self._component then
-    return ((self._component).m_component_info).m_close_time
-  end
+function UISimpleHauteCoutureGiftPackDetail:GetEndTime()
+  return self._component and self._component.m_component_info.m_close_time
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.GetLeftSeconds = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local mSvrTime = (GameGlobal.GetModule)(SvrTimeModule)
+function UISimpleHauteCoutureGiftPackDetail:GetLeftSeconds()
+  local mSvrTime = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = mSvrTime:GetServerTime() / 1000
   local endTime = self:GetEndTime()
   local leftSeconds = endTime - nowTime
   return leftSeconds
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.GetCycleTypeStr = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UISimpleHauteCoutureGiftPackDetail:GetCycleTypeStr()
   local str = ""
   local leftSeconds = self:GetLeftSeconds()
   if leftSeconds <= 0 then
-    str = (StringTable.Get)("str_pay_expired")
+    str = StringTable.Get("str_pay_expired")
+  elseif leftSeconds <= 60 then
+    str = string.format(StringTable.Get("str_pay_left_minute", 1))
+  elseif leftSeconds <= 3600 then
+    local leftMinutes = math.ceil(leftSeconds / 60)
+    str = string.format(StringTable.Get("str_pay_left_minute", leftMinutes))
+  elseif leftSeconds <= 86400 then
+    local leftHours = math.ceil(leftSeconds / 3600)
+    str = string.format(StringTable.Get("str_pay_left_hour", leftHours))
   else
-    if leftSeconds <= 60 then
-      str = (string.format)((StringTable.Get)("str_pay_left_minute", 1))
-    else
-      if leftSeconds <= 3600 then
-        local leftMinutes = (math.ceil)(leftSeconds / 60)
-        str = (string.format)((StringTable.Get)("str_pay_left_minute", leftMinutes))
-      else
-        do
-          if leftSeconds <= 86400 then
-            local leftHours = (math.ceil)(leftSeconds / 3600)
-            str = (string.format)((StringTable.Get)("str_pay_left_hour", leftHours))
-          else
-            do
-              do
-                local leftDays = (math.ceil)(leftSeconds / 86400)
-                str = (string.format)((StringTable.Get)("str_pay_left_day", leftDays))
-                return str
-              end
-            end
-          end
-        end
-      end
-    end
+    local leftDays = math.ceil(leftSeconds / 86400)
+    str = string.format(StringTable.Get("str_pay_left_day", leftDays))
   end
+  return str
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.GetCountStr = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local buyCount, saleCount = (self._component):GetGiftBuyCount(self._gift1Id)
+function UISimpleHauteCoutureGiftPackDetail:GetCountStr()
+  local buyCount, saleCount = self._component:GetGiftBuyCount(self._gift1Id)
   if saleCount == SpecialNum.MysteryGoodsUnlimitedNum then
     return ""
   end
   local n2m = saleCount - buyCount .. "/" .. saleCount
-  local strLimit = (string.format)((StringTable.Get)("str_pay_purchase_limitation_normal", n2m))
+  local strLimit = string.format(StringTable.Get("str_pay_purchase_limitation_normal", n2m))
   return strLimit
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.GetPriceIcon = function(self)
-  -- function num : 0_14
-  local good = (self._component):GetGoodCfgById(self._gift1Id)
+function UISimpleHauteCoutureGiftPackDetail:GetPriceIcon()
+  local good = self._component:GetGoodCfgById(self._gift1Id)
   local saleType = good.SaleType
   return "toptoon_" .. saleType
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.BgOnClick = function(self, go)
-  -- function num : 0_15 , upvalues : _ENV
+function UISimpleHauteCoutureGiftPackDetail:BgOnClick(go)
   self:Lock("UISimpleHauteCoutureGiftPackDetail:OnHide")
-  ;
-  (self._anim):Play("Uieff_UIActivityGiftPackDetail_Out")
+  self._anim:Play("Uieff_UIActivityGiftPackDetail_Out")
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : _ENV, self
     YIELD(TT, 667)
     self:UnLock("UISimpleHauteCoutureGiftPackDetail:OnHide")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.BtnBuy1OnClick = function(self, go)
-  -- function num : 0_16
+function UISimpleHauteCoutureGiftPackDetail:BtnBuy1OnClick(go)
   if self._isBuying then
-    return 
+    return
   end
   self:_BuyConfirmForYaojing()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail.BtnBuy2OnClick = function(self, go)
-  -- function num : 0_17
+function UISimpleHauteCoutureGiftPackDetail:BtnBuy2OnClick(go)
   if self._isBuying then
-    return 
+    return
   end
-  ;
-  (self._component):BuyGift(self._gift2Id, self._giftNum, self._giftType)
+  self._component:BuyGift(self._gift2Id, self._giftNum, self._giftType)
   self._isBuying = true
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._BuyConfirmForYaojing = function(self)
-  -- function num : 0_18 , upvalues : _ENV
-  local price = ((Cfg.cfg_shop_common_goods)[self._gift1Id]).Price
-  local cfg = (Cfg.cfg_component_buy_gift)({GiftID = self._gift2Id})
+function UISimpleHauteCoutureGiftPackDetail:_BuyConfirmForYaojing()
+  local price = Cfg.cfg_shop_common_goods[self._gift1Id].Price
+  local cfg = Cfg.cfg_component_buy_gift({
+    GiftID = self._gift2Id
+  })
   if not cfg or next(cfg) == nil then
-    (Log.exception)("cfg_component_buy_gift中找不到礼包:", self._gift2Id)
+    Log.exception("cfg_component_buy_gift中找不到礼包:", self._gift2Id)
   end
   cfg = cfg[1]
-  local giftName = (StringTable.Get)((cfg.Name)[2], ((cfg.ExtraAward)[1])[2])
-  local strText = (StringTable.Get)("str_junior_skin_draw_confirm_to_buy", price, giftName)
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", strText, function(param)
-    -- function num : 0_18_0 , upvalues : self
+  local giftName = StringTable.Get(cfg.Name[2], cfg.ExtraAward[1][2])
+  local strText = StringTable.Get("str_junior_skin_draw_confirm_to_buy", price, giftName)
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", strText, function(param)
     self:_GoBuyFunc()
-  end
-, nil, nil, nil)
+  end, nil, nil, nil)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._GoBuyFunc = function(self)
-  -- function num : 0_19 , upvalues : _ENV
-  local price = ((Cfg.cfg_shop_common_goods)[self._gift1Id]).Price
+function UISimpleHauteCoutureGiftPackDetail:_GoBuyFunc()
+  local price = Cfg.cfg_shop_common_goods[self._gift1Id].Price
   local shopModule = self:GetModule(ShopModule)
   local clientShop = shopModule:GetClientShop()
   if clientShop:CheckEnoughYJ(price, true, function()
-    -- function num : 0_19_0
-  end
-) then
-    (self._component):BuyGift(self._gift1Id, self._giftNum, self._giftType)
+  end) then
+    self._component:BuyGift(self._gift1Id, self._giftNum, self._giftType)
     self._isBuying = true
+  else
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._AttachEvents = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UISimpleHauteCoutureGiftPackDetail:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ActivityCurrencyBuySuccess, self._OnCurrencyBuySuccess)
   self:AttachEvent(GameEventType.ActivityNormalBuyResult, self._OnNormalBuyResult)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._DetachEvents = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UISimpleHauteCoutureGiftPackDetail:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.ActivityCurrencyBuySuccess, self._OnCurrencyBuySuccess)
   self:DetachEvent(GameEventType.ActivityNormalBuyResult, self._OnNormalBuyResult)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._CheckActivityClose = function(self, id)
-  -- function num : 0_22 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UISimpleHauteCoutureGiftPackDetail:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._OnCurrencyBuySuccess = function(self, id)
-  -- function num : 0_23 , upvalues : _ENV
+function UISimpleHauteCoutureGiftPackDetail:_OnCurrencyBuySuccess(id)
   if self._gift2Id == id then
-    do
-      if self._callback then
-        local res = AsyncRequestRes:New()
-        res:SetSucc(true)
-        ;
-        (self._callback)(res)
-      end
-      self._isBuying = false
-      self:BgOnClick()
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UISimpleHauteCoutureGiftPackDetail._OnNormalBuyResult = function(self, gift_id, res)
-  -- function num : 0_24
-  if self._gift1Id == gift_id then
     if self._callback then
-      (self._callback)(res)
+      local res = AsyncRequestRes:New()
+      res:SetSucc(true)
+      self._callback(res)
     end
     self._isBuying = false
     self:BgOnClick()
   end
 end
 
-
+function UISimpleHauteCoutureGiftPackDetail:_OnNormalBuyResult(gift_id, res)
+  if self._gift1Id == gift_id then
+    if self._callback then
+      self._callback(res)
+    end
+    self._isBuying = false
+    self:BgOnClick()
+  end
+end

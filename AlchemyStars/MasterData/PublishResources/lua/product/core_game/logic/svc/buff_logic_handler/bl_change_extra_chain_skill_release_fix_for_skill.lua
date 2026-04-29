@@ -1,66 +1,46 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_extra_chain_skill_release_fix_for_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 local buffValueKey = "ChangeExtraChainSkillReleaseFixForSkill"
 _class("BuffLogicChangeExtraChainSkillReleaseFixForSkill", BuffLogicBase)
 BuffLogicChangeExtraChainSkillReleaseFixForSkill = BuffLogicChangeExtraChainSkillReleaseFixForSkill
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicChangeExtraChainSkillReleaseFixForSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeExtraChainSkillReleaseFixForSkill:Constructor(buffInstance, logicParam)
   self._skillID = logicParam.skillID
   self._fixVal = logicParam.val
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeExtraChainSkillReleaseFixForSkill.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : buffValueKey
-  local cBuff = (self._entity):BuffComponent()
-  if not cBuff:GetBuffValue(buffValueKey) then
-    local nul = cBuff:SetBuffValue(buffValueKey, {})
-  end
+function BuffLogicChangeExtraChainSkillReleaseFixForSkill:DoLogic(notify)
+  local cBuff = self._entity:BuffComponent()
+  local nul = cBuff:GetBuffValue(buffValueKey) or cBuff:SetBuffValue(buffValueKey, {})
   local data = cBuff:GetBuffValue(buffValueKey)
   if data[self._skillID] then
     data[self._skillID] = data[self._skillID] + self._fixVal
   else
     data[self._skillID] = self._fixVal
   end
-  return {currentExtraFix = data[self._skillID]}
+  return {
+    currentExtraFix = data[self._skillID]
+  }
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicChangeExtraChainSkillReleaseFixForSkill.DoOverlap = function(self, logicParam, context)
-  -- function num : 0_2
+function BuffLogicChangeExtraChainSkillReleaseFixForSkill:DoOverlap(logicParam, context)
   return self:DoLogic()
 end
 
 _class("BuffLogicRemoveChangeExtraChainSkillReleaseFixForSkill", BuffLogicBase)
 BuffLogicRemoveChangeExtraChainSkillReleaseFixForSkill = BuffLogicRemoveChangeExtraChainSkillReleaseFixForSkill
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
 
-BuffLogicRemoveChangeExtraChainSkillReleaseFixForSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_3
+function BuffLogicRemoveChangeExtraChainSkillReleaseFixForSkill:Constructor(buffInstance, logicParam)
   self._skillID = logicParam.skillID
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-BuffLogicRemoveChangeExtraChainSkillReleaseFixForSkill.DoLogic = function(self, notify)
-  -- function num : 0_4 , upvalues : buffValueKey
-  local cBuff = (self._entity):BuffComponent()
+function BuffLogicRemoveChangeExtraChainSkillReleaseFixForSkill:DoLogic(notify)
+  local cBuff = self._entity:BuffComponent()
   local data = cBuff:GetBuffValue(buffValueKey)
   if not data then
-    return 
+    return
   end
   if not data[self._skillID] then
-    return 
+    return
   end
   data[self._skillID] = nil
 end
-
-

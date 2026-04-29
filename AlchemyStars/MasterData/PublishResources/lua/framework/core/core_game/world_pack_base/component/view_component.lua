@@ -1,41 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/component/view_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ViewComponent", Object)
 ViewComponent = ViewComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ViewComponent.Constructor = function(self, view)
-  -- function num : 0_0
+function ViewComponent:Constructor(view)
   self.ViewWrapper = view
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ViewComponent.GetGameObject = function(self)
-  -- function num : 0_1
+function ViewComponent:GetGameObject()
   if self.ViewWrapper ~= nil then
-    return (self.ViewWrapper).GameObject
+    return self.ViewWrapper.GameObject
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ViewComponent.GetResRequest = function(self)
-  -- function num : 0_2
+function ViewComponent:GetResRequest()
   if self.ViewWrapper ~= nil then
-    return (self.ViewWrapper).ResRequest
+    return self.ViewWrapper.ResRequest
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ViewComponent.Dispose = function(self)
-  -- function num : 0_3
+function ViewComponent:Dispose()
   local viewWrapper = self.ViewWrapper
   if viewWrapper.ViewDispose then
     viewWrapper:ViewDispose()
@@ -43,37 +27,22 @@ ViewComponent.Dispose = function(self)
   self.ViewWrapper = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-ViewComponent.GetViewWrapper = function(self)
-  -- function num : 0_4
+function ViewComponent:GetViewWrapper()
   return self.ViewWrapper
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.View = function(self)
-  -- function num : 0_5
+function Entity:View()
   if self:HasTeam() then
     local teamLeaderEntity = self:GetTeamLeaderPetEntity()
     return teamLeaderEntity:View()
-  else
-    do
-      do
-        if self:HasSuperEntity() and (self:SuperEntityComponent()):IsUseSuperEntityView() then
-          local superEntity = self:GetSuperEntity()
-          return superEntity:View()
-        end
-        return self:GetComponent((self.WEComponentsEnum).View)
-      end
-    end
+  elseif self:HasSuperEntity() and self:SuperEntityComponent():IsUseSuperEntityView() then
+    local superEntity = self:GetSuperEntity()
+    return superEntity:View()
   end
+  return self:GetComponent(self.WEComponentsEnum.View)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasView = function(self)
-  -- function num : 0_6
+function Entity:HasView()
   if self:HasTeam() then
     local teamLeaderEntity = self:GetTeamLeaderPetEntity()
     if not teamLeaderEntity then
@@ -81,37 +50,24 @@ Entity.HasView = function(self)
     end
     return teamLeaderEntity:HasView()
   else
-    do
-      do return self:HasComponent((self.WEComponentsEnum).View) end
-    end
+    return self:HasComponent(self.WEComponentsEnum.View)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddView = function(self, view)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).View
+function Entity:AddView(view)
+  local index = self.WEComponentsEnum.View
   local component = ViewComponent:New(view)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceView = function(self, view)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).View
+function Entity:ReplaceView(view)
+  local index = self.WEComponentsEnum.View
   local component = ViewComponent:New(view)
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveView = function(self)
-  -- function num : 0_9
+function Entity:RemoveView()
   if self:HasView() then
-    self:RemoveComponent((self.WEComponentsEnum).View)
+    self:RemoveComponent(self.WEComponentsEnum.View)
   end
 end
-
-

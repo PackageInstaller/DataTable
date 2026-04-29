@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/structure/run_data/sailing_mission_run_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("elemental_run_data")
 _class("SailingMissionRunData", TestRobotElementalRunData)
 SailingMissionRunData = SailingMissionRunData
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SailingMissionRunData.ParseLevelData = function(self, rawargs)
-  -- function num : 0_0 , upvalues : _ENV
-  local args = (string.split)(rawargs, ",")
+function SailingMissionRunData:ParseLevelData(rawargs)
+  local args = string.split(rawargs, ",")
   self._layerID = tonumber(args[1])
   self._missionID = tonumber(args[2])
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionRunData.GetMissionID = function(self)
-  -- function num : 0_1
+function SailingMissionRunData:GetMissionID()
   return self._missionID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SailingMissionRunData.GetLayerID = function(self)
-  -- function num : 0_2
+function SailingMissionRunData:GetLayerID()
   return self._layerID
 end
-
-

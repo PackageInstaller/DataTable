@@ -1,30 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_psp_add_energy_once_more_prob.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicPSPAddEnergyOnceMoreProb", BuffLogicBase)
 BuffLogicPSPAddEnergyOnceMoreProb = BuffLogicPSPAddEnergyOnceMoreProb
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPSPAddEnergyOnceMoreProb.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPSPAddEnergyOnceMoreProb:Constructor(buffInstance, logicParam)
   self._baseValue = logicParam.baseValue
   self._modifyType = logicParam.modifyType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPSPAddEnergyOnceMoreProb.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local popSarProSvc = (self._world):GetService("PopStarProLogic")
+function BuffLogicPSPAddEnergyOnceMoreProb:DoLogic()
+  local popSarProSvc = self._world:GetService("PopStarProLogic")
   local count = popSarProSvc:GetCountByModifyType(self._modifyType)
   local addValue = self._baseValue * count
-  local buffComponent = (self._entity):BuffComponent()
+  local buffComponent = self._entity:BuffComponent()
   if not buffComponent then
-    return 
+    return
   end
   buffComponent:SetBuffValue(PopStarConst.BVK_AddEnergyOnceMore, addValue)
 end
-
-

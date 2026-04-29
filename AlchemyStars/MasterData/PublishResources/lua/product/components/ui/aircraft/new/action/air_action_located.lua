@@ -1,73 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_located.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionLocated", AirActionBase)
 AirActionLocated = AirActionLocated
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionLocated.Constructor = function(self, pet, target, floor)
-  -- function num : 0_0 , upvalues : _ENV
+function AirActionLocated:Constructor(pet, target, floor)
   if target == nil then
-    (Log.fatal)("[AircraftMove] 移动目标点为空")
+    Log.fatal("[AircraftMove] 移动目标点为空")
   end
   self._pet = pet
-  if not (self._pet):IsAlive() then
-    self:Log("星灵已被销毁：", (self._pet):TemplateID())
+  if not self._pet:IsAlive() then
+    self:Log("星灵已被销毁：", self._pet:TemplateID())
   end
   self._target = target
-  self._navMeshAgent = (self._pet):NaviMesh()
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).speed = 0.9
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).areaMask = 1 << floor + 2
-  ;
-  (self._pet):SetNaviEnable(true)
+  self._navMeshAgent = self._pet:NaviMesh()
+  self._navMeshAgent.speed = 0.9
+  self._navMeshAgent.areaMask = 1 << floor + 2
+  self._pet:SetNaviEnable(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLocated.Start = function(self)
-  -- function num : 0_1
-  (self._pet):Anim_Stand()
-  ;
-  (self._pet):SetPosition(self._target)
+function AirActionLocated:Start()
+  self._pet:Anim_Stand()
+  self._pet:SetPosition(self._target)
   self._running = false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLocated.Update = function(self, deltaTimeMS)
-  -- function num : 0_2
+function AirActionLocated:Update(deltaTimeMS)
   if not self._running then
-    return 
+    return
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLocated.IsOver = function(self)
-  -- function num : 0_3
+function AirActionLocated:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLocated.Stop = function(self)
-  -- function num : 0_4
+function AirActionLocated:Stop()
   self._running = false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionLocated.GetPets = function(self)
-  -- function num : 0_5
-  return {self._pet}
+function AirActionLocated:GetPets()
+  return {
+    self._pet
+  }
 end
-
-

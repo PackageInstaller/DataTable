@@ -1,52 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/data/d_shop_black_good.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("d_shop_secret_good_base")
 _class("DShopBlackGood", DShopSecretGoodBase)
 DShopBlackGood = DShopBlackGood
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-DShopBlackGood.Refresh = function(self, goodinfo, goodconfig)
-  -- function num : 0_0 , upvalues : _ENV
-  (DShopSecretGoodBase.Refresh)(self, goodinfo, goodconfig)
+function DShopBlackGood:Refresh(goodinfo, goodconfig)
+  DShopSecretGoodBase.Refresh(self, goodinfo, goodconfig)
   if not self.cfg then
-    (Log.error)("服务器传来的商品配置缺失 商品id：" .. tostring(self.goodId) .. " 防御..使用本地配置")
-    self.localCfg = (Cfg.cfg_shop_blackmarket_goods)[self.goodId]
+    Log.error("服务器传来的商品配置缺失 商品id：" .. tostring(self.goodId) .. " 防御..使用本地配置")
+    self.localCfg = Cfg.cfg_shop_blackmarket_goods[self.goodId]
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopBlackGood.GetSaleTag = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local saleTag = (self.cfg and (self.cfg)[ConfigKey.ConfigKey_SaleTag]) or (self.localCfg and (self.localCfg).SaleTag) or 0
+function DShopBlackGood:GetSaleTag()
+  local saleTag = self.cfg and self.cfg[ConfigKey.ConfigKey_SaleTag] or self.localCfg and self.localCfg.SaleTag or 0
   if saleTag == 1 then
     return 1
-  else
-    if self.discount > 0 and self.discount < 100 then
-      return self.discount
-    else
-      if saleTag == 0 then
-        return 0
-      end
-    end
+  elseif 0 < self.discount and self.discount < 100 then
+    return self.discount
+  elseif saleTag == 0 then
+    return 0
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopBlackGood.ShowRemain = function(self)
-  -- function num : 0_2
+function DShopBlackGood:ShowRemain()
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DShopBlackGood.ShowSaleTag = function(self)
-  -- function num : 0_3
+function DShopBlackGood:ShowSaleTag()
   return true
 end
-
-

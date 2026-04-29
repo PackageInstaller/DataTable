@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_snake_tail_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectSnakeTailMoveResult", SkillEffectResultBase)
 SkillEffectSnakeTailMoveResult = SkillEffectSnakeTailMoveResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectSnakeTailMoveResult.Constructor = function(self, newPos, casterIsDead)
-  -- function num : 0_0
+function SkillEffectSnakeTailMoveResult:Constructor(newPos, casterIsDead)
   self._newPos = newPos
   self._triggerTrapResult = {}
   self._casterIsDead = casterIsDead or false
@@ -17,66 +10,37 @@ SkillEffectSnakeTailMoveResult.Constructor = function(self, newPos, casterIsDead
   self._lastBodyPos = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeTailMoveResult.SetLastBodyPos = function(self, pos)
-  -- function num : 0_1
+function SkillEffectSnakeTailMoveResult:SetLastBodyPos(pos)
   self._lastBodyPos = pos
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeTailMoveResult.GetLastBodyPos = function(self)
-  -- function num : 0_2
+function SkillEffectSnakeTailMoveResult:GetLastBodyPos()
   return self._lastBodyPos
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeTailMoveResult.IsCasterDead = function(self)
-  -- function num : 0_3
+function SkillEffectSnakeTailMoveResult:IsCasterDead()
   return self._casterIsDead
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeTailMoveResult.GetTriggerTrapResult = function(self)
-  -- function num : 0_4
+function SkillEffectSnakeTailMoveResult:GetTriggerTrapResult()
   return self._triggerTrapResult
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeTailMoveResult.SetCasterDeadState = function(self, state)
-  -- function num : 0_5
+function SkillEffectSnakeTailMoveResult:SetCasterDeadState(state)
   self._casterIsDead = state
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeTailMoveResult.GetEffectType = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillEffectSnakeTailMoveResult:GetEffectType()
   return SkillEffectType.SnakeTailMove
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeTailMoveResult.GetNewPos = function(self)
-  -- function num : 0_7
+function SkillEffectSnakeTailMoveResult:GetNewPos()
   return self._newPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectSnakeTailMoveResult.AddWalkTrap = function(self, trapEntityID, skillResult)
-  -- function num : 0_8 , upvalues : _ENV
+function SkillEffectSnakeTailMoveResult:AddWalkTrap(trapEntityID, skillResult)
   local res = WalkTriggerTrapResult:New()
   res:SetTrapEntityID(trapEntityID)
   res:SetTrapResult(skillResult)
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._trapResultList)[#self._trapResultList + 1] = res
+  self._trapResultList[#self._trapResultList + 1] = res
 end
-
-

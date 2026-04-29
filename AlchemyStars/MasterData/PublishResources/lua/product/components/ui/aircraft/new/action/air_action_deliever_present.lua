@@ -1,71 +1,57 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_deliever_present.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local DelieverStatus = {None = 0, Starting = 1, Talking = 2, Bursting = 3, ShowAsset = 4, End = 5}
+local DelieverStatus = {
+  None = 0,
+  Starting = 1,
+  Talking = 2,
+  Bursting = 3,
+  ShowAsset = 4,
+  End = 5
+}
 _enum("DelieverStatus", DelieverStatus)
 _class("AirActionDelieverPresent", AirActionBase)
 AirActionDelieverPresent = AirActionDelieverPresent
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-AirActionDelieverPresent.Constructor = function(self, pet, assetList, main)
-  -- function num : 0_0 , upvalues : DelieverStatus
+function AirActionDelieverPresent:Constructor(pet, assetList, main)
   self._pet = pet
   self.delieverStatus_ = DelieverStatus.None
   self.assetList_ = assetList
   self.main_ = main
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionDelieverPresent.Start = function(self)
-  -- function num : 0_1 , upvalues : DelieverStatus, _ENV
+function AirActionDelieverPresent:Start()
   self.delieverStatus_ = DelieverStatus.Starting
   self._running = true
-  ;
-  (self._pet):SetState(AirPetState.SendingGift)
+  self._pet:SetState(AirPetState.SendingGift)
   self._timer = 0
   self._waitTime = 2000
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, true, "AircraftSendGift")
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, true, "AircraftSendGift")
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionDelieverPresent.IsOver = function(self)
-  -- function num : 0_2
+function AirActionDelieverPresent:IsOver()
   return not self._running
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionDelieverPresent.Update = function(self, deltaTimeMS)
-  -- function num : 0_3 , upvalues : DelieverStatus, _ENV
+function AirActionDelieverPresent:Update(deltaTimeMS)
   if self.delieverStatus_ == DelieverStatus.Starting then
-    local pet_cfg = (Cfg.cfg_aircraft_pet)[(self._pet):TemplateID()]
+    local pet_cfg = Cfg.cfg_aircraft_pet[self._pet:TemplateID()]
     local group = pet_cfg.ClickActionLib
-    local giftTag = nil
-    if (self._pet):IsGiftPet() then
+    local giftTag
+    if self._pet:IsGiftPet() then
       giftTag = AircraftPetGiftTag.Gift
+    elseif self._pet:IsVisitPet() then
+      giftTag = AircraftPetGiftTag.Visit
     else
-      if (self._pet):IsVisitPet() then
-        giftTag = AircraftPetGiftTag.Visit
-      else
-        ;
-        (Log.exception)("送礼星灵状态错误:", (self._pet):TemplateID())
-      end
+      Log.exception("送礼星灵状态错误:", self._pet:TemplateID())
     end
-    local cfgs = (Cfg.cfg_aircraft_click_action_lib)({Group = group, GiftTag = giftTag})
+    local cfgs = Cfg.cfg_aircraft_click_action_lib({Group = group, GiftTag = giftTag})
     if cfgs == nil or #cfgs == 0 then
-      (Log.exception)("找不到送礼文本气泡，group:", group, "，Tag:", giftTag)
+      Log.exception("找不到送礼文本气泡，group:", group, "，Tag:", giftTag)
     end
-    local sentence = (cfgs[1]).Sentence
+    local sentence = cfgs[1].Sentence
     if not sentence then
-      (Log.exception)("送礼文本气泡配置错误，group:", group, "，Tag:", giftTag)
+      Log.exception("送礼文本气泡配置错误，group:", group, "，Tag:", giftTag)
     end
-    local skinList = (cfgs[1]).SkinID
-    local currSkinID = (self._pet):ClothSkinID()
+    local skinList = cfgs[1].SkinID
+    local currSkinID = self._pet:ClothSkinID()
     local _playIdx = 0
     if skinList then
       for i = 1, #skinList do
@@ -76,92 +62,63 @@ AirActionDelieverPresent.Update = function(self, deltaTimeMS)
         end
       end
     end
-    do
-      local playIdx = _playIdx + 1
-      local sentenceTex = sentence[playIdx]
-      do
-        local DelieverPresentSentenceAction = AirActionSentence:New(self._pet, sentenceTex, self.main_, nil)
-        ;
-        (self._pet):StartSentenceAction(DelieverPresentSentenceAction)
-        self.delieverStatus_ = DelieverStatus.Talking
-        do return  end
-        if self.delieverStatus_ == DelieverStatus.Talking then
-          self._timer = self._timer + deltaTimeMS
-          if self._waitTime < self._timer then
-            self.delieverStatus_ = DelieverStatus.Bursting
-            self:DoBurstAnimation()
-            return 
-          end
-        end
-        if self.delieverStatus_ == DelieverStatus.Bursting and not self:DoingBurstAnimation() then
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftUILock, false, "AircraftSendGift")
-          self.delieverStatus_ = DelieverStatus.ShowAsset
-          if self.assetList_ and (table.count)(self.assetList_) > 0 then
-            ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", self.assetList_, function()
-    -- function num : 0_3_0 , upvalues : self, DelieverStatus
-    self.delieverStatus_ = DelieverStatus.End
-    self:Stop()
+    local playIdx = _playIdx + 1
+    local sentenceTex = sentence[playIdx]
+    local DelieverPresentSentenceAction = AirActionSentence:New(self._pet, sentenceTex, self.main_, nil)
+    self._pet:StartSentenceAction(DelieverPresentSentenceAction)
+    self.delieverStatus_ = DelieverStatus.Talking
+    return
   end
-)
-          end
-        end
-      end
+  if self.delieverStatus_ == DelieverStatus.Talking then
+    self._timer = self._timer + deltaTimeMS
+    if self._timer > self._waitTime then
+      self.delieverStatus_ = DelieverStatus.Bursting
+      self:DoBurstAnimation()
+      return
+    end
+  end
+  if self.delieverStatus_ == DelieverStatus.Bursting and not self:DoingBurstAnimation() then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftUILock, false, "AircraftSendGift")
+    self.delieverStatus_ = DelieverStatus.ShowAsset
+    if self.assetList_ and 0 < table.count(self.assetList_) then
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", self.assetList_, function()
+        self.delieverStatus_ = DelieverStatus.End
+        self:Stop()
+      end)
     end
   end
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionDelieverPresent.Stop = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function AirActionDelieverPresent:Stop()
   self._running = false
-  ;
-  (self._pet):StopSpecialAction(AircraftSpecialActionType.PresentBag)
-  if (self._pet):IsGiftPet() then
-    (self._pet):SetGiftFlag(nil)
-  else
-    if (self._pet):HasVisitGift() then
-      (self._pet):SetVisitGift(nil)
-    end
+  self._pet:StopSpecialAction(AircraftSpecialActionType.PresentBag)
+  if self._pet:IsGiftPet() then
+    self._pet:SetGiftFlag(nil)
+  elseif self._pet:HasVisitGift() then
+    self._pet:SetVisitGift(nil)
   end
-  if (self._pet):IsWorkingPet() then
-    AirLog("送礼星灵走回工作房间：", (self._pet):TemplateID(), "，空间id：", (self._pet):GetSpace())
+  if self._pet:IsWorkingPet() then
+    AirLog("送礼星灵走回工作房间：", self._pet:TemplateID(), "，空间id：", self._pet:GetSpace())
     local action = AirActionMoveToWork:New(self.main_, self._pet)
-    ;
-    (self._pet):StartMainAction(action)
+    self._pet:StartMainAction(action)
   end
-  do
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshNavMenuData)
-  end
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshNavMenuData)
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionDelieverPresent.Dispose = function(self)
-  -- function num : 0_5 , upvalues : DelieverStatus
+function AirActionDelieverPresent:Dispose()
   self._pet = nil
   self.delieverStatus_ = DelieverStatus.End
   self.assetList_ = nil
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionDelieverPresent.DoBurstAnimation = function(self)
-  -- function num : 0_6
-  local obj = (self._pet):GetPresentObject()
-  local lizi = ((obj.transform):Find("lizi")).gameObject
+function AirActionDelieverPresent:DoBurstAnimation()
+  local obj = self._pet:GetPresentObject()
+  local lizi = obj.transform:Find("lizi").gameObject
   lizi:SetActive(true)
   self.animation_ = obj:GetComponent("Animation")
-  ;
-  (self.animation_):Play("eff_meme_baokai")
+  self.animation_:Play("eff_meme_baokai")
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-AirActionDelieverPresent.DoingBurstAnimation = function(self)
-  -- function num : 0_7
-  return (self.animation_):IsPlaying("eff_meme_baokai")
+function AirActionDelieverPresent:DoingBurstAnimation()
+  return self.animation_:IsPlaying("eff_meme_baokai")
 end
-
-

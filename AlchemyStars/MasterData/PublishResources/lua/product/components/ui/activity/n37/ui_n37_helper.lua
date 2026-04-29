@@ -1,150 +1,104 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n37/ui_n37_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN37Helper", Object)
 UIN37Helper = UIN37Helper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN37Helper.GetCampaignType = function()
-  -- function num : 0_0 , upvalues : _ENV
+function UIN37Helper.GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N37
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper.GetComponentId = function(name)
-  -- function num : 0_1 , upvalues : _ENV
-  local tb = {login = ECampaignN37ComponentID.ECAMPAIGN_N37_CUMULATIVE_LOGIN, line = ECampaignN37ComponentID.ECAMPAIGN_N37_LINE_MISSION, hard = ECampaignN37ComponentID.ECAMPAIGN_N37_HARD_LINE_MISSION, black = ECampaignN37ComponentID.ECAMPAIGN_N37_BLACK_DIFFICULT_MISSION, power = ECampaignN37ComponentID.ECAMPAIGN_N37_POWER2ITEM, exchange = ECampaignN37ComponentID.ECAMPAIGN_N37_SHOP, trun = ECampaignN37ComponentID.ECAMPAIGN_N37_TURNCARD, quest = ECampaignN37ComponentID.ECAMPAIGN_N37_QUEST}
+function UIN37Helper.GetComponentId(name)
+  local tb = {
+    login = ECampaignN37ComponentID.ECAMPAIGN_N37_CUMULATIVE_LOGIN,
+    line = ECampaignN37ComponentID.ECAMPAIGN_N37_LINE_MISSION,
+    hard = ECampaignN37ComponentID.ECAMPAIGN_N37_HARD_LINE_MISSION,
+    black = ECampaignN37ComponentID.ECAMPAIGN_N37_BLACK_DIFFICULT_MISSION,
+    power = ECampaignN37ComponentID.ECAMPAIGN_N37_POWER2ITEM,
+    exchange = ECampaignN37ComponentID.ECAMPAIGN_N37_SHOP,
+    trun = ECampaignN37ComponentID.ECAMPAIGN_N37_TURNCARD,
+    quest = ECampaignN37ComponentID.ECAMPAIGN_N37_QUEST
+  }
   return tb[name]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper.GetComponent = function(campaign, name)
-  -- function num : 0_2 , upvalues : _ENV
-  local cmptId = (UIN37Helper.GetComponentId)(name)
+function UIN37Helper.GetComponent(campaign, name)
+  local cmptId = UIN37Helper.GetComponentId(name)
   local component = campaign:GetComponent(cmptId)
   local componentInfo = campaign:GetComponentInfo(cmptId)
   return cmptId, component, componentInfo
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper.SetBattlePassBtn = function(uiView, widgetName, bp_campaign)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN37Helper.SetBattlePassBtn(uiView, widgetName, bp_campaign)
   local useStateUI = false
   local open_sample = bp_campaign:CheckCampaignOpen()
-  do
-    if open_sample then
-      local obj = (UIWidgetHelper.SpawnObject)(uiView, widgetName, "UIActivityCommonCampaignEnter")
-      obj:SetData(bp_campaign, useStateUI)
-    end
-    local obj = uiView:GetGameObject(widgetName)
-    obj:SetActive(open_sample)
+  if open_sample then
+    local obj = UIWidgetHelper.SpawnObject(uiView, widgetName, "UIActivityCommonCampaignEnter")
+    obj:SetData(bp_campaign, useStateUI)
   end
+  local obj = uiView:GetGameObject(widgetName)
+  obj:SetActive(open_sample)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper.SetExchangeBtn = function(uiView, widgetName, campaign)
-  -- function num : 0_4 , upvalues : _ENV
-  local cmptId, component, componentInfo = (UIN37Helper.GetComponent)(campaign, "exchange")
-  local obj = (UIWidgetHelper.SpawnObject)(uiView, widgetName, "UIActivityCommonComponentEnter")
+function UIN37Helper.SetExchangeBtn(uiView, widgetName, campaign)
+  local cmptId, component, componentInfo = UIN37Helper.GetComponent(campaign, "exchange")
+  local obj = UIWidgetHelper.SpawnObject(uiView, widgetName, "UIActivityCommonComponentEnter")
   local btnName = "ExchangeBtn"
-  local newCallback = function()
-    -- function num : 0_4_0 , upvalues : _ENV, btnName
-    local new = not (UIN37Helper.LocalDB_Has)(btnName, "New")
+  
+  local function newCallback()
+    local new = not UIN37Helper.LocalDB_Has(btnName, "New")
     return new
   end
-
+  
   obj:SetNew("_new", newCallback)
-  local redCallback = function()
-    -- function num : 0_4_1 , upvalues : campaign, cmptId
-    if campaign:CheckComponentOpen(cmptId) then
-      return campaign:CheckComponentRed(cmptId)
-    end
+  
+  local function redCallback()
+    return campaign:CheckComponentOpen(cmptId) and campaign:CheckComponentRed(cmptId)
   end
-
+  
   obj:SetRed("_red", redCallback)
   local color1, color2 = "#71a29c", "#ffffff"
-  ;
-  (UIN37Helper.SetExchangeCostItem_PreZero)(component, obj, "icon", "text", color1, color2)
-  local clickCallback = function()
-    -- function num : 0_4_2 , upvalues : _ENV, btnName
-    (UIN37Helper.LocalDB_Set)(btnName, "New")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIN37ExchangeController")
+  UIN37Helper.SetExchangeCostItem_PreZero(component, obj, "icon", "text", color1, color2)
+  
+  local function clickCallback()
+    UIN37Helper.LocalDB_Set(btnName, "New")
+    GameGlobal.UIStateManager():ShowDialog("UIN37ExchangeController")
   end
-
+  
   obj:SetData(campaign, clickCallback)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper.SetExchangeCostItem_PreZero = function(component, uiView, widgeIcon, widgeCount, color1, color2)
-  -- function num : 0_5 , upvalues : _ENV
+function UIN37Helper.SetExchangeCostItem_PreZero(component, uiView, widgeIcon, widgeCount, color1, color2)
   local itemId = component:GetCostItemId()
-  ;
-  (UIWidgetHelper.SetItemIcon)(uiView, itemId, widgeIcon)
-  ;
-  (UIWidgetHelper.SetItemCount)(uiView, itemId, widgeCount, function(count)
-    -- function num : 0_5_0 , upvalues : _ENV, color1, color2
-    count = (math.min)(count, 999999)
-    local preZero = (UIActivityHelper.GetZeroStrFrontNum)(6, count)
-    local str = (UIActivityHelper.GetColorText)(color1, preZero, color2, tostring(count))
+  UIWidgetHelper.SetItemIcon(uiView, itemId, widgeIcon)
+  UIWidgetHelper.SetItemCount(uiView, itemId, widgeCount, function(count)
+    count = math.min(count, 999999)
+    local preZero = UIActivityHelper.GetZeroStrFrontNum(6, count)
+    local str = UIActivityHelper.GetColorText(color1, preZero, color2, tostring(count))
     return str
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper._LocalDB_GetKey = function(btnName, funcName)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN37Helper._LocalDB_GetKey(btnName, funcName)
   local key = "UIN37Helper_" .. btnName .. "_" .. funcName .. "_"
-  return (UIActivityHelper.GetLocalDBKeyWithPstId)(key)
+  return UIActivityHelper.GetLocalDBKeyWithPstId(key)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper.LocalDB_Has = function(btnName, funcName)
-  -- function num : 0_7 , upvalues : _ENV
-  local key = (UIN37Helper._LocalDB_GetKey)(btnName, funcName)
-  return (LocalDB.HasKey)(key)
+function UIN37Helper.LocalDB_Has(btnName, funcName)
+  local key = UIN37Helper._LocalDB_GetKey(btnName, funcName)
+  return LocalDB.HasKey(key)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper.LocalDB_Get = function(btnName, funcName, value)
-  -- function num : 0_8 , upvalues : _ENV
-  if not value then
-    value = 1
-  end
-  local key = (UIN37Helper._LocalDB_GetKey)(btnName, funcName)
-  return (LocalDB.GetInt)(key, value)
+function UIN37Helper.LocalDB_Get(btnName, funcName, value)
+  value = value or 1
+  local key = UIN37Helper._LocalDB_GetKey(btnName, funcName)
+  return LocalDB.GetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper.LocalDB_Set = function(btnName, funcName, value)
-  -- function num : 0_9 , upvalues : _ENV
-  if not value then
-    value = 1
-  end
-  local key = (UIN37Helper._LocalDB_GetKey)(btnName, funcName)
-  ;
-  (LocalDB.SetInt)(key, value)
+function UIN37Helper.LocalDB_Set(btnName, funcName, value)
+  value = value or 1
+  local key = UIN37Helper._LocalDB_GetKey(btnName, funcName)
+  LocalDB.SetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN37Helper.LocalDB_Delete = function(btnName, funcName)
-  -- function num : 0_10 , upvalues : _ENV
-  local key = (UIN37Helper._LocalDB_GetKey)(btnName, funcName)
-  ;
-  (LocalDB.Delete)(key)
+function UIN37Helper.LocalDB_Delete(btnName, funcName)
+  local key = UIN37Helper._LocalDB_GetKey(btnName, funcName)
+  LocalDB.Delete(key)
 end
-
-

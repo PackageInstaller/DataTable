@@ -1,42 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_death_to_death.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicDeathToDeath", BuffLogicBase)
 BuffLogicDeathToDeath = BuffLogicDeathToDeath
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicDeathToDeath.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicDeathToDeath:Constructor(buffInstance, logicParam)
   self._skillID = logicParam.skillID
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicDeathToDeath.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:Attributes()):SetSimpleAttribute("BuffDeathToDeath", 1)
-  local skillLogicSvc = (self._world):GetService("SkillLogic")
+function BuffLogicDeathToDeath:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:Attributes():SetSimpleAttribute("BuffDeathToDeath", 1)
+  local skillLogicSvc = self._world:GetService("SkillLogic")
   skillLogicSvc:CalcSkillEffect(e, self._skillID)
-  local result = (e:SkillContext()):GetResultContainer()
-  if (self._world):RunAtServer() then
-    local damageResults = ((e:SkillContext()):GetResultContainer()):GetEffectResultByArray(SkillEffectType.Damage)
-    if damageResults and #damageResults > 0 then
-      local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-      for _,result in ipairs(damageResults) do
-        local target = (self._world):GetEntityByID(result:GetTargetID())
-        if result:GetTotalDamage() > 0 and (target:Attributes()):GetCurrentHP() <= 0 and (target:Attributes()):GetAttribute("BuffDeathToDeath") == nil then
+  local result = e:SkillContext():GetResultContainer()
+  if self._world:RunAtServer() then
+    local damageResults = e:SkillContext():GetResultContainer():GetEffectResultByArray(SkillEffectType.Damage)
+    if damageResults and 0 < #damageResults then
+      local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+      for _, result in ipairs(damageResults) do
+        local target = self._world:GetEntityByID(result:GetTargetID())
+        if 0 < result:GetTotalDamage() and 0 >= target:Attributes():GetCurrentHP() and target:Attributes():GetAttribute("BuffDeathToDeath") == nil then
           sMonsterShowLogic:_DoLogicDead(target)
         end
       end
     end
   end
-  do
-    return BuffResultDeathToDeath:New(e:GetID(), self._skillID, result)
-  end
+  return BuffResultDeathToDeath:New(e:GetID(), self._skillID, result)
 end
-
-

@@ -1,52 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/Activity/ui_activity_n7_intro.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN7Intro", UIController)
 UIActivityN7Intro = UIActivityN7Intro
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN7Intro.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityN7Intro:OnShow(uiParams)
   self._param = uiParams[1] or "nil"
-  self._cfg = (Cfg.cfg_activityintro)[self._param]
+  self._cfg = Cfg.cfg_activityintro[self._param]
   if self._cfg == nil then
-    (Log.fatal)("###[UIActivityN7Intro] self._cfg is nil. param --> ", self._param)
+    Log.fatal("###[UIActivityN7Intro] self._cfg is nil. param --> ", self._param)
   end
   self:InitWidget()
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN7Intro.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityN7Intro:InitWidget()
   self._title = self:GetUIComponent("UILocalizationText", "Title")
   self._content = self:GetUIComponent("UILocalizationText", "Content")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN7Intro._OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._title):SetText((StringTable.Get)((self._cfg).Title))
-  ;
-  (self._content):SetText((StringTable.Get)((self._cfg).Intro))
+function UIActivityN7Intro:_OnValue()
+  self._title:SetText(StringTable.Get(self._cfg.Title))
+  self._content:SetText(StringTable.Get(self._cfg.Intro))
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN7Intro.btnCloseOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN7Intro:btnCloseOnClick(go)
   self:Lock("UIActivityN7Intro:OnHide")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, self
     YIELD(TT, 600)
     self:UnLock("UIActivityN7Intro:OnHide")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
-
-

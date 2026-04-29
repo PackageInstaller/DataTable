@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/level_monster_wave_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LevelMonsterWaveParam", Object)
 LevelMonsterWaveParam = LevelMonsterWaveParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelMonsterWaveParam.Constructor = function(self, world, waveNum)
-  -- function num : 0_0
+function LevelMonsterWaveParam:Constructor(world, waveNum)
   self._world = world
   self._roundCount = 0
   self._completeCondition = 0
@@ -27,106 +20,73 @@ LevelMonsterWaveParam.Constructor = function(self, world, waveNum)
   self._showInterval = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetWaveBeginRefreshParam = function(self, playerPos)
-  -- function num : 0_1 , upvalues : _ENV
+function LevelMonsterWaveParam:GetWaveBeginRefreshParam(playerPos)
   if self._waveBeginRefreshParam then
     return self._waveBeginRefreshParam
   end
   local paramList = {}
-  for _,v in ipairs(self._waveBeginRefreshParamList) do
+  for _, v in ipairs(self._waveBeginRefreshParamList) do
     if v:IsInMyArea(playerPos) then
-      (table.insert)(paramList, v:GetRefreshParam())
+      table.insert(paramList, v:GetRefreshParam())
     end
   end
   if #paramList == 1 then
     return paramList[1]
+  elseif #paramList == 0 then
+    local index = self:_CalcRandom(1, #self._waveBeginRefreshParamList)
+    return self._waveBeginRefreshParamList[index]:GetRefreshParam()
   else
-    if #paramList == 0 then
-      local index = self:_CalcRandom(1, #self._waveBeginRefreshParamList)
-      return ((self._waveBeginRefreshParamList)[index]):GetRefreshParam()
-    else
-      do
-        local index = self:_CalcRandom(1, #paramList)
-        do return paramList[index] end
-      end
-    end
+    local index = self:_CalcRandom(1, #paramList)
+    return paramList[index]
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetWaveInternalRefreshData = function(self)
-  -- function num : 0_2
+function LevelMonsterWaveParam:GetWaveInternalRefreshData()
   return self._internalRefreshDataArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetWaveInternalRefreshCount = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (table.count)(self._internalRefreshDataArray)
+function LevelMonsterWaveParam:GetWaveInternalRefreshCount()
+  return table.count(self._internalRefreshDataArray)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetWaveBeginRefreshTrapArray = function(self)
-  -- function num : 0_4
+function LevelMonsterWaveParam:GetWaveBeginRefreshTrapArray()
   if self._waveBeginRefreshParam then
-    return (self._waveBeginRefreshParam):GetTrapArray()
+    return self._waveBeginRefreshParam:GetTrapArray()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetWaveMonsterIDArray = function(self)
-  -- function num : 0_5
+function LevelMonsterWaveParam:GetWaveMonsterIDArray()
   return self._waveMonsterIDList
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetCompleteConditionType = function(self)
-  -- function num : 0_6
+function LevelMonsterWaveParam:GetCompleteConditionType()
   return self._completeCondition
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetCompleteConditionParam = function(self)
-  -- function num : 0_7
+function LevelMonsterWaveParam:GetCompleteConditionParam()
   return self._completeConditionParam
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetRoundEnergyDic = function(self)
-  -- function num : 0_8
+function LevelMonsterWaveParam:GetRoundEnergyDic()
   return self._roundEnergyDic
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.IsCombinedConditionWave = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  do return self._completeCondition == CompleteConditionType.CombinedCompleteCondition end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function LevelMonsterWaveParam:IsCombinedConditionWave()
+  return self._completeCondition == CompleteConditionType.CombinedCompleteCondition
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetCombinedCompleteConditionArguments = function(self)
-  -- function num : 0_10
-  return {conditionA = self._combinedCompleteConditionA, conditionParamA = self._combinedCompleteConditionAParam, conditionB = self._combinedCompleteConditionB, conditionParamB = self._combinedCompleteConditionBParam}
+function LevelMonsterWaveParam:GetCombinedCompleteConditionArguments()
+  return {
+    conditionA = self._combinedCompleteConditionA,
+    conditionParamA = self._combinedCompleteConditionAParam,
+    conditionB = self._combinedCompleteConditionB,
+    conditionParamB = self._combinedCompleteConditionBParam
+  }
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.ParseMonsterWaveParam = function(self, monsterWaveConfig, mazeWaveInfo)
-  -- function num : 0_11 , upvalues : _ENV
+function LevelMonsterWaveParam:ParseMonsterWaveParam(monsterWaveConfig, mazeWaveInfo)
   if not monsterWaveConfig then
-    (Log.fatal)("monsterWaveConfig is nil")
+    Log.fatal("monsterWaveConfig is nil")
   end
   self._roundCount = monsterWaveConfig.Round
   self._completeCondition = monsterWaveConfig.CompleteCondition
@@ -134,139 +94,122 @@ LevelMonsterWaveParam.ParseMonsterWaveParam = function(self, monsterWaveConfig, 
   self._isBoss = monsterWaveConfig.IsBoss
   self._hitBackParam = monsterWaveConfig.HitBackParam
   self._bgm = monsterWaveConfig.BGM
-  self._bossIDList = (table.cloneconf)(monsterWaveConfig.BossID)
+  self._bossIDList = table.cloneconf(monsterWaveConfig.BossID)
   self._waveBoard = monsterWaveConfig.WaveBoard
   self._combinedCompleteConditionA = monsterWaveConfig.CombinedCompleteConditionA
   self._combinedCompleteConditionAParam = monsterWaveConfig.CombinedCompleteConditionParamA
   self._combinedCompleteConditionB = monsterWaveConfig.CombinedCompleteConditionB
   self._combinedCompleteConditionBParam = monsterWaveConfig.CombinedCompleteConditionParamB
   if monsterWaveConfig.WaveBeginRefresh then
-    for _,v in ipairs(monsterWaveConfig.WaveBeginRefresh) do
-      local cfg = (Cfg.cfg_refresh)[v.refreshID]
+    for _, v in ipairs(monsterWaveConfig.WaveBeginRefresh) do
+      local cfg = Cfg.cfg_refresh[v.refreshID]
       if not cfg then
-        (Log.fatal)("Cfg WaveBeginRefresh Not Find ID:", v.refreshID, "WaveID:", monsterWaveConfig.ID)
+        Log.fatal("Cfg WaveBeginRefresh Not Find ID:", v.refreshID, "WaveID:", monsterWaveConfig.ID)
       end
-      local monsterRefreshID = (cfg.MonsterRefreshIDList)[1]
-      local monsterRefCfg = (Cfg.cfg_refresh_monster)[monsterRefreshID]
-      local trapRefreshID = (cfg.TrapRefreshIDList)[1]
-      local trapRefCfg = (Cfg.cfg_refresh_trap)[trapRefreshID]
+      local monsterRefreshID = cfg.MonsterRefreshIDList[1]
+      local monsterRefCfg = Cfg.cfg_refresh_monster[monsterRefreshID]
+      local trapRefreshID = cfg.TrapRefreshIDList[1]
+      local trapRefCfg = Cfg.cfg_refresh_trap[trapRefreshID]
       local waveRefreshParam = LevelMonsterRefreshParam:New(self._world)
       waveRefreshParam:ParseMonsterRefreshParam(monsterRefCfg)
       waveRefreshParam:ParseTrapRefreshParam(trapRefCfg)
-      ;
-      (table.appendArray)(self._waveMonsterIDList, waveRefreshParam:GetMonsterIDArray())
+      table.appendArray(self._waveMonsterIDList, waveRefreshParam:GetMonsterIDArray())
       if self._isBoss and monsterRefCfg.RandomMonsterIDList then
-        self._bossIDList = (table.cloneconf)(waveRefreshParam:GetMonsterIDArray())
+        self._bossIDList = table.cloneconf(waveRefreshParam:GetMonsterIDArray())
       end
-      local groupList = (Cfg.cfg_monster_grid_group)[v.gridGroupID]
+      local groupList = Cfg.cfg_monster_grid_group[v.gridGroupID]
       if not groupList then
-        (Log.fatal)("Cfg GroupID Not Find ID:", v.refreshID, "WaveID:", monsterWaveConfig.ID, "GroupID:", v.gridGroupID)
+        Log.fatal("Cfg GroupID Not Find ID:", v.refreshID, "WaveID:", monsterWaveConfig.ID, "GroupID:", v.gridGroupID)
       end
       local beginRefreshParam = LevelMonsterBeginRefreshParam:New(monsterRefreshID, waveRefreshParam, groupList.Group)
-      ;
-      (table.insert)(self._waveBeginRefreshParamList, beginRefreshParam)
+      table.insert(self._waveBeginRefreshParamList, beginRefreshParam)
     end
   else
-    do
-      local cfg = (Cfg.cfg_refresh)[monsterWaveConfig.WaveBeginRefreshID]
-      if not cfg then
-        (Log.fatal)("Cfg monsterWaveConfig.WaveBeginRefreshID Not Find ID:", monsterWaveConfig.WaveBeginRefreshID)
+    local cfg = Cfg.cfg_refresh[monsterWaveConfig.WaveBeginRefreshID]
+    if not cfg then
+      Log.fatal("Cfg monsterWaveConfig.WaveBeginRefreshID Not Find ID:", monsterWaveConfig.WaveBeginRefreshID)
+    end
+    local monsterWeight = cfg.MonsterWeight
+    local monsterRefreshIDs = cfg.MonsterRefreshIDList
+    local totalw = 0
+    for _, w in ipairs(monsterWeight) do
+      totalw = totalw + w
+    end
+    local monsterRefreshId = monsterRefreshIDs[1]
+    local rand = self:_CalcRandom()
+    if mazeWaveInfo and 0 < table.count(mazeWaveInfo) then
+      rand = mazeWaveInfo[1]
+    end
+    local ww = rand * totalw
+    for j, w in ipairs(monsterWeight) do
+      ww = ww - w
+      if ww <= 0 then
+        monsterRefreshId = monsterRefreshIDs[j]
+        break
       end
-      local monsterWeight = cfg.MonsterWeight
-      local monsterRefreshIDs = cfg.MonsterRefreshIDList
+    end
+    local monsterRefCfg = Cfg.cfg_refresh_monster[monsterRefreshId]
+    self._waveBeginRefreshParam = LevelMonsterRefreshParam:New(self._world)
+    self._waveBeginRefreshParam:ParseMonsterRefreshParam(monsterRefCfg)
+    table.appendArray(self._waveMonsterIDList, self._waveBeginRefreshParam:GetMonsterIDArray())
+    if self._isBoss and monsterRefCfg.RandomMonsterIDList then
+      self._bossIDList = table.cloneconf(self._waveBeginRefreshParam:GetMonsterIDArray())
+    end
+    local trapWeight = cfg.TrapWeight
+    local trapRefreshIDs = cfg.TrapRefreshIDList
+    if trapRefreshIDs and 0 < #trapRefreshIDs and trapRefreshIDs[1] > 0 then
       local totalw = 0
-      for _,w in ipairs(monsterWeight) do
+      for _, w in ipairs(trapWeight) do
         totalw = totalw + w
       end
-      local monsterRefreshId = monsterRefreshIDs[1]
+      local trapRefreshId = trapRefreshIDs[1]
       local rand = self:_CalcRandom()
-      if mazeWaveInfo and (table.count)(mazeWaveInfo) > 0 then
-        rand = mazeWaveInfo[1]
+      if mazeWaveInfo and 1 < table.count(mazeWaveInfo) then
+        rand = mazeWaveInfo[2]
       end
-      local ww = rand * (totalw)
-      for j,w in ipairs(monsterWeight) do
+      local ww = rand * totalw
+      for j, w in ipairs(trapWeight) do
         ww = ww - w
         if ww <= 0 then
-          monsterRefreshId = monsterRefreshIDs[j]
+          trapRefreshId = trapRefreshIDs[j]
           break
         end
       end
-      do
-        local monsterRefCfg = (Cfg.cfg_refresh_monster)[monsterRefreshId]
-        self._waveBeginRefreshParam = LevelMonsterRefreshParam:New(self._world)
-        ;
-        (self._waveBeginRefreshParam):ParseMonsterRefreshParam(monsterRefCfg)
-        ;
-        (table.appendArray)(self._waveMonsterIDList, (self._waveBeginRefreshParam):GetMonsterIDArray())
-        if self._isBoss and monsterRefCfg.RandomMonsterIDList then
-          self._bossIDList = (table.cloneconf)((self._waveBeginRefreshParam):GetMonsterIDArray())
-        end
-        local trapWeight = cfg.TrapWeight
-        local trapRefreshIDs = cfg.TrapRefreshIDList
-        if trapRefreshIDs and #trapRefreshIDs > 0 and trapRefreshIDs[1] > 0 then
-          local totalw = 0
-          for _,w in ipairs(trapWeight) do
-            totalw = totalw + w
-          end
-          local trapRefreshId = trapRefreshIDs[1]
-          local rand = self:_CalcRandom()
-          if mazeWaveInfo and (table.count)(mazeWaveInfo) > 1 then
-            rand = mazeWaveInfo[2]
-          end
-          local ww = rand * (totalw)
-          for j,w in ipairs(trapWeight) do
-            ww = ww - w
-            if ww <= 0 then
-              trapRefreshId = trapRefreshIDs[j]
-              break
-            end
-          end
-          do
-            do
-              local trapRefCfg = (Cfg.cfg_refresh_trap)[trapRefreshId]
-              if trapRefCfg then
-                (self._waveBeginRefreshParam):ParseTrapRefreshParam(trapRefCfg)
-              end
-              self._internalRefreshDataArray = self:_ParseMonsterInternalRefresh(monsterWaveConfig)
-              if self._internalRefreshDataArray ~= nil then
-                for _,v in ipairs(self._internalRefreshDataArray) do
-                  local refreshData = v
-                  local dataDic = refreshData:GetInternalMonsterIDDic()
-                  local refreshCount = refreshData:GetMonsterRefreshCount()
-                  for i = 1, refreshCount do
-                    for k,v in ipairs(dataDic) do
-                      (table.insert)(self._waveMonsterIDList, v)
-                    end
-                  end
-                end
-              end
-              do
-                local showParamCfg = monsterWaveConfig.ShowParam
-                if showParamCfg and showParamCfg.showInterval then
-                  self._showInterval = showParamCfg.showInterval
-                end
-              end
-            end
-          end
+      local trapRefCfg = Cfg.cfg_refresh_trap[trapRefreshId]
+      if trapRefCfg then
+        self._waveBeginRefreshParam:ParseTrapRefreshParam(trapRefCfg)
+      end
+    end
+  end
+  self._internalRefreshDataArray = self:_ParseMonsterInternalRefresh(monsterWaveConfig)
+  if self._internalRefreshDataArray ~= nil then
+    for _, v in ipairs(self._internalRefreshDataArray) do
+      local refreshData = v
+      local dataDic = refreshData:GetInternalMonsterIDDic()
+      local refreshCount = refreshData:GetMonsterRefreshCount()
+      for i = 1, refreshCount do
+        for k, v in ipairs(dataDic) do
+          table.insert(self._waveMonsterIDList, v)
         end
       end
     end
   end
+  local showParamCfg = monsterWaveConfig.ShowParam
+  if showParamCfg and showParamCfg.showInterval then
+    self._showInterval = showParamCfg.showInterval
+  end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam._ParseMonsterInternalRefresh = function(self, monsterWaveConfig)
-  -- function num : 0_12 , upvalues : _ENV
-  local affixService = (self._world):GetService("Affix")
+function LevelMonsterWaveParam:_ParseMonsterInternalRefresh(monsterWaveConfig)
+  local affixService = self._world:GetService("Affix")
   local affixAddParamList = affixService:AddWaveInternalParam(self._waveNum)
   local refreshConfigTable = monsterWaveConfig.WaveInternalRefresh
-  if refreshConfigTable == nil and (table.count)(affixAddParamList) == 0 then
+  if refreshConfigTable == nil and table.count(affixAddParamList) == 0 then
     return nil
   end
   local refreshParamList = {}
   if refreshConfigTable then
-    for index,refreshTableValue in ipairs(refreshConfigTable) do
+    for index, refreshTableValue in ipairs(refreshConfigTable) do
       local param = affixService:ChangeWaveInternalParam(refreshTableValue.param, index, self._waveNum)
       local refreshData = MonsterRefreshData:New(refreshTableValue.refreshID, refreshTableValue.type, param, self._world)
       if refreshTableValue.showInterval then
@@ -278,118 +221,76 @@ LevelMonsterWaveParam._ParseMonsterInternalRefresh = function(self, monsterWaveC
       refreshParamList[#refreshParamList + 1] = refreshData
     end
   end
-  do
-    for _,param in ipairs(affixAddParamList) do
-      local refreshData = MonsterRefreshData:New(param:GetRefreshID(), param:GetType(), param:GetParam(), self._world)
-      refreshParamList[#refreshParamList + 1] = refreshData
-    end
-    return refreshParamList
+  for _, param in ipairs(affixAddParamList) do
+    local refreshData = MonsterRefreshData:New(param:GetRefreshID(), param:GetType(), param:GetParam(), self._world)
+    refreshParamList[#refreshParamList + 1] = refreshData
   end
+  return refreshParamList
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetInternalRefreshTypeParam = function(self)
-  -- function num : 0_13
+function LevelMonsterWaveParam:GetInternalRefreshTypeParam()
   return self._waveInternalRefreshTypeParam
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetInternalRefreshType = function(self)
-  -- function num : 0_14
+function LevelMonsterWaveParam:GetInternalRefreshType()
   return self._waveInternalRefreshType
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.IsBossWave = function(self)
-  -- function num : 0_15
+function LevelMonsterWaveParam:IsBossWave()
   return self._isBoss
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetBossID = function(self)
-  -- function num : 0_16
+function LevelMonsterWaveParam:GetBossID()
   return self._bossIDList
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.HitBackParam = function(self)
-  -- function num : 0_17
+function LevelMonsterWaveParam:HitBackParam()
   return self._hitBackParam
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.BGMParam = function(self)
-  -- function num : 0_18
+function LevelMonsterWaveParam:BGMParam()
   return self._bgm
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam._CalcRandom = function(self, m, n)
-  -- function num : 0_19
-  local randomSvc = (self._world):GetService("RandomLogic")
+function LevelMonsterWaveParam:_CalcRandom(m, n)
+  local randomSvc = self._world:GetService("RandomLogic")
   return randomSvc:LogicRand(m, n)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.DebugCompleteCondition = function(self, nType, nParam)
-  -- function num : 0_20
+function LevelMonsterWaveParam:DebugCompleteCondition(nType, nParam)
   self._completeCondition = nType
   self._completeConditionParam = nParam
 end
 
 _class("LevelMonsterBeginRefreshParam", Object)
 LevelMonsterBeginRefreshParam = LevelMonsterBeginRefreshParam
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
 
-LevelMonsterBeginRefreshParam.Constructor = function(self, refreshID, refreshParam, areaPosList)
-  -- function num : 0_21 , upvalues : _ENV
+function LevelMonsterBeginRefreshParam:Constructor(refreshID, refreshParam, areaPosList)
   self._refreshID = refreshID
   self._refreshParam = refreshParam
   self._areaPosList = {}
   if areaPosList then
-    for _,v in ipairs(areaPosList) do
-      (table.insert)(self._areaPosList, Vector2(v[1], v[2]))
+    for _, v in ipairs(areaPosList) do
+      table.insert(self._areaPosList, Vector2(v[1], v[2]))
     end
   end
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterBeginRefreshParam.IsInMyArea = function(self, pos)
-  -- function num : 0_22 , upvalues : _ENV
+function LevelMonsterBeginRefreshParam:IsInMyArea(pos)
   if #self._areaPosList == 0 then
     return true
   end
-  return (table.icontains)(self._areaPosList, pos)
+  return table.icontains(self._areaPosList, pos)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterBeginRefreshParam.GetRefreshParam = function(self)
-  -- function num : 0_23
+function LevelMonsterBeginRefreshParam:GetRefreshParam()
   return self._refreshParam
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetWaveBoard = function(self)
-  -- function num : 0_24
+function LevelMonsterWaveParam:GetWaveBoard()
   return self._waveBoard
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-LevelMonsterWaveParam.GetMonsterWaveShowInterval = function(self)
-  -- function num : 0_25
+function LevelMonsterWaveParam:GetMonsterWaveShowInterval()
   return self._showInterval
 end
-
-

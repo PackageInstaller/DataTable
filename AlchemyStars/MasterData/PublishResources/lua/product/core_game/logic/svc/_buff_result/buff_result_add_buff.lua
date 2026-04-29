@@ -1,197 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_add_buff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultAddBuff", BuffResultBase)
 BuffResultAddBuff = BuffResultAddBuff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultAddBuff.Constructor = function(self)
-  -- function num : 0_0
+function BuffResultAddBuff:Constructor()
   self._buffArray = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.AddBuffData = function(self, eid, buffseq)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.insert)(self._buffArray, {eid, buffseq})
+function BuffResultAddBuff:AddBuffData(eid, buffseq)
+  table.insert(self._buffArray, {eid, buffseq})
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetBuffArray = function(self)
-  -- function num : 0_2
+function BuffResultAddBuff:GetBuffArray()
   return self._buffArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetLight = function(self, v)
-  -- function num : 0_3
+function BuffResultAddBuff:SetLight(v)
   self._light = v
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetLight = function(self)
-  -- function num : 0_4
+function BuffResultAddBuff:GetLight()
   return self._light
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetAttackPos = function(self, pos)
-  -- function num : 0_5
+function BuffResultAddBuff:SetAttackPos(pos)
   self._atkPos = pos
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetAttackPos = function(self)
-  -- function num : 0_6
+function BuffResultAddBuff:GetAttackPos()
   return self._atkPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetTargetPos = function(self, pos)
-  -- function num : 0_7
+function BuffResultAddBuff:SetTargetPos(pos)
   self._tarPos = pos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetTargetPos = function(self)
-  -- function num : 0_8
+function BuffResultAddBuff:GetTargetPos()
   return self._tarPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetRandHalfDamageIndex = function(self, val)
-  -- function num : 0_9
+function BuffResultAddBuff:SetRandHalfDamageIndex(val)
   self._randHalfDamageIndex = val
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetRandHalfDamageIndex = function(self)
-  -- function num : 0_10
+function BuffResultAddBuff:GetRandHalfDamageIndex()
   return self._randHalfDamageIndex
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetWalkPos = function(self)
-  -- function num : 0_11
+function BuffResultAddBuff:GetWalkPos()
   return self._walkPos
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetWalkPos = function(self, walkPos)
-  -- function num : 0_12
+function BuffResultAddBuff:SetWalkPos(walkPos)
   self._walkPos = walkPos
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetNotifyLayerChange_Entity = function(self, e)
-  -- function num : 0_13
+function BuffResultAddBuff:SetNotifyLayerChange_Entity(e)
   self._setNotifyLayerChange_entity = e
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetNotifyLayerChange_TotalLayer = function(self, n)
-  -- function num : 0_14
+function BuffResultAddBuff:SetNotifyLayerChange_TotalLayer(n)
   self._setNotifyLayerChange_totalLayer = n
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetNotifyLayerChange_Entity = function(self)
-  -- function num : 0_15
+function BuffResultAddBuff:GetNotifyLayerChange_Entity()
   return self._setNotifyLayerChange_entity
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetNotifyLayerChange_TotalLayer = function(self)
-  -- function num : 0_16
+function BuffResultAddBuff:GetNotifyLayerChange_TotalLayer()
   return self._setNotifyLayerChange_totalLayer
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetAutoBeadSkillIndex = function(self, skillIndex)
-  -- function num : 0_17
+function BuffResultAddBuff:SetAutoBeadSkillIndex(skillIndex)
   self._autoBeadSkillIndex = skillIndex
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetAutoBeadSkillIndex = function(self)
-  -- function num : 0_18
+function BuffResultAddBuff:GetAutoBeadSkillIndex()
   return self._autoBeadSkillIndex
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetLevelTotalRoundCount = function(self, val)
-  -- function num : 0_19
+function BuffResultAddBuff:SetLevelTotalRoundCount(val)
   self._levelTotalRoundCount = val
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetLevelTotalRoundCount = function(self)
-  -- function num : 0_20
+function BuffResultAddBuff:GetLevelTotalRoundCount()
   return self._levelTotalRoundCount
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetAddBuffSeq = function(self, buffSeq)
-  -- function num : 0_21
+function BuffResultAddBuff:SetAddBuffSeq(buffSeq)
   self._addBuffSeq = buffSeq
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetAddBuffSeq = function(self)
-  -- function num : 0_22
+function BuffResultAddBuff:GetAddBuffSeq()
   return self._addBuffSeq
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetNormalAttackIndex = function(self)
-  -- function num : 0_23
+function BuffResultAddBuff:GetNormalAttackIndex()
   return self._normalAttackIndex
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetNormalAttackIndex = function(self, index)
-  -- function num : 0_24
+function BuffResultAddBuff:SetNormalAttackIndex(index)
   self._normalAttackIndex = index
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.SetSkillID = function(self, skillID)
-  -- function num : 0_25
+function BuffResultAddBuff:SetSkillID(skillID)
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultAddBuff.GetSkillID = function(self)
-  -- function num : 0_26
+function BuffResultAddBuff:GetSkillID()
   return self._skillID
 end
-
-

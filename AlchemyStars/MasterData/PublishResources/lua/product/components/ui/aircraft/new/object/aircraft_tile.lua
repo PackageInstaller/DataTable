@@ -1,74 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/object/aircraft_tile.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AircraftTile", Object)
 AircraftTile = AircraftTile
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AircraftTile.Constructor = function(self, cfg)
-  -- function num : 0_0
+function AircraftTile:Constructor(cfg)
   self._occupied = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTile.Dispose = function(self)
-  -- function num : 0_1
+function AircraftTile:Dispose()
   self._occupied = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTile.Occupied = function(self, layer)
-  -- function num : 0_2 , upvalues : _ENV
-  do return not (self._occupied)[layer] or next((self._occupied)[layer]) ~= nil end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function AircraftTile:Occupied(layer)
+  return self._occupied[layer] and next(self._occupied[layer]) ~= nil
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTile.GetFurnitureIDs = function(self, layer)
-  -- function num : 0_3
-  return (self._occupied)[layer]
+function AircraftTile:GetFurnitureIDs(layer)
+  return self._occupied[layer]
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTile.Occupy = function(self, layer, furInsID)
-  -- function num : 0_4 , upvalues : _ENV
+function AircraftTile:Occupy(layer, furInsID)
   if self:Occupied(layer) then
-    (Log.fatal)("该格子已被占据")
+    Log.fatal("该格子已被占据")
   end
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._occupied)[layer] then
-    (self._occupied)[layer] = {}
+  if not self._occupied[layer] then
+    self._occupied[layer] = {}
   end
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._occupied)[layer])[furInsID] = true
+  self._occupied[layer][furInsID] = true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AircraftTile.Release = function(self, layer, furInsID)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._occupied)[layer] then
-    if ((self._occupied)[layer])[furInsID] then
-      ((self._occupied)[layer])[furInsID] = nil
+function AircraftTile:Release(layer, furInsID)
+  if self._occupied[layer] then
+    if self._occupied[layer][furInsID] then
+      self._occupied[layer][furInsID] = nil
     else
-      ;
-      (Log.fatal)("格子未被占据，不能释放")
+      Log.fatal("格子未被占据，不能释放")
     end
   else
-    ;
-    (Log.fatal)("格子层未被占据")
+    Log.fatal("格子层未被占据")
   end
 end
-
-

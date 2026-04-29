@@ -1,44 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_guest_defence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetGuestDefence", BuffLogicBase)
 BuffLogicSetGuestDefence = BuffLogicSetGuestDefence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetGuestDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetGuestDefence:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetGuestDefence.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local guestValue = ((self._entity):BuffComponent()):GetBuffValue("GuestDefence")
+function BuffLogicSetGuestDefence:DoLogic()
+  local guestValue = self._entity:BuffComponent():GetBuffValue("GuestDefence")
   if guestValue == nil then
-    (Log.notice)("Haven\'t guest, SetGuestDefence Error!")
-    return 
+    Log.notice("Haven't guest, SetGuestDefence Error!")
+    return
   end
-  ;
-  (self._buffLogicService):ChangeBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.Defense, guestValue)
+  self._buffLogicService:ChangeBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.Defense, guestValue)
 end
 
 _class("BuffLogicResetGuestDefence", BuffLogicBase)
 BuffLogicResetGuestDefence = BuffLogicResetGuestDefence
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetGuestDefence.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicResetGuestDefence:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicResetGuestDefence.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (Log.notice)("BuffLogicResetGuestDefence")
-  ;
-  (self._buffLogicService):RemoveBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.Defense)
+function BuffLogicResetGuestDefence:DoLogic()
+  Log.notice("BuffLogicResetGuestDefence")
+  self._buffLogicService:RemoveBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.Defense)
 end
-
-

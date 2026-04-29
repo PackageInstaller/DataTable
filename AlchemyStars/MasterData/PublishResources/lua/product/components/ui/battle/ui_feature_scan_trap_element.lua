@@ -1,79 +1,47 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_feature_scan_trap_element.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFeatureScanTrapElement", UICustomWidget)
 UIFeatureScanTrapElement = UIFeatureScanTrapElement
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFeatureScanTrapElement.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIFeatureScanTrapElement:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanTrapElement.InitWidget = function(self)
-  -- function num : 0_1
+function UIFeatureScanTrapElement:InitWidget()
   self.enableFakeInput = true
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.selected = self:GetGameObject("selected")
-  ;
-  (self.selected):SetActive(false)
+  self.selected:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanTrapElement.SetData = function(self, index, id, selected, replaceIcon)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFeatureScanTrapElement:SetData(index, id, selected, replaceIcon)
   self._dataIndex = index
   self._dataTrapID = id
-  local cfgTrapScan = (Cfg.cfg_trap_scan)[id]
+  local cfgTrapScan = Cfg.cfg_trap_scan[id]
   local iconPath = cfgTrapScan.Icon
   local petID = cfgTrapScan.PetID
-  do
-    if petID then
-      local matchPet = (InnerGameHelperRender.GetLocalMatchPetByTemplateID)(petID)
-      if matchPet then
-        iconPath = matchPet:GetPetHead(PetSkinEffectPath.HEAD_ICON_CHAIN_SKILL_PREVIEW)
-      end
+  if petID then
+    local matchPet = InnerGameHelperRender.GetLocalMatchPetByTemplateID(petID)
+    if matchPet then
+      iconPath = matchPet:GetPetHead(PetSkinEffectPath.HEAD_ICON_CHAIN_SKILL_PREVIEW)
     end
-    ;
-    (self.icon):LoadImage(iconPath)
-    ;
-    (self.selected):SetActive(selected)
   end
+  self.icon:LoadImage(iconPath)
+  self.selected:SetActive(selected)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanTrapElement.AutoTestClick = function(self, index)
-  -- function num : 0_3
+function UIFeatureScanTrapElement:AutoTestClick(index)
   if self._dataIndex == index then
     self:UIFeatureScanTrapElementOnClick(nil)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanTrapElement.UIFeatureScanTrapElementOnClick = function(self, go)
-  -- function num : 0_4
-  (self._callback)(self._dataIndex)
+function UIFeatureScanTrapElement:UIFeatureScanTrapElementOnClick(go)
+  self._callback(self._dataIndex)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanTrapElement.SetElementSelectedCallback = function(self, cb)
-  -- function num : 0_5
+function UIFeatureScanTrapElement:SetElementSelectedCallback(cb)
   self._callback = cb
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureScanTrapElement.SetSelected = function(self, b)
-  -- function num : 0_6
-  (self.selected):SetActive(b)
+function UIFeatureScanTrapElement:SetSelected(b)
+  self.selected:SetActive(b)
 end
-
-

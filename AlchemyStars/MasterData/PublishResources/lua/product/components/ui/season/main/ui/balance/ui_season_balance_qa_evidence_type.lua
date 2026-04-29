@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/ui/balance/ui_season_balance_qa_evidence_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBalanceQAEvidenceType", UICustomWidget)
 UISeasonBalanceQAEvidenceType = UISeasonBalanceQAEvidenceType
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBalanceQAEvidenceType.Constructor = function(self)
-  -- function num : 0_0
+function UISeasonBalanceQAEvidenceType:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidenceType.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonBalanceQAEvidenceType:OnShow()
   self._img = self:GetUIComponent("Image", "img")
   self._Btn = self:GetUIComponent("Image", "Btn")
   self._rect = self:GetUIComponent("RectTransform", "pos")
@@ -23,74 +13,43 @@ UISeasonBalanceQAEvidenceType.OnShow = function(self)
   self._alpha = self:GetUIComponent("CanvasGroup", "Btn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidenceType.PlayAnim = function(self, yieldTime)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._alpha).alpha = 0
-  if yieldTime > 0 then
+function UISeasonBalanceQAEvidenceType:PlayAnim(yieldTime)
+  self._alpha.alpha = 0
+  if 0 < yieldTime then
     if self._timer then
-      ((GameGlobal.Timer)()):CancelEvent(self._timer)
+      GameGlobal.Timer():CancelEvent(self._timer)
     end
-    self._timer = ((GameGlobal.Timer)()):AddEvent(yieldTime, function()
-    -- function num : 0_2_0 , upvalues : self
-    (self._anim):Play("uieffanim_UISeasonBalanceQAEvidenceType_in")
-  end
-)
+    self._timer = GameGlobal.Timer():AddEvent(yieldTime, function()
+      self._anim:Play("uieffanim_UISeasonBalanceQAEvidenceType_in")
+    end)
   else
-    ;
-    (self._anim):Play("uieffanim_UISeasonBalanceQAEvidenceType_in")
+    self._anim:Play("uieffanim_UISeasonBalanceQAEvidenceType_in")
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidenceType.OnHide = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonBalanceQAEvidenceType:OnHide()
   if self._timer then
-    ((GameGlobal.Timer)()):CancelEvent(self._timer)
+    GameGlobal.Timer():CancelEvent(self._timer)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidenceType.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonBalanceQAEvidenceType:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._idx, (self._cfg).ID)
+    self._callback(self._idx, self._cfg.ID)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidenceType.Select = function(self, idx)
-  -- function num : 0_5 , upvalues : _ENV
+function UISeasonBalanceQAEvidenceType:Select(idx)
   local spriteName = idx == self._idx and "exp_s2_tp_di08" or "exp_s2_tp_di07"
-  local sprite = (self._atlas):GetSprite(spriteName)
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._Btn).sprite = sprite
+  local sprite = self._atlas:GetSprite(spriteName)
+  self._Btn.sprite = sprite
   local pos = idx == self._idx and 20 or 0
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(0, pos)
+  self._rect.anchoredPosition = Vector2(0, pos)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBalanceQAEvidenceType.SetData = function(self, idx, cfg, callback)
-  -- function num : 0_6
+function UISeasonBalanceQAEvidenceType:SetData(idx, cfg, callback)
   self._idx = idx
   self._cfg = cfg
   self._callback = callback
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._img).sprite = (self._atlas):GetSprite((self._cfg).Img)
+  self._img.sprite = self._atlas:GetSprite(self._cfg.Img)
 end
-
-

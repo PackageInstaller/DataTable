@@ -1,75 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n26/mission/ui_n26_hard_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN26HardLevel", UIController)
 UIN26HardLevel = UIN26HardLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN26HardLevel.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UIN26HardLevel:LoadDataOnEnter(TT, res)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N26, ECampaignN26ComponentID.ECAMPAIGN_N26_LINE_MISSION, ECampaignN26ComponentID.ECAMPAIGN_N26_DIFFICULT_MISSION)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N26, ECampaignN26ComponentID.ECAMPAIGN_N26_LINE_MISSION, ECampaignN26ComponentID.ECAMPAIGN_N26_DIFFICULT_MISSION)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
   if res and res:GetSucc() then
-    local camp = (self._campaign):GetComponent(ECampaignN26ComponentID.ECAMPAIGN_N26_DIFFICULT_MISSION)
+    local camp = self._campaign:GetComponent(ECampaignN26ComponentID.ECAMPAIGN_N26_DIFFICULT_MISSION)
     local campInfo = camp:GetComponentInfo()
     local openTime = campInfo.m_unlock_time
     local closeTime = campInfo.m_close_time
-    local now = (self:GetModule(SvrTimeModule)):GetServerTime() / 1000
-    if now < openTime then
+    local now = self:GetModule(SvrTimeModule):GetServerTime() / 1000
+    if openTime > now then
       res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_NO_OPEN
       campaignModule:ShowErrorToast(res.m_result, true)
-      return 
-    else
-      if closeTime < now then
-        res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
-        campaignModule:ShowErrorToast(res.m_result, true)
-        return 
-      end
+      return
+    elseif closeTime < now then
+      res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_CAMPAIGN_FINISHED
+      campaignModule:ShowErrorToast(res.m_result, true)
+      return
     end
     if not campInfo.m_b_unlock then
       res.m_result = CampaignErrorType.E_CAMPAIGN_ERROR_TYPE_COMPONENT_UNLOCK
-      local cfgv = (Cfg.cfg_campaign_mission)[campInfo.m_need_mission_id]
+      local cfgv = Cfg.cfg_campaign_mission[campInfo.m_need_mission_id]
       if cfgv then
-        local lvName = (StringTable.Get)(cfgv.Name)
-        local msg = (StringTable.Get)("str_activity_common_will_open_after_clearance", lvName)
-        ;
-        (ToastManager.ShowToast)(msg)
+        local lvName = StringTable.Get(cfgv.Name)
+        local msg = StringTable.Get("str_activity_common_will_open_after_clearance", lvName)
+        ToastManager.ShowToast(msg)
       end
-      do
-        do
-          do return  end
-          self._line_component = (self._campaign):GetComponent(ECampaignN26ComponentID.ECAMPAIGN_N26_LINE_MISSION)
-          self._line_info = (self._line_component):GetComponentInfo()
-        end
-      end
+      return
     end
+    self._line_component = self._campaign:GetComponent(ECampaignN26ComponentID.ECAMPAIGN_N26_LINE_MISSION)
+    self._line_info = self._line_component:GetComponentInfo()
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN26HardLevel:OnShow(uiParams)
   self._rootAni = self:GetUIComponent("Animation", "rootAni")
   self._paintingAni = self:GetUIComponent("Animation", "paintingAni")
-  ;
-  ((self._paintingAni).gameObject):SetActive(false)
+  self._paintingAni.gameObject:SetActive(false)
   self:InitWidget()
   self:InitCommonTopButton()
   self:InitLevelCfg()
   local spine, bgm = self:GetSpineAndBgm()
   if bgm then
-    (AudioHelperController.PlayBGM)(bgm, AudioConstValue.BGMCrossFadeTime)
+    AudioHelperController.PlayBGM(bgm, AudioConstValue.BGMCrossFadeTime)
   end
-  self._levelCpt = (self._campaign):GetComponent(ECampaignN26ComponentID.ECAMPAIGN_N26_DIFFICULT_MISSION)
-  self._levelCptInfo = (self._levelCpt):GetComponentInfo()
+  self._levelCpt = self._campaign:GetComponent(ECampaignN26ComponentID.ECAMPAIGN_N26_DIFFICULT_MISSION)
+  self._levelCptInfo = self._levelCpt:GetComponentInfo()
   self:RefreshCurrentIndex()
   self._atlas = self:GetAsset("UIN26Hard.spriteatlas", LoadType.SpriteAtlas)
   self._time = self:GetUIComponent("UILocalizationText", "RemainTime")
@@ -77,165 +58,162 @@ UIN26HardLevel.OnShow = function(self, uiParams)
   self:SetLevelBtns()
   self:_RefreshPoint()
   self._isShow = true
-  ;
-  ((self._bg2loader).gameObject):SetActive(not self._showLevel1)
-  ;
-  ((self._bg1loader).gameObject):SetActive(self._showLevel1)
-  ;
-  ((self._bg2PatternLoader).gameObject):SetActive(not self._showLevel1)
-  ;
-  ((self._bg1PatternLoader).gameObject):SetActive(self._showLevel1)
+  self._bg2loader.gameObject:SetActive(not self._showLevel1)
+  self._bg1loader.gameObject:SetActive(self._showLevel1)
+  self._bg2PatternLoader.gameObject:SetActive(not self._showLevel1)
+  self._bg1PatternLoader.gameObject:SetActive(self._showLevel1)
   local fromBattle = false
   local isWin = false
   if uiParams[1] then
-    fromBattle = (uiParams[1])[1]
-    isWin = (uiParams[1])[2]
+    fromBattle = uiParams[1][1]
+    isWin = uiParams[1][2]
   end
   if self._showLevel1 then
-    (self._rootAni):Play("uieff_N26_HardLevel_in")
+    self._rootAni:Play("uieff_N26_HardLevel_in")
   else
-    ;
-    (self._rootAni):Play("uieff_N26_HardLevel_start")
+    self._rootAni:Play("uieff_N26_HardLevel_start")
   end
   if fromBattle and isWin then
     self:FadeInAnim()
+  else
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.InitLevelCfg = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN26HardLevel:InitLevelCfg()
   UIN26HardLevel.LevelCfg = {
-[1] = {normal = "n26_kng_icon01", click = "n26_kng_btn03", close = "n26_kng_mask03"}
-, 
-[2] = {normal = "n26_kng_icon02", click = "n26_kng_btn03", close = "n26_kng_mask03"}
-, 
-[3] = {normal = "n26_kng_icon03", click = "n26_kng_btn03", close = "n26_kng_mask03"}
-, 
-[4] = {normal = "n26_kng_icon04", click = "n26_kng_btn03", close = "n26_kng_mask03"}
-, 
-[5] = {normal = "n26_kng_icon05", click = "n26_kng_btn03", close = "n26_kng_mask03"}
-, 
-[6] = {normal = "n26_kng_icon06", click = "n26_kng_btn03", close = "n26_kng_mask03"}
-, 
-[7] = {normal = "n26_kng_icon07", click = "n26_kng_btn04", close = "n26_kng_mask04"}
-, 
-[8] = {normal = "n26_kng_icon08", click = "n26_kng_btn04", close = "n26_kng_mask04"}
-, 
-[9] = {normal = "n26_kng_icon09", click = "n26_kng_btn04", close = "n26_kng_mask04"}
-, 
-[10] = {normal = "n26_kng_icon10", click = "n26_kng_btn04", close = "n26_kng_mask04"}
-, 
-[11] = {normal = "n26_kng_icon11", click = "n26_kng_btn04", close = "n26_kng_mask04"}
-, 
-[12] = {normal = "n26_kng_icon12", click = "n26_kng_btn04", close = "n26_kng_mask04"}
-, 
-bghard = {Bg = "n25_kng_bg2", Bg2 = "n26_kng_bg01", Bg1 = "n26_kng_bg01"}
-, 
-bgevil = {Bg = "n25_kng_bg1", Bg2 = "n26_kng_bg02", Bg1 = "n26_kng_bg02"}
-}
+    [1] = {
+      normal = "n26_kng_icon01",
+      click = "n26_kng_btn03",
+      close = "n26_kng_mask03"
+    },
+    [2] = {
+      normal = "n26_kng_icon02",
+      click = "n26_kng_btn03",
+      close = "n26_kng_mask03"
+    },
+    [3] = {
+      normal = "n26_kng_icon03",
+      click = "n26_kng_btn03",
+      close = "n26_kng_mask03"
+    },
+    [4] = {
+      normal = "n26_kng_icon04",
+      click = "n26_kng_btn03",
+      close = "n26_kng_mask03"
+    },
+    [5] = {
+      normal = "n26_kng_icon05",
+      click = "n26_kng_btn03",
+      close = "n26_kng_mask03"
+    },
+    [6] = {
+      normal = "n26_kng_icon06",
+      click = "n26_kng_btn03",
+      close = "n26_kng_mask03"
+    },
+    [7] = {
+      normal = "n26_kng_icon07",
+      click = "n26_kng_btn04",
+      close = "n26_kng_mask04"
+    },
+    [8] = {
+      normal = "n26_kng_icon08",
+      click = "n26_kng_btn04",
+      close = "n26_kng_mask04"
+    },
+    [9] = {
+      normal = "n26_kng_icon09",
+      click = "n26_kng_btn04",
+      close = "n26_kng_mask04"
+    },
+    [10] = {
+      normal = "n26_kng_icon10",
+      click = "n26_kng_btn04",
+      close = "n26_kng_mask04"
+    },
+    [11] = {
+      normal = "n26_kng_icon11",
+      click = "n26_kng_btn04",
+      close = "n26_kng_mask04"
+    },
+    [12] = {
+      normal = "n26_kng_icon12",
+      click = "n26_kng_btn04",
+      close = "n26_kng_mask04"
+    },
+    bghard = {
+      Bg = "n25_kng_bg2",
+      Bg2 = "n26_kng_bg01",
+      Bg1 = "n26_kng_bg01"
+    },
+    bgevil = {
+      Bg = "n25_kng_bg1",
+      Bg2 = "n26_kng_bg02",
+      Bg1 = "n26_kng_bg02"
+    }
+  }
   return self.LevelCfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.InitCommonTopButton = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  self.topButtonWidget = (self.topbuttons):SpawnObject("UICommonTopButton")
-  ;
-  (self.topButtonWidget):SetData(function()
-    -- function num : 0_3_0 , upvalues : _ENV, self
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN26MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-, nil, function()
-    -- function num : 0_3_1 , upvalues : self, _ENV
+function UIN26HardLevel:InitCommonTopButton()
+  self.topButtonWidget = self.topbuttons:SpawnObject("UICommonTopButton")
+  self.topButtonWidget:SetData(function()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN26MainController, UIStateType.UIMain, nil, self._campaign._id)
+  end, nil, function()
     self:SwitchState(UIStateType.UIMain)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.RefreshTime = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local endTime = (self._levelCptInfo).m_close_time
+function UIN26HardLevel:RefreshTime()
+  local endTime = self._levelCptInfo.m_close_time
   local svrTimeModule = self:GetModule(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
   local remainTime = endTime - curTime
-  remainTime = (math.max)(remainTime, 0)
+  remainTime = math.max(remainTime, 0)
   local timeStr = UIN26Line:GetFormatTimerStr(remainTime, "FEFCFC")
   if self._timeString ~= timeStr then
-    (self._time):SetText(timeStr)
+    self._time:SetText(timeStr)
     self._timeString = timeStr
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.OnUpdate = function(self)
-  -- function num : 0_5
+function UIN26HardLevel:OnUpdate()
   self:RefreshTime()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.FadeInAnim = function(self)
-  -- function num : 0_6
+function UIN26HardLevel:FadeInAnim()
   if self._curIndex == 7 then
     self:UnlockEvilAnimation()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnN26ActivityMainRedStatusRefresh)
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN26HardLevel:OnHide()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnN26ActivityMainRedStatusRefresh)
   UIN26HardLevel.LevelCfg = nil
   self._isShow = false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.InitWidget = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN26HardLevel:InitWidget()
   self.topbuttons = self:GetUIComponent("UISelectObjectPath", "topbuttons")
   self._levels = {}
   for i = 1, 6 do
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._levels)[i] = UIN26HardLevelItem:New(self:GetUIComponent("UIView", "Level" .. i))
+    self._levels[i] = UIN26HardLevelItem:New(self:GetUIComponent("UIView", "Level" .. i))
   end
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "BlurHelper")
   self._shotRect = self:GetUIComponent("RectTransform", "BlurHelper")
-  self._width = ((self._shotRect).rect).width
-  self._height = ((self._shotRect).rect).height
-  -- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).width = self._width
-  -- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).height = self._height
-  -- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._shot).blurTimes = 0
+  self._width = self._shotRect.rect.width
+  self._height = self._shotRect.rect.height
+  self._shot.width = self._width
+  self._shot.height = self._height
+  self._shot.blurTimes = 0
   self._scale = 1.2
   self._level1pos1 = self:GetUIComponent("RectTransform", "level1pos1")
   self._level1pos2 = self:GetUIComponent("RectTransform", "level1pos2")
   self._level2pos1 = self:GetUIComponent("RectTransform", "level2pos1")
   self._level2pos2 = self:GetUIComponent("RectTransform", "level2pos2")
   self._level2OpenTip = self:GetGameObject("lv2OpenTip")
-  ;
-  (self._level2OpenTip):SetActive(false)
+  self._level2OpenTip:SetActive(false)
   self._tipAnim = self:GetUIComponent("Animation", "lv2OpenTip")
   self._bg2loader = self:GetUIComponent("RawImageLoader", "Bg2")
   self._bg1loader = self:GetUIComponent("RawImageLoader", "Bg1")
@@ -243,262 +221,179 @@ UIN26HardLevel.InitWidget = function(self)
   self._bg1PatternLoader = self:GetUIComponent("RawImageLoader", "Bg1Pattern")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel._EnterLevel = function(self, idx)
-  -- function num : 0_9 , upvalues : _ENV
-  if idx < 1 and idx > 6 then
-    return 
+function UIN26HardLevel:_EnterLevel(idx)
+  if idx < 1 and 6 < idx then
+    return
   end
-  local levelIndex = nil
+  local levelIndex
   if self._showLevel1 then
     levelIndex = idx
   else
     levelIndex = idx + 6
   end
-  local missionID = ((self._levelCfgs)[levelIndex]).CampaignMissionId
-  if self._curIndex < levelIndex then
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_clear_mission_to_unlock"))
-    return 
+  local missionID = self._levelCfgs[levelIndex].CampaignMissionId
+  if levelIndex > self._curIndex then
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_clear_mission_to_unlock"))
+    return
   end
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._shot).OwnerCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera(self:GetName())
-  ;
-  (self._shot):CleanRenderTexture()
-  local missionCfg = (Cfg.cfg_campaign_mission)[missionID]
+  self._shot.OwnerCamera = GameGlobal.UIStateManager():GetControllerCamera(self:GetName())
+  self._shot:CleanRenderTexture()
+  local missionCfg = Cfg.cfg_campaign_mission[missionID]
   local autoFightShow = self:_CheckSerialAutoFightShow(missionCfg.Type, missionID)
-  self:ShowDialog("UIActivityLevelStageNew", missionID, ((self._levelCptInfo).m_pass_mission_info)[missionID], self._levelCpt, autoFightShow, nil)
-  local localProcess = (self._campaign):GetLocalProcess()
+  self:ShowDialog("UIActivityLevelStageNew", missionID, self._levelCptInfo.m_pass_mission_info[missionID], self._levelCpt, autoFightShow, nil)
+  local localProcess = self._campaign:GetLocalProcess()
   localProcess:HardLineMissionChallenge(missionID)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel._CheckSerialAutoFightShow = function(self, stageType, stageId)
-  -- function num : 0_10 , upvalues : _ENV
+function UIN26HardLevel:_CheckSerialAutoFightShow(stageType, stageId)
   local autoFightShow = false
   if stageType == DiscoveryStageType.Plot then
     autoFightShow = false
   else
-    local missionCfg = (Cfg.cfg_campaign_mission)[stageId]
+    local missionCfg = Cfg.cfg_campaign_mission[stageId]
     if missionCfg then
       local enableParam = missionCfg.EnableSerialAutoFight
       if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_DISABLE then
         autoFightShow = false
-      else
-        if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE then
-          autoFightShow = true
-        else
-          if enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
-            autoFightShow = true
-          end
-        end
+      elseif enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_ENABLE then
+        autoFightShow = true
+      elseif enableParam == CampainMissionCanSerialAutoFightType.E_CAMPAIGN_MISSION_CAN_SERIAL_AUTO_FIGHT_NEED_UNLOCK then
+        autoFightShow = true
       end
     end
   end
-  do
-    return autoFightShow
-  end
+  return autoFightShow
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.RefreshCurrentIndex = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cptID = (self._levelCpt):GetComponentCfgId()
-  local allMissions = (Cfg.cfg_component_line_mission)({ComponentID = cptID})
-  ;
-  (table.sort)(allMissions, function(a, b)
-    -- function num : 0_11_0
-    do return a.SortId < b.SortId end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+function UIN26HardLevel:RefreshCurrentIndex()
+  local cptID = self._levelCpt:GetComponentCfgId()
+  local allMissions = Cfg.cfg_component_line_mission({ComponentID = cptID})
+  table.sort(allMissions, function(a, b)
+    return a.SortId < b.SortId
+  end)
   if #allMissions ~= 12 then
-    (Log.exception)("N26高难关的数量必须是12")
+    Log.exception("N26高难关的数量必须是12")
   end
-  self._passInfo = (self._levelCptInfo).m_pass_mission_info
+  self._passInfo = self._levelCptInfo.m_pass_mission_info
   self._levelCfgs = allMissions
   local cur = 1
-  for i,cfg in ipairs(allMissions) do
-    if cfg.CampaignMissionId == (self._levelCptInfo).m_cur_mission then
+  for i, cfg in ipairs(allMissions) do
+    if cfg.CampaignMissionId == self._levelCptInfo.m_cur_mission then
       cur = i + 1
     end
   end
   self._curIndex = cur
   self._isLevel2Lock = self._curIndex <= 6
   self._showLevel1 = self._isLevel2Lock
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel._RefreshPoint = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIN26HardLevel:_RefreshPoint()
   for i = 1, 6 do
     local idx = i
     if not self._showLevel1 then
       idx = idx + 6
     end
-    ;
-    ((self._levels)[i]):SetData(idx, (self._levelCfgs)[idx], (self._passInfo)[((self._levelCfgs)[idx]).CampaignMissionId], self._curIndex, self._atlas)
+    self._levels[i]:SetData(idx, self._levelCfgs[idx], self._passInfo[self._levelCfgs[idx].CampaignMissionId], self._curIndex, self._atlas)
   end
   local bgs = {}
   if self._showLevel1 then
-    bgs = (UIN26HardLevel.LevelCfg).bghard
+    bgs = UIN26HardLevel.LevelCfg.bghard
   else
-    bgs = (UIN26HardLevel.LevelCfg).bgevil
+    bgs = UIN26HardLevel.LevelCfg.bgevil
   end
   self:DoLevelBtnSwitch(self._showLevel1)
-  ;
-  (self._bg2loader):LoadImage(bgs.Bg2)
-  ;
-  (self._bg1loader):LoadImage(bgs.Bg1)
+  self._bg2loader:LoadImage(bgs.Bg2)
+  self._bg1loader:LoadImage(bgs.Bg1)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.Press1OnClick = function(self)
-  -- function num : 0_13
+function UIN26HardLevel:Press1OnClick()
   self:_EnterLevel(1)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.Press2OnClick = function(self)
-  -- function num : 0_14
+function UIN26HardLevel:Press2OnClick()
   self:_EnterLevel(2)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.Press3OnClick = function(self)
-  -- function num : 0_15
+function UIN26HardLevel:Press3OnClick()
   self:_EnterLevel(3)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.Press4OnClick = function(self)
-  -- function num : 0_16
+function UIN26HardLevel:Press4OnClick()
   self:_EnterLevel(4)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.Press5OnClick = function(self)
-  -- function num : 0_17
+function UIN26HardLevel:Press5OnClick()
   self:_EnterLevel(5)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.Press6OnClick = function(self)
-  -- function num : 0_18
+function UIN26HardLevel:Press6OnClick()
   self:_EnterLevel(6)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.SetLevelBtns = function(self)
-  -- function num : 0_19
+function UIN26HardLevel:SetLevelBtns()
   self.level1Btn = self:_SpawnObject("level1", "UIN26HardLevelBtn")
   self.level2Btn = self:_SpawnObject("level2", "UIN26HardLevelBtn")
-  ;
-  (self.level1Btn):SetData(self._atlas, 1, function()
-    -- function num : 0_19_0 , upvalues : self
+  self.level1Btn:SetData(self._atlas, 1, function()
     self:ClickLevelBtn1()
-  end
-)
-  ;
-  (self.level2Btn):SetData(self._atlas, 2, function()
-    -- function num : 0_19_1 , upvalues : self
+  end)
+  self.level2Btn:SetData(self._atlas, 2, function()
     self:ClickLevelBtn2()
-  end
-)
+  end)
   self:RefreshLevelBtnSelect(true)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.RefreshLevelBtnSelect = function(self, localPosition)
-  -- function num : 0_20
+function UIN26HardLevel:RefreshLevelBtnSelect(localPosition)
   if localPosition then
     if self._showLevel1 then
-      (self.level1Btn):SetSelect(true, (self._level1pos2).localPosition)
-      ;
-      (self.level2Btn):SetSelect(false, (self._level2pos1).localPosition)
+      self.level1Btn:SetSelect(true, self._level1pos2.localPosition)
+      self.level2Btn:SetSelect(false, self._level2pos1.localPosition)
     else
-      ;
-      (self.level1Btn):SetSelect(false, (self._level1pos2).localPosition)
-      ;
-      (self.level2Btn):SetSelect(true, (self._level2pos1).localPosition)
+      self.level1Btn:SetSelect(false, self._level1pos2.localPosition)
+      self.level2Btn:SetSelect(true, self._level2pos1.localPosition)
     end
+  elseif self._showLevel1 then
+    self.level1Btn:SetSelect(true)
+    self.level2Btn:SetSelect(false)
   else
-    if self._showLevel1 then
-      (self.level1Btn):SetSelect(true)
-      ;
-      (self.level2Btn):SetSelect(false)
-    else
-      ;
-      (self.level1Btn):SetSelect(false)
-      ;
-      (self.level2Btn):SetSelect(true)
-    end
+    self.level1Btn:SetSelect(false)
+    self.level2Btn:SetSelect(true)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.ClickLevelBtn1 = function(self)
-  -- function num : 0_21
+function UIN26HardLevel:ClickLevelBtn1()
   if self._showLevel1 then
-    return 
+    return
   end
   self._showLevel1 = true
   self:DoLevelBtnSwitch(true)
   self:RefreshLevelBtnSelect(false)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.ClickLevelBtn2 = function(self)
-  -- function num : 0_22 , upvalues : _ENV
+function UIN26HardLevel:ClickLevelBtn2()
   if self._isLevel2Lock then
-    local cfgv = (Cfg.cfg_campaign_mission)[((self._levelCfgs)[6]).CampaignMissionId]
-    local lvName = (StringTable.Get)(cfgv.Name)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_will_open_after_clearance", lvName))
-    return 
+    local cfgv = Cfg.cfg_campaign_mission[self._levelCfgs[6].CampaignMissionId]
+    local lvName = StringTable.Get(cfgv.Name)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_will_open_after_clearance", lvName))
+    return
   end
-  do
-    if not self._showLevel1 then
-      return 
-    end
-    self._showLevel1 = false
-    self:DoLevelBtnSwitch(false)
-    self:RefreshLevelBtnSelect(false)
-  end
-end
-
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.ClickLevelBtn2_TestBlock = function(self)
-  -- function num : 0_23
   if not self._showLevel1 then
-    return 
+    return
   end
   self._showLevel1 = false
   self:DoLevelBtnSwitch(false)
   self:RefreshLevelBtnSelect(false)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
+function UIN26HardLevel:ClickLevelBtn2_TestBlock()
+  if not self._showLevel1 then
+    return
+  end
+  self._showLevel1 = false
+  self:DoLevelBtnSwitch(false)
+  self:RefreshLevelBtnSelect(false)
+end
 
-UIN26HardLevel.UnlockLevel = function(self, curIndex)
-  -- function num : 0_24
+function UIN26HardLevel:UnlockLevel(curIndex)
   self._curIndex = curIndex
   self._isLevel2Lock = self._curIndex <= 6
   self._showLevel1 = self._isLevel2Lock
@@ -507,167 +402,109 @@ UIN26HardLevel.UnlockLevel = function(self, curIndex)
   end
   self:RefreshLevelBtnSelect(false)
   self:_RefreshPoint()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.UnlockEvilAnimation = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function UIN26HardLevel:UnlockEvilAnimation()
   local lockName = self:GetName() .. ".EvilOpenAnim"
   self:StartTask(function(TT)
-    -- function num : 0_25_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
     YIELD(TT, 1000)
-    ;
-    ((self._bg2loader).gameObject):SetActive(true)
-    ;
-    ((self._bg1loader).gameObject):SetActive(true)
-    ;
-    ((self._bg2PatternLoader).gameObject):SetActive(true)
-    ;
-    ((self._bg1PatternLoader).gameObject):SetActive(true)
-    ;
-    (self._rootAni):Play("uieff_N26_HardLevel_loop")
-    ;
-    ((self._paintingAni).gameObject):SetActive(true)
-    ;
-    (self._level2OpenTip):SetActive(true)
+    self._bg2loader.gameObject:SetActive(true)
+    self._bg1loader.gameObject:SetActive(true)
+    self._bg2PatternLoader.gameObject:SetActive(true)
+    self._bg1PatternLoader.gameObject:SetActive(true)
+    self._rootAni:Play("uieff_N26_HardLevel_loop")
+    self._paintingAni.gameObject:SetActive(true)
+    self._level2OpenTip:SetActive(true)
     YIELD(TT, 1833)
-    ;
-    ((self._bg2loader).gameObject):SetActive(not self._showLevel1)
-    ;
-    ((self._bg1loader).gameObject):SetActive(self._showLevel1)
-    ;
-    ((self._bg2PatternLoader).gameObject):SetActive(not self._showLevel1)
-    ;
-    ((self._bg1PatternLoader).gameObject):SetActive(self._showLevel1)
-    ;
-    ((self._paintingAni).gameObject):SetActive(false)
-    ;
-    (self._level2OpenTip):SetActive(false)
+    self._bg2loader.gameObject:SetActive(not self._showLevel1)
+    self._bg1loader.gameObject:SetActive(self._showLevel1)
+    self._bg2PatternLoader.gameObject:SetActive(not self._showLevel1)
+    self._bg1PatternLoader.gameObject:SetActive(self._showLevel1)
+    self._paintingAni.gameObject:SetActive(false)
+    self._level2OpenTip:SetActive(false)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.CloseTipBtnOnClick = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function UIN26HardLevel:CloseTipBtnOnClick()
   local lockName = self:GetName() .. ".EvilCloseAnim"
   self:StartTask(function(TT)
-    -- function num : 0_26_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
-    ;
-    (self._level2OpenTip):SetActive(false)
+    self._level2OpenTip:SetActive(false)
     YIELD(TT, 350)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel._SpawnObject = function(self, widgetName, className)
-  -- function num : 0_27
+function UIN26HardLevel:_SpawnObject(widgetName, className)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.Level2OnClick = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function UIN26HardLevel:Level2OnClick()
   if self._isLevel2Lock then
-    local cfgv = (Cfg.cfg_campaign_mission)[((self._levelCfgs)[6]).CampaignMissionId]
-    local lvName = (StringTable.Get)(cfgv.Name)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_activity_common_will_open_after_clearance", lvName))
-    return 
+    local cfgv = Cfg.cfg_campaign_mission[self._levelCfgs[6].CampaignMissionId]
+    local lvName = StringTable.Get(cfgv.Name)
+    ToastManager.ShowToast(StringTable.Get("str_activity_common_will_open_after_clearance", lvName))
+    return
   end
-  do
-    if not self._showLevel1 then
-      return 
-    end
-    self._showLevel1 = false
-    self:DoLevelBtnSwitch(false)
-    if self._isShow then
-      self:_RefreshPoint()
-    end
+  if not self._showLevel1 then
+    return
+  end
+  self._showLevel1 = false
+  self:DoLevelBtnSwitch(false)
+  if self._isShow then
+    self:_RefreshPoint()
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel._RefreshPoint = function(self)
-  -- function num : 0_29
+function UIN26HardLevel:_RefreshPoint()
   for i = 1, 6 do
     local idx = i
     if not self._showLevel1 then
       idx = idx + 6
     end
-    ;
-    ((self._levels)[i]):SetData(idx, (self._levelCfgs)[idx], (self._passInfo)[((self._levelCfgs)[idx]).CampaignMissionId], self._curIndex, self._atlas)
+    self._levels[i]:SetData(idx, self._levelCfgs[idx], self._passInfo[self._levelCfgs[idx].CampaignMissionId], self._curIndex, self._atlas)
   end
-  ;
-  (self.level2Btn):SetLockVisible(self._isLevel2Lock)
+  self.level2Btn:SetLockVisible(self._isLevel2Lock)
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.DoLevelBtnSwitch = function(self, blevel1)
-  -- function num : 0_30 , upvalues : _ENV
+function UIN26HardLevel:DoLevelBtnSwitch(blevel1)
   self:StartTask(function(TT)
-    -- function num : 0_30_0 , upvalues : self, _ENV, blevel1
     self:Lock(self:GetName())
-    ;
-    ((self._bg2loader).gameObject):SetActive(true)
-    ;
-    ((self._bg1loader).gameObject):SetActive(true)
-    ;
-    ((self._bg2PatternLoader).gameObject):SetActive(true)
-    ;
-    ((self._bg1PatternLoader).gameObject):SetActive(true)
+    self._bg2loader.gameObject:SetActive(true)
+    self._bg1loader.gameObject:SetActive(true)
+    self._bg2PatternLoader.gameObject:SetActive(true)
+    self._bg1PatternLoader.gameObject:SetActive(true)
     if self._showLevel1 then
-      (self._rootAni):Play("uieff_N26_HardLevel_out")
+      self._rootAni:Play("uieff_N26_HardLevel_out")
       YIELD(TT, 300)
       self:_RefreshPoint()
       YIELD(TT, 533)
     else
-      ;
-      (self._rootAni):Play("uieff_N26_HardLevel_loop")
-      ;
-      ((self._paintingAni).gameObject):SetActive(true)
+      self._rootAni:Play("uieff_N26_HardLevel_loop")
+      self._paintingAni.gameObject:SetActive(true)
       YIELD(TT, 800)
       self:_RefreshPoint()
       YIELD(TT, 1033)
-      ;
-      ((self._paintingAni).gameObject):SetActive(false)
+      self._paintingAni.gameObject:SetActive(false)
     end
-    ;
-    ((self._bg2loader).gameObject):SetActive(not blevel1)
-    ;
-    ((self._bg1loader).gameObject):SetActive(blevel1)
-    ;
-    ((self._bg2PatternLoader).gameObject):SetActive(not blevel1)
-    ;
-    ((self._bg1PatternLoader).gameObject):SetActive(blevel1)
+    self._bg2loader.gameObject:SetActive(not blevel1)
+    self._bg1loader.gameObject:SetActive(blevel1)
+    self._bg2PatternLoader.gameObject:SetActive(not blevel1)
+    self._bg1PatternLoader.gameObject:SetActive(blevel1)
     self:UnLock(self:GetName())
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN26HardLevel.GetSpineAndBgm = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  local cfg = (Cfg.cfg_n25_const)[1]
+function UIN26HardLevel:GetSpineAndBgm()
+  local cfg = Cfg.cfg_n25_const[1]
   if self._line_info and cfg then
-    local missionModule = (GameGlobal.GetModule)(MissionModule)
-    local passInfo = (self._line_info).m_pass_mission_info
-    for _,info in pairs(passInfo) do
+    local missionModule = GameGlobal.GetModule(MissionModule)
+    local passInfo = self._line_info.m_pass_mission_info
+    for _, info in pairs(passInfo) do
       local storyId = missionModule:GetStoryByStageIdStoryType(info.mission_id, StoryTriggerType.Node)
       if storyId == cfg.StoryID then
         return cfg.Spine2, cfg.Bgm2
@@ -675,9 +512,5 @@ UIN26HardLevel.GetSpineAndBgm = function(self)
     end
     return cfg.Spine1, cfg.Bgm1
   end
-  do
-    return nil, nil
-  end
+  return nil, nil
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/data_san_round_decrease_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("DataSanRoundDecreaseResult", Object)
 DataSanRoundDecreaseResult = DataSanRoundDecreaseResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-DataSanRoundDecreaseResult.Constructor = function(self, curVal, oldVal, modifyValue, debtVal, modifyTimes)
-  -- function num : 0_0
+function DataSanRoundDecreaseResult:Constructor(curVal, oldVal, modifyValue, debtVal, modifyTimes)
   self._curVal = curVal
   self._oldVal = oldVal
   self._modifyVal = modifyValue
@@ -16,39 +9,22 @@ DataSanRoundDecreaseResult.Constructor = function(self, curVal, oldVal, modifyVa
   self._modifyTimes = modifyTimes
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSanRoundDecreaseResult.GetCurVal = function(self)
-  -- function num : 0_1
+function DataSanRoundDecreaseResult:GetCurVal()
   return self._curVal
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSanRoundDecreaseResult.GetOldVal = function(self)
-  -- function num : 0_2
+function DataSanRoundDecreaseResult:GetOldVal()
   return self._oldVal
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSanRoundDecreaseResult.GetModifyVal = function(self)
-  -- function num : 0_3
+function DataSanRoundDecreaseResult:GetModifyVal()
   return self._modifyVal
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSanRoundDecreaseResult.GetDebtVal = function(self)
-  -- function num : 0_4
+function DataSanRoundDecreaseResult:GetDebtVal()
   return self._debtVal
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-DataSanRoundDecreaseResult.GetModifyTimes = function(self)
-  -- function num : 0_5
+function DataSanRoundDecreaseResult:GetModifyTimes()
   return self._modifyTimes
 end
-
-

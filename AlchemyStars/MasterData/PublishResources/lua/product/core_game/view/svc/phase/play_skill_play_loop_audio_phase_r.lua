@@ -1,32 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_play_loop_audio_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillPlayLoopAudioPhase", PlaySkillPhaseBase)
 PlaySkillPlayLoopAudioPhase = PlaySkillPlayLoopAudioPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillPlayLoopAudioPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
-  if ((GameGlobal.GetModule)(SkillPerfModule)):IsBeginPerf() then
-    return 
+function PlaySkillPlayLoopAudioPhase:PlayFlight(TT, casterEntity, phaseParam)
+  if GameGlobal.GetModule(SkillPerfModule):IsBeginPerf() then
+    return
   end
   local audioID = phaseParam:GetAudioID()
   local isPlay = phaseParam:IsPlayLoopAudio()
   if isPlay == true then
-    local playingID = (AudioHelperController.PlayInnerGameSfx)(audioID, true)
-    ;
-    (self:SkillService()):SetLoopAudioPlayingID(playingID)
+    local playingID = AudioHelperController.PlayInnerGameSfx(audioID, true)
+    self:SkillService():SetLoopAudioPlayingID(playingID)
   else
-    do
-      local loopAudioPlayingID = (self:SkillService()):GetLoopAudioPlayingID()
-      if loopAudioPlayingID ~= nil then
-        (AudioHelperController.StopInnerGameSfx)(loopAudioPlayingID, audioID)
-      end
+    local loopAudioPlayingID = self:SkillService():GetLoopAudioPlayingID()
+    if loopAudioPlayingID ~= nil then
+      AudioHelperController.StopInnerGameSfx(loopAudioPlayingID, audioID)
     end
   end
 end
-
-

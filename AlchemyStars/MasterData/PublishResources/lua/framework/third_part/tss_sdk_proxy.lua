@@ -1,219 +1,148 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/third_part/tss_sdk_proxy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TSSSDKProxy", Singleton)
 TSSSDKProxy = TSSSDKProxy
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TSSSDKProxy.Init = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function TSSSDKProxy:Init()
   if IsUnityEditor() then
-    return 
+    return
   end
-  if (GetPlatformOS() == ClientRuntimeOS.CRO_PC or not (SDKProxy:GetInstance()):IsInlandSDK() or GetPlatformOS() ~= ClientRuntimeOS.CRO_PC) and (SDKProxy:GetInstance()):IsInternationalSDK() then
+  if GetPlatformOS() ~= ClientRuntimeOS.CRO_PC and SDKProxy:GetInstance():IsInlandSDK() then
+  elseif GetPlatformOS() ~= ClientRuntimeOS.CRO_PC and SDKProxy:GetInstance():IsInternationalSDK() then
     local tss_appid = 0
-    local gv = (HelperProxy:GetInstance()):GetGameVersion()
+    local gv = HelperProxy:GetInstance():GetGameVersion()
     if gv == GameVersionType.INTL then
       tss_appid = tonumber(EngineGameHelper.GCloudGameID)
+    elseif gv == GameVersionType.USA then
+      tss_appid = 2749
     else
-      if gv == GameVersionType.USA then
-        tss_appid = 2749
-      else
-        tss_appid = 2757
-      end
+      tss_appid = 2757
     end
-    ;
-    (((GCloud.AnoSDK).AnoSDK).Init)(tss_appid)
-    ;
-    (Log.debug)("After tonumber(EngineGameHelper.GCloudGameID) id : ", tss_appid)
-    ;
-    (SDKProxy:GetInstance()):InitInternationalTssServerInfo()
+    GCloud.AnoSDK.AnoSDK.Init(tss_appid)
+    Log.debug("After tonumber(EngineGameHelper.GCloudGameID) id : ", tss_appid)
+    SDKProxy:GetInstance():InitInternationalTssServerInfo()
+  elseif GetPlatformOS() == ClientRuntimeOS.CRO_PC then
+    local client_init_info = AceSdk.ClientInitInfo:New()
+    client_init_info.base_dat_path = nil
+    client_init_info.current_process_role_id = -1
+    client_init_info.first_process_pid = EngineGameHelper.GetCurrentProcessId()
+    local ret, client_init_info, ace_client = AceSdk.AceClient.init(client_init_info, nil, nil)
+    self.ace_client = ace_client
+    if ret ~= AceSdk.AntiCheatExpertResult.ACE_OK then
+      Log.error("AceSdk.AceClient.init failed ret =  ", ret)
+    end
+  end
+end
+
+function TSSSDKProxy:LogOn(PstID)
+  if IsUnityEditor() then
+    return
+  end
+  if GetPlatformOS() ~= ClientRuntimeOS.CRO_PC then
+    local channel = self:GetStandardLoginChannel():ToInt()
+    GCloud.AnoSDK.AnoSDK.SetUserInfo(channel, GameGlobal.GameLogic():GetOpenId())
+    Log.debug("open_id : ", GameGlobal.GameLogic():GetOpenId())
+    Log.debug("LoginChannel():", self:GetStandardLoginChannel())
+  elseif self.ace_client ~= nil then
+    local ace_account_info = AceSdk.AceAccountInfo:New()
+    local id = AceSdk.AceAccountId:New()
+    id.account_ = GameGlobal.GameLogic():GetOpenId()
+    id.account_type_ = AceSdk.AceAccountType.ACEACCOUNT_TYPE_COMMON_ID:ToInt()
+    ace_account_info.account_id_ = id
+    ace_account_info.plat_id_ = AceSdk.AceAccountPlatId.ACEPLAT_ID_PC_CLIENT:ToInt()
+    ace_account_info.game_id_ = 280177486
+    ace_account_info.world_id_ = 0
+    ace_account_info.channel_id_ = 0
+    ace_account_info.role_id_ = PstID
+    local ret = self.ace_client:log_on(ace_account_info)
+    if ret ~= AceSdk.AntiCheatExpertResult.ACE_OK then
+      Log.error("AceSdk.AceClient.LogOn failed ret =  ", ret)
+    end
   else
-    do
-      if GetPlatformOS() == ClientRuntimeOS.CRO_PC then
-        local client_init_info = (AceSdk.ClientInitInfo):New()
-        client_init_info.base_dat_path = nil
-        client_init_info.current_process_role_id = -1
-        client_init_info.first_process_pid = (EngineGameHelper.GetCurrentProcessId)()
-        local ret, client_init_info, ace_client = ((AceSdk.AceClient).init)(client_init_info, nil, nil)
-        self.ace_client = ace_client
-        if ret ~= (AceSdk.AntiCheatExpertResult).ACE_OK then
-          (Log.error)("AceSdk.AceClient.init failed ret =  ", ret)
-        end
-      end
-    end
+    Log.error("TSSSDKProxy:LogOn AceSdk.AceClient is invaild")
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
+function TSSSDKProxy:LogOff()
+  if GetPlatformOS() == ClientRuntimeOS.CRO_PC and self.ace_client ~= nil then
+    self.ace_client:log_off()
+  end
+end
 
-TSSSDKProxy.LogOn = function(self, PstID)
-  -- function num : 0_1 , upvalues : _ENV
+function TSSSDKProxy:Tick()
+  if GetPlatformOS() == ClientRuntimeOS.CRO_PC and self.ace_client ~= nil then
+    self.ace_client:tick()
+  end
+end
+
+function TSSSDKProxy:OnPause()
   if IsUnityEditor() then
-    return 
+    return
   end
   if GetPlatformOS() ~= ClientRuntimeOS.CRO_PC then
-    local channel = (self:GetStandardLoginChannel()):ToInt()
-    ;
-    (((GCloud.AnoSDK).AnoSDK).SetUserInfo)(channel, ((GameGlobal.GameLogic)()):GetOpenId())
-    ;
-    (Log.debug)("open_id : ", ((GameGlobal.GameLogic)()):GetOpenId())
-    ;
-    (Log.debug)("LoginChannel():", self:GetStandardLoginChannel())
-  else
-    do
-      if self.ace_client ~= nil then
-        local ace_account_info = (AceSdk.AceAccountInfo):New()
-        local id = (AceSdk.AceAccountId):New()
-        id.account_ = ((GameGlobal.GameLogic)()):GetOpenId()
-        id.account_type_ = ((AceSdk.AceAccountType).ACEACCOUNT_TYPE_COMMON_ID):ToInt()
-        ace_account_info.account_id_ = id
-        ace_account_info.plat_id_ = ((AceSdk.AceAccountPlatId).ACEPLAT_ID_PC_CLIENT):ToInt()
-        ace_account_info.game_id_ = 280177486
-        ace_account_info.world_id_ = 0
-        ace_account_info.channel_id_ = 0
-        ace_account_info.role_id_ = PstID
-        local ret = (self.ace_client):log_on(ace_account_info)
-        if ret ~= (AceSdk.AntiCheatExpertResult).ACE_OK then
-          (Log.error)("AceSdk.AceClient.LogOn failed ret =  ", ret)
-        end
-      else
-        do
-          ;
-          (Log.error)("TSSSDKProxy:LogOn AceSdk.AceClient is invaild")
-        end
-      end
-    end
+    GCloud.AnoSDK.AnoSDK.OnPause()
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TSSSDKProxy.LogOff = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  if GetPlatformOS() == ClientRuntimeOS.CRO_PC and self.ace_client ~= nil then
-    (self.ace_client):log_off()
-  end
-end
-
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TSSSDKProxy.Tick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  if GetPlatformOS() == ClientRuntimeOS.CRO_PC and self.ace_client ~= nil then
-    (self.ace_client):tick()
-  end
-end
-
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-TSSSDKProxy.OnPause = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function TSSSDKProxy:OnResume()
   if IsUnityEditor() then
-    return 
+    return
   end
   if GetPlatformOS() ~= ClientRuntimeOS.CRO_PC then
-    (((GCloud.AnoSDK).AnoSDK).OnPause)()
+    GCloud.AnoSDK.AnoSDK.OnResume()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-TSSSDKProxy.OnResume = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if IsUnityEditor() then
-    return 
-  end
-  if GetPlatformOS() ~= ClientRuntimeOS.CRO_PC then
-    (((GCloud.AnoSDK).AnoSDK).OnResume)()
-  end
-end
-
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-TSSSDKProxy.OnQuit = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function TSSSDKProxy:OnQuit()
   if GetPlatformOS() == ClientRuntimeOS.CRO_PC and self.ace_client ~= nil then
-    (self.ace_client):exit_process()
+    self.ace_client:exit_process()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-TSSSDKProxy.GetTssReportDataString = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function TSSSDKProxy:GetTssReportDataString()
   if IsUnityEditor() then
-    return 
+    return
   end
   if GetPlatformOS() == ClientRuntimeOS.CRO_PC and self.ace_client ~= nil then
-    local opt = (self.ace_client):get_optional_interface()
+    local opt = self.ace_client:get_optional_interface()
     local antibot = opt:get_tss_antibot()
     local data = antibot:GetReportData()
     if APPVER1170 then
-      return (StringHelper.ToHexStringNew)(data)
+      return StringHelper.ToHexStringNew(data)
     else
-      return (StringHelper.ToHexString)(data)
+      return StringHelper.ToHexString(data)
     end
+  elseif SDKProxy:GetInstance():IsInternationalSDK() then
+    return EngineGameHelper.GetTssReportDataString()
   else
-    do
-      if (SDKProxy:GetInstance()):IsInternationalSDK() then
-        return (EngineGameHelper.GetTssReportDataString)()
-      else
-        return ""
-      end
-    end
+    return ""
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-TSSSDKProxy.OnRecvData = function(self, nsg)
-  -- function num : 0_8 , upvalues : _ENV
+function TSSSDKProxy:OnRecvData(nsg)
   if GetPlatformOS() == ClientRuntimeOS.CRO_PC and self.ace_client ~= nil then
-    local opt = (self.ace_client):get_optional_interface()
+    local opt = self.ace_client:get_optional_interface()
     local antibot = opt:get_tss_antibot()
     antibot:OnRecvAntiData(msg)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-TSSSDKProxy.GetStandardLoginChannel = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local mobileClientLoginChannel = (((GameGlobal.GameLogic)()).ClientInfo).m_login_source
-  ;
-  (Log.debug)("mobileClientLoginChannel : ", mobileClientLoginChannel)
+function TSSSDKProxy:GetStandardLoginChannel()
+  local mobileClientLoginChannel = GameGlobal.GameLogic().ClientInfo.m_login_source
+  Log.debug("mobileClientLoginChannel : ", mobileClientLoginChannel)
   if mobileClientLoginChannel == MobileClientLoginChannel.MCLC_WX then
-    return ((GCloud.AnoSDK).AnoSDKEntryType).EntryIdMM
+    return GCloud.AnoSDK.AnoSDKEntryType.EntryIdMM
+  elseif mobileClientLoginChannel == MobileClientLoginChannel.MCLC_QQ then
+    return GCloud.AnoSDK.AnoSDKEntryType.EntryIdQQ
+  elseif mobileClientLoginChannel == MobileClientLoginChannel.MCLC_FACEBOOK then
+    return GCloud.AnoSDK.AnoSDKEntryType.EntryIdFacebook
+  elseif mobileClientLoginChannel == MobileClientLoginChannel.MCLC_TWITTER then
+    return GCloud.AnoSDK.AnoSDKEntryType.EntryIdTwitter
+  elseif mobileClientLoginChannel == MobileClientLoginChannel.MCLC_GOOGLE_PLAY then
+    return GCloud.AnoSDK.AnoSDKEntryType.EntryIdGoogleplay
+  elseif mobileClientLoginChannel == MobileClientLoginChannel.MCLC_GARENA then
+    return GCloud.AnoSDK.AnoSDKEntryType.EntryIdGarena
+  elseif mobileClientLoginChannel == MobileClientLoginChannel.MCLC_APPLE then
+    return GCloud.AnoSDK.AnoSDKEntryType.EntryIdApple
   else
-    if mobileClientLoginChannel == MobileClientLoginChannel.MCLC_QQ then
-      return ((GCloud.AnoSDK).AnoSDKEntryType).EntryIdQQ
-    else
-      if mobileClientLoginChannel == MobileClientLoginChannel.MCLC_FACEBOOK then
-        return ((GCloud.AnoSDK).AnoSDKEntryType).EntryIdFacebook
-      else
-        if mobileClientLoginChannel == MobileClientLoginChannel.MCLC_TWITTER then
-          return ((GCloud.AnoSDK).AnoSDKEntryType).EntryIdTwitter
-        else
-          if mobileClientLoginChannel == MobileClientLoginChannel.MCLC_GOOGLE_PLAY then
-            return ((GCloud.AnoSDK).AnoSDKEntryType).EntryIdGoogleplay
-          else
-            if mobileClientLoginChannel == MobileClientLoginChannel.MCLC_GARENA then
-              return ((GCloud.AnoSDK).AnoSDKEntryType).EntryIdGarena
-            else
-              if mobileClientLoginChannel == MobileClientLoginChannel.MCLC_APPLE then
-                return ((GCloud.AnoSDK).AnoSDKEntryType).EntryIdApple
-              else
-                return ((GCloud.AnoSDK).AnoSDKEntryType).EntryIdOthers
-              end
-            end
-          end
-        end
-      end
-    end
+    return GCloud.AnoSDK.AnoSDKEntryType.EntryIdOthers
   end
 end
-
-

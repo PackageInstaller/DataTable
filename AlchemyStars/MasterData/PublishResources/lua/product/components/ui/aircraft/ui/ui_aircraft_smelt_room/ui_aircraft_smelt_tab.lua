@@ -1,75 +1,41 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_smelt_room/ui_aircraft_smelt_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftSmeltTab", UICustomWidget)
 UIAircraftSmeltTab = UIAircraftSmeltTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftSmeltTab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftSmeltTab:OnShow(uiParams)
   self:InitWidget()
   self._atlas = self:GetAsset("UIAircraftSmeltRoom.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltTab.InitWidget = function(self)
-  -- function num : 0_1
+function UIAircraftSmeltTab:InitWidget()
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self.icon = self:GetUIComponent("Image", "icon")
   self.select = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltTab.SetData = function(self, cfg, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAircraftSmeltTab:SetData(cfg, onClick)
   self._id = cfg.ID
-  self._normalSprite = (self._atlas):GetSprite(cfg.Icon)
-  self._selectSprite = (self._atlas):GetSprite(cfg.SelectIcon)
-  ;
-  (self.name):SetText((StringTable.Get)(cfg.Name))
+  self._normalSprite = self._atlas:GetSprite(cfg.Icon)
+  self._selectSprite = self._atlas:GetSprite(cfg.SelectIcon)
+  self.name:SetText(StringTable.Get(cfg.Name))
   self._onClick = onClick
   self:Cancel()
   self._uiType = cfg.UIType
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltTab.Select = function(self)
-  -- function num : 0_3
-  (self.select):SetActive(true)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = self._selectSprite
+function UIAircraftSmeltTab:Select()
+  self.select:SetActive(true)
+  self.icon.sprite = self._selectSprite
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltTab.Cancel = function(self)
-  -- function num : 0_4
-  (self.select):SetActive(false)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = self._normalSprite
+function UIAircraftSmeltTab:Cancel()
+  self.select:SetActive(false)
+  self.icon.sprite = self._normalSprite
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltTab.UIType = function(self)
-  -- function num : 0_5
+function UIAircraftSmeltTab:UIType()
   return self._uiType
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSmeltTab.ItemOnClick = function(self)
-  -- function num : 0_6
-  (self._onClick)(self._id)
+function UIAircraftSmeltTab:ItemOnClick()
+  self._onClick(self._id)
 end
-
-

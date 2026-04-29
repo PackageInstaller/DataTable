@@ -1,42 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_defence_by_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeDefenceByDamage", BuffLogicBase)
 BuffLogicChangeDefenceByDamage = BuffLogicChangeDefenceByDamage
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDefenceByDamage.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeDefenceByDamage:Constructor(buffInstance, logicParam)
   self._factor = logicParam.factor or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefenceByDamage.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicChangeDefenceByDamage:DoLogic(notify)
   local damage = notify:GetDamageValue()
-  local maxHP = ((self._entity):Attributes()):CalcMaxHp()
+  local maxHP = self._entity:Attributes():CalcMaxHp()
   local rate = damage / maxHP
   local val = rate * self._factor
-  ;
-  (self._buffLogicService):ChangeBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, val)
+  self._buffLogicService:ChangeBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage, val)
 end
 
 _class("BuffLogicChangeDefenceByDamageUndo", BuffLogicBase)
 BuffLogicChangeDefenceByDamageUndo = BuffLogicChangeDefenceByDamageUndo
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeDefenceByDamageUndo.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicChangeDefenceByDamageUndo:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeDefenceByDamageUndo.DoLogic = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  (self._buffLogicService):RemoveBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
+function BuffLogicChangeDefenceByDamageUndo:DoLogic()
+  self._buffLogicService:RemoveBaseDefence(self._entity, self:GetBuffSeq(), ModifyBaseDefenceType.DefencePercentage)
 end
-
-

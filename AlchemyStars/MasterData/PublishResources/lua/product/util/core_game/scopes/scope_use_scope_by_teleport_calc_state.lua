@@ -1,31 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_use_scope_by_teleport_calc_state.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_UseScopeByTeleportCalcState", SkillScopeCalculator_Base)
 SkillScopeCalculator_UseScopeByTeleportCalcState = SkillScopeCalculator_UseScopeByTeleportCalcState
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_UseScopeByTeleportCalcState.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
-  local resultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function SkillScopeCalculator_UseScopeByTeleportCalcState:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+  local resultContainer = casterEntity:SkillContext():GetResultContainer()
   local teleportResult = resultContainer:GetEffectResultByArray(SkillEffectType.Teleport)
   if not teleportResult then
-    (Log.warn)(self._className, "施法者没有执行过瞬移")
+    Log.warn(self._className, "施法者没有执行过瞬移")
     return SkillScopeResult:New(SkillScopeType.UseScopeByTeleportCalcState, casterEntity, {}, {})
   end
   if not teleportResult:GetPosNew() then
-    (Log.warn)(self._className, "瞬移无效-无落点")
+    Log.warn(self._className, "瞬移无效-无落点")
     return SkillScopeResult:New(SkillScopeType.UseScopeByTeleportCalcState, casterEntity, {}, {})
   end
   local posCalcState = teleportResult:GetTeleportPosCalcState()
   if not posCalcState then
-    (Log.warn)(self._className, "瞬移结果 没有计算阶段")
+    Log.warn(self._className, "瞬移结果 没有计算阶段")
     return SkillScopeResult:New(SkillScopeType.UseScopeByTeleportCalcState, casterEntity, {}, {})
   end
-  local calc = SkillScopeCalculator:New((self._hub)._gridFilter)
+  local calc = SkillScopeCalculator:New(self._hub._gridFilter)
   local attackRange = {}
   local wholeArea = {}
   local posNew = teleportResult:GetPosNew()
@@ -40,12 +33,12 @@ SkillScopeCalculator_UseScopeByTeleportCalcState.CalcRange = function(self, scop
         local subScopeParam = scope.scopeParam
         local subScopeCenterPosIndex = scope.centerPosIndex
         local transCenterPos = centerPos
-        -- DECOMPILER ERROR at PC91: Unhandled construct in 'MakeBoolean' P1
-
-        if subScopeCenterPosIndex and subScopeCenterPosIndex == 0 then
-          transCenterPos = centerPos
-        else
-          transCenterPos = centerPos[subScopeCenterPosIndex]
+        if subScopeCenterPosIndex then
+          if subScopeCenterPosIndex == 0 then
+            transCenterPos = centerPos
+          else
+            transCenterPos = centerPos[subScopeCenterPosIndex]
+          end
         end
         local result = calc:ComputeScopeRange(subScopeType, subScopeParam, transCenterPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
         attackRange = result:GetAttackRange()
@@ -53,33 +46,27 @@ SkillScopeCalculator_UseScopeByTeleportCalcState.CalcRange = function(self, scop
       end
     end
   else
-    do
-      local curScopeParam = scopeParam.default
-      if curScopeParam then
-        local scope = curScopeParam
-        local subScopeType = scope.scopeType
-        if subScopeType then
-          local subScopeParam = scope.scopeParam
-          local subScopeCenterPosIndex = scope.centerPosIndex
-          local transCenterPos = centerPos
-          -- DECOMPILER ERROR at PC125: Unhandled construct in 'MakeBoolean' P1
-
-          if subScopeCenterPosIndex and subScopeCenterPosIndex == 0 then
+    local curScopeParam = scopeParam.default
+    if curScopeParam then
+      local scope = curScopeParam
+      local subScopeType = scope.scopeType
+      if subScopeType then
+        local subScopeParam = scope.scopeParam
+        local subScopeCenterPosIndex = scope.centerPosIndex
+        local transCenterPos = centerPos
+        if subScopeCenterPosIndex then
+          if subScopeCenterPosIndex == 0 then
             transCenterPos = centerPos
           else
             transCenterPos = centerPos[subScopeCenterPosIndex]
           end
-          local result = calc:ComputeScopeRange(subScopeType, subScopeParam, transCenterPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-          attackRange = result:GetAttackRange()
-          wholeArea = result:GetWholeGridRange()
         end
-      end
-      do
-        local result = SkillScopeResult:New(SkillScopeType.UseScopeByTeleportCalcState, casterPos, attackRange, wholeArea)
-        return result
+        local result = calc:ComputeScopeRange(subScopeType, subScopeParam, transCenterPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
+        attackRange = result:GetAttackRange()
+        wholeArea = result:GetWholeGridRange()
       end
     end
   end
+  local result = SkillScopeResult:New(SkillScopeType.UseScopeByTeleportCalcState, casterPos, attackRange, wholeArea)
+  return result
 end
-
-

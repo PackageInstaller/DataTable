@@ -1,17 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_range_attackt_animation_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
-local SkillPhaseParam_RangeAttack_TrajectoryType = {Line = 1, Parabola = 2, Laser = 3}
+local SkillPhaseParam_RangeAttack_TrajectoryType = {
+  Line = 1,
+  Parabola = 2,
+  Laser = 3
+}
 _enum("SkillPhaseParam_RangeAttack_TrajectoryType", SkillPhaseParam_RangeAttack_TrajectoryType)
 _class("SkillPhaseRangeAttackAnimationParam", SkillPhaseParamBase)
 SkillPhaseRangeAttackAnimationParam = SkillPhaseRangeAttackAnimationParam
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillPhaseRangeAttackAnimationParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseRangeAttackAnimationParam:Constructor(t)
   self._castEffectID = t.castEffectID
   self._castAnimation = t.castAnimationName
   self._hitDelayTime = t.hitDelayTime
@@ -28,159 +25,99 @@ SkillPhaseRangeAttackAnimationParam.Constructor = function(self, t)
   self._audioID = t.audioID or 0
   self._audioWaitTime = t.audioWaitTime or 0
   self._playBySuperEntity = t.playBySuperEntity == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseRangeAttackAnimationParam:GetCacheTable()
   local listID = {}
   if type(self._castEffectID) == "table" then
-    for k,v in ipairs(self._castEffectID) do
+    for k, v in ipairs(self._castEffectID) do
       self:AddEffectIDToListID(listID, v)
     end
   else
-    do
-      self:AddEffectIDToListID(listID, self._castEffectID)
-      self:AddEffectIDToListID(listID, self._trajectoryEffectID)
-      self:AddEffectIDToListID(listID, self._targetEffectID)
-      self:AddEffectIDToListID(listID, self._hitEffectID)
-      return self:GetCacheTableFromListID(listID)
-    end
+    self:AddEffectIDToListID(listID, self._castEffectID)
   end
+  self:AddEffectIDToListID(listID, self._trajectoryEffectID)
+  self:AddEffectIDToListID(listID, self._targetEffectID)
+  self:AddEffectIDToListID(listID, self._hitEffectID)
+  return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetSoundCacheTable = function(self)
-  -- function num : 0_2
+function SkillPhaseRangeAttackAnimationParam:GetSoundCacheTable()
   if not self._audioID or self._audioID <= 0 then
-    return 
+    return
   end
-  return {self._audioID}
+  return {
+    self._audioID
+  }
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetPhaseType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPhaseRangeAttackAnimationParam:GetPhaseType()
   return SkillViewPhaseType.RangeAttackAnimation
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetCastEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseRangeAttackAnimationParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetCastAnimation = function(self)
-  -- function num : 0_5
+function SkillPhaseRangeAttackAnimationParam:GetCastAnimation()
   return self._castAnimation
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetHitEffectID = function(self)
-  -- function num : 0_6
+function SkillPhaseRangeAttackAnimationParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetHitAnimation = function(self)
-  -- function num : 0_7
+function SkillPhaseRangeAttackAnimationParam:GetHitAnimation()
   return self._hitAnimationName
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetHitDelayTime = function(self)
-  -- function num : 0_8
+function SkillPhaseRangeAttackAnimationParam:GetHitDelayTime()
   return self._hitDelayTime
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetFinishDelayTime = function(self)
-  -- function num : 0_9
+function SkillPhaseRangeAttackAnimationParam:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetTrajectoryType = function(self)
-  -- function num : 0_10
+function SkillPhaseRangeAttackAnimationParam:GetTrajectoryType()
   return self._trajectoryType
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetTrajectoryEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseRangeAttackAnimationParam:GetTrajectoryEffectID()
   return self._trajectoryEffectID
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetTrajectoryEffectOffset = function(self)
-  -- function num : 0_12
+function SkillPhaseRangeAttackAnimationParam:GetTrajectoryEffectOffset()
   return self._trajectoryEffectOffset
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetTrajectoryTime = function(self)
-  -- function num : 0_13
+function SkillPhaseRangeAttackAnimationParam:GetTrajectoryTime()
   return self._trajectoryTime
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetHpDelay = function(self)
-  -- function num : 0_14
+function SkillPhaseRangeAttackAnimationParam:GetHpDelay()
   return self._hpDelay
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetTargetEffectID = function(self)
-  -- function num : 0_15
+function SkillPhaseRangeAttackAnimationParam:GetTargetEffectID()
   return self._targetEffectID
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.IsClearBodyNow = function(self)
-  -- function num : 0_16
+function SkillPhaseRangeAttackAnimationParam:IsClearBodyNow()
   if self._clearBodyNow and self._clearBodyNow > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetAudioID = function(self)
-  -- function num : 0_17
+function SkillPhaseRangeAttackAnimationParam:GetAudioID()
   return self._audioID
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.GetAudioWaitTime = function(self)
-  -- function num : 0_18
+function SkillPhaseRangeAttackAnimationParam:GetAudioWaitTime()
   return self._audioWaitTime
 end
 
--- DECOMPILER ERROR at PC76: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseRangeAttackAnimationParam.IsPlayOnSuperEntity = function(self)
-  -- function num : 0_19
+function SkillPhaseRangeAttackAnimationParam:IsPlayOnSuperEntity()
   return self._playBySuperEntity
 end
-
-

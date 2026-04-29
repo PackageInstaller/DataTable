@@ -1,67 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state_navigate.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_actor_state")
 _class("HomelandActorStateNavigate", HomelandActorState)
 HomelandActorStateNavigate = HomelandActorStateNavigate
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandActorStateNavigate.Constructor = function(self)
-  -- function num : 0_0
+function HomelandActorStateNavigate:Constructor()
   self._destinationRadius = 0.02
   self._moveHold = false
   self._movement = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateNavigate.GetType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandActorStateNavigate:GetType()
   return HomelandActorStateType.Navigate
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateNavigate.Enter = function(self, pos, holdMove)
-  -- function num : 0_2
+function HomelandActorStateNavigate:Enter(pos, holdMove)
   self._moveHold = holdMove
-  local forward = pos - (self._mcc):Position()
+  local forward = pos - self._mcc:Position()
   local distance = forward:Magnitude()
   if distance <= self._destinationRadius then
-    return 
+    return
   end
-  ;
-  (self._mcc):SetForward(forward)
-  ;
-  ((self._mcc)._navMeshAgent):SetDestination(pos)
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._mcc)._navMeshAgent).isStopped = false
-  ;
-  (self._mcc):SetAnimatorBool("Run", true)
+  self._mcc:SetForward(forward)
+  self._mcc._navMeshAgent:SetDestination(pos)
+  self._mcc._navMeshAgent.isStopped = false
+  self._mcc:SetAnimatorBool("Run", true)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateNavigate.Exit = function(self)
-  -- function num : 0_3
-  (self._mcc):SetAnimatorBool("Run", false)
+function HomelandActorStateNavigate:Exit()
+  self._mcc:SetAnimatorBool("Run", false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateNavigate.Update = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._mcc):UpdateFollowCamPos()
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R1 in 'UnsetPending'
-
-  if ((self._mcc)._navMeshAgent).remainingDistance <= self._destinationRadius then
-    ((self._mcc)._navMeshAgent).isStopped = true
-    ;
-    (self._fsm):SwitchState(HomelandActorStateType.Idle)
+function HomelandActorStateNavigate:Update()
+  self._mcc:UpdateFollowCamPos()
+  if self._mcc._navMeshAgent.remainingDistance <= self._destinationRadius then
+    self._mcc._navMeshAgent.isStopped = true
+    self._fsm:SwitchState(HomelandActorStateType.Idle)
   end
   if not self._movement then
     self._moveHold = false
@@ -69,14 +41,9 @@ HomelandActorStateNavigate.Update = function(self)
   self._movement = nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateNavigate.HandleEventMove = function(self, movement, moveState, deltaTimeMS)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandActorStateNavigate:HandleEventMove(movement, moveState, deltaTimeMS)
   self._movement = movement
   if not self._moveHold then
-    ((HomelandActorStateNavigate.super).HandleEventMove)(self, movement, moveState, deltaTimeMS)
+    HomelandActorStateNavigate.super.HandleEventMove(self, movement, moveState, deltaTimeMS)
   end
 end
-
-

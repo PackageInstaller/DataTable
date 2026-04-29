@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scope_filters/scope_filter_monster.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_filter_base")
 _class("SkillScopeFilter_MonsterOccupied", SkillScopeFilter_Base)
 SkillScopeFilter_MonsterOccupied = SkillScopeFilter_MonsterOccupied
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeFilter_MonsterOccupied.DoModifyRange = function(self, scopeResult, filterParam, passParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeFilter_MonsterOccupied:DoModifyRange(scopeResult, filterParam, passParam)
   local isFilter = filterParam:GetMonsterOccupiedPosFilter() == 1
   if isFilter then
     local wholeGridRange = scopeResult:GetWholeGridRange()
@@ -20,30 +13,24 @@ SkillScopeFilter_MonsterOccupied.DoModifyRange = function(self, scopeResult, fil
     end
     local retPosList = {}
     if world:MatchType() == MatchType.MT_BlackFist then
-      local enemyTeam = (world:Player()):GetCurrentEnemyTeamEntity()
+      local enemyTeam = world:Player():GetCurrentEnemyTeamEntity()
       local enemyPos = enemyTeam:GetGridPosition()
-      if (table.icontains)(wholeGridRange, enemyPos) then
+      if table.icontains(wholeGridRange, enemyPos) then
         retPosList[#retPosList + 1] = enemyPos
       end
     else
-      for _,gridPos in ipairs(wholeGridRange) do
+      for _, gridPos in ipairs(wholeGridRange) do
         local hasMonster, monsterEntityID = utilScopeService:IsPosHasMonster(gridPos)
         local monsterEntity = world:GetEntityByID(monsterEntityID)
-        if hasMonster and (self._selector):SelectConditionFilter(monsterEntity) then
-          (table.insert)(retPosList, gridPos)
+        if hasMonster and self._selector:SelectConditionFilter(monsterEntity) then
+          table.insert(retPosList, gridPos)
         end
       end
     end
     scopeResult:SetAttackRange(retPosList)
   end
-  -- DECOMPILER ERROR: 6 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilter_MonsterOccupied.TestPieceBlock = function(self, pieceBlockData, world)
-  -- function num : 0_1
+function SkillScopeFilter_MonsterOccupied:TestPieceBlock(pieceBlockData, world)
   return true
 end
-
-

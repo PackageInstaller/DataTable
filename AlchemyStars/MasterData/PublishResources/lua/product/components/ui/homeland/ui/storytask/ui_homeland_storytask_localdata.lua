@@ -1,181 +1,112 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/storytask/ui_homeland_storytask_localdata.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandStoryTaskLocalData", CampaignDataBase)
 UIHomelandStoryTaskLocalData = UIHomelandStoryTaskLocalData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandStoryTaskLocalData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._redDotModule = (GameGlobal.GetModule)(RedDotModule)
-  self._homelandModule = (GameGlobal.GetModule)(HomelandModule)
+function UIHomelandStoryTaskLocalData:Constructor()
+  self._redDotModule = GameGlobal.GetModule(RedDotModule)
+  self._homelandModule = GameGlobal.GetModule(HomelandModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetStoryTaskInfo = function(self)
-  -- function num : 0_1
-  local storyTaskInfos = ((self._homelandModule).m_homeland_info).story_task_info
+function UIHomelandStoryTaskLocalData:GetStoryTaskInfo()
+  local storyTaskInfos = self._homelandModule.m_homeland_info.story_task_info
   return storyTaskInfos
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.CheckHaveNewStoryTask = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHomelandStoryTaskLocalData:CheckHaveNewStoryTask()
   local data = self:GetStoryTaskInfo()
   if not data then
     return false
   end
   local ids = data.id_list
-  for key,value in pairs(ids) do
-    local had = (UIHomelandStoryTaskLocalData.HasPrefsStoryTask)(value)
+  for key, value in pairs(ids) do
+    local had = UIHomelandStoryTaskLocalData.HasPrefsStoryTask(value)
     if not had then
       return true
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.SetNewStoryTask = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandStoryTaskLocalData:SetNewStoryTask()
   local data = self:GetStoryTaskInfo()
   if not data then
     return false
   end
   local ids = data.id_list
-  for key,value in pairs(ids) do
-    local had = (UIHomelandStoryTaskLocalData.HasPrefsStoryTask)(value)
+  for key, value in pairs(ids) do
+    local had = UIHomelandStoryTaskLocalData.HasPrefsStoryTask(value)
     if not had then
-      (UIHomelandStoryTaskLocalData.SetPrefsStoryTask)(value)
+      UIHomelandStoryTaskLocalData.SetPrefsStoryTask(value)
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetHaveNewStoryTaskGroup = function(self)
-  -- function num : 0_4
+function UIHomelandStoryTaskLocalData:GetHaveNewStoryTaskGroup()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetPstId = function()
-  -- function num : 0_5 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UIHomelandStoryTaskLocalData.GetPstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetPrefsKey = function(str)
-  -- function num : 0_6 , upvalues : _ENV
-  local playerPrefsKey = (UIHomelandStoryTaskLocalData.GetPstId)() .. str
+function UIHomelandStoryTaskLocalData.GetPrefsKey(str)
+  local playerPrefsKey = UIHomelandStoryTaskLocalData.GetPstId() .. str
   return playerPrefsKey
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.SetPrefsKey = function(str, num)
-  -- function num : 0_7 , upvalues : _ENV
-  local playerPrefsKey = (UIHomelandStoryTaskLocalData.GetPstId)() .. str
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(playerPrefsKey, num)
+function UIHomelandStoryTaskLocalData.SetPrefsKey(str, num)
+  local playerPrefsKey = UIHomelandStoryTaskLocalData.GetPstId() .. str
+  UnityEngine.PlayerPrefs.SetInt(playerPrefsKey, num)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetPrefsStoryTask = function(taskId)
-  -- function num : 0_8 , upvalues : _ENV
-  local str = (UIHomelandStoryTaskLocalData.GetStoryTaskCheckStr)()
-  return (UIHomelandStoryTaskLocalData.GetPrefsKey)(str .. taskId)
+function UIHomelandStoryTaskLocalData.GetPrefsStoryTask(taskId)
+  local str = UIHomelandStoryTaskLocalData.GetStoryTaskCheckStr()
+  return UIHomelandStoryTaskLocalData.GetPrefsKey(str .. taskId)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.HasPrefsStoryTask = function(taskId)
-  -- function num : 0_9 , upvalues : _ENV
-  return ((UnityEngine.PlayerPrefs).HasKey)((UIHomelandStoryTaskLocalData.GetPrefsStoryTask)(taskId))
+function UIHomelandStoryTaskLocalData.HasPrefsStoryTask(taskId)
+  return UnityEngine.PlayerPrefs.HasKey(UIHomelandStoryTaskLocalData.GetPrefsStoryTask(taskId))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.SetPrefsStoryTask = function(taskId)
-  -- function num : 0_10 , upvalues : _ENV
-  ((UnityEngine.PlayerPrefs).SetInt)((UIHomelandStoryTaskLocalData.GetPrefsStoryTask)(taskId), 1)
+function UIHomelandStoryTaskLocalData.SetPrefsStoryTask(taskId)
+  UnityEngine.PlayerPrefs.SetInt(UIHomelandStoryTaskLocalData.GetPrefsStoryTask(taskId), 1)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetPrefsStoryTaskGroup = function()
-  -- function num : 0_11 , upvalues : _ENV
-  local str = (UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckStr)()
-  return ((UnityEngine.PlayerPrefs).GetInt)((UIHomelandStoryTaskLocalData.GetPrefsKey)(str))
+function UIHomelandStoryTaskLocalData.GetPrefsStoryTaskGroup()
+  local str = UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckStr()
+  return UnityEngine.PlayerPrefs.GetInt(UIHomelandStoryTaskLocalData.GetPrefsKey(str))
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.SetPrefsStoryTaskGroup = function(num)
-  -- function num : 0_12 , upvalues : _ENV
-  local str = (UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckStr)()
-  ;
-  (UIHomelandStoryTaskLocalData.SetPrefsKey)(str, num)
+function UIHomelandStoryTaskLocalData.SetPrefsStoryTaskGroup(num)
+  local str = UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckStr()
+  UIHomelandStoryTaskLocalData.SetPrefsKey(str, num)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetPrefsStoryTaskGroupNew = function()
-  -- function num : 0_13 , upvalues : _ENV
-  local str = (UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckNew)()
-  return ((UnityEngine.PlayerPrefs).GetInt)((UIHomelandStoryTaskLocalData.GetPrefsKey)(str))
+function UIHomelandStoryTaskLocalData.GetPrefsStoryTaskGroupNew()
+  local str = UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckNew()
+  return UnityEngine.PlayerPrefs.GetInt(UIHomelandStoryTaskLocalData.GetPrefsKey(str))
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.HasPrefsStoryTaskGroupNew = function()
-  -- function num : 0_14 , upvalues : _ENV
-  local str = (UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckNew)()
-  return ((UnityEngine.PlayerPrefs).HasKey)((UIHomelandStoryTaskLocalData.GetPrefsKey)(str))
+function UIHomelandStoryTaskLocalData.HasPrefsStoryTaskGroupNew()
+  local str = UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckNew()
+  return UnityEngine.PlayerPrefs.HasKey(UIHomelandStoryTaskLocalData.GetPrefsKey(str))
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.SetPrefsStoryTaskGroupNew = function(num)
-  -- function num : 0_15 , upvalues : _ENV
-  local str = (UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckNew)()
-  ;
-  (UIHomelandStoryTaskLocalData.SetPrefsKey)(str, num)
+function UIHomelandStoryTaskLocalData.SetPrefsStoryTaskGroupNew(num)
+  local str = UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckNew()
+  UIHomelandStoryTaskLocalData.SetPrefsKey(str, num)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetStoryTaskCheckStr = function()
-  -- function num : 0_16
+function UIHomelandStoryTaskLocalData.GetStoryTaskCheckStr()
   return "HomelandStoryTaskCheckStr"
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetStoryTaskCheckNewStr = function()
-  -- function num : 0_17
+function UIHomelandStoryTaskLocalData.GetStoryTaskCheckNewStr()
   return "HomelandStoryTaskCheckNew"
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckStr = function()
-  -- function num : 0_18
+function UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckStr()
   return "HomelandStoryTaskGroupCheckStr"
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckNew = function()
-  -- function num : 0_19
+function UIHomelandStoryTaskLocalData.GetStoryTaskGroupCheckNew()
   return "HomelandStoryTaskGroupCheckNew"
 end
-
-

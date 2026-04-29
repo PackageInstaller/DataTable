@@ -1,6 +1,0 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/typing/typing_cfg_level_test_team_build.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-

@@ -1,85 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_flashknifeandline_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillFlashKnifeAndLinePhase", PlaySkillPhaseBase)
 PlaySkillFlashKnifeAndLinePhase = PlaySkillFlashKnifeAndLinePhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillFlashKnifeAndLinePhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillFlashKnifeAndLinePhase:PlayFlight(TT, casterEntity, phaseParam)
   local param = phaseParam
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  local castPos = (casterEntity:GridLocation()).Position
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local castPos = casterEntity:GridLocation().Position
   local worldPos = boardServiceRender:GridPos2RenderPos(castPos)
   local scope = skillEffectResultContainer:GetScopeResult()
   local gridRange = scope:GetAttackRange()
   local gridData = skillEffectResultContainer:GetAttackRange()
   self._LineEffect = {}
-  local effectService = (self._world):GetService("Effect")
-  casterEntity:SetAnimatorControllerTriggers({param:GetAnimationName()})
+  local effectService = self._world:GetService("Effect")
+  casterEntity:SetAnimatorControllerTriggers({
+    param:GetAnimationName()
+  })
   local targetList, maxLength = self:_GetFlyTargetPos(gridRange, castPos)
   self._targetList = targetList
   YIELD(TT)
   self:_CreateFlashKnife(targetList, castPos, param)
-  local knifeFylTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._StartKnifeFly, self, casterEntity, castPos, targetList, maxLength, param, castPos)
-  local flashLineTaskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._StartFlashLine, self, param, castPos)
+  local knifeFylTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._StartKnifeFly, self, casterEntity, castPos, targetList, maxLength, param, castPos)
+  local flashLineTaskID = GameGlobal.TaskManager():CoreGameStartTask(self._StartFlashLine, self, param, castPos)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._CreateFlashKnife = function(self, targets, worldPos, phaseParam)
-  -- function num : 0_1 , upvalues : _ENV
+function PlaySkillFlashKnifeAndLinePhase:_CreateFlashKnife(targets, worldPos, phaseParam)
   local effectID = phaseParam:GetFlashKnifeEffect()
-  for k,v in pairs(targets) do
+  for k, v in pairs(targets) do
     if v.gridpos ~= nil then
-      local effectEntity = ((self._world):GetService("Effect")):CreateWorldPositionDirectionEffect(effectID, worldPos, v.direction)
+      local effectEntity = self._world:GetService("Effect"):CreateWorldPositionDirectionEffect(effectID, worldPos, v.direction)
       v.entity = effectEntity
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._StartKnifeFly = function(self, TT, castEntity, worldPos, targets, maxLength, phaseParam, castPos)
-  -- function num : 0_2 , upvalues : _ENV
+function PlaySkillFlashKnifeAndLinePhase:_StartKnifeFly(TT, castEntity, worldPos, targets, maxLength, phaseParam, castPos)
   local flyOneGridMs = phaseParam:GetFlyOneGridMs()
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   YIELD(TT)
   local atklist = ArrayList:New()
-  for k,v in pairs(targets) do
+  for k, v in pairs(targets) do
     local effectEntity = v.entity
     if effectEntity ~= nil then
       local gridpos = v.gridpos
-      local go = (effectEntity:View()):GetGameObject()
+      local go = effectEntity:View():GetGameObject()
       local tran = go.transform
       v.tran = go.transform
       local gridWorldpos = boardServiceRender:GridPos2RenderPos(gridpos)
-      local disx = (math.abs)(gridpos.x - castPos.x)
-      local disy = (math.abs)(gridpos.y - castPos.y)
-      local dis = (math.max)(disx, disy)
-      ;
-      (Log.notice)("[skill] PlaySkillService:_StartKnifeFly from ", castPos.x, castPos.y, " to ", gridpos.x, gridpos.y)
+      local disx = math.abs(gridpos.x - castPos.x)
+      local disy = math.abs(gridpos.y - castPos.y)
+      local dis = math.max(disx, disy)
+      Log.notice("[skill] PlaySkillService:_StartKnifeFly from ", castPos.x, castPos.y, " to ", gridpos.x, gridpos.y)
       self:_KnifeMove(go, tran, gridWorldpos, dis, flyOneGridMs)
     end
   end
   self:_CheckFlyAttack(TT, targets, maxLength, boardServiceRender, castEntity, phaseParam, atklist)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._CheckFlyAttack = function(self, TT, targets, maxLength, boardServiceRender, casterEntity, phaseParam, atklist)
-  -- function num : 0_3 , upvalues : _ENV
+function PlaySkillFlashKnifeAndLinePhase:_CheckFlyAttack(TT, targets, maxLength, boardServiceRender, casterEntity, phaseParam, atklist)
   local flyOneGridMs = phaseParam:GetFlyOneGridMs()
   local hitAnimName = phaseParam:GetHitAnimationName()
   local hitEffectID = phaseParam:GetHitEffect()
   local totaltime = self:_GetFlyTime(maxLength, flyOneGridMs)
-  local endtime = (GameGlobal:GetInstance()):GetCurrentTime() + totaltime
-  while (GameGlobal:GetInstance()):GetCurrentTime() < endtime do
-    for k,v in pairs(targets) do
+  local endtime = GameGlobal:GetInstance():GetCurrentTime() + totaltime
+  while endtime > GameGlobal:GetInstance():GetCurrentTime() do
+    for k, v in pairs(targets) do
       local effectEntity = v.entity
       if effectEntity ~= nil then
         local tran = v.tran
@@ -94,40 +79,30 @@ PlaySkillFlashKnifeAndLinePhase._CheckFlyAttack = function(self, TT, targets, ma
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._StartFlashLine = function(self, TT, phaseParam, worldPos)
-  -- function num : 0_4 , upvalues : _ENV
+function PlaySkillFlashKnifeAndLinePhase:_StartFlashLine(TT, phaseParam, worldPos)
   local effectFlashLine = phaseParam:GetFlashLineEffect()
-  for k,v in pairs(self._targetList) do
+  for k, v in pairs(self._targetList) do
     if v.gridpos ~= nil then
-      local effectEntity = ((self._world):GetService("Effect")):CreateWorldPositionEffect(effectFlashLine, worldPos)
+      local effectEntity = self._world:GetService("Effect"):CreateWorldPositionEffect(effectFlashLine, worldPos)
       v.flashLineEntity = effectEntity
     end
   end
   YIELD(TT)
   local drawLineTaskList = {}
-  for k,v in pairs(self._targetList) do
+  for k, v in pairs(self._targetList) do
     if v.gridpos ~= nil then
-      local taskID = ((GameGlobal.TaskManager)()):CoreGameStartTask(self._LineMove, self, v, phaseParam:GetLineFlyOneGridMs(), phaseParam:GetFlashOneGridLinePoint(), phaseParam:GetFlashLineWidth(), phaseParam:GetFlashLineHeight())
-      ;
-      (table.insert)(drawLineTaskList, taskID)
+      local taskID = GameGlobal.TaskManager():CoreGameStartTask(self._LineMove, self, v, phaseParam:GetLineFlyOneGridMs(), phaseParam:GetFlashOneGridLinePoint(), phaseParam:GetFlashLineWidth(), phaseParam:GetFlashLineHeight())
+      table.insert(drawLineTaskList, taskID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._GetFlyTime = function(self, maxLength, flyOneGridMs)
-  -- function num : 0_5
+function PlaySkillFlashKnifeAndLinePhase:_GetFlyTime(maxLength, flyOneGridMs)
   return flyOneGridMs * maxLength
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._GetFlyTargetPos = function(self, chainGrid, castPos)
-  -- function num : 0_6 , upvalues : _ENV
-  local leftup, leftbottom, rightbottom, rightup, up, bottom, right, left = nil, nil, nil, nil, nil, nil, nil, nil
+function PlaySkillFlashKnifeAndLinePhase:_GetFlyTargetPos(chainGrid, castPos)
+  local leftup, leftbottom, rightbottom, rightup, up, bottom, right, left
   local maxLength = 0
   local leftUpList = {}
   local leftBottomList = {}
@@ -137,183 +112,162 @@ PlaySkillFlashKnifeAndLinePhase._GetFlyTargetPos = function(self, chainGrid, cas
   local bottomList = {}
   local rightList = {}
   local leftList = {}
-  for i,pos in pairs(chainGrid) do
+  for i, pos in pairs(chainGrid) do
     local dis = pos - castPos
-    if maxLength < (math.abs)(dis.x) then
-      maxLength = (math.abs)(dis.x)
+    if maxLength < math.abs(dis.x) then
+      maxLength = math.abs(dis.x)
     end
-    if maxLength < (math.abs)(dis.y) then
-      maxLength = (math.abs)(dis.y)
+    if maxLength < math.abs(dis.y) then
+      maxLength = math.abs(dis.y)
     end
-    if dis.x > 0 and dis.y < 0 then
-      (table.insert)(rightBottomList, pos)
+    if 0 < dis.x and 0 > dis.y then
+      table.insert(rightBottomList, pos)
       if rightbottom == nil or rightbottom.x < pos.x then
         rightbottom = pos
       end
-    else
-      if dis.x < 0 and dis.y < 0 then
-        (table.insert)(leftBottomList, pos)
-        if leftbottom == nil or pos.x < leftbottom.x then
-          leftbottom = pos
-        end
-      else
-        if dis.x < 0 and dis.y > 0 then
-          (table.insert)(leftUpList, pos)
-          if leftup == nil or pos.x < leftup.x then
-            leftup = pos
-          end
-        else
-          if dis.x > 0 and dis.y > 0 then
-            (table.insert)(rightUpList, pos)
-            if rightup == nil or rightup.x < pos.x then
-              rightup = pos
-            end
-          else
-            if dis.x > 0 and dis.y == 0 then
-              (table.insert)(rightList, pos)
-              if right == nil or right.x < pos.x then
-                right = pos
-              end
-            else
-              if dis.x < 0 and dis.y == 0 then
-                (table.insert)(leftList, pos)
-                if left == nil or pos.x < left.x then
-                  left = pos
-                end
-              else
-                if dis.x == 0 and dis.y < 0 then
-                  (table.insert)(bottomList, pos)
-                  if bottom == nil or pos.y < bottom.y then
-                    bottom = pos
-                  end
-                else
-                  if dis.x == 0 and dis.y > 0 then
-                    (table.insert)(upList, pos)
-                    if up == nil or up.y < pos.y then
-                      up = pos
-                    end
-                  end
-                end
-              end
-            end
-          end
-        end
+    elseif 0 > dis.x and 0 > dis.y then
+      table.insert(leftBottomList, pos)
+      if leftbottom == nil or leftbottom.x > pos.x then
+        leftbottom = pos
+      end
+    elseif 0 > dis.x and 0 < dis.y then
+      table.insert(leftUpList, pos)
+      if leftup == nil or leftup.x > pos.x then
+        leftup = pos
+      end
+    elseif 0 < dis.x and 0 < dis.y then
+      table.insert(rightUpList, pos)
+      if rightup == nil or rightup.x < pos.x then
+        rightup = pos
+      end
+    elseif 0 < dis.x and dis.y == 0 then
+      table.insert(rightList, pos)
+      if right == nil or right.x < pos.x then
+        right = pos
+      end
+    elseif 0 > dis.x and dis.y == 0 then
+      table.insert(leftList, pos)
+      if left == nil or left.x > pos.x then
+        left = pos
+      end
+    elseif dis.x == 0 and 0 > dis.y then
+      table.insert(bottomList, pos)
+      if bottom == nil or bottom.y > pos.y then
+        bottom = pos
+      end
+    elseif dis.x == 0 and 0 < dis.y then
+      table.insert(upList, pos)
+      if up == nil or up.y < pos.y then
+        up = pos
       end
     end
   end
-  ;
-  (table.sort)(upList, function(pos1, pos2)
-    -- function num : 0_6_0
-    do return pos1.y < pos2.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (table.sort)(bottomList, function(pos1, pos2)
-    -- function num : 0_6_1
-    do return pos2.y < pos1.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (table.sort)(rightList, function(pos1, pos2)
-    -- function num : 0_6_2
-    do return pos1.x < pos2.x end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (table.sort)(leftList, function(pos1, pos2)
-    -- function num : 0_6_3
-    do return pos2.x < pos1.x end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (table.sort)(leftUpList, function(pos1, pos2)
-    -- function num : 0_6_4
-    do return pos1.y < pos2.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (table.sort)(rightUpList, function(pos1, pos2)
-    -- function num : 0_6_5
-    do return pos1.y < pos2.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (table.sort)(leftBottomList, function(pos1, pos2)
-    -- function num : 0_6_6
-    do return pos2.y < pos1.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  ;
-  (table.sort)(rightBottomList, function(pos1, pos2)
-    -- function num : 0_6_7
-    do return pos2.y < pos1.y end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(upList, function(pos1, pos2)
+    return pos1.y < pos2.y
+  end)
+  table.sort(bottomList, function(pos1, pos2)
+    return pos1.y > pos2.y
+  end)
+  table.sort(rightList, function(pos1, pos2)
+    return pos1.x < pos2.x
+  end)
+  table.sort(leftList, function(pos1, pos2)
+    return pos1.x > pos2.x
+  end)
+  table.sort(leftUpList, function(pos1, pos2)
+    return pos1.y < pos2.y
+  end)
+  table.sort(rightUpList, function(pos1, pos2)
+    return pos1.y < pos2.y
+  end)
+  table.sort(leftBottomList, function(pos1, pos2)
+    return pos1.y > pos2.y
+  end)
+  table.sort(rightBottomList, function(pos1, pos2)
+    return pos1.y > pos2.y
+  end)
   local targets = {
-{gridpos = leftup, direction = Vector2(1, -1), gridList = leftUpList, strDirection = "LeftUp"}
-, 
-{gridpos = leftbottom, direction = Vector2(1, 1), gridList = leftBottomList, strDirection = "LeftBottom"}
-, 
-{gridpos = rightbottom, direction = Vector2(-1, 1), gridList = rightBottomList, strDirection = "RightBottom"}
-, 
-{gridpos = rightup, direction = Vector2(-1, -1), gridList = rightUpList, strDirection = "RightUp"}
-, 
-{gridpos = up, direction = Vector2(0, -1), gridList = upList, strDirection = "Up"}
-, 
-{gridpos = bottom, direction = Vector2(0, 1), gridList = bottomList, strDirection = "Bottom"}
-, 
-{gridpos = right, direction = Vector2(-1, 0), gridList = rightList, strDirection = "Right"}
-, 
-{gridpos = left, direction = Vector2(1, 0), gridList = leftList, strDirection = "Left"}
-}
+    {
+      gridpos = leftup,
+      direction = Vector2(1, -1),
+      gridList = leftUpList,
+      strDirection = "LeftUp"
+    },
+    {
+      gridpos = leftbottom,
+      direction = Vector2(1, 1),
+      gridList = leftBottomList,
+      strDirection = "LeftBottom"
+    },
+    {
+      gridpos = rightbottom,
+      direction = Vector2(-1, 1),
+      gridList = rightBottomList,
+      strDirection = "RightBottom"
+    },
+    {
+      gridpos = rightup,
+      direction = Vector2(-1, -1),
+      gridList = rightUpList,
+      strDirection = "RightUp"
+    },
+    {
+      gridpos = up,
+      direction = Vector2(0, -1),
+      gridList = upList,
+      strDirection = "Up"
+    },
+    {
+      gridpos = bottom,
+      direction = Vector2(0, 1),
+      gridList = bottomList,
+      strDirection = "Bottom"
+    },
+    {
+      gridpos = right,
+      direction = Vector2(-1, 0),
+      gridList = rightList,
+      strDirection = "Right"
+    },
+    {
+      gridpos = left,
+      direction = Vector2(1, 0),
+      gridList = leftList,
+      strDirection = "Left"
+    }
+  }
   return targets, maxLength
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._KnifeMove = function(self, go, tran, gridWorldPos, disx, flyOneGridMs)
-  -- function num : 0_7 , upvalues : _ENV
-  ((tran:DOMove(gridWorldPos, disx * flyOneGridMs / 1000)):SetEase(((DG.Tweening).Ease).InOutSine)):OnComplete(function()
-    -- function num : 0_7_0 , upvalues : go
+function PlaySkillFlashKnifeAndLinePhase:_KnifeMove(go, tran, gridWorldPos, disx, flyOneGridMs)
+  tran:DOMove(gridWorldPos, disx * flyOneGridMs / 1000.0):SetEase(DG.Tweening.Ease.InOutSine):OnComplete(function()
     go:SetActive(false)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._LineMove = function(self, TT, v, lineFlyOneGridMs, OneGridPoint, lineWidth, lineHeight)
-  -- function num : 0_8 , upvalues : _ENV
+function PlaySkillFlashKnifeAndLinePhase:_LineMove(TT, v, lineFlyOneGridMs, OneGridPoint, lineWidth, lineHeight)
   if v.flashLineEntity then
-    local go = ((v.flashLineEntity):View()):GetGameObject()
+    local go = v.flashLineEntity:View():GetGameObject()
     local transform = go.transform
-    local gameObject = (GameObjectHelper.FindChild)(transform, "GameObject")
+    local gameObject = GameObjectHelper.FindChild(transform, "GameObject")
     local lineRender = gameObject:GetComponent("LineRenderer")
     lineRender.positionCount = #v.gridList * OneGridPoint
     lineRender.startWidth = lineWidth
     lineRender.endWidth = lineWidth
     local onePointTime = lineFlyOneGridMs / OneGridPoint
     local lineRenderIndex = 0
-    for _,gridPos in ipairs(v.gridList) do
+    for _, gridPos in ipairs(v.gridList) do
       local finish = false
       local pointList = self:_CalcGridLinePoint(v.strDirection, gridPos, OneGridPoint, lineHeight)
       local pointIndex = 1
-      local LastTime = (GameGlobal:GetInstance()):GetCurrentTime()
+      local LastTime = GameGlobal:GetInstance():GetCurrentTime()
       while not finish do
-        if onePointTime <= (GameGlobal:GetInstance()):GetCurrentTime() - LastTime then
+        if onePointTime <= GameGlobal:GetInstance():GetCurrentTime() - LastTime then
           lineRender:SetPosition(lineRenderIndex, pointList[pointIndex])
           lineRenderIndex = lineRenderIndex + 1
           pointIndex = pointIndex + 1
-          LastTime = (GameGlobal:GetInstance()):GetCurrentTime()
-          if #pointList < pointIndex then
+          LastTime = GameGlobal:GetInstance():GetCurrentTime()
+          if pointIndex > #pointList then
             finish = true
           end
         end
@@ -324,23 +278,19 @@ PlaySkillFlashKnifeAndLinePhase._LineMove = function(self, TT, v, lineFlyOneGrid
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._HandlePlayFlyAttack = function(self, TT, casterEntity, flypos, hitAnimName, hitEffectID, atklist)
-  -- function num : 0_9 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillFlashKnifeAndLinePhase:_HandlePlayFlyAttack(TT, casterEntity, flypos, hitAnimName, hitEffectID, atklist)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultsAsPosDic(SkillEffectType.Damage)
-  local boardServiceRender = (self._world):GetService("BoardRender")
-  local playDamageService = (self._world):GetService("PlayDamage")
-  for posIdx,res in pairs(results) do
-    local pos = (Vector2.Index2Pos)(posIdx)
+  local boardServiceRender = self._world:GetService("BoardRender")
+  local playDamageService = self._world:GetService("PlayDamage")
+  for posIdx, res in pairs(results) do
+    local pos = Vector2.Index2Pos(posIdx)
     if pos.x == flypos.x and pos.y == flypos.y and boardServiceRender:IsInPlayerArea(pos) then
       local targetEntityID = res:GetTargetID()
-      local targetEntity = (self._world):GetEntityByID(targetEntityID)
+      local targetEntity = self._world:GetEntityByID(targetEntityID)
       if targetEntity ~= nil then
         local targetDamageInfo = res:GetDamageInfo(1)
-        ;
-        (Log.debug)("[skill] PlaySkillService:_HandlePlayFlyAttack ", targetEntityID, hitAnimName)
+        Log.debug("[skill] PlaySkillService:_HandlePlayFlyAttack ", targetEntityID, hitAnimName)
         local isFinalAttack = skillEffectResultContainer:IsFinalAttack()
         if isFinalAttack == true and self._bBack ~= nil and not self._bBack then
           isFinalAttack = false
@@ -349,95 +299,63 @@ PlaySkillFlashKnifeAndLinePhase._HandlePlayFlyAttack = function(self, TT, caster
           targetEntity:SetAnimatorControllerTriggers({hitAnimName})
           atklist:PushBack(targetEntityID)
         end
-        ;
-        ((self._world):GetService("Effect")):CreateEffect(hitEffectID, targetEntity)
+        self._world:GetService("Effect"):CreateEffect(hitEffectID, targetEntity)
         playDamageService:AsyncUpdateHPAndDisplayDamage(targetEntity, targetDamageInfo)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._GetAngle = function(self, direction)
-  -- function num : 0_10
+function PlaySkillFlashKnifeAndLinePhase:_GetAngle(direction)
   local angle = 0
   if direction == "Right" then
     angle = 270
-  else
-    if direction == "RightUp" then
-      angle = 45
-    else
-      if direction == "Up" then
-        angle = 180
-      else
-        if direction == "LeftUp" then
-          angle = 135
-        else
-          if direction == "Left" then
-            angle = 90
-          else
-            if direction == "LeftBottom" then
-              angle = 225
-            else
-              if direction == "Bottom" then
-                angle = 0
-              else
-                if direction == "RightBottom" then
-                  angle = 315
-                end
-              end
-            end
-          end
-        end
-      end
-    end
+  elseif direction == "RightUp" then
+    angle = 45
+  elseif direction == "Up" then
+    angle = 180
+  elseif direction == "LeftUp" then
+    angle = 135
+  elseif direction == "Left" then
+    angle = 90
+  elseif direction == "LeftBottom" then
+    angle = 225
+  elseif direction == "Bottom" then
+    angle = 0
+  elseif direction == "RightBottom" then
+    angle = 315
   end
   return angle
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PlaySkillFlashKnifeAndLinePhase._CalcGridLinePoint = function(self, direction, gridPos, pointCount, lineHeight)
-  -- function num : 0_11 , upvalues : _ENV
-  local boardServiceRender = (self._world):GetService("BoardRender")
+function PlaySkillFlashKnifeAndLinePhase:_CalcGridLinePoint(direction, gridPos, pointCount, lineHeight)
+  local boardServiceRender = self._world:GetService("BoardRender")
   local angle = self:_GetAngle(direction)
-  local e = ((self._world):GetService("Piece")):FindPieceEntity(gridPos)
+  local e = self._world:GetService("Piece"):FindPieceEntity(gridPos)
   local gridLoc = e:GridLocation()
   local real_pos = boardServiceRender:GridPos2RenderPos(gridPos) + Vector3(0, gridLoc.Height + lineHeight, 0)
   local radiusStep = pointCount / 2 * 0.5
   local pointResult = {}
   for i = 1, pointCount / 2 do
-    local x = (Mathf.Sin)(angle * Mathf.Deg2Rad) * radiusStep * i
-    local y = (Mathf.Cos)(angle * Mathf.Deg2Rad) * radiusStep * i
+    local x = Mathf.Sin(angle * Mathf.Deg2Rad) * radiusStep * i
+    local y = Mathf.Cos(angle * Mathf.Deg2Rad) * radiusStep * i
     local p1 = Vector3(real_pos.x + x, real_pos.y, real_pos.z + y)
-    ;
-    (table.insert)(pointResult, p1)
-    x = (Mathf.Sin)((angle + 180) * Mathf.Deg2Rad) * radiusStep * i
-    y = (Mathf.Cos)((angle + 180) * Mathf.Deg2Rad) * radiusStep * i
+    table.insert(pointResult, p1)
+    x = Mathf.Sin((angle + 180) * Mathf.Deg2Rad) * radiusStep * i
+    y = Mathf.Cos((angle + 180) * Mathf.Deg2Rad) * radiusStep * i
     p1 = Vector3(real_pos.x + x, real_pos.y, real_pos.z + y)
-    ;
-    (table.insert)(pointResult, p1)
+    table.insert(pointResult, p1)
   end
-  ;
-  (table.sort)(pointResult, function(p1, p2)
-    -- function num : 0_11_0 , upvalues : direction
-    if p2.z >= p1.z then
-      do return direction ~= "Bottom" and direction ~= "RightBottom" and direction ~= "LeftBottom" end
-      if p1.z >= p2.z then
-        do return direction ~= "Up" and direction ~= "LeftUp" and direction ~= "RightUp" end
-        if p1.x >= p2.x then
-          do return direction ~= "Right" end
-          if p2.x >= p1.x then
-            do return direction ~= "Left" end
-            -- DECOMPILER ERROR: 9 unprocessed JMP targets
-          end
-        end
-      end
+  table.sort(pointResult, function(p1, p2)
+    if direction == "Bottom" or direction == "RightBottom" or direction == "LeftBottom" then
+      return p1.z > p2.z
+    elseif direction == "Up" or direction == "LeftUp" or direction == "RightUp" then
+      return p1.z < p2.z
+    elseif direction == "Right" then
+      return p1.x < p2.x
+    elseif direction == "Left" then
+      return p1.x > p2.x
     end
-  end
-)
+  end)
   return pointResult
 end
-
-

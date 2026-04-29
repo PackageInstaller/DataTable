@@ -1,68 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_pickup_grid_together.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectParam_PickUpGridTogether", SkillEffectParamBase)
 SkillEffectParam_PickUpGridTogether = SkillEffectParam_PickUpGridTogether
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_PickUpGridTogether.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParam_PickUpGridTogether:Constructor(t)
   self._gridType = t.gridType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_PickUpGridTogether.GetGridType = function(self)
-  -- function num : 0_1
+function SkillEffectParam_PickUpGridTogether:GetGridType()
   return self._gridType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_PickUpGridTogether.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectParam_PickUpGridTogether:GetEffectType()
   return SkillEffectType.PickUpGridTogether
 end
 
 _class("PickUpGridTogetherData", Object)
 PickUpGridTogetherData = PickUpGridTogetherData
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-PickUpGridTogetherData.Constructor = function(self, gridType, gridPos, canConvert)
-  -- function num : 0_3
+function PickUpGridTogetherData:Constructor(gridType, gridPos, canConvert)
   self._gridType = gridType
   self._gridPos = gridPos
   self._canConvert = canConvert
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpGridTogetherData.SetGridPos = function(self, pos)
-  -- function num : 0_4
+function PickUpGridTogetherData:SetGridPos(pos)
   self._gridPos = pos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpGridTogetherData.GetGridType = function(self)
-  -- function num : 0_5
+function PickUpGridTogetherData:GetGridType()
   return self._gridType
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpGridTogetherData.GetGridPos = function(self)
-  -- function num : 0_6
+function PickUpGridTogetherData:GetGridPos()
   return self._gridPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PickUpGridTogetherData.IsCanConvert = function(self)
-  -- function num : 0_7
+function PickUpGridTogetherData:IsCanConvert()
   return self._canConvert
 end
-
-

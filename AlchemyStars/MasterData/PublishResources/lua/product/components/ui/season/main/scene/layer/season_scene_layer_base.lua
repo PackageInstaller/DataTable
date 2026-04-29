@@ -1,58 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/scene/layer/season_scene_layer_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonSceneLayerBase", Object)
 SeasonSceneLayerBase = SeasonSceneLayerBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonSceneLayerBase.Constructor = function(self, sceneRoot)
-  -- function num : 0_0
+function SeasonSceneLayerBase:Constructor(sceneRoot)
   self._sceneRootTransform = sceneRoot.transform
   self._maxMapCount = 12
   self._map = {}
   self._renderers = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBase.Dispose = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (table.clear)(self._renderers)
+function SeasonSceneLayerBase:Dispose()
+  table.clear(self._renderers)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBase.OnAfterInit = function(self)
-  -- function num : 0_2
+function SeasonSceneLayerBase:OnAfterInit()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBase.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_3
+function SeasonSceneLayerBase:UnLock(zoneMask, zoneID2Animation)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBase.ChangeMap = function(self, ids, openID, closeID)
-  -- function num : 0_4
+function SeasonSceneLayerBase:ChangeMap(ids, openID, closeID)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonSceneLayerBase.InsertMeshRender = function(self, zoneid, renderer)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
+function SeasonSceneLayerBase:InsertMeshRender(zoneid, renderer)
   if zoneid and renderer then
-    if not (self._renderers)[zoneid] then
-      (self._renderers)[zoneid] = {}
+    if not self._renderers[zoneid] then
+      self._renderers[zoneid] = {}
     end
-    ;
-    (table.insert)((self._renderers)[zoneid], renderer)
+    table.insert(self._renderers[zoneid], renderer)
   end
 end
-
-

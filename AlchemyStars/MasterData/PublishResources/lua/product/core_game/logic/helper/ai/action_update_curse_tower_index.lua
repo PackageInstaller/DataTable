@@ -1,16 +1,9 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_update_curse_tower_index.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionUpdateCurseTowerIndex", AINewNode)
 ActionUpdateCurseTowerIndex = ActionUpdateCurseTowerIndex
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionUpdateCurseTowerIndex.OnBegin = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local curseTowerCmpt = (self.m_entityOwn):CurseTower()
+function ActionUpdateCurseTowerIndex:OnBegin()
+  local curseTowerCmpt = self.m_entityOwn:CurseTower()
   if not curseTowerCmpt then
     self:PrintLog("user is not curse tower!")
     return AINewNodeStatus.Failure
@@ -18,15 +11,13 @@ ActionUpdateCurseTowerIndex.OnBegin = function(self)
   curseTowerCmpt:SetTowerState(CurseTowerState.Active)
   local myTowerIndex = curseTowerCmpt:GetTowerIndex()
   local nextTowerIndex = myTowerIndex + 1
-  if nextTowerIndex > 4 then
+  if 4 < nextTowerIndex then
     nextTowerIndex = 1
   end
-  local levelRound = ((self._world):BattleStat()):GetLevelTotalRoundCount()
+  local levelRound = self._world:BattleStat():GetLevelTotalRoundCount()
   local nextCurseRound = levelRound + 1
-  local battleFlagsCmpt = (self._world):BattleFlags()
+  local battleFlagsCmpt = self._world:BattleFlags()
   battleFlagsCmpt:SetCurrentCurseTowerIndex(nextTowerIndex)
   battleFlagsCmpt:SetCurrentCurseTowerRound(nextCurseRound)
   self:PrintLog("nextTowerIndex=", nextTowerIndex)
 end
-
-

@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/2900451/cfg_skill_view_590046102.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" Wait,waitTime=600; PlayRoleTeleport,type=3, onlySelf=1; PlayRoleTeleport,type=5, onlySelf=1; PlayRoleTeleport,type=9, onlySelf=1; PlayRoleTeleport,type=6, onlySelf=1; PlayCasterAnimation,animName=movedown; PlayAudio,audioID = 6035,audioType=1; PlayCasterBindEffect,effectID=PARAM.effectidle; PlayCasterBindEffect,effectID=PARAM.effectmove; PlayCasterBindEffect,effectID=PARAM.effectbirth; Wait,waitTime=2500; PlayCasterHUDVisible,visible=1; PlayCasterRefreshBuffView,buffID=30123; PlayCasterRefreshBuffView,buffID=30133; DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=40931,remove=1,label=doAgainBuff; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgainBuff; PlayCasterAddBuff,buffID=40961; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " Wait,waitTime=600; PlayRoleTeleport,type=3, onlySelf=1; PlayRoleTeleport,type=5, onlySelf=1; PlayRoleTeleport,type=9, onlySelf=1; PlayRoleTeleport,type=6, onlySelf=1; PlayCasterAnimation,animName=movedown; PlayAudio,audioID = 6035,audioType=1; PlayCasterBindEffect,effectID=PARAM.effectidle; PlayCasterBindEffect,effectID=PARAM.effectmove; PlayCasterBindEffect,effectID=PARAM.effectbirth; Wait,waitTime=2500; PlayCasterHUDVisible,visible=1; PlayCasterRefreshBuffView,buffID=30123; PlayCasterRefreshBuffView,buffID=30133; DataSelectBuff,buffIndex=1; PlayTargetAddBuff,buffID=40931,remove=1,label=doAgainBuff; DataSelectNextBuff; Jump,condition=CheckBuffIndexValid,goto=doAgainBuff; PlayCasterAddBuff,buffID=40961; "
+    }
+  }
 }
 return config, "ID", key
-

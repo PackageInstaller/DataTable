@@ -1,39 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_redpoint.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossRedPoint", Object)
 UIWorldBossRedPoint = UIWorldBossRedPoint
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossRedPoint.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._worldBossModule = (GameGlobal.GetModule)(WorldBossModule)
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
-  self._roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIWorldBossRedPoint:Constructor()
+  self._worldBossModule = GameGlobal.GetModule(WorldBossModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
+  self._roleModule = GameGlobal.GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRedPoint.MainLobbyHaveRedPoint = function(self)
-  -- function num : 0_1
-  do return not self:_ModuleUnLock() or self:_OpenRecord() <= 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIWorldBossRedPoint:MainLobbyHaveRedPoint()
+  return self:_ModuleUnLock() and self:_OpenRecord() <= 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRedPoint._ModuleUnLock = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  return (self._roleModule):CheckModuleUnlock(GameModuleID.MD_WorldBoss)
+function UIWorldBossRedPoint:_ModuleUnLock()
+  return self._roleModule:CheckModuleUnlock(GameModuleID.MD_WorldBoss)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossRedPoint._OpenRecord = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  return (LocalDB.GetInt)("UIWorldBossControllerOpenRecord" .. (self._loginModule):GetRoleShowID(), 0)
+function UIWorldBossRedPoint:_OpenRecord()
+  return LocalDB.GetInt("UIWorldBossControllerOpenRecord" .. self._loginModule:GetRoleShowID(), 0)
 end
-
-

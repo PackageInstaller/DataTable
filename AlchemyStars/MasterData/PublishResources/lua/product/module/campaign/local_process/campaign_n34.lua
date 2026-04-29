@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/local_process/campaign_n34.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("CCampaignN34", ICampaignComponentLocalProcessBase)
 CCampaignN34 = CCampaignN34
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-CCampaignN34.Constructor = function(self)
-  -- function num : 0_0
+function CCampaignN34:Constructor()
   self._cumulativeLoginComponent = nil
   self._cumulativeLoginCompInfo = nil
   self._power2itemComponent = nil
@@ -22,24 +15,15 @@ CCampaignN34.Constructor = function(self)
   self._campaignObj = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.GetCampaignType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CCampaignN34:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_N34
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.CampaignObjInfo = function(self)
-  -- function num : 0_2
+function CCampaignN34:CampaignObjInfo()
   return self._campaignObj
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.InitComponent = function(self, campaignObj)
-  -- function num : 0_3
+function CCampaignN34:InitComponent(campaignObj)
   self._campaignObj = campaignObj
   self:_GetCumulativeLoginComponent()
   self:_GetPower2ItemComponent()
@@ -48,65 +32,47 @@ CCampaignN34.InitComponent = function(self, campaignObj)
   self:_GetQuestComponent()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34._GetCumulativeLoginComponent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cumulativeLoginComponent = (self._campaignObj):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_CUMULATIVE_LOGIN)
+function CCampaignN34:_GetCumulativeLoginComponent()
+  self._cumulativeLoginComponent = self._campaignObj:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_CUMULATIVE_LOGIN)
   if not self._cumulativeLoginComponent then
-    return 
+    return
   end
-  self._cumulativeLoginComponentInfo = (self._cumulativeLoginComponent):ComponentInfo()
+  self._cumulativeLoginComponentInfo = self._cumulativeLoginComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34._GetPower2ItemComponent = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._power2itemComponent = (self._campaignObj):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_POWER2ITEM)
+function CCampaignN34:_GetPower2ItemComponent()
+  self._power2itemComponent = self._campaignObj:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_POWER2ITEM)
   if not self._power2itemComponent then
-    return 
+    return
   end
-  self._power2itemComponentInfo = (self._power2itemComponent):ComponentInfo()
+  self._power2itemComponentInfo = self._power2itemComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34._GetSurveyComponent = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._surveyComponent = (self._campaignObj):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
+function CCampaignN34:_GetSurveyComponent()
+  self._surveyComponent = self._campaignObj:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_SURVEY)
   if not self._surveyComponent then
-    return 
+    return
   end
-  self._surveyComponentInfo = (self._surveyComponent):ComponentInfo()
+  self._surveyComponentInfo = self._surveyComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34._GetDispatchComponent = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  self._dispatchComponent = (self._campaignObj):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_DISPATCH)
+function CCampaignN34:_GetDispatchComponent()
+  self._dispatchComponent = self._campaignObj:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_DISPATCH)
   if not self._dispatchComponent then
-    return 
+    return
   end
-  self._dispatchComponentInfo = (self._dispatchComponent):ComponentInfo()
+  self._dispatchComponentInfo = self._dispatchComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34._GetQuestComponent = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  self._questComponent = (self._campaignObj):GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
+function CCampaignN34:_GetQuestComponent()
+  self._questComponent = self._campaignObj:GetComponent(ECampaignN34ComponentID.ECAMPAIGN_N34_QUEST)
   if not self._questComponent then
-    return 
+    return
   end
-  self._questComponentInfo = (self._questComponent):ComponentInfo()
+  self._questComponentInfo = self._questComponent:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.GetComponent = function(self, componentID)
-  -- function num : 0_9 , upvalues : _ENV
+function CCampaignN34:GetComponent(componentID)
   if ECampaignN34ComponentID.ECAMPAIGN_N34_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponent
   end
@@ -125,10 +91,7 @@ CCampaignN34.GetComponent = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.GetComponentInfo = function(self, componentID)
-  -- function num : 0_10 , upvalues : _ENV
+function CCampaignN34:GetComponentInfo(componentID)
   if ECampaignN34ComponentID.ECAMPAIGN_N34_CUMULATIVE_LOGIN == componentID then
     return self._cumulativeLoginComponentInfo
   end
@@ -147,67 +110,32 @@ CCampaignN34.GetComponentInfo = function(self, componentID)
   return nil
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.GetEntryNew = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function CCampaignN34:GetEntryNew()
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   local sample = campaignModule:GetSampleByType(ECampaignType.CAMPAIGN_TYPE_N34)
-  if sample then
-    return sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
-  end
+  return sample and sample:GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.GetEntryRedDot = function(self)
-  -- function num : 0_12
-  if not self:AccumulateLoginReddot() and not self:SurveyReddot() and not self:DispatchReddot() then
-    return self:QuestReddot()
-  end
+function CCampaignN34:GetEntryRedDot()
+  return self:AccumulateLoginReddot() or self:SurveyReddot() or self:DispatchReddot() or self:QuestReddot()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.AccumulateLoginReddot = function(self)
-  -- function num : 0_13
-  if self._cumulativeLoginComponent then
-    return (self._cumulativeLoginComponent):HaveRedPoint()
-  end
+function CCampaignN34:AccumulateLoginReddot()
+  return self._cumulativeLoginComponent and self._cumulativeLoginComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.SurveyReddot = function(self)
-  -- function num : 0_14
-  if self._surveyComponent then
-    return (self._surveyComponent):HaveRedPoint()
-  end
+function CCampaignN34:SurveyReddot()
+  return self._surveyComponent and self._surveyComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.DispatchReddot = function(self)
-  -- function num : 0_15
-  if self._dispatchComponent then
-    return (self._dispatchComponent):HaveRedPoint()
-  end
+function CCampaignN34:DispatchReddot()
+  return self._dispatchComponent and self._dispatchComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.QuestReddot = function(self)
-  -- function num : 0_16
-  if self._questComponent then
-    return (self._questComponent):HaveRedPoint()
-  end
+function CCampaignN34:QuestReddot()
+  return self._questComponent and self._questComponent:HaveRedPoint()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-CCampaignN34.BattlePassRedPoint = function(self, battlePassCampaign)
-  -- function num : 0_17 , upvalues : _ENV
-  return (UIActivityBattlePassHelper.CheckCampaignRedPoint)(battlePassCampaign)
+function CCampaignN34:BattlePassRedPoint(battlePassCampaign)
+  return UIActivityBattlePassHelper.CheckCampaignRedPoint(battlePassCampaign)
 end
-
-

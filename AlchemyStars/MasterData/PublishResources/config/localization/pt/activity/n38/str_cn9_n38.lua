@@ -1,8 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/pt/activity/n38/str_cn9_n38.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_cn9_n38_nading_skin_title = "Brilho nos Mares Escuros", str_cn9_n38_nading_skin_desc = "Minha lanterna vai afugentar a escuridão!", str_cn9_n38_nading_skin_rewards_preview = "Prévia", str_cn9_n38_nading_skin_time = "Tempo Res. do Evento: {1}", str_cn9_n38_nading_skin_claim = "Obter", str_cn9_n38_nading_skin_claimed = "Retirado", str_cn9_n38_nading_skin_preview_name = "Nadine: O Guardião da Luz (Roupa)", str_cn9_n38_nading_skin_preview_btn = "Configurações"}
+local config = {
+  str_cn9_n38_nading_skin_title = "Brilho nos Mares Escuros",
+  str_cn9_n38_nading_skin_desc = "Minha lanterna vai afugentar a escuridão!",
+  str_cn9_n38_nading_skin_rewards_preview = "Prévia",
+  str_cn9_n38_nading_skin_time = "Tempo Res. do Evento: {1}",
+  str_cn9_n38_nading_skin_claim = "Obter",
+  str_cn9_n38_nading_skin_claimed = "Retirado",
+  str_cn9_n38_nading_skin_preview_name = "Nadine: O Guardião da Luz (Roupa)",
+  str_cn9_n38_nading_skin_preview_btn = "Configurações"
+}
 return config
-

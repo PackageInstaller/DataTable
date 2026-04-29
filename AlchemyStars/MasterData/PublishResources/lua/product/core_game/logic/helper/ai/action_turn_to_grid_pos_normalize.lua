@@ -1,29 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_turn_to_grid_pos_normalize.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionTurnToGridPosNormalize", AINewNode)
 ActionTurnToGridPosNormalize = ActionTurnToGridPosNormalize
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionTurnToGridPosNormalize.OnBegin = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionTurnToGridPosNormalize:OnBegin()
   local x = self:GetLogicData(-1)
   local y = self:GetLogicData(-2)
   local posTarget = Vector2(x, y)
   self:TurnToTarget(self.m_entityOwn, posTarget)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTurnToGridPosNormalize.TurnToTarget = function(self, entityWork, posTarget)
-  -- function num : 0_1
+function ActionTurnToGridPosNormalize:TurnToTarget(entityWork, posTarget)
   local aiComponent = entityWork:AI()
-  if aiComponent:CanTurn() == false then
+  if false == aiComponent:CanTurn() then
     self:PrintLog("转向: 转向玩家方向<不允许>")
-    return 
+    return
   end
   local posDir = self:GetDirNormalize(posTarget, entityWork)
   local posSelf = entityWork:GetGridPosition()
@@ -31,14 +21,9 @@ ActionTurnToGridPosNormalize.TurnToTarget = function(self, entityWork, posTarget
   entityWork:SetGridDirection(posDir)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionTurnToGridPosNormalize.GetDirNormalize = function(self, targetPos, entity)
-  -- function num : 0_2
+function ActionTurnToGridPosNormalize:GetDirNormalize(targetPos, entity)
   local gridLoc = entity:GridLocation()
   local center = gridLoc:Center()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   return utilCalcSvc:GetDirNormalize(center, targetPos)
 end
-
-

@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_shop.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamShop", FeatureEffectParamBase)
 FeatureEffectParamShop = FeatureEffectParamShop
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamShop.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamShop:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamShop._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamShop:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.SkillID then
     self._skillID = t.SkillID
@@ -45,31 +35,19 @@ FeatureEffectParamShop._RefreshData = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamShop.GetFeatureType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function FeatureEffectParamShop:GetFeatureType()
   return FeatureType.Shop
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamShop.GetSkillID = function(self)
-  -- function num : 0_3
+function FeatureEffectParamShop:GetSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamShop.GetGroupDataList = function(self)
-  -- function num : 0_4
+function FeatureEffectParamShop:GetGroupDataList()
   return self._groupDataList
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamShop.GetUnlockParam = function(self)
-  -- function num : 0_5
+function FeatureEffectParamShop:GetUnlockParam()
   local unlockParam = {}
   if self._unlockParam1 then
     unlockParam[1] = self._unlockParam1
@@ -83,18 +61,10 @@ FeatureEffectParamShop.GetUnlockParam = function(self)
   return unlockParam
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamShop.GetEnterCoinCount = function(self)
-  -- function num : 0_6
+function FeatureEffectParamShop:GetEnterCoinCount()
   return self._enterCoinCount or 0
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamShop.GetAddAttackParam = function(self)
-  -- function num : 0_7
+function FeatureEffectParamShop:GetAddAttackParam()
   return self._addAttackParam
 end
-
-

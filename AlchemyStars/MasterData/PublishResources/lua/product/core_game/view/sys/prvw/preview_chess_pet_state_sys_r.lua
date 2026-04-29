@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/preview_chess_pet_state_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PreviewChessPetStateSystem_Render", UniqueReactiveSystem)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-PreviewChessPetStateSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function PreviewChessPetStateSystem_Render:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetStateSystem_Render.TearDown = function(self)
-  -- function num : 0_1
+function PreviewChessPetStateSystem_Render:TearDown()
   self._world = nil
 end
 
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetStateSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_2 , upvalues : _ENV
+function PreviewChessPetStateSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -34,18 +21,10 @@ PreviewChessPetStateSystem_Render.IsInterested = function(self, index, previousC
   return false
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetStateSystem_Render.Filter = function(self, world)
-  -- function num : 0_3
+function PreviewChessPetStateSystem_Render:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-PreviewChessPetStateSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_4 , upvalues : _ENV
-  (Log.notice)("PreviewChessPetStateSystem_Render ExecuteWorld")
+function PreviewChessPetStateSystem_Render:ExecuteWorld(world)
+  Log.notice("PreviewChessPetStateSystem_Render ExecuteWorld")
 end
-
-

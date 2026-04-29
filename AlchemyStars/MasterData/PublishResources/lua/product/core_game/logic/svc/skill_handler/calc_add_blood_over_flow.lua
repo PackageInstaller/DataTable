@@ -1,36 +1,31 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_add_blood_over_flow.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_AddBloodOverFlow", SkillEffectCalc_Base)
 SkillEffectCalc_AddBloodOverFlow = SkillEffectCalc_AddBloodOverFlow
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_AddBloodOverFlow.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local sSkillEffectCalc = (self._world):GetService("SkillEffectCalc")
-  local sBattle = (self._world):GetService("Battle")
+function SkillEffectCalc_AddBloodOverFlow:DoSkillEffectCalculator(skillEffectCalcParam)
+  local sSkillEffectCalc = self._world:GetService("SkillEffectCalc")
+  local sBattle = self._world:GetService("Battle")
   local casterEntityId = skillEffectCalcParam:GetCasterEntityID()
-  local caster = (self._world):GetEntityByID(casterEntityId)
-  local eTeam = (caster:Pet()):GetOwnerTeamEntity()
-  local targetEntityIds = {eTeam:GetID()}
+  local caster = self._world:GetEntityByID(casterEntityId)
+  local eTeam = caster:Pet():GetOwnerTeamEntity()
+  local targetEntityIds = {
+    eTeam:GetID()
+  }
   local skillEffectParam = skillEffectCalcParam.skillEffectParam
   local skillEffectParamAddBlood = SkillEffectParam_AddBlood:New(skillEffectParam:GetAddBlood())
   local skillId = skillEffectCalcParam:GetSkillID()
-  local casterPos = (caster:GridLocation()):GetGridPos()
+  local casterPos = caster:GridLocation():GetGridPos()
   local range = {casterPos}
   local param = SkillEffectCalcParam:New(casterEntityId, targetEntityIds, skillEffectParamAddBlood, skillId, range, casterPos, casterPos)
   local resultList = sSkillEffectCalc:CalcSkillEffectByType(param)
-  local skillEffectResultContainer = (caster:SkillContext()):GetResultContainer()
-  for index,result in ipairs(resultList) do
+  local skillEffectResultContainer = caster:SkillContext():GetResultContainer()
+  for index, result in ipairs(resultList) do
     skillEffectResultContainer:AddEffectResult(result)
     local addValue = result:GetAddValue()
-    local maxHP = (eTeam:Attributes()):CalcMaxHp()
-    local curHP = (eTeam:Attributes()):GetCurrentHP()
+    local maxHP = eTeam:Attributes():CalcMaxHp()
+    local curHP = eTeam:Attributes():GetCurrentHP()
     local spilled = addValue + curHP - maxHP
-    if spilled > 0 then
+    if 0 < spilled then
       local skillEffectParamSummonTrap = SkillSummonTrapEffectParam:New(skillEffectParam:GetSummonTrap())
       local targetIds = skillEffectCalcParam:GetTargetEntityIDs()
       local skillRange = skillEffectCalcParam:GetSkillRange()
@@ -41,5 +36,3 @@ SkillEffectCalc_AddBloodOverFlow.DoSkillEffectCalculator = function(self, skillE
     end
   end
 end
-
-

@@ -1,116 +1,78 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/ui_education_main.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEducationMain", UIController)
 UIEducationMain = UIEducationMain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEducationMain.Constructor = function(self)
-  -- function num : 0_0
+function UIEducationMain:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.GetData = function(self)
-  -- function num : 0_1
+function UIEducationMain:GetData()
   return self._data
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R5 in 'UnsetPending'
-
+function UIEducationMain:LoadDataOnEnter(TT, res, uiParams)
+  local petModule = GameGlobal.GetModule(PetModule)
   UIEducationMain._data = petModule:GetUIEducationData()
-  ;
-  (self._data):SetRedDirty(true)
-  ;
-  (self._data):TestCondition()
+  self._data:SetRedDirty(true)
+  self._data:TestCondition()
   self._atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.OnShow = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIEducationMain:OnShow(uiParams)
   self:UIWidget()
   self:InitCommonTopButton()
   self:CreateElements()
   self:FlushElements()
   self:InAnimation()
   self:AttachEvent(GameEventType.EducationChanged, self.OnEducationChanged)
-  local guideModule = (GameGlobal.GetModule)(GuideModule)
+  local guideModule = GameGlobal.GetModule(GuideModule)
   if guideModule:IsGuideProcess(5511) then
-    (self._btnGuideBlueGo):SetActive(true)
+    self._btnGuideBlueGo:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.OnHide = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIEducationMain:OnHide()
   UIEducationMain._data = nil
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_5
+function UIEducationMain:OnUpdate(deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.BtnSingleOnClick = function(self, go)
-  -- function num : 0_6
+function UIEducationMain:BtnSingleOnClick(go)
   self:ShowDialog("UIEducationOne")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.ElementOnClick = function(self, elementType)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIEducationMain:ElementOnClick(elementType)
   if self._animationFangda == nil then
-    UIEducationMain._animationFangda = {[ElementType.ElementType_Blue] = "uieff_UIEducationMain_fangda_shui", [ElementType.ElementType_Red] = "uieff_UIEducationMain_fangda_huo", [ElementType.ElementType_Green] = "uieff_UIEducationMain_fangda_sen", [ElementType.ElementType_Yellow] = "uieff_UIEducationMain_fangda_lei"}
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R2 in 'UnsetPending'
-
-    UIEducationMain._animationSuoxiao = {[ElementType.ElementType_Blue] = "uieff_UIEducationMain_suoxiao_shui", [ElementType.ElementType_Red] = "uieff_UIEducationMain_suoxiao_huo", [ElementType.ElementType_Green] = "uieff_UIEducationMain_suoxiao_sen", [ElementType.ElementType_Yellow] = "uieff_UIEducationMain_suoxiao_lei"}
+    UIEducationMain._animationFangda = {
+      [ElementType.ElementType_Blue] = "uieff_UIEducationMain_fangda_shui",
+      [ElementType.ElementType_Red] = "uieff_UIEducationMain_fangda_huo",
+      [ElementType.ElementType_Green] = "uieff_UIEducationMain_fangda_sen",
+      [ElementType.ElementType_Yellow] = "uieff_UIEducationMain_fangda_lei"
+    }
+    UIEducationMain._animationSuoxiao = {
+      [ElementType.ElementType_Blue] = "uieff_UIEducationMain_suoxiao_shui",
+      [ElementType.ElementType_Red] = "uieff_UIEducationMain_suoxiao_huo",
+      [ElementType.ElementType_Green] = "uieff_UIEducationMain_suoxiao_sen",
+      [ElementType.ElementType_Yellow] = "uieff_UIEducationMain_suoxiao_lei"
+    }
   end
   self:ShowDialog("UIEducationUp", elementType, function(elementType)
-    -- function num : 0_7_0 , upvalues : self, _ENV
-    (self._animation):Play((self._animationFangda)[elementType])
-    for k,v in pairs(self._lstNode) do
-      (v.uiWidget):PlayAnimation("uieff_UIEducationMainBtn_fangda_out")
+    self._animation:Play(self._animationFangda[elementType])
+    for k, v in pairs(self._lstNode) do
+      v.uiWidget:PlayAnimation("uieff_UIEducationMainBtn_fangda_out")
     end
-  end
-, function(elementType)
-    -- function num : 0_7_1 , upvalues : self, _ENV
-    (self._animation):Play((self._animationSuoxiao)[elementType])
-    for k,v in pairs(self._lstNode) do
-      (v.uiWidget):PlayAnimation("uieff_UIEducationMainBtn_fangda_in")
+  end, function(elementType)
+    self._animation:Play(self._animationSuoxiao[elementType])
+    for k, v in pairs(self._lstNode) do
+      v.uiWidget:PlayAnimation("uieff_UIEducationMainBtn_fangda_in")
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.OnEducationChanged = function(self)
-  -- function num : 0_8
+function UIEducationMain:OnEducationChanged()
   self:FlushElements()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.UIWidget = function(self)
-  -- function num : 0_9
+function UIEducationMain:UIWidget()
   self._ltBtn = self:GetUIComponent("UISelectObjectPath", "ltBtn")
   self._pathBlue = self:GetUIComponent("UISelectObjectPath", "pathBlue")
   self._pathRed = self:GetUIComponent("UISelectObjectPath", "pathRed")
@@ -118,90 +80,62 @@ UIEducationMain.UIWidget = function(self)
   self._pathYellow = self:GetUIComponent("UISelectObjectPath", "pathYellow")
   self._animation = self:GetUIComponent("Animation", "animation")
   self._btnGuideBlueGo = self:GetGameObject("btnGuideBlue")
-  ;
-  (self._btnGuideBlueGo):SetActive(false)
+  self._btnGuideBlueGo:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.InitCommonTopButton = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  self._backBtns = (self._ltBtn):SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_10_0 , upvalues : self
+function UIEducationMain:InitCommonTopButton()
+  self._backBtns = self._ltBtn:SpawnObject("UINewCommonTopButton")
+  self._backBtns:SetData(function()
     self:CloseDialog()
-  end
-, function()
-    -- function num : 0_10_1 , upvalues : self
+  end, function()
     self:ShowDialog("UIHelpController", "UIEducationMain")
-  end
-, function()
-    -- function num : 0_10_2 , upvalues : _ENV
-    (UICommonHelper:GetInstance()):SwitchToUIMain()
-  end
-, false, nil, false, function()
-    -- function num : 0_10_3 , upvalues : self
+  end, function()
+    UICommonHelper:GetInstance():SwitchToUIMain()
+  end, false, nil, false, function()
     self:EnterFullScreenBg(true)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.CreateElements = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local lstPath = {self._pathBlue, self._pathRed, self._pathGreen, self._pathYellow}
+function UIEducationMain:CreateElements()
+  local lstPath = {
+    self._pathBlue,
+    self._pathRed,
+    self._pathGreen,
+    self._pathYellow
+  }
   self._lstNode = {}
-  for k,v in pairs(lstPath) do
-    local uiNode = {uiPath = v, uiWidget = (v:SpawnObjects("UIEducationMainBtn", 1))[1], element = (self._data):Get(k)}
-    ;
-    (uiNode.uiWidget):SetData(uiNode.element, self._atlasProperty, function(elementType)
-    -- function num : 0_11_0 , upvalues : self
-    self:ElementOnClick(elementType)
-  end
-)
-    -- DECOMPILER ERROR at PC32: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._lstNode)[k] = uiNode
+  for k, v in pairs(lstPath) do
+    local uiNode = {
+      uiPath = v,
+      uiWidget = v:SpawnObjects("UIEducationMainBtn", 1)[1],
+      element = self._data:Get(k)
+    }
+    uiNode.uiWidget:SetData(uiNode.element, self._atlasProperty, function(elementType)
+      self:ElementOnClick(elementType)
+    end)
+    self._lstNode[k] = uiNode
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.FlushElements = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  for k,v in pairs(self._lstNode) do
-    (v.uiWidget):Flush()
+function UIEducationMain:FlushElements()
+  for k, v in pairs(self._lstNode) do
+    v.uiWidget:Flush()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.InAnimation = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIEducationMain:InAnimation()
   self:StartSafeTask("UIEducationMain::InAnimation", function(lockName, TT)
-    -- function num : 0_13_0 , upvalues : self, _ENV
     self:Lock(lockName)
-    for k,v in pairs(self._lstNode) do
-      (v.uiWidget):PlayAnimation("uieff_UIEducationMainBtn_in")
+    for k, v in pairs(self._lstNode) do
+      v.uiWidget:PlayAnimation("uieff_UIEducationMainBtn_in")
     end
-    ;
-    (self._animation):Play("uieff_UIEducationMain")
+    self._animation:Play("uieff_UIEducationMain")
     YIELD(TT, 800)
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationMain.BtnGuideBlueOnClick = function(self, go)
-  -- function num : 0_14 , upvalues : _ENV
+function UIEducationMain:BtnGuideBlueOnClick(go)
   self:ElementOnClick(ElementType.ElementType_Blue)
-  ;
-  (self._btnGuideBlueGo):SetActive(false)
+  self._btnGuideBlueGo:SetActive(false)
 end
-
-

@@ -1,27 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_chessknight_teleport_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayChessKnightTeleportInstruction", BaseInstruction)
 PlayChessKnightTeleportInstruction = PlayChessKnightTeleportInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayChessKnightTeleportInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_0 , upvalues : _ENV
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayChessKnightTeleportInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local teleportResult = routineComponent:GetEffectResultByArray(SkillEffectType.Teleport, self._stageIndex)
   if not teleportResult then
-    return 
+    return
   end
   local v2 = teleportResult:GetPosNew()
   casterEntity:SetPosition(v2)
-  local go = (casterEntity:View()):GetGameObject()
-  local tfRoot = (GameObjectHelper.FindChild)(go.transform, "Root")
+  local go = casterEntity:View():GetGameObject()
+  local tfRoot = GameObjectHelper.FindChild(go.transform, "Root")
   if tfRoot then
     tfRoot.localPosition = Vector3.zero
   end
 end
-
-

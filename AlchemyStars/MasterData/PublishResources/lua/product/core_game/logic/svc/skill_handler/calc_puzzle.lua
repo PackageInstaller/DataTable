@@ -1,32 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_puzzle.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_Puzzle", Object)
 SkillEffectCalc_Puzzle = SkillEffectCalc_Puzzle
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_Puzzle.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_Puzzle:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_Puzzle.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_Puzzle:DoSkillEffectCalculator(skillEffectCalcParam)
   local casterEntityID = skillEffectCalcParam:GetCasterEntityID()
-  local casterEntity = (self._world):GetEntityByID(casterEntityID)
+  local casterEntity = self._world:GetEntityByID(casterEntityID)
   local pickupComponent = casterEntity:ActiveSkillPickUpComponent()
   if not pickupComponent then
-    return 
+    return
   end
   local result = SkillEffectPuzzleResult:New()
   local pickUpPosList = pickupComponent:GetAllValidPickUpGridPos()
-  local boardEntity = (self._world):GetBoardEntity()
+  local boardEntity = self._world:GetBoardEntity()
   local boardCmpt = boardEntity:Board()
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local tmpConvertInfoDic = {}
   for index = 2, #pickUpPosList do
     local oldPos = pickUpPosList[index - 1]
@@ -36,14 +26,21 @@ SkillEffectCalc_Puzzle.DoSkillEffectCalculator = function(self, skillEffectCalcP
     boardServiceLogic:SetPieceTypeLogic(oldPieceType, newPos)
     boardServiceLogic:SetPieceTypeLogic(newPieceType, oldPos)
     result:AddExchangePieceType(oldPos, oldPieceType, newPos, newPieceType)
-    tmpConvertInfoDic[oldPos:Pos2Index()] = {oldPos, oldPieceType, newPieceType}
-    tmpConvertInfoDic[newPos:Pos2Index()] = {newPos, newPieceType, oldPieceType}
+    tmpConvertInfoDic[oldPos:Pos2Index()] = {
+      oldPos,
+      oldPieceType,
+      newPieceType
+    }
+    tmpConvertInfoDic[newPos:Pos2Index()] = {
+      newPos,
+      newPieceType,
+      oldPieceType
+    }
   end
   local convertInfoArray = {}
-  for _,info in pairs(tmpConvertInfoDic) do
+  for _, info in pairs(tmpConvertInfoDic) do
     local convertInfo = NTGridConvert_ConvertInfo:New(info[1], info[2], info[3])
-    ;
-    (table.insert)(convertInfoArray, convertInfo)
+    table.insert(convertInfoArray, convertInfo)
   end
   local convertPos = pickUpPosList[#pickUpPosList]
   local param = skillEffectCalcParam:GetSkillEffectParam()
@@ -52,9 +49,8 @@ SkillEffectCalc_Puzzle.DoSkillEffectCalculator = function(self, skillEffectCalcP
   boardServiceLogic:SetPieceTypeLogic(convertPieceType, convertPos)
   result:AddConvertInfo(convertPos, beforePieceType, convertPieceType)
   local convertInfo = NTGridConvert_ConvertInfo:New(convertPos, beforePieceType, convertPieceType)
-  ;
-  (table.insert)(convertInfoArray, convertInfo)
-  local triggerSvc = (self._world):GetService("Trigger")
+  table.insert(convertInfoArray, convertInfo)
+  local triggerSvc = self._world:GetService("Trigger")
   local ntConvertGrid = NTGridConvert:New(casterEntity, convertInfoArray)
   ntConvertGrid:SetConvertEffectType(param:GetEffectType())
   ntConvertGrid:SetSkillType(param:GetSkillType())
@@ -62,5 +58,3 @@ SkillEffectCalc_Puzzle.DoSkillEffectCalculator = function(self, skillEffectCalcP
   result:SetNotifyConvertArray(convertInfoArray)
   return result
 end
-
-

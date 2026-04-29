@@ -1,104 +1,58 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/new/action/air_action_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AirActionBase", Object)
 AirActionBase = AirActionBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AirActionBase.Constructor = function(self)
-  -- function num : 0_0
+function AirActionBase:Constructor()
   self._duration = 0
   self._curTime = 0
   self._running = false
   self._des = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.Start = function(self)
-  -- function num : 0_1
+function AirActionBase:Start()
   self._running = true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.IsOver = function(self)
-  -- function num : 0_2
-  do return self._duration < self._curTime end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function AirActionBase:IsOver()
+  return self._curTime > self._duration
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.Update = function(self, deltaTimeMS)
-  -- function num : 0_3
+function AirActionBase:Update(deltaTimeMS)
   if self._running and not self:IsOver() then
     self._curTime = self._curTime + deltaTimeMS
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.Stop = function(self)
-  -- function num : 0_4
+function AirActionBase:Stop()
   self._running = false
   self._curTime = 0
   self._duration = 0
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.Duration = function(self)
-  -- function num : 0_5
+function AirActionBase:Duration()
   return self._duration
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.CurrentTime = function(self)
-  -- function num : 0_6
+function AirActionBase:CurrentTime()
   return self._curTime
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.GetPets = function(self)
-  -- function num : 0_7
+function AirActionBase:GetPets()
   return nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.Dispose = function(self)
-  -- function num : 0_8
+function AirActionBase:Dispose()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.Log = function(self, ...)
-  -- function num : 0_9 , upvalues : _ENV
-  (Log.debug)("[AircraftAction] ", ...)
+function AirActionBase:Log(...)
+  Log.debug("[AircraftAction] ", ...)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.LogStart = function(self)
-  -- function num : 0_10
+function AirActionBase:LogStart()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.LogStop = function(self)
-  -- function num : 0_11
+function AirActionBase:LogStop()
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-AirActionBase.GetActionType = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function AirActionBase:GetActionType()
   return AircraftActionType.None
 end
-
-

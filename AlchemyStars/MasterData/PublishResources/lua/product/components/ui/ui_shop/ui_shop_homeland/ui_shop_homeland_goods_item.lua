@@ -1,28 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_goods_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopHomelandGoodsItem", UICustomWidget)
 UIShopHomelandGoodsItem = UIShopHomelandGoodsItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopHomelandGoodsItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopHomelandGoodsItem:Constructor()
   self._atlas = self:GetAsset("UIShop.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIShopHomelandGoodsItem:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsItem._GetComponents = function(self)
-  -- function num : 0_2
+function UIShopHomelandGoodsItem:_GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "Name")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._discount = self:GetUIComponent("UILocalizationText", "Discount")
@@ -42,101 +29,65 @@ UIShopHomelandGoodsItem._GetComponents = function(self)
   self._priceImg = self:GetUIComponent("Image", "PriceImg")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsItem.SetData = function(self, key, data, marketType, shopId)
-  -- function num : 0_3 , upvalues : _ENV
+function UIShopHomelandGoodsItem:SetData(key, data, marketType, shopId)
   self._data = data
   self._marketType = marketType
-  local isDiscounting = (self._data):IsDiscount()
-  ;
-  (self._name):SetText((StringTable.Get)(((self._data).cfg).Name))
-  ;
-  (self._icon):LoadImage(((self._data).cfg).Icon)
-  ;
-  (self._discountPrice):SetActive(isDiscounting)
-  ;
-  (self._priceObj):SetActive(not isDiscounting)
+  local isDiscounting = self._data:IsDiscount()
+  self._name:SetText(StringTable.Get(self._data.cfg.Name))
+  self._icon:LoadImage(self._data.cfg.Icon)
+  self._discountPrice:SetActive(isDiscounting)
+  self._priceObj:SetActive(not isDiscounting)
   if isDiscounting then
-    (self._discount):SetText("-" .. ((self._data).cfg).Discount .. "%")
-    ;
-    (self._price):SetText("")
-    ;
-    (self._discountPriceOriginal):SetText(((self._data).cfg).RawPrice)
-    ;
-    (self._discountPriceNow):SetText(((self._data).cfg).NewPrice)
+    self._discount:SetText("-" .. self._data.cfg.Discount .. "%")
+    self._price:SetText("")
+    self._discountPriceOriginal:SetText(self._data.cfg.RawPrice)
+    self._discountPriceNow:SetText(self._data.cfg.NewPrice)
   else
-    ;
-    (self._price):SetText(((self._data).cfg).RawPrice)
+    self._price:SetText(self._data.cfg.RawPrice)
   end
-  local sellOut = (self._data):IsSellOut()
-  ;
-  (self._lock):SetActive(sellOut)
+  local sellOut = self._data:IsSellOut()
+  self._lock:SetActive(sellOut)
   local theme = UIShopHomelandTheme[shopId]
-  -- DECOMPILER ERROR at PC78: Confused about usage of register: R8 in 'UnsetPending'
-
   if theme then
-    (self._priceImg).sprite = (self._atlas):GetSprite(theme.ItemPriceImg)
-    -- DECOMPILER ERROR at PC84: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._gotBackground).sprite = (self._atlas):GetSprite(theme.ItemGotBackground)
-    -- DECOMPILER ERROR at PC87: Confused about usage of register: R8 in 'UnsetPending'
-
-    ;
-    (self._lockTextCircleOutline).effectColor = theme.ItemLockTextOutLine
+    self._priceImg.sprite = self._atlas:GetSprite(theme.ItemPriceImg)
+    self._gotBackground.sprite = self._atlas:GetSprite(theme.ItemGotBackground)
+    self._lockTextCircleOutline.effectColor = theme.ItemLockTextOutLine
   end
-  ;
-  (self._priceImgObj):SetActive(not sellOut)
-  ;
-  (self._discountImg):SetActive((not sellOut and isDiscounting))
-  if (self._data).saleNum < 888888888 and not (self._data):IsSellOut() then
-    (self._sellCountImg):SetActive(true)
-    ;
-    (self._sellCount):SetText((self._data).saleNum - (self._data).selledCount)
-    ;
-    (self._sellCount):SetText((StringTable.Get)("str_shop_secret_good_remain") .. (self._data):GetRemainCount())
+  self._priceImgObj:SetActive(not sellOut)
+  self._discountImg:SetActive(not sellOut and isDiscounting)
+  if self._data.saleNum < 888888888 and not self._data:IsSellOut() then
+    self._sellCountImg:SetActive(true)
+    self._sellCount:SetText(self._data.saleNum - self._data.selledCount)
+    self._sellCount:SetText(StringTable.Get("str_shop_secret_good_remain") .. self._data:GetRemainCount())
   else
-    (self._sellCountImg):SetActive(false)
+    self._sellCountImg:SetActive(false)
   end
   if self.view then
-    ((self.view).gameObject):SetActive(false)
+    self.view.gameObject:SetActive(false)
   end
   self._animationTask = self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : _ENV, key, self
     YIELD(TT, (key - 1) * 55)
     if self.view then
-      ((self.view).gameObject):SetActive(true)
-      ;
-      (self._animation):Play("UIShopHomelandGoodsItem")
+      self.view.gameObject:SetActive(true)
+      self._animation:Play("UIShopHomelandGoodsItem")
     end
-  end
-, self)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  end, self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsItem.BackgoundOnClick = function(self, go)
-  -- function num : 0_4
-  if (self._data):IsSellOut() then
-    return 
+function UIShopHomelandGoodsItem:BackgoundOnClick(go)
+  if self._data:IsSellOut() then
+    return
   end
-  if (self._data):GetRemainCount() <= 1 then
+  if self._data:GetRemainCount() <= 1 then
     self:ShowDialog("UIShopConfirmNormalController", self._data, self._marketType)
   else
     self:ShowDialog("UIShopConfirmDetailController", self._data, self._marketType)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandGoodsItem.OnHide = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopHomelandGoodsItem:OnHide()
   if self._animationTask then
-    ((GameGlobal.TaskManager)()):KillTask(self._animationTask)
+    GameGlobal.TaskManager():KillTask(self._animationTask)
     self._animationTask = nil
   end
 end
-
-

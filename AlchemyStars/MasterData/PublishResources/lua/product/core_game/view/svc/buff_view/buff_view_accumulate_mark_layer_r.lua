@@ -1,28 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_accumulate_mark_layer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAccumulateMarkLayer", BuffViewBase)
 BuffViewAccumulateMarkLayer = BuffViewAccumulateMarkLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAccumulateMarkLayer.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  (self._viewInstance):SetLayerCount(TT, (self._buffResult):GetLayer())
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+function BuffViewAccumulateMarkLayer:PlayView(TT)
+  self._viewInstance:SetLayerCount(TT, self._buffResult:GetLayer())
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAccumulateMarkLayer.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewAccumulateMarkLayer:IsNotifyMatch(notify)
   local buffResult = self._buffResult
-  if buffResult:GetAttackerID() ~= (notify._attacker):GetID() then
+  if buffResult:GetAttackerID() ~= notify._attacker:GetID() then
     return false
   end
-  if buffResult:GetDefenderID() ~= (notify._defender):GetID() then
+  if buffResult:GetDefenderID() ~= notify._defender:GetID() then
     return false
   end
   if buffResult:GetAttackPos() ~= notify._attackPos then
@@ -30,5 +19,3 @@ BuffViewAccumulateMarkLayer.IsNotifyMatch = function(self, notify)
   end
   return true
 end
-
-

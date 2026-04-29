@@ -1,29 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_roam.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorRoam", HomelandPetBehaviorBase)
 HomelandPetBehaviorRoam = HomelandPetBehaviorRoam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorRoam.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetBehaviorRoam:Constructor(behaviorType, pet)
   self._moveComponent = self:GetComponent(HomelandPetComponentType.Move)
   self._bubbleComponent = self:GetComponent(HomelandPetComponentType.Bubble)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorRoam.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorRoam.super).Enter)(self)
-  local position = (HomelandNavmeshTool:GetInstance()):GetRandomPositionRing(10, 25, (self._pet):GetPosition())
-  ;
-  (self._moveComponent):SetTarget(position)
-  ;
-  (self._bubbleComponent):Show()
+function HomelandPetBehaviorRoam:Enter()
+  HomelandPetBehaviorRoam.super.Enter(self)
+  local position = HomelandNavmeshTool:GetInstance():GetRandomPositionRing(10, 25, self._pet:GetPosition())
+  self._moveComponent:SetTarget(position)
+  self._bubbleComponent:Show()
 end
-
-

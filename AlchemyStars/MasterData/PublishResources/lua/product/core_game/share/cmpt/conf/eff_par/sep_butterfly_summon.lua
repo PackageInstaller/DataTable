@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_butterfly_summon.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_summon_everything")
 _class("SkillEffectParam_ButterflySummon", SkillEffectParam_SummonEverything)
 SkillEffectParam_ButterflySummon = SkillEffectParam_ButterflySummon
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParam_ButterflySummon.GetEffectType = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParam_ButterflySummon:GetEffectType()
   return SkillEffectType.ButterflySummon
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ButterflySummon.Constructor = function(self, t)
-  -- function num : 0_1
+function SkillEffectParam_ButterflySummon:Constructor(t)
   self._summonID = t.summonID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ButterflySummon.GetSummonID = function(self)
-  -- function num : 0_2
+function SkillEffectParam_ButterflySummon:GetSummonID()
   return self._summonID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParam_ButterflySummon.GetSummonType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectParam_ButterflySummon:GetSummonType()
   return SkillEffectEnum_SummonType.Monster
 end
-
-

@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_play_anim.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicPlayAnim", BuffLogicBase)
 BuffLogicPlayAnim = BuffLogicPlayAnim
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicPlayAnim.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicPlayAnim:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicPlayAnim.DoLogic = function(self, notify)
-  -- function num : 0_1
+function BuffLogicPlayAnim:DoLogic(notify)
   return true
 end
 
 require("buff_logic_base")
 _class("BuffLogicStopAnim", BuffLogicBase)
 BuffLogicStopAnim = BuffLogicStopAnim
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicStopAnim.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicStopAnim:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicStopAnim.DoLogic = function(self, notify)
-  -- function num : 0_3
+function BuffLogicStopAnim:DoLogic(notify)
   return true
 end
-
-

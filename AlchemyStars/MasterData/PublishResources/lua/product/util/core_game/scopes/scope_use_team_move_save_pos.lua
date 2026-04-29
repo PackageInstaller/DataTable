@@ -1,19 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_use_team_move_save_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_UseTeamMoveSavePos", SkillScopeCalculator_Base)
 SkillScopeCalculator_UseTeamMoveSavePos = SkillScopeCalculator_UseTeamMoveSavePos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_UseTeamMoveSavePos.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
-  local teamEntity = (((self._gridFilter)._world):Player()):GetCurrentTeamEntity()
-  local pos = (teamEntity:BuffComponent()):GetBuffValue("SaveTeamBeginPos")
+function SkillScopeCalculator_UseTeamMoveSavePos:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
+  local teamEntity = self._gridFilter._world:Player():GetCurrentTeamEntity()
+  local pos = teamEntity:BuffComponent():GetBuffValue("SaveTeamBeginPos")
   local result = SkillScopeResult:New(SkillScopeType.UseTeamMoveSavePos, casterPos, {pos}, {pos})
   return result
 end
-
-

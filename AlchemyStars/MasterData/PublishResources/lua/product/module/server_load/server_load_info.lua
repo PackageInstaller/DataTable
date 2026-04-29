@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/server_load/server_load_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("server_statistics", Object)
 server_statistics = server_statistics
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-server_statistics.Constructor = function(self)
-  -- function num : 0_0
+function server_statistics:Constructor()
   self.gameappid = ""
   self.timekey = 0
   self.gsid = ""
@@ -27,39 +20,45 @@ server_statistics.Constructor = function(self)
   self.report_time = 0
 end
 
--- DECOMPILER ERROR at PC91: Confused about usage of register: R0 in 'UnsetPending'
-
 server_statistics._proto = {
-[1] = {"gameappid", "string"}
-, 
-[2] = {"timekey", "int"}
-, 
-[3] = {"gsid", "string"}
-, 
-[4] = {"iworldid", "string"}
-, 
-[5] = {"onlinecntios", "int"}
-, 
-[6] = {"onlinecntandroid", "int"}
-, 
-[7] = {"server_ip", "string"}
-, 
-[8] = {"port", "int"}
-, 
-[9] = {"current_load", "int"}
-, 
-[10] = {"login_acc", "int"}
-, 
-[11] = {"login_role", "int"}
-, 
-[12] = {"connect_closed", "int"}
-, 
-[13] = {"session_create", "int"}
-, 
-[14] = {"session_destroy", "int"}
-, 
-[15] = {"relogin_success", "int"}
-, 
-[16] = {"report_time", "time"}
+  [1] = {"gameappid", "string"},
+  [2] = {"timekey", "int"},
+  [3] = {"gsid", "string"},
+  [4] = {"iworldid", "string"},
+  [5] = {
+    "onlinecntios",
+    "int"
+  },
+  [6] = {
+    "onlinecntandroid",
+    "int"
+  },
+  [7] = {"server_ip", "string"},
+  [8] = {"port", "int"},
+  [9] = {
+    "current_load",
+    "int"
+  },
+  [10] = {"login_acc", "int"},
+  [11] = {"login_role", "int"},
+  [12] = {
+    "connect_closed",
+    "int"
+  },
+  [13] = {
+    "session_create",
+    "int"
+  },
+  [14] = {
+    "session_destroy",
+    "int"
+  },
+  [15] = {
+    "relogin_success",
+    "int"
+  },
+  [16] = {
+    "report_time",
+    "time"
+  }
 }
-

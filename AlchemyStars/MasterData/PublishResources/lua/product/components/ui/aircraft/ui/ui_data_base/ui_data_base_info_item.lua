@@ -1,33 +1,20 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_data_base/ui_data_base_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDataBaseInfoItem", UICustomWidget)
 UIDataBaseInfoItem = UIDataBaseInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDataBaseInfoItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDataBaseInfoItem:OnShow(uiParams)
   self:GetComponents()
   self:AttachEvent(GameEventType.OnDataBaseInfoUnLock, self._RefreshInfo)
   self:AttachEvent(GameEventType.OnDataBaseInfoItemClick, self._OnDataBaseInfoItemClick)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseInfoItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIDataBaseInfoItem:GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "name")
   self._red = self:GetGameObject("red")
   self._bg = self:GetUIComponent("Image", "bg")
   self._select = self:GetUIComponent("CanvasGroup", "select")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseInfoItem.SetData = function(self, idx, info, sp1, sp2, callback)
-  -- function num : 0_2
+function UIDataBaseInfoItem:SetData(idx, info, sp1, sp2, callback)
   self._idx = idx
   self._sp1 = sp1
   self._sp2 = sp2
@@ -36,84 +23,55 @@ UIDataBaseInfoItem.SetData = function(self, idx, info, sp1, sp2, callback)
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseInfoItem._OnDataBaseInfoItemClick = function(self, idx, anim)
-  -- function num : 0_3
-  local alpha = nil
+function UIDataBaseInfoItem:_OnDataBaseInfoItemClick(idx, anim)
+  local alpha
   if idx == self._idx then
     alpha = 1
   else
     alpha = 0
   end
-  local time = nil
+  local time
   if anim then
     time = 0.2
   else
     time = 0
   end
-  ;
-  (self._select):DOFade(alpha, time)
+  self._select:DOFade(alpha, time)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseInfoItem._RefreshInfo = function(self)
-  -- function num : 0_4
+function UIDataBaseInfoItem:_RefreshInfo()
   self:Red()
   self:Lock()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseInfoItem.OnValue = function(self)
-  -- function num : 0_5
+function UIDataBaseInfoItem:OnValue()
   self:Lock()
   self:Red()
   self:Name()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseInfoItem.Lock = function(self)
-  -- function num : 0_6
-  ((self._info):GetLock())
-  local lock = nil
-  local sp = nil
+function UIDataBaseInfoItem:Lock()
+  local lock = self._info:GetLock()
+  local sp
   if not lock then
     sp = self._sp1
   else
     sp = self._sp2
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._bg).sprite = sp
+  self._bg.sprite = sp
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseInfoItem.Red = function(self)
-  -- function num : 0_7
-  local red = (self._info):GetRed()
-  ;
-  (self._red):SetActive(red)
+function UIDataBaseInfoItem:Red()
+  local red = self._info:GetRed()
+  self._red:SetActive(red)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseInfoItem.Name = function(self)
-  -- function num : 0_8
-  (self._name):SetText("0" .. self._idx)
+function UIDataBaseInfoItem:Name()
+  self._name:SetText("0" .. self._idx)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseInfoItem.bgOnClick = function(self, go)
-  -- function num : 0_9
+function UIDataBaseInfoItem:bgOnClick(go)
   if self._callback then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   end
 end
-
-

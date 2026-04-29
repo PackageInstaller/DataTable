@@ -1,59 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rebuilding_event/ui_activity_n_plus_six_event_panel.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixEventPanel", UICustomWidget)
 UIActivityNPlusSixEventPanel = UIActivityNPlusSixEventPanel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixEventPanel.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityNPlusSixEventPanel:OnShow()
   self._go = self:GetGameObject("Go")
   self._eventItemLoader = self:GetUIComponent("UISelectObjectPath", "Content")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventPanel.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityNPlusSixEventPanel:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventPanel.Init = function(self)
-  -- function num : 0_2
+function UIActivityNPlusSixEventPanel:Init()
   self:HidePanel()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventPanel.HidePanel = function(self)
-  -- function num : 0_3
-  (self._go):SetActive(false)
+function UIActivityNPlusSixEventPanel:HidePanel()
+  self._go:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventPanel.ShowPanel = function(self, eventDatas)
-  -- function num : 0_4
+function UIActivityNPlusSixEventPanel:ShowPanel(eventDatas)
   self._eventDatas = eventDatas
-  ;
-  (self._go):SetActive(true)
-  ;
-  (self._eventItemLoader):SpawnObjects("UIActivityNPlusSixEventInfoItem", #self._eventDatas)
-  local items = (self._eventItemLoader):GetAllSpawnList()
+  self._go:SetActive(true)
+  self._eventItemLoader:SpawnObjects("UIActivityNPlusSixEventInfoItem", #self._eventDatas)
+  local items = self._eventItemLoader:GetAllSpawnList()
   for i = 1, #items do
     local item = items[i]
-    item:Refresh((self._eventDatas)[i])
+    item:Refresh(self._eventDatas[i])
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventPanel.MaskOnClick = function(self)
-  -- function num : 0_5
+function UIActivityNPlusSixEventPanel:MaskOnClick()
   self:HidePanel()
 end
-
-

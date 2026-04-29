@@ -1,24 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/smoke_test/node/common/stn_common_battle_kill_monsters.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("Common_BattleKillMonsters", Common_AsyncBase)
 Common_BattleKillMonsters = Common_BattleKillMonsters
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-Common_BattleKillMonsters.Constructor = function(self, pManger, nWaitTime)
-  -- function num : 0_0
+function Common_BattleKillMonsters:Constructor(pManger, nWaitTime)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-Common_BattleKillMonsters.TaskFunc = function(self, TT, outResult)
-  -- function num : 0_1 , upvalues : _ENV
+function Common_BattleKillMonsters:TaskFunc(TT, outResult)
   local cmd = GMCommand:New()
   cmd:SetFuncName("BattleKillMonsters")
-  ;
-  ((GameGlobal:GetInstance()):EventDispatcher()):Dispatch(GameEventType.OnUIGMCheatCommand, cmd)
+  GameGlobal:GetInstance():EventDispatcher():Dispatch(GameEventType.OnUIGMCheatCommand, cmd)
 end
-
-

@@ -1,37 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_pet_1702361_link_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("br_sealed_curse")
 _class("BuffLogicSetPet1702361LinkLine", BuffLogicBase)
 BuffLogicSetPet1702361LinkLine = BuffLogicSetPet1702361LinkLine
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetPet1702361LinkLine.DoLogic = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicSetPet1702361LinkLine:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasPetPstID() then
-    return 
+    return
   end
-  ;
-  (e:BuffComponent()):SetFlag(BuffFlags.Pet1702361NotLinkLine)
-  return BuffResultSealedCurse:New((self._buffInstance):BuffSeq(), true)
+  e:BuffComponent():SetFlag(BuffFlags.Pet1702361NotLinkLine)
+  return BuffResultSealedCurse:New(self._buffInstance:BuffSeq(), true)
 end
 
 _class("BuffLogicResetPet1702361LinkLine", BuffLogicBase)
 BuffLogicResetPet1702361LinkLine = BuffLogicResetPet1702361LinkLine
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicResetPet1702361LinkLine.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicResetPet1702361LinkLine:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasPetPstID() then
-    return 
+    return
   end
-  ;
-  (e:BuffComponent()):ResetFlag(BuffFlags.Pet1702361NotLinkLine)
-  return BuffResultSealedCurse:New((self._buffInstance):BuffSeq(), false)
+  e:BuffComponent():ResetFlag(BuffFlags.Pet1702361NotLinkLine)
+  return BuffResultSealedCurse:New(self._buffInstance:BuffSeq(), false)
 end
-
-

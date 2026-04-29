@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/fsm/c_chess_pet_result_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("chess_pet_result_system")
 _class("ClientChessPetResultSystem_Render", ChessPetResultSystem)
 ClientChessPetResultSystem_Render = ClientChessPetResultSystem_Render
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ClientChessPetResultSystem_Render._DoRenderHandleChessPetResult = function(self, TT, isAllChessPetTurnEnd, isWaveEnded)
-  -- function num : 0_0 , upvalues : _ENV
+function ClientChessPetResultSystem_Render:_DoRenderHandleChessPetResult(TT, isAllChessPetTurnEnd, isWaveEnded)
   if isAllChessPetTurnEnd then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.HideAll)
+    self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateTransit, UIBattleWidgetChessState.HideAll)
   end
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChessUIStateBlockRaycast, not isWaveEnded)
+  self._world:EventDispatcher():Dispatch(GameEventType.ChessUIStateBlockRaycast, not isWaveEnded)
 end
-
-

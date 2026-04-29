@@ -1,35 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_add_layer_by_teleport_distance.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicAddLayerByTeleportDistance", BuffLogicBase)
 BuffLogicAddLayerByTeleportDistance = BuffLogicAddLayerByTeleportDistance
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddLayerByTeleportDistance.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
-  if not logicParam.layerType then
-    self._layerType = (self._buffInstance):GetBuffEffectType()
-    -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._buffInstance)._buffLayerName = ((self._buffInstance)._buffsvc):GetBuffLayerName(self._layerType)
-    self._dontDisplay = logicParam.dontDisplay
-  end
+function BuffLogicAddLayerByTeleportDistance:Constructor(buffInstance, logicParam)
+  self._layerType = logicParam.layerType or self._buffInstance:GetBuffEffectType()
+  self._buffInstance._buffLayerName = self._buffInstance._buffsvc:GetBuffLayerName(self._layerType)
+  self._dontDisplay = logicParam.dontDisplay
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddLayerByTeleportDistance.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local svc = (self._world):GetService("BuffLogic")
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local currentRingNum = utilCalcSvc:GetGridRingNum(notify:GetPosNew(), notify:GetPosOld(), ((notify:GetNotifyEntity()):BodyArea()):GetArea())
+function BuffLogicAddLayerByTeleportDistance:DoLogic(notify)
+  local svc = self._world:GetService("BuffLogic")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local currentRingNum = utilCalcSvc:GetGridRingNum(notify:GetPosNew(), notify:GetPosOld(), notify:GetNotifyEntity():BodyArea():GetArea())
   local curMarkLayer = svc:AddBuffLayer(self._entity, self._layerType, currentRingNum)
   local buffResult = BuffResultAddLayer:New(curMarkLayer, self._dontDisplay)
   return buffResult
 end
-
-

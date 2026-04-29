@@ -1,48 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/diary/ui_homeland_dairy_item_container.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomeLandDiaryItemContainer", UICustomWidget)
 UIHomeLandDiaryItemContainer = UIHomeLandDiaryItemContainer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomeLandDiaryItemContainer.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0
+function UIHomeLandDiaryItemContainer:LoadDataOnEnter(TT, res, uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItemContainer._InitWidget = function(self)
-  -- function num : 0_1
+function UIHomeLandDiaryItemContainer:_InitWidget()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItemContainer.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIHomeLandDiaryItemContainer:OnShow(uiParams)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItemContainer.OnHide = function(self)
-  -- function num : 0_3
+function UIHomeLandDiaryItemContainer:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItemContainer.InitData = function(self, data)
-  -- function num : 0_4
+function UIHomeLandDiaryItemContainer:InitData(data)
   self._data = data
   self._itemCount = #data
   self._itemStaticCount = 3
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItemContainer.Refresh = function(self)
-  -- function num : 0_5
+function UIHomeLandDiaryItemContainer:Refresh()
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", "layout")
   cellPool:SpawnObjects("UIHomeLandDiaryItemContainer", self._itemStaticCount)
   local rowList = cellPool:GetAllSpawnList()
@@ -51,33 +29,22 @@ UIHomeLandDiaryItemContainer.Refresh = function(self)
     local itemWidget = #rowList
     if itemWidget then
       local itemIndex = index + 1
-      itemWidget:InitData((self._data)[itemIndex])
-      if self._itemCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
+      itemWidget:InitData(self._data[itemIndex])
+      if itemIndex > self._itemCount then
+        itemWidget:GetGameObject():SetActive(false)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItemContainer._SpawnObject = function(self, className, widgetName)
-  -- function num : 0_6
+function UIHomeLandDiaryItemContainer:_SpawnObject(className, widgetName)
   local pool = self:GetUIComponent("UISelectObjectPath", widgetName)
   local obj = pool:SpawnObject(className)
   return obj
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItemContainer._AttachEvents = function(self)
-  -- function num : 0_7
+function UIHomeLandDiaryItemContainer:_AttachEvents()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomeLandDiaryItemContainer._DetachEvents = function(self)
-  -- function num : 0_8
+function UIHomeLandDiaryItemContainer:_DetachEvents()
 end
-
-

@@ -1,15 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/homeland_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandPet", Object)
 HomelandPet = HomelandPet
-local Enum_Fade = {Enum_Fade_Invalid = 0, Enum_Fade_Doing = 1, Enum_Fade_End = 3}
--- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
+local Enum_Fade = {
+  Enum_Fade_Invalid = 0,
+  Enum_Fade_Doing = 1,
+  Enum_Fade_End = 3
+}
 
-HomelandPet.Constructor = function(self, petData, homelandClient)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPet:Constructor(petData, homelandClient)
   self._alive = true
   self._visible = false
   self._finalVisible = false
@@ -19,38 +16,41 @@ HomelandPet.Constructor = function(self, petData, homelandClient)
   self.runSpeed = 5
   self._data = petData
   self._homelandClient = homelandClient
-  self._tmpID = (self._data):TmpID()
-  self._prefabName = (self._data):Prefab()
-  local skinID = (string.gsub)(self._prefabName, ".prefab", "")
+  self._tmpID = self._data:TmpID()
+  self._prefabName = self._data:Prefab()
+  local skinID = string.gsub(self._prefabName, ".prefab", "")
   self._skinID = tonumber(skinID)
-  self._clothSkinID = (self._data):SkinID()
-  local speedCfg = (Cfg.cfg_pet_move_speed)[self._skinID]
+  self._clothSkinID = self._data:SkinID()
+  local speedCfg = Cfg.cfg_pet_move_speed[self._skinID]
   if speedCfg then
     if speedCfg.HomeWalk then
       self.walkSpeed = speedCfg.HomeWalk
-      ;
-      (Log.info)("家园星灵使用配置行走速度:", self._skinID, ",", self.walkSpeed)
+      Log.info("家园星灵使用配置行走速度:", self._skinID, ",", self.walkSpeed)
     end
     if speedCfg.HomeRun then
       self.runSpeed = speedCfg.HomeRun
-      ;
-      (Log.info)("家园星灵使用配置奔跑速度:", self._skinID, ",", self.runSpeed)
+      Log.info("家园星灵使用配置奔跑速度:", self._skinID, ",", self.runSpeed)
     end
   end
-  self._petAgent = (GameObjectHelper.CreateEmpty)(self._skinID .. "_Agent", nil)
-  self._petAgentTransform = (self._petAgent).transform
-  ;
-  (self._petAgentTransform):SetParent(((self._homelandClient):SceneManager()):RuntimeRootTrans())
-  self._petName = (StringTable.Get)(((Cfg.cfg_pet)[self._tmpID]).Name)
-  self._homelandPetManager = (self._homelandClient):PetManager()
+  self._petAgent = GameObjectHelper.CreateEmpty(self._skinID .. "_Agent", nil)
+  self._petAgentTransform = self._petAgent.transform
+  self._petAgentTransform:SetParent(self._homelandClient:SceneManager():RuntimeRootTrans())
+  self._petName = StringTable.Get(Cfg.cfg_pet[self._tmpID].Name)
+  self._homelandPetManager = self._homelandClient:PetManager()
   self._interactingBuilding = nil
   self._bornBehaviorType = nil
   self:_InitNavMeshInfo()
   self._behavior = HomelandPetBehavior:New(self)
   self._beforeTalkBehaviorType = nil
-  self._greetCfg = (Cfg.cfg_homeland_pet_behavior_lib)({TemplateID = self._tmpID, BehaviorType = HomelandPetBehaviorType.GreetPlayer})
+  self._greetCfg = Cfg.cfg_homeland_pet_behavior_lib({
+    TemplateID = self._tmpID,
+    BehaviorType = HomelandPetBehaviorType.GreetPlayer
+  })
   if not self._greetCfg then
-    self._greetCfg = (Cfg.cfg_homeland_pet_behavior_lib)({TemplateID = 0, BehaviorType = HomelandPetBehaviorType.GreetPlayer})
+    self._greetCfg = Cfg.cfg_homeland_pet_behavior_lib({
+      TemplateID = 0,
+      BehaviorType = HomelandPetBehaviorType.GreetPlayer
+    })
   end
   self._greetCheckInterval = 0
   self._occupiedType = HomelandPetOccupiedType.None
@@ -60,177 +60,107 @@ HomelandPet.Constructor = function(self, petData, homelandClient)
   self._motionType = HomelandPetMotionType.None
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._InitNavMeshInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self._navMeshAgent = (self._petAgent):AddComponent(typeof((UnityEngine.AI).NavMeshAgent))
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).agentTypeID = (HelperProxy:GetInstance()):GetNavAgentID(AircraftNavAgent.Normal)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).angularSpeed = 1000
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).speed = self.walkSpeed
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).stoppingDistance = 0.1
-  -- DECOMPILER ERROR at PC26: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).autoBraking = false
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).enabled = false
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshAgent).areaMask = 1
-  self._navMeshObstacle = (self._petAgent):AddComponent(typeof((UnityEngine.AI).NavMeshObstacle))
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshObstacle).shape = ((UnityEngine.AI).NavMeshObstacleShape).Capsule
-  -- DECOMPILER ERROR at PC47: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshObstacle).carving = true
-  -- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._navMeshObstacle).enabled = true
+function HomelandPet:_InitNavMeshInfo()
+  self._navMeshAgent = self._petAgent:AddComponent(typeof(UnityEngine.AI.NavMeshAgent))
+  self._navMeshAgent.agentTypeID = HelperProxy:GetInstance():GetNavAgentID(AircraftNavAgent.Normal)
+  self._navMeshAgent.angularSpeed = 1000
+  self._navMeshAgent.speed = self.walkSpeed
+  self._navMeshAgent.stoppingDistance = 0.1
+  self._navMeshAgent.autoBraking = false
+  self._navMeshAgent.enabled = false
+  self._navMeshAgent.areaMask = 1
+  self._navMeshObstacle = self._petAgent:AddComponent(typeof(UnityEngine.AI.NavMeshObstacle))
+  self._navMeshObstacle.shape = UnityEngine.AI.NavMeshObstacleShape.Capsule
+  self._navMeshObstacle.carving = true
+  self._navMeshObstacle.enabled = true
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetPetBehavior = function(self)
-  -- function num : 0_2
+function HomelandPet:GetPetBehavior()
   return self._behavior
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetHomelandClient = function(self)
-  -- function num : 0_3
+function HomelandPet:GetHomelandClient()
   return self._homelandClient
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetPetManager = function(self)
-  -- function num : 0_4
+function HomelandPet:GetPetManager()
   return self._homelandPetManager
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.Dispose = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function HomelandPet:Dispose()
   self._alive = false
   self._visible = false
   self._finalVisible = false
-  if (self._behavior):GetCurBehavior() then
-    ((self._behavior):GetCurBehavior()):Exit()
+  if self._behavior:GetCurBehavior() then
+    self._behavior:GetCurBehavior():Exit()
   end
-  ;
-  (self._behavior):Dispose()
+  self._behavior:Dispose()
   if self._resLoaded then
-    (self._assetReq):Dispose()
+    self._assetReq:Dispose()
     self._assetReq = nil
     self._resLoaded = false
   end
   if self._extraAnimReq then
-    (self._extraAnimReq):Dispose()
+    self._extraAnimReq:Dispose()
   end
   if self.clickEffReq then
-    (self.clickEffReq):Dispose()
+    self.clickEffReq:Dispose()
     self.clickEffReq = nil
   end
   self:RemoveInteractPoint()
   self._faceMat = nil
-  ;
-  ((UnityEngine.Object).Destroy)(self._petAgent)
+  UnityEngine.Object.Destroy(self._petAgent)
   self._fadeCpt = nil
   self._meshRenderers = nil
   if self._miniMapVisible then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.Pet, (self._data):TmpID())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.Pet, self._data:TmpID())
   end
   if self._materialAnimationContainer then
-    (self._materialAnimationContainer):Dispose()
+    self._materialAnimationContainer:Dispose()
     self._materialAnimationContainer = nil
   end
   self:_RemoveEvent()
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetFaceMat = function(self)
-  -- function num : 0_6
+function HomelandPet:GetFaceMat()
   return self._faceMat
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.IsAlive = function(self)
-  -- function num : 0_7
+function HomelandPet:IsAlive()
   return self._alive
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.IsLoaded = function(self)
-  -- function num : 0_8
+function HomelandPet:IsLoaded()
   return self._resLoaded
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetOccupied = function(self, occupiedType, param)
-  -- function num : 0_9
+function HomelandPet:SetOccupied(occupiedType, param)
   self._occupiedType = occupiedType
   self._occupiedParam = param
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.IsOccupied = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  do return self._occupiedType ~= HomelandPetOccupiedType.None, self._occupiedParam end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function HomelandPet:IsOccupied()
+  return self._occupiedType ~= HomelandPetOccupiedType.None, self._occupiedParam
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetOccupiedType = function(self)
-  -- function num : 0_11
+function HomelandPet:GetOccupiedType()
   return self._occupiedType
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.Update = function(self, deltaTimeMS)
-  -- function num : 0_12 , upvalues : _ENV
+function HomelandPet:Update(deltaTimeMS)
   if not self._alive then
-    return 
+    return
   end
   self:RefreshFade(deltaTimeMS)
   if not self._finalVisible then
-    return 
+    return
   end
   self:_CheckGreetPlayer(deltaTimeMS)
-  ;
-  (self._behavior):Update(deltaTimeMS)
+  self._behavior:Update(deltaTimeMS)
   if self._swimPool then
-    local collider = (self._swimPool):GetPoolAreaCollider()
+    local collider = self._swimPool:GetPoolAreaCollider()
     local closestPoint = collider:ClosestPoint(self:GetPosition())
-    local dir = (Vector3.Distance)(closestPoint, self:GetPosition())
+    local dir = Vector3.Distance(closestPoint, self:GetPosition())
     local inRange = false
     if dir <= 0 then
       inRange = true
@@ -241,10 +171,8 @@ HomelandPet.Update = function(self, deltaTimeMS)
       local type = behavior:GetCurBehaviorType()
       if type == HomelandPetBehaviorType.Roam then
         behavior:RandomBehavior()
-      else
-        if type == HomelandPetBehaviorType.Following then
-          behavior:ChangeBehavior(HomelandPetBehaviorType.Following)
-        end
+      elseif type == HomelandPetBehaviorType.Following then
+        behavior:ChangeBehavior(HomelandPetBehaviorType.Following)
       end
       self._swimPool = nil
       self._oldSkin = nil
@@ -253,272 +181,177 @@ HomelandPet.Update = function(self, deltaTimeMS)
   end
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.PetName = function(self)
-  -- function num : 0_13
+function HomelandPet:PetName()
   return self._petName
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.PstID = function(self)
-  -- function num : 0_14
-  return (self._data):PstID()
+function HomelandPet:PstID()
+  return self._data:PstID()
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.TemplateID = function(self)
-  -- function num : 0_15
+function HomelandPet:TemplateID()
   return self._tmpID
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SkinID = function(self)
-  -- function num : 0_16
+function HomelandPet:SkinID()
   return self._skinID
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.ClothSkinID = function(self)
-  -- function num : 0_17
+function HomelandPet:ClothSkinID()
   return self._clothSkinID
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.AwakeLevel = function(self)
-  -- function num : 0_18
-  return (self._data):Awake()
+function HomelandPet:AwakeLevel()
+  return self._data:Awake()
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetGiftFlag = function(self, flag)
-  -- function num : 0_19
+function HomelandPet:SetGiftFlag(flag)
   self._hasPreset = flag
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.IsGiftPet = function(self)
-  -- function num : 0_20
+function HomelandPet:IsGiftPet()
   return self._hasPreset
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.NaviRadius = function(self)
-  -- function num : 0_21
+function HomelandPet:NaviRadius()
   return self._naviRadius
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.PrefabName = function(self)
-  -- function num : 0_22
+function HomelandPet:PrefabName()
   return self._prefabName
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetPrefabName = function(self, prefabName)
-  -- function num : 0_23
+function HomelandPet:SetPrefabName(prefabName)
   self._prefabName = prefabName
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetSkinID = function(self, skinID)
-  -- function num : 0_24
+function HomelandPet:SetSkinID(skinID)
   self._skinID = skinID
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetClothSkinID = function(self, clothSkinID)
-  -- function num : 0_25
+function HomelandPet:SetClothSkinID(clothSkinID)
   self._clothSkinID = clothSkinID
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.Show = function(self, req, clickAnimClip, reLoad)
-  -- function num : 0_26 , upvalues : _ENV, Enum_Fade
+function HomelandPet:Show(req, clickAnimClip, reLoad)
   self._resLoaded = true
   self._assetReq = req
   self._petGO = req:PetGameObject()
-  self._petTransform = (self._petGO).transform
-  ;
-  (GameObjectHelper.SetGameObjectLayer)(self._petGO, AircraftLayer.Pet)
-  ;
-  (GameObjectHelper.AddVolumeComponent)(self._petGO)
-  self._animation = ((self._petTransform):Find("Root")):GetComponent(typeof(UnityEngine.Animation))
-  local clickAnim = (self._animation):get_Item(HomelandPetAnimName.Click)
+  self._petTransform = self._petGO.transform
+  GameObjectHelper.SetGameObjectLayer(self._petGO, AircraftLayer.Pet)
+  GameObjectHelper.AddVolumeComponent(self._petGO)
+  self._animation = self._petTransform:Find("Root"):GetComponent(typeof(UnityEngine.Animation))
+  local clickAnim = self._animation:get_Item(HomelandPetAnimName.Click)
   if clickAnim == nil then
-    (Log.error)("Homeland Pet Click Animation Not Found:", self._tmpID)
+    Log.error("Homeland Pet Click Animation Not Found:", self._tmpID)
   end
-  self._headSlot = (GameObjectHelper.FindChild)(self._petTransform, "Bip001 Head")
+  self._headSlot = GameObjectHelper.FindChild(self._petTransform, "Bip001 Head")
   if not self._headSlot then
-    (Log.error)("Homeland Pet Bip001 Head Not Found.", self._tmpID)
+    Log.error("Homeland Pet Bip001 Head Not Found.", self._tmpID)
   end
-  local bip = (GameObjectHelper.FindChild)((self._petGO).transform, "Bip001")
+  local bip = GameObjectHelper.FindChild(self._petGO.transform, "Bip001")
   if bip == nil then
-    (Log.error)("Homeland Pet Bip001 Not Found.", self._tmpID)
+    Log.error("Homeland Pet Bip001 Not Found.", self._tmpID)
   end
-  local collider = (bip.gameObject):AddComponent(typeof(UnityEngine.BoxCollider))
-  local cfg = (Cfg.cfg_homeland_pet)[self._tmpID]
+  local collider = bip.gameObject:AddComponent(typeof(UnityEngine.BoxCollider))
+  local cfg = Cfg.cfg_homeland_pet[self._tmpID]
   if not cfg then
-    (Log.error)("cfg_homeland_pet Not Exist:", self._tmpID)
+    Log.error("cfg_homeland_pet Not Exist:", self._tmpID)
   end
-  local size = Vector3((cfg.BoxSize)[1], (cfg.BoxSize)[3], (cfg.BoxSize)[2])
+  local size = Vector3(cfg.BoxSize[1], cfg.BoxSize[3], cfg.BoxSize[2])
   collider.size = size
   collider.center = Vector3(0, 0, 0)
   self._collider = collider
-  local bipObstacle = (bip.gameObject):GetComponent(typeof((UnityEngine.AI).NavMeshObstacle))
-  if not bipObstacle then
-    bipObstacle = (bip.gameObject):AddComponent(typeof((UnityEngine.AI).NavMeshObstacle))
-  end
+  local bipObstacle = bip.gameObject:GetComponent(typeof(UnityEngine.AI.NavMeshObstacle))
+  bipObstacle = bipObstacle or bip.gameObject:AddComponent(typeof(UnityEngine.AI.NavMeshObstacle))
   bipObstacle.size = size
   bipObstacle.carving = true
   bipObstacle.enabled = false
   self._bipObstacle = bipObstacle
-  self.clickEffCfg = (Cfg.cfg_aircraft_click_eff)[self._skinID]
-  if self.clickEffCfg and (self.clickEffCfg).EffName then
-    self.clickEffReq = (ResourceManager:GetInstance()):SyncLoadAsset((self.clickEffCfg).EffName .. ".prefab", LoadType.GameObject)
-    self.clickEff = (self.clickEffReq).Obj
-    -- DECOMPILER ERROR at PC156: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    ((self.clickEff).transform).localScale = Vector3.one
-    local cfgPos = (self.clickEffCfg).PosOffset
+  self.clickEffCfg = Cfg.cfg_aircraft_click_eff[self._skinID]
+  if self.clickEffCfg and self.clickEffCfg.EffName then
+    self.clickEffReq = ResourceManager:GetInstance():SyncLoadAsset(self.clickEffCfg.EffName .. ".prefab", LoadType.GameObject)
+    self.clickEff = self.clickEffReq.Obj
+    self.clickEff.transform.localScale = Vector3.one
+    local cfgPos = self.clickEffCfg.PosOffset
     self.clickEffOffset = Vector3(cfgPos[1], cfgPos[2], cfgPos[3])
   end
-  do
-    local face_name = self._skinID .. "_face"
-    local face = (GameObjectHelper.FindChild)((self._petGO).transform, face_name)
-    if face then
-      local render = (face.gameObject):GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
-      if not render then
-        (Log.error)("面部表情节点上找不到SkinnedMeshRenderer：", face_name)
-      else
-        self._faceMat = render.material
-      end
+  local face_name = self._skinID .. "_face"
+  local face = GameObjectHelper.FindChild(self._petGO.transform, face_name)
+  if face then
+    local render = face.gameObject:GetComponent(typeof(UnityEngine.SkinnedMeshRenderer))
+    if not render then
+      Log.error("面部表情节点上找不到SkinnedMeshRenderer：", face_name)
     else
-      do
-        ;
-        (Log.error)("找不到面部表情节点：", face_name)
-        ;
-        (self._petTransform):SetParent(self._petAgentTransform)
-        local petScale = ((Cfg.cfg_aircraft_camera).petScale).Value
-        -- DECOMPILER ERROR at PC213: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (self._petTransform).localScale = Vector3(petScale, petScale, petScale)
-        -- DECOMPILER ERROR at PC217: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (self._petTransform).localPosition = Vector3.zero
-        -- DECOMPILER ERROR at PC221: Confused about usage of register: R13 in 'UnsetPending'
-
-        ;
-        (self._petTransform).localRotation = Quaternion.identity
-        local root = (self._petTransform):Find("Root")
-        for i = 0, root.childCount - 1 do
-          local child = root:GetChild(i)
-          if (string.find)(child.name, "weapon") then
-            (child.gameObject):SetActive(false)
-          end
-        end
-        self._selectAnim = (self._petGO):GetComponent(typeof(UnityEngine.Animation))
-        if not self._selectAnim then
-          self._selectAnim = (self._petGO):AddComponent(typeof(UnityEngine.Animation))
-          -- DECOMPILER ERROR at PC266: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._selectAnim).playAutomatically = false
-          ;
-          (self._selectAnim):AddClip(req:ClickAnimClip(), "aircraft_select")
-        end
-        self._outLine = (root.gameObject):GetComponent(typeof(OutlineComponent))
-        if not self._outLine then
-          self._outLine = (root.gameObject):AddComponent(typeof(OutlineComponent))
-          -- DECOMPILER ERROR at PC291: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._outLine).blurNum = 3
-          -- DECOMPILER ERROR at PC293: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._outLine).intensity = 2.5
-          -- DECOMPILER ERROR at PC295: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._outLine).outlineSize = 1
-          -- DECOMPILER ERROR at PC300: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._outLine).blendType = (OutlineComponent.BlendType).Blend
-          -- DECOMPILER ERROR at PC302: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._outLine).enabled = false
-        end
-        self._shadow = (self._petGO):GetComponent(typeof(ShadowmapCheckPoint))
-        if not self._shadow then
-          self._shadow = (self._petGO):AddComponent(typeof(ShadowmapCheckPoint))
-        end
-        self._fadeCpt = (self._petGO):AddComponent(typeof(FadeComponent))
-        -- DECOMPILER ERROR at PC328: Confused about usage of register: R14 in 'UnsetPending'
-
-        ;
-        (self._fadeCpt).Alpha = 1
-        self._fadState = Enum_Fade.Enum_Fade_Invalid
-        self._materialAnimation = (self._petGO):GetComponent(typeof(MaterialAnimation))
-        if not self._materialAnimation then
-          self._materialAnimation = (self._petGO):AddComponent(typeof(MaterialAnimation))
-        end
-        self._materialAnimationContainer = (ResourceManager:GetInstance()):SyncLoadAsset("HomelandShaderEffects.asset", LoadType.Asset)
-        ;
-        (self._materialAnimation):AddClips((self._materialAnimationContainer).Obj)
-        ;
-        (self._petGO):SetActive(true)
-        self:_InitSkinnedMeshRender()
-        if not self:IsOccupied() and not reLoad then
-          self:_RandomBornPosition()
-          ;
-          (self._behavior):StartBehavior(self._bornBehaviorType)
-        end
-        self:_AddEvent()
-        self:SetVisible(true)
-      end
+      self._faceMat = render.material
+    end
+  else
+    Log.error("找不到面部表情节点：", face_name)
+  end
+  self._petTransform:SetParent(self._petAgentTransform)
+  local petScale = Cfg.cfg_aircraft_camera.petScale.Value
+  self._petTransform.localScale = Vector3(petScale, petScale, petScale)
+  self._petTransform.localPosition = Vector3.zero
+  self._petTransform.localRotation = Quaternion.identity
+  local root = self._petTransform:Find("Root")
+  for i = 0, root.childCount - 1 do
+    local child = root:GetChild(i)
+    if string.find(child.name, "weapon") then
+      child.gameObject:SetActive(false)
     end
   end
+  self._selectAnim = self._petGO:GetComponent(typeof(UnityEngine.Animation))
+  if not self._selectAnim then
+    self._selectAnim = self._petGO:AddComponent(typeof(UnityEngine.Animation))
+    self._selectAnim.playAutomatically = false
+    self._selectAnim:AddClip(req:ClickAnimClip(), "aircraft_select")
+  end
+  self._outLine = root.gameObject:GetComponent(typeof(OutlineComponent))
+  if not self._outLine then
+    self._outLine = root.gameObject:AddComponent(typeof(OutlineComponent))
+    self._outLine.blurNum = 3
+    self._outLine.intensity = 2.5
+    self._outLine.outlineSize = 1
+    self._outLine.blendType = OutlineComponent.BlendType.Blend
+    self._outLine.enabled = false
+  end
+  self._shadow = self._petGO:GetComponent(typeof(ShadowmapCheckPoint))
+  if not self._shadow then
+    self._shadow = self._petGO:AddComponent(typeof(ShadowmapCheckPoint))
+  end
+  self._fadeCpt = self._petGO:AddComponent(typeof(FadeComponent))
+  self._fadeCpt.Alpha = 1
+  self._fadState = Enum_Fade.Enum_Fade_Invalid
+  self._materialAnimation = self._petGO:GetComponent(typeof(MaterialAnimation))
+  if not self._materialAnimation then
+    self._materialAnimation = self._petGO:AddComponent(typeof(MaterialAnimation))
+  end
+  self._materialAnimationContainer = ResourceManager:GetInstance():SyncLoadAsset("HomelandShaderEffects.asset", LoadType.Asset)
+  self._materialAnimation:AddClips(self._materialAnimationContainer.Obj)
+  self._petGO:SetActive(true)
+  self:_InitSkinnedMeshRender()
+  if not self:IsOccupied() and not reLoad then
+    self:_RandomBornPosition()
+    self._behavior:StartBehavior(self._bornBehaviorType)
+  end
+  self:_AddEvent()
+  self:SetVisible(true)
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._InitSkinnedMeshRender = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  local meshRenderers = (self._petGO):GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
+function HomelandPet:_InitSkinnedMeshRender()
+  local meshRenderers = self._petGO:GetComponentsInChildren(typeof(UnityEngine.SkinnedMeshRenderer))
   local tempMeshRenders = meshRenderers:ToTable()
   self._meshRenderers = {}
-  for _,meshRenderer in pairs(tempMeshRenders) do
+  for _, meshRenderer in pairs(tempMeshRenders) do
     if meshRenderer.enabled then
-      (table.insert)(self._meshRenderers, meshRenderer)
+      table.insert(self._meshRenderers, meshRenderer)
     end
   end
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._SetPetVisible = function(self, visible)
-  -- function num : 0_28 , upvalues : _ENV
+function HomelandPet:_SetPetVisible(visible)
   self:_EnableSkinnedMeshRender(visible)
-  local behaviorBase = (self._behavior):GetCurBehavior()
+  local behaviorBase = self._behavior:GetCurBehavior()
   if behaviorBase then
     local component = behaviorBase:GetComponent(HomelandPetComponentType.InteractionAnimation)
     if component then
@@ -527,946 +360,623 @@ HomelandPet._SetPetVisible = function(self, visible)
   end
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._EnableSkinnedMeshRender = function(self, enabled)
-  -- function num : 0_29 , upvalues : _ENV
+function HomelandPet:_EnableSkinnedMeshRender(enabled)
   if self._meshRenderers then
-    for _,meshRenderer in pairs(self._meshRenderers) do
+    for _, meshRenderer in pairs(self._meshRenderers) do
       meshRenderer.enabled = enabled
     end
   end
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._RandomBornPosition = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function HomelandPet:_RandomBornPosition()
   local center = Vector3(2, 0, 20)
-  local bornPosition = (HomelandNavmeshTool:GetInstance()):GetRandomPositionCircle((BuildConfig.MaxCircle).Radius, center)
+  local bornPosition = HomelandNavmeshTool:GetInstance():GetRandomPositionCircle(BuildConfig.MaxCircle.Radius, center)
   self:SetPosition(bornPosition)
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._AddEvent = function(self)
-  -- function num : 0_31 , upvalues : _ENV
-  self._OnSaveBuildingCallBack = (GameHelper:GetInstance()):CreateCallback(self._OnSaveBuilding, self)
-  ;
-  ((GameGlobal.EventDispatcher)()):AddCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._OnSaveBuildingCallBack)
+function HomelandPet:_AddEvent()
+  self._OnSaveBuildingCallBack = GameHelper:GetInstance():CreateCallback(self._OnSaveBuilding, self)
+  GameGlobal.EventDispatcher():AddCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._OnSaveBuildingCallBack)
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._RemoveEvent = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function HomelandPet:_RemoveEvent()
   if self._OnSaveBuildingCallBack then
-    ((GameGlobal.EventDispatcher)()):RemoveCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._OnSaveBuildingCallBack)
+    GameGlobal.EventDispatcher():RemoveCallbackListener(GameEventType.HomelandBuildOnSaveBuilding, self._OnSaveBuildingCallBack)
   end
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.HeadPos = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function HomelandPet:HeadPos()
   if self._headSlot then
-    return (self._headSlot).position
+    return self._headSlot.position
   else
-    return (self._petAgentTransform).position + Vector3(0, 1.5, 0)
+    return self._petAgentTransform.position + Vector3(0, 1.5, 0)
   end
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.AgentGameObject = function(self)
-  -- function num : 0_34
+function HomelandPet:AgentGameObject()
   return self._petAgent
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.AgentTransform = function(self)
-  -- function num : 0_35
+function HomelandPet:AgentTransform()
   return self._petAgentTransform
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.FollowBuilding = function(self, trBuilding)
-  -- function num : 0_36 , upvalues : _ENV
+function HomelandPet:FollowBuilding(trBuilding)
   if trBuilding == nil then
-    (self._petTransform):SetParent(self._petAgentTransform, false)
-    local petScale = ((Cfg.cfg_aircraft_camera).petScale).Value
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._petTransform).localScale = Vector3(petScale, petScale, petScale)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._petTransform).localPosition = Vector3.zero
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._petTransform).localRotation = Quaternion.identity
+    self._petTransform:SetParent(self._petAgentTransform, false)
+    local petScale = Cfg.cfg_aircraft_camera.petScale.Value
+    self._petTransform.localScale = Vector3(petScale, petScale, petScale)
+    self._petTransform.localPosition = Vector3.zero
+    self._petTransform.localRotation = Quaternion.identity
   else
-    do
-      ;
-      (self._petTransform):SetParent(trBuilding, true)
-    end
+    self._petTransform:SetParent(trBuilding, true)
   end
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.Collider = function(self)
-  -- function num : 0_37
+function HomelandPet:Collider()
   return self._collider
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetBornBehavior = function(self, behaviorType)
-  -- function num : 0_38
+function HomelandPet:SetBornBehavior(behaviorType)
   self._bornBehaviorType = behaviorType
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetBoneNode = function(self, name)
-  -- function num : 0_39 , upvalues : _ENV
-  local boneTransform = (GameObjectHelper.FindChild)(self._petTransform, name)
+function HomelandPet:GetBoneNode(name)
+  local boneTransform = GameObjectHelper.FindChild(self._petTransform, name)
   if boneTransform then
     return boneTransform
   end
   return self._petTransform
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetPosition = function(self)
-  -- function num : 0_40
-  return (self._petAgentTransform).position
+function HomelandPet:GetPosition()
+  return self._petAgentTransform.position
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetPosition = function(self, pos)
-  -- function num : 0_41 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function HomelandPet:SetPosition(pos)
   if pos then
-    (self._petAgentTransform).position = pos
+    self._petAgentTransform.position = pos
   else
-    ;
-    (Log.error)("Homeland Pet SetPosition Error !")
+    Log.error("Homeland Pet SetPosition Error !")
   end
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetRotation = function(self)
-  -- function num : 0_42
-  return (self._petAgentTransform).rotation
+function HomelandPet:GetRotation()
+  return self._petAgentTransform.rotation
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetRotation = function(self, rotation)
-  -- function num : 0_43
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R2 in 'UnsetPending'
-
+function HomelandPet:SetRotation(rotation)
   if rotation then
-    (self._petAgentTransform).rotation = rotation
+    self._petAgentTransform.rotation = rotation
   end
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetLocalTrans = function(self, pos, rotation)
-  -- function num : 0_44
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
+function HomelandPet:SetLocalTrans(pos, rotation)
   if pos then
-    (self._petAgentTransform).localPosition = pos
+    self._petAgentTransform.localPosition = pos
   end
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R3 in 'UnsetPending'
-
   if rotation then
-    (self._petAgentTransform).localRotation = rotation
+    self._petAgentTransform.localRotation = rotation
   end
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetEuler = function(self, v3)
-  -- function num : 0_45
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._petAgentTransform).eulerAngles = v3
+function HomelandPet:SetEuler(v3)
+  self._petAgentTransform.eulerAngles = v3
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetInteractingBuilding = function(self)
-  -- function num : 0_46
+function HomelandPet:GetInteractingBuilding()
   return self._interactingBuilding
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetInteractingBuilding = function(self, building)
-  -- function num : 0_47
+function HomelandPet:SetInteractingBuilding(building)
   self._interactingBuilding = building
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.StopAnimation = function(self)
-  -- function num : 0_48
+function HomelandPet:StopAnimation()
   if self._animation then
-    (self._animation):Stop()
+    self._animation:Stop()
   end
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.PlayClickAnimation = function(self)
-  -- function num : 0_49
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
+function HomelandPet:PlayClickAnimation()
   if self.clickEff then
-    ((self.clickEff).transform).rotation = (self._petTransform).rotation
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    ((self.clickEff).transform).position = (self._petTransform).position + self.clickEffOffset
-    ;
-    (self.clickEff):SetActive(false)
-    ;
-    (self.clickEff):SetActive(true)
+    self.clickEff.transform.rotation = self._petTransform.rotation
+    self.clickEff.transform.position = self._petTransform.position + self.clickEffOffset
+    self.clickEff:SetActive(false)
+    self.clickEff:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.WorldPosition = function(self)
-  -- function num : 0_50
-  return (self._petAgentTransform).position
+function HomelandPet:WorldPosition()
+  return self._petAgentTransform.position
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetAnimation = function(self)
-  -- function num : 0_51
+function HomelandPet:GetAnimation()
   return self._animation
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetNavMeshAgent = function(self)
-  -- function num : 0_52
+function HomelandPet:GetNavMeshAgent()
   return self._navMeshAgent
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetNavMeshAgentEnabled = function(self, enable)
-  -- function num : 0_53
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._navMeshAgent).enabled = enable
+function HomelandPet:SetNavMeshAgentEnabled(enable)
+  self._navMeshAgent.enabled = enable
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetNavMeshObstacle = function(self)
-  -- function num : 0_54
+function HomelandPet:GetNavMeshObstacle()
   return self._navMeshObstacle
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetNavMeshObstacleEnabled = function(self, enabled)
-  -- function num : 0_55
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._navMeshObstacle).enabled = enabled
+function HomelandPet:SetNavMeshObstacleEnabled(enabled)
+  self._navMeshObstacle.enabled = enabled
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetBipObstacleEnabled = function(self, enabled)
-  -- function num : 0_56
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._bipObstacle).enabled = enabled
+function HomelandPet:SetBipObstacleEnabled(enabled)
+  self._bipObstacle.enabled = enabled
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.PlaySelectAnim = function(self)
-  -- function num : 0_57
+function HomelandPet:PlaySelectAnim()
   if self._selectAnim then
-    (self._selectAnim):Play("aircraft_select")
+    self._selectAnim:Play("aircraft_select")
   end
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetFadeValue = function(self)
-  -- function num : 0_58 , upvalues : Enum_Fade, _ENV
+function HomelandPet:SetFadeValue()
   if not self._fadeCpt then
-    return 
+    return
   end
   self._fadState = Enum_Fade.Enum_Fade_Doing
   self._fabAddtime = 0
   self._fabTotaltime = 400
   self._fabAptime = 1 / self._fabTotaltime
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
   if self._finalVisible then
-    (self._fadeCpt).Alpha = 1
+    self._fadeCpt.Alpha = 1
     self:SetVisibleBubble(false)
   else
-    if (self._homelandClient):CurrentMode() == HomelandMode.Build or (self._homelandClient):CurrentMode() == HomelandMode.Story then
+    if self._homelandClient:CurrentMode() == HomelandMode.Build or self._homelandClient:CurrentMode() == HomelandMode.Story then
       self:_SetPetVisible(self._finalVisible)
     else
       self:_SetPetVisible(true)
     end
-    -- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-    ;
-    (self._fadeCpt).Alpha = 0
+    self._fadeCpt.Alpha = 0
   end
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.RefreshFade = function(self, deltaTimeMS)
-  -- function num : 0_59 , upvalues : Enum_Fade
-  if (self._homelandClient):IsVisit() then
-    return 
+function HomelandPet:RefreshFade(deltaTimeMS)
+  if self._homelandClient:IsVisit() then
+    return
   end
   if self._fadState ~= Enum_Fade.Enum_Fade_Doing or self._fadeCpt == nil then
-    return 
+    return
   end
-  local taskManager = (self._homelandClient):GetHomelandTaskManager()
+  local taskManager = self._homelandClient:GetHomelandTaskManager()
   local show = not taskManager:IsPetOccupiedAsNpc(self._tmpID)
-  local vv = not self._visible or show
+  local vv = self._visible and show
   self._fabAddtime = self._fabAddtime + deltaTimeMS
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
   if vv then
-    (self._fadeCpt).Alpha = self._fabAptime * self._fabAddtime
+    self._fadeCpt.Alpha = self._fabAptime * self._fabAddtime
   else
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._fadeCpt).Alpha = 1 - self._fabAptime * self._fabAddtime
+    self._fadeCpt.Alpha = 1 - self._fabAptime * self._fabAddtime
   end
-  if self._fabTotaltime <= self._fabAddtime then
+  if self._fabAddtime >= self._fabTotaltime then
     self._fadState = Enum_Fade.Enum_Fade_End
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R5 in 'UnsetPending'
-
     if vv then
-      (self._fadeCpt).Alpha = 1
+      self._fadeCpt.Alpha = 1
     else
-      -- DECOMPILER ERROR at PC54: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (self._fadeCpt).Alpha = 0
+      self._fadeCpt.Alpha = 0
     end
     self:SetVisibleBubble(vv)
     self:RefreshVisible()
   end
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.RefreshVisible = function(self)
-  -- function num : 0_60 , upvalues : _ENV
-  if (self._homelandClient):IsVisit() then
-    return 
+function HomelandPet:RefreshVisible()
+  if self._homelandClient:IsVisit() then
+    return
   end
-  local taskManager = (self._homelandClient):GetHomelandTaskManager()
+  local taskManager = self._homelandClient:GetHomelandTaskManager()
   local show = not taskManager:IsPetOccupiedAsNpc(self._tmpID)
-  self._finalVisible = not self._visible or show
+  self._finalVisible = self._visible and show
   self:_SetPetVisible(self._finalVisible)
-  do
-    if self._behavior and (self._behavior):GetCurBehavior() then
-      local com = ((self._behavior):GetCurBehavior()):GetComponent(HomelandPetComponentType.Bubble)
-      if com ~= nil and not show then
-        com:_Stop()
-      end
-      if com then
-        com:SetCanShowBubble(self._finalVisible)
-      end
+  if self._behavior and self._behavior:GetCurBehavior() then
+    local com = self._behavior:GetCurBehavior():GetComponent(HomelandPetComponentType.Bubble)
+    if com ~= nil and not show then
+      com:_Stop()
     end
+    if com then
+      com:SetCanShowBubble(self._finalVisible)
+    end
+  end
+  if self._finalVisible then
+    self:AddInteractPoint()
+  else
+    self:RemoveInteractPoint()
+  end
+  if self._fadeCpt then
     if self._finalVisible then
-      self:AddInteractPoint()
+      self._fadeCpt.Alpha = 1
     else
-      self:RemoveInteractPoint()
+      self._fadeCpt.Alpha = 0
     end
-    -- DECOMPILER ERROR at PC62: Confused about usage of register: R3 in 'UnsetPending'
-
-    if self._fadeCpt then
-      if self._finalVisible then
-        (self._fadeCpt).Alpha = 1
-      else
-        -- DECOMPILER ERROR at PC65: Confused about usage of register: R3 in 'UnsetPending'
-
-        ;
-        (self._fadeCpt).Alpha = 0
-      end
-    end
-    if self._miniMapVisible ~= self._finalVisible then
-      self._miniMapVisible = self._finalVisible
-      if self._miniMapVisible then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapAddIcon, HomelandMapIconType.Pet, (self._data):TmpID(), self._petAgentTransform, self)
-      else
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.Pet, (self._data):TmpID())
-      end
+  end
+  if self._miniMapVisible ~= self._finalVisible then
+    self._miniMapVisible = self._finalVisible
+    if self._miniMapVisible then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapAddIcon, HomelandMapIconType.Pet, self._data:TmpID(), self._petAgentTransform, self)
+    else
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.Pet, self._data:TmpID())
     end
   end
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetVisible = function(self, visible)
-  -- function num : 0_61
+function HomelandPet:SetVisible(visible)
   if self._visible == visible then
-    return 
+    return
   end
   self._visible = visible
   local show = true
-  do
-    if not (self._homelandClient):IsVisit() then
-      local taskManager = (self._homelandClient):GetHomelandTaskManager()
-      show = not taskManager:IsPetOccupiedAsNpc(self._tmpID)
-    end
-    self._finalVisible = not visible or show
-    self:SetFadeValue()
-    if self._finalVisible then
-      self:AddInteractPoint()
-    else
-      ;
-      ((self._behavior):GetCurBehavior()):HideBubble()
-    end
+  if not self._homelandClient:IsVisit() then
+    local taskManager = self._homelandClient:GetHomelandTaskManager()
+    show = not taskManager:IsPetOccupiedAsNpc(self._tmpID)
+  end
+  self._finalVisible = visible and show
+  self:SetFadeValue()
+  if self._finalVisible then
+    self:AddInteractPoint()
+  else
+    self._behavior:GetCurBehavior():HideBubble()
   end
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.AddInteractPoint = function(self)
-  -- function num : 0_62
+function HomelandPet:AddInteractPoint()
   if not self._interactPoint then
-    self._interactPoint = ((self._homelandClient):InteractPointManager()):AddBuildInteractPoint(self, 1, 3)
+    self._interactPoint = self._homelandClient:InteractPointManager():AddBuildInteractPoint(self, 1, 3)
   end
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.RemoveInteractPoint = function(self)
-  -- function num : 0_63
+function HomelandPet:RemoveInteractPoint()
   if self._interactPoint then
-    ((self._homelandClient):InteractPointManager()):RemoveBuildInteractPoint(self._interactPoint)
+    self._homelandClient:InteractPointManager():RemoveBuildInteractPoint(self._interactPoint)
     self._interactPoint = nil
   end
 end
 
--- DECOMPILER ERROR at PC204: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetInteractPosition = function(self, index)
-  -- function num : 0_64 , upvalues : _ENV
-  local tb = {[HomelandPetBehaviorType.Following] = true, [HomelandPetBehaviorType.FishingMatch] = true}
-  local behaviorType = (self._behavior):GetCurBehaviorType()
+function HomelandPet:GetInteractPosition(index)
+  local tb = {
+    [HomelandPetBehaviorType.Following] = true,
+    [HomelandPetBehaviorType.FishingMatch] = true
+  }
+  local behaviorType = self._behavior:GetCurBehaviorType()
   if tb[behaviorType] then
     return nil
   end
   if self._petTransform then
-    return (self._petTransform).position
+    return self._petTransform.position
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC207: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetInteractAreaPosition = function(self)
-  -- function num : 0_65
+function HomelandPet:GetInteractAreaPosition()
   return nil
 end
 
--- DECOMPILER ERROR at PC210: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.Interact = function(self, pointType, index)
-  -- function num : 0_66 , upvalues : _ENV
+function HomelandPet:Interact(pointType, index)
   if pointType == InteractPointType.PetCommunication then
-    local currentType = (self._behavior):GetCurBehaviorType()
-    local eventMgr = (self._homelandClient):HomeEventManager()
+    local currentType = self._behavior:GetCurBehaviorType()
+    local eventMgr = self._homelandClient:HomeEventManager()
     eventMgr:ReplyPetBe(self:PstID(), currentType)
-    do
-      if self._invited then
-        local inviteMgr = (self._homelandClient):GetHomelandPetInviteManager()
-        inviteMgr:SetUIHomelandPetInteract(self)
-      end
-      self._beforeTalkBehaviorType = (self._behavior):GetCurBehaviorType()
-      ;
-      (self._behavior):ChangeBehavior(HomelandPetBehaviorType.InteractingPlayer)
-      ;
-      (self._homelandClient):OpenPetInteract(self)
+    if self._invited then
+      local inviteMgr = self._homelandClient:GetHomelandPetInviteManager()
+      inviteMgr:SetUIHomelandPetInteract(self)
     end
+    self._beforeTalkBehaviorType = self._behavior:GetCurBehaviorType()
+    self._behavior:ChangeBehavior(HomelandPetBehaviorType.InteractingPlayer)
+    self._homelandClient:OpenPetInteract(self)
   end
 end
 
--- DECOMPILER ERROR at PC213: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._CheckGreetPlayer = function(self, deltaTimeMS)
-  -- function num : 0_67 , upvalues : _ENV
+function HomelandPet:_CheckGreetPlayer(deltaTimeMS)
   if self._greetCheckInterval > 0 then
     self._greetCheckInterval = self._greetCheckInterval - deltaTimeMS
-    return 
+    return
   end
   self._greetCheckInterval = 200
   if not self:_GreetCondition() then
-    return 
+    return
   end
-  if (self._behavior):InCooling(HomelandPetBehaviorType.GreetPlayer) then
-    return 
+  if self._behavior:InCooling(HomelandPetBehaviorType.GreetPlayer) then
+    return
   end
-  if not self._greetCfg or not ((self._greetCfg)[1]).Range or not ((self._greetCfg)[1]).Angle or not ((self._greetCfg)[1]).Prob then
-    return 
+  if not (self._greetCfg and self._greetCfg[1].Range and self._greetCfg[1].Angle) or not self._greetCfg[1].Prob then
+    return
   end
-  local playerTransform = ((self._homelandClient):CharacterManager()):GetCharacterTransform()
-  if ((self._greetCfg)[1]).Range < (Vector3.Distance)(playerTransform.position, (self._petAgentTransform).position) then
-    return 
+  local playerTransform = self._homelandClient:CharacterManager():GetCharacterTransform()
+  if Vector3.Distance(playerTransform.position, self._petAgentTransform.position) > self._greetCfg[1].Range then
+    return
   end
-  local dir = playerTransform.position - (self._petAgentTransform).position
-  if ((self._greetCfg)[1]).Angle < (Vector3.Angle)((self._petAgentTransform).forward, dir) then
-    return 
+  local dir = playerTransform.position - self._petAgentTransform.position
+  if Vector3.Angle(self._petAgentTransform.forward, dir) > self._greetCfg[1].Angle then
+    return
   end
   if not self:_CheckInCameraField() then
-    return 
+    return
   end
-  local random = (math.random)(1, 100)
-  if ((self._greetCfg)[1]).Prob < random then
-    self._greetCheckInterval = self._greetCheckInterval + ((self._greetCfg)[1]).CD * 1000
-    return 
+  local random = math.random(1, 100)
+  if random > self._greetCfg[1].Prob then
+    self._greetCheckInterval = self._greetCheckInterval + self._greetCfg[1].CD * 1000
+    return
   end
   if self._invited then
-    return 
+    return
   end
-  ;
-  (self._behavior):ChangeBehavior(HomelandPetBehaviorType.GreetPlayer)
+  self._behavior:ChangeBehavior(HomelandPetBehaviorType.GreetPlayer)
 end
 
--- DECOMPILER ERROR at PC216: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._GreetCondition = function(self)
-  -- function num : 0_68 , upvalues : _ENV
-  local behaviorType = (self._behavior):GetCurBehaviorType()
+function HomelandPet:_GreetCondition()
+  local behaviorType = self._behavior:GetCurBehaviorType()
   if behaviorType == HomelandPetBehaviorType.Free then
     return true
   end
   if behaviorType == HomelandPetBehaviorType.Roam then
     return true
   end
-  do
-    if behaviorType == HomelandPetBehaviorType.InteractingFurniture then
-      local moveComponent = ((self._behavior):GetCurBehavior()):GetComponent(HomelandPetComponentType.Move)
-      return moveComponent.state == HomelandPetComponentState.Running
-    end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  if behaviorType == HomelandPetBehaviorType.InteractingFurniture then
+    local moveComponent = self._behavior:GetCurBehavior():GetComponent(HomelandPetComponentType.Move)
+    return moveComponent.state == HomelandPetComponentState.Running
   end
-end
-
--- DECOMPILER ERROR at PC219: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._CheckInCameraField = function(self)
-  -- function num : 0_69 , upvalues : _ENV
-  local camera = ((self._homelandClient):CameraManager()):GetCamera()
-  local viewPoint = camera:WorldToViewportPoint((self._petAgentTransform).position)
-  local dir = ((self._petAgentTransform).position - ((camera.gameObject).transform).position).normalized
-  local dot = (Vector3.Dot)(((camera.gameObject).transform).forward, dir)
-  do return dot > 0 and viewPoint.x >= 0 and viewPoint.x <= 1 and viewPoint.y >= 0 and viewPoint.y <= 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
-end
-
--- DECOMPILER ERROR at PC222: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetInteractRedStatus = function(self, pointType, index)
-  -- function num : 0_70
   return false
 end
 
--- DECOMPILER ERROR at PC225: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.EnterInteractArea = function(self)
-  -- function num : 0_71
+function HomelandPet:_CheckInCameraField()
+  local camera = self._homelandClient:CameraManager():GetCamera()
+  local viewPoint = camera:WorldToViewportPoint(self._petAgentTransform.position)
+  local dir = (self._petAgentTransform.position - camera.gameObject.transform.position).normalized
+  local dot = Vector3.Dot(camera.gameObject.transform.forward, dir)
+  return 0 < dot and 0 <= viewPoint.x and viewPoint.x <= 1 and 0 <= viewPoint.y and 1 >= viewPoint.y
 end
 
--- DECOMPILER ERROR at PC228: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.LeaveInteractArea = function(self)
-  -- function num : 0_72
+function HomelandPet:GetInteractRedStatus(pointType, index)
+  return false
 end
 
--- DECOMPILER ERROR at PC231: Confused about usage of register: R1 in 'UnsetPending'
+function HomelandPet:EnterInteractArea()
+end
 
-HomelandPet.RefreshFollow = function(self)
-  -- function num : 0_73 , upvalues : _ENV
-  if (self._behavior):GetCurBehaviorType() == HomelandPetBehaviorType.Following then
-    ((self._behavior):GetCurBehavior()):Enter()
+function HomelandPet:LeaveInteractArea()
+end
+
+function HomelandPet:RefreshFollow()
+  if self._behavior:GetCurBehaviorType() == HomelandPetBehaviorType.Following then
+    self._behavior:GetCurBehavior():Enter()
   end
 end
 
--- DECOMPILER ERROR at PC234: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetSpeed = function(self, speed)
-  -- function num : 0_74
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._navMeshAgent).speed = speed
+function HomelandPet:SetSpeed(speed)
+  self._navMeshAgent.speed = speed
 end
 
--- DECOMPILER ERROR at PC237: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetSpeed = function(self)
-  -- function num : 0_75
-  return (self._navMeshAgent).speed
+function HomelandPet:GetSpeed()
+  return self._navMeshAgent.speed
 end
 
--- DECOMPILER ERROR at PC240: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetBeforeTalkBahaviorType = function(self)
-  -- function num : 0_76
+function HomelandPet:GetBeforeTalkBahaviorType()
   return self._beforeTalkBehaviorType
 end
 
--- DECOMPILER ERROR at PC243: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.LoadExtraAnimation = function(self)
-  -- function num : 0_77 , upvalues : _ENV
+function HomelandPet:LoadExtraAnimation()
   if self._extraAnimReq then
-    return 
+    return
   end
-  self._extraAnimReq = (ResourceManager:GetInstance()):SyncLoadAsset(self._skinID .. "_homeland_extra.prefab", LoadType.GameObject)
+  self._extraAnimReq = ResourceManager:GetInstance():SyncLoadAsset(self._skinID .. "_homeland_extra.prefab", LoadType.GameObject)
   if not self._extraAnimReq then
-    (Log.error)("Homeland Pet Load Extra Animation Fail.", self._skinID)
-    return 
+    Log.error("Homeland Pet Load Extra Animation Fail.", self._skinID)
+    return
   end
-  local animation = ((self._extraAnimReq).Obj):GetComponent(typeof(UnityEngine.Animation))
-  ;
-  (HelperProxy:GetInstance()):AddAnimTo(animation, self._animation)
+  local animation = self._extraAnimReq.Obj:GetComponent(typeof(UnityEngine.Animation))
+  HelperProxy:GetInstance():AddAnimTo(animation, self._animation)
 end
 
--- DECOMPILER ERROR at PC246: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetExtraAnimation = function(self)
-  -- function num : 0_78 , upvalues : _ENV
+function HomelandPet:GetExtraAnimation()
   self:LoadExtraAnimation()
-  if self._extraAnimReq then
-    return ((self._extraAnimReq).Obj):GetComponent(typeof(UnityEngine.Animation))
-  end
+  return self._extraAnimReq and self._extraAnimReq.Obj:GetComponent(typeof(UnityEngine.Animation))
 end
 
--- DECOMPILER ERROR at PC249: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetStoryID = function(self, id)
-  -- function num : 0_79
+function HomelandPet:SetStoryID(id)
   self._storyid = id
 end
 
--- DECOMPILER ERROR at PC252: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetStoryID = function(self)
-  -- function num : 0_80
+function HomelandPet:GetStoryID()
   return self._storyid
 end
 
--- DECOMPILER ERROR at PC255: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetMatchChatID = function(self, chatID)
-  -- function num : 0_81
+function HomelandPet:SetMatchChatID(chatID)
   self._matchChatID = chatID
 end
 
--- DECOMPILER ERROR at PC258: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetMatchChatID = function(self)
-  -- function num : 0_82
+function HomelandPet:GetMatchChatID()
   return self._matchChatID
 end
 
--- DECOMPILER ERROR at PC261: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.BreakUpMatch = function(self)
-  -- function num : 0_83
+function HomelandPet:BreakUpMatch()
   self._matchChatID = nil
 end
 
--- DECOMPILER ERROR at PC264: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.PlayAnimAndReturnTime = function(self, animName)
-  -- function num : 0_84
+function HomelandPet:PlayAnimAndReturnTime(animName)
   local time = 0
-  local clip = (self._animation):GetClip(animName)
+  local clip = self._animation:GetClip(animName)
   if clip then
     time = clip.length
   end
-  ;
-  (self._animation):CrossFade(animName, 0.2)
+  self._animation:CrossFade(animName, 0.2)
   return time
 end
 
--- DECOMPILER ERROR at PC267: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.PlayBubble = function(self, bubble)
-  -- function num : 0_85
-  local be = (self._behavior):GetCurBehavior()
+function HomelandPet:PlayBubble(bubble)
+  local be = self._behavior:GetCurBehavior()
   local time = be:ShowBubble(bubble)
   return time
 end
 
--- DECOMPILER ERROR at PC270: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetVisibleBubble = function(self, value)
-  -- function num : 0_86 , upvalues : _ENV
-  local com = ((self._behavior):GetCurBehavior()):GetComponent(HomelandPetComponentType.Bubble)
+function HomelandPet:SetVisibleBubble(value)
+  local com = self._behavior:GetCurBehavior():GetComponent(HomelandPetComponentType.Bubble)
   if com == nil then
-    return 
+    return
   end
   com:Setvisible(value)
 end
 
--- DECOMPILER ERROR at PC273: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.OnBehaviorChanged = function(self)
-  -- function num : 0_87
+function HomelandPet:OnBehaviorChanged()
   for i = 1, #self._behaviorChangeCallbackList do
-    ((self._behaviorChangeCallbackList)[i])((self._behavior):GetCurBehaviorType())
+    self._behaviorChangeCallbackList[i](self._behavior:GetCurBehaviorType())
   end
 end
 
--- DECOMPILER ERROR at PC276: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.RegisterBehaviorChangeCallback = function(self, callback)
-  -- function num : 0_88 , upvalues : _ENV
-  (table.insert)(self._behaviorChangeCallbackList, callback)
+function HomelandPet:RegisterBehaviorChangeCallback(callback)
+  table.insert(self._behaviorChangeCallbackList, callback)
 end
 
--- DECOMPILER ERROR at PC279: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.UnRegisterBehaviorChangeCallback = function(self, callback)
-  -- function num : 0_89 , upvalues : _ENV
-  (table.removev)(self._behaviorChangeCallbackList, callback)
+function HomelandPet:UnRegisterBehaviorChangeCallback(callback)
+  table.removev(self._behaviorChangeCallbackList, callback)
 end
 
--- DECOMPILER ERROR at PC282: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._OnSaveBuilding = function(self, updateBuildings, deleteBuildings)
-  -- function num : 0_90 , upvalues : _ENV
+function HomelandPet:_OnSaveBuilding(updateBuildings, deleteBuildings)
   if not self._interactingBuilding then
-    return 
+    return
   end
   if #updateBuildings <= 0 and #deleteBuildings <= 0 then
-    return 
+    return
   end
-  local pstid = (self._interactingBuilding):GetBuildPstId()
-  for _,building in pairs(updateBuildings) do
+  local pstid = self._interactingBuilding:GetBuildPstId()
+  for _, building in pairs(updateBuildings) do
     if pstid == building:GetBuildPstId() then
-      (self._behavior):RandomBehavior()
-      return 
+      self._behavior:RandomBehavior()
+      return
     end
   end
-  for _,building in pairs(deleteBuildings) do
+  for _, building in pairs(deleteBuildings) do
     if pstid == building:GetBuildPstId() then
-      (self._behavior):RandomBehavior()
-      return 
+      self._behavior:RandomBehavior()
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC285: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.OnClientModeChange = function(self, lastMode, currentMode)
-  -- function num : 0_91
-  local behavior = (self._behavior):GetCurBehavior()
+function HomelandPet:OnClientModeChange(lastMode, currentMode)
+  local behavior = self._behavior:GetCurBehavior()
   if behavior then
     behavior:OnClientModeChange(lastMode, currentMode)
   end
 end
 
--- DECOMPILER ERROR at PC288: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.ResetNavmeshPos = function(self)
-  -- function num : 0_92 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Overwrote pending register: R3 in 'AssignReg'
-
-  local hit, navMeshHit = (((UnityEngine.AI).NavMesh).SamplePosition)((self:GetPosition()))
-  -- DECOMPILER ERROR at PC15: Overwrote pending register: R4 in 'AssignReg'
-
-  -- DECOMPILER ERROR at PC16: Overwrote pending register: R5 in 'AssignReg'
-
+function HomelandPet:ResetNavmeshPos()
+  local hit, navMeshHit = UnityEngine.AI.NavMesh.SamplePosition(self:GetPosition(), nil, 10, UnityEngine.AI.NavMesh.AllAreas)
   if hit then
-    self:SetPosition(((UnityEngine.AI).NavMesh).AllAreas)
+    self:SetPosition(navMeshHit.position)
   end
 end
 
--- DECOMPILER ERROR at PC291: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.FinalVisible = function(self)
-  -- function num : 0_93
+function HomelandPet:FinalVisible()
   return self._finalVisible
 end
 
--- DECOMPILER ERROR at PC294: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.ChangeBehavior = function(self, behaviorType, args, isInteract, index)
-  -- function num : 0_94
-  (self._behavior):ChangeBehavior(behaviorType, args, isInteract, index)
+function HomelandPet:ChangeBehavior(behaviorType, args, isInteract, index)
+  self._behavior:ChangeBehavior(behaviorType, args, isInteract, index)
 end
 
--- DECOMPILER ERROR at PC297: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetMotionType = function(self)
-  -- function num : 0_95
+function HomelandPet:GetMotionType()
   return self._motionType
 end
 
--- DECOMPILER ERROR at PC300: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetMotionType = function(self, motionType)
-  -- function num : 0_96
+function HomelandPet:SetMotionType(motionType)
   self._motionType = motionType
 end
 
--- DECOMPILER ERROR at PC303: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.ShowSkinModle = function(self, req)
-  -- function num : 0_97 , upvalues : _ENV
+function HomelandPet:ShowSkinModle(req)
   if self._resLoaded then
-    (self._assetReq):Dispose()
+    self._assetReq:Dispose()
     self._assetReq = nil
     self._resLoaded = false
   end
   if self._extraAnimReq then
-    (self._extraAnimReq):Dispose()
+    self._extraAnimReq:Dispose()
     self._extraAnimReq = nil
   end
   if self.clickEffReq then
-    (self.clickEffReq):Dispose()
+    self.clickEffReq:Dispose()
     self.clickEffReq = nil
   end
   if self._materialAnimationContainer then
-    (self._materialAnimationContainer):Dispose()
+    self._materialAnimationContainer:Dispose()
     self._materialAnimationContainer = nil
   end
-  ;
-  ((UnityEngine.Object).Destroy)(self._petGO)
+  UnityEngine.Object.Destroy(self._petGO)
   self:_RemoveEvent()
   local reLoad = true
   self:Show(req, nil, reLoad)
 end
 
--- DECOMPILER ERROR at PC306: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.ReloadBehaviorComponent = function(self)
-  -- function num : 0_98
-  (self._behavior):ReloadBehaviorComponent()
+function HomelandPet:ReloadBehaviorComponent()
+  self._behavior:ReloadBehaviorComponent()
 end
 
--- DECOMPILER ERROR at PC309: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetInvited = function(self, invited)
-  -- function num : 0_99
+function HomelandPet:SetInvited(invited)
   self._invited = invited
 end
 
--- DECOMPILER ERROR at PC312: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.GetInvited = function(self)
-  -- function num : 0_100
+function HomelandPet:GetInvited()
   return self._invited
 end
 
--- DECOMPILER ERROR at PC315: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.CheckIsInInviteingCDList = function(self)
-  -- function num : 0_101
-  return ((self._homelandClient):GetHomelandPetInviteManager()):CheckInInviteingCDTime(self)
+function HomelandPet:CheckIsInInviteingCDList()
+  return self._homelandClient:GetHomelandPetInviteManager():CheckInInviteingCDTime(self)
 end
 
--- DECOMPILER ERROR at PC318: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.PlayMaterialAnim = function(self, anim)
-  -- function num : 0_102
+function HomelandPet:PlayMaterialAnim(anim)
   if not self._materialAnimation then
-    return 
+    return
   end
-  ;
-  (self._materialAnimation):Play(anim)
+  self._materialAnimation:Play(anim)
 end
 
--- DECOMPILER ERROR at PC321: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.SetPoolAndOldSkin = function(self, pool, oldSkin, oldClothSkin)
-  -- function num : 0_103
+function HomelandPet:SetPoolAndOldSkin(pool, oldSkin, oldClothSkin)
   self._swimPool = pool
   self._oldSkin = oldSkin
   self._oldClothSkin = oldClothSkin
 end
 
--- DECOMPILER ERROR at PC324: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet._ChangeSwimCloth = function(self)
-  -- function num : 0_104 , upvalues : _ENV
+function HomelandPet:_ChangeSwimCloth()
   if self._miniMapVisible then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.Pet, (self._data):TmpID())
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapRemoveIcon, HomelandMapIconType.Pet, self._data:TmpID())
   end
   local petSkinID = self:SkinID()
-  local cfgSwimmingPoolPet = (Cfg.cfg_homeland_swimming_pool_pet)[petSkinID]
+  local cfgSwimmingPoolPet = Cfg.cfg_homeland_swimming_pool_pet[petSkinID]
   self._cfgSwimmingPoolPet = cfgSwimmingPoolPet
   if not cfgSwimmingPoolPet then
-    return 
+    return
   end
-  local req = (ResourceManager:GetInstance()):SyncLoadAsset((self._cfgSwimmingPoolPet).ChangeSkinEffectName, LoadType.GameObject)
+  local req = ResourceManager:GetInstance():SyncLoadAsset(self._cfgSwimmingPoolPet.ChangeSkinEffectName, LoadType.GameObject)
   if req then
-    (req.Obj):SetActive(true)
-    local tran = (req.Obj).transform
-    tran.position = (self:AgentTransform()).position
+    req.Obj:SetActive(true)
+    local tran = req.Obj.transform
+    tran.position = self:AgentTransform().position
     tran.localRotation = Quaternion.identity
   end
-  do
-    ;
-    (self._homelandPetManager):ChangePetSkin(self, self._oldSkin, self._oldClothSkin)
-    if self._miniMapVisible then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MinimapAddIcon, HomelandMapIconType.Pet, (self._data):TmpID(), self._petAgentTransform, self)
+  self._homelandPetManager:ChangePetSkin(self, self._oldSkin, self._oldClothSkin)
+  if self._miniMapVisible then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MinimapAddIcon, HomelandMapIconType.Pet, self._data:TmpID(), self._petAgentTransform, self)
+  end
+  self:PlayMaterialAnim("eff_yyc_hz_switch_glow")
+  self:ReloadBehaviorComponent()
+end
+
+function HomelandPet:BindingSkeleton(isBinding, skeleton)
+  if isBinding then
+    if skeleton then
+      self._petAgentTransform:SetParent(skeleton)
+      self._petAgentTransform.localPosition = Vector3.zero
+      self._petAgentTransform.localRotation = Quaternion.identity
     end
-    self:PlayMaterialAnim("eff_yyc_hz_switch_glow")
-    self:ReloadBehaviorComponent()
+  else
+    self._petAgentTransform:SetParent(self._homelandClient:SceneManager():RuntimeRootTrans(), true)
   end
 end
-
--- DECOMPILER ERROR at PC327: Confused about usage of register: R1 in 'UnsetPending'
-
-HomelandPet.BindingSkeleton = function(self, isBinding, skeleton)
-  -- function num : 0_105 , upvalues : _ENV
-  if isBinding and skeleton then
-    (self._petAgentTransform):SetParent(skeleton)
-    -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._petAgentTransform).localPosition = Vector3.zero
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._petAgentTransform).localRotation = Quaternion.identity
-  end
-  ;
-  (self._petAgentTransform):SetParent(((self._homelandClient):SceneManager()):RuntimeRootTrans(), true)
-end
-
-

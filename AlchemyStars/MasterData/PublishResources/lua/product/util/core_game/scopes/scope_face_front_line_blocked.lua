@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_face_front_line_blocked.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FaceFrontLineBlocked", SkillScopeCalculator_Base)
 SkillScopeCalculator_FaceFrontLineBlocked = SkillScopeCalculator_FaceFrontLineBlocked
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FaceFrontLineBlocked.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_FaceFrontLineBlocked:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos, casterEntity)
   local casterPos = centerPos
   local bodyAreaArray = bodyArea
   local effectDirType = 1
@@ -17,33 +10,31 @@ SkillScopeCalculator_FaceFrontLineBlocked.CalcRange = function(self, scopeType, 
   local usePreviewFourDir = scopeParam[2] or 0
   local gridPos = centerPos
   if casterEntity then
-    gridPos = (casterEntity:GridLocation()):GetGridPos()
+    gridPos = casterEntity:GridLocation():GetGridPos()
   end
   local casterDirList = {casterDir}
   if usePreviewFourDir == 1 then
-    casterDirList = {Vector2(-1, 0), Vector2(1, 0), Vector2(0, -1), Vector2(0, 1)}
+    casterDirList = {
+      Vector2(-1, 0),
+      Vector2(1, 0),
+      Vector2(0, -1),
+      Vector2(0, 1)
+    }
   end
   local boayArea = {}
-  for i,p in ipairs(bodyAreaArray) do
-    (table.insert)(boayArea, Vector2(casterPos.x + p.x, casterPos.y + p.y))
+  for i, p in ipairs(bodyAreaArray) do
+    table.insert(boayArea, Vector2(casterPos.x + p.x, casterPos.y + p.y))
   end
   local targetArea = {}
   local wholeArea = {}
-  for _,dir in ipairs(casterDirList) do
-    for i,p in ipairs(boayArea) do
+  for _, dir in ipairs(casterDirList) do
+    for i, p in ipairs(boayArea) do
       for index = 1, size do
         local directpos = Vector2(p.x + dir.x * index, p.y + dir.y * index)
         self:_InsertTargetGrid(targetArea, directpos, wholeArea)
-        -- DECOMPILER ERROR at PC101: Unhandled construct in 'MakeBoolean' P1
-
-        if (self._gridFilter):IsPosBlock(directpos, BlockFlag.MonsterLand) and casterPos ~= gridPos and directpos == gridPos then
-          do
-            do break end
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC102: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        if not self._gridFilter:IsPosBlock(directpos, BlockFlag.MonsterLand) or casterPos ~= gridPos and directpos == gridPos then
+        else
+          break
         end
       end
     end
@@ -51,5 +42,3 @@ SkillScopeCalculator_FaceFrontLineBlocked.CalcRange = function(self, scopeType, 
   local result = SkillScopeResult:New(SkillScopeType.FaceFrontLineBlocked, casterPos, targetArea, wholeArea)
   return result
 end
-
-

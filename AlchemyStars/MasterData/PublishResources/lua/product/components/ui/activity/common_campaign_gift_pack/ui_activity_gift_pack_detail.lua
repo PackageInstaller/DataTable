@@ -1,21 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_campaign_gift_pack/ui_activity_gift_pack_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityGiftPackDetail", UIController)
 UIActivityGiftPackDetail = UIActivityGiftPackDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityGiftPackDetail._GetComponents = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIActivityGiftPackDetail:_GetComponents()
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._goTips = self:GetGameObject("tips")
   self._txtTips = self:GetUIComponent("UILocalizationText", "txtTips")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._goLimit = self:GetGameObject("limit")
-  ;
-  (self._goLimit):SetActive(false)
+  self._goLimit:SetActive(false)
   self._txtLimit = self:GetUIComponent("UILocalizationText", "txtLimit")
   self._imgPrice = self:GetUIComponent("Image", "imgPrice")
   self._txtPrice = self:GetUIComponent("UILocalizationText", "txtPrice")
@@ -27,10 +19,7 @@ UIActivityGiftPackDetail._GetComponents = function(self)
   self._atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIActivityGiftPackDetail:OnShow(uiParams)
   self:_AttachEvents()
   self._campaign = uiParams[1]
   self._component = uiParams[2]
@@ -47,300 +36,190 @@ UIActivityGiftPackDetail.OnShow = function(self, uiParams)
   self:_SetAwardsDaily()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.OnHide = function(self)
-  -- function num : 0_2
+function UIActivityGiftPackDetail:OnHide()
   self:_DetachEvents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._SetTitle = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local gift = (self._component):GetGiftCfgById(self._giftId)
-  local id = gift and (gift.Name)[1] or ""
-  ;
-  (self._txtName):SetText((StringTable.Get)(id))
+function UIActivityGiftPackDetail:_SetTitle()
+  local gift = self._component:GetGiftCfgById(self._giftId)
+  local id = gift and gift.Name[1] or ""
+  self._txtName:SetText(StringTable.Get(id))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._SetTips = function(self)
-  -- function num : 0_4
-  if self._campaign and (self._campaign)._sample then
+function UIActivityGiftPackDetail:_SetTips()
+  if self._campaign and self._campaign._sample then
     local strCycleType = self:GetCycleTypeStr()
-    ;
-    (self._txtTips):SetText(strCycleType)
-    ;
-    (self._goTips):SetActive(true)
+    self._txtTips:SetText(strCycleType)
+    self._goTips:SetActive(true)
   else
-    do
-      ;
-      (self._goTips):SetActive(false)
-    end
+    self._goTips:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._SetImg = function(self)
-  -- function num : 0_5
-  local gift = (self._component):GetGiftCfgById(self._giftId)
+function UIActivityGiftPackDetail:_SetImg()
+  local gift = self._component:GetGiftCfgById(self._giftId)
   local url = gift and gift.IconDetail or ""
-  ;
-  (self._imgIcon):LoadImage(url)
+  self._imgIcon:LoadImage(url)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._SetLimit = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityGiftPackDetail:_SetLimit()
   local str = self:GetCountStr()
-  if (string.isnullorempty)(str) then
-    (self._goLimit):SetActive(false)
+  if string.isnullorempty(str) then
+    self._goLimit:SetActive(false)
   else
-    ;
-    (self._txtLimit):SetText(str)
-    ;
-    (self._goLimit):SetActive(true)
+    self._txtLimit:SetText(str)
+    self._goLimit:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._SetPrice = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._txtPrice).color = Color.white
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._btnBuy).interactable = true
+function UIActivityGiftPackDetail:_SetPrice()
+  self._txtPrice.color = Color.white
+  self._btnBuy.interactable = true
   self:_FlushPrice()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._FlushPrice = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local price = (self._component):GetGiftPriceForShowById(self._giftId)
+function UIActivityGiftPackDetail:_FlushPrice()
+  local price = self._component:GetGiftPriceForShowById(self._giftId)
   local itemtType = self:GetPriceType()
   if itemtType == GiftPackType.Currency then
-    ((self._imgPrice).gameObject):SetActive(false)
-    ;
-    (self._txtPrice):SetText(price)
+    self._imgPrice.gameObject:SetActive(false)
+    self._txtPrice:SetText(price)
+  elseif itemtType == GiftPackType.Free then
+    self._imgPrice.gameObject:SetActive(false)
+    self._txtPrice:SetText(StringTable.Get("str_pay_free"))
   else
-    if itemtType == GiftPackType.Free then
-      ((self._imgPrice).gameObject):SetActive(false)
-      ;
-      (self._txtPrice):SetText((StringTable.Get)("str_pay_free"))
-    else
-      ;
-      ((self._imgPrice).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC48: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._imgPrice).sprite = (self._atlas):GetSprite(self:GetPriceIcon())
-      ;
-      (self._txtPrice):SetText(price)
-    end
+    self._imgPrice.gameObject:SetActive(true)
+    self._imgPrice.sprite = self._atlas:GetSprite(self:GetPriceIcon())
+    self._txtPrice:SetText(price)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._SetAwardsImmediately = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local lst = (self._component):GetGiftExtraAwardById(self._giftId)
+function UIActivityGiftPackDetail:_SetAwardsImmediately()
+  local lst = self._component:GetGiftExtraAwardById(self._giftId)
   local awardsImmediately = {}
-  for i,item in ipairs(lst) do
+  for i, item in ipairs(lst) do
     local item = GiftPackShopItemAward:New(item.assetid, item.count)
-    ;
-    (table.insert)(awardsImmediately, item)
+    table.insert(awardsImmediately, item)
   end
-  ;
-  (self._sopImmediately):SpawnObjects("UIActivityGiftPackGetItem", (table.count)(awardsImmediately))
-  local lstImmediately = (self._sopImmediately):GetAllSpawnList()
-  for i,ui in ipairs(lstImmediately) do
+  self._sopImmediately:SpawnObjects("UIActivityGiftPackGetItem", table.count(awardsImmediately))
+  local lstImmediately = self._sopImmediately:GetAllSpawnList()
+  for i, ui in ipairs(lstImmediately) do
     ui:Flush(awardsImmediately[i])
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._SetAwardsDaily = function(self)
-  -- function num : 0_10
-  (self._goDaily):SetActive(false)
+function UIActivityGiftPackDetail:_SetAwardsDaily()
+  self._goDaily:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.GetEndTime = function(self)
-  -- function num : 0_11
-  return self._campaign and (self._campaign)._sample and ((self._campaign)._sample).end_time or 0
+function UIActivityGiftPackDetail:GetEndTime()
+  return self._campaign and self._campaign._sample and self._campaign._sample.end_time or 0
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.GetLeftSeconds = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  local mSvrTime = (GameGlobal.GetModule)(SvrTimeModule)
+function UIActivityGiftPackDetail:GetLeftSeconds()
+  local mSvrTime = GameGlobal.GetModule(SvrTimeModule)
   local nowTime = mSvrTime:GetServerTime() / 1000
   local endTime = self:GetEndTime()
   local leftSeconds = endTime - nowTime
   return leftSeconds
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.GetCycleTypeStr = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIActivityGiftPackDetail:GetCycleTypeStr()
   local str = ""
   local leftSeconds = self:GetLeftSeconds()
   if leftSeconds <= 0 then
-    str = (StringTable.Get)("str_pay_expired")
+    str = StringTable.Get("str_pay_expired")
+  elseif leftSeconds <= 60 then
+    str = string.format(StringTable.Get("str_pay_left_minute", 1))
+  elseif leftSeconds <= 3600 then
+    local leftMinutes = math.ceil(leftSeconds / 60)
+    str = string.format(StringTable.Get("str_pay_left_minute", leftMinutes))
+  elseif leftSeconds <= 86400 then
+    local leftHours = math.ceil(leftSeconds / 3600)
+    str = string.format(StringTable.Get("str_pay_left_hour", leftHours))
   else
-    if leftSeconds <= 60 then
-      str = (string.format)((StringTable.Get)("str_pay_left_minute", 1))
-    else
-      if leftSeconds <= 3600 then
-        local leftMinutes = (math.ceil)(leftSeconds / 60)
-        str = (string.format)((StringTable.Get)("str_pay_left_minute", leftMinutes))
-      else
-        do
-          if leftSeconds <= 86400 then
-            local leftHours = (math.ceil)(leftSeconds / 3600)
-            str = (string.format)((StringTable.Get)("str_pay_left_hour", leftHours))
-          else
-            do
-              do
-                local leftDays = (math.ceil)(leftSeconds / 86400)
-                str = (string.format)((StringTable.Get)("str_pay_left_day", leftDays))
-                return str
-              end
-            end
-          end
-        end
-      end
-    end
+    local leftDays = math.ceil(leftSeconds / 86400)
+    str = string.format(StringTable.Get("str_pay_left_day", leftDays))
   end
+  return str
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.GetCountStr = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local buyCount, saleCount = (self._component):GetGiftBuyCount(self._giftId)
+function UIActivityGiftPackDetail:GetCountStr()
+  local buyCount, saleCount = self._component:GetGiftBuyCount(self._giftId)
   if saleCount == SpecialNum.MysteryGoodsUnlimitedNum then
     return ""
   end
   local n2m = saleCount - buyCount .. "/" .. saleCount
-  local strLimit = (string.format)((StringTable.Get)("str_pay_purchase_limitation_normal", n2m))
+  local strLimit = string.format(StringTable.Get("str_pay_purchase_limitation_normal", n2m))
   return strLimit
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.GetPriceType = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local good = (self._component):GetGoodCfgById(self._giftId)
-  if not good or not good.SaleType then
-    local saleType = SpecialNum.FreeGiftSaleType
-  end
-  local tb = {[SpecialNum.NeedPayMoney] = GiftPackType.Currency, [RoleAssetID.RoleAssetDiamond] = GiftPackType.Yaojing, [RoleAssetID.RoleAssetGlow] = GiftPackType.Guangpo, [SpecialNum.FreeGiftSaleType] = GiftPackType.Free}
-  if not tb[saleType] then
-    return GiftPackType.Item
-  end
+function UIActivityGiftPackDetail:GetPriceType()
+  local good = self._component:GetGoodCfgById(self._giftId)
+  local saleType = good and good.SaleType or SpecialNum.FreeGiftSaleType
+  local tb = {
+    [SpecialNum.NeedPayMoney] = GiftPackType.Currency,
+    [RoleAssetID.RoleAssetDiamond] = GiftPackType.Yaojing,
+    [RoleAssetID.RoleAssetGlow] = GiftPackType.Guangpo,
+    [SpecialNum.FreeGiftSaleType] = GiftPackType.Free
+  }
+  return tb[saleType] or GiftPackType.Item
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.GetPriceIcon = function(self)
-  -- function num : 0_16
-  local good = (self._component):GetGoodCfgById(self._giftId)
+function UIActivityGiftPackDetail:GetPriceIcon()
+  local good = self._component:GetGoodCfgById(self._giftId)
   local saleType = good.SaleType
   return "toptoon_" .. saleType
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.bgOnClick = function(self, go)
-  -- function num : 0_17 , upvalues : _ENV
+function UIActivityGiftPackDetail:bgOnClick(go)
   self:Lock("UIActivityGiftPackDetail:OnHide")
-  ;
-  (self._anim):Play("Uieff_UIActivityGiftPackDetail_Out")
+  self._anim:Play("Uieff_UIActivityGiftPackDetail_Out")
   self:StartTask(function(TT)
-    -- function num : 0_17_0 , upvalues : _ENV, self
     YIELD(TT, 667)
     self:UnLock("UIActivityGiftPackDetail:OnHide")
     self:CloseDialog()
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail.btnBuyOnClick = function(self, go)
-  -- function num : 0_18
-  (self._component):BuyGift(self._giftId, self._giftNum)
+function UIActivityGiftPackDetail:btnBuyOnClick(go)
+  self._component:BuyGift(self._giftId, self._giftNum)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._AttachEvents = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UIActivityGiftPackDetail:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:AttachEvent(GameEventType.ActivityCurrencyBuySuccess, self._OnCurrencyBuySuccess)
   self:AttachEvent(GameEventType.ActivityNormalBuyResult, self._OnNormalBuyResult)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._DetachEvents = function(self)
-  -- function num : 0_20 , upvalues : _ENV
+function UIActivityGiftPackDetail:_DetachEvents()
   self:DetachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
   self:DetachEvent(GameEventType.ActivityCurrencyBuySuccess, self._OnCurrencyBuySuccess)
   self:DetachEvent(GameEventType.ActivityNormalBuyResult, self._OnNormalBuyResult)
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._CheckActivityClose = function(self, id)
-  -- function num : 0_21 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIActivityGiftPackDetail:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._OnCurrencyBuySuccess = function(self, id)
-  -- function num : 0_22 , upvalues : _ENV
+function UIActivityGiftPackDetail:_OnCurrencyBuySuccess(id)
   if self._giftId == id then
-    do
-      if self._callback then
-        local res = AsyncRequestRes:New()
-        res:SetSucc(true)
-        ;
-        (self._callback)(res)
-      end
-      self:bgOnClick()
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityGiftPackDetail._OnNormalBuyResult = function(self, gift_id, res)
-  -- function num : 0_23
-  if self._giftId == gift_id then
     if self._callback then
-      (self._callback)(res)
+      local res = AsyncRequestRes:New()
+      res:SetSucc(true)
+      self._callback(res)
     end
     self:bgOnClick()
   end
 end
 
-
+function UIActivityGiftPackDetail:_OnNormalBuyResult(gift_id, res)
+  if self._giftId == gift_id then
+    if self._callback then
+      self._callback(res)
+    end
+    self:bgOnClick()
+  end
+end

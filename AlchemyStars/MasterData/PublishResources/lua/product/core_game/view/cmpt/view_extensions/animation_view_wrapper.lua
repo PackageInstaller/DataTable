@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/view_extensions/animation_view_wrapper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("view_wrapper")
 _class("AnimationViewWrapper", IViewWrapper)
 AnimationViewWrapper = AnimationViewWrapper
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-AnimationViewWrapper.Constructor = function(self, resource_service, resRequest)
-  -- function num : 0_0
+function AnimationViewWrapper:Constructor(resource_service, resRequest)
   self.ViewType = "AnimationView"
   self.ResRequest = resRequest
   self.GameObject = resRequest.Obj
-  self.Transform = (resRequest.Obj).transform
+  self.Transform = resRequest.Obj.transform
   self._ResService = resource_service
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimationViewWrapper.SyncTransform = function(self, pos, dir, scale, id)
-  -- function num : 0_1 , upvalues : _ENV
+function AnimationViewWrapper:SyncTransform(pos, dir, scale, id)
   local tf = self.Transform
   tf.position = pos
   if dir ~= Vector3(0, 0, 0) then
@@ -29,28 +19,15 @@ AnimationViewWrapper.SyncTransform = function(self, pos, dir, scale, id)
   tf.localScale = scale
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimationViewWrapper.SetVisible = function(self, active)
-  -- function num : 0_2 , upvalues : _ENV
-  local curPos = ((self.GameObject).transform).position
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R3 in 'UnsetPending'
-
+function AnimationViewWrapper:SetVisible(active)
+  local curPos = self.GameObject.transform.position
   if active then
-    ((self.GameObject).transform).position = Vector3(curPos.x, 0, curPos.z)
+    self.GameObject.transform.position = Vector3(curPos.x, 0, curPos.z)
   else
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    ((self.GameObject).transform).position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
+    self.GameObject.transform.position = Vector3(curPos.x, BattleConst.CacheHeight, curPos.z)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-AnimationViewWrapper.ViewDispose = function(self)
-  -- function num : 0_3
-  (self._ResService):DestroyView(self)
+function AnimationViewWrapper:ViewDispose()
+  self._ResService:DestroyView(self)
 end
-
-

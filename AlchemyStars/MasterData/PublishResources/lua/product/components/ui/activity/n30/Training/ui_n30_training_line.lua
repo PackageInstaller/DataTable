@@ -1,79 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n30/Training/ui_n30_training_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN30TrainingLine", UICustomWidget)
 UIN30TrainingLine = UIN30TrainingLine
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN30TrainingLine.OnShow = function(self)
-  -- function num : 0_0
+function UIN30TrainingLine:OnShow()
   self._shape = self:GetUIComponent("RectTransform", "shape")
   self._line = self:GetUIComponent("Image", "line")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._atlas = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30TrainingLine.OnHide = function(self)
-  -- function num : 0_1
+function UIN30TrainingLine:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30TrainingLine.LineCfg = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN30TrainingLine:LineCfg()
   local cfg = {
-[1] = {url = "n30_yhjf_di05", offset = Vector2(27, 23), rotation = 30, anim = "uieff_UIN30TrainingLine_down"}
-, 
-[2] = {url = "n30_yhjf_di06", offset = Vector2(5, -3), rotation = -17, anim = "uieff_UIN30TrainingLine_up"}
-}
+    [1] = {
+      url = "n30_yhjf_di05",
+      offset = Vector2(27, 23),
+      rotation = 30,
+      anim = "uieff_UIN30TrainingLine_down"
+    },
+    [2] = {
+      url = "n30_yhjf_di06",
+      offset = Vector2(5, -3),
+      rotation = -17,
+      anim = "uieff_UIN30TrainingLine_up"
+    }
+  }
   return cfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30TrainingLine.SetAtlas = function(self, atlas)
-  -- function num : 0_3
+function UIN30TrainingLine:SetAtlas(atlas)
   self._atlas = atlas
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN30TrainingLine.Flush = function(self, from, to)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = nil
-  if from.y < to.y then
-    cfg = (self:LineCfg())[1]
+function UIN30TrainingLine:Flush(from, to)
+  local cfg
+  if to.y > from.y then
+    cfg = self:LineCfg()[1]
   else
-    cfg = (self:LineCfg())[2]
+    cfg = self:LineCfg()[2]
   end
-  ;
-  (self._anim):Play(cfg.anim)
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._line).sprite = (self._atlas):GetSprite(cfg.url)
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._line).transform).anchoredPosition = cfg.offset
-  -- DECOMPILER ERROR at PC33: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._line).transform).localEulerAngles = Vector3(0, 0, cfg.rotation)
+  self._anim:Play(cfg.anim)
+  self._line.sprite = self._atlas:GetSprite(cfg.url)
+  self._line.transform.anchoredPosition = cfg.offset
+  self._line.transform.localEulerAngles = Vector3(0, 0, cfg.rotation)
   local anchoredPosition = (from + to) * 0.5
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._shape).anchoredPosition = anchoredPosition
+  self._shape.anchoredPosition = anchoredPosition
   local v = from - to
-  -- DECOMPILER ERROR at PC50: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._shape).localRotation = (Quaternion.FromToRotation)(Vector3.right, Vector3(v.x, v.y, 0))
+  self._shape.localRotation = Quaternion.FromToRotation(Vector3.right, Vector3(v.x, v.y, 0))
 end
-
-

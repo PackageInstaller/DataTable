@@ -1,31 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_force_refresh_unlock_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicForceRefreshUnlockHP", BuffLogicBase)
 BuffLogicForceRefreshUnlockHP = BuffLogicForceRefreshUnlockHP
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicForceRefreshUnlockHP.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicForceRefreshUnlockHP:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicForceRefreshUnlockHP.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local battleStatCmpt = (self._world):BattleStat()
+function BuffLogicForceRefreshUnlockHP:DoLogic()
+  local e = self._buffInstance:Entity()
+  local battleStatCmpt = self._world:BattleStat()
   local round = battleStatCmpt:GetCurWaveTotalRoundCount()
   local buffCmpt = e:BuffComponent()
   buffCmpt:RecordUnlockHPIndex(buffCmpt:GetHPLockIndex())
   buffCmpt:RecordLastUnlockHPRound(round)
   buffCmpt:ResetHPLockState()
   local isUnlockHP = buffCmpt:GetBuffValue("IsUnlockHP")
-  ;
-  ((self._world):GetService("Trigger")):Notify(NTBreakHPLock:New(e, isUnlockHP))
+  self._world:GetService("Trigger"):Notify(NTBreakHPLock:New(e, isUnlockHP))
   return true
 end
-
-

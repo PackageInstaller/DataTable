@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/core/core_game/world_pack_base/services/network/real_network_service.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RealNetworkService", Object)
--- DECOMPILER ERROR at PC6: Confused about usage of register: R0 in 'UnsetPending'
 
-RealNetworkService.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function RealNetworkService:Constructor(world)
   self._world = world
-  self._match_module = (GameGlobal.GetModule)(MatchModule)
-  ;
-  (self._match_module):SetNetworkService(self)
+  self._match_module = GameGlobal.GetModule(MatchModule)
+  self._match_module:SetNetworkService(self)
 end
 
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
-RealNetworkService.ReceiveMessage = function(self, recMsg)
-  -- function num : 0_1
+function RealNetworkService:ReceiveMessage(recMsg)
   local world = self._world
   if world.WorldHandleCommands and recMsg.Commands then
     world:WorldHandleCommands(recMsg.Commands)
   end
 end
-
-

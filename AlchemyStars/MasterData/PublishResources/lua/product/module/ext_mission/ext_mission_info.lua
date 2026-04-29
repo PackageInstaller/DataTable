@@ -1,16 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/ext_mission/ext_mission_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local ENUM_StarCount_Type = {E_StarCount_Lock = -1, E_StarCount_Unlock = 0, E_StarCount_Perfect = 3}
+local ENUM_StarCount_Type = {
+  E_StarCount_Lock = -1,
+  E_StarCount_Unlock = 0,
+  E_StarCount_Perfect = 3
+}
 _enum("ENUM_StarCount_Type", ENUM_StarCount_Type)
 _class("DDbExtTask", Object)
 DDbExtTask = DDbExtTask
--- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
 
-DDbExtTask.Constructor = function(self)
-  -- function num : 0_0
+function DDbExtTask:Constructor()
   self.m_nExtTaskID = 0
   self.m_nStarCount = 0
   self.m_tmActive = 0
@@ -23,35 +20,43 @@ DDbExtTask.Constructor = function(self)
   self.pass_without_help = 0
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
 DDbExtTask._proto = {
-[1] = {"m_nExtTaskID", "int"}
-, 
-[2] = {"m_nStarCount", "int"}
-, 
-[3] = {"m_tmActive", "time"}
-, 
-[4] = {"m_tmStart", "time"}
-, 
-[5] = {"m_tmEnd", "time"}
-, 
-[6] = {"m_nAwardRecord", "int"}
-, 
-[7] = {"m_nFailCount", "int"}
-, 
-[8] = {"m_vecCondition", "list<int>"}
-, 
-[9] = {"m_nSuccessCount", "int"}
-, 
-[10] = {"pass_without_help", "int"}
+  [1] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [2] = {
+    "m_nStarCount",
+    "int"
+  },
+  [3] = {"m_tmActive", "time"},
+  [4] = {"m_tmStart", "time"},
+  [5] = {"m_tmEnd", "time"},
+  [6] = {
+    "m_nAwardRecord",
+    "int"
+  },
+  [7] = {
+    "m_nFailCount",
+    "int"
+  },
+  [8] = {
+    "m_vecCondition",
+    "list<int>"
+  },
+  [9] = {
+    "m_nSuccessCount",
+    "int"
+  },
+  [10] = {
+    "pass_without_help",
+    "int"
+  }
 }
 _class("extra_mission_data", Object)
 extra_mission_data = extra_mission_data
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
 
-extra_mission_data.Constructor = function(self)
-  -- function num : 0_1
+function extra_mission_data:Constructor()
   self.pstid = 0
   self.ext_mission_id = 0
   self.ext_mission_time_active = 0
@@ -62,71 +67,84 @@ extra_mission_data.Constructor = function(self)
   self.task_data = {}
 end
 
--- DECOMPILER ERROR at PC121: Confused about usage of register: R1 in 'UnsetPending'
-
 extra_mission_data._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"ext_mission_id", "int"}
-, 
-[3] = {"ext_mission_time_active", "time"}
-, 
-[4] = {"ext_mission_time_alive", "time"}
-, 
-[5] = {"ext_mission_total_star", "int"}
-, 
-[6] = {"ext_award_record", "int"}
-, 
-[7] = {"task_count", "int"}
-, 
-[8] = {"task_data", "list<DDbExtTask>"}
+  [1] = {"pstid", "int64"},
+  [2] = {
+    "ext_mission_id",
+    "int"
+  },
+  [3] = {
+    "ext_mission_time_active",
+    "time"
+  },
+  [4] = {
+    "ext_mission_time_alive",
+    "time"
+  },
+  [5] = {
+    "ext_mission_total_star",
+    "int"
+  },
+  [6] = {
+    "ext_award_record",
+    "int"
+  },
+  [7] = {"task_count", "int"},
+  [8] = {
+    "task_data",
+    "list<DDbExtTask>"
+  }
 }
 _class("DSummaryExtTask", Object)
 DSummaryExtTask = DSummaryExtTask
--- DECOMPILER ERROR at PC130: Confused about usage of register: R1 in 'UnsetPending'
 
-DSummaryExtTask.Constructor = function(self)
-  -- function num : 0_2
+function DSummaryExtTask:Constructor()
   self.m_nExtTaskID = 0
   self.m_nStarCount = 0
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R1 in 'UnsetPending'
-
 DSummaryExtTask._proto = {
-[1] = {"m_nExtTaskID", "int"}
-, 
-[2] = {"m_nStarCount", "int"}
+  [1] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [2] = {
+    "m_nStarCount",
+    "int"
+  }
 }
 _class("DSummaryExtMission", Object)
 DSummaryExtMission = DSummaryExtMission
--- DECOMPILER ERROR at PC152: Confused about usage of register: R1 in 'UnsetPending'
 
-DSummaryExtMission.Constructor = function(self)
-  -- function num : 0_3
+function DSummaryExtMission:Constructor()
   self.m_nExtMissionID = 0
   self.m_nStarCount = 0
   self.m_nAwardRecord = 0
   self.m_vecExtTask = {}
 end
 
--- DECOMPILER ERROR at PC175: Confused about usage of register: R1 in 'UnsetPending'
-
 DSummaryExtMission._proto = {
-[1] = {"m_nExtMissionID", "int"}
-, 
-[2] = {"m_nStarCount", "int"}
-, 
-[3] = {"m_nAwardRecord", "int"}
-, 
-[4] = {"m_vecExtTask", "list<DSummaryExtTask>"}
+  [1] = {
+    "m_nExtMissionID",
+    "int"
+  },
+  [2] = {
+    "m_nStarCount",
+    "int"
+  },
+  [3] = {
+    "m_nAwardRecord",
+    "int"
+  },
+  [4] = {
+    "m_vecExtTask",
+    "list<DSummaryExtTask>"
+  }
 }
 _class("DDetailExtTask", Object)
 DDetailExtTask = DDetailExtTask
--- DECOMPILER ERROR at PC184: Confused about usage of register: R1 in 'UnsetPending'
 
-DDetailExtTask.Constructor = function(self)
-  -- function num : 0_4
+function DDetailExtTask:Constructor()
   self.m_nExtTaskID = 0
   self.m_nStarCount = 0
   self.m_nAwardRecord = 0
@@ -135,148 +153,144 @@ DDetailExtTask.Constructor = function(self)
   self.pass_without_help = 0
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R1 in 'UnsetPending'
-
 DDetailExtTask._proto = {
-[1] = {"m_nExtTaskID", "int"}
-, 
-[2] = {"m_nStarCount", "int"}
-, 
-[3] = {"m_nAwardRecord", "int"}
-, 
-[4] = {"m_nFailCount", "int"}
-, 
-[5] = {"m_vecCondition", "list<int>"}
-, 
-[6] = {"pass_without_help", "int"}
+  [1] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [2] = {
+    "m_nStarCount",
+    "int"
+  },
+  [3] = {
+    "m_nAwardRecord",
+    "int"
+  },
+  [4] = {
+    "m_nFailCount",
+    "int"
+  },
+  [5] = {
+    "m_vecCondition",
+    "list<int>"
+  },
+  [6] = {
+    "pass_without_help",
+    "int"
+  }
 }
 _class("DDetailExtMission", Object)
 DDetailExtMission = DDetailExtMission
--- DECOMPILER ERROR at PC226: Confused about usage of register: R1 in 'UnsetPending'
 
-DDetailExtMission.Constructor = function(self)
-  -- function num : 0_5
+function DDetailExtMission:Constructor()
   self.m_nExtMissionID = 0
   self.m_nStarCount = 0
   self.m_nAwardRecord = 0
   self.m_vecExtTask = {}
 end
 
--- DECOMPILER ERROR at PC249: Confused about usage of register: R1 in 'UnsetPending'
-
 DDetailExtMission._proto = {
-[1] = {"m_nExtMissionID", "int"}
-, 
-[2] = {"m_nStarCount", "int"}
-, 
-[3] = {"m_nAwardRecord", "int"}
-, 
-[4] = {"m_vecExtTask", "list<DDetailExtTask>"}
+  [1] = {
+    "m_nExtMissionID",
+    "int"
+  },
+  [2] = {
+    "m_nStarCount",
+    "int"
+  },
+  [3] = {
+    "m_nAwardRecord",
+    "int"
+  },
+  [4] = {
+    "m_vecExtTask",
+    "list<DDetailExtTask>"
+  }
 }
 _class("DExtStoryTask", Object)
 DExtStoryTask = DExtStoryTask
--- DECOMPILER ERROR at PC258: Confused about usage of register: R1 in 'UnsetPending'
 
-DExtStoryTask.Constructor = function(self)
-  -- function num : 0_6
+function DExtStoryTask:Constructor()
   self.m_nExtTaskID = 0
   self.m_nExtStroyData = 0
 end
 
--- DECOMPILER ERROR at PC271: Confused about usage of register: R1 in 'UnsetPending'
-
 DExtStoryTask._proto = {
-[1] = {"m_nExtTaskID", "int"}
-, 
-[2] = {"m_nExtStroyData", "int"}
+  [1] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [2] = {
+    "m_nExtStroyData",
+    "int"
+  }
 }
 _class("DExtStoryDataList", Object)
 DExtStoryDataList = DExtStoryDataList
--- DECOMPILER ERROR at PC280: Confused about usage of register: R1 in 'UnsetPending'
 
-DExtStoryDataList.Constructor = function(self)
-  -- function num : 0_7
+function DExtStoryDataList:Constructor()
   self.m_mapExtStory = {}
 end
 
--- DECOMPILER ERROR at PC288: Confused about usage of register: R1 in 'UnsetPending'
-
 DExtStoryDataList._proto = {
-[1] = {"m_mapExtStory", "map<int,DExtStoryTask>"}
+  [1] = {
+    "m_mapExtStory",
+    "map<int,DExtStoryTask>"
+  }
 }
-local EnumAwardRecord = {Disable = 0, Getting = 1, HaveDown = 2}
+local EnumAwardRecord = {
+  Disable = 0,
+  Getting = 1,
+  HaveDown = 2
+}
 _enum("EnumAwardRecord", EnumAwardRecord)
 _class("UI_AwardLevel", Object)
 UI_AwardLevel = UI_AwardLevel
--- DECOMPILER ERROR at PC305: Confused about usage of register: R2 in 'UnsetPending'
 
-UI_AwardLevel.Constructor = function(self, nAwardRecord)
-  -- function num : 0_8 , upvalues : _ENV
+function UI_AwardLevel:Constructor(nAwardRecord)
   self.m_nAwardRecord = nAwardRecord
   self.m_nAwardData = {}
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_nAwardData)[4] = (math.floor)(nAwardRecord / 16777216)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_nAwardData)[3] = (math.floor)((math.fmod)(nAwardRecord, 16777216) / 65536)
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_nAwardData)[2] = (math.floor)((math.fmod)(nAwardRecord, 65536) / 256)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.m_nAwardData)[1] = (math.fmod)(nAwardRecord, 256)
-  self.m_nAwardLevel = {[1] = 0, [2] = 6, [3] = 12, [4] = 18}
+  self.m_nAwardData[4] = math.floor(nAwardRecord / 16777216)
+  self.m_nAwardData[3] = math.floor(math.fmod(nAwardRecord, 16777216) / 65536)
+  self.m_nAwardData[2] = math.floor(math.fmod(nAwardRecord, 65536) / 256)
+  self.m_nAwardData[1] = math.fmod(nAwardRecord, 256)
+  self.m_nAwardLevel = {
+    [1] = 0,
+    [2] = 6,
+    [3] = 12,
+    [4] = 18
+  }
 end
 
--- DECOMPILER ERROR at PC308: Confused about usage of register: R2 in 'UnsetPending'
-
-UI_AwardLevel.GetAwardIndex = function(self, nStarCount)
-  -- function num : 0_9
-  if nStarCount < (self.m_nAwardLevel)[2] then
+function UI_AwardLevel:GetAwardIndex(nStarCount)
+  if nStarCount < self.m_nAwardLevel[2] then
     return 1
+  elseif nStarCount >= self.m_nAwardLevel[2] and nStarCount < self.m_nAwardLevel[3] then
+    return 2
+  elseif nStarCount >= self.m_nAwardLevel[3] and nStarCount < self.m_nAwardLevel[4] then
+    return 3
   else
-    if (self.m_nAwardLevel)[2] <= nStarCount and nStarCount < (self.m_nAwardLevel)[3] then
-      return 2
-    else
-      if (self.m_nAwardLevel)[3] <= nStarCount and nStarCount < (self.m_nAwardLevel)[4] then
-        return 3
-      else
-        return 4
-      end
-    end
+    return 4
   end
 end
 
--- DECOMPILER ERROR at PC311: Confused about usage of register: R2 in 'UnsetPending'
-
-UI_AwardLevel.GetAwardStat = function(self, nStarCount, nCfgStarCount)
-  -- function num : 0_10 , upvalues : EnumAwardRecord
+function UI_AwardLevel:GetAwardStat(nStarCount, nCfgStarCount)
   local nIndex = self:GetAwardIndex(nCfgStarCount)
   local nReturn = EnumAwardRecord.Disable
-  if (self.m_nAwardData)[nIndex] > 0 then
+  if self.m_nAwardData[nIndex] > 0 then
     nReturn = EnumAwardRecord.HaveDown
+  elseif nStarCount >= self.m_nAwardLevel[nIndex] then
+    nReturn = EnumAwardRecord.Getting
   else
-    if (self.m_nAwardLevel)[nIndex] <= nStarCount then
-      nReturn = EnumAwardRecord.Getting
-    else
-      nReturn = EnumAwardRecord.Disable
-    end
+    nReturn = EnumAwardRecord.Disable
   end
   return nReturn
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R2 in 'UnsetPending'
-
-UI_AwardLevel.IsHaveAward = function(self, nStarCount)
-  -- function num : 0_11
+function UI_AwardLevel:IsHaveAward(nStarCount)
   local nLevelCount = #self.m_nAwardData
   for i = 2, nLevelCount do
-    if (self.m_nAwardLevel)[i] <= nStarCount and (self.m_nAwardData)[i] <= 0 then
+    if nStarCount >= self.m_nAwardLevel[i] and self.m_nAwardData[i] <= 0 then
       return true
     end
   end
@@ -285,10 +299,8 @@ end
 
 _class("UI_DetailExtAward", Object)
 UI_DetailExtAward = UI_DetailExtAward
--- DECOMPILER ERROR at PC323: Confused about usage of register: R2 in 'UnsetPending'
 
-UI_DetailExtAward.Constructor = function(self)
-  -- function num : 0_12
+function UI_DetailExtAward:Constructor()
   self.m_nStarCount = 0
   self.m_nAwardStat = 0
   self.m_vecAwardItem = {}
@@ -296,10 +308,8 @@ end
 
 _class("UI_DetailExtMission", Object)
 UI_DetailExtMission = UI_DetailExtMission
--- DECOMPILER ERROR at PC332: Confused about usage of register: R2 in 'UnsetPending'
 
-UI_DetailExtMission.Constructor = function(self)
-  -- function num : 0_13
+function UI_DetailExtMission:Constructor()
   self.m_nID = 0
   self.m_stName = ""
   self.m_nStarCount = 0
@@ -308,10 +318,8 @@ end
 
 _class("UI_DetailExtCondition", Object)
 UI_DetailExtCondition = UI_DetailExtCondition
--- DECOMPILER ERROR at PC341: Confused about usage of register: R2 in 'UnsetPending'
 
-UI_DetailExtCondition.Constructor = function(self)
-  -- function num : 0_14
+function UI_DetailExtCondition:Constructor()
   self.m_nID = 0
   self.m_nParam = 0
   self.m_stDest = ""
@@ -320,10 +328,8 @@ end
 
 _class("UI_DetailExtTask", Object)
 UI_DetailExtTask = UI_DetailExtTask
--- DECOMPILER ERROR at PC350: Confused about usage of register: R2 in 'UnsetPending'
 
-UI_DetailExtTask.Constructor = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UI_DetailExtTask:Constructor()
   self.m_nID = 0
   self.m_stName = ""
   self.m_stExtName = ""
@@ -331,22 +337,19 @@ UI_DetailExtTask.Constructor = function(self)
   self.m_nStarCount = 0
   self.m_vecCondition = {}
   self.m_awardNormal = UI_DetailExtAward:New()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.m_awardNormal).m_nStarCount = 1
+  self.m_awardNormal.m_nStarCount = 1
   self.m_awardPerfect = UI_DetailExtAward:New()
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.m_awardPerfect).m_nStarCount = 3
+  self.m_awardPerfect.m_nStarCount = 3
   self.m_nExpendPower = 0
 end
 
 local EnumExtraCloseType = {Stage = 0, level = 1}
 _enum("EnumExtraCloseType", EnumExtraCloseType)
-local RotateDirEnum = {None = 0, Left = 1, Right = 2}
+local RotateDirEnum = {
+  None = 0,
+  Left = 1,
+  Right = 2
+}
 _enum("RotateDirEnum", RotateDirEnum)
 local StageActionType = {Fight = 0, Conversation = 1}
 _enum("StageActionType", StageActionType)
-

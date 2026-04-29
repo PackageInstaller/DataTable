@@ -1,426 +1,898 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_campaign_pet_try.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, CampaignMissionId = 2, CampaignId = 3, SortId = 4, PetID = 5, PetCG = 6, ComponentId = 7, PetHeadIcon = 8, SignImg = 9, PetTalk = 10}
+local key = {
+  ID = 1,
+  CampaignMissionId = 2,
+  CampaignId = 3,
+  SortId = 4,
+  PetID = 5,
+  PetCG = 6,
+  ComponentId = 7,
+  PetHeadIcon = 8,
+  SignImg = 9,
+  PetTalk = 10
+}
 local common = {
-{1}
-, 
-{2}
-, 
-{3}
-, 
-{1500551}
-, 
-{1, 2, 3, 4, 5}
-, 
-{1601911}
-, 
-{1501931}
-, "spirit_1500552_card", "trial_name_1500551", "str_activity_common_pet_try_1500551", "spirit_1601912_card", "trial_name_1601911", "str_activity_common_pet_try_1601911", "spirit_1501932_card", "trial_name_1501931", "str_activity_common_pet_try_1501931", 
-{"1500552_cg"}
-, 
-{"1601912_cg"}
-, 
-{"1501932_cg"}
+  {1},
+  {2},
+  {3},
+  {1500551},
+  {
+    1,
+    2,
+    3,
+    4,
+    5
+  },
+  {1601911},
+  {1501931},
+  "spirit_1500552_card",
+  "trial_name_1500551",
+  "str_activity_common_pet_try_1500551",
+  "spirit_1601912_card",
+  "trial_name_1601911",
+  "str_activity_common_pet_try_1601911",
+  "spirit_1501932_card",
+  "trial_name_1501931",
+  "str_activity_common_pet_try_1501931",
+  {"1500552_cg"},
+  {"1601912_cg"},
+  {"1501932_cg"}
 }
 local config = {
-{1, 5023001, 10005, common[1], 
-{1601111}
-, 
-{"1601111_cg"}
-, nil, "spirit_1601112_card", "trial_name_1601111", "str_activity_common_pet_try_1601111"}
-, 
-{2, 5023002, 10005, common[2], 
-{1601161}
-, 
-{"1601162_cg"}
-, nil, "spirit_1601162_card", "trial_name_1601161", "str_activity_common_pet_try_1601161"}
-, 
-{3, 5023003, 10005, common[3], 
-{1501131}
-, 
-{"1501132_cg"}
-, nil, "spirit_1501132_card", "trial_name_1501131", "str_activity_common_pet_try_1501131"}
-, 
-{4, 5049001, 10006, common[1], 
-{1601121}
-, 
-{"1601122_cg"}
-, nil, "spirit_1601122_card", "trial_name_1601121", "str_activity_common_pet_try_1601121"}
-, 
-{5, 5049002, 10006, common[2], 
-{1501141}
-, 
-{"1501142_cg"}
-, nil, "spirit_1501142_card", "trial_name_1501141", "str_activity_common_pet_try_1501141"}
-, 
-{6, 5012014, 10003, common[1], 
-{1600301}
-, 
-{"1600302_cg"}
-, nil, "spirit_1600302_card", "trial_name_1600301", "str_activity_common_pet_try_1600301"}
-, 
-{7, 5012015, 10003, common[2], 
-{1601051}
-, 
-{"1601052_cg"}
-, nil, "spirit_1601052_card", "trial_name_1601051", "str_activity_common_pet_try_1601051"}
-, 
-{8, 5012016, 10003, common[3], 
-{1501041}
-, 
-{"1501042_cg"}
-, nil, "spirit_1501042_card", "trial_name_1501041", "str_activity_common_pet_try_1501041"}
-, 
-{9, 5052001, 10008, common[1], 
-{1601191}
-, 
-{"1601192_cg"}
-, nil, "spirit_1601192_card", "trial_name_1601191", "str_activity_common_pet_try_1601191"}
-, 
-{10, 5052002, 10008, common[3], 
-{1601221}
-, 
-{"1601222_cg"}
-, nil, "spirit_1601222_card", "trial_name_1601221", "str_activity_common_pet_try_1601221"}
-, 
-{11, 5052003, 10008, common[2], 
-{1601171}
-, 
-{"1601172_cg"}
-, nil, "spirit_1601172_card", "trial_name_1601171", "str_activity_common_pet_try_1601171"}
-, 
-{12, 5083001, 10009, common[1], 
-{1601211}
-, 
-{"1601212_cg"}
-, nil, "spirit_1601212_card", "trial_name_1601211", "str_activity_common_pet_try_1601211"}
-, 
-{13, 5083002, 10009, common[2], 
-{1601151}
-, 
-{"1601152_cg"}
-, nil, "spirit_1601152_card", "trial_name_1601151", "str_activity_common_pet_try_1601151"}
-, 
-{14, 5075001, 10013, common[1], 
-{1601261}
-, 
-{"1601262_cg"}
-, nil, "spirit_1601262_card", "trial_name_1601261", "str_activity_common_pet_try_1601261"}
-, 
-{15, 5075002, 10013, common[2], 
-{1601291}
-, 
-{"1601292_cg"}
-, nil, "spirit_1601292_card", "trial_name_1601291", "str_activity_common_pet_try_1601291"}
-, 
-{16, 5075003, 10013, common[3], common[4], common[17], nil, common[8], common[9], common[10]}
-, 
-{17, 5082001, 10014, common[1], 
-{1601201}
-, 
-{"1601202_cg"}
-, nil, "spirit_1601202_card", "trial_name_1601201", "str_activity_common_pet_try_1601201"}
-, 
-{18, 5082002, 10014, common[2], 
-{1601231}
-, 
-{"1601232_cg"}
-, nil, "spirit_1601232_card", "trial_name_1601231", "str_activity_common_pet_try_1601231"}
-, 
-{19, 5082003, 10014, common[3], common[4], common[17], nil, common[8], common[9], common[10]}
-, 
-{20, 5093001, 10015, common[1], 
-{1600771}
-, 
-{"1600772_cg"}
-, nil, "spirit_1600772_card", "trial_name_1600771", "str_activity_common_pet_try_1600771"}
-, 
-{21, 5093002, 10015, common[2], 
-{1601311}
-, 
-{"1601312_cg"}
-, nil, "spirit_1601312_card", "trial_name_1601311", "str_activity_common_pet_try_1601311"}
-, 
-{22, 5093003, 10015, common[3], 
-{1501321}
-, 
-{"1501322_cg"}
-, nil, "spirit_1501322_card", "trial_name_1501321", "str_activity_common_pet_try_1501321"}
-, 
-{23, 5103001, 10016, common[5], 
-{1601331, 1601341, 1501361, 1501351, 1401371}
-, 
-{"1601331_cg", "1601341_cg", "1501361_cg", "1501351_cg", "1401371_cg"}
-}
-, 
-{24, 5113001, 10017, common[1], 
-{1601381}
-, 
-{"1601382_cg"}
-, nil, "spirit_1601382_card", "trial_name_1601381", "str_activity_common_pet_try_1601381"}
-, 
-{25, 5113002, 10017, common[2], 
-{1501391}
-, 
-{"1501392_cg"}
-, nil, "spirit_1501392_card", "trial_name_1501391", "str_activity_common_pet_try_1501391"}
-, 
-{26, 5124001, 10018, common[1], 
-{1601411}
-, 
-{"1601412_cg"}
-, nil, "spirit_1601412_card", "trial_name_1601411", "str_activity_common_pet_try_1601411"}
-, 
-{27, 5124002, 10018, common[2], 
-{1601401}
-, 
-{"1601402_cg"}
-, nil, "spirit_1601402_card", "trial_name_1601401", "str_activity_common_pet_try_1601401"}
-, 
-{28, 5124003, 10018, common[3], 
-{1501421}
-, 
-{"1501422_cg"}
-, nil, "spirit_1501422_card", "trial_name_1501421", "str_activity_common_pet_try_1501421"}
-, 
-{29, 5132001, 10019, common[1], 
-{1601431}
-, 
-{"1601432_cg"}
-, nil, "spirit_1601432_card", "trial_name_1601431", "str_activity_common_pet_try_1601431"}
-, 
-{30, 5132002, 10019, common[2], 
-{1501441}
-, 
-{"1501442_cg"}
-, nil, "spirit_1501442_card", "trial_name_1501441", "str_activity_common_pet_try_1501441"}
-, 
-{31, 5143001, 10020, common[1], 
-{1601451}
-, 
-{"1601452_cg"}
-, nil, "spirit_1601452_card", "trial_name_1601451", "str_activity_common_pet_try_1601451"}
-, 
-{32, 5143002, 10020, common[2], 
-{1601461}
-, 
-{"1601462_cg"}
-, nil, "spirit_1601462_card", "trial_name_1601461", "str_activity_common_pet_try_1601461"}
-, 
-{33, 5143003, 10020, common[3], 
-{1501471}
-, 
-{"1501472_cg"}
-, nil, "spirit_1501472_card", "trial_name_1501471", "str_activity_common_pet_try_1501471"}
-, 
-{34, 5153001, 10021, common[1], 
-{1601481}
-, 
-{"1601482_cg"}
-, nil, "spirit_1601482_card", "trial_name_1601481", "str_activity_common_pet_try_1601481"}
-, 
-{35, 5153002, 10021, common[2], 
-{1501491}
-, 
-{"1501492_cg"}
-, nil, "spirit_1501492_card", "trial_name_1501491", "str_activity_common_pet_try_1501491"}
-, 
-{36, 5164001, 10022, common[1], 
-{1601501}
-, 
-{"1601502_cg"}
-, nil, "spirit_1601502_card", "trial_name_1601501", "str_activity_common_pet_try_1601501"}
-, 
-{37, 5164002, 10022, common[2], 
-{1601511}
-, 
-{"1601512_cg"}
-, nil, "spirit_1601512_card", "trial_name_1601511", "str_activity_common_pet_try_1601511"}
-, 
-{38, 5164003, 10022, common[3], 
-{1501521}
-, 
-{"1501522_cg"}
-, nil, "spirit_1501522_card", "trial_name_1501521", "str_activity_common_pet_try_1501521"}
-, 
-{39, 5173001, 10023, common[1], 
-{1601531}
-, 
-{"1601532_cg"}
-, nil, "spirit_1601532_card", "trial_name_1601531", "str_activity_common_pet_try_1601531"}
-, 
-{40, 5173002, 10023, common[2], 
-{1601551}
-, 
-{"1601552_cg"}
-, nil, "spirit_1601552_card", "trial_name_1601551", "str_activity_common_pet_try_1601551"}
-, 
-{41, 5183001, 10024, common[1], 
-{1601561}
-, 
-{"1601562_cg"}
-, nil, "spirit_1601562_card", "trial_name_1601561", "str_activity_common_pet_try_1601561"}
-, 
-{42, 5183002, 10024, common[2], 
-{1501571}
-, 
-{"1501572_cg"}
-, nil, "spirit_1501572_card", "trial_name_1501571", "str_activity_common_pet_try_1501571"}
-, 
-{43, 5203001, 10027, common[1], 
-{1601641}
-, 
-{"1601642_cg"}
-, nil, "spirit_1601642_card", "trial_name_1601641", "str_activity_common_pet_try_1601641"}
-, 
-{44, 5203002, 10027, common[2], 
-{1501651}
-, 
-{"1501652_cg"}
-, nil, "spirit_1501652_card", "trial_name_1501651", "str_activity_common_pet_try_1501651"}
-; 
-[46] = {46, 5193001, 10026, common[5], 
-{1601591, 1601581, 1501601, 1501611, 1501621}
-, 
-{"1601592_small", "1601582_small", "1501602_cg", "1501612_cg", "1501622_cg"}
-}
-, 
-[47] = {47, 5213001, 10029, common[1], 
-{1601671}
-, 
-{"1601672_cg"}
-, nil, "spirit_1601672_card", "trial_name_1601671", "str_activity_common_pet_try_1601671"}
-, 
-[48] = {48, 5213002, 10029, common[2], 
-{1601661}
-, 
-{"1601662_cg"}
-, nil, "spirit_1601662_card", "trial_name_1601661", "str_activity_common_pet_try_1601661"}
-, 
-[49] = {49, 5213003, 10029, common[3], 
-{1501681}
-, 
-{"1501682_cg"}
-, nil, "spirit_1501682_card", "trial_name_1501681", "str_activity_common_pet_try_1501681"}
-, 
-[50] = {50, 5223001, 10030, common[1], 
-{1601701}
-, 
-{"1601702_cg"}
-, nil, "spirit_1601702_card", "trial_name_1601701", "str_activity_common_pet_try_1601701"}
-, 
-[51] = {51, 5223002, 10030, common[2], 
-{1501711}
-, 
-{"1501712_cg"}
-, nil, "spirit_1501712_card", "trial_name_1501711", "str_activity_common_pet_try_1501711"}
-, 
-[52] = {52, 5235001, 10031, common[1], 
-{1601721}
-, 
-{"1601722_cg"}
-, nil, "spirit_1601722_card", "trial_name_1601721", "str_activity_common_pet_try_1601721"}
-, 
-[53] = {53, 5235002, 10031, common[2], 
-{1601731}
-, 
-{"1601732_cg"}
-, nil, "spirit_1601732_card", "trial_name_1601731", "str_activity_common_pet_try_1601731"}
-, 
-[54] = {54, 5235003, 10031, common[3], 
-{1401691}
-, 
-{"1401692_cg"}
-, nil, "spirit_1401692_card", "trial_name_1401691", "str_activity_common_pet_try_1401691"}
-, 
-[55] = {55, 5243001, 10032, common[1], 
-{1601751}
-, 
-{"1601752_cg"}
-, nil, "spirit_1601752_card", "trial_name_1601751", "str_activity_common_pet_try_1601751"}
-, 
-[56] = {56, 5243002, 10032, common[2], 
-{1501761}
-, 
-{"1501762_cg"}
-, nil, "spirit_1501762_card", "trial_name_1501761", "str_activity_common_pet_try_1501761"}
-, 
-[57] = {57, 5253001, 10033, common[1], 
-{1601771}
-, 
-{"1601772_cg"}
-, nil, "spirit_1601772_card", "trial_name_1601771", "str_activity_common_pet_try_1601771"}
-, 
-[58] = {58, 5253002, 10033, common[2], 
-{1601781}
-, 
-{"1601782_cg"}
-, nil, "spirit_1601782_card", "trial_name_1601781", "str_activity_common_pet_try_1601781"}
-, 
-[59] = {59, 5253003, 10033, common[3], 
-{1501801}
-, 
-{"1501802_cg"}
-, nil, "spirit_1501802_card", "trial_name_1501801", "str_activity_common_pet_try_1501801"}
-, 
-[60] = {60, 5263001, 10036, common[1], 
-{1601821}
-, 
-{"1601822_cg"}
-, nil, "spirit_1601822_card", "trial_name_1601821", "str_activity_common_pet_try_1601821"}
-, 
-[61] = {61, 5263002, 10036, common[2], 
-{1601811}
-, 
-{"1601812_cg"}
-, nil, "spirit_1601812_card", "trial_name_1601811", "str_activity_common_pet_try_1601811"}
-, 
-[62] = {62, 5263003, 10036, common[3], 
-{1501831}
-, 
-{"1501832_cg"}
-, nil, "spirit_1501832_card", "trial_name_1501831", "str_activity_common_pet_try_1501831"}
-, 
-[63] = {63, 5274001, 10037, common[1], 
-{1601841}
-, 
-{"1601842_cg"}
-, nil, "spirit_1601842_card", "trial_name_1601841", "str_activity_common_pet_try_1601841"}
-, 
-[64] = {64, 5274002, 10037, common[2], 
-{1501851}
-, 
-{"1501852_cg"}
-, nil, "spirit_1501852_card", "trial_name_1501851", "str_activity_common_pet_try_1501851"}
-, 
-[65] = {65, 5283001, 10039, common[1], 
-{1601861}
-, 
-{"1601862_cg"}
-, nil, "spirit_1601862_card", "trial_name_1601861", "str_activity_common_pet_try_1601861"}
-, 
-[66] = {66, 5283002, 10039, common[2], 
-{1601891}
-, 
-{"1601892_cg"}
-, nil, "spirit_1601892_card", "trial_name_1601891", "str_activity_common_pet_try_1601891"}
-, 
-[67] = {67, 5283003, 10039, common[3], 
-{1501901}
-, 
-{"1501902_cg"}
-, nil, "spirit_1501902_card", "trial_name_1501901", "str_activity_common_pet_try_1501901"}
-, 
-[68] = {68, 5294001, 10041, common[1], common[6], common[18], nil, common[11], common[12], common[13]}
-, 
-[69] = {69, 5294002, 10041, common[2], common[7], common[19], nil, common[14], common[15], common[16]}
-, 
-[70] = {70, 5301001, 10042, common[1], common[6], common[18], nil, common[11], common[12], common[13]}
-, 
-[71] = {71, 5301002, 10042, common[2], common[7], common[19], nil, common[14], common[15], common[16]}
+  {
+    1,
+    5023001,
+    10005,
+    common[1],
+    {1601111},
+    {"1601111_cg"},
+    nil,
+    "spirit_1601112_card",
+    "trial_name_1601111",
+    "str_activity_common_pet_try_1601111"
+  },
+  {
+    2,
+    5023002,
+    10005,
+    common[2],
+    {1601161},
+    {"1601162_cg"},
+    nil,
+    "spirit_1601162_card",
+    "trial_name_1601161",
+    "str_activity_common_pet_try_1601161"
+  },
+  {
+    3,
+    5023003,
+    10005,
+    common[3],
+    {1501131},
+    {"1501132_cg"},
+    nil,
+    "spirit_1501132_card",
+    "trial_name_1501131",
+    "str_activity_common_pet_try_1501131"
+  },
+  {
+    4,
+    5049001,
+    10006,
+    common[1],
+    {1601121},
+    {"1601122_cg"},
+    nil,
+    "spirit_1601122_card",
+    "trial_name_1601121",
+    "str_activity_common_pet_try_1601121"
+  },
+  {
+    5,
+    5049002,
+    10006,
+    common[2],
+    {1501141},
+    {"1501142_cg"},
+    nil,
+    "spirit_1501142_card",
+    "trial_name_1501141",
+    "str_activity_common_pet_try_1501141"
+  },
+  {
+    6,
+    5012014,
+    10003,
+    common[1],
+    {1600301},
+    {"1600302_cg"},
+    nil,
+    "spirit_1600302_card",
+    "trial_name_1600301",
+    "str_activity_common_pet_try_1600301"
+  },
+  {
+    7,
+    5012015,
+    10003,
+    common[2],
+    {1601051},
+    {"1601052_cg"},
+    nil,
+    "spirit_1601052_card",
+    "trial_name_1601051",
+    "str_activity_common_pet_try_1601051"
+  },
+  {
+    8,
+    5012016,
+    10003,
+    common[3],
+    {1501041},
+    {"1501042_cg"},
+    nil,
+    "spirit_1501042_card",
+    "trial_name_1501041",
+    "str_activity_common_pet_try_1501041"
+  },
+  {
+    9,
+    5052001,
+    10008,
+    common[1],
+    {1601191},
+    {"1601192_cg"},
+    nil,
+    "spirit_1601192_card",
+    "trial_name_1601191",
+    "str_activity_common_pet_try_1601191"
+  },
+  {
+    10,
+    5052002,
+    10008,
+    common[3],
+    {1601221},
+    {"1601222_cg"},
+    nil,
+    "spirit_1601222_card",
+    "trial_name_1601221",
+    "str_activity_common_pet_try_1601221"
+  },
+  {
+    11,
+    5052003,
+    10008,
+    common[2],
+    {1601171},
+    {"1601172_cg"},
+    nil,
+    "spirit_1601172_card",
+    "trial_name_1601171",
+    "str_activity_common_pet_try_1601171"
+  },
+  {
+    12,
+    5083001,
+    10009,
+    common[1],
+    {1601211},
+    {"1601212_cg"},
+    nil,
+    "spirit_1601212_card",
+    "trial_name_1601211",
+    "str_activity_common_pet_try_1601211"
+  },
+  {
+    13,
+    5083002,
+    10009,
+    common[2],
+    {1601151},
+    {"1601152_cg"},
+    nil,
+    "spirit_1601152_card",
+    "trial_name_1601151",
+    "str_activity_common_pet_try_1601151"
+  },
+  {
+    14,
+    5075001,
+    10013,
+    common[1],
+    {1601261},
+    {"1601262_cg"},
+    nil,
+    "spirit_1601262_card",
+    "trial_name_1601261",
+    "str_activity_common_pet_try_1601261"
+  },
+  {
+    15,
+    5075002,
+    10013,
+    common[2],
+    {1601291},
+    {"1601292_cg"},
+    nil,
+    "spirit_1601292_card",
+    "trial_name_1601291",
+    "str_activity_common_pet_try_1601291"
+  },
+  {
+    16,
+    5075003,
+    10013,
+    common[3],
+    common[4],
+    common[17],
+    nil,
+    common[8],
+    common[9],
+    common[10]
+  },
+  {
+    17,
+    5082001,
+    10014,
+    common[1],
+    {1601201},
+    {"1601202_cg"},
+    nil,
+    "spirit_1601202_card",
+    "trial_name_1601201",
+    "str_activity_common_pet_try_1601201"
+  },
+  {
+    18,
+    5082002,
+    10014,
+    common[2],
+    {1601231},
+    {"1601232_cg"},
+    nil,
+    "spirit_1601232_card",
+    "trial_name_1601231",
+    "str_activity_common_pet_try_1601231"
+  },
+  {
+    19,
+    5082003,
+    10014,
+    common[3],
+    common[4],
+    common[17],
+    nil,
+    common[8],
+    common[9],
+    common[10]
+  },
+  {
+    20,
+    5093001,
+    10015,
+    common[1],
+    {1600771},
+    {"1600772_cg"},
+    nil,
+    "spirit_1600772_card",
+    "trial_name_1600771",
+    "str_activity_common_pet_try_1600771"
+  },
+  {
+    21,
+    5093002,
+    10015,
+    common[2],
+    {1601311},
+    {"1601312_cg"},
+    nil,
+    "spirit_1601312_card",
+    "trial_name_1601311",
+    "str_activity_common_pet_try_1601311"
+  },
+  {
+    22,
+    5093003,
+    10015,
+    common[3],
+    {1501321},
+    {"1501322_cg"},
+    nil,
+    "spirit_1501322_card",
+    "trial_name_1501321",
+    "str_activity_common_pet_try_1501321"
+  },
+  {
+    23,
+    5103001,
+    10016,
+    common[5],
+    {
+      1601331,
+      1601341,
+      1501361,
+      1501351,
+      1401371
+    },
+    {
+      "1601331_cg",
+      "1601341_cg",
+      "1501361_cg",
+      "1501351_cg",
+      "1401371_cg"
+    }
+  },
+  {
+    24,
+    5113001,
+    10017,
+    common[1],
+    {1601381},
+    {"1601382_cg"},
+    nil,
+    "spirit_1601382_card",
+    "trial_name_1601381",
+    "str_activity_common_pet_try_1601381"
+  },
+  {
+    25,
+    5113002,
+    10017,
+    common[2],
+    {1501391},
+    {"1501392_cg"},
+    nil,
+    "spirit_1501392_card",
+    "trial_name_1501391",
+    "str_activity_common_pet_try_1501391"
+  },
+  {
+    26,
+    5124001,
+    10018,
+    common[1],
+    {1601411},
+    {"1601412_cg"},
+    nil,
+    "spirit_1601412_card",
+    "trial_name_1601411",
+    "str_activity_common_pet_try_1601411"
+  },
+  {
+    27,
+    5124002,
+    10018,
+    common[2],
+    {1601401},
+    {"1601402_cg"},
+    nil,
+    "spirit_1601402_card",
+    "trial_name_1601401",
+    "str_activity_common_pet_try_1601401"
+  },
+  {
+    28,
+    5124003,
+    10018,
+    common[3],
+    {1501421},
+    {"1501422_cg"},
+    nil,
+    "spirit_1501422_card",
+    "trial_name_1501421",
+    "str_activity_common_pet_try_1501421"
+  },
+  {
+    29,
+    5132001,
+    10019,
+    common[1],
+    {1601431},
+    {"1601432_cg"},
+    nil,
+    "spirit_1601432_card",
+    "trial_name_1601431",
+    "str_activity_common_pet_try_1601431"
+  },
+  {
+    30,
+    5132002,
+    10019,
+    common[2],
+    {1501441},
+    {"1501442_cg"},
+    nil,
+    "spirit_1501442_card",
+    "trial_name_1501441",
+    "str_activity_common_pet_try_1501441"
+  },
+  {
+    31,
+    5143001,
+    10020,
+    common[1],
+    {1601451},
+    {"1601452_cg"},
+    nil,
+    "spirit_1601452_card",
+    "trial_name_1601451",
+    "str_activity_common_pet_try_1601451"
+  },
+  {
+    32,
+    5143002,
+    10020,
+    common[2],
+    {1601461},
+    {"1601462_cg"},
+    nil,
+    "spirit_1601462_card",
+    "trial_name_1601461",
+    "str_activity_common_pet_try_1601461"
+  },
+  {
+    33,
+    5143003,
+    10020,
+    common[3],
+    {1501471},
+    {"1501472_cg"},
+    nil,
+    "spirit_1501472_card",
+    "trial_name_1501471",
+    "str_activity_common_pet_try_1501471"
+  },
+  {
+    34,
+    5153001,
+    10021,
+    common[1],
+    {1601481},
+    {"1601482_cg"},
+    nil,
+    "spirit_1601482_card",
+    "trial_name_1601481",
+    "str_activity_common_pet_try_1601481"
+  },
+  {
+    35,
+    5153002,
+    10021,
+    common[2],
+    {1501491},
+    {"1501492_cg"},
+    nil,
+    "spirit_1501492_card",
+    "trial_name_1501491",
+    "str_activity_common_pet_try_1501491"
+  },
+  {
+    36,
+    5164001,
+    10022,
+    common[1],
+    {1601501},
+    {"1601502_cg"},
+    nil,
+    "spirit_1601502_card",
+    "trial_name_1601501",
+    "str_activity_common_pet_try_1601501"
+  },
+  {
+    37,
+    5164002,
+    10022,
+    common[2],
+    {1601511},
+    {"1601512_cg"},
+    nil,
+    "spirit_1601512_card",
+    "trial_name_1601511",
+    "str_activity_common_pet_try_1601511"
+  },
+  {
+    38,
+    5164003,
+    10022,
+    common[3],
+    {1501521},
+    {"1501522_cg"},
+    nil,
+    "spirit_1501522_card",
+    "trial_name_1501521",
+    "str_activity_common_pet_try_1501521"
+  },
+  {
+    39,
+    5173001,
+    10023,
+    common[1],
+    {1601531},
+    {"1601532_cg"},
+    nil,
+    "spirit_1601532_card",
+    "trial_name_1601531",
+    "str_activity_common_pet_try_1601531"
+  },
+  {
+    40,
+    5173002,
+    10023,
+    common[2],
+    {1601551},
+    {"1601552_cg"},
+    nil,
+    "spirit_1601552_card",
+    "trial_name_1601551",
+    "str_activity_common_pet_try_1601551"
+  },
+  {
+    41,
+    5183001,
+    10024,
+    common[1],
+    {1601561},
+    {"1601562_cg"},
+    nil,
+    "spirit_1601562_card",
+    "trial_name_1601561",
+    "str_activity_common_pet_try_1601561"
+  },
+  {
+    42,
+    5183002,
+    10024,
+    common[2],
+    {1501571},
+    {"1501572_cg"},
+    nil,
+    "spirit_1501572_card",
+    "trial_name_1501571",
+    "str_activity_common_pet_try_1501571"
+  },
+  {
+    43,
+    5203001,
+    10027,
+    common[1],
+    {1601641},
+    {"1601642_cg"},
+    nil,
+    "spirit_1601642_card",
+    "trial_name_1601641",
+    "str_activity_common_pet_try_1601641"
+  },
+  {
+    44,
+    5203002,
+    10027,
+    common[2],
+    {1501651},
+    {"1501652_cg"},
+    nil,
+    "spirit_1501652_card",
+    "trial_name_1501651",
+    "str_activity_common_pet_try_1501651"
+  },
+  [46] = {
+    46,
+    5193001,
+    10026,
+    common[5],
+    {
+      1601591,
+      1601581,
+      1501601,
+      1501611,
+      1501621
+    },
+    {
+      "1601592_small",
+      "1601582_small",
+      "1501602_cg",
+      "1501612_cg",
+      "1501622_cg"
+    }
+  },
+  [47] = {
+    47,
+    5213001,
+    10029,
+    common[1],
+    {1601671},
+    {"1601672_cg"},
+    nil,
+    "spirit_1601672_card",
+    "trial_name_1601671",
+    "str_activity_common_pet_try_1601671"
+  },
+  [48] = {
+    48,
+    5213002,
+    10029,
+    common[2],
+    {1601661},
+    {"1601662_cg"},
+    nil,
+    "spirit_1601662_card",
+    "trial_name_1601661",
+    "str_activity_common_pet_try_1601661"
+  },
+  [49] = {
+    49,
+    5213003,
+    10029,
+    common[3],
+    {1501681},
+    {"1501682_cg"},
+    nil,
+    "spirit_1501682_card",
+    "trial_name_1501681",
+    "str_activity_common_pet_try_1501681"
+  },
+  [50] = {
+    50,
+    5223001,
+    10030,
+    common[1],
+    {1601701},
+    {"1601702_cg"},
+    nil,
+    "spirit_1601702_card",
+    "trial_name_1601701",
+    "str_activity_common_pet_try_1601701"
+  },
+  [51] = {
+    51,
+    5223002,
+    10030,
+    common[2],
+    {1501711},
+    {"1501712_cg"},
+    nil,
+    "spirit_1501712_card",
+    "trial_name_1501711",
+    "str_activity_common_pet_try_1501711"
+  },
+  [52] = {
+    52,
+    5235001,
+    10031,
+    common[1],
+    {1601721},
+    {"1601722_cg"},
+    nil,
+    "spirit_1601722_card",
+    "trial_name_1601721",
+    "str_activity_common_pet_try_1601721"
+  },
+  [53] = {
+    53,
+    5235002,
+    10031,
+    common[2],
+    {1601731},
+    {"1601732_cg"},
+    nil,
+    "spirit_1601732_card",
+    "trial_name_1601731",
+    "str_activity_common_pet_try_1601731"
+  },
+  [54] = {
+    54,
+    5235003,
+    10031,
+    common[3],
+    {1401691},
+    {"1401692_cg"},
+    nil,
+    "spirit_1401692_card",
+    "trial_name_1401691",
+    "str_activity_common_pet_try_1401691"
+  },
+  [55] = {
+    55,
+    5243001,
+    10032,
+    common[1],
+    {1601751},
+    {"1601752_cg"},
+    nil,
+    "spirit_1601752_card",
+    "trial_name_1601751",
+    "str_activity_common_pet_try_1601751"
+  },
+  [56] = {
+    56,
+    5243002,
+    10032,
+    common[2],
+    {1501761},
+    {"1501762_cg"},
+    nil,
+    "spirit_1501762_card",
+    "trial_name_1501761",
+    "str_activity_common_pet_try_1501761"
+  },
+  [57] = {
+    57,
+    5253001,
+    10033,
+    common[1],
+    {1601771},
+    {"1601772_cg"},
+    nil,
+    "spirit_1601772_card",
+    "trial_name_1601771",
+    "str_activity_common_pet_try_1601771"
+  },
+  [58] = {
+    58,
+    5253002,
+    10033,
+    common[2],
+    {1601781},
+    {"1601782_cg"},
+    nil,
+    "spirit_1601782_card",
+    "trial_name_1601781",
+    "str_activity_common_pet_try_1601781"
+  },
+  [59] = {
+    59,
+    5253003,
+    10033,
+    common[3],
+    {1501801},
+    {"1501802_cg"},
+    nil,
+    "spirit_1501802_card",
+    "trial_name_1501801",
+    "str_activity_common_pet_try_1501801"
+  },
+  [60] = {
+    60,
+    5263001,
+    10036,
+    common[1],
+    {1601821},
+    {"1601822_cg"},
+    nil,
+    "spirit_1601822_card",
+    "trial_name_1601821",
+    "str_activity_common_pet_try_1601821"
+  },
+  [61] = {
+    61,
+    5263002,
+    10036,
+    common[2],
+    {1601811},
+    {"1601812_cg"},
+    nil,
+    "spirit_1601812_card",
+    "trial_name_1601811",
+    "str_activity_common_pet_try_1601811"
+  },
+  [62] = {
+    62,
+    5263003,
+    10036,
+    common[3],
+    {1501831},
+    {"1501832_cg"},
+    nil,
+    "spirit_1501832_card",
+    "trial_name_1501831",
+    "str_activity_common_pet_try_1501831"
+  },
+  [63] = {
+    63,
+    5274001,
+    10037,
+    common[1],
+    {1601841},
+    {"1601842_cg"},
+    nil,
+    "spirit_1601842_card",
+    "trial_name_1601841",
+    "str_activity_common_pet_try_1601841"
+  },
+  [64] = {
+    64,
+    5274002,
+    10037,
+    common[2],
+    {1501851},
+    {"1501852_cg"},
+    nil,
+    "spirit_1501852_card",
+    "trial_name_1501851",
+    "str_activity_common_pet_try_1501851"
+  },
+  [65] = {
+    65,
+    5283001,
+    10039,
+    common[1],
+    {1601861},
+    {"1601862_cg"},
+    nil,
+    "spirit_1601862_card",
+    "trial_name_1601861",
+    "str_activity_common_pet_try_1601861"
+  },
+  [66] = {
+    66,
+    5283002,
+    10039,
+    common[2],
+    {1601891},
+    {"1601892_cg"},
+    nil,
+    "spirit_1601892_card",
+    "trial_name_1601891",
+    "str_activity_common_pet_try_1601891"
+  },
+  [67] = {
+    67,
+    5283003,
+    10039,
+    common[3],
+    {1501901},
+    {"1501902_cg"},
+    nil,
+    "spirit_1501902_card",
+    "trial_name_1501901",
+    "str_activity_common_pet_try_1501901"
+  },
+  [68] = {
+    68,
+    5294001,
+    10041,
+    common[1],
+    common[6],
+    common[18],
+    nil,
+    common[11],
+    common[12],
+    common[13]
+  },
+  [69] = {
+    69,
+    5294002,
+    10041,
+    common[2],
+    common[7],
+    common[19],
+    nil,
+    common[14],
+    common[15],
+    common[16]
+  },
+  [70] = {
+    70,
+    5301001,
+    10042,
+    common[1],
+    common[6],
+    common[18],
+    nil,
+    common[11],
+    common[12],
+    common[13]
+  },
+  [71] = {
+    71,
+    5301002,
+    10042,
+    common[2],
+    common[7],
+    common[19],
+    nil,
+    common[14],
+    common[15],
+    common[16]
+  }
 }
 return config, "ID", key
-

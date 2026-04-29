@@ -1,37 +1,18 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/RewardPoints/Main/ui_n12_integral_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12IntegralItem", UICustomWidget)
 UIN12IntegralItem = UIN12IntegralItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12IntegralItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN12IntegralItem:OnShow(uiParams)
   self:_GetComponent()
   self:_SetValue(uiParams)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralItem._SetValue = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN12IntegralItem:_SetValue(uiParams)
   self.colorDate = {}
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.colorDate).grey = (Color.New)(0.78823529411765, 0.76078431372549, 0.70588235294118)
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.colorDate).yellow = (Color.New)(0.94509803921569, 0.67450980392157, 0.15294117647059)
+  self.colorDate.grey = Color.New(0.788235294117647, 0.7607843137254902, 0.7058823529411765)
+  self.colorDate.yellow = Color.New(0.9450980392156862, 0.6745098039215687, 0.15294117647058825)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralItem._GetComponent = function(self)
-  -- function num : 0_2
+function UIN12IntegralItem:_GetComponent()
   self._reputation = self:GetGameObject("reputation")
   self._special = self:GetGameObject("special")
   self._txtTotal = self:GetUIComponent("UILocalizationText", "txtTotal")
@@ -43,10 +24,7 @@ UIN12IntegralItem._GetComponent = function(self)
   self._select = self:GetGameObject("select")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralItem.SetData = function(self, progress_component, idx, date, callback, curScore, callback2, callback3)
-  -- function num : 0_3
+function UIN12IntegralItem:SetData(progress_component, idx, date, callback, curScore, callback2, callback3)
   self._progress_component = progress_component
   self._idx = idx
   self._date = date
@@ -57,126 +35,85 @@ UIN12IntegralItem.SetData = function(self, progress_component, idx, date, callba
   self:SetShow()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralItem.SetShow = function(self)
-  -- function num : 0_4
-  (self._got):SetActive(false)
-  ;
-  (self._txtReputation):SetText((self._date).reputation)
+function UIN12IntegralItem:SetShow()
+  self._got:SetActive(false)
+  self._txtReputation:SetText(self._date.reputation)
   local award = self:GetUIComponent("UISelectObjectPath", "award")
   self._award = award:SpawnObject("UIN12AwardItem")
   self:_SetGrey(1)
-  ;
-  (self._award):SetData(((self._date).awards)[1], self._curScore, self._date, function(matid, pos)
-    -- function num : 0_4_0 , upvalues : self
-    (self._callback)(matid, pos)
-  end
-, function(grey)
-    -- function num : 0_4_1 , upvalues : self
+  self._award:SetData(self._date.awards[1], self._curScore, self._date, function(matid, pos)
+    self._callback(matid, pos)
+  end, function(grey)
     self:_SetGrey(grey)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralItem._SetGrey = function(self, grey)
-  -- function num : 0_5 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
+function UIN12IntegralItem:_SetGrey(grey)
   if grey == 1 then
-    (self._grey).color = (self.colorDate).grey
-    ;
-    (self._canGet):SetActive(false)
+    self._grey.color = self.colorDate.grey
+    self._canGet:SetActive(false)
   else
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._grey).color = (self.colorDate).yellow
-    ;
-    (self._canGet):SetActive(true)
+    self._grey.color = self.colorDate.yellow
+    self._canGet:SetActive(true)
   end
-  if not (self._date).gotState then
-    (UIN12ChallengesContorl.SetIconGrey)({self._imgReputation}, 0)
+  if not self._date.gotState then
+    UIN12ChallengesContorl.SetIconGrey({
+      self._imgReputation
+    }, 0)
   else
-    ;
-    (UIN12ChallengesContorl.SetIconGrey)({self._imgReputation}, grey)
+    UIN12ChallengesContorl.SetIconGrey({
+      self._imgReputation
+    }, grey)
   end
-  if (self._date).gotState == N12IntegralState.Got then
-    (self._got):SetActive(true)
+  if self._date.gotState == N12IntegralState.Got then
+    self._got:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralItem.bgOnClick = function(self, go)
-  -- function num : 0_6
+function UIN12IntegralItem:bgOnClick(go)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralItem.btnGetOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self._callback3)() then
-    return 
+function UIN12IntegralItem:btnGetOnClick(go)
+  if self._callback3() then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     local c = self._progress_component
     local res = AsyncRequestRes:New()
-    local awards = c:HandleReceiveReward(TT, res, (self._date).reputation)
+    local awards = c:HandleReceiveReward(TT, res, self._date.reputation)
     if awards then
-      (UIN12IntegralItem.ShowRewards)(awards)
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._date).gotState = N12IntegralState.Got
-      ;
-      (self._award):RefGray(1)
+      UIN12IntegralItem.ShowRewards(awards)
+      self._date.gotState = N12IntegralState.Got
+      self._award:RefGray(1)
       if self._callback2 then
-        (self._callback2)()
+        self._callback2()
       end
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12IntegralItem.ShowRewards = function(rewards, callback)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN12IntegralItem.ShowRewards(rewards, callback)
   local petIdList = {}
-  local mPet = (GameGlobal.GetModule)(PetModule)
-  for _,reward in pairs(rewards) do
+  local mPet = GameGlobal.GetModule(PetModule)
+  for _, reward in pairs(rewards) do
     if mPet:IsPetID(reward.assetid) then
-      (table.insert)(petIdList, reward)
+      table.insert(petIdList, reward)
     end
   end
-  if (table.count)(petIdList) > 0 then
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIPetObtain", petIdList, function()
-    -- function num : 0_8_0 , upvalues : _ENV, rewards, callback
-    ((GameGlobal.UIStateManager)()):CloseDialog("UIPetObtain")
-    ;
-    ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-      -- function num : 0_8_0_0 , upvalues : callback
-      if callback then
-        callback()
-      end
-    end
-)
+  if table.count(petIdList) > 0 then
+    GameGlobal.UIStateManager():ShowDialog("UIPetObtain", petIdList, function()
+      GameGlobal.UIStateManager():CloseDialog("UIPetObtain")
+      GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
+        if callback then
+          callback()
+        end
+      end)
+    end)
+    return
   end
-)
-    return 
-  end
-  ;
-  ((GameGlobal.UIStateManager)()):ShowDialog("UIGetItemController", rewards, function()
-    -- function num : 0_8_1 , upvalues : callback
+  GameGlobal.UIStateManager():ShowDialog("UIGetItemController", rewards, function()
     if callback then
       callback()
     end
-  end
-)
+  end)
 end
-
-

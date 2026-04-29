@@ -1,23 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scope_filters/scope_filter_piece_block.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_filter_base")
 _class("SkillScopeFilter_PieceBlock", SkillScopeFilter_Base)
 SkillScopeFilter_PieceBlock = SkillScopeFilter_PieceBlock
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeFilter_PieceBlock.DoModifyRange = function(self, scopeResult, filterParam, passParam)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeFilter_PieceBlock:DoModifyRange(scopeResult, filterParam, passParam)
   local wholeGridRange = scopeResult:GetWholeGridRange()
   local world = passParam:GetWorld()
   local boardService = world:GetService("BoardLogic")
   local obstacledPosArray = {}
-  for _,gridPos in ipairs(wholeGridRange) do
+  for _, gridPos in ipairs(wholeGridRange) do
     local pieceBlock = boardService:FindBlockByPos(gridPos)
     if pieceBlock and self:TestPieceBlock(pieceBlock, world) then
-      (table.insert)(obstacledPosArray, gridPos)
+      table.insert(obstacledPosArray, gridPos)
     end
   end
   local isInclude = filterParam:GetObstructingTrapFilter() == 1
@@ -26,14 +19,8 @@ SkillScopeFilter_PieceBlock.DoModifyRange = function(self, scopeResult, filterPa
   else
     self:RemovePosFromScopeResult(scopeResult, obstacledPosArray)
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeFilter_PieceBlock.TestPieceBlock = function(self, pieceBlockData, world)
-  -- function num : 0_1
+function SkillScopeFilter_PieceBlock:TestPieceBlock(pieceBlockData, world)
   return true
 end
-
-

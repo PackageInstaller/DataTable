@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/h3dscrollview_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("H3DScrollViewHelper", Object)
 H3DScrollViewHelper = H3DScrollViewHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-H3DScrollViewHelper.Constructor = function(self, uiController, scrollViewName, itemName, showfunction, hidefunction, centerfunction)
-  -- function num : 0_0 , upvalues : _ENV
+function H3DScrollViewHelper:Constructor(uiController, scrollViewName, itemName, showfunction, hidefunction, centerfunction)
   self._itemName = itemName
   self._uiController = uiController
   self._freeWidgetList = ArrayList:New()
@@ -16,90 +9,58 @@ H3DScrollViewHelper.Constructor = function(self, uiController, scrollViewName, i
   self._showfunction = showfunction
   self._hidefunction = hidefunction
   self._centerfunction = centerfunction
-  self._scrollView = (self._uiController):GetUIComponent("H3DScrollView", scrollViewName)
+  self._scrollView = self._uiController:GetUIComponent("H3DScrollView", scrollViewName)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.Init = function(self, itemcount, openindex, sizeDetal)
-  -- function num : 0_1
+function H3DScrollViewHelper:Init(itemcount, openindex, sizeDetal)
   self._listItemTotalCount = itemcount
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
   if self._scrollView then
-    (self._scrollView).mOnHideItem = function(index, item)
-    -- function num : 0_1_0 , upvalues : self
-    return self:_OnHideItem(index, item)
-  end
-
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._scrollView).mOnShowItem = function(index, item)
-    -- function num : 0_1_1 , upvalues : self
-    return self:_OnShowItem(index, item)
-  end
-
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._scrollView).mOnCenterItem = function(index, item)
-    -- function num : 0_1_2 , upvalues : self
-    return self:_OnCenterItem(index, item)
-  end
-
-    ;
-    (self._scrollView):Init(self._listItemTotalCount, openindex, sizeDetal.x, sizeDetal.y)
+    function self._scrollView.mOnHideItem(index, item)
+      return self:_OnHideItem(index, item)
+    end
+    
+    function self._scrollView.mOnShowItem(index, item)
+      return self:_OnShowItem(index, item)
+    end
+    
+    function self._scrollView.mOnCenterItem(index, item)
+      return self:_OnCenterItem(index, item)
+    end
+    
+    self._scrollView:Init(self._listItemTotalCount, openindex, sizeDetal.x, sizeDetal.y)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.SetNextPageOffset = function(self, fRate)
-  -- function num : 0_2
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R2 in 'UnsetPending'
-
+function H3DScrollViewHelper:SetNextPageOffset(fRate)
   if self._scrollView then
-    (self._scrollView).NextPageOffset = fRate
+    self._scrollView.NextPageOffset = fRate
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper._OnHideItem = function(self, index, item)
-  -- function num : 0_3
+function H3DScrollViewHelper:_OnHideItem(index, item)
   local luaindex = index + 1
-  local uiwidget = (self._useItems)[luaindex]
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._useItems)[luaindex] = nil
+  local uiwidget = self._useItems[luaindex]
+  self._useItems[luaindex] = nil
   self.minItem = self:_FirstItem()
   if self._hidefunction then
-    (self._hidefunction)(luaindex, uiwidget)
+    self._hidefunction(luaindex, uiwidget)
   end
-  ;
-  (self._freeWidgetList):PushBack(uiwidget)
+  self._freeWidgetList:PushBack(uiwidget)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper._FirstItem = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local min = nil
+function H3DScrollViewHelper:_FirstItem()
+  local min
   if self._useItems == nil then
     return 1
   end
   if next(self._useItems) == nil then
     return 1
   end
-  for k,v in pairs(self._useItems) do
+  for k, v in pairs(self._useItems) do
     if min == nil then
       min = k
-    else
-      if k < min then
-        min = k
-      end
+    elseif k < min then
+      min = k
     end
   end
   if min == 1 then
@@ -112,10 +73,7 @@ H3DScrollViewHelper._FirstItem = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.GetFirstItem = function(self)
-  -- function num : 0_5
+function H3DScrollViewHelper:GetFirstItem()
   if self.minItem == nil then
     return 1
   else
@@ -123,167 +81,97 @@ H3DScrollViewHelper.GetFirstItem = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper._OnShowItem = function(self, index, item)
-  -- function num : 0_6
+function H3DScrollViewHelper:_OnShowItem(index, item)
   local luaindex = index + 1
-  local uiwidget = nil
-  if (self._freeWidgetList):Size() > 0 then
-    uiwidget = (self._freeWidgetList):PopBack()
+  local uiwidget
+  if self._freeWidgetList:Size() > 0 then
+    uiwidget = self._freeWidgetList:PopBack()
   else
     uiwidget = self:_LoadItem(item)
   end
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._useItems)[luaindex] = uiwidget
+  self._useItems[luaindex] = uiwidget
   self.minItem = self:_FirstItem()
-  ;
-  (self._showfunction)(luaindex, uiwidget)
+  self._showfunction(luaindex, uiwidget)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper._OnCenterItem = function(self, index, item)
-  -- function num : 0_7
+function H3DScrollViewHelper:_OnCenterItem(index, item)
   local luaindex = index + 1
   local uiwidget = self:GetUseItem(luaindex)
-  ;
-  (self._centerfunction)(luaindex, uiwidget)
+  self._centerfunction(luaindex, uiwidget)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper._LoadItem = function(self, item)
-  -- function num : 0_8 , upvalues : _ENV
+function H3DScrollViewHelper:_LoadItem(item)
   local uiCustomWidget = _createInstance(self._itemName)
   local view = item:GetComponent("UIView")
   if not view then
-    (Log.fatal)("[UI] H3DScrollViewHelper:_OnShowItem Error, View is Null ", self._itemName)
-    return 
+    Log.fatal("[UI] H3DScrollViewHelper:_OnShowItem Error, View is Null ", self._itemName)
+    return
   end
   uiCustomWidget:SetName(self._itemName)
   uiCustomWidget:Load(view, self._uiController)
   return uiCustomWidget
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.Dispose = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  (self._freeWidgetList):ForEach(function(v)
-    -- function num : 0_9_0
+function H3DScrollViewHelper:Dispose()
+  self._freeWidgetList:ForEach(function(v)
+    if v ~= nil then
+      v:UnLoad()
+      v:Dispose()
+    end
+  end)
+  for k, v in pairs(self._useItems) do
     if v ~= nil then
       v:UnLoad()
       v:Dispose()
     end
   end
-)
-  for k,v in pairs(self._useItems) do
-    if v ~= nil then
-      v:UnLoad()
-      v:Dispose()
-    end
-  end
-  ;
-  (self._freeWidgetList):Clear()
-  ;
-  (table.clear)(self._useItems)
-  ;
-  (self._scrollView):Dispose()
+  self._freeWidgetList:Clear()
+  table.clear(self._useItems)
+  self._scrollView:Dispose()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.SetCalcScale = function(self, bcalcSize)
-  -- function num : 0_10
-  (self._scrollView):SetCalcScale(bcalcSize)
+function H3DScrollViewHelper:SetCalcScale(bcalcSize)
+  self._scrollView:SetCalcScale(bcalcSize)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.RefreshAllShownItem = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  for k,v in pairs(self._useItems) do
+function H3DScrollViewHelper:RefreshAllShownItem()
+  for k, v in pairs(self._useItems) do
     if v ~= nil then
-      (self._showfunction)(k, v)
+      self._showfunction(k, v)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.SetEndSnappingCallback = function(self, callback)
-  -- function num : 0_12
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._scrollView).mOnEndSnapping = callback
+function H3DScrollViewHelper:SetEndSnappingCallback(callback)
+  self._scrollView.mOnEndSnapping = callback
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.SetGroupChangedCallback = function(self, callback)
-  -- function num : 0_13
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._scrollView).mOnGroupChanged = callback
+function H3DScrollViewHelper:SetGroupChangedCallback(callback)
+  self._scrollView.mOnGroupChanged = callback
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.SetValueChangedCallback = function(self, callback)
-  -- function num : 0_14
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._scrollView).mOnValueChangedEvent = callback
+function H3DScrollViewHelper:SetValueChangedCallback(callback)
+  self._scrollView.mOnValueChangedEvent = callback
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.MovePanelToIndex = function(self, index, onMoveBack)
-  -- function num : 0_15
-  (self._scrollView):MovePanelToIndex(index)
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._scrollView).onMovePanelToIndex = onMoveBack
+function H3DScrollViewHelper:MovePanelToIndex(index, onMoveBack)
+  self._scrollView:MovePanelToIndex(index)
+  self._scrollView.onMovePanelToIndex = onMoveBack
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.SetItemPassSnapPosCallback = function(self, callback)
-  -- function num : 0_16
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._scrollView).onItemPassSnapPos = callback
+function H3DScrollViewHelper:SetItemPassSnapPosCallback(callback)
+  self._scrollView.onItemPassSnapPos = callback
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.GetUseItem = function(self, index)
-  -- function num : 0_17
-  if self._useItems then
-    return (self._useItems)[index]
-  end
+function H3DScrollViewHelper:GetUseItem(index)
+  return self._useItems and self._useItems[index]
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.SetItemName = function(self, itemName)
-  -- function num : 0_18
+function H3DScrollViewHelper:SetItemName(itemName)
   self._itemName = itemName
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._scrollView).m_item_prefab_name = itemName
+  self._scrollView.m_item_prefab_name = itemName
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-H3DScrollViewHelper.SetShowFunction = function(self, showFunc)
-  -- function num : 0_19
+function H3DScrollViewHelper:SetShowFunction(showFunc)
   self._showfunction = showFunc
 end
-
-

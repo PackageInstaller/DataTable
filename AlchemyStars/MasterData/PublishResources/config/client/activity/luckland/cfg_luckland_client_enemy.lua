@@ -1,86 +1,471 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/activity/luckland/cfg_luckland_client_enemy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, EnemyName = 2, EnemyIcon = 3, EnemyBigIcon = 4, Dec = 5, EnemyHp = 6, HPHardRate = 7, EnemyAtk = 8, AtkHardRate = 9, BuffIDList = 10, EnemyLifeCount = 11}
-local common = {"str_luckland_card_enemy_1", "n11_minigame_monster_1", "n11_minigame_monster_big_1", "n11_minigame_monster_2", "n11_minigame_monster_big_2", "n11_minigame_monster_3", "n11_minigame_monster_big_3", "n11_minigame_monster_4", "n11_minigame_monster_big_4", "n11_minigame_monster_5", "n11_minigame_monster_big_5", "n11_minigame_monster_6", "n11_minigame_monster_big_6", "n11_minigame_monster_7", "n11_minigame_monster_big_7", "n11_minigame_monster_8", "n11_minigame_monster_big_8", "n11_minigame_monster_9", "n11_minigame_monster_big_9", "n11_minigame_monster_10", "n11_minigame_monster_big_10", "n11_minigame_monster_11", "n11_minigame_monster_big_11", "n11_minigame_monster_12", "n11_minigame_monster_big_12", "n11_minigame_monster_13", "n11_minigame_monster_big_13", "n11_minigame_monster_14", "n11_minigame_monster_big_14", "n11_minigame_monster_15", "n11_minigame_monster_big_15", "n11_minigame_monster_16", "n11_minigame_monster_big_16", "n11_minigame_monster_17", "n11_minigame_monster_big_17"}
+local key = {
+  ID = 1,
+  EnemyName = 2,
+  EnemyIcon = 3,
+  EnemyBigIcon = 4,
+  Dec = 5,
+  EnemyHp = 6,
+  HPHardRate = 7,
+  EnemyAtk = 8,
+  AtkHardRate = 9,
+  BuffIDList = 10,
+  EnemyLifeCount = 11
+}
+local common = {
+  "str_luckland_card_enemy_1",
+  "n11_minigame_monster_1",
+  "n11_minigame_monster_big_1",
+  "n11_minigame_monster_2",
+  "n11_minigame_monster_big_2",
+  "n11_minigame_monster_3",
+  "n11_minigame_monster_big_3",
+  "n11_minigame_monster_4",
+  "n11_minigame_monster_big_4",
+  "n11_minigame_monster_5",
+  "n11_minigame_monster_big_5",
+  "n11_minigame_monster_6",
+  "n11_minigame_monster_big_6",
+  "n11_minigame_monster_7",
+  "n11_minigame_monster_big_7",
+  "n11_minigame_monster_8",
+  "n11_minigame_monster_big_8",
+  "n11_minigame_monster_9",
+  "n11_minigame_monster_big_9",
+  "n11_minigame_monster_10",
+  "n11_minigame_monster_big_10",
+  "n11_minigame_monster_11",
+  "n11_minigame_monster_big_11",
+  "n11_minigame_monster_12",
+  "n11_minigame_monster_big_12",
+  "n11_minigame_monster_13",
+  "n11_minigame_monster_big_13",
+  "n11_minigame_monster_14",
+  "n11_minigame_monster_big_14",
+  "n11_minigame_monster_15",
+  "n11_minigame_monster_big_15",
+  "n11_minigame_monster_16",
+  "n11_minigame_monster_big_16",
+  "n11_minigame_monster_17",
+  "n11_minigame_monster_big_17"
+}
 local config = {
-[101] = {101, common[1], common[2], common[3], nil, 30, 4.29, 15, 0.68}
-, 
-[102] = {102, "str_luckland_card_enemy_2", common[4], common[5], nil, 50, 7.14, 10, 0.45}
-, 
-[103] = {103, "str_luckland_card_enemy_3", common[6], common[7], nil, 20, 2.86, 10, 0.45}
-, 
-[104] = {104, "str_luckland_card_enemy_4", common[8], common[9], nil, 30, 4.29, 12, 0.45}
-, 
-[105] = {105, "str_luckland_card_enemy_5", common[10], common[11], nil, 20, 2.86, 0, 0}
-, 
-[106] = {106, "str_luckland_card_enemy_6", common[12], common[13], nil, 40, 5.71, 5, 0.23}
-, 
-[107] = {107, "str_luckland_card_enemy_7", common[14], common[15], nil, 40, 5.71, 10, 0.45}
-, 
-[108] = {108, "str_luckland_card_enemy_8", common[16], common[17], nil, 35, 5, 15, 0.68}
-, 
-[109] = {109, "str_luckland_card_enemy_9", common[18], common[19], nil, 50, 7.14, 10, 0.45}
-, 
-[110] = {110, "str_luckland_card_enemy_10", common[20], common[21], nil, 55, 7.86, 18, 0.82}
-, 
-[111] = {111, "str_luckland_card_enemy_11", common[22], common[23], nil, 50, 7.14, 15, 0.68}
-, 
-[112] = {112, "str_luckland_card_enemy_12", common[24], common[25], nil, 50, 7.14, 15, 0.68}
-, 
-[113] = {113, "str_luckland_card_enemy_13", common[26], common[27], nil, 50, 7.14, 15, 0.68}
-, 
-[114] = {114, "str_luckland_card_enemy_14", common[28], common[29], nil, 60, 8.57, 20, 0.91}
-, 
-[115] = {115, "str_luckland_card_enemy_15", common[30], common[31], nil, 65, 9.29, 20, 0.91}
-, 
-[116] = {116, "str_luckland_card_enemy_16", common[32], common[33], nil, 55, 7.86, 15, 0.68}
-, 
-[117] = {117, "str_luckland_card_enemy_17", common[34], common[35], nil, 75, 10.71, 15, 0.68}
-, 
-[201] = {201, common[1], common[2], common[3], nil, 30, 1, 15, 1}
-, 
-[202] = {202, common[1], common[4], common[5], nil, 34, 1, 15, 1}
-, 
-[203] = {203, common[1], common[6], common[7], nil, 78, 1, 12, 1}
-, 
-[204] = {204, common[1], common[8], common[9], nil, 51, 1, 19, 1}
-, 
-[205] = {205, common[1], common[10], common[11], nil, 64, 1, 17, 1}
-, 
-[206] = {206, common[1], common[12], common[13], nil, 114, 1, 15, 1}
-, 
-[207] = {207, common[1], common[14], common[15], nil, 108, 1, 8, 1}
-, 
-[208] = {208, common[1], common[16], common[17], nil, 142, 1, 17, 1}
-, 
-[209] = {209, common[1], common[18], common[19], nil, 164, 1, 19, 1}
-, 
-[210] = {210, common[1], common[20], common[21], nil, 102, 1, 24, 1}
-, 
-[211] = {211, common[1], common[22], common[23], nil, 107, 1, 30, 1}
-, 
-[212] = {212, common[1], common[24], common[25], nil, 140, 1, 33, 1}
-, 
-[213] = {213, common[1], common[26], common[27], nil, 124, 1, 27, 1}
-, 
-[214] = {214, common[1], common[28], common[29], nil, 128, 1, 35, 1}
-, 
-[215] = {215, common[1], common[30], common[31], nil, 259, 1, 45, 1}
-, 
-[216] = {216, common[1], common[32], common[33], nil, 145, 1, 38, 1}
-, 
-[217] = {217, common[1], common[34], common[35], nil, 150, 1, 31, 1}
-, 
-[218] = {218, common[1], common[2], common[3], nil, 257, 1, 27, 1}
-, 
-[219] = {219, common[1], common[4], common[5], nil, 298, 1, 50, 1}
-, 
-[220] = {220, common[1], common[6], common[7], nil, 195, 1, 43, 1}
-, 
-[221] = {221, common[1], common[8], common[9], nil, 171, 1, 35, 1}
+  [101] = {
+    101,
+    common[1],
+    common[2],
+    common[3],
+    nil,
+    30,
+    4.29,
+    15,
+    0.68
+  },
+  [102] = {
+    102,
+    "str_luckland_card_enemy_2",
+    common[4],
+    common[5],
+    nil,
+    50,
+    7.14,
+    10,
+    0.45
+  },
+  [103] = {
+    103,
+    "str_luckland_card_enemy_3",
+    common[6],
+    common[7],
+    nil,
+    20,
+    2.86,
+    10,
+    0.45
+  },
+  [104] = {
+    104,
+    "str_luckland_card_enemy_4",
+    common[8],
+    common[9],
+    nil,
+    30,
+    4.29,
+    12,
+    0.45
+  },
+  [105] = {
+    105,
+    "str_luckland_card_enemy_5",
+    common[10],
+    common[11],
+    nil,
+    20,
+    2.86,
+    0,
+    0
+  },
+  [106] = {
+    106,
+    "str_luckland_card_enemy_6",
+    common[12],
+    common[13],
+    nil,
+    40,
+    5.71,
+    5,
+    0.23
+  },
+  [107] = {
+    107,
+    "str_luckland_card_enemy_7",
+    common[14],
+    common[15],
+    nil,
+    40,
+    5.71,
+    10,
+    0.45
+  },
+  [108] = {
+    108,
+    "str_luckland_card_enemy_8",
+    common[16],
+    common[17],
+    nil,
+    35,
+    5,
+    15,
+    0.68
+  },
+  [109] = {
+    109,
+    "str_luckland_card_enemy_9",
+    common[18],
+    common[19],
+    nil,
+    50,
+    7.14,
+    10,
+    0.45
+  },
+  [110] = {
+    110,
+    "str_luckland_card_enemy_10",
+    common[20],
+    common[21],
+    nil,
+    55,
+    7.86,
+    18,
+    0.82
+  },
+  [111] = {
+    111,
+    "str_luckland_card_enemy_11",
+    common[22],
+    common[23],
+    nil,
+    50,
+    7.14,
+    15,
+    0.68
+  },
+  [112] = {
+    112,
+    "str_luckland_card_enemy_12",
+    common[24],
+    common[25],
+    nil,
+    50,
+    7.14,
+    15,
+    0.68
+  },
+  [113] = {
+    113,
+    "str_luckland_card_enemy_13",
+    common[26],
+    common[27],
+    nil,
+    50,
+    7.14,
+    15,
+    0.68
+  },
+  [114] = {
+    114,
+    "str_luckland_card_enemy_14",
+    common[28],
+    common[29],
+    nil,
+    60,
+    8.57,
+    20,
+    0.91
+  },
+  [115] = {
+    115,
+    "str_luckland_card_enemy_15",
+    common[30],
+    common[31],
+    nil,
+    65,
+    9.29,
+    20,
+    0.91
+  },
+  [116] = {
+    116,
+    "str_luckland_card_enemy_16",
+    common[32],
+    common[33],
+    nil,
+    55,
+    7.86,
+    15,
+    0.68
+  },
+  [117] = {
+    117,
+    "str_luckland_card_enemy_17",
+    common[34],
+    common[35],
+    nil,
+    75,
+    10.71,
+    15,
+    0.68
+  },
+  [201] = {
+    201,
+    common[1],
+    common[2],
+    common[3],
+    nil,
+    30,
+    1,
+    15,
+    1
+  },
+  [202] = {
+    202,
+    common[1],
+    common[4],
+    common[5],
+    nil,
+    34,
+    1,
+    15,
+    1
+  },
+  [203] = {
+    203,
+    common[1],
+    common[6],
+    common[7],
+    nil,
+    78,
+    1,
+    12,
+    1
+  },
+  [204] = {
+    204,
+    common[1],
+    common[8],
+    common[9],
+    nil,
+    51,
+    1,
+    19,
+    1
+  },
+  [205] = {
+    205,
+    common[1],
+    common[10],
+    common[11],
+    nil,
+    64,
+    1,
+    17,
+    1
+  },
+  [206] = {
+    206,
+    common[1],
+    common[12],
+    common[13],
+    nil,
+    114,
+    1,
+    15,
+    1
+  },
+  [207] = {
+    207,
+    common[1],
+    common[14],
+    common[15],
+    nil,
+    108,
+    1,
+    8,
+    1
+  },
+  [208] = {
+    208,
+    common[1],
+    common[16],
+    common[17],
+    nil,
+    142,
+    1,
+    17,
+    1
+  },
+  [209] = {
+    209,
+    common[1],
+    common[18],
+    common[19],
+    nil,
+    164,
+    1,
+    19,
+    1
+  },
+  [210] = {
+    210,
+    common[1],
+    common[20],
+    common[21],
+    nil,
+    102,
+    1,
+    24,
+    1
+  },
+  [211] = {
+    211,
+    common[1],
+    common[22],
+    common[23],
+    nil,
+    107,
+    1,
+    30,
+    1
+  },
+  [212] = {
+    212,
+    common[1],
+    common[24],
+    common[25],
+    nil,
+    140,
+    1,
+    33,
+    1
+  },
+  [213] = {
+    213,
+    common[1],
+    common[26],
+    common[27],
+    nil,
+    124,
+    1,
+    27,
+    1
+  },
+  [214] = {
+    214,
+    common[1],
+    common[28],
+    common[29],
+    nil,
+    128,
+    1,
+    35,
+    1
+  },
+  [215] = {
+    215,
+    common[1],
+    common[30],
+    common[31],
+    nil,
+    259,
+    1,
+    45,
+    1
+  },
+  [216] = {
+    216,
+    common[1],
+    common[32],
+    common[33],
+    nil,
+    145,
+    1,
+    38,
+    1
+  },
+  [217] = {
+    217,
+    common[1],
+    common[34],
+    common[35],
+    nil,
+    150,
+    1,
+    31,
+    1
+  },
+  [218] = {
+    218,
+    common[1],
+    common[2],
+    common[3],
+    nil,
+    257,
+    1,
+    27,
+    1
+  },
+  [219] = {
+    219,
+    common[1],
+    common[4],
+    common[5],
+    nil,
+    298,
+    1,
+    50,
+    1
+  },
+  [220] = {
+    220,
+    common[1],
+    common[6],
+    common[7],
+    nil,
+    195,
+    1,
+    43,
+    1
+  },
+  [221] = {
+    221,
+    common[1],
+    common[8],
+    common[9],
+    nil,
+    171,
+    1,
+    35,
+    1
+  }
 }
 return config, "ID", key
-

@@ -1,30 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_education/ui_education_one.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIEducationOne", UIController)
 UIEducationOne = UIEducationOne
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIEducationOne.Constructor = function(self)
-  -- function num : 0_0
+function UIEducationOne:Constructor()
   self._enableEducationChanged = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIEducationOne:LoadDataOnEnter(TT, res, uiParams)
   self._data = UIEducationMain:GetData()
-  self._result = (self._data):One()
+  self._result = self._data:One()
   self._atlasProperty = self:GetAsset("UIEducation.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIEducationOne:OnShow(uiParams)
   self:UIWidget()
   self:InitMainLobbyTop()
   self:CreateElements()
@@ -35,52 +22,39 @@ UIEducationOne.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.EducationChanged, self.OnEducationChanged)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.OnHide = function(self)
-  -- function num : 0_3
+function UIEducationOne:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.BtnCloseOnClick = function(self, go)
-  -- function num : 0_4
+function UIEducationOne:BtnCloseOnClick(go)
   self:OutAnimation(function()
-    -- function num : 0_4_0 , upvalues : self
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.BtnLevelUpOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
+function UIEducationOne:BtnLevelUpOnClick(go)
   local idlist = {}
   local smeltlist = {}
   local count = ElementType.ElementType_Yellow
   for k = 1, count do
-    local result = (self._result):OneRet(k)
-    local element = (self._data):Get(k)
+    local result = self._result:OneRet(k)
+    local element = self._data:Get(k)
     local cur = element:GetCurrentLuaIndex()
     local nxt = result:GetIndex()
     if cur ~= nxt then
       local dataLevel = element:GetDataLevel(result:GetIndex())
-      ;
-      (table.insert)(idlist, (dataLevel:GetCfg()).ID)
+      table.insert(idlist, dataLevel:GetCfg().ID)
     end
   end
   if #idlist == 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_education_one_nolevel_toast"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_education_one_nolevel_toast"))
+    return
   end
-  local lstRet = (self._result):GetResult()
-  for k,v in pairs(lstRet) do
-    (table.insert)(smeltlist, v)
+  local lstRet = self._result:GetResult()
+  for k, v in pairs(lstRet) do
+    table.insert(smeltlist, v)
   end
   local petModule = self:GetModule(PetModule)
   self:StartSafeTask("UIEducationOne::BtnLevelUpOnClick", function(lockName, TT)
-    -- function num : 0_5_0 , upvalues : self, petModule, smeltlist, idlist, _ENV
     self:Lock(lockName)
     self._enableEducationChanged = false
     local res, retMsg = petModule:HandlePropertyCultivateLv(TT, smeltlist, idlist)
@@ -88,31 +62,23 @@ UIEducationOne.BtnLevelUpOnClick = function(self, go)
     if res:GetSucc() and retMsg ~= nil and retMsg.ret == PET_RESULT_CODE.PET_SUCCEED then
       self:OnEducationChanged()
     else
-      ;
-      (Log.error)("UIEducationOne:BtnLevelUpOnClick(go) error ->: ", retCode, "One")
+      Log.error("UIEducationOne:BtnLevelUpOnClick(go) error ->: ", retCode, "One")
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.OnEducationChanged = function(self)
-  -- function num : 0_6
+function UIEducationOne:OnEducationChanged()
   if not self._enableEducationChanged then
-    return 
+    return
   end
-  self._result = (self._data):One()
+  self._result = self._data:One()
   self:FlushElements()
   self:CreateCost()
   self:FlushCost()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.UIWidget = function(self)
-  -- function num : 0_7
+function UIEducationOne:UIWidget()
   self._rtLobbyTop = self:GetUIComponent("UISelectObjectPath", "rtLobbyTop")
   self._pathTopTips = self:GetUIComponent("UISelectObjectPath", "topTips")
   self._smeltLayout = self:GetUIComponent("RectTransform", "smeltLayout")
@@ -124,23 +90,15 @@ UIEducationOne.UIWidget = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.InitMainLobbyTop = function(self)
-  -- function num : 0_8
-  self._topTipsInfo = (self._pathTopTips):SpawnObject("UITopTipsContext")
-  self._widgetLobbyTop = (self._rtLobbyTop):SpawnObject("UIMainLobbyTopIcon")
-  ;
-  (self._widgetLobbyTop):SetData(self._topTipsInfo)
-  ;
-  (self._widgetLobbyTop):SetPanelShow(true, false, false)
+function UIEducationOne:InitMainLobbyTop()
+  self._topTipsInfo = self._pathTopTips:SpawnObject("UITopTipsContext")
+  self._widgetLobbyTop = self._rtLobbyTop:SpawnObject("UIMainLobbyTopIcon")
+  self._widgetLobbyTop:SetData(self._topTipsInfo)
+  self._widgetLobbyTop:SetPanelShow(true, false, false)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.NormalizeElement = function(self, uiWidget, preferredHeight, positionY)
-  -- function num : 0_9 , upvalues : _ENV
-  local rt = (uiWidget:GetGameObject()).transform
+function UIEducationOne:NormalizeElement(uiWidget, preferredHeight, positionY)
+  local rt = uiWidget:GetGameObject().transform
   rt.pivot = Vector2(0.5, 1)
   rt.localScale = Vector3.one
   rt.anchorMin = Vector2(0.5, 1)
@@ -149,170 +107,119 @@ UIEducationOne.NormalizeElement = function(self, uiWidget, preferredHeight, posi
   rt.anchoredPosition = Vector2(0, -positionY)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.CreateElements = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIEducationOne:CreateElements()
   self._lstNode = {}
   local count = ElementType.ElementType_Yellow
-  local lstWidgets = (self._elementContent):SpawnObjects("UIEducationOneElement", count)
-  for k,v in pairs(lstWidgets) do
-    local uiNode = {uiWidget = v, element = (self._data):Get(k)}
-    ;
-    (v:GetGameObject()).name = k - 1
+  local lstWidgets = self._elementContent:SpawnObjects("UIEducationOneElement", count)
+  for k, v in pairs(lstWidgets) do
+    local uiNode = {
+      uiWidget = v,
+      element = self._data:Get(k)
+    }
+    v:GetGameObject().name = k - 1
     v:SetData(uiNode.element, self._atlasProperty)
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R9 in 'UnsetPending'
-
-    ;
-    (self._lstNode)[k] = uiNode
+    self._lstNode[k] = uiNode
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.FlushElements = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIEducationOne:FlushElements()
   local preferredHeight = 0
-  for k,v in pairs(self._lstNode) do
-    local result = (self._result):OneRet(k)
-    ;
-    (v.uiWidget):Flush(result)
-    self:NormalizeElement(v.uiWidget, (v.uiWidget):PreferredHeight(), preferredHeight)
-    preferredHeight = preferredHeight + (v.uiWidget):PreferredHeight()
+  for k, v in pairs(self._lstNode) do
+    local result = self._result:OneRet(k)
+    v.uiWidget:Flush(result)
+    self:NormalizeElement(v.uiWidget, v.uiWidget:PreferredHeight(), preferredHeight)
+    preferredHeight = preferredHeight + v.uiWidget:PreferredHeight()
   end
-  local trContent = ((self._elementContent):Engine()).transform
-  trContent.sizeDelta = Vector2((trContent.sizeDelta).x, preferredHeight)
+  local trContent = self._elementContent:Engine().transform
+  trContent.sizeDelta = Vector2(trContent.sizeDelta.x, preferredHeight)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.CreateCost = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIEducationOne:CreateCost()
   self._costItem = {}
   self._costGold = RoleAsset:New()
   self._costAtom = RoleAsset:New()
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._costGold).assetid = RoleAssetID.RoleAssetGold
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._costGold).count = 0
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._costAtom).assetid = RoleAssetID.RoleAssetAtom
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._costAtom).count = 0
-  local srcCost = (self._result):GetCost()
-  for k,v in pairs(srcCost) do
-    -- DECOMPILER ERROR at PC36: Confused about usage of register: R7 in 'UnsetPending'
-
-    if (self._costGold).assetid == v.assetid then
-      (self._costGold).count = v.count
+  self._costGold.assetid = RoleAssetID.RoleAssetGold
+  self._costGold.count = 0
+  self._costAtom.assetid = RoleAssetID.RoleAssetAtom
+  self._costAtom.count = 0
+  local srcCost = self._result:GetCost()
+  for k, v in pairs(srcCost) do
+    if self._costGold.assetid == v.assetid then
+      self._costGold.count = v.count
+    elseif self._costAtom.assetid == v.assetid then
+      self._costAtom.count = v.count
     else
-      -- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
-
-      if (self._costAtom).assetid == v.assetid then
-        (self._costAtom).count = v.count
-      else
-        ;
-        (table.insert)(self._costItem, v)
-      end
+      table.insert(self._costItem, v)
     end
   end
-  ;
-  (table.sort)(self._costItem, function(a, b)
-    -- function num : 0_12_0 , upvalues : _ENV
-    local cfgItemA = (Cfg.cfg_item)[a.assetid]
-    local cfgItemB = (Cfg.cfg_item)[b.assetid]
-    if cfgItemB.Color >= cfgItemA.Color then
-      do return cfgItemA.Color == cfgItemB.Color end
-      do return a.assetid < b.assetid end
-      do return false end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
+  table.sort(self._costItem, function(a, b)
+    local cfgItemA = Cfg.cfg_item[a.assetid]
+    local cfgItemB = Cfg.cfg_item[b.assetid]
+    if cfgItemA.Color ~= cfgItemB.Color then
+      return cfgItemA.Color > cfgItemB.Color
+    else
+      return a.assetid < b.assetid
     end
-  end
-)
+    return false
+  end)
   local count = #self._costItem
-  local widgetAssets = (self._itemContent):SpawnObjects("UIAsset", count)
-  do
-    for k,v in pairs(widgetAssets) do
-      v:SetData(1)
-      v:SetScale(0.7)
-      local tipsKey = k
-      local eventComponent = v:AddComponent(UIAssetComponentEvent)
-      eventComponent:SetClickCallBack(function(go)
-    -- function num : 0_12_1 , upvalues : self, tipsKey
-    self:ShowCostItemTips(go, tipsKey)
-  end
-)
-    end
+  local widgetAssets = self._itemContent:SpawnObjects("UIAsset", count)
+  for k, v in pairs(widgetAssets) do
+    v:SetData(1)
+    v:SetScale(0.7)
+    local tipsKey = k
+    local eventComponent = v:AddComponent(UIAssetComponentEvent)
+    eventComponent:SetClickCallBack(function(go)
+      self:ShowCostItemTips(go, tipsKey)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.FlushCost = function(self)
-  -- function num : 0_13 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local widgetAssets = (self._itemContent):GetAllSpawnList()
-  for k,v in pairs(self._costItem) do
+function UIEducationOne:FlushCost()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local widgetAssets = self._itemContent:GetAllSpawnList()
+  for k, v in pairs(self._costItem) do
     local needAsset = v
     local uiAsset = widgetAssets[k]
     local haveCount = itemModule:GetItemCount(needAsset.assetid)
-    local cfgItem = (Cfg.cfg_item)[needAsset.assetid]
+    local cfgItem = Cfg.cfg_item[needAsset.assetid]
     local icon = cfgItem.Icon
     local quality = cfgItem.Color
-    local text = (string.format)("%d/%d", haveCount, needAsset.count)
-    uiAsset:SetItemData({showBG = true, icon = icon, text = text, quality = quality})
+    local text = string.format("%d/%d", haveCount, needAsset.count)
+    uiAsset:SetItemData({
+      showBG = true,
+      icon = icon,
+      text = text,
+      quality = quality
+    })
   end
-  ;
-  ((self._smeltLayout).gameObject):SetActive((self._costAtom).count > 0)
-  ;
-  (self._smeltValue):SetText((self._costAtom).count)
-  ;
-  (self._coinValue):SetText((self._costGold).count)
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  self._smeltLayout.gameObject:SetActive(self._costAtom.count > 0)
+  self._smeltValue:SetText(self._costAtom.count)
+  self._coinValue:SetText(self._costGold.count)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.ShowCostItemTips = function(self, go, tipsKey)
-  -- function num : 0_14
-  local deltaPosition = (go.transform).position - ((self._safeArea).transform).position
-  local needAsset = (self._costItem)[tipsKey]
+function UIEducationOne:ShowCostItemTips(go, tipsKey)
+  local deltaPosition = go.transform.position - self._safeArea.transform.position
+  local needAsset = self._costItem[tipsKey]
   if needAsset ~= nil then
-    self:ShowDialog("UICommonItemInfo", {assetid = needAsset.assetid}, deltaPosition)
+    self:ShowDialog("UICommonItemInfo", {
+      assetid = needAsset.assetid
+    }, deltaPosition)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.InAnimation = function(self)
-  -- function num : 0_15
-  (self._animation):Play("uieff_UIEducationOne_in")
+function UIEducationOne:InAnimation()
+  self._animation:Play("uieff_UIEducationOne_in")
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIEducationOne.OutAnimation = function(self, cbFinish)
-  -- function num : 0_16 , upvalues : _ENV
+function UIEducationOne:OutAnimation(cbFinish)
   self:StartSafeTask("UIEducationOne::OutAnimation", function(lockName, TT)
-    -- function num : 0_16_0 , upvalues : self, _ENV, cbFinish
     self:Lock(lockName)
-    ;
-    (self._animation):Play("uieff_UIEducationOne_out")
+    self._animation:Play("uieff_UIEducationOne_out")
     YIELD(TT, 233)
     if cbFinish then
       cbFinish()
     end
     self:UnLock(lockName)
-  end
-)
+  end)
 end
-
-

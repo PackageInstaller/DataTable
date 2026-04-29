@@ -1,48 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_send_gift/ui_aircraft_send_gift_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftSendGiftItem", UICustomWidget)
 UIAircraftSendGiftItem = UIAircraftSendGiftItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftSendGiftItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._maxSelectedCount = ((Cfg.cfg_global).ui_pet_up_level_mat_cast_count_max).IntValue or 99
-  self._addCountPerSecond = ((Cfg.cfg_global).pet_up_level_add_count_per_second).IntValue
+function UIAircraftSendGiftItem:OnShow(uiParams)
+  self._maxSelectedCount = Cfg.cfg_global.ui_pet_up_level_mat_cast_count_max.IntValue or 99
+  self._addCountPerSecond = Cfg.cfg_global.pet_up_level_add_count_per_second.IntValue
   self._pressTime = 500
   local sop = self:GetUIComponent("UISelectObjectPath", "uiitem")
   self.uiItem = sop:SpawnObject("UIItem")
-  ;
-  (self.uiItem):SetForm(UIItemForm.PetFavorability)
-  ;
-  (self.uiItem):SetClickCallBack(function()
-    -- function num : 0_0_0 , upvalues : self
+  self.uiItem:SetForm(UIItemForm.PetFavorability)
+  self.uiItem:SetClickCallBack(function()
     self:OnClicked()
-  end
-)
-  ;
-  (self.uiItem):SetLongPressCallBack(function()
-    -- function num : 0_0_1 , upvalues : self
+  end)
+  self.uiItem:SetLongPressCallBack(function()
     self:OnClicked()
-    return self._giftData and ((self._giftData).giftData):GetCount() or 0
-  end
-, nil, self._addCountPerSecond, true)
-  ;
-  (self.uiItem):SetData({reduceCallBack = function()
-    -- function num : 0_0_2 , upvalues : self
-    self:MinusGiveAwayCountButtonOnClick()
-  end
-})
-  ;
-  (self.uiItem):SetReduceLongPressCallBack(self._addCountPerSecond)
+    return self._giftData and self._giftData.giftData:GetCount() or 0
+  end, nil, self._addCountPerSecond, true)
+  self.uiItem:SetData({
+    reduceCallBack = function()
+      self:MinusGiveAwayCountButtonOnClick()
+    end
+  })
+  self.uiItem:SetReduceLongPressCallBack(self._addCountPerSecond)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftItem.Refresh = function(self, petData, giftData, itemClickCallback, longPressCallback, longPressUpCallback, isFavorableGift)
-  -- function num : 0_1
+function UIAircraftSendGiftItem:Refresh(petData, giftData, itemClickCallback, longPressCallback, longPressUpCallback, isFavorableGift)
   self._itemClickCallback = itemClickCallback
   self._longPressCallback = longPressCallback
   self._longPressUpCallback = longPressUpCallback
@@ -50,137 +31,119 @@ UIAircraftSendGiftItem.Refresh = function(self, petData, giftData, itemClickCall
   self._petData = petData
   self._giftData = giftData
   if self._giftData == nil then
-    (self.uiItem):SetData({showLove = false, reduceNum = 0, quality = 0, icon = "", text1 = ""})
-    ;
-    (self.uiItem):SetBtnImage(false)
-    return 
+    self.uiItem:SetData({
+      showLove = false,
+      reduceNum = 0,
+      quality = 0,
+      icon = "",
+      text1 = ""
+    })
+    self.uiItem:SetBtnImage(false)
+    return
   end
   local icon = ""
   local quality = 0
   local showLove = false
   local text1 = 0
   local reduceNum = 0
-  text1 = ((self._giftData).giftData):GetCount()
-  self._templateData = ((self._giftData).giftData):GetTemplate()
-  local itemId = (self._templateData).ID
-  quality = (self._templateData).Color
+  text1 = self._giftData.giftData:GetCount()
+  self._templateData = self._giftData.giftData:GetTemplate()
+  local itemId = self._templateData.ID
+  quality = self._templateData.Color
   if self._isFavorableGift then
-    showLove = (self._isFavorableGift)(self._giftData)
+    showLove = self._isFavorableGift(self._giftData)
   end
-  icon = (self._templateData).Icon
-  reduceNum = self._giftData and (self._giftData).selectedCount or 0
+  icon = self._templateData.Icon
+  reduceNum = self._giftData and self._giftData.selectedCount or 0
   local changePos = false
   if self._reduceNum ~= reduceNum then
     self._reduceNum = reduceNum
     changePos = true
   end
   local isUp = true
-  if reduceNum > 0 then
+  if 0 < reduceNum then
     isUp = false
   end
-  ;
-  (self.uiItem):SetData({icon = icon, quality = quality, showLove = showLove, text1 = text1, reduceNum = reduceNum, itemId = itemId, changePos = changePos, isUp = isUp})
-  ;
-  (self.uiItem):SetBtnImage(true)
+  self.uiItem:SetData({
+    icon = icon,
+    quality = quality,
+    showLove = showLove,
+    text1 = text1,
+    reduceNum = reduceNum,
+    itemId = itemId,
+    changePos = changePos,
+    isUp = isUp
+  })
+  self.uiItem:SetBtnImage(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftItem._RefreshSelectedStatus = function(self)
-  -- function num : 0_2
-  local reduceNum = self._giftData and (self._giftData).selectedCount or 0
+function UIAircraftSendGiftItem:_RefreshSelectedStatus()
+  local reduceNum = self._giftData and self._giftData.selectedCount or 0
   local changePos = false
   if self._reduceNum ~= reduceNum then
     self._reduceNum = reduceNum
     changePos = true
   end
   local isUp = true
-  if reduceNum > 0 then
+  if 0 < reduceNum then
     isUp = false
   end
-  ;
-  (self.uiItem):SetData({reduceNum = reduceNum, changePos = changePos, isUp = isUp})
+  self.uiItem:SetData({
+    reduceNum = reduceNum,
+    changePos = changePos,
+    isUp = isUp
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftItem.OnClicked = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIAircraftSendGiftItem:OnClicked(go)
   if self._giftData == nil then
-    return 
+    return
   end
-  local currentSelectedCount = (self._giftData).selectedCount
-  if self._maxSelectedCount <= currentSelectedCount or ((self._giftData).giftData):GetCount() <= currentSelectedCount then
-    return 
+  local currentSelectedCount = self._giftData.selectedCount
+  if currentSelectedCount >= self._maxSelectedCount or currentSelectedCount >= self._giftData.giftData:GetCount() then
+    return
   end
-  local success = (self._itemClickCallback)(self._giftData, true)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R4 in 'UnsetPending'
-
+  local success = self._itemClickCallback(self._giftData, true)
   if success then
-    (self._giftData).isSelected = true
-    -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._giftData).selectedCount = (self._giftData).selectedCount + 1
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundAddUp)
+    self._giftData.isSelected = true
+    self._giftData.selectedCount = self._giftData.selectedCount + 1
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundAddUp)
     self:_RefreshSelectedStatus()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftItem.LongPress = function(self)
-  -- function num : 0_4
+function UIAircraftSendGiftItem:LongPress()
   if self._giftData == nil then
-    return 
+    return
   end
   if self._longPressCallback then
-    (self._longPressCallback)(((self._giftData).giftData):GetTemplateID(), ((self:GetGameObject()).transform).position)
+    self._longPressCallback(self._giftData.giftData:GetTemplateID(), self:GetGameObject().transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftItem.LongPressUp = function(self)
-  -- function num : 0_5
+function UIAircraftSendGiftItem:LongPressUp()
   if self._giftData == nil then
-    return 
+    return
   end
   if self._longPressUpCallback then
-    (self._longPressUpCallback)()
+    self._longPressUpCallback()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftSendGiftItem.MinusGiveAwayCountButtonOnClick = function(self, go)
-  -- function num : 0_6 , upvalues : _ENV
+function UIAircraftSendGiftItem:MinusGiveAwayCountButtonOnClick(go)
   if self._giftData == nil then
-    return 
+    return
   end
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundDecDown)
-  local currentSelectedCount = (self._giftData).selectedCount
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundDecDown)
+  local currentSelectedCount = self._giftData.selectedCount
   if currentSelectedCount <= 0 then
-    return 
+    return
   end
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._giftData).selectedCount = currentSelectedCount - 1
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-  if (self._giftData).selectedCount <= 0 then
-    (self._giftData).isSelected = false
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._giftData).selectedCount = 0
+  self._giftData.selectedCount = currentSelectedCount - 1
+  if self._giftData.selectedCount <= 0 then
+    self._giftData.isSelected = false
+    self._giftData.selectedCount = 0
   end
   self:_RefreshSelectedStatus()
-  ;
-  (self._itemClickCallback)(self._giftData, false)
+  self._itemClickCallback(self._giftData, false)
 end
-
-

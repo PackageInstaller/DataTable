@@ -1,451 +1,307 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/level_par/monster_config_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local MonsterADHFormulaType = {ByLeaderLevel = 1, Maze = 2, N4AttackAndDefense = 3, N4HP = 4, N25MiniMaze = 5}
+local MonsterADHFormulaType = {
+  ByLeaderLevel = 1,
+  Maze = 2,
+  N4AttackAndDefense = 3,
+  N4HP = 4,
+  N25MiniMaze = 5
+}
 _enum("MonsterADHFormulaType", MonsterADHFormulaType)
 _class("MonsterConfigData", Object)
 MonsterConfigData = MonsterConfigData
--- DECOMPILER ERROR at PC18: Confused about usage of register: R1 in 'UnsetPending'
 
-MonsterConfigData.Constructor = function(self, world)
-  -- function num : 0_0
+function MonsterConfigData:Constructor(world)
   self._world = world
-  self._affixSvc = (self._world):GetService("Affix")
+  self._affixSvc = self._world:GetService("Affix")
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterObject = function(self, monsterID)
-  -- function num : 0_1 , upvalues : _ENV
-  if not (Cfg.cfg_monster)[monsterID] then
-    (Log.fatal)("MonsterConfigData:GetMonsterObject monsterID:", monsterID)
+function MonsterConfigData:GetMonsterObject(monsterID)
+  if not Cfg.cfg_monster[monsterID] then
+    Log.fatal("MonsterConfigData:GetMonsterObject monsterID:", monsterID)
   end
-  return (Cfg.cfg_monster)[monsterID]
+  return Cfg.cfg_monster[monsterID]
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterClass = function(self, monsterID)
-  -- function num : 0_2
+function MonsterConfigData:GetMonsterClass(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   return self:GetMonsterClassByMonsterConfig(monsterConfig)
 end
 
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterClassList = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local listConfig = (Cfg.cfg_monster_class)()
+function MonsterConfigData:GetMonsterClassList()
+  local listConfig = Cfg.cfg_monster_class()
   local listReturn = {}
-  for key,value in pairs(listConfig) do
-    (table.insert)(listReturn, key)
+  for key, value in pairs(listConfig) do
+    table.insert(listReturn, key)
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterListByClassID = function(self, nClassID)
-  -- function num : 0_4 , upvalues : _ENV
-  local listConfig = (Cfg.cfg_monster)()
+function MonsterConfigData:GetMonsterListByClassID(nClassID)
+  local listConfig = Cfg.cfg_monster()
   local listReturn = {}
-  for key,value in pairs(listConfig) do
+  for key, value in pairs(listConfig) do
     if nClassID == value.ClassID then
-      (table.insert)(listReturn, value)
+      table.insert(listReturn, value)
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC33: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterListByGroupID = function(self, nGroupID)
-  -- function num : 0_5 , upvalues : _ENV
-  local listConfig = (Cfg.cfg_monster)()
+function MonsterConfigData:GetMonsterListByGroupID(nGroupID)
+  local listConfig = Cfg.cfg_monster()
   local listReturn = {}
-  for key,value in pairs(listConfig) do
+  for key, value in pairs(listConfig) do
     if nGroupID == value.GroupID then
-      (table.insert)(listReturn, value)
+      table.insert(listReturn, value)
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterClassByMonsterConfig = function(self, monsterConfig)
-  -- function num : 0_6 , upvalues : _ENV
-  if monsterConfig == nil then
+function MonsterConfigData:GetMonsterClassByMonsterConfig(monsterConfig)
+  if nil == monsterConfig then
     return nil
   end
   local monsterClassID = monsterConfig.ClassID
-  if not (Cfg.cfg_monster_class)[monsterClassID] then
-    (Log.exception)("MonsterConfigData:GetMonsterClassByMonsterConfig is nil monsterClassID:", monsterConfig.ClassID, " MonsterID:", monsterConfig.ID)
+  if not Cfg.cfg_monster_class[monsterClassID] then
+    Log.exception("MonsterConfigData:GetMonsterClassByMonsterConfig is nil monsterClassID:", monsterConfig.ClassID, " MonsterID:", monsterConfig.ID)
   end
-  return (Cfg.cfg_monster_class)[monsterClassID]
+  return Cfg.cfg_monster_class[monsterClassID]
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetCacheSkillIds = function(self, monsterID)
-  -- function num : 0_7 , upvalues : _ENV
+function MonsterConfigData:GetCacheSkillIds(monsterID)
   local ret = {}
   local nAppearSkillID = self:GetAppearSkillID(monsterID)
-  if nAppearSkillID and nAppearSkillID > 0 then
-    (table.insert)(ret, nAppearSkillID)
+  if nAppearSkillID and 0 < nAppearSkillID then
+    table.insert(ret, nAppearSkillID)
   end
   local idss = self:GetMonsterSkillIDs(monsterID)
-  for _,t in ipairs(idss) do
-    (table.appendArray)(ret, t)
+  for _, t in ipairs(idss) do
+    table.appendArray(ret, t)
   end
   local nDieSkillID = self:GetMonsterDeathSkillID(monsterID)
-  if monsterID and monsterID > 0 then
-    (table.insert)(ret, nDieSkillID)
+  if monsterID and 0 < monsterID then
+    table.insert(ret, nDieSkillID)
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData._GetMonsterProp = function(self, configData)
-  -- function num : 0_8 , upvalues : _ENV
+function MonsterConfigData:_GetMonsterProp(configData)
   local nData = 0
   if configData.formula then
-    if configData.formula == 1 then
-      local x = ((self._world).BW_WorldInfo):GetPlayerLevel()
+    if 1 == configData.formula then
+      local x = self._world.BW_WorldInfo:GetPlayerLevel()
       nData = x * x * configData.a + x * configData.b + configData.c
+    elseif 2 == configData.formula then
+      local mz = self._world:GetService("Maze")
+      local x = mz:GetAvgPetLevel()
+      local y, z = mz:GetMazeLayerFactor()
+      nData = (x * configData.a + y * configData.b + configData.c) * z
     else
-      do
-        if configData.formula == 2 then
-          local mz = (self._world):GetService("Maze")
-          local x = mz:GetAvgPetLevel()
-          local y, z = mz:GetMazeLayerFactor()
-          nData = (x * configData.a + y * configData.b + configData.c) * z
-        else
-          do
-            local configService = (self._world):GetService("Config")
-            do
-              local y, z = configService:GetAffixHardParam(configData.formula)
-              nData = (configData.b * y + configData.c) * z
-              nData = configData[1]
-              return (math.ceil)(nData)
-            end
-          end
-        end
-      end
+      local configService = self._world:GetService("Config")
+      local y, z = configService:GetAffixHardParam(configData.formula)
+      nData = (configData.b * y + configData.c) * z
     end
+  else
+    nData = configData[1]
   end
+  return math.ceil(nData)
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterAttack = function(self, monsterID)
-  -- function num : 0_9
+function MonsterConfigData:GetMonsterAttack(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   return self:_GetMonsterProp(monsterConfig.Attack)
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterDefense = function(self, monsterID)
-  -- function num : 0_10
+function MonsterConfigData:GetMonsterDefense(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   return self:_GetMonsterProp(monsterConfig.Defense)
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterEvade = function(self, monsterID)
-  -- function num : 0_11
+function MonsterConfigData:GetMonsterEvade(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   return monsterConfig.Evade
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterHealth = function(self, monsterID)
-  -- function num : 0_12
+function MonsterConfigData:GetMonsterHealth(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   return self:_GetMonsterProp(monsterConfig.Health)
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterMultiHealth = function(self, monsterID)
-  -- function num : 0_13
+function MonsterConfigData:GetMonsterMultiHealth(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   return monsterConfig.MultiHealth
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterElementType = function(self, monsterID)
-  -- function num : 0_14
+function MonsterConfigData:GetMonsterElementType(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   return monsterConfig.ElementType
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetAbsorbNormal = function(self, nMonsterID)
-  -- function num : 0_15
+function MonsterConfigData:GetAbsorbNormal(nMonsterID)
   local monsterConfig = self:GetMonsterObject(nMonsterID)
   return monsterConfig.AbsorbNormal or 1
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetAbsorbChain = function(self, nMonsterID)
-  -- function num : 0_16
+function MonsterConfigData:GetAbsorbChain(nMonsterID)
   local monsterConfig = self:GetMonsterObject(nMonsterID)
   return monsterConfig.AbsorbChain or 1
 end
 
--- DECOMPILER ERROR at PC69: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetAbsorbActive = function(self, nMonsterID)
-  -- function num : 0_17
+function MonsterConfigData:GetAbsorbActive(nMonsterID)
   local monsterConfig = self:GetMonsterObject(nMonsterID)
   return monsterConfig.AbsorbActive or 1
 end
 
--- DECOMPILER ERROR at PC72: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetEliteIDArray = function(self, nMonsterID)
-  -- function num : 0_18 , upvalues : _ENV
+function MonsterConfigData:GetEliteIDArray(nMonsterID)
   local monsterConfig = self:GetMonsterObject(nMonsterID)
   local tmpEliteID = {}
   if monsterConfig.EliteID then
-    for i,buffID in ipairs(monsterConfig.EliteID) do
-      (table.insert)(tmpEliteID, buffID)
+    for i, buffID in ipairs(monsterConfig.EliteID) do
+      table.insert(tmpEliteID, buffID)
     end
   end
-  do
-    return tmpEliteID
-  end
+  return tmpEliteID
 end
 
--- DECOMPILER ERROR at PC75: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetEliteIDGroupArray = function(self, nMonsterID)
-  -- function num : 0_19 , upvalues : _ENV
+function MonsterConfigData:GetEliteIDGroupArray(nMonsterID)
   local monsterConfig = self:GetMonsterObject(nMonsterID)
-  local eliteIDGroup = (table.cloneconf)(monsterConfig.EliteIDGroup)
+  local eliteIDGroup = table.cloneconf(monsterConfig.EliteIDGroup)
   return eliteIDGroup
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetEliteIDRandomParam = function(self, nMonsterID)
-  -- function num : 0_20 , upvalues : _ENV
+function MonsterConfigData:GetEliteIDRandomParam(nMonsterID)
   local monsterConfig = self:GetMonsterObject(nMonsterID)
-  local randomParam = (table.cloneconf)(monsterConfig.EliteIDRandom)
+  local randomParam = table.cloneconf(monsterConfig.EliteIDRandom)
   return randomParam
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterClassID = function(self, monsterID)
-  -- function num : 0_21
+function MonsterConfigData:GetMonsterClassID(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   return monsterConfig.ClassID
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterSpeed = function(self, monsterID)
-  -- function num : 0_22
+function MonsterConfigData:GetMonsterSpeed(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.MoveSpeed
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterStep = function(self, monsterID)
-  -- function num : 0_23
+function MonsterConfigData:GetMonsterStep(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.Step
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterAIID = function(self, monsterID)
-  -- function num : 0_24
+function MonsterConfigData:GetMonsterAIID(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.AIID
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterPreMoveAIID = function(self, monsterID)
-  -- function num : 0_25
+function MonsterConfigData:GetMonsterPreMoveAIID(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.PreMoveAIID
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterAntiAttackAIID = function(self, monsterID)
-  -- function num : 0_26
+function MonsterConfigData:GetMonsterAntiAttackAIID(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.AntiAttackAIID
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterAntiAttackParam = function(self, monsterID)
-  -- function num : 0_27
+function MonsterConfigData:GetMonsterAntiAttackParam(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.AntiAttackParam
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterPreviewAIOrder = function(self, monsterID)
-  -- function num : 0_28
+function MonsterConfigData:GetMonsterPreviewAIOrder(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.PreviewAIOrder
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterPermanentEffectID = function(self, monsterID)
-  -- function num : 0_29
+function MonsterConfigData:GetMonsterPermanentEffectID(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   local effectArray = monsterConfig.PermanentEffect
   return effectArray
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterIdleEffectID = function(self, monsterID)
-  -- function num : 0_30
+function MonsterConfigData:GetMonsterIdleEffectID(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   local effectArray = monsterConfig.IdleEffect
   return effectArray
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterSkillIDs = function(self, monsterID)
-  -- function num : 0_31
+function MonsterConfigData:GetMonsterSkillIDs(monsterID)
   local monsterObject = self:GetMonsterClass(monsterID)
-  local affixService = (self._world):GetService("Affix")
+  local affixService = self._world:GetService("Affix")
   return affixService:ChangeMonsterSkillID(monsterID, monsterObject.SkillID)
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterDropIDs = function(self, monsterID)
-  -- function num : 0_32
+function MonsterConfigData:GetMonsterDropIDs(monsterID)
   local monsterObject = self:GetMonsterObject(monsterID)
   return monsterObject.DropArray
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.CanMove = function(self, monsterID)
-  -- function num : 0_33
+function MonsterConfigData:CanMove(monsterID)
   local monsterObject = self:GetMonsterClass(monsterID)
   return monsterObject.CanMove
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.CanTurn = function(self, monsterID)
-  -- function num : 0_34
+function MonsterConfigData:CanTurn(monsterID)
   local monsterObject = self:GetMonsterClass(monsterID)
   return monsterObject.CanTurn
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetStoryTips = function(self, monsterID)
-  -- function num : 0_35
+function MonsterConfigData:GetStoryTips(monsterID)
   local monsterObject = self:GetMonsterClass(monsterID)
   return monsterObject.StoryTips
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetDeathShowType = function(self, monsterID)
-  -- function num : 0_36
+function MonsterConfigData:GetDeathShowType(monsterID)
   local monsterObject = self:GetMonsterClass(monsterID)
   return monsterObject.DeathShowType
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetDeathShowEffectID = function(self, monsterID)
-  -- function num : 0_37
-  local deathShowParam = (self:GetMonsterClass(monsterID)).DeathShowParam
+function MonsterConfigData:GetDeathShowEffectID(monsterID)
+  local deathShowParam = self:GetMonsterClass(monsterID).DeathShowParam
   if deathShowParam ~= nil then
     return deathShowParam.deathEffectID
   end
 end
 
--- DECOMPILER ERROR at PC132: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetDeathAudioID = function(self, monsterID)
-  -- function num : 0_38
-  local deathShowParam = (self:GetMonsterClass(monsterID)).DeathAudioParam
+function MonsterConfigData:GetDeathAudioID(monsterID)
+  local deathShowParam = self:GetMonsterClass(monsterID).DeathAudioParam
   if deathShowParam ~= nil then
     return deathShowParam.deathAudioID
   end
 end
 
--- DECOMPILER ERROR at PC135: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.DeathAudioSyncAnimation = function(self, monsterID)
-  -- function num : 0_39
-  local deathShowParam = (self:GetMonsterClass(monsterID)).DeathAudioParam
+function MonsterConfigData:DeathAudioSyncAnimation(monsterID)
+  local deathShowParam = self:GetMonsterClass(monsterID).DeathAudioParam
   if deathShowParam ~= nil then
     return deathShowParam.syncAnimation
   end
 end
 
--- DECOMPILER ERROR at PC138: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetSkillIDs = function(self, monsterID)
-  -- function num : 0_40
+function MonsterConfigData:GetSkillIDs(monsterID)
   local monsterObject = self:GetMonsterClass(monsterID)
-  if not monsterObject.SkillIDs then
-    return {}
-  end
+  return monsterObject.SkillIDs or {}
 end
 
--- DECOMPILER ERROR at PC141: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetAppearSkillID = function(self, monsterID)
-  -- function num : 0_41 , upvalues : _ENV
+function MonsterConfigData:GetAppearSkillID(monsterID)
   local skillIds = self:GetSkillIDs(monsterID)
-  return (self._affixSvc):ReplaceMonsterSpSkill(monsterID, skillIds.Appear, ReplaceMonsterSpSkillType.Appear)
+  return self._affixSvc:ReplaceMonsterSpSkill(monsterID, skillIds.Appear, ReplaceMonsterSpSkillType.Appear)
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetDropSkillID = function(self, monsterID)
-  -- function num : 0_42 , upvalues : _ENV
+function MonsterConfigData:GetDropSkillID(monsterID)
   local skillIds = self:GetSkillIDs(monsterID)
-  return (self._affixSvc):ReplaceMonsterSpSkill(monsterID, skillIds.Drop, ReplaceMonsterSpSkillType.Drop)
+  return self._affixSvc:ReplaceMonsterSpSkill(monsterID, skillIds.Drop, ReplaceMonsterSpSkillType.Drop)
 end
 
--- DECOMPILER ERROR at PC147: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetBackSkillID = function(self, monsterID)
-  -- function num : 0_43
+function MonsterConfigData:GetBackSkillID(monsterID)
   local skillIds = self:GetSkillIDs(monsterID)
   if skillIds then
     return skillIds.Back
   end
 end
 
--- DECOMPILER ERROR at PC150: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterAITargetType = function(self, monsterID)
-  -- function num : 0_44
+function MonsterConfigData:GetMonsterAITargetType(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   if monsterConfig.AITargetType then
     return monsterConfig.AITargetType
@@ -455,104 +311,72 @@ MonsterConfigData.GetMonsterAITargetType = function(self, monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC153: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.ExplainMonsterArea = function(self, areaStrArray)
-  -- function num : 0_45 , upvalues : _ENV
+function MonsterConfigData:ExplainMonsterArea(areaStrArray)
   local areaPosArray = {}
   for index = 1, #areaStrArray do
     local posStr = areaStrArray[index]
-    local numStr = (string.split)(posStr, ",")
+    local numStr = string.split(posStr, ",")
     local vec2 = Vector2(tonumber(numStr[1]), tonumber(numStr[2]))
     areaPosArray[#areaPosArray + 1] = vec2
   end
   return areaPosArray
 end
 
--- DECOMPILER ERROR at PC156: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterArea = function(self, monsterID)
-  -- function num : 0_46 , upvalues : _ENV
+function MonsterConfigData:GetMonsterArea(monsterID)
   local monsterClass = self:GetMonsterClass(monsterID)
   if not monsterClass then
-    (Log.fatal)("No Find Monster ID:", monsterID)
+    Log.fatal("No Find Monster ID:", monsterID)
     local areaPosArray = {}
     return areaPosArray
   end
-  do
-    return self:ExplainMonsterArea(monsterClass.Area)
-  end
+  return self:ExplainMonsterArea(monsterClass.Area)
 end
 
--- DECOMPILER ERROR at PC159: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterType = function(self, monsterID)
-  -- function num : 0_47
+function MonsterConfigData:GetMonsterType(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.MonsterType
 end
 
--- DECOMPILER ERROR at PC162: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterGroupID = function(self, monsterID)
-  -- function num : 0_48
+function MonsterConfigData:GetMonsterGroupID(monsterID)
   local monsterConfig = self:GetMonsterObject(monsterID)
   return monsterConfig.GroupID
 end
 
--- DECOMPILER ERROR at PC165: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterResPath = function(self, monsterID)
-  -- function num : 0_49 , upvalues : _ENV
+function MonsterConfigData:GetMonsterResPath(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   if not monsterConfig then
-    (Log.fatal)("No Find Monster ID:", monsterID)
+    Log.fatal("No Find Monster ID:", monsterID)
   end
   return monsterConfig.ResPath
 end
 
--- DECOMPILER ERROR at PC168: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterCardResPath = function(self, monsterID)
-  -- function num : 0_50
+function MonsterConfigData:GetMonsterCardResPath(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.CardResPath
 end
 
--- DECOMPILER ERROR at PC171: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterOffset = function(self, monsterID)
-  -- function num : 0_51 , upvalues : _ENV
+function MonsterConfigData:GetMonsterOffset(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   local offsetStr = monsterConfig.PositionOffset
-  local strArray = (string.split)(offsetStr, ",")
+  local strArray = string.split(offsetStr, ",")
   local offset = Vector2(tonumber(strArray[1]), tonumber(strArray[2]))
   return offset
 end
 
--- DECOMPILER ERROR at PC174: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterDamageOffset = function(self, monsterID)
-  -- function num : 0_52 , upvalues : _ENV
+function MonsterConfigData:GetMonsterDamageOffset(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   local offsetStr = monsterConfig.DamageOffset
-  local strArray = (string.split)(offsetStr, ",")
+  local strArray = string.split(offsetStr, ",")
   local offset = Vector2(strArray[1], strArray[2])
   return offset
 end
 
--- DECOMPILER ERROR at PC177: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterHPHeightOffset = function(self, monsterID)
-  -- function num : 0_53
+function MonsterConfigData:GetMonsterHPHeightOffset(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.HeightOffset
 end
 
--- DECOMPILER ERROR at PC180: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.IsBoss = function(self, monsterID)
-  -- function num : 0_54 , upvalues : _ENV
+function MonsterConfigData:IsBoss(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   local monsterType = monsterConfig.MonsterType
   if monsterType == MonsterType.Boss or monsterType == MonsterType.WorldBoss then
@@ -561,10 +385,7 @@ MonsterConfigData.IsBoss = function(self, monsterID)
   return false
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.IsWorldBoss = function(self, monsterID)
-  -- function num : 0_55 , upvalues : _ENV
+function MonsterConfigData:IsWorldBoss(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   local monsterType = monsterConfig.MonsterType
   if monsterType == MonsterType.WorldBoss then
@@ -573,84 +394,59 @@ MonsterConfigData.IsWorldBoss = function(self, monsterID)
   return false
 end
 
--- DECOMPILER ERROR at PC186: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterName = function(self, monsterID)
-  -- function num : 0_56 , upvalues : _ENV
+function MonsterConfigData:GetMonsterName(monsterID)
   local monsterClass = self:GetMonsterClass(monsterID)
   if not monsterClass then
-    (Log.fatal)("### [boss warning]", monsterID, "not in cfg_monster.")
+    Log.fatal("### [boss warning]", monsterID, "not in cfg_monster.")
   end
   return monsterClass.Name
 end
 
--- DECOMPILER ERROR at PC189: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetStoryTipsOffset = function(self, monsterID)
-  -- function num : 0_57
+function MonsterConfigData:GetStoryTipsOffset(monsterID)
   local monsterClass = self:GetMonsterClass(monsterID)
   return monsterClass.TipsOffset
 end
 
--- DECOMPILER ERROR at PC192: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterOffSetWithBindPos = function(self, monsterID)
-  -- function num : 0_58
+function MonsterConfigData:GetMonsterOffSetWithBindPos(monsterID)
   local configData = self:GetMonsterClass(monsterID)
-  if configData == nil then
-    return 
+  if nil == configData then
+    return
   end
   return configData.AreaWithHitBindPos
 end
 
--- DECOMPILER ERROR at PC195: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterBindPos = function(self, monsterID, monsterGridPos, gridPos, bodyArea)
-  -- function num : 0_59 , upvalues : _ENV
+function MonsterConfigData:GetMonsterBindPos(monsterID, monsterGridPos, gridPos, bodyArea)
   local OffsetWithBindPos = self:GetMonsterOffSetWithBindPos(monsterID)
   if OffsetWithBindPos then
-    local deltaPos = nil
-    for _,v in pairs(bodyArea) do
+    local deltaPos
+    for _, v in pairs(bodyArea) do
       local bodyGridPos = Vector2(v.x + monsterGridPos.x, v.y + monsterGridPos.y)
       if bodyGridPos == gridPos then
         deltaPos = v
         break
       end
     end
-    do
-      if deltaPos then
-        for k,v in pairs(OffsetWithBindPos) do
-          if k[1] == deltaPos.x and k[2] == deltaPos.y then
-            return v
-          end
-        end
-      end
-      do
-        do
-          ;
-          (Log.fatal)("Get OffsetWithBindPos Failed MonsterID:", monsterID, "GridPos:", gridPos, "MonsterGridPos:", monsterGridPos)
-          do return nil end
-          ;
-          (Log.fatal)("Get OffsetWithBindPos Failed MonsterID:", monsterID)
-          do return nil end
+    if deltaPos then
+      for k, v in pairs(OffsetWithBindPos) do
+        if k[1] == deltaPos.x and k[2] == deltaPos.y then
+          return v
         end
       end
     end
+    Log.fatal("Get OffsetWithBindPos Failed MonsterID:", monsterID, "GridPos:", gridPos, "MonsterGridPos:", monsterGridPos)
+    return nil
+  else
+    Log.fatal("Get OffsetWithBindPos Failed MonsterID:", monsterID)
+    return nil
   end
 end
 
--- DECOMPILER ERROR at PC198: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterBornType = function(self, monsterID)
-  -- function num : 0_60
+function MonsterConfigData:GetMonsterBornType(monsterID)
   local configData = self:GetMonsterClass(monsterID)
   return configData.BornType
 end
 
--- DECOMPILER ERROR at PC201: Confused about usage of register: R1 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterHPSep = function(self, monsterID)
-  -- function num : 0_61
+function MonsterConfigData:GetMonsterHPSep(monsterID)
   local config = self:GetMonsterClass(monsterID)
   if config then
     return config.HealthSep
@@ -660,13 +456,11 @@ end
 
 local MonsterRaceType = {Land = 1, Fly = 2}
 _enum("MonsterRaceType", MonsterRaceType)
--- DECOMPILER ERROR at PC211: Confused about usage of register: R2 in 'UnsetPending'
 
-MonsterConfigData.GetMonsterRaceType = function(self, monsterID)
-  -- function num : 0_62 , upvalues : _ENV
+function MonsterConfigData:GetMonsterRaceType(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   if monsterConfig == nil then
-    (Log.error)("monsterID error ", monsterID)
+    Log.error("monsterID error ", monsterID)
   end
   if monsterConfig.RaceType then
     return monsterConfig.RaceType
@@ -675,119 +469,81 @@ MonsterConfigData.GetMonsterRaceType = function(self, monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC214: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterDeathSkillID = function(self, monsterID)
-  -- function num : 0_63 , upvalues : _ENV
+function MonsterConfigData:GetMonsterDeathSkillID(monsterID)
   local skills = self:GetSkillIDs(monsterID)
-  return (self._affixSvc):ReplaceMonsterSpSkill(monsterID, skills.Die, ReplaceMonsterSpSkillType.Die)
+  return self._affixSvc:ReplaceMonsterSpSkill(monsterID, skills.Die, ReplaceMonsterSpSkillType.Die)
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.IsRegularShape = function(self, monsterID)
-  -- function num : 0_64 , upvalues : _ENV
+function MonsterConfigData:IsRegularShape(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   if monsterConfig then
     return not monsterConfig.IsIrregular
   else
-    ;
-    (Log.fatal)("[MonsterConfig] monster not found: ", monsterID)
+    Log.fatal("[MonsterConfig] monster not found: ", monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC220: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.GetBornBuffList = function(self, monsterID)
-  -- function num : 0_65 , upvalues : _ENV
+function MonsterConfigData:GetBornBuffList(monsterID)
   local buffList = {}
   local monsterConfig = self:GetMonsterClass(monsterID)
   if not monsterConfig then
-    (Log.fatal)("[MonsterConfig] monster class not found: ", monsterID)
-  else
-    if monsterConfig.BornBuffs then
-      (table.appendArray)(buffList, monsterConfig.BornBuffs)
-    end
+    Log.fatal("[MonsterConfig] monster class not found: ", monsterID)
+  elseif monsterConfig.BornBuffs then
+    table.appendArray(buffList, monsterConfig.BornBuffs)
   end
   local objectConfig = self:GetMonsterObject(monsterID)
   local tmpBuffList = {}
   if objectConfig.BuffList then
-    for i,buffID in ipairs(objectConfig.BuffList) do
-      (table.insert)(tmpBuffList, buffID)
+    for i, buffID in ipairs(objectConfig.BuffList) do
+      table.insert(tmpBuffList, buffID)
     end
   end
-  do
-    local objectBuffList = (self._affixSvc):ReplaceMonsterBuff(monsterID, tmpBuffList)
-    objectBuffList = (self._affixSvc):AddMonsterBuff(monsterID, objectBuffList)
-    if not objectConfig then
-      (Log.fatal)("[MonsterConfig] monster object not found: ", monsterID)
-    else
-      if objectBuffList then
-        (table.appendArray)(buffList, objectBuffList)
-      end
-    end
-    return buffList
+  local objectBuffList = self._affixSvc:ReplaceMonsterBuff(monsterID, tmpBuffList)
+  objectBuffList = self._affixSvc:AddMonsterBuff(monsterID, objectBuffList)
+  if not objectConfig then
+    Log.fatal("[MonsterConfig] monster object not found: ", monsterID)
+  elseif objectBuffList then
+    table.appendArray(buffList, objectBuffList)
   end
+  return buffList
 end
 
--- DECOMPILER ERROR at PC223: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterShaderEffect = function(self, monsterID)
-  -- function num : 0_66
+function MonsterConfigData:GetMonsterShaderEffect(monsterID)
   local configData = self:GetMonsterClass(monsterID)
   return configData.ShaderEffect
 end
 
--- DECOMPILER ERROR at PC226: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.Block = function(self, monsterID)
-  -- function num : 0_67
+function MonsterConfigData:Block(monsterID)
   local configData = self:GetMonsterClass(monsterID)
   return configData.Block or 1
 end
 
--- DECOMPILER ERROR at PC229: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.GetHybridSkillPreviewMode = function(self, monsterID)
-  -- function num : 0_68
+function MonsterConfigData:GetHybridSkillPreviewMode(monsterID)
   local configData = self:GetMonsterClass(monsterID)
   return configData.HybridSkillPreviewMode or 0, configData.HybridSkillPreviewParam
 end
 
--- DECOMPILER ERROR at PC232: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.GetWorldBossConfig = function(self, monsterID)
-  -- function num : 0_69 , upvalues : _ENV
-  local cfg = (Cfg.cfg_world_boss_hp)[monsterID]
+function MonsterConfigData:GetWorldBossConfig(monsterID)
+  local cfg = Cfg.cfg_world_boss_hp[monsterID]
   if not cfg then
-    (Log.fatal)("cfg_world_boss_hp no ID:", monsterID)
+    Log.fatal("cfg_world_boss_hp no ID:", monsterID)
   end
   return cfg.Stage, cfg.HPImage
 end
 
--- DECOMPILER ERROR at PC235: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.IsEliteMonster = function(self, monsterID)
-  -- function num : 0_70
-  do return #self:GetEliteIDArray(monsterID) > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MonsterConfigData:IsEliteMonster(monsterID)
+  return #self:GetEliteIDArray(monsterID) > 0
 end
 
--- DECOMPILER ERROR at PC238: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.IsDisableEliteEffect = function(self, monsterID)
-  -- function num : 0_71
+function MonsterConfigData:IsDisableEliteEffect(monsterID)
   local configData = self:GetMonsterClass(monsterID)
   if configData.ExtraParams then
-    return (configData.ExtraParams).DisableEliteEffect
+    return configData.ExtraParams.DisableEliteEffect
   end
   return false
 end
 
--- DECOMPILER ERROR at PC241: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.IsHasPassiveSkillInfo = function(self, monsterID)
-  -- function num : 0_72
+function MonsterConfigData:IsHasPassiveSkillInfo(monsterID)
   local infos = self:GetMonsterPassiveInfo(monsterID)
   if not infos or #infos == 0 then
     return false
@@ -795,10 +551,7 @@ MonsterConfigData.IsHasPassiveSkillInfo = function(self, monsterID)
   return true
 end
 
--- DECOMPILER ERROR at PC244: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterPassiveInfo = function(self, monsterID)
-  -- function num : 0_73
+function MonsterConfigData:GetMonsterPassiveInfo(monsterID)
   local configData = self:GetMonsterClass(monsterID)
   if configData then
     return configData.PassiveSkillInfos
@@ -807,10 +560,7 @@ MonsterConfigData.GetMonsterPassiveInfo = function(self, monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC247: Confused about usage of register: R2 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterHUDHPWidthScale = function(self, monsterID)
-  -- function num : 0_74
+function MonsterConfigData:GetMonsterHUDHPWidthScale(monsterID)
   local objConfigData = self:GetMonsterObject(monsterID)
   if objConfigData.HPSliderWidthScale then
     return objConfigData.HPSliderWidthScale
@@ -824,10 +574,8 @@ end
 
 local MonsterPassiveInfoType = {Base = 1, AntiSkill = 2}
 _enum("MonsterPassiveInfoType", MonsterPassiveInfoType)
--- DECOMPILER ERROR at PC257: Confused about usage of register: R3 in 'UnsetPending'
 
-MonsterConfigData.GetMonsterSnakeBodyEffectID = function(self, monsterID)
-  -- function num : 0_75
+function MonsterConfigData:GetMonsterSnakeBodyEffectID(monsterID)
   local configData = self:GetMonsterClass(monsterID)
   if configData then
     return configData.SnakeBodyEffect
@@ -836,10 +584,7 @@ MonsterConfigData.GetMonsterSnakeBodyEffectID = function(self, monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R3 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterDamageSyncMonsterID = function(self, monsterID)
-  -- function num : 0_76 , upvalues : _ENV
+function MonsterConfigData:GetMonsterDamageSyncMonsterID(monsterID)
   local objConfigData = self:GetMonsterObject(monsterID)
   if objConfigData.DamageSyncMonsterID then
     return objConfigData.DamageSyncMonsterID, MonsterSyncFindType.MonsterID
@@ -852,10 +597,7 @@ MonsterConfigData.GetMonsterDamageSyncMonsterID = function(self, monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R3 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterDamageSyncEffect = function(self, monsterID)
-  -- function num : 0_77
+function MonsterConfigData:GetMonsterDamageSyncEffect(monsterID)
   local objConfigData = self:GetMonsterObject(monsterID)
   if objConfigData.DamageSyncMonsterID then
     return objConfigData.DamageSyncEffect
@@ -868,46 +610,37 @@ MonsterConfigData.GetMonsterDamageSyncEffect = function(self, monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R3 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterHUDHPBarType = function(self, monsterID)
-  -- function num : 0_78 , upvalues : _ENV
+function MonsterConfigData:GetMonsterHUDHPBarType(monsterID)
   local objectConfig = self:GetMonsterObject(monsterID)
   if objectConfig.HPSliderColor then
     return objectConfig.HPSliderColor
   end
   local monsterConfig = self:GetMonsterClass(monsterID)
-  if not monsterConfig.HPSliderColor then
-    return MonsterHUDHPBarType.Red
-  end
+  return monsterConfig.HPSliderColor or MonsterHUDHPBarType.Red
 end
 
 local BossUIHPType = {Normal = 0, Gold = 1}
 _enum("BossUIHPType", BossUIHPType)
--- DECOMPILER ERROR at PC276: Confused about usage of register: R4 in 'UnsetPending'
 
-MonsterConfigData.GetBossUIHPType = function(self, monsterID)
-  -- function num : 0_79
+function MonsterConfigData:GetBossUIHPType(monsterID)
   local objectConfig = self:GetMonsterObject(monsterID)
   return objectConfig.UIBossHPType
 end
 
-local MonsterCampType = {AnGui = 1, BaiYeCheng = 2, QiGuang = 3, YingZhen = 4}
+local MonsterCampType = {
+  AnGui = 1,
+  BaiYeCheng = 2,
+  QiGuang = 3,
+  YingZhen = 4
+}
 _enum("MonsterCampType", MonsterCampType)
--- DECOMPILER ERROR at PC288: Confused about usage of register: R5 in 'UnsetPending'
 
-MonsterConfigData.GetMonsterCampType = function(self, monsterID)
-  -- function num : 0_80 , upvalues : MonsterCampType
+function MonsterConfigData:GetMonsterCampType(monsterID)
   local monsterConfig = self:GetMonsterClass(monsterID)
   return monsterConfig.CampType or MonsterCampType.AnGui
 end
 
--- DECOMPILER ERROR at PC291: Confused about usage of register: R5 in 'UnsetPending'
-
-MonsterConfigData.GetMonsterAuraRangeData = function(self, monsterID)
-  -- function num : 0_81
+function MonsterConfigData:GetMonsterAuraRangeData(monsterID)
   local objectConfig = self:GetMonsterObject(monsterID)
   return objectConfig.Aura
 end
-
-

@@ -1,37 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/ui_forge_speed.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIForgeSpeed", UIController)
 UIForgeSpeed = UIForgeSpeed
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIForgeSpeed.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mHomeland = (GameGlobal.GetModule)(HomelandModule)
-  self.data = (self.mHomeland):GetForgeData()
+function UIForgeSpeed:Constructor()
+  self.mHomeland = GameGlobal.GetModule(HomelandModule)
+  self.data = self.mHomeland:GetForgeData()
   self.mRole = self:GetModule(RoleModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIForgeSpeed:OnShow(uiParams)
   self.txtLeftTimeL = self:GetUIComponent("UILocalizationText", "txtLeftTimeL")
   self.txtLeftTimeR = self:GetUIComponent("UILocalizationText", "txtLeftTimeR")
   self.txtCostL = self:GetUIComponent("UILocalizationText", "txtCostL")
   self.txtCostR = self:GetUIComponent("UILocalizationText", "txtCostR")
   self.sldCount = self:GetUIComponent("Slider", "sldCount")
   self.costIcon = self:GetUIComponent("Image", "costIcon")
-  self.OnSldCountValueChange = function(value)
-    -- function num : 0_1_0 , upvalues : self
+  
+  function self.OnSldCountValueChange(value)
     self:ClampCurCount(value)
     self:Flush()
   end
-
-  ;
-  ((self.sldCount).onValueChanged):AddListener(self.OnSldCountValueChange)
+  
+  self.sldCount.onValueChanged:AddListener(self.OnSldCountValueChange)
   self.txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
   self.index = uiParams[1]
   self.curCount = 1
@@ -39,161 +28,104 @@ UIForgeSpeed.OnShow = function(self, uiParams)
   self:RegisterTimeEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.OnHide = function(self)
-  -- function num : 0_2
-  ((self.sldCount).onValueChanged):RemoveListener(self.OnSldCountValueChange)
+function UIForgeSpeed:OnHide()
+  self.sldCount.onValueChanged:RemoveListener(self.OnSldCountValueChange)
   self:CancelTimerEvent()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.RegisterTimeEvent = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIForgeSpeed:RegisterTimeEvent()
   self:CancelTimerEvent()
-  self.te = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_3_0 , upvalues : self
+  self.te = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:Flush()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.CancelTimerEvent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIForgeSpeed:CancelTimerEvent()
   if self.te then
-    ((GameGlobal.Timer)()):CancelEvent(self.te)
+    GameGlobal.Timer():CancelEvent(self.te)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.Flush = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  local s = (self.data):GetForgeSequenceByIndex(self.index)
-  local tsNow = (UICommonHelper.GetNowTimestamp)()
+function UIForgeSpeed:Flush()
+  local s = self.data:GetForgeSequenceByIndex(self.index)
+  local tsNow = UICommonHelper.GetNowTimestamp()
   local tsDelta = s.doneTimestamp - tsNow
   if tsDelta <= 0 then
     self:CloseDialog()
   else
-    local accItemId, accSeconds = (self.data):GetForgeAccItem()
-    local cost = (math.ceil)(tsDelta / accSeconds)
-    local countItem = (self.mRole):GetAssetCount(accItemId) or 0
-    local max = (math.min)(cost, countItem)
-    local min = (math.min)(1, max)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.sldCount).minValue = min
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.sldCount).maxValue = max
+    local accItemId, accSeconds = self.data:GetForgeAccItem()
+    local cost = math.ceil(tsDelta / accSeconds)
+    local countItem = self.mRole:GetAssetCount(accItemId) or 0
+    local max = math.min(cost, countItem)
+    local min = math.min(1, max)
+    self.sldCount.minValue = min
+    self.sldCount.maxValue = max
     self:ClampCurCount(self.curCount)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.sldCount).value = self.curCount
-    ;
-    (UIForge.FlushCDText)(self.txtLeftTimeL, s.doneTimestamp, (self.data).strsWillGetable, true)
-    ;
-    (UIForge.FlushCDText)(self.txtLeftTimeR, s.doneTimestamp - self.curCount * accSeconds, (self.data).strsWillGetable, true)
-    ;
-    (self.txtCostL):SetText(countItem)
-    ;
-    (self.txtCostR):SetText(countItem - self.curCount)
-    ;
-    (self.txtCount):SetText(self.curCount)
-    local topCfg = (Cfg.cfg_top_tips)[accItemId]
+    self.sldCount.value = self.curCount
+    UIForge.FlushCDText(self.txtLeftTimeL, s.doneTimestamp, self.data.strsWillGetable, true)
+    UIForge.FlushCDText(self.txtLeftTimeR, s.doneTimestamp - self.curCount * accSeconds, self.data.strsWillGetable, true)
+    self.txtCostL:SetText(countItem)
+    self.txtCostR:SetText(countItem - self.curCount)
+    self.txtCount:SetText(self.curCount)
+    local topCfg = Cfg.cfg_top_tips[accItemId]
     if not topCfg then
-      (Log.exception)("cfg_top_tips中缺少配置:", accItemId)
+      Log.exception("cfg_top_tips中缺少配置:", accItemId)
     end
     local atlas = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)
-    -- DECOMPILER ERROR at PC99: Confused about usage of register: R12 in 'UnsetPending'
-
-    ;
-    (self.costIcon).sprite = atlas:GetSprite(topCfg.Icon)
+    self.costIcon.sprite = atlas:GetSprite(topCfg.Icon)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.ClampCurCount = function(self, curCount)
-  -- function num : 0_6 , upvalues : _ENV
-  curCount = (math.min)((self.sldCount).maxValue, curCount)
-  curCount = (math.max)((self.sldCount).minValue, curCount)
-  self.curCount = (math.modf)(curCount)
+function UIForgeSpeed:ClampCurCount(curCount)
+  curCount = math.min(self.sldCount.maxValue, curCount)
+  curCount = math.max(self.sldCount.minValue, curCount)
+  self.curCount, _ = math.modf(curCount)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.bgOnClick = function(self, go)
-  -- function num : 0_7
+function UIForgeSpeed:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.btnCloseOnClick = function(self, go)
-  -- function num : 0_8
+function UIForgeSpeed:btnCloseOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.btnLowerOnClick = function(self, go)
-  -- function num : 0_9
+function UIForgeSpeed:btnLowerOnClick(go)
   if self.curCount > 0 then
     self:ClampCurCount(self.curCount - 1)
     self:Flush()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.btnUpperOnClick = function(self, go)
-  -- function num : 0_10
-  if self.curCount < (self.sldCount).maxValue then
+function UIForgeSpeed:btnUpperOnClick(go)
+  if self.curCount < self.sldCount.maxValue then
     self:ClampCurCount(self.curCount + 1)
     self:Flush()
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIForgeSpeed.btnConfirmOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIForgeSpeed:btnConfirmOnClick(go)
   if self.curCount <= 0 then
     self:CloseDialog()
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
-    local accItemId, accSeconds = (self.data):GetForgeAccItem()
+    local accItemId, accSeconds = self.data:GetForgeAccItem()
     local ra = RoleAsset:New()
     ra.assetid = accItemId
     ra.count = self.curCount
-    local res, forge_list = (self.mHomeland):HandleAccelerate(TT, self.index, ra)
-    if (UIForgeData.CheckCode)(res:GetResult()) then
-      (self.data):InitSequence(forge_list)
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomelandForgeUpdateSequence)
-      local s = (self.data):GetForgeSequenceByIndex(self.index)
+    local res, forge_list = self.mHomeland:HandleAccelerate(TT, self.index, ra)
+    if UIForgeData.CheckCode(res:GetResult()) then
+      self.data:InitSequence(forge_list)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.HomelandForgeUpdateSequence)
+      local s = self.data:GetForgeSequenceByIndex(self.index)
       if s.state == ForgeSequenceState.Getable then
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_acc_success_done"))
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_acc_success_done"))
       else
-        local s = (UIForge.GetTimestampStr)(self.curCount * accSeconds, (self.data).strsWillGetable)
-        ;
-        (ToastManager.ShowHomeToast)((StringTable.Get)("str_homeland_forge_acc_success", s))
+        local s = UIForge.GetTimestampStr(self.curCount * accSeconds, self.data.strsWillGetable)
+        ToastManager.ShowHomeToast(StringTable.Get("str_homeland_forge_acc_success", s))
       end
-      do
-        self:CloseDialog()
-      end
+      self:CloseDialog()
     end
-  end
-, self)
+  end, self)
 end
-
-

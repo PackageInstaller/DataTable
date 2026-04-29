@@ -1,72 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n10/shop/ui_n10_shop_award_box_cell.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN10ShopAwardBoxCell", UICustomWidget)
 UIN10ShopAwardBoxCell = UIN10ShopAwardBoxCell
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN10ShopAwardBoxCell.Constructor = function(self)
-  -- function num : 0_0
+function UIN10ShopAwardBoxCell:Constructor()
   self.listInited = false
   self.rowCellItemNum = 3
   self.rowCellCount = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardBoxCell.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN10ShopAwardBoxCell:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardBoxCell._GetComponents = function(self)
-  -- function num : 0_2
+function UIN10ShopAwardBoxCell:_GetComponents()
   self.awardList = self:GetUIComponent("UIDynamicScrollView", "AwardList")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardBoxCell.InitData = function(self, data, itemInfoCallBack, playJackpotAnim)
-  -- function num : 0_3
+function UIN10ShopAwardBoxCell:InitData(data, itemInfoCallBack, playJackpotAnim)
   self._data = data
   self._itemInfoCallback = itemInfoCallBack
   self._playJackpotAnim = playJackpotAnim
   self:_InitAwardListUi()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardBoxCell._InitAwardListUi = function(self)
-  -- function num : 0_4
-  self.rowCellCount = #(self._data).itemGroup
+function UIN10ShopAwardBoxCell:_InitAwardListUi()
+  self.rowCellCount = #self._data.itemGroup
   if self.listInited then
-    (self.awardList):SetListItemCount(self.rowCellCount)
-    ;
-    (self.awardList):RefreshAllShownItem()
-    ;
-    (self.awardList):MovePanelToItemIndex(0, 0)
-    ;
-    (self.awardList):FinishSnapImmediately()
-    return 
+    self.awardList:SetListItemCount(self.rowCellCount)
+    self.awardList:RefreshAllShownItem()
+    self.awardList:MovePanelToItemIndex(0, 0)
+    self.awardList:FinishSnapImmediately()
+    return
   else
     self.listInited = true
   end
-  ;
-  (self.awardList):InitListView(self.rowCellCount, function(scrollview, index)
-    -- function num : 0_4_0 , upvalues : self
+  self.awardList:InitListView(self.rowCellCount, function(scrollview, index)
     return self:_OnGetAwardRowCell(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN10ShopAwardBoxCell._OnGetAwardRowCell = function(self, scrollview, index)
-  -- function num : 0_5
+function UIN10ShopAwardBoxCell:_OnGetAwardRowCell(scrollview, index)
   local item = scrollview:NewListViewItem("RowCell")
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -77,19 +49,15 @@ UIN10ShopAwardBoxCell._OnGetAwardRowCell = function(self, scrollview, index)
   local itemWidget = rowList[1]
   if itemWidget then
     local rowIndex = index + 1
-    if self.rowCellCount < rowIndex then
-      (itemWidget:GetGameObject()):SetActive(false)
+    if rowIndex > self.rowCellCount then
+      itemWidget:GetGameObject():SetActive(false)
     else
       local delayTime = 0
       if self._playJackpotAnim then
         delayTime = rowIndex
       end
-      itemWidget:InitData(((self._data).itemGroup)[rowIndex], self._itemInfoCallback, delayTime)
+      itemWidget:InitData(self._data.itemGroup[rowIndex], self._itemInfoCallback, delayTime)
     end
   end
-  do
-    return item
-  end
+  return item
 end
-
-

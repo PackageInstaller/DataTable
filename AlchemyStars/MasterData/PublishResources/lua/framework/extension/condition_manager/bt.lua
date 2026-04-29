@@ -1,188 +1,132 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/extension/condition_manager/bt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BT", Object)
 BT = BT
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BT.GetTime = function()
-  -- function num : 0_0 , upvalues : _ENV
-  return (os.clock)()
+function BT.GetTime()
+  return os.clock()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BT.iskindof = function(cls, name)
-  -- function num : 0_1 , upvalues : _ENV
+function BT.iskindof(cls, name)
   if cls.__cname == name then
     return true
   end
   if cls.__supers then
-    for _,v in ipairs(cls.__supers) do
-      local bvalue = (BT.iskindof)(v, name)
+    for _, v in ipairs(cls.__supers) do
+      local bvalue = BT.iskindof(v, name)
       if bvalue == true then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BT.GetWeight = function(item)
-  -- function num : 0_2 , upvalues : _ENV
+function BT.GetWeight(item)
   local item_type = type(item)
   local v = 0
-  while 1 do
+  while true do
     if item_type == "number" then
       v = item
       break
     end
-    if not item() then
-      v = item_type ~= "function" or 0
-      do break end
-      do break end
-      -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC17: LeaveBlock: unexpected jumping out IF_STMT
-
+    if item_type == "function" then
+      v = item() or 0
+      break
     end
+    break
   end
   return v
 end
 
-BTState = {SUCCESS = 1, FAILED = 2, READY = 3, RUNNING = 4}
+BTState = {
+  SUCCESS = 1,
+  FAILED = 2,
+  READY = 3,
+  RUNNING = 4
+}
 _enum("BTState", BTState)
 _class("BehaviourTree", Object)
 BehaviourTree = BehaviourTree
--- DECOMPILER ERROR at PC33: Confused about usage of register: R0 in 'UnsetPending'
 
-BehaviourTree.Constructor = function(self, root)
-  -- function num : 0_3
+function BehaviourTree:Constructor(root)
   self.root = root
 end
 
--- DECOMPILER ERROR at PC36: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.SetOwner = function(self, owner)
-  -- function num : 0_4 , upvalues : _ENV
+function BehaviourTree:SetOwner(owner)
   self.owner = owner
-  if self.root and (self.root).SetOwner and type((self.root).SetOwner) then
-    (self.root):SetOwner(owner)
+  if self.root and self.root.SetOwner and type(self.root.SetOwner) then
+    self.root:SetOwner(owner)
   end
 end
 
--- DECOMPILER ERROR at PC39: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.GetOwner = function(self)
-  -- function num : 0_5
+function BehaviourTree:GetOwner()
   return self.owner
 end
 
--- DECOMPILER ERROR at PC42: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.ForceUpdate = function(self)
-  -- function num : 0_6
+function BehaviourTree:ForceUpdate()
   self.forceupdate = true
 end
 
--- DECOMPILER ERROR at PC45: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.Update = function(self)
-  -- function num : 0_7
-  local sleeptime = (self.root):GetTreeSleepTime()
+function BehaviourTree:Update()
+  local sleeptime = self.root:GetTreeSleepTime()
   if not sleeptime or sleeptime == 0 then
-    (self.root):Visit()
-    ;
-    (self.root):SaveStatus()
-    ;
-    (self.root):Step()
+    self.root:Visit()
+    self.root:SaveStatus()
+    self.root:Step()
   end
   self.forceupdate = false
 end
 
--- DECOMPILER ERROR at PC48: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.Reset = function(self)
-  -- function num : 0_8
-  (self.root):Reset()
+function BehaviourTree:Reset()
+  self.root:Reset()
 end
 
--- DECOMPILER ERROR at PC51: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.Stop = function(self)
-  -- function num : 0_9
-  (self.root):Stop()
+function BehaviourTree:Stop()
+  self.root:Stop()
 end
 
--- DECOMPILER ERROR at PC54: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.Suspend = function(self)
-  -- function num : 0_10
-  (self.root):Suspend()
+function BehaviourTree:Suspend()
+  self.root:Suspend()
 end
 
--- DECOMPILER ERROR at PC57: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.Restart = function(self)
-  -- function num : 0_11
-  (self.root):Restart()
+function BehaviourTree:Restart()
+  self.root:Restart()
 end
 
--- DECOMPILER ERROR at PC60: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.GetSleepTime = function(self)
-  -- function num : 0_12
+function BehaviourTree:GetSleepTime()
   if self.forceupdate then
     return 0
   end
-  return (self.root):GetTreeSleepTime()
+  return self.root:GetTreeSleepTime()
 end
 
--- DECOMPILER ERROR at PC63: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.OnEnter = function(self)
-  -- function num : 0_13
-  (self.root):OnEnter()
+function BehaviourTree:OnEnter()
+  self.root:OnEnter()
 end
 
--- DECOMPILER ERROR at PC66: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourTree.__tostring = function(self)
-  -- function num : 0_14
-  return (self.root):GetTreeString()
+function BehaviourTree:__tostring()
+  return self.root:GetTreeString()
 end
 
 _class("BehaviourNode", Object)
 BehaviourNode = BehaviourNode
--- DECOMPILER ERROR at PC75: Confused about usage of register: R0 in 'UnsetPending'
 
-BehaviourNode.Constructor = function(self, children)
-  -- function num : 0_15 , upvalues : _ENV
+function BehaviourNode:Constructor(children)
   self.name = ""
   self.children = children
   self.status = BTState.READY
   self.lastresult = BTState.READY
   self.owner = nil
   if children then
-    for i,k in pairs(children) do
+    for i, k in pairs(children) do
       k.parent = self
     end
   end
 end
 
--- DECOMPILER ERROR at PC78: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.SetOwner = function(self, owner)
-  -- function num : 0_16 , upvalues : _ENV
+function BehaviourNode:SetOwner(owner)
   self.owner = owner
   if self.children then
-    for k,v in pairs(self.children) do
+    for k, v in pairs(self.children) do
       if v and v.SetOwner and type(v.SetOwner) == "function" then
         v:SetOwner(owner)
       end
@@ -190,202 +134,142 @@ BehaviourNode.SetOwner = function(self, owner)
   end
 end
 
--- DECOMPILER ERROR at PC81: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.GetOwner = function(self)
-  -- function num : 0_17
+function BehaviourNode:GetOwner()
   return self.owner
 end
 
--- DECOMPILER ERROR at PC84: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.DoToParents = function(self, fn)
-  -- function num : 0_18
+function BehaviourNode:DoToParents(fn)
   if self.parent then
     fn(self.parent)
-    return (self.parent):DoToParents(fn)
+    return self.parent:DoToParents(fn)
   end
 end
 
--- DECOMPILER ERROR at PC87: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.GetTreeString = function(self, indent)
-  -- function num : 0_19 , upvalues : _ENV
-  if not indent then
-    indent = ""
-  end
-  local str = (string.format)("%s%s>%2.2f\n", indent, self:GetString(), self:GetTreeSleepTime() or 0)
+function BehaviourNode:GetTreeString(indent)
+  indent = indent or ""
+  local str = string.format("%s%s>%2.2f\n", indent, self:GetString(), self:GetTreeSleepTime() or 0)
   if self.children then
-    for k,v in ipairs(self.children) do
+    for k, v in ipairs(self.children) do
       str = str .. v:GetTreeString(indent .. "   >")
     end
   end
-  do
-    return str
-  end
+  return str
 end
 
--- DECOMPILER ERROR at PC90: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.DBString = function(self)
-  -- function num : 0_20
+function BehaviourNode:DBString()
   return ""
 end
 
--- DECOMPILER ERROR at PC93: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.Sleep = function(self, t)
-  -- function num : 0_21 , upvalues : _ENV
-  self.nextupdatetime = (BT.GetTime)() + t
+function BehaviourNode:Sleep(t)
+  self.nextupdatetime = BT.GetTime() + t
 end
 
--- DECOMPILER ERROR at PC96: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.GetSleepTime = function(self)
-  -- function num : 0_22 , upvalues : _ENV
-  if self.status == BTState.RUNNING and not self.children and not (BT.iskindof)(self, "ConditionNode") then
-    do
-      if self.nextupdatetime then
-        local time_to = self.nextupdatetime - (BT.GetTime)()
-        if time_to < 0 then
-          time_to = 0
-        end
-        return time_to
+function BehaviourNode:GetSleepTime()
+  if self.status == BTState.RUNNING and not self.children and not BT.iskindof(self, "ConditionNode") then
+    if self.nextupdatetime then
+      local time_to = self.nextupdatetime - BT.GetTime()
+      if time_to < 0 then
+        time_to = 0
       end
-      do return 0 end
-      return nil
+      return time_to
     end
+    return 0
   end
+  return nil
 end
 
--- DECOMPILER ERROR at PC99: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.GetTreeSleepTime = function(self)
-  -- function num : 0_23 , upvalues : _ENV
-  local sleeptime = nil
+function BehaviourNode:GetTreeSleepTime()
+  local sleeptime
   if self.children then
-    for k,v in ipairs(self.children) do
+    for k, v in ipairs(self.children) do
       if v.status == BTState.RUNNING then
         local t = v:GetTreeSleepTime()
-        if t and (not sleeptime or t < sleeptime) then
+        if t and (not sleeptime or sleeptime > t) then
           sleeptime = t
         end
       end
     end
   end
-  do
-    local my_t = self:GetSleepTime()
-    if my_t and (not sleeptime or my_t < sleeptime) then
-      sleeptime = my_t
-    end
-    return sleeptime
+  local my_t = self:GetSleepTime()
+  if my_t and (not sleeptime or sleeptime > my_t) then
+    sleeptime = my_t
   end
+  return sleeptime
 end
 
--- DECOMPILER ERROR at PC102: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.GetString = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function BehaviourNode:GetString()
   local str = ""
   if self.status == BTState.RUNNING then
     str = self:DBString()
   end
-  return (string.format)("%s - %s <%s> (%s)", self.name, self.status or "UNKNOWN", self.lastresult or "?", str)
+  return string.format("%s - %s <%s> (%s)", self.name, self.status or "UNKNOWN", self.lastresult or "?", str)
 end
 
--- DECOMPILER ERROR at PC105: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.Visit = function(self)
-  -- function num : 0_25 , upvalues : _ENV
+function BehaviourNode:Visit()
   self.status = BTState.FAILED
 end
 
--- DECOMPILER ERROR at PC108: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.SaveStatus = function(self)
-  -- function num : 0_26 , upvalues : _ENV
+function BehaviourNode:SaveStatus()
   self.lastresult = self.status
   if self.children then
-    for k,v in pairs(self.children) do
+    for k, v in pairs(self.children) do
       v:SaveStatus()
     end
   end
 end
 
--- DECOMPILER ERROR at PC111: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.Step = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function BehaviourNode:Step()
   if self.status ~= BTState.RUNNING then
     self:Reset()
-  else
-    if self.children then
-      for k,v in ipairs(self.children) do
-        v:Step()
-      end
+  elseif self.children then
+    for k, v in ipairs(self.children) do
+      v:Step()
     end
   end
 end
 
--- DECOMPILER ERROR at PC114: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.Reset = function(self)
-  -- function num : 0_28 , upvalues : _ENV
+function BehaviourNode:Reset()
   if self.status ~= BTState.READY then
     self.status = BTState.READY
     if self.children then
-      for idx,child in ipairs(self.children) do
+      for idx, child in ipairs(self.children) do
         child:Reset()
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC117: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.Stop = function(self)
-  -- function num : 0_29 , upvalues : _ENV
+function BehaviourNode:Stop()
   if self.OnStop then
     self:OnStop()
   end
   if self.children then
-    for idx,child in ipairs(self.children) do
+    for idx, child in ipairs(self.children) do
       child:Stop()
     end
   end
 end
 
--- DECOMPILER ERROR at PC120: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.Suspend = function(self)
-  -- function num : 0_30 , upvalues : _ENV
+function BehaviourNode:Suspend()
   if self.children then
-    for k,v in pairs(self.children) do
+    for k, v in pairs(self.children) do
       v:Suspend()
     end
   end
 end
 
--- DECOMPILER ERROR at PC123: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.Restart = function(self)
-  -- function num : 0_31 , upvalues : _ENV
+function BehaviourNode:Restart()
   if self.children then
-    for k,v in pairs(self.children) do
+    for k, v in pairs(self.children) do
       v:Restart()
     end
   end
 end
 
--- DECOMPILER ERROR at PC126: Confused about usage of register: R0 in 'UnsetPending'
-
-BehaviourNode.OnEnter = function(self)
-  -- function num : 0_32 , upvalues : _ENV
+function BehaviourNode:OnEnter()
   if self.children then
-    for k,v in pairs(self.children) do
+    for k, v in pairs(self.children) do
       v:OnEnter()
     end
   end
 end
-
-

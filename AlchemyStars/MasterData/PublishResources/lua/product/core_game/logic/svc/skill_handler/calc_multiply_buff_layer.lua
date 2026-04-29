@@ -1,36 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_multiply_buff_layer.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("calc_base")
 _class("SkillEffectCalc_MultiplyBuffLayer", SkillEffectCalc_Base)
 SkillEffectCalc_MultiplyBuffLayer = SkillEffectCalc_MultiplyBuffLayer
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_MultiplyBuffLayer.CalculateOnSingleTarget = function(self, skillEffectCalcParam, targetID)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_MultiplyBuffLayer:CalculateOnSingleTarget(skillEffectCalcParam, targetID)
   if targetID == -1 then
-    return 
+    return
   end
-  local eTarget = (self._world):GetEntityByID(targetID)
+  local eTarget = self._world:GetEntityByID(targetID)
   local param = skillEffectCalcParam:GetSkillEffectParam()
   local buffInstance = self:GetBuffInstanceByParam(param, eTarget)
   if not buffInstance then
-    return 
+    return
   end
   local buffEffectType = buffInstance:GetBuffEffectType()
   local buffSeq = buffInstance:BuffSeq()
-  local lsvcBuff = (self._world):GetService("BuffLogic")
+  local lsvcBuff = self._world:GetService("BuffLogic")
   local baseVal = lsvcBuff:GetBuffLayer(eTarget, buffEffectType)
-  local val = (math.floor)(baseVal * param:GetMultiplier())
+  local val = math.floor(baseVal * param:GetMultiplier())
   return SkillEffectResult_MultiplyBuffLayer:New(targetID, buffEffectType, val, buffSeq)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MultiplyBuffLayer.GetBuffInstanceByParam = function(self, param, eTarget)
-  -- function num : 0_1
+function SkillEffectCalc_MultiplyBuffLayer:GetBuffInstanceByParam(param, eTarget)
   local cBuff = eTarget:BuffComponent()
   if not cBuff then
     return nil
@@ -38,14 +28,8 @@ SkillEffectCalc_MultiplyBuffLayer.GetBuffInstanceByParam = function(self, param,
   if param:GetLayerBuffID() then
     local buffID = param:GetLayerBuffID()
     return cBuff:GetBuffById(buffID)
-  else
-    do
-      if param:GetLayerBuffEffectType() then
-        local buffEffectType = param:GetLayerBuffEffectType()
-        return cBuff:GetSingleBuffByBuffEffect(buffEffectType)
-      end
-    end
+  elseif param:GetLayerBuffEffectType() then
+    local buffEffectType = param:GetLayerBuffEffectType()
+    return cBuff:GetSingleBuffByBuffEffect(buffEffectType)
   end
 end
-
-

@@ -1,11 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/campaign/cfg_component_globalboss_formation.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ComponentID = 2, FormationId = 3, LimitPet = 4}
+local key = {
+  ID = 1,
+  ComponentID = 2,
+  FormationId = 3,
+  LimitPet = 4
+}
 local config = {
-{1, 107602607, 1, 5}
+  {
+    1,
+    107602607,
+    1,
+    5
+  }
 }
 return config, "ID", key
-

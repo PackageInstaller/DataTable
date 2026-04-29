@@ -1,65 +1,38 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_flash_sale/ui_shop_flash_sale_item_container.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopFlashSaleItemContainer", UICustomWidget)
 UIShopFlashSaleItemContainer = UIShopFlashSaleItemContainer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopFlashSaleItemContainer.Constructor = function(self)
-  -- function num : 0_0
+function UIShopFlashSaleItemContainer:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleItemContainer.OnShow = function(self)
-  -- function num : 0_1
+function UIShopFlashSaleItemContainer:OnShow()
   self.normal_month = self:GetUIComponent("UISelectObjectPath", "normal_month")
   self.gonormal_month = self:GetGameObject("normal_month")
-  self.uiNormal = (self.normal_month):SpawnObject("UIShopflashSaleItem")
+  self.uiNormal = self.normal_month:SpawnObject("UIShopflashSaleItem")
   self.week = self:GetUIComponent("UISelectObjectPath", "week")
   self.goweek = self:GetGameObject("week")
-  self.uiWeek = (self.week):SpawnObject("UIShopFlashSaleItemWeek")
+  self.uiWeek = self.week:SpawnObject("UIShopFlashSaleItemWeek")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleItemContainer.OnHide = function(self)
-  -- function num : 0_2
+function UIShopFlashSaleItemContainer:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleItemContainer.Flush = function(self, itemData)
-  -- function num : 0_3
+function UIShopFlashSaleItemContainer:Flush(itemData)
   self._itemData = itemData
-  if (self._itemData):IsWeekCard() then
-    (self.gonormal_month):SetActive(false)
-    ;
-    (self.goweek):SetActive(true)
-    ;
-    (self.uiWeek):Flush(self._itemData)
+  if self._itemData:IsWeekCard() then
+    self.gonormal_month:SetActive(false)
+    self.goweek:SetActive(true)
+    self.uiWeek:Flush(self._itemData)
   else
-    ;
-    (self.gonormal_month):SetActive(true)
-    ;
-    (self.goweek):SetActive(false)
-    ;
-    (self.uiNormal):Flush(self._itemData)
+    self.gonormal_month:SetActive(true)
+    self.goweek:SetActive(false)
+    self.uiNormal:Flush(self._itemData)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopFlashSaleItemContainer.OpenUIShopFlashSaleDetail = function(self)
-  -- function num : 0_4
-  if (self._itemData):IsWeekCard() then
-    (self.uiWeek):OpenUIShopGiftPackDetail()
+function UIShopFlashSaleItemContainer:OpenUIShopFlashSaleDetail()
+  if self._itemData:IsWeekCard() then
+    self.uiWeek:OpenUIShopGiftPackDetail()
   else
-    ;
-    (self.uiNormal):OpenUIShopGiftPackDetail()
+    self.uiNormal:OpenUIShopGiftPackDetail()
   end
 end
-
-

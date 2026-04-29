@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_record_buff_layer_to_view_value.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicRecordBuffLayerToViewValue", BuffLogicBase)
 BuffLogicRecordBuffLayerToViewValue = BuffLogicRecordBuffLayerToViewValue
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRecordBuffLayerToViewValue.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicRecordBuffLayerToViewValue:Constructor(buffInstance, logicParam)
   self._buffLayerType = logicParam.buffLayerType
   self._isRevert = false
   if logicParam.isRevert and logicParam.isRevert == 1 then
@@ -16,11 +9,8 @@ BuffLogicRecordBuffLayerToViewValue.Constructor = function(self, buffInstance, l
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRecordBuffLayerToViewValue.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local svc = (self._world):GetService("BuffLogic")
+function BuffLogicRecordBuffLayerToViewValue:DoLogic()
+  local svc = self._world:GetService("BuffLogic")
   local buffLayer = 0
   if not self._isRevert then
     buffLayer = svc:GetBuffLayer(self._entity, self._buffLayerType)
@@ -28,5 +18,3 @@ BuffLogicRecordBuffLayerToViewValue.DoLogic = function(self)
   local buffResult = BuffResultRecordBuffLayerToViewValue:New(self._buffLayerType, buffLayer, self._isRevert)
   return buffResult
 end
-
-

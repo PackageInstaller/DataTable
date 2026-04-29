@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/s3/backpack/ui_season_backpack_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonBackpackItem", UICustomWidget)
 UISeasonBackpackItem = UISeasonBackpackItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonBackpackItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISeasonBackpackItem:OnShow(uiParams)
   self._atlas = self:GetAsset("UIS3Stage.spriteatlas", LoadType.SpriteAtlas)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackItem.InitWidget = function(self)
-  -- function num : 0_1
+function UISeasonBackpackItem:InitWidget()
   self._quality = self:GetUIComponent("Image", "Quality")
   self._icon = self:GetUIComponent("RawImageLoader", "Icon")
   self._name = self:GetUIComponent("UILocalizationText", "Name")
@@ -26,10 +16,7 @@ UISeasonBackpackItem.InitWidget = function(self)
   self._gotGO = self:GetGameObject("Got")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackItem.SetData = function(self, id, data, callback)
-  -- function num : 0_2
+function UISeasonBackpackItem:SetData(id, data, callback)
   self._id = id
   self._itemid = data.id
   self._itemCount = data.count
@@ -37,42 +24,23 @@ UISeasonBackpackItem.SetData = function(self, id, data, callback)
   self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackItem._OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[self._itemid]
+function UISeasonBackpackItem:_OnValue()
+  local cfg = Cfg.cfg_item[self._itemid]
   if cfg == nil then
-    (Log.fatal)("cfg_item is nil." .. self._itemid)
+    Log.fatal("cfg_item is nil." .. self._itemid)
   end
-  -- DECOMPILER ERROR at PC21: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._quality).sprite = (self._atlas):GetSprite("exp_s3_map_gq_se0" .. tostring(cfg.Color))
-  ;
-  (self._icon):LoadImage(cfg.Icon)
-  ;
-  (self._name):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self._count):SetText("x" .. self._itemCount)
-  -- DECOMPILER ERROR at PC44: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._typeImg).sprite = (self._atlas):GetSprite("exp_s3_map_gq_icon12")
-  local isDone = (self:GetModule(SeasonModule)):GetHasPassedDebris(self._id)
-  ;
-  (self._typeImgGO):SetActive(not isDone)
-  ;
-  (self._gotGO):SetActive(isDone)
+  self._quality.sprite = self._atlas:GetSprite("exp_s3_map_gq_se0" .. tostring(cfg.Color))
+  self._icon:LoadImage(cfg.Icon)
+  self._name:SetText(StringTable.Get(cfg.Name))
+  self._count:SetText("x" .. self._itemCount)
+  self._typeImg.sprite = self._atlas:GetSprite("exp_s3_map_gq_icon12")
+  local isDone = self:GetModule(SeasonModule):GetHasPassedDebris(self._id)
+  self._typeImgGO:SetActive(not isDone)
+  self._gotGO:SetActive(isDone)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonBackpackItem.BtnOnClick = function(self, go)
-  -- function num : 0_4
+function UISeasonBackpackItem:BtnOnClick(go)
   if self._callback then
-    (self._callback)(self._itemid, (go.transform).position)
+    self._callback(self._itemid, go.transform.position)
   end
 end
-
-

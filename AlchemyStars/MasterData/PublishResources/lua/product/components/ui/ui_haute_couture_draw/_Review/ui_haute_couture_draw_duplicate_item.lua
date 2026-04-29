@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_haute_couture_draw/_Review/ui_haute_couture_draw_duplicate_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHauteCoutureDuplicateItem", UICustomWidget)
 UIHauteCoutureDuplicateItem = UIHauteCoutureDuplicateItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHauteCoutureDuplicateItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIHauteCoutureDuplicateItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateItem.InitWidget = function(self)
-  -- function num : 0_1
+function UIHauteCoutureDuplicateItem:InitWidget()
   self.s1 = self:GetUIComponent("RawImageLoader", "s1")
   self.s2 = self:GetUIComponent("RawImageLoader", "s2")
   self.t1 = self:GetUIComponent("RawImageLoader", "t1")
@@ -30,32 +20,20 @@ UIHauteCoutureDuplicateItem.InitWidget = function(self)
   self.bg = self:GetUIComponent("RawImageLoader", "bg")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateItem.SetData = function(self, cfg, onClick)
-  -- function num : 0_2 , upvalues : _ENV
+function UIHauteCoutureDuplicateItem:SetData(cfg, onClick)
   self:SetBg(cfg)
   local twoAwards = cfg.AppendGlow > 0
-  ;
-  (self.source2):SetActive(twoAwards)
-  ;
-  (self.target2):SetActive(twoAwards)
+  self.source2:SetActive(twoAwards)
+  self.target2:SetActive(twoAwards)
   if twoAwards then
-    (self.s1):LoadImage(((Cfg.cfg_item)[RoleAssetID.RoleAssetGlow]).Icon)
-    ;
-    (self.s1Count):SetText(cfg.AppendGlow)
-    ;
-    (self.t1):LoadImage(((Cfg.cfg_item)[RoleAssetID.RoleAssetGlow]).Icon)
-    ;
-    (self.t1Count):SetText(cfg.AppendGlow)
-    ;
-    (self.s2):LoadImage(((Cfg.cfg_item)[cfg.RewardID]).Icon)
-    ;
-    (self.s2Count):SetText(cfg.RewardCount)
-    ;
-    (self.t2):LoadImage(((Cfg.cfg_item)[cfg.ReplaceRewardID]).Icon)
-    ;
-    (self.t2Count):SetText(cfg.ReplaceRewardCount)
+    self.s1:LoadImage(Cfg.cfg_item[RoleAssetID.RoleAssetGlow].Icon)
+    self.s1Count:SetText(cfg.AppendGlow)
+    self.t1:LoadImage(Cfg.cfg_item[RoleAssetID.RoleAssetGlow].Icon)
+    self.t1Count:SetText(cfg.AppendGlow)
+    self.s2:LoadImage(Cfg.cfg_item[cfg.RewardID].Icon)
+    self.s2Count:SetText(cfg.RewardCount)
+    self.t2:LoadImage(Cfg.cfg_item[cfg.ReplaceRewardID].Icon)
+    self.t2Count:SetText(cfg.ReplaceRewardCount)
     self._s1ID = RoleAssetID.RoleAssetGlow
     self._s1Count = cfg.AppendGlow
     self._s2ID = cfg.RewardID
@@ -65,56 +43,34 @@ UIHauteCoutureDuplicateItem.SetData = function(self, cfg, onClick)
     self._t2ID = cfg.ReplaceRewardID
     self._t2Count = cfg.ReplaceRewardCount
   else
-    (self.s1):LoadImage(((Cfg.cfg_item)[cfg.RewardID]).Icon)
-    ;
-    (self.s1Count):SetText(cfg.RewardCount)
-    ;
-    (self.t1):LoadImage(((Cfg.cfg_item)[cfg.ReplaceRewardID]).Icon)
-    ;
-    (self.t1Count):SetText(cfg.ReplaceRewardCount)
+    self.s1:LoadImage(Cfg.cfg_item[cfg.RewardID].Icon)
+    self.s1Count:SetText(cfg.RewardCount)
+    self.t1:LoadImage(Cfg.cfg_item[cfg.ReplaceRewardID].Icon)
+    self.t1Count:SetText(cfg.ReplaceRewardCount)
     self._s1ID = cfg.RewardID
     self._s1Count = cfg.RewardCount
     self._t1ID = cfg.ReplaceRewardID
     self._t1Count = cfg.ReplaceRewardCount
   end
-  ;
-  (self.title):SetText((StringTable.Get)("str_senior_skin_draw_gifttype" .. cfg.RewardSortOrder))
+  self.title:SetText(StringTable.Get("str_senior_skin_draw_gifttype" .. cfg.RewardSortOrder))
   self._onClick = onClick
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateItem.SetBg = function(self, cfg)
-  -- function num : 0_3
+function UIHauteCoutureDuplicateItem:SetBg(cfg)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateItem.S1OnClick = function(self, go)
-  -- function num : 0_4
-  (self._onClick)(self._s1ID, (go.transform).position, self._s1Count)
+function UIHauteCoutureDuplicateItem:S1OnClick(go)
+  self._onClick(self._s1ID, go.transform.position, self._s1Count)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateItem.S2OnClick = function(self, go)
-  -- function num : 0_5
-  (self._onClick)(self._s2ID, (go.transform).position, self._s2Count)
+function UIHauteCoutureDuplicateItem:S2OnClick(go)
+  self._onClick(self._s2ID, go.transform.position, self._s2Count)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateItem.T1OnClick = function(self, go)
-  -- function num : 0_6
-  (self._onClick)(self._t1ID, (go.transform).position, self._t1Count)
+function UIHauteCoutureDuplicateItem:T1OnClick(go)
+  self._onClick(self._t1ID, go.transform.position, self._t1Count)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHauteCoutureDuplicateItem.T2OnClick = function(self, go)
-  -- function num : 0_7
-  (self._onClick)(self._t2ID, (go.transform).position, self._t2Count)
+function UIHauteCoutureDuplicateItem:T2OnClick(go)
+  self._onClick(self._t2ID, go.transform.position, self._t2Count)
 end
-
-

@@ -1,137 +1,85 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss_multi/ui_worldboss_multi_sideenter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_base")
 _class("UIWorldBossMultiSideEnter", UISideEnterItem_Base)
 UIWorldBossMultiSideEnter = UIWorldBossMultiSideEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossMultiSideEnter.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWorldBossMultiSideEnter:Constructor()
   self._worldBossModule = self:GetModule(WorldBossModule)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWorldBossMultiSideEnter:OnShow(uiParams)
   self:AttachEvent(GameEventType.OnOpenWorldBossMultiUI, self.OnOpenWorldBossMultiUI)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWorldBossMultiSideEnter:OnHide()
   if self._timerHandler then
-    ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+    GameGlobal.Timer():CancelEvent(self._timerHandler)
     self._timerHandler = nil
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter._GetComponents = function(self)
-  -- function num : 0_3
+function UIWorldBossMultiSideEnter:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter._CheckOpen = function(self, TT)
-  -- function num : 0_4 , upvalues : _ENV
+function UIWorldBossMultiSideEnter:_CheckOpen(TT)
   self:Lock("UIWorldBossMultiSideEnter")
-  local res = (self._worldBossModule):ReqWorldBossData(TT)
+  local res = self._worldBossModule:ReqWorldBossData(TT)
   if not res:GetSucc() then
     res:SetSucc(false)
     self:UnLock("UIWorldBossMultiSideEnter")
-    return 
+    return
   end
   self:UnLock("UIWorldBossMultiSideEnter")
-  local open = (self._worldBossModule):AwardMultiOpen()
-  local unlock = ((GameGlobal.GetModule)(RoleModule)):CheckModuleUnlock(GameModuleID.MD_WorldBoss)
-  if open then
-    open = unlock
-  end
+  local open = self._worldBossModule:AwardMultiOpen()
+  local unlock = GameGlobal.GetModule(RoleModule):CheckModuleUnlock(GameModuleID.MD_WorldBoss)
+  open = open and unlock
   return open
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_5
+function UIWorldBossMultiSideEnter:GetSideEnterRawImage()
   return "n18_zaidian_ent"
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter.DoShow = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  (UIWidgetHelper.SetLocalizationText)(self, "txtTitle", (StringTable.Get)("str_n18_worldboss_title"))
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "bg", self:GetSideEnterRawImage())
+function UIWorldBossMultiSideEnter:DoShow()
+  UIWidgetHelper.SetLocalizationText(self, "txtTitle", StringTable.Get("str_n18_worldboss_title"))
+  UIWidgetHelper.SetRawImage(self, "bg", self:GetSideEnterRawImage())
   self:_CheckClose(true)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter._CalcNew = function(self)
-  -- function num : 0_7
+function UIWorldBossMultiSideEnter:_CalcNew()
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter._CalcRed = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIWorldBossMultiSideEnter:_CalcRed()
   local key = self:_GetLocalDBKey()
-  do return (UIWorldBossMultiToolFunctions.GetLocalDBInt)(key, 0) <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return UIWorldBossMultiToolFunctions.GetLocalDBInt(key, 0) <= 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter.SetData = function(self)
-  -- function num : 0_9
+function UIWorldBossMultiSideEnter:SetData()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter._GetLocalDBKey = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  return UIWorldBossMultiKey.Opened .. ((self._worldBossModule).m_world_boss_data).boss_mission_id
+function UIWorldBossMultiSideEnter:_GetLocalDBKey()
+  return UIWorldBossMultiKey.Opened .. self._worldBossModule.m_world_boss_data.boss_mission_id
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter.OnOpenWorldBossMultiUI = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIWorldBossMultiSideEnter:OnOpenWorldBossMultiUI(go)
   local key = self:_GetLocalDBKey()
-  ;
-  (UIWorldBossMultiToolFunctions.SetLocalDBInt)(key, 1)
+  UIWorldBossMultiToolFunctions.SetLocalDBInt(key, 1)
   self:_CheckPoint()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossMultiSideEnter._CheckClose = function(self, unlock)
-  -- function num : 0_12 , upvalues : _ENV
+function UIWorldBossMultiSideEnter:_CheckClose(unlock)
   if unlock then
-    local remainTime = ((self._worldBossModule).m_world_boss_data).end_time - (self:GetModule(SvrTimeModule)):GetServerTime() * 0.001
-    if remainTime > 0 then
+    local remainTime = self._worldBossModule.m_world_boss_data.end_time - self:GetModule(SvrTimeModule):GetServerTime() * 0.001
+    if 0 < remainTime then
       if self._timerHandler then
-        ((GameGlobal.Timer)()):CancelEvent(self._timerHandler)
+        GameGlobal.Timer():CancelEvent(self._timerHandler)
         self._timerHandler = nil
       end
-      self._timerHandler = ((GameGlobal.Timer)()):AddEventTimes(remainTime * 1000, TimerTriggerCount.Once, function()
-    -- function num : 0_12_0 , upvalues : self
-    (self._setShowCallback)(false)
-  end
-)
+      self._timerHandler = GameGlobal.Timer():AddEventTimes(remainTime * 1000, TimerTriggerCount.Once, function()
+        self._setShowCallback(false)
+      end)
     end
   end
 end
-
-

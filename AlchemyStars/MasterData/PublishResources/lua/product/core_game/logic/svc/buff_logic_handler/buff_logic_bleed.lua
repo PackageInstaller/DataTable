@@ -1,63 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_bleed.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicAddBleed", BuffLogicBase)
 BuffLogicAddBleed = BuffLogicAddBleed
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicAddBleed.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicAddBleed:Constructor(buffInstance, logicParam)
   self._damagePercent = logicParam.damagePercent
   self._triggerBuffEffect = logicParam.triggerBuffEffect
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicAddBleed.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicAddBleed:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:Attributes() then
-    return 
+    return
   end
-  local turn = (e:BuffComponent()):GetBuffValue("BleedTurn")
-  local round = ((self._world):BattleStat()):GetLevelTotalRoundCount()
+  local turn = e:BuffComponent():GetBuffValue("BleedTurn")
+  local round = self._world:BattleStat():GetLevelTotalRoundCount()
   if turn == round and self._triggerBuffEffect == nil then
-    return 
+    return
   end
-  ;
-  (e:BuffComponent()):SetBuffValue("BleedTurn", round)
-  local layer = (self._buffInstance):GetLayerCount()
+  e:BuffComponent():SetBuffValue("BleedTurn", round)
+  local layer = self._buffInstance:GetLayerCount()
   if self._triggerBuffEffect then
-    layer = (self._buffLogicService):GetBuffLayer(e, self._triggerBuffEffect)
+    layer = self._buffLogicService:GetBuffLayer(e, self._triggerBuffEffect)
   end
-  local maxHP = (e:Attributes()):CalcMaxHp()
-  local curHp = (e:Attributes()):GetCurrentHP()
+  local maxHP = e:Attributes():CalcMaxHp()
+  local curHp = e:Attributes():GetCurrentHP()
   if layer == 0 then
-    return 
+    return
   end
   local casterEntity = self:GetCasterEntity()
   if casterEntity:EntityType() == nil then
     casterEntity = e
   end
-  local blsvc = (self._world):GetService("BuffLogic")
-  local damageParam = {percent = self._damagePercent, layer = layer, formulaID = 13}
-  do
-    if blsvc:IsEnableSpecialDotFormula(casterEntity, e) then
-      local cfgParam = blsvc:GetSpecialDotFormulaParamByID(FormulaNumberType.BloodDamage)
-      if cfgParam then
-        damageParam.percent = cfgParam.percent
-        damageParam.formulaID = cfgParam.formulaID
-      end
+  local blsvc = self._world:GetService("BuffLogic")
+  local damageParam = {
+    percent = self._damagePercent,
+    layer = layer,
+    formulaID = 13
+  }
+  if blsvc:IsEnableSpecialDotFormula(casterEntity, e) then
+    local cfgParam = blsvc:GetSpecialDotFormulaParamByID(FormulaNumberType.BloodDamage)
+    if cfgParam then
+      damageParam.percent = cfgParam.percent
+      damageParam.formulaID = cfgParam.formulaID
     end
-    local damageInfo = blsvc:DoBuffDamage((self._buffInstance):BuffID(), casterEntity, e, damageParam)
-    if damageInfo:GetDamageType() == DamageType.Real then
-      damageInfo:SetDamageType(DamageType.Bleed)
-    end
-    local buffResult = BuffResultDamage:New(damageInfo)
-    return buffResult
   end
+  local damageInfo = blsvc:DoBuffDamage(self._buffInstance:BuffID(), casterEntity, e, damageParam)
+  if damageInfo:GetDamageType() == DamageType.Real then
+    damageInfo:SetDamageType(DamageType.Bleed)
+  end
+  local buffResult = BuffResultDamage:New(damageInfo)
+  return buffResult
 end
-
-

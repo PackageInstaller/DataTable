@@ -1,113 +1,65 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/bead/ui_season_maze_bead_autosyn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeBeadAutoSyn", UIController)
 UISeasonMazeBeadAutoSyn = UISeasonMazeBeadAutoSyn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeBeadAutoSyn.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_0
+function UISeasonMazeBeadAutoSyn:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UISeasonMazeBeadAutoSyn:OnShow(uiParams)
   self._controller = uiParams[1]
-  if not uiParams[2] then
-    self._data = {}
-    self._allChoice = true
-    self:InitWidget()
-    self:_OnValue()
-  end
+  self._data = uiParams[2] or {}
+  self._allChoice = true
+  self:InitWidget()
+  self:_OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn.InitWidget = function(self)
-  -- function num : 0_2
+function UISeasonMazeBeadAutoSyn:InitWidget()
   self._scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
   self._itemTips = self:GetUIComponent("UISelectObjectPath", "ItemTips")
-  self._tips = (self._itemTips):SpawnObject("UISeasonMazeBeadTips")
+  self._tips = self._itemTips:SpawnObject("UISeasonMazeBeadTips")
   self._mark = self:GetUIComponent("Image", "AllChoiceBtnMark")
   self._commonItemTips = self:GetUIComponent("UISelectObjectPath", "CommonItemTips")
-  self._commonTips = (self._commonItemTips):SpawnObject("UISelectInfo")
+  self._commonTips = self._commonItemTips:SpawnObject("UISelectInfo")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn.AllChoiceBtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeBeadAutoSyn:AllChoiceBtnOnClick(go)
   self._allChoice = not self._allChoice
-  for _,value in pairs(self._data) do
+  for _, value in pairs(self._data) do
     value.choice = self._allChoice
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._mark).enabled = self._allChoice
-  ;
-  (self._scrollView):RefreshAllShownItem()
-  ;
-  (self._controller):OnChoiceChange(self._data)
+  self._mark.enabled = self._allChoice
+  self._scrollView:RefreshAllShownItem()
+  self._controller:OnChoiceChange(self._data)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn.OnItemChoiceChage = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISeasonMazeBeadAutoSyn:OnItemChoiceChage()
   local allChoice = true
-  for _,value in pairs(self._data) do
-    if allChoice then
-      allChoice = value.choice
-    end
+  for _, value in pairs(self._data) do
+    allChoice = allChoice and value.choice
   end
   self._allChoice = allChoice
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._mark).enabled = self._allChoice
-  ;
-  (self._controller):OnChoiceChange(self._data)
+  self._mark.enabled = self._allChoice
+  self._controller:OnChoiceChange(self._data)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn.OkBtnOnClick = function(self, go)
-  -- function num : 0_5
-  (self._controller):SynthesisBead(function()
-    -- function num : 0_5_0 , upvalues : self
+function UISeasonMazeBeadAutoSyn:OkBtnOnClick(go)
+  self._controller:SynthesisBead(function()
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn._OnValue = function(self)
-  -- function num : 0_6
-  (self._controller):OnChoiceChange(self._data)
+function UISeasonMazeBeadAutoSyn:_OnValue()
+  self._controller:OnChoiceChange(self._data)
   self:_InitDynamicScrollView()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn._InitDynamicScrollView = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  (self._scrollView):InitListView((table.count)(self._data), function(scrollview, index)
-    -- function num : 0_7_0 , upvalues : self
+function UISeasonMazeBeadAutoSyn:_InitDynamicScrollView()
+  self._scrollView:InitListView(table.count(self._data), function(scrollview, index)
     return self:_OnGetItemByIndex(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn._OnGetItemByIndex = function(self, scrollview, index)
-  -- function num : 0_8 , upvalues : _ENV
+function UISeasonMazeBeadAutoSyn:_OnGetItemByIndex(scrollview, index)
   local item = scrollview:NewListViewItem("UISeasonMazeBeadAutoSynItem")
   local itemPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if not item.IsInitHandlerCalled then
@@ -116,67 +68,39 @@ UISeasonMazeBeadAutoSyn._OnGetItemByIndex = function(self, scrollview, index)
   end
   local itemWidgets = itemPool:GetAllSpawnList()
   local itemWidget = itemWidgets[1]
-  do
-    if itemWidget then
-      local data = self:_GetBeadData(index + 1)
-      itemWidget:SetData(index + 1, data, function(uid, id, position)
-    -- function num : 0_8_0 , upvalues : self
-    (self._tips):SetData(uid, id, position)
+  if itemWidget then
+    local data = self:_GetBeadData(index + 1)
+    itemWidget:SetData(index + 1, data, function(uid, id, position)
+      self._tips:SetData(uid, id, position)
+    end, function()
+      self:OnItemChoiceChage()
+    end, function(widget, beadData1, beadData2)
+      self._controller:SynthesisPreView(widget, beadData1, beadData2, SeasonMazeBeadItemType.SynthesisList, function(uid, id, position)
+        self._tips:SetData(uid, id, position)
+      end, self._commonTips)
+    end)
   end
-, function()
-    -- function num : 0_8_1 , upvalues : self
-    self:OnItemChoiceChage()
-  end
-, function(widget, beadData1, beadData2)
-    -- function num : 0_8_2 , upvalues : self, _ENV
-    (self._controller):SynthesisPreView(widget, beadData1, beadData2, SeasonMazeBeadItemType.SynthesisList, function(uid, id, position)
-      -- function num : 0_8_2_0 , upvalues : self
-      (self._tips):SetData(uid, id, position)
-    end
-, self._commonTips)
-  end
-)
-    end
-    return item
-  end
+  return item
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn._GetBeadData = function(self, index)
-  -- function num : 0_9
-  return (self._data)[index]
+function UISeasonMazeBeadAutoSyn:_GetBeadData(index)
+  return self._data[index]
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn.InSlot = function(self, uid)
-  -- function num : 0_10
-  return (self._controller):InSlot(uid)
+function UISeasonMazeBeadAutoSyn:InSlot(uid)
+  return self._controller:InSlot(uid)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn.IsLock = function(self, data, itemType)
-  -- function num : 0_11
+function UISeasonMazeBeadAutoSyn:IsLock(data, itemType)
   return false
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn.IsMark = function(self, data, itemType)
-  -- function num : 0_12
+function UISeasonMazeBeadAutoSyn:IsMark(data, itemType)
   return false
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeBeadAutoSyn.CloseBtnOnClick = function(self, go)
-  -- function num : 0_13
-  (self._controller):ClearSynthesisSlot()
-  ;
-  (self._controller):RefreshAllShownItem()
+function UISeasonMazeBeadAutoSyn:CloseBtnOnClick(go)
+  self._controller:ClearSynthesisSlot()
+  self._controller:RefreshAllShownItem()
   self:CloseDialog()
 end
-
-

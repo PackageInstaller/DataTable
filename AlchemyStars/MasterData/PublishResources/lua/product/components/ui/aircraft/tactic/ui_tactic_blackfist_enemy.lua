@@ -1,67 +1,36 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_tactic_blackfist_enemy.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBlackfistEnemyItem", UICustomWidget)
 UIBlackfistEnemyItem = UIBlackfistEnemyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBlackfistEnemyItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIBlackfistEnemyItem:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackfistEnemyItem.InitWidget = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIBlackfistEnemyItem:InitWidget()
   self.icon = self:GetUIComponent("RawImageLoader", "icon")
   self.att1 = self:GetUIComponent("Image", "att1")
   self.att2 = self:GetUIComponent("Image", "att2")
-  self._rect = (self:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
+  self._rect = self:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackfistEnemyItem.SetData = function(self, idx, datas)
-  -- function num : 0_2 , upvalues : _ENV
+function UIBlackfistEnemyItem:SetData(idx, datas)
   local data = datas[idx]
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self.att1).sprite = data.elemt1
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R4 in 'UnsetPending'
-
+  self.att1.sprite = data.elemt1
   if data.elemt2 then
-    (self.att2).sprite = data.elemt2
-    ;
-    ((self.att2).gameObject):SetActive(true)
+    self.att2.sprite = data.elemt2
+    self.att2.gameObject:SetActive(true)
   else
-    ;
-    ((self.att2).gameObject):SetActive(false)
+    self.att2.gameObject:SetActive(false)
   end
-  ;
-  (self.icon):LoadImage(data.skin)
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R4 in 'UnsetPending'
-
+  self.icon:LoadImage(data.skin)
   if idx == 1 then
-    (self._rect).sizeDelta = Vector2(277, 525)
+    self._rect.sizeDelta = Vector2(277, 525)
   else
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._rect).sizeDelta = Vector2(177, 525)
+    self._rect.sizeDelta = Vector2(177, 525)
   end
   self._datas = datas
   self._idx = idx
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackfistEnemyItem.ImageOnClick = function(self, go)
-  -- function num : 0_3
+function UIBlackfistEnemyItem:ImageOnClick(go)
   self:ShowDialog("UIN7EnemyDetailsController", self._datas, self._idx)
 end
-
-

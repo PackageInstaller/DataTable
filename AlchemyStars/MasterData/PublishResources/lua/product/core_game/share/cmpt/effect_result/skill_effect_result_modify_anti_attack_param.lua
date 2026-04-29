@@ -1,46 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_effect_result_modify_anti_attack_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResultModifyAntiAttackParam", SkillEffectResultBase)
 SkillEffectResultModifyAntiAttackParam = SkillEffectResultModifyAntiAttackParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResultModifyAntiAttackParam.Constructor = function(self, casterEntityID, modifyType, newValue)
-  -- function num : 0_0
+function SkillEffectResultModifyAntiAttackParam:Constructor(casterEntityID, modifyType, newValue)
   self._casterEntityID = casterEntityID
   self._modifyType = modifyType
   self._newValue = newValue
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultModifyAntiAttackParam.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectResultModifyAntiAttackParam:GetEffectType()
   return SkillEffectType.ModifyAntiAttackParam
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultModifyAntiAttackParam.GetCasterEntityID = function(self)
-  -- function num : 0_2
+function SkillEffectResultModifyAntiAttackParam:GetCasterEntityID()
   return self._casterEntityID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultModifyAntiAttackParam.GetModifyType = function(self)
-  -- function num : 0_3
+function SkillEffectResultModifyAntiAttackParam:GetModifyType()
   return self._modifyType
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResultModifyAntiAttackParam.GetNewValue = function(self)
-  -- function num : 0_4
+function SkillEffectResultModifyAntiAttackParam:GetNewValue()
   return self._newValue
 end
-
-

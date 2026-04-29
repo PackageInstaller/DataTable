@@ -1,131 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/skill_rand_attack_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillRandAttackCalculator", Object)
 SkillRandAttackCalculator = SkillRandAttackCalculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillRandAttackCalculator.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillRandAttackCalculator:Constructor(world)
   self._world = world
-  self._configService = (self._world):GetService("Config")
-  self._skillLogicService = (self._world):GetService("SkillLogic")
-  self._skillEffectCalcService = (self._world):GetService("SkillEffectCalc")
-  self._mathService = (self._world):GetService("Math")
+  self._configService = self._world:GetService("Config")
+  self._skillLogicService = self._world:GetService("SkillLogic")
+  self._skillEffectCalcService = self._world:GetService("SkillEffectCalc")
+  self._mathService = self._world:GetService("Math")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRandAttackCalculator.DoRandAttack = function(self, skillID, casterEntity, skillEffectParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillRandAttackCalculator:DoRandAttack(skillID, casterEntity, skillEffectParam)
   local workEffectParam = skillEffectParam
-  local posCaster = (casterEntity:GridLocation()).Position
+  local posCaster = casterEntity:GridLocation().Position
   if not casterEntity:HasAttributes() then
     casterEntity:AddAttributes()
   end
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillResultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.Damage)
   local listTargetHp = {}
   local listAlive = {}
   local listDeath = {}
-  for k,res in ipairs(skillResultArray) do
+  for k, res in ipairs(skillResultArray) do
     local targetEntityID = res:GetTargetID()
-    if targetEntityID > 0 then
+    if 0 < targetEntityID then
       local nCurHp = listTargetHp[targetEntityID]
-      if nCurHp == nil then
-        local targetEntity = (self._world):GetEntityByID(targetEntityID)
-        local nCurHp = (targetEntity:Attributes()):GetCurrentHP()
+      if nil == nCurHp then
+        local targetEntity = self._world:GetEntityByID(targetEntityID)
+        local nCurHp = targetEntity:Attributes():GetCurrentHP()
         listTargetHp[targetEntityID] = nCurHp
-        if nCurHp > 0 then
+        if 0 < nCurHp then
           listAlive[#listAlive + 1] = targetEntity
-        else
-          if targetEntity:HasMonsterID() then
-            listDeath[#listDeath + 1] = targetEntity
-            sMonsterShowLogic:AddMonsterDeadMark(targetEntity)
-          end
+        elseif targetEntity:HasMonsterID() then
+          listDeath[#listDeath + 1] = targetEntity
+          sMonsterShowLogic:AddMonsterDeadMark(targetEntity)
         end
       end
     end
   end
-  local svcCalcDamage = (self._world):GetService("CalcDamage")
-  local randomSvc = (self._world):GetService("RandomLogic")
-  local soulCount = (casterEntity:BuffComponent()):GetBuffValue("SoulCount") or 0
+  local svcCalcDamage = self._world:GetService("CalcDamage")
+  local randomSvc = self._world:GetService("RandomLogic")
+  local soulCount = casterEntity:BuffComponent():GetBuffValue("SoulCount") or 0
   local nNewSoulCount = soulCount
-  nNewSoulCount = (math.min)(nNewSoulCount, workEffectParam:GetMaxTimes())
-  nNewSoulCount = (math.max)(nNewSoulCount, workEffectParam:GetMinTimes())
+  nNewSoulCount = math.min(nNewSoulCount, workEffectParam:GetMaxTimes())
+  nNewSoulCount = math.max(nNewSoulCount, workEffectParam:GetMinTimes())
   local nAttackTimes = nNewSoulCount
   local listRandAttackData = {}
-  if #listAlive > 0 then
-    local formulaService = (self._world):GetService("Formula")
-    local skillLogicService = (self._world):GetService("SkillLogic")
-    local triggerSvc = (self._world):GetService("Trigger")
-    local battleStatCmpt = (self._world):BattleStat()
-    local attackPos = (casterEntity:GridLocation()):GetGridPos()
+  if 0 < #listAlive then
+    local formulaService = self._world:GetService("Formula")
+    local skillLogicService = self._world:GetService("SkillLogic")
+    local triggerSvc = self._world:GetService("Trigger")
+    local battleStatCmpt = self._world:BattleStat()
+    local attackPos = casterEntity:GridLocation():GetGridPos()
     for i = 1, nAttackTimes do
       local nRand = randomSvc:LogicRand(1, #listAlive)
       local targetEntity = listAlive[nRand]
       if targetEntity then
-        local targetPos = (targetEntity:GridLocation()):GetGridPos()
+        local targetPos = targetEntity:GridLocation():GetGridPos()
         local nt = NTRandAttackBegin:New(casterEntity, targetEntity, attackPos, targetPos)
         triggerSvc:Notify(nt)
-        local damageInfo = svcCalcDamage:DoCalcDamage(casterEntity, targetEntity, {percent = workEffectParam:GetPercent(), skillID = skillID, formulaID = workEffectParam:GetFormulaID(), skillEffectType = SkillEffectType.RandAttack})
+        local damageInfo = svcCalcDamage:DoCalcDamage(casterEntity, targetEntity, {
+          percent = workEffectParam:GetPercent(),
+          skillID = skillID,
+          formulaID = workEffectParam:GetFormulaID(),
+          skillEffectType = SkillEffectType.RandAttack
+        })
         local defenderData = SkillEffectResult_RandAttackData:New(targetEntity:GetID(), damageInfo)
         listRandAttackData[#listRandAttackData + 1] = defenderData
-        do
-          if targetEntity:HasMonsterID() then
-            local curHP = (targetEntity:Attributes()):GetCurrentHP()
-            if curHP <= 0 then
-              sMonsterShowLogic:AddMonsterDeadMark(targetEntity)
-            end
-          end
-          do
-            local nt = NTRandAttackEnd:New(casterEntity, targetEntity, attackPos, targetPos)
-            triggerSvc:Notify(nt)
-            -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC190: LeaveBlock: unexpected jumping out IF_STMT
-
+        if targetEntity:HasMonsterID() then
+          local curHP = targetEntity:Attributes():GetCurrentHP()
+          if curHP <= 0 then
+            sMonsterShowLogic:AddMonsterDeadMark(targetEntity)
           end
         end
+        local nt = NTRandAttackEnd:New(casterEntity, targetEntity, attackPos, targetPos)
+        triggerSvc:Notify(nt)
       end
     end
   end
-  do
-    local skillResult = self:_GenerateResult(nAttackTimes, listRandAttackData, listDeath, listAlive)
-    skillEffectResultContainer:AddEffectResult(skillResult, true)
-    return skillResult
-  end
+  local skillResult = self:_GenerateResult(nAttackTimes, listRandAttackData, listDeath, listAlive)
+  skillEffectResultContainer:AddEffectResult(skillResult, true)
+  return skillResult
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRandAttackCalculator._EntityList2IDList = function(self, entityList)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillRandAttackCalculator:_EntityList2IDList(entityList)
   local t = {}
-  for _,e in ipairs(entityList) do
-    (table.insert)(t, e:GetID())
+  for _, e in ipairs(entityList) do
+    table.insert(t, e:GetID())
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillRandAttackCalculator._GenerateResult = function(self, nAttackTimes, listRandAttackData, listDeath, listAlive)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillRandAttackCalculator:_GenerateResult(nAttackTimes, listRandAttackData, listDeath, listAlive)
   local listDeathID = {}
   local listDeathPos = {}
-  for _,entity in ipairs(listDeath) do
-    (table.insert)(listDeathID, entity:GetID())
-    ;
-    (table.insert)(listDeathPos, entity:GetGridPosition())
+  for _, entity in ipairs(listDeath) do
+    table.insert(listDeathID, entity:GetID())
+    table.insert(listDeathPos, entity:GetGridPosition())
   end
   local listAliveID = self:_EntityList2IDList(listAlive)
   return SkillEffectResult_RandAttack:New(nAttackTimes, listRandAttackData, listDeathID, listDeathPos, listAliveID)
 end
-
-

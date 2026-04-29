@@ -1,24 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/ps_scope_forward_no_attack_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillScopeForwardNoAttackPhase", PlaySkillPhaseBase)
 PlaySkillScopeForwardNoAttackPhase = PlaySkillScopeForwardNoAttackPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillScopeForwardNoAttackPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
+function PlaySkillScopeForwardNoAttackPhase:PlayFlight(TT, casterEntity, phaseParam)
   local scopeForwardParam = phaseParam
   local gridEffectID = scopeForwardParam:GetGridEffectID()
   local bestEffectTime = scopeForwardParam:GetBestEffectTime()
   local gridIntervalTime = scopeForwardParam:GetGridIntervalTime()
   local hasConvert = scopeForwardParam:HasConvert()
   local effectDirection = scopeForwardParam:GetEffectDirection()
-  local castPos = (casterEntity:GridLocation()).Position
+  local castPos = casterEntity:GridLocation().Position
   local renderPickUpComponent = casterEntity:RenderPickUpComponent()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local convertResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.ConvertGridElement)
@@ -27,7 +20,7 @@ PlaySkillScopeForwardNoAttackPhase.PlayFlight = function(self, TT, casterEntity,
   local pickUpGridArray = renderPickUpComponent:GetAllValidPickUpGridPos()
   local pickUpGridPos = pickUpGridArray[1]
   local targetGirdList, f, maxGridCount = InnerGameSortGridHelperRender:SortGridWithCenterPos(gridDataArray, pickUpGridPos)
-  local pieceService = (self._world):GetService("Piece")
+  local pieceService = self._world:GetService("Piece")
   local tConvertInfo = {}
   local tnConvertTaskID = {}
   local tidHitTask = {}
@@ -35,18 +28,16 @@ PlaySkillScopeForwardNoAttackPhase.PlayFlight = function(self, TT, casterEntity,
     for dir = 1, 9 do
       local t = targetGirdList[dir]
       local gridIndex = i
-      if gridIndex > 0 and gridIndex <= #t.gridList then
-        local gridPos = (t.gridList)[gridIndex]
+      if 0 < gridIndex and gridIndex <= #t.gridList then
+        local gridPos = t.gridList[gridIndex]
         local oldGridType = PieceType.None
         local gridEntity = pieceService:FindPieceEntity(gridPos)
         local pieceCmpt = gridEntity:Piece()
         oldGridType = pieceCmpt:GetPieceType()
         local convertInfo = NTGridConvert_ConvertInfo:New(gridPos, oldGridType, targetGridType)
-        ;
-        (table.insert)(tConvertInfo, convertInfo)
-        local tid = ((GameGlobal.TaskManager)()):CoreGameStartTask((self:SkillService())._SingleGridEffect, self:SkillService(), gridEffectID, gridPos, bestEffectTime, targetGridType)
-        ;
-        (table.insert)(tnConvertTaskID, tid)
+        table.insert(tConvertInfo, convertInfo)
+        local tid = GameGlobal.TaskManager():CoreGameStartTask(self:SkillService()._SingleGridEffect, self:SkillService(), gridEffectID, gridPos, bestEffectTime, targetGridType)
+        table.insert(tnConvertTaskID, tid)
       end
     end
     if i ~= maxGridCount then
@@ -55,17 +46,15 @@ PlaySkillScopeForwardNoAttackPhase.PlayFlight = function(self, TT, casterEntity,
   end
   local finishDelayTime = scopeForwardParam:GetFinishDelayTime()
   YIELD(TT, finishDelayTime)
-  local playSkillService = (self._world):GetService("PlaySkill")
-  local svcPlayBuff = (self._world):GetService("PlayBuff")
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(tnConvertTaskID) do
+  local playSkillService = self._world:GetService("PlaySkill")
+  local svcPlayBuff = self._world:GetService("PlayBuff")
+  while not TaskHelper:GetInstance():IsAllTaskFinished(tnConvertTaskID) do
     YIELD(TT)
   end
-  while not (TaskHelper:GetInstance()):IsAllTaskFinished(tidHitTask) do
+  while not TaskHelper:GetInstance():IsAllTaskFinished(tidHitTask) do
     YIELD(TT)
   end
   local nt = NTGridConvert:New(casterEntity, tConvertInfo)
   nt:SetConvertEffectType(SkillEffectType.ConvertGridElement)
   svcPlayBuff:PlayBuffView(TT, nt)
 end
-
-

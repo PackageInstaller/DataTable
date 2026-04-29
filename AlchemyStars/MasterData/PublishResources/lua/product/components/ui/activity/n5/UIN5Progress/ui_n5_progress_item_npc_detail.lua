@@ -1,14 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n5/UIN5Progress/ui_n5_progress_item_npc_detail.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN5ProgressItemNpcDetail", UIN5ProgressItem)
 UIN5ProgressItemNpcDetail = UIN5ProgressItemNpcDetail
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN5ProgressItemNpcDetail.Constructor = function(self)
-  -- function num : 0_0
+function UIN5ProgressItemNpcDetail:Constructor()
 end
-
-

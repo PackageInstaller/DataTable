@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_stumbles_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyStumblesItem", UICustomWidget)
 UIPetIntimacyStumblesItem = UIPetIntimacyStumblesItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyStumblesItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetIntimacyStumblesItem:OnShow(uiParams)
   self._imgUnlock = self:GetUIComponent("Image", "imgUnlock")
   self._imgLock = self:GetUIComponent("Image", "imgLock")
   self._txtLv = self:GetUIComponent("UILocalizationText", "txtLv")
@@ -19,33 +12,26 @@ UIPetIntimacyStumblesItem.OnShow = function(self, uiParams)
   self._txtHp = self:GetUIComponent("UILocalizationText", "txtHp")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyStumblesItem.Flush = function(self, lv, pet)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPetIntimacyStumblesItem:Flush(lv, pet)
   local petTemplateId = pet:GetTemplateID()
-  local cfg = (Cfg.cfg_pet_affinity)({PetID = petTemplateId, AffinityLevel = lv})
+  local cfg = Cfg.cfg_pet_affinity({PetID = petTemplateId, AffinityLevel = lv})
   if not cfg then
-    return 
+    return
   end
   local c = cfg[1]
   if not c then
-    return 
+    return
   end
   local level = pet:GetPetAffinityLevel()
   local unlock = lv <= level
-  ;
-  ((self._imgUnlock).gameObject):SetActive(unlock)
-  ;
-  ((self._imgLock).gameObject):SetActive(not unlock)
-  ;
-  (self._txtLv):SetText((StringTable.Get)("str_affinity_stumbles_lv", lv))
-  ;
-  (self._unlock):SetActive(not unlock)
-  local tUnlockProfile = (UIPetIntimacyLevelUp.GetUnlockProfile)(petTemplateId, lv - 1, lv)
-  local isUnlockProfile = not tUnlockProfile or (table.count)(tUnlockProfile) > 0
-  local tUnlockVoice = (UIPetIntimacyLevelUp.GetUnlockVoice)(petTemplateId, nil, lv - 1, lv)
-  local isUnlockVoice = not tUnlockVoice or (table.count)(tUnlockVoice) > 0
+  self._imgUnlock.gameObject:SetActive(unlock)
+  self._imgLock.gameObject:SetActive(not unlock)
+  self._txtLv:SetText(StringTable.Get("str_affinity_stumbles_lv", lv))
+  self._unlock:SetActive(not unlock)
+  local tUnlockProfile = UIPetIntimacyLevelUp.GetUnlockProfile(petTemplateId, lv - 1, lv)
+  local isUnlockProfile = tUnlockProfile and table.count(tUnlockProfile) > 0
+  local tUnlockVoice = UIPetIntimacyLevelUp.GetUnlockVoice(petTemplateId, nil, lv - 1, lv)
+  local isUnlockVoice = tUnlockVoice and table.count(tUnlockVoice) > 0
   local key = ""
   if isUnlockProfile and isUnlockVoice then
     key = "str_affinity_stumbles_unlock_new_profile_voice"
@@ -57,35 +43,20 @@ UIPetIntimacyStumblesItem.Flush = function(self, lv, pet)
       key = "str_affinity_stumbles_unlock_new_voice"
     end
   end
-  if (string.isnullorempty)(key) then
-    (self._txtUnlock):SetText("")
+  if string.isnullorempty(key) then
+    self._txtUnlock:SetText("")
   else
-    (self._txtUnlock):SetText((StringTable.Get)(key))
+    self._txtUnlock:SetText(StringTable.Get(key))
   end
-  ;
-  (self._txtAttack):SetText("+" .. c.Attack)
-  ;
-  (self._txtDefend):SetText("+" .. c.Defence)
-  ;
-  (self._txtHp):SetText("+" .. c.Health)
-  local f208 = 0.8156862745098
+  self._txtAttack:SetText("+" .. c.Attack)
+  self._txtDefend:SetText("+" .. c.Defence)
+  self._txtHp:SetText("+" .. c.Health)
+  local f208 = 0.8156862745098039
   local colorText = Color(f208, f208, f208, 1)
   if unlock then
-    colorText = Color(0.003921568627451, 0.94901960784314, 1, 1)
+    colorText = Color(0.00392156862745098, 0.9490196078431372, 1, 1)
   end
-  -- DECOMPILER ERROR at PC146: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._txtAttack).color = colorText
-  -- DECOMPILER ERROR at PC148: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._txtDefend).color = colorText
-  -- DECOMPILER ERROR at PC150: Confused about usage of register: R15 in 'UnsetPending'
-
-  ;
-  (self._txtHp).color = colorText
-  -- DECOMPILER ERROR: 11 unprocessed JMP targets
+  self._txtAttack.color = colorText
+  self._txtDefend.color = colorText
+  self._txtHp.color = colorText
 end
-
-

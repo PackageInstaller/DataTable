@@ -1,13 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/skill/skill_view/monster/n41cn12/cfg_skill_view_5411026.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, ViewPhase = 2, PhaseType = 3, DelayType = 4, DelayFromPhase = 5, DelayMS = 6, PhaseParam = 7}
-local config = {
-{1, 1, 0, 1, 0, 0, 
-{" DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCasterAnimation,animName = Atk; PlayAudio,audioID = 6014,audioType=1; PlayCasterBindEffect,effectID=PARAM.AtkEffectId; Wait,waitTime=1000; PlayTargetAddBuff,buffID=50001; PlayTargetAddBuff,buffID=50002; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1; Wait,waitTime=166; DataSelectDamage,damageIndex = 1,damageStageIndex=2; PlayTargetAddBuff,buffID=50001; PlayTargetAddBuff,buffID=50002; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=PARAM.Atk2EffectId,turnToTarget=1; DataSelectSummonThing,index=1; ShowSummonThing,label=redoShow; DataSelectNextSummonThing; Jump,condition=CheckSummonThingValid,goto=redoShow; Wait,waitTime=700; "}
+local key = {
+  ID = 1,
+  ViewPhase = 2,
+  PhaseType = 3,
+  DelayType = 4,
+  DelayFromPhase = 5,
+  DelayMS = 6,
+  PhaseParam = 7
 }
+local config = {
+  {
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    {
+      " DataSelectDamage,damageIndex = 1,damageStageIndex=1; PlayCasterAnimation,animName = Atk; PlayAudio,audioID = 6014,audioType=1; PlayCasterBindEffect,effectID=PARAM.AtkEffectId; Wait,waitTime=1000; PlayTargetAddBuff,buffID=50001; PlayTargetAddBuff,buffID=50002; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=0,turnToTarget=1; Wait,waitTime=166; DataSelectDamage,damageIndex = 1,damageStageIndex=2; PlayTargetAddBuff,buffID=50001; PlayTargetAddBuff,buffID=50002; PlayCommonBeHit,hitAnimName=Hit,hitEffectID=PARAM.Atk2EffectId,turnToTarget=1; DataSelectSummonThing,index=1; ShowSummonThing,label=redoShow; DataSelectNextSummonThing; Jump,condition=CheckSummonThingValid,goto=redoShow; Wait,waitTime=700; "
+    }
+  }
 }
 return config, "ID", key
-

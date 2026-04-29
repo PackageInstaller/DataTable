@@ -1,39 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_widget_feature_trap_defence.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWidgetFeatureTrapDefence", UICustomWidget)
 UIWidgetFeatureTrapDefence = UIWidgetFeatureTrapDefence
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWidgetFeatureTrapDefence.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIWidgetFeatureTrapDefence:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.GetFeatureType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIWidgetFeatureTrapDefence:GetFeatureType()
   return FeatureType.TrapDefence
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIWidgetFeatureTrapDefence:InitWidget()
   self._imgFeatureTrapDefence = self:GetUIComponent("Image", "UIWidgetFeatureTrapDefence")
   self._imageNormalGo = self:GetGameObject("ImageNormal")
   self._imageWarningGo = self:GetGameObject("ImageWarning")
   self._skillInfoGenGo = self:GetGameObject("SkillInfoGen")
-  ;
-  (self._skillInfoGenGo):SetActive(false)
+  self._skillInfoGenGo:SetActive(false)
   self._skillPool = self:GetUIComponent("UISelectObjectPath", "SkillInfoGen")
-  self._skillUI = (self._skillPool):SpawnObject("UIWidgetFeaturePersonaSkillInfo")
+  self._skillUI = self._skillPool:SpawnObject("UIWidgetFeaturePersonaSkillInfo")
   self._txtHPPercent = self:GetUIComponent("UILocalizationText", "HPPercent")
-  ;
-  (self._txtHPPercent):SetText("100%")
+  self._txtHPPercent:SetText("100%")
   self._uiBattle = nil
   self._switchTimeEvent = nil
   self._switchTimeLength = 100
@@ -48,21 +33,14 @@ UIWidgetFeatureTrapDefence.InitWidget = function(self)
   self:OnPersonaPowerChange(self:GetFeatureType(), self._power, self._ready)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.OnRefreshHPPercent = function(self, hpPercent)
-  -- function num : 0_3
+function UIWidgetFeatureTrapDefence:OnRefreshHPPercent(hpPercent)
   local txtTemp = hpPercent .. "%"
-  ;
-  (self._txtHPPercent):SetText(txtTemp)
+  self._txtHPPercent:SetText(txtTemp)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.OnPersonaPowerChange = function(self, featureType, power, ready)
-  -- function num : 0_4
+function UIWidgetFeatureTrapDefence:OnPersonaPowerChange(featureType, power, ready)
   if self:GetFeatureType() ~= featureType then
-    return 
+    return
   end
   if power <= 0 then
     power = 0
@@ -76,250 +54,158 @@ UIWidgetFeatureTrapDefence.OnPersonaPowerChange = function(self, featureType, po
   self:_RefreshStateBg()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence._RefreshStateBg = function(self)
-  -- function num : 0_5
-  (self._imageNormalGo):SetActive(self._ready ~= 1)
-  ;
-  (self._imageWarningGo):SetActive(self._ready == 1)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIWidgetFeatureTrapDefence:_RefreshStateBg()
+  self._imageNormalGo:SetActive(self._ready ~= 1)
+  self._imageWarningGo:SetActive(self._ready == 1)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.SetUIBattle = function(self, uiBattle)
-  -- function num : 0_6
+function UIWidgetFeatureTrapDefence:SetUIBattle(uiBattle)
   self._uiBattle = uiBattle
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.GetUIBattle = function(self)
-  -- function num : 0_7
+function UIWidgetFeatureTrapDefence:GetUIBattle()
   return self._uiBattle
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.SetData = function(self, TrapDefenceInitData)
-  -- function num : 0_8 , upvalues : _ENV
+function UIWidgetFeatureTrapDefence:SetData(TrapDefenceInitData)
   self._featureInitData = TrapDefenceInitData
-  self._skillID = (self._featureInitData):GetMasterSkillID()
-  self._skillConfigData = (ConfigServiceHelper.GetSkillConfigData)(self._skillID)
+  self._skillID = self._featureInitData:GetMasterSkillID()
+  self._skillConfigData = ConfigServiceHelper.GetSkillConfigData(self._skillID)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.UIWidgetFeatureTrapDefenceOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  if (InnerGameHelperRender.IsPuzzleState)() or (InnerGameHelperRender.IsPet1702361ActiveSkillPreview)() then
-    return 
+function UIWidgetFeatureTrapDefence:UIWidgetFeatureTrapDefenceOnClick(go)
+  if InnerGameHelperRender.IsPuzzleState() or InnerGameHelperRender.IsPet1702361ActiveSkillPreview() then
+    return
   end
   self:OnClickUI()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.OnClickUI = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local coreGameStateID = (GameGlobal:GetInstance()):CoreGameStateID()
-  local enableInput = (GameGlobal:GetInstance()):IsInputEnable()
+function UIWidgetFeatureTrapDefence:OnClickUI()
+  local coreGameStateID = GameGlobal:GetInstance():CoreGameStateID()
+  local enableInput = GameGlobal:GetInstance():IsInputEnable()
   if coreGameStateID == GameStateID.WaitInput and enableInput == true then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, self._skillID)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickPersonaSkill, self:GetFeatureType(), self._skillID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._skillID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickPersonaSkill, self:GetFeatureType(), self._skillID)
     self:ShowPersonaSkillUI()
-  else
-    if coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
-      if self._switchTimeEvent == nil then
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UISwitchActiveSkillUI)
-        self:ShowPersonaSkillUI()
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, self._skillID)
-        self._switchTimeEvent = ((GameGlobal.Timer)()):AddEvent(self._switchTimeLength, function()
-    -- function num : 0_10_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickPersonaSkill, self:GetFeatureType(), self._skillID)
-    self._switchTimeEvent = nil
-    ;
-    (Log.notice)("preview persona skill", self._skillID)
-  end
-)
-      else
-        ;
-        (Log.notice)("still in switch", self._skillID)
-      end
+  elseif coreGameStateID == GameStateID.PreviewActiveSkill or coreGameStateID == GameStateID.PickUpActiveSkillTarget then
+    if self._switchTimeEvent == nil then
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.UISwitchActiveSkillUI)
+      self:ShowPersonaSkillUI()
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, self._skillID)
+      self._switchTimeEvent = GameGlobal.Timer():AddEvent(self._switchTimeLength, function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickPersonaSkill, self:GetFeatureType(), self._skillID)
+        self._switchTimeEvent = nil
+        Log.notice("preview persona skill", self._skillID)
+      end)
+    else
+      Log.notice("still in switch", self._skillID)
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.ShowPersonaSkillUI = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, true, self:GetFeatureType())
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelActiveSkillCast)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PauseGuideWeakLine)
+function UIWidgetFeatureTrapDefence:ShowPersonaSkillUI()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, true, self:GetFeatureType())
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelActiveSkillCast)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PauseGuideWeakLine)
   local skillConfigData = self._skillConfigData
   local canCast = self._ready == 1
-  local castCb = function(castSkillID, pickUpType)
-    -- function num : 0_11_0 , upvalues : self
+  
+  local function castCb(castSkillID, pickUpType)
     self:OnCastSkill(castSkillID, pickUpType)
   end
-
-  local cancelCb = function()
-    -- function num : 0_11_1 , upvalues : self
+  
+  local function cancelCb()
     self:OnCancelSkill()
   end
-
-  ;
-  (self._skillUI):Init(self:GetFeatureType(), self._skillID, nil, self._power, canCast, castCb, cancelCb)
+  
+  self._skillUI:Init(self:GetFeatureType(), self._skillID, nil, self._power, canCast, castCb, cancelCb)
   local pickUpType = skillConfigData:GetSkillPickType()
   self._pickUpType = pickUpType
   if pickUpType ~= SkillPickUpType.None then
     self._isCurPetSkillReady = canCast
     self:_PreviewPickUpSkill(self._skillID, pickUpType)
-    ;
-    (self._skillUI):ShowCancelBtn(false)
+    self._skillUI:ShowCancelBtn(false)
   else
-    (self._skillUI):ShowCancelBtn(true)
+    self._skillUI:ShowCancelBtn(true)
   end
-  ;
-  (self._skillInfoGenGo):SetActive(true)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
+  self._skillInfoGenGo:SetActive(true)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ClickUI2ClosePreviewMonster)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.HidePersonaSkillUI = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  (self._skillInfoGenGo):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIFeatureSkillInfoShow, false, self:GetFeatureType())
+function UIWidgetFeatureTrapDefence:HidePersonaSkillUI()
+  self._skillInfoGenGo:SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UIFeatureSkillInfoShow, false, self:GetFeatureType())
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.OnCastSkill = function(self, castSkillID, pickUpType)
-  -- function num : 0_13 , upvalues : _ENV
+function UIWidgetFeatureTrapDefence:OnCastSkill(castSkillID, pickUpType)
   if pickUpType == SkillPickUpType.None then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastPersonaSkill, castSkillID)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.CastPersonaSkill, castSkillID)
     self:ClearPower()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIResetLastPreviewPetId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIResetLastPreviewPetId)
+  elseif pickUpType == SkillPickUpType.PickSwitchInstruction then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, true)
+    local petPstID = 0
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
   else
-    if pickUpType == SkillPickUpType.PickSwitchInstruction then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnablePickUpSkillCast, true)
-      local petPstID = 0
-      ;
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
-    else
-      do
-        ;
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.EnablePickUpSkillCast, false)
-        do
-          local petPstID = 0
-          ;
-          ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
-          self:HidePersonaSkillUI()
-        end
-      end
-    end
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.EnablePickUpSkillCast, false)
+    local petPstID = 0
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ActiveSkillPickUp, castSkillID, petPstID)
   end
-end
-
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.OnCancelSkill = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.StopPreviewActiveSkill, false, true, self._skillID, -1)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.PreClickPetHead, -1)
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.OnSwitchActiveSkillUI = function(self)
-  -- function num : 0_15
+function UIWidgetFeatureTrapDefence:OnCancelSkill()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.StopPreviewActiveSkill, false, true, self._skillID, -1)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.PreClickPetHead, -1)
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
+function UIWidgetFeatureTrapDefence:OnSwitchActiveSkillUI()
+  self:HidePersonaSkillUI()
+end
 
-UIWidgetFeatureTrapDefence.OnChooseTargetConfirm = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if self._skillID > 0 and (self._uiBattle):GetCurPetActiveSkillId() == self._skillID then
+function UIWidgetFeatureTrapDefence:OnChooseTargetConfirm()
+  if self._skillID > 0 and self._uiBattle:GetCurPetActiveSkillId() == self._skillID then
     self:ClearPower()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UIResetLastPreviewPetId)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.UIResetLastPreviewPetId)
     self:HidePersonaSkillUI()
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.OnChooseTargetCancel = function(self)
-  -- function num : 0_17
+function UIWidgetFeatureTrapDefence:OnChooseTargetCancel()
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.OnPickInvalidGridCancel = function(self)
-  -- function num : 0_18
+function UIWidgetFeatureTrapDefence:OnPickInvalidGridCancel()
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.OnClickWhenPickUp = function(self)
-  -- function num : 0_19
+function UIWidgetFeatureTrapDefence:OnClickWhenPickUp()
   self:HidePersonaSkillUI()
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence._PreviewPickUpSkill = function(self, skillId, pickUpType)
-  -- function num : 0_20 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.UICancelActiveSkillSwitchTimer)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CastPersonaSkill, skillId)
+function UIWidgetFeatureTrapDefence:_PreviewPickUpSkill(skillId, pickUpType)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.UICancelActiveSkillSwitchTimer)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CastPersonaSkill, skillId)
   if pickUpType == SkillPickUpType.None then
-    (Log.fatal)("[UIWidgetFeatureTrapDefence] preview skill pickup type is none")
+    Log.fatal("[UIWidgetFeatureTrapDefence] preview skill pickup type is none")
   else
     local petPstID = 0
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShowActiveSkillChooseUI, skillId, pickUpType, petPstID, self._isCurPetSkillReady)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShowActiveSkillChooseUI, skillId, pickUpType, petPstID, self._isCurPetSkillReady)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.HandleUIChooseTargetGray = function(self)
-  -- function num : 0_21 , upvalues : _ENV
-  if self._ready ~= 1 then
-    do
-      local bReady = self._skillID <= 0 or (self._uiBattle):GetCurPetActiveSkillId() ~= self._skillID
-      if not bReady then
-        (ToastManager.ShowToast)((StringTable.Get)("str_n31_TrapDefence_battle_cast_skill_count_not_enough"))
-      end
-      -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIWidgetFeatureTrapDefence:HandleUIChooseTargetGray()
+  if self._skillID > 0 and self._uiBattle:GetCurPetActiveSkillId() == self._skillID then
+    local bReady = self._ready == 1
+    if not bReady then
+      ToastManager.ShowToast(StringTable.Get("str_n31_TrapDefence_battle_cast_skill_count_not_enough"))
     end
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWidgetFeatureTrapDefence.ClearPower = function(self)
-  -- function num : 0_22
+function UIWidgetFeatureTrapDefence:ClearPower()
   self._power = 0
   self._ready = 0
   self:_RefreshStateBg()
 end
-
-

@@ -1,55 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_scorpion_summon_monster_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayScorpionSummonMonsterInstruction", BaseInstruction)
 PlayScorpionSummonMonsterInstruction = PlayScorpionSummonMonsterInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayScorpionSummonMonsterInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0
+function PlayScorpionSummonMonsterInstruction:Constructor(paramList)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayScorpionSummonMonsterInstruction.GetCacheResource = function(self)
-  -- function num : 0_1
+function PlayScorpionSummonMonsterInstruction:GetCacheResource()
   local t = {}
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayScorpionSummonMonsterInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayScorpionSummonMonsterInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local service = world:GetService("PlaySkillInstruction")
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.ScorpionSummon)
   if not resultArray then
-    return 
+    return
   end
   for i = 1, #resultArray do
     local result = resultArray[i]
     local summonType = result:GetSummonType()
     if summonType == SkillEffectEnum_SummonType.Monster then
       local summonReslut = result:GetSummonResult()
-      for _,_result in ipairs(summonReslut) do
+      for _, _result in ipairs(summonReslut) do
         service:ShowSummonAction(TT, world, _result)
       end
     end
-    do
-      do
-        local nt = NTScorpionSummonEnd:New(result:GetGroupID())
-        ;
-        (world:GetService("PlayBuff")):PlayBuffView(TT, nt)
-        -- DECOMPILER ERROR at PC52: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
-    end
+    local nt = NTScorpionSummonEnd:New(result:GetGroupID())
+    world:GetService("PlayBuff"):PlayBuffView(TT, nt)
   end
 end
-
-

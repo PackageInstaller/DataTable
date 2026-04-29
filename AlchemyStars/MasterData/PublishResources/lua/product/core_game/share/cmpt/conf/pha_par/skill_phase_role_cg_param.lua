@@ -1,56 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_role_cg_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseRoleCGParam", SkillPhaseParamBase)
 SkillPhaseRoleCGParam = SkillPhaseRoleCGParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseRoleCGParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseRoleCGParam:Constructor(t)
   self._cgTimeLen = t.cgTimeLen
   self._cgRes = t.cgRes
   self._hideRoleTime = t.hideRoleTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoleCGParam.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseRoleCGParam:GetCacheTable()
   local t = {
-{self._cgRes .. ".prefab", 1}
-}
+    {
+      self._cgRes .. ".prefab",
+      1
+    }
+  }
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoleCGParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseRoleCGParam:GetPhaseType()
   return SkillViewPhaseType.RoleCG
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoleCGParam.GetCGTimeLen = function(self)
-  -- function num : 0_3
+function SkillPhaseRoleCGParam:GetCGTimeLen()
   return self._cgTimeLen
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoleCGParam.GetCGRes = function(self)
-  -- function num : 0_4
+function SkillPhaseRoleCGParam:GetCGRes()
   return self._cgRes
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseRoleCGParam.GetHideRoleTime = function(self)
-  -- function num : 0_5
+function SkillPhaseRoleCGParam:GetHideRoleTime()
   return self._hideRoleTime
 end
-
-

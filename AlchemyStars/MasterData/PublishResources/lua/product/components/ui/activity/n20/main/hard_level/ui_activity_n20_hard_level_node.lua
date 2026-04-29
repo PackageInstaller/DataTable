@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n20/main/hard_level/ui_activity_n20_hard_level_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN20NHardLevelNode", UICustomWidget)
 UIActivityN20NHardLevelNode = UIActivityN20NHardLevelNode
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN20NHardLevelNode.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityN20NHardLevelNode:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20NHardLevelNode.InitWidget = function(self)
-  -- function num : 0_1
-  self._rectTransform = (self:GetGameObject()):GetComponent("RectTransform")
+function UIActivityN20NHardLevelNode:InitWidget()
+  self._rectTransform = self:GetGameObject():GetComponent("RectTransform")
   self.name = self:GetUIComponent("UILocalizationText", "name")
   self._iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
   self._lockLoader = self:GetUIComponent("RawImageLoader", "Lock")
@@ -25,76 +15,46 @@ UIActivityN20NHardLevelNode.InitWidget = function(self)
   self._go = self:GetGameObject()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20NHardLevelNode.SetData = function(self, lineCfg, isOpen, hasPass, cb)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._go):SetActive(true)
+function UIActivityN20NHardLevelNode:SetData(lineCfg, isOpen, hasPass, cb)
+  self._go:SetActive(true)
   self._isOpen = isOpen
   self._missionID = lineCfg.CampaignMissionId
   self._onClick = cb
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMax = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC19: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchorMin = Vector2(0, 0.5)
-  -- DECOMPILER ERROR at PC23: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).sizeDelta = Vector2.zero
-  -- DECOMPILER ERROR at PC29: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._rectTransform).anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
-  local missionCfg = (Cfg.cfg_campaign_mission)[self._missionID]
+  self._rectTransform.anchorMax = Vector2(0, 0.5)
+  self._rectTransform.anchorMin = Vector2(0, 0.5)
+  self._rectTransform.sizeDelta = Vector2.zero
+  self._rectTransform.anchoredPosition = Vector2(lineCfg.MapPosX, lineCfg.MapPosY)
+  local missionCfg = Cfg.cfg_campaign_mission[self._missionID]
   if not missionCfg then
-    (Log.exception)("cfg_campaign_mission中找不到配置:", self._missionID)
-    return 
+    Log.exception("cfg_campaign_mission中找不到配置:", self._missionID)
+    return
   end
-  ;
-  (self.name):SetText((StringTable.Get)(missionCfg.Name))
+  self.name:SetText(StringTable.Get(missionCfg.Name))
   self._isStoryNode = missionCfg.Type == DiscoveryStageType.Plot
-  local cfg = (Cfg.cfg_n20_component_line_mission_client)[self._missionID]
+  local cfg = Cfg.cfg_n20_component_line_mission_client[self._missionID]
   if not cfg then
-    (Log.exception)("cfg_n20_component_line_mission_client 中找不到配置:", self._missionID)
-    return 
+    Log.exception("cfg_n20_component_line_mission_client 中找不到配置:", self._missionID)
+    return
   end
-  ;
-  (self._iconLoader):LoadImage(cfg.Icon)
+  self._iconLoader:LoadImage(cfg.Icon)
   if isOpen then
-    (self._lock):SetActive(false)
-    ;
-    (self._complete):SetActive(hasPass)
+    self._lock:SetActive(false)
+    self._complete:SetActive(hasPass)
   else
-    (self._lock):SetActive(true)
-    ;
-    (self._lockLoader):LoadImage(cfg.CloseIcon)
-    ;
-    (self._complete):SetActive(false)
+    self._lock:SetActive(true)
+    self._lockLoader:LoadImage(cfg.CloseIcon)
+    self._complete:SetActive(false)
   end
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20NHardLevelNode.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityN20NHardLevelNode:BtnOnClick(go)
   if not self._isOpen then
-    (ToastManager.ShowToast)((StringTable.Get)("str_n20_level_unopen_tips"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_n20_level_unopen_tips"))
+    return
   end
-  ;
-  (self._onClick)(self._missionID, self._isStoryNode, (self._rectTransform).position)
+  self._onClick(self._missionID, self._isStoryNode, self._rectTransform.position)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN20NHardLevelNode.SetVisible = function(self, status)
-  -- function num : 0_4
-  (self._go):SetActive(status)
+function UIActivityN20NHardLevelNode:SetVisible(status)
+  self._go:SetActive(status)
 end
-
-

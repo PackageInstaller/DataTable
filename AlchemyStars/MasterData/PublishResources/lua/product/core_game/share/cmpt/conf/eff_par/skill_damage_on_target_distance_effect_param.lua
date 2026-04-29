@@ -1,104 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_damage_on_target_distance_effect_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillDamageOnTargetDistanceEffectParam", SkillEffectParamBase)
 SkillDamageOnTargetDistanceEffectParam = SkillDamageOnTargetDistanceEffectParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillDamageOnTargetDistanceEffectParam.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillDamageOnTargetDistanceEffectParam:Constructor(t)
   self._percent = t.percent
   self._formulaID = t.formulaID
   self._targetCount = t.targetCount or 1
   self._baseValue = t.baseValue or 0
   self._changeValue = t.changeValue or 0
-  if not t.skillIncreaseType then
-    self._skillIncreaseType = ModifySkillIncreaseParamType.ActiveSkill
-    self._chainBasePercent_158 = t.chainBasePercent_158
-    self._buffID = t.buffID
-    self._layerCostPct = t.layerCostPct
-    self._layerDmgPct = t.layerDmgPct
-  end
+  self._skillIncreaseType = t.skillIncreaseType or ModifySkillIncreaseParamType.ActiveSkill
+  self._chainBasePercent_158 = t.chainBasePercent_158
+  self._buffID = t.buffID
+  self._layerCostPct = t.layerCostPct
+  self._layerDmgPct = t.layerDmgPct
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetChainBasePercentFormula158 = function(self)
-  -- function num : 0_1
+function SkillDamageOnTargetDistanceEffectParam:GetChainBasePercentFormula158()
   return self._chainBasePercent_158
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetTargetCount = function(self)
-  -- function num : 0_2
+function SkillDamageOnTargetDistanceEffectParam:GetTargetCount()
   return self._targetCount
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetBaseValue = function(self)
-  -- function num : 0_3
+function SkillDamageOnTargetDistanceEffectParam:GetBaseValue()
   return self._baseValue
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetChangeValue = function(self)
-  -- function num : 0_4
+function SkillDamageOnTargetDistanceEffectParam:GetChangeValue()
   return self._changeValue
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetSkillIncreaseType = function(self)
-  -- function num : 0_5
+function SkillDamageOnTargetDistanceEffectParam:GetSkillIncreaseType()
   return self._skillIncreaseType
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetEffectType = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillDamageOnTargetDistanceEffectParam:GetEffectType()
   return SkillEffectType.DamageOnTargetDistance
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetDamagePercent = function(self)
-  -- function num : 0_7
+function SkillDamageOnTargetDistanceEffectParam:GetDamagePercent()
   return self._percent
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetDamageFormulaID = function(self)
-  -- function num : 0_8
+function SkillDamageOnTargetDistanceEffectParam:GetDamageFormulaID()
   return self._formulaID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetBuffID = function(self)
-  -- function num : 0_9
+function SkillDamageOnTargetDistanceEffectParam:GetBuffID()
   return self._buffID
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetLayerCostPct = function(self)
-  -- function num : 0_10
+function SkillDamageOnTargetDistanceEffectParam:GetLayerCostPct()
   return self._layerCostPct
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillDamageOnTargetDistanceEffectParam.GetLayerDmgPct = function(self)
-  -- function num : 0_11
+function SkillDamageOnTargetDistanceEffectParam:GetLayerDmgPct()
   return self._layerDmgPct
 end
-
-

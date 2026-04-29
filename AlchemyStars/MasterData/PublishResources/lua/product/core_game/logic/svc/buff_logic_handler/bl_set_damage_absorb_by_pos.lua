@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_set_damage_absorb_by_pos.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicSetDamageAbsorbByPos", BuffLogicBase)
 BuffLogicSetDamageAbsorbByPos = BuffLogicSetDamageAbsorbByPos
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetDamageAbsorbByPos.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetDamageAbsorbByPos:Constructor(buffInstance, logicParam)
   self._rate = logicParam.rate
   self._posIndex = logicParam.posIndex
   self._absorbType = logicParam.absorbType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetDamageAbsorbByPos.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffLogicSetDamageAbsorbByPos:DoLogic()
   local cBuff = self:GetBuffComponent()
   if self._absorbType == MonsterSkillAbsorbType.NormalSkill then
     cBuff:SetBuffValue("defender_normal_absorb_rate", self._rate)
     cBuff:SetBuffValue("defender_normal_absorb_rate_array", self._posIndex)
-  else
-    if self._absorbType == MonsterSkillAbsorbType.ChainSkill then
-      cBuff:SetBuffValue("defender_chain_absorb_rate", self._rate)
-      cBuff:SetBuffValue("defender_chain_absorb_rate_array", self._posIndex)
-    else
-      if self._absorbType == MonsterSkillAbsorbType.ActiveSkill then
-        cBuff:SetBuffValue("defender_active_absorb_rate", self._rate)
-        cBuff:SetBuffValue("defender_active_absorb_rate_array", self._posIndex)
-      end
-    end
+  elseif self._absorbType == MonsterSkillAbsorbType.ChainSkill then
+    cBuff:SetBuffValue("defender_chain_absorb_rate", self._rate)
+    cBuff:SetBuffValue("defender_chain_absorb_rate_array", self._posIndex)
+  elseif self._absorbType == MonsterSkillAbsorbType.ActiveSkill then
+    cBuff:SetBuffValue("defender_active_absorb_rate", self._rate)
+    cBuff:SetBuffValue("defender_active_absorb_rate_array", self._posIndex)
   end
 end
-
-

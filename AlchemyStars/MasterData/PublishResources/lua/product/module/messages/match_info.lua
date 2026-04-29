@@ -1,34 +1,153 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/messages/match_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local MatchStartCondition = {MSC_INVALID = 0, MSC_ALL_READY = 1, MSC_ON_ENTER = 2}
+local MatchStartCondition = {
+  MSC_INVALID = 0,
+  MSC_ALL_READY = 1,
+  MSC_ON_ENTER = 2
+}
 _enum("MatchStartCondition", MatchStartCondition)
-local MatchReleaseCondition = {MRC_INVALID = 0, MRC_NEVER = 1, MRC_ON_EMPTY = 2}
+local MatchReleaseCondition = {
+  MRC_INVALID = 0,
+  MRC_NEVER = 1,
+  MRC_ON_EMPTY = 2
+}
 _enum("MatchReleaseCondition", MatchReleaseCondition)
-local MatchStatus = {MS_INIT = 0, MS_LOADING = 1, MS_PLAYING = 2, MS_OVER = 3}
+local MatchStatus = {
+  MS_INIT = 0,
+  MS_LOADING = 1,
+  MS_PLAYING = 2,
+  MS_OVER = 3
+}
 _enum("MatchStatus", MatchStatus)
-local GamePlayerStatus = {PS_NONE = 0, PS_JOINED = 1, PS_LOADING = 2, PS_READY = 3, PS_PLAYING = 4, PS_AWAY = 5, PS_LEAVE = 6}
+local GamePlayerStatus = {
+  PS_NONE = 0,
+  PS_JOINED = 1,
+  PS_LOADING = 2,
+  PS_READY = 3,
+  PS_PLAYING = 4,
+  PS_AWAY = 5,
+  PS_LEAVE = 6
+}
 _enum("GamePlayerStatus", GamePlayerStatus)
-local MatchType = {MT_NONE = 0, MT_Mission = 1, MT_Incident = 2, MT_CatchEvil = 3, MT_Tower = 4, MT_ExtMission = 5, MT_Maze = 6, MT_ResDungeon = 7, MT_TalePet = 8, MT_Campaign = 9, MT_Conquest = 10, MT_LostArea = 11, MT_BlackFist = 12, MT_WorldBoss = 13, MT_Chess = 14, MT_DifficultyMission = 15, MT_SailingMission = 16, MT_MiniMaze = 17, MT_PopStar = 18, MT_Globalboss = 19, MT_EightPets = 20, MT_PopStarPro = 21, MT_SimpleBattleField = 22, MT_Season = 50, MT_Weekly = 51, MT_SeasonMaze = 52}
+local MatchType = {
+  MT_NONE = 0,
+  MT_Mission = 1,
+  MT_Incident = 2,
+  MT_CatchEvil = 3,
+  MT_Tower = 4,
+  MT_ExtMission = 5,
+  MT_Maze = 6,
+  MT_ResDungeon = 7,
+  MT_TalePet = 8,
+  MT_Campaign = 9,
+  MT_Conquest = 10,
+  MT_LostArea = 11,
+  MT_BlackFist = 12,
+  MT_WorldBoss = 13,
+  MT_Chess = 14,
+  MT_DifficultyMission = 15,
+  MT_SailingMission = 16,
+  MT_MiniMaze = 17,
+  MT_PopStar = 18,
+  MT_Globalboss = 19,
+  MT_EightPets = 20,
+  MT_PopStarPro = 21,
+  MT_SimpleBattleField = 22,
+  MT_Season = 50,
+  MT_Weekly = 51,
+  MT_SeasonMaze = 52
+}
 _enum("MatchType", MatchType)
-local CampaignSubMatchType = {CSMT_SUB_NONE = 0, CSMT_BLACKFIST = 1, CSMT_POPSTAR = 2, CSMT_TALENTTREE = 3}
+local CampaignSubMatchType = {
+  CSMT_SUB_NONE = 0,
+  CSMT_BLACKFIST = 1,
+  CSMT_POPSTAR = 2,
+  CSMT_TALENTTREE = 3
+}
 _enum("CampaignSubMatchType", CampaignSubMatchType)
-local AutoFightEnableType = {Disable = 0, EnableIfUnlock = 1, EnableIfUnlockAndPassed = 2}
+local AutoFightEnableType = {
+  Disable = 0,
+  EnableIfUnlock = 1,
+  EnableIfUnlockAndPassed = 2
+}
 _enum("AutoFightEnableType", AutoFightEnableType)
-local SeasonMazeEffectType = {SMET_Invalid = 0, SMET_Pro = 1, SMET_Bead = 2, SMET_Relic = 3, SMET_Pet = 4, SMET_Once = 5, SMET_Hand = 6, SMET_RandomHandGold = 7, SMET_Once_Shoe = 8, SMET_HandStepRaiseReward = 9, SMET_RandomAutoBead = 10, SMET_Once_Sprint = 11, SMET_Once_Retrun = 12, SMET_Once_Bomb = 13, SMET_ChangeAllPetBlood = 14, SMET_ChangeAllPetMaxBlood = 15, SMET_GetRandomPet = 16, SMET_RandomDelHand = 17, SMET_BloodExchangeExp = 18, SMET_GoldExchangeExp = 19, SMET_UnlockBeadSlot = 20, SMET_Bead_LV = 21, SMET_RandomRelic = 23, SMET_RandomHandLv = 24}
+local SeasonMazeEffectType = {
+  SMET_Invalid = 0,
+  SMET_Pro = 1,
+  SMET_Bead = 2,
+  SMET_Relic = 3,
+  SMET_Pet = 4,
+  SMET_Once = 5,
+  SMET_Hand = 6,
+  SMET_RandomHandGold = 7,
+  SMET_Once_Shoe = 8,
+  SMET_HandStepRaiseReward = 9,
+  SMET_RandomAutoBead = 10,
+  SMET_Once_Sprint = 11,
+  SMET_Once_Retrun = 12,
+  SMET_Once_Bomb = 13,
+  SMET_ChangeAllPetBlood = 14,
+  SMET_ChangeAllPetMaxBlood = 15,
+  SMET_GetRandomPet = 16,
+  SMET_RandomDelHand = 17,
+  SMET_BloodExchangeExp = 18,
+  SMET_GoldExchangeExp = 19,
+  SMET_UnlockBeadSlot = 20,
+  SMET_Bead_LV = 21,
+  SMET_RandomRelic = 23,
+  SMET_RandomHandLv = 24
+}
 _enum("SeasonMazeEffectType", SeasonMazeEffectType)
-local SeasonMazeAttrType = {SMAT_Invalid = 0, SMAT_Gold = 1, SMAT_Exp = 2, SMAT_Ms = 3, SMAT_Round = 4, SMAT_Lv = 5, SMAT_Gold_Round_Add = 6, SMAT_Exp_Percent = 7, SMAT_Goods_Price_Percent = 8, SMAT_Boss_Round_Add = 9, SMAT_Hand_Add = 10, SMAT_Next_Hand_Add = 11, SMAT_Gain_Bead_Lv_Fix = 12, SMAT_Round_Step_All = 14, SMAT_Boss_Gold_Interest = 15, SMAT_Lv_Up_Gold = 16, SMAT_Gain_Up_Gold = 17, SMAT_Fight_Room_Exp = 18, SMAT_Back_Start_Exp = 19, SMAT_Resource_Percent = 20, SMAT_Relic_Chose_Num_Fix = 21, SMAT_Free_Reroll_Num = 22, SMAT_Pet_Awakening_Value = 23, SMAT_Hand_Reward_Ratio = 24, SMAT_Fight_Sweep = 25, SMAT_Chest_All_Reward = 26, SMAT_Score = 27, SMAT_HealthyCnt = 28, SMAT_ResurrectCnt = 30, SMAT_PetResetCnt = 31, SMAT_AutoBeadEnergy = 32, SMAT_VictoryRecoverHP = 33, SMAT_RandomMaxBreakPet = 34, SMAT_OnceShoesCnt = 35, SMAT_AlgorithmUpEnergy = 36, SMAT_WorldBossTicket = 37, SMET_PetBanExtCnt = 38, SMET_PetAttackRatio = 200, SMET_PetDefRatio = 201, SMET_PetHpRatio = 202, SMET_PetAttackDamageRatio = 203, SMET_PetChainSkillDamageRatio = 204, SMET_PetActiveSkillDamageRatio = 205}
+local SeasonMazeAttrType = {
+  SMAT_Invalid = 0,
+  SMAT_Gold = 1,
+  SMAT_Exp = 2,
+  SMAT_Ms = 3,
+  SMAT_Round = 4,
+  SMAT_Lv = 5,
+  SMAT_Gold_Round_Add = 6,
+  SMAT_Exp_Percent = 7,
+  SMAT_Goods_Price_Percent = 8,
+  SMAT_Boss_Round_Add = 9,
+  SMAT_Hand_Add = 10,
+  SMAT_Next_Hand_Add = 11,
+  SMAT_Gain_Bead_Lv_Fix = 12,
+  SMAT_Round_Step_All = 14,
+  SMAT_Boss_Gold_Interest = 15,
+  SMAT_Lv_Up_Gold = 16,
+  SMAT_Gain_Up_Gold = 17,
+  SMAT_Fight_Room_Exp = 18,
+  SMAT_Back_Start_Exp = 19,
+  SMAT_Resource_Percent = 20,
+  SMAT_Relic_Chose_Num_Fix = 21,
+  SMAT_Free_Reroll_Num = 22,
+  SMAT_Pet_Awakening_Value = 23,
+  SMAT_Hand_Reward_Ratio = 24,
+  SMAT_Fight_Sweep = 25,
+  SMAT_Chest_All_Reward = 26,
+  SMAT_Score = 27,
+  SMAT_HealthyCnt = 28,
+  SMAT_ResurrectCnt = 30,
+  SMAT_PetResetCnt = 31,
+  SMAT_AutoBeadEnergy = 32,
+  SMAT_VictoryRecoverHP = 33,
+  SMAT_RandomMaxBreakPet = 34,
+  SMAT_OnceShoesCnt = 35,
+  SMAT_AlgorithmUpEnergy = 36,
+  SMAT_WorldBossTicket = 37,
+  SMET_PetBanExtCnt = 38,
+  SMET_PetAttackRatio = 200,
+  SMET_PetDefRatio = 201,
+  SMET_PetHpRatio = 202,
+  SMET_PetAttackDamageRatio = 203,
+  SMET_PetChainSkillDamageRatio = 204,
+  SMET_PetActiveSkillDamageRatio = 205
+}
 _enum("SeasonMazeAttrType", SeasonMazeAttrType)
 local MatchLogicFlags = {MLF_AutoFight = 0, MLF_SpeedUp = 1}
 _enum("MatchLogicFlags", MatchLogicFlags)
 _class("MatchPetInfo", Object)
 MatchPetInfo = MatchPetInfo
--- DECOMPILER ERROR at PC177: Confused about usage of register: R10 in 'UnsetPending'
 
-MatchPetInfo.Constructor = function(self)
-  -- function num : 0_0
+function MatchPetInfo:Constructor()
   self.pet_pstid = 0
   self.pet_power = 0
   self.template_id = 0
@@ -49,140 +168,119 @@ MatchPetInfo.Constructor = function(self)
   self.awake_lock = 0
 end
 
--- DECOMPILER ERROR at PC270: Confused about usage of register: R10 in 'UnsetPending'
-
 MatchPetInfo._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"pet_power", "int"}
-, 
-[3] = {"template_id", "int"}
-, 
-[4] = {"level", "int"}
-, 
-[5] = {"grade", "int"}
-, 
-[6] = {"awakening", "int"}
-, 
-[7] = {"affinity_level", "int"}
-, 
-[8] = {"team_slot", "int"}
-, 
-[9] = {"attack", "double"}
-, 
-[10] = {"defense", "double"}
-, 
-[11] = {"max_hp", "double"}
-, 
-[12] = {"cur_hp", "double"}
-, 
-[13] = {"after_damage", "double"}
-, 
-[14] = {"equip_lv", "int"}
-, 
-[15] = {"m_nHelpPetKey", "int"}
-, 
-[16] = {"current_skin", "int"}
-, 
-[17] = {"equip_refine_lv", "int"}
-, 
-[18] = {"awake_lock", "int"}
+  [1] = {"pet_pstid", "int64"},
+  [2] = {"pet_power", "int"},
+  [3] = {
+    "template_id",
+    "int"
+  },
+  [4] = {"level", "int"},
+  [5] = {"grade", "int"},
+  [6] = {"awakening", "int"},
+  [7] = {
+    "affinity_level",
+    "int"
+  },
+  [8] = {"team_slot", "int"},
+  [9] = {"attack", "double"},
+  [10] = {"defense", "double"},
+  [11] = {"max_hp", "double"},
+  [12] = {"cur_hp", "double"},
+  [13] = {
+    "after_damage",
+    "double"
+  },
+  [14] = {"equip_lv", "int"},
+  [15] = {
+    "m_nHelpPetKey",
+    "int"
+  },
+  [16] = {
+    "current_skin",
+    "int"
+  },
+  [17] = {
+    "equip_refine_lv",
+    "int"
+  },
+  [18] = {"awake_lock", "int"}
 }
 _class("LuaMatchPlayerInfo", Object)
 LuaMatchPlayerInfo = LuaMatchPlayerInfo
--- DECOMPILER ERROR at PC279: Confused about usage of register: R10 in 'UnsetPending'
 
-LuaMatchPlayerInfo.Constructor = function(self)
-  -- function num : 0_1
+function LuaMatchPlayerInfo:Constructor()
   self.pstid = 0
   self.nick = ""
-  self.blood = 0
+  self.blood = 0.0
   self.pet_list = {}
   self.nLevel = 0
 end
 
--- DECOMPILER ERROR at PC307: Confused about usage of register: R10 in 'UnsetPending'
-
 LuaMatchPlayerInfo._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"nick", "string"}
-, 
-[3] = {"blood", "double"}
-, 
-[4] = {"pet_list", "list<MatchPetInfo>"}
-, 
-[5] = {"nLevel", "int"}
+  [1] = {"pstid", "int64"},
+  [2] = {"nick", "string"},
+  [3] = {"blood", "double"},
+  [4] = {
+    "pet_list",
+    "list<MatchPetInfo>"
+  },
+  [5] = {"nLevel", "int"}
 }
 _class("MatchJoinInfo", Object)
 MatchJoinInfo = MatchJoinInfo
--- DECOMPILER ERROR at PC316: Confused about usage of register: R10 in 'UnsetPending'
 
-MatchJoinInfo.Constructor = function(self)
-  -- function num : 0_2
+function MatchJoinInfo:Constructor()
   self.player_id = 0
   self.game_token = 0
   self.nick = ""
-  self.blood = 0
+  self.blood = 0.0
   self.pet_list = {}
   self.nLevel = 0
 end
 
--- DECOMPILER ERROR at PC349: Confused about usage of register: R10 in 'UnsetPending'
-
 MatchJoinInfo._proto = {
-[1] = {"player_id", "int64"}
-, 
-[2] = {"game_token", "ushort"}
-, 
-[3] = {"nick", "string"}
-, 
-[4] = {"blood", "double"}
-, 
-[5] = {"pet_list", "list<MatchPetInfo>"}
-, 
-[6] = {"nLevel", "int"}
+  [1] = {"player_id", "int64"},
+  [2] = {"game_token", "ushort"},
+  [3] = {"nick", "string"},
+  [4] = {"blood", "double"},
+  [5] = {
+    "pet_list",
+    "list<MatchPetInfo>"
+  },
+  [6] = {"nLevel", "int"}
 }
 _class("MatchStartInfo", Object)
 MatchStartInfo = MatchStartInfo
--- DECOMPILER ERROR at PC358: Confused about usage of register: R10 in 'UnsetPending'
 
-MatchStartInfo.Constructor = function(self)
-  -- function num : 0_3
+function MatchStartInfo:Constructor()
   self.sync_game_mode = 0
   self.level_id = 0
   self.invite_id = 0
 end
 
--- DECOMPILER ERROR at PC376: Confused about usage of register: R10 in 'UnsetPending'
-
 MatchStartInfo._proto = {
-[1] = {"sync_game_mode", "int"}
-, 
-[2] = {"level_id", "int"}
-, 
-[3] = {"invite_id", "int64"}
+  [1] = {
+    "sync_game_mode",
+    "int"
+  },
+  [2] = {"level_id", "int"},
+  [3] = {"invite_id", "int64"}
 }
 _class("MatchSyncInfo", Object)
 MatchSyncInfo = MatchSyncInfo
--- DECOMPILER ERROR at PC385: Confused about usage of register: R10 in 'UnsetPending'
 
-MatchSyncInfo.Constructor = function(self)
-  -- function num : 0_4
+function MatchSyncInfo:Constructor()
   self.nick = ""
 end
 
--- DECOMPILER ERROR at PC393: Confused about usage of register: R10 in 'UnsetPending'
-
 MatchSyncInfo._proto = {
-[1] = {"nick", "string"}
+  [1] = {"nick", "string"}
 }
 _class("QuickJoinMatchRequest", Object)
 QuickJoinMatchRequest = QuickJoinMatchRequest
--- DECOMPILER ERROR at PC402: Confused about usage of register: R10 in 'UnsetPending'
 
-QuickJoinMatchRequest.Constructor = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function QuickJoinMatchRequest:Constructor()
   self.player_ids = {}
   self.game_mode = 0
   self.level_id = 0
@@ -191,109 +289,100 @@ QuickJoinMatchRequest.Constructor = function(self)
   self.serial = 0
 end
 
--- DECOMPILER ERROR at PC435: Confused about usage of register: R10 in 'UnsetPending'
-
 QuickJoinMatchRequest._proto = {
-[1] = {"player_ids", "list<int64>"}
-, 
-[2] = {"game_mode", "int"}
-, 
-[3] = {"level_id", "int"}
-, 
-[4] = {"game_token", "ushort"}
-, 
-[5] = {"match_token", "GroupToken"}
-, 
-[6] = {"serial", "int64"}
+  [1] = {
+    "player_ids",
+    "list<int64>"
+  },
+  [2] = {"game_mode", "int"},
+  [3] = {"level_id", "int"},
+  [4] = {"game_token", "ushort"},
+  [5] = {
+    "match_token",
+    "GroupToken"
+  },
+  [6] = {"serial", "int64"}
 }
 _class("MatchPlayerResult", Object)
 MatchPlayerResult = MatchPlayerResult
--- DECOMPILER ERROR at PC444: Confused about usage of register: R10 in 'UnsetPending'
 
-MatchPlayerResult.Constructor = function(self)
-  -- function num : 0_6
+function MatchPlayerResult:Constructor()
   self.score = 0
   self.nick = ""
 end
 
--- DECOMPILER ERROR at PC457: Confused about usage of register: R10 in 'UnsetPending'
-
 MatchPlayerResult._proto = {
-[1] = {"score", "int"}
-, 
-[2] = {"nick", "string"}
+  [1] = {"score", "int"},
+  [2] = {"nick", "string"}
 }
 _class("MatchLeaveResult", Object)
 MatchLeaveResult = MatchLeaveResult
--- DECOMPILER ERROR at PC466: Confused about usage of register: R10 in 'UnsetPending'
 
-MatchLeaveResult.Constructor = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function MatchLeaveResult:Constructor()
   self.match_token = GroupToken:New()
 end
 
--- DECOMPILER ERROR at PC474: Confused about usage of register: R10 in 'UnsetPending'
-
 MatchLeaveResult._proto = {
-[1] = {"match_token", "GroupToken"}
+  [1] = {
+    "match_token",
+    "GroupToken"
+  }
 }
 _class("MissionCreateInfo", Object)
 MissionCreateInfo = MissionCreateInfo
--- DECOMPILER ERROR at PC483: Confused about usage of register: R10 in 'UnsetPending'
 
-MissionCreateInfo.Constructor = function(self)
-  -- function num : 0_8
+function MissionCreateInfo:Constructor()
   self.mission_id = 0
   self.asset_double_item_count = 0
 end
 
--- DECOMPILER ERROR at PC496: Confused about usage of register: R10 in 'UnsetPending'
-
 MissionCreateInfo._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"asset_double_item_count", "int"}
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "asset_double_item_count",
+    "int"
+  }
 }
 _class("IncidentCreateInfo", Object)
 IncidentCreateInfo = IncidentCreateInfo
--- DECOMPILER ERROR at PC505: Confused about usage of register: R10 in 'UnsetPending'
 
-IncidentCreateInfo.Constructor = function(self)
-  -- function num : 0_9
+function IncidentCreateInfo:Constructor()
   self.incident_id = 0
   self.incident_tid = 0
 end
 
--- DECOMPILER ERROR at PC518: Confused about usage of register: R10 in 'UnsetPending'
-
 IncidentCreateInfo._proto = {
-[1] = {"incident_id", "int64"}
-, 
-[2] = {"incident_tid", "int"}
+  [1] = {
+    "incident_id",
+    "int64"
+  },
+  [2] = {
+    "incident_tid",
+    "int"
+  }
 }
 _class("ExtMissionCreateInfo", Object)
 ExtMissionCreateInfo = ExtMissionCreateInfo
--- DECOMPILER ERROR at PC527: Confused about usage of register: R10 in 'UnsetPending'
 
-ExtMissionCreateInfo.Constructor = function(self)
-  -- function num : 0_10
+function ExtMissionCreateInfo:Constructor()
   self.m_nExtMissionID = 0
   self.m_nExtTaskID = 0
 end
 
--- DECOMPILER ERROR at PC540: Confused about usage of register: R10 in 'UnsetPending'
-
 ExtMissionCreateInfo._proto = {
-[1] = {"m_nExtMissionID", "int"}
-, 
-[2] = {"m_nExtTaskID", "int"}
+  [1] = {
+    "m_nExtMissionID",
+    "int"
+  },
+  [2] = {
+    "m_nExtTaskID",
+    "int"
+  }
 }
 _class("MazeCreateInfo", Object)
 MazeCreateInfo = MazeCreateInfo
--- DECOMPILER ERROR at PC549: Confused about usage of register: R10 in 'UnsetPending'
 
-MazeCreateInfo.Constructor = function(self)
-  -- function num : 0_11
+function MazeCreateInfo:Constructor()
   self.maze_version = 0
   self.maze_layer = 0
   self.maze_room_index = 0
@@ -303,105 +392,138 @@ MazeCreateInfo.Constructor = function(self)
   self.relics = {}
   self.relic_counters = {}
   self.wave_randoms = {}
-  self.avg_pet_level = 0
+  self.avg_pet_level = 0.0
   self.maze_rand_seed = 0
   self.battle_archive = ""
   self.has_archive = false
 end
 
--- DECOMPILER ERROR at PC617: Confused about usage of register: R10 in 'UnsetPending'
-
 MazeCreateInfo._proto = {
-[1] = {"maze_version", "int"}
-, 
-[2] = {"maze_layer", "int"}
-, 
-[3] = {"maze_room_index", "int"}
-, 
-[4] = {"maze_light", "int"}
-, 
-[5] = {"maze_room_id", "int"}
-, 
-[6] = {"maze_step", "int"}
-, 
-[8] = {"relics", "list<int>"}
-, 
-[9] = {"relic_counters", "map<int,int>"}
-, 
-[10] = {"wave_randoms", "list<float>"}
-, 
-[11] = {"avg_pet_level", "float"}
-, 
-[12] = {"maze_rand_seed", "uint"}
-, 
-[13] = {"battle_archive", "string"}
-, 
-[14] = {"has_archive", "bool"}
+  [1] = {
+    "maze_version",
+    "int"
+  },
+  [2] = {"maze_layer", "int"},
+  [3] = {
+    "maze_room_index",
+    "int"
+  },
+  [4] = {"maze_light", "int"},
+  [5] = {
+    "maze_room_id",
+    "int"
+  },
+  [6] = {"maze_step", "int"},
+  [8] = {"relics", "list<int>"},
+  [9] = {
+    "relic_counters",
+    "map<int,int>"
+  },
+  [10] = {
+    "wave_randoms",
+    "list<float>"
+  },
+  [11] = {
+    "avg_pet_level",
+    "float"
+  },
+  [12] = {
+    "maze_rand_seed",
+    "uint"
+  },
+  [13] = {
+    "battle_archive",
+    "string"
+  },
+  [14] = {
+    "has_archive",
+    "bool"
+  }
 }
 _class("ResDungeonCreateInfo", Object)
-_ENV.ResDungeonCreateInfo = _ENV.ResDungeonCreateInfo
--- DECOMPILER ERROR at PC629: Confused about usage of register: R10 in 'UnsetPending'
+ResDungeonCreateInfo = ResDungeonCreateInfo
 
-;
-(_ENV.ResDungeonCreateInfo).Constructor = function(self)
-  -- function num : 0_12
+function ResDungeonCreateInfo:Constructor()
   self.res_dungeon_id = 0
   self.asset_double_item_count = 0
 end
 
--- DECOMPILER ERROR at PC643: Confused about usage of register: R10 in 'UnsetPending'
-
-;
-(_ENV.ResDungeonCreateInfo)._proto = {
-[1] = {"res_dungeon_id", "int"}
-, 
-[2] = {"asset_double_item_count", "int"}
+ResDungeonCreateInfo._proto = {
+  [1] = {
+    "res_dungeon_id",
+    "int"
+  },
+  [2] = {
+    "asset_double_item_count",
+    "int"
+  }
 }
 _class("TowerCreateInfo", Object)
-_ENV.TowerCreateInfo = _ENV.TowerCreateInfo
--- DECOMPILER ERROR at PC655: Confused about usage of register: R10 in 'UnsetPending'
+TowerCreateInfo = TowerCreateInfo
 
-;
-(_ENV.TowerCreateInfo).Constructor = function(self)
-  -- function num : 0_13
+function TowerCreateInfo:Constructor()
   self.nId = 0
 end
 
--- DECOMPILER ERROR at PC664: Confused about usage of register: R10 in 'UnsetPending'
-
-;
-(_ENV.TowerCreateInfo)._proto = {
-[1] = {"nId", "int"}
+TowerCreateInfo._proto = {
+  [1] = {"nId", "int"}
 }
 _class("TalePetCreateInfo", Object)
-_ENV.TalePetCreateInfo = _ENV.TalePetCreateInfo
--- DECOMPILER ERROR at PC676: Confused about usage of register: R10 in 'UnsetPending'
+TalePetCreateInfo = TalePetCreateInfo
 
-;
-(_ENV.TalePetCreateInfo).Constructor = function(self)
-  -- function num : 0_14
+function TalePetCreateInfo:Constructor()
   self.nId = 0
 end
 
--- DECOMPILER ERROR at PC685: Confused about usage of register: R10 in 'UnsetPending'
-
-;
-(_ENV.TalePetCreateInfo)._proto = {
-[1] = {"nId", "int"}
+TalePetCreateInfo._proto = {
+  [1] = {"nId", "int"}
 }
-local ECampaignMissionComponentId = {ECampaignMissionComponentId_Begin = 1, ECampaignMissionComponentId_Line = 1, ECampaignMissionComponentId_Tree = 2, ECampaignMissionComponentId_SummerII = 3, ECampaignMissionComponentId_Blackfist = 4, ECampaignMissionComponentId_CamSimulator = 5, ECampaignMissionComponentId_AircraftNormal = 6, ECampaignMissionComponentId_SimulatorBlackfist = 7, ECampaignMissionComponentId_AircraftBlackfist = 8, ECampaignMissionComponentId_Entrust = 9, ECampaignMissionComponentId_DailyMission = 10, ECampaignMissionComponentId_ChallengeMission = 11, ECampaignMissionComponentId_ChessMission = 12, ECampaignMissionComponentId_Bloodsucker = 13, ECampaignMissionComponentId_PopStar = 14, ECampaignMissionComponentId_Globalboss = 15, ECampaignMissionComponentId_MultiLine = 16, ECampaignMissionComponentId_EightPets = 17, ECampaignMissionComponentId_SeasonMission = 18, ECampaignMissionComponentId_WeeklyMission = 19, ECampaignMissionComponentId_LinePopStar = 20, ECampaignMissionComponentId_SimpleBattleField = 21, ECampaignMissionComponentId_SeasonMaze = 22, ECampaignMissionComponentId_End = 23}
+local ECampaignMissionComponentId = {
+  ECampaignMissionComponentId_Begin = 1,
+  ECampaignMissionComponentId_Line = 1,
+  ECampaignMissionComponentId_Tree = 2,
+  ECampaignMissionComponentId_SummerII = 3,
+  ECampaignMissionComponentId_Blackfist = 4,
+  ECampaignMissionComponentId_CamSimulator = 5,
+  ECampaignMissionComponentId_AircraftNormal = 6,
+  ECampaignMissionComponentId_SimulatorBlackfist = 7,
+  ECampaignMissionComponentId_AircraftBlackfist = 8,
+  ECampaignMissionComponentId_Entrust = 9,
+  ECampaignMissionComponentId_DailyMission = 10,
+  ECampaignMissionComponentId_ChallengeMission = 11,
+  ECampaignMissionComponentId_ChessMission = 12,
+  ECampaignMissionComponentId_Bloodsucker = 13,
+  ECampaignMissionComponentId_PopStar = 14,
+  ECampaignMissionComponentId_Globalboss = 15,
+  ECampaignMissionComponentId_MultiLine = 16,
+  ECampaignMissionComponentId_EightPets = 17,
+  ECampaignMissionComponentId_SeasonMission = 18,
+  ECampaignMissionComponentId_WeeklyMission = 19,
+  ECampaignMissionComponentId_LinePopStar = 20,
+  ECampaignMissionComponentId_SimpleBattleField = 21,
+  ECampaignMissionComponentId_SeasonMaze = 22,
+  ECampaignMissionComponentId_End = 23
+}
 _enum("ECampaignMissionComponentId", ECampaignMissionComponentId)
-local ECampaignMissionParamKey = {ECampaignMissionParamKey_None = 0, ECampaignMissionParamKey_ComCfgId = 1, ECampaignMissionParamKey_BlackfistdayId = 2, ECampaignMissionParamKey_CartridgePstId = 3, ECampaignMissionParamKey_FormationID = 4, ECampaignMissionParamKey_HelpPetKey = 5, ECampaignMissionParamKey_CSHardId = 6, ECampaignMissionParamKey_TeamIndex = 7, ECampaignMissionParamKey_SeasonMazeHard = 8, ECampaignMissionParamKey_SeasonMazeRandom = 9}
+local ECampaignMissionParamKey = {
+  ECampaignMissionParamKey_None = 0,
+  ECampaignMissionParamKey_ComCfgId = 1,
+  ECampaignMissionParamKey_BlackfistdayId = 2,
+  ECampaignMissionParamKey_CartridgePstId = 3,
+  ECampaignMissionParamKey_FormationID = 4,
+  ECampaignMissionParamKey_HelpPetKey = 5,
+  ECampaignMissionParamKey_CSHardId = 6,
+  ECampaignMissionParamKey_TeamIndex = 7,
+  ECampaignMissionParamKey_SeasonMazeHard = 8,
+  ECampaignMissionParamKey_SeasonMazeRandom = 9
+}
 _enum("ECampaignMissionParamKey", ECampaignMissionParamKey)
 local EDifficultyMissionComponentId = {EDifficultyMissionComponentId_General = 0, EDifficultyMissionComponentId_Campaign = 1}
 _enum("EDifficultyMissionComponentId", EDifficultyMissionComponentId)
 _class("CampaignMissionCreateInfo", Object)
-_ENV.CampaignMissionCreateInfo = _ENV.CampaignMissionCreateInfo
--- DECOMPILER ERROR at PC784: Confused about usage of register: R13 in 'UnsetPending'
+CampaignMissionCreateInfo = CampaignMissionCreateInfo
 
-;
-(_ENV.CampaignMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_15
+function CampaignMissionCreateInfo:Constructor()
   self.nCampaignMissionId = 0
   self.nMissionComId = 0
   self.CampaignMissionParams = {}
@@ -410,184 +532,183 @@ _ENV.CampaignMissionCreateInfo = _ENV.CampaignMissionCreateInfo
   self.mBlackTeamInfo = {}
 end
 
--- DECOMPILER ERROR at PC818: Confused about usage of register: R13 in 'UnsetPending'
-
-;
-(_ENV.CampaignMissionCreateInfo)._proto = {
-[1] = {"nCampaignMissionId", "int"}
-, 
-[2] = {"nMissionComId", "int"}
-, 
-[3] = {"CampaignMissionParams", "map<int,int64>"}
-, 
-[4] = {"nSubMatchType", "int"}
-, 
-[5] = {"mTalentTreeSkills", "list<int>"}
-, 
-[6] = {"mBlackTeamInfo", "list<MatchPetInfo>"}
+CampaignMissionCreateInfo._proto = {
+  [1] = {
+    "nCampaignMissionId",
+    "int"
+  },
+  [2] = {
+    "nMissionComId",
+    "int"
+  },
+  [3] = {
+    "CampaignMissionParams",
+    "map<int,int64>"
+  },
+  [4] = {
+    "nSubMatchType",
+    "int"
+  },
+  [5] = {
+    "mTalentTreeSkills",
+    "list<int>"
+  },
+  [6] = {
+    "mBlackTeamInfo",
+    "list<MatchPetInfo>"
+  }
 }
-local EConquestMissionComponentType = {ECONMCT_BEGIN = 1, ECONMCT_BATTLEFIELD = 1, ECONMCT_END = 4}
+local EConquestMissionComponentType = {
+  ECONMCT_BEGIN = 1,
+  ECONMCT_BATTLEFIELD = 1,
+  ECONMCT_END = 4
+}
 _enum("EConquestMissionComponentType", EConquestMissionComponentType)
 _class("ConquestMissionCreateInfo", Object)
-_ENV.ConquestMissionCreateInfo = _ENV.ConquestMissionCreateInfo
--- DECOMPILER ERROR at PC841: Confused about usage of register: R14 in 'UnsetPending'
+ConquestMissionCreateInfo = ConquestMissionCreateInfo
 
-;
-(_ENV.ConquestMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_16
+function ConquestMissionCreateInfo:Constructor()
   self.mission_id = 0
   self.component_type = 0
   self.component_cfg_id = 0
   self.random_index = 0
 end
 
--- DECOMPILER ERROR at PC865: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.ConquestMissionCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"component_type", "int"}
-, 
-[3] = {"component_cfg_id", "int"}
-, 
-[4] = {"random_index", "int"}
+ConquestMissionCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "component_type",
+    "int"
+  },
+  [3] = {
+    "component_cfg_id",
+    "int"
+  },
+  [4] = {
+    "random_index",
+    "int"
+  }
 }
 _class("LostAreaCreateInfo", Object)
-_ENV.LostAreaCreateInfo = _ENV.LostAreaCreateInfo
--- DECOMPILER ERROR at PC877: Confused about usage of register: R14 in 'UnsetPending'
+LostAreaCreateInfo = LostAreaCreateInfo
 
-;
-(_ENV.LostAreaCreateInfo).Constructor = function(self)
-  -- function num : 0_17
+function LostAreaCreateInfo:Constructor()
   self.mission_id = 0
 end
 
--- DECOMPILER ERROR at PC886: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.LostAreaCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
+LostAreaCreateInfo._proto = {
+  [1] = {"mission_id", "int"}
 }
 _class("BlackFistCreateInfo", Object)
-_ENV.BlackFistCreateInfo = _ENV.BlackFistCreateInfo
--- DECOMPILER ERROR at PC898: Confused about usage of register: R14 in 'UnsetPending'
+BlackFistCreateInfo = BlackFistCreateInfo
 
-;
-(_ENV.BlackFistCreateInfo).Constructor = function(self)
-  -- function num : 0_18
+function BlackFistCreateInfo:Constructor()
   self.mission_id = 0
   self.component_id = 0
   self.CampaignMissionParams = {}
   self.black_team_info = {}
 end
 
--- DECOMPILER ERROR at PC922: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.BlackFistCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"component_id", "int"}
-, 
-[3] = {"CampaignMissionParams", "map<int,int64>"}
-, 
-[4] = {"black_team_info", "list<MatchPetInfo>"}
+BlackFistCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "component_id",
+    "int"
+  },
+  [3] = {
+    "CampaignMissionParams",
+    "map<int,int64>"
+  },
+  [4] = {
+    "black_team_info",
+    "list<MatchPetInfo>"
+  }
 }
 _class("WorldBossCreateInfo", Object)
-_ENV.WorldBossCreateInfo = _ENV.WorldBossCreateInfo
--- DECOMPILER ERROR at PC934: Confused about usage of register: R14 in 'UnsetPending'
+WorldBossCreateInfo = WorldBossCreateInfo
 
-;
-(_ENV.WorldBossCreateInfo).Constructor = function(self)
-  -- function num : 0_19
+function WorldBossCreateInfo:Constructor()
   self.mission_id = 0
   self.select_index = 0
 end
 
--- DECOMPILER ERROR at PC948: Confused about usage of register: R14 in 'UnsetPending'
-
-;
-(_ENV.WorldBossCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"select_index", "int"}
+WorldBossCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "select_index",
+    "int"
+  }
 }
-local EChessMissionComponentType = {ECONMCT_CHESS_BEGIN = 0, ECONMCT_CHESS = 1, ECONMCT_CHESS_END = 4}
+local EChessMissionComponentType = {
+  ECONMCT_CHESS_BEGIN = 0,
+  ECONMCT_CHESS = 1,
+  ECONMCT_CHESS_END = 4
+}
 _enum("EChessMissionComponentType", EChessMissionComponentType)
 _class("ChessMissionCreateInfo", Object)
-_ENV.ChessMissionCreateInfo = _ENV.ChessMissionCreateInfo
--- DECOMPILER ERROR at PC971: Confused about usage of register: R15 in 'UnsetPending'
+ChessMissionCreateInfo = ChessMissionCreateInfo
 
-;
-(_ENV.ChessMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_20
+function ChessMissionCreateInfo:Constructor()
   self.mission_id = 0
   self.component_id = 0
   self.CampaignMissionParams = {}
 end
 
--- DECOMPILER ERROR at PC990: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.ChessMissionCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"component_id", "int"}
-, 
-[3] = {"CampaignMissionParams", "map<int,int64>"}
+ChessMissionCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "component_id",
+    "int"
+  },
+  [3] = {
+    "CampaignMissionParams",
+    "map<int,int64>"
+  }
 }
 _class("DifficultyMissionCreateInfo", Object)
-_ENV.DifficultyMissionCreateInfo = _ENV.DifficultyMissionCreateInfo
--- DECOMPILER ERROR at PC1002: Confused about usage of register: R15 in 'UnsetPending'
+DifficultyMissionCreateInfo = DifficultyMissionCreateInfo
 
-;
-(_ENV.DifficultyMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_21
+function DifficultyMissionCreateInfo:Constructor()
   self.parent_mission_id = 0
   self.sub_mission_id = 0
   self.mission_component_id = 0
   self.campaign_component_cfg_id = 0
 end
 
--- DECOMPILER ERROR at PC1026: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.DifficultyMissionCreateInfo)._proto = {
-[1] = {"parent_mission_id", "int"}
-, 
-[2] = {"sub_mission_id", "int"}
-, 
-[3] = {"mission_component_id", "int"}
-, 
-[4] = {"campaign_component_cfg_id", "int"}
+DifficultyMissionCreateInfo._proto = {
+  [1] = {
+    "parent_mission_id",
+    "int"
+  },
+  [2] = {
+    "sub_mission_id",
+    "int"
+  },
+  [3] = {
+    "mission_component_id",
+    "int"
+  },
+  [4] = {
+    "campaign_component_cfg_id",
+    "int"
+  }
 }
 _class("SailingMissionCreateInfo", Object)
-_ENV.SailingMissionCreateInfo = _ENV.SailingMissionCreateInfo
--- DECOMPILER ERROR at PC1038: Confused about usage of register: R15 in 'UnsetPending'
+SailingMissionCreateInfo = SailingMissionCreateInfo
 
-;
-(_ENV.SailingMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_22
+function SailingMissionCreateInfo:Constructor()
   self.layer_id = 0
   self.mission_id = 0
 end
 
--- DECOMPILER ERROR at PC1052: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.SailingMissionCreateInfo)._proto = {
-[1] = {"layer_id", "int"}
-, 
-[2] = {"mission_id", "int"}
+SailingMissionCreateInfo._proto = {
+  [1] = {"layer_id", "int"},
+  [2] = {"mission_id", "int"}
 }
 _class("TalentTreeSkillNode", Object)
-_ENV.TalentTreeSkillNode = _ENV.TalentTreeSkillNode
--- DECOMPILER ERROR at PC1064: Confused about usage of register: R15 in 'UnsetPending'
+TalentTreeSkillNode = TalentTreeSkillNode
 
-;
-(_ENV.TalentTreeSkillNode).Constructor = function(self)
-  -- function num : 0_23
+function TalentTreeSkillNode:Constructor()
   self.index = 0
   self.level = 0
   self.skill_id = 0
@@ -595,27 +716,17 @@ _ENV.TalentTreeSkillNode = _ENV.TalentTreeSkillNode
   self.select = 0
 end
 
--- DECOMPILER ERROR at PC1093: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.TalentTreeSkillNode)._proto = {
-[1] = {"index", "int"}
-, 
-[2] = {"level", "int"}
-, 
-[3] = {"skill_id", "int"}
-, 
-[4] = {"skill_type", "int"}
-, 
-[5] = {"select", "int"}
+TalentTreeSkillNode._proto = {
+  [1] = {"index", "int"},
+  [2] = {"level", "int"},
+  [3] = {"skill_id", "int"},
+  [4] = {"skill_type", "int"},
+  [5] = {"select", "int"}
 }
 _class("BloodsuckerMissionCreateInfo", Object)
-_ENV.BloodsuckerMissionCreateInfo = _ENV.BloodsuckerMissionCreateInfo
--- DECOMPILER ERROR at PC1105: Confused about usage of register: R15 in 'UnsetPending'
+BloodsuckerMissionCreateInfo = BloodsuckerMissionCreateInfo
 
-;
-(_ENV.BloodsuckerMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_24
+function BloodsuckerMissionCreateInfo:Constructor()
   self.mission_id = 0
   self.component_type = 0
   self.component_cfg_id = 0
@@ -623,142 +734,138 @@ _ENV.BloodsuckerMissionCreateInfo = _ENV.BloodsuckerMissionCreateInfo
   self.skill_info = {}
 end
 
--- DECOMPILER ERROR at PC1134: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerMissionCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"component_type", "int"}
-, 
-[3] = {"component_cfg_id", "int"}
-, 
-[4] = {"relics", "list<int>"}
-, 
-[5] = {"skill_info", "list<TalentTreeSkillNode>"}
+BloodsuckerMissionCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "component_type",
+    "int"
+  },
+  [3] = {
+    "component_cfg_id",
+    "int"
+  },
+  [4] = {"relics", "list<int>"},
+  [5] = {
+    "skill_info",
+    "list<TalentTreeSkillNode>"
+  }
 }
 _class("PopStarMissionCreateInfo", Object)
-_ENV.PopStarMissionCreateInfo = _ENV.PopStarMissionCreateInfo
--- DECOMPILER ERROR at PC1146: Confused about usage of register: R15 in 'UnsetPending'
+PopStarMissionCreateInfo = PopStarMissionCreateInfo
 
-;
-(_ENV.PopStarMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_25
+function PopStarMissionCreateInfo:Constructor()
   self.mission_id = 0
   self.component_id = 0
   self.CampaignMissionParams = {}
   self.is_challenge = false
 end
 
--- DECOMPILER ERROR at PC1170: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.PopStarMissionCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"component_id", "int"}
-, 
-[3] = {"CampaignMissionParams", "map<int,int64>"}
-, 
-[4] = {"is_challenge", "bool"}
+PopStarMissionCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "component_id",
+    "int"
+  },
+  [3] = {
+    "CampaignMissionParams",
+    "map<int,int64>"
+  },
+  [4] = {
+    "is_challenge",
+    "bool"
+  }
 }
 _class("GlobalbossMissionCreateInfo", Object)
-_ENV.GlobalbossMissionCreateInfo = _ENV.GlobalbossMissionCreateInfo
--- DECOMPILER ERROR at PC1182: Confused about usage of register: R15 in 'UnsetPending'
+GlobalbossMissionCreateInfo = GlobalbossMissionCreateInfo
 
-;
-(_ENV.GlobalbossMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_26
+function GlobalbossMissionCreateInfo:Constructor()
   self.mission_id = 0
   self.component_id = 0
   self.CampaignMissionParams = {}
 end
 
--- DECOMPILER ERROR at PC1201: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossMissionCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"component_id", "int"}
-, 
-[3] = {"CampaignMissionParams", "map<int,int64>"}
+GlobalbossMissionCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "component_id",
+    "int"
+  },
+  [3] = {
+    "CampaignMissionParams",
+    "map<int,int64>"
+  }
 }
 _class("SeasonMissionCreateInfo", Object)
-_ENV.SeasonMissionCreateInfo = _ENV.SeasonMissionCreateInfo
--- DECOMPILER ERROR at PC1213: Confused about usage of register: R15 in 'UnsetPending'
+SeasonMissionCreateInfo = SeasonMissionCreateInfo
 
-;
-(_ENV.SeasonMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_27
+function SeasonMissionCreateInfo:Constructor()
   self.mission_id = 0
   self.component_id = 0
   self.CampaignMissionParams = {}
 end
 
--- DECOMPILER ERROR at PC1232: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.SeasonMissionCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"component_id", "int"}
-, 
-[3] = {"CampaignMissionParams", "map<int,int64>"}
+SeasonMissionCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "component_id",
+    "int"
+  },
+  [3] = {
+    "CampaignMissionParams",
+    "map<int,int64>"
+  }
 }
 _class("EightPetsMissionCreateInfo", Object)
-_ENV.EightPetsMissionCreateInfo = _ENV.EightPetsMissionCreateInfo
--- DECOMPILER ERROR at PC1244: Confused about usage of register: R15 in 'UnsetPending'
+EightPetsMissionCreateInfo = EightPetsMissionCreateInfo
 
-;
-(_ENV.EightPetsMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_28
+function EightPetsMissionCreateInfo:Constructor()
   self.mission_id = 0
   self.component_id = 0
   self.CampaignMissionParams = {}
 end
 
--- DECOMPILER ERROR at PC1263: Confused about usage of register: R15 in 'UnsetPending'
-
-;
-(_ENV.EightPetsMissionCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"component_id", "int"}
-, 
-[3] = {"CampaignMissionParams", "map<int,int64>"}
+EightPetsMissionCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "component_id",
+    "int"
+  },
+  [3] = {
+    "CampaignMissionParams",
+    "map<int,int64>"
+  }
 }
-local ESeasonMazeAutoBeadAttr = {ESeasonMazeAutoBeadAttr_Crit = 0, ESeasonMazeAutoBeadAttr_Hit = 1, ESeasonMazeAutoBeadAttr_Combo = 2, ESeasonMazeAutoBeadAttr_HurtFload = 3, ESeasonMazeAutoBeadAttr_Energy = 4, ESeasonMazeAutoBeadAttr_Hurt = 5, ESeasonMazeAutoBeadAttr_CritHurt = 6}
+local ESeasonMazeAutoBeadAttr = {
+  ESeasonMazeAutoBeadAttr_Crit = 0,
+  ESeasonMazeAutoBeadAttr_Hit = 1,
+  ESeasonMazeAutoBeadAttr_Combo = 2,
+  ESeasonMazeAutoBeadAttr_HurtFload = 3,
+  ESeasonMazeAutoBeadAttr_Energy = 4,
+  ESeasonMazeAutoBeadAttr_Hurt = 5,
+  ESeasonMazeAutoBeadAttr_CritHurt = 6
+}
 _enum("ESeasonMazeAutoBeadAttr", ESeasonMazeAutoBeadAttr)
 _class("SeasonMazeAutoBeadInfo", Object)
-_ENV.SeasonMazeAutoBeadInfo = _ENV.SeasonMazeAutoBeadInfo
--- DECOMPILER ERROR at PC1294: Confused about usage of register: R16 in 'UnsetPending'
+SeasonMazeAutoBeadInfo = SeasonMazeAutoBeadInfo
 
-;
-(_ENV.SeasonMazeAutoBeadInfo).Constructor = function(self)
-  -- function num : 0_29
+function SeasonMazeAutoBeadInfo:Constructor()
   self.unique_id = 0
   self.bead_id = 0
   self.att_info = {}
 end
 
--- DECOMPILER ERROR at PC1313: Confused about usage of register: R16 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeAutoBeadInfo)._proto = {
-[1] = {"unique_id", "int"}
-, 
-[2] = {"bead_id", "int"}
-, 
-[3] = {"att_info", "map<int,int>"}
+SeasonMazeAutoBeadInfo._proto = {
+  [1] = {"unique_id", "int"},
+  [2] = {"bead_id", "int"},
+  [3] = {
+    "att_info",
+    "map<int,int>"
+  }
 }
 _class("SeasonMazeMissionCreateInfo", Object)
-_ENV.SeasonMazeMissionCreateInfo = _ENV.SeasonMazeMissionCreateInfo
--- DECOMPILER ERROR at PC1325: Confused about usage of register: R16 in 'UnsetPending'
+SeasonMazeMissionCreateInfo = SeasonMazeMissionCreateInfo
 
-;
-(_ENV.SeasonMazeMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_30
+function SeasonMazeMissionCreateInfo:Constructor()
   self.room_id = 0
   self.mission_id = 0
   self.component_id = 0
@@ -772,39 +879,50 @@ _ENV.SeasonMazeMissionCreateInfo = _ENV.SeasonMazeMissionCreateInfo
   self.world_boss_round_cnt = 0
 end
 
--- DECOMPILER ERROR at PC1384: Confused about usage of register: R16 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeMissionCreateInfo)._proto = {
-[1] = {"room_id", "int"}
-, 
-[2] = {"mission_id", "int"}
-, 
-[3] = {"component_id", "int"}
-, 
-[4] = {"CampaignMissionParams", "map<int,int64>"}
-, 
-[5] = {"relic_list", "map<int,int>"}
-, 
-[6] = {"autobead_list", "list<SeasonMazeAutoBeadInfo>"}
-, 
-[7] = {"suit_relic_list", "list<int>"}
-, 
-[8] = {"outside_attr", "map<int,int>"}
-, 
-[9] = {"wave_randoms", "list<float>"}
-, 
-[10] = {"match_sub_type", "int"}
-, 
-[11] = {"world_boss_round_cnt", "int"}
+SeasonMazeMissionCreateInfo._proto = {
+  [1] = {"room_id", "int"},
+  [2] = {"mission_id", "int"},
+  [3] = {
+    "component_id",
+    "int"
+  },
+  [4] = {
+    "CampaignMissionParams",
+    "map<int,int64>"
+  },
+  [5] = {
+    "relic_list",
+    "map<int,int>"
+  },
+  [6] = {
+    "autobead_list",
+    "list<SeasonMazeAutoBeadInfo>"
+  },
+  [7] = {
+    "suit_relic_list",
+    "list<int>"
+  },
+  [8] = {
+    "outside_attr",
+    "map<int,int>"
+  },
+  [9] = {
+    "wave_randoms",
+    "list<float>"
+  },
+  [10] = {
+    "match_sub_type",
+    "int"
+  },
+  [11] = {
+    "world_boss_round_cnt",
+    "int"
+  }
 }
 _class("AnipopMissionCreateInfo", Object)
-_ENV.AnipopMissionCreateInfo = _ENV.AnipopMissionCreateInfo
--- DECOMPILER ERROR at PC1396: Confused about usage of register: R16 in 'UnsetPending'
+AnipopMissionCreateInfo = AnipopMissionCreateInfo
 
-;
-(_ENV.AnipopMissionCreateInfo).Constructor = function(self)
-  -- function num : 0_31
+function AnipopMissionCreateInfo:Constructor()
   self.mission_id = 0
   self.mission_index = 0
   self.left_turn = 0
@@ -819,41 +937,39 @@ _ENV.AnipopMissionCreateInfo = _ENV.AnipopMissionCreateInfo
   self.skill_relics = {}
 end
 
--- DECOMPILER ERROR at PC1460: Confused about usage of register: R16 in 'UnsetPending'
-
-;
-(_ENV.AnipopMissionCreateInfo)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"mission_index", "int"}
-, 
-[3] = {"left_turn", "int"}
-, 
-[4] = {"relics", "list<int>"}
-, 
-[5] = {"relic_counters", "map<int,int>"}
-, 
-[6] = {"wave_randoms", "list<float>"}
-, 
-[7] = {"rand_seed", "uint"}
-, 
-[8] = {"team_blood", "int"}
-, 
-[9] = {"camp_id", "int"}
-, 
-[10] = {"fetters_id", "int"}
-, 
-[11] = {"feature_info_list", "map<int,int>"}
-, 
-[12] = {"skill_relics", "list<int>"}
+AnipopMissionCreateInfo._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "mission_index",
+    "int"
+  },
+  [3] = {"left_turn", "int"},
+  [4] = {"relics", "list<int>"},
+  [5] = {
+    "relic_counters",
+    "map<int,int>"
+  },
+  [6] = {
+    "wave_randoms",
+    "list<float>"
+  },
+  [7] = {"rand_seed", "uint"},
+  [8] = {"team_blood", "int"},
+  [9] = {"camp_id", "int"},
+  [10] = {"fetters_id", "int"},
+  [11] = {
+    "feature_info_list",
+    "map<int,int>"
+  },
+  [12] = {
+    "skill_relics",
+    "list<int>"
+  }
 }
 _class("ClientMatchCreateInfo", Object)
-_ENV.ClientMatchCreateInfo = _ENV.ClientMatchCreateInfo
--- DECOMPILER ERROR at PC1472: Confused about usage of register: R16 in 'UnsetPending'
+ClientMatchCreateInfo = ClientMatchCreateInfo
 
-;
-(_ENV.ClientMatchCreateInfo).Constructor = function(self)
-  -- function num : 0_32
+function ClientMatchCreateInfo:Constructor()
   self.mission_info = {}
   self.m_extMissionInfo = {}
   self.maze_info = {}
@@ -877,61 +993,98 @@ _ENV.ClientMatchCreateInfo = _ENV.ClientMatchCreateInfo
   self.season_maze_mission_info = {}
 end
 
--- DECOMPILER ERROR at PC1581: Confused about usage of register: R16 in 'UnsetPending'
-
-;
-(_ENV.ClientMatchCreateInfo)._proto = {
-[1] = {"mission_info", "list<MissionCreateInfo>"}
-, 
-[3] = {"m_extMissionInfo", "list<ExtMissionCreateInfo>"}
-, 
-[4] = {"maze_info", "list<MazeCreateInfo>"}
-, 
-[5] = {"resdungeon_info", "list<ResDungeonCreateInfo>"}
-, 
-[6] = {"tower_info", "list<TowerCreateInfo>"}
-, 
-[7] = {"campaign_mission_info", "list<CampaignMissionCreateInfo>"}
-, 
-[8] = {"tale_pet_info", "list<TalePetCreateInfo>"}
-, 
-[9] = {"conquest_mission_info", "list<ConquestMissionCreateInfo>"}
-, 
-[10] = {"lost_area_mission_info", "list<LostAreaCreateInfo>"}
-, 
-[11] = {"black_fist_info", "list<BlackFistCreateInfo>"}
-, 
-[12] = {"world_boss_mission_info", "list<WorldBossCreateInfo>"}
-, 
-[13] = {"chess_mission_info", "list<ChessMissionCreateInfo>"}
-, 
-[14] = {"difficulty_mission_info", "list<DifficultyMissionCreateInfo>"}
-, 
-[15] = {"sailing_mission_info", "list<SailingMissionCreateInfo>"}
-, 
-[16] = {"bloodsucker_mission_info", "list<BloodsuckerMissionCreateInfo>"}
-, 
-[17] = {"popstar_mission_info", "list<PopStarMissionCreateInfo>"}
-, 
-[18] = {"globalboss_mission_info", "list<GlobalbossMissionCreateInfo>"}
-, 
-[19] = {"season_mission_info", "list<SeasonMissionCreateInfo>"}
-, 
-[20] = {"eight_pets_mission_info", "list<EightPetsMissionCreateInfo>"}
-, 
-[21] = {"anipop_mission_info", "list<AnipopMissionCreateInfo>"}
-, 
-[22] = {"season_maze_mission_info", "list<SeasonMazeMissionCreateInfo>"}
+ClientMatchCreateInfo._proto = {
+  [1] = {
+    "mission_info",
+    "list<MissionCreateInfo>"
+  },
+  [3] = {
+    "m_extMissionInfo",
+    "list<ExtMissionCreateInfo>"
+  },
+  [4] = {
+    "maze_info",
+    "list<MazeCreateInfo>"
+  },
+  [5] = {
+    "resdungeon_info",
+    "list<ResDungeonCreateInfo>"
+  },
+  [6] = {
+    "tower_info",
+    "list<TowerCreateInfo>"
+  },
+  [7] = {
+    "campaign_mission_info",
+    "list<CampaignMissionCreateInfo>"
+  },
+  [8] = {
+    "tale_pet_info",
+    "list<TalePetCreateInfo>"
+  },
+  [9] = {
+    "conquest_mission_info",
+    "list<ConquestMissionCreateInfo>"
+  },
+  [10] = {
+    "lost_area_mission_info",
+    "list<LostAreaCreateInfo>"
+  },
+  [11] = {
+    "black_fist_info",
+    "list<BlackFistCreateInfo>"
+  },
+  [12] = {
+    "world_boss_mission_info",
+    "list<WorldBossCreateInfo>"
+  },
+  [13] = {
+    "chess_mission_info",
+    "list<ChessMissionCreateInfo>"
+  },
+  [14] = {
+    "difficulty_mission_info",
+    "list<DifficultyMissionCreateInfo>"
+  },
+  [15] = {
+    "sailing_mission_info",
+    "list<SailingMissionCreateInfo>"
+  },
+  [16] = {
+    "bloodsucker_mission_info",
+    "list<BloodsuckerMissionCreateInfo>"
+  },
+  [17] = {
+    "popstar_mission_info",
+    "list<PopStarMissionCreateInfo>"
+  },
+  [18] = {
+    "globalboss_mission_info",
+    "list<GlobalbossMissionCreateInfo>"
+  },
+  [19] = {
+    "season_mission_info",
+    "list<SeasonMissionCreateInfo>"
+  },
+  [20] = {
+    "eight_pets_mission_info",
+    "list<EightPetsMissionCreateInfo>"
+  },
+  [21] = {
+    "anipop_mission_info",
+    "list<AnipopMissionCreateInfo>"
+  },
+  [22] = {
+    "season_maze_mission_info",
+    "list<SeasonMazeMissionCreateInfo>"
+  }
 }
 local ELinkLineType = {ELLT_LINE_Common = 0, ELLT_LINE_NoElementCostStep = 1}
 _enum("ELinkLineType", ELinkLineType)
 _class("MatchCreateInfo", Object)
-_ENV.MatchCreateInfo = _ENV.MatchCreateInfo
--- DECOMPILER ERROR at PC1602: Confused about usage of register: R17 in 'UnsetPending'
+MatchCreateInfo = MatchCreateInfo
 
-;
-(_ENV.MatchCreateInfo).Constructor = function(self)
-  -- function num : 0_33 , upvalues : _ENV
+function MatchCreateInfo:Constructor()
   self.match_type = 0
   self.creator_id = 0
   self.level_id = 0
@@ -963,75 +1116,92 @@ _ENV.MatchCreateInfo = _ENV.MatchCreateInfo
   self.is_restart = false
 end
 
--- DECOMPILER ERROR at PC1752: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.MatchCreateInfo)._proto = {
-[1] = {"match_type", "int"}
-, 
-[2] = {"creator_id", "int64"}
-, 
-[3] = {"level_id", "int"}
-, 
-[4] = {"formation_id", "int"}
-, 
-[5] = {"seed", "uint"}
-, 
-[6] = {"m_time", "time"}
-, 
-[7] = {"match_logic_flags", "uint64"}
-, 
-[8] = {"sync_mode", "int"}
-, 
-[9] = {"server_auto_fight", "bool"}
-, 
-[10] = {"guide_info", "GuideInfo"}
-, 
-[11] = {"word_ids", "list<int>"}
-, 
-[12] = {"client_create_info", "ClientMatchCreateInfo"}
-, 
-[13] = {"level_is_pass", "bool"}
-, 
-[14] = {"assign_wave_refresh_probability", "int"}
-, 
-[15] = {"m_nHelpPetKey", "int"}
-, 
-[16] = {"tale_pet_buffs", "list<int>"}
-, 
-[17] = {"normal_pet_buffs", "list<int>"}
-, 
-[18] = {"trail_buff_level_id", "int"}
-, 
-[19] = {"double_resource_state", "bool"}
-, 
-[20] = {"affixList", "list<int>"}
-, 
-[21] = {"hard_id", "int"}
-, 
-[22] = {"hard_pro_id", "int"}
-, 
-[23] = {"wave_id_list", "list<int>"}
-, 
-[24] = {"broad_id_list", "list<int>"}
-, 
-[25] = {"board_seed", "uint"}
-, 
-[26] = {"cartridge_pst_id", "int64"}
-, 
-[27] = {"pro_type_id", "map<int,int>"}
-, 
-[28] = {"link_line_type", "int"}
-, 
-[29] = {"is_restart", "bool"}
+MatchCreateInfo._proto = {
+  [1] = {"match_type", "int"},
+  [2] = {"creator_id", "int64"},
+  [3] = {"level_id", "int"},
+  [4] = {
+    "formation_id",
+    "int"
+  },
+  [5] = {"seed", "uint"},
+  [6] = {"m_time", "time"},
+  [7] = {
+    "match_logic_flags",
+    "uint64"
+  },
+  [8] = {"sync_mode", "int"},
+  [9] = {
+    "server_auto_fight",
+    "bool"
+  },
+  [10] = {"guide_info", "GuideInfo"},
+  [11] = {"word_ids", "list<int>"},
+  [12] = {
+    "client_create_info",
+    "ClientMatchCreateInfo"
+  },
+  [13] = {
+    "level_is_pass",
+    "bool"
+  },
+  [14] = {
+    "assign_wave_refresh_probability",
+    "int"
+  },
+  [15] = {
+    "m_nHelpPetKey",
+    "int"
+  },
+  [16] = {
+    "tale_pet_buffs",
+    "list<int>"
+  },
+  [17] = {
+    "normal_pet_buffs",
+    "list<int>"
+  },
+  [18] = {
+    "trail_buff_level_id",
+    "int"
+  },
+  [19] = {
+    "double_resource_state",
+    "bool"
+  },
+  [20] = {"affixList", "list<int>"},
+  [21] = {"hard_id", "int"},
+  [22] = {
+    "hard_pro_id",
+    "int"
+  },
+  [23] = {
+    "wave_id_list",
+    "list<int>"
+  },
+  [24] = {
+    "broad_id_list",
+    "list<int>"
+  },
+  [25] = {"board_seed", "uint"},
+  [26] = {
+    "cartridge_pst_id",
+    "int64"
+  },
+  [27] = {
+    "pro_type_id",
+    "map<int,int>"
+  },
+  [28] = {
+    "link_line_type",
+    "int"
+  },
+  [29] = {"is_restart", "bool"}
 }
 _class("BattleStatResult", Object)
-_ENV.BattleStatResult = _ENV.BattleStatResult
--- DECOMPILER ERROR at PC1764: Confused about usage of register: R17 in 'UnsetPending'
+BattleStatResult = BattleStatResult
 
-;
-(_ENV.BattleStatResult).Constructor = function(self)
-  -- function num : 0_34
+function BattleStatResult:Constructor()
   self.UseTurn = 0
   self.LeftTurn = 0
   self.KillMonster = 0
@@ -1056,111 +1226,105 @@ _ENV.BattleStatResult = _ENV.BattleStatResult
   self.EraseSquare = {}
 end
 
--- DECOMPILER ERROR at PC1878: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.BattleStatResult)._proto = {
-[1] = {"UseTurn", "int"}
-, 
-[2] = {"LeftTurn", "int"}
-, 
-[3] = {"KillMonster", "int"}
-, 
-[4] = {"KillBoss", "int"}
-, 
-[5] = {"ActiveSkill", "int"}
-, 
-[6] = {"ChainSkill", "int"}
-, 
-[7] = {"SuperChain", "int"}
-, 
-[8] = {"ColorSkill", "int"}
-, 
-[9] = {"MaxChain", "int"}
-, 
-[10] = {"OneChainNormalAttack", "int"}
-, 
-[11] = {"OneChainKillMonster", "int"}
-, 
-[12] = {"OneActiveSkillKill", "int"}
-, 
-[14] = {"GainChest", "int"}
-, 
-[15] = {"Blood", "double"}
-, 
-[16] = {"AutoFight", "int"}
-, 
-[17] = {"DoubleSpeed", "int"}
-, 
-[18] = {"changeTeamLeaderNum", "int"}
-, 
-[19] = {"passivechangeLeaderNum", "int"}
-, 
-[20] = {"line_time", "int"}
-, 
-[21] = {"step_num", "int"}
-, 
-[22] = {"MazeAddLight", "int"}
-, 
-[23] = {"EraseSquare", "map<int,int>"}
+BattleStatResult._proto = {
+  [1] = {"UseTurn", "int"},
+  [2] = {"LeftTurn", "int"},
+  [3] = {
+    "KillMonster",
+    "int"
+  },
+  [4] = {"KillBoss", "int"},
+  [5] = {
+    "ActiveSkill",
+    "int"
+  },
+  [6] = {"ChainSkill", "int"},
+  [7] = {"SuperChain", "int"},
+  [8] = {"ColorSkill", "int"},
+  [9] = {"MaxChain", "int"},
+  [10] = {
+    "OneChainNormalAttack",
+    "int"
+  },
+  [11] = {
+    "OneChainKillMonster",
+    "int"
+  },
+  [12] = {
+    "OneActiveSkillKill",
+    "int"
+  },
+  [14] = {"GainChest", "int"},
+  [15] = {"Blood", "double"},
+  [16] = {"AutoFight", "int"},
+  [17] = {
+    "DoubleSpeed",
+    "int"
+  },
+  [18] = {
+    "changeTeamLeaderNum",
+    "int"
+  },
+  [19] = {
+    "passivechangeLeaderNum",
+    "int"
+  },
+  [20] = {"line_time", "int"},
+  [21] = {"step_num", "int"},
+  [22] = {
+    "MazeAddLight",
+    "int"
+  },
+  [23] = {
+    "EraseSquare",
+    "map<int,int>"
+  }
 }
 _class("MatchPetResult", Object)
-_ENV.MatchPetResult = _ENV.MatchPetResult
--- DECOMPILER ERROR at PC1890: Confused about usage of register: R17 in 'UnsetPending'
+MatchPetResult = MatchPetResult
 
-;
-(_ENV.MatchPetResult).Constructor = function(self)
-  -- function num : 0_35
+function MatchPetResult:Constructor()
   self.pet_pstid = 0
   self.pet_power = 0
   self.pet_blood = 0
   self.pet_is_dead = false
 end
 
--- DECOMPILER ERROR at PC1914: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.MatchPetResult)._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"pet_power", "int"}
-, 
-[3] = {"pet_blood", "double"}
-, 
-[4] = {"pet_is_dead", "bool"}
+MatchPetResult._proto = {
+  [1] = {"pet_pstid", "int64"},
+  [2] = {"pet_power", "int"},
+  [3] = {"pet_blood", "double"},
+  [4] = {
+    "pet_is_dead",
+    "bool"
+  }
 }
 _class("MatchResultRoleInfo", Object)
-_ENV.MatchResultRoleInfo = _ENV.MatchResultRoleInfo
--- DECOMPILER ERROR at PC1926: Confused about usage of register: R17 in 'UnsetPending'
+MatchResultRoleInfo = MatchResultRoleInfo
 
-;
-(_ENV.MatchResultRoleInfo).Constructor = function(self)
-  -- function num : 0_36
+function MatchResultRoleInfo:Constructor()
   self.exp_before = 0
   self.max_phy_before = 0
   self.max_phy_after = 0
   self.phy_add = 0
 end
 
--- DECOMPILER ERROR at PC1950: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.MatchResultRoleInfo)._proto = {
-[1] = {"exp_before", "int64"}
-, 
-[2] = {"max_phy_before", "int"}
-, 
-[3] = {"max_phy_after", "int"}
-, 
-[4] = {"phy_add", "int"}
+MatchResultRoleInfo._proto = {
+  [1] = {"exp_before", "int64"},
+  [2] = {
+    "max_phy_before",
+    "int"
+  },
+  [3] = {
+    "max_phy_after",
+    "int"
+  },
+  [4] = {"phy_add", "int"}
 }
 _class("MissionResult", Object)
-_ENV.MissionResult = _ENV.MissionResult
--- DECOMPILER ERROR at PC1962: Confused about usage of register: R17 in 'UnsetPending'
+MissionResult = MissionResult
 
-;
-(_ENV.MissionResult).Constructor = function(self)
-  -- function num : 0_37 , upvalues : _ENV
+function MissionResult:Constructor()
   self.mission_id = 0
   self.star_condition = {}
   self.rewards = {}
@@ -1169,29 +1333,33 @@ _ENV.MissionResult = _ENV.MissionResult
   self.match_result_role_info = MatchResultRoleInfo:New()
 end
 
--- DECOMPILER ERROR at PC1996: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.MissionResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[3] = {"star_condition", "list<int>"}
-, 
-[4] = {"rewards", "list<RoleAsset>"}
-, 
-[5] = {"star_rewards", "list<RoleAsset>"}
-, 
-[6] = {"first_rewards", "list<RoleAsset>"}
-, 
-[7] = {"match_result_role_info", "MatchResultRoleInfo"}
+MissionResult._proto = {
+  [1] = {"mission_id", "int"},
+  [3] = {
+    "star_condition",
+    "list<int>"
+  },
+  [4] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [5] = {
+    "star_rewards",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "first_rewards",
+    "list<RoleAsset>"
+  },
+  [7] = {
+    "match_result_role_info",
+    "MatchResultRoleInfo"
+  }
 }
 _class("ExtMissionResult", Object)
-_ENV.ExtMissionResult = _ENV.ExtMissionResult
--- DECOMPILER ERROR at PC2008: Confused about usage of register: R17 in 'UnsetPending'
+ExtMissionResult = ExtMissionResult
 
-;
-(_ENV.ExtMissionResult).Constructor = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function ExtMissionResult:Constructor()
   self.m_nExtMissionID = 0
   self.m_nExtTaskID = 0
   self.pass_without_help = 0
@@ -1202,33 +1370,44 @@ _ENV.ExtMissionResult = _ENV.ExtMissionResult
   self.match_result_role_info = MatchResultRoleInfo:New()
 end
 
--- DECOMPILER ERROR at PC2052: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.ExtMissionResult)._proto = {
-[1] = {"m_nExtMissionID", "int"}
-, 
-[2] = {"m_nExtTaskID", "int"}
-, 
-[3] = {"pass_without_help", "int"}
-, 
-[4] = {"m_vecCondition", "list<int>"}
-, 
-[5] = {"m_vecAwardNormal", "list<RoleAsset>"}
-, 
-[6] = {"m_firstpass_award", "list<RoleAsset>"}
-, 
-[7] = {"m_vecAwardPerfect", "list<RoleAsset>"}
-, 
-[8] = {"match_result_role_info", "MatchResultRoleInfo"}
+ExtMissionResult._proto = {
+  [1] = {
+    "m_nExtMissionID",
+    "int"
+  },
+  [2] = {
+    "m_nExtTaskID",
+    "int"
+  },
+  [3] = {
+    "pass_without_help",
+    "int"
+  },
+  [4] = {
+    "m_vecCondition",
+    "list<int>"
+  },
+  [5] = {
+    "m_vecAwardNormal",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "m_firstpass_award",
+    "list<RoleAsset>"
+  },
+  [7] = {
+    "m_vecAwardPerfect",
+    "list<RoleAsset>"
+  },
+  [8] = {
+    "match_result_role_info",
+    "MatchResultRoleInfo"
+  }
 }
 _class("MazeResult", Object)
-_ENV.MazeResult = _ENV.MazeResult
--- DECOMPILER ERROR at PC2064: Confused about usage of register: R17 in 'UnsetPending'
+MazeResult = MazeResult
 
-;
-(_ENV.MazeResult).Constructor = function(self)
-  -- function num : 0_39
+function MazeResult:Constructor()
   self.maze_room_index = 0
   self.maze_room_id = 0
   self.pet_result = {}
@@ -1240,35 +1419,48 @@ _ENV.MazeResult = _ENV.MazeResult
   self.battle_archive = ""
 end
 
--- DECOMPILER ERROR at PC2113: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.MazeResult)._proto = {
-[1] = {"maze_room_index", "int"}
-, 
-[2] = {"maze_room_id", "int"}
-, 
-[3] = {"pet_result", "list<MatchPetResult>"}
-, 
-[4] = {"relics_counters", "map<int,int>"}
-, 
-[5] = {"rewards", "list<RoleAsset>"}
-, 
-[6] = {"relics", "list<RoleAsset>"}
-, 
-[7] = {"drop_rewards", "list<RoleAsset>"}
-, 
-[8] = {"save_archive", "bool"}
-, 
-[9] = {"battle_archive", "string"}
+MazeResult._proto = {
+  [1] = {
+    "maze_room_index",
+    "int"
+  },
+  [2] = {
+    "maze_room_id",
+    "int"
+  },
+  [3] = {
+    "pet_result",
+    "list<MatchPetResult>"
+  },
+  [4] = {
+    "relics_counters",
+    "map<int,int>"
+  },
+  [5] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "relics",
+    "list<RoleAsset>"
+  },
+  [7] = {
+    "drop_rewards",
+    "list<RoleAsset>"
+  },
+  [8] = {
+    "save_archive",
+    "bool"
+  },
+  [9] = {
+    "battle_archive",
+    "string"
+  }
 }
 _class("ResDungeonResult", Object)
-_ENV.ResDungeonResult = _ENV.ResDungeonResult
--- DECOMPILER ERROR at PC2125: Confused about usage of register: R17 in 'UnsetPending'
+ResDungeonResult = ResDungeonResult
 
-;
-(_ENV.ResDungeonResult).Constructor = function(self)
-  -- function num : 0_40 , upvalues : _ENV
+function ResDungeonResult:Constructor()
   self.res_dungeon_id = 0
   self.rewards = {}
   self.match_result_role_info = MatchResultRoleInfo:New()
@@ -1278,113 +1470,110 @@ _ENV.ResDungeonResult = _ENV.ResDungeonResult
   self.res_help_component_rewards = {}
 end
 
--- DECOMPILER ERROR at PC2164: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.ResDungeonResult)._proto = {
-[1] = {"res_dungeon_id", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
-, 
-[3] = {"match_result_role_info", "MatchResultRoleInfo"}
-, 
-[4] = {"ext_rewards", "list<RoleAsset>"}
-, 
-[5] = {"ext_rewards_no_double", "list<RoleAsset>"}
-, 
-[6] = {"double_ext_rewards", "list<RoleAsset>"}
-, 
-[7] = {"res_help_component_rewards", "list<RoleAsset>"}
+ResDungeonResult._proto = {
+  [1] = {
+    "res_dungeon_id",
+    "int"
+  },
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "match_result_role_info",
+    "MatchResultRoleInfo"
+  },
+  [4] = {
+    "ext_rewards",
+    "list<RoleAsset>"
+  },
+  [5] = {
+    "ext_rewards_no_double",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "double_ext_rewards",
+    "list<RoleAsset>"
+  },
+  [7] = {
+    "res_help_component_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("TowerResult", Object)
-_ENV.TowerResult = _ENV.TowerResult
--- DECOMPILER ERROR at PC2176: Confused about usage of register: R17 in 'UnsetPending'
+TowerResult = TowerResult
 
-;
-(_ENV.TowerResult).Constructor = function(self)
-  -- function num : 0_41 , upvalues : _ENV
+function TowerResult:Constructor()
   self.tower_id = 0
   self.rewards = {}
   self.match_result_role_info = MatchResultRoleInfo:New()
 end
 
--- DECOMPILER ERROR at PC2195: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.TowerResult)._proto = {
-[1] = {"tower_id", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
-, 
-[3] = {"match_result_role_info", "MatchResultRoleInfo"}
+TowerResult._proto = {
+  [1] = {"tower_id", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "match_result_role_info",
+    "MatchResultRoleInfo"
+  }
 }
 _class("TalePetResult", Object)
-_ENV.TalePetResult = _ENV.TalePetResult
--- DECOMPILER ERROR at PC2207: Confused about usage of register: R17 in 'UnsetPending'
+TalePetResult = TalePetResult
 
-;
-(_ENV.TalePetResult).Constructor = function(self)
-  -- function num : 0_42
+function TalePetResult:Constructor()
   self.stage_id = 0
   self.rewards = {}
 end
 
--- DECOMPILER ERROR at PC2221: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.TalePetResult)._proto = {
-[1] = {"stage_id", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
+TalePetResult._proto = {
+  [1] = {"stage_id", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("LostAreaResult", Object)
-_ENV.LostAreaResult = _ENV.LostAreaResult
--- DECOMPILER ERROR at PC2233: Confused about usage of register: R17 in 'UnsetPending'
+LostAreaResult = LostAreaResult
 
-;
-(_ENV.LostAreaResult).Constructor = function(self)
-  -- function num : 0_43
+function LostAreaResult:Constructor()
   self.mission_id = 0
   self.first_pass_rewards = {}
   self.recommend_pet_rewards = {}
 end
 
--- DECOMPILER ERROR at PC2252: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.LostAreaResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"first_pass_rewards", "list<RoleAsset>"}
-, 
-[3] = {"recommend_pet_rewards", "list<RoleAsset>"}
+LostAreaResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "first_pass_rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "recommend_pet_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("WorldBossResult", Object)
-_ENV.WorldBossResult = _ENV.WorldBossResult
--- DECOMPILER ERROR at PC2264: Confused about usage of register: R17 in 'UnsetPending'
+WorldBossResult = WorldBossResult
 
-;
-(_ENV.WorldBossResult).Constructor = function(self)
-  -- function num : 0_44
+function WorldBossResult:Constructor()
   self.mission_id = 0
   self.total_damage = 0
 end
 
--- DECOMPILER ERROR at PC2278: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.WorldBossResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"total_damage", "int64"}
+WorldBossResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "total_damage",
+    "int64"
+  }
 }
 _class("CombatSimulatorResult", Object)
-_ENV.CombatSimulatorResult = _ENV.CombatSimulatorResult
--- DECOMPILER ERROR at PC2290: Confused about usage of register: R17 in 'UnsetPending'
+CombatSimulatorResult = CombatSimulatorResult
 
-;
-(_ENV.CombatSimulatorResult).Constructor = function(self)
-  -- function num : 0_45
+function CombatSimulatorResult:Constructor()
   self.cartridge_pst_id = 0
   self.cartridge_tpl_id = 0
   self.rewards = {}
@@ -1392,27 +1581,32 @@ _ENV.CombatSimulatorResult = _ENV.CombatSimulatorResult
   self.extra_rewards = {}
 end
 
--- DECOMPILER ERROR at PC2319: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.CombatSimulatorResult)._proto = {
-[1] = {"cartridge_pst_id", "int64"}
-, 
-[2] = {"cartridge_tpl_id", "int"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
-, 
-[4] = {"random_rewards", "list<RoleAsset>"}
-, 
-[5] = {"extra_rewards", "list<RoleAsset>"}
+CombatSimulatorResult._proto = {
+  [1] = {
+    "cartridge_pst_id",
+    "int64"
+  },
+  [2] = {
+    "cartridge_tpl_id",
+    "int"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "random_rewards",
+    "list<RoleAsset>"
+  },
+  [5] = {
+    "extra_rewards",
+    "list<RoleAsset>"
+  }
 }
 _class("CampaignMissionResult", Object)
-_ENV.CampaignMissionResult = _ENV.CampaignMissionResult
--- DECOMPILER ERROR at PC2331: Confused about usage of register: R17 in 'UnsetPending'
+CampaignMissionResult = CampaignMissionResult
 
-;
-(_ENV.CampaignMissionResult).Constructor = function(self)
-  -- function num : 0_46 , upvalues : _ENV
+function CampaignMissionResult:Constructor()
   self.mission_id = 0
   self.star_condition = {}
   self.rewards = {}
@@ -1423,33 +1617,38 @@ _ENV.CampaignMissionResult = _ENV.CampaignMissionResult
   self.sub_type = 0
 end
 
--- DECOMPILER ERROR at PC2375: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.CampaignMissionResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"star_condition", "list<int>"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
-, 
-[4] = {"star_rewards", "list<RoleAsset>"}
-, 
-[5] = {"first_rewards", "list<RoleAsset>"}
-, 
-[6] = {"match_result_role_info", "MatchResultRoleInfo"}
-, 
-[7] = {"combat_simulator_result", "CombatSimulatorResult"}
-, 
-[8] = {"sub_type", "int"}
+CampaignMissionResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "star_condition",
+    "list<int>"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "star_rewards",
+    "list<RoleAsset>"
+  },
+  [5] = {
+    "first_rewards",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "match_result_role_info",
+    "MatchResultRoleInfo"
+  },
+  [7] = {
+    "combat_simulator_result",
+    "CombatSimulatorResult"
+  },
+  [8] = {"sub_type", "int"}
 }
 _class("ChessMissionResult", Object)
-_ENV.ChessMissionResult = _ENV.ChessMissionResult
--- DECOMPILER ERROR at PC2387: Confused about usage of register: R17 in 'UnsetPending'
+ChessMissionResult = ChessMissionResult
 
-;
-(_ENV.ChessMissionResult).Constructor = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function ChessMissionResult:Constructor()
   self.mission_id = 0
   self.star_condition = {}
   self.rewards = {}
@@ -1458,101 +1657,100 @@ _ENV.ChessMissionResult = _ENV.ChessMissionResult
   self.match_result_role_info = MatchResultRoleInfo:New()
 end
 
--- DECOMPILER ERROR at PC2421: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.ChessMissionResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"star_condition", "list<int>"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
-, 
-[4] = {"star_rewards", "list<RoleAsset>"}
-, 
-[5] = {"first_rewards", "list<RoleAsset>"}
-, 
-[6] = {"match_result_role_info", "MatchResultRoleInfo"}
+ChessMissionResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "star_condition",
+    "list<int>"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "star_rewards",
+    "list<RoleAsset>"
+  },
+  [5] = {
+    "first_rewards",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "match_result_role_info",
+    "MatchResultRoleInfo"
+  }
 }
 _class("ConquestMissionResult", Object)
-_ENV.ConquestMissionResult = _ENV.ConquestMissionResult
--- DECOMPILER ERROR at PC2433: Confused about usage of register: R17 in 'UnsetPending'
+ConquestMissionResult = ConquestMissionResult
 
-;
-(_ENV.ConquestMissionResult).Constructor = function(self)
-  -- function num : 0_48 , upvalues : _ENV
+function ConquestMissionResult:Constructor()
   self.mission_id = 0
   self.random_index = 0
   self.pass_wave_index = 0
   self.wave_award = RoleAsset:New()
 end
 
--- DECOMPILER ERROR at PC2457: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.ConquestMissionResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"random_index", "int"}
-, 
-[3] = {"pass_wave_index", "int"}
-, 
-[4] = {"wave_award", "RoleAsset"}
+ConquestMissionResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "random_index",
+    "int"
+  },
+  [3] = {
+    "pass_wave_index",
+    "int"
+  },
+  [4] = {"wave_award", "RoleAsset"}
 }
 _class("BlackFistResult", Object)
-_ENV.BlackFistResult = _ENV.BlackFistResult
--- DECOMPILER ERROR at PC2469: Confused about usage of register: R17 in 'UnsetPending'
+BlackFistResult = BlackFistResult
 
-;
-(_ENV.BlackFistResult).Constructor = function(self)
-  -- function num : 0_49 , upvalues : _ENV
+function BlackFistResult:Constructor()
   self.mission_id = 0
   self.rewards = {}
   self.combat_simulator_result = CombatSimulatorResult:New()
 end
 
--- DECOMPILER ERROR at PC2488: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.BlackFistResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
-, 
-[3] = {"combat_simulator_result", "CombatSimulatorResult"}
+BlackFistResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "combat_simulator_result",
+    "CombatSimulatorResult"
+  }
 }
 _class("DifficultyMissionResult", Object)
-_ENV.DifficultyMissionResult = _ENV.DifficultyMissionResult
--- DECOMPILER ERROR at PC2500: Confused about usage of register: R17 in 'UnsetPending'
+DifficultyMissionResult = DifficultyMissionResult
 
-;
-(_ENV.DifficultyMissionResult).Constructor = function(self)
-  -- function num : 0_50
+function DifficultyMissionResult:Constructor()
   self.parent_mission_id = 0
   self.sub_mission_id = 0
   self.rewards = {}
   self.entries = {}
 end
 
--- DECOMPILER ERROR at PC2524: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.DifficultyMissionResult)._proto = {
-[1] = {"parent_mission_id", "int"}
-, 
-[2] = {"sub_mission_id", "int"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
-, 
-[4] = {"entries", "list<int>"}
+DifficultyMissionResult._proto = {
+  [1] = {
+    "parent_mission_id",
+    "int"
+  },
+  [2] = {
+    "sub_mission_id",
+    "int"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [4] = {"entries", "list<int>"}
 }
 _class("SailingMissionResult", Object)
-_ENV.SailingMissionResult = _ENV.SailingMissionResult
--- DECOMPILER ERROR at PC2536: Confused about usage of register: R17 in 'UnsetPending'
+SailingMissionResult = SailingMissionResult
 
-;
-(_ENV.SailingMissionResult).Constructor = function(self)
-  -- function num : 0_51
+function SailingMissionResult:Constructor()
   self.layer_id = 0
   self.mission_id = 0
   self.layer_mission_num = 0
@@ -1560,27 +1758,26 @@ _ENV.SailingMissionResult = _ENV.SailingMissionResult
   self.history_exploration_progress = 0
 end
 
--- DECOMPILER ERROR at PC2565: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.SailingMissionResult)._proto = {
-[1] = {"layer_id", "int"}
-, 
-[2] = {"mission_id", "int"}
-, 
-[3] = {"layer_mission_num", "int"}
-, 
-[4] = {"cur_max_layer", "int"}
-, 
-[5] = {"history_exploration_progress", "int"}
+SailingMissionResult._proto = {
+  [1] = {"layer_id", "int"},
+  [2] = {"mission_id", "int"},
+  [3] = {
+    "layer_mission_num",
+    "int"
+  },
+  [4] = {
+    "cur_max_layer",
+    "int"
+  },
+  [5] = {
+    "history_exploration_progress",
+    "int"
+  }
 }
 _class("BloodsuckerMissionResult", Object)
-_ENV.BloodsuckerMissionResult = _ENV.BloodsuckerMissionResult
--- DECOMPILER ERROR at PC2577: Confused about usage of register: R17 in 'UnsetPending'
+BloodsuckerMissionResult = BloodsuckerMissionResult
 
-;
-(_ENV.BloodsuckerMissionResult).Constructor = function(self)
-  -- function num : 0_52
+function BloodsuckerMissionResult:Constructor()
   self.mission_id = 0
   self.pass_wave_index = 0
   self.pass_pet_type_num = 0
@@ -1591,33 +1788,41 @@ _ENV.BloodsuckerMissionResult = _ENV.BloodsuckerMissionResult
   self.select_relics = {}
 end
 
--- DECOMPILER ERROR at PC2621: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.BloodsuckerMissionResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"pass_wave_index", "int"}
-, 
-[3] = {"pass_pet_type_num", "int"}
-, 
-[4] = {"kill_monster_num", "int"}
-, 
-[5] = {"is_full_blood", "int"}
-, 
-[6] = {"first_rewards", "list<RoleAsset>"}
-, 
-[7] = {"select_pets", "list<int>"}
-, 
-[8] = {"select_relics", "list<int>"}
+BloodsuckerMissionResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "pass_wave_index",
+    "int"
+  },
+  [3] = {
+    "pass_pet_type_num",
+    "int"
+  },
+  [4] = {
+    "kill_monster_num",
+    "int"
+  },
+  [5] = {
+    "is_full_blood",
+    "int"
+  },
+  [6] = {
+    "first_rewards",
+    "list<RoleAsset>"
+  },
+  [7] = {
+    "select_pets",
+    "list<int>"
+  },
+  [8] = {
+    "select_relics",
+    "list<int>"
+  }
 }
 _class("PopStarMissionResult", Object)
-_ENV.PopStarMissionResult = _ENV.PopStarMissionResult
--- DECOMPILER ERROR at PC2633: Confused about usage of register: R17 in 'UnsetPending'
+PopStarMissionResult = PopStarMissionResult
 
-;
-(_ENV.PopStarMissionResult).Constructor = function(self)
-  -- function num : 0_53 , upvalues : _ENV
+function PopStarMissionResult:Constructor()
   self.mission_id = 0
   self.star_condition = {}
   self.rewards = {}
@@ -1627,50 +1832,49 @@ _ENV.PopStarMissionResult = _ENV.PopStarMissionResult
   self.star_num = 0
 end
 
--- DECOMPILER ERROR at PC2672: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.PopStarMissionResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"star_condition", "list<int>"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
-, 
-[4] = {"star_rewards", "list<RoleAsset>"}
-, 
-[5] = {"first_rewards", "list<RoleAsset>"}
-, 
-[6] = {"match_result_role_info", "MatchResultRoleInfo"}
-, 
-[7] = {"star_num", "int"}
+PopStarMissionResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "star_condition",
+    "list<int>"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "star_rewards",
+    "list<RoleAsset>"
+  },
+  [5] = {
+    "first_rewards",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "match_result_role_info",
+    "MatchResultRoleInfo"
+  },
+  [7] = {"star_num", "int"}
 }
 _class("GlobalbossMissionResult", Object)
-_ENV.GlobalbossMissionResult = _ENV.GlobalbossMissionResult
--- DECOMPILER ERROR at PC2684: Confused about usage of register: R17 in 'UnsetPending'
+GlobalbossMissionResult = GlobalbossMissionResult
 
-;
-(_ENV.GlobalbossMissionResult).Constructor = function(self)
-  -- function num : 0_54
+function GlobalbossMissionResult:Constructor()
   self.mission_id = 0
   self.total_damage = 0
 end
 
--- DECOMPILER ERROR at PC2698: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.GlobalbossMissionResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"total_damage", "int64"}
+GlobalbossMissionResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "total_damage",
+    "int64"
+  }
 }
 _class("SeasonMissionResult", Object)
-_ENV.SeasonMissionResult = _ENV.SeasonMissionResult
--- DECOMPILER ERROR at PC2710: Confused about usage of register: R17 in 'UnsetPending'
+SeasonMissionResult = SeasonMissionResult
 
-;
-(_ENV.SeasonMissionResult).Constructor = function(self)
-  -- function num : 0_55 , upvalues : _ENV
+function SeasonMissionResult:Constructor()
   self.mission_id = 0
   self.star_condition = {}
   self.rewards = {}
@@ -1682,85 +1886,83 @@ _ENV.SeasonMissionResult = _ENV.SeasonMissionResult
   self.m_time = 0
 end
 
--- DECOMPILER ERROR at PC2759: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.SeasonMissionResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"star_condition", "list<int>"}
-, 
-[3] = {"rewards", "list<RoleAsset>"}
-, 
-[4] = {"star_rewards", "list<RoleAsset>"}
-, 
-[5] = {"first_rewards", "list<RoleAsset>"}
-, 
-[6] = {"match_result_role_info", "MatchResultRoleInfo"}
-, 
-[7] = {"ext_star_rewards", "map<int,list<RoleAsset>>"}
-, 
-[8] = {"ext_first_rewards", "map<int,list<RoleAsset>>"}
-, 
-[9] = {"m_time", "time"}
+SeasonMissionResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "star_condition",
+    "list<int>"
+  },
+  [3] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "star_rewards",
+    "list<RoleAsset>"
+  },
+  [5] = {
+    "first_rewards",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "match_result_role_info",
+    "MatchResultRoleInfo"
+  },
+  [7] = {
+    "ext_star_rewards",
+    "map<int,list<RoleAsset>>"
+  },
+  [8] = {
+    "ext_first_rewards",
+    "map<int,list<RoleAsset>>"
+  },
+  [9] = {"m_time", "time"}
 }
 _class("EightPetsResult", Object)
-_ENV.EightPetsResult = _ENV.EightPetsResult
--- DECOMPILER ERROR at PC2771: Confused about usage of register: R17 in 'UnsetPending'
+EightPetsResult = EightPetsResult
 
-;
-(_ENV.EightPetsResult).Constructor = function(self)
-  -- function num : 0_56 , upvalues : _ENV
+function EightPetsResult:Constructor()
   self.mission_id = 0
   self.rewards = {}
   self.first_rewards = {}
   self.match_result_role_info = MatchResultRoleInfo:New()
 end
 
--- DECOMPILER ERROR at PC2795: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.EightPetsResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"rewards", "list<RoleAsset>"}
-, 
-[3] = {"first_rewards", "list<RoleAsset>"}
-, 
-[4] = {"match_result_role_info", "MatchResultRoleInfo"}
+EightPetsResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [3] = {
+    "first_rewards",
+    "list<RoleAsset>"
+  },
+  [4] = {
+    "match_result_role_info",
+    "MatchResultRoleInfo"
+  }
 }
 _class("SeasonMazeEffect", Object)
-_ENV.SeasonMazeEffect = _ENV.SeasonMazeEffect
--- DECOMPILER ERROR at PC2807: Confused about usage of register: R17 in 'UnsetPending'
+SeasonMazeEffect = SeasonMazeEffect
 
-;
-(_ENV.SeasonMazeEffect).Constructor = function(self)
-  -- function num : 0_57
+function SeasonMazeEffect:Constructor()
   self.type = 0
   self.id = 0
   self.value_min = 0
   self.value_max = 0
 end
 
--- DECOMPILER ERROR at PC2831: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeEffect)._proto = {
-[1] = {"type", "int"}
-, 
-[2] = {"id", "int"}
-, 
-[3] = {"value_min", "int"}
-, 
-[4] = {"value_max", "int"}
+SeasonMazeEffect._proto = {
+  [1] = {"type", "int"},
+  [2] = {"id", "int"},
+  [3] = {"value_min", "int"},
+  [4] = {"value_max", "int"}
 }
 _class("SeasonMazeResult", Object)
-_ENV.SeasonMazeResult = _ENV.SeasonMazeResult
--- DECOMPILER ERROR at PC2843: Confused about usage of register: R17 in 'UnsetPending'
+SeasonMazeResult = SeasonMazeResult
 
-;
-(_ENV.SeasonMazeResult).Constructor = function(self)
-  -- function num : 0_58
+function SeasonMazeResult:Constructor()
   self.mission_id = 0
   self.rewards = {}
   self.pet_list = {}
@@ -1770,31 +1972,37 @@ _ENV.SeasonMazeResult = _ENV.SeasonMazeResult
   self.last_damage = 0
 end
 
--- DECOMPILER ERROR at PC2882: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.SeasonMazeResult)._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"rewards", "list<SeasonMazeEffect>"}
-, 
-[3] = {"pet_list", "map<int,MatchPetResult>"}
-, 
-[4] = {"relic_list", "map<int,int>"}
-, 
-[5] = {"outside_attr", "map<int,int>"}
-, 
-[6] = {"total_damage", "int64"}
-, 
-[7] = {"last_damage", "int64"}
+SeasonMazeResult._proto = {
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "rewards",
+    "list<SeasonMazeEffect>"
+  },
+  [3] = {
+    "pet_list",
+    "map<int,MatchPetResult>"
+  },
+  [4] = {
+    "relic_list",
+    "map<int,int>"
+  },
+  [5] = {
+    "outside_attr",
+    "map<int,int>"
+  },
+  [6] = {
+    "total_damage",
+    "int64"
+  },
+  [7] = {
+    "last_damage",
+    "int64"
+  }
 }
 _class("AnipopMissionResult", Object)
-_ENV.AnipopMissionResult = _ENV.AnipopMissionResult
--- DECOMPILER ERROR at PC2894: Confused about usage of register: R17 in 'UnsetPending'
+AnipopMissionResult = AnipopMissionResult
 
-;
-(_ENV.AnipopMissionResult).Constructor = function(self)
-  -- function num : 0_59
+function AnipopMissionResult:Constructor()
   self.mission_index = 0
   self.pet_result = {}
   self.relics_counters = {}
@@ -1807,37 +2015,46 @@ _ENV.AnipopMissionResult = _ENV.AnipopMissionResult
   self.skill_relics = {}
 end
 
--- DECOMPILER ERROR at PC2948: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.AnipopMissionResult)._proto = {
-[1] = {"mission_index", "int"}
-, 
-[2] = {"pet_result", "list<MatchPetResult>"}
-, 
-[3] = {"relics_counters", "map<int,int>"}
-, 
-[4] = {"rewards", "list<RoleAsset>"}
-, 
-[5] = {"relics", "list<RoleAsset>"}
-, 
-[6] = {"drop_rewards", "list<RoleAsset>"}
-, 
-[7] = {"m_time", "time"}
-, 
-[8] = {"star_num", "int"}
-, 
-[9] = {"feature_info_list", "map<int,int>"}
-, 
-[10] = {"skill_relics", "list<RoleAsset>"}
+AnipopMissionResult._proto = {
+  [1] = {
+    "mission_index",
+    "int"
+  },
+  [2] = {
+    "pet_result",
+    "list<MatchPetResult>"
+  },
+  [3] = {
+    "relics_counters",
+    "map<int,int>"
+  },
+  [4] = {
+    "rewards",
+    "list<RoleAsset>"
+  },
+  [5] = {
+    "relics",
+    "list<RoleAsset>"
+  },
+  [6] = {
+    "drop_rewards",
+    "list<RoleAsset>"
+  },
+  [7] = {"m_time", "time"},
+  [8] = {"star_num", "int"},
+  [9] = {
+    "feature_info_list",
+    "map<int,int>"
+  },
+  [10] = {
+    "skill_relics",
+    "list<RoleAsset>"
+  }
 }
 _class("MatchResult", Object)
-_ENV.MatchResult = _ENV.MatchResult
--- DECOMPILER ERROR at PC2960: Confused about usage of register: R17 in 'UnsetPending'
+MatchResult = MatchResult
 
-;
-(_ENV.MatchResult).Constructor = function(self)
-  -- function num : 0_60 , upvalues : _ENV
+function MatchResult:Constructor()
   self.mission_result = {}
   self.ext_mission_result = {}
   self.maze_result = {}
@@ -1871,70 +2088,117 @@ _ENV.MatchResult = _ENV.MatchResult
   self.season_maze_mission_result = {}
 end
 
--- DECOMPILER ERROR at PC3120: Confused about usage of register: R17 in 'UnsetPending'
-
-;
-(_ENV.MatchResult)._proto = {
-[1] = {"mission_result", "list<MissionResult>"}
-, 
-[2] = {"ext_mission_result", "list<ExtMissionResult>"}
-, 
-[3] = {"maze_result", "list<MazeResult>"}
-, 
-[4] = {"res_dungeon_result", "list<ResDungeonResult>"}
-, 
-[5] = {"tower_result", "list<TowerResult>"}
-, 
-[6] = {"campaign_result", "list<CampaignMissionResult>"}
-, 
-[7] = {"sync_match", "bool"}
-, 
-[8] = {"victory", "bool"}
-, 
-[9] = {"battle_statistics", "BattleStatResult"}
-, 
-[10] = {"exception", "bool"}
-, 
-[11] = {"assign_wave_refresh_probability", "int"}
-, 
-[12] = {"exception_code", "int"}
-, 
-[13] = {"exception_msg", "string"}
-, 
-[14] = {"crash_state", "bool"}
-, 
-[15] = {"tale_pet_reward", "list<TalePetResult>"}
-, 
-[16] = {"first_fail", "bool"}
-, 
-[17] = {"campaign_reward", "list<RoleAsset>"}
-, 
-[18] = {"conquest_mission_result", "list<ConquestMissionResult>"}
-, 
-[19] = {"lost_area_result", "list<LostAreaResult>"}
-, 
-[20] = {"black_fist_result", "list<BlackFistResult>"}
-, 
-[21] = {"world_boss_result", "list<WorldBossResult>"}
-, 
-[22] = {"chess_mission_result", "list<ChessMissionResult>"}
-, 
-[23] = {"difficulty_mission_result", "list<DifficultyMissionResult>"}
-, 
-[24] = {"sailing_mission_result", "list<SailingMissionResult>"}
-, 
-[25] = {"bloodsucker_mission_result", "list<BloodsuckerMissionResult>"}
-, 
-[26] = {"popstar_mission_result", "list<PopStarMissionResult>"}
-, 
-[27] = {"globalboss_mission_result", "list<GlobalbossMissionResult>"}
-, 
-[28] = {"season_mission_result", "list<SeasonMissionResult>"}
-, 
-[29] = {"eight_pets_mission_result", "list<EightPetsResult>"}
-, 
-[30] = {"anipop_mission_result", "list<AnipopMissionResult>"}
-, 
-[31] = {"season_maze_mission_result", "list<SeasonMazeResult>"}
+MatchResult._proto = {
+  [1] = {
+    "mission_result",
+    "list<MissionResult>"
+  },
+  [2] = {
+    "ext_mission_result",
+    "list<ExtMissionResult>"
+  },
+  [3] = {
+    "maze_result",
+    "list<MazeResult>"
+  },
+  [4] = {
+    "res_dungeon_result",
+    "list<ResDungeonResult>"
+  },
+  [5] = {
+    "tower_result",
+    "list<TowerResult>"
+  },
+  [6] = {
+    "campaign_result",
+    "list<CampaignMissionResult>"
+  },
+  [7] = {"sync_match", "bool"},
+  [8] = {"victory", "bool"},
+  [9] = {
+    "battle_statistics",
+    "BattleStatResult"
+  },
+  [10] = {"exception", "bool"},
+  [11] = {
+    "assign_wave_refresh_probability",
+    "int"
+  },
+  [12] = {
+    "exception_code",
+    "int"
+  },
+  [13] = {
+    "exception_msg",
+    "string"
+  },
+  [14] = {
+    "crash_state",
+    "bool"
+  },
+  [15] = {
+    "tale_pet_reward",
+    "list<TalePetResult>"
+  },
+  [16] = {"first_fail", "bool"},
+  [17] = {
+    "campaign_reward",
+    "list<RoleAsset>"
+  },
+  [18] = {
+    "conquest_mission_result",
+    "list<ConquestMissionResult>"
+  },
+  [19] = {
+    "lost_area_result",
+    "list<LostAreaResult>"
+  },
+  [20] = {
+    "black_fist_result",
+    "list<BlackFistResult>"
+  },
+  [21] = {
+    "world_boss_result",
+    "list<WorldBossResult>"
+  },
+  [22] = {
+    "chess_mission_result",
+    "list<ChessMissionResult>"
+  },
+  [23] = {
+    "difficulty_mission_result",
+    "list<DifficultyMissionResult>"
+  },
+  [24] = {
+    "sailing_mission_result",
+    "list<SailingMissionResult>"
+  },
+  [25] = {
+    "bloodsucker_mission_result",
+    "list<BloodsuckerMissionResult>"
+  },
+  [26] = {
+    "popstar_mission_result",
+    "list<PopStarMissionResult>"
+  },
+  [27] = {
+    "globalboss_mission_result",
+    "list<GlobalbossMissionResult>"
+  },
+  [28] = {
+    "season_mission_result",
+    "list<SeasonMissionResult>"
+  },
+  [29] = {
+    "eight_pets_mission_result",
+    "list<EightPetsResult>"
+  },
+  [30] = {
+    "anipop_mission_result",
+    "list<AnipopMissionResult>"
+  },
+  [31] = {
+    "season_maze_mission_result",
+    "list<SeasonMazeResult>"
+  }
 }
-

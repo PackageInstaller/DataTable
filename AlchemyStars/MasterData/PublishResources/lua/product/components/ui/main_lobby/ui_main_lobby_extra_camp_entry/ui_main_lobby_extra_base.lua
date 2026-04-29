@@ -1,45 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_extra_camp_entry/ui_main_lobby_extra_base.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyExtraBase", UICustomWidget)
 UIMainLobbyExtraBase = UIMainLobbyExtraBase
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyExtraBase.SetData = function(self, sample_info)
-  -- function num : 0_0
+function UIMainLobbyExtraBase:SetData(sample_info)
   self._sample_info = sample_info
   self:RefreshView()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraBase.RefreshView = function(self)
-  -- function num : 0_1
+function UIMainLobbyExtraBase:RefreshView()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraBase.CheckCampaignOpen = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local svrTime = ((GameGlobal.GetModule)(SvrTimeModule)):GetServerTime() * 0.001
-  if (self._sample_info):IsShow(svrTime) then
+function UIMainLobbyExtraBase:CheckCampaignOpen()
+  local svrTime = GameGlobal.GetModule(SvrTimeModule):GetServerTime() * 0.001
+  if self._sample_info:IsShow(svrTime) then
     return true
   end
-  local tips = (StringTable.Get)("str_activity_error_107")
-  ;
-  (ToastManager.ShowToast)(tips)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnMainLobbyExtraRefresh)
+  local tips = StringTable.Get("str_activity_error_107")
+  ToastManager.ShowToast(tips)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnMainLobbyExtraRefresh)
   return false
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyExtraBase.RefreshSampleData = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnMainLobbyExtraSampleRequest)
+function UIMainLobbyExtraBase:RefreshSampleData()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.OnMainLobbyExtraSampleRequest)
 end
-
-

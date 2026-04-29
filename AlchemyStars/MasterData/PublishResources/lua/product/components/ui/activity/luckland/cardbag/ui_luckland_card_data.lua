@@ -1,141 +1,87 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/cardbag/ui_luckland_card_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILuckLandCardData", Object)
 UILuckLandCardData = UILuckLandCardData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILuckLandCardData.Constructor = function(self, uniqueID, id)
-  -- function num : 0_0 , upvalues : _ENV
-  self._cfg = (Cfg.cfg_luckland_client_card)[id]
+function UILuckLandCardData:Constructor(uniqueID, id)
+  self._cfg = Cfg.cfg_luckland_client_card[id]
   if not self._cfg then
-    (Log.error)("cfg_luckland_client_card error.", id)
-    return 
+    Log.error("cfg_luckland_client_card error.", id)
+    return
   end
   self._uniqueID = uniqueID
   self._stageNumber = 0
-  self._id = (self._cfg).ID
+  self._id = self._cfg.ID
   self._hp = self:_GetResValue(LuckLandCardResType.HP)
   self._attack = self:_GetResValue(LuckLandCardResType.Attack)
   self._money = self:_GetResValue(LuckLandCardResType.Money)
-  self._camp = (self._cfg).CardCamp
-  self._attribute = (self._cfg).CardAttribute
-  self._star = (self._cfg).CardStar
-  self._skills = (self._cfg).CardBuff
-  self._campName = (self._cfg).CardCampName
+  self._camp = self._cfg.CardCamp
+  self._attribute = self._cfg.CardAttribute
+  self._star = self._cfg.CardStar
+  self._skills = self._cfg.CardBuff
+  self._campName = self._cfg.CardCampName
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.Cfg = function(self)
-  -- function num : 0_1
+function UILuckLandCardData:Cfg()
   return self._cfg
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.UniqueID = function(self)
-  -- function num : 0_2
+function UILuckLandCardData:UniqueID()
   return self._uniqueID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.ID = function(self)
-  -- function num : 0_3
+function UILuckLandCardData:ID()
   return self._id
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.HP = function(self)
-  -- function num : 0_4
+function UILuckLandCardData:HP()
   return self._hp
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.Attack = function(self)
-  -- function num : 0_5
+function UILuckLandCardData:Attack()
   return self._attack
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.Money = function(self)
-  -- function num : 0_6
+function UILuckLandCardData:Money()
   return self._money
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.Camp = function(self)
-  -- function num : 0_7
+function UILuckLandCardData:Camp()
   return self._camp
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.CampName = function(self)
-  -- function num : 0_8
+function UILuckLandCardData:CampName()
   return self._campName
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.Attribute = function(self)
-  -- function num : 0_9
+function UILuckLandCardData:Attribute()
   return self._attribute
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.Star = function(self)
-  -- function num : 0_10
+function UILuckLandCardData:Star()
   return self._star
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.Skills = function(self)
-  -- function num : 0_11
+function UILuckLandCardData:Skills()
   return self._skills
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.FirstSkill = function(self)
-  -- function num : 0_12
+function UILuckLandCardData:FirstSkill()
   if self._skills then
-    return (self._skills)[1]
+    return self._skills[1]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.StageNumber = function(self)
-  -- function num : 0_13
+function UILuckLandCardData:StageNumber()
   return self._stageNumber
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData.AddStageNumber = function(self, times)
-  -- function num : 0_14
+function UILuckLandCardData:AddStageNumber(times)
   self._stageNumber = self._stageNumber + times
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UILuckLandCardData._GetResValue = function(self, resType)
-  -- function num : 0_15
-  if (self._cfg).CardGameRes and ((self._cfg).CardGameRes)[1] == resType then
-    return ((self._cfg).CardGameRes)[2]
+function UILuckLandCardData:_GetResValue(resType)
+  if self._cfg.CardGameRes and self._cfg.CardGameRes[1] == resType then
+    return self._cfg.CardGameRes[2]
   end
   return nil
 end
-
-

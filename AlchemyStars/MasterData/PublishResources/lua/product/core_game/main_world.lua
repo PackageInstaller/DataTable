@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/main_world.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_world")
 _class("MainWorld", BaseWorld)
 MainWorld = MainWorld
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MainWorld.Constructor = function(self, worldInfo)
-  -- function num : 0_0 , upvalues : _ENV
+function MainWorld:Constructor(worldInfo)
   self._boardEntity = nil
   self._previewEntity = nil
   self._syncMode = worldInfo.syncMode
@@ -40,281 +33,211 @@ MainWorld.Constructor = function(self, worldInfo)
   self._linkLineType = worldInfo.linkLineType
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.EnterWorld = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((MainWorld.super).EnterWorld)(self)
+function MainWorld:EnterWorld()
+  MainWorld.super.EnterWorld(self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.Dispose = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((MainWorld.super).Dispose)(self)
+function MainWorld:Dispose()
+  MainWorld.super.Dispose(self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ExitWorld = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((MainWorld.super).ExitWorld)(self)
+function MainWorld:ExitWorld()
+  MainWorld.super.ExitWorld(self)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.UpdateWorld = function(self, deltaTimeMS)
-  -- function num : 0_4 , upvalues : _ENV
-  ((MainWorld.super).UpdateWorld)(self, deltaTimeMS)
+function MainWorld:UpdateWorld(deltaTimeMS)
+  MainWorld.super.UpdateWorld(self, deltaTimeMS)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld._Internal_CreateSystem = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function MainWorld:_Internal_CreateSystem()
   local systems = Systems:New()
   self.BW_Systems = systems
   local systemObjectList = {}
   local systemIndexList = {}
   local gamemode_config = GameModeConfig[GameModeType.CommonBaseMode]
-  do
-    if not gamemode_config then
-      local game_mode = self:GetGameMode()
-      ;
-      (Log.fatal)("wrong game mode :", game_mode)
-      return 
-    end
-    for _,systemList in pairs(gamemode_config.Systems) do
-      for i = 1, #systemList do
-        local system_config = systemList[i]
-        local new_system = self:_CreateSystem(system_config)
-        systemObjectList[system_config.Name] = new_system
-        systemIndexList[#systemIndexList + 1] = system_config.Name
-      end
-    end
-    if EDITOR then
-      for i = 1, #gamemode_config.EditorSystems do
-        local system_config = (gamemode_config.EditorSystems)[i]
-        local new_system = self:_CreateSystem(system_config)
-        systemObjectList[system_config.Name] = new_system
-        systemIndexList[#systemIndexList + 1] = system_config.Name
-      end
-    end
-    do
-      return systemObjectList, systemIndexList
+  if not gamemode_config then
+    local game_mode = self:GetGameMode()
+    Log.fatal("wrong game mode :", game_mode)
+    return
+  end
+  for _, systemList in pairs(gamemode_config.Systems) do
+    for i = 1, #systemList do
+      local system_config = systemList[i]
+      local new_system = self:_CreateSystem(system_config)
+      systemObjectList[system_config.Name] = new_system
+      systemIndexList[#systemIndexList + 1] = system_config.Name
     end
   end
+  if EDITOR then
+    for i = 1, #gamemode_config.EditorSystems do
+      local system_config = gamemode_config.EditorSystems[i]
+      local new_system = self:_CreateSystem(system_config)
+      systemObjectList[system_config.Name] = new_system
+      systemIndexList[#systemIndexList + 1] = system_config.Name
+    end
+  end
+  return systemObjectList, systemIndexList
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.Internal_CreateSystems = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function MainWorld:Internal_CreateSystems()
   local systemList, systemIndexList = self:_Internal_CreateSystem()
   local game_mode = self:GetGameMode()
   local gamemode_config = GameModeConfig[game_mode]
   if not gamemode_config then
-    (Log.fatal)("wrong game mode :", game_mode)
-    return 
+    Log.fatal("wrong game mode :", game_mode)
+    return
   end
-  for _,gameModeSystemList in pairs(gamemode_config.Systems) do
+  for _, gameModeSystemList in pairs(gamemode_config.Systems) do
     for i = 1, #gameModeSystemList do
       local system_config = gameModeSystemList[i]
       local new_system = self:_CreateSystem(system_config)
-      if not (table.icontains)(systemList, system_config.Name) then
+      if not table.icontains(systemList, system_config.Name) then
         systemIndexList[#systemIndexList + 1] = system_config.Name
       end
       systemList[system_config.Name] = new_system
     end
   end
-  for i,name in ipairs(systemIndexList) do
+  for i, name in ipairs(systemIndexList) do
     local new_system = systemList[name]
     if new_system then
-      (self.BW_Systems):Add(new_system)
+      self.BW_Systems:Add(new_system)
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld._CreateSystem = function(self, systemTypeConfig)
-  -- function num : 0_7 , upvalues : _ENV
+function MainWorld:_CreateSystem(systemTypeConfig)
   local system_type = systemTypeConfig.Type
   local client_type = systemTypeConfig.ClientType
   local server_type = systemTypeConfig.ServerType
-  local target_type, system = nil, nil
+  local target_type, system
   local runPosition = self:GetRunningPosition()
   if client_type ~= nil and runPosition == WorldRunPostion.AtClient then
     target_type = client_type
-  else
-    if server_type ~= nil and runPosition == WorldRunPostion.AtServer then
-      target_type = server_type
-    else
-      if SystemFilter:CheckSystem(system_type, runPosition) then
-        target_type = system_type
-      end
-    end
+  elseif server_type ~= nil and runPosition == WorldRunPostion.AtServer then
+    target_type = server_type
+  elseif SystemFilter:CheckSystem(system_type, runPosition) then
+    target_type = system_type
   end
   if target_type ~= nil then
-    system = (Classes[target_type]):New(self)
+    system = Classes[target_type]:New(self)
   end
   return system
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.Internal_CreateComponents = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  (Log.fatal)("Internal_CreateComponents")
-  ;
-  (WorldAssembler.AssembleWorldComponentsBase)(self)
-  ;
-  (WorldAssembler.AssembleWorldComponents)(self)
+function MainWorld:Internal_CreateComponents()
+  Log.fatal("Internal_CreateComponents")
+  WorldAssembler.AssembleWorldComponentsBase(self)
+  WorldAssembler.AssembleWorldComponents(self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.Internal_CreateServicesBase = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function MainWorld:Internal_CreateServicesBase()
   self.BW_Services = ServicesProvider:New()
   local game_mode = GameModeType.CommonBaseMode
   local gamemode_config = GameModeConfig[game_mode]
   if not gamemode_config then
-    (Log.debug)("wrong game mode :", game_mode)
-    return 
+    Log.debug("wrong game mode :", game_mode)
+    return
   end
   for i = 1, #gamemode_config.Services do
-    local service_config = (gamemode_config.Services)[i]
+    local service_config = gamemode_config.Services[i]
     local newService = self:_CreateService(service_config)
     if newService then
-      (self.BW_Services):AddService(service_config.Name, newService)
+      self.BW_Services:AddService(service_config.Name, newService)
       if self._sepSvc then
         local svcRespType = ServiceFilter:GetServiceResponsibilityType(service_config.Name)
         if svcRespType == ResponsibilityType.Render then
-          (self._renderSvcProvider):AddService(service_config.Name, newService)
+          self._renderSvcProvider:AddService(service_config.Name, newService)
+        elseif svcRespType == ResponsibilityType.Share then
+          self._shareSvcProvider:AddService(service_config.Name, newService)
         else
-          if svcRespType == ResponsibilityType.Share then
-            (self._shareSvcProvider):AddService(service_config.Name, newService)
-          else
-            ;
-            (self._logicSvcProvider):AddService(service_config.Name, newService)
-          end
+          self._logicSvcProvider:AddService(service_config.Name, newService)
         end
       end
     end
   end
   if EDITOR and gamemode_config.EditorServices then
     for i = 1, #gamemode_config.EditorServices do
-      local service_config = (gamemode_config.EditorServices)[i]
+      local service_config = gamemode_config.EditorServices[i]
       local newService = self:_CreateService(service_config)
       if newService then
-        (self.BW_Services):AddService(service_config.Name, newService)
+        self.BW_Services:AddService(service_config.Name, newService)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld._CreateService = function(self, serviceTypeConfig)
-  -- function num : 0_10 , upvalues : _ENV
+function MainWorld:_CreateService(serviceTypeConfig)
   local service_type = serviceTypeConfig.Type
   local service_name = serviceTypeConfig.Name
-  local newService = nil
+  local newService
   local runPosition = self:GetRunningPosition()
   if ServiceFilter:CheckService(service_name, runPosition) then
     if service_name == "Network" then
-      local networkMode = (self.BW_WorldInfo).network_mode
+      local networkMode = self.BW_WorldInfo.network_mode
       if networkMode == NetworkMode.StandAlone then
         service_type = serviceTypeConfig.ClientType
       else
         service_type = serviceTypeConfig.Type
       end
-    else
-      do
-        if self:RunAtClient() and serviceTypeConfig.ClientType then
-          service_type = serviceTypeConfig.ClientType
-        else
-          if self:RunAtServer() and serviceTypeConfig.ServerType then
-            service_type = serviceTypeConfig.ServerType
-          end
-        end
-        do
-          local pClass = Classes[service_type]
-          if pClass == nil then
-            (Log.error)("-----------Services:Error, Add Service = ", service_type)
-          end
-          newService = pClass:New(self)
-          return newService
-        end
-      end
+    elseif self:RunAtClient() and serviceTypeConfig.ClientType then
+      service_type = serviceTypeConfig.ClientType
+    elseif self:RunAtServer() and serviceTypeConfig.ServerType then
+      service_type = serviceTypeConfig.ServerType
     end
+    local pClass = Classes[service_type]
+    if nil == pClass then
+      Log.error("-----------Services:Error, Add Service = ", service_type)
+    end
+    newService = pClass:New(self)
   end
+  return newService
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.Internal_CreateServices = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function MainWorld:Internal_CreateServices()
   self:Internal_CreateServicesBase()
   local game_mode = self:GetGameMode()
   local gamemode_config = GameModeConfig[game_mode]
   if not gamemode_config then
-    (Log.debug)("wrong game mode :", game_mode)
-    return 
+    Log.debug("wrong game mode :", game_mode)
+    return
   end
   for i = 1, #gamemode_config.Services do
-    local service_config = (gamemode_config.Services)[i]
+    local service_config = gamemode_config.Services[i]
     local newService = self:_CreateService(service_config)
     if newService then
-      (self.BW_Services):AddService(service_config.Name, newService)
+      self.BW_Services:AddService(service_config.Name, newService)
       if self._sepSvc then
         local svcRespType = ServiceFilter:GetServiceResponsibilityType(service_config.Type)
         if svcRespType == ResponsibilityType.Render then
-          (self._renderSvcProvider):AddService(service_config.Name, newService)
+          self._renderSvcProvider:AddService(service_config.Name, newService)
+        elseif svcRespType == ResponsibilityType.Share then
+          self._shareSvcProvider:AddService(service_config.Name, newService)
         else
-          if svcRespType == ResponsibilityType.Share then
-            (self._shareSvcProvider):AddService(service_config.Name, newService)
-          else
-            ;
-            (self._logicSvcProvider):AddService(service_config.Name, newService)
-          end
+          self._logicSvcProvider:AddService(service_config.Name, newService)
         end
       end
     end
   end
   if EDITOR and gamemode_config.EditorServices then
     for i = 1, #gamemode_config.EditorServices do
-      local service_config = (gamemode_config.EditorServices)[i]
+      local service_config = gamemode_config.EditorServices[i]
       local newService = self:_CreateService(service_config)
       if newService then
-        (self.BW_Services):AddService(service_config.Name, newService)
+        self.BW_Services:AddService(service_config.Name, newService)
       end
     end
   end
-  do
-    ;
-    (self.BW_Services):InitServices()
-    ;
-    (self._shareSvcProvider):InitServices()
-    ;
-    (self._logicSvcProvider):InitServices()
-    ;
-    (self._renderSvcProvider):InitServices()
-  end
+  self.BW_Services:InitServices()
+  self._shareSvcProvider:InitServices()
+  self._logicSvcProvider:InitServices()
+  self._renderSvcProvider:InitServices()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetEntityByID = function(self, entityID)
-  -- function num : 0_12
-  return (self._entities):Find(entityID)
+function MainWorld:GetEntityByID(entityID)
+  return self._entities:Find(entityID)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.WorldHandleCommands = function(self, command_list)
-  -- function num : 0_13
+function MainWorld:WorldHandleCommands(command_list)
   for i = 1, command_list:Size() do
     local cmd = command_list:GetAt(i)
     local e = self:GetEntityByID(cmd.EntityID)
@@ -324,285 +247,173 @@ MainWorld.WorldHandleCommands = function(self, command_list)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetService = function(self, service_name)
-  -- function num : 0_14 , upvalues : _ENV
-  do
-    if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-      local available = self:_CheckServiceAvailable(service_name)
-      if available == false then
-        return 
-      end
+function MainWorld:GetService(service_name)
+  if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
+    local available = self:_CheckServiceAvailable(service_name)
+    if available == false then
+      return
     end
-    if self.BW_Services then
-      return (self.BW_Services):GetService(service_name)
-    end
+  end
+  if self.BW_Services then
+    return self.BW_Services:GetService(service_name)
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetLogicService = function(self, service_name)
-  -- function num : 0_15
-  return (self._logicSvcProvider):GetService(service_name)
+function MainWorld:GetLogicService(service_name)
+  return self._logicSvcProvider:GetService(service_name)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetRenderService = function(self, service_name)
-  -- function num : 0_16
-  return (self._renderSvcProvider):GetService(service_name)
+function MainWorld:GetRenderService(service_name)
+  return self._renderSvcProvider:GetService(service_name)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetShareService = function(self, service_name)
-  -- function num : 0_17
-  return (self._shareSvcProvider):GetService(service_name)
+function MainWorld:GetShareService(service_name)
+  return self._shareSvcProvider:GetService(service_name)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.SetBoardEntity = function(self, boardEntity)
-  -- function num : 0_18
+function MainWorld:SetBoardEntity(boardEntity)
   self._boardEntity = boardEntity
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetBoardEntity = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function MainWorld:GetBoardEntity()
   if EDITOR and CHECK_RENDER_ACCESS_LOGIC then
-    local debugInfo = (debug.getinfo)(2, "S")
+    local debugInfo = debug.getinfo(2, "S")
     local filePath = debugInfo.short_src
-    local renderIndex = (string.find)(filePath, "_r.lua")
+    local renderIndex = string.find(filePath, "_r.lua")
     if renderIndex ~= nil then
-      (Log.exception)("render file :", filePath, " call GetBoardEntity() ", (Log.traceback)())
+      Log.exception("render file :", filePath, " call GetBoardEntity() ", Log.traceback())
       return nil
     end
   end
-  do
-    return self._boardEntity
-  end
+  return self._boardEntity
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.SetRenderBoardEntity = function(self, e)
-  -- function num : 0_20
+function MainWorld:SetRenderBoardEntity(e)
   self._renderBoardEntity = e
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetRenderBoardEntity = function(self)
-  -- function num : 0_21
+function MainWorld:GetRenderBoardEntity()
   return self._renderBoardEntity
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.SetPreviewEntity = function(self, entity)
-  -- function num : 0_22
+function MainWorld:SetPreviewEntity(entity)
   self._previewEntity = entity
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetPreviewEntity = function(self)
-  -- function num : 0_23
+function MainWorld:GetPreviewEntity()
   return self._previewEntity
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetRunningPosition = function(self)
-  -- function num : 0_24
+function MainWorld:GetRunningPosition()
   return self._runningPosition
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RunAtServer = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  do return self._runningPosition == WorldRunPostion.AtServer end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:RunAtServer()
+  return self._runningPosition == WorldRunPostion.AtServer
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RunAtClient = function(self)
-  -- function num : 0_26 , upvalues : _ENV
-  do return self._runningPosition == WorldRunPostion.AtClient end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:RunAtClient()
+  return self._runningPosition == WorldRunPostion.AtClient
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.EventDispatcher = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  (Log.fatal)("mainWorld has no event dispatcher")
+function MainWorld:EventDispatcher()
+  Log.fatal("mainWorld has no event dispatcher")
   return nil
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.IDGenerator = function(self)
-  -- function num : 0_28 , upvalues : _ENV
-  (Log.fatal)("mainWorld has no event dispatcher")
+function MainWorld:IDGenerator()
+  Log.fatal("mainWorld has no event dispatcher")
   return nil
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.SubMatchType = function(self)
-  -- function num : 0_29
+function MainWorld:SubMatchType()
   return self._subMatchType
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.LinkLineType = function(self)
-  -- function num : 0_30
+function MainWorld:LinkLineType()
   return self._linkLineType
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ChangeLinkLineType = function(self, linkLineType)
-  -- function num : 0_31
+function MainWorld:ChangeLinkLineType(linkLineType)
   self._linkLineType = linkLineType
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetWorldTimer = function(self)
-  -- function num : 0_32
+function MainWorld:GetWorldTimer()
   return self._h3dTimer
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetSyncMode = function(self)
-  -- function num : 0_33
+function MainWorld:GetSyncMode()
   return self._syncMode
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetMatchLogger = function(self)
-  -- function num : 0_34
+function MainWorld:GetMatchLogger()
   return self._matchLogger
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetDetailMatchLogger = function(self)
-  -- function num : 0_35
+function MainWorld:GetDetailMatchLogger()
   return self._detailMatchLogger
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetSyncLogger = function(self)
-  -- function num : 0_36
+function MainWorld:GetSyncLogger()
   return self._syncLogger
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetDataLogger = function(self)
-  -- function num : 0_37
+function MainWorld:GetDataLogger()
   return self._dataLogger
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetSkillScopeTargetSelector = function(self)
-  -- function num : 0_38
+function MainWorld:GetSkillScopeTargetSelector()
   return self._skillScopeTargetSelector
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetPlayerCommandHandler = function(self)
-  -- function num : 0_39
+function MainWorld:GetPlayerCommandHandler()
   return self._playerCommandHandler
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetAllPlayerEntity = function(self, teamEntity)
-  -- function num : 0_40 , upvalues : _ENV
+function MainWorld:GetAllPlayerEntity(teamEntity)
   local retEntityList = {}
-  for i,v in ipairs((teamEntity:Team()):GetTeamPetEntities()) do
+  for i, v in ipairs(teamEntity:Team():GetTeamPetEntities()) do
     retEntityList[i] = v
   end
-  ;
-  (table.insert)(retEntityList, teamEntity)
+  table.insert(retEntityList, teamEntity)
   return retEntityList
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.IsHaveHelpPet = function(self)
-  -- function num : 0_41
-  do return not self.m_nHelpPetKey or self.m_nHelpPetKey > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function MainWorld:IsHaveHelpPet()
+  return self.m_nHelpPetKey and self.m_nHelpPetKey > 0
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld._CheckServiceAvailable = function(self, svcName)
-  -- function num : 0_42 , upvalues : _ENV
-  local debugInfo = (debug.getinfo)(3, "S")
+function MainWorld:_CheckServiceAvailable(svcName)
+  local debugInfo = debug.getinfo(3, "S")
   local filePath = debugInfo.short_src
   local respType = ServiceFilter:GetServiceResponsibilityType(svcName)
-  do
-    if respType == ResponsibilityType.Logic then
-      local renderIndex = (string.find)(filePath, "_r.lua")
-      if renderIndex ~= nil then
-        (Log.exception)("render file :", filePath, " call logic svc:", svcName, " ", (Log.traceback)())
-        return false
-      end
+  if respType == ResponsibilityType.Logic then
+    local renderIndex = string.find(filePath, "_r.lua")
+    if renderIndex ~= nil then
+      Log.exception("render file :", filePath, " call logic svc:", svcName, " ", Log.traceback())
+      return false
     end
-    return true
   end
+  return true
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.DestroyRenderEntity = function(self, renderEntity)
-  -- function num : 0_43
+function MainWorld:DestroyRenderEntity(renderEntity)
   self:DestroyEntity(renderEntity)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.IsDevelopEnv = function(self)
-  -- function num : 0_44
+function MainWorld:IsDevelopEnv()
   return false
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetHardID = function(self)
-  -- function num : 0_45
+function MainWorld:GetHardID()
   return self._hardID
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetGameTurn = function(self)
-  -- function num : 0_46
+function MainWorld:GetGameTurn()
   return self._currentTurn
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ChangeGameTurn = function(self)
-  -- function num : 0_47 , upvalues : _ENV
+function MainWorld:ChangeGameTurn()
   if self:MatchType() == MatchType.MT_BlackFist then
     if self._currentTurn == GameTurnType.LocalPlayerTurn then
       self._currentTurn = GameTurnType.RemotePlayerTurn
@@ -612,126 +423,81 @@ MainWorld.ChangeGameTurn = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ReplaceSkillScopeType = function(self, scopeType)
-  -- function num : 0_48 , upvalues : _ENV
-  do
-    if self:MatchType() == MatchType.MT_BlackFist then
-      local replace = PvPSkillScopeTable[scopeType]
-      if replace then
-        return replace
-      end
+function MainWorld:ReplaceSkillScopeType(scopeType)
+  if self:MatchType() == MatchType.MT_BlackFist then
+    local replace = PvPSkillScopeTable[scopeType]
+    if replace then
+      return replace
     end
-    return scopeType
   end
+  return scopeType
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ReplaceSkillTarget = function(self, targetType)
-  -- function num : 0_49 , upvalues : _ENV
-  do
-    if self:MatchType() == MatchType.MT_BlackFist then
-      local replace = PvPSkillTargetTable[targetType]
-      if replace then
-        return replace
-      end
+function MainWorld:ReplaceSkillTarget(targetType)
+  if self:MatchType() == MatchType.MT_BlackFist then
+    local replace = PvPSkillTargetTable[targetType]
+    if replace then
+      return replace
     end
-    return targetType
   end
+  return targetType
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ReplaceBuffTarget = function(self, targetType)
-  -- function num : 0_50 , upvalues : _ENV
-  do
-    if self:MatchType() == MatchType.MT_BlackFist then
-      local replace = PvPBuffTargetTable[targetType]
-      if replace then
-        return replace
-      end
+function MainWorld:ReplaceBuffTarget(targetType)
+  if self:MatchType() == MatchType.MT_BlackFist then
+    local replace = PvPBuffTargetTable[targetType]
+    if replace then
+      return replace
     end
-    return targetType
   end
+  return targetType
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ReplaceAILogicPeriodType = function(self, aiPeriodType)
-  -- function num : 0_51 , upvalues : _ENV
+function MainWorld:ReplaceAILogicPeriodType(aiPeriodType)
   if self:MatchType() == MatchType.MT_BlackFist then
     return AILogicPeriodType.RoundResult
   end
   return aiPeriodType
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ReplaceTrapRaceType = function(self, raceType)
-  -- function num : 0_52 , upvalues : _ENV
-  do
-    if self:MatchType() == MatchType.MT_BlackFist then
-      local replace = PvpTrapRaceType[raceType]
-      if replace then
-        return replace
-      end
+function MainWorld:ReplaceTrapRaceType(raceType)
+  if self:MatchType() == MatchType.MT_BlackFist then
+    local replace = PvpTrapRaceType[raceType]
+    if replace then
+      return replace
     end
-    return raceType
   end
+  return raceType
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ReplaceNotifyType = function(self, notifyType)
-  -- function num : 0_53 , upvalues : _ENV
-  do
-    if self:MatchType() == MatchType.MT_BlackFist then
-      local replace = PvPNotifyTypeTable[notifyType]
-      if replace then
-        return replace
-      end
+function MainWorld:ReplaceNotifyType(notifyType)
+  if self:MatchType() == MatchType.MT_BlackFist then
+    local replace = PvPNotifyTypeTable[notifyType]
+    if replace then
+      return replace
     end
-    return notifyType
   end
+  return notifyType
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.ReplaceSkillFormula = function(self, formulaID)
-  -- function num : 0_54
+function MainWorld:ReplaceSkillFormula(formulaID)
   return formulaID
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HandleGM = function(self, funcName, funcParam)
-  -- function num : 0_55 , upvalues : _ENV
+function MainWorld:HandleGM(funcName, funcParam)
   if self._gmCheater then
-    ((self._gmCheater)[funcName])(self._gmCheater, (table.unpack)(funcParam))
+    self._gmCheater[funcName](self._gmCheater, table.unpack(funcParam))
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetGMCheat = function(self)
-  -- function num : 0_56
+function MainWorld:GetGMCheat()
   return self._gmCheater
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetLocalHelpPetPstID = function(self)
-  -- function num : 0_57
+function MainWorld:GetLocalHelpPetPstID()
   return self._localHelpPetPstID
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.GetEnlightenInfoByType = function(self, type)
-  -- function num : 0_58
-  return (self._enlightenInfoDic)[type]
+function MainWorld:GetEnlightenInfoByType(type)
+  return self._enlightenInfoDic[type]
 end
-
-

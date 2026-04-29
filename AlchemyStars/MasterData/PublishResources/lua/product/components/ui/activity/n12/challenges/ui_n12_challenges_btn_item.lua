@@ -1,29 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n12/challenges/ui_n12_challenges_btn_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN12ChallengesbtnItem", UICustomWidget)
 UIN12ChallengesbtnItem = UIN12ChallengesbtnItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN12ChallengesbtnItem.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN12ChallengesbtnItem:Constructor()
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesbtnItem.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN12ChallengesbtnItem:OnShow(uiParams)
   self:_SetValue()
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesbtnItem._GetComponents = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN12ChallengesbtnItem:_GetComponents()
   self._name = self:GetUIComponent("UILocalizationText", "_name")
   self._scoretxt = self:GetUIComponent("UILocalizationText", "_score")
   self._lockname = self:GetUIComponent("UILocalizationText", "_lockname")
@@ -38,149 +25,85 @@ UIN12ChallengesbtnItem._GetComponents = function(self)
   self._atlas = self:GetAsset("UIN12.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesbtnItem._SetValue = function(self, uiParams)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN12ChallengesbtnItem:_SetValue(uiParams)
   self._idx = 0
   self._cfg = nil
   self._campaign = nil
   self._callback = nil
   self._islock = false
   self._images = {}
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._images)[true] = "n12_renwu_tab_xuanzhong"
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._images)[false] = "n12_renwu_tab_weixuan"
+  self._images[true] = "n12_renwu_tab_xuanzhong"
+  self._images[false] = "n12_renwu_tab_weixuan"
   self._scorecolors = {}
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._scorecolors)[true] = Color.white
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._scorecolors)[false] = (Color.New)(0.60392156862745, 0.54901960784314, 0.50196078431373)
+  self._scorecolors[true] = Color.white
+  self._scorecolors[false] = Color.New(0.6039215686274509, 0.5490196078431373, 0.5019607843137255)
   self._namecolors = {}
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._namecolors)[true] = (Color.New)(0.15294117647059, 0.12156862745098, 0.098039215686275)
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._namecolors)[false] = (Color.New)(0.60392156862745, 0.54901960784314, 0.50196078431373)
+  self._namecolors[true] = Color.New(0.15294117647058825, 0.12156862745098039, 0.09803921568627451)
+  self._namecolors[false] = Color.New(0.6039215686274509, 0.5490196078431373, 0.5019607843137255)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesbtnItem.SetData = function(self, score, idx, callback, date, curidx)
-  -- function num : 0_4 , upvalues : _ENV
-  self._cfg = ((Cfg.cfg_component_challenge_mission)({CampaignMissionId = date[1]}))[1]
-  self._cfg_task = ((Cfg.cfg_n12_challenges_task)())[idx]
+function UIN12ChallengesbtnItem:SetData(score, idx, callback, date, curidx)
+  self._cfg = Cfg.cfg_component_challenge_mission({
+    CampaignMissionId = date[1]
+  })[1]
+  self._cfg_task = Cfg.cfg_n12_challenges_task()[idx]
   self._unlockTime = date[2]
   self._score = score
   self._idx = idx
   self._callback = callback
   self:SetSelect(curidx == self._idx)
   self:_SetShow()
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesbtnItem._SetShow = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._cg):LoadImage((self._cfg_task).BoosPicture)
-  -- DECOMPILER ERROR at PC16: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._cg).transform).localPosition = Vector3(((self._cfg_task).TranceformBtn)[1], ((self._cfg_task).TranceformBtn)[2], 0)
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  ((self._cg).transform).localScale = Vector3(((self._cfg_task).TranceformBtn)[3], ((self._cfg_task).TranceformBtn)[3], 1)
-  ;
-  (self._name):SetText((StringTable.Get)((self._cfg).MissionName))
-  ;
-  (self._lockname):SetText((StringTable.Get)((self._cfg).MissionName))
+function UIN12ChallengesbtnItem:_SetShow()
+  self._cg:LoadImage(self._cfg_task.BoosPicture)
+  self._cg.transform.localPosition = Vector3(self._cfg_task.TranceformBtn[1], self._cfg_task.TranceformBtn[2], 0)
+  self._cg.transform.localScale = Vector3(self._cfg_task.TranceformBtn[3], self._cfg_task.TranceformBtn[3], 1)
+  self._name:SetText(StringTable.Get(self._cfg.MissionName))
+  self._lockname:SetText(StringTable.Get(self._cfg.MissionName))
   local score = ""
   if self._score == 0 then
-    score = (StringTable.Get)("str_n12_not_challenge")
+    score = StringTable.Get("str_n12_not_challenge")
   else
-    score = (string.format)("%10s", self._score) .. (string.format)("%4s", "")
+    score = string.format("%10s", self._score) .. string.format("%4s", "")
   end
-  ;
-  (self._scoretxt):SetText(score)
+  self._scoretxt:SetText(score)
   self:_SetState(true)
   if self:_CheckUnLock() then
-    (self._scoretxt):SetText((StringTable.Get)("str_n12_not_open"))
+    self._scoretxt:SetText(StringTable.Get("str_n12_not_open"))
     self:_SetState(false)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesbtnItem._SetState = function(self, islock)
-  -- function num : 0_6
+function UIN12ChallengesbtnItem:_SetState(islock)
   self._islock = islock
-  ;
-  ((self._iconobj).gameObject):SetActive(islock)
-  ;
-  (self._lock):SetActive(not islock)
+  self._iconobj.gameObject:SetActive(islock)
+  self._lock:SetActive(not islock)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesbtnItem.SetSelect = function(self, isSelect)
-  -- function num : 0_7
+function UIN12ChallengesbtnItem:SetSelect(isSelect)
   local str = ""
-  ;
-  (self._state_select):SetActive(isSelect)
-  ;
-  (self._bg):LoadImage((self._images)[isSelect])
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._name).color = (self._namecolors)[isSelect]
-  -- DECOMPILER ERROR at PC17: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._scoretxt).color = (self._scorecolors)[isSelect]
+  self._state_select:SetActive(isSelect)
+  self._bg:LoadImage(self._images[isSelect])
+  self._name.color = self._namecolors[isSelect]
+  self._scoretxt.color = self._scorecolors[isSelect]
   if isSelect then
     str = "n12_icon_3000236_1"
   else
     str = "n12_icon_3000236_2"
   end
-  -- DECOMPILER ERROR at PC28: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._icon).sprite = (self._atlas):GetSprite(str)
+  self._icon.sprite = self._atlas:GetSprite(str)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesbtnItem._btnOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIN12ChallengesbtnItem:_btnOnClick(go)
   if self._callback and self._islock then
-    (self._callback)(self._idx)
+    self._callback(self._idx)
   else
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n12_task_tips"))
+    ToastManager.ShowToast(StringTable.Get("str_n12_task_tips"))
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN12ChallengesbtnItem._CheckUnLock = function(self)
-  -- function num : 0_9
-  local remainTime = self._unlockTime - (self._svrTimeModule):GetServerTime() * 0.001
-  do return remainTime > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIN12ChallengesbtnItem:_CheckUnLock()
+  local remainTime = self._unlockTime - self._svrTimeModule:GetServerTime() * 0.001
+  return 0 < remainTime
 end
-
-

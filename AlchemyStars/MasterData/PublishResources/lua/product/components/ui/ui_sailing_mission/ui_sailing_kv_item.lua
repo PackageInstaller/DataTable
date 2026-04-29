@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_sailing_mission/ui_sailing_kv_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISailingKvItem", UICustomWidget)
 UISailingKvItem = UISailingKvItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISailingKvItem.Constructor = function(self)
-  -- function num : 0_0
+function UISailingKvItem:Constructor()
   self._cfgChapter = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingKvItem.OnShow = function(self)
-  -- function num : 0_1
+function UISailingKvItem:OnShow()
   self._imgChapterValue = self:GetUIComponent("RawImageLoader", "imgChapterValue")
   self._imgChapterImage = self:GetUIComponent("RawImage", "imgChapterValue")
   self._txtChapterValue = self:GetUIComponent("UILocalizationText", "txtChapterValue")
@@ -23,27 +13,19 @@ UISailingKvItem.OnShow = function(self)
   self._lockedImage = self:GetUIComponent("RawImageLoader", "lockedImage")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingKvItem.OnHide = function(self)
-  -- function num : 0_2
+function UISailingKvItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingKvItem.Init = function(self, luaIndex, cfg)
-  -- function num : 0_3 , upvalues : _ENV
+function UISailingKvItem:Init(luaIndex, cfg)
   self._cfgChapter = cfg
-  local chapterValue = (StringTable.Get)("str_sailing_mission_arg_layer", luaIndex)
-  ;
-  (self._txtChapterValue):SetText(chapterValue)
-  ;
-  (self._imgChapterValue):LoadImage(cfg.LayerDrawing)
+  local chapterValue = StringTable.Get("str_sailing_mission_arg_layer", luaIndex)
+  self._txtChapterValue:SetText(chapterValue)
+  self._imgChapterValue:LoadImage(cfg.LayerDrawing)
   local localPosition = Vector2.zero
   local localScale = Vector3.one
-  local transform = (self:View()).transform
+  local transform = self:View().transform
   local cfgLayerTransform = cfg.LayerTransform
-  if cfgLayerTransform ~= nil and #cfgLayerTransform >= 3 then
+  if cfgLayerTransform ~= nil and 3 <= #cfgLayerTransform then
     localPosition = Vector3(cfgLayerTransform[1], cfgLayerTransform[2], 0)
     localScale = Vector3(cfgLayerTransform[3], cfgLayerTransform[3], 1)
   end
@@ -51,50 +33,32 @@ UISailingKvItem.Init = function(self, luaIndex, cfg)
   transform.localScale = localScale
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingKvItem.InitStair = function(self, luaIndex, cfg)
-  -- function num : 0_4 , upvalues : _ENV
+function UISailingKvItem:InitStair(luaIndex, cfg)
   self._cfgChapter = cfg
-  ;
-  ((self._imgChapterValue).gameObject):SetActive(cfg.StairDrawing ~= nil)
-  ;
-  (self._imgChapterValue):LoadImage(cfg.StairDrawing)
-  -- DECOMPILER ERROR at PC20: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  ((self._imgChapterValue).transform).sizeDelta = Vector2(280, 273)
+  self._imgChapterValue.gameObject:SetActive(cfg.StairDrawing ~= nil)
+  self._imgChapterValue:LoadImage(cfg.StairDrawing)
+  self._imgChapterValue.transform.sizeDelta = Vector2(280, 273)
   local localPosition = Vector2.zero
   local localScale = Vector3.one
-  local transform = (self:View()).transform
+  local transform = self:View().transform
   local cfgStairTransform = cfg.StairTransform
-  if cfgStairTransform ~= nil and #cfgStairTransform >= 3 then
+  if cfgStairTransform ~= nil and 3 <= #cfgStairTransform then
     localPosition = Vector3(cfgStairTransform[1], cfgStairTransform[2], 0)
     localScale = Vector3(cfgStairTransform[3], cfgStairTransform[3], 1)
   end
   transform.localPosition = localPosition
   transform.localScale = localScale
-  ;
-  ((self._txtChapterValue).gameObject):SetActive(false)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  self._txtChapterValue.gameObject:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingKvItem.SetSelected = function(self, isSelected)
-  -- function num : 0_5
-  if ((self._selectedImage).gameObject).activeSelf ~= isSelected then
-    ((self._selectedImage).gameObject):SetActive(isSelected)
+function UISailingKvItem:SetSelected(isSelected)
+  if self._selectedImage.gameObject.activeSelf ~= isSelected then
+    self._selectedImage.gameObject:SetActive(isSelected)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISailingKvItem.SetLocked = function(self, isLocked)
-  -- function num : 0_6
-  if ((self._lockedImage).gameObject).activeSelf ~= isLocked then
-    ((self._lockedImage).gameObject):SetActive(isLocked)
+function UISailingKvItem:SetLocked(isLocked)
+  if self._lockedImage.gameObject.activeSelf ~= isLocked then
+    self._lockedImage.gameObject:SetActive(isLocked)
   end
 end
-
-

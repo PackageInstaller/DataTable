@@ -1,7 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/type_define/skill_scope_center_type.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-SkillScopeCenterType = {SkillScopeCenterTypeStart = 1, CasterPos = 1, Component = 2, PickUpGridPos = 3, PickUpMultiGridPos = 4, SelectNeareat2Pet = 5, ChainSkillPickUpGridPos = 6, PickUpSelectMonsterGridPos = 7, FirstPickUpGridPos = 8, CastBombPos = 9, RoundBeginPlayerPos = 10, PlayerPos = 11, NearestPetChessPos = 12, NearestPosToCasterInPickMonster = 13, PickUpMonsterPos = 14, PickUpMonsterPosAndCasterPos = 15, MonsterBodyAreaIndex = 16, NearestMonsterGrid = 17, NearestMonsterGridForChainSubScope = 18, PlayerPosAndFarthestMonsterGridPos = 19, FarthestMonsterGridPos = 20, SkillScopeCenterTypeEnd = 999}
-
+SkillScopeCenterType = {
+  SkillScopeCenterTypeStart = 1,
+  CasterPos = 1,
+  Component = 2,
+  PickUpGridPos = 3,
+  PickUpMultiGridPos = 4,
+  SelectNeareat2Pet = 5,
+  ChainSkillPickUpGridPos = 6,
+  PickUpSelectMonsterGridPos = 7,
+  FirstPickUpGridPos = 8,
+  CastBombPos = 9,
+  RoundBeginPlayerPos = 10,
+  PlayerPos = 11,
+  NearestPetChessPos = 12,
+  NearestPosToCasterInPickMonster = 13,
+  PickUpMonsterPos = 14,
+  PickUpMonsterPosAndCasterPos = 15,
+  MonsterBodyAreaIndex = 16,
+  NearestMonsterGrid = 17,
+  NearestMonsterGridForChainSubScope = 18,
+  PlayerPosAndFarthestMonsterGridPos = 19,
+  FarthestMonsterGridPos = 20,
+  SkillScopeCenterTypeEnd = 999
+}

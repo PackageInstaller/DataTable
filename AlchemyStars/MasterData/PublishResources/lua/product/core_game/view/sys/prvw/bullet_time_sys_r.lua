@@ -1,48 +1,29 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/bullet_time_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("reactive_system")
 _class("BulletTimeSystem", ReactiveSystem)
 BulletTimeSystem = BulletTimeSystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BulletTimeSystem.Constructor = function(self, world)
-  -- function num : 0_0
+function BulletTimeSystem:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeSystem.GetTrigger = function(self, world)
-  -- function num : 0_1 , upvalues : _ENV
-  local group = world:GetGroup((world.BW_WEMatchers).BulletTime)
+function BulletTimeSystem:GetTrigger(world)
+  local group = world:GetGroup(world.BW_WEMatchers.BulletTime)
   local c = Collector:New({group}, {"Added"})
   return c
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeSystem.Filter = function(self, entity)
-  -- function num : 0_2
+function BulletTimeSystem:Filter(entity)
   return entity:HasBulletTime()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeSystem.ExecuteEntities = function(self, entities)
-  -- function num : 0_3
+function BulletTimeSystem:ExecuteEntities(entities)
   for i = 1, #entities do
     local e = entities[i]
     self:HandleEntity(e)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeSystem.HandleEntity = function(self, e)
-  -- function num : 0_4
+function BulletTimeSystem:HandleEntity(e)
   local bulletTimeCmpt = e:BulletTime()
   local enableBulletTime = bulletTimeCmpt:IsEnableBullteTime()
   if enableBulletTime then
@@ -52,66 +33,53 @@ BulletTimeSystem.HandleEntity = function(self, e)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeSystem._EnalbeEntityBulletTime = function(self, e)
-  -- function num : 0_5 , upvalues : _ENV
+function BulletTimeSystem:_EnalbeEntityBulletTime(e)
   local bulletTimeCmpt = e:BulletTime()
-  ;
-  ((self._world):MainCamera()):EnableSceneTiltShift(true)
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,entity in ipairs(monsterGroup:GetEntities()) do
+  self._world:MainCamera():EnableSceneTiltShift(true)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, entity in ipairs(monsterGroup:GetEntities()) do
     bulletTimeCmpt:AddBulletTimeEntityID(entity:GetID())
     self:_ModifyEntityFadeSpeed(entity, BattleConst.BulletTimeSpeed)
   end
-  local trapRenderSvc = (self._world):GetService("TrapRender")
-  local trapGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).TrapID)
-  for _,entity in ipairs(trapGroup:GetEntities()) do
+  local trapRenderSvc = self._world:GetService("TrapRender")
+  local trapGroup = self._world:GetGroup(self._world.BW_WEMatchers.TrapID)
+  for _, entity in ipairs(trapGroup:GetEntities()) do
     if not trapRenderSvc:IsRuneTrap(entity) then
       bulletTimeCmpt:AddBulletTimeEntityID(entity:GetID())
       self:_ModifyEntityFadeSpeed(entity, BattleConst.BulletTimeSpeed)
     end
   end
-  local teamGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).Team)
-  for _,entity in ipairs(teamGroup:GetEntities()) do
+  local teamGroup = self._world:GetGroup(self._world.BW_WEMatchers.Team)
+  for _, entity in ipairs(teamGroup:GetEntities()) do
     bulletTimeCmpt:AddBulletTimeEntityID(entity:GetID())
     self:_ModifyEntityFadeSpeed(entity, BattleConst.BulletTimeSpeed)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeSystem._ModifyEntityFadeSpeed = function(self, entity, speed)
-  -- function num : 0_6 , upvalues : _ENV
+function BulletTimeSystem:_ModifyEntityFadeSpeed(entity, speed)
   local viewCmpt = entity:View()
   if not viewCmpt then
-    return 
+    return
   end
   local u3dObj = viewCmpt:GetGameObject()
   if not u3dObj or tostring(u3dObj) == "null" then
-    return 
+    return
   end
   local fadeCmpt = u3dObj:GetComponent(typeof(FadeComponent))
   if not fadeCmpt then
-    return 
+    return
   end
   fadeCmpt.Speed = speed
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BulletTimeSystem._DisableEntityBulletTime = function(self, e)
-  -- function num : 0_7 , upvalues : _ENV
+function BulletTimeSystem:_DisableEntityBulletTime(e)
   local normalSpeed = 1
   local bulletTimeCmpt = e:BulletTime()
   local idList = bulletTimeCmpt:GetBulletTimeEntityIDList()
-  for _,id in ipairs(idList) do
-    local entity = (self._world):GetEntityByID(id)
+  for _, id in ipairs(idList) do
+    local entity = self._world:GetEntityByID(id)
     self:_ModifyEntityFadeSpeed(entity, normalSpeed)
   end
   bulletTimeCmpt:ResetBulletTimeData()
-  ;
-  ((self._world):MainCamera()):EnableSceneTiltShift(false)
+  self._world:MainCamera():EnableSceneTiltShift(false)
 end
-
-

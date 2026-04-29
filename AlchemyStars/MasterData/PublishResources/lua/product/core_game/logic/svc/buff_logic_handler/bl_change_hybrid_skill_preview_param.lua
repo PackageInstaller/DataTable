@@ -1,44 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/bl_change_hybrid_skill_preview_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicChangeHybridSkillPreviewParam", BuffLogicBase)
 BuffLogicChangeHybridSkillPreviewParam = BuffLogicChangeHybridSkillPreviewParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeHybridSkillPreviewParam.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeHybridSkillPreviewParam:Constructor(buffInstance, logicParam)
   self._param = logicParam.param
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeHybridSkillPreviewParam.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicChangeHybridSkillPreviewParam:DoLogic()
+  local e = self._buffInstance:Entity()
   local buffCmpt = e:BuffComponent()
   if buffCmpt then
     buffCmpt:SetBuffValue("HybridSkillPreviewParam", self._param)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.DataBuffValue, e:GetID(), "HybridSkillPreviewParam", self._param)
+    self._world:EventDispatcher():Dispatch(GameEventType.DataBuffValue, e:GetID(), "HybridSkillPreviewParam", self._param)
   end
 end
 
 _class("BuffLogicUndoChangeHybridSkillPreviewParam", BuffLogicBase)
 BuffLogicUndoChangeHybridSkillPreviewParam = BuffLogicUndoChangeHybridSkillPreviewParam
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoChangeHybridSkillPreviewParam.DoLogic = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
+function BuffLogicUndoChangeHybridSkillPreviewParam:DoLogic()
+  local e = self._buffInstance:Entity()
   local buffCmpt = e:BuffComponent()
   if buffCmpt then
     buffCmpt:SetBuffValue("HybridSkillPreviewParam", nil)
-    ;
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.DataBuffValue, e:GetID(), "HybridSkillPreviewParam", nil)
+    self._world:EventDispatcher():Dispatch(GameEventType.DataBuffValue, e:GetID(), "HybridSkillPreviewParam", nil)
   end
 end
-
-

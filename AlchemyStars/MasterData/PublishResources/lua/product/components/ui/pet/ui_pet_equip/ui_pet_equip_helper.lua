@@ -1,76 +1,50 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet/ui_pet_equip/ui_pet_equip_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetEquipHelper", Object)
 UIPetEquipHelper = UIPetEquipHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetEquipHelper.HasRefine = function(petId)
-  -- function num : 0_0 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_equip_refine)({PetID = petId})
-  if cfgs and #cfgs > 0 then
+function UIPetEquipHelper.HasRefine(petId)
+  local cfgs = Cfg.cfg_pet_equip_refine({PetID = petId})
+  if cfgs and 0 < #cfgs then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipHelper.GetRefineCfg = function(petId, lv)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_equip_refine)({PetID = petId, Level = lv})
-  if cfgs and #cfgs > 0 then
+function UIPetEquipHelper.GetRefineCfg(petId, lv)
+  local cfgs = Cfg.cfg_pet_equip_refine({PetID = petId, Level = lv})
+  if cfgs and 0 < #cfgs then
     return cfgs[1]
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipHelper.CheckRefineRed = function(pet_data)
-  -- function num : 0_2 , upvalues : _ENV
+function UIPetEquipHelper.CheckRefineRed(pet_data)
   if not pet_data then
     return false
   end
   local pstId = pet_data:GetPstID()
-  local key = (UIPetEquipHelper.GetRefineRedKey)(pstId)
-  if ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  local key = UIPetEquipHelper.GetRefineRedKey(pstId)
+  if UnityEngine.PlayerPrefs.HasKey(key) then
     return false
   end
   local templateId = pet_data:GetTemplateID()
-  if not (UIPetEquipHelper.HasRefine)(templateId) then
+  if not UIPetEquipHelper.HasRefine(templateId) then
     return false
   end
   local grade = pet_data:GetPetGrade()
-  do return grade >= 3 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return 3 <= grade
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipHelper.SetRefineRed = function(pet_data)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetEquipHelper.SetRefineRed(pet_data)
   local pstId = pet_data:GetPstID()
-  local key = (UIPetEquipHelper.GetRefineRedKey)(pstId)
-  ;
-  ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+  local key = UIPetEquipHelper.GetRefineRedKey(pstId)
+  UnityEngine.PlayerPrefs.SetInt(key, 1)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipHelper.GetRefineRedKey = function(petPstId)
-  -- function num : 0_4 , upvalues : _ENV
-  return (UIPetEquipHelper.GetRolePstId)() .. petPstId
+function UIPetEquipHelper.GetRefineRedKey(petPstId)
+  return UIPetEquipHelper.GetRolePstId() .. petPstId
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetEquipHelper.GetRolePstId = function()
-  -- function num : 0_5 , upvalues : _ENV
-  local mRole = (GameGlobal.GetModule)(RoleModule)
+function UIPetEquipHelper.GetRolePstId()
+  local mRole = GameGlobal.GetModule(RoleModule)
   return mRole:GetPstId()
 end
-
-

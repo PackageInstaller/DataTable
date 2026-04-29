@@ -1,23 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n23/replay/ui_n23_replay.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN23Replay", UIController)
 UIN23Replay = UIN23Replay
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN23Replay.Constructor = function(self, ui_root_transform)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN23Replay:Constructor(ui_root_transform)
   self.mCampaign = self:GetModule(CampaignModule)
-  self.data = (self.mCampaign):GetN23Data()
+  self.data = self.mCampaign:GetN23Data()
   self.curReplayIdx = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Replay.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIN23Replay:OnShow(uiParams)
   self.uiShop = uiParams[1]
   self.txtIndex = self:GetUIComponent("UILocalizationText", "txtIndex")
   self.sv = self:GetUIComponent("ScrollRect", "sv")
@@ -27,21 +17,14 @@ UIN23Replay.OnShow = function(self, uiParams)
   self:Init()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Replay.OnHide = function(self)
-  -- function num : 0_2
+function UIN23Replay:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Replay.Init = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local len = (table.count)((self.data).replays)
-  ;
-  (self.poolContent):SpawnObjects("UIN23ReplayItem", len)
-  local uis = (self.poolContent):GetAllSpawnList()
-  for i,replay in pairs((self.data).replays) do
+function UIN23Replay:Init()
+  local len = table.count(self.data.replays)
+  self.poolContent:SpawnObjects("UIN23ReplayItem", len)
+  local uis = self.poolContent:GetAllSpawnList()
+  for i, replay in pairs(self.data.replays) do
     local ui = uis[i]
     ui:Flush(i, replay.id, self)
   end
@@ -49,76 +32,50 @@ UIN23Replay.Init = function(self)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Replay.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local len = (table.count)((self.data).replays)
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self.sv).horizontalNormalizedPosition = (self.curReplayIdx - 1) / (len - 1)
-  local preZeroIndex = (UIActivityHelper.GetZeroStrFrontNum)(2, self.curReplayIdx) .. self.curReplayIdx
-  local preZeroLen = (UIActivityHelper.GetZeroStrFrontNum)(2, len) .. len
-  ;
-  (self.txtIndex):SetText("<size=132>" .. preZeroIndex .. "</size>/" .. preZeroLen)
+function UIN23Replay:Flush()
+  local len = table.count(self.data.replays)
+  self.sv.horizontalNormalizedPosition = (self.curReplayIdx - 1) / (len - 1)
+  local preZeroIndex = UIActivityHelper.GetZeroStrFrontNum(2, self.curReplayIdx) .. self.curReplayIdx
+  local preZeroLen = UIActivityHelper.GetZeroStrFrontNum(2, len) .. len
+  self.txtIndex:SetText("<size=132>" .. preZeroIndex .. "</size>/" .. preZeroLen)
   if self.curReplayIdx <= 1 then
-    (self.goBtnPrev):SetActive(false)
+    self.goBtnPrev:SetActive(false)
   else
-    ;
-    (self.goBtnPrev):SetActive(true)
+    self.goBtnPrev:SetActive(true)
   end
   if len <= self.curReplayIdx then
-    (self.goBtnNext):SetActive(false)
+    self.goBtnNext:SetActive(false)
   else
-    ;
-    (self.goBtnNext):SetActive(true)
+    self.goBtnNext:SetActive(true)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Replay.Replay = function(self, id)
-  -- function num : 0_5
-  (self.uiShop):Replay(id)
+function UIN23Replay:Replay(id)
+  self.uiShop:Replay(id)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Replay.BgOnClick = function(self, go)
-  -- function num : 0_6
+function UIN23Replay:BgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Replay.BtnReplayOnClick = function(self, go)
-  -- function num : 0_7
+function UIN23Replay:BtnReplayOnClick(go)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Replay.BtnPrevOnClick = function(self, go)
-  -- function num : 0_8
+function UIN23Replay:BtnPrevOnClick(go)
   if self.curReplayIdx <= 1 then
     self.curReplayIdx = 1
-    return 
+    return
   end
   self.curReplayIdx = self.curReplayIdx - 1
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN23Replay.BtnNextOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
-  local len = (table.count)((self.data).replays)
+function UIN23Replay:BtnNextOnClick(go)
+  local len = table.count(self.data.replays)
   if len <= self.curReplayIdx then
     self.curReplayIdx = len
-    return 
+    return
   end
   self.curReplayIdx = self.curReplayIdx + 1
   self:Flush()
 end
-
-

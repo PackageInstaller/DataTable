@@ -1,24 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_exchange_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopExchangeTab", UICustomWidget)
 UIShopExchangeTab = UIShopExchangeTab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopExchangeTab.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.tabNames = {[MarketType.Shop_XingZuan] = (StringTable.Get)("str_shop_xingzuan"), [MarketType.Shop_HuiYao] = (StringTable.Get)("str_shop_huiyao"), [MarketType.Shop_HongPiao] = (StringTable.Get)("str_shop_hongpiao"), [MarketType.Shop_GuangPo] = (StringTable.Get)("str_shop_guangpo"), [MarketType.Shop_Season] = (StringTable.Get)("str_shop_season"), [MarketType.Shop_BlackMarket] = (StringTable.Get)("str_shop_secret_black_name")}
-  self.SortTab = ((Cfg.cfg_shop_main_tab)[ShopMainTabType.Exchange]).SubTab
+function UIShopExchangeTab:Constructor()
+  self.tabNames = {
+    [MarketType.Shop_XingZuan] = StringTable.Get("str_shop_xingzuan"),
+    [MarketType.Shop_HuiYao] = StringTable.Get("str_shop_huiyao"),
+    [MarketType.Shop_HongPiao] = StringTable.Get("str_shop_hongpiao"),
+    [MarketType.Shop_GuangPo] = StringTable.Get("str_shop_guangpo"),
+    [MarketType.Shop_Season] = StringTable.Get("str_shop_season"),
+    [MarketType.Shop_BlackMarket] = StringTable.Get("str_shop_secret_black_name")
+  }
+  self.SortTab = Cfg.cfg_shop_main_tab[ShopMainTabType.Exchange].SubTab
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIShopExchangeTab:OnShow()
   self._shopModule = self:GetModule(ShopModule)
-  self._clienShop = (self._shopModule):GetClientShop()
+  self._clienShop = self._shopModule:GetClientShop()
   self._timeModule = self:GetModule(SvrTimeModule)
   self._curShop = nil
   self._anim = self:GetUIComponent("Animation", "UIShopExchangeTab")
@@ -28,20 +25,14 @@ UIShopExchangeTab.OnShow = function(self)
   self.itemCountPerSeasonRow = 1
   self.scrollGo = self:GetGameObject("ScrollView")
   self.scrollView = self:GetUIComponent("UIDynamicScrollView", "ScrollView")
-  ;
-  (self.scrollView):InitListView(1, function(_scrollView, index)
-    -- function num : 0_1_0 , upvalues : self
+  self.scrollView:InitListView(1, function(_scrollView, index)
     return self:createItem(_scrollView, index)
-  end
-)
+  end)
   self.scrollSeasonGo = self:GetGameObject("ScrollViewSeason")
   self.scrollViewSeason = self:GetUIComponent("UIDynamicScrollView", "ScrollViewSeason")
-  ;
-  (self.scrollViewSeason):InitListView(0, function(_scrollView, index)
-    -- function num : 0_1_1 , upvalues : self
+  self.scrollViewSeason:InitListView(0, function(_scrollView, index)
     return self:createItemSeason(_scrollView, index)
-  end
-)
+  end)
   local tglGroup = self:GetUIComponent("ToggleGroup", "toggle")
   self._toggleRect = self:GetUIComponent("RectTransform", "toggle")
   local shopPool = self:GetUIComponent("UISelectObjectPath", "toggle")
@@ -49,50 +40,33 @@ UIShopExchangeTab.OnShow = function(self)
   shopPool:SpawnObjects("UIShopSecretTabBtn", toggleCount)
   self._shopBtns = {}
   local shopBtns = shopPool:GetAllSpawnList()
-  for index,btn in ipairs(shopBtns) do
-    local marketType = (self.SortTab)[index]
-    do
-      btn:Init(marketType, (self.tabNames)[marketType], 1, function()
-    -- function num : 0_1_2 , upvalues : self, marketType
-    self:OnChangeShop(marketType)
-  end
-)
-      -- DECOMPILER ERROR at PC94: Confused about usage of register: R11 in 'UnsetPending'
-
-      ;
-      (self._shopBtns)[marketType] = btn
-    end
+  for index, btn in ipairs(shopBtns) do
+    local marketType = self.SortTab[index]
+    btn:Init(marketType, self.tabNames[marketType], 1, function()
+      self:OnChangeShop(marketType)
+    end)
+    self._shopBtns[marketType] = btn
   end
   local refreshBtnGen = self:GetUIComponent("UISelectObjectPath", "RefreshBtnArea")
   self._refreshBtnAreaGo = self:GetGameObject("RefreshBtnArea")
   self._refreshBtnWidget = refreshBtnGen:SpawnObject("UIWidgetShopRefreshBtn")
-  ;
-  (self._refreshBtnWidget):SetData(function()
-    -- function num : 0_1_3 , upvalues : self
+  self._refreshBtnWidget:SetData(function()
     self:BtnRefreshOnClick()
-  end
-)
-  ;
-  (self._refreshBtnAreaGo):SetActive(false)
+  end)
+  self._refreshBtnAreaGo:SetActive(false)
   self._countDownTimer = nil
   self._btnOneKeyBuyGO = self:GetGameObject("BtnOneKeyBuy")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopExchangeTab:OnHide()
   if self._countDownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countDownTimer)
+    GameGlobal.Timer():CancelEvent(self._countDownTimer)
     self._countDownTimer = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.SetData = function(self, params)
-  -- function num : 0_3 , upvalues : _ENV
-  local default = (self.SortTab)[1]
+function UIShopExchangeTab:SetData(params)
+  local default = self.SortTab[1]
   if params and params[3] then
     default = params[3]
   end
@@ -102,297 +76,194 @@ UIShopExchangeTab.SetData = function(self, params)
   self:AttachEvent(GameEventType.UpdateExchangeSeasonShop, self.onBuySuccess)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.ResetTogglePos = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIShopExchangeTab:ResetTogglePos()
   if self._toggleRect then
-    (self._toggleRect).anchoredPosition = Vector2(0, 0)
+    self._toggleRect.anchoredPosition = Vector2(0, 0)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.Update = function(self)
-  -- function num : 0_5
+function UIShopExchangeTab:Update()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.OnChangeShop = function(self, shop)
-  -- function num : 0_6
+function UIShopExchangeTab:OnChangeShop(shop)
   if self._curShop == shop then
-    return 
+    return
   end
   self:StartTask(self.reqRefreshShop, self, shop)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.reqRefreshShop = function(self, TT, shop)
-  -- function num : 0_7
+function UIShopExchangeTab:reqRefreshShop(TT, shop)
   local success = self:requestShopData(TT, shop)
   if success then
     self:showShop(shop)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.showShop = function(self, shop)
-  -- function num : 0_8 , upvalues : _ENV
+function UIShopExchangeTab:showShop(shop)
   if self._curShop then
-    ((self._shopBtns)[self._curShop]):Select(false)
+    self._shopBtns[self._curShop]:Select(false)
   end
   self._curShop = shop
   if self._curShop then
-    ((self._shopBtns)[self._curShop]):Select(true)
+    self._shopBtns[self._curShop]:Select(true)
   end
-  ;
-  (self._refreshBtnAreaGo):SetActive(false)
-  ;
-  (self._refreshPanal):SetActive(false)
-  ;
-  (self._btnOneKeyBuyGO):SetActive(false)
+  self._refreshBtnAreaGo:SetActive(false)
+  self._refreshPanal:SetActive(false)
+  self._btnOneKeyBuyGO:SetActive(false)
   if self._countDownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countDownTimer)
+    GameGlobal.Timer():CancelEvent(self._countDownTimer)
     self._countDownTimer = nil
   end
   if self._curShop == MarketType.Shop_XingZuan then
     self:showCountDown()
-    ;
-    (self._refreshPanal):SetActive(true)
-  else
-    if self._curShop == MarketType.Shop_HuiYao then
-      self:showCountDown()
-      ;
-      (self._refreshPanal):SetActive(true)
-    else
-    end
-  end
-  if self._curShop ~= MarketType.Shop_GuangPo or self._curShop == MarketType.Shop_Season then
-    (self._shopModule):ClearExchangeTab_SeasonNew()
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopNew)
-  else
-    if self._curShop == MarketType.Shop_BlackMarket then
-      self:showCountDown()
-      ;
-      (self._refreshPanal):SetActive(true)
-      ;
-      (self._refreshBtnAreaGo):SetActive(true)
-      ;
-      (self._btnOneKeyBuyGO):SetActive(true)
-    end
+    self._refreshPanal:SetActive(true)
+  elseif self._curShop == MarketType.Shop_HuiYao then
+    self:showCountDown()
+    self._refreshPanal:SetActive(true)
+  elseif self._curShop == MarketType.Shop_GuangPo then
+  elseif self._curShop == MarketType.Shop_Season then
+    self._shopModule:ClearExchangeTab_SeasonNew()
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopNew)
+  elseif self._curShop == MarketType.Shop_BlackMarket then
+    self:showCountDown()
+    self._refreshPanal:SetActive(true)
+    self._refreshBtnAreaGo:SetActive(true)
+    self._btnOneKeyBuyGO:SetActive(true)
   end
   self:refreshGoods(true)
   self:refreshRefreshBtnArea()
   self:InAnimation()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Exchange, self._curShop)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopTabChange, ShopMainTabType.Exchange, self._curShop)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.showCountDown = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UIShopExchangeTab:showCountDown()
   if self._countDownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countDownTimer)
+    GameGlobal.Timer():CancelEvent(self._countDownTimer)
     self._countDownTimer = nil
   end
-  local refresh = function()
-    -- function num : 0_9_0 , upvalues : self, _ENV
-    local time = (self._clienShop):GetExchangeShopResetTime()
-    ;
-    (self._remainTime):SetText((StringTable.Get)("str_shop_black_refresh", (UIShopToolFunctions.GetRemainTime)(time)))
+  
+  local function refresh()
+    local time = self._clienShop:GetExchangeShopResetTime()
+    self._remainTime:SetText(StringTable.Get("str_shop_black_refresh", UIShopToolFunctions.GetRemainTime(time)))
     if time <= 0 then
       self:onTimeUp()
     end
   end
-
+  
   refresh()
-  self._countDownTimer = ((GameGlobal.Timer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, refresh)
+  self._countDownTimer = GameGlobal.Timer():AddEventTimes(1000, TimerTriggerCount.Infinite, refresh)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.onTimeUp = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function UIShopExchangeTab:onTimeUp()
   if self._countDownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countDownTimer)
+    GameGlobal.Timer():CancelEvent(self._countDownTimer)
     self._countDownTimer = nil
   end
   self:StartTask(self.reqRefreshShop, self, self._curShop)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.refreshGoods = function(self, reScroll)
-  -- function num : 0_11 , upvalues : _ENV
+function UIShopExchangeTab:refreshGoods(reScroll)
   self._poolItems = {}
   if self._curShop == MarketType.Shop_Season then
-    (self.scrollSeasonGo):SetActive(true)
-    ;
-    (self.scrollGo):SetActive(false)
+    self.scrollSeasonGo:SetActive(true)
+    self.scrollGo:SetActive(false)
     self:CreateSeasonShopData()
     local row = #self._showSeasonDataList
-    ;
-    (self.scrollViewSeason):SetListItemCount(row)
+    self.scrollViewSeason:SetListItemCount(row)
     if reScroll then
-      (self.scrollViewSeason):MovePanelToItemIndex(0, 0)
+      self.scrollViewSeason:MovePanelToItemIndex(0, 0)
     else
-      ;
-      (self.scrollViewSeason):RefreshAllShownItem()
+      self.scrollViewSeason:RefreshAllShownItem()
     end
   else
-    do
-      ;
-      (self.scrollSeasonGo):SetActive(false)
-      ;
-      (self.scrollGo):SetActive(true)
-      local row = (math.ceil)((table.count)((self._clienShop):GetExchangeShopData(self._curShop)) / self.itemCountPerRow)
-      ;
-      (self.scrollView):SetListItemCount(row)
-      ;
-      (self.scrollView):RefreshAllShownItem()
-      if reScroll then
-        (self.scrollView):MovePanelToItemIndex(0, 0)
-      end
+    self.scrollSeasonGo:SetActive(false)
+    self.scrollGo:SetActive(true)
+    local row = math.ceil(table.count(self._clienShop:GetExchangeShopData(self._curShop)) / self.itemCountPerRow)
+    self.scrollView:SetListItemCount(row)
+    self.scrollView:RefreshAllShownItem()
+    if reScroll then
+      self.scrollView:MovePanelToItemIndex(0, 0)
     end
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.refreshRefreshBtnArea = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UIShopExchangeTab:refreshRefreshBtnArea()
   if self._curShop == MarketType.Shop_BlackMarket then
-    local data = (self._clienShop):GetExchangeShopStoreData()
-    ;
-    (self._refreshBtnWidget):RefreshInfo(data:GetCurCount(), data:GetMaxCount(), data:GetConsume(), data:GetCostType())
+    local data = self._clienShop:GetExchangeShopStoreData()
+    self._refreshBtnWidget:RefreshInfo(data:GetCurCount(), data:GetMaxCount(), data:GetConsume(), data:GetCostType())
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.CreateSeasonShopData = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UIShopExchangeTab:CreateSeasonShopData()
   self._showSeasonDataList = {}
-  self._seasonDataList = (self._clienShop):GetExchangeShopData(self._curShop)
+  self._seasonDataList = self._clienShop:GetExchangeShopData(self._curShop)
   local filterList = {}
-  for index,value in ipairs(self._seasonDataList) do
+  for index, value in ipairs(self._seasonDataList) do
     if value:GetRemainCount() > 0 then
       local AddBagNum = value:AddBagNum()
       if AddBagNum and AddBagNum == 1 then
         local itemid = value:GetItemId()
-        if RoleAssetID.RoleAssetPetSkinBegin <= itemid and itemid <= RoleAssetID.RoleAssetPetSkinEnd then
+        if itemid >= RoleAssetID.RoleAssetPetSkinBegin and itemid <= RoleAssetID.RoleAssetPetSkinEnd then
           local skinid = itemid - RoleAssetID.RoleAssetPetSkinBegin
-          local petModule = (GameGlobal.GetModule)(PetModule)
+          local petModule = GameGlobal.GetModule(PetModule)
           local haveSkin = petModule:HaveSkin(skinid)
           if haveSkin then
-            (Log.debug)("###[UIShopExchangeTab] season his shop have skin , skinid:", skinid)
+            Log.debug("###[UIShopExchangeTab] season his shop have skin , skinid:", skinid)
           else
-            ;
-            (table.insert)(filterList, value)
+            table.insert(filterList, value)
+          end
+        elseif itemid >= RoleAssetID.RoleAssetPetBegin and itemid <= RoleAssetID.RoleAssetPetEnd then
+          local petModule = GameGlobal.GetModule(PetModule)
+          local have = petModule:GetPetByTemplateId(itemid)
+          if have then
+            Log.debug("###[UIShopExchangeTab] season his shop have pet , petid:", itemid)
+          else
+            table.insert(filterList, value)
           end
         else
-          do
-            if RoleAssetID.RoleAssetPetBegin <= itemid and itemid <= RoleAssetID.RoleAssetPetEnd then
-              local petModule = (GameGlobal.GetModule)(PetModule)
-              local have = petModule:GetPetByTemplateId(itemid)
-              if have then
-                (Log.debug)("###[UIShopExchangeTab] season his shop have pet , petid:", itemid)
-              else
-                ;
-                (table.insert)(filterList, value)
-              end
-            else
-              do
-                do
-                  do
-                    local haveCount = ((GameGlobal.GetModule)(ItemModule)):GetItemCount(itemid)
-                    if value:GetRemainCount() - haveCount > 0 then
-                      (table.insert)(filterList, value)
-                    end
-                    ;
-                    (table.insert)(filterList, value)
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                    -- DECOMPILER ERROR at PC108: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
+          local haveCount = GameGlobal.GetModule(ItemModule):GetItemCount(itemid)
+          if value:GetRemainCount() - haveCount > 0 then
+            table.insert(filterList, value)
           end
         end
+      else
+        table.insert(filterList, value)
       end
     end
   end
   local insertIdx = 0
-  local insertData = nil
+  local insertData
   local goOn = false
-  for index,value in ipairs(filterList) do
+  for index, value in ipairs(filterList) do
     if value:GrandPrize() then
       insertIdx = insertIdx + 1
       insertData = ExchangeSeasonShopViewData:New()
       insertData:AddData(value)
       insertData.sin = true
-      -- DECOMPILER ERROR at PC131: Confused about usage of register: R10 in 'UnsetPending'
-
-      ;
-      (self._showSeasonDataList)[insertIdx] = insertData
+      self._showSeasonDataList[insertIdx] = insertData
+      goOn = false
+    elseif goOn then
+      insertData:AddData(value)
       goOn = false
     else
-      if goOn then
-        insertData:AddData(value)
-        goOn = false
-      else
-        insertIdx = insertIdx + 1
-        insertData = ExchangeSeasonShopViewData:New()
-        insertData:AddData(value)
-        insertData.sin = false
-        -- DECOMPILER ERROR at PC151: Confused about usage of register: R10 in 'UnsetPending'
-
-        ;
-        (self._showSeasonDataList)[insertIdx] = insertData
-        goOn = true
-      end
+      insertIdx = insertIdx + 1
+      insertData = ExchangeSeasonShopViewData:New()
+      insertData:AddData(value)
+      insertData.sin = false
+      self._showSeasonDataList[insertIdx] = insertData
+      goOn = true
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.createItemSeason = function(self, _scrollView, _index)
-  -- function num : 0_14
+function UIShopExchangeTab:createItemSeason(_scrollView, _index)
   if _index < 0 or not self._curShop then
     return nil
   end
   local count = 1
   local idx = _index * self.itemCountPerSeasonRow + 1
-  local data = (self._showSeasonDataList)[idx]
-  local itemName = nil
+  local data = self._showSeasonDataList[idx]
+  local itemName
   local isSpecial = false
   if data.sin then
     isSpecial = true
@@ -405,10 +276,8 @@ UIShopExchangeTab.createItemSeason = function(self, _scrollView, _index)
   end
   local item = _scrollView:NewListViewItem(itemName)
   local pool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  -- DECOMPILER ERROR at PC37: Confused about usage of register: R10 in 'UnsetPending'
-
   if self._poolItems ~= nil then
-    (self._poolItems)[_index] = pool
+    self._poolItems[_index] = pool
   end
   pool:SpawnObjects("UIShopExchangeSeasonItem", count)
   if item.IsInitHandlerCalled == false then
@@ -417,7 +286,7 @@ UIShopExchangeTab.createItemSeason = function(self, _scrollView, _index)
   local rowList = pool:GetAllSpawnList()
   for i = 1, count do
     local widget = rowList[i]
-    local singleData = (data.list)[i]
+    local singleData = data.list[i]
     if singleData then
       widget:Enable(true)
       widget:Special(isSpecial)
@@ -429,25 +298,20 @@ UIShopExchangeTab.createItemSeason = function(self, _scrollView, _index)
   return item
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.createItem = function(self, _scrollView, _index)
-  -- function num : 0_15 , upvalues : _ENV
+function UIShopExchangeTab:createItem(_scrollView, _index)
   if _index < 0 or not self._curShop then
     return nil
   end
   local item = _scrollView:NewListViewItem("item")
   local pool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R5 in 'UnsetPending'
-
   if self._poolItems ~= nil then
-    (self._poolItems)[_index] = pool
+    self._poolItems[_index] = pool
   end
   if item.IsInitHandlerCalled == false then
     item.IsInitHandlerCalled = true
     pool:SpawnObjects("UIShopSecretGood", self.itemCountPerRow)
   end
-  local goods = (self._clienShop):GetExchangeShopData(self._curShop)
+  local goods = self._clienShop:GetExchangeShopData(self._curShop)
   local rowList = pool:GetAllSpawnList()
   for i = 1, self.itemCountPerRow do
     local item = rowList[i]
@@ -455,304 +319,213 @@ UIShopExchangeTab.createItem = function(self, _scrollView, _index)
     local data = goods[itemIndex]
     if data then
       item:Enable(true)
-      local targetShopId = nil
+      local targetShopId
       if self.gotoType == ShopGotoType.OpenShopConfirm then
         targetShopId = self.targetShopId
         self:ClearFlag()
       end
       item:Refresh(self._curShop, data, targetShopId)
     else
-      do
-        do
-          item:Enable(false)
-          -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-          -- DECOMPILER ERROR at PC65: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
-      end
+      item:Enable(false)
     end
   end
   return item
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.ExcuteHideLogic = function(self, cb)
-  -- function num : 0_16 , upvalues : _ENV
+function UIShopExchangeTab:ExcuteHideLogic(cb)
   if cb then
     cb(self)
   end
   if self._countDownTimer then
-    ((GameGlobal.Timer)()):CancelEvent(self._countDownTimer)
+    GameGlobal.Timer():CancelEvent(self._countDownTimer)
     self._countDownTimer = nil
   end
   if self._curShop then
-    ((self._shopBtns)[self._curShop]):Select(false)
+    self._shopBtns[self._curShop]:Select(false)
   end
   self._curShop = nil
   self:DetachEvent(GameEventType.ShopBuySuccess, self.onBuySuccess)
   self:DetachEvent(GameEventType.UpdateExchangeSeasonShop, self.onBuySuccess)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.ClearFlag = function(self)
-  -- function num : 0_17
+function UIShopExchangeTab:ClearFlag()
   self.gotoType = nil
   self.targetShopId = nil
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.onBuySuccess = function(self)
-  -- function num : 0_18
+function UIShopExchangeTab:onBuySuccess()
   self:StartTask(self.refreshCurShop, self)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.refreshCurShop = function(self, TT)
-  -- function num : 0_19
+function UIShopExchangeTab:refreshCurShop(TT)
   local success = self:requestShopData(TT, self._curShop)
   if success then
     self:refreshGoods(false)
   end
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.requestShopData = function(self, TT, shop)
-  -- function num : 0_20 , upvalues : _ENV
+function UIShopExchangeTab:requestShopData(TT, shop)
   self:Lock(self:GetName())
-  local res = nil
+  local res
   local success = false
   if shop == MarketType.Shop_XingZuan then
-    res = (self._shopModule):RequestXingzuanMarket(TT)
-  else
-    if shop == MarketType.Shop_HuiYao then
-      res = (self._shopModule):RequestHuiyaoMarket(TT)
-    else
-      if shop == MarketType.Shop_GuangPo then
-        res = (self._shopModule):RequestGlowMarket(TT)
-      else
-        if shop == MarketType.Shop_HongPiao then
-          res = (self._shopModule):RequestHongPiaoMarket(TT)
-        else
-          if shop == MarketType.Shop_Season then
-            res = (self._shopModule):RequestSeasonMarket(TT)
-          else
-            if shop == MarketType.Shop_BlackMarket then
-              res = (self._shopModule):RequestGetBlackMarket(TT)
-            end
-          end
-        end
-      end
-    end
+    res = self._shopModule:RequestXingzuanMarket(TT)
+  elseif shop == MarketType.Shop_HuiYao then
+    res = self._shopModule:RequestHuiyaoMarket(TT)
+  elseif shop == MarketType.Shop_GuangPo then
+    res = self._shopModule:RequestGlowMarket(TT)
+  elseif shop == MarketType.Shop_HongPiao then
+    res = self._shopModule:RequestHongPiaoMarket(TT)
+  elseif shop == MarketType.Shop_Season then
+    res = self._shopModule:RequestSeasonMarket(TT)
+  elseif shop == MarketType.Shop_BlackMarket then
+    res = self._shopModule:RequestGetBlackMarket(TT)
   end
   if res then
     if res:GetSucc() then
-      (self._clienShop):RefreshExchangeShopData(shop)
+      self._clienShop:RefreshExchangeShopData(shop)
       success = true
+    elseif res:GetResult() == SHOP_CODE.SHOP_SHOPTYPE_ERROR then
+      ToastManager.ShowToast(StringTable.Get("str_shop_subtype_error"))
     else
-      if res:GetResult() == SHOP_CODE.SHOP_SHOPTYPE_ERROR then
-        (ToastManager.ShowToast)((StringTable.Get)("str_shop_subtype_error"))
-      else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_shop_unkown_error", res:GetResult()))
-      end
+      ToastManager.ShowToast(StringTable.Get("str_shop_unkown_error", res:GetResult()))
     end
   end
   self:UnLock(self:GetName())
   return success
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.InAnimation = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function UIShopExchangeTab:InAnimation()
   if self._poolItems == nil then
-    return 
+    return
   end
   for index = 0, math.maxinteger do
-    local pool = (self._poolItems)[index]
-    if pool ~= nil then
-      local rowList = pool:GetAllSpawnList()
-      for ik,item in pairs(rowList) do
-        if item ~= nil then
-          (item:GetGameObject()):SetActive(false)
-        end
+    local pool = self._poolItems[index]
+    if pool == nil then
+      break
+    end
+    local rowList = pool:GetAllSpawnList()
+    for ik, item in pairs(rowList) do
+      if item ~= nil then
+        item:GetGameObject():SetActive(false)
       end
-      -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-      -- DECOMPILER ERROR at PC28: LeaveBlock: unexpected jumping out IF_STMT
-
     end
   end
-  local goods = (self._clienShop):GetExchangeShopData(self._curShop)
+  local goods = self._clienShop:GetExchangeShopData(self._curShop)
   self:StartSafeTask("UIShopExchangeTab::InAnimation", function(lockName, TT)
-    -- function num : 0_21_0 , upvalues : _ENV, self, goods
     local animLength = 0
     for index = 0, math.maxinteger do
       if not self._poolItems then
-        (Log.debug)("###[UIShopExchangeTab] play anim , pools is reset , wait next play .")
+        Log.debug("###[UIShopExchangeTab] play anim , pools is reset , wait next play .")
         self._poolItems = nil
-        return 
+        return
       end
-      local pool = (self._poolItems)[index]
-      if pool ~= nil then
-        do
-          local rowList = pool:GetAllSpawnList()
-          for ik,item in pairs(rowList) do
-            local data = nil
-            if self._curShop == MarketType.Shop_Season then
-              local idx = index * self.itemCountPerSeasonRow + 1
-              local dataList = (self._showSeasonDataList)[idx]
-              data = (dataList.list)[ik]
-            else
-              do
-                do
-                  do
-                    local itemIndex = index * self.itemCountPerRow + ik
-                    data = goods[itemIndex]
-                    if data then
-                      (item:GetGameObject()):SetActive(true)
-                      animLength = (math.max)(animLength, item:PlayInAnimation())
-                    end
-                    -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out DO_STMT
-
-                    -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-                    -- DECOMPILER ERROR at PC57: LeaveBlock: unexpected jumping out IF_STMT
-
-                  end
-                end
-              end
-            end
-          end
-          YIELD(TT)
-          -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC62: LeaveBlock: unexpected jumping out IF_STMT
-
+      local pool = self._poolItems[index]
+      if pool == nil then
+        break
+      end
+      local rowList = pool:GetAllSpawnList()
+      for ik, item in pairs(rowList) do
+        local data
+        if self._curShop == MarketType.Shop_Season then
+          local idx = index * self.itemCountPerSeasonRow + 1
+          local dataList = self._showSeasonDataList[idx]
+          data = dataList.list[ik]
+        else
+          local itemIndex = index * self.itemCountPerRow + ik
+          data = goods[itemIndex]
+        end
+        if data then
+          item:GetGameObject():SetActive(true)
+          animLength = math.max(animLength, item:PlayInAnimation())
         end
       end
+      YIELD(TT)
     end
-    if animLength > 0 then
+    if 0 < animLength then
       YIELD(TT, animLength)
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.ShowSelf = function(self)
-  -- function num : 0_22
-  (self._anim):Stop()
-  ;
-  (self._anim):Play()
+function UIShopExchangeTab:ShowSelf()
+  self._anim:Stop()
+  self._anim:Play()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.HideSelf = function(self)
-  -- function num : 0_23
+function UIShopExchangeTab:HideSelf()
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.BtnRefreshOnClick = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local data = (self._clienShop):GetExchangeShopStoreData()
+function UIShopExchangeTab:BtnRefreshOnClick()
+  local data = self._clienShop:GetExchangeShopStoreData()
   local cur = data:GetCurCount()
   local max = data:GetMaxCount()
-  if max <= cur then
-    (ToastManager.ShowToast)((StringTable.Get)("str_shop_black_refresh_no_count"))
-    return 
+  if cur >= max then
+    ToastManager.ShowToast(StringTable.Get("str_shop_black_refresh_no_count"))
+    return
   end
   local consume = data:GetConsume()
   local costType = data:GetCostType()
-  local ownMoney = (ClientShop.GetMoney)(costType)
-  do
-    if ownMoney == 0 then
-      local itemMd = (GameGlobal.GetModule)(ItemModule)
-      ownMoney = itemMd:GetItemCount(costType) or 0
+  local ownMoney = ClientShop.GetMoney(costType)
+  if ownMoney == 0 then
+    local itemMd = GameGlobal.GetModule(ItemModule)
+    ownMoney = itemMd:GetItemCount(costType) or 0
+  end
+  if consume > ownMoney then
+    if costType == RoleAssetID.RoleAssetGlow then
+      GameGlobal.UIStateManager():ShowDialog("UIShopCurrency1To2", consume - ownMoney)
+    else
+      ToastManager.ShowToast(StringTable.Get("str_shop_black_refresh_no_diamond"))
     end
-    if ownMoney < consume then
-      if costType == RoleAssetID.RoleAssetGlow then
-        ((GameGlobal.UIStateManager)()):ShowDialog("UIShopCurrency1To2", consume - (ownMoney))
-      else
-        ;
-        (ToastManager.ShowToast)((StringTable.Get)("str_shop_black_refresh_no_diamond"))
-      end
-      return 
-    end
-    local moneyCfg = (Cfg.cfg_top_tips)[costType]
-    local str = nil
-    if self._curShop == MarketType.Shop_BlackMarket then
-      str = (StringTable.Get)("str_shop_black_refresh_box", consume, (StringTable.Get)(moneyCfg.Title))
-    end
-    ;
-    (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", str, function(param)
-    -- function num : 0_24_0 , upvalues : self, _ENV
+    return
+  end
+  local moneyCfg = Cfg.cfg_top_tips[costType]
+  local str
+  if self._curShop == MarketType.Shop_BlackMarket then
+    str = StringTable.Get("str_shop_black_refresh_box", consume, StringTable.Get(moneyCfg.Title))
+  end
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", str, function(param)
     self:StartTask(function(TT)
-      -- function num : 0_24_0_0 , upvalues : self, _ENV
       self:Lock("UIShopSecretTab.Refresh")
-      local shopCode, marketinfo = nil, nil
+      local shopCode, marketinfo
       if self._curShop == MarketType.Shop_BlackMarket then
-        shopCode = (self._shopModule):ApplyRefreshBlackMarket(TT)
+        shopCode, marketinfo = self._shopModule:ApplyRefreshBlackMarket(TT)
       end
       self:UnLock("UIShopSecretTab.Refresh")
       if marketinfo ~= {} and marketinfo ~= nil then
-        local result = (ClientShop.CheckShopCode)(shopCode)
+        local result = ClientShop.CheckShopCode(shopCode)
         if result and self._curShop == MarketType.Shop_BlackMarket then
-          (self._clienShop):RefreshExchangeShopData(self._curShop)
+          self._clienShop:RefreshExchangeShopData(self._curShop)
           self:showShop(self._curShop)
         end
       end
-    end
-, self)
-  end
-, nil, function(param)
-    -- function num : 0_24_1 , upvalues : _ENV
-    (Log.debug)("sale cancel. .")
-  end
-, nil)
-  end
+    end, self)
+  end, nil, function(param)
+    Log.debug("sale cancel. .")
+  end, nil)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopExchangeTab.BtnOneKeyBuyOnClick = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  local goods = (self._clienShop):GetExchangeShopData(self._curShop)
+function UIShopExchangeTab:BtnOneKeyBuyOnClick()
+  local goods = self._clienShop:GetExchangeShopData(self._curShop)
   local totalPrice = 0
   for i = 1, #goods do
     local good = goods[i]
-    if good:GetRemainCount() > 0 then
+    if 0 < good:GetRemainCount() then
       totalPrice = totalPrice + good:GetSalePrice()
     end
   end
   if totalPrice == 0 then
-    (ToastManager.ShowToast)((StringTable.Get)("str_shop_exchange_black_one_key_buy_nothing_left"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_shop_exchange_black_one_key_buy_nothing_left"))
+    return
   end
-  local roleModule = ((GameGlobal.GameLogic)()):GetModule(RoleModule)
+  local roleModule = GameGlobal.GameLogic():GetModule(RoleModule)
   local goldNum = roleModule:GetGold()
-  if goldNum < totalPrice then
-    (ToastManager.ShowToast)((StringTable.Get)("str_shop_gold_not_enough"))
-    return 
+  if totalPrice > goldNum then
+    ToastManager.ShowToast(StringTable.Get("str_shop_gold_not_enough"))
+    return
   end
-  ;
-  (PopupManager.Alert)("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", (StringTable.Get)("str_shop_exchange_black_one_key_buy_confirm"), function()
-    -- function num : 0_25_0 , upvalues : self, _ENV, goods
+  PopupManager.Alert("UICommonMessageBox", PopupPriority.Normal, PopupMsgBoxType.OkCancel, "", StringTable.Get("str_shop_exchange_black_one_key_buy_confirm"), function()
     self:StartTask(function(TT)
-      -- function num : 0_25_0_0 , upvalues : self, _ENV, goods
       local shopModule = self:GetModule(ShopModule)
       self:Lock("UIShopExchangeTab:BtnOneKeyBuyOnClick")
       local allRemainGoods = {}
@@ -774,17 +547,11 @@ UIShopExchangeTab.BtnOneKeyBuyOnClick = function(self)
       end
       local result = shopModule:BuyItem(TT, MarketType.Shop_BlackMarket, nil, nil, nil, nil, allRemainGoods)
       self:UnLock("UIShopExchangeTab:BtnOneKeyBuyOnClick")
-      if (ClientShop.CheckShopCode)(result) then
+      if ClientShop.CheckShopCode(result) then
         self:ShowDialog("UIGetItemController", assetList, function()
-        -- function num : 0_25_0_0_0 , upvalues : _ENV
-        ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ShopBuySuccess)
+          GameGlobal.EventDispatcher():Dispatch(GameEventType.ShopBuySuccess)
+        end)
       end
-)
-      end
-    end
-, self)
-  end
-)
+    end, self)
+  end)
 end
-
-

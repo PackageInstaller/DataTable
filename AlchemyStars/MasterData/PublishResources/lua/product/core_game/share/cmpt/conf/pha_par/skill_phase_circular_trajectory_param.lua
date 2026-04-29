@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_circular_trajectory_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseCircularTrajectoryParam", SkillPhaseParamBase)
 SkillPhaseCircularTrajectoryParam = SkillPhaseCircularTrajectoryParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseCircularTrajectoryParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseCircularTrajectoryParam:Constructor(t)
   self._efffectID = t.effectID
   self._spawnCenterBone = t.spawnCenterBone
   self._spawnRadiusMin = t.spawnRadiusMin
@@ -27,116 +20,75 @@ SkillPhaseCircularTrajectoryParam.Constructor = function(self, t)
   self._oneArrowOffsetZ = t.oneArrowOffsetZ or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetCacheTable = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseCircularTrajectoryParam:GetCacheTable()
   local t = {}
   if self._efffectID and self._efffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._efffectID]).ResPath, 5})
+    table.insert(t, {
+      Cfg.cfg_effect[self._efffectID].ResPath,
+      5
+    })
   end
-  if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 5})
+  if self._hitEffectID and 0 < self._hitEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      5
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetPhaseType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillPhaseCircularTrajectoryParam:GetPhaseType()
   return SkillViewPhaseType.CircularTrajectory
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseCircularTrajectoryParam:GetEffectID()
   return self._efffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetSpawnCenterBone = function(self)
-  -- function num : 0_4
+function SkillPhaseCircularTrajectoryParam:GetSpawnCenterBone()
   return self._spawnCenterBone
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetSpawnRadiusMin = function(self)
-  -- function num : 0_5
+function SkillPhaseCircularTrajectoryParam:GetSpawnRadiusMin()
   return self._spawnRadiusMin
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetSpawnRadiusMax = function(self)
-  -- function num : 0_6
+function SkillPhaseCircularTrajectoryParam:GetSpawnRadiusMax()
   return self._spawnRadiusMax
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetSpawnIntervalTime = function(self)
-  -- function num : 0_7
+function SkillPhaseCircularTrajectoryParam:GetSpawnIntervalTime()
   return self._spawnIntervalTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetWaitFireTime = function(self)
-  -- function num : 0_8
+function SkillPhaseCircularTrajectoryParam:GetWaitFireTime()
   return self._waitFireTime
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetFlyTime = function(self)
-  -- function num : 0_9
+function SkillPhaseCircularTrajectoryParam:GetFlyTime()
   return self._flyTime
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetdestroyBulletDelay = function(self)
-  -- function num : 0_10
+function SkillPhaseCircularTrajectoryParam:GetdestroyBulletDelay()
   return self._destroyBulletDelay
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetTargetHit = function(self)
-  -- function num : 0_11
+function SkillPhaseCircularTrajectoryParam:GetTargetHit()
   return self._targetHit
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetTurnToTarget = function(self)
-  -- function num : 0_12
+function SkillPhaseCircularTrajectoryParam:GetTurnToTarget()
   return self._turnToTarget
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetHitAnimName = function(self)
-  -- function num : 0_13
+function SkillPhaseCircularTrajectoryParam:GetHitAnimName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetHitEffectID = function(self)
-  -- function num : 0_14
+function SkillPhaseCircularTrajectoryParam:GetHitEffectID()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseCircularTrajectoryParam.GetOneArrowOffset = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function SkillPhaseCircularTrajectoryParam:GetOneArrowOffset()
   return Vector3(self._oneArrowOffsetX, self._oneArrowOffsetY, self._oneArrowOffsetZ)
 end
-
-

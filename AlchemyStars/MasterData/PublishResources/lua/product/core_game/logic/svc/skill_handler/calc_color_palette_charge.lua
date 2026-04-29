@@ -1,41 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_color_palette_charge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_ColorPaletteCharge", Object)
 SkillEffectCalc_ColorPaletteCharge = SkillEffectCalc_ColorPaletteCharge
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_ColorPaletteCharge.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_ColorPaletteCharge:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_ColorPaletteCharge.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_ColorPaletteCharge:DoSkillEffectCalculator(skillEffectCalcParam)
   local result = {}
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   local pickupComponent = casterEntity:ActiveSkillPickUpComponent()
   if not pickupComponent then
-    (Log.error)(self._className, "施法者没有ActiveSkillPickupComponent")
-    return 
+    Log.error(self._className, "施法者没有ActiveSkillPickupComponent")
+    return
   end
   local pickupPosArray = pickupComponent:GetAllValidPickUpGridPos()
   if #pickupPosArray == 0 then
-    (Log.error)(self._className, "没有点选位置记录")
-    return 
+    Log.error(self._className, "没有点选位置记录")
+    return
   end
-  local board = ((self._world):GetBoardEntity()):Board()
-  for _,pos in pairs(pickupPosArray) do
+  local board = self._world:GetBoardEntity():Board()
+  for _, pos in pairs(pickupPosArray) do
     local pieceType = board:GetPieceType(pos)
-    ;
-    (table.insert)(result, SkillEffectResultColorPaletteCharge:New(pieceType))
+    table.insert(result, SkillEffectResultColorPaletteCharge:New(pieceType))
   end
   return result
 end
-
-

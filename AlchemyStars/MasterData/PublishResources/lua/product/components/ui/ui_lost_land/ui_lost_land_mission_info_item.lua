@@ -1,64 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_lost_land/ui_lost_land_mission_info_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UILostLandMissionInfoItem", UICustomWidget)
 UILostLandMissionInfoItem = UILostLandMissionInfoItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UILostLandMissionInfoItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UILostLandMissionInfoItem:OnShow(uiParams)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoItem.Active = function(self, active)
-  -- function num : 0_1
-  (self._go):SetActive(active)
+function UILostLandMissionInfoItem:Active(active)
+  self._go:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoItem.bgOnClick = function(self, go)
-  -- function num : 0_2
+function UILostLandMissionInfoItem:bgOnClick(go)
   if self._callback then
-    (self._callback)(self._id, (go.transform).position)
+    self._callback(self._id, go.transform.position)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoItem.SetData = function(self, idx, petAwardCount, callback)
-  -- function num : 0_3 , upvalues : _ENV
+function UILostLandMissionInfoItem:SetData(idx, petAwardCount, callback)
   self._idx = idx
   self._callback = callback
-  self._id = (((GameGlobal.GetUIModule)(LostAreaModule)):GetPetAwardInfo()).assetid
-  local cfg_item = (Cfg.cfg_item)[self._id]
+  self._id = GameGlobal.GetUIModule(LostAreaModule):GetPetAwardInfo().assetid
+  local cfg_item = Cfg.cfg_item[self._id]
   if not cfg_item then
-    (Log.error)("###[UILostLandMissionInfoItem] cfg_item is nil ! id --> ", self._id)
+    Log.error("###[UILostLandMissionInfoItem] cfg_item is nil ! id --> ", self._id)
   end
-  ;
-  (self._idxTex):SetText(self._idx)
-  ;
-  (self._iconImg):LoadImage(cfg_item.Icon)
+  self._idxTex:SetText(self._idx)
+  self._iconImg:LoadImage(cfg_item.Icon)
   if idx <= petAwardCount then
-    (self._got):SetActive(true)
+    self._got:SetActive(true)
   else
-    ;
-    (self._got):SetActive(false)
+    self._got:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UILostLandMissionInfoItem.GetComponents = function(self)
-  -- function num : 0_4
+function UILostLandMissionInfoItem:GetComponents()
   self._go = self:GetGameObject("rect")
   self._iconImg = self:GetUIComponent("RawImageLoader", "icon")
   self._got = self:GetGameObject("get")
   self._idxTex = self:GetUIComponent("UILocalizationText", "idx")
 end
-
-

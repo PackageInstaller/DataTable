@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_world_boss/ui_world_boss_dan_detail_tips_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIWorldBossDanDetailTipsController", UIController)
 UIWorldBossDanDetailTipsController = UIWorldBossDanDetailTipsController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIWorldBossDanDetailTipsController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIWorldBossDanDetailTipsController:OnShow(uiParams)
   self:UnLock("UIWorldBossDanDetailTipsController")
   local offset = {}
   offset.x = 121
@@ -19,66 +12,52 @@ UIWorldBossDanDetailTipsController.OnShow = function(self, uiParams)
   self._rect = self:GetUIComponent("RectTransform", "rect")
   self._rectLayoutElement = self:GetUIComponent("LayoutElement", "rect")
   self._intrTex = self:GetUIComponent("UILocalizationText", "intr")
-  ;
-  (self._intrTex):SetText(strToShow)
+  self._intrTex:SetText(strToShow)
   local safeOffset = {}
   safeOffset.x = 0
   safeOffset.y = 0
   local v2 = Vector2(anchorPos.x + offset.x, offset.y + anchorPos.y)
-  local safeRect = (self._safeArea).rect
-  local layoutElementWidth = (self._rectLayoutElement).preferredWidth
-  -- DECOMPILER ERROR at PC63: Unhandled construct in 'MakeBoolean' P1
-
-  if v2.x > 0 and safeRect.width * 0.5 < v2.x + layoutElementWidth * 0.5 then
-    safeOffset.x = safeRect.width * 0.5 - (v2.x + layoutElementWidth * 0.5)
+  local safeRect = self._safeArea.rect
+  local layoutElementWidth = self._rectLayoutElement.preferredWidth
+  if v2.x > 0 then
+    if v2.x + layoutElementWidth * 0.5 > safeRect.width * 0.5 then
+      safeOffset.x = safeRect.width * 0.5 - (v2.x + layoutElementWidth * 0.5)
+    end
+  elseif math.abs(v2.x) + layoutElementWidth * 0.5 > safeRect.width * 0.5 then
+    safeOffset.x = math.abs(v2.x) + layoutElementWidth * 0.5 - safeRect.width * 0.5
   end
-  if safeRect.width * 0.5 < (math.abs)(v2.x) + layoutElementWidth * 0.5 then
-    safeOffset.x = (math.abs)(v2.x) + layoutElementWidth * 0.5 - safeRect.width * 0.5
+  if v2.y > 0 then
+    if v2.y + self._rect.sizeDelta.y * 0.5 > safeRect.height * 0.5 then
+      safeOffset.y = safeRect.height * 0.5 - (v2.y + self._rect.sizeDelta.y * 0.5)
+    end
+  elseif math.abs(v2.y) + self._rect.sizeDelta.y * 0.5 > safeRect.height * 0.5 then
+    safeOffset.y = math.abs(v2.y) + self._rect.sizeDelta.y * 0.5 - safeRect.height * 0.5
   end
-  -- DECOMPILER ERROR at PC107: Unhandled construct in 'MakeBoolean' P1
-
-  if v2.y > 0 and safeRect.height * 0.5 < v2.y + ((self._rect).sizeDelta).y * 0.5 then
-    safeOffset.y = safeRect.height * 0.5 - (v2.y + ((self._rect).sizeDelta).y * 0.5)
-  end
-  if safeRect.height * 0.5 < (math.abs)(v2.y) + ((self._rect).sizeDelta).y * 0.5 then
-    safeOffset.y = (math.abs)(v2.y) + ((self._rect).sizeDelta).y * 0.5 - safeRect.height * 0.5
-  end
-  -- DECOMPILER ERROR at PC144: Confused about usage of register: R9 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = Vector2(v2.x + safeOffset.x, safeOffset.y + v2.y)
+  self._rect.anchoredPosition = Vector2(v2.x + safeOffset.x, safeOffset.y + v2.y)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailTipsController.OnHide = function(self)
-  -- function num : 0_1
+function UIWorldBossDanDetailTipsController:OnHide()
   self._intrTex = nil
   self._rect = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailTipsController.bgOnClick = function(self)
-  -- function num : 0_2
+function UIWorldBossDanDetailTipsController:bgOnClick()
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIWorldBossDanDetailTipsController.Update = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local mouse = ((GameGlobal.EngineInput)()).mousePresent
-  if mouse and (((GameGlobal.EngineInput)()).GetMouseButtonDown)(0) then
-    self:CloseDialog()
-  end
-  local touchCount = ((GameGlobal.EngineInput)()).touchCount
-  if touchCount > 0 then
-    local touch0 = (((GameGlobal.EngineInput)()).GetTouch)(0)
-    if touch0 and touch0.phase == TouchPhase.Began then
+function UIWorldBossDanDetailTipsController:Update()
+  local mouse = GameGlobal.EngineInput().mousePresent
+  if mouse then
+    if GameGlobal.EngineInput().GetMouseButtonDown(0) then
       self:CloseDialog()
+    end
+  else
+    local touchCount = GameGlobal.EngineInput().touchCount
+    if 0 < touchCount then
+      local touch0 = GameGlobal.EngineInput().GetTouch(0)
+      if touch0 and touch0.phase == TouchPhase.Began then
+        self:CloseDialog()
+      end
     end
   end
 end
-
-

@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_change_attack_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicChangeAttackSkill", BuffLogicBase)
 BuffLogicChangeAttackSkill = BuffLogicChangeAttackSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicChangeAttackSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicChangeAttackSkill:Constructor(buffInstance, logicParam)
   self._attackSkillId = logicParam.attackSkillId
   self._attackSkillCount = logicParam.attackSkillCount
   self._directReplace = logicParam.directReplace or 0
@@ -17,30 +10,25 @@ BuffLogicChangeAttackSkill.Constructor = function(self, buffInstance, logicParam
   self._onlyReplaceNormalSkillInXScope = logicParam.onlyReplaceNormalSkillInXScope
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicChangeAttackSkill.DoLogic = function(self, notify)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("ChangeNormalSkillID", self._attackSkillId)
+function BuffLogicChangeAttackSkill:DoLogic(notify)
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("ChangeNormalSkillID", self._attackSkillId)
   if self._attackSkillCount then
-    (e:BuffComponent()):SetBuffValue("ChangeNormalSkillCount", self._attackSkillCount)
+    e:BuffComponent():SetBuffValue("ChangeNormalSkillCount", self._attackSkillCount)
   end
-  ;
-  (e:BuffComponent()):SetBuffValue("NormalSkillDirectReplace", self._directReplace)
+  e:BuffComponent():SetBuffValue("NormalSkillDirectReplace", self._directReplace)
   if self._excludeOriPos then
-    (e:BuffComponent()):SetBuffValue("ChangeNormalSkillExcludeOriPos", self._excludeOriPos)
+    e:BuffComponent():SetBuffValue("ChangeNormalSkillExcludeOriPos", self._excludeOriPos)
   end
   if self._useAttackPosAsCenter then
-    (e:BuffComponent()):SetBuffValue("ChangeNormalSkillUseAttackPosAsCenter", self._useAttackPosAsCenter)
+    e:BuffComponent():SetBuffValue("ChangeNormalSkillUseAttackPosAsCenter", self._useAttackPosAsCenter)
   end
   if self._onlyReplaceNormalSkillInXScope then
-    (e:BuffComponent()):SetBuffValue("OnlyReplaceNormalSkillInXScope", self._onlyReplaceNormalSkillInXScope)
+    e:BuffComponent():SetBuffValue("OnlyReplaceNormalSkillInXScope", self._onlyReplaceNormalSkillInXScope)
   end
   local trapCasterID = 0
   if notify and notify:GetNotifyType() == NotifyType.TrapSkillStart then
-    trapCasterID = (notify:GetNotifyEntity()):GetID()
+    trapCasterID = notify:GetNotifyEntity():GetID()
   end
   local buffResult = BuffResultChangeAttackSkill:New(trapCasterID)
   return buffResult
@@ -48,29 +36,16 @@ end
 
 _class("BuffLogicUndoChangeAttackSkill", BuffLogicBase)
 BuffLogicUndoChangeAttackSkill = BuffLogicUndoChangeAttackSkill
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicUndoChangeAttackSkill.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_2
+function BuffLogicUndoChangeAttackSkill:Constructor(buffInstance, logicParam)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicUndoChangeAttackSkill.DoLogic = function(self)
-  -- function num : 0_3
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("ChangeNormalSkillID", nil)
-  ;
-  (e:BuffComponent()):SetBuffValue("ChangeNormalSkillCount", 0)
-  ;
-  (e:BuffComponent()):SetBuffValue("NormalSkillDirectReplace", 0)
-  ;
-  (e:BuffComponent()):SetBuffValue("ChangeNormalSkillExcludeOriPos", 0)
-  ;
-  (e:BuffComponent()):SetBuffValue("ChangeNormalSkillUseAttackPosAsCenter", 0)
-  ;
-  (e:BuffComponent()):SetBuffValue("OnlyReplaceNormalSkillInXScope", nil)
+function BuffLogicUndoChangeAttackSkill:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("ChangeNormalSkillID", nil)
+  e:BuffComponent():SetBuffValue("ChangeNormalSkillCount", 0)
+  e:BuffComponent():SetBuffValue("NormalSkillDirectReplace", 0)
+  e:BuffComponent():SetBuffValue("ChangeNormalSkillExcludeOriPos", 0)
+  e:BuffComponent():SetBuffValue("ChangeNormalSkillUseAttackPosAsCenter", 0)
+  e:BuffComponent():SetBuffValue("OnlyReplaceNormalSkillInXScope", nil)
 end
-
-

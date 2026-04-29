@@ -1,40 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/sep_snake_head_move.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSnakeHeadMove", SkillEffectParamBase)
 SkillEffectParamSnakeHeadMove = SkillEffectParamSnakeHeadMove
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSnakeHeadMove.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillEffectParamSnakeHeadMove:Constructor(t)
   self._headMoveType = t.headMoveType
   self._tailMonsterID = t.tailMonsterID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSnakeHeadMove.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSnakeHeadMove:GetEffectType()
   return SkillEffectType.SnakeHeadMove
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSnakeHeadMove.GetHeadMoveType = function(self)
-  -- function num : 0_2
+function SkillEffectParamSnakeHeadMove:GetHeadMoveType()
   return self._headMoveType
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSnakeHeadMove.GetTailMonsterID = function(self)
-  -- function num : 0_3
+function SkillEffectParamSnakeHeadMove:GetTailMonsterID()
   return self._tailMonsterID
 end
 
-local SnakeMoveType = {Move = 1, Growth = 2, Attack = 3}
+local SnakeMoveType = {
+  Move = 1,
+  Growth = 2,
+  Attack = 3
+}
 _enum("SnakeMoveType", SnakeMoveType)
-

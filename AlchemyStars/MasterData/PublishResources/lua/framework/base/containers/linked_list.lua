@@ -1,65 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/containers/linked_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LinkedList", Object)
 LinkedList = LinkedList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LinkedList.Constructor = function(self)
-  -- function num : 0_0
+function LinkedList:Constructor()
   self.first = nil
   self.last = nil
   self.count = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.Dispose = function(self)
-  -- function num : 0_1
+function LinkedList:Dispose()
   self.first = nil
   self.last = nil
   self.count = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.Count = function(self)
-  -- function num : 0_2
+function LinkedList:Count()
   return self.count
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.GetFirst = function(self)
-  -- function num : 0_3
+function LinkedList:GetFirst()
   if self.count == 0 then
-    return 
+    return
   end
   if self.first then
-    return (self.first).value
+    return self.first.value
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.GetLast = function(self)
-  -- function num : 0_4
+function LinkedList:GetLast()
   if self.count == 0 then
-    return 
+    return
   end
   if self.last then
-    return (self.last).value
+    return self.last.value
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.Get = function(self, index)
-  -- function num : 0_5
-  if index < 1 or self.count < index then
-    return 
+function LinkedList:Get(index)
+  if index < 1 or index > self.count then
+    return
   end
   if index <= self.count / 2 then
     local current = self.first
@@ -68,29 +46,24 @@ LinkedList.Get = function(self, index)
     end
     return current.value
   else
-    do
-      local current = self.last
-      for i = self.count, index + 1, -1 do
-        current = current.prev
-      end
-      do return current.value end
+    local current = self.last
+    for i = self.count, index + 1, -1 do
+      current = current.prev
     end
+    return current.value
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.AddFirst = function(self, item)
-  -- function num : 0_6 , upvalues : _ENV
+function LinkedList:AddFirst(item)
   if item == nil then
-    return 
+    return
   end
   local newNode = LinkedListNode:New(item)
   if self.count == 0 then
     self.first = newNode
     self.last = self.first
     self.count = self.count + 1
-    return 
+    return
   end
   local temp = self.first
   temp:SetNear(newNode, temp.next)
@@ -99,99 +72,74 @@ LinkedList.AddFirst = function(self, item)
   self.count = self.count + 1
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.AddLast = function(self, item)
-  -- function num : 0_7 , upvalues : _ENV
+function LinkedList:AddLast(item)
   if item == nil then
-    return 
+    return
   end
   local newNode = LinkedListNode:New(item)
   if self.count == 0 then
     self.first = newNode
     self.last = self.first
     self.count = self.count + 1
-    return 
+    return
   end
-  ;
-  (self.last):SetNear((self.last).prev, newNode)
+  self.last:SetNear(self.last.prev, newNode)
   newNode:SetNear(self.last, nil)
   self.last = newNode
   self.count = self.count + 1
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.RemoveLast = function(self)
-  -- function num : 0_8
+function LinkedList:RemoveLast()
   if self.count == 0 then
-    return 
+    return
   end
   if self.count == 1 then
     self.first = nil
     self.last = nil
     self.count = 0
-    return 
+    return
   end
-  self.last = (self.last).prev
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.last).next = nil
+  self.last = self.last.prev
+  self.last.next = nil
   self.count = self.count - 1
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.RemoveFirst = function(self)
-  -- function num : 0_9
+function LinkedList:RemoveFirst()
   if self.count == 0 then
-    return 
+    return
   end
   if self.count == 1 then
     self.first = nil
     self.last = nil
     self.count = 0
-    return 
+    return
   end
-  self.first = (self.first).next
-  -- DECOMPILER ERROR at PC15: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self.first).prev = nil
+  self.first = self.first.next
+  self.first.prev = nil
   self.count = self.count - 1
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.PopFirst = function(self)
-  -- function num : 0_10
+function LinkedList:PopFirst()
   if self.count == 0 then
-    return 
+    return
   end
   local first = self.first
   self:RemoveFirst()
   return first.value
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.PopLast = function(self)
-  -- function num : 0_11
+function LinkedList:PopLast()
   if self.count == 0 then
-    return 
+    return
   end
   local last = self.last
   self:RemoveLast()
   return last.value
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.Foreach = function(self, func)
-  -- function num : 0_12
+function LinkedList:Foreach(func)
   if func == nil then
-    return 
+    return
   end
   local node = self.first
   while node ~= nil do
@@ -200,12 +148,9 @@ LinkedList.Foreach = function(self, func)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.ReverseForeach = function(self, func)
-  -- function num : 0_13
+function LinkedList:ReverseForeach(func)
   if func == nil then
-    return 
+    return
   end
   local node = self.last
   while node ~= nil do
@@ -214,11 +159,8 @@ LinkedList.ReverseForeach = function(self, func)
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-LinkedList.Reverse = function(self)
-  -- function num : 0_14
-  local p, q, pr = self.first, nil, nil
+function LinkedList:Reverse()
+  local p, q, pr = self.first
   self.last = self.first
   self.first = nil
   while p do
@@ -230,5 +172,3 @@ LinkedList.Reverse = function(self)
   end
   self.first = q
 end
-
-

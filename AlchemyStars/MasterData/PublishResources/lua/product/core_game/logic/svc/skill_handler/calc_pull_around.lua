@@ -1,69 +1,52 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_pull_around.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_PullAround", Object)
 SkillEffectCalc_PullAround = SkillEffectCalc_PullAround
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_PullAround.Constructor = function(self, world)
-  -- function num : 0_0
+function SkillEffectCalc_PullAround:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PullAround.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_PullAround:DoSkillEffectCalculator(skillEffectCalcParam)
   local results = {}
   local targets = skillEffectCalcParam:GetTargetEntityIDs()
-  for _,targetID in ipairs(targets) do
-    (table.insert)(results, self:_CalculateSingleTarget(skillEffectCalcParam, targetID))
+  for _, targetID in ipairs(targets) do
+    table.insert(results, self:_CalculateSingleTarget(skillEffectCalcParam, targetID))
   end
   return results
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_PullAround._CalculateSingleTarget = function(self, skillEffectCalcParam, targetEntityID)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectCalc_PullAround:_CalculateSingleTarget(skillEffectCalcParam, targetEntityID)
   local skillPullAroundEffectParam = skillEffectCalcParam.skillEffectParam
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local attacker = (self._world):GetEntityByID(skillEffectCalcParam.casterEntityID)
-  local attackerPos = (attacker:GridLocation()).Position
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local attacker = self._world:GetEntityByID(skillEffectCalcParam.casterEntityID)
+  local attackerPos = attacker:GridLocation().Position
   local attackerBodyArea = attacker:BodyArea()
-  local defender = (self._world):GetEntityByID(targetEntityID)
-  local defenderPos = (defender:GridLocation()).Position
+  local defender = self._world:GetEntityByID(targetEntityID)
+  local defenderPos = defender:GridLocation().Position
   local defenderBodyArea = defender:BodyArea()
-  local buffLogicService = (self._world):GetService("BuffLogic")
+  local buffLogicService = self._world:GetService("BuffLogic")
   if not buffLogicService:CheckCanBePullAround(defender) then
-    return 
+    return
   end
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
   local dir = utilCalcSvc:_CalcHitBackDir(HitBackDirectionType.EightDir, attackerPos, defenderPos, attackerBodyArea, defenderBodyArea)
   local atkBodyAreaVec = attackerBodyArea:GetArea()
   local targetPos = defenderPos:Clone()
   if dir.x < 0 then
-    targetPos.x = (BodyAreaHelper.GetBodyAreaLeft)(atkBodyAreaVec) + attackerPos.x - 1
-  else
-    if dir.x > 0 then
-      targetPos.x = (BodyAreaHelper.GetBodyAreaRight)(atkBodyAreaVec) + attackerPos.x + 1
-    end
+    targetPos.x = BodyAreaHelper.GetBodyAreaLeft(atkBodyAreaVec) + attackerPos.x - 1
+  elseif dir.x > 0 then
+    targetPos.x = BodyAreaHelper.GetBodyAreaRight(atkBodyAreaVec) + attackerPos.x + 1
   end
-  if dir.y < 0 then
-    targetPos.y = (BodyAreaHelper.GetBodyAreaDown)(atkBodyAreaVec) + attackerPos.y - 1
-  else
-    if dir.y > 0 then
-      targetPos.y = (BodyAreaHelper.GetBodyAreaUp)(atkBodyAreaVec) + attackerPos.y + 1
-    end
+  if 0 > dir.y then
+    targetPos.y = BodyAreaHelper.GetBodyAreaDown(atkBodyAreaVec) + attackerPos.y - 1
+  elseif 0 < dir.y then
+    targetPos.y = BodyAreaHelper.GetBodyAreaUp(atkBodyAreaVec) + attackerPos.y + 1
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   if not utilData:IsValidPiecePos(targetPos) or boardServiceLogic:IsPosBlock(targetPos, BlockFlag.Skill | BlockFlag.SkillSkip) then
     targetPos = defenderPos
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local pieceChangeTable = {}
   if defenderPos ~= targetPos and utilData:FindPieceElement(defenderPos) == PieceType.None then
     local supplyRes = boardServiceLogic:SupplyPieceList({defenderPos})
@@ -72,9 +55,5 @@ SkillEffectCalc_PullAround._CalculateSingleTarget = function(self, skillEffectCa
       pieceChangeTable[Vector2(res.x, res.y)] = res.color
     end
   end
-  do
-    return SkillPullAroundEffectResult:New(targetEntityID, targetPos, pieceChangeTable)
-  end
+  return SkillPullAroundEffectResult:New(targetEntityID, targetPos, pieceChangeTable)
 end
-
-

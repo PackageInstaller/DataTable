@@ -1,38 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/editor/auto_test/auto_test_sys.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("AutoTestSystem_Render", Object)
 AutoTestSystem_Render = AutoTestSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-AutoTestSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function AutoTestSystem_Render:Constructor(world)
   self._world = world
-  self.svc = (self._world):GetService("AutoTest")
-  self.md = (GameGlobal.GetModule)(AutoTestModule)
+  self.svc = self._world:GetService("AutoTest")
+  self.md = GameGlobal.GetModule(AutoTestModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-AutoTestSystem_Render.Execute = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function AutoTestSystem_Render:Execute()
   if not EDITOR then
-    return 
+    return
   end
-  if not (self.md):IsAutoTest() then
-    return 
+  if not self.md:IsAutoTest() then
+    return
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   if not utilDataSvc:GetMainStateInputEnable() then
-    return 
+    return
   end
-  if (self.svc):IsRunning() then
-    return 
+  if self.svc:IsRunning() then
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):CoreGameStartTask((self.svc).AutoTest, self.svc)
+  GameGlobal.TaskManager():CoreGameStartTask(self.svc.AutoTest, self.svc)
 end
-
-

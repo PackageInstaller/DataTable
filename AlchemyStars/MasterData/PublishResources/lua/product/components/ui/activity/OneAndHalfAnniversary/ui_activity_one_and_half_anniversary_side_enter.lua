@@ -1,64 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/OneAndHalfAnniversary/ui_activity_one_and_half_anniversary_side_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityOneAndHalfAnniversarySideEnter", UICustomWidget)
 UIActivityOneAndHalfAnniversarySideEnter = UIActivityOneAndHalfAnniversarySideEnter
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityOneAndHalfAnniversarySideEnter.OnSideEnterLoad = function(self, TT, setShowCallback, setNewRedCallback)
-  -- function num : 0_0
+function UIActivityOneAndHalfAnniversarySideEnter:OnSideEnterLoad(TT, setShowCallback, setNewRedCallback)
   self._setShowCallback = setShowCallback
   self._setNewRedCallback = setNewRedCallback
   self:_Refresh()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversarySideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_1
+function UIActivityOneAndHalfAnniversarySideEnter:GetSideEnterRawImage()
   return self._sideEnterIcon
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversarySideEnter.SetData = function(self, info, callback, pointCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityOneAndHalfAnniversarySideEnter:SetData(info, callback, pointCallback)
   self._beginTime = info.BeginTime
   self._endTime = info.EndTime
   self._sideEnterIcon = info.SideEnterIcon
   self._callback = callback
   self._pointCallback = pointCallback
-  ;
-  (UIWidgetHelper.SetRawImage)(self, "bg", self._sideEnterIcon)
+  UIWidgetHelper.SetRawImage(self, "bg", self._sideEnterIcon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversarySideEnter._Refresh = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIActivityOneAndHalfAnniversarySideEnter:_Refresh()
+  local module = GameGlobal.GetModule(RoleModule)
   local isLock = not module:CheckModuleUnlock(GameModuleID.MD_Gamble)
-  local isOpen = (not isLock and (UIMainLobbySideEnterFixedTime.CheckOpen)(self._beginTime, self._endTime))
-  ;
-  (self._setShowCallback)(isOpen)
+  local isOpen = not isLock and UIMainLobbySideEnterFixedTime.CheckOpen(self._beginTime, self._endTime)
+  self._setShowCallback(isOpen)
   self:_CheckPoint()
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversarySideEnter.BtnOnClick = function(self)
-  -- function num : 0_4
-  (self._callback)()
+function UIActivityOneAndHalfAnniversarySideEnter:BtnOnClick()
+  self._callback()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityOneAndHalfAnniversarySideEnter._CheckPoint = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (UIWidgetHelper.SetNewAndReds)(self, 0, 0, "new", "red")
+function UIActivityOneAndHalfAnniversarySideEnter:_CheckPoint()
+  UIWidgetHelper.SetNewAndReds(self, 0, 0, "new", "red")
 end
-
-

@@ -1,21 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cookgame/cook/cls/ui_n0_cook_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN0CookHelper", Object)
 UIN0CookHelper = UIN0CookHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN0CookHelper.CheckRedPoint = function(campaign)
-  -- function num : 0_0 , upvalues : _ENV
-  local compInfo = (UIN0CookData.GetCompInfoByCampaingn)(campaign)
+function UIN0CookHelper.CheckRedPoint(campaign)
+  local compInfo = UIN0CookData.GetCompInfoByCampaingn(campaign)
   if not compInfo then
     return false
   end
-  if not (UIN0CookData.CheckRed_MatRequire)(compInfo) and not (UIN0CookData.CheckRed_Collect)(compInfo) and not (UIN0CookData.CheckRed_CookBook)(compInfo) and not (UIN0CookData.CheckNew_CookBook)(compInfo) and not (UIN0CookData.CheckRed_EndStory)(compInfo) then
-    return (UIN0CookData.CheckRed_FirstStory)(compInfo)
-  end
+  return UIN0CookData.CheckRed_MatRequire(compInfo) or UIN0CookData.CheckRed_Collect(compInfo) or UIN0CookData.CheckRed_CookBook(compInfo) or UIN0CookData.CheckNew_CookBook(compInfo) or UIN0CookData.CheckRed_EndStory(compInfo) or UIN0CookData.CheckRed_FirstStory(compInfo)
 end
-
-

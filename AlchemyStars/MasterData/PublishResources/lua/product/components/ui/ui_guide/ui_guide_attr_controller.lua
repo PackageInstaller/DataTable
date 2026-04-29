@@ -1,20 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_guide/ui_guide_attr_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIGuideAttrController", UIController)
 UIGuideAttrController = UIGuideAttrController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIGuideAttrController.Constructor = function(self)
-  -- function num : 0_0
+function UIGuideAttrController:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIGuideAttrController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIGuideAttrController:OnShow(uiParams)
   self.kuang1 = self:GetGameObject("kuang1")
   self.kuang2 = self:GetGameObject("kuang2")
   self.kuang3 = self:GetGameObject("kuang3")
@@ -25,41 +15,22 @@ UIGuideAttrController.OnShow = function(self, uiParams)
   self.attrMain1 = self:GetUIComponent("Image", "Attribute1")
   self.attrMain2 = self:GetUIComponent("Image", "Attribute2")
   self.attrMain3 = self:GetUIComponent("Image", "Attribute3")
-  local petIds = ((Cfg.cfg_guide_const).guide_attr_pet_id).ArrayValue
-  local cfg1 = (Cfg.cfg_pet)[petIds[1]]
-  local cfg2 = (Cfg.cfg_pet)[petIds[2]]
-  local cfg3 = (Cfg.cfg_pet)[petIds[3]]
-  ;
-  (self.headIcon1):LoadImage((HelperProxy:GetInstance()):GetPetHead(petIds[1], 0, 0))
-  ;
-  (self.headIcon2):LoadImage((HelperProxy:GetInstance()):GetPetHead(petIds[2], 0, 0))
-  ;
-  (self.headIcon3):LoadImage((HelperProxy:GetInstance()):GetPetHead(petIds[3], 0, 0))
-  -- DECOMPILER ERROR at PC113: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.attrMain1).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[cfg1.FirstElement]).Icon .. "_battle"))
-  -- DECOMPILER ERROR at PC130: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.attrMain2).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[cfg2.FirstElement]).Icon .. "_battle"))
-  -- DECOMPILER ERROR at PC147: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self.attrMain3).sprite = (self.atlasProperty):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite(((Cfg.cfg_pet_element)[cfg3.FirstElement]).Icon .. "_battle"))
+  local petIds = Cfg.cfg_guide_const.guide_attr_pet_id.ArrayValue
+  local cfg1 = Cfg.cfg_pet[petIds[1]]
+  local cfg2 = Cfg.cfg_pet[petIds[2]]
+  local cfg3 = Cfg.cfg_pet[petIds[3]]
+  self.headIcon1:LoadImage(HelperProxy:GetInstance():GetPetHead(petIds[1], 0, 0))
+  self.headIcon2:LoadImage(HelperProxy:GetInstance():GetPetHead(petIds[2], 0, 0))
+  self.headIcon3:LoadImage(HelperProxy:GetInstance():GetPetHead(petIds[3], 0, 0))
+  self.attrMain1.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[cfg1.FirstElement].Icon .. "_battle"))
+  self.attrMain2.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[cfg2.FirstElement].Icon .. "_battle"))
+  self.attrMain3.sprite = self.atlasProperty:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(Cfg.cfg_pet_element[cfg3.FirstElement].Icon .. "_battle"))
   self:StartTask(function(TT)
-    -- function num : 0_1_0 , upvalues : self, _ENV
-    (self.kuang1):SetActive(true)
-    ;
-    (self.kuang2):SetActive(true)
-    ;
-    (self.kuang3):SetActive(true)
+    self.kuang1:SetActive(true)
+    self.kuang2:SetActive(true)
+    self.kuang3:SetActive(true)
     YIELD(TT, 2000)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.InnerAttrIcon)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.InnerAttrIcon)
     self:CloseDialog()
-  end
-)
+  end)
 end
-
-

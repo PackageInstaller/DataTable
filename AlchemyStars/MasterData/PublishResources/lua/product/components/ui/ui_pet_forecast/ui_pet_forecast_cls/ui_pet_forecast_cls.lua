@@ -1,197 +1,121 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_pet_forecast/ui_pet_forecast_cls/ui_pet_forecast_cls.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetForecastData", Object)
 PetForecastData = PetForecastData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetForecastData.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
+function PetForecastData:Constructor()
+  self.mRole = GameGlobal.GetModule(RoleModule)
   self.cacheVigorous = 0
   self.last = nil
   self.normal = nil
   self.close = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.Init = function(self, serData)
-  -- function num : 0_1 , upvalues : _ENV
+function PetForecastData:Init(serData)
   self.id = serData.id
   self.endTime = serData.end_time or 0
   self.curDay = serData.day + 1
-  self.cfg = (Cfg.cfg_prediction)[self.id]
+  self.cfg = Cfg.cfg_prediction[self.id]
   if self.cfg then
-    local cg = (self.cfg).cg
-    if not cg.prefab then
-      self.prefab = not cg or #cg <= 0 or "UIPetForecast"
+    local cg = self.cfg.cg
+    if cg and 0 < #cg then
+      self.prefab = cg.prefab or "UIPetForecast"
       self.imgLeftTime = cg.imgLeftTime or "main_prec_timebg"
       if cg.titleRect then
-        self.posTitle = Vector2((cg.titleRect).x, (cg.titleRect).y)
-        self.sizeTitle = Vector2((cg.titleRect).w, (cg.titleRect).h)
+        self.posTitle = Vector2(cg.titleRect.x, cg.titleRect.y)
+        self.sizeTitle = Vector2(cg.titleRect.w, cg.titleRect.h)
       else
         self.posTitle = Vector2(0, -440)
         self.sizeTitle = Vector2(1800, 195)
       end
-      if (self.cfg).rects then
-        local mSignIn = (GameGlobal.GetModule)(SignInModule)
+      if self.cfg.rects then
+        local mSignIn = GameGlobal.GetModule(SignInModule)
         self.pieces = {}
-        for i,rect in ipairs((self.cfg).rects) do
+        for i, rect in ipairs(self.cfg.rects) do
           local piece = PetForecastPiece:New()
           piece.day = i
-          -- DECOMPILER ERROR at PC84: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.pos).x = rect.x
-          -- DECOMPILER ERROR at PC87: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.pos).y = rect.y
-          -- DECOMPILER ERROR at PC90: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.wh).x = rect.w
-          -- DECOMPILER ERROR at PC93: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.wh).y = rect.h
-          -- DECOMPILER ERROR at PC96: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.apos).x = rect.ax
-          -- DECOMPILER ERROR at PC99: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.apos).y = rect.ay
-          -- DECOMPILER ERROR at PC102: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.awh).x = rect.aw
-          -- DECOMPILER ERROR at PC105: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.awh).y = rect.ah
-          -- DECOMPILER ERROR at PC108: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.ppos).x = rect.px
-          -- DECOMPILER ERROR at PC111: Confused about usage of register: R10 in 'UnsetPending'
-
-          ;
-          (piece.ppos).y = rect.py
+          piece.pos.x = rect.x
+          piece.pos.y = rect.y
+          piece.wh.x = rect.w
+          piece.wh.y = rect.h
+          piece.apos.x = rect.ax
+          piece.apos.y = rect.ay
+          piece.awh.x = rect.aw
+          piece.awh.y = rect.ah
+          piece.ppos.x = rect.px
+          piece.ppos.y = rect.py
           local index = i - 1
-          if not (serData.status)[index] then
-            piece.state = PredictionStatus.PRES_UnReach
-            if not (self.cfg)["award" .. i] then
-              do
-                piece.awards = {}
-                if piece.state == PredictionStatus.PRES_UnReach and piece:IsCurDay() then
-                  piece.curValue = (self.mRole):GetAssetCount(RoleAssetID.RoleAssetVigorous)
-                  piece.maxValue = (self.cfg)["Vigorous" .. i] or 0
-                end
-                piece:Init(i, self.cfg)
-                ;
-                (table.insert)(self.pieces, piece)
-                -- DECOMPILER ERROR at PC162: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC162: LeaveBlock: unexpected jumping out IF_STMT
-
-                -- DECOMPILER ERROR at PC162: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-                -- DECOMPILER ERROR at PC162: LeaveBlock: unexpected jumping out IF_STMT
-
-              end
-            end
+          piece.state = serData.status[index] or PredictionStatus.PRES_UnReach
+          piece.awards = self.cfg["award" .. i] or {}
+          if piece.state == PredictionStatus.PRES_UnReach and piece:IsCurDay() then
+            piece.curValue = self.mRole:GetAssetCount(RoleAssetID.RoleAssetVigorous)
+            piece.maxValue = self.cfg["Vigorous" .. i] or 0
           end
+          piece:Init(i, self.cfg)
+          table.insert(self.pieces, piece)
         end
       else
-        do
-          ;
-          (Log.fatal)("### cfg_prediction.rects nil. id=", self.id)
-          if (self.cfg).pets then
-            self.pets = {}
-            for i,pet in ipairs((self.cfg).pets) do
-              (table.insert)(self.pets, {petId = pet.petId, pos = Vector2(pet.x, pet.y)})
-            end
-          else
-            do
-              ;
-              (Log.fatal)("### cfg_prediction.rects nil. id=", self.id)
-              if (self.cfg).effect then
-                self:InitPetForecastView((self.cfg).effect)
-              end
-              do
-                local cfg = self:GetNewCfg(serData)
-                self.cfg = cfg
-                if cfg == nil then
-                  (Log.fatal)("### no data in cfg_prediction_new. id=", self.id)
-                end
-                ;
-                (Log.fatal)("### no data in cfg_prediction. id=", self.id)
-              end
-            end
-          end
+        Log.fatal("### cfg_prediction.rects nil. id=", self.id)
+      end
+      if self.cfg.pets then
+        self.pets = {}
+        for i, pet in ipairs(self.cfg.pets) do
+          table.insert(self.pets, {
+            petId = pet.petId,
+            pos = Vector2(pet.x, pet.y)
+          })
         end
+      else
+        Log.fatal("### cfg_prediction.rects nil. id=", self.id)
+      end
+      if self.cfg.effect then
+        self:InitPetForecastView(self.cfg.effect)
+      end
+    else
+      local cfg = self:GetNewCfg(serData)
+      self.cfg = cfg
+      if cfg == nil then
+        Log.fatal("### no data in cfg_prediction_new. id=", self.id)
       end
     end
+  else
+    Log.fatal("### no data in cfg_prediction. id=", self.id)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.GetNewCfg = function(self, serData)
-  -- function num : 0_2 , upvalues : _ENV
-  local cfg = nil
-  cfg = (Cfg.cfg_prediction_new)[self.id]
+function PetForecastData:GetNewCfg(serData)
+  local cfg
+  cfg = Cfg.cfg_prediction_new[self.id]
   if cfg then
     self.pieces = {}
     for i = 1, 6 do
       local piece = PetForecastPiece:New()
       piece.day = i
       local index = i - 1
-      if not (serData.status)[index] then
-        do
-          piece.state = PredictionStatus.PRES_UnReach
-          piece.awards = (self.cfg)["award" .. i]
-          if piece.state == PredictionStatus.PRES_UnReach and piece:IsCurDay() then
-            piece.curValue = (self.mRole):GetAssetCount(RoleAssetID.RoleAssetVigorous)
-            piece.maxValue = (self.cfg)["Vigorous" .. i] or 0
-          end
-          if piece.awards then
-            (table.insert)(self.pieces, piece)
-          end
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC63: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      piece.state = serData.status[index] or PredictionStatus.PRES_UnReach
+      piece.awards = self.cfg["award" .. i]
+      if piece.state == PredictionStatus.PRES_UnReach and piece:IsCurDay() then
+        piece.curValue = self.mRole:GetAssetCount(RoleAssetID.RoleAssetVigorous)
+        piece.maxValue = self.cfg["Vigorous" .. i] or 0
+      end
+      if piece.awards then
+        table.insert(self.pieces, piece)
       end
     end
   end
   return cfg
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.CheckCode = function(code, isToast)
-  -- function num : 0_3 , upvalues : _ENV
+function PetForecastData.CheckCode(code, isToast)
   if code == Prediction_Result_Code.PREDICTION_SUCCEED then
     return true
   end
   if isToast then
-    (ToastManager.ShowToast)((StringTable.Get)("str_prediction_error_code_" .. code))
+    ToastManager.ShowToast(StringTable.Get("str_prediction_error_code_" .. code))
   end
   return false
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.UpdateState = function(self, day, state)
-  -- function num : 0_4 , upvalues : _ENV
-  for i,piece in ipairs(self.pieces) do
+function PetForecastData:UpdateState(day, state)
+  for i, piece in ipairs(self.pieces) do
     if piece.day == day then
       piece.state = state
       break
@@ -199,11 +123,8 @@ PetForecastData.UpdateState = function(self, day, state)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.IsAllAccepted = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  for i,piece in ipairs(self.pieces) do
+function PetForecastData:IsAllAccepted()
+  for i, piece in ipairs(self.pieces) do
     if piece.state == PredictionStatus.PRES_UnAccept or piece.state == PredictionStatus.PRES_UnReach then
       return false
     end
@@ -211,11 +132,8 @@ PetForecastData.IsAllAccepted = function(self)
   return true
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.IsVigorousChanged = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local curVigorous = (self.mRole):GetAssetCount(RoleAssetID.RoleAssetVigorous)
+function PetForecastData:IsVigorousChanged()
+  local curVigorous = self.mRole:GetAssetCount(RoleAssetID.RoleAssetVigorous)
   if self.cacheVigorous ~= curVigorous then
     self.cacheVigorous = curVigorous
     return true
@@ -223,73 +141,46 @@ PetForecastData.IsVigorousChanged = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.GetPiece = function(self, day)
-  -- function num : 0_7 , upvalues : _ENV
-  for i,piece in ipairs(self.pieces) do
+function PetForecastData:GetPiece(day)
+  for i, piece in ipairs(self.pieces) do
     if piece.day == day then
       return piece
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.InitPetForecastView = function(self, cfgv)
-  -- function num : 0_8 , upvalues : _ENV
+function PetForecastData:InitPetForecastView(cfgv)
   if cfgv.last then
     self.last = PetForecastView:New()
-    ;
-    (self.last):Init(cfgv.last)
+    self.last:Init(cfgv.last)
   end
   if cfgv.normal then
     self.normal = PetForecastView:New()
-    ;
-    (self.normal):Init(cfgv.normal)
+    self.normal:Init(cfgv.normal)
   end
   if cfgv.close then
     self.close = PetForecastView:New()
-    ;
-    (self.close):Init(cfgv.close)
+    self.close:Init(cfgv.close)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.HasNewPieceImage = function(self)
-  -- function num : 0_9
+function PetForecastData:HasNewPieceImage()
   local b = self.last and true or false
   return b
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.GetCfg_cg = function(self, key)
-  -- function num : 0_10
-  if self.cfg or not ({}).cg then
-    local cfg = {}
-  end
+function PetForecastData:GetCfg_cg(key)
+  local cfg = (self.cfg or {}).cg or {}
   return cfg[key]
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.GetCfg_imgs = function(self, id, key)
-  -- function num : 0_11
-  if self.cfg or not ({}).imgs then
-    local cfgs = {}
-  end
-  if not cfgs[id] then
-    return ({})[key]
-  end
+function PetForecastData:GetCfg_imgs(id, key)
+  local cfgs = (self.cfg or {}).imgs or {}
+  return (cfgs[id] or {})[key]
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.SetObjTransform = function(self, obj, anchorMin, anchorMax, anchoredPosition, sizeDelta)
-  -- function num : 0_12 , upvalues : _ENV
-  local tran = (obj:GetGameObject()):GetComponent(typeof(UnityEngine.RectTransform))
+function PetForecastData:SetObjTransform(obj, anchorMin, anchorMax, anchoredPosition, sizeDelta)
+  local tran = obj:GetGameObject():GetComponent(typeof(UnityEngine.RectTransform))
   if anchorMin then
     tran.anchorMin = anchorMin
   end
@@ -304,22 +195,17 @@ PetForecastData.SetObjTransform = function(self, obj, anchorMin, anchorMax, anch
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastData.SetObjColor = function(self, uiView, widgetType, widgetName, key)
-  -- function num : 0_13 , upvalues : _ENV
-  local GetColorFunc = function(colorCfg)
-    -- function num : 0_13_0 , upvalues : _ENV
+function PetForecastData:SetObjColor(uiView, widgetType, widgetName, key)
+  local function GetColorFunc(colorCfg)
     if colorCfg then
       local r, g, b = colorCfg[1] / 255, colorCfg[2] / 255, colorCfg[3] / 255
+      
       local a = colorCfg[4] and colorCfg[4] / 255 or 1
       return Color(r, g, b, a)
     end
-    do
-      return Color.white
-    end
+    return Color.white
   end
-
+  
   local colorCfg = self:GetCfg_cg(key)
   local color = GetColorFunc(colorCfg)
   local obj = uiView:GetUIComponent(widgetType, widgetName)
@@ -328,10 +214,8 @@ end
 
 _class("PetForecastPiece", Object)
 PetForecastPiece = PetForecastPiece
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
 
-PetForecastPiece.Constructor = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function PetForecastPiece:Constructor()
   self.day = 0
   self.pos = Vector2.zero
   self.wh = Vector2.zero
@@ -354,29 +238,19 @@ PetForecastPiece.Constructor = function(self)
   self.imgSentenceUnlock = ""
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastPiece.IsCurDay = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local data = ((GameGlobal.GetModule)(SignInModule)):GetPredictionData()
-  if data.curDay ~= self.day then
-    do return not data end
-    do return false end
-    -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function PetForecastPiece:IsCurDay()
+  local data = GameGlobal.GetModule(SignInModule):GetPredictionData()
+  if data then
+    return data.curDay == self.day
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastPiece.Init = function(self, i, cfgv)
-  -- function num : 0_16
-  self:InitImgUnlock((cfgv.unlockImgs)[i])
+function PetForecastPiece:Init(i, cfgv)
+  self:InitImgUnlock(cfgv.unlockImgs[i])
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastPiece.InitImgUnlock = function(self, cfgvImgs)
-  -- function num : 0_17
+function PetForecastPiece:InitImgUnlock(cfgvImgs)
   if cfgvImgs then
     self.imgSelectUnlock = cfgvImgs.s
     self.imgFullUnlock = cfgvImgs.f
@@ -388,59 +262,45 @@ end
 
 _class("PetForecastView", Object)
 PetForecastView = PetForecastView
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
 
-PetForecastView.Constructor = function(self)
-  -- function num : 0_18
+function PetForecastView:Constructor()
   self.parallel = {}
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-PetForecastView.Init = function(self, t)
-  -- function num : 0_19 , upvalues : _ENV
+function PetForecastView:Init(t)
   if not t then
-    return 
+    return
   end
-  for _,pi in pairs(t) do
+  for _, pi in pairs(t) do
     local p = PetForecastViewParallel:New()
-    for _,ci in ipairs(pi) do
+    for _, ci in ipairs(pi) do
       local c = PetForecastViewCommand:New()
-      local strs = (string.split)(ci, ",")
-      for i,str in ipairs(strs) do
-        str = (string.trim)(str)
+      local strs = string.split(ci, ",")
+      for i, str in ipairs(strs) do
+        str = string.trim(str)
         if i == 1 then
           c.name = str
         else
-          ;
-          (table.insert)(c.params, str)
+          table.insert(c.params, str)
         end
       end
-      ;
-      (table.insert)(p.commands, c)
+      table.insert(p.commands, c)
     end
-    ;
-    (table.insert)(self.parallel, p)
+    table.insert(self.parallel, p)
   end
 end
 
 _class("PetForecastViewParallel", Object)
 PetForecastViewParallel = PetForecastViewParallel
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
 
-PetForecastViewParallel.Constructor = function(self)
-  -- function num : 0_20
+function PetForecastViewParallel:Constructor()
   self.commands = {}
 end
 
 _class("PetForecastViewCommand", Object)
 PetForecastViewCommand = PetForecastViewCommand
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
 
-PetForecastViewCommand.Constructor = function(self)
-  -- function num : 0_21
+function PetForecastViewCommand:Constructor()
   self.name = ""
   self.params = {}
 end
-
-

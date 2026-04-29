@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common/hard_level/ui_activity_diff_level_detail_team_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityDiffLevelDetailTeamItem", UICustomWidget)
 UIActivityDiffLevelDetailTeamItem = UIActivityDiffLevelDetailTeamItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityDiffLevelDetailTeamItem.OnShow = function(self, uiParam)
-  -- function num : 0_0
+function UIActivityDiffLevelDetailTeamItem:OnShow(uiParam)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelDetailTeamItem.GetComponents = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityDiffLevelDetailTeamItem:GetComponents()
   self._elem1 = self:GetUIComponent("Image", "elem1")
   self._elem2 = self:GetUIComponent("Image", "elem2")
   self._head = self:GetUIComponent("RawImageLoader", "head")
@@ -25,70 +15,41 @@ UIActivityDiffLevelDetailTeamItem.GetComponents = function(self)
   self._atlas = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelDetailTeamItem.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).localScale = Vector3(self._scale, self._scale, self._scale)
-  local module = (GameGlobal.GetModule)(PetModule)
+function UIActivityDiffLevelDetailTeamItem:OnValue()
+  self._rect.localScale = Vector3(self._scale, self._scale, self._scale)
+  local module = GameGlobal.GetModule(PetModule)
   if self._pstid and self._pstid > 0 then
     self:Active(true)
     local pet = module:GetPet(self._pstid)
     local head = pet:GetPetTeamBody(PetSkinEffectPath.CARD_TEAM)
-    ;
-    (self._head):LoadImage(head)
-    local cfg_pet_element = (Cfg.cfg_pet_element)({})
+    self._head:LoadImage(head)
+    local cfg_pet_element = Cfg.cfg_pet_element({})
     local firstElem = pet:GetPetFirstElement()
-    ;
-    ((self._elem1).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC53: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._elem1).sprite = (self._atlas):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[firstElem]).Icon))
+    self._elem1.gameObject:SetActive(true)
+    self._elem1.sprite = self._atlas:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[firstElem].Icon))
     local secondElem = pet:GetPetSecondElement()
-    if secondElem and secondElem > 0 then
-      ((self._elem2).gameObject):SetActive(true)
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._elem2).sprite = (self._atlas):GetSprite((UIPropertyHelper:GetInstance()):GetColorBlindSprite((cfg_pet_element[secondElem]).Icon))
+    if secondElem and 0 < secondElem then
+      self._elem2.gameObject:SetActive(true)
+      self._elem2.sprite = self._atlas:GetSprite(UIPropertyHelper:GetInstance():GetColorBlindSprite(cfg_pet_element[secondElem].Icon))
     else
-      ;
-      ((self._elem2).gameObject):SetActive(false)
+      self._elem2.gameObject:SetActive(false)
     end
   else
-    do
-      self:Active(false)
-    end
+    self:Active(false)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelDetailTeamItem.Active = function(self, active)
-  -- function num : 0_3
-  (self._mask):SetActive(active)
-  ;
-  ((self._elem2).gameObject):SetActive(active)
-  ;
-  ((self._elem1).gameObject):SetActive(active)
+function UIActivityDiffLevelDetailTeamItem:Active(active)
+  self._mask:SetActive(active)
+  self._elem2.gameObject:SetActive(active)
+  self._elem1.gameObject:SetActive(active)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelDetailTeamItem.SetData = function(self, pstid, scale)
-  -- function num : 0_4
+function UIActivityDiffLevelDetailTeamItem:SetData(pstid, scale)
   self._pstid = pstid
   self._scale = scale or 1
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityDiffLevelDetailTeamItem.OnHide = function(self)
-  -- function num : 0_5
+function UIActivityDiffLevelDetailTeamItem:OnHide()
 end
-
-

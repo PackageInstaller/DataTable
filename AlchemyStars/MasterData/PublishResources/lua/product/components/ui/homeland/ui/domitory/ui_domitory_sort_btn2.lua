@@ -1,29 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/domitory/ui_domitory_sort_btn2.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDomitorySortBtn2", UICustomWidget)
 UIDomitorySortBtn2 = UIDomitorySortBtn2
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDomitorySortBtn2.Constructor = function(self)
-  -- function num : 0_0
-  self.ElementSpriteName = {[1] = "bing_color", [2] = "huo_color", [3] = "sen_color", [4] = "lei_color", [5] = "wu_color"}
+function UIDomitorySortBtn2:Constructor()
+  self.ElementSpriteName = {
+    [1] = "bing_color",
+    [2] = "huo_color",
+    [3] = "sen_color",
+    [4] = "lei_color",
+    [5] = "wu_color"
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDomitorySortBtn2.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIDomitorySortBtn2:OnShow(uiParams)
   self._uiHeartAtlas = self:GetAsset("UIHomelandDomitory.spriteatlas", LoadType.SpriteAtlas)
   self.atlasProperty = self:GetAsset("Property.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDomitorySortBtn2.GetComponents = function(self)
-  -- function num : 0_2
+function UIDomitorySortBtn2:GetComponents()
   self._arrow = self:GetUIComponent("Image", "arrow")
   self._arrowGo = self:GetGameObject("arrow")
   self._name = self:GetUIComponent("UILocalizationText", "name")
@@ -33,30 +26,19 @@ UIDomitorySortBtn2.GetComponents = function(self)
   self._rootRect = self:GetUIComponent("RectTransform", "root")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDomitorySortBtn2.SetData = function(self, index, cfg, currentSortParams, currentSortOrder, callback, eleType)
-  -- function num : 0_3 , upvalues : _ENV
+function UIDomitorySortBtn2:SetData(index, cfg, currentSortParams, currentSortOrder, callback, eleType)
   self:GetComponents()
   self._index = index
   self._cfg = cfg
   if not next(cfg) then
-    (self._root):SetActive(false)
-    return 
+    self._root:SetActive(false)
+    return
+  elseif cfg.Type == PetSortType.Element then
+    self._rootRect.sizeDelta = Vector2(339, 71)
   else
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R7 in 'UnsetPending'
-
-    if cfg.Type == PetSortType.Element then
-      (self._rootRect).sizeDelta = Vector2(339, 71)
-    else
-      -- DECOMPILER ERROR at PC32: Confused about usage of register: R7 in 'UnsetPending'
-
-      ;
-      (self._rootRect).sizeDelta = Vector2(166, 71)
-    end
+    self._rootRect.sizeDelta = Vector2(166, 71)
   end
-  ;
-  (self._root):SetActive(true)
+  self._root:SetActive(true)
   self._currSortParams = currentSortParams
   self._currentSortOrder = currentSortOrder
   self._callback = callback
@@ -64,78 +46,47 @@ UIDomitorySortBtn2.SetData = function(self, index, cfg, currentSortParams, curre
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDomitorySortBtn2.OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._name):SetText((StringTable.Get)((self._cfg).Name))
-  ;
-  ((self._elementTypeImg).gameObject):SetActive(false)
+function UIDomitorySortBtn2:OnValue()
+  self._name:SetText(StringTable.Get(self._cfg.Name))
+  self._elementTypeImg.gameObject:SetActive(false)
   self:Flush(self._currSortParams, self._currentSortOrder, self._eleType)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDomitorySortBtn2.BgOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  do
-    if (self._cfg).Type == PetSortType.Element then
-      local currentElementSortTypeOrder = (UIPetSortContext.Instance):CurElement()
-      ;
-      (UIPetSortContext.Instance):SetElement(currentElementSortTypeOrder % 5 + 1)
-    end
-    if self._callback then
-      (self._callback)(self._index)
-    end
+function UIDomitorySortBtn2:BgOnClick()
+  if self._cfg.Type == PetSortType.Element then
+    local currentElementSortTypeOrder = UIPetSortContext.Instance:CurElement()
+    UIPetSortContext.Instance:SetElement(currentElementSortTypeOrder % 5 + 1)
+  end
+  if self._callback then
+    self._callback(self._index)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDomitorySortBtn2.Flush = function(self, params, order, eleType)
-  -- function num : 0_6 , upvalues : _ENV
-  if params == (self._cfg).Type then
-    (self._arrowGo):SetActive(true)
-    ;
-    (self._selectImgGo):SetActive(true)
-    -- DECOMPILER ERROR at PC21: Confused about usage of register: R4 in 'UnsetPending'
-
+function UIDomitorySortBtn2:Flush(params, order, eleType)
+  if params == self._cfg.Type then
+    self._arrowGo:SetActive(true)
+    self._selectImgGo:SetActive(true)
     if order == PetSortOrder.Ascending then
-      (self._arrow).sprite = (self._uiHeartAtlas):GetSprite("n17_dorm_list_icon1")
+      self._arrow.sprite = self._uiHeartAtlas:GetSprite("n17_dorm_list_icon1")
     else
-      -- DECOMPILER ERROR at PC28: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._arrow).sprite = (self._uiHeartAtlas):GetSprite("n17_dorm_list_icon2")
+      self._arrow.sprite = self._uiHeartAtlas:GetSprite("n17_dorm_list_icon2")
     end
   else
-    ;
-    (self._arrowGo):SetActive(false)
-    ;
-    (self._selectImgGo):SetActive(false)
+    self._arrowGo:SetActive(false)
+    self._selectImgGo:SetActive(false)
   end
   self._eleType = eleType
-  if self:_IsElement((self._cfg).ID) then
-    (self._arrowGo):SetActive(false)
-    ;
-    ((self._elementTypeImg).gameObject):SetActive(true)
-    -- DECOMPILER ERROR at PC64: Confused about usage of register: R4 in 'UnsetPending'
-
+  if self:_IsElement(self._cfg.ID) then
+    self._arrowGo:SetActive(false)
+    self._elementTypeImg.gameObject:SetActive(true)
     if self._eleType ~= 0 then
-      (self._elementTypeImg).sprite = (self.atlasProperty):GetSprite((self.ElementSpriteName)[self._eleType])
+      self._elementTypeImg.sprite = self.atlasProperty:GetSprite(self.ElementSpriteName[self._eleType])
     end
   else
-    ;
-    ((self._elementTypeImg).gameObject):SetActive(false)
+    self._elementTypeImg.gameObject:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDomitorySortBtn2._IsElement = function(self, type)
-  -- function num : 0_7 , upvalues : _ENV
-  do return type == PetSortType.Element or type == PetSortType.WaterFirst or type == PetSortType.FireFirst or type == PetSortType.SenFirst or type == PetSortType.ElectricityFirst or type == PetSortType.NoneElementFirst end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function UIDomitorySortBtn2:_IsElement(type)
+  return type == PetSortType.Element or type == PetSortType.WaterFirst or type == PetSortType.FireFirst or type == PetSortType.SenFirst or type == PetSortType.ElectricityFirst or type == PetSortType.NoneElementFirst
 end
-
-

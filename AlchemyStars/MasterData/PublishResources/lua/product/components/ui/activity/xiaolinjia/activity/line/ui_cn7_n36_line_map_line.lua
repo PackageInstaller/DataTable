@@ -1,15 +1,6 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/activity/line/ui_cn7_n36_line_map_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_line_level_line_base")
 _class("UICN7N36LineMapLine", UIActivityLineLevelLineBase)
 UICN7N36LineMapLine = UICN7N36LineMapLine
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36LineMapLine.OnHide = function(self)
-  -- function num : 0_0
+function UICN7N36LineMapLine:OnHide()
 end
-
-

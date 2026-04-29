@@ -1,163 +1,110 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n27/post/main/n27_minigame_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("N27MinigameHelper", Object)
 N27MinigameHelper = N27MinigameHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-N27MinigameHelper.Constructor = function(self)
-  -- function num : 0_0
+function N27MinigameHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.LoadData = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
+function N27MinigameHelper:LoadData(TT, res)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N27, ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
   if res and not res:GetSucc() then
-    return 
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._component = (self._campaign):GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
-  self._componentInfo = (self._campaign):GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
-  local cmpID = (self._component):GetComponentCfgId()
-  self._cfg_stage = (Cfg.cfg_component_post_station_game_mission)({ComponentID = cmpID})
-  ;
-  (table.sort)(self._cfg_stage, function(a, b)
-    -- function num : 0_1_0
-    do return a.ID < b.ID end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
-  local cfg_campaign = (Cfg.cfg_campaign)[(self._campaign)._id]
-  self._name = (StringTable.Get)(cfg_campaign.CampaignName)
-  self._subName = (StringTable.Get)(cfg_campaign.CampaignSubtitle)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._component = self._campaign:GetComponent(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
+  self._componentInfo = self._campaign:GetComponentInfo(ECampaignN27ComponentID.ECAMPAIGN_N27_POSTSTATON)
+  local cmpID = self._component:GetComponentCfgId()
+  self._cfg_stage = Cfg.cfg_component_post_station_game_mission({ComponentID = cmpID})
+  table.sort(self._cfg_stage, function(a, b)
+    return a.ID < b.ID
+  end)
+  local cfg_campaign = Cfg.cfg_campaign[self._campaign._id]
+  self._name = StringTable.Get(cfg_campaign.CampaignName)
+  self._subName = StringTable.Get(cfg_campaign.CampaignSubtitle)
   local plotIdList = cfg_campaign.FirstEnterStoryID
   self._plotId = nil
-  if plotIdList and #plotIdList > 0 then
+  if plotIdList and 0 < #plotIdList then
     self._plotId = plotIdList[1]
   end
-  local sample = (self._campaign):GetSample()
+  local sample = self._campaign:GetSample()
   if not sample then
-    return 
+    return
   end
-  local nowTime = (self._svrTimeModule):GetServerTime() / 1000
+  local nowTime = self._svrTimeModule:GetServerTime() / 1000
   self._activeEndTime = sample.end_time
-  if self._activeEndTime < nowTime then
-    (Log.error)("Time error!")
-    return 
+  if nowTime > self._activeEndTime then
+    Log.error("Time error!")
+    return
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.ForceReLoad = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
+function N27MinigameHelper:ForceReLoad(TT)
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetCampaign = function(self)
-  -- function num : 0_3
+function N27MinigameHelper:GetCampaign()
   return self._campaign
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetCampaignId = function(self)
-  -- function num : 0_4
-  return (self._campaign)._id
+function N27MinigameHelper:GetCampaignId()
+  return self._campaign._id
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetName = function(self)
-  -- function num : 0_5
+function N27MinigameHelper:GetName()
   return self._name
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetSubName = function(self)
-  -- function num : 0_6
+function N27MinigameHelper:GetSubName()
   return self._subName
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetActiveEndTime = function(self)
-  -- function num : 0_7
+function N27MinigameHelper:GetActiveEndTime()
   return self._activeEndTime
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetPlotId = function(self)
-  -- function num : 0_8
+function N27MinigameHelper:GetPlotId()
   return self._plotId
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.IsActivityEnd = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function N27MinigameHelper:IsActivityEnd()
   if not self._activeEndTime then
     return true
   end
-  local nowTime = (self._svrTimeModule):GetServerTime() / 1000
-  local seconds = (math.floor)(self._activeEndTime - nowTime)
+  local nowTime = self._svrTimeModule:GetServerTime() / 1000
+  local seconds = math.floor(self._activeEndTime - nowTime)
   if seconds <= 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetMiniGameComponent = function(self)
-  -- function num : 0_10
+function N27MinigameHelper:GetMiniGameComponent()
   return self._component
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetMiniGameComponentInfo = function(self)
-  -- function num : 0_11
+function N27MinigameHelper:GetMiniGameComponentInfo()
   return self._componentInfo
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetMiniGameComponentStatus = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function N27MinigameHelper:GetMiniGameComponentStatus()
   if self:IsActivityEnd() then
     return ActivityComponentStatus.ActivityEnd, 0
   end
   return self:CheckComponentStatus(self._component)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.CheckComponentStatus = function(self, component)
-  -- function num : 0_13 , upvalues : _ENV
+function N27MinigameHelper:CheckComponentStatus(component)
   if not component then
     return ActivityComponentStatus.Close, 0
   end
@@ -165,18 +112,18 @@ N27MinigameHelper.CheckComponentStatus = function(self, component)
   if not info then
     return ActivityComponentStatus.Close, 0
   end
-  local svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
-  local curTime = (math.floor)(svrTimeModule:GetServerTime() * 0.001)
-  if info.m_close_time <= curTime then
+  local svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
+  local curTime = math.floor(svrTimeModule:GetServerTime() * 0.001)
+  if curTime >= info.m_close_time then
     return ActivityComponentStatus.Close, 0
   end
   local opentTime = info.m_open_time
   local unLockTime = info.m_unlock_time
   local time = opentTime
-  if time < unLockTime then
+  if unLockTime > time then
     time = unLockTime
   end
-  if time < curTime then
+  if curTime > time then
     if not info.m_b_unlock then
       return ActivityComponentStatus.MissionLock, 0
     end
@@ -185,20 +132,14 @@ N27MinigameHelper.CheckComponentStatus = function(self, component)
   return ActivityComponentStatus.TimeLock, curTime - time
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.GetNewFlagKey = function(self, id)
-  -- function num : 0_14 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function N27MinigameHelper:GetNewFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. id
   return key
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.IsShowEntryNewOrRed = function(self)
-  -- function num : 0_15
+function N27MinigameHelper:IsShowEntryNewOrRed()
   local isNew, isRed = false, false
   if self:IsActivityEnd() then
     return false
@@ -213,14 +154,11 @@ N27MinigameHelper.IsShowEntryNewOrRed = function(self)
   return isNew, isRed
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.IsShowMiniGameRed = function(self)
-  -- function num : 0_16 , upvalues : _ENV
-  if not (self._componentInfo).mission_infos then
+function N27MinigameHelper:IsShowMiniGameRed()
+  if not self._componentInfo.mission_infos then
     return false
   end
-  for key,value in pairs((self._componentInfo).mission_infos) do
+  for key, value in pairs(self._componentInfo.mission_infos) do
     if #value.can_get_target_list > 0 then
       return true
     end
@@ -228,17 +166,14 @@ N27MinigameHelper.IsShowMiniGameRed = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.IsShowMiniGameNew = function(self)
-  -- function num : 0_17 , upvalues : _ENV
-  for index,value in pairs(self._cfg_stage) do
-    local nowTime = (self._svrTimeModule):GetServerTime() * 0.001
+function N27MinigameHelper:IsShowMiniGameNew()
+  for index, value in pairs(self._cfg_stage) do
+    local nowTime = self._svrTimeModule:GetServerTime() * 0.001
     local cfg = value
-    local unlockTime = (self._loginModule):GetTimeStampByTimeStr(cfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
-    if unlockTime <= nowTime then
+    local unlockTime = self._loginModule:GetTimeStampByTimeStr(cfg.UnlockTime, Enum_DateTimeZoneType.E_ZoneType_GMT)
+    if nowTime >= unlockTime then
       local key = self:GetNewFlagKey(index)
-      local hasNew = (LocalDB.GetInt)("UIN42MiniGameWayPoint" .. key)
+      local hasNew = LocalDB.GetInt("UIN42MiniGameWayPoint" .. key)
       if hasNew == 0 and self:CheckPreMission(index) and not self:CheckMissionPass(index) then
         return true
       end
@@ -247,23 +182,13 @@ N27MinigameHelper.IsShowMiniGameNew = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.CheckPreMission = function(self, index)
-  -- function num : 0_18
+function N27MinigameHelper:CheckPreMission(index)
   if index == 1 then
     return true
   end
-  do return not ((self._componentInfo).mission_infos)[((self._cfg_stage)[index - 1]).ID] or (((self._componentInfo).mission_infos)[((self._cfg_stage)[index - 1]).ID]).suc > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+  return self._componentInfo.mission_infos[self._cfg_stage[index - 1].ID] and self._componentInfo.mission_infos[self._cfg_stage[index - 1].ID].suc > 0
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-N27MinigameHelper.CheckMissionPass = function(self, index)
-  -- function num : 0_19
-  do return not ((self._componentInfo).mission_infos)[((self._cfg_stage)[index]).ID] or (((self._componentInfo).mission_infos)[((self._cfg_stage)[index]).ID]).suc > 0 end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function N27MinigameHelper:CheckMissionPass(index)
+  return self._componentInfo.mission_infos[self._cfg_stage[index].ID] and self._componentInfo.mission_infos[self._cfg_stage[index].ID].suc > 0
 end
-
-

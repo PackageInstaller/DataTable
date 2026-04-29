@@ -1,8 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/str_aircraft_furniture_tab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_aircraft_furniture_tab_1 = "装飾", str_aircraft_furniture_tab_2 = "調度品", str_aircraft_furniture_tab_1_name1 = "置物", str_aircraft_furniture_tab_1_name2 = "壁飾り", str_aircraft_furniture_tab_1_name3 = "天井飾り", str_aircraft_furniture_tab_2_name1 = "カジュアル", str_aircraft_furniture_tab_2_name2 = "レア"}
+local config = {
+  str_aircraft_furniture_tab_1 = "装飾",
+  str_aircraft_furniture_tab_2 = "調度品",
+  str_aircraft_furniture_tab_1_name1 = "置物",
+  str_aircraft_furniture_tab_1_name2 = "壁飾り",
+  str_aircraft_furniture_tab_1_name3 = "天井飾り",
+  str_aircraft_furniture_tab_2_name1 = "カジュアル",
+  str_aircraft_furniture_tab_2_name2 = "レア"
+}
 return config
-

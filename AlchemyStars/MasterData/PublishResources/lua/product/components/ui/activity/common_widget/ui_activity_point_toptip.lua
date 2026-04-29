@@ -1,96 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/common_widget/ui_activity_point_toptip.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityPointToptip", UICustomWidget)
 UIActivityPointToptip = UIActivityPointToptip
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityPointToptip.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIActivityPointToptip:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPointToptip.InitWidget = function(self)
-  -- function num : 0_1
+function UIActivityPointToptip:InitWidget()
   self.icon = self:GetUIComponent("Image", "icon")
   self.text = self:GetUIComponent("UILocalizationText", "text")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPointToptip.SetData = function(self, camCpt, needCount)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityPointToptip:SetData(camCpt, needCount)
   self._campComponent = camCpt
-  local cmpID = (self._campComponent):GetComponentCfgId()
-  local campID = ((self._campComponent):GetComponentInfo()).m_campaign_id
-  self._campType = ((Cfg.cfg_campaign)[campID]).CampaignType
-  local cfg = (self._campComponent):GetActionPointConfig()
+  local cmpID = self._campComponent:GetComponentCfgId()
+  local campID = self._campComponent:GetComponentInfo().m_campaign_id
+  self._campType = Cfg.cfg_campaign[campID].CampaignType
+  local cfg = self._campComponent:GetActionPointConfig()
   if cfg == nil then
-    (Log.exception)("cfg_component_action_point中找不到组件ID:", cmpID)
+    Log.exception("cfg_component_action_point中找不到组件ID:", cmpID)
   end
   self._pointID = cfg.ItemID
   local module = self:GetModule(ItemModule)
   local count = module:GetItemCount(self._pointID)
-  if not count then
-    count = 0
-  end
+  count = count or 0
   local ceiling = cfg.RegainMax
-  local text = nil
-  if count < needCount then
+  local text
+  if needCount > count then
     text = "<color=#00ffea>" .. count .. "</color>" .. " /" .. ceiling
   else
     text = count .. " /" .. ceiling
   end
-  ;
-  (self.text):SetText(text)
-  local itemCfg = (Cfg.cfg_top_tips)[self._pointID]
+  self.text:SetText(text)
+  local itemCfg = Cfg.cfg_top_tips[self._pointID]
   if itemCfg == nil then
-    (Log.exception)("cfg_top_tips中找不到配置:", self._pointID)
+    Log.exception("cfg_top_tips中找不到配置:", self._pointID)
   end
-  -- DECOMPILER ERROR at PC73: Confused about usage of register: R11 in 'UnsetPending'
-
-  ;
-  (self.icon).sprite = (self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas)):GetSprite(itemCfg.Icon)
+  self.icon.sprite = self:GetAsset("UICommon.spriteatlas", LoadType.SpriteAtlas):GetSprite(itemCfg.Icon)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityPointToptip.itemOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UIActivityPointToptip:itemOnClick(go)
   if self._campType == ECampaignType.CAMPAIGN_TYPE_SUMMER_I then
     self:ShowDialog("UIXH1PointDetail")
+  elseif self._campType == ECampaignType.CAMPAIGN_TYPE_HALLOWEEN then
+    Log.warn("N6不使用行动点")
+  elseif self._campType == ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN then
+    self:ShowDialog("UIEvePointDetail")
+  elseif self._campType == ECampaignType.CAMPAIGN_TYPE_N9 then
+    self:ShowDialog("UIActivityN9ActionPointDetail", self._campComponent:GetItemIcon())
+  elseif self._campType == ECampaignType.CAMPAIGN_TYPE_N11 then
+    self:ShowDialog("UIActivityN11ActionPointDetail", self._campComponent:GetItemReplaceIcon())
+  elseif self._campType == ECampaignType.CAMPAIGN_TYPE_N14 then
+    self:ShowDialog("UIActivityN14ActionPointDetail", self._campComponent:GetItemIcon())
+  elseif self._campType == ECampaignType.CAMPAIGN_TYPE_N20 then
+    self:ShowDialog("UIActivityN20ActionPointDetail", self._campComponent:GetItemIcon())
   else
-    if self._campType == ECampaignType.CAMPAIGN_TYPE_HALLOWEEN then
-      (Log.warn)("N6不使用行动点")
-    else
-      if self._campType == ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN then
-        self:ShowDialog("UIEvePointDetail")
-      else
-        if self._campType == ECampaignType.CAMPAIGN_TYPE_N9 then
-          self:ShowDialog("UIActivityN9ActionPointDetail", (self._campComponent):GetItemIcon())
-        else
-          if self._campType == ECampaignType.CAMPAIGN_TYPE_N11 then
-            self:ShowDialog("UIActivityN11ActionPointDetail", (self._campComponent):GetItemReplaceIcon())
-          else
-            if self._campType == ECampaignType.CAMPAIGN_TYPE_N14 then
-              self:ShowDialog("UIActivityN14ActionPointDetail", (self._campComponent):GetItemIcon())
-            else
-              if self._campType == ECampaignType.CAMPAIGN_TYPE_N20 then
-                self:ShowDialog("UIActivityN20ActionPointDetail", (self._campComponent):GetItemIcon())
-              else
-                ;
-                (Log.exception)("没有指定行动点详情界面")
-              end
-            end
-          end
-        end
-      end
-    end
+    Log.exception("没有指定行动点详情界面")
   end
 end
-
-

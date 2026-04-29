@@ -1,43 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/map/expressions/season_map_express_function.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMapExpressFunction", SeasonMapExpressBase)
 SeasonMapExpressFunction = SeasonMapExpressFunction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMapExpressFunction.Constructor = function(self, cfg, eventPoint)
-  -- function num : 0_0 , upvalues : _ENV
-  self._content = (self._cfg).Function
-  self._seasonManager = ((GameGlobal.GetUIModule)(SeasonModule)):SeasonManager()
+function SeasonMapExpressFunction:Constructor(cfg, eventPoint)
+  self._content = self._cfg.Function
+  self._seasonManager = GameGlobal.GetUIModule(SeasonModule):SeasonManager()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressFunction.Update = function(self, deltaTime)
-  -- function num : 0_1
+function SeasonMapExpressFunction:Update(deltaTime)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMapExpressFunction.OnPlay = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonMapExpressFunction:OnPlay()
   if self._content then
-    local signType = (self._content).type
+    local signType = self._content.type
     if signType == SeasonExpressTiming.Play then
-      local seasonUI = ((self._seasonManager):SeasonUIManager()):UI()
-      local show = (self._content).show
+      local seasonUI = self._seasonManager:SeasonUIManager():UI()
+      local show = self._content.show
       if show then
         seasonUI:AddFunction(self._eventPoint, self)
       else
         seasonUI:RemoveFunction(self._eventPoint)
       end
     end
-    do
-      self:Next()
-    end
+    self:Next()
   end
 end
-
-

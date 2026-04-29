@@ -1,77 +1,59 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/visit/homeland_visit_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomelandVisitHelper", Object)
 HomelandVisitHelper = HomelandVisitHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandVisitHelper.Constructor = function(self)
-  -- function num : 0_0
+function HomelandVisitHelper:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitHelper.GetRaiseFishList = function()
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandVisitHelper.GetRaiseFishList()
   local fish_in_wishing = {}
-  local uiHomeModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local uiHomeModule = GameGlobal.GetUIModule(HomelandModule)
   local poolInfo = uiHomeModule:GetVisitPoolInfo()
   if not poolInfo then
     return fish_in_wishing
   end
   local items = poolInfo.item_count
   local result = {}
-  for k,v in pairs(items) do
-    local tmpCfg = (Cfg.cfg_item)[k]
+  for k, v in pairs(items) do
+    local tmpCfg = Cfg.cfg_item[k]
     if tmpCfg and tmpCfg.ItemSubType == ItemSubType.ItemSubType_Fish then
-      local cfg = (Cfg.cfg_item_homeland_fish)[k]
+      local cfg = Cfg.cfg_item_homeland_fish[k]
       if cfg and cfg.Type == 2 then
         result[k] = v
       end
     end
   end
-  for k,v in pairs(result) do
+  for k, v in pairs(result) do
     for i = 1, v do
       local t1 = {}
       t1.ID = k
-      t1.InstanceId = (HomelandVisitHelper.GenFishInstanceId)()
+      t1.InstanceId = HomelandVisitHelper.GenFishInstanceId()
       fish_in_wishing[#fish_in_wishing + 1] = t1
     end
   end
   return fish_in_wishing
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitHelper.RefreshVistAquariumFish = function()
-  -- function num : 0_2 , upvalues : _ENV
+function HomelandVisitHelper.RefreshVistAquariumFish()
   local result = {}
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
   HomelandVisitHelper.fish_in_aquarium = result
-  local uiHomeModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local uiHomeModule = GameGlobal.GetUIModule(HomelandModule)
   local poolInfo = uiHomeModule:GetVisitPoolInfo()
   if not poolInfo then
-    return 
+    return
   end
   local fishMapList = poolInfo.fish_tank_item_count
-  for buildPstId,items in pairs(fishMapList) do
+  for buildPstId, items in pairs(fishMapList) do
     result[buildPstId] = {}
-    for fishId,fishCount in pairs(items) do
-      local tmpCfg = (Cfg.cfg_item)[fishId]
+    for fishId, fishCount in pairs(items) do
+      local tmpCfg = Cfg.cfg_item[fishId]
       if tmpCfg then
-        local cfg = (Cfg.cfg_item_homeland_fish)[fishId]
+        local cfg = Cfg.cfg_item_homeland_fish[fishId]
         if cfg then
           for i = 1, fishCount do
             local fish = {}
             fish.ID = fishId
-            fish.InstanceId = (HomelandVisitHelper.GenFishInstanceId)()
-            -- DECOMPILER ERROR at PC47: Confused about usage of register: R21 in 'UnsetPending'
-
-            ;
-            (result[buildPstId])[#result[buildPstId] + 1] = fish
+            fish.InstanceId = HomelandVisitHelper.GenFishInstanceId()
+            result[buildPstId][#result[buildPstId] + 1] = fish
           end
         end
       end
@@ -79,29 +61,15 @@ HomelandVisitHelper.RefreshVistAquariumFish = function()
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitHelper.GetAquariumFishList = function(buildPstID)
-  -- function num : 0_3 , upvalues : _ENV
-  if not HomelandVisitHelper.fish_in_aquarium or not (HomelandVisitHelper.fish_in_aquarium)[buildPstID] then
-    return {}
-  end
+function HomelandVisitHelper.GetAquariumFishList(buildPstID)
+  return HomelandVisitHelper.fish_in_aquarium and HomelandVisitHelper.fish_in_aquarium[buildPstID] or {}
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandVisitHelper.GenFishInstanceId = function()
-  -- function num : 0_4 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R0 in 'UnsetPending'
-
+function HomelandVisitHelper.GenFishInstanceId()
   if not HomelandVisitHelper.FishInstanceId then
     HomelandVisitHelper.FishInstanceId = 1
     return HomelandVisitHelper.FishInstanceId
   end
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R0 in 'UnsetPending'
-
   HomelandVisitHelper.FishInstanceId = HomelandVisitHelper.FishInstanceId + 1
   return HomelandVisitHelper.FishInstanceId
 end
-
-

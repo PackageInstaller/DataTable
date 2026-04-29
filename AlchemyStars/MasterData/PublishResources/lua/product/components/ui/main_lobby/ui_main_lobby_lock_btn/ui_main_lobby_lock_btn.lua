@@ -1,148 +1,100 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_lock_btn/ui_main_lobby_lock_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyLockBtn", UICustomWidget)
 UIMainLobbyLockBtn = UIMainLobbyLockBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyLockBtn.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyLockBtn:OnShow()
   self._unlock = nil
   self:AttachEvent(GameEventType.FunctionUnLock, self._HandleFunctionUnLockEvent)
   self:AttachEvent(GameEventType.GuideUnLock, self._PlayUnlockAnim)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLockBtn._PlayUnlockAnim = function(self, gameModuleID, type)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.debug)("###[UIMainLobbyLockBtn] _PlayUnlockAnim,gameModuleID:", gameModuleID, "|type:", type)
+function UIMainLobbyLockBtn:_PlayUnlockAnim(gameModuleID, type)
+  Log.debug("###[UIMainLobbyLockBtn] _PlayUnlockAnim,gameModuleID:", gameModuleID, "|type:", type)
   if gameModuleID ~= self.gameModuleID then
-    return 
+    return
   end
   if type == 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.UnLock)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.UnLock)
     self._go = self:GetGameObject("go")
-    ;
-    (self._go):SetActive(true)
+    self._go:SetActive(true)
     if self._lockCB then
-      (self._lockCB)()
+      self._lockCB()
     end
-  else
-    if type == 1 then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.FinishGuideStep, GuideType.UnLock)
-      ;
-      (self._go):SetActive(true)
-      local anim = self:GetUIComponent("Animation", "anim")
-      anim:Play("uieff_UIMainLobbyLockBtn_open")
-      self:Lock("UIMainLobbyLockBtn:PlayUnLockAnim")
-      self._event = ((GameGlobal.Timer)()):AddEvent(2000, function()
-    -- function num : 0_1_0 , upvalues : self
-    self:UnLock("UIMainLobbyLockBtn:PlayUnLockAnim")
-    self:_RefreshLockStatus()
-    if self._unlockCB then
-      (self._unlockCB)()
-    end
+  elseif type == 1 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.UnLock)
+    self._go:SetActive(true)
+    local anim = self:GetUIComponent("Animation", "anim")
+    anim:Play("uieff_UIMainLobbyLockBtn_open")
+    self:Lock("UIMainLobbyLockBtn:PlayUnLockAnim")
+    self._event = GameGlobal.Timer():AddEvent(2000, function()
+      self:UnLock("UIMainLobbyLockBtn:PlayUnLockAnim")
+      self:_RefreshLockStatus()
+      if self._unlockCB then
+        self._unlockCB()
+      end
+    end)
   end
-)
-    end
-  end
-  do
-    ;
-    (Log.debug)("###[UIMainLobbyLockBtn] _PlayUnlockAnim type:", type)
-  end
+  Log.debug("###[UIMainLobbyLockBtn] _PlayUnlockAnim type:", type)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLockBtn.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainLobbyLockBtn:OnHide()
   if self._event then
-    ((GameGlobal.Timer)()):CancelEvent(self._event)
+    GameGlobal.Timer():CancelEvent(self._event)
   end
   self:UnLock("UIMainLobbyLockBtn:PlayUnLockAnim")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLockBtn._HandleFunctionUnLockEvent = function(self, gameModuleID)
-  -- function num : 0_3
+function UIMainLobbyLockBtn:_HandleFunctionUnLockEvent(gameModuleID)
   if self.gameModuleID ~= gameModuleID then
-    return 
+    return
   end
   self:_RefreshLockStatus()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLockBtn._RefreshLockStatus = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local module = (GameGlobal.GetModule)(RoleModule)
+function UIMainLobbyLockBtn:_RefreshLockStatus()
+  local module = GameGlobal.GetModule(RoleModule)
   self._unlock = module:CheckModuleUnlock(self.gameModuleID)
   self._go = self:GetGameObject("go")
-  ;
-  (self._go):SetActive(not self._unlock)
+  self._go:SetActive(not self._unlock)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLockBtn.BtnOnClick = function(self, go)
-  -- function num : 0_5 , upvalues : _ENV
-  local functionLockCfg = (Cfg.cfg_module_unlock)[self.gameModuleID]
+function UIMainLobbyLockBtn:BtnOnClick(go)
+  local functionLockCfg = Cfg.cfg_module_unlock[self.gameModuleID]
   if not functionLockCfg then
-    (Log.debug)("don\'t have function config")
-    return 
+    Log.debug("don't have function config")
+    return
   end
   if functionLockCfg.isNolockType == 0 then
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.SoundUnlockModule)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)(functionLockCfg.Tips))
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.SoundUnlockModule)
+    ToastManager.ShowToast(StringTable.Get(functionLockCfg.Tips))
   else
-    ;
-    (ToastManager.ShowLockTip)()
+    ToastManager.ShowLockTip()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLockBtn.SetFunctionType = function(self, gameModuleID)
-  -- function num : 0_6 , upvalues : _ENV
+function UIMainLobbyLockBtn:SetFunctionType(gameModuleID)
   self.gameModuleID = gameModuleID
-  local module = (GameGlobal.GetModule)(RoleModule)
+  local module = GameGlobal.GetModule(RoleModule)
   self._unlock = module:CheckModuleUnlock(gameModuleID)
   self._go = self:GetGameObject("go")
-  ;
-  (self._go):SetActive(not self._unlock)
+  self._go:SetActive(not self._unlock)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLockBtn.SetColorImage = function(self, img, useColor)
-  -- function num : 0_7 , upvalues : _ENV
+function UIMainLobbyLockBtn:SetColorImage(img, useColor)
   if self._unlock == nil then
     self:SetFunctionType(self.gameModuleID)
   end
-  local color = nil
+  local color
   if self._unlock then
     color = Color(1, 1, 1, 1)
+  elseif useColor then
+    color = useColor
   else
-    if useColor then
-      color = useColor
-    else
-      color = Color(0.090196078431373, 0.098039215686275, 0.10980392156863, 0.7843137254902)
-    end
+    color = Color(0.09019607843137255, 0.09803921568627451, 0.10980392156862745, 0.7843137254901961)
   end
   img.color = color
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyLockBtn.SetLockViewCallback = function(self, lockCB, unlockCB)
-  -- function num : 0_8
+function UIMainLobbyLockBtn:SetLockViewCallback(lockCB, unlockCB)
   self._lockCB = lockCB
   self._unlockCB = unlockCB
 end
-
-

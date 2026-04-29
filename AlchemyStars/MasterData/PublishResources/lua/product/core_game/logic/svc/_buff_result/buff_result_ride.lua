@@ -1,125 +1,71 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/_buff_result/buff_result_ride.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffResultRide", BuffResultBase)
 BuffResultRide = BuffResultRide
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffResultRide.Constructor = function(self, rideID, mountID, gridLocRes)
-  -- function num : 0_0
+function BuffResultRide:Constructor(rideID, mountID, gridLocRes)
   self._rideID = rideID
   self._mountID = mountID
   self._gridLocRes = gridLocRes
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.GetRideEntityID = function(self)
-  -- function num : 0_1
+function BuffResultRide:GetRideEntityID()
   return self._rideID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.GetMountEntityID = function(self)
-  -- function num : 0_2
+function BuffResultRide:GetMountEntityID()
   return self._mountID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.GetDataGridLocationResult = function(self)
-  -- function num : 0_3
+function BuffResultRide:GetDataGridLocationResult()
   return self._gridLocRes
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.SetNotifyEntity = function(self, entity)
-  -- function num : 0_4
+function BuffResultRide:SetNotifyEntity(entity)
   self._notifyEntity = entity
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.GetNotifyEntity = function(self)
-  -- function num : 0_5
+function BuffResultRide:GetNotifyEntity()
   return self._notifyEntity
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.SetNotifyPos = function(self, notifyPos)
-  -- function num : 0_6
+function BuffResultRide:SetNotifyPos(notifyPos)
   self._notifyPos = notifyPos
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.GetNotifyPos = function(self)
-  -- function num : 0_7
+function BuffResultRide:GetNotifyPos()
   return self._notifyPos
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.SetTargetPos = function(self, targetPos)
-  -- function num : 0_8
+function BuffResultRide:SetTargetPos(targetPos)
   self._targetPos = targetPos
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.GetTargetPos = function(self)
-  -- function num : 0_9
+function BuffResultRide:GetTargetPos()
   return self._targetPos
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.SetNotifyChainSkillTimeIndex = function(self, v)
-  -- function num : 0_10
+function BuffResultRide:SetNotifyChainSkillTimeIndex(v)
   self._notifyChainSkillTimeIndex = v
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.GetNotifyChainSkillTimeIndex = function(self)
-  -- function num : 0_11
+function BuffResultRide:GetNotifyChainSkillTimeIndex()
   return self._notifyChainSkillTimeIndex
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.SetNotifyChainSkillStageIndex = function(self, v)
-  -- function num : 0_12
+function BuffResultRide:SetNotifyChainSkillStageIndex(v)
   self._notifyChainSkillStageIndex = v
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.GetNotifyChainSkillStageIndex = function(self)
-  -- function num : 0_13
+function BuffResultRide:GetNotifyChainSkillStageIndex()
   return self._notifyChainSkillStageIndex
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.SetPlayed = function(self, hasPlayed)
-  -- function num : 0_14
+function BuffResultRide:SetPlayed(hasPlayed)
   self._hasPlayed = hasPlayed
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffResultRide.HasPlayed = function(self)
-  -- function num : 0_15
+function BuffResultRide:HasPlayed()
   if self._hasPlayed and self._hasPlayed == true then
     return true
   end
   return false
 end
-
-

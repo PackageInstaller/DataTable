@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/pet_intimacy/ui_pet_intimacy_level_up.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPetIntimacyLevelUp", UIController)
 UIPetIntimacyLevelUp = UIPetIntimacyLevelUp
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPetIntimacyLevelUp.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIPetIntimacyLevelUp:OnShow(uiParams)
   self._petTemplateID = uiParams[1]
   self._skinid = uiParams[2]
   self._lvOld = uiParams[3]
@@ -23,110 +16,68 @@ UIPetIntimacyLevelUp.OnShow = function(self, uiParams)
   self:Flush()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyLevelUp.OnHide = function(self)
-  -- function num : 0_1
+function UIPetIntimacyLevelUp:OnHide()
   self._txtA = nil
   self._txtD = nil
   self._txtHP = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyLevelUp.Flush = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._txtLvOld).text = self._lvOld
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._txtLvNew).text = self._lvNew
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayNumberFlow, self)
-  local tUnlockProfile = (UIPetIntimacyLevelUp.GetUnlockProfile)(self._petTemplateID, self._lvOld, self._lvNew)
-  local isUnlockProfile = not tUnlockProfile or (table.count)(tUnlockProfile) > 0
-  ;
-  (self._profile):SetActive(isUnlockProfile)
-  local tUnlockVoice = (UIPetIntimacyLevelUp.GetUnlockVoice)(self._petTemplateID, self._skinid, self._lvOld, self._lvNew)
-  local isUnlockVoice = not tUnlockVoice or (table.count)(tUnlockVoice) > 0
-  ;
-  (self._voice):SetActive(isUnlockVoice)
-  -- DECOMPILER ERROR: 4 unprocessed JMP targets
+function UIPetIntimacyLevelUp:Flush()
+  self._txtLvOld.text = self._lvOld
+  self._txtLvNew.text = self._lvNew
+  GameGlobal.TaskManager():StartTask(self.PlayNumberFlow, self)
+  local tUnlockProfile = UIPetIntimacyLevelUp.GetUnlockProfile(self._petTemplateID, self._lvOld, self._lvNew)
+  local isUnlockProfile = tUnlockProfile and table.count(tUnlockProfile) > 0
+  self._profile:SetActive(isUnlockProfile)
+  local tUnlockVoice = UIPetIntimacyLevelUp.GetUnlockVoice(self._petTemplateID, self._skinid, self._lvOld, self._lvNew)
+  local isUnlockVoice = tUnlockVoice and table.count(tUnlockVoice) > 0
+  self._voice:SetActive(isUnlockVoice)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyLevelUp.PlayNumberFlow = function(self, TT)
-  -- function num : 0_3 , upvalues : _ENV
+function UIPetIntimacyLevelUp:PlayNumberFlow(TT)
   local aOld, dOld, hpOld = self:GetAttributesByIntimacyLv(self._lvOld)
   local aNew, dNew, hpNew = self:GetAttributesByIntimacyLv(self._lvNew)
   local duration = 0.6667
   YIELD(TT, 1165.5)
   if not self._txtA then
-    return 
+    return
   end
-  ;
-  (DoTweenHelper.DoUpdateInt)(aOld, aNew, duration, function(val)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._txtA).text = (math.floor)(val)
-  end
-)
+  DoTweenHelper.DoUpdateInt(aOld, aNew, duration, function(val)
+    self._txtA.text = math.floor(val)
+  end)
   YIELD(TT, 133.2)
   if not self._txtD then
-    return 
+    return
   end
-  ;
-  (DoTweenHelper.DoUpdateInt)(dOld, dNew, duration, function(val)
-    -- function num : 0_3_1 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._txtD).text = (math.floor)(val)
-  end
-)
+  DoTweenHelper.DoUpdateInt(dOld, dNew, duration, function(val)
+    self._txtD.text = math.floor(val)
+  end)
   YIELD(TT, 133.2)
   if not self._txtHP then
-    return 
+    return
   end
-  ;
-  (DoTweenHelper.DoUpdateInt)(hpOld, hpNew, duration, function(val)
-    -- function num : 0_3_2 , upvalues : self, _ENV
-    -- DECOMPILER ERROR at PC5: Confused about usage of register: R1 in 'UnsetPending'
-
-    (self._txtHP).text = (math.floor)(val)
-  end
-)
+  DoTweenHelper.DoUpdateInt(hpOld, hpNew, duration, function(val)
+    self._txtHP.text = math.floor(val)
+  end)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyLevelUp.bgOnClick = function(self, go)
-  -- function num : 0_4
+function UIPetIntimacyLevelUp:bgOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyLevelUp.GetAttributesByIntimacyLv = function(self, level)
-  -- function num : 0_5 , upvalues : _ENV
-  return (UIPetIntimacyGift.GetAttributesByPetAffinityLv)(self._petTemplateID, level)
+function UIPetIntimacyLevelUp:GetAttributesByIntimacyLv(level)
+  return UIPetIntimacyGift.GetAttributesByPetAffinityLv(self._petTemplateID, level)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyLevelUp.GetUnlockList = function(conditionIds, levelLeft, levelRight)
-  -- function num : 0_6 , upvalues : _ENV
+function UIPetIntimacyLevelUp.GetUnlockList(conditionIds, levelLeft, levelRight)
   local tUnlock = {}
-  for index,conditionId in ipairs(conditionIds) do
+  for index, conditionId in ipairs(conditionIds) do
     if conditionId then
-      local cfgCondition = (Cfg.pet_intimacy_condition)[conditionId]
+      local cfgCondition = Cfg.pet_intimacy_condition[conditionId]
       if cfgCondition and cfgCondition.ConditionType == 1 then
         local unlockLevel = cfgCondition.Value
-        if levelLeft < unlockLevel and unlockLevel <= levelRight then
-          (table.insert)(tUnlock, conditionId)
+        if levelLeft < unlockLevel and levelRight >= unlockLevel then
+          table.insert(tUnlock, conditionId)
         end
       end
     end
@@ -134,39 +85,47 @@ UIPetIntimacyLevelUp.GetUnlockList = function(conditionIds, levelLeft, levelRigh
   return tUnlock
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyLevelUp.GetUnlockProfile = function(templateId, levelLeft, levelRight)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfgFiles = (Cfg.pet_intimacy_files)[templateId]
+function UIPetIntimacyLevelUp.GetUnlockProfile(templateId, levelLeft, levelRight)
+  local cfgFiles = Cfg.pet_intimacy_files[templateId]
   if not cfgFiles then
-    (Log.fatal)("### pet_intimacy_files does not contains", templateId)
-    return 
+    Log.fatal("### pet_intimacy_files does not contains", templateId)
+    return
   end
   local conditionIds = {}
   for i = 1, 6 do
     if cfgFiles["PetFiles" .. i] then
       local conditionId = cfgFiles["Condition" .. i]
-      ;
-      (table.insert)(conditionIds, conditionId)
+      table.insert(conditionIds, conditionId)
     end
   end
-  local tUnlock = (UIPetIntimacyLevelUp.GetUnlockList)(conditionIds, levelLeft, levelRight)
+  local tUnlock = UIPetIntimacyLevelUp.GetUnlockList(conditionIds, levelLeft, levelRight)
   return tUnlock
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPetIntimacyLevelUp.GetUnlockVoice = function(templateId, skinid, levelLeft, levelRight)
-  -- function num : 0_8 , upvalues : _ENV
+function UIPetIntimacyLevelUp.GetUnlockVoice(templateId, skinid, levelLeft, levelRight)
   local conditionIds = {}
-  local voiceType = {[1] = "MainLobbyInteract", [2] = "Obtain", [3] = "LevelUp", [4] = "Grade1Up", [5] = "Grade2Up", [6] = "Charge", [7] = "Skill", [8] = "TeamLeaderAppear", [9] = "BattleSucceed", [10] = "BattleFail", [11] = "AircraftInteract", [12] = "Story1", [13] = "Story2", [14] = "Story3"}
-  local voiceConfig = nil
-  local cfgs = (Cfg.cfg_pet_voice)({PetID = templateId, SkinID = skinid})
+  local voiceType = {
+    [1] = "MainLobbyInteract",
+    [2] = "Obtain",
+    [3] = "LevelUp",
+    [4] = "Grade1Up",
+    [5] = "Grade2Up",
+    [6] = "Charge",
+    [7] = "Skill",
+    [8] = "TeamLeaderAppear",
+    [9] = "BattleSucceed",
+    [10] = "BattleFail",
+    [11] = "AircraftInteract",
+    [12] = "Story1",
+    [13] = "Story2",
+    [14] = "Story3"
+  }
+  local voiceConfig
+  local cfgs = Cfg.cfg_pet_voice({PetID = templateId, SkinID = skinid})
   if cfgs and next(cfgs) then
     voiceConfig = cfgs[1]
   else
-    voiceConfig = ((Cfg.cfg_pet_voice)({PetID = templateId, SkinID = nil}))[1]
+    voiceConfig = Cfg.cfg_pet_voice({PetID = templateId, SkinID = nil})[1]
   end
   if voiceConfig then
     for j = 1, #voiceType do
@@ -175,32 +134,16 @@ UIPetIntimacyLevelUp.GetUnlockVoice = function(templateId, skinid, levelLeft, le
         local voiceDataArr = voiceConfig[v]
         if voiceDataArr then
           for i = 1, #voiceDataArr do
-            local conditionId = (voiceDataArr[i])[2]
-            ;
-            (table.insert)(conditionIds, conditionId)
+            local conditionId = voiceDataArr[i][2]
+            table.insert(conditionIds, conditionId)
           end
         end
-      else
-        do
-          do
-            if voiceConfig[v] then
-              local conditionId = ((Cfg.pet_intimacy_voice_condition)[1])[v]
-              ;
-              (table.insert)(conditionIds, conditionId)
-            end
-            -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC79: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
-        end
+      elseif voiceConfig[v] then
+        local conditionId = Cfg.pet_intimacy_voice_condition[1][v]
+        table.insert(conditionIds, conditionId)
       end
     end
   end
-  local tUnlock = (UIPetIntimacyLevelUp.GetUnlockList)(conditionIds, levelLeft, levelRight)
+  local tUnlock = UIPetIntimacyLevelUp.GetUnlockList(conditionIds, levelLeft, levelRight)
   return tUnlock
 end
-
-

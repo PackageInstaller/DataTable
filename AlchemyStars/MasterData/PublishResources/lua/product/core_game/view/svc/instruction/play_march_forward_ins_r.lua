@@ -1,27 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_march_forward_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayMarchForwardInstruction", BaseInstruction)
 PlayMarchForwardInstruction = PlayMarchForwardInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayMarchForwardInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayMarchForwardInstruction:Constructor(paramList)
   self._marchTime = tonumber(paramList.marchTime) or 1000
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMarchForwardInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlayMarchForwardInstruction:DoInstruction(TT, casterEntity, phaseContext)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local results = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.MarchForward)
   if not results then
-    (Log.fatal)("no results")
-    return 
+    Log.fatal("no results")
+    return
   end
   local result = results[1]
   self._world = casterEntity:GetOwnerWorld()
@@ -31,61 +21,46 @@ PlayMarchForwardInstruction.DoInstruction = function(self, TT, casterEntity, pha
   self:_DoWalk(TT, casterEntity, walkResultList, casterIsDead, marchEnd)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMarchForwardInstruction._DoWalk = function(self, TT, monsterEntity, walkResultList, casterIsDead, marchEnd)
-  -- function num : 0_2 , upvalues : _ENV
-  local boardSvcR = (self._world):GetService("BoardRender")
+function PlayMarchForwardInstruction:_DoWalk(TT, monsterEntity, walkResultList, casterIsDead, marchEnd)
+  local boardSvcR = self._world:GetService("BoardRender")
   local hasWalkPoint = false
   local marchStep = #walkResultList
-  if marchStep > 0 then
+  if 0 < marchStep then
     hasWalkPoint = true
   end
   local moveSpeed = 1000 * marchStep / self._marchTime
   if hasWalkPoint then
     boardSvcR:RefreshPiece(monsterEntity, true, true)
   end
-  local pieceSvc = (self._world):GetService("Piece")
-  for _,v in ipairs(walkResultList) do
+  local pieceSvc = self._world:GetService("Piece")
+  for _, v in ipairs(walkResultList) do
     local walkRes = v
     local walkPos = walkRes:GetWalkPos()
-    local boardSvcR = (self._world):GetService("BoardRender")
+    local boardSvcR = self._world:GetService("BoardRender")
     local curPos = boardSvcR:GetRealEntityGridPos(monsterEntity)
     monsterEntity:AddGridMove(moveSpeed, walkPos, curPos)
     local walkDir = walkPos - curPos
     monsterEntity:SetDirection(walkDir)
-    for _,moveInfo in ipairs(walkRes:GetMoveEntities()) do
-      local entity = (self._world):GetEntityByID(moveInfo[1])
+    for _, moveInfo in ipairs(walkRes:GetMoveEntities()) do
+      local entity = self._world:GetEntityByID(moveInfo[1])
       local posTarget = moveInfo[3]
       local gridPos = boardSvcR:GetRealEntityGridPos(entity)
       entity:RemoveGridMove()
       entity:AddGridMove(moveSpeed, posTarget, gridPos)
       if entity:HasTeam() then
-        local petList = (entity:Team()):GetTeamPetEntities()
-        for _,pet in pairs(petList) do
+        local petList = entity:Team():GetTeamPetEntities()
+        for _, pet in pairs(petList) do
           pet:RemoveGridMove()
           pet:AddGridMove(moveSpeed, posTarget, gridPos)
         end
-      else
-        do
-          if entity:MonsterID() then
-            local pos = gridPos - (entity:GridLocation()):GetGridOffset()
-            local bodyArea = (entity:BodyArea()):GetArea()
-            for _,area in ipairs(bodyArea) do
-              local workPos = area + pos
-              local curPieceAnim = pieceSvc:GetPieceAnimation(workPos)
-              if curPieceAnim == "Down" then
-                pieceSvc:SetPieceAnimUp(workPos)
-              end
-            end
-          end
-          do
-            -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC116: LeaveBlock: unexpected jumping out IF_STMT
-
+      elseif entity:MonsterID() then
+        local pos = gridPos - entity:GridLocation():GetGridOffset()
+        local bodyArea = entity:BodyArea():GetArea()
+        for _, area in ipairs(bodyArea) do
+          local workPos = area + pos
+          local curPieceAnim = pieceSvc:GetPieceAnimation(workPos)
+          if curPieceAnim == "Down" then
+            pieceSvc:SetPieceAnimUp(workPos)
           end
         end
       end
@@ -93,9 +68,9 @@ PlayMarchForwardInstruction._DoWalk = function(self, TT, monsterEntity, walkResu
     while monsterEntity:HasGridMove() do
       YIELD(TT)
     end
-    local playSkillInstructionService = (self._world):GetService("PlaySkillInstruction")
+    local playSkillInstructionService = self._world:GetService("PlaySkillInstruction")
     local notRefreshPrism = true
-    for _,convertInfo in ipairs(walkRes:GetConvertInfo()) do
+    for _, convertInfo in ipairs(walkRes:GetConvertInfo()) do
       local pos = convertInfo[1]
       local elementType = convertInfo[2]
       playSkillInstructionService:GridConvert(TT, monsterEntity, pos, 0, elementType, notRefreshPrism)
@@ -105,34 +80,26 @@ PlayMarchForwardInstruction._DoWalk = function(self, TT, monsterEntity, walkResu
   if hasWalkPoint then
     boardSvcR:RefreshPiece(monsterEntity, false, true)
   end
-  do
-    if casterIsDead then
-      local sMonsterShowRender = (self._world):GetService("MonsterShowRender")
-      sMonsterShowRender:_DoOneMonsterDead(TT, monsterEntity)
-    end
-    if marchEnd then
-      local nt = NTMarchEnd:New()
-      local playBuffSvc = (self._world):GetService("PlayBuff")
-      playBuffSvc:PlayBuffView(TT, nt)
-    end
+  if casterIsDead then
+    local sMonsterShowRender = self._world:GetService("MonsterShowRender")
+    sMonsterShowRender:_DoOneMonsterDead(TT, monsterEntity)
+  end
+  if marchEnd then
+    local nt = NTMarchEnd:New()
+    local playBuffSvc = self._world:GetService("PlayBuff")
+    playBuffSvc:PlayBuffView(TT, nt)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayMarchForwardInstruction._PlayArrivePos = function(self, TT, walkRes)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayMarchForwardInstruction:_PlayArrivePos(TT, walkRes)
   local trapResList = walkRes:GetTrapSkillResults()
-  for _,v in ipairs(trapResList) do
-    local trapEntity = (self._world):GetEntityByID(v[1])
+  for _, v in ipairs(trapResList) do
+    local trapEntity = self._world:GetEntityByID(v[1])
     local trapSkillRes = v[2]
     local skillEffectResultContainer = trapSkillRes:GetResultContainer()
-    ;
-    (trapEntity:SkillRoutine()):SetResultContainer(skillEffectResultContainer)
-    local triggerEntity = (self._world):GetEntityByID(v[3])
-    local trapSvc = (self._world):GetService("TrapRender")
+    trapEntity:SkillRoutine():SetResultContainer(skillEffectResultContainer)
+    local triggerEntity = self._world:GetEntityByID(v[3])
+    local trapSvc = self._world:GetService("TrapRender")
     trapSvc:PlayTrapTriggerSkill(TT, trapEntity, false, triggerEntity)
   end
 end
-
-

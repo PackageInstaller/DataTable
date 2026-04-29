@@ -1,45 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_attach_status.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckAttachStatus", AINewNode)
 ActionCheckAttachStatus = ActionCheckAttachStatus
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckAttachStatus.Constructor = function(self)
-  -- function num : 0_0
+function ActionCheckAttachStatus:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionCheckAttachStatus.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local aiCmpt = (self.m_entityOwn):AI()
+function ActionCheckAttachStatus:OnUpdate()
+  local aiCmpt = self.m_entityOwn:AI()
   if aiCmpt:GetRuntimeData("AttachMonsterID") then
     return AINewNodeStatus.Success
-  else
-    if aiCmpt:GetRuntimeData("DetachBeginRunRound") then
-      local detachWaveIndex = self:GetRuntimeData("DetachBeginWaveIndex")
-      local waveIndex = self:GetWaveIndexNow()
-      if detachWaveIndex < waveIndex then
-        aiCmpt:SetRuntimeData("DetachBeginRunRound", nil)
-        return AINewNodeStatus.Failure
-      else
-        if aiCmpt:GetRuntimeData("DetachBeginRunRound") <= self:GetGameRountNow() then
-          aiCmpt:SetRuntimeData("DetachBeginRunRound", nil)
-          return AINewNodeStatus.Failure
-        else
-          return AINewNodeStatus.Success
-        end
-      end
+  elseif aiCmpt:GetRuntimeData("DetachBeginRunRound") then
+    local detachWaveIndex = self:GetRuntimeData("DetachBeginWaveIndex")
+    local waveIndex = self:GetWaveIndexNow()
+    if detachWaveIndex < waveIndex then
+      aiCmpt:SetRuntimeData("DetachBeginRunRound", nil)
+      return AINewNodeStatus.Failure
+    elseif aiCmpt:GetRuntimeData("DetachBeginRunRound") <= self:GetGameRountNow() then
+      aiCmpt:SetRuntimeData("DetachBeginRunRound", nil)
+      return AINewNodeStatus.Failure
     else
-      do
-        do return AINewNodeStatus.Failure end
-      end
+      return AINewNodeStatus.Success
     end
+  else
+    return AINewNodeStatus.Failure
   end
 end
-
-

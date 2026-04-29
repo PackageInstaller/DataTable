@@ -1,24 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_set_pet_force_chain.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicSetPetForceChain", BuffLogicBase)
 BuffLogicSetPetForceChain = BuffLogicSetPetForceChain
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicSetPetForceChain.Constructor = function(self, buffInstance, logicParam)
-  -- function num : 0_0
+function BuffLogicSetPetForceChain:Constructor(buffInstance, logicParam)
   self._value = logicParam.value or 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicSetPetForceChain.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
-  ;
-  (e:BuffComponent()):SetBuffValue("PetForceChain", self._value)
+function BuffLogicSetPetForceChain:DoLogic()
+  local e = self._buffInstance:Entity()
+  e:BuffComponent():SetBuffValue("PetForceChain", self._value)
 end
-
-

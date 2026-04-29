@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pet_moye_chain_skill_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PlayPetMoyeChainSkillInstruction", BaseInstruction)
 PlayPetMoyeChainSkillInstruction = PlayPetMoyeChainSkillInstruction
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPetMoyeChainSkillInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayPetMoyeChainSkillInstruction:Constructor(paramList)
   self._flyEffectID = tonumber(paramList.flyEffectID)
   self._flyTime = tonumber(paramList.flyTime) or 500
   self._flyTrace = tonumber(paramList.flyTrace) or 1
@@ -22,92 +15,85 @@ PlayPetMoyeChainSkillInstruction.Constructor = function(self, paramList)
   self._trapIDs = {}
   local trapIDs = paramList.trapIDs
   if trapIDs then
-    local array = (string.split)(trapIDs, "|")
-    for _,str in ipairs(array) do
-      (table.insert)(self._trapIDs, tonumber(str))
+    local array = string.split(trapIDs, "|")
+    for _, str in ipairs(array) do
+      table.insert(self._trapIDs, tonumber(str))
     end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetMoyeChainSkillInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayPetMoyeChainSkillInstruction:GetCacheResource()
   local t = {}
   if self._flyEffectID and self._flyEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._flyEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._flyEffectID].ResPath,
+      1
+    })
   end
-  if self._centerGridEffectID and self._centerGridEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._centerGridEffectID]).ResPath, 1})
+  if self._centerGridEffectID and 0 < self._centerGridEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._centerGridEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetMoyeChainSkillInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayPetMoyeChainSkillInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
-  if not skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DynamicCenterDamage) then
-    local resultArray = {}
-  end
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
+  local resultArray = skillEffectResultContainer:GetEffectResultsAsArray(SkillEffectType.DynamicCenterDamage) or {}
   local result = resultArray[1]
   if not result then
-    return 
+    return
   end
   local damageResults = result:GetDamageResults()
   local finalCenterPos = result:GetFinalCenter()
-  for _,damageResult in ipairs(damageResults) do
+  for _, damageResult in ipairs(damageResults) do
     local damageGridPos = damageResult:GetGridPos()
     if damageGridPos == finalCenterPos then
       local boardRenderSvc = world:GetService("BoardRender")
       local targetEntityID = damageResult:GetTargetID()
       local targetEntity = world:GetEntityByID(targetEntityID)
       local offset = Vector3(self._offsetX, self._offsetY, self._offsetZ)
-      local trajectoryBeginPos = (((casterEntity:View()):GetGameObject()).transform):TransformPoint(offset)
-      local trajectoryEndPos = (targetEntity:GridLocation()):Center()
+      local trajectoryBeginPos = casterEntity:View():GetGameObject().transform:TransformPoint(offset)
+      local trajectoryEndPos = targetEntity:GridLocation():Center()
       trajectoryEndPos = boardRenderSvc:GridPos2RenderPos(trajectoryEndPos)
       local trajectoryDir = trajectoryEndPos - trajectoryBeginPos
-      local trajectoryEffectEntity = (world:GetService("Effect")):CreatePositionEffect(self._flyEffectID, trajectoryBeginPos)
+      local trajectoryEffectEntity = world:GetService("Effect"):CreatePositionEffect(self._flyEffectID, trajectoryBeginPos)
       trajectoryEffectEntity:SetDirection(trajectoryDir)
       YIELD(TT, self._yieldTimeScale)
       local flyTime = self._flyTime / 1000
-      local trajectoryGO = (trajectoryEffectEntity:View()):GetGameObject()
-      ;
-      (trajectoryGO.transform):DOMove(trajectoryEndPos, flyTime, false)
+      local trajectoryGO = trajectoryEffectEntity:View():GetGameObject()
+      trajectoryGO.transform:DOMove(trajectoryEndPos, flyTime, false)
       YIELD(TT, self._yieldTime)
       local viewCenterPos = damageResult:GetGridPos()
       local effectService = world:GetService("Effect")
-      do
-        effectService:CreateCommonGridEffect(self._centerGridEffectID, viewCenterPos, casterEntity:GetRenderGridDirection())
-      end
+      effectService:CreateCommonGridEffect(self._centerGridEffectID, viewCenterPos, casterEntity:GetRenderGridDirection())
     end
   end
   local playSkillService = world:GetService("PlaySkill")
-  for _,damageResult in ipairs(damageResults) do
+  for _, damageResult in ipairs(damageResults) do
     local damageInfo = damageResult:GetDamageInfo(1)
     local targetEntityID = damageResult:GetTargetID()
     local targetEntity = world:GetEntityByID(targetEntityID)
     local damageGridPos = damageResult:GetGridPos()
-    local beHitParam = ((((((((HandleBeHitParam:New()):SetHandleBeHitParam_CasterEntity(casterEntity)):SetHandleBeHitParam_TargetEntity(targetEntity)):SetHandleBeHitParam_HitAnimName("Hit")):SetHandleBeHitParam_DamageInfo(damageInfo)):SetHandleBeHitParam_DamagePos(damageGridPos)):SetHandleBeHitParam_DeathClear(false)):SetHandleBeHitParam_IsFinalHit(false)):SetHandleBeHitParam_SkillID(skillEffectResultContainer:GetSkillID())
+    local beHitParam = HandleBeHitParam:New():SetHandleBeHitParam_CasterEntity(casterEntity):SetHandleBeHitParam_TargetEntity(targetEntity):SetHandleBeHitParam_HitAnimName("Hit"):SetHandleBeHitParam_DamageInfo(damageInfo):SetHandleBeHitParam_DamagePos(damageGridPos):SetHandleBeHitParam_DeathClear(false):SetHandleBeHitParam_IsFinalHit(false):SetHandleBeHitParam_SkillID(skillEffectResultContainer:GetSkillID())
     playSkillService:HandleBeHit(TT, beHitParam)
   end
   local chainAttackDataList = self:_GetChainAttackDataByEntityID(world, casterEntity:GetID())
   if chainAttackDataList then
-    for _,chainAttackDatas in pairs(chainAttackDataList) do
-      for _,chainAttackData in pairs(chainAttackDatas) do
+    for _, chainAttackDatas in pairs(chainAttackDataList) do
+      for _, chainAttackData in pairs(chainAttackDatas) do
         local skillEffectResults = chainAttackData:GetEffectResultsAsArray(SkillEffectType.SummonTrap)
         if skillEffectResults then
           for i = 1, #skillEffectResults do
             local summonTrapResult = skillEffectResults[i]
             local trapID = summonTrapResult:GetTrapID()
-            if (table.icontains)(self._trapIDs, trapID) then
-              ((GameGlobal.TaskManager)()):CoreGameStartTask(function()
-    -- function num : 0_2_0 , upvalues : self, TT, world, summonTrapResult
-    self:_ShowTrapFromSummonTrap(TT, world, summonTrapResult)
-  end
-)
+            if table.icontains(self._trapIDs, trapID) then
+              GameGlobal.TaskManager():CoreGameStartTask(function()
+                self:_ShowTrapFromSummonTrap(TT, world, summonTrapResult)
+              end)
             end
           end
         end
@@ -116,47 +102,35 @@ PlayPetMoyeChainSkillInstruction.DoInstruction = function(self, TT, casterEntity
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetMoyeChainSkillInstruction._ShowTrapFromSummonTrap = function(self, TT, world, summonTrapResult)
-  -- function num : 0_3 , upvalues : _ENV
+function PlayPetMoyeChainSkillInstruction:_ShowTrapFromSummonTrap(TT, world, summonTrapResult)
   local posSummon = summonTrapResult:GetPos()
   local dirSummon = summonTrapResult:GetDir()
   local trapID = summonTrapResult:GetTrapID()
   local entityIDList = summonTrapResult:GetTrapIDList()
   if #entityIDList == 0 then
-    return 
+    return
   end
-  for _,entityID in ipairs(entityIDList) do
+  for _, entityID in ipairs(entityIDList) do
     local trapEntity = world:GetEntityByID(entityID)
     if trapEntity then
       local cTrap = trapEntity:TrapID()
-      local trapIDMatch = not cTrap or cTrap:GetTrapID() == trapID
+      local trapIDMatch = cTrap and cTrap:GetTrapID() == trapID
       if cTrap and trapIDMatch and not trapEntity:HasDeadMark() then
         self:_ShowTrap(TT, world, trapEntity, posSummon, dirSummon)
       end
     end
   end
-  -- DECOMPILER ERROR: 3 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetMoyeChainSkillInstruction._ShowTrap = function(self, TT, world, trapEntity, posSummon)
-  -- function num : 0_4
+function PlayPetMoyeChainSkillInstruction:_ShowTrap(TT, world, trapEntity, posSummon)
   trapEntity:SetPosition(posSummon)
   local trapServiceRender = world:GetService("TrapRender")
   trapServiceRender:CreateSingleTrapRender(TT, trapEntity, true)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetMoyeChainSkillInstruction._GetChainAttackDataByEntityID = function(self, world, casterEntityID)
-  -- function num : 0_5 , upvalues : _ENV
+function PlayPetMoyeChainSkillInstruction:_GetChainAttackDataByEntityID(world, casterEntityID)
   local renderBoardEntity = world:GetRenderBoardEntity()
-  local chainAtkResCmpt = (renderBoardEntity:LogicResult()):GetLogicResult(LogicStepType.ChainAttack)
+  local chainAtkResCmpt = renderBoardEntity:LogicResult():GetLogicResult(LogicStepType.ChainAttack)
   local chainAttackData = chainAtkResCmpt:GetPetChainSkillDataList(casterEntityID)
   return chainAttackData
 end
-
-

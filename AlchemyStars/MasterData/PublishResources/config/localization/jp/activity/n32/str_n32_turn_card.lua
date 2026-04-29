@@ -1,8 +1,33 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/localization/jp/activity/n32/str_n32_turn_card.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local config = {str_n32_turn_card_day = "{1}日", str_n32_turn_card_hour = "{1}時間", str_n32_turn_card_minus = "{1}分", str_n32_turn_card_less_one_minus = "<1分", str_n32_turn_card_activity_end = "イベントは終了しました", str_n32_turn_card_activity_remain_time = "イベント残り時間：", str_n32_turn_card_main_title = "Ms.ロトは休まない？", str_n32_turn_card_rule_description = "イベント紹介", str_n32_turn_card_tab_title_award = "Ms.ロトの宝箱", str_n32_turn_card_tab_title_mission = "Ms.ロトの依頼", str_n32_turn_card_receive = "受取", str_n32_turn_card_jump = "向かう", str_n32_turn_card_daily_mission = "デイリー任務", str_n32_turn_card_cumulative_task = "累計任務", str_n32_turn_card_refresh_time = "タイマー更新まで：{1}", str_n32_turn_card_prize_pool = "商品一覧", str_n32_turn_card_prize1 = "特等賞", str_n32_turn_card_prize2 = "1等賞", str_n32_turn_card_prize3 = "2等賞", str_n32_turn_card_award_description = "1．イベント期間中、Ms.ロトのコイン1枚につき、<size=32><color=#f08c58>マスを1つ開けます</color></size>。<size=32><color=#f08c58>完全なマークが出現</color></size>すると対応する報酬を獲得できます。報酬の詳細は【報酬一覧】で確認してください。\n2．<size=32><color=#f08c58>Ms.ロトのコイン</color></size>は<size=32><color=#f08c58>【Ms.ロトの依頼】</color></size>で任務をクリアすると獲得できます。", str_n32_turn_card_mission_description = "1．イベント期間中、<size=32><color=#f08c58>デイリー任務</color></size>や<size=32><color=#f08c58>累計任務</color></size>をクリアすると<size=32><color=#f08c58>Ms.ロトのコイン</color></size>を獲得できます。Ms.ロトのコインは【Ms.ロトの宝箱】でマスを開き報酬を受け取るのに使用します。\n2．デイリー任務は<size=32><color=#f08c58>毎日05:00</color></size>に更新されます。更新時にクリアしていない任務の進行度は保存されません。", str_n32_turn_card_item_less = "アイテムが足りません", str_n32_turn_card_remain = "残り：{1}", str_n32_turn_card_process = "進行度：{1}", str_n32_turn_card_daily_mission_refresh = "デイリー任務が更新されました", str_n32_turn_card_main_title_n37 = "ブラインドボックス！", str_n32_turn_card_tab_title_award_n37 = "謎の商品", str_n32_turn_card_tab_title_mission_n37 = "追加手当", str_n32_turn_card_award_description_n37 = "1．イベント期間中、プレイチケット1枚につき、<size=32><color=#f08c58>マスを1つ開けます</color></size>。<size=32><color=#f08c58>完全なマークが出現</color></size>すると対応する報酬を獲得できます。報酬の詳細は【報酬一覧】で確認してください。\n2．<size=32><color=#f08c58>プレイチケット</color></size>は<size=32><color=#f08c58>【追加手当】</color></size>で任務をクリアすると獲得できます。", str_n32_turn_card_mission_description_n37 = "1．イベント期間中、<size=32><color=#f08c58>デイリー任務</color></size>や<size=32><color=#f08c58>累計任務</color></size>をクリアすると<size=32><color=#f08c58>プレイチケット</color></size>を獲得できます。プレイチケットは【謎の商品】でマスを開き報酬を受け取るのに使用します。\n2．デイリー任務は<size=32><color=#f08c58>毎日05:00</color></size>に更新されます。更新時にクリアしていない任務の進行度は保存されません。"}
+local config = {
+  str_n32_turn_card_day = "{1}日",
+  str_n32_turn_card_hour = "{1}時間",
+  str_n32_turn_card_minus = "{1}分",
+  str_n32_turn_card_less_one_minus = "<1分",
+  str_n32_turn_card_activity_end = "イベントは終了しました",
+  str_n32_turn_card_activity_remain_time = "イベント残り時間：",
+  str_n32_turn_card_main_title = "Ms.ロトは休まない？",
+  str_n32_turn_card_rule_description = "イベント紹介",
+  str_n32_turn_card_tab_title_award = "Ms.ロトの宝箱",
+  str_n32_turn_card_tab_title_mission = "Ms.ロトの依頼",
+  str_n32_turn_card_receive = "受取",
+  str_n32_turn_card_jump = "向かう",
+  str_n32_turn_card_daily_mission = "デイリー任務",
+  str_n32_turn_card_cumulative_task = "累計任務",
+  str_n32_turn_card_refresh_time = "タイマー更新まで：{1}",
+  str_n32_turn_card_prize_pool = "商品一覧",
+  str_n32_turn_card_prize1 = "特等賞",
+  str_n32_turn_card_prize2 = "1等賞",
+  str_n32_turn_card_prize3 = "2等賞",
+  str_n32_turn_card_award_description = "1．イベント期間中、Ms.ロトのコイン1枚につき、<size=32><color=#f08c58>マスを1つ開けます</color></size>。<size=32><color=#f08c58>完全なマークが出現</color></size>すると対応する報酬を獲得できます。報酬の詳細は【報酬一覧】で確認してください。\n2．<size=32><color=#f08c58>Ms.ロトのコイン</color></size>は<size=32><color=#f08c58>【Ms.ロトの依頼】</color></size>で任務をクリアすると獲得できます。",
+  str_n32_turn_card_mission_description = "1．イベント期間中、<size=32><color=#f08c58>デイリー任務</color></size>や<size=32><color=#f08c58>累計任務</color></size>をクリアすると<size=32><color=#f08c58>Ms.ロトのコイン</color></size>を獲得できます。Ms.ロトのコインは【Ms.ロトの宝箱】でマスを開き報酬を受け取るのに使用します。\n2．デイリー任務は<size=32><color=#f08c58>毎日05:00</color></size>に更新されます。更新時にクリアしていない任務の進行度は保存されません。",
+  str_n32_turn_card_item_less = "アイテムが足りません",
+  str_n32_turn_card_remain = "残り：{1}",
+  str_n32_turn_card_process = "進行度：{1}",
+  str_n32_turn_card_daily_mission_refresh = "デイリー任務が更新されました",
+  str_n32_turn_card_main_title_n37 = "ブラインドボックス！",
+  str_n32_turn_card_tab_title_award_n37 = "謎の商品",
+  str_n32_turn_card_tab_title_mission_n37 = "追加手当",
+  str_n32_turn_card_award_description_n37 = "1．イベント期間中、プレイチケット1枚につき、<size=32><color=#f08c58>マスを1つ開けます</color></size>。<size=32><color=#f08c58>完全なマークが出現</color></size>すると対応する報酬を獲得できます。報酬の詳細は【報酬一覧】で確認してください。\n2．<size=32><color=#f08c58>プレイチケット</color></size>は<size=32><color=#f08c58>【追加手当】</color></size>で任務をクリアすると獲得できます。",
+  str_n32_turn_card_mission_description_n37 = "1．イベント期間中、<size=32><color=#f08c58>デイリー任務</color></size>や<size=32><color=#f08c58>累計任務</color></size>をクリアすると<size=32><color=#f08c58>プレイチケット</color></size>を獲得できます。プレイチケットは【謎の商品】でマスを開き報酬を受け取るのに使用します。\n2．デイリー任務は<size=32><color=#f08c58>毎日05:00</color></size>に更新されます。更新時にクリアしていない任務の進行度は保存されません。"
+}
 return config
-

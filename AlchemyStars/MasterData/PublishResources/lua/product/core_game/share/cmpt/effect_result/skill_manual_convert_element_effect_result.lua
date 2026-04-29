@@ -1,37 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/skill_manual_convert_element_effect_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillManualConvertGridElementEffectResult", SkillEffectResultBase)
 SkillManualConvertGridElementEffectResult = SkillManualConvertGridElementEffectResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillManualConvertGridElementEffectResult.Constructor = function(self, gridArray, targetElementType)
-  -- function num : 0_0
+function SkillManualConvertGridElementEffectResult:Constructor(gridArray, targetElementType)
   self._gridArray = gridArray
   self._targetElementType = targetElementType
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillManualConvertGridElementEffectResult.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillManualConvertGridElementEffectResult:GetEffectType()
   return SkillEffectType.ManualConvert
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillManualConvertGridElementEffectResult.GetTargetGridArray = function(self)
-  -- function num : 0_2
+function SkillManualConvertGridElementEffectResult:GetTargetGridArray()
   return self._gridArray
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillManualConvertGridElementEffectResult.GetTargetElementType = function(self)
-  -- function num : 0_3
+function SkillManualConvertGridElementEffectResult:GetTargetElementType()
   return self._targetElementType
 end
-
-

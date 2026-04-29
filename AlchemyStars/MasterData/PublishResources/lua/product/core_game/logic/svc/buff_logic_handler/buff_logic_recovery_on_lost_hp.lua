@@ -1,101 +1,74 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_recovery_on_lost_hp.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("buff_logic_base")
 _class("BuffLogicRecoveryOnLostHP", BuffLogicBase)
 BuffLogicRecoveryOnLostHP = BuffLogicRecoveryOnLostHP
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRecoveryOnLostHP.Constructor = function(self, instance, param)
-  -- function num : 0_0
+function BuffLogicRecoveryOnLostHP:Constructor(instance, param)
   self._mulValue = param.mulValue or 0
   self._maxRate = param.maxRate or 0
   self._onlyOwner = param.onlyOwner
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRecoveryOnLostHP.DoLogic = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local e = (self._buffInstance):Entity()
-  local matchType = (self._world):MatchType()
+function BuffLogicRecoveryOnLostHP:DoLogic()
+  local e = self._buffInstance:Entity()
+  local matchType = self._world:MatchType()
   if not e:HasPetPstID() then
-    return 
+    return
   end
-  local teamEntity = ((e:Pet()):GetOwnerTeamEntity())
-  local casterEntity = nil
+  local teamEntity = e:Pet():GetOwnerTeamEntity()
+  local casterEntity
   if not self._onlyOwner then
-    if not ((self._buffInstance):Context()).casterEntity then
-      return 
+    if not self._buffInstance:Context().casterEntity then
+      return
     end
-    casterEntity = ((self._buffInstance):Context()).casterEntity
+    casterEntity = self._buffInstance:Context().casterEntity
   else
     casterEntity = e
   end
-  if teamEntity and (teamEntity:Attributes()):GetAttribute("BuffForbidCure") then
-    return 
-  else
-    if (e:Attributes()):GetAttribute("BuffForbidCure") then
-      return 
-    end
+  if teamEntity and teamEntity:Attributes():GetAttribute("BuffForbidCure") then
+    return
+  elseif e:Attributes():GetAttribute("BuffForbidCure") then
+    return
   end
   local addHPTargetEntity = e
   if e:HasPet() then
-    addHPTargetEntity = (e:Pet()):GetOwnerTeamEntity()
+    addHPTargetEntity = e:Pet():GetOwnerTeamEntity()
   end
   local add_value = 0
   if self._onlyOwner then
-    local maxHP = nil
-    add_value = self:CalcOnlyOwnerAddHP(e)
+    local maxHP
+    add_value, maxHP = self:CalcOnlyOwnerAddHP(e)
     addHPTargetEntity = e
-    local max = (math.floor)(maxHP * self._maxRate)
-    add_value = (math.min)(max, add_value)
+    local max = math.floor(maxHP * self._maxRate)
+    add_value = math.min(max, add_value)
   else
-    do
-      -- DECOMPILER ERROR at PC84: Overwrote pending register: R7 in 'AssignReg'
-
-      if matchType ~= maxHP.MT_Maze and (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
-        e = teamEntity
-        local attrCmpt = teamEntity:Attributes()
-        local max_hp = attrCmpt:CalcMaxHp()
-        local cur_hp = (teamEntity:Attributes()):GetCurrentHP()
-        add_value = (math.floor)((max_hp - cur_hp) * self._mulValue)
-      else
-        do
-          local globalPetEntities = (teamEntity:Team()):GetTeamPetEntities()
-          for _,pet in ipairs(globalPetEntities) do
-            local cAttribute = pet:Attributes()
-            local max_hp = cAttribute:CalcMaxHp()
-            local cur_hp = cAttribute:GetCurrentHP()
-            add_value = add_value + (math.floor)((max_hp - cur_hp) * self._mulValue)
-          end
-          do
-            do
-              local max = (math.floor)((casterEntity:Attributes()):CalcMaxHp() * self._maxRate)
-              add_value = (math.min)(max, add_value)
-              local calcDamage = (self._world):GetService("CalcDamage")
-              local damageInfo = DamageInfo:New(add_value, DamageType.Recover)
-              calcDamage:AddTargetHP(addHPTargetEntity:GetID(), damageInfo)
-              local res = BuffResultRecoveryOnLostHP:New(damageInfo)
-              return res
-            end
-          end
-        end
+    if matchType ~= MatchType.MT_Maze and self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) ~= MatchType.MT_SeasonMaze then
+      e = teamEntity
+      local attrCmpt = teamEntity:Attributes()
+      local max_hp = attrCmpt:CalcMaxHp()
+      local cur_hp = teamEntity:Attributes():GetCurrentHP()
+      add_value = math.floor((max_hp - cur_hp) * self._mulValue)
+    else
+      local globalPetEntities = teamEntity:Team():GetTeamPetEntities()
+      for _, pet in ipairs(globalPetEntities) do
+        local cAttribute = pet:Attributes()
+        local max_hp = cAttribute:CalcMaxHp()
+        local cur_hp = cAttribute:GetCurrentHP()
+        add_value = add_value + math.floor((max_hp - cur_hp) * self._mulValue)
       end
     end
+    local max = math.floor(casterEntity:Attributes():CalcMaxHp() * self._maxRate)
+    add_value = math.min(max, add_value)
   end
+  local calcDamage = self._world:GetService("CalcDamage")
+  local damageInfo = DamageInfo:New(add_value, DamageType.Recover)
+  calcDamage:AddTargetHP(addHPTargetEntity:GetID(), damageInfo)
+  local res = BuffResultRecoveryOnLostHP:New(damageInfo)
+  return res
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffLogicRecoveryOnLostHP.CalcOnlyOwnerAddHP = function(self, casterEntity)
-  -- function num : 0_2 , upvalues : _ENV
-  local battleSvc = (self._world):GetService("Battle")
+function BuffLogicRecoveryOnLostHP:CalcOnlyOwnerAddHP(casterEntity)
+  local battleSvc = self._world:GetService("Battle")
   local curHP, maxHP = battleSvc:GetCasterHP(casterEntity)
-  local add_value = (math.floor)((maxHP - curHP) * self._mulValue)
+  local add_value = math.floor((maxHP - curHP) * self._mulValue)
   return add_value, maxHP
 end
-
-

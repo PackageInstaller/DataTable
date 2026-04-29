@@ -1,83 +1,51 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/SecondAnniversary/ui_n31_second_snniversary_side_enter.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_side_enter_item_campaign")
 _class("UIN31SecondAnniversarySideEnter", UISideEnterItem_Campaign)
 UIN31SecondAnniversarySideEnter = UIN31SecondAnniversarySideEnter
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN31SecondAnniversarySideEnter.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN31SecondAnniversarySideEnter:OnShow(uiParams)
   self:_GetComponents()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversarySideEnter._GetComponents = function(self)
-  -- function num : 0_1
+function UIN31SecondAnniversarySideEnter:_GetComponents()
   self._txtTitle = self:GetUIComponent("UILocalizationText", "txtTitle")
   self._bg = self:GetUIComponent("RawImageLoader", "bg")
   self._red = self:GetGameObject("red")
   self._new = self:GetGameObject("new")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversarySideEnter.BtnOnClick = function(self, go)
-  -- function num : 0_2 , upvalues : _ENV
-  local open = (self._campaign):CheckCampaignOpen()
+function UIN31SecondAnniversarySideEnter:BtnOnClick(go)
+  local open = self._campaign:CheckCampaignOpen()
   if not open then
-    (self.root):SetActive(open)
-    ;
-    (self._setShowCallback)(open)
-    ;
-    (ToastManager.ShowToast)((StringTable.Get)("str_n31_second_anniversary_sign_over"))
-    return 
+    self.root:SetActive(open)
+    self._setShowCallback(open)
+    ToastManager.ShowToast(StringTable.Get("str_n31_second_anniversary_sign_over"))
+    return
   end
   self:ShowDialog("UIN31SecondAnniversaryController")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversarySideEnter.OnSideEnterLoad = function(self, TT, setShowCallback, setNewRedCallback)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN31SecondAnniversarySideEnter:OnSideEnterLoad(TT, setShowCallback, setNewRedCallback)
   self._setShowCallback = setShowCallback
   self._setNewRedCallback = setNewRedCallback
   self.root = self:GetGameObject()
   self:Lock("UIN31SecondAnniversarySideEnter")
   local res = AsyncRequestRes:New()
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N31_ANNIVERSARY)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   self:UnLock("UIN31SecondAnniversarySideEnter")
   if res and not res:GetSucc() then
-    (self.root):SetActive(false)
-    ;
-    (self._setShowCallback)(false)
-    return 
+    self.root:SetActive(false)
+    self._setShowCallback(false)
+    return
   end
-  ;
-  (self.root):SetActive(true)
-  ;
-  (self._setShowCallback)(true)
-  ;
-  (self._red):SetActive(false)
-  ;
-  (self._setNewRedCallback)(false, false)
+  self.root:SetActive(true)
+  self._setShowCallback(true)
+  self._red:SetActive(false)
+  self._setNewRedCallback(false, false)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN31SecondAnniversarySideEnter.GetSideEnterRawImage = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_campaign)[(self._campaign)._id]
-  if cfg then
-    return cfg.SideEnterIcon
-  end
+function UIN31SecondAnniversarySideEnter:GetSideEnterRawImage()
+  local cfg = Cfg.cfg_campaign[self._campaign._id]
+  return cfg and cfg.SideEnterIcon
 end
-
-

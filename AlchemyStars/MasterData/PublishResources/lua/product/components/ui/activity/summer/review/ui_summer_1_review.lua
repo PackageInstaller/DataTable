@@ -1,112 +1,77 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/review/ui_summer_1_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummer1Review", UIController)
 UISummer1Review = UISummer1Review
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummer1Review.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UISummer1Review:LoadDataOnEnter(TT, res, uiParams)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N3, ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_LINE_MISSION, ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_STAGE2_LINE_MISSION, ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_POINT_PROGRESS)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_REVIEW_N3, ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_LINE_MISSION, ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_STAGE2_LINE_MISSION, ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_POINT_PROGRESS)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
-    return 
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    return
   end
   if not self._campaign then
-    return 
+    return
   end
-  self._localProcess = (self._campaign):GetLocalProcess()
+  self._localProcess = self._campaign:GetLocalProcess()
   if not self._localProcess then
-    return 
+    return
   end
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
-  self._lineMissionComponent = (self._localProcess):GetComponent(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_LINE_MISSION)
-  self._lineMissionCompInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_LINE_MISSION)
-  self._hardLineMissionComponent = (self._localProcess):GetComponent(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_STAGE2_LINE_MISSION)
-  self._hardLineMissionCompInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_STAGE2_LINE_MISSION)
-  self._pointProgressComponent = (self._localProcess):GetComponent(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_POINT_PROGRESS)
-  self._pointProgressCompInfo = (self._localProcess):GetComponentInfo(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_POINT_PROGRESS)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
+  self._lineMissionComponent = self._localProcess:GetComponent(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_LINE_MISSION)
+  self._lineMissionCompInfo = self._localProcess:GetComponentInfo(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_LINE_MISSION)
+  self._hardLineMissionComponent = self._localProcess:GetComponent(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_STAGE2_LINE_MISSION)
+  self._hardLineMissionCompInfo = self._localProcess:GetComponentInfo(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_STAGE2_LINE_MISSION)
+  self._pointProgressComponent = self._localProcess:GetComponent(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_POINT_PROGRESS)
+  self._pointProgressCompInfo = self._localProcess:GetComponentInfo(ECampaignReviewN3ComponentID.ECAMPAIGN_REVIEW_ReviewN3_POINT_PROGRESS)
   self._isHardLevelOpen = false
-  if self._hardLineMissionComponent and (self._hardLineMissionComponent):ComponentIsOpen() then
+  if self._hardLineMissionComponent and self._hardLineMissionComponent:ComponentIsOpen() then
     self._isHardLevelOpen = true
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UISummer1Review:OnShow(uiParams)
   self._btns = self:GetGameObject("Btns")
   self._mask = self:GetGameObject("Mask")
-  ;
-  (self._btns):SetActive(true)
-  ;
-  (self._mask):SetActive(false)
+  self._btns:SetActive(true)
+  self._mask:SetActive(false)
   self._redStageNormal = self:GetGameObject("redStageNormal")
   self._newStageHard = self:GetGameObject("newStageHard")
   local btns = self:GetUIComponent("UISelectObjectPath", "btns")
   self._backBtns = btns:SpawnObject("UICommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:PlayAnimOut(function()
-      -- function num : 0_1_0_0 , upvalues : self, _ENV
       self:SwitchState(UIStateType.UIActivityReview)
-    end
-)
-  end
-, nil, nil, nil, function()
-    -- function num : 0_1_1 , upvalues : self
+    end)
+  end, nil, nil, nil, function()
     self:HideBtnOnClick()
-  end
-)
+  end)
   self._btnStageHard = self:GetUIComponent("Button", "btnStageHard")
   self._imgStageHard = self:GetGameObject("imgStageHard")
   self._imgStageHardGray = self:GetGameObject("imgStageHardGray")
   local s = self:GetUIComponent("UISelectObjectPath", "ItemInfo")
   self._tips = s:SpawnObject("UISelectInfo")
-  ;
-  (self._tips):SetType(3)
-  local detailObj = (self._tips):GetG3CustomPool()
-  ;
-  (detailObj.dynamicInfoOfEngine):SetObjectName("UISummer1SelectInfoReview.prefab")
+  self._tips:SetType(3)
+  local detailObj = self._tips:GetG3CustomPool()
+  detailObj.dynamicInfoOfEngine:SetObjectName("UISummer1SelectInfoReview.prefab")
   self._selectDetail = detailObj:SpawnObject("UISummer1SelectInfoReview")
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._tips)._selectInfo).sizeDelta = Vector2(550, 200)
-  ;
-  (self._tips):GetOffset()
-  local go = (self._tips):GetGameObject("g3")
-  local tran = (go.transform):Find("bg3")
-  ;
-  (tran.gameObject):SetActive(false)
+  self._tips._selectInfo.sizeDelta = Vector2(550, 200)
+  self._tips:GetOffset()
+  local go = self._tips:GetGameObject("g3")
+  local tran = go.transform:Find("bg3")
+  tran.gameObject:SetActive(false)
   self:RefreshRedAndNew()
   self:RefreshBtnStatus()
   self:RefreshRewards()
   self._shot = self:GetUIComponent("RawImage", "shot")
   self._anim = self:GetGameObject("anim")
   self._rt = uiParams[1]
-  ;
-  (self._anim):SetActive(self._rt ~= nil)
-  -- DECOMPILER ERROR at PC126: Confused about usage of register: R7 in 'UnsetPending'
-
+  self._anim:SetActive(self._rt ~= nil)
   if self._rt then
-    (self._shot).texture = self._rt
+    self._shot.texture = self._rt
   end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.HideBtnOnClick = function(self)
-  -- function num : 0_2
+function UISummer1Review:HideBtnOnClick()
   local anim = self:GetGameObject("anim")
   anim:SetActive(false)
   local btns = self:GetGameObject("Btns")
@@ -115,10 +80,7 @@ UISummer1Review.HideBtnOnClick = function(self)
   showBtn:SetActive(true)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.ShowBtnOnClick = function(self)
-  -- function num : 0_3
+function UISummer1Review:ShowBtnOnClick()
   local anim = self:GetGameObject("anim")
   anim:SetActive(true)
   local btns = self:GetGameObject("Btns")
@@ -127,46 +89,36 @@ UISummer1Review.ShowBtnOnClick = function(self)
   showBtn:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.OnHide = function(self)
-  -- function num : 0_4
+function UISummer1Review:OnHide()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.ShowItemInfo = function(self, roleAsset, pos)
-  -- function num : 0_5
+function UISummer1Review:ShowItemInfo(roleAsset, pos)
   if self._tips then
-    (self._selectDetail):SetData(roleAsset)
-    ;
-    (self._tips):OnlyShow(pos)
+    self._selectDetail:SetData(roleAsset)
+    self._tips:OnlyShow(pos)
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.RefreshRewards = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISummer1Review:RefreshRewards()
   if not self._pointProgressCompInfo then
-    return 
+    return
   end
-  local currentProgress = (self._pointProgressCompInfo).m_current_progress
-  local totalProgress = (self._pointProgressCompInfo).m_total_progress
+  local currentProgress = self._pointProgressCompInfo.m_current_progress
+  local totalProgress = self._pointProgressCompInfo.m_total_progress
   local process = currentProgress / totalProgress
-  local isProgressGet = function(p)
-    -- function num : 0_6_0 , upvalues : self
-    for i = 1, #(self._pointProgressCompInfo).m_received_progress do
-      if ((self._pointProgressCompInfo).m_received_progress)[i] == p then
+  
+  local function isProgressGet(p)
+    for i = 1, #self._pointProgressCompInfo.m_received_progress do
+      if self._pointProgressCompInfo.m_received_progress[i] == p then
         return true
       end
     end
     return false
   end
-
+  
   local datas = {}
   local hasRewards = false
-  for p,rewards in pairs((self._pointProgressCompInfo).m_progress_rewards) do
+  for p, rewards in pairs(self._pointProgressCompInfo.m_progress_rewards) do
     local data = {}
     data.progress = p
     data.rewards = rewards
@@ -183,263 +135,183 @@ UISummer1Review.RefreshRewards = function(self)
     end
     datas[#datas + 1] = data
   end
-  ;
-  (table.sort)(datas, function(a, b)
-    -- function num : 0_6_1
-    do return a.progress < b.progress end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  table.sort(datas, function(a, b)
+    return a.progress < b.progress
+  end)
   local isFirst = true
   self._currentRewardData = nil
   for i = 1, #datas do
-    if (datas[i]).status == 2 and isFirst then
+    if datas[i].status == 2 and isFirst then
       isFirst = false
       self._currentRewardData = datas[i]
     end
   end
   if not self._currentRewardData then
-    if totalProgress <= currentProgress then
+    if currentProgress >= totalProgress then
       self._currentRewardData = datas[#datas]
     else
       for i = 1, #datas do
-        if (datas[i]).status == 3 then
+        if datas[i].status == 3 then
           self._currentRewardData = datas[i]
           break
         end
       end
     end
   end
-  do
-    local canGetGo = self:GetGameObject("CanGet")
-    local hasGetGo = self:GetGameObject("HasGet")
-    local noGetGo = self:GetGameObject("NoGet")
-    canGetGo:SetActive(false)
-    hasGetGo:SetActive(false)
-    noGetGo:SetActive(false)
-    if hasRewards then
-      canGetGo:SetActive(true)
-    else
-      if totalProgress <= currentProgress then
-        hasGetGo:SetActive(true)
-      else
-        noGetGo:SetActive(true)
-      end
-    end
-    local processStr = (math.floor)(100 * process)
-    local percentLabel = self:GetUIComponent("UILocalizationText", "Percent")
-    percentLabel:SetText(processStr .. "%")
-    local progressBar = self:GetUIComponent("Slider", "Progress")
-    progressBar.value = process
-    local rewardLoader = self:GetUIComponent("UISelectObjectPath", "Rewards")
-    rewardLoader:SpawnObjects("UIXH1Summer1ProcessItemReview", #datas)
-    local items = rewardLoader:GetAllSpawnList()
-    for i = 1, #items do
-      (items[i]):SetData(self, datas[i])
-    end
-    if self._currentRewardData and (self._currentRewardData).rewards ~= nil and #(self._currentRewardData).rewards > 0 then
-      local roleAsset = ((self._currentRewardData).rewards)[1]
-      local cfg = (Cfg.cfg_item)[roleAsset.assetid]
-      local iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
-      iconLoader:LoadImage(cfg.Icon)
-      local countLabel = self:GetUIComponent("UILocalizationText", "Count")
-      countLabel:SetText(roleAsset.count)
-    end
-    do
-      self._datas = datas
-    end
+  local canGetGo = self:GetGameObject("CanGet")
+  local hasGetGo = self:GetGameObject("HasGet")
+  local noGetGo = self:GetGameObject("NoGet")
+  canGetGo:SetActive(false)
+  hasGetGo:SetActive(false)
+  noGetGo:SetActive(false)
+  if hasRewards then
+    canGetGo:SetActive(true)
+  elseif currentProgress >= totalProgress then
+    hasGetGo:SetActive(true)
+  else
+    noGetGo:SetActive(true)
   end
+  local processStr = math.floor(100 * process)
+  local percentLabel = self:GetUIComponent("UILocalizationText", "Percent")
+  percentLabel:SetText(processStr .. "%")
+  local progressBar = self:GetUIComponent("Slider", "Progress")
+  progressBar.value = process
+  local rewardLoader = self:GetUIComponent("UISelectObjectPath", "Rewards")
+  rewardLoader:SpawnObjects("UIXH1Summer1ProcessItemReview", #datas)
+  local items = rewardLoader:GetAllSpawnList()
+  for i = 1, #items do
+    items[i]:SetData(self, datas[i])
+  end
+  if self._currentRewardData and self._currentRewardData.rewards ~= nil and 0 < #self._currentRewardData.rewards then
+    local roleAsset = self._currentRewardData.rewards[1]
+    local cfg = Cfg.cfg_item[roleAsset.assetid]
+    local iconLoader = self:GetUIComponent("RawImageLoader", "Icon")
+    iconLoader:LoadImage(cfg.Icon)
+    local countLabel = self:GetUIComponent("UILocalizationText", "Count")
+    countLabel:SetText(roleAsset.count)
+  end
+  self._datas = datas
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.GetReward = function(self, progress)
-  -- function num : 0_7
+function UISummer1Review:GetReward(progress)
   self:StartTask(self.GetRewardCoro, self, progress)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.GetRewardCoro = function(self, TT, progress)
-  -- function num : 0_8 , upvalues : _ENV
+function UISummer1Review:GetRewardCoro(TT, progress)
   self:Lock("UISummer1Review_GetRewardCoro")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  local rewards = (self._pointProgressComponent):HandleReceiveReward(TT, res, progress)
-  if rewards and #rewards > 0 then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+  local rewards = self._pointProgressComponent:HandleReceiveReward(TT, res, progress)
+  if rewards and 0 < #rewards then
+    UIActivityHelper.ShowUIGetRewards(rewards)
     self:RefreshRewards()
   end
   self:UnLock("UISummer1Review_GetRewardCoro")
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.RewardBtnOnClick = function(self)
-  -- function num : 0_9
+function UISummer1Review:RewardBtnOnClick()
   self:ShowDialog("UISummer1RewardDetailRewivw", self._datas, function(progress)
-    -- function num : 0_9_0 , upvalues : self
     self:GetReward(progress)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.RefreshRedAndNew = function(self)
-  -- function num : 0_10
-  (self._redStageNormal):SetActive(false)
+function UISummer1Review:RefreshRedAndNew()
+  self._redStageNormal:SetActive(false)
   if self._isHardLevelOpen then
-    (self._newStageHard):SetActive(self:GetNewFlagStatus(1))
+    self._newStageHard:SetActive(self:GetNewFlagStatus(1))
   else
-    ;
-    (self._newStageHard):SetActive(false)
+    self._newStageHard:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.RefreshBtnStatus = function(self)
-  -- function num : 0_11
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._btnStageHard).interactable = self._isHardLevelOpen
-  ;
-  (self._imgStageHard):SetActive(self._isHardLevelOpen)
-  ;
-  (self._imgStageHardGray):SetActive(not self._isHardLevelOpen)
+function UISummer1Review:RefreshBtnStatus()
+  self._btnStageHard.interactable = self._isHardLevelOpen
+  self._imgStageHard:SetActive(self._isHardLevelOpen)
+  self._imgStageHardGray:SetActive(not self._isHardLevelOpen)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.PlayAnimOut = function(self, callback)
-  -- function num : 0_12 , upvalues : _ENV
+function UISummer1Review:PlayAnimOut(callback)
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, _ENV, callback
     self:Lock("UISummer1PlayAnimOut")
-    ;
-    (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.Summer1SeaWave)
+    AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.Summer1SeaWave)
     self:UnLock("UISummer1PlayAnimOut")
     if callback then
       callback()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.ShowHideUI = function(self)
-  -- function num : 0_13
+function UISummer1Review:ShowHideUI()
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self
     self:Lock("UISummer1ShowHideUI")
-    ;
-    (self._btns):SetActive(false)
-    ;
-    (self._mask):SetActive(true)
+    self._btns:SetActive(false)
+    self._mask:SetActive(true)
     self:UnLock("UISummer1ShowHideUI")
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.MaskOnClick = function(self)
-  -- function num : 0_14
-  (self._btns):SetActive(true)
-  ;
-  (self._mask):SetActive(false)
+function UISummer1Review:MaskOnClick()
+  self._btns:SetActive(true)
+  self._mask:SetActive(false)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.btnStageHardOnClick = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UISummer1Review:btnStageHardOnClick()
   if not self._isHardLevelOpen then
-    (ToastManager.ShowToast)((StringTable.Get)("str_summer_review_hard_level_unopen"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_summer_review_hard_level_unopen"))
+    return
   end
   self:SetNewFlagStatus(1, false)
-  ;
-  (self._newStageHard):SetActive(false)
+  self._newStageHard:SetActive(false)
   self:SwitchState(UIStateType.UIXH1HardLevelReview)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.btnStageNormalOnClick = function(self)
-  -- function num : 0_16 , upvalues : _ENV
+function UISummer1Review:btnStageNormalOnClick()
   self:SwitchState(UIStateType.UIXH1SimpleLevelReview)
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.IconOnClick = function(self)
-  -- function num : 0_17
+function UISummer1Review:IconOnClick()
   if not self._currentRewardData then
-    return 
+    return
   end
-  local roleAsset = ((self._currentRewardData).rewards)[1]
+  local roleAsset = self._currentRewardData.rewards[1]
   local icon = self:GetGameObject("Icon")
-  self:ShowItemInfo(roleAsset, (icon.transform).position)
+  self:ShowItemInfo(roleAsset, icon.transform.position)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.CanGetOnClick = function(self)
-  -- function num : 0_18
+function UISummer1Review:CanGetOnClick()
   if not self._currentRewardData then
-    return 
+    return
   end
-  self:GetReward((self._currentRewardData).progress)
+  self:GetReward(self._currentRewardData.progress)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.GetNewFlagKey = function(self, id)
-  -- function num : 0_19 , upvalues : _ENV
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UISummer1Review:GetNewFlagKey(id)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local pstId = roleModule:GetPstId()
   local key = pstId .. "ACTIVITY_N3_REVIEW_NEW_FLAG" .. id
   return key
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.GetNewFlagStatus = function(self, id)
-  -- function num : 0_20 , upvalues : _ENV
+function UISummer1Review:GetNewFlagStatus(id)
   local key = self:GetNewFlagKey(id)
-  if not ((UnityEngine.PlayerPrefs).HasKey)(key) then
+  if not UnityEngine.PlayerPrefs.HasKey(key) then
     return true
   end
-  local value = ((UnityEngine.PlayerPrefs).GetInt)(key)
-  do return value == 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  local value = UnityEngine.PlayerPrefs.GetInt(key)
+  return value == 0
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.SetNewFlagStatus = function(self, id, status)
-  -- function num : 0_21 , upvalues : _ENV
+function UISummer1Review:SetNewFlagStatus(id, status)
   local key = self:GetNewFlagKey(id)
   if status then
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 0)
+    UnityEngine.PlayerPrefs.SetInt(key, 0)
   else
-    ;
-    ((UnityEngine.PlayerPrefs).SetInt)(key, 1)
+    UnityEngine.PlayerPrefs.SetInt(key, 1)
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1Review.BtnOnClick = function(self)
-  -- function num : 0_22
+function UISummer1Review:BtnOnClick()
   self:ShowDialog("UISummer1RewardDetailRewivw", self._datas, function(progress)
-    -- function num : 0_22_0 , upvalues : self
     self:GetReward(progress)
-  end
-)
+  end)
 end
-
-

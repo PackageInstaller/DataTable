@@ -1,350 +1,367 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/pet/pet_message.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("message_def")
-local petMessageDef = {CLSID_CEventPetAddExp = 17000, CLSID_CEventPetAddExpResult = 17001, CLSID_CEventPetBreak = 17002, CLSID_CEventPetBreakResult = 17003, CLSID_CEventPetAwake = 17004, CLSID_CEventPetAwakeResult = 17005, CLSID_CEventPetEquip = 17006, CLSID_CEventPetEquipResult = 17007, CLSID_CEventEquipRefineLevelUp = 17008, CLSID_CEventEquipRefineLevelUpReply = 17009, CLSID_CEventDelNewpetMark = 17010, CLSID_CEventDelNewpetMarkResult = 17011, CLSID_CEventRequestPetAddAffinity = 17012, CLSID_CEventReplyPetAddAffinityResult = 17013, CLSID_CEventRequestPetViewTriggeredStory = 17014, CLSID_CEventReplyPetViewTriggeredStory = 17015, CLSID_CEventRequestPetFinishTriggeredStory = 17016, CLSID_CEventReplyPetFinishTriggeredStory = 17017, CLSID_CEventRequestPetViewTriggeredTask = 17018, CLSID_CEventReplyPetViewTriggeredTask = 17019, CLSID_CEventRequestPetAcceptTriggeredTask = 17020, CLSID_CEventReplyPetAcceptTriggeredTask = 17021, CLSID_CEventRequestGivePetPresent = 17022, CLSID_CEventReplyGivePetPresent = 17023, CLSID_CEventNotifyPetChange = 17024, CLSID_CEventNotifyAffinityAddCount = 17025, CLSID_CEventUpdateNewPetList = 17026, CLSID_CEventRequestPetTaskReward = 17027, CLSID_CEventReplyPetTaskReward = 17028, CLSID_CEventPetUnlockCG = 17029, CLSID_CEventPetUnlockCGResult = 17030, CLSID_CEventPetSkinChange = 17031, CLSID_CEventPetSkinChangeResult = 17032, CLSID_CEventNotifyPetSkinChange = 17033, CLSID_CEventClickPetEquipRefine = 17034, CLSID_CEventPropertyCultivateInfo = 17035, CLSID_CEventPropertyCultivateInfoResult = 17036, CLSID_CEventPropertyCultivateLv = 17037, CLSID_CEventPropertyCultivateLvResult = 17038, CLSID_CEventLockAwake = 17039, CLSID_CEventLockAwakeResult = 17040, CLSID_CEventPetLike = 17041, CLSID_CEventPetLikeReply = 17042}
-;
-(table.append)(MessageDef, petMessageDef)
-local PET_RESULT_CODE = {PET_SUCCEED = 0, PET_FAILED = 1, PET_NOT_EXIST = 2, PET_TEMPLATE_NOT_EXIST = 3, PET_AWAKE_CONDITION_ERR = 4, PET_AWAKE_MAX = 5, PET_GRADE_MAX = 6, PET_LEVEL_MAX = 7, PET_ADD_EXP_ONLY = 8, PET_UNSUPPORT_SUB_LEVEL = 9, PET_CFG_STAR_NOT_ENOUGH = 10, PET_CFG_GRADE_NOT_ENOUGH = 11, PET_CFG_LEVEL_NOT_ENOUGH = 12, PET_CFG_ITEM_NOT_ENOUGH = 13, PET_CFG_DEL_GOLD_ERR = 14, PET_GET_EXP_ERR = 15, PET_ITEM_NOT_FOUND = 16, PET_ADD_AFFINITY_COUNT_MAX = 17, PET_ADD_AFFINITY_TOTAL_COUNT_MAX = 18, PET_DID_NOT_TRIGGERED_STORY = 19, PET_TRIGGERED_STORY_INVALID = 20, PET_DID_NOT_TRIGGERED_TASK = 21, PET_TRIGGERED_TASK_INVALID = 22, PET_STORY_TASK_REWARD_FAIL = 23, PET_TASK_ACCEPT_FAIL = 24, PET_AFFINITY_LEVEL_MAX = 25, PET_GET_AFFINITY_EXP_ERROR = 26, PET_GET_TASK_REWARD_NONE = 27, PET_GET_TASK_REWARD_STATE_ERROR = 28, PET_GET_TASK_REWARD_TIME_ERROR = 29, PET_STORY_CHAT_NOT_COMPLATE = 30, PET_EQUIP_NOT_OPEN = 31, PET_EQUIP_NOT_CFG = 32, PET_EQUIP_ITEM_NOT_ENOUGH = 33, PET_EQUIP_LV_MAX = 34, PET_SKIN_NOT_EXIST = 35, PET_NOT_OWN_THIS_SKIN = 36, PET_SKIN_NOT_OWN = 37, PET_EQUIP_OPEN_COND_UNSATISFY = 38, PET_EQUIP_UNLOCK_COND_UNSATISFY = 39, PET_PROPERTY_CULTIVATE_ERROR_PROCUL_ID = 100, PET_PROPERTY_CULTIVATE_ERROR_PROCUL_LOCK = 101, PET_PROPERTY_CULTIVATE_ERROR_SMELT_ID = 102, PET_PROPERTY_CULTIVATE_ERROR_SMELT_NUM = 103, PET_PROPERTY_CULTIVATE_ERROR_SMELT_CONDITION = 104, PET_PROPERTY_CULTIVATE_ERROR_ITEM_FEW = 105, PET_PROPERTY_CULTIVATE_ERROR_LV = 106, PET_LOCK_AWAKE_UNCHANGED = 200, PET_LOCK_AWAKE_GREATER = 201}
+local petMessageDef = {
+  CLSID_CEventPetAddExp = 17000,
+  CLSID_CEventPetAddExpResult = 17001,
+  CLSID_CEventPetBreak = 17002,
+  CLSID_CEventPetBreakResult = 17003,
+  CLSID_CEventPetAwake = 17004,
+  CLSID_CEventPetAwakeResult = 17005,
+  CLSID_CEventPetEquip = 17006,
+  CLSID_CEventPetEquipResult = 17007,
+  CLSID_CEventEquipRefineLevelUp = 17008,
+  CLSID_CEventEquipRefineLevelUpReply = 17009,
+  CLSID_CEventDelNewpetMark = 17010,
+  CLSID_CEventDelNewpetMarkResult = 17011,
+  CLSID_CEventRequestPetAddAffinity = 17012,
+  CLSID_CEventReplyPetAddAffinityResult = 17013,
+  CLSID_CEventRequestPetViewTriggeredStory = 17014,
+  CLSID_CEventReplyPetViewTriggeredStory = 17015,
+  CLSID_CEventRequestPetFinishTriggeredStory = 17016,
+  CLSID_CEventReplyPetFinishTriggeredStory = 17017,
+  CLSID_CEventRequestPetViewTriggeredTask = 17018,
+  CLSID_CEventReplyPetViewTriggeredTask = 17019,
+  CLSID_CEventRequestPetAcceptTriggeredTask = 17020,
+  CLSID_CEventReplyPetAcceptTriggeredTask = 17021,
+  CLSID_CEventRequestGivePetPresent = 17022,
+  CLSID_CEventReplyGivePetPresent = 17023,
+  CLSID_CEventNotifyPetChange = 17024,
+  CLSID_CEventNotifyAffinityAddCount = 17025,
+  CLSID_CEventUpdateNewPetList = 17026,
+  CLSID_CEventRequestPetTaskReward = 17027,
+  CLSID_CEventReplyPetTaskReward = 17028,
+  CLSID_CEventPetUnlockCG = 17029,
+  CLSID_CEventPetUnlockCGResult = 17030,
+  CLSID_CEventPetSkinChange = 17031,
+  CLSID_CEventPetSkinChangeResult = 17032,
+  CLSID_CEventNotifyPetSkinChange = 17033,
+  CLSID_CEventClickPetEquipRefine = 17034,
+  CLSID_CEventPropertyCultivateInfo = 17035,
+  CLSID_CEventPropertyCultivateInfoResult = 17036,
+  CLSID_CEventPropertyCultivateLv = 17037,
+  CLSID_CEventPropertyCultivateLvResult = 17038,
+  CLSID_CEventLockAwake = 17039,
+  CLSID_CEventLockAwakeResult = 17040,
+  CLSID_CEventPetLike = 17041,
+  CLSID_CEventPetLikeReply = 17042
+}
+table.append(MessageDef, petMessageDef)
+local PET_RESULT_CODE = {
+  PET_SUCCEED = 0,
+  PET_FAILED = 1,
+  PET_NOT_EXIST = 2,
+  PET_TEMPLATE_NOT_EXIST = 3,
+  PET_AWAKE_CONDITION_ERR = 4,
+  PET_AWAKE_MAX = 5,
+  PET_GRADE_MAX = 6,
+  PET_LEVEL_MAX = 7,
+  PET_ADD_EXP_ONLY = 8,
+  PET_UNSUPPORT_SUB_LEVEL = 9,
+  PET_CFG_STAR_NOT_ENOUGH = 10,
+  PET_CFG_GRADE_NOT_ENOUGH = 11,
+  PET_CFG_LEVEL_NOT_ENOUGH = 12,
+  PET_CFG_ITEM_NOT_ENOUGH = 13,
+  PET_CFG_DEL_GOLD_ERR = 14,
+  PET_GET_EXP_ERR = 15,
+  PET_ITEM_NOT_FOUND = 16,
+  PET_ADD_AFFINITY_COUNT_MAX = 17,
+  PET_ADD_AFFINITY_TOTAL_COUNT_MAX = 18,
+  PET_DID_NOT_TRIGGERED_STORY = 19,
+  PET_TRIGGERED_STORY_INVALID = 20,
+  PET_DID_NOT_TRIGGERED_TASK = 21,
+  PET_TRIGGERED_TASK_INVALID = 22,
+  PET_STORY_TASK_REWARD_FAIL = 23,
+  PET_TASK_ACCEPT_FAIL = 24,
+  PET_AFFINITY_LEVEL_MAX = 25,
+  PET_GET_AFFINITY_EXP_ERROR = 26,
+  PET_GET_TASK_REWARD_NONE = 27,
+  PET_GET_TASK_REWARD_STATE_ERROR = 28,
+  PET_GET_TASK_REWARD_TIME_ERROR = 29,
+  PET_STORY_CHAT_NOT_COMPLATE = 30,
+  PET_EQUIP_NOT_OPEN = 31,
+  PET_EQUIP_NOT_CFG = 32,
+  PET_EQUIP_ITEM_NOT_ENOUGH = 33,
+  PET_EQUIP_LV_MAX = 34,
+  PET_SKIN_NOT_EXIST = 35,
+  PET_NOT_OWN_THIS_SKIN = 36,
+  PET_SKIN_NOT_OWN = 37,
+  PET_EQUIP_OPEN_COND_UNSATISFY = 38,
+  PET_EQUIP_UNLOCK_COND_UNSATISFY = 39,
+  PET_PROPERTY_CULTIVATE_ERROR_PROCUL_ID = 100,
+  PET_PROPERTY_CULTIVATE_ERROR_PROCUL_LOCK = 101,
+  PET_PROPERTY_CULTIVATE_ERROR_SMELT_ID = 102,
+  PET_PROPERTY_CULTIVATE_ERROR_SMELT_NUM = 103,
+  PET_PROPERTY_CULTIVATE_ERROR_SMELT_CONDITION = 104,
+  PET_PROPERTY_CULTIVATE_ERROR_ITEM_FEW = 105,
+  PET_PROPERTY_CULTIVATE_ERROR_LV = 106,
+  PET_LOCK_AWAKE_UNCHANGED = 200,
+  PET_LOCK_AWAKE_GREATER = 201
+}
 _enum("PET_RESULT_CODE", PET_RESULT_CODE)
 _class("CEventPetAddExp", CCallRequestEvent)
 CEventPetAddExp = CEventPetAddExp
--- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPetAddExp.Constructor = function(self)
-  -- function num : 0_0
+function CEventPetAddExp:Constructor()
   self.pet_pstid = 0
   self.items = {}
 end
 
--- DECOMPILER ERROR at PC127: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPetAddExp._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"items", "list<ItemAsset>"}
+  [1] = {"pet_pstid", "int64"},
+  [2] = {
+    "items",
+    "list<ItemAsset>"
+  }
 }
 _class("CEventPetAddExpResult", CCallReplyEvent)
 CEventPetAddExpResult = CEventPetAddExpResult
--- DECOMPILER ERROR at PC136: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPetAddExpResult.Constructor = function(self)
-  -- function num : 0_1
+function CEventPetAddExpResult:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC144: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPetAddExpResult._proto = {
-[1] = {"nRet", "int"}
+  [1] = {"nRet", "int"}
 }
 _class("CEventPetBreak", CCallRequestEvent)
 CEventPetBreak = CEventPetBreak
--- DECOMPILER ERROR at PC153: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPetBreak.Constructor = function(self)
-  -- function num : 0_2
+function CEventPetBreak:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPetBreak._proto = {
-[1] = {"pet_pstid", "int64"}
+  [1] = {"pet_pstid", "int64"}
 }
 _class("CEventPetBreakResult", CCallReplyEvent)
 CEventPetBreakResult = CEventPetBreakResult
--- DECOMPILER ERROR at PC170: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPetBreakResult.Constructor = function(self)
-  -- function num : 0_3
+function CEventPetBreakResult:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC178: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPetBreakResult._proto = {
-[1] = {"nRet", "int"}
+  [1] = {"nRet", "int"}
 }
 _class("CEventPetAwake", CCallRequestEvent)
 CEventPetAwake = CEventPetAwake
--- DECOMPILER ERROR at PC187: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPetAwake.Constructor = function(self)
-  -- function num : 0_4
+function CEventPetAwake:Constructor()
   self.pet_pstid = 0
   self.awakening = 0
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPetAwake._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"awakening", "int"}
+  [1] = {"pet_pstid", "int64"},
+  [2] = {"awakening", "int"}
 }
 _class("CEventPetAwakeResult", CCallReplyEvent)
 CEventPetAwakeResult = CEventPetAwakeResult
--- DECOMPILER ERROR at PC209: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPetAwakeResult.Constructor = function(self)
-  -- function num : 0_5
+function CEventPetAwakeResult:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC217: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPetAwakeResult._proto = {
-[1] = {"nRet", "int"}
+  [1] = {"nRet", "int"}
 }
 _class("CEventPetEquip", CCallRequestEvent)
 CEventPetEquip = CEventPetEquip
--- DECOMPILER ERROR at PC226: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPetEquip.Constructor = function(self)
-  -- function num : 0_6
+function CEventPetEquip:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC234: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPetEquip._proto = {
-[1] = {"pet_pstid", "int64"}
+  [1] = {"pet_pstid", "int64"}
 }
 _class("CEventPetEquipResult", CCallReplyEvent)
 CEventPetEquipResult = CEventPetEquipResult
--- DECOMPILER ERROR at PC243: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventPetEquipResult.Constructor = function(self)
-  -- function num : 0_7
+function CEventPetEquipResult:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventPetEquipResult._proto = {
-[1] = {"nRet", "int"}
+  [1] = {"nRet", "int"}
 }
 _class("CEventEquipRefineLevelUp", CCallRequestEvent)
 CEventEquipRefineLevelUp = CEventEquipRefineLevelUp
--- DECOMPILER ERROR at PC260: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventEquipRefineLevelUp.Constructor = function(self)
-  -- function num : 0_8
+function CEventEquipRefineLevelUp:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC268: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventEquipRefineLevelUp._proto = {
-[1] = {"pet_pstid", "int64"}
+  [1] = {"pet_pstid", "int64"}
 }
 _class("CEventEquipRefineLevelUpReply", CCallReplyEvent)
 CEventEquipRefineLevelUpReply = CEventEquipRefineLevelUpReply
--- DECOMPILER ERROR at PC277: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventEquipRefineLevelUpReply.Constructor = function(self)
-  -- function num : 0_9
+function CEventEquipRefineLevelUpReply:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC285: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventEquipRefineLevelUpReply._proto = {
-[1] = {"nRet", "int"}
+  [1] = {"nRet", "int"}
 }
 _class("CEventDelNewpetMark", CCallRequestEvent)
 CEventDelNewpetMark = CEventDelNewpetMark
--- DECOMPILER ERROR at PC294: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventDelNewpetMark.Constructor = function(self)
-  -- function num : 0_10
+function CEventDelNewpetMark:Constructor()
   self.template_id = 0
 end
 
--- DECOMPILER ERROR at PC302: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventDelNewpetMark._proto = {
-[1] = {"template_id", "int"}
+  [1] = {
+    "template_id",
+    "int"
+  }
 }
 _class("CEventDelNewpetMarkResult", CCallReplyEvent)
 CEventDelNewpetMarkResult = CEventDelNewpetMarkResult
--- DECOMPILER ERROR at PC311: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventDelNewpetMarkResult.Constructor = function(self)
-  -- function num : 0_11
+function CEventDelNewpetMarkResult:Constructor()
   self.ret = 0
   self.new_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC324: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventDelNewpetMarkResult._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"new_pet_list", "list<int>"}
+  [1] = {"ret", "int"},
+  [2] = {
+    "new_pet_list",
+    "list<int>"
+  }
 }
 _class("CEventRequestPetAddAffinity", CCallRequestEvent)
 CEventRequestPetAddAffinity = CEventRequestPetAddAffinity
--- DECOMPILER ERROR at PC333: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRequestPetAddAffinity.Constructor = function(self)
-  -- function num : 0_12
+function CEventRequestPetAddAffinity:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC341: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRequestPetAddAffinity._proto = {
-[1] = {"pet_pstid", "int64"}
+  [1] = {"pet_pstid", "int64"}
 }
 _class("CEventReplyPetAddAffinityResult", CCallReplyEvent)
 CEventReplyPetAddAffinityResult = CEventReplyPetAddAffinityResult
--- DECOMPILER ERROR at PC350: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventReplyPetAddAffinityResult.Constructor = function(self)
-  -- function num : 0_13
+function CEventReplyPetAddAffinityResult:Constructor()
   self.m_result = 0
   self.m_aff_add_count = 0
 end
 
--- DECOMPILER ERROR at PC363: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventReplyPetAddAffinityResult._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"m_aff_add_count", "int"}
+  [1] = {"m_result", "int"},
+  [2] = {
+    "m_aff_add_count",
+    "int"
+  }
 }
 _class("CEventRequestPetViewTriggeredStory", CCallRequestEvent)
 CEventRequestPetViewTriggeredStory = CEventRequestPetViewTriggeredStory
--- DECOMPILER ERROR at PC372: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRequestPetViewTriggeredStory.Constructor = function(self)
-  -- function num : 0_14
+function CEventRequestPetViewTriggeredStory:Constructor()
   self.pet_pstid = 0
   self.story_event_type = 0
   self.story_event_id = 0
 end
 
--- DECOMPILER ERROR at PC390: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRequestPetViewTriggeredStory._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"story_event_type", "int"}
-, 
-[3] = {"story_event_id", "int"}
+  [1] = {"pet_pstid", "int64"},
+  [2] = {
+    "story_event_type",
+    "int"
+  },
+  [3] = {
+    "story_event_id",
+    "int"
+  }
 }
 _class("CEventReplyPetViewTriggeredStory", CCallReplyEvent)
 CEventReplyPetViewTriggeredStory = CEventReplyPetViewTriggeredStory
--- DECOMPILER ERROR at PC399: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventReplyPetViewTriggeredStory.Constructor = function(self)
-  -- function num : 0_15
+function CEventReplyPetViewTriggeredStory:Constructor()
   self.m_result = 0
   self.m_story_id = 0
 end
 
--- DECOMPILER ERROR at PC412: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventReplyPetViewTriggeredStory._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"m_story_id", "int"}
+  [1] = {"m_result", "int"},
+  [2] = {"m_story_id", "int"}
 }
 _class("CEventRequestPetFinishTriggeredStory", CCallRequestEvent)
 CEventRequestPetFinishTriggeredStory = CEventRequestPetFinishTriggeredStory
--- DECOMPILER ERROR at PC421: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRequestPetFinishTriggeredStory.Constructor = function(self)
-  -- function num : 0_16
+function CEventRequestPetFinishTriggeredStory:Constructor()
   self.pet_pstid = 0
   self.story_event_type = 0
   self.story_event_id = 0
 end
 
--- DECOMPILER ERROR at PC439: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRequestPetFinishTriggeredStory._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"story_event_type", "int"}
-, 
-[3] = {"story_event_id", "int"}
+  [1] = {"pet_pstid", "int64"},
+  [2] = {
+    "story_event_type",
+    "int"
+  },
+  [3] = {
+    "story_event_id",
+    "int"
+  }
 }
 _class("CEventReplyPetFinishTriggeredStory", CCallReplyEvent)
 CEventReplyPetFinishTriggeredStory = CEventReplyPetFinishTriggeredStory
--- DECOMPILER ERROR at PC448: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventReplyPetFinishTriggeredStory.Constructor = function(self)
-  -- function num : 0_17
+function CEventReplyPetFinishTriggeredStory:Constructor()
   self.m_result = 0
   self.affinity = 0
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC466: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventReplyPetFinishTriggeredStory._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"affinity", "int"}
-, 
-[3] = {"reward", "list<RoleAsset>"}
+  [1] = {"m_result", "int"},
+  [2] = {"affinity", "int"},
+  [3] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventRequestPetViewTriggeredTask", CCallRequestEvent)
 CEventRequestPetViewTriggeredTask = CEventRequestPetViewTriggeredTask
--- DECOMPILER ERROR at PC475: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRequestPetViewTriggeredTask.Constructor = function(self)
-  -- function num : 0_18
+function CEventRequestPetViewTriggeredTask:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC483: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRequestPetViewTriggeredTask._proto = {
-[1] = {"pet_pstid", "int64"}
+  [1] = {"pet_pstid", "int64"}
 }
 _class("CEventReplyPetViewTriggeredTask", CCallReplyEvent)
 CEventReplyPetViewTriggeredTask = CEventReplyPetViewTriggeredTask
--- DECOMPILER ERROR at PC492: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventReplyPetViewTriggeredTask.Constructor = function(self)
-  -- function num : 0_19
+function CEventReplyPetViewTriggeredTask:Constructor()
   self.m_result = 0
   self.m_story_id = 0
 end
 
--- DECOMPILER ERROR at PC505: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventReplyPetViewTriggeredTask._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"m_story_id", "int"}
+  [1] = {"m_result", "int"},
+  [2] = {"m_story_id", "int"}
 }
 _class("CEventRequestPetAcceptTriggeredTask", CCallRequestEvent)
 CEventRequestPetAcceptTriggeredTask = CEventRequestPetAcceptTriggeredTask
--- DECOMPILER ERROR at PC514: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventRequestPetAcceptTriggeredTask.Constructor = function(self)
-  -- function num : 0_20
+function CEventRequestPetAcceptTriggeredTask:Constructor()
   self.pet_pstid = 0
 end
 
--- DECOMPILER ERROR at PC522: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventRequestPetAcceptTriggeredTask._proto = {
-[1] = {"pet_pstid", "int64"}
+  [1] = {"pet_pstid", "int64"}
 }
 _class("CEventReplyPetAcceptTriggeredTask", CCallReplyEvent)
 CEventReplyPetAcceptTriggeredTask = CEventReplyPetAcceptTriggeredTask
--- DECOMPILER ERROR at PC531: Confused about usage of register: R2 in 'UnsetPending'
 
-CEventReplyPetAcceptTriggeredTask.Constructor = function(self)
-  -- function num : 0_21 , upvalues : _ENV
+function CEventReplyPetAcceptTriggeredTask:Constructor()
   self.m_result = 0
   self.task_id = 0
   self.affinity = 0
@@ -352,395 +369,291 @@ CEventReplyPetAcceptTriggeredTask.Constructor = function(self)
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC559: Confused about usage of register: R2 in 'UnsetPending'
-
 CEventReplyPetAcceptTriggeredTask._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"task_id", "int"}
-, 
-[3] = {"affinity", "int"}
-, 
-[4] = {"m_pet_task_info", "PetTaskInfo"}
-, 
-[5] = {"reward", "list<RoleAsset>"}
+  [1] = {"m_result", "int"},
+  [2] = {"task_id", "int"},
+  [3] = {"affinity", "int"},
+  [4] = {
+    "m_pet_task_info",
+    "PetTaskInfo"
+  },
+  [5] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventRequestGivePetPresent", CCallRequestEvent)
-_ENV.CEventRequestGivePetPresent = _ENV.CEventRequestGivePetPresent
--- DECOMPILER ERROR at PC571: Confused about usage of register: R2 in 'UnsetPending'
+CEventRequestGivePetPresent = CEventRequestGivePetPresent
 
-;
-(_ENV.CEventRequestGivePetPresent).Constructor = function(self)
-  -- function num : 0_22
+function CEventRequestGivePetPresent:Constructor()
   self.pet_pstid = 0
   self.items = {}
 end
 
--- DECOMPILER ERROR at PC585: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestGivePetPresent)._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"items", "list<ItemAsset>"}
+CEventRequestGivePetPresent._proto = {
+  [1] = {"pet_pstid", "int64"},
+  [2] = {
+    "items",
+    "list<ItemAsset>"
+  }
 }
 _class("CEventReplyGivePetPresent", CCallReplyEvent)
-_ENV.CEventReplyGivePetPresent = _ENV.CEventReplyGivePetPresent
--- DECOMPILER ERROR at PC597: Confused about usage of register: R2 in 'UnsetPending'
+CEventReplyGivePetPresent = CEventReplyGivePetPresent
 
-;
-(_ENV.CEventReplyGivePetPresent).Constructor = function(self)
-  -- function num : 0_23
+function CEventReplyGivePetPresent:Constructor()
   self.m_result = 0
   self.m_task_ids = {}
   self.trigger_story_event_id = 0
 end
 
--- DECOMPILER ERROR at PC616: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventReplyGivePetPresent)._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"m_task_ids", "list<int>"}
-, 
-[3] = {"trigger_story_event_id", "int"}
+CEventReplyGivePetPresent._proto = {
+  [1] = {"m_result", "int"},
+  [2] = {"m_task_ids", "list<int>"},
+  [3] = {
+    "trigger_story_event_id",
+    "int"
+  }
 }
-_class("CEventNotifyPetChange", _ENV.CSvrPushEvent)
-_ENV.CEventNotifyPetChange = _ENV.CEventNotifyPetChange
--- DECOMPILER ERROR at PC629: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventNotifyPetChange", CSvrPushEvent)
+CEventNotifyPetChange = CEventNotifyPetChange
 
-;
-(_ENV.CEventNotifyPetChange).Constructor = function(self)
-  -- function num : 0_24
+function CEventNotifyPetChange:Constructor()
   self.data = {}
 end
 
--- DECOMPILER ERROR at PC638: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventNotifyPetChange)._proto = {
-[1] = {"data", "map<int64,pet_data>"}
+CEventNotifyPetChange._proto = {
+  [1] = {
+    "data",
+    "map<int64,pet_data>"
+  }
 }
-_class("CEventNotifyAffinityAddCount", _ENV.CSvrPushEvent)
-_ENV.CEventNotifyAffinityAddCount = _ENV.CEventNotifyAffinityAddCount
--- DECOMPILER ERROR at PC651: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventNotifyAffinityAddCount", CSvrPushEvent)
+CEventNotifyAffinityAddCount = CEventNotifyAffinityAddCount
 
-;
-(_ENV.CEventNotifyAffinityAddCount).Constructor = function(self)
-  -- function num : 0_25
+function CEventNotifyAffinityAddCount:Constructor()
   self.left_count = 0
   self.max_count = 0
 end
 
--- DECOMPILER ERROR at PC665: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventNotifyAffinityAddCount)._proto = {
-[1] = {"left_count", "int"}
-, 
-[2] = {"max_count", "int"}
+CEventNotifyAffinityAddCount._proto = {
+  [1] = {"left_count", "int"},
+  [2] = {"max_count", "int"}
 }
-_class("CEventUpdateNewPetList", _ENV.CSvrPushEvent)
-_ENV.CEventUpdateNewPetList = _ENV.CEventUpdateNewPetList
--- DECOMPILER ERROR at PC678: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventUpdateNewPetList", CSvrPushEvent)
+CEventUpdateNewPetList = CEventUpdateNewPetList
 
-;
-(_ENV.CEventUpdateNewPetList).Constructor = function(self)
-  -- function num : 0_26
+function CEventUpdateNewPetList:Constructor()
   self.new_pet_list = {}
 end
 
--- DECOMPILER ERROR at PC687: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventUpdateNewPetList)._proto = {
-[1] = {"new_pet_list", "list<int>"}
+CEventUpdateNewPetList._proto = {
+  [1] = {
+    "new_pet_list",
+    "list<int>"
+  }
 }
 _class("CEventRequestPetTaskReward", CCallRequestEvent)
-_ENV.CEventRequestPetTaskReward = _ENV.CEventRequestPetTaskReward
--- DECOMPILER ERROR at PC699: Confused about usage of register: R2 in 'UnsetPending'
+CEventRequestPetTaskReward = CEventRequestPetTaskReward
 
-;
-(_ENV.CEventRequestPetTaskReward).Constructor = function(self)
-  -- function num : 0_27
+function CEventRequestPetTaskReward:Constructor()
   self.pet_pstid = 0
   self.task_uid = 0
 end
 
--- DECOMPILER ERROR at PC713: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventRequestPetTaskReward)._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"task_uid", "int64"}
+CEventRequestPetTaskReward._proto = {
+  [1] = {"pet_pstid", "int64"},
+  [2] = {"task_uid", "int64"}
 }
 _class("CEventReplyPetTaskReward", CCallReplyEvent)
-_ENV.CEventReplyPetTaskReward = _ENV.CEventReplyPetTaskReward
--- DECOMPILER ERROR at PC725: Confused about usage of register: R2 in 'UnsetPending'
+CEventReplyPetTaskReward = CEventReplyPetTaskReward
 
-;
-(_ENV.CEventReplyPetTaskReward).Constructor = function(self)
-  -- function num : 0_28
+function CEventReplyPetTaskReward:Constructor()
   self.m_result = 0
   self.task_id = 0
   self.affinity = 0
   self.reward = {}
 end
 
--- DECOMPILER ERROR at PC749: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventReplyPetTaskReward)._proto = {
-[1] = {"m_result", "int"}
-, 
-[2] = {"task_id", "int"}
-, 
-[3] = {"affinity", "int"}
-, 
-[4] = {"reward", "list<RoleAsset>"}
+CEventReplyPetTaskReward._proto = {
+  [1] = {"m_result", "int"},
+  [2] = {"task_id", "int"},
+  [3] = {"affinity", "int"},
+  [4] = {
+    "reward",
+    "list<RoleAsset>"
+  }
 }
 _class("CEventPetUnlockCG", CCallRequestEvent)
-_ENV.CEventPetUnlockCG = _ENV.CEventPetUnlockCG
--- DECOMPILER ERROR at PC761: Confused about usage of register: R2 in 'UnsetPending'
+CEventPetUnlockCG = CEventPetUnlockCG
 
-;
-(_ENV.CEventPetUnlockCG).Constructor = function(self)
-  -- function num : 0_29
+function CEventPetUnlockCG:Constructor()
   self.skin_id = 0
 end
 
--- DECOMPILER ERROR at PC770: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPetUnlockCG)._proto = {
-[1] = {"skin_id", "int"}
+CEventPetUnlockCG._proto = {
+  [1] = {"skin_id", "int"}
 }
 _class("CEventPetUnlockCGResult", CCallReplyEvent)
-_ENV.CEventPetUnlockCGResult = _ENV.CEventPetUnlockCGResult
--- DECOMPILER ERROR at PC782: Confused about usage of register: R2 in 'UnsetPending'
+CEventPetUnlockCGResult = CEventPetUnlockCGResult
 
-;
-(_ENV.CEventPetUnlockCGResult).Constructor = function(self)
-  -- function num : 0_30
+function CEventPetUnlockCGResult:Constructor()
   self.nRet = 0
   self.pet_template_id = 0
   self.pet_skin_id = 0
 end
 
--- DECOMPILER ERROR at PC801: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPetUnlockCGResult)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"pet_template_id", "int"}
-, 
-[3] = {"pet_skin_id", "int"}
+CEventPetUnlockCGResult._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "pet_template_id",
+    "int"
+  },
+  [3] = {
+    "pet_skin_id",
+    "int"
+  }
 }
 _class("CEventPetSkinChange", CCallRequestEvent)
-_ENV.CEventPetSkinChange = _ENV.CEventPetSkinChange
--- DECOMPILER ERROR at PC813: Confused about usage of register: R2 in 'UnsetPending'
+CEventPetSkinChange = CEventPetSkinChange
 
-;
-(_ENV.CEventPetSkinChange).Constructor = function(self)
-  -- function num : 0_31
+function CEventPetSkinChange:Constructor()
   self.skin_id = 0
 end
 
--- DECOMPILER ERROR at PC822: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPetSkinChange)._proto = {
-[1] = {"skin_id", "int"}
+CEventPetSkinChange._proto = {
+  [1] = {"skin_id", "int"}
 }
 _class("CEventPetSkinChangeResult", CCallReplyEvent)
-_ENV.CEventPetSkinChangeResult = _ENV.CEventPetSkinChangeResult
--- DECOMPILER ERROR at PC834: Confused about usage of register: R2 in 'UnsetPending'
+CEventPetSkinChangeResult = CEventPetSkinChangeResult
 
-;
-(_ENV.CEventPetSkinChangeResult).Constructor = function(self)
-  -- function num : 0_32
+function CEventPetSkinChangeResult:Constructor()
   self.nRet = 0
   self.pet_template_id = 0
   self.pet_current_skin_id = 0
 end
 
--- DECOMPILER ERROR at PC853: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPetSkinChangeResult)._proto = {
-[1] = {"nRet", "int"}
-, 
-[2] = {"pet_template_id", "int"}
-, 
-[3] = {"pet_current_skin_id", "int"}
+CEventPetSkinChangeResult._proto = {
+  [1] = {"nRet", "int"},
+  [2] = {
+    "pet_template_id",
+    "int"
+  },
+  [3] = {
+    "pet_current_skin_id",
+    "int"
+  }
 }
-_class("CEventNotifyPetSkinChange", _ENV.CSvrPushEvent)
-_ENV.CEventNotifyPetSkinChange = _ENV.CEventNotifyPetSkinChange
--- DECOMPILER ERROR at PC866: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventNotifyPetSkinChange", CSvrPushEvent)
+CEventNotifyPetSkinChange = CEventNotifyPetSkinChange
 
-;
-(_ENV.CEventNotifyPetSkinChange).Constructor = function(self)
-  -- function num : 0_33
+function CEventNotifyPetSkinChange:Constructor()
   self.data = {}
 end
 
--- DECOMPILER ERROR at PC875: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventNotifyPetSkinChange)._proto = {
-[1] = {"data", "map<int,pet_skin_data>"}
+CEventNotifyPetSkinChange._proto = {
+  [1] = {
+    "data",
+    "map<int,pet_skin_data>"
+  }
 }
-_class("CEventClickPetEquipRefine", _ENV.CCliPushEvent)
-_ENV.CEventClickPetEquipRefine = _ENV.CEventClickPetEquipRefine
--- DECOMPILER ERROR at PC888: Confused about usage of register: R2 in 'UnsetPending'
+_class("CEventClickPetEquipRefine", CCliPushEvent)
+CEventClickPetEquipRefine = CEventClickPetEquipRefine
 
-;
-(_ENV.CEventClickPetEquipRefine).Constructor = function(self)
-  -- function num : 0_34
+function CEventClickPetEquipRefine:Constructor()
 end
 
--- DECOMPILER ERROR at PC892: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventClickPetEquipRefine)._proto = {}
+CEventClickPetEquipRefine._proto = {}
 _class("CEventPropertyCultivateInfo", CCallRequestEvent)
-_ENV.CEventPropertyCultivateInfo = _ENV.CEventPropertyCultivateInfo
--- DECOMPILER ERROR at PC904: Confused about usage of register: R2 in 'UnsetPending'
+CEventPropertyCultivateInfo = CEventPropertyCultivateInfo
 
-;
-(_ENV.CEventPropertyCultivateInfo).Constructor = function(self)
-  -- function num : 0_35
+function CEventPropertyCultivateInfo:Constructor()
 end
 
--- DECOMPILER ERROR at PC908: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPropertyCultivateInfo)._proto = {}
+CEventPropertyCultivateInfo._proto = {}
 _class("CEventPropertyCultivateInfoResult", CCallReplyEvent)
-_ENV.CEventPropertyCultivateInfoResult = _ENV.CEventPropertyCultivateInfoResult
--- DECOMPILER ERROR at PC920: Confused about usage of register: R2 in 'UnsetPending'
+CEventPropertyCultivateInfoResult = CEventPropertyCultivateInfoResult
 
-;
-(_ENV.CEventPropertyCultivateInfoResult).Constructor = function(self)
-  -- function num : 0_36 , upvalues : _ENV
+function CEventPropertyCultivateInfoResult:Constructor()
   self.info = property_cultivate_data:New()
 end
 
--- DECOMPILER ERROR at PC929: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPropertyCultivateInfoResult)._proto = {
-[1] = {"info", "property_cultivate_data"}
+CEventPropertyCultivateInfoResult._proto = {
+  [1] = {
+    "info",
+    "property_cultivate_data"
+  }
 }
 _class("CEventPropertyCultivateLv", CCallRequestEvent)
-_ENV.CEventPropertyCultivateLv = _ENV.CEventPropertyCultivateLv
--- DECOMPILER ERROR at PC941: Confused about usage of register: R2 in 'UnsetPending'
+CEventPropertyCultivateLv = CEventPropertyCultivateLv
 
-;
-(_ENV.CEventPropertyCultivateLv).Constructor = function(self)
-  -- function num : 0_37
+function CEventPropertyCultivateLv:Constructor()
   self.smelts = {}
   self.cfg_id = {}
 end
 
--- DECOMPILER ERROR at PC955: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPropertyCultivateLv)._proto = {
-[1] = {"smelts", "list<RoleAsset>"}
-, 
-[2] = {"cfg_id", "list<int>"}
+CEventPropertyCultivateLv._proto = {
+  [1] = {
+    "smelts",
+    "list<RoleAsset>"
+  },
+  [2] = {"cfg_id", "list<int>"}
 }
 _class("CEventPropertyCultivateLvResult", CCallReplyEvent)
-_ENV.CEventPropertyCultivateLvResult = _ENV.CEventPropertyCultivateLvResult
--- DECOMPILER ERROR at PC967: Confused about usage of register: R2 in 'UnsetPending'
+CEventPropertyCultivateLvResult = CEventPropertyCultivateLvResult
 
-;
-(_ENV.CEventPropertyCultivateLvResult).Constructor = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function CEventPropertyCultivateLvResult:Constructor()
   self.ret = 0
   self.info = property_cultivate_data:New()
 end
 
--- DECOMPILER ERROR at PC981: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPropertyCultivateLvResult)._proto = {
-[1] = {"ret", "int"}
-, 
-[2] = {"info", "property_cultivate_data"}
+CEventPropertyCultivateLvResult._proto = {
+  [1] = {"ret", "int"},
+  [2] = {
+    "info",
+    "property_cultivate_data"
+  }
 }
 _class("CEventLockAwake", CCallRequestEvent)
-_ENV.CEventLockAwake = _ENV.CEventLockAwake
--- DECOMPILER ERROR at PC993: Confused about usage of register: R2 in 'UnsetPending'
+CEventLockAwake = CEventLockAwake
 
-;
-(_ENV.CEventLockAwake).Constructor = function(self)
-  -- function num : 0_39
+function CEventLockAwake:Constructor()
   self.pet_pstid = 0
   self.lv = 0
 end
 
--- DECOMPILER ERROR at PC1007: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventLockAwake)._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"lv", "int"}
+CEventLockAwake._proto = {
+  [1] = {"pet_pstid", "int64"},
+  [2] = {"lv", "int"}
 }
 _class("CEventLockAwakeResult", CCallReplyEvent)
-_ENV.CEventLockAwakeResult = _ENV.CEventLockAwakeResult
--- DECOMPILER ERROR at PC1019: Confused about usage of register: R2 in 'UnsetPending'
+CEventLockAwakeResult = CEventLockAwakeResult
 
-;
-(_ENV.CEventLockAwakeResult).Constructor = function(self)
-  -- function num : 0_40
+function CEventLockAwakeResult:Constructor()
   self.ret = 0
 end
 
--- DECOMPILER ERROR at PC1028: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventLockAwakeResult)._proto = {
-[1] = {"ret", "int"}
+CEventLockAwakeResult._proto = {
+  [1] = {"ret", "int"}
 }
 _class("CEventPetLike", CCallRequestEvent)
-_ENV.CEventPetLike = _ENV.CEventPetLike
--- DECOMPILER ERROR at PC1040: Confused about usage of register: R2 in 'UnsetPending'
+CEventPetLike = CEventPetLike
 
-;
-(_ENV.CEventPetLike).Constructor = function(self)
-  -- function num : 0_41
+function CEventPetLike:Constructor()
   self.pet_pstid = 0
   self.b_like = false
 end
 
--- DECOMPILER ERROR at PC1054: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPetLike)._proto = {
-[1] = {"pet_pstid", "int64"}
-, 
-[2] = {"b_like", "bool"}
+CEventPetLike._proto = {
+  [1] = {"pet_pstid", "int64"},
+  [2] = {"b_like", "bool"}
 }
 _class("CEventPetLikeReply", CCallReplyEvent)
-_ENV.CEventPetLikeReply = _ENV.CEventPetLikeReply
--- DECOMPILER ERROR at PC1066: Confused about usage of register: R2 in 'UnsetPending'
+CEventPetLikeReply = CEventPetLikeReply
 
-;
-(_ENV.CEventPetLikeReply).Constructor = function(self)
-  -- function num : 0_42
+function CEventPetLikeReply:Constructor()
   self.nRet = 0
 end
 
--- DECOMPILER ERROR at PC1075: Confused about usage of register: R2 in 'UnsetPending'
-
-;
-(_ENV.CEventPetLikeReply)._proto = {
-[1] = {"nRet", "int"}
+CEventPetLikeReply._proto = {
+  [1] = {"nRet", "int"}
 }
-

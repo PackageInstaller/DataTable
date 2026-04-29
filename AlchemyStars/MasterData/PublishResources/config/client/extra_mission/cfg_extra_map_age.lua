@@ -1,13 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/extra_mission/cfg_extra_map_age.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, AgeMin = 2, AgeMax = 3, TexturePath = 4}
+local key = {
+  ID = 1,
+  AgeMin = 2,
+  AgeMax = 3,
+  TexturePath = 4
+}
 local config = {
-{1, 10, 219, "bg_01"}
-, 
-{2, 220, 289, "bg_02"}
+  {
+    1,
+    10,
+    219,
+    "bg_01"
+  },
+  {
+    2,
+    220,
+    289,
+    "bg_02"
+  }
 }
 return config, "ID", key
-

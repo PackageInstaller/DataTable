@@ -1,34 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_precious.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopHomelandPrecious", UIController)
 UIShopHomelandPrecious = UIShopHomelandPrecious
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopHomelandPrecious.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopHomelandPrecious:Constructor()
   self._shopModule = self:GetModule(ShopModule)
-  self._clientShop = (self._shopModule):GetClientShop()
-  self._shopData = (self._clientShop):GetHomelandShopData()
+  self._clientShop = self._shopModule:GetClientShop()
+  self._shopData = self._clientShop:GetHomelandShopData()
   self._deltaTime = 0
   self._perColumn = 8
   self._currentIndex = 0
   self._items = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1
+function UIShopHomelandPrecious:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopHomelandPrecious:OnShow(uiParams)
   self._data = uiParams[1]
   self:_GetComponents()
   self:_OnValue()
@@ -36,10 +23,7 @@ UIShopHomelandPrecious.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.OpenShop, self.OpenShop)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious._GetComponents = function(self)
-  -- function num : 0_3
+function UIShopHomelandPrecious:_GetComponents()
   self._preciousNameOutLineText = self:GetUIComponent("UILocalizationText", "PreciousNameOutLineText")
   self._preciousName = self:GetUIComponent("UILocalizedTMP", "PreciousName")
   self._content = self:GetUIComponent("UISelectObjectPath", "Content")
@@ -51,86 +35,61 @@ UIShopHomelandPrecious._GetComponents = function(self)
   self._index = self:GetUIComponent("UISelectObjectPath", "Index")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local name = (StringTable.Get)(((self._data).cfg).Name)
-  ;
-  (self._preciousNameOutLineText):SetText(name)
-  ;
-  (self._preciousName):SetText(name)
-  ;
-  (self._currencyMenu):SetData({RoleAssetID.RoleAssetFurnitureCoin, RoleAssetID.RoleAssetGlow})
-  self._remainTime = (self._shopData).remainRefreshTime + 1
+function UIShopHomelandPrecious:_OnValue()
+  local name = StringTable.Get(self._data.cfg.Name)
+  self._preciousNameOutLineText:SetText(name)
+  self._preciousName:SetText(name)
+  self._currencyMenu:SetData({
+    RoleAssetID.RoleAssetFurnitureCoin,
+    RoleAssetID.RoleAssetGlow
+  })
+  self._remainTime = self._shopData.remainRefreshTime + 1
   self:_CountDown()
-  self._totalCount = #(self._data).goods
-  self._column = (math.ceil)(self._totalCount / self._perColumn)
+  self._totalCount = #self._data.goods
+  self._column = math.ceil(self._totalCount / self._perColumn)
   self:_ClassifyData()
-  ;
-  (self._index):SpawnObjects("UIShopHomelandIndex", self._column)
-  self._indexPointWidgets = (self._index):GetAllSpawnList()
-  for _,widget in pairs(self._indexPointWidgets) do
+  self._index:SpawnObjects("UIShopHomelandIndex", self._column)
+  self._indexPointWidgets = self._index:GetAllSpawnList()
+  for _, widget in pairs(self._indexPointWidgets) do
     widget:SetData(false)
   end
-  self._canvas = ((self._safeArea).parent):GetComponent("RectTransform")
-  local safesize = ((self._canvas).rect).size
-  safesize.x = safesize.x * (((self._safeArea).anchorMax).x - ((self._safeArea).anchorMin).x)
+  self._canvas = self._safeArea.parent:GetComponent("RectTransform")
+  local safesize = self._canvas.rect.size
+  safesize.x = safesize.x * (self._safeArea.anchorMax.x - self._safeArea.anchorMin.x)
   safesize.x = safesize.x + 1
   safesize.y = safesize.y + 1
   self._scrollViewHelper = H3DScrollViewHelper:New(self, "ScrollView", "UIShopHomelandGoodsSetItem", function(index, uiwidget)
-    -- function num : 0_4_0 , upvalues : self
     return self:_OnShowItem(index, uiwidget)
-  end
-)
-  ;
-  (self._scrollViewHelper):SetGroupChangedCallback(function(index, item)
-    -- function num : 0_4_1 , upvalues : self
-    if self._column < index + 1 then
-      return 
+  end)
+  self._scrollViewHelper:SetGroupChangedCallback(function(index, item)
+    if index + 1 > self._column then
+      return
     end
     self:_ShowItemData(index + 1)
-  end
-)
-  ;
-  (self._scrollViewHelper):Init(self._column, 1, safesize)
-  -- DECOMPILER ERROR at PC108: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._scrollView).anchoredPosition = Vector2(0, -60)
+  end)
+  self._scrollViewHelper:Init(self._column, 1, safesize)
+  self._scrollView.anchoredPosition = Vector2(0, -60)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious._ClassifyData = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopHomelandPrecious:_ClassifyData()
   self._columnData = {}
   local curColumn = 1
-  for _,goods in pairs((self._data).goods) do
-    -- DECOMPILER ERROR at PC14: Confused about usage of register: R7 in 'UnsetPending'
-
-    if not (self._columnData)[curColumn] then
-      (self._columnData)[curColumn] = {}
+  for _, goods in pairs(self._data.goods) do
+    if not self._columnData[curColumn] then
+      self._columnData[curColumn] = {}
     end
-    ;
-    (table.insert)((self._columnData)[curColumn], goods)
-    if #(self._columnData)[curColumn] == self._perColumn then
+    table.insert(self._columnData[curColumn], goods)
+    if #self._columnData[curColumn] == self._perColumn then
       curColumn = curColumn + 1
     end
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious.CloseBtnOnClick = function(self, go)
-  -- function num : 0_6
+function UIShopHomelandPrecious:CloseBtnOnClick(go)
   self:CloseDialog()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious.OnUpdate = function(self, ms)
-  -- function num : 0_7
+function UIShopHomelandPrecious:OnUpdate(ms)
   self._deltaTime = self._deltaTime + ms
   if self._deltaTime > 1000 then
     self._deltaTime = 0
@@ -139,97 +98,65 @@ UIShopHomelandPrecious.OnUpdate = function(self, ms)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious._CountDown = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local timeStr = (HelperProxy:GetInstance()):FormatTime_2((math.floor)(self._remainTime))
-  ;
-  (self._refreshTime):SetText((StringTable.Get)("str_shop_homeland_refreshtime", timeStr))
+function UIShopHomelandPrecious:_CountDown()
+  local timeStr = HelperProxy:GetInstance():FormatTime_2(math.floor(self._remainTime))
+  self._refreshTime:SetText(StringTable.Get("str_shop_homeland_refreshtime", timeStr))
   if self._remainTime <= 0 then
     self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV
-    if not (self._clientShop):SendProtocal(TT, ShopMainTabType.Homeland) then
-      return 
-    end
-    if self._scrollViewHelper then
-      (self._scrollViewHelper):Dispose()
-    end
-    self:_RefreshPreciousGoods()
-    self:_OnValue()
-  end
-)
+      if not self._clientShop:SendProtocal(TT, ShopMainTabType.Homeland) then
+        return
+      end
+      if self._scrollViewHelper then
+        self._scrollViewHelper:Dispose()
+      end
+      self:_RefreshPreciousGoods()
+      self:_OnValue()
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious._RefreshPreciousGoods = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local allPreciousGoods = (((self._shopData).goodsSet)[MarketType.Shop_Furniture_Precious])[FurnitureShopType.FRN_Precious]
+function UIShopHomelandPrecious:_RefreshPreciousGoods()
+  local allPreciousGoods = self._shopData.goodsSet[MarketType.Shop_Furniture_Precious][FurnitureShopType.FRN_Precious]
   if allPreciousGoods then
-    for shopID,goods in pairs(allPreciousGoods) do
+    for shopID, goods in pairs(allPreciousGoods) do
       local shopItemSet = HomelandShopItemSet:New(FurnitureShopType.FRN_Precious, shopID, goods)
       self._data = shopItemSet
     end
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious._ShowItemData = function(self, index)
-  -- function num : 0_10
-  if (self._indexPointWidgets)[self._currentIndex] then
-    ((self._indexPointWidgets)[self._currentIndex]):SetData(false)
+function UIShopHomelandPrecious:_ShowItemData(index)
+  if self._indexPointWidgets[self._currentIndex] then
+    self._indexPointWidgets[self._currentIndex]:SetData(false)
   end
   self._currentIndex = index
-  if (self._indexPointWidgets)[self._currentIndex] then
-    ((self._indexPointWidgets)[self._currentIndex]):SetData(true)
+  if self._indexPointWidgets[self._currentIndex] then
+    self._indexPointWidgets[self._currentIndex]:SetData(true)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious._OnShowItem = function(self, index, widget)
-  -- function num : 0_11 , upvalues : _ENV
-  widget:SetData(self._data, (self._columnData)[index], MarketType.Shop_Furniture_Precious, function()
-    -- function num : 0_11_0 , upvalues : self
+function UIShopHomelandPrecious:_OnShowItem(index, widget)
+  widget:SetData(self._data, self._columnData[index], MarketType.Shop_Furniture_Precious, function()
     self:_BuySuccessCallBack()
-  end
-)
-  -- DECOMPILER ERROR at PC9: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._items)[index] = widget
+  end)
+  self._items[index] = widget
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious.OnHide = function(self)
-  -- function num : 0_12
+function UIShopHomelandPrecious:OnHide()
   self._currentIndex = 0
   self._safeArea = nil
   if self._scrollViewHelper then
-    (self._scrollViewHelper):Dispose()
+    self._scrollViewHelper:Dispose()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious._BuySuccessCallBack = function(self)
-  -- function num : 0_13
+function UIShopHomelandPrecious:_BuySuccessCallBack()
   self:_ClassifyData()
-  ;
-  (self._scrollViewHelper):RefreshAllShownItem()
+  self._scrollViewHelper:RefreshAllShownItem()
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandPrecious.OpenShop = function(self, mainTabType)
-  -- function num : 0_14 , upvalues : _ENV
+function UIShopHomelandPrecious:OpenShop(mainTabType)
   if mainTabType == ShopMainTabType.Recharge then
     self:CloseDialog()
   end
 end
-
-

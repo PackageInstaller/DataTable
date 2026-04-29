@@ -1,17 +1,10 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/buff_logic_handler/buff_logic_element_reinforce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffLogicElementReinforce", BuffLogicBase)
 BuffLogicElementReinforce = BuffLogicElementReinforce
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicElementReinforce.DoLogic = function(self)
-  -- function num : 0_0
-  local e = (self._buffInstance):Entity()
+function BuffLogicElementReinforce:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasMonsterID() then
-    return 
+    return
   end
   local logicParam = self:GetLogicParam()
   local a = logicParam.a or 1
@@ -24,20 +17,18 @@ BuffLogicElementReinforce.DoLogic = function(self)
     cBuff:SetBuffValue("ElementReinforceFactorC", c)
   end
   if e:HasAttributes() then
-    (e:Attributes()):SetSimpleAttribute("ElementReinforce", true)
+    e:Attributes():SetSimpleAttribute("ElementReinforce", true)
   end
   return true
 end
 
 _class("BuffLogicRemoveElementReinforce", BuffLogicBase)
 BuffLogicRemoveElementReinforce = BuffLogicRemoveElementReinforce
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffLogicRemoveElementReinforce.DoLogic = function(self)
-  -- function num : 0_1
-  local e = (self._buffInstance):Entity()
+function BuffLogicRemoveElementReinforce:DoLogic()
+  local e = self._buffInstance:Entity()
   if not e:HasMonsterID() then
-    return 
+    return
   end
   local cBuff = e:BuffComponent()
   if cBuff then
@@ -46,9 +37,7 @@ BuffLogicRemoveElementReinforce.DoLogic = function(self)
     cBuff:SetBuffValue("ElementReinforceFactorC", nil)
   end
   if e:HasAttributes() then
-    (e:Attributes()):SetSimpleAttribute("ElementReinforce", false)
+    e:Attributes():SetSimpleAttribute("ElementReinforce", false)
   end
   return true
 end
-
-

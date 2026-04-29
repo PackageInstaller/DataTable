@@ -1,22 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_is_hp_less_than.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionIsHPLessThan", AINewNode)
 ActionIsHPLessThan = ActionIsHPLessThan
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionIsHPLessThan.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local hp = ((self.m_entityOwn):Attributes()):GetCurrentHP()
-  local hpMax = ((self.m_entityOwn):Attributes()):GetAttribute("MaxHP")
+function ActionIsHPLessThan:OnUpdate()
+  local hp = self.m_entityOwn:Attributes():GetCurrentHP()
+  local hpMax = self.m_entityOwn:Attributes():GetAttribute("MaxHP")
   local percent = self:GetLogicData(-1)
-  if hp / hpMax < percent then
+  if percent > hp / hpMax then
     return AINewNodeStatus.Success
   end
   return AINewNodeStatus.Failure
 end
-
-

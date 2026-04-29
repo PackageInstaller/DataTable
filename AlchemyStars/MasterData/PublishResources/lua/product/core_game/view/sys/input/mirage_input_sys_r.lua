@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/input/mirage_input_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MirageInputSystem_Render", UniqueReactiveSystem)
 MirageInputSystem_Render = MirageInputSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MirageInputSystem_Render.IsInterested = function(self, index, previousComponent, component)
-  -- function num : 0_0 , upvalues : _ENV
+function MirageInputSystem_Render:IsInterested(index, previousComponent, component)
   if component == nil then
     return false
   end
@@ -18,43 +11,35 @@ MirageInputSystem_Render.IsInterested = function(self, index, previousComponent,
   return true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageInputSystem_Render.Filter = function(self, world)
-  -- function num : 0_1
+function MirageInputSystem_Render:Filter(world)
   return true
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageInputSystem_Render.ExecuteWorld = function(self, world)
-  -- function num : 0_2 , upvalues : _ENV
+function MirageInputSystem_Render:ExecuteWorld(world)
   self._world = world
   local miragePickUpCmpt = world:MiragePickUp()
   local clickRenderPos = miragePickUpCmpt:GetClickPos()
   local boardServiceRender = world:GetService("BoardRender")
   local gridPos = boardServiceRender:BoardRenderPos2GridPos(clickRenderPos)
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local stateId = utilDataSvc:GetCurMainStateID()
   if stateId == GameStateID.MirageWaitInput then
     self:SetPickUpGrid(miragePickUpCmpt, gridPos, stateId)
   else
-    ;
-    (Log.fatal)("### Mirage invalid state. stateId=", stateId)
+    Log.fatal("### Mirage invalid state. stateId=", stateId)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageInputSystem_Render.SetPickUpGrid = function(self, miragePickUpCmpt, gridPos, stateId)
-  -- function num : 0_3 , upvalues : _ENV
-  local renderBoardEntity = (self._world):GetRenderBoardEntity()
-  local guideService = (self._world):GetService("Guide")
+function MirageInputSystem_Render:SetPickUpGrid(miragePickUpCmpt, gridPos, stateId)
+  local renderBoardEntity = self._world:GetRenderBoardEntity()
+  local guideService = self._world:GetService("Guide")
   local isGuide, isValid = guideService:IsGuideAndPieceValid(gridPos.x, gridPos.y)
-  if isGuide and isValid then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
-  else
-    return 
+  if isGuide then
+    if isValid then
+      self._world:EventDispatcher():Dispatch(GameEventType.FinishGuideStep, GuideType.Piece)
+    else
+      return
+    end
   end
   local isValid = self:CheckPickUpValidGrid(gridPos)
   if isValid then
@@ -66,29 +51,25 @@ MirageInputSystem_Render.SetPickUpGrid = function(self, miragePickUpCmpt, gridPo
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageInputSystem_Render.CheckPickUpValidGrid = function(self, touchPosition)
-  -- function num : 0_4 , upvalues : _ENV
-  local monsterGroup = (self._world):GetGroup(((self._world).BW_WEMatchers).MonsterID)
-  for _,e in ipairs(monsterGroup:GetEntities()) do
+function MirageInputSystem_Render:CheckPickUpValidGrid(touchPosition)
+  local monsterGroup = self._world:GetGroup(self._world.BW_WEMatchers.MonsterID)
+  for _, e in ipairs(monsterGroup:GetEntities()) do
     if not e:HasGhost() and not e:HasGuideGhost() and e:IsOnGridPosition(touchPosition) then
       return false
     end
   end
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   if teamEntity:IsOnGridPosition(touchPosition) then
     return false
   end
-  local utilData = (self._world):GetService("UtilData")
+  local utilData = self._world:GetService("UtilData")
   local validGrids = utilData:GetRoundGrid(teamEntity:GetGridPosition())
   local roundGridPosList = {}
-  for _,grid in ipairs(validGrids) do
+  for _, grid in ipairs(validGrids) do
     local pos = Vector2(grid.x, grid.y)
-    ;
-    (table.insert)(roundGridPosList, pos)
+    table.insert(roundGridPosList, pos)
   end
-  if not (table.icontains)(roundGridPosList, touchPosition) then
+  if not table.icontains(roundGridPosList, touchPosition) then
     return false
   end
   if utilData:IsValidPiecePos(touchPosition) and not utilData:IsPosBlock(touchPosition, BlockFlag.LinkLine) then
@@ -97,23 +78,14 @@ MirageInputSystem_Render.CheckPickUpValidGrid = function(self, touchPosition)
   return false
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageInputSystem_Render._HandlePickGrid = function(self, gridPos)
-  -- function num : 0_5 , upvalues : _ENV
-  local piece_service = (self._world):GetService("Piece")
+function MirageInputSystem_Render:_HandlePickGrid(gridPos)
+  local piece_service = self._world:GetService("Piece")
   piece_service:SetAllPieceDark()
   piece_service:SetPieceAnimNormal(gridPos)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.RefreshMiragePickUpGrid, true)
+  self._world:EventDispatcher():Dispatch(GameEventType.RefreshMiragePickUpGrid, true)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MirageInputSystem_Render._HandleClearPick = function(self)
-  -- function num : 0_6
-  local mirageSvcRender = (self._world):GetService("MirageRender")
+function MirageInputSystem_Render:_HandleClearPick()
+  local mirageSvcRender = self._world:GetService("MirageRender")
   mirageSvcRender:ClearMiragePick()
 end
-
-

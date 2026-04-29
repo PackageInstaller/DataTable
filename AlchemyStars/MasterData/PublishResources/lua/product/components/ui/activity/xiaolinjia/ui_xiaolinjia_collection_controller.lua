@@ -1,39 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/ui_xiaolinjia_collection_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIXiaoLinJiaCollectionController", UIController)
 UIXiaoLinJiaCollectionController = UIXiaoLinJiaCollectionController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIXiaoLinJiaCollectionController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIXiaoLinJiaCollectionController:Constructor()
   self.atlas = self:GetAsset("XiaoLinJia.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaCollectionController.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIXiaoLinJiaCollectionController:OnShow(uiParams)
   local backBtns = self:GetUIComponent("UISelectObjectPath", "backBtns")
   self._anim = self:GetUIComponent("Animation", "anim")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_1_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     self:Lock("UIXiaoLinJiaCollectionController_Close")
-    ;
-    (self._anim):Play("uieff_UIXiaoLinJiaCollectionController_out")
+    self._anim:Play("uieff_UIXiaoLinJiaCollectionController_out")
     self:StartTask(function(TT)
-      -- function num : 0_1_0_0 , upvalues : _ENV, self
       YIELD(TT, 167)
       self:CloseDialog()
       self:UnLock("UIXiaoLinJiaCollectionController_Close")
-    end
-)
-  end
-, nil, nil, false, nil, nil, nil)
+    end)
+  end, nil, nil, false, nil, nil, nil)
   self.uiMainController = uiParams[1]
   self._content = self:GetUIComponent("UISelectObjectPath", "content")
   self._contentLayout = self:GetUIComponent("GridLayoutGroup", "content")
@@ -42,95 +26,58 @@ UIXiaoLinJiaCollectionController.OnShow = function(self, uiParams)
   self._detail = self:GetUIComponent("UILocalizationText", "detail")
   self._lockText = self:GetUIComponent("UILocalizationText", "lockText")
   self._lockObj = self:GetGameObject("lockObj")
-  local offsetL = ((ResolutionManager.RealWidth)() - 1920) / 1.875
-  local offsetR = ((ResolutionManager.RealWidth)() - 1920) / 1.6
-  -- DECOMPILER ERROR at PC74: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._contentLayout).padding).left = (ResolutionManager.RealWidth)() / 2 - 180 - offsetL
-  -- DECOMPILER ERROR at PC83: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  ((self._contentLayout).padding).right = (ResolutionManager.RealWidth)() / 2 - 240 - offsetR
+  local offsetL = (ResolutionManager.RealWidth() - 1920) / 1.875
+  local offsetR = (ResolutionManager.RealWidth() - 1920) / 1.6
+  self._contentLayout.padding.left = ResolutionManager.RealWidth() / 2 - 180 - offsetL
+  self._contentLayout.padding.right = ResolutionManager.RealWidth() / 2 - 240 - offsetR
   self._padding = 480
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaCollectionController.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local componentID = (self.uiMainController):GetTacitTestComponentCfgId()
-  self.collectionCfg = (Cfg.cfg_xiaolinjia_collection)({ComponentID = componentID})
+function UIXiaoLinJiaCollectionController:OnValue()
+  local componentID = self.uiMainController:GetTacitTestComponentCfgId()
+  self.collectionCfg = Cfg.cfg_xiaolinjia_collection({ComponentID = componentID})
   self.collectionList = {}
-  local missionList = (self.uiMainController):GetMissionList()
+  local missionList = self.uiMainController:GetMissionList()
   if self.collectionCfg then
-    for _,v in pairs(self.collectionCfg) do
-      -- DECOMPILER ERROR at PC36: Confused about usage of register: R8 in 'UnsetPending'
-
-      if (missionList[v.MissionID]):GetIsHide() and (missionList[v.MissionID]):GetIsLock() then
-        do
-          (self.collectionList)[v.ID] = v
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC37: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+    for _, v in pairs(self.collectionCfg) do
+      if missionList[v.MissionID]:GetIsHide() and missionList[v.MissionID]:GetIsLock() then
+      else
+        self.collectionList[v.ID] = v
       end
     end
   end
-  ;
-  (self._content):SpawnObjects("UIXiaoLinJiaCollectionItem", #self.collectionList)
-  self.pool = (self._content):GetAllSpawnList()
+  self._content:SpawnObjects("UIXiaoLinJiaCollectionItem", #self.collectionList)
+  self.pool = self._content:GetAllSpawnList()
   for i = 1, #self.collectionList do
-    ((self.pool)[i]):SetData((self.collectionList)[i], self)
+    self.pool[i]:SetData(self.collectionList[i], self)
   end
-  ;
-  ((self.pool)[1]):BtnOnClick()
+  self.pool[1]:BtnOnClick()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIXiaoLinJiaCollectionController.OnSelectCollection = function(self, id, lock)
-  -- function num : 0_3 , upvalues : _ENV
+function UIXiaoLinJiaCollectionController:OnSelectCollection(id, lock)
   if self.selectId == id then
-    return 
+    return
   end
-  for _,v in pairs(self.pool) do
+  for _, v in pairs(self.pool) do
     v:OnSelect(self.selectId, id)
   end
   self.selectId = id
   local posX = self._padding * (id - 1)
-  local pos = (self._contentRect).anchoredPosition
-  ;
-  (self._contentRect):DOAnchorPosX(-posX, 0.3)
-  local cfg = (self.collectionList)[id]
+  local pos = self._contentRect.anchoredPosition
+  self._contentRect:DOAnchorPosX(-posX, 0.3)
+  local cfg = self.collectionList[id]
   if lock then
-    (self._lockObj):SetActive(true)
-    ;
-    (self._title):SetText((StringTable.Get)(cfg.LockName))
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._title).color = Color(0.57647058823529, 0.57647058823529, 0.57647058823529, 1)
-    ;
-    (self._detail):SetText((StringTable.Get)(cfg.LockClue))
-    ;
-    (self._lockText):SetText((StringTable.Get)(cfg.LockRoleSpeak))
+    self._lockObj:SetActive(true)
+    self._title:SetText(StringTable.Get(cfg.LockName))
+    self._title.color = Color(0.5764705882352941, 0.5764705882352941, 0.5764705882352941, 1)
+    self._detail:SetText(StringTable.Get(cfg.LockClue))
+    self._lockText:SetText(StringTable.Get(cfg.LockRoleSpeak))
   else
-    ;
-    (self._lockObj):SetActive(false)
-    ;
-    (self._title):SetText((StringTable.Get)(cfg.UnlockName))
-    -- DECOMPILER ERROR at PC81: Confused about usage of register: R6 in 'UnsetPending'
-
-    ;
-    (self._title).color = Color(1, 0.21960784313725, 0.47450980392157, 1)
-    ;
-    (self._detail):SetText((StringTable.Get)(cfg.Desc))
-    ;
-    (self._lockText):SetText((StringTable.Get)(cfg.UnlockRoleSpeak))
+    self._lockObj:SetActive(false)
+    self._title:SetText(StringTable.Get(cfg.UnlockName))
+    self._title.color = Color(1, 0.2196078431372549, 0.4745098039215686, 1)
+    self._detail:SetText(StringTable.Get(cfg.Desc))
+    self._lockText:SetText(StringTable.Get(cfg.UnlockRoleSpeak))
   end
 end
-
-

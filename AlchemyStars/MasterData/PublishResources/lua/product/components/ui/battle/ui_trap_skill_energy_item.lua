@@ -1,62 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_trap_skill_energy_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITrapSkillEnergyItem", UICustomWidget)
 UITrapSkillEnergyItem = UITrapSkillEnergyItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITrapSkillEnergyItem.Constructor = function(self)
-  -- function num : 0_0
+function UITrapSkillEnergyItem:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillEnergyItem.OnShow = function(self)
-  -- function num : 0_1
+function UITrapSkillEnergyItem:OnShow()
   self._curImage = self:GetUIComponent("Image", "image")
   self._curImageBG = self:GetUIComponent("Image", "imageBG")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillEnergyItem.OnHide = function(self)
-  -- function num : 0_2
+function UITrapSkillEnergyItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillEnergyItem.Dispose = function(self)
-  -- function num : 0_3
+function UITrapSkillEnergyItem:Dispose()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillEnergyItem.OnVisible = function(self, visible)
-  -- function num : 0_4
-  ((self._curImage).gameObject):SetActive(visible)
+function UITrapSkillEnergyItem:OnVisible(visible)
+  self._curImage.gameObject:SetActive(visible)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UITrapSkillEnergyItem.OnRefreshImage = function(self, spriteImage, spriteImageBG, imageOffset)
-  -- function num : 0_5
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R4 in 'UnsetPending'
-
-  (self._curImage).sprite = spriteImage
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  (self._curImageBG).sprite = spriteImageBG
-  ;
-  (self._curImage):SetNativeSize()
-  ;
-  (self._curImageBG):SetNativeSize()
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._curImage).transform).localPosition = imageOffset
+function UITrapSkillEnergyItem:OnRefreshImage(spriteImage, spriteImageBG, imageOffset)
+  self._curImage.sprite = spriteImage
+  self._curImageBG.sprite = spriteImageBG
+  self._curImage:SetNativeSize()
+  self._curImageBG:SetNativeSize()
+  self._curImage.transform.localPosition = imageOffset
 end
-
-

@@ -1,36 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/xiaolinjia/activity/line/ui_cn7_n36_line.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ui_activity_line_level_base")
 _class("UICN7N36Line", UIActivityLineLevelBase)
 UICN7N36Line = UICN7N36Line
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN7N36Line.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  self._isNormalUI = not uiParams[1] or true
+function UICN7N36Line:OnShow(uiParams)
+  self._isNormalUI = uiParams[1] and true
   self._mainShot = uiParams[2]
   local backBtns = self:GetUIComponent("UISelectObjectPath", "TopBtn")
   self._backBtns = backBtns:SpawnObject("UINewCommonTopButton")
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_0_0 , upvalues : self, _ENV
+  self._backBtns:SetData(function()
     if self._isNormalUI then
-      ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ActivityMainStatusRefreshEvent)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.ActivityMainStatusRefreshEvent)
       self:CloseWindow()
     else
       self:SwitchMainUI()
     end
-  end
-, nil, nil, false, nil, nil, nil)
+  end, nil, nil, false, nil, nil, nil)
   self._scrollRect = self:GetUIComponent("ScrollRect", "MapContent")
   self._mapContentRect = self:GetUIComponent("RectTransform", "MapContent")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._linesPool = self:GetUIComponent("UISelectObjectPath", "Lines")
   self._nodesPool = self:GetUIComponent("UISelectObjectPath", "Nodes")
-  self._safeAreaSize = ((self:GetUIComponent("RectTransform", "SafeArea")).rect).size
+  self._safeAreaSize = self:GetUIComponent("RectTransform", "SafeArea").rect.size
   self._time = self:GetUIComponent("UILocalizationText", "Time")
   self._firstRedPoint = self:GetGameObject("RedPoint")
   self._bgLoader1 = self:GetUIComponent("RawImageLoader", "bg1")
@@ -44,204 +34,127 @@ UICN7N36Line.OnShow = function(self, uiParams)
   self:RefreshTryout()
   local lockName = "UINP7Level_OnShow"
   self:Lock(lockName)
-  ;
-  (self._timerHolder):StartTimer(lockName, 500, function()
-    -- function num : 0_0_1 , upvalues : self, lockName
+  self._timerHolder:StartTimer(lockName, 500, function()
     self:UnLock(lockName)
-  end
-)
+  end)
   self:AttachEvent(GameEventType.ItemCountChanged, self._ItemCountChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line._ItemCountChanged = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local lotteryComponentInfo = (self._campaign):GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY)
+function UICN7N36Line:_ItemCountChanged()
+  local lotteryComponentInfo = self._campaign:GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY)
   if lotteryComponentInfo then
-    local curCount = (ClientCampaignDrawShop.GetMoney)(lotteryComponentInfo.m_cost_item_id)
-    ;
-    (self._exChangeBtn):SetText("text", curCount)
+    local curCount = ClientCampaignDrawShop.GetMoney(lotteryComponentInfo.m_cost_item_id)
+    self._exChangeBtn:SetText("text", curCount)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetCampaignType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UICN7N36Line:GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_N7
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetLineComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICN7N36Line:GetLineComponentType()
   return ECampaignCN7ComponentID.ECAMPAIGN_N7_LINE_MISSION
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetFirstMeetComponentType = function(self)
-  -- function num : 0_4
+function UICN7N36Line:GetFirstMeetComponentType()
   return nil
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetLevelNodeName = function(self)
-  -- function num : 0_5
+function UICN7N36Line:GetLevelNodeName()
   return "UICN7N36LineMapNode"
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetLevelLineName = function(self)
-  -- function num : 0_6
+function UICN7N36Line:GetLevelLineName()
   return "UICN7N36LineMapLine"
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetBgList = function(self)
-  -- function num : 0_7
+function UICN7N36Line:GetBgList()
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetLineLevelState = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UICN7N36Line:GetLineLevelState()
   return UIStateType.UICN7N36Line
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetCustomTimeStr = function(self)
-  -- function num : 0_9
+function UICN7N36Line:GetCustomTimeStr()
   return "str_activity_day", "str_activity_hour", "str_activity_minus", "str_activity_less_one_minus"
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetCustomTimeTipsStr = function(self)
-  -- function num : 0_10
+function UICN7N36Line:GetCustomTimeTipsStr()
   return "str_cn7_n36_activity_mission_remaining_time"
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.GetLockName = function(self)
-  -- function num : 0_11
+function UICN7N36Line:GetLockName()
   return self:GetName()
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.CloseWindow = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UICN7N36Line:CloseWindow()
   local lockName = "UICN7N36Line:AnimOut"
   self:StartTask(function(TT)
-    -- function num : 0_12_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
     self:PlayAnim("uieff_UICN7N36Line_out")
     YIELD(TT, 500)
     self:UnLock(lockName)
     self:CloseDialog()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.PlotEndCallback = function(self, stageId)
-  -- function num : 0_13 , upvalues : _ENV
-  local isActive = (self._lineComponent):IsPassCamMissionID(stageId)
+function UICN7N36Line:PlotEndCallback(stageId)
+  local isActive = self._lineComponent:IsPassCamMissionID(stageId)
   if isActive then
-    return 
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_13_0 , upvalues : self, stageId, _ENV
-    (self._lineComponent):SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
+    self._lineComponent:SetMissionStoryActive(TT, stageId, ActiveStoryType.ActiveStoryType_BeforeBattle)
     local res = AsyncRequestRes:New()
-    local award = (self._lineComponent):HandleCompleteStoryMission(TT, res, stageId)
+    local award = self._lineComponent:HandleCompleteStoryMission(TT, res, stageId)
     if not res:GetSucc() then
-      (self._campModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+      self._campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
+    elseif table.count(award) ~= 0 then
+      self:ShowDialog("UIGetItemController", award, function()
+        self:FlushNodes()
+      end)
     else
-      if (table.count)(award) ~= 0 then
-        self:ShowDialog("UIGetItemController", award, function()
-      -- function num : 0_13_0_0 , upvalues : self
       self:FlushNodes()
     end
-)
-      else
-        self:FlushNodes()
-      end
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.SwitchMainUI = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function UICN7N36Line:SwitchMainUI()
   self:SwitchState(UIStateType.UICN7N36MainController)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.OnInit = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UICN7N36Line:OnInit()
   self._anim = self:GetUIComponent("Animation", "anim")
   local lockName = "UICN7N36Line:AnimIN"
   self:StartTask(function(TT)
-    -- function num : 0_15_0 , upvalues : self, lockName, _ENV
     self:Lock(lockName)
     self:PlayAnim("uieff_UICN7N36Line_in")
     YIELD(TT, 1000)
     self:UnLock(lockName)
-  end
-)
+  end)
   self:_SetExchangeBtn()
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line.PlayAnim = function(self, AnimName)
-  -- function num : 0_16
-  (self._anim):Play(AnimName)
+function UICN7N36Line:PlayAnim(AnimName)
+  self._anim:Play(AnimName)
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN7N36Line._SetExchangeBtn = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UICN7N36Line:_SetExchangeBtn()
   local compId = ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY
-  local lotteryComponentInfo = (self._campaign):GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY)
+  local lotteryComponentInfo = self._campaign:GetComponentInfo(ECampaignCN7ComponentID.ECAMPAIGN_N7_LOTTERY)
   local pool = self:GetUIComponent("UISelectObjectPath", "exchangeBtn")
   self._exChangeBtn = pool:SpawnObject("UIActivityCommonComponentEnter")
-  ;
-  (self._exChangeBtn):SetRed("red", function()
-    -- function num : 0_17_0 , upvalues : self
-    return ((self._campaign):GetLocalProcess()):ShopRedPoint()
+  self._exChangeBtn:SetRed("red", function()
+    return self._campaign:GetLocalProcess():ShopRedPoint()
+  end)
+  if lotteryComponentInfo then
+    local curCount = ClientCampaignDrawShop.GetMoney(lotteryComponentInfo.m_cost_item_id)
+    self._exChangeBtn:SetText("text", curCount)
   end
-)
-  do
-    if lotteryComponentInfo then
-      local curCount = (ClientCampaignDrawShop.GetMoney)(lotteryComponentInfo.m_cost_item_id)
-      ;
-      (self._exChangeBtn):SetText("text", curCount)
-    end
-    ;
-    (self._exChangeBtn):SetData(self._campaign, function()
-    -- function num : 0_17_1 , upvalues : self
+  self._exChangeBtn:SetData(self._campaign, function()
     self:ShowDialog("UICN7N36ShopController")
-  end
-)
-    local lockTr = (self._exChangeBtn):GetUIComponent("RectTransform", "lock")
-    ;
-    (lockTr.gameObject):SetActive(false)
-  end
+  end)
+  local lockTr = self._exChangeBtn:GetUIComponent("RectTransform", "lock")
+  lockTr.gameObject:SetActive(false)
 end
-
-

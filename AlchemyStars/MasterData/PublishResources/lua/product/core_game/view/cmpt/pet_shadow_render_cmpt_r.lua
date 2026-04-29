@@ -1,81 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/pet_shadow_render_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("PetShadowRenderComponent", Object)
 PetShadowRenderComponent = PetShadowRenderComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-PetShadowRenderComponent.Constructor = function(self)
-  -- function num : 0_0
+function PetShadowRenderComponent:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-PetShadowRenderComponent.SetOwnerEntityID = function(self, ownerEntityID)
-  -- function num : 0_1
+function PetShadowRenderComponent:SetOwnerEntityID(ownerEntityID)
   self._ownerEntityID = ownerEntityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PetShadowRenderComponent.GetOwnerEntityID = function(self)
-  -- function num : 0_2
+function PetShadowRenderComponent:GetOwnerEntityID()
   return self._ownerEntityID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PetShadowRenderComponent.WEC_PostInitialize = function(self, owner)
-  -- function num : 0_3
+function PetShadowRenderComponent:WEC_PostInitialize(owner)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-PetShadowRenderComponent.WEC_PostRemoved = function(self)
-  -- function num : 0_4
+function PetShadowRenderComponent:WEC_PostRemoved()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.PetShadowRender = function(self)
-  -- function num : 0_5
-  return self:GetComponent((self.WEComponentsEnum).PetShadowRender)
+function Entity:PetShadowRender()
+  return self:GetComponent(self.WEComponentsEnum.PetShadowRender)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasPetShadowRender = function(self)
-  -- function num : 0_6
-  return self:HasComponent((self.WEComponentsEnum).PetShadowRender)
+function Entity:HasPetShadowRender()
+  return self:HasComponent(self.WEComponentsEnum.PetShadowRender)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddPetShadowRender = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PetShadowRender
+function Entity:AddPetShadowRender()
+  local index = self.WEComponentsEnum.PetShadowRender
   local component = PetShadowRenderComponent:New()
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplacePetShadowRender = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).PetShadowRender
+function Entity:ReplacePetShadowRender()
+  local index = self.WEComponentsEnum.PetShadowRender
   local component = PetShadowRenderComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemovePetShadowRender = function(self)
-  -- function num : 0_9
+function Entity:RemovePetShadowRender()
   if self:HasPetShadowRender() then
-    self:RemoveComponent((self.WEComponentsEnum).PetShadowRender)
+    self:RemoveComponent(self.WEComponentsEnum.PetShadowRender)
   end
 end
-
-

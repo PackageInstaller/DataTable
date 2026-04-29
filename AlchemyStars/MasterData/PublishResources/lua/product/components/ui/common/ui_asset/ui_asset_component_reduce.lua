@@ -1,101 +1,70 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/common/ui_asset/ui_asset_component_reduce.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAssetComponentReduce", UIAssetComponentBase)
 UIAssetComponentReduce = UIAssetComponentReduce
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAssetComponentReduce.OnInit = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self._reduceObj = (((self._gameObject).transform):Find("g_reduce")).gameObject
-  self._reduceNum = (((self._gameObject).transform):Find("g_reduce/reduce/reducenum")):GetComponent("UILocalizationText")
-  self._reduceNumBtn = (((self._gameObject).transform):Find("g_reduce/reduce/g_reduce_btn")).gameObject
+function UIAssetComponentReduce:OnInit()
+  self._reduceObj = self._gameObject.transform:Find("g_reduce").gameObject
+  self._reduceNum = self._gameObject.transform:Find("g_reduce/reduce/reducenum"):GetComponent("UILocalizationText")
+  self._reduceNumBtn = self._gameObject.transform:Find("g_reduce/reduce/g_reduce_btn").gameObject
   self._uicustomEventListener = UICustomUIEventListener:New()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentReduce.SetReduceLongPressCallBack = function(self, callback, logPressSec)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAssetComponentReduce:SetReduceLongPressCallBack(callback, logPressSec)
   self._reducePressTime = logPressSec
   self._longTrigger = false
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._reduceNumBtn), UIEvent.Click, function(go)
-    -- function num : 0_1_0 , upvalues : callback
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._reduceNumBtn), UIEvent.Click, function(go)
     local clickCallBack = callback
     if clickCallBack then
       clickCallBack()
     end
-  end
-)
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._reduceNumBtn), UIEvent.Press, function(go)
-    -- function num : 0_1_1 , upvalues : _ENV, self, callback
-    if (GuideHelper.IsUIGuideShow)() then
-      return 
+  end)
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._reduceNumBtn), UIEvent.Press, function(go)
+    if GuideHelper.IsUIGuideShow() then
+      return
     end
     if not self._reduceTimerEvent then
       self._longTrigger = true
-      self._reduceTimerEvent = ((GameGlobal.Timer)()):AddEventTimes(self._reducePressTime, TimerTriggerCount.Infinite, function()
-      -- function num : 0_1_1_0 , upvalues : callback
-      local clickCallBack = callback
-      if clickCallBack then
-        clickCallBack()
-      end
+      self._reduceTimerEvent = GameGlobal.Timer():AddEventTimes(self._reducePressTime, TimerTriggerCount.Infinite, function()
+        local clickCallBack = callback
+        if clickCallBack then
+          clickCallBack()
+        end
+      end)
     end
-)
-    end
-  end
-)
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._reduceNumBtn), UIEvent.Unhovered, function(go)
-    -- function num : 0_1_2 , upvalues : self, _ENV
+  end)
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._reduceNumBtn), UIEvent.Unhovered, function(go)
     self._longTrigger = false
     if self._reduceTimerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._reduceTimerEvent)
+      GameGlobal.Timer():CancelEvent(self._reduceTimerEvent)
       self._reduceTimerEvent = nil
     end
-  end
-)
-  ;
-  (self._uicustomEventListener):AddUICustomEventListener((UICustomUIEventListener.Get)(self._reduceNumBtn), UIEvent.Release, function(go)
-    -- function num : 0_1_3 , upvalues : self, _ENV
+  end)
+  self._uicustomEventListener:AddUICustomEventListener(UICustomUIEventListener.Get(self._reduceNumBtn), UIEvent.Release, function(go)
     self._longTrigger = false
     if self._reduceTimerEvent then
-      ((GameGlobal.Timer)()):CancelEvent(self._reduceTimerEvent)
+      GameGlobal.Timer():CancelEvent(self._reduceTimerEvent)
       self._reduceTimerEvent = nil
     end
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAssetComponentReduce.SetReduceNum = function(self, count, selectCallback)
-  -- function num : 0_2 , upvalues : _ENV
+function UIAssetComponentReduce:SetReduceNum(count, selectCallback)
   if not count or count <= 0 then
-    (self._reduceObj):SetActive(false)
+    self._reduceObj:SetActive(false)
     if selectCallback then
       selectCallback(false)
     end
     if self._longTrigger then
       self._longTrigger = false
       if self._reduceTimerEvent then
-        ((GameGlobal.Timer)()):CancelEvent(self._reduceTimerEvent)
+        GameGlobal.Timer():CancelEvent(self._reduceTimerEvent)
         self._reduceTimerEvent = nil
       end
     end
   else
-    ;
-    (self._reduceObj):SetActive(true)
+    self._reduceObj:SetActive(true)
     if selectCallback then
       selectCallback(true)
     end
-    ;
-    (self._reduceNum):SetText(count)
+    self._reduceNum:SetText(count)
   end
 end
-
-

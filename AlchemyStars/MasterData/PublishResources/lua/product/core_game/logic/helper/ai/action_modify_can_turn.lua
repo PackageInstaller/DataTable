@@ -1,32 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_modify_can_turn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionModifyCanTurn", AINewNode)
 ActionModifyCanTurn = ActionModifyCanTurn
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionModifyCanTurn.Constructor = function(self)
-  -- function num : 0_0
+function ActionModifyCanTurn:Constructor()
   local n = 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionModifyCanTurn.OnBegin = function(self)
-  -- function num : 0_1
-  local aiComponent = (self.m_entityOwn):AI()
+function ActionModifyCanTurn:OnBegin()
+  local aiComponent = self.m_entityOwn:AI()
   local canTurn = self:GetLogicData(-1)
   aiComponent:SetCanTurn(canTurn)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionModifyCanTurn.OnUpdate = function(self, dt)
-  -- function num : 0_2 , upvalues : _ENV
+function ActionModifyCanTurn:OnUpdate(dt)
   return AINewNodeStatus.Success
 end
-
-

@@ -1,58 +1,44 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_handler/calc_monster_move_front_attack.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectCalc_MonsterMoveFrontAttack", Object)
 SkillEffectCalc_MonsterMoveFrontAttack = SkillEffectCalc_MonsterMoveFrontAttack
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectCalc_MonsterMoveFrontAttack.Constructor = function(self, world)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveFrontAttack:Constructor(world)
   self._world = world
-  self._skillEffectService = (self._world):GetService("SkillEffectCalc")
+  self._skillEffectService = self._world:GetService("SkillEffectCalc")
   self.m_nextPosList = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
-  ;
-  (self.m_nextPosList):AllowDuplicate()
+  self.m_nextPosList:AllowDuplicate()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.DoSkillEffectCalculator = function(self, skillEffectCalcParam)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveFrontAttack:DoSkillEffectCalculator(skillEffectCalcParam)
   local skillParam = skillEffectCalcParam:GetSkillEffectParam()
-  local casterEntity = (self._world):GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
+  local casterEntity = self._world:GetEntityByID(skillEffectCalcParam:GetCasterEntityID())
   self.casterEntity = casterEntity
   local targetIDList = skillEffectCalcParam:GetTargetEntityIDs()
   local targetID = false
-  if (table.count)(targetIDList) >= 1 then
+  if table.count(targetIDList) >= 1 then
     targetID = targetIDList[1]
   end
   if not targetID or targetID == -1 then
-    (Log.fatal)("Need Target SkillID", skillEffectCalcParam:GetSkillID())
+    Log.fatal("Need Target SkillID", skillEffectCalcParam:GetSkillID())
   end
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local sBoard = (self._world):GetService("BoardLogic")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local sBoard = self._world:GetService("BoardLogic")
   local checkSkillID = skillParam:GetCheckSkillID()
   local moveStep = skillParam:GetMoveStep()
   local asAIMove = skillParam:IsAIMove()
-  local targetEntity = (self._world):GetEntityByID(targetID)
+  local targetEntity = self._world:GetEntityByID(targetID)
   local posWalkResultList = {}
   local isCasterDead = false
   if not targetEntity:HasDeadMark() then
-    posWalkResultList = self:CalMoveResultList(casterEntity, targetEntity, checkSkillID, moveStep, asAIMove)
+    posWalkResultList, isCasterDead = self:CalMoveResultList(casterEntity, targetEntity, checkSkillID, moveStep, asAIMove)
   end
   local result = SkillEffectMonsterMoveFrontAttackResult:New(posWalkResultList, isCasterDead)
   return {result}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack._OnArrivePos = function(self, casterEntity, walkRes, skillParam)
-  -- function num : 0_2 , upvalues : _ENV
-  local trapServiceLogic = (self._world):GetService("TrapLogic")
+function SkillEffectCalc_MonsterMoveFrontAttack:_OnArrivePos(casterEntity, walkRes, skillParam)
+  local trapServiceLogic = self._world:GetService("TrapLogic")
   local listTrapWork, listTrapResult = trapServiceLogic:TriggerTrapByEntity(casterEntity, TrapTriggerOrigin.Move)
-  for i,e in ipairs(listTrapWork) do
+  for i, e in ipairs(listTrapWork) do
     local trapEntity = e
     local skillEffectResultContainer = listTrapResult[i]
     local aiResult = AISkillResult:New()
@@ -61,24 +47,20 @@ SkillEffectCalc_MonsterMoveFrontAttack._OnArrivePos = function(self, casterEntit
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.CalMoveResultList = function(self, casterEntity, targetEntity, checkSkillID, moveStep, asAIMove)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveFrontAttack:CalMoveResultList(casterEntity, targetEntity, checkSkillID, moveStep, asAIMove)
   local targetCenterPos = targetEntity:GetGridPosition()
   local casterPos = casterEntity:GetGridPosition()
   local bodyAreaCmpt = targetEntity:BodyArea()
-  local utilCalcSvc = (self._world):GetService("UtilCalc")
-  local sBoard = (self._world):GetService("BoardLogic")
+  local utilCalcSvc = self._world:GetService("UtilCalc")
+  local sBoard = self._world:GetService("BoardLogic")
   local listPosTarget = {targetCenterPos}
-  ;
-  (self.m_nextPosList):Clear()
-  for _,targetPos in ipairs(listPosTarget) do
+  self.m_nextPosList:Clear()
+  for _, targetPos in ipairs(listPosTarget) do
     local walkRange = self:_ComputeSkillRange(checkSkillID, targetPos, bodyAreaCmpt:GetArea())
     for i = 1, #walkRange do
       local posWork = walkRange[i]
       if self:IsPosAccessible(posWork) then
-        (AINewNode.InsertSortedArray)(self.m_nextPosList, casterPos, posWork, i)
+        AINewNode.InsertSortedArray(self.m_nextPosList, casterPos, posWork, i)
       end
     end
   end
@@ -87,7 +69,7 @@ SkillEffectCalc_MonsterMoveFrontAttack.CalMoveResultList = function(self, caster
   local posWalkResultList = {}
   for i = 1, moveStep do
     local posWalk = self:_CalcMovePos(casterEntity, moveStep - i + 1)
-    local aiRecorderCmpt = ((self._world):GetBoardEntity()):AIRecorder()
+    local aiRecorderCmpt = self._world:GetBoardEntity():AIRecorder()
     local walkRes = MonsterMoveFrontAttackResult:New()
     if posWalk ~= nil then
       local posSelf = casterEntity:GetGridPosition()
@@ -95,12 +77,10 @@ SkillEffectCalc_MonsterMoveFrontAttack.CalMoveResultList = function(self, caster
       casterEntity:SetGridPosition(posWalk)
       casterEntity:SetGridDirection(posWalk - posSelf)
       local nt = NTMonsterSkillMoved:New(casterEntity, posWalk, self._lastPos)
-      ;
-      ((self._world):GetService("Trigger")):Notify(nt)
+      self._world:GetService("Trigger"):Notify(nt)
       self._lastPos = posWalk
       local entityID = casterEntity:GetID()
-      ;
-      (table.insert)(posWalkResultList, walkRes)
+      table.insert(posWalkResultList, walkRes)
       walkRes:SetWalkPos(posWalk)
       if asAIMove then
         aiRecorderCmpt:AddWalkResult(entityID, walkRes)
@@ -112,16 +92,11 @@ SkillEffectCalc_MonsterMoveFrontAttack.CalMoveResultList = function(self, caster
       end
     end
   end
-  do
-    return posWalkResultList, isCasterDead
-  end
+  return posWalkResultList, isCasterDead
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack._CalcMovePos = function(self, entityWork, nWalkTotal)
-  -- function num : 0_4
-  local posSelf = (entityWork:GridLocation()).Position
+function SkillEffectCalc_MonsterMoveFrontAttack:_CalcMovePos(entityWork, nWalkTotal)
+  local posSelf = entityWork:GridLocation().Position
   local posTarget = self:FindNewTargetPos(posSelf)
   if posSelf == posTarget then
     return nil
@@ -134,18 +109,12 @@ SkillEffectCalc_MonsterMoveFrontAttack._CalcMovePos = function(self, entityWork,
   return posWalk
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.FindNewTargetPos = function(self, posDefault)
-  -- function num : 0_5
+function SkillEffectCalc_MonsterMoveFrontAttack:FindNewTargetPos(posDefault)
   return self:FindPosValid(self.m_nextPosList, posDefault)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.FindPosValid = function(self, planPosList, defPos)
-  -- function num : 0_6
-  if planPosList == nil or planPosList:Size() <= 0 then
+function SkillEffectCalc_MonsterMoveFrontAttack:FindPosValid(planPosList, defPos)
+  if nil == planPosList or planPosList:Size() <= 0 then
     return defPos
   end
   local posSelf = defPos
@@ -154,87 +123,69 @@ SkillEffectCalc_MonsterMoveFrontAttack.FindPosValid = function(self, planPosList
   for i = 1, nPosCount do
     local posWork = planPosList:GetAt(i)
     local bAccessible = self:IsPosAccessible(posWork.data)
-    if bAccessible == true then
+    if true == bAccessible then
       posReturn = posWork.data
       break
     end
   end
-  do
-    return posReturn
-  end
+  return posReturn
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.IsPosAccessible = function(self, pos)
-  -- function num : 0_7 , upvalues : _ENV
-  if (self.casterEntity):HasBodyArea() == false then
+function SkillEffectCalc_MonsterMoveFrontAttack:IsPosAccessible(pos)
+  if false == self.casterEntity:HasBodyArea() then
     return true
   end
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
-  local monsterIDCmpt = (self.casterEntity):MonsterID()
+  local boardServiceLogic = self._world:GetService("BoardLogic")
+  local monsterIDCmpt = self.casterEntity:MonsterID()
   local nMonsterBlockData = monsterIDCmpt:GetMonsterBlockData()
-  local coverList = (self.casterEntity):GetCoverAreaList(pos)
-  local coverListSelf = (self.casterEntity):GetCoverAreaList((self.casterEntity):GetGridPosition())
+  local coverList = self.casterEntity:GetCoverAreaList(pos)
+  local coverListSelf = self.casterEntity:GetCoverAreaList(self.casterEntity:GetGridPosition())
   for i = 1, #coverList do
     local posWork = coverList[i]
-    if not (table.icontains)(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, nMonsterBlockData) then
+    if not table.icontains(coverListSelf, posWork) and boardServiceLogic:IsPosBlock(posWork, nMonsterBlockData) then
       return false
     end
   end
   return true
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.ComputeWalkRange = function(self, centerPos, nWalkStep, bFilter)
-  -- function num : 0_8 , upvalues : _ENV
-  if not bFilter then
-    bFilter = false
-  end
-  local cbFilter = nil
+function SkillEffectCalc_MonsterMoveFrontAttack:ComputeWalkRange(centerPos, nWalkStep, bFilter)
+  bFilter = bFilter or false
+  local cbFilter
   if bFilter then
     cbFilter = Callback:New(1, self.IsPosAccessible, self)
   end
-  return (ComputeScopeRange.ComputeRange_WalkMathPos)(centerPos, 1, nWalkStep, cbFilter)
+  return ComputeScopeRange.ComputeRange_WalkMathPos(centerPos, 1, nWalkStep, cbFilter)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.FindNewWalkPos = function(self, walkRange, posCenter, posDef)
-  -- function num : 0_9
+function SkillEffectCalc_MonsterMoveFrontAttack:FindNewWalkPos(walkRange, posCenter, posDef)
   return self:FindPosByNearCenter(walkRange, posCenter, posDef, 1)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.FindPosByNearCenter = function(self, listPlanPos, posCenter, posDef, nCheckStep)
-  -- function num : 0_10 , upvalues : _ENV
-  if listPlanPos == nil or (table.count)(listPlanPos) <= 0 then
+function SkillEffectCalc_MonsterMoveFrontAttack:FindPosByNearCenter(listPlanPos, posCenter, posDef, nCheckStep)
+  if nil == listPlanPos or table.count(listPlanPos) <= 0 then
     return posDef
   end
-  local utilDataSvc = (self._world):GetService("UtilData")
+  local utilDataSvc = self._world:GetService("UtilData")
   local listWalk = SortedArray:New(Algorithm.COMPARE_CUSTOM, AiSortByDistance._ComparerByNear)
   listWalk:AllowDuplicate()
   local lastMovePos = self._lastPos
   for i = 1, #listPlanPos do
     local posData = listPlanPos[i]
     local posWalk = posData:GetPos()
-    if posWalk ~= posDef and (nCheckStep == nil or nCheckStep == posData:GetStep()) then
+    if posWalk ~= posDef and (nil == nCheckStep or nCheckStep == posData:GetStep()) then
       local isBlockMoveWithTrapWall = utilDataSvc:IsBlockMoveWithTrapWall(posDef, posWalk, self.casterEntity)
       if posWalk ~= lastMovePos and isBlockMoveWithTrapWall == false then
-        (AINewNode.InsertSortedArray)(listWalk, posCenter, posWalk, i)
+        AINewNode.InsertSortedArray(listWalk, posCenter, posWalk, i)
+      else
       end
     end
   end
   return self:FindPosValid(listWalk, posDef)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.ComputeSkillRange = function(self, skillID, centerPos, bodyArea, dir)
-  -- function num : 0_11 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function SkillEffectCalc_MonsterMoveFrontAttack:ComputeSkillRange(skillID, centerPos, bodyArea, dir)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
   local scopeType = skillConfigData:GetSkillScopeType()
   if scopeType == SkillScopeType.DirectLineExpand then
@@ -243,44 +194,30 @@ SkillEffectCalc_MonsterMoveFrontAttack.ComputeSkillRange = function(self, skillI
     local ret3 = self:_ComputeSkillRange(skillID, centerPos, bodyArea, Vector2(1, 0))
     local ret4 = self:_ComputeSkillRange(skillID, centerPos, bodyArea, Vector2(-1, 0))
     local ret = {}
-    ;
-    (table.appendArray)(ret, ret1)
-    ;
-    (table.appendArray)(ret, ret2)
-    ;
-    (table.appendArray)(ret, ret3)
-    ;
-    (table.appendArray)(ret, ret4)
+    table.appendArray(ret, ret1)
+    table.appendArray(ret, ret2)
+    table.appendArray(ret, ret3)
+    table.appendArray(ret, ret4)
     return ret
   else
-    do
-      do return self:_ComputeSkillRange(skillID, centerPos, bodyArea, dir) end
-    end
+    return self:_ComputeSkillRange(skillID, centerPos, bodyArea, dir)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack._ComputeSkillRange = function(self, nSkillID, posCenter, bodyArea, dir)
-  -- function num : 0_12 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveFrontAttack:_ComputeSkillRange(nSkillID, posCenter, bodyArea, dir)
   if nSkillID == 0 then
     return {}
   end
   local workCenter = posCenter
-  if #bodyArea == 4 then
+  if 4 == #bodyArea then
     workCenter = workCenter + Vector2(-1, -1)
-  else
-    if #bodyArea == 9 then
-      workCenter = workCenter + Vector2(-2, -2)
-    end
+  elseif 9 == #bodyArea then
+    workCenter = workCenter + Vector2(-2, -2)
   end
   return self:CalculateSkillRange(nSkillID, workCenter, dir, bodyArea)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack.CalculateSkillRange = function(self, skillID, centerPos, dir, bodyAreaList)
-  -- function num : 0_13 , upvalues : _ENV
+function SkillEffectCalc_MonsterMoveFrontAttack:CalculateSkillRange(skillID, centerPos, dir, bodyAreaList)
   local skillResult = self:_CalculateSkillScope(skillID, centerPos, dir, bodyAreaList)
   if not skillResult then
     return {}
@@ -289,26 +226,19 @@ SkillEffectCalc_MonsterMoveFrontAttack.CalculateSkillRange = function(self, skil
   local listReturn = {}
   for i = 1, #skillRange do
     local posWork = skillRange[i]
-    if (table.icontains)(listReturn, posWork) == false then
-      (table.insert)(listReturn, posWork)
+    if false == table.icontains(listReturn, posWork) then
+      table.insert(listReturn, posWork)
     end
   end
   return listReturn
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectCalc_MonsterMoveFrontAttack._CalculateSkillScope = function(self, skillID, centerPos, dir, bodyAreaList, entityCaster)
-  -- function num : 0_14 , upvalues : _ENV
-  local configService = (self._world):GetService("Config")
+function SkillEffectCalc_MonsterMoveFrontAttack:_CalculateSkillScope(skillID, centerPos, dir, bodyAreaList, entityCaster)
+  local configService = self._world:GetService("Config")
   local skillConfigData = configService:GetSkillConfigData(skillID)
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local skillCalculater = utilScopeSvc:GetSkillScopeCalc()
-  if not dir then
-    dir = Vector2(0, 1)
-  end
+  dir = dir or Vector2(0, 1)
   local skillResult = skillCalculater:CalcSkillScope(skillConfigData, centerPos, dir, bodyAreaList, entityCaster)
   return skillResult
 end
-
-

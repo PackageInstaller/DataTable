@@ -1,92 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_air_nav_menu/ui_air_nav_menu_pet_story_eff.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAirNavMenuPetStoryEff", UICustomWidget)
 UIAirNavMenuPetStoryEff = UIAirNavMenuPetStoryEff
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAirNavMenuPetStoryEff.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAirNavMenuPetStoryEff:OnShow(uiParams)
   self._offset = Vector2(0, 180)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryEff.OnHide = function(self)
-  -- function num : 0_1
+function UIAirNavMenuPetStoryEff:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryEff.SetData = function(self, pos, size, data, isVisitPet, callback)
-  -- function num : 0_2
+function UIAirNavMenuPetStoryEff:SetData(pos, size, data, isVisitPet, callback)
   self:GetComponents()
   self._size = size
   self._data = data
   self._isVisitPet = isVisitPet
-  self._petid = (self._data):TemplateID()
-  self._petGrade = (self._data):AwakeLevel()
-  self._clothSkinId = (self._data):ClothSkinID()
+  self._petid = self._data:TemplateID()
+  self._petGrade = self._data:AwakeLevel()
+  self._clothSkinId = self._data:ClothSkinID()
   self._pos = pos
   self._callback = callback
   self:OnValue()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryEff.OnValue = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC4: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._rect).anchoredPosition = self._pos + self._offset
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._rect).sizeDelta = self._size
-  local head = (HelperProxy:GetInstance()):GetPetHead(self._petid, self._petGrade, self._clothSkinId, PetSkinEffectPath.HEAD_ICON_AIR_STORY_TIPS)
-  ;
-  (self._petHead):LoadImage(head)
-  ;
-  (self._visitGo):SetActive(self._isVisitPet)
+function UIAirNavMenuPetStoryEff:OnValue()
+  self._rect.anchoredPosition = self._pos + self._offset
+  self._rect.sizeDelta = self._size
+  local head = HelperProxy:GetInstance():GetPetHead(self._petid, self._petGrade, self._clothSkinId, PetSkinEffectPath.HEAD_ICON_AIR_STORY_TIPS)
+  self._petHead:LoadImage(head)
+  self._visitGo:SetActive(self._isVisitPet)
   if self._isVisitPet then
-    local ownerName = (self._data):GetOwnerName()
-    ;
-    (Log.debug)("###[NavMenu] ownerName --> ", ownerName)
-    ;
-    (self._visitTex):SetText(ownerName)
+    local ownerName = self._data:GetOwnerName()
+    Log.debug("###[NavMenu] ownerName --> ", ownerName)
+    self._visitTex:SetText(ownerName)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryEff.FlushPos = function(self, pos)
-  -- function num : 0_4
+function UIAirNavMenuPetStoryEff:FlushPos(pos)
   self._pos = pos
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._rect).anchoredPosition = self._pos + self._offset
+  self._rect.anchoredPosition = self._pos + self._offset
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryEff.GetComponents = function(self)
-  -- function num : 0_5
+function UIAirNavMenuPetStoryEff:GetComponents()
   self._petHead = self:GetUIComponent("UICircleMaskLoader", "petHead")
   self._rect = self:GetUIComponent("RectTransform", "pos")
   self._visitGo = self:GetGameObject("visitGo")
   self._visitTex = self:GetUIComponent("UILocalizationText", "ownerNameTex")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAirNavMenuPetStoryEff.btnOnClick = function(self, go)
-  -- function num : 0_6
+function UIAirNavMenuPetStoryEff:btnOnClick(go)
   if self._callback then
-    (self._callback)(self._data)
+    self._callback(self._data)
   end
 end
-
-

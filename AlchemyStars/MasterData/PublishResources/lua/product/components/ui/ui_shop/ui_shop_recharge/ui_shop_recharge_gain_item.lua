@@ -1,95 +1,56 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_recharge/ui_shop_recharge_gain_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopRechargeGainItem", UICustomWidget)
 UIShopRechargeGainItem = UIShopRechargeGainItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopRechargeGainItem.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopRechargeGainItem:OnShow()
   self._root = self:GetGameObject("root")
-  ;
-  (self._root):SetActive(false)
+  self._root:SetActive(false)
   self._txtName = self:GetUIComponent("UILocalizationText", "txtName")
   self._imgIcon = self:GetUIComponent("RawImageLoader", "imgIcon")
   self._imgIconRect = self:GetUIComponent("RectTransform", "imgIcon")
-  self._imgIconRectDefaultSize = Vector2(((self._imgIconRect).sizeDelta).x, ((self._imgIconRect).sizeDelta).y)
+  self._imgIconRectDefaultSize = Vector2(self._imgIconRect.sizeDelta.x, self._imgIconRect.sizeDelta.y)
   self._txtCount = self:GetUIComponent("UILocalizationText", "txtCount")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeGainItem.OnHide = function(self)
-  -- function num : 0_1
+function UIShopRechargeGainItem:OnHide()
   self._root = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeGainItem.ReadyToFlush = function(self, item, stamp)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopRechargeGainItem:ReadyToFlush(item, stamp)
   self:StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, stamp, self, item
     YIELD(TT, stamp)
     self:Flush(item)
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeGainItem.Flush = function(self, item)
-  -- function num : 0_3
+function UIShopRechargeGainItem:Flush(item)
   if not self._root then
-    return 
+    return
   end
-  ;
-  (self._root):SetActive(true)
+  self._root:SetActive(true)
   self._itemData = item
   self:FlushImage()
-  ;
-  (self._txtName):SetText((self._itemData).item_name)
-  ;
-  (self._txtCount):SetText((self._itemData).item_count)
+  self._txtName:SetText(self._itemData.item_name)
+  self._txtCount:SetText(self._itemData.item_count)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopRechargeGainItem.FlushImage = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._imgIcon):LoadImage((self._itemData).icon)
+function UIShopRechargeGainItem:FlushImage()
+  self._imgIcon:LoadImage(self._itemData.icon)
   local isHead = false
-  local itemId = (self._itemData).item_id
-  if itemId >= 3750000 and itemId <= 3759999 then
+  local itemId = self._itemData.item_id
+  if 3750000 <= itemId and itemId <= 3759999 then
     isHead = true
   end
   if isHead then
     local whRate = 1
-    if itemId >= 3751000 and itemId <= 3751999 then
-      whRate = 0.84210526315789
-    else
-      if itemId >= 3752000 and itemId <= 3752999 then
-        whRate = 0.63888888888889
-      else
-        if itemId >= 3753000 and itemId <= 3753999 then
-          whRate = 0.63888888888889
-        end
-      end
+    if 3751000 <= itemId and itemId <= 3751999 then
+      whRate = 0.8421052631578947
+    elseif 3752000 <= itemId and itemId <= 3752999 then
+      whRate = 0.6388888888888888
+    elseif 3753000 <= itemId and itemId <= 3753999 then
+      whRate = 0.6388888888888888
     end
-    -- DECOMPILER ERROR at PC43: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._imgIconRect).sizeDelta = Vector2(((self._imgIconRect).sizeDelta).x, ((self._imgIconRect).sizeDelta).x * whRate)
+    self._imgIconRect.sizeDelta = Vector2(self._imgIconRect.sizeDelta.x, self._imgIconRect.sizeDelta.x * whRate)
   else
-    do
-      -- DECOMPILER ERROR at PC47: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._imgIconRect).sizeDelta = self._imgIconRectDefaultSize
-    end
+    self._imgIconRect.sizeDelta = self._imgIconRectDefaultSize
   end
 end
-
-

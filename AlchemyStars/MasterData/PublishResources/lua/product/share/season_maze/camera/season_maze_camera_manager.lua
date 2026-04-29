@@ -1,69 +1,40 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/camera/season_maze_camera_manager.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonMazeCameraManager", Object)
 SeasonMazeCameraManager = SeasonMazeCameraManager
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonMazeCameraManager.Constructor = function(self)
-  -- function num : 0_0
+function SeasonMazeCameraManager:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraManager.OnInit = function(self, seasonID, seasonIDBT)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonMazeCameraManager:OnInit(seasonID, seasonIDBT)
   if EDITOR or IsPc() then
     self._seasonCamera = SeasonMazeCameraPc:New(seasonID, seasonIDBT)
   else
     self._seasonCamera = SeasonMazeCameraMobile:New(seasonID, seasonIDBT)
   end
-  ;
-  (self._seasonCamera):SetPositionForce()
+  self._seasonCamera:SetPositionForce()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraManager.Update = function(self, deltaTime)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._seasonCamera):Update(deltaTime, SeasonInputMode.Input)
+function SeasonMazeCameraManager:Update(deltaTime)
+  self._seasonCamera:Update(deltaTime, SeasonInputMode.Input)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraManager.Dispose = function(self)
-  -- function num : 0_3
-  (self._seasonCamera):Dispose()
+function SeasonMazeCameraManager:Dispose()
+  self._seasonCamera:Dispose()
   self._seasonCamera = nil
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraManager.SwitchMode = function(self, mode)
-  -- function num : 0_4
-  (self._seasonCamera):SwitchMode(mode)
+function SeasonMazeCameraManager:SwitchMode(mode)
+  self._seasonCamera:SwitchMode(mode)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraManager.SeasonCamera = function(self)
-  -- function num : 0_5
+function SeasonMazeCameraManager:SeasonCamera()
   return self._seasonCamera
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraManager.Camera = function(self)
-  -- function num : 0_6
-  return (self._seasonCamera):Camera()
+function SeasonMazeCameraManager:Camera()
+  return self._seasonCamera:Camera()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraManager.DoEnterAnim = function(self)
-  -- function num : 0_7
+function SeasonMazeCameraManager:DoEnterAnim()
   local camera = self:Camera()
   local curSize = camera.orthographicSize
   local fromSize = curSize + 0.4
@@ -71,11 +42,6 @@ SeasonMazeCameraManager.DoEnterAnim = function(self)
   camera:DOOrthoSize(curSize, 1.2)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonMazeCameraManager.UnLock = function(self, zoneMask, zoneID2Animation)
-  -- function num : 0_8
-  (self._seasonCamera):UnLock(zoneMask, zoneID2Animation)
+function SeasonMazeCameraManager:UnLock(zoneMask, zoneID2Animation)
+  self._seasonCamera:UnLock(zoneMask, zoneID2Animation)
 end
-
-

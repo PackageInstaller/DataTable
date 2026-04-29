@@ -1,142 +1,103 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/ui_main_lobby_open_list/ui_main_lobby_open_list.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIMainLobbyOpenList", Object)
 UIMainLobbyOpenList = UIMainLobbyOpenList
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIMainLobbyOpenList.SetData = function(self, uiName)
-  -- function num : 0_0 , upvalues : _ENV
+function UIMainLobbyOpenList:SetData(uiName)
   self._uiOwnerName = uiName
-  self._loginModule = (GameGlobal.GetModule)(LoginModule)
-  self._svrTimeModule = (GameGlobal.GetModule)(SvrTimeModule)
+  self._loginModule = GameGlobal.GetModule(LoginModule)
+  self._svrTimeModule = GameGlobal.GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyOpenList.ShowOpenList = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  local uiMainModule = (GameGlobal.GetUIModule)(SignInModule)
+function UIMainLobbyOpenList:ShowOpenList()
+  local uiMainModule = GameGlobal.GetUIModule(SignInModule)
   local openList = uiMainModule:GetOpenList()
-  if not openList or (table.count)(openList) <= 0 then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MainLobbyOpenListFinish)
-    return 
+  if not openList or table.count(openList) <= 0 then
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.MainLobbyOpenListFinish)
+    return
   end
-  if (table.count)(openList) > 1 then
-    (table.sort)(openList, function(a, b)
-    -- function num : 0_1_0 , upvalues : _ENV
-    local a_order = 0
-    local b_order = 0
-    local cgf_a = (Cfg.cfg_main_open_list)({UIType = a.ID})
-    if cgf_a then
-      a_order = (cgf_a[1]).Order
-    end
-    local cgf_b = (Cfg.cfg_main_open_list)({UIType = b.ID})
-    if cgf_b then
-      b_order = (cgf_b[1]).Order
-    end
-    do return b_order < a_order end
-    -- DECOMPILER ERROR: 1 unprocessed JMP targets
-  end
-)
+  if table.count(openList) > 1 then
+    table.sort(openList, function(a, b)
+      local a_order = 0
+      local b_order = 0
+      local cgf_a = Cfg.cfg_main_open_list({
+        UIType = a.ID
+      })
+      if cgf_a then
+        a_order = cgf_a[1].Order
+      end
+      local cgf_b = Cfg.cfg_main_open_list({
+        UIType = b.ID
+      })
+      if cgf_b then
+        b_order = cgf_b[1].Order
+      end
+      return a_order > b_order
+    end)
   end
   local idx = 0
-  while 1 do
-    if idx < #openList then
-      idx = idx + 1
-      local openData = openList[idx]
-      local open = false
-      if openData.OpenState == UIMainOpenState.DayOnce then
-        local dayOpen, open_id, svr_time = self:CheckDayOnceOpen(openData.ID)
-        if dayOpen then
-          open = (openData.CheckFunc)()
-          if open then
-            (LocalDB.SetString)("ui_main_login_time_" .. open_id .. "_" .. openData.ID, tostring(svr_time))
-          end
-        end
-      else
-        do
-          do
-            -- DECOMPILER ERROR at PC77: Unhandled construct in 'MakeBoolean' P1
-
-            if openData.OpenState == UIMainOpenState.Once and openData.OpenTimes == 0 then
-              open = (openData.CheckFunc)()
-              if open then
-                openData.OpenTimes = 1
-              end
-            end
-            if openData.OpenState == UIMainOpenState.Times then
-              open = (openData.CheckFunc)()
-            end
-            if open then
-              return 
-            end
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out DO_STMT
-
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_ELSE_STMT
-
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_STMT
-
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC93: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+  while idx < #openList do
+    idx = idx + 1
+    local openData = openList[idx]
+    local open = false
+    if openData.OpenState == UIMainOpenState.DayOnce then
+      local dayOpen, open_id, svr_time = self:CheckDayOnceOpen(openData.ID)
+      if dayOpen then
+        open = openData.CheckFunc()
+        if open then
+          LocalDB.SetString("ui_main_login_time_" .. open_id .. "_" .. openData.ID, tostring(svr_time))
         end
       end
+    elseif openData.OpenState == UIMainOpenState.Once then
+      if openData.OpenTimes == 0 then
+        open = openData.CheckFunc()
+        if open then
+          openData.OpenTimes = 1
+        end
+      end
+    elseif openData.OpenState == UIMainOpenState.Times then
+      open = openData.CheckFunc()
+    end
+    if open then
+      return
     end
   end
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.MainLobbyOpenListFinish)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.MainLobbyOpenListFinish)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyOpenList.CheckDayOnceOpen = function(self, dataid)
-  -- function num : 0_2 , upvalues : _ENV
+function UIMainLobbyOpenList:CheckDayOnceOpen(dataid)
   local hourOffset = 5
-  local cfg_open_list = (Cfg.cfg_main_open_list)({UIType = dataid})
+  local cfg_open_list = Cfg.cfg_main_open_list({UIType = dataid})
   local isZeroTime = false
   if cfg_open_list then
-    if (cfg_open_list[1]).IsZeroTime then
+    if cfg_open_list[1].IsZeroTime then
       isZeroTime = true
     end
-    hourOffset = (cfg_open_list[1]).TimeOffset
+    hourOffset = cfg_open_list[1].TimeOffset
   end
-  local next_zero_time = nil
+  local next_zero_time
   if isZeroTime then
-    next_zero_time = (self._loginModule):GetGMTNextZeroTime()
+    next_zero_time = self._loginModule:GetGMTNextZeroTime()
   else
-    next_zero_time = (self._loginModule):GetNextZeroTime()
+    next_zero_time = self._loginModule:GetNextZeroTime()
   end
   next_zero_time = next_zero_time + (hourOffset - 24) * 60 * 60
-  local svr_time = (math.modf)((self._svrTimeModule):GetServerTime() * 0.001)
-  local open_id = ((GameGlobal.GameLogic)()):GetOpenId()
-  local db_value = (LocalDB.GetString)("ui_main_login_time_" .. open_id .. "_" .. dataid, "empty")
+  local svr_time = math.modf(self._svrTimeModule:GetServerTime() * 0.001)
+  local open_id = GameGlobal.GameLogic():GetOpenId()
+  local db_value = LocalDB.GetString("ui_main_login_time_" .. open_id .. "_" .. dataid, "empty")
   if db_value == "empty" then
     return true, open_id, svr_time
   else
     local last_time = tonumber(db_value)
     if next_zero_time < svr_time then
-      if last_time < next_zero_time then
+      if next_zero_time > last_time then
         return true, open_id, svr_time
       else
         return false
       end
-    else
-      if svr_time - last_time >= 86400 then
-        return true, open_id, svr_time
-      end
+    elseif 86400 <= svr_time - last_time then
+      return true, open_id, svr_time
     end
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIMainLobbyOpenList.Dispose = function(self)
-  -- function num : 0_3
+function UIMainLobbyOpenList:Dispose()
 end
-
-

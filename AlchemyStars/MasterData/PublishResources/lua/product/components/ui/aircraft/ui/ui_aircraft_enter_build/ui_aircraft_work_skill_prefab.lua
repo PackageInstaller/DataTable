@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_aircraft_enter_build/ui_aircraft_work_skill_prefab.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftWorkSkillPrefab", UICustomWidget)
 UIAircraftWorkSkillPrefab = UIAircraftWorkSkillPrefab
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftWorkSkillPrefab.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftWorkSkillPrefab:OnShow(uiParams)
   self._workIndexName = self:GetUIComponent("UILocalizationText", "workIndexName")
   self._workSkillDesc = self:GetUIComponent("UILocalizationText", "workSkillDesc")
   self._icon = self:GetUIComponent("RawImageLoader", "icon")
@@ -17,53 +10,34 @@ UIAircraftWorkSkillPrefab.OnShow = function(self, uiParams)
   self._workSkillText = self:GetUIComponent("UILocalizationText", "workSkillText")
   self._condition = self:GetUIComponent("UILocalizationText", "condition")
   self._nameBg = self:GetUIComponent("Image", "nameBg")
-  local nameTr = (self._nameBg):GetComponent("RectTransform")
+  local nameTr = self._nameBg:GetComponent("RectTransform")
   nameTr.anchoredPosition = Vector2(0, 0)
   self._altas = self:GetAsset("UIAircraftEnterBuild.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftWorkSkillPrefab.SetData = function(self, index, skillCls, roomType)
-  -- function num : 0_1 , upvalues : _ENV
-  local cfg_work_skill = (Cfg.cfg_work_skill)[skillCls.ID]
+function UIAircraftWorkSkillPrefab:SetData(index, skillCls, roomType)
+  local cfg_work_skill = Cfg.cfg_work_skill[skillCls.ID]
   if cfg_work_skill then
-    (self._icon):LoadImage(cfg_work_skill.Icon)
-    ;
-    (self._workIndexName):SetText((StringTable.Get)(cfg_work_skill.Name))
-    ;
-    (self._workSkillDesc):SetText((StringTable.Get)(cfg_work_skill.Desc))
-    -- DECOMPILER ERROR at PC31: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._workSkillText).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC39: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._workSkillDesc).color = Color(1, 1, 1, 1)
-    -- DECOMPILER ERROR at PC47: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (self._nameBg).color = Color(1, 1, 1, 1)
+    self._icon:LoadImage(cfg_work_skill.Icon)
+    self._workIndexName:SetText(StringTable.Get(cfg_work_skill.Name))
+    self._workSkillDesc:SetText(StringTable.Get(cfg_work_skill.Desc))
+    self._workSkillText.color = Color(1, 1, 1, 1)
+    self._workSkillDesc.color = Color(1, 1, 1, 1)
+    self._nameBg.color = Color(1, 1, 1, 1)
     if skillCls.isLock then
-      (Log.error)("skillCls.isLock")
+      Log.error("skillCls.isLock")
     end
-    ;
-    (self._lock):SetActive(skillCls.isLock)
+    self._lock:SetActive(skillCls.isLock)
     if not skillCls.isLock and cfg_work_skill.RoomType ~= roomType then
-      (self._mask):SetActive(true)
+      self._mask:SetActive(true)
     else
-      ;
-      (self._mask):SetActive(false)
+      self._mask:SetActive(false)
     end
     if skillCls.isLock then
-      local str = (StringTable.Get)("str_aircraft_tip_grade_behind")
-      str = (string.format)(str, skillCls.grade)
-      ;
-      (self._condition):SetText(str)
-      return 
+      local str = StringTable.Get("str_aircraft_tip_grade_behind")
+      str = string.format(str, skillCls.grade)
+      self._condition:SetText(str)
+      return
     end
   end
 end
-
-

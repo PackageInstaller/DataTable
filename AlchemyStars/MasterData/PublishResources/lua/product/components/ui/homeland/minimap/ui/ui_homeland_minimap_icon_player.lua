@@ -1,79 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/minimap/ui/ui_homeland_minimap_icon_player.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIHomelandMinimapIconPlayer", UIHomelandMinimapIconBase)
 UIHomelandMinimapIconPlayer = UIHomelandMinimapIconPlayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIHomelandMinimapIconPlayer.OnShow = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIHomelandMinimapIconPlayer:OnShow()
   self:AttachEvent(GameEventType.MinimapSwitch, self.OnMinimapSwitch)
   self._area = self:GetGameObject("Area")
   self._view = self:GetUIComponent("Transform", "View")
-  local homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  local homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   local homelandClient = homeLandModule:GetClient()
   local cameraMgr = homelandClient:CameraManager()
   self._followCameraController = cameraMgr:FollowCameraController()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPlayer.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIHomelandMinimapIconPlayer:OnHide()
   self:DetachEvent(GameEventType.MinimapSwitch, self.OnMinimapSwitch)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPlayer.OnInitDone = function(self, minimapStatus)
-  -- function num : 0_2
+function UIHomelandMinimapIconPlayer:OnInitDone(minimapStatus)
   self:OnMinimapSwitch(minimapStatus)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPlayer.OnMinimapSwitch = function(self, status)
-  -- function num : 0_3 , upvalues : _ENV
+function UIHomelandMinimapIconPlayer:OnMinimapSwitch(status)
   if status == MinimapStatus.Mini then
-    (self._area):SetActive(true)
+    self._area:SetActive(true)
   else
-    ;
-    (self._area):SetActive(false)
+    self._area:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPlayer.UpdateArrow = function(self, status)
-  -- function num : 0_4 , upvalues : _ENV
+function UIHomelandMinimapIconPlayer:UpdateArrow(status)
   if status == MinimapStatus.Mini then
-    local rotation = (self._followCameraController):Rotation()
+    local rotation = self._followCameraController:Rotation()
     local angle = rotation.eulerAngles
-    -- DECOMPILER ERROR at PC16: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._view).eulerAngles = Vector3(0, 0, -angle.y + 180)
+    self._view.eulerAngles = Vector3(0, 0, -angle.y + 180)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIHomelandMinimapIconPlayer.GetAnimationName = function(self, animType)
-  -- function num : 0_5 , upvalues : _ENV
+function UIHomelandMinimapIconPlayer:GetAnimationName(animType)
   if not self._animationNames then
     self._animationNames = {}
-    -- DECOMPILER ERROR at PC8: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.IN] = "UIHomelandMinimapPlayerIcon_in"
-    -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self._animationNames)[MinimapIconAnimationType.OUT] = "UIHomelandMinimapPlayerIcon_out"
+    self._animationNames[MinimapIconAnimationType.IN] = "UIHomelandMinimapPlayerIcon_in"
+    self._animationNames[MinimapIconAnimationType.OUT] = "UIHomelandMinimapPlayerIcon_out"
   end
-  return (self._animationNames)[animType]
+  return self._animationNames[animType]
 end
-
-

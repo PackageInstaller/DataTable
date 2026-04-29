@@ -1,17 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_param_grid_return.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
-local SkillPhaseParam_GridReturn_TargetType = {RandAttack = 0, Damage = 1, AllRangeGrid = 2}
+local SkillPhaseParam_GridReturn_TargetType = {
+  RandAttack = 0,
+  Damage = 1,
+  AllRangeGrid = 2
+}
 _enum("SkillPhaseParam_GridReturn_TargetType", SkillPhaseParam_GridReturn_TargetType)
 _class("SkillPhaseParam_GridReturn", SkillPhaseParamBase)
 SkillPhaseParam_GridReturn = SkillPhaseParam_GridReturn
--- DECOMPILER ERROR at PC19: Confused about usage of register: R1 in 'UnsetPending'
 
-SkillPhaseParam_GridReturn.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseParam_GridReturn:Constructor(t)
   self._castAnimation = t.castAnimation
   self._castEffectID = t.castEffectID
   self._castEffectTime = t.castEffectTime
@@ -31,135 +28,81 @@ SkillPhaseParam_GridReturn.Constructor = function(self, t)
   self._castEndEffectID = t.castEndEffectID
 end
 
--- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetCacheTable = function(self)
-  -- function num : 0_1
+function SkillPhaseParam_GridReturn:GetCacheTable()
   local listID = {}
   self:AddEffectIDToListID(listID, self._gridEffectID)
   return self:GetCacheTableFromListID(listID)
 end
 
--- DECOMPILER ERROR at PC25: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetSoundCacheTable = function(self)
-  -- function num : 0_2
+function SkillPhaseParam_GridReturn:GetSoundCacheTable()
   if not self._audioID or self._audioID <= 0 then
-    return 
+    return
   end
-  return {self._audioID}
+  return {
+    self._audioID
+  }
 end
 
--- DECOMPILER ERROR at PC28: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetPhaseType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SkillPhaseParam_GridReturn:GetPhaseType()
   return SkillViewPhaseType.GridReturn
 end
 
--- DECOMPILER ERROR at PC31: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetCastAnimationEffect = function(self)
-  -- function num : 0_4
+function SkillPhaseParam_GridReturn:GetCastAnimationEffect()
   return self._castAnimation, self._castEffectID, self._castEffectTime
 end
 
--- DECOMPILER ERROR at PC34: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetTargetType = function(self)
-  -- function num : 0_5
+function SkillPhaseParam_GridReturn:GetTargetType()
   return self._targetType or 0
 end
 
--- DECOMPILER ERROR at PC37: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetTrajectoryType = function(self)
-  -- function num : 0_6
+function SkillPhaseParam_GridReturn:GetTrajectoryType()
   return self._trajectoryType or 1
 end
 
--- DECOMPILER ERROR at PC40: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetBornEffectID = function(self)
-  -- function num : 0_7
+function SkillPhaseParam_GridReturn:GetBornEffectID()
   return self._bornEffectID
 end
 
--- DECOMPILER ERROR at PC43: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetBornEffectTime = function(self)
-  -- function num : 0_8
+function SkillPhaseParam_GridReturn:GetBornEffectTime()
   return self._bornEffectTime
 end
 
--- DECOMPILER ERROR at PC46: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetGridEffectID = function(self)
-  -- function num : 0_9
+function SkillPhaseParam_GridReturn:GetGridEffectID()
   return self._gridEffectID
 end
 
--- DECOMPILER ERROR at PC49: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetFinishDelayTime = function(self)
-  -- function num : 0_10
+function SkillPhaseParam_GridReturn:GetFinishDelayTime()
   return self._finishDelayTime
 end
 
--- DECOMPILER ERROR at PC52: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetStartHigh = function(self)
-  -- function num : 0_11
+function SkillPhaseParam_GridReturn:GetStartHigh()
   return self._startHigh
 end
 
--- DECOMPILER ERROR at PC55: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetEndHigh = function(self)
-  -- function num : 0_12
+function SkillPhaseParam_GridReturn:GetEndHigh()
   return self._endHigh
 end
 
--- DECOMPILER ERROR at PC58: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetFlyTotalTime = function(self)
-  -- function num : 0_13
+function SkillPhaseParam_GridReturn:GetFlyTotalTime()
   return self._flyTotalTime
 end
 
--- DECOMPILER ERROR at PC61: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetFlySpeed = function(self)
-  -- function num : 0_14
+function SkillPhaseParam_GridReturn:GetFlySpeed()
   return self._flySpeed
 end
 
--- DECOMPILER ERROR at PC64: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetDeltaAngle = function(self)
-  -- function num : 0_15
+function SkillPhaseParam_GridReturn:GetDeltaAngle()
   return self._deltaAngle
 end
 
--- DECOMPILER ERROR at PC67: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetAudioID = function(self)
-  -- function num : 0_16
+function SkillPhaseParam_GridReturn:GetAudioID()
   return self._audioID
 end
 
--- DECOMPILER ERROR at PC70: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetAudioWaitTime = function(self)
-  -- function num : 0_17
+function SkillPhaseParam_GridReturn:GetAudioWaitTime()
   return self._audioWaitTime
 end
 
--- DECOMPILER ERROR at PC73: Confused about usage of register: R1 in 'UnsetPending'
-
-SkillPhaseParam_GridReturn.GetEndEffectID = function(self)
-  -- function num : 0_18
+function SkillPhaseParam_GridReturn:GetEndEffectID()
   return self._castEndEffectID
 end
-
-

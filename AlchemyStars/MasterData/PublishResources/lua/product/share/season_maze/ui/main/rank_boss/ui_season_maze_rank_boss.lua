@@ -1,64 +1,35 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/season_maze/ui/main/rank_boss/ui_season_maze_rank_boss.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISeasonMazeRankBoss", UICustomWidget)
 UISeasonMazeRankBoss = UISeasonMazeRankBoss
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISeasonMazeRankBoss.InitWidget = function(self)
-  -- function num : 0_0
+function UISeasonMazeRankBoss:InitWidget()
   self._go = self:GetGameObject("Go")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRankBoss.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UISeasonMazeRankBoss:OnShow()
   self:InitWidget()
   self:AttachEvent(GameEventType.OnKeyChange, self.SetData)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRankBoss.SetData = function(self)
-  -- function num : 0_2
+function UISeasonMazeRankBoss:SetData()
   local haveKey = false
-  ;
-  (self._go):SetActive(haveKey)
+  self._go:SetActive(haveKey)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRankBoss.BtnOnClick = function(self, go)
-  -- function num : 0_3 , upvalues : _ENV
+function UISeasonMazeRankBoss:BtnOnClick(go)
   local pass = false
   local haveKey = false
-  do
-    if not pass then
-      local tips = "wei tong guan"
-      ;
-      (ToastManager.ShowToast)(tips)
-      return 
-    end
-    do
-      if not haveKey then
-        local tips = "mei yao shi"
-        ;
-        (ToastManager.ShowToast)(tips)
-        return 
-      end
-      ;
-      (ToastManager.ShowToast)("enter boss rank !")
-    end
+  if not pass then
+    local tips = "wei tong guan"
+    ToastManager.ShowToast(tips)
+    return
   end
+  if not haveKey then
+    local tips = "mei yao shi"
+    ToastManager.ShowToast(tips)
+    return
+  end
+  ToastManager.ShowToast("enter boss rank !")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISeasonMazeRankBoss.OnHide = function(self)
-  -- function num : 0_4
+function UISeasonMazeRankBoss:OnHide()
 end
-
-

@@ -1,34 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/action_check_scope_has_target_trap.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("ai_node_new")
 _class("ActionCheckScopeHasTargetTrap", AINewNode)
 ActionCheckScopeHasTargetTrap = ActionCheckScopeHasTargetTrap
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionCheckScopeHasTargetTrap.OnUpdate = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function ActionCheckScopeHasTargetTrap:OnUpdate()
   local skillID = self:GetLogicData(-1)
   local trapID = self:GetLogicData(-2)
   local entityCaster = self.m_entityOwn
   local aiComponent = entityCaster:AI()
-  if aiComponent == nil then
+  if nil == aiComponent then
     return false
   end
   local selfPos = entityCaster:GetGridPosition()
-  local dir = (entityCaster:GridLocation()).Direction
-  local selfBodyArea = (entityCaster:BodyArea()):GetArea()
+  local dir = entityCaster:GridLocation().Direction
+  local selfBodyArea = entityCaster:BodyArea():GetArea()
   local skillRangeData = self:CalculateSkillRange(skillID, selfPos, dir, selfBodyArea)
-  local trapServerLogic = (self._world):GetService("TrapLogic")
+  local trapServerLogic = self._world:GetService("TrapLogic")
   local tarpPosList = trapServerLogic:FindTrapPosByTrapID(trapID)
-  for _,pos in ipairs(skillRangeData) do
-    if (table.intable)(tarpPosList, pos) then
+  for _, pos in ipairs(skillRangeData) do
+    if table.intable(tarpPosList, pos) then
       return AINewNodeStatus.Success
     end
   end
   return AINewNodeStatus.Failure
 end
-
-

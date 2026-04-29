@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_grid_visible_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayGridVisibleInstruction", BaseInstruction)
 PlayGridVisibleInstruction = PlayGridVisibleInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayGridVisibleInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayGridVisibleInstruction:Constructor(paramList)
   local param = tonumber(paramList.visible)
   if param == 1 then
     self._visible = true
@@ -18,16 +11,10 @@ PlayGridVisibleInstruction.Constructor = function(self, paramList)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayGridVisibleInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayGridVisibleInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
   local pieceSvc = world:GetService("Piece")
   local pos = casterEntity:GetGridPosition()
   local ePiece = pieceSvc:FindPieceEntity(pos)
-  ;
-  ((ePiece:View()):GetGameObject()):SetActive(self._visible)
+  ePiece:View():GetGameObject():SetActive(self._visible)
 end
-
-

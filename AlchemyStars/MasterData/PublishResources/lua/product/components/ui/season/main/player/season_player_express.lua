@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/season/main/player/season_player_express.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SeasonPlayerExpress", Object)
 SeasonPlayerExpress = SeasonPlayerExpress
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SeasonPlayerExpress.Constructor = function(self, player, manager)
-  -- function num : 0_0 , upvalues : _ENV
+function SeasonPlayerExpress:Constructor(player, manager)
   self._player = player
   self._seasonManager = manager
   self._uiBubble = nil
@@ -20,135 +13,102 @@ SeasonPlayerExpress.Constructor = function(self, player, manager)
   self._animationTime = 0
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerExpress.Update = function(self, deltaTime)
-  -- function num : 0_1 , upvalues : _ENV
+function SeasonPlayerExpress:Update(deltaTime)
   if self._curExpressCfg then
     self._time = self._time - deltaTime
     if self._animationTime > 0 then
       self._animationTime = self._animationTime - deltaTime
       if self._animationTime <= 0 then
-        (self._player):PlayAnimation(SeasonPlayerAnimation.Stand, 0)
+        self._player:PlayAnimation(SeasonPlayerAnimation.Stand, 0)
       end
     end
     if self._time <= 0 then
       self:_PlayNext()
     end
     if self._expressType == SeasonPlayerExpressType.Click or self._expressType == SeasonPlayerExpressType.Relax then
-      (self._player):RotateToPosition((self._player):Position() + Vector3.forward, (UnityEngine.Time).deltaTime * 10)
+      self._player:RotateToPosition(self._player:Position() + Vector3.forward, UnityEngine.Time.deltaTime * 10)
     end
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerExpress.Play = function(self, playerExpressType)
-  -- function num : 0_2 , upvalues : _ENV
+function SeasonPlayerExpress:Play(playerExpressType)
   if self._expressType ~= SeasonPlayerExpressType.None then
-    (Log.error)("SeasonPlayerExpress is playing.", self._expressType)
-    return 
+    Log.error("SeasonPlayerExpress is playing.", self._expressType)
+    return
   end
-  self._uiBubble = (((self._seasonManager):SeasonUIManager()):UI()):Bubble()
+  self._uiBubble = self._seasonManager:SeasonUIManager():UI():Bubble()
   self._expressType = playerExpressType
   self._exressCfg = nil
   self._curExpressCfg = nil
   if self._expressType == SeasonPlayerExpressType.Click then
-    local clickCfg = (((self._player):CurModule()):Cfg()).Click
+    local clickCfg = self._player:CurModule():Cfg().Click
     if clickCfg then
       self._exressCfg = clickCfg
       if self._exressCfg then
-        (self._player):Stop(false)
+        self._player:Stop(false)
       end
     end
-  else
-    do
-      if self._expressType == SeasonPlayerExpressType.Relax then
-        local relaxCfg = (((self._player):CurModule()):Cfg()).Relax
-        if relaxCfg then
-          self._exressCfg = relaxCfg
-          if self._exressCfg then
-            (self._player):Stop(false)
-          end
-        end
-      else
-        do
-          do
-            if self._expressType == SeasonPlayerExpressType.Moving then
-              local moveingCfg = (((self._player):CurModule()):Cfg()).Moving
-              if moveingCfg then
-                self._exressCfg = moveingCfg
-              end
-            end
-            self:_PlayNext()
-          end
-        end
+  elseif self._expressType == SeasonPlayerExpressType.Relax then
+    local relaxCfg = self._player:CurModule():Cfg().Relax
+    if relaxCfg then
+      self._exressCfg = relaxCfg
+      if self._exressCfg then
+        self._player:Stop(false)
       end
+    end
+  elseif self._expressType == SeasonPlayerExpressType.Moving then
+    local moveingCfg = self._player:CurModule():Cfg().Moving
+    if moveingCfg then
+      self._exressCfg = moveingCfg
     end
   end
+  self:_PlayNext()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerExpress._PlayNext = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function SeasonPlayerExpress:_PlayNext()
   if self._exressCfg then
     self._index = self._index + 1
-    if (table.count)(self._exressCfg) < self._index then
+    if self._index > table.count(self._exressCfg) then
       self:Stop()
     else
-      self._curExpressCfg = ((self._exressCfg)[self._index])[(self._player):CurZone()]
+      self._curExpressCfg = self._exressCfg[self._index][self._player:CurZone()]
       if self._curExpressCfg then
         self._animationTime = 0
-        do
-          if (self._curExpressCfg).anim then
-            local state = (self._player):PlayAnimation((self._curExpressCfg).anim)
-            if state then
-              self._animationTime = state.length * 1000
-            end
+        if self._curExpressCfg.anim then
+          local state = self._player:PlayAnimation(self._curExpressCfg.anim)
+          if state then
+            self._animationTime = state.length * 1000
           end
-          if (self._curExpressCfg).bubble then
-            (self._uiBubble):Play((self._curExpressCfg).bubble)
-          end
-          self._time = (self._curExpressCfg).time * 1000
         end
+        if self._curExpressCfg.bubble then
+          self._uiBubble:Play(self._curExpressCfg.bubble)
+        end
+        self._time = self._curExpressCfg.time * 1000
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerExpress.Stop = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function SeasonPlayerExpress:Stop()
   self._index = 0
   self._exressCfg = nil
   self._curExpressCfg = nil
   if self._uiBubble then
-    (self._uiBubble):Stop()
+    self._uiBubble:Stop()
     self._uiBubble = nil
   end
   if self._expressType == SeasonPlayerExpressType.Click or self._expressType == SeasonPlayerExpressType.Relax then
-    (self._player):PlayAnimation(SeasonPlayerAnimation.Stand, 0)
+    self._player:PlayAnimation(SeasonPlayerAnimation.Stand, 0)
   end
   self._expressType = SeasonPlayerExpressType.None
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerExpress.Interrupt = function(self, ignoreExpressType)
-  -- function num : 0_5
+function SeasonPlayerExpress:Interrupt(ignoreExpressType)
   if self._expressType ~= ignoreExpressType then
     self:Stop()
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SeasonPlayerExpress.IsPlaying = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  do return self._expressType ~= SeasonPlayerExpressType.None end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function SeasonPlayerExpress:IsPlaying()
+  return self._expressType ~= SeasonPlayerExpressType.None
 end
-
-

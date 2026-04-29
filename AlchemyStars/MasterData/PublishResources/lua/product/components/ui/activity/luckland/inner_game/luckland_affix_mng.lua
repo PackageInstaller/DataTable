@@ -1,14 +1,5 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/luckland/inner_game/luckland_affix_mng.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("LLAffixMng", Object)
 LLAffixMng = LLAffixMng
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-LLAffixMng.Constructor = function(self)
-  -- function num : 0_0
+function LLAffixMng:Constructor()
 end
-
-

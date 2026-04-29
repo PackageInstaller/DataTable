@@ -1,96 +1,60 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/summer/review/ui_summer_1_reward_detail_review.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISummer1RewardDetailRewivw", UIController)
 UISummer1RewardDetailRewivw = UISummer1RewardDetailRewivw
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISummer1RewardDetailRewivw.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISummer1RewardDetailRewivw:OnShow(uiParams)
   self._datas = uiParams[1]
   local s = self:GetUIComponent("UISelectObjectPath", "ItemInfo")
   self._tips = s:SpawnObject("UISelectInfo")
-  ;
-  (self._tips):SetType(3)
-  local detailObj = (self._tips):GetG3CustomPool()
-  ;
-  (detailObj.dynamicInfoOfEngine):SetObjectName("UISummer1SelectInfoReview.prefab")
+  self._tips:SetType(3)
+  local detailObj = self._tips:GetG3CustomPool()
+  detailObj.dynamicInfoOfEngine:SetObjectName("UISummer1SelectInfoReview.prefab")
   self._selectDetail = detailObj:SpawnObject("UISummer1SelectInfoReview")
-  -- DECOMPILER ERROR at PC31: Confused about usage of register: R4 in 'UnsetPending'
-
-  ;
-  ((self._tips)._selectInfo).sizeDelta = Vector2(550, 200)
-  ;
-  (self._tips):GetOffset()
-  local go = (self._tips):GetGameObject("g3")
-  local tran = (go.transform):Find("bg3")
-  ;
-  (tran.gameObject):SetActive(false)
+  self._tips._selectInfo.sizeDelta = Vector2(550, 200)
+  self._tips:GetOffset()
+  local go = self._tips:GetGameObject("g3")
+  local tran = go.transform:Find("bg3")
+  tran.gameObject:SetActive(false)
   local CanCollect = uiParams[2]
   local rewardLoader = self:GetUIComponent("UISelectObjectPath", "Content")
   rewardLoader:SpawnObjects("UIXH1Summer1RewardItemReview", #self._datas)
   local items = rewardLoader:GetAllSpawnList()
   for i = 1, #items do
-    (items[i]):SetData((self._datas)[i], function(matid, pos)
-    -- function num : 0_0_0 , upvalues : self
-    self:ShowItemInfo(matid, pos)
-  end
-, function(progress)
-    -- function num : 0_0_1 , upvalues : CanCollect
-    if CanCollect then
-      CanCollect(progress)
-    end
-  end
-)
+    items[i]:SetData(self._datas[i], function(matid, pos)
+      self:ShowItemInfo(matid, pos)
+    end, function(progress)
+      if CanCollect then
+        CanCollect(progress)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1RewardDetailRewivw.GetReward = function(self, progress)
-  -- function num : 0_1
+function UISummer1RewardDetailRewivw:GetReward(progress)
   self:StartTask(self.GetRewardCoro, self, progress)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1RewardDetailRewivw.GetRewardCoro = function(self, TT, progress)
-  -- function num : 0_2 , upvalues : _ENV
+function UISummer1RewardDetailRewivw:GetRewardCoro(TT, progress)
   self:Lock("UISummer1Review_GetRewardCoro")
   local res = AsyncRequestRes:New()
   res:SetSucc(true)
-  local rewards = (self._pointProgressComponent):HandleReceiveReward(TT, res, progress)
-  if rewards and #rewards > 0 then
-    (UIActivityHelper.ShowUIGetRewards)(rewards)
+  local rewards = self._pointProgressComponent:HandleReceiveReward(TT, res, progress)
+  if rewards and 0 < #rewards then
+    UIActivityHelper.ShowUIGetRewards(rewards)
     self:RefreshRewards()
   end
   self:UnLock("UISummer1Review_GetRewardCoro")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1RewardDetailRewivw.OnHide = function(self)
-  -- function num : 0_3
+function UISummer1RewardDetailRewivw:OnHide()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1RewardDetailRewivw.ShowItemInfo = function(self, roleAsset, pos)
-  -- function num : 0_4
+function UISummer1RewardDetailRewivw:ShowItemInfo(roleAsset, pos)
   if self._tips then
-    (self._selectDetail):SetData(roleAsset)
-    ;
-    (self._tips):OnlyShow(pos)
+    self._selectDetail:SetData(roleAsset)
+    self._tips:OnlyShow(pos)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISummer1RewardDetailRewivw.BtnCloseOnClick = function(self)
-  -- function num : 0_5
+function UISummer1RewardDetailRewivw:BtnCloseOnClick()
   self:CloseDialog()
 end
-
-

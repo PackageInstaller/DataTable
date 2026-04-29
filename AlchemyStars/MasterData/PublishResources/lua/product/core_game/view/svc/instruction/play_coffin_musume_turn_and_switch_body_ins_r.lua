@@ -1,55 +1,49 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_coffin_musume_turn_and_switch_body_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("switch_body_area_dir_type")
 _class("PlayCoffinMusumeTurnAndSwitchBodyInstruction", BaseInstruction)
 PlayCoffinMusumeTurnAndSwitchBodyInstruction = PlayCoffinMusumeTurnAndSwitchBodyInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayCoffinMusumeTurnAndSwitchBodyInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayCoffinMusumeTurnAndSwitchBodyInstruction:Constructor(paramList)
   self._up = tonumber(paramList.isUp) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
-local animNameByDirType = {[SwitchBodyAreaDirType.None] = "Skill01Up", [SwitchBodyAreaDirType.Left] = "Skill01Left", [SwitchBodyAreaDirType.Turn] = "Skill01Down", [SwitchBodyAreaDirType.Right] = "Skill01Right"}
--- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
+local animNameByDirType = {
+  [SwitchBodyAreaDirType.None] = "Skill01Up",
+  [SwitchBodyAreaDirType.Left] = "Skill01Left",
+  [SwitchBodyAreaDirType.Turn] = "Skill01Down",
+  [SwitchBodyAreaDirType.Right] = "Skill01Right"
+}
 
-PlayCoffinMusumeTurnAndSwitchBodyInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1 , upvalues : _ENV, animNameByDirType
+function PlayCoffinMusumeTurnAndSwitchBodyInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local world = casterEntity:GetOwnerWorld()
-  local routineComponent = (casterEntity:SkillRoutine()):GetResultContainer()
+  local routineComponent = casterEntity:SkillRoutine():GetResultContainer()
   local switchBodyAreaResult = routineComponent:GetEffectResultByArray(SkillEffectType.SwitchBodyAreaByTargetPos)
   if not switchBodyAreaResult then
-    return 
+    return
   end
   local renderEntityService = world:GetService("RenderEntity")
   local pieceService = world:GetService("Piece")
   local dirType = switchBodyAreaResult:GetSwitchDirType()
-  if not animNameByDirType[dirType] then
-    local animName = not self._up or "Skill01Up"
-  end
-  casterEntity:SetAnimatorControllerTriggers({animName})
-  renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
-  local centerPos = switchBodyAreaResult:GetOldBodyAreaPos()
-  local oldBodyArea = switchBodyAreaResult:GetOldBodyArea()
-  for _,body in ipairs(oldBodyArea) do
-    pieceService:SetPieceAnimUp(centerPos + body)
-  end
-  do
+  if self._up then
+    local animName = animNameByDirType[dirType] or "Skill01Up"
+    casterEntity:SetAnimatorControllerTriggers({animName})
+    renderEntityService:DestroyMonsterAreaOutLineEntity(casterEntity)
+    local centerPos = switchBodyAreaResult:GetOldBodyAreaPos()
+    local oldBodyArea = switchBodyAreaResult:GetOldBodyArea()
+    for _, body in ipairs(oldBodyArea) do
+      pieceService:SetPieceAnimUp(centerPos + body)
+    end
+  else
     local centerPos = casterEntity:GetGridPosition()
-    casterEntity:SetAnimatorControllerTriggers({"turnFinished"})
+    casterEntity:SetAnimatorControllerTriggers({
+      "turnFinished"
+    })
     casterEntity:SetDirection(switchBodyAreaResult:GetNewDir())
     renderEntityService:CreateMonsterAreaOutlineEntity(casterEntity)
     local bodyArea = switchBodyAreaResult:GetNewBodyArea()
-    for _,body in ipairs(bodyArea) do
+    for _, body in ipairs(bodyArea) do
       pieceService:SetPieceAnimDown(centerPos + body)
     end
     local playBuffSvc = world:GetService("PlayBuff")
     playBuffSvc:PlayBuffView(TT, NTBodyAreaChange:New(casterEntity))
   end
 end
-
-

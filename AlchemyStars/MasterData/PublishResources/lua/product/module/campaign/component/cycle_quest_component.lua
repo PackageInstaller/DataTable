@@ -1,160 +1,98 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/campaign/component/cycle_quest_component.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("component_base")
 _class("CycleQuestComponent", ICampaignComponent)
 CycleQuestComponent = CycleQuestComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-CycleQuestComponent.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function CycleQuestComponent:Constructor()
   self.m_component_info = CycleQuestComponentInfo:New()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.ComponentInfo = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function CycleQuestComponent:ComponentInfo()
   if not self.m_component_info then
     self.m_component_info = CycleQuestComponentInfo:New()
   end
   return self.m_component_info
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.GetComponentInfo = function(self)
-  -- function num : 0_2
+function CycleQuestComponent:GetComponentInfo()
   return self:ComponentInfo()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.GetComponentType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function CycleQuestComponent:GetComponentType()
   return CampaignComType.E_CAMPAIGN_COM_CYCLE_QUEST
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.InitComponentInfo = function(self, a_load_info)
-  -- function num : 0_4 , upvalues : _ENV
-  local ret = (ComponentDataHelper.ParseData)(a_load_info.m_data, self.m_component_info)
+function CycleQuestComponent:InitComponentInfo(a_load_info)
+  local ret = ComponentDataHelper.ParseData(a_load_info.m_data, self.m_component_info)
   return ret
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.CampaignComponentPushNotify = function(self, notify_data)
-  -- function num : 0_5 , upvalues : _ENV
+function CycleQuestComponent:CampaignComponentPushNotify(notify_data)
   if CamQuestComponentNotifyType.QuestListComponentNotifyScore == notify_data.m_notify_type then
     local ev = NotifyCycleQuesetComponentUpdateScore:New()
-    local ret = (ComponentDataHelper.ParseData)(notify_data.m_data, ev)
+    local ret = ComponentDataHelper.ParseData(notify_data.m_data, ev)
     if ret then
       self:_OnScoreUpdate(ev)
     else
-      ;
-      (Log.error)("[CampaignCom][CycleQuestComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
+      Log.error("[CampaignCom][CycleQuestComponent] CampaignComponentPushNotify ParseData error! ret:", ret)
     end
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent._OnScoreUpdate = function(self, ev)
-  -- function num : 0_6
+function CycleQuestComponent:_OnScoreUpdate(ev)
   local id = ev.list_quest_id
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).cur_score = ev.cur_score
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.m_component_info).today_socre_max = ev.today_socre_max
+  self.m_component_info.cur_score = ev.cur_score
+  self.m_component_info.today_socre_max = ev.today_socre_max
   self:_OnComplateListQuest(id)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent._OnComplateListQuest = function(self, id)
-  -- function num : 0_7 , upvalues : _ENV
+function CycleQuestComponent:_OnComplateListQuest(id)
   local icon = self:GetKeyRewardIcon()
   local text = self:GetCompleteTipText(id)
   local c = "#000000"
-  text = (UIActivityHelper.GetColorText)(c, text)
-  ;
-  (Log.info)("CycleQuestComponent:_OnComplateListQuest(id) id = ", id)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.HomeShowUIBubble, text, icon)
+  text = UIActivityHelper.GetColorText(c, text)
+  Log.info("CycleQuestComponent:_OnComplateListQuest(id) id = ", id)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.HomeShowUIBubble, text, icon)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.GetConditionDesc = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function CycleQuestComponent:GetConditionDesc()
   local component_cfg_id = self:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_cycle_quest_list)({ComponentID = component_cfg_id})
+  local cfgs = Cfg.cfg_component_cycle_quest_list({ComponentID = component_cfg_id})
   local tb = {}
-  for _,v in ipairs(cfgs) do
-    (table.insert)(tb, {Desc = v.Desc, Reward = v.Reward})
+  for _, v in ipairs(cfgs) do
+    table.insert(tb, {
+      Desc = v.Desc,
+      Reward = v.Reward
+    })
   end
   return tb
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.GetLimitTipCount = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function CycleQuestComponent:GetLimitTipCount()
   local component_cfg_id = self:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_cycle_quest_limit)({ComponentID = component_cfg_id})
-  if cfgs then
-    local cfg = cfgs[1]
-  end
+  local cfgs = Cfg.cfg_component_cycle_quest_limit({ComponentID = component_cfg_id})
+  local cfg = cfgs and cfgs[1]
   return cfg.LimitStepEveryDay, cfg.MaxLimitCount
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.GetKeyReward = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function CycleQuestComponent:GetKeyReward()
   local component_cfg_id = self:GetComponentCfgId()
-  local cfgs = (Cfg.cfg_component_cycle_quest_limit)({ComponentID = component_cfg_id})
-  if cfgs then
-    local cfg = cfgs[1]
-  end
+  local cfgs = Cfg.cfg_component_cycle_quest_limit({ComponentID = component_cfg_id})
+  local cfg = cfgs and cfgs[1]
   return cfg.RewardItemID
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.GetKeyRewardIcon = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function CycleQuestComponent:GetKeyRewardIcon()
   local itemId = self:GetKeyReward()
-  local cfg = (Cfg.cfg_item)[itemId]
-  if cfg then
-    return cfg.Icon
-  end
+  local cfg = Cfg.cfg_item[itemId]
+  return cfg and cfg.Icon
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.GetKeyRewardCount = function(self)
-  -- function num : 0_12
+function CycleQuestComponent:GetKeyRewardCount()
   local componentInfo = self:GetComponentInfo()
   return componentInfo.cur_score, componentInfo.today_socre_max
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-CycleQuestComponent.GetCompleteTipText = function(self, id)
-  -- function num : 0_13 , upvalues : _ENV
-  local cfg = (Cfg.cfg_component_cycle_quest_list)[id]
-  if cfg then
-    return (StringTable.Get)(cfg.BubbleText, cfg.Reward)
-  end
+function CycleQuestComponent:GetCompleteTipText(id)
+  local cfg = Cfg.cfg_component_cycle_quest_list[id]
+  return cfg and StringTable.Get(cfg.BubbleText, cfg.Reward)
 end
-
-

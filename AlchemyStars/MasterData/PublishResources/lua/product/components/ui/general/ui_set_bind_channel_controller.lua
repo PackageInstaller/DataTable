@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/general/ui_set_bind_channel_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISetBindChannelController", UIController)
 UISetBindChannelController = UISetBindChannelController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISetBindChannelController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UISetBindChannelController:OnShow(uiParams)
   self._mail = self:GetGameObject("Mail")
   self._apple = self:GetGameObject("Apple")
   self._google = self:GetGameObject("Google")
@@ -21,107 +14,64 @@ UISetBindChannelController.OnShow = function(self, uiParams)
   if channelList == nil then
     channelList = {}
   end
-  local channelId = (((GameGlobal.GameLogic)()).ClientInfo).m_login_source
+  local channelId = GameGlobal.GameLogic().ClientInfo.m_login_source
   if channelId ~= MobileClientLoginChannel.MCLC_TWITTER then
-    (self._mail):SetActive(false)
-    ;
-    (self._apple):SetActive(not channelList[MobileClientLoginChannel.MCLC_APPLE] or true)
-    ;
-    (self._google):SetActive(not channelList[MobileClientLoginChannel.MCLC_GOOGLE_PLAY] or true)
-    ;
-    (self._twitter):SetActive(not channelList[MobileClientLoginChannel.MCLC_TWITTER] or true)
-    ;
-    (self._facebook):SetActive(not channelList[MobileClientLoginChannel.MCLC_FACEBOOK] or true)
-    ;
-    (self._line):SetActive(not channelList[MobileClientLoginChannel.MCLC_LINE] or true)
-    ;
-    (self._dmm):SetActive(not channelList[MobileClientLoginChannel.MCLC_DMM] or true)
+    self._mail:SetActive(false)
+    self._apple:SetActive(channelList[MobileClientLoginChannel.MCLC_APPLE] and true)
+    self._google:SetActive(channelList[MobileClientLoginChannel.MCLC_GOOGLE_PLAY] and true)
+    self._twitter:SetActive(channelList[MobileClientLoginChannel.MCLC_TWITTER] and true)
+    self._facebook:SetActive(channelList[MobileClientLoginChannel.MCLC_FACEBOOK] and true)
+    self._line:SetActive(channelList[MobileClientLoginChannel.MCLC_LINE] and true)
+    self._dmm:SetActive(channelList[MobileClientLoginChannel.MCLC_DMM] and true)
   else
-    ;
-    (self._mail):SetActive(not channelList[(EngineGameHelper.SAIchannelId)()] or true)
-    ;
-    (self._apple):SetActive(false)
-    ;
-    (self._google):SetActive(false)
-    ;
-    (self._twitter):SetActive(false)
-    ;
-    (self._facebook):SetActive(false)
-    ;
-    (self._line):SetActive(false)
-    ;
-    (self._dmm):SetActive(not channelList[MobileClientLoginChannel.MCLC_DMM] or true)
+    self._mail:SetActive(channelList[EngineGameHelper.SAIchannelId()] and true)
+    self._apple:SetActive(false)
+    self._google:SetActive(false)
+    self._twitter:SetActive(false)
+    self._facebook:SetActive(false)
+    self._line:SetActive(false)
+    self._dmm:SetActive(channelList[MobileClientLoginChannel.MCLC_DMM] and true)
   end
   if APPVER125 then
-    local gv = (HelperProxy:GetInstance()):GetGameVersion()
+    local gv = HelperProxy:GetInstance():GetGameVersion()
     if gv == GameVersionType.INTL then
-      (self._tip):SetActive(true)
+      self._tip:SetActive(true)
     else
-      ;
-      (self._tip):SetActive(false)
+      self._tip:SetActive(false)
     end
   else
-    do
-      ;
-      (self._tip):SetActive(false)
-    end
+    self._tip:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelController.MailOnClick = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self:ShowDialog("UISetBindChannelTipsController", (EngineGameHelper.SAIchannelId)())
+function UISetBindChannelController:MailOnClick()
+  self:ShowDialog("UISetBindChannelTipsController", EngineGameHelper.SAIchannelId())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelController.AppleOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UISetBindChannelController:AppleOnClick()
   self:ShowDialog("UISetBindChannelTipsController", MobileClientLoginChannel.MCLC_APPLE)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelController.GoogleOnClick = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UISetBindChannelController:GoogleOnClick()
   self:ShowDialog("UISetBindChannelTipsController", MobileClientLoginChannel.MCLC_GOOGLE_PLAY)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelController.TwitterOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UISetBindChannelController:TwitterOnClick()
   self:ShowDialog("UISetBindChannelTipsController", MobileClientLoginChannel.MCLC_TWITTER)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelController.FacebookOnClick = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UISetBindChannelController:FacebookOnClick()
   self:ShowDialog("UISetBindChannelTipsController", MobileClientLoginChannel.MCLC_FACEBOOK)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelController.LineOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UISetBindChannelController:LineOnClick()
   self:ShowDialog("UISetBindChannelTipsController", MobileClientLoginChannel.MCLC_LINE)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelController.DMMOnClick = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UISetBindChannelController:DMMOnClick()
   self:ShowDialog("UISetBindChannelTipsController", MobileClientLoginChannel.MCLC_DMM)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UISetBindChannelController.MaskOnClick = function(self)
-  -- function num : 0_8
+function UISetBindChannelController:MaskOnClick()
   self:CloseDialog()
 end
-
-

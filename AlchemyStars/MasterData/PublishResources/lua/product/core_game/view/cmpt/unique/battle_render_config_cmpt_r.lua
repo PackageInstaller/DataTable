@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/unique/battle_render_config_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_world")
 _class("BattleRenderConfigComponent", Object)
 BattleRenderConfigComponent = BattleRenderConfigComponent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-BattleRenderConfigComponent.Constructor = function(self, world)
-  -- function num : 0_0
+function BattleRenderConfigComponent:Constructor(world)
   self._world = world
   self._battleRenderConfigCommand = nil
   self._isMatchStart = false
@@ -19,241 +12,147 @@ BattleRenderConfigComponent.Constructor = function(self, world)
   self._curWaveBoardCenter = nil
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.IsMatchStart = function(self)
-  -- function num : 0_1
+function BattleRenderConfigComponent:IsMatchStart()
   return self._isMatchStart
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.SetIsMatchStart = function(self, isMatchStart)
-  -- function num : 0_2
+function BattleRenderConfigComponent:SetIsMatchStart(isMatchStart)
   self._isMatchStart = isMatchStart
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.Destructor = function(self)
-  -- function num : 0_3
+function BattleRenderConfigComponent:Destructor()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.Initialize = function(self)
-  -- function num : 0_4
+function BattleRenderConfigComponent:Initialize()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.SetRenderConfigCommand = function(self, cmd)
-  -- function num : 0_5
+function BattleRenderConfigComponent:SetRenderConfigCommand(cmd)
   self._battleRenderConfigCommand = cmd
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.HasRenderConfigCmd = function(self)
-  -- function num : 0_6
-  do return self._battleRenderConfigCommand ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function BattleRenderConfigComponent:HasRenderConfigCmd()
+  return self._battleRenderConfigCommand ~= nil
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.ClearRenderConfigData = function(self)
-  -- function num : 0_7
+function BattleRenderConfigComponent:ClearRenderConfigData()
   self._battleRenderConfigCommand = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.GetCanPlaySkillSpineInBattle = function(self, spineName, petId)
-  -- function num : 0_8 , upvalues : _ENV
-  local skillPermission = ((self._world)._contextInfo).preferenceSkillSpine
-  local petList = ((self._world)._contextInfo).preferenceSkillSpineLastPlayList
+function BattleRenderConfigComponent:GetCanPlaySkillSpineInBattle(spineName, petId)
+  local skillPermission = self._world._contextInfo.preferenceSkillSpine
+  local petList = self._world._contextInfo.preferenceSkillSpineLastPlayList
   local localDBKey = "SkillAnimationSettingKey"
   if skillPermission == SkillAnimationPermissionType.Open then
     return true
-  else
-    if skillPermission == SkillAnimationPermissionType.Close then
-      return false
-    else
-      if skillPermission == SkillAnimationPermissionType.Once then
-        if not petId then
-          if Log.loglevel < ELogLevel.None then
-            (Log.exception)("大招立绘指令没有填光灵ID，需要策划配置")
-          end
-          return false
-        end
-        if (table.intable)(petList, petId) then
-          local skillKey = localDBKey .. petId
-          ;
-          (table.removev)(petList, petId)
-          ;
-          (LocalDB.SetInt)(skillKey, ((self._world)._contextInfo).enterTime)
-          return true
-        else
-          do
-            do return false end
-            return false
-          end
-        end
+  elseif skillPermission == SkillAnimationPermissionType.Close then
+    return false
+  elseif skillPermission == SkillAnimationPermissionType.Once then
+    if not petId then
+      if Log.loglevel < ELogLevel.None then
+        Log.exception("大招立绘指令没有填光灵ID，需要策划配置")
       end
+      return false
+    end
+    if table.intable(petList, petId) then
+      local skillKey = localDBKey .. petId
+      table.removev(petList, petId)
+      LocalDB.SetInt(skillKey, self._world._contextInfo.enterTime)
+      return true
+    else
+      return false
     end
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.AddInnerStoryShowed = function(self, showType, type, waveIndex, waveRoundNum)
-  -- function num : 0_9 , upvalues : _ENV
+function BattleRenderConfigComponent:AddInnerStoryShowed(showType, type, waveIndex, waveRoundNum)
   local storyShowedData = InnerStoryShowUpData:New(type, showType, waveIndex, waveRoundNum)
-  ;
-  (table.insert)(self._innerStoryShowedData, storyShowedData)
+  table.insert(self._innerStoryShowedData, storyShowedData)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.GetInnerStoryShowed = function(self)
-  -- function num : 0_10
+function BattleRenderConfigComponent:GetInnerStoryShowed()
   return self._innerStoryShowedData
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.IsMonsterShowBannerCurWave = function(self, monsterID)
-  -- function num : 0_11 , upvalues : _ENV
+function BattleRenderConfigComponent:IsMonsterShowBannerCurWave(monsterID)
   local wave = self:GetCurWaveIndex()
-  if not (self._deadMonsterShowBannerList)[wave] then
+  if not self._deadMonsterShowBannerList[wave] then
     return false
   else
-    local deadList = (self._deadMonsterShowBannerList)[wave]
-    return (table.icontains)(deadList, monsterID)
+    local deadList = self._deadMonsterShowBannerList[wave]
+    return table.icontains(deadList, monsterID)
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.AddDeadMonsterShowBanner = function(self, monsterID)
-  -- function num : 0_12 , upvalues : _ENV
+function BattleRenderConfigComponent:AddDeadMonsterShowBanner(monsterID)
   local wave = self:GetCurWaveIndex()
-  -- DECOMPILER ERROR at PC8: Confused about usage of register: R3 in 'UnsetPending'
-
-  if not (self._deadMonsterShowBannerList)[wave] then
-    (self._deadMonsterShowBannerList)[wave] = {}
+  if not self._deadMonsterShowBannerList[wave] then
+    self._deadMonsterShowBannerList[wave] = {}
   end
-  ;
-  (table.insert)((self._deadMonsterShowBannerList)[wave], monsterID)
+  table.insert(self._deadMonsterShowBannerList[wave], monsterID)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.AddDeadPet = function(self, templateID)
-  -- function num : 0_13 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC5: Confused about usage of register: R2 in 'UnsetPending'
-
-  if not (self._deadPetList)[templateID] then
-    (self._deadPetList)[templateID] = true
+function BattleRenderConfigComponent:AddDeadPet(templateID)
+  if not self._deadPetList[templateID] then
+    self._deadPetList[templateID] = true
   else
-    ;
-    (Log.fatal)("Pet Has Dead:", templateID)
+    Log.fatal("Pet Has Dead:", templateID)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.RemoveDeadPet = function(self, templateID)
-  -- function num : 0_14 , upvalues : _ENV
-  (table.removev)(self._deadPetList, templateID)
+function BattleRenderConfigComponent:RemoveDeadPet(templateID)
+  table.removev(self._deadPetList, templateID)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.PetHasDead = function(self, templateID)
-  -- function num : 0_15
-  if (self._deadPetList)[templateID] then
+function BattleRenderConfigComponent:PetHasDead(templateID)
+  if self._deadPetList[templateID] then
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.SetWaitInputAuroraTime = function(self, value)
-  -- function num : 0_16
+function BattleRenderConfigComponent:SetWaitInputAuroraTime(value)
   self._showAuroraTimeState = value
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.IsWaitInputAuroraTime = function(self)
-  -- function num : 0_17
+function BattleRenderConfigComponent:IsWaitInputAuroraTime()
   return self._showAuroraTimeState
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.SetReEnterAuroraTimePlayed = function(self, played)
-  -- function num : 0_18
+function BattleRenderConfigComponent:SetReEnterAuroraTimePlayed(played)
   self._reEnterAuroraTimePlayed = played
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.IsReEnterAuroraTimePlayed = function(self)
-  -- function num : 0_19
+function BattleRenderConfigComponent:IsReEnterAuroraTimePlayed()
   return self._reEnterAuroraTimePlayed
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.GetCurWaveBoardCenter = function(self)
-  -- function num : 0_20
+function BattleRenderConfigComponent:GetCurWaveBoardCenter()
   return self._curWaveBoardCenter
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-BattleRenderConfigComponent.SetCurWaveBoardCenter = function(self, v3)
-  -- function num : 0_21
+function BattleRenderConfigComponent:SetCurWaveBoardCenter(v3)
   self._curWaveBoardCenter = v3
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.BattleRenderConfig = function(self)
-  -- function num : 0_22
-  return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).BattleRenderConfig)
+function MainWorld:BattleRenderConfig()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.BattleRenderConfig)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.HasBattleRenderConfig = function(self)
-  -- function num : 0_23
-  do return self:GetUniqueComponent((self.BW_UniqueComponentsEnum).BattleRenderConfig) ~= nil end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MainWorld:HasBattleRenderConfig()
+  return self:GetUniqueComponent(self.BW_UniqueComponentsEnum.BattleRenderConfig) ~= nil
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.AddBattleRenderConfig = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local index = (self.BW_UniqueComponentsEnum).BattleRenderConfig
+function MainWorld:AddBattleRenderConfig()
+  local index = self.BW_UniqueComponentsEnum.BattleRenderConfig
   local component = BattleRenderConfigComponent:New(self)
   component:Initialize()
   self:SetUniqueComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MainWorld.RemoveBattleRenderConfig = function(self)
-  -- function num : 0_25
+function MainWorld:RemoveBattleRenderConfig()
   if self:HasBattleRenderConfig() then
-    self:SetUniqueComponent((self.BW_UniqueComponentsEnum).BattleRenderConfig, nil)
+    self:SetUniqueComponent(self.BW_UniqueComponentsEnum.BattleRenderConfig, nil)
   end
 end
-
-

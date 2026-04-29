@@ -1,48 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n29/Chess/ui_n29_chess_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN29ChessController", UIController)
 UIN29ChessController = UIN29ChessController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN29ChessController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIN29ChessController:Constructor()
   self._deltaTime = 0
   self._missionModule = self:GetModule(MissionModule)
-  self._campModule = (GameGlobal.GetModule)(CampaignModule)
+  self._campModule = GameGlobal.GetModule(CampaignModule)
   self._svrTimeModule = self:GetModule(SvrTimeModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIN29ChessController:LoadDataOnEnter(TT, res, uiParams)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N29)
-  ;
-  (self._campaign):ReLoadCampaignInfo_Force(TT, res)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_N29)
+  self._campaign:ReLoadCampaignInfo_Force(TT, res)
   if res and res:GetSucc() then
-    self._chess_cpt = (self._campaign):GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_CHESS)
-    self._chess_info = (self._chess_cpt):GetComponentInfo()
-    if not (self._campaign):CheckComponentOpen(ECampaignN29ComponentID.ECAMPAIGN_N29_CHESS) then
-      res.m_result = (self._campaign):CheckComponentOpenClientError(ECampaignN29ComponentID.ECAMPAIGN_N29_CHESS)
-      ;
-      (self._campModule):ShowErrorToast(res.m_result, true)
-      return 
+    self._chess_cpt = self._campaign:GetComponent(ECampaignN29ComponentID.ECAMPAIGN_N29_CHESS)
+    self._chess_info = self._chess_cpt:GetComponentInfo()
+    if not self._campaign:CheckComponentOpen(ECampaignN29ComponentID.ECAMPAIGN_N29_CHESS) then
+      res.m_result = self._campaign:CheckComponentOpenClientError(ECampaignN29ComponentID.ECAMPAIGN_N29_CHESS)
+      self._campModule:ShowErrorToast(res.m_result, true)
+      return
     end
   end
   if res and not res:GetSucc() then
-    (self._campModule):CheckErrorCode(res.m_result, (self._campaign)._id, nil, nil)
+    self._campModule:CheckErrorCode(res.m_result, self._campaign._id, nil, nil)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController.OnShow = function(self, uiParams)
-  -- function num : 0_2
+function UIN29ChessController:OnShow(uiParams)
   self._txt_desc = self:GetUIComponent("UILocalizationText", "_txt_desc")
   self:_InitParams()
   self:_AttachEvents()
@@ -51,86 +35,63 @@ UIN29ChessController.OnShow = function(self, uiParams)
   self:_OnShow()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._InitParams = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UIN29ChessController:_InitParams()
   self._timerHolder = UITimerHolder:New()
   self._introState = false
-  -- DECOMPILER ERROR at PC30: Confused about usage of register: R1 in 'UnsetPending'
-
   UIN29ChessController.NodeCfg = {
-[MatchType.MT_Chess] = {
-[1] = {normal = "N15_warchessxxg_normal", press = "N15_warchessxxg_normal", lock = "N15_warchessxxg_locking", textColor = Color(1, 1, 1), textShadow = Color(0.086274509803922, 0.16470588235294, 0.23921568627451), normalStar = "N15_warchessxxg_star2", passStar = "N15_warchessxxg_star1"}
-}
-}
+    [MatchType.MT_Chess] = {
+      [1] = {
+        normal = "N15_warchessxxg_normal",
+        press = "N15_warchessxxg_normal",
+        lock = "N15_warchessxxg_locking",
+        textColor = Color(1.0, 1.0, 1.0),
+        textShadow = Color(0.08627450980392157, 0.16470588235294117, 0.23921568627450981),
+        normalStar = "N15_warchessxxg_star2",
+        passStar = "N15_warchessxxg_star1"
+      }
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._OnShow = function(self)
-  -- function num : 0_4
+function UIN29ChessController:_OnShow()
   local lockName = "UIN29ChessControllerEnter"
   self:Lock(lockName)
-  ;
-  (self._timerHolder):StartTimer(lockName, 500, function()
-    -- function num : 0_4_0 , upvalues : self, lockName
+  self._timerHolder:StartTimer(lockName, 500, function()
     self:UnLock(lockName)
-  end
-)
+  end)
   self:_ClearNewFlag()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._ClearNewFlag = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  if not ((self._campaign):GetSample()):GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
-    return 
+function UIN29ChessController:_ClearNewFlag()
+  if not self._campaign:GetSample():GetStepStatus(ECampaignStep.CAMPAIGN_STEP_NEW) then
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_5_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
-    ;
-    ((GameGlobal.GetModule)(CampaignModule)):CampaignClearNewFlag(TT, res, (self._campaign)._id)
+    GameGlobal.GetModule(CampaignModule):CampaignClearNewFlag(TT, res, self._campaign._id)
     if res:GetSucc() then
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._InitWidget = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIN29ChessController:_InitWidget()
   local backBtns = self:GetUIComponent("UISelectObjectPath", "_backBtns")
   self._backBtns = backBtns:SpawnObject("UICommonTopButton")
-  local cfg = (Cfg.cfg_chess)[1]
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_6_0 , upvalues : _ENV, self
-    local campaignModule = (GameGlobal.GetModule)(CampaignModule)
-    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN29MainController, UIStateType.UIMain, nil, (self._campaign)._id)
-  end
-, function()
-    -- function num : 0_6_1 , upvalues : self, cfg
+  local cfg = Cfg.cfg_chess[1]
+  self._backBtns:SetData(function()
+    local campaignModule = GameGlobal.GetModule(CampaignModule)
+    campaignModule:CampaignSwitchState(true, UIStateType.UIActivityN29MainController, UIStateType.UIMain, nil, self._campaign._id)
+  end, function()
     self:ShowDialog("UIN29ChessIntro", cfg.ChessIntroTitle, cfg.ChessIntro)
-  end
-)
+  end)
   self._scrollRect = self:GetUIComponent("ScrollRect", "MapContent")
   self._contentRect = self:GetUIComponent("RectTransform", "Content")
   self._linesPool = self:GetUIComponent("UISelectObjectPath", "Lines")
   self._nodesPool = self:GetUIComponent("UISelectObjectPath", "Nodes")
   self._shot = self:GetUIComponent("H3DUIBlurHelper", "screenShot")
-  self._safeAreaSize = ((self:GetUIComponent("RectTransform", "SafeArea")).rect).size
-  -- DECOMPILER ERROR at PC51: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._shot).width = (self._safeAreaSize).x
-  -- DECOMPILER ERROR at PC55: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._shot).height = (self._safeAreaSize).y
+  self._safeAreaSize = self:GetUIComponent("RectTransform", "SafeArea").rect.size
+  self._shot.width = self._safeAreaSize.x
+  self._shot.height = self._safeAreaSize.y
   self._title = self:GetUIComponent("UILocalizationText", "title")
   self._intro = self:GetUIComponent("UILocalizationText", "intro")
   self._Img = self:GetUIComponent("RawImageLoader", "Img")
@@ -138,81 +99,56 @@ UIN29ChessController._InitWidget = function(self)
   self._introObj = self:GetGameObject("introObj")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController.OnHide = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
+function UIN29ChessController:OnHide()
   UIN29ChessController.NodeCfg = nil
-  ;
-  (self._timerHolder):Dispose()
+  self._timerHolder:Dispose()
   if self._shot then
-    (self._shot):CleanRenderTexture()
+    self._shot:CleanRenderTexture()
     self._shot = nil
   end
-  ;
-  (UIN29ChessController.super):Dispose()
+  UIN29ChessController.super:Dispose()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._Refresh = function(self)
-  -- function num : 0_8
+function UIN29ChessController:_Refresh()
   self:FlushNodes()
   self:_SetRemainTime()
   self:_RefCfgView()
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._RefCfgView = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfg = (Cfg.cfg_chess)[1]
-  ;
-  (self._intro):SetText((StringTable.Get)(cfg.ChessContent))
+function UIN29ChessController:_RefCfgView()
+  local cfg = Cfg.cfg_chess[1]
+  self._intro:SetText(StringTable.Get(cfg.ChessContent))
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._SetRemainTime = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local curtime = (math.floor)((self._svrTimeModule):GetServerTime() * 0.001)
-  local endtime = (self._chess_info).m_close_time
+function UIN29ChessController:_SetRemainTime()
+  local curtime = math.floor(self._svrTimeModule:GetServerTime() * 0.001)
+  local endtime = self._chess_info.m_close_time
   if curtime < endtime then
-    (self._txt_desc):SetText((StringTable.Get)("str_chess_remain_time", (N15ToolFunctions.GetRemainTime)(endtime - curtime, "f7155b")))
+    self._txt_desc:SetText(StringTable.Get("str_chess_remain_time", N15ToolFunctions.GetRemainTime(endtime - curtime, "f7155b")))
+  elseif self._campaign:CheckCampaignOpen() then
+    self:SwitchState(UIStateType.UIActivityN29MainController)
   else
-    if (self._campaign):CheckCampaignOpen() then
-      self:SwitchState(UIStateType.UIActivityN29MainController)
-    else
-      self:SwitchState(UIStateType.UIMain)
-    end
+    self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController.FlushNodes = function(self)
-  -- function num : 0_11 , upvalues : _ENV
-  local cmpID = (self._chess_cpt):GetComponentCfgId()
-  local extra_cfg = (Cfg.cfg_component_line_mission_extra)({ComponentID = cmpID})
-  local extra_width = (extra_cfg[1]).MarginRight
-  local missionCfgs_temp = (Cfg.cfg_component_chess)({ComponentID = cmpID})
+function UIN29ChessController:FlushNodes()
+  local cmpID = self._chess_cpt:GetComponentCfgId()
+  local extra_cfg = Cfg.cfg_component_line_mission_extra({ComponentID = cmpID})
+  local extra_width = extra_cfg[1].MarginRight
+  local missionCfgs_temp = Cfg.cfg_component_chess({ComponentID = cmpID})
   local missionCfgs = {}
-  for _,cfg in pairs(missionCfgs_temp) do
+  for _, cfg in pairs(missionCfgs_temp) do
     missionCfgs[cfg.MissionID] = cfg
   end
   self._allMissionCfgs = missionCfgs
   local unlockInfo = {}
-  local firstMissionID = nil
-  for _,cfg in pairs(missionCfgs) do
+  local firstMissionID
+  for _, cfg in pairs(missionCfgs) do
     if unlockInfo[cfg.NeedMissionId] == nil then
       unlockInfo[cfg.NeedMissionId] = {}
     end
-    -- DECOMPILER ERROR at PC41: Confused about usage of register: R13 in 'UnsetPending'
-
-    ;
-    (unlockInfo[cfg.NeedMissionId])[cfg.MissionID] = cfg
+    unlockInfo[cfg.NeedMissionId][cfg.MissionID] = cfg
     if cfg.NeedMissionId == 0 then
       firstMissionID = cfg.MissionID
     end
@@ -220,14 +156,14 @@ UIN29ChessController.FlushNodes = function(self)
   local showMission = {}
   local levelCount, lineCount = 0, 0
   local lastMissionID = firstMissionID
-  if next((self._chess_info).m_pass_mission_info) then
-    for missionID,passInfo in pairs((self._chess_info).m_pass_mission_info) do
+  if next(self._chess_info.m_pass_mission_info) then
+    for missionID, passInfo in pairs(self._chess_info.m_pass_mission_info) do
       if not showMission[missionID] then
         showMission[missionID] = missionCfgs[missionID]
         levelCount = levelCount + 1
       end
       if unlockInfo[missionID] then
-        for id,cfg in pairs(unlockInfo[missionID]) do
+        for id, cfg in pairs(unlockInfo[missionID]) do
           if not showMission[id] then
             showMission[id] = missionCfgs[id]
             levelCount = levelCount + 1
@@ -239,79 +175,65 @@ UIN29ChessController.FlushNodes = function(self)
       end
     end
   else
-    do
-      showMission[firstMissionID] = missionCfgs[firstMissionID]
-      levelCount = 1
-      local flag = true
-      while flag do
-        lastMissionID = self:_GetLastMissionID(lastMissionID)
-        if not showMission[lastMissionID] then
-          flag = false
-        end
-      end
-      if lastMissionID ~= 0 and lastMissionID then
-        levelCount = levelCount + 1
-        lineCount = lineCount + 1
-        showMission[lastMissionID] = missionCfgs[lastMissionID]
-      end
-      ;
-      (self._nodesPool):SpawnObjects("UIN29ChessMapNode", levelCount)
-      local nodes = (self._nodesPool):GetAllSpawnList()
-      ;
-      (self._linesPool):SpawnObjects("UIN29ChessMapLine", lineCount)
-      local lines = (self._linesPool):GetAllSpawnList()
-      local nodeIdx, lineIdx = 1, 1
-      for missionID,cfg in pairs(showMission) do
-        local uiNode = nodes[nodeIdx]
-        local last = false
-        local func = nil
-        if lastMissionID == missionID then
-          last = true
-        else
-          last = false
-          func = function(stageId, worldPos)
-    -- function num : 0_11_0 , upvalues : self
-    self:_OnNodeClick(stageId, worldPos)
+    showMission[firstMissionID] = missionCfgs[firstMissionID]
+    levelCount = 1
   end
-
-        end
-        local last2 = false
-        if lastMissionID ~= 0 and lastMissionID and (missionCfgs[lastMissionID]).NeedMissionId == missionID and missionID ~= firstMissionID then
-          last2 = true
-        end
-        uiNode:SetData(cfg, ((self._chess_info).m_pass_mission_info)[missionID], func, last, last2)
-        nodeIdx = nodeIdx + 1
-        if cfg.NeedMissionId ~= 0 then
-          local n1 = showMission[cfg.NeedMissionId]
-          local n2 = cfg
-          local line = lines[lineIdx]
-          line:Flush(Vector2(n2.MapPosX, n2.MapPosY), Vector2(n1.MapPosX, n1.MapPosY))
-          lineIdx = lineIdx + 1
-        end
-      end
-      local top = -99999999
-      for _,cfg in pairs(showMission) do
-        top = (math.max)(top, cfg.MapPosY)
-      end
-      local high = (math.abs)(top + extra_width)
-      high = (math.max)((self._safeAreaSize).y, high)
-      -- DECOMPILER ERROR at PC219: Confused about usage of register: R19 in 'UnsetPending'
-
-      ;
-      (self._contentRect).sizeDelta = Vector2(((self._contentRect).sizeDelta).x, high)
-      -- DECOMPILER ERROR at PC227: Confused about usage of register: R19 in 'UnsetPending'
-
-      ;
-      (self._contentRect).anchoredPosition = Vector2(0, (self._safeAreaSize).y - high)
+  local flag = true
+  while flag do
+    lastMissionID = self:_GetLastMissionID(lastMissionID)
+    if not showMission[lastMissionID] then
+      flag = false
     end
   end
+  if lastMissionID ~= 0 and lastMissionID then
+    levelCount = levelCount + 1
+    lineCount = lineCount + 1
+    showMission[lastMissionID] = missionCfgs[lastMissionID]
+  end
+  self._nodesPool:SpawnObjects("UIN29ChessMapNode", levelCount)
+  local nodes = self._nodesPool:GetAllSpawnList()
+  self._linesPool:SpawnObjects("UIN29ChessMapLine", lineCount)
+  local lines = self._linesPool:GetAllSpawnList()
+  local nodeIdx, lineIdx = 1, 1
+  for missionID, cfg in pairs(showMission) do
+    local uiNode = nodes[nodeIdx]
+    local last = false
+    local func
+    if lastMissionID == missionID then
+      last = true
+    else
+      last = false
+      
+      function func(stageId, worldPos)
+        self:_OnNodeClick(stageId, worldPos)
+      end
+    end
+    local last2 = false
+    if lastMissionID ~= 0 and lastMissionID and missionCfgs[lastMissionID].NeedMissionId == missionID and missionID ~= firstMissionID then
+      last2 = true
+    end
+    uiNode:SetData(cfg, self._chess_info.m_pass_mission_info[missionID], func, last, last2)
+    nodeIdx = nodeIdx + 1
+    if cfg.NeedMissionId ~= 0 then
+      local n1 = showMission[cfg.NeedMissionId]
+      local n2 = cfg
+      local line = lines[lineIdx]
+      line:Flush(Vector2(n2.MapPosX, n2.MapPosY), Vector2(n1.MapPosX, n1.MapPosY))
+      lineIdx = lineIdx + 1
+    end
+  end
+  local top = -99999999
+  for _, cfg in pairs(showMission) do
+    top = math.max(top, cfg.MapPosY)
+  end
+  local high = math.abs(top + extra_width)
+  high = math.max(self._safeAreaSize.y, high)
+  self._contentRect.sizeDelta = Vector2(self._contentRect.sizeDelta.x, high)
+  self._contentRect.anchoredPosition = Vector2(0, self._safeAreaSize.y - high)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._GetLastMissionID = function(self, missionID)
-  -- function num : 0_12 , upvalues : _ENV
-  for id,cfg in pairs(self._allMissionCfgs) do
+function UIN29ChessController:_GetLastMissionID(missionID)
+  for id, cfg in pairs(self._allMissionCfgs) do
     if cfg.NeedMissionId == missionID then
       return id
     end
@@ -319,82 +241,55 @@ UIN29ChessController._GetLastMissionID = function(self, missionID)
   return nil
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._OnNodeClick = function(self, stageId, worldPos)
-  -- function num : 0_13
-  local pos = ((self._allMissionCfgs)[stageId]).MapPosY
-  local curPos = ((self._contentRect).anchoredPosition).y
+function UIN29ChessController:_OnNodeClick(stageId, worldPos)
+  local pos = self._allMissionCfgs[stageId].MapPosY
+  local curPos = self._contentRect.anchoredPosition.y
   local areaHeight = 125
-  local targetPos = nil
-  local down, top = -curPos + areaHeight, -curPos + (self._safeAreaSize).y - areaHeight
+  local targetPos
+  local down, top = -curPos + areaHeight, -curPos + self._safeAreaSize.y - areaHeight
   if pos < down then
     targetPos = curPos + down - pos
-  else
-    if top < pos then
-      targetPos = curPos + top - pos
-    end
+  elseif pos > top then
+    targetPos = curPos + top - pos
   end
-  ;
-  (self._scrollRect):StopMovement()
+  self._scrollRect:StopMovement()
   if self._tweener then
-    (self._tweener):Kill()
+    self._tweener:Kill()
     self._tweener = nil
   end
   if targetPos then
     local moveTime = 0.5
-    do
-      self._tweener = (self._contentRect):DOAnchorPosY(targetPos, moveTime)
-      local moveLockName = "UIActivityLineMissionController_MoveToStage"
-      self:Lock(moveLockName)
-      ;
-      (self._timerHolder):StartTimer(moveLockName, moveTime * 1000, function()
-    -- function num : 0_13_0 , upvalues : self, moveLockName, stageId
-    self:UnLock(moveLockName)
+    self._tweener = self._contentRect:DOAnchorPosY(targetPos, moveTime)
+    local moveLockName = "UIActivityLineMissionController_MoveToStage"
+    self:Lock(moveLockName)
+    self._timerHolder:StartTimer(moveLockName, moveTime * 1000, function()
+      self:UnLock(moveLockName)
+      self:_EnterStage(stageId)
+    end)
+  else
     self:_EnterStage(stageId)
   end
-)
-    end
-  else
-    do
-      self:_EnterStage(stageId)
-    end
-  end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._EnterStage = function(self, stageId)
-  -- function num : 0_14 , upvalues : _ENV
-  local pointComponent = (self._campaign):GetComponentByType(CampaignComType.E_CAMPAIGN_COM_ACTION_POINT, 1)
-  self:ShowDialog("UIActivityLevelStageNew", stageId, ((self._chess_info).m_pass_mission_info)[stageId], self._chess_cpt, false, pointComponent, true, true, false, false, true)
+function UIN29ChessController:_EnterStage(stageId)
+  local pointComponent = self._campaign:GetComponentByType(CampaignComType.E_CAMPAIGN_COM_ACTION_POINT, 1)
+  self:ShowDialog("UIActivityLevelStageNew", stageId, self._chess_info.m_pass_mission_info[stageId], self._chess_cpt, false, pointComponent, true, true, false, false, true)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._AttachEvents = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UIN29ChessController:_AttachEvents()
   self:AttachEvent(GameEventType.ActivityCloseEvent, self._CheckActivityClose)
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController._CheckActivityClose = function(self, id)
-  -- function num : 0_16 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == id then
+function UIN29ChessController:_CheckActivityClose(id)
+  if self._campaign and self._campaign._id == id then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN29ChessController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_17
+function UIN29ChessController:OnUpdate(deltaTimeMS)
   self._deltaTime = self._deltaTime + deltaTimeMS
   if self._deltaTime >= 1000 then
     self._deltaTime = 0
     self:_SetRemainTime()
   end
 end
-
-

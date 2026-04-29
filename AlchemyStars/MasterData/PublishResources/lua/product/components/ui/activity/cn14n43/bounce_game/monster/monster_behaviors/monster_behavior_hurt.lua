@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_hurt.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_behavior_base")
 _class("MonsterBeHaviorHurt", MonsterBeHaviorBase)
 MonsterBeHaviorHurt = MonsterBeHaviorHurt
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorHurt.Name = function(self)
-  -- function num : 0_0
+function MonsterBeHaviorHurt:Name()
   return "MonsterBeHaviorHurt"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorHurt.Exec = function(self, ap)
-  -- function num : 0_1 , upvalues : _ENV
+function MonsterBeHaviorHurt:Exec(ap)
   local monsterData = self:GetMonsterData()
   local monsterOldHp = monsterData.hp
   local newHp = monsterData.hp - ap
@@ -32,83 +22,58 @@ MonsterBeHaviorHurt.Exec = function(self, ap)
   local behaviorAni = self:GetBehavior(MonsterBeHaviorAnimation:Name())
   if newHp == 0 then
     local bounceController = self:GetCoreController()
-    bounceController:MonsterDead((self.monster):GetMonsterId())
+    bounceController:MonsterDead(self.monster:GetMonsterId())
     local deadDuration = 0
-    do
-      if (self.monster).state == BounceObjState.Transformation then
-        local beHaviorTransmation = self:GetBehavior("MonsterBeHaviorTransformationWithHp")
-        if beHaviorTransmation then
-          beHaviorTransmation:ChgResImmediatelyBy(monsterOldHp)
-          behaviorAni = self:GetBehavior(MonsterBeHaviorAnimation:Name())
-        end
-      end
-      if behaviorAni then
-        behaviorAni:PlayAnimation(BounceConst.MonsterDeadAniName)
-      end
-      local behaviorView = self:GetBehavior(MonsterBeHaviorView:Name())
-      do
-        do
-          if behaviorView and behaviorView.resCfg then
-            local duration = (behaviorView.resCfg).DeadDuration
-            deadDuration = duration or 0
-          end
-          ;
-          (self.monster):SetDeadWithDuration(deadDuration)
-          do return  end
-          if behaviorAni then
-            behaviorAni:PlayAnimation(BounceConst.MonsterBeAttackedAniName)
-          end
-          local beHaviorTransmation = self:GetBehavior("MonsterBeHaviorTransformationWithHp")
-          if beHaviorTransmation then
-            beHaviorTransmation:CheckTransformation(monsterData.hp)
-          end
-        end
+    if self.monster.state == BounceObjState.Transformation then
+      local beHaviorTransmation = self:GetBehavior("MonsterBeHaviorTransformationWithHp")
+      if beHaviorTransmation then
+        beHaviorTransmation:ChgResImmediatelyBy(monsterOldHp)
+        behaviorAni = self:GetBehavior(MonsterBeHaviorAnimation:Name())
       end
     end
+    if behaviorAni then
+      behaviorAni:PlayAnimation(BounceConst.MonsterDeadAniName)
+    end
+    local behaviorView = self:GetBehavior(MonsterBeHaviorView:Name())
+    if behaviorView and behaviorView.resCfg then
+      local duration = behaviorView.resCfg.DeadDuration
+      deadDuration = duration or 0
+    end
+    self.monster:SetDeadWithDuration(deadDuration)
+    return
+  elseif behaviorAni then
+    behaviorAni:PlayAnimation(BounceConst.MonsterBeAttackedAniName)
+  end
+  local beHaviorTransmation = self:GetBehavior("MonsterBeHaviorTransformationWithHp")
+  if beHaviorTransmation then
+    beHaviorTransmation:CheckTransformation(monsterData.hp)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorHurt.PlayAudioByLeftHp = function(self, hp)
-  -- function num : 0_2 , upvalues : _ENV
+function MonsterBeHaviorHurt:PlayAudioByLeftHp(hp)
   local cfg = self:GetCfg()
   if not cfg or not cfg.Audio then
-    return 
+    return
   end
-  local audioId = nil
-  if hp > 0 then
-    audioId = (cfg.Audio)[BounceConst.MonsterAudioTypeBeAttacked]
+  local audioId
+  if 0 < hp then
+    audioId = cfg.Audio[BounceConst.MonsterAudioTypeBeAttacked]
   else
-    audioId = (cfg.Audio)[BounceConst.MonsterAudioTypeDead]
+    audioId = cfg.Audio[BounceConst.MonsterAudioTypeDead]
   end
   if audioId then
-    (AudioHelperController.PlayUISoundAutoRelease)(audioId)
+    AudioHelperController.PlayUISoundAutoRelease(audioId)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorHurt.OnInit = function(self, param)
-  -- function num : 0_3
+function MonsterBeHaviorHurt:OnInit(param)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorHurt.OnShow = function(self)
-  -- function num : 0_4
+function MonsterBeHaviorHurt:OnShow()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorHurt.OnReset = function(self)
-  -- function num : 0_5
+function MonsterBeHaviorHurt:OnReset()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorHurt.OnRelease = function(self)
-  -- function num : 0_6
+function MonsterBeHaviorHurt:OnRelease()
 end
-
-

@@ -1,25 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/ui_cn6_n35_game/ui_cn6_n35_game_quest_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UI_CN6_N35_GameQuestItem", UICustomWidget)
 UI_CN6_N35_GameQuestItem = UI_CN6_N35_GameQuestItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UI_CN6_N35_GameQuestItem.OnShow = function(self)
-  -- function num : 0_0
+function UI_CN6_N35_GameQuestItem:OnShow()
   self._finishGo = self:GetGameObject("finish")
   self._desc = self:GetUIComponent("UILocalizationText", "desc")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UI_CN6_N35_GameQuestItem.SetData = function(self, desc, finish)
-  -- function num : 0_1
-  (self._desc):SetText(desc)
-  ;
-  (self._finishGo):SetActive(finish)
+function UI_CN6_N35_GameQuestItem:SetData(desc, finish)
+  self._desc:SetText(desc)
+  self._finishGo:SetActive(finish)
 end
-
-

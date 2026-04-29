@@ -1,83 +1,54 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_fake_bodyarea.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_FakeBodyArea", SkillScopeCalculator_Base)
 SkillScopeCalculator_FakeBodyArea = SkillScopeCalculator_FakeBodyArea
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_FakeBodyArea.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_FakeBodyArea:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local centerX = centerPos.x
   local centerY = centerPos.y
   local attackRange = {}
   local wholeRange = {}
   local fakeBodyArea = {}
-  for index,kvp in ipairs(scopeParam.pos) do
+  for index, kvp in ipairs(scopeParam.pos) do
     if #kvp ~= 2 then
-      (Log.Exception)("范围类型[165]FakeBodyArea: pos中第", index, "个数据不全")
+      Log.Exception("范围类型[165]FakeBodyArea: pos中第", index, "个数据不全")
     else
-      local v2 = (Vector2.New)(kvp[1], kvp[2])
-      ;
-      (table.insert)(fakeBodyArea, v2)
+      local v2 = Vector2.New(kvp[1], kvp[2])
+      table.insert(fakeBodyArea, v2)
     end
   end
   local followRotate = scopeParam.followRotate
   if followRotate then
     fakeBodyArea = self:_RotateFakeBodyArea(fakeBodyArea, casterDir)
   end
-  for index,offPos in ipairs(fakeBodyArea) do
+  for index, offPos in ipairs(fakeBodyArea) do
     local workPos = centerPos + offPos
-    if (self._gridFilter):IsValidPiecePos(workPos) then
-      (table.insert)(attackRange, workPos)
-      ;
-      (table.insert)(wholeRange, workPos)
+    if self._gridFilter:IsValidPiecePos(workPos) then
+      table.insert(attackRange, workPos)
+      table.insert(wholeRange, workPos)
     end
   end
   return SkillScopeResult:New(SkillScopeType.FakeBodyArea, centerPos, attackRange, wholeRange)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillScopeCalculator_FakeBodyArea._RotateFakeBodyArea = function(self, fakeBodyArea, toDir)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillScopeCalculator_FakeBodyArea:_RotateFakeBodyArea(fakeBodyArea, toDir)
   local rotatedFakeBodyArea = {}
   if toDir == Vector2.up then
-    for index,pos in ipairs(fakeBodyArea) do
+    for index, pos in ipairs(fakeBodyArea) do
       local newPos = Vector2(-pos.x, -pos.y)
-      ;
-      (table.insert)(rotatedFakeBodyArea, newPos)
+      table.insert(rotatedFakeBodyArea, newPos)
     end
-  else
-    do
-      if toDir == Vector2.right then
-        for index,pos in ipairs(fakeBodyArea) do
-          local newPos = Vector2(-pos.y, pos.x)
-          ;
-          (table.insert)(rotatedFakeBodyArea, newPos)
-        end
-      else
-        do
-          if toDir == Vector2.left then
-            for index,pos in ipairs(fakeBodyArea) do
-              local newPos = Vector2(pos.y, -pos.x)
-              ;
-              (table.insert)(rotatedFakeBodyArea, newPos)
-            end
-          else
-            do
-              if toDir == Vector2.down then
-                rotatedFakeBodyArea = fakeBodyArea
-              end
-              return rotatedFakeBodyArea
-            end
-          end
-        end
-      end
+  elseif toDir == Vector2.right then
+    for index, pos in ipairs(fakeBodyArea) do
+      local newPos = Vector2(-pos.y, pos.x)
+      table.insert(rotatedFakeBodyArea, newPos)
     end
+  elseif toDir == Vector2.left then
+    for index, pos in ipairs(fakeBodyArea) do
+      local newPos = Vector2(pos.y, -pos.x)
+      table.insert(rotatedFakeBodyArea, newPos)
+    end
+  elseif toDir == Vector2.down then
+    rotatedFakeBodyArea = fakeBodyArea
   end
+  return rotatedFakeBodyArea
 end
-
-

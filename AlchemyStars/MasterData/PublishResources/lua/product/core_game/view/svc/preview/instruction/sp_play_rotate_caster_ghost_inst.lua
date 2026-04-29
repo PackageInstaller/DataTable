@@ -1,22 +1,12 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_rotate_caster_ghost_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayRotateCasterGhostInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayRotateCasterGhostInstruction = SkillPreviewPlayRotateCasterGhostInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayRotateCasterGhostInstruction.Constructor = function(self, params)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayRotateCasterGhostInstruction:Constructor(params)
   self.DirCount = tonumber(params.DirCount) or 2
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPreviewPlayRotateCasterGhostInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPreviewPlayRotateCasterGhostInstruction:DoInstruction(TT, casterEntity, previewContext)
   local world = casterEntity:GetOwnerWorld()
   local previewPickUpComponent = casterEntity:PreviewPickUpComponent()
   local ghost = previewPickUpComponent:GetRotateGhost()
@@ -24,33 +14,21 @@ SkillPreviewPlayRotateCasterGhostInstruction.DoInstruction = function(self, TT, 
   local nxtDir = ReflectDirectionType.Heng
   if not curDir then
     nxtDir = ReflectDirectionType.Heng
-  else
-    if self.DirCount == 2 then
-      if curDir == ReflectDirectionType.Heng then
-        nxtDir = ReflectDirectionType.Shu
-      else
-        if curDir == ReflectDirectionType.Shu then
-          nxtDir = ReflectDirectionType.Heng
-        end
-      end
-    else
-      if self.DirCount == 4 then
-        if curDir == ReflectDirectionType.Heng then
-          nxtDir = ReflectDirectionType.Na
-        else
-          if curDir == ReflectDirectionType.Na then
-            nxtDir = ReflectDirectionType.Shu
-          else
-            if curDir == ReflectDirectionType.Shu then
-              nxtDir = ReflectDirectionType.Pie
-            else
-              if curDir == ReflectDirectionType.Pie then
-                nxtDir = ReflectDirectionType.Heng
-              end
-            end
-          end
-        end
-      end
+  elseif self.DirCount == 2 then
+    if curDir == ReflectDirectionType.Heng then
+      nxtDir = ReflectDirectionType.Shu
+    elseif curDir == ReflectDirectionType.Shu then
+      nxtDir = ReflectDirectionType.Heng
+    end
+  elseif self.DirCount == 4 then
+    if curDir == ReflectDirectionType.Heng then
+      nxtDir = ReflectDirectionType.Na
+    elseif curDir == ReflectDirectionType.Na then
+      nxtDir = ReflectDirectionType.Shu
+    elseif curDir == ReflectDirectionType.Shu then
+      nxtDir = ReflectDirectionType.Pie
+    elseif curDir == ReflectDirectionType.Pie then
+      nxtDir = ReflectDirectionType.Heng
     end
   end
   local casterPos = casterEntity:GetGridPosition()
@@ -68,5 +46,3 @@ SkillPreviewPlayRotateCasterGhostInstruction.DoInstruction = function(self, TT, 
   local targetIDList = utilScopeSvc:SelectSkillTarget(casterEntity, scopeParam:GetScopeTargetType(), scopeResult)
   previewContext:SetTargetEntityIDList(targetIDList)
 end
-
-

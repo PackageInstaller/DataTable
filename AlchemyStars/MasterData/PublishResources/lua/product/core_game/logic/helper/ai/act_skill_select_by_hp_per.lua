@@ -1,35 +1,23 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/helper/ai/act_skill_select_by_hp_per.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("action_cast_skill_base")
 _class("ActionSkillSelectedByHPPercent", AINewNode)
 ActionSkillSelectedByHPPercent = ActionSkillSelectedByHPPercent
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-ActionSkillSelectedByHPPercent.Constructor = function(self)
-  -- function num : 0_0
+function ActionSkillSelectedByHPPercent:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ActionSkillSelectedByHPPercent.OnUpdate = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function ActionSkillSelectedByHPPercent:OnUpdate()
   local e = self.m_entityOwn
   if e:MonsterID() then
     local attrCmpt = e:Attributes()
     local max_hp = attrCmpt:CalcMaxHp()
     local cur_hp = attrCmpt:GetCurrentHP()
-    local hpPercent = (math.floor)(cur_hp / max_hp * 100)
+    local hpPercent = math.floor(cur_hp / max_hp * 100)
     local configHPPercent = self:GetLogicData(-1)
     self:PrintDebugLog("curHPPercent = ", hpPercent, " ConfigHPPercent = ", configHPPercent)
-    if configHPPercent < hpPercent then
+    if hpPercent > configHPPercent then
       return AINewNodeStatus.Other + 2
     else
       return AINewNodeStatus.Other + 1
     end
   end
 end
-
-

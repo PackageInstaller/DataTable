@@ -1,34 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/play_damage_svc_maze_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_damage_svc_r")
 _class("PlayDamageServiceMaze", PlayDamageService)
 PlayDamageServiceMaze = PlayDamageServiceMaze
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayDamageServiceMaze._RefreshTeamHP = function(self, TT, defenderEntity, damageInfo)
-  -- function num : 0_0 , upvalues : _ENV
-  local teamEntity = nil
+function PlayDamageServiceMaze:_RefreshTeamHP(TT, defenderEntity, damageInfo)
+  local teamEntity
   if defenderEntity:HasTeam() then
     teamEntity = defenderEntity
+  elseif defenderEntity:PetPstID() then
+    teamEntity = defenderEntity:Pet():GetOwnerTeamEntity()
   else
-    if defenderEntity:PetPstID() then
-      teamEntity = (defenderEntity:Pet()):GetOwnerTeamEntity()
-    else
-      return 
-    end
+    return
   end
-  local petList = (teamEntity:Team()):GetTeamPetEntities()
+  local petList = teamEntity:Team():GetTeamPetEntities()
   local curTeamHP, maxTeamHP = 0, 0
   local deadPetList = {}
-  local battleRenderCmpt = (self._world):BattleRenderConfig()
-  for id,entity in ipairs(petList) do
+  local battleRenderCmpt = self._world:BattleRenderConfig()
+  for id, entity in ipairs(petList) do
     local changeValue = damageInfo:GetMazeDamageValue(entity:GetID()) or 0
-    local renderCurMaxHP = (entity:HP()):GetMaxHP()
+    local renderCurMaxHP = entity:HP():GetMaxHP()
     maxTeamHP = maxTeamHP + renderCurMaxHP
-    local renderCurHP = (entity:HP()):GetRedHP()
+    local renderCurHP = entity:HP():GetRedHP()
     renderCurHP = renderCurHP + changeValue
     if renderCurMaxHP < renderCurHP then
       renderCurHP = renderCurMaxHP
@@ -43,38 +34,41 @@ PlayDamageServiceMaze._RefreshTeamHP = function(self, TT, defenderEntity, damage
     local is_dead = false
     if renderCurHP <= 0 then
       is_dead = true
-      ;
-      (table.insert)(deadPetList, pstID)
-      battleRenderCmpt:AddDeadPet((entity:PetPstID()):GetTemplateID())
+      table.insert(deadPetList, pstID)
+      battleRenderCmpt:AddDeadPet(entity:PetPstID():GetTemplateID())
     end
-    ;
-    (Log.notice)("_RefreshTeamHP() entityID:", entity:GetID(), "CurHP:", renderCurHP, "MaxHP:", renderCurMaxHP)
+    Log.notice("_RefreshTeamHP() entityID:", entity:GetID(), "CurHP:", renderCurHP, "MaxHP:", renderCurMaxHP)
     self:_OnHpChangeNotifyBuff(TT, entity, changeValue, damageInfo)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.OnPetHpChangedInMaze, {pet_pstid = pstID, cur_hp = renderCurHP, max_hp = renderCurMaxHP, is_dead = is_dead, change_value = changeValue})
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.OnPetHpChangedInMaze, {
+      pet_pstid = pstID,
+      cur_hp = renderCurHP,
+      max_hp = renderCurMaxHP,
+      is_dead = is_dead,
+      change_value = changeValue
+    })
   end
   local hpCmpt = teamEntity:HP()
   local shieldPoint = hpCmpt:GetShieldValue()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.TeamHPChange, {isLocalTeam = true, currentHP = curTeamHP, maxHP = maxTeamHP, hitpoint = curTeamHP, shield = shieldPoint, entityID = teamEntity:GetID(), showCurseHp = hpCmpt:GetShowCurseHp(), curseHpVal = hpCmpt:GetCurseHpValue()})
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.TeamHPChange, {
+    isLocalTeam = true,
+    currentHP = curTeamHP,
+    maxHP = maxTeamHP,
+    hitpoint = curTeamHP,
+    shield = shieldPoint,
+    entityID = teamEntity:GetID(),
+    showCurseHp = hpCmpt:GetShowCurseHp(),
+    curseHpVal = hpCmpt:GetCurseHpValue()
+  })
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDamageServiceMaze._DisposeDamageValue = function(self, defenderEntity, damageInfo)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayDamageServiceMaze:_DisposeDamageValue(defenderEntity, damageInfo)
   if not defenderEntity:HasTeam() then
-    return 
+    return
   end
   defenderEntity = defenderEntity:GetTeamLeaderPetEntity()
-  local showDamage = (math.abs)(damageInfo:GetMazeDamageValue(defenderEntity:GetID()) or 0)
+  local showDamage = math.abs(damageInfo:GetMazeDamageValue(defenderEntity:GetID()) or 0)
   damageInfo:SetDamageValue(showDamage)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayDamageService.OnTeamOrderChangeRefresh = function(self)
-  -- function num : 0_2
+function PlayDamageService:OnTeamOrderChangeRefresh()
 end
-
-

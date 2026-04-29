@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n7/UIBlackFight/ui_black_fight_main_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIBlackFightMainBtn", UICustomWidget)
 UIBlackFightMainBtn = UIBlackFightMainBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIBlackFightMainBtn.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  local mCampaign = (GameGlobal.GetModule)(CampaignModule)
+function UIBlackFightMainBtn:Constructor()
+  local mCampaign = GameGlobal.GetModule(CampaignModule)
   self.data = mCampaign:GetN7BlackFightData()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightMainBtn.OnShow = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  self.animation = (self:GetGameObject()):GetComponent("Animation")
-  self.rootRect = (self:GetGameObject("root")):GetComponent("RectTransform")
+function UIBlackFightMainBtn:OnShow()
+  self.animation = self:GetGameObject():GetComponent("Animation")
+  self.rootRect = self:GetGameObject("root"):GetComponent("RectTransform")
   self.offset = self:GetGameObject("offset")
-  self.offsetRect = (self.offset):GetComponent("RectTransform")
+  self.offsetRect = self.offset:GetComponent("RectTransform")
   self.imgBG = self:GetUIComponent("Image", "offset")
   self.txtDiff = self:GetUIComponent("UILocalizationText", "txtDiff")
   self.txtProgress = self:GetUIComponent("UILocalizationText", "txtProgress")
@@ -30,85 +20,46 @@ UIBlackFightMainBtn.OnShow = function(self)
   self.atlas = self:GetAsset("UIN7.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightMainBtn.OnHide = function(self)
-  -- function num : 0_2
+function UIBlackFightMainBtn:OnHide()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightMainBtn.Init = function(self, diff, pos)
-  -- function num : 0_3 , upvalues : _ENV
+function UIBlackFightMainBtn:Init(diff, pos)
   self.diff = diff
-  -- DECOMPILER ERROR at PC2: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.offsetRect).anchoredPosition = pos
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self.imgBG).sprite = (self.atlas):GetSprite("n7_box_stage" .. diff)
-  ;
-  (self.txtDiff):SetText((StringTable.Get)("str_n7_black_fight_level_" .. diff))
+  self.offsetRect.anchoredPosition = pos
+  self.imgBG.sprite = self.atlas:GetSprite("n7_box_stage" .. diff)
+  self.txtDiff:SetText(StringTable.Get("str_n7_black_fight_level_" .. diff))
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightMainBtn.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local level, max = (self.data):GetRoundInfoByDifficulty(self.diff)
-  ;
-  (self.txtProgress):SetText((StringTable.Get)("str_n7_black_fight_cur_progress", level, max))
-  local d, maxReputation = (self.data):GetTodayMaxReputation()
-  if maxReputation > 0 and d == self.diff then
-    (self.score):SetActive(true)
-    local str = (StringTable.Get)("str_n7_black_fight_today_highest_reputation", (((self.data).difficultyList)[self.diff]).reputaion)
-    ;
-    (self.txtReputation):SetText(str)
-    ;
-    (self.txtReputationGlow):SetText(str)
+function UIBlackFightMainBtn:Flush()
+  local level, max = self.data:GetRoundInfoByDifficulty(self.diff)
+  self.txtProgress:SetText(StringTable.Get("str_n7_black_fight_cur_progress", level, max))
+  local d, maxReputation = self.data:GetTodayMaxReputation()
+  if 0 < maxReputation and d == self.diff then
+    self.score:SetActive(true)
+    local str = StringTable.Get("str_n7_black_fight_today_highest_reputation", self.data.difficultyList[self.diff].reputaion)
+    self.txtReputation:SetText(str)
+    self.txtReputationGlow:SetText(str)
   else
-    do
-      ;
-      (self.score):SetActive(false)
-    end
+    self.score:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightMainBtn.PlayAnimIn = function(self)
-  -- function num : 0_5
-  (self.animation):Play("uieff_N7_BlackFight_Btn_In")
+function UIBlackFightMainBtn:PlayAnimIn()
+  self.animation:Play("uieff_N7_BlackFight_Btn_In")
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightMainBtn.PlayAnimOut = function(self)
-  -- function num : 0_6
-  (self.animation):Play("uieff_N7_BlackFight_Btn_Out")
+function UIBlackFightMainBtn:PlayAnimOut()
+  self.animation:Play("uieff_N7_BlackFight_Btn_Out")
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIBlackFightMainBtn.offsetOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
+function UIBlackFightMainBtn:offsetOnClick(go)
   self:StartTask(function(TT)
-    -- function num : 0_7_0 , upvalues : self, _ENV
     self:Lock(lockKey)
     local lockKey = "UIBlackFightMainBtnrootOnClick"
-    ;
-    (self.animation):Play("uieff_N7_BlackFight_Btn_Click")
+    self.animation:Play("uieff_N7_BlackFight_Btn_Click")
     YIELD(TT, 200)
     self:UnLock(lockKey)
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.rootRect).anchoredPosition = Vector2(0, ((self.rootRect).anchoredPosition).y)
+    self.rootRect.anchoredPosition = Vector2(0, self.rootRect.anchoredPosition.y)
     self:ShowDialog("UIN7LevelDetailsController", self.diff)
-  end
-, self)
+  end, self)
 end
-
-

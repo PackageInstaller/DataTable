@@ -1,41 +1,27 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_pet_show_hide_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayPetShowHideInstruction", BaseInstruction)
 PlayPetShowHideInstruction = PlayPetShowHideInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayPetShowHideInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayPetShowHideInstruction:Constructor(paramList)
   self._visible = tonumber(paramList.visible)
   self._forcePlayOnSkillHolder = tonumber(paramList.forcePlayOnSkillHolder) == 1
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayPetShowHideInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_1
+function PlayPetShowHideInstruction:DoInstruction(TT, casterEntity, phaseContext)
   local realCaster = casterEntity
-  if casterEntity:HasSuperEntity() and (casterEntity:EntityType()):IsSkillHolder() and not self._forcePlayOnSkillHolder then
+  if casterEntity:HasSuperEntity() and casterEntity:EntityType():IsSkillHolder() and not self._forcePlayOnSkillHolder then
     realCaster = casterEntity:GetSuperEntity()
   end
   if not realCaster:HasPet() then
-    return 
+    return
   end
   local isShow = self._visible == 1
-  local eTeam = (realCaster:Pet()):GetOwnerTeamEntity()
+  local eTeam = realCaster:Pet():GetOwnerTeamEntity()
   local cTeam = eTeam:Team()
   local eTeamLeader = cTeam:GetTeamLeaderEntity()
   if eTeamLeader:GetID() == realCaster:GetID() then
-    return 
+    return
   end
   realCaster:SetViewVisible(isShow)
   eTeamLeader:SetViewVisible(not isShow)
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
-
-

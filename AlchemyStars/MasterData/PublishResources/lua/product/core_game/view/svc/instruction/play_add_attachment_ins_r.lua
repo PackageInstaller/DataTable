@@ -1,71 +1,62 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/instruction/play_add_attachment_ins_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("base_ins_r")
 _class("PlayAddAttachmentInstruction", BaseInstruction)
 PlayAddAttachmentInstruction = PlayAddAttachmentInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlayAddAttachmentInstruction.Constructor = function(self, paramList)
-  -- function num : 0_0 , upvalues : _ENV
+function PlayAddAttachmentInstruction:Constructor(paramList)
   self._attachResName = paramList.attachResName
-  local cfgRes = (string.split)(paramList.attachCacheRes, "|")
+  local cfgRes = string.split(paramList.attachCacheRes, "|")
   self._attachCacheResList = {}
-  for _,v in ipairs(cfgRes) do
-    (table.insert)(self._attachCacheResList, v)
+  for _, v in ipairs(cfgRes) do
+    table.insert(self._attachCacheResList, v)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAddAttachmentInstruction.GetCacheResource = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function PlayAddAttachmentInstruction:GetCacheResource()
   local t = {}
   if self._attachResName then
-    (table.insert)(t, {self._attachResName .. ".prefab", 1})
+    table.insert(t, {
+      self._attachResName .. ".prefab",
+      1
+    })
   end
   if not self._attachCacheResList then
     return t
   end
-  for _,v in pairs(self._attachCacheResList) do
-    (table.insert)(t, {v .. ".prefab", 1})
+  for _, v in pairs(self._attachCacheResList) do
+    table.insert(t, {
+      v .. ".prefab",
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-PlayAddAttachmentInstruction.DoInstruction = function(self, TT, casterEntity, phaseContext)
-  -- function num : 0_2 , upvalues : _ENV
+function PlayAddAttachmentInstruction:DoInstruction(TT, casterEntity, phaseContext)
   if self._attachResName then
     casterEntity:AddAttachmentController(self._attachResName)
   end
-  local matAniCmpt = nil
+  local matAniCmpt
   if casterEntity:HasMaterialAnimationComponent() then
     matAniCmpt = casterEntity:MaterialAnimationComponent()
   end
   if not matAniCmpt then
-    return 
+    return
   end
-  local attachCmpt = nil
+  local attachCmpt
   if casterEntity:HasAttachmentController() then
     attachCmpt = casterEntity:AttachmentController()
   end
   if not attachCmpt then
-    return 
+    return
   end
   local resQuest = attachCmpt:GetResRequest()
   if not resQuest then
-    return 
+    return
   end
-  local attMatAni = (resQuest.Obj):GetComponent(typeof(MaterialAnimation))
+  local attMatAni = resQuest.Obj:GetComponent(typeof(MaterialAnimation))
   if attMatAni then
-    ((UnityEngine.Object).Destroy)(attMatAni)
+    UnityEngine.Object.Destroy(attMatAni)
   end
-  attMatAni = (resQuest.Obj):AddComponent(typeof(MaterialAnimation))
+  attMatAni = resQuest.Obj:AddComponent(typeof(MaterialAnimation))
   matAniCmpt:SetAttachmentMaterialAnimation(attMatAni)
 end
-
-

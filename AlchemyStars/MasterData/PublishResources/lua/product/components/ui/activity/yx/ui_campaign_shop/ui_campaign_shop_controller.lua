@@ -1,48 +1,43 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/yx/ui_campaign_shop/ui_campaign_shop_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICampaignShopController", UIController)
 UICampaignShopController = UICampaignShopController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICampaignShopController.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UICampaignShopController:Constructor()
   self._shopCloseTime = 0
   self._svrTimeModule = self:GetModule(SvrTimeModule)
   self._interactWords = nil
   self._wordStack = nil
   self._spineSke = nil
-  self._animInfo = {name = "uieff_Activity_Eve_Shop_Out", len = 400}
+  self._animInfo = {
+    name = "uieff_Activity_Eve_Shop_Out",
+    len = 400
+  }
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._InitCmpt = function(self, TT, res)
-  -- function num : 0_1 , upvalues : _ENV
-  local campaignModule = (GameGlobal.GetModule)(CampaignModule)
+function UICampaignShopController:_InitCmpt(TT, res)
+  local campaignModule = GameGlobal.GetModule(CampaignModule)
   self._campaign = UIActivityCampaign:New()
-  ;
-  (self._campaign):LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE1, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE2)
+  self._campaign:LoadCampaignInfo(TT, res, ECampaignType.CAMPAIGN_TYPE_EVERESCUEPLAN, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE1, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE2)
   if res and not res:GetSucc() then
-    campaignModule:CheckErrorCode(res.m_result, (self._campaign)._id)
+    campaignModule:CheckErrorCode(res.m_result, self._campaign._id)
     self:CloseDialog()
-    return 
+    return
   end
-  self._campaignId = (self._campaign)._id
+  self._campaignId = self._campaign._id
   if self._campaignId ~= -1 then
     self._exchangeCmpts = {}
-    local cmptTypes = {ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE1, ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE2}
-    for index,value in ipairs(cmptTypes) do
-      local exchangeCmpt = (self._campaign):GetComponent(value)
+    local cmptTypes = {
+      ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE1,
+      ECampaignEvaRescuePlanComponentID.ECAMPAIGN_EVARESCUEPLAN_EXCHANGE2
+    }
+    for index, value in ipairs(cmptTypes) do
+      local exchangeCmpt = self._campaign:GetComponent(value)
       if exchangeCmpt then
         local cmptInfo = exchangeCmpt:GetComponentInfo()
         if cmptInfo then
-          local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
-          local isClose = (ClientCampaignShop.CheckIsGoodsGroupClose)(cmptInfo.m_close_time, nowTime)
+          local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
+          local isClose = ClientCampaignShop.CheckIsGoodsGroupClose(cmptInfo.m_close_time, nowTime)
           if not isClose then
-            (table.insert)(self._exchangeCmpts, exchangeCmpt)
+            table.insert(self._exchangeCmpts, exchangeCmpt)
             if self._shopCloseTime == 0 then
               self._shopCloseTime = cmptInfo.m_close_time
             end
@@ -57,36 +52,25 @@ UICampaignShopController._InitCmpt = function(self, TT, res)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignShopEnter)
+function UICampaignShopController:OnShow(uiParams)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignShopEnter)
   self:AddListener()
   self:InitWidget()
   self:InitPlayerSpine()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.InitWidget = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function UICampaignShopController:InitWidget()
   self._rootAnim = self:GetUIComponent("Animation", "Root")
   local backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
   self._backBtns = backBtn:SpawnObject("UICommonTopButton")
-  self._lastBGMResName = (AudioHelperController.GetCurrentBgm)()
-  ;
-  (self._backBtns):SetData(function()
-    -- function num : 0_3_0 , upvalues : self, _ENV
+  self._lastBGMResName = AudioHelperController.GetCurrentBgm()
+  self._backBtns:SetData(function()
     self:BackBtnFunc()
-    ;
-    (AudioHelperController.PlayBGM)(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
-  end
-)
+    AudioHelperController.PlayBGM(self._lastBGMResName, AudioConstValue.BGMCrossFadeTime)
+  end)
   local exchangeRewardBtn = self:GetUIComponent("UISelectObjectPath", "ExchangeRewardBtn")
   self._exchangeRewardBtn = exchangeRewardBtn:SpawnObject("UIActivityEveSinsaShopBtn")
-  ;
-  (self._exchangeRewardBtn):SetData(self._campaign, false, true)
+  self._exchangeRewardBtn:SetData(self._campaign, false, true)
   self._npcWordText = self:GetUIComponent("UILocalizationText", "NpcWordText")
   self._npcNameText = self:GetUIComponent("UILocalizationText", "NpcNameText")
   self._endTimeText = self:GetUIComponent("UILocalizationText", "EndTimeText")
@@ -106,41 +90,30 @@ UICampaignShopController.InitWidget = function(self)
   self:_StartCheckGoodsGroupRefresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._FillCfgUiRes = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local shopCfg = (Cfg.cfg_activity_shop_common_client)[self._campaignId]
+function UICampaignShopController:_FillCfgUiRes()
+  local shopCfg = Cfg.cfg_activity_shop_common_client[self._campaignId]
   if shopCfg then
     if self._npcImg then
-      (self._npcImg):LoadImage(shopCfg.NpcImg)
+      self._npcImg:LoadImage(shopCfg.NpcImg)
     end
     if self._npcNameText then
-      (self._npcNameText):SetText((StringTable.Get)(shopCfg.NpcName))
+      self._npcNameText:SetText(StringTable.Get(shopCfg.NpcName))
     end
-    self._interactWords = (string.split)((StringTable.Get)(shopCfg.NpcWord), "|")
+    self._interactWords = string.split(StringTable.Get(shopCfg.NpcWord), "|")
     self._wordStack = Stack:New()
     if self._npcWordText then
       local word = self:_GetInteractWord()
-      ;
-      (self._npcWordText):SetText(word)
+      self._npcWordText:SetText(word)
     end
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.OnActivityShopBuySuccess = function(self, goodsId)
-  -- function num : 0_5
+function UICampaignShopController:OnActivityShopBuySuccess(goodsId)
   self:_ForceRefresh()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._ForceRefresh = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UICampaignShopController:_ForceRefresh()
   self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
     local res = AsyncRequestRes:New()
     res:SetSucc(true)
     self:_InitCmpt(TT, res)
@@ -148,59 +121,46 @@ UICampaignShopController._ForceRefresh = function(self)
       self:_FillUiData()
       self:_RefreshUi()
     end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.BackBtnFunc = function(self)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CampaignComponentStepChange, (self._campaign)._id, nil, nil)
+function UICampaignShopController:BackBtnFunc()
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CampaignComponentStepChange, self._campaign._id, nil, nil)
   self:CloseDialogWithAnim()
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.CloseDialogWithAnim = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UICampaignShopController:CloseDialogWithAnim()
   if self._rootAnim then
     self:Lock("UICampaignShopController:CloseDialogWithAnim")
     if self._rootAnim then
-      (self._rootAnim):Play((self._animInfo).name)
+      self._rootAnim:Play(self._animInfo.name)
     end
     self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : _ENV, self
-    YIELD(TT, (self._animInfo).len)
-    self:UnLock("UICampaignShopController:CloseDialogWithAnim")
-    self:CloseDialog()
-  end
-, self)
+      YIELD(TT, self._animInfo.len)
+      self:UnLock("UICampaignShopController:CloseDialogWithAnim")
+      self:CloseDialog()
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._FillUiData = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function UICampaignShopController:_FillUiData()
   local boxItemLimit = 2
   local tmpData = {}
-  for index,value in ipairs(self._exchangeCmpts) do
+  for index, value in ipairs(self._exchangeCmpts) do
     local exchangeInfo = value:GetComponentInfo()
     local itemGroupData = DCampaignShopItemGroup:New()
     local smallBoxData = {}
     local smallItemCountInBox = 0
-    for itemIndex,itemInfo in ipairs(exchangeInfo.m_exchange_item_list) do
+    for itemIndex, itemInfo in ipairs(exchangeInfo.m_exchange_item_list) do
       local uiItemData = DCampaignShopItemBase:New()
       uiItemData:Refresh(itemInfo, value)
       if uiItemData:GetIsSpecial() then
-        (table.insert)(itemGroupData, uiItemData)
+        table.insert(itemGroupData, uiItemData)
       else
         smallItemCountInBox = smallItemCountInBox + 1
-        ;
-        (table.insert)(smallBoxData, uiItemData)
+        table.insert(smallBoxData, uiItemData)
         if smallItemCountInBox == boxItemLimit or itemIndex == #exchangeInfo.m_exchange_item_list then
-          (table.insert)(itemGroupData, smallBoxData)
+          table.insert(itemGroupData, smallBoxData)
           smallBoxData = {}
           smallItemCountInBox = 0
         end
@@ -209,116 +169,83 @@ UICampaignShopController._FillUiData = function(self)
     itemGroupData._unlockTime = exchangeInfo.m_unlock_time
     itemGroupData._showTime = exchangeInfo.m_open_time
     itemGroupData._closeTime = exchangeInfo.m_close_time
-    local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
-    itemGroupData._isShow = (ClientCampaignShop.CheckIsGoodsGroupCanShow)(itemGroupData._showTime, nowTime)
-    itemGroupData._isUnlock = (ClientCampaignShop.CheckIsGoodsGroupUnlock)(itemGroupData._unlockTime, nowTime)
-    itemGroupData._isClose = (ClientCampaignShop.CheckIsGoodsGroupUnlock)(itemGroupData._closeTime, nowTime)
-    ;
-    (table.insert)(tmpData, itemGroupData)
+    local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
+    itemGroupData._isShow = ClientCampaignShop.CheckIsGoodsGroupCanShow(itemGroupData._showTime, nowTime)
+    itemGroupData._isUnlock = ClientCampaignShop.CheckIsGoodsGroupUnlock(itemGroupData._unlockTime, nowTime)
+    itemGroupData._isClose = ClientCampaignShop.CheckIsGoodsGroupUnlock(itemGroupData._closeTime, nowTime)
+    table.insert(tmpData, itemGroupData)
   end
   self._shopItemGroupData = tmpData
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._RefreshUi = function(self, bResetPos)
-  -- function num : 0_10 , upvalues : _ENV
+function UICampaignShopController:_RefreshUi(bResetPos)
   local canShowItemGroupData = {}
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
-  for index,value in ipairs(self._shopItemGroupData) do
-    if (ClientCampaignShop.CheckIsGoodsGroupCanShow)(value._showTime, nowTime) then
-      (table.insert)(canShowItemGroupData, value)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
+  for index, value in ipairs(self._shopItemGroupData) do
+    if ClientCampaignShop.CheckIsGoodsGroupCanShow(value._showTime, nowTime) then
+      table.insert(canShowItemGroupData, value)
     end
   end
   self._showShopItemGroupData = canShowItemGroupData
   self._itemGroupCount = #self._showShopItemGroupData
-  ;
-  (self._shopItemGroupList):SetListItemCount(self._itemGroupCount, false)
-  ;
-  (self._shopItemGroupList):RefreshAllShownItem()
+  self._shopItemGroupList:SetListItemCount(self._itemGroupCount, false)
+  self._shopItemGroupList:RefreshAllShownItem()
   if bResetPos then
-    (self._shopItemGroupList):MovePanelToItemIndex(0, 0)
-    ;
-    (self._shopItemGroupList):FinishSnapImmediately()
+    self._shopItemGroupList:MovePanelToItemIndex(0, 0)
+    self._shopItemGroupList:FinishSnapImmediately()
   end
   self:_OnValueRemainingTime()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.LoadDataOnEnter = function(self, TT, res, uiParams)
-  -- function num : 0_11
+function UICampaignShopController:LoadDataOnEnter(TT, res, uiParams)
   self.params = uiParams
   self:_InitCmpt(TT, res)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._OnValueRemainingTime = function(self)
-  -- function num : 0_12 , upvalues : _ENV
+function UICampaignShopController:_OnValueRemainingTime()
   self:_ShowRemainingTime()
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
-  self._event = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_12_0 , upvalues : self
+  self._event = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_ShowRemainingTime()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._StartCheckGoodsGroupRefresh = function(self)
-  -- function num : 0_13 , upvalues : _ENV
+function UICampaignShopController:_StartCheckGoodsGroupRefresh()
   if self._refreshGroupEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._refreshGroupEvent)
+    GameGlobal.RealTimer():CancelEvent(self._refreshGroupEvent)
     self._refreshGroupEvent = nil
   end
-  self._refreshGroupEvent = ((GameGlobal.RealTimer)()):AddEventTimes(1000, TimerTriggerCount.Infinite, function()
-    -- function num : 0_13_0 , upvalues : self
+  self._refreshGroupEvent = GameGlobal.RealTimer():AddEventTimes(1000, TimerTriggerCount.Infinite, function()
     self:_CheckGoodsGroupRefresh()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._CheckGoodsGroupRefresh = function(self)
-  -- function num : 0_14 , upvalues : _ENV
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+function UICampaignShopController:_CheckGoodsGroupRefresh()
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local needRefresh = false
-  for index,value in ipairs(self._shopItemGroupData) do
-    do
-      if not value._isShow then
-        local newIsShow = (ClientCampaignShop.CheckIsGoodsGroupCanShow)(value._showTime, nowTime)
-        if newIsShow then
-          needRefresh = true
-          break
-        end
+  for index, value in ipairs(self._shopItemGroupData) do
+    if not value._isShow then
+      local newIsShow = ClientCampaignShop.CheckIsGoodsGroupCanShow(value._showTime, nowTime)
+      if newIsShow then
+        needRefresh = true
+        break
       end
-      do
-        if not value._isUnlock then
-          local newIsUnlock = (ClientCampaignShop.CheckIsGoodsGroupUnlock)(value._unlockTime, nowTime)
-          if newIsUnlock then
-            needRefresh = true
-            break
-          end
-        end
-        do
-          if not value._isClose then
-            local newIsClose = (ClientCampaignShop.CheckIsGoodsGroupClose)(value._closeTime, nowTime)
-            if newIsClose then
-              needRefresh = true
-              break
-            end
-          end
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC48: LeaveBlock: unexpected jumping out DO_STMT
-
-        end
+    end
+    if not value._isUnlock then
+      local newIsUnlock = ClientCampaignShop.CheckIsGoodsGroupUnlock(value._unlockTime, nowTime)
+      if newIsUnlock then
+        needRefresh = true
+        break
+      end
+    end
+    if not value._isClose then
+      local newIsClose = ClientCampaignShop.CheckIsGoodsGroupClose(value._closeTime, nowTime)
+      if newIsClose then
+        needRefresh = true
+        break
       end
     end
   end
@@ -328,144 +255,105 @@ UICampaignShopController._CheckGoodsGroupRefresh = function(self)
   end
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._ShowRemainingTime = function(self)
-  -- function num : 0_15 , upvalues : _ENV
+function UICampaignShopController:_ShowRemainingTime()
   local stopTime = self._shopCloseTime
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
   local remainingTime = stopTime - nowTime
   if remainingTime <= 0 then
     if self._event then
-      ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+      GameGlobal.RealTimer():CancelEvent(self._event)
       self._event = nil
     end
-    ;
-    (self._endTimeTextGo):SetActive(false)
+    self._endTimeTextGo:SetActive(false)
     remainingTime = 0
   else
-    ;
-    (self._endTimeTextGo):SetActive(true)
+    self._endTimeTextGo:SetActive(true)
   end
-  ;
-  (self._endTimeText):SetText(self:_GetFormatString(remainingTime))
+  self._endTimeText:SetText(self:_GetFormatString(remainingTime))
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._GetFormatString = function(self, stamp)
-  -- function num : 0_16 , upvalues : _ENV
+function UICampaignShopController:_GetFormatString(stamp)
   local formatStr = "%s <color=#%s>%s</color>"
-  local descStr = (StringTable.Get)("str_activity_evesinsa_shop_end_time")
+  local descStr = StringTable.Get("str_activity_evesinsa_shop_end_time")
   local colorStr = "FFE42D"
-  local timeStr = (UIActivityHelper.GetFormatTimerStr)(stamp)
-  local showStr = (string.format)(formatStr, descStr, colorStr, timeStr)
+  local timeStr = UIActivityHelper.GetFormatTimerStr(stamp)
+  local showStr = string.format(formatStr, descStr, colorStr, timeStr)
   return showStr
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.OnHide = function(self)
-  -- function num : 0_17 , upvalues : _ENV
+function UICampaignShopController:OnHide()
   if self._refreshTaskID then
-    ((GameGlobal.TaskManager)()):KillTask(self._refreshTaskID)
+    GameGlobal.TaskManager():KillTask(self._refreshTaskID)
     self._refreshTaskID = nil
   end
   if self._event then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._event)
+    GameGlobal.RealTimer():CancelEvent(self._event)
     self._event = nil
   end
   if self._refreshGroupEvent then
-    ((GameGlobal.RealTimer)()):CancelEvent(self._refreshGroupEvent)
+    GameGlobal.RealTimer():CancelEvent(self._refreshGroupEvent)
     self._refreshGroupEvent = nil
   end
   self:DetachListener()
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.AddListener = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function UICampaignShopController:AddListener()
   self:AttachEvent(GameEventType.ActivityShopBuySuccess, self.OnActivityShopBuySuccess)
   self:AttachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
   self:AttachEvent(GameEventType.ActivityComponentCloseEvent, self.OnActivityComponentCloseEvent)
   self:AttachEvent(GameEventType.ActivityShopNeedRefresh, self.OnActivityShopNeedRefresh)
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.DetachListener = function(self)
-  -- function num : 0_19 , upvalues : _ENV
+function UICampaignShopController:DetachListener()
   self:DetachEvent(GameEventType.ActivityShopBuySuccess, self.OnActivityShopBuySuccess)
   self:DetachEvent(GameEventType.ActivityCloseEvent, self.OnActivityCloseEvent)
   self:DetachEvent(GameEventType.ActivityComponentCloseEvent, self.OnActivityComponentCloseEvent)
   self:DetachEvent(GameEventType.ActivityShopNeedRefresh, self.OnActivityShopNeedRefresh)
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.OnActivityCloseEvent = function(self, campaignId)
-  -- function num : 0_20 , upvalues : _ENV
-  if self._campaign and (self._campaign)._id == campaignId then
+function UICampaignShopController:OnActivityCloseEvent(campaignId)
+  if self._campaign and self._campaign._id == campaignId then
     self:SwitchState(UIStateType.UIMain)
   end
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.OnActivityShopNeedRefresh = function(self, campaignId)
-  -- function num : 0_21
-  if self._campaign and (self._campaign)._id == campaignId then
+function UICampaignShopController:OnActivityShopNeedRefresh(campaignId)
+  if self._campaign and self._campaign._id == campaignId then
     self:_ForceRefresh()
   end
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.OnActivityComponentCloseEvent = function(self, componentFullId)
-  -- function num : 0_22 , upvalues : _ENV
-  for index,value in ipairs(self._exchangeCmpts) do
+function UICampaignShopController:OnActivityComponentCloseEvent(componentFullId)
+  for index, value in ipairs(self._exchangeCmpts) do
     local exchangeInfo = value:GetComponentInfo()
     local cmptFullId = value:GetComponetCfgId(self._campaignId, exchangeInfo.m_component_id)
     if cmptFullId == componentFullId then
       self:_ForceRefresh()
-      return 
+      return
     end
   end
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._SetShopItemGroupListCellCount = function(self)
-  -- function num : 0_23
-  (self._shopItemGroupList):SetListItemCount(self._itemGroupCount, false)
+function UICampaignShopController:_SetShopItemGroupListCellCount()
+  self._shopItemGroupList:SetListItemCount(self._itemGroupCount, false)
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._InitShopItemGroupList = function(self)
-  -- function num : 0_24 , upvalues : _ENV
+function UICampaignShopController:_InitShopItemGroupList()
   local canShowItemGroupData = {}
-  local nowTime = (math.floor)((self._svrTimeModule):GetServerTime() / 1000)
-  for index,value in ipairs(self._shopItemGroupData) do
-    if (ClientCampaignShop.CheckIsGoodsGroupCanShow)(value._showTime, nowTime) then
-      (table.insert)(canShowItemGroupData, value)
+  local nowTime = math.floor(self._svrTimeModule:GetServerTime() / 1000)
+  for index, value in ipairs(self._shopItemGroupData) do
+    if ClientCampaignShop.CheckIsGoodsGroupCanShow(value._showTime, nowTime) then
+      table.insert(canShowItemGroupData, value)
     end
   end
   self._showShopItemGroupData = canShowItemGroupData
   self._itemGroupCount = #self._showShopItemGroupData
-  ;
-  (self._shopItemGroupList):InitListView(self._itemGroupCount, function(scrollview, index)
-    -- function num : 0_24_0 , upvalues : self
+  self._shopItemGroupList:InitListView(self._itemGroupCount, function(scrollview, index)
     return self:_OnGetShopItemGroupCell(scrollview, index)
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._OnGetShopItemGroupCell = function(self, scrollview, index)
-  -- function num : 0_25
+function UICampaignShopController:_OnGetShopItemGroupCell(scrollview, index)
   local item = scrollview:NewListViewItem("CellItem")
   local cellPool = self:GetUIComponentDynamic("UISelectObjectPath", item.gameObject)
   if item.IsInitHandlerCalled == false then
@@ -474,88 +362,61 @@ UICampaignShopController._OnGetShopItemGroupCell = function(self, scrollview, in
   end
   local rowList = cellPool:GetAllSpawnList()
   local itemWidget = rowList[1]
-  do
-    if itemWidget then
-      local itemIndex = index + 1
-      itemWidget:InitData((self._showShopItemGroupData)[itemIndex])
-      if self._itemGroupCount < itemIndex then
-        (itemWidget:GetGameObject()):SetActive(false)
-      end
-      ;
-      (item:GetComponent("RectTransform")).sizeDelta = itemWidget:GetRealSize()
+  if itemWidget then
+    local itemIndex = index + 1
+    itemWidget:InitData(self._showShopItemGroupData[itemIndex])
+    if itemIndex > self._itemGroupCount then
+      itemWidget:GetGameObject():SetActive(false)
     end
-    return item
+    item:GetComponent("RectTransform").sizeDelta = itemWidget:GetRealSize()
   end
+  return item
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.NpcWordInteractBtnOnClick = function(self, go)
-  -- function num : 0_26
+function UICampaignShopController:NpcWordInteractBtnOnClick(go)
   if self._npcWordText then
     local word = self:_GetInteractWord()
-    ;
-    (self._npcWordText):SetText(word)
+    self._npcWordText:SetText(word)
   end
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController._GetInteractWord = function(self)
-  -- function num : 0_27 , upvalues : _ENV
-  if (self._wordStack):Size() <= 0 then
+function UICampaignShopController:_GetInteractWord()
+  if self._wordStack:Size() <= 0 then
     local count = 0
     local all = #self._interactWords
     local tmpIndexs = {}
     for i = 1, all do
-      (table.insert)(tmpIndexs, i)
+      table.insert(tmpIndexs, i)
     end
     for j = #tmpIndexs, 1, -1 do
-      local index = (math.random)(1, #tmpIndexs)
-      tmpIndexs[j] = tmpIndexs[index]
+      local index = math.random(1, #tmpIndexs)
+      tmpIndexs[j], tmpIndexs[index] = tmpIndexs[index], tmpIndexs[j]
     end
-    for _,value in ipairs(tmpIndexs) do
-      (self._wordStack):Push(value)
+    for _, value in ipairs(tmpIndexs) do
+      self._wordStack:Push(value)
     end
   end
-  do
-    return (self._interactWords)[(self._wordStack):Pop()]
-  end
+  return self._interactWords[self._wordStack:Pop()]
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.InitPlayerSpine = function(self)
-  -- function num : 0_28
+function UICampaignShopController:InitPlayerSpine()
   self._spine = self:GetUIComponent("SpineLoader", "NpcSpine")
-  ;
-  (self._spine):LoadSpine("1500901_spine_idle")
+  self._spine:LoadSpine("1500901_spine_idle")
   if self._spine then
-    self._spineSke = (self._spine).CurrentSkeleton
+    self._spineSke = self._spine.CurrentSkeleton
     if not self._spineSke then
-      self._spineSke = (self._spine).CurrentMultiSkeleton
+      self._spineSke = self._spine.CurrentMultiSkeleton
     end
   end
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-UICampaignShopController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_29 , upvalues : _ENV
+function UICampaignShopController:OnUpdate(deltaTimeMS)
   if self._spineSke and self._uianimCG then
-    local curAlpha = (self._uianimCG).alpha
+    local curAlpha = self._uianimCG.alpha
     if self._lastUpdateSpineHolderAlpha ~= curAlpha then
       self._lastUpdateSpineHolderAlpha = curAlpha
-      -- DECOMPILER ERROR at PC19: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      (self._spineSke).color = Color(1, 1, 1, curAlpha)
-      -- DECOMPILER ERROR at PC22: Confused about usage of register: R3 in 'UnsetPending'
-
-      ;
-      ((self._spineSke).Skeleton).A = curAlpha
+      self._spineSke.color = Color(1, 1, 1, curAlpha)
+      self._spineSke.Skeleton.A = curAlpha
     end
   end
 end
-
-

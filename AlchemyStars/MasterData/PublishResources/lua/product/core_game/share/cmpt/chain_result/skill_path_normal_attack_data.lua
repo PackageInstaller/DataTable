@@ -1,80 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/chain_result/skill_path_normal_attack_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillPathNormalAttackData", Object)
 SkillPathNormalAttackData = SkillPathNormalAttackData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPathNormalAttackData.Constructor = function(self)
-  -- function num : 0_0
+function SkillPathNormalAttackData:Constructor()
   self._defaultDamageRateOnGrid = 0.1
   self._pathPointAttackDic = {}
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathNormalAttackData.ClearNormalAttackData = function(self)
-  -- function num : 0_1
+function SkillPathNormalAttackData:ClearNormalAttackData()
   self._pathPointAttackDic = {}
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathNormalAttackData.GetPathAttackData = function(self)
-  -- function num : 0_2
+function SkillPathNormalAttackData:GetPathAttackData()
   return self._pathPointAttackDic
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathNormalAttackData.GetPathPointAttackData = function(self, pathPointPosition)
-  -- function num : 0_3 , upvalues : _ENV
-  for k,v in pairs(self._pathPointAttackDic) do
+function SkillPathNormalAttackData:GetPathPointAttackData(pathPointPosition)
+  for k, v in pairs(self._pathPointAttackDic) do
     if k == pathPointPosition then
       return v
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathNormalAttackData.Dump = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  for k,v in pairs(self._pathPointAttackDic) do
+function SkillPathNormalAttackData:Dump()
+  for k, v in pairs(self._pathPointAttackDic) do
     local s = " pos=" .. tostring(k) .. "attack=[" .. v:Dump() .. "]"
-    ;
-    (Log.fatal)(s)
+    Log.fatal(s)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathNormalAttackData.AddPathPointNormalAttackData = function(self, pathPointPosition, pathPointNormalAttackData)
-  -- function num : 0_5 , upvalues : _ENV
+function SkillPathNormalAttackData:AddPathPointNormalAttackData(pathPointPosition, pathPointNormalAttackData)
   local hasPathPointData = self:HasPathPointNormalAttackData(pathPointPosition)
-  -- DECOMPILER ERROR at PC6: Confused about usage of register: R4 in 'UnsetPending'
-
   if hasPathPointData ~= true then
-    (self._pathPointAttackDic)[pathPointPosition] = pathPointNormalAttackData
+    self._pathPointAttackDic[pathPointPosition] = pathPointNormalAttackData
   else
-    ;
-    (Log.fatal)("Already has path point attack data")
+    Log.fatal("Already has path point attack data")
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathNormalAttackData.HasPathPointNormalAttackData = function(self, pathPointPosition)
-  -- function num : 0_6 , upvalues : _ENV
-  return (table.iskey)(self._pathPointAttackDic, pathPointPosition)
+function SkillPathNormalAttackData:HasPathPointNormalAttackData(pathPointPosition)
+  return table.iskey(self._pathPointAttackDic, pathPointPosition)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathNormalAttackData.HasPathPointNormalDamage = function(self, pathPointPosition)
-  -- function num : 0_7 , upvalues : _ENV
+function SkillPathNormalAttackData:HasPathPointNormalDamage(pathPointPosition)
   local hasAttack = self:HasPathPointNormalAttackData(pathPointPosition)
   if hasAttack == false then
     return false
@@ -82,49 +50,36 @@ SkillPathNormalAttackData.HasPathPointNormalDamage = function(self, pathPointPos
   local pathPointNormalAttackData = self:GetPathPointAttackData(pathPointPosition)
   if pathPointNormalAttackData ~= nil then
     local attackGridDic = pathPointNormalAttackData:GetAttackGridDic()
-    for beAttackPosIndex,attackGridData in pairs(attackGridDic) do
+    for beAttackPosIndex, attackGridData in pairs(attackGridDic) do
       local attackGridData = attackGridData
       local beAttackEntityIDList = attackGridData:GetTargetIdList()
       local castDamageList = attackGridData:GetDamageList()
       local castBloodList = attackGridData:GetBloodList()
-      if beAttackEntityIDList and castDamageList and (table.count)(castDamageList) > 0 then
+      if beAttackEntityIDList and castDamageList and table.count(castDamageList) > 0 then
         for i = 1, #beAttackEntityIDList do
           local id = beAttackEntityIDList[i]
           local damage = castDamageList[id]
-          if id > 0 and damage > 0 then
+          if 0 < id and 0 < damage then
             return true
           end
         end
       end
     end
   else
-    do
-      ;
-      (Log.fatal)("pathPoint has no attack data", pathPointPosition)
-      return false
-    end
+    Log.fatal("pathPoint has no attack data", pathPointPosition)
   end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathNormalAttackData.RemovePathPointNormalAttackData = function(self, pathPointPosition)
-  -- function num : 0_8
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self._pathPointAttackDic)[pathPointPosition] = nil
+function SkillPathNormalAttackData:RemovePathPointNormalAttackData(pathPointPosition)
+  self._pathPointAttackDic[pathPointPosition] = nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPathNormalAttackData.RemoveUnusedPathPointData = function(self, chain_path_data)
-  -- function num : 0_9 , upvalues : _ENV
-  for k,v in pairs(self._pathPointAttackDic) do
-    local has_path_point = (table.icontains)(chain_path_data, k)
+function SkillPathNormalAttackData:RemoveUnusedPathPointData(chain_path_data)
+  for k, v in pairs(self._pathPointAttackDic) do
+    local has_path_point = table.icontains(chain_path_data, k)
     if not has_path_point then
       self:RemovePathPointNormalAttackData(k)
     end
   end
 end
-
-

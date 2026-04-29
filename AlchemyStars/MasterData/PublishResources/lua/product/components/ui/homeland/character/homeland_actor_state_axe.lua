@@ -1,43 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/character/homeland_actor_state_axe.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homeland_actor_state")
 _class("HomelandActorStateAxe", HomelandActorState)
 HomelandActorStateAxe = HomelandActorStateAxe
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandActorStateAxe.Constructor = function(self)
-  -- function num : 0_0
+function HomelandActorStateAxe:Constructor()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateAxe.GetType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function HomelandActorStateAxe:GetType()
   return HomelandActorStateType.Axe
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateAxe.Enter = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._mcc):SetAnimatorBool("HoldAxe", true)
-  local cfg = ((GameGlobal.GetUIModule)(HomelandModule)):GetCurrentToolCfg(ToolType.TT_AXE)
-  ;
-  (self._mcc):AttachModel(cfg.Res, cfg.AttachPath)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.HomelandAudioTakeAxe)
+function HomelandActorStateAxe:Enter()
+  self._mcc:SetAnimatorBool("HoldAxe", true)
+  local cfg = GameGlobal.GetUIModule(HomelandModule):GetCurrentToolCfg(ToolType.TT_AXE)
+  self._mcc:AttachModel(cfg.Res, cfg.AttachPath)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.HomelandAudioTakeAxe)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandActorStateAxe.Exit = function(self)
-  -- function num : 0_3
-  (self._mcc):SetAnimatorBool("HoldAxe", false)
-  ;
-  (self._mcc):ReleaseAttachedModel()
+function HomelandActorStateAxe:Exit()
+  self._mcc:SetAnimatorBool("HoldAxe", false)
+  self._mcc:ReleaseAttachedModel()
 end
-
-

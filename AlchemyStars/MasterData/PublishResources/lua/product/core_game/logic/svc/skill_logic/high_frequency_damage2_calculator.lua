@@ -1,152 +1,125 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/logic/svc/skill_logic/high_frequency_damage2_calculator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HighFrequencyDamage2Calculator", Object)
 HighFrequencyDamage2Calculator = HighFrequencyDamage2Calculator
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HighFrequencyDamage2Calculator.Constructor = function(self, world)
-  -- function num : 0_0
+function HighFrequencyDamage2Calculator:Constructor(world)
   self._world = world
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HighFrequencyDamage2Calculator.Calculate = function(self, casterEntity, effectParam)
-  -- function num : 0_1 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
+function HighFrequencyDamage2Calculator:Calculate(casterEntity, effectParam)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
   local skillID = skillEffectResultContainer:GetSkillID()
   local scopeResult = skillEffectResultContainer:GetScopeResult()
   local targetIDs = scopeResult:GetTargetIDs()
-  local utilScope = (self._world):GetService("UtilScopeCalc")
+  local utilScope = self._world:GetService("UtilScopeCalc")
   local v2CasterGridPos = casterEntity:GetGridPosition()
-  local effectCalcSvc = (self._world):GetService("SkillEffectCalc")
+  local effectCalcSvc = self._world:GetService("SkillEffectCalc")
   local tDamageResults = {}
-  local sMonsterShowLogic = (self._world):GetService("MonsterShowLogic")
+  local sMonsterShowLogic = self._world:GetService("MonsterShowLogic")
   local deadMonsterEntities = {}
-  local triggerSvc = (self._world):GetService("Trigger")
+  local triggerSvc = self._world:GetService("Trigger")
   local finalAttackIndex = 0
   local damageStageIndex = effectParam:GetSkillEffectDamageStageIndex()
   local attackTimes = effectParam:GetMaxAttackTimes()
   local extraAttackCount, addPiecePosList = self:_CalExtraAttackCount(effectParam, casterEntity)
   attackTimes = attackTimes + extraAttackCount
-  local targetEntity = (self._world):GetEntityByID(targetIDs[1])
+  local targetEntity = self._world:GetEntityByID(targetIDs[1])
   for i = 1, attackTimes do
     local targetPos = targetEntity:GetGridPosition()
     local nt = NTBeforeHighFrequencyDamageHit:New(casterEntity, i)
     triggerSvc:Notify(nt)
     local nTotalDamage, listDamageInfo = effectCalcSvc:ComputeSkillDamage(casterEntity, v2CasterGridPos, targetEntity, targetPos, skillID, effectParam, SkillEffectType.Damage, damageStageIndex)
     local skillResult = effectCalcSvc:NewSkillDamageEffectResult(targetPos, targetEntity:GetID(), nTotalDamage, listDamageInfo, damageStageIndex)
-    ;
-    (table.insert)(tDamageResults, skillResult)
-    local currentHP = (targetEntity:Attributes()):GetCurrentHP()
+    table.insert(tDamageResults, skillResult)
+    local currentHP = targetEntity:Attributes():GetCurrentHP()
     if currentHP <= 0 then
       sMonsterShowLogic:AddMonsterDeadMark(targetEntity)
       targetEntity = self:_FindNextTarget(targetEntity)
     end
     local ntAfter = NTAfterHighFrequencyDamageHit:New(casterEntity, i)
     triggerSvc:Notify(ntAfter)
-  end
-  do
-    if targetEntity then
-      local result = SkillEffectHighFrequencyDamageResult:New(tDamageResults)
-      local skillEffectResultContainer = (casterEntity:SkillContext()):GetResultContainer()
-      skillEffectResultContainer:AddEffectResult(result)
-      if #tDamageResults > 0 and effectParam:IsTractionOnLastTarget() then
-        local lastDamageResult = tDamageResults[#tDamageResults]
-        local targetID = lastDamageResult:GetTargetID()
-        local targetEntity = (self._world):GetEntityByID(targetID)
-        local tractionParam = SkillEffectMultiTractionParam:New(effectParam._paramList)
-        local tractionCalc = SkillEffectCalc_MultiTraction:New(self._world)
-        local tractionResult = tractionCalc:DoSkillEffectCalculator(SkillEffectCalcParam:New(casterEntity:GetID(), {targetID}, tractionParam, skillID, scopeResult:GetAttackRange(), targetEntity:GetGridPosition(), targetEntity:GetGridPosition()))
-        skillEffectResultContainer:AddEffectResult(tractionResult)
-        if tractionResult then
-          local executor = SkillEffectLogicExecutor:New(self._world)
-          executor:ApplySkillEffect(casterEntity, tractionParam, {tractionResult})
-        end
-      end
-      do
-        if #tDamageResults > 0 and effectParam:GetLastTargetBuffID() then
-          local lastDamageResult = tDamageResults[#tDamageResults]
-          local targetID = lastDamageResult:GetTargetID()
-          local targetEntity = (self._world):GetEntityByID(targetID)
-          local buffID = effectParam:GetLastTargetBuffID()
-          local addBuffParam = SkillAddBuffEffectParam:New({prob = 1, buffID = buffID})
-          local addBuffCalc = SkillEffectCalc_AddBuff:New(self._world)
-          local addBuffResult = addBuffCalc:DoSkillEffectCalculator(SkillEffectCalcParam:New(casterEntity:GetID(), {targetID}, addBuffParam, skillID, scopeResult:GetAttackRange(), targetEntity:GetGridPosition(), targetEntity:GetGridPosition()))
-          if addBuffResult and #addBuffResult > 0 then
-            for _,r in ipairs(addBuffResult) do
-              skillEffectResultContainer:AddEffectResult(r)
-            end
-            local executor = SkillEffectLogicExecutor:New(self._world)
-            executor:ApplySkillEffect(casterEntity, addBuffParam, addBuffResult)
-          end
-        end
-        do
-          local btsvc = (self._world):GetService("Battle")
-          if btsvc:IsFinalAttack() then
-            result:SetFinalAttackIndex(#tDamageResults)
-          end
-          return result
-        end
-      end
+    if not targetEntity then
+      break
     end
   end
+  local result = SkillEffectHighFrequencyDamageResult:New(tDamageResults)
+  local skillEffectResultContainer = casterEntity:SkillContext():GetResultContainer()
+  skillEffectResultContainer:AddEffectResult(result)
+  if 0 < #tDamageResults and effectParam:IsTractionOnLastTarget() then
+    local lastDamageResult = tDamageResults[#tDamageResults]
+    local targetID = lastDamageResult:GetTargetID()
+    local targetEntity = self._world:GetEntityByID(targetID)
+    local tractionParam = SkillEffectMultiTractionParam:New(effectParam._paramList)
+    local tractionCalc = SkillEffectCalc_MultiTraction:New(self._world)
+    local tractionResult = tractionCalc:DoSkillEffectCalculator(SkillEffectCalcParam:New(casterEntity:GetID(), {targetID}, tractionParam, skillID, scopeResult:GetAttackRange(), targetEntity:GetGridPosition(), targetEntity:GetGridPosition()))
+    skillEffectResultContainer:AddEffectResult(tractionResult)
+    if tractionResult then
+      local executor = SkillEffectLogicExecutor:New(self._world)
+      executor:ApplySkillEffect(casterEntity, tractionParam, {tractionResult})
+    end
+  end
+  if 0 < #tDamageResults and effectParam:GetLastTargetBuffID() then
+    local lastDamageResult = tDamageResults[#tDamageResults]
+    local targetID = lastDamageResult:GetTargetID()
+    local targetEntity = self._world:GetEntityByID(targetID)
+    local buffID = effectParam:GetLastTargetBuffID()
+    local addBuffParam = SkillAddBuffEffectParam:New({prob = 1, buffID = buffID})
+    local addBuffCalc = SkillEffectCalc_AddBuff:New(self._world)
+    local addBuffResult = addBuffCalc:DoSkillEffectCalculator(SkillEffectCalcParam:New(casterEntity:GetID(), {targetID}, addBuffParam, skillID, scopeResult:GetAttackRange(), targetEntity:GetGridPosition(), targetEntity:GetGridPosition()))
+    if addBuffResult and 0 < #addBuffResult then
+      for _, r in ipairs(addBuffResult) do
+        skillEffectResultContainer:AddEffectResult(r)
+      end
+      local executor = SkillEffectLogicExecutor:New(self._world)
+      executor:ApplySkillEffect(casterEntity, addBuffParam, addBuffResult)
+    end
+  end
+  local btsvc = self._world:GetService("Battle")
+  if btsvc:IsFinalAttack() then
+    result:SetFinalAttackIndex(#tDamageResults)
+  end
+  return result
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HighFrequencyDamage2Calculator._FindNextTarget = function(self, targetEntity)
-  -- function num : 0_2
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+function HighFrequencyDamage2Calculator:_FindNextTarget(targetEntity)
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local casterPos = targetEntity:GetGridPosition()
   local monsterList, monsterPosList = utilScopeSvc:SelectNearestMonsterOnPos(casterPos, 1)
-  if #monsterList > 0 then
+  if 0 < #monsterList then
     return monsterList[1]
   else
     return nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HighFrequencyDamage2Calculator._CalExtraAttackCount = function(self, param, attacker)
-  -- function num : 0_3 , upvalues : _ENV
+function HighFrequencyDamage2Calculator:_CalExtraAttackCount(param, attacker)
   local serialScopeType = param:GetSerialScopeType()
   if not serialScopeType then
     return 0, {}
   end
-  local casterBodyArea = (attacker:BodyArea()):GetArea()
+  local casterBodyArea = attacker:BodyArea():GetArea()
   local serialScopeCenterType = param:GetSerialScopeCenterType()
   local serialScopeParam = param:GetSerialScopeParam()
   local posCaster = attacker:GetGridPosition()
-  local utilScopeSvc = (self._world):GetService("UtilScopeCalc")
+  local utilScopeSvc = self._world:GetService("UtilScopeCalc")
   local centerPos, bodyArea = utilScopeSvc:CalcCenterPosAndBodyArea(serialScopeCenterType, posCaster, casterBodyArea, serialScopeParam)
   local scopeCalculator = utilScopeSvc:GetSkillScopeCalc()
-  local scopeResult = scopeCalculator:ComputeScopeRange(serialScopeType, serialScopeParam, centerPos, casterBodyArea, (attacker:GetGridDirection()), nil, posCaster, attacker)
-  local board = ((self._world):GetBoardEntity()):Board()
+  local scopeResult = scopeCalculator:ComputeScopeRange(serialScopeType, serialScopeParam, centerPos, casterBodyArea, attacker:GetGridDirection(), nil, posCaster, attacker)
+  local board = self._world:GetBoardEntity():Board()
   local extraAttackCount = 0
-  local boardService = (self._world):GetService("BoardRender")
+  local boardService = self._world:GetService("BoardRender")
   local pieceType = param:GetPieceType()
   local addPiecePosList = {}
   if scopeResult then
     local array = scopeResult:GetAttackRange()
-    for _,v in ipairs(array) do
+    for _, v in ipairs(array) do
       local pt = board:GetPieceType(v)
       if pt == pieceType then
         extraAttackCount = extraAttackCount + 1
-        ;
-        (table.insert)(addPiecePosList, v)
+        table.insert(addPiecePosList, v)
       end
     end
   end
-  do
-    local onPieceAddAttackCount = param:GetOnePieceAddAttackCount()
-    extraAttackCount = (extraAttackCount) * onPieceAddAttackCount
-    return extraAttackCount, addPiecePosList
-  end
+  local onPieceAddAttackCount = param:GetOnePieceAddAttackCount()
+  extraAttackCount = extraAttackCount * onPieceAddAttackCount
+  return extraAttackCount, addPiecePosList
 end
-
-

@@ -1,47 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/eff_par/skill_effect_param_summon_four_area_monster_on_board_edge.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_param_base")
 _class("SkillEffectParamSummonFourAreaMonsterOnBoardEdge", SkillEffectParam_SummonEverything)
 SkillEffectParamSummonFourAreaMonsterOnBoardEdge = SkillEffectParamSummonFourAreaMonsterOnBoardEdge
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectParamSummonFourAreaMonsterOnBoardEdge.Constructor = function(self, t)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillEffectParamSummonFourAreaMonsterOnBoardEdge:Constructor(t)
   self._summonID = {}
-  -- DECOMPILER ERROR at PC12: Confused about usage of register: R2 in 'UnsetPending'
-
   if type(t.summonID) == "number" then
-    (self._summonID)[#self._summonID + 1] = t.summonID
-  else
-    if type(t.summonID) == "table" then
-      self._summonID = t.summonID
-    end
+    self._summonID[#self._summonID + 1] = t.summonID
+  elseif type(t.summonID) == "table" then
+    self._summonID = t.summonID
   end
   self._summonCount = t.summonCount or 1
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonFourAreaMonsterOnBoardEdge.GetEffectType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillEffectParamSummonFourAreaMonsterOnBoardEdge:GetEffectType()
   return SkillEffectType.SummonFourAreaMonsterOnBoardEdge
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonFourAreaMonsterOnBoardEdge.GetSummonList = function(self)
-  -- function num : 0_2
+function SkillEffectParamSummonFourAreaMonsterOnBoardEdge:GetSummonList()
   return self._summonID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectParamSummonFourAreaMonsterOnBoardEdge.GetSummonCount = function(self)
-  -- function num : 0_3
+function SkillEffectParamSummonFourAreaMonsterOnBoardEdge:GetSummonCount()
   return self._summonCount
 end
-
-

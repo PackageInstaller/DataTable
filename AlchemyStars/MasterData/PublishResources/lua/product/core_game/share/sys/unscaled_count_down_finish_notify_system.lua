@@ -1,24 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/sys/unscaled_count_down_finish_notify_system.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("main_state_sys")
 _class("UnscaledCountDownFinishNotifySystem", MainStateSystem)
 UnscaledCountDownFinishNotifySystem = UnscaledCountDownFinishNotifySystem
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-UnscaledCountDownFinishNotifySystem._GetMainStateID = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UnscaledCountDownFinishNotifySystem:_GetMainStateID()
   return GameStateID.UnscaledCountDownFinishNotify
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownFinishNotifySystem._OnMainStateEnter = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
-  (Log.info)("UnscaledCountDownFinishNotifySystem:Begin")
-  local teamEntity = ((self._world):Player()):GetCurrentTeamEntity()
+function UnscaledCountDownFinishNotifySystem:_OnMainStateEnter(TT)
+  Log.info("UnscaledCountDownFinishNotifySystem:Begin")
+  local teamEntity = self._world:Player():GetCurrentTeamEntity()
   self:_DoLogicNotifyCountDownFinish()
   self:_DoRenderNotifyCountDownFinish(TT)
   self:_DoLogicMonsterDead()
@@ -26,64 +16,43 @@ UnscaledCountDownFinishNotifySystem._OnMainStateEnter = function(self, TT)
   local ntTeamOrderChange = self:_DoLogicPetDead(teamEntity)
   self:_DoRenderPetDead(TT, teamEntity, ntTeamOrderChange)
   if self:_IsBattleEnd() then
-    ((self._world):EventDispatcher()):Dispatch(GameEventType.UnscaledCountDownFinishNotifyFinish, 2)
-    return 
+    self._world:EventDispatcher():Dispatch(GameEventType.UnscaledCountDownFinishNotifyFinish, 2)
+    return
   end
   self:_DoLogicSwitchMainState(teamEntity)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownFinishNotifySystem._DoLogicNotifyCountDownFinish = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local group = (self._world):GetGroup(((self._world).BW_WEMatchers).UnscaledCountDownLogic)
-  for i,e in ipairs(group:GetEntities()) do
+function UnscaledCountDownFinishNotifySystem:_DoLogicNotifyCountDownFinish()
+  local group = self._world:GetGroup(self._world.BW_WEMatchers.UnscaledCountDownLogic)
+  for i, e in ipairs(group:GetEntities()) do
     local cmpt = e:UnscaledCountDownLogic()
     if cmpt:GetIsActive() and cmpt:GetIsWaitTrigger() then
       local flagID = cmpt:GetFlagID()
-      ;
-      (Log.debug)("UnscaledCountDownFinishNotifySystem,notify cmpt flagID:", flagID)
-      local triggerService = (self._world):GetService("Trigger")
+      Log.debug("UnscaledCountDownFinishNotifySystem,notify cmpt flagID:", flagID)
+      local triggerService = self._world:GetService("Trigger")
       triggerService:Notify(NTClientUnscaledCountDownFinish:New(flagID))
-      do
-        do
-          if (self._world):RunAtClient() then
-            local l2RSvc = (self._world):GetService("L2R")
-            l2RSvc:L2RNTClientUnscaledCountDownFinish(flagID)
-          end
-          do break end
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out DO_STMT
-
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-          -- DECOMPILER ERROR at PC51: LeaveBlock: unexpected jumping out IF_STMT
-
-        end
+      if self._world:RunAtClient() then
+        local l2RSvc = self._world:GetService("L2R")
+        l2RSvc:L2RNTClientUnscaledCountDownFinish(flagID)
       end
+      break
     end
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownFinishNotifySystem._DoLogicSwitchMainState = function(self, teamEntity)
-  -- function num : 0_3 , upvalues : _ENV
-  local boardServiceLogic = (self._world):GetService("BoardLogic")
+function UnscaledCountDownFinishNotifySystem:_DoLogicSwitchMainState(teamEntity)
+  local boardServiceLogic = self._world:GetService("BoardLogic")
   local nextState = self:_DoCheckNextState(teamEntity)
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.UnscaledCountDownFinishNotifyFinish, nextState)
+  self._world:EventDispatcher():Dispatch(GameEventType.UnscaledCountDownFinishNotifyFinish, nextState)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownFinishNotifySystem._DoCheckNextState = function(self, teamEntity)
-  -- function num : 0_4
-  local battleStatCmpt = (self._world):BattleStat()
+function UnscaledCountDownFinishNotifySystem:_DoCheckNextState(teamEntity)
+  local battleStatCmpt = self._world:BattleStat()
   local nextState = 0
   if battleStatCmpt:AssignWaveResult() then
     nextState = 1
   else
-    local battleService = (self._world):GetService("Battle")
+    local battleService = self._world:GetService("Battle")
     local allMonsterDead = battleService:CheckAllMonstersDead(teamEntity)
     local specificTrapDead = battleService:CheckSpecificTrapDead()
     if allMonsterDead and specificTrapDead then
@@ -94,24 +63,15 @@ UnscaledCountDownFinishNotifySystem._DoCheckNextState = function(self, teamEntit
         nextState = 2
       end
     else
-      do
-        nextState = 1
-        do
-          local waveFinish = battleService:BattleCalculation(teamEntity)
-          if waveFinish then
-            nextState = 2
-          end
-          return nextState
-        end
-      end
+      nextState = 1
+    end
+    local waveFinish = battleService:BattleCalculation(teamEntity)
+    if waveFinish then
+      nextState = 2
     end
   end
+  return nextState
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UnscaledCountDownFinishNotifySystem._DoRenderNotifyCountDownFinish = function(self, TT)
-  -- function num : 0_5
+function UnscaledCountDownFinishNotifySystem:_DoRenderNotifyCountDownFinish(TT)
 end
-
-

@@ -1,38 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/rawimage_loader_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("RawImageLoaderHelper", Object)
 RawImageLoaderHelper = RawImageLoaderHelper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-RawImageLoaderHelper.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function RawImageLoaderHelper:Constructor()
   self._mats = ArrayList:New()
   self.isOpen = true
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper.Init = function(self, count)
-  -- function num : 0_1
+function RawImageLoaderHelper:Init(count)
   self._maxCount = count
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper.LoadMat = function(self, matName, isAsync)
-  -- function num : 0_2
+function RawImageLoaderHelper:LoadMat(matName, isAsync)
   self:_LoadMat(matName, isAsync)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper._LoadMat = function(self, matName, isAsync)
-  -- function num : 0_3
+function RawImageLoaderHelper:_LoadMat(matName, isAsync)
   if self:_ContainKey(matName) then
-    return 
+    return
   end
   if isAsync then
     self:_LoadMatAsync(matName)
@@ -41,39 +25,29 @@ RawImageLoaderHelper._LoadMat = function(self, matName, isAsync)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper._LoadMatSync = function(self, matName)
-  -- function num : 0_4 , upvalues : _ENV
+function RawImageLoaderHelper:_LoadMatSync(matName)
   local tempMat = {}
   tempMat.matName = matName
-  tempMat.mat = (ResourceManager:GetInstance()):SyncLoadAsset(matName .. ".mat", LoadType.Mat)
+  tempMat.mat = ResourceManager:GetInstance():SyncLoadAsset(matName .. ".mat", LoadType.Mat)
   if tempMat.mat then
-    (self._mats):PushBack(tempMat)
+    self._mats:PushBack(tempMat)
     self:_Delete()
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper._LoadMatAsync = function(self, matName, cb)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(self._OnLoadMatAsync, self, matName, cb)
+function RawImageLoaderHelper:_LoadMatAsync(matName, cb)
+  GameGlobal.TaskManager():StartTask(self._OnLoadMatAsync, self, matName, cb)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper._OnLoadMatAsync = function(self, TT, matName, cb)
-  -- function num : 0_6 , upvalues : _ENV
+function RawImageLoaderHelper:_OnLoadMatAsync(TT, matName, cb)
   local _tempTab = {}
-  _tempTab.mat = (ResourceManager:GetInstance()):AsyncLoadAsset(TT, matName .. ".mat", LoadType.Mat)
+  _tempTab.mat = ResourceManager:GetInstance():AsyncLoadAsset(TT, matName .. ".mat", LoadType.Mat)
   if self.isOpen == false then
-    return 
+    return
   end
   if not self:_ContainKey(matName) then
     _tempTab.matName = matName
-    ;
-    (self._mats):PushBack(_tempTab)
+    self._mats:PushBack(_tempTab)
     self:_Delete()
   end
   if cb then
@@ -81,76 +55,57 @@ RawImageLoaderHelper._OnLoadMatAsync = function(self, TT, matName, cb)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper._ContainKey = function(self, matName)
-  -- function num : 0_7 , upvalues : _ENV
-  if self._mats and (self._mats).elements then
-    for i = 1, (table.count)((self._mats).elements) do
-      local n = (((self._mats).elements)[i]).matName
+function RawImageLoaderHelper:_ContainKey(matName)
+  if self._mats and self._mats.elements then
+    for i = 1, table.count(self._mats.elements) do
+      local n = self._mats.elements[i].matName
       if n == matName then
         return true
       end
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper.GetMat = function(self, matName)
-  -- function num : 0_8 , upvalues : _ENV
-  for i = 1, (table.count)((self._mats).elements) do
-    local n = (((self._mats).elements)[i]).matName
+function RawImageLoaderHelper:GetMat(matName)
+  for i = 1, table.count(self._mats.elements) do
+    local n = self._mats.elements[i].matName
     if n == matName then
-      return ((((self._mats).elements)[i]).mat).Obj
+      return self._mats.elements[i].mat.Obj
     end
   end
   self:_LoadMatAsync(matName, function()
-    -- function num : 0_8_0 , upvalues : _ENV, self, matName
-    for i = 1, (table.count)((self._mats).elements) do
-      local n = (((self._mats).elements)[i]).matName
+    for i = 1, table.count(self._mats.elements) do
+      local n = self._mats.elements[i].matName
       if n == matName then
-        return ((((self._mats).elements)[i]).mat).Obj
+        return self._mats.elements[i].mat.Obj
       end
     end
-  end
-)
+  end)
   local tempTab = {}
   tempTab.matName = matName
-  tempTab.mat = (ResourceManager:GetInstance()):SyncLoadAsset(matName .. ".mat", LoadType.Mat)
+  tempTab.mat = ResourceManager:GetInstance():SyncLoadAsset(matName .. ".mat", LoadType.Mat)
   if tempTab.mat then
-    (self._mats):PushBack(tempTab)
+    self._mats:PushBack(tempTab)
     self:_Delete()
-    return (tempTab.mat).Obj
+    return tempTab.mat.Obj
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper._Delete = function(self)
-  -- function num : 0_9
-  if self._maxCount < (self._mats):Size() then
-    (self._mats):RemoveByIndex(1)
+function RawImageLoaderHelper:_Delete()
+  if self._mats:Size() > self._maxCount then
+    self._mats:RemoveByIndex(1)
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-RawImageLoaderHelper.Dispose = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  for i = 1, (table.count)((self._mats).elements) do
-    local res = (((self._mats).elements)[i]).mat
+function RawImageLoaderHelper:Dispose()
+  for i = 1, table.count(self._mats.elements) do
+    local res = self._mats.elements[i].mat
     res:Dispose()
   end
-  ;
-  (self._mats):Clear()
+  self._mats:Clear()
   self._mats = nil
   self._maxCount = 0
   self.isOpen = false
 end
-
-

@@ -1,27 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n34/task/ui_activity_n34_task_infomation_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityN34TaskInfomationItem", UICustomWidget)
 UIActivityN34TaskInfomationItem = UIActivityN34TaskInfomationItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityN34TaskInfomationItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityN34TaskInfomationItem:OnShow()
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.OnHide = function(self)
-  -- function num : 0_1
+function UIActivityN34TaskInfomationItem:OnHide()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.GetComponents = function(self)
-  -- function num : 0_2
+function UIActivityN34TaskInfomationItem:GetComponents()
   self._headImg = self:GetUIComponent("RawImageLoader", "head")
   self._titleLabel = self:GetUIComponent("UILocalizationText", "processTitle")
   self._processLabel = self:GetUIComponent("UILocalizationText", "processCount")
@@ -33,10 +20,7 @@ UIActivityN34TaskInfomationItem.GetComponents = function(self)
   self._animation = self:GetUIComponent("Animation", "animation")
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.SetData = function(self, cfg, itemModule, component, componentInfo)
-  -- function num : 0_3
+function UIActivityN34TaskInfomationItem:SetData(cfg, itemModule, component, componentInfo)
   self._cfg = cfg
   self._itemModule = itemModule
   self._component = component
@@ -44,98 +28,61 @@ UIActivityN34TaskInfomationItem.SetData = function(self, cfg, itemModule, compon
   self:Refresh()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.Init = function(self)
-  -- function num : 0_4
+function UIActivityN34TaskInfomationItem:Init()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.Refresh = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  (self._titleLabel):SetText((StringTable.Get)("str_n34_task_progress_tips"))
-  ;
-  (self._consignorLabel):SetText((StringTable.Get)((self._cfg).Name))
-  local num = (self._itemModule):GetItemCount((self._cfg).TrustItem)
-  -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._processSlider).value = num / (self._cfg).TrustTotal
-  local value = num / (self._cfg).TrustTotal * 100
-  local value = (math.floor)(value + 0.5)
-  ;
-  (self._processLabel):SetText(value .. "%")
-  ;
-  (self._evaluate):SetActive(self:CheckShowEvaluateBtn())
-  ;
-  (self._evaluated):SetActive(self:GetHadEvaluated())
-  ;
-  (self._redPoint):SetActive(self:CheckItemRed())
-  ;
-  (self._headImg):LoadImage((self._cfg).QheadImage)
+function UIActivityN34TaskInfomationItem:Refresh()
+  self._titleLabel:SetText(StringTable.Get("str_n34_task_progress_tips"))
+  self._consignorLabel:SetText(StringTable.Get(self._cfg.Name))
+  local num = self._itemModule:GetItemCount(self._cfg.TrustItem)
+  self._processSlider.value = num / self._cfg.TrustTotal
+  local value = num / self._cfg.TrustTotal * 100
+  local value = math.floor(value + 0.5)
+  self._processLabel:SetText(value .. "%")
+  self._evaluate:SetActive(self:CheckShowEvaluateBtn())
+  self._evaluated:SetActive(self:GetHadEvaluated())
+  self._redPoint:SetActive(self:CheckItemRed())
+  self._headImg:LoadImage(self._cfg.QheadImage)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.EvaluateOnClick = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function UIActivityN34TaskInfomationItem:EvaluateOnClick()
   if self._component then
     self:StartTask(function(TT)
-    -- function num : 0_6_0 , upvalues : _ENV, self
-    local asyncRes = AsyncRequestRes:New()
-    ;
-    (self._component):HandleSurveyClientDataReq(TT, asyncRes, SurveyOperateType.SurveyOperateType_UnLock)
-    if asyncRes:GetSucc() then
-      self:Refresh()
-      ;
-      (self._animation):Play()
-      self:DispatchEvent(GameEventType.OnN34SurveyEvaluateFinish)
-    end
-  end
-)
+      local asyncRes = AsyncRequestRes:New()
+      self._component:HandleSurveyClientDataReq(TT, asyncRes, SurveyOperateType.SurveyOperateType_UnLock)
+      if asyncRes:GetSucc() then
+        self:Refresh()
+        self._animation:Play()
+        self:DispatchEvent(GameEventType.OnN34SurveyEvaluateFinish)
+      end
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.HeadOnClick = function(self)
-  -- function num : 0_7
+function UIActivityN34TaskInfomationItem:HeadOnClick()
   self:ShowDialog("UIActivityN34TaskInfomationRewardPreview", self._cfg, true, self:GetHadEvaluated())
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.GetHadEvaluated = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIActivityN34TaskInfomationItem:GetHadEvaluated()
   if not self._componentInfo then
     return false
   end
-  if not (self._componentInfo).info then
+  if not self._componentInfo.info then
     return false
   end
-  for index,value in ipairs(((self._componentInfo).info).pet_unlock) do
-    if value == (self._cfg).PetID then
+  for index, value in ipairs(self._componentInfo.info.pet_unlock) do
+    if value == self._cfg.PetID then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.CheckShowEvaluateBtn = function(self)
-  -- function num : 0_9
-  local count = (self._itemModule):GetItemCount((self._cfg).TrustItem)
-  do return ((self._cfg).TrustTotal <= count and not self:GetHadEvaluated()) end
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
+function UIActivityN34TaskInfomationItem:CheckShowEvaluateBtn()
+  local count = self._itemModule:GetItemCount(self._cfg.TrustItem)
+  return count >= self._cfg.TrustTotal and not self:GetHadEvaluated()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityN34TaskInfomationItem.CheckItemRed = function(self)
-  -- function num : 0_10
+function UIActivityN34TaskInfomationItem:CheckItemRed()
   return self:CheckShowEvaluateBtn()
 end
-
-

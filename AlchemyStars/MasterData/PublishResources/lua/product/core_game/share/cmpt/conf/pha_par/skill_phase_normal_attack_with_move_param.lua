@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/skill_phase_normal_attack_with_move_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseNormalAttackWithMoveParam", SkillPhaseParamBase)
 SkillPhaseNormalAttackWithMoveParam = SkillPhaseNormalAttackWithMoveParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseNormalAttackWithMoveParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseNormalAttackWithMoveParam:Constructor(t)
   self._castTotalTime = t.castTotalTime
   self._longCastTotalTime = t.longCastTotalTime
   self._nDamageIndex = t.damageIndex or 1
@@ -22,24 +15,15 @@ SkillPhaseNormalAttackWithMoveParam.Constructor = function(self, t)
   self._longAtkEffectDelay = t.longAtkEffectDelay or 0
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackWithMoveParam.GetPhaseType = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function SkillPhaseNormalAttackWithMoveParam:GetPhaseType()
   return SkillViewPhaseType.NormalAttackWithMove
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackWithMoveParam.GetCastEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseNormalAttackWithMoveParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackWithMoveParam.GetAnimationName = function(self, isFinalAttack)
-  -- function num : 0_3
+function SkillPhaseNormalAttackWithMoveParam:GetAnimationName(isFinalAttack)
   if isFinalAttack and self._castLongAnimation then
     return self._castLongAnimation
   else
@@ -47,10 +31,7 @@ SkillPhaseNormalAttackWithMoveParam.GetAnimationName = function(self, isFinalAtt
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackWithMoveParam.GetHitPointDelay = function(self, isFinalAttack)
-  -- function num : 0_4
+function SkillPhaseNormalAttackWithMoveParam:GetHitPointDelay(isFinalAttack)
   if isFinalAttack and self._longHitPointDelay then
     return self._longHitPointDelay
   else
@@ -58,10 +39,7 @@ SkillPhaseNormalAttackWithMoveParam.GetHitPointDelay = function(self, isFinalAtt
   end
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackWithMoveParam.GetCastTotalTime = function(self, isFinalAttack)
-  -- function num : 0_5
+function SkillPhaseNormalAttackWithMoveParam:GetCastTotalTime(isFinalAttack)
   if isFinalAttack and self._longCastTotalTime then
     return self._longCastTotalTime
   else
@@ -69,21 +47,18 @@ SkillPhaseNormalAttackWithMoveParam.GetCastTotalTime = function(self, isFinalAtt
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackWithMoveParam.GetCacheTable = function(self)
-  -- function num : 0_6 , upvalues : _ENV
+function SkillPhaseNormalAttackWithMoveParam:GetCacheTable()
   local t = {}
   if self._castEffectID and self._castEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackWithMoveParam.GetHitEffectDelay = function(self, isFinalAttack)
-  -- function num : 0_7
+function SkillPhaseNormalAttackWithMoveParam:GetHitEffectDelay(isFinalAttack)
   if isFinalAttack and self._longAtkEffectDelay then
     return self._longAtkEffectDelay
   else
@@ -91,11 +66,6 @@ SkillPhaseNormalAttackWithMoveParam.GetHitEffectDelay = function(self, isFinalAt
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseNormalAttackWithMoveParam.GetDamageIndex = function(self)
-  -- function num : 0_8
+function SkillPhaseNormalAttackWithMoveParam:GetDamageIndex()
   return self._nDamageIndex
 end
-
-

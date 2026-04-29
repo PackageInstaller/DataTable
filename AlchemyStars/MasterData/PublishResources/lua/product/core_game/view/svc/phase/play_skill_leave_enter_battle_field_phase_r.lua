@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/phase/play_skill_leave_enter_battle_field_phase_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("play_skill_phase_base_r")
 _class("PlaySkillLeaveEnterBattleFieldPhase", PlaySkillPhaseBase)
 PlaySkillLeaveEnterBattleFieldPhase = PlaySkillLeaveEnterBattleFieldPhase
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-PlaySkillLeaveEnterBattleFieldPhase.PlayFlight = function(self, TT, casterEntity, phaseParam)
-  -- function num : 0_0 , upvalues : _ENV
-  local skillEffectResultContainer = (casterEntity:SkillRoutine()):GetResultContainer()
+function PlaySkillLeaveEnterBattleFieldPhase:PlayFlight(TT, casterEntity, phaseParam)
+  local skillEffectResultContainer = casterEntity:SkillRoutine():GetResultContainer()
   local leaveEnterBattleFieldResult = skillEffectResultContainer:GetEffectResultByArray(SkillEffectType.LeaveEnterBattleField)
   if not leaveEnterBattleFieldResult then
-    return 
+    return
   end
-  local boardServiceRender = (self._world):GetService("BoardRender")
+  local boardServiceRender = self._world:GetService("BoardRender")
   local gridPos = boardServiceRender:GetRealEntityGridPos(casterEntity)
   local isLeave = leaveEnterBattleFieldResult:IsLeave()
   if isLeave then
     casterEntity:AddGridMove(100000, Vector2(5, 100), gridPos)
   else
-    if not leaveEnterBattleFieldResult:EnterPos() then
-      local pos = Vector2(5, 8)
-    end
-    if not leaveEnterBattleFieldResult:EnterDir() then
-      local dir = Vector2(0, -1)
-    end
+    local pos = leaveEnterBattleFieldResult:EnterPos() or Vector2(5, 8)
+    local dir = leaveEnterBattleFieldResult:EnterDir() or Vector2(0, -1)
     casterEntity:AddGridMove(100000, pos, gridPos)
     casterEntity:SetDirection(dir)
   end
 end
-
-

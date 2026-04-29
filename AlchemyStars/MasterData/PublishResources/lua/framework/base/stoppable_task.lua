@@ -1,33 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/stoppable_task.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-STOP_ST_UNSAFE = function(ST, id, stoppedFunc, ...)
-  -- function num : 0_0 , upvalues : _ENV
-  if (TaskManager:GetInstance()):StopTaskUnSafe(ST, id) and stoppedFunc then
+function STOP_ST_UNSAFE(ST, id, stoppedFunc, ...)
+  if TaskManager:GetInstance():StopTaskUnSafe(ST, id) and stoppedFunc then
     stoppedFunc(...)
   end
 end
 
-YIELD_ST = function(ST, ms)
-  -- function num : 0_1 , upvalues : _ENV
+function YIELD_ST(ST, ms)
   YieldInternal(ST, ms)
 end
 
-SUSPEND_ST = function(ST)
-  -- function num : 0_2 , upvalues : _ENV
+function SUSPEND_ST(ST)
   SuspendInternal(ST)
 end
 
-RESUME_ST = function(ST, id)
-  -- function num : 0_3 , upvalues : _ENV
+function RESUME_ST(ST, id)
   return ResumeInternal(id)
 end
 
-JOIN_ST = function(ST, child)
-  -- function num : 0_4 , upvalues : _ENV
+function JOIN_ST(ST, child)
   JoinInternal(child)
 end
-
-

@@ -1,31 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n31/popstar/ui_popstar_level_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIPopStarLevelItem", UICustomWidget)
 UIPopStarLevelItem = UIPopStarLevelItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIPopStarLevelItem.OnShow = function(self)
-  -- function num : 0_0
+function UIPopStarLevelItem:OnShow()
   self._up = self:GetGameObject("Up")
   self._down = self:GetGameObject("Down")
   self._normal = self:GetGameObject("Normal")
   self._challenge = self:GetGameObject("Challenge")
   self._stars = {}
-  -- DECOMPILER ERROR at PC22: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stars)[1] = self:GetGameObject("Star1")
-  -- DECOMPILER ERROR at PC27: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stars)[2] = self:GetGameObject("Star2")
-  -- DECOMPILER ERROR at PC32: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._stars)[3] = self:GetGameObject("Star3")
+  self._stars[1] = self:GetGameObject("Star1")
+  self._stars[2] = self:GetGameObject("Star2")
+  self._stars[3] = self:GetGameObject("Star3")
   self._normalName = self:GetUIComponent("UILocalizationText", "NormalName")
   self._normalLock = self:GetGameObject("NormalLock")
   self._challengeName = self:GetUIComponent("UILocalizationText", "ChallengeName")
@@ -34,75 +18,49 @@ UIPopStarLevelItem.OnShow = function(self)
   self._anim = self:GetUIComponent("Animation", "Anim")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarLevelItem.SetData = function(self, levelData, isUp, isLast, callback)
-  -- function num : 0_1 , upvalues : _ENV
+function UIPopStarLevelItem:SetData(levelData, isUp, isLast, callback)
   self._callback = callback
   self._levelData = levelData
-  local levelType = (self._levelData):GetLevelType()
-  ;
-  (self._normal):SetActive(false)
-  ;
-  (self._challenge):SetActive(false)
+  local levelType = self._levelData:GetLevelType()
+  self._normal:SetActive(false)
+  self._challenge:SetActive(false)
   if levelType == UIActivityPopStarLevelType.Normal then
-    (self._normal):SetActive(true)
-    ;
-    (self._normalName):SetText((self._levelData):GetName())
-    ;
-    (self._normalLock):SetActive(not (self._levelData):IsOpen())
-    local star = (self._levelData):GetStar()
+    self._normal:SetActive(true)
+    self._normalName:SetText(self._levelData:GetName())
+    self._normalLock:SetActive(not self._levelData:IsOpen())
+    local star = self._levelData:GetStar()
     for i = 1, #self._stars do
-      ((self._stars)[i]):SetActive(i <= star)
+      self._stars[i]:SetActive(i <= star)
     end
   elseif levelType == UIActivityPopStarLevelType.Challenge then
-    (self._challenge):SetActive(true)
-    ;
-    (self._challengeName):SetText((self._levelData):GetName())
-    ;
-    (self._challengeLock):SetActive(not (self._levelData):IsOpen())
+    self._challenge:SetActive(true)
+    self._challengeName:SetText(self._levelData:GetName())
+    self._challengeLock:SetActive(not self._levelData:IsOpen())
   end
-  -- DECOMPILER ERROR at PC80: Confused about usage of register: R6 in 'UnsetPending'
-
   if isUp then
-    (self._btn).anchoredPosition = Vector2(0, 80)
-    ;
-    (self._anim):Play("uieff_UIPopStarLevelItem_in01")
+    self._btn.anchoredPosition = Vector2(0, 80)
+    self._anim:Play("uieff_UIPopStarLevelItem_in01")
   else
-    -- DECOMPILER ERROR at PC91: Confused about usage of register: R6 in 'UnsetPending'
-
-    (self._btn).anchoredPosition = Vector2(0, 5.6)
-    ;
-    (self._anim):Play("uieff_UIPopStarLevelItem_in02")
+    self._btn.anchoredPosition = Vector2(0, 5.6)
+    self._anim:Play("uieff_UIPopStarLevelItem_in02")
   end
-  ;
-  (self._up):SetActive(false)
-  ;
-  (self._down):SetActive(false)
+  self._up:SetActive(false)
+  self._down:SetActive(false)
   if not isLast then
     if isUp then
-      (self._up):SetActive(true)
+      self._up:SetActive(true)
     else
-      (self._down):SetActive(true)
+      self._down:SetActive(true)
     end
   end
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarLevelItem.SetActive = function(self, status)
-  -- function num : 0_2
-  (self._go):SetActive(status)
+function UIPopStarLevelItem:SetActive(status)
+  self._go:SetActive(status)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIPopStarLevelItem.BtnOnClick = function(self)
-  -- function num : 0_3
+function UIPopStarLevelItem:BtnOnClick()
   if self._callback then
-    (self._callback)(self._levelData)
+    self._callback(self._levelData)
   end
 end
-
-

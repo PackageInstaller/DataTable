@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/room/ui_aircraft_room_enter_interactive_tem.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIAircraftRoomEnterInteractiveItem", UICustomWidget)
 UIAircraftRoomEnterInteractiveItem = UIAircraftRoomEnterInteractiveItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIAircraftRoomEnterInteractiveItem.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:OnShow(uiParams)
   self._levelLabel = self:GetUIComponent("UILocalizationText", "Level")
   self._levelBarImg1 = self:GetUIComponent("Image", "LevelBar1")
   self._levelBarImg2 = self:GetUIComponent("Image", "LevelBar2")
@@ -18,24 +11,15 @@ UIAircraftRoomEnterInteractiveItem.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.PetDataChangeEvent, self.FavorableChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.OnHide = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:OnHide()
   self:DetachEvent(GameEventType.PetDataChangeEvent, self.FavorableChanged)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.FavorableChanged = function(self)
-  -- function num : 0_2
+function UIAircraftRoomEnterInteractiveItem:FavorableChanged()
   self:_RefreshFavorable()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.Refresh = function(self, uiAircraftController, room, targetPet)
-  -- function num : 0_3
+function UIAircraftRoomEnterInteractiveItem:Refresh(uiAircraftController, room, targetPet)
   self._targetPet = targetPet
   self._petData = targetPet:GetPetData()
   self._room = room
@@ -44,70 +28,45 @@ UIAircraftRoomEnterInteractiveItem.Refresh = function(self, uiAircraftController
   self:_RefreshButtonStatus()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem._RefreshPetInfo = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:_RefreshPetInfo()
   if self._petData == nil then
-    return 
+    return
   end
   self:_RefreshFavorable()
-  -- DECOMPILER ERROR at PC13: Confused about usage of register: R1 in 'UnsetPending'
-
-  ;
-  (self._nameLabel).text = (StringTable.Get)((self._petData):GetPetName())
-  ;
-  (self._logoImg):LoadImage((self._petData):GetPetLogo())
+  self._nameLabel.text = StringTable.Get(self._petData:GetPetName())
+  self._logoImg:LoadImage(self._petData:GetPetLogo())
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem._RefreshFavorable = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:_RefreshFavorable()
   if self._petData == nil then
-    return 
+    return
   end
-  self._maxLevel = (self._petData):GetPetAffinityMaxLevel()
-  local level = (self._petData):GetPetAffinityLevel()
-  local currentFavorable = (self._petData):GetPetAffinityExp() - ((Cfg.cfg_pet_affinity_exp)[level]).NeedAffintyExp
-  local maxFavorable = (self._petData):GetPetAffinityMaxExp(level)
+  self._maxLevel = self._petData:GetPetAffinityMaxLevel()
+  local level = self._petData:GetPetAffinityLevel()
+  local currentFavorable = self._petData:GetPetAffinityExp() - Cfg.cfg_pet_affinity_exp[level].NeedAffintyExp
+  local maxFavorable = self._petData:GetPetAffinityMaxExp(level)
   local percent = currentFavorable / maxFavorable
-  -- DECOMPILER ERROR at PC25: Confused about usage of register: R5 in 'UnsetPending'
-
-  ;
-  (self._levelLabel).text = level
-  local expText = nil
+  self._levelLabel.text = level
+  local expText
   if level == self._maxLevel then
     expText = "MAX"
     percent = 1
   else
     expText = currentFavorable .. "/" .. maxFavorable
   end
-  -- DECOMPILER ERROR at PC38: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._levelBarImg1).fillAmount = percent
-  -- DECOMPILER ERROR at PC40: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._levelBarImg2).fillAmount = percent
-  -- DECOMPILER ERROR at PC42: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (self._favorableLabel).text = expText
+  self._levelBarImg1.fillAmount = percent
+  self._levelBarImg2.fillAmount = percent
+  self._favorableLabel.text = expText
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem._RefreshButtonStatus = function(self)
-  -- function num : 0_6
+function UIAircraftRoomEnterInteractiveItem:_RefreshButtonStatus()
   local communicationBtnGo = self:GetGameObject("CommunicationButton")
   local eventBtnGo = self:GetGameObject("EventButton")
   local plotBtnGo = self:GetGameObject("PlotButton")
-  local taskId = (self._petData):GetTriggeredTaskId()
-  local storyId = (self._petData):GetTriggeredStoryId()
-  local hasPlot = not storyId or storyId ~= 0
-  local hasEvent = not taskId or taskId ~= 0
+  local taskId = self._petData:GetTriggeredTaskId()
+  local storyId = self._petData:GetTriggeredStoryId()
+  local hasPlot = storyId and storyId ~= 0
+  local hasEvent = taskId and taskId ~= 0
   if hasPlot then
     eventBtnGo:SetActive(false)
     plotBtnGo:SetActive(true)
@@ -119,174 +78,120 @@ UIAircraftRoomEnterInteractiveItem._RefreshButtonStatus = function(self)
     eventBtnGo:SetActive(false)
   end
   communicationBtnGo:SetActive(true)
-  -- DECOMPILER ERROR: 7 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.BtnCommunicationOnClick = function(self, go)
-  -- function num : 0_7 , upvalues : _ENV
-  (self:GetGameObject()):SetActive(false)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SwitchToInteractiveView, self._room, self._targetPet)
+function UIAircraftRoomEnterInteractiveItem:BtnCommunicationOnClick(go)
+  self:GetGameObject():SetActive(false)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SwitchToInteractiveView, self._room, self._targetPet)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.BtnEventOnClick = function(self, go)
-  -- function num : 0_8 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:BtnEventOnClick(go)
   self:Lock("BtnEventOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.HandleEvent, self)
+  GameGlobal.TaskManager():StartTask(self.HandleEvent, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.HandleEvent = function(self, TT)
-  -- function num : 0_9 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:HandleEvent(TT)
   if not self._petModule then
-    self._petModule = (GameGlobal.GetModule)(PetModule)
+    self._petModule = GameGlobal.GetModule(PetModule)
   end
-  local res, storyId = (self._petModule):RequestPetViewTriggeredTask(TT, (self._petData):GetPstID())
+  local res, storyId = self._petModule:RequestPetViewTriggeredTask(TT, self._petData:GetPstID())
   self:UnLock("BtnEventOnClick")
   if res.m_result == 0 then
-    ((self._uiAircraftController):GetGameObject()):SetActive(false)
-    if storyId and storyId > 0 then
+    self._uiAircraftController:GetGameObject():SetActive(false)
+    if storyId and 0 < storyId then
       self:ShowDialog("UIStoryBanner", storyId, StoryBannerShowType.HalfPortrait, function()
-    -- function num : 0_9_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.AcceptTask, self)
-  end
-)
+        GameGlobal.TaskManager():StartTask(self.AcceptTask, self)
+      end)
     else
-      ;
-      ((GameGlobal.TaskManager)()):StartTask(self.AcceptTask, self)
+      GameGlobal.TaskManager():StartTask(self.AcceptTask, self)
     end
   else
-    ;
-    (self:GetGameObject()):SetActive(false)
-    ;
-    (self._targetPet):ExitSelectedState()
+    self:GetGameObject():SetActive(false)
+    self._targetPet:ExitSelectedState()
   end
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.AcceptTask = function(self, TT)
-  -- function num : 0_10 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:AcceptTask(TT)
   self:Lock("BtnEventOnClick")
   if not self._petModule then
-    self._petModule = (GameGlobal.GetModule)(PetModule)
+    self._petModule = GameGlobal.GetModule(PetModule)
   end
-  local res, replyEvent = (self._petModule):RequestPetAcceptTriggeredTask(TT, (self._petData):GetPstID())
-  ;
-  (self:GetGameObject()):SetActive(false)
-  ;
-  (self._targetPet):ExitSelectedState()
+  local res, replyEvent = self._petModule:RequestPetAcceptTriggeredTask(TT, self._petData:GetPstID())
+  self:GetGameObject():SetActive(false)
+  self._targetPet:ExitSelectedState()
   if res.m_result == 0 then
     self:ShowDialog("UIAircraftRoomInteractiveEventController", self._petData, replyEvent, function()
-    -- function num : 0_10_0 , upvalues : self
-    ((self._uiAircraftController):GetGameObject()):SetActive(true)
-  end
-)
+      self._uiAircraftController:GetGameObject():SetActive(true)
+    end)
   else
-    ;
-    (Log.fatal)("RequestPetAcceptTriggeredTask err:", replyEvent.m_result)
+    Log.fatal("RequestPetAcceptTriggeredTask err:", replyEvent.m_result)
   end
   self:UnLock("BtnEventOnClick")
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.BtnPlotOnClick = function(self, go)
-  -- function num : 0_11 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:BtnPlotOnClick(go)
   self:Lock("BtnPlotOnClick")
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(self.PlayPlotProcess, self)
+  GameGlobal.TaskManager():StartTask(self.PlayPlotProcess, self)
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.PlayPlotProcess = function(self, TT)
-  -- function num : 0_12 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:PlayPlotProcess(TT)
   if not self._petModule then
-    self._petModule = (GameGlobal.GetModule)(PetModule)
+    self._petModule = GameGlobal.GetModule(PetModule)
   end
-  local res, storyId = (self._petModule):RequestPetViewTriggeredStory(TT, (self._petData):GetPstID())
+  local res, storyId = self._petModule:RequestPetViewTriggeredStory(TT, self._petData:GetPstID())
   self:UnLock("BtnPlotOnClick")
-  ;
-  (self:GetGameObject()):SetActive(false)
+  self:GetGameObject():SetActive(false)
   if res.m_result == 0 then
     self:ShowDialog("UIStoryController", storyId, function()
-    -- function num : 0_12_0 , upvalues : _ENV, self
-    ((GameGlobal.TaskManager)()):StartTask(self.FinishPlotProcess, self)
-  end
-)
+      GameGlobal.TaskManager():StartTask(self.FinishPlotProcess, self)
+    end)
   else
-    ;
-    (self._targetPet):ExitSelectedState()
+    self._targetPet:ExitSelectedState()
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.FinishPlotProcess = function(self, TT)
-  -- function num : 0_13 , upvalues : _ENV
+function UIAircraftRoomEnterInteractiveItem:FinishPlotProcess(TT)
   if not self._petModule then
-    self._petModule = (GameGlobal.GetModule)(PetModule)
+    self._petModule = GameGlobal.GetModule(PetModule)
   end
   self:Lock(self:GetName())
-  local res, replay = (self._petModule):RequestPetFinishTriggeredStory(TT, (self._petData):GetPstID())
+  local res, replay = self._petModule:RequestPetFinishTriggeredStory(TT, self._petData:GetPstID())
   self:UnLock(self:GetName())
   if res.m_result == 0 then
-    (((self._uiAircraftController):Get3dManager()):CameraManager()):SetActive(false)
-    local anim = AircraftAffinityAnim:New((self._targetPet):GameObject(), (self._uiAircraftController):GetMainCamera(), function()
-    -- function num : 0_13_0 , upvalues : self, TT, replay, _ENV
-    (self._targetPet):ExitSelectedState()
-    ;
-    (((self._uiAircraftController):Get3dManager()):CameraManager()):SetActive(true)
-    self:_GetRewards(TT, replay.reward, replay.affinity)
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.AircraftRefreshTopbar)
-  end
-)
+    self._uiAircraftController:Get3dManager():CameraManager():SetActive(false)
+    local anim = AircraftAffinityAnim:New(self._targetPet:GameObject(), self._uiAircraftController:GetMainCamera(), function()
+      self._targetPet:ExitSelectedState()
+      self._uiAircraftController:Get3dManager():CameraManager():SetActive(true)
+      self:_GetRewards(TT, replay.reward, replay.affinity)
+      GameGlobal.EventDispatcher():Dispatch(GameEventType.AircraftRefreshTopbar)
+    end)
     anim:Play()
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem._GetRewards = function(self, TT, reward, addedAffinity)
-  -- function num : 0_14 , upvalues : _ENV
-  if addedAffinity and addedAffinity > 0 then
+function UIAircraftRoomEnterInteractiveItem:_GetRewards(TT, reward, addedAffinity)
+  if addedAffinity and 0 < addedAffinity then
     local info = ""
-    local maxLevel = (self._petData):GetPetAffinityMaxLevel()
-    local level = (self._petData):GetPetAffinityLevel()
+    local maxLevel = self._petData:GetPetAffinityMaxLevel()
+    local level = self._petData:GetPetAffinityLevel()
     if level == self._maxLevel then
-      info = (StringTable.Get)("str_aircraft_room_affinity_add_value_max")
+      info = StringTable.Get("str_aircraft_room_affinity_add_value_max")
     else
-      local petName = (StringTable.Get)((self._petData):GetPetName())
-      info = (string.format)((StringTable.Get)("str_aircraft_room_pet_affinity_add_value"), petName, addedAffinity)
+      local petName = StringTable.Get(self._petData:GetPetName())
+      info = string.format(StringTable.Get("str_aircraft_room_pet_affinity_add_value"), petName, addedAffinity)
     end
-    do
-      do
-        ;
-        (ToastManager.ShowToast)(info)
-        YIELD(TT, 1500)
-        self:ShowDialog("UIGetItemController", reward)
-      end
-    end
+    ToastManager.ShowToast(info)
+    YIELD(TT, 1500)
   end
+  self:ShowDialog("UIGetItemController", reward)
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.UnlockFiles = function(self)
-  -- function num : 0_15 , upvalues : _ENV
-  local affinity = (self._petData):GetPetAffinityLevel()
-  local petID = (self._petData):GetTemplateID()
-  local cfg = (Cfg.pet_intimacy_condition)({ConditionType = 3, Value = affinity})
-  local condID = (cfg[1]).ID
-  local fileCfg = (Cfg.pet_intimacy_files)[petID]
+function UIAircraftRoomEnterInteractiveItem:UnlockFiles()
+  local affinity = self._petData:GetPetAffinityLevel()
+  local petID = self._petData:GetTemplateID()
+  local cfg = Cfg.pet_intimacy_condition({ConditionType = 3, Value = affinity})
+  local condID = cfg[1].ID
+  local fileCfg = Cfg.pet_intimacy_files[petID]
   for i = 1, 6 do
     local cond = fileCfg["Condition" .. i]
     if cond == condID then
@@ -296,13 +201,7 @@ UIAircraftRoomEnterInteractiveItem.UnlockFiles = function(self)
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIAircraftRoomEnterInteractiveItem.BtnMaskOnClick = function(self, go)
-  -- function num : 0_16
-  (self:GetGameObject()):SetActive(false)
-  ;
-  (self._targetPet):ExitSelectedState()
+function UIAircraftRoomEnterInteractiveItem:BtnMaskOnClick(go)
+  self:GetGameObject():SetActive(false)
+  self._targetPet:ExitSelectedState()
 end
-
-

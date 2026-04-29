@@ -1,111 +1,178 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/messages/role_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local RoleAssetID = {RoleAssetNone = 0, RoleAssetPetBegin = 1000000, RoleAssetPetEnd = 1999999, RoleAssetItemBegin = 3000000, RoleAssetPhyPoint = 3000001, RoleAssetGold = 3000002, RoleAssetGlow = 3000003, RoleAssetExp = 3000004, RoleAssetFirefly = 3000005, RoleAssetLight = 3000006, RoleAssetMazeCoin = 3000007, RoleAssetVigorous = 3000008, RoleAssetAchPoint = 3000009, RoleAssetPetAffinity = 3000010, RoleAssetRelicDice = 3000011, RoleAssetDoubleRes = 3000012, RoleAssetAtom = 3000013, RoleAssetDiamond = 3000014, RoleAssetXingZuan = 3000015, RoleAssetHuiYao = 3000016, RoleAssetHongPiao = 3000019, RoleAssetActiveToken = 3000021, RoleAssetFurnitureCoin = 3000022, RoleAssetWeekVigorous = 3000024, RoleAssetBPPay = 3000029, RoleAssetBPFree = 3000030, RoleAssetBPSkin = 3000031, RoleAssetBPFurniture = 3000032, RoleAssetDrawCard100 = 3000100, RoleAssetDrawCard101 = 3000101, RoleAssetDrawCardSeniorSkin = 3000240, RoleAssetDrawCardSeniorSkinGL = 3000266, RoleAssetDrawCardSeniorSkinGL_Re2 = 3000342, RoleAssetDrawCardSeniorSkinKR = 3000275, RoleAssetDrawCardSeniorSkinKL_Re = 3000280, RoleAssetDrawCardSeniorSkinBLH = 3000288, RoleAssetDrawCardSeniorSkinBLH_Re = 3000329, RoleAssetDrawCardSeniorSkinGL_Re = 3000306, RoleAssetDrawCardSeniorSkinQT = 3000311, RoleAssetDrawCardSeniorSkinQT2 = 3000346, RoleAssetDrawCardSeniorSkinQT3 = 3000373, RoleAssetDrawCardSeniorSkinPLM = 3000330, RoleAssetWorldBossCoin = 3000025, RoleAssetWorldBossCoin2 = 3000026, RoleAssetDrawCardSeniorSkinKR_Re = 3000322, RoleAssetSimulationOperationCoin = 3000328, RoleAssetDrawCardSeniorSkinKL_ReRe = 3000339, RoleAssetDrawCardSeniorSkinBLH_ReRe = 3000350, RoleAssetHistory = 3001000, RoleAssetPayCurrency = 3999998, RoleAssetItemEnd = 3999999, RoleAssetPetSkinBegin = 4000000, RoleAssetPetSkinEnd = 4999999, RoleAssetRelicBegin = 9990000, RoleAssetRelicEnd = 9999999}
+local RoleAssetID = {
+  RoleAssetNone = 0,
+  RoleAssetPetBegin = 1000000,
+  RoleAssetPetEnd = 1999999,
+  RoleAssetItemBegin = 3000000,
+  RoleAssetPhyPoint = 3000001,
+  RoleAssetGold = 3000002,
+  RoleAssetGlow = 3000003,
+  RoleAssetExp = 3000004,
+  RoleAssetFirefly = 3000005,
+  RoleAssetLight = 3000006,
+  RoleAssetMazeCoin = 3000007,
+  RoleAssetVigorous = 3000008,
+  RoleAssetAchPoint = 3000009,
+  RoleAssetPetAffinity = 3000010,
+  RoleAssetRelicDice = 3000011,
+  RoleAssetDoubleRes = 3000012,
+  RoleAssetAtom = 3000013,
+  RoleAssetDiamond = 3000014,
+  RoleAssetXingZuan = 3000015,
+  RoleAssetHuiYao = 3000016,
+  RoleAssetHongPiao = 3000019,
+  RoleAssetActiveToken = 3000021,
+  RoleAssetFurnitureCoin = 3000022,
+  RoleAssetWeekVigorous = 3000024,
+  RoleAssetBPPay = 3000029,
+  RoleAssetBPFree = 3000030,
+  RoleAssetBPSkin = 3000031,
+  RoleAssetBPFurniture = 3000032,
+  RoleAssetDrawCard100 = 3000100,
+  RoleAssetDrawCard101 = 3000101,
+  RoleAssetDrawCardSeniorSkin = 3000240,
+  RoleAssetDrawCardSeniorSkinGL = 3000266,
+  RoleAssetDrawCardSeniorSkinGL_Re2 = 3000342,
+  RoleAssetDrawCardSeniorSkinKR = 3000275,
+  RoleAssetDrawCardSeniorSkinKL_Re = 3000280,
+  RoleAssetDrawCardSeniorSkinBLH = 3000288,
+  RoleAssetDrawCardSeniorSkinBLH_Re = 3000329,
+  RoleAssetDrawCardSeniorSkinGL_Re = 3000306,
+  RoleAssetDrawCardSeniorSkinQT = 3000311,
+  RoleAssetDrawCardSeniorSkinQT2 = 3000346,
+  RoleAssetDrawCardSeniorSkinQT3 = 3000373,
+  RoleAssetDrawCardSeniorSkinPLM = 3000330,
+  RoleAssetWorldBossCoin = 3000025,
+  RoleAssetWorldBossCoin2 = 3000026,
+  RoleAssetDrawCardSeniorSkinKR_Re = 3000322,
+  RoleAssetSimulationOperationCoin = 3000328,
+  RoleAssetDrawCardSeniorSkinKL_ReRe = 3000339,
+  RoleAssetDrawCardSeniorSkinBLH_ReRe = 3000350,
+  RoleAssetHistory = 3001000,
+  RoleAssetPayCurrency = 3999998,
+  RoleAssetItemEnd = 3999999,
+  RoleAssetPetSkinBegin = 4000000,
+  RoleAssetPetSkinEnd = 4999999,
+  RoleAssetRelicBegin = 9990000,
+  RoleAssetRelicEnd = 9999999
+}
 _enum("RoleAssetID", RoleAssetID)
-local GameModuleID = {MD_Role = 0, MD_Item = 1, MD_Pet = 2, MD_Mission = 3, MD_Aircraft = 4, MD_ResDungeon = 5, MD_Maze = 6, MD_ExtMission = 7, MD_Gamble = 8, MD_Shop = 9, MD_BuyPhyPoint = 10, MD_BuyGold = 11, MD_PetStory = 12, MD_QuestMain = 13, MD_QuestDaily = 14, MD_QuestAchieve = 15, MD_QuestGrowth = 16, MD_SpeedUp = 18, MD_Mail = 19, MD_Notify = 20, MD_Guild = 21, MD_HandBook = 22, MD_QuestEntry = 23, MD_Tower = 24, MD_WeChat = 25, MD_ChangeLeader = 26, MD_ResChangeLeader = 27, MD_HelpPet = 28, MD_Funiture = 29, MD_ForceGuideEnd = 30, MD_TalePet = 31, MD_LostLand = 32, MD_WorldBoss = 33, MD_HomeLand = 34, MD_DIFFICULTYMISSION = 35, MD_SAILINGMISSION = 37, MD_CAMPAIGNREVIEW = 38, MD_MEDAL = 39, MD_ANIPOP = 40, MD_PROCUL = 41, MD_Count = 42}
+local GameModuleID = {
+  MD_Role = 0,
+  MD_Item = 1,
+  MD_Pet = 2,
+  MD_Mission = 3,
+  MD_Aircraft = 4,
+  MD_ResDungeon = 5,
+  MD_Maze = 6,
+  MD_ExtMission = 7,
+  MD_Gamble = 8,
+  MD_Shop = 9,
+  MD_BuyPhyPoint = 10,
+  MD_BuyGold = 11,
+  MD_PetStory = 12,
+  MD_QuestMain = 13,
+  MD_QuestDaily = 14,
+  MD_QuestAchieve = 15,
+  MD_QuestGrowth = 16,
+  MD_SpeedUp = 18,
+  MD_Mail = 19,
+  MD_Notify = 20,
+  MD_Guild = 21,
+  MD_HandBook = 22,
+  MD_QuestEntry = 23,
+  MD_Tower = 24,
+  MD_WeChat = 25,
+  MD_ChangeLeader = 26,
+  MD_ResChangeLeader = 27,
+  MD_HelpPet = 28,
+  MD_Funiture = 29,
+  MD_ForceGuideEnd = 30,
+  MD_TalePet = 31,
+  MD_LostLand = 32,
+  MD_WorldBoss = 33,
+  MD_HomeLand = 34,
+  MD_DIFFICULTYMISSION = 35,
+  MD_SAILINGMISSION = 37,
+  MD_CAMPAIGNREVIEW = 38,
+  MD_MEDAL = 39,
+  MD_ANIPOP = 40,
+  MD_PROCUL = 41,
+  MD_Count = 42
+}
 _enum("GameModuleID", GameModuleID)
 local RoleBoardType = {ON_LINE = 0, OFF_LINE = 1}
 _enum("RoleBoardType", RoleBoardType)
 _class("GuideInfo", Object)
 GuideInfo = GuideInfo
--- DECOMPILER ERROR at PC121: Confused about usage of register: R3 in 'UnsetPending'
 
-GuideInfo.Constructor = function(self)
-  -- function num : 0_0
+function GuideInfo:Constructor()
   self.guide_id2count = {}
 end
 
--- DECOMPILER ERROR at PC129: Confused about usage of register: R3 in 'UnsetPending'
-
 GuideInfo._proto = {
-[1] = {"guide_id2count", "map<int,int>"}
+  [1] = {
+    "guide_id2count",
+    "map<int,int>"
+  }
 }
 _class("base_char_info", Object)
 base_char_info = base_char_info
--- DECOMPILER ERROR at PC138: Confused about usage of register: R3 in 'UnsetPending'
 
-base_char_info.Constructor = function(self)
-  -- function num : 0_1 , upvalues : _ENV
+function base_char_info:Constructor()
   self.pstid = 0
   self.nick = ""
   self.exp = 0
   self.sex = PlayerSex.SEX_Error
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R3 in 'UnsetPending'
-
 base_char_info._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"nick", "string"}
-, 
-[3] = {"exp", "int64"}
-, 
-[4] = {"sex", "byte"}
+  [1] = {"pstid", "int64"},
+  [2] = {"nick", "string"},
+  [3] = {"exp", "int64"},
+  [4] = {"sex", "byte"}
 }
 _class("RoleAsset", Object)
 RoleAsset = RoleAsset
--- DECOMPILER ERROR at PC170: Confused about usage of register: R3 in 'UnsetPending'
 
-RoleAsset.Constructor = function(self)
-  -- function num : 0_2
+function RoleAsset:Constructor()
   self.assetid = 0
   self.count = 0
 end
 
--- DECOMPILER ERROR at PC183: Confused about usage of register: R3 in 'UnsetPending'
-
 RoleAsset._proto = {
-[1] = {"assetid", "int"}
-, 
-[2] = {"count", "int64"}
+  [1] = {"assetid", "int"},
+  [2] = {"count", "int64"}
 }
 _class("ItemAsset", Object)
 ItemAsset = ItemAsset
--- DECOMPILER ERROR at PC192: Confused about usage of register: R3 in 'UnsetPending'
 
-ItemAsset.Constructor = function(self)
-  -- function num : 0_3
+function ItemAsset:Constructor()
   self.assetid = 0
   self.count = 0
 end
 
--- DECOMPILER ERROR at PC205: Confused about usage of register: R3 in 'UnsetPending'
-
 ItemAsset._proto = {
-[1] = {"assetid", "int64"}
-, 
-[2] = {"count", "int"}
+  [1] = {"assetid", "int64"},
+  [2] = {"count", "int"}
 }
 _class("SpecItemAsset", Object)
 SpecItemAsset = SpecItemAsset
--- DECOMPILER ERROR at PC214: Confused about usage of register: R3 in 'UnsetPending'
 
-SpecItemAsset.Constructor = function(self)
-  -- function num : 0_4
+function SpecItemAsset:Constructor()
   self.assetid = 0
   self.count = 0
   self.pstid = 0
 end
 
--- DECOMPILER ERROR at PC232: Confused about usage of register: R3 in 'UnsetPending'
-
 SpecItemAsset._proto = {
-[1] = {"assetid", "int"}
-, 
-[2] = {"count", "int64"}
-, 
-[3] = {"pstid", "int64"}
+  [1] = {"assetid", "int"},
+  [2] = {"count", "int64"},
+  [3] = {"pstid", "int64"}
 }
 _class("MobileChoosePainting", Object)
 MobileChoosePainting = MobileChoosePainting
--- DECOMPILER ERROR at PC241: Confused about usage of register: R3 in 'UnsetPending'
 
-MobileChoosePainting.Constructor = function(self)
-  -- function num : 0_5
+function MobileChoosePainting:Constructor()
   self.pet_template_id = 0
   self.pet_grade = 0
   self.skin_id = 0
@@ -122,57 +189,63 @@ MobileChoosePainting.Constructor = function(self)
   self.spine_id = 0
 end
 
--- DECOMPILER ERROR at PC314: Confused about usage of register: R3 in 'UnsetPending'
-
 MobileChoosePainting._proto = {
-[1] = {"pet_template_id", "int"}
-, 
-[2] = {"pet_grade", "int"}
-, 
-[3] = {"skin_id", "int"}
-, 
-[4] = {"back_id", "int"}
-, 
-[5] = {"bgm_main", "int"}
-, 
-[6] = {"bgm_aircraft", "int"}
-, 
-[7] = {"board_pet", "int"}
-, 
-[8] = {"bgm_homeland", "int"}
-, 
-[9] = {"background_type", "int"}
-, 
-[11] = {"background_x", "float"}
-, 
-[12] = {"background_y", "float"}
-, 
-[13] = {"background_scale", "float"}
-, 
-[14] = {"is_hand_operate", "bool"}
-, 
-[15] = {"spine_id", "int"}
+  [1] = {
+    "pet_template_id",
+    "int"
+  },
+  [2] = {"pet_grade", "int"},
+  [3] = {"skin_id", "int"},
+  [4] = {"back_id", "int"},
+  [5] = {"bgm_main", "int"},
+  [6] = {
+    "bgm_aircraft",
+    "int"
+  },
+  [7] = {"board_pet", "int"},
+  [8] = {
+    "bgm_homeland",
+    "int"
+  },
+  [9] = {
+    "background_type",
+    "int"
+  },
+  [11] = {
+    "background_x",
+    "float"
+  },
+  [12] = {
+    "background_y",
+    "float"
+  },
+  [13] = {
+    "background_scale",
+    "float"
+  },
+  [14] = {
+    "is_hand_operate",
+    "bool"
+  },
+  [15] = {"spine_id", "int"}
 }
 _class("played_story_data", Object)
 played_story_data = played_story_data
--- DECOMPILER ERROR at PC323: Confused about usage of register: R3 in 'UnsetPending'
 
-played_story_data.Constructor = function(self)
-  -- function num : 0_6
+function played_story_data:Constructor()
   self.played_story_set = {}
 end
 
--- DECOMPILER ERROR at PC331: Confused about usage of register: R3 in 'UnsetPending'
-
 played_story_data._proto = {
-[1] = {"played_story_set", "list<int>"}
+  [1] = {
+    "played_story_set",
+    "list<int>"
+  }
 }
 _class("role_fight_info", Object)
 role_fight_info = role_fight_info
--- DECOMPILER ERROR at PC340: Confused about usage of register: R3 in 'UnsetPending'
 
-role_fight_info.Constructor = function(self)
-  -- function num : 0_7
+function role_fight_info:Constructor()
   self.mission_id = 0
   self.pass_star_num = 0
   self.pet_num = 0
@@ -183,31 +256,32 @@ role_fight_info.Constructor = function(self)
   self.tower_thunder = 0
 end
 
--- DECOMPILER ERROR at PC383: Confused about usage of register: R3 in 'UnsetPending'
-
 role_fight_info._proto = {
-[1] = {"mission_id", "int"}
-, 
-[2] = {"pass_star_num", "int"}
-, 
-[3] = {"pet_num", "int"}
-, 
-[4] = {"achievement_num", "int"}
-, 
-[5] = {"tower_water", "int"}
-, 
-[6] = {"tower_fire", "int"}
-, 
-[7] = {"tower_wood", "int"}
-, 
-[8] = {"tower_thunder", "int"}
+  [1] = {"mission_id", "int"},
+  [2] = {
+    "pass_star_num",
+    "int"
+  },
+  [3] = {"pet_num", "int"},
+  [4] = {
+    "achievement_num",
+    "int"
+  },
+  [5] = {
+    "tower_water",
+    "int"
+  },
+  [6] = {"tower_fire", "int"},
+  [7] = {"tower_wood", "int"},
+  [8] = {
+    "tower_thunder",
+    "int"
+  }
 }
 _class("role_help_pet_info", Object)
 role_help_pet_info = role_help_pet_info
--- DECOMPILER ERROR at PC392: Confused about usage of register: R3 in 'UnsetPending'
 
-role_help_pet_info.Constructor = function(self)
-  -- function num : 0_8
+function role_help_pet_info:Constructor()
   self.pet_template_id = 0
   self.level = 0
   self.awake = 0
@@ -219,135 +293,103 @@ role_help_pet_info.Constructor = function(self)
   self.awake_lock = 0
 end
 
--- DECOMPILER ERROR at PC440: Confused about usage of register: R3 in 'UnsetPending'
-
 role_help_pet_info._proto = {
-[1] = {"pet_template_id", "int"}
-, 
-[2] = {"level", "int"}
-, 
-[3] = {"awake", "int"}
-, 
-[4] = {"grade", "int"}
-, 
-[5] = {"equip_level", "int"}
-, 
-[6] = {"skin_id", "int"}
-, 
-[7] = {"pet_pst_id", "int64"}
-, 
-[8] = {"equip_refine_level", "int"}
-, 
-[9] = {"awake_lock", "int"}
+  [1] = {
+    "pet_template_id",
+    "int"
+  },
+  [2] = {"level", "int"},
+  [3] = {"awake", "int"},
+  [4] = {"grade", "int"},
+  [5] = {
+    "equip_level",
+    "int"
+  },
+  [6] = {"skin_id", "int"},
+  [7] = {"pet_pst_id", "int64"},
+  [8] = {
+    "equip_refine_level",
+    "int"
+  },
+  [9] = {"awake_lock", "int"}
 }
 _class("DanHeadSwitch", Object)
-_ENV.DanHeadSwitch = _ENV.DanHeadSwitch
--- DECOMPILER ERROR at PC452: Confused about usage of register: R3 in 'UnsetPending'
+DanHeadSwitch = DanHeadSwitch
 
-;
-(_ENV.DanHeadSwitch).Constructor = function(self)
-  -- function num : 0_9
+function DanHeadSwitch:Constructor()
   self.dan_switch = true
 end
 
--- DECOMPILER ERROR at PC461: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.DanHeadSwitch)._proto = {
-[1] = {"dan_switch", "bool"}
+DanHeadSwitch._proto = {
+  [1] = {"dan_switch", "bool"}
 }
 _class("CRoleWorldBossInfo", Object)
-_ENV.CRoleWorldBossInfo = _ENV.CRoleWorldBossInfo
--- DECOMPILER ERROR at PC473: Confused about usage of register: R3 in 'UnsetPending'
+CRoleWorldBossInfo = CRoleWorldBossInfo
 
-;
-(_ENV.CRoleWorldBossInfo).Constructor = function(self)
-  -- function num : 0_10
+function CRoleWorldBossInfo:Constructor()
   self.dan = 0
   self.grading = 0
   self.max_record_level = 0
   self.damage = 0
 end
 
--- DECOMPILER ERROR at PC497: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CRoleWorldBossInfo)._proto = {
-[1] = {"dan", "int"}
-, 
-[2] = {"grading", "int"}
-, 
-[3] = {"max_record_level", "int"}
-, 
-[4] = {"damage", "int64"}
+CRoleWorldBossInfo._proto = {
+  [1] = {"dan", "int"},
+  [2] = {"grading", "int"},
+  [3] = {
+    "max_record_level",
+    "int"
+  },
+  [4] = {"damage", "int64"}
 }
 _class("CRoleCardInfo", Object)
-_ENV.CRoleCardInfo = _ENV.CRoleCardInfo
--- DECOMPILER ERROR at PC509: Confused about usage of register: R3 in 'UnsetPending'
+CRoleCardInfo = CRoleCardInfo
 
-;
-(_ENV.CRoleCardInfo).Constructor = function(self)
-  -- function num : 0_11
+function CRoleCardInfo:Constructor()
   self.title_used = -1
   self.fifure_used = 0
 end
 
--- DECOMPILER ERROR at PC523: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.CRoleCardInfo)._proto = {
-[1] = {"title_used", "int"}
-, 
-[2] = {"fifure_used", "int"}
+CRoleCardInfo._proto = {
+  [1] = {"title_used", "int"},
+  [2] = {
+    "fifure_used",
+    "int"
+  }
 }
 _class("HomelandSimpleInfo", Object)
-_ENV.HomelandSimpleInfo = _ENV.HomelandSimpleInfo
--- DECOMPILER ERROR at PC535: Confused about usage of register: R3 in 'UnsetPending'
+HomelandSimpleInfo = HomelandSimpleInfo
 
-;
-(_ENV.HomelandSimpleInfo).Constructor = function(self)
-  -- function num : 0_12
+function HomelandSimpleInfo:Constructor()
   self.unlock = false
   self.mask = 0
   self.exp = 0
   self.livable = 0
 end
 
--- DECOMPILER ERROR at PC559: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.HomelandSimpleInfo)._proto = {
-[1] = {"unlock", "bool"}
-, 
-[2] = {"mask", "int"}
-, 
-[3] = {"exp", "int64"}
-, 
-[4] = {"livable", "int64"}
+HomelandSimpleInfo._proto = {
+  [1] = {"unlock", "bool"},
+  [2] = {"mask", "int"},
+  [3] = {"exp", "int64"},
+  [4] = {"livable", "int64"}
 }
 _class("RankDetailInfo", Object)
-_ENV.RankDetailInfo = _ENV.RankDetailInfo
--- DECOMPILER ERROR at PC571: Confused about usage of register: R3 in 'UnsetPending'
+RankDetailInfo = RankDetailInfo
 
-;
-(_ENV.RankDetailInfo).Constructor = function(self)
-  -- function num : 0_13
+function RankDetailInfo:Constructor()
   self.infos = {}
 end
 
--- DECOMPILER ERROR at PC580: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.RankDetailInfo)._proto = {
-[1] = {"infos", "map<int,list<role_help_pet_info>>"}
+RankDetailInfo._proto = {
+  [1] = {
+    "infos",
+    "map<int,list<role_help_pet_info>>"
+  }
 }
 _class("role_simple_info", Object)
-_ENV.role_simple_info = _ENV.role_simple_info
--- DECOMPILER ERROR at PC592: Confused about usage of register: R3 in 'UnsetPending'
+role_simple_info = role_simple_info
 
-;
-(_ENV.role_simple_info).Constructor = function(self)
-  -- function num : 0_14 , upvalues : _ENV
+function role_simple_info:Constructor()
   self.pstid = 0
   self.nick = ""
   self.head = 0
@@ -377,122 +419,128 @@ _ENV.role_simple_info = _ENV.role_simple_info
   self.season_maze_bead = {}
 end
 
--- DECOMPILER ERROR at PC732: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.role_simple_info)._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"nick", "string"}
-, 
-[3] = {"head", "int"}
-, 
-[4] = {"head_bg", "int"}
-, 
-[5] = {"level", "int"}
-, 
-[6] = {"is_online", "bool"}
-, 
-[7] = {"role_sign_text", "string"}
-, 
-[8] = {"create_time", "time"}
-, 
-[9] = {"logout_time", "time"}
-, 
-[10] = {"help_pet_arr", "list<role_help_pet_info>"}
-, 
-[11] = {"fight_info", "role_fight_info"}
-, 
-[12] = {"active", "bool"}
-, 
-[13] = {"frame_id", "int"}
-, 
-[14] = {"dan_head_switch", "DanHeadSwitch"}
-, 
-[15] = {"world_boss_info", "CRoleWorldBossInfo"}
-, 
-[16] = {"peak_score", "int64"}
-, 
-[17] = {"homeland_info", "HomelandSimpleInfo"}
-, 
-[18] = {"is_homeland_shop_unlock", "bool"}
-, 
-[19] = {"difficulty_mission", "int"}
-, 
-[20] = {"sailing_mission", "int"}
-, 
-[21] = {"title_used", "int"}
-, 
-[22] = {"fifure_used", "int"}
-, 
-[23] = {"medal_placement", "medal_placement_info"}
-, 
-[24] = {"rank_detail_info", "RankDetailInfo"}
-, 
-[25] = {"choose_painting", "MobileChoosePainting"}
-, 
-[32] = {"card_infos", "map<int,map<int,int>>"}
-, 
-[33] = {"season_maze_bead", "map<int,int>"}
+role_simple_info._proto = {
+  [1] = {"pstid", "int64"},
+  [2] = {"nick", "string"},
+  [3] = {"head", "int"},
+  [4] = {"head_bg", "int"},
+  [5] = {"level", "int"},
+  [6] = {"is_online", "bool"},
+  [7] = {
+    "role_sign_text",
+    "string"
+  },
+  [8] = {
+    "create_time",
+    "time"
+  },
+  [9] = {
+    "logout_time",
+    "time"
+  },
+  [10] = {
+    "help_pet_arr",
+    "list<role_help_pet_info>"
+  },
+  [11] = {
+    "fight_info",
+    "role_fight_info"
+  },
+  [12] = {"active", "bool"},
+  [13] = {"frame_id", "int"},
+  [14] = {
+    "dan_head_switch",
+    "DanHeadSwitch"
+  },
+  [15] = {
+    "world_boss_info",
+    "CRoleWorldBossInfo"
+  },
+  [16] = {"peak_score", "int64"},
+  [17] = {
+    "homeland_info",
+    "HomelandSimpleInfo"
+  },
+  [18] = {
+    "is_homeland_shop_unlock",
+    "bool"
+  },
+  [19] = {
+    "difficulty_mission",
+    "int"
+  },
+  [20] = {
+    "sailing_mission",
+    "int"
+  },
+  [21] = {"title_used", "int"},
+  [22] = {
+    "fifure_used",
+    "int"
+  },
+  [23] = {
+    "medal_placement",
+    "medal_placement_info"
+  },
+  [24] = {
+    "rank_detail_info",
+    "RankDetailInfo"
+  },
+  [25] = {
+    "choose_painting",
+    "MobileChoosePainting"
+  },
+  [32] = {
+    "card_infos",
+    "map<int,map<int,int>>"
+  },
+  [33] = {
+    "season_maze_bead",
+    "map<int,int>"
+  }
 }
 _class("role_simple_info_vec", Object)
-_ENV.role_simple_info_vec = _ENV.role_simple_info_vec
--- DECOMPILER ERROR at PC744: Confused about usage of register: R3 in 'UnsetPending'
+role_simple_info_vec = role_simple_info_vec
 
-;
-(_ENV.role_simple_info_vec).Constructor = function(self)
-  -- function num : 0_15
+function role_simple_info_vec:Constructor()
   self.info_vec = {}
 end
 
--- DECOMPILER ERROR at PC753: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.role_simple_info_vec)._proto = {
-[1] = {"info_vec", "list<role_simple_info>"}
+role_simple_info_vec._proto = {
+  [1] = {
+    "info_vec",
+    "list<role_simple_info>"
+  }
 }
 _class("role_summary_info", Object)
-_ENV.role_summary_info = _ENV.role_summary_info
--- DECOMPILER ERROR at PC765: Confused about usage of register: R3 in 'UnsetPending'
+role_summary_info = role_summary_info
 
-;
-(_ENV.role_summary_info).Constructor = function(self)
-  -- function num : 0_16
+function role_summary_info:Constructor()
   self.pstid = 0
   self.nick = ""
 end
 
--- DECOMPILER ERROR at PC779: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.role_summary_info)._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"nick", "string"}
+role_summary_info._proto = {
+  [1] = {"pstid", "int64"},
+  [2] = {"nick", "string"}
 }
 _class("role_summary_info_vec", Object)
-_ENV.role_summary_info_vec = _ENV.role_summary_info_vec
--- DECOMPILER ERROR at PC791: Confused about usage of register: R3 in 'UnsetPending'
+role_summary_info_vec = role_summary_info_vec
 
-;
-(_ENV.role_summary_info_vec).Constructor = function(self)
-  -- function num : 0_17
+function role_summary_info_vec:Constructor()
   self.info_vec = {}
 end
 
--- DECOMPILER ERROR at PC800: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.role_summary_info_vec)._proto = {
-[1] = {"info_vec", "list<role_summary_info>"}
+role_summary_info_vec._proto = {
+  [1] = {
+    "info_vec",
+    "list<role_summary_info>"
+  }
 }
 _class("MobileCharInfo", Object)
-_ENV.MobileCharInfo = _ENV.MobileCharInfo
--- DECOMPILER ERROR at PC812: Confused about usage of register: R3 in 'UnsetPending'
+MobileCharInfo = MobileCharInfo
 
-;
-(_ENV.MobileCharInfo).Constructor = function(self)
-  -- function num : 0_18 , upvalues : _ENV
+function MobileCharInfo:Constructor()
   self.pstid = 0
   self.nick = ""
   self.exp = 0
@@ -532,190 +580,197 @@ _ENV.MobileCharInfo = _ENV.MobileCharInfo
   self.damage = 0
 end
 
--- DECOMPILER ERROR at PC1003: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.MobileCharInfo)._proto = {
-[1] = {"pstid", "int64"}
-, 
-[2] = {"nick", "string"}
-, 
-[3] = {"exp", "int64"}
-, 
-[4] = {"level", "int"}
-, 
-[5] = {"chapter_id", "int"}
-, 
-[6] = {"tmServerBase", "time"}
-, 
-[7] = {"create_time", "time"}
-, 
-[8] = {"light", "int"}
-, 
-[9] = {"ext_flag", "uint64"}
-, 
-[11] = {"phy_point", "int"}
-, 
-[12] = {"phy_last_time", "time"}
-, 
-[13] = {"phy_point_max", "int"}
-, 
-[14] = {"phy_point_rate", "int"}
-, 
-[15] = {"growth_quest_days", "int"}
-, 
-[16] = {"unlock_modules", "int64"}
-, 
-[17] = {"daily_vig_point", "int64"}
-, 
-[18] = {"ach_point", "int64"}
-, 
-[19] = {"vig_reward_state", "int64"}
-, 
-[20] = {"ach_reward_state", "int64"}
-, 
-[21] = {"double_res_num", "int"}
-, 
-[22] = {"m_nHeadImageID", "int"}
-, 
-[23] = {"m_nHeadColorID", "int"}
-, 
-[24] = {"guide_info", "GuideInfo"}
-, 
-[25] = {"m_nAmendNameCount", "int"}
-, 
-[26] = {"m_nHeadFrameID", "int"}
-, 
-[27] = {"m_nTotalLoginDays", "int"}
-, 
-[28] = {"m_nTotalChangeLoginDays", "int"}
-, 
-[29] = {"m_dan", "int"}
-, 
-[30] = {"m_grading", "int"}
-, 
-[31] = {"m_bBadgeSwitch", "bool"}
-, 
-[32] = {"active_token_num", "int"}
-, 
-[33] = {"active_token_accumulative", "int"}
-, 
-[34] = {"difficulty_mission", "int"}
-, 
-[35] = {"sailing_mission", "int"}
-, 
-[36] = {"title_used", "int"}
-, 
-[37] = {"fifure_used", "int"}
-, 
-[38] = {"damage", "int64"}
+MobileCharInfo._proto = {
+  [1] = {"pstid", "int64"},
+  [2] = {"nick", "string"},
+  [3] = {"exp", "int64"},
+  [4] = {"level", "int"},
+  [5] = {"chapter_id", "int"},
+  [6] = {
+    "tmServerBase",
+    "time"
+  },
+  [7] = {
+    "create_time",
+    "time"
+  },
+  [8] = {"light", "int"},
+  [9] = {"ext_flag", "uint64"},
+  [11] = {"phy_point", "int"},
+  [12] = {
+    "phy_last_time",
+    "time"
+  },
+  [13] = {
+    "phy_point_max",
+    "int"
+  },
+  [14] = {
+    "phy_point_rate",
+    "int"
+  },
+  [15] = {
+    "growth_quest_days",
+    "int"
+  },
+  [16] = {
+    "unlock_modules",
+    "int64"
+  },
+  [17] = {
+    "daily_vig_point",
+    "int64"
+  },
+  [18] = {"ach_point", "int64"},
+  [19] = {
+    "vig_reward_state",
+    "int64"
+  },
+  [20] = {
+    "ach_reward_state",
+    "int64"
+  },
+  [21] = {
+    "double_res_num",
+    "int"
+  },
+  [22] = {
+    "m_nHeadImageID",
+    "int"
+  },
+  [23] = {
+    "m_nHeadColorID",
+    "int"
+  },
+  [24] = {"guide_info", "GuideInfo"},
+  [25] = {
+    "m_nAmendNameCount",
+    "int"
+  },
+  [26] = {
+    "m_nHeadFrameID",
+    "int"
+  },
+  [27] = {
+    "m_nTotalLoginDays",
+    "int"
+  },
+  [28] = {
+    "m_nTotalChangeLoginDays",
+    "int"
+  },
+  [29] = {"m_dan", "int"},
+  [30] = {"m_grading", "int"},
+  [31] = {
+    "m_bBadgeSwitch",
+    "bool"
+  },
+  [32] = {
+    "active_token_num",
+    "int"
+  },
+  [33] = {
+    "active_token_accumulative",
+    "int"
+  },
+  [34] = {
+    "difficulty_mission",
+    "int"
+  },
+  [35] = {
+    "sailing_mission",
+    "int"
+  },
+  [36] = {"title_used", "int"},
+  [37] = {
+    "fifure_used",
+    "int"
+  },
+  [38] = {"damage", "int64"}
 }
 _class("homeland_sametime_group", Object)
-_ENV.homeland_sametime_group = _ENV.homeland_sametime_group
--- DECOMPILER ERROR at PC1015: Confused about usage of register: R3 in 'UnsetPending'
+homeland_sametime_group = homeland_sametime_group
 
-;
-(_ENV.homeland_sametime_group).Constructor = function(self)
-  -- function num : 0_19
+function homeland_sametime_group:Constructor()
   self.valid_time = 0
   self.task_group_list = {}
 end
 
--- DECOMPILER ERROR at PC1029: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.homeland_sametime_group)._proto = {
-[1] = {"valid_time", "time"}
-, 
-[2] = {"task_group_list", "list<int>"}
+homeland_sametime_group._proto = {
+  [1] = {"valid_time", "time"},
+  [2] = {
+    "task_group_list",
+    "list<int>"
+  }
 }
 _class("role_fix_item_info", Object)
-_ENV.role_fix_item_info = _ENV.role_fix_item_info
--- DECOMPILER ERROR at PC1041: Confused about usage of register: R3 in 'UnsetPending'
+role_fix_item_info = role_fix_item_info
 
-;
-(_ENV.role_fix_item_info).Constructor = function(self)
-  -- function num : 0_20
+function role_fix_item_info:Constructor()
   self.do_fix_info = {}
   self.not_enough = {}
 end
 
--- DECOMPILER ERROR at PC1055: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.role_fix_item_info)._proto = {
-[1] = {"do_fix_info", "list<int>"}
-, 
-[2] = {"not_enough", "map<int,int64>"}
+role_fix_item_info._proto = {
+  [1] = {
+    "do_fix_info",
+    "list<int>"
+  },
+  [2] = {
+    "not_enough",
+    "map<int,int64>"
+  }
 }
 _class("season_ext_info", Object)
-_ENV.season_ext_info = _ENV.season_ext_info
--- DECOMPILER ERROR at PC1067: Confused about usage of register: R3 in 'UnsetPending'
+season_ext_info = season_ext_info
 
-;
-(_ENV.season_ext_info).Constructor = function(self)
-  -- function num : 0_21
+function season_ext_info:Constructor()
   self.mask = 0
 end
 
--- DECOMPILER ERROR at PC1076: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.season_ext_info)._proto = {
-[1] = {"mask", "int"}
+season_ext_info._proto = {
+  [1] = {"mask", "int"}
 }
 _class("season_mini_game_data", Object)
-_ENV.season_mini_game_data = _ENV.season_mini_game_data
--- DECOMPILER ERROR at PC1088: Confused about usage of register: R3 in 'UnsetPending'
+season_mini_game_data = season_mini_game_data
 
-;
-(_ENV.season_mini_game_data).Constructor = function(self)
-  -- function num : 0_22
+function season_mini_game_data:Constructor()
   self.debris_mission = {}
   self.castle_lv = {}
 end
 
--- DECOMPILER ERROR at PC1102: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.season_mini_game_data)._proto = {
-[1] = {"debris_mission", "map<int,int>"}
-, 
-[2] = {"castle_lv", "map<int,int>"}
+season_mini_game_data._proto = {
+  [1] = {
+    "debris_mission",
+    "map<int,int>"
+  },
+  [2] = {
+    "castle_lv",
+    "map<int,int>"
+  }
 }
 _class("property_cultivate", Object)
-_ENV.property_cultivate = _ENV.property_cultivate
--- DECOMPILER ERROR at PC1114: Confused about usage of register: R3 in 'UnsetPending'
+property_cultivate = property_cultivate
 
-;
-(_ENV.property_cultivate).Constructor = function(self)
-  -- function num : 0_23
+function property_cultivate:Constructor()
   self.phase = 0
   self.lv = 0
 end
 
--- DECOMPILER ERROR at PC1128: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.property_cultivate)._proto = {
-[1] = {"phase", "int"}
-, 
-[2] = {"lv", "int"}
+property_cultivate._proto = {
+  [1] = {"phase", "int"},
+  [2] = {"lv", "int"}
 }
 _class("property_cultivate_data", Object)
-_ENV.property_cultivate_data = _ENV.property_cultivate_data
--- DECOMPILER ERROR at PC1140: Confused about usage of register: R3 in 'UnsetPending'
+property_cultivate_data = property_cultivate_data
 
-;
-(_ENV.property_cultivate_data).Constructor = function(self)
-  -- function num : 0_24
+function property_cultivate_data:Constructor()
   self.type_lv = {}
 end
 
--- DECOMPILER ERROR at PC1149: Confused about usage of register: R3 in 'UnsetPending'
-
-;
-(_ENV.property_cultivate_data)._proto = {
-[1] = {"type_lv", "map<int,property_cultivate>"}
+property_cultivate_data._proto = {
+  [1] = {
+    "type_lv",
+    "map<int,property_cultivate>"
+  }
 }
-

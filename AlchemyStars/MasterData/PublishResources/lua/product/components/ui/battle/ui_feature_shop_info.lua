@@ -1,14 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_feature_shop_info.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIFeatureShopCellUIData", Object)
 UIFeatureShopCellUIData = UIFeatureShopCellUIData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFeatureShopCellUIData.Constructor = function(self, cellID, isLock, hadInvest, cantSelect)
-  -- function num : 0_0
+function UIFeatureShopCellUIData:Constructor(cellID, isLock, hadInvest, cantSelect)
   self._cellID = cellID
   self._isLock = isLock
   self._hadInvest = hadInvest
@@ -17,460 +10,341 @@ end
 
 _class("UIFeatureShopInfo", UIController)
 UIFeatureShopInfo = UIFeatureShopInfo
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
 
-UIFeatureShopInfo.OnShow = function(self, uiParams)
-  -- function num : 0_1
+function UIFeatureShopInfo:OnShow(uiParams)
   self._castClicked = false
   self._shopInitData = uiParams[1]
   self._curVal = uiParams[2]
   self._castCb = uiParams[3]
   self._cancelCb = uiParams[4]
   self._curPetID = 1602181
-  self._skillID = (self._shopInitData):GetSkillID()
+  self._skillID = self._shopInitData:GetSkillID()
   self:InitWidget()
   self:OnRefresh()
   self:OnPlayAnimationIn()
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.InitWidget = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIFeatureShopInfo:InitWidget()
   self._textCellCount = self:GetUIComponent("UILocalizationText", "TextCellCount")
   self._textNode1 = self:GetUIComponent("UILocalizationText", "TextNode1")
   self._textNode2 = self:GetUIComponent("UILocalizationText", "TextNode2")
   self._textNode3 = self:GetUIComponent("UILocalizationText", "TextNode3")
   self._specificObj = self:GetGameObject("Specific")
   self._textSpecific = self:GetUIComponent("UILocalizationText", "TextSpecific")
-  ;
-  (self._specificObj):SetActive(false)
+  self._specificObj:SetActive(false)
   self._anim = self:GetUIComponent("Animation", "UIFeatureShopInfo")
   self._slider = self:GetUIComponent("Slider", "Slider")
   self._castBtn = self:GetUIComponent("Button", "CastBtn")
   self._cellItemUIDatas = {}
   self._cellItems = {}
   for i = 1, 6 do
-    -- DECOMPILER ERROR at PC68: Confused about usage of register: R5 in 'UnsetPending'
-
-    (self._cellItems)[i] = UIFeatureShopInfoItem:New(self:GetUIComponent("UIView", "CellItem" .. i), i, function(index, selected)
-    -- function num : 0_2_0 , upvalues : self
-    self:OnItemCallBack(index, selected)
-  end
-)
-    ;
-    ((self._cellItems)[i]):Load(((self._cellItems)[i])._view, self)
+    self._cellItems[i] = UIFeatureShopInfoItem:New(self:GetUIComponent("UIView", "CellItem" .. i), i, function(index, selected)
+      self:OnItemCallBack(index, selected)
+    end)
+    self._cellItems[i]:Load(self._cellItems[i]._view, self)
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.OnPlayAnimationIn = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("UIFeatureShopInfo_PlayAnimationIn")
+function UIFeatureShopInfo:OnPlayAnimationIn()
+  GameGlobal.UIStateManager():Lock("UIFeatureShopInfo_PlayAnimationIn")
   self:StartTask(function(TT)
-    -- function num : 0_3_0 , upvalues : self, _ENV
-    (self._anim):Play("uieff_UIFeatureShopInfo_in")
+    self._anim:Play("uieff_UIFeatureShopInfo_in")
     YIELD(TT, 467)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UIFeatureShopInfo_PlayAnimationIn")
-  end
-, self)
+    GameGlobal.UIStateManager():UnLock("UIFeatureShopInfo_PlayAnimationIn")
+  end, self)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.OnRefresh = function(self)
-  -- function num : 0_4 , upvalues : _ENV
+function UIFeatureShopInfo:OnRefresh()
   self._newSelectedCellList = {}
-  local unlockParam = (self._shopInitData):GetUnlockParam()
-  local unlockParamCount = (table.count)(unlockParam)
-  self._selectedCellList = (FeatureServiceHelper.GetShopSelectedCellList)()
+  local unlockParam = self._shopInitData:GetUnlockParam()
+  local unlockParamCount = table.count(unlockParam)
+  self._selectedCellList = FeatureServiceHelper.GetShopSelectedCellList()
   local showPageIndex = 1
-  do
-    if unlockParamCount > 1 then
-      local firstSelectCount = 0
-      if (table.icontains)(self._selectedCellList, 1) or (table.icontains)(self._selectedCellList, 2) then
-        firstSelectCount = firstSelectCount + 1
-      end
-      if (table.icontains)(self._selectedCellList, 3) or (table.icontains)(self._selectedCellList, 4) then
-        firstSelectCount = firstSelectCount + 1
-      end
-      if (table.icontains)(self._selectedCellList, 5) or (table.icontains)(self._selectedCellList, 6) then
-        firstSelectCount = firstSelectCount + 1
-      end
-      if firstSelectCount == 3 then
-        showPageIndex = 2
-      end
+  if 1 < unlockParamCount then
+    local firstSelectCount = 0
+    if table.icontains(self._selectedCellList, 1) or table.icontains(self._selectedCellList, 2) then
+      firstSelectCount = firstSelectCount + 1
     end
-    self._showPageIndex = showPageIndex
-    local curUnlockParam = unlockParam[showPageIndex]
-    ;
-    (self._textNode1):SetText(curUnlockParam[1])
-    ;
-    (self._textNode2):SetText(curUnlockParam[2])
-    ;
-    (self._textNode3):SetText(curUnlockParam[3])
-    ;
-    (self._textCellCount):SetText(self._curVal)
-    local curStage = #curUnlockParam
-    local curStageMin = 0
-    local curStageMax = 0
-    for i = 1, #curUnlockParam do
-      if self._curVal <= curUnlockParam[i] then
-        curStage = i
-        break
-      end
+    if table.icontains(self._selectedCellList, 3) or table.icontains(self._selectedCellList, 4) then
+      firstSelectCount = firstSelectCount + 1
     end
-    do
-      if curStage == 1 then
-        if showPageIndex == 1 then
-          curStageMin = 0
-        else
-          local lastUnlockParam = unlockParam[showPageIndex - 1]
-          curStageMin = lastUnlockParam[#lastUnlockParam]
-        end
-      else
-        do
-          curStageMin = curUnlockParam[curStage - 1]
-          curStageMax = curUnlockParam[curStage]
-          local sliderMin = 0
-          local sliderMax = 0.3
-          if curStage == 2 then
-            sliderMin = 0.3
-            sliderMax = 0.645
-          else
-            if curStage == 3 then
-              sliderMin = 0.645
-              sliderMax = 1
-            end
-          end
-          local curStageValue = self._curVal - curStageMin
-          local curStageTotalValue = curStageMax - curStageMin
-          local curStagePercent = curStageValue / curStageTotalValue
-          local curSlideLength = sliderMax - sliderMin
-          -- DECOMPILER ERROR at PC130: Confused about usage of register: R14 in 'UnsetPending'
-
-          ;
-          (self._slider).value = sliderMin + curStagePercent * curSlideLength
-          local matchPet = (InnerGameHelperRender.GetLocalMatchPetByTemplateID)(self._curPetID)
-          local curEquipLv = matchPet:GetEquipLv()
-          local eachGroupCellCount = 2
-          if not (FeatureServiceHelper.GetShopUIHadSeeUnlockCellList)() then
-            local shopUIHadSeeUnlockCellList = {}
-          end
-          local newUnlockCellList = {}
-          for i = 1, 6 do
-            local curCellData = self:OnGetCurCellData(i)
-            local equipLevelLimit = curCellData.NeedEquipLevel or 0
-            local groupIndex = (math.floor)((i - 1) / eachGroupCellCount) + 1
-            local unlockNeedCount = curUnlockParam[groupIndex]
-            local hadInvest = (table.icontains)(self._selectedCellList, i)
-            local isLock = not hadInvest and curEquipLv < equipLevelLimit or (self._curVal < unlockNeedCount and curStage == 1)
-            local cantSelect = self:OnGetCurCellCantSelect(i, unlockParamCount) or self._curVal < unlockNeedCount
-            if isLock == false and not (table.icontains)(shopUIHadSeeUnlockCellList, i) then
-              ((self._cellItems)[i]):OnRefresh(true, hadInvest, cantSelect)
-              ;
-              (table.insert)(newUnlockCellList, i)
-            else
-              ((self._cellItems)[i]):OnRefresh(isLock, hadInvest, cantSelect)
-            end
-            -- DECOMPILER ERROR at PC227: Confused about usage of register: R30 in 'UnsetPending'
-
-            ;
-            (self._cellItemUIDatas)[i] = UIFeatureShopCellUIData:New(i, isLock, hadInvest, cantSelect)
-          end
-          self:RefreshCastBtnState()
-          if (table.count)(newUnlockCellList) > 0 then
-            (table.appendArray)(shopUIHadSeeUnlockCellList, newUnlockCellList)
-            ;
-            (FeatureServiceHelper.SetShopUIHadSeeUnlockCellList)(shopUIHadSeeUnlockCellList)
-            ;
-            ((GameGlobal.UIStateManager)()):Lock("UIFeatureShopInfo_PlayAnimationUnLock")
-            self:StartTask(function(TT)
-    -- function num : 0_4_0 , upvalues : _ENV, newUnlockCellList, self
-    YIELD(TT, 467)
-    for i = 1, #newUnlockCellList do
-      local index = newUnlockCellList[i]
-      ;
-      ((self._cellItems)[index]):OnPlayAnimUnlock()
+    if table.icontains(self._selectedCellList, 5) or table.icontains(self._selectedCellList, 6) then
+      firstSelectCount = firstSelectCount + 1
     end
-    YIELD(TT, 333)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UIFeatureShopInfo_PlayAnimationUnLock")
+    if firstSelectCount == 3 then
+      showPageIndex = 2
+    end
   end
-, self)
-          end
-          -- DECOMPILER ERROR: 6 unprocessed JMP targets
-        end
-      end
+  self._showPageIndex = showPageIndex
+  local curUnlockParam = unlockParam[showPageIndex]
+  self._textNode1:SetText(curUnlockParam[1])
+  self._textNode2:SetText(curUnlockParam[2])
+  self._textNode3:SetText(curUnlockParam[3])
+  self._textCellCount:SetText(self._curVal)
+  local curStage = #curUnlockParam
+  local curStageMin = 0
+  local curStageMax = 0
+  for i = 1, #curUnlockParam do
+    if self._curVal <= curUnlockParam[i] then
+      curStage = i
+      break
     end
+  end
+  if curStage == 1 then
+    if showPageIndex == 1 then
+      curStageMin = 0
+    else
+      local lastUnlockParam = unlockParam[showPageIndex - 1]
+      curStageMin = lastUnlockParam[#lastUnlockParam]
+    end
+  else
+    curStageMin = curUnlockParam[curStage - 1]
+  end
+  curStageMax = curUnlockParam[curStage]
+  local sliderMin = 0
+  local sliderMax = 0.3
+  if curStage == 2 then
+    sliderMin = 0.3
+    sliderMax = 0.645
+  elseif curStage == 3 then
+    sliderMin = 0.645
+    sliderMax = 1
+  end
+  local curStageValue = self._curVal - curStageMin
+  local curStageTotalValue = curStageMax - curStageMin
+  local curStagePercent = curStageValue / curStageTotalValue
+  local curSlideLength = sliderMax - sliderMin
+  self._slider.value = sliderMin + curStagePercent * curSlideLength
+  local matchPet = InnerGameHelperRender.GetLocalMatchPetByTemplateID(self._curPetID)
+  local curEquipLv = matchPet:GetEquipLv()
+  local eachGroupCellCount = 2
+  local shopUIHadSeeUnlockCellList = FeatureServiceHelper.GetShopUIHadSeeUnlockCellList() or {}
+  local newUnlockCellList = {}
+  for i = 1, 6 do
+    local curCellData = self:OnGetCurCellData(i)
+    local equipLevelLimit = curCellData.NeedEquipLevel or 0
+    local groupIndex = math.floor((i - 1) / eachGroupCellCount) + 1
+    local unlockNeedCount = curUnlockParam[groupIndex]
+    local hadInvest = table.icontains(self._selectedCellList, i)
+    local isLock = not hadInvest and (curEquipLv < equipLevelLimit or unlockNeedCount > self._curVal and curStage == 1)
+    local cantSelect = self:OnGetCurCellCantSelect(i, unlockParamCount) or unlockNeedCount > self._curVal
+    if isLock == false and not table.icontains(shopUIHadSeeUnlockCellList, i) then
+      self._cellItems[i]:OnRefresh(true, hadInvest, cantSelect)
+      table.insert(newUnlockCellList, i)
+    else
+      self._cellItems[i]:OnRefresh(isLock, hadInvest, cantSelect)
+    end
+    self._cellItemUIDatas[i] = UIFeatureShopCellUIData:New(i, isLock, hadInvest, cantSelect)
+  end
+  self:RefreshCastBtnState()
+  if table.count(newUnlockCellList) > 0 then
+    table.appendArray(shopUIHadSeeUnlockCellList, newUnlockCellList)
+    FeatureServiceHelper.SetShopUIHadSeeUnlockCellList(shopUIHadSeeUnlockCellList)
+    GameGlobal.UIStateManager():Lock("UIFeatureShopInfo_PlayAnimationUnLock")
+    self:StartTask(function(TT)
+      YIELD(TT, 467)
+      for i = 1, #newUnlockCellList do
+        local index = newUnlockCellList[i]
+        self._cellItems[index]:OnPlayAnimUnlock()
+      end
+      YIELD(TT, 333)
+      GameGlobal.UIStateManager():UnLock("UIFeatureShopInfo_PlayAnimationUnLock")
+    end, self)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.RefreshCastBtnState = function(self)
-  -- function num : 0_5
+function UIFeatureShopInfo:RefreshCastBtnState()
   local canCast = false
   if #self._newSelectedCellList > 0 then
     canCast = true
   end
-  -- DECOMPILER ERROR at PC10: Confused about usage of register: R2 in 'UnsetPending'
-
   if self._castBtn then
-    (self._castBtn).interactable = canCast
+    self._castBtn.interactable = canCast
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.OnGetCurCellData = function(self, cellID)
-  -- function num : 0_6
-  local groupDataList = (self._shopInitData):GetGroupDataList()
+function UIFeatureShopInfo:OnGetCurCellData(cellID)
+  local groupDataList = self._shopInitData:GetGroupDataList()
   for i = 1, #groupDataList do
     local curGroupDataList = groupDataList[i]
     for j = 1, #curGroupDataList do
-      if (curGroupDataList[j]).CellID == cellID then
+      if curGroupDataList[j].CellID == cellID then
         return curGroupDataList[j]
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.OnGetCurCellCantSelect = function(self, cellID, unlockParamCount)
-  -- function num : 0_7 , upvalues : _ENV
+function UIFeatureShopInfo:OnGetCurCellCantSelect(cellID, unlockParamCount)
   if unlockParamCount == 2 and self._showPageIndex == 2 then
     return false
   end
   local targetCellID = 1
   if cellID == 1 then
     targetCellID = 2
-  else
-    if cellID == 2 then
-      targetCellID = 1
-    else
-      if cellID == 3 then
-        targetCellID = 4
-      else
-        if cellID == 4 then
-          targetCellID = 3
-        else
-          if cellID == 5 then
-            targetCellID = 6
-          else
-            if cellID == 6 then
-              targetCellID = 5
-            end
-          end
-        end
-      end
-    end
+  elseif cellID == 2 then
+    targetCellID = 1
+  elseif cellID == 3 then
+    targetCellID = 4
+  elseif cellID == 4 then
+    targetCellID = 3
+  elseif cellID == 5 then
+    targetCellID = 6
+  elseif cellID == 6 then
+    targetCellID = 5
   end
-  local targetCellHadInvest = (table.icontains)(self._selectedCellList, targetCellID)
+  local targetCellHadInvest = table.icontains(self._selectedCellList, targetCellID)
   if targetCellHadInvest then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.OnItemCallBack = function(self, index, selected)
-  -- function num : 0_8 , upvalues : _ENV
-  (self._specificObj):SetActive(true)
+function UIFeatureShopInfo:OnItemCallBack(index, selected)
+  self._specificObj:SetActive(true)
   local textSpecificKey = "str_battle_she_feature_ui_skill_" .. index .. "_specific"
-  ;
-  (self._textSpecific):SetText((StringTable.Get)(textSpecificKey))
-  if (table.icontains)(self._selectedCellList, index) then
-    return 
+  self._textSpecific:SetText(StringTable.Get(textSpecificKey))
+  if table.icontains(self._selectedCellList, index) then
+    return
   end
-  local uiData = (self._cellItemUIDatas)[index]
+  local uiData = self._cellItemUIDatas[index]
   if not uiData then
-    return 
+    return
   end
   if uiData._cantSelect or uiData._isLock or uiData._hadInvest then
-    return 
+    return
   end
   if selected then
-    (table.insert)(self._newSelectedCellList, index)
+    table.insert(self._newSelectedCellList, index)
     self:_CheckSameGroupOhterCellUnselect(index)
   else
-    ;
-    (table.removev)(self._newSelectedCellList, index)
+    table.removev(self._newSelectedCellList, index)
   end
   self:RefreshCastBtnState()
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo._CheckSameGroupOhterCellUnselect = function(self, cellID)
-  -- function num : 0_9 , upvalues : _ENV
+function UIFeatureShopInfo:_CheckSameGroupOhterCellUnselect(cellID)
   local groupIndex = self:GetCellGroupIndex(cellID)
   local otherCellID = self:GetOhterCellInSameGroup(cellID)
-  local otherUIData = (self._cellItemUIDatas)[otherCellID]
+  local otherUIData = self._cellItemUIDatas[otherCellID]
   local needUnselect = false
   if not otherUIData._isLock and not otherUIData._hadInvest and not otherUIData._cantSelect then
-    local unlockParam = (self._shopInitData):GetUnlockParam()
-    local unlockParamCount = (table.count)(unlockParam)
+    local unlockParam = self._shopInitData:GetUnlockParam()
+    local unlockParamCount = table.count(unlockParam)
     if unlockParamCount < 2 then
       needUnselect = true
-    else
-      if self._showPageIndex == 1 then
-        needUnselect = true
-      end
+    elseif self._showPageIndex == 1 then
+      needUnselect = true
     end
   end
-  do
-    if needUnselect then
-      ((self._cellItems)[otherCellID]):ClearSelect()
-      ;
-      (table.removev)(self._newSelectedCellList, otherCellID)
-    end
+  if needUnselect then
+    self._cellItems[otherCellID]:ClearSelect()
+    table.removev(self._newSelectedCellList, otherCellID)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo._OnGetSameGroupOhterCellUnselect = function(self, cellID)
-  -- function num : 0_10 , upvalues : _ENV
+function UIFeatureShopInfo:_OnGetSameGroupOhterCellUnselect(cellID)
   local groupIndex = self:GetCellGroupIndex(cellID)
   local otherCellID = self:GetOhterCellInSameGroup(cellID)
-  if (table.icontains)(self._selectedCellList, otherCellID) or (table.icontains)(self._newSelectedCellList, otherCellID) then
-    return 
+  if table.icontains(self._selectedCellList, otherCellID) or table.icontains(self._newSelectedCellList, otherCellID) then
+    return
   end
-  local otherUIData = (self._cellItemUIDatas)[otherCellID]
+  local otherUIData = self._cellItemUIDatas[otherCellID]
   local needUnselect = false
   if not otherUIData._isLock and not otherUIData._hadInvest and not otherUIData._cantSelect then
-    local unlockParam = (self._shopInitData):GetUnlockParam()
-    local unlockParamCount = (table.count)(unlockParam)
+    local unlockParam = self._shopInitData:GetUnlockParam()
+    local unlockParamCount = table.count(unlockParam)
     if unlockParamCount < 2 then
       needUnselect = true
-    else
-      if self._showPageIndex == 1 then
-        needUnselect = true
-      end
+    elseif self._showPageIndex == 1 then
+      needUnselect = true
     end
   end
-  do
-    if needUnselect then
-      return otherCellID
-    end
+  if needUnselect then
+    return otherCellID
   end
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.CastBtnOnClick = function(self)
-  -- function num : 0_11 , upvalues : _ENV
+function UIFeatureShopInfo:CastBtnOnClick()
   if self._castClicked then
-    return 
+    return
   end
   if self._castCb then
     local delayCloseMs = 1633
     if #self._newSelectedCellList > 0 then
       self._castClicked = true
-      ;
-      (self._castCb)(self._skillID, self._newSelectedCellList, delayCloseMs)
-      ;
-      ((GameGlobal.UIStateManager)()):Lock("UIFeatureShopInfo_PlayAnimationHadInvest")
+      self._castCb(self._skillID, self._newSelectedCellList, delayCloseMs)
+      GameGlobal.UIStateManager():Lock("UIFeatureShopInfo_PlayAnimationHadInvest")
       self:StartTask(function(TT)
-    -- function num : 0_11_0 , upvalues : self, _ENV
-    for i = 1, #self._newSelectedCellList do
-      local index = (self._newSelectedCellList)[i]
-      ;
-      ((self._cellItems)[index]):OnPlayAnimHadInvest()
-    end
-    local cantInvestList = self:_OnGetCantInvestList()
-    for i = 1, #cantInvestList do
-      local index = cantInvestList[i]
-      ;
-      ((self._cellItems)[index]):OnPlayAnimCantInvest()
-    end
-    YIELD(TT, 1333)
-    ;
-    (self._anim):Play("uieff_UIFeatureShopInfo_out")
-    YIELD(TT, 200)
-    ;
-    ((GameGlobal.UIStateManager)()):UnLock("UIFeatureShopInfo_PlayAnimationHadInvest")
-  end
-, self)
+        for i = 1, #self._newSelectedCellList do
+          local index = self._newSelectedCellList[i]
+          self._cellItems[index]:OnPlayAnimHadInvest()
+        end
+        local cantInvestList = self:_OnGetCantInvestList()
+        for i = 1, #cantInvestList do
+          local index = cantInvestList[i]
+          self._cellItems[index]:OnPlayAnimCantInvest()
+        end
+        YIELD(TT, 1333)
+        self._anim:Play("uieff_UIFeatureShopInfo_out")
+        YIELD(TT, 200)
+        GameGlobal.UIStateManager():UnLock("UIFeatureShopInfo_PlayAnimationHadInvest")
+      end, self)
     end
   end
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo._OnGetCantInvestList = function(self)
-  -- function num : 0_12 , upvalues : _ENV
-  if (table.count)((self._shopInitData):GetUnlockParam()) == 2 and self._showPageIndex == 2 then
+function UIFeatureShopInfo:_OnGetCantInvestList()
+  if table.count(self._shopInitData:GetUnlockParam()) == 2 and self._showPageIndex == 2 then
     return {}
   end
   local cantInvestList = {}
   for i = 1, #self._newSelectedCellList do
-    local index = (self._newSelectedCellList)[i]
+    local index = self._newSelectedCellList[i]
     local otherCellID = self:_OnGetSameGroupOhterCellUnselect(index)
     if otherCellID then
-      (table.insert)(cantInvestList, otherCellID)
+      table.insert(cantInvestList, otherCellID)
     end
   end
   return cantInvestList
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.DotBGOnClick = function(self)
-  -- function num : 0_13
+function UIFeatureShopInfo:DotBGOnClick()
   if self._cancelCb then
     local delayCloseMs = 200
-    ;
-    (self._cancelCb)(self._skillID, delayCloseMs)
-    ;
-    (self._anim):Play("uieff_UIFeatureShopInfo_out")
+    self._cancelCb(self._skillID, delayCloseMs)
+    self._anim:Play("uieff_UIFeatureShopInfo_out")
   end
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.GetCellGroupIndex = function(self, cellID)
-  -- function num : 0_14
+function UIFeatureShopInfo:GetCellGroupIndex(cellID)
   local cellGroupIndex = 0
-  local groupDataList = (self._shopInitData):GetGroupDataList()
+  local groupDataList = self._shopInitData:GetGroupDataList()
   for i = 1, #groupDataList do
     local curGroupDataList = groupDataList[i]
     for j = 1, #curGroupDataList do
-      if (curGroupDataList[j]).CellID == cellID then
+      if curGroupDataList[j].CellID == cellID then
         cellGroupIndex = i
         break
       end
     end
-  end
-  do
-    if cellGroupIndex <= 0 then
-      return cellGroupIndex
-    end
-  end
-end
-
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-UIFeatureShopInfo.GetOhterCellInSameGroup = function(self, cellID)
-  -- function num : 0_15
-  local otherCellID = 0
-  local cellGroupIndex = self:GetCellGroupIndex(cellID)
-  local groupDataList = (self._shopInitData):GetGroupDataList()
-  local curGroupDataList = groupDataList[cellGroupIndex]
-  for j = 1, #curGroupDataList do
-    if (curGroupDataList[j]).CellID ~= cellID then
-      otherCellID = (curGroupDataList[j]).CellID
+    if 0 < cellGroupIndex then
       break
     end
   end
-  do
-    return otherCellID
-  end
+  return cellGroupIndex
 end
 
-
+function UIFeatureShopInfo:GetOhterCellInSameGroup(cellID)
+  local otherCellID = 0
+  local cellGroupIndex = self:GetCellGroupIndex(cellID)
+  local groupDataList = self._shopInitData:GetGroupDataList()
+  local curGroupDataList = groupDataList[cellGroupIndex]
+  for j = 1, #curGroupDataList do
+    if curGroupDataList[j].CellID ~= cellID then
+      otherCellID = curGroupDataList[j].CellID
+      break
+    end
+  end
+  return otherCellID
+end

@@ -1,26 +1,16 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/feature/feature_eff_param/feature_effect_param_pop_star.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FeatureEffectParamPopStar", FeatureEffectParamBase)
 FeatureEffectParamPopStar = FeatureEffectParamPopStar
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FeatureEffectParamPopStar.Constructor = function(self, t)
-  -- function num : 0_0
+function FeatureEffectParamPopStar:Constructor(t)
   if not t then
-    return 
+    return
   end
   self:_RefreshData(t)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamPopStar._RefreshData = function(self, t)
-  -- function num : 0_1
+function FeatureEffectParamPopStar:_RefreshData(t)
   if not t then
-    return 
+    return
   end
   if t.SkillID then
     self._skillID = t.SkillID
@@ -45,53 +35,30 @@ FeatureEffectParamPopStar._RefreshData = function(self, t)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamPopStar.GetMasterSkillID = function(self)
-  -- function num : 0_2
+function FeatureEffectParamPopStar:GetMasterSkillID()
   return self._skillID
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamPopStar.GetMaxPowerLimit = function(self)
-  -- function num : 0_3
+function FeatureEffectParamPopStar:GetMaxPowerLimit()
   return self._maxPower
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamPopStar.GetFirstUseInitPower = function(self)
-  -- function num : 0_4
+function FeatureEffectParamPopStar:GetFirstUseInitPower()
   return self._firstUseInitPower
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamPopStar.GetImageNormalFront = function(self)
-  -- function num : 0_5
+function FeatureEffectParamPopStar:GetImageNormalFront()
   return self._imageNormalFront
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamPopStar.GetImageWarningFront = function(self)
-  -- function num : 0_6
+function FeatureEffectParamPopStar:GetImageWarningFront()
   return self._imageWarningFront
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamPopStar.GetImageNormalBg = function(self)
-  -- function num : 0_7
+function FeatureEffectParamPopStar:GetImageNormalBg()
   return self._imageNormalBg
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-FeatureEffectParamPopStar.GetImageWarningBg = function(self)
-  -- function num : 0_8
+function FeatureEffectParamPopStar:GetImageWarningBg()
   return self._imageWarningBg
 end
-
-

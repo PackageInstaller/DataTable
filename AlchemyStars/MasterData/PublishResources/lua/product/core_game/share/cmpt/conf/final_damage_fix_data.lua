@@ -1,30 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/final_damage_fix_data.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FinalDamageFixData", Object)
 FinalDamageFixData = FinalDamageFixData
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FinalDamageFixData.Constructor = function(self, targetID, mulVal)
-  -- function num : 0_0
+function FinalDamageFixData:Constructor(targetID, mulVal)
   self._targetID = targetID
   self._mulVal = mulVal
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FinalDamageFixData.GetTargetID = function(self)
-  -- function num : 0_1
+function FinalDamageFixData:GetTargetID()
   return self._targetID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FinalDamageFixData.GetMulVal = function(self)
-  -- function num : 0_2
+function FinalDamageFixData:GetMulVal()
   return self._mulVal
 end
-
-

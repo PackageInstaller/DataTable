@@ -1,35 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/exit_core_game_handler.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ExitCoreGameHandler", LoadingHandler)
 ExitCoreGameHandler = ExitCoreGameHandler
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ExitCoreGameHandler.PreLoadBeforeLoadLevel = function(self, TT)
-  -- function num : 0_0
+function ExitCoreGameHandler:PreLoadBeforeLoadLevel(TT)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ExitCoreGameHandler.PreLoadAfterLoadLevel = function(self, TT, ...)
-  -- function num : 0_1 , upvalues : _ENV
-  (LoadingHandler.PreLoadAfterLoadLevel)(self, TT, ...)
+function ExitCoreGameHandler:PreLoadAfterLoadLevel(TT, ...)
+  LoadingHandler.PreLoadAfterLoadLevel(self, TT, ...)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-ExitCoreGameHandler.OnLoadingFinish = function(self, ...)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.ExitCoreGame, {...})
+function ExitCoreGameHandler:OnLoadingFinish(...)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.ExitCoreGame, {
+    ...
+  })
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-ExitCoreGameHandler.LoadingType = function(self)
-  -- function num : 0_3 , upvalues : _ENV
+function ExitCoreGameHandler:LoadingType()
   return LoadingType.BOTTOM
 end
-
-

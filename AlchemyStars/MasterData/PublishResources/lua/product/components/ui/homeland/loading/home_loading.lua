@@ -1,81 +1,45 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/loading/home_loading.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("HomeLoading", Object)
 HomeLoading = HomeLoading
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-HomeLoading.Self = function()
-  -- function num : 0_0 , upvalues : _ENV
-  (Log.debug)("[HomelandProfile] (HomeLoading.Self) StartLoading")
-  ;
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Homeland_Enter, "konggu02func")
+function HomeLoading.Self()
+  Log.debug("[HomelandProfile] (HomeLoading.Self) StartLoading")
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Homeland_Enter, "konggu02func")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeLoading.Self_Art = function()
-  -- function num : 0_1 , upvalues : _ENV
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Homeland_Enter, "konggu02")
+function HomeLoading.Self_Art()
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Homeland_Enter, "konggu02")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeLoading.Visit = function(friendID)
-  -- function num : 0_2 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(HomeLoading._CheckFriend, {}, friendID, function()
-    -- function num : 0_2_0 , upvalues : _ENV, friendID
-    ((GameGlobal.LoadingManager)()):StartLoading("HomeVisitEnterLoadingHandler", "konggu02func", friendID)
-  end
-)
+function HomeLoading.Visit(friendID)
+  GameGlobal.TaskManager():StartTask(HomeLoading._CheckFriend, {}, friendID, function()
+    GameGlobal.LoadingManager():StartLoading("HomeVisitEnterLoadingHandler", "konggu02func", friendID)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeLoading.VisitToSelf = function()
-  -- function num : 0_3 , upvalues : _ENV
-  ((GameGlobal.LoadingManager)()):StartLoading("HomeVisitToSelfLoading", "konggu02func")
+function HomeLoading.VisitToSelf()
+  GameGlobal.LoadingManager():StartLoading("HomeVisitToSelfLoading", "konggu02func")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeLoading.SelfToVisit = function(friendID)
-  -- function num : 0_4 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(HomeLoading._CheckFriend, {}, friendID, function()
-    -- function num : 0_4_0 , upvalues : _ENV, friendID
-    ((GameGlobal.LoadingManager)()):StartLoading("HomeSelfToVisitLoading", "konggu02func", friendID)
-  end
-)
+function HomeLoading.SelfToVisit(friendID)
+  GameGlobal.TaskManager():StartTask(HomeLoading._CheckFriend, {}, friendID, function()
+    GameGlobal.LoadingManager():StartLoading("HomeSelfToVisitLoading", "konggu02func", friendID)
+  end)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeLoading.VisitToVisit = function(friendID)
-  -- function num : 0_5 , upvalues : _ENV
-  ((GameGlobal.TaskManager)()):StartTask(HomeLoading._CheckFriend, {}, friendID, function()
-    -- function num : 0_5_0 , upvalues : _ENV, friendID
-    ((GameGlobal.LoadingManager)()):StartLoading("HomeVisitToVisitLoading", "konggu02func", friendID)
-  end
-)
+function HomeLoading.VisitToVisit(friendID)
+  GameGlobal.TaskManager():StartTask(HomeLoading._CheckFriend, {}, friendID, function()
+    GameGlobal.LoadingManager():StartLoading("HomeVisitToVisitLoading", "konggu02func", friendID)
+  end)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeLoading.Exit = function(...)
-  -- function num : 0_6 , upvalues : _ENV
-  ((GameGlobal.LoadingManager)()):StartLoading(LoadingHandlerName.Homeland_Exit, "UI", ...)
+function HomeLoading.Exit(...)
+  GameGlobal.LoadingManager():StartLoading(LoadingHandlerName.Homeland_Exit, "UI", ...)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-HomeLoading._CheckFriend = function(_, TT, id, func)
-  -- function num : 0_7 , upvalues : _ENV
-  ((GameGlobal.UIStateManager)()):Lock("CheckFriendBeforeVisit")
-  local res = ((GameGlobal.GetModule)(SocialModule)):HandleCEventBothwayFriend(TT, id)
-  ;
-  ((GameGlobal.UIStateManager)()):UnLock("CheckFriendBeforeVisit")
+function HomeLoading._CheckFriend(_, TT, id, func)
+  GameGlobal.UIStateManager():Lock("CheckFriendBeforeVisit")
+  local res = GameGlobal.GetModule(SocialModule):HandleCEventBothwayFriend(TT, id)
+  GameGlobal.UIStateManager():UnLock("CheckFriendBeforeVisit")
   if res:GetSucc() then
     func()
   else
@@ -83,5 +47,3 @@ HomeLoading._CheckFriend = function(_, TT, id, func)
     m:HandleErrorMsgCode(res:GetResult())
   end
 end
-
-

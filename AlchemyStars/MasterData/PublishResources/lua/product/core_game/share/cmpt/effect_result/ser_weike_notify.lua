@@ -1,49 +1,26 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_weike_notify.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("SkillEffectResult_WeikeNotify", SkillEffectResultBase)
 SkillEffectResult_WeikeNotify = SkillEffectResult_WeikeNotify
--- DECOMPILER ERROR at PC9: Confused about usage of register: R0 in 'UnsetPending'
-
 SkillEffectResult_WeikeNotify.__EFFECT_TYPE = SkillEffectType.WeikeNotify
--- DECOMPILER ERROR at PC12: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_WeikeNotify.Constructor = function(self, notifyType, skillType, casterPos, multiCastCount)
-  -- function num : 0_0
+function SkillEffectResult_WeikeNotify:Constructor(notifyType, skillType, casterPos, multiCastCount)
   self._notifyType = notifyType
   self._skillType = skillType
   self._casterPos = casterPos
   self._multiCastCount = multiCastCount
 end
 
--- DECOMPILER ERROR at PC15: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_WeikeNotify.GetNotifyType = function(self)
-  -- function num : 0_1
+function SkillEffectResult_WeikeNotify:GetNotifyType()
   return self._notifyType
 end
 
--- DECOMPILER ERROR at PC18: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_WeikeNotify.GetSkillType = function(self)
-  -- function num : 0_2
+function SkillEffectResult_WeikeNotify:GetSkillType()
   return self._skillType
 end
 
--- DECOMPILER ERROR at PC21: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_WeikeNotify.GetCasterPos = function(self)
-  -- function num : 0_3
+function SkillEffectResult_WeikeNotify:GetCasterPos()
   return self._casterPos
 end
 
--- DECOMPILER ERROR at PC24: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_WeikeNotify.GetMultiCastCount = function(self)
-  -- function num : 0_4
+function SkillEffectResult_WeikeNotify:GetMultiCastCount()
   return self._multiCastCount
 end
-
-

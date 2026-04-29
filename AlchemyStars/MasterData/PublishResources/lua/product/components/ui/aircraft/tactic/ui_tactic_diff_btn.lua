@@ -1,63 +1,37 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/tactic/ui_tactic_diff_btn.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITacticDiffBtn", UICustomWidget)
 UITacticDiffBtn = UITacticDiffBtn
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITacticDiffBtn.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UITacticDiffBtn:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticDiffBtn.InitWidget = function(self)
-  -- function num : 0_1
+function UITacticDiffBtn:InitWidget()
   self.text = self:GetUIComponent("UILocalizationText", "Text")
   self.btn = self:GetUIComponent("Button", "btn")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticDiffBtn.SetData = function(self, diff, onSelect)
-  -- function num : 0_2 , upvalues : _ENV
-  local texts = {"str_aircraft_tactic_difficulty1", "str_aircraft_tactic_difficulty2", "str_aircraft_tactic_difficulty3"}
-  ;
-  (self.text):SetText((StringTable.Get)(texts[diff]))
+function UITacticDiffBtn:SetData(diff, onSelect)
+  local texts = {
+    "str_aircraft_tactic_difficulty1",
+    "str_aircraft_tactic_difficulty2",
+    "str_aircraft_tactic_difficulty3"
+  }
+  self.text:SetText(StringTable.Get(texts[diff]))
   self._onClick = onSelect
   self._diff = diff
   self:OnSelect(false)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticDiffBtn.OnSelect = function(self, select)
-  -- function num : 0_3 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R2 in 'UnsetPending'
-
-  (self.btn).interactable = select
-  -- DECOMPILER ERROR at PC7: Confused about usage of register: R2 in 'UnsetPending'
-
+function UITacticDiffBtn:OnSelect(select)
+  self.btn.interactable = select
   if select then
-    (self.text).color = Color.black
+    self.text.color = Color.black
   else
-    -- DECOMPILER ERROR at PC15: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (self.text).color = Color(0.55294117647059, 0.57254901960784, 0.61176470588235)
+    self.text.color = Color(0.5529411764705883, 0.5725490196078431, 0.611764705882353)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UITacticDiffBtn.btnOnClick = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  (self._onClick)(self._diff)
-  ;
-  (AudioHelperController.PlayUISoundAutoRelease)(CriAudioIDConst.N8DefaultClick)
+function UITacticDiffBtn:btnOnClick()
+  self._onClick(self._diff)
+  AudioHelperController.PlayUISoundAutoRelease(CriAudioIDConst.N8DefaultClick)
 end
-
-

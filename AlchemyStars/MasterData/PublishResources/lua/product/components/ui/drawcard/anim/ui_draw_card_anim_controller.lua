@@ -1,437 +1,348 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/drawcard/anim/ui_draw_card_anim_controller.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDrawCardAnimController", UIController)
 UIDrawCardAnimController = UIDrawCardAnimController
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDrawCardAnimController.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
+function UIDrawCardAnimController:OnShow(uiParams)
   self._curLayer = self:GetDepth() - 1
   for i = 0, self._curLayer do
-    (((GameGlobal.UIStateManager)()).uiControllerManager):ShowLayer(i, false)
+    GameGlobal.UIStateManager().uiControllerManager:ShowLayer(i, false)
   end
   self.data = uiParams[1]
   self:InitWidget()
   self:InitConfig()
-  ;
-  (Log.warn)("开始抽卡动画，最高星等：", (self.data):GetMaxStar())
-  self._finder = (((UnityEngine.GameObject).Find)("LOGICROOT")):GetComponent(typeof(UIView))
+  Log.warn("开始抽卡动画，最高星等：", self.data:GetMaxStar())
+  self._finder = UnityEngine.GameObject.Find("LOGICROOT"):GetComponent(typeof(UIView))
   self._opration = UIDrawCardAnimOperation:New(self._finder)
   self._operating = false
   self:InitSceneObjects()
-  local audio_lights = {[ShakeType.SHAKE_ONCE] = CriAudioIDConst.Drawcard_light_one, [ShakeType.SHAKE_MULTIPLE] = CriAudioIDConst.Drawcard_light_more}
-  local audio_light = audio_lights[(self.data):GetShakeType()]
-  ;
-  (self._opration):Init(self._camera, (self.data):GetMaxStar(), function()
-    -- function num : 0_0_0 , upvalues : self, _ENV, audio_light
+  local audio_lights = {
+    [ShakeType.SHAKE_ONCE] = CriAudioIDConst.Drawcard_light_one,
+    [ShakeType.SHAKE_MULTIPLE] = CriAudioIDConst.Drawcard_light_more
+  }
+  local audio_light = audio_lights[self.data:GetShakeType()]
+  self._opration:Init(self._camera, self.data:GetMaxStar(), function()
     self:SetBtnVisible(true)
-    ;
-    (self._timeLinePlayer):Play(self._timeLine2)
-    self._light_audio = (AudioHelperController.PlayRequestedUISound)(audio_light)
-  end
-)
+    self._timeLinePlayer:Play(self._timeLine2)
+    self._light_audio = AudioHelperController.PlayRequestedUISound(audio_light)
+  end)
   self:SetBtnVisible(false)
   self:InitTimeLines()
-  ;
-  (self._timeLinePlayer):Play(self._timeLine1)
-  ;
-  (UIBgmHelper.PlayDrawcardBgm)()
+  self._timeLinePlayer:Play(self._timeLine1)
+  UIBgmHelper.PlayDrawcardBgm()
   self:AttachEvent(GameEventType.AfterUILayerChanged, self._OnLayerChanged)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController._OnLayerChanged = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  (((GameGlobal.UIStateManager)()).uiControllerManager):ShowAllLayers()
+function UIDrawCardAnimController:_OnLayerChanged()
+  GameGlobal.UIStateManager().uiControllerManager:ShowAllLayers()
   self._curLayer = self:GetDepth() - 1
   for i = 0, self._curLayer do
-    (((GameGlobal.UIStateManager)()).uiControllerManager):ShowLayer(i, false)
+    GameGlobal.UIStateManager().uiControllerManager:ShowLayer(i, false)
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.OnHide = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local funcModule = (self:GetModule(RoleModule)).uiModule
+function UIDrawCardAnimController:OnHide()
+  local funcModule = self:GetModule(RoleModule).uiModule
   funcModule:LockAchievementFinishPanel(false)
   for i = 0, self._curLayer do
-    (((GameGlobal.UIStateManager)()).uiControllerManager):ShowLayer(i, true)
+    GameGlobal.UIStateManager().uiControllerManager:ShowLayer(i, true)
   end
-  ;
-  (self._opration):Dispose()
-  if self._lightReqs and #self._lightReqs > 0 then
-    for _,req in ipairs(self._lightReqs) do
+  self._opration:Dispose()
+  if self._lightReqs and 0 < #self._lightReqs then
+    for _, req in ipairs(self._lightReqs) do
       req:Dispose()
     end
   end
-  do
-    if self._timeLinePlayer and (self._timeLinePlayer):IsPlaying() then
-      (self._timeLinePlayer):Stop()
-      self._timeLinePlayer = nil
-    end
+  if self._timeLinePlayer and self._timeLinePlayer:IsPlaying() then
+    self._timeLinePlayer:Stop()
+    self._timeLinePlayer = nil
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.OnUpdate = function(self, deltaTimeMS)
-  -- function num : 0_3
-  (self._opration):Update(deltaTimeMS)
+function UIDrawCardAnimController:OnUpdate(deltaTimeMS)
+  self._opration:Update(deltaTimeMS)
   if self._operating then
-    local x = ((self._handle).eulerAngles).x
-    if x > 180 then
+    local x = self._handle.eulerAngles.x
+    if 180 < x then
       x = x - 360
     end
-    local percent = (self._handleStartRot - (x)) / self._handleAngle
-    -- DECOMPILER ERROR at PC18: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._animState).enabled = true
-    -- DECOMPILER ERROR at PC20: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._animState).normalizedTime = percent
-    -- DECOMPILER ERROR at PC22: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._animState).weight = 1
-    ;
-    (self._handleEftAnim):Sample()
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R4 in 'UnsetPending'
-
-    ;
-    (self._animState).enabled = false
+    local percent = (self._handleStartRot - x) / self._handleAngle
+    self._animState.enabled = true
+    self._animState.normalizedTime = percent
+    self._animState.weight = 1
+    self._handleEftAnim:Sample()
+    self._animState.enabled = false
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.InitWidget = function(self)
-  -- function num : 0_4
+function UIDrawCardAnimController:InitWidget()
   self._skipBtn = self:GetGameObject("ButtonSkip")
   self._fader = self:GetUIComponent("Animation", "fader")
   self._faderImage = self:GetUIComponent("Image", "fader")
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.InitConfig = function(self)
-  -- function num : 0_5 , upvalues : _ENV
-  self._handleAnimNames = {[3] = "eff_chouka_lagan_charge_1", [4] = "eff_chouka_lagan_charge_2", [5] = "eff_chouka_lagan_charge_3", [6] = "eff_chouka_lagan_charge_4"}
-  self._handleFallDownAnim = {[3] = "eff_chouka_laganwan_finished_1", [4] = "eff_chouka_laganwan_finished_2", [5] = "eff_chouka_laganwan_finished_3", [6] = "eff_chouka_laganwan_finished_4"}
+function UIDrawCardAnimController:InitConfig()
+  self._handleAnimNames = {
+    [3] = "eff_chouka_lagan_charge_1",
+    [4] = "eff_chouka_lagan_charge_2",
+    [5] = "eff_chouka_lagan_charge_3",
+    [6] = "eff_chouka_lagan_charge_4"
+  }
+  self._handleFallDownAnim = {
+    [3] = "eff_chouka_laganwan_finished_1",
+    [4] = "eff_chouka_laganwan_finished_2",
+    [5] = "eff_chouka_laganwan_finished_3",
+    [6] = "eff_chouka_laganwan_finished_4"
+  }
   self._lightCfg = {
-[3] = {prefab = "eff_chouka_blue.prefab", color = Color(0.155, 0.521, 1, 1), Y = 2.5, W = 20, audio = (AudioHelperController.GetConfigName)(CriAudioIDConst.DrawCard_lanse)}
-, 
-[4] = {prefab = "eff_chouka_purple.prefab", color = Color(0.5196, 0.2401, 0.7169, 1), Y = 2.5, W = 40, audio = (AudioHelperController.GetConfigName)(CriAudioIDConst.DrawCard_zise)}
-, 
-[5] = {prefab = "eff_chouka_gold.prefab", color = Color(1, 0.592, 0.231, 1), Y = 2.5, W = 50, audio = (AudioHelperController.GetConfigName)(CriAudioIDConst.DrawCard_zise)}
-, 
-[6] = {prefab = "eff_chouka_orange.prefab", color = Color(1, 0.252, 0.108, 1), Y = 2.5, W = 60, audio = (AudioHelperController.GetConfigName)(CriAudioIDConst.DrawCard_chengse)}
-}
+    [3] = {
+      prefab = "eff_chouka_blue.prefab",
+      color = Color(0.155, 0.521, 1, 1),
+      Y = 2.5,
+      W = 20,
+      audio = AudioHelperController.GetConfigName(CriAudioIDConst.DrawCard_lanse)
+    },
+    [4] = {
+      prefab = "eff_chouka_purple.prefab",
+      color = Color(0.5196, 0.2401, 0.7169, 1),
+      Y = 2.5,
+      W = 40,
+      audio = AudioHelperController.GetConfigName(CriAudioIDConst.DrawCard_zise)
+    },
+    [5] = {
+      prefab = "eff_chouka_gold.prefab",
+      color = Color(1, 0.592, 0.231, 1),
+      Y = 2.5,
+      W = 50,
+      audio = AudioHelperController.GetConfigName(CriAudioIDConst.DrawCard_zise)
+    },
+    [6] = {
+      prefab = "eff_chouka_orange.prefab",
+      color = Color(1, 0.252, 0.108, 1),
+      Y = 2.5,
+      W = 60,
+      audio = AudioHelperController.GetConfigName(CriAudioIDConst.DrawCard_chengse)
+    }
+  }
   self._newLightCfg = {
-[3] = {prefab = "eff_chouka_blue_new.prefab", audio = (AudioHelperController.GetConfigName)(CriAudioIDConst.DrawCard_lanse)}
-, 
-[4] = {prefab = "eff_chouka_purple_new.prefab", audio = (AudioHelperController.GetConfigName)(CriAudioIDConst.DrawCard_zise)}
-, 
-[5] = {prefab = "eff_chouka_gold_new.prefab", audio = (AudioHelperController.GetConfigName)(CriAudioIDConst.DrawCard_zise)}
-, 
-[6] = {prefab = "eff_chouka_orange_new.prefab", audio = (AudioHelperController.GetConfigName)(CriAudioIDConst.DrawCard_chengse)}
-}
+    [3] = {
+      prefab = "eff_chouka_blue_new.prefab",
+      audio = AudioHelperController.GetConfigName(CriAudioIDConst.DrawCard_lanse)
+    },
+    [4] = {
+      prefab = "eff_chouka_purple_new.prefab",
+      audio = AudioHelperController.GetConfigName(CriAudioIDConst.DrawCard_zise)
+    },
+    [5] = {
+      prefab = "eff_chouka_gold_new.prefab",
+      audio = AudioHelperController.GetConfigName(CriAudioIDConst.DrawCard_zise)
+    },
+    [6] = {
+      prefab = "eff_chouka_orange_new.prefab",
+      audio = AudioHelperController.GetConfigName(CriAudioIDConst.DrawCard_chengse)
+    }
+  }
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.InitSceneObjects = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  self._animation = (self:GetSceneGameObject("anim")):GetComponent(typeof(UnityEngine.Animation))
-  ;
-  ((self._animation).gameObject):SetActive(true)
-  self._camera = (self:GetSceneGameObject("Camera")):GetComponent(typeof(UnityEngine.Camera))
+function UIDrawCardAnimController:InitSceneObjects()
+  self._animation = self:GetSceneGameObject("anim"):GetComponent(typeof(UnityEngine.Animation))
+  self._animation.gameObject:SetActive(true)
+  self._camera = self:GetSceneGameObject("Camera"):GetComponent(typeof(UnityEngine.Camera))
   self._chouKaCam = self:GetSceneGameObject("ChoukaCamera")
-  ;
-  (self._chouKaCam):SetActive(true)
+  self._chouKaCam:SetActive(true)
   self._farSceneGO = self:GetSceneGameObject("choukaPrefab")
-  ;
-  (self._farSceneGO):SetActive(false)
-  self._handle = (self:GetSceneGameObject("Ckt_Yg")).transform
-  ;
-  ((self._handle).gameObject):SetActive(true)
-  self._handleStartRot = ((Cfg.cfg_drawcard_value)[2]).Value
-  local handleFinishRot = ((Cfg.cfg_drawcard_value)[4]).Value
+  self._farSceneGO:SetActive(false)
+  self._handle = self:GetSceneGameObject("Ckt_Yg").transform
+  self._handle.gameObject:SetActive(true)
+  self._handleStartRot = Cfg.cfg_drawcard_value[2].Value
+  local handleFinishRot = Cfg.cfg_drawcard_value[4].Value
   self._handleAngle = self._handleStartRot - handleFinishRot
-  self._handleEftAnim = (self._finder):GetUIComponent("Animation", "Chouka_lagan_charge_prefab")
-  ;
-  (Log.error)("self._finder", self._finder)
-  ;
-  (Log.error)("self._handleEftAnim", self._handleEftAnim)
-  ;
-  (Log.error)("self._handleEftAnim", (self._handleAnimNames)[(self.data):GetMaxStar()])
-  ;
-  (Log.error)("GetClipCount", (self._handleEftAnim):GetClipCount())
-  self._animState = (self._handleEftAnim):get_Item((self._handleAnimNames)[(self.data):GetMaxStar()])
-  -- DECOMPILER ERROR at PC105: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animState).enabled = true
-  -- DECOMPILER ERROR at PC107: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animState).weight = 1
-  -- DECOMPILER ERROR at PC109: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animState).normalizedTime = 0
-  ;
-  (self._handleEftAnim):Sample()
-  -- DECOMPILER ERROR at PC114: Confused about usage of register: R2 in 'UnsetPending'
-
-  ;
-  (self._animState).enabled = false
-  self._fallDownAnim = (self._finder):GetUIComponent("Animation", "chouka_lagan_prefab")
-  ;
-  ((self._fallDownAnim).gameObject):SetActive(false)
+  self._handleEftAnim = self._finder:GetUIComponent("Animation", "Chouka_lagan_charge_prefab")
+  Log.error("self._finder", self._finder)
+  Log.error("self._handleEftAnim", self._handleEftAnim)
+  Log.error("self._handleEftAnim", self._handleAnimNames[self.data:GetMaxStar()])
+  Log.error("GetClipCount", self._handleEftAnim:GetClipCount())
+  self._animState = self._handleEftAnim:get_Item(self._handleAnimNames[self.data:GetMaxStar()])
+  self._animState.enabled = true
+  self._animState.weight = 1
+  self._animState.normalizedTime = 0
+  self._handleEftAnim:Sample()
+  self._animState.enabled = false
+  self._fallDownAnim = self._finder:GetUIComponent("Animation", "chouka_lagan_prefab")
+  self._fallDownAnim.gameObject:SetActive(false)
   self._powerEft = self:GetSceneGameObject("chouka_wunei_prefab")
-  ;
-  (self._powerEft):SetActive(false)
-  if (self.data):GetShakeType() == ShakeType.SHAKE_MULTIPLE then
+  self._powerEft:SetActive(false)
+  if self.data:GetShakeType() == ShakeType.SHAKE_MULTIPLE then
     self:InitMultipleLight()
-  else
-    if (self.data):GetShakeType() == ShakeType.SHAKE_ONCE then
-      self:InitSingleLight()
-    end
+  elseif self.data:GetShakeType() == ShakeType.SHAKE_ONCE then
+    self:InitSingleLight()
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.InitTimeLines = function(self)
-  -- function num : 0_7 , upvalues : _ENV
+function UIDrawCardAnimController:InitTimeLines()
   self._timeLinePlayer = EZTL_Player:New()
-  self._timeLine1 = EZTL_Sequence:New({EZTL_Callback:New(function()
-    -- function num : 0_7_0 , upvalues : self
-    (self._animation):Play("drawcard1")
-  end
-, "回调，摄像机动画1，拉近拉杆"), EZTL_PlayAudioOnce:New((AudioHelperController.GetConfigName)(CriAudioIDConst.DrawCard_tuijingtou), "运镜音频"), EZTL_Callback:New(function()
-    -- function num : 0_7_1 , upvalues : _ENV, self
-    (GameGlobal.UAReportForceGuideEvent)("UIDrawCardEvent", {"open_camera"}, true)
-    ;
-    ((self._camera).gameObject):SetActive(true)
-    ;
-    (self._farSceneGO):SetActive(false)
-  end
-, "打开摄像机"), EZTL_Wait:New(2000, "等相机动画播完"), EZTL_Callback:New(function()
-    -- function num : 0_7_2 , upvalues : self
-    (self._opration):SetEnable(true)
-    self._operating = true
-  end
-, "回调，玩家可操作")}, "抽卡时间线1，串行")
+  self._timeLine1 = EZTL_Sequence:New({
+    EZTL_Callback:New(function()
+      self._animation:Play("drawcard1")
+    end, "回调，摄像机动画1，拉近拉杆"),
+    EZTL_PlayAudioOnce:New(AudioHelperController.GetConfigName(CriAudioIDConst.DrawCard_tuijingtou), "运镜音频"),
+    EZTL_Callback:New(function()
+      GameGlobal.UAReportForceGuideEvent("UIDrawCardEvent", {
+        "open_camera"
+      }, true)
+      self._camera.gameObject:SetActive(true)
+      self._farSceneGO:SetActive(false)
+    end, "打开摄像机"),
+    EZTL_Wait:New(2000, "等相机动画播完"),
+    EZTL_Callback:New(function()
+      self._opration:SetEnable(true)
+      self._operating = true
+    end, "回调，玩家可操作")
+  }, "抽卡时间线1，串行")
   self._timeLine2 = EZTL_Sequence:New(self:_InitTimeline2(), "抽卡时间线2，串行")
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.InitSingleLight = function(self)
-  -- function num : 0_8 , upvalues : _ENV
-  local renderers = ((((self._farSceneGO).transform):Find("global_eff/stage")).gameObject):GetComponentsInChildren(typeof(UnityEngine.MeshRenderer))
+function UIDrawCardAnimController:InitSingleLight()
+  local renderers = self._farSceneGO.transform:Find("global_eff/stage").gameObject:GetComponentsInChildren(typeof(UnityEngine.MeshRenderer))
   local mats = {}
   for i = 0, renderers.Length - 1 do
-    mats[#mats + 1] = (renderers[i]).sharedMaterial
+    mats[#mats + 1] = renderers[i].sharedMaterial
   end
   for i = 1, 10 do
-    local seq = (string.format)("%02d", i)
-    for _,mat in ipairs(mats) do
+    local seq = string.format("%02d", i)
+    for _, mat in ipairs(mats) do
       mat:SetColor("_PointLightColor" .. seq, Color(0, 0, 0, 0))
     end
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.InitMultipleLight = function(self)
-  -- function num : 0_9
+function UIDrawCardAnimController:InitMultipleLight()
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController._InitTimeline2 = function(self)
-  -- function num : 0_10 , upvalues : _ENV
-  local _handleFinishRot = ((Cfg.cfg_drawcard_value)[4]).Value
-  local _handleFallDuaration = ((Cfg.cfg_drawcard_value)[5]).Value
-  local timeline = {EZTL_DOTweenRotate:New(self._handle, Vector3(_handleFinishRot, 0, 0), _handleFallDuaration, ((DG.Tweening).Ease).InCubic, "拉杆下落"), EZTL_Callback:New(function()
-    -- function num : 0_10_0 , upvalues : self, _ENV
-    self._operating = false
-    ;
-    (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.DrawCard_preshilian)
-    ;
-    (AudioHelperController.PlayRequestedUISound)(CriAudioIDConst.DrawCard_daodi)
-    ;
-    ((self._fallDownAnim).gameObject):SetActive(true)
-    ;
-    (self._fallDownAnim):Play((self._handleFallDownAnim)[(self.data):GetMaxStar()])
-    -- DECOMPILER ERROR at PC25: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._animState).enabled = true
-    -- DECOMPILER ERROR at PC27: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._animState).normalizedTime = 1
-    -- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._animState).weight = 1
-    ;
-    (self._handleEftAnim):Sample()
-    -- DECOMPILER ERROR at PC34: Confused about usage of register: R0 in 'UnsetPending'
-
-    ;
-    (self._animState).enabled = false
-  end
-, "拉杆下落，运动完成"), EZTL_Parallel:New({EZTL_PlayAnimation:New(self._animation, "drawcard2", "摄像机动画2，远离拉杆"), EZTL_Sequence:New({EZTL_Wait:New(1600, "光球音效前等待"), EZTL_Callback:New(function()
-    -- function num : 0_10_1 , upvalues : _ENV
-    (GameGlobal.UAReportForceGuideEvent)("UIDrawCardEvent", {"guangqiu"}, true)
-  end
-, "上报事件")}), EZTL_Wait:New(2750, "切视角前等3.7秒")}, EZTL_EndTag.SomeOne, 3, "并行时间线，切换视角并等待"), EZTL_Callback:New(function()
-    -- function num : 0_10_2 , upvalues : self
-    ((self._camera).gameObject):SetActive(false)
-    ;
-    (self._farSceneGO):SetActive(true)
-  end
-, "切换摄像机")}
+function UIDrawCardAnimController:_InitTimeline2()
+  local _handleFinishRot = Cfg.cfg_drawcard_value[4].Value
+  local _handleFallDuaration = Cfg.cfg_drawcard_value[5].Value
+  local timeline = {
+    EZTL_DOTweenRotate:New(self._handle, Vector3(_handleFinishRot, 0, 0), _handleFallDuaration, DG.Tweening.Ease.InCubic, "拉杆下落"),
+    EZTL_Callback:New(function()
+      self._operating = false
+      AudioHelperController.PlayRequestedUISound(CriAudioIDConst.DrawCard_preshilian)
+      AudioHelperController.PlayRequestedUISound(CriAudioIDConst.DrawCard_daodi)
+      self._fallDownAnim.gameObject:SetActive(true)
+      self._fallDownAnim:Play(self._handleFallDownAnim[self.data:GetMaxStar()])
+      self._animState.enabled = true
+      self._animState.normalizedTime = 1
+      self._animState.weight = 1
+      self._handleEftAnim:Sample()
+      self._animState.enabled = false
+    end, "拉杆下落，运动完成"),
+    EZTL_Parallel:New({
+      EZTL_PlayAnimation:New(self._animation, "drawcard2", "摄像机动画2，远离拉杆"),
+      EZTL_Sequence:New({
+        EZTL_Wait:New(1600, "光球音效前等待"),
+        EZTL_Callback:New(function()
+          GameGlobal.UAReportForceGuideEvent("UIDrawCardEvent", {"guangqiu"}, true)
+        end, "上报事件")
+      }),
+      EZTL_Wait:New(2750, "切视角前等3.7秒")
+    }, EZTL_EndTag.SomeOne, 3, "并行时间线，切换视角并等待"),
+    EZTL_Callback:New(function()
+      self._camera.gameObject:SetActive(false)
+      self._farSceneGO:SetActive(true)
+    end, "切换摄像机")
+  }
   timeline[#timeline + 1] = EZTL_Wait:New(200, "大光柱音效延迟")
-  if (self.data):GetShakeType() == ShakeType.SHAKE_MULTIPLE then
+  if self.data:GetShakeType() == ShakeType.SHAKE_MULTIPLE then
     timeline[#timeline + 1] = EZTL_Callback:New(function()
-    -- function num : 0_10_3 , upvalues : self, _ENV
-    self._lightReqs = {}
-    local cards = (self.data):GetCards()
-    local posParent = (self._finder):GetUIComponent("Transform", "ChoukaPoint")
-    for i = 1, #cards do
-      local card = cards[i]
-      local star = ((Cfg.cfg_pet)[card.assetid]).Star
-      local qCfg = (self._newLightCfg)[star]
-      local req = (ResourceManager:GetInstance()):SyncLoadAsset(qCfg.prefab, LoadType.GameObject)
-      local light = (req.Obj).transform
-      local parent = posParent:GetChild(i - 1)
-      light:SetParent(parent)
-      light.localPosition = Vector3.zero
-      light.localRotation = Quaternion.identity
-      light.localScale = Vector3.one
-      ;
-      (light.gameObject):SetActive(true)
-      ;
-      (table.insert)(self._lightReqs, req)
-    end
-  end
-, "同时展示10个光柱")
+      self._lightReqs = {}
+      local cards = self.data:GetCards()
+      local posParent = self._finder:GetUIComponent("Transform", "ChoukaPoint")
+      for i = 1, #cards do
+        local card = cards[i]
+        local star = Cfg.cfg_pet[card.assetid].Star
+        local qCfg = self._newLightCfg[star]
+        local req = ResourceManager:GetInstance():SyncLoadAsset(qCfg.prefab, LoadType.GameObject)
+        local light = req.Obj.transform
+        local parent = posParent:GetChild(i - 1)
+        light:SetParent(parent)
+        light.localPosition = Vector3.zero
+        light.localRotation = Quaternion.identity
+        light.localScale = Vector3.one
+        light.gameObject:SetActive(true)
+        table.insert(self._lightReqs, req)
+      end
+    end, "同时展示10个光柱")
     timeline[#timeline + 1] = EZTL_Wait:New(370, "显示光柱后等待播音频")
-    local max = (self.data):GetMaxStar()
+    local max = self.data:GetMaxStar()
     timeline[#timeline + 1] = EZTL_Wait:New(1500, "最后等1.5秒")
     timeline[#timeline + 1] = EZTL_Callback:New(function()
-    -- function num : 0_10_4 , upvalues : _ENV
-    (GameGlobal.UAReportForceGuideEvent)("UIDrawCardEvent", {"qianzhi"}, true)
-  end
-, "上报事件")
+      GameGlobal.UAReportForceGuideEvent("UIDrawCardEvent", {"qianzhi"}, true)
+    end, "上报事件")
     timeline[#timeline + 1] = EZTL_PlayAnimation:New(self._fader, "UIDrawCardAnim_black", "黑屏转场")
-  else
-    do
-      if (self.data):GetShakeType() == ShakeType.SHAKE_ONCE then
-        timeline[#timeline + 1] = EZTL_Wait:New(970, "单抽等待")
-        timeline[#timeline + 1] = EZTL_Callback:New(function()
-    -- function num : 0_10_5 , upvalues : _ENV
-    (GameGlobal.UAReportForceGuideEvent)("UIDrawCardEvent", {"qianzhi"}, true)
+  elseif self.data:GetShakeType() == ShakeType.SHAKE_ONCE then
+    timeline[#timeline + 1] = EZTL_Wait:New(970, "单抽等待")
+    timeline[#timeline + 1] = EZTL_Callback:New(function()
+      GameGlobal.UAReportForceGuideEvent("UIDrawCardEvent", {"qianzhi"}, true)
+    end, "上报事件")
+    timeline[#timeline + 1] = EZTL_PlayAnimation:New(self._fader, "UIDrawCardAnim_white", "白屏转场")
   end
-, "上报事件")
-        timeline[#timeline + 1] = EZTL_PlayAnimation:New(self._fader, "UIDrawCardAnim_white", "白屏转场")
-      end
-      timeline[#timeline + 1] = EZTL_Callback:New(function()
-    -- function num : 0_10_6 , upvalues : self
+  timeline[#timeline + 1] = EZTL_Callback:New(function()
     self:AnimFinish(false)
-  end
-, "动画结束，跳转界面")
-      return timeline
-    end
-  end
+  end, "动画结束，跳转界面")
+  return timeline
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.AnimFinish = function(self, skip)
-  -- function num : 0_11 , upvalues : _ENV
-  (AudioHelperController.StopUISound)(self._light_audio)
-  local pets = nil
+function UIDrawCardAnimController:AnimFinish(skip)
+  AudioHelperController.StopUISound(self._light_audio)
+  local pets
   self:SetBtnVisible(false)
-  -- DECOMPILER ERROR at PC11: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._faderImage).color = Color.black
+  self._faderImage.color = Color.black
   if skip then
-    ((self._camera).gameObject):SetActive(false)
-    pets = (self.data):GetUnskipCards()
+    self._camera.gameObject:SetActive(false)
+    pets = self.data:GetUnskipCards()
   else
-    pets = (self.data):GetCards()
+    pets = self.data:GetCards()
   end
   if #pets == 0 then
-    if (self.data):GetShakeType() == ShakeType.SHAKE_MULTIPLE then
+    if self.data:GetShakeType() == ShakeType.SHAKE_MULTIPLE then
       self:ShowDialog("UIDrawCardMultipleShowController", self.data)
     else
-      self:ShowDialog("UIPetObtain", (self.data):GetCards(), function()
-    -- function num : 0_11_0 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshRecuitUIView)
-    ;
-    (self:Manager()):CloseAllDialogOverLayerWithName("UIRecruit", {"UICriVideoController"})
-  end
-, true)
+      self:ShowDialog("UIPetObtain", self.data:GetCards(), function()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshRecuitUIView)
+        self:Manager():CloseAllDialogOverLayerWithName("UIRecruit", {
+          "UICriVideoController"
+        })
+      end, true)
     end
   else
-    local afterShow = nil
-    if (self.data):GetShakeType() == ShakeType.SHAKE_MULTIPLE then
-      afterShow = function()
-    -- function num : 0_11_1 , upvalues : self
-    self:ShowDialog("UIDrawCardMultipleShowController", self.data)
-    ;
-    (self:Manager()):CloseDialog("UIPetObtain")
-  end
-
+    local afterShow
+    if self.data:GetShakeType() == ShakeType.SHAKE_MULTIPLE then
+      function afterShow()
+        self:ShowDialog("UIDrawCardMultipleShowController", self.data)
+        
+        self:Manager():CloseDialog("UIPetObtain")
+      end
     else
-      afterShow = function()
-    -- function num : 0_11_2 , upvalues : _ENV, self
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.RefreshRecuitUIView)
-    ;
-    (self:Manager()):CloseAllDialogOverLayerWithName("UIRecruit", {"UICriVideoController"})
-  end
-
+      function afterShow()
+        GameGlobal.EventDispatcher():Dispatch(GameEventType.RefreshRecuitUIView)
+        
+        self:Manager():CloseAllDialogOverLayerWithName("UIRecruit", {
+          "UICriVideoController"
+        })
+      end
     end
     self:ShowDialog("UIPetObtain", pets, afterShow)
-    ;
-    (self._chouKaCam):SetActive(false)
+    self._chouKaCam:SetActive(false)
   end
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.ButtonSkipOnClick = function(self, go)
-  -- function num : 0_12
-  (self._timeLinePlayer):Stop()
+function UIDrawCardAnimController:ButtonSkipOnClick(go)
+  self._timeLinePlayer:Stop()
   self:AnimFinish(true)
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.SetBtnVisible = function(self, _show)
-  -- function num : 0_13
-  (self._skipBtn):SetActive(_show)
+function UIDrawCardAnimController:SetBtnVisible(_show)
+  self._skipBtn:SetActive(_show)
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDrawCardAnimController.GetSceneGameObject = function(self, name)
-  -- function num : 0_14
-  return (self._finder):GetGameObject(name)
+function UIDrawCardAnimController:GetSceneGameObject(name)
+  return self._finder:GetGameObject(name)
 end
-
-

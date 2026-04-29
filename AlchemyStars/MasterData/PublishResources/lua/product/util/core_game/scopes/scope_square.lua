@@ -1,21 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/util/core_game/scopes/scope_square.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("scope_base")
 _class("SkillScopeCalculator_Square", SkillScopeCalculator_Base)
 SkillScopeCalculator_Square = SkillScopeCalculator_Square
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillScopeCalculator_Square.CalcRange = function(self, scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillScopeCalculator_Square:CalcRange(scopeType, scopeParam, centerPos, bodyArea, casterDir, nTargetType, casterPos)
   local squareBorder = scopeParam
   local includeCenter = 1
-  if not scopeParam[1] then
-    squareBorder = type(scopeParam) ~= "table" or 1
+  if type(scopeParam) == "table" then
+    squareBorder = scopeParam[1] or 1
+    includeCenter = scopeParam[2] or 1
   end
-  includeCenter = scopeParam[2] or 1
   local range = {}
   local wholeArea = {}
   local select_piece = {}
@@ -23,30 +16,23 @@ SkillScopeCalculator_Square.CalcRange = function(self, scopeType, scopeParam, ce
   if #centerPos == 0 then
     centerPosVec = {centerPos}
   end
-  for _,curCenterPos in ipairs(centerPosVec) do
-    local left = curCenterPos.x + (BodyAreaHelper.GetBodyAreaLeft)(bodyArea)
-    local right = curCenterPos.x + (BodyAreaHelper.GetBodyAreaRight)(bodyArea)
-    local up = curCenterPos.y + (BodyAreaHelper.GetBodyAreaUp)(bodyArea)
-    local down = curCenterPos.y + (BodyAreaHelper.GetBodyAreaDown)(bodyArea)
-    for i = left - (squareBorder), right + (squareBorder) do
-      for j = down - (squareBorder), up + (squareBorder) do
+  for _, curCenterPos in ipairs(centerPosVec) do
+    local left = curCenterPos.x + BodyAreaHelper.GetBodyAreaLeft(bodyArea)
+    local right = curCenterPos.x + BodyAreaHelper.GetBodyAreaRight(bodyArea)
+    local up = curCenterPos.y + BodyAreaHelper.GetBodyAreaUp(bodyArea)
+    local down = curCenterPos.y + BodyAreaHelper.GetBodyAreaDown(bodyArea)
+    for i = left - squareBorder, right + squareBorder do
+      for j = down - squareBorder, up + squareBorder do
         if includeCenter ~= 1 and i == curCenterPos.x and j == curCenterPos.y then
-          do
-            select_piece[#select_piece + 1] = Vector2(i, j)
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-            -- DECOMPILER ERROR at PC78: LeaveBlock: unexpected jumping out IF_STMT
-
-          end
+        else
+          select_piece[#select_piece + 1] = Vector2(i, j)
         end
       end
     end
-    for _,pos in ipairs(select_piece) do
+    for _, pos in ipairs(select_piece) do
       self:_InsertTargetGrid(range, pos, wholeArea)
     end
   end
   local result = SkillScopeResult:New(SkillScopeType.Square, centerPos, range, wholeArea)
   return result
 end
-
-

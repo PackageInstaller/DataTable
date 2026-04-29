@@ -1,32 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/ui_shop/ui_shop_homeland/ui_shop_homeland_set.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIShopHomelandSet", UIController)
 UIShopHomelandSet = UIShopHomelandSet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIShopHomelandSet.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function UIShopHomelandSet:Constructor()
   self._shopModule = self:GetModule(ShopModule)
-  self._clientShop = (self._shopModule):GetClientShop()
-  self._shopData = (self._clientShop):GetHomelandShopData()
-  self._homeLandModule = (GameGlobal.GetUIModule)(HomelandModule)
+  self._clientShop = self._shopModule:GetClientShop()
+  self._shopData = self._clientShop:GetHomelandShopData()
+  self._homeLandModule = GameGlobal.GetUIModule(HomelandModule)
   self._atlas = self:GetAsset("UIShop.spriteatlas", LoadType.SpriteAtlas)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet.LoadDataOnEnter = function(self, TT, res)
-  -- function num : 0_1
+function UIShopHomelandSet:LoadDataOnEnter(TT, res)
   res:SetSucc(true)
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet.OnShow = function(self, uiParams)
-  -- function num : 0_2 , upvalues : _ENV
+function UIShopHomelandSet:OnShow(uiParams)
   self._data = uiParams[1]
   self:_GetComponents()
   self:_OnValue()
@@ -34,19 +21,13 @@ UIShopHomelandSet.OnShow = function(self, uiParams)
   self:AttachEvent(GameEventType.OpenShop, self.OpenShop)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet._GetComponents = function(self)
-  -- function num : 0_3
+function UIShopHomelandSet:_GetComponents()
   self._backBtn = self:GetUIComponent("UISelectObjectPath", "BackBtn")
-  self._commonTopBtn = (self._backBtn):SpawnObject("UICommonTopButton")
-  local hideHomeBtn = (self._homeLandModule):IsRunning()
-  ;
-  (self._commonTopBtn):SetData(function()
-    -- function num : 0_3_0 , upvalues : self
+  self._commonTopBtn = self._backBtn:SpawnObject("UICommonTopButton")
+  local hideHomeBtn = self._homeLandModule:IsRunning()
+  self._commonTopBtn:SetData(function()
     self:CloseDialog()
-  end
-, nil, nil, hideHomeBtn)
+  end, nil, nil, hideHomeBtn)
   self._setNameOutLineTextBg = self:GetUIComponent("UILocalizationText", "SetNameOutLineTextBg")
   self._setNameOutLineText = self:GetUIComponent("UILocalizationText", "SetNameOutLineText")
   self._setName = self:GetUIComponent("UILocalizedTMP", "SetName")
@@ -75,137 +56,88 @@ UIShopHomelandSet._GetComponents = function(self)
   self._bigAwardTitleBg = self:GetUIComponent("Image", "BigAwardTitleBg")
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet._OnValue = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local name = (StringTable.Get)(((self._data).cfg).Name)
-  ;
-  (self._setNameOutLineTextBg):SetText(name)
-  ;
-  (self._setNameOutLineText):SetText(name)
-  if ((self._data).cfg).ShopId == UIShopHomelandThemeKey.N31 then
-    (self._setNameN31):SetText(name)
+function UIShopHomelandSet:_OnValue()
+  local name = StringTable.Get(self._data.cfg.Name)
+  self._setNameOutLineTextBg:SetText(name)
+  self._setNameOutLineText:SetText(name)
+  if self._data.cfg.ShopId == UIShopHomelandThemeKey.N31 then
+    self._setNameN31:SetText(name)
+  elseif self._data.cfg.ShopId == UIShopHomelandThemeKey.N29 then
+    self._setNameN29:SetText(name)
+  elseif self._data.cfg.ShopId == UIShopHomelandThemeKey.N27 then
+    self._setNameN27:SetText(name)
+  elseif self._data.cfg.ShopId == UIShopHomelandThemeKey.N25 then
+    self._setNameN25:SetText(name)
+  elseif self._data.cfg.ShopId == UIShopHomelandThemeKey.N23 then
+    self._setNameN23:SetText(name)
   else
-    if ((self._data).cfg).ShopId == UIShopHomelandThemeKey.N29 then
-      (self._setNameN29):SetText(name)
-    else
-      if ((self._data).cfg).ShopId == UIShopHomelandThemeKey.N27 then
-        (self._setNameN27):SetText(name)
-      else
-        if ((self._data).cfg).ShopId == UIShopHomelandThemeKey.N25 then
-          (self._setNameN25):SetText(name)
-        else
-          if ((self._data).cfg).ShopId == UIShopHomelandThemeKey.N23 then
-            (self._setNameN23):SetText(name)
-          else
-            ;
-            (self._setName):SetText(name)
-          end
-        end
-      end
-    end
+    self._setName:SetText(name)
   end
-  local theme = UIShopHomelandTheme[((self._data).cfg).ShopId]
-  -- DECOMPILER ERROR at PC90: Confused about usage of register: R3 in 'UnsetPending'
-
+  local theme = UIShopHomelandTheme[self._data.cfg.ShopId]
   if theme then
-    (self._showBtn).sprite = (self._atlas):GetSprite(theme.ShowBtn)
-    -- DECOMPILER ERROR at PC96: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._bigAwardTitleBg).sprite = (self._atlas):GetSprite(theme.BigAwardTitleBg)
-    -- DECOMPILER ERROR at PC102: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._gotBackground).sprite = (self._atlas):GetSprite(theme.GotBackground)
-    -- DECOMPILER ERROR at PC105: Confused about usage of register: R3 in 'UnsetPending'
-
-    ;
-    (self._lockTextCircleOutline).effectColor = theme.LockTextOutLine
+    self._showBtn.sprite = self._atlas:GetSprite(theme.ShowBtn)
+    self._bigAwardTitleBg.sprite = self._atlas:GetSprite(theme.BigAwardTitleBg)
+    self._gotBackground.sprite = self._atlas:GetSprite(theme.GotBackground)
+    self._lockTextCircleOutline.effectColor = theme.LockTextOutLine
   end
-  if (self._data).cfg then
-    do
-      if ((self._data).cfg).ShowImage then
-        local imageInfo = (((self._data).cfg).ShowImage)[1]
-        ;
-        (self._showImage):LoadImage(imageInfo.image)
-        -- DECOMPILER ERROR at PC128: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._showImageRect).sizeDelta = Vector2(imageInfo.width, imageInfo.height)
-        -- DECOMPILER ERROR at PC134: Confused about usage of register: R4 in 'UnsetPending'
-
-        ;
-        (self._showImageRect).anchoredPosition = Vector2(imageInfo.x, imageInfo.y)
-      end
-      if ((self._data).cfg).Background then
-        (self._background):LoadImage(((self._data).cfg).Background)
-      end
-      ;
-      (self._currencyMenu):SetData({RoleAssetID.RoleAssetFurnitureCoin, RoleAssetID.RoleAssetGlow})
-      self._specialGoods = self:_ClassifyGoods()
-      if (self._specialGoods)[1] then
-        (self._awardIcon):LoadImage((((self._specialGoods)[1]).cfg).Icon)
-        ;
-        (self._name):SetText((StringTable.Get)((((self._specialGoods)[1]).cfg).Name))
-        local sellOut = ((self._specialGoods)[1]):IsSellOut()
-        if sellOut then
-          (self._awardText):SetText((StringTable.Get)("str_shop_homeland_got_award"))
-        else
-          ;
-          (self._awardText):SetText((StringTable.Get)("str_shop_homeland_set_desc"))
-        end
-        ;
-        (self._awardLock):SetActive(sellOut)
-        local selledCount, totalCount = self:_GetCollectedProgress(self._normalGoods)
-        ;
-        (self._collectProgress):SetText((StringTable.Get)("str_shop_homeland_collect_progress", selledCount, totalCount))
-        ;
-        (self._redpoint):SetActive((totalCount <= selledCount and not sellOut))
-      end
-      ;
-      (self._content):SpawnObjects("UIShopHomelandGoodsItem", #self._normalGoods)
-      self._goodsWidgets = (self._content):GetAllSpawnList()
-      for key,widget in pairs(self._goodsWidgets) do
-        widget:SetData(key, (self._normalGoods)[key], MarketType.Shop_Furniture, ((self._data).cfg).ShopId)
-      end
-      local count = (math.floor)(((self._scrollRectTransform).sizeDelta).x / 430) * 2
-      -- DECOMPILER ERROR at PC267: Confused about usage of register: R4 in 'UnsetPending'
-
-      ;
-      (self._scrollRect).horizontal = count <= #self._normalGoods
-      -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  if self._data.cfg then
+    if self._data.cfg.ShowImage then
+      local imageInfo = self._data.cfg.ShowImage[1]
+      self._showImage:LoadImage(imageInfo.image)
+      self._showImageRect.sizeDelta = Vector2(imageInfo.width, imageInfo.height)
+      self._showImageRect.anchoredPosition = Vector2(imageInfo.x, imageInfo.y)
+    end
+    if self._data.cfg.Background then
+      self._background:LoadImage(self._data.cfg.Background)
     end
   end
+  self._currencyMenu:SetData({
+    RoleAssetID.RoleAssetFurnitureCoin,
+    RoleAssetID.RoleAssetGlow
+  })
+  self._specialGoods, self._normalGoods = self:_ClassifyGoods()
+  if self._specialGoods[1] then
+    self._awardIcon:LoadImage(self._specialGoods[1].cfg.Icon)
+    self._name:SetText(StringTable.Get(self._specialGoods[1].cfg.Name))
+    local sellOut = self._specialGoods[1]:IsSellOut()
+    if sellOut then
+      self._awardText:SetText(StringTable.Get("str_shop_homeland_got_award"))
+    else
+      self._awardText:SetText(StringTable.Get("str_shop_homeland_set_desc"))
+    end
+    self._awardLock:SetActive(sellOut)
+    local selledCount, totalCount = self:_GetCollectedProgress(self._normalGoods)
+    self._collectProgress:SetText(StringTable.Get("str_shop_homeland_collect_progress", selledCount, totalCount))
+    self._redpoint:SetActive(totalCount <= selledCount and not sellOut)
+  end
+  self._content:SpawnObjects("UIShopHomelandGoodsItem", #self._normalGoods)
+  self._goodsWidgets = self._content:GetAllSpawnList()
+  for key, widget in pairs(self._goodsWidgets) do
+    widget:SetData(key, self._normalGoods[key], MarketType.Shop_Furniture, self._data.cfg.ShopId)
+  end
+  local count = math.floor(self._scrollRectTransform.sizeDelta.x / 430) * 2
+  self._scrollRect.horizontal = count <= #self._normalGoods
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet._ClassifyGoods = function(self)
-  -- function num : 0_5 , upvalues : _ENV
+function UIShopHomelandSet:_ClassifyGoods()
   local specialGoods = {}
   local normalGoods = {}
-  for _,goods in pairs((self._data).goods) do
+  for _, goods in pairs(self._data.goods) do
     if goods:IsSelling() then
       if goods.isSpecial then
-        (table.insert)(specialGoods, goods)
+        table.insert(specialGoods, goods)
       else
-        ;
-        (table.insert)(normalGoods, goods)
+        table.insert(normalGoods, goods)
       end
     end
   end
   return specialGoods, normalGoods
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet._GetCollectedProgress = function(self, goods)
-  -- function num : 0_6 , upvalues : _ENV
+function UIShopHomelandSet:_GetCollectedProgress(goods)
   local totalCount = 0
   local selledCount = 0
-  for _,goods in pairs(goods) do
+  for _, goods in pairs(goods) do
     if goods:IsSelling() then
       totalCount = totalCount + goods.goodsCount
       selledCount = selledCount + goods.selledCount
@@ -214,111 +146,75 @@ UIShopHomelandSet._GetCollectedProgress = function(self, goods)
   return selledCount, totalCount
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet._UpdateGoods = function(self, goods)
-  -- function num : 0_7 , upvalues : _ENV
-  for key,value in pairs(self._normalGoods) do
-    -- DECOMPILER ERROR at PC9: Confused about usage of register: R7 in 'UnsetPending'
-
+function UIShopHomelandSet:_UpdateGoods(goods)
+  for key, value in pairs(self._normalGoods) do
     if value.goodsID == goods.goodsID then
-      (self._normalGoods)[key] = goods
+      self._normalGoods[key] = goods
       break
     end
   end
-  do
-    -- DECOMPILER ERROR at PC24: Confused about usage of register: R2 in 'UnsetPending'
-
-    if (self._specialGoods)[1] and ((self._specialGoods)[1]).goodsID == goods.goodsID then
-      (self._specialGoods)[1] = goods
-    end
+  if self._specialGoods[1] and self._specialGoods[1].goodsID == goods.goodsID then
+    self._specialGoods[1] = goods
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet._OnBuySuccess = function(self, goodsID)
-  -- function num : 0_8 , upvalues : _ENV
+function UIShopHomelandSet:_OnBuySuccess(goodsID)
   self:Lock("UIShopHomelandSet_OnBuySuccess")
   self._refreshTaskID = self:StartTask(function(TT)
-    -- function num : 0_8_0 , upvalues : self, _ENV, goodsID
-    if (self._clientShop):SendProtocal(TT, ShopMainTabType.Homeland) then
-      local goods = (self._shopData):GetGoodsByGoodsId(goodsID)
-      ;
-      (self._data):UpdateGoods(goods)
+    if self._clientShop:SendProtocal(TT, ShopMainTabType.Homeland) then
+      local goods = self._shopData:GetGoodsByGoodsId(goodsID)
+      self._data:UpdateGoods(goods)
       self:_UpdateGoods(goods)
-      ;
-      (self._data):Sort(self._normalGoods)
-      for key,widget in pairs(self._goodsWidgets) do
-        widget:SetData(key, (self._normalGoods)[key], MarketType.Shop_Furniture, ((self._data).cfg).ShopId)
+      self._data:Sort(self._normalGoods)
+      for key, widget in pairs(self._goodsWidgets) do
+        widget:SetData(key, self._normalGoods[key], MarketType.Shop_Furniture, self._data.cfg.ShopId)
       end
-      if (self._specialGoods)[1] then
-        local sellOut = ((self._specialGoods)[1]):IsSellOut()
-        ;
-        (self._awardLock):SetActive(sellOut)
+      if self._specialGoods[1] then
+        local sellOut = self._specialGoods[1]:IsSellOut()
+        self._awardLock:SetActive(sellOut)
         local selledCount, totalCount = self:_GetCollectedProgress(self._normalGoods)
-        ;
-        (self._collectProgress):SetText((StringTable.Get)("str_shop_homeland_collect_progress", selledCount, totalCount))
-        ;
-        (self._redpoint):SetActive((totalCount <= selledCount and not sellOut))
+        self._collectProgress:SetText(StringTable.Get("str_shop_homeland_collect_progress", selledCount, totalCount))
+        self._redpoint:SetActive(totalCount <= selledCount and not sellOut)
       end
     end
     self:UnLock("UIShopHomelandSet_OnBuySuccess")
-    -- DECOMPILER ERROR: 3 unprocessed JMP targets
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet.AwardIconOnClick = function(self, go)
-  -- function num : 0_9 , upvalues : _ENV
+function UIShopHomelandSet:AwardIconOnClick(go)
   local selledCount, totalCount = self:_GetCollectedProgress(self._normalGoods)
   if selledCount < totalCount then
-    (ToastManager.ShowToast)((StringTable.Get)("str_shop_homeland_set_desc"))
-    return 
+    ToastManager.ShowToast(StringTable.Get("str_shop_homeland_set_desc"))
+    return
   end
-  if ((self._specialGoods)[1]):IsSellOut() then
-    (ToastManager.ShowToast)((StringTable.Get)("str_shop_homeland_got_award"))
-    return 
+  if self._specialGoods[1]:IsSellOut() then
+    ToastManager.ShowToast(StringTable.Get("str_shop_homeland_got_award"))
+    return
   end
   self:StartTask(function(TT)
-    -- function num : 0_9_0 , upvalues : self, _ENV
     local shopModule = self:GetModule(ShopModule)
     self:Lock("UIShopHomelandSetGetAward")
-    local result = shopModule:BuyItem(TT, MarketType.Shop_Furniture, ((self._specialGoods)[1]).goodsID, 1, ((self._specialGoods)[1]):GetSaleType(), ((self._specialGoods)[1]):GetSalePrice())
+    local result = shopModule:BuyItem(TT, MarketType.Shop_Furniture, self._specialGoods[1].goodsID, 1, self._specialGoods[1]:GetSaleType(), self._specialGoods[1]:GetSalePrice())
     self:UnLock("UIShopHomelandSetGetAward")
-    if result and (ClientShop.CheckShopCode)(result) then
+    if result and ClientShop.CheckShopCode(result) then
       local roleAsset = RoleAsset:New()
-      roleAsset.assetid = ((self._specialGoods)[1]):GetItemId()
-      roleAsset.count = ((self._specialGoods)[1]):GetItemCount()
+      roleAsset.assetid = self._specialGoods[1]:GetItemId()
+      roleAsset.count = self._specialGoods[1]:GetItemCount()
       local assetList = {roleAsset}
       self:ShowDialog("UIGetItemController", assetList, function()
-      -- function num : 0_9_0_0 , upvalues : self, _ENV
-      self:_OnBuySuccess(((self._specialGoods)[1]).goodsID)
-      ;
-      (self._awardText):SetText((StringTable.Get)("str_shop_homeland_got_award"))
+        self:_OnBuySuccess(self._specialGoods[1].goodsID)
+        self._awardText:SetText(StringTable.Get("str_shop_homeland_got_award"))
+      end)
     end
-)
-    end
-  end
-, self)
+  end, self)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet.ShowBtnOnClick = function(self)
-  -- function num : 0_10
-  self:ShowDialog("UIShopHomelandPreview", ((self._data).cfg).PreviewPictures)
+function UIShopHomelandSet:ShowBtnOnClick()
+  self:ShowDialog("UIShopHomelandPreview", self._data.cfg.PreviewPictures)
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UIShopHomelandSet.OpenShop = function(self, mainTabType)
-  -- function num : 0_11 , upvalues : _ENV
+function UIShopHomelandSet:OpenShop(mainTabType)
   if mainTabType == ShopMainTabType.Recharge then
     self:CloseDialog()
   end
 end
-
-

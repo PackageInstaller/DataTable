@@ -1,213 +1,173 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/match_pet.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("MatchPet", Object)
 MatchPet = MatchPet
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-MatchPet.Constructor = function(self, data)
-  -- function num : 0_0
+function MatchPet:Constructor(data)
   if data then
     self:SetData(data)
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.SetData = function(self, data)
-  -- function num : 0_1 , upvalues : _ENV
+function MatchPet:SetData(data)
   self._data = data
   local templateID = self:GetTemplateID()
-  self._cfg_pet = (Cfg.cfg_pet)[templateID]
-  self._cfg_level = (Cfg["cfg_pet_level_" .. templateID .. "_" .. self:GetPetGrade()])({Level = self:GetPetLevel()})
+  self._cfg_pet = Cfg.cfg_pet[templateID]
+  self._cfg_level = Cfg["cfg_pet_level_" .. templateID .. "_" .. self:GetPetGrade()]({
+    Level = self:GetPetLevel()
+  })
   if self._cfg_level ~= nil then
-    self._cfg_level = (self._cfg_level)[1]
-  else
-    if self:GetPetGrade() ~= 0 and self:GetPetLevel() ~= 1 then
-      (Log.error)("[pet] SetData cfg_pet_level ", templateID, " error ", self:GetPetGrade(), self:GetPetLevel())
-    end
+    self._cfg_level = self._cfg_level[1]
+  elseif self:GetPetGrade() ~= 0 and self:GetPetLevel() ~= 1 then
+    Log.error("[pet] SetData cfg_pet_level ", templateID, " error ", self:GetPetGrade(), self:GetPetLevel())
   end
-  self._cfg_grade = (Cfg.cfg_pet_grade)({PetID = templateID, Grade = self:GetPetGrade()})
+  self._cfg_grade = Cfg.cfg_pet_grade({
+    PetID = templateID,
+    Grade = self:GetPetGrade()
+  })
   if self._cfg_grade ~= nil then
-    self._cfg_grade = (self._cfg_grade)[1]
-  else
-    if self:GetPetGrade() ~= 0 and self:GetPetLevel() ~= 1 then
-      (Log.error)("[pet] SetData cfg_pet_grade error ", templateID, self:GetPetGrade(), self:GetPetLevel())
-    end
+    self._cfg_grade = self._cfg_grade[1]
+  elseif self:GetPetGrade() ~= 0 and self:GetPetLevel() ~= 1 then
+    Log.error("[pet] SetData cfg_pet_grade error ", templateID, self:GetPetGrade(), self:GetPetLevel())
   end
-  self._cfg_awakening = (Cfg.cfg_pet_awakening)({PetID = templateID, Awakening = self:GetAwakeMatch()})
+  self._cfg_awakening = Cfg.cfg_pet_awakening({
+    PetID = templateID,
+    Awakening = self:GetAwakeMatch()
+  })
   if self._cfg_awakening ~= nil then
-    self._cfg_awakening = (self._cfg_awakening)[1]
-  else
+    self._cfg_awakening = self._cfg_awakening[1]
+  elseif self:GetPetGrade() == 0 or self:GetPetLevel() ~= 1 then
   end
-  if self:GetPetGrade() == 0 or self:GetPetLevel() ~= 1 then
-    self._cfg_affinity = (Cfg.cfg_pet_affinity)({PetID = templateID, AffinityLevel = self:GetPetAffinityLevel()})
-    if self._cfg_affinity then
-      self._cfg_affinity = (self._cfg_affinity)[1]
+  self._cfg_affinity = Cfg.cfg_pet_affinity({
+    PetID = templateID,
+    AffinityLevel = self:GetPetAffinityLevel()
+  })
+  if self._cfg_affinity then
+    self._cfg_affinity = self._cfg_affinity[1]
+  elseif 0 < self:GetPetAffinityLevel() then
+    Log.error("[pet] SetData cfg_pet_affinity error tplid:", templateID, " AffinityLevel:", self:GetPetAffinityLevel())
+  end
+  self._petAttrDict = {
+    [PetAttributeType.Attack] = {
+      str = "attack",
+      GetValFunc = self.GetPetAttack
+    },
+    [PetAttributeType.Defence] = {
+      str = "defence",
+      GetValFunc = self.GetPetDefence
+    },
+    [PetAttributeType.HP] = {
+      str = "health",
+      GetValFunc = self.GetPetHealth
+    }
+  }
+  self._petSkillDict = {
+    [PetSkillType.SkillType_Active] = {
+      str = "major_des",
+      GetIdFunc = self.GetPetActiveSkill
+    },
+    [PetSkillType.SkillType_ChainSkill] = {
+      str = "chain_des",
+      GetIdFunc = self.GetPetChainSkills
+    },
+    [PetSkillType.SkillType_Passive] = {
+      str = "equip_des",
+      GetIdFunc = self.GetPetPassiveSkill
+    }
+  }
+  self._SkillRes = ResourceHelper:GetInstance():GetPetSKill()
+  self._EquipRes = ResourceHelper:GetInstance():GetPetEquip()
+  self._EquipRefineRes = ResourceHelper:GetInstance():GetPetEquipRefine()
+  self._afterDamage = data.after_damage or 0
+  self._attack = data.attack and 0 < data.attack and data.attack or self:getAttr("Attack")
+  self._defense = data.defense and 0 < data.defense and data.defense or self:getAttr("Defence")
+  self._maxhp = data.max_hp and 0 < data.max_hp and data.max_hp or self:getAttr("Health")
+  self._maxhp = math.floor(self._maxhp)
+  self._power = data.pet_power or -1
+  self._legendPower = data.pet_legendPower or 0
+  self._alchemyPower = data.pet_alchemyPower or 0
+  self._curHp = data.cur_hp and 0 < data.cur_hp and data.cur_hp or self._maxhp
+  if self._power == -1 then
+    local activeSkillID = self:GetPetActiveSkill()
+    local cfgv = Cfg.cfg_pet_battle_skill[activeSkillID]
+    if cfgv then
+      self._power = cfgv.TriggerParam
     else
-      if self:GetPetAffinityLevel() > 0 then
-        (Log.error)("[pet] SetData cfg_pet_affinity error tplid:", templateID, " AffinityLevel:", self:GetPetAffinityLevel())
-      end
+      Log.fatal("### can not find cfg in cfg_pet_battle_skill. activeSkillID=", activeSkillID)
     end
-    self._petAttrDict = {
-[PetAttributeType.Attack] = {str = "attack", GetValFunc = self.GetPetAttack}
-, 
-[PetAttributeType.Defence] = {str = "defence", GetValFunc = self.GetPetDefence}
-, 
-[PetAttributeType.HP] = {str = "health", GetValFunc = self.GetPetHealth}
-}
-    self._petSkillDict = {
-[PetSkillType.SkillType_Active] = {str = "major_des", GetIdFunc = self.GetPetActiveSkill}
-, 
-[PetSkillType.SkillType_ChainSkill] = {str = "chain_des", GetIdFunc = self.GetPetChainSkills}
-, 
-[PetSkillType.SkillType_Passive] = {str = "equip_des", GetIdFunc = self.GetPetPassiveSkill}
-}
-    self._SkillRes = (ResourceHelper:GetInstance()):GetPetSKill()
-    self._EquipRes = (ResourceHelper:GetInstance()):GetPetEquip()
-    self._EquipRefineRes = (ResourceHelper:GetInstance()):GetPetEquipRefine()
-    self._afterDamage = data.after_damage or 0
-    if not data.attack or data.attack <= 0 or not data.attack then
-      self._attack = self:getAttr("Attack")
-      if not data.defense or data.defense <= 0 or not data.defense then
-        self._defense = self:getAttr("Defence")
-        if not data.max_hp or data.max_hp <= 0 or not data.max_hp then
-          self._maxhp = self:getAttr("Health")
-          self._maxhp = (math.floor)(self._maxhp)
-          self._power = data.pet_power or -1
-          self._legendPower = data.pet_legendPower or 0
-          self._alchemyPower = data.pet_alchemyPower or 0
-          if not data.cur_hp or data.cur_hp <= 0 or not data.cur_hp then
-            self._curHp = self._maxhp
-            if self._power == -1 then
-              local activeSkillID = self:GetPetActiveSkill()
-              local cfgv = (Cfg.cfg_pet_battle_skill)[activeSkillID]
-              if cfgv then
-                self._power = cfgv.TriggerParam
-              else
-                ;
-                (Log.fatal)("### can not find cfg in cfg_pet_battle_skill. activeSkillID=", activeSkillID)
-              end
-            end
-            do
-              local petSkillCfg = (Cfg.cfg_pet_skill)({PetID = templateID, Grade = self:GetPetGrade(), Awakening = self:GetAwakeMatch()})
-              if petSkillCfg and #petSkillCfg > 0 then
-                self._featureList = (petSkillCfg[1]).FeatureList
-              end
-            end
-          end
-        end
-      end
-    end
+  end
+  local petSkillCfg = Cfg.cfg_pet_skill({
+    PetID = templateID,
+    Grade = self:GetPetGrade(),
+    Awakening = self:GetAwakeMatch()
+  })
+  if petSkillCfg and 0 < #petSkillCfg then
+    self._featureList = petSkillCfg[1].FeatureList
   end
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.CalAttr = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function MatchPet:CalAttr()
   self._attack = self:getAttr("Attack")
   self._defense = self:getAttr("Defence")
   self._maxhp = self:getAttr("Health")
-  self._maxhp = (math.floor)(self._maxhp)
+  self._maxhp = math.floor(self._maxhp)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.RepeatGetTimes = function(self)
-  -- function num : 0_3
-  return (self._data).repet_get_times
+function MatchPet:RepeatGetTimes()
+  return self._data.repet_get_times
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsLike = function(self)
-  -- function num : 0_4
-  return (self._data).b_pet_like
+function MatchPet:IsLike()
+  return self._data.b_pet_like
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetTeamSlot = function(self)
-  -- function num : 0_5
-  return (self._data).team_slot
+function MatchPet:GetTeamSlot()
+  return self._data.team_slot
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPstID = function(self)
-  -- function num : 0_6
-  return (self._data).pet_pstid
+function MatchPet:GetPstID()
+  return self._data.pet_pstid
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetTemplateID = function(self)
-  -- function num : 0_7
-  return (self._data).template_id
+function MatchPet:GetTemplateID()
+  return self._data.template_id
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipRefineLv = function(self)
-  -- function num : 0_8
-  return (self._data).equip_refine_lv
+function MatchPet:GetEquipRefineLv()
+  return self._data.equip_refine_lv
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipRefineMaxLv = function(self)
-  -- function num : 0_9 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_equip_refine)({PetID = self:GetTemplateID()})
+function MatchPet:GetEquipRefineMaxLv()
+  local cfgs = Cfg.cfg_pet_equip_refine({
+    PetID = self:GetTemplateID()
+  })
   if cfgs then
-    return (table.count)(cfgs)
+    return table.count(cfgs)
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetName = function(self)
-  -- function num : 0_10
-  return (self._cfg_pet).Name
+function MatchPet:GetPetName()
+  return self._cfg_pet.Name
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetEnglishName = function(self)
-  -- function num : 0_11
-  return (self._cfg_pet).EnglishName
+function MatchPet:GetPetEnglishName()
+  return self._cfg_pet.EnglishName
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetNickName = function(self)
-  -- function num : 0_12
-  return (self._cfg_pet).NickName
+function MatchPet:GetPetNickName()
+  return self._cfg_pet.NickName
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetTags = function(self)
-  -- function num : 0_13
-  return (self._cfg_pet).Tags
+function MatchPet:GetPetTags()
+  return self._cfg_pet.Tags
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetBinderPetID = function(self)
-  -- function num : 0_14
-  return (self._cfg_pet).BinderPetID
+function MatchPet:GetBinderPetID()
+  return self._cfg_pet.BinderPetID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsMyTag = function(self, nTag)
-  -- function num : 0_15 , upvalues : _ENV
+function MatchPet:IsMyTag(nTag)
   local l_tags = self:GetPetTags()
-  for key,value in ipairs(l_tags) do
+  for key, value in ipairs(l_tags) do
     if value == nTag then
       return true
     end
@@ -215,137 +175,88 @@ MatchPet.IsMyTag = function(self, nTag)
   return false
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsLegendPet = function(self)
-  -- function num : 0_16
-  do return (self._cfg_pet).LegendPet == 1 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MatchPet:IsLegendPet()
+  return self._cfg_pet.LegendPet == 1
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetLevel = function(self)
-  -- function num : 0_17
-  return (self._data).level
+function MatchPet:GetPetLevel()
+  return self._data.level
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetExp = function(self)
-  -- function num : 0_18
-  return (self._data).exp
+function MatchPet:GetPetExp()
+  return self._data.exp
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetGrade = function(self)
-  -- function num : 0_19
-  return (self._data).grade
+function MatchPet:GetPetGrade()
+  return self._data.grade
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAwakening = function(self)
-  -- function num : 0_20
-  return (self._data).awakening
+function MatchPet:GetPetAwakening()
+  return self._data.awakening
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetAwakeLock = function(self)
-  -- function num : 0_21
-  return (self._data).awake_lock
+function MatchPet:GetAwakeLock()
+  return self._data.awake_lock
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetAwakeMatch = function(self)
-  -- function num : 0_22
+function MatchPet:GetAwakeMatch()
   return self:GetPetAwakening()
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAffinityLevel = function(self)
-  -- function num : 0_23
-  return (self._data).affinity_level
+function MatchPet:GetPetAffinityLevel()
+  return self._data.affinity_level
 end
 
--- DECOMPILER ERROR at PC80: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAffinityMaxLevel = function(self)
-  -- function num : 0_24 , upvalues : _ENV
-  local affinityCfg = (Cfg.cfg_pet_affinity_exp)({})
+function MatchPet:GetPetAffinityMaxLevel()
+  local affinityCfg = Cfg.cfg_pet_affinity_exp({})
   if affinityCfg == nil then
     return 0
   end
   return #affinityCfg
 end
 
--- DECOMPILER ERROR at PC83: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAffinityExp = function(self)
-  -- function num : 0_25 , upvalues : _ENV
-  return (math.floor)((self._data).affinity_exp)
+function MatchPet:GetPetAffinityExp()
+  return math.floor(self._data.affinity_exp)
 end
 
--- DECOMPILER ERROR at PC86: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAffinityMaxExp = function(self, level)
-  -- function num : 0_26 , upvalues : _ENV
+function MatchPet:GetPetAffinityMaxExp(level)
   if level == self:GetPetAffinityMaxLevel() then
-    return ((Cfg.cfg_pet_affinity_exp)[level]).NeedAffintyExp - ((Cfg.cfg_pet_affinity_exp)[level - 1]).NeedAffintyExp
+    return Cfg.cfg_pet_affinity_exp[level].NeedAffintyExp - Cfg.cfg_pet_affinity_exp[level - 1].NeedAffintyExp
   end
-  local exp = ((Cfg.cfg_pet_affinity_exp)[level + 1]).NeedAffintyExp - ((Cfg.cfg_pet_affinity_exp)[level]).NeedAffintyExp
+  local exp = Cfg.cfg_pet_affinity_exp[level + 1].NeedAffintyExp - Cfg.cfg_pet_affinity_exp[level].NeedAffintyExp
   return exp
 end
 
--- DECOMPILER ERROR at PC89: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAffinityLevelUpPercent = function(self)
-  -- function num : 0_27 , upvalues : _ENV
+function MatchPet:GetPetAffinityLevelUpPercent()
   local curLevel = self:GetPetAffinityLevel()
   local maxLevel = self:GetPetAffinityMaxLevel()
   if curLevel == maxLevel then
     return 1
   end
   local deltaExp = self:GetPetAffinityMaxExp(curLevel)
-  local curExp = self:GetPetAffinityExp() - ((Cfg.cfg_pet_affinity_exp)[curLevel]).NeedAffintyExp
+  local curExp = self:GetPetAffinityExp() - Cfg.cfg_pet_affinity_exp[curLevel].NeedAffintyExp
   return curExp / deltaExp
 end
 
--- DECOMPILER ERROR at PC92: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetTriggeredStoryId = function(self)
-  -- function num : 0_28
-  return (self._data).triggered_story_id
+function MatchPet:GetTriggeredStoryId()
+  return self._data.triggered_story_id
 end
 
--- DECOMPILER ERROR at PC95: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsTriggeredStory = function(self)
-  -- function num : 0_29 , upvalues : _ENV
-  local airModule = (GameGlobal.GetModule)(AircraftModule)
+function MatchPet:IsTriggeredStory()
+  local airModule = GameGlobal.GetModule(AircraftModule)
   local stories = airModule:GetPetStroyEventId(self:GetPstID())
-  if stories and (table.count)(stories) > 0 then
+  if stories and table.count(stories) > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC98: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetTriggeredTaskId = function(self)
-  -- function num : 0_30
-  return (self._data).triggered_task_id
+function MatchPet:GetTriggeredTaskId()
+  return self._data.triggered_task_id
 end
 
--- DECOMPILER ERROR at PC101: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsFinishedStory = function(self, nStoryEventId)
-  -- function num : 0_31 , upvalues : _ENV
-  for index,value in ipairs((self._data).story_finish_record) do
+function MatchPet:IsFinishedStory(nStoryEventId)
+  for index, value in ipairs(self._data.story_finish_record) do
     if value == nStoryEventId then
       return true
     end
@@ -353,430 +264,289 @@ MatchPet.IsFinishedStory = function(self, nStoryEventId)
   return false
 end
 
--- DECOMPILER ERROR at PC104: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetFinishedStoryCount = function(self)
-  -- function num : 0_32 , upvalues : _ENV
-  return (table.count)((self._data).story_finish_record)
+function MatchPet:GetFinishedStoryCount()
+  return table.count(self._data.story_finish_record)
 end
 
--- DECOMPILER ERROR at PC107: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetStar = function(self)
-  -- function num : 0_33
-  return (self._cfg_pet).Star
+function MatchPet:GetPetStar()
+  return self._cfg_pet.Star
 end
 
--- DECOMPILER ERROR at PC110: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetProf = function(self)
-  -- function num : 0_34
-  return (self._cfg_pet).Prof
+function MatchPet:GetProf()
+  return self._cfg_pet.Prof
 end
 
--- DECOMPILER ERROR at PC113: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetJob = function(self)
-  -- function num : 0_35
+function MatchPet:GetJob()
   return self:GetProf()
 end
 
--- DECOMPILER ERROR at PC116: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetFirstElement = function(self)
-  -- function num : 0_36
-  return (self._cfg_pet).FirstElement
+function MatchPet:GetPetFirstElement()
+  return self._cfg_pet.FirstElement
 end
 
--- DECOMPILER ERROR at PC119: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetSecondElement = function(self)
-  -- function num : 0_37
-  if (self._cfg_pet).Element2NeedGrade <= self:GetPetGrade() and (self._cfg_pet).SecondElement > 0 then
-    return (self._cfg_pet).SecondElement
+function MatchPet:GetPetSecondElement()
+  if self:GetPetGrade() >= self._cfg_pet.Element2NeedGrade and self._cfg_pet.SecondElement > 0 then
+    return self._cfg_pet.SecondElement
   end
 end
 
--- DECOMPILER ERROR at PC122: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetHPOffset = function(self)
-  -- function num : 0_38 , upvalues : _ENV
+function MatchPet:GetHPOffset()
   local realSkinId = 0
-  if (MatchPet.IsEffectByPetSkin)(PetSkinEffectPath.MODEL_INGAME) and (self._data).current_skin and (self._data).current_skin > 1 then
-    realSkinId = (self._data).current_skin
+  if MatchPet.IsEffectByPetSkin(PetSkinEffectPath.MODEL_INGAME) and self._data.current_skin and self._data.current_skin > 1 then
+    realSkinId = self._data.current_skin
   end
-  do
-    if realSkinId == 0 then
-      local petCfg = self._cfg_pet
-      if not petCfg then
-        (Log.fatal)("###[GetHPOffset] pet cfg is nil ! id --> ", tid, "| grade --> ", grade)
-        return 0.15
-      end
-      realSkinId = petCfg.SkinId
+  if realSkinId == 0 then
+    local petCfg = self._cfg_pet
+    if not petCfg then
+      Log.fatal("###[GetHPOffset] pet cfg is nil ! id --> ", tid, "| grade --> ", grade)
+      return 0.15
     end
-    local cfg = (Cfg.cfg_pet_skin)[realSkinId]
-    if not cfg then
-      (Log.fatal)("###[GetHPOffset] skin cfg is nil ! id --> ", tid, "| grade --> ", grade)
-      return nil
-    end
-    return cfg.HeightOffset
+    realSkinId = petCfg.SkinId
   end
+  local cfg = Cfg.cfg_pet_skin[realSkinId]
+  if not cfg then
+    Log.fatal("###[GetHPOffset] skin cfg is nil ! id --> ", tid, "| grade --> ", grade)
+    return nil
+  end
+  return cfg.HeightOffset
 end
 
--- DECOMPILER ERROR at PC125: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetStoryTipsOffset = function(self)
-  -- function num : 0_39
-  return (self._cfg_pet).TipsHeightOffSet
+function MatchPet:GetStoryTipsOffset()
+  return self._cfg_pet.TipsHeightOffSet
 end
 
--- DECOMPILER ERROR at PC128: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetElements = function(self)
-  -- function num : 0_40
-  return {self:GetPetFirstElement(), self:GetPetSecondElement()}
+function MatchPet:GetPetElements()
+  return {
+    self:GetPetFirstElement(),
+    self:GetPetSecondElement()
+  }
 end
 
--- DECOMPILER ERROR at PC131: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetChinaTag = function(self)
-  -- function num : 0_41
-  return (self._cfg_pet).ChinaTag
+function MatchPet:GetPetChinaTag()
+  return self._cfg_pet.ChinaTag
 end
 
--- DECOMPILER ERROR at PC134: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetHead = function(self, path)
-  -- function num : 0_42 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetHead(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetHead(path)
+  return HelperProxy:GetInstance():GetPetHead(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC137: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetVideo = function(self, path)
-  -- function num : 0_43 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetVideo(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetVideo(path)
+  return HelperProxy:GetInstance():GetPetVideo(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC140: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetItemIcon = function(self, path)
-  -- function num : 0_44 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetItemIcon(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetItemIcon(path)
+  return HelperProxy:GetInstance():GetPetItemIcon(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC143: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetSkinId = function(self)
-  -- function num : 0_45
-  if (self._data).current_skin and (self._data).current_skin > 1 then
-    return (self._data).current_skin
+function MatchPet:GetSkinId()
+  if self._data.current_skin and self._data.current_skin > 1 then
+    return self._data.current_skin
   end
   local skinId = 1
   if self:GetPetGrade() == 0 then
-    skinId = (self._cfg_pet).SkinId
+    skinId = self._cfg_pet.SkinId
   else
-    skinId = (self._cfg_grade).SkinId
+    skinId = self._cfg_grade.SkinId
   end
   return skinId or 1
 end
 
--- DECOMPILER ERROR at PC146: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetBody = function(self, path)
-  -- function num : 0_46 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetBody(path)
+  return HelperProxy:GetInstance():GetPetBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC149: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetBattleMes = function(self, path)
-  -- function num : 0_47 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetBattleMes(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetBattleMes(path)
+  return HelperProxy:GetInstance():GetPetBattleMes(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC152: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetHeadChain = function(self, path)
-  -- function num : 0_48 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetHeadChain(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetHeadChain(path)
+  return HelperProxy:GetInstance():GetPetHeadChain(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC155: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetTeamBody = function(self, path)
-  -- function num : 0_49 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetTeamBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetTeamBody(path)
+  return HelperProxy:GetInstance():GetPetTeamBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC158: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetNextGradeBodyName = function(self)
-  -- function num : 0_50 , upvalues : _ENV
+function MatchPet:GetPetNextGradeBodyName()
   local data = {BodyName = "", StaticBody = ""}
   local next_grade = self:GetPetGrade() + 1
-  if self:GetMaxGrade() < next_grade then
+  if next_grade > self:GetMaxGrade() then
     return data
   else
-    local _cfg_grade_next = (Cfg.cfg_pet_grade)({PetID = self:GetTemplateID(), Grade = next_grade})
-    data.BodyName = (_cfg_grade_next[1]).BodyName
-    data.StaticBody = (HelperProxy:GetInstance()):GetPetStaticBody(self:GetTemplateID(), next_grade, 0, PetSkinEffectPath.NO_EFFECT)
+    local _cfg_grade_next = Cfg.cfg_pet_grade({
+      PetID = self:GetTemplateID(),
+      Grade = next_grade
+    })
+    data.BodyName = _cfg_grade_next[1].BodyName
+    data.StaticBody = HelperProxy:GetInstance():GetPetStaticBody(self:GetTemplateID(), next_grade, 0, PetSkinEffectPath.NO_EFFECT)
   end
-  do
-    return data
-  end
+  return data
 end
 
--- DECOMPILER ERROR at PC161: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetStaticBody = function(self, path)
-  -- function num : 0_51 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetStaticBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetStaticBody(path)
+  return HelperProxy:GetInstance():GetPetStaticBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC164: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetBattleResultCG = function(self, path)
-  -- function num : 0_52 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetSimpleCg(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetBattleResultCG(path)
+  return HelperProxy:GetInstance():GetPetSimpleCg(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC167: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAircraftBody = function(self, path)
-  -- function num : 0_53 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetAircraftBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetAircraftBody(path)
+  return HelperProxy:GetInstance():GetPetAircraftBody(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC170: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetSpine = function(self, path)
-  -- function num : 0_54 , upvalues : _ENV
-  return (HelperProxy:GetInstance()):GetPetSpine(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetSpine(path)
+  return HelperProxy:GetInstance():GetPetSpine(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
 end
 
--- DECOMPILER ERROR at PC173: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetLogo = function(self)
-  -- function num : 0_55
-  return (self._cfg_pet).Logo
+function MatchPet:GetPetLogo()
+  return self._cfg_pet.Logo
 end
 
--- DECOMPILER ERROR at PC176: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetDes = function(self)
-  -- function num : 0_56
+function MatchPet:GetPetDes()
   if self:GetPetGrade() == 0 then
     return ""
   else
-    return (self._cfg_grade).Des
+    return self._cfg_grade.Des
   end
 end
 
--- DECOMPILER ERROR at PC179: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsEffectByPetSkin = function(path)
-  -- function num : 0_57 , upvalues : _ENV
+function MatchPet.IsEffectByPetSkin(path)
   if not path then
     return true
   end
-  local cfg = (Cfg.cfg_pet_skin_effect_filter)[path]
+  local cfg = Cfg.cfg_pet_skin_effect_filter[path]
   if cfg then
     return cfg.Effected
   end
   return true
 end
 
--- DECOMPILER ERROR at PC182: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetSkinCfg = function(tid, grade, skinId, path)
-  -- function num : 0_58 , upvalues : _ENV
+function MatchPet.GetPetSkinCfg(tid, grade, skinId, path)
   local realSkinId = 0
-  if (MatchPet.IsEffectByPetSkin)(path) and skinId and skinId > 1 then
+  if MatchPet.IsEffectByPetSkin(path) and skinId and 1 < skinId then
     realSkinId = skinId
   end
   if realSkinId == 0 then
     if grade == 0 then
-      local petCfg = (Cfg.cfg_pet)[tid]
+      local petCfg = Cfg.cfg_pet[tid]
       if not petCfg then
-        (Log.fatal)("###[GetPetSkinCfg] pet cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+        Log.fatal("###[GetPetSkinCfg] pet cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
         return nil
       end
       realSkinId = petCfg.SkinId
     else
-      do
-        do
-          local gradeCfg = ((Cfg.cfg_pet_grade)({PetID = tid, Grade = grade}))[1]
-          if not gradeCfg then
-            (Log.fatal)("###[GetPetSkinCfg] grade cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
-            return nil
-          end
-          realSkinId = gradeCfg.SkinId
-          local cfg = (Cfg.cfg_pet_skin)[realSkinId]
-          if not cfg then
-            (Log.fatal)("###[GetPetSkinCfg] skin cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
-            return nil
-          end
-          return cfg
-        end
+      local gradeCfg = Cfg.cfg_pet_grade({PetID = tid, Grade = grade})[1]
+      if not gradeCfg then
+        Log.fatal("###[GetPetSkinCfg] grade cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+        return nil
       end
+      realSkinId = gradeCfg.SkinId
     end
   end
+  local cfg = Cfg.cfg_pet_skin[realSkinId]
+  if not cfg then
+    Log.fatal("###[GetPetSkinCfg] skin cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    return nil
+  end
+  return cfg
 end
 
--- DECOMPILER ERROR at PC185: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetPrefab = function(self, path)
-  -- function num : 0_59 , upvalues : _ENV
-  local cfg = (MatchPet.GetPetSkinCfg)(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
+function MatchPet:GetPetPrefab(path)
+  local cfg = MatchPet.GetPetSkinCfg(self:GetTemplateID(), self:GetPetGrade(), self:GetSkinId(), path)
   if not cfg then
-    (Log.fatal)("###[GetPetPrefab] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
+    Log.fatal("###[GetPetPrefab] cfg is nil ! id --> ", tid, "| grade --> ", grade, "| skinId --> ", skinId, "| path --> ", path)
     return nil
   end
   return cfg.Prefab
 end
 
--- DECOMPILER ERROR at PC188: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetShaderEffect = function(self)
-  -- function num : 0_60
-  return (self._cfg_pet).ShaderEffect
+function MatchPet:GetPetShaderEffect()
+  return self._cfg_pet.ShaderEffect
 end
 
--- DECOMPILER ERROR at PC191: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetNormalSkill = function(self)
-  -- function num : 0_61
+function MatchPet:GetNormalSkill()
   local petid = self:GetTemplateID()
   local grade = self:GetPetGrade()
   local awakening = self:GetAwakeMatch()
-  return (self._SkillRes):GetNormalSKill(petid, grade, awakening)
+  return self._SkillRes:GetNormalSKill(petid, grade, awakening)
 end
 
--- DECOMPILER ERROR at PC194: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetActiveSkill = function(self, grade, awakening)
-  -- function num : 0_62
+function MatchPet:GetPetActiveSkill(grade, awakening)
   local petid = self:GetTemplateID()
-  if not grade then
-    local realGrade = self:GetPetGrade()
-  end
-  if not awakening then
-    local realAwakening = self:GetAwakeMatch()
-  end
-  return (self._SkillRes):GetActiveSkill(petid, realGrade, realAwakening)
+  local realGrade = grade or self:GetPetGrade()
+  local realAwakening = awakening or self:GetAwakeMatch()
+  return self._SkillRes:GetActiveSkill(petid, realGrade, realAwakening)
 end
 
--- DECOMPILER ERROR at PC197: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetExtraActiveSkill = function(self, grade, awakening)
-  -- function num : 0_63
+function MatchPet:GetPetExtraActiveSkill(grade, awakening)
   local equipRefineActiveSkillList = self:GetEquipRefineExtraActiveSkill()
   if equipRefineActiveSkillList then
     return equipRefineActiveSkillList
   end
   local petid = self:GetTemplateID()
-  if not grade then
-    local _grade = self:GetPetGrade()
-  end
-  if not awakening then
-    local _awakening = self:GetAwakeMatch()
-  end
-  return (self._SkillRes):GetExtraActiveSkill(petid, _grade, _awakening)
+  local _grade = grade or self:GetPetGrade()
+  local _awakening = awakening or self:GetAwakeMatch()
+  return self._SkillRes:GetExtraActiveSkill(petid, _grade, _awakening)
 end
 
--- DECOMPILER ERROR at PC200: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetVariantActiveSkill = function(self, grade, awakening)
-  -- function num : 0_64
+function MatchPet:GetPetVariantActiveSkill(grade, awakening)
   local equipRefineActiveSkillInfo = self:GetEquipRefineVariantActiveSkillInfo()
   if equipRefineActiveSkillInfo then
     return equipRefineActiveSkillInfo
   end
   local petid = self:GetTemplateID()
-  if not grade then
-    local tmpGrade = self:GetPetGrade()
-  end
-  if not awakening then
-    local tmpAwakening = self:GetAwakeMatch()
-  end
-  return (self._SkillRes):GetVariantActiveSkill(petid, tmpGrade, tmpAwakening)
+  local tmpGrade = grade or self:GetPetGrade()
+  local tmpAwakening = awakening or self:GetAwakeMatch()
+  return self._SkillRes:GetVariantActiveSkill(petid, tmpGrade, tmpAwakening)
 end
 
--- DECOMPILER ERROR at PC203: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetPassiveSkill = function(self, grade, awakening)
-  -- function num : 0_65
+function MatchPet:GetPetPassiveSkill(grade, awakening)
   local petid = self:GetTemplateID()
-  if not grade then
-    local _grade = self:GetPetGrade()
-  end
-  if not awakening then
-    local _awakening = self:GetAwakeMatch()
-  end
-  return (self._SkillRes):GetPassiveSkill(petid, _grade, _awakening)
+  local _grade = grade or self:GetPetGrade()
+  local _awakening = awakening or self:GetAwakeMatch()
+  return self._SkillRes:GetPassiveSkill(petid, _grade, _awakening)
 end
 
--- DECOMPILER ERROR at PC206: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetChainSkills = function(self, grade, awakening)
-  -- function num : 0_66 , upvalues : _ENV
+function MatchPet:GetPetChainSkills(grade, awakening)
   local petid = self:GetTemplateID()
-  if not grade then
-    local _grade = self:GetPetGrade()
-  end
-  if not awakening then
-    local _awakening = self:GetAwakeMatch()
-  end
-  local result = (self._SkillRes):GetChainSkill(petid, _grade, _awakening)
+  local _grade = grade or self:GetPetGrade()
+  local _awakening = awakening or self:GetAwakeMatch()
+  local result = self._SkillRes:GetChainSkill(petid, _grade, _awakening)
   local equipRefineLv = self:GetEquipRefineLv()
-  local cfg = (self._EquipRefineRes):GetRes(petid, equipRefineLv)
+  local cfg = self._EquipRefineRes:GetRes(petid, equipRefineLv)
   if cfg ~= nil and cfg.ExtraChainSkill ~= nil then
-    (table.insert)(result, (cfg.ExtraChainSkill)[1])
+    table.insert(result, cfg.ExtraChainSkill[1])
   end
   return result
 end
 
--- DECOMPILER ERROR at PC209: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetIntensifyBuffList = function(self, grade, awakening)
-  -- function num : 0_67
+function MatchPet:GetPetIntensifyBuffList(grade, awakening)
   local petid = self:GetTemplateID()
-  if not grade then
-    local _grade = self:GetPetGrade()
-  end
-  if not awakening then
-    local _awakening = self:GetAwakeMatch()
-  end
-  return (self._SkillRes):GetIntensifyBuffList(petid, _grade, _awakening)
+  local _grade = grade or self:GetPetGrade()
+  local _awakening = awakening or self:GetAwakeMatch()
+  return self._SkillRes:GetIntensifyBuffList(petid, _grade, _awakening)
 end
 
--- DECOMPILER ERROR at PC212: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetChainSkillInfo = function(self, grade, awakening)
-  -- function num : 0_68 , upvalues : _ENV
+function MatchPet:GetChainSkillInfo(grade, awakening)
   local skills = self:GetPetChainSkills(grade, awakening)
   local ret = {}
-  for i,v in ipairs(skills) do
-    if v > 0 then
-      ret[i] = {Skill = v, Chain = (BattleSkillCfg(v)).TriggerParam}
+  for i, v in ipairs(skills) do
+    if 0 < v then
+      ret[i] = {
+        Skill = v,
+        Chain = BattleSkillCfg(v).TriggerParam
+      }
     end
   end
   return ret
 end
 
--- DECOMPILER ERROR at PC215: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetWorkSkills = function(self, grade, awakening)
-  -- function num : 0_69
+function MatchPet:GetPetWorkSkills(grade, awakening)
   local petid = self:GetTemplateID()
-  if not grade then
-    local _grade = self:GetPetGrade()
-  end
-  if not awakening then
-    local _awakening = self:GetPetAwakening()
-  end
-  local ss = (self._SkillRes):GetWorkSkill(petid, _grade, _awakening)
+  local _grade = grade or self:GetPetGrade()
+  local _awakening = awakening or self:GetPetAwakening()
+  local ss = self._SkillRes:GetWorkSkill(petid, _grade, _awakening)
   if not ss then
     return nil
   end
@@ -790,183 +560,124 @@ MatchPet.GetPetWorkSkills = function(self, grade, awakening)
   return works
 end
 
--- DECOMPILER ERROR at PC218: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetDefaultSkills = function(self, petId)
-  -- function num : 0_70
-  local skillinfo = (self._SkillRes):GetSKill(petId, 0, 0)
+function MatchPet:GetDefaultSkills(petId)
+  local skillinfo = self._SkillRes:GetSKill(petId, 0, 0)
   if skillinfo == nil then
     return nil
   end
   return skillinfo.ActiveSkill, skillinfo.ChainSkill1, skillinfo.PassiveSkill
 end
 
--- DECOMPILER ERROR at PC221: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.SkillRelated = function(self, room_type)
-  -- function num : 0_71 , upvalues : _ENV
+function MatchPet:SkillRelated(room_type)
   local skills = self:GetPetWorkSkills()
-  for _,skill in ipairs(skills) do
-    local cfg = (Cfg.cfg_work_skill)({ID = skill})
-    if cfg and room_type == (cfg[1]).RoomType then
+  for _, skill in ipairs(skills) do
+    local cfg = Cfg.cfg_work_skill({ID = skill})
+    if cfg and room_type == cfg[1].RoomType then
       return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC224: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.getAttr = function(self, attr)
-  -- function num : 0_72 , upvalues : _ENV
-  local value = self._cfg_level and (self._cfg_level)[attr] or 0
-  if self:GetPetGrade() > 0 then
-    value = value + (self._cfg_grade)[attr]
+function MatchPet:getAttr(attr)
+  local value = self._cfg_level and self._cfg_level[attr] or 0
+  if 0 < self:GetPetGrade() then
+    value = value + self._cfg_grade[attr]
   end
-  do
-    if self:GetPetAwakening() > 0 then
-      local attrName = attr .. "Percent"
-      value = (math.floor)(value + (self._cfg_awakening)[attr] + (self._cfg_awakening)[attrName] * (self._cfg_level)[attr] / 100)
-    end
-    if self:GetPetAffinityLevel() and self:GetPetAffinityLevel() > 0 then
-      value = value + (self._cfg_affinity)[attr]
-    end
-    local el = self:GetEquipCfg()
-    if el ~= nil then
-      value = value + el[attr]
-    end
-    local equipRefine = self:GetEquipRefineCfg()
-    if equipRefine ~= nil then
-      value = value + equipRefine[attr]
-    end
-    return value
+  if 0 < self:GetPetAwakening() then
+    local attrName = attr .. "Percent"
+    value = math.floor(value + self._cfg_awakening[attr] + self._cfg_awakening[attrName] * self._cfg_level[attr] / 100)
   end
-end
-
--- DECOMPILER ERROR at PC227: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAffinityAttrAdded = function(self, attr)
-  -- function num : 0_73
-  local value = 0
-  if self:GetPetAffinityLevel() and self:GetPetAffinityLevel() > 0 then
-    value = value + (self._cfg_affinity)[attr]
+  if self:GetPetAffinityLevel() and 0 < self:GetPetAffinityLevel() then
+    value = value + self._cfg_affinity[attr]
+  end
+  local el = self:GetEquipCfg()
+  if el ~= nil then
+    value = value + el[attr]
+  end
+  local equipRefine = self:GetEquipRefineCfg()
+  if equipRefine ~= nil then
+    value = value + equipRefine[attr]
   end
   return value
 end
 
--- DECOMPILER ERROR at PC230: Confused about usage of register: R0 in 'UnsetPending'
+function MatchPet:GetPetAffinityAttrAdded(attr)
+  local value = 0
+  if self:GetPetAffinityLevel() and 0 < self:GetPetAffinityLevel() then
+    value = value + self._cfg_affinity[attr]
+  end
+  return value
+end
 
-MatchPet.GetPetAttack = function(self)
-  -- function num : 0_74
+function MatchPet:GetPetAttack()
   return self._attack
 end
 
--- DECOMPILER ERROR at PC233: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetDefence = function(self)
-  -- function num : 0_75
+function MatchPet:GetPetDefence()
   return self._defense
 end
 
--- DECOMPILER ERROR at PC236: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetHealth = function(self)
-  -- function num : 0_76
+function MatchPet:GetPetHealth()
   return self._maxhp
 end
 
--- DECOMPILER ERROR at PC239: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetCurHealth = function(self)
-  -- function num : 0_77
+function MatchPet:GetPetCurHealth()
   return self._curHp
 end
 
--- DECOMPILER ERROR at PC242: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetPower = function(self)
-  -- function num : 0_78
+function MatchPet:GetPetPower()
   return self._power
 end
 
--- DECOMPILER ERROR at PC245: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetLegendPower = function(self)
-  -- function num : 0_79
+function MatchPet:GetPetLegendPower()
   return self._legendPower
 end
 
--- DECOMPILER ERROR at PC248: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAlchemyPower = function(self)
-  -- function num : 0_80
+function MatchPet:GetPetAlchemyPower()
   return self._alchemyPower
 end
 
--- DECOMPILER ERROR at PC251: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetCrit = function(self)
-  -- function num : 0_81
+function MatchPet:GetPetCrit()
   return self:getAttr("Crit")
 end
 
--- DECOMPILER ERROR at PC254: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetCritHurt = function(self)
-  -- function num : 0_82
+function MatchPet:GetPetCritHurt()
   return self:getAttr("CritHurt")
 end
 
--- DECOMPILER ERROR at PC257: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetDoge = function(self)
-  -- function num : 0_83
+function MatchPet:GetPetDoge()
   return self:getAttr("Doge")
 end
 
--- DECOMPILER ERROR at PC260: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetHit = function(self)
-  -- function num : 0_84
+function MatchPet:GetPetHit()
   return self:getAttr("Hit")
 end
 
--- DECOMPILER ERROR at PC263: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetGradeAttr = function(self, attr)
-  -- function num : 0_85
+function MatchPet:GetPetGradeAttr(attr)
   if self:GetPetGrade() > 0 then
-    return (self._cfg_grade)[attr]
+    return self._cfg_grade[attr]
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC266: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAwakeningAttr = function(self, attr)
-  -- function num : 0_86
+function MatchPet:GetPetAwakeningAttr(attr)
   if self:GetPetAwakening() > 0 then
-    return (self._cfg_awakening)[attr]
+    return self._cfg_awakening[attr]
   end
 end
 
--- DECOMPILER ERROR at PC269: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetAffinityAttr = function(self, attr)
-  -- function num : 0_87
+function MatchPet:GetPetAffinityAttr(attr)
   if self:GetPetAffinityLevel() > 0 then
-    return (self._cfg_affinity)[attr]
+    return self._cfg_affinity[attr]
   end
   return 0
 end
 
--- DECOMPILER ERROR at PC272: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetMaxLevel = function(self)
-  -- function num : 0_88 , upvalues : _ENV
-  local cfgs = (Cfg["cfg_pet_level_" .. self:GetTemplateID() .. "_" .. self:GetPetGrade()])()
+function MatchPet:GetMaxLevel()
+  local cfgs = Cfg["cfg_pet_level_" .. self:GetTemplateID() .. "_" .. self:GetPetGrade()]()
   local max = 1
-  for _,c in pairs(cfgs) do
+  for _, c in pairs(cfgs) do
     if max < c.Level then
       max = c.Level
     end
@@ -974,13 +685,12 @@ MatchPet.GetMaxLevel = function(self)
   return max
 end
 
--- DECOMPILER ERROR at PC275: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetMaxGrade = function(self)
-  -- function num : 0_89 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_grade)({PetID = self:GetTemplateID()})
+function MatchPet:GetMaxGrade()
+  local cfgs = Cfg.cfg_pet_grade({
+    PetID = self:GetTemplateID()
+  })
   local max = 0
-  for _,c in ipairs(cfgs) do
+  for _, c in ipairs(cfgs) do
     if max < c.Grade then
       max = c.Grade
     end
@@ -988,80 +698,61 @@ MatchPet.GetMaxGrade = function(self)
   return max
 end
 
--- DECOMPILER ERROR at PC278: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetMaxAwakening = function(self)
-  -- function num : 0_90 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_awakening)({PetID = self:GetTemplateID()})
+function MatchPet:GetMaxAwakening()
+  local cfgs = Cfg.cfg_pet_awakening({
+    PetID = self:GetTemplateID()
+  })
   local max = 0
   if cfgs ~= nil then
-    for _,c in ipairs(cfgs) do
+    for _, c in ipairs(cfgs) do
       if max < c.Awakening then
         max = c.Awakening
       end
     end
   end
-  do
-    return max
-  end
+  return max
 end
 
--- DECOMPILER ERROR at PC281: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetLevelUpNeedExp = function(self)
-  -- function num : 0_91 , upvalues : _ENV
-  if self:GetMaxLevel() <= self:GetPetLevel() then
-    (Log.error)("pet is max level")
+function MatchPet:GetLevelUpNeedExp()
+  if self:GetPetLevel() >= self:GetMaxLevel() then
+    Log.error("pet is max level")
     return nil
   end
   local cfg = self:GetLevelConfig(self:GetPetLevel() + 1)
   return cfg.NeedExp
 end
 
--- DECOMPILER ERROR at PC284: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetAffinityLevelUpNeedExp = function(self)
-  -- function num : 0_92 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet_affinity_exp)[(self._data).affinity_level]
+function MatchPet:GetAffinityLevelUpNeedExp()
+  local cfg = Cfg.cfg_pet_affinity_exp[self._data.affinity_level]
   if cfg ~= nil then
     return cfg.NeedAffintyExp
   end
 end
 
--- DECOMPILER ERROR at PC287: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetLevelConfig = function(self, level)
-  -- function num : 0_93 , upvalues : _ENV
-  local cfg = (Cfg["cfg_pet_level_" .. self:GetTemplateID() .. "_" .. self:GetPetGrade()])({Level = level})
+function MatchPet:GetLevelConfig(level)
+  local cfg = Cfg["cfg_pet_level_" .. self:GetTemplateID() .. "_" .. self:GetPetGrade()]({Level = level})
   if cfg ~= nil then
     return cfg[1]
   end
 end
 
--- DECOMPILER ERROR at PC290: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetCurrentLevelConfig = function(self)
-  -- function num : 0_94
+function MatchPet:GetCurrentLevelConfig()
   return self._cfg_level
 end
 
--- DECOMPILER ERROR at PC293: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetAwakeningConfig = function(self)
-  -- function num : 0_95 , upvalues : _ENV
-  local cfgs = (Cfg.cfg_pet_awakening)({PetID = self:GetTemplateID()})
+function MatchPet:GetAwakeningConfig()
+  local cfgs = Cfg.cfg_pet_awakening({
+    PetID = self:GetTemplateID()
+  })
   for i = #cfgs, 1, -1 do
-    if (cfgs[i]).Awakening <= 0 then
-      (table.remove)(cfgs, i)
+    if cfgs[i].Awakening <= 0 then
+      table.remove(cfgs, i)
     end
   end
   return cfgs
 end
 
--- DECOMPILER ERROR at PC296: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetSortValue = function(self, sort_type)
-  -- function num : 0_96 , upvalues : _ENV
+function MatchPet:GetSortValue(sort_type)
   if sort_type == PetSortType.Attack then
     return self:GetPetAttack()
   end
@@ -1085,20 +776,25 @@ MatchPet.GetSortValue = function(self, sort_type)
   end
 end
 
-PetSkillChangeState = {NoChange = 0, Improved = 1, NewGain = 2}
--- DECOMPILER ERROR at PC304: Confused about usage of register: R0 in 'UnsetPending'
+PetSkillChangeState = {
+  NoChange = 0,
+  Improved = 1,
+  NewGain = 2
+}
 
-MatchPet.GetChainSkillsByAwakening = function(self, awakening)
-  -- function num : 0_97 , upvalues : _ENV
+function MatchPet:GetChainSkillsByAwakening(awakening)
   local skills = {}
   local cfg = {}
-  if self:GetMaxAwakening() < awakening then
+  if awakening > self:GetMaxAwakening() then
     return nil
   end
   if awakening == 0 then
-    cfg = (Cfg.cfg_pet)[(self._data).template_id]
+    cfg = Cfg.cfg_pet[self._data.template_id]
   else
-    cfg = (Cfg.cfg_pet_awakening)({PetID = self:GetTemplateID(), Awakening = awakening})
+    cfg = Cfg.cfg_pet_awakening({
+      PetID = self:GetTemplateID(),
+      Awakening = awakening
+    })
     if not cfg then
       return nil
     end
@@ -1108,15 +804,15 @@ MatchPet.GetChainSkillsByAwakening = function(self, awakening)
   return skills
 end
 
--- DECOMPILER ERROR at PC307: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetSkillsByGrade = function(self, grade)
-  -- function num : 0_98 , upvalues : _ENV
+function MatchPet:GetSkillsByGrade(grade)
   local cfg = {}
   if grade == 0 then
-    cfg = (Cfg.cfg_pet)[(self._data).template_id]
+    cfg = Cfg.cfg_pet[self._data.template_id]
   else
-    cfg = (Cfg.cfg_pet_grade)({PetID = self:GetTemplateID(), Grade = grade})
+    cfg = Cfg.cfg_pet_grade({
+      PetID = self:GetTemplateID(),
+      Grade = grade
+    })
     if not cfg then
       return nil
     end
@@ -1127,363 +823,178 @@ MatchPet.GetSkillsByGrade = function(self, grade)
   if extra_skill_list then
     extra_skill_single = extra_skill_list[1]
   end
-  local data = {active_skill = self:GetPetActiveSkill(grade), extra_skill = extra_skill_single, chain_skills = self:GetPetChainSkills(grade), work_skills = self:GetPetWorkSkills(grade), passive_skills = self:GetPetPassiveSkill(grade), body = (HelperProxy:GetInstance()):GetPetStaticBody(self:GetTemplateID(), grade, 0, PetSkinEffectPath.NO_EFFECT)}
+  local data = {
+    active_skill = self:GetPetActiveSkill(grade),
+    extra_skill = extra_skill_single,
+    chain_skills = self:GetPetChainSkills(grade),
+    work_skills = self:GetPetWorkSkills(grade),
+    passive_skills = self:GetPetPassiveSkill(grade),
+    body = HelperProxy:GetInstance():GetPetStaticBody(self:GetTemplateID(), grade, 0, PetSkinEffectPath.NO_EFFECT)
+  }
   return data
 end
 
--- DECOMPILER ERROR at PC310: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetUpgradeChangeWithSkillID = function(self)
-  -- function num : 0_99 , upvalues : _ENV
+function MatchPet:GetUpgradeChangeWithSkillID()
   local grade = self:GetPetGrade()
-  if self:GetMaxGrade() <= grade then
+  if grade >= self:GetMaxGrade() then
     return nil
   end
   local next_grade_skills = self:GetSkillsByGrade(grade + 1)
   local cur_grade_skills = self:GetSkillsByGrade(grade)
   local change_data = {
-active_skill_status = {}
-, 
-extra_skill_status = {}
-, 
-chain_skills_status = {}
-, 
-work_skills_status = {}
-, 
-passive_skills_status = {}
-, 
-body_status = {}
-}
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R5 in 'UnsetPending'
-
+    active_skill_status = {},
+    extra_skill_status = {},
+    chain_skills_status = {},
+    work_skills_status = {},
+    passive_skills_status = {},
+    body_status = {}
+  }
   if cur_grade_skills.active_skill ~= next_grade_skills.active_skill then
-    (change_data.active_skill_status).state = PetSkillChangeState.Improved
-    -- DECOMPILER ERROR at PC37: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.active_skill_status).from = cur_grade_skills.active_skill
-    -- DECOMPILER ERROR at PC40: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.active_skill_status).to = next_grade_skills.active_skill
+    change_data.active_skill_status.state = PetSkillChangeState.Improved
+    change_data.active_skill_status.from = cur_grade_skills.active_skill
+    change_data.active_skill_status.to = next_grade_skills.active_skill
   else
-    -- DECOMPILER ERROR at PC45: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.active_skill_status).state = PetSkillChangeState.NoChange
-    -- DECOMPILER ERROR at PC48: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.active_skill_status).from = cur_grade_skills.active_skill
-    -- DECOMPILER ERROR at PC51: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.active_skill_status).to = next_grade_skills.active_skill
+    change_data.active_skill_status.state = PetSkillChangeState.NoChange
+    change_data.active_skill_status.from = cur_grade_skills.active_skill
+    change_data.active_skill_status.to = next_grade_skills.active_skill
   end
-  -- DECOMPILER ERROR at PC62: Confused about usage of register: R5 in 'UnsetPending'
-
   if cur_grade_skills.extra_skill ~= next_grade_skills.extra_skill then
     if cur_grade_skills.extra_skill == 0 then
-      (change_data.extra_skill_status).state = PetSkillChangeState.NewGain
-      -- DECOMPILER ERROR at PC65: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.extra_skill_status).from = cur_grade_skills.extra_skill
-      -- DECOMPILER ERROR at PC68: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.extra_skill_status).to = next_grade_skills.extra_skill
+      change_data.extra_skill_status.state = PetSkillChangeState.NewGain
+      change_data.extra_skill_status.from = cur_grade_skills.extra_skill
+      change_data.extra_skill_status.to = next_grade_skills.extra_skill
     else
-      -- DECOMPILER ERROR at PC73: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.extra_skill_status).state = PetSkillChangeState.Improved
-      -- DECOMPILER ERROR at PC76: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.extra_skill_status).from = cur_grade_skills.extra_skill
-      -- DECOMPILER ERROR at PC79: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.extra_skill_status).to = next_grade_skills.extra_skill
+      change_data.extra_skill_status.state = PetSkillChangeState.Improved
+      change_data.extra_skill_status.from = cur_grade_skills.extra_skill
+      change_data.extra_skill_status.to = next_grade_skills.extra_skill
     end
   else
-    -- DECOMPILER ERROR at PC84: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.extra_skill_status).state = PetSkillChangeState.NoChange
-    -- DECOMPILER ERROR at PC87: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.extra_skill_status).from = cur_grade_skills.extra_skill
-    -- DECOMPILER ERROR at PC90: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.extra_skill_status).to = next_grade_skills.extra_skill
+    change_data.extra_skill_status.state = PetSkillChangeState.NoChange
+    change_data.extra_skill_status.from = cur_grade_skills.extra_skill
+    change_data.extra_skill_status.to = next_grade_skills.extra_skill
   end
-  -- DECOMPILER ERROR at PC98: Confused about usage of register: R5 in 'UnsetPending'
-
   if cur_grade_skills.body ~= next_grade_skills.body then
-    (change_data.body_status).state = PetSkillChangeState.NewGain
-    -- DECOMPILER ERROR at PC101: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.body_status).from = cur_grade_skills.body
-    -- DECOMPILER ERROR at PC104: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.body_status).to = next_grade_skills.body
+    change_data.body_status.state = PetSkillChangeState.NewGain
+    change_data.body_status.from = cur_grade_skills.body
+    change_data.body_status.to = next_grade_skills.body
   else
-    -- DECOMPILER ERROR at PC109: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.body_status).state = PetSkillChangeState.NoChange
-    -- DECOMPILER ERROR at PC112: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.body_status).from = cur_grade_skills.body
-    -- DECOMPILER ERROR at PC115: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.body_status).to = next_grade_skills.body
+    change_data.body_status.state = PetSkillChangeState.NoChange
+    change_data.body_status.from = cur_grade_skills.body
+    change_data.body_status.to = next_grade_skills.body
   end
   for i = 1, #cur_grade_skills.chain_skills do
-    local chain_skill = (cur_grade_skills.chain_skills)[i]
-    local next_skill = (next_grade_skills.chain_skills)[i]
-    -- DECOMPILER ERROR at PC135: Confused about usage of register: R11 in 'UnsetPending'
-
-    if chain_skill ~= nil or next_skill ~= nil then
-      do
-        if chain_skill ~= next_skill then
-          if chain_skill == nil then
-            (change_data.chain_skills_status)[i] = {}
-            -- DECOMPILER ERROR at PC140: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.chain_skills_status)[i]).state = PetSkillChangeState.NewGain
-            -- DECOMPILER ERROR at PC143: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.chain_skills_status)[i]).from = chain_skill
-            -- DECOMPILER ERROR at PC146: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.chain_skills_status)[i]).to = next_skill
-          else
-            -- DECOMPILER ERROR at PC150: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (change_data.chain_skills_status)[i] = {}
-            -- DECOMPILER ERROR at PC155: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.chain_skills_status)[i]).state = PetSkillChangeState.Improved
-            -- DECOMPILER ERROR at PC158: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.chain_skills_status)[i]).from = chain_skill
-            -- DECOMPILER ERROR at PC161: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.chain_skills_status)[i]).to = next_skill
-          end
-        else
-          -- DECOMPILER ERROR at PC165: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (change_data.chain_skills_status)[i] = {}
-          -- DECOMPILER ERROR at PC170: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          ((change_data.chain_skills_status)[i]).state = PetSkillChangeState.NoChange
-          -- DECOMPILER ERROR at PC173: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          ((change_data.chain_skills_status)[i]).from = chain_skill
-          -- DECOMPILER ERROR at PC176: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          ((change_data.chain_skills_status)[i]).to = next_skill
-        end
-        -- DECOMPILER ERROR at PC177: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC177: LeaveBlock: unexpected jumping out IF_STMT
-
+    local chain_skill = cur_grade_skills.chain_skills[i]
+    local next_skill = next_grade_skills.chain_skills[i]
+    if chain_skill == nil and next_skill == nil then
+      break
+    end
+    if chain_skill ~= next_skill then
+      if chain_skill == nil then
+        change_data.chain_skills_status[i] = {}
+        change_data.chain_skills_status[i].state = PetSkillChangeState.NewGain
+        change_data.chain_skills_status[i].from = chain_skill
+        change_data.chain_skills_status[i].to = next_skill
+      else
+        change_data.chain_skills_status[i] = {}
+        change_data.chain_skills_status[i].state = PetSkillChangeState.Improved
+        change_data.chain_skills_status[i].from = chain_skill
+        change_data.chain_skills_status[i].to = next_skill
       end
+    else
+      change_data.chain_skills_status[i] = {}
+      change_data.chain_skills_status[i].state = PetSkillChangeState.NoChange
+      change_data.chain_skills_status[i].from = chain_skill
+      change_data.chain_skills_status[i].to = next_skill
     end
   end
   for i = 1, 3 do
-    local workskill = (cur_grade_skills.work_skills)[i]
-    local next_skill = (next_grade_skills.work_skills)[i]
-    -- DECOMPILER ERROR at PC196: Confused about usage of register: R11 in 'UnsetPending'
-
-    if workskill or next_skill then
-      do
-        if workskill ~= next_skill then
-          if workskill == nil then
-            (change_data.work_skills_status)[i] = {}
-            -- DECOMPILER ERROR at PC201: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.work_skills_status)[i]).state = PetSkillChangeState.NewGain
-            -- DECOMPILER ERROR at PC204: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.work_skills_status)[i]).from = workskill
-            -- DECOMPILER ERROR at PC207: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.work_skills_status)[i]).to = next_skill
-          else
-            -- DECOMPILER ERROR at PC211: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            (change_data.work_skills_status)[i] = {}
-            -- DECOMPILER ERROR at PC216: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.work_skills_status)[i]).state = PetSkillChangeState.Improved
-            -- DECOMPILER ERROR at PC219: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.work_skills_status)[i]).from = workskill
-            -- DECOMPILER ERROR at PC222: Confused about usage of register: R11 in 'UnsetPending'
-
-            ;
-            ((change_data.work_skills_status)[i]).to = next_skill
-          end
-        else
-          -- DECOMPILER ERROR at PC226: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          (change_data.work_skills_status)[i] = {}
-          -- DECOMPILER ERROR at PC231: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          ((change_data.work_skills_status)[i]).state = PetSkillChangeState.NoChange
-          -- DECOMPILER ERROR at PC234: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          ((change_data.work_skills_status)[i]).from = workskill
-          -- DECOMPILER ERROR at PC237: Confused about usage of register: R11 in 'UnsetPending'
-
-          ;
-          ((change_data.work_skills_status)[i]).to = next_skill
-        end
-        -- DECOMPILER ERROR at PC238: LeaveBlock: unexpected jumping out IF_THEN_STMT
-
-        -- DECOMPILER ERROR at PC238: LeaveBlock: unexpected jumping out IF_STMT
-
+    local workskill = cur_grade_skills.work_skills[i]
+    local next_skill = next_grade_skills.work_skills[i]
+    if not (workskill or next_skill) then
+      break
+    end
+    if workskill ~= next_skill then
+      if workskill == nil then
+        change_data.work_skills_status[i] = {}
+        change_data.work_skills_status[i].state = PetSkillChangeState.NewGain
+        change_data.work_skills_status[i].from = workskill
+        change_data.work_skills_status[i].to = next_skill
+      else
+        change_data.work_skills_status[i] = {}
+        change_data.work_skills_status[i].state = PetSkillChangeState.Improved
+        change_data.work_skills_status[i].from = workskill
+        change_data.work_skills_status[i].to = next_skill
       end
+    else
+      change_data.work_skills_status[i] = {}
+      change_data.work_skills_status[i].state = PetSkillChangeState.NoChange
+      change_data.work_skills_status[i].from = workskill
+      change_data.work_skills_status[i].to = next_skill
     end
   end
-  -- DECOMPILER ERROR at PC249: Confused about usage of register: R5 in 'UnsetPending'
-
   if cur_grade_skills.passive_skills ~= next_grade_skills.passive_skills then
     if cur_grade_skills.passive_skills == 0 then
-      (change_data.passive_skills_status).state = PetSkillChangeState.NewGain
-      -- DECOMPILER ERROR at PC252: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.passive_skills_status).from = cur_grade_skills.passive_skills
-      -- DECOMPILER ERROR at PC255: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.passive_skills_status).to = next_grade_skills.passive_skills
+      change_data.passive_skills_status.state = PetSkillChangeState.NewGain
+      change_data.passive_skills_status.from = cur_grade_skills.passive_skills
+      change_data.passive_skills_status.to = next_grade_skills.passive_skills
     else
-      -- DECOMPILER ERROR at PC260: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.passive_skills_status).state = PetSkillChangeState.Improved
-      -- DECOMPILER ERROR at PC263: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.passive_skills_status).from = cur_grade_skills.passive_skills
-      -- DECOMPILER ERROR at PC266: Confused about usage of register: R5 in 'UnsetPending'
-
-      ;
-      (change_data.passive_skills_status).to = next_grade_skills.passive_skills
+      change_data.passive_skills_status.state = PetSkillChangeState.Improved
+      change_data.passive_skills_status.from = cur_grade_skills.passive_skills
+      change_data.passive_skills_status.to = next_grade_skills.passive_skills
     end
   else
-    -- DECOMPILER ERROR at PC271: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.passive_skills_status).state = PetSkillChangeState.NoChange
-    -- DECOMPILER ERROR at PC274: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.passive_skills_status).from = cur_grade_skills.passive_skills
-    -- DECOMPILER ERROR at PC277: Confused about usage of register: R5 in 'UnsetPending'
-
-    ;
-    (change_data.passive_skills_status).to = next_grade_skills.passive_skills
+    change_data.passive_skills_status.state = PetSkillChangeState.NoChange
+    change_data.passive_skills_status.from = cur_grade_skills.passive_skills
+    change_data.passive_skills_status.to = next_grade_skills.passive_skills
   end
   return change_data
 end
 
--- DECOMPILER ERROR at PC313: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetAttrStr = function(self, attrType)
-  -- function num : 0_100
-  return ((self._petAttrDict)[attrType]).str or ""
+function MatchPet:GetAttrStr(attrType)
+  return self._petAttrDict[attrType].str or ""
 end
 
--- DECOMPILER ERROR at PC316: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetAttrFunc = function(self, attrType)
-  -- function num : 0_101
-  return ((self._petAttrDict)[attrType]).GetValFunc or nil
+function MatchPet:GetAttrFunc(attrType)
+  return self._petAttrDict[attrType].GetValFunc or nil
 end
 
--- DECOMPILER ERROR at PC319: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetSkillByType = function(self, skillType)
-  -- function num : 0_102
-  return (self._petSkillDict)[skillType] or nil
+function MatchPet:GetSkillByType(skillType)
+  return self._petSkillDict[skillType] or nil
 end
 
--- DECOMPILER ERROR at PC322: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetWorkSkillAffinity = function(self, room_type, skill_type)
-  -- function num : 0_103 , upvalues : _ENV
+function MatchPet:GetWorkSkillAffinity(room_type, skill_type)
   local vv = 0
   local skills = self:GetPetWorkSkills()
-  for _,skill_id in ipairs(skills) do
-    local cfg = (Cfg.cfg_work_skill)[skill_id]
-    if cfg and cfg.RoomType == room_type and (cfg.WorkEffect)[1] == skill_type then
-      vv = vv + (cfg.WorkEffect)[2]
+  for _, skill_id in ipairs(skills) do
+    local cfg = Cfg.cfg_work_skill[skill_id]
+    if cfg and cfg.RoomType == room_type and cfg.WorkEffect[1] == skill_type then
+      vv = vv + cfg.WorkEffect[2]
     end
   end
   return vv
 end
 
--- DECOMPILER ERROR at PC325: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetWorkSkillEffectVV = function(self, work_type, room_type)
-  -- function num : 0_104 , upvalues : _ENV
+function MatchPet:GetWorkSkillEffectVV(work_type, room_type)
   local av = 0
   local mv = 0
   local skills = self:GetPetWorkSkills()
   if skills == nil then
     return av, mv
   end
-  for _,skill_id in ipairs(skills) do
-    local cfg = (Cfg.cfg_work_skill)[skill_id]
-    if cfg and cfg.RoomType == room_type and (cfg.WorkEffect)[1] == work_type then
-      av = av + (cfg.WorkEffect)[2]
-      mv = mv + (cfg.WorkEffect)[3]
+  for _, skill_id in ipairs(skills) do
+    local cfg = Cfg.cfg_work_skill[skill_id]
+    if cfg and cfg.RoomType == room_type and cfg.WorkEffect[1] == work_type then
+      av = av + cfg.WorkEffect[2]
+      mv = mv + cfg.WorkEffect[3]
     end
   end
   return av, mv
 end
 
--- DECOMPILER ERROR at PC328: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsEffectiveSkill = function(self, room_type)
-  -- function num : 0_105 , upvalues : _ENV
+function MatchPet:IsEffectiveSkill(room_type)
   local skills = self:GetPetWorkSkills()
-  for _,skill_id in ipairs(skills) do
-    local cfg = (Cfg.cfg_work_skill)[skill_id]
+  for _, skill_id in ipairs(skills) do
+    local cfg = Cfg.cfg_work_skill[skill_id]
     if cfg and cfg.RoomType == room_type then
       return true
     end
@@ -1491,30 +1002,19 @@ MatchPet.IsEffectiveSkill = function(self, room_type)
   return false
 end
 
--- DECOMPILER ERROR at PC331: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.HaveType = function(self, choose_types)
-  -- function num : 0_106 , upvalues : _ENV
+function MatchPet:HaveType(choose_types)
   local ret = false
-  for key,value in pairs(choose_types) do
+  for key, value in pairs(choose_types) do
     if value == AircraftEnterChooseType.MasterCtrl then
       ret = self:IsEffectiveSkill(AirRoomType.CentralRoom)
-    else
-      if value == AircraftEnterChooseType.Power then
-        ret = self:IsEffectiveSkill(AirRoomType.PowerRoom)
-      else
-        if value == AircraftEnterChooseType.Replay then
-          ret = self:IsEffectiveSkill(AirRoomType.MazeRoom)
-        else
-          if value == AircraftEnterChooseType.Catch then
-            ret = self:IsEffectiveSkill(AirRoomType.EvilRoom)
-          else
-            if value == AircraftEnterChooseType.Puri then
-              ret = self:IsEffectiveSkill(AirRoomType.PurifyRoom)
-            end
-          end
-        end
-      end
+    elseif value == AircraftEnterChooseType.Power then
+      ret = self:IsEffectiveSkill(AirRoomType.PowerRoom)
+    elseif value == AircraftEnterChooseType.Replay then
+      ret = self:IsEffectiveSkill(AirRoomType.MazeRoom)
+    elseif value == AircraftEnterChooseType.Catch then
+      ret = self:IsEffectiveSkill(AirRoomType.EvilRoom)
+    elseif value == AircraftEnterChooseType.Puri then
+      ret = self:IsEffectiveSkill(AirRoomType.PurifyRoom)
     end
     if ret then
       return ret
@@ -1523,10 +1023,7 @@ MatchPet.HaveType = function(self, choose_types)
   return ret
 end
 
--- DECOMPILER ERROR at PC334: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.PetGradeNewSkill = function(self)
-  -- function num : 0_107
+function MatchPet:PetGradeNewSkill()
   local petid = self:GetTemplateID()
   local grade = self:GetMaxGrade()
   local awakening = self:GetAwakeMatch()
@@ -1535,7 +1032,7 @@ MatchPet.PetGradeNewSkill = function(self)
   local work_skill_3 = 0
   local res = {}
   for i = 0, grade do
-    local wks = (self._SkillRes):GetSKill(petid, i, awakening)
+    local wks = self._SkillRes:GetSKill(petid, i, awakening)
     if wks.WorkSkill1 and wks.WorkSkill1 ~= 0 and work_skill_l == 0 and self:CheckWorkSkillOpen(wks.WorkSkill1) then
       work_skill_l = wks.WorkSkill1
       res[#res + 1] = {Grade = i, NewSkill = work_skill_l}
@@ -1548,154 +1045,106 @@ MatchPet.PetGradeNewSkill = function(self)
       work_skill_3 = wks.WorkSkill3
       res[#res + 1] = {Grade = i, NewSkill = work_skill_3}
     end
-  end
-  do
-    if #res < 3 then
-      return res
+    if 3 <= #res then
+      break
     end
   end
+  return res
 end
 
--- DECOMPILER ERROR at PC337: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.CheckWorkSkillOpen = function(self, skillID)
-  -- function num : 0_108 , upvalues : _ENV
-  local cfg_work_skill = (Cfg.cfg_work_skill)[skillID]
+function MatchPet:CheckWorkSkillOpen(skillID)
+  local cfg_work_skill = Cfg.cfg_work_skill[skillID]
   if not cfg_work_skill then
-    (Log.error)("###[MatchPet] cfg_work_skill is nil ! id --> ", skillID)
+    Log.error("###[MatchPet] cfg_work_skill is nil ! id --> ", skillID)
   end
   local roomType = cfg_work_skill.RoomType
-  local airModule = (GameGlobal.GetModule)(AircraftModule)
+  local airModule = GameGlobal.GetModule(AircraftModule)
   if roomType == AirRoomType.TacticRoom and not airModule:GetSwitchOpenState(16) then
     return false
   end
   return true
 end
 
--- DECOMPILER ERROR at PC340: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetCamp = function(self)
-  -- function num : 0_109 , upvalues : _ENV
-  local cfgPetTagList = (self._cfg_pet).Tags
+function MatchPet:GetPetCamp()
+  local cfgPetTagList = self._cfg_pet.Tags
   local tcfgPetTags = Cfg.cfg_pet_tags
   for i = 1, #cfgPetTagList do
     local tagID = cfgPetTagList[i]
-    if (tcfgPetTags[tagID]).tagType == PetTagType.Camp then
+    if tcfgPetTags[tagID].tagType == PetTagType.Camp then
       return tagID
     end
   end
-  ;
-  (Log.error)("Pet camp tag not found: petTemplateID=", (self._cfg_pet).ID)
+  Log.error("Pet camp tag not found: petTemplateID=", self._cfg_pet.ID)
   return nil
 end
 
--- DECOMPILER ERROR at PC343: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.HasPreEmptiveAttack = function(self)
-  -- function num : 0_110 , upvalues : _ENV
+function MatchPet:HasPreEmptiveAttack()
   local petid = self:GetTemplateID()
   local grade = self:GetPetGrade()
   local awakening = self:GetAwakeMatch()
-  local list = (self._SkillRes):GetIntensifyBuffList(petid, grade, awakening)
+  local list = self._SkillRes:GetIntensifyBuffList(petid, grade, awakening)
   if list then
-    local i = (table.ikey)(list, BattleConst.PreAttackBuffId)
-    if i <= 0 then
-      do
-        do return not i end
-        do return false end
-        do return false end
-        -- DECOMPILER ERROR: 4 unprocessed JMP targets
-      end
+    local i = table.ikey(list, BattleConst.PreAttackBuffId)
+    if i then
+      return 0 < i
+    else
+      return false
     end
+  else
+    return false
   end
 end
 
--- DECOMPILER ERROR at PC346: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetTaskInfoVec = function(self)
-  -- function num : 0_111
-  return (self._data).task_info
+function MatchPet:GetTaskInfoVec()
+  return self._data.task_info
 end
 
--- DECOMPILER ERROR at PC349: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetFirstTaskInfo = function(self)
-  -- function num : 0_112
-  local len = #(self._data).task_info
+function MatchPet:GetFirstTaskInfo()
+  local len = #self._data.task_info
   if len <= 0 then
     return nil
   end
-  return ((self._data).task_info)[1]
+  return self._data.task_info[1]
 end
 
--- DECOMPILER ERROR at PC352: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetAfterDamage = function(self)
-  -- function num : 0_113
+function MatchPet:GetAfterDamage()
   return self._afterDamage
 end
 
--- DECOMPILER ERROR at PC355: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsWrok = function(self)
-  -- function num : 0_114 , upvalues : _ENV
-  local ss = (self._data).mask_state & PetMaskState.PMS_Dispatch
-  do return ss <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MatchPet:IsWrok()
+  local ss = self._data.mask_state & PetMaskState.PMS_Dispatch
+  return ss <= 0
 end
 
--- DECOMPILER ERROR at PC358: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsDispatch = function(self)
-  -- function num : 0_115
+function MatchPet:IsDispatch()
   return true
 end
 
--- DECOMPILER ERROR at PC361: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsPetMaskState = function(self, maskState)
-  -- function num : 0_116
-  local ss = (self._data).mask_state & maskState
-  do return ss <= 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MatchPet:IsPetMaskState(maskState)
+  local ss = self._data.mask_state & maskState
+  return ss <= 0
 end
 
--- DECOMPILER ERROR at PC364: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipLv = function(self)
-  -- function num : 0_117
-  return (self._data).equip_lv
+function MatchPet:GetEquipLv()
+  return self._data.equip_lv
 end
 
--- DECOMPILER ERROR at PC367: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetHelpPetKey = function(self)
-  -- function num : 0_118
-  return (self._data).m_nHelpPetKey
+function MatchPet:GetHelpPetKey()
+  return self._data.m_nHelpPetKey
 end
 
--- DECOMPILER ERROR at PC370: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsHelpPet = function(self)
-  -- function num : 0_119
-  do return self:GetHelpPetKey() > 0 end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MatchPet:IsHelpPet()
+  return self:GetHelpPetKey() > 0
 end
 
--- DECOMPILER ERROR at PC373: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.OpenEquip = function(self)
-  -- function num : 0_120
-  if (self._data).equip_lv > 0 then
+function MatchPet:OpenEquip()
+  if self._data.equip_lv > 0 then
     return true
   end
   return false
 end
 
--- DECOMPILER ERROR at PC376: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipCfg = function(self, level)
-  -- function num : 0_121
+function MatchPet:GetEquipCfg(level)
   if level == nil then
     level = self:GetEquipLv()
     if level == nil then
@@ -1706,54 +1155,47 @@ MatchPet.GetEquipCfg = function(self, level)
     return nil
   end
   local cfgid = self:GetTemplateID()
-  return (self._EquipRes):GetRes(cfgid, level)
+  return self._EquipRes:GetRes(cfgid, level)
 end
 
--- DECOMPILER ERROR at PC379: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipRefineStatus = function(self)
-  -- function num : 0_122 , upvalues : _ENV
-  local lv = (self._data).equip_refine_lv
-  if lv > 0 then
+function MatchPet:GetEquipRefineStatus()
+  local lv = self._data.equip_refine_lv
+  if 0 < lv then
     return PetEquipRefineStatus.UNLOCK
   end
-  local cfgs = (Cfg.cfg_pet_equip_refine)({PetID = self:GetTemplateID(), Level = 1})
+  local cfgs = Cfg.cfg_pet_equip_refine({
+    PetID = self:GetTemplateID(),
+    Level = 1
+  })
   if not cfgs or #cfgs == 0 then
     return PetEquipRefineStatus.NO_OPEN
   end
   local cfg = cfgs[1]
   local strCondition = cfg.OpenCondition
-  local conditions = (StrToArray2:GetInstance()):GetArray(strCondition, "&", ",", nil, true)
+  local conditions = StrToArray2:GetInstance():GetArray(strCondition, "&", ",", nil, true)
   local isOpen = true
-  for k,v in pairs(conditions) do
-    if not (ConditionCheck:GetInstance()):Check(v) then
+  for k, v in pairs(conditions) do
+    if not ConditionCheck:GetInstance():Check(v) then
       isOpen = false
       break
     end
   end
-  do
-    if isOpen then
-      return PetEquipRefineStatus.UNLOCK
-    end
-    return PetEquipRefineStatus.OPEN_LOCK
+  if isOpen then
+    return PetEquipRefineStatus.UNLOCK
   end
+  return PetEquipRefineStatus.OPEN_LOCK
 end
 
--- DECOMPILER ERROR at PC382: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipIntensifyParams = function(self)
-  -- function num : 0_123
+function MatchPet:GetEquipIntensifyParams()
   local res = self:GetEquipCfg()
   if res then
     return res.elementParam
+  else
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC385: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPropertyRestraint = function(self)
-  -- function num : 0_124
+function MatchPet:GetPropertyRestraint()
   local res = self:GetEquipCfg()
   if res then
     return res.PropertyRestraint
@@ -1761,13 +1203,10 @@ MatchPet.GetPropertyRestraint = function(self)
   return 0
 end
 
--- DECOMPILER ERROR at PC388: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.getAttWithoutBreak = function(self, attr)
-  -- function num : 0_125
-  local value = self._cfg_level and (self._cfg_level)[attr] or 0
-  if self:GetPetGrade() > 0 then
-    value = value + (self._cfg_grade)[attr]
+function MatchPet:getAttWithoutBreak(attr)
+  local value = self._cfg_level and self._cfg_level[attr] or 0
+  if 0 < self:GetPetGrade() then
+    value = value + self._cfg_grade[attr]
   end
   local el = self:GetEquipCfg()
   if el ~= nil then
@@ -1780,129 +1219,104 @@ MatchPet.getAttWithoutBreak = function(self, attr)
   return value
 end
 
--- DECOMPILER ERROR at PC391: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.NoBreak_Attack = function(self)
-  -- function num : 0_126
+function MatchPet:NoBreak_Attack()
   return self:getAttWithoutBreak("Attack")
 end
 
--- DECOMPILER ERROR at PC394: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.NoBreak_Defence = function(self)
-  -- function num : 0_127
+function MatchPet:NoBreak_Defence()
   return self:getAttWithoutBreak("Defence")
 end
 
--- DECOMPILER ERROR at PC397: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.NoBreak_Health = function(self)
-  -- function num : 0_128
+function MatchPet:NoBreak_Health()
   return self:getAttWithoutBreak("Health")
 end
 
--- DECOMPILER ERROR at PC400: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsBreakFull = function(self)
-  -- function num : 0_129
-  do return self:GetPetStar() <= self:GetPetAwakening() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+function MatchPet:IsBreakFull()
+  return self:GetPetAwakening() >= self:GetPetStar()
 end
 
--- DECOMPILER ERROR at PC403: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.CanPetBreak = function(self)
-  -- function num : 0_130 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
+function MatchPet:CanPetBreak()
+  local itemModule = GameGlobal.GetModule(ItemModule)
   local stage = self:GetPetAwakening()
   local matCfg = self:GetAwakeningConfig()
   local maxStage = self:GetMaxAwakening()
   self._isHightLevelPet = false
   self._firstBreak = 0
-  if maxStage <= stage or #matCfg <= 3 then
+  if stage >= maxStage or #matCfg <= 3 then
     return false, 0
   end
-  local curMat = (matCfg[stage + 1]).NeedItem
+  local curMat = matCfg[stage + 1].NeedItem
   local mats = {}
   for i = 1, #curMat do
     local value = curMat[i]
-    local content = (string.split)(value, ",")
+    local content = string.split(value, ",")
     local mat = {}
     mat.id = tonumber(content[1])
     mat.count = tonumber(content[2])
     mats[#mats + 1] = mat
   end
-  if mats[2] and (mats[2]).id == 3801001 then
+  if mats[2] and mats[2].id == 3801001 then
     return false, 0
   end
   if self:GetPetStar() >= 5 then
     self._isHightLevelPet = true
     for i = 1, #matCfg do
-      local value = (matCfg[i]).NeedItem
+      local value = matCfg[i].NeedItem
       if #value == 2 then
         self._firstBreak = i
         break
       end
     end
   end
-  do
-    local addItemFun = function(tab, item)
-    -- function num : 0_130_0 , upvalues : _ENV
+  
+  local function addItemFun(tab, item)
     if not tab then
-      return 
+      return
     end
-    for index,value in ipairs(tab) do
+    for index, value in ipairs(tab) do
       if value.id == item.id then
         value.count = value.count + item.count
-        return 
+        return
       end
     end
     local newItem = {}
     newItem.id = item.id
     newItem.count = item.count
-    ;
-    (table.insert)(tab, newItem)
+    table.insert(tab, newItem)
   end
-
-    self._totleUseItems = {}
-    if stage < self._firstBreak and self._isHightLevelPet then
-      for i = stage + 1, self._firstBreak do
-        local needItem = (matCfg[i]).NeedItem
-        for i = 1, #needItem do
-          local value = needItem[i]
-          local content = (string.split)(value, ",")
-          local item = {}
-          item.id = tonumber(content[1])
-          item.count = tonumber(content[2])
-          addItemFun(self._totleUseItems, item)
-        end
+  
+  self._totleUseItems = {}
+  if stage < self._firstBreak and self._isHightLevelPet then
+    for i = stage + 1, self._firstBreak do
+      local needItem = matCfg[i].NeedItem
+      for i = 1, #needItem do
+        local value = needItem[i]
+        local content = string.split(value, ",")
+        local item = {}
+        item.id = tonumber(content[1])
+        item.count = tonumber(content[2])
+        addItemFun(self._totleUseItems, item)
       end
     end
-    do
-      if stage < self._firstBreak and self._isHightLevelPet then
-        local needNum1 = itemModule:GetItemCount(((self._totleUseItems)[1]).id)
-        local needNum2 = itemModule:GetItemCount(((self._totleUseItems)[2]).id)
-        return ((self._totleUseItems)[1]).count <= needNum1 and ((self._totleUseItems)[2]).count <= needNum2, needNum2
-      end
-      local needNum1 = itemModule:GetItemCount((mats[1]).id)
-      local needNum2 = itemModule:GetItemCount((mats[2]).id)
-      if (mats[1]).count <= needNum1 and (mats[2]).count <= needNum2 then
-        return true, needNum2
-      else
-        return false, 0
-      end
-      -- DECOMPILER ERROR: 4 unprocessed JMP targets
-    end
+  end
+  if stage < self._firstBreak and self._isHightLevelPet then
+    local needNum1 = itemModule:GetItemCount(self._totleUseItems[1].id)
+    local needNum2 = itemModule:GetItemCount(self._totleUseItems[2].id)
+    return needNum1 >= self._totleUseItems[1].count and needNum2 >= self._totleUseItems[2].count, needNum2
+  end
+  local needNum1 = itemModule:GetItemCount(mats[1].id)
+  local needNum2 = itemModule:GetItemCount(mats[2].id)
+  if needNum1 >= mats[1].count and needNum2 >= mats[2].count then
+    return true, needNum2
+  else
+    return false, 0
   end
 end
 
--- DECOMPILER ERROR at PC406: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsShowRedPoint = function(self)
-  -- function num : 0_131 , upvalues : _ENV
+function MatchPet:IsShowRedPoint()
   local petID = self:GetTemplateID()
   local stage = self:GetPetAwakening()
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local canBreak, needNum2 = self:CanPetBreak()
   local key = openID .. petID .. needNum2 .. stage
@@ -1911,73 +1325,63 @@ MatchPet.IsShowRedPoint = function(self)
     key = openID .. petID .. needNum2 .. self._firstBreak .. "New"
   end
   if canBreak then
-    if (LocalDB.GetInt)(key) == 2 then
+    if LocalDB.GetInt(key) == 2 then
       return false
     end
-    ;
-    (LocalDB.SetInt)(key, 1)
+    LocalDB.SetInt(key, 1)
     return true
   else
     return false
   end
 end
 
--- DECOMPILER ERROR at PC409: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.CancelRedPoint = function(self)
-  -- function num : 0_132 , upvalues : _ENV
-  local itemModule = (GameGlobal.GetModule)(ItemModule)
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function MatchPet:CancelRedPoint()
+  local itemModule = GameGlobal.GetModule(ItemModule)
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local openID = roleModule:GetPstId()
   local petID = self:GetTemplateID()
   local stage = self:GetPetAwakening()
   local matCfg = self:GetAwakeningConfig()
   local maxStage = self:GetMaxAwakening()
-  if maxStage <= stage or #matCfg <= 3 then
-    return 
+  if stage >= maxStage or #matCfg <= 3 then
+    return
   end
   local needNum2 = 0
   if stage < self._firstBreak and self._isHightLevelPet then
-    local useNum1 = itemModule:GetItemCount(((self._totleUseItems)[1]).id)
-    local useNum2 = itemModule:GetItemCount(((self._totleUseItems)[2]).id)
-    local canRed = ((self._totleUseItems)[1]).count <= useNum1 and ((self._totleUseItems)[2]).count <= useNum2
+    local useNum1 = itemModule:GetItemCount(self._totleUseItems[1].id)
+    local useNum2 = itemModule:GetItemCount(self._totleUseItems[2].id)
+    local canRed = useNum1 >= self._totleUseItems[1].count and useNum2 >= self._totleUseItems[2].count
     if not canRed then
-      return 
+      return
     end
     needNum2 = 1
   else
-    local curMat = (matCfg[stage + 1]).NeedItem
+    local curMat = matCfg[stage + 1].NeedItem
     local mats = {}
     for i = 1, #curMat do
       local value = curMat[i]
-      local content = (string.split)(value, ",")
+      local content = string.split(value, ",")
       local mat = {}
       mat.id = tonumber(content[1])
       mat.count = tonumber(content[2])
       mats[#mats + 1] = mat
     end
-    needNum2 = itemModule:GetItemCount((mats[2]).id)
+    needNum2 = itemModule:GetItemCount(mats[2].id)
   end
   local key = openID .. petID .. needNum2 .. stage
   if stage < self._firstBreak and self._isHightLevelPet then
     key = openID .. petID .. needNum2 .. self._firstBreak .. "New"
   end
-  ;
-  (LocalDB.SetInt)(key, 2)
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.CheckCardAwakeRedPoint)
-  -- DECOMPILER ERROR: 5 unprocessed JMP targets
+  LocalDB.SetInt(key, 2)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.CheckCardAwakeRedPoint)
 end
 
--- DECOMPILER ERROR at PC412: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsShowSkinRedPoint = function(self)
-  -- function num : 0_133 , upvalues : _ENV
-  local petModule = (GameGlobal.GetModule)(PetModule)
+function MatchPet:IsShowSkinRedPoint()
+  local petModule = GameGlobal.GetModule(PetModule)
   local petId = self:GetTemplateID()
-  local petSkinCfg = (Cfg.cfg_pet_skin)({PetId = petId})
+  local petSkinCfg = Cfg.cfg_pet_skin({PetId = petId})
   local skinsStateData = petModule:GetPetSkinsData(petId)
-  for idx,skinCfg in ipairs(petSkinCfg) do
+  for idx, skinCfg in ipairs(petSkinCfg) do
     local uiSkinData = DPetSkinDetailCard:New(skinCfg)
     uiSkinData:SetIsTipsDetail(true)
     local is_obtain = false
@@ -1985,7 +1389,7 @@ MatchPet.IsShowSkinRedPoint = function(self)
     if skinsStateData then
       local obtainedSkinInfo = skinsStateData.skin_info
       if obtainedSkinInfo then
-        for _,skinInfo in pairs(obtainedSkinInfo) do
+        for _, skinInfo in pairs(obtainedSkinInfo) do
           if skinInfo and skinInfo.skin_id == skinCfg.id then
             is_obtain = true
             uiSkinData:SetUnlockCg(skinInfo.unlock_CG)
@@ -1994,62 +1398,45 @@ MatchPet.IsShowSkinRedPoint = function(self)
         end
       end
     end
-    do
-      uiSkinData:SetObtained(is_obtain)
-      do
-        local storyId = (uiSkinData.cfg).StoryId
-        if is_obtain and not uiSkinData:IsUnlockCg() and storyId then
-          return true
-        end
-        -- DECOMPILER ERROR at PC66: LeaveBlock: unexpected jumping out DO_STMT
-
-      end
+    uiSkinData:SetObtained(is_obtain)
+    local storyId = uiSkinData.cfg.StoryId
+    if is_obtain and not uiSkinData:IsUnlockCg() and storyId then
+      return true
     end
   end
   return false
 end
 
--- DECOMPILER ERROR at PC415: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetChainMoveEffect = function(self)
-  -- function num : 0_134 , upvalues : _ENV
+function MatchPet:GetChainMoveEffect()
   local realSkinId = 0
-  if (MatchPet.IsEffectByPetSkin)(PetSkinEffectPath.MODEL_INGAME) and (self._data).current_skin and (self._data).current_skin > 1 then
-    realSkinId = (self._data).current_skin
+  if MatchPet.IsEffectByPetSkin(PetSkinEffectPath.MODEL_INGAME) and self._data.current_skin and self._data.current_skin > 1 then
+    realSkinId = self._data.current_skin
   end
-  do
-    if realSkinId == 0 then
-      local petCfg = self._cfg_pet
-      realSkinId = petCfg.SkinId
-    end
-    local cfg = (Cfg.cfg_pet_skin)[realSkinId]
-    if not cfg then
-      return nil
-    end
-    return cfg.MoveEffect
+  if realSkinId == 0 then
+    local petCfg = self._cfg_pet
+    realSkinId = petCfg.SkinId
   end
+  local cfg = Cfg.cfg_pet_skin[realSkinId]
+  if not cfg then
+    return nil
+  end
+  return cfg.MoveEffect
 end
 
--- DECOMPILER ERROR at PC418: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetFeatureList = function(self)
-  -- function num : 0_135
+function MatchPet:GetFeatureList()
   return self._featureList
 end
 
--- DECOMPILER ERROR at PC421: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.IsBinderPet = function(self, petid)
-  -- function num : 0_136 , upvalues : _ENV
-  local cfg = (Cfg.cfg_pet)({})
+function MatchPet:IsBinderPet(petid)
+  local cfg = Cfg.cfg_pet({})
   if cfg then
     if petid == self:GetTemplateID() then
-      return 
+      return
     end
     local cfg_a = cfg[self:GetTemplateID()]
     if not cfg_a then
-      (Log.error)("###[MatchPet] cfg_a is nil ! id --> ", self:GetTemplateID())
-      return 
+      Log.error("###[MatchPet] cfg_a is nil ! id --> ", self:GetTemplateID())
+      return
     end
     local binderID = cfg_a.BinderPetID
     if binderID and binderID == petid then
@@ -2057,23 +1444,18 @@ MatchPet.IsBinderPet = function(self, petid)
     end
     local cfg_b = cfg[petid]
     if not cfg_b then
-      (Log.error)("###[MatchPet] cfg_b is nil ! id --> ", petid)
-      return 
+      Log.error("###[MatchPet] cfg_b is nil ! id --> ", petid)
+      return
     end
     local binderID = cfg_b.BinderPetID
     if binderID and binderID == self:GetTemplateID() then
       return true
     end
   end
-  do
-    return false
-  end
+  return false
 end
 
--- DECOMPILER ERROR at PC424: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipRefineCfg = function(self, level)
-  -- function num : 0_137
+function MatchPet:GetEquipRefineCfg(level)
   if level == nil then
     level = self:GetEquipRefineLv()
     if level == nil then
@@ -2084,79 +1466,107 @@ MatchPet.GetEquipRefineCfg = function(self, level)
     return nil
   end
   local cfgid = self:GetTemplateID()
-  return (self._EquipRefineRes):GetRes(cfgid, level)
+  return self._EquipRefineRes:GetRes(cfgid, level)
 end
 
--- DECOMPILER ERROR at PC427: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipRefineIntensifyParams = function(self)
-  -- function num : 0_138
+function MatchPet:GetEquipRefineIntensifyParams()
   local res = self:GetEquipRefineCfg()
   if res then
     return res.elementParam
+  else
   end
   return nil
 end
 
--- DECOMPILER ERROR at PC430: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipRefineBuffListData = function(self)
-  -- function num : 0_139
+function MatchPet:GetEquipRefineBuffListData()
   local res = self:GetEquipRefineCfg()
   if res then
     return res.BuffID
   end
 end
 
--- DECOMPILER ERROR at PC433: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetExtraChainSkillList = function(self)
-  -- function num : 0_140
+function MatchPet:GetPetExtraChainSkillList()
   local res = self:GetEquipRefineCfg()
   if res then
     return res.ExtraChainSkill
   end
 end
 
--- DECOMPILER ERROR at PC436: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipRefineExtraActiveSkill = function(self)
-  -- function num : 0_141
+function MatchPet:GetEquipRefineExtraActiveSkill()
   local res = self:GetEquipRefineCfg()
   if res then
     return res.ExtraActiveSkill
   end
 end
 
--- DECOMPILER ERROR at PC439: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipRefineFeatureList = function(self)
-  -- function num : 0_142
+function MatchPet:GetEquipRefineFeatureList()
   local res = self:GetEquipRefineCfg()
   if res then
     return res.FeatureList
   end
 end
 
--- DECOMPILER ERROR at PC442: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetEquipRefineVariantActiveSkillInfo = function(self)
-  -- function num : 0_143
+function MatchPet:GetEquipRefineVariantActiveSkillInfo()
   local res = self:GetEquipRefineCfg()
   if res then
     return res.VariantActiveSkillInfo
   end
 end
 
--- DECOMPILER ERROR at PC445: Confused about usage of register: R0 in 'UnsetPending'
-
-MatchPet.GetPetSupplyPieceWeights = function(self)
-  -- function num : 0_144
-  return (self._cfg_pet).SupplyPieceWeight
+function MatchPet:GetPetSupplyPieceWeights()
+  return self._cfg_pet.SupplyPieceWeight
 end
 
-local PetSkinEffectPath = {NO_EFFECT = 0, HEAD_ICON_INGAME = 1, HEAD_ICON_CHAIN_SKILL_PREVIEW = 2, HEAD_ICON_CHANGE_ASSIST = 3, HEAD_ICON_WE_CHAT = 4, HEAD_ICON_DISPATCH = 5, HEAD_ICON_AIR_STORY_TIPS = 6, HEAD_ICON_CHAT_FIREND = 7, HEAD_ICON_PLAYER_INFO_HELP = 8, BODY_PET_DETAIL = 9, BODY_LEVLE_UP = 10, BODY_GRADE = 11, BODY_AWAKE = 12, BODY_INTO_AIRCRAFT = 13, BODY_HELP = 14, BODY_INGAME_PREVIEW = 15, BODY_CHANGE_ASSIST = 16, BODY_FILES = 17, BODY_BATTLE_RESULT = 18, CARD_PET_LIST = 19, CARD_TEAM = 20, CARD_TEAM_SELECT = 21, CARD_ROLE_RELATION = 22, CARD_TOWER = 23, CARD_DISPATCH = 24, CARD_TEAM_MOVE_HELP_PET = 25, CARD_HELP_MANAGER = 26, CARD_HELP_SELECT = 27, CARD_DRAW_MULTI = 28, CARD_TOWER_TEAM_BODY = 29, CARD_CARD_WE_CHAT_ROLE = 30, MODEL_INGAME = 31, MODEL_AIRCRAFT = 32, BODY_AIRCRAFT_ROOM_INTERACT = 33, BODY_PET_INTIMACY = 34, BODY_INTO_AIRCRAFT_AIRBODY = 35, BODY_INGAME_TEAM = 36, HEAD_AIRCRAFT_INTERACT = 37, HEAD_ICON_PET_INTIMACY = 38, HEAD_ICON_STORY = 39, ITEM_ICON_PET_DETAIL = 40, ITEM_ICON_PET_INTIMACY = 41, ITEM_ICON_HELP = 42, MODEL_MAZE = 43}
+local PetSkinEffectPath = {
+  NO_EFFECT = 0,
+  HEAD_ICON_INGAME = 1,
+  HEAD_ICON_CHAIN_SKILL_PREVIEW = 2,
+  HEAD_ICON_CHANGE_ASSIST = 3,
+  HEAD_ICON_WE_CHAT = 4,
+  HEAD_ICON_DISPATCH = 5,
+  HEAD_ICON_AIR_STORY_TIPS = 6,
+  HEAD_ICON_CHAT_FIREND = 7,
+  HEAD_ICON_PLAYER_INFO_HELP = 8,
+  BODY_PET_DETAIL = 9,
+  BODY_LEVLE_UP = 10,
+  BODY_GRADE = 11,
+  BODY_AWAKE = 12,
+  BODY_INTO_AIRCRAFT = 13,
+  BODY_HELP = 14,
+  BODY_INGAME_PREVIEW = 15,
+  BODY_CHANGE_ASSIST = 16,
+  BODY_FILES = 17,
+  BODY_BATTLE_RESULT = 18,
+  CARD_PET_LIST = 19,
+  CARD_TEAM = 20,
+  CARD_TEAM_SELECT = 21,
+  CARD_ROLE_RELATION = 22,
+  CARD_TOWER = 23,
+  CARD_DISPATCH = 24,
+  CARD_TEAM_MOVE_HELP_PET = 25,
+  CARD_HELP_MANAGER = 26,
+  CARD_HELP_SELECT = 27,
+  CARD_DRAW_MULTI = 28,
+  CARD_TOWER_TEAM_BODY = 29,
+  CARD_CARD_WE_CHAT_ROLE = 30,
+  MODEL_INGAME = 31,
+  MODEL_AIRCRAFT = 32,
+  BODY_AIRCRAFT_ROOM_INTERACT = 33,
+  BODY_PET_INTIMACY = 34,
+  BODY_INTO_AIRCRAFT_AIRBODY = 35,
+  BODY_INGAME_TEAM = 36,
+  HEAD_AIRCRAFT_INTERACT = 37,
+  HEAD_ICON_PET_INTIMACY = 38,
+  HEAD_ICON_STORY = 39,
+  ITEM_ICON_PET_DETAIL = 40,
+  ITEM_ICON_PET_INTIMACY = 41,
+  ITEM_ICON_HELP = 42,
+  MODEL_MAZE = 43
+}
 _enum("PetSkinEffectPath", PetSkinEffectPath)
-local PetEquipRefineStatus = {NO_OPEN = 0, OPEN_LOCK = 1, UNLOCK = 2}
+local PetEquipRefineStatus = {
+  NO_OPEN = 0,
+  OPEN_LOCK = 1,
+  UNLOCK = 2
+}
 _enum("PetEquipRefineStatus", PetEquipRefineStatus)
-

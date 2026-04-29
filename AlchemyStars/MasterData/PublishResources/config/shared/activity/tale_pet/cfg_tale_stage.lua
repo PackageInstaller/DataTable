@@ -1,56 +1,364 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/shared/activity/tale_pet/cfg_tale_stage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Type = 2, Tier = 3, FightLevelid = 4, FirstDropId = 5, LevelBg = 6, Icon = 7, Name = 8, MonsterName = 9, WordBuff = 10, UnlockType = 11, UnlockPetId = 12, ElementIcon1 = 13, ElementIcon2 = 14}
-local common = {"monster_2900271_HCcard", "str_tale_pet_btn_exercise_name", "str_monster_name_2910271", "huo_color", "monster_2900401_HClevel", "monster_2900401_HCcard", "monster_2000121_HCcard", "str_monster_name_2100241", "sen_color", "lei_color", "bing_color", "monster_2900251_HCcard", "str_monster_name_2910252", "monster_2900431_HCcard", "str_monster_name_2910431", 
-{1701071, 1701081, 1701091, 1701101}
+local key = {
+  ID = 1,
+  Type = 2,
+  Tier = 3,
+  FightLevelid = 4,
+  FirstDropId = 5,
+  LevelBg = 6,
+  Icon = 7,
+  Name = 8,
+  MonsterName = 9,
+  WordBuff = 10,
+  UnlockType = 11,
+  UnlockPetId = 12,
+  ElementIcon1 = 13,
+  ElementIcon2 = 14
+}
+local common = {
+  "monster_2900271_HCcard",
+  "str_tale_pet_btn_exercise_name",
+  "str_monster_name_2910271",
+  "huo_color",
+  "monster_2900401_HClevel",
+  "monster_2900401_HCcard",
+  "monster_2000121_HCcard",
+  "str_monster_name_2100241",
+  "sen_color",
+  "lei_color",
+  "bing_color",
+  "monster_2900251_HCcard",
+  "str_monster_name_2910252",
+  "monster_2900431_HCcard",
+  "str_monster_name_2910431",
+  {
+    1701071,
+    1701081,
+    1701091,
+    1701101
+  }
 }
 local config = {
-{1, 1, 0, 6001001, 620001, "monster_1701071_HClevel", common[1], common[2], common[3], nil, 0}
-, 
-{2, 2, 1, 6001002, 610001, "monster_2900271_HClevel", common[1], "str_tale_pet_mission_03", common[3], 40037, 1, common[16], common[4]}
-, 
-{3, 2, 2, 6001003, 610002, "monster_2900601_HClevel", "monster_2900601_HCcard", "str_tale_pet_mission_05", "str_monster_name_2910601", nil, 1, common[16], common[4]}
-, 
-{4, 2, 3, 6001004, 610003, common[5], common[6], "str_tale_pet_mission_10", "str_monster_name_2900401", 40038, 1, common[16], common[4]}
-, 
-{5, 2, 4, 6001005, 610004, "monster_2900311_HClevel", "monster_2900311_HCcard", "str_tale_pet_mission_16", "str_monster_name_2100311", 40041, 1, common[16], common[4]}
-, 
-{6, 1, 0, 6002001, 620002, "monster_1701081_HClevel", common[7], common[2], common[8], nil, 0}
-, 
-{7, 2, 1, 6002002, 610005, "monster_2000121_HClevel", common[7], "str_tale_pet_mission_02", common[8], nil, 1, common[16], common[9]}
-, 
-{8, 2, 2, 6002003, 610006, "monster_2900452_HClevel", "monster_2900452_HCcard", "str_tale_pet_mission_07", "str_monster_name_2910451", nil, 1, common[16], common[9]}
-, 
-{9, 2, 3, 6002004, 610007, "monster_2900232_HClevel", "monster_2900232_HCcard", "str_tale_pet_mission_12", "str_tale_pet_monster1", 40010, 1, common[16], common[9], common[10]}
-, 
-{10, 2, 4, 6002005, 610008, "monster_2900611_HClevel", "monster_2900611_HCcard", "str_tale_pet_mission_14", "str_monster_name_2910611", 40019, 1, common[16], common[9], common[11]}
-, 
-{11, 1, 0, 6003001, 620003, "monster_1701091_HClevel", common[12], common[2], common[13], nil, 0}
-, 
-{12, 2, 1, 6003002, 610009, "monster_2900251_HClevel", common[12], "str_tale_pet_mission_01", common[13], 40036, 1, common[16], common[10]}
-, 
-{13, 2, 2, 6003003, 610010, "monster_2900441_HClevel", "monster_2900441_HCcard", "str_tale_pet_mission_06", "str_monster_name_2910441", 40018, 1, common[16], common[10]}
-, 
-{14, 2, 3, 6003004, 610011, "monster_2900141_HClevel", "monster_2900141_HCcard", "str_tale_pet_mission_09", "str_tale_pet_monster2", nil, 1, common[16], common[10], common[4]}
-, 
-{15, 2, 4, 6003005, 610012, "monster_2900221_HClevel", "monster_2900221_HCcard", "str_tale_pet_mission_15", "str_monster_name_2910221", 40040, 1, common[16], common[10], common[4]}
-, 
-{16, 1, 0, 6004001, 620004, "monster_1701101_HClevel", common[14], common[2], common[15], nil, 0}
-, 
-{17, 2, 1, 6004002, 610013, "monster_2900431_HClevel", common[14], "str_tale_pet_mission_04", common[15], nil, 1, common[16], common[11]}
-, 
-{18, 2, 2, 6004003, 610014, "monster_2900281_HClevel", "monster_2900281_HCcard", "str_tale_pet_mission_08", "str_monster_name_2250281", 40012, 1, common[16], common[11]}
-, 
-{19, 2, 3, 6004004, 610015, "monster_2900411_HClevel", "monster_2900411_HCcard", "str_tale_pet_mission_11", "str_monster_name_2910411", 40017, 1, common[16], common[11]}
-, 
-{20, 2, 4, 6004005, 610016, common[5], common[6], "str_tale_pet_mission_13", "str_monster_name_2920403", 40039, 1, common[16]}
-, 
-{21, 2, 5, 6000001, 610017, "monster_2901201_HClevel", "monster_2901201_HCcard", "str_tale_pet_mission_18", "str_monster_name_2901201", 40056, 2, common[16]}
-, 
-{22, 1, 0, 5224101, 620004, "monster_1702361_HClevel", common[14], common[2], common[15], nil, 0}
+  {
+    1,
+    1,
+    0,
+    6001001,
+    620001,
+    "monster_1701071_HClevel",
+    common[1],
+    common[2],
+    common[3],
+    nil,
+    0
+  },
+  {
+    2,
+    2,
+    1,
+    6001002,
+    610001,
+    "monster_2900271_HClevel",
+    common[1],
+    "str_tale_pet_mission_03",
+    common[3],
+    40037,
+    1,
+    common[16],
+    common[4]
+  },
+  {
+    3,
+    2,
+    2,
+    6001003,
+    610002,
+    "monster_2900601_HClevel",
+    "monster_2900601_HCcard",
+    "str_tale_pet_mission_05",
+    "str_monster_name_2910601",
+    nil,
+    1,
+    common[16],
+    common[4]
+  },
+  {
+    4,
+    2,
+    3,
+    6001004,
+    610003,
+    common[5],
+    common[6],
+    "str_tale_pet_mission_10",
+    "str_monster_name_2900401",
+    40038,
+    1,
+    common[16],
+    common[4]
+  },
+  {
+    5,
+    2,
+    4,
+    6001005,
+    610004,
+    "monster_2900311_HClevel",
+    "monster_2900311_HCcard",
+    "str_tale_pet_mission_16",
+    "str_monster_name_2100311",
+    40041,
+    1,
+    common[16],
+    common[4]
+  },
+  {
+    6,
+    1,
+    0,
+    6002001,
+    620002,
+    "monster_1701081_HClevel",
+    common[7],
+    common[2],
+    common[8],
+    nil,
+    0
+  },
+  {
+    7,
+    2,
+    1,
+    6002002,
+    610005,
+    "monster_2000121_HClevel",
+    common[7],
+    "str_tale_pet_mission_02",
+    common[8],
+    nil,
+    1,
+    common[16],
+    common[9]
+  },
+  {
+    8,
+    2,
+    2,
+    6002003,
+    610006,
+    "monster_2900452_HClevel",
+    "monster_2900452_HCcard",
+    "str_tale_pet_mission_07",
+    "str_monster_name_2910451",
+    nil,
+    1,
+    common[16],
+    common[9]
+  },
+  {
+    9,
+    2,
+    3,
+    6002004,
+    610007,
+    "monster_2900232_HClevel",
+    "monster_2900232_HCcard",
+    "str_tale_pet_mission_12",
+    "str_tale_pet_monster1",
+    40010,
+    1,
+    common[16],
+    common[9],
+    common[10]
+  },
+  {
+    10,
+    2,
+    4,
+    6002005,
+    610008,
+    "monster_2900611_HClevel",
+    "monster_2900611_HCcard",
+    "str_tale_pet_mission_14",
+    "str_monster_name_2910611",
+    40019,
+    1,
+    common[16],
+    common[9],
+    common[11]
+  },
+  {
+    11,
+    1,
+    0,
+    6003001,
+    620003,
+    "monster_1701091_HClevel",
+    common[12],
+    common[2],
+    common[13],
+    nil,
+    0
+  },
+  {
+    12,
+    2,
+    1,
+    6003002,
+    610009,
+    "monster_2900251_HClevel",
+    common[12],
+    "str_tale_pet_mission_01",
+    common[13],
+    40036,
+    1,
+    common[16],
+    common[10]
+  },
+  {
+    13,
+    2,
+    2,
+    6003003,
+    610010,
+    "monster_2900441_HClevel",
+    "monster_2900441_HCcard",
+    "str_tale_pet_mission_06",
+    "str_monster_name_2910441",
+    40018,
+    1,
+    common[16],
+    common[10]
+  },
+  {
+    14,
+    2,
+    3,
+    6003004,
+    610011,
+    "monster_2900141_HClevel",
+    "monster_2900141_HCcard",
+    "str_tale_pet_mission_09",
+    "str_tale_pet_monster2",
+    nil,
+    1,
+    common[16],
+    common[10],
+    common[4]
+  },
+  {
+    15,
+    2,
+    4,
+    6003005,
+    610012,
+    "monster_2900221_HClevel",
+    "monster_2900221_HCcard",
+    "str_tale_pet_mission_15",
+    "str_monster_name_2910221",
+    40040,
+    1,
+    common[16],
+    common[10],
+    common[4]
+  },
+  {
+    16,
+    1,
+    0,
+    6004001,
+    620004,
+    "monster_1701101_HClevel",
+    common[14],
+    common[2],
+    common[15],
+    nil,
+    0
+  },
+  {
+    17,
+    2,
+    1,
+    6004002,
+    610013,
+    "monster_2900431_HClevel",
+    common[14],
+    "str_tale_pet_mission_04",
+    common[15],
+    nil,
+    1,
+    common[16],
+    common[11]
+  },
+  {
+    18,
+    2,
+    2,
+    6004003,
+    610014,
+    "monster_2900281_HClevel",
+    "monster_2900281_HCcard",
+    "str_tale_pet_mission_08",
+    "str_monster_name_2250281",
+    40012,
+    1,
+    common[16],
+    common[11]
+  },
+  {
+    19,
+    2,
+    3,
+    6004004,
+    610015,
+    "monster_2900411_HClevel",
+    "monster_2900411_HCcard",
+    "str_tale_pet_mission_11",
+    "str_monster_name_2910411",
+    40017,
+    1,
+    common[16],
+    common[11]
+  },
+  {
+    20,
+    2,
+    4,
+    6004005,
+    610016,
+    common[5],
+    common[6],
+    "str_tale_pet_mission_13",
+    "str_monster_name_2920403",
+    40039,
+    1,
+    common[16]
+  },
+  {
+    21,
+    2,
+    5,
+    6000001,
+    610017,
+    "monster_2901201_HClevel",
+    "monster_2901201_HCcard",
+    "str_tale_pet_mission_18",
+    "str_monster_name_2901201",
+    40056,
+    2,
+    common[16]
+  },
+  {
+    22,
+    1,
+    0,
+    5224101,
+    620004,
+    "monster_1702361_HClevel",
+    common[14],
+    common[2],
+    common[15],
+    nil,
+    0
+  }
 }
 return config, "ID", key
-

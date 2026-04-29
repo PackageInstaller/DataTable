@@ -1,51 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/effect_result/ser_force_movement.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_effect_result_base")
 _class("SkillEffectResult_ForceMovement_MoveResult", Object)
 SkillEffectResult_ForceMovement_MoveResult = SkillEffectResult_ForceMovement_MoveResult
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_ForceMovement_MoveResult.Constructor = function(self, targetID, v2OldPos, v2NewPos, triggeredTrapIDs)
-  -- function num : 0_0
+function SkillEffectResult_ForceMovement_MoveResult:Constructor(targetID, v2OldPos, v2NewPos, triggeredTrapIDs)
   self.targetID = targetID
   self.v2OldPos = v2OldPos
   self.v2NewPos = v2NewPos
   self.triggeredTrapIDs = triggeredTrapIDs
   self.isMoved = v2OldPos ~= v2NewPos
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
 end
 
 _class("SkillEffectResult_ForceMovement", SkillEffectResultBase)
 SkillEffectResult_ForceMovement = SkillEffectResult_ForceMovement
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillEffectResult_ForceMovement.Constructor = function(self)
-  -- function num : 0_1
+function SkillEffectResult_ForceMovement:Constructor()
   self._moveResult = {}
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ForceMovement.GetEffectType = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function SkillEffectResult_ForceMovement:GetEffectType()
   return SkillEffectType.ForceMovement
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ForceMovement.AppendMoveResult = function(self, targetID, v2OldPos, v2NewPos, triggeredTrapIDs)
-  -- function num : 0_3 , upvalues : _ENV
-  (table.insert)(self._moveResult, SkillEffectResult_ForceMovement_MoveResult:New(targetID, v2OldPos, v2NewPos, triggeredTrapIDs))
+function SkillEffectResult_ForceMovement:AppendMoveResult(targetID, v2OldPos, v2NewPos, triggeredTrapIDs)
+  table.insert(self._moveResult, SkillEffectResult_ForceMovement_MoveResult:New(targetID, v2OldPos, v2NewPos, triggeredTrapIDs))
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillEffectResult_ForceMovement.GetMoveResult = function(self)
-  -- function num : 0_4
+function SkillEffectResult_ForceMovement:GetMoveResult()
   return self._moveResult
 end
-
-

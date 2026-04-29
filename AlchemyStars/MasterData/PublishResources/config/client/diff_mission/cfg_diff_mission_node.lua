@@ -1,17 +1,17 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/diff_mission/cfg_diff_mission_node.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
-local key = {ID = 1, Pos = 2, LastWayPoint = 3}
-local config = {
-[4001001] = {4001001, 
-{10, 10}
+local key = {
+  ID = 1,
+  Pos = 2,
+  LastWayPoint = 3
 }
-, 
-[4001002] = {4001002, 
-{220, 200}
-, 4001001}
+local config = {
+  [4001001] = {
+    4001001,
+    {10, 10}
+  },
+  [4001002] = {
+    4001002,
+    {220, 200},
+    4001001
+  }
 }
 return config, "ID", key
-

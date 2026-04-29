@@ -1,15 +1,8 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/pha_par/psparam_sacrifice_traps_and_damage.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("skill_phase_param_base")
 _class("SkillPhaseSacrificeTrapsAndDamageParam", SkillPhaseParamBase)
 SkillPhaseSacrificeTrapsAndDamageParam = SkillPhaseSacrificeTrapsAndDamageParam
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPhaseSacrificeTrapsAndDamageParam.Constructor = function(self, t)
-  -- function num : 0_0
+function SkillPhaseSacrificeTrapsAndDamageParam:Constructor(t)
   self._hitAnimName = t.hitAnimName
   self._hitDelayTime = t.hitDelayTime
   self._hitEffectID = t.hitEffectID
@@ -29,177 +22,127 @@ SkillPhaseSacrificeTrapsAndDamageParam.Constructor = function(self, t)
   self._bowlderFlyTotalTime = t.bowlderFlyTotalTime
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetTrapStartDelay = function(self)
-  -- function num : 0_1
+function SkillPhaseSacrificeTrapsAndDamageParam:GetTrapStartDelay()
   return self._trapStartDelay
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetCastEffectID = function(self)
-  -- function num : 0_2
+function SkillPhaseSacrificeTrapsAndDamageParam:GetCastEffectID()
   return self._castEffectID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetSuccessCasterEffectID = function(self)
-  -- function num : 0_3
+function SkillPhaseSacrificeTrapsAndDamageParam:GetSuccessCasterEffectID()
   return self._successCasterEffectID
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetNoTrapCasterEffectID = function(self)
-  -- function num : 0_4
+function SkillPhaseSacrificeTrapsAndDamageParam:GetNoTrapCasterEffectID()
   return self._noTrapCasterEffectID
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetCasterAnimName = function(self)
-  -- function num : 0_5
+function SkillPhaseSacrificeTrapsAndDamageParam:GetCasterAnimName()
   return self._casterAnimName
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetHitAnimationName = function(self)
-  -- function num : 0_6
+function SkillPhaseSacrificeTrapsAndDamageParam:GetHitAnimationName()
   return self._hitAnimName
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetHitDelayTime = function(self)
-  -- function num : 0_7
+function SkillPhaseSacrificeTrapsAndDamageParam:GetHitDelayTime()
   return self._hitDelayTime
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetHitEffectId = function(self)
-  -- function num : 0_8
+function SkillPhaseSacrificeTrapsAndDamageParam:GetHitEffectId()
   return self._hitEffectID
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetCacheTable = function(self)
-  -- function num : 0_9 , upvalues : _ENV
+function SkillPhaseSacrificeTrapsAndDamageParam:GetCacheTable()
   local t = {}
   if self._hitEffectID and self._hitEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._hitEffectID]).ResPath, 1})
+    table.insert(t, {
+      Cfg.cfg_effect[self._hitEffectID].ResPath,
+      1
+    })
   end
-  if self._castEffectID and self._castEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._castEffectID]).ResPath, 1})
+  if self._castEffectID and 0 < self._castEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._castEffectID].ResPath,
+      1
+    })
   end
-  if self._noTrapCasterEffectID and self._noTrapCasterEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._noTrapCasterEffectID]).ResPath, 1})
+  if self._noTrapCasterEffectID and 0 < self._noTrapCasterEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._noTrapCasterEffectID].ResPath,
+      1
+    })
   end
-  if self._successCasterEffectID and self._successCasterEffectID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._successCasterEffectID]).ResPath, 1})
+  if self._successCasterEffectID and 0 < self._successCasterEffectID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._successCasterEffectID].ResPath,
+      1
+    })
   end
-  if self._trapTrajectoryID and self._trapTrajectoryID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._trapTrajectoryID]).ResPath, 1})
+  if self._trapTrajectoryID and 0 < self._trapTrajectoryID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._trapTrajectoryID].ResPath,
+      1
+    })
   end
-  if self._bowlderTrajectoryID and self._bowlderTrajectoryID > 0 then
-    (table.insert)(t, {((Cfg.cfg_effect)[self._bowlderTrajectoryID]).ResPath, 1})
+  if self._bowlderTrajectoryID and 0 < self._bowlderTrajectoryID then
+    table.insert(t, {
+      Cfg.cfg_effect[self._bowlderTrajectoryID].ResPath,
+      1
+    })
   end
   return t
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetPhaseType = function(self)
-  -- function num : 0_10 , upvalues : _ENV
+function SkillPhaseSacrificeTrapsAndDamageParam:GetPhaseType()
   return SkillViewPhaseType.SacrificeTrapsAndDamage
 end
 
--- DECOMPILER ERROR at PC44: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetCasterEffectID = function(self)
-  -- function num : 0_11
+function SkillPhaseSacrificeTrapsAndDamageParam:GetCasterEffectID()
   return self._casterEffectID
 end
 
--- DECOMPILER ERROR at PC47: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetNoTrapCasterEffectID = function(self)
-  -- function num : 0_12
+function SkillPhaseSacrificeTrapsAndDamageParam:GetNoTrapCasterEffectID()
   return self._noTrapCasterEffectID
 end
 
--- DECOMPILER ERROR at PC50: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetSuccessCasterEffectID = function(self)
-  -- function num : 0_13
+function SkillPhaseSacrificeTrapsAndDamageParam:GetSuccessCasterEffectID()
   return self._successCasterEffectID
 end
 
--- DECOMPILER ERROR at PC53: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetTrapTrajectoryID = function(self)
-  -- function num : 0_14
+function SkillPhaseSacrificeTrapsAndDamageParam:GetTrapTrajectoryID()
   return self._trapTrajectoryID
 end
 
--- DECOMPILER ERROR at PC56: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetTrapStartHeight = function(self)
-  -- function num : 0_15
+function SkillPhaseSacrificeTrapsAndDamageParam:GetTrapStartHeight()
   return self._trapStartHeight
 end
 
--- DECOMPILER ERROR at PC59: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetTrapEndHeight = function(self)
-  -- function num : 0_16
+function SkillPhaseSacrificeTrapsAndDamageParam:GetTrapEndHeight()
   return self._trapEndHeight
 end
 
--- DECOMPILER ERROR at PC62: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetTrapFlyTotalTime = function(self)
-  -- function num : 0_17
+function SkillPhaseSacrificeTrapsAndDamageParam:GetTrapFlyTotalTime()
   return self._trapFlyTotalTime
 end
 
--- DECOMPILER ERROR at PC65: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetBowlderTrajectoryID = function(self)
-  -- function num : 0_18
+function SkillPhaseSacrificeTrapsAndDamageParam:GetBowlderTrajectoryID()
   return self._bowlderTrajectoryID
 end
 
--- DECOMPILER ERROR at PC68: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetBowlderStartHeight = function(self)
-  -- function num : 0_19
+function SkillPhaseSacrificeTrapsAndDamageParam:GetBowlderStartHeight()
   return self._bowlderStartHeight
 end
 
--- DECOMPILER ERROR at PC71: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetBowlderEndHeight = function(self)
-  -- function num : 0_20
+function SkillPhaseSacrificeTrapsAndDamageParam:GetBowlderEndHeight()
   return self._bowlderEndHeight
 end
 
--- DECOMPILER ERROR at PC74: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetBowlderFlyTotalTime = function(self)
-  -- function num : 0_21
+function SkillPhaseSacrificeTrapsAndDamageParam:GetBowlderFlyTotalTime()
   return self._bowlderFlyTotalTime
 end
 
--- DECOMPILER ERROR at PC77: Confused about usage of register: R0 in 'UnsetPending'
-
-SkillPhaseSacrificeTrapsAndDamageParam.GetBowlderStartDelay = function(self)
-  -- function num : 0_22
+function SkillPhaseSacrificeTrapsAndDamageParam:GetBowlderStartDelay()
   return self._bowlderStartDelay or 0
 end
-
-

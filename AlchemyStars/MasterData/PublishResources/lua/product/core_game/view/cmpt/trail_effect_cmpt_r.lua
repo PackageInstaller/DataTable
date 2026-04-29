@@ -1,53 +1,30 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/cmpt/trail_effect_cmpt_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrailEffectExComponent", Object)
 TrailEffectExComponent = TrailEffectExComponent
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrailEffectExComponent.Constructor = function(self)
-  -- function num : 0_0
+function TrailEffectExComponent:Constructor()
   self._trailEffectContainer = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrailEffectExComponent.SetTrailEffectExController = function(self, csTrailEffectEx)
-  -- function num : 0_1
+function TrailEffectExComponent:SetTrailEffectExController(csTrailEffectEx)
   self._trailEffectEx = csTrailEffectEx
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrailEffectExComponent.LoadContainer = function(self, container)
-  -- function num : 0_2
+function TrailEffectExComponent:LoadContainer(container)
   self._trailEffectContainer = container
-  ;
-  (self._trailEffectEx):SetProfile((self._trailEffectContainer).Obj)
+  self._trailEffectEx:SetProfile(self._trailEffectContainer.Obj)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.TrailEffectEx = function(self)
-  -- function num : 0_3
-  return self:GetComponent((self.WEComponentsEnum).TrailEffectEx)
+function Entity:TrailEffectEx()
+  return self:GetComponent(self.WEComponentsEnum.TrailEffectEx)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.HasTrailEffectEx = function(self)
-  -- function num : 0_4
-  return self:HasComponent((self.WEComponentsEnum).TrailEffectEx)
+function Entity:HasTrailEffectEx()
+  return self:HasComponent(self.WEComponentsEnum.TrailEffectEx)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.AddTrailEffectEx = function(self, container, csTrailEffectEx)
-  -- function num : 0_5 , upvalues : _ENV
+function Entity:AddTrailEffectEx(container, csTrailEffectEx)
   assert(container)
-  local index = (self.WEComponentsEnum).TrailEffectEx
+  local index = self.WEComponentsEnum.TrailEffectEx
   local component = TrailEffectExComponent:New(self)
   csTrailEffectEx.meshPoolSize = 1
   component:SetTrailEffectExController(csTrailEffectEx)
@@ -55,22 +32,14 @@ Entity.AddTrailEffectEx = function(self, container, csTrailEffectEx)
   self:AddComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.ReplaceTrailEffectEx = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local index = (self.WEComponentsEnum).TrailEffectEx
+function Entity:ReplaceTrailEffectEx()
+  local index = self.WEComponentsEnum.TrailEffectEx
   local component = TrailEffectExComponent:New()
   self:ReplaceComponent(index, component)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-Entity.RemoveTrailEffectEx = function(self)
-  -- function num : 0_7
+function Entity:RemoveTrailEffectEx()
   if self:HasTrailEffectEx() then
-    self:RemoveComponent((self.WEComponentsEnum).TrailEffectEx)
+    self:RemoveComponent(self.WEComponentsEnum.TrailEffectEx)
   end
 end
-
-

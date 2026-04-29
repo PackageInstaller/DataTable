@@ -1,37 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/ui/forge/common/ui_item_tips_homeland.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIItemTipsHomeland", UIController)
 UIItemTipsHomeland = UIItemTipsHomeland
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIItemTipsHomeland.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  self.mRole = (GameGlobal.GetModule)(RoleModule)
-  self._itemModule = (GameGlobal.GetModule)(ItemModule)
+function UIItemTipsHomeland:Constructor()
+  self.mRole = GameGlobal.GetModule(RoleModule)
+  self._itemModule = GameGlobal.GetModule(ItemModule)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTipsHomeland.OnShow = function(self, uiParams)
-  -- function num : 0_1 , upvalues : _ENV
+function UIItemTipsHomeland:OnShow(uiParams)
   self.itemTplId = uiParams[1]
   self.go = uiParams[2]
   self.showItemCount = uiParams[3]
   self.bg = self:GetGameObject("bg")
-  local passEvent = (self.bg):GetComponent("PassEventComponent")
+  local passEvent = self.bg:GetComponent("PassEventComponent")
   passEvent:SetClickCallback(function()
-    -- function num : 0_1_0 , upvalues : self
     self:closeOnClick()
-  end
-)
-  self._black_mask = (((((self:GetGameObject()).transform).parent).parent):Find("BGMaskCanvas/black_mask")):GetComponent(typeof((UnityEngine.UI).Image))
-  -- DECOMPILER ERROR at PC34: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._black_mask).raycastTarget = false
+  end)
+  self._black_mask = self:GetGameObject().transform.parent.parent:Find("BGMaskCanvas/black_mask"):GetComponent(typeof(UnityEngine.UI.Image))
+  self._black_mask.raycastTarget = false
   self.c = self:GetUIComponent("RectTransform", "c")
   self.itemPool = self:GetUIComponent("UISelectObjectPath", "itemPool")
   self.txtName = self:GetUIComponent("UILocalizationText", "txtName")
@@ -47,118 +32,86 @@ UIItemTipsHomeland.OnShow = function(self, uiParams)
   self:FlushPos()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTipsHomeland.ResolveScrollRectJittering = function(self, rect, content)
-  -- function num : 0_2 , upvalues : _ENV
-  if (rect.sizeDelta).y < (content.sizeDelta).y then
-    return 
+function UIItemTipsHomeland:ResolveScrollRectJittering(rect, content)
+  if rect.sizeDelta.y < content.sizeDelta.y then
+    return
   end
-  ;
-  ((GameGlobal.TaskManager)()):StartTask(function(TT)
-    -- function num : 0_2_0 , upvalues : _ENV, content, rect
+  GameGlobal.TaskManager():StartTask(function(TT)
     YIELD(TT)
     local layout = content:GetComponent("VerticalLayoutGroup")
-    -- DECOMPILER ERROR at PC17: Confused about usage of register: R2 in 'UnsetPending'
-
-    ;
-    (layout.padding).bottom = (math.floor)((rect.sizeDelta).y - (content.sizeDelta).y + 2)
-  end
-)
+    layout.padding.bottom = math.floor(rect.sizeDelta.y - content.sizeDelta.y + 2)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTipsHomeland.OnHide = function(self)
-  -- function num : 0_3
-  -- DECOMPILER ERROR at PC1: Confused about usage of register: R1 in 'UnsetPending'
-
-  (self._black_mask).raycastTarget = true
+function UIItemTipsHomeland:OnHide()
+  self._black_mask.raycastTarget = true
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTipsHomeland.Flush = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  local cfg = (Cfg.cfg_item)[self.itemTplId]
-  local c = (self.mRole):GetAssetCount(self.itemTplId) or 0
+function UIItemTipsHomeland:Flush()
+  local cfg = Cfg.cfg_item[self.itemTplId]
+  local c = self.mRole:GetAssetCount(self.itemTplId) or 0
   local ra = RoleAsset:New()
   ra.assetid = self.itemTplId
   ra.count = c
-  local ui = (self.itemPool):SpawnObject("UIItemHomeland")
+  local ui = self.itemPool:SpawnObject("UIItemHomeland")
   ui:Flush(ra, nil)
   ui:ClearTextCount()
-  ;
-  (self.txtName):SetText((StringTable.Get)(cfg.Name))
-  ;
-  (self.txtCount):SetText(c)
-  ;
-  (self.txtDesc):SetText((StringTable.Get)(cfg.Intro))
+  self.txtName:SetText(StringTable.Get(cfg.Name))
+  self.txtCount:SetText(c)
+  self.txtDesc:SetText(StringTable.Get(cfg.Intro))
   if cfg.UseDesc then
-    ((self.txtUseDesc).gameObject):SetActive(true)
-    ;
-    (self.txtUseDesc):SetText((StringTable.Get)(cfg.UseDesc))
-    ;
-    (self.line1):SetActive(true)
+    self.txtUseDesc.gameObject:SetActive(true)
+    self.txtUseDesc:SetText(StringTable.Get(cfg.UseDesc))
+    self.line1:SetActive(true)
   else
-    ;
-    ((self.txtUseDesc).gameObject):SetActive(false)
-    ;
-    (self.line1):SetActive(false)
+    self.txtUseDesc.gameObject:SetActive(false)
+    self.line1:SetActive(false)
   end
   local ways = self:GetHomelandPathItemDataListByTplId(self.itemTplId)
-  local len = (table.count)(ways)
+  local len = table.count(ways)
   if len == 0 then
-    (self.txtWay):SetText((StringTable.Get)("str_item_public_no_path"))
+    self.txtWay:SetText(StringTable.Get("str_item_public_no_path"))
   else
     local strTable = {}
-    for index,way in ipairs(ways) do
-      local desc = (StringTable.Get)(way.desc)
-      ;
-      (table.insert)(strTable, desc)
+    for index, way in ipairs(ways) do
+      local desc = StringTable.Get(way.desc)
+      table.insert(strTable, desc)
     end
-    ;
-    (self.txtWay):SetText((table.concat)(strTable, "\n"))
+    self.txtWay:SetText(table.concat(strTable, "\n"))
   end
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTipsHomeland.GetHomelandPathItemDataListByTplId = function(self, tplId)
-  -- function num : 0_5 , upvalues : _ENV
+function UIItemTipsHomeland:GetHomelandPathItemDataListByTplId(tplId)
   local ways = {}
   self:InsertGiftWay(ways, tplId)
-  local cfg = (Cfg.cfg_item_getway)[tplId]
+  local cfg = Cfg.cfg_item_getway[tplId]
   if cfg then
-    local count = (table.count)(cfg)
+    local count = table.count(cfg)
     for i = 1, count - 1 do
       local id = cfg["Getway" .. tostring(i)]
       if id then
         local t = UIItemGetWayData:New()
         t:SetData(id)
         if t:CheckChapter() then
-          (table.insert)(ways, t)
+          table.insert(ways, t)
         end
       end
     end
   end
-  do
-    self:InsertCommonEC(ways, tplId)
-    return ways
-  end
+  self:InsertCommonEC(ways, tplId)
+  return ways
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTipsHomeland.InsertGiftWay = function(self, ways, tplId)
-  -- function num : 0_6 , upvalues : _ENV
-  local cfg_item_gift = (Cfg.cfg_item_gift)({ItemGiftType = ItemGiftType.ItemGiftType_Choose})
-  if cfg_item_gift and #cfg_item_gift > 0 then
+function UIItemTipsHomeland:InsertGiftWay(ways, tplId)
+  local cfg_item_gift = Cfg.cfg_item_gift({
+    ItemGiftType = ItemGiftType.ItemGiftType_Choose
+  })
+  if cfg_item_gift and 0 < #cfg_item_gift then
     for i = 1, #cfg_item_gift do
       local cfg = cfg_item_gift[i]
       local itemid = cfg.ID
-      local count = (self._itemModule):GetItemCount(itemid)
-      if count > 0 then
+      local count = self._itemModule:GetItemCount(itemid)
+      if 0 < count then
         local itemList = cfg.ItemList
         for j = 1, #itemList do
           local itemListData = itemList[j]
@@ -166,8 +119,7 @@ UIItemTipsHomeland.InsertGiftWay = function(self, ways, tplId)
           if openItemId == tplId then
             local t = UIItemGetWayData:New()
             t:SetGiftWay(itemid)
-            ;
-            (table.insert)(ways, t)
+            table.insert(ways, t)
             break
           end
         end
@@ -176,108 +128,69 @@ UIItemTipsHomeland.InsertGiftWay = function(self, ways, tplId)
   end
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTipsHomeland.InsertCommonEC = function(self, ways, tplId)
-  -- function num : 0_7 , upvalues : _ENV
-  local cfg = (Cfg.cfg_petawakening_common_exchange)[tplId]
+function UIItemTipsHomeland:InsertCommonEC(ways, tplId)
+  local cfg = Cfg.cfg_petawakening_common_exchange[tplId]
   if cfg then
     local needRoleAsset = cfg.NeedRoleAsset
-    if needRoleAsset and (table.count)(needRoleAsset) > 0 then
+    if needRoleAsset and table.count(needRoleAsset) > 0 then
       for i = 1, #needRoleAsset do
         local data = needRoleAsset[i]
         local id = data[1]
         local count = data[2]
         local t = UIItemGetWayData:New()
         t:SetECWay(id, count)
-        ;
-        (table.insert)(ways, t)
+        table.insert(ways, t)
       end
     end
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTipsHomeland.FlushPos = function(self)
-  -- function num : 0_8 , upvalues : _ENV
+function UIItemTipsHomeland:FlushPos()
   if self.go then
-    local pos = ((self.go).transform).position
-    local posSelf = ((self.bg).transform).position
+    local pos = self.go.transform.position
+    local posSelf = self.bg.transform.position
     local n = 1
     local step = 5
     local half = step * 0.5
-    while pos.y + step * n < posSelf.y - half do
+    while posSelf.y - half > pos.y + step * n do
       n = n + 1
     end
-    local targetPos = Vector3(pos.x, pos.y + step * (n), 0)
-    -- DECOMPILER ERROR at PC38: Confused about usage of register: R7 in 'UnsetPending'
-
+    local targetPos = Vector3(pos.x, pos.y + step * n, 0)
     if targetPos.x > 0 then
-      if posSelf.y < targetPos.y then
-        (self.c).pivot = Vector2.one
+      if targetPos.y > posSelf.y then
+        self.c.pivot = Vector2.one
       else
-        -- DECOMPILER ERROR at PC45: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.c).pivot = Vector2(1, 0)
+        self.c.pivot = Vector2(1, 0)
       end
+    elseif targetPos.y > posSelf.y then
+      self.c.pivot = Vector2(0, 1)
     else
-      -- DECOMPILER ERROR at PC56: Confused about usage of register: R7 in 'UnsetPending'
-
-      if posSelf.y < targetPos.y then
-        (self.c).pivot = Vector2(0, 1)
-      else
-        -- DECOMPILER ERROR at PC61: Confused about usage of register: R7 in 'UnsetPending'
-
-        ;
-        (self.c).pivot = Vector2.zero
-      end
+      self.c.pivot = Vector2.zero
     end
-    -- DECOMPILER ERROR at PC63: Confused about usage of register: R7 in 'UnsetPending'
-
-    ;
-    (self.c).position = targetPos
-    local size = (self.c).sizeDelta
-    local pos = (self.c).anchoredPosition
-    local oldPivot = (self.c).pivot
-    -- DECOMPILER ERROR at PC75: Confused about usage of register: R10 in 'UnsetPending'
-
-    ;
-    (self.c).pivot = Vector2(0.5, 0.5)
+    self.c.position = targetPos
+    local size = self.c.sizeDelta
+    local pos = self.c.anchoredPosition
+    local oldPivot = self.c.pivot
+    self.c.pivot = Vector2(0.5, 0.5)
     pos.x = pos.x + (0.5 - oldPivot.x) * size.x
     pos.y = pos.y + (0.5 - oldPivot.y) * size.y
-    local halfScreenH = (UnityEngine.Screen).height * 0.5
+    local halfScreenH = UnityEngine.Screen.height * 0.5
     local halfH = size.y * 0.5
     if pos.y > 0 then
       local dh = pos.y + halfH - halfScreenH
-      if dh > 0 then
+      if 0 < dh then
         pos.y = pos.y - dh
       end
-    else
-      do
-        do
-          if pos.y < 0 then
-            local dh = pos.y - halfH + halfScreenH
-            if dh < 0 then
-              pos.y = pos.y - dh
-            end
-          end
-          -- DECOMPILER ERROR at PC120: Confused about usage of register: R12 in 'UnsetPending'
-
-          ;
-          (self.c).anchoredPosition = pos
-        end
+    elseif pos.y < 0 then
+      local dh = pos.y - halfH + halfScreenH
+      if dh < 0 then
+        pos.y = pos.y - dh
       end
     end
+    self.c.anchoredPosition = pos
   end
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UIItemTipsHomeland.closeOnClick = function(self)
-  -- function num : 0_9
+function UIItemTipsHomeland:closeOnClick()
   self:CloseDialog()
 end
-
-

@@ -1,27 +1,13 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/main_lobby/test_func/ui_test_func_entry.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UITestFuncEntry", UICustomWidget)
 UITestFuncEntry = UITestFuncEntry
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UITestFuncEntry.SetData = function(self, className, prefabName)
-  -- function num : 0_0 , upvalues : _ENV
-  local isShow = (EngineGameHelper.IsDevelopmentBuild)() or (HelperProxy:GetInstance()):GetConfig("EnableTestFunc", "false") == "true"
-  ;
-  (self:GetGameObject()):SetActive(isShow)
+function UITestFuncEntry:SetData(className, prefabName)
+  local isShow = EngineGameHelper.IsDevelopmentBuild() or HelperProxy:GetInstance():GetConfig("EnableTestFunc", "false") == "true"
+  self:GetGameObject():SetActive(isShow)
   self._className = className
   self._prefabName = prefabName
-  -- DECOMPILER ERROR: 2 unprocessed JMP targets
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UITestFuncEntry.BtnOnClick = function(self)
-  -- function num : 0_1
+function UITestFuncEntry:BtnOnClick()
   self:ShowDialog("UITestFuncController", self._className, self._prefabName)
 end
-
-

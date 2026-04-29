@@ -1,23 +1,14 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_change_feature_skill_power.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewChangeFeatureSkillPower", BuffViewBase)
 BuffViewChangeFeatureSkillPower = BuffViewChangeFeatureSkillPower
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewChangeFeatureSkillPower.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
+function BuffViewChangeFeatureSkillPower:PlayView(TT)
   local result = self._buffResult
-  local featureSvcRender = (self._world):GetService("FeatureRender")
+  local featureSvcRender = self._world:GetService("FeatureRender")
   if featureSvcRender then
     local dataList = result:GetFeatureSkillPowerDataList()
-    for _,data in ipairs(dataList) do
+    for _, data in ipairs(dataList) do
       local powerData = data
       featureSvcRender:NotifyFeatureSkillPowerChange(powerData.featureType, powerData.power, powerData.ready)
     end
   end
 end
-
-

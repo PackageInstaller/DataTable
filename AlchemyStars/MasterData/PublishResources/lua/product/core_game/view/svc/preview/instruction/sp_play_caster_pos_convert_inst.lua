@@ -1,80 +1,66 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/preview/instruction/sp_play_caster_pos_convert_inst.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("sp_base_inst")
 _class("SkillPreviewPlayCasterPosConvertInstruction", SkillPreviewBaseInstruction)
 SkillPreviewPlayCasterPosConvertInstruction = SkillPreviewPlayCasterPosConvertInstruction
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewPlayCasterPosConvertInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_0 , upvalues : _ENV
+function SkillPreviewPlayCasterPosConvertInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
-  local previewActiveSkillService = (self._world):GetService("PreviewActiveSkill")
+  local previewActiveSkillService = self._world:GetService("PreviewActiveSkill")
   local scopeGridList = previewContext:GetScopeResult()
-  local previewEffectCalcService = (self._world):GetService("PreviewCalcEffect")
+  local previewEffectCalcService = self._world:GetService("PreviewCalcEffect")
   local effectList = previewContext:GetEffect(SkillEffectType.ConvertGridElement)
   local effectParam = previewEffectCalcService:CreateSkillEffectParam(SkillEffectType.ConvertGridElement, effectList)
   local result = previewEffectCalcService:CalcConvertGridElement(casterEntity, scopeGridList, effectParam)
   local gridPos = casterEntity:GetGridPosition()
   local attackRange = previewContext:GetScopeResult()
-  if not (table.icontains)(attackRange, gridPos) then
-    return 
+  if not table.icontains(attackRange, gridPos) then
+    return
   end
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   if env:GetConvertPlayerPosGridEffectEntityID() then
     local oldEntityID = env:GetConvertPlayerPosGridEffectEntityID()
-    local e = (self._world):GetEntityByID(oldEntityID)
+    local e = self._world:GetEntityByID(oldEntityID)
     if e then
-      (self._world):DestroyEntity(e)
+      self._world:DestroyEntity(e)
     end
     env:SetConvertPlayerPosGridEffectEntityID(nil)
   end
-  do
-    local pieceType = result:GetTargetElementType()
-    local fxsvc = (self._world):GetService("Effect")
-    local e = fxsvc:CreateEffectEntity()
-    local pieceService = (self._world):GetService("Piece")
-    pieceService:SetPieceEntityPieceType(e, pieceType)
-    e:SetGridPosition(gridPos)
-    e:SetPosition(gridPos)
-    env:SetConvertPlayerPosGridEffectEntityID(e:GetID())
-    YIELD(TT)
-    local effView = e:View()
-    if not effView then
-      return 
-    end
-    local effectObj = effView:GetGameObject()
-    if not effectObj or tostring(effectObj) == "null" then
-      return 
-    end
-    local pieceAnimData = PieceAnimationData:New()
-    local name = pieceAnimData:GetAnimationName("Color")
-    local gridGameObj = ((e:View()).ViewWrapper).GameObject
-    local csAnimation = gridGameObj:GetComponentInChildren(typeof(UnityEngine.Animation))
-    csAnimation:Play(name)
+  local pieceType = result:GetTargetElementType()
+  local fxsvc = self._world:GetService("Effect")
+  local e = fxsvc:CreateEffectEntity()
+  local pieceService = self._world:GetService("Piece")
+  pieceService:SetPieceEntityPieceType(e, pieceType)
+  e:SetGridPosition(gridPos)
+  e:SetPosition(gridPos)
+  env:SetConvertPlayerPosGridEffectEntityID(e:GetID())
+  YIELD(TT)
+  local effView = e:View()
+  if not effView then
+    return
   end
+  local effectObj = effView:GetGameObject()
+  if not effectObj or tostring(effectObj) == "null" then
+    return
+  end
+  local pieceAnimData = PieceAnimationData:New()
+  local name = pieceAnimData:GetAnimationName("Color")
+  local gridGameObj = e:View().ViewWrapper.GameObject
+  local csAnimation = gridGameObj:GetComponentInChildren(typeof(UnityEngine.Animation))
+  csAnimation:Play(name)
 end
 
 _class("SkillPreviewRemoveCasterPosConvertInstruction", SkillPreviewBaseInstruction)
 SkillPreviewRemoveCasterPosConvertInstruction = SkillPreviewRemoveCasterPosConvertInstruction
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-SkillPreviewRemoveCasterPosConvertInstruction.DoInstruction = function(self, TT, casterEntity, previewContext)
-  -- function num : 0_1
+function SkillPreviewRemoveCasterPosConvertInstruction:DoInstruction(TT, casterEntity, previewContext)
   self._world = previewContext:GetWorld()
-  local env = ((self._world):GetPreviewEntity()):PreviewEnv()
+  local env = self._world:GetPreviewEntity():PreviewEnv()
   local eid = env:GetConvertPlayerPosGridEffectEntityID()
   if not eid then
-    return 
+    return
   end
-  local e = (self._world):GetEntityByID(eid)
+  local e = self._world:GetEntityByID(eid)
   if not e then
-    return 
+    return
   end
-  ;
-  (self._world):DestroyEntity(e)
+  self._world:DestroyEntity(e)
 end
-
-

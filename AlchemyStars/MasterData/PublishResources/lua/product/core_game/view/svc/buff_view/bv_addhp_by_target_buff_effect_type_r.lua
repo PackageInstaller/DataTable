@@ -1,25 +1,15 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_addhp_by_target_buff_effect_type_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddHPByTargetBuffEffectType", BuffViewBase)
 BuffViewAddHPByTargetBuffEffectType = BuffViewAddHPByTargetBuffEffectType
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddHPByTargetBuffEffectType.Constructor = function(self)
-  -- function num : 0_0
+function BuffViewAddHPByTargetBuffEffectType:Constructor()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewAddHPByTargetBuffEffectType.PlayView = function(self, TT)
-  -- function num : 0_1 , upvalues : _ENV
+function BuffViewAddHPByTargetBuffEffectType:PlayView(TT)
   local entity = self._entity
-  local addValue = (self._buffResult):GetAddHP()
-  local damageInfo = (self._buffResult):GetDamageInfo()
+  local addValue = self._buffResult:GetAddHP()
+  local damageInfo = self._buffResult:GetDamageInfo()
   if addValue <= 0 then
-    return 
+    return
   end
   YIELD(TT)
   local materialEntity = entity
@@ -27,14 +17,12 @@ BuffViewAddHPByTargetBuffEffectType.PlayView = function(self, TT)
     materialEntity = entity:GetTeamLeaderPetEntity()
   end
   if materialEntity:MaterialAnimationComponent() then
-    (materialEntity:MaterialAnimationComponent()):PlayCure()
+    materialEntity:MaterialAnimationComponent():PlayCure()
   end
-  local playDamageService = (self._world):GetService("PlayDamage")
-  local matchType = (self._world):MatchType()
-  if (self._world):MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze and materialEntity:HasPetPstID() then
-    materialEntity = (materialEntity:Pet()):GetOwnerTeamEntity()
+  local playDamageService = self._world:GetService("PlayDamage")
+  local matchType = self._world:MatchType()
+  if self._world:MatchType(GetMatchTypeType.SeasonMazeWorldBoss) == MatchType.MT_SeasonMaze and materialEntity:HasPetPstID() then
+    materialEntity = materialEntity:Pet():GetOwnerTeamEntity()
   end
   playDamageService:AsyncUpdateHPAndDisplayDamage(materialEntity, damageInfo)
 end
-
-

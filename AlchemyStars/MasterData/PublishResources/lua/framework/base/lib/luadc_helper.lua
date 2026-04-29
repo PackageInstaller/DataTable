@@ -1,35 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/framework/base/lib/luadc_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("log_helper")
-local LuaDcErrFunc = function(obj)
-  -- function num : 0_0 , upvalues : _ENV
+
+local function LuaDcErrFunc(obj)
   dump(obj)
 end
 
 LuaDcHelper = {}
--- DECOMPILER ERROR at PC8: Confused about usage of register: R1 in 'UnsetPending'
 
-LuaDcHelper.Init = function()
-  -- function num : 0_1 , upvalues : _ENV, LuaDcErrFunc
-  local ret, msg = (lua_dc.InitLogFunc)(logfatal)
+function LuaDcHelper.Init()
+  local ret, msg = lua_dc.InitLogFunc(logfatal)
   if not ret then
-    (Log.fatal)("lua_dc.InitLogFunc fail! ", msg)
+    Log.fatal("lua_dc.InitLogFunc fail! ", msg)
   end
-  ret = (lua_dc.InitErrFunc)(LuaDcErrFunc)
+  ret, msg = lua_dc.InitErrFunc(LuaDcErrFunc)
   if not ret then
-    (Log.fatal)("lua_dc.InitErrFunc fail! ", msg)
+    Log.fatal("lua_dc.InitErrFunc fail! ", msg)
   end
-  for _,v in pairs(_G.Classes) do
-    -- DECOMPILER ERROR at PC33: Overwrote pending register: R1 in 'AssignReg'
-
-    ret = (lua_dc.InitSeria)(v)
+  for _, v in pairs(_G.Classes) do
+    ret, msg = lua_dc.InitSeria(v)
     if not ret then
-      (Log.fatal)(v._className, " init seria fail! ", msg)
+      Log.fatal(v._className, " init seria fail! ", msg)
     end
   end
 end
-
-

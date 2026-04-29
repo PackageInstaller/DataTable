@@ -1,50 +1,32 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/sys/prvw/fade_transparent_sys_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("FadeTransprentSystem_Render", Object)
 FadeTransprentSystem_Render = FadeTransprentSystem_Render
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-FadeTransprentSystem_Render.Constructor = function(self, world)
-  -- function num : 0_0
+function FadeTransprentSystem_Render:Constructor(world)
   self.world = world
-  self._group = world:GetGroup((world.BW_WEMatchers).FadeController)
+  self._group = world:GetGroup(world.BW_WEMatchers.FadeController)
   self._timeService = world:GetService("Time")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeTransprentSystem_Render.Execute = function(self)
-  -- function num : 0_1
-  self:ExecuteEntities((self._group):GetEntities())
+function FadeTransprentSystem_Render:Execute()
+  self:ExecuteEntities(self._group:GetEntities())
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeTransprentSystem_Render.ExecuteEntities = function(self, entities)
-  -- function num : 0_2 , upvalues : _ENV
-  for i,e in ipairs(entities) do
+function FadeTransprentSystem_Render:ExecuteEntities(entities)
+  for i, e in ipairs(entities) do
     self:HandleEntity(e)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-FadeTransprentSystem_Render.HandleEntity = function(self, e)
-  -- function num : 0_3
+function FadeTransprentSystem_Render:HandleEntity(e)
   local fadeCom = e:FadeController()
   local fade = fadeCom:Fade()
   if not fadeCom._param then
     fadeCom._param = 0.8
   end
   if fadeCom:IsTransparent() then
-    fade.Alpha = fade.Alpha + (self._timeService):GetDeltaTime() * fadeCom._param
+    fade.Alpha = fade.Alpha + self._timeService:GetDeltaTime() * fadeCom._param
     if fade.Alpha >= 1 or fade.Alpha <= 0 then
       fadeCom._param = -fadeCom._param
     end
   end
 end
-
-

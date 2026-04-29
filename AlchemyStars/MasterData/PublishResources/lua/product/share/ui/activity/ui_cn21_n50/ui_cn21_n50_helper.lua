@@ -1,177 +1,125 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/share/ui/activity/ui_cn21_n50/ui_cn21_n50_helper.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UICN21N50Helper", Object)
 UICN21N50Helper = UICN21N50Helper
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UICN21N50Helper.GetCampaignType = function()
-  -- function num : 0_0 , upvalues : _ENV
+function UICN21N50Helper.GetCampaignType()
   return ECampaignType.CAMPAIGN_TYPE_INLAND_N21
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.GetComponentId = function(name)
-  -- function num : 0_1 , upvalues : _ENV
-  local tb = {login = ECampaignCN21ComponentID.ECN21_CUMULATIVE_LOGIN, power = ECampaignCN21ComponentID.ECN21_POWER2ITEM, line = ECampaignCN21ComponentID.ECN21_LINE_MISSION, black = ECampaignCN21ComponentID.ECN21_HEIXIA, share = ECampaignCN21ComponentID.ECN21_SHARED, exchange = ECampaignCN21ComponentID.ECN21_SHOP}
+function UICN21N50Helper.GetComponentId(name)
+  local tb = {
+    login = ECampaignCN21ComponentID.ECN21_CUMULATIVE_LOGIN,
+    power = ECampaignCN21ComponentID.ECN21_POWER2ITEM,
+    line = ECampaignCN21ComponentID.ECN21_LINE_MISSION,
+    black = ECampaignCN21ComponentID.ECN21_HEIXIA,
+    share = ECampaignCN21ComponentID.ECN21_SHARED,
+    exchange = ECampaignCN21ComponentID.ECN21_SHOP
+  }
   return tb[name]
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.GetComponent = function(campaign, name)
-  -- function num : 0_2 , upvalues : _ENV
-  local cmptId = (UICN21N50Helper.GetComponentId)(name)
+function UICN21N50Helper.GetComponent(campaign, name)
+  local cmptId = UICN21N50Helper.GetComponentId(name)
   local component = campaign:GetComponent(cmptId)
   return component
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.GetComponentInfo = function(campaign, name)
-  -- function num : 0_3 , upvalues : _ENV
-  local cmptId = (UICN21N50Helper.GetComponentId)(name)
+function UICN21N50Helper.GetComponentInfo(campaign, name)
+  local cmptId = UICN21N50Helper.GetComponentId(name)
   local componentInfo = campaign:GetComponentInfo(cmptId)
   return componentInfo
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.SetBattlePassBtn = function(uiView, widgetName, bp_campaign)
-  -- function num : 0_4 , upvalues : _ENV
+function UICN21N50Helper.SetBattlePassBtn(uiView, widgetName, bp_campaign)
   local useStateUI = false
   local open_sample = bp_campaign:CheckCampaignOpen()
   if open_sample then
-    local obj = (UIWidgetHelper.SpawnObject)(uiView, widgetName, "UIActivityCommonCampaignEnter")
-    local clickCallback = function()
-    -- function num : 0_4_0 , upvalues : _ENV
-    (UIActivityBattlePassHelper.OpenMainController)()
-  end
-
+    local obj = UIWidgetHelper.SpawnObject(uiView, widgetName, "UIActivityCommonCampaignEnter")
+    
+    local function clickCallback()
+      UIActivityBattlePassHelper.OpenMainController()
+    end
+    
     obj:SetData(bp_campaign, useStateUI, clickCallback)
   end
-  do
-    local obj = uiView:GetGameObject(widgetName)
-    obj:SetActive(open_sample)
-  end
+  local obj = uiView:GetGameObject(widgetName)
+  obj:SetActive(open_sample)
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.SetExchangeBtn = function(uiView, widgetName, campaign, componentId, closeCallback)
-  -- function num : 0_5 , upvalues : _ENV
+function UICN21N50Helper.SetExchangeBtn(uiView, widgetName, campaign, componentId, closeCallback)
   local name = "exchange"
-  local component = (UICN21N50Helper.GetComponent)(campaign, name)
-  local obj = (UIWidgetHelper.SpawnObject)(uiView, widgetName, "UIActivityCommonComponentEnter")
-  local newCallback = function()
-    -- function num : 0_5_0 , upvalues : _ENV, name
-    local new = not (UICN21N50Helper.LocalDB_Has)(name, "New")
+  local component = UICN21N50Helper.GetComponent(campaign, name)
+  local obj = UIWidgetHelper.SpawnObject(uiView, widgetName, "UIActivityCommonComponentEnter")
+  
+  local function newCallback()
+    local new = not UICN21N50Helper.LocalDB_Has(name, "New")
     return new
   end
-
+  
   obj:SetNew("_new", newCallback)
-  local redCallback = function()
-    -- function num : 0_5_1 , upvalues : campaign, component
-    if campaign:CheckComponentOpen((component.m_component_info).m_component_id) then
-      return campaign:CheckComponentRed((component.m_component_info).m_component_id)
-    end
+  
+  local function redCallback()
+    return campaign:CheckComponentOpen(component.m_component_info.m_component_id) and campaign:CheckComponentRed(component.m_component_info.m_component_id)
   end
-
+  
   obj:SetRed("_red", redCallback)
   local color1, color2 = "#fc95bd", "#FFFFFF"
-  ;
-  (UICN21N50Helper.SetExchangeCostItem_PreZero)(component, obj, "icon", "text", color1, color2)
-  ;
-  (UIWidgetHelper.SetRawImage)(obj, "icon", "toptoon_3000381")
-  local clickCallback = function()
-    -- function num : 0_5_2 , upvalues : _ENV, name, campaign
-    (UICN21N50Helper.LocalDB_Set)(name, "New")
+  UICN21N50Helper.SetExchangeCostItem_PreZero(component, obj, "icon", "text", color1, color2)
+  UIWidgetHelper.SetRawImage(obj, "icon", "toptoon_3000381")
+  
+  local function clickCallback()
+    UICN21N50Helper.LocalDB_Set(name, "New")
     if campaign:CheckCampaignClose_ShowClientError() then
-      return 
+      return
     end
-    ;
-    (UIActivityHelper.OpenCampaignShop)(campaign)
+    UIActivityHelper.OpenCampaignShop(campaign)
   end
-
+  
   obj:SetData(campaign, clickCallback)
   return obj
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.SetExchangeCostItem_PreZero = function(component, uiView, widgeIcon, widgeCount, color1, color2)
-  -- function num : 0_6 , upvalues : _ENV
+function UICN21N50Helper.SetExchangeCostItem_PreZero(component, uiView, widgeIcon, widgeCount, color1, color2)
   local itemId = component:GetCostItemId()
-  ;
-  (UIWidgetHelper.SetItemCount)(uiView, itemId, widgeCount, function(count)
-    -- function num : 0_6_0 , upvalues : _ENV, color1, color2
-    count = (math.min)(count, 9999999)
-    local preZero = (UIActivityHelper.GetZeroStrFrontNum)(6, count)
-    local str = (UIActivityHelper.GetColorText)(color1, preZero, color2, tostring(count))
+  UIWidgetHelper.SetItemCount(uiView, itemId, widgeCount, function(count)
+    count = math.min(count, 9999999)
+    local preZero = UIActivityHelper.GetZeroStrFrontNum(6, count)
+    local str = UIActivityHelper.GetColorText(color1, preZero, color2, tostring(count))
     return str
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper._LocalDB_GetKey = function(btnName, funcName)
-  -- function num : 0_7 , upvalues : _ENV
+function UICN21N50Helper._LocalDB_GetKey(btnName, funcName)
   local key = "UICN21N50Helper_" .. btnName .. "_" .. funcName .. "_"
-  return (UIActivityHelper.GetLocalDBKeyWithPstId)(key)
+  return UIActivityHelper.GetLocalDBKeyWithPstId(key)
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.LocalDB_Has = function(btnName, funcName)
-  -- function num : 0_8 , upvalues : _ENV
-  local key = (UICN21N50Helper._LocalDB_GetKey)(btnName, funcName)
-  return (LocalDB.HasKey)(key)
+function UICN21N50Helper.LocalDB_Has(btnName, funcName)
+  local key = UICN21N50Helper._LocalDB_GetKey(btnName, funcName)
+  return LocalDB.HasKey(key)
 end
 
--- DECOMPILER ERROR at PC35: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.LocalDB_Set = function(btnName, funcName, value)
-  -- function num : 0_9 , upvalues : _ENV
-  if not value then
-    value = 1
-  end
-  local key = (UICN21N50Helper._LocalDB_GetKey)(btnName, funcName)
-  ;
-  (LocalDB.SetInt)(key, value)
+function UICN21N50Helper.LocalDB_Set(btnName, funcName, value)
+  value = value or 1
+  local key = UICN21N50Helper._LocalDB_GetKey(btnName, funcName)
+  LocalDB.SetInt(key, value)
 end
 
--- DECOMPILER ERROR at PC38: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.CalcNew_Component = function(campaign, name)
-  -- function num : 0_10 , upvalues : _ENV
-  local component = (UICN21N50Helper.GetComponent)(campaign, name)
-  if component then
-    local isOpen = component:ComponentIsOpen()
-  end
-  local isNew = not (UICN21N50Helper.LocalDB_Has)(name, "New")
-  return not isOpen or isNew
+function UICN21N50Helper.CalcNew_Component(campaign, name)
+  local component = UICN21N50Helper.GetComponent(campaign, name)
+  local isOpen = component and component:ComponentIsOpen()
+  local isNew = not UICN21N50Helper.LocalDB_Has(name, "New")
+  return isOpen and isNew
 end
 
--- DECOMPILER ERROR at PC41: Confused about usage of register: R0 in 'UnsetPending'
-
-UICN21N50Helper.CalcRed_Component = function(campaign, name)
-  -- function num : 0_11 , upvalues : _ENV
-  local component = (UICN21N50Helper.GetComponent)(campaign, name)
-  if component then
-    local red = component:HaveRedPoint()
-  end
+function UICN21N50Helper.CalcRed_Component(campaign, name)
+  local component = UICN21N50Helper.GetComponent(campaign, name)
+  local red = component and component:HaveRedPoint()
   local tb = {line = true, black = true}
   local checkCrossDay = tb[name]
   if not checkCrossDay then
     return red
   end
-  local key = (UICN21N50Helper._LocalDB_GetKey)(name, "Red")
-  local isCross = not (UIActivityHelper.HasCmptRedViewed)(key)
-  return not isCross or red
+  local key = UICN21N50Helper._LocalDB_GetKey(name, "Red")
+  local isCross = not UIActivityHelper.HasCmptRedViewed(key)
+  return isCross and red
 end
-
-

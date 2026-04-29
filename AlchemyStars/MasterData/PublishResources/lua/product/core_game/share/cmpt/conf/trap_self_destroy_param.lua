@@ -1,39 +1,19 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/cmpt/conf/trap_self_destroy_param.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("TrapSelfDestroyParam", Object)
 TrapSelfDestroyParam = TrapSelfDestroyParam
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-TrapSelfDestroyParam.Constructor = function(self, num)
-  -- function num : 0_0
+function TrapSelfDestroyParam:Constructor(num)
   self._num = num
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapSelfDestroyParam.GetNum = function(self)
-  -- function num : 0_1
+function TrapSelfDestroyParam:GetNum()
   return self._num
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapSelfDestroyParam.NextNum = function(self)
-  -- function num : 0_2
+function TrapSelfDestroyParam:NextNum()
   self._num = self._num - 1
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-TrapSelfDestroyParam.AddNum = function(self, value)
-  -- function num : 0_3
-  if not value then
-    value = 1
-  end
+function TrapSelfDestroyParam:AddNum(value)
+  value = value or 1
   self._num = self._num + value
 end
-
-

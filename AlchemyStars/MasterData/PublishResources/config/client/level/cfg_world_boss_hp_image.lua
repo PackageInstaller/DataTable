@@ -1,21 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/config/client/level/cfg_world_boss_hp_image.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 local key = {ID = 1, ImageName = 2}
 local config = {
-{1, "thread_bosstiao2_frame"}
-, 
-{2, "thread_bosstiao_blood1"}
-, 
-{3, "thread_bosstiao_blood2"}
-, 
-{4, "thread_bosstiao_blood3"}
-, 
-{5, "thread_bosstiao_blood4"}
-, 
-{6, "thread_bosstiao_blood5"}
+  {
+    1,
+    "thread_bosstiao2_frame"
+  },
+  {
+    2,
+    "thread_bosstiao_blood1"
+  },
+  {
+    3,
+    "thread_bosstiao_blood2"
+  },
+  {
+    4,
+    "thread_bosstiao_blood3"
+  },
+  {
+    5,
+    "thread_bosstiao_blood4"
+  },
+  {
+    6,
+    "thread_bosstiao_blood5"
+  }
 }
 return config, "ID", key
-

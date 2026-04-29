@@ -1,21 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/bv_add_reflexive_damage_layer_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewAddReflexiveDamageLayer", BuffViewBase)
 BuffViewAddReflexiveDamageLayer = BuffViewAddReflexiveDamageLayer
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewAddReflexiveDamageLayer.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  if not (self._entity):PetPstID() then
-    return 
+function BuffViewAddReflexiveDamageLayer:PlayView(TT)
+  if not self._entity:PetPstID() then
+    return
   end
   local res = self:GetBuffResult()
   local layer = res:GetLayer()
-  ;
-  ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.SetAccumulateNum, ((self._entity):PetPstID()):GetPstID(), layer)
+  GameGlobal.EventDispatcher():Dispatch(GameEventType.SetAccumulateNum, self._entity:PetPstID():GetPstID(), layer)
 end
-
-

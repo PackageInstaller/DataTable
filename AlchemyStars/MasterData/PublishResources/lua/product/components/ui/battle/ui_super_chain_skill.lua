@@ -1,23 +1,11 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/battle/ui_super_chain_skill.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UISuperChainSkill", UIController)
 UISuperChainSkill = UISuperChainSkill
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UISuperChainSkill.OnShow = function(self, uiParams)
-  -- function num : 0_0 , upvalues : _ENV
-  local screenPos = (table.unpack)(uiParams)
-  local uiCamera = ((GameGlobal.UIStateManager)()):GetControllerCamera("UISuperChainSkill")
+function UISuperChainSkill:OnShow(uiParams)
+  local screenPos = table.unpack(uiParams)
+  local uiCamera = GameGlobal.UIStateManager():GetControllerCamera("UISuperChainSkill")
   local worldPos = uiCamera:ScreenToWorldPoint(screenPos)
   worldPos.z = 0
   local go = self:GetGameObject("CenterAnchor")
-  -- DECOMPILER ERROR at PC18: Confused about usage of register: R6 in 'UnsetPending'
-
-  ;
-  (go.transform).position = worldPos
+  go.transform.position = worldPos
 end
-
-

@@ -1,45 +1,24 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/share/result/l2r_active_attack_result.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("L2RActiveAttackResult", Object)
 L2RActiveAttackResult = L2RActiveAttackResult
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-L2RActiveAttackResult.Constructor = function(self, eid, res)
-  -- function num : 0_0
+function L2RActiveAttackResult:Constructor(eid, res)
   self._entityID = eid
   self._skillResult = res
   self._skillID = nil
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RActiveAttackResult.GetEntityID = function(self)
-  -- function num : 0_1
+function L2RActiveAttackResult:GetEntityID()
   return self._entityID
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RActiveAttackResult.GetSkillResult = function(self)
-  -- function num : 0_2
+function L2RActiveAttackResult:GetSkillResult()
   return self._skillResult
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RActiveAttackResult.SetL2RActiveAttackResult_SkillID = function(self, skillID)
-  -- function num : 0_3
+function L2RActiveAttackResult:SetL2RActiveAttackResult_SkillID(skillID)
   self._skillID = skillID
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-L2RActiveAttackResult.GetL2RActiveAttackResult_SkillID = function(self)
-  -- function num : 0_4
+function L2RActiveAttackResult:GetL2RActiveAttackResult_SkillID()
   return self._skillID
 end
-
-

@@ -1,45 +1,25 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/activity_n_plus_six/rebuilding_event/ui_activity_n_plus_six_event_reward_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIActivityNPlusSixEventRewardItem", UICustomWidget)
 UIActivityNPlusSixEventRewardItem = UIActivityNPlusSixEventRewardItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIActivityNPlusSixEventRewardItem.OnShow = function(self)
-  -- function num : 0_0
+function UIActivityNPlusSixEventRewardItem:OnShow()
   self._iconImg = self:GetUIComponent("RawImageLoader", "Icon")
   self._countLabel = self:GetUIComponent("UILocalizationText", "Count")
   self._go = self:GetGameObject("go")
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventRewardItem.Refresh = function(self, rewardData, isCompletePanel)
-  -- function num : 0_1 , upvalues : _ENV
+function UIActivityNPlusSixEventRewardItem:Refresh(rewardData, isCompletePanel)
   self._rewardData = rewardData
-  -- DECOMPILER ERROR at PC3: Confused about usage of register: R3 in 'UnsetPending'
-
-  ;
-  (self._countLabel).text = rewardData.count
-  local ItemTempleate = (Cfg.cfg_item)[rewardData.assetid]
-  ;
-  (self._iconImg):LoadImage(ItemTempleate.Icon)
+  self._countLabel.text = rewardData.count
+  local ItemTempleate = Cfg.cfg_item[rewardData.assetid]
+  self._iconImg:LoadImage(ItemTempleate.Icon)
   self._go = self:GetGameObject()
   self._isCompletePanel = isCompletePanel
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIActivityNPlusSixEventRewardItem.btnOnClick = function(self)
-  -- function num : 0_2 , upvalues : _ENV
+function UIActivityNPlusSixEventRewardItem:btnOnClick()
   if self._isCompletePanel then
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixShowEventCompleteRewardTips, (self._rewardData).assetid, ((self._go).transform).position)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixShowEventCompleteRewardTips, self._rewardData.assetid, self._go.transform.position)
   else
-    ;
-    ((GameGlobal.EventDispatcher)()):Dispatch(GameEventType.NPlusSixShowEventRewardTips, (self._rewardData).assetid, ((self._go).transform).position)
+    GameGlobal.EventDispatcher():Dispatch(GameEventType.NPlusSixShowEventRewardTips, self._rewardData.assetid, self._go.transform.position)
   end
 end
-
-

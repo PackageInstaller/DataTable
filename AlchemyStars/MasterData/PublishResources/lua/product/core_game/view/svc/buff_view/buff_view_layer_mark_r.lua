@@ -1,38 +1,21 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/core_game/view/svc/buff_view/buff_view_layer_mark_r.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("BuffViewLayerMark", BuffViewBase)
 BuffViewLayerMark = BuffViewLayerMark
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewLayerMark.PlayView = function(self, TT)
-  -- function num : 0_0 , upvalues : _ENV
-  (self._viewInstance):SetLayerCount(TT, (self._buffResult):GetLayer())
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+function BuffViewLayerMark:PlayView(TT)
+  self._viewInstance:SetLayerCount(TT, self._buffResult:GetLayer())
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-BuffViewLayerMark.IsNotifyMatch = function(self, notify)
-  -- function num : 0_1
+function BuffViewLayerMark:IsNotifyMatch(notify)
   local casterID = notify:GetCasterEntityID()
   local buffResult = self._buffResult
-  do return casterID == buffResult:GetEntityID() end
-  -- DECOMPILER ERROR: 1 unprocessed JMP targets
+  return casterID == buffResult:GetEntityID()
 end
 
 _class("BuffViewRemoveLayerMark", BuffViewBase)
 BuffViewRemoveLayerMark = BuffViewRemoveLayerMark
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
 
-BuffViewRemoveLayerMark.PlayView = function(self, TT)
-  -- function num : 0_2 , upvalues : _ENV
-  (self._viewInstance):SetLayerCount(TT, (self._buffResult):GetLayer())
-  ;
-  ((self._world):EventDispatcher()):Dispatch(GameEventType.ChangeBuff)
+function BuffViewRemoveLayerMark:PlayView(TT)
+  self._viewInstance:SetLayerCount(TT, self._buffResult:GetLayer())
+  self._world:EventDispatcher():Dispatch(GameEventType.ChangeBuff)
 end
-
-

@@ -1,16 +1,7 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/component/homelandpet_component_soliloquize.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_component_base")
 _class("HomelandPetComponentSoliloquize", HomelandPetComponentBase)
 HomelandPetComponentSoliloquize = HomelandPetComponentSoliloquize
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetComponentSoliloquize.OnExcute = function(self)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetComponentSoliloquize:OnExcute()
   self.state = HomelandPetComponentState.Success
 end
-
-

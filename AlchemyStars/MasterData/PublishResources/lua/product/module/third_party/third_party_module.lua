@@ -1,43 +1,28 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/module/third_party/third_party_module.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("ThirdPartyModule", GameModule)
 ThirdPartyModule = ThirdPartyModule
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-ThirdPartyModule.Constructor = function(self)
-  -- function num : 0_0 , upvalues : _ENV
-  -- DECOMPILER ERROR at PC25: Unhandled construct in 'MakeBoolean' P1
-
-  if (H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International) and H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland and not IsUnityEditor() then
-    self._performanceHandler = ThirdPartyPerfHandler:New()
-  end
-  if H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_International or not IsUnityEditor() then
+function ThirdPartyModule:Constructor()
+  if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
+      if not IsUnityEditor() then
+        self._performanceHandler = ThirdPartyPerfHandler:New()
+      end
+    elseif H3DGCloudLuaHelper.MsdkStatus ~= MSDKStatus.MS_International or not IsUnityEditor() then
+    end
   end
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-ThirdPartyModule.SyncOpenID = function(self, openID)
-  -- function num : 0_1 , upvalues : _ENV
+function ThirdPartyModule:SyncOpenID(openID)
   if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland or H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
-    (H3DGCloudLuaHelper.SyncOpenID)(openID)
+    H3DGCloudLuaHelper.SyncOpenID(openID)
     local pushModule = self:GetModule(PushModule)
     pushModule:RegisterPush(openID)
     if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_Inland then
-      (((GCloud.MSDK).MSDKCrash).SetUserId)(openID)
+      GCloud.MSDK.MSDKCrash.SetUserId(openID)
       if not IsUnityEditor() then
-        (self._performanceHandler):SyncOpenID(openID)
+        self._performanceHandler:SyncOpenID(openID)
       end
-    else
-    end
-  end
-  do
-    if H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
+    elseif H3DGCloudLuaHelper.MsdkStatus == MSDKStatus.MS_International then
     end
   end
 end
-
-

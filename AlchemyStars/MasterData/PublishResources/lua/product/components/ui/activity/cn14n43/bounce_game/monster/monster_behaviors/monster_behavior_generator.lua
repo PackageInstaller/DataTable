@@ -1,82 +1,48 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/cn14n43/bounce_game/monster/monster_behaviors/monster_behavior_generator.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("monster_behavior_base")
 _class("MonsterBeHaviorGenerator", MonsterBeHaviorBase)
 MonsterBeHaviorGenerator = MonsterBeHaviorGenerator
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-MonsterBeHaviorGenerator.Name = function(self)
-  -- function num : 0_0
+function MonsterBeHaviorGenerator:Name()
   return "MonsterBeHaviorGenerator"
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorGenerator.OnInit = function(self, param)
-  -- function num : 0_1
+function MonsterBeHaviorGenerator:OnInit(param)
   self.genId = param.GeneratorId
   self:InitData()
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorGenerator.Exec = function(self, dt)
-  -- function num : 0_2
+function MonsterBeHaviorGenerator:Exec(dt)
   if self._generator then
-    (self._generator):OnUpdate(dt)
+    self._generator:OnUpdate(dt)
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorGenerator.OnShow = function(self)
-  -- function num : 0_3
+function MonsterBeHaviorGenerator:OnShow()
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorGenerator.OnReset = function(self)
-  -- function num : 0_4
+function MonsterBeHaviorGenerator:OnReset()
 end
 
--- DECOMPILER ERROR at PC26: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorGenerator.OnRelease = function(self)
-  -- function num : 0_5
+function MonsterBeHaviorGenerator:OnRelease()
 end
 
--- DECOMPILER ERROR at PC29: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorGenerator.InitData = function(self)
-  -- function num : 0_6 , upvalues : _ENV
-  local genCfg = (Cfg.cfg_bounce_monster_gen)[self.genId]
+function MonsterBeHaviorGenerator:InitData()
+  local genCfg = Cfg.cfg_bounce_monster_gen[self.genId]
   if genCfg then
     self._generator = MonsterGenerator:New()
-    ;
-    (self._generator):Init(self.genId, function()
-    -- function num : 0_6_0 , upvalues : self, _ENV
-    local behaviorAni = self:GetBehavior(MonsterBeHaviorAnimation:Name())
-    if behaviorAni then
-      behaviorAni:PlayAnimation(BounceConst.MonsterAttackAniName)
-    end
-  end
-)
+    self._generator:Init(self.genId, function()
+      local behaviorAni = self:GetBehavior(MonsterBeHaviorAnimation:Name())
+      if behaviorAni then
+        behaviorAni:PlayAnimation(BounceConst.MonsterAttackAniName)
+      end
+    end)
   else
-    ;
-    (Log.error)("MonsterBeHaviorGenerator err:can\'t find cfg_bounce_monster_gen with id = " .. self.genId)
+    Log.error("MonsterBeHaviorGenerator err:can't find cfg_bounce_monster_gen with id = " .. self.genId)
   end
 end
 
--- DECOMPILER ERROR at PC32: Confused about usage of register: R0 in 'UnsetPending'
-
-MonsterBeHaviorGenerator.SetCoreController = function(self)
-  -- function num : 0_7
+function MonsterBeHaviorGenerator:SetCoreController()
   if self._generator then
-    (self._generator):SetCoreController(self:GetCoreController())
+    self._generator:SetCoreController(self:GetCoreController())
   end
 end
-
-

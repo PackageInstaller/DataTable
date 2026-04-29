@@ -1,84 +1,53 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/activity/n25/common/ui_n25_entry_btn_hard_level.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIN25EntryBtnHardLevel", UIN25EntryBtnBase)
 UIN25EntryBtnHardLevel = UIN25EntryBtnHardLevel
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIN25EntryBtnHardLevel.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIN25EntryBtnHardLevel:OnShow(uiParams)
   self:InitWidget()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnHardLevel.OnHide = function(self)
-  -- function num : 0_1
+function UIN25EntryBtnHardLevel:OnHide()
   self:CancelTimeEvent()
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnHardLevel.RefreshState = function(self, activityConst)
-  -- function num : 0_2 , upvalues : _ENV
+function UIN25EntryBtnHardLevel:RefreshState(activityConst)
   self.activityConst = activityConst
   self:RefreshStateInternal()
-  self._timeEvent = (UIActivityHelper.StartTimerEvent)(self._timeEvent, function()
-    -- function num : 0_2_0 , upvalues : self
+  self._timeEvent = UIActivityHelper.StartTimerEvent(self._timeEvent, function()
     self:RefreshStateInternal()
-  end
-)
+  end)
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnHardLevel.RefreshStateInternal = function(self)
-  -- function num : 0_3 , upvalues : _ENV
-  local c, cInfo = (self.activityConst):GetHardComponent()
-  if cInfo == nil then
-    return 
+function UIN25EntryBtnHardLevel:RefreshStateInternal()
+  local c, cInfo = self.activityConst:GetHardComponent()
+  if nil == cInfo then
+    return
   end
-  local red = (self.activityConst):CheckRedHard()
-  local new = (self.activityConst):CheckNewHard()
+  local red = self.activityConst:CheckRedHard()
+  local new = self.activityConst:CheckNewHard()
   self:SetLock(true)
   self:SetNewAndRed(new, red)
-  local nowTimestamp = (UICommonHelper.GetNowTimestamp)()
-  local state = (self.activityConst):GetStateHard()
+  local nowTimestamp = UICommonHelper.GetNowTimestamp()
+  local state = self.activityConst:GetStateHard()
   if state == UISummerOneEnterBtnState.NotOpen then
     local unlockTime = cInfo.m_unlock_time
-    local seconds = (math.floor)(unlockTime - nowTimestamp)
-    local timeStr = (UIActivityN25Const.GetTimeString)(seconds)
-    local timeTips = (StringTable.Get)("str_n25_activity_remain_open_time", timeStr)
+    local seconds = math.floor(unlockTime - nowTimestamp)
+    local timeStr = UIActivityN25Const.GetTimeString(seconds)
+    local timeTips = StringTable.Get("str_n25_activity_remain_open_time", timeStr)
     self:SetLeftTime(timeTips)
-  else
-    do
-      if state == UISummerOneEnterBtnState.Normal then
-        self:SetLock(false)
-        self:SetLeftTimeShow(false)
-      else
-        if state == UISummerOneEnterBtnState.Locked then
-          self:SetLeftTimeShow(true)
-          self:SetLeftTime((StringTable.Get)("str_n25_hardlevel_locktip"))
-          self:CancelTimeEvent()
-        else
-          if state == UISummerOneEnterBtnState.Closed then
-            self:SetLeftTimeShow(true)
-            self:SetLeftTime((StringTable.Get)("str_n25_activity_end"))
-            self:CancelTimeEvent()
-          end
-        end
-      end
-    end
+  elseif state == UISummerOneEnterBtnState.Normal then
+    self:SetLock(false)
+    self:SetLeftTimeShow(false)
+  elseif state == UISummerOneEnterBtnState.Locked then
+    self:SetLeftTimeShow(true)
+    self:SetLeftTime(StringTable.Get("str_n25_hardlevel_locktip"))
+    self:CancelTimeEvent()
+  elseif state == UISummerOneEnterBtnState.Closed then
+    self:SetLeftTimeShow(true)
+    self:SetLeftTime(StringTable.Get("str_n25_activity_end"))
+    self:CancelTimeEvent()
   end
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-UIN25EntryBtnHardLevel.CancelTimeEvent = function(self)
-  -- function num : 0_4 , upvalues : _ENV
-  self._timeEvent = (UIActivityHelper.CancelTimerEvent)(self._timeEvent)
+function UIN25EntryBtnHardLevel:CancelTimeEvent()
+  self._timeEvent = UIActivityHelper.CancelTimerEvent(self._timeEvent)
 end
-
-

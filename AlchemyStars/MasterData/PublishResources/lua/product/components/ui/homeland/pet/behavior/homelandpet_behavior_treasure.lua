@@ -1,68 +1,39 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/homeland/pet/behavior/homelandpet_behavior_treasure.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 require("homelandpet_behavior_base")
 _class("HomelandPetBehaviorTreasure", HomelandPetBehaviorBase)
 HomelandPetBehaviorTreasure = HomelandPetBehaviorTreasure
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
 
-HomelandPetBehaviorTreasure.Constructor = function(self, behaviorType, pet)
-  -- function num : 0_0 , upvalues : _ENV
+function HomelandPetBehaviorTreasure:Constructor(behaviorType, pet)
   self._animationComponent = self:GetComponent(HomelandPetComponentType.Animation)
   self._bubbleComponent = self:GetComponent(HomelandPetComponentType.Bubble)
   self._modeChangeProcessType = HomelandPetModeChangeProcessType.Custom
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorTreasure.Enter = function(self)
-  -- function num : 0_1 , upvalues : _ENV
-  ((HomelandPetBehaviorTreasure.super).Enter)(self)
-  ;
-  (self._animationComponent):Play(HomelandPetAnimName.Stand)
-  local bid = ((Cfg.cfg_homeland_global).TreasureBoardBubblePrefabID).IntValue
-  ;
-  (self._bubbleComponent):SetBubbleID(bid)
-  ;
-  (self._bubbleComponent):Show()
-  local tmng = (self._homelandClient):TreasureManager()
-  local _, param = (self._pet):IsOccupied()
+function HomelandPetBehaviorTreasure:Enter()
+  HomelandPetBehaviorTreasure.super.Enter(self)
+  self._animationComponent:Play(HomelandPetAnimName.Stand)
+  local bid = Cfg.cfg_homeland_global.TreasureBoardBubblePrefabID.IntValue
+  self._bubbleComponent:SetBubbleID(bid)
+  self._bubbleComponent:Show()
+  local tmng = self._homelandClient:TreasureManager()
+  local _, param = self._pet:IsOccupied()
   local trinfo = tmng:GetTreasure(param)
   if trinfo ~= nil then
     local rota = trinfo:GetPetRota()
-    do
-      ((((self._pet):AgentTransform()):DORotate(rota, 0.5, ((DG.Tweening).RotateMode).Fast)):SetEase(((DG.Tweening).Ease).Linear)):OnComplete(function()
-    -- function num : 0_1_0 , upvalues : self, rota
-    (self._pet):SetEuler(rota)
-  end
-)
-    end
+    self._pet:AgentTransform():DORotate(rota, 0.5, DG.Tweening.RotateMode.Fast):SetEase(DG.Tweening.Ease.Linear):OnComplete(function()
+      self._pet:SetEuler(rota)
+    end)
   end
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorTreasure.Exit = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  ((HomelandPetBehaviorTreasure.super).Exit)(self)
+function HomelandPetBehaviorTreasure:Exit()
+  HomelandPetBehaviorTreasure.super.Exit(self)
 end
 
--- DECOMPILER ERROR at PC20: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorTreasure.CanInterrupt = function(self)
-  -- function num : 0_3
+function HomelandPetBehaviorTreasure:CanInterrupt()
   return true
 end
 
--- DECOMPILER ERROR at PC23: Confused about usage of register: R0 in 'UnsetPending'
-
-HomelandPetBehaviorTreasure.ExitBubble = function(self)
-  -- function num : 0_4
-  (self._bubbleComponent):SetBubbleID(0)
-  ;
-  (self._bubbleComponent):Exit()
+function HomelandPetBehaviorTreasure:ExitBubble()
+  self._bubbleComponent:SetBubbleID(0)
+  self._bubbleComponent:Exit()
 end
-
-

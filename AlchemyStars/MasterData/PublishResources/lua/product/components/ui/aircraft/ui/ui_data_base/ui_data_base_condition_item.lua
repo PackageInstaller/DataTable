@@ -1,35 +1,22 @@
--- Decompiled using luadec 2.2 rev: 895d923 for Lua 5.3 from https://github.com/viruscamp/luadec
--- Command line: -se UTF8 MasterData/PublishResources/lua/product/components/ui/aircraft/ui/ui_data_base/ui_data_base_condition_item.lua 
-
--- params : ...
--- function num : 0 , upvalues : _ENV
 _class("UIDataBaseConditionItem", UICustomWidget)
 UIDataBaseConditionItem = UIDataBaseConditionItem
--- DECOMPILER ERROR at PC8: Confused about usage of register: R0 in 'UnsetPending'
 
-UIDataBaseConditionItem.OnShow = function(self, uiParams)
-  -- function num : 0_0
+function UIDataBaseConditionItem:OnShow(uiParams)
   self:GetComponents()
 end
 
--- DECOMPILER ERROR at PC11: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseConditionItem.GetComponents = function(self)
-  -- function num : 0_1
+function UIDataBaseConditionItem:GetComponents()
   self._countTex = self:GetUIComponent("UILocalizationText", "count")
   self._icon = self:GetUIComponent("Image", "icon")
 end
 
--- DECOMPILER ERROR at PC14: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseConditionItem.OnValue = function(self)
-  -- function num : 0_2 , upvalues : _ENV
-  local id = (self._condition):GetID()
-  local needCount = (self._condition):GetCount()
-  local roleModule = (GameGlobal.GetModule)(RoleModule)
+function UIDataBaseConditionItem:OnValue()
+  local id = self._condition:GetID()
+  local needCount = self._condition:GetCount()
+  local roleModule = GameGlobal.GetModule(RoleModule)
   local assetCount = roleModule:GetAssetCount(id)
   local enough = true
-  if assetCount < needCount then
+  if needCount > assetCount then
     enough = false
   end
   local tex = ""
@@ -38,26 +25,17 @@ UIDataBaseConditionItem.OnValue = function(self)
   else
     tex = "<color=#FF0000>" .. needCount .. "</color>"
   end
-  ;
-  (self._countTex):SetText(tex)
-  local cfg_top_tips = (Cfg.cfg_top_tips)[id]
+  self._countTex:SetText(tex)
+  local cfg_top_tips = Cfg.cfg_top_tips[id]
   if not cfg_top_tips then
-    (Log.error)("###[UIDataBaseConditionItem] cfg_top_tips is nil ! id --> ", id)
+    Log.error("###[UIDataBaseConditionItem] cfg_top_tips is nil ! id --> ", id)
   end
-  -- DECOMPILER ERROR at PC45: Confused about usage of register: R8 in 'UnsetPending'
-
-  ;
-  (self._icon).sprite = self._srpite
+  self._icon.sprite = self._srpite
 end
 
--- DECOMPILER ERROR at PC17: Confused about usage of register: R0 in 'UnsetPending'
-
-UIDataBaseConditionItem.SetData = function(self, idx, condition, sprite)
-  -- function num : 0_3
+function UIDataBaseConditionItem:SetData(idx, condition, sprite)
   self._idx = idx
   self._condition = condition
   self._srpite = sprite
   self:OnValue()
 end
-
-
